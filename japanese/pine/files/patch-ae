@@ -50,17 +50,17 @@
 + RM=          rm -f
 + LN=          ln -s
 + MAKE=        make
-+ OPTIMIZE=    -O
++ #OPTIMIZE=    -O
 + PROFILE=     # -pg
 + DEBUG=       # -g -DDEBUG
 + 
 + IMAPDIR=     ../c-client
 + PICODIR=     ../pico
 + 
-+ STDLIBES=    -ltermlib
++ STDLIBES=    -ltermlib -lcrypt
 + #LOCLIBES=   $(PICODIR)/libpico.a $(IMAPDIR)/c-client.a
-+ LOCLIBES=    -lpico -lc-client
-+ LOCLIBDIR=   -L$(PICODIR) -L$(IMAPDIR)
++ LOCLIBES=    -lpico ${IMAPDIR}/c-client.a
++ LOCLIBDIR=   -L$(PICODIR)
 + EXTRALIBES=  -L/usr/local/lib -lcanna
 + LIBES=       $(LOCLIBDIR) $(LOCLIBES) $(EXTRALIBES) $(STDLIBES)
 + 
@@ -84,7 +84,7 @@
 + HELPINDXS=      pine.ndx pine_ja.ndx
 + 
 + pine:  $(obj) $(LOCLIBES)
-+ 	echo "char datestamp[]="\"`date`\"";" > date.c
++ 	echo "char datestamp[]="\"`LC_TIME=C date`\"";" > date.c
 + 	echo "char hoststamp[]="\"`hostname`\"";" >> date.c
 + 	$(CC) $(LDFLAGS) $(CFLAGS) -o pine $(obj) date.c $(LIBES)
 + 

@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.8 1996/11/11 10:08:22 max Exp $
+# $Id: Makefile,v 1.9 1996/11/13 12:41:07 asami Exp $
 #
 
 DISTNAME=	pine3.95
@@ -21,9 +21,8 @@ MAINTAINER=	max@FreeBSD.ORG
 LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna
 
-MAN1=		pine.1 pilot.1 pico.1
-MAN8=		imapd.8c ipopd.8c
 EXTRACT_ONLY=	pine3.95.tar.gz
+MAN1=		pine.1 pilot.1 pico.1
 
 pre-patch:
 	@(cd ${WRKSRC}; \
@@ -34,14 +33,9 @@ do-build:
 	(cd ${WRKSRC}; ./build bsf)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/imapd ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ipop2d ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ipop3d ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/mtest ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bin/libc-client.so.1.3 $(PREFIX)/lib
 	${INSTALL_DATA} ${WRKSRC}/bin/libpico.so.1.3 $(PREFIX)/lib
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1
@@ -51,8 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.ndx ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.hlp ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.ndx ${PREFIX}/lib/pine
-	${INSTALL_MAN} ${WRKSRC}/imap/systype/imapd/imapd.8c ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/imap/systype/ipopd/ipopd.8c ${PREFIX}/man/man8
 	ldconfig -vm /usr/local/lib
 
 .include <bsd.port.mk>

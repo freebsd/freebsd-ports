@@ -235,7 +235,7 @@
 + 
 + 
 + /*----------------- locale.h -------------------------------------------*/
-+ /* #include <locale.h>  /* To make matching and sorting work right */
++ #include <locale.h>  /* To make matching and sorting work right */
 + 
 + 
 + 
@@ -247,8 +247,8 @@
 + 
 + 
 + /*--------------- signal.h ---------------------------------------------*/
-+ /* #include <signal.h>      /* sometimes both required, sometimes */
-+ #include <sys/signal.h>  /* only one or the other */
++ #include <signal.h>      /* sometimes both required, sometimes */
++ /* #include <sys/signal.h>  /* only one or the other */
 + 
 + #define SigType void     /* value returned by sig handlers is void */
 + /* #define SigType int      /* value returned by sig handlers is int */
@@ -346,7 +346,7 @@
 + /*----------------------------------------------------------------------
 +    If no nntp-servers are defined, this program will be used to post news.
 +  ----*/
-+ /* #define SENDNEWS	"/usr/locale/bin/inews -h"	/* news posting cmd */
++ #define SENDNEWS	"/usr/local/news/lib/inews -h"	/* news posting cmd */
 + 
 + 
 + /*--------- Program employed by users to change their password ---------*/
