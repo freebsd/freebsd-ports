@@ -1,0 +1,31 @@
+--- Mailman/Defaults.py.in.orig	Thu Dec 26 21:48:41 2002
++++ Mailman/Defaults.py.in	Mon Jan 20 14:07:05 2003
+@@ -97,7 +97,7 @@
+ # Command that is used to convert text/html parts into plain text.  This
+ # should output results to standard output.  %(filename)s will contain the
+ # name of the temporary file that the program should operate on.
+-HTML_TO_PLAIN_TEXT_COMMAND = '/usr/bin/lynx -dump %(filename)s'
++HTML_TO_PLAIN_TEXT_COMMAND = '%%LOCALBASE%%/bin/lynx -dump %(filename)s'
+ 
+ 
+ 
+@@ -356,8 +356,8 @@
+ # and virtual-mailman.db files, respectively, from the associated plain text
+ # files.  The file being updated will be appended to this string (with a
+ # separating space), so it must be appropriate for os.system().
+-POSTFIX_ALIAS_CMD = '/usr/sbin/postalias'
+-POSTFIX_MAP_CMD = '/usr/sbin/postmap'
++POSTFIX_ALIAS_CMD = '%%LOCALBASE%%/sbin/postalias'
++POSTFIX_MAP_CMD = '%%LOCALBASE%%/sbin/postmap'
+ 
+ # Ceiling on the number of recipients that can be specified in a single SMTP
+ # transaction.  Set to 0 to submit the entire recipient list in one
+@@ -391,7 +391,7 @@
+ 
+ # Command for direct command pipe delivery to sendmail compatible program,
+ # when DELIVERY_MODULE is 'Sendmail'.
+-SENDMAIL_CMD = '/usr/lib/sendmail'
++SENDMAIL_CMD = '/usr/sbin/sendmail'
+ 
+ # Set these variables if you need to authenticate to your NNTP server for
+ # Usenet posting or reading.  If no authentication is necessary, specify None
