@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/13 12:53:30 asami Exp $
+# $Id: Makefile,v 1.2 1997/04/16 04:59:17 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -15,6 +15,9 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/Xsi
 IS_INTERACTIVE=	yes	# needs "wnn" user
+
+post-extract:
+	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
 
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.
