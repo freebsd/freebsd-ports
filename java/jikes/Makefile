@@ -8,7 +8,7 @@
 PORTNAME=	jikes
 PORTVERSION=	1.11
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
+MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
 
 MAINTAINER=	archie@whistle.com
 
