@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4815970-c5cc-11d8-8898-000d6111a684">
+    <topic>rssh --- file name disclosure bug</topic>
+    <affects>
+      <package>
+	<name>rssh</name>
+	<range><lt>2.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>rssh expands command line paramters before invoking chroot.
+          This could result in the disclosure to the client of file
+          names outside of the chroot directory.  A posting by the rssh
+	  author explains:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108787373022844">
+          <p>The cause of the problem identified by Mr. McCaw is that
+            rssh expanded command-line arguments prior to entering
+            the chroot jail.  This bug DOES NOT allow a user to
+            access any of the files outside the jail, but can allow
+            them to discover what files are in a directory which is
+            outside the jail, if their credentials on the server would
+            normally allow them read/execute access in the specified
+            directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0609</cvename>
+      <mlist msgid="20040619074141.GG13649@sophic.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108787373022844</mlist>
+      <bid>10574</bid>
+      <url>http://www.osvdb.org/7239</url>
+    </references>
+    <dates>
+      <discovery>2004-06-19</discovery>
+      <entry>2004-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6f0edd8-0b40-11d9-8a8a-000c41e2cdad">
     <topic>gnu-radius --- SNMP-related denial-of-service</topic>
     <affects>
