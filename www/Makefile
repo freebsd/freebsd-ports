@@ -625,6 +625,7 @@
     SUBDIR += zope-proxyindex
     SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
+    SUBDIR += zope-ttwtype
     SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt

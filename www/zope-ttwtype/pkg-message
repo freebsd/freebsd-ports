@@ -1,0 +1,17 @@
+To complete the installation of TTWType:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+With CMFQuickInstaller (optional)
+
+- Use the QuickInstaller tool to register TTWType in your portal instance
+
+Without CMFQuickInstaller
+
+- Add and run an External Method with the following settings in your
+  CMF/Plone root using the Zope Management Interface (ZMI):
+
+id: install_ttwtype
+title: Install TTW Type (optional)
+module: TTWType.Install
+function: install
