@@ -1,21 +1,27 @@
-This  port tries  to  patch the  GhostScript's  Fontmap automaticly,  so
-unless  you  have  non-standard  GhostScript  installation  (or  if  you
-installed GhostScript afterwards), you should not have to do anything.
+	This  port  tries  to patch  the  GhostScript's  Fontmap
+	automaticly, so unless you have non-standard GhostScript
+	installation   (or   if    you   installed   GhostScript
+	afterwards), you should not have to do anything.
 
-For   your  X-server   to  use   the  fonts,   you  have   to  add   the
-${PREFIX}/share/CyrPS (usually, /usr/local/share/CyrPS)  to the server's
-font-path. Use  ``xset fp+'' to  do this  for the current  X-session and
-consult your X-server's documentation to make this permanent.
+	For   your  X-server   to  use   the  fonts,   you  have
+	to    add    the   ${PREFIX}/share/koi8r-ps    (usually,
+	/usr/local/share/koi8r-ps)  to  the server's  font-path.
+	Use ``xset  fp+'' to do  this for the  current X-session
+	and consult  your X-server's documentation to  make this
+	permanent.
 
-For gv  to use  the newly  installed KOI8  fonts, it  may have  to start
-GhostScript with the ``-dNOPLATFONTS'' option. One way to ensure this is
-to add  -dNOPLATFONTS to  the GV.gsX11Device resource  -- either  in the
-/usr/X11R6/lib/X11/app-defaults/GV, or in  individual's ~/.Xdefaults. An
-individual  user can  also  put this  into  his or  her  ~/.gv file,  by
-starting up  gv, choosing the  menu option ``Ghostscript  Options'' from
-the ``State'' menu  and typing in ``-dNOPLATFONTS''  into the ``Device''
-entry.
+	For gv  to use  the newly installed  KOI8 fonts,  it may
+	have  to start  GhostScript  with the  ``-dNOPLATFONTS''
+	option. One way  to ensure this is  to add -dNOPLATFONTS
+	to  the   GV.gsX11Device  resource  --  either   in  the
+	/usr/X11R6/lib/X11/app-defaults/GV,  or in  individual's
+	~/.Xdefaults. An individual user  can also put this into
+	his or her  ~/.gv file, by starting up  gv, choosing the
+	menu option  ``Ghostscript Options'' from  the ``State''
+	menu and typing in ``-dNOPLATFONTS'' into the ``Device''
+	entry.
 
-This package  will NOT by itself  help you print Cyrillic  on PostScript
-printers -- they use their own PostScript engines (not GhostScript). The
-port russian/koify may help you with those.
+	This package will NOT by  itself help you print Cyrillic
+	on PostScript printers --  they use their own PostScript
+	engines  (not GhostScript).  The port  russian/koify may
+	help you with those.
