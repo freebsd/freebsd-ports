@@ -13,6 +13,8 @@ MASTER_SITES= 	ftp://mongol.dhis.org/pub/wmhm/ \
 
 MAINTAINER=	mmuir@es.co.nz
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 
 .include <bsd.port.pre.mk>
