@@ -1,0 +1,42 @@
+--- CDDB.pm.orig	Sun Apr 30 06:33:12 2000
++++ CDDB.pm	Mon Mar 12 15:11:35 2001
+@@ -15,9 +15,9 @@
+ # list of known cddb servers
+ 
+ my @cddb_hosts =
+-  ( [ 'cddb.cddb.com'     => 8880 ],
+-    [ 'sj.ca.us.cddb.com' => 8880 ],
+-    [ 'sc.ca.us.cddb.com' => 8880 ],
++  ( [ 'freedb.freedb.org'     => 8880 ],
++    [ 'ca.freedb.org' => 8880 ],
++    [ 'sk.freedb.org' => 8880 ],
+   );
+ 
+ #------------------------------------------------------------------------------
+@@ -177,7 +177,7 @@
+     login         => $login,
+     libname       => 'CDDB.pm',
+     libver        => $VERSION,
+-    cddbmail      => 'cddb-test@submit.cddb.com',
++    cddbmail      => 'freedb-submit@freedb.org',
+     debug         => $debug,
+     host          => $host,
+     port          => $port,
+@@ -615,7 +615,7 @@
+   use CDDB;
+ 
+   ### connect to the CDDB server
+-  my $cddb = new CDDB( Host  => 'www.cddb.com',         # default
++  my $cddb = new CDDB( Host  => 'freedb.freedb.org',    # default
+                        Port  => 8880,                   # default
+                        Login => $login_id,              # defaults to %ENV's
+                      ) or die $!;
+@@ -682,7 +682,7 @@
+ protocol may require several separate connections (sometimes one per
+ query).
+ 
+-C<new> accepts these parameters: Host (defaults to www.cddb.com), Port
++C<new> accepts these parameters: Host (defaults to freedb.freedb.org), Port
+ (defaults to 8880), Login (defaults to your login ID), and Debug
+ (defaults to boolean false) parameters.
+ 
