@@ -5,3 +5,4 @@ share/latex2rtf/fonts.cfg
 share/latex2rtf/german.cfg
 share/latex2rtf/ignore.cfg
 share/latex2rtf/spanish.cfg
+@dirrm share/latex2rtf
