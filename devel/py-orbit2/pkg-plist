@@ -1,5 +1,4 @@
-bin/orbit-python-config
-include/orbit-python/orbit-python.h
-lib/%%PYTHON_VERSION%%/site-packages/CORBAmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/PortableServermodule.so
-@dirrm include/orbit-python
+include/pyorbit-2/pyorbit.h
+lib/%%PYTHON_VERSION%%/site-packages/ORBit.so
+libdata/pkgconfig/pyorbit-2.pc
+@dirrm include/pyorbit-2
