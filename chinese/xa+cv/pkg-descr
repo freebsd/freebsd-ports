@@ -1,0 +1,9 @@
+XA+CV is a work around library lets most X applications to show Chinese words
+properly. Use LD_PRELOAD to make it work.
+
+NOTE: for ELF world after 3.0-RELEASE, ONLY compitable with Linux Netscape.
+      you HAVE to enable Linux emulation and install Linux version Netscape.
+
+Other information please refer to /usr/local/share/doc/xa+cv/.
+
+- Clive Lin <clive@CirX.ORG>

@@ -1,0 +1,36 @@
+--- Makefile.orig	Thu May 13 01:28:07 1999
++++ Makefile	Wed Aug 11 03:27:24 1999
+@@ -8,12 +8,12 @@
+ 
+ CC = gcc
+ CFLAGS = -fPIC -O2
+-SHAREFLAGES = -shared
+-SHARELIBS = -ldl
++SHAREFLAGES = -shared -export-dynamic
++SHARELIBS = 
+ INSTALL = /usr/bin/install -c
+ 
+-DESTDIR = /usr/locale/lib
+-CONGDIR = /etc/chinese/xa+cv
++DESTDIR = /usr/local/lib
++CONGDIR = /usr/local/etc/chinese/xa+cv
+ INCLUDEDIR = -I/usr/include -I/usr/X11R6/include
+ 
+ all: wrap.so
+@@ -22,7 +22,7 @@
+ 	$(CC) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
+ 
+ wrap.so: cli_xcin.o wrap.o select_mode.o config.h
+-	$(CC) $(SHAREFLAGES) $(SHARELIBS) -o wrap.so cli_xcin.o \
++	ld $(SHAREFLAGES) $(SHARELIBS) -o wrap.so cli_xcin.o \
+ 		wrap.o select_mode.o
+ 	strip wrap.so
+ 
+@@ -38,6 +38,6 @@
+ 
+ install: all
+ 	$(INSTALL) -m 755 wrap.so $(DESTDIR)
+-	mkdir -p /etc/chinese/xa+cv && \
++	mkdir -p $(CONGDIR) && \
+ 		$(INSTALL) -m 644 xa+cv.config $(CONGDIR)/config
+ 

@@ -1,0 +1,19 @@
+--- config.h.orig	Wed May 26 10:06:40 1999
++++ config.h	Wed Aug 11 02:35:00 1999
+@@ -14,14 +14,14 @@
+ #define XA_LIBX11       "/usr/X11R6/lib/libX11.so.6"
+ #endif
+ 
+-#define XA_SMART_DADABASE       "/etc/chinese/xa+cv/config"
++#define XA_SMART_DADABASE       "/usr/local/etc/chinese/xa+cv/config"
+ 
+ #define DEFAULT_FACE	"*"
+ #define DEFAULT_FAMILY	"*"
+ #define BIG5_FONT_ENCODING      "big5-0"
+ #define GB_FONT_ENCODING        "gb2312.1980-0"
+ #define DEFAULT_BASE_FONT_NAME	"-%s-%s-*-r-*-*-%d-*-*-*-*-%d-%s"
+-#define DEFAULT_SMALL_BIG5_FONT	"taipei16"
++#define DEFAULT_SMALL_BIG5_FONT	"sung"
+ #define DEFAULT_SMALL_GB_FONT	"hanzigb16fs"
+ #define MIN_SMALL_FONT_PIXELS	16
+ #define CFNTMAX		10
