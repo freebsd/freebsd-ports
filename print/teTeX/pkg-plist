@@ -71,8 +71,8 @@ bin/otp2ocp
 bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
-bin/oxdvi
-bin/oxdvi.bin
+%%X11BITS%%bin/oxdvi
+%%X11BITS%%bin/oxdvi.bin
 bin/patgen
 bin/pdfeinitex
 bin/pdfelatex
@@ -117,8 +117,8 @@ bin/viromega
 bin/virtex
 bin/vptovf
 bin/weave
-bin/xdvi
-bin/xdvi.bin
+%%X11BITS%%bin/xdvi
+%%X11BITS%%bin/xdvi.bin
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
@@ -271,7 +271,7 @@ man/man1/viromega.1
 man/man1/virtex.1
 man/man1/vptovf.1
 man/man1/weave.1
-man/man1/xdvi.1
+%%X11BITS%%man/man1/xdvi.1
 share/texmf/ChangeLog
 share/texmf/aliases
 share/texmf/bibtex/bib/README
@@ -1577,8 +1577,8 @@ share/texmf/doc/help/Catalogue/entries/wsuipa.html
 share/texmf/doc/help/Catalogue/entries/wtex95.html
 share/texmf/doc/help/Catalogue/entries/xarticle.html
 share/texmf/doc/help/Catalogue/entries/xcomment.html
-share/texmf/doc/help/Catalogue/entries/xdvi.html
-share/texmf/doc/help/Catalogue/entries/xdvik.html
+%%X11BITS%%share/texmf/doc/help/Catalogue/entries/xdvi.html
+%%X11BITS%%share/texmf/doc/help/Catalogue/entries/xdvik.html
 share/texmf/doc/help/Catalogue/entries/xfig.html
 share/texmf/doc/help/Catalogue/entries/xmltex.html
 share/texmf/doc/help/Catalogue/entries/xr.html
@@ -7706,7 +7706,7 @@ share/texmf/tex/generic/xypic/xytp-f.tex
 share/texmf/tex/generic/xypic/xytpic.tex
 share/texmf/tex/generic/xypic/xyv2.tex
 share/texmf/tex/generic/xypic/xyweb.tex
-share/texmf/tex/generic/xypic/xyxdvi.tex
+%%X11BITS%%share/texmf/tex/generic/xypic/xyxdvi.tex
 share/texmf/tex/latex/ae/ae.sty
 share/texmf/tex/latex/ae/aecompl.sty
 share/texmf/tex/latex/ae/omlaer.fd
@@ -8763,9 +8763,9 @@ share/texmf/web2c/tex.fmt
 share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf
-share/texmf/xdvi/XDvi
+%%X11BITS%%share/texmf/xdvi/XDvi
 @exec mkdir %D/share/texmf/fonts/source/public/cs
-@dirrm share/texmf/xdvi
+%%X11BITS%%@dirrm share/texmf/xdvi
 @dirrm share/texmf/web2c
 @dirrm share/texmf/texconfig/x
 @dirrm share/texmf/texconfig/v

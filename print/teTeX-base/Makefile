@@ -7,18 +7,24 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
-MAINTAINER=	br@netland.inka.de
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+PLIST_SUB+=	X11BITS=""
+.else
+PLIST_SUB+=	X11BITS="@comment "
+.endif
 DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/teTeX-1.0
 EXTRACT_ONLY=	${TETEX_SRC}
@@ -32,6 +38,9 @@ CONFIGURE_ARGS=	--disable-multiplatform \
 		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include
 CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x11 --without-oxdvik --without-xdvik
+.endif
 INSTALL_TARGET=	install strip
 NOMANCOMPRESS=	yes
 NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
@@ -46,7 +55,11 @@ NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
 		pktogf.1 pktype.1 pltotf.1 pooltype.1 ps2frag.1 ps2pk.1 \
 		readlink.1 tangle.1 tex.1 texconfig.1 texhash.1 texi2html.1 \
 		tftopl.1 tie.1 vftovp.1 virmf.1 virmpost.1 viromega.1 \
-		virtex.1 vptovf.1 weave.1 xdvi.1
+		virtex.1 vptovf.1 weave.1
+
+.if !defined(WITHOUT_X11)
+NOMAN1+=	xdvi.1
+.endif
 
 TETEX_SRC=	teTeX-src-1.0.7.tar.gz
 TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
