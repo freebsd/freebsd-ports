@@ -178,10 +178,9 @@ USE_OPENSSL=	yes
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_MUTT_PGP_PATCH)
-.error The WITH_MUTT_PGP_PATCH option is currently not available
-#SGML_NEEDED=	yes
-#pre-configure::
-#	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
+SGML_NEEDED=	yes
+pre-configure::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
 .endif
 .if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -234,8 +233,7 @@ PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-.error The WITH_MUTT_MBOX_HOOK_PATCH option is currently not available
-#PATCHFILES+=	patch-${PATCH_VERSION}.dw.mbox-hook.1:dw
+PATCHFILES+=	p0-patch-${PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
