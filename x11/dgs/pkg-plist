@@ -1,4 +1,5 @@
 bin/dgs
+bin/dgs-config
 bin/dpsexec
 bin/dpsnx.agent
 bin/makepsres
@@ -45,9 +46,7 @@ lib/libpsres.so
 lib/libpsres.so.0
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-man/manm/dpsexec.man
-man/manm/makepsres.man
-man/manm/xepsf.man
+share/aclocal/path_dps.m4
 share/ghostscript/5.50/Fontmap
 share/ghostscript/5.50/doc/Bug-form.htm
 share/ghostscript/5.50/doc/C-style.htm
@@ -118,5 +117,3 @@ share/ghostscript/5.50/gs_typ42.ps
 share/ghostscript/5.50/gs_type1.ps
 share/ghostscript/5.50/gs_wan_e.ps
 @dirrm include/DPS
-@dirrm share/ghostscript/5.50/doc
-@dirrm share/ghostscript/5.50/examples
