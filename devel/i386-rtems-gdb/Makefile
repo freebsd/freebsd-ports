@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	FSF gdb-5.2 base-port for RTEMS development
 
 PATCHFILES=	${GDBNAME}-rtems-base-20020612.diff \
 		${GDBNAME}-rtems-cg-20020612.diff \

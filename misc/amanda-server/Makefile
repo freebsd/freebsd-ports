@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	amanda
 DISTFILES=	amanda-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	The Advanced Maryland Automatic Network Disk Archiver
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client

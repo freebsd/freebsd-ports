@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	binutils/releases
 #		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	FSF binutils-2.13.2.1 base-port for RTEMS development
 
 LCLTARGET?=	i386-rtems
 

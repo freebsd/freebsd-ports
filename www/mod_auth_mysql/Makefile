@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-auth-mysql
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	Allows users to use MySQL databases for user authentication
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

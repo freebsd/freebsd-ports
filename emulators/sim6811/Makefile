@@ -13,6 +13,7 @@ DISTNAME=	sim
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	A Motorola 6811 simulator
 
 NO_WRKSUBDIR=	yes
 
