@@ -1,0 +1,276 @@
+diff -c -r -P ../run/getsts ../../SatTrack-FreeBSD/run/getsts
+*** ../run/getsts	Wed Mar 29 00:10:16 1995
+--- ../../SatTrack-FreeBSD/run/getsts	Sat Apr  6 22:09:38 1996
+***************
+*** 28,46 ****
+  set stsnum=71
+  set prelaunch=1
+  set mir=1
+! set ftphost=192.149.89.61
+! set satdir=/home/manfred
+! set satuser=manfred
+  #
+  #
+  #
+! set userid=$USER@`hostname`.`domainname`
+  #
+! if ($USER == $satuser) then
+!     set satdirusr=$satdir
+!     else
+!     set satdirusr=$HOME
+!     mkdir -p $HOME/SatTrack/tle
+  endif
+  #
+  cd $satdirusr/SatTrack/tle
+--- 28,44 ----
+  set stsnum=71
+  set prelaunch=1
+  set mir=1
+! set ftphost=spacelink.msfc.nasa.gov
+! set satdir=/usr/local/lib
+! set satuser=sattrack
+  #
+  #
+  #
+! set userid=$USER@`hostname`
+  #
+! set satdirusr=$satdir
+! if (! -d $satdiruser/SatTrack/tle) then 
+!     mkdir -p $satdirusr/SatTrack/tle
+  endif
+  #
+  cd $satdirusr/SatTrack/tle
+diff -c -r -P ../run/gettle ../../SatTrack-FreeBSD/run/gettle
+*** ../run/gettle	Wed Mar 15 04:26:06 1995
+--- ../../SatTrack-FreeBSD/run/gettle	Sat Apr  6 21:20:43 1996
+***************
+*** 24,41 ****
+  #
+  #
+  #
+! set ftphost=129.92.1.66
+! set satdir=/home/manfred
+! set satuser=manfred
+  #
+  #
+  #
+! set userid=$USER@`hostname`.`domainname`
+  #
+! if ($USER == $satuser) then 
+!     set satdirusr=$satdir
+!     else
+!     set satdirusr=$HOME
+      mkdir -p $satdirusr/SatTrack/tle
+  endif
+  #
+--- 24,39 ----
+  #
+  #
+  #
+! set ftphost=archive.afit.af.mil
+! set satdir=/usr/local/lib
+! set satuser=sattrack
+  #
+  #
+  #
+! set userid=$USER@`hostname`
+  #
+! set satdirusr=$satdir
+! if (! -d $satdiruser/SatTrack/tle) then 
+      mkdir -p $satdirusr/SatTrack/tle
+  endif
+  #
+diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
+*** ../src/Makefile	Fri Aug 25 17:39:13 1995
+--- ../../SatTrack-FreeBSD/src/Makefile	Sat Apr  6 21:58:28 1996
+***************
+*** 92,101 ****
+  
+  # Sun-4         (SPARCstation 5 or 10 with Solaris 2.x, using 'gcc' only)
+  #
+! CPU		= Sun-4/Solaris
+! CC_CMACH	= -O3 -DSVR4 -Wall
+! CC_LMACH	=
+! CC		= gcc
+  
+  # Apollo 700    (HP Apollo 9000 Series 700 with HPUX)
+  #
+--- 92,101 ----
+  
+  # Sun-4         (SPARCstation 5 or 10 with Solaris 2.x, using 'gcc' only)
+  #
+! #CPU		= Sun-4/Solaris
+! #CC_CMACH	= -O3 -DSVR4 -Wall
+! #CC_LMACH	=
+! #CC		= gcc
+  
+  # Apollo 700    (HP Apollo 9000 Series 700 with HPUX)
+  #
+***************
+*** 148,157 ****
+  
+  # i386          (i386 with FreeBSD)
+  #
+! #CPU		= i386/FreeBSD
+! #CC_CMACH	= -O -DFREEBSD -DIOCTL
+! #CC_LMACH	=
+! #CC		= gcc
+  
+  #
+  #-------------------------------------------------------------------------------
+--- 148,157 ----
+  
+  # i386          (i386 with FreeBSD)
+  #
+! CPU		= i386/FreeBSD
+! CC_CMACH	= -O -DFREEBSD -DIOCTL
+! CC_LMACH	=
+! CC		= gcc
+  
+  #
+  #-------------------------------------------------------------------------------
+***************
+*** 193,199 ****
+  #CC_CUSR	= -DREVERSEVIDEO -DXWINDOW
+  #CC_CUSR	= -DHOMEDIR -DREVERSEVIDEO -DXWINDOW
+  
+! CC_CUSR		= -DHOMEDIR -DREVERSEVIDEO -DSUNTRANSITS -DXWINDOW 
+  
+  #
+  #-------------------------------------------------------------------------------
+--- 193,199 ----
+  #CC_CUSR	= -DREVERSEVIDEO -DXWINDOW
+  #CC_CUSR	= -DHOMEDIR -DREVERSEVIDEO -DXWINDOW
+  
+! CC_CUSR		= -DREVERSEVIDEO -DSUNTRANSITS -DXWINDOW
+  
+  #
+  #-------------------------------------------------------------------------------
+***************
+*** 210,216 ****
+  # but should be accessible by other users as well.
+  #
+  
+! #HOME		= /home/manfred
+  
+  #
+  #-------------------------------------------------------------------------------
+--- 210,217 ----
+  # but should be accessible by other users as well.
+  #
+  
+! HOME		= ../..
+! CC_CUSR		+= -DSATDIR=\"$(PREFIX)/lib\"
+  
+  #
+  #-------------------------------------------------------------------------------
+***************
+*** 221,226 ****
+--- 222,231 ----
+  SRC		= $(HOME)/SatTrack/src
+  OBJ    		= $(HOME)/SatTrack/obj
+  RUN     	= $(HOME)/SatTrack/run
++ DATA    	= $(HOME)/SatTrack/data
++ PRED    	= $(HOME)/SatTrack/pred
++ TLE     	= $(HOME)/SatTrack/tle
++ DOC     	= $(HOME)/SatTrack/doc
+  
+  INC		= $(SRC)/include
+  
+***************
+*** 283,294 ****
+  #X11		= /usr/include
+  #X11		= /usr/local/include
+  #X11		= /usr/include/X11
+! X11		= /usr/openwin/include
+  
+! LX11		= -lX11 -lXt                                           # X11R5
+  #LX11		= -L/usr/openwin/lib -lX11 -lXt
+  
+  #LX11		= -lX11 -lXt -lICE -lSM                                # X11R6
+  #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
+  
+  #CC_CXINC	=
+--- 288,301 ----
+  #X11		= /usr/include
+  #X11		= /usr/local/include
+  #X11		= /usr/include/X11
+! #X11		= /usr/openwin/include
+! X11		= /usr/X11R6/include
+  
+! #LX11		= -lX11 -lXt                                           # X11R5
+  #LX11		= -L/usr/openwin/lib -lX11 -lXt
+  
+  #LX11		= -lX11 -lXt -lICE -lSM                                # X11R6
++ LX11		= -L/usr/X11R6/lib -lX11 -lXt -lICE -lSM
+  #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
+  
+  #CC_CXINC	=
+***************
+*** 319,324 ****
+--- 326,355 ----
+  	cd $(RUN) ; \
+  	/bin/rm -f fixchecksum makeamsat makepassesx maketles maketlex \
+  	satfilter sattrack xdemo
++ 
++ install:
++ 	-@mkdir -p $(PREFIX)/lib/SatTrack/data
++ 	cd $(DATA) ; find . -print | cpio -pudm $(PREFIX)/lib/SatTrack/data
++ 	-@mkdir $(PREFIX)/lib/SatTrack/pred
++ 	cd $(PRED) ; find . -print | cpio -pudm $(PREFIX)/lib/SatTrack/pred
++ 	-@mkdir $(PREFIX)/lib/SatTrack/tle
++ 	cd $(TLE) ; find . -print | cpio -pudm $(PREFIX)/lib/SatTrack/tle
++ 	-@mkdir -p $(PREFIX)/share/doc/SatTrack
++ 	cd $(DOC) ; find . -print | cpio -pudm $(PREFIX)/share/doc/SatTrack
++ 	-@mkdir -p $(PREFIX)/bin
++ 	install -c -s -m 755 $(RUN)/fixchecksum $(PREFIX)/bin/fixchecksum
++ 	install -c -m 755 $(RUN)/getsts $(PREFIX)/bin/getsts
++ 	install -c -m 755 $(RUN)/gettle $(PREFIX)/bin/gettle
++ 	install -c -s -m 755 $(RUN)/makeamsat $(PREFIX)/bin/makeamsat
++ 	install -c -s -m 755 $(RUN)/makepassesx $(PREFIX)/bin/makepassesx
++ 	install -c -s -m 755 $(RUN)/maketles $(PREFIX)/bin/maketles
++ 	install -c -s -m 755 $(RUN)/maketlex $(PREFIX)/bin/maketlex
++ 	install -c -m 755 $(RUN)/passes $(PREFIX)/bin/passes
++ 	install -c -m 755 $(RUN)/passesx $(PREFIX)/bin/passesx
++ 	install -c -s -m 755 $(RUN)/satfilter $(PREFIX)/bin/satfilter
++ 	install -c -s -m 755 $(RUN)/sattrack $(PREFIX)/bin/sattrack
++ 	install -c -m 755 $(RUN)/transits $(PREFIX)/bin/transits
++ 	install -c -s -m 755 $(RUN)/xdemo $(PREFIX)/bin/xsattrackdemo
+  
+  #
+  #-------------------------------------------------------------------------------
+diff -c -r -P ../src/include/sattrack.h ../../SatTrack-FreeBSD/src/include/sattrack.h
+*** ../src/include/sattrack.h	Thu Feb 15 17:11:49 1996
+--- ../../SatTrack-FreeBSD/src/include/sattrack.h	Sat Apr  6 21:45:26 1996
+***************
+*** 55,67 ****
+  /*                                                                            */
+  /******************************************************************************/
+  
+! #define SATDIR                "/usr1/manfred"    /* directory where SatTrack  */
+                                                   /* lives; used if HOMEDIR is */
+                                                   /* undefined in the Makefile */
+  
+  #define DATA                  "SatTrack/data"    /* SatTrack sub-directories  */
+  #define PRED                  "SatTrack/pred"
+! #define RUN                   "SatTrack/run"
+  #define TLE                   "SatTrack/tle"
+  #define SRC                   "SatTrack/src"
+  #define INC                   "SatTrack/src/include"
+--- 55,69 ----
+  /*                                                                            */
+  /******************************************************************************/
+  
+! #ifndef SATDIR
+! #define SATDIR                "/usr/local/lib"   /* directory where SatTrack  */
+                                                   /* lives; used if HOMEDIR is */
+                                                   /* undefined in the Makefile */
++ #endif
+  
+  #define DATA                  "SatTrack/data"    /* SatTrack sub-directories  */
+  #define PRED                  "SatTrack/pred"
+! #define RUN                   "../bin"
+  #define TLE                   "SatTrack/tle"
+  #define SRC                   "SatTrack/src"
+  #define INC                   "SatTrack/src/include"
+Only in ../src: patch

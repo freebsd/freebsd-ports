@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# post-patch for sattrack-3.1.4
+# modify bin scripts to point to correct install dir
+#
+# script by Brent Nordquist (nordquist@platinum.com)
+# Sun Apr  7 00:08:56  1996
+#
+if [ -z "$WRKDIR" ]; then
+	WRKDIR="$1"
+fi
+RUN="$WRKDIR/SatTrack/run"
+if [ -z "$WRKDIR" -o ! -d "$RUN" ]; then
+	echo $0: bad work directory $RUN 1>&2
+	exit 1
+fi
+cd $RUN
+if [ -z "$PREFIX" ]; then
+	PREFIX="$2"
+fi
+if [ -z "$PREFIX" ]; then
+	echo $0: PREFIX not given 1>&2
+	exit 2
+fi
+
+do_subst()
+{
+	if [ ! -r $1 ]; then
+		echo $0: cannot find file $1 1>&2
+		exit 3
+	fi
+	sed "s@set satdir=.*\$@set satdir=$PREFIX/lib@" <$1 >$1.$$
+	if [ $? != 0 ]; then
+		echo $0: $1 sed failure 1>&2
+		rm -f $1.$$
+		exit 4
+	fi
+	cat $1.$$ >$1
+	if [ $? != 0 ]; then
+		echo $0: $1 cat failure 1>&2
+		rm -f $1
+		mv $1.$$ $1
+		exit 5
+	fi
+	rm -f $1.$$
+}
+
+do_subst getsts
+do_subst gettle
