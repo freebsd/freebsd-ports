@@ -1,6 +1,10 @@
 --- scripts/Makefile.frag.orig	Tue Nov 23 14:06:16 2004
-+++ scripts/Makefile.frag	Thu Dec 16 13:00:26 2004
-@@ -30,14 +30,9 @@
++++ scripts/Makefile.frag	Tue Jan 25 08:19:07 2005
+@@ -26,18 +26,12 @@
+ 	/ \
+ 	Zend/ \
+ 	TSRM/ \
+-	include/ \
  	main/ \
  	main/streams/ \
  	regex/ \
