@@ -1,11 +1,8 @@
+bin/xp-mapedit
+bin/xp-replay
 bin/xpilot
 bin/xpilots
-bin/xp-replay
-bin/xp-mapedit
-share/xpilot/sounds
 share/xpilot/defaults
-share/xpilot/robots
-share/xpilot/password
 share/xpilot/maps/CAMD.xp
 share/xpilot/maps/blood-music2.xp
 share/xpilot/maps/cloudscape.xp
@@ -25,13 +22,13 @@ share/xpilot/maps/teamball.xp
 share/xpilot/maps/tourmination.xp
 share/xpilot/maps/tournament.xp
 share/xpilot/maps/war.xp
-share/xpilot/textures/ball.xpm
-share/xpilot/textures/metalite.xpm
-share/xpilot/textures/moon.xpm
-share/xpilot/textures/rock4.xpm
-share/xpilot/textures/volcanic.xpm
+share/xpilot/password
+share/xpilot/robots
+share/xpilot/sounds
 share/xpilot/textures/allitems.ppm
+share/xpilot/textures/asteroidconcentrator.ppm
 share/xpilot/textures/ball.ppm
+share/xpilot/textures/ball.xpm
 share/xpilot/textures/base_down.ppm
 share/xpilot/textures/base_left.ppm
 share/xpilot/textures/base_right.ppm
@@ -52,22 +49,26 @@ share/xpilot/textures/fuelcell.ppm
 share/xpilot/textures/holder1.ppm
 share/xpilot/textures/holder2.ppm
 share/xpilot/textures/logo.ppm
+share/xpilot/textures/metalite.xpm
 share/xpilot/textures/meter.ppm
 share/xpilot/textures/mine_other.ppm
 share/xpilot/textures/mine_team.ppm
 share/xpilot/textures/minus.ppm
+share/xpilot/textures/moon.xpm
 share/xpilot/textures/paused.ppm
 share/xpilot/textures/plus.ppm
 share/xpilot/textures/radar.ppm
 share/xpilot/textures/radar2.ppm
 share/xpilot/textures/radar3.ppm
 share/xpilot/textures/refuel.ppm
+share/xpilot/textures/rock4.xpm
 share/xpilot/textures/ship.ppm
 share/xpilot/textures/ship_blue.ppm
 share/xpilot/textures/ship_red.ppm
 share/xpilot/textures/ship_red2.ppm
 share/xpilot/textures/ship_red3.ppm
 share/xpilot/textures/sparks.ppm
+share/xpilot/textures/volcanic.xpm
 share/xpilot/textures/wall_bottom.ppm
 share/xpilot/textures/wall_dl.ppm
 share/xpilot/textures/wall_dr.ppm
@@ -80,6 +81,6 @@ share/xpilot/textures/wall_ull.ppm
 share/xpilot/textures/wall_ur.ppm
 share/xpilot/textures/wall_url.ppm
 share/xpilot/textures/wormhole.ppm
-@dirrm share/xpilot/maps
 @dirrm share/xpilot/textures
+@dirrm share/xpilot/maps
 @dirrm share/xpilot
