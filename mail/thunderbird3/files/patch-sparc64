@@ -55,15 +55,3 @@ diff -ru ./nsprpub/pr/include/md/_freebsd.cfg ../../work~/mozilla/nsprpub/pr/inc
  #else
  
  #error "Unknown CPU architecture"
-diff -ru ./nsprpub/pr/include/md/_freebsd.h ../../work~/mozilla/nsprpub/pr/include/md/_freebsd.h
---- ./nsprpub/pr/include/md/_freebsd.h	Thu Jan 16 15:09:12 2003
-+++ ../../work~/mozilla/nsprpub/pr/include/md/_freebsd.h	Tue May 20 21:27:13 2003
-@@ -48,6 +48,8 @@
- #define _PR_SI_ARCHITECTURE "x86"
- #elif defined(__alpha)
- #define _PR_SI_ARCHITECTURE "alpha"
-+#elif defined(__sparc__)
-+#define _PR_SI_ARCHITECTURE "sparc"
- #else
- #error "Unknown CPU architecture"
- #endif

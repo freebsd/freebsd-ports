@@ -1,6 +1,6 @@
---- gfx/src/gtk/nsFontMetricsXft.cpp.save	Thu Aug  7 12:14:49 2003
-+++ gfx/src/gtk/nsFontMetricsXft.cpp	Thu Aug  7 12:33:45 2003
-@@ -106,6 +106,7 @@
+--- gfx/src/gtk/nsFontMetricsXft.cpp.orig	Tue Nov 25 21:44:50 2003
++++ gfx/src/gtk/nsFontMetricsXft.cpp	Sun Dec  7 15:20:48 2003
+@@ -105,6 +105,7 @@
      FcPattern *mPattern;
      FcPattern *mFontName;
      FcCharSet *mCharset;
@@ -8,25 +8,16 @@
  };
  
  class nsFontXftInfo;
-@@ -1051,7 +1052,7 @@
-     // font in our loaded list that supports the character
-     for (PRInt32 i = 0, end = mLoadedFonts.Count(); i < end; ++i) {
+@@ -1093,7 +1094,7 @@
+ 
+     for (PRInt32 i = 1, end = mLoadedFonts.Count(); i < end; ++i) {
          nsFontXft *font = (nsFontXft *)mLoadedFonts.ElementAt(i);
 -        if (font->HasChar(PRUint32(aChar)))
 +        if (font->HasChar(PRUint32(aChar)) && font->GetXftFont())
              return font;
      }
  
-@@ -1492,7 +1493,7 @@
-         // this character.
-         for (PRInt32 j = 0, end = mLoadedFonts.Count(); j < end; ++j) {
-             font = (nsFontXft *)mLoadedFonts.ElementAt(j);
--            if (font->HasChar(c)) {
-+            if (font->HasChar(c) && font->GetXftFont()) {
-                 currFont = font;
-                 goto FoundFont; // for speed -- avoid "if" statement
-             }
-@@ -1922,6 +1923,7 @@
+@@ -1960,6 +1961,7 @@
      FcPatternReference(mFontName);
  
      mXftFont = nsnull;
@@ -34,7 +25,7 @@
  
      // set up our charset
      mCharset = nsnull;
-@@ -1948,7 +1950,7 @@
+@@ -1986,7 +1988,7 @@
  XftFont *
  nsFontXft::GetXftFont(void)
  {
@@ -43,7 +34,7 @@
          FcPattern *pat = FcFontRenderPrepare(0, mPattern, mFontName);
          if (!pat)
              return nsnull;
-@@ -1967,8 +1969,10 @@
+@@ -2005,8 +2007,10 @@
              FcPatternDel(pat, FC_SPACING);
  
          mXftFont = XftFontOpenPattern(GDK_DISPLAY(), pat);

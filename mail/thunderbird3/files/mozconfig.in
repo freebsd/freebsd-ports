@@ -13,9 +13,9 @@ ac_add_options --disable-oji
 ac_add_options --disable-necko-disk-cache
 ac_add_options --disable-tests
 ac_add_options --disable-profilesharing
-ac_add_options --enable-extensions=wallet,spellcheck
+ac_add_options --enable-extensions=wallet,spellcheck,xmlextras
 ac_add_options --enable-necko-protocols=http,file,jar,viewsource,res,data
-ac_add_options --enable-image-decoders=png,gif,jpeg
+ac_add_options --enable-image-decoders=png,gif,jpeg,bmp
 ac_add_options --enable-default-toolkit=gtk2
 ######################################################################
 # FBSD specific
@@ -51,6 +51,10 @@ if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
 else
     ac_add_options --disable-debug
+    export BUILD_OFFICIAL=1
+    export MOZILLA_OFFICIAL=1
+    mk_add_options BUILD_OFFICIAL=1
+    mk_add_options MOZILLA_OFFICIAL=1
 fi # test -n "$WITH_DEBUG"
 if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging
