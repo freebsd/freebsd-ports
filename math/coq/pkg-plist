@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/coq-interface
 bin/coq-interface.opt
 bin/coq-tex
@@ -6,6 +5,9 @@ bin/coq_makefile
 bin/coqc
 bin/coqdep
 bin/coqdoc
+%%IDE%%bin/coqide
+%%IDE%%bin/coqide.byte
+%%IDE%%bin/coqide.opt
 bin/coqmktop
 bin/coqtop
 bin/coqtop.byte
@@ -15,15 +17,20 @@ bin/gallina
 bin/parser
 bin/parser.opt
 lib/coq/contrib/cc/CCSolve.vo
+@dirrm lib/coq/contrib/cc
 lib/coq/contrib/field/Field.vo
 lib/coq/contrib/field/Field_Compl.vo
 lib/coq/contrib/field/Field_Tactic.vo
 lib/coq/contrib/field/Field_Theory.vo
+@dirrm lib/coq/contrib/field
 lib/coq/contrib/fourier/Fourier.vo
 lib/coq/contrib/fourier/Fourier_util.vo
+@dirrm lib/coq/contrib/fourier
 lib/coq/contrib/interface/vernacrc
+@dirrm lib/coq/contrib/interface
 lib/coq/contrib/omega/Omega.vo
 lib/coq/contrib/omega/OmegaLemmas.vo
+@dirrm lib/coq/contrib/omega
 lib/coq/contrib/ring/ArithRing.vo
 lib/coq/contrib/ring/NArithRing.vo
 lib/coq/contrib/ring/Quote.vo
@@ -35,17 +42,24 @@ lib/coq/contrib/ring/Setoid_ring.vo
 lib/coq/contrib/ring/Setoid_ring_normalize.vo
 lib/coq/contrib/ring/Setoid_ring_theory.vo
 lib/coq/contrib/ring/ZArithRing.vo
+@dirrm lib/coq/contrib/ring
 lib/coq/contrib/romega/ROmega.vo
 lib/coq/contrib/romega/ReflOmegaCore.vo
+@dirrm lib/coq/contrib/romega
+@dirrm lib/coq/contrib
 lib/coq/contrib7/cc/CCSolve.vo
+@dirrm lib/coq/contrib7/cc
 lib/coq/contrib7/field/Field.vo
 lib/coq/contrib7/field/Field_Compl.vo
 lib/coq/contrib7/field/Field_Tactic.vo
 lib/coq/contrib7/field/Field_Theory.vo
+@dirrm lib/coq/contrib7/field
 lib/coq/contrib7/fourier/Fourier.vo
 lib/coq/contrib7/fourier/Fourier_util.vo
+@dirrm lib/coq/contrib7/fourier
 lib/coq/contrib7/omega/Omega.vo
 lib/coq/contrib7/omega/OmegaLemmas.vo
+@dirrm lib/coq/contrib7/omega
 lib/coq/contrib7/ring/ArithRing.vo
 lib/coq/contrib7/ring/NArithRing.vo
 lib/coq/contrib7/ring/Quote.vo
@@ -57,16 +71,22 @@ lib/coq/contrib7/ring/Setoid_ring.vo
 lib/coq/contrib7/ring/Setoid_ring_normalize.vo
 lib/coq/contrib7/ring/Setoid_ring_theory.vo
 lib/coq/contrib7/ring/ZArithRing.vo
+@dirrm lib/coq/contrib7/ring
 lib/coq/contrib7/romega/ROmega.vo
 lib/coq/contrib7/romega/ReflOmegaCore.vo
+@dirrm lib/coq/contrib7/romega
+@dirrm lib/coq/contrib7
 lib/coq/ide/.coqide-gtk2rc
 lib/coq/ide/FAQ
 lib/coq/ide/coq.png
 lib/coq/ide/utf8.v
 lib/coq/ide/utf8.vo
+@dirrm lib/coq/ide
 lib/coq/states/initial.coq
+@dirrm lib/coq/states
 lib/coq/states7/barestate.coq
 lib/coq/states7/initial.coq
+@dirrm lib/coq/states7
 lib/coq/theories/Arith/Arith.vo
 lib/coq/theories/Arith/Between.vo
 lib/coq/theories/Arith/Bool_nat.vo
@@ -87,6 +107,7 @@ lib/coq/theories/Arith/Mult.vo
 lib/coq/theories/Arith/Peano_dec.vo
 lib/coq/theories/Arith/Plus.vo
 lib/coq/theories/Arith/Wf_nat.vo
+@dirrm lib/coq/theories/Arith
 lib/coq/theories/Bool/Bool.vo
 lib/coq/theories/Bool/BoolEq.vo
 lib/coq/theories/Bool/Bvector.vo
@@ -94,6 +115,7 @@ lib/coq/theories/Bool/DecBool.vo
 lib/coq/theories/Bool/IfProp.vo
 lib/coq/theories/Bool/Sumbool.vo
 lib/coq/theories/Bool/Zerob.vo
+@dirrm lib/coq/theories/Bool
 lib/coq/theories/Init/Datatypes.vo
 lib/coq/theories/Init/Logic.vo
 lib/coq/theories/Init/Logic_Type.vo
@@ -102,6 +124,7 @@ lib/coq/theories/Init/Peano.vo
 lib/coq/theories/Init/Prelude.vo
 lib/coq/theories/Init/Specif.vo
 lib/coq/theories/Init/Wf.vo
+@dirrm lib/coq/theories/Init
 lib/coq/theories/IntMap/Adalloc.vo
 lib/coq/theories/IntMap/Addec.vo
 lib/coq/theories/IntMap/Addr.vo
@@ -118,11 +141,13 @@ lib/coq/theories/IntMap/Mapfold.vo
 lib/coq/theories/IntMap/Mapiter.vo
 lib/coq/theories/IntMap/Maplists.vo
 lib/coq/theories/IntMap/Mapsubset.vo
+@dirrm lib/coq/theories/IntMap
 lib/coq/theories/Lists/List.vo
 lib/coq/theories/Lists/ListSet.vo
 lib/coq/theories/Lists/MonoList.vo
 lib/coq/theories/Lists/Streams.vo
 lib/coq/theories/Lists/TheoryList.vo
+@dirrm lib/coq/theories/Lists
 lib/coq/theories/Logic/Berardi.vo
 lib/coq/theories/Logic/ChoiceFacts.vo
 lib/coq/theories/Logic/Classical.vo
@@ -141,10 +166,12 @@ lib/coq/theories/Logic/Hurkens.vo
 lib/coq/theories/Logic/JMeq.vo
 lib/coq/theories/Logic/ProofIrrelevance.vo
 lib/coq/theories/Logic/RelationalChoice.vo
+@dirrm lib/coq/theories/Logic
 lib/coq/theories/NArith/BinNat.vo
 lib/coq/theories/NArith/BinPos.vo
 lib/coq/theories/NArith/NArith.vo
 lib/coq/theories/NArith/Pnat.vo
+@dirrm lib/coq/theories/NArith
 lib/coq/theories/Reals/Alembert.vo
 lib/coq/theories/Reals/AltSeries.vo
 lib/coq/theories/Reals/ArithProp.vo
@@ -198,13 +225,16 @@ lib/coq/theories/Reals/SeqSeries.vo
 lib/coq/theories/Reals/SplitAbsolu.vo
 lib/coq/theories/Reals/SplitRmult.vo
 lib/coq/theories/Reals/Sqrt_reg.vo
+@dirrm lib/coq/theories/Reals
 lib/coq/theories/Relations/Newman.vo
 lib/coq/theories/Relations/Operators_Properties.vo
 lib/coq/theories/Relations/Relation_Definitions.vo
 lib/coq/theories/Relations/Relation_Operators.vo
 lib/coq/theories/Relations/Relations.vo
 lib/coq/theories/Relations/Rstar.vo
+@dirrm lib/coq/theories/Relations
 lib/coq/theories/Setoids/Setoid.vo
+@dirrm lib/coq/theories/Setoids
 lib/coq/theories/Sets/Classical_sets.vo
 lib/coq/theories/Sets/Constructive_sets.vo
 lib/coq/theories/Sets/Cpo.vo
@@ -227,9 +257,11 @@ lib/coq/theories/Sets/Relations_2_facts.vo
 lib/coq/theories/Sets/Relations_3.vo
 lib/coq/theories/Sets/Relations_3_facts.vo
 lib/coq/theories/Sets/Uniset.vo
+@dirrm lib/coq/theories/Sets
 lib/coq/theories/Sorting/Heap.vo
 lib/coq/theories/Sorting/Permutation.vo
 lib/coq/theories/Sorting/Sorting.vo
+@dirrm lib/coq/theories/Sorting
 lib/coq/theories/Wellfounded/Disjoint_Union.vo
 lib/coq/theories/Wellfounded/Inclusion.vo
 lib/coq/theories/Wellfounded/Inverse_Image.vo
@@ -239,6 +271,7 @@ lib/coq/theories/Wellfounded/Transitive_Closure.vo
 lib/coq/theories/Wellfounded/Union.vo
 lib/coq/theories/Wellfounded/Well_Ordering.vo
 lib/coq/theories/Wellfounded/Wellfounded.vo
+@dirrm lib/coq/theories/Wellfounded
 lib/coq/theories/ZArith/BinInt.vo
 lib/coq/theories/ZArith/Wf_Z.vo
 lib/coq/theories/ZArith/ZArith.vo
@@ -262,6 +295,8 @@ lib/coq/theories/ZArith/Zpower.vo
 lib/coq/theories/ZArith/Zsqrt.vo
 lib/coq/theories/ZArith/Zwf.vo
 lib/coq/theories/ZArith/auxiliary.vo
+@dirrm lib/coq/theories/ZArith
+@dirrm lib/coq/theories
 lib/coq/theories7/Arith/Arith.vo
 lib/coq/theories7/Arith/Between.vo
 lib/coq/theories7/Arith/Bool_nat.vo
@@ -282,6 +317,7 @@ lib/coq/theories7/Arith/Mult.vo
 lib/coq/theories7/Arith/Peano_dec.vo
 lib/coq/theories7/Arith/Plus.vo
 lib/coq/theories7/Arith/Wf_nat.vo
+@dirrm lib/coq/theories7/Arith
 lib/coq/theories7/Bool/Bool.vo
 lib/coq/theories7/Bool/BoolEq.vo
 lib/coq/theories7/Bool/Bvector.vo
@@ -289,6 +325,7 @@ lib/coq/theories7/Bool/DecBool.vo
 lib/coq/theories7/Bool/IfProp.vo
 lib/coq/theories7/Bool/Sumbool.vo
 lib/coq/theories7/Bool/Zerob.vo
+@dirrm lib/coq/theories7/Bool
 lib/coq/theories7/Init/Datatypes.vo
 lib/coq/theories7/Init/Logic.vo
 lib/coq/theories7/Init/Logic_Type.vo
@@ -297,6 +334,7 @@ lib/coq/theories7/Init/Peano.vo
 lib/coq/theories7/Init/Prelude.vo
 lib/coq/theories7/Init/Specif.vo
 lib/coq/theories7/Init/Wf.vo
+@dirrm lib/coq/theories7/Init
 lib/coq/theories7/IntMap/Adalloc.vo
 lib/coq/theories7/IntMap/Addec.vo
 lib/coq/theories7/IntMap/Addr.vo
@@ -313,6 +351,7 @@ lib/coq/theories7/IntMap/Mapfold.vo
 lib/coq/theories7/IntMap/Mapiter.vo
 lib/coq/theories7/IntMap/Maplists.vo
 lib/coq/theories7/IntMap/Mapsubset.vo
+@dirrm lib/coq/theories7/IntMap
 lib/coq/theories7/Lists/List.vo
 lib/coq/theories7/Lists/ListSet.vo
 lib/coq/theories7/Lists/MonoList.vo
@@ -320,6 +359,7 @@ lib/coq/theories7/Lists/PolyList.vo
 lib/coq/theories7/Lists/PolyListSyntax.vo
 lib/coq/theories7/Lists/Streams.vo
 lib/coq/theories7/Lists/TheoryList.vo
+@dirrm lib/coq/theories7/Lists
 lib/coq/theories7/Logic/Berardi.vo
 lib/coq/theories7/Logic/ChoiceFacts.vo
 lib/coq/theories7/Logic/Classical.vo
@@ -338,10 +378,12 @@ lib/coq/theories7/Logic/Hurkens.vo
 lib/coq/theories7/Logic/JMeq.vo
 lib/coq/theories7/Logic/ProofIrrelevance.vo
 lib/coq/theories7/Logic/RelationalChoice.vo
+@dirrm lib/coq/theories7/Logic
 lib/coq/theories7/NArith/BinNat.vo
 lib/coq/theories7/NArith/BinPos.vo
 lib/coq/theories7/NArith/NArith.vo
 lib/coq/theories7/NArith/Pnat.vo
+@dirrm lib/coq/theories7/NArith
 lib/coq/theories7/Reals/Alembert.vo
 lib/coq/theories7/Reals/AltSeries.vo
 lib/coq/theories7/Reals/ArithProp.vo
@@ -396,13 +438,16 @@ lib/coq/theories7/Reals/SeqSeries.vo
 lib/coq/theories7/Reals/SplitAbsolu.vo
 lib/coq/theories7/Reals/SplitRmult.vo
 lib/coq/theories7/Reals/Sqrt_reg.vo
+@dirrm lib/coq/theories7/Reals
 lib/coq/theories7/Relations/Newman.vo
 lib/coq/theories7/Relations/Operators_Properties.vo
 lib/coq/theories7/Relations/Relation_Definitions.vo
 lib/coq/theories7/Relations/Relation_Operators.vo
 lib/coq/theories7/Relations/Relations.vo
 lib/coq/theories7/Relations/Rstar.vo
+@dirrm lib/coq/theories7/Relations
 lib/coq/theories7/Setoids/Setoid.vo
+@dirrm lib/coq/theories7/Setoids
 lib/coq/theories7/Sets/Classical_sets.vo
 lib/coq/theories7/Sets/Constructive_sets.vo
 lib/coq/theories7/Sets/Cpo.vo
@@ -425,9 +470,11 @@ lib/coq/theories7/Sets/Relations_2_facts.vo
 lib/coq/theories7/Sets/Relations_3.vo
 lib/coq/theories7/Sets/Relations_3_facts.vo
 lib/coq/theories7/Sets/Uniset.vo
+@dirrm lib/coq/theories7/Sets
 lib/coq/theories7/Sorting/Heap.vo
 lib/coq/theories7/Sorting/Permutation.vo
 lib/coq/theories7/Sorting/Sorting.vo
+@dirrm lib/coq/theories7/Sorting
 lib/coq/theories7/Wellfounded/Disjoint_Union.vo
 lib/coq/theories7/Wellfounded/Inclusion.vo
 lib/coq/theories7/Wellfounded/Inverse_Image.vo
@@ -437,6 +484,7 @@ lib/coq/theories7/Wellfounded/Transitive_Closure.vo
 lib/coq/theories7/Wellfounded/Union.vo
 lib/coq/theories7/Wellfounded/Well_Ordering.vo
 lib/coq/theories7/Wellfounded/Wellfounded.vo
+@dirrm lib/coq/theories7/Wellfounded
 lib/coq/theories7/ZArith/BinInt.vo
 lib/coq/theories7/ZArith/Wf_Z.vo
 lib/coq/theories7/ZArith/ZArith.vo
@@ -463,6 +511,9 @@ lib/coq/theories7/ZArith/Zwf.vo
 lib/coq/theories7/ZArith/auxiliary.vo
 lib/coq/theories7/ZArith/fast_integer.vo
 lib/coq/theories7/ZArith/zarith_aux.vo
+@dirrm lib/coq/theories7/ZArith
+@dirrm lib/coq/theories7
+@dirrm lib/coq
 share/emacs/site-lisp/coq-inferior.el
 share/emacs/site-lisp/coq.el
 share/texmf/tex/latex/misc/coqdoc.sty
@@ -473,52 +524,3 @@ share/texmf/tex/latex/misc/coqdoc.sty
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/coq/contrib/cc
-@dirrm lib/coq/contrib/field
-@dirrm lib/coq/contrib/fourier
-@dirrm lib/coq/contrib/interface
-@dirrm lib/coq/contrib/omega
-@dirrm lib/coq/contrib/ring
-@dirrm lib/coq/contrib/romega
-@dirrm lib/coq/contrib
-@dirrm lib/coq/contrib7/cc
-@dirrm lib/coq/contrib7/field
-@dirrm lib/coq/contrib7/fourier
-@dirrm lib/coq/contrib7/omega
-@dirrm lib/coq/contrib7/ring
-@dirrm lib/coq/contrib7/romega
-@dirrm lib/coq/contrib7
-@dirrm lib/coq/ide
-@dirrm lib/coq/states
-@dirrm lib/coq/states7
-@dirrm lib/coq/theories/Arith
-@dirrm lib/coq/theories/Bool
-@dirrm lib/coq/theories/Init
-@dirrm lib/coq/theories/IntMap
-@dirrm lib/coq/theories/Lists
-@dirrm lib/coq/theories/Logic
-@dirrm lib/coq/theories/NArith
-@dirrm lib/coq/theories/Reals
-@dirrm lib/coq/theories/Relations
-@dirrm lib/coq/theories/Setoids
-@dirrm lib/coq/theories/Sets
-@dirrm lib/coq/theories/Sorting
-@dirrm lib/coq/theories/Wellfounded
-@dirrm lib/coq/theories/ZArith
-@dirrm lib/coq/theories
-@dirrm lib/coq/theories7/Arith
-@dirrm lib/coq/theories7/Bool
-@dirrm lib/coq/theories7/Init
-@dirrm lib/coq/theories7/IntMap
-@dirrm lib/coq/theories7/Lists
-@dirrm lib/coq/theories7/Logic
-@dirrm lib/coq/theories7/NArith
-@dirrm lib/coq/theories7/Reals
-@dirrm lib/coq/theories7/Relations
-@dirrm lib/coq/theories7/Setoids
-@dirrm lib/coq/theories7/Sets
-@dirrm lib/coq/theories7/Sorting
-@dirrm lib/coq/theories7/Wellfounded
-@dirrm lib/coq/theories7/ZArith
-@dirrm lib/coq/theories7
-@dirrm lib/coq
