@@ -25,4 +25,12 @@ MAN1=		ctwm.1
 post-extract:
 	@(cd ${WRKSRC} && ${LN} -s ../xpm xpm)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

@@ -13,4 +13,5 @@ lib/X11/fonts/TTF/luxisb.ttf
 lib/X11/fonts/TTF/luxisbi.ttf
 lib/X11/fonts/TTF/luxisr.ttf
 lib/X11/fonts/TTF/luxisri.ttf
-@unexec %D/lib/X11/fonts/TTF/fonts.cache-1 2>/dev/null || /usr/bin/true
+@unexec rm %D/lib/X11/fonts/TTF/fonts.cache-1 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/lib/X11/fonts/TTF 2>/dev/null || true

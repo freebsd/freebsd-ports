@@ -2,3 +2,5 @@ lib/X11/xkb/rules/xfree86.xml
 lib/X11/xkb/rules/xkb.dtd
 share/locale/bg/LC_MESSAGES/xfree86_xkb_xml.mo
 share/locale/ru/LC_MESSAGES/xfree86_xkb_xml.mo
+%%NEWMTREE%%@unexec rmdir %D/lib/X11/xkb/rules 2>/dev/null || true
+%%NEWMTREE%%@unexec rmdir %D/lib/X11/xkb 2>/dev/null || true

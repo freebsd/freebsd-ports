@@ -2,3 +2,4 @@ bin/xfs
 etc/rc.d/xfs.sh
 @unexec if cmp -s %D/lib/X11/fs/config.default %D/lib/X11/fs/config; then rm -f %D/lib/X11/fs/config; fi
 lib/X11/fs/config.default
+@unexec rmdir %D/lib/X11/fs 2>/dev/null || true

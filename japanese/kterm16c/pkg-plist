@@ -6,3 +6,4 @@ lib/X11/fonts/misc/vga.pcf.gz
 share/doc/kterm16c/dot.termcap
 share/doc/kterm16c/kterm16c.doc
 @dirrm share/doc/kterm16c
+%%NEWMTREE%%@unexec rmdir %D/lib/X11/fonts/misc 2>/dev/null || true

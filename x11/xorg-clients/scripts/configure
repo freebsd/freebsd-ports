@@ -7,6 +7,7 @@ echo "#define BuildServer NO"			>> $LOCALDEF
 echo "#define BuildLBX NO"			>> $LOCALDEF
 echo "#define BuildXterm NO"			>> $LOCALDEF
 echo "#define BuildFontServer NO"			>> $LOCALDEF
+echo "#define BuildPlugin NO"			>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"			>> $LOCALDEF
 echo "#define UseInstalledLibraries YES"	>> $LOCALDEF
 echo "#define StandardIncludes -I${PREFIX}/include"	>> $LOCALDEF

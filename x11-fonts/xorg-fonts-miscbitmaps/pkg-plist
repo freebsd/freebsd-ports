@@ -411,3 +411,4 @@ lib/X11/fonts/misc/olgl10.pcf.gz
 lib/X11/fonts/misc/olgl12.pcf.gz
 lib/X11/fonts/misc/olgl14.pcf.gz
 lib/X11/fonts/misc/olgl19.pcf.gz
+@unexec rmdir %D/lib/X11/fonts/misc 2>/dev/null || true

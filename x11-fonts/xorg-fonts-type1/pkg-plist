@@ -58,4 +58,5 @@ lib/X11/fonts/Type1/l049033t.afm
 lib/X11/fonts/Type1/l049033t.pfa
 lib/X11/fonts/Type1/l049036t.afm
 lib/X11/fonts/Type1/l049036t.pfa
-@unexec %D/lib/X11/fonts/TTF/fonts.cache-1 2>/dev/null || /usr/bin/true
+@unexec rm %D/lib/X11/fonts/Type1/fonts.cache-1 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/lib/X11/fonts/Type1 2>/dev/null || true

@@ -314,7 +314,6 @@ include/X11/extensions/Xvproto.h
 include/X11/extensions/bigreqstr.h
 include/X11/extensions/composite.h
 include/X11/extensions/compositeproto.h
-include/X11/extensions/damage.h
 include/X11/extensions/damageproto.h
 include/X11/extensions/damagewire.h
 include/X11/extensions/dpms.h
@@ -496,6 +495,9 @@ lib/X11/locale/mulelao-1/XI18N_OBJS
 lib/X11/locale/mulelao-1/XLC_LOCALE
 lib/X11/locale/nokhchi-1/XI18N_OBJS
 lib/X11/locale/nokhchi-1/XLC_LOCALE
+lib/X11/locale/pt_BR.UTF-8/Compose
+lib/X11/locale/pt_BR.UTF-8/XI18N_OBJS
+lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
 lib/X11/locale/tatar-cyr/XI18N_OBJS
 lib/X11/locale/tatar-cyr/XLC_LOCALE
 lib/X11/locale/th_TH.UTF-8/XI18N_OBJS
@@ -672,6 +674,70 @@ libdata/pkgconfig/xdamage.pc
 libdata/pkgconfig/xevie.pc
 libdata/pkgconfig/xfixes.pc
 libdata/pkgconfig/xrender.pc
-@dirrm include/X11/XprintAppUtil
+@dirrm include/X11/extensions
+@dirrm include/X11/ICE
+@dirrm include/X11/SM
+@dirrm include/X11/Xmu
 @dirrm include/X11/XprintUtil
+@dirrm include/X11/XprintAppUtil
+@dirrm include/X11/Xaw
+@dirrm include/X11/Xcursor
+@dirrm include/GL
+@dirrm include/DPS
+@dirrm lib/X11/locale/lib/common
+@dirrm lib/X11/locale/lib
+@dirrm lib/X11/locale/C
+@dirrm lib/X11/locale/armscii-8
+@dirrm lib/X11/locale/en_US.UTF-8
+@dirrm lib/X11/locale/georgian-academy
+@dirrm lib/X11/locale/georgian-ps
+@dirrm lib/X11/locale/ibm-cp1133
+@dirrm lib/X11/locale/iscii-dev
+@dirrm lib/X11/locale/isiri-3342
+@dirrm lib/X11/locale/iso8859-1
+@dirrm lib/X11/locale/iso8859-2
+@dirrm lib/X11/locale/iso8859-3
+@dirrm lib/X11/locale/iso8859-4
+@dirrm lib/X11/locale/iso8859-5
+@dirrm lib/X11/locale/iso8859-6
+@dirrm lib/X11/locale/iso8859-7
+@dirrm lib/X11/locale/iso8859-8
+@dirrm lib/X11/locale/iso8859-9
+@dirrm lib/X11/locale/iso8859-10
+@dirrm lib/X11/locale/iso8859-11
+@dirrm lib/X11/locale/iso8859-13
+@dirrm lib/X11/locale/ja
+@dirrm lib/X11/locale/iso8859-14
+@dirrm lib/X11/locale/iso8859-15
+@dirrm lib/X11/locale/iso8859-9e
+@dirrm lib/X11/locale/ja.JIS
+@dirrm lib/X11/locale/ja.SJIS
+@dirrm lib/X11/locale/ja_JP.UTF-8
+@dirrm lib/X11/locale/ko
+@dirrm lib/X11/locale/ko_KR.UTF-8
+@dirrm lib/X11/locale/koi8-r
+@dirrm lib/X11/locale/koi8-u
+@dirrm lib/X11/locale/koi8-c
+@dirrm lib/X11/locale/microsoft-cp1251
+@dirrm lib/X11/locale/microsoft-cp1255
+@dirrm lib/X11/locale/microsoft-cp1256
+@dirrm lib/X11/locale/mulelao-1
+@dirrm lib/X11/locale/nokhchi-1
+@dirrm lib/X11/locale/pt_BR.UTF-8
+@dirrm lib/X11/locale/tatar-cyr
+@dirrm lib/X11/locale/th_TH
+@dirrm lib/X11/locale/th_TH.UTF-8
+@dirrm lib/X11/locale/tscii-0
+@dirrm lib/X11/locale/vi_VN.tcvn
+@dirrm lib/X11/locale/vi_VN.viscii
+@dirrm lib/X11/locale/zh_CN
+@dirrm lib/X11/locale/zh_CN.gbk
 @dirrm lib/X11/locale/zh_CN.UTF-8
+@dirrm lib/X11/locale/zh_HK.big5
+@dirrm lib/X11/locale/zh_HK.big5hkscs
+@dirrm lib/X11/locale/zh_TW
+@dirrm lib/X11/locale/zh_TW.big5
+@dirrm lib/X11/locale/zh_TW.UTF-8
+@dirrm lib/X11/locale/el_GR.UTF-8
+@unexec rmdir %D/include/X11/fonts 2>/dev/null || true
+@unexec rmdir %D/lib/X11/locale 2>/dev/null || true
