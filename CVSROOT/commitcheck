@@ -39,7 +39,7 @@ if (defined($cfg::COMMITCHECK_EXTRA) && $cfg::COMMITCHECK_EXTRA) {
 #
 # Ensure the minimum version of cvs is installed.
 #
-my $VERSTR = `/usr/bin/cvs -v`;
+my $VERSTR = `$cfg::PROG_CVS -v`;
 $VERSTR =~ s/.*Concurrent\D*(\S*).*/$1/s;
 $VERSTR =~ s/\D+/./g;
 my $VERSION = sprintf "%d%02d%02d%02d\n", split /\./, $VERSTR;
