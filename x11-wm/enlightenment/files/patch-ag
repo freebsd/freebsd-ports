@@ -14,7 +14,7 @@
  	rm -f $(DESTDIR)$(ENLIGHTENMENT_ROOT)/themes/DEFAULT; \
          $(LN_S) \
 -	BrushedMetal-Tigert \
-+	Aqua \
++	Marble \
  	$(DESTDIR)$(ENLIGHTENMENT_ROOT)/themes/DEFAULT;
  
  uninstall-local:
