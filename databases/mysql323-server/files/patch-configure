@@ -1,59 +1,15 @@
---- configure.orig	Thu Sep 11 13:49:33 2003
-+++ configure	Sat Jan 17 00:49:23 2004
-@@ -8999,7 +8999,7 @@
-   ;;
- esac
- fi
--HOSTNAME=$ac_cv_path_HOSTNAME
-+HOSTNAME="$ac_cv_path_HOSTNAME -s"
+--- configure.orig	Fri Sep 24 16:53:37 2004
++++ configure	Fri Sep 24 16:53:53 2004
+@@ -8071,8 +8071,6 @@
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"; $ac_aux_dir/ltconfig $LIBTOOL_DEPS;
  
- if test -n "$HOSTNAME"; then
-   echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9188,43 +9188,7 @@
- echo "${ECHO_T}no" >&6
- fi
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
  
--echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
--echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
--PS=$ac_cv_path_PS
--# Linux style
--if $PS p $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
--# Solaris
--elif $PS -p $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
--# BSD style
--elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
--then
-   FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# SysV style
--elif $PS -ef 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# Do anybody use this?
--elif $PS $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
--else
--  case $SYSTEM_TYPE in
--    *darwin*)
--      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *cygwin*)
--      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *)
--      { { echo "$as_me:$LINENO: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
--echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
--   { (exit 1); exit 1; }; }
--  esac
--fi
+ # Prevent multiple expansion
  
- echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
- echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -12509,8 +12473,16 @@
+@@ -12509,8 +12507,16 @@
      ;;
    *freebsd*)
      echo "Adding fix for interrupted reads"
@@ -72,7 +28,7 @@
      ;;
    *netbsd*)
      echo "Adding flag -Dunix"
-@@ -13710,30 +13682,6 @@
+@@ -13710,30 +13716,6 @@
  #define HAVE_RESTARTABLE_SYSCALLS 1
  _ACEOF
  
