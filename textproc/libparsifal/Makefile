@@ -14,12 +14,10 @@ MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget lthack
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

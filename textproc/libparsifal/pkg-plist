@@ -6,7 +6,7 @@ include/libparsifal/xmlhash.h
 include/libparsifal/xmlpool.h
 include/libparsifal/xmlsbuf.h
 include/libparsifal/xmlvect.h
-lib/libparsifal-0.7.4.so
+lib/libparsifal-%%VERSION%%.so
 lib/libparsifal.a
 lib/libparsifal.so
 @dirrm include/libparsifal
