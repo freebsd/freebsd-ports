@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tar archiver
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 INFO=		tar
 

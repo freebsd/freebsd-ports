@@ -19,7 +19,7 @@ MAINTAINER=	kcwu@ck.tp.edu.tw
 COMMENT=	Chinese input method server under X
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(USE_DB2)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3

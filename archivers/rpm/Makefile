@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2

@@ -16,7 +16,7 @@ COMMENT=	TI calculator link cables library
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 WANT_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to talk to Nokia cellular phones
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://cooledit.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_XPM=	yes

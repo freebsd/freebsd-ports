@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive, multi-threaded web browser for text terminals
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	ryan@sasknow.com
 COMMENT=	A "lightweight programmer's editor" with syntax highlighting
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

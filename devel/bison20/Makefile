@@ -18,7 +18,7 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 CONFLICTS=	bison-[0-9]+
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes

@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_REINPLACE=	yes

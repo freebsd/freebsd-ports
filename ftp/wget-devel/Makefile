@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 .endif
 
 CONFLICTS=	wget-*

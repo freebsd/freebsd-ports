@@ -82,7 +82,7 @@ RUN_DEPENDS+=		lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 .if defined(WITH_LOCALE)
-LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
 CONFIGURE_ARGS+=	--enable-i18n \
 			--with-localedir=${LOCALBASE}/share/locale
 .endif

@@ -42,7 +42,7 @@ BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
 RUN_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes

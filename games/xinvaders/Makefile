@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	games/arcade/invaders
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot-em-up them nasty little bugs
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 ONLY_FOR_ARCHS=	i386
 

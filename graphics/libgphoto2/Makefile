@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		usb-0.1.7:${PORTSDIR}/devel/libusb \
 		exif.10:${PORTSDIR}/graphics/libexif
 

@@ -19,7 +19,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 panel module
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \

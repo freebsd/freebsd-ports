@@ -14,7 +14,7 @@ MAINTAINER=	ronald@cs.vu.nl
 COMMENT=	Java Memory Profiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 

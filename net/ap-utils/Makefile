@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	daniel+aputils@pelleg.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

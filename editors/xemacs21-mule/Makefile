@@ -32,7 +32,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		${LIB_INPUT_METHOD}
 
 XEMACS_MAJOR_VER?=	21

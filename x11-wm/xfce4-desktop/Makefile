@@ -20,7 +20,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 desktop background manager and root menu
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui

@@ -17,7 +17,7 @@ MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	A Sybase DBI driver for Perl 5
 
 LIB_DEPENDS=	ct.2:${PORTSDIR}/databases/freetds \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}

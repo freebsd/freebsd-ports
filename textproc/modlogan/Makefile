@@ -17,7 +17,7 @@ COMMENT=	A modular log file analysis program
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gd.4:${PORTSDIR}/graphics/gd \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		expat.4:${PORTSDIR}/textproc/expat2
 

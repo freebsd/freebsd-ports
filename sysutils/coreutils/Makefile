@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 CONFLICTS=	sh-utils-* fileutils-* textutils-* id-utils-*
 

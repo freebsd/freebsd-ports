@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR= jedgar
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Graphing calculator using GTK+
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
 		tifiles.5:${PORTSDIR}/devel/libtifiles \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_GNOME=	glib20
 WANT_AUTOMAKE_VER=	15

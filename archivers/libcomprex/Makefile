@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	gnupdate
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		ltdl.4:${PORTSDIR}/devel/libltdl \
 		curl.2:${PORTSDIR}/ftp/curl
 .if !exists(/usr/bin/bzip2)

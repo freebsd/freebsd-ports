@@ -32,7 +32,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_XLIB=	yes
 USE_XPM=	yes
 .endif
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old \
 		${LIB_INPUT_METHOD}
 
 XEMACS_MAJOR_VER?=	21

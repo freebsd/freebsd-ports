@@ -14,7 +14,7 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A high level object-oriented programming language
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GL=		yes

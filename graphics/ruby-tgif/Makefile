@@ -18,7 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension library to draw Tgif graphics
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -16,7 +16,7 @@ MAINTAINER=	ptiJo@noos.fr
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX:${PORTSDIR}/x11-toolkits/fox \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes

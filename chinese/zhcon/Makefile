@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Console Chinese System which supports framebuffer device
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-included-gettext=${LOCALBASE}

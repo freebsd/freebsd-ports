@@ -21,7 +21,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""
 .endif

@@ -24,7 +24,7 @@ COMMENT=	Replacement for crypt(1)
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets

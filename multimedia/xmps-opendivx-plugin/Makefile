@@ -16,7 +16,7 @@ COMMENT=	xmps plugin using OpenDivX decoding engine from Project Mayo
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
 		xmps.0:${PORTSDIR}/multimedia/xmps \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://dione.ids.pl/~pborys/software/pinfo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

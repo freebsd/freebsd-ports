@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_BZIP2=	YES
 USE_XLIB=	YES

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A daemon for controlling APC UPS
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		gd.4:${PORTSDIR}/graphics/gd
 
 USE_REINPLACE=	yes

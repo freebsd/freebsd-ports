@@ -17,7 +17,7 @@ COMMENT=	Play, encode, and manage Ogg Vorbis files
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.2:${PORTSDIR}/ftp/curl \
 		FLAC.5:${PORTSDIR}/audio/flac \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		speex.2:${PORTSDIR}/audio/speex \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 MAINTAINER=	steffen@vogelreuter.de
 COMMENT=	A gtk based client to control an one disc fli4l router
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}

@@ -15,7 +15,7 @@ MAINTAINER=	clsung@dragon2.net
 COMMENT=	A text mode RSS newsreader
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Madplay MP3 player (part of MAD project)
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 

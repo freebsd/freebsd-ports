@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	jwhois
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	libs .
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A public ELF file access library similar to libelf(3) in Solaris"
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

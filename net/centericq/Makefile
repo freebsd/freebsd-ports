@@ -15,7 +15,7 @@ MASTER_SITES=	http://centericq.de/archive/source/releases/
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_OPENSSL=	yes

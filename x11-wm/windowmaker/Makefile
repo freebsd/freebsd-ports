@@ -19,7 +19,7 @@ COMMENT=	GNUStep-compliant NeXTStep window manager clone
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 .if !defined(WITHOUT_HERMES)
 LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
 .endif

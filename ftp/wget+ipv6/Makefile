@@ -27,7 +27,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP with IPv6 capability
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes

@@ -17,7 +17,7 @@ COMMENT?=	An image management tool for the X Window System
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12 \
-		${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext
+		${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.kcore.de/~kiza/linux/tornado/download/
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	A curses-based game of weather destruction
 
-LIB_DEPENDS=    intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    intl:${PORTSDIR}/devel/gettext-old
 
 MAN6=		tornado.6
 MANLANG=	"" de fr it ru

@@ -16,7 +16,7 @@ MAINTAINER=	rael@vectorstar.net
 COMMENT=	LostIRC is a simple and minimal IRC client for X
 
 LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2 \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack

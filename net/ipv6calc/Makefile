@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Convert, change and calculate with IPv6 addresses
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

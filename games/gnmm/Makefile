@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	barner@gmx.de
 COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes

@@ -17,7 +17,7 @@ COMMENT=	An open-source framework for the layout and rendering of i18n text
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 

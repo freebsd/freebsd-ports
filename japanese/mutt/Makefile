@@ -27,9 +27,9 @@ COMMENT=	Text-based mail client (Japanised Version)
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
 .else
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl

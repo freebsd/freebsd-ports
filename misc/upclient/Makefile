@@ -18,7 +18,7 @@ COMMENT=	The Uptimes project client
 # Global variables
 #
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_REINPLACE=	yes
 ALL_TARGET=	bsd

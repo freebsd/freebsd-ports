@@ -16,7 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An add-on graphical user interface for Ogle
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		glade-2.0:${PORTSDIR}/devel/libglade2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 .include <bsd.port.pre.mk>

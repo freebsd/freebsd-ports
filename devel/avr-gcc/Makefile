@@ -24,7 +24,7 @@ COMMENT=	FSF GCC 3.3.1 for Atmel AVR 8-bit RISC cross-development
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		autoheader:${PORTSDIR}/devel/autoconf \
-		gettext:${PORTSDIR}/devel/gettext
+		gettext:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
 

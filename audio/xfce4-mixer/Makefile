@@ -19,7 +19,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 volume mixer module for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \

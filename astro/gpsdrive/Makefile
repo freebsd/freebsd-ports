@@ -20,7 +20,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 MAINTAINER=	molter@gufi.org
 COMMENT=	A GPS navigation system
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GETOPT_LONG=yes

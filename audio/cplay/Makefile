@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end for various audio players
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes

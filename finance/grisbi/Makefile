@@ -15,7 +15,7 @@ MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext	\
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old	\
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
