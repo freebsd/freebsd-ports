@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
@@ -24,8 +24,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		feh.1
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	NO_DOC=yes
+post-patch:
+	@${PERL} -pi.bak -e 's|^LDFLAGS =.*$$|LDFLAGS = \@LDFLAGS\@|g ; \
+		 s|^INCLUDES =.*$$|INCLUDES = -I. -I$$(includedir)|g ; \
+		 s|-man install-docsDATA|-man|g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

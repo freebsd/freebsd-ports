@@ -2,25 +2,25 @@
 bin/cam
 bin/feh
 bin/gen_cam_menu.sh
-%%PORTDOCS%%share/doc/feh/AUTHORS
-%%PORTDOCS%%share/doc/feh/ChangeLog
-%%PORTDOCS%%share/doc/feh/README
-%%PORTDOCS%%share/doc/feh/TODO
-share/feh/fonts/black.style
-share/feh/fonts/menu.style
-share/feh/fonts/yudit.ttf
-share/feh/images/about.png
-share/feh/images/menubg_aluminium.png
-share/feh/images/menubg_aqua.png
-share/feh/images/menubg_black.png
-share/feh/images/menubg_britney.png
-share/feh/images/menubg_brushed.png
-share/feh/images/menubg_chrome.png
-share/feh/images/menubg_default.png
-share/feh/images/menubg_pastel.png
-share/feh/images/menubg_sky.png
-share/feh/images/menubg_wood.png
-@dirrm share/feh/images
-@dirrm share/feh/fonts
-@dirrm share/feh
-%%PORTDOCS%%@dirrm share/doc/feh
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/fonts/black.style
+%%DATADIR%%/fonts/menu.style
+%%DATADIR%%/fonts/yudit.ttf
+%%DATADIR%%/images/about.png
+%%DATADIR%%/images/menubg_aluminium.png
+%%DATADIR%%/images/menubg_aqua.png
+%%DATADIR%%/images/menubg_black.png
+%%DATADIR%%/images/menubg_britney.png
+%%DATADIR%%/images/menubg_brushed.png
+%%DATADIR%%/images/menubg_chrome.png
+%%DATADIR%%/images/menubg_default.png
+%%DATADIR%%/images/menubg_pastel.png
+%%DATADIR%%/images/menubg_sky.png
+%%DATADIR%%/images/menubg_wood.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
