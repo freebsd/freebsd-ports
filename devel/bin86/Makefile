@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bin86
-PORTVERSION=	0.16.14
+PORTVERSION=	0.16.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cix.co.uk/~mayday/dev86/
 
@@ -26,7 +26,7 @@ post-extract:
 
 pre-install:
 	${RM} -f ${PLIST}
-.for i in ${BINS} as/as86_encap
+.for i in ${BINS}
 	${ECHO_CMD} bin/`${BASENAME} ${i}` >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
@@ -41,7 +41,6 @@ do-install:
 .for i in ${BINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/as/as86_encap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for i in ${DOCS}
