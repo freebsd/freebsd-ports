@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/Netmask.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/Netmask.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Netmask/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Netmask
