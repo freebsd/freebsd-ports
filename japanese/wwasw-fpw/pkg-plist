@@ -1,0 +1,8 @@
+share/dict/wwasw-fpw/wwasw/data/honmon
+share/dict/wwasw-fpw/catalogs
+@dirrm share/dict/wwasw-fpw/wwasw/data
+@dirrm share/dict/wwasw-fpw/wwasw
+@dirrm share/dict/wwasw-fpw
+share/doc/wwasw-fpw/readme.pkg
+share/doc/wwasw-fpw/readme.txt
+@dirrm share/doc/wwasw-fpw
