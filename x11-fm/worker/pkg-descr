@@ -1,0 +1,10 @@
+Worker is a file-manager exclusive for X based on the famous filemanager
+"DirectoryOpus" on the AmigaOS. It is configurable on the fly without
+restarting Worker. Any extern program can be easily integrated in the GUI,
+including a button and a hotkey. Worker uses real file-recognition on
+file-content AND/OR file-ending, where each file-type can get it's own action.
+
+WWW: http://www.boomerangsworld.de/worker/
+
+- Simon Dick
+simond@irrelevant.org

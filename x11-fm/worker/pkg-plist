@@ -1,0 +1,14 @@
+bin/worker
+bin/worker_inst
+bin/xliwrapper_worker
+share/worker/catalogs/deutsch.catalog
+share/worker/catalogs/deutsch.catalog.coms
+share/worker/catalogs/deutsch.catalog.flags
+share/worker/catalogs/francais.catalog
+share/worker/catalogs/francais.catalog.coms
+share/worker/catalogs/francais.catalog.flags
+share/worker/config-de
+share/worker/config-en
+share/worker/config-fr
+@dirrm share/worker/catalogs
+@dirrm share/worker
