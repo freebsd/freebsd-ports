@@ -38,6 +38,11 @@ cd /dev
 ./MAKEDEV bpf2
 ./MAKEDEV bpf3
 
+** dhcpdb.relay file is need without relay agent **
+
+	  Please read more information in
+	/usr/local/share/dhcp/intro.dhcp.
+
 ** CHECK_SUM Problem under FreeBSD 2.1.x **
 
 	  This port collection is use tzfile.h from FreeBSD-current source
@@ -46,8 +51,17 @@ cd /dev
 
 	  If you use this port collection ***under FreeBSD 2.1-stable***:
 	2.1.0-RELEASE, 2.1.5-RELASE, 2.1.6-RELEASE, 2.1.7-RELEASE,
-	please make with ``make NO_CHECKSUM=yes'', or use latest
-	bsd.ports.mk and bsd.port.subdir.mk files in /usr/share/mk.
+	please use latest bsd.ports.mk and bsd.port.subdir.mk files in
+	/usr/share/mk or manually check checksum and delete files/md5
+	file.
+
+** kernel dependence of package program files **
+
+	  This compiled programs(packages) depends on kernel table as
+	ifconfig program.
+	  So please use fit package to your FreeBSD (for example under
+	2.1.5-RELEASE, use packages-2.1.5, do not use packages-2.2) or
+	recompile from ports collection.
 
 ** additional function **
 
@@ -66,6 +80,7 @@ cd /dev
 		Junichi SATOH<junichi@astec.co.jp>
 		Hisashi HIRAMOTO<hiramoto@phys.chs.nihon-u.ac.jp>
 		Takeshi TAGUCHI<taguchi@tohoku.iij.ad.jp>
+		Keisuke INOUE<keisuke@aa.cs.keio.ac.jp>
 
 - Yoshiro MIHIRA
 (sanpei@yy.cs.keio.ac.jp)
