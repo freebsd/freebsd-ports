@@ -16,6 +16,7 @@ libexec/nagios/check_ifoperstatus
 libexec/nagios/check_ifstatus
 libexec/nagios/check_imap
 libexec/nagios/check_ircd
+libexec/nagios/check_jabber
 %%SUB_LDAP%%libexec/nagios/check_ldap
 libexec/nagios/check_load
 libexec/nagios/check_log
@@ -25,6 +26,7 @@ libexec/nagios/check_mrtgtraf
 %%SUB_MYSQL%%libexec/nagios/check_mysql
 libexec/nagios/check_nagios
 libexec/nagios/check_nntp
+libexec/nagios/check_nntps
 libexec/nagios/check_nt
 libexec/nagios/check_ntp
 libexec/nagios/check_nwstat
