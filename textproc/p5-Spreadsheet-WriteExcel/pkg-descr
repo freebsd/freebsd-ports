@@ -9,6 +9,3 @@ The Excel file produced by this module is compatible with Excel 5, 95,
 This module cannot be used to write to an existing Excel file.
 
 WWW: http://search.cpan.org/dist/Spreadsheet-WriteExcel/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
