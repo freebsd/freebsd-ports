@@ -20,6 +20,7 @@ LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 CONFLICTS?=	pinentry-qt* pinentry-gtk* pinentry-curses*
 
 USE_GETOPT_LONG=yes
+USE_ICONV=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
