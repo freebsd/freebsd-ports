@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.13 1997/06/03 05:58:19 asami Exp $
+# $Id: Makefile,v 1.14 1997/09/14 04:00:20 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.0
@@ -23,6 +23,8 @@ NO_BUILD=	YES
 NO_CDROM=	"This software is shareware"
 
 do-extract:
+		@ ${RM} -rf ${WRKDIR}
+		@ ${MKDIR} ${WRKDIR}
 		@ unzip -q -o ${DISTDIR}/quake106.zip -d ${WRKDIR} resource.*
 		@ cat ${WRKDIR}/resource.dat ${WRKDIR}/resource.1 > ${WRKDIR}/resource.exe
 		@ cd ${WRKDIR}; lha xfq resource.exe id1/pak0.pak
