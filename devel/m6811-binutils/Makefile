@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils
 PKGNAMEPREFIX=	m6811-
 
 PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
-PATCHFILES=	binutils-2.9.1-m68hc1x-20000225.diffs.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20010107.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
