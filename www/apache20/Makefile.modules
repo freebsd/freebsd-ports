@@ -26,17 +26,19 @@ PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
 PKGNAMESUFFIX=		-${WITH_MPM:L}
 WITH_THREADS=		yes
 .      if ${WITH_MPM:L} == "worker"
-PLIST_SUB+=	PREFORK="@comment " WORKER=""
+PLIST_SUB+=	PREFORK="@comment " WORKER="" THREADPOOL="@comment "
 .      elif  ${WITH_MPM:L} == "perchild"
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
+.      elif  ${WITH_MPM:L} == "threadpool"
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL=""
 .      else
 IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif
 .   else
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
 .   endif
 .else
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
 .endif
 
 # xDBM section
@@ -187,9 +189,6 @@ _APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
 .if !defined(WITHOUT_SSL)
 _APACHE_MODULES+=	${SSL_MODULE}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-RC_SUB+=		-e 's,@@SSL@@,ssl,g'
-.else
-RC_SUB+=		-e 's,@@SSL@@,,g'
 .endif
 
 .if defined(WITH_SUEXEC)

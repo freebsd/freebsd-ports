@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -19,7 +19,7 @@ DIST_SUBDIR=	apache2
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	clement@FreeBSD.org
-COMMENT?=	Version 2 of the extremely popular Apache http server
+COMMENT?=	Version 2 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
@@ -47,6 +47,7 @@ SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 USE_AUTOCONF_VER=	257
 USE_LIBTOOL_VER=	15
 USE_PERL5=		yes
+USE_RC_SUBR=		yes
 USE_REINPLACE=		yes
 LIBTOOLFILES=		configure
 
@@ -64,7 +65,8 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
-RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} WWWOWN=${WWWOWN}
+
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
 WITH_MPM?=	prefork # or worker, perchild
@@ -85,6 +87,13 @@ CONFIGURE_ARGS+=	--enable-static-support
 
 .if defined(WITH_SSL_EXPERIMENTAL_ENGINE)
 CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
+.endif
+
+# debug overrides CFLAGS
+.if defined(WITH_DEBUG) || defined (DEBUG_FLAGS)
+DEBUG_FLAGS?=	-O0 -g -ggdb3
+CFLAGS=		${DEBUG_FLAGS}
+CONFIGURE_ARGS+=	--enable-maintainer-mode
 .endif
 
 # for slave ports
@@ -167,8 +176,9 @@ post-patch:
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
-	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
-	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
+	@${CAT} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
@@ -181,5 +191,6 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
