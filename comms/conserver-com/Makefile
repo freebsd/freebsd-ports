@@ -7,6 +7,7 @@
 
 PORTNAME=	conserver
 PORTVERSION=	7.1.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
