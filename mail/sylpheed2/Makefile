@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--disable-imlib
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme03
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else
