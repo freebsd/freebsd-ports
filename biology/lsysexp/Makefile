@@ -19,9 +19,11 @@ WRKSRC=		${WRKDIR}/lsysexp-0.67
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-BROKEN=		"Does not build with gtk+-2.4"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-DGTK_DISABLE_DEPRECATED||' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
