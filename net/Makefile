@@ -157,6 +157,7 @@
     SUBDIR += kdetelnet
     SUBDIR += kicq
     SUBDIR += kmud
+    SUBDIR += konverse
     SUBDIR += ksamba
     SUBDIR += kxicq
     SUBDIR += kxicq2
