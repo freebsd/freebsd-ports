@@ -1925,6 +1925,7 @@ gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
+gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdict		ports/textproc/gdict
 gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
