@@ -4,9 +4,9 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id: Makefile,v 1.2 1998/02/01 23:23:57 fenner Exp $
+# $Id: Makefile,v 1.3 1999/04/16 08:08:01 mharo Exp $
 #
-      
+
 DISTNAME=	macutils_2.0b3.orig
 PKGNAME=	macutils-2.0b3
 CATEGORIES=	emulators
@@ -56,4 +56,3 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
-
