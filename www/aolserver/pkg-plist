@@ -8,8 +8,6 @@ aolserver/bin/nscp.so
 aolserver/bin/nslog.so
 aolserver/bin/nsperm.so
 aolserver/bin/nsext.so
-aolserver/bin/nsunix.so
-aolserver/bin/nsvhr.so
 aolserver/modules/tcl/util.tcl
 aolserver/modules/tcl/debug.tcl
 aolserver/modules/tcl/namespace.tcl
@@ -28,7 +26,6 @@ aolserver/modules/tcl/nsperm/init.tcl
 aolserver/lib/tcl8.3/msgcat1.0/pkgIndex.tcl
 aolserver/lib/tcl8.3/msgcat1.0/msgcat.tcl
 aolserver/lib/tcl8.3/encoding/symbol.enc
-aolserver/lib/tcl8.3/encoding/ascii.enc
 aolserver/lib/tcl8.3/encoding/big5.enc
 aolserver/lib/tcl8.3/encoding/cp1250.enc
 aolserver/lib/tcl8.3/encoding/cp1251.enc
@@ -59,31 +56,31 @@ aolserver/lib/tcl8.3/encoding/cp932.enc
 aolserver/lib/tcl8.3/encoding/cp936.enc
 aolserver/lib/tcl8.3/encoding/cp949.enc
 aolserver/lib/tcl8.3/encoding/cp950.enc
-aolserver/lib/tcl8.3/encoding/gb12345.enc
+aolserver/lib/tcl8.3/encoding/dingbats.enc
 aolserver/lib/tcl8.3/encoding/euc-cn.enc
 aolserver/lib/tcl8.3/encoding/euc-jp.enc
 aolserver/lib/tcl8.3/encoding/euc-kr.enc
-aolserver/lib/tcl8.3/encoding/iso2022-jp.enc
+aolserver/lib/tcl8.3/encoding/gb12345.enc
 aolserver/lib/tcl8.3/encoding/gb1988.enc
 aolserver/lib/tcl8.3/encoding/gb2312.enc
-aolserver/lib/tcl8.3/encoding/macCentEuro.enc
+aolserver/lib/tcl8.3/encoding/iso2022-jp.enc
 aolserver/lib/tcl8.3/encoding/iso2022-kr.enc
 aolserver/lib/tcl8.3/encoding/iso2022.enc
 aolserver/lib/tcl8.3/encoding/iso8859-1.enc
 aolserver/lib/tcl8.3/encoding/iso8859-2.enc
 aolserver/lib/tcl8.3/encoding/iso8859-3.enc
 aolserver/lib/tcl8.3/encoding/iso8859-4.enc
-aolserver/lib/tcl8.3/encoding/shiftjis.enc
-aolserver/lib/tcl8.3/encoding/jis0201.enc
 aolserver/lib/tcl8.3/encoding/iso8859-5.enc
+aolserver/lib/tcl8.3/encoding/jis0201.enc
+aolserver/lib/tcl8.3/encoding/jis0208.enc
 aolserver/lib/tcl8.3/encoding/iso8859-6.enc
 aolserver/lib/tcl8.3/encoding/iso8859-7.enc
 aolserver/lib/tcl8.3/encoding/iso8859-8.enc
 aolserver/lib/tcl8.3/encoding/iso8859-9.enc
-aolserver/lib/tcl8.3/encoding/jis0208.enc
 aolserver/lib/tcl8.3/encoding/jis0212.enc
 aolserver/lib/tcl8.3/encoding/koi8-r.enc
 aolserver/lib/tcl8.3/encoding/ksc5601.enc
+aolserver/lib/tcl8.3/encoding/macCentEuro.enc
 aolserver/lib/tcl8.3/encoding/macCroatian.enc
 aolserver/lib/tcl8.3/encoding/macCyrillic.enc
 aolserver/lib/tcl8.3/encoding/macDingbats.enc
@@ -95,7 +92,8 @@ aolserver/lib/tcl8.3/encoding/macRomania.enc
 aolserver/lib/tcl8.3/encoding/macThai.enc
 aolserver/lib/tcl8.3/encoding/macTurkish.enc
 aolserver/lib/tcl8.3/encoding/macUkraine.enc
-aolserver/lib/tcl8.3/encoding/dingbats.enc
+aolserver/lib/tcl8.3/encoding/shiftjis.enc
+aolserver/lib/tcl8.3/encoding/ascii.enc
 aolserver/lib/tcl8.3/http1.0/pkgIndex.tcl
 aolserver/lib/tcl8.3/http1.0/http.tcl
 aolserver/lib/tcl8.3/http2.3/pkgIndex.tcl
@@ -110,9 +108,9 @@ aolserver/lib/tcl8.3/history.tcl
 aolserver/lib/tcl8.3/word.tcl
 aolserver/lib/tcl8.3/tclIndex
 aolserver/lib/tcl8.3/auto.tcl
-aolserver/lib/tcl8.3/license.terms
 aolserver/lib/tcl8.3/init.tcl
 aolserver/lib/tcl8.3/ldAout.tcl
+aolserver/lib/tcl8.3/license.terms
 aolserver/lib/tcl8.3/package.tcl
 aolserver/lib/tcl8.3/parray.tcl
 aolserver/lib/tcl8.3/safe.tcl
@@ -124,7 +122,6 @@ aolserver/servers/server1/modules/nsperm/hosts.allow
 aolserver/servers/server1/modules/nsperm/group
 aolserver/servers/server1/modules/nsperm/passwd
 aolserver/servers/server1/pages/index.html
-aolserver/include/tclDecls.h
 aolserver/include/Makefile.module
 aolserver/include/ns.h
 aolserver/include/nsextmsg.h
@@ -133,18 +130,19 @@ aolserver/include/nsthread.h
 aolserver/include/tcl.h
 aolserver/include/tcl76.h
 aolserver/include/tcl83.h
+aolserver/include/tclDecls.h
 aolserver/include/Makefile.global
 aolserver/include/nsd.h
 aolserver/sample-config.tcl
 etc/rc.d/aolserver.sh
 share/doc/aolserver/ChangeLog
 share/doc/aolserver/README
-share/doc/aolserver/install.html
 share/doc/aolserver/config.txt
 share/doc/aolserver/faq.html
 share/doc/aolserver/default-home.html
-share/doc/aolserver/tcl-changes.txt
+share/doc/aolserver/install.html
 share/doc/aolserver/license.txt
+share/doc/aolserver/tcl-changes.txt
 share/doc/aolserver/tuning.html
 @dirrm aolserver/bin
 @dirrm aolserver/log
@@ -161,8 +159,8 @@ share/doc/aolserver/tuning.html
 @dirrm aolserver/lib/tcl8.3/tcltest1.0
 @dirrm aolserver/lib/tcl8.3
 @dirrm aolserver/lib
-@dirrm aolserver/servers/server1/modules/nslog
 @dirrm aolserver/servers/server1/modules/nsperm
+@dirrm aolserver/servers/server1/modules/nslog
 @dirrm aolserver/servers/server1/modules
 @dirrm aolserver/servers/server1/pages
 @dirrm aolserver/servers/server1
@@ -170,4 +168,3 @@ share/doc/aolserver/tuning.html
 @dirrm aolserver/include
 @dirrm aolserver
 @dirrm share/doc/aolserver
-@dirrm share/doc
