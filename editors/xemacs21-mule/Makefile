@@ -17,6 +17,7 @@
 #	WITH_INPUT_METHOD : input methods(configure arguments)
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
+#	WITH_XIM          : X Input Method(configure arguments)
 
 .if !defined(MULE_SLAVE) && !defined(MULE_COMMON)
 MULE_SLAVE=	yes
@@ -38,7 +39,7 @@ LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 CONFIGURE_ARGS?=${XEMACS_ARCH} \
 		--prefix=${PREFIX} \
 		--with-x11 \
-		--with-xim=no \
+		--with-xim=${WITH_XIM} \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
@@ -82,6 +83,7 @@ SITE_INCLUDES+=		${PREFIX}/include
 SITE_LIBRARIES+=	${PREFIX}/lib
 WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
+WITH_XIM?=	no
 
 .if defined(MULE_SLAVE)
 pre-build:

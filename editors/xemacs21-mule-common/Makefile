@@ -18,6 +18,7 @@
 #	WITH_INPUT_METHOD : input methods(configure arguments)
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
+#	WITH_XIM          : X Input Method(configure arguments)
 
 XEMACS_MAJOR_VER=	21
 

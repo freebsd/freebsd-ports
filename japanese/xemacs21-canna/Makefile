@@ -18,6 +18,7 @@
 #	WITH_INPUT_METHOD : input methods(configure arguments)
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
+#	WITH_XIM          : X Input Method(configure arguments)
 
 CATEGORIES=	japanese
 
@@ -60,6 +61,9 @@ WITH_INPUT_METHOD=	--with-canna --with-wnn=no --with-wnn6=no
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Canna support
 .endif
+
+# If you need XIM support, set this to "xlib" or "motif".
+WITH_XIM?=		no
 
 post-install::
 	@${MKDIR} ${PREFIX}/man/ja/man1
