@@ -576,6 +576,7 @@
     SUBDIR += phpgedview
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
+    SUBDIR += plog
     SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
