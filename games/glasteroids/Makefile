@@ -24,13 +24,14 @@ pre-build:
 	@ ${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/Glasteroids ${PREFIX}/bin/glasteroids
+	@ ${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/Glasteroids ${PREFIX}/bin/glasteroids
 	@ ${MKDIR} ${PREFIX}/share/glasteroids
 	@ ${INSTALL_DATA} ${WRKSRC}/gameText.txf ${PREFIX}/share/glasteroids
 	@ cd ${WRKSRC}; tar -cf - scores.txt textures | \
 		( cd ${PREFIX}/share/glasteroids; tar -xf - )
 	@ ${CHMOD} a+rx ${PREFIX}/share/glasteroids/textures
-	@ ${CHMOD} a+rw ${PREFIX}/share/glasteroids/scores.txt
+	@ ${CHMOD} g+rw,a-x ${PREFIX}/share/glasteroids/scores.txt
+	@ ${CHOWN} root:games ${PREFIX}/share/glasteroids/scores.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
