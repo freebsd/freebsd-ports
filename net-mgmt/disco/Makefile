@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	disco
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.altmode.com/disco/
-DISTNAME=	${PORTNAME}-${PORTVERSION}bsd
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
@@ -18,6 +17,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
