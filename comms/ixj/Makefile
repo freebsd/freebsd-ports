@@ -31,7 +31,9 @@ post-patch:
 	${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
 
 do-install:
+	@${MKDIR} -p ${PREFIX}/modules
 	@${INSTALL_DATA} ${WRKSRC}/ixj.ko ${PREFIX}/modules
+	@${MKDIR} -p ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 	@${INSTALL_SCRIPT} ${WRKSRC}/ixj.sh ${PREFIX}/etc/rc.d/
