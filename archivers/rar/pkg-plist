@@ -1,6 +1,7 @@
 bin/rar
 lib/default.sfx
 etc/rarfiles.lst
+man/cat1/rar.1
 %%PORTDOCS%%%%DOCSDIR%%/technote.txt
 %%PORTDOCS%%%%DOCSDIR%%/rar_faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.txt

@@ -7,6 +7,7 @@
 
 PORTNAME=	rar
 PORTVERSION=    3.30
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=   http://files10.rarlab.com/rar/
@@ -14,8 +15,6 @@ DISTNAME=       rarbsd-3.3.0
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	File archiver (binary port)
-
-CAT1=		rar.1
 
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	Only unmodified original package can be distributed
