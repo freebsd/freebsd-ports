@@ -112,6 +112,17 @@ MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 .endif
+
+#
+# The JDK dependency needs to be at the first place, so all
+# following dependencies use the same JDK.
+#
+.if !defined(WITH_BSD_JDK)
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk14
+.else
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
+.endif
+
 #.if !defined(USE_GCC)
 #BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 #.endif
@@ -121,11 +132,6 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
-.endif
-.if !defined(WITH_BSD_JDK)
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk14
-.else
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
 .endif
 
 USE_PERL5=	yes
