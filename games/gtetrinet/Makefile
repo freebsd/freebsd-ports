@@ -5,15 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
+DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix esound
