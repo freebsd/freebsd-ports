@@ -1,0 +1,11 @@
+--- bsd/getopt.c.orig	Mon May  3 11:56:29 1993
++++ bsd/getopt.c	Mon Dec 27 21:05:38 1999
+@@ -31,7 +31,7 @@
+  * SUCH DAMAGE.
+  */
+ 
+-#if !defined(hpux) && !defined(sun)
++#if !defined(hpux) && !defined(sun) && !defined(__FreeBSD__)
+ 
+ /* guarantee that we have a `working' getopt() function */
+ #if defined(LIBC_SCCS) && !defined(lint)

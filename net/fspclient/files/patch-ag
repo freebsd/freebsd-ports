@@ -1,0 +1,11 @@
+--- bsd/ls.c.orig	Fri Dec 10 10:32:12 1993
++++ bsd/ls.c	Mon Dec 27 21:04:47 1999
+@@ -96,7 +96,7 @@
+ #ifndef ANSI_PROTOTYPES
+ 	extern int getopt();
+ #else /* ANSI_PROTOTYPES */
+-#ifdef linux
++#if defined(linux) || defined(__FreeBSD__)
+ 	extern int getopt();
+ #else	
+ 	extern int getopt(int argc, char **argv, char *opts); 

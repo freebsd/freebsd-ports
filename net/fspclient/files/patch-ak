@@ -1,0 +1,12 @@
+--- common/common.h.orig	Fri May  7 02:04:30 1993
++++ common/common.h	Mon Dec 27 20:53:08 1999
+@@ -92,7 +92,9 @@
+ /* definitions missing from many system headers */
+ extern int errno;
+ extern int sys_nerr;
++#ifndef __FreeBSD__
+ extern char *sys_errlist[];
++#endif
+ 
+ #if !HAVE_STRDUP
+ #ifndef ANSI_PROTOTYPES
