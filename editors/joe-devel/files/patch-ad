@@ -1,5 +1,5 @@
---- b.c.orig	Wed Apr 11 17:10:49 2001
-+++ b.c	Sat Apr 21 23:11:38 2001
+--- b.c.orig	Mon Jul  9 13:22:47 2001
++++ b.c	Mon Jul  9 13:22:49 2001
 @@ -16,6 +16,9 @@
  #include <pwd.h>
  #endif
@@ -10,27 +10,26 @@
  #include <stdlib.h>
  #include <ctype.h>
  #include <string.h>
-@@ -178,6 +181,7 @@
+@@ -184,6 +187,7 @@
  	else
  		b->o = pdefault;
- 	mset (b->marks, 0, sizeof (b->marks));
-+	b->filehandle = -1;  /* initialize filehandle &&& ob */
+ 	mset(b->marks, 0, sizeof(b->marks));
++	b->filehandle = -1; /* initialize filehande &&& ob */
  	b->rdonly = 0;
  	b->orphan = 0;
  	b->oldcur = 0;
-@@ -229,6 +233,11 @@
- void brm (B *b) {
- 	if (b && !--b->count)
- 	  {
-+           if (b->filehandle != -1) {
-+           /* close filehandle, free lock &&& ob */
-+           close (b->filehandle);
-+          }
-+
- 		  if (b->changed)
- 			  abrerr (b->name);
- 		  if (b == errbuf)
-@@ -1867,7 +1876,8 @@
+@@ -236,6 +240,10 @@
+ void brm(B * b)
+ {
+ 	if (b && !--b->count) {
++		if (b->filehandle != -1) {
++			/* close filehandle, free lock &&& ob */
++			close (b->filehandle);
++		}
+ 		if (b->changed)
+ 			abrerr(b->name);
+ 		if (b == errbuf)
+@@ -1809,7 +1817,8 @@
  	B *b;
  	long skip, amnt;
  	char *n;
@@ -38,29 +37,27 @@
 +	struct stat sb;
 +	int nowrite = 0, fh = -1;
  
- 	if (!s || !s[0])
- 	  {
-@@ -1920,6 +1930,14 @@
- 		  goto opnerr;
- 	  }
+ 	if (!s || !s[0]) {
+ 		error = -1;
+@@ -1857,6 +1866,12 @@
+ 		goto opnerr;
+ 	}
  
 +	/* Lock the file &&& ob,petef */
-+	if (fi)
-+	  {
-+	    fh = dup( fileno(fi) );
-+	    nowrite = (flock (fh, LOCK_EX | LOCK_NB));
-+	  }
-+
++	if (fi) {
++		fh = dup( fileno(fi) );
++		nowrite = (flock (fh, LOCK_EX | LOCK_NB));
++	}
 +
  	/* Skip data if we need to */
- 	if (skip && lseek (fileno (fi), skip, 0) < 0)
- 	  {
-@@ -1978,6 +1996,8 @@
- 	vsrm (n);
+ 	if (skip && lseek(fileno(fi), skip, 0) < 0) {
+ 		int r;
+@@ -1912,6 +1927,8 @@
+ 	vsrm(n);
  
  	b->er = error;
 +	if (fh != -1)
-+	  b->filehandle = fh;
++		b->filehandle = fh;
  	return b;
  }
  
