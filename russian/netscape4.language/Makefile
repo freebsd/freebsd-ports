@@ -3,7 +3,7 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/04/24 21:02:26 ache Exp $
+# $Id: Makefile,v 1.3 1996/05/23 01:43:41 ache Exp $
 #
 
 PKGNAME=        ru-netscape-3.0b4
@@ -14,12 +14,12 @@ MAINTAINER=	ache@FreeBSD.ORG
 RUN_DEPENDS += ${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.language
 RUN_DEPENDS += netscape:${PORTSDIR}/www/netscape3
 
+RESTRICTED=     "Includes a copyrighted file from Netscape."
 NO_PATCH=       YES
 NO_EXTRACT=     YES
 NO_CONFIGURE=   YES
 NO_BUILD=       YES
 NO_WRKDIR=      YES
-NO_PACKAGE=     YES
 USE_X11=        YES
 
 APPDEF = ${X11BASE}/lib/X11/app-defaults
