@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gordont@gnf.org
+MAINTAINER=	gordon@FreeBSD.org
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
