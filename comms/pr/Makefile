@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pr
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	comms net
 MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
 DISTNAME=	pr-${PORTVERSION}
