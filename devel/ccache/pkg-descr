@@ -1,0 +1,8 @@
+This is a port ccache, a tool which aims to make sure that the
+compilation process is efficent as possible, and therefore take the
+minimum amount of time.
+
+WWW: http://ccache.samba.org/
+
+- Dominic
+dominic_marks@btinternet.com

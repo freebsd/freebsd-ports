@@ -72,6 +72,7 @@
     SUBDIR += camlp4
     SUBDIR += cbrowser
     SUBDIR += cc65
+    SUBDIR += ccache
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += cdecl
