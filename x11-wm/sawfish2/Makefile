@@ -1,14 +1,14 @@
 # New ports collection makefile for:   sawmill
-# Version required:    0.17
+# Version required:    20.1
 # Date created:        13 September 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sawmill-0.17
+DISTNAME=	sawmill-0.20.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/sawmill/
+MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
 
 MAINTAINER=	nakai@FreeBSD.org
 
