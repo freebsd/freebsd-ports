@@ -5,24 +5,37 @@
 # $FreeBSD$
 
 PORTNAME=	sqsh
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.voicenet.com/~gray/
+MASTER_SITES=	http://www.sqsh.org/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	midom@dammit.lt
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds \
-		intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds
+
+.ifndef WITHOUT_X11
+WITH_MOTIF=	yes
+CONFIGURE_ARGS+=--with-motif
+.else
+PKGNAMESUFFIX+=	-nox11
+.endif
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	SYBASE="${LOCALBASE}"
+CONFIGURE_ARGS+=--with-readline
 
 MAN1=	sqsh.1
 
+ALL_TARGET=	build
+
 post-patch:
-.for file in configure autoconf/install-man
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/${file}
-.endfor
+	${MV} ${WRKSRC}/doc/global.sqshrc ${WRKSRC}/doc/global.sqshrc.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${PREFIX}/bin
+	cd ${WRKSRC}/doc && \
+		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/global.sqshrc ${PREFIX}/etc/sqshrc.default
 
 .include <bsd.port.mk>

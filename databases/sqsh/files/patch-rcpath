@@ -1,0 +1,7 @@
+--- src/Makefile.in	Tue Oct 15 12:59:14 2002
++++ src/Makefile.in	Tue Oct 15 13:13:13 2002
+@@ -11,3 +11,3 @@
+ SQSHRC_GLOBAL = @prefix@/etc/sqshrc
+-SQSHRC_PATH   = "$(SQSHRC_GLOBAL):$${HOME}/.sqshrc"
++SQSHRC_PATH   = "$(SQSHRC_GLOBAL).default:$(SQSHRC_GLOBAL):$${HOME}/.sqshrc"
+ 
