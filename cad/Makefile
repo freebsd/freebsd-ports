@@ -20,6 +20,7 @@
     SUBDIR += sis
     SUBDIR += spice
     SUBDIR += tkgate
+    SUBDIR += vipec
     SUBDIR += xcircuit
 
 .include <bsd.port.subdir.mk>
