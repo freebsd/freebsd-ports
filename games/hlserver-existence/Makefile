@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	existence
-PORTVERSION=	0.1.3.0
-MASTER_SITES=	ftp://icrontic.com/pub/ \
-		ftp://ftp.gameplanet.co.nz/pub/halflife/mods/existence/ \
-		ftp://ftp2.gameplanet.co.nz/pub/halflife/mods/existence/ \
-		http://existencevossey.free.fr/ \
-		http://vossey.free.fr/
+PORTVERSION=	0.1.4.0
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/existence/ \
+		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/existence/
 
-DISTNAME=	X-beta1.3.linux
+DISTNAME=	X-beta1.4.linux
 
 MAINTAINER=	lioux@FreeBSD.org
 
