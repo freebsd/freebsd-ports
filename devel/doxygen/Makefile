@@ -26,7 +26,9 @@ BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .if !defined(WITHOUT_LATEX)
 ALL_TARGET+=	pdf
 PLIST_SUB+=	HAVE_LATEX=""
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+GSPORT?=	print/ghostscript-gnu
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
+		gs:${PORTSDIR}/${GSPORT}
 MAKE_ARGS+=	HAVE_LATEX=yes
 .else # !defined(WITHOUT_LATEX)
 PLIST_SUB+=	HAVE_LATEX="@comment "
