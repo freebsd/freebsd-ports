@@ -7,6 +7,7 @@
 
 PORTNAME=	libjsearch
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
 		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
@@ -16,32 +17,29 @@ DISTNAME=	JSearch_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:patch
+BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+		makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT}
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV=	JX_INSTALL_ROOT="${PREFIX}/bin" \
-		JX_LIB_ROOT="${PREFIX}/lib" \
-		X11PREFIX="${X11PREFIX}" \
-		PORTCFLAGS="${CFLAGS}" \
-		PORTCXXFLAGS="${CXXFLAGS}" \
-		PORTINCLUDES="${PORTINCLUDES}"
+		JX_LIB_ROOT="${PREFIX}/lib"
 PLIST_SUB=	PORTNAME="${PORTNAME}" \
 		LIBNUMBER="${LIBNUMBER}" \
 		LIBVERSION="${LIBVERSION}" \
 		EXTRALIBFILES_MAKE_FILES="${EXTRALIBFILES_MAKE_FILES}" \
 		INCLUDEDIR="${INCLUDEDIR}"
-
-# Proper X11R6 Prefix
-# Change it, if you need it
-X11PREFIX?=	${X11BASE}
+INSTALLS_SHLIB=	yes
 
 # Make environment
-PORTINCLUDES=	-I${LOCALBASE}/include/jx -I${LOCALBASE}/share/jx
+PORTINCLUDES=	-I${X11BASE}/include/jx -I${X11BASE}/share/jx \
+		-I${X11BASE}/include/jcore
 
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
@@ -52,7 +50,7 @@ LIBFILES=	${PORTNAME}-${LIBVERSION}.a ${PORTNAME}-${LIBVERSION}.so
 # header files
 INCLUDEDIR=	jsearch
 # documentation
-DOCDIR_PREFIX=	${PREFIX}/share/doc/JX
+DOCDIR_PREFIX=	${PREFIX}/share/doc/jx
 DOCDIRS=	${PORTNAME}
 DOCDIRFILES=	LICENSE
 # xpm images
@@ -70,7 +68,7 @@ EXTRALIBFILES_MAKE_FILES=	jsearch_constants
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
 JXPORT_WRKSRC!=	cd ${JXPORT} && ${MAKE} -V WRKSRC
 # main jx distribution files needed for building
-COPY_JXDIRS=	include lib libjcore
+COPY_JXDIRS=	include
 COPY_JXFILES=	Makefile
 
 .if ${OSVERSION} >= 300000
@@ -95,9 +93,14 @@ post-extract:
 	@${CP} -p ${JXPORT_WRKSRC}/${i} ${WRKSRC}
 .endfor
 
+post-patch:
+	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
+
 post-build:
 	@cd ${WRKSRC}/${PORTNAME}; ${SETENV} ${MAKE_ENV} makemake; \
-		${SETENV} ${MAKE_ENV} ${GMAKE}
+		${SETENV} ${MAKE_ENV} ${GMAKE} \
+			${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 
 do-install:
 .if !defined(NOPORTDOCS)
