@@ -1,0 +1,5 @@
+bin/a2swrap
+bin/adzap2squirm
+bin/update-zapper
+etc/squirm/squirm.conf.zap
+etc/squirm/zap.patterns

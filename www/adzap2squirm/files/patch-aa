@@ -1,0 +1,39 @@
+--- a2swrap.orig	Fri Jul 18 20:57:46 2003
++++ a2swrap		Tue Sep  2 21:48:35 2003
+@@ -19,10 +19,10 @@
+ #
+ #ZAP_BASE: the base URL for the replacement files.
+ # DEFAULT: http://adzap.cs.zip.com.au
+-export ZAP_BASE=http://192.168.0.10/zaps
++# export ZAP_BASE=http://192.168.0.10/zaps
+ #ZAP_BASE_SSL: the base URL for replacement files via HTTPS
+ # DEFAULT: https://adzap.cs.zip.com.au
+-export ZAP_BASE_SSL=http://192.168.0.10/zaps
++# export ZAP_BASE_SSL=http://192.168.0.10/zaps
+ #STUBURL_*: replacement URLs for the various classes recognized
+ # by adzapper
+ # DEFAULT: same as the adzapper defaults
+@@ -30,7 +30,7 @@
+ # this would be the latest version of the adzapper script as downloaded
+ # from the homepage.
+ # default: squid_redirect
+-export A2S_PTNFILE=patterns
++# export A2S_PTNFILE=patterns
+ #A2S_PREFILE: a filename to read for patterns before the main pattern
+ # file.  If the file is not present it will be silently skipped.
+ # DEFAULT: prezap
+@@ -42,7 +42,7 @@
+ #A2S_OUTFILE: the filename to which the Squirm configuration will be
+ # written.
+ # DEFAULT: squirm.patterns
+-export A2S_OUTFILE=/usr/local/squirm/etc/squirm.patterns
++export A2S_OUTFILE=%%PREFIX%%/etc/squirm/zap.patterns
+ #A2S_CREATEACCELS: set to "false" to disable the creation of accelerator
+ # strings for Squirm.  Note that since v1.23, Squirm attempts to create
+ # accelerators for patterns which do not have them specified in the pattern
+@@ -60,4 +60,4 @@
+ 
+ export ZAP_MODE="CLEAR"
+ 
+-./adzap2squirm
++%%PREFIX%%/bin/adzap2squirm

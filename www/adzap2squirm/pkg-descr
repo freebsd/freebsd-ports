@@ -1,0 +1,6 @@
+Adzap2Squirm is a Perl script to take an Ad Zapper pattern file 
+(or the original Ad Zapper script itself, which includes the patterns) 
+and write out a corresponding file of patterns which Squirm can use for 
+ad zapping.
+
+WWW: http://www.meredevice.com/adzap2squirm.html
