@@ -1,6 +1,8 @@
-# $Id: Makefile,v 1.50 1998/08/30 18:30:51 steve Exp $
+# $Id: Makefile,v 1.51 1998/10/26 11:59:39 vanilla Exp $
 #
 
+    SUBDIR += R-a4
+    SUBDIR += R-letter
     SUBDIR += Scilab
     SUBDIR += add
     SUBDIR += apc
@@ -28,7 +30,6 @@
     SUBDIR += pari
     SUBDIR += plplot
     SUBDIR += pygist
-    SUBDIR += r
     SUBDIR += rng
     SUBDIR += sc
     SUBDIR += siag

@@ -1,9 +1,9 @@
-# New ports collection makefile for:    a2ps
+# New ports collection makefile for:    a2ps (letter)
 # Version required:     4.10.3
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.20 1998/09/19 16:38:36 smace Exp $
+# $Id: Makefile,v 1.21 1998/10/30 08:35:22 asami Exp $
 #
 
 DISTNAME=	a2ps-4.10.3
@@ -13,36 +13,23 @@ MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LOOP_VAR=	PAPERSIZE
-LOOP_OPTIONS=	Letter A4
 GNU_CONFIGURE=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 
-PAPERSIZE?=	Letter
+PAPERSIZE?=	letter
+PS!=		echo ${PAPERSIZE} | tr l L | tr a A
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PAPERSIZE}
+CONFIGURE_ARGS=	--with-medium=${PS}
 
-Letter letter:
-	${MAKE} PAPERSIZE=Letter
-
-Letterdj letterdj:
-	${MAKE} PAPERSIZE=Letterdj
-
-A4 a4:
-	${MAKE} PAPERSIZE=A4
-
-pre-configure:
-.if ${PAPERSIZE} != A4 && ${PAPERSIZE} != Letter && ${PAPERSIZE} != Letterdj
+.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
+.BEGIN:
 	@${ECHO}
 	@${ECHO} "PAPERSIZE incorrect value: ${PAPERSIZE}."
 	@${ECHO}
-	@${ECHO} "Must specify PAPERSIZE as one of A4, Letter, or Letterdj, either"
-	@${ECHO} "using setenv, or via Makefile targets of the same name.  Note"
-	@${ECHO} "that each PAPERSIZE has a leading capital letter, and Letterdj"
-	@${ECHO} "allows a slightly larger margins for DeskJets."
-	@false
+	@${ECHO} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
+	@${ECHO} "letterdj allows a slightly larger margins for DeskJets."
+	@${FALSE}
 .endif
-	${ECHO} ${PAPERSIZE} > ${WRKDIR}/.media
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
@@ -50,8 +37,3 @@ post-install:
 	(cd ${WRKSRC}/doc; ${MAKE} install)
 
 .include <bsd.port.mk>
-
-.if exists(${WRKDIR}/.media)
-PAPERSIZE=
-PAPERSIZE!=	${CAT} ${WRKDIR}/.media
-.endif

@@ -1,0 +1,12 @@
+# New ports collection makefile for:    psutils (a4)
+# Version required:     1.16
+# Date created:         21 September 1994
+# Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
+#
+# $Id$
+#
+
+PAPERSIZE=	a4
+MASTERDIR=	${.CURDIR}/../psutils-letter
+
+.include "${MASTERDIR}/Makefile"

@@ -1,22 +1,28 @@
-# $Id: Makefile,v 1.71 1998/11/18 15:52:38 smace Exp $
+# $Id: Makefile,v 1.72 1998/11/18 15:54:20 smace Exp $
 #
 
-    SUBDIR += a2ps
-    SUBDIR += a2ps43
+    SUBDIR += a2ps-a4
+    SUBDIR += a2ps-letter
+    SUBDIR += a2ps-letterdj
+    SUBDIR += a2ps43-a4
+    SUBDIR += a2ps43-letter
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += bibcard
     SUBDIR += bibview
-    SUBDIR += c2ps
+    SUBDIR += c2ps-a4
+    SUBDIR += c2ps-letter
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvips
     SUBDIR += dvips2ascii
     SUBDIR += dviselect
-    SUBDIR += enscript
+    SUBDIR += enscript-a4
+    SUBDIR += enscript-letter
+    SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
     SUBDIR += freetype
     SUBDIR += ggv
@@ -31,11 +37,13 @@
     SUBDIR += klyx
     SUBDIR += latex
     SUBDIR += lout
-    SUBDIR += lprps
+    SUBDIR += lprps-a4
+    SUBDIR += lprps-letter
     SUBDIR += lyx
     SUBDIR += makeindex
     SUBDIR += mgv
-    SUBDIR += mp
+    SUBDIR += mp-a4
+    SUBDIR += mp-letter
     SUBDIR += mpage
     SUBDIR += musixtex
     SUBDIR += offix-printer
@@ -48,7 +56,8 @@
     SUBDIR += pkfonts360
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
-    SUBDIR += psutils
+    SUBDIR += psutils-a4
+    SUBDIR += psutils-letter
     SUBDIR += rtf2latex
     SUBDIR += teTeX
     SUBDIR += teTeX-beta

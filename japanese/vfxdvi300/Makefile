@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/10/30 10:31:44 asami Exp $
+# $Id: Makefile,v 1.13 1998/11/07 10:49:47 asami Exp $
 #
 
 DISTNAME=	xdvi-17
@@ -23,8 +23,6 @@ MAINTAINER=	mita@jp.FreeBSD.org
 LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}
 
-LOOP_VAR=	RESOLUTION
-LOOP_OPTIONS=	118 240 300 360 400 600
 WRKSRC=		${WRKDIR}
 DIST_SUBDIR=	xdvi
 USE_IMAKE=      yes
@@ -33,25 +31,15 @@ EXTRACT_ONLY=	xdvi-17.tar.gz
 
 .if !defined(RESOLUTION)
 RESOLUTION=     300
-RESOLUTION_UNSPECIFIED= yes
 .else
 .if ${RESOLUTION} != 118 && ${RESOLUTION} != 240 && \
 	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \
 	${RESOLUTION} != 400  && ${RESOLUTION} != 600
-RESOLUTION_INVALID=     yes
-.endif
-.endif
-
-pre-fetch:
-.if defined(RESOLUTION_UNSPECIFIED)
-	@echo "Building xdvi with ${RESOLUTION}dpi fonts."
-	@echo "Set the environment variable RESOLUTION if you want"
-	@echo "it to use other resolutions."
-	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
-.elif defined(RESOLUTION_INVALID)
-	@echo "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
-	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
+.BEGIN:
+	@${ECHO} "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
+	@${ECHO} "Possible values are: 118, 240, 300, 360, 400 and 600."
 	@${FALSE}
+.endif
 .endif
 
 pre-patch:

@@ -1,13 +1,13 @@
-# New ports collection makefile for:   R
+# New ports collection makefile for:   R (letter)
 # Version required:    R-0.62.2
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.6 1998/08/20 10:21:20 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/18 11:40:41 asami Exp $
 #
 
 DISTNAME=	R-0.62.2
-PKGNAME=	R-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-0.62.2
+PKGNAME=	R-${PAPERSIZE}-0.62.2
 CATEGORIES=	math
 MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
 		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
@@ -27,30 +27,19 @@ BROKEN=		package
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-LOOP_VAR=	PAPERSIZE
-LOOP_OPTIONS=	letter a4
 CONFIGURE_ENV=		R_PAPERSIZE=${PAPERSIZE}
 
-.if !defined(PAPERSIZE)
-PAPERSIZE=a4
-.elif ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
-PAPERSIZE=letter
-.elif ${PAPERSIZE} == A4
-PAPERSIZE=a4
-.elif ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter
-PAPERSIZE_INVALID=yes
+PAPERSIZE?=	letter
+.if ${PAPERSIZE} != letter && ${PAPERSIZE} != a4
+.BEGIN:
+	@${ECHO} "Invalid value for PAPERSIZE: \"${PAPERSIZE}\""
+	@${ECHO} "Possible values are:  a4 and letter."
+	@${FALSE}
 .endif
 
 ALL_TARGET=all help html
 
 MAN1=	R.1 Rdconv.1
-
-pre-fetch:
-.if defined(PAPERSIZE_INVALID)
-	@${ECHO} "Invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@${ECHO} "Possible values are:  A4 (default), and Letter."
-	@${FALSE}
-.endif
 
 test:
 	@(cd ${WRKSRC}; make test-All)
