@@ -14,4 +14,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
+BROKEN=	Upcoming release will support Unix platform but current one\
+	does not
+
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
