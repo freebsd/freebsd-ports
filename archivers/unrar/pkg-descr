@@ -1,0 +1,10 @@
+    The unRAR utility is a freeware program, distributed with source
+    code and developed for extracting, testing and viewing the
+    contents of archives created with the RAR archiver, version 1.50
+    and above.  For the usage and distribution license please read the
+    file LICENSE.TXT.
+
+    The unRAR utility is a minor part of the RAR archiver and contains
+    RAR uncompression algorithm. UnRAR requires very small volume of
+    memory to operate.
+
