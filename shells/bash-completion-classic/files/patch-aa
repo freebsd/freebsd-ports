@@ -1,5 +1,5 @@
---- bash_completion.orig	Wed Nov 12 02:20:42 2003
-+++ bash_completion	Tue Dec  2 11:24:11 2003
+--- bash_completion.orig	Wed Feb 18 09:10:18 2004
++++ bash_completion	Wed Feb 18 09:11:01 2004
 @@ -31,14 +31,14 @@
  if [ -n "${FUNCNAME:-}" ]; then
  	# we're being sourced from within a function, so we can't use
@@ -19,21 +19,3 @@
  	  2>/dev/null
  fi
  
-@@ -1222,7 +1222,7 @@
- 			@(ex?(p?(ort))))
- 				mode=export
- 				;;
--			@(annotate|diff|history|import|release|status|update|?(un)edit))
-+			@(annotate|blame|diff|history|import|release|status|update|?(un)edit))
- 				mode=$i
- 				;;
- 			?(r)log)
-@@ -1371,7 +1371,7 @@
- 		fi
- 		;;
- 	"")
--		COMPREPLY=( $( compgen -W 'add admin annotate checkout ci co \
-+		COMPREPLY=( $( compgen -W 'add admin annotate blame checkout ci co \
- 					   commit diff delete edit export \
- 					   freeze get history import log new \
- 					   patch rcs rdiff release remove \
