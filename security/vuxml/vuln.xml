@@ -136,8 +136,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    attacker can spoof UDP packets with the WCCP router's IP
 	    address.</p>
 	</blockquote>
-	<p>Note: the WCCP protocol is not enabled by default in
-	  squid's FreeBSD port.</p>
       </body>
     </description>
     <references>
@@ -147,7 +145,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-07</discovery>
       <entry>2005-01-12</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-16</modified>
     </dates>
   </vuln>
 
