@@ -11,9 +11,9 @@
   	if (State->HeaderSize>State->BytesInHeaderBuf) {
  		guchar *tmp=realloc(State->HeaderBuf,State->HeaderSize);
  		if (!tmp)
---- gdk-pixbuf/io-xpm.c.orig	Mon Oct 11 15:47:42 2004
-+++ gdk-pixbuf/io-xpm.c	Mon Oct 11 16:01:13 2004
-@@ -352,16 +352,33 @@
+--- io-xpm.c.orig	Thu Mar  1 15:16:28 2001
++++ io-xpm.c	Sun Oct 17 17:05:38 2004
+@@ -352,16 +352,21 @@
  		return NULL;
  	}
  	sscanf (buffer, "%d %d %d %d", &w, &h, &n_col, &cpp);
@@ -34,20 +34,8 @@
  
 -	name_buf = g_new (gchar, n_col * (cpp + 1));
 -	colors = g_new (_XPMColor, n_col);
-+	name_buf = (gchar *) g_try_malloc (n_col * (cpp + 1));
-+	if (!name_buf) {
-+		g_warning ("Cannot allocate memory for loading XPM image");
-+		g_hash_table_destroy (color_hash);
-+		return NULL;
-+	}
-+
-+	colors = (_XPMColor *) g_try_malloc (sizeof (_XPMColor) * n_col);
-+	if (!colors) {
-+		g_warning ("Cannot allocate memory for loading XPM image");
-+		g_hash_table_destroy (color_hash);
-+		g_free (name_buf);
-+		return NULL;
-+	}
++	name_buf = (gchar *) g_malloc (n_col * (cpp + 1));
++	colors = (_XPMColor *) g_malloc (sizeof (_XPMColor) * n_col);
  
  	for (cnt = 0; cnt < n_col; cnt++) {
  		gchar *color_name;
