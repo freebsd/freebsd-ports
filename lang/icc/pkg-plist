@@ -913,6 +913,8 @@
 %%COMPILERDIR%%/include/fvec.h
 %%COMPILERDIR%%/include/ivec.h
 %%COMPILERDIR%%/include/ia32intrin.h
+%%MACHINE__TYPES_H%%%%COMPILERDIR%%/include/machine/_types.h
+%%MACHINE__TYPES_H%%@dirrm %%COMPILERDIR%%/include/machine
 %%COMPILERDIR%%/include/mathimf.h
 %%COMPILERDIR%%/include/mmintrin.h
 %%COMPILERDIR%%/include/pgouser.h
@@ -935,7 +937,9 @@
 %%COMPILERDIR%%/lib/libcxa.a
 %%COMPILERDIR%%/lib/libcxaguard.a
 %%COMPILERDIR%%/lib/libgcc.a
+%%COMPILERDIR%%/lib/libiccfbsd.a
 %%COMPILERDIR%%/lib/libimf.a
+%%COMPILERDIR%%/lib/libimf.so
 %%COMPILERDIR%%/lib/libirc.a
 %%COMPILERDIR%%/lib/libirc_s.a
 %%COMPILERDIR%%/lib/libsvml.a

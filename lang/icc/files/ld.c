@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002-2003 Marius Strobl
+ * Copyright (c) 2002-2004 Marius Strobl
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -42,12 +42,12 @@ __FBSDID("$FreeBSD$");
 
 #define	PATH_LD	"/usr/bin/ld"
 
-#define	LDW_CPP		(1<<0)
+#define	LDW_CXXICC	(1<<0)
 #define	LDW_DYN		(1<<1)
 #define	LDW_GPROF	(1<<2)
 #define	LDW_PIC		(1<<3)
-#define	LDW_THR		(1<<4)
-#define	LDW_LGCC	(1<<5)
+#define	LDW_STLP	(1<<4)
+#define	LDW_THR		(1<<5)
 
 struct arglist {
 	size_t argc;
@@ -105,7 +105,7 @@ main(int argc, char *argv[], char *envp[])
 #endif
 
 	 	if (ARGCMP(i, "-CPLUSPLUS")) {
-			flags |= LDW_CPP;
+			flags |= LDW_CXXICC;
 			continue;
 	    	}
 
@@ -134,16 +134,22 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
+		 * The STLport library just can be linked once otherwise
+		 * we get problems with constructors and destructors of
+		 * global instances.
+		 */
+		if (!strncmp(argv[i], "-lstlport_icc",
+		    sizeof("-lstlport_icc") - 1)) {
+			flags |= LDW_STLP;
+			continue;
+		}
+
+		/*
 		 * Link against libc_p when "-qp" or "-p" were given,
 		 * "/usr/lib/gcrt1.o" indicates this.
 		 */
 		if (ARGCMP(i, "/usr/lib/gcrt1.o")) {
 			flags |= LDW_GPROF;
-			continue;
-		}
-
-		if (ARGCMP(i, "-lgcc")) {
-			flags |= LDW_LGCC;
 			continue;
 		}
 	}
@@ -174,7 +180,8 @@ main(int argc, char *argv[], char *envp[])
 		if (!(flags & LDW_GPROF))
 			libc = "-lc_pic";
 		else {
-			char	*p;
+			char *p;
+
 			libc = "-lc_p";
 			asprintf(&p, "%s_p", libthr);
 			if (p == NULL)
@@ -190,12 +197,13 @@ main(int argc, char *argv[], char *envp[])
 
 	for (i = 0; i < argc; i++) {
 	 	if (ARGCMP(i, "-CPLUSPLUS") || ARGCMP(i, "-MT") ||
-		    ARGCMP(i, "-PIC") ||
-		    (ARGCMP(i, "-m") && i<argc-1 && ARGCMP(i+1, "elf_i386")) ||
-		    (ARGCMP(i, "elf_i386") && i != 0 && ARGCMP(i-1, "-m")))
+		    ARGCMP(i, "-PIC"))
 			continue;
 
-		/* prepend "-melf_i386" to the commandline */
+		/*
+		 * Prepend "-melf_i386" and "-melf_i386_fbsd" respectively
+		 * to the commandline.
+		 */
 		if (i == 0) {
 			addarg(&al, argv[0]);
 #if __FreeBSD_version < 500042
@@ -206,8 +214,14 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
-		/* Don't add obsolete flag "-Qy", don't add libgcc_s. */
-		if (ARGCMP(i, "-Qy") || ARGCMP(i, "-lgcc_s"))
+		/*
+		 * Don't add "-m elf_i386" ICC passed to us. Don't add
+		 * libgcc_eh, libgcc_s or libgcc_s_32.
+		 */
+		if ((ARGCMP(i, "-m") && i < argc - 1 && ARGCMP(i + 1,
+		    "elf_i386")) || (ARGCMP(i, "elf_i386") && i != 0 &&
+		    ARGCMP(i - 1, "-m")) || ARGCMP(i, "-lgcc_eh") ||
+		    ARGCMP(i, "-lgcc_s") || ARGCMP(i, "-lgcc_s_32"))
 			continue;
 
 		/*
@@ -216,7 +230,13 @@ main(int argc, char *argv[], char *envp[])
 		 * in both, the static and the dynamic, versions.
 		 */
 		if (ARGCMP(i, "-lcprts")) {
-			if (flags & LDW_CPP && !(flags & LDW_LGCC)) {
+			if (flags & LDW_CXXICC && !(flags & LDW_STLP)) {
+				char *p;
+
+				asprintf(&p, "-L%s/lib", icc_localbase);
+				if (p == NULL)
+					err(1, NULL);
+				addarg(&al, p);
 				addarg(&al,
 				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
 				addarg(&al, "-lstlport_icc");
@@ -225,16 +245,16 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
+		 * Inject the compatibility library for ICC libs on FreeBSD.
 		 * Link against libthr when compiling multi-threaded or C++
-		 * code (libcxa and libunwind depend on a threads library
-		 * when compiling C++ source).
+		 * code and not using libstdc++ (libcxa and libunwind depend
+		 * on a threads library).
 		 */
 		if (ARGCMP(i, "-lc")) {
-			if (al.argc > 0 &&
-			    strncmp(al.argv[al.argc - 1], "-B", 2))
-				addarg(&al,
-				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
-			if (flags & (LDW_CPP | LDW_THR)) {
+			addarg(&al, "-Bstatic");
+			addarg(&al, "-liccfbsd");
+			addarg(&al, flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
+			if (flags & (LDW_CXXICC | LDW_THR)) {
 				addarg(&al, libthr);
 #if __FreeBSD_version >= 500016
 				addarg(&al,
@@ -259,47 +279,29 @@ main(int argc, char *argv[], char *envp[])
 			addarg(&al, "-L/usr/libexec/elf");
 			addarg(&al, "-L/usr/libexec");
 			addarg(&al, "-L/usr/lib");
-			if (flags & LDW_CPP && !(flags & LDW_LGCC)) {
-				char *p;
-				asprintf(&p, "-L%s/lib", icc_localbase);
-				if (p == NULL)
-					err(1, NULL);
-				addarg(&al, p);
-			}
 			continue;
 		}
 
 		/*
-		 * Force libcxa, libcxaguard, libsvml and libunwind to static
-		 * linkage, since the dynamic versions have glibc dependencies.
-		 * Don't add superfluous -Bdynamic.
+		 * Force libcxa, libcxaguard, libimf, libsvml and libunwind
+		 * to static linkage, since the dynamic versions have glibc
+		 * dependencies.
 		 */
-		if (ARGCMP(i, "-Bdynamic") && i < argc - 1) {
-			if (ARGCMP(i + 1, "-lcxa") ||
-			    ARGCMP(i + 1, "-lcxaguard") ||
-			    ARGCMP(i + 1, "-lsvml") ||
-			    ARGCMP(i + 1, "-lunwind")) {
-				addarg(&al, "-Bstatic");
-				continue;
-			}
-
-			if (ARGCMP(i + 1, "-lcprts") ||
-			    ARGCMP(i + 1, "-lgcc_s"))
-				continue;
-		}
-
-		/* Don't add superfluous -Bstatic. */
-		if (ARGCMP(i, "-Bstatic") && i < argc - 1 &&
-		    (ARGCMP(i + 1, "-lcprts") || ARGCMP(i + 1, "-lgcc_s") ||
-		    ARGCMP(i + 1, "-lsvml") || ARGCMP(i + 1, "-lunwind")))
+		if (ARGCMP(i, "-Bdynamic") && i < argc - 1 &&
+		    (ARGCMP(i + 1, "-lcxa") || ARGCMP(i + 1, "-lcxaguard") ||
+		    ARGCMP(i + 1, "-limf") || ARGCMP(i + 1, "-lsvml") ||
+		    ARGCMP(i + 1, "-lunwind"))) {
+			addarg(&al, "-Bstatic");
 			continue;
+		}
 
 		/*
 		 * Sanity check if every lib is prepended by a linkage option,
 		 * add if missing.
 		 */
-		if (!strncmp(argv[i], "-l", 2) && al.argc > 0 &&
-		    strncmp(al.argv[al.argc - 1], "-B", 2)) {
+		if (!strncmp(argv[i], "-l", 2) &&
+		    ((i != 0 && strncmp(argv[i - 1], "-B", 2)) ||
+		    (al.argc > 0 && strncmp(al.argv[al.argc - 1], "-B", 2)))) {
 			if (ARGCMP(i, "-lcxa") || ARGCMP(i, "-lcxaguard") ||
 			    ARGCMP(i, "-limf") || ARGCMP(i, "-lirc") ||
 			    ARGCMP(i, "-lirc_s") || ARGCMP(i, "-lsvml") ||

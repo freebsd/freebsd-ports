@@ -1,6 +1,6 @@
 --- bin/icpc.orig	Tue Dec  9 19:55:12 2003
 +++ bin/icpc	Tue Dec  9 20:12:01 2003
-@@ -1,6 +1,12 @@
+@@ -1,6 +1,18 @@
  #!/bin/sh
  
 -if [ -z INTEL_LICENSE_FILE ]
@@ -10,11 +10,17 @@
 +GXX_ROOT=<INSTALLDIR>/lib
 +export GXX_ROOT
 +
++GXX_INCLUDE=%%GXX_INCLUDE%%
++if [ ! -z "$GXX_INCLUDE" ]
++then
++ export GXX_INCLUDE
++fi
++
 +if [ -z "$INTEL_LICENSE_FILE" ]
  then
  INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
  else
-@@ -8,7 +14,7 @@
+@@ -8,7 +20,7 @@
  fi
  export INTEL_LICENSE_FILE;
  
@@ -23,7 +29,7 @@
  then 
   LD_LIBRARY_PATH=<INSTALLDIR>/lib;
  else
-@@ -16,7 +22,7 @@
+@@ -16,7 +28,7 @@
  fi
  export LD_LIBRARY_PATH;
  
@@ -32,7 +38,7 @@
  then
   PATH=<INSTALLDIR>/bin;
  else
-@@ -24,11 +30,39 @@
+@@ -24,11 +36,43 @@
  fi
  export PATH;
  
@@ -55,6 +61,10 @@
 +  if [ ${#val1} -gt ${#val2} ] ; then
 +   echo "Sorry, option '$val1' is not supported on FreeBSD."
 +   exit 1
++  fi
++  if [ "${val1}" = "-cxxlib-icc" ] ; then
++   set -- "$@" "-I${ICC_LOCALBASE}/include/stlport"
++   set -- "$@" "-Qoption,ld,-CPLUSPLUS"
 +  fi
 +  if [ "${val1}" = "-Kpic" ] || [ "${val1}" = "-KPIC" ] || \
 +   [ "${val1}" = "-fpic" ] || [ "${val1}" = "-fPIC" ] ; then
