@@ -1,3 +1,2 @@
 ***********************************************************************
-To build The Fish without the GTK+ UI, define NO_GUI or WITHOUT_X11
-***********************************************************************
+- To build The Fish without the Qt or GTK+ UI, define NO_GUI or WITHOUT_X11
