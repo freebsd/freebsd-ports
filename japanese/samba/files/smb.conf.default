@@ -1,250 +1,552 @@
-# This is the main Samba configuration file. You should read the
-# smb.conf(5) manual page in order to understand the options listed
-# here. Samba has a huge number of configurable options (perhaps too
-# many!) most of which are not shown in this example
+# これは Samba の設定ファイルです。
+# ここで列挙されているオプションを理解するためには、smb.conf(5) のマニュ
+# アルページを読む必要があります。
+# Samba には多くの (というより、非常に多くの!) 設定可能なオプションが
+# あり、その多くはこの例には現れていません。
 #
-# Any line which starts with a ; (semi-colon) or a # (hash) 
-# is a comment and is ignored. In this example we will use a #
-# for commentry and a ; for parts of the config file that you
-# may wish to enable
-#
-# NOTE: Whenever you modify this file you should run the command "testparm"
-# to check that you have not many any basic syntactic errors. 
-#
-#======================= Global Settings =====================================
+# ; (セミコロン) および # (ハッシュ) で始まるすべての行はコメントであり、
+# 無視されます。この例では # はコメントに、; は有効化してもよいだろうオ
+# プションを示します。
+
+# 注意: このファイルを修正した場合は、必ず「testparm」コマンドを用いて、
+# 基本的な文法エラーがないかどうかチェックする必要があるでしょう。
+
+# 注意: coding system を EUC や SJIS にする場合は、smb.conf の文字コード
+# を必ずそれに合わせて変更してください。
+
+#======================= 全体的な設定 ==================================
 [global]
 
-# workgroup = NT-Domain-Name or Workgroup-Name, eg: REDHAT4
-   workgroup = MYGROUP
+#  === client code page と coding system は、必ず smb.conf の先頭で
+#  指定してください ===
 
-# server string is the equivalent of the NT Description field
-   server string = Samba Server
+# client code page はクライアントが利用する言語を指定します。
+# 932 は日本語を表します。
 
-# This option is important for security. It allows you to restrict
-# connections to machines which are on your local network. The
-# following example restricts access to two C class networks and
-# the "loopback" interface. For more examples of the syntax see
-# the smb.conf man page
-;   hosts allow = 192.168.1. 192.168.2. 127.
+    client code page = 932
 
-# If you want to automatically load your printer list rather
-# than setting them up individually then you'll need this
-   load printers = yes
+# coding system は、クライアントがシフトJIS コードで送信した日本語のファ
+# イル名を UNIX のファイルシステムに書き込むときの文字コードを指定しま
+# す。
+#
+#  ===このオプションは重要ですので注意して設定してください===
+#
+# EUC:   EUC で書き込みます。
+#        UNIX 上で日本語対応した ls コマンド等で日本語ファイル名を表示
+#        することができます。
+#        日本語対応しているコマンドの多くで、ファイル名を正しく扱えま
+#        すが、日本語対応していないコマンドでは問題が発生する可能性も
+#        あります。
+#        一部のシフトJIS 固有の文字は、変換できないので使えません。
+#        個人利用や、UNIX 上で日本語ファイル名を扱いたい場合に便利です
+#
+# SJIS: シフトJIS で書き込みます。
+#        UNIX 上で ls コマンド等では日本語ファイル名を表示できません。
+#        UNIX 上でのコマンド実行時に不具合が発生することがあります
+#        UNIX 側で SJIS を用いている場合に指定します。
+#       
+# CAP:   Macintosh 用のファイルサーバソフトである CAP と互換性のある方
+#        法でファイル名を書き込みます。
+#        UNIX 上でのファイル名は ASCII 文字に変換されたものが表示され
+#        ます。
+#        場合によっては UNIX 上でのコマンド実行時に不具合が発生する可
+#        能性があります。
+#        CAP や Netatalk と連携するのであれば、CAP にする必要があります。
+#
+# HEX:   文字コードを ASCII コードに変換する独自の方式でファイル名を書
+#        き込みます。
+#        UNIX 上でのファイル名は ASCII 文字に変換されたものが表示され
+#        ます。
+#        UNIX 上でのコマンド実行時に不具合が発生することはありません。
+#        UNIX 上での安定性を最大にしたい時に利用してください。
 
-# you may wish to override the location of the printcap file
-;   printcap name = /etc/printcap
+    coding system = EUC
 
-# on SystemV system setting printcap name to lpstat should allow
-# you to automatically obtain a printer list from the SystemV spool
-# system
-;   printcap name = lpstat
+# workgroup は、NTドメイン名、またはワークグループ名を指定してください。
+# 既にワークグループやNTドメインがあれば、その名前に合わせるとよいでしょ
+# う。
+    workgroup = SAMBA
 
-# It should not be necessary to specify the print system type unless
-# it is non-standard. Currently supported print systems include:
-# bsd, sysv, plp, lprng, aix, hpux, qnx
-;   printing = bsd
+# server string は、NT の [コントロールパネル] - [サーバ] - [説明] フィー
+# ルドや Windows 95/98 の [コントロールパネル] - [ネットワーク] - [コ
+# ンピュータの識別] タブの [コンピュータの説明] フィールドで設定される
+# コンピュータの情報を指定します。
+# この情報は、エクスプローラで、[表示] - [詳細] を選択して、 [ネットワー
+# クコンピュータ] アイコンを開くと見ることができます。
 
-# Uncomment this if you want a guest account, you must add this to /etc/passwd
-# otherwise the user "nobody" is used
-;  guest account = pcguest
+    server string = Samba %v
 
-# this tells Samba to use a separate log file for each machine
-# that connects
-   log file = %%SAMBA_LOGDIR%%/log.%m
+# security, password server は、Samba の認証モードを指定します。
+# 各認証モードの項には、関連したパラメータの記述も書いてあります。
+# 認証モードを変更する場合には、その認証モードに関連して有効にしたパラ
+# メータを全てコメントにしてください。
+#
+#  ===このオプションは重要ですので注意して設定してください===
+#
+# ------------------------------------------------------------
+# 1. NT ドメインのドメインコントローラに認証を任せる場合
+#   NT ドメインのアカウントから Samba にアクセスさせたいときは、この設
+#   定を使ってください。
+#   必ず DOMAIN_MEMBER.txt を参照して必要な設定を行なってから、以下を
+#   有効にしてください。
+#   workgroup に、所属したい NT ドメイン名を指定してください。また 
+#   encrypt passwords = yes に設定してください。
+#
+#   password server に記述する名前は、UNIX マシン上で解決可能な名前で、
+#   かつ実際のドメインコントローラのコンピュータ名と一致している必要が
+#   あります。* を指定すると、Windows NT と同様のロジックで自動的にサー
+#   バを検出します。* の指定は Samba 2.0.6 から有効です。
 
-# Put a capping on the size of the log files (in Kb).
-   max log size = 50
+;   security = domain
+;   password server = PDC_NETBIOS_NAME BDC_NET_BIOS_NAME
+;   password server = * 
+;   encrypt passwords = yes
 
-# Security mode. Most people will want user level security. See
-# security_level.txt for details.
-   security = user
-# Use password server option only with security = server
-;   password server = <NT-Server-Name>
+#   add/delete user script は、ドメインコントローラが認証したユーザを
+#   自動的に Samba マシンに追加する機能を提供します。
+#   詳細は smb.conf(5) を参照してください。
+#   smb-useradd と smb-userdel は example/add-delete-user-script/ にある
+#   サンプルです。必要に応じてカスタマイズしてください。
 
-# You may wish to use password encryption. Please read
-# ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
-# Do not enable this option unless you have read those documents
-;  encrypt passwords = yes
+;   add user script = /usr/sbin/smb-useradd %u
+;   delete user script = /usr/sbin/smb-userdel %u
 
-# Using the following line enables you to customise your configuration
-# on a per machine basis. The %m gets replaced with the netbios name
-# of the machine that is connecting
-;   include = %%SAMBA_CONFDIR%%/smb.conf.%m
+# ------------------------------------------------------------
+# 2. 別のサーバ(含むドメインコントローラ, NT Workstation, Samba サーバ)
+#   に認証を任せる場合
+#   password server には、信頼しているサーバだけを設定してください。
+#
+#   password server に記述する名前は、UNIX マシン上で解決可能な名前で、
+#   かつ実際のサーバのコンピュータ名と一致している必要があります。
 
-# Most people will find that this option gives better performance.
-# See speed.txt and the manual pages for details
-   socket options = TCP_NODELAY 
+;   security = server
+;   password server = SERVER_NETBIOS_NAME
 
-# Configure Samba to use multiple interfaces
-# If you have multiple network interfaces then you must list them
-# here. See the man page for details.
-;   interfaces = 192.168.12.2/24 192.168.13.2/24 
+#   encrypt password は、どうしても必要な場合以外 yes にしてください。
+;   encrypt passwords = yes
 
-# Browser Control Options:
-# set local master to no if you don't want Samba to become a master
-# browser on your network. Otherwise the normal election rules apply
+#   add user script は認証サーバが認証したユーザを、自動的に Samba 
+#   マシンに追加する機能を提供します。
+#   詳細は smb.conf(5) を参照してください。
+
+;   add user script = /usr/sbin/smb-useradd %u
+
+# ------------------------------------------------------------
+# 3. UNIX マシンで認証を行なう場合
+#   通常はこちらを選択してください。
+
+    security = user
+
+#   encrypt passwords はパスワードの暗号化を制御します。
+#   暗号化を有効にした場合は、smbpasswd コマンドを使って 
+#   /etc/smbpasswd に Samba でアクセスするユーザを追加してください。暗
+#   号化せずに運用することもできますが、推奨しません。
+#   詳細は Samba のドキュメントの ENCRYPTION.txt を参照してください。
+
+    encrypt passwords = yes
+
+# ------------------------------------------------------------
+# 4. ユーザベースの認証を行なわない場合
+#  必要な設定に付いては、smb.conf(5) を参照してください。
+
+;   security = share
+;   encrypt passwords = yes
+
+# ------------------------------------------------------------
+
+# guest account はゲストとして認証されたときに利用されるアカウントを規
+# 定します。デフォルトは nobody ですが、Samba 専用のアカウントを利用す
+# ることを勧めます。
+
+;   guest account = smbguest
+
+# map to guest は security = share 以外で、失敗した認証の扱いを規定し
+# ます。詳しくは smb.conf(5) を参照してください。
+#
+# Never:        認証は失敗します。
+#
+# Bad User:     認証を要求したユーザが存在しない場合、guest account と
+#               して認証されます。
+#               NT で Guest を有効にした場合と類似の動作を行ないます。
+#
+# Bad Password: 失敗した認証は、全て guest account として認証されます。
+
+    map to guest = Bad User
+
+# domain master, local master, preferred master, os level は、Samba の
+# ブラウジング機能を規定します。
+# domain logons は、Samba が Windows 95/98 のログオンサーバとして機能
+# するかどうかの制御を行ないます。
+# 詳細は smb.conf(5) を参照してください。
+#
+# 以下、何とおりかのテンプレートを提示します。この設定の意味を正しく理
+# 解するには、Microsoft ネットワークのブラウジング機能に付いて熟知する
+# 必要があります。これ以外の設定にしても構いませんが、自分が何を行なっ
+# ているかを充分理解した上で行なってください。
+#
+# 各テンプレートには、関連したパラメータの設定が記述されています。利用
+# するテンプレートを変更する場合には、そのテンプレートに関連して有効に
+# したパラメータを全てコメントにしてください。
+#
+#  ===このオプションは重要ですので注意して設定してください===
+#
+# ------------------------------------------------------------
+# 1. 同一サブネット内に、workgroup パラメータで設定したドメイン/ ワー
+#   クグループに所属する Windows NT/2000 マシンが存在する場合
+#   これは最も問題が発生する可能性の低い設定です。
+
+;   domain master = no
 ;   local master = no
+;   preferred master = no
+;   os level = 0
 
-# OS Level determines the precedence of this server in master browser
-# elections. The default value should be reasonable
-;   os level = 33
+#  ------------------------------------------------------------
+# 2. 同一サブネット内に、workgroup パラメータで設定したドメイン/ ワー
+#   クグループに所属する Windows NT/2000 マシンが存在しない、もしくは
+#   しない可能性がある場合
+#   これは、ほぼ Samba 2.0.5a までのデフォルト設定です。
+#   Samba 2.0.5a の場合 os level = 1 がデフォルトです。
 
-# Domain Master specifies Samba to be the Domain Master Browser. This
-# allows Samba to collate browse lists between subnets. Don't use this
-# if you already have a Windows NT domain controller doing this job
-;   domain master = yes 
+   domain master = no
+   local master = yes
+   preferred master = no
+   os level = 2
 
-# Preferred Master causes Samba to force a local browser election on startup
-# and gives it a slightly higher chance of winning the election
+# ------------------------------------------------------------
+# 3. Samba を Windows 95/ 98 のログオンサーバとして機能させる場合
+#   ただし、workgroup パラメータで設定したドメインが既に存在している場
+#   合、以下の設定は絶対に行なわないでください。
+#
+#   === 以下の設定は、workgroup パラメータの値を必ず確認してから行なっ
+#       てください。誤って設定すると Microsoft ネットワーク全体が機能
+#       不全に陥ります ===
+
+;   domain master = yes
+;   local master = yes
 ;   preferred master = yes
-
-# Use only if you have an NT server on your network that has been
-# configured at install time to be a primary domain controller.
-;   domain controller = <NT-Domain-Controller-SMBName>
-
-# Enable this if you want Samba to be a domain logon server for 
-# Windows95 workstations. 
+;   os level = 65
 ;   domain logons = yes
 
-# if you enable domain logons then you may want a per-machine or
-# per user logon script
-# run a specific logon batch file per workstation (machine)
+#   ログオンスクリプトを設定します。
+#   スクリプトはクライアント上で実行されるので、Windows の実行可能ファ
+#   イルか、スクリプトファイルを指定します。
+#
+#   ユーザがログオンしたマシン名ごとに指定されたログオンスクリプトを起
+#   動します。
 ;   logon script = %m.bat
-# run a specific logon batch file per username
+
+#   ログオンしたユーザ名ごとに指定されたログオンスクリプトを起動します。
 ;   logon script = %U.bat
 
-# Where to store roving profiles (only for Win95 and WinNT)
-#        %L substitutes for this servers netbios name, %U is username
-#        You must uncomment the [Profiles] share below
-;   logon path = \\%L\Profiles\%U
+#   共通のログオンスクリプトを起動します。
+;   login script = login.bat
 
-# Windows Internet Name Serving Support Section:
-# WINS Support - Tells the NMBD component of Samba to enable it's WINS Server
+#   移動プロファイルを保存する場所の指定とホームディレクトリの指定
+	%N はこのサーバの NetBIOS 名、%U はユーザ名に置換されます。
+;   logon path = \\%N\%U\profile
+;   logon home = \\%N\%U
+
+#   Samba 2.0.6 で Windows 95/98 に対して提供する移動プロファイルの場
+#   所を指定する場合、logon home で以下のように設定します。logon path 
+#   は無視されます(Samba 2.0.6 のドキュメントバグです)。
+
+;   logon home = \\%N\%U\profile
+
+# ------------------------------------------------------------
+
+# WINS 機能の選択
+# wins support, wins server は、Samba の WINS 機能を制御します。
+# 以下、何通りかのテンプレートを提示します。
+#
+# 各テンプレートには、関連したパラメータの設定が記述されています。利用
+# するテンプレートを変更する場合には、そのテンプレートに関連して有効に
+# したパラメータを全てコメントにしてください。
+# 
+# domain master = yes にして、ログオンサーバ提供を提供する場合は、WINS 
+# の利用を推奨します。
+
+# ------------------------------------------------------------
+# 1. ネットワーク上に WINS サーバが存在せず、利用もしない場合
+#   Samba のデフォルトの設定です。
+
+   wins support = no
+
+# ------------------------------------------------------------
+# 2. ネットワーク上に WINS サーバが存在する場合
+#   既存の WINS サーバの IP アドレスを指定します。 
+
+;   wins server = w.x.y.z
+;   wins support = no
+
+# ------------------------------------------------------------
+# 3. ネットワーク上に WINS サーバが存在せず、WINS サーバを利用したい場
+#   合
+#   Samba を WINS サーバとして設定します。
+
 ;   wins support = yes
 
-# WINS Server - Tells the NMBD components of Samba to be a WINS Client
-#	Note: Samba can be either a WINS Server, or a WINS Client, but NOT both
-;   wins server = w.x.y.z
+#   win hook パラメータにより、WINS サーバに追加されたホストのエントリを
+#   自動的に DNS サーバに反映することができます。
+#   詳細は smb.conf(5) を参照してください。
+#   dns_update は examples/wins_hook/ にあるサンプルです。利用するにはス
+#   クリプトの修正が必要ですので、スクリプト先頭部分のドキュメントを読ん
+#   で、カスタマイズしてください。
 
-# WINS Proxy - Tells Samba to answer name resolution queries on
-# behalf of a non WINS capable client, for this to work there must be
-# at least one	WINS Server on the network. The default is NO.
+;   wins hook = /usr/sbin/dns_update
+
+#   以下のオプションの意味に付いては smb.conf(5) を参照してください。
+#   通常は設定の必要はありません。
 ;   wins proxy = yes
 
-# DNS Proxy - tells Samba whether or not to try to resolve NetBIOS names
-# via DNS nslookups. The built-in default for versions 1.9.17 is yes,
-# this has been changed in version 1.9.18 to no.
-   dns proxy = no 
+# ------------------------------------------------------------
 
-#============================ Share Definitions ==============================
-[homes]
-   comment = Home Directories
-   browseable = no
-   writeable = yes
+# dns proxy は Samba が解決できない NetBIOS 名の解決を DNS に問い合わ
+# せるかどうかを制御します。
+# 既定値は yes ですが、余計なトラヒックを押える意味でも、この機能を利
+# 用している場合以外は no にすることを推奨します。
 
-# Un-comment the following and create the netlogon directory for Domain Logons
-; [netlogon]
-;   comment = Network Logon Service
-;   path = /usr/local/samba/lib/netlogon
-;   guest ok = yes
-;   writeable = no
-;   share modes = no
+    dns proxy = no
 
+# hosts allow はセキュリティ上重要です。この設定によって、ホスト単位で
+# 接続を制限することが可能です。以下のコメントになっている例では 2 つ
+# のクラス C のネットワークと「ループバック」インターフェースからの接
+# 続に限って許可するという制限を行なっています。詳細は smb.conf(5) を
+# 参照してください。
+# 指定がない場合、全てのインタフェースから接続できます。
 
-# Un-comment the following to provide a specific roving profile share
-# the default is to use the user's home directory
-;[Profiles]
-;    path = /usr/local/samba/profiles
-;    browseable = no
-;    guest ok = yes
+;   hosts allow = 192.168.1. 192.168.2. 127.
 
+# ほとんどの場合、このオプションを設定することで、より良い性能を得ること
+# ができるでしょう。詳しくは Speed.txt やマニュアルページを参照してくだ
+# さい。
 
-# NOTE: If you have a BSD-style print system there is no need to 
-# specifically define each individual printer
+    socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192
+
+# この方法を利用すると、クライアントホスト毎の設定を行うことが可能です。
+# %m は、クライアントホストの NetBIOS 名になります。
+
+;   include = %%SAMBA_CONFDIR%%/smb.conf.%m
+
+# 共有のデフォルト設定
+# ------------------------------------------------------------
+# 
+# 以下は、作成した共有のデフォルト設定を設定します。
+# ここで行なった設定は、個別の共有セクション中で上書きすることが可能で
+# す。
+#   
+
+#   規定の create mask は archive 属性を owner の実行ビットに反映させ
+#   るために 0744 になっていますが、全てのファイルに実行権がついて気持
+#   悪いという場合は、以下のように設定してください。
+#   ただし、Windows 側のアーカイブ属性が Samba 上で失われます。
+#   良く分からない方はこのままで結構です。
+
+;   create mask = 0644
+;   map archive   = no
+
+#   follow symlinks を有効にすることで、シンボリックリンクの追跡を止め
+#   させることが可能です。これを行なわないと、ユーザが /etc 等へのシン
+#   ボリックリンクを作成することで、/etc 内のファイルの閲覧が可能にな
+#   るといった問題が発生するので、一般ユーザが書き込み可能なディレクト
+#   リでは、no にしておいたほうが安全でしょう。既定値は yes です。
+
+;   follow symlinks = no
+
+#   oplocks は、Samba が Windows クライアントに対して提供するキャッシュ
+#   機能を制御します。共有内のファイルを UNIX からもアクセスする場合は、
+#   no に設定してください(SGI を除く)。
+
+    oplocks = no
+
+#   Samba の提供するディレクトリ内で Visual Studio でコンパイルを行な
+#   う場合は、以下を設定しましょう。
+
+;   dos file time resolution = yes
+;   fake directory create times = yes
+
+# ------------------------------------------------------------
+
+# ========================== ログの設定 ===========================
+
+# 接続するホスト毎にログファイルをわける
+   log file = %%SAMBA_LOGDIR%%/log.%m
+
+# ログファイルサイズの上限 (KB)
+   max log size = 50
+
+# ------------------------------------------------------------
+
+# ========================== 各共有の定義 ===========================
+
+# ------------------------------------------------------------
+# domain master = yes にして、ログオンサーバ提供を提供する場合は、以下
+# を有効にして、netlogon 共有を作成してください
+
+;[netlogon]
+;   comment     = Network Logon Service
+;   path        = /home/samba/netlogon
+;   writable    = no
+;   guest ok    = yes
+
+# ------------------------------------------------------------
+# /etc/printcap で定義されているプリンタを共有するには、[printers] 共
+# 有を有効にしてください。
+# [printers] 共有を有効にしない場合でも、個々のプリンタを個別に共有す
+# ることは可能です。
+
 [printers]
-   comment = All Printers
+   comment = All Printers in /etc/printcap
    path = %%SAMBA_SPOOL%%
    browseable = no
-# Set public = yes to allow user 'guest account' to print
-   guest ok = no
-   writeable = no
+   writable = no
    printable = yes
 
-# This one is useful for people to share files
-;[tmp]
-;   comment = Temporary file space
-;   path = /tmp
-;   read only = no
-;   public = yes
+# guest ok = yes にすると、ゲストアカウントで印刷が可能となります。
+;   guest ok = no
 
-# A publicly accessible directory, but read only, except for people in
-# the "staff" group
-;[public]
-;   comment = Public Stuff
-;   path = /home/samba
-;   public = yes
-;   writeable = yes
-;   printable = no
-;   write list = @staff
-
-# Other examples. 
+# ------------------------------------------------------------
+# 各人のホームディレクトリを共有するには、[homes] 共有を有効にします。
 #
-# A private printer, usable only by fred. Spool data will be placed in fred's
-# home directory. Note that fred must have write access to the spool directory,
-# wherever it is.
-;[fredsprn]
-;   comment = Fred's Printer
-;   valid users = fred
-;   path = /homes/fred
-;   printer = freds_printer
-;   public = no
-;   writeable = no
-;   printable = yes
+[homes]
+    comment      = %U's Home Directories
+    browseable   = no
+    writable     = yes
 
-# A private directory, usable only by fred. Note that fred requires write
-# access to the directory.
-;[fredsdir]
-;   comment = Fred's Service
-;   path = /usr/somewhere/private
-;   valid users = fred
-;   public = no
-;   writeable = yes
-;   printable = no
+# デフォルトでは、UNC で指定することで、他人のホームディレクトリにも接
+# 続が可能です。これを禁止する場合は、以下を設定してください。
+;   valid users  = %S
 
-# a service which has a different directory for each machine that connects
-# this allows you to tailor configurations to incoming machines. You could
-# also use the %U option to tailor it by user name.
-# The %m gets replaced with the machine name that is connecting.
-;[pchome]
-;  comment = PC Directories
-;  path = /usr/pc/%m
-;  public = no
-;  writeable = yes
+# ------------------------------------------------------------
+# 特定のプロジェクトのメンバのみが利用可能な共有の例です。
+# この共有を利用するには project-a グループが定義されている必要があり
+# ます。 
+# force create mode でグループに書き込み権を与えており、force group で
+# 全員を project-a グループとしてアクセスさせているので、project-a グ
+# ループに所属する原因が互いの作成したファイルにアクセス可能になります。
+# また、project-a グループは write list で指定されていますので、read
+# only パラメータの設定に関わらず、この共有に書き込むことが可能です。
+# 事前に最低でも
+#   chmod g+w /home/samba/project-a
+#   chgrp project-a /home/samba/project-a
+# を行なっておく必要があります。
 
-# A publicly accessible directory, read/write to all users. Note that all files
-# created in the directory by users will be owned by the default user, so
-# any user with access can delete any other user's files. Obviously this
-# directory must be writeable by the default user. Another user could of course
-# be specified, in which case all files would be owned by that user instead.
+;[project-a]
+;    comment = Project-A Space on %h
+;    path = /home/samba/project-a
+;    read only = yes
+;    force group = project-a
+;    force create mode = 0664
+;    force directory mode = 0775
+
+# この共有に対して(のみ)のホスト単位でのアクセス制御が可能です
+;   hosts allow = 192.168.10.
+
+# 以下は、アクセス制御のテンプレートです
+# 1. 認証されないユーザも含めた部外者の読み取りは許可するが、
+#    書き込みは project-a グループ構成員のみに限定する場合
+;    guest ok = yes
+;    write list = @project-a
+
+# 2. 認証されたユーザであるが project-a グループに所属しない部外者の
+#   読み取りは許可するが、書き込みは project-a グループ構成員のみに
+#   限定する場合
+;    write list = @project-a
+
+# 3. 部外者からは一切のアクセスを許可しない場合
+;    valid users = @project-a
+;    write list = @project-a
+
+# ------------------------------------------------------------
+# 全員が読み込み可能な共有の例です。ここでは anonymous ftp のディレク
+# トリを共有しています。全員をユーザ ftp として認証することで、許可さ
+# れないアクセスの可能性を極力低くします。
+# この共有を利用するには anonymous ftp が利用可能であり、一般的な設定
+# が行なわれている必要があります。
+
+;[pub]
+;    comment = Public Archive Directory on %h
+;    path = /home/ftp/pub
+;    guest ok = yes
+;    guest only = yes
+;    guest account = ftp
+
+# ------------------------------------------------------------
+# 全員が誰の作成したファイルでも読み書き可能なディレクトリの例です。
+# この共有を利用するには public グループが定義されている必要があります。 
+# 
+# とりあえず共有したい場合は便利ですが、決して推奨されるものではありま
+# せん。
+# 事前に最低でも
+#   chmod g+w /home/samba/public
+#   chgrp public /home/samba/public
+#  を行なっておく必要があります。
+
 ;[public]
-;   path = /usr/somewhere/else/public
-;   public = yes
-;   only guest = yes
-;   writeable = yes
-;   printable = no
+;        comment = Public Space
+;        path = /home/samba/public
+;        guest ok = yes
+;        read only = no
+;        force group = public
+;        force create mode = 0664
+;        force directory mode = 0775
+;        map archive = no
 
-# The following two entries demonstrate how to share a directory so that two
-# users can place files there that will be owned by the specific users. In this
-# setup, the directory should be writeable by both users and should have the
-# sticky bit set on it to prevent abuse. Obviously this could be extended to
-# as many users as required.
-;[myshare]
-;   comment = Mary's and Fred's stuff
-;   path = /usr/somewhere/shared
-;   valid users = mary fred
-;   public = no
-;   writeable = yes
-;   printable = no
-;   create mask = 0765
+# ------------------------------------------------------------
+# サーバ上の CD-ROM ドライブを共有する場合の例です。CD-ROM なので読み
+# 込み専用に設定します。
+#
+
+;[cdrom]
+;    comment       = CD-ROM on %h
+;    path          = /mnt/cdrom
+;    read only     = yes
+
+# クライアントからのアクセス開始/ 終了時に自動で mount, umount を行な
+# いたい時の例です。
+# 以下をそのまま利用すると、アクセス開始時に既に/mnt/cdrom がマウント
+# されているかどうかに関わらず、アクセス終了時には umount してしまいま
+# すので、UNIX 上からも mount や umount を行なうことも考慮するなら、も
+# う少し複雑な制御が必要でしょう。
+
+;    root preexec  = /sbin/mount /mnt/cdrom
+;    root postexec = /sbin/umount /mnt/cdrom
+
+# ------------------------------------------------------------
+# 同じディレクトリを Netatalk でも共有する場合の例です。
+# 日本語ファイル名を利用したい場合は、coding system = CAP に設定してく
+# ださい。 
+# Netatalk が作成する制御用のファイルやディレクトリは veto files パラ
+# メータにより Samba 経由では参照できなくなっているので、Windows 側か
+# らアクセスするときに誤って制御ファイルにアクセスしてしまう心配はあり
+# ません。
+# また delete veto files により、ディレクトリを削除するときに限り、
+# veto files で指定したファイルも自動的に削除されます。ただし、UNIX 上
+# でパーミッションがないために削除できないファイルが存在するときは除き
+# ます。
+
+;[mac]
+;    comment = Space for both Mac and Win
+;    path = /home/samba/mac
+;    read only = no
+;    
+;    veto files = /.AppleDouble/.bin/.AppleDesktop/Network Trash Folder/    
+;    delete veto files = yes
+
+# ------------------------------------------------------------
+# Samba 日本語版で可能な、日本語共有の例です。
+# Samba 日本語版を利用するときは、Samba 2.0.5a 日本語版の場合は
+# シフトJIS で、Samba 2.0.7 以降の日本語版では、client codepage と 
+# coding system で指定される文字コードで smb.conf を保存する必要がありま
+# すので、注意してください。
+
+;[共有]
+;   comment = 一時共有(読み込みのみ)
+;   volume = 共有
+;   path = /tmp
+;   read only = yes
 
 
+# 作成者: たかはしもとのぶ <monyo@samba.gr.jp>
+# 作成日: 2th Jul. 2000
+# 修正者: 中治 弘行 <nakaji@jp.FreeBSD.org>
+# 修正日: Aug 2, 2000

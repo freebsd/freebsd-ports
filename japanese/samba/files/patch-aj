@@ -1,0 +1,14 @@
+--- include/local.h.orig	Thu Nov 11 03:36:00 1999
++++ include/local.h	Fri Feb  4 11:33:01 2000
+@@ -178,9 +178,9 @@
+  * Default passwd chat script.
+  */
+ 
+-#define DEFAULT_PASSWD_CHAT "*new*password* %n\\n *new*password* %n\\n *changed*"
++#define DEFAULT_PASSWD_CHAT "*\\n*ew\\spassword* %n\\n *ew\\spassword* %n\\n *updating\\sthe\\sdatabase...\\npasswd:\\sdone\\n"
+ 
+ /* Minimum length of allowed password when changing UNIX password. */
+-#define MINPASSWDLENGTH 5
++#define MINPASSWDLENGTH 6
+ 
+ #endif

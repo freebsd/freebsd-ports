@@ -1,80 +1,35 @@
-*** Makefile.in.orig	Sun Sep 12 10:52:14 1999
---- Makefile.in	Sun Jan  2 10:34:05 2000
-***************
-*** 23,31 ****
-  
-  BASEDIR= @prefix@
-  BINDIR = @bindir@
-! # we don't use sbindir because we want full compatibility with
-! # the previous releases of Samba
-! SBINDIR = @bindir@
-  LIBDIR = @libdir@
-  VARDIR = @localstatedir@
-  MANDIR = @mandir@
---- 23,29 ----
-  
-  BASEDIR= @prefix@
-  BINDIR = @bindir@
-! SBINDIR = @sbindir@
-  LIBDIR = @libdir@
-  VARDIR = @localstatedir@
-  MANDIR = @mandir@
-***************
-*** 36,43 ****
-  # set these to where to find various files
-  # These can be overridden by command line switches (see smbd(8))
-  # or in smb.conf (see smb.conf(5))
-! SMBLOGFILE = $(VARDIR)/log.smb
-! NMBLOGFILE = $(VARDIR)/log.nmb
-  CONFIGFILE = $(LIBDIR)/smb.conf
-  LMHOSTSFILE = $(LIBDIR)/lmhosts
-  DRIVERFILE = $(LIBDIR)/printers.def
---- 34,42 ----
-  # set these to where to find various files
-  # These can be overridden by command line switches (see smbd(8))
-  # or in smb.conf (see smb.conf(5))
-! LOGDIR=$(VARDIR)/log
-! SMBLOGFILE = $(LOGDIR)/log.smb
-! NMBLOGFILE = $(LOGDIR)/log.nmb
-  CONFIGFILE = $(LIBDIR)/smb.conf
-  LMHOSTSFILE = $(LIBDIR)/lmhosts
-  DRIVERFILE = $(LIBDIR)/printers.def
-***************
-*** 53,58 ****
---- 52,60 ----
-  # the directory where lock files go
-  LOCKDIR = @lockdir@
-  
-+ # the directory where pid files go
-+ PIDFILEDIR = $(VARDIR)/run
-+ 
-  # The directory where code page definition files go
-  CODEPAGEDIR = $(LIBDIR)/codepages
-  
-***************
-*** 70,76 ****
-  PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\"
-  FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
-  FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
-! FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
-  FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
-  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
-  FLAGS  = $(ISA) $(FLAGS5) $(PASSWD_FLAGS)
---- 72,78 ----
-  PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\"
-  FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
-  FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
-! FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
-  FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
-  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
-  FLAGS  = $(ISA) $(FLAGS5) $(PASSWD_FLAGS)
-***************
-*** 461,466 ****
---- 463,469 ----
-  
-  installman:
-  	@$(SHELL) $(srcdir)/script/installman.sh $(MANDIR) $(srcdir) "@ROFF@"
-+ 	@$(SHELL) $(srcdir)/../samba-jp/man/install-man.sh "$(MANDIR)/ja" "$(srcdir)/../samba-jp/man" "cat" ""
-  
-  uninstall: uninstallman uninstallbin uninstallscripts uninstallcp
-  
+--- param/loadparm.c.orig	Mon May 29 05:48:34 2000
++++ param/loadparm.c	Wed Jun 28 09:21:07 2000
+@@ -106,6 +106,7 @@
+ {
+   char *szPrintcapname;
+   char *szLockDir;
++  char *szPidDir;
+   char *szRootdir;
+   char *szDefaultService;
+   char *szDfree;
+@@ -821,6 +822,8 @@
+   {N_("preload"),          P_STRING,  P_GLOBAL, &Globals.szAutoServices,    NULL,   NULL,  0},
+   {N_("lock directory"),   P_STRING,  P_GLOBAL, &Globals.szLockDir,         NULL,   NULL,  0},
+   {N_("lock dir"),         P_STRING,  P_GLOBAL, &Globals.szLockDir,         NULL,   NULL,  0},
++  {N_("pidfile dir"),      P_STRING,  P_GLOBAL, &Globals.szPidDir,          NULL, NULL,  0},
++  {N_("pidfile directory"),P_STRING,  P_GLOBAL, &Globals.szPidDir,          NULL, NULL,  0},
+ #ifdef WITH_UTMP
+   {N_("utmp directory"),   P_STRING,  P_GLOBAL, &Globals.szUtmpDir,         NULL,   NULL,  0},
+   {N_("utmp dir"),         P_STRING,  P_GLOBAL, &Globals.szUtmpDir,         NULL,   NULL,  0},
+@@ -911,6 +914,7 @@
+   string_set(&Globals.szPrintcapname, PRINTCAP_NAME);
+   string_set(&Globals.szDriverFile, DRIVERFILE);
+   string_set(&Globals.szLockDir, LOCKDIR);
++  string_set(&Globals.szPidDir, PIDFILEDIR);
+   string_set(&Globals.szRootdir, "/");
+ #ifdef WITH_UTMP
+   string_set(&Globals.szUtmpDir, "");
+@@ -1185,6 +1189,7 @@
+ FN_GLOBAL_STRING(lp_serverstring,&Globals.szServerString)
+ FN_GLOBAL_STRING(lp_printcapname,&Globals.szPrintcapname)
+ FN_GLOBAL_STRING(lp_lockdir,&Globals.szLockDir)
++FN_GLOBAL_STRING(lp_piddir,&Globals.szPidDir)
+ #ifdef WITH_UTMP
+ FN_GLOBAL_STRING(lp_utmpdir,&Globals.szUtmpDir)
+ FN_GLOBAL_STRING(lp_wtmpdir,&Globals.szWtmpDir)
