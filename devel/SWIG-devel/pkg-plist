@@ -1,20 +1,23 @@
 bin/swig
 bin/swig%%VER%%
-lib/libswigguile.a
-lib/libswigguile.la
-lib/libswigguile.so
-lib/libswigpl.a
-lib/libswigpl.la
-lib/libswigpl.so
-lib/libswigpy.a
-lib/libswigpy.la
-lib/libswigpy.so
-lib/libswigrb.a
-lib/libswigrb.la
-lib/libswigrb.so
-lib/libswigtcl8.a
-lib/libswigtcl8.la
-lib/libswigtcl8.so
+%%WANT_SWIG_GUILE%%lib/libswigguile.a
+%%WANT_SWIG_GUILE%%lib/libswigguile.la
+%%WANT_SWIG_GUILE%%lib/libswigguile.so
+%%WANT_SWIG_PHP4%%lib/libswigphp4.a
+%%WANT_SWIG_PHP4%%lib/libswigphp4.la
+%%WANT_SWIG_PHP4%%lib/libswigphp4.so
+%%WANT_SWIG_PERL%%lib/libswigpl.a
+%%WANT_SWIG_PERL%%lib/libswigpl.la
+%%WANT_SWIG_PERL%%lib/libswigpl.so
+%%WANT_SWIG_PYTHON%%lib/libswigpy.a
+%%WANT_SWIG_PYTHON%%lib/libswigpy.la
+%%WANT_SWIG_PYTHON%%lib/libswigpy.so
+%%WANT_SWIG_RUBY%%lib/libswigrb.a
+%%WANT_SWIG_RUBY%%lib/libswigrb.la
+%%WANT_SWIG_RUBY%%lib/libswigrb.so
+%%WANT_SWIG_TCL%%lib/libswigtcl8.a
+%%WANT_SWIG_TCL%%lib/libswigtcl8.la
+%%WANT_SWIG_TCL%%lib/libswigtcl8.so
 lib/swig%%VER%%/array.i
 lib/swig%%VER%%/autodoc.i
 lib/swig%%VER%%/carray.i
@@ -22,6 +25,7 @@ lib/swig%%VER%%/common.swg
 lib/swig%%VER%%/constraints.i
 lib/swig%%VER%%/ctype.i
 lib/swig%%VER%%/exception.i
+lib/swig%%VER%%/guile/cplusplus.i
 lib/swig%%VER%%/guile/guile.i
 lib/swig%%VER%%/guile/guile.swg
 lib/swig%%VER%%/guile/guiledec.swg
@@ -31,11 +35,12 @@ lib/swig%%VER%%/guile/list-vector.i
 lib/swig%%VER%%/guile/pointer-in-out.i
 lib/swig%%VER%%/guile/ports.i
 lib/swig%%VER%%/guile/typemaps.i
-lib/swig%%VER%%/java/java.i
 lib/swig%%VER%%/java/java.swg
 lib/swig%%VER%%/java/java_arrays.i
+lib/swig%%VER%%/java/javahead.swg
 lib/swig%%VER%%/java/stl_string.i
 lib/swig%%VER%%/java/typemaps.i
+lib/swig%%VER%%/java/various.i
 lib/swig%%VER%%/malloc.i
 lib/swig%%VER%%/math.i
 lib/swig%%VER%%/memory.i
@@ -47,8 +52,13 @@ lib/swig%%VER%%/objc.i
 lib/swig%%VER%%/perl5/Makefile.pl
 lib/swig%%VER%%/perl5/perl5.swg
 lib/swig%%VER%%/perl5/perlmain.i
+lib/swig%%VER%%/perl5/perlrun.swg
 lib/swig%%VER%%/perl5/ptrlang.i
 lib/swig%%VER%%/perl5/typemaps.i
+lib/swig%%VER%%/php4/php4.swg
+lib/swig%%VER%%/php4/php4run.swg
+lib/swig%%VER%%/php4/ptrlang.i
+lib/swig%%VER%%/php4/typemaps.i
 lib/swig%%VER%%/pointer.i
 lib/swig%%VER%%/python/defarg.swg
 lib/swig%%VER%%/python/embed.i
@@ -56,6 +66,7 @@ lib/swig%%VER%%/python/embed13.i
 lib/swig%%VER%%/python/embed14.i
 lib/swig%%VER%%/python/embed15.i
 lib/swig%%VER%%/python/ptrlang.i
+lib/swig%%VER%%/python/pyrun.swg
 lib/swig%%VER%%/python/python.swg
 lib/swig%%VER%%/python/typemaps.i
 lib/swig%%VER%%/python/typemaps_old.i
@@ -64,16 +75,15 @@ lib/swig%%VER%%/ruby/embed.i
 lib/swig%%VER%%/ruby/exception.i
 lib/swig%%VER%%/ruby/extconf.rb
 lib/swig%%VER%%/ruby/ptrlang.i
-lib/swig%%VER%%/ruby/ruby.i
 lib/swig%%VER%%/ruby/ruby.swg
 lib/swig%%VER%%/ruby/rubydec.swg
 lib/swig%%VER%%/ruby/rubydef.swg
+lib/swig%%VER%%/ruby/rubyhead.swg
 lib/swig%%VER%%/ruby/typemaps.i
 lib/swig%%VER%%/stdlib.i
 lib/swig%%VER%%/swig.swg
 lib/swig%%VER%%/tcl/constarray.i
 lib/swig%%VER%%/tcl/consthash.i
-lib/swig%%VER%%/tcl/object.swg
 lib/swig%%VER%%/tcl/ptrlang.i
 lib/swig%%VER%%/tcl/swigtcl8.swg
 lib/swig%%VER%%/tcl/tcl8.swg
@@ -85,6 +95,7 @@ lib/swig%%VER%%/timers.i
 @dirrm lib/swig%%VER%%/java
 @dirrm lib/swig%%VER%%/mzscheme
 @dirrm lib/swig%%VER%%/perl5
+@dirrm lib/swig%%VER%%/php4
 @dirrm lib/swig%%VER%%/python
 @dirrm lib/swig%%VER%%/ruby
 @dirrm lib/swig%%VER%%/tcl
