@@ -4453,6 +4453,7 @@ lambda		ports/math/lambda
 lambdamoo	ports/net/lambdamoo
 lame		ports/audio/lame
 landscape	ports/graphics/landscape
+lanbrowsing	ports/network/lanbrowsing
 lapack		ports/math/lapack
 lapack++	ports/math/lapack++
 lapack95	ports/math/lapack95
