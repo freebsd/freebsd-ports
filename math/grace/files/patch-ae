@@ -1,0 +1,16 @@
+--- conf/generic.orig	Mon Mar 29 01:02:41 1999
++++ conf/generic	Fri Sep 10 16:10:36 1999
+@@ -17,11 +17,11 @@
+ ###############################
+ # Misc optimization flags
+ #
+-OPTIMIZE="-O"
++#OPTIMIZE="-O"
+ ###############################
+ 
+ ###############################
+ # Flags used for debugging
+ #
+-DEBUG="-g"
++#DEBUG="-g"
+ ###############################

@@ -1,14 +1,14 @@
 lib/X11/grace/auxiliary/README
-lib/X11/grace/auxiliary/fdf2fit
-lib/X11/grace/auxiliary/greg2jul.c
-lib/X11/grace/auxiliary/jul2greg.c
+lib/X11/grace/auxiliary/convcal.c
 lib/X11/grace/auxiliary/magic.grace
 lib/X11/grace/bin/gracebat
 lib/X11/grace/bin/grconvert
+lib/X11/grace/bin/convcal
 lib/X11/grace/bin/xmgrace
 lib/X11/grace/doc/CHANGES.html
 lib/X11/grace/doc/FAQ.html
 lib/X11/grace/doc/GPL.html
+lib/X11/grace/doc/nohelp.html
 lib/X11/grace/doc/10.1.dat
 lib/X11/grace/doc/10a.dat
 lib/X11/grace/doc/10b.dat
@@ -26,7 +26,12 @@ lib/X11/grace/doc/UsersGuide.html
 lib/X11/grace/doc/mygraph.gif
 lib/X11/grace/doc/shiftdata.sh
 lib/X11/grace/doc/philosophical-gnu-sm.jpg
+lib/X11/grace/doc/grace.1
+lib/X11/grace/doc/gracebat.1
+lib/X11/grace/doc/grconvert.1
+lib/X11/grace/doc/xmgrace.1
 lib/X11/grace/examples/altaxis.par
+lib/X11/grace/examples/arrows.agr
 lib/X11/grace/examples/au.agr
 lib/X11/grace/examples/axes.agr
 lib/X11/grace/examples/bar.agr
@@ -48,14 +53,13 @@ lib/X11/grace/examples/logtest.par
 lib/X11/grace/examples/manygraphs.agr
 lib/X11/grace/examples/mlo.dat
 lib/X11/grace/examples/moresyms.agr
+lib/X11/grace/examples/motif.agr
 lib/X11/grace/examples/polar.agr
 lib/X11/grace/examples/props.agr
 lib/X11/grace/examples/regions.par
-lib/X11/grace/examples/slideshow.d
 lib/X11/grace/examples/stackedb.agr
 lib/X11/grace/examples/symslines.agr
 lib/X11/grace/examples/terr.agr
-lib/X11/grace/examples/terr2.agr
 lib/X11/grace/examples/test.com
 lib/X11/grace/examples/test.dat
 lib/X11/grace/examples/test1.par
@@ -69,6 +73,7 @@ lib/X11/grace/examples/tmc.c
 lib/X11/grace/examples/tstack.agr
 lib/X11/grace/examples/txyr.agr
 lib/X11/grace/examples/typeset.agr
+lib/X11/grace/examples/xyz.agr
 lib/X11/grace/fonts/FontDataBase
 lib/X11/grace/fonts/enc/IsoLatin1.enc
 lib/X11/grace/fonts/enc/IsoLatin2.enc
@@ -119,3 +124,4 @@ bin/gracebat
 @dirrm lib/X11/grace/lib
 @dirrm lib/X11/grace/templates
 @dirrm lib/X11/grace
+share/doc/grace
