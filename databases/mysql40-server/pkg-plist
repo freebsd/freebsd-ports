@@ -136,6 +136,7 @@ share/mysql/korean/errmsg.txt
 share/mysql/mi_test_all
 share/mysql/mi_test_all.res
 share/mysql/my-huge.cnf
+share/mysql/my-innodb-heavy-4G.cnf
 share/mysql/my-large.cnf
 share/mysql/my-medium.cnf
 share/mysql/my-small.cnf

@@ -1,16 +1,15 @@
---- configure.orig	Tue May 18 11:12:39 2004
-+++ configure	Tue May 18 11:14:27 2004
-@@ -18816,9 +18816,6 @@
+--- configure.orig	Tue Sep  7 00:30:08 2004
++++ configure	Wed Sep 15 15:18:33 2004
+@@ -18793,8 +18793,6 @@
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
  
+ # Prevent multiple expansion
  
--# Ensure that we have --preserve-dup-deps defines, otherwise we get link
--# problems of 'mysql' with CXX=g++
--LIBTOOL="$LIBTOOL --preserve-dup-deps"
- 
- #AC_LIBTOOL_DLOPEN AC_LIBTOOL_WIN32_DLL AC_DISABLE_FAST_INSTALL AC_DISABLE_SHARED AC_DISABLE_STATIC
- 
-@@ -19970,43 +19967,8 @@
+@@ -19972,43 +19970,8 @@
  echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
  echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
  PS=$ac_cv_path_PS
@@ -54,7 +53,7 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -23603,8 +23565,8 @@
+@@ -23615,8 +23578,8 @@
  # Some system specific hacks
  #
  
@@ -63,9 +62,9 @@
 +MAX_C_OPTIMIZE=""
 +MAX_CXX_OPTIMIZE=""
  
- case $SYSTEM_TYPE in
-   *solaris2.7*)
-@@ -33605,7 +33567,7 @@
+ # workaround for Sun Forte/x86 see BUG#4681
+ case $SYSTEM_TYPE-$MACHINE_TYPE-$ac_cv_c_compiler_gnu in
+@@ -33651,7 +33614,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
      esac

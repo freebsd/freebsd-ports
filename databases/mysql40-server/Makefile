@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.20
+PORTVERSION=	4.0.21
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
@@ -28,8 +28,7 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql40-client
 PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
-USE_GNOME=	lthack
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -65,7 +64,7 @@ CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
 .if defined(WITH_LINUXTHREADS)
