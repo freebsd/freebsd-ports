@@ -1,11 +1,11 @@
---- Makefile.orig	Thu May 28 09:24:11 1998
-+++ Makefile	Sat Dec 19 11:10:10 1998
+--- Makefile.orig	Thu May 28 22:24:11 1998
++++ Makefile	Thu Jan 21 05:57:29 1999
 @@ -25,13 +25,13 @@
  #CC = gcc 
  
  # Normal systems flags
 -CFLAGS = -O  
-+#CFLAGS = -O  
++CFLAGS+= -O  -DPREFIX="${PREFIX}"
  
  # Debug mode for sentry
  #CFLAGS = -Wall -g -DDEBUG
@@ -16,7 +16,7 @@
  
  
  all:
-@@ -54,18 +54,13 @@
+@@ -54,21 +54,16 @@
  		/bin/rmdir $(INSTALLDIR)
  
  install:	
@@ -40,4 +40,8 @@
 +		chmod 700 $(INSTALLDIR)/bin/sentry
  		@echo ""
  		@echo ""
- 		@echo "Edit $(INSTALLDIR)/sentry.conf and change"
+-		@echo "Edit $(INSTALLDIR)/sentry.conf and change"
++		@echo "Edit $(INSTALLDIR)/etc/sentry.conf and change"
+ 		@echo "your settings if you haven't already. (route, etc)" 
+ 		@echo ""
+ 		@echo ""
