@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.52 1999/03/23 18:37:47 obrien Exp $
+# $Id: Makefile,v 1.53 1999/03/30 02:58:02 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2
@@ -22,7 +22,7 @@ DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WWW_SITE=	http://egcs.cygnus.com
+WWW_SITE=	http://egcs.cygnus.com/
 
 USE_BZIP2=	yes
 
