@@ -6505,6 +6505,7 @@ trans		ports/converters/trans
 transfig	ports/print/transfig
 transpec	src/share/sgml/transpec
 transproxy	ports/www/transproxy
+tree		ports/sysutils/tree
 treecc		ports/lang/treecc
 treeviewx	ports/biology/treeviewx
 trek		src/games/trek
