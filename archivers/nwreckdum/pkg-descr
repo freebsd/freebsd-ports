@@ -1,0 +1,4 @@
+NWReckDum is Quake PAK file format manipulator.  It allows you to
+extract and create your PAK files easily from command line.
+
+Author: Daniel Reed <n@ml.org>
