@@ -1,0 +1,14 @@
+KDirStat (for KDE Directory Statistics) is a small utility program
+that sums up disk usage for direcory trees - very much like the
+Unix 'du' command. But unlike 'du', it tries to do that in
+a structured, comprehensive manner. It tries to provide
+the information you are looking for - exactly where all your disk
+space has gone when that dreaded 'no space left on device' message
+shows up again. Or when your system administrator asks you
+to clean up your home directory. Or when you are that system
+administrator trying to figure out which one of your users
+filled up that supposedly huge disk up to capacity. 
+
+WWW: http://www.suse.de/~sh/kdirstat/
+
+- Andrey Novikov <andrey@novikov.com>
