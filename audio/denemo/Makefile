@@ -27,17 +27,12 @@ DOCDIR=		share/doc/${PORTNAME}
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
-.endif
-
 pre-patch:
-.for ii in analysis_highlighting.c main.c playback.c print.c
+.for ii in analysis_highlighting.c easylyparser.c easylyparser.y \
+	lyparserfuncs.c lyparserfuncs.h main.c playback.c print.c
 	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
-	${SED} -e "s:<wait.h:<sys/wait.h:g" < ${WRKSRC}/${ii}.orig \
-		> ${WRKSRC}/${ii}
+	${SED} -e "s:<wait.h:<sys/wait.h:g ; s:setkey:dsetkey:g" \
+		< ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
 .endfor
 
 pre-install:
@@ -64,4 +59,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
