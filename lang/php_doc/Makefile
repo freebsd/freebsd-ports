@@ -7,6 +7,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
