@@ -9047,6 +9047,7 @@ py-sqlrelay	ports/databases/py-sqlrelay
 py-statgrab	ports/devel/py-statgrab
 py-supybot	ports/irc/py-supybot
 py-sybase	ports/databases/py-sybase
+py-syck		ports/textproc/py-syck
 py-tables	ports/devel/py-tables
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
