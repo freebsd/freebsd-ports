@@ -7,7 +7,7 @@
 
 PORTNAME=	gnats
 PORTVERSION=	3.113.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnats
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-release-based
 
 USE_GMAKE=	yes
-USE_BISON=	yes
 MAN1=		edit-pr.1 query-pr.1 send-pr.1
 MAN7=		gnats.7
 MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
@@ -51,7 +50,7 @@ post-install:
 .if defined(WANT_FREEFALL_CFG)
 	(cd ${DATADIR} && ln -s /home/gnats gnats-db)
 .else
-	(cd ${DATADIR} && ln -s gnats-db-dist gnats-db)
+	(cd ${DATADIR} && ln -s gnats-db.dist gnats-db)
 .endif
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} install-info)
