@@ -6,7 +6,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
-VERSION=	2002-09-22
+VERSION=	2002-12-21
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
