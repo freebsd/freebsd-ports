@@ -10,6 +10,17 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050319:
+AUTHOR: gnome@FreeBSD.org
+  New GNOME components have been added to bsd.gnome.mk.  See
+  http://www.FreeBSD.org/gnome/docs/gnome2_porting.html for the complete
+  list of available GNOME 2 components.
+
+  Py-gnome2 lost many of its GNOME dependencies to a new port,
+  py-gnome-extras.  Therefore, ports that used to depend on
+  the pygnome2 component for modules such as gtkhtml2, gnomepanel, etc.
+  should replace the pygnome2 dependency with pygnomeextras.
+
 20050314:
 AUTHOR: edwin@FreeBSD.org
   New variable for in /etc/make.conf: IGNORE_MASTER_SITE_xxx
