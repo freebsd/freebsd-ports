@@ -16,8 +16,8 @@ MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
 MAINTAINER=	alane@FreeBSD.org
 
-BUILD_REQUIRES+=cdoc:${.CURDIR}/../../devel/cdoc
-BUILD_REQUIRES+=make+:${.CURDIR}/../../devel/makeplus
+BUILD_DEPENDS+=	cdoc:${.CURDIR}/../../devel/cdoc
+BUILD_DEPENDS+=	make+:${.CURDIR}/../../devel/makeplus
 
 USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}
