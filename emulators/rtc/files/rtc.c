@@ -42,6 +42,10 @@
 
 #include "rtc.h"
 
+#ifdef MODULE_DEPEND
+MODULE_DEPEND(rtc, linux, 1, 1, 1);
+#endif
+
 #define CDEV_MAJOR 202
 #if defined(CDEV_MAJOR_) && CDEV_MAJOR != CDEV_MAJOR_
 #error "CDEV_MAJOR != CDEV_MAJOR_"
