@@ -8,13 +8,14 @@ TCL_VER?=	8.3
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	2
 
-.if exists(${LOCALBASE}/lib/tcl${TCL_VER}/tkConfig.sh)
+.if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
 # If for some reason  the file does not exist -- make the best guess. In
 # reality, it will exist by the time we are actually doing the build, so
 # the quality of the guess does not matter. But we still try well. -mi
 TCL_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh; \
-TK_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh; \
 		echo $$TCL_STUB_LIB_SPEC
+TK_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh; \
+		echo $$TK_STUB_LIB_SPEC
 .else
 TCL_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltclstub${TCL_VER:S/.//}
 TK_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltkstub${TCL_VER:S/.//}
