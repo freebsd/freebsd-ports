@@ -20,7 +20,6 @@ MAINTAINER=	dirk@FreeBSD.org
 SLAVEDIRS=	databases/mysql323-client
 MASTERPORTNAME=	mysql-server
 DB_DIR?=	/var/db/mysql
-NO_LATEST_LINK=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
