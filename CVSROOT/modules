@@ -9091,6 +9091,12 @@ vsound		ports/audio/vsound
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
 vtk		ports/math/vtk
+vtk-data	ports/math/vtk-data
+vtk-examples	ports/math/vtk-examples
+vtk-headers	ports/math/vtk-headers
+vtk-java	ports/math/vtk-java
+vtk-python	ports/math/vtk-python
+vtk-tcl		ports/math/vtk-tcl
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
 vx68k		ports/emulators/vx68k
