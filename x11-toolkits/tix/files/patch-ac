@@ -32,16 +32,6 @@
  
  
  #----------------------------------------------------------------
-@@ -132,7 +133,8 @@
- CC_SWITCHES = $(CFLAGS) $(AC_FLAGS) -I$(TCL_GENERIC_DIR) \
-     -I$(TCL_SRC_DIR)/unix -I$(TK_GENERIC_DIR) -I$(TK_SRC_DIR)/unix \
-     $(ITCL_CFLAGS) \
--    -I$(GENERIC_DIR) -I$(UNIX_DIR) $(TK_XINCLUDES) $(TIX_SHLIB_CFLAGS)
-+    -I$(GENERIC_DIR) -I$(UNIX_DIR) $(TK_XINCLUDES) $(TIX_SHLIB_CFLAGS) \
-+    -DTIX_LIBRARY=\"${TIX_LIBRARY}\"
- 
- #----------------------------------------------------------------
- # The information below should be usable as is. You shouldn't need
 @@ -210,29 +212,29 @@
  # scripts of TK must be included in the fixed order.
  #----------------------------------------------------------------------
