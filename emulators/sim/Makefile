@@ -20,6 +20,8 @@ RESTRICTED=	"Non-commercial use only"
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
+BROKEN=		Unfetchable
+
 SHELL=${SH}
 
 BIN_FILES=	pdp1 pdp4 pdp7 pdp8 pdp9 \
