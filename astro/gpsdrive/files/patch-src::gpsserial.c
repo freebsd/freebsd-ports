@@ -5,8 +5,8 @@
    CREAD   : enable receiving characters
  */
 -  newtio.c_cflag = (11 + serialspeed) | CS8 | CLOCAL | CREAD;
-+  int t[] = { 2400, 4800, 9600, 19200, 38400 };
-+  newtio.c_ispeed = newtio.c_ospeed = t[serialspeed];
++  { int t[] = { 2400, 4800, 9600, 19200, 38400 };
++  newtio.c_ispeed = newtio.c_ospeed = t[serialspeed]; }
 +  newtio.c_cflag = CS8 | CLOCAL | CREAD;
    newtio.c_cflag &= ~(PARENB | CRTSCTS);
  /*
