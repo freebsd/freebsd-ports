@@ -1,17 +1,58 @@
---- Imakefile.old	Fri Sep 13 00:19:22 1996
-+++ Imakefile	Fri Sep 13 00:19:36 1996
-@@ -3,10 +3,10 @@
- XCOMM written by Jörg Wunsch, 96/01/12.
- XCOMM
+--- scsi.c.orig	Fri Jun  3 07:26:15 1994
++++ scsi.c	Sun Oct 11 21:44:37 1998
+@@ -31,19 +31,23 @@
+     return req->status;
+ }
  
-- EXTRA_INCLUDES = -I/sys
--
--        DEPLIBS = XawClientDepLibs
--LOCAL_LIBRARIES = XawClientLibs MathLibrary
-+ EXTRA_INCLUDES = -I/sys -I/usr/local/include
-+ EXTRA_DEFINES  = -DJPEG
-+        DEPLIBS = XawClientDepLibs /usr/local/lib/libjpeg.a
-+LOCAL_LIBRARIES = XawClientLibs MathLibrary -L/usr/local/lib -ljpeg
+-ScsiStatus scsi_test_unit_ready(int fd, ScsiSense *sense)
++ScsiStatus Scsi_test_unit_ready(int fd, ScsiSense *sense)
+ {
+     static scsireq_t req;
+     struct scsi_test_unit_ready *cmd = (struct scsi_test_unit_ready *)&req.cmd;
  
-            SRCS = main.c scsi.c scanner.c scl.c gui.c colour.c Plain.c
-            OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
++#if __FreeBSD__ < 3
+     cmd->op_code= TEST_UNIT_READY;
++#else
++    cmd->opcode = TEST_UNIT_READY;
++#endif
+     req.cmdlen = sizeof(*cmd);
+ 
+     return scsi_do_command(fd, &req, sense);
+ }
+ 
+ 
+-ScsiStatus scsi_inquiry(int fd, ScsiSense *sense, ScsiInquiry *inquiry)
++ScsiStatus Scsi_inquiry(int fd, ScsiSense *sense, ScsiInquiry *inquiry)
+ {
+     static scsireq_t req;
+     struct scsi_inquiry *cmd = (struct scsi_inquiry *)&req.cmd;
+@@ -51,7 +55,11 @@
+ 
+     *inquiry = &buf;
+ 
++#if __FreeBSD__ < 3
+     cmd->op_code = INQUIRY;
++#else
++    cmd->opcode = INQUIRY;
++#endif
+     cmd->length = sizeof(buf);
+     req.cmdlen = sizeof(*cmd);
+     req.databuf = (u_char *)&buf;
+@@ -71,7 +79,7 @@
+     u_char unused;
+ };
+ 
+-ScsiStatus scsi_send(int fd, ScsiSense *sense, u_char *data, int *len)
++ScsiStatus Scsi_send(int fd, ScsiSense *sense, u_char *data, int *len)
+ {
+     static scsireq_t req;
+     struct scsi_send_receive *cmd = (struct scsi_send_receive *)&req.cmd;
+@@ -96,7 +104,7 @@
+     return status;
+ }
+ 
+-ScsiStatus scsi_receive(int fd, ScsiSense *sense, u_char *data, int *len)
++ScsiStatus Scsi_receive(int fd, ScsiSense *sense, u_char *data, int *len)
+ {
+     static scsireq_t req;
+     struct scsi_send_receive *cmd = (struct scsi_send_receive *)&req.cmd;
