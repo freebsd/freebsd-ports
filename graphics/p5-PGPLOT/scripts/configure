@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+sed -e s:/usr/local/pgplot:$PREFIX/lib: \
+    -e s:/home/aaossm/kgb/soft/pgplot/bld:$PREFIX/include: <Makefile.PL \
+    >Makefile.PL.new
+for f in test*.p*; do 
+  mv $f old_$f
+  sed -e s:/usr/local/bin/perl:$PERL: < old_$f >$f
+done
+
+$PERL Makefile.PL.new
+

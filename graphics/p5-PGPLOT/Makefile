@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.11 1998/10/12 03:21:40 jseger Exp $
+# $Id: Makefile,v 1.12 1998/11/11 05:37:20 asami Exp $
 #
 
 DISTNAME=       PGPLOT-2.08
@@ -17,18 +17,12 @@ LIB_DEPENDS=    pgplot.5:${PORTSDIR}/graphics/pgplot
 
 USE_PERL5=	yes
 ALL_TARGET=	dynamic
+SCRIPTS_ENV=	PERL=${PERL}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 300000
-BROKEN=         depends on pgplot
-.endif
-
 MAN3=	ExtUtils::F77.3 PGPLOT.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC} && ${PERL5} Makefile.PL
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pgperl
