@@ -9,9 +9,8 @@
 PORTNAME=	clog
 PORTVERSION=	1.6
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/  \
-		ftp://ftp.ox.ac.uk/pub/comp/security/COAST/mirrors/ftp.saturn.net/clog/  \
-		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
+		${MASTER_SITE_LOCAL}
 
 MAINTAINER=	obrien@FreeBSD.org
 
