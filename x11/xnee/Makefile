@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CFLAGS = |CFLAGS = @CFLAGS@ |g'
+		's|^CFLAGS = |CFLAGS = @CFLAGS@ |g ; \
+		 s|-g$$||g'
 
 .include <bsd.port.mk>
