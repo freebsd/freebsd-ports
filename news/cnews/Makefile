@@ -12,11 +12,12 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
 		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
-		ftp://ftp.dinoex.org/pub/c-news/
+		ftp://ftp.dinoex.org/pub/c-news/ \
+		ftp://ftp.dinoex.org/pub/c-news/:pgp
 DISTNAME=	c-news
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		pgpverify-1.12
+		pgpverify-1.12:pgp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
