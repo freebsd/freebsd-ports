@@ -8,9 +8,7 @@
 
 DISTNAME=	props-1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.freebsd.org/~jraynard/ports/distfiles/
-
-MAINTAINER=	jraynard@@freebsd.org
+MASTER_SITES=	http://www.freebsd.org/~fenner/distfiles/
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
