@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tkseti-1.42
+DISTNAME=	tkseti-1.46
 CATEGORIES=	astro tk80
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 

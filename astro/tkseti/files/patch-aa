@@ -1,5 +1,5 @@
---- tkseti	Wed Jun 30 17:43:09 1999
-+++ tkseti	Wed Jun 30 17:43:19 1999
+--- tkseti.orig	Sun Oct 31 10:12:05 1999
++++ tkseti	Thu Nov 18 18:48:20 1999
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
@@ -8,7 +8,7 @@
  #############################################################################
  # Visual Tcl v1.20 Project
  #
-@@ -160,11 +160,11 @@
+@@ -181,11 +181,11 @@
      TkSETI can be started if the client is already running, or it can start
      the client manually or automatically for you. This is explained in the
      Setup section that follows.
@@ -25,16 +25,16 @@
  
      tkseti ~/setiathome
  
-@@ -494,7 +494,7 @@
-     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- }
- 
--    set seti(usage) "    TkSETI version $seti(tksetiVersion) by Rick Macdonald <rickm@vsl.com>\n\nYou are running [info nameofexecutable] patchlevel [info patchlevel].\n\nUsage: tkseti \[--help\] \[user_setiathome_directory\]\n       user_setiathome_directory defaults to ~/setiathome"
-+    set seti(usage) "    TkSETI version $seti(tksetiVersion) by Rick Macdonald <rickm@vsl.com>\n\nYou are running [info nameofexecutable] patchlevel [info patchlevel].\n\nUsage: tkseti \[--help\] \[user_setiathome_directory\]\n       user_setiathome_directory defaults to /var/db/setiathome"
+@@ -554,7 +554,7 @@
+     if {[catch {info nameofexecutable} nameofexecutable]} {
+         set nameofexecutable wish
+     }
+-    set seti(usage) "    TkSETI version $seti(tksetiVersion) by Rick Macdonald <rickm@vsl.com>\n\nYou are running $nameofexecutable patchlevel [info patchlevel].\n\nUsage: tkseti \[--help\] \[user_setiathome_directory\]\n       user_setiathome_directory defaults to ~/setiathome"
++    set seti(usage) "    TkSETI version $seti(tksetiVersion) by Rick Macdonald <rickm@vsl.com>\n\nYou are running $nameofexecutable patchlevel [info patchlevel].\n\nUsage: tkseti \[--help\] \[user_setiathome_directory\]\n       user_setiathome_directory defaults to /var/db/setiathome"
  
      if {[lsearch $argv "--help"] >= 0} {
          puts \n$seti(usage)
-@@ -509,7 +509,7 @@
+@@ -569,7 +569,7 @@
      option add *highlightBackground grey85 user
  
      if {$argc == 0} {
