@@ -1,0 +1,24 @@
+--- orbit-config.in.orig	Tue Dec 29 04:35:37 1998
++++ orbit-config.in	Tue Dec 29 04:35:58 1998
+@@ -27,8 +27,8 @@
+ 
+ Known values for TARGET are:
+ 
+-    client		(calls glib-config)
+-    server		(calls glib-config)
++    client		(calls glib11d-config)
++    server		(calls glib11d-config)
+ EOF
+ 
+     exit $1
+@@ -86,8 +86,8 @@
+        	;;
+ 
+     client|server)
+-	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
+-	the_flags="$the_flags `glib-config --cflags` -I@includedir@"
++	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib11d-config --libs` @LIBS@ -lm"
++	the_flags="$the_flags `glib11d-config --cflags` -I@includedir@"
+ 	;;
+ 
+    --use-service=*)
