@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.23 1998/02/13 18:31:16 vanilla Exp $
+# $Id: Makefile,v 1.24 1998/04/25 19:18:21 vanilla Exp $
 #
 
     SUBDIR += Wnn
+    SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += big5fonts
     SUBDIR += c2t
