@@ -268,15 +268,15 @@ yesno "Build fonts?"
 if [ $answ = NO ]; then
   echo "#define BuildFonts		NO" >> $F
 fi
-yesno "Build the servers with Extended input devices?"
-if [ $answ = NO ]; then
-  echo "#undef BuildXInputExt" >> $F
-  echo "#define BuildXInputExt		NO" >> $F
-else
+#yesno "Build the servers with Extended input devices?"
+#if [ $answ = NO ]; then
+#  echo "#undef BuildXInputExt" >> $F
+#  echo "#define BuildXInputExt		NO" >> $F
+#else
   if [ X${MACHINE} != X"alpha" ]; then
     echo "#define JoystickSupport		YES" >> $F
   fi
-fi
+#fi
 
 yesno "Build PEX?"
 if [ $answ = NO ]; then
