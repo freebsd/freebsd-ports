@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Types/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Types.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Types
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Types.pm
