@@ -3,12 +3,12 @@
 # Date created:         20 Jun 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.6 1997/01/12 10:24:42 obrien Exp $
+# $Id: Makefile,v 1.7 1997/12/16 20:02:01 vanilla Exp $
 #
 
 DISTNAME=       ncftp-1.9.5
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.probe.net/pub/ncftp/
+MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=	obrien@FreeBSD.org
 
