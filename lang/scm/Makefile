@@ -3,7 +3,7 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.6 1995/04/16 21:24:51 asami Exp $
+# $Id: Makefile,v 1.7 1995/04/24 11:29:27 asami Exp $
 #
 
 DISTNAME=       scm
@@ -21,6 +21,7 @@ MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_
 pre-install:
 	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
 	(cd ${WRKDIR}/slib; \
+		makeinfo slib.texi; \
 		install -c -m 444 slib.info slib.info-1 slib.info-2 \
 				  slib.info-3 slib.info-4 /usr/local/info)
 
