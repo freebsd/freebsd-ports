@@ -1,0 +1,7 @@
+share/dict/flower-fpw/flower/data/honmon
+share/dict/flower-fpw/catalogs
+@dirrm share/dict/flower-fpw/flower/data
+@dirrm share/dict/flower-fpw/flower
+@dirrm share/dict/flower-fpw
+share/doc/flower-fpw/readme
+@dirrm share/doc/flower-fpw

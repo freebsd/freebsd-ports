@@ -59,6 +59,7 @@
     SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += expect
+    SUBDIR += flower-fpw
     SUBDIR += freepwing
     SUBDIR += gal
     SUBDIR += gawk
