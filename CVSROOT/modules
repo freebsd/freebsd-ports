@@ -172,6 +172,7 @@ abclock		ports/x11-clocks/abclock
 abcm2ps		ports/print/abcm2ps
 abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
+abinit		ports/science/abinit
 abntex		ports/print/abntex
 abook		ports/mail/abook
 abridge		ports/games/abridge
