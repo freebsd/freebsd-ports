@@ -674,3 +674,23 @@ korean/openoffice|korean/openoffice-1.0|2003-01-07|renamed
 polish/openoffice|polish/openoffice-1.0|2003-01-07|renamed
 portuguese/openoffice|portuguese/openoffice-1.0|2003-01-07|renamed
 russian/openoffice|russian/openoffice-1.0|2003-01-07|renamed
+chinese/chitex||2003-11-07|port was broken for >3 months with no fix submitted
+comms/bayonne||2003-11-07|port was broken for >3 months with no fix submitted
+emulators/xpinmame||2003-11-07|port was broken for >3 months with no fix submitted
+french/spip||2003-11-07|port was broken for >3 months with no fix submitted
+ftp/moxftp||2003-11-07|port was broken for >3 months with no fix submitted
+games/rollemup||2003-11-07|port was broken for >3 months with no fix submitted
+games/xpuyo||2003-11-07|port was broken for >3 months with no fix submitted
+graphics/imlib3d||2003-11-07|port was broken for >3 months with no fix submitted
+graphics/vterrain-sdk||2003-11-07|port was broken for >3 months with no fix submitted
+graphics/vterrain-apps||2003-11-07|port was broken for >3 months with no fix submitted
+korean/hlatex-mffonts-wansung||2003-11-07|port was broken for >3 months with no fix submitted
+korean/imhangul_status_applet||2003-11-07|port was broken for >3 months with no fix submitted
+lang/ETHOberonV4||2003-11-07|port was broken for >3 months with no fix submitted
+multimedia/xine_d4d_plugin||2003-11-07|port was broken for >3 months with no fix submitted
+multimedia/xine_d5d_plugin||2003-11-07|port was broken for >3 months with no fix submitted
+print/pdflib4||2003-11-07|port was broken for >3 months with no fix submitted
+www/beonex||2003-11-07|port was broken for >3 months with no fix submitted
+www/gn||2003-11-07|port was broken for >3 months with no fix submitted
+x11-toolkits/fox-xunicode||2003-11-07|port was broken for >3 months with no fix submitted
+x11/twin||2003-11-07|port was broken for >3 months with no fix submitted
