@@ -6,6 +6,7 @@ for f in ${TMPL_FILES}; do
 		-e "s,%%EMACS_PORTSDIR%%,${EMACS_PORTSDIR},g" \
 		-e "s,%%PKGNAME%%,${PKGNAME},g" \
 		-e "s,%%EMACS_PORT_NAME%%,${EMACS_PORT_NAME},g" \
+		-e "s,%%MEW_MAJOR_VER%%,${MEW_MAJOR_VER},g" \
 		-e "s,%%PORTNAME%%,${PORTNAME},g" \
 		-e "s,%%ELISPDIR%%,${ELISPDIR},g" \
 		-e "s,%%INFODIR%%,${INFODIR},g" \

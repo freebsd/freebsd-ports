@@ -1,25 +1,28 @@
---- bin/Makefile~	Wed Oct 27 08:55:11 1999
-+++ bin/Makefile	Tue Jul 10 01:06:02 2001
-@@ -22,7 +22,7 @@
- 	$(CC) -o $@ $(OBJS)
+--- bin/Makefile.in~	Fri May 25 12:58:39 2001
++++ bin/Makefile.in	Thu Aug  2 19:11:38 2001
+@@ -65,7 +65,7 @@
+ 	$(CC) $(COFLAG) $(OBJ1) $(LIBS)
  	$(RM) $(ALT)
  	for f in $(ALT); do \
--	  ln $(PRG) $${f}; done
-+	  ln -sf $(PRG) $${f}; done
+-	  $(LN) $(PRG1) $${f}; done
++	  $(LN) -sf $(PRG1) $${f}; done
  
- uumerge: uumerge.in
- 	sed -e "s|@PERL@|${PERL}|" < uumerge.in > uumerge
-@@ -32,10 +32,10 @@
- 	-@if [ ! -d $(BINDIR) ]; then \
- 		$(MKDIR) $(BINDIR); \
- 	fi; \
--	cp $(PRG) $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)
+ $(PRG2): $(OBJ2)
+ 	$(CC) $(COFLAG) $(CFLAGS) $(OBJ2)
+@@ -88,14 +88,14 @@
+ 	fi
+ 	$(INSTALL) $(PRG1) $(bindir)
  	for f in $(ALT); do \
--	  $(RM) $(BINDIR)/$${f}; ln $(BINDIR)/$(PRG) $(BINDIR)/$${f}; done
--	cp $(OTH) $(BINDIR)
-+	  $(RM) $(BINDIR)/$${f}; ln -sf $(BINDIR)/$(PRG) $(BINDIR)/$${f}; done
-+	${BSD_INSTALL_SCRIPT} $(OTH) $(BINDIR)
+-	  $(RM) $(bindir)/$${f}; $(LN) $(bindir)/$(PRG1) $(bindir)/$${f}; done
++	  $(RM) $(bindir)/$${f}; $(LN) -sf $(bindir)/$(PRG1) $(bindir)/$${f}; done
+ 	$(INSTALL) $(PRG2) $(bindir)
+ 	-@if [ ! -d $(mandir) ]; then \
+ 		$(MKDIR) $(mandir); \
+ 	fi
+ 	$(INSTALL) $(MAN1) $(mandir)
+ 	for f in $(MALT); do \
+-	  $(RM) $(mandir)/$${f}; $(LN) $(mandir)/$(MAN1) $(mandir)/$${f}; done
++	  $(RM) $(mandir)/$${f}; $(LN) -sf $(mandir)/$(MAN1) $(mandir)/$${f}; done
+ 	$(INSTALL) $(MAN2) $(mandir)
  
- clean:
- 	$(RM) $(OBJS) $(PRG) $(ALT) $(OTH)
+ ##

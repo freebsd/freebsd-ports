@@ -1,61 +1,54 @@
---- Makefile.orig	Wed Oct 20 20:20:51 1999
-+++ Makefile	Tue Jul 10 23:35:24 2001
-@@ -19,8 +19,8 @@
+--- Makefile.orig	Wed Jul 18 08:20:40 2001
++++ Makefile	Fri Aug  3 22:18:35 2001
+@@ -19,14 +19,14 @@
  ## EDIT THE FOLLOWINGS
  ##
  
--PREFIX = /usr/local
--INFODIR = $(PREFIX)/info
-+PREFIX?= /usr/local
-+INFODIR= $(PREFIX)/info
+-prefix=/usr/local
++prefix=${PREFIX}
+ infodir=$(prefix)/info
  
  ##
  ## Compile engines
-@@ -30,10 +30,10 @@
- CFLAGS = -O
+ ##
  
- #EMACS = emacs
--EMACS = xemacs
-+EMACS=	${EMACS_CMD}
+-EMACS = emacs
++EMACS = ${EMACS_CMD}
+ #EMACS = xemacs
  #EMACS = mule
  
--PERL=`which perl`
-+PERL?=`which perl`
- #PERL=/usr/local/bin/perl
- 
- ##
-@@ -46,7 +46,7 @@
+@@ -34,7 +34,7 @@
  ## A directory where mew*.el[c] will be installed.
  ##
  
--ELISPDIR  = $(PREFIX)/lib/$(EMACS)/site-lisp
-+ELISPDIR= ${PREFIX}/${EMACS_LIBDIR}/site-lisp/mew
- #ELISPDIR = $(PREFIX)/share/emacs/site-lisp
- #ELISPDIR = $(PREFIX)/lib/emacs
+-elispdir = $(prefix)/share/emacs/site-lisp/mew
++elispdir = $(prefix)/${EMACS_LIBDIR}/site-lisp/mew${MEW_MAJOR_VER}
+ #elispdir  = $(prefix)/lib/$(EMACS)/site-lisp
+ #elispdir = $(prefix)/lib/emacs
  
-@@ -54,7 +54,10 @@
+@@ -42,7 +42,10 @@
  ## A directory where etc file will be installed.
  ##
  
--ETCDIR = $(PREFIX)/lib/$(EMACS)/etc/Mew
-+ETCDIR=	${PREFIX}/${EMACS_LIBDIR}/etc/mew
+-etcdir = $(prefix)/lib/$(EMACS)/etc/Mew
++etcdir = $(prefix)/${EMACS_LIBDIR}/etc/mew${MEW_MAJOR_VER}
 +
 +# For XEmacs packages
-+XPKGDIR=	${PREFIX}/${EMACS_PACKAGESDIR}
++XPKGDIR=	$(prefix)/${EMACS_PACKAGESDIR}
  
  ################################################################
  ##
-@@ -72,6 +75,8 @@
- 	mew-virtual.elc  mew-highlight.elc mew-vars.elc  \
- 	mew-addrbook.elc mew.elc
+@@ -67,6 +70,8 @@
+ 	mew-key.elc     mew-thread.elc  mew-smime.elc	\
+ 	mew-theme.elc	mew.elc
  
 +OBJS_PKG=	 auto-autoloads.elc custom-load.elc
 +
- SRCS =  mew-attach.el   mew-bq.el      mew-cache.el   \
- 	mew-complete.el mew-decode.el  mew-demo.el    \
- 	mew-draft.el    mew-encode.el  mew-env.el     \
-@@ -88,6 +93,8 @@
- 	mew-temacs.el   mew-xemacs.el  mew-addrbook.el \
+ SRCS =	mew-addrbook.el	mew-attach.el	mew-blvs.el	\
+ 	mew-bq.el	mew-cache.el	mew-complete.el	\
+ 	mew-config.el	mew-const.el	mew-decode.el	\
+@@ -87,6 +92,8 @@
+ 	mew-thread.el	mew-smime.el	mew-theme.el	\
  	mew.el
  
 +SRCS_PKG=	auto-autoloads.el custom-load.el
@@ -63,70 +56,69 @@
  TEMPFILE = temp.el
  
  CP = cp
-@@ -96,14 +103,14 @@
- BIN = bin
+@@ -103,7 +110,9 @@
  
- all: $(OBJS)
+ ################################################################
+ 
+-el: $(TEMPFILE) mew.el
++el: $(OBJS)
 +
 +$(OBJS): $(TEMPFILE) mew.el
  	@echo 'Compiling EL files of Mew ... '
  	@echo 'PLEASE IGNORE WARNINGS IF DISPLAYED. TAKE IT EASY!'
  	$(EMACS) -batch -q -no-site-file -l ./$(TEMPFILE) -f mew-compile
- 	cd $(BIN); $(MAKE) CFLAGS="$(CFLAGS)" CC="$(CC)" PERL="$(PERL)"
- 	@echo 'Compiling EL files of Mew ... done'
- 
--$(OBJS): $(TEMPFILE) mew.el
--
- $(TEMPFILE):
- 	@echo '(setq load-path (cons "." load-path))' > $(TEMPFILE)
- 	@echo '(defun mew-compile () (mapcar (function (lambda (x) (byte-compile-file x))) (list ' >> $(TEMPFILE)
-@@ -111,11 +118,11 @@
+@@ -116,11 +125,11 @@
  	@echo ')))' >> $(TEMPFILE)
  
- install: $(OBJS)
--	-@if [ ! -d $(ELISPDIR) ]; then \
-+	if [ ! -d $(ELISPDIR) ]; then \
- 		$(MKDIR) $(ELISPDIR); \
--	fi; \
--	$(CP) $(SRCS) $(ELISPDIR)
--	$(CP) $(OBJS) $(ELISPDIR)
-+	fi
-+	${BSD_INSTALL_DATA} $(SRCS) $(ELISPDIR)
-+	${BSD_INSTALL_DATA} $(OBJS) $(ELISPDIR)
- 	cd $(BIN); $(MAKE) install CFLAGS="$(CFLAGS)" CC="$(CC)" BINDIR="$(BINDIR)"
+ install-el: $(OBJS)
+-	-@if [ ! -d $(elispdir) ]; then \
++	if [ ! -d $(elispdir) ]; then \
+ 		$(MKDIR) $(elispdir); \
+ 	fi
+-	$(CP) $(SRCS) $(elispdir)
+-	$(CP) $(OBJS) $(elispdir)
++	${BSD_INSTALL_DATA} $(SRCS) $(elispdir)
++	${BSD_INSTALL_DATA} $(OBJS) $(elispdir)
  
- clean:
-@@ -126,19 +133,69 @@
+ ################################################################
+ 
+@@ -136,7 +145,9 @@
  	cd info; $(MAKE) info EMACS=$(EMACS)
  
  install-info:
--	cd info; $(MAKE) install-info INFODIR=$(INFODIR)
-+	${MKDIR} ${INFODIR}
-+	cd info; $(MAKE) install-info INFODIR=$(INFODIR) \
+-	cd info; $(MAKE) install-info infodir=$(infodir)
++	${MKDIR} $(infodir)
++	cd info; $(MAKE) install-info infodir=$(infodir) \
 +		XEMACS_VER_OVER20="${XEMACS_VER_OVER20}"
  
- jinfo::
+ ################################################################
+ 
+@@ -144,15 +155,72 @@
  	cd info; $(MAKE) jinfo EMACS=$(EMACS)
  
  install-jinfo:
--	cd info; $(MAKE) install-jinfo INFODIR=$(INFODIR)
-+	${MKDIR} ${INFODIR}
-+	cd info; $(MAKE) install-jinfo INFODIR=$(INFODIR) \
+-	cd info; $(MAKE) install-jinfo infodir=$(infodir)
++	${MKDIR} $(infodir)
++	cd info; $(MAKE) install-jinfo infodir=$(infodir) \
 +		XEMACS_VER_OVER20="${XEMACS_VER_OVER20}"
 +
 +install-man:
 +	${MKDIR} ${MANDIR}
 +	cd info; $(MAKE) install-man MANDIR=$(MANDIR)
  
+ ################################################################
+ 
  install-etc:
--	-@if [ ! -d $(ETCDIR) ]; then \
-+	if [ ! -d $(ETCDIR) ]; then \
- 		$(MKDIR) $(ETCDIR); \
- 	fi; \
--	cd etc; $(CP) -r * $(ETCDIR)/
-+	cd etc; $(CP) -R * $(ETCDIR)/
+-	-@if [ ! -d $(etcdir) ]; then \
++	if [ ! -d $(etcdir) ]; then \
+ 		$(MKDIR) $(etcdir); \
+ 	fi
+-	cd etc; $(CP) -r * $(etcdir)/
++	cd etc; $(CP) -R * $(etcdir)/
 +
-+package: ${OBJS} ${OBJS_PKG}
++################################################################
++
++package: ${OBJS} ${OBJS_PKG} bin
 +
 +${OBJS_PKG}: ${SRCS_PKG}
 +	${EMACS} -vanilla -batch -eval "(push \"./\" load-path)" -l bytecomp \
@@ -151,22 +143,29 @@
 +	@echo "		 :version $(XEMACS_PKGVER)"	>> _pkg.el
 +	@echo "		 :type 'regular)" 		>> _pkg.el
 +
++install-mule-package: install-package
++	${MAKE} infodir=${XPKGDIR}/info XEMACS_VER_OVER20="yes" install-jinfo
++	${MAKE} manifest
++
 +install-package:
 +	${MKDIR} ${XPKGDIR}/pkginfo
-+	${MAKE} ELISPDIR=${XPKGDIR}/lisp/mew  	install
-+	${BSD_INSTALL_DATA} _pkg.el ${OBJS_PKG} ${SRCS_PKG} ${XPKGDIR}/lisp/mew
-+	${MAKE} INFODIR=${XPKGDIR}/info XEMACS_VER_OVER20="yes" \
++	${MAKE} install-bin
++	${MAKE} elispdir=${XPKGDIR}/lisp/mew${MEW_MAJOR_VER} install-el
++	${BSD_INSTALL_DATA} _pkg.el ${OBJS_PKG} ${SRCS_PKG} \
++		${XPKGDIR}/lisp/mew${MEW_MAJOR_VER}
++	${MAKE} infodir=${XPKGDIR}/info XEMACS_VER_OVER20="yes" \
 +						install-info
-+	${MAKE} MANDIR=${XPKGDIR}/man/mew    	install-man
-+	${MAKE} ETCDIR=${XPKGDIR}/etc/mew    	install-etc
-+	(cd ${XPKGDIR}; \
-+		ls -d1 lisp/mew/* info/mew.* man/mew/* etc/mew/* \
-+			> ${XPKGDIR}/pkginfo/MANIFEST.mew)
-+	${ECHO} "pkginfo/MANIFEST.mew" >> ${XPKGDIR}/pkginfo/MANIFEST.mew
++	${MAKE} MANDIR=${XPKGDIR}/man/mew${MEW_MAJOR_VER} install-man
++	${MAKE} etcdir=${XPKGDIR}/etc/mew${MEW_MAJOR_VER} install-etc
++	${MAKE} manifest
 +
-+install-mule-package: install-package
-+	${MAKE} INFODIR=${XPKGDIR}/info XEMACS_VER_OVER20="yes" \
-+						install-jinfo
++manifest:
++	(cd ${XPKGDIR}; \
++		ls -d1 lisp/mew${MEW_MAJOR_VER}/* info/mew${MEW_MAJOR_VER}.* \
++			man/mew${MEW_MAJOR_VER}/* etc/mew${MEW_MAJOR_VER}/* \
++			> ${XPKGDIR}/pkginfo/MANIFEST.mew${MEW_MAJOR_VER})
++	${ECHO} "pkginfo/MANIFEST.mew${MEW_MAJOR_VER}" \
++		>> ${XPKGDIR}/pkginfo/MANIFEST.mew${MEW_MAJOR_VER}
  
- ##
- ## End of Makefile
+ ################################################################
+ 
