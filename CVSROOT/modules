@@ -829,6 +829,7 @@ cd9660_unicode	ports/sysutils/cd9660_unicode
 cdb		ports/databases/cdb
 cdbakeoven	ports/sysutils/cdbakeoven
 cdcl		ports/science/cdcl
+cdcl-gtk	ports/science/cdcl-gtk
 cdecl		ports/devel/cdecl
 cdialog		ports/devel/cdialog
 cdif		ports/textproc/cdif
