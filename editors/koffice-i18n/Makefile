@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src
@@ -28,6 +28,9 @@ PLIST=		${WRKDIR}/PLIST
 SCRIPTS_ENV+=	PLIST=${PLIST}
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${RM} -fr ${WRKSRC}/nb ${WRKSRC}/nn
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin
