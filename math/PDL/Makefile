@@ -19,6 +19,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Data Language
 
+BROKEN=		"Distfile is unfetchable"
+
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
 		${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
