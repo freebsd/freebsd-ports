@@ -33,7 +33,6 @@
     SUBDIR += gnomedb2
     SUBDIR += grass
     SUBDIR += gtksql
-    SUBDIR += interbase4
     SUBDIR += java-sqlrelay
     SUBDIR += jdbc-oracle816
     SUBDIR += libdbi
