@@ -1,26 +1,28 @@
-*** src/Imakefile.orig	Sat Nov 25 12:55:35 1995
---- src/Imakefile	Wed Mar  5 16:18:39 1997
+*** src/Imakefile.orig	Sat May 15 12:02:56 1999
+--- src/Imakefile	Mon Jun  7 13:03:04 1999
 ***************
-*** 22,29 ****
+*** 26,34 ****
   # 4.) specify, if you want sound (must copy the appropriate sound module)
   #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
   #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
 ! #define USE_SOUND	/* doesn't harm if you don't have a sound card */
+  # the default is to copy an .au-file to /dev/audio
 ! SOUNDOBJ = X-sound_SUN.o
-  
-  # 5.) specify, if you want the antialiased card construction set (SLOW!)
-  #define USE_CARD_CONSTRUCTION
---- 22,29 ----
+  SOUNDLIB =
+  # uncomment this if you're using the NAS audio system:
+  # SOUNDOBJ = X-sound_NAS.o
+--- 26,34 ----
   # 4.) specify, if you want sound (must copy the appropriate sound module)
   #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
   #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
 ! #undef USE_SOUND	/* doesn't harm if you don't have a sound card */
-! SOUNDOBJ = 
-  
-  # 5.) specify, if you want the antialiased card construction set (SLOW!)
-  #define USE_CARD_CONSTRUCTION
+  # the default is to copy an .au-file to /dev/audio
+! SOUNDOBJ =
+  SOUNDLIB =
+  # uncomment this if you're using the NAS audio system:
+  # SOUNDOBJ = X-sound_NAS.o
 ***************
-*** 37,49 ****
+*** 49,61 ****
   # BINDIR and LIBDIR should be predefined by the templates
   # BINDIR = /usr/bin/X11
   # LIBDIR = /usr/lib/X11
@@ -34,7 +36,7 @@
   
   
   # paths for installation in user's home-directory.
---- 37,49 ----
+--- 49,61 ----
   # BINDIR and LIBDIR should be predefined by the templates
   # BINDIR = /usr/bin/X11
   # LIBDIR = /usr/lib/X11
@@ -49,15 +51,15 @@
   
   # paths for installation in user's home-directory.
 ***************
-*** 53,59 ****
+*** 65,71 ****
   
   # xpat2 needs to know where the xpm library resides (if needed)
   XPMLIB 			= -L$(USRLIBDIR) -lXpm
 ! XPMINCLUDE		= -I $(INCDIR)
   
-  # *****************************************************************************
-  # I hope you don't need to change anything below this point
---- 53,61 ----
+  # for the Qt interface, the following paths are needed
+  QTDIR			= /usr/local/qt
+--- 65,73 ----
   
   # xpat2 needs to know where the xpm library resides (if needed)
   XPMLIB 			= -L$(USRLIBDIR) -lXpm
@@ -65,10 +67,10 @@
 ! 
 ! CFLAGS += -DNO_CUSERID
   
-  # *****************************************************************************
-  # I hope you don't need to change anything below this point
+  # for the Qt interface, the following paths are needed
+  QTDIR			= /usr/local/qt
 ***************
-*** 181,188 ****
+*** 217,224 ****
   	    chmod 755 $(XPATLIBDIR)/$$f; \
   	done
   	mkdirhier $(XPATMANDIR)
@@ -77,7 +79,7 @@
   
   ComplexProgramTarget($(MYPROG))
   InstallAppDefaults(XPat)
---- 183,190 ----
+--- 219,226 ----
   	    chmod 755 $(XPATLIBDIR)/$$f; \
   	done
   	mkdirhier $(XPATMANDIR)
