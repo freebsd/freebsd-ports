@@ -15,20 +15,23 @@ EXTRACT_SUFX=		.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variable dataformat binary editor
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
-.if !defined(WITHOUT_X11)
-BUILD_DEPENDS+=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
-RUN_DEPENDS=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
+# Cannot guarantee rxvt will have menubar enabled on bento.
+.if defined(PACKAGE_BUILDING)
+WITHOUT_X11=	yes
 .endif
 
-BROKEN=		"Broken pkg-plist on 4.x, does not build on 5.x; will be removed after Feb 2"
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+.if !defined(WITHOUT_X11)
+PATCH_DEPENDS+=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
+RUN_DEPENDS=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
+.endif
 
 GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
 
-MAN1=  bed.1 xbed.1
-MANCOMPRESSED= yes
+MAN1=		bed.1 xbed.1
+MANCOMPRESSED=	yes
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x

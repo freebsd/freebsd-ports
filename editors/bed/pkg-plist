@@ -109,7 +109,7 @@
 %%DATADIR%%/testmarks.bedm
 %%DATADIR%%/uninstallbed.sh
 bin/bed
-bin/xbed
+%%X11%%bin/xbed
 @dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/terminfo/r
 @dirrm %%DATADIR%%/terminfo
