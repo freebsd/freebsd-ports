@@ -10113,6 +10113,7 @@ zope-cmf	ports/www/zope-cmf
 zope-cmf13	ports/www/zope-cmf13
 zope-cmfforum	ports/www/zope-cmfforum
 zope-guf	ports/www/zope-guf
+zope-parsedxml	ports/www/zope-parsedxml
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
 zope-zwiki	ports/www/zope-zwiki
