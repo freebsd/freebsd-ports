@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/lglade.so
+%%RUBY_EXAMPLESDIR%%/libglade/test.glade
+%%RUBY_EXAMPLESDIR%%/libglade/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/libglade
+%%RUBY_DOCDIR%%/libglade/README
+@dirrm %%RUBY_DOCDIR%%/libglade
