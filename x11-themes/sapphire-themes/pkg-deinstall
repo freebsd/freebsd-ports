@@ -1,3 +1,2 @@
-#
 #!/bin/sh
-cp ${PKG_PREFIX}/share/sapphire/menu/default.orig ${PKG_PREFIX}/share/sapphire/menu/default 
+cp ${PKG_PREFIX}/share/sapphire/menu/default.orig ${PKG_PREFIX}/share/sapphire/menu/default
