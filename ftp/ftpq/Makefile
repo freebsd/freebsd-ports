@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpq
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tranchant.freeserve.co.uk/software/
 
