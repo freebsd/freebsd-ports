@@ -1,0 +1,4 @@
+bin/battleball
+share/doc/battleball/CHANGELOG
+share/doc/battleball/README
+@dirrm share/doc/battleball
