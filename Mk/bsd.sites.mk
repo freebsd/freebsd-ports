@@ -14,7 +14,7 @@
 #
 
 # Where to put distfiles that don't have any other master site
-MASTER_SITE_LOCAL?= \
+MASTER_SITE_LOCAL+= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
