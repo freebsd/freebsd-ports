@@ -1,0 +1,11 @@
+--- lib/Imakefile.orig	Sun Jul 18 00:26:04 1993
++++ lib/Imakefile	Tue Feb  1 22:42:35 2000
+@@ -3,8 +3,6 @@
+ MAPFILES   = english.mapping french.mapping german.mapping norwegian.mapping
+ XRASFILES  = *.xras
+ 
+-all:
+-
+ InstallMultiple($(DATAFILE),$(DATADIR))
+ InstallMultiple($(MAPFILES),$(MAPDIR))
+ InstallMultiple($(XRASFILES),$(XRASDIR))
