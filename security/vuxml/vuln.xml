@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>mnogosearch</name>
-	<range><le>3.1.20_2</le></range>
+	<range><ge>3.2</ge></range>
       </package>
     </affects>
     <description>
