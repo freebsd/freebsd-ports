@@ -1,0 +1,11 @@
+--- genmenu.orig	Tue Jan 20 01:29:56 2004
++++ genmenu	Tue Jan 27 23:20:11 2004
+@@ -590,7 +590,7 @@
+ 
+ 	if [ "$BBDF" = "1" ]; then
+ 
+-		dirs="/usr/share/$1/styles /usr/local/share/$1/styles"
++		dirs="/usr/share/$1/styles /usr/local/share/$1/styles /usr/X11R6/share/$1/styles"
+ 
+ 		for dir in $dirs; do
+ 			if [ -e "$dir" ]; then
