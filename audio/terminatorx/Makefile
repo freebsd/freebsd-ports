@@ -6,6 +6,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.80
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.terminatorx.cx/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -14,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
+		lrdf.1:${PORTSDIR}/textproc/liblrdf
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-lrdf --with-docdir="${PREFIX}/share/gnome"
+CONFIGURE_ARGS=	--with-docdir="${PREFIX}/share/gnome"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
