@@ -1,6 +1,6 @@
---- config.h.in.orig	Thu Apr 29 06:07:44 2004
-+++ config.h.in	Thu May 13 00:43:36 2004
-@@ -554,3 +554,12 @@
+--- config.h.in.orig	Mon Jun 21 09:24:55 2004
++++ config.h.in	Sun Jul  4 02:25:58 2004
+@@ -561,3 +561,14 @@
  
  /* Define to `unsigned' if <sys/types.h> does not define. */
  #undef size_t
@@ -13,3 +13,5 @@
 +#endif
 +#define INT16_MAX 0x7fff
 +#define INT16_MIN (-0x7fff-1)
++#define INT32_MAX 0x7fffffff
++#define INT32_MIN (-0x7fffffff-1)

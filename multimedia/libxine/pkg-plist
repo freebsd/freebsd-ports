@@ -31,6 +31,7 @@ include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
 lib/libxine.so.9
+lib/xine/plugins/1.0.0/post/xineplug_post_audio_filter_upmix.so
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_mosaico.so
 lib/xine/plugins/1.0.0/post/xineplug_post_planar.so
@@ -140,6 +141,7 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/hackersguide/hackersguide.html
 %%DOCSDIR%%/hackersguide/library.png
 %%DOCSDIR%%/hackersguide/overlays.png
+%%DOCSDIR%%/hackersguide/post_frame.png
 share/locale/cs/LC_MESSAGES/libxine1.mo
 share/locale/de/LC_MESSAGES/libxine1.mo
 share/locale/es/LC_MESSAGES/libxine1.mo
