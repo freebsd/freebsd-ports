@@ -2,8 +2,6 @@ bin/emcws-%%EMACS_VER%%
 bin/emcws
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fns-emcws-%%EMACS_VER%%.1.el
 share/emacs/%%EMACS_VER%%-emcws/etc/%%DOC_FILE%%
-share/emacs/%%EMACS_VER%%-emcws/lisp/ange-ftp.el
-share/emacs/%%EMACS_VER%%-emcws/lisp/ange-ftp.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/busyu.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/can-n-egg.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/canna.el

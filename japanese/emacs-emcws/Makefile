@@ -1,14 +1,12 @@
 # New ports collection makefile for:	GNU emacs
-# Version required:	20.7
-# Date created:		08 Oct. 2000
+# Date created:		10 Apr. 2002
 # Whom:			NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	emcws
-PORTVERSION=	20.7
-PORTREVISION=	2
+PORTVERSION=	21.2
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -16,20 +14,20 @@ DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
-PATCHFILES=	emcws-${EMACS_VER}-20020208.gz
+PATCHFILES=	emcws-${EMACS_VER}-20020317.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nakaji@jp.freebsd.org
 
 Y2K=            http://www.gnu.org/software/year2000.html
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
+BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOCONF=	YES
 USE_GMAKE=	YES
-EMACS_VER=	20.7
+EMACS_VER=	21.2
 
 # Change these as you like.
 USE_WNN6?=	YES
@@ -100,8 +98,7 @@ EMCWS_ELCS=	busyu.el \
 		wnn-egg.el \
 		wnn-egg.elc
 
-MULE_PATCHED_ELS=	ange-ftp.el ange-ftp.elc \
-			help.el help.elc \
+MULE_PATCHED_ELS=	help.el help.elc \
 			international/ccl.el international/mule-cmds.el \
 			international/mule-conf.el international/mule.el \
 			international/titdic-cnv.el \
@@ -131,11 +128,13 @@ pre-fetch:
 pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
+	@(cd ${WRKSRC}/src/../lisp; \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${LOCALBASE}/bin/emacs-21.2)
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
 	egg.el wnn-egg.el \
-	ange-ftp.el help.el international/ccl.el international/mule-cmds.el \
+	help.el international/ccl.el international/mule-cmds.el \
 	international/mule.el international/titdic-cnv.el)
 	${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.1
 	${RM} -f ${WRKSRC}/etc/${DOC_FILE}
@@ -176,8 +175,5 @@ do-install:
 	   ${ECHO_CMD} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ; \
 	fi
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

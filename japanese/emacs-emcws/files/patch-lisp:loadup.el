@@ -1,6 +1,6 @@
---- lisp/loadup.el.orig	Sun Dec  2 22:10:51 2001
-+++ lisp/loadup.el	Sun Dec  2 22:12:10 2001
-@@ -246,7 +246,7 @@
+--- lisp/loadup.el.orig	Wed Apr 10 16:53:14 2002
++++ lisp/loadup.el	Wed Apr 10 16:55:48 2002
+@@ -264,7 +264,7 @@
        (if (memq system-type '(ms-dos windows-nt))
  	  (setq name (expand-file-name
  		      (if (fboundp 'x-create-frame) "DOC-X" "DOC") "../etc"))
@@ -9,9 +9,9 @@
  	(if (file-exists-p name)
  	    (delete-file name))
  	(copy-file (expand-file-name "../etc/DOC") name t))
-@@ -280,11 +280,11 @@
+@@ -300,11 +300,11 @@
  		    (expand-file-name
- 		     (cond 
+ 		     (cond
  		      ((eq system-type 'ms-dos)
 -		       "../lib-src/fns.el")
 +		       "../lib-src/fnsemcws.el")
