@@ -7,6 +7,7 @@
 
 PORTNAME=	reportlab
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	ftp://ftp.reportlab.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,6 @@ DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
-
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
