@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubytk
-PORTVERSION=	${VERSION}
+PORTVERSION=	1.4.4
 CATEGORIES+=	x11-toolkits
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
 DISTNAME=	ruby-${PORTVERSION}
 
-MAINTAINER?=	yasuf@big.or.jp
+MAINTAINER?=	yasuf@bsdclub.org
 
 BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
@@ -25,7 +25,7 @@ LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext
-CONFIGURE_ARGS+= --with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
+CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-tcl-lib="${LOCALBASE}/lib/${TCL_DIR}" \
 		--with-tk-lib="${LOCALBASE}/lib/${TK_DIR}" \
 		--with-tcl-include="${LOCALBASE}/include/${TCL_DIR}" \
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+= --with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-X11-dir="${X11BASE}"
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-VERSION=	1.4.3
 BRANCH_NAME=	1.4
 
 RUBY_VER=	1.4
