@@ -16,7 +16,7 @@ DISTNAME=	TerrainApps-${PORTVERSION}
 MAINTAINER=	aa8vb@nc.rr.com
 
 LIB_DEPENDS=    vtdata.1:${PORTSDIR}/graphics/vterrain-sdk \
-		wx_gtk_gl.2:${PORTSDIR}/x11-toolkits/wxgtk \
+		wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		osg.1:${PORTSDIR}/graphics/osg \
 		png.4:${PORTSDIR}/graphics/png
