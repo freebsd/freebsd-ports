@@ -1,12 +1,11 @@
-*** Makefile.in.bak	Mon Jan 16 17:59:20 1995
---- Makefile.in	Wed Jan 18 04:13:40 1995
-***************
-*** 21,27 ****
-  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
-  
-  CC = @CC@
-- CFLAGS = -O
-  LDFLAGS =
-  LIBS = @LIBS@
-  
---- 21,26 ----
+--- Makefile.in.orig	Fri Sep  1 20:07:26 2000
++++ Makefile.in	Tue Sep  5 18:49:17 2000
+@@ -21,7 +21,7 @@
+ ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
+ 
+ CC = @CC@
+-CFLAGS = -O
++#CFLAGS = -O
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS =
+ LIBS = @LIBS@
