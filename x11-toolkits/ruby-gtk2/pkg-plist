@@ -17,6 +17,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/menus.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/panes.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/sizegroup.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/stock_browser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/textview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/tree_store.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button.rb
