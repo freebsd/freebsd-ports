@@ -27,7 +27,8 @@ bin/pop3d
 %%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
 %%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.plain
-%%LIBEXECDIR%%/authlib/authpam
+%%PAMFLAG%%%%LIBEXECDIR%%/authlib/authpam
+%%PWDFLAG%%%%LIBEXECDIR%%/authlib/authpwd
 %%LIBEXECDIR%%/authlib/authuserdb
 %%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
 %%LIBEXECDIR%%/courierlogger
