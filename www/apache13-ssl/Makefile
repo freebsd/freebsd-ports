@@ -10,7 +10,7 @@
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
 CATEGORIES=	www security
-MASTER_SITES=	ftp://www.apache.org/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
 		ftp://ftp.gbnet.net/pub/apache/dist/ \
