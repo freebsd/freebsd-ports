@@ -1,15 +1,14 @@
 bin/kscope
-share/doc/HTML/en/kscope/project_new.png
-share/doc/HTML/en/kscope/query_dlg.png
-share/doc/HTML/en/kscope/call_tree.png
-share/doc/HTML/en/kscope/project_open.png
-share/doc/HTML/en/kscope/main_window.png
-share/doc/HTML/en/kscope/pref.png
-share/doc/HTML/en/kscope/project_files.png
-share/doc/HTML/en/kscope/welcome.png
-share/doc/HTML/en/kscope/index.docbook
-share/doc/HTML/en/kscope/index.cache.bz2
-share/doc/HTML/en/kscope/common
+%%DOCSDIR%%/project_new.png
+%%DOCSDIR%%/query_dlg.png
+%%DOCSDIR%%/call_tree.png
+%%DOCSDIR%%/project_open.png
+%%DOCSDIR%%/main_window.png
+%%DOCSDIR%%/pref.png
+%%DOCSDIR%%/project_files.png
+%%DOCSDIR%%/index.docbook
+%%DOCSDIR%%/index.cache.bz2
+%%DOCSDIR%%/common
 share/icons/locolor/16x16/apps/kscope.png
 share/icons/hicolor/32x32/apps/kscope.png
 share/icons/locolor/32x32/apps/kscope.png
@@ -21,5 +20,5 @@ share/apps/kscope/kscopeui.rc
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@dirrm share/doc/HTML/en/kscope
+@dirrm %%DOCSDIR%%
 @dirrm share/apps/kscope
