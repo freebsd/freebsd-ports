@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Oct 15 19:42:16 1996
-+++ Makefile	Fri Oct 18 07:45:10 1996
++++ Makefile	Fri Oct 18 11:54:35 1996
 @@ -108,8 +108,8 @@
  # Pick your compiler
  #
