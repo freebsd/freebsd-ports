@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -42,29 +42,30 @@ STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${FILESDIR}/daemonctl.c \
+REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat/files/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
 		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
 		${WRKSRC}/config/default-web-site.xml \
 		${WRKSRC}/config/rmi.xml
+JAR_FILE=	${APP_SHORTNAME}.jar
 WRKDIR?=	work
 
 .include <bsd.port.pre.mk>
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
-	@${ECHO_CMD} "   Destination directory:   ${APP_HOME}"
-	@${ECHO_CMD} "   Control script location: ${CONTROL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
-	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
-	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
-	@${ECHO_CMD} "   Using Jikes:             ${WITH_JIKES}"
-	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
-	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
-	@${ECHO_CMD} "   RMI port:                ${RMI_PORT}"
-	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
-	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
-	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
+	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
+	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
+	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
+	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
+	@${ECHO_CMD} "   Using Jikes:              ${WITH_JIKES}"
+	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
+	@${ECHO_CMD} "   RMI port:                 ${RMI_PORT}"
+	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
+	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
+	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
@@ -84,16 +85,16 @@ do-install:
 	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
 	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
-	-e "/%%JAR_FILE%%/s//${APP_SHORTNAME}.jar/g" \
+	-e "/%%JAR_FILE%%/s//${JAR_FILE}/g" \
 	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/g" \
+	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
 	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
 	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
+	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
+	-e "/%%RMI_PORT%%/s//${RMI_PORT}/g" \
 	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
 	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
-	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
-	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
-	-e "/%%RMI_PORT%%/s//${RMI_PORT}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
@@ -116,11 +117,20 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endif
 
-	@${ECHO_CMD} -n ">> Compiling and installing control script..."
-	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl.c
+	@${ECHO_CMD} -n ">> Compiling and installing control program..."
+	@${SED} \
+	-e "/%%JAVA_ARGS%%/s///g" \
+	-e "/%%JAR_ARGS%%/s///g" \
+	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
+	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
 	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
 	@${CHMOD} 6754 ${CONTROL_SCRIPT}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Installing startup script..."
+	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CHMOD} 0544 ${STARTUP_SCRIPT}
 	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
@@ -128,11 +138,6 @@ do-install:
 	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
 	@${ECHO_CMD} " [ DONE ]"
 .endif
-
-	@${ECHO_CMD} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
-	@${CHMOD} 0544 ${STARTUP_SCRIPT}
-	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating log files..."
 	@${INSTALL} /dev/null ${STDOUT_LOG}

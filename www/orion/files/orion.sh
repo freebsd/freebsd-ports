@@ -2,7 +2,7 @@
 # -*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-# Orion startup script.
+# %%APP_TITLE%% startup script.
 #
 # $FreeBSD$
 #
