@@ -109,6 +109,7 @@
     SUBDIR += ruby
     SUBDIR += ruby-man
     SUBDIR += ruby-perl
+    SUBDIR += ruby-programmingruby
     SUBDIR += ruby-python
     SUBDIR += ruby-reference
     SUBDIR += ruby-tcltklib
