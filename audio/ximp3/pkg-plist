@@ -1,1 +1,3 @@
 bin/ximp3
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
