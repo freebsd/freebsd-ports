@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src-cht/Makefile.in.orig	Fri Aug 30 01:23:49 2002
++++ src-cht/Makefile.in	Fri Aug 30 01:24:27 2002
+@@ -1,4 +1,7 @@
++CC=@CC@
++CFLAGS=@CFLAGS@
++
+ default: cht
+ 
+ cht:	cht-2.1.c
+-	gcc -O cht-2.1.c -o cht
++	$(CC) $(CFLAGS) -o cht cht-2.1.c
