@@ -8,6 +8,7 @@
 
 PORTNAME=	k3d
 PORTVERSION=	0.4.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
 		Magick++.6:${PORTSDIR}/graphics/ImageMagick \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		Half.2:${PORTSDIR}/graphics/OpenEXR \
-		gts.2:${PORTSDIR}/graphics/gts
+		gts.3:${PORTSDIR}/graphics/gts
 
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12 libxslt
