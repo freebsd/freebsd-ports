@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:			Pedro Giffuni S.
 #
-# $Id: Makefile,v 1.4 1997/11/13 12:55:17 tg Exp $
+# $Id: Makefile,v 1.5 1997/11/16 09:48:03 fenner Exp $
 #
 
 DISTNAME=	bihar
@@ -28,8 +28,8 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} $(PREFIX)/share/doc/fftpack
-	gzip ${WRKSRC}*.doc
-	${CP} $(WRKSRC)/doc.gz $(PREFIX)/share/doc/fftpack/
+	-${GZIP_CMD} ${GZIP} ${WRKSRC}/fft.doc
+	${CP} $(WRKSRC)/fft.doc.gz $(PREFIX)/share/doc/fftpack/
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
