@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat Jan 19 16:58:06 2002
-+++ doc/Makefile.in	Tue Jan 29 02:05:10 2002
+--- doc/Makefile.in.orig	Sat May 25 00:36:52 2002
++++ doc/Makefile.in	Sat May 25 00:40:15 2002
 @@ -24,7 +24,7 @@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -9,8 +9,8 @@
  
  MKDIR = $(top_srcdir)/mkinstalldirs
  INSTALL = @INSTALL@
-@@ -48,11 +48,11 @@
- 	  sane-mustek_usb.5
+@@ -51,7 +51,7 @@
+           sane-teco1.5 sane-test.5 sane-sp15c.5 sane-coolscan2.5
  SECT7   = sane.7
  MANPAGES = $(SECT1) $(SECT5) $(SECT7)
 -READMES = README AUTHORS COPYING ChangeLog LEVEL2 LICENSE NEWS PROBLEMS \
@@ -18,31 +18,26 @@
            PROJECTS README README.aix README.hp-ux README.linux README.os2 \
            README.solaris README.unixware2 README.unixware7 TODO
  DOCS    = backend-writing.txt sane.ps sane.dvi
--BACKDIRS= canon mustek mustek_usb umax
-+BACKDIRS= canon mustek umax
- LATEX	= TEXINPUTS=$(srcdir):$$TEXINPUTS latex
- DLH	= TEXINPUTS=$(srcdir):$$TEXINPUTS dlh
- MAN2HTML= nroff -man |\
-@@ -82,7 +82,7 @@
+@@ -89,7 +89,7 @@
  .PHONY: all clean depend dist distclean html html-man install \
-   install-mostang sane-backends.html sane-html uninstall
+   install-mostang sane-html uninstall
  
 -all: sane.ps $(MANPAGES) 
 +all: $(MANPAGES) 
  
  %.1 %.5 %.7: %.man
  	@sed -e 's|@DATADIR@|$(datadir)|g' \
-@@ -107,6 +107,7 @@
+@@ -115,6 +115,7 @@
  	  echo installing $${page} in $(mandir)/man7/$${page}...; \
- 	  $(INSTALL_DATA) $${page} $(mandir)/man7/$${page} || exit 1; \
+ 	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man7/$${page} || exit 1; \
  	done
 +ifndef NOPORTDOCS
- 	$(MKDIR) $(docdir)
+ 	$(MKDIR) $(DESTDIR)$(docdir)
  	@for readme in $(READMES); do \
  	  echo installing $${readme} in $(docdir)/$${readme}...; \
-@@ -126,6 +127,7 @@
+@@ -135,6 +136,7 @@
  	    echo installing $${doc} in $(docdir)/$${doc}...; \
- 	    $(INSTALL_DATA) $${doc} $(docdir)/$${doc}; \
+ 	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
  	  done
 +endif
  
