@@ -1,9 +1,13 @@
-This apache's module detects the browsers capable of decompressing
-the objects on the fly and applies compression to pages, etc. sent
-to those browsers. This includes dynamicly generated content too.
+mod_gzip is an Internet Content Acceleration module for the popular
+Apache Web Server. 
 
-Due to browsers' bugs or for other reasons (gzip-ing a typical JPEG
-file is silly, for example) you may wish to disable compression of
-some MIME-types and mod_gzip allows you to do that.
+mod_gzip uses the well established and publicly available IETF
+Content-Encoding standards in conjunction with publicy available GZIP
+compression libraries such as ZLIB to deliver dynamically compressed
+content 'on the fly' to any browser or user-agent that is capable of
+receiving it.
 
-WWW: http://www.remotecommunications.com/apache/mod_gzip/
+WWW: http://sourceforge.net/projects/mod-gzip/
+
+- Alex Dupre
+sysadmin@alexdupre.com
