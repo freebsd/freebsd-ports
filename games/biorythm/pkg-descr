@@ -1,0 +1,15 @@
+This program calculates a simple biorythm plot based on the given date
+of birth. The plot starts at the given first day of plot, and includes
+the number of days indicated on the command line.
+
+Dates must be entered according to ISO date format, that is:
+YYYY-MM-DD, four digit year, two digit month, and two digit day of
+month.
+
+The default plot includes emotional, intellectual and physical
+curves. This may be overridden by command line options.
+
+The author has no idea how to interpret the plot, so please don't ask
+him about it.
+
+WWW: http://home.sol.no/~sverrehu/pub-unix/
