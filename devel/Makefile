@@ -980,6 +980,7 @@
     SUBDIR += py-psyco
     SUBDIR += py-px
     SUBDIR += py-repl
+    SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
     SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
