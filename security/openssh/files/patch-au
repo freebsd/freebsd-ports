@@ -1,25 +1,20 @@
---- session.c.orig	Mon Jun  5 12:53:40 2000
-+++ session.c	Tue Jun 20 16:20:37 2000
-@@ -27,6 +27,18 @@
- #include "ssh2.h"
+--- session.c.orig	Sun Aug 27 23:50:54 2000
++++ session.c	Sat Nov  4 17:39:43 2000
+@@ -28,6 +28,13 @@
  #include "auth.h"
+ #include "auth-options.h"
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
 +#include <poll.h>
 +#include <syslog.h>
 +#include <time.h>
-+#define LOGIN_CAP
 +#endif /* __FreeBSD__ */
 +
-+#ifdef LOGIN_CAP
-+#include <login_cap.h>
-+#endif /* LOGIN_CAP */
-+
- /* types */
- 
- #define TTYSZ 64
-@@ -401,6 +413,13 @@
+ #ifdef HAVE_LOGIN_CAP
+ #include <login_cap.h>
+ #endif
+@@ -413,6 +420,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -33,35 +28,8 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -502,6 +521,10 @@
- 	struct sockaddr_storage from;
- 	struct stat st;
- 	time_t last_login_time;
-+#ifdef LOGIN_CAP
-+	login_cap_t *lc;
-+	char *fname;
-+#endif /* LOGIN_CAP */
- 
- 	if (s == NULL)
- 		fatal("do_exec_pty: no session");
-@@ -511,15 +534,6 @@
- 	/* Get remote host name. */
- 	hostname = get_canonical_hostname();
- 
--	/*
--	 * Get the time when the user last logged in.  Buf will be set to
--	 * contain the hostname the last login was from.
--	 */
--	if (!options.use_login) {
--		last_login_time = get_last_login_time(pw->pw_uid, pw->pw_name,
--						      buf, sizeof(buf));
--	}
--
- 	/* Fork the child. */
- 	if ((pid = fork()) == 0) {
- 		pid = getpid();
-@@ -528,6 +542,22 @@
- 		   changed. */
+@@ -516,6 +530,13 @@
+ 		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
 +		/*
@@ -71,154 +39,39 @@
 +		if (command != NULL)
 +			options.use_login = 0;
 +		
-+		/*
-+		 * Get the time when the user last logged in.  Buf will be set
-+		 * to * contain the hostname the last login was from.
-+		 */
-+		if (!options.use_login) {
-+			last_login_time = get_last_login_time(pw->pw_uid,
-+			    pw->pw_name, buf, sizeof(buf));
-+		}
-+
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -571,6 +601,12 @@
- 		/* Check if .hushlogin exists. */
- 		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
- 		quiet_login = stat(line, &st) >= 0;
-+#ifdef LOGIN_CAP
-+		lc = login_getpwclass(pw);
-+		if (lc == NULL)
-+			lc = login_getclassbyname(NULL, pw);
-+		quiet_login = login_getcapbool(lc, "hushlogin", quiet_login);
-+#endif /* LOGIN_CAP */
- 
- 		/*
- 		 * If the user has logged in before, display the time of last
-@@ -594,6 +630,20 @@
- 			else
- 				printf("Last login: %s from %s\r\n", time_string, buf);
- 		}
-+#ifdef LOGIN_CAP
-+		if (command == NULL && !quiet_login && !options.use_login) {
-+			fname = login_getcapstr(lc, "copyright", NULL, NULL);
-+			if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
-+				while (fgets(line, sizeof(line), f) != NULL)
-+					fputs(line, stdout);
-+				fclose(f);
-+			} else
-+				(void)printf("%s\n\t%s %s\n",
-+		"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
-+		    "The Regents of the University of California. ",
-+		    "All rights reserved.");
-+		}
-+#endif /* LOGIN_CAP */
- 		/*
- 		 * Print /etc/motd unless a command was specified or printing
- 		 * it was disabled in server options or login(1) will be
-@@ -603,7 +653,18 @@
- 		if (command == NULL && options.print_motd && !quiet_login &&
- 		    !options.use_login) {
- 			/* Print /etc/motd if it exists. */
-+#ifdef LOGIN_CAP
-+			fname = login_getcapstr(lc, "welcome", NULL, NULL);
-+			login_close(lc);
-+			if (fname != NULL) {
-+				f = fopen(fname, "r");
-+				if (f == NULL)
-+					f = fopen("/etc/motd", "r");
-+			} else
-+				f = fopen("/etc/motd", "r");
-+#else /* LOGIN_CAP */
- 			f = fopen("/etc/motd", "r");
-+#endif /* LOGIN_CAP */
- 			if (f) {
- 				while (fgets(line, sizeof(line), f))
- 					fputs(line, stdout);
-@@ -746,13 +807,29 @@
- 	extern char **environ;
- 	struct stat st;
- 	char *argv[10];
-+#ifdef LOGIN_CAP
-+ 	login_cap_t *lc;
-+ 
-+ 	lc = login_getpwclass(pw);
-+ 	if (lc == NULL)
-+ 		lc = login_getclassbyname(NULL, pw);
-+ #endif /* LOGIN_CAP */
- 
- 	/* login(1) is only called if we execute the login shell */
- 	if (options.use_login && command != NULL)
- 		options.use_login = 0;
- 
- 	f = fopen("/etc/nologin", "r");
-+#ifdef __FreeBSD__
-+	if (f == NULL)
-+		f = fopen("/var/run/nologin", "r");
-+#endif /* __FreeBSD__ */
-+#ifdef LOGIN_CAP
-+	/* on FreeBSD, etc., allow overriding nologin via login.conf. */
-+	if (f != NULL && !login_getcapbool(lc, "ignorenologin", 0)) {
-+#else /* LOGIN_CAP */
- 	if (f) {
-+#endif /* LOGIN_CAP */
- 		/* /etc/nologin exists.  Print its contents and exit. */
- 		while (fgets(buf, sizeof(buf), f))
- 			fputs(buf, stderr);
-@@ -768,6 +845,13 @@
- 	/* Login(1) does this as well, and it needs uid 0 for the "-h"
- 	   switch, so we let login(1) to this for us. */
- 	if (!options.use_login) {
-+#ifdef LOGIN_CAP
-+		if (setclasscontext(pw->pw_class, LOGIN_SETPRIORITY |
-+		    LOGIN_SETRESOURCES | LOGIN_SETUMASK) == -1) {
-+			perror("setclasscontext");
-+			exit(1);
-+		}
-+#endif /* LOGIN_CAP */
- 		if (getuid() == 0 || geteuid() == 0) {
- 			if (setgid(pw->pw_gid) < 0) {
- 				perror("setgid");
-@@ -790,7 +874,14 @@
- 	 * Get the shell from the password data.  An empty shell field is
- 	 * legal, and means /bin/sh.
- 	 */
-+#ifdef LOGIN_CAP
-+	shell = pw->pw_shell;
-+	shell = login_getcapstr(lc, "shell", shell, shell);
-+	if (shell[0] == '\0')
-+		shell = _PATH_BSHELL;
-+#else /* LOGIN_CAP */
- 	shell = (pw->pw_shell[0] == '\0') ? _PATH_BSHELL : pw->pw_shell;
-+#endif /* LOGIN_CAP */
- 
- #ifdef AFS
- 	/* Try to get AFS tokens for the local cell. */
-@@ -814,7 +905,12 @@
- 		child_set_env(&env, &envsize, "USER", pw->pw_name);
- 		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
- 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
-+#ifdef LOGIN_CAP
-+		child_set_env(&env, &envsize, "PATH",
-+		    login_getpath(lc, "path", _PATH_STDPATH));
-+#else /* LOGIN_CAP */
- 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
-+#endif /* LOGIN_CAP */
- 
- 		snprintf(buf, sizeof buf, "%.200s/%.50s",
- 			 _PATH_MAILDIR, pw->pw_name);
-@@ -904,6 +1000,9 @@
- 	 * descriptors left by system functions.  They will be closed later.
- 	 */
- 	endpwent();
-+#ifdef LOGIN_CAP
-+	login_close(lc);
-+#endif /* LOGIN_CAP */
+@@ -602,6 +623,7 @@
+ 	time_t last_login_time;
+ 	struct passwd * pw = s->pw;
+ 	pid_t pid = getpid();
++	char *fname;
  
  	/*
- 	 * Close any extra open file descriptors so that we don\'t have them
-@@ -911,7 +1010,7 @@
+ 	 * Get IP address of client. If the connection is not a socket, let
+@@ -644,6 +666,20 @@
+ 		else
+ 			printf("Last login: %s from %s\r\n", time_string, buf);
+ 	}
++#ifdef HAVE_LOGIN_CAP
++	if (!options.use_login) {
++		fname = login_getcapstr(lc, "copyright", NULL, NULL);
++		if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
++			while (fgets(buf, sizeof(buf), f) != NULL)
++				fputs(buf, stdout);
++			fclose(f);
++		} else
++			(void)printf("%s\n\t%s %s\n",
++	"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
++	    "The Regents of the University of California. ",
++	    "All rights reserved.");
++	}
++#endif /* HAVE_LOGIN_CAP */
+ 	if (options.print_motd) {
+ #ifdef HAVE_LOGIN_CAP
+ 		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
+@@ -949,7 +985,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -227,7 +80,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -930,7 +1029,27 @@
+@@ -973,7 +1009,27 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {

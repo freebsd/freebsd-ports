@@ -1,21 +1,13 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-agent/Makefile	Wed Oct 27 12:54:49 1999
-+++ ./ssh-agent/Makefile	Tue Nov 23 19:27:38 1999
-@@ -2,20 +2,13 @@
+--- ssh-agent/Makefile.orig	Thu Jun 29 14:35:48 2000
++++ ssh-agent/Makefile	Sat Nov  4 17:06:34 2000
+@@ -5,12 +5,12 @@
  
- PROG=	ssh-agent
- BINOWN=	root
--
--.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
--	${MACHINE_ARCH} == "hppa")
--BINMODE=0000
--.else
--BINMODE?=555
--.endif
--
+ BINMODE?=555
+ 
 -BINDIR=	/usr/bin
-+BINMODE=555
+-MAN=	ssh-agent.1
 +BINDIR=	/bin
- MAN=	ssh-agent.1
++MAN1=	ssh-agent.1
  
  SRCS=	ssh-agent.c log-client.c
  

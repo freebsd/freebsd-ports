@@ -1,6 +1,6 @@
---- sshd/Makefile.orig	Wed Apr 26 17:31:57 2000
-+++ sshd/Makefile	Sun Jul 30 15:09:25 2000
-@@ -3,14 +3,15 @@
+--- sshd/Makefile.orig	Sun Aug 20 14:42:41 2000
++++ sshd/Makefile	Sat Nov  4 17:08:36 2000
+@@ -3,8 +3,8 @@
  PROG=	sshd
  BINOWN=	root
  BINMODE=555
@@ -8,17 +8,18 @@
 -MAN=	sshd.8
 +BINDIR=	/sbin
 +MAN8=	sshd.8
+ CFLAGS+=-DHAVE_LOGIN_CAP
  
  SRCS=	sshd.c auth-rhosts.c auth-passwd.c auth-rsa.c auth-rh-rsa.c \
- 	pty.c log-server.c login.c servconf.c serverloop.c \
- 	auth.c auth1.c auth2.c session.c
+@@ -12,6 +12,7 @@
+ 	auth.c auth1.c auth2.c auth-options.c session.c
  
  .include <bsd.own.mk> # for KERBEROS and AFS
 +.include "../Makefile.inc"
  
  .if (${KERBEROS} == "yes")
  .if (${AFS} == "yes")
-@@ -18,9 +19,9 @@
+@@ -19,9 +20,9 @@
  LDADD+=  -lkafs
  DPADD+=  ${LIBKRBAFS}
  .endif # AFS
@@ -30,7 +31,7 @@
  DPADD+=	 ${LIBKRB}
  .endif # KERBEROS
  
-@@ -30,7 +31,7 @@
+@@ -31,7 +32,7 @@
  
  .include <bsd.prog.mk>
  

@@ -1,20 +1,11 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/scp/Makefile	Mon Oct 25 16:27:26 1999
-+++ ./scp/Makefile	Tue Nov 23 19:23:58 1999
-@@ -2,16 +2,9 @@
+--- scp/Makefile.orig	Thu Jun 29 14:35:46 2000
++++ scp/Makefile	Sat Nov  4 16:44:18 2000
+@@ -5,8 +5,8 @@
  
- PROG=	scp
- BINOWN=	root
--
--.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
--	${MACHINE_ARCH} == "hppa")
--BINMODE=0000
--.else
--BINMODE?=555
--.endif
--
+ BINMODE?=555
+ 
 -BINDIR=	/usr/bin
 -MAN=	scp.1
-+BINMODE=555
 +BINDIR=	/bin
 +MAN1=	scp.1
  

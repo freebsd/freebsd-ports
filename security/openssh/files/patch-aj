@@ -1,21 +1,13 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-keygen/Makefile	Wed Oct 27 12:54:49 1999
-+++ ./ssh-keygen/Makefile	Tue Nov 23 19:28:07 1999
-@@ -2,20 +2,13 @@
+--- ssh-keygen/Makefile.orig	Thu Jun 29 14:35:48 2000
++++ ssh-keygen/Makefile	Sat Nov  4 17:06:49 2000
+@@ -5,12 +5,12 @@
  
- PROG=	ssh-keygen
- BINOWN=	root
--
--.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
--	${MACHINE_ARCH} == "hppa")
--BINMODE=0000
--.else
--BINMODE?=555
--.endif
--
+ BINMODE?=555
+ 
 -BINDIR=	/usr/bin
-+BINMODE=555
+-MAN=	ssh-keygen.1
 +BINDIR=	/bin
- MAN=	ssh-keygen.1
++MAN1=	ssh-keygen.1
  
  SRCS=	ssh-keygen.c log-client.c
  

@@ -1,12 +1,12 @@
---- lib/Makefile.orig	Wed May 17 01:20:16 2000
-+++ lib/Makefile	Tue Jun 20 16:14:06 2000
+--- lib/Makefile.orig	Sat Aug 19 17:34:44 2000
++++ lib/Makefile	Sat Nov  4 16:41:11 2000
 @@ -5,7 +5,12 @@
- 	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
+ 	cipher.c compat.c compress.c crc32.c deattack.c \
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
  	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
--	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c aux.c
-+	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c aux.c \
-+	strlcat.c strlcpy.c
+-	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c util.c
++	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c util.c \
++	strlcpy.c strlcat.c
 +
 +.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
