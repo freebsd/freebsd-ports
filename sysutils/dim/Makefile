@@ -13,13 +13,15 @@ DISTNAME=	dim
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A directory lister which sorts the file list in 2D
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
-pre-patch:
-	@${PERL} -pi -e "s|^#!.+|#!${PERL}|" ${WRKSRC}/dim.pl
+post-patch:
+	${REINPLACE_CMD} -E "s|^#!.+|#!${PERL}|" ${WRKSRC}/dim.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dim.pl ${PREFIX}/bin/dim
