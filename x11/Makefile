@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.239 1998/11/21 01:32:14 flathill Exp $
+# $Id: Makefile,v 1.240 1998/12/05 06:13:20 kuriyama Exp $
 #
 
     SUBDIR += XFree86
@@ -69,6 +69,7 @@
     SUBDIR += xco
     SUBDIR += xcoloredit
     SUBDIR += xcolors
+    SUBDIR += xcolorsel
     SUBDIR += xdtm
     SUBDIR += xfedor
     SUBDIR += xfishtank
