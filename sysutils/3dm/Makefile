@@ -7,6 +7,7 @@
 
 PORTNAME=	3dm
 PORTVERSION=	2.02.00.015
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.1.5.2/
 DISTNAME=	3dm-x86-bsd
