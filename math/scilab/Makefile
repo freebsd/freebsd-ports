@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	2.7
-PORTREVISION=	2
+PORTVERSION=	3.0
 CATEGORIES=	math cad parallel
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
@@ -19,8 +18,10 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		f77blas.1:${PORTSDIR}/math/atlas \
 		lapack.3:${PORTSDIR}/math/lapack
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm \
+		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		sabcmd:${PORTSDIR}/textproc/sablotron
+RUN_DEPENDS+=	pvm:${PORTSDIR}/net/pvm \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PVM_ROOT=	${LOCALBASE}/lib/pvm
 
@@ -39,10 +40,13 @@ CONFIGURE_ARGS=	--with-tk \
 		--with-xaw3d \
 		--x-include=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
-		--with-atlas-library=${LOCALBASE}/lib
+		--with-atlas-library=${LOCALBASE}/lib \
+		--without-ocaml
 
 CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE}
 MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 

@@ -1,6 +1,6 @@
---- Makefile.in	Fri Feb  7 13:53:28 2003
-+++ Makefile.in.new	Sat Feb 15 14:02:38 2003
-@@ -179,7 +179,7 @@
+--- Makefile.in	Tue Jul  6 16:12:37 2004
++++ Makefile.in.new	Sat Jul 24 10:50:09 2004
+@@ -190,7 +190,7 @@
  		@STRIP@ $(SCIDIR)/bin/scilex; \
  		(cd tests; make distclean); \
  		(cd examples; make distclean); \
