@@ -459,5 +459,6 @@
     SUBDIR += zimg
     SUBDIR += zphoto
     SUBDIR += vips
+    SUBDIR += nip
 
 .include <bsd.port.subdir.mk>
