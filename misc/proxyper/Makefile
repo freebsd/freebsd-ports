@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxyper-freebsd3-elf-x86
-PORTVERSION=	313
+PORTVERSION=	319c
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper-rc5des/ \
 		http://http.distributed.net/pub/dcti/proxyper-rc5des/
