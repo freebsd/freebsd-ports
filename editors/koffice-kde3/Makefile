@@ -18,6 +18,8 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 USE_KDELIBS_VER=2
+USE_PYTHON=	yes
+PYTHON_VERSION=	python2.1
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOCONF=	yes
