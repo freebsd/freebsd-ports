@@ -1,0 +1,1 @@
+Transparently speed up perl functions by caching return values

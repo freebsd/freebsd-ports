@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Memoize/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Memoize.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/ExpireTest.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/Saves.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/Expire.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/AnyDBM_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/Storable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/SDBM_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/ExpireFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Memoize/NDBM_File.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Memoize 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Memoize 2>/dev/null || true
