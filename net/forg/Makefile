@@ -16,9 +16,10 @@ MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gopher client
 
-RUN_DEPENDS= 	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 
+NO_SIZE=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
