@@ -110,7 +110,7 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
 	SMB "Enable smb:// URI support using gnomevfs" off \
-	MENU_ENTRY "Add mozilla to the GNOME menu" off
+	MENU_ENTRY "Add mozilla to the GNOME menu" on
 
 .include <bsd.port.pre.mk>
 
@@ -361,6 +361,7 @@ do-install:
 	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 .if defined(WITH_MENU_ENTRY)
+	${MKDIR} ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla.desktop \
 		${PREFIX}/share/gnome/applications
 .endif
