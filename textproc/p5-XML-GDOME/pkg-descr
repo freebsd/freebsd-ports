@@ -1,0 +1,6 @@
+XML::GDOME is a perl module that provides the DOM Level 2 Core API
+for accessing XML documents.
+
+It uses a XS wrapper around the gdome2 library.
+
+WWW: http://www.tjmather.com/xml-gdome/
