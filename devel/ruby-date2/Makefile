@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.kt.rim.or.jp/~tadf/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,8 +22,8 @@ MODULES=	date2.rb date3.rb holiday.rb odate.rb \
 		parsedate2.rb parsedate2.ry parsedate3.rb \
 		qholiday.rb strftime.rb strptime.rb
 
-DOCS_EN=	MANUAL.en README.en
-DOCS_JA=	MANUAL README
+DOCS_EN=	MANUAL.en MANUAL.en.rd MANUAL.en.html README.en
+DOCS_JA=	MANUAL MANUAL.rd MANUAL.html README
 EXAMPLES_EN=	cal.rb daylight.rb goodfriday.rb
 EXAMPLES_JA=	ncal.rb
 

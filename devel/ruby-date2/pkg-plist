@@ -15,8 +15,12 @@
 @dirrm %%RUBY_EXAMPLESDIR%%/date2/ja
 @dirrm %%RUBY_EXAMPLESDIR%%/date2
 %%RUBY_DOCDIR%%/date2/MANUAL.en
+%%RUBY_DOCDIR%%/date2/MANUAL.en.html
+%%RUBY_DOCDIR%%/date2/MANUAL.en.rd
 %%RUBY_DOCDIR%%/date2/README.en
 %%RUBY_DOCDIR%%/date2/ja/MANUAL
+%%RUBY_DOCDIR%%/date2/ja/MANUAL.html
+%%RUBY_DOCDIR%%/date2/ja/MANUAL.rd
 %%RUBY_DOCDIR%%/date2/ja/README
 @dirrm %%RUBY_DOCDIR%%/date2/ja
 @dirrm %%RUBY_DOCDIR%%/date2
