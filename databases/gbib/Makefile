@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes
 

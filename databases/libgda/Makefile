@@ -20,7 +20,6 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gconf bonobo
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

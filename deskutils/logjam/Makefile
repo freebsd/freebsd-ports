@@ -19,7 +19,6 @@ MAN1=		logjam.1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

@@ -18,7 +18,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

@@ -15,7 +15,6 @@ MAINTAINER=	ryan@manunkind.org
 COMMENT=	A GTK interface to user journals on www.livejournal.com
 
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 MAN1=		loserjabber.1

@@ -18,7 +18,6 @@ LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		guile.10:${PORTSDIR}/lang/guile
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

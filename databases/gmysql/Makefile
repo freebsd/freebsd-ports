@@ -16,7 +16,6 @@ COMMENT=	GTK+ frontend for mysql
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX}

@@ -28,7 +28,6 @@ PLIST_SUB=	GNOME_PILOT="@comment "
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs libcapplet
 USE_LIBTOOL=	yes
 

@@ -17,7 +17,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
