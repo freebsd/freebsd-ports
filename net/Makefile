@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.107 1997/06/10 09:11:05 asami Exp $
+# $Id: Makefile,v 1.108 1997/06/11 20:52:15 max Exp $
 #
 
     SUBDIR += archie
@@ -33,7 +33,6 @@
     SUBDIR += mpd
     SUBDIR += mrtg
     SUBDIR += moxftp
-    SUBDIR += natd
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += netcat
