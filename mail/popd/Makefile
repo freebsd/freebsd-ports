@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
 MAINTAINER=	ianf@za.uu.net
 
+BROKEN=		distfiles rerolled, discussing with author
+
 MAN8=   popd.8
 
 INSTALLS_SHLIB=	yes
