@@ -1,0 +1,17 @@
+bin/sp2sp
+bin/gwave
+bin/gwave-exec
+bin/gwaverepl
+share/guile/app/gwave/system.gwaverc
+share/guile/app/gwave/cmds.scm
+share/guile/app/gwave/dynlink.scm
+share/guile/app/gwave/globals.scm
+share/guile/app/gwave/minimal.scm
+share/guile/app/gwave/std-args.scm
+share/guile/app/gwave/std-menus.scm
+share/guile/app/gwave/std-toolbar.scm
+share/guile/app/gwave/extra-menus.scm
+share/guile/app/gwave/visiblewave-ops.scm
+share/guile/app/gwave/gwave-startup.scm
+@dirrm share/guile/app/gwave
+@unexec rmdir %D/share/guile/app 2>/dev/null || true

@@ -1,0 +1,19 @@
+Gwave is a waveform viewer. Its purpose is for viewing analog data,
+such as the output from Spice-like simulations.
+
+Gwave can read binary or ascii files written by HSpice from transient,
+AC, or Sweep analyses, "raw" files written by Spice2, Spice3, or
+ngspice, and transient analysis files from the CAzM simulator. It can
+also read a generic tabular ASCII format suitable for use with ACS or
+homegrown tools.
+
+It supports multiple "panels" (graticlules) with multiple variables
+displayed in each. Two vertical-bar cursors are available for
+time-difference measurements. Multiple files can be loaded, for
+comparing the results of several simulations.
+
+Much of Gwave's user interface is written in the Guile extension
+language and is therefore easily extensible for custom applications
+without recompilation.
+
+WWW: http://geda.seul.org/tools/gwave
