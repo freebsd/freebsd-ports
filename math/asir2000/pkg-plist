@@ -104,6 +104,7 @@ share/asir/help-eg/dp_true_nf
 share/asir/help-eg/dp_true_nf_mod
 share/asir/help-eg/dp_vtoe
 share/asir/help-eg/draw_obj
+share/asir/help-eg/draw_string
 share/asir/help-eg/ecm_add_ff
 share/asir/help-eg/ecm_chsgn_ff
 share/asir/help-eg/ecm_sub_ff
@@ -148,6 +149,7 @@ share/asir/help-eg/ilcm
 share/asir/help-eg/imag
 share/asir/help-eg/int32ton
 share/asir/help-eg/inv
+share/asir/help-eg/invmat
 share/asir/help-eg/ior
 share/asir/help-eg/irem
 share/asir/help-eg/irredcheck_ff
@@ -268,6 +270,7 @@ share/asir/help-eg/sub_str
 share/asir/help-eg/subst
 share/asir/help-eg/tdiv
 share/asir/help-eg/time
+share/asir/help-eg/timer
 share/asir/help-eg/tolex
 share/asir/help-eg/tolex_d
 share/asir/help-eg/tolex_gsl
@@ -379,6 +382,7 @@ share/asir/help-jp/dp_true_nf
 share/asir/help-jp/dp_true_nf_mod
 share/asir/help-jp/dp_vtoe
 share/asir/help-jp/draw_obj
+share/asir/help-jp/draw_string
 share/asir/help-jp/ecm_add_ff
 share/asir/help-jp/ecm_chsgn_ff
 share/asir/help-jp/ecm_sub_ff
@@ -423,6 +427,7 @@ share/asir/help-jp/ilcm
 share/asir/help-jp/imag
 share/asir/help-jp/int32ton
 share/asir/help-jp/inv
+share/asir/help-jp/invmat
 share/asir/help-jp/ior
 share/asir/help-jp/irem
 share/asir/help-jp/irredcheck_ff
@@ -541,6 +546,7 @@ share/asir/help-jp/sub_str
 share/asir/help-jp/subst
 share/asir/help-jp/tdiv
 share/asir/help-jp/time
+share/asir/help-jp/timer
 share/asir/help-jp/tolex
 share/asir/help-jp/tolex_d
 share/asir/help-jp/tolex_gsl
@@ -1110,6 +1116,7 @@ share/doc/asir/html-jp/man_toc.html
 share/doc/asir/html-internal-ja/internal.html
 share/doc/asir/html-internal-ja/internal_toc.html
 share/doc/asir/internal.ps
+share/doc/asir/asir.1
 @dirrm share/asir/help-jp
 @dirrm share/asir/help-eg
 @dirrm share/asir

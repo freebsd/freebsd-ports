@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20020410
+PORTVERSION=	20020910
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.asir.org/pub/asir/
+MASTER_SITES=	ftp://ftp.asir.org/pub/asir/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASIR_DOC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	saito@asir.org
 
-BROKEN=		"Does not build"
-
 WRKSRC=		${WRKDIR}/asir2000
 PREFIX?=	${LOCALBASE}
 USE_IMAKE=	YES
+XFREE86_HTML_MAN=	no
+USE_X_PREFIX = no
 HAS_CONFIGURE=	YES
 CONFIGURE_ENV=	OLD_PARI_VERSION=${OLD_PARI_VERSION} \
 		PARI_VERSION=${PARI_VERSION} \
 		LAPACK_VERSION=${LAPACK_VERSION}
 CONFIGURE_ARGS= -oxhome ${PREFIX} -plot ${PARI} -fep -interval ${LAPACK}
-ASIR_DOC_VERSION=	20010313
+ASIR_DOC_VERSION=	20020910
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
+MAN1=		asir.1
 
 LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
 		fff gr ifplot katsura launch mat nf num primdec \
@@ -41,7 +42,7 @@ PARI_VERSION=	`${GREP} PORTVERSION ${PARI_DIR}/Makefile | cut -f 2`
 LIB_DEPENDS+=	pari.1:${OLD_PARI_DIR}
 PARI=	-oldpari
 .else
-LIB_DEPENDS+=	pari-2.2.3:${PARI_DIR}
+LIB_DEPENDS+=	pari-2.2:${PARI_DIR}
 PARI=	-pari
 .endif
 
@@ -78,9 +79,11 @@ post-install:
 	   done \
 	)
 	@(cd ${WRKSRC}; make install-doc)
-	@${LN} -s ${PREFIX}/bin/asir ${DATADIR}/ox_asir
-	@${LN} -s ${PREFIX}/bin/asir ${DATADIR}/ox_plot
-	@${LN} -s ${PREFIX}/bin/asir ${DATADIR}/ox_launch
+	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_asir
+	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_plot
+	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_launch
 	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${DOCSDIR}
+	@${INSTALL_MAN} ${DOCSDIR}/${MAN1} ${PREFIX}/man/man1
+	@${GZIP_CMD} ${PREFIX}/man/man1/${MAN1}
 
 .include <bsd.port.mk>
