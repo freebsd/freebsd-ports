@@ -18,7 +18,7 @@ NO_BUILD=	yes
 STRCMD=		/usr/games/strfile
 
 .if defined(INSTALL_OFFENSIVE)
-PLIST=		${PKGDIR}/PLIST.off
+PLIST=		${PKGDIR}/pkg-plist.off
 .endif
 
 pre-fetch:
