@@ -55,7 +55,6 @@
     SUBDIR += linux-gtk
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
-    SUBDIR += linux_locale
     SUBDIR += lunar
     SUBDIR += metalist
     SUBDIR += mkisofs
