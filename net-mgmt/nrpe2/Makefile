@@ -5,27 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nrpe
-PORTVERSION=	1.9
-PORTREVISION=	0
-CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		nrpe2
+PORTVERSION=		2.0
+PORTREVISION=		0
+CATEGORIES=		net-mgmt
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
+DISTNAME=		nrpe-${PORTVERSION}
 
-MAINTAINER=	paul@nerdlabs.com
-COMMENT=	Nagios Remote Plugin Executor
+MAINTAINER=		paul@nerdlabs.com
+COMMENT=		Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios --sysconfdir=${PREFIX}/etc \
-		--sbindir=${PREFIX}/sbin --bindir=${PREFIX}/sbin
+CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/libexec/nagios --bindir=${PREFIX}/sbin --sysconfdir=${PREFIX}/etc
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--enable-ssl
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe
-	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios/check_nrpe
+	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe2
+	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios/check_nrpe2
 	${INSTALL_DATA} ${WRKSRC}/nrpe.cfg ${PREFIX}/etc/nrpe.cfg-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/init-script.freebsd ${PREFIX}/etc/rc.d/nrpe.sh
 
