@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/sources/libxml
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

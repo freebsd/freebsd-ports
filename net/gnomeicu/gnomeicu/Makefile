@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= gnomeicu
 MAINTAINER=	nectar@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		iconv.1:${PORTSDIR}/converters/iconv
+		iconv.2:${PORTSDIR}/converters/iconv
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

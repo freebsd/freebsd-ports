@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 MASTERDIR=	${.CURDIR}/../../irc/xchat
 MD5_FILE=	${.CURDIR}/distinfo
