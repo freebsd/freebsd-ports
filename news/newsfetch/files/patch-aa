@@ -1,6 +1,8 @@
---- Makefile.orig	Sat Sep 13 03:33:46 1997
-+++ Makefile	Sat Sep 13 03:34:12 1997
-@@ -3,9 +3,10 @@
+--- Makefile.orig	Mon Mar  9 14:20:31 1998
++++ Makefile	Sat Apr  4 21:36:42 1998
+@@ -1,11 +1,11 @@
+ CC = gcc
+-CFLAGS = 
  
  objs = main.o nntp.o net.o opt.o util.o 
   
@@ -12,7 +14,7 @@
  
  .c.o:
  	$(CC) -c $(CFLAGS) $< 
-@@ -14,5 +15,5 @@
+@@ -14,5 +14,5 @@
  	rm -f *.o newsfetch
  
  install:
