@@ -7,6 +7,7 @@
 
 PORTNAME=	gedit
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
@@ -32,5 +33,8 @@ PLIST_SUB=	VERSION="2.8" \
 
 MAN1=		gedit.1
 GCONF_SCHEMAS=	gedit.schemas
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>
