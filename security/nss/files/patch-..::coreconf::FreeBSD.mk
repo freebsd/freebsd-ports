@@ -1,5 +1,5 @@
 --- ../coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
-+++ ../coreconf/FreeBSD.mk	Fri Mar 19 01:23:30 2004
++++ ../coreconf/FreeBSD.mk	Sat Apr 17 21:25:24 2004
 @@ -35,9 +35,9 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
@@ -31,7 +31,7 @@
  endif
  
  ARCH			= freebsd
-@@ -66,12 +68,12 @@
+@@ -66,12 +68,16 @@
  MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
  
  ifeq ($(MOZ_OBJFORMAT),elf)
@@ -42,7 +42,11 @@
  endif
  
 -MKSHLIB			= $(CC) $(DSO_LDOPTS)
++ifneq (,$(filter alpha ia64,$(OS_TEST)))
++MKSHLIB			= $(CC) -Wl,-Bsymbolic -lc $(DSO_LDOPTS)
++else
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
++endif
  ifdef MAPFILE
  # Add LD options to restrict exported symbols to those in the map file
  endif
