@@ -13,5 +13,3 @@ containing the data the user entered. Entries can also be validated by
 calling out to application-specific code. Validation can be done when the
 user tries to move to the next sheet, or at the end after all the data has
 been entered. The wizard module includes several validators.
-
-WWW: http://www.zolera.com/resources/opensrc/wizard/

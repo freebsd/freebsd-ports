@@ -9,7 +9,8 @@
 PORTNAME=	wizard
 PORTVERSION=	1.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zolera.com/opensrc/wizard/
+# mastersite disappeared in May 2002
+MASTER_SITES=	# http://www.zolera.com/opensrc/wizard/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes for writing MS-style 'wizards'
