@@ -1,0 +1,60 @@
+--- Makefile	Fri May 23 19:44:35 1997
++++ /home/andy/tmp/wrk/Makefile	Wed May  5 18:17:13 1999
+@@ -9,14 +9,14 @@
+ #	AIX, Alpha, FreeBSD, HPUX, Linux, Linux-xcurses, 
+ #	Solaris, Sun, and Irix (SGI)
+ #
+-OS		= Dev
++OS		= FreeBSD
+ 
+ #
+ # These reflect where CDK will be installed from and to
+ # on your system.
+ #
+-SRCDIR		= /home/glovem/cdk-$(VERSION)
+-INST_ROOTDIR	= /export/local
++SRCDIR		= $(WRKSRC)
++INST_ROOTDIR	= $(PREFIX)
+ 
+ #
+ # Set some informational variables.
+@@ -80,7 +80,7 @@
+ # NOSTRERR	Your library does not have		Sun
+ #		the library function strerr.
+ # 
+-EXTRA_CFLAGS = -g -Wall
++CFLAGS+= -I${SRCDIR} -DCOLOR -DNCURSES
+ 
+ ###############################################################
+ #         Do Not Change Anything Below This Line
+@@ -135,7 +135,7 @@
+ include $(MAKEDIR)/Makefile.$(OS)
+ 
+ #CC = purify cc
+-CC = gcc
++CC = cc
+ 
+ #
+ # Standard library directive.
+@@ -148,8 +148,9 @@
+ # Shared library directive.
+ #
+ cdkslib $(CDKSLIB):
+-	$(CC) $(CFLAGS) $(SFLAGS) -c $(CDKSRC) $(LIBPATH) $(LINKLIB)
+-	$(CC) $(SLINK) -o $(CDKSLIB).0 $(CDKOBJS) $(LIBPATH) $(LINKLIB)
++#	$(CC) $(CFLAGS) $(SFLAGS) -c $(CDKSRC) $(LIBPATH) $(LINKLIB)
++#	$(CC) $(SLINK) -o $(CDKSLIB).0 $(CDKOBJS) $(LIBPATH) $(LINKLIB)
++	
+ 
+ #
+ # This builds the examples in the examples directory.
+@@ -377,4 +378,8 @@
+ 
+ ############################################################
+ .c.o:
+-	$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -fPIC -c $<
++
++libcdk.so.1: $(CDKOBJS)
++	$(CC) $(CFLAGS) -shared -Wl,-soname,libcdk.so.1 -o libcdk.so.1 $(CDKOBJS)
++

@@ -1,0 +1,11 @@
+--- cdk.h	Fri May 23 19:44:28 1997
++++ /home/andy/tmp/wrk/cdk.h	Wed May  5 18:22:39 1999
+@@ -34,7 +34,7 @@
+  * SUCH DAMAGE.
+  */
+ 
+-#include <curses.h>
++#include <ncurses.h>
+ 
+ #include <stdlib.h>
+ #include <string.h>
