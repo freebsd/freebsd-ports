@@ -227,6 +227,7 @@
     SUBDIR += p5-Email-LocalDelivery-Ezmlm
     SUBDIR += p5-Email-MIME-Encodings
     SUBDIR += p5-Email-Simple
+    SUBDIR += p5-Email-Simple-Creator
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
     SUBDIR += p5-IMAP-Admin
