@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU:S,$,:gnu,}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 
-TMAC_DATE=	20030303
+TMAC_DATE=	20030521
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 GNU_CONFIGURE=	yes
