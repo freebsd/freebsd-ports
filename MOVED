@@ -210,3 +210,42 @@ misc/p5-Business-OnlinePayment-VirtualNet|finance/p5-Business-OnlinePayment-Virt
 misc/p5-Business-OnlinePayment-eSec|finance/p5-Business-OnlinePayment-eSec|2003-04-03|port renamed (see ports/50557)
 misc/p5-Business-OnlinePayment-WorldPay-Junior|finance/p5-Business-WorldPay-Junior|2003-04-03|port renamed (see ports/50557)
 math/p5-Math-Trig||2003-04-03|in base perl5 suite
+graphics/avidemux|multimedia/avidemux|2003-04-04|new category
+graphics/avinfo|multimedia/avinfo|2003-04-04|new category
+graphics/camserv|multimedia/camserv|2003-04-04|new category
+graphics/dtv|multimedia/dtv|2003-04-04|new category
+graphics/dumpmpeg|multimedia/dumpmpeg|2003-04-04|new category
+graphics/enjoympeg|multimedia/enjoympeg|2003-04-04|new category
+graphics/fxtv|multimedia/fxtv|2003-04-04|new category
+graphics/gopchop|multimedia/gopchop|2003-04-04|new category
+graphics/gxanim|multimedia/gxanim|2003-04-04|new category
+graphics/libdvbpsi|multimedia/libdvbpsi|2003-04-04|new category
+graphics/libfame|multimedia/libfame|2003-04-04|new category
+graphics/libquicktime|multimedia/libquicktime|2003-04-04|new category
+graphics/mmsclient|multimedia/mmsclient|2003-04-04|new category
+graphics/mpeg2codec|multimedia/mpeg2codec|2003-04-04|new category
+graphics/mpeg2play|multimedia/mpeg2play|2003-04-04|new category
+graphics/mpeg_encode|multimedia/mpeg_encode|2003-04-04|new category
+graphics/mpeg_play|multimedia/mpeg_play|2003-04-04|new category
+graphics/mpeg_stat|multimedia/mpeg_stat|2003-04-04|new category
+graphics/mpegedit|multimedia/mpegedit|2003-04-04|new category
+graphics/mpeg|multimedia/mpeg|2003-04-04|new category
+graphics/mpgtx|multimedia/mpgtx|2003-04-04|new category
+graphics/mplex|multimedia/mplex|2003-04-04|new category
+graphics/mtv|multimedia/mtv|2003-04-04|new category
+graphics/netshow|multimedia/netshow|2003-04-04|new category
+graphics/ppm2fli|multimedia/ppm2fli|2003-04-04|new category
+graphics/smpeg-xmms|multimedia/smpeg-xmms|2003-04-04|new category
+graphics/smpeg|multimedia/smpeg|2003-04-04|new category
+graphics/splitmpg|multimedia/splitmpg|2003-04-04|new category
+graphics/tkxanim|multimedia/tkxanim|2003-04-04|new category
+graphics/totem|multimedia/totem|2003-04-04|new category
+graphics/transcode|multimedia/transcode|2003-04-04|new category
+graphics/vlc|multimedia/vlc|2003-04-04|new category
+graphics/xanim|multimedia/xanim|2003-04-04|new category
+graphics/xawtv|multimedia/xawtv|2003-04-04|new category
+graphics/xine_d4d_plugin|multimedia/xine_d4d_plugin|2003-04-04|new category
+graphics/xine_d5d_plugin|multimedia/xine_d5d_plugin|2003-04-04|new category
+graphics/xmovie|multimedia/xmovie|2003-04-04|new category
+graphics/xmps|multimedia/xmps|2003-04-04|new category
+graphics/xtheater|multimedia/xtheater|2003-04-04|new category
