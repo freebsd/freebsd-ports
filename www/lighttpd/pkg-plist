@@ -1,0 +1,20 @@
+etc/lighttpd.conf.sample
+etc/rc.d/lighttpd.sh
+lib/lighttpd/mod_access.so
+lib/lighttpd/mod_accesslog.so
+lib/lighttpd/mod_auth.so
+lib/lighttpd/mod_cgi.so
+lib/lighttpd/mod_compress.so
+lib/lighttpd/mod_evhost.so
+lib/lighttpd/mod_expire.so
+lib/lighttpd/mod_fastcgi.so
+lib/lighttpd/mod_httptls.so
+lib/lighttpd/mod_maps.so
+lib/lighttpd/mod_redirect.so
+lib/lighttpd/mod_rewrite.so
+lib/lighttpd/mod_secdownload.so
+lib/lighttpd/mod_simple_vhost.so
+lib/lighttpd/mod_status.so
+lib/lighttpd/mod_usertrack.so
+sbin/lighttpd
+@dirrm lib/lighttpd

@@ -1,0 +1,161 @@
+# lighttpd configuration file
+# 
+# use a it as base for lighttpd 1.0.0 and above
+#
+# $Id: lighttpd.conf,v 1.3 2004/02/07 21:15:05 weigon Exp $
+
+############ Options you really have to take care of ####################
+
+## modules to load
+# at least mod_access and mod_accesslog should be loaded
+# all other module should only be loaded if really neccesary
+# - saves some time
+# - saves memory
+server.modules              = ( 
+#                               "mod_rewrite", 
+			        "mod_access", 
+#				"mod_auth", 
+#                               "mod_status", 
+#				"mod_fastcgi",
+#				"mod_simple_vhost",
+#				"mod_evhost",
+#				"mod_cgi",
+#				"mod_compress",
+				"mod_accesslog" )
+
+## a static document-root, for virtual-hosting take look at the 
+## server.virtual-* options
+server.document-root             = "/var/www/"
+
+## where to send error-messages to
+server.errorlog            = "/var/log/lighttpd/error.log"
+
+# files to check for if .../ is requested
+server.indexfiles          = ( "index.php", "index.html", 
+                                "index.htm", "default.htm" )
+
+# mimetype mapping
+mimetype.assign            = ( ".png"  => "image/png", 
+                                ".jpg"  => "image/jpeg",
+                                ".jpeg" => "image/jpeg",
+                                ".gif"  => "image/gif",
+                                ".html" => "text/html",
+                                ".htm"  => "text/html",
+                                ".pdf"  => "application/pdf",
+                                ".swf"  => "application/x-shockwave-flash",
+                                ".spl"  => "application/futuresplash",
+                                ".txt"  => "text/plain",
+                                ".tar.gz" =>   "application/x-tgz",
+                                ".tgz"  => "application/x-tgz",
+                                ".gz"   => "application/x-gzip",
+				".c"    => "text/plain",
+				".conf" => "text/plain" )
+
+#### accesslog module
+accesslog.filename          = "/var/log/lighttpd/access.log"
+
+## deny access the file-extensions
+#
+# ~    is for backupfiles from vi, emacs, joe, ...
+# .inc is often used for code includes which should in general not be part
+#      of the document-root
+url.access-deny             = ( "~", ".inc" )
+
+
+
+######### Options that are good to be but not neccesary to be changed #######
+
+## bind to port (default: 80)
+#server.port                = 81
+
+## bind to localhost (default: all interfaces)
+#server.bind                = "grisu.home.kneschke.de"
+
+
+###### virtual hosts
+##
+##   If you want name-based virtual hosting add the next three settings and load
+##   mod_simple_vhost
+##
+## document-root =
+##   virtual-server-root + virtual-server-default-host + virtual-server-docroot or
+##   virtual-server-root + http-host + virtual-server-docroot
+##
+#simple-vhost.server-root         = "/home/weigon/wwwroot/servers/"
+#simple-vhost.default-host        = "grisu.home.kneschke.de"
+#simple-vhost.document-root       = "/pages/"
+
+
+## 
+## Format: <errorfile-prefix><status>.html
+## -> ..../status-404.html for 'File not found'
+#server.errorfile-prefix    = "/home/weigon/projects/lighttpd/doc/status-"
+
+## virtual directory listings
+#server.dir-listing          = "enable"
+
+## send unhandled HTTP-header headers to error-log
+#debug.dump-unknown-headers  = "enable"
+
+### only root can use these options
+#
+# chroot() to directory (default: no chroot() )
+#server.chroot             = "/"
+
+## change uid to <uid> (default: don't care)
+server.username            = "www-data"
+
+## change uid to <uid> (default: don't care)
+server.groupname           = "www-data"
+
+server.pid-file		   = "/var/run/lighttpd.pid" 
+#### compress module
+#compress.cache-dir          = "/var/tmp/lighttpd/cache/compress/"
+#compress.filetype           = ("text/plain", "text/html")
+
+#### fastcgi module
+#fastcgi.server              = ( ".php" =>
+#				( "grisu" => 
+#				  ( 
+#				    "host" => "192.168.2.10",
+#				    "port" => 1026
+#				  )
+#				)
+#			      )
+
+#### CGI module
+#cgi.assign                  = ( ".pl"  => "/usr/bin/perl",
+#                                ".cgi" => "/usr/bin/perl" )
+#
+
+#### SSL engine
+#ssl.engine                  = "enable"
+#ssl.pemfile                 = "server.pem"
+
+#### status module
+#status.rrd-reports          = "enable"
+#status.rrd-dir              = "/home/weigon/wwwroot/logs/"
+
+#### auth module
+#auth.backend                = "plain"
+#auth.backend.plain.userfile = "lighttpd.user"
+#auth.backend.plain.groupfile = "lighttpd.group"
+
+#auth.require                = ( "/server-status" => 
+#                                ( 
+#				  "method"  => "digest",
+#				  "realm"   => "download archiv",
+#				  "require" => "group=www|user=jan|host=192.168.2.10"
+#				),
+#				"/server-info" => 
+#                                ( 
+#				  "method"  => "digest",
+#				  "realm"   => "download archiv",
+#				  "require" => "group=www|user=jan|host=192.168.2.10"
+#				)
+#                              )
+
+#### url handling modules (rewrite, redirect, access)
+#url.rewrite                 = ( "^/$"             => "/server-status" )
+#url.redirect                = ( "^/wishlist/(.+)" => "http://www.123.org/$1" )
+

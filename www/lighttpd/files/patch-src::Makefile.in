@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Tue Mar 23 18:30:12 2004
++++ src/Makefile.in	Wed Mar 24 05:25:13 2004
+@@ -57,7 +57,7 @@
+ 
+ #hdr += chat.h chat_misc.h chat_endec.h chat_user.h \
+ #       chat_channel.h
+-DEFS = @DEFS@ -DLIBRARY_DIR="\"$(libdir)\""
++DEFS = @DEFS@ -DLIBRARY_DIR="\"$(libdir)/lighttpd\""
+ DEPDIR = @DEPDIR@
+ DL_LIB = @DL_LIB@
+ ECHO = @ECHO@
+@@ -373,12 +373,12 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)
++	$(mkinstalldirs) $(DESTDIR)$(libdir)/lighttpd
+ 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f"; \
+-	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f; \
++	    echo " $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/lighttpd/$$f"; \
++	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/lighttpd/$$f; \
+ 	  else :; fi; \
+ 	done
+ 
