@@ -28,6 +28,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/sdbm.so
 %%RUBY_ARCHLIBDIR%%/socket.so
 %%RUBY_ARCHLIBDIR%%/st.h
+%%RUBY_ARCHLIBDIR%%/syslog.so
 %%RUBY_ARCHLIBDIR%%/util.h
 %%RUBY_ARCHLIBDIR%%/version.h
 %%RUBY_ARCHLIBDIR%%/digest/md5.so
@@ -171,12 +172,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/syslog.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/digest
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/net
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
 %%RUBY_DOCDIR%%/.keep_me
 @unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
