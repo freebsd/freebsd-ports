@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-Net-RawIP
+# New ports collection makefile for:	p5-Net-Z3950
 # Date created:				23 December 2001
 # Whom:                			Dmitry Sivachenko <demon@FreeBSD.org>
 #
