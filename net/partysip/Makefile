@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	partysip
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://osip.atosc.org/download/partysip/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a SIP proxy server
@@ -24,5 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-db=gdbm
 INSTALLS_SHLIB=	yes
+
+BROKEN=		Does not link with libossip-2.0.7. Downgrade libossip to 2.0.6, uncomment BROKEN in Makefile and retry
 
 .include <bsd.port.mk>
