@@ -83,6 +83,7 @@
     SUBDIR += git
     SUBDIR += gkrellm-reminder
     SUBDIR += gkrellmaflag
+    SUBDIR += gkrellmbgchg
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
