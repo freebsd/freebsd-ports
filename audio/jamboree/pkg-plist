@@ -1,8 +1,12 @@
 bin/jamboree
 etc/gconf/gconf.xml.defaults/apps/jamboree/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/jamboree/columns/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/jamboree/control/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/jamboree/ui/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/columns/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/control/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/ui/%gconf.xml
 etc/gconf/schemas/jamboree.schemas
 share/gnome/applications/jamboree.desktop
 share/gnome/jamboree/column-chooser.glade
@@ -26,9 +30,26 @@ share/gnome/jamboree/jamboree.glade
 share/gnome/jamboree/master-out.png
 share/gnome/jamboree/smart-playlist-dialog.glade
 share/gnome/pixmaps/jamboree.png
+share/locale/az/LC_MESSAGES/jamboree.mo
+share/locale/ca/LC_MESSAGES/jamboree.mo
+share/locale/cs/LC_MESSAGES/jamboree.mo
+share/locale/de/LC_MESSAGES/jamboree.mo
+share/locale/es/LC_MESSAGES/jamboree.mo
+share/locale/fi/LC_MESSAGES/jamboree.mo
+share/locale/fr/LC_MESSAGES/jamboree.mo
+share/locale/hr/LC_MESSAGES/jamboree.mo
+share/locale/nl/LC_MESSAGES/jamboree.mo
+share/locale/no/LC_MESSAGES/jamboree.mo
+share/locale/pt/LC_MESSAGES/jamboree.mo
+share/locale/sr/LC_MESSAGES/jamboree.mo
+share/locale/sr@Latn/LC_MESSAGES/jamboree.mo
 share/locale/sv/LC_MESSAGES/jamboree.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/jamboree/columns
+@dirrm etc/gconf/gconf.xml.defaults/apps/jamboree/control
+@dirrm etc/gconf/gconf.xml.defaults/apps/jamboree/ui
 @dirrm etc/gconf/gconf.xml.defaults/apps/jamboree
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/columns
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/control
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree
 @dirrm share/gnome/jamboree
