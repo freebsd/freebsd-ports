@@ -843,10 +843,10 @@ PLIST_SUB+=	SHARED="@comment "
 .else
 PLIST_SUB+=	SHARED=""
 ALL_TARGET=	freebsd-shared all
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	4
-.else
+.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
 SHLIBVER=	3
+.else
+SHLIBVER=	4
 .endif
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}
 PLIST_SUB+=	SHLIBVER=${SHLIBVER}
@@ -856,10 +856,10 @@ INSTALLS_SHLIB=	yes
 .if defined(OPENSSL_OVERWRITE_BASE)
 PKGNAMESUFFIX=	-beta-overwrite-base
 PREFIX=		/usr
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	3
-.else
+.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
 SHLIBVER=	2
+.else
+SHLIBVER=	3
 .endif
 OPENSSLDIR=	/etc/ssl
 MANPREFIX=	${PREFIX}/openssl
