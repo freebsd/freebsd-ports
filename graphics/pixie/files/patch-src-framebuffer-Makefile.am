@@ -1,0 +1,13 @@
+--- src/framebuffer/Makefile.am.orig	Sun Jan 25 04:16:25 2004
++++ src/framebuffer/Makefile.am	Fri Jan 30 18:30:57 2004
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = framebuffer.la 
+ 
+-CFLAGS = $(CFLAGS) @X_CFLAGS@
++CFLAGS = @X_CFLAGS@
+ framebuffer_la_SOURCES = framebuffer.cpp fbx.cpp
+ framebuffer_la_LIBADD = ../common/libcommon.a @X_LIBS@
+ framebuffer_la_LDFLAGS = -module @X_LDFLAGS@
+
+
+

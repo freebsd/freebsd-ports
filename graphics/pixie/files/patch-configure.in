@@ -1,0 +1,62 @@
+--- configure.in.orig	Sun Jan 25 04:16:25 2004
++++ configure.in	Fri Jan 30 18:33:19 2004
+@@ -22,8 +22,8 @@
+ dnl CPU - OS specific compiler flags
+ dnl
+ case $compiler in
+-	gcc)
+-		CFLAGS="-O3 -fstrict-aliasing -funroll-loops -ffast-math -fomit-frame-pointer -fno-rtti -fno-exceptions"
++	cc|gcc)
++		CFLAGS+="-O3 -fstrict-aliasing -funroll-loops -ffast-math -fomit-frame-pointer -fno-rtti -fno-exceptions"
+ 
+ 		dnl --------------------------------------
+ 		dnl Add the CPU dependent optimizations
+@@ -48,20 +48,20 @@
+ 	;;
+ 	icc)
+ 	;;
+-	cc)
+-	CFLAGS="-O3 -apo -LNO -IPA"
+-	CXXFLAGS="$CFLAGS"
+-	LDFLAGS="${LDFLAGS} -s -IPA"
+-	;;
++dnl	cc)
++dnl	CFLAGS="-O3 -apo -LNO -IPA"
++dnl	CXXFLAGS="$CFLAGS"
++dnl	LDFLAGS="${LDFLAGS} -s -IPA"
++dnl	;;
+ esac
+ 
+ 
+ dnl ---------------------------------------------------
+ dnl Check standard libraries
+ dnl
+-AC_CHECK_LIB(dl, dlopen,,[AC_MSG_ERROR([dl library is not found])],)
++dnl AC_CHECK_LIB(dl, dlopen,,[AC_MSG_ERROR([dl library is not found])],)
+ AC_CHECK_LIB(m, sin,,[AC_MSG_ERROR([math library is not found])],)
+-AC_CHECK_LIB(pthread, pthread_create,,[AC_MSG_ERROR([pthread library is not found])],)
++dnl AC_CHECK_LIB(pthread, pthread_create,,[AC_MSG_ERROR([pthread library is not found])],)
+ 
+ dnl ---------------------------------------------------
+ dnl Find X
+@@ -90,8 +90,8 @@
+ 
+ FLTK_EXTRA=
+ 
+-AC_CHECK_LIB(fltk,main,LIBFLTK="-lfltk")
+-AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" FLTK_EXTRA=show])
++dnl AC_CHECK_LIB(fltk,main,LIBFLTK="-lfltk")
++dnl AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" FLTK_EXTRA=show])
+ 
+ FLTK_EXTRA=
+ 
+@@ -101,7 +101,7 @@
+ 
+ saved_LIBS="${LIBS}"
+ 
+-AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
++dnl AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
+ AC_CHECK_LIB(tiff,TIFFOpen,,[AC_MSG_ERROR([libtiff not found])],)
+ 
+ TIFF_LIBS="${LIBS}"
+

@@ -299,6 +299,7 @@
     SUBDIR += picturebook
     SUBDIR += piddle
     SUBDIR += pixelize
+    SUBDIR += pixie
     SUBDIR += pixieplus
     SUBDIR += pixmap
     SUBDIR += plasma-kmod
