@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ggz.2:${PORTSDIR}/games/libggz \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

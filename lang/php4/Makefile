@@ -21,7 +21,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.3.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -512,7 +512,7 @@ CONFIGURE_ARGS+=--enable-wddx
 .endif
 
 .if defined(WITH_XML) || defined(WITH_XML_DEP)
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=--with-expat-dir=${LOCALBASE}
 .endif
 

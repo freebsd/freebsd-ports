@@ -7,6 +7,7 @@
 
 PORTNAME=	easysoap
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	EasySoap++-${PORTVERSION}
 MAINTAINER=	gabriel_ambuehl@buz.ch
 COMMENT=	C++ SOAP Library based on expat
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-Parser
 PORTVERSION=	2.34
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to James Clark's XML parser, expat
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include

@@ -15,7 +15,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	0.9.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 #MASTER_SITES=	http://www.apache.org/dist/apr/
 #DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
@@ -26,7 +26,7 @@ DISTFILES=	apr-APR_0_9_BRANCH_20040113112838.tar.gz apr-util-APU_0_9_BRANCH_2004
 MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
 
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_AUTOCONF_VER=	253

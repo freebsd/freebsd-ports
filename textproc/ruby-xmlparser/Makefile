@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlparser
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module to access James Clark's XML Parser ToolKit ("expat")
 
 BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 # to utilize encoding maps included in p5-XML-Parser

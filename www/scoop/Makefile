@@ -7,6 +7,7 @@
 
 PORTNAME=	scoop
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	patrick@ginx.com
 COMMENT=	A "collaborative media application."
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \

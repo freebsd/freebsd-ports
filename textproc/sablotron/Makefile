@@ -7,7 +7,7 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 
@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 
 # If WITH_DISABLE_META is defined sablot will not output the META html tag
 #WITH_DISABLE_META=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -21,7 +21,7 @@ FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/27c331d5-64c7-11d8-80e3-0020
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000

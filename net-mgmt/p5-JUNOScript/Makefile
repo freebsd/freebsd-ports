@@ -7,7 +7,7 @@
 
 PORTNAME=		JUNOScript
 PORTVERSION=		5.3R2.4
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net-mgmt perl5
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://e.wheel.dk/~jesper/
@@ -19,7 +19,7 @@ MAINTAINER=		jesper@FreeBSD.org
 COMMENT=	API to exchange information with Juniper Networks routers
 
 PERL_BASE=	${SITE_PERL}
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	${PERL_BASE}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
