@@ -1,0 +1,18 @@
+bin/listcab
+include/cabinet/bstring.h
+include/cabinet/cfcreate.h
+include/cabinet/cfdblock.h
+include/cabinet/cffdrmgr.h
+include/cabinet/cffile.h
+include/cabinet/cffolder.h
+include/cabinet/cfheader.h
+include/cabinet/cfreader.h
+include/cabinet/cftypes.h
+include/cabinet/darray.h
+include/cabinet/dos_comp.h
+include/cabinet/object.hpp
+include/cabinet/queue.hpp
+lib/libcabinet.a
+lib/libcabinet.so
+lib/libcabinet.so.1
+@dirrm include/cabinet
