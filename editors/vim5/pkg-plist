@@ -16,6 +16,7 @@ bin/rvim
 share/vim/%%VIM_VER%%/doc/autocmd.txt
 share/vim/%%VIM_VER%%/doc/change.txt
 share/vim/%%VIM_VER%%/doc/cmdline.txt
+share/vim/%%VIM_VER%%/doc/develop.txt
 share/vim/%%VIM_VER%%/doc/digraph.txt
 share/vim/%%VIM_VER%%/doc/editing.txt
 share/vim/%%VIM_VER%%/doc/eval.txt
@@ -83,6 +84,7 @@ share/vim/%%VIM_VER%%/syntax/amiga.vim
 share/vim/%%VIM_VER%%/syntax/asm.vim
 share/vim/%%VIM_VER%%/syntax/asmh8300.vim
 share/vim/%%VIM_VER%%/syntax/asn.vim
+share/vim/%%VIM_VER%%/syntax/aspvbs.vim
 share/vim/%%VIM_VER%%/syntax/atlas.vim
 share/vim/%%VIM_VER%%/syntax/ave.vim
 share/vim/%%VIM_VER%%/syntax/awk.vim
@@ -90,6 +92,7 @@ share/vim/%%VIM_VER%%/syntax/basic.vim
 share/vim/%%VIM_VER%%/syntax/bib.vim
 share/vim/%%VIM_VER%%/syntax/btm.vim
 share/vim/%%VIM_VER%%/syntax/c.vim
+share/vim/%%VIM_VER%%/syntax/change.vim
 share/vim/%%VIM_VER%%/syntax/clean.vim
 share/vim/%%VIM_VER%%/syntax/clipper.vim
 share/vim/%%VIM_VER%%/syntax/cobol.vim
@@ -99,7 +102,9 @@ share/vim/%%VIM_VER%%/syntax/cpp.vim
 share/vim/%%VIM_VER%%/syntax/csh.vim
 share/vim/%%VIM_VER%%/syntax/css.vim
 share/vim/%%VIM_VER%%/syntax/cterm.vim
+share/vim/%%VIM_VER%%/syntax/cweb.vim
 share/vim/%%VIM_VER%%/syntax/dcl.vim
+share/vim/%%VIM_VER%%/syntax/def.vim
 share/vim/%%VIM_VER%%/syntax/diff.vim
 share/vim/%%VIM_VER%%/syntax/diva.vim
 share/vim/%%VIM_VER%%/syntax/dosbatch.vim
@@ -150,6 +155,7 @@ share/vim/%%VIM_VER%%/syntax/make.vim
 share/vim/%%VIM_VER%%/syntax/man.vim
 share/vim/%%VIM_VER%%/syntax/manual.vim
 share/vim/%%VIM_VER%%/syntax/maple.vim
+share/vim/%%VIM_VER%%/syntax/masm.vim
 share/vim/%%VIM_VER%%/syntax/master.vim
 share/vim/%%VIM_VER%%/syntax/matlab.vim
 share/vim/%%VIM_VER%%/syntax/mf.vim
@@ -197,6 +203,7 @@ share/vim/%%VIM_VER%%/syntax/scheme.vim
 share/vim/%%VIM_VER%%/syntax/sdl.vim
 share/vim/%%VIM_VER%%/syntax/sed.vim
 share/vim/%%VIM_VER%%/syntax/sgml.vim
+share/vim/%%VIM_VER%%/syntax/sgmllnx.vim
 share/vim/%%VIM_VER%%/syntax/sh.vim
 share/vim/%%VIM_VER%%/syntax/sicad.vim
 share/vim/%%VIM_VER%%/syntax/simula.vim
@@ -208,6 +215,7 @@ share/vim/%%VIM_VER%%/syntax/slrnsc.vim
 share/vim/%%VIM_VER%%/syntax/sm.vim
 share/vim/%%VIM_VER%%/syntax/smil.vim
 share/vim/%%VIM_VER%%/syntax/spec.vim
+share/vim/%%VIM_VER%%/syntax/spice.vim
 share/vim/%%VIM_VER%%/syntax/spup.vim
 share/vim/%%VIM_VER%%/syntax/sql.vim
 share/vim/%%VIM_VER%%/syntax/squid.vim
@@ -227,6 +235,8 @@ share/vim/%%VIM_VER%%/syntax/vhdl.vim
 share/vim/%%VIM_VER%%/syntax/vim.vim
 share/vim/%%VIM_VER%%/syntax/viminfo.vim
 share/vim/%%VIM_VER%%/syntax/vrml.vim
+share/vim/%%VIM_VER%%/syntax/web.vim
+share/vim/%%VIM_VER%%/syntax/winbatch.vim
 share/vim/%%VIM_VER%%/syntax/whitespace.vim
 share/vim/%%VIM_VER%%/syntax/xdefaults.vim
 share/vim/%%VIM_VER%%/syntax/xmath.vim
