@@ -52,16 +52,18 @@ sbin/tsitest
 sbin/typetest
 sbin/xferfaxstats
 @dirrm lib/fax
-@cwd /var/spool/hylafax
+@cwd %%SPOOL%%
 COPYRIGHT
 bin/archive
 bin/faxrcvd
 bin/mkcover
 bin/notify
 bin/notify.awk
+@unexec if [ -f %D/bin/pdf2fax ]; then rm %D/bin/pdf2fax; fi
 bin/pdf2fax.gs
 bin/pcl2fax
 bin/pollrcvd
+@unexec if [ -f %D/bin/ps2fax ]; then rm %D/bin/ps2fax; fi
 bin/ps2fax.dps
 bin/ps2fax.gs
 bin/ps2fax.imp
@@ -128,6 +130,7 @@ config/zyxel-1496e
 config/zyxel-1496e-1
 config/zyxel-1496e-2.0
 config/zyxel-2864
+@unexec if [ -f %D/dev/null ]; then rm %D/dev/null; fi
 etc/cover.templ
 etc/dialrules
 etc/dialrules.europe
@@ -141,7 +144,7 @@ etc/xferfaxlog
 @exec mkfifo %D/FIFO
 @exec chown uucp:dialer %D/FIFO
 @exec chmod 600 %D/FIFO
-@unexec rm %D/FIFO
+@unexec rm %D/FIFO*
 @exec mkdir %D/archive
 @exec chown uucp:dialer %D/archive
 @exec chmod 700 %D/archive
@@ -193,5 +196,5 @@ etc/xferfaxlog
 @dirrm sendq
 @dirrm status
 @dirrm tmp
-@cwd /var/spool
-@dirrm hylafax
+@cwd /
+@dirrm %%SPOOL%%
