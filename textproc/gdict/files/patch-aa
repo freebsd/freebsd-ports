@@ -1,0 +1,14 @@
+--- Makefile	Mon Mar 29 08:02:27 1999
++++ Makefile~	Thu Jul 22 22:25:09 1999
+@@ -1,8 +1,8 @@
+ # Makefile for gdict
+ 
+-CC	= gcc
+-CFLAGS	= -O6 -Wall
+-CFL_GTK	= $(CFLAGS) `gtk-config --cflags` `gtk-config --libs`
++CC	?= gcc
++CFLAGS	?= -O6 -Wall
++CFL_GTK	= $(CFLAGS) `gtk12-config --cflags` `gtk12-config --libs`
+ CFL	= $(CFLAGS)
+ OBJECTS_GDICT	= gdict.c 
+ OBJECTS_DICT	= dict.c
