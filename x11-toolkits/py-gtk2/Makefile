@@ -14,15 +14,13 @@ DISTNAME=	gnome-python-1.0.53
 
 MAINTAINER=	nectar@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 		Imlib.5:${PORTSDIR}/graphics/imlib
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
-CONFIGURE_ARGS=	--with-python=python1.5
+USE_PYTHON=	yes
+CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG} PYTHON=${PREFIX}/bin/${PYTHON_CMD}
 USE_LIBTOOL=	yes
 PLIST_COMPLETE= ${PKGDIR}/PLIST
 
