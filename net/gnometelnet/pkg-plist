@@ -6,4 +6,5 @@ share/gnome/pixmaps/gnome-telnet/gtelnet_bg_black.jpg
 share/gnome/pixmaps/gnome-telnet/gtelnet_bg_brown.jpg
 share/locale/de/LC_MESSAGES/gnome-telnet.mo
 share/locale/ja/LC_MESSAGES/gnome-telnet.mo
+share/locale/sl/LC_MESSAGES/gnome-telnet.mo
 @dirrm share/gnome/pixmaps/gnome-telnet
