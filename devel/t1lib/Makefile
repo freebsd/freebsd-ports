@@ -15,7 +15,6 @@ MAINTAINER=	ijliao@csie.nctu.edu.tw
 
 WRKSRC=		${WRKDIR}/T1-1.0.1
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes

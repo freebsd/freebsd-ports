@@ -18,7 +18,6 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_QT=		yes
 CONFIGURE_ARGS=	--enable-qt --with-qt-includes=${X11BASE}/include/X11/qt
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS=-lgcc
 

@@ -17,7 +17,6 @@ LIB_DEPENDS=	sip.3:${PORTSDIR}/devel/sip
 
 USE_QT=		yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS=-lgcc
 CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/X11/qt

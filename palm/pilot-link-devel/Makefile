@@ -20,7 +20,6 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL5}
 
 MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \

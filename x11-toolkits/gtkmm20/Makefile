@@ -24,7 +24,6 @@ USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"

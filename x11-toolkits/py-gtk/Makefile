@@ -20,7 +20,6 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
 CONFIGURE_ARGS=	--with-python=python1.5

@@ -15,7 +15,6 @@ MAINTAINER=	andrey@novikov.com
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_QT=		yes

@@ -18,7 +18,6 @@ LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
 post-install:
