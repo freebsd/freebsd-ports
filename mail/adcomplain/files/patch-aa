@@ -1,5 +1,5 @@
-*** adcomplain.pl.orig	Tue Dec 16 01:31:20 1997
---- adcomplain.pl	Tue Dec 16 01:36:40 1997
+*** adcomplain.pl.orig	Fri Jan  2 08:20:55 1998
+--- adcomplain.pl	Fri Jan  2 08:24:07 1998
 ***************
 *** 1,3 ****
 --- 1,4 ----
@@ -27,7 +27,7 @@
   #-----------------------------------------------
   # DESCRIPTION
 ***************
-*** 281,288 ****
+*** 279,286 ****
   # depending on your system, to find out where sendmail is.
   # If left blank, we try to find sendmail in /usr/lib, /usr/sbin, and then
   # the user's $PATH, and then invoke it with the "-t" flag.
@@ -36,7 +36,7 @@
   
   # this is a list of domain names for your system (e.g., "compuserve.com")
   # Names in this list are considered "friendly".  Including your own system
---- 282,289 ----
+--- 280,287 ----
   # depending on your system, to find out where sendmail is.
   # If left blank, we try to find sendmail in /usr/lib, /usr/sbin, and then
   # the user's $PATH, and then invoke it with the "-t" flag.
@@ -68,13 +68,3 @@
   unlink $tempname;
   close STDIN;
   exit 0;
-***************
-*** 3694,3700 ****
-  	"glasscity.net",
-  	"globalent.net",	# has no anti-spam policy
-  	"globalf(n|inan).com",
-- 	"globecomm.net",
-  	"gohomeray.com",	# cyberpromo
-  	"(good|spray)(net)?.com",
-  	"greatoffer.com",
---- 3700,3705 ----
