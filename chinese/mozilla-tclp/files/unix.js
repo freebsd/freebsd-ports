@@ -222,6 +222,7 @@ pref("font.size.fixed.zh-TW", 16);
 // below a certian pixel size outline scaled fonts produce poor results
 pref("font.scale.outline.min",      6);
 
+// Anti-alias
 // below a certian pixel size anti-aliased bitmat scaled fonts 
 // produce poor results
 pref("font.scale.aa_bitmap.enable", true);
@@ -332,7 +333,13 @@ pref("print.postscript.nativefont.x-unicode", "");
 pref("print.postscript.nativefont.x-user-def", "");
 pref("print.postscript.nativefont.x-western", "");
 pref("print.postscript.nativefont.zh-CN", "");
+// Printing 
 // Change lines below to your local system fonts
 // Check http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
 pref("print.postscript.nativecode.zh-TW", "big5");
-pref("print.postscript.nativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
+// pref("print.postscript.nativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
+pref("print.postscript.nativefont.zh-TW", "ShanHeiSun-Light-ETen-B5-H");
+
+// XIM Settings:
+//  Uncomment this line if your XIM not working
+ //pref("xim.input_style", "over-the-spot")

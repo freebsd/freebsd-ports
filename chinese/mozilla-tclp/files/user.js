@@ -30,4 +30,5 @@
 //  Change lines below to your local system fonts
 //  Check http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
  // user_pref("print.postscript.nativecode.zh-TW", "big5");
- // user_pref("print.postscript.nativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
+ // user_pref("print.postscript.nativefont.zh-TW", "ShanHeiSun-Light-ETen-B5-H");
+ // // user_pref("print.postscript.nativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
