@@ -111,8 +111,6 @@ sub check_version {
 	return(0);
     }
 
-print "rname:$rname, dir/file:$directory/$filename,v.\n";
-
     if ($rname ne "$directory/$filename,v" && $rname ne "$filename,v") {
 	printf($BadName, "$directory/$filename,v", $rname);
 	return(1);
@@ -164,20 +162,20 @@ $directory =~ s,^$cvsroot[/]+,,;
 if ($directory =~ /src\//) {
 	$check_id = 1;
 }
-if ($directory =~ /ports\//) {
-	$check_id = 2;
-}
+#if ($directory =~ /ports\//) {
+#	$check_id = 2;
+#}
 if ($directory =~ /src\/contrib\//) {
 	$check_id = 3;
 }
 if ($directory =~ /src\/crypto\//) {
 	$check_id = 3;
 }
-if ($login eq "peter") {
-	print "directory:$directory, check_id:$check_id\n";
-} else {
-	$check_id = 0;
-}
+#if ($login eq "peter") {
+#	print "directory:$directory, check_id:$check_id\n";
+#} else {
+#	$check_id = 0;
+#}
 if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
 	$check_id = 0;
 	print "CVS VERSION CHECK BYPASSED!\n";
