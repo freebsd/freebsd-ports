@@ -1,0 +1,11 @@
+--- clients/Imakefile.orig	Mon Feb 21 19:10:20 2005
++++ clients/Imakefile	Mon Feb 21 19:10:28 2005
+@@ -9,7 +9,7 @@
+ 
+ SUBDIRS = clock cmdtool olwm olwmslave 
+ 
+-DIRS_TO_CREATE = $(SRC_DEST) 
++# DIRS_TO_CREATE = $(SRC_DEST) 
+ 
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
