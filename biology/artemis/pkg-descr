@@ -1,7 +1,13 @@
-Artemis is a DNA sequence viewer and annotation tool that allows visualisation
-of sequence features and the results of analyses within the context of the
-sequence, and its six-frame translation.  Artemis is written in Java, reads
-EMBL or GENBANK format sequences and feature tables, and can work on sequences
-of any size.
+Artemis is a DNA sequence viewer and annotation tool that allows
+visualisation of sequence features and the results of analyses within
+the context of the sequence, and its six-frame translation.  Artemis is
+written in Java, reads EMBL or GENBANK format sequences and feature
+tables, and can work on sequences of any size.
 
-WWW:  http://www.sanger.ac.uk/Software/Artemis/manual
+ACT (Artemis Comparison Tool) is a DNA sequence comparison viewer based
+on Artemis. It can open two or more sequences (and their
+annotations/features) together with their comparisons (usually the
+result of running blastn or tblastx searches).
+
+WWW: http://www.sanger.ac.uk/Software/Artemis/manual
+WWW: http://www.sanger.ac.uk/Software/ACT/manual
