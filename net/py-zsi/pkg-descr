@@ -1,4 +1,4 @@
-Paraphrasing the website:
+Paraphrasing the original (1.0 and 1.1) website:
 
   ZSI, the Zolera SOAP Infrastructure, is a pure Python module that provides
   an implementation of the SOAP 1.1 specification.  ZSI parses and generates
@@ -9,6 +9,6 @@ Paraphrasing the website:
   or later.  Feedback to <zsi@zolera.com>.
 
 Author: Rich Salz <rsalz@zolera.com>
-WWW:    http://www.zolera.com/resources/opensrc/zsi/
+WWW:    http://pywebsvcs.sourceforge.net/
 
 -- Johann Visagie <wjv@FreeBSD.org>
