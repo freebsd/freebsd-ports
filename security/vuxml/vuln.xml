@@ -192,12 +192,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <mlist msgid="200412051011.54045.ripe@7a69ezine.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110245752232681</mlist>
       <mlist msgid="20041223235620.GA2846@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110387390226693</mlist>
       <mlist msgid="20041224142506.GB12939@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110390734925183</mlist>
-      <url>http://bugs.kde.org/show_bug.cgi?id=95825</url>
-      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=285128</url>
+      <url>http://www.kde.org/info/security/advisory-20050101-1.txt</url>
     </references>
     <dates>
       <discovery>2004-12-01</discovery>
       <entry>2005-01-01</entry>
+      <modified>2005-01-04</modified>
     </dates>
   </vuln>
 
