@@ -18,7 +18,7 @@ MASTER_SITES=   http://www.analog.cx/ \
 		ftp://download.netvision.net.il/pub/mirrors/analog/ \
 		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
-MAINTAINER=     ache@freebsd.org
+MAINTAINER=     ports@freebsd.org
 
 Y2K=            http://www.analog.cx/
 
