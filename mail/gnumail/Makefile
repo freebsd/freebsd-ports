@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumail
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/usr-apps/

@@ -1,0 +1,11 @@
+--- Bundles/Clock/GNUmakefile.orig	Sun Feb 17 21:44:50 2002
++++ Bundles/Clock/GNUmakefile	Mon Jan 20 05:44:09 2003
+@@ -3,7 +3,7 @@
+ BUNDLE_NAME = Clock
+ BUNDLE_EXTENSION = .bundle
+ 
+-BUNDLE_INSTALL_DIR = $(GNUSTEP_USER_ROOT)/Library/GNUMail
++BUNDLE_INSTALL_DIR = $(GNUSTEP_INSTALLATION_DIR)/Library/GNUMail
+ 
+ Clock_RESOURCE_FILES = *.tiff
+ 
