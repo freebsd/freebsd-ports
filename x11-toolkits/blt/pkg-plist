@@ -2,8 +2,10 @@ bin/bltwish
 bin/bltwish2.4
 include/blt.h
 lib/libBLT.a
+lib/libBLT.so
 lib/libBLT.so.2.4
-@exec /sbin/ldconfig -m %D/lib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/blt2.4/bltCanvEps.pro
 lib/blt2.4/bltDnd.tcl
 lib/blt2.4/bltGraph.pro

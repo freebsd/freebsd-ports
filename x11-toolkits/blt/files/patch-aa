@@ -1,5 +1,5 @@
---- configure.orig	Wed Aug 19 11:10:09 1998
-+++ configure	Tue Sep 22 15:56:11 1998
+--- configure.orig	Tue Aug 18 21:10:09 1998
++++ configure	Wed Oct 14 00:04:15 1998
 @@ -2298,6 +2298,9 @@
   $blt_ckcmd_tcl_home \
   $blt_ckcmd_tcl_home/lib \
@@ -43,12 +43,19 @@
      tclLib="-ltcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${itclSuffix}"
      tkLib="-ltk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}${itclSuffix}"
      ;;
-@@ -3170,7 +3183,7 @@
+@@ -3169,8 +3182,13 @@
+     if test "$test_ok" = yes; then
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
-       SHLIB_LD_FLAGS="-Bshareable -x"
+-      SHLIB_LD_FLAGS="-Bshared -x"
 -      SHLIB_SUFFIX=".so"
-+      SHLIB_SUFFIX=".so.${bltMajor}.${bltMinor}"
++      if test `objformat` = "elf"; then
++        SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
++        SHLIB_SUFFIX=".so.${bltMajor}"
++      else
++        SHLIB_LD_FLAGS="-Bshareable -x"
++        SHLIB_SUFFIX=".so.${bltMajor}.${bltMinor}"
++      fi
      fi
      ;;
  
