@@ -1,36 +1,36 @@
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/Base.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/Client.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/ORB.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/PrimarySeq.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/Seq.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/CorbaClient/SeqFeature.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/DB/Biocorba.pm
-%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/5.6.0/Bio/SeqIO/biocorba.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/AnonymousSeq.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/Base.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/BioEnv.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/PrimarySeq.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/PrimarySeqDB.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/PrimarySeqIterator.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/PrimarySeqVector.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/Seq.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/SeqDB.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/SeqFeature.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/SeqFeatureIterator.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/SeqFeatureVector.pm
-%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/5.6.0/Bio/CorbaServer/Server.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/AnnotMap.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/BioTkPerl8_1.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/GO_Browser.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/HitDisplay.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/README
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/SeqCanvas.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/Tkpsh.pl
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/bioTk_Map.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/bioTk_SeqSubs.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/bioTk_Sequence.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/Bio/Tk/bioTk_Utilities.pm
-%%PLIST_GUI%%lib/perl5/site_perl/5.6.0/mach/auto/Bio/Tk/.packlist
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/Base.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/Client.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/ORB.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/PrimarySeq.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/Seq.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient/SeqFeature.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/Biocorba.pm
+%%PLIST_CORBA_CLIENT%%lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/biocorba.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/AnonymousSeq.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/Base.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/BioEnv.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/PrimarySeq.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/PrimarySeqDB.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/PrimarySeqIterator.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/PrimarySeqVector.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/Seq.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/SeqDB.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/SeqFeature.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/SeqFeatureIterator.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/SeqFeatureVector.pm
+%%PLIST_CORBA_SERVER%%lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer/Server.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/AnnotMap.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/BioTkPerl8_1.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/GO_Browser.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/HitDisplay.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/README
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/SeqCanvas.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/Tkpsh.pl
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/bioTk_Map.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/bioTk_SeqSubs.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/bioTk_Sequence.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk/bioTk_Utilities.pm
+%%PLIST_GUI%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Tk/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bio/Ext/Align.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/.packlist
@@ -213,10 +213,10 @@ lib/perl5/site_perl/%%PERL_VER%%/biodesign.pod
 lib/perl5/site_perl/%%PERL_VER%%/bioperl.pod
 lib/perl5/site_perl/%%PERL_VER%%/biostart.pod
 lib/perl5/site_perl/%%PERL_VER%%/bptutorial.pl
-%%PLIST_GUI%%@dirrm lib/perl5/site_perl/5.6.0/mach/auto/Bio/Tk
-%%PLIST_GUI%%@dirrm lib/perl5/site_perl/5.6.0/Bio/Tk
-%%PLIST_CORBA_SERVER%%@dirrm lib/perl5/site_perl/5.6.0/Bio/CorbaServer
-%%PLIST_CORBA_CLIENT%%@dirrm lib/perl5/site_perl/5.6.0/Bio/CorbaClient
+%%PLIST_GUI%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Tk
+%%PLIST_GUI%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tk
+%%PLIST_CORBA_SERVER%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaServer
+%%PLIST_CORBA_CLIENT%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/CorbaClient
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Variation/IO
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Variation
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sim4
