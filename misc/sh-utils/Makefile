@@ -7,7 +7,7 @@
 
 PORTNAME=	sh-utils
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sh-utils
@@ -46,7 +46,7 @@ remove-info-files:
 # Patch
 #
 
-do-patch:
+post-patch:
 .if !defined(WITH_SUID)
 	@${REINPLACE_CMD} -e 's/u\+s/u\+w/g' ${WRKSRC}/src/Makefile.in
 .endif
