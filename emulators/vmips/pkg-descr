@@ -1,0 +1,8 @@
+vmips is a virtual machine based on the MIPS R3000 RISC processor.
+It has built-in support for several emulated devices and GNU GDB
+remote debugging.
+
+WWW: http://www.dgate.org/vmips/
+
+Brian Gaeke (brg at dgate.org)
+David Bushong helped write the FreeBSD port.
