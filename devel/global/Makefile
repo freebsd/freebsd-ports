@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
-MAINTAINER=	chuckr@freebsd.org
+MAINTAINER=	josb@cncdsl.com
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
