@@ -8,11 +8,11 @@
 PORTNAME=	imaze
 PORTVERSION=	1.3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/ \
-		ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/sounds/
+MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/misc/games/imaze/ \
+		ftp://ftp.tu-clausthal.de/pub/misc/games/imaze/sounds/
 DISTFILES=	imaze1.3.tar.Z imaze.tar
 
-MAINTAINER=	kuehn@rz.tu-clausthal.de
+MAINTAINER=	ports@freebsd.org
 
 #
 # Sound support currently only exists for the XView version (apperently
