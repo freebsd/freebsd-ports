@@ -726,6 +726,7 @@
     SUBDIR += py-ansistyle
     SUBDIR += py-ciphon
     SUBDIR += py-coro
+    SUBDIR += py-ctypes
     SUBDIR += py-cxx
     SUBDIR += py-dialog
     SUBDIR += py-fam
