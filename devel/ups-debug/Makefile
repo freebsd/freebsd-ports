@@ -24,12 +24,12 @@ ALL_TARGET=	ups
 MAN1=		ups.1
 DOCS=		CHANGES FAQ README
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != i386 || ${OSVERSION} > 500000
-BROKEN=	"compiles only under -STABLE on i386"
-# Avoid building packages on bento for unsupported platforms
-IGNORE=	${BROKEN}
+.if ${OSVERSION} > 500000
+BROKEN=	"Does not compile on 5.X"
 .endif
 
 post-install:
