@@ -9,26 +9,27 @@ PORTNAME=	bed
 PORTVERSION=	0.2.19
 PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/editors/terminal
-EXTRACT_SUFX=		.src.tar.gz
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variable dataformat binary editor
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
 # Cannot guarantee rxvt will have menubar enabled on bento.
 .if defined(PACKAGE_BUILDING)
 WITHOUT_X11=	yes
 .endif
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 .if !defined(WITHOUT_X11)
 PATCH_DEPENDS+=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
-RUN_DEPENDS=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
+RUN_DEPENDS+=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
 .endif
 
 GNU_CONFIGURE=	yes
-
+USE_GCC=	2.95
 USE_GMAKE=	yes
 
 MAN1=		bed.1 xbed.1
@@ -49,10 +50,10 @@ BROKEN=		"Hangs during configure"
 .endif
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
+CONFIGURE_ARGS+=--without-x
+PLIST_SUB+=	X11="@comment "
 .else
-PLIST_SUB+=		X11=""
+PLIST_SUB+=	X11=""
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
