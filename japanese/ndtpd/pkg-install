@@ -15,11 +15,7 @@ sed -e 's/#.*//' -e 's/^/ /' -e 's/$/ /g' -e 's/	/ /g' /etc/services \
     | grep ' ndtp ' > /dev/null 2>&1
 
 if [ $? -ne 0 ] ; then
-    if [ "${IS_INTERACTIVE}"x = "x" ]; then
-        YESNO=YES
-    else
-        YESNO=YET
-    fi
+    YESNO=YET
     while [ "${YESNO}" = YET ] ; do
 	echo -n "May I register the \`ndtp' service name to /etc/services? ([y]/n) "
 	read LINE
@@ -53,11 +49,7 @@ fi
 # Copy a rc-file to `${PKG_PREFIX}/etc/rc.d/ndtpd.sh'.
 #
 if [ -f ${PKG_PREFIX}/etc/rc.d/ndtpd.sh ] ; then
-    if [ "${IS_INTERACTIVE}"x = "x" ]; then
-        YESNO=YES
-    else
-        YESNO=YET
-    fi
+    YESNO=YET
     while [ "${YESNO}" = YET ] ; do
 	echo -n "${PKG_PREFIX}/rc.d/ndtpd.sh already exists.  May I overwrite it? (y/[n]) "
 	read LINE

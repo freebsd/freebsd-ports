@@ -1,7 +1,8 @@
-NDTPD is a server for accessing CD-ROM books with NDTP (Network
-Dictionary Transfer Protocol) on TCP.  You can replace dserver with
+NDTPD is a server for accessing CD-ROM books with NDTP (Network Dictionary Transfer Protocol) on TCP.  You can replace dserver with
 NDTPD.  NDTPD can run on UNIX derived systems.  It supports to access
 CD-ROM books of EB, EBG, EBXA and EPWING formats.  CD-ROM books of
 those formats are popular in Japan.  Since CD-ROM books themseves are
 stands on the ISO 9660 format, you can mount the discs by the same way
 as other ISO 9660 discs.
+
+-- Motoyuki Kasahara <m-kasahr@sra.co.jp>
