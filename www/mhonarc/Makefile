@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.5 1998/11/25 02:31:40 jkoshy Exp $
+# $Id: Makefile,v 1.6 1998/11/26 05:45:51 asami Exp $
 #
 
 DISTNAME=	MHonArc2.3.3
@@ -16,8 +16,6 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/
 
 MAINTAINER=	jkoshy@freebsd.org
-
-BROKEN=		package
 
 USE_PERL5=	Yes
 
