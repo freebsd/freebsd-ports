@@ -9068,6 +9068,7 @@ py-twisted	ports/devel/py-twisted
 py-twofish	ports/security/py-twofish
 py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
+py-urwid	ports/devel/py-urwid
 py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
 py-websvcs	ports/www/py-websvcs
