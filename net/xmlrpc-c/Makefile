@@ -21,6 +21,10 @@ USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+MAN1=	meerkat-app-list.1 xml-rpc-api2cpp.1 xmlrpc-c-config.1 \
+	query-meerkat.1 xml-rpc-api2txt.1
+MAN7=	xmlrpc-c.7
+
 post-install:
 	@${RM} -f ${PREFIX}/lib/*.la
 

@@ -1,5 +1,6 @@
 bin/meerkat-app-list
 bin/query-meerkat
+bin/xml-rpc-api2cpp
 bin/xml-rpc-api2txt
 bin/xmlrpc-c-config
 include/XmlRpcCpp.h
