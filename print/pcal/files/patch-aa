@@ -1,20 +1,20 @@
---- Makefile.orig	Tue Jan  7 10:29:28 2003
-+++ Makefile	Sat May 24 15:40:57 2003
-@@ -21,8 +21,8 @@
- 
- # Set the configuration variables below to taste.
- 
--PCALINIT_CC = /usr/bin/gcc			# native compiler
--CC	    = /usr/bin/gcc			# cross-compiler (if target != host)
-+PCALINIT_CC = ${CC}			# native compiler
-+CC	    = ${HOST_CC}		# cross-compiler (if target != host)
- 
- # Set COMPRESS to your preferred compression utility (compress, gzip, etc.),
- # Z to the file suffix that it generates (.Z, .gz, etc.), and UUC to the file
-@@ -58,9 +58,9 @@
- # PACK	= pack
- 
- # directories for installing executable and man page(s)
+--- Makefile.orig	Thu Dec 16 00:54:16 2004
++++ Makefile	Thu Jan 13 17:28:01 2005
+@@ -73,8 +73,8 @@
+ 		D_BUILD_ENV	= -DBUILD_ENV_UNIX
+ 		PCAL		= pcal
+ 		PCALINIT	= pcalinit
+-		CC		= /usr/bin/gcc
+-		PCALINIT_CC	= /usr/bin/gcc
++		CC		= ${HOST_CC}
++		PCALINIT_CC	= ${CC}
+ 		PACK		= compress
+ 		# PACK		= pack
+ 		# PACK		= gzip
+@@ -101,9 +101,9 @@
+ OBJDIR	= obj
+ EXECDIR	= exec
+ DOCDIR	= doc
 -BINDIR	= /usr/local/bin
 -MANDIR	= /usr/man/man1
 -CATDIR	= /usr/man/cat1
@@ -22,5 +22,5 @@
 +MANDIR	= ${PREFIX}/man/man1
 +CATDIR	= ${PREFIX}/cat1
  
- OBJECTS = pcal.o exprpars.o moonphas.o pcalutil.o readfile.o writefil.o
- 
+ # 
+ # Compiling for DOS/DJGPP requires different directories for the installed
