@@ -1,5 +1,5 @@
---- src/wx/Makefile.in.orig	Sat Mar 29 16:39:22 2003
-+++ src/wx/Makefile.in	Sat Mar 29 16:39:46 2003
+--- src/wx/Makefile.in.orig	Sun Mar 30 20:48:21 2003
++++ src/wx/Makefile.in	Sun Mar 30 20:48:35 2003
 @@ -70,8 +70,10 @@
  BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
  CATOBJEXT = @CATOBJEXT@
