@@ -1,5 +1,5 @@
 #!/bin/sh
-GS6LIBDIR=${PKG_PREFIX}/share/ghostscript/6.50/lib
+GS6LIBDIR=${PKG_PREFIX}/share/ghostscript/6.52/lib
 
 if [ "$2" = "POST-INSTALL" ]; then
   exit 0

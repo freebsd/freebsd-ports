@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/CID/CMap/ \
 		http://www.aihara.co.jp/~taiji/tops/
 DISTFILES=	ac13.tar.Z ag14.tar.Z ai0.tar.Z aj14.tar.Z \
 		aj20.tar.Z ak12.tar.Z rksj-cmaps.tar.Z \
-		cjkvttcidmap-0.8.tar.gz gs6.50_ttf.ps-cjkv-20001215.patch.gz
+		cjkvttcidmap-0.94.tar.gz gs6.50_ttf.ps-cjkv-20001215.patch.gz
 EXTRACT_ONLY=
 
 MAINTAINER=	keith@FreeBSD.org
@@ -39,7 +39,7 @@ do-install:
 		${TAR} -xzf ${DISTDIR}/rksj-cmaps.tar.Z; \
 		${LN} -sf rksj-cmaps/* . )
 	@(cd ${PREFIX}/share/ghostscript/CJK/TrueType; \
-		${TAR} -xzf ${DISTDIR}/cjkvttcidmap-0.8.tar.gz )
+		${TAR} -xzf ${DISTDIR}/cjkvttcidmap-0.94.tar.gz )
 	@(cd ${PREFIX}/share/ghostscript/${PORTVERSION}/lib; \
 		${GZCAT} ${DISTDIR}/gs6.50_ttf.ps-cjkv-20001215.patch.gz |${PATCH} )
 	@${CP} ${PREFIX}/share/ghostscript/${PORTVERSION}/lib/gs_res.ps \
