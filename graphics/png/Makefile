@@ -3,7 +3,7 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/03/28 13:48:18 ache Exp $
+# $Id: Makefile,v 1.13 1998/07/09 23:39:36 ache Exp $
 #
 
 DISTNAME=       libpng-1.0.2
@@ -20,6 +20,6 @@ do-configure:
 	cd ${WRKSRC} && cp scripts/makefile.std Makefile
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

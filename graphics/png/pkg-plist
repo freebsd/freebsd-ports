@@ -2,6 +2,6 @@ include/png.h
 include/pngconf.h
 lib/libpng.a
 @exec ranlib %D/%F
-lib/libpng.so.2.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libpng.so.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
