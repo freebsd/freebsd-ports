@@ -1,0 +1,13 @@
+KnowledgeKit
+
+	This port has placed KnowledgeKit in your Zope import directory
+	%%PREFIX%%/Zope/import/ with the following files:
+
+	KnowledgeKit-%%VER%%.zexp
+	KnowledgeKit_Example.zexp
+
+	To add KnowledgeKit to your Zope install, go into the management
+	interface, press the "Import/Export" button, and type in the
+	file names above.  The first is the KnowledgeKit Product, and
+	the second is a demo.  You can't add the demo as the Zope
+	superuser; add it as your Zope user instead.
