@@ -1,0 +1,44 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/UI/.packlist
+%%SITE_PERL%%/Curses/UI/Color.pm
+%%SITE_PERL%%/Curses/UI/Label.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Dirbrowser.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Filebrowser.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Calendar.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Basic.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Status.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Error.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Progress.pm
+%%SITE_PERL%%/Curses/UI/Container.pm
+%%SITE_PERL%%/Curses/UI/PasswordEntry.pm
+%%SITE_PERL%%/Curses/UI/Buttonbox.pm
+%%SITE_PERL%%/Curses/UI/Checkbox.pm
+%%SITE_PERL%%/Curses/UI/Language/french.pm
+%%SITE_PERL%%/Curses/UI/Language/german.pm
+%%SITE_PERL%%/Curses/UI/Language/italian.pm
+%%SITE_PERL%%/Curses/UI/Language/russian.pm
+%%SITE_PERL%%/Curses/UI/Language/norwegian.pm
+%%SITE_PERL%%/Curses/UI/Language/english.pm
+%%SITE_PERL%%/Curses/UI/Language/polish.pm
+%%SITE_PERL%%/Curses/UI/Language/portuguese.pm
+%%SITE_PERL%%/Curses/UI/Language/dutch.pm
+%%SITE_PERL%%/Curses/UI/Menubar.pm
+%%SITE_PERL%%/Curses/UI/TextEntry.pm
+%%SITE_PERL%%/Curses/UI/Calendar.pm
+%%SITE_PERL%%/Curses/UI/Tutorial.pod
+%%SITE_PERL%%/Curses/UI/Widget.pm
+%%SITE_PERL%%/Curses/UI/Language.pm
+%%SITE_PERL%%/Curses/UI/Listbox.pm
+%%SITE_PERL%%/Curses/UI/Common.pm
+%%SITE_PERL%%/Curses/UI/Popupmenu.pm
+%%SITE_PERL%%/Curses/UI/Searchable.pm
+%%SITE_PERL%%/Curses/UI/Progressbar.pm
+%%SITE_PERL%%/Curses/UI/TextEditor.pm
+%%SITE_PERL%%/Curses/UI/Radiobuttonbox.pm
+%%SITE_PERL%%/Curses/UI/TextViewer.pm
+%%SITE_PERL%%/Curses/UI/Window.pm
+%%SITE_PERL%%/Curses/UI.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/UI
+@dirrm %%SITE_PERL%%/Curses/UI/Dialog
+@dirrm %%SITE_PERL%%/Curses/UI/Language
+@dirrm %%SITE_PERL%%/Curses/UI
+@unexec rmdir %D/%%SITE_PERL%%/Curses 2>/dev/null || true
