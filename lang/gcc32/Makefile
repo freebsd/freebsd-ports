@@ -1,21 +1,19 @@
-# ex:ts=8
-# New ports collection makefile for:	egcs
-# Version required:	1998-02-21
-# Date created:		9 Jan 1998
+# ex:ts=8 New ports collection makefile for:	egcs Version required:
+# 1998-02-28 Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.19 1998/05/20 08:59:30 obrien Exp $
+# $Id: Makefile,v 1.20 1998/06/10 05:29:12 obrien Exp $
 #
 
-DISTNAME=	egcs-19980608
+DISTNAME=	egcs-19980628
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-06-08/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-06-08/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-06-08/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-06-28/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-06-28/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-06-28/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-EGCS_REV=	egcs-2.91.40
+EGCS_REV=	egcs-2.91.43
 GNUHOST=	i386-unknown-freebsd${GNUOSREL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -31,6 +29,10 @@ post-patch:
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in >freebsd.h ; \
 	${MV} freebsd-elf.h freebsd-elf.h.in ; \
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in >freebsd-elf.h)
+
+pre-install:
+	${MKDIR} ${PREFIX}/info
+	touch ${PREFIX}/info/dir
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
@@ -49,8 +51,6 @@ post-install:
 		done)
 	ln -f ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
 	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
-	${MV} ${PREFIX}/lib/libf2c.a  \
-		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
 	${MV} ${PREFIX}/lib/libstdc++.a  \
