@@ -123,6 +123,8 @@ share/sketch/Plugins/Filters/cmxloader.py
 share/sketch/Plugins/Filters/cmxloader.pyc
 share/sketch/Plugins/Filters/gziploader.py
 share/sketch/Plugins/Filters/gziploader.pyc
+share/sketch/Plugins/Filters/pdfgensaver.py
+share/sketch/Plugins/Filters/pdfgensaver.pyc
 share/sketch/Plugins/Filters/skloader.py
 share/sketch/Plugins/Filters/skloader.pyc
 share/sketch/Plugins/Filters/sksaver.py
