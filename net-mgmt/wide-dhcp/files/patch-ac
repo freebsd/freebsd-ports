@@ -1,5 +1,5 @@
 --- client/dhcpc_subr.c.orig	Thu Jul  3 05:19:01 1997
-+++ client/dhcpc_subr.c	Wed Apr 22 01:10:00 1998
++++ client/dhcpc_subr.c	Sat Jun 27 19:30:56 1998
 @@ -64,6 +64,12 @@
  #ifdef __osf__
  #include <net/pfilt.h>
@@ -42,7 +42,7 @@
    bzero(&so_dst, sizeof(struct sockaddr));
    bzero(&so_mask, sizeof(struct sockaddr));
    bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1895,6 +1909,44 @@
+@@ -1895,6 +1909,45 @@
  
  #endif
  
@@ -60,13 +60,14 @@
 +  /*
 +   * set resolv.conf
 +   */
-+  if (param->dns_domain != NULL && param->dns_server != NULL) {
++  if (param->dns_server != NULL) {
 +    if (param->dns_server->num && param->dns_server->addr != NULL) {
 +      unlink(_PATH_RESCONF);
 +      if ((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
 +        return;
 +      }
-+      fprintf(fp, "domain %s\n", param->dns_domain);
++      if (param->dns_domain != NULL)
++        fprintf(fp, "domain %s\n", param->dns_domain);
 +      for (i = 0; i < param->dns_server->num; i++) {
 +        fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
 +      }
@@ -87,7 +88,7 @@
  
  void
  make_decline(lsbuf, reqspecp)
-@@ -2528,11 +2580,9 @@
+@@ -2528,11 +2581,9 @@
    struct msghdr msg;
    struct iovec bufvec[1];
    int bufsize = DFLTDHCPLEN;
@@ -99,7 +100,7 @@
  
    if (sockfd == -1) {
      struct sockaddr_in myaddr;
-@@ -2556,7 +2606,7 @@
+@@ -2556,7 +2607,7 @@
        return(-1);
      }
  
