@@ -22,7 +22,7 @@ ALL_TARGET=	beav
 MAN1=		beav.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=-DUNIX -DBSD #|g ; \
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=-DUNIX -DBSD -DNOPROTO#|g ; \
 		 s|^CC=|CC?=|g ; \
 		 s|^(|\$$(|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/doc/beav|${DOCSDIR}|g' ${WRKSRC}/beav.1
