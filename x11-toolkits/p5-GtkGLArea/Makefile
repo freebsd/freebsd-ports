@@ -15,7 +15,7 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/mach/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_PERL5=	yes
