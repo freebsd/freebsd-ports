@@ -1,5 +1,5 @@
---- bounce.c.orig	Sun Sep 20 15:44:41 1998
-+++ bounce.c	Sun Sep 20 15:46:04 1998
+--- bounce.c.orig	Tue Sep 28 08:20:32 1999
++++ bounce.c	Tue Sep 28 08:22:33 1999
 @@ -20,13 +20,14 @@
  #include <sys/ioctl.h>
  #include <signal.h>
@@ -17,3 +17,21 @@
  
  void sigchld() {
    signal(SIGCHLD, sigchld);
+@@ -182,7 +183,7 @@
+     srv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+     srv_addr.sin_port=htons(myport);
+     srv_fd=socket(PF_INET,SOCK_STREAM,0);
+-    if (bind(srv_fd,&srv_addr,sizeof(srv_addr))==-1) {
++    if (bind(srv_fd,(struct sockaddr *)&srv_addr,sizeof(srv_addr))==-1) {
+ 	perror("bind");
+         exit(-1);
+     }
+@@ -202,7 +203,7 @@
+     if (fork()) exit(0);
+     while (1) {
+ 	len=sizeof(rem_addr);
+-	rem_fd=accept(srv_fd,&rem_addr,&len);
++	rem_fd=accept(srv_fd,(struct sockaddr *)&rem_addr,&len);
+ 	if (rem_fd<0) {
+ 	  if (errno==EINTR) continue;
+ 	  exit(-1);
