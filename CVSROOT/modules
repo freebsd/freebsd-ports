@@ -4222,6 +4222,7 @@ makedepend	ports/devel/makedepend
 makeindex	ports/print/makeindex
 makekey		src/libexec/makekey
 makepatch	ports/textproc/makepatch
+makeplus	ports/devel/makeplus
 makeself	ports/archivers/makeself
 makewhatis	src/gnu/usr.bin/man/makewhatis
 makeztxt	ports/palm/makeztxt
