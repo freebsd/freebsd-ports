@@ -8,7 +8,7 @@
 PORTNAME=	cftp
 PORTVERSION=	0.9.3
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
+MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/nih/cftp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	andy
 
