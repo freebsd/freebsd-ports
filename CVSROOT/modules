@@ -3322,6 +3322,7 @@ linprocfs	src/sys/compat/linprocfs
 linux-bmrt	ports/graphics/linux-bmrt
 linux-esound	ports/audio/linux-esound
 linux-flashplugin	ports/www/linux-flashplugin
+linux-gnomelibs	ports/textproc/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
 linux-imlib	ports/graphics/linux-imlib
