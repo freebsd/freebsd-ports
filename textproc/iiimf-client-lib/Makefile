@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=  CFLAGS="${CFLAGS} ${PTHREAD_FLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/iiimf
 DIRS=		lib/EIMIL lib/iiimcf
@@ -42,7 +43,7 @@ post-patch:
 
 do-configure:
 .for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${SH} configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/${DIR} && ${SETENV} ${CONFIGURE_ENV} ${SH} configure ${CONFIGURE_ARGS}
 .endfor
 
 do-build:
