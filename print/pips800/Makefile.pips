@@ -23,7 +23,9 @@ DIST_TYPE=	lpr
 DIST_TYPE?=	lpr_and_caps
 .endif
 
-.if ${PRTYPE} == "750_2000"
+.if ${PRTYPE} == 730
+MASTER_SITE_SUBDIR=	${PRTYPE}
+.elif ${PRTYPE} == "750_2000"
 MASTER_SITE_SUBDIR=	pm750c_2000clpr
 .elif ${PRTYPE} == 780 || ${PRTYPE} == 880
 MASTER_SITE_SUBDIR=	${PRTYPE}_20
@@ -33,8 +35,14 @@ MASTER_SITE_SUBDIR=	PM${PRTYPE}C
 MASTER_SITE_SUBDIR=	pm${PRTYPE}c
 .elif ${PRTYPE} == 4000
 MASTER_SITE_SUBDIR=	pm${PRTYPE}pxlpr
-.elif ${PRTYPE} == v500 || ${PRTYPE} == v600
+.elif ${PRTYPE} == g700 || ${PRTYPE} == g800
+MASTER_SITE_SUBDIR=	pm${PRTYPE}lpr
+.elif ${PRTYPE} == v500 || ${PRTYPE} == v600 || ${PRTYPE} == v700
+.if ${DIST_TYPE} == cups
+MASTER_SITE_SUBDIR=	px${PRTYPE}cups
+.else
 MASTER_SITE_SUBDIR=	px${PRTYPE}lpr
+.endif
 .elif ${PIPS_LEVEL} == 0201
 MASTER_SITE_SUBDIR=	${PRTYPE}_21
 #.elif ${PRTYPE} == 740 || ${PRTYPE} == 870
@@ -150,7 +158,7 @@ PRT_MODEL=	PM${PRTYPE}PX
 LIB_FILE=	libpm${PRTYPE}.so
 MODEL_FILE=	ekpm${PRTYPE}.ppd
 PRT_MODEL=	PM${PRTYPE:U}
-.elif ${PRTYPE} == v500 || ${PRTYPE} == v600
+.elif ${PRTYPE} == v500 || ${PRTYPE} == v600 || ${PRTYPE} == v700
 LIB_FILE=	libpx${PRTYPE}.so
 MODEL_FILE=	ekpx${PRTYPE}.ppd
 PRT_MODEL=	PX${PRTYPE:U}
@@ -165,7 +173,7 @@ PRT_MODEL=	PM${PRTYPE}C
 EKPNAVI_VER=	1.1.2
 .endif
 .if defined(EKPNAVI_VER) || ${DIST_TYPE} == cups
-.if ${PRTYPE} == 970
+.if ${PRTYPE} == 970 || ${PRTYPE} == v700
 EKPSTM_VER=	1.1.2
 .else
 EKPSTM_VER=	1.0.2
@@ -173,7 +181,11 @@ EKPSTM_VER=	1.0.2
 .endif
 
 .if ${DIST_TYPE} == cups
+.if ${PRTYPE} == v700
+CUPSOPT_FILE=	cupsopt_px${PRTYPE}.csv
+.else
 CUPSOPT_FILE=	cupsopt_pm${PRTYPE}c.csv
+.endif
 .else
 CUPSOPT_FILE=	cupsopt.csv
 .endif
