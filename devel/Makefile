@@ -896,6 +896,7 @@
     SUBDIR += p5-PAR-Dist
     SUBDIR += p5-PCSC-Card
     SUBDIR += p5-POE
+    SUBDIR += p5-POE-API-Hooks
     SUBDIR += p5-POE-API-Peek
     SUBDIR += p5-POE-Component-Child
     SUBDIR += p5-POE-Component-Client-HTTP
