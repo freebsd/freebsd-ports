@@ -7,6 +7,7 @@
 
 PORTNAME?=	mod_php4
 PORTVERSION=	4.0.6
+PORTREVISION?=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -33,7 +34,8 @@ SLAVEDIRS=	lang/php4
 USE_LIBTOOL=	yes
 
 .if defined(STANDALONE)
-CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone
+CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
+		--disable-pear
 .else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--with-config-file-path=${PREFIX}/etc
@@ -44,7 +46,6 @@ CONFIGURE_ARGS+=--enable-versioning \
 		--disable-debug \
 		--enable-track-vars \
 		--without-gd \
-		--disable-pear \
 		--without-mysql
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
