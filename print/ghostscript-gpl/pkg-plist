@@ -14,7 +14,6 @@ bin/gslp
 bin/gsnd
 %%SHLIB%%bin/gsx
 bin/lprsetup.sh
-bin/pcl3opts
 bin/pdf2dsc
 bin/pdf2ps
 bin/pdfopt
@@ -27,6 +26,7 @@ bin/ps2epsi
 bin/ps2pdf
 bin/ps2pdf12
 bin/ps2pdf13
+bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
 bin/pv.sh
@@ -46,8 +46,6 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-651.euc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-651-jp.euc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gdi/README
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/md2k/README.jis
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
@@ -56,10 +54,6 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.noz
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/cpem.doc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/npdl/gdevnpdl.jis
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/NEWS
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/gs-pcl3.html
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/how-to-report.txt
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/pcl3opts.html
 share/ghostscript/%%GS_VERSION%%/doc/API.htm
 share/ghostscript/%%GS_VERSION%%/doc/Bug-form.htm
 share/ghostscript/%%GS_VERSION%%/doc/Bug-info.htm
@@ -67,7 +61,6 @@ share/ghostscript/%%GS_VERSION%%/doc/C-style.htm
 share/ghostscript/%%GS_VERSION%%/doc/Changes.htm
 share/ghostscript/%%GS_VERSION%%/doc/Commprod.htm
 share/ghostscript/%%GS_VERSION%%/doc/Copying.htm
-share/ghostscript/%%GS_VERSION%%/doc/Current.htm
 share/ghostscript/%%GS_VERSION%%/doc/DLL.htm
 share/ghostscript/%%GS_VERSION%%/doc/Develop.htm
 share/ghostscript/%%GS_VERSION%%/doc/Devices.htm
@@ -81,11 +74,9 @@ share/ghostscript/%%GS_VERSION%%/doc/History3.htm
 share/ghostscript/%%GS_VERSION%%/doc/History4.htm
 share/ghostscript/%%GS_VERSION%%/doc/History5.htm
 share/ghostscript/%%GS_VERSION%%/doc/History6.htm
-share/ghostscript/%%GS_VERSION%%/doc/History7.htm
 share/ghostscript/%%GS_VERSION%%/doc/Htmstyle.htm
 share/ghostscript/%%GS_VERSION%%/doc/Humor.htm
 share/ghostscript/%%GS_VERSION%%/doc/Install.htm
-share/ghostscript/%%GS_VERSION%%/doc/Issues.htm
 share/ghostscript/%%GS_VERSION%%/doc/Language.htm
 share/ghostscript/%%GS_VERSION%%/doc/Lib.htm
 share/ghostscript/%%GS_VERSION%%/doc/Maintain.htm
@@ -114,19 +105,16 @@ share/ghostscript/%%GS_VERSION%%/examples/chess.ps
 share/ghostscript/%%GS_VERSION%%/examples/colorcir.ps
 share/ghostscript/%%GS_VERSION%%/examples/doretree.ps
 share/ghostscript/%%GS_VERSION%%/examples/escher.ps
-share/ghostscript/%%GS_VERSION%%/examples/golfer.ps
+share/ghostscript/%%GS_VERSION%%/examples/golfer.eps
 share/ghostscript/%%GS_VERSION%%/examples/grayalph.ps
 share/ghostscript/%%GS_VERSION%%/examples/ridt91.eps
 share/ghostscript/%%GS_VERSION%%/examples/snowflak.ps
-share/ghostscript/%%GS_VERSION%%/examples/tiger.ps
+share/ghostscript/%%GS_VERSION%%/examples/tiger.eps
 share/ghostscript/%%GS_VERSION%%/examples/vasarely.ps
 share/ghostscript/%%GS_VERSION%%/examples/waterfal.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
-share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
+share/ghostscript/%%GS_VERSION%%/lib/FAPIcidfmap
+share/ghostscript/%%GS_VERSION%%/lib/FAPIconfig
+share/ghostscript/%%GS_VERSION%%/lib/FAPIfontmap
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap.GS
 share/ghostscript/%%GS_VERSION%%/lib/acctest.ps
@@ -162,6 +150,7 @@ share/ghostscript/%%GS_VERSION%%/lib/cbjc800.ppd
 share/ghostscript/%%GS_VERSION%%/lib/cdj550.upp
 share/ghostscript/%%GS_VERSION%%/lib/cdj690.upp
 share/ghostscript/%%GS_VERSION%%/lib/cdj690ec.upp
+share/ghostscript/%%GS_VERSION%%/lib/cidfmap
 share/ghostscript/%%GS_VERSION%%/lib/cid2code.ps
 share/ghostscript/%%GS_VERSION%%/lib/decrypt.ps
 share/ghostscript/%%GS_VERSION%%/lib/dmp_init.ps
@@ -179,24 +168,36 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_ccfnt.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_ce_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cff.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cidcm.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_ciddc.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_cidfm.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cidfn.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_ciecs2.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_ciecs3.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cmap.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cmdl.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_cspace.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_css_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dbt_e.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_devcs.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_devn.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_devpxl.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_diskf.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_diskn.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dpnxt.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dps.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dps1.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dps2.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_dscp.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_epsf.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_fapi.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_fform.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_fonts.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_frsd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_icc.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_il1_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_il2_e.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_img.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_indxd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_kanji.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_ksb_e.ps
@@ -214,14 +215,17 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_m_m.xbm
 share/ghostscript/%%GS_VERSION%%/lib/gs_mex_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_mgl_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_mro_e.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_patrn.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_pdf_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_pdfwr.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_pfile.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_rdlin.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_res.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_resmp.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_s.xbm
 share/ghostscript/%%GS_VERSION%%/lib/gs_s.xpm
 share/ghostscript/%%GS_VERSION%%/lib/gs_s_m.xbm
+share/ghostscript/%%GS_VERSION%%/lib/gs_sepr.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_setpd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_statd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_std_e.ps
@@ -333,21 +337,8 @@ share/ghostscript/%%GS_VERSION%%/lib/viewps2a.ps
 share/ghostscript/%%GS_VERSION%%/lib/wftopfa.ps
 share/ghostscript/%%GS_VERSION%%/lib/winmaps.ps
 share/ghostscript/%%GS_VERSION%%/lib/wrfont.ps
+share/ghostscript/%%GS_VERSION%%/lib/xlatmap
 share/ghostscript/%%GS_VERSION%%/lib/zeroline.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/BUGS
-share/ghostscript/%%GS_VERSION%%/pcl3/NEWS
-share/ghostscript/%%GS_VERSION%%/pcl3/README
-share/ghostscript/%%GS_VERSION%%/pcl3/calign.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/dumppdd.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/example.mcf
-share/ghostscript/%%GS_VERSION%%/pcl3/if-pcl3
-share/ghostscript/%%GS_VERSION%%/pcl3/levels-test.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-A4.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-A4Rotated.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-Env10Rotated.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-EnvDLRotated.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-Letter.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
 share/ghostscript/fonts/a010013l.afm
 share/ghostscript/fonts/a010013l.pfb
 share/ghostscript/fonts/a010013l.pfm
@@ -517,19 +508,15 @@ share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
-@dirrm share/ghostscript/%%GS_VERSION%%/pcl3
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
-@dirrm share/ghostscript/%%GS_VERSION%%/hpdj
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%
 @unexec rmdir %D/share/ghostscript 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/npdl
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gdi
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/epag

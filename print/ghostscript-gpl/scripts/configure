@@ -5,274 +5,358 @@
 # configure - gs driver preconfiguration, manual driver selection
 # by Andreas Klemm <andreas@FreeBSD.org>
 
-# driverselection
-/usr/bin/dialog --title "AFPL Ghostscript driver configuration" --clear \
-	--checklist "\n\
+tempfile=`mktemp -t checklist`
+
+if [ -z "${WITHOUT_X11}" ]; then
+x11devs="x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 \
+	x11gray2 x11gray4 x11mono x11rg16x x11rg32x"
+fi
+
+if [ ! -z "${GS_OPTIONS}" ]; then
+	set ${GS_OPTIONS}
+else
+	set \
+		$x11devs \
+		md2k md5k \
+		md50Mono md50Eco md1xMono \
+		appledmp iwhi iwlo iwlq hl7x0 bj10e \
+		bj10v bj10vh bj200 bjc600 bjc800 \
+		bjccmyk bjccolor bjcgray bjcmono \
+		lbp8 \
+		lbp1310 lbp1510 lbp1610 lbp1710 lbp1810 lbp1910 \
+		lips2p lips3 lips4 bjc880j lips4v \
+		m8510 coslw2p coslwxl uniprint \
+		dmprt \
+		lj250 declj250 ap3250 epson eps9mid eps9high lp8000 \
+		epag \
+		escpage lp2000 \
+		alc8600 alc8500 alc2000 alc4000 \
+		lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
+		epl5900 epl5800 epl2050 epl2050p epl2120 \
+		lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 lp8100 lp7700 \
+		lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 lp9600 lp8600 \
+		lp1800 \
+		lq850 epsonc \
+		mjc180 mjc360 mjc720 mj500c \
+		st800 stcolor photoex lp2563 dnj650c deskjet djet500 cdeskjet \
+		djet500c cdjcolor cdjmono cdj500 cdj550 \
+		cdj670 cdj850 cdj880 cdj890 cdj1600 chp2200 cdj970 \
+		laserjet ljetplus ljet2p ljet3 ljet3d ljet4 ljet4d lj4dith \
+		cljet5 cljet5c cljet5pr lj5mono lj5gray \
+		pj pjetxl pjxl paintjet \
+		pjxl300 pxlmono pxlcolor \
+		ijs ibmpro jetp3852 imagen fs600 lxm5700m cp50 necp6 \
+		npdl \
+		oce9050 oki182 okiibm atx23 atx24 atx38 r4081 \
+		rpdl \
+		gdi \
+		sj48 t4693d2 t4693d4 t4693d8 tek4696 \
+		bmpmono bmpgray bmp16 bmp256 bmp16m bmp32b bmpsep1 bmpsep8 \
+		ccr \
+		cif \
+		dfaxhigh dfaxlow \
+		xcf xcfcmyk \
+		faxg3 faxg32d faxg4 \
+		miff24 inferno jpeg jpeggray \
+		mgrmono mgrgray2 mgrgray4 mgrgray8 mgr4 mgr8 \
+		pcxmono pcxgray pcx16 pcx256 pcx24b pcxcmyk pdfwrite \
+		psdrgb psdcmyk \
+		bit bitrgb bitcmyk plan9bm pam pbm pbmraw \
+		pgm pgmraw pgnm pgnmraw pnm pnmraw ppm ppmraw \
+		pkm pkmraw pksm pksmraw \
+		pngmono pnggray png16 png256 png16m pnga psmono psgray psrgb \
+		pswrite epswrite sgirgb sunhmono \
+		tiffcrle tiffg3 tiffg32d tiffg4 \
+		tiff12nc tiff24nc tifflzw tiffpack \
+		bbox \
+		devicen perm spotrgb spotcmyk
+fi
+
+for i; do
+	eval status_$i=ON
+done
+
+if [ -z "${BATCH}" ]; then
+	/usr/bin/dialog --title "AFPL Ghostscript driver configuration" --clear \
+		--checklist "\n\
 This new ghostscript driver configuration dialog allows you to choose \n\
 only those gs drivers, you really need. Don't think too economical, since \n\
 other programs in the ports collection might need some of the default gs \n\
 file format drivers. The gs5 default drivers are preselected. \n\
 Have fun with this new configuration style !     -andreas \n\n\
-  Please choose options by pressing SPACE to TOGGLE an option ON/OFF ?" -1 -1 9\
-  "x11"      "X Window System version 11, release >=4" ON \
-  "x11alpha" "X Window System masquer. as device with alpha capability" ON \
-  "x11cmyk"  "X Window System masquer. as 1-bit-per-plane CMYK device" ON \
-  "x11cmyk2" "X Window System as a 2-bit-per-plane CMYK device" OFF \
-  "x11cmyk4" "X Window System as a 4-bit-per-plane CMYK device" OFF \
-  "x11cmyk8" "X Window System as an 8-bit-per-plane CMYK device" OFF \
-  "x11gray2" "X Window System as a 2-bit gray-scale device" ON \
-  "x11gray4" "X Window System as a 4-bit gray-scale device" ON \
-  "x11mono"  "X Window System masquer. as black-and-white device" ON \
-  "x11rg16x" "X Window System with G5/B5/R6 pixel layout for testing" ON \
-  "x11rg32x" "X Window System with G11/B10/R11 pixel layout for testing" ON \
-  "md2k"     "ALPS MD-2000/2010/4000/1300/1500/5000 [MD2K]" ON \
-  "md5k"     "ALPS MD-5000 Eco Mode [MD2K]" ON \
-  "md50Mono" "ALPS MD-5000 Monochrome [ALPS]" ON \
-  "md50Eco"  "ALPS MD-5000 Eco Mode [ALPS]" ON \
-  "md1xMono" "ALPS MD-1x00 Monochrome [ALPS]" ON \
-  "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
-  "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
-  "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
-  "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
-  "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" OFF \
-  "bj10e"    "Canon BubbleJet BJ-10e" ON \
-  "bj10v"    "Canon BubbleJet BJ-10v [BJ10V]" ON \
-  "bj10vh"   "Canon BubbleJet BJ-10v, high-mergin [BJ10V]" ON \
-  "bj200"    "Canon BubbleJet BJ-200 and BJC-240(b&w)" ON \
-  "bjc600"   "Canon Color BJC-600/4xxx/70 + Apple StyleWriter 2x00" ON \
-  "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
-  "bjccmyk"  "Canon Color BubbleJet BJC-210/240/250/265/1000 [BJC250]" ON \
-  "bjccolor" "Canon Color BubbleJet BJC-210 ... 1000 truecolor [BJC250]" ON \
-  "bjcgray"  "Canon Color BubbleJet BJC-210 ... 1000 grayscale [BJC250]" ON \
-  "bjcmono"  "Canon Color BubbleJet BJC-210 ... 1000 monochrome [BJC250]" ON \
-  "lbp8"     "Canon LBP-8II laser printer" OFF \
-  "lips2p"   "Canon LIPS II+ [LIPS]" ON \
-  "lips3"    "Canon LIPS III [LIPS]" ON \
-  "lips4"    "Canon LIPS IV [LIPS]" ON \
-  "bjc880j"  "Canon LIPS IVc (BJC-680J/880J) [LIPS]" ON \
-  "lips4v"   "Canon LIPS IV, vector output mode [LIPS]" ON \
-  "m8510"    "C.Itoh M8510 printer" OFF \
-  "coslw2p"  "CoStar LabelWriter II II/Plus" OFF \
-  "coslwxl"  "CoStar LabelWriter XL" OFF \
-  "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" OFF \
-  "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
-  "dmprt"    "Configurable dot matrix printer driver [DMPRT]" ON \
-  "lj250"    "DEC LJ250 Companion color printer" OFF \
-  "declj250" "DEC LJ250 driver (alternate)" OFF \
-  "ap3250"   "Epson ActionPrinter 3250" OFF \
-  "epson"    "Epson-compatible dot matrix, 9/24-pin" OFF \
-  "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" OFF \
-  "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" OFF \
-  "lp8000"   "Epson LP-8000 line printer" OFF \
-  "epag"     "Epson ESC/Page laser printer (generic) [EPAG]" ON \
-  "escpage"  "Epson ESC/Page laser printer (generic) [LIPS]" ON \
-  "lp2000"   "Epson LP-2000/3000/7000/7000G laser printer [LIPS]" ON \
-  "alc8600"  "Epson AL-C8600 color laser printer [EPLASER]" ON \
-  "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" ON \
-  "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" ON \
-  "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" ON \
-  "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" ON \
-  "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" ON \
-  "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" ON \
-  "lp3000c"  "Epson LP-3000C color laser printer [EPLASER]" ON \
-  "lp8200c"  "Epson LP-8200C color laser printer [EPLASER]" ON \
-  "lp8000c"  "Epson LP-8000C color laser printer [EPLASER]" ON \
-  "epl5900"  "Epson EPL-5900 laser printer [EPLASER]" ON \
-  "epl5800"  "Epson EPL-5800 laser printer [EPLASER]" ON \
-  "epl2050"  "Epson EPL-N2050 laser printer [EPLASER]" ON \
-  "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" ON \
-  "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" ON \
-  "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" ON \
-  "lp2400"   "Epson LP-2400 laser printer [EPLASER]" ON \
-  "lp2200"   "Epson LP-2200 laser printer [EPLASER]" ON \
-  "lp9400"   "Epson LP-9400(R) laser printer [EPLASER]" ON \
-  "lp8900"   "Epson LP-8900(R) laser printer [EPLASER]" ON \
-  "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" ON \
-  "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" ON \
-  "lp7700"   "Epson LP-7700(R) laser printer [EPLASER]" ON \
-  "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
-  "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" ON \
-  "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" ON \
-  "lp1900"   "Epson LP-1900(N) laser printer [EPLASER]" ON \
-  "lp9600s"  "Epson LP-9600S laser printer [EPLASER]" ON \
-  "lp9300"   "Epson LP-9300 laser printer [EPLASER]" ON \
-  "lp9600"   "Epson LP-9600 laser printer [EPLASER]" ON \
-  "lp8600"   "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
-  "lp1800"   "Epson LP-1800 laser printer [EPLASER]" ON \
-  "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" OFF \
-  "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
-  "mjc180"   "Epson MachJet series 180dpi, CMYK [MJC]" ON \
-  "mjc360"   "Epson MachJet series 360dpi, CMYK [MJC]" ON \
-  "mjc720"   "Epson MachJet series 720dpi, CMYK [MJC]" ON \
-  "mj500c"   "Epson MachJet MJ-500C 360dpi, CMY or mono [MJC]" ON \
-  "st800"    "Epson Stylus 800 printer" OFF \
-  "stcolor"  "Epson Stylus Color and II/IIs/1500 (see driver docu)" OFF \
-  "photoex"  "Epson Stylus Color Photo, Photo EX, Photo 700" OFF \
-  "lp2563"   "HP 2563B line printer" OFF \
-  "dnj650c"  "HP DesignJet 650C" OFF \
-  "deskjet"  "HP DeskJet and DeskJet Plus" ON \
-  "djet500"  "HP DeskJet 500 (for DeskJet 600 use -r600)" ON \
-  "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
-  "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
-  "cdjcolor" "HP DeskJet 500C/540C, 24bit/pxl+FS dith, Citizen Projet IIc" ON \
-  "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
-  "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
-  "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
-  "cdj670"   "HP DeskJet 670/690 [HP8XX]" ON \
-  "cdj850"   "HP DeskJet 850/855/870/1100 [HP8XX]" ON \
-  "cdj880"   "HP DeskJet 880 [HP8XX]" ON \
-  "cdj890"   "HP DeskJet 890 [HP8XX]" ON \
-  "cdj1600"  "HP DeskJet 1600 [HP8XX]" ON \
-  "cdj970"   "HP DeskJet 970CXi [DJ970]" ON \
-  "laserjet" "HP LaserJet" ON \
-  "ljetplus" "HP LaserJet Plus" ON \
-  "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
-  "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
-  "ljet3d"   "HP LaserJet IIID with duplex capability" ON \
-  "ljet4"    "HP LaserJet 4 and 5L/5P (not real LJ5), defaults to 600 dpi" ON \
-  "ljet4d"   "HP LaserJet 4 (defaults to 600 dpi) with duplex" ON \
-  "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" OFF \
-  "cljet5"   "HP LaserJet 5/5M Color (new driver, old=cljet5pr)" ON \
-  "cljet5c"  "HP LaserJet 5/5M Color Simple" ON \
-  "cljet5pr" "HP LaserJet 5/5M Color (old drv. with rotation hacks/flaws)" ON \
-  "lj5mono"  "HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap" ON \
-  "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" ON \
-  "pj"       "HP PaintJet XL driver " ON \
-  "pjetxl"   "HP PaintJet XL driver (alternate)" OFF \
-  "pjxl"     "HP PaintJet XL color printer" ON \
-  "paintjet" "HP PaintJet color printer (alternate)" OFF \
-  "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
-  "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
-  "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
-  "pcl3"     "HP PCL 3+ (generic) [PCL3]" ON \
-  "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" ON \
-  "ijs"      "HP Inkjet and other raster devices" ON \
-  "ibmpro"   "IBM 9-pin Proprinter" OFF \
-  "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
-  "imagen"   "Imagen ImPress printers" OFF \
-  "fs600"    "Kyocera FS-600 (600 dpi)" OFF \
-  "lxm5700m" "Lexmark 5700 monotone" OFF \
-  "cp50"     "Mitsubishi CP50 color" OFF \
-  "necp6"    "NEC PinWriter P6/P6+/P60, 360x360 DPI resol" OFF \
-  "npdl"     "NEC Printer Description Language [NPDL]" ON \
-  "oce9050"  "OCE 9050 printer" OFF \
-  "oki182"   "Okidata MicroLine 182" OFF \
-  "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
-  "atx23"    "Practical Automation ATX-23 label printer" OFF \
-  "atx24"    "Practical Automation ATX-24 label printer" OFF \
-  "atx38"    "Practical Automation ATX-38 label printer" OFF \
-  "r4081"    "Ricoh 4081 laser printer" OFF \
-  "rpdl"     "Ricoh Printer Description Language [LIPS]" ON \
-  "gdi"      "Samsung SmartGDI laser printer [GDI]" ON \
-  "sj48"     "StarJet 48 inkjet printer" OFF \
-  "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
-  "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
-  "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
-  "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
-  "bmpmono"  "BMP Monochrome" ON \
-  "bmpgray"  "BMP 8-bit gray" ON \
-  "bmp16"    "BMP 4-bit EGA/VGA" ON \
-  "bmp256"   "BMP 8-bit 256-color" ON \
-  "bmp16m"   "BMP 24-bit" ON \
-  "bmp32b"   "BMP 32-bit pseudo-.BMP" ON \
-  "bmpsep1"  "BMP Separated 1-bit CMYK" ON \
-  "bmpsep8"  "BMP Separated 8-bit CMYK" ON \
-  "ccr"      "CalComp Raster format" OFF \
-  "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT ONLY" OFF \
-  "cgm8"     "CGM 8-bit 256-color -- DITTO" OFF \
-  "cgm24"    "CGM 24-bit color -- DITTO" OFF \
-  "cif"      "CIF file format for VLSI" OFF \
-  "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
-  "dfaxlow"  "DigiFAX low (normal) resol" OFF \
-  "faxg3"    "Group 3 fax, with EOLs but no header or EOD" ON \
-  "faxg32d"  "Group 3 2-D fax, with EOLs but no header or EOD" ON \
-  "faxg4"    "Group 4 fax, with EOLs but no header or EOD" ON \
-  "miff24"   "ImageMagick MIFF, 24-bit direct color, RLE compressed" OFF \
-  "inferno"  "Inferno bitmaps" OFF \
-  "jpeg"     "JPEG format, RGB output" ON \
-  "jpeggray" "JPEG format, gray output" ON \
-  "mgrmono"  "MGR devices 1-bit monochrome" OFF \
-  "mgrgray2" "MGR devices 2-bit gray scale" OFF \
-  "mgrgray4" "MGR devices 4-bit gray scale" OFF \
-  "mgrgray8" "MGR devices 8-bit gray scale" OFF \
-  "mgr4"     "MGR devices 4-bit (VGA) color" OFF \
-  "mgr8"     "MGR devices 8-bit color" OFF \
-  "pcxmono"  "PCX file format, monochrome 1-bit b/w" ON \
-  "pcxgray"  "PCX file format, 8-bit gray scale" ON \
-  "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" ON \
-  "pcx256"   "PCX file format, 8-bit chunky color" ON \
-  "pcx24b"   "PCX file format, 24-bit color 3x8-bit planes" ON \
-  "pcxcmyk"  "PCX file format, 4-bit chunky CMYK color" ON \
-  "pdfwrite" "PDF output (like Adobe Acrobat Distiller)" ON \
-  "bit"      "Plain bits, monochrome" ON \
-  "bitrgb"   "Plain bits, RGB" ON \
-  "bitcmyk"  "Plain bits, CMYK" ON \
-  "plan9bm"  "Plan 9 bitmap format" OFF \
-  "pbm"      "Portable Bitmap,  plain format" ON \
-  "pbmraw"   "Portable Bitmap,  raw format" ON \
-  "pgm"      "Portable Graymap, plain format" ON \
-  "pgmraw"   "Portable Graymap, raw format" ON \
-  "pgnm"     "Portable Graymap, plain format, optim. to PBM" ON \
-  "pgnmraw"  "Portable Graymap, raw format, optim. to PBM" ON \
-  "pnm"      "Portable Pixmap,  plain format RGB, optim. to PGM/PBM" ON \
-  "pnmraw"   "Portable Pixmap,  raw format RGB, optim. to PGM/PBM" ON \
-  "ppm"      "Portable Pixmap,  plain format RGB" ON \
-  "ppmraw"   "Portable Pixmap,  raw format RGB" ON \
-  "pkm"      "Portable inKmap (plain format) (4-bit CMYK => RGB)" ON \
-  "pkmraw"   "Portable inKmap (raw format) (4-bit CMYK => RGB)" ON \
-  "pksm"     "Portable Separated map (plain) (4-bit CMYK => 4 pages)" ON \
-  "pksmraw"  "Portable Separated map (raw) (4-bit CMYK => 4 pages)" ON \
-  "pngmono"  "PNG Monochrome Portable Network Graphics" ON \
-  "pnggray"  "PNG 8-bit gray Portable Network Graphics" ON \
-  "png16"    "PNG 4-bit color Portable Network Graphics" ON \
-  "png256"   "PNG 8-bit color Portable Network Graphics" ON \
-  "png16m"   "PNG 24-bit color Portable Network Graphics" ON \
-  "psmono"   "PostScript (Level 1) monochrome image" ON \
-  "psgray"   "PostScript (Level 1) 8-bit gray image" ON \
-  "psrgb"    "PostScript (Level 2) 24-bit color image" ON \
-  "pswrite"  "PostScript output (like PostScript Distillery)" ON \
-  "epswrite" "EPS output (like PostScript Distillery)" ON \
-  "sgirgb"   "SGI RGB pixmap format" OFF \
-  "sunhmono" "Harlequin variant of 1-bit Sun raster file" OFF \
-  "tiffcrle" "TIFF CCITT RLE 1 dim = Group 3 fax with no EOLs" ON \
-  "tiffg3"   "TIFF Group 3 fax with EOLs" ON \
-  "tiffg32d" "TIFF Group 3 2-D fax" ON \
-  "tiffg4"   "TIFF Group 4 fax" ON \
-  "tiff12nc" "TIFF 12-bit RGB, no compression" ON \
-  "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format" ON \
-  "tifflzw"  "TIFF LZW,      tag = 5,     mono" ON \
-  "tiffpack" "TIFF PackBits, tag = 32773, mono" ON \
-2> /tmp/checklist.tmp.$$
+  Please choose options by pressing SPACE to TOGGLE an option ON/OFF ?" -1 -1 9 \
+  "x11"      "X Window System version 11, release >=4" "$status_x11" \
+  "x11alpha" "X Window System masquer. as device with alpha capability" "$status_x11alpha" \
+  "x11cmyk"  "X Window System masquer. as 1-bit-per-plane CMYK device" "$status_x11cmyk" \
+  "x11cmyk2" "X Window System as a 2-bit-per-plane CMYK device" "$status_x11cmyk2" \
+  "x11cmyk4" "X Window System as a 4-bit-per-plane CMYK device" "$status_x11cmyk4" \
+  "x11cmyk8" "X Window System as an 8-bit-per-plane CMYK device" "$status_x11cmyk8" \
+  "x11gray2" "X Window System as a 2-bit gray-scale device" "$status_x11gray2" \
+  "x11gray4" "X Window System as a 4-bit gray-scale device" "$status_x11gray4" \
+  "x11mono"  "X Window System masquer. as black-and-white device" "$status_x11mono" \
+  "x11rg16x" "X Window System with G5/B5/R6 pixel layout for testing" "$status_x11rg16x" \
+  "x11rg32x" "X Window System with G11/B10/R11 pixel layout for testing" "$status_x11rg32x" \
+  "md2k"     "ALPS MD-2000/2010/4000/1300/1500/5000 [MD2K]" "$status_md2k" \
+  "md5k"     "ALPS MD-5000 Eco Mode [MD2K]" "$status_md5k" \
+  "md50Mono" "ALPS MD-5000 Monochrome [ALPS]" "$status_md50Mono" \
+  "md50Eco"  "ALPS MD-5000 Eco Mode [ALPS]" "$status_md50Eco" \
+  "md1xMono" "ALPS MD-1x00 Monochrome [ALPS]" "$status_md1xMono" \
+  "appledmp" "Apple Dot Matrix Printer / Imagewriter" "$status_appledmp" \
+  "iwhi"     "Apple Imagewriter, high-resolution mode" "$status_iwhi" \
+  "iwlo"     "Apple Imagewriter, low-resolution mode" "$status_iwlo" \
+  "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" "$status_iwlq" \
+  "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" "$status_hl7x0" \
+  "bj10e"    "Canon BubbleJet BJ-10e" "$status_bj10e" \
+  "bj10v"    "Canon BubbleJet BJ-10v [BJ10V]" "$status_bj10v" \
+  "bj10vh"   "Canon BubbleJet BJ-10v, high-mergin [BJ10V]" "$status_bj10vh" \
+  "bj200"    "Canon BubbleJet BJ-200 and BJC-240(b&w)" "$status_bj200" \
+  "bjc600"   "Canon Color BJC-600/4xxx/70 + Apple StyleWriter 2x00" "$status_bjc600" \
+  "bjc800"   "Canon Color BubbleJet BJC-240/800" "$status_bjc800" \
+  "bjccmyk"  "Canon Color BubbleJet BJC-210/240/250/265/1000 [BJC250]" "$status_bjccmyk" \
+  "bjccolor" "Canon Color BubbleJet BJC-210 ... 1000 truecolor [BJC250]" "$status_bjccolor" \
+  "bjcgray"  "Canon Color BubbleJet BJC-210 ... 1000 grayscale [BJC250]" "$status_bjcgray" \
+  "bjcmono"  "Canon Color BubbleJet BJC-210 ... 1000 monochrome [BJC250]" "$status_bjcmono" \
+  "lbp8"     "Canon LBP-8II laser printer" "$status_lbp8" \
+  "lbp1310"  "Canon LBP-1310 laser printer [CPCA]" "$status_lbp1310" \
+  "lbp1510"  "Canon LBP-1510 laser printer [CPCA]" "$status_lbp1510" \
+  "lbp1610"  "Canon LBP-1610 laser printer [CPCA]" "$status_lbp1610" \
+  "lbp1710"  "Canon LBP-1710 laser printer [CPCA]" "$status_lbp1710" \
+  "lbp1810"  "Canon LBP-1810 laser printer [CPCA]" "$status_lbp1810" \
+  "lbp1910"  "Canon LBP-1910 laser printer [CPCA]" "$status_lbp1910" \
+  "lips2p"   "Canon LIPS II+ [LIPS]" "$status_lips2p" \
+  "lips3"    "Canon LIPS III [LIPS]" "$status_lips3" \
+  "lips4"    "Canon LIPS IV [LIPS]" "$status_lips4" \
+  "bjc880j"  "Canon LIPS IVc (BJC-680J/880J) [LIPS]" "$status_bjc880j" \
+  "lips4v"   "Canon LIPS IV, vector output mode [LIPS]" "$status_lips4v" \
+  "m8510"    "C.Itoh M8510 printer" "$status_m8510" \
+  "coslw2p"  "CoStar LabelWriter II II/Plus" "$status_coslw2p" \
+  "coslwxl"  "CoStar LabelWriter XL" "$status_coslwxl" \
+  "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" "$status_stp" \
+  "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" "$status_uniprint" \
+  "dmprt"    "Configurable dot matrix printer driver [DMPRT]" "$status_dmprt" \
+  "lj250"    "DEC LJ250 Companion color printer" "$status_lj250" \
+  "declj250" "DEC LJ250 driver (alternate)" "$status_declj250" \
+  "ap3250"   "Epson ActionPrinter 3250" "$status_ap3250" \
+  "epson"    "Epson-compatible dot matrix, 9/24-pin" "$status_epson" \
+  "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" "$status_eps9mid" \
+  "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" "$status_eps9high" \
+  "lp8000"   "Epson LP-8000 line printer" "$status_lp8000" \
+  "epag"     "Epson ESC/Page laser printer (generic) [EPAG]" "$status_epag" \
+  "escpage"  "Epson ESC/Page laser printer (generic) [LIPS]" "$status_escpage" \
+  "lp2000"   "Epson LP-2000/3000/7000/7000G laser printer [LIPS]" "$status_lp2000" \
+  "alc8600"  "Epson AL-C8600 color laser printer [EPLASER]" "$status_alc8600" \
+  "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" "$status_alc8500" \
+  "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" "$status_alc2000" \
+  "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" "$status_alc4000" \
+  "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" "$status_lp8800c" \
+  "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" "$status_lp8300c" \
+  "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" "$status_lp8500c" \
+  "lp3000c"  "Epson LP-3000C color laser printer [EPLASER]" "$status_lp3000c" \
+  "lp8200c"  "Epson LP-8200C color laser printer [EPLASER]" "$status_lp8200c" \
+  "lp8000c"  "Epson LP-8000C color laser printer [EPLASER]" "$status_lp8000c" \
+  "epl5900"  "Epson EPL-5900 laser printer [EPLASER]" "$status_epl5900" \
+  "epl5800"  "Epson EPL-5800 laser printer [EPLASER]" "$status_epl5800" \
+  "epl2050"  "Epson EPL-N2050 laser printer [EPLASER]" "$status_epl2050" \
+  "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" "$status_epl2050p" \
+  "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" "$status_epl2120" \
+  "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" "$status_lp7500" \
+  "lp2400"   "Epson LP-2400 laser printer [EPLASER]" "$status_lp2400" \
+  "lp2200"   "Epson LP-2200 laser printer [EPLASER]" "$status_lp2200" \
+  "lp9400"   "Epson LP-9400(R) laser printer [EPLASER]" "$status_lp9400" \
+  "lp8900"   "Epson LP-8900(R) laser printer [EPLASER]" "$status_lp8900" \
+  "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" "$status_lp8700" \
+  "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" "$status_lp8100" \
+  "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" "$status_lp8600f" \
+  "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" "$status_lp8400f" \
+  "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" "$status_lp8300f" \
+  "lp1900"   "Epson LP-1900(N) laser printer [EPLASER]" "$status_lp1900" \
+  "lp9600s"  "Epson LP-9600S laser printer [EPLASER]" "$status_lp9600s" \
+  "lp9300"   "Epson LP-9300 laser printer [EPLASER]" "$status_lp9300" \
+  "lp9600"   "Epson LP-9600 laser printer [EPLASER]" "$status_lp9600" \
+  "lp8600"   "Epson LP-8600FX(N) laser printer [EPLASER]" "$status_lp8600" \
+  "lp1800"   "Epson LP-1800 laser printer [EPLASER]" "$status_lp1800" \
+  "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" "$status_lq850" \
+  "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" "$status_epsonc" \
+  "mjc180"   "Epson MachJet series 180dpi, CMYK [MJC]" "$status_mjc180" \
+  "mjc360"   "Epson MachJet series 360dpi, CMYK [MJC]" "$status_mjc360" \
+  "mjc720"   "Epson MachJet series 720dpi, CMYK [MJC]" "$status_mjc720" \
+  "mj500c"   "Epson MachJet MJ-500C 360dpi, CMY or mono [MJC]" "$status_mj500c" \
+  "st800"    "Epson Stylus 800 printer" "$status_st800" \
+  "stcolor"  "Epson Stylus Color and II/IIs/1500 (see driver docu)" "$status_stcolor" \
+  "photoex"  "Epson Stylus Color Photo, Photo EX, Photo 700" "$status_photoex" \
+  "lp2563"   "HP 2563B line printer" "$status_lp2563" \
+  "dnj650c"  "HP DesignJet 650C" "$status_dnj650c" \
+  "deskjet"  "HP DeskJet and DeskJet Plus" "$status_deskjet" \
+  "djet500"  "HP DeskJet 500 (for DeskJet 600 use -r600)" "$status_djet500" \
+  "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" "$status_cdeskjet" \
+  "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" "$status_djet500c" \
+  "cdjcolor" "HP DeskJet 500C/540C, 24bit/pxl+FS dith, Citizen Projet IIc" "$status_cdjcolor" \
+  "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" "$status_cdjmono" \
+  "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" "$status_cdj500" \
+  "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" "$status_cdj550" \
+  "cdj670"   "HP DeskJet 670/690 [HP2200]" "$status_cdj670" \
+  "cdj850"   "HP DeskJet 850/855/870/1100 [HP2200]" "$status_cdj850" \
+  "cdj880"   "HP DeskJet 880 [HP2200]" "$status_cdj880" \
+  "cdj890"   "HP DeskJet 890 [HP2200]" "$status_cdj890" \
+  "cdj1600"  "HP DeskJet 1600 [HP2200]" "$status_cdj1600" \
+  "chp2200"  "HP Buisiness Inkjet 2200 [HP2200]" "$status_chp2200" \
+  "cdj970"   "HP DeskJet 970CXi [DJ970]" "$status_cdj970" \
+  "laserjet" "HP LaserJet" "$status_laserjet" \
+  "ljetplus" "HP LaserJet Plus" "$status_ljetplus" \
+  "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" "$status_ljet2p" \
+  "ljet3"    "HP LaserJet III* with Delta Row compression" "$status_ljet3" \
+  "ljet3d"   "HP LaserJet IIID with duplex capability" "$status_ljet3d" \
+  "ljet4"    "HP LaserJet 4 and 5L/5P (not real LJ5), defaults to 600 dpi" "$status_ljet4" \
+  "ljet4d"   "HP LaserJet 4 (defaults to 600 dpi) with duplex" "$status_ljet4d" \
+  "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" "$status_lj4dith" \
+  "cljet5"   "HP LaserJet 5/5M Color (new driver, old=cljet5pr)" "$status_cljet5" \
+  "cljet5c"  "HP LaserJet 5/5M Color Simple" "$status_cljet5c" \
+  "cljet5pr" "HP LaserJet 5/5M Color (old drv. with rotation hacks/flaws)" "$status_cljet5pr" \
+  "lj5mono"  "HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap" "$status_lj5mono" \
+  "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" "$status_lj5gray" \
+  "pj"       "HP PaintJet XL driver " "$status_pj" \
+  "pjetxl"   "HP PaintJet XL driver (alternate)" "$status_pjetxl" \
+  "pjxl"     "HP PaintJet XL color printer" "$status_pjxl" \
+  "paintjet" "HP PaintJet color printer (alternate)" "$status_paintjet" \
+  "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" "$status_pjxl300" \
+  "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" "$status_pxlmono" \
+  "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" "$status_pxlcolor" \
+  "pcl3"     "HP PCL 3+ (generic) [PCL3]" "$status_pcl3" \
+  "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" "$status_hpdj" \
+  "ijs"      "HP Inkjet and other raster devices" "$status_ijs" \
+  "ibmpro"   "IBM 9-pin Proprinter" "$status_ibmpro" \
+  "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" "$status_jetp3852" \
+  "imagen"   "Imagen ImPress printers" "$status_imagen" \
+  "fs600"    "Kyocera FS-600 (600 dpi)" "$status_fs600" \
+  "lxm5700m" "Lexmark 5700 monotone" "$status_lxm5700m" \
+  "cp50"     "Mitsubishi CP50 color" "$status_cp50" \
+  "necp6"    "NEC PinWriter P6/P6+/P60, 360x360 DPI resol" "$status_necp6" \
+  "npdl"     "NEC Printer Description Language [NPDL]" "$status_npdl" \
+  "oce9050"  "OCE 9050 printer" "$status_oce9050" \
+  "oki182"   "Okidata MicroLine 182" "$status_oki182" \
+  "okiibm"   "Okidata MicroLine IBM-compatible printers" "$status_okiibm" \
+  "atx23"    "Practical Automation ATX-23 label printer" "$status_atx23" \
+  "atx24"    "Practical Automation ATX-24 label printer" "$status_atx24" \
+  "atx38"    "Practical Automation ATX-38 label printer" "$status_atx38" \
+  "r4081"    "Ricoh 4081 laser printer" "$status_r4081" \
+  "rpdl"     "Ricoh Printer Description Language [LIPS]" "$status_rpdl" \
+  "gdi"      "Samsung SmartGDI laser printer [GDI]" "$status_gdi" \
+  "sj48"     "StarJet 48 inkjet printer" "$status_sj48" \
+  "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" "$status_t4693d2" \
+  "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" "$status_t4693d4" \
+  "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" "$status_t4693d8" \
+  "tek4696"  "Tektronix 4695/4696 inkjet plotter" "$status_tek4696" \
+  "bmpmono"  "BMP Monochrome" "$status_bmpmono" \
+  "bmpgray"  "BMP 8-bit gray" "$status_bmpgray" \
+  "bmp16"    "BMP 4-bit EGA/VGA" "$status_bmp16" \
+  "bmp256"   "BMP 8-bit 256-color" "$status_bmp256" \
+  "bmp16m"   "BMP 24-bit" "$status_bmp16m" \
+  "bmp32b"   "BMP 32-bit pseudo-.BMP" "$status_bmp32b" \
+  "bmpsep1"  "BMP Separated 1-bit CMYK" "$status_bmpsep1" \
+  "bmpsep8"  "BMP Separated 8-bit CMYK" "$status_bmpsep8" \
+  "ccr"      "CalComp Raster format" "$status_ccr" \
+  "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT "$status_"LY" "$status_cgmmono" \
+  "cgm8"     "CGM 8-bit 256-color -- DITTO" "$status_cgm8" \
+  "cgm24"    "CGM 24-bit color -- DITTO" "$status_cgm24" \
+  "cif"      "CIF file format for VLSI" "$status_cif" \
+  "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" "$status_dfaxhigh" \
+  "dfaxlow"  "DigiFAX low (normal) resol" "$status_dfaxlow" \
+  "xcf"      "Gimp XCF, RGB" "$status_xcf" \
+  "xcfcmyk"  "Gimp XCF, CMYK" "$status_xcfcmyk" \
+  "faxg3"    "Group 3 fax, with EOLs but no header or EOD" "$status_faxg3" \
+  "faxg32d"  "Group 3 2-D fax, with EOLs but no header or EOD" "$status_faxg32d" \
+  "faxg4"    "Group 4 fax, with EOLs but no header or EOD" "$status_faxg4" \
+  "miff24"   "ImageMagick MIFF, 24-bit direct color, RLE compressed" "$status_miff24" \
+  "inferno"  "Inferno bitmaps" "$status_inferno" \
+  "jpeg"     "JPEG format, RGB output" "$status_jpeg" \
+  "jpeggray" "JPEG format, gray output" "$status_jpeggray" \
+  "mgrmono"  "MGR devices 1-bit monochrome" "$status_mgrmono" \
+  "mgrgray2" "MGR devices 2-bit gray scale" "$status_mgrgray2" \
+  "mgrgray4" "MGR devices 4-bit gray scale" "$status_mgrgray4" \
+  "mgrgray8" "MGR devices 8-bit gray scale" "$status_mgrgray8" \
+  "mgr4"     "MGR devices 4-bit (VGA) color" "$status_mgr4" \
+  "mgr8"     "MGR devices 8-bit color" "$status_mgr8" \
+  "pcxmono"  "PCX file format, monochrome 1-bit b/w" "$status_pcxmono" \
+  "pcxgray"  "PCX file format, 8-bit gray scale" "$status_pcxgray" \
+  "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" "$status_pcx16" \
+  "pcx256"   "PCX file format, 8-bit chunky color" "$status_pcx256" \
+  "pcx24b"   "PCX file format, 24-bit color 3x8-bit planes" "$status_pcx24b" \
+  "pcxcmyk"  "PCX file format, 4-bit chunky CMYK color" "$status_pcxcmyk" \
+  "pdfwrite" "PDF output (like Adobe Acrobat Distiller)" "$status_pdfwrite" \
+  "psdrgb"   "PhotoShop PSD, RGB" "$status_psdrgb" \
+  "psdcmyk"  "PhotoShop PSD, CMYK" "$status_psdcmyk" \
+  "bit"      "Plain bits, monochrome" "$status_bit" \
+  "bitrgb"   "Plain bits, RGB" "$status_bitrgb" \
+  "bitcmyk"  "Plain bits, CMYK" "$status_bitcmyk" \
+  "plan9bm"  "Plan 9 bitmap format" "$status_plan9bm" \
+  "pam"      "Portable Arbitrary Map file format" "$status_pam" \
+  "pbm"      "Portable Bitmap,  plain format" "$status_pbm" \
+  "pbmraw"   "Portable Bitmap,  raw format" "$status_pbmraw" \
+  "pgm"      "Portable Graymap, plain format" "$status_pgm" \
+  "pgmraw"   "Portable Graymap, raw format" "$status_pgmraw" \
+  "pgnm"     "Portable Graymap, plain format, optim. to PBM" "$status_pgnm" \
+  "pgnmraw"  "Portable Graymap, raw format, optim. to PBM" "$status_pgmraw" \
+  "pnm"      "Portable Pixmap,  plain format RGB, optim. to PGM/PBM" "$status_pnm" \
+  "pnmraw"   "Portable Pixmap,  raw format RGB, optim. to PGM/PBM" "$status_pnmraw" \
+  "ppm"      "Portable Pixmap,  plain format RGB" "$status_ppm" \
+  "ppmraw"   "Portable Pixmap,  raw format RGB" "$status_ppmraw" \
+  "pkm"      "Portable inKmap (plain format) (4-bit CMYK => RGB)" "$status_pkm" \
+  "pkmraw"   "Portable inKmap (raw format) (4-bit CMYK => RGB)" "$status_pkmraw" \
+  "pksm"     "Portable Separated map (plain) (4-bit CMYK => 4 pages)" "$status_pksm" \
+  "pksmraw"  "Portable Separated map (raw) (4-bit CMYK => 4 pages)" "$status_pksmraw" \
+  "pngmono"  "PNG Monochrome Portable Network Graphics" "$status_pngmono" \
+  "pnggray"  "PNG 8-bit gray Portable Network Graphics" "$status_pnggray" \
+  "png16"    "PNG 4-bit color Portable Network Graphics" "$status_png16" \
+  "png256"   "PNG 8-bit color Portable Network Graphics" "$status_png256" \
+  "png16m"   "PNG 24-bit color Portable Network Graphics" "$status_png16m" \
+  "pnga"     "PNG with transparency" "$status_pnga" \
+  "psmono"   "PostScript (Level 1) monochrome image" "$status_psmono" \
+  "psgray"   "PostScript (Level 1) 8-bit gray image" "$status_psgray" \
+  "psrgb"    "PostScript (Level 2) 24-bit color image" "$status_psrgb" \
+  "pswrite"  "PostScript output (like PostScript Distillery)" "$status_pswrite" \
+  "epswrite" "EPS output (like PostScript Distillery)" "$status_epswrite" \
+  "sgirgb"   "SGI RGB pixmap format" "$status_sgirgb" \
+  "sunhmono" "Harlequin variant of 1-bit Sun raster file" "$status_sunhmono" \
+  "tiffcrle" "TIFF CCITT RLE 1 dim = Group 3 fax with no EOLs" "$status_tiffcrle" \
+  "tiffg3"   "TIFF Group 3 fax with EOLs" "$status_tiffg3" \
+  "tiffg32d" "TIFF Group 3 2-D fax" "$status_tiffg32d" \
+  "tiffg4"   "TIFF Group 4 fax" "$status_tiffg4" \
+  "tiff12nc" "TIFF 12-bit RGB, no compression" "$status_tiff12nc" \
+  "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format" "$status_tiff24nc" \
+  "tifflzw"  "TIFF LZW,      tag = 5,     mono" "$status_tifflzw" \
+  "tiffpack" "TIFF PackBits, tag = 32773, mono" "$status_tiffpack" \
+  "bbox"     "Bounding box output" "$status_bbox" \
+  "devicen"  "DeviceN process color model device" "$status_devicen" \
+  "perm"     "DeviceN which permutes color components" "$status_perm" \
+  "spotrgb"  "DeviceN with RGB and spot color support" "$status_spotrgb" \
+  "spotcmyk" "DeviceN with CMYK and spot color support" "$status_spotcmyk" \
+2> $tempfile
 
-retval=$?
+	retval=$?
 
-choice=`cat /tmp/checklist.tmp.$$`
-rm -f /tmp/checklist.tmp.$$
+	if [ -s $tempfile ]; then
+		set `sed 's/"//g' $tempfile`
+	fi
+	rm -f $tempfile
 
-case $retval in
-	0)	if [ -z "$choice" ]; then
-			echo "Nothing selected"
-			exit 1;
-		fi
-		;;
-	1)	echo "Cancel pressed."
-		exit 1
-		;;
-esac
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
 
-# bring it into the right format with '.dev' appended to each driver name
-#old:
-#echo "DEVICE_DEVS=$choice" \
-#	| sed -e "s/\"//g" \
-#	| sed -e "s/ /.dev /g" \
-#	| sed -e "s/$/.dev/g" \
-#	> ${WRKSRC}/src/unix-gcc.mak.new
-# XXX new:
-echo "DEVICE_DEVS=$choice" \
-	| perl -pe 's|"([A-Za-z0-9]+)"|\$(DD)\1.dev|g' \
-	> ${WRKSRC}/src/unix-gcc.mak.new
+exec > ${WRKSRC}/Makefile
 
-# create one new Makefile, where DEVICE_DEVS contains all wanted devices
-sed -e '/^DEVICE_DEVS=/d' ${WRKSRC}/src/unix-gcc.mak \
-	>> ${WRKSRC}/src/unix-gcc.mak.new
-mv ${WRKSRC}/src/unix-gcc.mak.new ${WRKSRC}/src/unix-gcc.mak
+echo "DEVICE_DEVS=	\\"
+
+for i; do
+	echo "	\$(DD)$i.dev	\\"
+done
+
+echo ""
+cat "${WRKSRC}/src/unix-gcc.mak"
