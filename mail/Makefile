@@ -26,6 +26,7 @@
     SUBDIR += coolmail
     SUBDIR += courier
     SUBDIR += courier-imap
+    SUBDIR += crashecho
     SUBDIR += cucipop
     SUBDIR += cvsmail
     SUBDIR += cyrus
