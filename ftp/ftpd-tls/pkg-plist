@@ -1,3 +1,4 @@
+etc/rc.d/ftpd-tls.sh.sample
 libexec/ftpd-tls
 %%PORTDOCS%%%%DOCSDIR%%/README.TLS
 %%PORTDOCS%%%%DOCSDIR%%/draft-murray-auth-ftp-ssl-09.txt
