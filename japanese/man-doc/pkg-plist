@@ -181,6 +181,7 @@ share/man/ja/man1/mkdosfs.1.gz
 share/man/ja/man1/mkfifo.1.gz
 share/man/ja/man1/mklocale.1.gz
 share/man/ja/man1/mkstr.1.gz
+share/man/ja/man1/mktemp.1.gz
 share/man/ja/man1/more.1.gz
 share/man/ja/man1/mset.1.gz
 share/man/ja/man1/msgs.1.gz
