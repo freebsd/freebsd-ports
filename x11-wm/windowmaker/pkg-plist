@@ -145,6 +145,7 @@ lib/libWMaker.a
 lib/libwraster.a
 lib/libwraster.la
 lib/libwraster.so
+lib/libwraster.so.1
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
