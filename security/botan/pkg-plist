@@ -36,7 +36,6 @@ include/botan/data_src.h
 include/botan/defalloc.h
 include/botan/der_enc.h
 include/botan/des.h
-include/botan/desx.h
 include/botan/dh.h
 include/botan/dl_algo.h
 include/botan/dl_param.h
@@ -80,8 +79,8 @@ include/botan/misty1.h
 include/botan/mod_exp.h
 include/botan/mode_pad.h
 include/botan/modebase.h
-include/botan/mp_asm.h
 include/botan/mp_core.h
+include/botan/mp_impl.h
 include/botan/mp_mul.h
 include/botan/mp_types.h
 include/botan/mutex.h
@@ -103,7 +102,6 @@ include/botan/pk_util.h
 include/botan/pkcs10.h
 include/botan/pkcs5.h
 include/botan/pkcs8.h
-include/botan/primes.h
 include/botan/pubkey.h
 include/botan/randpool.h
 include/botan/rc2.h
@@ -145,31 +143,30 @@ include/botan/x509_crl.h
 include/botan/x509_key.h
 include/botan/x509_obj.h
 include/botan/x509cert.h
-include/botan/x509opt.h
 include/botan/x509self.h
 include/botan/x509stor.h
 include/botan/x917_rng.h
 include/botan/x919_mac.h
 include/botan/xtea.h
-lib/libbotan-1.2.4.so
+lib/libbotan-1.2.6.so
 lib/libbotan-1.2.so
 lib/libbotan-1.so
 lib/libbotan.a
 lib/libbotan.so
-share/doc/Botan-%%PORTVERSION%%/api.ps
-share/doc/Botan-%%PORTVERSION%%/api.tex
-share/doc/Botan-%%PORTVERSION%%/authors.txt
-share/doc/Botan-%%PORTVERSION%%/bugs.txt
-share/doc/Botan-%%PORTVERSION%%/deprecated.txt
-share/doc/Botan-%%PORTVERSION%%/indent.el
-share/doc/Botan-%%PORTVERSION%%/license.txt
-share/doc/Botan-%%PORTVERSION%%/log.txt
-share/doc/Botan-%%PORTVERSION%%/pgpkeys.asc
-share/doc/Botan-%%PORTVERSION%%/readme.txt
-share/doc/Botan-%%PORTVERSION%%/rngs.txt
-share/doc/Botan-%%PORTVERSION%%/thanks.txt
-share/doc/Botan-%%PORTVERSION%%/todo.txt
-share/doc/Botan-%%PORTVERSION%%/tutorial.ps
-share/doc/Botan-%%PORTVERSION%%/tutorial.tex
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/api.ps
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/api.tex
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/authors.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/bugs.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/deprecated.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/indent.el
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/license.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/log.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/pgpkeys.asc
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/readme.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/rngs.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/thanks.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/todo.txt
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/tutorial.ps
+%%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%/tutorial.tex
 @dirrm include/botan
-@dirrm share/doc/Botan-%%PORTVERSION%%
+@dirrm %%PORTDOCS%%share/doc/Botan-%%PORTVERSION%%
