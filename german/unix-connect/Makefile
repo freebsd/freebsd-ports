@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	unix-connect
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	german comms news mail
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 		${MASTER_SITE_SOURCEFORGE}
