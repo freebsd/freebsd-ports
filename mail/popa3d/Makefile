@@ -61,6 +61,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|^\(#define POP_STANDALONE\).*|\1 1|' \
 		${WRKSRC}/params.h
 .endif
+.if defined(MAILBOX_HOME)
+	@${REINPLACE_CMD} -e 's|^#define \(MAIL_SPOOL_PATH\).*|#undef \1|' \
+		${WRKSRC}/params.h
+.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
