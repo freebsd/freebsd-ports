@@ -1,2 +1,4 @@
 MD5 (nvi-1.79.tar.gz) = 765e2153f5fc4f21793f2edc2647305a
-MD5 (nvi-1.79.m17n-20011024.diff.gz) = 658699f93f0a1eb2f804eedce79b822d
+SIZE (nvi-1.79.tar.gz) = 1295401
+MD5 (nvi-1.79.m17n-20040401.diff.gz) = 851650ced51697b3b08400fa75621c97
+SIZE (nvi-1.79.m17n-20040401.diff.gz) = 160411
