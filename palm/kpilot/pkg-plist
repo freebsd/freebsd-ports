@@ -12,7 +12,6 @@ share/doc/HTML/en/kpilot/index.html
 share/doc/HTML/en/kpilot/using-kpilot.html
 share/icons/kpilot.xpm
 share/icons/mini/kpilot.xpm
-share/locale/en/LC_MESSAGES/kpilot.mo
 @dirrm share/doc/HTML/en/kpilot
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kpilot
