@@ -7,6 +7,8 @@ lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Oracle.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Postgres.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Sybase.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Generate/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Generate/ModUniqueId.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Generate/ModUsertrack.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/MySQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/Null.pm
