@@ -122,6 +122,7 @@
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rotfl
+    SUBDIR += rscheme
     SUBDIR += ruby
     SUBDIR += ruby-devel
     SUBDIR += ruby-man

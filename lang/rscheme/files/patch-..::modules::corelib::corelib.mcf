@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- ../modules/corelib/corelib.mcf	2001/07/31 08:05:16	1.1
++++ ../modules/corelib/corelib.mcf	2001/07/31 08:07:40
+@@ -27,6 +27,7 @@
+  (files alloc apply process)
+  (files dynstate)
+  (files string str2num num2str)
++ (require-c-header "<ctype.h>")
+  (files layer imageio intrglue)
+  (files linkinfo keywords)
+  (files complex rational basicnum)

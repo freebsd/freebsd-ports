@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ../handc/rshell/Makefile.orig	Thu Mar 18 17:43:41 1999
++++ ../handc/rshell/Makefile	Tue Jul 31 12:04:08 2001
+@@ -11,7 +11,7 @@
+ #
+ 
+ FINAL_INSTALL_DIR=$(INSTALL_DIR)
+-XCFLAGS='-DINSTALL_DIR="$(FINAL_INSTALL_DIR)"'
++XCFLAGS='-DINSTALL_DIR="$(REAL_PREFIX)"'
+ 
+ include $(INSTALL_DIR)/resource/buildenv/preamble.mak
+ 
