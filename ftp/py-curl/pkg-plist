@@ -1,6 +1,11 @@
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test.py
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_cb.py
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_getinfo.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/basicfirst.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/basicfirst2.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_xmlrpc.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_gtk.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_xmlrpc2.py
 %%PORTDOCS%%@dirrm share/examples/%%SHARE_SUBDIR%%
 @cwd %%LOCALBASE%%
-%%PYTHON_SITELIBDIR%%/curl.so
+%%PYTHON_SITELIBDIR%%/pycurl.so
