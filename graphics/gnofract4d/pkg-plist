@@ -100,6 +100,7 @@ share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf
 share/gnome/pixmaps/gnofract4d/deepen_now.png
 share/gnome/pixmaps/gnofract4d/explorer_mode.png
 share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
+share/locale/it/LC_MESSAGES/gnofract4d.mo
 @dirrm share/gnome/pixmaps/gnofract4d
 @dirrm share/gnome/omf/gnofract4d
 @dirrm share/gnome/maps/gnofract4d
