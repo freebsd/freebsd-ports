@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Jul 31 01:20:01 2002
++++ src/Makefile.in	Tue Feb 18 23:19:08 2003
+@@ -9,7 +9,7 @@
+ RRD_DIR		= @RRD_DIR@
+ VAR_DIR		= @VAR_DIR@
+ ORCALLATOR_DIR	= $(VAR_DIR)/orcallator
+-PERL_SCRIPTS	= orca upgrade_installation
++PERL_SCRIPTS	= orca
+ SHELL_SCRIPTS	=
+ TARGETS		= $(PERL_SCRIPTS) $(SHELL_SCRIPTS)
+ 

@@ -243,6 +243,7 @@
     SUBDIR += openrm
     SUBDIR += ophoto
     SUBDIR += optipng
+    SUBDIR += orca
     SUBDIR += osg
     SUBDIR += osgedit
     SUBDIR += p5-Chart-PNGgraph

@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Aug  7 20:08:36 2002
++++ Makefile.in	Tue Feb 18 23:58:27 2003
+@@ -1,6 +1,7 @@
+ @SET_MAKE@
+ 
+-SUBDIRS 	= packages lib src @ORCALLATOR_SUBDIR@ docs contrib
++# SUBDIRS 	= packages lib src @ORCALLATOR_SUBDIR@ docs contrib
++SUBDIRS 	= packages lib src docs contrib
+ prefix		= @prefix@
+ MKDIR		= @MKDIR@
+ MAKE_RRDTOOL	= @MAKE_RRDTOOL@
+@@ -30,8 +31,6 @@
+ 
+ install: $(INSTALL_RRDTOOL)
+ 	$(MKDIR) $(VAR_DIR)
+-	$(MKDIR) $(ORCALLATOR_DIR)
+-	$(MKDIR) $(RRD_DIR)/orcallator
+ 	@for dir in $(SUBDIRS); do			\
+ 		if test -d $$dir; then					\
+ 			echo "cd $$dir";				\

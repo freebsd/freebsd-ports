@@ -1,0 +1,21 @@
+This is a port of Orca which is Blair Zajac's incredibly useful
+tool for making web-viewable graphs of arbitrary data from text
+files.
+
+Uses a configuration file which describes which text files to read,
+what the columns in the files mean, and how that information should
+be graphed.
+
+Often run as a daemon, automatically updating as files change.
+Often run with the Orcallator.se script for Solaris machines and
+corresponding configuration file (just because you collect the data
+on a Solaris box doesn't mean you have to graph it on one too).
+
+Written in Perl, uses RRDtool for data storage and graph generation.
+
+Lots more information and examples at
+WWW:	http://www.orcaware.com/orca/
+
+
+- John
+jsellens@generalconcepts.com
