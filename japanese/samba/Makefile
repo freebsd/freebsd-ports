@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.0.7
+PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -14,9 +14,8 @@ MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.tutrp.tut.ac.jp/pub/mirror/samba-jp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
-PKGNAMESUFFIX=	-ja
-DISTNAME=	${SAMBA_JA_VERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja
+DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
 
@@ -24,7 +23,8 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
 
-SAMBA_JA_VERSION=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-1.2
+SAMBA_VERSION=		2.0.7
+SAMBA_JA_VERSION=	1.2
 
 # directories
 VARDIR=		/var
