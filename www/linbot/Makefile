@@ -3,12 +3,12 @@
 # Date created:        19 September 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/11/04 02:37:38 jkoshy Exp $
+# $Id: Makefile,v 1.4 1998/12/29 18:22:59 billf Exp $
 #
 
 DISTNAME=	linbot-0.9
 CATEGORIES=	www python
-MASTER_SITES=	http://starship.skyport.net/crew/marduk/linbot/
+MASTER_SITES=	http://starship.skyport.net/crew/marduk/linbot/download/
 
 MAINTAINER=	billf@FreeBSD.org
 
