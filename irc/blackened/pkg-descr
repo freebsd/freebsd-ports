@@ -1,15 +1,7 @@
-Blackened is an alternative IRC client made by Timothy 
-Jensen <toast@blackened.com> that offers a variety of new
-features not found in other clients, such as:
-
-	o Personalized timestamps
-	o Message redirection
-	o $randread() function
-	o "Snazzy new look"
-	o Banlist formatting
-	o Additional bind keys, e.g. PAGE_UP and PAGE_DOWN
+Blackened is an enhanced IRC client that offers a variety of features
+not found in other clients, including commands designed for IRC
+server operators and administrators.  Normal users also benefit from
+additional functionality.
 
 WWW: http://www.blackened.com/blackened/
 IRC: irc.blackened.com #blackened
-
-- Will <andrews@technologist.com>

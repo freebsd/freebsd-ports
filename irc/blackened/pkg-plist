@@ -3,6 +3,7 @@ bin/blackened-%%VERSION%%
 bin/blackened-ircserv
 bin/blackened-wserv
 bin/blackened-ircflush
+man/man1/blackened.1
 share/blackened/%%VERSION%%/translation/ASCII
 share/blackened/%%VERSION%%/translation/CP437
 share/blackened/%%VERSION%%/translation/CP850
