@@ -1,0 +1,16 @@
+The computer calculates a combination of five characters (each between
+A and J) and you have to try to find out  the combination the computer
+has calculated.  Your questions to  the computer are also combinations
+of five characters (each between A and J).
+
+You   get sets  of black  and/or   white  blocks as   answers  to your
+questions.
+
+If  you  get a  black block  as  answer it  means  that  there  is one
+character  in your  try at  the correct position  (but  you don't know
+which one it is).
+
+If you get a white block as answer it means that  there is a character
+in  your  guess that also   occurs  in the  solution,  but at  another
+position (but you don't know which one it  is and at which position it
+would be correct).
