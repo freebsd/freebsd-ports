@@ -5750,7 +5750,6 @@ picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
 piewm		ports/x11-wm/piewm
-pike-gtk	ports/x11-toolkits/pike-gtk
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
 pike73		ports/lang/pike73
