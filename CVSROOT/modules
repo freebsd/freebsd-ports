@@ -175,6 +175,7 @@ abcache		ports/www/abcache
 abcde		ports/audio/abcde
 abck		ports/sysutils/abck
 abclock		ports/x11-clocks/abclock
+abcm2ps		ports/print/abcm2ps
 abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abntex		ports/print/abntex
