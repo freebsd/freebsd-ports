@@ -57,11 +57,9 @@
     SUBDIR += gnomeapplets2
     SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
-    SUBDIR += gnomemag
     SUBDIR += gnomepanel
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
-    SUBDIR += gnopernicus
     SUBDIR += grabc
     SUBDIR += gromit
     SUBDIR += gswitchit
