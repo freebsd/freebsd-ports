@@ -16,6 +16,8 @@ COMMENT=	ODBC library suite for Unix
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+CONFLICTS=	libiodbc-*
+
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
