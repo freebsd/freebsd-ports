@@ -32,6 +32,8 @@ lib/%%PYTHON_VERSION%%/site-packages/Numeric/lapack_lite.so
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/multiarray.so
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/ranlib.so
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/umath.so
+lib/%%PYTHON_VERSION%%/site-packages/Numeric/version.py
+lib/%%PYTHON_VERSION%%/site-packages/Numeric/version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/RNG/RNG.so
 lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.py
 lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.pyc
