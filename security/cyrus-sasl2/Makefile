@@ -14,29 +14,35 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 
 MAINTAINER=	hetzels@westbend.net
 
+BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
+
 SASL_VER=	1.5.13
+
+RESTRICTED=     "Contains cryptography"
 
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
-MAN1=		sasl_client.1 sasl_server.1
+MAN3=		sasl_client.3 sasl_server.3
 MAN8=		saslpasswd.8
 
+USE_AUTOCONF=	YES
 USE_LIBTOOL=	YES
 CONFIGURE_ARGS= \
 		--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
-		--includedir=${PREFIX}/include/sasl \
 		--with-plugindir=${PREFIX}/lib/sasl \
-		--enable-static \
 		--with-dbpath=${PREFIX}/etc/sasldb \
-		--with-sample \
-		--with-rc4
+		--includedir=${PREFIX}/include/sasl \
+		--enable-static \
+		--with-rc4=openssl
 
-#		--disable-cram
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+CONFIGURE_ARGS+= --enable-gssapi=${KRB5_HOME}
+.endif
 
-# Currently, pwcheck doesn't compile
-#CONFIGURE_ARGS+= \
-#		--with-pwcheck=/var/pwcheck
+CONFIGURE_ARGS+= \
+		--with-pwcheck=/var/pwcheck
 
 #  --with-dbpath=PATH      set the DB path to use [/etc/sasldb]
 #  --with-pam=DIR          use PAM (rooted in DIR) [yes]
@@ -50,10 +56,6 @@ CONFIGURE_ARGS= \
 #  --enable-plain          enable PLAIN authentication [yes]
 #  --with-rc4=DIR          use rc4 (look in DIR) [yes]
 
-# Sample SASL Client/Server
-SAMPLES=	sample-client sample-server
-INSTALL_PROG=	${INSTALL} -c -o root -g wheel -m 555
-
 DOCS=	README README.Y2K TODO INSTALL ChangeLog NEWS
 
 DOC2=	draft-newman-auth-scram-03.txt \
@@ -63,17 +65,7 @@ DOC2=	draft-newman-auth-scram-03.txt \
 
 HTDOCS=	index programming sysadmin
 
-# Build the SASL library with RC4 support
-.if defined(USA_RESIDENT) && (${USA_RESIDENT} == YES)
-LIB_DEPENDS=    rc4.0:${PORTSDIR}/security/librc4
-CONFIGURE_ARGS+=	--with-rc4
-#CONFIGURE_ARGS+=	--with-rc4=${PREFIX}
-.endif
-
 post-install:
-.for file in ${SAMPLES}
-	${INSTALL_PROG} ${WRKSRC}/sample/${file} ${PREFIX}/sbin
-.endfor
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 #       ${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
 .if !defined(NOPORTDOCS)
@@ -92,6 +84,14 @@ post-install:
 .endfor
 	@${ECHO} "@dirrm share/doc/SASL/html" >>${TMPPLIST}
 	@${ECHO} "@dirrm share/doc/SASL" >>${TMPPLIST}
+.endif
+.if !defined(KRB5_HOME) || !exists(${KRB5_HOME})
+	${GREP} -v libgssapiv2 ${TMPPLIST} > ${WRKDIR}/tmp.plist
+	${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
+.endif
+.if !defined(MAKE_EBONES) || exists(/usr/lib/libkrb.a)
+	${GREP} -v libkerberos4 ${TMPPLIST} > ${WRKDIR}/tmp.plist
+	${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
