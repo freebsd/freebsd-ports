@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 
 PERL_CONFIGURE=	YES
 
