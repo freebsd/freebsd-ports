@@ -22,10 +22,10 @@ XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
 	${MKDIR} ${ELISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/id3.el ${ELISPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/id3put ${PREFIX}/bin
 # For XEmacs
 	${MKDIR} ${XELISPDIR}
-	${LN} -sf ${ELISPDIR}/${PORTNAME} ${XELISPDIR}
+	${LN} -sf ${ELISPDIR}/id3.el ${XELISPDIR}
 
 .include <bsd.port.mk>
