@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	20010405
+PORTVERSION=	20010408
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -32,16 +32,17 @@ DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
 post-extract:
-	${RM} ${WRKSRC}/examples/*.obj
 	${LN} -sf `cd ${PORTSDIR}/${TGIF_PORT} && ${MAKE} -V WRKSRC` ${WRKSRC}/tgif
+	${TOUCH} ${WRKSRC}/tgif_lib.h
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|\.\./|, "tgif/"' ${WRKSRC}/extconf.rb ${WRKSRC}/*.c
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja
+	${INSTALL_DATA} ${WRKSRC}/examples/test??.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/examples/test??_ja.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/

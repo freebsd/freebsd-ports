@@ -5,5 +5,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tgif/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tgif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/test01.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/test01_ja.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/test02.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/ja/test01_ja.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tgif/ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tgif
