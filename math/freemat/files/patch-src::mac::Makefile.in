@@ -1,0 +1,11 @@
+--- ./src/mac/Makefile.in.orig	Wed Mar 16 16:38:59 2005
++++ ./src/mac/Makefile.in	Sun Mar 27 21:43:53 2005
+@@ -246,7 +246,7 @@
+ @NEED_JPEG_TRUE@JPEGLIB = @top_builddir@/libs/libjpeg6b/libjpeg.a
+ INCLUDES = -I@top_srcdir@/libs/libFreeMat -I@top_srcdir@/libs/libCore -I@top_srcdir@/libs/libFN -I@top_srcdir@/libs/libGraphics -I@top_builddir@/libs/libffi/include -I@top_srcdir@/libs/libXP -I@top_srcdir@/libs/libFLTK
+ FreeMat_SOURCES = main.cpp 
+-FreeMat_DEPENDENCIES = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a @top_builddir@/libs/libFreeMat/libFreeMat.a @top_builddir@/libs/libARPACK/libARPACK.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKdi.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKzi.a @top_builddir@/libs/libUMFPACK/AMD/libAMD.a @top_builddir@/libs/libFFTPack/libFFTPack.a  @top_builddir@/libs/libffi/libffi.a @top_builddir@/libs/libXP/libXP.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB) @top_builddir@/libs/libFLTK/libFLTK.a
++FreeMat_DEPENDENCIES = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a @top_builddir@/libs/libFreeMat/libFreeMat.a @top_builddir@/libs/libFFTPack/libFFTPack.a  @top_builddir@/libs/libffi/libffi.a @top_builddir@/libs/libXP/libXP.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB) @top_builddir@/libs/libFLTK/libFLTK.a
+ FreeMat_LDADD = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a  @top_builddir@/libs/libFFTPack/libFFTPack.a @top_builddir@/libs/libXP/libXP.a @top_builddir@/libs/libFreeMat/libFreeMat.a  @top_builddir@/libs/libARPACK/libARPACK.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKdi.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKzi.a @top_builddir@/libs/libUMFPACK/AMD/libAMD.a @top_builddir@/libs/libXP/libXP.a @top_builddir@/libs/libFLTK/libFLTK.a @top_builddir@/libs/libffi/libffi.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB)  -lg2c 
+ all: all-am
+ 

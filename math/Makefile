@@ -53,6 +53,7 @@
     SUBDIR += fityk
     SUBDIR += freefem
     SUBDIR += freefem++
+    SUBDIR += freemat
     SUBDIR += fudgit
     SUBDIR += fung-calc
     SUBDIR += fxt

@@ -1,0 +1,5 @@
+******************************************************
+  FreeMat installation complete.
+  You must set the environment variable FREEMAT_PATH
+  to include %%DATADIR%%/MFiles.
+******************************************************

@@ -1,0 +1,15 @@
+--- help/html/Makefile.in.orig	Wed Mar 16 16:38:46 2005
++++ help/html/Makefile.in	Mon Mar 28 18:23:51 2005
+@@ -873,10 +873,10 @@
+ 
+ 
+ install-data-local:
+-	mkdir -p $(prefix)/share/FreeMat/html
++	mkdir -p $(prefix)/share/doc/freemat
+ 	for fname in $(EXTRA_DIST); do \
+ 	  echo "Installing manual html file $$fname"; \
+-	  $(INSTALL) $(srcdir)/$$fname $(prefix)/share/FreeMat/html;\
++	  $(INSTALL) $(srcdir)/$$fname $(prefix)/share/doc/freemat ;\
+ 	done;
+ uninstall-local:
+ 	for fname in $(EXTRA_DIST); do \
