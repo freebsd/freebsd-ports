@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lombox
-PORTVERSION=	3
+PORTNAME=	lomboz
+PORTVERSION=	3.0.1
 CATEGORIES=	java
 MASTER_SITES=	http://download.forge.objectweb.org/lomboz/ \
 		http://download.us.forge.objectweb.org/lomboz/ \
 		http://download.forge.objectweb.org/lomboz/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	lomboz.3
+DISTNAME=	lomboz.301
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	sugimura@jp.FreeBSD.ORG
