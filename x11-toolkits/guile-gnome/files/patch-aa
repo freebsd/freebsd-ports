@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 20 14:58:24 2000
++++ Makefile.in	Fri Jun  9 14:38:57 2000
+@@ -94,7 +94,7 @@
+ VERSION = @VERSION@
+ ZVT_LIBS = @ZVT_LIBS@
+ 
+-SUBDIRS = macros guile-gtk guile-gnome 
++SUBDIRS = macros guile-gnome 
+ 
+ EXTRA_DIST = gnome-guile.spec.in gnome-guile.spec
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

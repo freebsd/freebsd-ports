@@ -14,6 +14,7 @@
     SUBDIR += gtk12
     SUBDIR += gtkglarea
     SUBDIR += gtkstep
+    SUBDIR += guile-gnome
     SUBDIR += guile-gtk
     SUBDIR += itk
     SUBDIR += iwidgets

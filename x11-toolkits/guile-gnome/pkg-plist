@@ -1,0 +1,25 @@
+bin/gnomeg
+lib/libguileglade.a
+lib/libguileglade.so
+lib/libguileglade.so.0
+lib/libguilegnome.a
+lib/libguilegnome.so
+lib/libguilegnome.so.0
+lib/libguilegnorba.a
+lib/libguilegnorba.so
+lib/libguilegnorba.so.0
+lib/libguilezvt.a
+lib/libguilezvt.so
+lib/libguilezvt.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/guile-gnome/gnome.defs
+share/guile-gnome/gnorba.defs
+share/guile-gnome/libglade.defs
+share/guile-gnome/zvt.defs
+share/guile/gnome/gnome.scm
+share/guile/gnome/gnorba.scm
+share/guile/gnome/zvt.scm
+share/guile/gtk/libglade.scm
+@dirrm share/guile-gnome
+@dirrm share/guile/gnome
