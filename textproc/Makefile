@@ -168,6 +168,7 @@
     SUBDIR += rtf2htm
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
+    SUBDIR += ruby-format
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-htmlcompact
