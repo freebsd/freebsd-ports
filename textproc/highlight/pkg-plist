@@ -7,7 +7,6 @@ bin/highlight
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/highlight.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/CodeHighLight.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/SyntaxHighlighter.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/frontend/highlight-pyqt-GUI-0.1-4.tar.gz
 %%DATADIR%%/extensions.conf
 %%DATADIR%%/helpmsg/de.help
 %%DATADIR%%/helpmsg/en.help
@@ -110,6 +109,7 @@ bin/highlight
 %%DATADIR%%/themes/bruised.style
 %%DATADIR%%/themes/bubblegum.style
 %%DATADIR%%/themes/contrast.style
+%%DATADIR%%/themes/darkblue.style
 %%DATADIR%%/themes/darkness.style
 %%DATADIR%%/themes/desert.style
 %%DATADIR%%/themes/dream.style
@@ -132,14 +132,18 @@ bin/highlight
 %%DATADIR%%/themes/kwrite.style
 %%DATADIR%%/themes/matlab.style
 %%DATADIR%%/themes/navy.style
+%%DATADIR%%/themes/nedit.style
 %%DATADIR%%/themes/neon.style
 %%DATADIR%%/themes/neon2.style
 %%DATADIR%%/themes/night.style
 %%DATADIR%%/themes/nightvision.style
+%%DATADIR%%/themes/pablo.style
+%%DATADIR%%/themes/peachpuff.style
 %%DATADIR%%/themes/peachy.style
 %%DATADIR%%/themes/print.style
 %%DATADIR%%/themes/rand01.style
 %%DATADIR%%/themes/rand02.style
+%%DATADIR%%/themes/ron.style
 %%DATADIR%%/themes/slime.style
 %%DATADIR%%/themes/smoke.style
 %%DATADIR%%/themes/the.style
@@ -158,11 +162,11 @@ bin/highlight
 %%DATADIR%%/themes/whatis.style
 %%DATADIR%%/themes/whitenblue.style
 %%DATADIR%%/themes/whitengrey.style
+%%DATADIR%%/themes/zellner.style
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/langDefs
 @dirrm %%DATADIR%%/helpmsg
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/frontend
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi/php
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi/perl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi
