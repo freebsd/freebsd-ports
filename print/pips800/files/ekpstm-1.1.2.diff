@@ -1,0 +1,66 @@
+Index: src/ekpcom.c
+diff -u -p src/ekpcom.c.orig src/ekpcom.c
+--- src/ekpcom.c.orig	Sat Oct 19 13:01:51 2002
++++ src/ekpcom.c	Wed Aug 25 18:34:15 2004
+@@ -42,15 +42,25 @@ sock_open (void)
+ {
+   int sockfd, len;
+   struct sockaddr_in address;
++#ifndef MSG_NOSIGNAL
++  const int on = 1;
++#endif
+ 
+   if (server_sock_fd >= 0)
+     return 0;
+ 
+   /* ソケットオープン */
+   sockfd = socket (AF_INET, SOCK_STREAM, 0);
++#if !defined(MSG_NOSIGNAL) && defined(SO_NOSIGPIPE)
++  setsockopt(sockfd, SOL_SOCKET, SO_NOSIGPIPE, &on, sizeof(on));
++#endif
++  memset(&address, 0, sizeof(address));
+   address.sin_family = AF_INET;
+   address.sin_addr.s_addr = htonl (INADDR_ANY);
+   address.sin_port = htons (35586);
++#ifdef __FreeBSD__
++  address.sin_len = sizeof(address);
++#endif
+   len = sizeof (address);
+   if (connect (sockfd, (struct sockaddr *)&address, len))
+     {
+@@ -92,7 +102,11 @@ sock_write (char* buf, int* lp_wsize)
+   packet[4] = size % 0xFF;
+   memcpy (packet + Header_Size, buf, size);
+ 
++#ifndef MSG_NOSIGNAL
++  size = send (server_sock_fd, packet, size + Header_Size, 0);
++#else
+   size = send (server_sock_fd, packet, size + Header_Size, MSG_NOSIGNAL);
++#endif
+ 
+   if (size < 0)
+     return -1;
+@@ -116,7 +130,11 @@ sock_read (char* buf, int* lp_rsize)
+   if (size <= 0)
+     return 0;
+ 
++#ifndef MSG_NOSIGNAL
++  dsize = recv (server_sock_fd, packet, size, 0);
++#else
+   dsize = recv (server_sock_fd, packet, size, MSG_NOSIGNAL);
++#endif
+ 
+   if (dsize < 0)
+     return -1;
+Index: src/main.c
+diff -u -p src/main.c.orig src/main.c
+--- src/main.c.orig	Thu Jul 31 15:01:39 2003
++++ src/main.c	Tue Aug 24 19:41:40 2004
+@@ -69,6 +69,7 @@ main (int argc, char *argv[])
+           break;
+ 	  
+         default:
++          break;
+         }
+     }
+   
