@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.10 1997/04/26 23:55:24 asami Exp $
+# $Id: Makefile,v 1.11 1997/04/27 00:23:50 asami Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -12,11 +12,10 @@ MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
 		ftp://ftp.uni-frankfurt.de/pub/dist/frank/  \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/
 
-MAINTAINER=	ac199@freenet.hamilton.on.ca
+MAINTAINER=	hoek@FreeBSD.ORG
 
 LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
-FILESDIR=	${.CURDIR}/../../converters/uulib/files
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=        --enable-inews=${PREFIX}/news/lib/inews \
 			--disable-tcl
