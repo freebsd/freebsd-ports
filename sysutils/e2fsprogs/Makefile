@@ -7,6 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -88,8 +89,6 @@ post-install:
 	${RM} ${PREFIX}/sbin/filefrag
 	${RM} ${PREFIX}/man/man8/filefrag.8
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/e2fsck/e2fsck.shared ${PREFIX}/sbin/e2fsck
-	${INSTALL_PROGRAM} ${WRKSRC}/e2fsck/e2fsck.static ${PREFIX}/sbin/e2fsck.static
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
