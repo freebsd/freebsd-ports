@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	im-ja
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([0-9])$/-\1/}
 
 MAINTAINER=	nectar@FreeBSD.org
 COMMENT=	A Japanese input module for GTK2
@@ -36,8 +35,6 @@ CONFIGURE_ARGS+=	--disable-wnn
 LIBS+=		-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ENV=	LIBS="${LIBS}" CPPFLAGS="${CPPFLAGS}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.([0-9])$//}
 
 MAN1=		im-ja-conf.1
 
