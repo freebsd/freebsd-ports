@@ -18,7 +18,7 @@ LIB_BASENAME = libstlport_icc
 #
 #
 LINK=ar cr
-DYN_LINK=$(CXX) -Qoption,ld,-BOOTSTRAPSTLPORT -shared -o
+DYN_LINK=$(CXX) -Qoption,ld,-BOOTSTRAPSTLPORT -mt -shared -o
 
 OBJEXT=o
 DYNEXT=so
@@ -38,7 +38,7 @@ include common_macros.mak
 
 WARNING_FLAGS= -w1
 
-CXXFLAGS_COMMON = -I${STLPORT_DIR} ${WARNING_FLAGS}
+CXXFLAGS_COMMON = -I${STLPORT_DIR} ${WARNING_FLAGS} ${PTHREAD_CFLAGS} -D_REENTRANT -mt
 
 CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) -O -ip -axiMKW
 CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) -O -ip -axiMKW -KPIC
