@@ -3723,6 +3723,7 @@ ja-phpgroupware	ports/japanese/phpgroupware
 ja-plain2	ports/japanese/plain2
 ja-plan		ports/japanese/plan
 ja-platex-jsclasses	ports/japanese/platex-jsclasses
+ja-platex-otf	ports/japanese/platex-otf
 ja-platex209	ports/japanese/platex209
 ja-port_man	ports/japanese/man
 ja-postgresql	ports/japanese/postgresql
