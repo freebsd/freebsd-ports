@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gthumb
 
-MAINTAINER=	H@Schmalzbauer.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer and browser for the GNOME environment
 
 USE_X_PREFIX=	yes
