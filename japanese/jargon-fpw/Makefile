@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jargon-fpw
-PORTVERSION=	1.1a
+PORTVERSION=	1.2a
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/
 DISTNAME=	jarg-fpw${PORTVERSION}
