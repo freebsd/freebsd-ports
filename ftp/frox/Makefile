@@ -9,7 +9,9 @@ PORTNAME=	frox
 PORTVERSION=	0.7.4
 CATEGORIES=	ftp
 MASTER_SITES= 	http://www.hollo.org/frox/download/ \
-		http://frox.sourceforge.net/download/
+		http://frox.sourceforge.net/download/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sem@ciam.ru
 
