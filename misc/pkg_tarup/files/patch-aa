@@ -1,8 +1,15 @@
---- pkg_tarup.orig	Wed May 17 01:02:05 2000
-+++ pkg_tarup	Thu Sep 21 15:00:35 2000
-@@ -11,17 +11,20 @@
+--- pkg_tarup.orig	Fri Jun  1 11:12:44 2001
++++ pkg_tarup	Fri Jun  1 11:21:06 2001
+@@ -7,21 +7,26 @@
+ #
+ 
+ PKG_DBDIR=${PKG_DBDIR:-/var/db/pkg}
+-PKGREPOSITORY=${PKGREPOSITORY:-/tmp}
  PKG_SUFX=${PKG_SUFX:-tgz}
  
++# A package file can be very big beyond /tmp's capacity
++PKGREPOSITORY=${PKGREPOSITORY:-${TMPDIR:-/var/tmp}}
++
  PKG="$1"
 -rPKG="`pkg_info -e \"$PKG\"`"
  
@@ -26,7 +33,7 @@
  
  check_and_add() {
  	opt="$1"
-@@ -40,10 +43,10 @@
+@@ -40,10 +45,10 @@
  
  check_and_add -c ${PKG_DBDIR}/${PKG}/+COMMENT
  check_and_add -d ${PKG_DBDIR}/${PKG}/+DESC
@@ -40,7 +47,7 @@
  check_and_add -i ${PKG_DBDIR}/${PKG}/+INSTALL
  check_and_add -k ${PKG_DBDIR}/${PKG}/+DEINSTALL
  check_and_add -r ${PKG_DBDIR}/${PKG}/+REQUIRE
-@@ -54,7 +57,7 @@
+@@ -54,7 +59,7 @@
  sed -n \
      -e '/^@comment MD5:/d' \
      -e '/^@cwd \.$/,$d' \
@@ -49,7 +56,7 @@
      <${PKG_DBDIR}/${PKG}/+CONTENTS >$PLIST
  
  # Duplicate first @cwd (work around pkg_create "feature" ...)
-@@ -80,10 +83,8 @@
+@@ -80,10 +85,8 @@
          ${PKG_ARGS} \
  	-v \
  	-f ${PLIST} \
