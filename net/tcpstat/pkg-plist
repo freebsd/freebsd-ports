@@ -1,1 +1,9 @@
+@comment $FreeBSD$
 bin/tcpstat
+bin/tcpprof
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Tips_and_Tricks.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
