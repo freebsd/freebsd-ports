@@ -1,0 +1,75 @@
+--- .fdrc	Fri Oct  6 15:38:56 1995
++++ fdrc	Tue Feb 20 13:34:02 1996
+@@ -77,7 +77,7 @@
+ 
+ # temporary directory where archive file is unpacked
+ #	default: /tmp
+-TMPDIR		=	/usr/tmp
++TMPDIR		=	/tmp
+ 
+ # language code type to display
+ #	default: No convert
+@@ -87,8 +87,8 @@
+ #	eng, ENG, C: English
+ LANGUAGE	=	$LANG
+ 
+-PAGER	=	/usr/local/bin/less
+-EDITOR	=	/usr/ucb/vi
++PAGER	=	/usr/bin/more
++EDITOR	=	/usr/bin/vi
+ 
+ # for Mischievous Japanese OS (see `man fd')
+ #export	LANG=C
+@@ -98,18 +98,21 @@
+ #".tar"		"tar tvf"		0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+ #".tar.Z"	"zcat %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+ #".tar.gz"	"gunzip -c %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+-".taZ"		"zcat %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+-".taz"		"zcat %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+-".tgz"		"gunzip -c %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
++#".taZ"		"zcat %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
++#".taz"		"zcat %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
++#".tgz"		"gunzip -c %C | tar tvf -"	0,0:1-9,2-'/',2'/',3,7,4,5,6,8:10
+ ".zip"		"unzip -lqq"		0,0:0,0,0,1,4,2,3,5,6:13,16
+ ".zoo"		"zoo lq"		0,0:0,0,0,1,0,5,4,7-'+',8
+ ".Z"		"zcat %C | $PAGER"
+ ".gz"		"gunzip -c %C | $PAGER"
+ 
+ # example for SVR4 (or GNU tar)
+-#".tar"		"tar tvf"		0,0:1,2-'/',2'/',3,7,4,5,6,8
+-#".tar.Z"	"zcat %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
+-#".tar.gz"	"gunzip -c %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
++".tar"		"tar tvf"		0,0:1,2-'/',2'/',3,7,4,5,6,8
++".tar.Z"	"zcat %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
++".tar.gz"	"gunzip -c %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
++".taZ"		"zcat %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
++".taz"		"zcat %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
++".tgz"		"gunzip -c %C | tar tvf -"	0,0:1,2-'/',2'/',3,7,4,5,6,8
+ 
+ # archiver definition
+ #".lzh"		A "lha aq %C %TA"		"lha xq %C %TA"
+--- ./Makefile.in.org	Sun Dec 17 20:39:36 1995
++++ ./Makefile.in	Tue Mar 19 23:42:45 1996
+@@ -3,11 +3,11 @@
+ #
+ 
+ TITLE	= FD-
+-TOPDIR	= /usr/local
++TOPDIR	= $(PREFIX)
+ BINDIR	= $(TOPDIR)/bin
+ MANDIR	= $(TOPDIR)/man/man$(MANSEC)
+ CATDIR	= $(TOPDIR)/man/cat$(MANSEC)
+-DEFRC	= /etc/fdrc
++DEFRC	= $(TOPDIR)/etc/fdrc
+ SHELL	= /bin/sh
+ INSTALL	= cp -p
+ CHMOD	= chmod
+@@ -40,7 +40,7 @@
+ 	kanji.o file.o apply.o archive.o tree.o command.o browse.o
+ 
+ LDFLAGS	= __TERMLIBS__ __REGLIBS__ __OTHERLIBS__
+-CFLAGS	= -DFD -D__OSTYPE__ -DDEFRUNCOM=\"$(DEFRC)\" __CCOPTIONS__
++CFLAGS	+= -DFD -D__OSTYPE__ -DDEFRUNCOM=\"$(DEFRC)\" __CCOPTIONS__
+ 
+ ############################################################
+ #	Dependency Rules
