@@ -1,0 +1,27 @@
+bin/pmake
+bin/vmake
+lib/pmake/linksprite.mk
+lib/pmake/makedepend.mk
+lib/pmake/makelib.mk
+lib/pmake/makelint.mk
+lib/pmake/po.mk
+lib/pmake/shx.mk
+lib/pmake/sys-9000-720.mk
+lib/pmake/sys-9000-730.mk
+lib/pmake/sys-IP19.mk
+lib/pmake/sys-IP20.mk
+lib/pmake/sys-IP22.mk
+lib/pmake/sys-IP25.mk
+lib/pmake/sys-IP7.mk
+lib/pmake/sys-alpha.mk
+lib/pmake/sys-i386.mk
+lib/pmake/sys-i686.mk
+lib/pmake/sys-i86pc.mk
+lib/pmake/sys-iris.mk
+lib/pmake/sys-mips.mk
+lib/pmake/sys-next.mk
+lib/pmake/sys-snake.mk
+lib/pmake/sys-sun3.mk
+lib/pmake/sys-sun4.mk
+lib/pmake/system.mk
+@dirrm lib/pmake
