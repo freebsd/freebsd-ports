@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An XSLT processor in pure Ruby
 
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xslt.2:${PORTSDIR}/textproc/libxslt
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
