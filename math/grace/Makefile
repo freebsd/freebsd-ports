@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.13
+PORTVERSION=	5.1.14
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
@@ -36,6 +36,7 @@ MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 USE_MOTIF=	YES
+USE_REINPLACE=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
@@ -46,9 +47,7 @@ ALL_TARGET=
 INSTALL_TARGET=	install links
 
 post-patch:
-	${CP} ${WRKSRC}/configure ${WRKSRC}/configure.input
-	${SED} "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure.input > ${WRKSRC}/configure
-	${RM} -f ${WRKSRC}/configure.input
+	${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

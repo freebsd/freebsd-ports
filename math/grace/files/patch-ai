@@ -1,17 +1,15 @@
-*** cmath.h.org	Thu Mar 27 13:57:30 2003
---- cmath.h	Thu Mar 27 13:59:41 2003
-***************
-*** 170,174 ****
---- 170,181 ----
-  #endif
-  
-  #ifndef HAVE_ISNAN_DECL
-+ #ifdef __FreeBSD__
-+ #  include <sys/param.h>
-+ #  if __FreeBSD_version < 500100
-+ extern int isnan ( double x );
-+ #  endif
-+ #endif
-+ #else
-  extern int isnan ( double x );
-  #endif
+--- cmath.h.orig	Fri Dec 12 21:33:45 2003
++++ cmath.h	Thu Jan 22 22:22:45 2004
+@@ -175,5 +175,12 @@
+ #endif
+ 
+ #if !defined(HAVE_ISNAN_DECL) && !defined(HAVE_ISNAN_MACRO)
++#ifdef __FreeBSD__
++#  include <sys/param.h>
++#  if __FreeBSD_version < 500100
++extern int isnan ( double x );
++#  endif
++#endif
++#else
+ extern int isnan ( double x );
+ #endif
