@@ -21,6 +21,7 @@ RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+NO_CDROM=	NOFEE: Can not charge for distribution
 NO_PACKAGE=     Only unmodified original package can be distributed
 
 EXTRACT_CMD=		# empty
@@ -66,7 +67,11 @@ do-install:
 
 post-install:
 	@/usr/bin/brandelf -t Linux ${PREFIX}/bin/rar
-	@${ECHO_MSG} "This is 40days trial version of commercial software."
+	@${ECHO_MSG} "This is 40 days trial version of commercial software."
 	@${ECHO_MSG} "Read texts in ${PREFIX}/share/doc/rar before use."
+.if defined(WITH_UNRAR)
+	@/usr/bin/brandelf -t Linux ${PREFIX}/bin/unrar
+	@${ECHO_MSG} "However, unrar can be used for free."
+.endif
 
 .include <bsd.port.mk>
