@@ -1,17 +1,18 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.5p1
+# Version required:     0.5p2
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
 # $Id: Makefile,v 1.4 1996/07/10 05:24:17 asami Exp $
 #
 
-DISTNAME=	kaffe-0.5p1
+DISTNAME=	kaffe-0.5p2
+PKGNAME=	kaffe-0.5.2
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tim@sarc.city.ac.uk
+MAINTAINER=	xaa@stack.urc.tue.nl
 
 RUN_DEPENDS=	${PREFIX}/share/java/classes.zip:${PORTSDIR}/www/jdk
 
