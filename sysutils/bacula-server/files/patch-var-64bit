@@ -1,0 +1,25 @@
+--- src/lib/var.c.orig	2003-10-24 17:31:14.000000000 +0200
++++ src/lib/var.c	2003-10-24 17:30:56.000000000 +0200
+@@ -2605,21 +2605,13 @@
+     const char *fmt, va_list ap)
+ {
+     var_rc_t rc;
+-    va_list apbak;
+     char *cpBuf;
+-    int nBuf;
++    int nBuf = 5000;
+
+     /* argument sanity checks */
+     if (var == NULL || dst_ptr == NULL || fmt == NULL)
+ 	return VAR_RC(VAR_ERR_INVALID_ARGUMENT);
+
+-    /* determine formatting buffer length */
+-    apbak = ap;
+-    nBuf = var_mvsnprintf(NULL, 0, fmt, ap);
+-    ap = apbak;
+-    if (nBuf == -1)
+-	return VAR_RC(VAR_ERR_FORMATTING_FAILURE);
+-
+     /* perform formatting */
+     if ((cpBuf = (char *)malloc(nBuf+1)) == NULL)
+ 	return VAR_RC(VAR_ERR_OUT_OF_MEMORY);
