@@ -1,0 +1,6 @@
+This module is a complete, RFC 821 compliant, SMTP server
+implementation written entirely in Perl.  It has powerful extensively
+and customization facilities that allow for a variety of potential
+uses.
+
+WWW: http://www.macgyver.org/software/perl/

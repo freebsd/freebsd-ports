@@ -150,6 +150,7 @@
     SUBDIR += p5-Mail-SpamAssassin
     SUBDIR += p5-Mail-Tools
     SUBDIR += p5-Mail-Verify
+    SUBDIR += p5-Net-SMTP-Server
     SUBDIR += pantomime
     SUBDIR += pathalias
     SUBDIR += perdition

@@ -1,0 +1,18 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP/Server/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP/Server/Relay.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server/Client/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server/Relay/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SMTP/Server/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server/Client
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server/Relay
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SMTP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SMTP/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SMTP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
