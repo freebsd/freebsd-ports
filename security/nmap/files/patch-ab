@@ -1,11 +1,11 @@
---- nmapfe/Makefile.in.orig	Fri May  7 04:51:52 1999
-+++ nmapfe/Makefile.in	Fri Jul 23 10:46:08 1999
-@@ -71,7 +71,7 @@
+--- nmapfe/Makefile.in.orig	Thu Apr  6 01:51:39 2000
++++ nmapfe/Makefile.in	Thu Apr  6 14:53:11 2000
+@@ -70,7 +70,7 @@
  PROGRAMS =  $(bin_PROGRAMS)
  
  
--DEFS = @DEFS@ -I. -I$(srcdir) 
-+DEFS = @DEFS@ -DNMAP_PATH=\"$(bindir)/\"  -I. -I$(srcdir) 
+-DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -I. -I$(srcdir) 
++DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DNMAP_PATH=\"$(bindir)/\" -I. -I$(srcdir) 
  CPPFLAGS = @CPPFLAGS@
  STATIC =
  LDFLAGS = @LDFLAGS@ $(STATIC)
