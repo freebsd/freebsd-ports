@@ -1,15 +1,15 @@
---- Makefile.orig	Tue May 27 02:48:20 1997
-+++ Makefile	Wed May 28 20:10:43 1997
-@@ -559,7 +559,7 @@
+--- Makefile.orig	Tue Jun 10 13:57:59 1997
++++ Makefile	Wed Jun 11 04:17:07 1997
+@@ -563,7 +563,7 @@
  $(MOTIF_COMMENT)GUI_DEFS  = -DUSE_GUI_MOTIF $(NARROW_PROTO)
  $(MOTIF_COMMENT)GUI_IPATH = -I$(GUI_INC_LOC)
  $(MOTIF_COMMENT)GUI_LIBS_DIR = -L$(GUI_LIB_LOC)
 -$(MOTIF_COMMENT)GUI_LIBS  = -lXm -lXt
 +$(MOTIF_COMMENT)GUI_LIBS  = ${MOTIFLIB} -lXt
- $(MOTIF_COMMENT)GUI_TARGETS =	$(BINLOC)/$(GVIMTARGET) \
- 				$(BINLOC)/$(GEXTARGET) \
- 				$(BINLOC)/$(GVIEWTARGET) \
-@@ -796,7 +796,8 @@
+ $(MOTIF_COMMENT)GUI_TARGETS =	$(BINDIR)/$(GVIMTARGET) \
+ 				$(BINDIR)/$(GEXTARGET) \
+ 				$(BINDIR)/$(GVIEWTARGET) \
+@@ -800,7 +800,8 @@
  	GUI_INC_LOC="$(GUI_INC_LOC)" GUI_LIB_LOC="$(GUI_LIB_LOC)" \
  		CC="$(CC)" CFLAGS="$(CFLAGS)" TERM_LIB="$(TERM_LIB)" \
  	$(CONF_SHELL) ./configure $(CONF_OPT_GUI) $(CONF_OPT_X) \
@@ -19,87 +19,16 @@
  
  # When configure.in has changed, run autoconf to produce configure
  # If you don't have autoconf, use the configure that's there
-@@ -933,37 +934,37 @@
- installinks: $(GUI_TARGETS) $(BINLOC)/$(EXTARGET) $(BINLOC)/$(VIEWTARGET) $(BINLOC)/$(RVIMTARGET) $(BINLOC)/$(REXTARGET) $(BINLOC)/$(RVIEWTARGET)
+@@ -941,10 +942,10 @@
+ installinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(REXTARGET) $(BINDIR)/$(RVIEWTARGET)
  
- $(BINLOC)/$(EXTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(EXTARGET)
-+	#cd $(BINLOC); ln -sf $(VIMTARGET) $(EXTARGET)
+ $(BINDIR)/$(EXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
  
- $(BINLOC)/$(VIEWTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(VIEWTARGET)
-+	#cd $(BINLOC); ln -sf $(VIMTARGET) $(VIEWTARGET)
+ $(BINDIR)/$(VIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
  
- $(BINLOC)/$(GVIMTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(GVIMTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(GVIMTARGET)
- 
- $(BINLOC)/$(GEXTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(GEXTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(GEXTARGET)
- 
- $(BINLOC)/$(GVIEWTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(GVIEWTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(GVIEWTARGET)
- 
- $(BINLOC)/$(RVIMTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(RVIMTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(RVIMTARGET)
- 
- $(BINLOC)/$(REXTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(REXTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(REXTARGET)
- 
- $(BINLOC)/$(RVIEWTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(RVIEWTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(RVIEWTARGET)
- 
- $(BINLOC)/$(RGVIMTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(RGVIMTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(RGVIMTARGET)
- 
- $(BINLOC)/$(RGEXTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(RGEXTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(RGEXTARGET)
- 
- $(BINLOC)/$(RGVIEWTARGET):
--	cd $(BINLOC); ln -s $(VIMTARGET) $(RGVIEWTARGET)
-+	cd $(BINLOC); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
- 
- uninstall:
- 	-rm -f $(BINLOC)/$(VIMTARGET) $(BINLOC)/$(GVIMTARGET)
-@@ -990,27 +991,27 @@
- 
- shadow:	doc menu.vim syntax
- 	mkdir shadow
--	cd shadow; ln -s ../*.[ch] ../*.in ../*.sh ../*.xs ../toolcheck ../proto ../*.tab ../configure .
-+	cd shadow; ln -sf ../*.[ch] ../*.in ../*.sh ../*.xs ../toolcheck ../proto ../*.tab ../configure .
- 	cd shadow; rm -f osdef.h config.h ex_cmds.h pathdef.c link.sed
- 	cp Makefile shadow
- 	echo "the first targets to make vim are: scratch config myself" > shadow/config.mk
- # TODO: how do we make a nice shadow for ctags?
--	cd shadow; ln -s ../ctags .
-+	cd shadow; ln -sf ../ctags .
- 	mkdir shadow/xxd
--	cd shadow/xxd; ln -s ../../xxd/*.[ch] ../../xxd/Make* .
-+	cd shadow/xxd; ln -sf ../../xxd/*.[ch] ../../xxd/Make* .
- 	mkdir shadow/testdir
--	cd shadow/testdir; ln -s ../../testdir/Makefile \
-+	cd shadow/testdir; ln -sf ../../testdir/Makefile \
- 				 ../../testdir/*.in  ../../testdir/*.ok .
- 
- # Links needed for doing "make install" in a shadow directory.
- doc:
--	ln -s ../doc .
-+	ln -sf ../doc .
- 
- menu.vim:
--	ln -s ../menu.vim .
-+	ln -sf ../menu.vim .
- 
- syntax:
--	ln -s ../syntax .
-+	ln -sf ../syntax .
- 
- # Start configure from scratch
- scrub scratch:
+ $(BINDIR)/$(GVIMTARGET):
+ 	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)

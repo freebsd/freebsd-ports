@@ -37,7 +37,7 @@ share/vim/doc/motion.txt
 share/vim/doc/options.txt
 share/vim/doc/os_amiga.txt
 share/vim/doc/os_archi.txt
-share/vim/doc/os_bebox.txt
+share/vim/doc/os_beos.txt
 share/vim/doc/os_mac.txt
 share/vim/doc/os_mint.txt
 share/vim/doc/os_msdos.txt
