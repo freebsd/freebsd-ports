@@ -11,15 +11,6 @@
  
  #
  # Timeout: The number of seconds before receives and sends time out.
-@@ -255,7 +255,7 @@
- #  don't use Group "#-1" on these systems!
- #
- User nobody
--Group "#-1"
-+Group nobody
- 
- #
- # ServerAdmin: Your address, where problems with the server should be
 @@ -367,7 +367,22 @@
  # directory index.  Separate multiple entries with spaces.
  #
