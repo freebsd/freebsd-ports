@@ -46,9 +46,12 @@ if ! mkdir ${tmpdir}; then
 fi
 
 for i in ${conffile}; do
-	awk '{if (!/^LoadModule dav_svn_module/ && !/^AddModule mod_dav_svn.c/) \
+	awk '{if (!/^LoadModule dav_svn_module/ && 
+		  !/^AddModule mod_dav_svn.c/ &&\
+		  !/^LoadModule authz_svn_module/ &&\
+		  !/^AddModule mod_authz_svn.c/ ) \
 	    print $0}' < ${confdir}/$i > ${tmpdir}/$i
-	echo Removing dav_svn_module from $i in config dir: ${confdir}
+	echo Removing dav_svn_module and authz_svn_module from $i in config dir: ${confdir}
 	cat ${tmpdir}/$i > ${confdir}/$i
 done
 

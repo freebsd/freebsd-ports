@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.23.0
-PORTREVISION=	2
+PORTVERSION=	0.24.2
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/4218/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/4807/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
-MAINTAINER=	rodrigc@attbi.com
+MAINTAINER=	bmah@freebsd.org
 COMMENT=	Version control system
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
@@ -51,8 +50,8 @@ PKGDEINSTALL=	NONEXISTENT
 pre-extract:
 .if !defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X by defining"
-	@${ECHO_MSG} "WITH_MOD_DAV_SVN."
+	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
+	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN."
 	@${ECHO_MSG}
 .endif
 
@@ -69,7 +68,6 @@ pre-install:
 .endif
 
 post-install:
-	install-info ${PREFIX}/info/svn-design.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/book; \
 	${MAKE} INSTALL_DIR=${DOCSDIR} \
