@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.88 1999/04/08 07:45:28 dima Exp $
+# $Id: Makefile,v 1.89 1999/04/13 16:20:30 taoka Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -66,6 +66,7 @@
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
     SUBDIR += rtf2latex
+    SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-beta
     SUBDIR += tex
