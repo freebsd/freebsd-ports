@@ -180,6 +180,7 @@
     SUBDIR += gps
     SUBDIR += gq
     SUBDIR += gsk
+    SUBDIR += gspoof
     SUBDIR += gtic
     SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella

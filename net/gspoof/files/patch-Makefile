@@ -1,0 +1,8 @@
+--- Makefile.orig	Wed Sep 25 03:17:31 2002
++++ Makefile	Wed Jan 29 12:04:47 2003
+@@ -1,4 +1,4 @@
+-CC := gcc -O3 -ansi -Wall
++CC+= ${CFLAGS}
+ VERSION = "Gspoof -< Console/GTK+ TCP/IP Packets Forger v. 2.1.1 >-"
+ GSRC = main.c interface.c callbacks.c console.c common.c
+ CSRC = cmain.c console.c common.c
