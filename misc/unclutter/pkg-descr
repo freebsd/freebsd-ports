@@ -1,0 +1,6 @@
+       unclutter removes the cursor image from the screen so that
+       it does not obstruct the area you are looking at after  it
+       has  not  moved  for a given time.  It does not do this if
+       the cursor is in the root window or a button is down.   It
+       tries  to  ignore jitter (small movements due to noise) if
+       you have a mouse that twitches.
