@@ -1282,7 +1282,7 @@ BUILD_DEPENDS+=	${ampath:S/://}/automake:${PORTSDIR}/devel/automake${use_amver}
 AUTOMAKE_ARGS+=	-i
 WANT_AUTOCONF_VER?=${old_acver}
 .else
-BUILD_DEPENDS+=         ${LOCALBASE}/bin/automake${dev_amver}:${PORTSDIR}/devel/automake{dev_amver}
+BUILD_DEPENDS+=         ${LOCALBASE}/bin/automake${dev_amver}:${PORTSDIR}/devel/automake${dev_amver}
 WANT_AUTOCONF_VER?=${dev_acver}
 .endif # ${use_amver} == ${old_amver}
 .else # bad automake version
