@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.53.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
@@ -19,8 +19,7 @@ EXTRACT_ONLY=	avifile-${PORTVERSION}.tar.gz
 
 MAINTAINER=	holger@eit.uni-kl.de
 
-LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
-		mp3lame.1:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}-0.53
@@ -43,7 +42,6 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-win32-path=${LOCALBASE}/lib/win32 \
-		--with-mp3-lame \
 		--enable-release
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
@@ -60,18 +58,6 @@ MOC?=		${X11BASE}/bin/moc2
 DIFF?=		/usr/bin/diff
 
 .include <bsd.port.pre.mk>
-
-.if make(lib-depends)
-.if !exists(${LOCALBASE}/lib/libmp3lame.so) && exists(${LOCALBASE}/bin/lame)
-lib-depends:
-	@${ECHO_MSG} ====>
-	@${ECHO_MSG} ====> Error: You have an old version of lame installed.
-	@${ECHO_MSG} ====> You need at least port version 3.70_1!
-	@${ECHO_MSG} ====> Please deinstall lame first, then build avifile.
-	@${ECHO_MSG} ====>
-	@${FALSE}
-.endif
-.endif
 
 post-extract:
 	@${LOCALBASE}/bin/unzip ${DISTDIR}/binaries-${CODEC_VERSION}.zip \
