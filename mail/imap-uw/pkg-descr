@@ -1,4 +1,4 @@
-This is the IMAP v4 server from the University of Washington.
+This is the IMAP4rev1 server from the University of Washington.
 Included are backwares-comaptible (almost) POP2 and POP3 servers.
 
         ipop2d           POP2 daemon
@@ -10,11 +10,11 @@ The ipop2d, ipop3d, and imapd daemons should be invoked by your
 
 pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
 pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
-imap2   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
+imap4   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
 
 You may also have to edit your /etc/services (or Yellow Pages,
 NetInfo, etc. equivalent) to register these services, such as:
 
 pop             109/tcp
 pop3            110/tcp
-imap2           143/tcp		[imap2 and imap4 share the same port again]
+imap4           143/tcp		[imap2 and imap4 share the same port again]

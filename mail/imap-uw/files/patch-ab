@@ -1,12 +1,6 @@
---- src/osdep/unix/Makefile.orig	Thu Jul 16 14:12:22 1998
-+++ src/osdep/unix/Makefile	Mon Oct 12 19:21:56 1998
-@@ -88,12 +88,12 @@
- 
- # Normally no need to change any of these
- 
--ARCHIVE=c-client.a
-+ARCHIVE=libc-client.a
- BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o utf8.o siglocal.o \
+--- src/osdep/unix/Makefile.orig	Wed Sep  9 00:02:26 1998
++++ src/osdep/unix/Makefile	Thu Nov 19 14:00:02 1998
+@@ -93,7 +93,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -15,28 +9,18 @@
  MAKE=make
  MV=mv
  RM=rm -rf
-@@ -108,6 +108,15 @@
+@@ -108,6 +108,10 @@
   PASSWDTYPE=$(PASSWDTYPE) AFSDIR=$(AFSDIR) GSSDIR=$(GSSDIR)
  BUILD=$(MAKE) build $(BUILDOPTIONS) $(EXTRASPECIALS)
  
 +# Need this for the shared library rule to work correctly
 +.SUFFIXES: .o .so
-+.if ${PORTOBJFORMAT} == "elf"
-+SHLIB=libc-client.so.2
-+.else
-+SHLIB=libc-client.so.2.1
-+.endif
 +SOFILES=${BINARIES:.o=.so}
 +
  # Here if no make argument established
  
  missing: osdep.h
-@@ -179,11 +188,11 @@
- 	 BASECFLAGS="-g -Dconst= -DNFSKLUDGE"
- 
- bsf:	# FreeBSD
--	$(BUILD) OS=bsi SIGTYPE=psx \
-+	$(BUILD) $(SHLIB) OS=bsi SIGTYPE=psx \
+@@ -183,7 +187,7 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -45,16 +29,28 @@
  	 BASELDFLAGS="-lcrypt"
  
  bsi:	# BSD/i386
-@@ -565,10 +574,21 @@
+@@ -565,19 +569,31 @@
+ 
+ # Build it!
+ 
+-build:	clean once $(ARCHIVE)
++build:	clean once $(SHLIBNAME)
+ 
+-all:	$(ARCHIVE)
++all:	$(SHLIBNAME)
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	sh -c '$(RM) $(ARCHIVE) || true'
  	@cat ARCHIVE
  	@$(SH) ARCHIVE
  
-+$(SHLIB): $(SOFILES)
++$(SHLIBNAME): $(SOFILES)
 +.if $(PORTOBJFORMAT) == "elf"
-+	ld -shared -x -soname $(SHLIB) -o $(SHLIB) $(SOFILES)
++	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES)
 +.else
-+	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
++	ld -Bshareable -x -o $(SHLIBNAME) $(SOFILES)
 +.endif
++	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
 +
 +.c.so:	osdep.h
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
@@ -63,11 +59,11 @@
  
  clean:
  	sh -c '$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
-+	$(RM) *.so $(SHLIB)
++	$(RM) *.so $(SHLIBNAME)
  
  
  # Dependencies
-@@ -602,7 +622,7 @@
+@@ -611,7 +627,7 @@
  
  # OS-dependent
  
@@ -76,7 +72,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -614,7 +634,12 @@
+@@ -623,7 +639,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
@@ -85,7 +81,7 @@
  	$(CC) $(CFLAGS) `cat OSCFLAGS` -c osdep.c
 +
 +osdep.so: $(OSDEPS)
-+	$(CC) $(CFLAGS) `cat OSCFLAGS` -c osdep.c -o $@ -fpic -DPIC
++	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
  
  osdep.c: osdepbas.c osdepckp.c osdeplog.c
  	sh -c '$(RM) osdep.c || true'
