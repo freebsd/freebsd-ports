@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	I18N-Charset
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	I18N
@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
