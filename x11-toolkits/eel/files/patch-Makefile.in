@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Mon May  7 18:13:32 2001
++++ Makefile.in	Tue May  8 13:45:24 2001
+@@ -168,3 +168,3 @@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA =  	eelConf.sh					$(NULL)
