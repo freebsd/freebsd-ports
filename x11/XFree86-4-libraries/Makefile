@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTVERSION=	4.2.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+MASTER_SITE_SUBDIR=	4.2.0/:x \
+			${PORTVERSION}/patches/:x421patch \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
-EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X420src-1.tgz:x \
+		4.2.0-4.2.1.diff.gz:x421patch \
+		Wraphelp.gz:local
+EXTRACT_ONLY=	X420src-1.tgz
 
-PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g:S/$/:x/} \
-			${MASTER_SITE_LOCAL:S/$/:patch420/}
-PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes/:x \
-			anholt/patches-4.2.0/:patch420
-PATCHFILES=		patch-XlcDL.c.gz:patch420 \
-			4.2.0-libGLU-bad-extern.patch:x
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	anholt@freebsd.org
@@ -89,6 +86,10 @@ PLIST_SUB+=	OSMESA:=""
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+
+pre-patch:
+	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
+		| ${PATCH} ${PATCH_DIST_ARGS} --batch
 
 post-patch:
 	cd ${WRKSRC}/nls; \
