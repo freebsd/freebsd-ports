@@ -4,7 +4,7 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.17 1999/02/14 06:55:16 asami Exp $
+# $Id: Makefile,v 1.18 1999/02/18 07:15:01 obrien Exp $
 #
 
 DISTNAME=	${PKGNAME}.src
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/software/  \
 		${MASTER_SITE_SUNSITE}  \
 		http://www.clinet.fi/~walker/
 MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
+
+WWW_SITE=	http://www.pp.clinet.fi/~walker/minicom.html
 
 MAINTAINER=     obrien@FreeBSD.org
 
