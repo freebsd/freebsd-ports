@@ -1,15 +1,17 @@
---- config.Unix.orig	Tue Apr 15 00:00:00 1997
-+++ config.Unix	Thu Apr 17 16:13:48 1997
-@@ -32,9 +32,9 @@
+--- config.Unix.orig	Fri Jun  6 15:00:00 1997
++++ config.Unix	Mon Jun  9 14:45:19 1997
+@@ -32,10 +32,10 @@
  XCOMM --------------------------------------------------------------------
  XCOMM  Destination directories.
  XCOMM --------------------------------------------------------------------
--      GV_MANDIR    = /usr/local/man/man1/
 -      GV_BINDIR    = /usr/local/bin/
+-      GV_DOCDIR    = /usr/local/doc/gv/
 -      GV_LIBDIR    = /usr/local/lib/gv/
-+      GV_MANDIR    = $(MANDIR)
+-      GV_MANDIR    = /usr/local/man/man1/
 +      GV_BINDIR    = $(BINDIR)
++      GV_DOCDIR    = /usr/X11R6/share/doc/gv/
 +      GV_LIBDIR    = $(LIBDIR)/gv/
++      GV_MANDIR    = $(MANDIR)
  
  XCOMM --------------------------------------------------------------------
  XCOMM --- The name of the Xaw3d library.
