@@ -61,7 +61,7 @@
     SUBDIR += freelibiberty
     SUBDIR += ftnchek
     SUBDIR += gaa
-    SUBDIR += gcc11
+    SUBDIR += gcc-6811
     SUBDIR += gettext
     SUBDIR += gide
     SUBDIR += gindent
