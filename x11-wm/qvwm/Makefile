@@ -3,11 +3,11 @@
 # Date created:        30 Sep 1996
 # Whom:                Yukihiro Nakai<nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: porting.sgml,v 1.25 1996/08/01 00:12:11 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/17 17:56:43 jfitz Exp $
 #
 
 DISTNAME=       qvwm-1.0b4c
-CATEGORIES+=    x11
+CATEGORIES=     x11
 MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=     nakai@mlab.t.u-tokyo.ac.jp
