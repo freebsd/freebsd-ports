@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1999/04/14 06:00:04 mharo Exp $
+# $Id: Makefile,v 1.72 1999/04/30 08:47:44 taoka Exp $
 #
 
     SUBDIR += apel-emacs
@@ -9,6 +9,8 @@
     SUBDIR += beav
     SUBDIR += bpatch
     SUBDIR += cooledit
+    SUBDIR += custom-emacs
+    SUBDIR += custom-mule
     SUBDIR += e93
     SUBDIR += emacs
     SUBDIR += emacs20
