@@ -13,7 +13,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig
 
 MAINTAINER=	lofi@FreeBSD.org
-COMMENT=	"KSBA is an X.509 Library"
+COMMENT=	KSBA is an X.509 Library
 
 LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error
 

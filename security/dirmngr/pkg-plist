@@ -1,0 +1,5 @@
+bin/dirmngr
+share/locale/de/LC_MESSAGES/dirmngr.mo
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
