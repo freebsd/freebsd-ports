@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id:$
+# $Id: Makefile,v 1.20 1998/05/18 03:23:39 mph Exp $
 #
 
 DISTNAME=	AfterStep-1.4.5.0
@@ -33,7 +33,7 @@ MANCOMPRESSED=	yes
 
 HAS_CONFIGURE=	yes
 
-XMKMF=		$(X11BASE)/xmkmf
+XMKMF=		$(X11BASE)/bin/xmkmf
 pre-configure:
 	@${ECHO_MSG} "The interactive portion is asking you about languages"
 	@${ECHO_MSG} "and color use by asclock."
