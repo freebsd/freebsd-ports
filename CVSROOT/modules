@@ -5164,8 +5164,6 @@ mkcatalog	ports/textproc/mkcatalog
 mkcmd		ports/devel/mkcmd
 mkfile		ports/sysutils/mkfile
 mkfontalias	ports/x11-fonts/mkfontalias
-mkisofs		ports/sysutils/mkisofs
-mkisofs-devel	ports/sysutils/mkisofs-devel
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
 mknmz-wwwoffle	ports/www/mknmz-wwwoffle
