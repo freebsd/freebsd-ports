@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsvd
-PORTVERSION=	0.9.7
+PORTVERSION=	0.11.0
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
