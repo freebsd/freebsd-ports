@@ -2442,6 +2442,7 @@ gtkwave		ports/cad/gtkwave
 gtkyahoo	ports/net/gtkyahoo
 gtl		ports/misc/gtl
 gtoaster	ports/sysutils/gtoaster
+gtodo		ports/deskutils/gtodo
 gtoolkit	ports/x11-toolkits/gtoolkit
 gtranslator	ports/devel/gtranslator
 gts		ports/graphics/gts
