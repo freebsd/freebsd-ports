@@ -1,32 +1,34 @@
-# New ports collection makefile for:	qmail-tls
+# New ports collection makefile for:	qmail-smtp_auth+tls
 # Date created:				03 Dec 2000
-# Whom:					Mario S F Ferreira <lioux@linf.unb.br> et al.
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org> et. al.
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qmail
-PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
+PORTVERSION=	${QMAIL_VERSION}.${SMTP_AUTH-TLS_PATCH_DATE}
 CATEGORIES=	mail
-PKGNAMESUFFIX=	-tls
+PKGNAMESUFFIX=	-smtp_auth+tls
 
-PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/:tls
-PATCHFILES+=	tls.patch:tls
-PATCH_DIST_STRIP+=	-p1
+PATCH_SITES+=	http://students.imsa.edu/~ngroot/:smtp_auth_tls
+PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
+COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH SMTP_AUTH+TLS
+
+# not type-safe
+ONLY_FOR_ARCHS=	i386
 
 USE_OPENSSL=	YES
 
 # Patches from the main qmail port are not wanted
 MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=	yes
 
-TLS_PATCH_DATE=	20020825
+SMTP_AUTH-TLS_PATCH_DATE=	20020519
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
-#PREFIX=		/var/qmail-tls
+#PREFIX=		/var/qmail-smtp_auth+tls
 
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
@@ -42,17 +44,20 @@ CFLAGS+=	-DDEBUG
 QMAIL_PORT=	${.CURDIR}/../qmail
 QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 
-DOCFILES+=	${WRKDIR}/TLS.readme
+DOCFILES+=	${WRKDIR}/SMTP_AUTH+TLS.readme \
+		${WRKSRC}/README.auth
 
-slaveport-pre-fetch: qmail-tls-pre-fetch
+slaveport-pre-fetch: qmail-smtp_auth+tls-pre-fetch
 
-qmail-tls-pre-fetch:
+qmail-smtp_auth+tls-pre-fetch:
 	@${ECHO_MSG} "WITH_TLS_DEBUG=yes		enable additional debug information"
 
-slaveport-post-patch: qmail-tls-post-patch
+slaveport-post-patch: qmail-smtp_auth+tls-post-patch
 
-qmail-tls-post-patch:
-	@${HEAD} -74 ${DISTDIR}/tls.patch > ${WRKDIR}/TLS.readme
+qmail-smtp_auth+tls-post-patch:
+	@${HEAD} -6 ${DISTDIR}/qmail-1.03-starttls-smtp-auth.patch \
+		| ${TAIL} -5 \
+		> ${WRKDIR}/SMTP_AUTH+TLS.readme
 	@${PERL} -pi -ne "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
 
 # Primary Ugh... ;-)

@@ -7,8 +7,9 @@ qmail, and finally replacing sendmail with qmail.
 You should also add /var/qmail/man to your MANPATH (see manpath(1)
 or login.conf(5)).
 
-Do not forget to read /var/qmail/doc/TLS.readme. After all,
-this is NOT our old stock qmail.
+Do not forget to read both /var/qmail/doc/SMTP_AUTH+TLS.readme AND
+/var/qmail/doc/README.auth.  After all, this is NOT our old stock
+qmail.
 
 ==> You can enable qmail as your default mailer:
 
