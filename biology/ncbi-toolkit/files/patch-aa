@@ -1,6 +1,6 @@
---- make/makeall.unx.orig	Sat Jul  8 04:16:35 2000
-+++ make/makeall.unx	Tue Oct 24 22:35:34 2000
-@@ -782,3 +782,174 @@
+--- make/makeall.unx.orig	Thu Apr  5 09:24:30 2001
++++ make/makeall.unx	Tue Sep 18 14:49:24 2001
+@@ -851,3 +851,51 @@
  	#load $(LDFLAGS) getmuid.c medutil.c \
  	$(SRC11) $(SRC8) $(SRC7) $(SRC6) $(SRC5) $(SRC3) \
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
@@ -28,132 +28,6 @@
 +		libncbiid1.a	libncbitool.a	libnetcli_.a	libvibrant.a
 +
 +
-+INC= 	actutils.h		matrix.h		rpsutil.h \
-+		asnblock.h		mbalign.h		saldist.h \
-+		asncode.h		mblast.h		saled.h \
-+		asnent2.h		mbutils.h		saledit.h \
-+		asnfdef.h		mconsist.h		salfiles.h \
-+		asnfeat.h		mdrcherr.h		salign.h \
-+		asngen.h		medarch.h		salmedia.h \
-+		asnid0.h		medutil.h		salogif.h \
-+		asnloc.h		medview.h		salpacc.h \
-+		asnmdrs.h		mkbioseq.h		salpanel.h \
-+		asnmedli.h		mmdb1.h			salparam.h \
-+		asnmime.h		mmdb2.h			salpedit.h \
-+		asnmla.h		mmdb3.h			salprop.h \
-+		asnneten.h		mmdbapi.h		salpstat.h \
-+		asnproj.h		mmdbapi1.h		salptool.h \
-+		asnprt.h		mmdbapi2.h		salsa.h \
-+		asnpub.h		mmdbapi3.h		salsap.h \
-+		asnpubme.h		mmdbapi4.h		salstruc.h \
-+		asnres.h		mmdbdata.h		salutil.h \
-+		asnseq.h		mmdblocl.h		samutil.h \
-+		asnsset.h		ncbi.h			satutil.h \
-+		asnsubmt.h		ncbibs.h		sdisplay.h \
-+		asntax1.h		ncbibuf.h		sec.h \
-+		asntaxon.h		ncbicli.h		seed.h \
-+		bandalgn.h		ncbidraw.h		seg.h \
-+		binary.h		ncbienv.h		seqanal.h \
-+		biosrc.h		ncbierr.h		seqcons.h \
-+		blast.h			ncbifile.h		seqfltr.h \
-+		blastdef.h		ncbigif.h		seqgraph.h \
-+		blastkar.h		ncbilang.h		seqgrphx.h \
-+		blastpat.h		ncbilcl.h		seqmgr.h \
-+		blastpri.h		ncbimain.h		seqmtrx.h \
-+		blocks.h		ncbimath.h		seqpcc.h \
-+		blstspc.h		ncbimem.h		seqport.h \
-+		bspview.h		ncbimisc.h		seqscrl.h \
-+		casn.h			ncbimsg.h		seqsub.h \
-+		cdconfig.h		ncbinet.h		sequtil.h \
-+		cdd.h			ncbiopt.h		shim3d.h \
-+		cdentrez.h		ncbiport.h		simple.h \
-+		cdnewlib.h		ncbiprop.h		simutil.h \
-+		cdrgn.h			ncbisam.h		spell.h \
-+		cdrom.h			ncbisami.h		splutil.h \
-+		cdromlib.h		ncbisgml.h		sqnutils.h \
-+		cn3dentr.h		ncbisock.h		strimprt.h \
-+		cn3dmain.h		ncbisort.h		stsutil.h \
-+		cn3dmesh.h		ncbisrti.h		subutil.h \
-+		cn3dmodl.h		ncbistd.h		suggapi.h \
-+		cn3dmsel.h		ncbistr.h		suggen.h \
-+		cn3dmsg.h		ncbithr.h		suggest.h \
-+		cn3dopen.h		ncbitime.h		suggslp.h \
-+		cn3dsave.h		ncbiurl.h		sugmap.h \
-+		cn3dshim.h		ncbiwin.h		sugprefx.h \
-+		cn3dstyl.h		ncbiwww.h		tax0.h \
-+		cn3dxprt.h		netblap3.h		tax1map.h \
-+		codon.h			netcnfg.h		taxblast.h \
-+		con_file.h		netentr.h		taxext.h \
-+		con_sock.h		netlib.h		taxinc.h \
-+		con_stateless.h	netpriv.h		taxon1.h \
-+		con_url.h		netscape.h		taxuerr.h \
-+		ni_asn.h		taxutil.h \
-+		connectn.h		ni_defin.h		terr.h \
-+		connectr.h		ni_encr.h		tfuns.h \
-+		connutil.h		ni_error.h		toasn3.h \
-+		corematx.h		ni_lib.h		tofasta.h \
-+		db_list.h		ni_lib_.h		tofile.h \
-+		ddvclick.h		ni_list.h		tomedlin.h \
-+		ddvcolor.h		ni_msg.h		toporg.h \
-+		ddvcreate.h		ni_net.h		tree.h \
-+		ddvgraph.h		ni_types.h		treemgr.h \
-+		ddvmain.h		objacces.h		treeview.h \
-+		ddvopen.h		objalign.h		treevint.h \
-+		ddvpanel.h		objalignloc.h	tsprintf.h \
-+		diagnost.h		objall.h		txalign.h \
-+		dlogutil.h		objbibli.h		txclient.h \
-+		document.h		objblock.h		txcommon.h \
-+		dotmatrx.h		objblst3.h		udvdef.h \
-+		drawingp.h		objcdd.h		udviewer.h \
-+		drawseq.h		objcode.h		udvseq.h \
-+		dust.h			objent2.h		undefwin.h \
-+		dvncode.h		objentr.h		urkbias.h \
-+		echo_asn.h		objfdef.h		urkcnsrt.h \
-+		edutil.h		objfeat.h		urkdust.h \
-+		ent2api.h		objgen.h		urkepi.h \
-+		entrez.h		objloc.h		urkfltr.h \
-+		errdefn.h		objmdrs.h		urkgraph.h \
-+		explore.h		objmedli.h		urkpcc.h \
-+		fea2seg.h		objmgr.h		urkptpf.h \
-+		ffprint.h		objmime.h		urksigu.h \
-+		findrepl.h		objmla.h		urktree.h \
-+		fstyle.h		objmmdb1.h		urkutil.h \
-+		fstylep.h		objmmdb2.h		urlquery.h \
-+		ftusrstr.h		objmmdb3.h		utilpars.h \
-+		gapxdrop.h		objneten.h		utilpub.h \
-+		gather.h		objproj.h		valid.h \
-+		gbfeat.h		objprt.h		validatr.h \
-+		gbftdef.h		objpub.h		validerr.h \
-+		gbparlex.h		objpubd.h		vast2cn3d.h \
-+		gifgen.h		objpubme.h		vast2mage.h \
-+		glbpic.h		objres.h		vast2pdb.h \
-+		gphdraw.h		objseq.h		vastlocl.h \
-+		gtrdraw.h		objsset.h		vastsrv.h \
-+		gxydraw.h		objsub.h		vecscnapi.h \
-+		id1.h			objtax1.h		vecscrn.h \
-+		id1arch.h		objtaxc0.h		vibdefns.h \
-+		id1gen.h		odlbox.h		vibfltr.h \
-+		id1map.h		panels.h		vibforms.h \
-+		image.h			parsegb.h		vibgraph.h \
-+		imagelst.h		pdiagnos.h		vibincld.h \
-+		import.h		pgppop.h		vibmouse.h \
-+		jzcoll.h		pictur3d.h		vibpcc.h \
-+		jzmisc.h		picture.h		vibprocs.h \
-+		layout.h		picturep.h		vibrant.h \
-+		lbapi.h			pmfapi.h		vibtree.h \
-+		legend.h		pobutil.h		vibtypes.h \
-+		list.h			posit.h			viewer.h \
-+		lnfac.h			ppict3d.h		viewer3d.h \
-+		lookup.h		profiles.h		viewerp.h \
-+		lsqfetch.h		prtgene.h		viewmgr.h \
-+		mapgene.h		prtutil.h		vsm.h \
-+		mapmime.h		prunebsc.h		vsmfile.h \
-+		mapmla.h		pubdesc.h		vsmpriv.h \
-+		mappingp.h		puberr.h		vsmutil.h \
-+		mapproj.h		qblastapi.h		wwwblast.h \
-+		mappubme.h		readdb.h \
-+		maputil.h		regex.h
-+
 +MKDIR=	/bin/mkdir -p
 +INSTALL_PROGRAM=	/usr/bin/install -c
 +
@@ -166,12 +40,15 @@
 +	${INSTALL_PROGRAM} $? ${PREFIX}/lib/ncbi
 +
 +iinstall::
-+	${MKDIR} ${PREFIX}/include/ncbi
-+	pwd
++	${MKDIR} ${PREFIX}/include/ncbi/connect
 +	cd ../include; \
-+	for file in $(INC); do \
++	for file in *.h; do \
 +		${INSTALL_PROGRAM} $$file ${PREFIX}/include/ncbi; \
 +	done
++	cd ../include/connect; \
++	for file in *.h; do \
++		${INSTALL_PROGRAM} $$file ${PREFIX}/include/ncbi/connect; \
++	done
 +
-+install: linstall binstall
++install: iinstall linstall binstall
 +
