@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aidan@velvet.net
 
+BROKEN=		"Patch does not apply"
+
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
