@@ -1,0 +1,7 @@
+wmx10 is a companion to Tymm Twilliam's Bottlerocket software, which controls
+X10's Firecracker Home Automation kit. The program is a WindowMaker/AfterStep
+applet. It allows for turning off, turning on, dimming, and brightening of X10
+modules via bottlerocket's functions. wmx10 controls one "house" at a time, up
+to sixteen separate devices on each "house". 
+
+WWW: http://www.cs.uml.edu/~jhawkins/wmx10/

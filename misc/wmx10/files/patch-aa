@@ -1,0 +1,19 @@
+--- Makefile.orig	Sun Oct 17 14:25:17 1999
++++ Makefile	Mon Apr  9 00:27:38 2001
+@@ -1,5 +1,5 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
++INCDIR	=	-I${X11BASE}/include
++LIBDIR	=	-L${X11BASE}/lib
+ LIBS	=	-lXpm -lXext -lX11
+ OBJS	=	br_cmd.o wmx10.o ../wmgeneral/wmgeneral.o
+ CFLAGS  = 	-D$(shell echo `uname -s`) #-DDEBUG
+@@ -19,6 +19,6 @@
+ 	done
+ 	rm -f wmx10 *~
+ 
+-install:
++install:	wmx10
+ 	strip wmx10
+-	mv wmx10 /usr/local/bin
++	mv wmx10 ${X11BASE}/bin
