@@ -24,6 +24,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany \
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
+MOZ_BUILD=	mozilla
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -31,6 +32,7 @@ HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="firefox"
 MOZILLA=	firefox
+MOZ_BUILD=	firefox
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
@@ -50,7 +52,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-extensions="all" \
-		--with-mozilla=${MOZILLA}
+		--with-mozilla=${MOZ_BUILD}
 
 PLIST_SUB=	VERSION="1.6" EPHY_VERSION="1.6"
 

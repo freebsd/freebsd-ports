@@ -20,6 +20,7 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
+MOZ_BUILD=	mozilla
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -27,6 +28,7 @@ HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="firefox"
 MOZILLA=	firefox
+MOZ_BUILD=	firefox
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
@@ -46,7 +48,7 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
+CONFIGURE_ARGS=	--with-mozilla=${MOZ_BUILD}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
