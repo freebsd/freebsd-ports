@@ -92,6 +92,7 @@
     SUBDIR += popper
     SUBDIR += popper3
     SUBDIR += postfix
+    SUBDIR += postfix-current
     SUBDIR += postilion
     SUBDIR += premail
     SUBDIR += procmail
