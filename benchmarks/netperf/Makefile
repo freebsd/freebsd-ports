@@ -7,6 +7,7 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/%SUBDIR%/
 MASTER_SITE_SUBDIR=. archive
