@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------------
+If you want to input Chinese, use the following command:
+Eterm --font <English font> --mfont <Chinese font> --mencoding <encoding> \
+	--input-method xcin
+
+Example:
+Eterm --font "-*-medium-r-normal-*-*-160-*-*-c-*-iso8859-1"  \
+	--mfont kc15f --mencoding big5 --input-method xcin \
+	--preedit-type OverTheSpot -8 -g 80x24 -B next -O \
+	--cmod 200 --scrollbar-width 10 --scrollbar-popup
+-----------------------------------------------------------------------------

@@ -1,0 +1,11 @@
+--- libmej/Makefile.in.orig	Mon Feb  7 21:52:12 2000
++++ libmej/Makefile.in	Mon Feb  7 21:52:44 2000
+@@ -120,7 +120,7 @@
+ 
+ INCLUDES = -I. -I.. -I$(includedir) -I$(prefix)/include
+ 
+-libmej_la_LDFLAGS = -release $(VERSION)
++libmej_la_LDFLAGS = -version-info 9:9:9
+ 
+ EXTRA_DIST = debug.h global.h mem.h strings.h strptime.h strptime.c
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,0 +1,37 @@
+--- src/options.c.orig	Tue Jan 18 22:17:19 2000
++++ src/options.c	Sun Dec 24 10:56:22 2000
+@@ -362,7 +362,7 @@
+       OPT_LONG("mfont2", "multichar font 2", &rs_mfont[2]),
+       OPT_LONG("mfont3", "multichar font 3", &rs_mfont[3]),
+       OPT_LONG("mfont4", "multichar font 4", &rs_mfont[4]),
+-      OPT_LONG("mencoding", "multichar encoding mode (eucj or sjis or euckr)",
++      OPT_LONG("mencoding", "multichar encoding mode (eucj or sjis or euckr or big5 or gb)",
+ 	       &rs_multichar_encoding),
+ #endif /* MULTI_CHARSET */
+ #ifdef USE_XIM
+@@ -2794,12 +2794,13 @@
+     if (rs_multichar_encoding != NULL) {
+       if (BEG_STRCASECMP(rs_multichar_encoding, "eucj")
+ 	  && BEG_STRCASECMP(rs_multichar_encoding, "sjis")
+-	  && BEG_STRCASECMP(rs_multichar_encoding, "euckr")) {
++	  && BEG_STRCASECMP(rs_multichar_encoding, "euckr")
++	  && BEG_STRCASECMP(rs_multichar_encoding, "big5")
++	  && BEG_STRCASECMP(rs_multichar_encoding, "gb")) {
+ 	print_error("Parse error in file %s, line %lu:  Invalid multichar encoding mode \"%s\"",
+ 		    file_peek_path(), file_peek_line(), rs_multichar_encoding);
+ 	return;
+       }
+-      set_multichar_encoding(rs_multichar_encoding);
+     } else {
+       print_error("Parse error in file %s, line %lu:  Invalid parameter list \"\" for attribute encoding",
+ 		  file_peek_path(), file_peek_line());
+@@ -3248,6 +3249,9 @@
+       }
+     }
+ #ifdef MULTI_CHARSET
++    if (rs_multichar_encoding) {
++      set_multichar_encoding(rs_multichar_encoding);
++    }
+     if (rs_mfont[i]) {
+       if (def_font_idx == 0) {
+         eterm_font_add(&etmfonts, rs_mfont[i], i);
