@@ -8,7 +8,8 @@
 PORTNAME=	newpg
 PORTVERSION=	0.9.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	alpha/aegypten
 
 MAINTAINER=	michaelnottebrock@gmx.net
 
