@@ -18,9 +18,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
+INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
 
 MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
