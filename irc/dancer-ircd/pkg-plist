@@ -1,4 +1,4 @@
-bin/dancer-ircd
+sbin/dancer-ircd
 @unexec if cmp -s %D/etc/dancer-ircd/ircd.conf %D/etc/dancer-ircd/ircd.conf.sample; then rm -f %D/etc/dancer-ircd/ircd.conf; fi
 etc/dancer-ircd/ircd.conf.sample
 @exec if [ ! -f %B/ircd.conf ]; then cp %B/%f %B/ircd.conf; fi
