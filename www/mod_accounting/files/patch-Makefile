@@ -1,0 +1,32 @@
+--- Makefile.orig	Sun Dec 30 14:11:43 2001
++++ Makefile	Tue Nov 19 21:07:22 2002
+@@ -5,13 +5,24 @@
+ ##
+ 
+ #   the used tools
+-APXS=apxs
++#APXS=apxs
+ APACHECTL=apachectl
+ 
+-#   here's what you may need to change
+-DEF=-DNEED_POSTGRES -DNEED_MYSQL
+-INC=-I/usr/local/pgsql/include/ -I/usr/local/mysql/include/
+-LIB=-L/usr/local/pgsql/lib -lpq -L/usr/local/mysql/lib/mysql/ -lmysqlclient
++.if !defined(WITHOUT_PGSQL)
++DEF_PGSQL=      -DNEED_POSTGRES
++INC_PGSQL=      -I${LOCALBASE}/include
++LIB_PGSQL=      -L${LOCALBASE}/lib -lpq
++.endif
++
++.if !defined(WITHOUT_MYSQL)
++DEF_MYSQL=      -DNEED_MYSQL
++INC_MYSQL=      -I${LOCALBASE}/include
++LIB_MYSQL=      -L${LOCALBASE}/lib/mysql -lmysqlclient
++.endif
++
++DEF=${DEF_MYSQL} ${DEF_PGSQL}
++INC=${INC_MYSQL} ${INC_PGSQL}
++LIB=${LIB_MYSQL} ${LIB_PGSQL}
+ 
+ #   the default target
+ all: mod_accounting.so

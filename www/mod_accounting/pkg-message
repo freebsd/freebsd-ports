@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+mod_accounting is now installed on your system
+You can find a SQL example schema to use mod_accounting here :
+${PREFIX}/share/mod_accounting/schema.sql
+
+To install it with MySQL use the following command: 
+	mysql <database> < schema.sql
+For PostgreSQL: 
+	psql <database> < schema.sql
+----------------------------------------------------------------
