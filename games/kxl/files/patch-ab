@@ -1,0 +1,11 @@
+--- src/KXLmisc.c.orig	Wed Feb 20 21:52:35 2002
++++ src/KXLmisc.c	Wed Feb 20 21:53:17 2002
+@@ -1,6 +1,8 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#if __FreeBSD__ >= 5
+ #include <malloc.h>
++#endif
+ #include <signal.h>
+ #include <sys/time.h>
+ #include "KXL.h"

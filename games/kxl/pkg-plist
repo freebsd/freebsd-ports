@@ -1,6 +1,6 @@
 include/KXL.h
-lib/libKXL-0.5.6.so
-lib/libKXL.a
+lib/libKXL-1.1.5.so
 lib/libKXL.so
+lib/libKXL.a
 lib/libKXL.la
 share/aclocal/KXL.m4

@@ -1,64 +1,59 @@
---- src/KXLsound.c.orig	Thu May 17 18:08:13 2001
-+++ src/KXLsound.c	Sat Jun 16 19:31:43 2001
-@@ -3,7 +3,6 @@
+--- src/KXLsound.c.orig	Wed Feb 20 21:42:17 2002
++++ src/KXLsound.c	Wed Feb 20 21:44:49 2002
+@@ -3,7 +3,9 @@
  #include <fcntl.h>
  #include <sys/time.h>
  #include <sys/ioctl.h>
--#include <linux/soundcard.h>
++#ifndef __FreeBSD__
+ #include <linux/soundcard.h>
++#endif
  #include "KXL.h"
  
- #define MIN(a, b)  ((a<b) ? a : b)
-@@ -45,12 +44,14 @@
- ******************************************/
+ #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+@@ -45,6 +47,7 @@
+ //==============================================================
  void KXL_SoundServer(void)
  {
 +#ifndef __FreeBSD__
    Uint16 i;
    KXL_SoundControl Command;
    fd_set sound_fdset;
- 
-   if (KXL_SoundOk == False)
-     return;
-+
- 
-   close(KXL_SoundData.Pipe[1]);
-   for (i = 0; i < MAX_SOUNDS_PLAYING; i ++)
-@@ -166,6 +167,7 @@
+@@ -163,6 +166,7 @@
        }
      }
    }
 +#endif
  }
  
- /******************************************
-@@ -245,6 +247,7 @@
- ******************************************/
+ //==============================================================
+@@ -238,6 +242,7 @@
+ //==============================================================
  void KXL_InitSound(Uint8 *path, Uint8 **fname)
  {
 +#ifndef __FreeBSD__
    KXL_SoundOk = False;
+ 
    KXL_LoadSoundData(path, fname);
-   if (pipe(KXL_SoundData.Pipe) < 0) {
-@@ -264,6 +267,7 @@
+@@ -265,6 +270,7 @@
+     close(KXL_SoundData.Pipe[0]);
+     KXL_SoundOk = True;
    }
-   if (KXL_SoundOk == False)
-     fprintf(stderr, "KXL_InitSoundServer : no sounds\n");
 +#endif
  }
  
- /******************************************
-@@ -271,6 +275,7 @@
- ******************************************/
+ //==============================================================
+@@ -272,6 +278,7 @@
+ //==============================================================
  void KXL_EndSound(void)
  {
 +#ifndef __FreeBSD__
-   if (KXL_SoundOk == False)
-     return;
-   KXL_PlaySound(0, KXL_SOUND_STOP_ALL);
-@@ -278,5 +283,6 @@
-     KXL_Free(KXL_wavelist[-- KXL_SoundData.ListCnt]);
+   while (KXL_SoundData.ListCnt)
+     KXL_Free(KXL_wavelist[-- KXL_SoundData.ListCnt].Data);
    KXL_Free(KXL_wavelist);
-   kill(KXL_SoundData.ID, SIGTERM);
+@@ -281,5 +288,6 @@
+     KXL_PlaySound(0, KXL_SOUND_STOP_ALL);
+     kill(KXL_SoundData.ID, SIGTERM);
+   }
 +#endif
  }
  
