@@ -2112,7 +2112,6 @@ fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fprobe		ports/net-mgmt/fprobe
-fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell	ports/french/aspell
 fr-aster	ports/french/aster
 fr-daCode	ports/french/daCode
