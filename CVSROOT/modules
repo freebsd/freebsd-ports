@@ -3936,6 +3936,7 @@ match		ports/astro/match
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
+mavbiff		ports/mail/mavbiff
 maverik		ports/graphics/maverik
 mawk		ports/lang/mawk
 mayavi		ports/science/mayavi
