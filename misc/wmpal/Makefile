@@ -8,7 +8,8 @@
 PORTNAME=	wmpal
 PORTVERSION=	0.5
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://www.asleep.net/wmpal/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A one of the most useless dockapps in the world
