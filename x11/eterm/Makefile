@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.5 1997/11/29 23:43:27 asami Exp $
+# $Id: Makefile,v 1.6 1998/02/23 15:38:44 steve Exp $
 #
 
 DISTNAME=	Eterm-DR-0.7+PL5
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib\\.1\\.:${PORTSDIR}/graphics/imlib
 WRKSRC=		$(WRKDIR)/Eterm-DR-0.7
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		Eterm.1
 ALL_TARGET=	FreeBSD
 

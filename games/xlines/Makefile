@@ -3,7 +3,7 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/11 00:39:24 steve Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:25:03 asami Exp $
 #
 
 DISTNAME=	xlines
@@ -16,7 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
 pre-build:

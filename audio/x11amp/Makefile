@@ -3,7 +3,7 @@
 # Date created:         13 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 22:53:31 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/13 22:55:43 dburr Exp $
 #
 
 DISTNAME=	x11amp-0.7-FreeBSD
@@ -17,7 +17,7 @@ MAINTAINER=	dburr@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/x11amp
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 NO_BUILD=	YES
 
 do-install:

@@ -3,7 +3,7 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1996/12/08 01:15:22 max Exp $
+# $Id: Makefile,v 1.13 1998/06/27 05:19:29 asami Exp $
 #
 
 PKGNAME=        ru-netscape-3.01
@@ -18,7 +18,7 @@ RESTRICTED=     "Includes a copyrighted file from Netscape"
 NO_EXTRACT=     YES
 NO_BUILD=       YES
 NO_WRKDIR=      YES
-USE_X11=        YES
+USE_X_PREFIX=   YES
 
 APPDEF = ${X11BASE}/lib/X11/app-defaults
 

@@ -3,7 +3,7 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.4 1997/11/27 00:32:32 fenner Exp $
+# $Id: Makefile,v 1.5 1998/07/20 10:13:46 asami Exp $
 
 DISTNAME=	geomview-1.6.1
 CATEGORIES=	graphics tk42
@@ -19,7 +19,7 @@ LIB_DEPENDS=	xforms\\.0:${PORTSDIR}/x11/xforms \
 
 WRKSRC=		${WRKDIR}/Geomview
 REQUIRES_MOTIF=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 MAN1=		addbbox.1 animate.1 anytooff.1 anytoucd.1 bdy.1 clip.1 \
 		cplxview.1 crayola.1 example.1 flythrough.1 geomview.1 \

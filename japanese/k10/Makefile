@@ -3,7 +3,7 @@
 # Date created:		25 Feb 1998
 # Whom: Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/12 15:42:39 itojun Exp $
+# $Id: Makefile,v 1.2 1998/05/15 04:59:15 chuckr Exp $
 #
 
 DISTNAME=	knj10-1.00
@@ -13,7 +13,7 @@ MASTER_SITES=	http://gondow-www.cs.titech.ac.jp/~snagao/fonts/
 
 MAINTAINER=	usagi@clave.gr.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=         ${WRKDIR}/knj10-1.00
 
 post-install:

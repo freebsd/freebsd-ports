@@ -3,7 +3,7 @@
 # Date created:        13 June 1997
 # Whom:                paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.2 1998/02/11 10:36:31 tg Exp $
+# $Id: Makefile,v 1.3 1998/07/25 12:54:07 asami Exp $
 #
 
 DISTNAME=	scilab-2.3.1
@@ -21,7 +21,7 @@ BROKEN=		package
 NO_CDROM=	"Don't sell for profit."
 WRKSRC=		${WRKDIR}/scilab-2.3
 HAS_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 SCIDIR= ${X11BASE}/lib/X11/scilab
 

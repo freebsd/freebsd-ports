@@ -3,7 +3,7 @@
 # Date created:				15 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/04/28 03:30:19 mph Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:24:53 asami Exp $
 #
 
 DISTNAME=	xcogitate-1.02
@@ -14,7 +14,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/XCOGITATE_SOURCE
 
 do-build:

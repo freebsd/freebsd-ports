@@ -3,7 +3,7 @@
 # Date created:		11 July 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 22:49:03 steve Exp $
 #
 
 DISTNAME=	xlogmaster-1.2.2
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 
 MAN1=		xlogmaster.1
 WRKSRC=		${WRKDIR}/xlogmaster
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_PACKAGE=	ignores cflags
 
 post-install:

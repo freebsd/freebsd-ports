@@ -3,7 +3,7 @@
 # Date created:				14 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/15 17:11:15 jseger Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:31 asami Exp $
 #
 
 DISTNAME=		xtruco
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xtruco ${PREFIX}/bin

@@ -4,7 +4,7 @@
 # Date created:			  24th Feburary 1997
 # Whom:				  obrien@NUXI.com
 #
-# $Id: Makefile,v 1.10 1996/12/08 02:30:29 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/03/03 16:27:10 obrien Exp $
 #
 
 PKGNAME=	rclock-2.20
@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/rxvt
 MAINTAINER=	obrien@FreeBSD.org
 
 CFLAGS+=	'-DMAIL_SPOOL=\"/var/mail/\"'
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
 ALL_TARGET=	clock
 MAN1=		rclock.1

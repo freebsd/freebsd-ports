@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1998/03/07 00:21:29 itojun Exp $
+# $Id: Makefile,v 1.4 1998/07/06 17:41:14 itojun Exp $
 #
 
 DISTNAME=	siag-2.80
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	itojun@itojun.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/siag
 
 do-build:

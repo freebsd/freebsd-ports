@@ -3,7 +3,7 @@
 # Date created:		June 20, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.3 1997/11/09 15:43:24 jfieber Exp $
+# $Id: Makefile,v 1.4 1998/03/12 23:09:54 jfieber Exp $
 #
 
 DISTNAME=	xmbdfed-2.7
@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITES}
 
 BROKEN=		old version not available, new version needs debugging
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 REQUIRES_MOTIF=	yes
 
 MAN1=		xmbdfed.1

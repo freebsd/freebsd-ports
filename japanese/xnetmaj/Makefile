@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/28 03:41:46 itojun Exp $
 #
 
 DISTNAME=	netmaj
@@ -14,7 +14,7 @@ DISTFILES=	netmaj-2.0.7.tar.gz netmaj-xui-2.0.7.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 ALL_TARGET=	libs all
 INSTALL_TARGET=	install install-pf
 

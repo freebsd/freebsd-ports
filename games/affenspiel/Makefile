@@ -3,7 +3,7 @@
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/04 19:26:34 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:31 asami Exp $
 #
 
 DISTNAME=		affenspiel-1.0
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		andy@icc.surw.chel.su
 
 WRKSRC=			${WRKDIR}/affenspiel
-USE_X11=		yes
+USE_X_PREFIX=		yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/affenspiel ${PREFIX}/bin

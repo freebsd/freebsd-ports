@@ -3,7 +3,7 @@
 # Date created:         Thu Mar 26 04:50:00 PST 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/16 02:08:03 dburr Exp $
 #
 
 DISTNAME=	sharefonts-0.10
@@ -18,7 +18,7 @@ NO_PACKAGE=	${RESTRICTED}
 
 NO_BUILD=	yes
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/sharefont

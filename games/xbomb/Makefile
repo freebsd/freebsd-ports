@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/20 09:31:36 tg Exp $
+# $Id: Makefile,v 1.2 1998/02/20 09:49:29 tg Exp $
 #
 
 DISTNAME=       xbomb-2.1
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN6=		xbomb.6
 
 post-install:

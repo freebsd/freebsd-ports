@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/01 05:00:13 nectar Exp $
 #
 
 DISTNAME=	pp-0.01
@@ -17,7 +17,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/ppsrc
 
 pre-build:

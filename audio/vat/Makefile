@@ -3,7 +3,7 @@
 # Date created:		2 November 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.4 1997/09/11 03:54:43 fenner Exp $
+# $Id: Makefile,v 1.5 1998/06/26 19:05:26 fenner Exp $
 #
 
 DISTNAME=	vat-4.0b2
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
 LIB_DEPENDS=	tk80:${PORTSDIR}/x11/tk80 \
 		gsm:${GSM_DIR}
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-gsm=${GSM_WORK}
 INSTALL_TARGET=	install install-man

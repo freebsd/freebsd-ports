@@ -3,7 +3,7 @@
 # Date created:         27. April 1996
 # Whom:                 Ronald Kuehn <kuehn@rz.tu-clausthal.de>
 #
-# $Id$
+# $Id: Makefile,v 1.8 1996/12/19 05:10:13 asami Exp $
 #
 
 DISTNAME=       imaze
@@ -22,7 +22,7 @@ LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
 .endif
 
 EXTRACT_ONLY=	imaze1.3.tar.Z
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}/imaze/Makefile

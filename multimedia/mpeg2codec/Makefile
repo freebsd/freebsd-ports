@@ -3,7 +3,7 @@
 # Date created:		November 25, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:28:25 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/09 15:37:19 erich Exp $
 #
 
 DISTNAME=	mpeg2codec-1.2
@@ -13,7 +13,7 @@ DISTFILES=	mpeg2vidcodec_v12.tar.gz
 
 MAINTAINER=	charnier@lirmm.fr
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mpeg2
 
 do-install:

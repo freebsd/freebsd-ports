@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 17:26:42 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/05 14:21:40 kuriyama Exp $
 #
 
 DISTNAME=	ko-kaistfonts-ksc-1.0
@@ -14,7 +14,7 @@ DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}"

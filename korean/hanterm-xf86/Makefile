@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1998/05/03 20:47:08 steve Exp $
+# $Id: Makefile,v 1.6 1998/07/27 00:38:56 steve Exp $
 #
 
 DISTNAME=	hanterm-xf331-p13
@@ -15,7 +15,7 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/misc/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-x --build=i386--freebsd --prefix=${PREFIX}
 NO_INSTALL_MANPAGES=	yes

@@ -3,7 +3,7 @@
 # Date created:		02 November 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/08/24 20:27:22 max Exp $
+# $Id: Makefile,v 1.6 1998/01/26 09:43:36 vanilla Exp $
 #
 
 DISTNAME=	iNES07-FreeBSD-80x86-bin
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 WRKSRC=		${WRKDIR}/NES
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 do-install:

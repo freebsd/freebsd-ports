@@ -3,7 +3,7 @@
 # Date created:				20 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/28 15:22:36 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:40 asami Exp $
 #
 
 DISTNAME=	icbm3d.0.3
@@ -14,7 +14,7 @@ MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/icbm3d/
 MAINTAINER=	andy@icc.surw.chel.su
 
 MAKEFILE=	makefile
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/icbm3d
 
 do-install:

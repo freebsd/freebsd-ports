@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.41 1998/05/05 21:47:21 jmz Exp $
+# $Id: Makefile,v 1.42 1998/07/03 05:01:55 cwt Exp $
 #
 
 DISTNAME=	xc
@@ -27,11 +27,13 @@ MAINTAINER=	jmz@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes	# configure script asks questions
 NO_PACKAGE=	package available from XFree86
-USE_X11=	yes
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
+# can't use USE_X_PREFIX here -- it will cause a circular dependency
+PREFIX=		${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
 
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
 pre-fetch:

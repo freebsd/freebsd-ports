@@ -5,7 +5,7 @@
 #
 # WARNING WARNING: Requires Motif to compile & link
 #
-# $Id: Makefile,v 1.3 1996/04/11 08:59:26 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:40:39 asami Exp $
 #
 
 DISTNAME=	ashe-1.1.2
@@ -17,6 +17,6 @@ DISTFILES=	ashe_cci.tar.Z cci.tar.Z libhtmlw.tar.Z
 
 REQUIRES_MOTIF=	yes
 NO_WRKSUBDIR=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1997/01/02 19:32:25 max Exp $
+# $Id: Makefile,v 1.3 1997/07/13 18:49:31 max Exp $
 #
 
 DISTNAME=	non-cjk
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	mita@jp.FreeBSD.org
 
 EXTRACT_ARGS=	-xf
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-extract:
 	@gunzip ${WRKSRC}/*.gz

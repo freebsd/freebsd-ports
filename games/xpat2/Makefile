@@ -3,7 +3,7 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1997/09/07 02:54:16 max Exp $
+# $Id: Makefile,v 1.4 1998/04/17 23:26:24 mph Exp $
 #
 
 DISTNAME=	xpat2-1.04
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	mph@freebsd.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN6=		xpat2.6
 
 post-install:

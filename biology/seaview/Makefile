@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.3 1998/03/30 23:44:07 asami Exp $
+# $Id: Makefile,v 1.4 1998/07/27 23:24:01 asami Exp $
 #
 
 DISTNAME=       seaview
@@ -16,7 +16,7 @@ MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
 LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 NO_WRKSUBDIR=	YES
 EXTRACT_BEFORE_ARGS=	-xf
 

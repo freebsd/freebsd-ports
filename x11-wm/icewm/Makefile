@@ -3,7 +3,7 @@
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/07/03 08:19:24 asami Exp $
+# $Id: Makefile,v 1.12 1998/07/27 00:40:53 steve Exp $
 #
 
 DISTNAME=	icewm-0.9.10
@@ -15,7 +15,7 @@ MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-patch:
 .if defined(TITLE_BOTTOM)

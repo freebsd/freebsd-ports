@@ -3,7 +3,7 @@
 # Date created:         17 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1997/11/15 13:53:58 asami Exp $
+# $Id: Makefile,v 1.5 1997/12/25 22:29:25 asami Exp $
 #
 
 DISTNAME=	xdl-2.1
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		xdl.1
 
 .include <bsd.port.mk>

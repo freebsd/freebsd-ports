@@ -3,7 +3,7 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/06/29 09:38:20 obrien Exp $
+# $Id: Makefile,v 1.3 1998/02/20 18:39:56 steve Exp $
 #
 
 DISTNAME=	pns_source
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile 
 ALL_TARGET=	pns

@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/09/22 16:22:22 max Exp $
+# $Id: Makefile,v 1.4 1998/04/30 14:39:06 kuriyama Exp $
 #
 
 DISTNAME=       pinetree.precomposed-1.0
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.bdf.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 FONTS=		ptpR08 ptpR10 ptpR12 ptpR14 ptpR18 ptpR24 \
 		ptpB08 ptpB10 ptpB12 ptpB14 ptpB18 ptpB24

@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/31 19:32:38 nectar Exp $
 #
 
 DISTNAME=		spellcast-1.1
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	games/multiplayer
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 MAN6=			spellcast.6
 
 do-install:

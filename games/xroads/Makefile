@@ -3,7 +3,7 @@
 # Date created:				21 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/02 06:42:45 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/05 11:40:46 asami Exp $
 #
 
 DISTNAME=	xroads-v0.1.5
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/1795/ \
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xroads ${PREFIX}/bin

@@ -3,7 +3,7 @@
 # Date created:				2 Dec 1996
 # Whom:					nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/12 03:46:31 erich Exp $
+# $Id: Makefile,v 1.2 1996/12/12 05:28:54 asami Exp $
 #
  
 DISTNAME=       calctool-2.4pl13
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.kfu.com/pub/
  
 MAINTAINER=     nsayer@quack.kfu.com
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 MAN1=		calctool.1
 
 .include <bsd.port.mk>

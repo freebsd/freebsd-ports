@@ -3,7 +3,7 @@
 # Date created:		26 Sep 1997
 # Whom: Dai ISHIJIMA & ELISA Font Project <ishijima@tri.pref.osaka.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/28 14:20:17 itojun Exp $
 #
 
 DISTNAME=	ja-elisa8-1.0
@@ -16,7 +16,7 @@ DISTFILES=	elisau10.tgz clR5x8.bdf
 
 MAINTAINER=	ishijima@tri.pref.osaka.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	elisau10.tgz
 

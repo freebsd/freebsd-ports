@@ -3,7 +3,7 @@
 # Date created:		19 July 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1998/07/20 10:01:55 asami Exp $
 #
 
 DISTNAME=	esound-0.2.4
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/esound
 

@@ -3,7 +3,7 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.5 1998/06/07 08:54:13 dburr Exp $
+# $Id: Makefile,v 1.6 1998/07/06 13:26:32 dburr Exp $
 #
 
 DISTNAME=	fxtv-0.47
@@ -25,8 +25,8 @@ LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 #		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
 #		mplex:${PORTSDIR}/graphics/mplex
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=      yes
-MAKE_FLAGS+=	-e
+MAKE_FLAGS=	-e
 
 .include <bsd.port.mk>

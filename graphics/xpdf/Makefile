@@ -3,7 +3,7 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.11 1997/10/24 16:51:59 chuckr Exp $
+# $Id: Makefile,v 1.12 1998/03/11 03:08:12 vanilla Exp $
 #
 
 DISTNAME=       xpdf-0.7a
@@ -16,7 +16,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gzip
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		xpdf.1 pdftops.1 pdftotext.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         24. Sep 97
 # Whom:                 sec@42.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/25 22:29:34 steve Exp $
 #
 
 DISTNAME=       xtris-1.15
@@ -15,7 +15,7 @@ MAINTAINER=	sec@42.org
 RESTRICTED=	"Possible trademark infringement"
 WRKSRC=		${WRKDIR}/xtris
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN6=		xtris.6 xtserv.6 xtbot.6
 
 .include <bsd.port.mk>

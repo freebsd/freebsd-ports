@@ -3,7 +3,7 @@
 # Date created:         25 July 1996
 # Whom:                 matt@bdd.net
 #
-# $Id: Makefile,v 1.2 1996/11/18 10:37:03 asami Exp $
+# $Id: Makefile,v 1.3 1998/02/01 22:25:50 fenner Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 
 MAINTAINER=	matt@bdd.net
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Xtacy
 ALL_TARGET=	xtacy
 

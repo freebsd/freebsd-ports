@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1998/07/29 16:11:22 ache Exp $
+# $Id: Makefile,v 1.20 1998/08/03 08:49:00 ache Exp $
 #
 
 DISTNAME=       ru-X11-3.3
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
 NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
-USE_X11=        YES
+USE_X_PREFIX=   YES
 
 PKGTMP = ${X11BASE}/.Xinstmp
 XLIB = ${X11BASE}/lib/X11

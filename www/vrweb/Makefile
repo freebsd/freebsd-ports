@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/04/23 16:50:35 mph Exp $
+# $Id: Makefile,v 1.5 1998/07/20 10:13:53 asami Exp $
 #
 
 DISTNAME=	vrweb-1.5
@@ -16,7 +16,7 @@ MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 LIB_DEPENDS=	GL\\.13\\.:${PORTSDIR}/graphics/Mesa2
 
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-configure:
 	(cd ${WRKSRC}; \

@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.17 1998/03/17 07:29:51 tg Exp $
+# $Id: Makefile,v 1.18 1998/03/17 07:48:56 tg Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
 
 MAKEFILE=	makefile
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes	# asks "ok?" about license

@@ -3,7 +3,7 @@
 # Date created:			5 December 1996
 # Whom:				Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1997/09/03 05:22:17 max Exp $
+# $Id: Makefile,v 1.5 1997/09/15 07:28:02 tg Exp $
 #
 
 DISTNAME=	libsx
@@ -17,7 +17,7 @@ MAINTAINER=	giffunip@asme.org
 
 LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 ALL_TARGET=	src freq
 
 do-install:

@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/28 23:29:17 obrien Exp $
 #
 
 DISTNAME=	xklock-2.7
@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nkazushi@highway.or.jp
 
 WRKSRC=	${WRKDIR}
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-configure:
 	@${MV} ${WRKDIR}/jnames.c ${WRKDIR}/jnames.c.in

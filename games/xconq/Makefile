@@ -3,7 +3,7 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/07 11:03:06 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/05 23:08:31 steve Exp $
 #
 
 DISTNAME=	xconq-7.2.2
@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 MAN6=		xconq.6 cconq.6
 

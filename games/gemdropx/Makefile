@@ -3,7 +3,7 @@
 # Date created:				9 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 04:48:03 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:38 asami Exp $
 #
 
 DISTNAME=	gemdropx
@@ -14,7 +14,7 @@ MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/gemdropx/
 MAINTAINER=	andy@icc.surw.chel.su
 
 MAKEFILE=	makefile
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin

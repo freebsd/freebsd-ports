@@ -3,7 +3,7 @@
 # Date Created:				5 Dec 1997
 # Whom:					Ming-I Hseh <PA@FreeBSD.Ntu.edu.TW>
 #
-# $Id: Makefile,v 1.4 1997/12/17 17:17:16 vanilla Exp $
+# $Id: Makefile,v 1.5 1997/12/24 07:58:40 vanilla Exp $
 #
 
 DISTNAME=	kcfonts-1.05
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/taiwan/ \
 
 MAINTAINER=	PA@FreeBSD.ee.Ntu.edu.TW
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:        20 December 1996
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1998/02/20 18:39:52 steve Exp $
+# $Id: Makefile,v 1.5 1998/04/01 02:23:51 asami Exp $
 #
 
 DISTNAME=	freefem-3.4
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.asci.fr/~prudhomm/gfem-html/freefem/
 
 MAINTAINER=     giffunip@asme.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-adapt --with-optimization
 

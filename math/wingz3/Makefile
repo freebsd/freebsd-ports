@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1997/05/28 05:33:09 fenner Exp $
+# $Id: Makefile,v 1.4 1997/07/13 18:49:25 max Exp $
 #
 
 DISTNAME=	Wingz-142
@@ -18,7 +18,7 @@ RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
 NO_WRKSUBDIR=	yes
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL

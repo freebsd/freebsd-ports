@@ -3,7 +3,7 @@
 # Date created:		21 Feb 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/17 21:27:31 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/24 12:22:47 scrappy Exp $
 #
 
 DISTNAME=       saoimage-1.22
@@ -17,7 +17,7 @@ ALL_TARGET=	FreeBSD
 INSTALL_TARGET= -f makefile.$(ALL_TARGET) install_saobin install_saoman
 
 MANL=		saoimage.l
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-patch:
 	$(CP) $(WRKSRC)/makefile.sun $(WRKSRC)/makefile.$(ALL_TARGET)

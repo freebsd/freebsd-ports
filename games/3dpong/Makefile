@@ -3,7 +3,7 @@
 # Date created:				10 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 03:51:02 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:27 asami Exp $
 #
 
 DISTNAME=	3dpong.0.3
@@ -14,7 +14,7 @@ MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/3dpong/
 MAINTAINER=	andy@icc.surw.chel.su
 
 MAKEFILE=	makefile
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/3dpong
 
 do-install:

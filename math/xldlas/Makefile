@@ -3,7 +3,7 @@
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 05:25:00 mph Exp $
+# $Id: Makefile,v 1.2 1998/05/25 21:03:04 fenner Exp $
 #
 
 DISTNAME=	xldlas-0.85
@@ -20,7 +20,7 @@ LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
 WRKSRC=		${WRKDIR}/xldlas
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 MAN1=	xldlas.1
 

@@ -3,7 +3,7 @@
 # Date created:				10 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/20 10:13:42 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:24:29 asami Exp $
 #
 
 DISTNAME=	KnightCap-3.5
@@ -19,7 +19,7 @@ LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
 
 FETCH_BEFORE_ARGS=	-P
 ALL_TARGET=	KnightCap
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Export
 
 do-install:

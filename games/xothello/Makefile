@@ -3,7 +3,7 @@
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/24 02:08:53 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:15 asami Exp $
 #
 
 DISTNAME=	xothello
@@ -18,7 +18,7 @@ LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
 NO_CDROM=	Possible trademark infringement
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-build:
 	@ ${RM} ${WRKSRC}/xothello

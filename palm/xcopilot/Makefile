@@ -3,7 +3,7 @@
 # Date created:         July 17 1997
 # Whom:                 Nick Sayer <nsayer@quack.kfu.com>
 #
-# $Id: Makefile,v 1.2 1997/11/25 07:38:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/01/01 17:29:10 asami Exp $
 #
 
 DISTNAME=       xcopilot-v0.4
@@ -19,6 +19,6 @@ MAINTAINER=     nsayer@quack.kfu.com
 
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
