@@ -1,13 +1,13 @@
 bin/tcl
-bin/tclhelp
-bin/wishx
+%%X11%%bin/tclhelp
+%%X11%%bin/wishx
 include/tclExtend.h
 lib/libtclx%%TCLX_SHORT_VER%%.a
 lib/libtclx%%TCLX_SHORT_VER%%.so
 lib/libtclx%%TCLX_SHORT_VER%%.so.1
-lib/libtkx%%TCLX_SHORT_VER%%.a
-lib/libtkx%%TCLX_SHORT_VER%%.so
-lib/libtkx%%TCLX_SHORT_VER%%.so.1
+%%X11%%lib/libtkx%%TCLX_SHORT_VER%%.a
+%%X11%%lib/libtkx%%TCLX_SHORT_VER%%.so
+%%X11%%lib/libtkx%%TCLX_SHORT_VER%%.so.1
 lib/tclX%%TCLX_LONG_VER%%/autoload.tcl
 lib/tclX%%TCLX_LONG_VER%%/buildidx.tcl
 lib/tclX%%TCLX_LONG_VER%%/help/Tcl.brf
@@ -210,65 +210,65 @@ lib/tclX%%TCLX_LONG_VER%%/tcl.tndx
 lib/tclX%%TCLX_LONG_VER%%/tclXAppInit.c
 lib/tclX%%TCLX_LONG_VER%%/tclx.tcl
 lib/tclX%%TCLX_LONG_VER%%/tclxConfig.sh
-lib/tkX%%TCLX_LONG_VER%%/help/Tk.brf
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bell
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bind
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bindtags
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/clipboard
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/destroy
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/event
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/focus
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/font
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grab
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grid
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/loadTk
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/lower
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/option
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack-old
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/place
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/raise
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/selection
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/send
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_bisque
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_focusNext
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_setPalette
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkerror
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkvars
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkwait
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/winfo
-lib/tkX%%TCLX_LONG_VER%%/help/tk/control/wm
-lib/tkX%%TCLX_LONG_VER%%/help/tk/images/bitmap
-lib/tkX%%TCLX_LONG_VER%%/help/tk/images/image
-lib/tkX%%TCLX_LONG_VER%%/help/tk/images/photo
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/button
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/canvas
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/checkbutton
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/entry
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/frame
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/label
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/listbox
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menu
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menubutton
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/message
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/options
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/radiobutton
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scale
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scrollbar
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/text
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_chooseColor
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_dialog
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_getOpenFile
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_menuBar
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_messageBox
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_optionMenu
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_popup
-lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/toplevel
-lib/tkX%%TCLX_LONG_VER%%/pkgIndex.tcl
-lib/tkX%%TCLX_LONG_VER%%/tkXAppInit.c
-lib/tkX%%TCLX_LONG_VER%%/tkx.tcl
-lib/tkX%%TCLX_LONG_VER%%/tkxConfig.sh
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/Tk.brf
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bell
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bind
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bindtags
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/clipboard
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/destroy
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/event
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/focus
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/font
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grab
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grid
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/loadTk
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/lower
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/option
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack-old
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/place
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/raise
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/selection
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/send
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_bisque
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_focusNext
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_setPalette
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkerror
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkvars
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkwait
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/winfo
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/control/wm
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/images/bitmap
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/images/image
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/images/photo
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/button
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/canvas
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/checkbutton
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/entry
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/frame
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/label
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/listbox
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menu
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menubutton
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/message
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/options
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/radiobutton
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scale
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scrollbar
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/text
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_chooseColor
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_dialog
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_getOpenFile
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_menuBar
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_messageBox
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_optionMenu
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_popup
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/toplevel
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/pkgIndex.tcl
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/tkXAppInit.c
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/tkx.tcl
+%%X11%%lib/tkX%%TCLX_LONG_VER%%/tkxConfig.sh
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/control
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/events
@@ -291,9 +291,9 @@ lib/tkX%%TCLX_LONG_VER%%/tkxConfig.sh
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help
 @dirrm lib/tclX%%TCLX_LONG_VER%%
-@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/control
-@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/images
-@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets
-@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk
-@dirrm lib/tkX%%TCLX_LONG_VER%%/help
-@dirrm lib/tkX%%TCLX_LONG_VER%%
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/control
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/images
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%/help
+%%X11%%@dirrm lib/tkX%%TCLX_LONG_VER%%

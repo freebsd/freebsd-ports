@@ -9,10 +9,12 @@
  
  libraries: tcl.tndx tcl.tlib tclx.tcl buildidx.tcl
  
-@@ -163,6 +163,7 @@
+@@ -162,7 +162,8 @@
+ 	PATH=${TCL_UNIX_DIR}:${PATH}; export PATH; \
  	TCL_LIBRARY=${TCL_UNIX_DIR}/../library; export TCL_LIBRARY; \
  	LD_LIBRARY_PATH=${TCL_UNIX_DIR}:${LD_LIBRARY_PATH}; export LD_LIBRARY_PATH; \
- 	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} ${TCL_SHLIB_LD_LIBS}
+-	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} ${TCL_SHLIB_LD_LIBS}
++	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} @NEED_TCL_STUB@
 +	ln -sf ${TCLX_SHLIB_NAME} `echo ${TCLX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
  
  hello:	hello.c
@@ -35,6 +37,11 @@
  	    ${HELP_DIR} Tcl.brf
  	${RUNTCL} -c "buildhelp ${HELP_DIR} TclX.brf ${TCLX_DOC_DIR}/TclX.n"
  
+@@ -322,3 +323,3 @@
+ 
+-install-misc: buildhelp
++install-misc:
+ 	${INSTCOPY} ${TCLX_GENERIC_DIR}/tclExtend.h \
 @@ -338,9 +339,11 @@
  	    ${INSTCOPY} ${TCLX_STLIB_NAME} ${INSTALL_ROOT}${TCLX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TCLX_INST_LIB}/${TCLX_STLIB_NAME}; \
@@ -48,3 +55,7 @@
  	    ${INSTCOPY} pkgIndex.tcl ${INSTALL_ROOT}${TCLX_EXEC_RUNTIME} ;\
  	fi
  
+@@ -385,2 +388,2 @@
+ tclXAppInit.o: ${TCLX_UNIX_SRC_DIR}/tclXAppInit.c
+-	${CC} -c ${CC_SWITCHES} ${TCLX_UNIX_SRC_DIR}/tclXAppInit.c
++	${CC} -c ${CC_SWITCHES} -UUSE_TCL_STUBS ${TCLX_UNIX_SRC_DIR}/tclXAppInit.c

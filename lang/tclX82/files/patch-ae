@@ -33,11 +33,21 @@
  
  #
  # Determine suffix to use for the object files for the shared library.
-@@ -4831,6 +4832,7 @@
+@@ -4793,2 +4794,8 @@
+ EOF
++
++if /usr/bin/ldd ${prefix}/bin/tclsh$TCL_VERSION | fgrep -qv libtcl; then
++	TCL_EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS\ -DUSE_TCL_STUBS
++	NEED_TCL_STUB=$TCL_STUB_LIB_SPEC
++fi
++
+ cat >> $CONFIG_STATUS <<EOF
+@@ -4831,6 +4832,8 @@
  s%@TCLX_FULL_VERSION@%$TCLX_FULL_VERSION%g
  s%@TKX_VERSION@%$TKX_VERSION%g
  s%@TKX_FULL_VERSION@%$TKX_FULL_VERSION%g
 +s%@TCL_PREFIX@%$TCL_PREFIX%g
++s%@NEED_TCL_STUB@%$NEED_TCL_STUB%g
  s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
  s%@TCL_LIB_FILE@%$TCL_LIB_FILE%g

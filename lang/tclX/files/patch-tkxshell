@@ -1,0 +1,16 @@
+--- ../tk/generic/tkXshell.c	Sun Feb  6 19:54:00 2000
++++ ../tk/generic/tkXshell.c	Fri Mar 16 14:02:59 2001
+@@ -87,2 +87,4 @@
++#if TK_MAJOR_VERSION == 8 && TK_MINOR_VERSION < 3
+ extern void		TkpDisplayWarning _ANSI_ARGS_((char *msg,
+ 			    char *title));
++#endif
+@@ -407,7 +407,7 @@
+     Tk_MainLoop();
+-    Tcl_DeleteInterp(interp);
+ #ifdef TKX_SHELL
+     TclX_ShellExit(interp, 0);
+ #else
++    Tcl_DeleteInterp(interp);
+     Tcl_Exit(0);
+ #endif

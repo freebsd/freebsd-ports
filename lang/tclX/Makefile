@@ -7,21 +7,39 @@
 
 PORTNAME=	tclX
 PORTVERSION=	8.2.0
-CATEGORIES=	lang tcl82 tk82
+PORTREVISION=	1
+CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 DISTNAME=	tclX8.2.0
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+.ifdef NO_X
+LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER}
+PKGNAMESUFFIX=	-nox11
+.else
+LIB_DEPENDS=	tk${TCL_DVER}.1:${PORTSDIR}/x11-toolkits/tk${TCL_DVER}
+.endif
+
+TCL_VER?=	8.3
+TCL_DVER?=	${TCL_VER:S/.//}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+ALL_TARGET=	all buildhelp
 CONFIGURE_ARGS= --enable-shared \
-		--with-tcl="${LOCALBASE}/lib/tcl8.2" \
-		--with-tk="${LOCALBASE}/lib/tk8.2"
+		--with-tcl="${LOCALBASE}/lib/tcl${TCL_VER}" \
+		--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
 PLIST_SUB=	TCLX_LONG_VER=8.2 TCLX_SHORT_VER=82
+
+.ifdef NO_X
+CONFIGURE_ARGS+=--enable-tk=NO
+PLIST_SUB+=	X11='@comment '
+.else
+CONFIGURE_ARGS+=--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
+PLIST_SUB+=	X11=''
+.endif
 
 MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 	TclCommandWriting.3 \

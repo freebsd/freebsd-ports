@@ -1,4 +1,4 @@
---- ../tk/unix/Makefile.in.orig	Sun Feb  6 18:54:01 2000
+--- ../tk/unix/Makefile.in	Sun Feb  6 18:54:01 2000
 +++ ../tk/unix/Makefile.in	Thu Jul 13 15:35:36 2000
 @@ -81,7 +81,7 @@
  #
@@ -9,14 +9,13 @@
  
  libraries: RUNTIME
  
-@@ -112,6 +112,7 @@
+@@ -112,4 +112,4 @@
  	${TCL_SHLIB_LD} -o ${TKX_SHLIB_NAME} ${SOBJS} \
- 	    ${TK_BUILD_STUB_LIB_SPEC} ${TCLX_BUILD_LIB_SPEC} \
- 	    ${TCL_BUILD_STUB_LIB_SPEC} ${TCL_SHLIB_LD_LIBS}
+-	    ${TK_BUILD_STUB_LIB_SPEC} ${TCLX_BUILD_LIB_SPEC} \
+-	    ${TCL_BUILD_STUB_LIB_SPEC} ${TCL_SHLIB_LD_LIBS}
++	    ${TK_SHLIB_LD_LIBS} ${TCLX_BUILD_LIB_SPEC}
 +	ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
  
- hello:	hello.c
- 	${CC} ${LD_SWITCHES} -o $@ hello.c ${STATIC_LIBS}
 @@ -199,7 +200,7 @@
  buildhelp:
  	rm -rf ${HELP_DIR} help help.tmp
@@ -26,6 +25,9 @@
  	    ${HELP_DIR} Tk.brf
  
  #------------------------------------------------------------------------------
+@@ -215 +215 @@
+-install-misc: buildhelp
++install-misc:
 @@ -227,9 +228,11 @@
  	    ${INSTCOPY} ${TKX_STLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TKX_INST_LIB}/${TKX_STLIB_NAME}; \
@@ -39,3 +41,8 @@
  	    ${INSTCOPY} pkgIndex.tcl ${INSTALL_ROOT}${TKX_EXEC_RUNTIME} ;\
  	fi
  	${INSTCOPY} tclhelp ${INSTALL_ROOT}${TKX_INST_BIN}
+@@ -274,2 +276,3 @@
+ tkXAppInit.o: ${TKX_UNIX_SRC_DIR}/tkXAppInit.c
+-	${CC} -c ${CC_SWITCHES} ${TKX_UNIX_SRC_DIR}/tkXAppInit.c
++	${CC} -c ${CC_SWITCHES} -UUSE_TCL_STUBS -UUSE_TK_STUBS \
++		${TKX_UNIX_SRC_DIR}/tkXAppInit.c
