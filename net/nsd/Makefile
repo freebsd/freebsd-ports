@@ -6,13 +6,21 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	1.0.2
-PORTREVISION=	1
-CATEGORIES=	net
+PORTVERSION=	1.2.2
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
-MAINTAINER=	nsd-info@nlnetlabs.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An authoratative only non-recursive high performance name server
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-user=bind \
+		--enable-ipv6 \
+		--with-configdir=${PREFIX}/etc/nsd \
+		--with-pidfile=/var/run/nsd.pid \
+		--with-dbfile=/var/db/nsd.database \
+		--with-namedxfer=/usr/libexec/named-xfer \
+		--with-libwrap
 
 MAN8=	nsd.8 zonec.8 nsdc.8
 
