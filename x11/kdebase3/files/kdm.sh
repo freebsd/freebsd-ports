@@ -13,6 +13,5 @@ export PATH
 #Configure kdm if needed
 if [ ! -r ${KDMCONFDIR}/kdmrc ]; then
 	echo "Generating KDM configuration";
-	${GENKDMCONF} --in ${KDMCONFDIR};
+	${GENKDMCONF} --no-old --in ${KDMCONFDIR};
 fi
-
