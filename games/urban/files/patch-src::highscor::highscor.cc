@@ -1,5 +1,5 @@
---- src/highscor/highscor.cc.orig	Sun Jan 25 03:58:07 2004
-+++ src/highscor/highscor.cc	Sun Jan 25 03:58:30 2004
+--- src/highscor/highscor.cc.orig	Tue Dec 14 06:30:56 2004
++++ src/highscor/highscor.cc	Tue Dec 14 06:31:19 2004
 @@ -75,7 +75,7 @@
  
  		if(highscore[i].Level)
@@ -17,7 +17,7 @@
 +        	if(score > highscore[i].Skore) {
  
                  	memmove(&highscore[i + 1], &highscore[i],
-                 		sizeof(Score) * (NUM_HIGHSCORES - i - 1));
+                 		sizeof(Score_t) * (NUM_HIGHSCORES - i - 1));
  
                          strcpy(highscore[i].Name, GetName());
 -                        highscore[i].Score = score;

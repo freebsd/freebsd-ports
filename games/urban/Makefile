@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		urban
-PORTVERSION=		1.5.2
+PORTVERSION=		1.5.3
 CATEGORIES=		games
-MASTER_SITES=		http://urban.worldonline.nl/files/linux/
+MASTER_SITES=		http://urban.bengburken.net/files/linux/
 DIST_SUBDIR=		urban
 
 MAINTAINER=		jylefort@brutele.be
