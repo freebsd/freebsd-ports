@@ -13,6 +13,8 @@ MASTER_SITES=	http://homex.coolconnect.com/user/xkwang/gman/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
 
