@@ -73,5 +73,8 @@ post-install:
 	@${MV} ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/cccp28.1
 	@${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++28.1
 	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc28.1
+.for info in cpp gcc
+	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.endfor
 
 .include <bsd.port.post.mk>
