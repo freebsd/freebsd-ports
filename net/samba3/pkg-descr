@@ -8,9 +8,3 @@ or FreeBSD printers as if they were local printers.
 
 Some of the most popular Lan Manager compatible clients include Lan
 Manager itself, Windows for Workgroups, OS/2 and Windows NT.
-
-Please note that if you want to use Windows NT 4.0 + Service Pack 3
-or above as clients, you have to use -des version of samba ports.
--des version is not redistributable as a binary package because of 
-the export control of US.  Please type make install at net/samba-des 
-in ports collection.

@@ -1,0 +1,13 @@
+#!/bin/sh
+smbspool=/var/spool/samba
+smbd=/usr/local/sbin/smbd
+nmbd=/usr/local/sbin/nmbd
+
+if [ -f $smbd ]; then
+	if [ -d $smbspool ]; then
+		rm -f $smbspool/*
+	fi
+	echo -n ' Samba'
+	$smbd -D
+	$nmbd -D
+fi
