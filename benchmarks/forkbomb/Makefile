@@ -15,6 +15,10 @@ MAINTAINER=	hsn@netmag.cz
 COMMENT=	System stress testing tool
 
 USE_GETOPT_LONG=yes
+
+MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+
 MAN8=		forkbomb.8
 
 .include <bsd.port.mk>

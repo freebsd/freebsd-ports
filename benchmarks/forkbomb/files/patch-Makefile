@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Jan 29 14:10:22 2004
++++ Makefile	Thu Jan 29 14:10:51 2004
+@@ -16,7 +16,7 @@
+ 	install -m 444 forkbomb.8 $(DESTDIR)$(PREFIX)/man/man8
+ 
+ forkbomb: forkbomb.c Makefile
+-	${CC} $(CFLAGS) $(LDFLAGS) -o forkbomb forkbomb.c $(LIBS)
++	${CC} $(CFLAGS) ${CPPFLAGS} $(LDFLAGS) -o forkbomb forkbomb.c $(LIBS)
+ 
+ clean:
+ 	rm -f *.o forkbomb *~ *core tags
