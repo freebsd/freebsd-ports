@@ -1,3 +1,0 @@
-This package only includes support for .tga output.
-However, the example scenes call for .png output,
-and thus will not render without modification.

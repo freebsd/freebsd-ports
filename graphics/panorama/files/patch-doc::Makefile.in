@@ -1,0 +1,25 @@
+--- doc/Makefile.in.orig	Sat Jun 12 07:36:26 1999
++++ doc/Makefile.in	Fri Nov 22 07:24:47 2002
+@@ -28,17 +28,20 @@
+                 done
+ 
+ install:        all
++		@@INSTALL_DATA@ ${SRC_DIR}/config ${CONFIG_DIR}
++		@@INSTALL_DATA@ ${SRC_DIR}/pluginrc ${CONFIG_DIR}
++ifndef NOPORTDOCS
++		@${SRC_DIR}/${BUILD_TOP}/mkinstalldirs ${DOC_DIR}
+ 		@set -e; \
+ 		for i in $(FILES); do \
+ 		  @INSTALL_DATA@ ${SRC_DIR}/$$i ${DOC_DIR}; \
+ 		done
+-		@@INSTALL_DATA@ ${SRC_DIR}/config ${CONFIG_DIR}
+-		@@INSTALL_DATA@ ${SRC_DIR}/pluginrc ${CONFIG_DIR}
+ 		@${SRC_DIR}/${BUILD_TOP}/mkinstalldirs ${DOC_DIR}/developers ${DOC_DIR}/users
+ 		@set -e; \
+ 		for i in $(DIRS); do \
+                   $(MAKE) -C $$i install; \
+                 done
++endif
+ 
+ clean:
+ 		@set -e

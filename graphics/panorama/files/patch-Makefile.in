@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun May 30 08:08:09 1999
++++ Makefile.in	Fri Nov 22 07:14:08 2002
+@@ -42,7 +42,7 @@
+ 
+ installdirs:
+ 		@echo Creating directories...
+-		@${SRC_DIR}/mkinstalldirs ${TOP_DIR} ${BIN_DIR} ${LIB_DIR} ${DOC_DIR} \
++		@${SRC_DIR}/mkinstalldirs ${TOP_DIR} ${BIN_DIR} ${LIB_DIR} \
+                 			    ${CONFIG_DIR} ${INCLUDE_DIR} ${PLUGIN_DIR}  \
+                                             ${TEXTURE_DIR} ${SCENE_DIR} ${GRADIENT_DIR}
+ 
