@@ -80,50 +80,58 @@ post-install:
 		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||'`; \
 		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
 		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
-		if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
-			${EXTRACT_BEFORE_ARGS_L} \
-			${_DISTDIR}/$${file} '*.aff' '*.dic' ${EXTRACT_AFTER_ARGS_L}) ; \
-		then \
-			${ECHO} "Extracting of $${file} failed"; \
-			exit 1; \
-		fi ; \
-		${ECHO_MSG} "===>   Register spelling dictionary $${LANGUAGE}_$${COUNTRY}"; \
-		${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} $${COUNTRY} $${ABRV}\" \
-		    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
-		${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST} ; \
-		cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
-		    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
-		${ECHO} "@unexec ${CP} ${DICT_LIST} \
-		    ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
-		${ECHO} "@unexec \
-		    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY} | \
-			${GREP} -v -e '^DICT.*$${LANGUAGE}_$${COUNTRY}' > ${DICT_LIST} ) ; then \
-				${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
-		    fi" >> ${TMPPLIST} ; \
-		${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" \
-		    >> ${TMPPLIST} ; \
-		case $${ABRV} in \
-		de_DE) \
-			${ECHO_MSG} "===>   Cross-register spelling dictionary $${ABRV} to $${LANGUAGE}_AT"; \
-			${LN} -fs ${DICT_PATH}/de_DE.aff ${DICT_PATH}/de_AT.aff; \
-			${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
+		if ! ( ${GREP} "DICT $${LANGUAGE} $${COUNTRY}" \
+		    ${DICT_LIST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
+		then  \
+			if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
+				${EXTRACT_BEFORE_ARGS_L} \
+				${_DISTDIR}/$${file} '*.aff' '*.dic' \
+				${EXTRACT_AFTER_ARGS_L}) ; \
+			then \
+				${ECHO} "Extracting of $${file} failed"; \
+				exit 1; \
+			fi ; \
+			${ECHO_MSG} "===>   Register spelling dictionary $${LANGUAGE}_$${COUNTRY}"; \
+			${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} $${COUNTRY} $${ABRV}\" \
 			    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
-			${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST} ; \
+			${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
-			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
-			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l | \
-			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+			    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
-			    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
+			    ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
-			    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_AT | \
-				${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${DICT_LIST} ) ;  then \
+			    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY} | \
+				${GREP} -v -e '^DICT.*$${LANGUAGE}_$${COUNTRY}' > ${DICT_LIST} ) ; then \
 					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
 			    fi" >> ${TMPPLIST} ; \
-			${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_AT" \
+			${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" \
 			    >> ${TMPPLIST} ; \
-			;; \
-		esac \
+			case $${ABRV} in \
+			de_DE) \
+				${ECHO_MSG} "===>   Cross-register spelling dictionary $${ABRV} to $${LANGUAGE}_AT"; \
+				${LN} -fs ${DICT_PATH}/de_DE.aff ${DICT_PATH}/de_AT.aff; \
+				${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
+				    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
+				${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST} ; \
+				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+				    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l | \
+				    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+				${ECHO} "@unexec ${CP} ${DICT_LIST} \
+				    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
+				${ECHO} "@unexec \
+				    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_AT | \
+					${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${DICT_LIST} ) ;  then \
+					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
+				    fi" >> ${TMPPLIST} ; \
+				${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_AT" \
+				    >> ${TMPPLIST} ; \
+				;; \
+			esac \
+		else \
+				${ECHO_MSG} "===>   Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
+				${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
+		fi ; \
 	done
 
 .include <bsd.port.post.mk>
