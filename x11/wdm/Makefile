@@ -35,6 +35,16 @@ MAN1=	wdm.1 wdmLogin.1
 
 DAEMONPIC=	daemon1-HQ-1280x960.jpg
 
+.if defined(USE_PAM)
+CONFIGURE_ARGS+=	--enable-pam
+LIBPAM=		-lpam
+.endif
+
+pre-fetch:
+.if !defined(USE_PAM)
+	@${ECHO_MSG} "To build this port with PAM support, define \"USE_PAM\"."
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/patches
 
