@@ -226,7 +226,6 @@ share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @exec mkdir -p %D/lib/gtk/themes/engines
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
-@unexec rmdir %D/libdata 2>/dev/null || true
 @dirrm lib/gtk/themes/engines
 @dirrm lib/gtk/themes
 @dirrm lib/gtk
