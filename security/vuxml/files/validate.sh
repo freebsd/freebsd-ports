@@ -15,12 +15,12 @@ SP_CHARSET_FIXED="YES"; export SP_CHARSET_FIXED
 SP_ENCODING="XML"; export SP_ENCODING
 
 
-X=`/usr/bin/which xmllint nsgmls`
+X=`/usr/bin/which xmllint onsgmls`
 if [ -z "$X" ]; then
   exec >&2
-  echo "Could not find \`xmllint' nor \`nsgmls'."
+  echo "Could not find \`xmllint' nor \`onsgmls'."
   echo "Install ports/textproc/libxml2 for \`xmllint', or"
-  echo "ports/textproc/jade for \`nsgmls'."
+  echo "ports/textproc/opensp for \`onsgmls'."
   exit 1
 fi
 
@@ -39,10 +39,10 @@ validate() {
 for x in ${X}; do
   case ${x} in
   *xmllint)
-    validate ${x} --catalogs --valid --noout "${vuxml_file}"
+    validate ${x} --valid --noout "${vuxml_file}"
     exit $?
     ;;
-  *nsgmls)
+  *onsgmls)
     validate ${x} -wxml -s "${vuxml_file}"
     exit $?
     ;;
