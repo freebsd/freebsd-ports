@@ -248,11 +248,11 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/FMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/MMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/MMATH
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.lock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/CBullet.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/CObject.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/DeepSpace
-%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/DeepSpace.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/FAbout.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/FAbout.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/FMain.class
@@ -262,9 +262,12 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files/eg3.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files/eg3b.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/doc/coordinates.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/doc/howto.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/doc/todo.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/images/DeepSpace.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/kite.2do
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/main.lst
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/ship.2do
-%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/spider.2do
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/triangle.2do
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/object.data/x-wing.2do
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/RobotFindsKitten/.gambas/FRFK
@@ -350,6 +353,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/CLSPARAMS
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/F
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/FCONFIG
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.lock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/ClsParams.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/F.class
@@ -730,6 +734,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ComponentList.html
 %%PORTDOCS%%%%DATADIR%%/help/Components.html
 %%PORTDOCS%%%%DATADIR%%/help/CrossSumProgram.html
+%%PORTDOCS%%%%DATADIR%%/help/DanieleAlbano.html
 %%PORTDOCS%%%%DATADIR%%/help/DanielCampos.html
 %%PORTDOCS%%%%DATADIR%%/help/DarrellOlsen.html
 %%PORTDOCS%%%%DATADIR%%/help/DavidVargas.html
@@ -743,6 +748,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%DATADIR%%/help/EduardoAltgott.html
 %%PORTDOCS%%%%DATADIR%%/help/EgmontSailer.html
 %%PORTDOCS%%%%DATADIR%%/help/ElenaModesto.html
+%%PORTDOCS%%%%DATADIR%%/help/ElkinRafael.html
 %%PORTDOCS%%%%DATADIR%%/help/EnzoDezi.html
 %%PORTDOCS%%%%DATADIR%%/help/ExecuteProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/FabienBodard.html
@@ -774,6 +780,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GaryFrankenbery.html
 %%PORTDOCS%%%%DATADIR%%/help/Gb.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplication.html
+%%PORTDOCS%%%%DATADIR%%/help/GbApplication.html~
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgs.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgsMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgsRCount.html
@@ -3442,6 +3449,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%DATADIR%%/help/LangPredefinedConstants.html
 %%PORTDOCS%%%%DATADIR%%/help/LangPropertiesDeclaration.html
 %%PORTDOCS%%%%DATADIR%%/help/LangQUIT.html
+%%PORTDOCS%%%%DATADIR%%/help/LangRAISE.html
 %%PORTDOCS%%%%DATADIR%%/help/LangREAD.html
 %%PORTDOCS%%%%DATADIR%%/help/LangRENAME.html
 %%PORTDOCS%%%%DATADIR%%/help/LangREPEAT.html
@@ -3711,6 +3719,7 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/object.data
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/images
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/doc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/.gambas
