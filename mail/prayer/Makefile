@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
 LIB_DEPENDS+=	${BERKLEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
 .endif
 
+BROKEN=		Does not fetch
+
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
