@@ -18,8 +18,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Jcode.3 Jcode::Unicode.3 Jcode::Unicode::Constants.3 \
 		Jcode::Unicode::NoXS.3
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
 post-configure:
 .for DIR in Unicode
 	${PERL} -pi -e "s:CCFLAGS = :CCFLAGS = ${CFLAGS} :g ; \
@@ -27,6 +25,8 @@ post-configure:
 .endfor
 
 .include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 .if ${PERL_LEVEL} < 500804
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
