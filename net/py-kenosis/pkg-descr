@@ -1,0 +1,12 @@
+[ excerpt from developer's web site ]
+
+Kenosis is a fully-distributed p2p RPC system built on top of
+XMLRPC. Nodes are automatically connected to each other via a
+Kademlia-style network (http://citeseer.ist.psu.edu/529075.html) and
+can route RPC requests efficiently to any online node. Kenosis does
+not rely on a central server - any Kenosis node can effectively join
+the network ("bootstrap") from any connected node.
+
+WWW: http://kenosis.sourceforge.net/
+
+-- lioux@FreeBSD.org
