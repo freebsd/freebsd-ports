@@ -8233,6 +8233,7 @@ sh-rtems-gdb	ports/devel/sh-rtems-gdb
 sh-rtems-objc	ports/devel/sh-rtems-objc
 sh-utils	ports/misc/sh-utils
 sha		ports/security/sha
+shaaft		ports/games/shaaft
 shapelib	ports/devel/shapelib
 shared-mime-info	ports/misc/shared-mime-info
 sharefonts	ports/x11-fonts/sharefonts
