@@ -198,6 +198,7 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-headers
+    SUBDIR += nautilus-gtkhtml
     SUBDIR += neon
     SUBDIR += neowebscript
     SUBDIR += netraider
