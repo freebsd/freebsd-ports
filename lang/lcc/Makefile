@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.cs.princeton.edu/pub/packages/lcc/
 MAINTAINER=	obrien@FreeBSD.org
 #origial [and extensive] patches by Soren Schmidt  / sos@freebsd.org
 
+PLIST_SUB+=	ARCH=${ARCH}
+
 MAKEFILE=	makefile
 MAKE_FLAGS=	BUILDDIR=${LCCBUILDDIR} HOSTFILE=etc/${OPSYS}.c -f
 MAN1=		bprint.1 lcc.1
