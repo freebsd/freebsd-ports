@@ -1,0 +1,145 @@
+--- src/os.c~	Wed Dec 11 15:24:29 1996
++++ src/os.c	Wed Dec 11 15:25:06 1996
+@@ -42,7 +42,7 @@
+ #  include <sys/stat.h>
+ #  include <unistd.h>
+ #endif
+-#ifdef __linux__
++#if defined( __linux__ ) || defined( __FreeBSD__ )
+ #	include <sys/file.h>
+ #	define F_TLOCK	LOCK_NB
+ #	define F_LOCK	LOCK_EX
+--- src/unix.c~	Wed Dec 11 15:26:04 1996
++++ src/unix.c	Wed Dec 11 15:26:20 1996
+@@ -50,7 +50,7 @@
+ #include <stdio.h>
+ #include <errno.h>
+ #include <typhoon.h>
+-#ifdef __linux__
++#if defined( __linux__ ) || defined( __FreeBSD__ )
+ #	include <sys/file.h>
+ #	define F_TLOCK	LOCK_NB
+ #	define F_LOCK	LOCK_EX
+--- src/Makefile.in.orig	Sun May 21 11:47:27 1995
++++ src/Makefile.in	Wed Dec 11 16:09:00 1996
+@@ -6,15 +6,20 @@
+ CC		= @cc@
+ CFLAGS		= @cflags@
+ RANLIB		= @ranlib@
+-PREFIX		= /usr/local
+-DESTLIB		= $(PREFIX)/lib
++SHLIB_MAJOR	= 1
++SHLIB_MINOR	= 10
++DESTDIR		= 
++LIBDIR		= $(PREFIX)/lib
++MANDIR		= ${PREFIX}/man/man
++NOMANCOMPRESS=	yup
+ DESTHDR		= $(PREFIX)/include
+-DESTOWN		= root
+-DESTGRP		= local
++DESTHDR		= $(PREFIX)/include
++LIBOWN		= bin
++LIBGRP		= bin
+ SHELL		= /bin/sh
+-LIBRARY		= libtyphoon.a
++LIB		= typhoon
+ LIBHDRS		= ../include/environ.h ../include/typhoon.h
+-LIBID		= TYPHOON 1.0 $(DESTLIB)/$(LIBRARY)
++
+ SRCS		= bt_del.c bt_funcs.c bt_io.c bt_open.c cmpfuncs.c os.c \
+ 		  readdbd.c record.c ty_auxfn.c ty_find.c ty_ins.c \
+ 		  ty_io.c ty_log.c ty_open.c ty_refin.c ty_repl.c \
+@@ -27,67 +31,30 @@
+ 		  ty_repl.o ty_util.o unix.o vlr.o ansi.o sequence.o
+ UNUSED		= dos.c os2.c ty_lock.c
+ 
+-.DEFAULT:
+-		co $@
+-
+-.PHONY:		all lint tags install uninstall clean
+-
+-.c.o:
+-		$(CC) -c $(CFLAGS) $<
+-#		-mcs -d -a '@(#)$(LIBID)' $@
+-
+-all:		$(LIBRARY)
+-
+-$(LIBRARY):	$(OBJS)
+-		ar cru $(LIBRARY) $(OBJS)
+-		$(RANLIB) $(LIBRARY)
+-
+-#catalog.dbd:	catalog.ddl
+-#		ddlp -f -hcatalog.h -a4 catalog
+-
+-lint:
+-		lint -u $(DEFINES) $(SRCS)
+-
+-tags:		$(HDRS) $(SRCS)
+-		ctags -w $(HDRS) $(SRCS)
+-
+-install:	$(LIBRARY)
+-		cp $(LIBRARY) $(DESTLIB)
+-		-ranlib $(DESTLIB)/$(LIBRARY)
+-		chmod 644 $(DESTLIB)/$(LIBRARY)
+-		chown $(DESTOWN) $(DESTLIB)/$(LIBRARY)
+-		chgrp $(DESTGRP) $(DESTLIB)/$(LIBRARY)
+-		cp $(LIBHDRS) $(DESTHDR)
+-		cd $(DESTHDR) && chmod 644 $(LIBHDRS)
+-		cd $(DESTHDR) && chown $(DESTOWN) $(LIBHDRS)
+-		cd $(DESTHDR) && chgrp $(DESTGRP) $(LIBHDRS)
+-
+-uninstall:
+-		rm -f $(DESTLIB)/$(LIBRARY)
+-		cd $(DESTHDR) && rm -f $(LIBHDRS)
+-
+-clean:
+-		-rcsclean -u
+-		-rm -f $(LIBRARY) $(OBJS)
+-		-rm -f Makefile lib.a tags made *.o
++MAN3=../man/d_close.3 \
++	  ../man/d_crget.3 \
++	  ../man/d_crread.3 \
++	  ../man/d_crset.3 \
++	  ../man/d_dbdpath.3 \
++	  ../man/d_dbfpath.3 \
++	  ../man/d_dbget.3 \
++	  ../man/d_dbset.3 \
++	  ../man/d_delete.3 \
++	  ../man/d_fillnew.3 \
++	  ../man/d_getsequence.3 \
++	  ../man/d_keyfind.3 \
++	  ../man/d_keyfrst.3 \
++	  ../man/d_keylast.3 \
++	  ../man/d_keynext.3 \
++	  ../man/d_keyprev.3 \
++	  ../man/d_keyread.3 \
++	  ../man/d_open.3 \
++	  ../man/d_recfrst.3 \
++	  ../man/d_reclast.3 \
++	  ../man/d_recnext.3 \
++	  ../man/d_recprev.3 \
++	  ../man/d_recread.3 \
++	  ../man/d_recwrite.3 \
++	  ../man/d_setfiles.3
+ 
+-### Do NOT edit this or the following lines.
+-bt_del.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h btree.h
+-bt_funcs.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h btree.h
+-bt_io.o:	ty_dbd.h ty_type.h btree.h
+-bt_open.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h btree.h
+-cmpfuncs.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-readdbd.o:	ty_dbd.h ty_type.h ty_glob.h
+-record.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h
+-ty_auxfn.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_find.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_ins.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_io.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_log.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h ty_log.h
+-ty_open.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_refin.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-ty_repl.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h ty_repif.h catalog.h
+-ty_util.o:	ty_dbd.h ty_type.h ty_glob.h ty_prot.h
+-unix.o:		ty_dbd.h ty_type.h
+-vlr.o:		ty_dbd.h ty_type.h ty_prot.h ty_glob.h
+-sequence.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h
++.include <bsd.lib.mk>
