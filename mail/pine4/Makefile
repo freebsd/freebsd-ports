@@ -10,7 +10,6 @@ PORTVERSION=	4.53
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/pine/ \
 		ftp://sunsite.icm.edu.pl/pub/unix/mail/pine/ \
 		ftp://mirrors.unam.mx/pub/pine/ \
 		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cac.washington.edu/pine/ \
