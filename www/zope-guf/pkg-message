@@ -1,0 +1,4 @@
+===> Zope GenericUserFolder post-port installation instructions:
+
+  To complete the installation of this port, you need to estart Zope.  This
+  may be done from the Zope Control Panel in the Zope management interface.
