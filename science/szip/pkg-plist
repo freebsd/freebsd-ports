@@ -5,3 +5,5 @@ lib/libsz.a
 lib/libsz.la
 lib/libsz.so
 lib/libsz.so.2
+%%PORTDOCS%%%%DOCSDIR%%/Release_notes_2_0.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
