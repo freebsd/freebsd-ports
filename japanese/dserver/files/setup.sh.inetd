@@ -5,7 +5,7 @@ echo "2. Add 'ndtp stream tcp nowait root /usr/local/lib/dserver dserver'"
 echo "          to /etc/inetd.conf"
 echo "3. Add startup configration of mule-client to site-start.el."
 echo "4. Restart inetd by 'kill -HUP `cat /var/run/inetd.pid`'."
-echo "5. Mount cdrom (or copy files) to PREFIX_DIR/dict/dserver/cdrom/."
+echo "5. Mount cdrom (or copy files) to PREFIX_DIR/share/dict/cdrom/."
 
 # Hack /etc/services
 echo
@@ -136,4 +136,4 @@ esac
 rm -f /tmp/hack-site-start.el
 
 echo "Now startup configuration is done."
-echo "Remember to mount cdrom to PREFIX_DIR/dict/dserver/cdrom."
+echo "Remember to mount cdrom to PREFIX_DIR/share/dict/cdrom."
