@@ -278,7 +278,6 @@ sub append_names_to_file {
 #
 sub change_summary_changed {
 	my $outfile = shift;		# File name of output file.
-	my $tag = shift;		# CVS branch tag.
 	my @filenames = @_;		# List of files to check.
 
 	foreach my $file (@filenames) {
@@ -664,15 +663,15 @@ foreach $tag ( keys %removed_files ) {
 
 if ($RCSIDINFO) {
 	foreach $tag ( keys %added_files ) {
-		&change_summary_added("$SUMMARY_FILE.$i.$PID", $tag,
+		&change_summary_added("$SUMMARY_FILE.$i.$PID",
 		    @{ $added_files{$tag} });
 	}
 	foreach $tag ( keys %changed_files ) {
-		&change_summary_changed("$SUMMARY_FILE.$i.$PID", $tag,
+		&change_summary_changed("$SUMMARY_FILE.$i.$PID",
 		    @{ $changed_files{$tag} });
 	}
 	foreach $tag ( keys %removed_files ) {
-		&change_summary_removed("$SUMMARY_FILE.$i.$PID", $tag,
+		&change_summary_removed("$SUMMARY_FILE.$i.$PID",
 		    @{ $removed_files{$tag} });
 	}
 }
