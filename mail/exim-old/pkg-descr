@@ -15,3 +15,5 @@ Exim is a mail transfer agent for Unix systems connected to the Internet.
      are very good.
 
  .   Its requeuing and retry algorithms are very powerful.
+
+WWW: http://www.exim.org/
