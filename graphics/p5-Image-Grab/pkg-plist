@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Image/Grab.pod
+lib/perl5/site_perl/%%PERL_VER%%/Image/Grab/RequestAgent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Grab.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Image/Grab
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Image
