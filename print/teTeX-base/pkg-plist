@@ -2,7 +2,6 @@ bin/MakeTeXMF
 bin/makeinfo
 bin/texindex
 bin/pslatex
-bin/install-info
 bin/makeindex.bin
 bin/kpsetool
 bin/makeindex
