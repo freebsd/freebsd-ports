@@ -21,6 +21,7 @@
     SUBDIR += jx
     SUBDIR += kde-qt-addon
     SUBDIR += lesstif
+    SUBDIR += libjtree
     SUBDIR += linux-gtk
     SUBDIR += neXtaw
     SUBDIR += open-motif
