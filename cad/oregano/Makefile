@@ -6,19 +6,28 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.40.0
 CATEGORIES=	cad
-MASTER_SITES=	http://people.imendio.com/richard/oregano/download/
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/47/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
+LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomeprint libglade
+USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
+		libgnomeprintui
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
+INSTALLS_OMF=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
