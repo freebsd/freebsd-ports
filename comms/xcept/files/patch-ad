@@ -1,5 +1,5 @@
---- /dev/null	Sun Sep  1 12:14:31 1996
-+++ lib/Makefile	Sun Sep  1 14:33:06 1996
+--- lib/Makefile.orig	Thu Sep 14 18:10:53 2000
++++ lib/Makefile	Thu Sep 14 18:12:13 2000
 @@ -0,0 +1,14 @@
 +#
 +#	Makefile for scripts
@@ -13,5 +13,5 @@
 +
 +install:
 +		mkdir -p $(DEST)
-+		install -c -m 0664 $(SCRIPTS) $(DEST)
++		install -c -m 0644 $(SCRIPTS) $(DEST)
 +		chmod 755 $(DEST)/ZDF.pl $(DEST)/xcept.pl
