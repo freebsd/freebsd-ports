@@ -3969,6 +3969,7 @@ mc		ports/misc/mc
 mcal		ports/deskutils/mcal
 mcrypt		ports/security/mcrypt
 mctoolame-decoder	ports/audio/mctoolame-decoder
+mctoolame-encoder	ports/audio/mctoolame-encoder
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
