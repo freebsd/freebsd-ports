@@ -58,4 +58,4 @@ do-install: install-cnotice install-binaries install-libs
 		${PREFIX}/lib/vtk/python/libvtk${i}.so
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

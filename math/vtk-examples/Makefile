@@ -36,4 +36,4 @@ do-install: install-cnotice
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${EXAMPLESDIR}/BUILD-HOWTO
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${DOCSDIR}/README.examples
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

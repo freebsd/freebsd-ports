@@ -36,4 +36,4 @@ do-patch: patch-common
 do-install: install-cnotice install-binaries install-libs
 	cd ${WRKSRC}/Wrapping/Tcl ; ${MAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
