@@ -9,9 +9,9 @@ PORTNAME=	webmin
 PORTVERSION=	1.030
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
-		http://www.webmin.com/updates/
-
+MASTER_SITES=	http://www.webmin.com/updates/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	webadmin
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_THEMES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
