@@ -17,7 +17,10 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	${PERL} -i -pe 's,/usr/X11R6\b,${X11BASE},g' ${WRKSRC}/MakeInclude
+	${PERL} -i -p \
+		-e 's,/usr/X11R6\b,${X11BASE},g;' \
+		-e 's,^CXX(FLAGS)? *=.*,,;' \
+		${WRKSRC}/MakeInclude
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libxunicode.a ${PREFIX}/lib/
