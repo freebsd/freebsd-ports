@@ -1,5 +1,5 @@
---- ../nh2ps-2.3.orig/Makefile	Sat Jul 18 22:12:03 1998
-+++ Makefile	Sat Jul 18 22:12:12 1998
+--- Makefile.orig	Tue Oct 20 20:04:13 1998
++++ Makefile	Mon Nov 18 15:32:22 2002
 @@ -42,7 +42,6 @@
  # stupid a**holes who add non-compatible "features"
  
@@ -8,3 +8,13 @@
  
  # directories
  BINDIR	= ${PREFIX}/bin
+@@ -70,8 +69,7 @@
+ #
+ 
+ # for a4 paper size, ps font mode
+-CFLAGS	= -DBSD -O2 -DHFONT  -DWIDTH=8.27 -DHEIGHT=11.64 \
+-	  -DA4_PAPERSIZE=1
++CFLAGS	= ${XCFLAGS} -DBSD -O2 -DHFONT
+ 
+ # for letter paper size
+ #CFLAGS	= -DBSD -O2 -DHFONT  -DWIDTH=8.5 -DHEIGHT=11.0 \

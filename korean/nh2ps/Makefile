@@ -7,12 +7,28 @@
 
 PORTNAME=	nh2ps
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nh2ps/
 
 MAINTAINER=	cjh@FreeBSD.org
 
+USE_PERL5_BUILD=yes
+
 MAN1=		nh2ps.1
+
+.if !defined(NOA4)
+XCFLAGS=	-DA4_PAPERSIZE -DWIDTH=8.27 -DHEIGHT=11.64
+.else
+XCFLAGS=	-DWIDTH=8.5 -DHEIGHT=11.0
+.endif
+
+MAKE_ENV+=	XCFLAGS="${XCFLAGS}"
+
+pre-everything::
+.if !defined(NOA4)
+	@${ECHO_MSG} "Type \"make NOA4=yes\" if you use no A4(letter) size paper."
+.endif
 
 post-patch:
 	@(cd ${WRKSRC}; \
@@ -21,7 +37,7 @@ post-patch:
 	  ${CHMOD} +x mkpsfontmap.pl)
 
 pre-install:
-	@(cd ${WRKSRC}; make install.man)
+	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} install.man)
 
 post-install:
 	strip ${PREFIX}/bin/nh2ps
