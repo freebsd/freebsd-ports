@@ -1,12 +1,12 @@
 # New ports collection makefile for:	smtpfeed
-# Version required:	0.66
+# Version required:	0.72
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.10 1998/06/22 18:48:47 itojun Exp $
+# $Id: Makefile,v 1.11 1998/07/02 14:17:02 itojun Exp $
 #
 
-DISTNAME=	smtpfeed-0.66
+DISTNAME=	smtpfeed-0.72
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/mail/sendmail/ \
@@ -20,9 +20,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${SENDMAIL}${EXTRACT_SUFX}
 PATCH_SENDMAIL_ARGS=	-d ${WRKSRC_SENDMAIL} -E ${PATCH_DIST_STRIP}
 NO_PACKAGE=	"complex configuration for sendmail.cf needed"
 
-SENDMAIL=	sendmail.8.8.8
-SENDMAILDIR=	sendmail-8.8.8
-SENDMAILPATCH=	sendmail888+3.0Wb13
+SENDMAILVER=	8.9.1
+SENDMAIL=	sendmail.${SENDMAILVER}
+SENDMAILDIR=	sendmail-${SENDMAILVER}
+SENDMAILPATCH=	sendmail891+3.0W
 WRKSRC_SMTPFEED=	${WRKSRC}
 WRKSRC_SENDMAIL=	${WRKDIR}/${SENDMAILDIR}/src
 
@@ -40,7 +41,7 @@ post-patch:
 	@(cd ${_DISTDIR}; for i in ${SENDMAILPATCH}.patch.gz; do \
 		${GZCAT} $$i | ${PATCH} ${PATCH_SENDMAIL_ARGS}; \
 	done)
-	@(cd ${WRKSRC_SENDMAIL}; sh Patch-makefiles)
+#	@(cd ${WRKSRC_SENDMAIL}; sh Patch-makefiles)
 
 post-build:
 	@${ECHO_MSG} "===>  Building patched ${SENDMAIL}"
