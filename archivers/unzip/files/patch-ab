@@ -1,72 +1,11 @@
---- unix/unix.c.orig	Tue Jan 22 01:54:42 2002
-+++ unix/unix.c	Tue Jul 29 07:36:54 2003
-@@ -431,6 +431,7 @@
-     int killed_ddot = FALSE;       /* is set when skipping "../" pathcomp */
-     int error = MPN_OK;
-     register unsigned workch;      /* hold the character being tested */
-+    int ignore_pathcomp;
- 
- 
- /*---------------------------------------------------------------------------
-@@ -466,33 +467,34 @@
- 
-     while ((workch = (uch)*cp++) != 0) {
- 
--        if (quote) {                 /* if character quoted, */
--            *pp++ = (char)workch;    /*  include it literally */
-+        if (quote) {  /* if character quoted, include it literally */
-+                      /* unless it is a slash */
-+                      /* A slash should be converted to an underscore */
-+            *pp++ = (workch == '/' ? '_' : (char)workch);
-             quote = FALSE;
-         } else
-             switch (workch) {
-             case '/':             /* can assume -j flag not given */
-                 *pp = '\0';
--                if (((error = checkdir(__G__ pathcomp, APPEND_DIR)) & MPN_MASK)
--                     > MPN_INF_TRUNC)
--                    return error;
--                pp = pathcomp;    /* reset conversion buffer for next piece */
--                lastsemi = (char *)NULL; /* leave directory semi-colons alone */
--                break;
--
--            case '.':
--                if (pp == pathcomp) {   /* nothing appended yet... */
--                    if (*cp == '/') {   /* don't bother appending "./" to */
--                        ++cp;           /*  the path: skip behind the '/' */
--                        break;
--                    } else if (!uO.ddotflag && *cp == '.' && cp[1] == '/') {
-+                ignore_pathcomp = FALSE;
-+                if (*pathcomp == '.') {
-+                    if (pathcomp[1] == '\0') {
-+                        /* don't bother appending "./" to the path */
-+                        ignore_pathcomp = TRUE;
-+                    }
-+                    else if (pathcomp[1] == '.' && pathcomp[2] == '\0' && !uO.ddotflag) {
-                         /* "../" dir traversal detected */
--                        cp += 2;        /*  skip over behind the '/' */
-+                        ignore_pathcomp = TRUE;
-                         killed_ddot = TRUE; /*  set "show message" flag */
--                        break;
-                     }
-                 }
--                *pp++ = '.';
-+                if (!ignore_pathcomp) {
-+                    if (((error = checkdir(__G__ pathcomp, APPEND_DIR)) & MPN_MASK)
-+                        > MPN_INF_TRUNC)
-+                        return error;
-+                }
-+                pp = pathcomp;    /* reset conversion buffer for next piece */
-+                lastsemi = (char *)NULL; /* leave directory semi-colons alone */
-                 break;
- 
-             case ';':             /* VMS version (or DEC-20 attrib?) */
-@@ -519,7 +521,7 @@
+--- unix/unix.c.bak	Wed May 26 21:40:00 2004
++++ unix/unix.c	Wed May 26 21:40:09 2004
+@@ -533,7 +533,7 @@
  
              default:
                  /* allow European characters in filenames: */
 -                if (isprint(workch) || (128 <= workch && workch <= 254))
 +                if (isprint(workch) || (128 <= workch && workch <= 255))
                      *pp++ = (char)workch;
-             } /* end switch */
+         } /* end switch */
  
