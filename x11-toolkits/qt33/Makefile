@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	3.3.2
-PORTREVISION=	2
+PORTVERSION=	3.3.3
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	ftp://sunsite.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/	\
@@ -110,7 +109,7 @@ CUPS=
 
 .if !defined(WITHOUT_NAS)
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
-CONFIGURE_ARGS+=-system-nas-sound
+CONFIGURE_ARGS+=-system-nas-sound -no-pch
 .elseif defined(WITHOUT_NAS)
 CONFIGURE_ARGS+=-no-nas-sound
 .endif
@@ -141,6 +140,8 @@ post-patch:
 		${WRKSRC}/config.tests/unix/ptrsize.test
 .endif
 	@${REINPLACE_CMD} -e 's|^	cd qmake.*||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^CFG_PRECOMPILE=no|CFG_PRECOMPILE=auto|g' \
+		${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e \
