@@ -10,7 +10,7 @@ PORTVERSION=	5.0.2.2623
 CATEGORIES?=	www
 MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/FPSE02LangFiles/ \
 		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/FPSE02LangFiles/
-PKGNAMESUFFIX?=	ar-
+PKGNAMESUFFIX?=	-ar
 DISTFILES=
 EXTRACT_ONLY=
 
