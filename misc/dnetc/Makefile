@@ -6,22 +6,18 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8007.458b
+PORTVERSION=	2.8009.460
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8007/ \
-		http://http.distributed.net/pub/dcti/v2.8007/
+MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8009/ \
+		http://http.distributed.net/pub/dcti/v2.8009/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTFILES=	dnetc458b-freebsd-x86-elf.tar.gz
-.elif ${ARCH} == "alpha"
-DISTFILES=	dnetc458-digital_unix-alpha.tar.gz
+DISTFILES=      dnetc460-freebsd-x86-elf.tar.gz
+.elif ${ARCH} == "i386"
+BROKEN=         "No longer available.  Please contact dbaker@distributed.net if you would like to build the native Alpha port"
 .endif
 
-.if ${ARCH} == "alpha"
-RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
-.endif
-
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 220000
 BROKEN=		"dnetc is not available for your version of FreeBSD.  Please upgrade."
