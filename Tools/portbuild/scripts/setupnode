@@ -11,8 +11,8 @@ if [ "x$1" = "x-nocopy" ]; then
   shift
 fi
 
-if [ $# != 6 ]; then
-  echo "usage: $0 [-nocopy] master portbuilddir branch tmpdir md5"
+if [ $# != 7 ]; then
+  echo "usage: $0 [-nocopy] master portbuilddir arch branch tmpdir md5 disconnected"
   exit 1
 fi
 
@@ -22,40 +22,40 @@ arch=$3
 branch=$4
 tmpdir=$5
 md5master=$6
-
-if [ $(echo $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}' | wc -c)) != 0 ]; then
-  /sbin/umount -f $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}')
-fi
-
-#cd ${pb}
-#fs=$(df . | sed -e '1d' | awk '{print $6}')
-
-#mount -u -w $fs
+disconnected=$7
 
 cd ${tmpdir}
 
 mkdir -p ${tmpdir}/${branch}/chroot
-
-# Clean up the tmpdir
-# XXX Should try and unmount old nfs filesystems first 
-if ! rm -rf ${tmpdir}/${branch}/chroot/* >/dev/null 2>&1; then
-  chflags -R noschg ${tmpdir}/${branch}/chroot/*
-  rm -rf ${tmpdir}/${branch}/chroot/*
-fi
-
-killall make fetch >/dev/null 2>&1
-
 mkdir -p ${tmpdir}/${branch}/tarballs
 if [ "$nocopy" = 0 ]; then
   if [ -f ${tmpdir}/${branch}/tarballs/bindist.tar ]; then
     md5=$(/sbin/md5 ${tmpdir}/${branch}/tarballs/bindist.tar | awk '{print $4}')
   fi
   if [ "${md5}" = "${md5master}" ]; then
-    echo "not copying bindist to $(hostname -s) since it is already up to date"
+    echo "not copying bindist to $(hostname) since it is already up to date"
   else
-    echo "copying bindist to $(hostname -s)"
-    cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
+    echo "copying bindist to $(hostname)"
+    if [ ${disconnected} = 0 ]; then  
+      cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
+      cp -p ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
+    fi
+  fi
+  if [ ${disconnected} = 1 ]; then
+    # Prepare all directories, they will be populated by a rsync push from the master
+    mkdir -p ${pb}/scripts ${pb}/${arch}/${branch}/ports ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/tarballs
+    # bindist is a local file, so we don't have to worry about whether nfs caches it
+    # This symlink will dangle until the rsync comes along and fills in the destination.
+    ln -sf ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
+    ln -sf ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
   fi
 fi
 
-#mount -u -r $fs
+# Clean up the tmpdir
+for i in ${tmpdir}/${branch}/chroot/*; do
+    ${pb}/scripts/clean-chroot ${arch} ${branch} ${i} 0
+    if ! rm -rf $i > /dev/null 2>&1; then
+      chflags -R noschg ${i}
+      rm -rf ${i}
+  fi
+done
