@@ -18,7 +18,8 @@ MAN1=		dictzip.1
 MAN8=		dictd.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}"
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
+		--without-local-zlib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
 
