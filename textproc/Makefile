@@ -65,6 +65,7 @@
     SUBDIR += docbook-400
     SUBDIR += docbook-410
     SUBDIR += docbook-420
+    SUBDIR += docbook-430
     SUBDIR += docbook-sk
     SUBDIR += docbook-tdg
     SUBDIR += docbook-to-man
