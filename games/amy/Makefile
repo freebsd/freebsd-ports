@@ -8,7 +8,7 @@
 PORTNAME=	amy
 PORTVERSION=	0.8.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.stethojupi.de/
+MASTER_SITES=	http://tgreiner.net/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
 EXTRACT_ONLY=	amy-${PORTVERSION}.tar.gz
 
