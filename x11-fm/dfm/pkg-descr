@@ -1,0 +1,18 @@
+DFM is a desktopmanager for X Window System. Files are shown 
+as icons and every folder has it's own window. The desktopbackground 
+is a special folder in the homedirectory.
+
+The idea is to write a filemanager like the OS/2 WPS.
+
+Here are some features:
+
+* icons may have any size and position 
+* show XVPICS as icons
+* save icon and window info
+* iconname to cutbuffer (paste to xterm, ...)
+* "Constant position" icons that cannot be moved (or arranged)
+* easy adding new programs to the desktop
+* Offix DND support
+
+
+Homepage:  http://www-c.informatik.uni-hannover.de/~kaiser/dfm/dfm.html
