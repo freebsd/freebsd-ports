@@ -1,13 +1,13 @@
 # New ports collection makefile for:	zsh
-# Version required:     	2.6 beta21
+# Version required:     	3.0 pre2
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.17 1996/05/16 08:03:47 torstenb Exp $
+# $Id: Makefile,v 1.18 1996/06/24 11:44:55 torstenb Exp $
 #
 
-DISTNAME=       zsh-2.6-beta21
-PKGNAME=	zsh-2.6b21
+DISTNAME=       zsh-3.0-pre2
+PKGNAME=	zsh-3.0a2
 CATEGORIES+=	shells
 MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOMANCOMPRESS)
-.for man in zsh zshbuiltins zshcompctl zshexpn zshmisc zshoptions \
+.for man in zsh zshbuiltins zshcompctl zshexpn zshmisc zshoptions zshall \
 	zshparam zshzle 
 	gzip -9nf ${PREFIX}/man/man1/${man}.1
 .endfor
