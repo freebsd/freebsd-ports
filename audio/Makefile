@@ -18,6 +18,7 @@
     SUBDIR += dap
     SUBDIR += esound
     SUBDIR += extace
+    SUBDIR += gdcd
     SUBDIR += gmixer
     SUBDIR += gnapster
     SUBDIR += gnomeaudio
