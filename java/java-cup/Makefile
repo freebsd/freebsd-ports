@@ -13,12 +13,12 @@ DISTNAME=	java_cup_v10g
 
 MAINTAINER=	nordwick@xcf.berkeley.edu
 
+BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+
 JAVASUBDIR=	jdk1.1.8
 JAVADIR=	${PREFIX}/${JAVASUBDIR}
 JAVALIBDIR=	${JAVADIR}/lib
-
-BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
 NO_WRKSUBDIR=	yes
 
