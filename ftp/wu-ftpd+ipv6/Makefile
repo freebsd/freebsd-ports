@@ -8,17 +8,9 @@
 # it is changed from previous versions
 
 PORTNAME=	wu-ftpd
-PORTVERSION=	2.6.1
-PORTREVISION=   10
+PORTVERSION=    2.6.2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
-DIST_SUBDIR=    wu-ftpd
-
-PATCH_SITES=    ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.1/
-# Due to error pasv-port-allow-correction.patch copied locally as patch-ak
-PATCHFILES=     ftpglob.patch \
-		missing_format_strings.patch \
-		nlst-shows-dirs.patch
 
 MAINTAINER=	ache@FreeBSD.org
 
