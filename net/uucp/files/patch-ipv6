@@ -1,0 +1,484 @@
+--- config.h.in	Mon Oct 22 20:54:46 2001
++++ config.h.in.new	Thu May 25 18:38:15 2000
+@@ -217,6 +219,9 @@
+    is on AIX.  */
+ #define HAVE_TXADDCD 0
+ 
++/* Set HAVE_SOCKADDR_SA_LEN to 1 if struct sockaddr has sa_len member.  */
++#define HAVE_SOCKADDR_SA_LEN 1
++
+ /* There are now a number of functions to check for.  For each of
+    these, the macro HAVE_FUNC should be set to 1 if your system has
+    FUNC.  For example, HAVE_VFPRINTF should be set to 1 if your system
+@@ -288,6 +293,10 @@
+ #define HAVE_STRRCHR 1
+ #define HAVE_RINDEX 1
+ 
++/* If neither of these functions exists, you should add getaddrinfo.o to
++   lib/Makefile.  */
++#define HAVE_GETADDRINFO 1
++
+ /* There are also Unix specific functions which are replaced in the
+    subdirectory unix.  If they are missing, the configure script will
+    automatically add them to unix/Makefile to force them to be
+--- uuconf.h	Sun Aug 20 21:29:44 1995
++++ uuconf.h.new	Thu May 25 18:38:15 2000
+@@ -417,6 +419,8 @@
+   /* The TCP port number to use.  May be a name or a number.  May be
+      NULL, in which case "uucp" is looked up using getservbyname.  */
+   char *uuconf_zport;
++  /* Address family to use for a TCP connection.  */
++  int uuconf_zfamily;
+   /* A NULL terminated sequence of dialer/token pairs (element 0 is a
+      dialer name, element 1 is a token, etc.)  May be NULL.  */
+   char **uuconf_pzdialer;
+--- uuconf/hport.c	Sun Aug 20 21:31:08 1995
++++ uuconf/hport.c.in	Thu May 25 18:38:21 2000
+@@ -29,6 +29,7 @@
+ const char _uuconf_hport_rcsid[] = "$Id: hport.c,v 1.14 1995/06/21 19:22:58 ian Rel $";
+ #endif
+ 
++#include <sys/socket.h>
+ #include <errno.h>
+ #include <ctype.h>
+ 
+@@ -217,6 +218,19 @@
+ 		   | UUCONF_RELIABLE_EIGHT | UUCONF_RELIABLE_FULLDUPLEX
+ 		   | UUCONF_RELIABLE_SPECIFIED);
+ 	      qport->uuconf_u.uuconf_stcp.uuconf_zport = pzsplit[1];
++
++	      /* I leave with IPv4 only for compatibility reason.  If
++                 you wish to use IPv6, please try Taylor UUCP
++                 configuration instead.  If you still wish to use IPv6
++                 with HDB configuration, re-make with INET6 defined.
++                 In this case, you cannot specify the protocol family
++                 in HDB configuration file.  */
++#ifdef INET6
++	      qport->uuconf_u.uuconf_stcp.uuconf_zfamily = PF_UNSPEC;
++#else
++	      qport->uuconf_u.uuconf_stcp.uuconf_zfamily = PF_INET;
++#endif
++
+ 	      ppzdialer = &qport->uuconf_u.uuconf_stcp.uuconf_pzdialer;
+ 	    }
+ 	  else if (ctoks >= 5
+--- unix/tcp.c	Sun Aug 20 21:30:45 1995
++++ unix/tcp.c.new	Thu May 25 18:38:21 2000
+@@ -63,7 +63,7 @@
+    interface.  */
+ 
+ /* The normal "uucp" port number.  */
+-#define IUUCP_PORT (540)
++#define IUUCP_PORT "540"
+ 
+ /* Local functions.  */
+ static void utcp_free P((struct sconnection *qconn));
+@@ -78,7 +78,9 @@
+ 			    const char *zphone,
+ 			    struct uuconf_dialer *qdialer,
+ 			    enum tdialerfound *ptdialer));
+-static int itcp_port_number P((const char *zport));
++static int itcp_getaddrinfo P((const char *zhost, const char *zport,
++			       const struct addrinfo *hints,
++			       struct addrinfo **res));
+ 
+ /* The command table for a TCP connection.  */
+ static const struct sconncmds stcpcmds =
+@@ -131,34 +133,13 @@
+ {
+   xfree (qconn->psysdep);
+ }
+-
+-/* Open a TCP connection.  If the fwait argument is TRUE, we are
+-   running as a server.  Otherwise we are just trying to reach another
+-   system.  */
+ 
+ static boolean
+-ftcp_open (qconn, ibaud, fwait)
+-     struct sconnection *qconn;
+-     long ibaud;
+-     boolean fwait;
++utcp_init (qsysdep)
++    struct ssysdep_conn *qsysdep;
+ {
+-  struct ssysdep_conn *qsysdep;
+-  struct sockaddr_in s;
+-  const char *zport;
+-  uid_t ieuid;
+-  boolean fswap;
+-
+-  ulog_device ("TCP");
+-
+-  qsysdep = (struct ssysdep_conn *) qconn->psysdep;
+-
+-  qsysdep->o = socket (AF_INET, SOCK_STREAM, 0);
+-  if (qsysdep->o < 0)
+-    {
+-      ulog (LOG_ERROR, "socket: %s", strerror (errno));
+-      return FALSE;
+-    }
+-
++  if (!qsysdep)
++    return FALSE;
+   if (fcntl (qsysdep->o, F_SETFD,
+ 	     fcntl (qsysdep->o, F_GETFD, 0) | FD_CLOEXEC) < 0)
+     {
+@@ -176,6 +157,32 @@
+       qsysdep->o = -1;
+       return FALSE;
+     }
++}
++
++/* Open a TCP connection.  If the fwait argument is TRUE, we are
++   running as a server.  Otherwise we are just trying to reach another
++   system.  */
++
++static boolean
++ftcp_open (qconn, ibaud, fwait)
++     struct sconnection *qconn;
++     long ibaud;
++     boolean fwait;
++{
++  struct ssysdep_conn *qsysdep;
++  struct addrinfo hints, *res, *res0;
++  struct sockaddr_storage s;
++  const char *zport;
++  int zfamily;
++  uid_t ieuid;
++  boolean fswap;
++  int err;
++
++  ulog_device ("TCP");
++
++  qsysdep = (struct ssysdep_conn *) qconn->psysdep;
++
++  qsysdep->o = -1;
+ 
+   /* We save our process ID in the qconn structure.  This is checked
+      in ftcp_close.  */
+@@ -190,11 +197,68 @@
+      From this point on if the server gets an error we exit; we only
+      return if we have received a connection.  It would be more robust
+      to respawn the server if it fails; someday.  */
+-  bzero ((pointer) &s, sizeof s);
+-  s.sin_family = AF_INET;
+   zport = qconn->qport->uuconf_u.uuconf_stcp.uuconf_zport;
+-  s.sin_port = itcp_port_number (zport);
+-  s.sin_addr.s_addr = htonl (INADDR_ANY);
++  zfamily = qconn->qport->uuconf_u.uuconf_stcp.uuconf_zfamily;
++  memset (&hints, 0, sizeof(hints));
++  hints.ai_family = zfamily;
++  hints.ai_socktype = SOCK_STREAM;
++  hints.ai_flags = AI_PASSIVE;
++  if ((err = itcp_getaddrinfo (NULL, zport, &hints, &res0)) != 0)
++    {
++      ulog (LOG_ERROR, "getaddrinfo (NULL, %s): %s",
++	    zport, gai_strerror (err));
++      return FALSE;
++    }
++#if HAVE_GETADDRINFO
++  if (zfamily == PF_UNSPEC)
++    {
++      for (res = res0; res; res = res->ai_next)
++	{
++	  if (res->ai_family == AF_INET6)
++	    {
++	      qsysdep->o = socket (res->ai_family, res->ai_socktype,
++				   res->ai_protocol);
++	      if (qsysdep->o >= 0)
++		break;
++	    }
++	}
++    }
++#endif
++  if (qsysdep->o < 0)
++    {
++      for (res = res0; res; res = res->ai_next)
++	{
++	  qsysdep->o = socket (res->ai_family, res->ai_socktype,
++			       res->ai_protocol);
++	  if (qsysdep->o >= 0)
++	    break;
++	}
++      if (qsysdep->o < 0)
++	{
++	  freeaddrinfo (res);
++	  ulog (LOG_ERROR, "socket: %s", strerror (errno));
++	  return FALSE;
++	}
++    }
++#ifdef IPV6_BINDV6ONLY
++  if (res->ai_family == AF_INET6)
++    {
++      int flag = (zfamily == PF_UNSPEC) ? 0 : 1;
++
++      if (setsockopt (qsysdep->o, IPPROTO_IPV6, IPV6_BINDV6ONLY,
++		      (char *)&flag, sizeof (flag)) < 0)
++	{
++	  freeaddrinfo (res);
++	  ulog (LOG_FATAL, "setsockopt: %s", strerror (errno));
++	  return FALSE;
++	}
++    }
++#endif
++  if (!utcp_init (qsysdep))
++    {
++      freeaddrinfo (res);
++      return FALSE;
++    }
+ 
+   /* Swap to our real user ID when doing the bind call.  This will
+      permit the server to use privileged TCP ports when invoked by
+@@ -208,16 +272,19 @@
+ 	{
+ 	  (void) close (qsysdep->o);
+ 	  qsysdep->o = -1;
++	  freeaddrinfo (res);
+ 	  return FALSE;
+ 	}
+     }
+ 
+-  if (bind (qsysdep->o, (struct sockaddr *) &s, sizeof s) < 0)
++  if (bind (qsysdep->o, res->ai_addr, res->ai_addrlen) < 0)
+     {
++      freeaddrinfo (res);
+       if (fswap)
+ 	(void) fsuucp_perms ((long) ieuid);
+       ulog (LOG_FATAL, "bind: %s", strerror (errno));
+     }
++  freeaddrinfo (res);
+ 
+   /* Now swap back to the uucp user ID.  */
+   if (fswap)
+@@ -333,8 +400,8 @@
+ {
+   struct ssysdep_conn *qsysdep;
+   const char *zhost;
+-  struct hostent *q;
+-  struct sockaddr_in s;
++  struct addrinfo hints, *res, *res0;
++  int err, connected = FALSE;
+   const char *zport;
+   char **pzdialer;
+ 
+@@ -354,37 +421,38 @@
+     }
+ 
+   errno = 0;
+-  q = gethostbyname ((char *) zhost);
+-  if (q != NULL)
++  zport = qconn->qport->uuconf_u.uuconf_stcp.uuconf_zport;
++  memset (&hints, 0, sizeof(hints));
++  hints.ai_family = qconn->qport->uuconf_u.uuconf_stcp.uuconf_zfamily;
++  hints.ai_socktype = SOCK_STREAM;
++  hints.ai_protocol = 0;
++  if ((err = itcp_getaddrinfo (zhost, zport, &hints, &res0)) != 0)
+     {
+-      s.sin_family = q->h_addrtype;
+-      memcpy (&s.sin_addr.s_addr, q->h_addr, (size_t) q->h_length);
++      ulog (LOG_ERROR, "getaddrinfo (%s, %s): %s",
++	    zhost, zport, gai_strerror (err));
++      return FALSE;
+     }
+-  else
+-    {
+-      if (errno != 0)
+-	{
+-	  ulog (LOG_ERROR, "gethostbyname (%s): %s", zhost, strerror (errno));
+-	  return FALSE;
+-	}
+ 
+-      s.sin_family = AF_INET;
+-      s.sin_addr.s_addr = inet_addr ((char *) zhost);
+-      if ((long) s.sin_addr.s_addr == (long) -1)
+-	{
+-	  ulog (LOG_ERROR, "%s: unknown host name", zhost);
+-	  return FALSE;
++  for (res = res0; res; res = res->ai_next)
++    {
++      qsysdep->o = socket (res->ai_family, res->ai_socktype, res->ai_protocol);
++      if (qsysdep->o < 0)
++	continue;
++      if (connect (qsysdep->o, res->ai_addr, res->ai_addrlen) >= 0)
++        {
++	  connected = TRUE;
++	  break;
+ 	}
++      close (qsysdep->o);
+     }
+-
+-  zport = qconn->qport->uuconf_u.uuconf_stcp.uuconf_zport;
+-  s.sin_port = itcp_port_number (zport);
+-
+-  if (connect (qsysdep->o, (struct sockaddr *) &s, sizeof s) < 0)
++  freeaddrinfo (res0);
++  if (!connected)
+     {
+       ulog (LOG_ERROR, "connect: %s", strerror (errno));
+       return FALSE;
+     }
++  if (!utcp_init (qsysdep))
++    return FALSE;
+ 
+   /* Handle the dialer sequence, if any.  */
+   pzdialer = qconn->qport->uuconf_u.uuconf_stcp.uuconf_pzdialer;
+@@ -398,47 +466,18 @@
+   return TRUE;
+ }
+ 
+-/* Get the port number given a name.  The argument will almost always
+-   be "uucp" so we cache that value.  The return value is always in
+-   network byte order.  This returns -1 on error.  */
+-
+ static int
+-itcp_port_number (zname)
+-     const char *zname;
++itcp_getaddrinfo (zhost, zport, hints, res)
++     const char *zhost, *zport;
++     const struct addrinfo *hints;
++     struct addrinfo **res;
+ {
+-  boolean fuucp;
+-  static int iuucp;
+-  int i;
+-  char *zend;
+-  struct servent *q;
+-
+-  fuucp = strcmp (zname, "uucp") == 0;
+-  if (fuucp && iuucp != 0)
+-    return iuucp;
+-
+-  /* Try it as a number first.  */
+-  i = strtol ((char *) zname, &zend, 10);
+-  if (i != 0 && *zend == '\0')
+-    return htons (i);
+-
+-  q = getservbyname ((char *) zname, (char *) "tcp");
+-  if (q == NULL)
+-    {
+-      /* We know that the "uucp" service should be 540, even if isn't
+-	 in /etc/services.  */
+-      if (fuucp)
+-	{
+-	  iuucp = htons (IUUCP_PORT);
+-	  return iuucp;
+-	}
+-      ulog (LOG_ERROR, "getservbyname (%s): %s", zname, strerror (errno));
+-      return -1;
+-    }
+-
+-  if (fuucp)
+-    iuucp = q->s_port;
++  int err;
+ 
+-  return q->s_port;
++  if ((err = getaddrinfo (zhost, zport, hints, res)) != EAI_SERVICE ||
++      strcmp(zport, "uucp") != 0)
++    return err;
++  return getaddrinfo (zhost, IUUCP_PORT, hints, res);
+ }
+ 
+ #endif /* HAVE_TCP */
+--- uuconf/tportc.c	Sun Aug 20 21:31:23 1995
++++ uuconf/tportc.c.new	Thu May 25 18:38:22 2000
+@@ -29,6 +29,7 @@
+ const char _uuconf_tportc_rcsid[] = "$Id: tportc.c,v 1.14 1995/06/21 19:24:52 ian Rel $";
+ #endif
+ 
++#include <sys/socket.h>
+ #include <errno.h>
+ 
+ static int ipproto_param P((pointer pglobal, int argc, char **argv,
+@@ -37,6 +38,8 @@
+ 			   pointer pvar, pointer pinfo));
+ static int ipdialer P((pointer pglobal, int argc, char **argv, pointer pvar,
+ 		       pointer pinfo));
++static int ipfamily P((pointer pglobal, int argc, char **argv, pointer pvar,
++		       pointer pinfo));
+ static int ipcunknown P((pointer pglobal, int argc, char **argv,
+ 			 pointer pvar, pointer pinfo));
+ 
+@@ -151,6 +154,9 @@
+   { "service", UUCONF_CMDTABTYPE_STRING,
+       offsetof (struct uuconf_port, uuconf_u.uuconf_stcp.uuconf_zport),
+       NULL },
++  { "family", UUCONF_CMDTABTYPE_FN | 0,
++      offsetof (struct uuconf_port, uuconf_u.uuconf_stcp.uuconf_zfamily),
++      ipfamily },
+   { "dialer-sequence", UUCONF_CMDTABTYPE_FULLSTRING,
+       offsetof (struct uuconf_port, uuconf_u.uuconf_stcp.uuconf_pzdialer),
+       NULL },
+@@ -279,6 +285,7 @@
+ 	  break;
+ 	case UUCONF_PORTTYPE_TCP:
+ 	  qport->uuconf_u.uuconf_stcp.uuconf_zport = (char *) "uucp";
++	  qport->uuconf_u.uuconf_stcp.uuconf_zfamily = PF_UNSPEC;
+ 	  qport->uuconf_u.uuconf_stcp.uuconf_pzdialer = NULL;
+ 	  qport->uuconf_ireliable = (UUCONF_RELIABLE_SPECIFIED
+ 				     | UUCONF_RELIABLE_ENDTOEND
+@@ -488,6 +495,35 @@
+ 	iret |= UUCONF_CMDTABRET_EXIT;
+       return iret;
+     }
++}
++
++/* Handle a "family" commands.  The first argument is "inet" for
++   PF_INET or "inet6" for PF_INET6 */
++
++/*ARGSUSED*/
++static int
++ipfamily (pglobal, argc, argv, pvar, pinfo)
++     pointer pglobal;
++     int argc;
++     char **argv;
++     pointer pvar;
++     pointer pinfo;
++{
++  int *pzfamily = (int *) pvar;
++
++  if (argc < 2)
++    return UUCONF_SYNTAX_ERROR | UUCONF_CMDTABRET_EXIT;
++  if (!strcmp(argv[1], "inet"))
++    *pzfamily = PF_INET;
++#if HAVE_GETADDRINFO
++  else if (!strcmp(argv[1], "inet6"))
++    *pzfamily = PF_INET6;
++#endif
++  else if (!strcmp(argv[1], "inet46"))
++    *pzfamily = PF_UNSPEC;
++  else
++    return UUCONF_SYNTAX_ERROR | UUCONF_CMDTABRET_EXIT;
++  return UUCONF_CMDTABRET_KEEP;
+ }
+ 
+ /* Give an error for an unknown port command.  */
+--- uuconf/vsinfo.c	Sun Aug 20 21:31:29 1995
++++ uuconf/vsinfo.c.new	Thu May 25 18:38:22 2000
+@@ -29,6 +29,7 @@
+ const char _uuconf_vsinfo_rcsid[] = "$Id: vsinfo.c,v 1.14 1995/06/21 19:25:24 ian Rel $";
+ #endif
+ 
++#include <sys/socket.h>
+ #include <errno.h>
+ #include <ctype.h>
+ 
+@@ -271,6 +272,19 @@
+ 	  else
+ 	    qset->uuconf_qport->uuconf_u.uuconf_stcp.uuconf_zport
+ 	      = pzsplit[3];
++
++	  /* I leave with IPv4 only for compatibility reason.  If you
++	     wish to use IPv6, please try Taylor UUCP configuration
++	     instead.  If you still wish to use IPv6 with V2
++	     configuration, re-make with INET6 defined.  In this case,
++	     you cannot specify the protocol family in V2
++	     configuration file.  */
++#ifdef INET6
++	  qset->uuconf_qport->uuconf_u.uuconf_stcp.uuconf_zfamily = PF_UNSPEC;
++#else
++	  qset->uuconf_qport->uuconf_u.uuconf_stcp.uuconf_zfamily = PF_INET;
++#endif
++
+ 	  qset->uuconf_qport->uuconf_u.uuconf_stcp.uuconf_pzdialer = NULL;
+ 	}
+ 
