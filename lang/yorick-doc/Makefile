@@ -7,6 +7,7 @@
 
 PORTNAME=	yorick-doc
 PORTVERSION=	1.5.07
+PORTREVISION=	1
 CATEGORIES=	lang math
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
 		ftp://wuarchive.wustl.edu/languages/yorick/
