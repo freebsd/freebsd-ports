@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- glade/glade-gnomedb.c.orig	Tue Feb 13 03:37:54 2001
-+++ glade/glade-gnomedb.c	Mon Aug  6 12:02:09 2001
++++ glade/glade-gnomedb.c	Tue Aug 14 11:07:27 2001
 @@ -44,7 +44,7 @@
  {
  	GtkWidget *wid;
@@ -27,6 +27,15 @@ $FreeBSD$
         
 -	wid = gnome_db_error_new (NULL);
 +	wid = gnome_db_error_new ();
+      
+ 	return (wid);
+ }
+@@ -160,7 +160,7 @@
+ {
+ 	GtkWidget *wid;
+        
+-	wid = gnome_db_errordlg_new (NULL, NULL);
++	wid = gnome_db_error_dialog_new (NULL);
       
  	return (wid);
  }
