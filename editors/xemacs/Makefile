@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.4 1997/11/18 20:41:44 gj Exp $
+# $Id: Makefile,v 1.5 1997/12/15 20:07:20 gj Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -16,8 +16,8 @@ MASTER_SITES=	\
 		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
 		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/ \
 		ftp://SunSITE.sut.ac.jp/pub/archives/xemacs/${DISTNAME}/ \
-		ftp://ftp.gw.com/mirrors/pub/unix/xemacs/${DISTNAME}/ \
-
+		ftp://ftp.gw.com/mirrors/pub/unix/xemacs/${DISTNAME}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
 
 MAINTAINER=	me@FreeBSD.org
 
@@ -45,6 +45,7 @@ pre-configure:
 
 .if defined(USE_MULE)
 WITH_MULE=	--with-mule
+MULEDISTFILE=	${DISTNAME}-mule.tar.gz
 .endif
 
 # hack to avoid shipping binaries linked with Motif
