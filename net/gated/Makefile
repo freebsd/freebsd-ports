@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1996/11/18 14:08:13 asami Exp $
+# $Id: Makefile,v 1.12 1996/12/29 05:44:46 peter Exp $
 #
 
 DISTNAME=       gated-R3_5Beta_3
@@ -11,7 +11,7 @@ PKGNAME=        gated-3.5b3
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
 
-MAINTAINER=	peter
+MAINTAINER=	peter@FreeBSD.ORG
 
 ALL_TARGET=	gated
 MAN8=		gated.8 ripquery.8 ospf_monitor.8 gdc.8
