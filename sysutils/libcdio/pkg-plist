@@ -25,14 +25,13 @@ include/cdio/util.h
 include/cdio/version.h
 include/cdio/xa.h
 lib/libcdio.a
-lib/libcdio.la
 lib/libcdio.so
 lib/libcdio.so.4
 lib/libiso9660.a
-lib/libiso9660.la
 lib/libiso9660.so
 lib/libiso9660.so.3
 libdata/pkgconfig/libcdio.pc
+libdata/pkgconfig/libcdio_cdda.pc
 libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libiso9660.pc
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

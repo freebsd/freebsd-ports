@@ -6,6 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -16,7 +17,7 @@ COMMENT=	Compact Disc Input and Control Library
 LIB_DEPENDS=	cddb.1:${PORTSDIR}/audio/libcddb \
 		popt.0:${PORTSDIR}/devel/popt
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes
