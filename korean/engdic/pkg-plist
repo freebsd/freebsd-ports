@@ -1,4 +1,5 @@
 bin/engdic
+bin/edic
 share/engdic/a.dic.gz
 share/engdic/b.dic.gz
 share/engdic/c.dic.gz
