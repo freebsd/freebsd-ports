@@ -18,10 +18,19 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 WRKSRC=	${WRKDIR}/sms
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS= # empty
 MAKE_ARGS=	CXX="${CXX}"
 .if defined(NOPORTDOCS)
 MAKE_ARGS+=	NOPORTDOCS=1
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/etc/smsrc,${PREFIX}/etc/smsrc,' \
+		${WRKSRC}/sms.h \
+		${WRKSRC}/README.smsrc
+	@${REINPLACE_CMD} -e 's,bash,sh,' \
+		${WRKSRC}/contrib/sms-conf
 
 post-install:
 	     ${STRIP_CMD} ${PREFIX}/bin/sms
