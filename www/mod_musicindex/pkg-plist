@@ -1,3 +1,11 @@
-%%MOD_DIR%%/mod_musicindex.so
+%%APACHEMODDIR%%/mod_musicindex.so
 @exec %D/sbin/apxs -e -A -n musicindex %D/%F
 @unexec %D/sbin/apxs -e -A -n musicindex %D/%F
+www/musicindex/directory.png
+www/musicindex/fetch.png
+www/musicindex/general.png
+www/musicindex/musicindex.css
+www/musicindex/right_arrow.gif
+www/musicindex/sound.png
+@dirrm www/musicindex
+
