@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	getxml
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://toutdoux.sourceforge.net/pub/toutdoux/
 
