@@ -13,7 +13,8 @@ MASTER_SITES=	http://savannah.gnu.org/download/linphone/${PORTVERSION}/sources/
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	osip.0:${PORTSDIR}/net/libosip \
-		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
+		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
