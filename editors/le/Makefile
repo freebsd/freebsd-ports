@@ -1,27 +1,26 @@
 # New ports collection makefile for:	le
-# Version required:			1.4.2
+# Version required:			1.5.1
 # Date created:				16 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/25 11:56:15 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/30 16:00:13 steve Exp $
 #
 
-DISTNAME=	le-1.4.2
-CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
+DISTNAME=		le-1.5.1
+CATEGORIES=		editors
+MASTER_SITES=		${MASTER_SITE_SUNSITE} \
+			ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
+MASTER_SITE_SUBDIR=	apps/editors/terminal
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=		andy@icc.surw.chel.su
 
-GNU_CONFIGURE=	yes
-MAN1=		le.1
+GNU_CONFIGURE=		yes
+MAN1=			le.1
 
 post-install:
-.for file in colors1 colors2 colors3
-	@ ${INSTALL_DATA} ${WRKSRC}/misc/${file} ${PREFIX}/share/le
-.endfor
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/le
-.for file in FEATURES HISTORY NEWS README
+.for file in COPYING FEATURES HISTORY NEWS README TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/le
 .endfor
 .endif
