@@ -8101,6 +8101,7 @@ www6to4		ports/www/www6to4
 wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
 wwwstat		ports/www/wwwstat
+wxGlade		ports/devel/wxGlade
 wxbasic		ports/lang/wxbasic
 wxgtk		ports/x11-toolkits/wxgtk
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
