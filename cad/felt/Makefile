@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	felt
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://symphony.clarku.edu/atkinson/felt/Binaries/ \
 		ftp://ftp.isd.uni-stuttgart.de/pub/src/FEM/FElt/
 MASTER_SITE_SUBDIR=	felt
-EXTRACT_SUFX=	.src.tar.gz
+EXTRACT_SUFX=	-devel.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for Finite Element Analysis
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
+USE_X_PREFIX=	yes
+USE_MESA=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
@@ -34,8 +35,8 @@ post-patch:
 	${WRKSRC}/lib/Widgets/xwd.c ${WRKSRC}/lib/Matrix/data.c	\
 	${WRKSRC}/lib/Matrix/factor.c ${WRKSRC}/lib/Matrix/eigen.c \
 	${WRKSRC}/lib/Matrix/c_data.c ${WRKSRC}/lib/Matrix/c_factor.c \
-	${WRKSRC}/include/allocate.h ${WRKSRC}/src/Velvet/error.c \
-	${WRKSRC}/src/Burlap/allocate.h ${WRKSRC}/src/Burlap/interactive.c \
+	${WRKSRC}/src/Velvet/error.c \
+	${WRKSRC}/src/Burlap/interactive.c \
 	${WRKSRC}/src/Burlap/parser.c \
 	${WRKSRC}/src/Corduroy/parser.c	\
 	${WRKSRC}/src/Patchwork/util.c
