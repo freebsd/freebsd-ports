@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20021001
+PORTVERSION=	20021201
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.post.yusei.go.jp/newnumber/lzh/s/
 DISTNAME=	ken_all
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
