@@ -174,6 +174,7 @@
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg
+    SUBDIR += msend
     SUBDIR += msn-transport
     SUBDIR += mtr
     SUBDIR += mudix
