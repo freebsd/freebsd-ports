@@ -1,0 +1,13 @@
+GCC 2.8.0 is the latest release of the GNU compiler suite.
+It is a port for now, until its stableness is proven.
+
+C++ support, and in particular template support, is vastly improved over
+gcc-2.7.  G++ 2.8.0 also compiles SGI's offical reference implimentation
+of the STL.
+
+Beware: This port installs new versions of "gcc", "g++", and so forth
+into the "${PREFIX}/bin" directory.  Mind your PATHs if you don't want
+to use this compiler by default.  However, "cc" and "c++" will not 
+be hidden by this port.
+
+-- David O'Brien <obrien@NUXI.com>
