@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lifelines
-PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTVERSION=	3.0.37.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +15,19 @@ MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
+
+MAN1=		btedit.1 dbverify.1 llines.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+.for file in btedit.1 dbverify.1 llines.1
+	${INSTALL_MAN} ${WRKSRC}/docs/${file} ${MANPREFIX}/man/man1
+.endfor
+.endif
 
 .include <bsd.port.mk>
