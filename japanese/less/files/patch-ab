@@ -4,7 +4,7 @@
  AC_CHECK_LIB(gen, regcmp)
  AC_CHECK_LIB(intl, regcmp)
  AC_CHECK_LIB(PW, regcmp)
-+AC_CHECK_LIB(xpg4, _xpg4_setrunelocale, [LIBS="$LIBS -lxpg4"],,)
++AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
  dnl Checks for terminal libraries
  
  AC_MSG_CHECKING(for working terminal libraries)
