@@ -1,31 +1,30 @@
---- makefile--	Thu Mar  1 12:44:27 2001
-+++ makefile	Thu Mar  1 12:46:38 2001
-@@ -33,15 +33,15 @@
+--- makefile--	Mon May 14 06:41:27 2001
++++ makefile	Mon Sep  3 15:37:38 2001
+@@ -32,21 +32,22 @@
+ # - Added a commented-out block showing settings for Debian/GNU Linux with
  #   package installed AOLserver and PostgreSQL
  
+-INSTALL=/home/nsadmin
++INSTALL=${NSHOME}
+ 
  # Location of the PostgreSQL libraries
--#PGLIB=/usr/local/pgsql/lib
-+PGLIB=/usr/local/pgsql/lib
+-PGLIB=/usr/local/pgsql/lib
++PGLIB=${PREFIX}/lib
  
  # Location of the PostgreSQL includes
--#PGINC=/usr/local/pgsql/include
-+PGINC=/usr/local/pgsql/include
+-PGINC=/usr/local/pgsql/include
++PGINC=${PREFIX}/include/pgsql
  
  # Location of the AOLserver files (normally the ~nsadmin directory):
  #NSHOME=/opt/aolserver
  # Alternate location for AOLserver
--#NSHOME=/usr/local/AOLserver
-+NSHOME=/usr/local/aolserver
+-NSHOME=/home/aolserver/aolserver3_0
++NSHOME=${PREFIX}/aolserver
  
  CC=gcc
- COPTS=-Wall -fpic -shared -I/usr/local/pgsql/include -I/home/nsadmin/include -I-/usr/include
-@@ -82,8 +82,8 @@
- # FreeBSD 3
- # The make install target isn't what you want---just copy postgres.so to
- # /usr/local/libexec/aolserver
--#COPTS=-g -Wall -fpic -pthread -D_THREAD_SAFE -I/usr/local/include/aolserver -I/usr/local/pgsql/include
--#LDFLAGS=-pthread -Wl,-E
-+COPTS=-g -Wall -fpic -pthread -D_THREAD_SAFE -I${NSHOME}/include -I${PGINC}
+-COPTS=-Wall -fpic -shared -I/usr/local/pgsql/include -I/home/aolserver/include -I-/usr/include
++COPTS=-Wall -fpic -shared -I${PGINC} -I${NSNOME}/include -I-/usr/include
 +LDFLAGS=-pthread -Wl,-E
  
- # You should not need to edit anything below this line.
+ # Debian Linux with deb AOLserver & PostgreSQL
+ #CC=gcc
