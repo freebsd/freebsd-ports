@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.42.org/pub/wmx/contrib/
 DISTFILES=	xnodecor.c
 
-MAINTAINER=	katsura@cc.okayama-u.ac.jp
+MAINTAINER=	katsura@cc.osaka-kyoiku.ac.jp
 COMMENT=	Utility to set override_redirect in XWindowAttributes to True
 
 NO_WRKSUBDIR=	yes
