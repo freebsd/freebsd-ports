@@ -26,6 +26,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/imaputil.py
 %%PYTHON_SITELIBDIR%%/offlineimap/imaputil.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/imaputil.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/init.py
+%%PYTHON_SITELIBDIR%%/offlineimap/init.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/init.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/localeval.py
 %%PYTHON_SITELIBDIR%%/offlineimap/localeval.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/localeval.pyo
@@ -47,6 +50,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/__init__.py
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/__init__.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/__init__.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/syncmaster.py
+%%PYTHON_SITELIBDIR%%/offlineimap/syncmaster.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/syncmaster.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.py
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyo
@@ -71,8 +77,13 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/version.py
 %%PYTHON_SITELIBDIR%%/offlineimap/version.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/version.pyo
+%%PORTDOCS%%share/doc/offlineimap/manual.html
+%%PORTDOCS%%share/doc/offlineimap/manual.pdf
+%%PORTDOCS%%share/doc/offlineimap/manual.ps
+%%PORTDOCS%%share/doc/offlineimap/manual.txt
 share/examples/offlineimap/offlineimap.conf
 @dirrm share/examples/offlineimap
+%%PORTDOCS%%@dirrm share/doc/offlineimap
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap/ui
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap/repository
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap/folder
