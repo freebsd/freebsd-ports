@@ -1,0 +1,16 @@
+--- gRuler.desktop.in.orig	Tue Nov 23 02:50:31 2004
++++ gRuler.desktop.in	Tue Nov 23 02:52:00 2004
+@@ -1,10 +1,8 @@
+-
+ [Desktop Entry]
+-Name=gRuler Version 0.1
+-Comment=gRuler Version 0.1
++Name=Screen Ruler
++Comment=gRuler 0.1 measures screen distances
+ Exec=gruler
+-Icon=@PACKAGE_PIXMAPS_DIR@/ 
++TryExec=gruler
+ Terminal=false
+-MultipleArgs=false
+ Type=Application
+ 

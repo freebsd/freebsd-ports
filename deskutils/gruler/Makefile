@@ -7,6 +7,7 @@
 
 PORTNAME=	gruler
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 DISTNAME=${PORTNAME:S/gr/gR/}-${PORTVERSION}
