@@ -14,3 +14,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor/Cursor.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SQLRelay

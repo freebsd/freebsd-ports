@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
@@ -23,11 +23,15 @@ USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-perl-prefix="/usr"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		${SQLRELAY_CONFIGURE_ENV}
+
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		DBD::SQLRelay.3 SQLRelay::Connection.3 SQLRelay::Cursor.3
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
@@ -35,6 +39,10 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
 	${RM} -rf ${WRKSRC}/src/api/perl/CVS
+
+post-patch:
+	${REINPLACE_CMD} -e 's/installman3dir/siteman3dir/g' \
+		${WRKSRC}/src/api/perl/*/Makefile
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \
