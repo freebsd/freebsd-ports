@@ -50,6 +50,10 @@ PLIST_SUB+=	WITH_ALTQ="@comment "
 IGNORE=		"Only for 5.0 and above"
 .endif
 
+.if ${OSVERSION} >= 501114
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-pf::pf.c
+.endif
+
 .if !exists(${SRC_BASE}/sys/Makefile) && \
     (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile))
 IGNORE=		"Kernel source files required"
