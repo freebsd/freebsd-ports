@@ -8592,6 +8592,7 @@ snobol		ports/lang/snobol
 snooper		ports/comms/snooper
 snort		ports/security/snort
 snort-rep	ports/security/snort-rep
+snortreport	ports/security/snortreport
 snortsnarf	ports/security/snortsnarf
 snowflake	ports/misc/snowflake
 snownews	ports/www/snownews
