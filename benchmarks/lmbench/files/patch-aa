@@ -1,5 +1,23 @@
---- src/Makefile.orig	Wed May 28 01:21:10 1997
-+++ src/Makefile	Wed May 28 01:19:40 1997
+--- src/Makefile.orig	Sat Nov 11 18:42:41 1995
++++ src/Makefile	Thu Apr  4 05:19:26 2002
+@@ -27,7 +27,7 @@
+ # I finally know why Larry Wall's Makefile says "Grrrr".
+ SHELL=/bin/sh
+ 
+-CC = gcc
++CC ?= gcc
+ O= ../bin/unknown
+ OS=`../scripts/os`
+ BINDIR=../bin/$(OS)
+@@ -37,7 +37,7 @@
+ 	lmbench/Results/osf1/alpha lmbench/Results/solaris/ss20* 
+ 
+ SYS5=
+-CFLAGS = -O $(SYS5)
++CFLAGS += $(SYS5)
+ 
+ COMPILE=$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+ 
 @@ -93,7 +93,7 @@
  	$(MAKE) O=$O CC=cc CFLAGS="$(CFLAGS)" all
  
