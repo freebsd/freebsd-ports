@@ -1,5 +1,5 @@
---- src/s/freebsd.h.orig	Sun Jun  9 15:14:32 1996
-+++ src/s/freebsd.h	Fri Apr  9 18:17:41 1999
+--- src/s/freebsd.h.orig	Mon Jun 10 05:14:32 1996
++++ src/s/freebsd.h	Tue Jul 11 16:44:14 2000
 @@ -1,5 +1,15 @@
  /* s/ file for freebsd system.  */
  
@@ -16,15 +16,18 @@
  /* '__FreeBSD__' is defined by the preprocessor on FreeBSD-1.1 and up.
     Earlier versions do not have shared libraries, so inhibit them.
     You can inhibit them on newer systems if you wish
-@@ -34,7 +44,6 @@
+@@ -33,8 +43,9 @@
+ 
  #define LIBS_DEBUG
  #define LIBS_SYSTEM -lutil
++#if __FreeBSD_version < 400000
  #define LIBS_TERMCAP -ltermcap
 -#define LIB_GCC -lgcc
++#endif
  
  #define SYSV_SYSTEM_DIR
  
-@@ -42,12 +51,33 @@
+@@ -42,12 +53,33 @@
  #undef BSD_PGRPS
  #define GETPGRP_NO_ARG
  
@@ -59,7 +62,7 @@
  
  #ifndef N_TRELOFF
  #define N_PAGSIZ(x) __LDPGSZ
-@@ -63,6 +93,8 @@
+@@ -63,6 +95,8 @@
  #endif /* __FreeBSD__ */
  #endif /* NO_SHARED_LIBS */
  
@@ -68,7 +71,7 @@
  #define HAVE_WAIT_HEADER
  #define HAVE_GETLOADAVG
  /*#define HAVE_GETPAGESIZE  /* configure now puts this in config.h */
-@@ -80,6 +112,8 @@
+@@ -80,6 +114,8 @@
  #define BSD 199103
  #elif __FreeBSD__ == 2
  #define BSD 199306
