@@ -146,6 +146,9 @@
 # WITH_CDPARANOIA
 # default: autodetect
 #
+# WITH_LIBCACA
+# default: autodetect
+#
 # WITH_LIBDV
 # default: autodetect
 #
@@ -163,7 +166,7 @@
 #
 # WITH_TREMOR
 # default: autodetect
-# By setting this option mplayer will use libtremor (integer only vorbis 
+# By setting this option mplayer will use libtremor (integer only vorbis
 # decoding lib) instead of libvorbis even if libvorbis is installed.
 # Note: This is disabled at the moment due to unresolved build problems
 #
@@ -228,7 +231,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -268,7 +271,6 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-libfame \
 		--disable-external-faad \
 		--disable-tv-v4l \
-		--disable-caca \
 		--disable-tremor
 
 .if defined(WITH_LANG)
@@ -314,6 +316,10 @@ WITH_ARTS=	yes
 
 .if exists(${LOCALBASE}/lib/libcdda_paranoia.so)
 WITH_CDPARANOIA=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libcaca.a)
+WITH_LIBCACA=		yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libdv.so.4)
@@ -478,6 +484,12 @@ LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
+.if defined(WITH_LIBCACA)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
+.else
+CONFIGURE_ARGS+=	--disable-caca
+.endif
+
 .if defined(WITH_LIBUNGIF)
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 #CONFIGURE_ARGS+=	--enable-gif
@@ -504,7 +516,6 @@ CONFIGURE_ARGS+=	--disable-mad
 
 .if defined(WITH_MATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
-
 CONFIGURE_ARGS+=	--enable-external-matroska
 .else
 CONFIGURE_ARGS+=	--disable-external-matroska
