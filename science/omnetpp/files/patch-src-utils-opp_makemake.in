@@ -1,0 +1,11 @@
+--- src/utils/opp_makemake.in	Sun Jan 23 22:29:17 2005
++++ src/utils/opp_makemake.in	Sun Jan 23 22:29:44 2005
+@@ -94,7 +94,7 @@
+ 
+         -u | --userinterface)
+         shift
+-        userif=`echo $1 | tr [a-z] [A-Z]`
++        userif=`echo $1 | tr '[[:lower:]]' '[[:upper:]]'`
+         case "$userif" in
+             CMDENV | TKENV)
+             ;;

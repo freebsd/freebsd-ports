@@ -7,6 +7,7 @@
 
 PORTNAME=	omnetpp
 PORTVERSION=	2.3p1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -32,9 +33,10 @@ LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT} \
 COMPONENTS=	libs progs
 
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+
+LIB_FILES=	cmdenv envir nedxml sim_std tkenv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGUREUSER=	${WRKSRC}/configure.user
@@ -51,12 +53,14 @@ pre-configure:
 .endif
 	@${ECHO} "OMNETPP_ROOT=${PREFIX}" >> ${CONFIGUREUSER}
 	@${ECHO} "OMNETPP_GNED_DIR=${DATADIR}/gned" >> ${CONFIGUREUSER}
+	@${ECHO} "OMNETPP_PLOVE_DIR=${DATADIR}/plove" >> ${CONFIGUREUSER}
 	@${ECHO} "OMNETPP_TKENV_DIR=${DATADIR}/tkenv" >> ${CONFIGUREUSER}
 	@${ECHO} "OMNETPP_BITMAP_PATH=${DATADIR}/bitmaps" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_CFLAGS=\"-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4\"" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_LIBS=\"-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11 -ltcl84 -ltk84\"" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_CFLAGS=\"-I${X11BASE}/include -I${LOCALBASE}/include/${TCL_VERSION} -I${LOCALBASE}/include/${TK_VERSION}\"" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_LIBS=\"-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11 -l${TCL_NODOT} -l${TK_NODOT}\"" >> ${CONFIGUREUSER}
 	@${ECHO} "EXPAT_CFLAGS=\"-I${LOCALBASE}/include\"" >> ${CONFIGUREUSER}
 	@${ECHO} "EXPAT_LIBS=\"-L${LOCALBASE}/lib -lexpat\"" >> ${CONFIGUREUSER}
+	@${ECHO} "WISH=wish${TK_VERSION}" | ${SED} 's,tk,,' >> ${CONFIGUREUSER}
 
 post-configure:
 .if defined(COMPONENTS)
@@ -67,13 +71,13 @@ post-configure:
 do-install:
 	@${REINPLACE_CMD} -e 's,${WRKSRC}/include,${PREFIX}/include/${PORTNAME},' \
 		${WRKSRC}/bin/opp_makemake
-	@${REINPLACE_CMD} -e 's,${WRKSRC}/lib,${PREFIX}/lib/${PORTNAME},' \
+	@${REINPLACE_CMD} -e 's,${WRKSRC}/lib,${PREFIX}/lib,' \
 		${WRKSRC}/bin/opp_makemake
 	@${REINPLACE_CMD} -e 's,${WRKSRC}/doc,${DOCSDIR},' \
 		${WRKSRC}/bin/opp_makemake
 	@${REINPLACE_CMD} -e 's,${WRKSRC}/src,${DATADIR},' \
 		${WRKSRC}/bin/plove
-	@${MKDIR} ${PREFIX}/include/${PORTNAME} ${PREFIX}/lib/${PORTNAME} \
+	@${MKDIR} ${PREFIX}/include/${PORTNAME} \
   		${DATADIR}/bitmaps ${DATADIR}/gned ${DATADIR}/plove ${DATADIR}/tkenv
 	@${RM} ${WRKSRC}/bin/opp_makemake.bak
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/gned ${PREFIX}/bin
@@ -84,8 +88,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/plove ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/splitvec ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/bin/neddoc.xsl ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/lib/*.${PORTVERSION} ${PREFIX}/lib/${PORTNAME}
-	@${LS} ${PREFIX}/lib/${PORTNAME} | ${SED} s/.${PORTVERSION}// | ${XARGS} -I% ${LN} -s %.${PORTVERSION} ${PREFIX}/lib/${PORTNAME}/%
+.for file in ${LIB_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/lib/*.${PORTVERSION} ${PREFIX}/lib
+	@${LS} ${PREFIX}/lib/lib${file}.so.${PORTVERSION} | ${SED} s/.${PORTVERSION}// | ${XARGS} -I% ${LN} -s %.${PORTVERSION} %
+.endfor
 	@${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${DATADIR}/bitmaps
 	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/include/doxy.cfg ${PREFIX}/include/${PORTNAME}

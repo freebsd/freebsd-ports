@@ -1,0 +1,76 @@
+--- src/plove/Makefile.in.bak	Mon Jan 24 02:21:32 2005
++++ src/plove/Makefile.in	Mon Jan 24 02:24:52 2005
+@@ -39,7 +39,12 @@
+ 	@echo '' # NOP to prevent automatic rules from firing
+ 
+ plove-sh:
+-	echo "$(WISH) -f $(OMNETPP_PLOVE_DIR)/plove.sh "'$$*' > plove
++	echo "#!/bin/sh" > plove
++	echo "if [ -z \`which gnuplot\` ]; then" >> plove
++	echo "  echo \"You have to install math/gnuplot in order to use plove.\"" >> plove
++	echo "else" >> plove
++	echo "  $(WISH) -f $(OMNETPP_PLOVE_DIR)/plove.sh "'$$*' >> plove
++	echo "fi" >> plove
+ 	chmod +x plove
+ 
+ plove-cyg:
+--- src/plove/config.tcl	Sat Jan 11 12:07:54 2003
++++ src/plove/config.tcl	Wed Dec 15 15:57:23 2004
+@@ -128,7 +128,7 @@
+             -text "my gnuplot prefers filenames with fwd slashes"
+     }
+     label-entry .ize.f.f1.awk     "awk:" $config(awk)
+-    label-entry .ize.f.f1.mknod   "mknod:" $config(mknod)
++    label-entry .ize.f.f1.mkfifo  "mkfifo:" $config(mkfifo)
+     label-entry .ize.f.f1.sh      "sh:" $config(sh)
+     label-entry .ize.f.f1.tmp     "tmp:" $config(tmp)
+ 
+@@ -140,7 +140,7 @@
+         pack .ize.f.f1.slash   -expand 0 -fill x -side top
+     }
+     pack .ize.f.f1.awk     -expand 0 -fill x -side top
+-    pack .ize.f.f1.mknod   -expand 0 -fill x -side top
++    pack .ize.f.f1.mkfifo  -expand 0 -fill x -side top
+     pack .ize.f.f1.sh      -expand 0 -fill x -side top
+     pack .ize.f.f1.tmp     -expand 0 -fill x -side top
+ 
+@@ -155,7 +155,7 @@
+             set config(gp-slash) $tmp(gp-slash)
+         }
+         set config(awk)     [.ize.f.f1.awk.e get]
+-        set config(mknod)   [.ize.f.f1.mknod.e get]
++        set config(mkfifo)  [.ize.f.f1.mkfifo.e get]
+         set config(sh)      [.ize.f.f1.sh.e get]
+         set config(tmp)     [.ize.f.f1.tmp.e get]
+     }
+--- src/plove/doplot.tcl	Sat Jan 11 12:07:54 2003
++++ src/plove/doplot.tcl	Wed Dec 15 15:57:57 2004
+@@ -335,7 +335,7 @@
+                -message "Cannot create named pipe $pipe, file name already exists!"
+         }
+     } else {
+-        if [catch {exec $config(mknod) $pipe p} errmsg] {
++        if [catch {exec $config(mkfifo) $pipe} errmsg] {
+             tk_messageBox -icon warning -type ok -title Warning \
+                -message "Cannot create named pipe $pipe: $errmsg"
+         }
+@@ -511,7 +511,7 @@
+     # pipes
+     set pipecmd ""
+     foreach id $idlist {
+-        append pipecmd "rm -f $pipebasefname-$id; mknod $pipebasefname-$id p\n"
++        append pipecmd "rm -f $pipebasefname-$id; mkfifo $pipebasefname-$id\n"
+     }
+ 
+     # grep and filter commands
+--- src/plove/main.tcl	Sun Jan 19 10:17:00 2003
++++ src/plove/main.tcl	Wed Dec 15 15:58:12 2004
+@@ -45,7 +45,7 @@
+ set config(zcat)       "zcat"
+ set config(gnuplot)    "gnuplot"
+ set config(awk)        "awk"
+-set config(mknod)      "mknod"
++set config(mkfifo)     "mkfifo"
+ set config(sh)         "sh"
+ set config(gp-slash)   "1"   ;# use slash (not backslash) in filenames in gnuplot scripts (WIN32)
+ 
