@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+PORTNAME=	xforms
+PORTVERSION= 	0.88.1
+CATEGORIES=	graphics x11-toolkits
+EXTRACT_SUFX=	.tgz
+
 USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
@@ -23,10 +28,6 @@ MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/freeBSD/
 .endif
-PORTNAME=	xforms
-PORTVERSION= 	0.88.1
-CATEGORIES=	graphics x11-toolkits
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
 
