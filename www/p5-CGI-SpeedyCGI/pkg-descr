@@ -1,0 +1,12 @@
+SpeedyCGI is a way to run CGI perl scripts persistently, which usually
+makes them run much more quickly. A script can be converted to
+SpeedyCGI by changing the interpreter line at the top of the
+script. After the script is initially run, instead of exiting,
+SpeedyCGI keeps the perl interpreter running. During subsequent runs,
+this interpreter is used to handle new requests instead of starting a
+new perl interpreter for each execution.
+
+WWW: http://daemoninc.com/SpeedyCGI/
+
+- Lars Thegler
+lars@thegler.dk
