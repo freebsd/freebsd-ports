@@ -1620,6 +1620,7 @@ echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
 ecl		ports/lang/ecl
 eclipse		ports/java/eclipse
+eclipse-cdt	ports/java/eclipse-cdt
 eclipse-emf	ports/java/eclipse-emf
 eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
