@@ -8,7 +8,8 @@
 PORTNAME=	tcpreplay
 PORTVERSION=	1.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.anzen.com/research/nidsbench/
+MASTER_SITES=	http://synfin.net/aturner/tcpreplay/ \
+		http://www.anzen.com/research/nidsbench/
 
 MAINTAINER=	ports@FreeBSD.org
 

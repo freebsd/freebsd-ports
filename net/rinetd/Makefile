@@ -8,7 +8,7 @@
 PORTNAME=	rinetd
 PORTVERSION=	0.61
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/rinetd/
+MASTER_SITES=	http://www.boutell.com/rinetd/http/
 DISTNAME=	rinetd
 
 MAINTAINER=	ports@FreeBSD.org

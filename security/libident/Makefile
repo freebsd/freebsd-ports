@@ -8,7 +8,7 @@
 PORTNAME=	libident
 PORTVERSION=	0.22
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
+MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/efingerd/libident/
 
 MAINTAINER=	ports@FreeBSD.org
 
