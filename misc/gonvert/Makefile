@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.5
 PORTREVISION=	0
 CATEGORIES=	misc python gnome
-MASTER_SITES=	http://unihedron.com/projects/gonvert/
+MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A conversion utility that allows conversion between many units
