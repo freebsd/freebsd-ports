@@ -688,3 +688,4 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/ar
 @dirrm share/gnome/gok/am
 @dirrm share/gnome/gok
+@dirrm %%DOCSDIR%%
