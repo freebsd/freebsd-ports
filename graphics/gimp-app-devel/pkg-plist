@@ -13,9 +13,12 @@ include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gcknotebook.h
 include/gck/gckvector.h
+@unexec install-info --delete %D/info/pdb.info %D/info/dir
 info/pdb.info
 info/pdb.info-1
 info/pdb.info-2
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/pdb.info %D/info/dir
 lib/libgimp.so.1.0
 lib/libgimp.la
 lib/libgimp.a
