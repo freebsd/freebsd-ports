@@ -7,13 +7,15 @@
 
 PORTNAME=	dtcp
 PORTVERSION=	20030228
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
+
+USE_RC_SUBR=	YES
 
 .if !defined(DTCP_CLIENT_ONLY)
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
@@ -26,6 +28,9 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/dtcpauth.rb ${WRKSRC}/dtcpc.rb \
 MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
 MANCOMPRESSED=	yes
 
+RC_SCRIPTS=	${PREFIX}/etc/rc.d/dtcpc.sh ${PREFIX}/etc/rc.d/dtcps.sh
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} RUBY=${RUBY}
+
 pre-everything::
 .if !defined(DTCP_CLIENT_ONLY)
 	@${ECHO_MSG} ""
@@ -34,10 +39,20 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+pre-install:
+	@for script in ${RC_SCRIPTS}; do \
+		if [ -f $${script} ]; then \
+			echo "Remove old $${script} before install."; \
+			exit 1; \
+		fi; \
+	done
+
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dtcpc.sh \
-		${PREFIX}/etc/rc.d/dtcpc.sh.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/dtcps.sh \
-		${PREFIX}/etc/rc.d/dtcps.sh.sample
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/dtcpc.sh > ${PREFIX}/etc/rc.d/dtcpc.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/dtcpc.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/dtcps.sh > ${PREFIX}/etc/rc.d/dtcps.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/dtcps.sh
 
 .include <bsd.port.mk>
