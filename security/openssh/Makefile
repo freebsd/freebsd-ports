@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -19,8 +20,6 @@ PATCHFILES=	openbsd28_${PORTVERSION}.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-USE_OPENSSL=	yes
-
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
 MAN8=		sshd.8 sftp-server.8
@@ -31,15 +30,8 @@ FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	${LOCALBASE}
-OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-OPENSSLLIB=	${OPENSSLBASE}/lib
-OPENSSLINC=	${OPENSSLBASE}/include
-MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
-.endif
+.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"

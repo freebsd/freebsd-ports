@@ -44,7 +44,6 @@ PKGNAMESUFFIX?=	-sasl
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 PKGNAMESUFFIX?=	-tls
-USE_OPENSSL=	yes
 .endif
 
 # Build site.config.m4
@@ -193,6 +192,10 @@ submit.cf:
 		SENDMAIL_MC=submit )
 
 .include <bsd.port.pre.mk>
+
+.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
+.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+.endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
 SITE+=	${FILESDIR}/site.config.m4.local

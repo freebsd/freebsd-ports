@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	openssh
+PORTREVISION=	1
 PORTVERSION=	3.2.3p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
@@ -20,7 +21,6 @@ MLINKS=	ssh.1 slogin.1
 MAN8=	sftp-server.8 sshd.8
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
 CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
+USE_OPELSSL_BASE=	yes
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share
@@ -78,16 +79,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	${LOCALBASE}
-OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-OPENSSLLIB=	${OPENSSLBASE}/lib
-OPENSSLINC=	${OPENSSLBASE}/include
-MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
-
+.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 .include <bsd.port.post.mk>
