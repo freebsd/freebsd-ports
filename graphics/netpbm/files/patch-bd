@@ -1,14 +1,19 @@
---- pbm/Makefile.orig	Fri May  4 12:39:43 2001
-+++ pbm/Makefile	Tue May 15 00:00:00 2001
+--- pbm/Makefile.orig	Wed May 30 14:59:56 2001
++++ pbm/Makefile	Tue Jun 26 00:00:00 2001
 @@ -47,6 +47,7 @@
  
  # Library objects to be built and linked by Makefile.common:
- LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
+ LIBOBJECTS = libpm.o libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
-@@ -63,26 +64,21 @@
+@@ -59,30 +60,25 @@
+ 
+ MERGENAME = pbmmerge
+ 
+-INTERFACE_HEADERS = pbm.h
++INTERFACE_HEADERS = pbm.h pm.h
  
  .PHONY: all
  all:	$(BINARIES)
@@ -33,7 +38,7 @@
  install.man: install.man.common
 -	$(MAKE) -C pbmtoppa install.man
  
- HEADERLINKS = pbmplus.h version.h compile.h
+ HEADERLINKS = pm_config.h version.h compile.h
  
 @@ -104,6 +100,5 @@
  .PHONY: clean

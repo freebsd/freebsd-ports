@@ -1,16 +1,17 @@
---- pbmplus.h.orig	Mon May 14 13:53:10 2001
-+++ pbmplus.h	Tue May 15 00:00:00 2001
-@@ -18,6 +18,9 @@
- #include <stdio.h>
- #include <errno.h>
- #include <sys/stat.h>
+--- pm_config.h.orig	Mon Jun 11 08:37:08 2001
++++ pm_config.h	Mon Tue Jun 26 00:00:00 2001
+@@ -19,6 +19,10 @@
+ 
+ **************************************************************************/
+ 
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
 +#endif
- 
- #ifdef VMS
- #include <perror.h>
-@@ -32,7 +35,7 @@
++
+ #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
+ #define SYSV
+ #endif
+@@ -28,7 +32,7 @@
  ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
  ** probably better off setting SYSV - all it affects is string handling.
  */
@@ -19,7 +20,7 @@
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -52,9 +55,9 @@
+@@ -48,9 +52,9 @@
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else
@@ -32,12 +33,3 @@
  #endif
  
  /* CONFIGURE: This is the name of an environment variable that tells
-@@ -339,7 +342,7 @@
- /* By making this <> instead of "", we avoid making shhopt.h a dependency
-    of every program in the package when we do make dep.
- */
--#include <shhopt.h>
-+#include <pbmshhopt.h>
- 
- /* Use pm_optParseOptions instead of optParseOptions in order to use the
-    shared Netpbm libraries
