@@ -1,23 +1,10 @@
-*** command.c.old	Mon Dec  5 01:07:33 1994
---- command.c	Mon Dec  5 01:07:49 1994
-***************
-*** 373,381 ****
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp();
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp ();
-        }
-  
-        /* init of termios structure		*/
---- 373,381 ----
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp(0,pgrp);
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp (0,pgrp);
-        }
-  
-        /* init of termios structure		*/
+--- Make.common.in.orig	Tue Apr  2 09:00:00 1996
++++ Make.common.in	Sat Dec  7 17:08:14 1996
+@@ -42,6 +42,7 @@
+ 
+ # Flags & libs
+ # cannot use := to append (except GNU make), so do it this way.
++XINC = $(prefix)/include -I..
+ XCFLAGS = @CFLAGS@
+ XCPPFLAGS = @CPPFLAGS@ $(XINC)
+ XLDFLAGS = @LDFLAGS@
