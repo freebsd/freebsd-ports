@@ -25,4 +25,11 @@ MAN3=		XML::Stream.3 XML::Stream::Hash.3 XML::Stream::Namespace.3 \
 		XML::Stream::Parser.3 XML::Stream::Parser::DTD.3 \
 		XML::Stream::Tree.3 XML::Stream::Node.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000 && !exists(${SITE_PERL}/${PERL_ARCH}/IO/Select.pm)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Select.pm:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Select.pm:${PORTSDIR}/devel/p5-IO
+.endif
+
+.include <bsd.port.post.mk>
