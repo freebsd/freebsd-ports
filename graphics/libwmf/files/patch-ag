@@ -1,0 +1,9 @@
+--- gdwmfapi.h	Thu Dec 16 08:18:48 1999
++++ gdwmfapi.h.new	Sun Jul  2 17:53:04 2000
+@@ -1,5 +1,5 @@
+ #include "wmfapi.h"
+-#include "gd.h"
++#include "xgd/gd.h"
+ 
+ typedef struct _GD_Struct
+ {
