@@ -101,6 +101,4 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-post-extract: ${POSTEXTRACT}
-
 .include <bsd.port.mk>
