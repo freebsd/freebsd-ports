@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	kenny
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	misc perl5
 MASTER_SITES=	http://www.h.shuttle.de/mitch/stuff/
 DISTNAME=	kenny.pl-${PORTVERSION}
