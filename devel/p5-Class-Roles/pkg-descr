@@ -1,0 +1,7 @@
+Class::Roles provides a Perl 5 implementation of Perl 6 roles.
+
+Roles are named collections of reusable behavior.  They provide a
+mechanism to mark that a class performs certain behaviors and to reuse
+the code that performs those behaviors.
+
+WWW: http://search.cpan.org/dist/Class-Roles/
