@@ -15,7 +15,7 @@ fi
 CHMOD='/bin/chmod'
 CP='/bin/cp -p'
 MKDIR='/bin/mkdir -p'
-export LANG; LANG=ko_KR.EUC
+export LANG; LANG=@LANG@
 export LC_ALL; LC_ALL=${LANG}
 export LC_CTYPE; LC_CTYPE=${LANG}
 export MOZILLA_HOME; MOZILLA_HOME=@NDIR@
@@ -29,6 +29,9 @@ export XNLSPATH; XNLSPATH=${MOZILLA_HOME}/nls
 export NPX_PLUGIN_PATH; NPX_PLUGIN_PATH=${MOZILLA_HOME}/plugins
 export TIMID_DIR; TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB; XCMSDB=/dev/null
+
+ulimit -c 0
+
 if [ -e /usr/local/lib/aout/libxpg4-ns.so.2.0 ]; then
   export LD_PRELOAD=/usr/local/lib/aout/libxpg4-ns.so.2.0
 elif [ x$KO_NETSCAPE_USE_LD_PRELOAD != x -a x$KO_NETSCAPE_USE_LD_PRELOAD != xno ]; then
