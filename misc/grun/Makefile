@@ -8,8 +8,7 @@
 
 DISTNAME=	grun-0.8.1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Facility/1468/sg/ \
-		ftp://skar.petech.ac.za/pub/gtksoft/
+MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Facility/1468/sg/
 
 MAINTAINER=	domi@saargate.de
 
