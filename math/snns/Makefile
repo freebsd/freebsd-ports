@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/
 DISTNAME=	SNNSv${PORTVERSION}
 DISTNAME=	SNNSv${PORTVERSION}
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
