@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- guile-gnome/gtkhtml/gtkhtml-glue.c	2001/07/24 09:02:10	1.1
-+++ guile-gnome/gtkhtml/gtkhtml-glue.c	2001/07/24 09:18:08
+--- guile-gnome/gtkhtml/gtkhtml-glue.c.orig	Tue Feb  6 05:46:22 2001
++++ guile-gnome/gtkhtml/gtkhtml-glue.c	Fri Aug 17 17:47:25 2001
 @@ -310,17 +310,20 @@
  static char s_gtk_html_set_iframe_parent[] = "gtk-html-set-iframe-parent";
  
@@ -26,3 +26,31 @@ $FreeBSD$
    SCM_ALLOW_INTS;
  
    return SCM_UNSPECIFIED;
+@@ -399,21 +402,23 @@
+ static char s_gtk_html_request_paste[] = "gtk-html-request-paste";
+ 
+ SCM
+-sgtk_gtk_html_request_paste (SCM p_html, SCM p_type, SCM p_time)
++sgtk_gtk_html_request_paste (SCM p_html, SCM p_selection, SCM p_type, SCM p_time)
+ {
+   gint cr_ret;
+   GtkHTML* c_html;
++  GdkAtom c_selection;
+   gint c_type;
+   gint c_time;
+   SCM_ASSERT (sgtk_is_a_gtkobj (gtk_html_get_type (), p_html), p_html, SCM_ARG1, s_gtk_html_request_paste);
+-  c_type = scm_num2long (p_type, (char *)SCM_ARG2, s_gtk_html_request_paste);
+-  c_time = scm_num2long (p_time, (char *)SCM_ARG3, s_gtk_html_request_paste);
++  c_selection = scm_num2long (p_selection, (char *)SCM_ARG2, s_gtk_html_request_paste);
++  c_type = scm_num2long (p_type, (char *)SCM_ARG3, s_gtk_html_request_paste);
++  c_time = scm_num2long (p_time, (char *)SCM_ARG4, s_gtk_html_request_paste);
+ 
+   SCM_DEFER_INTS;
+   c_html = (GtkHTML*)sgtk_get_gtkobj (p_html);
+   ;
+   ;
+-  cr_ret = gtk_html_request_paste (c_html, c_type, c_time);
++  cr_ret = gtk_html_request_paste (c_html, c_selection, c_type, c_time);
+   SCM_ALLOW_INTS;
+ 
+   return scm_long2num (cr_ret);
