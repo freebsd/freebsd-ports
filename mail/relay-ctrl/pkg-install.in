@@ -27,7 +27,7 @@ POST-INSTALL)
 	${CHMOD} 0700 ${SPOOLDIR}/relay-ctrl
 	${CHMOD} 0777 ${SPOOLDIR}/relay-ctrl/allow
 	${ECHO_CMD} "${SPOOLDIR}/relay-ctrl/allow" > ${ETCDIR}/RELAY_CTRL_DIR
-	${ECHO_CMD} "%%RELAYCTRL_EXPIRY%%" > ${EXPIRY}
+	${ECHO_CMD} "%%EXPIRY%%" > ${EXPIRY}
 	if [ -z "%%FIXUP%%" ]; then
 		${ECHO_CMD} "===>  RELAY-CTRL: Script do not create RELAY_CTRL_RELAYCLIENT"
 	else
