@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Jul 16 02:17:27 2001
++++ Makefile	Mon Jul 30 18:20:08 2001
+@@ -44,8 +44,8 @@
+ STRIP = strip
+ 
+ LIBS = -lncurses
+-CC = gcc
+-CFLAGS = -g -O2 -Wall
++CC ?= gcc
++CFLAGS += -g -Wall
+ 
+ all: mp3info gmp3info doc
+ 
+@@ -55,7 +55,7 @@
+ 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ gmp3info: $(XSRC) $(XOBJ) 
+-	$(CC) $(XSRC) $(CFLAGS) -o $@ $(XOBJ) `gtk-config --cflags --libs`
++	$(CC) $(XSRC) $(CFLAGS) -o $@ $(XOBJ) `${GTK_CONFIG} --cflags --libs`
+ 
+ mp3info.txt: mp3info.1
+ 	groff -t -e -mandoc -Tascii mp3info.1 | col -bx > mp3info.txt
