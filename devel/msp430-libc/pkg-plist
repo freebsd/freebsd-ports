@@ -127,19 +127,18 @@
 %%LIBC_TARG%%/lib/msp2/libc.a
 %%LIBC_TARG%%/lib/msp2/libfp.a
 %%LIBC_TARG%%/lib/msp2/libm.a
-%%LIBC_TARG%%/share/mspgcc/doc/FAQ
 %%LIBC_TARG%%/share/mspgcc/doc/devheaders.txt
 %%LIBC_TARG%%/share/mspgcc/doc/doc.txt
+%%LIBC_TARG%%/share/mspgcc/doc/FAQ
 %%LIBC_TARG%%/share/mspgcc/doc/volatil
-%%LIBC_TARG%%/share/mspgcc/examples/LICENSE.txt
-%%LIBC_TARG%%/share/mspgcc/examples/README
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/config.h
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/depend.mak
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/environ.mak
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/README.txt
-%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/config.h
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/test.c
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/usart.c
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/usart.h
-%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/font.c
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/font.h
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/hardware.h
@@ -147,48 +146,89 @@
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/lcd.h
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/char_lcd/makefile
-%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/obsleds.cpp
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.c
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.h
-%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.S
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.h
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.S
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/titleimage.c
-%%LIBC_TARG%%/share/mspgcc/examples/leds/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/leds/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/leds/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/leds/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/leds/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/LICENSE.txt
 %%LIBC_TARG%%/share/mspgcc/examples/makefile
-%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/lcd.c
 %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/lcd.h
 %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/makefile
-%%LIBC_TARG%%/share/mspgcc/examples/rawsources/README
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/rawsources/flash.c
 %%LIBC_TARG%%/share/mspgcc/examples/rawsources/rand.c
-%%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/README
+%%LIBC_TARG%%/share/mspgcc/examples/rawsources/README
+%%LIBC_TARG%%/share/mspgcc/examples/README
 %%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/nn4.c
+%%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/README
+%%LIBC_TARG%%/share/mspgcc/examples/slaa076a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa076a/RTC11x-TA.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa076a/RTC11x-WD.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa078a/11x1_uart1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa078a/11x1_uart2.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa078a/11x1_uart3.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa078a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa108a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa108a/SLAA108A.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa116/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa116/TBPWMDACcode
+%%LIBC_TARG%%/share/mspgcc/examples/slaa116/TBPWMDACcode.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa119/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa119/RCTimer.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa120/dcmotor.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa120/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa123/F149-Voice-demo.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa123/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa125a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa125a/SLAA125Code.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa126a/3574_78.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa126a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa126a/TLC357X.h
+%%LIBC_TARG%%/share/mspgcc/examples/slaa129/41xThermostat.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa129/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa131/codec_loopback.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa131/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa133/11x1_RC5.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa133/11x1_SIRC.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa133/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa136a/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa136a/Ultrasonic.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa138a/LCD_T218010.S
 %%LIBC_TARG%%/share/mspgcc/examples/slaa138a/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slaa138a/water_meter.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa150/ADS8364.h
+%%LIBC_TARG%%/share/mspgcc/examples/slaa150/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa150/SLAA150.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa151/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa151/MSP413-TMP100-Interface.S
+%%LIBC_TARG%%/share/mspgcc/examples/slaa168/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slaa168/TLC2552.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet_1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_0831.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_549.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_5616.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_5timers.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_7822.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca_temp1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca_temp2.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ca02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_cd4511.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_clks.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_flash_write.S
@@ -203,6 +243,18 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_lpm4.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_poll_P2.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_r2r.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_40k.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_cap01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_cap02.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm02.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm03.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm04.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm05.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm06.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart115k.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart2400.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart9600.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta03.S
@@ -218,23 +270,11 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta13.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta14.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta15.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_40k.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_cap01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_cap02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm04.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm05.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_pwm06.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart115k.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart2400.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_ta_uart9600.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_wdt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_wdt02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac010/fet110_wdt03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac010/fet_1.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac010/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet_1.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_549.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ca01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ca02.c
@@ -243,6 +283,15 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_fll.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_hfxtal.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_lpm3.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm01.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm02.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm03.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm04.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm05.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm06.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart115k.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart2400.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart9600.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta03.c
@@ -258,19 +307,9 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta13.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta14.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta15.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm01.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm03.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm04.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm05.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_pwm06.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart115k.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart2400.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_ta_uart9600.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac011/fet110_wdt02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac011/fet_1.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac011/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_5timers.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_7822.S
@@ -307,6 +346,13 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_spi0_016x.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_spi0_0549.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_spi0_7822.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_count.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm02.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm03.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm04.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm05.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm06.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta03.S
@@ -322,13 +368,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta13.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta14.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta15.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_count.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm04.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm05.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_ta_pwm06.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_uart01_0115k.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_uart01_02400.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_uart01_09600.S
@@ -338,7 +377,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_wdt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_wdt02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac012/fet120_wdt03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac012/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_adc10.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_adc10_01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_adc10_02.c
@@ -356,6 +395,12 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_hfxtal.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_lpm3.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_spi0_016x.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm01.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm02.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm03.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm04.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm05.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm06.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta03.c
@@ -371,12 +416,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta13.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta14.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta15.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm01.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm03.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm04.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm05.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_ta_pwm06.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_uart01_0115k.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_uart01_02400.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_uart01_09600.c
@@ -384,7 +423,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_wdt02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac013/fet120_wdt03.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac013/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_adc12_00.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_adc12_01.S
@@ -407,6 +446,12 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_spi0_016x.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_spi0_0549.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_spi0_5616.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm02.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm03.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm04.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm05.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm06.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta03.S
@@ -416,12 +461,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta07.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta08.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta09.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm04.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm05.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_ta_pwm06.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_tb01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_tb02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_tb03.S
@@ -443,7 +482,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_wdt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_wdt02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac014/fet140_wdt03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac014/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_1.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_adc12_00.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_adc12_01.c
@@ -460,6 +499,12 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_hfxtal.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_lpm3.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_spi0_016x.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm01.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm02.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm03.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm04.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm05.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm06.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta03.c
@@ -475,12 +520,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta13.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta14.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta15.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm01.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm03.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm04.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm05.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_ta_pwm06.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_tb01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_tb02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_tb03.c
@@ -495,7 +534,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_uart11_19200_2.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac015/fet140_wdt02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac015/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_bt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_bt02.S
@@ -510,11 +549,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_lcd05.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_lcd06.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_lpm3.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta03.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta04.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta05.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_40k.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_dtmf.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_pwm01.S
@@ -522,9 +556,14 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_uart115k.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_uart2400.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta_uart9600.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta02.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta03.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta04.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_ta05.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_wdt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac016/fet410_wdt02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac016/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_1.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_bt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_bt02.c
@@ -535,19 +574,19 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_lcd02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_lcd03.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_lpm3.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta01.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta03.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta04.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta05.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta_pwm01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta_pwm02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta_uart115k.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta_uart2400.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta_uart9600.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta01.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta02.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta03.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta04.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_ta05.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac017/fet410_wdt02.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac018/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac017/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_1.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_adc12_00.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_adc12_01.S
@@ -575,13 +614,13 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_lcd05.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_lpm3.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_spi0_016x.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta_pwm01.S
+%%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta_pwm02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta03.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta04.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta05.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta_pwm01.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_ta_pwm02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_tb01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_tb02.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_tb03.S
@@ -595,7 +634,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_uart11_38400.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_wdt01.S
 %%LIBC_TARG%%/share/mspgcc/examples/slac018/fet440_wdt02.S
-%%LIBC_TARG%%/share/mspgcc/examples/slac019/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/slac018/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_1.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_adc12_00.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_adc12_01.c
@@ -617,13 +656,13 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_lcd03.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_lpm3.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_spi0_016x.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta_pwm01.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta_pwm02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta03.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta04.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta05.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta_pwm01.c
-%%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_ta_pwm02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_tb01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_tb02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_tb03.c
@@ -637,63 +676,66 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_uart11_38400.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_wdt02.c
+%%LIBC_TARG%%/share/mspgcc/examples/slac019/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/config.h
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/depend.mak
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/environ.mak
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/README.txt
-%%LIBC_TARG%%/share/mspgcc/examples/tasker/config.h
-%%LIBC_TARG%%/share/mspgcc/examples/tasker/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/task.c
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/task.h
-%%LIBC_TARG%%/share/mspgcc/examples/tcpip/Makefile
-%%LIBC_TARG%%/share/mspgcc/examples/tcpip/README
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.h
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/easyweb.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/easyweb.h
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/README
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.h
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/webside.c
-%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/fll.h
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/fll.s
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/miniterm.py
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.h
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.s
-%%LIBC_TARG%%/share/mspgcc/examples/uart_test/README.txt
-%%LIBC_TARG%%/share/mspgcc/examples/uart_test/asmlib.S
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/asmlib.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/asmlib.S
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/serialComm.c
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/serialComm.h
-%%LIBC_TARG%%/share/mspgcc/examples/uart_test/taskhandler.S
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/taskhandler.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/taskhandler.S
 %%LIBC_TARG%%/share/mspgcc/examples/uart_test/tasklist.h
-%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/LICENSE.txt
-%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/asmlib.S
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/game.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/history.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/intro.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/lchanima.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/LICENSE.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/logo.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/msppong.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/winlogos.ci
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/winscreen.c
-%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/LICENSE.txt
-%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/asmlib.S
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/game.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/LICENSE.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/numbers.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/tiles.ci
 @dirrm %%LIBC_TARG%%/include/msp430
 @dirrm %%LIBC_TARG%%/include/sys
@@ -702,6 +744,8 @@
 @dirrm %%LIBC_TARG%%/lib/msp2
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/char_lcd
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/cplusplus
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/leds
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard
@@ -719,6 +763,21 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slac017
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slac018
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slac019
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa076a
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa108a
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa116
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa119
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa120
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa123
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa125a
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa126a
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa129
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa131
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa133
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa136a
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa150
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa151
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa168
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tasker
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart
