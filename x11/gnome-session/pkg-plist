@@ -12,8 +12,10 @@ share/gnome/control-center-2.0/capplets/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
 share/gnome/pixmaps/splash/gnome-splash.png
+share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-2.0.mo
