@@ -12,7 +12,7 @@ MASTER_SITES=	http://fabrice.bellard.free.fr/qemacs/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
 MAINTAINER=	so14k@so14k.com
-COMMENT=	"QEmacs (for Quick Emacs) is a very small but powerful UNIX editor"
+COMMENT=	QEmacs (for Quick Emacs) is a very small but powerful UNIX editor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
