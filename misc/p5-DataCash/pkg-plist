@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DataCash/External/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/CCCheck.pm
+lib/perl5/site_perl/%%PERL_VER%%/CCCheck/visa.db
+lib/perl5/site_perl/%%PERL_VER%%/CCCheck/mastercard.db
+lib/perl5/site_perl/%%PERL_VER%%/DataCash/datacash.pl
+@dirrm lib/perl5/site_perl/5.6.0/mach/auto/DataCash/External
+@dirrm lib/perl5/site_perl/5.6.0/mach/auto/DataCash
+@dirrm lib/perl5/site_perl/5.6.0/CCCheck
+@dirrm lib/perl5/site_perl/5.6.0/DataCash
