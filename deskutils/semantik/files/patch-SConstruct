@@ -1,0 +1,13 @@
+--- SConstruct.orig	Sun Jan 16 00:08:50 2005
++++ SConstruct	Tue Jan 18 19:45:45 2005
+@@ -14,6 +14,10 @@
+ 
+ env.AppendUnique(LIBS = ['qt-mt', 'kdecore'])
+ 
++env['CXX'] = "%%CXX%%"
++env['CXXFLAGS'] = "%%CXXFLAGS%%"
++env.AppendUnique(LINKFLAGS = ['%%LINKFLAGS%%'])
++
+ env['ITARGETS'] = []
+ 
+ ### subdirectories
