@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dominic_marks@btinternet.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-daemon
