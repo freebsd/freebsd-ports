@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+= ${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+CONFIGURE_ARGS+= --with-gmp-lib=${LOCALBASE}/lib \
+		--with-gmp-inc=${LOCALBASE}/include
 .endif
 
 .include <bsd.port.post.mk>
