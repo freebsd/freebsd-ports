@@ -4,18 +4,29 @@ lib/compat/libc.so.4
 lib/compat/libc_r.so.4.compat4x
 @exec ln -sf %f %B/libc_r.so.4
 %%FORBIDDEN:%%lib/compat/libcrypto.so.1
+%%FORBIDDEN:%%lib/compat/libcrypto.so.2
+lib/compat/libdevstat.so.2
 lib/compat/libedit.so.3
 lib/compat/libfetch.so.2
+lib/compat/libgmp.so.3
+lib/compat/libmp.so.3
+lib/compat/libpam.so.1
 @unexec if [ -e %B/libperl.so.3.compat3x ]; then ln -sf libperl.so.3.compat3x %B/libperl.so.3; else rm %B/libperl.so.3; fi
 lib/compat/libperl.so.3.compat4x
 @exec ln -sf %f %B/libperl.so.3
-lib/compat/libpam.so.1
+lib/compat/libposix1e.so.2
+lib/compat/libskey.so.2
 %%FORBIDDEN:%%lib/compat/libssl.so.1
+%%FORBIDDEN:%%lib/compat/libssl.so.2
 lib/compat/libstdc++.so.3
 lib/compat/libusb.so.0
+lib/compat/libusbhid.so.0
+%%I386_ONLY%%lib/compat/libutil.so.3
+%%I386_ONLY%%lib/compat/libvgl.so.2
 lib/compat/pam_cleartext_pass_ok.so
 lib/compat/pam_deny.so
 lib/compat/pam_opie.so
+lib/compat/pam_opieaccess.so
 lib/compat/pam_permit.so
 lib/compat/pam_radius.so
 lib/compat/pam_skey.so
