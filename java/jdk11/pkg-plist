@@ -83,8 +83,31 @@ jdk1.1.7/bin/i386/green_threads/jre_g_X
 jdk1.1.7/bin/i386/green_threads/jre
 jdk1.1.7/bin/i386/green_threads/jre_X
 jdk1.1.7/bin/.java_wrapper
+jdk1.1.7/bin/appletviewer
+jdk1.1.7/bin/jar
+jdk1.1.7/bin/java
+jdk1.1.7/bin/java_g
+jdk1.1.7/bin/javac
+jdk1.1.7/bin/javac_g
+jdk1.1.7/bin/javadoc
+jdk1.1.7/bin/javah
+jdk1.1.7/bin/javah_g
+jdk1.1.7/bin/javakey
+jdk1.1.7/bin/javap
+jdk1.1.7/bin/javaverify
+jdk1.1.7/bin/javaverify_g
+jdk1.1.7/bin/jdb
+jdk1.1.7/bin/jre_g
+jdk1.1.7/bin/native2ascii
+jdk1.1.7/bin/rmic
+jdk1.1.7/bin/rmiregistry
+jdk1.1.7/bin/serialver
 jdk1.1.7/bin/jre
 jdk1.1.7/bin/java-rmi.cgi
+jdk1.1.7/lib/i386/green_threads/libawt.so.1.1.7
+jdk1.1.7/lib/i386/green_threads/libawt_g.so.1.1.7
+jdk1.1.7/lib/i386/green_threads/libjava.so.1.1.7
+jdk1.1.7/lib/i386/green_threads/libjava_g.so.1.1.7
 jdk1.1.7/lib/i386/green_threads/libawt_g.so
 jdk1.1.7/lib/i386/green_threads/libjava_g.so
 jdk1.1.7/lib/i386/green_threads/libjava.so
@@ -487,3 +510,82 @@ jdk1.1.7/README
 jdk1.1.7/README.FreeBSD
 jdk1.1.7/CHANGES
 jdk1.1.7/index.html
+@dirrm jdk1.1.7/lib/security
+@dirrm jdk1.1.7/lib/i386/green_threads
+@dirrm jdk1.1.7/lib/i386
+@dirrm jdk1.1.7/lib
+@dirrm jdk1.1.7/include/green_threads/include
+@dirrm jdk1.1.7/include/green_threads
+@dirrm jdk1.1.7/include/freebsd
+@dirrm jdk1.1.7/include
+@dirrm jdk1.1.7/demo/i18n/code
+@dirrm jdk1.1.7/demo/i18n/TextBound
+@dirrm jdk1.1.7/demo/i18n/NumberFormat
+@dirrm jdk1.1.7/demo/i18n/MessageFormat
+@dirrm jdk1.1.7/demo/i18n/DateTimeFormat
+@dirrm jdk1.1.7/demo/i18n/Collate
+@dirrm jdk1.1.7/demo/i18n
+@dirrm jdk1.1.7/demo/awt-1.1/symboltest
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner/alternative/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner/actual/images
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner/actual/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Spinner
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/RoundButtons/alternative/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/RoundButtons/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/RoundButtons/actual/images
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/RoundButtons/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/RoundButtons
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons/alternative/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons/actual/images
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons/actual/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/OpenlookButtons
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge/alternative/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge/alternative
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge/actual/images
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge/actual/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge/actual
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight/Gauge
+@dirrm jdk1.1.7/demo/awt-1.1/lightweight
+@dirrm jdk1.1.7/demo/awt-1.1/eventmodel
+@dirrm jdk1.1.7/demo/awt-1.1
+@dirrm jdk1.1.7/demo/WireFrame/models
+@dirrm jdk1.1.7/demo/WireFrame
+@dirrm jdk1.1.7/demo/TicTacToe/images
+@dirrm jdk1.1.7/demo/TicTacToe/audio
+@dirrm jdk1.1.7/demo/TicTacToe
+@dirrm jdk1.1.7/demo/SpreadSheet
+@dirrm jdk1.1.7/demo/SortDemo
+@dirrm jdk1.1.7/demo/SimpleGraph
+@dirrm jdk1.1.7/demo/NervousText
+@dirrm jdk1.1.7/demo/MoleculeViewer/models
+@dirrm jdk1.1.7/demo/MoleculeViewer
+@dirrm jdk1.1.7/demo/JumpingBox/sounds
+@dirrm jdk1.1.7/demo/JumpingBox
+@dirrm jdk1.1.7/demo/ImageMap/images
+@dirrm jdk1.1.7/demo/ImageMap/audio
+@dirrm jdk1.1.7/demo/ImageMap
+@dirrm jdk1.1.7/demo/GraphicsTest
+@dirrm jdk1.1.7/demo/GraphLayout/audio
+@dirrm jdk1.1.7/demo/GraphLayout
+@dirrm jdk1.1.7/demo/Fractal
+@dirrm jdk1.1.7/demo/DrawTest
+@dirrm jdk1.1.7/demo/DitherTest
+@dirrm jdk1.1.7/demo/Clock
+@dirrm jdk1.1.7/demo/CardTest
+@dirrm jdk1.1.7/demo/Blink
+@dirrm jdk1.1.7/demo/BarChart
+@dirrm jdk1.1.7/demo/ArcTest
+@dirrm jdk1.1.7/demo/Animator/images/SimpleAnimation
+@dirrm jdk1.1.7/demo/Animator/images/Beans
+@dirrm jdk1.1.7/demo/Animator/images
+@dirrm jdk1.1.7/demo/Animator/audio
+@dirrm jdk1.1.7/demo/Animator
+@dirrm jdk1.1.7/demo
+@dirrm jdk1.1.7/bin/i386/green_threads
+@dirrm jdk1.1.7/bin/i386
+@dirrm jdk1.1.7/bin
+@dirrm jdk1.1.7
