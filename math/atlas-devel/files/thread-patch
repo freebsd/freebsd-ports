@@ -9,10 +9,10 @@
  char TARGNAM[512];
  enum MACHTYPE mach=MACHOther;
  
-@@ -2737,7 +2737,6 @@
-       Use3DNow = IsYes('n', "   ", "Use 3DNow! for computation?");
+@@ -3515,7 +3515,6 @@
     }
-    ncpu = ProbeNCPU(OS, mach, targ, TOPdir);
+    i = ncpu;
+    if (!ncpu) ncpu = ProbeNCPU(OS, mach, targ, TOPdir);
 -   ncpu = 1; // force non-threading
     if (ncpu != 1) /* user may want to thread */
     {
