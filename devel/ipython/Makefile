@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,7 +19,6 @@ MANCOMPRESSED=	yes
 
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
-DOCSDIR=	${PREFIX}/share/doc/IPython
 
 .include <bsd.port.pre.mk>
 
