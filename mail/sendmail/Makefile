@@ -27,6 +27,7 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8 editmap.8
 SENDMAIL=	${PREFIX}/sbin/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
+LDAP_PORT=	net/openldap20-client
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
@@ -48,8 +49,8 @@ SENDMAIL_WITH_TLS=yes
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
