@@ -7,6 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
