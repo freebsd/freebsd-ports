@@ -1,0 +1,52 @@
+*** fileio.c.orig	Mon Sep 10 08:21:01 2001
+--- fileio.c	Sun Feb 17 02:06:34 2002
+***************
+*** 18,23 ****
+--- 18,27 ----
+     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+  
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)
++ #include <sys/param.h>
++ #endif
++ 
+  #include "dbench.h"
+  
+  #define MAX_FILES 1000
+***************
+*** 58,64 ****
+--- 62,73 ----
+  		       copy_name,
+  		       strerror(errno));
+  	} else {
++ #ifdef	BSD
++ 		if (fsync(dir_fd) == -1) {
++ #else
+  		if (fdatasync(dir_fd) == -1) {
++ #endif /* BSD */
++ 
+  			printf("datasync directory \"%s\" failed: %s\n",
+  			       copy_name,
+  			       strerror(errno));
+***************
+*** 111,118 ****
+  	if (size == 0) flags |= O_TRUNC;
+  
+  	if (sync_open)
+  		flags |= O_SYNC;
+! 	
+  	fd = open(fname, flags, 0600);
+  	if (fd == -1) {
+  		printf("(%d) open %s failed for handle %d (%s)\n", 
+--- 120,130 ----
+  	if (size == 0) flags |= O_TRUNC;
+  
+  	if (sync_open)
++ #ifdef	BSD
++ 		flags |= O_FSYNC;
++ #else
+  		flags |= O_SYNC;
+! #endif /* BSD */	
+  	fd = open(fname, flags, 0600);
+  	if (fd == -1) {
+  		printf("(%d) open %s failed for handle %d (%s)\n", 

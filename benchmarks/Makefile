@@ -4,6 +4,7 @@
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += bytebench
+    SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += iozone
     SUBDIR += iozone21
