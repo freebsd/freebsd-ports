@@ -1,0 +1,6 @@
+Mozilla New Mail Icon is an extension which displays an icon in the
+system tray when new mail arrives in Mozilla Thunderbird. While it
+supports the standard (FreeDesktop.org) system tray, as used by GNOME,
+KDE and IceWM, it requires GNOME libraries to build and run.
+
+WWW: http://moztraybiff.mozdev.org/

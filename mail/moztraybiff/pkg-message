@@ -1,0 +1,9 @@
+The extension has been installed in /usr/X11R6/share/moztraybiff/
+
+To use this extension:
+	* Open up Thunderbird
+	* Choose Tools|Extensions from the menu
+	* Click the "Install" button
+	* Navigate to /usr/X11R6/share/moztraybiff/
+	* Select the file that appears in that directory
+	* Restart Thunderbird
