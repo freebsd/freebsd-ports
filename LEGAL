@@ -206,8 +206,6 @@ socks5-*		ports/net/socks5	No commercial use
 speedmgmt.tar.gz	ports/net/pppoa		Not for redistribution - see
 						http://www.alcatel.com/consumer-
 						/dsl/disclaimer_lx.htm
-spread-src-*.tar.gz	ports/net/spread	See the license:
-						http://www.spread.org/license/
 srd			ports/japanese/srd-fpw	The original dictionary is not free
 ssh-*			ports/security/ssh*	Crypto; export-controlled
 *mod_ssl*		ports/www/apache13-modssl Crypto; export-controlled
