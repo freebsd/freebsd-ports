@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	1.3.22
+PORTVERSION=	1.3.23
 CATEGORIES=	russian www
 MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -29,9 +29,9 @@ PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
 PATCHFILES=	patches_${PORTVERSION}rusPL${RA_VERSION}.tar.gz
 
-MAINTAINER=	Lev Serebryakov <lev@serebryakov.spb.ru>
+MAINTAINER=	lev@serebryakov.spb.ru
 
-RA_VERSION=	30.9
+RA_VERSION=	30.10
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
 #
