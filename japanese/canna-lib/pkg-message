@@ -1,0 +1,6 @@
+
+Now the cannaserver uses a UNIX domain scoekt by default.  If you need
+to use a TCP connection, please edit your startup script
+(e.g. /usr/local/etc/rc.d/canna.sh) and add the -inet command-line
+option to the cannaserver execution.
+
