@@ -8,7 +8,7 @@
 PORTNAME=	prc-tools-binutils
 PORTVERSION=	2.0
 CATEGORIES=	palm
-MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/
+MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils
 DISTNAME=	prc-tools-${PORTVERSION}
