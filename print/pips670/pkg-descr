@@ -6,14 +6,20 @@ URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And then this port has a modified filter "filter670.rev" which is
-useful to print out more than one page. If you use it, you add the
-next entries into /etc/printcap.
+This port has a modified filter "filter670.rev" which is useful to
+print out more than one page. Then you execute the next command:
 
-pm670c|EPSON PM-670C:\
-        :lp=/dev/lpt0:\
-        :sh:\
-        :if=/usr/local/libexec/pips670/filter670.rev:\
-        :sd=/var/spool/lpd/pm670c:\
-        :mx#0:\
-        :lf=/var/log/lpd-errs
+/usr/local/libexec/pips670/setup
+
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
+To run with Japanese/French/Germany/Spanish/Italian/Dutch/
+Portugue/Korean messages, you should execute as follows:
+  env LANG=ja_JP pips670          env LANG=fr pips670	  
+  env LANG=de pips670             env LANG=es pips670	  
+  env LANG=it pips670             env LANG=nl pips670
+  env LANG=pt pips670             env LANG=ko pips670 (*)
+  env LANG=zh_CN pips670 (*)(**)  env LANG=zh_TW.Big5 pips670 (**)
+
+(*) These do not work well.
+(**) See more informations in /usr/local/share/doc/pips670/readme_for_zh
