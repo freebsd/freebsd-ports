@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb  7 07:51:43 1999
-+++ Makefile.in	Sun Feb  7 22:09:39 1999
+--- Makefile.in.orig	Wed Jul 21 03:24:31 1999
++++ Makefile.in	Fri Oct 15 12:04:52 1999
 @@ -23,9 +23,7 @@
  
  BASEDIR= @prefix@
@@ -11,7 +11,7 @@
  LIBDIR = @libdir@
  VARDIR = @localstatedir@
  MANDIR = @mandir@
-@@ -36,8 +34,9 @@
+@@ -36,12 +34,13 @@
  # set these to where to find various files
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
@@ -23,6 +23,11 @@
  CONFIGFILE = $(LIBDIR)/smb.conf
  LMHOSTSFILE = $(LIBDIR)/lmhosts
  DRIVERFILE = $(LIBDIR)/printers.def
+-PASSWD_PROGRAM = /bin/passwd
++PASSWD_PROGRAM = /usr/bin/passwd
+ # This is where smbpasswd et al go
+ PRIVATEDIR = @privatedir@
+ 
 @@ -53,6 +52,9 @@
  # the directory where lock files go
  LOCKDIR = @lockdir@
