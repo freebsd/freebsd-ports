@@ -77,13 +77,13 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 		my $value = $2;
 		my $pattern = $HEADERS{$header};
 
-		# Warn and ignore unrecognised headers.
+		# Ignore unrecognised headers.
 		unless (defined($pattern)) {
-			print "Warning: unknown template header: $header\n";
+		### 	print "Warning: unknown template header: $header\n";
 			next;
 		}
 
-		# Skip the header if it's blank.
+		# Filter out the template header if it's blank.
 		unless ($value) {
 			splice(@log_in, $j + 1, 1);
 			next;
@@ -97,9 +97,12 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 		}
 
 	} else {
-		## print "Error: malformed line in template headers: $header\n";
-		## ++$error;
-		print "Warning: malformed line in template headers: $header\n";
+		### XXX
+		# We're here because we saw a line that didn't match
+		# a template header (no ':').  This could be a continuation
+		# line from the previous header, or the log message proper.
+		# We don't know, so run the risk of checking the last paragraph
+		# of the log message for headers.
 		next;
 	}
 }
