@@ -270,6 +270,7 @@
     SUBDIR += ptex-pkfonts400
     SUBDIR += ptex-pkfonts600
     SUBDIR += ptex-sjis
+    SUBDIR += pycodec
     SUBDIR += qkc
     SUBDIR += rbnamazu
     SUBDIR += recjis
