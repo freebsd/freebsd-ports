@@ -69,7 +69,7 @@ WITHOUT_X11=	yes
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
-CSCOPE_ARG=	--enable-cscope
+MAKE_ARGS+=	CONF_OPT_CSCOPE="--enable-cscope"
 .endif
 
 .if defined(WITH_PYTHON)
