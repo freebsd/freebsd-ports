@@ -7,9 +7,9 @@
 
 PORTNAME=	gtk
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
@@ -29,18 +29,18 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	BUGS \
 		ChangeLog \
-		ENVIRONMENT \
+		NEWS \
 		README \
 		README.EXT \
 		ToDo
-DOCS_JA=	README.ja \
-		README.EXT.ja
+DOCS_JA=	README.EXT.ja
 
 post-extract:
 	${MKDIR} ${WRKSRC}/sample/browser
-	${MV} ${WRKSRC}/doc/rbbr.rb ${WRKSRC}/sample/browser
+	${MV} ${WRKSRC}/doc/*.rb ${WRKSRC}/sample/browser/
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/gtkcompat.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
