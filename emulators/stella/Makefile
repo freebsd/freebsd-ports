@@ -3,13 +3,13 @@
 # Date created:		1st May, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/31 07:19:41 max Exp $
 #
 
 DISTNAME=	stella-0.6-src
 PKGNAME=	stella-0.6
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.ncsu.edu/pub/eos/pub/bsvc/st/
+MASTER_SITES=	ftp://ftp.ucpel.tche.br/pub/msdos/emulator/atari/
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
