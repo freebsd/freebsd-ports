@@ -3,6 +3,8 @@
 # Date created:		Oct 6, 1994
 # Whom:			pst
 #
+# $Id$
+#
 
 DISTNAME=	pcnfsd.93.02.16
 PKGNAME=	pcnfsd-93.02.16
