@@ -143,7 +143,7 @@ int
 main(int argc, char *argv[], char *envp[])
 {
 	size_t i;
-	int bootstrap, cpp, dynamic, shared, stlinserted;
+	int bootstrap, cpp, dynamic, stlinserted, threaded;
 	char *prefix;
 	struct arglist al;
 
@@ -154,7 +154,7 @@ main(int argc, char *argv[], char *envp[])
 		errx(1, "can't get PREFIX");
 
 	initarg(&al);
-	bootstrap = cpp = dynamic = shared = stlinserted = 0;
+	bootstrap = cpp = dynamic = stlinserted = threaded = 0;
 
 #ifdef DEBUG
 	printf("input: ");
@@ -185,11 +185,6 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
-		if (ARGCMP("-shared")) {
-			shared++;
-			continue;
-		}
-
 		/*
 		 * If the compiler was called with -static we shouldn't see
 		 * "--dynamic-linker" here.
@@ -210,12 +205,24 @@ main(int argc, char *argv[], char *envp[])
 			stlinserted++;
 			continue;
 		}
+
+		/*
+		 * ICC links the thread safe libircmt instead of libirc when
+		 * told to generate threaded code by any of the compiler flags
+		 * "-mt", "-openmp" or "-parallel". We use this as an indicator
+		 * to link against libc_r.
+		 */
+		if (ARGCMP("-lircmt")) {
+			threaded++;
+			continue;
+		}
+
 	}
 
 #ifdef DEBUG
-	printf("\ncpp: %s bootstrap: %s dynamic: %s shared: %s\n",
+	printf("\ncpp: %s bootstrap: %s dynamic: %s threaded: %s\n",
 	    cpp ? "YES" : "NO", bootstrap ? "YES" : "NO",
-	    dynamic ? "YES" : "NO", shared ? "YES" : "NO");
+	    dynamic ? "YES" : "NO", threaded ? "YES" : "NO");
 #endif
 
 	if (bootstrap && !cpp)
@@ -246,16 +253,6 @@ main(int argc, char *argv[], char *envp[])
 		if (ARGCMP("-Qy"))
 			continue;
 
-		/*
-		 * Because of a nasty behaviour (bug?) of binutils/ld 2.12.[0,1]
-		 * we must not statically link libcxa and libunwind to shared
-		 * objects, e.g. our STL replacement. Doing so causes broken
-		 * exception handling amongst some other strange reactions.
-		 * This perfectly worked with binutils/ld 2.11.2.
-		 */
-		if (cpp && shared && (ARGCMP("-lcxa") || ARGCMP("-lunwind")))
-			continue;
-
 		/* Libunwind is only needed when compiling C++ source. */
 		if (!cpp && ARGCMP("-lunwind"))
 			continue;
@@ -276,10 +273,11 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * Libcxa and libunwind depend on libc_r when compiling C++
-		 * source.
+		 * Link against libc_r when compiling multi-threaded or C++
+		 * code (libcxa and libunwind depend on libc_r when compiling
+		 * C++ source).
 		 */
-		if (cpp && ARGCMP("-lc")) {
+		if ((cpp || threaded) && ARGCMP("-lc")) {
 			if (al.argc > 0 &&
 			    strncmp(al.argv[al.argc - 1], "-B", strlen("-B")))
 				addarg(&al,
@@ -317,17 +315,14 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * Link and map files for C++ exception handling, C++ ABI stuff.
+		 * Link and map files for C++ exception handling.
 		 */
 		if (!cpp &&
 		    (ARGCMP("--version-script") ||
 		    ARGCMPB(prefix, "/intel/compiler60/ia32/lib/icrt.link") ||
 		    ARGCMPB(prefix,
-			"/intel/compiler60/ia32/lib/icrt.internal.map") ||
-		    ARGCMPB(prefix, "/intel/compiler60/ia32/lib/crtxi.o") ||
-		    ARGCMPB(prefix, "/intel/compiler60/ia32/lib/crtxn.o"))) {
+			"/intel/compiler60/ia32/lib/icrt.internal.map")))
 			continue;
-		}
 
 		/*
 		 * Force libcxa and libunwind to static linkage, since the
@@ -335,14 +330,13 @@ main(int argc, char *argv[], char *envp[])
 		 * Don't add superfluous -Bdynamic.
 		 */
 		if (ARGCMP("-Bdynamic") && i <= argc + 1) {
-			if (!shared && (!strcmp(argv[i + 1], "-lcxa") ||
-			    (cpp && !strcmp(argv[i + 1], "-lunwind")))) {
+			if (!strcmp(argv[i + 1], "-lcxa") ||
+			    (cpp && !strcmp(argv[i + 1], "-lunwind"))) {
 				addarg(&al, "-Bstatic", 1);
 				continue;
 			}
 
 			if (!strcmp(argv[i + 1], "-lcprts") ||
-			    !strcmp(argv[i + 1], "-lcxa") ||
 			    !strcmp(argv[i + 1], "-lunwind"))
 				continue;
 		}
@@ -362,6 +356,7 @@ main(int argc, char *argv[], char *envp[])
 			if (!strcmp(argv[i], "-lcxa") ||
 			    !strcmp(argv[i], "-limf") ||
 			    !strcmp(argv[i], "-lirc") ||
+			    !strcmp(argv[i], "-lircmt") ||
 			    !strcmp(argv[i], "-lunwind"))
 				addarg(&al, "-Bstatic", 1);
 			else

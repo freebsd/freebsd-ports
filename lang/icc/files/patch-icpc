@@ -1,6 +1,6 @@
 --- opt/intel/compiler60/ia32/bin/icpc.orig	Fri Sep  6 02:18:03 2002
 +++ opt/intel/compiler60/ia32/bin/icpc	Tue Sep 10 18:32:59 2002
-@@ -1,29 +1,29 @@
+@@ -1,29 +1,42 @@
  #!/bin/sh
  
 -INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
@@ -34,6 +34,19 @@
  if [ $# != 0 ]
  then
 - exec -a "<INSTALLDIR>/compiler60/ia32/bin/icpc" <INSTALLDIR>/compiler60/ia32/bin/icpcbin "$@";
++ i=0
++ argc=$#
++ while [ $i -lt $argc ] ; do
++  val1=$1
++  shift
++  val2=${val1#"-openmp"}
++  if [ ${#val1} -gt ${#val2} ] || [ ${val1} = "-parallel" ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  set -- "$@" "$val1"
++  i=$(($i+1))
++ done
 + exec ${PREFIX}/intel/compiler60/ia32/bin/icpcbin "$@";
  else
 - exec -a "<INSTALLDIR>/compiler60/ia32/bin/icpc" <INSTALLDIR>/compiler60/ia32/bin/icpcbin;
