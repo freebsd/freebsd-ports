@@ -252,6 +252,7 @@ agenda-static-libs	ports/devel/agenda-static-libs
 aggregate	ports/net/aggregate
 agrep		ports/textproc/agrep
 agsatellite	ports/audio/agsatellite
+aguri		ports/net/aguri
 ah-tty		ports/sysutils/ah-tty
 ahwm		ports/x11-wm/ahwm
 aide		ports/security/aide
