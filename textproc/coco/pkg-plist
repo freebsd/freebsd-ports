@@ -151,7 +151,7 @@ info/terminology
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).			Japanese/Chinese Inputting Method. (Japanese)" %D/info/egg-jp %D/info/dir
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).			Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 @comment
-@exec [ -f %D/share/mule/%%EMACS_VERSION%%/info/dir ] || mkdir -p %D/share/mule/%%EMACS_VERSION%%/info; sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/share/mule/%%EMACS_VERSION%%/info/dir
+@exec [ -f %D/share/mule/%%EMACS_VERSION%%/info/dir ] || mkdir -p %D/share/mule/%%EMACS_VERSION%%/info
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/cvtmail
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/digest-doc
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/emacsserver
