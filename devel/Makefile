@@ -443,6 +443,7 @@
     SUBDIR += ruby-strscan
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
+    SUBDIR += ruby-tzfile
     SUBDIR += ruby-unit
     SUBDIR += rvm
     SUBDIR += scandoc
