@@ -9,7 +9,7 @@ PORTNAME=	gtk-sharp
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://mono2.ximian.com/archive/${PORTVERSION}/
+MASTER_SITES=	http://mono.ximian.com/archive/${PORTVERSION}/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
