@@ -10,7 +10,7 @@ start)
 	fi
 	;;
 stop)
-	kill `ps -a | awk '/cyrus\/bin\/master$/ {print $1}'` && \
+	kill `ps -U cyrus | awk '/master/ {print $1}'` && echo -n ' imapd'
 		echo -n ' imapd'
 	;;
 *)
