@@ -1,0 +1,10 @@
+CSRD is a utility for Shogakukan Random House English-Japanese
+Dictionary on UNIX or MS-DOS box.
+
+You can get more information from the following document.
+${PREFIX}/share/doc/ja-csrd-1.0/csrd.doc
+
+[Example of ${PREFIX}/etc/csrd.rc]
+-d/cdrom/data -f/usr/local/lib/csrd.fmt -g/usr/local/lib/csrd.gai
+
+WWW: http://openlab.ring.gr.jp/edict/
