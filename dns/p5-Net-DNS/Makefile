@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-DNS
 PORTVERSION=	0.33
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -36,7 +37,8 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3 \
 		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
 		Net::DNS::FAQ.3 Net::DNS::RR::TKEY.3 \
-		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3
+		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3 \
+		Net::DNS::Resolver::Recurse.3
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
 post-install:
