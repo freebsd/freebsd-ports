@@ -22,4 +22,6 @@ USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
+CFLAGS+=	-I/usr/local/include
+
 .include <bsd.port.mk>
