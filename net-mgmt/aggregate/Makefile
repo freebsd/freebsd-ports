@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aggregate
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://buffoon.automagic.org/dist/ \
 		http://maggie.automagic.org/dist/

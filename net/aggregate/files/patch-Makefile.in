@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Fri Nov  2 10:49:52 2001
++++ Makefile.in	Fri Nov  2 12:04:11 2001
+@@ -25,7 +25,6 @@
+ INSTALL = @INSTALL@
+ DEFS = @DEFS@
+ LIBS = @LIBS@
+-CFLAGS = -O
+ LDFLAGS = -s
+ prefix = @prefix@
+ 
