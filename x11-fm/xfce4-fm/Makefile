@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	3.99.2
+PORTREVISION=   1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
