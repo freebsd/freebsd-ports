@@ -287,14 +287,19 @@ MASTER_SITE_ISC+=	\
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/linux/kde/%SUBDIR%/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
-	ftp://ftp.chg.ru/pub/X11/kde/%SUBDIR%/
+	ftp://ibiblio.org/pub/packages/desktops/kde/%SUBDIR%/ \
+	ftp://ftp.gtlib.cc.gatech.edu/pub/kde/%SUBDIR%/ \
+	ftp://mirrors.midco.net/pub/kde/%SUBDIR%/ \
+	ftp://ftp.oregonstate.edu/pub/kde/%SUBDIR%/ \
+	ftp://download.uk.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://download.au.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://download.at.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://ftp.eu.uu.net/pub/kde/%SUBDIR%/ \
+	ftp://ftp.tiscali.nl/pub/mirrors/kde/%SUBDIR%/ \
+	ftp://ftp.roedu.net/pub/mirrors/ftp.kde.org/%SUBDIR%/ \
+	ftp://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
+	ftp://ftp.du.se/pub/mirrors/kde/%SUBDIR%/ \
+	ftp://download.tw.kde.org/pub/kde/%SUBDIR%/
 
 MASTER_SITE_MOZILLA+= \
 	http://download.mozilla.org/pub/%SUBDIR%/ \
