@@ -125,6 +125,7 @@
     SUBDIR += topaz
     SUBDIR += umatrix
     SUBDIR += umfpack
+    SUBDIR += units
     SUBDIR += vecfem
     SUBDIR += vtk
     SUBDIR += wingz

@@ -1,0 +1,15 @@
+The Free Software Foundation's "units" unit conversion and calculation utility.
+
+GNU units converts quantities expressed in various scales to their equivalents
+in other scales. Units can only handle multiplicative scale changes. For
+example, it cannot convert Celsius to Fahrenheit but it can convert
+temperature differences between those temperature scales. 
+
+The units are defined externally in an extensive, well annotated data file
+that defines over 2000 units. You can also provide your own data file. 
+
+WWW: http://www.gnu.org/directory/units.html
+
+Note that this port will install the utility with a 'g' prefix,
+e.g. gunits, but the texinfo documentation will refer to it without
+the 'g' prefix.

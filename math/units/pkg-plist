@@ -1,0 +1,5 @@
+bin/gunits
+@unexec install-info --delete %D/info/units.info %D/info/dir
+info/units.info
+@exec install-info %D/info/units.info %D/info/dir
+share/units.dat
