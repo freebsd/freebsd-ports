@@ -198,6 +198,10 @@ pre-everything::
 .endif
 .endif # ${ARCH} == i386
 
+.if ${OSVERSION} > 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 .if ${ARCH} == "i386"
 # install booktree extension
