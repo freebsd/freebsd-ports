@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	mrproject
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Project management application for Gnome 2
 
-BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+LIB_DEPENDS=	mrproject.0:${PORTSDIR}/deskutils/libmrproject \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -24,9 +25,6 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-INSTALLS_SHLIB=	yes
-
-MAN1=		mrproject.1 run-mrproject.1 mrproject-engine.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
