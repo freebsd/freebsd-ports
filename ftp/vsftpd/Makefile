@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+USE_PERL5=	yes
 ALL_TARGET=	vsftpd
 
 MAN5=		vsftpd.conf.5
@@ -20,14 +21,13 @@ MAN8=		vsftpd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-patch:
 	@${MV} ${WRKSRC}/defs.h ${WRKSRC}/defs.h.sed
 	${SED} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
-                ${WRKSRC}/defs.h.sed > ${WRKSRC}/defs.h
+		${WRKSRC}/defs.h.sed > ${WRKSRC}/defs.h
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.sed
+	${SED} -e "s/^CFLAGS	=/CFLAGS	+=/" \
+		${WRKSRC}/Makefile.sed > ${WRKSRC}/Makefile
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
