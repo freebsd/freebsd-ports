@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-# The following is only needed if --with-eazel-services is brought in,
-# which it isn't, because it depends on ammonite, which is Linux-only
-# BUILD_DEPENDS+=rpm:${PORTSDIR}/archivers/rpm
-
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
+		msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.6:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
@@ -37,7 +33,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
+		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+                XGETTEXT=${LOCALBASE}/bin/xgettext-new
 CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
 
@@ -62,7 +60,7 @@ pre-extract:
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
