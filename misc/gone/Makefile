@@ -3,7 +3,7 @@
 # Date created:        19 April 1998
 # Whom:                marcus
 #
-# $Id: Makefile,v 1.3 1998/04/20 04:41:16 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gone-1.3.1

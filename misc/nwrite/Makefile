@@ -3,7 +3,7 @@
 # Date created:                	29 July 1997
 # Whom:                        	daveh
 #
-# $Id: Makefile,v 1.5 1999/04/23 16:02:22 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nwrite-1.9.2

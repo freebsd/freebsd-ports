@@ -3,7 +3,7 @@
 # Date created:		Tue June 8 15:11:00 BST 1999
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/08 17:48:36 roger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	videotext-0.6.971023

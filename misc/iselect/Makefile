@@ -3,7 +3,7 @@
 # Date created:		03-Jan-1998
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/03 12:04:53 rse Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	iselect-1.2.0

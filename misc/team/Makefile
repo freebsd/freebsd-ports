@@ -3,7 +3,7 @@
 # Date created:		1 July 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.6 1997/04/30 03:18:06 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	team-3.1

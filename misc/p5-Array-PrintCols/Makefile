@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/08/15 02:09:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Array-PrintCols-2.1

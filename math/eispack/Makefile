@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.20 1999/02/03 11:11:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	eispack

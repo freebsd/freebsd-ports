@@ -3,7 +3,7 @@
 # Date created:				2 April 1999
 # Whom:					Gordon Greeff
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	peq-0.7.1

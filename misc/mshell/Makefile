@@ -3,7 +3,7 @@
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1996/11/18 14:07:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mshell

@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.3 1998/08/23 07:34:43 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fep

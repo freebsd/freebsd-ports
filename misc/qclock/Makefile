@@ -3,7 +3,7 @@
 # Date created:		12 August 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/08/30 15:40:18 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qclock

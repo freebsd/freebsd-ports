@@ -3,7 +3,7 @@
 # Date created:				5 Jan 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/11/11 12:26:00 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ytree-1.65

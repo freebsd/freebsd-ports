@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.31 1999/04/08 18:08:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mc-4.5.31

@@ -3,7 +3,7 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.4 1999/06/08 22:07:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fftw-2.1.2

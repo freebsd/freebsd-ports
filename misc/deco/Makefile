@@ -3,7 +3,7 @@
 # Date created:				16 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		deco382

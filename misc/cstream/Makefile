@@ -3,7 +3,7 @@
 # Date created:         19990304
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.4 1999/05/06 13:52:32 cracauer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cstream-1.4

@@ -3,7 +3,7 @@
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1998/05/03 22:03:50 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	git-4.3.17

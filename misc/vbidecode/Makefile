@@ -3,7 +3,7 @@
 # Date created:		Mon June 7 16:11:00 BST 1999
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1999/06/07 22:23:36 roger Exp $
+# $FreeBSD$
 #
 # Note: vbidecode is one part of the bttv distribution, the Linux bt848 driver
 # It therefore has a DISTNAME of vbidecode but DISTFILES of bttv

@@ -3,7 +3,7 @@
 # Date created:         19 May 99
 # Whom:                 Eoin Lawless (eoin@maths.tcd.ie)
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ParMetis-2.0

@@ -3,7 +3,7 @@
 # Date created:					8 Aug 1998
 # Whom:						rom
 #
-# $Id: Makefile,v 1.10 1999/06/19 07:47:52 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	geg-0.99.0

@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.12 1999/03/04 00:00:59 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	FD-1.03j

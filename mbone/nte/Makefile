@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.12 1998/09/25 10:05:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nte-1.5a29

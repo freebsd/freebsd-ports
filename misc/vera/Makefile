@@ -3,7 +3,7 @@
 # Date created:		9 March 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
-# $Id: Makefile,v 1.2 1999/04/30 07:55:34 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vera-1.5

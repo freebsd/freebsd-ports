@@ -3,7 +3,7 @@
 # Date created:		14 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 04:42:16 steve Exp $
+# $FreeBSD$
 
 DISTNAME=       pdmenu
 PKGNAME=	pdmenu-1.2.40

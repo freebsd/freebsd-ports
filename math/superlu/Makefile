@@ -3,7 +3,7 @@
 # Date created:         31 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.4 1998/12/15 18:04:06 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	superlu_1.1

@@ -3,7 +3,7 @@
 # Date created:                      8 Mar 1997
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	viz-1.1.1

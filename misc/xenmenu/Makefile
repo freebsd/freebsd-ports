@@ -3,7 +3,7 @@
 # Date created:				19 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 00:48:55 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xenmenu-0.8b

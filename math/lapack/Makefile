@@ -3,7 +3,7 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/09/27 20:08:00 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	LAPACK

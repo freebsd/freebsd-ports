@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/11/17 20:21:54 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ScriptKit-0.1.6

@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/16 13:29:05 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xd-8087

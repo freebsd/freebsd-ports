@@ -3,7 +3,7 @@
 # Date created:				21 Sep 1996
 # Whom:					Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1999/05/01 12:34:35 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		estic-1.40-sources

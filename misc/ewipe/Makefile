@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.15 1999/03/08 08:27:05 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ewipe-1.1.0

@@ -3,7 +3,7 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.3 1999/04/13 10:54:19 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	metis-4.0

@@ -3,7 +3,7 @@
 # Date created:         3 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1998/06/04 17:13:49 smace Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	calc-2.9.3t6

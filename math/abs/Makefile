@@ -3,7 +3,7 @@
 # Date created:        20 January 1999
 # Whom:                gmarco
 #
-# $Id: Makefile,v 1.2 1999/03/24 17:43:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	abs-src-0.6a

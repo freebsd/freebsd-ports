@@ -3,7 +3,7 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.9 1999/03/08 00:18:18 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xgfe-2.0

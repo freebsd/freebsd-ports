@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1997
 # Whom:                 eserte
 #
-# $Id: Makefile,v 1.2 1998/07/07 18:55:41 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Eval113

@@ -3,7 +3,7 @@
 # Date created:			30 July 1998
 # Whom:				Heinz Tschabitscher
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	sc-6.21

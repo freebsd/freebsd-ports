@@ -3,7 +3,7 @@
 # Date created: 	11 July 1998
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.3 1999/04/22 07:37:47 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jargon-4.1.1

@@ -3,7 +3,7 @@
 # Date created:         03 Oct 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/11/14 09:43:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       plplot4p99j

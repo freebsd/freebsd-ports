@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.17 1999/07/04 10:43:39 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	siag-3.1.18

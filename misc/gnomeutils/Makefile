@@ -3,7 +3,7 @@
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/05/30 03:51:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-utils-1.0.12

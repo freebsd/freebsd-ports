@@ -3,7 +3,7 @@
 # Date created:         9 February 1999
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.2 1999/04/26 02:46:15 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	quotes-1.4-0

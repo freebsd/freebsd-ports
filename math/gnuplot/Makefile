@@ -3,7 +3,7 @@
 # Date created:         19 April 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.21 1999/01/23 07:05:24 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnuplot-3.7

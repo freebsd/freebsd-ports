@@ -3,7 +3,7 @@
 # Date created:		30 July 1996
 # Whom:			Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.7 1998/03/20 14:35:15 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkcron-2.12

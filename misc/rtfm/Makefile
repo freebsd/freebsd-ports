@@ -3,7 +3,7 @@
 # Date created:		20 July 1999
 # Whom:			Chris Costello <chris@calldei.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/01 03:50:20 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rtfm-0.1

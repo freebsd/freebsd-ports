@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1999/03/15 05:06:25 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	figlet22

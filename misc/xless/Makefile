@@ -3,7 +3,7 @@
 # Date created:		23 December 1996
 # Whom:			Conrad Sabatier <conrads@home.com>
 #
-# $Id: Makefile,v 1.4 1999/07/04 21:44:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xless-1.7

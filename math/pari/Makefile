@@ -3,7 +3,7 @@
 # Date created:		19 January 1999
 # Whom:	Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 #
-# $Id: Makefile,v 1.7 1999/07/04 21:29:55 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pari-2.0.16.beta

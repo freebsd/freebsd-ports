@@ -3,7 +3,7 @@
 # Date created:         1998-01-01
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1998/01/01 00:20:46 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	uk.postcodes

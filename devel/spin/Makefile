@@ -3,7 +3,7 @@
 # Date created:		Oct 23, 1997
 # Whom:			jhanna@home.com
 #
-# $Id: Makefile,v 1.3 1999/06/25 03:51:25 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	spin-3.33

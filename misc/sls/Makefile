@@ -3,7 +3,7 @@
 # Date created:         16. Dec 97
 # Whom:                 sec@42.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       sls

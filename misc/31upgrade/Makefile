@@ -3,7 +3,7 @@
 # Date created:		8 Mar 1999
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1999/05/20 21:14:32 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	31upgrade-1999.05.20

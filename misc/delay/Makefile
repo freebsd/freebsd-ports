@@ -3,7 +3,7 @@
 # Date created:        03 Mar 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id: Makefile,v 1.2 1999/07/03 05:10:58 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	delay-1.3

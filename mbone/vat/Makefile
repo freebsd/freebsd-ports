@@ -3,7 +3,7 @@
 # Date created:		2 November 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vat-4.0b2

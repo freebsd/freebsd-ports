@@ -3,7 +3,7 @@
 # Date created:		3 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.11 1997/10/31 13:43:28 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	oleo-1.6

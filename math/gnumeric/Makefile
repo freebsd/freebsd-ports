@@ -3,7 +3,7 @@
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.12 1999/05/30 03:50:25 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnumeric-0.31

@@ -3,7 +3,7 @@
 # Date created:		2 August 1998
 # Whom:			J Han <hjh@best.com>
 #
-# $Id: Makefile,v 1.2 1999/01/10 18:41:00 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		diction-0.8

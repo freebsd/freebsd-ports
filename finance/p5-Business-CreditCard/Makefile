@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/06/24 18:43:06 jfitz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Business-CreditCard-0.21

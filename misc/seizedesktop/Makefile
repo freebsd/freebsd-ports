@@ -3,7 +3,7 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	SeizeDesktop-0.1a

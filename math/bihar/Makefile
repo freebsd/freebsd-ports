@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:			Pedro Giffuni S.
 #
-# $Id: Makefile,v 1.8 1998/11/14 09:43:22 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bihar

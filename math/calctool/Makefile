@@ -3,7 +3,7 @@
 # Date created:				2 Dec 1996
 # Whom:					nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.2 1996/12/12 05:28:54 asami Exp $
+# $FreeBSD$
 #
  
 DISTNAME=       calctool-2.4pl13

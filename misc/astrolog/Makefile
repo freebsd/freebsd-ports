@@ -7,7 +7,7 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.15 1999/04/03 02:02:12 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ast54unx

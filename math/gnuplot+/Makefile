@@ -3,7 +3,7 @@
 # Date created:         May 18, 1999
 # Whom:                 NAKAJI Hiroyuki
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 01:51:48 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnuplot37+-1.1.8

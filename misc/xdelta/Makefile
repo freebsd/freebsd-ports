@@ -3,7 +3,7 @@
 # Date created:					Sun May  4 21:40:06 CDT 1997
 # Whom:						jmacd
 #
-# $Id: Makefile,v 1.13 1999/05/02 18:48:03 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdelta-1.0.2

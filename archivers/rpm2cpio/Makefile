@@ -3,7 +3,7 @@
 # Date created:		Sun Jul 18 21:51:23 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	rpm2cpio

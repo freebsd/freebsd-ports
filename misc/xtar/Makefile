@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.3 1997/10/26 23:57:17 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtar-1.4

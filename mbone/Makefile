@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 1999/01/28 10:58:10 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += imm

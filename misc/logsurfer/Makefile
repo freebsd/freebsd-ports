@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.4 1998/10/04 22:41:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	logsurfer-1.41

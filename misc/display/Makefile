@@ -3,7 +3,7 @@
 # Date created:		25 August 1997
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
-# $Id: Makefile,v 1.5 1998/11/08 16:51:06 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		display
