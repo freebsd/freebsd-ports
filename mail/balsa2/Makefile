@@ -31,6 +31,7 @@ USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
 GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--enable-ldap \
