@@ -76,9 +76,9 @@
 # normal user. This isn't usually a problem, as most sites have an alias for
 # root that redirects such mail to a human administrator.
 
-exim_user = XX_BINOWN_XX
+exim_user = sendmail
 exim_group = mail
-never_users = root : XX_BINOWN_XX
+never_users = root
 
 
 # The use of your host as a mail relay by any host, including the local host
@@ -161,6 +161,7 @@ host_lookup = 0.0.0.0/0
 # percent_hack_domains = *
 
 pid_file_path = /var/run/exim%s.pid
+log_file_path = /var/run/exim/%s.pid
 
 
 end

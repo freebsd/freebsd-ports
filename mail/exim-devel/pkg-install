@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Since FreeBSD does not supply a user for running an MTA in a sandbox
+# by default, use the traditional sendmail sandbox user, sendmail,
+# adding it if it does not exist.
+#
+# Modern FreeBSD systems already have a group mail.
+#
+# $FreeBSD$
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+user=sendmail
+group=mail
+
+if [ "$2" = "PRE-INSTALL" ]; then
+	if /usr/bin/id ${user} 2>/dev/null; then
+		echo "You already have a user '${user}', so Exim will use it."
+	else
+		echo "You need a user '${user}'..."
+		/usr/sbin/pw useradd ${user} -c "Mail Transfer Agent" \
+		    -g ${group} -d /nonexistent -s /sbin/nologin || exit 1
+		echo "Added user '${user}', Exim will use it."
+	fi
+fi
+
+# This is naughty, since the directory we create won't be removed along
+# with Exim.  However, logfiles should probably stick around after Exim
+# is removed, until the administrator is sure he doesn't want them
+# any more.
+#
+mkdir -p /var/log/exim
+chown ${user}:${group} /var/log/exim
