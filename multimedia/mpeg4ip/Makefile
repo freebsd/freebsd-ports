@@ -92,6 +92,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
