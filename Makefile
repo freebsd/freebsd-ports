@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1996/10/24 11:20:46 asami Exp $
+# $Id: Makefile,v 1.27 1996/11/07 12:30:23 asami Exp $
 #
 
 SUBDIR += archivers
@@ -28,6 +28,7 @@ SUBDIR += russian
 SUBDIR += shells
 SUBDIR += security
 SUBDIR += sysutils
+SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
 
