@@ -12,6 +12,8 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_NETSCAPE}
 DISTFILES=	${BROWSER_NAME}-v${PORTVERSION:S/.//g}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
+FORBIDDEN=	multiple vulnerabilities with no hope of fixes
+
 MAINTAINER=	freebsd-alpha@FreeBSD.org
 COMMENT?=	Netscape version 4 communicator web-surfboard for DEC Alpha
 
