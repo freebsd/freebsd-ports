@@ -43,8 +43,8 @@ do-install:
 		${MKDIR} ${BINDIR}; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/proxyper ${BINDIR}
-	${REINPLACE_CMD} s+CHANGETHIS+${BINDIR}+ ${FILESDIR}/proxyper.sh > ${WRKSRC}/proxyper.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/proxyper.sh ${BINDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/proxyper.sh ${BINDIR}
+	${REINPLACE_CMD} s+CHANGETHIS+${BINDIR}+ ${BINDIR}proxyper.sh
 	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/ChangeLog.txt ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/manual.html ${BINDIR}
