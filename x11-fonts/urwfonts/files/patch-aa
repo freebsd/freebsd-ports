@@ -1,0 +1,14 @@
+--- Makefile.orig	Fri Aug  2 11:30:35 1996
++++ Makefile	Fri Aug  2 11:32:02 1996
+@@ -0,0 +1,11 @@
++ 
++DESTDIR=$(PREFIX)/lib/X11/fonts
++ 
++all:
++	@echo nothing to be done for \`$@\'
++	@echo this is an install-only port.
++ 
++install:
++	[ -d $(DESTDIR) ] || mkdir -p $(DESTDIR)
++	tar -cf - URW |(cd ${DESTDIR}; tar -xf -)
++
