@@ -1,40 +1,32 @@
---- Makefile.in.orig	Thu Feb 25 13:01:50 1999
-+++ Makefile.in	Wed Mar  3 13:15:47 1999
-@@ -101,7 +101,7 @@
+--- Makefile.in.orig	Thu Jan 11 04:30:32 2001
++++ Makefile.in	Thu Jan 11 10:40:25 2001
+@@ -108,3 +108,3 @@
  
- lib_LTLIBRARIES = libxml.la
+-libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@ @Z_LIBS@
++libxml_la_LDFLAGS = -version-info 5:0:0 @Z_LIBS@
  
--libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
-+libxml_la_LDFLAGS = -version-info 5:0:0
- 
- libxml_la_SOURCES =  		SAX.c 		entities.c 		encoding.c 		error.c 		parser.c 		HTMLparser.c 		HTMLtree.c 		debugXML.c 		tree.c 		xpath.c 		valid.c
- 
-@@ -105,7 +105,7 @@
- tester_DEPENDENCIES = $(DEPS)
- tester_LDADD = $(LDADDS)
+@@ -140,3 +140,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
+@@ -176,3 +176,3 @@
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+-DATA =  $(confexec_DATA) $(pkgconfig_DATA)
++DATA =  $(confexec_DATA)
  
- EXTRA_DIST = xmlConf.sh.in libxml.spec.in
-@@ -518,7 +518,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS \
- 		uninstall-confexecDATA uninstall-xmlincHEADERS
+@@ -620,3 +620,3 @@
+ 
+-install-data-am: install-pkgconfigDATA install-xmlincHEADERS
++install-data-am: install-xmlincHEADERS
+ install-data: install-data-recursive
+@@ -630,3 +630,3 @@
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
  		$(HEADERS) config.h
- all-redirect: all-recursive-am
- install-strip:
---- doc/Makefile.in.orig	Thu Feb 25 13:01:51 1999
-+++ doc/Makefile.in	Tue Mar  2 20:39:23 1999
-@@ -89,7 +89,7 @@
- # The directory containing the source code (if it contains documentation).
- DOC_SOURCE_DIR = ..
- 
--HTML_DIR = $(datadir)/gnome-xml/html
-+HTML_DIR = $(datadir)
- 
- TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -638,3 +638,3 @@
+ 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
+-		$(DESTDIR)$(confexecdir) $(DESTDIR)$(pkgconfigdir) \
++		$(DESTDIR)$(confexecdir) \
+ 		$(DESTDIR)$(xmlincdir)
