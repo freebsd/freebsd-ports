@@ -3912,6 +3912,7 @@ jonah		ports/www/jonah
 jools		ports/games/jools
 journal		ports/deskutils/journal
 jove		ports/editors/jove
+jpatch		ports/graphics/jpatch
 jpeg		ports/graphics/jpeg
 jpeg2ps-a4	ports/graphics/jpeg2ps-a4
 jpeg2ps-letter	ports/graphics/jpeg2ps-letter
