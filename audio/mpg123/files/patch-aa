@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jun 16 02:09:06 1999
-+++ Makefile	Thu Nov 11 10:21:40 1999
-@@ -4,7 +4,7 @@
+--- Makefile.orig	Tue Jan 11 05:17:23 2000
++++ Makefile	Tue Jan 11 05:18:07 2000
+@@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
  
@@ -9,9 +9,18 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
  SECTION=1
-@@ -285,35 +285,42 @@
- #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
- #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
+ 
+ # Enable the below line If your plathome support IPv6
+-#CFLAGS+= -DINET6
++.if defined(USE_INET6)
++CFLAGS+= -DINET6
++.endif
+ # Additional LIBDIR and libraries if exist
+ IPV6LIBDIR=
+ IPV6LIB=
+@@ -300,35 +302,42 @@
+ #CFLAGS='$(CFLAGS) -DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
+ #CFLAGS='$(CFLAGS) -DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
 +CC ?= cc
 +LDFLAGS =
@@ -40,19 +49,18 @@
  freebsd:
 -	$(MAKE) CC=cc LDFLAGS= \
 -		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o' \
--		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
--		mpg123-make
 +	${MAKE}	OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o term.o' \
-+ 		mpg123-make
+ 		mpg123-make
  
  freebsd-esd:
 -	$(MAKE) CC=cc LDFLAGS= \
 -		AUDIO_LIB='-lesd -laudiofile' \
 -		OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_esd.o' \
--		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS \
@@ -67,14 +75,14 @@
 -		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o \
 +	$(MAKE) OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o \
  			control_sajber.o control_tk3play.o' \
--		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DFRONTEND \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
  		$(FRONTEND)
   
  
-@@ -552,7 +559,7 @@
+@@ -567,7 +576,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
