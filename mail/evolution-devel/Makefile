@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTVERSION=	1.2.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -21,7 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 		nss3.1:${PORTSDIR}/security/nss \
-		soup.5:${PORTSDIR}/devel/soup
+		soup.6:${PORTSDIR}/devel/soup
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2

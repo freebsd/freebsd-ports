@@ -10,6 +10,7 @@ bin/evolution-calendar-importer
 bin/evolution-elm-importer
 bin/evolution-executive-summary
 bin/evolution-gnomecard-importer
+bin/evolution-launch-composer
 bin/evolution-ldif-importer
 bin/evolution-mail
 bin/evolution-mail-upgrade
@@ -442,7 +443,9 @@ share/gnome/evolution/views/tasks/galview.xml
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo.conduit
 share/gnome/help/evolution/C/access.html
+share/gnome/help/evolution/C/apx-fdl.html
 share/gnome/help/evolution/C/apx-gloss.html
+share/gnome/help/evolution/C/apx-gpl.html
 share/gnome/help/evolution/C/authors.html
 share/gnome/help/evolution/C/bugs.html
 share/gnome/help/evolution/C/config-prefs-cal.html
@@ -456,6 +459,18 @@ share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
 share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/encryption.html
+share/gnome/help/evolution/C/fdl-section1.html
+share/gnome/help/evolution/C/fdl-section10.html
+share/gnome/help/evolution/C/fdl-section2.html
+share/gnome/help/evolution/C/fdl-section3.html
+share/gnome/help/evolution/C/fdl-section4.html
+share/gnome/help/evolution/C/fdl-section5.html
+share/gnome/help/evolution/C/fdl-section6.html
+share/gnome/help/evolution/C/fdl-section7.html
+share/gnome/help/evolution/C/fdl-section8.html
+share/gnome/help/evolution/C/fdl-section9.html
+share/gnome/help/evolution/C/fdl-using.html
+share/gnome/help/evolution/C/features.html
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
 share/gnome/help/evolution/C/figures/config-mail.png
@@ -493,6 +508,8 @@ share/gnome/help/evolution/C/install.html
 share/gnome/help/evolution/C/introduction.html
 share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
+share/gnome/help/evolution/C/organization.html
+share/gnome/help/evolution/C/other-help.html
 share/gnome/help/evolution/C/print-destination.html
 share/gnome/help/evolution/C/quickref-cal.html
 share/gnome/help/evolution/C/quickref-contact.html
@@ -500,7 +517,9 @@ share/gnome/help/evolution/C/quickref-mail.html
 share/gnome/help/evolution/C/rsvp-stuff.html
 share/gnome/help/evolution/C/sgml/apx-authors.sgml
 share/gnome/help/evolution/C/sgml/apx-bugs.sgml
+share/gnome/help/evolution/C/sgml/apx-fdl.sgml
 share/gnome/help/evolution/C/sgml/apx-gloss.sgml
+share/gnome/help/evolution/C/sgml/apx-gpl.sgml
 share/gnome/help/evolution/C/sgml/config-prefs.sgml
 share/gnome/help/evolution/C/sgml/config-sync.sgml
 share/gnome/help/evolution/C/sgml/evolution.sgml
@@ -527,6 +546,7 @@ share/gnome/help/evolution/C/stylesheet-images/toc-minus.gif
 share/gnome/help/evolution/C/stylesheet-images/toc-plus.gif
 share/gnome/help/evolution/C/stylesheet-images/up.gif
 share/gnome/help/evolution/C/stylesheet-images/warning.gif
+share/gnome/help/evolution/C/terms.html
 share/gnome/help/evolution/C/topic.dat
 share/gnome/help/evolution/C/typography.html
 share/gnome/help/evolution/C/ui-intro.html
