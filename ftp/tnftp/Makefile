@@ -19,7 +19,7 @@ MAN1=		tnftp.1
 PLIST_FILES=	bin/tnftp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ftp ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/src/ftp.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ftp ${PREFIX}/bin/tnftp
+	${INSTALL_MAN} ${WRKSRC}/src/ftp.1 ${PREFIX}/man/man1/tnftp.1
 
 .include <bsd.port.mk>
