@@ -8,7 +8,9 @@
 PORTNAME=	aalib
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://horac.ta.jcu.cz/pub/aa/
+MASTER_SITES=	ftp://horac.ta.jcu.cz/pub/aa/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ports@FreeBSD.org
 
