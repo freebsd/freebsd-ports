@@ -118,7 +118,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
 		${FILESDIR}/extra-patch-2.6.2-src \
 		${FILESDIR}/extra-patch-2.6.2-src-cups
-.if ${PRTYPE} != g900 && ${PRTYPE} != -spr800
+.if ${PRTYPE} != g900 && ${PRTYPE} != -scx3500_3600s && ${PRTYPE} != -spr800
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm::main.c
 .endif
 BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf253:${PORTSDIR}/devel/autoconf253
@@ -179,7 +179,8 @@ INCLIST=	CUPS EKPSTM_MO PAPER_LIST
 .else
 INCLIST=	PIPS CUPS EKPNAVI DTRFILTER PAPER_LIST
 .endif
-.if ${PRTYPE} == -sc65_66s || ${PRTYPE} == -sc85_86s || ${PRTYPE} == -spr800
+.if ${PRTYPE} == -sc65_66s || ${PRTYPE} == -sc85_86s || \
+    ${PRTYPE} == -scx3500_3600s || ${PRTYPE} == -spr800
 INCLIST+=	PIPS_EN
 .endif
 .if defined(EKPSTM_VER)
@@ -263,7 +264,7 @@ post-patch:
 		-e 's,^SUBDIRS = rc$$,#&,' \
 		${WRKSRC}/ekpd/Makefile.in
 .if ${PRTYPE} == g900 || ${PRTYPE} == -sc65_66s || ${PRTYPE} == -sc85_86s || \
-	${PRTYPE} == -spr800
+	${PRTYPE} == -scx3500_3600s || ${PRTYPE} == -spr800
 	${REINPLACE_CMD} -e 's,^\(enum Ink\)set\(_Id inkbox_get_inkid\),\1box\2,' \
 		${WRKSRC}/ekpstm/inkbox.h
 .endif
