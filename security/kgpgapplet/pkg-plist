@@ -1,0 +1,12 @@
+lib/libkgpgapplet.so
+lib/libkgpgapplet.la
+share/doc/HTML/en/kgpgapplet/index.docbook
+share/doc/HTML/en/kgpgapplet/index.cache.bz2
+share/doc/HTML/en/kgpgapplet/common
+share/icons/hicolor/16x16/apps/kgpgapplet.png
+share/icons/hicolor/48x48/apps/kgpgapplet.png
+share/icons/hicolor/32x32/apps/kgpgapplet.png
+share/icons/locolor/16x16/apps/kgpgapplet.png
+share/icons/locolor/32x32/apps/kgpgapplet.png
+share/apps/kicker/applets/kgpgapplet.desktop
+@dirrm share/doc/HTML/en/kgpgapplet

@@ -1,0 +1,7 @@
+Kgpg's kicker applet is a simple icon that integrates into your kicker for KDE.
+Then, you can drop files on it to encrypt/decrypt/sign/verify.
+
+A mouse right-click on it will bring a menu allowing encryption/decryption of
+the clipboard, to manage keys & more. GnuPG has never been so easy!
+
+WWW: http://devel-home.kde.org/~kgpg/
