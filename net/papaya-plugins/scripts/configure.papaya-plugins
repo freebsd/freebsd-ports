@@ -1,0 +1,45 @@
+#!/bin/sh
+# $FreeBSD$
+
+tempfile=`mktemp -t checklist`
+
+if [ "${BATCH}" = "yes" ]; then
+	set \"common\"
+else
+	/usr/bin/dialog --title "Postfix configuration options" --clear \
+			--checklist "\n\
+Please select desired options:" -1 -1 8 \
+common		"Enable common generic plugins" ON \
+extra		"Enable extra generic plugins" OFF \
+turf		"Enable the TurfProtocol plugin" OFF \
+turf-common	"Enable common Turf plugins" OFF \
+turf-extra	"Enable extra Turf plugins" OFF \
+python		"Enable the Python interpreter" OFF \
+all		"Overrides above" OFF \
+debugging	"Compile with debugging symbols" OFF \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+exec > ${WRKDIR}/Makefile.inc
+
+while [ "$1" ]; do
+	echo "CONFIGURE_ARGS+=	--enable-`echo $1 | sed -e 's/"//g'`"
+	shift
+done

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+files=`ls ${WRKSRC}/o/ | sed -e 's/^.*\/o\///g'`
+
+> pkg-plist
+for f in $files; do
+	echo share/papaya/plugins/$f >> ${WRKSRC}/pkg-plist
+done
+
+echo "@dirrm share/papaya/plugins" >> ${WRKSRC}/pkg-plist
