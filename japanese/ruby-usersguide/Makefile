@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 VERSION=	980206
 
-FILESDIR=	${.CURDIR}/files
+MD5_FILE=	${.CURDIR}/distinfo
 PKGDIR=		${.CURDIR}
 
 LANGSUFFIX=	-jp
