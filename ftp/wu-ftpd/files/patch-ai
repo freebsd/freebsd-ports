@@ -1,5 +1,5 @@
---- config.h.orig	Sun Jul 29 23:29:57 2001
-+++ config.h	Sun Jul 29 23:30:55 2001
+--- config.h.noac.orig	Tue Oct  2 23:07:36 2001
++++ config.h.noac	Tue Oct  2 23:08:15 2001
 @@ -109,9 +109,7 @@
   * Add OPIE support -- REQUIRES OPIE libraries
   */
@@ -38,3 +38,9 @@
  
  /*
   * Define this to completely disable anonymous FTP access.
+@@ -387,4 +385,4 @@
+  * the NLST command enough to quell complains from Solaris command-
+  * line FTP client users.
+  */
+-#undef NLST_SHOWS_DIRS
++#define NLST_SHOWS_DIRS
