@@ -11,7 +11,7 @@ CATEGORIES=	irc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR=	 stable/1.1/apps/network
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
