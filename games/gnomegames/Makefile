@@ -3,7 +3,7 @@
 # Date created:        03 July 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/02 00:58:05 vanilla Exp $
 #
 
 DISTNAME=	gnome-games-0.30
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
