@@ -1,0 +1,20 @@
+--- bt_my_stubs.c.orig	Thu May 14 09:10:09 1992
++++ bt_my_stubs.c	Tue Apr  8 15:27:47 1997
+@@ -62,7 +62,7 @@
+                update_item();
+ 	if(confirm_overwrite() == 0){
+ 			if (xv_destroy_safe(bt_window1->window1) == XV_OK)
+-			   exit();
++			   exit(0);
+ 			}
+ 	 else
+ 	 
+@@ -459,7 +459,7 @@
+ 	case MENU_NOTIFY:
+ 		if(confirm_overwrite() == 0){
+ 			if (xv_destroy_safe(bt_window1->window1) == XV_OK)
+-			exit();
++			exit(0);
+ 		}
+ 		break;
+ 
