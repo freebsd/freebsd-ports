@@ -1,0 +1,91 @@
+--- INSTALL.orig	Sun May  7 19:35:19 2000
++++ INSTALL	Mon Feb 26 01:00:37 2001
+@@ -87,17 +87,17 @@
+ 
+ 	Create the directories:
+ 
+-	/etc/dhis
+-	/etc/dhis/bin
+-	/etc/dhis/pid
+-	/etc/dhis/db
+-	/etc/dhis/log
+-	/etc/dhis/script
++	__PREFIX__
++	__PREFIX__/bin
++	__PREFIX__/pid
++	__PREFIX__/db
++	__PREFIX__/log
++	__PREFIX__/script
+ 	
+-	You may wish to create /etc/dhis/src and put dhisd-4.0 under
++	You may wish to create __PREFIX__/src and put dhisd-4.0 under
+ 	this directory.
+ 
+-	Copy dhisd to /etc/dhis/bin . This is the server binary.
++	Copy dhisd to __PREFIX__/bin . This is the server binary.
+ 
+ 	Create the database file which will hold information for
+ 	current dynamic hosts. For this installation let us assume
+@@ -105,7 +105,7 @@
+ 	example.com, and that we wish to create 3 dynamic hosts
+ 	named dyn1.example.com, dyn2.example.com and dyn3.example.com
+ 
+-	Change directory to /etc/dhis/db
++	Change directory to __PREFIX__/db
+ 	
+ 	Create a text file named dhis.db with a text editor.
+ 	The file should have three lines, one for each dynamic host.
+@@ -179,20 +179,20 @@
+ 	Change the permissions as you wish. In particular dhis.db
+ 	should not be readable by anyone. Suggested example:
+ 
+-	chmod 700 /etc/dhis /etc/dhis/*
+-	chmod 600 /etc/dhis/db/dhis.db
++	chmod 700 __PREFIX__ __PREFIX__/*
++	chmod 600 __PREFIX__/db/dhis.db
+ 
+ 	Add dhisd to your system's startup script 
+ 	(rc.local for BSD systems, SXXdhis under /etc/rc2.d
+ 	for System V). A simple line such as 
+ 
+-		/etc/dhis/bin/dhisd
++		__PREFIX__/bin/dhisd
+ 
+ 	will do. However, if your service will provide mail 
+ 	relaying as well you must specify the relay's IP address,
+ 	in which case the line should look like:
+ 
+-		/etc/dhis/bin/dhisd -m y.y.y.y
++		__PREFIX__/bin/dhisd -m y.y.y.y
+ 
+ 	where y.y.y.y is the IP address of the mail relay (may be
+ 	the same host). Check the relay-4.0.tar.gz distribution
+@@ -209,7 +209,7 @@
+ 	present, the relay machine is identified by relay.example.com.
+ 	Again, these may point to the same machine.
+ 
+-	Edit /etc/named.conf and add a section such as:
++	Edit /etc/named/named.conf and add a section such as:
+ 
+ 	zone "example.com" in {
+ 
+@@ -277,8 +277,8 @@
+ 
+ 	DNS is now running and accepting dynamic updates.
+ 
+-	You may also run /etc/dhis/bin/dhisd or 
+-	/etc/dhis/bin/dhisd -m y.y.y.y manually by now if
++	You may also run __PREFIX__/bin/dhisd or 
++	__PREFIX__/bin/dhisd -m y.y.y.y manually by now if
+ 	you wish to run DHIS at once.
+ 
+ 4. Adding Records
+@@ -301,7 +301,7 @@
+ 
+ 	run 
+ 
+-	kill -HUP `cat /etc/dhis/pid/dhisd.pid`
++	kill -HUP `cat __PREFIX__/pid/dhisd.pid`
+ 
+ 	to reload the DHIS database.
+ 

@@ -1,0 +1,22 @@
+DHIS Daemon release 4.0
+==============================
+
+dhisd is the DHIS daemon. The deamon is used to update DNS tables on a 
+running unix based DNS server, running BIND 8.1.2 or higher. It's clients
+should run the dhis-client 3 or 4 software to send updates.
+
+You need a full DNS domain to run this server. You should at least have a 
+domain hosted for you with a primary and backup dns server and 1 
+backup mail-exchanger
+.
+If you don't know what this previous few lines where about, 
+you probably shouldn't try and run this software.
+
+For more information on the services of DHIS, you should look at the
+official DHIS site: 
+	http://www.dhis.org/dhis/services/
+
+For more info on the FreeBSD port, see 
+	http://bsltwr.dhis.org/dhis
+
+WWW: http://bsltwr.dhis.org/dhis/
