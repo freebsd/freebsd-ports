@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-DateManip
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -30,7 +29,7 @@ MAN3=		DateTime::Format::DateManip.3
 
 .if ${PERL_LEVEL} < 500600
 post-patch:
-	${PERL} -pi -e '$$_ = "" if /^use bytes;/' ${WRKSRC}/lib/DateTime/Format/DateManip.pm
+	@${PERL} -pi -e '$$_ = "" if /^use bytes;/' ${WRKSRC}/lib/DateTime/Format/DateManip.pm
 .endif
 
 .include <bsd.port.post.mk>
