@@ -2,7 +2,7 @@
 #
 # Start or stop vmware
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/emulators/vmware3/files/Attic/001.vmware.sh,v 1.1 2004-06-11 23:35:29 edwin Exp $
 
 vmware_config_file=@@PREFIX@@/etc/vmware/config
 
