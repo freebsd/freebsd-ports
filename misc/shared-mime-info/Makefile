@@ -5,23 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.13
-PORTREVISION=	2
+PORTVERSION=	0.14
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.freedesktop.org/software/shared-mime-info/
 DISTNAME=	shared-mime-info-${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~marcus/
-PATCH_SITE_SUBDIR=	marcus
-PATCHFILES=	patch-freedesktop.org.xml
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	glib20 libxml2 intltool
+USE_GNOME=	glib20 libxml2 intltool gnomehack
 
 MAN1=		update-mime-database.1
 

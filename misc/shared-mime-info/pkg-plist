@@ -1,4 +1,5 @@
 bin/update-mime-database
+libdata/pkgconfig/shared-mime-info.pc
 share/mime/XMLnamespaces
 share/mime/application/andrew-inset.xml
 share/mime/application/illustrator.xml
@@ -135,6 +136,7 @@ share/mime/application/x-lyx.xml
 share/mime/application/x-lzop.xml
 share/mime/application/x-macbinary.xml
 share/mime/application/x-magicpoint.xml
+share/mime/application/x-matroska.xml
 share/mime/application/x-mif.xml
 share/mime/application/x-mozilla-bookmarks.xml
 share/mime/application/x-ms-dos-executable.xml
@@ -192,9 +194,9 @@ share/mime/application/x-ustar.xml
 share/mime/application/x-wais-source.xml
 share/mime/application/x-wpg.xml
 share/mime/application/x-x509-ca-cert.xml
+share/mime/application/x-xbel.xml
 share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
-share/mime/application/xbell.xml
 share/mime/application/xhtml+xml.xml
 share/mime/application/zip.xml
 share/mime/audio/ac3.xml
