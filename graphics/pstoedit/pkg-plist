@@ -5,6 +5,7 @@ include/pstoedit/cppcomp.h
 include/pstoedit/drvbase.h
 include/pstoedit/drvfuncs.h
 include/pstoedit/miscutil.h
+include/pstoedit/ordlist.h
 include/pstoedit/poptions.h
 include/pstoedit/psimage.h
 include/pstoedit/pstoedit.h
@@ -27,6 +28,7 @@ lib/pstoedit/libp2edrvswf.a
 lib/pstoedit/libp2edrvswf.so
 lib/pstoedit/libp2edrvswf.so.0
 libdata/pkgconfig/pstoedit.pc
+share/aclocal/pstoedit.m4
 %%PORTDOCS%%share/doc/pstoedit/changelog.htm
 %%PORTDOCS%%share/doc/pstoedit/index.htm
 %%PORTDOCS%%share/doc/pstoedit/pstoedit.htm
