@@ -17,8 +17,7 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
+USE_LIBLTDL=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15

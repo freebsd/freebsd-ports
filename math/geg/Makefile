@@ -19,6 +19,7 @@ COMMENT=	Visualise multiple 2D-functions of one variable
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

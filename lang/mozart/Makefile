@@ -17,7 +17,6 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 COMMENT=	A distributed language with constraint-based inference
 
-PATCH_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
@@ -61,7 +60,7 @@ pre-extract:
 	@${ECHO} ----------------------------------------------------
 	@${ECHO}
 
-post-patch:
+pre-configure:
 	cd ${WRKSRC}/platform/emulator \
 		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
 	cd ${WRKSRC}/platform/tools/gump/ozflex \

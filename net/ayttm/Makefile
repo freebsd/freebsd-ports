@@ -16,11 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		ltdl.4:${PORTSDIR}/devel/libltdl \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		gpgme.9:${PORTSDIR}/security/gpgme \
 		pspell.15:${PORTSDIR}/textproc/aspell
 
+USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_GCC=	3.2
 USE_X_PREFIX=	yes

@@ -15,7 +15,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C++ class library and toolset for ODBC access to data sources
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

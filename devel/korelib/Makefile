@@ -16,7 +16,8 @@ COMMENT=	A cross-platform C++ library for developing modular applications
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
+USE_AUTOMAKE_VER=14
+USE_AUTOCONF_VER=213
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes

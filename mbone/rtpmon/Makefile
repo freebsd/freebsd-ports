@@ -15,8 +15,8 @@ MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A program to montior loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
+WANT_AUTOCONF_VER=253
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		rtpmon.1
@@ -29,7 +29,7 @@ BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
 
 pre-configure:
-	@cd ${WRKSRC}; ${CHMOD} +w configure; autoconf
+	@cd ${WRKSRC}; ${CHMOD} +w configure; ${AUTOCONF}
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/rtpmon

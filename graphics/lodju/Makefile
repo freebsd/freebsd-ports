@@ -15,16 +15,14 @@ MAINTAINER?=	jylitalo@iki.fi
 COMMENT?=	An image management tool for the X Window System
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
+BUILD_DEPENDS=	gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
 LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
 MANCOMPRESSED=	yes
 
-AUTOCONF=       autoconf
-GNU_AUTOCONF=   yes
+WANT_AUTOCONF_VER=253
 HAS_CONFIGURE=  yes
 USE_GETTEXT=	yes
 

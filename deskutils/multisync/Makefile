@@ -14,24 +14,21 @@ DISTNAME=	multisync-${PORTVERSION}
 MAINTAINER?=	pav@FreeBSD.org
 COMMENT?=	Synchronize calendars, addressbooks and other PIM data
 
-PATCH_DEPENDS+=	${LOCALBASE}/share/automake17/depcomp:${PORTSDIR}/devel/automake17
-
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+WANT_AUTOMAKE_VER=17
 USE_X_PREFIX=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-AUTOMAKE_FILES=	missing install-sh mkinstalldirs config.guess config.sub depcomp
-
-post-patch:
+pre-configure:
 	@${FIND} ${WRKDIR} -type l -delete
-.for FILE in ${AUTOMAKE_FILES}
-	@${CP} -f ${LOCALBASE}/share/automake17/${FILE} ${WRKSRC}
-	@${CP} -f ${LOCALBASE}/share/automake17/${FILE} ${WRKSRCMASTER}
+.for FILE in missing install-sh mkinstalldirs config.guess config.sub depcomp
+	@${CP} -f ${AUTOMAKE_DIR}/${FILE} ${WRKSRC}
+	@${CP} -f ${AUTOMAKE_DIR}/${FILE} ${WRKSRCMASTER}
 .endfor
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread||'

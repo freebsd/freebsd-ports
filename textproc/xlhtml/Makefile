@@ -19,6 +19,7 @@ COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ppthtml.1 xlhtml.1

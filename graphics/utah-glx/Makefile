@@ -19,9 +19,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	3d@FreeBSD.org
 COMMENT=	A hardware OpenGL support for XFree86 X-Servers
 
-BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
-		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 
+WANT_AUTOCONF_VER=253
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes

@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	cvsgui
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	High-end interface client for CVS
 
-BUILD_DEPENDS+=	autoconf213:${PORTSDIR}/devel/autoconf213
-BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
@@ -33,7 +31,7 @@ CONFIGURE_SCRIPT=	make_configure
 MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
-#USE_AUTOMAKE_VER=	14
-#USE_AUTOCONF_VER=	213
+WANT_AUTOMAKE_VER=	14
+WANT_AUTOCONF_VER=	213
 
 .include <bsd.port.mk>

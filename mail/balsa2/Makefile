@@ -17,9 +17,9 @@ COMMENT=	A mail reader for the GNOME 2 desktop
 
 LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		esmtp.6:${PORTSDIR}/mail/libesmtp \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+		esmtp.6:${PORTSDIR}/mail/libesmtp
 
+USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

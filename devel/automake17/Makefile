@@ -19,9 +19,8 @@ COMMENT=	GNU Standards-compliant Makefile generator (version 1.7)
 DEPRECATED=	Please use devel/automake18 instead
 EXPIRATION_DATE=31st December 2004
 
-BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
-RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
-
+WANT_AUTOCONF_VER=257
+WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	17
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}

@@ -14,11 +14,10 @@ MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/older/ \
 MAINTAINER=	kirill@solaris.ru
 COMMENT=	GNU All Mobile Management Utilities
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
 MAN1=		gammu.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+WANT_AUTOCONF_VER=253
 
 CONFIGURE_ARGS=	--disable-fbuspl2303
 

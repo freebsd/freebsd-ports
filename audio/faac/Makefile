@@ -18,7 +18,7 @@ NO_PACKAGE=	Distribution in binary form is prohibited
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOMAKE_VER=15
-USE_AUTOHEADER=	yes
+USE_AUTOHEADER_VER=213
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13

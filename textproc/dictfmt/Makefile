@@ -15,8 +15,7 @@ DISTNAME=	dictd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
+USE_LIBLTDL=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -28,11 +28,11 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 
+USE_AUTOHEADER_VER=	213
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_AUTOHEADER=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr --disable-nls

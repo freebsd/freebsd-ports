@@ -102,8 +102,8 @@ CONFIGURE_ARGS+=--enable-netscapehack
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4 \
 		${FILESDIR}/extra-patch-configure.in
-USE_AUTOHEADER=	YES
 USE_AUTOCONF_VER=257
+USE_AUTOHEADER_VER=257
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif

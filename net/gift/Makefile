@@ -15,13 +15,13 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		Magick.6:${PORTSDIR}/graphics/ImageMagick
 .if defined(WITH_LIBMAGIC)
 LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
 .endif
 
+USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

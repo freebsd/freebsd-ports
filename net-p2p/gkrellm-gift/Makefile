@@ -20,7 +20,7 @@ LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 

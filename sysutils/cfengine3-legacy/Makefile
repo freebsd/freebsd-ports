@@ -28,6 +28,7 @@ LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
+USE_AUTOCONF_VER=213
 
 MAN8=		cfengine.8
 

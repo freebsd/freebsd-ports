@@ -21,9 +21,9 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi \
-		gmp.6:${PORTSDIR}/math/libgmp4 \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+		gmp.6:${PORTSDIR}/math/libgmp4
 
+USE_LIBLTDL=	yes
 PATCH_WRKSRC=	${WRKDIR}
 PATCH_STRIP=	-p1
 USE_LIBTOOL_VER=13

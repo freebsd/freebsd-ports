@@ -43,7 +43,7 @@ DLCANNA_VER=	1.4
 # hack to allow parallel build to work
 .if defined(PACKAGE_BUILDING)
 USE_GMAKE=	yes
-BUILD_DEPENDS+=	${AUTOCONF}:${PORTSDIR}/devel/autoconf
+WANT_AUTOCONF_VER=253
 .endif
 
 post-install:

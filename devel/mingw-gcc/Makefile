@@ -19,13 +19,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF gcc-2.95.3 for Windows cross-development
 
 BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
-		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
-		autoheader:${PORTSDIR}/devel/autoconf
+		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
 
+WANT_AUTOCONF_VER=253
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -15,9 +15,8 @@ MASTER_SITES=	http://axljab.homelinux.org/software/divxcalc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DivX Calculator
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
-		autoheader:${PORTSDIR}/devel/autoconf
-
+WANT_AUTOMAKE_VER=15
+WANT_AUTOCONF_VER=253
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

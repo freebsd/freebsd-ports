@@ -20,9 +20,7 @@ BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
-		gmake:${PORTSDIR}/devel/gmake \
-		autoconf257:${PORTSDIR}/devel/autoconf257 \
-		automake17:${PORTSDIR}/devel/automake17
+		gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
 		ark:${PORTSDIR}/misc/kdeutils3 \
@@ -31,6 +29,11 @@ RUN_DEPENDS+=	kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
 .endif
 
 # KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.1
+
+WANT_AUTOMAKE_VER=	17
+WANT_AUTOMAKE_RUN=	yes
+WANT_AUTOCONF_VER=	257
+WANT_AUTOCONF_RUN=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes

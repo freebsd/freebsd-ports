@@ -61,8 +61,8 @@ run-autotools:
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
-	LIBTOOL=libtool13 LIBTOOLIZE=libtoolize13 ./autogen.sh		\
-	--prefix=${PREFIX}/firebird --with-lock-manager --with-editline)
+	${AUTOTOOLS_VARS} ./autogen.sh --prefix=${PREFIX}/firebird	\
+	--with-lock-manager --with-editline)
 
 do-build:
 	@(								\

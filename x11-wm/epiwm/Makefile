@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Another fast, small, configurable window manager
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -27,6 +25,7 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog EPIwm-0.5.6.lsm INSTALL NEWS \
 		README TODO
 PLIST=		${WRKDIR}/pkg-plist
 USE_AUTOCONF_VER=	213
+WANT_AUTOMAKE_VER=	14
 USE_X_PREFIX=	yes
 
 post-extract:

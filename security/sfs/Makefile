@@ -20,7 +20,7 @@ PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 INFO=		sfs
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs \

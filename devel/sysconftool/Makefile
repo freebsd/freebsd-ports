@@ -17,6 +17,7 @@ COMMENT=	Helps to install application configuration files
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_AUTOMAKE_VER=	15
+USE_AUTOCONF_VER=	253
 
 MAN1=		sysconftool.1 sysconftoolcheck.1
 MAN7=		sysconftool.7

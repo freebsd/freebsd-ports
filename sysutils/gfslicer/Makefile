@@ -16,10 +16,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to split and join files
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+WANT_AUTOMAKE_VER=14
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
@@ -32,7 +31,7 @@ MANCOMPRESSED=	yes
 
 post-extract:
 .for file in install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/${file} ${WRKSRC}
+	@${LN} -sf ${AUTOMAKE_DIR}/${file} ${WRKSRC}
 .endfor
 	@${RM} -f ${WRKSRC}/config.cache
 

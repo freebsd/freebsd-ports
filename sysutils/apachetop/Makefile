@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	esn@x123.info
 COMMENT=	Apache RealTime log stats
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/autoconf257:${PORTSDIR}/devel/autoconf257
-
+WANT_AUTOCONF_VER=257
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
@@ -24,8 +23,8 @@ PLIST_FILES=	sbin/apachetop
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's/--run autoconf$$/--run autoconf257/' \
-		-e 's/--run autoheader$$/--run autoheader257/' \
+		-e 's/--run autoconf$$/--run $${AUTOCONF}/' \
+		-e 's/--run autoheader$$/--run $${AUTOHEADER}/' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
