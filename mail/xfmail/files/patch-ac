@@ -1,0 +1,11 @@
+--- src/mail/nntp.cpp.orig	Thu Jan 16 12:37:07 2003
++++ src/mail/nntp.cpp	Thu Jan 16 12:37:32 2003
+@@ -59,7 +59,7 @@
+ #endif
+ 
+ 	if(fmt) {
+-		snprintf(response, sizeof(response), fmt, ap);
++		vsnprintf(response, sizeof(response), fmt, ap);
+ 
+ 		if(logging & LOG_NNTP) {
+ 			if(!strncasecmp(response, "AUTHINFO PASS ", 14))
