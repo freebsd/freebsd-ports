@@ -1,0 +1,11 @@
+--- ../Makefile.pre.in~	Thu May  3 12:57:38 2001
++++ ../Makefile.pre.in	Thu Jan 10 09:02:03 2002
+@@ -92,7 +92,7 @@
+ TARGET=		python
+ 
+ # Installed python binary (used only by boot target)
+-PYTHON=		python
++PYTHON?=		python
+ 
+ # Add more -I and -D options here
+ CFLAGS=		$(OPT) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)

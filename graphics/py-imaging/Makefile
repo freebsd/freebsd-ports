@@ -35,7 +35,6 @@ PILINCDIR=	${PREFIX}/include/${PYTHON_VERSION}
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
-	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}/..
 
 post-configure:
 	@(cd ${WRKSRC}/..; ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
