@@ -1,0 +1,7 @@
+This package contains rendercheck, a simple tool I wrote to test some render
+extension conformance.
+
+WWW: http://www.freedesktop.org/Software/xapps
+
+- Eric Anholt
+anholt@FreeBSD.org
