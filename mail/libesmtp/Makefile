@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	0.8.10p1
+PORTVERSION=	0.8.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
