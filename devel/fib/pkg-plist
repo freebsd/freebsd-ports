@@ -1,0 +1,5 @@
+include/fib.h
+lib/libfib.a
+lib/libfib.so
+lib/libfib.so.1
+lib/libfib_p.a

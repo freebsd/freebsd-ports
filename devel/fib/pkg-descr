@@ -1,0 +1,7 @@
+This is an implementation of a Fibonacci Heap. A Fibonacci Heap is
+a very efficient heap. The cost of an insert is O(1), and the amortized
+cost of an extract minimum is O(lgn). You can extract an already inserted
+item out of order in O(lgn). The way the fibonacci heap obtains this is
+by delaying the organizing of the items until you extract.
+
+WWW: http://resnet.uoregon.edu/~gurney_j/jmpc/fib.html
