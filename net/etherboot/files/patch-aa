@@ -1,0 +1,11 @@
+--- Config.orig Sat Apr 21 14:57:58 2001
++++ Config      Mon May  7 10:02:23 2001
+@@ -223,7 +223,7 @@
+ # CFLAGS32+=   -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
+ 
+ # Change download protocol to NFS, default is TFTP
+-# CFLAGS32+=   -DDOWNLOAD_PROTO_NFS
++CFLAGS32+=     -DDOWNLOAD_PROTO_NFS
+ 
+ # These flags affect the loader that is prepended to the Etherboot image
+ LCONFIG+=      -DMOVEROM
