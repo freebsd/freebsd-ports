@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gslin
+# New ports collection makefile for:	vm-pop3d
 # Date created:			24 August 2001
 # Whom:				Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
 #
