@@ -7344,6 +7344,7 @@ tethereal	ports/net/tethereal
 tetradraw	ports/editors/tetradraw
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
+tetris		ports/games/tetris
 tex		ports/print/tex
 tex2im		ports/textproc/tex2im
 texi2db		ports/textproc/texi2db
