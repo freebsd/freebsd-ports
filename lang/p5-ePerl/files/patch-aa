@@ -1,0 +1,53 @@
+--- configure	Sun Aug  2 09:48:40 1998
++++ configure.new	Fri Jun 16 19:59:15 2000
+@@ -901,7 +901,6 @@
+   GCC=yes
+   ac_test_CFLAGS="${CFLAGS+set}"
+   ac_save_CFLAGS="$CFLAGS"
+-  CFLAGS=
+   echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+ echo "configure:907: checking whether ${CC-cc} accepts -g" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+@@ -918,16 +917,17 @@
+ fi
+ 
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
++ if false; then
+   if test "$ac_test_CFLAGS" = set; then
+     CFLAGS="$ac_save_CFLAGS"
+   elif test $ac_cv_prog_cc_g = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="$CFLAGS -g -O2"
+   else
+-    CFLAGS="-O2"
++    CFLAGS="$CFLAGS -O2"
+   fi
++ fi
+ else
+   GCC=
+-  test "${CFLAGS+set}" = set || CFLAGS="-g"
+ fi
+ 
+ # Extract the first word of "ranlib", so it can be a program name with args.
+@@ -1025,11 +1025,8 @@
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"
+   if test ".$ac_cv_prog_gcc" = ".yes"; then
+-    CFLAGS="-Wall -g -ggdb3"
++    CFLAGS="$CFLAGS -Wall -g -ggdb3"
+     LDFLAGS="-g -ggdb3"
+-else
+-    CFLAGS="-g"
+-    LDFLAGS="-g"
+ fi
+ x="enabled"
+ debug=on
+@@ -1039,8 +1036,6 @@
+ 
+ 
+ else
+-  CFLAGS=""
+-LDFLAGS=""
+ x=disabled
+ debug=off
+ 

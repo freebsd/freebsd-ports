@@ -5,25 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Expect
+PORTNAME=	Expect
 PORTVERSION=	1.07
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Expect
-DISTNAME=	Expect.pm-1.07
+DISTNAME=	${PORTNAME}.pm-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	will@FreeBSD.org
 
-BUILD_DEPENDS=	${SITE_PERL}/IO-Tty.pm:${PORTSDIR}/devel/p5-IO-Tty \
-		${SITE_PERL}/IO-Stty.pm:${PORTSDIR}/devel/p5-IO-Stty
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Tty.pm:${PORTSDIR}/devel/p5-IO-Tty \
+		${SITE_PERL}/IO/Stty.pm:${PORTSDIR}/devel/p5-IO-Stty
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 USE_PERL5=	yes
 MAN3=		Expect.3 Expect_intro.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL LDDLFLAGS=-shared LDFLAGS=-L/usr/lib)
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

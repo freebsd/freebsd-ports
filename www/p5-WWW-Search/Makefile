@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-WWW-Search
+PORTNAME=	WWW-Search
 PORTVERSION= 	2.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
-DISTNAME=	WWW-Search-2.10
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN1=		AutoSearch.1 \
 		WebSearch.1
@@ -74,10 +74,8 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::ZDNet.3 \
 		WWW::SearchResult.3
 
-post-patch:
-		@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/Makefile.PL
-
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+			PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>

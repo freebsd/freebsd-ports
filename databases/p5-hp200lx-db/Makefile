@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-hp200lx-db
+PORTNAME=	hp200lx-db
 PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HP200LX
-DISTNAME=	hp200lx-db-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	g.gonter@ieee.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 # MAN3=		HP200LX::DB.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL )
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

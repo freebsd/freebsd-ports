@@ -18,6 +18,6 @@ USE_PERL5=	yes
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-		CCFLAGS="${CFLAGS}"
+		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

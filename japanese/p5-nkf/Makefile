@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}171
 
 MAINTAINER=	max@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# Empty
@@ -30,6 +30,7 @@ MAN3=		NKF.3
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.post.mk>

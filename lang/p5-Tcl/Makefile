@@ -5,25 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Tcl
+PORTNAME=	Tcl
 PORTVERSION=	b2
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
-DISTNAME=	Tcl-b2
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
-WRKSRC=		${WRKDIR}/Tcl
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tcl.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+			CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

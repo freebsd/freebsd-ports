@@ -6,12 +6,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-ParallelUA
+PORTNAME=	ParallelUA
 PORTVERSION= 	2.48
 CATEGORIES=     www perl5 devel
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     LWP
 DISTNAME=	ParallelUserAgent-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=     ache@FreeBSD.org
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/w
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 

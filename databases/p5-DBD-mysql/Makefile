@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Mysql-modules
+PORTNAME=	Mysql-modules
 PORTVERSION=	1.2213
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jedgar@FreeBSD.org
 
@@ -21,9 +22,10 @@ LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 Y2K=		http://forteviot.symbolstone.org/technology/perl/DBI/doc/faq.html
 
-CONFIGURE_ARGS=	PREFIX=${PREFIX} --noprompt --mysql-install --nomsql-install
+CONFIGURE_ARGS=	PREFIX=${PREFIX} CC="${CC}" CCFLAGS="${CFLAGS}" \
+		--noprompt --mysql-install --nomsql-install
 CONFIGURE_ENV=	MYSQL_HOME=${PREFIX} IN_MYSQL_DISTRIBUTION=1
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN1=		dbimon.1
 MAN3=		Bundle::DBD::mysql.3 \

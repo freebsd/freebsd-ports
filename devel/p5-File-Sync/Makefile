@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3=		File::Sync.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

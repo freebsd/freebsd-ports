@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Digest-MD5
+PORTNAME=	Digest-MD5
 PORTVERSION=	2.09
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MD5
-DISTNAME=	Digest-MD5-2.09
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ache@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3=	Digest::MD2.3 \
 	Digest::SHA1.3 \
@@ -29,6 +29,7 @@ MAN3=	Digest::MD2.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
