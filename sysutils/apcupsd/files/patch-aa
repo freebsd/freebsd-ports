@@ -1,5 +1,56 @@
-*** ../../configure	Sat Dec  1 19:51:44 2001
---- configure	Sat Dec  1 19:53:05 2001
+*** configure.orig	Tue Nov 27 22:44:39 2001
+--- configure	Mon Dec  3 22:12:31 2001
+***************
+*** 4134,4140 ****
+  # Check for TCP wrapper support
+  #--------------------------------------------------------------------
+  
+! with_libwrap=no
+  # Check whether --with-libwrap or --without-libwrap was given.
+  if test "${with_libwrap+set}" = set; then
+    withval="$with_libwrap"
+--- 4134,4140 ----
+  # Check for TCP wrapper support
+  #--------------------------------------------------------------------
+  
+! #with_libwrap=no
+  # Check whether --with-libwrap or --without-libwrap was given.
+  if test "${with_libwrap+set}" = set; then
+    withval="$with_libwrap"
+***************
+*** 4179,4185 ****
+  fi
+  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   LIBS="$LIBS -lwrap -lnsl"
+        echo $ac_n "checking for TCP wrappers library -lwrap""... $ac_c" 1>&6
+  echo "configure:4185: checking for TCP wrappers library -lwrap" >&5
+        cat > conftest.$ac_ext <<EOF
+--- 4179,4185 ----
+  fi
+  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   LIBS="$LIBS -lwrap"
+        echo $ac_n "checking for TCP wrappers library -lwrap""... $ac_c" 1>&6
+  echo "configure:4185: checking for TCP wrappers library -lwrap" >&5
+        cat > conftest.$ac_ext <<EOF
+***************
+*** 4206,4212 ****
+  #define HAVE_LIBWRAP 1
+  EOF
+  
+! 	WRAPLIBS="-L$with_libwrap/lib -lwrap -lnsl"
+  else
+    echo "configure: failed program was:" >&5
+    cat conftest.$ac_ext >&5
+--- 4206,4212 ----
+  #define HAVE_LIBWRAP 1
+  EOF
+  
+! 	WRAPLIBS="-L$with_libwrap/lib -lwrap"
+  else
+    echo "configure: failed program was:" >&5
+    cat conftest.$ac_ext >&5
 ***************
 *** 4327,4333 ****
     echo $ac_n "(cached) $ac_c" 1>&6
