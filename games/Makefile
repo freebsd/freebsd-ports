@@ -107,6 +107,7 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += hlserver-cs
+    SUBDIR += hlserver-dod
     SUBDIR += hlserver-flf
     SUBDIR += icbm3d
     SUBDIR += icebreaker
