@@ -30,10 +30,6 @@ MAN1=		msgfmt.1 xgettext.1 xview.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/X11R6+${PREFIX}+;' \
 	  ${WRKSRC}/config/XView.cf
