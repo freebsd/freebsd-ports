@@ -1,0 +1,8 @@
+include/dbconn.h
+include/dbconnect_basedriver.h
+lib/libdbconn.a
+lib/libdyndbconn.so
+%%MYSQL%%include/dbconnect_MYSQL.h
+%%MYSQL%%include/mysql.h
+%%MYSQL%%include/mysql_com.h
+%%MYSQL%%include/mysql_version.h
