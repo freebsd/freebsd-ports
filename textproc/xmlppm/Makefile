@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	xmlppm
-PORTVERSION=	0.95.2
+PORTVERSION=	0.96
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
 
