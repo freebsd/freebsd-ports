@@ -3,13 +3,13 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.9 1998/12/31 16:07:48 vanilla Exp $
+# $Id: Makefile,v 1.10 1999/01/04 08:43:04 vanilla Exp $
 #
 
 DISTNAME=	ORBit-0.3.91
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ORBit/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/ORBit/
 #MASTER_SITES=	ftp://ftp.gnome.org/pub/ORBit/
 
 MAINTAINER=	clkao@CirX.ORG
