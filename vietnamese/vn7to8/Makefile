@@ -7,7 +7,7 @@
 #
 #	version # is VISCII version supported + .<edit_revision>
 
-PORTNAME=	vi-vn7to8
+PORTNAME=	vn7to8
 PORTVERSION=	1.1.1
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \

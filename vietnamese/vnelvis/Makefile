@@ -6,12 +6,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vi-vnelvis
+PORTNAME=	vnelvis
 PORTVERSION= 	1.4
 CATEGORIES=	vietnamese editors
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
-DISTNAME=	vnelvis
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
