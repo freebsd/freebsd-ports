@@ -16,4 +16,3 @@ would be appropriate.  If SQueuer is running on a different
 host or SQueuer is configured to run on a different port
 then please modify either localhost or 17771 as appropriate.
 =============================================================
-
