@@ -1,24 +1,29 @@
-*** doc/Makefile.in.orig	Tue Aug 17 17:16:14 1999
---- doc/Makefile.in	Sat Aug 21 00:50:02 1999
+*** doc/Makefile.in.orig	Tue Sep 28 16:04:39 1999
+--- doc/Makefile.in	Tue Jan 11 09:24:00 2000
 ***************
-*** 39,45 ****
+*** 38,47 ****
   
   #-------------------------------------------------------------------------
   
-! all:
-  	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+! all:	rxvt.1
+  
+! rxvt.1: rxvt.tbl Makefile
+! 	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
   
   SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
---- 39,45 ----
+  	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+--- 38,46 ----
   
   #-------------------------------------------------------------------------
   
-! all: alldoc
-  	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+! all:	alldoc
+  
+! rxvt.1:
   
   SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+  	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
 ***************
-*** 55,61 ****
+*** 56,62 ****
   
   tags allbin:
   
@@ -30,34 +35,29 @@
   
   tags allbin:
   
-! alldoc:	rxvt.1
+! alldoc:	rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
   
   yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
   	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
 ***************
-*** 66,82 ****
+*** 67,80 ****
   rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
-  	yodl2man -orxvt.tbl yodl/rxvt.yo
-  
-! rxvt.1: rxvt.tbl Makefile
-! 	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+  	(cd $(srcdir)/yodl; yodl2man -o../rxvt.tbl rxvt.yo)
   
 ! rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
-! 	yodl2html -o$@ yodl/rxvt.yo
+! 	(cd $(srcdir)/yodl; yodl2html -o../rxvt.html rxvt.yo)
   
 ! rxvtRef.html: $(YODL_RREF) yodl/rxvtRef.yo yodl/masonyodl.yo
-! 	yodl2html -o$@ yodl/rxvtRef.yo
+! 	(cd $(srcdir)/yodl; yodl2html -o../rxvtRef.html rxvtRef.yo)
   
 ! rxvtRef.txt: $(YODL_RREF) yodl/rxvtRef.yo yodl/masonyodl.yo
-! 	yodl2txt -o$@ yodl/rxvtRef.yo
+! 	(cd $(srcdir)/yodl; yodl2txt -o../rxvtRef.txt rxvtRef.yo)
   
   clean:
   	$(RMF) rxvt.man *~ yodl/*~
---- 66,78 ----
+--- 66,76 ----
   rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
-  	yodl2man -orxvt.tbl yodl/rxvt.yo
-  
-! rxvt.1:
+  	(cd $(srcdir)/yodl; yodl2man -o../rxvt.tbl rxvt.yo)
   
 ! rxvt.html:
   
@@ -68,7 +68,7 @@
   clean:
   	$(RMF) rxvt.man *~ yodl/*~
 ***************
-*** 86,93 ****
+*** 84,91 ****
   
   distclean:
   
@@ -77,11 +77,11 @@
   
   uninstall:
   	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
---- 82,92 ----
+--- 80,90 ----
   
   distclean:
   
-! install: rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
+! install:	rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
 ! 	$(INSTALL_DATA) rxvt.1 $(mandir)/$(manprefix)rxvt.$(manext)
 ! 	$(INSTALL_DATA) rxvt.html $(prefix)/share/doc/ja/rxvt/rxvt.html
 ! 	$(INSTALL_DATA) rxvtRef.html $(prefix)/share/doc/ja/rxvt/rxvtRef.html

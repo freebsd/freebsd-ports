@@ -1,0 +1,20 @@
+*** rclock/Makefile.in.orig	Thu Nov 26 14:28:11 1998
+--- rclock/Makefile.in	Tue Jan 11 10:00:16 2000
+***************
+*** 25,32 ****
+  .c.o:
+  	$(CC) -c $(CPPFLAGS) $(XINC) -I. -I$(basedir) -I$(srcdir) $(DEFS) $(CFLAGS) $<
+  #-------------------------------------------------------------------------
+! all:
+! clock: alldoc allbin
+  
+  rclock: $(OBJS)
+  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB)
+--- 25,31 ----
+  .c.o:
+  	$(CC) -c $(CPPFLAGS) $(XINC) -I. -I$(basedir) -I$(srcdir) $(DEFS) $(CFLAGS) $<
+  #-------------------------------------------------------------------------
+! all: alldoc allbin
+  
+  rclock: $(OBJS)
+  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB)

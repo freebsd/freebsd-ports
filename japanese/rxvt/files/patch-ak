@@ -1,0 +1,36 @@
+*** autoconf/config.h.in.orig	Tue Aug 17 15:55:41 1999
+--- autoconf/config.h.in	Fri Sep 10 21:10:39 1999
+***************
+*** 161,167 ****
+  #undef HAVE_UTMP_HOST
+  
+  /* Define location of utmp */
+! #undef RXVT_UTMP_FILE
+  
+  /* Define in utmpx.h has struct utmpx */
+  #undef HAVE_STRUCT_UTMPX
+--- 161,167 ----
+  #undef HAVE_UTMP_HOST
+  
+  /* Define location of utmp */
+! #define RXVT_UTMP_FILE "/var/run/utmp"
+  
+  /* Define in utmpx.h has struct utmpx */
+  #undef HAVE_STRUCT_UTMPX
+***************
+*** 173,179 ****
+  #undef RXVT_UTMPX_FILE
+  
+  /* Define location of wtmp */
+! #undef RXVT_WTMP_FILE
+  
+  /* Define location of wtmpx */
+  #undef RXVT_WTMPX_FILE
+--- 173,179 ----
+  #undef RXVT_UTMPX_FILE
+  
+  /* Define location of wtmp */
+! #define RXVT_WTMP_FILE "/var/log/wtmp"
+  
+  /* Define location of wtmpx */
+  #undef RXVT_WTMPX_FILE

@@ -1,0 +1,19 @@
+*** src/rxvt.h.orig	Sat Dec 18 16:41:47 1999
+--- src/rxvt.h	Tue Jan 11 20:59:24 2000
+***************
+*** 247,253 ****
+  # define COLORTERMENVFULL COLORTERMENV
+  #endif
+  #ifndef TERMENV
+! # ifdef KANJI
+  #  define TERMENV	"kterm"
+  # else
+  #  define TERMENV	"xterm"
+--- 247,253 ----
+  # define COLORTERMENVFULL COLORTERMENV
+  #endif
+  #ifndef TERMENV
+! # if MULTICHAR_ENCODING == EUCJ || MULTICHAR_ENCODING == SJIS
+  #  define TERMENV	"kterm"
+  # else
+  #  define TERMENV	"xterm"
