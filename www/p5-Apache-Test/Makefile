@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -47,7 +47,7 @@ post-patch:
 	@${PERL} -pi.bak -e 's/PERLRUN/PERL/;' ${WRKSRC}/install-pl
 .endif
 .if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e '$$_="" if /^use warnings/' \
+	@${PERL} -pi -e 's/\b(?:use|no) warnings[^;]*;//g' \
 	${WRKSRC}/lib/Apache/*.pm ${WRKSRC}/Makefile.PL ${WRKSRC}/install-pl
 .endif
 
