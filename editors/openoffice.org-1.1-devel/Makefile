@@ -114,6 +114,9 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 BUILD_DEPENDS+= ${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/Xft
+.if !defined(DISPLAY)
+BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+.endif
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -150,6 +153,10 @@ BUILD=		dmake
 .endif
 .else
 BUILD=		dmake strip="true"
+.endif
+
+.if !defined(DISPLAY)
+DISPLAYHACK=localhost:1001
 .endif
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
@@ -460,13 +467,31 @@ do-build:
 .endif
 .endif
 .endif
+.if exists(${WRKDIR}/.Xvfb.pid)
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.endif
+.if !defined(DISPLAY)
+	#
+	# This is a UGLY hack to not have to specify a X-Display.
+	#
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@sleep 5
+.endif
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP)
 	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
-	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+.if !defined(DISPLAY)
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
+.endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANG_EXT}'
@@ -481,9 +506,22 @@ pre-install:
 	@${MKDIR} -p ${WRKSRC}/../solver/${PORTVERSION}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
+.if !defined(DISPLAY)
+	#
+	# UGLY hack to not have to specify a X-Display.
+	#
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@sleep 5
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${WRKDIR} \
+		TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
 		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
+		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
+.endif
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
