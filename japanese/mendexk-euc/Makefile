@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/
 PKGNAMESUFFIX=	-${KANJICODE}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Index formatter for Japanese
 
 KANJICODE?=	euc
