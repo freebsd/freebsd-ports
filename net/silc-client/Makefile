@@ -7,7 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	0.9.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-simdir=${PREFIX}/lib/silcsim/client \
 		--with-helpdir=${PREFIX}/share/${PORTNAME}/help \
 		--with-docdir=${PREFIX}/share/doc/silc \
-		--with-perl-lib=${SITE_PERL}
+		--with-perl=no
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
