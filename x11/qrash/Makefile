@@ -18,15 +18,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Animated musical demo for X11
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
+USE_GCC=	2.95
 USE_GMAKE=	yes
+USE_PERL5=	yes	# XXX
 USE_X_PREFIX=	yes
 
 ALL_TARGET=	qrash
@@ -37,4 +33,4 @@ post-patch:
 	${FIND} ${WRKSRC} -type f -exec ${PERL} -pi -e \
 		"s:<malloc.h>:<stdlib.h>:g" {} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
