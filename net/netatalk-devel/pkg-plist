@@ -42,6 +42,7 @@ bin/psorder
 bin/timeout
 sbin/afpd
 sbin/atalkd
+sbin/etc2ps.sh
 sbin/ifmpap
 sbin/ifmpaprev
 sbin/ifpap
