@@ -1,11 +1,12 @@
---- Tgif.tmpl.orig	Thu Jul 15 15:59:27 1999
-+++ Tgif.tmpl	Thu Jul 15 16:02:44 1999
-@@ -57,7 +57,7 @@
-                   -DXBM_FILE_EXT=\"xbm\" -DXPM_FILE_EXT=\"xpm\" \@@\
+--- Tgif.tmpl.orig	Fri Nov 26 17:54:12 1999
++++ Tgif.tmpl	Fri Nov 26 17:56:19 1999
+@@ -58,7 +58,8 @@
                    -DOBJ_FILE_EXT=\"obj\" -DSYM_FILE_EXT=\"sym\" \@@\
                    -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\"
--MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT
-+MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT -DUSE_XAPPLRESDIR -DXAPPLOADDIR_DEF=\"$(LIBDIR)/app-defaults\"
+ MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT \@@\
+-                  -D_USE_PS_ADOBE_STRING=\"3.0/3.0\"
++                  -D_USE_PS_ADOBE_STRING=\"3.0/3.0\" -DUSE_XAPPLRESDIR  \@@\
++		  -DXAPPLOADDIR_DEF=\"$(LIBDIR)/app-defaults\"
  MOREDEFINES	=
  
  XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
