@@ -6,11 +6,16 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.13.5.1
+PORTVERSION=	1.13.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+
+.if defined(WITH_MUSIC)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
@@ -20,9 +25,6 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDLmm.8:${PORTSDIR}/devel/sdlmm \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		paragui.3:${PORTSDIR}/x11-toolkits/paragui
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -34,18 +36,31 @@ USE_LIBTOOL=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
+		CXXFLAGS="-D_UNICODE_BROKEN_" \
 		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
 
 CONFIGURE_ARGS=	--disable-paraguitest
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} \( -name "*.cpp" -or -name "*.h" \) | xargs \
-		${REINPLACE_CMD} -e 's|malloc[.]h|stdlib.h|g'
-	@find ${WRKSRC} -type f -name Makefile.in | xargs \
-		${REINPLACE_CMD} -e 's|[(]datadir[)]/games|(datadir)|g'
+.if defined(WITH_MUSIC)
+PLIST_SUB+=	MUSIC:=""
+.else
+PLIST_SUB+=	MUSIC:="@comment "
+.endif
 
 pre-configure:
-	@${RM} -f ${WRKSRC}/config.cache
+.if defined(WITH_MUSIC)
+	${CP}  ${DISTDIR}/frontiers.mp3 ${WRKSRC}/data/music
+	${CP}  ${DISTDIR}/time_to_strike.mp3 ${WRKSRC}/data/music
+	${CP}  ${DISTDIR}/machine_wars.mp3 ${WRKSRC}/data/music
+.endif
+
+pre-build:
+	@${FIND} ${WRKSRC}/source -name \*.cpp | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|<malloc.h>|<stdlib.h>|'
+	@${FIND} ${WRKSRC}/source -name \*.h | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|<malloc.h>|<stdlib.h>|'
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

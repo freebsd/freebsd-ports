@@ -8,12 +8,17 @@ bin/asc_mount
 bin/asc_raw2pcx
 bin/asc_viewid
 bin/asc_weaponguide
-share/asc/asc.gfx
-share/asc/asc_dlg.zip
-share/asc/buildings.con
-share/asc/main.con
-share/asc/mk1.con
-share/asc/trrobj.con
-share/asc/trrobj2.con
-share/asc/units-mk3.con
-@dirrm share/asc
+share/games/asc/asc.gfx
+share/games/asc/asc_dlg.zip
+share/games/asc/buildings.con
+share/games/asc/main.con
+share/games/asc/mk1.con
+share/games/asc/trrobj.con
+share/games/asc/trrobj2.con
+share/games/asc/units-mk3.con
+%%MUSIC:%%share/games/asc/music/frontiers.mp3
+%%MUSIC:%%share/games/asc/music/time_to_strike.mp3
+%%MUSIC:%%share/games/asc/music/machine_wars.mp3
+%%MUSIC:%%@dirrm share/games/asc/music
+@dirrm share/games/asc
+@dirrm share/games
