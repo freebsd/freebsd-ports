@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 			--with-xgnokiidir=${PREFIX}/share
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
-		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LIBS="-L../common -L${LOCALBASE}/lib"
 
 MAN1=	gnokii.1 todologo.1 ppm2nokia.1 sendsms.1

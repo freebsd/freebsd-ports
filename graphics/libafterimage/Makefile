@@ -32,6 +32,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-sharedlibs --with-builtin-xpm --with-x
+CFLAGS+=	"-fPIC"
 INSTALLS_SHLIB=	yes
 
 MAN1=	ascompose.1x
