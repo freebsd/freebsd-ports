@@ -35,10 +35,12 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+= pth-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 WRKSRC=	${WRKDIR}/oo_${PORTVERSION}_src/config_office
 
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
-			--with-jdk-home=${JDK13DIR}
+			--with-jdk-home=${JDK13DIR} \
+			--with-os-version=${OSVERSION}
 
 .include <bsd.port.pre.mk>
 
