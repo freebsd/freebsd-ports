@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.01
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,12 +14,10 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Ghemical is a computational chemistry software package
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc
-LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc
+LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
+		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
 		glade-gnome:${PORTSDIR}/devel/libglade
-
-BROKEN=		"Does not compile"
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
