@@ -1,6 +1,10 @@
 bin/fyre
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/gnome/fyre/animation-render.glade
-share/gnome/fyre/explorer.glade
-@dirrm share/gnome/fyre
+share/applications/fyre.desktop
+share/fyre/animation-render.glade
+share/fyre/explorer.glade
+share/fyre/metadata-emblem.png
+share/fyre/wicker-shoelace.png
+@dirrm share/fyre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
