@@ -1,5 +1,5 @@
-Mysql++ is a complex C++ API for MySQL (and other SQL Databases Soon).
-The goal of this API is too make working with Queries as easy as
-working with other STL Containers.
+MySQL++ is a C++ wrapper for MySQL's C API. 
+It is built around STL principles, to make dealing with 
+the database as easy as dealing with an STL container.
 
-WWW: http://dev.mysql.com/downloads/other/plusplus/
+WWW: http://tangentsoft.net/mysql++/
