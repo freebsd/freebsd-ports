@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.procoders.net/downloads/
 DISTNAME=	ziarc_src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ZiaRC is a Resistor Calculator
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC}

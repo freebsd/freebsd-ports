@@ -13,6 +13,7 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhmsg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for displaying messages
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes

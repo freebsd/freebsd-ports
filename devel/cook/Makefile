@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Like make(1), but more powerful and clean
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

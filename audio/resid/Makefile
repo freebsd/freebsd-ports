@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-p1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cycle-based SID emulator engine
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

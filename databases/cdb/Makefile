@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://cr.yp.to/cdb/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A fast lookup database library & utilities
 
 ALL_TARGET=	it
 

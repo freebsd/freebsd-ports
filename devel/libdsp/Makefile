@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ class library of common digital signal processing functions
 
 # dont use "USE_LIBTOOL=yes" because there's no configure script
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool

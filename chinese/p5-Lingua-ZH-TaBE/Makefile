@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/A/AU/AUTRIJUS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Chinese processing via libtabe
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
 

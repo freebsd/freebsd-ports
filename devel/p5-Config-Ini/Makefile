@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl interface to MS-Windows registry and .ini files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aqsis
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command line argument parser library
 
 USE_LIBTOOL=	yes
 

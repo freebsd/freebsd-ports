@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.rand.org/pub/RDB-hobbs/ \
 DISTNAME=	RDB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A fast, portable, relational database management system
 
 WRKSRC=		${WRKDIR}/rdb
 USE_PERL5=	yes

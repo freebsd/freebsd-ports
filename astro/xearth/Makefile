@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
 MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Set the root window to the image of earth
 
 USE_IMAKE=	yes
 

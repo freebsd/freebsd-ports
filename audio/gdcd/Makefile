@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://gdcd.undergrid.net/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CD player for the X Window System using the GIMP Tool Kit (GTK)
 
 BROKEN=		"Does not build"
 

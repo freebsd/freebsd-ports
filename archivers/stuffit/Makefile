@@ -16,6 +16,7 @@ DISTNAME=	stuffit520.611linux-i386
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Stuffit Archive Creator and Expander
 
 NO_CDROM=	Shareware -- should not redistribute
 NO_PACKAGE=	Only unmodified original package can be distributed

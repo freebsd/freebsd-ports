@@ -13,6 +13,7 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Store and retrieve data in a key/value format in a hash database
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 

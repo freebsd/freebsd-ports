@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CD player for X
 
 USE_IMAKE=	yes
 MAN1=		xcdplayer.1

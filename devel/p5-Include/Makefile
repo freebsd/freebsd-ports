@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Include
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 package which allows use of macros defined in 'C' header files
 
 PERL_CONFIGURE=	YES
 

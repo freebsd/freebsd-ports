@@ -14,6 +14,7 @@ MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	Format-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ library that supports printf style like format printing
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

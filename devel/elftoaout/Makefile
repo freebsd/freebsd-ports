@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://sunsite.mff.cuni.cz/OS/Linux/Sparc/local/elftoaout/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ELF to a.out conversion tool by Jakub Jelinek and Pete Zaitcev
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		elftoaout.1

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cpu's Audio Mixer [curses based]
 
 MAN1=	cam.1
 PLIST=	${WRKDIR}/pkg-plist

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Updates X root window with satellit views of earth
 
 IGNORE=		"FTP directory format changed, can no longer fetch images"
 

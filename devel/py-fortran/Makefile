@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyfort-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Creating extensions to the Python language with Fortran routines
 
 RUN_DEPENDS=	${PYNUMERIC}
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	vanessa_adt/${PORTVERSION}
 DISTNAME=	vanessa_adt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library that provides ADTs (queues, dynamic arrays and more)
 
 LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
 

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/database/proprietary
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	View dBase III files
 
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

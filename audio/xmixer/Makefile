@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	#http://www.hdk-berlin.de/~rasca/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Audio mixer (gtk and Xlib) for X11R6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	SDLmm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

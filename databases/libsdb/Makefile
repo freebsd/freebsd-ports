@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 DISTNAME=	sdb-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple database library
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

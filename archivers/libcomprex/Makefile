@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnupdate
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Transparently handles automatic compression and decompression of files
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		curl.2:${PORTSDIR}/ftp/curl

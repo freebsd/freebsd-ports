@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert a yacc grammar to syntax diagrams
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spark.py:${PORTSDIR}/devel/py-spark
 

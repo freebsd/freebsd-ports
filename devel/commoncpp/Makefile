@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	commonc++	
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU project portable class framework for C++
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

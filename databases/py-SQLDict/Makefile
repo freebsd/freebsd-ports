@@ -12,6 +12,7 @@ MASTER_SITES=		http://dustman.net/andy/python/SQLDict/1.0.0/
 PKGNAMEPREFIX=		py-
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Python dictionary wrapper around a SQL database
 
 USE_PYTHON=		yes
 NO_WRKSUBDIR=		yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhopt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library for parsing command line options
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes

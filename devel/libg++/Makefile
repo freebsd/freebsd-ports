@@ -21,6 +21,7 @@ PATCHFILES=	${DISTNAME}-20000312.diff.gz  \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A libg++ container classes for EGCS and later versions of GCC
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}

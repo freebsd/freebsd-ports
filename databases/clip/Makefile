@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-prg-${PORTVERSION}-3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	xBase and Clipper language compatible compiler
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

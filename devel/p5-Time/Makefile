@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Time-modules-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collection of functions to convert and use time variables in perl5
 
 PERL_CONFIGURE=	YES
 

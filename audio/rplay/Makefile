@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Network audio player
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 

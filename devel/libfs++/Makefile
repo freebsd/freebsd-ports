@@ -14,6 +14,7 @@ MASTER_SITES=	http://bluebat.dnsalias.org/software/libfs++/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. archive
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ library which provides a file_iterator class
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

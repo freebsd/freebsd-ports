@@ -11,6 +11,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A DockApp that shows the weather at geosynchronous orbit
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 

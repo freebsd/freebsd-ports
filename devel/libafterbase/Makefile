@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	afterstep
 DISTNAME=	libAfterBase-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	AfterStep basic functionality library
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

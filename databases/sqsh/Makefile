@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sqsh.org/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interactive tool for querying Sybase database servers
 
 LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds \
 		intl.4:${PORTSDIR}/devel/gettext

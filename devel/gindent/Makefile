@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	indent
 DISTNAME=	indent-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU indent
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

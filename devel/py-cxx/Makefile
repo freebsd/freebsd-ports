@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyCXX-V${PORTVERSION:S/r/-rc/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Make it easier to extend Python with C++
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

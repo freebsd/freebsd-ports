@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scanner/parser generator
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

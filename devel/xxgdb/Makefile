@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X window interface for gdb
 
 USE_IMAKE=	yes
 MAN1=		xxgdb.1

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An orbital simulator
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 

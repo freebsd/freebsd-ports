@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-1.0-BETA
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Memory Organization Benchmarks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

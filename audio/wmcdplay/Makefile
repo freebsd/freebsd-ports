@@ -13,6 +13,7 @@ DISTNAME=	wmcdplay-1.0-beta1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A CD player for the WindowMaker dock
 
 WRKSRC=		${WRKDIR}/wmcdplay
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ithought
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extensible text management system
 
 LIB_DEPENDS=    xml2.5:${PORTSDIR}/textproc/libxml2
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

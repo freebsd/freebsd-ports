@@ -14,6 +14,7 @@ DISTFILES=	${TIINS}:tiins ${DISTNAME}.tar.gz:timidity
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MIDI to WAV renderer and player
 
 NO_CDROM=	"Uses copyrighted patches"
 

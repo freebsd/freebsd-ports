@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Ioctl/JPRIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that provides a way to get the value of C ioctl constants
 
 PERL_CONFIGURE=	yes
 

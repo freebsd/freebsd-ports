@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Penguin
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A framework for passing digitally signed perl5 code between machines
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 

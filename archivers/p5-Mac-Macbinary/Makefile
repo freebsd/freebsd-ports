@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Mac
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that can extract info from Macbinary files
 
 PERL_CONFIGURE=	yes
 

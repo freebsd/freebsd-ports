@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK-based MP3 player
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		musicbrainz.2:${PORTSDIR}/audio/musicbrainz

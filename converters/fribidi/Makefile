@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Enlightenment Database Library
 
 USE_LIBTOOL=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that provides a method to daemonify a Perl script
 
 PERL_CONFIGURE=	yes
 

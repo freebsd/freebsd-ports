@@ -12,6 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://systems.cs.uchicago.edu/ply/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python Lex-Yacc
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

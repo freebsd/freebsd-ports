@@ -13,6 +13,7 @@ MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	LeoArg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A class for parsing command lines
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

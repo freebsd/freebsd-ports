@@ -18,6 +18,7 @@ PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Berkeley DB package, revision 3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

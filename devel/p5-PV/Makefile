@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	PerlVision-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 library for text-mode user interface widgets
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 

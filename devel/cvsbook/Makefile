@@ -12,6 +12,7 @@ MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tutorial and reference for CVS
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

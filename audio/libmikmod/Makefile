@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/sound/libs
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MikMod Sound Library
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

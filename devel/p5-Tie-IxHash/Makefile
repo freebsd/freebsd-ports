@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module implementing ordered in-memory associative arrays
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast dependency generator for C/C++ files
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

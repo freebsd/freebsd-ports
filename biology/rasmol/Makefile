@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/RasMol_2.7.2/
 DISTNAME=	RasMol
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast Molecular Visualization Program
 
 WRKSRC=		${WRKDIR}/RasMol_2.7.2/src
 

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/  \
 		ftp://ftp.uakom.sk/pub/linux/devel/lang/c/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Explains complicated C/C++ declarations in plain English
 
 ALL_TARGET=	${PORTNAME}
 MAN1=		cdecl.1

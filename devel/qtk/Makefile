@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A neat development tool for various languages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

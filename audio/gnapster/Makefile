@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNOME client for the online mp3 community called napster
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

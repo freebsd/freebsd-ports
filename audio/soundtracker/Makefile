@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

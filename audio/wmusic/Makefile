@@ -11,6 +11,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Remote control for xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

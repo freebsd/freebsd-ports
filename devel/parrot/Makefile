@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.comuno.freeserve.co.uk/oss/parrot/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Parrot GUI Builder
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

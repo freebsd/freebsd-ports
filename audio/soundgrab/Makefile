@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interactively select and save sections of an audio file
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		rawplay:${PORTSDIR}/audio/rawrec \

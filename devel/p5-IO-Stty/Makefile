@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-.${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module that hacks around IO::File deficiencies
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ALPHA/freetds
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sybase/Microsoft TDS protocol library
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

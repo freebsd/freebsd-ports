@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 DISTFILES=	c2t.tar.gz TONEPY.tit
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Translates GB/Big5 encoding to tone pinyin
 
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	c2t.tar.gz

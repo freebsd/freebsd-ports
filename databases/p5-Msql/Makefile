@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Msql
 DISTNAME=	Msql-modules-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 modules for accessing MiniSQL (mSQL) databases
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmsql.a:${PORTSDIR}/databases/msql \
 		${LOCALBASE}/lib/perl5/site_perl/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \

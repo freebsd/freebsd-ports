@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	FreezeThaw
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A module for converting Perl structures to strings and back
 
 PERL_CONFIGURE=	YES
 

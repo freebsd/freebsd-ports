@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fukt.bth.se/~per/mixer/
 DISTNAME=	Mixer.app-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Another mixer intended for the windowmaker dockapp
 
 USE_XPM=	yes
 

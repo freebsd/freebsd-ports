@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.mozilla.org/pub/${MASTER_SITE_SUBDIR}/ \
 MASTER_SITE_SUBDIR=	webtools
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \

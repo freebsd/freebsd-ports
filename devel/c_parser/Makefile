@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.mazumdar.demon.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A C99 Parser
 
 NO_WRKSUBDIR=	yes
 

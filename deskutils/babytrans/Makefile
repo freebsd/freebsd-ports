@@ -12,6 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Foothills/4078/
 DISTNAME=	dsasmsrc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A disassembler for Win32 code (PE format)
 
 NO_WRKSUBDIR=	yes
 

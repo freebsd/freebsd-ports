@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl interface to calculate m-difference between two objects
 
 PERL_CONFIGURE=	yes
 

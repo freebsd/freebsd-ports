@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extracts .lzx archives from Amiga systems
 
 NO_WRKSUBDIR=		yes
 

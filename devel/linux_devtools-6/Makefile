@@ -25,6 +25,7 @@ PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/en/os/${MACHINE_ARCH}
 PATCHFILES=
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		\

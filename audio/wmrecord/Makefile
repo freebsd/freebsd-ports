@@ -11,6 +11,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.bruhaha.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	General purpose audio recording utility for the WindowMaker dock
 
 USE_XPM=	YES
 USE_X_PREFIX=	YES

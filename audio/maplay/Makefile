@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
 NO_WRKSUBDIR=	yes
 

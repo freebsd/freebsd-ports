@@ -12,6 +12,7 @@ MASTER_SITES=	http://worldserver.oleane.com/rsn/Archives/
 DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockable cd player for AfterStep or WindowMaker
 
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 

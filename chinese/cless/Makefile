@@ -12,6 +12,7 @@ CATEGORIES=	chinese misc
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A better pager utility (and it speaks Chinese)
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library of C++ classes for flexible logging
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

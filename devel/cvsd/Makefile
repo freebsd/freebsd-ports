@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	cvs pserver daemon
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes

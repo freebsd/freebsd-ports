@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl interface for longitudinal redundancy check generation
 
 PERL_CONFIGURE=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.weird.com/pub/mirror/ \
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool which lets you draw Gantt charts
 
 ALL_TARGET=
 USE_REINPLACE=	yes

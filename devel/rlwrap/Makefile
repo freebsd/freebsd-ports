@@ -13,6 +13,7 @@ MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Readline wrapper
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}13
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	San Le's Free Finite Element Analysis
 
 USE_REINPLACE=	yes
 USE_MESA=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	xalloc-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A memory allocation library with error checking
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes

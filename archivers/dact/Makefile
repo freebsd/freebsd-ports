@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.lbsd.k12.ms.us/~rkeene/www.rkeene.org/devel/ \
 		http://www.jian.tv/pub/linux/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dynamic Adaptive Compression Tool
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 .if !exists(/usr/bin/bzip2)

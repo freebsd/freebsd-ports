@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl class capable of creating Markov chains and output based on them
 
 PERL_CONFIGURE=	yes
 

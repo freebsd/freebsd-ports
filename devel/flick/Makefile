@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/2.1/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Flexible IDL Compiler Kit
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

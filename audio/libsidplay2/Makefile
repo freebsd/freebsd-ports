@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sidplay2
 DISTNAME=	sidplay-libs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig

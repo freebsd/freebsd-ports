@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSERGEANT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Make perl scripts persistent in memory
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes

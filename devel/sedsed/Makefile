@@ -13,6 +13,7 @@ MASTER_SITES=	http://sedsed.sourceforge.net/
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	sed debugger/tokenizer/indenter
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

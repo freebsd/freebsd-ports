@@ -12,6 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.zolera.com/opensrc/wizard/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Classes for writing MS-style 'wizards'
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 

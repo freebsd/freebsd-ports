@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Getopt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for processing of both short and long command line options
 
 PERL_CONFIGURE=	yes
 

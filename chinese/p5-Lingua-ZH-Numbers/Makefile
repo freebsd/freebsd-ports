@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts numeric values into their Chinese string equivalents
 
 PERL_CONFIGURE=	yes
 

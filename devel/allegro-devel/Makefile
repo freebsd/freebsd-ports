@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes

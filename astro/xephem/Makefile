@@ -12,6 +12,7 @@ MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive astronomical ephemeris program
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 

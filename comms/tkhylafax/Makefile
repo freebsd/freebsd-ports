@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tcl/tk interface to Sam Leffler's fax package
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
 		sendfax:${PORTSDIR}/comms/hylafax \

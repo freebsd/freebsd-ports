@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~ut3c/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool for managing notes within a hierarchical tree
 
 QTDIR?=		${X11BASE}
 USE_QT_VER=	3

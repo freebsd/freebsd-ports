@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cproto
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generate C function prototypes and convert function definitions
 
 GNU_CONFIGURE=	YES
 MAN1=		cproto.1

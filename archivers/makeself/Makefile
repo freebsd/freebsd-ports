@@ -12,6 +12,7 @@ MASTER_SITES=	http://linuxberg.tele.net/files/console/file/
 EXTRACT_SUFX=	.gz.sh
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A neat script to make self-extracting archives
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

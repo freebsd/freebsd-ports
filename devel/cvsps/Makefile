@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CVS patchsets
 
 USE_GMAKE=	yes
 ALL_TARGET=	cvsps

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	LockFile
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module implementing simple file locking
 
 PERL_CONFIGURE=	yes
 

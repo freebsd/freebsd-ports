@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Open Source Audio Library Project
 
 BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		mpg123:${PORTSDIR}/audio/mpg123

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MOD player
 
 RESTRICTED=	"Non-redistributable beta"
 

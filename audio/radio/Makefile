@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/util/sound/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Radio over the Internet
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	${OPSYS}

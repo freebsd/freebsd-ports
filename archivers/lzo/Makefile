@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 MASTER_SITE_SUBDIR=	libs/compression
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Portable speedy, lossless data compression library
 
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

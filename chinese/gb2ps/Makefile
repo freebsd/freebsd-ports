@@ -21,6 +21,7 @@ DISTFILES=	${DISTNAME}.tar.gz  \
 		cfan24.ccf.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts Chinese GB (simple) encoded text to PostScript
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS

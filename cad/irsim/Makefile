@@ -12,6 +12,7 @@ MASTER_SITES=	http://mos.stanford.edu/group/magic/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An event-driven logic-level simulator for MOS circuis
 
 USE_XLIB=	yes
 MAN1=		irsim.1

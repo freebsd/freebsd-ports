@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.esc.auckland.ac.nz/People/Staff/Norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Adds Fortran intrinsics missing from f2c
 
 INSTALLS_SHLIB=	yes
 

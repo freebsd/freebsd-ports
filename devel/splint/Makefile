@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.splint.org/downloads/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	C and C++ Code Counter
 
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 			dlg:${PORTSDIR}/devel/pccts

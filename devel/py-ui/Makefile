@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyui${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A user interface library written in Python
 
 RUN_DEPENDS=	\
 	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \

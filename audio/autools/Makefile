@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.tnt.uni-hannover.de/~purnhage/software/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collection of programs to manipulate audio files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtsp.a:${PORTSDIR}/audio/afsp
 

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PEAR::HTML_Common is a base class for other HTML classes
 
 BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
 RUN_DEPENDS=	${BUILD_DEPENDS}

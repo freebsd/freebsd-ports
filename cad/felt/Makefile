@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	felt
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A system for Finite Element Analysis
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

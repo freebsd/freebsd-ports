@@ -14,6 +14,7 @@ DISTNAME=	cv.pl
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A project organizer for VHDL and Verilog RTL hardware designs
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

@@ -12,6 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Manipulate the file headers in tar archive files in various ways
 
 GNU_CONFIGURE=	yes
 

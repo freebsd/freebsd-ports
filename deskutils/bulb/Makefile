@@ -11,6 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.idiap.ch/~gobry/bulb/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNOME applet to warn about task terminations
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

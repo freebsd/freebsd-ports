@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.cronyx.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Read information about mp3s and oggs bitstream
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

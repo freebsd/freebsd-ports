@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl interface to calculate information about the phase of the moon
 
 PERL_CONFIGURE=	yes
 

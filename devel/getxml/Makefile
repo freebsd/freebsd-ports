@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	toutdoux
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An XML internationalization tool
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 

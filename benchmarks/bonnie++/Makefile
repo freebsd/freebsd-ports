@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.coker.com.au/bonnie++/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Performance Test of Filesystem I/O
 
 GNU_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that provides an interface to REXX parsing routines
 
 PERL_CONFIGURE=	yes
 

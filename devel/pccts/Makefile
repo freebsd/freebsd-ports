@@ -13,6 +13,7 @@ MASTER_SITES=		http://www.polhode.com/
 DISTNAME=		pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	The Purdue Compiler Construction Tool Set
 
 USE_ZIP=		yes
 WRKSRC=			${WRKDIR}/pccts

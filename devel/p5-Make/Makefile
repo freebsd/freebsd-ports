@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Make
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module implementing 'make' and script
 
 PERL_CONFIGURE=	yes
 

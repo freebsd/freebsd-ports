@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zipios
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A java.util.zip-like C++ library for reading and writing Zip files
 
 GNU_CONFIGURE=	yes
 

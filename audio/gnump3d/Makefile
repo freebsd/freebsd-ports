@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A streaming server for MP3, OGG vorbis, and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/mp32ogg

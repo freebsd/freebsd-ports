@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A userspace thread library
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

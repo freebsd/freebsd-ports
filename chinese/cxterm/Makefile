@@ -20,6 +20,7 @@ PATCHFILES=	cxterm-5.0.p3-color.patch.gz	# cxterm-5.0-hz-patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An xterm that speaks Chinese
 
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes

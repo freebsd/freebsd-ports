@@ -12,6 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Berkeley DB package, revision 2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

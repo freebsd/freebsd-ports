@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

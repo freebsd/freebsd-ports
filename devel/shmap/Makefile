@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Shared-memory-based hashmaps
 
 LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 

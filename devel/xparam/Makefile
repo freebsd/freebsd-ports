@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A general-purpose tool for parameter handling in C++
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
