@@ -4550,6 +4550,7 @@ nibbles		ports/games/nibbles
 nic		ports/net/nic
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
+nicmond		ports/net/nicmond
 nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
 nil		ports/games/nil
