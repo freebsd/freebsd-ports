@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.21 2002-05-08 20:02:45 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.22 2002-05-14 19:38:53 dwcjr Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -53,16 +53,16 @@ SUB_TEST="@comment "
 while [ "$1" ]; do
 	case $1 in
 		\"PCRE\")
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
+			echo "LIB_DEPENDS+=	pcre.0:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lpcre"
 			echo "PCRE_SUFFIX=	+pcre"
 			SUB_PCRE=""
 			;;
 		\"SASL\")
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
+			echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
 			echo "SASL_SUFFIX=	+sasl"
 			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
 				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
@@ -82,8 +82,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.7-1.1.7-0.9.6c.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.7-1.1.7-0.9.6c/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.9-1.1.9-0.9.6d.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.9-1.1.9-0.9.6d/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -131,7 +131,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "PATCH_SITES+=	http://www.cyber-magic.org/~taka/misc/"
-			echo "PATCHFILES+=	postfix-1.1.7+ipv6.patch.gz"
+			echo "PATCHFILES+=	postfix-1.1.9+ipv6.patch.gz"
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
