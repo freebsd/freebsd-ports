@@ -1,0 +1,16 @@
+tcpmssd was written by Ruslan Ermilov <ru@FreeBSD.org> based on work
+done by Patrick Bihan-Faou <patrick@mindstep.com>.
+
+tcpmssd is a divert(4) program that adjusts outgoing TCP data so that
+the requested segment size is not greater than the amount allowed by
+the interface MTU.
+
+This is necessary in many setups to avoid problems caused by routers
+that drop ICMP Datagram Too Big messages.  Without these messages,
+the originating machine sends data, it passes the rogue router then
+hits a machine that has an MTU that is not big enough for the data.
+Because the IP Don't Fragment option is set, this machine sends an
+ICMP Datagram Too Big message back to the originator and drops the
+packet.  The rogue router drops the ICMP message and the originator
+never gets to discover that it must reduce the fragment size or drop
+the IP Don't Fragment option from its outgoing data.
