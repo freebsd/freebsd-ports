@@ -59,4 +59,4 @@ xemacs-package: install
 	  ${TAR} -zcf ${.CURDIR}/${XEMACS_PKG_TARBALL} ${XEMACS_PKG_CONTENTS} ;\
 	)
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

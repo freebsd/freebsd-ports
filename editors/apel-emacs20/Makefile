@@ -16,4 +16,4 @@ MASTERDIR=	${.CURDIR}/../../editors/apel
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

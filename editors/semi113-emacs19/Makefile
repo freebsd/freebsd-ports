@@ -16,4 +16,4 @@ MASTERDIR=	${.CURDIR}/../../editors/semi113
 # emacs port setup
 EMACS_PORT_NAME=	emacs19
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

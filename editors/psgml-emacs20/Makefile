@@ -19,4 +19,4 @@ EMACS_PORT_NAME=	emacs20
 # pkg-* files in ${.CURDIR} are used
 PKGDIR=		${.CURDIR}
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
