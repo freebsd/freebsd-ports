@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.crc.ca/pub/packages/network/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
-MAINTAINER=	joe@tao.org.uk
+MAINTAINER=	sumikawa@FreeBSD.org
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
