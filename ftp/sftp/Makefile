@@ -32,7 +32,7 @@ do-install:
 	${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/rsftp
 	${INSTALL_PROGRAM} ${WRKSRC}/sftpserv ${PREFIX}/libexec/sftpserv
 	${INSTALL_MAN} ${WRKSRC}/sftp.1 ${PREFIX}/man/man1/secftp.1
-	${CP} ${PKGDIR}/PLIST.in ${PLIST}.unsorted
+	${CP} ${PKGDIR}/pkg-plist.in ${PLIST}.unsorted
 	@if [ ! -f ${PREFIX}/bin/sftp ]; then \
 		${ECHO} "No other sftp found, linking sftp to secftp"; \
 		${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/sftp; \
