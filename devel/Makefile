@@ -658,6 +658,7 @@
     SUBDIR += py-repl
     SUBDIR += py-reverse
     SUBDIR += py-ro
+    SUBDIR += py-sip
     SUBDIR += py-spark
     SUBDIR += py-twisted
     SUBDIR += py-unit
