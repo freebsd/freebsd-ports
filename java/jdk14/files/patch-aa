@@ -1,5 +1,5 @@
---- build/freebsd/makefiles/Defs-freebsd.gmk	2000/10/13 00:16:56	1.1
-+++ build/freebsd/makefiles/Defs-freebsd.gmk	2000/10/13 00:20:36
+--- makefiles/Defs-freebsd.gmk	2000/10/13 00:16:56	1.1
++++ makefiles/Defs-freebsd.gmk	2000/10/13 00:20:36
 @@ -59,11 +59,11 @@
  GCC_STYLE	= -Wmissing-prototypes -Wmissing-declarations -Wnested-externs
  GCC_WARNINGS	= -W -Wall $(GCC_STYLE) $(GCC_INHIBIT)
