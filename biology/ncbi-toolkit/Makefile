@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncbi-toolkit
-PORTVERSION=	2003.04.21
+PORTVERSION=	2004.06.16
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -35,13 +35,13 @@ pre-configure:
 	@${CP} ${FILESDIR}/${DUMMYMAKE} ${WRKSRC}
 
 post-install:
-	@${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}
 	@for file in ${WRKSRC}/data/*; do \
 		${INSTALL_DATA} $$file ${DATADIR}; \
 	done
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	@cd ${WRKSRC}/doc && ${FIND} * | \
+	${MKDIR} ${DOCDIR}
+	cd ${WRKSRC}/doc && ${FIND} * | \
 	  ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 .endif
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${PKGMESSAGE}
