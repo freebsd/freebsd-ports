@@ -3,12 +3,12 @@
 # Date created:			04 Dec 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/12/08 16:07:34 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/12/20 01:22:58 vanilla Exp $
 #
 
 DISTNAME=	glload-0.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://glload.netpedia.net/source/
+MASTER_SITES=	http://glload.netpedia.net/source/ \
 		http://www.freebsd.org/~vanilla/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
