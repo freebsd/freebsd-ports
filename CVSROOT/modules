@@ -8625,6 +8625,7 @@ whitespace.el	ports/textproc/whitespace.el
 whowatch	ports/sysutils/whowatch
 whups		ports/devel/whups
 wide-dhcp	ports/net/wide-dhcp
+wiliki		ports/www/wiliki
 wily		ports/editors/wily
 win32-codecs	ports/multimedia/win32-codecs
 windowlab	ports/x11-wm/windowlab
