@@ -165,6 +165,7 @@
     SUBDIR += icoconvert
     SUBDIR += icod
     SUBDIR += icontact
+    SUBDIR += ida
     SUBDIR += imageindex
     SUBDIR += imagesort
     SUBDIR += imageviewer

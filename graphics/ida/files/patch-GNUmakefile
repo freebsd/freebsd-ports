@@ -1,0 +1,13 @@
+--- GNUmakefile.old	Fri Aug 20 18:02:55 2004
++++ GNUmakefile	Fri Aug 20 18:03:28 2004
+@@ -11,8 +11,8 @@
+ LDLIBS	+= -lm
+ 
+ # for X11 + Motif
+-CFLAGS	+= -I/usr/X11R6/include
+-LDFLAGS	+= -L/usr/X11R6/$(LIB)
++CFLAGS	+= -I$(X11BASE)/include
++LDFLAGS	+= -L$(X11BASE)/$(LIB)
+ LDLIBS	+= -lXm -lXpm -lXt -lXext -lX11
+ 
+ # RegEdit.c is good old K&R ...
