@@ -83,6 +83,7 @@ include/cln/univpoly_real.h
 include/cln/version.h
 @dirrm include/cln
 lib/libcln.a
+lib/libcln.la
 lib/libcln.so
 lib/libcln.so.2
 share/cln/html/cln_1.html
