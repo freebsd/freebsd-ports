@@ -3,12 +3,12 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.33 1998/06/05 07:09:01 tg Exp $
+# $Id: Makefile,v 1.34 1998/06/19 09:00:49 tg Exp $
 #
 
 DISTNAME=       pyth151
 PKGNAME=        python-1.5.1
-CATEGORIES=	lang tk80
+CATEGORIES=	lang python tk80
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
