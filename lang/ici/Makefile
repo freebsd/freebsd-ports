@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ici
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 
@@ -16,10 +16,12 @@ MAKEFILE=	Makefile.bsd
 MAN1=		ici3.1
 MANCOMPRESSED=	yes
 
+USE_BZIP2=	yes
+
 ICIHDRS=	alloc.h array.h buf.h catch.h cfunc.h conf-bsd.h exec.h file.h \
-	float.h forall.h func.h fwd.h ici.h int.h mark.h mem.h method.h \
-	null.h object.h op.h parse.h pc.h primes.h ptr.h re.h set.h skt.h \
-	src.h str.h struct.h trace.h win.h wrap.h
+		float.h forall.h func.h fwd.h ici.h int.h mark.h mem.h \
+		method.h null.h object.h op.h parse.h pc.h primes.h ptr.h re.h \
+		set.h skt.h src.h str.h struct.h trace.h win.h wrap.h
 
 ICIPCREHDRS=	pcre/internal.h pcre/pcre.h
 
@@ -46,7 +48,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ici3
 .for f in ${ICIDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/ici3
+	${INSTALL_MAN} ${WRKSRC}/$f ${PREFIX}/share/doc/ici3
 .endfor
 .endif
 
