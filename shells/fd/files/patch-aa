@@ -1,18 +1,11 @@
---- Makefile.in-orig	Mon Jan  6 14:18:12 1997
-+++ Makefile.in	Mon Jan  6 14:20:26 1997
-@@ -3,10 +3,12 @@
+--- Makefile.in.orig	Tue Sep 16 00:00:15 1997
++++ Makefile.in	Fri Sep 19 21:42:41 1997
+@@ -3,7 +3,7 @@
  #
  
  TITLE	= FD-
--TOPDIR	= /usr/local
-+PREFIX ?= /usr/local
-+TOPDIR	= $(PREFIX)
+-PREFIX	= /usr/local
++PREFIX	?= /usr/local
+ TOPDIR	= $(PREFIX)
  BINDIR	= $(TOPDIR)/bin
--MANDIR	= $(TOPDIR)/man/man$(MANSEC)
--CATDIR	= $(TOPDIR)/man/cat$(MANSEC)
-+MANDIR	= $(TOPDIR)/man/$(MANLANG)/man$(MANSEC)
-+CATDIR	= $(TOPDIR)/man/$(MANLANG)/cat$(MANSEC)
-+MANLANG = ja_JP.EUC
- DEFRC	= /etc/fdrc
- SHELL	= /bin/sh
- INSTALL	= cp -p
+ MANDIR	= $(TOPDIR)/man__LANGDIR__/man$(MANSEC)
