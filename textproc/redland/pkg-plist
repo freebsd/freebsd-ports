@@ -14,6 +14,9 @@ include/rdf_list.h
 include/rdf_model.h
 include/rdf_node.h
 include/rdf_parser.h
+include/rdf_query.h
+include/rdf_query_triples.h
+include/rdf_serializer.h
 include/rdf_statement.h
 include/rdf_storage.h
 include/rdf_storage_hashes.h
@@ -24,3 +27,5 @@ include/rdf_uri.h
 include/rdf_utf8.h
 include/redland.h
 lib/librdf.a
+lib/librdf.so
+lib/librdf.so.0
