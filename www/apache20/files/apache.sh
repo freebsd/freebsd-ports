@@ -20,7 +20,7 @@
 #                             just before apache starts.
 # apache2_flags (str):        Set to "" by default.
 #                             Extra flags passed to start command
-# apache2limits_args (str):   Default to "-e -U %%WWWOWN%%"
+# apache2limits_args (str):   Default to "-e -C daemon"
 #                             Arguments of pre-start limits run.
 #
 . %%RC_SUBR%%
@@ -36,7 +36,7 @@ required_files=%%PREFIX%%/etc/apache2/httpd.conf
 [ -z "$apache2ssl_enable" ]    && apache2ssl_enable="NO"
 [ -z "$apache2_flags" ]        && apache2_flags=""
 [ -z "$apache2limits_enable" ] && apache2limits_enable="NO"
-[ -z "$apache2limits_args" ]   && apache2limits_args="-e -U %%WWWOWN%%"
+[ -z "$apache2limits_args" ]   && apache2limits_args="-e -C daemon"
 
 load_rc_config $name
 
@@ -44,8 +44,9 @@ checkyesno apache2ssl_enable && \
 			apache2_flags="-DSSL $apache2_flags"
 
 checkyesno apache2limits_enable && \
-			start_precmd="`/usr/bin/limits ${apache2limits_args}`"
+			start_precmd="eval `/usr/bin/limits ${apache2limits_args}` 2>/dev/null"
 
 sig_reload=SIGUSR1
 
+extra_commands="reload"
 run_rc_command "$1"
