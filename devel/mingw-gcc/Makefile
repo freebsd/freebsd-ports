@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	mingw-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20010828-src
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	doc@hisio.safenet.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF gcc-2.95.2 for Windows cross-development
 
 BROKEN=		Broken pkg-plist

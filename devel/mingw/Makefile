@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	doc@hisio.safenet.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross development for Windows
 
 RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
