@@ -55,6 +55,7 @@ share/gnats/gnats-db/gnats-adm/addresses
 share/gnats/gnats-db/gnats-adm/categories
 share/gnats/gnats-db/gnats-adm/classes
 share/gnats/gnats-db/gnats-adm/config
+share/gnats/gnats-db/gnats-adm/gnatsd.access
 share/gnats/gnats-db/gnats-adm/gnatsd.conf
 share/gnats/gnats-db/gnats-adm/responsible
 share/gnats/gnats-db/gnats-adm/states
