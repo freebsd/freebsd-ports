@@ -1,5 +1,7 @@
 @unexec install-info --delete --info-dir=%D/info %D/info/gst.info
 bin/gst
+bin/gst-config
+bin/gst-package
 include/gst.h
 include/gstconf.h
 include/gstpub.h
@@ -74,7 +76,7 @@ share/gnu-smalltalk/cint/LineTokenStream.st
 share/gnu-smalltalk/cint/README
 share/gnu-smalltalk/cint/StreamStack.st
 share/gnu-smalltalk/compiler/Load.st
-share/gnu-smalltalk/compiler/Readme
+share/gnu-smalltalk/compiler/README
 share/gnu-smalltalk/compiler/STCompLit.st
 share/gnu-smalltalk/compiler/STCompiler.st
 share/gnu-smalltalk/compiler/STParseNodes.st
@@ -239,6 +241,7 @@ share/gnu-smalltalk/kernel/WeakObjects.st
 share/gnu-smalltalk/kernel/WordMemory.st
 share/gnu-smalltalk/kernel/WriteStream.st
 share/gnu-smalltalk/kernel/initialize.st
+share/gnu-smalltalk/packages
 share/gnu-smalltalk/tcp/AbstractSocket.st
 share/gnu-smalltalk/tcp/AbstractSocketImpl.st
 share/gnu-smalltalk/tcp/ContentHandler.st
@@ -246,7 +249,6 @@ share/gnu-smalltalk/tcp/Datagram.st
 share/gnu-smalltalk/tcp/DatagramSocket.st
 share/gnu-smalltalk/tcp/DatagramSocketImpl.st
 share/gnu-smalltalk/tcp/IPAddress.st
-share/gnu-smalltalk/tcp/Init.st
 share/gnu-smalltalk/tcp/MulticastSocket.st
 share/gnu-smalltalk/tcp/ServerSocket.st
 share/gnu-smalltalk/tcp/Socket.st
@@ -256,6 +258,7 @@ share/gnu-smalltalk/tcp/TCPSocketImpl.st
 share/gnu-smalltalk/tcp/UDPSocketImpl.st
 share/gnu-smalltalk/tcp/URL.st
 share/gnu-smalltalk/tcp/UnixStream.st
+share/gnu-smalltalk/tcp/init.st
 share/gnu-smalltalk/tcp/cfuncs.st
 share/gnu-smalltalk/test/arrays.ok
 share/gnu-smalltalk/test/arrays.st
@@ -286,6 +289,9 @@ share/gnu-smalltalk/test/sets.ok
 share/gnu-smalltalk/test/sets.st
 share/gnu-smalltalk/test/strings.ok
 share/gnu-smalltalk/test/strings.st
+share/gnu-smalltalk/xml/DOM.st
+share/gnu-smalltalk/xml/XWalker.st
+@dirrm share/gnu-smalltalk/xml
 @dirrm share/gnu-smalltalk/test
 @dirrm share/gnu-smalltalk/tcp
 @dirrm share/gnu-smalltalk/kernel
