@@ -1,0 +1,15 @@
+--- lib/GL/Imakefile.orig	Thu Mar  4 09:46:25 2004
++++ lib/GL/Imakefile	Sun May  9 11:26:47 2004
+@@ -107,11 +107,7 @@
+  * built-in to libGL.  In the former case, libGL needs to be built before
+  * the drivers, and in the latter case, it needs to be built after the driver.
+  */
+-#if BuildXF86DRI && GlxUseBuiltInDRIDriver
+-SUBDIRS = $(MESADIRS) $(DRIDIRS) $(DRIVERDIRS) $(GLXDIRS) $(LIBGLBUILDDIR) $(OSMESADIRS)
+-#else
+-SUBDIRS = $(MESADIRS) $(GLXDIRS) $(DRIDIRS) $(LIBGLBUILDDIR) $(OSMESADIRS) $(DRIVERDIRS)
+-#endif
++SUBDIRS = $(GLXDIRS) $(DRIDIRS) $(LIBGLBUILDDIR)
+ 
+ MakeSubdirs($(SUBDIRS))
+ 
