@@ -1,0 +1,11 @@
+--- ./clip/clip_makeslib.in.orig	Mon Nov 25 12:59:30 2002
++++ ./clip/clip_makeslib.in	Tue Mar 25 00:01:06 2003
+@@ -294,7 +294,7 @@
+ 	cp $target.dll $target.dll.a $pwd
+ 	;;
+ *)
+-	$CC $CFLAGS -O -I$pwd -I$CLIPROOT/include -shared -o $arch $target_ref `cat _olist` $addlib || cleanup 1
++	$CC $CFLAGS -O -I$pwd -I$CLIPROOT/include -shared -o $arch $target_ref `cat _olist` $addlib -L/usr/local/lib || cleanup 1
+ 	;;
+ esac
+ 

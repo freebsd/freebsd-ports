@@ -1,0 +1,24 @@
+--- cliplibs/clip-odbc/configure.orig	Mon May 27 12:25:29 2002
++++ cliplibs/clip-odbc/configure	Sat Sep 20 23:46:44 2003
+@@ -21,11 +21,11 @@
+ LIBODBC=''
+ LIBOOB=''
+ 
+-gcc -o test_odbc test_odbc.c -liodbc >/dev/null 2>&1 && LIBODBC='-liodbc' && echo 'iODBC driver manager were found'
++gcc -o test_odbc test_odbc.c  -I/usr/local/include -L/usr/local/lib -liodbc >/dev/null 2>&1 && LIBODBC='-liodbc' && echo 'iODBC driver manager were found'
+ 
+ if [ -z "$LIBODBC" ]
+ then
+-	gcc -o test_odbc test_odbc.c -lodbc >/dev/null 2>&1 && LIBODBC='-lodbc' && echo 'unixODBC driver manager were found'
++	gcc -o test_odbc test_odbc.c  -I/usr/local/include -L/usr/local/lib -lodbc >/dev/null 2>&1 && LIBODBC='-lodbc' && echo 'unixODBC driver manager were found'
+ fi
+ 
+ if [ -z "$LIBODBC" ]
+@@ -36,6 +36,6 @@
+ 
+ gcc -o test_odbc test_odbc.c -L/usr/local/easysoft/oob/client -lesoobclient >/dev/null 2>&1 && LIBOOB='-L\/usr\/local\/easysoft\/oob\/client -lesoobclient' && echo 'ODBC-ODBC bridge client were found'
+ 
+-sed -e "s/@LIBODBC@/$LIBODBC/g" < Makefile.in | sed -e "s/@LIBOOB@/$LIBOOB/g" - >Makefile
++sed -e "s/@LIBODBC@/$LIBODBC/g" < Makefile.in | sed -e "s/@LIBOOB@/$LIBOOB/g" >Makefile
+ 
+ exitf 0

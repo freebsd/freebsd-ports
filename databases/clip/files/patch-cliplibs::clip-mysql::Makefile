@@ -1,0 +1,24 @@
+--- cliplibs/clip-mysql/Makefile.orig	Fri Dec 20 14:38:20 2002
++++ cliplibs/clip-mysql/Makefile	Sat Sep 20 23:40:00 2003
+@@ -13,7 +13,7 @@
+ TARGET=libclip-mysql$(DLLSUFF)
+ ATARGET=libclip-mysql.a
+ RTARGET=libclip-mysql$(DLLREALSUFF)
+-MSINC = -I/usr/include/mysql -I/usr/local/include/mysql
++MSINC = -I/usr/local/include/mysql
+ OBJS=ms_clip.o ms.o
+ 
+ all:  have_lib	$(TARGET) $(ATARGET)
+@@ -22,10 +22,10 @@
+ 	test -f /usr/include/mysql/mysql.h -o -f /usr/local/include/mysql/mysql.h
+ 
+ $(TARGET): $(OBJS)
+-	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) -lmysqlclient -L/usr/lib/mysql
++	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) -lmysqlclient -L/usr/local/lib/mysql
+ 
+ $(ATARGET): $(OBJS)
+-	$(CLIPROOT)/bin/clip_makelib $(ATARGET) $(OBJS) -lmysqlclient -L/usr/lib/mysql
++	$(CLIPROOT)/bin/clip_makelib $(ATARGET) $(OBJS) -lmysqlclient -L/usr/local/lib/mysql
+ 
+ ms_clip.o: ms_clip.c
+ 	$(CC) $(C_FLAGS) $(CLIPINCLUDE) $(MSINC) -c ms_clip.c
