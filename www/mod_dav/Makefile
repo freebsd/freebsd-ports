@@ -53,6 +53,11 @@ pre-everything::
 	@/bin/sleep 5
 .endif
 
+.include <bsd.port.pre.mk>
+.if exists(${LOCALBASE}/include/apache2/httpd.h)
+IGNORE=	is designed for apache 1.3. mod_dav for apache2 is built by default
+.endif
+
 do-install:
 	BINMODE=755 ${INSTALL_PROGRAM} ${WRKSRC}/libdav.so ${PREFIX}/libexec/apache
 	${INSTALL_DATA} ${FILESDIR}/apache.conf.mod_dav ${PREFIX}/etc/apache
@@ -67,4 +72,4 @@ post-install:
 	 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
