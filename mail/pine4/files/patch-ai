@@ -1,0 +1,37 @@
+*** pine/send.c.old	Mon Jul  8 22:10:50 1996
+--- pine/send.c	Tue Feb  4 21:47:57 1997
+***************
+*** 6084,6090 ****
+  
+  	switch (body->encoding) {	/* all else needs filtering */
+  	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+! 	    gf_link_filter(gf_8bit_qp);
+  	    break;
+  
+  	  case ENCBINARY:		/* encode binary into BASE64 */
+--- 6084,6091 ----
+  
+  	switch (body->encoding) {	/* all else needs filtering */
+  	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+! 	    if(F_OFF(F_ENABLE_8BIT, ps_global))
+! 		gf_link_filter(gf_8bit_qp);
+  	    break;
+  
+  	  case ENCBINARY:		/* encode binary into BASE64 */
+***************
+*** 6143,6149 ****
+        sprintf (*dst += strlen (*dst), "Content-Transfer-Encoding: %s\015\012",
+  	       body_encodings[(body->encoding == ENCBINARY)
+  				? ENCBASE64
+! 				: (body->encoding == ENC8BIT)
+  				    ? ENCQUOTEDPRINTABLE
+  				    : (body->encoding <= ENCMAX)
+  					? body->encoding : ENCOTHER]);
+--- 6144,6150 ----
+        sprintf (*dst += strlen (*dst), "Content-Transfer-Encoding: %s\015\012",
+  	       body_encodings[(body->encoding == ENCBINARY)
+  				? ENCBASE64
+! 				: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
+  				    ? ENCQUOTEDPRINTABLE
+  				    : (body->encoding <= ENCMAX)
+  					? body->encoding : ENCOTHER]);
