@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	autoconf
+PORTNAME=	autoconf254
 PORTVERSION=	2.54
 PORTREVISION=	0
 CATEGORIES=	devel
