@@ -5,7 +5,7 @@
  /* some platforms have no hotspot yet even under jdk 1.3 */
  /*  so treat them like classic in JDK 1.2.x  */
 -#if defined(POWERPC) && defined(LINUX)
-+#if defined(POWERPC) && defined(LINUX) ||
++#if defined(POWERPC) && defined(LINUX) || \
 +	defined(INTEL) && defined(FREEBSD)
 +
  #define NO_HOTSPOT_USE_CLASSIC 1
