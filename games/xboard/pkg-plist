@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/xboard
+bin/cmail
+man/man6/xboard.6
+man/man6/cmail.6
