@@ -7,6 +7,7 @@
 
 PORTNAME=	zile
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,9 +22,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		zile.1
+INFO=		zile
 
 post-extract:
-	${RM} -f ${WRKSRC}/doc/zile.info
+	@${RM} -f ${WRKSRC}/doc/zile.info
 
 post-install:
 	install-info ${PREFIX}/info/zile.info ${PREFIX}/info/dir

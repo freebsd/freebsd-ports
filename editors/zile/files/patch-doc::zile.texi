@@ -1,0 +1,13 @@
+--- doc/zile.texi.orig	Mon Apr 15 00:35:14 2002
++++ doc/zile.texi	Wed Nov 12 18:56:00 2003
+@@ -1,6 +1,10 @@
+ \input texinfo   @c -*-texinfo-*-
+ @setfilename zile.info
+ @settitle The Zile Manual
++@dircategory Editors
++@direntry
++* Zile: (zile).		A customizable, self-documenting real-time display editor.
++@end direntry
+ 
+ @c If "finalout" is commented out, the printed output will show
+ @c black boxes that mark lines that are too long.  Thus, it is
