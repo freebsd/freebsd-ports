@@ -1,0 +1,11 @@
+--- gmixer.c.orig	Thu Feb 25 21:32:29 1999
++++ gmixer.c	Thu Feb 25 21:32:48 1999
+@@ -4,7 +4,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/ioctl.h>
+-#include <linux/soundcard.h>
++#include <machine/soundcard.h>
+ #include <gtk/gtk.h>
+ #include "icons/gmixer.xpm"
+ #include "icons/mix_logo.xpm"
