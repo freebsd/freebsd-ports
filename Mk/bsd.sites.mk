@@ -293,7 +293,8 @@ MASTER_SITE_TEX_CTAN+=  \
 MASTER_SITE_THEMES+= \
 	ftp://ftp.themes.org/pub/themes/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/
+	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/ \
+	ftp://ftp.debian.org/pub/mirrors/themes.org/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
