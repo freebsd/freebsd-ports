@@ -1,5 +1,6 @@
 %%RUBY_SITELIBDIR%%/apache/aspruby-run.rb
 %%RUBY_SITELIBDIR%%/asp/application.rb
+%%RUBY_SITELIBDIR%%/asp/asperror.rb
 %%RUBY_SITELIBDIR%%/asp/common.rb
 %%RUBY_SITELIBDIR%%/asp/compile.rb
 %%RUBY_SITELIBDIR%%/asp/globalasa.rb
