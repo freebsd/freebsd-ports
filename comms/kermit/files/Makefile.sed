@@ -6,9 +6,6 @@ SRCS=   ckcmai.c ckucmd.c ckuusr.c ckuus2.c ckuus3.c ckuus4.c ckuus5.c \
         ckcfn3.c ckuxla.c ckucon.c ckutio.c ckufio.c ckudia.c ckuscr.c \
         ckcnet.c ckusig.c
 
-BINMODE=2555
-BINGRP=dialer
-
 BINDIR=%%PREFIX%%/bin
 MANDIR=%%PREFIX%%/man/man
 
