@@ -8,63 +8,16 @@
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.2.2001.02.24
 CATEGORIES=	security
-# ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kris
-DISTNAME=	X11/xc/programs/ssh-askpass
 
 MAINTAINER=	kris@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/X11/xc/programs/ssh-askpass
 USE_IMAKE=	yes
-
-.include <bsd.port.pre.mk>
-CAT?=		/bin/cat
-SED?=		/usr/bin/sed
-DISTFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/distfiles
-IGNOREFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/ignorefiles
-DISTFILES+=	${IGNOREFILES}
-
-CVS_CMD?=	cvs -z3
-CVS_DATE=	Sat Feb 24 20:27:43 PST 2001
-CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
-		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
-STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
-WRKSRC=		${WRKDIR}/ssh-askpass
 
 MAN1=		ssh-askpass.1
 MANCOMPRESSED=	yes
-
-do-fetch:
-	@if [ ! -e ${STAMPFILE} ] || \
-	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-		if [ -e ${DISTDIR}/${PKGNAME}.${CVS_DATE_}.tar.gz ]; then \
-			cd ${DISTDIR}; \
-			${TAR} xfz ${PKGNAME}.${CVS_DATE_}.tar.gz \
-			    ${DISTFILES}; \
-			${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
-			exit; \
-		fi; \
-		unset CVS_RSH CVS_SERVER || ${TRUE}; \
-		if [ -n "${PORTS_CVS_RSH}" ]; then \
-			export CVS_RSH="${PORTS_CVS_RSH}"; \
-		fi; \
-		if [ -n "${PORTS_CVS_SERVER}" ]; then \
-			export CVS_SERVER="${PORTS_CVS_SERVER}"; \
-		fi; \
-		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME}; \
-		for CVS_SITE in ${CVS_SITES}; do \
-			${ECHO_MSG} ">> Attempting to CVS checkout from $${CVS_SITE}."; \
-			if ${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
-			    ${DISTNAME}; then \
-				${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
-				exit; \
-			fi \
-		done; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}.  Please try to retrieve"; \
-		${ECHO_MSG} ">> a snapshot with \"make fetchsrctarball\" and try again."; \
-		exit 1; \
-	fi
 
 makesrctarball: fetch
 	@cd ${DISTDIR}; \
@@ -72,31 +25,8 @@ makesrctarball: fetch
 	${ECHO_MSG} ">> \"${PKGNAME}.tar.gz\"."; \
 	${TAR} cfz ${PKGNAME}.tar.gz ${PKGNAME}
 
-fetchsrctarball:
-	@cd ${DISTDIR}; \
-	file=${PKGNAME}.tar.gz; \
-	if [ -e $$file ]; then \
-		exit; \
-	fi; \
-	${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-	for site in ${MASTER_SITES}; do \
-		${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
-		if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
-		    $${site}$${file}; then \
-			exit; \
-		fi; \
-	done; \
-	${ECHO_MSG} ">> Couldn't fetch $$file."; \
-	${ECHO_MSG} ">> Please try to retrieve this file manually into"; \
-	${ECHO_MSG} ">> ${_DISTDIR} and try again."; \
-	exit 1
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
-
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/ssh-askpass
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ssh-askpass/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
