@@ -1,20 +1,25 @@
---- Makefile.orig	Mon Mar  9 14:20:31 1998
-+++ Makefile	Sat Apr  4 21:36:42 1998
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Mon Apr 13 18:09:54 1998
++++ Makefile	Fri May  8 02:09:12 1998
+@@ -1,14 +1,16 @@
  CC = gcc
 -CFLAGS = 
++#CFLAGS = 
  
- objs = main.o nntp.o net.o opt.o util.o 
+ #Uncomment this if you do not want status meter
+ #CFLAGS = -DNO_STATUS_METER
+ 
+ objs = newsfetch.o nntp.o net.o opt.o util.o getopt.o
   
 +all: newsfetch
 +
  newsfetch: $(objs)
  	$(CC) -o newsfetch $(objs)
 -	strip newsfetch
++#	strip newsfetch
  
  .c.o:
  	$(CC) -c $(CFLAGS) $< 
-@@ -14,5 +14,5 @@
+@@ -17,5 +19,5 @@
  	rm -f *.o newsfetch
  
  install:
