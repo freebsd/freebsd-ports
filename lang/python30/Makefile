@@ -10,7 +10,9 @@ PORTVERSION=	2.2
 PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	python
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER?=	tg@FreeBSD.org

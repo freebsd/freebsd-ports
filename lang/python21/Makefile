@@ -9,7 +9,9 @@ PORTNAME=	python
 PORTVERSION=	2.1.2
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	python
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER?=	tg@FreeBSD.org
