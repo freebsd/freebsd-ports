@@ -8,6 +8,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheTester.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheUtils.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/FileCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/MemoryCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/NullCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/Object.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/SharedCacheUtils.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/SharedMemoryCache.pm
