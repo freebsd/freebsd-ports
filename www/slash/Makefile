@@ -20,6 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql40-server
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
+BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-16
+
 DOCS=		README INSTALL
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
