@@ -268,6 +268,7 @@
     SUBDIR += wmtop
     SUBDIR += wmzazof
     SUBDIR += wots
+    SUBDIR += wtail
     SUBDIR += x86info
     SUBDIR += xapply
     SUBDIR += xbatt
