@@ -246,6 +246,7 @@ vbsd407e.tar.Z		ports/security/vscan	Commercial software
 vdesk-*			ports/x11/vdesk		Distributed without license
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
+visualworks-*		ports/lang/visualworks	Don't redistribute
 vmware*			ports/emulators/vmware*	Commercial software
 vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
