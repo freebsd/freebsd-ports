@@ -8,6 +8,7 @@ www/data/jargon/graphics/5star.png
 www/data/jargon/graphics/cover.png
 www/data/jargon/graphics/eiaward.png
 www/data/jargon/graphics/lm100large.png
+www/data/jargon/graphics/luckman.png
 www/data/jargon/graphics/next.png
 www/data/jargon/graphics/planetscience.png
 www/data/jargon/graphics/prev.png
@@ -181,6 +182,7 @@ www/data/jargon/html/entry/BUAG.html
 www/data/jargon/html/entry/BWQ.html
 www/data/jargon/html/entry/Bad-Thing.html
 www/data/jargon/html/entry/Bad-and-Wrong.html
+www/data/jargon/html/entry/Batman-factor.html
 www/data/jargon/html/entry/Befunge.html
 www/data/jargon/html/entry/Berkeley-Quality-Software.html
 www/data/jargon/html/entry/Berzerkeley.html
@@ -898,6 +900,7 @@ www/data/jargon/html/entry/coefficient-of-X.html
 www/data/jargon/html/entry/cokebottle.html
 www/data/jargon/html/entry/cold-boot.html
 www/data/jargon/html/entry/comm-mode.html
+www/data/jargon/html/entry/command-key.html
 www/data/jargon/html/entry/comment-out.html
 www/data/jargon/html/entry/compact.html
 www/data/jargon/html/entry/compiler-jock.html
@@ -974,6 +977,7 @@ www/data/jargon/html/entry/crossload.html
 www/data/jargon/html/entry/crudware.html
 www/data/jargon/html/entry/cruft-together.html
 www/data/jargon/html/entry/cruft.html
+www/data/jargon/html/entry/cruftsmanship.html
 www/data/jargon/html/entry/crufty.html
 www/data/jargon/html/entry/crumb.html
 www/data/jargon/html/entry/crunch.html
@@ -1583,6 +1587,13 @@ www/data/jargon/html/entry/mailbomb.html
 www/data/jargon/html/entry/mailing-list.html
 www/data/jargon/html/entry/main-loop.html
 www/data/jargon/html/entry/mainframe.html
+www/data/jargon/html/entry/management.html
+www/data/jargon/html/entry/mandelbug.html
+www/data/jargon/html/entry/manged.html
+www/data/jargon/html/entry/mangle.html
+www/data/jargon/html/entry/mangled-name.html
+www/data/jargon/html/entry/mangler.html
+www/data/jargon/html/entry/manularity.html
 www/data/jargon/html/entry/marbles.html
 www/data/jargon/html/entry/marginal.html
 www/data/jargon/html/entry/marginally.html
@@ -2118,6 +2129,7 @@ www/data/jargon/html/entry/stack.html
 www/data/jargon/html/entry/stale-pointer-bug.html
 www/data/jargon/html/entry/star-out.html
 www/data/jargon/html/entry/state.html
+www/data/jargon/html/entry/stealth-manager.html
 www/data/jargon/html/entry/steam-powered.html
 www/data/jargon/html/entry/steved.html
 www/data/jargon/html/entry/stiffy.html
@@ -2161,6 +2173,7 @@ www/data/jargon/html/entry/sys-frog.html
 www/data/jargon/html/entry/sysadmin.html
 www/data/jargon/html/entry/sysape.html
 www/data/jargon/html/entry/sysop.html
+www/data/jargon/html/entry/system-mangler.html
 www/data/jargon/html/entry/system.html
 www/data/jargon/html/entry/systems-jock.html
 www/data/jargon/html/entry/tail-recursion.html
