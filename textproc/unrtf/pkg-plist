@@ -1,3 +1,1 @@
 bin/unrtf
-%%PORTDOCS%%share/doc/unrtf/unrtf.html
-%%PORTDOCS%%@dirrm share/doc/unrtf
