@@ -16,7 +16,7 @@ COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
-		cdio.1:${PORTSDIR}/sysutils/libcdio
+		cdio.0:${PORTSDIR}/sysutils/libcdio
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
