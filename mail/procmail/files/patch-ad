@@ -1,19 +1,12 @@
 *** src/recommend.c.bak	Wed Apr  2 07:15:45 1997
---- src/recommend.c	Tue Jun 17 09:29:02 1997
+--- src/recommend.c	Tue Jun 17 21:48:49 1997
 ***************
-*** 52,58 ****
-    else if(chmdir==1)
-       goto nogchmod;
-    if(chmdir)
-!      printf("chmod %c+w %s.\n",chmdir==1?'g':'a',mailspooldir);
-  nogchmod:
-    return EXIT_SUCCESS;
-  }
---- 52,58 ----
-    else if(chmdir==1)
-       goto nogchmod;
-    if(chmdir)
-!      printf("chmod %c+w %s\n",chmdir==1?'g':'a',mailspooldir);
-  nogchmod:
-    return EXIT_SUCCESS;
-  }
+*** 23,29 ****
+     { fprintf(stderr,"Please run this program via 'make recommend'\n");
+       return EX_USAGE;
+     }
+-   strchr(mailspooldir,'\0')[-1]='\0';		     /* strip last character */
+    for(p=checkf;*p;p++)
+       if(!stat(*p,&stbuf)&&stbuf.st_mode&S_ISGID)
+        { if(stbuf.st_mode&S_ISGID)
+--- 23,28 ----
