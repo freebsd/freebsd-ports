@@ -28,7 +28,9 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 	RkGetStat.3 RkGetYomi.3 RkGoto.3 RkInitialize.3 RkIntro.3 RkLeft.3 \
 	RkMapPhonogram.3 RkMapRoma.3 RkMountD.3 RkNext.3 RkNfer.3 \
 	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkRgnBun.3 RkRight.3 \
-	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3
+	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 \
+	XKanjiControl.3 XLookupKanjiString.3 cannalib.3 uilib.3 \
+	jrKanjiControl.3 jrKanjiString.3
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
