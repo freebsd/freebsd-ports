@@ -2,6 +2,7 @@ bin/awstats_buildstaticpages.pl
 bin/awstats_exportlib.pl
 bin/awstats_updateall.pl
 bin/awstats_logresolvemerge.pl
+bin/awstats_maillogconvert.pl
 bin/awstats_urlaliasbuilder.pl
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
@@ -52,11 +53,14 @@ www/cgi-bin/lang/awstats-dk.txt
 www/cgi-bin/lang/awstats-en.txt
 www/cgi-bin/lang/awstats-es.txt
 www/cgi-bin/lang/awstats-es_cat.txt
+www/cgi-bin/lang/awstats-es_eu.txt
+www/cgi-bin/lang/awstats-et.txt
 www/cgi-bin/lang/awstats-fi.txt
 www/cgi-bin/lang/awstats-fr.txt
 www/cgi-bin/lang/awstats-gr.txt
 www/cgi-bin/lang/awstats-hu.txt
 www/cgi-bin/lang/awstats-id.txt
+www/cgi-bin/lang/awstats-is.txt
 www/cgi-bin/lang/awstats-it.txt
 www/cgi-bin/lang/awstats-jp.txt
 www/cgi-bin/lang/awstats-kr.txt
@@ -70,6 +74,7 @@ www/cgi-bin/lang/awstats-ro.txt
 www/cgi-bin/lang/awstats-ru.txt
 www/cgi-bin/lang/awstats-se.txt
 www/cgi-bin/lang/awstats-sk.txt
+www/cgi-bin/lang/awstats-sr.txt
 www/cgi-bin/lang/awstats-tr.txt
 www/cgi-bin/lang/awstats-tt-al.txt
 www/cgi-bin/lang/awstats-tt-ba.txt
@@ -77,12 +82,14 @@ www/cgi-bin/lang/awstats-tt-bg.txt
 www/cgi-bin/lang/awstats-tt-cn.txt
 www/cgi-bin/lang/awstats-tt-cz.txt
 www/cgi-bin/lang/awstats-tt-de.txt
+www/cgi-bin/lang/awstats-tt-dk.txt
 www/cgi-bin/lang/awstats-tt-en.txt
 www/cgi-bin/lang/awstats-tt-es.txt
 www/cgi-bin/lang/awstats-tt-es_cat.txt
 www/cgi-bin/lang/awstats-tt-fi.txt
 www/cgi-bin/lang/awstats-tt-fr.txt
 www/cgi-bin/lang/awstats-tt-hu.txt
+www/cgi-bin/lang/awstats-tt-is.txt
 www/cgi-bin/lang/awstats-tt-it.txt
 www/cgi-bin/lang/awstats-tt-jp.txt
 www/cgi-bin/lang/awstats-tt-kr.txt
@@ -94,6 +101,7 @@ www/cgi-bin/lang/awstats-tt-ro.txt
 www/cgi-bin/lang/awstats-tt-ru.txt
 www/cgi-bin/lang/awstats-tt-se.txt
 www/cgi-bin/lang/awstats-tt-sk.txt
+www/cgi-bin/lang/awstats-tt-sr.txt
 www/cgi-bin/lang/awstats-tt-tr.txt
 www/cgi-bin/lang/awstats-tt-tw.txt
 www/cgi-bin/lang/awstats-tt-ua.txt
@@ -104,18 +112,24 @@ www/cgi-bin/lib/browsers.pm
 www/cgi-bin/lib/domains.pm
 www/cgi-bin/lib/mime.pm
 www/cgi-bin/lib/operating_systems.pm
+www/cgi-bin/lib/referer_spam.pm
 www/cgi-bin/lib/robots.pm
 www/cgi-bin/lib/search_engines.pm
 www/cgi-bin/lib/worms.pm
 www/cgi-bin/plugins/example/example.pm
 www/cgi-bin/plugins/geoip.pm
+www/cgi-bin/plugins/geoipfree.pm
 www/cgi-bin/plugins/hashfiles.pm
+www/cgi-bin/plugins/ipv6.pm
 www/cgi-bin/plugins/timehires.pm
 www/cgi-bin/plugins/timezone.pm
 www/cgi-bin/plugins/tooltips.pm
 www/cgi-bin/plugins/urlalias.pm
+www/cgi-bin/plugins/userinfo.pm
 www/cgi-bin/awstats.model.conf
 www/cgi-bin/awstats.pl
+www/css/awstats_bw.css
+www/css/awstats_default.css
 www/icons/browser/adobe.png
 www/icons/browser/amaya.png
 www/icons/browser/chimera.png
@@ -128,6 +142,7 @@ www/icons/browser/ibrowse.png
 www/icons/browser/icab.png
 www/icons/browser/kmeleon.png
 www/icons/browser/konqueror.png
+www/icons/browser/lotusnotes.png
 www/icons/browser/lynx.png
 www/icons/browser/mediaplayer.png
 www/icons/browser/mozilla.png
@@ -170,6 +185,7 @@ www/icons/cpu/mips.png
 www/icons/cpu/motorola.png
 www/icons/cpu/sun.png
 www/icons/cpu/unknown.png
+www/icons/flags/a2.png
 www/icons/flags/ac.png
 www/icons/flags/ad.png
 www/icons/flags/ae.png
@@ -245,6 +261,7 @@ www/icons/flags/en.png
 www/icons/flags/er.png
 www/icons/flags/es.png
 www/icons/flags/es_cat.png
+www/icons/flags/es_eu.png
 www/icons/flags/et.png
 www/icons/flags/eu.png
 www/icons/flags/fi.png
@@ -279,9 +296,11 @@ www/icons/flags/hn.png
 www/icons/flags/hr.png
 www/icons/flags/ht.png
 www/icons/flags/hu.png
+www/icons/flags/i0.png
 www/icons/flags/id.png
 www/icons/flags/ie.png
 www/icons/flags/il.png
+www/icons/flags/im.png
 www/icons/flags/in.png
 www/icons/flags/info.png
 www/icons/flags/int.png
@@ -327,6 +346,7 @@ www/icons/flags/mn.png
 www/icons/flags/mo.png
 www/icons/flags/mq.png
 www/icons/flags/mr.png
+www/icons/flags/ms.png
 www/icons/flags/mt.png
 www/icons/flags/mu.png
 www/icons/flags/museum.png
@@ -360,6 +380,7 @@ www/icons/flags/ph.png
 www/icons/flags/pk.png
 www/icons/flags/pl.png
 www/icons/flags/pr.png
+www/icons/flags/ps.png
 www/icons/flags/pro.png
 www/icons/flags/pt.png
 www/icons/flags/py.png
@@ -377,6 +398,7 @@ www/icons/flags/si.png
 www/icons/flags/sk.png
 www/icons/flags/sm.png
 www/icons/flags/sn.png
+www/icons/flags/sr.png
 www/icons/flags/st.png
 www/icons/flags/su.png
 www/icons/flags/sv.png
@@ -447,9 +469,11 @@ www/icons/os/freebsd.png
 www/icons/os/gnu.png
 www/icons/os/hpux.png
 www/icons/os/ibm.png
+www/icons/os/imode.png
 www/icons/os/irix.png
 www/icons/os/java.png
 www/icons/os/linux.png
+www/icons/os/mac.png
 www/icons/os/macintosh.png
 www/icons/os/macosx.png
 www/icons/os/netbsd.png
@@ -466,11 +490,14 @@ www/icons/os/unix.png
 www/icons/os/unknown.png
 www/icons/os/vms.png
 www/icons/os/webtv.png
+www/icons/os/win.png
 www/icons/os/win16.png
 www/icons/os/win2000.png
+www/icons/os/win2003.png
 www/icons/os/win95.png
 www/icons/os/win98.png
 www/icons/os/wince.png
+www/icons/os/winlong.png
 www/icons/os/winme.png
 www/icons/os/winnt.png
 www/icons/os/winxp.png
@@ -489,12 +516,14 @@ www/icons/other/vk.png
 www/icons/other/vp.png
 www/icons/other/vu.png
 www/icons/other/vv.png
+www/js/awstats_misc_tracker.js
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/images
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm www/cgi-bin/lang
 @dirrm www/cgi-bin/lib
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
+@dirrm www/css
 @dirrm www/icons/browser
 @dirrm www/icons/clock
 @dirrm www/icons/cpu
@@ -502,3 +531,4 @@ www/icons/other/vv.png
 @dirrm www/icons/mime
 @dirrm www/icons/os
 @dirrm www/icons/other
+@dirrm www/js
