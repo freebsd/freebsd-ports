@@ -3,7 +3,7 @@
 # Date created:        19 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1998/02/25 00:25:41 steve Exp $
+# $Id: Makefile,v 1.3 1998/02/25 12:04:28 asami Exp $
 #
 
 DISTNAME=	c2ps-4.0
@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 
 MAINTAINER=	mph@pobox.com
 
+MANUAL_PACKAGE_BUILD=  PAPERSIZE has to be set to Letter A4
 MAN1=		c2ps.1
 MAKE_ENV=	DEFAULT_PAPER_TYPE=${PAPERSIZE}
 
