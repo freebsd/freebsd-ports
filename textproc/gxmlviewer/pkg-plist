@@ -1,4 +1,5 @@
 bin/gxmlviewer
 bin/xmlview-control
+bin/xmlformatter
 lib/netscape/plugins/npgxmlviewer.so
 share/gnome/oaf/GNOME_XMLView.oaf
