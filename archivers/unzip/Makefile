@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	unzip
-PORTVERSION=	5.50
-PORTREVISION=   2
+PORTVERSION=	5.51
 CATEGORIES?=	archivers
 MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTNAME=	${PORTNAME}550
+DISTNAME=	${PORTNAME}551
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT?=	List, test and extract compressed files in a ZIP archive
@@ -23,7 +22,7 @@ MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 .if defined(WITH_UNZIP_UNREDUCE)
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
-EXTRACT_ONLY=	${PORTNAME}550.tar.gz
+EXTRACT_ONLY=	${PORTNAME}551.tar.gz
 MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK -DUSE_SMITH_CODE"
 .endif
 
