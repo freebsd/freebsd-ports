@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/ \
 		http://matt.nerim.net/xfce-goodies/
@@ -25,6 +25,9 @@ USE_X_PREFIX=	yes
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LIBS=-L${LOCALBASE}/lib
 
 MAN1=		xfce4-session.1 xfce4-shutdown.1
 

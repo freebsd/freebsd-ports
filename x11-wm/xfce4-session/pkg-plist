@@ -12,6 +12,20 @@ lib/xfce4/mcs-plugins/session_settings.a
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/az/LC_MESSAGES/xfce4-session.mo
+share/locale/ca/LC_MESSAGES/xfce4-session.mo
+share/locale/de/LC_MESSAGES/xfce4-session.mo
+share/locale/es/LC_MESSAGES/xfce4-session.mo
+share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
+share/locale/hi/LC_MESSAGES/xfce4-session.mo
+share/locale/it/LC_MESSAGES/xfce4-session.mo
+share/locale/ko/LC_MESSAGES/xfce4-session.mo
+share/locale/nl/LC_MESSAGES/xfce4-session.mo
+share/locale/sv/LC_MESSAGES/xfce4-session.mo
+share/locale/ta/LC_MESSAGES/xfce4-session.mo
+share/locale/tr/LC_MESSAGES/xfce4-session.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/xfce4/splash/Default/splash.theme
 share/xfce4/splash/Default/logo.png
 share/xfce4/splash/Default/preview.png
