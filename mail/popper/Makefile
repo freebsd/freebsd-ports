@@ -50,6 +50,8 @@ CONFIGURE_ARGS+=	--enable-debugging
 CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
 MAN8=	popauth.8 popper.8
+PLIST_FILES=	bin/popauth libexec/popper
+PLIST_DIRS=	etc/popper
 
 LATEST_LINK=	popper
 
@@ -58,7 +60,7 @@ post-patch:
 	$(CP) ${FILESDIR}/sendto.c ${WRKSRC}
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	cd ${WRKSRC} && \
