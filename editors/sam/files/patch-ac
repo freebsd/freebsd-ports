@@ -1,15 +1,8 @@
-*** samterm/Makefile.orig	Fri Jul 28 14:09:32 1995
---- samterm/Makefile	Fri Jul 21 15:30:09 1995
+*** samterm/Makefile.orig	Fri Feb 11 11:04:17 2000
+--- samterm/Makefile	Fri Feb 11 11:12:52 2000
 ***************
-*** 1,31 ****
-  #	Copyright (c) 1992 AT&T - All rights reserved.
-  #
-! #	Prototype Makefile for samterm
-  #
-- #	define operating system.  ONE of:
-- #		-DIRIX -DSUNOS -DUMIPS -DSYSVR3 -DAIX -DOSF1
-- #		-DHPUX -DAPOLLO -DCONVEX -DDYNIX
-- #	
+*** 8,32 ****
+  #	
   #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
   #	if your compiler supports posix-compatible compilation
 ! OS=-DIRIX -ansiposix
@@ -27,27 +20,22 @@
   #	or if you need extra libraries to load with X11 applications
 ! XLIBS=/usr/local/X11R5/lib/libXt.a /usr/local/X11R5/lib/libX11.a
   
-  CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+! CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
   
-! LIBS=../libframe/libframe.a ../libXg/libXg.a
-  CC=cc
+  LIBS=../libframe/libframe.a ../libXg/libXg.a
+! CC=cc
   
   OBJ=main.o flayer.o icons.o io.o menu.o mesg.o rasp.o scroll.o unix.o
---- 1,35 ----
-  #	Copyright (c) 1992 AT&T - All rights reserved.
-  #
-! #	Prototype BSDi Makefile for samterm
-! #	Courtesy of Boyd Roberts
-! #
-! #	Define operating system type: -DBSDi
-  #
+  
+--- 8,32 ----
+  #	
   #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
   #	if your compiler supports posix-compatible compilation
-! OS=-DBSDi -O2
+! OS=-DBSDi
   
   #	add -Iincludedir for any include directories that need to be searched
   #	for posix header files (for UMIPS, add -I/usr/include/posix)
-! INCS=-I../include -I/usr/include/posix
+! INCS=-I../include -I${X11BASE}/include
   
   #	SAMTERM contains the name of the file containing the samterm
   #	executable.  SAMTERMDIR is the directory where it is installed.
@@ -56,16 +44,27 @@
   
   #	set this if your X libraries are in different locations
   #	or if you need extra libraries to load with X11 applications
-! #XLIBS= /usr/X11R6/lib/libXt.a \
-! #      /usr/X11R6/lib/libSM.a \
-! #      /usr/X11R6/lib/libICE.a \
-! #      /usr/X11R6/lib/libX11.a
-! 
-! XLIBS=-L/usr/X11R6/lib -lXt -lSM -lICE -lX11
+! XLIBS=-lXt -lX11 -lSM -lICE -L${X11BASE}/lib
   
-  CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+! CFLAGS+=$(OS) $(INCS) -D_LIBXG_EXTENSION
   
-! LIBS=../libframe/libframe.a ../libXg/libXg.a 
-  CC=cc
+  LIBS=../libframe/libframe.a ../libXg/libXg.a
+! CC?=cc
   
   OBJ=main.o flayer.o icons.o io.o menu.o mesg.o rasp.o scroll.o unix.o
+  
+***************
+*** 42,47 ****
+  	rm -f samterm
+  
+  install:	samterm
+! 	cp samterm $(SAMTERMDIR)/$(SAMTERM)
+  
+  $(OBJ):	samterm.h flayer.h ../include/frame.h ../include/libg.h ../include/u.h ../include/libc.h ../sam/mesg.h
+--- 42,47 ----
+  	rm -f samterm
+  
+  install:	samterm
+! 	${BSD_INSTALL_PROGRAM} samterm $(SAMTERMDIR)/$(SAMTERM)
+  
+  $(OBJ):	samterm.h flayer.h ../include/frame.h ../include/libg.h ../include/u.h ../include/libc.h ../sam/mesg.h
