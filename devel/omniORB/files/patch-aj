@@ -1,5 +1,5 @@
---- mk/platforms/x86_freebsd_4.0.mk.orig	Fri Aug 18 16:09:33 2000
-+++ mk/platforms/x86_freebsd_4.0.mk	Tue Sep 12 09:56:52 2000
+--- mk/platforms/x86_freebsd_4.0.mk.orig	Thu Jul 25 16:36:31 2002
++++ mk/platforms/x86_freebsd_4.0.mk	Thu Jul 25 16:38:55 2002
 @@ -10,7 +10,7 @@
  #
  # You must set a path to a Python 1.5.2 interpreter.
@@ -17,7 +17,7 @@
  
  CPP = /usr/libexec/cpp
  
--CXX = g++295
+-CXX = g++
 +CXX ?= g++
  CXXMAKEDEPEND += -D__cplusplus -D__GNUG__ -D__GNUC__
 -CXXDEBUGFLAGS = -O2
@@ -29,7 +29,7 @@
  EgcsMajorVersion = 1
  EgcsMinorVersion = 1        # This is actually a post-1.0 egcs snapshot.
  
--CC           = gcc295
+-CC           = gcc
 +CC           ?= gcc
  CMAKEDEPEND  += -D__GNUC__
 -CDEBUGFLAGS  = -O2
