@@ -7,15 +7,17 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ao/src/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack pkgconfig
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-WANT_GNOME=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
