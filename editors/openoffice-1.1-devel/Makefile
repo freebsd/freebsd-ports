@@ -68,7 +68,7 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 BUILD_NR=		645
-RELEASE_NR=		1.1.3
+RELEASE_NR=		1.1.4
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
