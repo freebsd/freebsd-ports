@@ -1,0 +1,63 @@
+*** makefile.orig	Fri Dec 20 02:17:40 1996
+--- makefile	Wed Apr 30 23:24:13 1997
+***************
+*** 4,11 ****
+  #	of the shaded plots, this can vary over X-servers
+  #       (You can always override it with the command line flag -c0.25)
+  #
+! CC = cc
+! LIBS =  -lX11 -lm
+  
+  # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
+  #CFLAGS = -c -DDOBACK -DHASTIMER 
+--- 4,21 ----
+  #	of the shaded plots, this can vary over X-servers
+  #       (You can always override it with the command line flag -c0.25)
+  #
+! #CC = cc
+! #LIBS =  -lX11 -lm
+! 
+! ###
+! # FreeBSD
+! CC = gcc
+! CFLAGS = -c -O2 -DDOBACK -DHASTIMER -I/usr/X11R6/include
+! #FC = f77
+! FFLAGS = -O2 -Nn802 -Nx400
+! LIBS =  -L/usr/X11R6/lib -lX11 -lm
+! LDR = f77
+! ###
+  
+  # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
+  #CFLAGS = -c -DDOBACK -DHASTIMER 
+***************
+*** 20,28 ****
+  #LDR = fort77   
+  
+  # Silicon Graphics
+! CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+! FFLAGS = 
+! LDR = f77
+  
+  # AIX
+  #
+--- 30,38 ----
+  #LDR = fort77   
+  
+  # Silicon Graphics
+! #CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+! #FFLAGS = 
+! #LDR = f77
+  
+  # AIX
+  #
+***************
+*** 104,109 ****
+--- 114,121 ----
+  
+  #If Silicon Graphics Graphics library version needed (You can do without )
+  #SOBJ =	silly.o
++ 
++ all:	molden
+  
+  molden:	$(OBJS) $(SOBJ) xwin.o 
+  	$(LDR) -o molden $(OBJS) $(SOBJ) xwin.o $(LIBS)
