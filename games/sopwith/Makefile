@@ -15,8 +15,9 @@ MAINTAINER=	edwin@mavetju.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12
 
-USE_GTK=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
 
