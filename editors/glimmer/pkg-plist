@@ -55,7 +55,9 @@ share/gnome/help/glimmer/C/properties.html
 share/gnome/help/glimmer/C/sessions.html
 share/gnome/help/glimmer/C/topic.dat
 share/gnome/pixmaps/glimmer-icon.png
+share/gnome/pixmaps/glimmer-splash.png
 share/gnome/pixmaps/glimmer-title.png
+share/locale/es/LC_MESSAGES/glimmer.mo
 share/locale/ja/LC_MESSAGES/glimmer.mo
 share/locale/sv/LC_MESSAGES/glimmer.mo
 @dirrm share/gnome/help/glimmer/C
