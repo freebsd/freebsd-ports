@@ -243,6 +243,7 @@
     SUBDIR += mplex
     SUBDIR += mrsidviewer
     SUBDIR += mtv
+    SUBDIR += multivideo
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += nurbs++
