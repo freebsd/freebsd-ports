@@ -1,5 +1,5 @@
---- zvt/Makefile.in.orig	Thu Oct 12 22:03:51 2000
-+++ zvt/Makefile.in	Fri Oct 13 10:08:57 2000
+--- zvt/Makefile.in.orig	Sun Jan 21 16:37:29 2001
++++ zvt/Makefile.in	Mon Jan 22 13:46:50 2001
 @@ -22,3 +22,3 @@
  bindir = @bindir@
 -sbindir = @sbindir@
@@ -7,7 +7,7 @@
  libexecdir = @libexecdir@
 @@ -158,3 +158,3 @@
  
--libzvt_la_LDFLAGS = -version-info 4:9:2 -rpath $(libdir)
+-libzvt_la_LDFLAGS = -version-info 4:10:2 -rpath $(libdir)
 +libzvt_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  
 @@ -194,3 +194,3 @@

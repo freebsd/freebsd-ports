@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION= 	1.2.8
-PORTREVISION=	1
+PORTVERSION= 	1.2.9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -45,5 +44,9 @@ pre-patch:
 post-patch:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
+
+# need to make launched gnome-terminals appear in utmp/wtmp
+post-install:
+	@${CHMOD} u+s ${PREFIX}/bin/gnome-pty-helper
 
 .include <bsd.port.mk>
