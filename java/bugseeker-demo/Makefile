@@ -19,6 +19,8 @@ PATCHFILES=	bugseeker2demo.sh.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A debugger for Java software
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	1.3+
 
 NO_BUILD=	YES

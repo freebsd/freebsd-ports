@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.gna.org/freebooters/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Freebooters is a free clone of the classic Pirates!
 
+BROKEN=		Unfetchable
+
 USE_GMAKE=	yes
 USE_SDL=	mixer image sdl ttf
 USE_REINPLACE=	yes

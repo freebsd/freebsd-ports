@@ -14,6 +14,8 @@ DISTNAME=	cgoban-unix-${PORTVERSION}
 MAINTAINER=	philip.reynolds@rfc-networks.ie
 COMMENT=	Internet Go Server client and game editor
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/cgoban
 INSTALLDIR=	${PREFIX}/share/java/cgoban2
 
