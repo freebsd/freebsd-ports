@@ -37,6 +37,7 @@ OPTIONS=	MYSQL "MySQL suport" off \
 		FILE_PERFDATA "Save performance data to files" off
 
 CONFLICTS=	nagios-2*
+LATEST_LINK=	nagios12
 
 .include <bsd.port.pre.mk>
 
