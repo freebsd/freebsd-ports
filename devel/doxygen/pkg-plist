@@ -2,7 +2,10 @@ bin/doxygen
 bin/doxytag
 bin/doxysearch
 bin/doxywizard
+%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/archoverview.eps
+%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_logo.eps
 %%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.dvi
+%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.pdf
 %%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.ps
 %%PORTDOCS%%share/doc/doxygen/examples/afterdoc.cfg
 %%PORTDOCS%%share/doc/doxygen/examples/afterdoc.h
@@ -298,6 +301,8 @@ bin/doxywizard
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/functions.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/hierarchy.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/index.html
+%%PORTDOCS%%share/doc/doxygen/html/arch.html
+%%PORTDOCS%%share/doc/doxygen/html/archoverview.gif
 %%PORTDOCS%%share/doc/doxygen/html/autolink.html
 %%PORTDOCS%%share/doc/doxygen/html/commands.html
 %%PORTDOCS%%share/doc/doxygen/html/config.html

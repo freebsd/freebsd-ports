@@ -1,0 +1,16 @@
+--- doc/Makefile.latex.orig	Mon Mar 19 14:27:39 2001
++++ doc/Makefile.latex	Sun Sep 30 17:25:54 2001
+@@ -12,10 +12,10 @@
+ # Documents produced by Doxygen are derivative works derived from the
+ # input used in their production; they are not affected by this license.
+ 
+-all: doxygen_manual.pdf
++all: doxygen_manual.ps doxygen_manual.pdf
+ 
+-doxygen_manual.pdf: doxygen_manual.ps
+-	ps2pdf doxygen_manual.ps doxygen_manual.pdf
++doxygen_manual.pdf: doxygen_manual.dvi
++	dvipdfm -o doxygen_manual.pdf doxygen_manual.dvi
+ 
+ doxygen_manual.ps: doxygen_manual.dvi
+ 	dvips -o doxygen_manual.ps doxygen_manual.dvi
