@@ -11,7 +11,7 @@
  XCOMM looking for dlls, then change the directory below.
  XCOMM
 -XA_DLL_PATH = /usr/local/xanim/mods
-+XA_DLL_PATH = $(LIBDIR)/xanim/mods
++XA_DLL_PATH = $(LIBDIR)/xanim
  
  
  
