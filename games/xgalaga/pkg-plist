@@ -1,5 +1,5 @@
 bin/xgalaga
-lib/X11/xgalaga/xgal.sndsrv.freebsd
+%%SOUND%%lib/X11/xgalaga/xgal.sndsrv.freebsd
 lib/X11/xgalaga/sounds/ddloo.raw
 lib/X11/xgalaga/sounds/explode.raw
 lib/X11/xgalaga/sounds/explode_big.raw
