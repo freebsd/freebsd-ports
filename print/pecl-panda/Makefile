@@ -17,8 +17,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to create PDF documents
 
-BROKEN=		Configure fails
-
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda
 
 USE_PHP=	yes
@@ -26,4 +24,10 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-panda=${LOCALBASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Panda shared library doesn't export required symbols
+.endif
+
+.include <bsd.port.post.mk>
