@@ -3,11 +3,7 @@ bin/pgawk
 bin/gawk-3.1.0
 bin/igawk
 info/gawk.info
-@exec install-info %D/%F %D/info/dir
-@unexec install-info --delete %D/%F %D/info/dir
 info/gawkinet.info
-@exec install-info %D/%F %D/info/dir
-@unexec install-info --delete %D/%F %D/info/dir
 libexec/awk/pwcat
 libexec/awk/grcat
 share/awk/passwd.awk
@@ -28,5 +24,9 @@ share/awk/readable.awk
 share/awk/rewind.awk
 share/awk/round.awk
 share/locale/he/LC_MESSAGES/gawk.mo
+@exec install-info %D/info/gawk.info %D/info/dir
+@unexec install-info --delete %D/info/gawk.info %D/info/dir
+@exec install-info %D/info/gawkinet.info %D/info/dir
+@unexec install-info --delete %D/info/gawkinet.info %D/info/dir
 @dirrm libexec/awk
 @dirrm share/awk

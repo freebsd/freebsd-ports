@@ -15,6 +15,6 @@ MAINTAINER=	dd@FreeBSD.org
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-bitops \
 			--enable-non-decimal-data
-MAN1= gawk.1 igawk.1
+MAN1=		gawk.1 igawk.1
 
 .include <bsd.port.mk>
