@@ -14,7 +14,7 @@
  DRIVERFILE = $(LIBDIR)/printers.def
 -SMB_PASSWD_FILE = $(PRIVATEDIR)/smbpasswd
 -PASSWD_PROGRAM = /bin/passwd
-+SMB_PASSWD_FILE = $(prefix)/bin/smbpasswd
++SMB_PASSWD_FILE = $(prefix)/private/smbpasswd
 +PASSWD_PROGRAM = /usr/bin/passwd
  
  
