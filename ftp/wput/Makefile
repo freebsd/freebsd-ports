@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	wput
-PORTVERSION=	0.3.6d
+PORTVERSION=	0.4
 CATEGORIES=	ftp
 MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/
-DISTNAME=	wput-0.3.6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
-PORTDOCS=	TODO USAGE.examples
+PORTDOCS=	TODO ChangeLog
 
 USE_AUTOCONF_VER=	253
 USE_GETOPT_LONG=	yes
@@ -27,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/wput
+MAN1=		wput.1
 
 post-install:
 .if !defined(NOPORTDOCS)

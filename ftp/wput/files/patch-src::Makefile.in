@@ -1,24 +1,22 @@
---- src/Makefile.in.orig	Tue Dec  2 03:57:48 2003
-+++ src/Makefile.in	Tue Dec  2 03:58:04 2003
-@@ -4,10 +4,10 @@
+--- src/Makefile.in.orig	Sat Apr 17 02:35:38 2004
++++ src/Makefile.in	Mon Jul  5 18:11:30 2004
+@@ -4,8 +4,8 @@
  prefix=@prefix@
  bindir=@bindir@
  CC=@CC@
 -CFLAGS= @CFLAGS@
+-LIBS=@LIBS@
 +CFLAGS= @CFLAGS@ @CPPFLAGS@
- LDFLAGS=@LDFLAGS@
++LIBS=@LIBS@ ${LDFLAGS}
  EXE=../wput
--LIBS= 
-+LIBS= @LIBS@
- #DEBUG= -DDEBUG
- DEBUG=
- OBJ=wput.o ftp.o utils.o progress.o socket.o
-@@ -17,7 +17,7 @@
- 	
- all: wput
- wput:	$(OBJ)
--	$(CC) $(LIBS) $(DEBUG) -o $(EXE) $(OBJ)
-+	$(CC) $(LIBS) $(DEBUG) -o $(EXE) $(OBJ) $(LDFLAGS)
+ GETOPT=@GETOPT@
+ MEMDBG=@MEMDBG@
+@@ -22,7 +22,7 @@
+ ftp-ls.o: ftp.h
+ 
+ wput:   $(OBJ)
+-	$(CC) -o $(EXE) $(OBJ) $(LIBS)
++	$(CC) -o $(EXE) $(OBJ) $(LIBS) $(LDFLAGS)
  clean:
- 	rm -f *.o wput *~ *.bak
- 	rm -r msvcpp/Debug msvcpp/Release
+ 	rm -f *.o *~ *.bak ../wput getopt/*.o
+ win-clean: clean
