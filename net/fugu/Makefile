@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fugu
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	net python
 MASTER_SITES=	http://fugu.gale.org/dist/
 
@@ -18,6 +18,7 @@ USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
+USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
