@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	oops
-PORTVERSION=	1.4.16
+PORTVERSION=	1.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://zipper.paco.net/~igor/oops/
 
-FORBIDDEN=	"Remotely exploitable"
-
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	gigabase_r.2:${PORTSDIR}/databases/gigabase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
