@@ -32,6 +32,7 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 LDAP_PORT?=	net/openldap21-client
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
@@ -305,4 +306,3 @@ pre-everything::
 .endif
 
 .include <bsd.port.post.mk>
-PKGMESSAGE=	${WRKSRC}/pkg-message
