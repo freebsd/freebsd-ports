@@ -1,0 +1,40 @@
+bin/nabi
+share/gnome/nabi/compose/default
+share/gnome/nabi/keyboard/2qwerty
+share/gnome/nabi/keyboard/32qwerty
+share/gnome/nabi/keyboard/39qwerty
+share/gnome/nabi/keyboard/3fqwerty
+share/gnome/nabi/themes/SimplyRed/none.png
+share/gnome/nabi/themes/SimplyRed/hangul.png
+share/gnome/nabi/themes/SimplyRed/english.png
+share/gnome/nabi/themes/MSWindows/none.png
+share/gnome/nabi/themes/MSWindows/hangul.png
+share/gnome/nabi/themes/MSWindows/english.png
+share/gnome/nabi/themes/Mac/none.png
+share/gnome/nabi/themes/Mac/hangul.png
+share/gnome/nabi/themes/Mac/english.png
+share/gnome/nabi/themes/Mac/README
+share/gnome/nabi/themes/Onion/none.png
+share/gnome/nabi/themes/Onion/hangul.png
+share/gnome/nabi/themes/Onion/english.png
+share/gnome/nabi/themes/Onion/README
+share/gnome/nabi/themes/keyboard/none.png
+share/gnome/nabi/themes/keyboard/hangul.png
+share/gnome/nabi/themes/keyboard/english.png
+share/gnome/nabi/themes/keyboard/README
+share/gnome/nabi/themes/KingSejong/none.png
+share/gnome/nabi/themes/KingSejong/hangul.png
+share/gnome/nabi/themes/KingSejong/english.png
+share/gnome/nabi/themes/KingSejong/README
+share/gnome/nabi/nabi.png
+share/locale/ko/LC_MESSAGES/nabi.mo
+@dirrm share/gnome/nabi/themes/keyboard
+@dirrm share/gnome/nabi/themes/SimplyRed
+@dirrm share/gnome/nabi/themes/Onion
+@dirrm share/gnome/nabi/themes/Mac
+@dirrm share/gnome/nabi/themes/MSWindows
+@dirrm share/gnome/nabi/themes/KingSejong
+@dirrm share/gnome/nabi/themes
+@dirrm share/gnome/nabi/keyboard
+@dirrm share/gnome/nabi/compose
+@dirrm share/gnome/nabi
