@@ -66,8 +66,8 @@ LANG=			en
 UPD_SET1=		glibc-common-2.2.4-32.1.${MACHINE_ARCH}.rpm \
 			glibc-2.2.4-32.1.${MACHINE_ARCH}.rpm
 .else
-UPD_SET1=		glibc-common-2.2.4-32.${MACHINE_ARCH}.rpm \
-			glibc-2.2.4-32.${MACHINE_ARCH}.rpm
+UPD_SET1=		glibc-common-2.2.4-33.${MACHINE_ARCH}.rpm \
+			glibc-2.2.4-33.${MACHINE_ARCH}.rpm
 .endif
 UPD_SET2=		${RPM_XFREE86_LIBS} zlib-1.1.4-8.7x.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
@@ -79,6 +79,7 @@ UPDATES=		${UPD_SET1} ${UPD_SET2}
 .include <bsd.port.pre.mk>
 
 .if (${MACHINE_ARCH} == "i386")
+PORTREVISION=		7
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
 RPM_GDBM=		gdbm-1.8.0-5.i386.rpm
@@ -86,7 +87,7 @@ RPM_LIBSTDCXX=
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
-RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-49.i386.rpm
+RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-50.i386.rpm
 UPD_SET2+=		libstdc++-2.96-112.7.1.i386.rpm
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
