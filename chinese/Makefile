@@ -7,6 +7,7 @@
     SUBDIR += acroread-chtfont
     SUBDIR += arphicttf
     SUBDIR += aterm
+    SUBDIR += autoconvert
     SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += big5fonts
