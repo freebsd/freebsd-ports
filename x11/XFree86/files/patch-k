@@ -1,0 +1,10 @@
+--- programs/../nls/XLC_LOCALE/ko.locale	Sun Dec 22 12:29:37 1996
++++ programs/../nls/XLC_LOCALE/ko	Thu Apr 16 21:07:01 1998
+@@ -23,6 +23,7 @@
+ 	}
+ 	font	{
+ 		primary	KSC5601.1987-0:GL
++		substitute KSC5601.1987-0:GL
+ 	}
+ }
+ END XLC_FONTSET
