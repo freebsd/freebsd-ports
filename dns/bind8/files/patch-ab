@@ -5,7 +5,7 @@
  # specify the path of an NFS-mounted directory for common files.
  #
 -DESTDIR=
-+DESTDIR= ${PREFIX}
++DESTDIR= ${MANPREFIX}
  
  #
  # Default location for manual section directories.
