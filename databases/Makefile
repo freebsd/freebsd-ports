@@ -84,6 +84,7 @@
     SUBDIR += mysql-navigator
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
+    SUBDIR += mysql323-scripts
     SUBDIR += mysql323-server
     SUBDIR += mysql40-client
     SUBDIR += mysql40-scripts
