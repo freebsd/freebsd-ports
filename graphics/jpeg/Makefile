@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
 DISTNAME=	jpegsrc.v${PORTVERSION}
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/jpeg-6b
 

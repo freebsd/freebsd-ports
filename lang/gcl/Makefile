@@ -11,7 +11,7 @@ CATEGORIES=	lang tk82
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/gcl/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

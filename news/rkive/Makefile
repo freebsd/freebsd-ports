@@ -1,6 +1,6 @@
 # New ports collection makefile for:	rkive
 # Date created:		03 Jul 1995
-# Whom:			torstenb@FreeBSD.org
+# Whom:			torsten@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.vmunix.org/pub/misc/rkive/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	"Don't make money from it"
 MAN1=		rkive.1 article.1 ckconfig.1

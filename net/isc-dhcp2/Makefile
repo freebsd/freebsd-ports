@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/ \
 		ftp://ftp.isc.org/isc/dhcp/dhcp-2.0-history/
 DISTNAME=	dhcp-2.0pl5
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.iuma.com/IUMA/ftp/audio_utils/converters/source/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		mpeg_musicin.1 mpeg_musicout.1
 

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/info-service/archie/clients/
 DISTNAME=	c-archie-1.4.1-FIXED
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 MAN1=		archie.1

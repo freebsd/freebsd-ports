@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/stable/main/source/editors/
 DISTNAME=	${PORTNAME}_1.40-13
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		beav.1
 WRKSRC=		${WRKDIR}/beav-1.40

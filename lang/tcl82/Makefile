@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
 DISTNAME=	tcl8.2.3
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
