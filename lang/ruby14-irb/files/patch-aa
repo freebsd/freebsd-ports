@@ -5,7 +5,7 @@
      
      case ch = getc
 -    when /[~_*$?!@/\\;,=:<>".]/   #"
-+    when /[~_*$?!@\/\;,=:<>".]/   #"
++    when /[~_*$?!@\/\\;,=:<>".]/   #"
        Token(TkGVAR, "$" + ch)
      when "-"
        Token(TkGVAR, "$-" + getc)
