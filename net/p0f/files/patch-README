@@ -1,0 +1,78 @@
+--- README.orig	Mon Jun 12 15:28:41 2000
++++ README	Mon Jun 12 21:15:54 2000
+@@ -27,30 +27,31 @@
+   
+ Background:
+ 
+-  *  What is passive OS fingerprinting?
++  * What is passive OS fingerprinting?
+   
+-  Passive OS fingerprinting technique bases on information coming
+-  from remote host when it establishes connection to our system. Captured
+-  packets contains enough information to determine OS - and, unlike
+-  active scanners (nmap, queSO) - without sending anything to this host.
++  Passive OS fingerprinting is based on information coming from a remote host
++  when it establishes a connection to our system.  Captured packets contain
++  enough information to identify the operating system.  In contrast to active
++  scanners such as nmap and QueSO, p0f does not send anything to the host being
++  identified.
+   
+   If you're looking for more information, read Spitzner's text at:
+   http://www.enteract.com/~lspitz/finger.html
+       
+-  * How it works?
++  * How does it work?
+   
+   Well, there are some TCP/IP flag settings specific for given systems.
+   Usually initial TTL (8 bits), window size (16 bits), maximum segment size
+   (16 bits), don't fragment flag (1 bit), sackOK option (1 bit), nop option
+-  (1 bit) and window scaling option (8 bits) combined together gives unique,
++  (1 bit) and window scaling option (8 bits) combined together give a unique,
+   51-bit signature for every system.
+   
+-  * What are main advantages?
++  * What are the main advantages?
+   
+-  Passive OS fingerprinting can be done on huge portions of input data - eg.
+-  information gathered on firewall, proxy, routing device or Internet server,
+-  without causing any network activity. You can launch passive OS detection
+-  software on such machine and leave it for days, weeks or months, collecting
++  Passive OS fingerprinting can be done on huge amounts of input data -
++  gathered on a firewall, proxy, routing device or Internet server - without
++  causing any network activity.  You can launch passive OS detection
++  software on such a machine and leave it for days or months, collecting
+   really interesting statistical and - *erm* - just interesting information. 
+   What's really funny - packet filtering firewalls, network address
+   translation and so on are transparent to p0f-alike software, so you're able
+@@ -62,7 +63,7 @@
+ Limitations
+ 
+   Proxy firewalls and other high-level proxy devices are not transparent to
+-  any tcp fingerprinting software. It applies to p0f, as well.
++  any TCP fingerprinting software. It applies to p0f, as well.
+   
+   In order to obtain information required for fingerprinting, you have to
+   receive at least one SYN packet initializing TCP connection to your
+@@ -78,9 +79,9 @@
+   window size are constant for initial TCP/IP packet, but changing rapidly
+   later).
+   
+-Why our bubble gum is better?
++Why is our bubble gum better?
+ 
+-  There is another passive OS detection utility, called 'siphon'. It's
++  There is another passive OS detection utility, called 'siphon'. It's a
+   pretty good piece of proof-of-concept software, but it isn't perfect. Well,
+   p0f isn't perfect for sure, but has several improvements:
+   
+@@ -128,8 +129,8 @@
+   
+ Files:
+ 
+-  /etc/p0f.fp or ./p0f.fp - OS fingerprints database. Format is described
+-  inside:
++  /etc/p0f.fp or ./p0f.fp - OS fingerprints database.
++  The format is described inside:
+   
+   # Valid entry describes the way server starts TCP handshake (first SYN).
+   # Important options are: window size (wss), maximum segment size (mss),
