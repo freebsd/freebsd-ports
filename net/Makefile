@@ -275,6 +275,7 @@
     SUBDIR += lmd
     SUBDIR += loadd
     SUBDIR += macipgw
+    SUBDIR += magictun
     SUBDIR += maradns
     SUBDIR += mars_nwe
     SUBDIR += mbrowse
