@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/Files/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
@@ -58,7 +58,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/snort
 .for i in CREDITS RULES.SAMPLE USAGE backdoor-lib ddos-lib finger-lib ftp-lib \
 	  misc-lib netbios-lib overflow-lib ping-lib rpc-lib scan-lib smtp-lib \
-	  snort-lib telnet-lib webcf-lib webcgi-lib webfp-lib webiis-lib webmisc-lib
+	  telnet-lib web-lib webcf-lib webcgi-lib webfp-lib webiis-lib webmisc-lib
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/snort
 .endfor
 
