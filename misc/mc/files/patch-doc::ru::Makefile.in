@@ -1,0 +1,11 @@
+--- doc/ru/Makefile.in.orig	Tue Aug 12 01:13:27 2003
++++ doc/ru/Makefile.in	Tue Aug 12 01:12:53 2003
+@@ -174,7 +174,7 @@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+-mandir = @mandir@/ru
++mandir = @mandir@/ru.KOI8-R
+ oldincludedir = @oldincludedir@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
