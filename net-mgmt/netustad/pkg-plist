@@ -5,19 +5,6 @@ etc/rc.d/netustad.sh
 @unexec if cmp -s %D/etc/netustad/netustad.conf %D/etc/netustad/netustad.conf-dist; then rm -f %D/etc/netustad/netustad.conf; fi
 etc/netustad/netustad.conf-dist
 @exec [ -f %B/netustad/netustad.conf ] || cp %B/%f %B/netustad/netustad.conf
-include/netustad/acceptrequest.h
-include/netustad/addnewrule.h
-include/netustad/auth.h
-include/netustad/common.h
-include/netustad/config.h
-include/netustad/deleterule.h
-include/netustad/editrule.h
-include/netustad/loadconfig.h
-include/netustad/mimetype.h
-include/netustad/netustad.h
-include/netustad/execcgi.h
-include/netustad/network.h
-include/netustad/snprintf.h
 share/locale/tr/LC_MESSAGES/netustad.mo
 %%DATADIR%%/script/action1.inc
 %%DATADIR%%/script/action2.inc
@@ -99,7 +86,6 @@ share/locale/tr/LC_MESSAGES/netustad.mo
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
-@dirrm include/netustad
 @dirrm etc/netustad
 @dirrm share/locale/tr/LC_MESSAGES
 @dirrm %%DATADIR%%/script/images
