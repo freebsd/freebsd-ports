@@ -227,6 +227,7 @@
     SUBDIR += perf
     SUBDIR += personality
     SUBDIR += pftop
+    SUBDIR += pfstat
     SUBDIR += pib
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
