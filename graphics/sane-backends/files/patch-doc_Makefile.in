@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat Feb  1 05:04:56 2003
-+++ doc/Makefile.in	Wed Feb  5 00:25:50 2003
+--- doc/Makefile.in.orig	Thu May  1 08:12:55 2003
++++ doc/Makefile.in	Tue May 27 13:32:26 2003
 @@ -25,7 +25,7 @@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -9,8 +9,8 @@
  
  MKDIR = $(top_srcdir)/mkinstalldirs
  INSTALL = @INSTALL@
-@@ -53,7 +53,7 @@
-           sane-coolscan2.5 sane-hpsj5s.5 sane-gt68xx.5 sane-artec_eplus48u.5
+@@ -54,7 +54,7 @@
+ 	  sane-ma1509.5 sane-ibm.5 sane-hp5400.5
  SECT7   = sane.7
  MANPAGES = $(SECT1) $(SECT5) $(SECT7)
 -READMES = README AUTHORS COPYING ChangeLog LICENSE NEWS PROBLEMS \
@@ -18,16 +18,7 @@
            PROJECTS README README.aix README.beos README.darwin README.freebsd \
            README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
            README.solaris README.unixware2 README.unixware7 TODO
-@@ -93,7 +93,7 @@
- .PHONY: all clean depend dist distclean html html-man install \
-   install-mostang sane-html uninstall
- 
--all: sane.ps $(MANPAGES)
-+all: $(MANPAGES)
- 
- %.1 %.5 %.7: %.man
- 	@sed -e 's|@DATADIR@|$(datadir)|g' \
-@@ -120,6 +120,7 @@
+@@ -133,6 +133,7 @@
  	  echo installing $${page} in $(mandir)/man7/$${page}...; \
  	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man7/$${page} || exit 1; \
  	done
@@ -35,7 +26,12 @@
  	$(MKDIR) $(DESTDIR)$(docdir)
  	@for readme in $(READMES); do \
  	  echo installing $${readme} in $(docdir)/$${readme}...; \
-@@ -140,6 +141,7 @@
+@@ -149,10 +150,11 @@
+ 	    fi \
+ 	  done \
+ 	done
+-	@-for doc in $(DOCS) $(HTML_PAGES); do \
++	@-for doc in $(HTML_PAGES); do \
  	    echo installing $${doc} in $(docdir)/$${doc}...; \
  	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
  	  done

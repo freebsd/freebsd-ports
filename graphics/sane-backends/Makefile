@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.no.mostang.com/pub/sane/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION} \
+			old-versions/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
@@ -28,6 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_GPHOTO2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/gphoto2
@@ -50,4 +53,4 @@ post-patch:
 		 s|gphoto2 2.0.1|gphoto2 2.0|g' ${WRKSRC}/configure
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
