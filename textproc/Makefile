@@ -130,6 +130,7 @@
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte
+    SUBDIR += libcroco
     SUBDIR += libebml
     SUBDIR += liblrdf
     SUBDIR += libtre
