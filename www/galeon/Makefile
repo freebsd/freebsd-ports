@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.12
-PORTREVISION=	2
+PORTVERSION=	1.2.13
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.5"
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -29,7 +28,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5b"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6a"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -37,7 +36,7 @@ HEADERS_SUFX=
 .endif
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
+USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -55,11 +54,7 @@ CONFLICTS=	galeon2-*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-# Galeon does not build correctly in -CURRENT if -Werror is passed
-# to the compiler.
 NO_WERROR=	yes
-.endif
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--disable-werror
