@@ -1222,7 +1222,6 @@ MASTER_SITE_XCONTRIB+=	\
 MASTER_SITE_XEMACS+= \
 	ftp://ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
-	ftp://ftp.usyd.edu.au/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
 	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
