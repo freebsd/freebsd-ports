@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	2.4.2
+PORTVERSION=	3.0
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	phpPgAdmin_${PORTVERSION:S/./-/g}
+DISTNAME=	phpPgAdmin-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
 
-.if !defined(WITH_PHP3)
 .if defined(WITH_APACHE2)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
-.endif
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
 
