@@ -109,8 +109,8 @@ lib/ggi/display/trueemu.la
 lib/ggi/display/trueemu.so
 %%WITH_SVGALIB%%lib/ggi/display/vgagl.la
 %%WITH_SVGALIB%%lib/ggi/display/vgagl.so
-lib/ggi/display/vgl.la
-lib/ggi/display/vgl.so
+%%WITH_VGL%%lib/ggi/display/vgl.la
+%%WITH_VGL%%lib/ggi/display/vgl.so
 lib/ggi/display/xf86dga.la
 lib/ggi/display/xf86dga.so
 lib/ggi/helper/helper_x_dbe.la
