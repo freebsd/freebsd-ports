@@ -5,14 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	antivir-milter
-PORTVERSION=	1.1.b
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	security mail
-#MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
-#		http://www.antivir.de/dateien/antivir/release/
-MASTER_SITES=	http://www.antivir.de/dateien/antivir/beta/freebsd/
-#DISTNAME=	avfbmlt
-DISTNAME=	avfbmlt_beta
+MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
+		http://dl.antivir.de/dateien/antivir/release/
+DISTNAME=	avfbmlt
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marius@FreeBSD.org
@@ -27,7 +24,9 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 # Auto re-fetch sucks!
 FETCH_CMD=	/usr/bin/fetch -A
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b/-beta/}
+# When the avmilter binary is stripped its self-check fails.
+STRIP=
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
@@ -42,7 +41,7 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
 post-patch:
 .for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf init/rc.avmilter \
-	script/avq
+	pgp/README script/avq
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
@@ -56,38 +55,41 @@ post-patch:
 do-install:
 	@${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 ${PREFIX}/AntiVir
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${WRKSRC}/bin/antivir \
-		${PREFIX}/AntiVir/antivir-dist_avfbmlt
+		${PREFIX}/AntiVir/antivir-dist_avmilter
 .if !exists(${PREFIX}/AntiVir/antivir)
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${WRKSRC}/bin/antivir \
 		${PREFIX}/AntiVir
 .endif
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/antivir.vdf \
-		${PREFIX}/AntiVir/antivir.vdf-dist_avfbmlt
+		${PREFIX}/AntiVir/antivir.vdf-dist_avmilter
 .if !exists(${PREFIX}/AntiVir/antivir.vdf)
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/antivir.vdf \
 		${PREFIX}/AntiVir
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/avq ${PREFIX}/bin
-.for i in antivir.conf avmilter.conf
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/etc/${i}.sample
-.if !exists(${PREFIX}/etc/${i})
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/etc
+	@${INSTALL} -d ${PREFIX}/etc/avmilter
+.for i in avmilter.conf avmilter.ignore avmilter.scan avmilter.warn
+	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/etc/avmilter/${i}.sample
+.if !exists(${PREFIX}/etc/avmilter/${i})
+	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/etc/avmilter
 .endif
 .endfor
+	@${INSTALL_DATA} ${WRKSRC}/etc/antivir.conf \
+		${PREFIX}/etc/antivir.conf.sample
+.if !exists(${PREFIX}/etc/antivir.conf)
+	@${INSTALL_DATA} ${WRKSRC}/etc/antivir.conf ${PREFIX}/etc
+.endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/avmilter ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/antivirupdater.sh \
 		${PREFIX}/sbin/antivirupdater
 	@${INSTALL_SCRIPT} ${WRKDIR}/avqrm.sh ${PREFIX}/bin/avqrm
 	@${INSTALL_SCRIPT} ${WRKSRC}/init/rc.avmilter \
-		${PREFIX}/etc/rc.d/antivir-milter.sh
+		${PREFIX}/etc/rc.d/avmilter.sh
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
 .for i in incoming outgoing rejected
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/${i}
 .endfor
 	@${INSTALL} -d ${EXAMPLESDIR}
-.for i in avmilter.ignore avmilter.scan avmilter.warn
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${EXAMPLESDIR}
-.endfor
 .for i in de en es hu it nl
 	@${INSTALL} -d ${EXAMPLESDIR}/templates/${i}
 .for j in patho-administrator patho-recipient patho-sender virus-administrator \
@@ -105,6 +107,7 @@ do-install:
 .for i in avmilter_de.pdf avmilter_en.pdf
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
+	@${INSTALL_DATA} ${WRKSRC}/pgp/README ${DOCSDIR}/README.gpg
 	@${INSTALL_DATA} ${WRKSRC}/pgp/antivir.gpg ${DOCSDIR}
 .endif
 
