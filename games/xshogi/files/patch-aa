@@ -1,5 +1,5 @@
---- Makefile.custom.orig	Wed May 24 07:12:05 1995
-+++ Makefile.custom	Fri Jan  3 00:46:15 1997
+--- Makefile.custom.orig	Wed May 24 09:12:05 1995
++++ Makefile.custom	Sun Sep 27 12:04:31 1998
 @@ -28,18 +28,18 @@
  VERS = 1.2p03
  
@@ -22,7 +22,7 @@
  
  # Compress program
  COMPRESS = gzip
-@@ -73,8 +73,9 @@
+@@ -73,8 +73,12 @@
  #CCOPTIONS= -g 
  #LDOPTIONS= -lXaw -lXmu -lXt -lXext -lX11
  # This is for cc on SunOS with debug
@@ -31,10 +31,13 @@
 +CCOPTIONS= -g -O2 -m486 -pipe -fno-strength-reduce \
 +	-I/usr/include -I$(PREFIX)/include 
 +LDOPTIONS= -L/usr/lib -L$(PREFIX)/lib -lXaw -lXmu -lXt -lXext -lX11
++.if ${PORTOBJFORMAT} == "elf"
++LDOPTIONS+=-Wl,-rpath,$(X11BASE)/lib
++.endif
  
  # Options for xshogi
  # Use -DSENDTIME with at least gnushogix 1.2 patchlevel 3
-@@ -88,8 +89,8 @@
+@@ -88,8 +92,8 @@
  # The option -DISS compiles xshogi for supporting the Internet Shogi Server. 
  OPT = -DHAS_GETTIMEOFDAY -DSENDTIME -DISS -DTOP_PART_BITMAPS # -DBOTH_BITMAPS -DWESTERN_BITMAPS
  
