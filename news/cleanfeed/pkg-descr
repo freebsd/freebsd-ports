@@ -1,0 +1,14 @@
+Cleanfeed 0.95.7b
+-----------------
+
+Cleanfeed is a spam filter for INN, Cyclone, Typhoon, Breeze, and
+NNTPRelay servers.
+
+Full documentation, including configuration and installation, is in the
+file "cleanfeed.man", and in "cleanfeed.8" in man page form (suitable for
+installation at /usr/local/man/man8, or wherever fine man pages live on
+your system).
+
+Written by Jeremy Nixon <jeremy@exit109.com>
+
+WWW: http://www.exit109.com/~jeremy/news/cleanfeed.html

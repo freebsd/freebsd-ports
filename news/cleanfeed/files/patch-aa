@@ -1,0 +1,17 @@
+--- cleanfeed.orig	Sun Jan 14 02:10:40 2001
++++ cleanfeed	Sun Jan 14 02:11:08 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ # Cleanfeed
+ #  Version 0.95.7b  3 September 1998
+@@ -26,7 +26,7 @@
+ # directory where the cleanfeed.conf and cleanfeed.local files live
+ # set this to undef to not use the external file
+ 
+-$config_dir = '/usr/news/bin/control';
++$config_dir = '%%PREFIX%%/news/bin/filter';
+ 
+ 
+ # Everything below here can be set in cleanfeed.conf

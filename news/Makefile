@@ -5,6 +5,7 @@
     SUBDIR += aub
     SUBDIR += bgrab
     SUBDIR += c-nocem
+    SUBDIR += cleanfeed
     SUBDIR += cnews
     SUBDIR += dejasearch
     SUBDIR += diablo
