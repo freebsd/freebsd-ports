@@ -117,6 +117,7 @@
     SUBDIR += gopher
     SUBDIR += gq
     SUBDIR += gtic
+    SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella
     SUBDIR += gtkyahoo
     SUBDIR += h2n

@@ -1,0 +1,26 @@
+lib/licq/licq_%%GUITYPE%%_gui.a
+share/licq/gtk-gui/pixmaps/arrow.xpm
+share/licq/gtk-gui/pixmaps/chatBeep.xpm
+share/licq/gtk-gui/pixmaps/chatBold.xpm
+share/licq/gtk-gui/pixmaps/chatChangeBg.xpm
+share/licq/gtk-gui/pixmaps/chatChangeFg.xpm
+share/licq/gtk-gui/pixmaps/chatClose.xpm
+share/licq/gtk-gui/pixmaps/chatItalic.xpm
+share/licq/gtk-gui/pixmaps/chatUnder.xpm
+share/licq/gtk-gui/pixmaps/close.xpm
+share/licq/gtk-gui/pixmaps/gtklicq-logo.png
+share/licq/gtk-gui/pixmaps/history.xpm
+share/licq/gtk-gui/pixmaps/info.xpm
+share/licq/gtk-gui/pixmaps/logo.xpm
+share/licq/gtk-gui/pixmaps/not_secure_on.xpm
+share/licq/gtk-gui/pixmaps/reglogo.xpm
+share/licq/gtk-gui/pixmaps/search.xpm
+share/licq/gtk-gui/pixmaps/secure_off.xpm
+share/licq/gtk-gui/pixmaps/secure_on.xpm
+share/licq/gtk-gui/pixmaps/sideways_strippeddownlogo.xpm
+share/locale/de/LC_MESSAGES/gtk+licq.mo
+share/locale/es/LC_MESSAGES/gtk+licq.mo
+share/locale/pt/LC_MESSAGES/gtk+licq.mo
+share/locale/ru/LC_MESSAGES/gtk+licq.mo
+@dirrm share/licq/gtk-gui/pixmaps
+@dirrm share/licq/gtk-gui
