@@ -1,0 +1,32 @@
+include/matroska/FileKax.h
+include/matroska/KaxAttached.h
+include/matroska/KaxAttachements.h
+include/matroska/KaxBlock.h
+include/matroska/KaxBlockData.h
+include/matroska/KaxChapters.h
+include/matroska/KaxCluster.h
+include/matroska/KaxClusterData.h
+include/matroska/KaxConfig.h
+include/matroska/KaxContexts.h
+include/matroska/KaxCues.h
+include/matroska/KaxCuesData.h
+include/matroska/KaxInfo.h
+include/matroska/KaxInfoData.h
+include/matroska/KaxSeekHead.h
+include/matroska/KaxSegment.h
+include/matroska/KaxTag.h
+include/matroska/KaxTagMulti.h
+include/matroska/KaxTags.h
+include/matroska/KaxTrackAudio.h
+include/matroska/KaxTrackEntryData.h
+include/matroska/KaxTrackVideo.h
+include/matroska/KaxTracks.h
+include/matroska/KaxTypes.h
+include/matroska/KaxVersion.h
+include/matroska/StdInclude.h
+include/matroska/api/c/libmatroska.h
+include/matroska/api/c/libmatroska_t.h
+lib/libmatroska.a
+@dirrm include/matroska/api/c
+@dirrm include/matroska/api
+@dirrm include/matroska
