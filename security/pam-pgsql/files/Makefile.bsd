@@ -7,7 +7,7 @@ LIB=	pam_pgsql
 SHLIB_NAME=${LIB}.so
 
 LDADD=		-lpam -L${LOCALBASE}/lib -lpq -lmd
-CFLAGS+=	-Wall -D_GNU_SOURCE \
+CFLAGS+=	-Wall -D_GNU_SOURCE -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/pgsql
 
 INTERNALLIB=	we don't need no stinking static lib
