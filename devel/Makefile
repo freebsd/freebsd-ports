@@ -446,6 +446,7 @@
     SUBDIR += sh-rtems-gcj
     SUBDIR += sh-rtems-gdb
     SUBDIR += sh-rtems-objc
+    SUBDIR += shapelib
     SUBDIR += shtool
     SUBDIR += sip
     SUBDIR += sparc-rtems-binutils
