@@ -41,11 +41,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A programming error resulting in a failure to verify that
-          an attempt to manipulate routing tables originated from a
-          non-jailed process.</p>
+	<p>A programming error resulting in a failure to verify that
+	  an attempt to manipulate routing tables originated from a
+	  non-jailed process.</p>
 
-        <p>Jailed processes running with superuser privileges could
+	<p>Jailed processes running with superuser privileges could
 	  modify host routing tables.  This could result in a variety
 	  of consequences including packets being sent via an
 	  incorrect network interface and packets being discarded
@@ -74,10 +74,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Programming errors in the implementation of the msync(2)
-          system call involving the MS_INVALIDATE operation lead to
-          cache consistency problems between the virtual memory system
-          and on-disk contents.</p>
+	<p>Programming errors in the implementation of the msync(2)
+	  system call involving the MS_INVALIDATE operation lead to
+	  cache consistency problems between the virtual memory system
+	  and on-disk contents.</p>
 
 	<p>In some situations, a user with read access to a file may
 	  be able to prevent changes to that file from being committed
