@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Base Library
 
-
 USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL_VER=	15
 GNU_CONFIGURE=	yes
