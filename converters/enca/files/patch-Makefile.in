@@ -1,25 +1,27 @@
---- Makefile.in	Wed Jun 25 13:11:13 2003
-+++ Makefile.in	Wed Jun 25 18:29:00 2003
-@@ -29,6 +29,7 @@
- sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
+--- Makefile.in.orig	Wed Nov 26 21:59:16 2003
++++ Makefile.in	Tue Dec 16 19:09:45 2003
+@@ -138,6 +138,7 @@
+ infodir = @infodir@
+ install_sh = @install_sh@
  libdir = @libdir@
 +libdatadir = $(exec_prefix)/libdata
- infodir = @infodir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
  mandir = @mandir@
- includedir = @includedir@
-@@ -95,8 +96,8 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
--@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs test
+@@ -148,10 +149,10 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs test
-+@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs
 +@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs
+ 
+ # @(#) $Id: Makefile.am,v 1.31 2003/11/17 12:27:39 yeti Exp $
+-@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs test
++@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs
  man_MANS = man/enca.1
  
- M4TESTS = \
-@@ -131,7 +132,7 @@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-maintainer-mode
+@@ -204,7 +205,7 @@
    $(M4TESTS)
  
  
