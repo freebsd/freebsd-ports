@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ivrix.org.il/projects/spell-checker/
 MAINTAINER=	yonatan@xpert.com
 COMMENT=	Hebrew spellchecker and morphology engine
 
-USE_PERL=	yes
+USE_PERL5=	yes
 
 MAN1=		hspell.1
 
