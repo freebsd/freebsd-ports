@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.62 1998/08/19 19:51:10 hoek Exp $
+# $Id: Makefile,v 1.63 1998/09/15 21:31:53 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -147,7 +147,7 @@ CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
     (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)
 CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
-LIB_DEPENDS+=   wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
+LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 # Include SOCKS firewall support
