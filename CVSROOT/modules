@@ -7335,6 +7335,7 @@ tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
 tea-total	ports/security/tea-total
 team		ports/misc/team
+teamspeak_client	ports/audio/teamspeak_client
 teapop		ports/mail/teapop
 teapot		ports/deskutils/teapot
 ted		ports/editors/ted
