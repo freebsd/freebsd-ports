@@ -1,0 +1,8 @@
+Jing is a validator for RELAX NG implemented in Java. It uses a
+vendor-independent Java interface for RELAX NG datatype libraries and
+can use any datatype library that implements this interface.
+
+WWW: http://www.thaiopensource.com/relaxng/jing.html
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
