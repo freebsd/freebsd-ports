@@ -1,0 +1,26 @@
+Crypto++ is a free C++ class library of cryptographic schemes. Includes:
+
+* A class hierarchy with an API defined by abstract base classes
+* Proposed AES (and RC6, MARS, Twofish, Serpent, CAST-256)
+* Symmetric block cipers: IDEA, DES/Triple DES,DESX, RC2, RC5, Blowfish,
+  Diamond2, TEA, SAFER, 3-WAY, GOST, SHARK, CAST-128, Square, Skipjack
+* Generic cipher modes: CBC padded/ciphertext stealing (CTS), CFB, OFB
+* Stream cipher: Panama, ARC4, SEAL, WAKE, Sapphire, BlumBlumShub
+* Public key: RSA, DSA, ElGamal, NR, BlumGoldwasser, Rabin/RW, LUC, LUCELG
+* Padding schemes for PK systems: PKCS#1 v2, OAEP, PSSR, IEEE P1363 EMSA2
+* Key agreement schemes: DH, DH2, MQV, LUCDIF, XTR-DH
+* Elliptic curve cryptography: ECDSA, ENR, EIES, ECDHD, ECMQVC
+* One-way hash functions: SHA-1/2, MD2/5, HAVAL, RIPEMD-160, Tiger, Panama
+* Message authentication codes: MD5-MAC, HMAC, XOR-MAC, CBC-MAC, DMAC
+* Cipher constructions from hash functions: Luby-Rackoff, MD
+* Pseudorandom number generators: ANSI X9.17 appendix C, PGP's RandPool
+* Shamir's secret sharing scheme/Rabin's information dispersal algorithm (IDA)
+* gzip, DEFLATE and zlib format support
+* Fast multiprecision integer (bignum) and polynomial operations
+* Prime number generation/verification, base-64 and 32-bit CRC encoding
+* A high level interface for most of the above
+
+WWW: http://www.eskimo.com/~weidai/cryptlib.html
+
+- George Reid
+greid@ukug.uk.freebsd.org

@@ -20,6 +20,7 @@
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += cracklib
+    SUBDIR += cryptopp
     SUBDIR += cyrus-sasl
     SUBDIR += ddos_scan
     SUBDIR += donkey
