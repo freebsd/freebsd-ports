@@ -17,10 +17,27 @@ COMMENT=	Message Passing Interface (MPI) Library
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION:R}/
 PATCHFILES=	8713 8697
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich \
-		-mpe_opts="--with-wishloc=wish8.4"
+CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich
+
+.if defined(WITHOUT_X11)
+WITHOUT_TK=	yes
+CONFIGURE_ARGS+=--disable-mpe_graphics
+PLIST_SUB+=	X11="@comment "
+.else
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--enable-mpe_graphics
+PLIST_SUB+=	X11=""
+.endif
+
+.if defined(WITHOUT_TK)
+CONFIGURE_ARGS+=-mpe_opts="--without-tcldir --without-tkdir --without-wishloc"
+PLIST_SUB+=	TK="@comment "
+.else
+RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+CONFIGURE_ARGS+=-mpe_opts="--with-wishloc=wish8.4"
+PLIST_SUB+=	TK=""
+.endif
 
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+= --without-java
