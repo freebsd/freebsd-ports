@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.7.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview libgnomeui vte
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview libgnomeui \
+		lthack vte
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -25,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500018
-BROKEN=		"Requires readline 4.2 or newer"
+IGNORE=		"Requires readline 4.2 or newer"
 .endif
 
 .include <bsd.port.post.mk>
