@@ -1,0 +1,38 @@
+--- latex2html.orig	Tue Jul 18 09:41:56 2000
++++ latex2html	Tue Jul 18 09:46:11 2000
+@@ -2780,7 +2780,7 @@
+ 		if (defined &$trans) {
+ 		    &set_default_language($pattern,*_);
+ 		}
+-		undef($cmd,$trans);
++		undef $cmd; undef $trans;
+ 	    }
+ 	    next;
+ 	} elsif ($4) {
+@@ -3085,7 +3085,7 @@
+ 	    # Modifies $contents
+ 	    &process_command($single_cmd_rx,*contents) if ($contents =~ /\\/o);
+ 	}
+-	undef ($cmd,$tmp,$etmp);
++	undef $cmd; undef $tmp; undef $etmp;
+     } else { 
+ 	$contents = &translate_environments($contents);
+ 	$contents = &translate_commands($contents)
+@@ -8916,7 +8916,7 @@
+ 			    };
+ 			}
+ 			return(1) if ($this_dir eq '.');
+-			rmdir($this_dir,$print_dir) if $mode;
++			if ($mode) { rmdir $this_dir; rmdir $print_dir }
+ 			if (!$mode) { &new_dir($this_dir,'r')};
+ 			return(1);
+ 		    } elsif ($answer =~ /^q$/) {
+@@ -11326,7 +11326,7 @@
+ 	    &extract_captions($cap_env) if ($_ =~ /\\caption/m);
+ 	    $minipage_caption = $captions;
+ 	    $_ = $contents;
+-	    undef($contents, $captions);
++	    undef $contentscw; undef $captions;
+ 	};
+     }
+ 

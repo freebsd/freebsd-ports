@@ -1,0 +1,11 @@
+--- versions/html4_0.pl	Wed Dec  2 19:43:52 1998
++++ versions/html4_0.pl.new	Tue Jul 18 09:25:00 2000
+@@ -1138,7 +1138,7 @@
+ 		    local($tmp) = ++$global{'max_id'};
+ 	"\\begin$OP$tmp${CP}math$OP$tmp$CP$1\\end$OP$tmp${CP}math$OP$tmp$CP"
+ 		    /eg;
+-		undef ($cmd,$tmp,$endspec); undef @cmds;
++		undef $cmd; undef $tmp; undef $endspec; undef @cmds;
+ 
+ 		local($tmp) = ++$global{'max_id'};
+ 		if(@save_open_tags_tabular) {
