@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -52,7 +52,11 @@ PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
 		squid-2.5.STABLE5-ntlm_warning.patch \
 		squid-2.5.STABLE5-rfc1035NameUnpack.patch \
 		squid-2.5.STABLE5-digest_blank.patch \
-		squid-2.5.STABLE5-post_assert.patch
+		squid-2.5.STABLE5-post_assert.patch \
+		squid-2.5.STABLE5-digest_ERR.patch \
+		squid-2.5.STABLE5-turkish_ERR_DNS_FAIL.patch \
+		squid-2.5.STABLE5-vary_negatively.patch \
+		squid-2.5.STABLE5-range_offset_limit.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
