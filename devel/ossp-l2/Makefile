@@ -8,9 +8,7 @@
 #
 
 PORTNAME=	l2
-PORTVERSION=	0.9.1
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/l2/
 PKGNAMEPREFIX=	ossp-
@@ -21,13 +19,8 @@ COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on alpha or amd64"
-.endif
-
 .include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
