@@ -1,23 +1,6 @@
 *** Makefile.orig	Fri Jul 29 21:41:19 1994
 --- Makefile	Wed Mar  1 19:34:18 1995
 ***************
-*** 4,10 ****
-  
-  help:
-  		@echo "See the Icon installation documents."
-! 		@echo "Copies are in the doc directory here.
-  
-  ##################################################################
-  #
---- 4,10 ----
-  
-  help:
-  		@echo "See the Icon installation documents."
-! 		@echo "Copies are in the doc directory here."
-  
-  ##################################################################
-  #
-***************
 *** 241,243 ****
 --- 241,259 ----
   		-cd tests;		$(MAKE) Clean
