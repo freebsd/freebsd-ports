@@ -5,8 +5,6 @@
 case $1 in
 
 	start)
-		LD_PRELOAD=/usr/lib/libpam.so.1
-		export LD_PRELOAD
 		if [ -x !!PREFIX!!/etc/usermin/start ]; then
 			!!PREFIX!!/etc/usermin/start >/dev/null
 			echo -n ' usermin'

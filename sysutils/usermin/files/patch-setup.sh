@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- setup.sh.orig	Sun Nov 10 15:32:27 2002
-+++ setup.sh	Sun Nov 10 15:32:34 2002
-@@ -48,12 +48,12 @@
+--- setup.sh.orig	Sat Apr  5 14:13:12 2003
++++ setup.sh	Sat Apr  5 22:59:09 2003
+@@ -54,12 +54,12 @@
  echo "Unless you want to run multiple versions of Usermin at the same time"
  echo "you can just accept the defaults."
  echo ""
@@ -18,7 +18,7 @@ $FreeBSD$
  fi
  abspath=`echo $config_dir | grep "^/"`
  if [ "$abspath" = "" ]; then
-@@ -138,19 +138,19 @@
+@@ -147,19 +147,19 @@
  else
  	# Config directory exists .. make sure it is not in use
  	ls $config_dir | grep -v rpmsave >/dev/null 2>&1
@@ -41,7 +41,7 @@ $FreeBSD$
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -178,8 +178,8 @@
+@@ -187,8 +187,8 @@
  	echo "Usermin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
@@ -52,3 +52,12 @@ $FreeBSD$
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
  	else
+@@ -427,7 +427,7 @@
+ else
+ 	uname -a | grep -i FreeBSD >/dev/null
+ 	if [ "$?" = "0" ]; then
+-		echo "LD_PRELOAD=/usr/lib/libpam.so.1" >>$config_dir/start
++		echo "LD_PRELOAD=/usr/lib/libpam.so" >>$config_dir/start
+ 		echo "export LD_PRELOAD" >>$config_dir/start
+ 	fi
+ 	echo "exec "$wadir/miniserv.pl" $config_dir/miniserv.conf" >>$config_dir/start
