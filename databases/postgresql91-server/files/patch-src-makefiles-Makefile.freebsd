@@ -1,15 +1,15 @@
---- src/makefiles/Makefile.freebsd.orig	Wed Aug 29 21:14:40 2001
-+++ src/makefiles/Makefile.freebsd	Sat Jan 31 17:51:25 2004
-@@ -7,7 +7,7 @@
- endif
- 
- DLSUFFIX = .so
+--- src/makefiles/Makefile.freebsd.orig	Fri Nov 19 01:41:39 2004
++++ src/makefiles/Makefile.freebsd	Tue Dec 21 02:44:09 2004
+@@ -11,7 +11,7 @@
+ ifeq ($(findstring sparc,$(host_cpu)), sparc)
+ CFLAGS_SL = -fPIC -DPIC
+ else
 -CFLAGS_SL = -fpic -DPIC
 +CFLAGS_SL = -fPIC -DPIC
+ endif
  
- %.so: %.o
- ifdef ELF_SYSTEM
-@@ -23,3 +23,5 @@
+ 
+@@ -29,3 +29,5 @@
  endif
  
  sqlmansect = 7

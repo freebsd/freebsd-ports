@@ -18,7 +18,7 @@
 # daily_pgsql_backup_enable="YES" # do backup
 # daily_pgsql_vacuum_enable="YES" # do vacuum
 
-daily_pgsql_vaccum_enable="NO"
+daily_pgsql_vacuum_enable="YES"
 daily_pgsql_backup_enable="NO"
 
 daily_pgsql_vacuum_args="-z"

@@ -7,27 +7,24 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	7.4.6
+PORTVERSION?=	8.0.0
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+MASTER_SITE_SUBDIR=	source/v${PORTVERSION:C/[0-9]*$//:C/rc/beta/}
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-# XXX: this will eventually go away
-.if !defined(PGSQL_WORK_IN_PROGRESS)
-BROKEN= pending ports/75344, the 8.0 release can be used via the postgresql-devel port
-.endif
-
-CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.*
+CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]*
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
+
+NO_LATEST_LINK=	beta version
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
@@ -38,13 +35,14 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-CONFIGURE_ARGS?=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
+		--with-includes=${LOCALBASE}/include \
+		--with-docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
-BUILD_DIRS?=	src/backend src/backend/utils/mb/conversion_procs src/pl
+BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs src/pl
 INSTALL_DIRS?=	${BUILD_DIRS}
 PKGMESSAGE=	${WRKDIR}/.pkg-message${PKGNAMESUFFIX}
 
@@ -58,18 +56,32 @@ WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 
 .if !defined(SLAVE_ONLY)
 OPTIONS=	NLS "Use internationalized messages" on
-OPTIONS+=	SSL "Build with SSL" on
+.endif
+
+# Cannot check this with standard OPTION due to a catch-22.
+# USE_OPENSSL must precede bsd.port.pre.mk, but then we don't know
+# what OPTIONS are set.
+#
+# If you *don't* want SSL, set WITHOUT_SSL=YES when making
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Coredump during build on alpha 4.x"
+.endif
+
 .if !defined(SLAVE_ONLY)
 # gnugetopt will always be used if already installed
-.  if ${OSVERSION} < 500041
-OPTIONS+=	GNUGETOPT "Depend on GNU getopt" on
+.  if (${OSVERSION} < 500041) && !exists(${LOCALBASE}/include/getopt.h)
+OPTIONS+=	GNUGETOPT "Use GNU getopt" on
 .  endif
 .  if defined(SERVER_ONLY)
 OPTIONS+=	PAM "Build with PAM support" off
+OPTIONS+=	RENDEZVOUZ "Add support for Apple's Rendez-Vouz" off
 .  endif
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal's kerberos support" off
@@ -81,11 +93,15 @@ OPTIONS+=	TESTS "Allows the use of a \"check\" target" off
 .  endif
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
+.if defined(SERVER_ONLY) && defined(WITH_RENDEZVOUS)
+CONFIGURE_ARGS+=	--with-rendezvous
+.endif
+
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam
 .  endif
 
-. if !defined(WITHOUT_GNUGETOPT)
+. if !defined(WITHOUT_GNUGETOPT) || exists(${LOCALBASE}/include/getopt.h)
 USE_GETOPT_LONG=yes
 .  endif
 
@@ -109,97 +125,88 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install-strip
 .  endif
 
-.  if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
-.  endif
-
 .  if defined(WITH_MIT_KRB5)
+WITH_KRB5=	yes
+KRB5_HOME?=	${LOCALBASE}
 KRB5CONF=	${KRB5_HOME}/bin/krb5-config
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
-WITH_KRB5=	yes
 .  endif
 
 .  if defined(WITH_HEIMDAL_KRB5)
 WITH_KRB5=	yes
 .    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 KRB5CONF=	${HEIMDAL_HOME}/bin/krb5-config
 .    elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 KRB5CONF=	${DESTDIR}/usr/bin/krb5-config
 .    else
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
 .    endif
 .  endif
 
 .  if defined(WITH_KRB5)
-CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
+CONFIGURE_ARGS+=	--with-krb5
 LDFLAGS+=	`${KRB5CONF} --libs krb5`
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
+EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-text-regress-pgregress-sh
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 .  endif
-
-.  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
-	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
-	@${ECHO} "Please choose one or the other."
-	@exit 1
-.  endif
-.  if defined(WITH_MIT_KRB5) && !exists(${KRB5CONF})
-	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
-	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
-	@exit 1
-.  endif
-.  if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONF})
-	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
-	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
-	@${ECHO} "and remake world."
-	@exit 1
-.  endif
-
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
-MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 \
-		droplang.1 dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 \
-		pg_config.1 pg_controldata.1 pg_ctl.1 pg_dump.1 pg_dumpall.1 \
-		pg_resetxlog.1 pg_restore.1 pgtclsh.1 pgtksh.1 postgres.1 \
-		postmaster.1 psql.1 vacuumdb.1
+MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
+		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
+		ipcclean.1 pg_config.1 pg_controldata.1 pg_ctl.1   \
+		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
+		postgres.1 postmaster.1 psql.1 vacuumdb.1
 
-MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 \
-		alter_database.7 alter_domain.7 alter_function.7 \
-		alter_group.7 alter_language.7 alter_operator_class.7 \
-		alter_schema.7 alter_sequence.7 alter_table.7 \
-		alter_trigger.7 alter_user.7 analyze.7 begin.7 checkpoint.7 \
-		close.7 cluster.7 comment.7 commit.7 copy.7 create_aggregate.7 \
-		create_cast.7 create_constraint_trigger.7 create_conversion.7 \
-		create_database.7 create_domain.7 create_function.7 create_group.7 \
-		create_index.7 create_language.7 create_operator.7 \
-		create_operator_class.7 create_rule.7 create_schema.7 \
-		create_sequence.7 create_table.7 create_table_as.7 \
-		create_trigger.7 create_type.7 create_user.7 create_view.7 \
-		deallocate.7 declare.7 delete.7 drop_aggregate.7 \
-		drop_cast.7 drop_conversion.7 drop_database.7 drop_domain.7 \
-		drop_function.7 drop_group.7 drop_index.7 drop_language.7 \
-		drop_operator.7 drop_operator_class.7 drop_rule.7 drop_schema.7 \
-		drop_sequence.7 \
-		drop_table.7 drop_trigger.7 drop_type.7 drop_user.7 \
-		drop_view.7 end.7 execute.7 explain.7 fetch.7 grant.7 insert.7 \
-		listen.7 load.7 lock.7 move.7 notify.7 prepare.7 reindex.7 \
-		reset.7 revoke.7 rollback.7 select.7 select_into.7 \
-		set.7 set_constraints.7 set_transaction.7 show.7 \
-		set_session_authorization.7 start_transaction.7 \
-		truncate.7 unlisten.7 update.7 vacuum.7
+MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
+		alter_domain.7 alter_function.7 alter_group.7		      \
+		alter_index.7 alter_language.7 alter_operator_class.7	      \
+		alter_schema.7 alter_sequence.7 alter_table.7		      \
+		alter_trigger.7 alter_user.7 analyze.7 begin.7		      \
+		checkpoint.7 close.7 cluster.7 comment.7 commit.7	      \
+		copy.7 create_aggregate.7 create_cast.7			      \
+		create_constraint_trigger.7 create_conversion.7		      \
+		create_database.7 create_domain.7 create_function.7	      \
+		create_group.7 create_index.7 create_language.7		      \
+		create_operator.7 create_operator_class.7		      \
+		create_rule.7 create_schema.7 create_sequence.7		      \
+		create_table.7 create_table_as.7 create_trigger.7	      \
+		create_type.7 create_user.7 create_view.7 delete.7	      \
+		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
+		drop_database.7 drop_domain.7 drop_function.7		      \
+		drop_group.7 drop_index.7 drop_language.7		      \
+		drop_operator.7 drop_schema.7 drop_sequence.7		      \
+		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
+		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
+		lock.7 move.7 notify.7 prepare.7 reindex.7 reset.7	      \
+		revoke.7 rollback.7 select.7 select_into.7 set.7	      \
+		set_constraints.7 set_transaction.7 show.7		      \
+		set_session_authorization.7 start_transaction.7		      \
+		spi_connect.7 spi_copytuple.7 spi_cursor_close.7	      \
+		spi_cursor_fetch.7 spi_cursor_find.7 spi_cursor_move.7	      \
+		spi_execp.7 spi_execute.7 spi_execute_plan.7		      \
+		spi_finish.7 spi_fname.7 spi_fnumber.7 spi_freeplan.7	      \
+		spi_freetuple.7 spi_freetuptable.7 spi_getargcount.7	      \
+		spi_getargtypeid.7 spi_getbinval.7 spi_getrelname.7	      \
+		spi_gettype.7 spi_gettypeid.7 spi_getvalue.7		      \
+		spi_is_cursor_plan.7 spi_modifytuple.7 spi_palloc.7	      \
+		spi_pfree.7 spi_pop.7 spi_prepare.7 spi_push.7		      \
+		spi_repalloc.7 spi_returntuple.7 spi_saveplan.7		      \
+		truncate.7 unlisten.7 update.7 vacuum.7			      \
+		alter_operator.7 alter_tablespace.7 alter_type.7	      \
+		create_tablespace.7 drop_tablespace.7			      \
+		release_savepoint.7 rollback_to_savepoint.7		      \
+		savepoint.7
 .endif
 
 .if defined(SERVER_ONLY)
@@ -208,6 +215,14 @@ pre-everything::
 .endif
 
 .if !defined(NO_BUILD)
+
+pre-configure:
+.  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
+	@${ECHO} "MIT's and Heimdal Kerberos are mutually exclusive."
+	@${ECHO} "Please choose one or the other."
+	@exit 1
+.  endif
+
 do-build:
 	@ cd ${WRKSRC}/src/backend ;\
 	${GMAKE} ../../src/include/parser/parse.h ../../src/include/utils/fmgroids.h
@@ -235,10 +250,9 @@ do-install:
 	    cd ${WRKSRC}/$${dir} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
 	done
-	${MKDIR} ${PREFIX}/share/postgresql
 .  if defined(SERVER_ONLY)
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} install-all-headers
-.  for i in profile cshrc
+	@ ${MKDIR} ${PREFIX}/share/postgresql
+.    for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \
 		> ${PREFIX}/share/postgresql/dot.$i.dist; \
@@ -246,7 +260,7 @@ do-install:
 	if [ ! -f ~pgsql/.$i ]; then \
 		${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/.$i; \
 	fi
-.  endfor
+.    endfor
 	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g" \
 		< ${FILESDIR}/pgsql.sh.tmpl \
 		> ${RCSCRIPT} ;\
@@ -258,7 +272,8 @@ do-install:
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 	@ if [ -r ${PKGMESSAGE} ]; then \
-		${INSTALL_DATA} ${PKGMESSAGE} ${PREFIX}/share/postgresql/README${PKGNAMESUFFIX} ;\
+		${MKDIR} ${DOCSDIR} ;\
+		${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README${PKGNAMESUFFIX} ;\
 		${ECHO} "======================================================================" ;\
 		${CAT} ${PKGMESSAGE} ;\
 		${ECHO} "======================================================================" ;\

@@ -1,24 +1,15 @@
-bin/ApplySnapshot
-bin/CleanLog
-bin/GetSyncID
-bin/InitRservTest
-bin/MasterAddTable
-bin/MasterInit
-bin/MasterSync
-bin/PrepareSnapshot
-bin/Replicate
-bin/RservTest
-bin/SlaveAddTable
-bin/SlaveInit
+bin/DBMirror.pl
+bin/clean_pending.pl
 bin/dbf2pg
 bin/findoidjoins
 bin/fti.pl
 bin/ipc_check
 bin/make_oidjoins_check
+bin/my2pg.pl
+bin/mysql2pgsql
 bin/oid2name
 bin/pg_autovacuum
 bin/pg_dumplo
-bin/pg_logger
 bin/pgbench
 bin/reindexdb
 bin/vacuumlo
@@ -41,10 +32,10 @@ lib/postgresql/misc_utils.so
 lib/postgresql/moddatetime.so
 lib/postgresql/noup.so
 lib/postgresql/pending.so
+lib/postgresql/pg_trgm.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgstattuple.so
 lib/postgresql/refint.so
-lib/postgresql/rserv.so
 lib/postgresql/rtree_gist.so
 lib/postgresql/seg.so
 lib/postgresql/string_io.so
@@ -53,6 +44,7 @@ lib/postgresql/timetravel.so
 lib/postgresql/tsearch.so
 lib/postgresql/tsearch2.so
 lib/postgresql/user_locks.so
+%%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/README.apachelog
 %%DOCSDIR%%/contrib/README.btree_gist
@@ -73,18 +65,18 @@ lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/README.lo
 %%DOCSDIR%%/contrib/README.ltree
 %%DOCSDIR%%/contrib/README.misc_utils
+%%DOCSDIR%%/contrib/README.mysql
 %%DOCSDIR%%/contrib/README.noup
 %%DOCSDIR%%/contrib/README.oid2name
 %%DOCSDIR%%/contrib/README.pg_autovacuum
 %%DOCSDIR%%/contrib/README.pg_dumplo
-%%DOCSDIR%%/contrib/README.pg_logger
+%%DOCSDIR%%/contrib/README.pg_trgm
 %%DOCSDIR%%/contrib/README.pgbench
 %%DOCSDIR%%/contrib/README.pgbench_jis
 %%DOCSDIR%%/contrib/README.pgcrypto
 %%DOCSDIR%%/contrib/README.pgstattuple
 %%DOCSDIR%%/contrib/README.pgstattuple.euc_jp
 %%DOCSDIR%%/contrib/README.reindexdb
-%%DOCSDIR%%/contrib/README.rserv
 %%DOCSDIR%%/contrib/README.rtree_gist
 %%DOCSDIR%%/contrib/README.seg
 %%DOCSDIR%%/contrib/README.soundex
@@ -100,7 +92,8 @@ lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/moddatetime.example
 %%DOCSDIR%%/contrib/refint.example
 %%DOCSDIR%%/contrib/timetravel.example
-share/postgresql/contrib/RServ.pm
+share/postgresql/contrib/AddTrigger.sql
+share/postgresql/contrib/MirrorSetup.sql
 share/postgresql/contrib/_int.sql
 share/postgresql/contrib/autoinc.sql
 share/postgresql/contrib/btree_gist.sql
@@ -119,17 +112,17 @@ share/postgresql/contrib/lo.sql
 share/postgresql/contrib/lo_drop.sql
 share/postgresql/contrib/lo_test.sql
 share/postgresql/contrib/ltree.sql
-share/postgresql/contrib/master.sql
 share/postgresql/contrib/misc_utils.sql
 share/postgresql/contrib/moddatetime.sql
 share/postgresql/contrib/noup.sql
+share/postgresql/contrib/pg_trgm.sql
 share/postgresql/contrib/pgcrypto.sql
 share/postgresql/contrib/pgstattuple.sql
 share/postgresql/contrib/refint.sql
 share/postgresql/contrib/rtree_gist.sql
 share/postgresql/contrib/russian.stop
 share/postgresql/contrib/seg.sql
-share/postgresql/contrib/slave.sql
+share/postgresql/contrib/slaveDatabase.conf
 share/postgresql/contrib/string_io.sql
 share/postgresql/contrib/tablefunc.sql
 share/postgresql/contrib/timetravel.sql
@@ -137,7 +130,6 @@ share/postgresql/contrib/tsearch.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/untsearch2.sql
 share/postgresql/contrib/user_locks.sql
-share/postgresql/README-contrib
 @unexec rmdir %D/share/postgresql/contrib >&2 2> /dev/null || true
 @unexec rmdir %D/share/postgresql >&2 2> /dev/null || true
 @unexec rmdir %D/%%DOCSDIR%%/contrib >&2 2> /dev/null || true
