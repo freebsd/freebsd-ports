@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
@@ -28,6 +28,7 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 
 post-build:
+	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.mo ja.po
 	${CP} -P ${WRKSRC}/data/rc.xml ${WRKSRC}/data/rc.xml.orig
 	${CP} -P ${WRKSRC}/data/menu.xml ${WRKSRC}/data/openbox-menu.xml
 	${SED} -E "s:/etc/X11/openbox/:${PREFIX}/share/openbox/:g" \
@@ -59,6 +60,7 @@ pre-install:
 	cd ${WRKSRC}/data && ${FIND} -s * -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST}
 	${ECHO_CMD} share/gnome/wm-properties/openbox.desktop >> ${PLIST}
+	${ECHO_CMD} share/locale/ja/LC_MESSAGES/openbox.mo >> ${PLIST}
 .for ii in menu rc
 	${ECHO_CMD} etc/openbox/xdg/openbox/${ii}.xml >> ${PLIST}
 .endfor
@@ -87,6 +89,8 @@ pre-install:
 .endfor
 
 do-install:
+	${INSTALL_DATA} ${WRKSRC}/po/ja.mo \
+		${PREFIX}/share/locale/ja/LC_MESSAGES/openbox.mo
 	${MKDIR} ${DATADIR} ${PREFIX}/share/gnome/wm-properties \
 		${PREFIX}/etc/openbox/xdg/openbox ${PREFIX}/include/openbox
 .for ii in parser/parse render/theme render/render version
