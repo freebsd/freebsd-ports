@@ -5,11 +5,11 @@
  	{
  		/* try to expand as files */
 -		if (realpath (args[i], buffer) != NULL)
-+		if (!strnstr(args[i], "ghelp:", strlen("ghelp:")) &&
-+		    !strnstr(args[i], "toc:", strlen("toc:")) &&
-+		    !strnstr(args[i], "info:", strlen("info:")) &&
-+		    !strnstr(args[i], "main:", strlen("man:")) &&
-+		    !strnstr(args[i], "gnome-help:", strlen("gnome-help")) &&
++		if (strncmp(args[i], "ghelp:", strlen("ghelp:")) &&
++		    strncmp(args[i], "toc:", strlen("toc:")) &&
++		    strncmp(args[i], "info:", strlen("info:")) &&
++		    strncmp(args[i], "main:", strlen("man:")) &&
++		    strncmp(args[i], "gnome-help:", strlen("gnome-help")) &&
 +		    realpath (args[i], buffer) != NULL)
  		{
  			(*urls)[i] = g_strconcat ("file://", buffer, NULL);
