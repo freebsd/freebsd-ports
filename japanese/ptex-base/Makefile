@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.13 1996/11/11 08:11:46 max Exp $
+# $Id: Makefile,v 1.14 1996/11/13 12:41:09 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -44,9 +44,8 @@ pre-fetch:
 .if !defined(KANJI-CODE)
 	@echo "You can set KANJI-CODE value to JIS, SJIS or EUC."
 	@echo "Now JIS is used as default."
-.if !defined(BATCH)
-	@echo -n "Is JIS OK? (y/n) ==> "
-	@(read ans; \
+.if !defined(BATCH) && !defined(FOR_CDROM)
+	@(read -p "Is JIS OK? (y/n) ==> " ans; \
 	  case x"$$ans" in \
 	    xy*|xY*) \
 	        return 0; \
@@ -72,7 +71,11 @@ LIB_FILE=	plib-euc.tar.gz
 	@echo "Possible values are: JIS (default), SJIS, EUC."
 	@false
 .endif
+.if !defined(FOR_CDROM)
 DISTFILES+=	${LIB_FILE}
+.else
+DISTFILES+=	plib-jis.tar.gz plib-sj.tar.gz plib-euc.tar.gz
+.endif
 EXTRACT_ONLY+=	${LIB_FILE}
 
 post-extract:
@@ -84,7 +87,7 @@ pre-patch:
 	@${PATCH} -p -s -d ${WRKSRC} < ${DISTDIR}/web2c.kpathsea-2.6.help
 
 pre-configure:
-	(cd ${WRKDIR}/ptex-2.1.4 ; \
+	@(cd ${WRKDIR}/ptex-2.1.4 ; \
 	  ./pTeXsetup -`echo ${KANJI-CODE} | tr A-Z a-z`)
 
 post-configure:
