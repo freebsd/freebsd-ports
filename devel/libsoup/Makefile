@@ -23,7 +23,7 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
