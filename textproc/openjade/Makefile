@@ -30,7 +30,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-# This port is cannot be CFLAGS safe, using optimizations such as
+# This port cannot be CFLAGS safe, using optimizations such as
 # 'march=-mpentium -Os' produces core dumps with certain input files
 # Therefore, we'd better remove all machine optimizations and any -O
 # other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
