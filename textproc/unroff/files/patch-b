@@ -1,0 +1,15 @@
+diff -cr unroff-1.0.orig/src/error.c unroff-1.0/src/error.c
+*** unroff-1.0.orig/src/error.c	Fri Jun  2 15:16:00 1995
+--- unroff-1.0/src/error.c	Mon Feb 12 18:53:17 1996
+***************
+*** 39,45 ****
+--- 39,47 ----
+  
+  static char *strerr(void) {
+      extern int sys_nerr;
++ #ifndef BSD
+      extern char *sys_errlist[];
++ #endif
+  
+      return errno > 0 && errno < sys_nerr ?
+  	sys_errlist[errno] : "unknown error";

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# write a small makefile to ${WRKSRC}
+
+cat >${WRKSRC}/Makefile <<EOF
+CFLAGS+=	-DBSD
+BINDIR=		\${PREFIX}/bin
+LIBDIR=		\${PREFIX}/share/unroff
+MANDIR=		\${PREFIX}/man/man1
+
+all:
+	(cd src; make 'CFLAGS=\${CFLAGS}' 'PREFIX=\${PREFIX}' all)
+
+install:
+	@mkdir -p \${BINDIR} \${LIBDIR} \${MANDIR}
+	install -c -o bin -g bin src/unroff \${PREFIX}/bin/unroff
+	cp -R scm \${LIBDIR}
+	@mkdir -p \${LIBDIR}/doc
+	cp doc/manual.ms \${LIBDIR}/doc
+	@mkdir -p \${LIBDIR}/misc
+	cp doc/tmac.hyper misc/sample.unroff \${LIBDIR}/misc
+	@chown -R bin.bin \${LIBDIR}
+	install -c -m 644 -o bin -g bin doc/*.1 \${MANDIR}
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf \${MANDIR}/unroff*.1
+.endif
+
+EOF
+
+exit 0
