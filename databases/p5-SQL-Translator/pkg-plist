@@ -1,0 +1,60 @@
+bin/sqlt
+bin/sqlt-diagram
+bin/sqlt-diff
+bin/sqlt-dumper
+bin/sqlt-graph
+%%SITE_PERL%%/SQL/Translator.pm
+%%SITE_PERL%%/SQL/Translator/Parser.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/MySQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/SQLite.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/Sybase.pm
+%%SITE_PERL%%/SQL/Translator/Parser/Excel.pm
+%%SITE_PERL%%/SQL/Translator/Parser/MySQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/Oracle.pm
+%%SITE_PERL%%/SQL/Translator/Parser/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/SQLite.pm
+%%SITE_PERL%%/SQL/Translator/Parser/Storable.pm
+%%SITE_PERL%%/SQL/Translator/Parser/Sybase.pm
+%%SITE_PERL%%/SQL/Translator/Parser/XML.pm
+%%SITE_PERL%%/SQL/Translator/Parser/XML/SQLFairy.pm
+%%SITE_PERL%%/SQL/Translator/Parser/YAML.pm
+%%SITE_PERL%%/SQL/Translator/Parser/xSV.pm
+%%SITE_PERL%%/SQL/Translator/Producer.pm
+%%SITE_PERL%%/SQL/Translator/Producer/ClassDBI.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Diagram.pm
+%%SITE_PERL%%/SQL/Translator/Producer/GraphViz.pm
+%%SITE_PERL%%/SQL/Translator/Producer/HTML.pm
+%%SITE_PERL%%/SQL/Translator/Producer/MySQL.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Oracle.pm
+%%SITE_PERL%%/SQL/Translator/Producer/POD.pm
+%%SITE_PERL%%/SQL/Translator/Producer/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Producer/SQLite.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Storable.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Sybase.pm
+%%SITE_PERL%%/SQL/Translator/Producer/TTSchema.pm
+%%SITE_PERL%%/SQL/Translator/Producer/XML.pm
+%%SITE_PERL%%/SQL/Translator/Producer/XML/SQLFairy.pm
+%%SITE_PERL%%/SQL/Translator/Producer/YAML.pm
+%%SITE_PERL%%/SQL/Translator/Schema.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Constants.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Constraint.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Field.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Index.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Procedure.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Table.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Trigger.pm
+%%SITE_PERL%%/SQL/Translator/Schema/View.pm
+%%SITE_PERL%%/SQL/Translator/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL 2>/dev/null || true
+@dirrm %%SITE_PERL%%/SQL/Translator/Schema
+@dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
+@dirrm %%SITE_PERL%%/SQL/Translator/Producer
+@dirrm %%SITE_PERL%%/SQL/Translator/Parser/XML
+@dirrm %%SITE_PERL%%/SQL/Translator/Parser/DBI
+@dirrm %%SITE_PERL%%/SQL/Translator/Parser
+@dirrm %%SITE_PERL%%/SQL/Translator
+@unexec rmdir %D/%%SITE_PERL%%/SQL 2>/dev/null || true
