@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1998/04/27 04:37:06 mph Exp $
+# $Id: Makefile,v 1.125 1998/04/27 04:48:28 mph Exp $
 #
 
     SUBDIR += 3dpong
@@ -90,6 +90,7 @@
     SUBDIR += xmris
     SUBDIR += xneko
     SUBDIR += xnibbles
+    SUBDIR += xoids
     SUBDIR += xonix
     SUBDIR += xothello
     SUBDIR += xpacman
