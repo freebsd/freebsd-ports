@@ -393,15 +393,15 @@ JAVA_RUN=	jre
 .		endif
 .		if defined(JAVA_EXTRACT)
 EXTRACT_DEPENDS+=	${DEPEND_JAVA}
-.			endif
+.		endif
 .		if defined(JAVA_BUILD)
 .			if defined(NO_BUILD)
 check-makevars::
 	@${ECHO_CMD} "${PKGNAME}: Makefile error: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
 	@${FALSE}
-.				endif
-BUILD_DEPENDS+=		${DEPEND_JAVA}
 .			endif
+BUILD_DEPENDS+=		${DEPEND_JAVA}
+.		endif
 .		if defined(JAVA_RUN)
 RUN_DEPENDS+=		${DEPEND_JAVA}
 .		endif
