@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.inf.utfsm.cl/pub/UTFSM/StarOffice_5.2/ \
 		ftp://ftp.snerpa.is/pub/linux/ \
 		ftp://ftp.osb.hu/pub/mirrors/staroffice/linux/ \
 		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
+		ftp://sunsite.anu.edu.au/mnt/disk3/sun-info/sun-patches/ \
 		ftp://ftp.labyrinth.net.au/.5/kk/linux/star_office/ \
 		ftp://ftp.acs.oakland.edu/files/Linux/StarOffice/office52/ \
 		ftp://ftp.ctio.noao.edu/linux/ \
@@ -19,10 +20,17 @@ MASTER_SITES=	ftp://ftp.inf.utfsm.cl/pub/UTFSM/StarOffice_5.2/ \
 		ftp://ftp.linux.tucows.com/pub/Linuxberg/ \
 		ftp://ftp.jcu.edu.au/pub/StarOffice/ \
 		ftp://ftp.uakom.sk/pub/mirrors/StarOffice/ \
-		ftp://ftp.linux.hr/pub/staroffice/5.2/
+		ftp://ftp.linux.hr/pub/staroffice/5.2/ \
+		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/ \
+		ftp://ftp.cityline.net/mirrors2/sun-patches-all/ \
+		ftp://ftp.gtn.com/os/Sun/patches/ \
+		ftp://ftp.jaist.ac.jp/.arc07/sun-info/sun-patches/ \
+		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
+		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
+		ftp://ftp.sunet.se/pub7/security/vendor/sun/patches/
 DISTNAME=	so-5_2-ga-bin-linux-en.bin
-DISTFILES=	soa-5_2-ga-bin-linux-en.bin so-5_2-ga-bin-linux-en.bin
-EXTRACT_ONLY=
+DISTFILES=	soa-5_2-ga-bin-linux-en.bin so-5_2-ga-bin-linux-en.bin 109939-02.tar.Z
+EXTRACT_ONLY=	109939-02.tar.Z
 
 MAINTAINER=	mb@imp.ch
 
@@ -37,6 +45,7 @@ WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
+SUNSOLVE=	${WRKDIR}/109939-02
 
 .include <bsd.port.pre.mk>
 
@@ -87,6 +96,13 @@ do-extract:
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@cd ../../
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		    ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}) ; \
+		then \
+			exit 1; \
+		fi \
+	done
 .endif
 
 post-configure:
@@ -101,7 +117,7 @@ do-install:
 	@ ${FALSE}
 .else
 .if exists(${LINUXBASE}/${PREFIX})
-	@${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
+	@ ${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
@@ -117,6 +133,12 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
+.if ! defined(WITH_CDROM)
+	@${ECHO_MSG} "===>   Applying sunsolve patches for ${PKGNAME}"
+	@for file in ${SUNSOLVE}/* ; do \
+		${CP} -Rv $$file ${PREFIX}/office52/ ; \
+	done
+.endif
 .endif
 
 post-install:
