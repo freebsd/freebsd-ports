@@ -29,3 +29,4 @@
 @dirrm %%MYSUBDIR%%bin
 @dirrm %%MYSUBDIR%%man/man1
 @dirrm %%MYSUBDIR%%man
+@dirrm %%MYSUBDIR%%
