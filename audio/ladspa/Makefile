@@ -5,15 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	ladspa
-PORTVERSION=	1.1
+PORTVERSION=	1.12
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= arved
+MASTER_SITES=	http://www.ladspa.org/download/
+DISTNAME=	ladspa_sdk_${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"Linux Audio Developer's Simple Plugin API"
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/ladspa_sdk
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -22,7 +23,8 @@ PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so
 PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-ldl,,; s,^CFLAGS[ \t]=,#CFLAGS+=,' ${WRKSRC}/src/makefile
+	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},' ${WRKSRC}/src/makefile
+
 
 do-build:
 	cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makefile targets
