@@ -65,8 +65,10 @@ MLTARGETS=	ml-burg eXene src-smlnj \
 		ml-nlffi-lib ml-nlffigen nowhere pgraph-util
 MLEXE+=		ml-burg ml-nlffigen nowhere
 PLIST=		${WRKDIR}/.PLIST
+MLRUNTIMEPLIST=	${WRKDIR}/.PLIST.runtime
 MLSRCPLIST=	${WRKDIR}/.PLIST.src
-MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything ${MLSRCPLIST}
+MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything \
+		${MLRUNTIMEPLIST} ${MLSRCPLIST}
 .endif
 
 pre-fetch:
@@ -154,16 +156,41 @@ do-build:
 	MLNORUNTIMECLEAN=yes	./config/install.sh
 .endif
 
+# Nowadays PLIST has to be computed before installation. We do it in 
+# "pre-install" because source extraction happens during "build".
+.if defined(WITH_EVERYTHING)
+MLNOINSTALL=	CM
+.if defined(WITH_RECOMPILE)
+MLNOINSTALL+=	sml.boot.${MLARCH}-unix sml.bin.${MLARCH}-unix
+.endif
+MLSRCEXCLUDEREGEX=	-e '^(@dirrm\ )?${MLROOTRELATIVE}/src/runtime'
+.for excl in ${MLNOINSTALL}
+MLSRCEXCLUDEREGEX+=	-e '/${excl}$$' -e '/${excl}/'
+.endfor
+
+pre-install:
+	@${ECHO} -n 'Computing package list ...'
+	@${TAR} -tzf ${WRKDIR}/runtime.tgz | \
+	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/src/\1%' \
+		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/src/\1%' \
+		> ${MLRUNTIMEPLIST}
+	@cd "${WRKDIR}" && ( \
+	( ${FIND} -s -d ${MLSRCSBASE} \! -type d | \
+	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
+	( ${FIND} -s -d ${MLSRCSBASE} -type d | \
+	${AWK} '{ print "@dirrm ${MLROOTRELATIVE}/" $$0 }' ) ) | \
+	${EGREP} -v ${MLSRCEXCLUDEREGEX} > ${MLSRCPLIST}
+	@${GREP} -h ^[^@] ${MLPLISTFILES} | sort -u > ${PLIST}
+	@${GREP} -h ^@dirrm ${MLPLISTFILES} | sort -r -u >> ${PLIST}
+	@${ECHO} ' done.'
+.endif
+
 # The install target installs the heaps and libraries to their final
 # location in ${MLBIN} and ${MLLIB}.
 # In case of recompilation, installml installs the sml heap and the
 # libraries built during compiler bootstrap to ${MLBIN} and ${MLLIB}.
 
 .if defined(WITH_EVERYTHING)
-MLNOINSTALL=	CM
-.if defined(WITH_RECOMPILE)
-MLNOINSTALL+=	sml.boot.${MLARCH}-unix sml.bin.${MLARCH}-unix
-.endif
 MLSRCEXCLUDES=
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDES+=	--exclude "${excl}"
@@ -206,11 +233,6 @@ do-install:
 	${TAR} -xf - -C "${MLROOT}"
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MLSRCS}
 	@${ECHO} ' done.'
-	cd "${PREFIX}" && ( ${FIND} -s -d ${MLSRCSRELATIVE} \! -type d ; \
-	( ${FIND} -s -d ${MLSRCSRELATIVE} -type d | \
-	${AWK} '{ printf "@dirrm "; print }' ) ) > ${MLSRCPLIST}
-	${GREP} -h ^[^@] ${MLPLISTFILES} | sort -u > ${PLIST}
-	${GREP} -h ^@dirrm ${MLPLISTFILES} | sort -r -u >> ${PLIST}
 .endif
 
 post-install:
