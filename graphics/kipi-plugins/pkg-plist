@@ -33,7 +33,6 @@
 %%CDARCHIVING:%%share/apps/kipi/data/index.htm
 %%CDARCHIVING:%%share/services/kipiplugin_cdarchiving.desktop
 %%CDARCHIVING:%%@dirrm share/apps/kipi/data/autorun
-%%CDARCHIVING:%%@dirrm share/apps/kipi/data
 
 %%FINDIMAGES:%%lib/kde3/kipiplugin_findimages.la
 %%FINDIMAGES:%%lib/kde3/kipiplugin_findimages.so
@@ -546,7 +545,6 @@ share/locale/zh_CN/LC_MESSAGES/kipiplugin_acquireimages.mo
 @dirrm share/doc/HTML/en/kipi-plugins
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@dirrm share/apps/kipi
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/services 2>/dev/null || true
 
