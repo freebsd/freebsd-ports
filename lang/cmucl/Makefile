@@ -3,16 +3,16 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.3 1997/07/21 12:13:57 cracauer Exp $
+# $Id: Makefile,v 1.4 1997/08/27 17:51:44 cracauer Exp $
 #
 #
 
 DISTNAME=	18a-FreeBSD_22
 PKGNAME=	cmucl-18a
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/ \
-		http://www2.cons.org:8000/ftp-area/cmucl/binaries/ \
-		http://www2.cons.org:8000/freebsd-distfiles/
+MASTER_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
+		ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/ \
+		http://www2.cons.org:8000/ftp-area/cmucl/binaries/
 
 MAINTAINER= 	cracauer@cons.org
 
