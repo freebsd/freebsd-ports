@@ -1,6 +1,6 @@
 bin/spin
 bin/xspin
-bin/xspin324.tcl
+bin/xspin330.tcl
 share/doc/spin/Doc/Book.Ch6.add
 share/doc/spin/Doc/Book.Errata
 share/doc/spin/Doc/Book.answers
@@ -69,6 +69,7 @@ share/doc/spin/HTML/init.html
 share/doc/spin/HTML/inline.html
 share/doc/spin/HTML/labels.html
 share/doc/spin/HTML/len.html
+share/doc/spin/HTML/local.html
 share/doc/spin/HTML/ltl.html
 share/doc/spin/HTML/macros.html
 share/doc/spin/HTML/mtype.html
@@ -99,6 +100,7 @@ share/doc/spin/HTML/separators.html
 share/doc/spin/HTML/sequence.html
 share/doc/spin/HTML/show.html
 share/doc/spin/HTML/skip.html
+share/doc/spin/HTML/stdin.html
 share/doc/spin/HTML/timeout.html
 share/doc/spin/HTML/trace.html
 share/doc/spin/HTML/true.html
@@ -116,6 +118,7 @@ share/doc/spin/Test/leader2
 share/doc/spin/Test/loops
 share/doc/spin/Test/pathfinder
 share/doc/spin/Test/peterson
+share/doc/spin/Test/petersonN
 share/doc/spin/Test/pftp
 share/doc/spin/Test/priorities
 share/doc/spin/Test/snoopy

@@ -1,0 +1,11 @@
+--- ps_msc.c.orig	Wed Jun 23 19:32:24 1999
++++ ps_msc.c	Wed Jun 23 19:33:57 1999
+@@ -13,7 +13,7 @@
+ 
+ #include "spin.h"
+ #include "version.h"
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ static char *PsPre[] = {
+ 	"%%%%Pages: (atend)",
