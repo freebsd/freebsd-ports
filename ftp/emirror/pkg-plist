@@ -1,5 +1,4 @@
 bin/emirror
-bin/emirrortest
 bin/mirror
 bin/updateindex
 lib/emirror/constants.py
@@ -22,6 +21,18 @@ etc/emirror/general.cfg
 etc/emirror/index.template
 etc/emirror/logfile.template
 etc/emirror/summary.template
+etc/emirror/themes/blue/emirror-information.gif
+etc/emirror/themes/blue/index.template
+etc/emirror/themes/blue/logfile.template
+etc/emirror/themes/eclipt-php/index.template
+etc/emirror/themes/eclipt-php/logfile.template
+etc/emirror/themes/eclipt-php/summary.template
+etc/emirror/themes/eclipt/index.template
+etc/emirror/themes/eclipt/logfile.template
+etc/emirror/themes/freshmeat/index.template
+etc/emirror/themes/freshmeat/logfile.template
+etc/emirror/themes/zope/index.template
+etc/emirror/themes/zope/logfile.template
 etc/emirror/unused/a2ps.cfg
 etc/emirror/unused/acrobat.cfg
 etc/emirror/unused/afbackup.cfg
@@ -209,5 +220,11 @@ etc/emirror/unused/xosview.cfg
 etc/emirror/unused/yafc.cfg
 etc/emirror/unused/zedz-crypto.cfg
 @dirrm etc/emirror/active
+@dirrm etc/emirror/themes/blue
+@dirrm etc/emirror/themes/eclipt-php
+@dirrm etc/emirror/themes/eclipt
+@dirrm etc/emirror/themes/freshmeat
+@dirrm etc/emirror/themes/zope
+@dirrm etc/emirror/themes
 @dirrm etc/emirror/unused
 @dirrm etc/emirror
