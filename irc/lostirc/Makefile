@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 MAN1=	lostirc.1
 
@@ -34,6 +35,7 @@ post-patch:
 	${REINPLACE_CMD} -E "s@(Gnomedir = ).*@\1${PREFIX}/share/gnome/apps/Internet@" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -E "s@^(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -E "s@(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
 
 pre-install:
 	${REINPLACE_CMD} -E 's|MKINSTALLDIRS = \$$\(top_builddir\)/|MKINSTALLDIRS = |g' ${WRKSRC}/intl/Makefile
