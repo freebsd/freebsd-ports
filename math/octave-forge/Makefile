@@ -15,8 +15,10 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
+		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
 		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave
-RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave
+RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
+		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,7 +30,7 @@ CONFIGURE_ARGS= --with-cc=${CC} \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501000
-USE_GCC=3.3
+BROKEN=		"texinfo problem"
 .endif
 
 GNU_HOST=       ${ARCH}-portbld-freebsd${OSREL}
