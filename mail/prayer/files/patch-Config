@@ -1,0 +1,59 @@
+--- Config.orig	Thu May 29 11:49:38 2003
++++ Config	Tue Jan  6 10:20:40 2004
+@@ -8,7 +8,7 @@
+ # Conventional Configure file.
+ 
+ SSL_ENABLE           = true   # SSL requires OpenSSL
+-SESSION_CACHE_ENABLE = true   # SSL session cache Requires Berkeley DB 3 or 4
++SESSION_CACHE_ENABLE = false  # SSL session cache Requires Berkeley DB 3 or 4
+ GZIP_ENABLE          = true   # Enable on the fly compression of pages
+ FENCE_ENABLE         = false  # Use Electric Fence to catch malloc problems
+ DIRECT_ENABLE        = false  # Experimental. Leave this switched off... 
+@@ -26,7 +26,7 @@
+ 
+ ############################################################################
+ # Location of compiler
+-CC           = gcc
++#CC           = gcc
+ # Location of make program (GNU make required)
+ MAKE         = gmake
+ # Location of install program (GNU install or compatible required)
+@@ -35,7 +35,8 @@
+ # Base Compiler options for GCC.
+ #BASECFLAGS   = -Wall -g
+ #BASELDFLAGS  = -g
+-BASECFLAGS   = -Wall -g -O2
++#BASECFLAGS   = -Wall -g -O2
++BASECFLAGS   = -Wall -g ${PORTCFLAGS}
+ BASELDFLAGS  = -g -O2
+ BASE_LIBS    = -lcrypt
+ 
+@@ -56,9 +57,9 @@
+ # which points to ../../imap/c-client. This just reduces the amount of
+ # noise output on each line when building the package.
+ #
+-CCLIENT_DIR=./c-client
+-CCLIENT_INCLUDE=-I $(CCLIENT_DIR)
+-CCLIENT_LIB=./$(CCLIENT_DIR)/c-client.a
++#CCLIENT_DIR=./c-client
++#CCLIENT_INCLUDE=-I $(CCLIENT_DIR)
++#CCLIENT_LIB=./$(CCLIENT_DIR)/c-client.a
+ CCLIENT_SSL_ENABLE  = true
+ 
+ #
+@@ -78,12 +79,14 @@
+ # Following works with the mail/cclient port from FreeBSD
+ #
+ #CCLIENT_INCLUDE = -I/usr/local/include/c-client
++CCLIENT_INCLUDE = -I${LOCALBASE}/include/c-client
+ #CCLIENT_LIB     = -L/usr/local/lib -lc-client4
++CCLIENT_LIB     = -L${LOCALBASE}/lib -lc-client4
+ #
+ # Complication:
+ #   The FreeBSD port uses PAM and optionally SSL if built WITH_SSL=yes.
+ #
+-#CCLIENT_SSL_ENABLE  = true
++CCLIENT_SSL_ENABLE  = true
+ #CCLIENT_KERB_ENABLE = true
+ 
+ ############################################################################
