@@ -1,0 +1,14 @@
+pflogsumm.pl is designed to provide an over-view of postfix
+activity, with just enough detail to give the administrator
+a "heads up" for potentialtrouble spots. The following is
+an over-view of the reports produced:
+* Total number of:
+	* Messages received, delivered, deferred, bounced and forwarded
+	* Bytes in messages received and delivered
+	* Sending and Recipient Hosts/Domains
+	* Senders and Recipients
+	* Optional SMTPD totals for number of connections
+
+and many many more.
+
+WWW: http://jimsun.LinxNet.com/postfix_contrib.html
