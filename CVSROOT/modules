@@ -8309,6 +8309,7 @@ silc-server	ports/net/silc-server
 silc-toolkit	ports/devel/silc-toolkit
 silky		ports/net/silky
 silkymail	ports/mail/silkymail
+silo		ports/x11/silo
 silvercity	ports/textproc/silvercity
 sim		ports/emulators/sim
 sim4		ports/biology/sim4
