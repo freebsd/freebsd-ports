@@ -3,7 +3,7 @@
 # Date created:		99/06/16
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1999/06/17 09:35:56 taoka Exp $
 #
 
 DISTNAME?=	commfont # dummy
@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/JPNKIT
 DISTFILES=	chsfont.tar.gz
 WRKSRC=		${WRKDIR}/CHSKIT
 .elif exists(${DISTDIR}/chtfont.tar.gz)
-DISTFILES=	chsfont.tar.gz
+DISTFILES=	chtfont.tar.gz
 WRKSRC=		${WRKDIR}/CHTKIT
 .elif exists(${DISTDIR}/korfont.tar.gz)
 DISTFILES=	korfont.tar.gz
