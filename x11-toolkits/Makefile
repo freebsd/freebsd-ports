@@ -25,6 +25,7 @@
     SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gal2
+    SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gevas
     SUBDIR += gnome--
