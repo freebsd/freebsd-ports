@@ -10,7 +10,7 @@
 -	$(CC) -o  cd-write $(OBJS) c++tk/c++tk.o\
 -		-L/usr/local/lib -L/usr/X11R6/lib -ltixsam4180 -ltk80 -ltcl80 -lX11 -lm -lcam
 +	$(CXX) -o  cd-write $(OBJS) c++tk/c++tk.o\
-+		-L${PREFIX}/lib -L${X11BASE}/lib -ltixsam4182 -ltk82 -ltcl82 -lX11 -lm -lcam
++		-L${PREFIX}/lib -L${X11BASE}/lib -ltixsam8184 -ltk82 -ltcl82 -lX11 -lm -lcam
  
  subdir:
  	cd c++tk && make TIX=1
