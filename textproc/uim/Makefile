@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
