@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/libgtop
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
