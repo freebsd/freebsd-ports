@@ -24,8 +24,7 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure pygnome/configure pygtk/configure
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
-		--with-gnome-config=${X11BASE}/bin/gnome-config		\
-		--without-gtkhtml
+		--with-gnome-config=${X11BASE}/bin/gnome-config
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
