@@ -30,6 +30,7 @@
     SUBDIR += eclipse-quantum
     SUBDIR += eclipse-sqlexplorer
     SUBDIR += eclipse-sysdeo-tomcat
+    SUBDIR += eclipse-uml
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
     SUBDIR += eclipseme
