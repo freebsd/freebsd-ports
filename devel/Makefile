@@ -310,6 +310,7 @@
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Glade-Perl
     SUBDIR += p5-Heap
     SUBDIR += p5-IO
     SUBDIR += p5-IO-String

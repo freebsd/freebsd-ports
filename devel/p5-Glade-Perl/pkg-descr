@@ -1,0 +1,7 @@
+This is a collection of modules that will read a <GTK-Interface> XML file 
+produced by Glade (the Gtk+/Gnome UI builder), construct and optionally show 
+the UI using the Gtk-Perl bindings. It is possible, using Glade from version 
+0.5.0, for you to specify a language of 'Perl' and generate source code from 
+Glade's 'Build' button. 
+
+WWW: http://www.glade.perl.connectfree.co.uk

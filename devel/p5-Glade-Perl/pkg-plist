@@ -1,0 +1,12 @@
+bin/glade2perl
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlProject.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlGenerate.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlUI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlXML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlSource.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlUIExtra.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlUIGtk.pm
+lib/perl5/site_perl/%%PERL_VER%%/Glade/PerlRun.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Glade/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Glade
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Glade
