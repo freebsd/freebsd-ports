@@ -2346,6 +2346,7 @@ gtk+licq	ports/net/gtk+licq
 gtk--		ports/x11-toolkits/gtk--
 gtk--2		ports/x11-toolkits/gtk--2
 gtk-Mac2-theme	ports/x11-toolkits/gtk-Mac2-theme
+gtk-bluecurve-theme	ports/x11-toolkits/gtk-bluecurve-theme
 gtk-doc		ports/textproc/gtk-doc
 gtk-engines	ports/x11-toolkits/gtk-engines
 gtk-engines-collection	ports/x11-toolkits/gtk-engines-collection
