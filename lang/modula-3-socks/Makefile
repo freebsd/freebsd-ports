@@ -6,15 +6,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=	modula-3-socks
+DISTNAME=	socks
 PKGNAME=	modula-3-socks-1.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/socks/A.B9.06/
-DISTFILES=	socks.tar.gz
 
 MAINTAINER=	jdp@polstra.com
 
 NO_WRKSUBDIR=	yes
+
+MANCOMPRESSED=	yes
+MAN1=		m3socks.1
+MAN5=		m3socks.conf.5
 
 libm3socks_files=	accept.c bind.c close.c connect.c dup.c dup2.c \
 			gethostbyaddr.c gethostbyname.c getpeername.c \

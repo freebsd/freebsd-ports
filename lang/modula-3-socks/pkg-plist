@@ -1,5 +1,3 @@
 bin/m3socks
 lib/m3/FreeBSD2/libm3socks.so
-man/man1/m3socks.1.gz
-man/man5/m3socks.conf.5.gz
 @exec if [ ! -f %D/etc/m3socks.conf ]; then echo "Please create a configuration file in %D/etc/m3socks.conf"; echo "Read m3socks.conf(5) for details"; fi
