@@ -1,0 +1,14 @@
+
+SSServer is installed into /usr/local/www/cgi-bin by default. Make sure 
+that your Web server (usually Apache) allows executing scripts in this 
+directory.
+
+To configure SSServer, run the Web-based configuration utility at
+http://localhost/cgi-bin/ssserverdata/sssconf
+
+You may find additional information in readme.htm and problems.htm files,
+located in the ssserverdata subdirectory.
+
+Send your questions and comments to Kryloff Technologies' technical 
+support service at support@kryltech.com
+
