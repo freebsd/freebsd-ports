@@ -1,5 +1,5 @@
---- interp.c.orig	Mon May 11 13:43:36 1992
-+++ interp.c	Tue Apr 20 18:55:25 1999
+--- interp.c.orig	Mon May 11 20:43:36 1992
++++ interp.c	Fri Mar 10 13:23:29 2000
 @@ -476,7 +476,7 @@
  dodts(mo, day, yr)
  int mo, day, yr;
@@ -9,6 +9,15 @@
      register struct tm *tp; 
      register int i;
      register long jdate;
+@@ -484,7 +484,7 @@
+     mdays[1] = 28 + (yr%4 == 0);
+ 
+     if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||
+-		yr > 1999 || yr < 1970) {
++		yr > 2099 || yr < 1970) {
+ 	error("@dts: invalid argument");
+ 	cellerror = CELLERROR;
+ 	return(0.0);
 @@ -551,15 +551,13 @@
  int which;
  double when;

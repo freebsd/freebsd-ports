@@ -1,5 +1,14 @@
---- interp.c.orig	Tue Apr 20 19:01:03 1999
-+++ interp.c	Tue Apr 20 19:03:15 1999
+--- interp.c.orig	Mon Feb  7 17:41:53 1994
++++ interp.c	Fri Mar 10 13:31:32 2000
+@@ -490,7 +490,7 @@
+     mdays[1] = 28 + (yr%4 == 0);
+ 
+     if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||
+-		yr > 1999 || yr < 1970) {
++		yr > 2099 || yr < 1970) {
+ 	error("@dts: invalid argument");
+ 	cellerror = CELLERROR;
+ 	return(0.0);
 @@ -560,7 +560,7 @@
  #if defined(__GO32__) || defined(__NeXT__)
    	time_t time (time_t *) ;
