@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Mail/SRS/DB.pm
+%%SITE_PERL%%/Mail/SRS/Daemon.pm
+%%SITE_PERL%%/Mail/SRS/Guarded.pm
+%%SITE_PERL%%/Mail/SRS/Reversable.pm
+%%SITE_PERL%%/Mail/SRS/Reversible.pm
+%%SITE_PERL%%/Mail/SRS/Shortcut.pm
+%%SITE_PERL%%/Mail/SRS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS/.packlist
+bin/srs
+bin/srsd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/SRS
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
