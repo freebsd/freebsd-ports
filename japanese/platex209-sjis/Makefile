@@ -28,7 +28,7 @@ pre-configure:
 	  for i in * ; do ${MV} $$i $$i.orig ; nkf -s $$i.orig > $$i ; done)
 
 do-build:
-	@(cd ${WRKSRC}; ptex -ini 'plplain.tex \dump')
+	@(cd ${WRKSRC}; ptex -kanji=sjis -ini 'plplain.tex \dump')
 
 do-install:
 	${MKDIR} ${TEXMF}/tex/platex209/doc
