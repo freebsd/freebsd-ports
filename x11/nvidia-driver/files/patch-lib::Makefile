@@ -1,0 +1,26 @@
+--- lib/Makefile.orig	Mon Aug 16 17:05:30 2004
++++ lib/Makefile	Mon Aug 16 17:07:47 2004
+@@ -1,13 +1,19 @@
+ SUBDIR= libGL		\
+ 	libnvidia-tls	\
+ 	libGLcore	\
+-	libXvMCNVIDIA	\
+-	compat
++	libXvMCNVIDIA
+ 
+-FIND_DIRS=	/usr/lib ${X11BASE}/lib \
+-		/compat/linux/lib \
++.if !defined(WITHOUT_LINUX)
++SUBDIR+=	compat
++.endif
++
++FIND_DIRS=	/usr/lib ${X11BASE}/lib
++
++.if !defined(WITHOUT_LINUX)
++FIND_DIRS+=	/compat/linux/lib \
+ 		/compat/linux/usr/lib \
+ 		/compat/linux/usr/X11R6/lib
++.endif
+ 
+ FIND_FILES!=(find ${FIND_DIRS} \
+ 		-name libGL.a\* -or \
