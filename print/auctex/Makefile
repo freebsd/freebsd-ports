@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		11.53
+PORTVERSION=		11.55
 PORTREVISION=		0
 CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_GNU}
@@ -25,6 +25,8 @@ INSTALL_TARGET=	install install-contrib
 
 PLIST_SUB+=	LISPDIR=${LISPDIR}
 INFO=		auctex
+
+NOT_FOR_ARCHS=	ia64
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

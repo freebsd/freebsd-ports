@@ -16,6 +16,8 @@
 %%LISPDIR%%/auctex/bib-cite.el
 %%LISPDIR%%/auctex/tex-fptex.el
 %%LISPDIR%%/auctex/tex-jp.el
+%%LISPDIR%%/auctex/tex-bar.el
+%%LISPDIR%%/auctex/toolbar-x.el
 %%LISPDIR%%/auctex/auto/.nosearch
 %%LISPDIR%%/auctex/style/.nosearch
 %%LISPDIR%%/auctex/style/prosper.el
@@ -86,6 +88,12 @@
 %%LISPDIR%%/auctex/style/ltx-base.el
 %%LISPDIR%%/auctex/style/units.el
 %%LISPDIR%%/auctex/style/nicefrac.el
+%%LISPDIR%%/auctex/style/csquotes.el
+%%LISPDIR%%/auctex/style/jurabib.el
+%%LISPDIR%%/auctex/style/listings.el
+%%LISPDIR%%/auctex/style/url.el
+%%LISPDIR%%/auctex/style/jsarticle.el
+%%LISPDIR%%/auctex/style/jsbook.el
 %%LISPDIR%%/auctex/style/prosper.elc
 %%LISPDIR%%/auctex/style/slides.elc
 %%LISPDIR%%/auctex/style/foils.elc
@@ -154,6 +162,12 @@
 %%LISPDIR%%/auctex/style/ltx-base.elc
 %%LISPDIR%%/auctex/style/units.elc
 %%LISPDIR%%/auctex/style/nicefrac.elc
+%%LISPDIR%%/auctex/style/csquotes.elc
+%%LISPDIR%%/auctex/style/jurabib.elc
+%%LISPDIR%%/auctex/style/listings.elc
+%%LISPDIR%%/auctex/style/url.elc
+%%LISPDIR%%/auctex/style/jsarticle.elc
+%%LISPDIR%%/auctex/style/jsbook.elc
 %%LISPDIR%%/auctex/tex.elc
 %%LISPDIR%%/auctex/tex-buf.elc
 %%LISPDIR%%/auctex/latex.elc
@@ -170,6 +184,36 @@
 %%LISPDIR%%/auctex/bib-cite.elc
 %%LISPDIR%%/auctex/tex-fptex.elc
 %%LISPDIR%%/auctex/tex-jp.elc
+%%LISPDIR%%/auctex/tex-bar.elc
+%%LISPDIR%%/auctex/toolbar-x.elc
+%%LISPDIR%%/auctex/images/amstex.xpm
+%%LISPDIR%%/auctex/images/bibtex.xpm
+%%LISPDIR%%/auctex/images/dropdown.xpm
+%%LISPDIR%%/auctex/images/dvipdf.xpm
+%%LISPDIR%%/auctex/images/dvips.xpm
+%%LISPDIR%%/auctex/images/error.xpm
+%%LISPDIR%%/auctex/images/exec.xpm
+%%LISPDIR%%/auctex/images/execbibtex.xpm
+%%LISPDIR%%/auctex/images/execdvips.xpm
+%%LISPDIR%%/auctex/images/execerror.xpm
+%%LISPDIR%%/auctex/images/execpdftex.xpm
+%%LISPDIR%%/auctex/images/exectex.xpm
+%%LISPDIR%%/auctex/images/execviewdvi.xpm
+%%LISPDIR%%/auctex/images/execviewpdf.xpm
+%%LISPDIR%%/auctex/images/execviewps.xpm
+%%LISPDIR%%/auctex/images/gv.xpm
+%%LISPDIR%%/auctex/images/jumpdvi.xpm
+%%LISPDIR%%/auctex/images/ltx-symb-turn-off.xpm
+%%LISPDIR%%/auctex/images/ltx-symb-turn-on.xpm
+%%LISPDIR%%/auctex/images/pdftex.xpm
+%%LISPDIR%%/auctex/images/pspdf.xpm
+%%LISPDIR%%/auctex/images/sep.xpm
+%%LISPDIR%%/auctex/images/tex.xpm
+%%LISPDIR%%/auctex/images/view.xpm
+%%LISPDIR%%/auctex/images/viewdvi.xpm
+%%LISPDIR%%/auctex/images/viewpdf.xpm
+%%LISPDIR%%/auctex/images/viewps.xpm
 @dirrm %%LISPDIR%%/auctex/style
 @dirrm %%LISPDIR%%/auctex/auto
+@dirrm %%LISPDIR%%/auctex/images
 @dirrm %%LISPDIR%%/auctex
