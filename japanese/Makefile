@@ -184,6 +184,7 @@
     SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
     SUBDIR += p5-mkres
+    SUBDIR += p5-nkf
     SUBDIR += paledit
     SUBDIR += perl5
     SUBDIR += pgp.language
