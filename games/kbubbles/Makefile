@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kbubbles
-# Version required:	0.8.6
 # Date created:		15 Feb 2000
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kbubbles-0.8.6
+PORTNAME=	kbubbles
+PORTVERSION=	0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://hem.passagen.se/tonybj/kbubbles/
 

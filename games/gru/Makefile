@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gru
-# Version required:			8087
 # Date created:				21 Sep 1999
 # Whom:					HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gru-8087
+PORTNAME=	gru
+PORTVERSION=	8087
 CATEGORIES=	games
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/gru/
 

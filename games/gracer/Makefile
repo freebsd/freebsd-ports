@@ -1,12 +1,12 @@
 # New ports collection makefile for:   gracer
-# Version required:    0.1.4
 # Date created:        Fri Jul 30 20:50:16 MET DST 1999
 # Whom:                nox@jelal.kn-bremen.de
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	gracer-0.1.4
+PORTNAME= 	gracer
+PORTVERSION= 	0.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://arch.comp.kyutech.ac.jp/~matsu/my_products/gtk/race/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	inform
-# Version required:			6.21 (Library: 6/10)
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	inform-6.21
+PORTNAME=	inform
+PORTVERSION=	6.21
 CATEGORIES=	games
 MASTER_SITES=  	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/source/ \
 		ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/library/

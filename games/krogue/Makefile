@@ -1,12 +1,12 @@
 # New ports collection makefile for:	krogue
-# Version required:	0.9.6
 # Date created:		19 Nov 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	krogue-0.9.6
+PORTNAME=	krogue
+PORTVERSION=	0.9.6
 CATEGORIES=	games
 MASTER_SITES=	http://ksi.ii.uj.edu.pl/krogue/dl/
 EXTRACT_SUFX=	.tgz
