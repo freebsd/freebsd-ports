@@ -1,15 +1,15 @@
---- Makefile.in.orig	Wed May  5 19:03:43 1999
-+++ Makefile.in	Wed May  5 19:04:38 1999
-@@ -162,7 +162,7 @@
- # just distribute it, since we can 
- @FALSE_TRUE@libvfs = libvfs
+--- Makefile.in.orig	Fri Jul 23 21:06:26 1999
++++ Makefile.in	Wed Aug 18 10:15:43 1999
+@@ -156,7 +156,7 @@
+ @COMPILE_TEST_GNOME_TRUE@test_gnome = test-gnome test-suite
+ @COMPILE_TEST_GNOME_FALSE@test_gnome = 
  
--SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) devel-docs gnome-data $(libvfs) man 	gnome-faq
-+SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) gnome-data $(libvfs) man
+-SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) devel-docs gnome-data man 	gnome-faq
++SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) gnome-data man
  
  
  include_HEADERS = gnome.h
-@@ -170,7 +170,7 @@
+@@ -164,7 +164,7 @@
  EXTRA_DIST = HACKING gnomeConf.sh.in gnome-bug.in gnome-config.in 		gnome-libs.spec.in
  
  

@@ -1,16 +1,16 @@
---- libgnomeui/Makefile.in.orig	Wed Apr  7 21:34:11 1999
-+++ libgnomeui/Makefile.in	Fri Apr 30 17:30:51 1999
+--- libgnomeui/Makefile.in.orig	Fri Aug 20 15:01:47 1999
++++ libgnomeui/Makefile.in	Fri Aug 20 16:30:38 1999
 @@ -202,7 +202,7 @@
  EXTRA_DIST =  	$(SGML)						$(gtkrc_DATA)					AUTHORS						gnome.defs 					maketypes.awk					makeenums.pl					gnome-boxed.defs				gnometypebuiltins_vars.c			gnometypebuiltins_ids.c				gnometypebuiltins_evals.c
  
  
--libgnomeui_la_LDFLAGS = -version-info 41:1:9 -rpath $(libdir)
+-libgnomeui_la_LDFLAGS = -version-info 42:1:10 -rpath $(libdir)
 +libgnomeui_la_LDFLAGS = -version-info 2:0:0 -rpath $(libdir)
  libgnomeui_la_LIBADD = $(LIBGNOMEUI_LIBS)
  
  gnome_segv_LDADD =  	libgnomeui.la 						$(top_builddir)/libgnome/libgnome.la 			$(top_builddir)/libart_lgpl/libart_lgpl.la 		@LIBSUPPORT@ $(LIBGNOMEUI_LIBS) 	$(INTLLIBS)
-@@ -258,7 +258,7 @@
- gnome-startup.lo gnome-stock.lo gnome-winhints.lo \
+@@ -260,7 +260,7 @@
+ gnome-spell.lo gnome-startup.lo gnome-stock.lo gnome-winhints.lo \
  gnome-paper-selector.lo gnome-procbar.lo gnometypes.lo gtkcauldron.lo \
  gtk-clock.lo gtk-ted.lo gtkdial.lo gtkpixmapmenuitem.lo
 -PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)

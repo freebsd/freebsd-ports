@@ -1,17 +1,26 @@
---- gnome-config.in.orig	Thu Apr 15 13:59:46 1999
-+++ gnome-config.in	Sat May  8 17:32:13 1999
-@@ -43,25 +43,25 @@
+--- gnome-config.in.orig	Mon May 31 06:04:01 1999
++++ gnome-config.in	Mon Jul 12 10:27:28 1999
+@@ -19,7 +19,7 @@
+ pkglibdir=${libdir}/@PACKAGE@
+ pkgincludedir=${includedir}/@PACKAGE@
+ MODULE_VERSION=@PACKAGE@-@VERSION@
+-module_dirs="$libdir:$GNOME_LIBCONFIG_PATH"
++module_dirs="$sysconfdir:$GNOME_LIBCONFIG_PATH"
+ 
+ usage()
+ {
+@@ -46,18 +46,18 @@
  
  Known values for LIBRARY are:
  
 -    glib	(calls glib-config)
-+    glib	(calls glib12-config)
++    glib	(calls GLIB_CONFIG)
      idl         (to be used with orbit-idl)
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk		(calls gtk12-config)
++    gtk		(calls GTK_CONFIG)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
@@ -22,28 +31,20 @@
  
  is looked in for the necessary information.  Those currently installed 
  appear to be:
- 
- EOF
- 
--    conf_shs=`cd ${libdir}; echo *Conf.sh`
-+    conf_shs=`cd ${sysconfdir}; echo *Conf.sh`
- 
-     if test "x$conf_shs" = x || test "x$conf_shs" = 'x*Conf.sh'; then
- 	echo "    <NONE>"
-@@ -146,19 +146,19 @@
+@@ -149,19 +149,19 @@
  	usage 1
  	;;
      glib)
 -	the_libs="$the_libs `glib-config --libs`"
 -	the_flags="$the_flags `glib-config --cflags`"
-+	the_libs="$the_libs `glib12-config --libs`"
-+	the_flags="$the_flags `glib12-config --cflags`"
++	the_libs="$the_libs `$GLIB_CONFIG --libs`"
++	the_flags="$the_flags `$GLIB_CONFIG --cflags`"
  	;;
      gtk)
 -	the_libs="$the_libs `gtk-config --libs`"
 -	the_flags="$the_flags `gtk-config --cflags`"
-+	the_libs="$the_libs `gtk12-config --libs`"
-+	the_flags="$the_flags `gtk12-config --cflags`"
++	the_libs="$the_libs `$GTK_CONFIG --libs`"
++	the_flags="$the_flags `$GTK_CONFIG --cflags`"
  	;;
      gnome)
         	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
@@ -55,12 +56,3 @@
  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gtkxmhtml)
-@@ -175,7 +175,7 @@
- 	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@"
- 	;;
-     *)
--	cnf_sh=${libdir}/${1}Conf.sh
-+	cnf_sh=${sysconfdir}/${1}Conf.sh
- 	if test -f ${cnf_sh}; then
- 	    . ${cnf_sh}
- 	    up_name=`echo $1 | tr a-z A-Z`

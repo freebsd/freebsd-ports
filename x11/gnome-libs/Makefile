@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomelibs
-# Version required:			1.0.9
+# Version required:			1.0.14
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.40 1999/05/09 17:13:15 steve Exp $
+# $Id: Makefile,v 1.41 1999/05/30 03:58:28 steve Exp $
 #
 
-DISTNAME=	gnome-libs-1.0.9
-PKGNAME=	gnomelibs-1.0.9
+DISTNAME=	gnome-libs-1.0.14
+PKGNAME=	gnomelibs-1.0.14
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-libs
@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib \
 		esd.1:${PORTSDIR}/audio/esound
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -33,8 +34,9 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/giflib" \
 		GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gnome.1	
+MAN1=		gnome.1 gnome-config.1
 
 .include <bsd.port.mk>
