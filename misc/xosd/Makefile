@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +16,6 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
-BROKEN=		"Unfetchable"
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_BZIP2=	yes
