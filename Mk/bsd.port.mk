@@ -37,7 +37,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # you are running on.  These are provided in case you need to take
 # different actions for different values.
 #
-# ARCH			- The architecture, as returned by "uname -p".
+# ARCH			- The architecture of the target machine, such as would be
+#				  returned by "uname -p".  (Note: Ports should test against
+#				  ARCH, and not the host machine's architecture which is
+#				  MACHINE_ARCH, to enable ports to be cross-built.)
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
@@ -53,7 +56,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # These variables are used to identify your port.
 #
 # PORTNAME		- Name of software.  Mandatory.
-# PORTVERSION	- Version of software.  Mandatory.
+# PORTVERSION	- Version of software.  Mandatory when no DISTVERSION is given.
 # PORTREVISION	- Version of port.  Optional.  Commonly used to indicate
 #				  that an update has happened that affects the port
 #				  framework itself, but not the distributed software
@@ -72,9 +75,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
 # 				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
 # 				  and to ${PKGNAMEPREFIX}${PORTNAME} otherwise.
+# DISTVERSION	- Vendor version of the distribution (default: ${PORTVERSION})
 # DISTNAME		- Name of port or distribution used in generating
 #				  WRKSRC and DISTFILES below (default:
-#				  ${PORTNAME}-${PORTVERSION}).
+#				  ${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX})
 # CATEGORIES	- A list of descriptive categories into which this port falls.
 #				  Mandatory.
 #
@@ -320,9 +324,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_KDELIBS_VER	- Set to 3 to use the KDE libraries.
 #					  Implies inclusion
 #					  of bsd.kde.mk.  Default: not set.
-# USE_QT_VER		- Set to either 2 or 3 to use the QT libraries.
-#					  (Only 3 is currently supported).  Implies inclusion
-#					  of bsd.kde.mk.  Default: not set.
+# USE_QT_VER		- Set to 3 to use the QT libraries.
+#					  Implies inclusion of bsd.kde.mk.  Default: not set.
 #
 # USE_LINUX			- Set to yes to say the port needs emulators/linux_base.
 #					  Default: not set.
@@ -885,6 +888,9 @@ ECHO_CMD?=	echo				# Shell builtin
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO_CMD}
 
+# Get the default maintainer
+MAINTAINER?=	ports@FreeBSD.org
+
 # Get the architecture
 .if !defined(ARCH)
 ARCH!=	${UNAME} -p
@@ -968,7 +974,7 @@ _OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
 .endif
 
 # check for old, crufty, makefile types, part 1:
-.if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
+.if !defined(PORTNAME) || !( defined(PORTVERSION) || defined (DISTVERSION) ) || defined(PKGNAME)
 check-makefile::
 	@${ECHO_CMD} "Makefile error: you need to define PORTNAME and PORTVERSION instead of PKGNAME."
 	@${ECHO_CMD} "(This port is too old for your bsd.port.mk, please update it to match"
@@ -980,6 +986,9 @@ check-makefile::
 .if ${PORTVERSION:M*[-_,]*}x != x
 BROKEN=			"PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','"
 .endif
+DISTVERSION?=	${PORTVERSION:S/:/::/g}
+.elif defined(DISTVERSION)
+PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 .endif
 
 PORTREVISION?=	0
@@ -997,7 +1006,7 @@ _SUF2=	,${PORTEPOCH}
 .if !defined(PKGNAME)
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 .endif
-DISTNAME?=	${PORTNAME}-${PORTVERSION}
+DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
@@ -1161,7 +1170,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-.if defined(USE_QT) || defined(USE_QT2) || defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
@@ -1548,15 +1557,30 @@ MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		14
 
 # Setting/finding MySQL version we want.
+.if exists(${LOCALBASE}/bin/mysql)
+_MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.endif
+
 .if defined(WANT_MYSQL_VER)
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
+BROKEN=		The port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
+.endif
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
 MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/bin/mysql)
-MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.else
+.if defined(_MYSQL_VER)
+MYSQL_VER=	${_MYSQL_VER}
 .else
 MYSQL_VER=	${DEFAULT_MYSQL_VER}
+.endif
 .endif # WANT_MYSQL_VER
+
+.if defined(_MYSQL_VER)
+.if ${_MYSQL_VER} != ${MYSQL_VER}
+BROKEN=	MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
+.endif
+.endif
 
 # And now we are checking if we can use it
 .if exists(${PORTSDIR}/databases/mysql${MYSQL_VER}-client)
@@ -1729,11 +1753,11 @@ PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DEBUG_TMP=	no
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -1749,8 +1773,8 @@ PATCH_DIST_ARGS+=	-C
 .endif
 
 .if ${PATCH} == "/usr/bin/patch"
-PATCH_ARGS+=	-b .orig
-PATCH_DIST_ARGS+=	-b .orig
+PATCH_ARGS+=	--suffix .orig
+PATCH_DIST_ARGS+=	--suffix .orig
 .endif
 
 .if exists(/bin/tar)
@@ -2325,9 +2349,6 @@ _IGNOREFILES?=	${IGNOREFILES}
 #  by user.
 EXTRACT_ONLY?=	${_DISTFILES}
 
-# Documentation
-MAINTAINER?=	ports@FreeBSD.org
-
 .if !target(maintainer)
 maintainer:
 	@${ECHO_CMD} "${MAINTAINER}"
@@ -2353,8 +2374,8 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	offix palm parallel pear perl5 picobsd plan9 polish portuguese print \
 	python ruby russian \
 	scheme science security shells sysutils \
-	tcl76 tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
-	tk42 tk80 tk82 tk83 tk84 tkstep80 \
+	tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
+	tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-themes x11-toolkits \
 	x11-wm xfce zope
