@@ -1,0 +1,20 @@
+--- webcopy.src.orig	Sun May 21 20:24:21 2000
++++ webcopy.src	Sun May 21 20:25:51 2000
+@@ -481,7 +481,7 @@
+     $_=select(S); $|=1; select($_);
+     if ($verbose>3) {
+ 	print(($post?"POST":"GET") . " $proxy$url HTTP/1.0${rn}" .
+-	      "User-Agent: $agent${rn}Accept: */*${rn}$update");
++	      "User-Agent: $agent${rn}Accept: */*${rn}Host: ${host}${rn}$update");
+ 	print  "Authorization: $userpass${rn}" if $userpass;
+ 	if ($post) {
+ 	    print  "Content-Length: " . length($post_data) .
+@@ -492,7 +492,7 @@
+ 	}
+     }
+     print S ($post?"POST":"GET") . " $proxy$url HTTP/1.0${rn}" .
+-	"User-Agent: $agent${rn}Accept: */*${rn}$update";
++	"User-Agent: $agent${rn}Accept: */*${rn}Host: ${host}${rn}$update";
+     print S "Authorization: $userpass${rn}" if $userpass;
+     if ($post) {
+ 	print S "Content-Length: " . length($post_data) .
