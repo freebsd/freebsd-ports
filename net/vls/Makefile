@@ -7,13 +7,14 @@
 
 PORTNAME=	vls
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	net multimedia
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vls/${PORTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
 
-LIB_DEPENDS=	dvbpsi.1:${PORTSDIR}/multimedia/libdvbpsi
+LIB_DEPENDS=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
 .if !defined(WITHOUT_DVD)
 LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
