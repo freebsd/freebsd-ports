@@ -3,8 +3,8 @@
 # Perl module to convert a CVS avail file into a majordomo alias file.
 #
 
-$MAILING_LIST = '/home/mail/cvs-committers';
-$AVAIL_FILE = '/home/ncvs/CVSROOT/avail';
+$MAILING_LIST = 'cvs-committers';
+$AVAIL_FILE = 'avail';
 
 open (MAIL, ">$MAILING_LIST");
 open (AVAIL, "<$AVAIL_FILE");

@@ -1,0 +1,26 @@
+#! /bin/sh
+#
+# Called in place of mkmodules to take care of files mkmodules doesn't know.
+#
+# $Id$
+
+PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH
+
+FILELIST="avail mkavail commitcheck cvs_acls.pl commit_prep.pl log_accum.pl"
+FILELIST="${FILELIST} cvsedit edithook fixcvsroot"
+
+cd $1
+
+for i in $FILELIST
+do 
+  find $i,v -newer $i -exec co -u $i
+done
+
+#find avail,v -newer cvs-committers -exec ./mkavail
+#cmp -s cvs-committers /home/mail/cvs-committers || {
+#  echo "/home/mail/cvs-committers is different to \$CVSROOT/cvs-committers"
+#  echo "please check to see what needs to be updated..."
+#}
+
+exec mkmodules $1
