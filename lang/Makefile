@@ -176,7 +176,6 @@
     SUBDIR += pexts
     SUBDIR += pfe-devel
     SUBDIR += php-mode.el
-    SUBDIR += php3
     SUBDIR += php4
     SUBDIR += php4-cli
     SUBDIR += php4-extensions
