@@ -19,6 +19,12 @@ BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/MD5.pm:${PORTSDIR}/security/p5-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PERL_CONFIGURE=	yes
+
+MAN3=		Crypt::CBCeasy.3
+
+.include <bsd.port.pre.mk>
+
 OPTIONS=	DES "Build with Crypt::DES support" on
 .if !defined(WITHOUT_DES)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES
@@ -44,8 +50,4 @@ OPTIONS+=	RIJNDAEL "Build with Crypt::Rijndael support" on
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael
 .endif
 
-PERL_CONFIGURE=	yes
-
-MAN3=		Crypt::CBCeasy.3
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
