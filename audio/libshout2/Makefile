@@ -28,6 +28,9 @@ USE_LIBTOOL_VER=13
 CONFLICTS=	libshout-1.0.7
 USE_REINPLACE=	yes
 
+pre-configure:
+	@ ${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure
+
 post-configure:
 	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
 		${WRKSRC}/Makefile
