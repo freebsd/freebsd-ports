@@ -26,6 +26,7 @@ bin/gl-117
 %%DATADIR%%/models/gl-50.3ds
 %%DATADIR%%/models/hall1.3ds
 %%DATADIR%%/models/hall2.3ds
+%%DATADIR%%/models/house1.3ds
 %%DATADIR%%/models/mine1.3ds
 %%DATADIR%%/models/missile1.3ds
 %%DATADIR%%/models/missile2.3ds
@@ -119,6 +120,7 @@ bin/gl-117
 %%DATADIR%%/textures/greygrid.tga
 %%DATADIR%%/textures/hall1b_g.tga
 %%DATADIR%%/textures/hall2b_c.tga
+%%DATADIR%%/textures/house_s1.tga
 %%DATADIR%%/textures/medals.tga
 %%DATADIR%%/textures/moon1.tga
 %%DATADIR%%/textures/oilrig_c.tga
@@ -132,6 +134,7 @@ bin/gl-117
 %%DATADIR%%/textures/redsand1.tga
 %%DATADIR%%/textures/redstone2.tga
 %%DATADIR%%/textures/rocks1.tga
+%%DATADIR%%/textures/roof.tga
 %%DATADIR%%/textures/sand1.tga
 %%DATADIR%%/textures/ship2_fr.tga
 %%DATADIR%%/textures/ship_fra.tga
