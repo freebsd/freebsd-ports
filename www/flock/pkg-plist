@@ -28,7 +28,6 @@ lib/phoenix/lib/mozilla-1.2b/chrome/modern.jar
 lib/phoenix/lib/mozilla-1.2b/chrome/pipnss.jar
 lib/phoenix/lib/mozilla-1.2b/chrome/pippki.jar
 lib/phoenix/lib/mozilla-1.2b/chrome/toolkit.jar
-lib/phoenix/lib/mozilla-1.2b/chrome/venkman.jar
 lib/phoenix/lib/mozilla-1.2b/components/accessibility.xpt
 lib/phoenix/lib/mozilla-1.2b/components/appshell.xpt
 lib/phoenix/lib/mozilla-1.2b/components/autocomplete.xpt
@@ -76,7 +75,6 @@ lib/phoenix/lib/mozilla-1.2b/components/intl.xpt
 lib/phoenix/lib/mozilla-1.2b/components/jar.xpt
 lib/phoenix/lib/mozilla-1.2b/components/jsconsole-clhandler.js
 lib/phoenix/lib/mozilla-1.2b/components/jsconsole.xpt
-lib/phoenix/lib/mozilla-1.2b/components/jsdservice.xpt
 lib/phoenix/lib/mozilla-1.2b/components/jsurl.xpt
 lib/phoenix/lib/mozilla-1.2b/components/layout_base.xpt
 lib/phoenix/lib/mozilla-1.2b/components/layout_xul.xpt
@@ -105,7 +103,6 @@ lib/phoenix/lib/mozilla-1.2b/components/libimglib2.so
 lib/phoenix/lib/mozilla-1.2b/components/libimgmng.so
 lib/phoenix/lib/mozilla-1.2b/components/libinspector.so
 lib/phoenix/lib/mozilla-1.2b/components/libjar50.so
-lib/phoenix/lib/mozilla-1.2b/components/libjsd.so
 lib/phoenix/lib/mozilla-1.2b/components/libjsdom.so
 lib/phoenix/lib/mozilla-1.2b/components/libjsurl.so
 lib/phoenix/lib/mozilla-1.2b/components/libmork.so
@@ -194,7 +191,6 @@ lib/phoenix/lib/mozilla-1.2b/components/uconv.xpt
 lib/phoenix/lib/mozilla-1.2b/components/unicharutil.xpt
 lib/phoenix/lib/mozilla-1.2b/components/uriloader.xpt
 lib/phoenix/lib/mozilla-1.2b/components/util.xpt
-lib/phoenix/lib/mozilla-1.2b/components/venkman-service.js
 lib/phoenix/lib/mozilla-1.2b/components/wallet.xpt
 lib/phoenix/lib/mozilla-1.2b/components/walleteditor.xpt
 lib/phoenix/lib/mozilla-1.2b/components/walletpreview.xpt
