@@ -131,6 +131,7 @@
     SUBDIR += fugu
     SUBDIR += gabber
     SUBDIR += gaim
+    SUBDIR += gaim-rss-reader
     SUBDIR += gale
     SUBDIR += gatekeeper
     SUBDIR += gdesklets-lt-network
