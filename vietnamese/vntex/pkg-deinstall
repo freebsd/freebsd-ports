@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+if [ "$2" != "DEINSTALL" ]; then
+  exit 0
+fi
+
+PATH=/bin:/usr/sbin:${PKG_PREFIX}/bin
+
+texconfig rehash
+
+exit 0

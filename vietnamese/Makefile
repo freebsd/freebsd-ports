@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += vntex
 
     SUBDIR += vn7to8
     SUBDIR += vnconvert

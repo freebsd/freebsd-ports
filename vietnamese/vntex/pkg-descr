@@ -1,0 +1,25 @@
+Tha^n cha`o ca'c ba.n,
+
+vntex provides teTeX Vietnamese language + font support
+
+To use, structure your LaTeX document as follows:
+
+	\documentclass{<same_as_normal_LaTeX_documents>}
+	\usepackage{vietnam}
+	\begin{document}
+	\inputencoding{viscii}
+		...
+	\end{document}
+
+Other inputencoding's are "tcvn" and "vps".
+
+If you prefer to write your LaTeX documents in VIQR, the `vn7to8' utility may
+be used to preprocess your LaTeX document before running `latex' on it.
+
+Farther examples are:
+	share/texmf/tex/generic/vietnam/testlatex.tex
+	share/texmf/tex/generic/vietnam/testplain.tex
+	share/texmf/tex/plain/plnfss/plnfss.tex
+
+-- David O'Brien
+   obrien@NUXI.com
