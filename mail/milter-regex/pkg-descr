@@ -1,16 +1,13 @@
-from the OpenBSD port:
+Milter-regex is a sendmail milter plugin that allows to reject mail
+based on regular expressions matching SMTP envelope parameters and
+mail headers and body.
 
-  milter-regex is a sendmail milter plugin that allows to reject mail
-  based on regular expressions matching SMTP envelope parameters and
-  mail headers and body.
+In order to build milter-regex, sendmail needs to be compiled with
+milter support, installing the libmilter library.
 
-  In order to build milter-regex, sendmail needs to be compiled with
-  milter support, installing the libmilter library.
+This is the default for the sendmail in the base system.
+Some of the sendmail ports omit libmilter by default (SENDMAIL_WITHOUT_MILTER).
 
-This is the default for the sendmail in the base system.  Some of the sendmail
-ports omit libmilter by default.
-
-This port is in an experimental, untested state on FreeBSD.  Please tell the
-maintainer about your results, whether successful or unsuccessful.
+This program is developed on OpenBSD by the maintainer.
 
 WWW:  http://www.benzedrine.cx/milter-regex.html
