@@ -4392,6 +4392,7 @@ netatalk	ports/net/netatalk
 netboot		src/sys/i386/boot/netboot
 netcat		ports/net/netcat
 netcdf		ports/math/netcdf
+nethack32	ports/games/nethack32
 nethack33	ports/games/nethack33
 nethack33-gnome	ports/games/nethack33-gnome
 nethack33-nox11	ports/games/nethack33-nox11
@@ -5469,7 +5470,6 @@ perldap		ports/net/perldap
 perlftlib	ports/print/perlftlib
 perlsh		ports/shells/perlsh
 perltidy	ports/devel/perltidy
-perltools	ports/java/perltools
 personality	ports/sysutils/personality
 pfaedit		ports/print/pfaedit
 pfe-devel	ports/lang/pfe-devel
