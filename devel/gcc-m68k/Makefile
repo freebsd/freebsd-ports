@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.4 1998/08/17 00:21:43 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/21 17:55:46 steve Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/m68kbinutils \
 RUN_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/m68kbinutils \
 		m68k-coff-ld:${PORTSDIR}/devel/m68kbinutils
 
-NO_PACKAGE=	limited audience
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
