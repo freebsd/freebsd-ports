@@ -3,13 +3,15 @@
 # Date created:         4 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1996/11/17 06:12:37 obrien Exp $
+# $Id: Makefile,v 1.10 1996/11/18 14:02:52 asami Exp $
 #
 
 DISTNAME=	p2c-1.21alpha-07.Dec.93
 PKGNAME=	p2c-1.21a
 CATEGORIES=	lang
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/gnu/hurd/
+MASTER_SITES=   ftp://ftp.pal.xgw.fi/pub/gnu/alpha/gnu/ \
+		ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
+		ftp://ftp.obspm.fr/pub1/computing/gnu/hurd/
 DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
