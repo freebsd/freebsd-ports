@@ -1,4 +1,4 @@
-bin/instmodsh
+%%EXE_FILES%%bin/instmodsh
 %%SITE_PERL%%/ExtUtils/Command.pm
 %%SITE_PERL%%/ExtUtils/Command/MM.pm
 %%SITE_PERL%%/ExtUtils/Install.pm
