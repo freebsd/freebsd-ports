@@ -7,7 +7,7 @@
 
 PORTNAME=	scm
 PORTVERSION=	5d6
-PORTREVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTFILES=	scm5d6.zip slib2d4.zip slib-psd1-3.tar.gz
