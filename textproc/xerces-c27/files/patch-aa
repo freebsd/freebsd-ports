@@ -1,68 +1,26 @@
---- src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp	2002/12/31 18:42:43	1.7
-+++ src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp	2003/03/07 15:08:57	1.10
-@@ -56,6 +56,15 @@
+diff -x CVS -urN src/xercesc/util/Transcoders/ICU/ICUTransService.cpp src.cvs/xercesc/util/Transcoders/ICU/ICUTransService.cpp
+--- src/xercesc/util/Transcoders/ICU/ICUTransService.cpp	Sat May 17 16:32:17 2003
++++ src.cvs/xercesc/util/Transcoders/ICU/ICUTransService.cpp	Sun Jun 15 10:02:16 2003
+@@ -55,7 +55,7 @@
+  */
  
  /*
-  * $Log: IconvFBSDTransService.cpp,v $
-+ * Revision 1.10  2003/03/07 15:08:57  tng
-+ * [Bug 17571] fix building IconvFBSD (namespaces) .  Patch from Bjoern A. Zeeb.
-+ *
-+ * Revision 1.9  2003/03/07 14:42:45  tng
-+ * [Bug 17570] IconvFBSD build on alpha,sparc.  Patch from Bjoern A. Zeeb.
-+ *
-+ * Revision 1.8  2003/02/25 08:15:42  gareth
-+ * Patch to fix compile problem in bug #17358. Patch by Michael Cahill.
-+ *
-  * Revision 1.7  2002/12/31 18:42:43  tng
-  * [Bug 15608] IconvLCPTranscoder::transcode() is wrong at wcstombs() usage.
-  *
-@@ -103,8 +112,6 @@
- # include <errno.h>
- # include <machine/endian.h>
+- * $Id: ICUTransService.cpp,v 1.9 2003/05/17 16:32:17 knoaman Exp $
++ * $Id: ICUTransService.cpp,v 1.10 2003/05/30 09:19:24 gareth Exp $
+  */
  
--XERCES_CPP_NAMESPACE_BEGIN
--
- // ---------------------------------------------------------------------------
- // Description of encoding schemas, supported by iconv()
- // ---------------------------------------------------------------------------
-@@ -209,6 +216,12 @@
- #include <stdlib.h>
- #include <stdio.h>
  
-+#if !defined(APP_NO_THREADS)
-+#include <xercesc/util/Mutexes.hpp>
-+#endif
-+
-+XERCES_CPP_NAMESPACE_BEGIN
-+
- // ---------------------------------------------------------------------------
- //  Local, const data
- // ---------------------------------------------------------------------------
-@@ -314,8 +327,6 @@
- #else /* XML_USE_LIBICONV */
+@@ -127,11 +127,11 @@
  
- #if !defined(APP_NO_THREADS)
--
--#include <xercesc/util/Mutexes.hpp>
- // Iconv() access syncronization point
- static XMLMutex    *gIconvMutex = NULL;
- #  define ICONV_LOCK    XMLMutexLock lockConverter(gIconvMutex);
-@@ -1099,7 +1110,8 @@
-         // perform conversion
-         wLent *= uChSize();
-         char    *ptr = retVal;
--        size_t    rc = iconvTo(wideCharBuf, &wLent, &ptr, neededLen);
-+        size_t  tmpwLent = wLent;
-+        size_t  rc = iconvTo(wideCharBuf, &tmpwLent, &ptr, neededLen);
-         if (rc == (size_t)-1) {
-             if (wBufPtr)
-             delete [] wBufPtr;
-@@ -1563,6 +1575,6 @@
-     return (rc != (size_t)-1) && (len == 0);
- }
  
--XERCES_CPP_NAMESPACE_END
--
- #endif /* XML_USE_LIBICONV */
-+
-+XERCES_CPP_NAMESPACE_END
+ static XMLCh* convertToXMLCh( const UChar* const toConvert,
+-                            , MemoryManager* const manager = 0)
++                            MemoryManager* const manager = 0)
+ {
+     const unsigned int srcLen = u_strlen(toConvert);
+     XMLCh* retBuf = (manager)
+-        ? (XMLCh*) manager->allocate((srcLen+1) sizeof(XMLCh))
++        ? (XMLCh*) manager->allocate((srcLen+1) * sizeof(XMLCh))
+         : new XMLCh[srcLen + 1];
+ 
+     XMLCh* outPtr = retBuf;

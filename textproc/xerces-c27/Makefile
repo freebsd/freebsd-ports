@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	xerces-c2
-PORTVERSION=	2.2.0
-PORTREVISION=	0
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/stable
-DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
+DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 
-MAINTAINER?=	bzeeb+freebsdports@zabbadoz.net
-COMMENT?=	Validating XML parser from the Apache XML Project
+MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+COMMENT=	Validating XML parser from the Apache XML Project
 
 .if !defined(TRANSCODER)
 LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
@@ -23,8 +22,8 @@ PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
-PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc.24:${PORTSDIR}/devel/icu
+PKGNAMESUFFIX+=		-icu2
+LIB_DEPENDS+=		icuuc.26:${PORTSDIR}/devel/icu2
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
@@ -45,8 +44,6 @@ PLIST_SUB+=		TRANSICU="@comment "
 # expect this to get broken some day
 NO_FILTER_SHLIBS=	yes
 INSTALLS_SHLIB=		yes
-LDCONFIG_DIRS=		${PREFIX}/lib
-NOCLEANDEPENDS=		yes
 
 XERCESWRKSRC=		${WRKSRC}/src/xercesc
 CONFIGURE_WRKSRC=	${XERCESWRKSRC}
@@ -64,6 +61,12 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
 .include <bsd.port.pre.mk>
+
+.if defined(DEBUG)
+PKGNAMESUFFIX+=		-debug
+CONFIGURE_ARGS+=	-d
+STRIP=
+.endif
 
 .if defined(NO_THREADS)
 CONFIGURE_ARGS+=	-r none
@@ -89,7 +92,7 @@ SAMPLES_CONFIG_ARGS+=	-r pthread
 PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-message 15 75 || \
 		${TRUE})
@@ -100,6 +103,7 @@ pre-fetch:
 	@${ECHO} 'NO_THREADS	do not build a thread enabled shared library'
 	@${ECHO} 'NO_SAMPLES	do not copy sample binaries and sources'
 	@${ECHO} 'NOPORTDOCS	do not copy documentation'
+	@${ECHO} 'DEBUG		include debugging information, do not strip'
 	@${ECHO} ''
 	@${ECHO} 'Also you may set TRANSODER to the following values (without -D):'
 	@${ECHO} ''
@@ -135,7 +139,9 @@ post-configure:
 .endif
 
 post-install:
+.if !defined(DEBUG)
 	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xerces-c
 	@${CP} -r ${WRKSRC}/doc/ ${PREFIX}/share/doc/xerces-c/
