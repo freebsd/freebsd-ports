@@ -1,30 +1,51 @@
---- Makefile.FreeBSD.orig	Tue Sep 10 16:04:21 1996
-+++ Makefile.FreeBSD	Fri Sep 25 11:19:37 1998
-@@ -139,6 +139,9 @@
- # System library directories, also exported
+--- /tmp/rosegarden-2.1/configure.in	Wed Oct 15 20:42:59 1997
++++ ./configure.in	Fri May 14 20:29:22 1999
+@@ -4,6 +4,14 @@
  
- SYSLDFLAGS	= -L/usr/lib -L/usr/X11R6/lib
-+.if ${PORTOBJFORMAT} == "elf"
-+SYSLDFLAGS	+= -Wl,-rpath,/usr/X11R6/lib
-+.endif
- SYSEXTRALIBS	= -lmalloc
+ AC_CONFIG_HEADER(config.h)
  
- 
-@@ -264,6 +267,17 @@
- 		  $(MAKE) depend )
- 		( $(EXPORTATION) ; cd $(ROSEGARDEN)/topbox/src ; \
- 		  $(MAKE) depend )
++AC_ARG_WITH(tcl,
++    [--with-tclincl        Set tcl iclude Path],     
++    [ with_tcl=$withval ],   
++    [ with_tcl=/usr/local/include ],   
++)
 +
-+install:
-+		$(MKDIR) $(PREFIX)/lib/rosegarden
-+		$(MKDIR) $(PREFIX)/lib/rosegarden/music
-+		$(INSTALL_PROGRAM) ./bin/rosegarden $(PREFIX)/bin
-+		$(INSTALL_PROGRAM) ./bin/editor $(PREFIX)/lib/rosegarden
-+		$(INSTALL_PROGRAM) ./bin/sequencer $(PREFIX)/lib/rosegarden
-+		$(INSTALL_DATA) ./common/help/* $(PREFIX)/lib/rosegarden
-+		$(INSTALL_DATA) ./common/synth-patches/std.sb $(PREFIX)/lib/rosegarden
-+		$(INSTALL_DATA) ./common/music/*.rose $(PREFIX)/lib/rosegarden/music
-+		$(INSTALL_DATA) Rosegarden $(X11BASE)/lib/X11/app-defaults/
++CFLAGS="${CFLAGS} -I ${with_tcl}"
++
+ dnl Checks for programs.
+ AC_PROG_CC
+ AC_PROG_LN_S
+@@ -67,11 +75,11 @@
  
- clean:
- 		( $(EXPORTATION) ; cd $(ROSEGARDEN)/lists/src ; \
+ Petal=Petal
+ 
+-AC_CHECK_HEADER(tcl.h, TCL_CHECK=1, TCL_CHECK=0)
++TCL_CHECK=1
+ 
+ if test $TCL_CHECK -eq 1
+ then
+-     AC_PATH_PROG(TCLSH, tclsh)
++     AC_PATH_PROG(TCLSH, tclsh8.0)
+      if test -n "$TCLSH"
+      then
+ 	# Check Tcl version:
+@@ -88,7 +96,7 @@
+ 	then
+ 		# Check for TclMIDI
+ 		AC_CHECKING(if TclMIDI is installed)
+-		TCL_MIDI_CHECK=`echo "package require tclmidi" | $TCLSH 2>&1`
++		TCL_MIDI_CHECK=
+ 		if test -n "$TCL_MIDI_CHECK"
+ 		then
+ 			Petal=""
+@@ -153,8 +161,8 @@
+ 	*freebsd*)
+ 	defines="-DNO_SYS_ERRLIST"
+ 	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_FREEBSD")
+-	extra_libs="-lmalloc"
+-	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
++	# extra_libs="-lmalloc"
++	LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
+ 
+ 	PETAL_LD=ld
+ 	PETAL_CFLAGS="-fPIC"

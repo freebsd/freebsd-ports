@@ -1,0 +1,11 @@
+--- /tmp/rosegarden-2.1/petal/Petal.c	Sun Mar  2 20:03:31 1997
++++ ./petal/Petal.c	Fri May 14 17:25:50 1999
+@@ -2,7 +2,7 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <string.h>
+-#include <tcl.h>
++#include <tcl8.0/tcl.h>
+ 
+ #define NB_MODES 7
+ #define NB_TONALITIES 17 /* names, actually */
