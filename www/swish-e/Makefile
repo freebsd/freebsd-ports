@@ -12,10 +12,10 @@ MASTER_SITES=	http://swish-e.org/Download/
 
 MAINTAINER=	doconnor@gsoft.com.au
 
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-LIB_DEPENDS=	xml.2:${PORTSDIR}/textproc/libxml2
 
 do-install:
 	$(INSTALL_PROGRAM) ${WRKSRC}/src/swish-e ${PREFIX}/bin
