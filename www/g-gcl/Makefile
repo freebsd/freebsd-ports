@@ -9,10 +9,9 @@ PORTNAME=	g-gcl
 PORTVERSION=	1.10
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/gcl/ \
-		ftp://ftp.whizkidtech.net/cgi/gcl/ \
-		http://www.whizkidtech.net/gcl/
+		ftp://ftp.whizkidtech.redprince.net/cgi/gcl/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Sample counter scripts for Graphic Counter Language
 
 RUN_DEPENDS=	gracula:${PORTSDIR}/graphics/gracula
