@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	dgpsip-1.29
+DISTNAME=	dgpsip-1.32
 CATEGORIES=	astro
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
