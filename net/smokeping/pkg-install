@@ -49,4 +49,3 @@ PRE-INSTALL)
 	exit 0
 	;;
 esac
-
