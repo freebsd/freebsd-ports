@@ -1,0 +1,24 @@
+MasonX::WebApp works with Mason to let you do processing before Mason is ever
+invoked. There are a number of things that one might want to do:
+
+* Argument munging
+
+	You might want to make sure all incoming arguments are UTF-8 encoded.
+	Or you might want to create some objects which Mason will see as
+	incoming arguments. For example, a "user_id" parameter could be turned
+	into a user object.
+
+* Handle requests without Mason
+
+	If you're not generating output for the browser other than a redirect,
+	then there's no reason to use Mason. You can use a MasonX::WebApp
+	subclass to handle all form submissions, for example.
+
+	This has the added benefit of making it easier to preload this code
+	once during server startup.
+
+* And others ...
+
+
+WWW:  http://search.cpan.org/dist/MasonX-WebApp/
+WWW:  http://www.masonhq.com/?MasonX

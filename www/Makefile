@@ -520,6 +520,7 @@
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Profiler
     SUBDIR += p5-MasonX-Request-WithApacheSession
+    SUBDIR += p5-MasonX-WebApp
     SUBDIR += p5-Maypole
     SUBDIR += p5-Maypole-Authentication-UserSessionCookie
     SUBDIR += p5-Maypole-Component
