@@ -479,7 +479,7 @@ CONFIGURE_ARGS+=--with-pcre-regex=yes
 .endif
 
 .if defined(WITH_PDFLIB)
-LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=--with-pdflib=${LOCALBASE}
 .endif
 
