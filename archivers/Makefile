@@ -49,7 +49,6 @@
     SUBDIR += rpm2cpio
     SUBDIR += ruby-bz2
     SUBDIR += ruby-zip
-    SUBDIR += ruby-zlib
     SUBDIR += sectar
     SUBDIR += star
     SUBDIR += stuffit

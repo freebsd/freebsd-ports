@@ -18,9 +18,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby module for reading and writing zip files
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/zlib.so:${PORTSDIR}/archivers/ruby-zlib
-
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	zlib
 
 WRKSRC=		${WRKDIR}/ruby${PORTNAME}
 NO_BUILD=	yes

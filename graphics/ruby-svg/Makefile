@@ -16,9 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library for generating SVG files
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/zlib.so:${PORTSDIR}/archivers/ruby-zlib
-
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	zlib
 
 NO_BUILD=	yes
 

@@ -137,16 +137,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/LEGAL ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
-	${MKDIR} ${RUBY_DOCDIR}/digest
-	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}/digest
-	${MKDIR} ${RUBY_DOCDIR}/etc
-	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}
 	${MKDIR} ${RUBY_DOCDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
 	${MKDIR} ${RUBY_DOCDIR}/readline
 	${INSTALL_DATA} ${WRKSRC}/ext/readline/README* ${RUBY_DOCDIR}/readline
-	${MKDIR} ${RUBY_DOCDIR}/syslog
-	${INSTALL_DATA} ${WRKSRC}/ext/syslog/syslog.txt ${RUBY_DOCDIR}/syslog
+	${INSTALL_DATA} ${WRKSRC}/ext/syslog/syslog.txt ${RUBY_DOCDIR}
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
 .endif
 	@${ECHO} "Deinstalling obsoleted packages that are now part of ruby..."
