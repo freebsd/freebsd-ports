@@ -19,8 +19,6 @@ COMMENT=	Perl5 modules to access to SQL Relay, including a DBD interface
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
-BROKEN=		"Build fails"
-
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -43,6 +41,7 @@ do-extract:
 	${RM} -f ${WRKSRC}/config.cache
 	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
 	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
+	${RM} -rf ${WRKSRC}/src/api/perl/CVS
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \
