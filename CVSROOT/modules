@@ -1169,7 +1169,7 @@ de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
 de-kde3-i18n	ports/german/kde3-i18n
 de-koffice-i18n	ports/german/koffice-i18n
-de-linux-netscape6	ports/german/linux-netscape6
+de-netscape7	ports/german/netscape7
 de-manpages	ports/german/manpages
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
@@ -1767,7 +1767,7 @@ fr-cups-lpr	ports/french/cups-lpr
 fr-ispell	ports/french/ispell
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
-fr-linux-netscape6	ports/french/linux-netscape6
+fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice	ports/french/openoffice
 fr-staroffice52	ports/french/staroffice52
@@ -2909,7 +2909,7 @@ ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
 ja-linux-netscape47-communicator	ports/japanese/linux-netscape47-communicator
 ja-linux-netscape47-navigator	ports/japanese/linux-netscape47-navigator
-ja-linux-netscape6	ports/japanese/linux-netscape6
+ja-netscape7	ports/japanese/netscape7
 ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
@@ -3967,7 +3967,6 @@ linux-mozilla	ports/www/linux-mozilla
 linux-netscape4	ports/www/linux-netscape4
 linux-netscape47-communicator	ports/www/linux-netscape47-communicator
 linux-netscape47-navigator	ports/www/linux-netscape47-navigator
-linux-netscape6	ports/www/linux-netscape6
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-phoenix	ports/www/linux-phoenix

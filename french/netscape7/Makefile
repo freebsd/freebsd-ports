@@ -1,4 +1,4 @@
-# New ports collection makefile for:	fr-linux-netscape6
+# New ports collection makefile for:	fr-netscape7
 # Date created:				2002-03-04
 # Whom:					trevor
 # based on the german/linux-netscape6 port by Thomas E. Zander
@@ -7,10 +7,10 @@
 #
 
 PKGNAMEPREFIX?=	fr-
-PORTREVISION=	0
 CATEGORIES=	french www linux
 
-DISTFILES=	browser.xpi \
+DISTFILES=	AIM.xpi \
+		browser.xpi \
 		deflfrfr.xpi \
 		flash.xpi \
 		jre.xpi \
@@ -23,6 +23,6 @@ DISTFILES=	browser.xpi \
 		talkback.xpi \
 		xpcom.xpi
 
-NETSCAPE6_LANG=	french
+NETSCAPE_LANG=	french
 
-.include "../../www/linux-netscape6/Makefile"
+.include "../../www/netscape7/Makefile"

@@ -182,7 +182,6 @@
     SUBDIR += linux-JM
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
-    SUBDIR += linux-netscape6
     SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup
@@ -255,6 +254,7 @@
     SUBDIR += netscape47-navigator
     SUBDIR += netscape48-communicator
     SUBDIR += netscape48-navigator
+    SUBDIR += netscape7
     SUBDIR += netype
     SUBDIR += netypesv
     SUBDIR += newosaka
