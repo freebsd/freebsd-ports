@@ -4542,6 +4542,7 @@ libmcve		ports/devel/libmcve
 libmikmod	ports/audio/libmikmod
 libmimedir	ports/devel/libmimedir
 libmng		ports/graphics/libmng
+libmodplug	ports/audio/libmodplug
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
 libmpeg2	ports/multimedia/libmpeg2
@@ -5289,6 +5290,7 @@ mod_webapp	ports/www/mod_webapp
 mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modlogan	ports/textproc/modlogan
+modplugplay	ports/audio/modplugplay
 moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
