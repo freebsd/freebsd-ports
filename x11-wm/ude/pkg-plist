@@ -1,19 +1,4 @@
 bin/uwm
-include/ude/ude-bevels.h
-include/ude/ude-box.h
-include/ude/ude-button.h
-include/ude/ude-desktop.h
-include/ude/ude-events.h
-include/ude/ude-hex.h
-include/ude/ude-i18n.h
-include/ude/ude-internals.h
-include/ude/ude-menu.h
-include/ude/ude-raster.xbm
-include/ude/ude-settings.h
-include/ude/ude-types.h
-include/ude/ude-vector.h
-include/ude/ude-wraparounds.h
-include/ude/ude.h
 %%PORTDOCS%%%%DOCSDIR%%/html/contents.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/crossref.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -80,4 +65,3 @@ share/locale/tr/LC_MESSAGES/ude.mo
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/ude
