@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.nl.uu.net/pub/unix/mail/postfix/official/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/postfix/official/ \
 		ftp://ftp.mira.net/pub/unix/mail/postfix/official/ \
-		ftp://coda.nctu.edu.tw/network/mail/postfix/official/
+		ftp://coda.nctu.edu.tw/network/mail/postfix/official/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 DISTNAME=	${PORTNAME}-19991231-pl13
 
 MAINTAINER=	blaz@amis.net

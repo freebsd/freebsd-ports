@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
 		ftp://ftp.utoronto.ca/mirror/packages/postfix/experimental/ \
-		ftp://ftp.samurai.com/pub/postfix/experimental/
+		ftp://ftp.samurai.com/pub/postfix/experimental/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
 MASTER_SITE_SUBDIR= . old related/postfix
 DISTNAME=	snapshot-${PORTVERSION}
 
