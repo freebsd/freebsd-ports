@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	trafshow
-PORTVERSION=	4.0
+PORTVERSION=	3.1
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
@@ -19,7 +20,7 @@ COMMENT=	Full screen visualization of network traffic
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=   slang.1:${PORTSDIR}/devel/libslang
 .else
 .if ${OSVERSION} < 400010
 LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
