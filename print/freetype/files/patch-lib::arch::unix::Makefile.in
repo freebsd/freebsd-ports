@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- lib/arch/unix/Makefile.in	2002/03/14 07:15:48	1.1
++++ lib/arch/unix/Makefile.in	2002/03/14 07:16:24
+@@ -200,10 +200,10 @@
+                                -version-info $(version_info) $(FT_LIBS)
+ 
+ install: libttf.la
+-	$(MKINSTALLDIRS) $(libdir) $(includedir)/freetype
++	$(MKINSTALLDIRS) $(libdir) $(includedir)/freetype1/freetype
+ 	$(LIBTOOL) --mode=install $(INSTALL) libttf.la $(libdir)
+ 	-for P in $(HEADERS) ; do \
+-          $(INSTALL_DATA) $$P $(includedir)/freetype ; \
++          $(INSTALL_DATA) $$P $(includedir)/freetype1/freetype ; \
+         done
+ 
+ uninstall: 
