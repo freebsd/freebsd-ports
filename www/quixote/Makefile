@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
@@ -14,9 +14,7 @@ DISTNAME=	Quixote-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A framework for developing web applications in Python
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
-USE_PYTHON=	yes
+USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
@@ -25,17 +23,14 @@ USE_PYDISTUTILS=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 .endif
 
-pre-install:
-	@ ${SH} ${PKGREQ} INSTALL
-
 post-install:
 	@ PYTHONPATH=${PREFIX}/lib/${PYTHON_VERSION}/site-packages \
 	  ${PYTHON_CMD} ${SCRIPTDIR}/compile_ptl.py \
-	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/*.ptl \
-	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/form/*.ptl
+	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/*.ptl
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/demo/*.cgi ${WRKSRC}/demo/*.conf \
 	  ${EXAMPLESDIR}
+
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ACKS CHANGES LICENSE README TODO doc/*
