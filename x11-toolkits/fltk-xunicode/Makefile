@@ -8,8 +8,7 @@
 MASTERDIR=	${.CURDIR}/../fltk
 
 MAINTAINER=	knu@FreeBSD.org
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	FLTK with Unicode support
 
 WITH_XUNICODE=	yes
 

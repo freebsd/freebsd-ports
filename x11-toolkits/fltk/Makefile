@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 DISTNAME=	${PORTNAME}-${VERSION}-source
 
 MAINTAINER?=	demon@FreeBSD.org
+COMMENT?=	C++ graphical user interface for X
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
