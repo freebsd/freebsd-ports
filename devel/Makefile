@@ -63,6 +63,7 @@
     SUBDIR += cweb
     SUBDIR += cxref
     SUBDIR += ddd
+    SUBDIR += diffconvert
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
