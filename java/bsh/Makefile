@@ -7,6 +7,7 @@
 
 PORTNAME=	bsh
 PORTVERSION=	1.2.b4
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.beanshell.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
