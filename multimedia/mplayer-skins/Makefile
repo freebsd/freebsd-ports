@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.mplayerhq.hu/MPlayer/Skin/ \
@@ -70,8 +70,10 @@ WITH_SKIN_ALIENMIND=yes
 WITH_SKIN_AVIFILE=yes
 WITH_SKIN_BLUEHEART=yes
 WITH_SKIN_CORNERMP=yes
+WITH_SKIN_CORNERMP_AGUA=yes
 WITH_SKIN_CUBICPLAYER=yes
 WITH_SKIN_CYRUS=yes
+WITH_SKIN_HWSW_SKIN=yes
 WITH_SKIN_MENTALIC=yes
 WITH_SKIN_MIDNIGHTLOVE=yes
 WITH_SKIN_NETSCAPE4=yes
@@ -133,6 +135,15 @@ PLIST_SUB+=	CORNERMP=""
 PLIST_SUB+=	CORNERMP="@comment "
 .endif
 
+DISTFILES+=	CornerMP-aqua.tar.bz2
+.ifdef(WITH_SKIN_CORNERMP_AGUA)
+EXTRACT_ONLY+=	CornerMP-aqua.tar.bz2
+
+PLIST_SUB+=	CORNERMP_AGUA=""
+.else
+PLIST_SUB+=	CORNERMP_AGUA="@comment "
+.endif
+
 DISTFILES+=	CubicPlayer.tar.bz2
 .ifdef(WITH_SKIN_CUBICPLAYER)
 EXTRACT_ONLY+=	CubicPlayer.tar.bz2
@@ -149,6 +160,15 @@ EXTRACT_ONLY+=	Cyrus.tar.bz2
 PLIST_SUB+=	CYRUS=""
 .else
 PLIST_SUB+=	CYRUS="@comment "
+.endif
+
+DISTFILES+=	hwswskin.tar.bz2
+.ifdef(WITH_SKIN_HWSW_SKIN)
+EXTRACT_ONLY+=	hwswskin.tar.bz2
+
+PLIST_SUB+=	HWSW_SKIN=""
+.else
+PLIST_SUB+=	HWSW_SKIN="@comment "
 .endif
 
 DISTFILES+=	mentalic.tar.bz2

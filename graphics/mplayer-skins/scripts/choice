@@ -20,8 +20,10 @@ only the skins you really want. \n\n\
   "avifile"	"MPlayer skin, with the look of aviplay"	OFF \
   "BlueHeart"	"MPlayer conversion of a BlueHeart XMMS skin"	OFF \
   "CornerMP"	"CornerMP"					OFF \
+  "CornerMP-agua"	"CornerMP agua"				OFF \
   "CubicPlayer"	"CubicPlayer skin"				OFF \
   "Cyrus"	"Cyrus skin from XMMS"				OFF \
+  "hwsw-skin"	"no comment"					OFF \
   "Mentalic"	"Sharp and shiny"				OFF \
   "MidnightLove"	"MPlayer version of WinAMP/XMMS Rei Ayanami's skin"		OFF \
   "Netscape4"	"Netscape \"unatkozok\" skin"			OFF \
