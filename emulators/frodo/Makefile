@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} "${WRKDIR}/Frodo/Frodo Logo" ${PREFIX}/libexec/frodo
 	${CP} "${WRKDIR}/Frodo/TkGui.tcl" ${PREFIX}/libexec/frodo
 	${MKDIR} ${PREFIX}/libexec/frodo/64prgs
-	@(${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | ${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -
+	@(${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | ${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -)
 
 post-install:
 .if !defined(NOPORTDOCS)
