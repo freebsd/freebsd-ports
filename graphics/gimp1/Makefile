@@ -3,12 +3,12 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1997/04/08 22:06:51 erich Exp $
+# $Id: Makefile,v 1.8 1997/04/18 21:26:28 erich Exp $
 #
 
-VERSION=			0.99.8
+VERSION=	0.99.9
 DISTNAME=       gimp-${VERSION}
-DISTFILES=	${DISTNAME}.tar.gz gimp-data-0.99.8.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz gimp-data-${VERSION}.tar.gz
 
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/

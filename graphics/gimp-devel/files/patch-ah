@@ -1,0 +1,337 @@
+Date: Mon, 28 Apr 1997 13:14:20 -0500
+Message-Id: <199704281814.NAA31815@nuclecu.unam.mx>
+From: Federico Mena <federico@nuclecu.unam.mx>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject:  PATCH: repeat functions added to blend.c
+Reply-to: federico@nuclecu.unam.mx
+
+Hello, everyone
+
+This patch makes the necessary changes to blend.c so that the blend
+tool lets you select among three different repeat functions:
+
+- None: this is the default, and it is the way the blend tool always
+has worked.  On either side of the direction vector, the gradient will
+use 0 and 1 values, respectively.
+
+- Sawtooth wave: the gradient will repeat 01->01->01->etc.
+
+- Triangular wave: the gradient will repeat 01->10->01->10->etc.
+
+I have thus added the constants REPEAT-NONE, REPEAT-SAWTOOTH and
+REPEAT-TRIANGULAR to Script-fu.
+
+My next patch to blend.c will be to add adaptive supersampling.
+
+  Quartic
+
+--- app/blend.dist.c	Mon Apr 28 09:06:57 1997
++++ app/blend.c	Mon Apr 28 12:51:22 1997
+@@ -65,6 +65,15 @@
+   CUSTOM_MODE
+ } BlendMode;
+ 
++typedef enum
++{
++  REPEAT_NONE,
++  REPEAT_SAWTOOTH,
++  REPEAT_TRIANGULAR,
++} RepeatMode;
++
++typedef double (*RepeatFunc)(double);
++
+ typedef struct _BlendTool BlendTool;
+ struct _BlendTool
+ {
+@@ -85,7 +94,7 @@
+   BlendMode    blend_mode;
+   int          paint_mode;
+   GradientType gradient_type;
+-  int          repeat;
++  RepeatMode   repeat;
+ };
+ 
+ /*  local function prototypes  */
+@@ -93,7 +102,7 @@
+ static void   gradient_type_callback (GtkWidget *, gpointer);
+ static void   blend_mode_callback    (GtkWidget *, gpointer);
+ static void   paint_mode_callback    (GtkWidget *, gpointer);
+-static void   repeat_toggle_update   (GtkWidget *widget, int *value);
++static void   repeat_type_callback   (GtkWidget *, gpointer);
+ 
+ static void   blend_button_press            (Tool *, GdkEventButton *, gpointer);
+ static void   blend_button_release          (Tool *, GdkEventButton *, gpointer);
+@@ -105,7 +114,7 @@
+ 					     BlendMode blend_mode, int paint_mode,
+ 					     GradientType gradient_type,
+ 					     double opacity, double offset,
+-					     int repeat,
++					     RepeatMode repeat,
+ 					     double startx, double starty,
+ 					     double endx, double endy);
+ 
+@@ -125,10 +134,14 @@
+ static double gradient_calc_shapeburst_spherical_factor  (double x, double y);
+ static double gradient_calc_shapeburst_dimpled_factor    (double x, double y);
+ 
++static double gradient_repeat_none(double val);
++static double gradient_repeat_sawtooth(double val);
++static double gradient_repeat_triangular(double val);
++
+ static void   gradient_precalc_shapeburst   (GImage *gimage, int, PixelRegion *PR, double dist);
+ static void   gradient_fill_region          (GImage *gimage, int, PixelRegion *PR,
+ 					     BlendMode blend_mode, GradientType gradient_type,
+-					     double offset, int repeat, int sx, int sy, int ex, int ey);
++					     double offset, RepeatMode repeat, int sx, int sy, int ex, int ey);
+ 
+ static BlendOptions *create_blend_options   (void);
+ static Argument *blend_invoker              (Argument *);
+@@ -173,6 +186,16 @@
+ /*  blend options  */
+ static BlendOptions *blend_options = NULL;
+ 
++/* repeat menu items */
++
++static MenuItem repeat_option_items[] =
++{
++  { "None", 0, 0, repeat_type_callback, (gpointer) REPEAT_NONE, NULL, NULL },
++  { "Sawtooth wave", 0, 0, repeat_type_callback, (gpointer) REPEAT_SAWTOOTH, NULL, NULL },
++  { "Triangular wave", 0, 0, repeat_type_callback, (gpointer) REPEAT_TRIANGULAR, NULL, NULL },
++  { NULL, 0, 0, NULL, NULL, NULL, NULL }
++};
++
+ 
+ static void
+ blend_scale_update (GtkAdjustment *adjustment,
+@@ -203,13 +226,10 @@
+ }
+ 
+ static void
+-repeat_toggle_update(GtkWidget *widget,
+-		     int       *value)
++repeat_type_callback(GtkWidget *widget,
++		     gpointer   client_data)
+ {
+-  if (GTK_TOGGLE_BUTTON(widget)->active)
+-    *value = TRUE;
+-  else
+-    *value = FALSE;
++  blend_options->repeat = (RepeatMode) client_data;
+ }
+ 
+ static BlendOptions *
+@@ -225,7 +245,8 @@
+   GtkWidget *pm_menu;
+   GtkWidget *gt_option_menu;
+   GtkWidget *gt_menu;
+-  GtkWidget *button;
++  GtkWidget *rt_option_menu;
++  GtkWidget *rt_menu;
+   GtkWidget *opacity_scale;
+   GtkWidget *table;
+   GtkWidget *offset_scale;
+@@ -239,7 +260,7 @@
+   options->blend_mode 	 = FG_BG_RGB_MODE;
+   options->paint_mode 	 = NORMAL;
+   options->gradient_type = Linear;
+-  options->repeat        = FALSE;
++  options->repeat        = REPEAT_NONE;
+ 
+   /*  the main vbox  */
+   vbox = gtk_vbox_new (FALSE, 5);
+@@ -257,7 +278,7 @@
+   gtk_widget_show(frame);
+ 
+   /*  the table  */
+-  table = gtk_table_new (5, 2, FALSE);
++  table = gtk_table_new (6, 2, FALSE);
+   gtk_container_border_width (GTK_CONTAINER (table), 5);
+   gtk_container_add(GTK_CONTAINER(frame), table);
+ 
+@@ -336,16 +357,22 @@
+   gtk_widget_show (label);
+   gtk_widget_show (gt_option_menu);
+ 
+-  gtk_widget_show (table);
+-
+   /* the repeat option */
+ 
+-  button = gtk_check_button_new_with_label("Repeat gradient");
+-  gtk_box_pack_start(GTK_BOX(vbox), button, TRUE, TRUE, 0);
+-  gtk_signal_connect(GTK_OBJECT(button), "toggled",
+-		     (GtkSignalFunc) repeat_toggle_update,
+-		     &options->repeat);
+-  gtk_widget_show(button);
++  label = gtk_label_new("Repeat:");
++  gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.5);
++  gtk_table_attach(GTK_TABLE(table), label, 0, 1, 5, 6,
++		   GTK_SHRINK | GTK_FILL, GTK_SHRINK, 0, 2);
++  rt_menu = build_menu(repeat_option_items, NULL);
++  rt_option_menu = gtk_option_menu_new();
++  gtk_table_attach(GTK_TABLE(table), rt_option_menu, 1, 2, 5, 6,
++		   GTK_EXPAND | GTK_SHRINK | GTK_FILL, GTK_SHRINK, 4, 2);
++  gtk_widget_show(label);
++  gtk_widget_show(rt_option_menu);
++  
++  /* show the whole table */
++
++  gtk_widget_show (table);
+ 
+   /*  Register this selection options widget with the main tools options dialog  */
+   tools_register_options (BLEND, vbox);
+@@ -354,6 +381,7 @@
+   gtk_option_menu_set_menu (GTK_OPTION_MENU (bm_option_menu), bm_menu);
+   gtk_option_menu_set_menu (GTK_OPTION_MENU (gt_option_menu), gt_menu);
+   gtk_option_menu_set_menu (GTK_OPTION_MENU (pm_option_menu), pm_menu);
++  gtk_option_menu_set_menu (GTK_OPTION_MENU (rt_option_menu), rt_menu);
+ 
+   return options;
+ }
+@@ -561,7 +589,7 @@
+        GradientType  gradient_type,
+        double        opacity,
+        double        offset,
+-       int           repeat,
++       RepeatMode    repeat,
+        double        startx,
+        double        starty,
+        double        endx,
+@@ -865,6 +893,36 @@
+   return value;
+ }
+ 
++static double
++gradient_repeat_none(double val)
++{
++  return BOUNDS(val, 0.0, 1.0);
++}
++
++static double
++gradient_repeat_sawtooth(double val)
++{
++  if (val >= 0.0)
++    return fmod(val, 1.0);
++  else
++    return 1.0 - fmod(-val, 1.0);
++}
++
++static double
++gradient_repeat_triangular(double val)
++{
++  int ival;
++
++  if (val < 0.0)
++    val = -val;
++
++  ival = (int) val;
++
++  if (ival & 1)
++    return 1.0 - fmod(val, 1.0);
++  else
++    return fmod(val, 1.0);
++}
+ 
+ /*****/
+ static void
+@@ -956,7 +1014,7 @@
+ 		      BlendMode     blend_mode,
+ 		      GradientType  gradient_type,
+ 		      double        offset,
+-		      int           repeat,
++		      RepeatMode    repeat,
+ 		      int           sx,
+ 		      int           sy,
+ 		      int           ex,
+@@ -973,6 +1031,7 @@
+   double         factor;
+   unsigned char *data;
+   void *         pr;
++  RepeatFunc     repeat_func;
+ 
+   /* Get foreground and background colors */
+   palette_get_foreground(&rf, &gf, &bf);
+@@ -1058,6 +1117,26 @@
+       break;
+     } /* switch */
+ 
++  /* Set repeat function */
++
++  switch (repeat)
++    {
++    case REPEAT_NONE:
++      repeat_func = gradient_repeat_none;
++      break;
++
++    case REPEAT_SAWTOOTH:
++      repeat_func = gradient_repeat_sawtooth;
++      break;
++
++    case REPEAT_TRIANGULAR:
++      repeat_func = gradient_repeat_triangular;
++      break;
++
++    default:
++      fatal_error("gradient_fill_region(): unknown repeat mode %d", (int) repeat);
++      break;
++    } /* switch */
+ 
+   /*  Cycle through the affected tiles and fill  */
+   for (pr = pixel_regions_register (1, PR); pr != NULL; pr = pixel_regions_process (pr))
+@@ -1116,10 +1195,7 @@
+ 
+ 	    /* Adjust for repeat */
+ 
+-	    if (repeat)
+-	      factor = fmod(factor, 1.0);
+-	    else
+-	      factor = BOUNDS(factor, 0.0, 1.0);
++	    factor = (*repeat_func)(factor);
+ 
+ 	    /* Blend the colors */
+ 
+@@ -1250,7 +1326,7 @@
+   },
+   { PDB_INT32,
+     "repeat",
+-    "Repeat the gradient indefinitely along the direction vector"
++    "Repeat mode: { NONE (0), REPEAT_SAWTOOTH (1), REPEAT_TRIANGULAR (2) }"
+   },
+   { PDB_FLOAT,
+     "x1",
+@@ -1303,7 +1379,7 @@
+   GradientType gradient_type;
+   double opacity;
+   double offset;
+-  int    repeat;
++  RepeatMode repeat;
+   double x1, y1;
+   double x2, y2;
+   int int_value;
+@@ -1387,7 +1463,13 @@
+   if (success)
+     {
+       int_value = args[7].value.pdb_int;
+-      repeat = (int_value ? TRUE : FALSE);
++      switch (int_value)
++	{
++	case 0: repeat = REPEAT_NONE; break;
++	case 1: repeat = REPEAT_SAWTOOTH; break;
++	case 2: repeat = REPEAT_TRIANGULAR; break;
++	default: success = FALSE;
++	}
+     }
+   /*  x1, y1, x2, y2  */
+   if (success)
+--- plug-ins/script-fu/script-fu.c~	Sun Apr 27 00:31:00 1997
++++ plug-ins/script-fu/script-fu.c	Mon Apr 28 12:58:19 1997
+@@ -493,6 +493,10 @@
+   setvar (cintern ("SHAPEBURST-SPHERICAL"), flocons (7), NIL);
+   setvar (cintern ("SHAPEBURST-DIMPLED"), flocons (8), NIL);
+ 
++  setvar (cintern ("REPEAT-NONE"), flocons(0), NIL);
++  setvar (cintern ("REPEAT-SAWTOOTH"), flocons(1), NIL);
++  setvar (cintern ("REPEAT-TRIANGULAR"), flocons(2), NIL);
++
+   setvar (cintern ("FG-BUCKET-FILL"), flocons (0), NIL);
+   setvar (cintern ("BG-BUCKET-FILL"), flocons (1), NIL);
+   setvar (cintern ("PATTERN-BUCKET-FILL"), flocons (2), NIL);
