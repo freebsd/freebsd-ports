@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Crypt/GeneratePassword/en.pm
+%%SITE_PERL%%/Crypt/GeneratePassword.pm
+%%SITE_PERL%%/Crypt/GeneratePassword/de.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GeneratePassword/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GeneratePassword
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Crypt/GeneratePassword
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true

@@ -1,0 +1,8 @@
+Crypt/GeneratePassword version 0.02
+===================================
+
+This module lets you generate secure random passwords
+with a reasonable amount of pronounceability. It avoids
+the problems associated with the FIPS-181 NIST standard
+as used by Crypt::RandPasswd. See perldoc for more
+details.
