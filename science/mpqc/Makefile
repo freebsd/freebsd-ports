@@ -18,7 +18,7 @@ DISTFILES+=	mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
-.if defined(USE_ICC)
+.if defined(WITH_ICC)
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 
@@ -28,7 +28,7 @@ USE_BISON=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=259
 
-.if defined(USE_ICC)
+.if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
 CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
 CFLAGS=		-O3 -tpp7 -xMKW -Vaxlib
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxxoptflags="${CXXFLAGS}" \
 		--with-f77optflags="${FFLAGS}" \
 		--with-include="-I${WRKDIR}"
-.if defined(USE_ICC)
+.if defined(WITH_ICC)
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif
 
