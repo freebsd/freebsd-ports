@@ -17,14 +17,18 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ( ${PERL_LEVEL} < 500600 )
+IGNORE=	"This port requires perl 5.006 or better"
+.endif
+
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
 CONFIGURE_ARGS=	--with-openssl
 .else
 CONFIGURE_ARGS=	--without-openssl
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} >= 500000 )
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
