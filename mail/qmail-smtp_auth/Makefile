@@ -29,10 +29,10 @@ PREFIX?=	${QMAIL_PORT_PREFIX}
 .include <bsd.port.pre.mk>
 .endif
 
-MAKE_ARGS+=	TLS=yes
+CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 
 .if defined(WITH_TLS_DEBUG)
-MAKE_ARGS+=	DEBUG=yes
+CFLAGS+=	-DDEBUG
 .endif # WITH_TLS_DEBUG
 
 #QMAIL_PORT=	${PORTSDIR}/mail/qmail
