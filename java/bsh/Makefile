@@ -16,14 +16,14 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java scripting environment
 
-PLIST_FILES=	share/java/classes/bsh.jar
-USE_JAVA=	1.1+
+PLIST_FILES=	%%JAVAJARDIR%%/bsh.jar bin/bsh
+USE_JAVA=	yes
 NO_BUILD=	yes
-
-JAVALIBDIR=	${PREFIX}/share/java/classes
+SUB_FILES=	bsh.sh
 
 do-install:
 	${MKDIR} ${JAVALIBDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVALIBDIR}/bsh.jar
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/bsh.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/bsh.sh ${PREFIX}/bin/bsh
 
 .include <bsd.port.mk>
