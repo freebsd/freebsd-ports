@@ -4270,6 +4270,7 @@ momspider	ports/www/momspider
 monacofonts	ports/ukrainian/monacofonts
 moneydance	ports/deskutils/moneydance
 monitord	ports/sysutils/monitord
+mono		ports/lang/mono
 monop		src/games/monop
 moonshine	ports/devel/moonshine
 mopac		ports/biology/mopac
