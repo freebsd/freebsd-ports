@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 MAINTAINER=	shipley@dis.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 MAN1=		firewalk.1
 
