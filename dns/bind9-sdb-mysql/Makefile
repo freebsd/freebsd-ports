@@ -27,17 +27,11 @@ COMMENT=	BIND DNS 9 server which supports a MySQL backend
 ISCVERSION=	9.2.2-P3
 
 USE_MYSQL=	YES
+USE_OPENSSL=	YES
 USE_REINPLACE=	YES
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --disable-threads \
-		--with-randomdev=/dev/random
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.endif
+		--with-randomdev=/dev/random --with-openssl=${OPENSSLBASE}
 
 .if defined(PORT_REPLACES_BASE_BIND9)
 PKGNAMESUFFIX=	-base
@@ -115,4 +109,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
