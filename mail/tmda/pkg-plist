@@ -101,6 +101,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/config-vars.html
 %%PORTDOCS%%%%DOCSDIR%%/config.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/donations.html
 %%PORTDOCS%%%%DOCSDIR%%/features.html
 %%PORTDOCS%%%%DOCSDIR%%/filter-sources.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
