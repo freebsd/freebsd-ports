@@ -7,7 +7,6 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	2
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -22,8 +21,8 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-SAMBA_VERSION=		2.2.7a
-SAMBA_JA_VERSION=	1.1
+SAMBA_VERSION=		2.2.7b
+SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -129,6 +128,9 @@ WINBIND=	""
 .if defined(WITH_WINBIND_AUTH_CHALLENGE)
 CONFIGURE_ARGS+=	--with-winbind-auth-challenge
 .endif
+
+# malloc.h check is not needed.
+CONFIGURE_ENV+=	ac_cv_header_malloc_h=no
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
