@@ -1,0 +1,12 @@
+--- config.h.in.orig	Fri Oct 24 18:43:20 2003
++++ config.h.in	Fri Oct 24 18:43:45 2003
+@@ -89,6 +89,9 @@
+ #undef QMAILNEWU
+ 
+ /*  */
++#undef SPAMC
++
++/*  */
+ #undef QMAILINJECT
+ 
+ /*  */
