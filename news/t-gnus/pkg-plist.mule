@@ -94,6 +94,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-picon.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-range.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-range.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-registry.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-registry.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-salt.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-salt.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/gnus-score.el
@@ -254,6 +256,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/sieve.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smime.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smime.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam-report.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam-report.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam-stat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam-stat.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam.el
@@ -262,6 +266,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/starttls.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/time-date.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/time-date.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/tls.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/tls.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/utf7.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/utf7.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/uudecode.el
