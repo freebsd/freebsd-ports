@@ -3,7 +3,7 @@
 # Date created:		19 April 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.12 1998/02/16 11:59:34 asami Exp $
+# $Id: Makefile,v 1.13 1998/05/05 20:37:57 chuckr Exp $
 #
 
 DISTNAME=	octave-2.0.12
@@ -19,6 +19,8 @@ CONFIGURE_ENV=	${SETENV} "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTA
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --enable-shared --host=i386-unknown-freebsd
 USE_GMAKE=	yes
 MAN1=		octave.1
+
+BROKEN=		"core dump problem on startup, working on it."
 
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
 
