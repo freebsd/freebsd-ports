@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.105 1998/11/18 23:15:04 billf Exp $
+# $Id: Makefile,v 1.106 1998/11/22 22:32:02 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -40,6 +40,7 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += mapedit
+    SUBDIR += marc-search
     SUBDIR += mhonarc
     SUBDIR += mmm
     SUBDIR += momspider
