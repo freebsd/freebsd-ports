@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.172 1998/12/23 18:52:50 steve Exp $
+# $Id: Makefile,v 1.173 1998/12/29 22:01:55 sada Exp $
 #
 
     SUBDIR += Canna
@@ -224,6 +224,7 @@
     SUBDIR += xemacs-wnn4
     SUBDIR += xemacs-wnn6
     SUBDIR += xfig
+    SUBDIR += xjman
     SUBDIR += xklock
     SUBDIR += xnetmaj
     SUBDIR += xshodo
