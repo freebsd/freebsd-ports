@@ -20,6 +20,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GL=		yes
+USE_MESA=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
