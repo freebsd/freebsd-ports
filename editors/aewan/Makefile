@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aewan
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aewan
@@ -18,8 +18,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-PLIST_FILES=	bin/ae2aes bin/aecat bin/aewan
+PLIST_FILES=	bin/aecat bin/aewan
 PORTDOCS=	README
+
+MAN1=		aecat.1 aewan.1
+MAN5=		aewan.5
 
 post-install:
 .if !defined(NOPORTDOCS)
