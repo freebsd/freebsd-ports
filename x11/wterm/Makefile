@@ -8,7 +8,8 @@
 PORTNAME=	wterm
 PORTVERSION= 	6.2.6
 CATEGORIES=	x11
-MASTER_SITES= 	http://wm.current.nu/files/
+MASTER_SITES= 	ftp://ftp.kddlabs.co.jp/.10/X11/acontrib/wterm/ \
+		ftp://ftp.riken.go.jp/pub/X11/acontrib/wterm/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
