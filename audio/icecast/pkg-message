@@ -1,0 +1,5 @@
+FYI, there a several useful programs included in the icecast distribution that
+are not installed as part of this port. These include two ways of sending
+data to the server, a program for listening to the server, and another for
+managing a listing of servers. These are located in the subdirectories
+icedir and iceplay under the working directory.
