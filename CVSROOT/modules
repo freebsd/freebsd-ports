@@ -259,6 +259,8 @@ aguri		ports/net-mgmt/aguri
 ah-tty		ports/sysutils/ah-tty
 ahwm		ports/x11-wm/ahwm
 aide		ports/security/aide
+aiksaurus	ports/textproc/aiksaurus
+aiksaurus-gtk	ports/textproc/aiksaurus-gtk
 aileron		ports/mail/aileron
 aim		ports/net/aim
 airoflash	ports/misc/airoflash
