@@ -1,0 +1,9 @@
+xyaku is a general dictionary/search engine front-end for X.
+
+xyaku invokes an add-in command by hitting a specified key
+combination, and sends the contents of X selection buffer into
+add-in's stdin, and receives the output from its stdout, then shows
+the result in a pop-up window.
+
+Author:	INOUE Seiichiro <inoue@ainet.or.jp>
+WWW:	http://www.ainet.or.jp/~inoue/software/xyaku/index-e.html
