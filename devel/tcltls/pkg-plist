@@ -1,7 +1,7 @@
-lib/tls1.3/pkgIndex.tcl
-lib/tls1.3/tls.tcl
-@dirrm lib/tls1.3
-lib/libtls%%TCL_VER%%.so.1
-lib/libtls%%TCL_VER%%.so
-share/doc/tls1.3/tls.htm
-@dirrm share/doc/tls1.3
+%%SCRIPTDIR%%/pkgIndex.tcl
+%%SCRIPTDIR%%/tls.tcl
+@dirrm %%SCRIPTDIR%%
+lib/%%SHLIB_NAME%%
+lib/%%SHLIB_LINK%%
+%%PORTDOCS%%share/doc/tls/tls.htm
+%%PORTDOCS%%@dirrm share/doc/tls
