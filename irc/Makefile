@@ -12,6 +12,7 @@
     SUBDIR += irssi
     SUBDIR += kvirc
     SUBDIR += muh
+    SUBDIR += nethirc
     SUBDIR += ninja
     SUBDIR += olirc
     SUBDIR += p5-IRC
