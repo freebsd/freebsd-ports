@@ -8,7 +8,7 @@
 PORTNAME=	flexbackup
 PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
+MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 
