@@ -1,29 +1,11 @@
---- Makefile.in.orig	Sat Apr 29 13:37:50 2000
-+++ Makefile.in	Sun Apr 30 01:38:54 2000
-@@ -11,7 +11,7 @@
- CC = @CC@
- CCOPT = 
- LIBPCAPDIR = @libpcapdir@
+--- Makefile.in.orig	Mon May  1 19:17:38 2000
++++ Makefile.in	Thu May  4 16:42:44 2000
+@@ -16 +16 @@
 -INCLS = -I. -I$(LIBPCAPDIR)
 +INCLS = -I. # -I$(LIBPCAPDIR)
- DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
- CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
- # CFLAGS = -g -Wall $(DEFS) $(INCLS)
-@@ -36,7 +36,7 @@
- 
- all: $(TARGET) nmapfe/nmapfe
- 
+@@ -41 +41 @@
 -$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
 +$(TARGET): $(DEPS) $(OBJS)
- 	@echo Compiling nmap
- 	rm -f $@
- 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
-@@ -129,7 +129,7 @@
- 	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
- 
- install: $(TARGET)
+@@ -144 +144 @@
 -	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir) $(deskdir)
 +	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)
- 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
- 	@echo "If the next command failes -- you cannot use the X front end"
- 	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop
