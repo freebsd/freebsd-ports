@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Mon Mar 18 06:46:26 2002
++++ Makefile.in	Sat Nov  2 14:32:07 2002
+@@ -95,7 +95,11 @@
+ @DEMOS_TRUE@DEMO = demo contrib
+ @DEMOS_FALSE@DEMO = 
+ 
+-SUBDIRS = cgicc doc support $(DEMO)
++ifndef NOPORTDOCS
++DOC = doc
++endif
++
++SUBDIRS = cgicc support $(DEMO) $(DOC)
+ 
+ CLEANFILES = *~
+ 
