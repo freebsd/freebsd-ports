@@ -1624,6 +1624,7 @@ freegrep	ports/textproc/freegrep
 freelibiberty	ports/devel/freelibiberty
 freenet6	ports/net/freenet6
 freeradius	ports/net/freeradius
+freesbie	ports/sysutils/freesbie
 freesci		ports/emulators/freesci
 freescope	ports/devel/freescope
 freesweep	ports/games/freesweep
