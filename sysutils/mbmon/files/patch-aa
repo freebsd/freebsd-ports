@@ -1,8 +1,8 @@
---- Makefile.in~	Mon Feb 11 00:43:27 2002
-+++ Makefile.in	Sun Feb 17 13:33:34 2002
-@@ -11,9 +11,9 @@
+--- Makefile.in.orig	Thu Aug 22 14:03:21 2002
++++ Makefile.in	Fri Nov 22 22:14:39 2002
+@@ -13,9 +13,9 @@
  
- DEFS=-DHAVE_CONFIG_H
+ DEFS=-DHAVE_CONFIG_H -Wall
  
 -LIBDIR=/usr/X11R6/lib
 +LIBDIR=$(X11BASE)/lib
@@ -12,7 +12,7 @@
  XLIB=-lXaw -lXmu
  EXTENSIONLIB=-lXext
  INCLUDES=-I$(INCDIR)
-@@ -21,9 +21,9 @@
+@@ -23,9 +23,9 @@
  LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
  
  #CC=/compat/linux/usr/bin/gcc
@@ -25,7 +25,7 @@
  LDFLAGS=-s
  
  LINT=lint
-@@ -32,16 +32,19 @@
+@@ -34,16 +34,22 @@
  RM=rm -f
  INSTALL=install
  
@@ -39,18 +39,21 @@
  .c.o:
  	$(CC) -c $(CFLAGS) $*.c
  
--PROGRAM = mbmon xmbmon testpci testsmb testhwm testfan
+-PROGRAM = mbmon xmbmon
+-
 +PROGRAM = mbmon
-+TESTER	= testpci testsmb testhwm testfan
-+DOCS=	00README.txt	00READMEj.txt	DEBUG_Info	xmbmon.resources
+ TESTPROG = testpci testsmb testhwm testfan
++DOCS=	00README.txt 00READMEj.txt 00READMEtech.txt
++.if !defined(WITHOUT_X11)
++DOCS+=	xmbmon.resources
 +PROGRAM+= xmbmon
++.endif
++  
++all: $(PROGRAM) $(TESTPROG)
  
--all: $(PROGRAM)
-+all: $(PROGRAM) $(TESTER)
- 
- mbmon: methods.h mbmon.c mbmon_small.c getMBinfo.o getMB-isa.o getMB-smb.o getMB-via.o pci_hwm.h pci_hwm.o smb_io.h smb_io.c
- 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ mbmon.c getMBinfo.o getMB-isa.o getMB-smb.o getMB-via.o pci_hwm.o
-@@ -68,8 +71,14 @@
+ MB_OBJ  = getMB-via.o getMB-smb.o getMB-isa.o
+ SMB_OBJ = smbus_piix4.o smbus_amd.o smbus_ali.o
+@@ -115,8 +121,14 @@
  	$(RM) Makefile config.cache config.log config.h config.status
  
  install: $(PROGRAM)
@@ -63,7 +66,7 @@
  lint:
  	$(LINT) $(INCLUDES) $(DEFS) $(FONTDEFINES) $(SRCS) -lm
 +
-+install-doc: $(DOCS)
++install-doc:
 +	@for f in $(DOCS); do \
 +		$(INSTALL_DATA) $$f $(DOCSDIR)/; \
 +	done
