@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=libs/X/fwf
 
 MAINTAINER=	jseger@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		../../lib/libfwf.a: cannot read symbols
 .endif
