@@ -22,4 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 
+post-install:
+	${MKDIR} ${PREFIX}/share/pose
+	${INSTALL_DATA} "${WRKSRC}/../ROMTransfer/Source/ROM Transfer.prc" ${PREFIX}/share/pose
+	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
+
 .include <bsd.port.mk>
