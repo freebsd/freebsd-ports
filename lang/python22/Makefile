@@ -32,9 +32,11 @@ MAN1=		python.1
 SETUP_FILE=	Setup
 
 #
-# Support for Tk is compiled in by default.
+# Support for Tk is compiled in by default only if X11 is installed.
 #
+.if exists(${X11_BASE})
 WITH_TK?=	yes
+.endif
 .if defined(WITH_TK) && $(WITH_TK) == yes
 TK_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 SETUP_LOCAL=	Setup.tk
@@ -104,6 +106,8 @@ pre-install:
 post-install:
 	strip ${PREFIX}/bin/python
 	@${MKDIR} ${PREFIX}/share/doc/python
+	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
+	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
 .if defined(WITH_TOOLS) && ${WITH_TOOLS} == yes
