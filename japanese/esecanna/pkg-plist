@@ -3,6 +3,7 @@ etc/rc.d/%%STARTER%%
 @exec mkdir -p %D/lib/esecanna
 @dirrm lib/esecanna
 sbin/esecannaserver
+share/doc/esecanna/CREDITS
 share/doc/esecanna/CHANGES.jp
 share/doc/esecanna/README.First.jp
 share/doc/esecanna/README.jp

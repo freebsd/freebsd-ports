@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esecanna
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 DIST_SUBDIR=	esecanna
 
 STARTER=	esecanna.sh
-DOCS=		CHANGES.jp README.First.jp README.jp
+DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
 
 PLIST_SUB=	STARTER="${STARTER}"
 
