@@ -1395,7 +1395,7 @@ fd		ports/misc/fd
 fdcontrol	src/usr.sbin/fdcontrol
 fdesc		src/sys/miscfs/fdesc
 fdformat	src/usr.sbin/fdformat
-fdisk		src/sbin/i386/fdisk
+fdisk		src/sbin/fdisk
 fdp-primer	doc/en_US.ISO8859-1/books/fdp-primer
 fdp-tools	ports/textproc/fdp-tools
 fdread		src/usr.sbin/fdread
