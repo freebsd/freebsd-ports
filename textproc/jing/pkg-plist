@@ -1,4 +1,230 @@
 share/java/classes/jing.jar
-%%DOCSDIR%%/copying.txt
 %%DOCSDIR%%/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/Datatype.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/DatatypeBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/DatatypeException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/DatatypeLibrary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/DatatypeLibraryFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/DatatypeStreamingValidator.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/ValidationContext.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/DatatypeLibraryLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/ParameterlessDatatypeBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/StreamingValidatorImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/package-list
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/datatype/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Equal.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Localizer.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/OptionParser.InvalidOptionException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/OptionParser.MissingArgumentException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/OptionParser.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/PropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/PropertyMap.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/PropertyMapBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Service.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/SinglePropertyMap.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Uri.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/UriOrFile.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Utf16.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/Version.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/util/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/AbstractSchema.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/Flag.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/FlagOption.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/FlagPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/IncorrectSchemaException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/Option.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/OptionArgumentException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/OptionArgumentFormatException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/OptionArgumentPresenceException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/Schema.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/SchemaReader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/SchemaReaderFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/SchemaReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/StringOption.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/StringPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/ValidateProperty.EntityResolverPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/ValidateProperty.ErrorHandlerPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/ValidateProperty.XMLReaderCreatorPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/ValidateProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/ValidationDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/Validator.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/AutoSchemaReader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/AutoSchemaReceiver.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/ReparseException.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/Rewindable.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/RewindableInputStream.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaFuture.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReaderFactorySchemaReceiverFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReaderLoaderSchemaReceiverFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReaderSchemaReceiver.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReceiver.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReceiverFactory.SchemaReceiverFactoryPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReceiverFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/SchemaReceiverLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl/NrlProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl/NrlSchemaReceiverFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/CompactSchemaReader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/RngProperty.DatatypeLibraryFactoryPropertyId.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/RngProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/SAXSchemaReader.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/SAXSchemaReceiverFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/SaxonSchemaReaderFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/SchematronProperty.PhaseOption.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/SchematronProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/SchematronSchemaReaderFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/XalanSchemaReaderFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/xerces/XsdSchemaReaderFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/xerces/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/xerces/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/xerces/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/AbstractLexicalHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/CountingErrorHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/DelegatingContentHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/DraconianErrorHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/ErrorHandlerImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/ForkContentHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/ForkDTDHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/Jaxp11XMLReaderCreator.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/Sax2XMLReaderCreator.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/XMLReaderCreator.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/XmlBaseHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/package-list
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/api/jing/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/jing-ant.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/jing-datatypes.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/jing-other.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/jing.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/nrl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/pluggable-datatypes.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/xerces.copying.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/exclude/basic-table.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/exclude/basic.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/exclude/form.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/applet.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/attribs.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/base.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/basic-form.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/basic-table.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/bdo.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/csismap.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/datatypes.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/edit.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/events.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/form.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/frames.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/hypertext.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/iframe.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/image.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/inlstyle.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/legacy.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/link.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/list.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/meta.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/nameident.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/object.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/param.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/pres.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/ruby.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/script.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/ssismap.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/struct.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/style.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/table.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/target.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/modules/text.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/xhtml-basic.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/xhtml-strict.rng
+%%PORTDOCS%%%%DOCSDIR%%/doc/xhtml/xhtml.rng
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/xhtml/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/xhtml/exclude
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/xhtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml/sax
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/xerces
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/schematron
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/rng
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/nrl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate/auto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/validate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource/util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com/thaiopensource
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing/com
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/jing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype/helpers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/datatype/org/relaxng/datatype
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/datatype/org/relaxng
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/datatype/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api/datatype
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/build.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/datatype-sample.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/datatype-sample.rng
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/invalid.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/META-INF/services/org.relaxng.datatype.DatatypeLibraryFactory
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/BalancedString.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/SimpleDatatypeLibrary.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/valid.xml
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF/services
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -6,31 +6,30 @@
 #
 
 PORTNAME=	jing
-PORTVERSION=	2003.01.31
+PORTVERSION=	2003.06.19
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.thaiopensource.com/relaxng/
-DISTNAME=	${PORTNAME}-bin
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://www.thaiopensource.com/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A RELAX NG validator in Java
 
-BROKEN=		"Distfiles not listed in distinfo"
-
-RUN_DEPENDS=	${JAVAJARDIR}/crimson.jar:${PORTSDIR}/textproc/crimson
-
 USE_ZIP=	yes
-USE_JAVA=	1.2+
+USE_JAVA=	1.4+
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 NO_BUILD_DEPENDS_JAVA=	yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/jing.jar ${JAVAJARDIR}
 
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/sample/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
