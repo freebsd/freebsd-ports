@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PySQLite
-PORTVERSION=	0.5.0
+PORTVERSION=	1.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
@@ -24,7 +24,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DOCS=		README
+PORTDOCS=	README
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
@@ -33,7 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
