@@ -7,6 +7,7 @@
 
 PORTNAME=	global
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
@@ -16,6 +17,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		htags.1 btreeop.1 gtags.1 global.1 gctags.1
+
+post-patch:
+	${PERL} -pi -e "s|\@PERL\@|${PERL}|g" ${WRKSRC}/htags/htags.in
 
 post-install:
 	install-info ${PREFIX}/info/global.info ${PREFIX}/info/dir
