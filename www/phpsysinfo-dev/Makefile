@@ -5,10 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpsysinfo
+DISTNAME=	phpsysinfo-${PORTVERSION}
+WRKSRC=		${WRKDIR}/phpsysinfo-dev
 
 MAINTAINER=	so14k@so14k.com
 COMMENT=	A php script that displays info about the host being accessed
