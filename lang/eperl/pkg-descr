@@ -1,17 +1,15 @@
-        ____           _ 
-    ___|  _ \ ___ _ __| |
-   / _ \ |_) / _ \ '__| |
-  |  __/  __/  __/ |  | |
-   \___|_|   \___|_|  |_|
-                         
-  ePerl -- Embedded Perl 5 Language
+      ____           _ 
+  ___|  _ \ ___ _ __| |
+ / _ \ |_) / _ \ '__| |
+|  __/  __/  __/ |  | |
+ \___|_|   \___|_|  |_|
+                       
+ePerl -- Embedded Perl 5 Language
 
-  ePerl interprets an ASCII file bristled with Perl 5 program statements by
-  evaluating the Perl 5 code while passing through the plain ASCII data. It
-  can operate in various ways: As a stand-alone Unix filter or integrated Perl
-  5 module for general file generation tasks and as a powerful Webserver
-  scripting language for dynamic HTML page programming. 
+ePerl interprets an ASCII file bristled with Perl 5 program statements by
+evaluating the Perl 5 code while passing through the plain ASCII data. It
+can operate in various ways: As a stand-alone Unix filter or integrated Perl
+5 module for general file generation tasks and as a powerful Webserver
+scripting language for dynamic HTML page programming. 
 
-  The documentation and latest release can be found on the website.
-
-WWW: http://www.engelschall.com/sw/eperl/
+WWW: http://www.ossp.org/pkg/tool/eperl/
