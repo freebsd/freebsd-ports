@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.4
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -26,8 +26,10 @@ MYADMDIR?=	www/data/phpMyAdmin
 
 .if defined(WITH_PHP3)
 PHP_SUFX=	php3
+EXTRA_PATCHES=	files/fix-libraries::display_tbl.lib.php3 files/fix-tbl_relation.php3
 .else
 PHP_SUFX=	php
+EXTRA_PATCHES=	files/fix-libraries::display_tbl.lib.php files/fix-tbl_relation.php
 .endif
 
 PLIST_SUB+=	MYADMDIR=${MYADMDIR} PHP_SUFX=${PHP_SUFX}
@@ -39,6 +41,7 @@ PLIST_SUB+=	MYADMDIR=${MYADMDIR} PHP_SUFX=${PHP_SUFX}
 
 post-patch:
 	@${MV} ${WRKSRC}/config.inc.${PHP_SUFX} ${WRKSRC}/config.inc.${PHP_SUFX}.sample
+	@${RM} ${WRKSRC}/*.orig ${WRKSRC}/libraries/*.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/${MYADMDIR}

@@ -6,9 +6,10 @@
 %%MYADMDIR%%/INSTALL
 %%MYADMDIR%%/LICENSE
 %%MYADMDIR%%/README
-%%MYADMDIR%%/RELEASE-DATE-2.5.2
+%%MYADMDIR%%/RELEASE-DATE-2.5.4
 %%MYADMDIR%%/TODO
 %%MYADMDIR%%/badwords.txt
+%%MYADMDIR%%/browse_foreigners.%%PHP_SUFX%%
 %%MYADMDIR%%/chk_rel.%%PHP_SUFX%%
 %%MYADMDIR%%/config.inc.%%PHP_SUFX%%.sample
 %%MYADMDIR%%/css/phpmyadmin.css.%%PHP_SUFX%%
@@ -24,7 +25,6 @@
 %%MYADMDIR%%/db_details_structure.%%PHP_SUFX%%
 %%MYADMDIR%%/db_printview.%%PHP_SUFX%%
 %%MYADMDIR%%/db_search.%%PHP_SUFX%%
-%%MYADMDIR%%/docSQL/README
 %%MYADMDIR%%/docs.css
 %%MYADMDIR%%/export.%%PHP_SUFX%%
 %%MYADMDIR%%/footer.inc.%%PHP_SUFX%%
@@ -34,6 +34,26 @@
 %%MYADMDIR%%/images/arrow_rtl.gif
 %%MYADMDIR%%/images/asc_order.png
 %%MYADMDIR%%/images/browse.png
+%%MYADMDIR%%/images/button_browse.png
+%%MYADMDIR%%/images/button_drop.png
+%%MYADMDIR%%/images/button_edit.png
+%%MYADMDIR%%/images/button_empty.png
+%%MYADMDIR%%/images/button_fulltext.png
+%%MYADMDIR%%/images/button_index.png
+%%MYADMDIR%%/images/button_insert.png
+%%MYADMDIR%%/images/button_nobrowse.png
+%%MYADMDIR%%/images/button_nodrop.png
+%%MYADMDIR%%/images/button_noempty.png
+%%MYADMDIR%%/images/button_nofulltext.png
+%%MYADMDIR%%/images/button_noindex.png
+%%MYADMDIR%%/images/button_noprimary.png
+%%MYADMDIR%%/images/button_noselect.png
+%%MYADMDIR%%/images/button_nounique.png
+%%MYADMDIR%%/images/button_primary.png
+%%MYADMDIR%%/images/button_properties.png
+%%MYADMDIR%%/images/button_select.png
+%%MYADMDIR%%/images/button_smallbrowse.png
+%%MYADMDIR%%/images/button_unique.png
 %%MYADMDIR%%/images/desc_order.png
 %%MYADMDIR%%/images/fulltext.png
 %%MYADMDIR%%/images/item_ltr.png
@@ -53,6 +73,10 @@
 %%MYADMDIR%%/lang/albanian-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/arabic-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/arabic-windows-1256.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/azerbaijani-iso-8859-9.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/azerbaijani-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/bosnian-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/bosnian-windows-1250.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/brazilian_portuguese-iso-8859-1.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/brazilian_portuguese-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/bulgarian-koi8-r.inc.%%PHP_SUFX%%
@@ -110,6 +134,8 @@
 %%MYADMDIR%%/lang/malay-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/norwegian-iso-8859-1.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/norwegian-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/persian-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/persian-windows-1256.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/polish-iso-8859-2.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/polish-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/portuguese-iso-8859-1.inc.%%PHP_SUFX%%
@@ -121,8 +147,10 @@
 %%MYADMDIR%%/lang/russian-koi8-r.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/russian-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/russian-windows-1251.inc.%%PHP_SUFX%%
-%%MYADMDIR%%/lang/serbian-utf-8.inc.%%PHP_SUFX%%
-%%MYADMDIR%%/lang/serbian-windows-1250.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/serbian_cyrillic-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/serbian_cyrillic-windows-1251.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/serbian_latin-utf-8.inc.%%PHP_SUFX%%
+%%MYADMDIR%%/lang/serbian_latin-windows-1250.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/slovak-iso-8859-2.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/slovak-utf-8.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/lang/slovak-windows-1250.inc.%%PHP_SUFX%%
@@ -161,6 +189,7 @@
 %%MYADMDIR%%/libraries/defines_php.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/display_export.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/display_tbl.lib.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/display_tbl_links.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/dom-drag.js
 %%MYADMDIR%%/libraries/export/csv.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/export/latex.%%PHP_SUFX%%
@@ -242,6 +271,7 @@
 %%MYADMDIR%%/scripts/inno2pma.sh
 %%MYADMDIR%%/scripts/remove_control_m.sh
 %%MYADMDIR%%/scripts/updatedocs.sh
+%%MYADMDIR%%/server_collations.%%PHP_SUFX%%
 %%MYADMDIR%%/server_common.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/server_databases.%%PHP_SUFX%%
 %%MYADMDIR%%/server_export.%%PHP_SUFX%%
@@ -271,6 +301,7 @@
 %%MYADMDIR%%/tbl_rename.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_replace.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_replace_fields.%%PHP_SUFX%%
+%%MYADMDIR%%/tbl_row_delete.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_select.%%PHP_SUFX%%
 %%MYADMDIR%%/transformation_wrapper.%%PHP_SUFX%%
 %%MYADMDIR%%/translators.html
@@ -285,6 +316,5 @@
 @dirrm %%MYADMDIR%%/libraries
 @dirrm %%MYADMDIR%%/lang
 @dirrm %%MYADMDIR%%/images
-@dirrm %%MYADMDIR%%/docSQL
 @dirrm %%MYADMDIR%%/css
 @dirrm %%MYADMDIR%%
