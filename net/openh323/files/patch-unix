@@ -1,7 +1,7 @@
-*** ../pwlib/make/unix.mak.orig	Tue May  7 02:57:51 2002
---- ../pwlib/make/unix.mak	Wed May 22 00:53:00 2002
+*** ../pwlib/make/unix.mak.orig	Fri Nov 22 10:59:27 2002
+--- ../pwlib/make/unix.mak	Tue Jan 28 13:51:15 2003
 *************** ifeq ($(OSTYPE),FreeBSD)
-*** 644,654 ****
+*** 770,780 ****
   
   P_PTHREADS	:= 1
   
@@ -13,7 +13,7 @@
   
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
---- 644,654 ----
+--- 770,780 ----
   
   P_PTHREADS	:= 1
   
@@ -25,8 +25,22 @@
   
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+*************** SHELL		:= /bin/sh
+*** 1335,1345 ****
+  
+  # Directories
+  
+- ifdef PREFIX
+- UNIX_INC_DIR	= $(PREFIX)/include/ptlib/unix
+- else
+  UNIX_INC_DIR	= $(PWLIBDIR)/include/ptlib/unix
+- endif
+  
+  ifndef UNIX_SRC_DIR
+  UNIX_SRC_DIR	= $(PWLIBDIR)/src/ptlib/unix
+--- 1335,1341 ----
 *************** LDFLAGS		+= $(DEBLDFLAGS)
-*** 1136,1142 ****
+*** 1375,1381 ****
   
   else
   
@@ -34,7 +48,7 @@
   #OPTCCFLAGS	+= -DP_USE_INLINES=1
   #OPTCCFLAGS	+= -fconserve-space
   ifneq ($(OSTYPE),Carbon)
---- 1136,1143 ----
+--- 1371,1378 ----
   
   else
   
