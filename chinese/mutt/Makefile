@@ -9,12 +9,12 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20020504
+REVISEDATE=	20020617
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-PATCH_SITES=	http://www.cirx.org/~clive/dist/mutt13/ \
-		ftp://freebsd.sinica.edu.tw/pub/clive/mutt13/
+PATCH_SITES=	http://www.cirx.org/~clive/dist/mutt15/ \
+		ftp://freebsd.sinica.edu.tw/pub/clive/mutt15/
 PATCHFILES=	${PKGNAMEPREFIX}mutt-${PORTVERSION}-${REVISEDATE}.diff.gz
 PATCH_DIST_ARGS=	-d ${WRKDIR} --quiet
 
