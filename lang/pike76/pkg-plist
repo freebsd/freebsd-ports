@@ -292,7 +292,6 @@ pike/%%PORTVERSION%%/lib/7.2/modules/LR.pmod/item.pike
 pike/%%PORTVERSION%%/lib/7.2/modules/LR.pmod/lr.pike
 pike/%%PORTVERSION%%/lib/7.2/modules/LR.pmod/parser.pike
 pike/%%PORTVERSION%%/lib/7.2/modules/LR.pmod/Grammar_parser.pmod
-pike/%%PORTVERSION%%/lib/7.2/modules/Thread.pmod.o
 pike/%%PORTVERSION%%/lib/7.2/modules/Thread.pmod
 pike/%%PORTVERSION%%/lib/7.2/modules/String.pmod.o
 pike/%%PORTVERSION%%/lib/7.2/modules/String.pmod
