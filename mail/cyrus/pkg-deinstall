@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+# Created by: hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+checkfile() {
+        diff -bBqw $1 $1.dist >/dev/null 2>&1
+        case $? in
+                0)      # config file exists, but is the same
+			rm $1
+                        ;;
+                1)      # config file exists and differs
+                        ;;
+                *)      # no config file exists
+                        ;;
+        esac
+}
+
+# Uninstall timseived's Cyrus.conf file.
+
+cyrus_conf() {
+	if [ -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf ]; then
+		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp
+		if cmp -s ${PKG_PREFIX}/lib/sasl/Cyrus.conf ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp; then
+			rm -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf
+		fi
+		rm -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp
+	fi
+}
+
+case $2 in
+	DEINSTALL)
+		cd ${PKG_PREFIX}
+		cyrus_conf
+		checkfile ${PKG_PREIFX}/etc/imapd.conf
+		;;
+	POST-DEINSTALL)
+		;;
+
+esac

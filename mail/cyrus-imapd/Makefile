@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	cyrus
-PORTVERSION= 	1.6.22
+PORTVERSION= 	1.6.24
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		${MASTER_SITE_LOCAL} \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-MASTER_SITE_SUBDIR=	stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail
 DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
-MAINTAINER=	stb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
@@ -76,7 +74,6 @@ post-install:
 			${PREFIX}/etc/imap/proc \
 			${PREFIX}/etc/imap/log \
 			${PREFIX}/etc/imap/msg
-		${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
 		${TOUCH} ${PREFIX}/etc/imap/mailboxes
 		${CHMOD} 640 ${PREFIX}/etc/imap/mailboxes
 		chown cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
@@ -89,18 +86,11 @@ post-install:
 		@${ECHO} "@exec chown -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@exec chmod -R g-w,o= %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@mode u=rwx,go=" >>${TMPPLIST}
-		@${ECHO} "@exec mkdir /var/pwcheck" >>${TMPPLIST}
-		@${ECHO} "@exec chown cyrus:cyrus /var/pwcheck" >>${TMPPLIST}
-		@${ECHO} "@exec chmod go= /var/pwcheck" >>${TMPPLIST}
 		@${ECHO} "@exec mkdir /var/spool/imap" >>${TMPPLIST}
 		@${ECHO} "@exec chown cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
 		@${ECHO} "@exec chmod g-w,o= /var/spool/imap" >>${TMPPLIST}
 		@${ECHO} "@cwd /var" >>${TMPPLIST}
-		@${ECHO} "@dirrm pwcheck" >>${TMPPLIST}
 		@${ECHO} "@dirrm spool/imap" >>${TMPPLIST}
-		@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/cyrus.sh \
-			>${PREFIX}/etc/rc.d/cyrus.sh
-		@${CHMOD} 0755 ${PREFIX}/etc/rc.d/cyrus.sh
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

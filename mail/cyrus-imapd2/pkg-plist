@@ -14,7 +14,6 @@ cyrus/bin/deliver
 cyrus/bin/feedcyrus
 cyrus/bin/timsieved
 cyrus/bin/cyrquota
-etc/rc.d/cyrus.sh
 etc/imapd.conf.dist
 etc/inetd.conf.cyrus
 etc/imap/mailboxes
