@@ -1,6 +1,6 @@
---- pfflowd.c   Wed Feb 25 16:16:35 2004
-+++ pfflowd.c   Wed Feb 25 16:22:57 2004
-@@ -49,7 +49,11 @@
+--- pfflowd.c	Thu May  6 16:06:45 2004
++++ pfflowd.c	Tue Jun 15 09:40:46 2004
+@@ -43,7 +43,11 @@
  #include <syslog.h>
  #include <time.h>
  #include <unistd.h>
@@ -11,8 +11,8 @@
 +#endif
  
  #define	PROGNAME		"pfflowd"
- #define	PROGVER			"0.3"
-@@ -185,6 +189,9 @@
+ #define	PROGVER			"0.5"
+@@ -189,6 +193,9 @@
  parse_hostport(const char *s, struct sockaddr_in *addr)
  {
  	char *host, *port;
@@ -22,7 +22,7 @@
  
  	if ((host = strdup(s)) == NULL) {
  		fprintf(stderr, "Out of memory\n");
-@@ -197,12 +204,22 @@
+@@ -201,12 +208,22 @@
  	}
  	*(port - 1) = '\0';
  	addr->sin_family = AF_INET;
@@ -45,3 +45,13 @@
  	addr->sin_port = htons(addr->sin_port);
  	if (inet_aton(host, &addr->sin_addr) == 0) {
  		fprintf(stderr, "Invalid -n host.\n");
+@@ -425,7 +442,9 @@
+ 				strlcat(dst_s, pbuf, sizeof(dst_s));
+ 			}
+ 
++#ifndef OLD_PFSYNC
+ 			syslog(LOG_DEBUG, "IFACE %s\n", st->ifname); 
++#endif
+ 			syslog(LOG_DEBUG, "GWY %s\n", rt_s); 
+ 			syslog(LOG_DEBUG, "FLOW proto %d direction %d", 
+ 			    st->proto, st->direction);
