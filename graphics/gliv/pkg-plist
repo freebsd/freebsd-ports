@@ -8,6 +8,7 @@ share/locale/pt_BR/LC_MESSAGES/gliv.mo
 share/locale/ro/LC_MESSAGES/gliv.mo
 share/locale/ru/LC_MESSAGES/gliv.mo
 share/locale/sk/LC_MESSAGES/gliv.mo
+share/locale/tr/LC_MESSAGES/gliv.mo
 @unexec rmdir %D/man/ru/man1 2>/dev/null || true
 @unexec rmdir %D/man/ru 2>/dev/null || true
 @unexec rmdir %D/man/fr/man1 2>/dev/null || true
