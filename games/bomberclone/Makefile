@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
 
-BUILD_DEPENDS=	${BZIP2_CMD}:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
@@ -27,14 +26,5 @@ CONFIGURE_ARGS=	--target=""
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
-
-post-extract:
-	${RM} -rf ${WRKSRC}/data/tileset/cemetery/.xvpics
-	${RM} -rf ${WRKSRC}/data/tileset/hell/.xvpics
-	${CHMOD} 755 ${WRKSRC}/data/tileset/cemetery
-	${CHMOD} 755 ${WRKSRC}/data/tileset/farm
-	${CHMOD} 755 ${WRKSRC}/data/tileset/hell
-	${CHMOD} 755 ${WRKSRC}/data/tileset/sheep
-	${CHMOD} 755 ${WRKSRC}/data/tileset/supermario
 
 .include <bsd.port.mk>
