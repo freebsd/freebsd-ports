@@ -24,6 +24,7 @@ lib/libxml.a
 lib/libxml.so
 lib/libxml.so.5
 share/gnome-xml/DOM.gif
+share/gnome-xml/FAQ.html
 share/gnome-xml/book1.html
 share/gnome-xml/gnome-xml-debugxml.html
 share/gnome-xml/gnome-xml-encoding.html
@@ -37,6 +38,7 @@ share/gnome-xml/gnome-xml-parser.html
 share/gnome-xml/gnome-xml-parserinternals.html
 share/gnome-xml/gnome-xml-sax.html
 share/gnome-xml/gnome-xml-tree.html
+share/gnome-xml/gnome-xml-uri.html
 share/gnome-xml/gnome-xml-valid.html
 share/gnome-xml/gnome-xml-xml-error.html
 share/gnome-xml/gnome-xml-xmlio.html
