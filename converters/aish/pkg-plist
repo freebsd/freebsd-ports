@@ -1,4 +1,5 @@
 bin/aish
 bin/aishmv
 bin/ishcat
-bin/autodecode
+share/doc/ja/aish/aish.txt
+@dirrm share/doc/ja/aish
