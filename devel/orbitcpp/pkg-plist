@@ -34,10 +34,10 @@ include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_out.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_var.h
 lib/libORBit-2-cpp.a
 lib/libORBit-2-cpp.so
-lib/libORBit-2-cpp.so.7
+lib/libORBit-2-cpp.so.8
 lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.a
 lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.so
-lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.so.7
+lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.so.8
 libdata/pkgconfig/ORBit-2.0-cpp.pc
 @dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers
 @dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp
