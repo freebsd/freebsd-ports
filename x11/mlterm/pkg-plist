@@ -15,36 +15,29 @@ etc/mlterm/vaafont
 etc/mlterm/vfont
 etc/mlterm/xim
 lib/libkik.a
-lib/libkik.la
 lib/libkik.so
-lib/libkik.so.9
+lib/libkik.so.10
 lib/libmkf.a
-lib/libmkf.la
 lib/libmkf.so
 lib/libmkf.so.13
-lib/mlterm/libathena.a
-lib/mlterm/libathena.la
 lib/mlterm/libathena.so
-lib/mlterm/libmotif.a
-lib/mlterm/libmotif.la
+%%IIIMF%%lib/mlterm/libim-iiimf.so
+lib/mlterm/libim-kbd.so
+%%M17NLIB%%lib/mlterm/libim-m17nlib.so
+%%UIM%%lib/mlterm/libim-uim.so
 lib/mlterm/libmotif.so
-lib/mlterm/libmozmodern.a
-lib/mlterm/libmozmodern.la
 lib/mlterm/libmozmodern.so
-lib/mlterm/libnext.a
-lib/mlterm/libnext.la
 lib/mlterm/libnext.so
-lib/mlterm/libsample.a
-lib/mlterm/libsample.la
 lib/mlterm/libsample.so
-lib/mlterm/libsample2.a
-lib/mlterm/libsample2.la
 lib/mlterm/libsample2.so
 libexec/mlconfig
 libexec/mlterm-menu
 libexec/w3mmlconfig/mlconfig-data.pl
 libexec/w3mmlconfig/mlconfig.cgi
 %%PORTDOCS%%share/doc/ja/mlterm/README.ja
+share/locale/de/LC_MESSAGES/mlconfig.mo
+share/locale/ja/LC_MESSAGES/mlconfig.mo
+share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
 @dirrm etc/mlterm
 @dirrm lib/mlterm
 @dirrm libexec/w3mmlconfig
