@@ -27,6 +27,7 @@ NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 RPM_MIRRORS=		\
 	ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/ \
@@ -201,8 +202,3 @@ post-install:
 	@${ECHO} ''
 
 .include <bsd.port.post.mk>
-
-# XXX - bsd.port.mk defines MD5_FILE unconditionally. Redefine it
-# here so that we pick up the right md5 file. If bsd.port.mk is
-# ever changed, move this to where PLIST is defined.
-MD5_FILE=		${FILESDIR}/md5.${MACHINE_ARCH}
