@@ -14,5 +14,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/var.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event/Event.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event/Event.so
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event 2>/dev/null || true

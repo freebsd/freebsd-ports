@@ -1,4 +1,9 @@
 Event - A Generic Perl Event Loop
 
-This extension aims to provide an simple and optimized event loop for
-a broad class of applications.
+This extension aims to provide a simple and optimized event loop for a
+broad class of applications.
+
+WWW: http://search.cpan.org/search?dist=Event
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
