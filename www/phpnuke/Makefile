@@ -15,18 +15,11 @@ DISTNAME=	PHP-Nuke-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/apache2/apr.h)
-APACHE_LIBPHP=	${LOCALBASE}/libexec/apache2
-.else
-APACHE_LIBPHP=	${LOCALBASE}/libexec/apache
-.endif
-
 .if defined(WITH_PHP3)
-RUN_DEPENDS+=	${APACHE_LIBPHP}/libphp3.so:${PORTSDIR}/www/mod_php3
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 .else
-RUN_DEPENDS+=	${APACHE_LIBPHP}/libphp4.so:${PORTSDIR}/www/mod_php4
+USE_PHP=	yes
+WANT_PHP_WEB=	yes
 .endif
 
 USE_MYSQL=	yes
@@ -56,6 +49,6 @@ do-install:
 post-install:
 	@cd ${PREFIX}; ${FIND} ${PHPNUKEWWW:S/^${PREFIX}\///} -type f -o -type l | \
 		${SED} -e 's,^\.,${PHPNUKEWWW:S|${PREFIX}/||},' >>${TMPPLIST}
-	@cd ${PREFIX}; ${FIND} ${PHPNUKEWWW:S/^${PREFIX}\///} -type d | sort -r | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
+	@cd ${PREFIX}; ${FIND} ${PHPNUKEWWW:S/^${PREFIX}\///} -type d | ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
