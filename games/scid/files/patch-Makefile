@@ -1,0 +1,60 @@
+--- Makefile.orig	Fri Feb 22 11:39:00 2002
++++ Makefile	Mon Mar  4 23:02:42 2002
+@@ -8,11 +8,11 @@
+ 
+ # BINDIR: where the Scid programs are copied for "make install".
+ #
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ 
+ # SHAREDIR: where scid.eco and spelling.ssp are copied for "make install".
+ #
+-SHAREDIR = /usr/local/share/scid
++SHAREDIR = ${PREFIX}/share/scid
+ 
+ ### TCL_VERSION: Set this according to the version of Tcl/Tk you have
+ #   installed that you want Scid to use: 8.0, 8.1, 8.2, 8.3, etc.
+@@ -26,9 +26,9 @@
+ #
+ # You have not run "./configure" yet.  The default settings are:
+ #
+-TCL_INCLUDE = -I/usr/include
+-TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
+-TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/X11R6/lib -lX11
++#TCL_INCLUDE = -I/usr/include
++#TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
++#TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/X11R6/lib -lX11
+ 
+ ### Here are other commonly used settings for the Tcl/Tk compiler options:
+ 
+@@ -50,9 +50,9 @@
+ 
+ # Someone sent me these settings for FreeBSD with Tcl/Tk 8.0:
+ ### FreeBSD:
+-# TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
+-# TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
+-# TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
++TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -I${X11BASE}/include
++TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl83
++TK_LIBRARY  = $(TCL_LIBRARY) -ltk83 -L${X11BASE}/lib -lX11
+ 
+ 
+ ########################################
+@@ -79,7 +79,7 @@
+ #      On some systems, adding "-fno-rtti" and "-fno-exceptions" produces
+ #      smaller, faster programs since Scid does not use those C++ features.
+ #
+-OPTIMIZE = -O4 -fno-rtti -fno-exceptions
++OPTIMIZE = ${CXXFLAGS} -fno-rtti -fno-exceptions
+ 
+ ### DEBUG: Defining the macro ASSERTIONS will turn on assertions, which
+ #       helps to track bugs after modifications, but the programs will run 
+@@ -110,7 +110,7 @@
+ #       can reduce the size of the Scid program by only specifying
+ #       the languages you want supported.
+ #
+-LANGUAGES = tcl/deutsch.tcl tcl/francais.tcl tcl/italian.tcl tcl/nederlan.tcl tcl/spanish.tcl tcl/portbr.tcl tcl/swedish.tcl tcl/norsk.tcl tcl/polish.tcl tcl/czech.tcl tcl/serbian.tcl
++LANGUAGES = 
+ 
+ 
+ ############################################################

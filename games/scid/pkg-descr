@@ -1,0 +1,18 @@
+Scid is a chess database application; with it you can browse databases of
+chess games, edit games and search for games by various criteria.
+
+Scid uses its own special three-file database format which is very compact
+and fast, but it can convert to and from the standard PGN (Portable Game
+Notation) format. Scids PGN window displays the text of the current game in
+PGN format.
+
+You can use Scid to add chess games to a database, using the keyboard or mouse
+to enter moves.
+
+You can also use Scid as a PGN file browser, by pasting PGN text into Scids
+Import window or by opening a PGN file in Scid. However, PGN files cannot be
+edited by Scid (it opens them read-only) and they use more memory and are
+slower to load, so for large PGN files it is recommended that you create a
+Scid database from them first with the pgnscid utility.
+
+WWW: http://scid.sourceforge.net/
