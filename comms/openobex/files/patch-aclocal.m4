@@ -1,6 +1,6 @@
---- aclocal.m4.orig	Mon Mar 22 16:19:39 2004
-+++ aclocal.m4	Mon Mar 22 16:22:51 2004
-@@ -67,6 +67,35 @@
+--- aclocal.m4.orig	Wed Jun 16 19:59:04 2004
++++ aclocal.m4	Wed Jun 16 20:26:17 2004
+@@ -67,6 +67,36 @@
  	BLUETOOTH_HOOK([],failure)
  ])
  
@@ -9,7 +9,8 @@
 +AC_DEFUN([FREEBSD_BLUETOOTH_HOOK],[
 +	AC_MSG_CHECKING([for the FreeBSD/netgraph bluetooth support])
 +	echo
-+	AC_CACHE_CHECK(for the struct sockaddr_rfcomm in <netgraph/.../ng_btsocket.h>, ac_cv_have_sockaddr_rfcomm,
++	AC_CHECK_LIB(bluetooth, bt_aton,
++	[AC_CACHE_CHECK(for the struct sockaddr_rfcomm in <netgraph/.../ng_btsocket.h>, ac_cv_have_sockaddr_rfcomm,
 +	[AC_TRY_COMPILE([#include <sys/types.h>
 +			#include <sys/socket.h>
 +			#include <bitstring.h>
@@ -24,10 +25,10 @@
 +		AC_DEFINE(HAVE_BLUETOOTH)
 +		AC_DEFINE(HAVE_BLUETOOTH_NETGRAPH,1,[Compile on FreeBSD])
 +		USE_BLUETOOTH="yes"
-+		AC_CHECK_LIB(bluetooth, bt_aton,
-+		    [LIBS="$LIBS -lbluetooth" AC_DEFINE(HAVE_BT_ATON,1,[Define to 1 if you have the \`bt_aton' function.])])
++		LIBS="$LIBS -lbluetooth"
++		AC_DEFINE(HAVE_BT_ATON,1,[Define to 1 if you have the \`bt_aton' function.])
 +	fi
-+])
++])])
 +
 +AC_DEFUN([FREEBSD_BLUETOOTH_CHECK], [
 +	FREEBSD_BLUETOOTH_HOOK([],failure)
