@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2000.08.21
+PORTVERSION=	2000.10.02
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -18,7 +18,7 @@ MAINTAINER=	pfeifer@dbai.tuwien.ac.at
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-opengl
-CONFIGURE_ENV= LIBS=-Wl,-rpath,${PREFIX}/lib/wine
+CONFIGURE_ENV=	LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 MAN1=		wine.1
@@ -89,7 +89,8 @@ do-install:
 		${WRKSRC}/programs/regapi/regRestorer.pl \
 		${PREFIX}/lib/wine/reg
 	${INSTALL_DATA} ${FILESDIR}/README.patch \
-		${FILESDIR}/install-patch-3.3-sys-sigtrap \
+		${PREFIX}/lib/wine
+	${INSTALL_DATA} ${FILESDIR}/install-patch-3.3-sys-sigtrap \
 		${PREFIX}/lib/wine/patch-3.3-sys-sigtrap
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
