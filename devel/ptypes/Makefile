@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ptypes
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,11 +28,11 @@ do-install:
 		${PREFIX}/lib
 	cd ${PREFIX}/lib; ${LN} -s libptypes.so.${SHLIB_VER} libptypes.so
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}/wshare
 	-${RM} -f ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
 	${INSTALL_DATA} ${WRKSRC}/wshare/*.* ${EXAMPLESDIR}/wshare
 	${INSTALL_PROGRAM} ${WRKSRC}/wshare/wshare ${EXAMPLESDIR}/wshare
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/doc
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/index.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/doc
