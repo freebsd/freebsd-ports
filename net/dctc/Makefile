@@ -20,7 +20,7 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
@@ -61,16 +61,20 @@ post-extract:
 
 post-patch:
 .for file in ${DOC_FILES}
-	@${PERL} -pi -e 's|(hublist)|dc_\1|' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -E -e 's|(hublist)|dc_\1|' ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e 's/(CK?\()inet_ntoa(\))/\1shared_info\2/' ${WRKSRC}/src/*
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${PERL} -pi -e \
+	@${REINPLACE_CMD} -E -e \
+		's/(LOCK.*)\(inet_ntoa\)/\1(inet_lock_ntoa)/' \
+		${WRKSRC}/src/*
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 \
+		${REINPLACE_CMD} -E -e \
 		's|<(db.h>)|<db4/\1|'
-	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
+	@${REINPLACE_CMD} -E -e 's|(db)-|\1|g;s|db4\.0|db4|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's|/usr/bin/env perl|${PERL}|' \
+	@${REINPLACE_CMD} -E -e 's|/usr/bin/env perl|${PERL}|' \
 		${WRKSRC}/GDLjoiner
-	@${REINPLACE_CMD} -E -e 's|^(dctc_SOURCES.+)$$|\1 lp_mutex.c|; \
+	@${REINPLACE_CMD} -E -e \
+		's|^(dctc_SOURCES.+)$$|\1 lp_mutex.c|; \
 		s|^(dctc_OBJECTS[^\\]+)(\\*)$$|\1 lp_mutex.o \2|' \
 		${WRKSRC}/src/Makefile.in
 
