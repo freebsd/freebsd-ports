@@ -10355,6 +10355,7 @@ ucblogo		ports/lang/logo
 ucl		ports/archivers/ucl
 uclmmbase	ports/devel/uclmmbase
 ucpp		ports/devel/ucpp
+ucspi-ipc	ports/sysutils/ucspi-ipc
 ucspi-ssl	ports/sysutils/ucspi-ssl
 ucspi-tcp	ports/sysutils/ucspi-tcp
 ucspi-unix	ports/sysutils/ucspi-unix
