@@ -1,12 +1,23 @@
-bin/gtkdoc-scanobj
-bin/gtkdoc-scangobj
-bin/gtkdoc-scan
-bin/gtkdoc-mktmpl
+bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
-bin/gtkdoc-fixxref
-share/gtk-doc/gtk-doc.dcl
-share/gtk-doc/gtk-doc.dsl
-share/gtk-doc/gtkdoc-common.pl
+bin/gtkdoc-mktmpl
+bin/gtkdoc-scan
+bin/gtkdoc-scangobj
+bin/gtkdoc-scanobj
+bin/gtkdocize
+libdata/pkgconfig/gtk-doc.pc
+share/aclocal/gtk-doc.m4
+share/gtk-doc/data/devhelp.xsl
+share/gtk-doc/data/gtk-doc.dcl
+share/gtk-doc/data/gtk-doc.dsl
+share/gtk-doc/data/gtk-doc.make
+share/gtk-doc/data/gtk-doc.xsl
+share/gtk-doc/data/gtkdoc-common.pl
+share/gtk-doc/data/home.png
+share/gtk-doc/data/left.png
+share/gtk-doc/data/right.png
+share/gtk-doc/data/up.png
+@dirrm share/gtk-doc/data
 @dirrm share/gtk-doc
