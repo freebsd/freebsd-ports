@@ -6,24 +6,29 @@
 #
 
 PORTNAME=	icmpchat
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	net
-MASTER_SITES=	http://www.codito.de/prog/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	icmpchat
 
 MAINTAINER=	mwest@uct.ac.za
-COMMENT=	Simple chat program based on the ICMP protocol
+COMMENT=	Simple console-based chat that uses the ICMP protocol
 
 USE_REINPLACE=	yes
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-O3 -Wall|${CFLAGS}|;s|= gcc|?= gcc|; \
-		s|default|all|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
+		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpchat ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/License ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Problems ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Todo ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
