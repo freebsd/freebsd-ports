@@ -20,6 +20,7 @@ WITH_MYSQL=	yes
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 POSTGRESQL_PORT?=	databases/postgresql7
 
 .include <bsd.port.pre.mk>
@@ -47,10 +48,10 @@ pre-patch:
 
 do-configure:
 .if defined(HAVE_MYSQL)
-	@${PERL} -i -pe "s/^#MYSQL/MYSQL/g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/^#MYSQL/MYSQL/g" ${WRKSRC}/Makefile
 .endif
 .if defined(HAVE_PGSQL)
-	@${PERL} -i -pe "s/^#PGSQL/PGSQL/g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/^#PGSQL/PGSQL/g" ${WRKSRC}/Makefile
 .endif
 
 do-install:
