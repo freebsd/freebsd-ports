@@ -34,6 +34,10 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502104
+BROKEN=		"Does not compile"
+.endif
   
 .if ${OSVERSION} < 500000
 ONLY_FOR_ARCHS=	i386
