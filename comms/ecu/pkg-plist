@@ -7,3 +7,4 @@ lib/ecu/tty1a.mi
 lib/ecu/tty2d.mi
 man/cat1/ecu.1
 man/cat1/proc.1
+@dirrm lib/ecu
