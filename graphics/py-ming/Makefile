@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel
+BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/SWIG-devel
 LIB_DEPENDS=	ming.0:${PORTSDIR}/graphics/ming
 
 USE_PYTHON=	yes
@@ -22,7 +22,9 @@ USE_PYTHON=	yes
 MD5_FILE=	${PORTSDIR}/graphics/ming/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/py_ext
-MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VERSION}"
+MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VERSION}" SWIG="${SWIG}"
+
+SWIG=		swig1.3
 
 EXAMPLES=	shape.py test.py
 
