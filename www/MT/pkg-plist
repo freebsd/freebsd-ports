@@ -243,6 +243,7 @@
 %%CGIDIR%%/tmpl/cms/upload_confirm.tmpl
 %%CGIDIR%%/tmpl/cms/view_log.tmpl
 %%CGIDIR%%/tmpl/error.tmpl
+%%CGIDIR%%/plugins/nofollow.pl
 %%OLD%%%%DATADIR%%/LICENSE
 %%OLD%%%%DATADIR%%/LICENSE-COMMERCIAL
 %%DATADIR%%/docs/755.gif
@@ -322,7 +323,6 @@
 %%DATADIR%%/schemas/postgres.dump
 %%DATADIR%%/schemas/sqlite.dump
 %%DATADIR%%/styles.css
-@exec mkdir %D/%%CGIDIR%%/plugins
 @exec chown -R www:www %D/%%CGIDIR%% %D/%%DATADIR%%
 @dirrm %%CGIDIR%%/extlib/Apache/XMLRPC
 @dirrm %%CGIDIR%%/extlib/Apache
