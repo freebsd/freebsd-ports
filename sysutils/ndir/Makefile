@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ndir
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~mw/software/
 DISTNAME=	NDir-${PORTVERSION}
@@ -23,10 +23,6 @@ MAN1=		ndir.1
 MLINKS=		ndir.1 lv.1 ndir.1 lw.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -E "s/^export GLOBAL.+//g" ${WRKSRC}/Makefile
