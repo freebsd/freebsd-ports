@@ -1,0 +1,58 @@
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/Makefile.fpc
+%%EXAMPLESDIR%%/fpcdemos.txt
+%%EXAMPLESDIR%%/graph/Makefile
+%%EXAMPLESDIR%%/graph/Makefile.fpc
+%%EXAMPLESDIR%%/graph/fpcgames.txt
+%%EXAMPLESDIR%%/graph/fpctris.pp
+%%EXAMPLESDIR%%/graph/ftrisgr.inc
+%%EXAMPLESDIR%%/graph/ftristxt.inc
+%%EXAMPLESDIR%%/graph/gameunit.pp
+%%EXAMPLESDIR%%/graph/gravwars.pp
+%%EXAMPLESDIR%%/graph/mandel.pp
+%%EXAMPLESDIR%%/graph/maze.pp
+%%EXAMPLESDIR%%/graph/quad.pp
+%%EXAMPLESDIR%%/graph/quaddata.dat
+%%EXAMPLESDIR%%/graph/samegame.pp
+%%EXAMPLESDIR%%/linux/Makefile
+%%EXAMPLESDIR%%/linux/Makefile.fpc
+%%EXAMPLESDIR%%/linux/daemon.pp
+%%EXAMPLESDIR%%/modex/Makefile
+%%EXAMPLESDIR%%/modex/Makefile.fpc
+%%EXAMPLESDIR%%/modex/fpcmodex.txt
+%%EXAMPLESDIR%%/modex/voxel.pp
+%%EXAMPLESDIR%%/os2/Makefile
+%%EXAMPLESDIR%%/os2/Makefile.fpc
+%%EXAMPLESDIR%%/os2/basicpm.pas
+%%EXAMPLESDIR%%/os2/getctry.pas
+%%EXAMPLESDIR%%/os2/pmdemo1.h
+%%EXAMPLESDIR%%/os2/pmdemo1.pp
+%%EXAMPLESDIR%%/os2/pmdemo1.rc
+%%EXAMPLESDIR%%/palmos/pilrc.bmp
+%%EXAMPLESDIR%%/palmos/pilrcic.bmp
+%%EXAMPLESDIR%%/palmos/pilrctst.h
+%%EXAMPLESDIR%%/palmos/pilrctst.pp
+%%EXAMPLESDIR%%/palmos/pilrctst.rcp
+%%EXAMPLESDIR%%/text/Makefile
+%%EXAMPLESDIR%%/text/Makefile.fpc
+%%EXAMPLESDIR%%/text/blackbox.pp
+%%EXAMPLESDIR%%/text/eratos.pp
+%%EXAMPLESDIR%%/text/hello.pp
+%%EXAMPLESDIR%%/text/lines.pp
+%%EXAMPLESDIR%%/text/magic.pp
+%%EXAMPLESDIR%%/text/qsort.pp
+%%EXAMPLESDIR%%/win32/Makefile
+%%EXAMPLESDIR%%/win32/Makefile.fpc
+%%EXAMPLESDIR%%/win32/dlltest.pp
+%%EXAMPLESDIR%%/win32/edit.pp
+%%EXAMPLESDIR%%/win32/menu.pp
+%%EXAMPLESDIR%%/win32/testdll.pp
+%%EXAMPLESDIR%%/win32/winhello.pp
+@dirrm %%EXAMPLESDIR%%/win32
+@dirrm %%EXAMPLESDIR%%/text
+@dirrm %%EXAMPLESDIR%%/palmos
+@dirrm %%EXAMPLESDIR%%/os2
+@dirrm %%EXAMPLESDIR%%/modex
+@dirrm %%EXAMPLESDIR%%/linux
+@dirrm %%EXAMPLESDIR%%/graph
+@dirrm %%EXAMPLESDIR%%
