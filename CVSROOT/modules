@@ -224,6 +224,7 @@ adasockets	ports/net/adasockets
 adcomplain	ports/mail/adcomplain
 add		ports/math/add
 adgali		ports/games/adgali
+admesh		ports/cad/admesh
 adns		ports/dns/adns
 adobe-cmaps	ports/print/adobe-cmaps
 adodb		ports/databases/adodb
