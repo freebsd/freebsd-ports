@@ -16,7 +16,7 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
@@ -37,7 +37,7 @@ TCSH?=	/bin/tcsh
 
 PROCFS!=		${MOUNT} | ${GREP} ^procfs | ${AWK} '{print $1}'
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
-DIST_SUBDIR=		stable/1.0.1
+DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
 #
