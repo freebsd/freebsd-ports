@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	News-Newsrc
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
@@ -14,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	croyle@gelemna.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		News::Newsrc.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		News::Newsrc.3
 
 .include <bsd.port.mk>
