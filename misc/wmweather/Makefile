@@ -1,19 +1,22 @@
 # New ports collection makefile for:	wmWeather-1.28
-# Version required:     1.28
+# Version required:     1.30.1
 # Date created:		26 January 1998
 # Whom:			Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.2 1999/03/12 11:01:18 kris Exp $
+# $Id: Makefile,v 1.3 1999/03/22 12:48:05 kris Exp $
 
-DISTNAME=       wmWeather-1.28
+DISTNAME=	wmWeather-1.30.1
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://www.physics.adelaide.edu.au/~kkennawa/
+MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wmWeather
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 ALL_TARGET=	clean all
 
 MAN1=		wmWeather.1
