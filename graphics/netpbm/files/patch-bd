@@ -1,40 +1,39 @@
---- pbm/Makefile.orig	Fri Mar 24 07:43:30 2000
-+++ pbm/Makefile	Sat Apr  1 12:00:00 2000
-@@ -4,7 +4,7 @@
- include $(SRCDIR)/Makefile.config
- 
- 
--INCLUDE = -I$(SRCDIR)
-+INCLUDE = -I$(SRCDIR) -I$(SRCDIR)/shhopt
- 
+--- pbm/Makefile.orig	Sat May  6 16:16:53 2000
++++ pbm/Makefile	Mon May  8 00:00:00 2000
+@@ -9,11 +9,12 @@
  # Shared library naming
  LIBROOT = pbm
-@@ -14,6 +14,7 @@
+ LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
+-MAJ = 9
++MAJ = 1
+ MIN = 1
  
- LIBLIBS = $(SRCDIR)/shhopt/libshhopt.a
+ LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
 +NETPBMLD = -L. -lpbm
  
  PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
- 		icontopbm gemtopbm macptopbm mgrtopbm \
-@@ -35,6 +36,7 @@
- MERGE_OBJECTS = $(patsubst %,%.o2, $(BINARIES))
+ 		icontopbm macptopbm mdatopbm mgrtopbm \
+@@ -36,8 +37,7 @@
  
- LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o
-+LIBSOBJECTS = libpbm1.so libpbm2.so libpbm3.so libpbm4.so libpbm5.so
+ # Library objects to be built and linked by Makefile.common:
+ LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
+-# Library objects to be linked but not built by Makefile.common:
+-LIBOBJECTS_X = $(SRCDIR)/shhopt/shhopt.o
++LIBSOBJECTS = libpbm1.so libpbm2.so libpbm3.so libpbm4.so libpbm5.so 
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -42,7 +44,7 @@
+@@ -45,7 +45,7 @@
  
  MERGENAME = pbmmerge
  
 -INTERFACE_HEADERS = pbm.h
-+INTERFACE_HEADERS = pbm.h ../pbmplus.h
++INTERFACE_HEADERS = pbm.h $(SRCDIR)/pbmplus.h
  
  .PHONY: all
  all:		$(BINARIES)
-@@ -52,15 +54,18 @@
+@@ -55,11 +55,11 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS)
@@ -46,12 +45,17 @@
 -	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
 +	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
  
- # Rule for objects.
- $(OBJECTS) $(LIBOBJECTS): %.o: %.c
- 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
-+
-+$(LIBSOBJECTS): %.so: %.c
-+	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
+ .PHONY: install.bin
+ install.bin: install.bin.common
+@@ -72,11 +72,6 @@
+ # Don't use $(SRCDIR) in the target below because Makefile.dep doesn't !
+ ../compile.h: 
+ 	$(MAKE) -C $(SRCDIR) compile.h
+-
+-$(SRCDIR)/shhopt/shhopt.o:
+-	cd ../shhopt; $(MAKE) shhopt.o
+-$(SRCDIR)/shhopt/libshhopt.a:
+-	cd ../shhopt; $(MAKE) libshhopt.a
  
- $(MERGE_OBJECTS): %.o2: %.c
- 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
+ .PHONY: clean
+ clean:

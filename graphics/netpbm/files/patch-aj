@@ -1,6 +1,6 @@
---- pbmplus.h.orig	Tue Apr  4 02:34:36 2000
-+++ pbmplus.h	Sat Apr 15 08:00:00 2000
-@@ -24,6 +24,9 @@
+--- pbmplus.h.orig	Sat May  6 16:37:46 2000
++++ pbmplus.h	Mon May  8 00:00:00 2000
+@@ -25,6 +25,9 @@
  #include <errno.h>
  #endif
  #endif
@@ -10,7 +10,7 @@
  
  #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
  #define SYSV
-@@ -34,7 +37,7 @@
+@@ -35,7 +38,7 @@
  ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
  ** probably better off setting SYSV - all it affects is string handling.
  */
@@ -19,43 +19,24 @@
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -46,7 +49,7 @@
- ** hex and decimal forms to specify colors (see ppm/pgmtoppm.1 for details).
+@@ -50,7 +53,7 @@
+    might be already set right now.  I couldn't figure out how, so I changed
+    their meanings and they are now set unconditionally.  -Bryan 00.05.03.
  */
- #ifndef RGB_DB
--#define RGB_DB "/usr/lib/X11/rgb"
-+#define RGB_DB "%%X11BASE%%/lib/X11/rgb"
- /*#define RGB_DB "/usr/openwin/lib/rgb.txt"*/
+-#define RGB_DB1 "/usr/lib/X11/rgb.txt"
++#define RGB_DB1 "%%X11BASE%%/lib/X11/rgb.txt"
+ #define RGB_DB2 "/usr/openwin/lib/rgb.txt"
  #ifdef VMS
- #define RGB_DB "PBMplus_Dir:RGB.TXT"
-@@ -117,6 +120,7 @@
- #ifndef VMS
- #include <unistd.h>
- #endif
-+#if !(defined(BSD) && (BSD >= 199306))
- extern int atoi();
- extern void exit();
- #ifndef __osf__
-@@ -124,6 +128,7 @@
- extern int write();
- #endif
- #endif
-+#endif
- 
- /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on
- ** system V, it gets declared in malloc.h. On some systems, malloc.h
-@@ -264,40 +269,6 @@
+ #define RGB_DB1 "PBMplus_Dir:RGB.TXT"
+@@ -286,37 +289,6 @@
+ int pm_writelittleshort ARGS(( FILE* out, short s ));
  int pm_readlittlelong ARGS(( FILE* in, long* lP ));
  int pm_writelittlelong ARGS(( FILE* out, long l ));
- 
 -
--/* Command line option parsing */
--#include "pbmplus.h"
--/* Shhopt is Sverre Huseby's command line parsing package, which makes
--   writing command parsing code quick and error free.  Some of the Netpbm
--   programs use it.
+-/* By making this <> instead of "", we avoid making shhopt.h a dependency
+-   of every program in the package when we do make dep.
 -*/
--#include "shhopt.h"
+-#include <shhopt.h>
 -
 -void pm_optParseOptions(int *argc, char *argv[],
 -                        optStruct opt[], int allowNegNum);

@@ -1,59 +1,60 @@
---- Makefile.config.orig	Sat Mar 25 02:39:40 2000
-+++ Makefile.config	Sat Apr  1 12:00:00 2000
-@@ -29,12 +29,12 @@
+--- Makefile.config.orig	Sat May  6 17:47:58 2000
++++ Makefile.config	Mon May  8 00:00:00 2000
+@@ -34,12 +34,12 @@
  # The C compiler (including macro preprocessor)
  #CC =		cc
  #CC =		gcc
 -CC =		gcc -fpcc-struct-return
 +CC ?=		gcc -fpcc-struct-return
  
- # The linker
+ # The linker.
  #LD = ld
  #LD = cc
 -LD = gcc 
-+LD = ${CC} 
++LD = ${CC}
  
- # Normally the man pages are installed using "cp".  But via this
+ # Normally the man pages are installed using "install".  But via this
  # variable, you can use something else, for example a script that
-@@ -42,11 +42,11 @@
+@@ -47,7 +47,7 @@
  # systems which use man pages in the "cat" format.
  
  #MANCP = $(SRCDIR)/mantocat
--MANCP =	cp
+-MANCP =	$(INSTALL) -m$(INSTALL_PERM_MAN)
 +MANCP =	${BSD_INSTALL_MAN}
  
+ # MAKE is set automatically by Make to what was used to invoke Make.
  SHELL =	/bin/sh
--MAKE = make
--INSTALL = install
-+MAKE ?= make
-+INSTALL ?= install
- AR= ar
- RANLIB=	ranlib
+@@ -60,7 +60,7 @@
  
-@@ -54,7 +54,7 @@
- # C compiler options
- 
- #CFLAGS = -O2 -std1 $(CDEBUG)
+ # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
+ #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
 -CFLAGS = -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
-+CFLAGS ?= -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
-   
- # linker options.  Eunice users may want to use -noshare so that
- # the executables can run standalone.
-@@ -81,8 +81,10 @@
++CFLAGS += $(CDEBUG)
  
- #TIFFINC_DIR = /usr/local1/DEC/include
+ # EXE is a suffix that the linker puts on any executable it generates.
+ # In cygwin, this is .exe and most program deal with its existence without
+@@ -96,7 +96,7 @@
+ # On older systems, you have to make shared libraries out of position 
+ # independent code, so you need -fpic here.  SunOS requires this.
+ #CFLAG_SHLIB = -fpic
+-CFLAG_SHLIB = 
++CFLAGS_SHLIB = -fPIC -DPIC
+ 
+ # The netpbm package contains a version of the Tiff library,
+ # libtiff.  If you want to use your own, fill in the appropriate paths
+@@ -114,8 +114,8 @@
+ # OSF, Tru64:
+ #TIFFHDR_DIR = /usr/local1/DEC/include
  #TIFFLIB_DIR = /usr/local1/DEC/lib
 -TIFFHDR_DIR = $(SRCDIR)/libtiff
 -TIFFLIB_DIR = $(SRCDIR)/libtiff
-+#TIFFHDR_DIR = $(SRCDIR)/libtiff
-+#TIFFLIB_DIR = $(SRCDIR)/libtiff
-+TIFFINC_DIR = ${LOCALBASE}/include
++TIFFHDR_DIR = ${LOCALBASE}/include
 +TIFFLIB_DIR = ${LOCALBASE}/lib
  
  # Put the location of your JPEG library here.
  # If you want to build the jpeg converters or tiff
-@@ -104,16 +106,16 @@
- #JPEGHDR_DIR = /usr/local1/DEC/include
+@@ -139,8 +139,8 @@
+ #JPEGHDR_DIR = /usr/local/include
  #JPEGLIB_DIR = NONE
  #JPEGHDR_DIR = NONE
 -JPEGLIB_DIR = /usr/lib/jpeg
@@ -62,8 +63,9 @@
 +JPEGHDR_DIR = ${LOCALBASE}/include
  
  
- #PNGLIB_DIR = /usr/local1/DEC/lib
- #PNGHDR_DIR = /usr/local1/DEC/include
+ # Put the location of your PNG library here.  If you want to build the
+@@ -161,8 +161,8 @@
+ # No PNG:
  #PNGLIB_DIR = NONE
  #PNGHDR_DIR = NONE
 -PNGLIB_DIR = /lib
@@ -72,13 +74,4 @@
 +PNGHDR_DIR = ${LOCALBASE}/include
  
  
- # The following variables are used only by 'make install' (and the
-@@ -124,7 +126,7 @@
- # you're spreading Netpbm across your system, use "/".
- 
- #INSTALL_PREFIX = /usr/local1/DEC/packages/netpbm
--INSTALL_PREFIX = /usr/local/netpbm
-+INSTALL_PREFIX = ${PREFIX}
- 
- # Specify the directory where you want the executables.
- # If you need scripts and binaries to be in different directories, you
+ # And the Utah Raster Toolkit (aka URT aka RLE) library:

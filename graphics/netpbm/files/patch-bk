@@ -1,9 +1,19 @@
---- pbm/libpbm1.c.orig	Tue Apr  4 02:32:49 2000
-+++ pbm/libpbm1.c	Sat Apr 15 08:00:00 2000
-@@ -141,17 +141,6 @@
+--- pbm/libpbm1.c.orig	Sat May  6 16:33:57 2000
++++ pbm/libpbm1.c	Mon May  8 00:00:00 2000
+@@ -14,7 +14,6 @@
+ #include "version.h"
+ #include "../compile.h"
+ #include "libpbm.h"
+-#include "shhopt.h"
+ 
+ #if __STDC__
+ #include <stdarg.h>
+@@ -141,17 +140,6 @@
+         }
+     return 1;
      }
- 
- 
+-
+-
 -/* Wrapper for Shhopt, to get it into the shared library */
 -
 -void 
@@ -13,8 +23,6 @@
 -    optParseOptions(argc, argv, opt, allowNegNum);
 -
 -}
--
--
- /* Log base two hacks. */
  
- int
+ 
+ /* Log base two hacks. */

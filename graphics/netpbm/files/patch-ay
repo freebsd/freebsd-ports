@@ -1,15 +1,6 @@
---- pnm/pnmtotiffcmyk.c.orig	Fri Mar 24 09:17:16 2000
-+++ pnm/pnmtotiffcmyk.c	Sat Apr  1 12:00:00 2000
-@@ -57,7 +57,7 @@
- 
- #include "pnm.h"
- #include <math.h>
--#ifdef __osf__
-+#if defined(__osf__) || defined(__FreeBSD__)
- #include <float.h>
- #endif
- #include <limits.h>
-@@ -69,7 +69,9 @@
+--- pnm/pnmtotiffcmyk.c.orig	Wed Apr 26 13:25:15 2000
++++ pnm/pnmtotiffcmyk.c	Mon May  8 00:00:00 2000
+@@ -71,7 +71,9 @@
  #define VERSION 1.01
  
  /* beware - these evaluate more than once */
