@@ -1,15 +1,24 @@
---- Setup.pre.in.orig	Tue Feb 15 13:15:48 2000
-+++ Setup.pre.in	Tue May 30 16:49:15 2000
-@@ -9,7 +9,7 @@
- CFLAGS = $(EXTRA_CFLAGS) $(CFLAGS__$(CC)) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
+
+$FreeBSD$
+
+--- Setup.pre.in.orig	Wed Jan 31 02:03:12 2001
++++ Setup.pre.in	Tue May  8 10:35:22 2001
+@@ -6,11 +6,11 @@
  
- CFLAGS__gcc = -Wall -O2 -finline-functions -ffast-math
+ 
+ ##CFLAGS = $(OPT) $(EXTRA_CFLAGS) $(CFLAGS__$(CC)) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
+-CFLAGS = $(EXTRA_CFLAGS) $(CFLAGS__$(CC)) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
++CFLAGS += $(EXTRA_CFLAGS) $(CFLAGS__$(CC)) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
+ 
+ ##CFLAGS__gcc = -Wall -O2 -finline-functions -ffast-math
+-CFLAGS__gcc = -Wall -O2 -ffast-math
 -EXTRA_CFLAGS = -I$(srcdir) -I$(srcdir)/mikmod $(SDL_CFLAGS) $(SMPEG_CFLAGS)
++CFLAGS__gcc = -Wall -ffast-math
 +EXTRA_CFLAGS = $(SDL_CFLAGS) -I$(srcdir) $(SMPEG_CFLAGS)
  
  SMPEG_LIBS = @SMPEG_LIBS@
  SMPEG_CFLAGS = @SMPEG_CFLAGS@
-@@ -19,32 +19,6 @@
+@@ -20,32 +20,6 @@
  pysolsoundserver \
  	command.c \
  	module.c \
