@@ -16,9 +16,9 @@
   
   # Added for colorx addition.  You _do_ have $X11 defined by your .cshrc,
   # don't you?
-! X11 = /usr/X11R6
+! X11 = ${X11BASE}
   CFLAGS=		-c -O 
-! LFLAGS =	-O  -lXt -lXext -lX11 -o povray
+! LFLAGS =	-O  -L{X11}/lib -lXt -lXext -lX11 -o povray
   CC =		cc
   
   OBJ	= o
