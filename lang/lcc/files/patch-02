@@ -1,0 +1,28 @@
+--- etc/lcc.c.orig	Fri Oct 18 17:37:14 1996
++++ etc/lcc.c	Sun Dec  8 19:42:38 1996
+@@ -433,9 +433,9 @@
+ "	unrecognized options are taken to be linker options\n",
+ "-A	warn about nonANSI usage; 2nd -A warns more\n",
+ "-b	emit expression-level profiling code; see bprint(1)\n",
+-#ifdef sparc
++#if defined(sparc) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ "-Bstatic -Bdynamic	specify static or dynamic libraries\n",
+-#endif
++#endif 
+ "-Bdir/	use the compiler named `dir/rcc'\n",
+ "-c	compile only\n",
+ "-dn	set switch statement density to `n'\n",
+@@ -535,11 +535,11 @@
+ 		plist = append(arg, plist);
+ 		return;
+ 	case 'B':	/* -Bdir -Bstatic -Bdynamic */
+-#ifdef sun
++#if defined(sun) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ 		if (strcmp(arg, "-Bstatic") == 0 || strcmp(arg, "-Bdynamic") == 0)
+ 			llist[1] = append(arg, llist[1]);
+ 		else
+-#endif	
++#endif
+ 		{
+ 		static char *path;
+ 		if (path)
