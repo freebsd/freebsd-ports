@@ -1,7 +1,7 @@
---- configure.orig	Wed Jul  7 18:26:59 2004
-+++ configure	Tue Jul 20 19:11:24 2004
-@@ -15937,7 +15937,7 @@
- 	  KRB5_LIBS="-lkrb5 -lasn1 -lcrypto -lroken -lcrypt -lresolv"
+--- configure.orig	Thu Aug 12 22:04:27 2004
++++ configure	Fri Aug 13 18:40:18 2004
+@@ -15934,7 +15934,7 @@
+ 	  KRB5_LIBS="-lkrb5 -lasn1 $SSL_LIBS -lroken -lcrypt -lresolv"
  	  ethereal_save_LDFLAGS="$LDFLAGS"
  	  LDFLAGS="$LDFLAGS -L$krb5_dir/lib"
 -	  ac_krb5_version=`grep -i heimdal $krb5_dir/include/krb5.h | head -n 1 | sed 's/^.*heimdal.*$/HEIMDAL/i'`
@@ -9,7 +9,7 @@
  	else
  	  # Extract the first word of "krb5-config", so it can be a program name with args.
  set dummy krb5-config; ac_word=$2
-@@ -15980,10 +15980,10 @@
+@@ -15977,10 +15977,10 @@
  
  	  if test -x "$KRB5_CONFIG"
  	  then
@@ -17,8 +17,8 @@
 +	    KRB5_FLAGS=`"$KRB5_CONFIG" --cflags | sed -e 's/@INCLUDE_des@//g'`
  	    CFLAGS="$CFLAGS $KRB5_FLAGS"
              CPPFLAGS="$CPPFLAGS $KRB5_FLAGS"
--	    KRB5_LIBS=`"$KRB5_CONFIG" --libs`
-+	    KRB5_LIBS=`"$KRB5_CONFIG" --libs | sed -e 's/@INCLUDE_des@//g'`
+-	    KRB5_LIBS=`"$KRB5_CONFIG" --libs | sed 's/-lcrypto//'`
++	    KRB5_LIBS=`"$KRB5_CONFIG" --libs | sed 's/-lcrypto//' | sed -e 's/@INCLUDE_des@//g'`
+ 	    KRB5_LIBS="$KRB5_LIBS $SSL_LIBS"
  	    # Looks like krb5-config is lacking -lresolv on some systems
  	    echo "$as_me:$LINENO: checking whether library list looks OK" >&5
- echo $ECHO_N "checking whether library list looks OK... $ECHO_C" >&6
