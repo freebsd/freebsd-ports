@@ -11,6 +11,9 @@ lib/bugle/debugger.so
 lib/bugle/modify.a
 lib/bugle/modify.la
 lib/bugle/modify.so
+lib/bugle/stats.a
+lib/bugle/stats.la
+lib/bugle/stats.so
 lib/bugle/trace.a
 lib/bugle/trace.la
 lib/bugle/trace.so
