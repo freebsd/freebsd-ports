@@ -1,40 +1,25 @@
---- configure.orig	Fri Feb 20 09:42:49 1998
-+++ configure	Tue Mar 10 09:40:36 1998
-@@ -826,6 +826,7 @@
- # AFS /usr/afsws/bin/install, which mishandles nonexistent args
- # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
- # ./install, which can be erroneously created by make from ./install.sh.
-+INSTALL='/usr/bin/install -c'
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
- echo "configure:831: checking for a BSD compatible install" >&5
- if test -z "$INSTALL"; then
-@@ -2590,14 +2591,14 @@
-     fi
+--- configure.orig	Wed Apr 22 07:47:30 1998
++++ configure	Thu Apr 30 05:05:50 1998
+@@ -3215,14 +3215,14 @@
+   GX_LIBS="$GTK_LIBS"
+ fi
  
- 
--    echo $ac_n "checking for TIFFOpen in -ltiff""... $ac_c" 1>&6
--echo "configure:2595: checking for TIFFOpen in -ltiff" >&5
--ac_lib_var=`echo tiff'_'TIFFOpen | sed 'y%./+-%__p_%'`
-+    echo $ac_n "checking for TIFFOpen in -ltiff34""... $ac_c" 1>&6
-+echo "configure:2595: checking for TIFFOpen in -ltiff34" >&5
-+ac_lib_var=`echo tiff34'_'TIFFOpen | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for main in -ltiff""... $ac_c" 1>&6
+-echo "configure:3220: checking for main in -ltiff" >&5
+-ac_lib_var=`echo tiff'_'main | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for main in -ltiff34""... $ac_c" 1>&6
++echo "configure:3220: checking for main in -ltiff34" >&5
++ac_lib_var=`echo tiff34'_'main | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-ltiff \
-+LIBS="-ltiff34 \
- -L/usr/lib -L/lib -L/usr/local/lib -L/usr/X11/lib -L/usr/X11R6/lib \
- -L/usr/local/X11/lib -L/usr/openwin/lib -lc -lm $LIBS"
+-LIBS="-ltiff $GX_LIBS $LIBS"
++LIBS="-ltiff34 $GX_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
-@@ -2627,13 +2628,13 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--    ac_tr_lib=HAVE_LIB`echo tiff | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-+    ac_tr_lib=HAVE_LIB`echo tiff34 | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-   cat >> confdefs.h <<EOF
+ #line 3228 "configure"
+ #include "confdefs.h"
+@@ -3252,7 +3252,7 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -43,26 +28,3 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -2642,7 +2643,7 @@
-     if test "" != ""; then
- 	enl_lib_subdir=
-     else
--	enl_lib_subdir=tiff
-+	enl_lib_subdir=tiff34
-     fi
-     enl_cur_var=tiff_TIFFOpen
-     echo $ac_n "checking for tiffio.h""... $ac_c" 1>&6
-@@ -2673,11 +2674,11 @@
- 	fi
- 	echo "$ac_t""$enl_tmp_var" 1>&6
- 	\
--extras="$extras -DBUILTIN_TIFF"; LIBS="$LIBS -lm -ltiff"
-+extras="$extras -DBUILTIN_TIFF"; LIBS="$LIBS -lm -ltiff34"
-     else
- 	echo "$ac_t""no" 1>&6
- 	\
--{ echo "configure: error: ********** Disabling libtiff support ************" 1>&2; exit 1; }
-+{ echo "configure: error: ********** Disabling libtiff34 support ************" 1>&2; exit 1; }
-     fi
- 
- 
