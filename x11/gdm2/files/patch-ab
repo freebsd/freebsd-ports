@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Thu May 27 09:59:56 2004
-+++ config/gdm.conf.in	Fri Jun 25 15:03:38 2004
+--- config/gdm.conf.in.orig	Mon Aug  2 18:20:59 2004
++++ config/gdm.conf.in	Thu Aug 19 12:54:26 2004
 @@ -77,7 +77,7 @@
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
@@ -34,7 +34,7 @@
  # Should double login be treated with a warning (and possibility to change
  # vts on linux systems for console logins)
  #DoubleLoginWarning=true
-@@ -238,7 +237,7 @@
+@@ -241,7 +240,7 @@
  # The specific gtkrc file we use.  It should be the full path to the gtkrc
  # that we need.  Unless you need a specific gtkrc that doesn't correspond to
  # a specific theme, then just use the GtkTheme key
@@ -43,12 +43,3 @@
  
  # The GTK+ theme to use for the gui
  #GtkTheme=Default
-@@ -421,7 +420,7 @@
- # Definition of the standard X server.
- [server-Standard]
- name=Standard server
--command=@X_SERVER@ -audit 0
-+command=@X_SERVER@ vt9 -audit 0
- flexible=true
- 
- # To use this server type you should add -query host or -indirect host
