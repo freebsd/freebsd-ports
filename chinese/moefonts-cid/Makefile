@@ -18,10 +18,24 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	MOE CIDFonts converted by Adobe
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
 		${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
 NO_BUILD=	YES
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 do-install:
 	@${INSTALL_DATA} ${DISTDIR}/MOEKai-Regular \
