@@ -56,6 +56,10 @@ post-build:
 	   ${SETENV} ${MAKE_ENV} \
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
+pre-install:
+	${RM} -rf ${PREFIX}/share/licq
+	${MKDIR} -m 700 ${PREFIX}/share/licq
+
 post-install:
 	strip ${PREFIX}/bin/licq
 	cd ${WRKSRC}/plugins/qt-gui;\
@@ -72,5 +76,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/licq/qt-gui
 	cd ${DATADIR}/qt-gui && ${TAR} -chf - * | \
 		${TAR} -xf - -C ${PREFIX}/share/licq/qt-gui
+	${CHMOD} -R a-w ${PREFIX}/share/licq
+	${CHMOD} 555 ${PREFIX}/share/licq
 
 .include <bsd.port.mk>
