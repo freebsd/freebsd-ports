@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gview
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	graphics
 MASTER_SITES=	http://netpedia.net/hosting/gview/ \
 		http://homepages.petech.ac.za/~bruces/ \
