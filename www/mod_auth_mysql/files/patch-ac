@@ -1,0 +1,30 @@
+--- Makefile.in.orig	Sat Oct  3 06:24:28 1998
++++ Makefile.in	Fri May 19 23:52:29 2000
+@@ -14,9 +14,27 @@
+ REGCFLAGS = $(CFLAGS)
+ APXS = @APXS@
+ APXS_LDFLAGS = @APXS_LDFLAGS@
++APXS_INCLUDE = @APXS_INCLUDE@
+ WARNING_LEVEL = @WARNING_LEVEL@
+ 
++#   the default target
++all: build
++
++# build the shared object file for Apache
++build: mod_auth_mysql.so
++
++#   compile the shared object file
++mod_auth_mysql.so: auth_mysql_config.h mod_auth_mysql.c
++	$(APXS) -c -o libauth_mysql.so ${APXS_LDFLAGS} ${APXS_INCLUDE} mod_auth_mysql.c
++
++auth_mysql_config.h:
++	cp config.h auth_mysql_config.h
++
++#   install the shared object file into Apache
+ install:
+ 	$(INSTALL_IT)
+ 	@cat .install_notes
+ 
++#   cleanup
++clean:
++	-rm -f mod_auth_mysql.o mod_auth_mysql.so
