@@ -21,7 +21,7 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
-COMMENT=	FSF C/C++-gcc-3.2.3 base-port for RTEMS development
+COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
