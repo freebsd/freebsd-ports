@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	SNMP_Session
-PORTVERSION=	0.86
+PORTVERSION=	0.88
 CATEGORIES=	net perl5
-MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
+MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@databits.net
@@ -20,6 +21,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/p5-SNMP_Session
 	${INSTALL_DATA} ${WRKSRC}/README.SNMP_util \
 		${PREFIX}/share/doc/p5-SNMP_Session
+	${INSTALL_DATA} ${WRKSRC}/index.html ${PREFIX}/share/doc/p5-SNMP_Session
 .endif
 
 .include <bsd.port.mk>
