@@ -7,6 +7,7 @@
 
 PORTNAME=	boehm-gc
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc5.3
