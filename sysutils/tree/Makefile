@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tree
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 EXTRACT_SUFX=	.tgz
@@ -18,4 +17,13 @@ COMMENT=	Display a tree-view of directories with optional color or HTML output
 MAN1=		tree.1
 PLIST_FILES=	bin/tree
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s:iswprint:isprint:" ${WRKSRC}/tree.c
+.endif
+
+.include <bsd.port.post.mk>
