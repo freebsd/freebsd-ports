@@ -8,10 +8,9 @@
 PORTNAME=	TekNap
 PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/ \
-		ftp://ftp.bitchx.com/pub/TekNap/
+MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	
 
-MAINTAINER=	cj@vallcom.net
+MAINTAINER=	LoRd_CJ@dalusers.com
 
 .if defined(WITH_MP3)
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
