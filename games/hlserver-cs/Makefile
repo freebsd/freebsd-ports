@@ -63,6 +63,12 @@ post-extract:
 .endif
 .endif
 
+.if !target(slaveport-post-extract)
+slaveport-post-extract:
+.endif
+
+post-extract: slaveport-post-extract
+
 pre-patch:
 # remove trailing ^M
 	@find -E ${WRKSRC} -type f \
