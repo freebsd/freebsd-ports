@@ -458,6 +458,7 @@ atlas		ports/devel/atlas
 atlas-devel	ports/math/atlas-devel
 atlast		ports/lang/atlast
 atlc		ports/cad/atlc
+atmsupport	ports/net/atmsupport
 atomix		ports/games/atomix
 atp		ports/news/atp
 atr3d		ports/games/atr3d
