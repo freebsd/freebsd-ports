@@ -1,31 +1,24 @@
---- configure.orig	Mon Mar 24 16:14:15 2003
-+++ configure	Wed Mar 26 12:17:03 2003
-@@ -8031,6 +8031,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9281,13 +9282,13 @@
- 
+--- configure.orig	Wed Jul  7 18:16:55 2004
++++ configure	Wed Jul  7 18:16:55 2004
+@@ -20976,13 +20976,13 @@
+ else
  
  
 -echo "$as_me:$LINENO: checking for new_pspell_manager in -lpspell" >&5
 -echo $ECHO_N "checking for new_pspell_manager in -lpspell... $ECHO_C" >&6
+-if test "${ac_cv_lib_pspell_new_pspell_manager+set}" = set; then
 +echo "$as_me:$LINENO: checking for new_aspell_speller in -lpspell" >&5
 +echo $ECHO_N "checking for new_aspell_speller in -lpspell... $ECHO_C" >&6
- if test "${ac_cv_lib_pspell_new_pspell_manager+set}" = set; then
++if test "${ac_cv_lib_pspell_new_aspell_speller+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
 +LIBS="-lpspell -lstdc++ $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9302,11 +9303,11 @@
+ _ACEOF
+@@ -20996,11 +20996,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -39,45 +32,21 @@
    ;
    return 0;
  }
-@@ -12726,12 +12727,12 @@
- /* end confdefs.h.  */
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
-   ;
-   return 0;
- }
-@@ -13806,7 +13807,7 @@
+@@ -23045,7 +23045,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lldap -llber -lresolv $LIBS"
 +LIBS="-lldap -llber $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -13860,7 +13861,7 @@
+ _ACEOF
+@@ -23109,7 +23109,7 @@
  #define ENABLE_LDAP 1
  _ACEOF
  
--             LIBS="-lldap -llber -lresolv $LIBS"
-+             LIBS="-lldap -llber $LIBS"
+-              LIBS="-lldap -llber -lresolv $LIBS"
++              LIBS="-lldap -llber $LIBS"
  else
    { { echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
  echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
-@@ -14479,7 +14480,7 @@
- echo $ECHO_N "checking whether to build SSL support... $ECHO_C" >&6
- if test "x$with_ssl" != xno  ; then
- # openssl >=0.9.7 is pkg-config compatible.
--   if pkg-config openssl >&/dev/null; then
-+   if pkg-config openssl >/dev/null 2>&1; then
-       LIBS="$LIBS `pkg-config --libs openssl`"
-       CPPFLAGS="`pkg-config --cflags-only-I openssl` $CPPFLAGS"
-       echo "$as_me:$LINENO: result: yes" >&5

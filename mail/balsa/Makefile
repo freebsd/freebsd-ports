@@ -6,37 +6,51 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	2.2.1
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://balsa.gnome.org/ \
-		http://www.theochem.kth.se/~pawsa/balsa/
+MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
+DISTNAME=	balsa-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A mail reader for the GNOME desktop
+COMMENT=	A mail reader for the GNOME 2 desktop
 
 LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		esmtp.6:${PORTSDIR}/mail/libesmtp
-RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+		esmtp.6:${PORTSDIR}/mail/libesmtp \
+		gmime-2.0.3:${PORTSDIR}/mail/gmime2
 
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml gnometarget
-USE_OPENLDAP=	yes
-USE_LIBTOOL_VER=13
+USE_PERL5=	yes
 USE_OPENSSL=	yes
-LIBTOOLFILES=	configure libmutt/configure
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
+		gtkhtml3
+USE_LIBTOOL_VER=15
+USE_LIBLTDL=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
-		--enable-ldap \
 		--disable-more-warnings \
-		--with-ssl
+		--with-ssl \
+		--enable-gtkhtml=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
 MAN1=		balsa.1
 
-CONFLICTS=	balsa2-*
+OPTIONS=	LDAP "Enable LDAP support" on
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+#.if defined(WITH_GPG)
+#LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
+#CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
+#.endif
+
+.if !defined(WITHOUT_LDAP)
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+.include <bsd.port.post.mk>
