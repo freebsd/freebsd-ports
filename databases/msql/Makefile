@@ -15,6 +15,7 @@ COMMENT=	The Mini SQL server, version 2
 
 INSTALLS_SHLIB= YES
 USE_PERL5=	YES
+USE_REINPLACE=	YES
 
 # Not free for commercial use.
 RESTRICTED=	"restrictive copyright (no commercial use)"
@@ -29,6 +30,8 @@ MAKE_ENV+=	WRKSRC=${WRKSRC}
 post-patch:
 		cd ${FILESDIR}; \
 		cp slibinstall.mm slibrary_unix.mm ${WRKSRC}/src/makegen
+		@${REINPLACE_CMD} -e "s|'bison -y' byacc|byacc 'bison -y'|g" \
+			${WRKSRC}/src/conf/configure
 
 do-configure:
 		cd ${WRKSRC}; ${MAKE} target
@@ -37,7 +40,8 @@ do-configure:
 
 pre-install:
 		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/check_old_version
-		PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
+	pwd
+		@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
