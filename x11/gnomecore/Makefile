@@ -3,24 +3,23 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.13 1999/01/24 06:24:31 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/01/27 08:31:53 fenner Exp $
 #
 
 DISTNAME=	gnome-core-0.99.3.2
 PKGNAME=	gnomecore-0.99.3.2
-CATEGORIES=	x11
+CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-core
 
 MAINTAINER=	nacai@iname.com
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/duck.wav:${PORTSDIR}/audio/gnomeaudio
-LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
-		gtop.1:${PORTSDIR}/devel/libgtop \
-		esd.1:${PORTSDIR}/audio/esound \
+LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		ghttp.0:${PORTSDIR}/www/libghttp
 
-BROKEN=		"can't work with gtk 1.1.13, but 0.99.4 will release soon"
+# implicit dependencies
+# gettext, esound, gnomelibs
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -28,11 +27,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include" \
-		CXXFLAGS="${CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${X11BASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:
