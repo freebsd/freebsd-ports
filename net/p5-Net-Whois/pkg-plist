@@ -1,4 +1,3 @@
-lib/perl5/man/man3/Net::Whois.3.gz
-lib/perl5/site_perl/Net/Whois.pm
-lib/perl5/site_perl/i386-freebsd/auto/Net/Whois/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Net/Whois
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/Whois/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/Whois
