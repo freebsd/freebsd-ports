@@ -6,6 +6,7 @@ include/Vk/VkBusyDialog.h
 include/Vk/VkCallbackList.h
 include/Vk/VkCallbackObject.h
 include/Vk/VkCheckBox.h
+include/Vk/VkCompletionField.h
 include/Vk/VkComponent.h
 include/Vk/VkComponentList.h
 include/Vk/VkConfig.h
@@ -24,6 +25,8 @@ include/Vk/VkInput.h
 include/Vk/VkInterruptDialog.h
 include/Vk/VkMenu.h
 include/Vk/VkMenuAction.h
+include/Vk/VkMenuActionObject.h
+include/Vk/VkMenuActionWidget.h
 include/Vk/VkMenuBar.h
 include/Vk/VkMenuConfirmFirstAction.h
 include/Vk/VkMenuItem.h
@@ -67,6 +70,6 @@ include/Vk/VkWarningDialog.h
 include/Vk/VkWidgetList.h
 include/Vk/VkWindow.h
 include/Vk/builtinbusy.h
-@dirrm include/Vk
 lib/libvk.a
 lib/libvkhelp.a
+@dirrm include/Vk
