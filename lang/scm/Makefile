@@ -6,41 +6,57 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d2
+PORTVERSION=	5d3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.swiss.ai.mit.edu/pub/scm/OLD/
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/
 MASTER_SITE_SUBDIR=	jacal
-DISTFILES=	scm5d2.zip slib2c7.zip slib-psd1-3.tar.gz scmconfig4e3.tar.gz
+DISTFILES=	scm5d3.zip slib2c8.zip slib-psd1-3.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXTRACT_ONLY=	scm5d2.zip slib2c7.zip
+EXTRACT_ONLY=	scm5d3.zip slib2c8.zip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/scm
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	scmlit
 MAN1=		scm.1
 
-IMPLINIT=	${PREFIX}/libdata/scm/Init.scm
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
+		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm
 
 post-extract:
-.for file in scmconfig4e3.tar.gz slib-psd1-3.tar.gz
-	@${TAR} -C ${WRKDIR} -zxf ${_DISTDIR}/${file}
+	@${TAR} -C ${WRKDIR} -zxf ${_DISTDIR}/slib-psd1-3.tar.gz
+
+do-configure:
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		${FILESDIR}/require.scm.in > ${WRKDIR}/require.scm
+
+post-build:
+	cd ${WRKSRC}; SCMLIT="./scmlit" ${SH} ./build \
+		-F "arrays bignums cautious inexact" \
+		-h system \
+		-o scm \
+		-s "${PREFIX}/share/scm/"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/scm ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/scm.1 ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/scm
+	${INSTALL_DATA} ${WRKDIR}/require.scm ${PREFIX}/share/scm
+.for file in ${SCM_DATA}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/scm
 .endfor
-
-post-configure:
-	@${ECHO} '#ifndef IMPLINIT' > ${WRKSRC}/scmflags.h
-	@${ECHO} '#define IMPLINIT "${IMPLINIT}"' >> ${WRKSRC}/scmflags.h
-	@${ECHO} '#endif' >> ${WRKSRC}/scmflags.h
-
-post-install:
-	@touch ${PREFIX}/libdata/scm/implcat
-	@touch ${PREFIX}/libdata/scm/slibcat
-	@${MKDIR} ${PREFIX}/libdata/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/libdata/slib
-	@${MKDIR} ${PREFIX}/libdata/slib/psd
-	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/libdata/slib/psd
+	@touch ${PREFIX}/share/scm/implcat
+	@touch ${PREFIX}/share/scm/slibcat
+	@${MKDIR} ${PREFIX}/share/scm/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/scm/slib
+	@${MKDIR} ${PREFIX}/share/scm/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/share/scm/slib/psd
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
