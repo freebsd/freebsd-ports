@@ -1,57 +1,56 @@
-*** cpp-Makefile.orig	Mon Dec 12 04:14:30 1994
---- cpp-Makefile	Mon Dec 12 04:14:30 1994
+*** cpp-Makefile.orig	Thu Dec 22 23:36:46 1994
+--- cpp-Makefile	Fri Dec 30 16:54:09 1994
 ***************
-*** 136,144 ****
-  /* This is guaranteed to work, even if you have the fixed includes!
-     (Unless, of course, you have the fixed include files installed in
+*** 138,144 ****
+--- 138,148 ----
      /usr/include.  Then it will break.) */
-! CC = gcc -traditional -I/usr/include $(GCC_EXTRAS)
+  CC = gcc -traditional -I/usr/include $(GCC_EXTRAS)
   #  else /* HAVE_FIXED_INCLUDES */
-! CC = gcc $(GCC_EXTRAS)
++ #ifdef __FreeBSD__
++ CC += $(GCC_EXTRAS)
++ #else
+  CC = gcc $(GCC_EXTRAS)
++ #endif
   #  endif /* HAVE_FIXED_INCLUDES */
   #else /* !HAVE_GCC */
   CC = CPP_CC
---- 136,144 ----
-  /* This is guaranteed to work, even if you have the fixed includes!
-     (Unless, of course, you have the fixed include files installed in
-     /usr/include.  Then it will break.) */
-! CC = cc -traditional -I/usr/include $(GCC_EXTRAS)
-  #  else /* HAVE_FIXED_INCLUDES */
-! CC = cc $(GCC_EXTRAS)
-  #  endif /* HAVE_FIXED_INCLUDES */
-  #else /* !HAVE_GCC */
-  CC = CPP_CC
+***************
+*** 155,162 ****
+--- 159,171 ----
+  RM = rm -f
+  AR = ar
+  
++ #ifndef __FreeBSD__
+  INSTALL_PROGRAM = install -c
+  INSTALL_DATA = install -c -m 644
++ #else
++ INSTALL_PROGRAM = install -c -o bin -g bin -m 555
++ INSTALL_DATA = install -c -o bin -g bin -m 644
++ #endif
+  
+  COMPRESS = gzip
+  COMPRESS_EXT = .gz
 ***************
 *** 304,310 ****
+--- 313,321 ----
   /**/# The GNU coding standards don't recognize the possibility that
   /**/# other information besides optimization and debugging might be
   /**/# passed to cc.  A different name should have been used.
-! CFLAGS = -O -g
-  
-  SYSTEM_FLAGS = $(LINEBUF) $(VPRINTF) $(UNISTD) $(STDLIB) $(LIMITSH) \
-         $(GROUPS) $(RESOURCE) $(PARAM) $(SIGHANDLER) $(SYSDEP) $(WAITH) \
---- 304,310 ----
-  /**/# The GNU coding standards don't recognize the possibility that
-  /**/# other information besides optimization and debugging might be
-  /**/# passed to cc.  A different name should have been used.
-! #CFLAGS = -O -g
++ #ifndef __FreeBSD__
+  CFLAGS = -O -g
++ #endif
   
   SYSTEM_FLAGS = $(LINEBUF) $(VPRINTF) $(UNISTD) $(STDLIB) $(LIMITSH) \
          $(GROUPS) $(RESOURCE) $(PARAM) $(SIGHANDLER) $(SYSDEP) $(WAITH) \
 ***************
-*** 383,389 ****
-  Program = bash
-  
-  /**/# The type of machine and OS Bash is being compiled on.
-! HOSTTYPE_DECL = -DHOSTTYPE='$(SYSTEM_NAME)' -DOSTYPE='$(OS_NAME)'
-  
-  MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
-  
---- 383,389 ----
-  Program = bash
-  
-  /**/# The type of machine and OS Bash is being compiled on.
-! HOSTTYPE_DECL = -DHOSTTYPE='"$(SYSTEM_NAME)"' -DOSTYPE='"$(OS_NAME)"'
-  
-  MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
-  
+*** 312,317 ****
+--- 323,331 ----
+         $(VARARGSH) $(STRCHR) $(STRCASE) $(DEVFD) \
+         -D$(Machine) -D$(OS)
+  LDFLAGS	= $(NOSHARE) $(SYSDEP_LD) $(EXTRA_LD_PATH) $(PROFILE_FLAGS) $(CFLAGS)
++ #ifdef __FreeBSD__
++ LDFLAGS += -s
++ #endif
+  CCFLAGS	= $(PROFILE_FLAGS) $(CFLAGS) $(SYSTEM_FLAGS) -DSHELL $(ALLOCA_CFLAGS) \
+  	  $(MALLOC_CFLAGS)
+  CPPFLAGS= -I. -I$(srcdir) -I$(LIBSRC)
