@@ -22,11 +22,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs${GS_VERSION:S/.//}/:gs_srcs
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			bjc250gs/:bjc250 \
 			./:ports_jp
-PKGNAMESUFFIX=	-afpl
+PKGNAMESUFFIX=	-gpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${HP8XX_SRCS}:hp8xx \
 		${DJ970_SRCS}:dj970 \
@@ -47,15 +47,13 @@ DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	AFPL Postscript interpreter
+COMMENT=	GPL Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-NO_CDROM=	"Can only be distributed for free"
-
-CONFLICTS=	ghostscript-gnu*
+CONFLICTS=	ghostscript-afpl* ghostscript-gnu*
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

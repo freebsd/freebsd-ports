@@ -75,6 +75,8 @@
     SUBDIR += ghostscript-gnu
     SUBDIR += ghostscript-gnu-commfont
     SUBDIR += ghostscript-gnu-nox11
+    SUBDIR += ghostscript-gpl
+    SUBDIR += ghostscript-gpl-nox11
     SUBDIR += ghostview
     SUBDIR += gimp-print
     SUBDIR += gl2ps

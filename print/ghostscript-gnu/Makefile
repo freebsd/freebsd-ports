@@ -59,7 +59,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS=	ghostscript-afpl*
+CONFLICTS=	ghostscript-afpl* ghostscript-gpl*
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

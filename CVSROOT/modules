@@ -2472,6 +2472,8 @@ ghostscript-afpl-nox11	ports/print/ghostscript-afpl-nox11
 ghostscript-gnu		ports/print/ghostscript-gnu
 ghostscript-gnu-commfont	ports/print/ghostscript-gnu-commfont
 ghostscript-gnu-nox11	ports/print/ghostscript-gnu-nox11
+ghostscript-gpl		ports/print/ghostscript-gpl
+ghostscript-gpl-nox11	ports/print/ghostscript-gpl-nox11
 ghostview	ports/print/ghostview
 ghtool		ports/dns/ghtool
 giblib		ports/graphics/giblib
