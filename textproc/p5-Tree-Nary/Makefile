@@ -1,0 +1,22 @@
+# New ports collection makefile for:	Tree:Nary
+# Date created:			18 May 2001
+# Whom:					svenasse
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Tree-Nary
+PORTVERSION=	1.1
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Tree
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	svenasse@polaris.ca
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Tree::Nary.3
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+.include <bsd.port.mk>
