@@ -19,4 +19,6 @@ CONFIGURE_ARGS+=	--program-transform-name=s,^,,
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
