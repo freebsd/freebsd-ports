@@ -30,7 +30,9 @@ MAN1=		speexdec.1 speexenc.1
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if !exists(/usr/include/getopt.h)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 LDFLAGS+=	-lgnugetopt
 .endif
@@ -40,4 +42,4 @@ post-patch:
 		's|doc win32|win32|g ; \
 		 s|^mandir =.*$$|mandir = @mandir@|g' 
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
