@@ -1,0 +1,34 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MakeMethods/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Attribute.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Basic.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Basic/Array.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Basic/Global.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Basic/Hash.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Changes.pod
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite/Array.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite/Global.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite/Hash.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite/Inheritable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite/Universal.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/ReadMe.pod
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/RelatedModules.pod
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard/Array.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard/Global.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard/Hash.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard/Inheritable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard/Universal.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/ToDo.pod
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Utility/ArraySplicer.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Utility/Inheritable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Utility/Ref.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Basic 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Composite 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Standard 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods/Utility 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class/MakeMethods 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MakeMethods 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
