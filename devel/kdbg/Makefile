@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kdbg/
+USE_QT_VER=	3
+USE_KDELIBS_VER=3
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-CONFIGURE_ARGS=	--with-kde-version=2
 GNU_CONFIGURE=	yes
-USE_KDEBASE_VER=2
+CONFIGURE_ENV=	LIBQTMT="-lqt-mt" \
+		CXXFLAGS=-pthread
+
+CONFIGURE_ARGS=	--with-kde-version=3
 
 .include <bsd.port.mk>
