@@ -1,0 +1,6 @@
+share/texmf/tex/jadetex/dsssl.def
+share/texmf/tex/jadetex/isoents.tex
+share/texmf/tex/jadetex/jadetex.ltx
+share/texmf/web2c/jadetex.fmt
+share/texmf/web2c/pdfjadetex.fmt
+@dirrm share/texmf/tex/jadetex
