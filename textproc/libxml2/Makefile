@@ -7,13 +7,14 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -21,14 +22,9 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--with-iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -liconv"
+		LIBS="-L${LOCALBASE}/lib -lgiconv"
 
 MAN1=		xml2-config.1 xmllint.1
 MAN4=		libxml.4
-
-#pre-patch:
-#	@find ${WRKSRC}/include -type f -name "*.h" | \
-#		xargs ${PERL} -pi -e 's|libxml/|libxml2/|'
-#	@${LN} -sf ${WRKSRC}/include/libxml ${WRKSRC}/include/libxml2
 
 .include <bsd.port.mk>
