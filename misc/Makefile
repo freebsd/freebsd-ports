@@ -96,6 +96,7 @@
     SUBDIR += jive
     SUBDIR += kcd
     SUBDIR += kde2-i18n
+    SUBDIR += kdeaddons
     SUBDIR += kdeutils2
     SUBDIR += kdirstat
     SUBDIR += khotkeys
@@ -137,10 +138,10 @@
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
     SUBDIR += p5-Locale-Codes
-    SUBDIR += peq
     SUBDIR += patchutils
     SUBDIR += pbs
     SUBDIR += pdmenu
+    SUBDIR += peq
     SUBDIR += pg
     SUBDIR += pinfo
     SUBDIR += pkg_tarup
