@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Curses based MIME Mail Reader
 
 ALL_TARGET=	# empty
 

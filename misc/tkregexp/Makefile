@@ -12,6 +12,7 @@ MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive regexp design tool
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.r|-rc|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Network monitoring tool with command line and web interfaces
 
 # Besides the required dependencies listed here, this port can optionally
 # make use of sysutils/lsof and security/nmap if installed.

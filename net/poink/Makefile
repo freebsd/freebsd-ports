@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=   ${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Nosuid, secure ping like utility
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		"Hostname resolution broken on ${MACHINE_ARCH}"

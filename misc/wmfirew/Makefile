@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockapp that shows fireworks in action
 
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create publication-quality 2D scientific plots
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils

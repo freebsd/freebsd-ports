@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	AI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for introducing to internal operations of neural networks
 
 PERL_CONFIGURE=	yes
 

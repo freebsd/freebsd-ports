@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The BPF Traffic Collector
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafd/trafd ${PREFIX}/bin

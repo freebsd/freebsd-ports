@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A network auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	poptop
 DISTNAME=		pptpd-${PORTVERSION}
 
 MAINTAINER=		ports@freebsd.org
+COMMENT=	Windows 9x compatible PPTP (VPN) server
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-bsdppp

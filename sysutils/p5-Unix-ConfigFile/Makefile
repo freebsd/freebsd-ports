@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Unix
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl modules that provides a simple interface to reading /etc files
 
 PERL_CONFIGURE=	yes
 

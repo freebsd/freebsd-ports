@@ -25,6 +25,7 @@ PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU Compiler Collection 3.1 (inprogress version)
 
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc31

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Portable/multi-platform lightweight tcp socket scripting
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

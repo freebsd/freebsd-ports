@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.ntua.gr/pub/net/mud/lpmud/clients/pmf/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Padrone's Mud Frontend
 
 WRKSRC=		${WRKDIR}/pmfdir/src
 

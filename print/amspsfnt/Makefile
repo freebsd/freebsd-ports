@@ -13,6 +13,7 @@ DISTNAME=	amsps
 EXTRACT_SUFX=	-unix.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	AMSFonts PostScript Fonts (Adobe Type 1 format)
 
 BUILD_DEPENDS=	$(LOCALBASE)/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.spot.org/pub/xw/
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	X app to list current users logged into the system
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 

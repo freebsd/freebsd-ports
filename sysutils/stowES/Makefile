@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.inf.tu-dresden.de/~al10/stowES/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	stow Enhancement Script
 
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
 .if !exists(/usr/bin/bzip2)

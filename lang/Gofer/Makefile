@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A lazy functional language
 
 WRKSRC=		${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer

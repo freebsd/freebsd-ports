@@ -11,6 +11,7 @@ CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.datrix.co.za/pub/mreport/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sendmail logfile summary tool
 
 USE_REINPLACE=	yes
 ALL_TARGET=	ALL

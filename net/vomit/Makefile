@@ -11,6 +11,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://vomit.xtdnet.nl/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Voice over misconfigured internet telephones
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet

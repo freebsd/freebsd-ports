@@ -16,6 +16,7 @@ DISTNAME=	pyRijndael-${PORTVERSION}.py
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A pure python implementation of the Rijndael encryption algorithm
 
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}
 USE_PYTHON=	yes

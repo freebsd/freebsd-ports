@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.sfc.keio.ac.jp/~mimasa/jweblint/ \
 DISTNAME=	weblint-97-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.ne.jp/pub/misc/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast scatter/gather TCP port scanner
 
 WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	PDL pdl
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl Data Language
 
 BROKEN=		"Does not compile"
 

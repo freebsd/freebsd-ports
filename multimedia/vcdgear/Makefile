@@ -11,6 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdgear.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool to convert VCDs from cue/bin format to mpeg
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 300004

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for machine-independent, array-oriented data access
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

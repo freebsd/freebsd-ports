@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A reference manager based on the BibTeX file format
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

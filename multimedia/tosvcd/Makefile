@@ -12,6 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://muse.seh.de/tosvcd/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SVCD transcoder
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	sup
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CMU's Software Update Protocol package
 
 MAN1=		sup.1
 MAN8=		supservers.8

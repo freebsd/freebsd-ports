@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/andreas/oinkmaster/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Help you update your snort rules after each update
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

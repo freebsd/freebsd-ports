@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dynamic Relay Authorization Control, a pop-before-smtp implementation
 
 .if defined(WITH_POSTFIX_DB3)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3

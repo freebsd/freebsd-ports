@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pl
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GPG/PGP Keyring Graph Generator
 
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}

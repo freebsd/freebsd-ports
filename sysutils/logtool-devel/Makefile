@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xjack.org/logtool/logtool/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Parse syslog logfile into a palatable format
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

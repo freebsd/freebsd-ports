@@ -13,6 +13,7 @@ MASTER_SITES=	http://josefsson.org/walker/
 DISTNAME=	walker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DNSSEC Walker
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CPU identification utility
 
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386

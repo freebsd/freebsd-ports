@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://ftp.cnidr.org/software/freewais/ \
 		ftp://ftp.netsw.org/infosys/wais/freewais/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Wide Area Information Server
 
 NO_PACKAGE=	"not yet"
 NO_INSTALL=	almost

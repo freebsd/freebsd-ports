@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.boutell.com/rinetd/http/
 DISTNAME=	rinetd
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple TCP port redirector
 
 WRKSRC=		${WRKDIR}/rinetd/
 

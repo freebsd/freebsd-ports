@@ -12,6 +12,7 @@ MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
 
 PERL_CONFIGURE=	YES
 

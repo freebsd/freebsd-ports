@@ -13,6 +13,7 @@ DISTNAME=	ijs-${PORTVERSION}
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C library that supports plugin printer driver for Ghostscript
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

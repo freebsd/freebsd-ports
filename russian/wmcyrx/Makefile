@@ -14,6 +14,7 @@ MASTER_SITES=	http://freebsd.org.ru/~osa/distfiles/ \
 DISTNAME=	cyrx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The cyrillic keyboard layout manager for Window Maker
 
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.namodn.com/pub/projects/ \
 		http://communityprojects.org/apps/sloth/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Slow down a process
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cy
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
 USE_BZIP2=	yes
 

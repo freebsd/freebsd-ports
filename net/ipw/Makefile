@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mjhb.com/ipw/
 DISTNAME=	ipw
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A "whois" replacement that automatically queries several databases
 
 NO_WRKSUBDIR=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tcl8.0.5
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Tool Command Language
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix

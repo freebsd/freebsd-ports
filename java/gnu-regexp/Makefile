@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.tralfamadore.com/pub/java/
 DISTNAME=	gnu.regexp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A regexp library for Java
 
 USE_JAVA=	1.1+
 

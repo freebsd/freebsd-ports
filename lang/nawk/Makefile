@@ -13,6 +13,7 @@ MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 DISTNAME=	awk
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Brian Kernighan's pattern scanning and processing language
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

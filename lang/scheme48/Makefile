@@ -12,6 +12,7 @@ MASTER_SITES=	http://s48.org/0.57/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Scheme Underground's implementation of R4RS
 
 GNU_CONFIGURE=  yes
 ALL_TARGET = 	enough

@@ -21,6 +21,7 @@ MASTER_SITES=	http://quimby.gnus.org/gnus/dist/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A popular newsreader for emacs20
 
 HAS_CONFIGURE=	yes
 

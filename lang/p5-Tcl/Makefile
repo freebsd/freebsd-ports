@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tcl
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Tcl extension module for Perl5
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 

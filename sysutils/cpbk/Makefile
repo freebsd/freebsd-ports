@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/install/cpbk/ \
 		ftp://mocha.mkintraweb.com/pub/linux/cpbk/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Backup Copy programm
 
 MAN1=		cpbk.1
 MANCOMPRESSED=	yes

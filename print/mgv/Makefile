@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.trends.net/~mu/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A PostScript and PDF previewer
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

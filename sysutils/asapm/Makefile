@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
 MASTER_SITE_SUBDIR=	apps/asapm
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Laptop battery status display for X11
 
 ONLY_FOR_ARCHS=	i386
 

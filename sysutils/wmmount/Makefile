@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-1.0-beta2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The freespace for Window Maker
 
 USE_IMAKE=	yes
 USE_XPM=	yes

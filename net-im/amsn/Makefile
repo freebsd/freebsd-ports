@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MSN Messenger
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 

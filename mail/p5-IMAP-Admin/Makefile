@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IMAP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for basic IMAP server administration
 
 PERL_CONFIGURE=	YES
 

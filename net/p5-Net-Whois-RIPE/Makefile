@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L} Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Implementation of RIPE Whois
 
 PERL_CONFIGURE=	yes
 

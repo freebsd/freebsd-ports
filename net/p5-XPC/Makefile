@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.gregorpurdy.com/gregor/sw/XPC/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XML Procedure Call (XPC)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Daemon.pm:${PORTSDIR}/www/p5-libwww \

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Emacs Lisp reference manual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 GNU_CONFIGURE=	yes

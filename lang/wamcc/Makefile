@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/loco/wamcc/
 DISTFILES=	wamcc2.22.tar.Z prg.tar.Z
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	Prolog-to-C translator from Inria
 
 DIST_SUBDIR=	wamcc
 NO_WRKSUBDIR=	yes

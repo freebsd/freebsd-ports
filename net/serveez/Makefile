@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A server framework
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 .if !exists(/usr/bin/bzip2)

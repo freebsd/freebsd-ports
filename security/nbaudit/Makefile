@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	NT/scanners
 DISTNAME=	nat10
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	NetBIOS Auditing Tool / Security Kit
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		nat.1 nbaudit.1

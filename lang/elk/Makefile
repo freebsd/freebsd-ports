@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/elk/dist/
 DISTNAME=	elk-3.0
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An embeddable Scheme interpreter
 
 USE_XLIB=	yes
 ALL_TARGET=	default

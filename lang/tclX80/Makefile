@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 DISTNAME=	tclX8.0.4
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extended TCL
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

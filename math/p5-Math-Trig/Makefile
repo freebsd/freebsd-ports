@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Inverse and hyperbolic trigonemetric Functions
 
 PERL_CONFIGURE=	yes
 

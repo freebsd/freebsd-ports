@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	twofishmodule-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Twofish cryptographic module for Python
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

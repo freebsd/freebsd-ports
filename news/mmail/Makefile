@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	multimail \
 			system/bbs/mail
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Offline BBS mail packet reader supporting QWK/OMEN/SOUP/OPX/BLUEWAVE
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.hcs.de/users/hm/packages/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Curses based user friendly windowing shell
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	cwish

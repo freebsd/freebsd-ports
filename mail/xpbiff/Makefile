@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/xpbiff/
 DISTNAME=	xpbiff
 DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	A replacement for xbiff that handles popup window with mail header
 
 USE_IMAKE=	yes
 USE_XPM=	yes

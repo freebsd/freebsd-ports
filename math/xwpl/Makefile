@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://pascal.math.yale.edu/pub/wavelets/software/xwpl/other-versio
 DISTNAME=	${PKGNAME}-freebsd
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The X Wavelet Packet Laboratory
 
 ONLY_FOR_ARCHS=	i386
 

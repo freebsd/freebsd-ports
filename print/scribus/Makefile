@@ -13,6 +13,7 @@ MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu

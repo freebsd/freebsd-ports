@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Passive NNTP client to retrieve Usenet articles from a remote server
 
 NO_WRKSUBDIR=	yes
 MAN1=		slurp.1

@@ -14,6 +14,7 @@ DISTNAME=	trinokiller
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Remotely kill trino nodes
 
 NO_WRKSUBDIR=	yes
 

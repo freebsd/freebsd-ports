@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/text/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Auto detect encoding and convert to koi8, CP-1251 or cp866
 
 USE_BZIP2=	yes
 

@@ -8,10 +8,10 @@
 PKGNAMESUFFIX=	-euc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A portable multi-window 'vi', handles Japanese EUC
 
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 
 PROG=		xvi

@@ -12,6 +12,7 @@ MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java Development Environment for Emacs
 
 EMACS_PORT_NAME?=	emacs21
 

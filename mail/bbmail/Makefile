@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool intended for Blackbox that checks for new mail
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

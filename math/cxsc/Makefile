@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.math.uni-wuppertal.de/wrswt/xsc/cxsc/
 DISTNAME=	${PORTNAME}-2-0-beta
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ class library for eXtended Scientific Computing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	contrib/srcs/utils
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Another WindowMaker load gauge
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.cs.uu.nl/~hanwen/pktrace/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \

@@ -11,6 +11,7 @@ CATEGORIES=	misc tk82
 MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GUI dotfile generator program to create .config files
 
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.osl.iu.edu/download/research/mtl/
 DISTNAME=	${PORTNAME}-2.1.2-20
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Matrix Template Library
 
 GNU_CONFIGURE=	yes
 

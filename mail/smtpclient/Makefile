@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.engelschall.com/sw/smtpclient/distrib/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple SMTP client
 
 GNU_CONFIGURE=	yes
 MAN1=		smtpclient.1

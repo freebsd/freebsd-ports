@@ -16,6 +16,7 @@ DISTFILES=	configurator_${PORTVERSION:S/.0.1/01/g}${EXTRACT_SUFX} \
 		airportmodemutility_${MODEMVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apple Airport / Lucent RG-1000 configuration program
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

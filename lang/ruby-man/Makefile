@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${LANGSUFFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Ruby reference manual, in HTML format
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

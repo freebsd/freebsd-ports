@@ -13,6 +13,7 @@ DISTNAME=	afm
 EXTRACT_SUFX=   -tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Adobe Font Metrics
 
 pre-patch:
 	@${RM} -rf ${WRKSRC}/RCS

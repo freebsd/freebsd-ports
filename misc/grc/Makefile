@@ -13,6 +13,7 @@ MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generic Colouriser
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes

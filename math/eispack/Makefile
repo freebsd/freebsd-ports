@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
 DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Eigenvalue system package
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 

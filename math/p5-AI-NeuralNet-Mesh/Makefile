@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	AI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl module implementing an optimized, accurate neural network mesh
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

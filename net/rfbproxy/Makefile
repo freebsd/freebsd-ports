@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple tool for recording VNC sessions
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

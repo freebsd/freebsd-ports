@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 		http://www.wwdsi.com/saint/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Security Administrator's Integrated Network Tool
 
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 

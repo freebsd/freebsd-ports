@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}s${PORTVERSION}
 EXTRACT_SUFX=	.freebsd.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A compiler for the object-oriented language Eiffel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

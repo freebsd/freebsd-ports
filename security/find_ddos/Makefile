@@ -16,6 +16,7 @@ DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Scans a host filesystem for distributed denial of service programs
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.nntpcache.org/pub/nntpcache/ \
 		ftp://ftp.ayamura.org/pub/misc/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	News caching/anti-spam/server-merging system
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 .if defined(WITH_LDAP) && !defined(WITH_LDAP2)

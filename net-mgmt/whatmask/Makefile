@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Easily convert between three common subnet mask notations
 
 GNU_CONFIGURE=	yes
 

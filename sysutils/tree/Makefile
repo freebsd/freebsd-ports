@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAN1=		tree.1
 

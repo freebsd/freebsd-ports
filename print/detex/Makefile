@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.purdue.edu/homes/trinkle/detex/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Strips TeX/LaTeX codes from a file
 
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

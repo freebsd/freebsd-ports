@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.robertnz.com/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A C++ matrix library
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes

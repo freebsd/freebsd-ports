@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.domtools.com/pub/
 DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

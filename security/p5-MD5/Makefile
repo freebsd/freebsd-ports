@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	MD5/GAAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 interface to MD5 Message-Digest Algorithm
 
 PERL_CONFIGURE=	yes
 

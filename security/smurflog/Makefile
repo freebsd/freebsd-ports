@@ -11,6 +11,7 @@ CATEGORIES=	security
 #MASTER_SITES=  None available anymore, so this is stored locally
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to assist logging of smurf attacks
 
 GNU_CONFIGURE=	YES
 

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.student.hk-r.se/~pt98jan/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A colour-able replacement for tail(1)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

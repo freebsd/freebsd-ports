@@ -12,6 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.arnoldarts.de/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
 
 GNU_CONFIGURE=	yes
 

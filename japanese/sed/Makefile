@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU sed + multi-byte extension
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

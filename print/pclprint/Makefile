@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://andrsn.stanford.edu/pub/print/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utility for printing to HP (Laser,Desk)Jets using PCL rather than PS
 
 NO_BUILD=	YES
 

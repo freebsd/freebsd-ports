@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/metis/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A package for unstructured graph partitioning
 
 ALL_TARGET=
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	aa-project
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	High quality audio-visual demonstration for text terminal
 
 LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib \
 			mikmod.2:${PORTSDIR}/audio/libmikmod

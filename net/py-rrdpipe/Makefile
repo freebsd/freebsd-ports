@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRRDpipe-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Portable Python module to access RRDTool files via pipes
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 

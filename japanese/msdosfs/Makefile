@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mount_msdos-20000701.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mount a Microsoft FAT Japanese file system
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert PNM images to PPA for some HP printers
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		enscript:${PORTSDIR}/print/enscript-letter

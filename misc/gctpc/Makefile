@@ -13,6 +13,7 @@ DISTNAME=	gctpc
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An USGS General Cartographic Transformation Package (GCTP)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes

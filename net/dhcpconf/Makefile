@@ -14,6 +14,7 @@ DISTNAME=	dhcp-conf
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Neat console-based ISC DHCP server configuration-generating utility
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		newt.51:${PORTSDIR}/devel/newt

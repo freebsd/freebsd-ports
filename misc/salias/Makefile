@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command-line tool to alias arguments of other programs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

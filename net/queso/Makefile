@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/distfiles/  \
 MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Determine the remote OS using simple tcp packets
 
 GNU_CONFIGURE=  yes
 

@@ -10,6 +10,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Draw organic molecules easily and store them
 
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 

@@ -14,6 +14,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Japanese "meta-port" for the GNOME integrated X11 desktop
 
 LIB_DEPENDS=	gnome.5:${PORTSDIR}/japanese/gnomelibs \
 		gal.22:${PORTSDIR}/japanese/gal

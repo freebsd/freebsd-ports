@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
 		ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A ncurses-based restriction shell
 
 .include <bsd.port.pre.mk>
 

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Ncurses based, lynx style info documentation browser
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A mail library
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		db4.0:${PORTSDIR}/databases/db4

@@ -11,6 +11,7 @@ CATEGORIES+=	misc tk82
 MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 
 MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Tcl/tk-based presentation tool
 
 .if defined(KANJI)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80

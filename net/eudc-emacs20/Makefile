@@ -12,6 +12,7 @@ MASTER_SITES=	http://lspwww.epfl.ch/~figueire/Software/eudc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Emacs client to directory servers
 
 RUN_DEPENDS=	ldapsearch:${PORTSDIR}/net/openldap
 

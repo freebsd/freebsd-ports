@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.smithurst.org/ben/tarballs/ \
 		ftp://ukug.uk.freebsd.org/pub/mark/fontmake/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools for creating and editing console (syscons) font files
 
 do-install:
 	@cd ${WRKSRC} && \

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 MASTER_SITE_SUBDIR=	support/lout
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Commercial Spreadsheet
 
 ONLY_FOR_ARCHS=	i386
 

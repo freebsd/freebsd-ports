@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	gri-${PORTVERSION}-arch-indep
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

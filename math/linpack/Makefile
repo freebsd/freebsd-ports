@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
 DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Linear Algebra package
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 

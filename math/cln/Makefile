@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 

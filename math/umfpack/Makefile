@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cise.ufl.edu/pub/faculty/davis/umfpack/
 DISTNAME=	UMFPACK${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Unsymmetric-pattern Multifrontal Package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 

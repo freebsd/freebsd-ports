@@ -17,6 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-extralibs-${VERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A SLang-based text editor (w/ Japanese support)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		${LIBDEP_CANNA}

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A lib that creates a libxml2 tree w/ info. token on a *NIX filesystem
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 

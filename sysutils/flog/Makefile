@@ -12,6 +12,7 @@ MASTER_SITES=	http://oss.ezic.com/flog/ \
 		http://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A small STDIN-to-file logger with support for log rotation
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/flog ${WRKSRC}/flog.c

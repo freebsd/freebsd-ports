@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/   \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A statistics/X11 based lisp interpreter
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

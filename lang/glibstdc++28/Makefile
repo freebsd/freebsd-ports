@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	libstdc++
 DISTNAME=	libstdc++-2.8.1.1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ISO Standard C++ library (includes the STL) for G++ 2.8.0
 
 BUILD_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28

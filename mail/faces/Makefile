@@ -13,6 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Visual mail, user and print face server
 
 LIB_DEPENDS=    intl.4:${PORTSDIR}/devel/gettext
 

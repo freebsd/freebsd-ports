@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Translate text both to and from KennySpeak
 
 USE_PERL5=	yes
 NO_BUILD=	yes

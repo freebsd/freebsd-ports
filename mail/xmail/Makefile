@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X-based interface to the Berkeley mail program
 
 USE_IMAKE=	yes
 USE_XPM=	yes

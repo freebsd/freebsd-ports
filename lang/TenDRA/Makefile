@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/ \
 		ftp://ftp.mayn.de/pub/unix/devel/compiler/tendra/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A portable but mostly-unsupported C/C++ compiler
 
 .include <bsd.port.pre.mk>
 

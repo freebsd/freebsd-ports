@@ -12,6 +12,7 @@ MASTER_SITES=	http://nutbar.chemlab.org/downloads/programs/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache log rollover program with strftime(3) filename support
 
 MAN8=	httplog.8
 

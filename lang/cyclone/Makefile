@@ -18,6 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-docs.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Print multiple pages per sheet of paper
 
 MAN1=		mpage.1
 ALL_TARGET=	default

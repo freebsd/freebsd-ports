@@ -19,6 +19,7 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		Security-HOWTO.sgml.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Linux HOW-TOs modified for applicablity on FreeBSD
 
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 

@@ -14,6 +14,7 @@ DISTNAME=	perl_archie.${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module to make Archie queries via Prospero requests
 
 USE_PERL5=	yes
 

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 DISTNAME=	dhcp-1.4.0p6
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dynamic Host Configuration Protocol, WIDE-Implimentation
 
 MAKE_ENV=	OSTYPE=${OPSYS}
 

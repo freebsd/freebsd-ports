@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	devel/lang/lisp
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scheme interpreter with full access to the Tk graphical package
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Thomas Esser's distribution of TeX & friends
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww

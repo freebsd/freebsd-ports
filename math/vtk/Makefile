@@ -13,6 +13,7 @@ DISTNAME=	vtk32-src-unix
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Visualization Toolkit
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://asterix.fi.upm.es/pub/facultad/departamentos/datsi/frosal/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A shell script "encoder"
 
 IGNORE=		"Produces broken binaries"
 

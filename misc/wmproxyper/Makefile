@@ -12,6 +12,7 @@ MASTER_SITES=	http://home.student.utwente.nl/w.k.havinga/wmproxyper/
 DISTNAME=	WMProxyPer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Displays Distributed.net Personal Proxy current status and progress
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 

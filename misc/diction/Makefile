@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.moria.de/~michael/diction/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU diction and style
 
 USE_AUTOCONF=	yes
 

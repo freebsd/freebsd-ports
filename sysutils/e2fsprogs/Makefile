@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A set of utilities and library to manipulate an ext2 filesystem
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -11,6 +11,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmMand-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A DockApp mandelbrot explorer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuzz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool for testing software by bombarding the program with random data
 
 GNU_CONFIGURE=	yes
 

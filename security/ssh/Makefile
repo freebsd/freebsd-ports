@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://ftp.univie.ac.at/applications/ssh.com/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Secure shell client and server (remote login program)
 
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES

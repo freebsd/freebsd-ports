@@ -15,6 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Obtuse smtpd/smtpfwdd, part of the Juniper firewall toolkit
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-old
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A POP3 & IMAP4 proxy that can map users to multiple backend servers
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	support
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert a document from troff to LaTeX
 
 IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 

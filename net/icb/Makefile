@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.obfuscation.org/ftp/pub/icb/ \
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Internet CB - a mostly-defunct chat client
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 

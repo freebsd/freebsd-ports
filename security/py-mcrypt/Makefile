@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-mcrypt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A comprehensive Python interface to the mcrypt library
 
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 

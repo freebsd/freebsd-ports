@@ -11,6 +11,7 @@ CATEGORIES=	mbone audio security
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Voice Communication Over Data Networks
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 

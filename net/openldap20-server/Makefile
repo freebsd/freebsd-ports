@@ -22,6 +22,7 @@ MASTER_SITE_SUBDIR=	openldap-release
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Open source LDAP client and server software
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://keel.mit.edu/pub/Oases/
 DISTNAME=	oases_Mar-28-2002
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
 
 WRKSRC=		${WRKDIR}/Oases_export
 

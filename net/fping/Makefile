@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.fping.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quickly ping N hosts w/o flooding the network
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

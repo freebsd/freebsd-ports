@@ -19,6 +19,7 @@ DISTFILES=	${PORTNAME}.aa \
 DIST_SUBDIR=	${ARCH}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A convenience package to install the compat22 libraries
 
 ONLY_FOR_ARCHS=	i386
 PORTOBJFORMAT=	aout

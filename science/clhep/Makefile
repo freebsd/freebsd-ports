@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/CLHEP
 

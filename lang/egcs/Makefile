@@ -16,6 +16,7 @@ DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	EGCS enhanced version of the GNU compiler suite
 
 USE_BZIP2=	yes
 

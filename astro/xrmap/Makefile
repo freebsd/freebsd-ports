@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Map portions of the earth from a given longitude/latitude
 
 USE_IMAKE=	yes
 USE_XPM=	yes

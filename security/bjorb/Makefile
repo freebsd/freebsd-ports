@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Secure TCP relay software with SSL
 
 USE_OPENSSL=	YES
 USE_PERL5=	yes

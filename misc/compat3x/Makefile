@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${COMPAT3X_OSRELDATE}
 DIST_SUBDIR=	${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A convenience package to install the compat3x libraries
 
 ONLY_FOR_ARCHS=	i386
 

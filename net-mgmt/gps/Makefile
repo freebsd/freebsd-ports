@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gps.sourceforge.net/release/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Ghost Port Scan
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

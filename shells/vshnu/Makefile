@@ -12,6 +12,7 @@ CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/vshnu/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	New Visual Shell
 
 .include <bsd.port.pre.mk>
 

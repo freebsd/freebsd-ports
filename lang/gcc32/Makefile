@@ -25,6 +25,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU Compiler Collection 3.2.1 (inprogress version)
 
 LATEST_LINK=	gcc32
 

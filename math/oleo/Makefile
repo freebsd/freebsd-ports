@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The GNU spreadsheet for X11 and terminals
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-ginac
 DISTNAME=	${PORTNAME}-ginac-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program calculating Feynman diagrams
 
 LIB_DEPENDS=	ginac:${PORTSDIR}/math/GiNaC
 

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://cricket.sourceforge.net/download/beta/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A high performance, extremely flexible monitoring system
 
 RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
 		${SITE_PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool \

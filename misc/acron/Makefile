@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Database of acronyms and abbreviations
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

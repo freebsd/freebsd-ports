@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gdis/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display and manipulation of isolated molecules and periodic systems
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 

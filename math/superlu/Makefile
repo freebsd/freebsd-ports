@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nersc.gov/~xiaoye/SuperLU/
 DISTNAME=	${PORTNAME}_2.0
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library of routines for performing sparse factorization
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 

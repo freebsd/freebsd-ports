@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sntop
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Monitor status of network nodes using fping
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-20/ \
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	DVI Previewer(kpathsearch) for X
 
 RUN_DEPENDS=	mf:${PORTSDIR}/print/tex
 

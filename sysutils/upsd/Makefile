@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.rge.com/pub/admin/upsd/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	APC Smart UPS Monitoring Daemon
 
 WRKSRC=		${WRKDIR}/upsd-2.0
 
