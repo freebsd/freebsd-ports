@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplusfonts
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/ \
 		http://wids.net/archive/mplusfonts/distfiles/
