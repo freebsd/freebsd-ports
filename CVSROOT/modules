@@ -4092,6 +4092,7 @@ mergemaster	src/usr.sbin/mergemaster
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
 mesg		src/usr.bin/mesg
+mesgui		ports/x11-toolkits/mesgui
 mess822		ports/mail/mess822
 messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
