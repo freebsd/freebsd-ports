@@ -737,3 +737,14 @@ $FreeBSD$
  @ENABLE_NAUTILUS_VIEW_FALSE@galeon_bin_OBJECTS =  \
  @ENABLE_NAUTILUS_VIEW_FALSE@GaleonAutomation-common.$(OBJEXT) \
  @ENABLE_NAUTILUS_VIEW_FALSE@Galeon-impl.$(OBJEXT) \
+--- configure.orig	Wed Mar 13 19:23:43 2002
++++ configure	Wed Mar 13 19:29:40 2002
+@@ -7030,7 +7030,7 @@
+ #define ENABLE_NAUTILUS_VIEW 1
+ EOF
+ 
+-  _gnome_modules="$_gnome_modules bonobox nautilus"
++  _gnome_modules="$_gnome_modules bonobox"
+ fi
+ echo "$ac_t""$enable_nautilus_view" 1>&6
+ 
