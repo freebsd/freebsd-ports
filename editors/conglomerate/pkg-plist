@@ -1,4 +1,17 @@
 bin/conglomerate
+share/doc/conglomerate/ch01.html
+share/doc/conglomerate/ch02.html
+share/doc/conglomerate/ch03.html
+share/doc/conglomerate/ch04.html
+share/doc/conglomerate/ch04s02.html
+share/doc/conglomerate/ch04s03.html
+share/doc/conglomerate/ch05.html
+share/doc/conglomerate/ch06.html
+share/doc/conglomerate/ch07.html
+share/doc/conglomerate/ch08.html
+share/doc/conglomerate/ch09.html
+share/doc/conglomerate/index.html
+share/gnome/application-registry/conglomerate.applications
 share/gnome/applications/conglomerate.desktop
 share/gnome/conglomerate/dispspecs/cnxml.xds
 share/gnome/conglomerate/dispspecs/dispspec.xds
@@ -62,6 +75,7 @@ share/gnome/conglomerate/pixmaps/cong-wrapper-16.png
 share/gnome/conglomerate/templates/dispspec.xml
 share/gnome/conglomerate/templates/html.xml
 share/gnome/help/conglomerate/C/conglomerate.xml
+share/gnome/help/conglomerate/C/faq.xml
 share/gnome/help/conglomerate/C/figures/conglomerate_logo.png
 share/gnome/help/conglomerate/C/figures/intro.png
 share/gnome/help/conglomerate/C/figures/menu-properties.png
@@ -69,6 +83,8 @@ share/gnome/help/conglomerate/C/figures/new-doc-wizard.png
 share/gnome/help/conglomerate/C/figures/new.png
 share/gnome/help/conglomerate/C/figures/properties-dialog.png
 share/gnome/help/conglomerate/C/figures/quote.png
+share/gnome/mime-info/conglomerate.keys
+share/gnome/mime-info/conglomerate.mime
 share/gnome/omf/conglomerate/conglomerate-C.omf
 share/gnome/pixmaps/conglomerate-icon-16.png
 share/locale/az/LC_MESSAGES/conglomerate.mo
