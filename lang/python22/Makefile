@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -21,12 +21,13 @@ WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
-INSTALL_TARGET=	install
-MAN1=		python.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.2
 PYTHON_NO_DEPENDS=	yes
+USE_REINPLACE=	yes
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -81,6 +82,11 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e \
+		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
+		${WRKSRC}/Lib/pydoc.py
+
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
@@ -96,9 +102,9 @@ post-extract:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.2 ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-		${PREFIX}/share/emacs/site-lisp
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
 		(cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
