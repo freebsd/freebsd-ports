@@ -1,22 +1,22 @@
 bin/vigor
-share/vi/catalog/dutch
-share/vi/catalog/english
-share/vi/catalog/french
-share/vi/catalog/german
-share/vi/catalog/ru_SU.KOI8-R
-share/vi/catalog/spanish
-share/vi/catalog/swedish
-share/vi/perl/VI.pm
-share/vi/perl/forall.pl
-share/vi/perl/make.pl
-share/vi/perl/tk.pl
-share/vi/perl/wc.pl
-share/vi/recover
-share/vi/tcl/errors.tcl
-share/vi/tcl/gnats.tcl
-share/vi/tcl/mailprocs.tcl
-share/vi/tcl/wc.tcl
-@dirrm share/vi/tcl
-@dirrm share/vi/catalog
-@dirrm share/vi/perl
-@dirrm share/vi
+share/vigor/catalog/dutch
+share/vigor/catalog/english
+share/vigor/catalog/french
+share/vigor/catalog/german
+share/vigor/catalog/ru_SU.KOI8-R
+share/vigor/catalog/spanish
+share/vigor/catalog/swedish
+share/vigor/perl/VI.pm
+share/vigor/perl/forall.pl
+share/vigor/perl/make.pl
+share/vigor/perl/tk.pl
+share/vigor/perl/wc.pl
+share/vigor/recover
+share/vigor/tcl/errors.tcl
+share/vigor/tcl/gnats.tcl
+share/vigor/tcl/mailprocs.tcl
+share/vigor/tcl/wc.tcl
+@dirrm share/vigor/tcl
+@dirrm share/vigor/perl
+@dirrm share/vigor/catalog
+@dirrm share/vigor
