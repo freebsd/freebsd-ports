@@ -1,0 +1,5 @@
+libexec/emacs/%%EMACS_VER%%/i386--freebsd/canna.so
+%%LISPDIR%%/canna.el
+%%DOCDIR%%/README.ja
+%%DOCDIR%%/ChangeLog
+@dirrm %%DOCDIR%%
