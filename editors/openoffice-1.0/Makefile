@@ -9,7 +9,8 @@ PORTNAME=	openoffice
 PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES+=	editors
-MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
+MASTER_SITES+=	http://openofficeorg.secsup.org/%SUBDIR%/ \
+		http://mirrors.sunsite.dk/openoffice/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.chg.ru/pub/OpenOffice/%SUBDIR%/ \
