@@ -1,0 +1,5 @@
+--- modules/doctools/mpformats/_html.tcl	Mon Jan 21 12:55:23 2002
++++ modules/doctools/mpformats/_html.tcl	Mon Jan 28 15:15:02 2002
+@@ -29 +29 @@
+-proc wget    {url} {exec /usr/bin/wget -q -O - $url 2>/dev/null}
++proc wget    {url} {exec /usr/bin/fetch -q -o - $url 2>/dev/null}
