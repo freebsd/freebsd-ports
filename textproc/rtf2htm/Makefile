@@ -9,8 +9,8 @@
 PORTNAME=	rtf2htm
 PORTVERSION=	0.17.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.geocities.com/tuorfa/
-
+MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		http://people.FreeBSD.org/~foxfair/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line converter from RTF (Rich Text) to HTML
 
