@@ -1,0 +1,23 @@
+*** Config.orig	Thu Oct 29 03:29:02 1998
+--- Config	Fri Oct 30 08:32:22 1998
+***************
+*** 3,9 ****
+  #
+  # Where ruboard shold be installed (home dir)
+  #
+! HOMEDIR	=	/usr/local/lib/ruboard
+  #
+  # Owner and group of boards. Defaults to your user id. Do not delete
+  # `-o' and `-g'!
+--- 3,13 ----
+  #
+  # Where ruboard shold be installed (home dir)
+  #
+! HOMEDIR	=	$(PREFIX)/etc/ruboard
+! #
+! # Where binaries are instaled
+! #
+! BINDIR	=	$(PREFIX)/libexec/ruboard
+  #
+  # Owner and group of boards. Defaults to your user id. Do not delete
+  # `-o' and `-g'!
