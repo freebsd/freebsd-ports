@@ -246,6 +246,7 @@
     SUBDIR += libicq
     SUBDIR += libicq2000
     SUBDIR += libnet
+    SUBDIR += libnet-devel
     SUBDIR += libnids
     SUBDIR += libosip
     SUBDIR += librsync
