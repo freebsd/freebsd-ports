@@ -11,9 +11,8 @@
 # pglb_enable="YES"
 #
 
-pglb_enable="NO"
-pglb_data="%%PREFIX%%/pgsql/data"
-pglb_flags=""
+pglb_enable=${pglb_enable-"NO"}
+pglb_data=${pglb_data-"%%PREFIX%%/pgsql/data"}
 
 . %%RC_SUBR%%
 
