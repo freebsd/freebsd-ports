@@ -1,0 +1,37 @@
+
+$FreeBSD$
+
+--- src/lib/libast/features/float.orig	Wed Oct 10 14:10:50 2001
++++ src/lib/libast/features/float	Wed Oct 10 14:12:26 2001
+@@ -125,6 +125,7 @@
+ 		else
+ 			printf("#define UINTMAX_DIG		ULONG_DIG\n");
+ 		printf("\n");
++	#if !defined(__alpha__)		/* ksh93 doesn't use this */
+ 		f = 1;
+ 		w = 1;
+ 		do
+@@ -145,6 +146,7 @@
+ 		}
+ 		else
+ 			printf("#define FLT_UINTMAX_MAX		FLT_ULONG_MAX\n");
++	#endif
+ 	#ifdef FLT_DIG
+ 		s = FLT_DIG;
+ 	#else
+@@ -256,6 +258,7 @@
+ 		printf("#endif\n");
+ 
+ 		printf("\n");
++	#if !defined(__alpha__)		/* ksh93 doesn't use this */
+ 		d = 1.0;
+ 		w = 1;
+ 		do
+@@ -276,6 +279,7 @@
+ 		}
+ 		else
+ 			printf("#define DBL_UINTMAX_MAX		DBL_ULONG_MAX\n");
++	#endif
+ 	#ifdef DBL_DIG
+ 		s = DBL_DIG;
+ 	#else

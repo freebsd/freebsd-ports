@@ -12,16 +12,15 @@ MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 
 MAINTAINER=	naddy@mips.inka.de
 
-BROKEN=		"does not build"
 RESTRICTED=	"Source recipient must acknowledge license"
 DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
 
 NO_WRKSUBDIR=	yes
 MAKE_ARGS=	CC='${CC}' CCFLAGS='${CFLAGS}' SHELL='${SH}'
-.if defined(WANT_STATIC)
-MAKE_ARGS+=	LDFLAGS=-static
-.endif
+#.if defined(WANT_STATIC)	# broken
+#MAKE_ARGS+=	LDFLAGS=-static
+#.endif
 
 MAN1=		ksh93.1
 
