@@ -1,0 +1,9 @@
+--- cmd/Imakefile.orig	Mon Jun 17 05:50:30 1996
++++ cmd/Imakefile	Fri Oct  5 18:18:22 2001
+@@ -1,4 +1,5 @@
+-ROOT =	/usr/local
++PREFIX ?=	/usr/local
++ROOT =		${PREFIX}
+ BINDIR =	$(ROOT)/bin
+ 
+ all::

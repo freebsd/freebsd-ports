@@ -31,6 +31,7 @@
     SUBDIR += docbook-400
     SUBDIR += docbook-410
     SUBDIR += docbook-tdg
+    SUBDIR += docbook-to-man
     SUBDIR += docbook-xml
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-cygnus

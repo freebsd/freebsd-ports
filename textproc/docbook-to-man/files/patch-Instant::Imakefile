@@ -1,0 +1,29 @@
+--- Instant/Imakefile.orig	Mon Jun 17 05:50:29 1996
++++ Instant/Imakefile	Fri Oct  5 18:18:22 2001
+@@ -1,14 +1,18 @@
+ #define IHaveSubdirs
+ #define PassCDebugFlags
++#undef BuildInstallHtmlManPage
++#define BuildInstallHtmlManPage(x,y,z) /**/
+ 
+ SUBDIRS = tptregexp
+ 
+-ROOT		= /usr/local
++PREFIX		?= /usr/local
++ROOT		= ${PREFIX}
++MANPATH		= ${ROOT}/man
+ BINDIR		= $(ROOT)/bin
+ 
+ INCLUDES	= -Itptregexp
+ LOCAL_LIBRARIES = -Ltptregexp -ltptregexp
+-TPTLIB		= $(ROOT)/lib/tpt
++TPTLIB		= $(ROOT)/share/sgml/otranspec
+ DEFINES		= -DDEF_TPT_LIB=\"$(TPTLIB)\"
+ 
+ SRCS	= main.c util.c info.c translate.c traninit.c tranvar.c tables.c \
+@@ -19,4 +23,4 @@
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+ 
+-ComplexProgramTarget(instant)
++ComplexProgramTarget(oinstant)
