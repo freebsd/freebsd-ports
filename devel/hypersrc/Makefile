@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	4.4.7
+PORTVERSION=	4.4.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/latest/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
