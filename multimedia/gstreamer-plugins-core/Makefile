@@ -23,13 +23,26 @@ GST_DIR=	lib/gstreamer-${PORTVERSION}
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
 # Audio plugins
-USE_GSTREAMER+=	a52dec mad vorbis
+USE_GSTREAMER+= mad vorbis
 
 # Graphics plugins
 USE_GSTREAMER+=	libpng
 
 # Multimedia plugins
-USE_GSTREAMER+=	ffmpeg dts dvd xvid
+USE_GSTREAMER+=	ffmpeg xvid
+
+.if !defined(WITHOUT_DVD)
+# Audio plugins
+USE_GSTREAMER+=	a52dec
+
+# Multimedia plugins
+USE_GSTREAMER+=	dts dvd
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " Disable DVD plugins by defining WITHOUT_DVD"
+	@${ECHO_MSG} ""
 
 do-install:
 	if [ ! -d ${PREFIX}/${GST_DIR} ]; then \
