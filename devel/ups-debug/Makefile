@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.11 1999/05/09 17:30:57 obrien Exp $
+# $Id: Makefile,v 1.12 1999/05/10 11:13:24 obrien Exp $
 #
 
 DISTNAME=	ups-3.34beta
@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR= utilities
 MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ups
 MAN1=		ups.1
