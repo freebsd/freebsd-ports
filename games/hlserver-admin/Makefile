@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50.52
+PORTVERSION=	2.50.56a
 PORTEPOCH=	1
 MASTER_SITES=	http://www.adminmod.org/downloads/update/ \
 		${MASTER_SITE_SOURCEFORGE}
