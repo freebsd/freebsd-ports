@@ -16,7 +16,7 @@ RUBY_QT2_CONFIGURE_ARGS= \
 
 MD5_FILE=		${RUBY_QT2_PORTDIR}/distinfo
 
-pre-build: pre-pre-build
+post-patch: post-patch-cflags
 
-pre-pre-build:
-	${RUBY} -i -pe 'sub /-lc\b/, "-pthread"' ${WRKSRC}/Makefile
+post-patch-cflags:
+	${RUBY} -i -pe '~ /^\$$CFLAGS\b.*/ and $$_.sub!(/-O\w*/, "")' ${WRKSRC}/extconf.rb
