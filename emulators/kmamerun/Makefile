@@ -15,6 +15,8 @@ MAINTAINER=	ports@freebsd.org
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_KDELIBS_VER=1
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
