@@ -22,8 +22,8 @@ chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
 chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
 chinese/netscape47-communicator||2002-11-17|security vulnerability
 chinese/netscape47-navigator||2002-11-17|security vulnerability
-japanese/linux-netscape47-communicator||2002-11-17|security vulnerability
-japanese/linux-netscape47-navigator||2002-11-17|security vulnerability
+japanese/linux-netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/linux-netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
 japanese/netscape-fonts|japanese/alias-fonts|2002-11-17|obsoleted by alias-fonts
 japanese/netscape3.language||2002-11-17|security vulnerability
 japanese/netscape4-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
@@ -43,7 +43,7 @@ www/linux-netscape47-communicator|www/netscape48-communicator|2002-11-17|securit
 www/linux-netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
 www/netscape3||2002-11-17|security vulnerability
 www/netscape3-gold||2002-11-17|security vulnerability
-www/netscape4-communicator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape4-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
 www/netscape4-communicator.us|www/netscape48-communicator|2002-11-17|security vulnerability
 www/netscape4-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
 www/netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
