@@ -8382,6 +8382,7 @@ wmavgload	ports/sysutils/wmavgload
 wmbattery	ports/sysutils/wmbattery
 wmbiff		ports/mail/wmbiff
 wmbinclock	ports/x11-clocks/wmbinclock
+wmblob		ports/x11/wmblob
 wmblueclock	ports/x11-clocks/wmblueclock
 wmbluecpu	ports/sysutils/wmbluecpu
 wmbutton	ports/x11/wmbutton
