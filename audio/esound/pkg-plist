@@ -13,11 +13,11 @@ include/esd.h
 lib/libesd.a
 lib/libesd.la
 lib/libesd.so
-lib/libesd.so.0.2
+lib/libesd.so.1
 lib/libesddsp.a
 lib/libesddsp.la
 lib/libesddsp.so
-lib/libesddsp.so.0.2
+lib/libesddsp.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/esd.m4
