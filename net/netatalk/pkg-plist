@@ -28,7 +28,7 @@ bin/megatron
 @exec cd %B && ln -s megatron macbinary
 @exec cd %B && ln -s megatron binheader
 @exec cd %B && ln -s megatron nadheader
-%%NETATALKCNID%%bin/cnid_didname_verify
+%%NETATALKCNID%%bin/cnid_maint
 bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
