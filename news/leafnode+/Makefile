@@ -3,12 +3,13 @@
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1998/12/28 23:19:50 mph Exp $
 #
 
 DISTNAME=	leafnode+-2.3
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/
+MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/ \
+		ftp://ftp.win.or.jp/pub/network/news/misc/
 
 MAINTAINER=	tom@eborcom.com
 
@@ -40,6 +41,7 @@ do-install:
 .endif
 
 post-install:
-	@test -d /var/spool/news || @${CAT} ${FILESDIR}/INSTALL.mesg
+	@test -d /var/spool/news -a -d ${PREFIX}/lib/leafnode || \
+		${CAT} ${FILESDIR}/INSTALL.mesg
 
 .include <bsd.port.mk>
