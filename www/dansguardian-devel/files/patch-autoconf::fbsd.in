@@ -1,65 +1,34 @@
---- autoconf/fbsd.in.orig	Sat Jan  3 12:08:29 2004
-+++ autoconf/fbsd.in	Thu Jan  8 13:08:56 2004
-@@ -21,7 +21,7 @@
+--- autoconf/fbsd.in.orig	Thu May  6 09:20:45 2004
++++ autoconf/fbsd.in	Thu May  6 09:31:36 2004
+@@ -21,13 +21,13 @@
  		 logrotate.dansguardian dansguardianf1.conf
  
  PASSVARS = -DPROXYUSER=\"${PROXYUSER}\"
 -#PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}access.log\"
-+#PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}dansguardian.log\"
++PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}dansguardian.log\"
  PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
  #PASSVARS += -DPIDDIR=\"${PIDDIR}\"
  
-@@ -38,61 +38,140 @@
- .cpp.o:
- 	$(CPP) $(DEBUG) $(CFLAGS) -c $<
+ #Some advanced options:
+-WARNING = -Wall
+-OPTIMISE = -O2
++#WARNING = -Wall
++OPTIMISE = ${CXXFLAGS}
+ #DEBUG += -DDGDEBUG
+ #STATIC = -static
  
--all:	$(OBJ) 
-+all:	$(OBJ)
+@@ -42,48 +42,37 @@
  	$(CPP) -o dansguardian $(DGCFLAGS) $(DEBUG) $(OBJ) $(LIBS) dansguardian.cpp
  
  install:
- 	@test -d $I$(SYSVLOCATION) || install -d $I$(SYSVLOCATION)
+-	@test -d $I$(SYSVLOCATION) || install -d $I$(SYSVLOCATION)
  	@test -d $I$(CONFFILELOCATION) || install -d $I$(CONFFILELOCATION)
- 	@test -d $I$(CONFFILELOCATION)phraselists || install -d $I$(CONFFILELOCATION)phraselists
-+	@test -d $I$(CONFFILELOCATION)phraselists/chat || install -d $I$(CONFFILELOCATION)phraselists/chat
-+	@test -d $I$(CONFFILELOCATION)phraselists/drugadvocacy || install -d $I$(CONFFILELOCATION)phraselists/drugadvocacy
-+	@test -d $I$(CONFFILELOCATION)phraselists/dutchbadwords || install -d $I$(CONFFILELOCATION)phraselists/dutchbadwords
-+	@test -d $I$(CONFFILELOCATION)phraselists/frenchbadwords || install -d $I$(CONFFILELOCATION)phraselists/frenchbadwords
-+	@test -d $I$(CONFFILELOCATION)phraselists/gambling || install -d $I$(CONFFILELOCATION)phraselists/gambling
-+	@test -d $I$(CONFFILELOCATION)phraselists/germanpornography || install -d $I$(CONFFILELOCATION)phraselists/germanpornography
-+	@test -d $I$(CONFFILELOCATION)phraselists/goodphrases || install -d $I$(CONFFILELOCATION)phraselists/goodphrases
-+	@test -d $I$(CONFFILELOCATION)phraselists/gore || install -d $I$(CONFFILELOCATION)phraselists/gore
-+	@test -d $I$(CONFFILELOCATION)phraselists/illegaldrugs || install -d $I$(CONFFILELOCATION)phraselists/illegaldrugs
-+	@test -d $I$(CONFFILELOCATION)phraselists/intolerance || install -d $I$(CONFFILELOCATION)phraselists/intolerance
-+	@test -d $I$(CONFFILELOCATION)phraselists/italianbadwords || install -d $I$(CONFFILELOCATION)phraselists/italianbadwords
-+	@test -d $I$(CONFFILELOCATION)phraselists/legaldrugs || install -d $I$(CONFFILELOCATION)phraselists/legaldrugs
-+	@test -d $I$(CONFFILELOCATION)phraselists/personals || install -d $I$(CONFFILELOCATION)phraselists/personals
-+	@test -d $I$(CONFFILELOCATION)phraselists/pornography || install -d $I$(CONFFILELOCATION)phraselists/pornography
-+	@test -d $I$(CONFFILELOCATION)phraselists/violence || install -d $I$(CONFFILELOCATION)phraselists/violence
-+	@test -d $I$(CONFFILELOCATION)phraselists/warezhacking || install -d $I$(CONFFILELOCATION)phraselists/warezhacking
-+	@test -d $I$(CONFFILELOCATION)phraselists/weapons || install -d $I$(CONFFILELOCATION)phraselists/weapons
- 	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
-+	@test -d $I$(CONFFILELOCATION)languages/arspanish || install -d $I$(CONFFILELOCATION)languages/arspanish
-+	@test -d $I$(CONFFILELOCATION)languages/bulgarian || install -d $I$(CONFFILELOCATION)languages/bulgarian
-+	@test -d $I$(CONFFILELOCATION)languages/chinesebig5 || install -d $I$(CONFFILELOCATION)languages/chinesebig5
-+	@test -d $I$(CONFFILELOCATION)languages/chinesegb2312 || install -d $I$(CONFFILELOCATION)languages/chineseb2312
-+	@test -d $I$(CONFFILELOCATION)languages/czech || install -d $I$(CONFFILELOCATION)languages/czech
-+	@test -d $I$(CONFFILELOCATION)languages/danish || install -d $I$(CONFFILELOCATION)languages/danish
-+	@test -d $I$(CONFFILELOCATION)languages/french || install -d $I$(CONFFILELOCATION)languages/french
-+	@test -d $I$(CONFFILELOCATION)languages/german || install -d $I$(CONFFILELOCATION)languages/german
-+	@test -d $I$(CONFFILELOCATION)languages/german2 || install -d $I$(CONFFILELOCATION)languages/german2
-+	@test -d $I$(CONFFILELOCATION)languages/indonesian || install -d $I$(CONFFILELOCATION)languages/indonesian
-+	@test -d $I$(CONFFILELOCATION)languages/italian || install -d $I$(CONFFILELOCATION)languages/italian
-+	@test -d $I$(CONFFILELOCATION)languages/lithuanian || install -d $I$(CONFFILELOCATION)languages/lithuanian
-+	@test -d $I$(CONFFILELOCATION)languages/mxspanish || install -d $I$(CONFFILELOCATION)languages/mxspanish
-+	@test -d $I$(CONFFILELOCATION)languages/polish || install -d $I$(CONFFILELOCATION)languages/polish
-+	@test -d $I$(CONFFILELOCATION)languages/portuguese || install -d $I$(CONFFILELOCATION)languages/portuguese
-+	@test -d $I$(CONFFILELOCATION)languages/turkish || install -d $I$(CONFFILELOCATION)languages/turkish
-+	@test -d $I$(CONFFILELOCATION)languages/ukenglish || install -d $I$(CONFFILELOCATION)languages/ukenglish
+-	@test -d $I$(CONFFILELOCATION)phraselists || install -d $I$(CONFFILELOCATION)phraselists
+-	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
  	@test -d $I$(CGIBINLOCATION) || install -d $I$(CGIBINLOCATION)
 -	@test -d $I$(MANUALFILES)man8/ || install -d $I$(MANUALFILES)man8/
 -	@test -d $I$(LOGLOCATION) || install -d $I$(LOGLOCATION)
--	@test -d $I$(BINARYLOCATION) || install -d $I$(BINARYLOCATION)
+ 	@test -d $I$(BINARYLOCATION) || install -d $I$(BINARYLOCATION)
 -	cp -f ./filtergroupslist $I$(CONFFILELOCATION)filtergroupslist
 -	cp -f ./dansguardianf1.conf $I$(CONFFILELOCATION)dansguardianf1.conf
 -	cp -f ./dansguardian $I$(BINARYLOCATION)dansguardian
@@ -94,6 +63,8 @@
 -	chmod -R u+wr $I$(LOGLOCATION)
 -	chmod u+wrx $I$(LOGLOCATION)
 -	if [ -d $(LOGROTATELOCATION) ]; then cp -f ./logrotate.dansguardian $I$(LOGROTATELOCATION)dansguardian; fi
++	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
++	cp -fR ./languages/* $I$(CONFFILELOCATION)languages/
 +	install -o root -g wheel -m 644 ./filtergroupslist $I$(CONFFILELOCATION)filtergroupslist.dist
 +	install -o root -g wheel -m 644 ./dansguardianf1.conf $I$(CONFFILELOCATION)dansguardianf1.conf.dist
 +	install -o root -g wheel -m 755 ./dansguardian $I$(BINARYLOCATION)dansguardian
@@ -101,62 +72,6 @@
 +	install -o root -g wheel -m 644 ./bannedphraselist $I$(CONFFILELOCATION)bannedphraselist.dist
 +	install -o root -g wheel -m 644 ./exceptionphraselist $I$(CONFFILELOCATION)exceptionphraselist.dist
 +	install -o root -g wheel -m 644 ./weightedphraselist $I$(CONFFILELOCATION)weightedphraselist.dist
-+	install -o root -g wheel -m 644 ./phraselists/chat/weighted $I$(CONFFILELOCATION)phraselists/chat/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/drugadvocacy/weighted $I$(CONFFILELOCATION)phraselists/drugadvocacy/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/dutchbadwords/weighted $I$(CONFFILELOCATION)phraselists/dutchbadwords/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/frenchbadwords/weighted $I$(CONFFILELOCATION)phraselists/frenchbadwords/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/gambling/banned $I$(CONFFILELOCATION)phraselists/gambling/banned.dist
-+	install -o root -g wheel -m 644 ./phraselists/gambling/weighted $I$(CONFFILELOCATION)phraselists/gambling/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/germanpornography/weighted $I$(CONFFILELOCATION)phraselists/germanpornography/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/goodphrases/exception $I$(CONFFILELOCATION)phraselists/goodphrases/exception.dist
-+	install -o root -g wheel -m 644 ./phraselists/goodphrases/weighted $I$(CONFFILELOCATION)phraselists/goodphrases/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/gore/weighted $I$(CONFFILELOCATION)phraselists/gore/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/illegaldrugs/banned $I$(CONFFILELOCATION)phraselists/illegaldrugs/banned.dist
-+	install -o root -g wheel -m 644 ./phraselists/illegaldrugs/weighted $I$(CONFFILELOCATION)phraselists/illegaldrugs/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/intolerance/weighted $I$(CONFFILELOCATION)phraselists/intolerance/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/italianbadwords/weighted $I$(CONFFILELOCATION)phraselists/italianbadwords/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/legaldrugs/weighted $I$(CONFFILELOCATION)phraselists/legaldrugs/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/personals/weighted $I$(CONFFILELOCATION)phraselists/personals/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/pornography/banned $I$(CONFFILELOCATION)phraselists/pornography/banned.dist
-+	install -o root -g wheel -m 644 ./phraselists/pornography/weighted $I$(CONFFILELOCATION)phraselists/pornography/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/violence/weighted $I$(CONFFILELOCATION)phraselists/violence/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/warezhacking/weighted $I$(CONFFILELOCATION)phraselists/warezhacking/weighted.dist
-+	install -o root -g wheel -m 644 ./phraselists/weapons/weighted $I$(CONFFILELOCATION)phraselists/weapons/weighted.dist
-+	install -o root -g wheel -m 644 ./languages/ReadMe $I$(CONFFILELOCATION)languages/ReadMe
-+	install -o root -g wheel -m 644 ./languages/arspanish/messages $I$(CONFFILELOCATION)languages/arspanish/messages
-+	install -o root -g wheel -m 644 ./languages/arspanish/template.html $I$(CONFFILELOCATION)languages/arspanish/template.html
-+	install -o root -g wheel -m 644 ./languages/bulgarian/messages $I$(CONFFILELOCATION)languages/bulgarian/messages
-+	install -o root -g wheel -m 644 ./languages/bulgarian/template.html $I$(CONFFILELOCATION)languages/bulgarian/template.html
-+	install -o root -g wheel -m 644 ./languages/chinesebig5/messages $I$(CONFFILELOCATION)languages/chinesebig5/messages
-+	install -o root -g wheel -m 644 ./languages/chinesebig5/template.html $I$(CONFFILELOCATION)languages/chinesebig5/template.html
-+	install -o root -g wheel -m 644 ./languages/chinesegb2312/messages $I$(CONFFILELOCATION)languages/chineseb2312/messages
-+	install -o root -g wheel -m 644 ./languages/chinesegb2312/template.html $I$(CONFFILELOCATION)languages/chineseb2312/template.html
-+	install -o root -g wheel -m 644 ./languages/czech/messages $I$(CONFFILELOCATION)languages/czech/messages
-+	install -o root -g wheel -m 644 ./languages/czech/template.html $I$(CONFFILELOCATION)languages/czech/template.html
-+	install -o root -g wheel -m 644 ./languages/danish/messages $I$(CONFFILELOCATION)languages/danish/messages
-+	install -o root -g wheel -m 644 ./languages/danish/template.html $I$(CONFFILELOCATION)languages/danish/template.html
-+	install -o root -g wheel -m 644 ./languages/french/messages $I$(CONFFILELOCATION)languages/french/messages
-+	install -o root -g wheel -m 644 ./languages/french/template.html $I$(CONFFILELOCATION)languages/french/template.html
-+	install -o root -g wheel -m 644 ./languages/german/messages $I$(CONFFILELOCATION)languages/german/messages
-+	install -o root -g wheel -m 644 ./languages/german/template.html $I$(CONFFILELOCATION)languages/german/template.html
-+	install -o root -g wheel -m 644 ./languages/german2/messages $I$(CONFFILELOCATION)languages/german2/messages
-+	install -o root -g wheel -m 644 ./languages/german2/template.html $I$(CONFFILELOCATION)languages/german2/template.html
-+	install -o root -g wheel -m 644 ./languages/indonesian/messages $I$(CONFFILELOCATION)languages/indonesian/messages
-+	install -o root -g wheel -m 644 ./languages/indonesian/template.html $I$(CONFFILELOCATION)languages/indonesian/template.html
-+	install -o root -g wheel -m 644 ./languages/italian/messages $I$(CONFFILELOCATION)languages/italian/messages
-+	install -o root -g wheel -m 644 ./languages/italian/template.html $I$(CONFFILELOCATION)languages/italian/template.html
-+	install -o root -g wheel -m 644 ./languages/lithuanian/messages $I$(CONFFILELOCATION)languages/lithuanian/messages
-+	install -o root -g wheel -m 644 ./languages/lithuanian/template.html $I$(CONFFILELOCATION)languages/lithuanian/template.html
-+	install -o root -g wheel -m 644 ./languages/mxspanish/messages $I$(CONFFILELOCATION)languages/mxspanish/messages
-+	install -o root -g wheel -m 644 ./languages/mxspanish/template.html $I$(CONFFILELOCATION)languages/mxspanish/template.html
-+	install -o root -g wheel -m 644 ./languages/polish/messages $I$(CONFFILELOCATION)languages/polish/messages
-+	install -o root -g wheel -m 644 ./languages/polish/template.html $I$(CONFFILELOCATION)languages/polish/template.html
-+	install -o root -g wheel -m 644 ./languages/portuguese/messages $I$(CONFFILELOCATION)languages/portuguese/messages
-+	install -o root -g wheel -m 644 ./languages/portuguese/template.html $I$(CONFFILELOCATION)languages/portuguese/template.html
-+	install -o root -g wheel -m 644 ./languages/turkish/messages $I$(CONFFILELOCATION)languages/turkish/messages
-+	install -o root -g wheel -m 644 ./languages/turkish/template.html $I$(CONFFILELOCATION)languages/turkish/template.html
-+	install -o root -g wheel -m 644 ./languages/ukenglish/messages $I$(CONFFILELOCATION)languages/ukenglish/messages
-+	install -o root -g wheel -m 644 ./languages/ukenglish/template.html $I$(CONFFILELOCATION)languages/ukenglish/template.html
 +	install -o root -g wheel -m 644 ./bannediplist $I$(CONFFILELOCATION)bannediplist.dist
 +	install -o root -g wheel -m 644 ./banneduserlist $I$(CONFFILELOCATION)banneduserlist.dist
 +	install -o root -g wheel -m 644 ./bannedextensionlist $I$(CONFFILELOCATION)bannedextensionlist.dist
@@ -173,21 +88,9 @@
 +	install -o root -g wheel -m 644 ./exceptioniplist $I$(CONFFILELOCATION)exceptioniplist.dist
 +	install -o root -g wheel -m 644 ./pics $I$(CONFFILELOCATION)pics.dist
 +	install -o root -g wheel -m 644 ./transparent1x1.gif $I$(CONFFILELOCATION)transparent1x1.gif
-+	install -o root -g wheel -m 755 ./dansguardian.bsdv $I$(SYSVLOCATION)start-dg.sh
 +	install -o root -g wheel -m 755 ./dansguardian.pl $I$(CGIBINLOCATION)dansguardian.pl.dist
 +	install -o root -g wheel -m 644 ./dansguardian.8 $I$(MANUALFILES)man8/dansguardian.8
-+	@test -f $I$(LOGLOCATION)dansguardian.log || install -o root -g wheel -m 644 /dev/null $I$(LOGLOCATION)dansguardian.log
++	install -o nobody -g nogroup -m 644 /dev/null $I$(LOGLOCATION)dansguardian.log
  
  uninstall:
  	rm -f $(BINARYLOCATION)dansguardian
- 	rm -f $(SYSVLOCATION)dansguardian
- 	rm -f $(CGIBINLOCATION)dansguardian.pl
--	rm -f $(MANUALFILES)man8/dansguardian.8.gz
-+	rm -f $(MANUALFILES)man8/dansguardian.8*
- 	rm -fr $(CONFFILELOCATION)
--	rm -fr $(LOGLOCATION)
--	if [ -f $(LOGROTATELOCATION)dansguardian ]; then rm -f $(LOGROTATELOCATION)dansguardian; fi
-+	rm -f $(LOGLOCATION)dansguardian.log
- 
- clean:
- 	rm -f $(OBJ) $(PROG)
