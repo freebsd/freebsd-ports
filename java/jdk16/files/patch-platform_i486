@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../hotspot1.3.1/build/linux/platform_i486	Thu Jan 23 00:28:52 2003
++++ ../../hotspot1.3.1/build/linux/platform_i486	Thu Jan 23 01:14:01 2003
+@@ -6,7 +6,7 @@
+ 
+ lib_arch = i386
+ 
+-compiler = gcc32
++compiler = gcc
+ 
+ gnu_dis_arch = i386
+ 
