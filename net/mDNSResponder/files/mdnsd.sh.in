@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: mdnsd
-# REQIURE: DAEMON
+# REQUIRE: DAEMON
 # KEYWORD: FreeBSD shutdown
 
 mdnsd_enable="NO"
