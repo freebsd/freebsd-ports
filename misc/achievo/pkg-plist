@@ -318,11 +318,14 @@ www/data.default/achievo/modules/class.achievomodule.inc
 www/data.default/achievo/modules/config.modules.inc
 www/data.default/achievo/modules/employee/class.accessright.inc
 www/data.default/achievo/modules/employee/class.employee.inc
+www/data.default/achievo/modules/employee/class.employeestats.inc
 www/data.default/achievo/modules/employee/class.profile.inc
 www/data.default/achievo/modules/employee/class.usercontracts.inc
 www/data.default/achievo/modules/employee/class.userprefs.inc
-www/data.default/achievo/modules/employee/employeestats.inc
 www/data.default/achievo/modules/employee/install/install.inc
+www/data.default/achievo/modules/employee/install/patch-2.inc
+www/data.default/achievo/modules/employee/install/patch-3.inc
+www/data.default/achievo/modules/employee/install/patch-4.inc
 www/data.default/achievo/modules/employee/module.inc
 www/data.default/achievo/modules/graph/attributes/class.datagraphattribute.inc
 www/data.default/achievo/modules/graph/attributes/class.graphattribute.inc
@@ -345,6 +348,7 @@ www/data.default/achievo/modules/organization/class.organization.inc
 www/data.default/achievo/modules/organization/install/install.inc
 www/data.default/achievo/modules/organization/install/patch-2.inc
 www/data.default/achievo/modules/organization/install/patch-3.inc
+www/data.default/achievo/modules/organization/install/patch-4.inc
 www/data.default/achievo/modules/organization/module.inc
 www/data.default/achievo/modules/person/class.person.inc
 www/data.default/achievo/modules/person/class.select_person.inc
@@ -380,7 +384,6 @@ www/data.default/achievo/modules/project/class.tpl_project_phase.inc
 www/data.default/achievo/modules/project/ganttchart.php
 www/data.default/achievo/modules/project/install/install.inc
 www/data.default/achievo/modules/project/module.inc
-www/data.default/achievo/modules/project/projectstats.inc
 www/data.default/achievo/modules/reports/class.hoursurvey.inc
 www/data.default/achievo/modules/reports/class.weekreport.inc
 www/data.default/achievo/modules/reports/install/install.inc
@@ -392,6 +395,7 @@ www/data.default/achievo/modules/setup/class.dbsequence.inc
 www/data.default/achievo/modules/setup/class.setup.inc
 www/data.default/achievo/modules/setup/class.versioninfo.inc
 www/data.default/achievo/modules/setup/install/install.inc
+www/data.default/achievo/modules/setup/install/patch-2.inc
 www/data.default/achievo/modules/setup/module.inc
 www/data.default/achievo/modules/timereg/class.hours.inc
 www/data.default/achievo/modules/timereg/class.hours_lock.inc
