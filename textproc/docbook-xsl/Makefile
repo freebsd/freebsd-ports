@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.48
+PORTVERSION=	1.50.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= docbook
@@ -30,11 +30,11 @@ do-install:
 	(cd ${WRKSRC}/doc && ${TAR} -cf - . |\
 		${TAR} -xf - -C${DOCSDIR})
 	${MKDIR} ${DOCSDIR}/htmlhelp
-	(cd ${WRKSRC}/htmlhelp/doc && ${TAR} -cf - . |\
+	(cd ${WRKSRC}/htmlhelp && ${TAR} -cf - . |\
 		${TAR} -xf - -C${DOCSDIR}/htmlhelp)
 .endif
 	${MKDIR} ${INSTDIR}
-	(cd ${WRKSRC} && ${TAR} -cf - . --exclude doc --exclude extensions |\
+	(cd ${WRKSRC} && ${TAR} -cf - VERSION common fo html lib params xhtml |\
 		${TAR} -xf - -C${INSTDIR})
 
 .include <bsd.port.mk>
