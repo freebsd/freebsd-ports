@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1999/01/22 10:32:32 asami Exp $
+# $Id: Makefile,v 1.46 1999/01/26 03:58:55 asami Exp $
 #
 
 SUBDIR += archivers
@@ -73,3 +73,19 @@ parallel: ${.CURDIR}/INDEX
 	@echo "all:: ${dir}-all"
 .endfor
 	@sed -e 's/|/.tgz|/' ${.CURDIR}/INDEX | awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all:: " me; print me ": " bdep " " rdep; printf("\t@/a/asami/portbuild/scripts/pdispatch /a/asami/portbuild/scripts/portbuild %s %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}'
+
+update:
+.if defined(SUP_UPDATE)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Running ${SUP}"
+	@echo "--------------------------------------------------------------"
+.if defined(PORTSSUPFILE)
+	@${SUP} ${SUPFLAGS} ${PORTSSUPFILE}
+.endif
+.endif
+.if defined(CVS_UPDATE)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating /usr/src from cvs repository" ${CVSROOT}
+	@echo "--------------------------------------------------------------"
+	cd ${.CURDIR}; cvs -q update -P -d
+.endif
