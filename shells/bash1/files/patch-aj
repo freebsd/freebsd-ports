@@ -1,0 +1,12 @@
+*** ./subst.c.orig	Wed Nov 17 18:40:38 1999
+--- ./subst.c	Wed Nov 17 18:40:59 1999
+*************** process_substitute (string, open_for_rea
+*** 2021,2026 ****
+--- 2021,2027 ----
+    pid = make_child ((char *)NULL, 1);
+    if (pid == 0)
+      {
++       reset_terminating_signals();
+        /* Cancel traps, in trap.c. */
+        restore_original_signals ();
+        setup_async_signals ();

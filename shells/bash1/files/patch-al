@@ -1,0 +1,13 @@
+*** ./execute_cmd.c.orig	Wed Nov 17 18:37:45 1999
+--- ./execute_cmd.c	Wed Nov 17 18:37:53 1999
+*************** execute_command_internal (command, async
+*** 340,345 ****
+--- 340,347 ----
+  	{
+  	  int user_subshell, return_code, function_value;
+  
++ 	  reset_terminating_signals();
++ 
+  	  /* Cancel traps, in trap.c. */
+  	  restore_original_signals ();
+  	  if (asynchronous)
