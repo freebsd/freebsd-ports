@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmetric
-PORTVERSION=	v0.3
+PORTVERSION=	v0.4
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://netgraft.com/downloads/tmetric/
 
