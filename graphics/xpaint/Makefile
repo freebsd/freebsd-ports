@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ac-grenoble.fr/Office/
