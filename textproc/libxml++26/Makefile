@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	0.21.0
+PORTVERSION=	0.22.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/+/plus/g}
@@ -15,17 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/+/plus/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML API for C++
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
+USE_GNOME=	gnomehack libxml2
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<istream>|<iostream>|g'
+	@${REINPLACE_CMD} -e \
+		's|<istream>|<iostream>|g' ${WRKSRC}/libxml++/document.cc
 
 .include <bsd.port.mk>
