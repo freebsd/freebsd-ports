@@ -7,6 +7,7 @@
 
 PORTNAME=	scriba
 PORTVERSION=	10b21
+PORTREVUSION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.scriptbasic.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -27,6 +28,7 @@ PRFXFILES=	variations/standard/basiccmd.c \
 WRKSRC=		${WRKDIR}
 USE_PERL5=	yes
 CFLAGS+=	-fPIC
+MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-patch:
 .for P in ${PRFXFILES}
