@@ -28,4 +28,7 @@ PORTREVISION!=	${PORTREVISION}
 PORTEPOCH!=	${PORTEPOCH}
 WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/sword-${PORTVERSION}/apps/X11/cheatah
 
+post-install:
+	@strip ${PREFIX}/bin/cheatah
+
 .include <bsd.port.mk>
