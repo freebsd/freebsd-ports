@@ -1,6 +1,6 @@
---- gcc/Makefile.in.orig	Thu Feb 25 12:40:16 1999
-+++ gcc/Makefile.in	Mon Mar  1 04:36:40 1999
-@@ -793,7 +793,7 @@
+--- gcc/Makefile.in.orig	Sun Mar  7 16:22:20 1999
++++ gcc/Makefile.in	Sun Nov 24 23:51:04 2002
+@@ -768,7 +768,7 @@
  	rm -f config.run
  
  $(srcdir)/configure: $(srcdir)/configure.in
@@ -9,7 +9,7 @@
  
  # cstamp-h.in controls rebuilding of config.in.
  # It is named cstamp-h.in and not stamp-h.in so the mostlyclean rule doesn't
-@@ -806,7 +806,7 @@
+@@ -781,7 +781,7 @@
  # ??? Newer versions have a maintainer mode that may be useful here.
  $(srcdir)/config.in: $(srcdir)/cstamp-h.in
  $(srcdir)/cstamp-h.in: $(srcdir)/configure.in $(srcdir)/acconfig.h
@@ -18,3 +18,13 @@
  	@rm -f $(srcdir)/cstamp-h.in
  	echo timestamp > $(srcdir)/cstamp-h.in
  auto-host.h: cstamp-h ; @true
+@@ -1914,7 +1914,8 @@
+ SYSCALLS.c.X: $(srcdir)/sys-types.h $(srcdir)/sys-protos.h $(GCC_PASSES) \
+    stmp-int-hdrs
+ 	-rm -f SYSCALLS.c tmp-SYSCALLS.s
+-	cat $(srcdir)/sys-types.h $(srcdir)/sys-protos.h > SYSCALLS.c
++	echo "#define __NO_GNUC_VA_LIST 1" > SYSCALLS.c
++	cat $(srcdir)/sys-types.h $(srcdir)/sys-protos.h >> SYSCALLS.c
+ 	$(GCC_FOR_TARGET) $(GCC_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+ 	  -aux-info $@ -S -o tmp-SYSCALLS.s SYSCALLS.c
+ 	-rm -f SYSCALLS.c tmp-SYSCALLS.s
