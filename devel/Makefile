@@ -533,6 +533,7 @@
     SUBDIR += swigruby
     SUBDIR += t1lib
     SUBDIR += tcl-memchan
+    SUBDIR += tcl-neo
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts

@@ -1,0 +1,68 @@
+lib/libneo82.so.1.0
+lib/libneo82.so
+lib/neo8.2/pkgIndex.tcl
+lib/neo8.2/tclIndex
+lib/neo8.2/debugger/README.DEBUG
+lib/neo8.2/debugger/ndebug.tcl
+lib/neo8.2/irc/Makefile
+lib/neo8.2/irc/README
+lib/neo8.2/irc/ircbot.tcl
+lib/neo8.2/neo_tklib/Makefile
+lib/neo8.2/neo_tklib/README
+lib/neo8.2/neo_tklib/boxwindow.tcl
+lib/neo8.2/neo_tklib/filereq.tcl
+lib/neo8.2/neo_tklib/fonts.tcl
+lib/neo8.2/neo_tklib/kfilereq.tcl
+lib/neo8.2/neo_tklib/listbox-class.tcl
+lib/neo8.2/neo_tklib/menus.tcl
+lib/neo8.2/neo_tklib/modal.tcl
+lib/neo8.2/neo_tklib/modal2.tcl
+lib/neo8.2/neo_tklib/neocanvas.tcl
+lib/neo8.2/neo_tklib/neoinit.tcl
+lib/neo8.2/neo_tklib/neologo.tcl
+lib/neo8.2/neo_tklib/neowindow.tcl
+lib/neo8.2/neo_tklib/notepad.tcl
+lib/neo8.2/neo_tklib/textclass.tcl
+lib/neo8.2/neo_tklib/thermometer.tcl
+lib/neo8.2/neo_tklib/tkpassword.tcl
+lib/neo8.2/neodb/Makefile
+lib/neo8.2/neodb/README
+lib/neo8.2/neodb/tsv-class.tcl
+lib/neo8.2/neolib/Makefile
+lib/neo8.2/neolib/README
+lib/neo8.2/neolib/arrayutil.tcl
+lib/neo8.2/neolib/catchers.tcl
+lib/neo8.2/neolib/eventloop.tcl
+lib/neo8.2/neolib/getargs.tcl
+lib/neo8.2/neolib/libmanager.tcl
+lib/neo8.2/neolib/misc.tcl
+lib/neo8.2/neolib/prompts.tcl
+lib/neo8.2/neolib/rfc822.tcl
+lib/neo8.2/neolib/rfc931.tcl
+lib/neo8.2/neolib/spawn.tcl
+lib/neo8.2/neolib/stanza.tcl
+lib/neo8.2/neolib/timedate.tcl
+lib/neo8.2/neolib/xkeylget.tcl
+lib/neo8.2/oracle/Makefile
+lib/neo8.2/oracle/basic.tcl
+lib/neo8.2/postgres95/Makefile
+lib/neo8.2/postgres95/basic.tcl
+lib/neo8.2/rcmp/Makefile
+lib/neo8.2/rcmp/README
+lib/neo8.2/rcmp/neo-shared-object.tcl
+lib/neo8.2/rcmp/neodpClient.tcl
+lib/neo8.2/rcmp/neodpServer.tcl
+lib/neo8.2/rcmp/rcmpc.tcl
+lib/neo8.2/www/Makefile
+lib/neo8.2/www/http-helpers.tcl
+lib/neo8.2/www/iwebforms.tcl
+@dirrm lib/neo8.2/debugger
+@dirrm lib/neo8.2/irc
+@dirrm lib/neo8.2/neo_tklib
+@dirrm lib/neo8.2/neodb
+@dirrm lib/neo8.2/neolib
+@dirrm lib/neo8.2/oracle
+@dirrm lib/neo8.2/postgres95
+@dirrm lib/neo8.2/rcmp
+@dirrm lib/neo8.2/www
+@dirrm lib/neo8.2

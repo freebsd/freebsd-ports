@@ -1,0 +1,7 @@
+--- neoXcute.c	Thu Apr 20 09:16:00 2000
++++ neoXcute.c	Fri Aug 17 00:23:11 2001
+@@ -98,3 +98,3 @@
+     fflush (stderr);
+-    panic ();
++    abort ();
+ }

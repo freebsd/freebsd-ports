@@ -1,0 +1,10 @@
+--- neoXdb.c	Thu Apr 20 09:16:00 2000
++++ neoXdb.c	Thu Aug 16 21:03:06 2001
+@@ -31,5 +31,5 @@
+ #ifdef DB_185_COMPAT
+-#include <db_185.h>
++#include <db2/db_185.h>
+ #else
+-#include <db.h>
++#include <db2/db.h>
+ #endif

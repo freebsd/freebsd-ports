@@ -1,0 +1,27 @@
+Everybody and  their cat  try to  ship their  own implementation  of md5
+functions. Force FreeBSD's -lmd here.  Also, when creating the resulting
+string-object, use our  advanced knowledge, that all md5  digests are 32
+characters long.
+--- neoXgeneral.c	Thu Apr 20 09:16:01 2000
++++ neoXgeneral.c	Thu Aug 16 20:46:02 2001
+@@ -10,1 +10,2 @@
+-#include "util_md5.h"
++#include <sys/types.h>
++#include <md5.h>
+@@ -94,11 +95,13 @@
+ {
+     char *digest;
++    int length;
+  
+     if (objc != 2) {
+-        Tcl_SetResult(interp, "usage: md5 string", TCL_STATIC);
++        Tcl_WrongNumArgs(interp, 1, objv, "<string>");
+         return TCL_ERROR;
+     }
+-    digest = md5(Tcl_GetStringFromObj(objv[1], (int*)NULL));
+-    Tcl_SetObjResult(interp, Tcl_NewStringObj(digest, -1));
++    digest = Tcl_GetStringFromObj(objv[1], &length);
++    digest = MD5Data(digest, length, NULL);
++    Tcl_SetObjResult(interp, Tcl_NewStringObj(digest, 32));
+     return TCL_OK;
+ }

@@ -1,0 +1,27 @@
+PREFIX?=	/usr/local
+
+NEO_LIBRARY?=	${PREFIX}/lib/neo8.2
+CFLAGS+=	-I${PREFIX}/include/tcl8.3 -I${PREFIX}/include
+CFLAGS+=	-DNEO_LIBRARY=\"${NEO_LIBRARY}\"
+CFLAGS+=	-DHAVE_TERMIOS_H -DHAVE_STDLIB_H -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H
+CFLAGS+=	-DNEO_DB # -DDB_185_COMPAT -- seems broken :-(
+CFLAGS+=	-DNEOSOFT_TCL_ENCRYPTION -DCUTE
+# OpenLDAP requires db3, while the NEO_DB stuff works only with db2.
+# Disable NEO_LDAP until the NEW_DB is upgraded
+# CFLAGS+=	-DNEO_LDAP
+
+SRCS=		neoXcrypt.c neoPkgInit.c neoXwww.c neoXgeneral.c \
+		neoXcute.c neoXcomma.c neoXkdebug.c neoCbuf.c \
+		neoXlist.c neoXdb.c # neoXldap.c
+
+LIB=		neo82
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	0
+INTERNALLIB=	Yes, don't need the static version
+NOPROFILE=	YES, don't need the profiled version
+
+LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl83 -lm -lmd -ldb2 # -ldap -llber
+
+SHLIBDIR=	${PREFIX}/lib
+
+.include <bsd.lib.mk>
