@@ -18,11 +18,11 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
-		g-wrap-config:${PORTSDIR}/devel/g-wrap \
 		eperl:${PORTSDIR}/lang/eperl
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		guppidata.11:${PORTSDIR}/math/guppi \
-		popt.0:${PORTSDIR}/devel/popt
+		popt.0:${PORTSDIR}/devel/popt \
+		g-wrap-runtime-guile.2:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
