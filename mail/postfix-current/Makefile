@@ -170,6 +170,8 @@ do-install:
 	@${ECHO_MSG} '- To replace your existing sendmail with postfix -'
 	@${ECHO_MSG} '- type "make replace"                            -'
 	@${ECHO_MSG} '--------------------------------------------------'
+	@${ECHO_MSG} '******You may need to update your master.cf*******'
+	@${ECHO_MSG} '**************due to recent changes***************'
 
 post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
