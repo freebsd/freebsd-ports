@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Firefox
+Comment=Firefox Web Browser
+Exec=firefox %U
+Icon=@FIREFOX_ICON@
+Terminal=false
+Type=Application
+Categories=Application;Network;
