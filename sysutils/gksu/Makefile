@@ -14,8 +14,8 @@ MASTER_SITES=	http://people.debian.org/~kov/gksu/gksu1.2/
 MAINTAINER=	troplosti@orcaweb.cjb.net
 COMMENT=	Graphical frontend to su
 
-LIB_DEPENDS=	libgksu1.2:${PORTSDIR}/sysutils/libgksu \
-		libgksuui1.0:${PORTSDIR}/sysutils/libgksuui
+LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
+		gksuui1.0.0:${PORTSDIR}/sysutils/libgksuui
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack
