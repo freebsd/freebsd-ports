@@ -1,0 +1,9 @@
+A Set::Window object represents a window on the integer line; that is, a
+finite set of consecutive integers.
+
+Methods are provided for creating and modifying windows, for obtaining
+information about windows, and for performing some simple set operations
+on windows.
+
+-Anton
+<tobez@tobez.org>
