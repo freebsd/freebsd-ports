@@ -86,6 +86,9 @@ share/pygmy/pygmymailbox.pyo
 share/pygmy/pygmymultifile.py
 share/pygmy/pygmymultifile.pyc
 share/pygmy/pygmymultifile.pyo
+share/pygmy/pygmyxml.py
+share/pygmy/pygmyxml.pyc
+share/pygmy/pygmyxml.pyo
 share/pygmy/quote_pri.py
 share/pygmy/quote_pri.pyc
 share/pygmy/quote_pri.pyo
