@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	blackbox
-PORTVERSION=	0.62.1
+PORTVERSION=	0.65.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blackboxwm
 
 MAINTAINER=	stijn@win.tue.nl
 
-MAN1=		blackbox.1 bsetroot.1
+RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
+
+MAN1=		blackbox.1
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -ni.orig -e '/^SUBDIRS/ || print' \
-		${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e 's#nls src util#nls src#' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E 's/^SUBDIRS/#SUBDIRS/' ${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e 's# bsetroot.1 bsetbg.1##' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
