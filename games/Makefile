@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.118 1998/03/28 15:27:18 steve Exp $
+# $Id: Makefile,v 1.119 1998/04/02 04:06:06 hoek Exp $
 #
 
     SUBDIR += acm
@@ -72,6 +72,7 @@
     SUBDIR += xjewel
     SUBDIR += xjig
     SUBDIR += xkobo
+    SUBDIR += xkoules
     SUBDIR += xlaby
     SUBDIR += xlife
     SUBDIR += xlines
