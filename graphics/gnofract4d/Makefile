@@ -26,10 +26,6 @@ CONFIGURE_ARGS=	--enable-compile-warnings=no
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
