@@ -8,10 +8,7 @@
 PORTNAME=	ftpproxy
 PORTVERSION=	1.1.5
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.ftpproxy.org/download/ \
-		ftp://ftp.daemons.de/ \
-		http://www.ftpproxy.org/download/older_releases/ \
-		ftp://ftp.daemons.de/older_releases/
+MASTER_SITES=	http://www.ftpproxy.org/download/older_releases/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	philippe@le-berre.com
