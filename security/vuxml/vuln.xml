@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="5729b8ed-5d75-11d8-80e3-0020ed76ef5a">
+    <topic>rsync buffer overflow in server mode</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>2.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When rsync is run in server mode, a buffer overflow could
+	  allow a remote attacker to execute arbitrary code with the
+	  privileges of the rsync server.  Anonymous rsync servers are
+	  at the highest risk.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0962</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107055681311602&amp;w=2</url>
+      <url>http://rsync.samba.org/#security</url>
+    </references>
+    <dates>
+      <discovery>2003/12/04</discovery>
+      <entry>2004/02/12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6fd02439-5d70-11d8-80e3-0020ed76ef5a">
     <topic>Several remotely exploitable buffer overflows in gaim</topic>
     <affects>
