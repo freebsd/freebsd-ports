@@ -266,6 +266,7 @@ lib/python1.5/lib-dynload/fpetestmodule.so
 lib/python1.5/lib-dynload/imageop.so
 lib/python1.5/lib-dynload/md5module.so
 lib/python1.5/lib-dynload/nismodule.so
+lib/python1.5/lib-dynload/parsermodule.so
 lib/python1.5/lib-dynload/resource.so
 lib/python1.5/lib-dynload/rgbimgmodule.so
 lib/python1.5/lib-dynload/rotormodule.so
