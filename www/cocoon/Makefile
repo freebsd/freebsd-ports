@@ -6,35 +6,33 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	2.1.5.1
-PORTREVISION=	2
+PORTVERSION=	2.1.6
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,${PORTNAME},}
 DISTNAME=	${PDISTNAME}-src
 
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	XML Web Development Framework
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.3+
-USE_PYTHON=	1.6+
-MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
-WRKSRC=	${WRKDIR}/${PDISTNAME}
-APP_VERSION=	${PORTVERSION:C/\..*$//}
-APP_NAME?=	${PORTNAME}
-APP_HOME?=	${PREFIX}/${APP_NAME}
-LATEST_LINK=	${APP_NAME}
-PLIST=		${WRKDIR}/pkg-plist
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PDISTNAME=	${PORTNAME}-${PORTVERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+USE_JAVA=		yes
+JAVA_VERSION=		1.3+
+USE_PYTHON=		1.6+
+USE_REINPLACE=		YES
+MAKE_ENV=		JAVA_HOME=${JAVA_HOME}
+WRKSRC=			${WRKDIR}/${PDISTNAME}
+APP_NAME?=		${PORTNAME}
+APP_HOME?=		${PREFIX}/${APP_NAME}
+LATEST_LINK=		${APP_NAME}
+PLIST=			${WRKDIR}/pkg-plist
+PKGMESSAGE=		${WRKDIR}/pkg-message
+PDISTNAME=		${PORTNAME}-${PORTVERSION}
+PKGINSTALL=		${WRKDIR}/pkg-install
+PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
 COCOON_LIB=	${JAVASHAREDIR}/${APP_NAME}
 PLIST_SUB+=	"COCOON_LIB=${COCOON_LIB}"
 
-COPYDIRS=	*.txt tools/jetty tools/loader legal
+COPYDIRS=	*.txt tools/jetty tools/loader legal webapp
 
 PORT?=		8888
 PID_FILE?=	/var/run/${APP_NAME}.pid
@@ -71,13 +69,30 @@ SUBSTITUTIONS=	\
 BLOCKSEXP+=	-e 's/^include.block.${BLOCK}=.*$$/include.block.${BLOCK}=true/'
 .endfor
 
-post-patch:
+post-configure:
 	@${ECHO_MSG} "===> Configuring blocks: ${BLOCKS}"
 	${SED} -e 's/.*include.block\(.*\)=.*$$/include.block\1=false/' < ${WRKSRC}/blocks.properties | \
 	${SED} ${BLOCKSEXP} > ${WRKSRC}/local.blocks.properties
+	${CP} ${WRKSRC}/build.properties ${WRKSRC}/local.build.properties
 .if (! defined(WITH_DOCS))
-	${SED} -e 's/^#exclude/exclude/' < ${WRKSRC}/build.properties \
-	> ${WRKSRC}/local.build.properties
+	${REINPLACE_CMD} \
+       	-e 's/^#\(exclude.webapp.documentation=\)/\1/' \
+       	-e 's/^#\(exclude.webapp.javadocs=\)/\1/' \
+       	-e 's/^#\(exclude.documentation=\)/\1/' \
+       	-e 's/^#\(exclude.javadocs=\)/\1/' \
+       	${WRKSRC}/local.build.properties
+.endif
+.if (! defined(WITH_SAMPLES))
+	${REINPLACE_CMD} \
+       	-e 's/^#\(exclude.webapp.samples=\)/\1/' \
+       	-e 's/^#\(exclude.webapp.test-suite=\)/\1/' \
+       	${WRKSRC}/local.build.properties
+.endif
+# Include Java source code into the binary jar files
+.if (defined(WITH_SOURCES))
+	${REINPLACE_CMD} \
+       	-e 's/^#\(include.sources-in-jars=\)/\1/' \
+       	${WRKSRC}/local.build.properties
 .endif
 
 pre-build:
@@ -87,13 +102,14 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
 
 post-build:
-	@${ECHO_MSG} "===> Building packing list"
-	@> ${PLIST}
+	${LN} -s ${WRKSRC}/build/webapp ${WRKSRC}/webapp
 
-	@cd ${WRKSRC}/build && ${FIND} webapp -type f \
+	@${ECHO_MSG} "===> Building packing list"
+
+	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} -type f \
 	| ${SED} -e "s|^|${APP_NAME}/|" >> ${PLIST}
 
-	@cd ${WRKSRC}/build && ${FIND} -d webapp -type d \
+	@cd ${WRKSRC} && ${FIND} -H -d ${COPYDIRS} -type d \
 	| ${SED} -e "s|^|@dirrm ${APP_NAME}/|" >> ${PLIST}
 
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
@@ -104,22 +120,17 @@ post-build:
 do-install:
 	@${ECHO_MSG} "===> Installing ${COPYDIRS}"
 	@${MKDIR} ${APP_HOME}
-	@cd ${WRKSRC} && ${FIND} ${COPYDIRS} \
-	| ${XARGS} ${TAR} -C ${WRKSRC} -cf- | ${TAR} -C ${APP_HOME} -xpf-
-
-	@${ECHO_MSG} "===> Installing webapp"
-	@cd ${WRKSRC}/build && ${FIND} webapp \
-	| ${XARGS} ${TAR} -C ${WRKSRC}/build -cf- | ${TAR} -C ${APP_HOME} -xpf-
+	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} | ${CPIO} -pdmuL -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 
 	@${ECHO_MSG} "===> Installing into ${PREFIX}/sbin"
 	@${SED} ${SUBSTITUTIONS} ${WRKSRC}/cocoon.sh > ${WRKDIR}/${APP_NAME}.sh
-	@${INSTALL} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/sbin
 	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/${APP_NAME}ctl > ${WRKDIR}/${APP_NAME}ctl
-	@${INSTALL} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
 
 	@${ECHO_MSG} "===> Installing ${PREFIX}/etc/rc.d/${APP_NAME}.sh"
 	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/${APP_NAME}.sh > ${WRKDIR}/${APP_NAME}.sh
-	@${INSTALL} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/etc/rc.d
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
