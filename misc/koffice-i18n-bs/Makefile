@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bosnian messages and documentation for koffice
 
-IGNORE=		Needs update from vendor.
+IGNORE=		needs an update from the vendor
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
