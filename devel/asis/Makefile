@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	asis
-PORTVERSION=	3.13p
+PORTVERSION=	3.14p
 CATEGORIES=	devel
 MASTER_SITES=	\
 	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \
 	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/asis/
 DISTNAME=	asis-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
-
-BROKEN=		"Does not build"
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
@@ -25,24 +24,24 @@ MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
 		LN=${LN}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/lib/asis || true
-	@ ${INSTALL_DATA} ${WRKSRC}/asis/*.ad? ${WRKSRC}/gnat/*.ad? ${WRKSRC}/obj/*.ali ${PREFIX}/lib/asis
-	@ ${INSTALL_DATA} ${WRKSRC}/obj/libasis.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib
-	@ ${LN} -sf ${PREFIX}/lib/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib/libasis-${PORTVERSION}.so
+	@${MKDIR} ${PREFIX}/lib/asis
+	@${INSTALL_DATA} ${WRKSRC}/asis/*.ad? ${WRKSRC}/gnat/*.ad? ${WRKSRC}/obj/*.ali ${PREFIX}/lib/asis
+	@${INSTALL_DATA} ${WRKSRC}/obj/libasis.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib
+	@${LN} -sf ${PREFIX}/lib/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib/libasis-${PORTVERSION}.so
 
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/asistant.prg ${PREFIX}/bin/asistant
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/display_source ${WRKSRC}/gnatelim ${WRKSRC}/gnatstub ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/asistant.prg ${PREFIX}/bin/asistant
+	@${INSTALL_PROGRAM} ${WRKSRC}/display_source ${WRKSRC}/gnatelim ${WRKSRC}/gnatstub ${PREFIX}/bin
 
 post-install:
-	@ ${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/asis || true
-	@ ${INSTALL_DATA} ${WRKSRC}/documentation/* ${PREFIX}/share/doc/asis
-	@ ${INSTALL_DATA} ${WRKSRC}/examples/ds/README ${PREFIX}/share/doc/asis/README.ds
-	@ ${INSTALL_DATA} ${WRKSRC}/tools/asistant/asistant.ug ${PREFIX}/share/doc/asis/README.asistant
-	@ ${INSTALL_DATA} ${WRKSRC}/tools/gnatelim/README ${PREFIX}/share/doc/asis/README.gnatelim
-	@ ${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${PREFIX}/share/doc/asis/README.gnatstub
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/ds/README ${DOCSDIR}/README.ds
+	@${INSTALL_DATA} ${WRKSRC}/tools/asistant/asistant.ug ${DOCSDIR}/README.asistant
+	@${INSTALL_DATA} ${WRKSRC}/tools/gnatelim/README ${DOCSDIR}/README.gnatelim
+	@${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${DOCSDIR}/README.gnatstub
 .endif
 
 .include <bsd.port.mk>
