@@ -1,5 +1,5 @@
---- Makefile	Thu Feb 26 00:14:35 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Mar  3 00:00:39 1998
+--- Makefile.orig	Wed Feb 25 18:14:35 1998
++++ Makefile	Sun Jun 20 19:14:23 1999
 @@ -23,12 +23,14 @@
    # Compiler to use (C++ compiler _please_)
    CC = g++
@@ -24,7 +24,7 @@
  
    # Requires kernel sound support, change from 0 to 1 if you want it
 -  SOUND = 0
-+  SOUND = 1
++  #SOUND = 0
    SOUNDDEV = /dev/dsp
  
    # Requires kernel joystick support, change from 0 to 1 if you want it
