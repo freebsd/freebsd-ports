@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-PORTVERSION=		8.1
+PORTVERSION=		8.2
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}
@@ -15,8 +15,6 @@ MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BROKEN=			Size mismatch
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
