@@ -3,7 +3,7 @@
 # Date created:         Oct, 8, 1998
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/08 15:33:46 cracauer Exp $
+# $Id: Makefile,v 1.2 1998/12/05 00:03:09 asami Exp $
 #
 #
 
@@ -16,6 +16,8 @@ MASTER_SITES=	http://www.3dfx.com/software/ \
 MAINTAINER= 	cracauer@cons.org
 
 RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 PREFIX=		/compat/linux/usr
 NO_MTREE=	yes

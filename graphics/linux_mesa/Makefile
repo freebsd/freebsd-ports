@@ -3,7 +3,7 @@
 # Date created:         Oct, 8 1998
 # Whom:                 cracauer
 #
-# $Id: Makefile,v 1.2 1998/10/08 18:43:30 cracauer Exp $
+# $Id: Makefile,v 1.3 1998/11/05 11:39:51 cracauer Exp $
 #
 
 DISTNAME=       MesaLib-2.6
@@ -15,6 +15,8 @@ MAINTAINER=	cracauer@cons.org
 
 BUILD_DEPENDS=	/compat/linux/usr/lib/libglide2x.so:${PORTSDIR}/emulators/linux_glide \
 		/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devel
+
+ONLY_FOR_ARCHS=	i386
 
 ALL_TARGET=	linux-glide
 MAKE_ENV=	PATH=${PREFIX}/usr/bin:$$PATH
