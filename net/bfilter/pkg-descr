@@ -1,0 +1,8 @@
+BFilter is a smart filtering HTTP proxy. It removes ads,
+webbugs, and popups. Unlike the majority of similar tools, it
+doesn't rely on a list of blocked URLs, but instead parses HTML
+on the fly, and detects ads using a set of heuristic rules.
+BFilter has a built-in JavaScript engine which detects popups
+and js-generated ads.
+
+WWW: http://bfilter.sourceforge.net
