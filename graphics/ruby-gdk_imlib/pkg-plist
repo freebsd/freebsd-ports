@@ -1,0 +1,10 @@
+%%RUBY_SITEARCHLIBDIR%%/gdk_imlib.so
+%%RUBY_SITELIBDIR%%/gdk_imlib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_imlib/sample1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_imlib/sample2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_imlib/sample3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_imlib/sample4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_imlib/sample5.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gdk_imlib
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gdk_imlib/ChangeLog
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gdk_imlib
