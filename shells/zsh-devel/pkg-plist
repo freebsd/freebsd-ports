@@ -54,7 +54,6 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_apt
 %%ZSHFUNC_SUBDIR%%/_archie
 %%ZSHFUNC_SUBDIR%%/_arg_compile
-%%ZSHFUNC_SUBDIR%%/_argument_sets
 %%ZSHFUNC_SUBDIR%%/_arguments
 %%ZSHFUNC_SUBDIR%%/_arrays
 %%ZSHFUNC_SUBDIR%%/_autoload
@@ -78,6 +77,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_complete
 %%ZSHFUNC_SUBDIR%%/_complete_debug
 %%ZSHFUNC_SUBDIR%%/_complete_help
+%%ZSHFUNC_SUBDIR%%/_complete_tag
 %%ZSHFUNC_SUBDIR%%/_compress
 %%ZSHFUNC_SUBDIR%%/_condition
 %%ZSHFUNC_SUBDIR%%/_configure
@@ -377,6 +377,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/zmv
 %%ZSHFUNC_SUBDIR%%/zrecompile
 %%ZSHFUNC_SUBDIR%%/zstyle+
+@exec mkdir %D/share/zsh/site-functions
 @dirrm lib/zsh/%%ZSH_VER%%/zsh
 @dirrm lib/zsh/%%ZSH_VER%%
 @dirrm lib/zsh
