@@ -67,6 +67,7 @@ lib/mozilla-devel/chrome/overlayinfo/messenger/content/overlays.rdf
 lib/mozilla-devel/chrome/overlayinfo/navigator/content/overlays.rdf
 lib/mozilla-devel/chrome/pipnss.jar
 lib/mozilla-devel/chrome/pippki.jar
+lib/mozilla-devel/chrome/typeaheadfind.jar
 lib/mozilla-devel/chrome/toolkit.jar
 lib/mozilla-devel/chrome/venkman.jar
 lib/mozilla-devel/chrome/user-locales.rdf
@@ -204,16 +205,9 @@ lib/mozilla-devel/components/libshistory.so
 lib/mozilla-devel/components/libstrres.so
 lib/mozilla-devel/components/libtransformiix.so
 lib/mozilla-devel/components/libtxmgr.so
-lib/mozilla-devel/components/libtxtsvc.so
+lib/mozilla-devel/components/libtypeaheadfind.so
 lib/mozilla-devel/components/libuconv.so
-lib/mozilla-devel/components/libucvcn.so
-lib/mozilla-devel/components/libucvibm.so
-lib/mozilla-devel/components/libucvja.so
-lib/mozilla-devel/components/libucvko.so
-lib/mozilla-devel/components/libucvlatin.so
 lib/mozilla-devel/components/libucvmath.so
-lib/mozilla-devel/components/libucvtw.so
-lib/mozilla-devel/components/libucvtw2.so
 lib/mozilla-devel/components/libunicharutil.so
 lib/mozilla-devel/components/libuniversalchardet.so
 lib/mozilla-devel/components/liburiloader.so
@@ -276,6 +270,7 @@ lib/mozilla-devel/components/pipnss.xpt
 lib/mozilla-devel/components/pippki.xpt
 lib/mozilla-devel/components/plugin.xpt
 lib/mozilla-devel/components/pref.xpt
+lib/mozilla-devel/components/prefetch.xpt
 lib/mozilla-devel/components/prefmigr.xpt
 lib/mozilla-devel/components/profile.xpt
 lib/mozilla-devel/components/progressDlg.xpt
@@ -291,6 +286,7 @@ lib/mozilla-devel/components/signonviewer.xpt
 lib/mozilla-devel/components/timebomb.xpt
 lib/mozilla-devel/components/transformiix.xpt
 lib/mozilla-devel/components/txmgr.xpt
+lib/mozilla-devel/components/typeaheadfind.xpt
 lib/mozilla-devel/components/uconv.xpt
 lib/mozilla-devel/components/unicharutil.xpt
 lib/mozilla-devel/components/uriloader.xpt
@@ -334,6 +330,7 @@ lib/mozilla-devel/defaults/pref/mailnews.js
 lib/mozilla-devel/defaults/pref/security-prefs.js
 %%MOZILLAMAILNEWS%%lib/mozilla-devel/defaults/pref/smime.js
 lib/mozilla-devel/defaults/pref/unix.js
+lib/mozilla-devel/defaults/pref/typeaheadfind.js
 lib/mozilla-devel/defaults/pref/xpinstall.js
 lib/mozilla-devel/defaults/profile/US/bookmarks.html
 lib/mozilla-devel/defaults/profile/US/chrome/userChrome-example.css
@@ -525,6 +522,8 @@ lib/mozilla-devel/res/samples/treeTest1.xul
 lib/mozilla-devel/res/samples/widgets.xul
 lib/mozilla-devel/res/samples/xpmenu.xul
 lib/mozilla-devel/res/samples/xulTest.css
+lib/mozilla-devel/res/xml/XMLPrettyPrint.css
+lib/mozilla-devel/res/xml/XMLPrettyPrint.xsl
 lib/mozilla-devel/res/throbber/anim.gif
 lib/mozilla-devel/res/throbber/anims00.gif
 lib/mozilla-devel/res/throbber/anims01.gif
@@ -579,6 +578,7 @@ lib/mozilla-devel/xcat
 lib/mozilla-devel/xenv
 lib/mozilla-devel/xls
 lib/mozilla-devel/xmlterm
+lib/mozilla-devel/xmlwf
 lib/mozilla-devel/xpcshell
 lib/mozilla-devel/xpicleanup
 lib/mozilla-devel/xpidl
@@ -589,6 +589,7 @@ lib/mozilla-devel/xpt_link
 @unexec rm -f %D/lib/mozilla-devel/components/xpti.dat || true
 @dirrm lib/mozilla-devel/searchplugins
 @dirrm lib/mozilla-devel/res/throbber
+@dirrm lib/mozilla-devel/res/xml
 @dirrm lib/mozilla-devel/res/samples/sampleimages
 @dirrm lib/mozilla-devel/res/samples
 @dirrm lib/mozilla-devel/res/rdf
