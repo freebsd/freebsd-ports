@@ -3,11 +3,11 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.16 1997/08/20 23:28:17 obrien Exp $
+# $Id: Makefile,v 1.17 1998/01/15 18:12:11 obrien Exp $
 #
 
-DISTNAME=	lsof_4.22_W
-PKGNAME=	lsof-4.22
+DISTNAME=	lsof_4.25_W
+PKGNAME=	lsof-4.25
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
