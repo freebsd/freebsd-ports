@@ -1,17 +1,17 @@
 # New ports collection makefile for:	gtop
-# Version required:			1.0.2
+# Version required:			1.0.5
 # Date created:				28 September 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtop-1.0.2
+DISTNAME=	gtop-1.0.5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtop
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop

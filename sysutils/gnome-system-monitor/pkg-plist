@@ -2,6 +2,7 @@ bin/gtop
 share/gnome/apps/Utilities/gtop.desktop
 share/gnome/gtoprc
 share/locale/cs/LC_MESSAGES/gtop.mo
+share/locale/da/LC_MESSAGES/gtop.mo
 share/locale/de/LC_MESSAGES/gtop.mo
 share/locale/es/LC_MESSAGES/gtop.mo
 share/locale/fr/LC_MESSAGES/gtop.mo
@@ -10,4 +11,7 @@ share/locale/it/LC_MESSAGES/gtop.mo
 share/locale/ja/LC_MESSAGES/gtop.mo
 share/locale/ko/LC_MESSAGES/gtop.mo
 share/locale/no/LC_MESSAGES/gtop.mo
+share/locale/pl/LC_MESSAGES/gtop.mo
 share/locale/pt/LC_MESSAGES/gtop.mo
+share/locale/ru/LC_MESSAGES/gtop.mo
+share/locale/sv/LC_MESSAGES/gtop.mo
