@@ -208,6 +208,7 @@
     SUBDIR += php4-dba
     SUBDIR += php4-dbase
     SUBDIR += php4-dbx
+    SUBDIR += php4-filepro
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
