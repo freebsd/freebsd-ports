@@ -52,9 +52,11 @@ RESTRICTED=     "Contains strong cryptography"
 
 .SILENT:
 
+.if !defined(I_WANT_NORMAL_BEHAVIOR)
 makesum:
 	${ECHO} "You should make ${FILESDIR}/md5 by hand"
 	${FALSE}
+.endif
 
 .if !defined(USE_128BIT) && !defined(NO_FORTIFY)
 pre-extract:
