@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c25e762-6bb9-11d9-93db-000a95bc6fae">
+    <topic>quake2 -- multiple critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quake2forge</name>
+	<name>quake2lnx</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An advisory published by Richard Stanway describes numerous
+	  critical vulnerabilities in the Quake II engine:</p>
+	<blockquote cite="http://secur1ty.net/advisories/001">
+	  <p>Due to unchecked input at various stages in the server,
+            remote users are able to cause the server to crash, reveal
+            sensitive information or potentially execute arbitrary
+            code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secur1ty.net/advisories/001</url>
+      <mlist msgid="NGEHLEPKOGIHAIJAMDPKOEHJCGAA.bugtraq@secur1ty.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109892527321706</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-27</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c7bb4dd-6a56-11d9-97ec-000c6e8f12ef">
     <topic>konversation  --  shell script command injection</topic>
     <affects>
