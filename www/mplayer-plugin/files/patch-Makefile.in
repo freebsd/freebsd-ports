@@ -1,20 +1,20 @@
---- Makefile.in.orig	Mon Jan 12 16:51:32 2004
-+++ Makefile.in	Sat Jan 17 02:36:27 2004
-@@ -14,7 +14,7 @@
+--- Makefile.in.orig	Sat Feb 14 13:26:10 2004
++++ Makefile.in	Sat Feb 14 13:27:03 2004
+@@ -12,7 +12,7 @@
  
  CC= @CC@
- OPTIMIZER= -g
--CFLAGS= @CFLAGS@ -DXP_UNIX -Iinclude -fPIC @X_CFLAGS@
-+CFLAGS= @CFLAGS@ @CPPFLAGS@ -DXP_UNIX -Iinclude -fPIC @X_CFLAGS@
- LDFLAGS= @LIBS@ @X_LIBS@
+ CXX= @CXX@
+-CFLAGS= -Wall @CFLAGS@ -DXP_UNIX -DMOZ_X11 @MOZPLUG_CFLAGS@ -Iinclude -fPIC @X_CFLAGS@ @GECKO_DEFINES@
++CFLAGS= -Wall @CFLAGS@ @CPPFLAGS@ -DXP_UNIX -DMOZ_X11 @MOZPLUG_CFLAGS@ -Iinclude -fPIC @X_CFLAGS@ @GECKO_DEFINES@
+ LDFLAGS= @LIBS@ @X_LIBS@ @MOZPLUG_LIBS@
  LIBOBJS= @LIBOBJS@
- OBJ= mplayerplug-in.o support.o stubs.o ui.o $(LIBOBJS)
-@@ -27,7 +27,7 @@
+ OBJ= plugin.o nsScriptablePeer.o npp_gate.o np_entry.o npn_gate.o \
+@@ -33,7 +33,7 @@
  default all: $(SHAREDTARGET)
  
  $(SHAREDTARGET): $(OBJ)
--	$(CC) -shared -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
-+	$(CC) -shared -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS) @LDFLAGS@
+-	$(CXX) -shared -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
++	$(CXX) -shared -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS) @LDFLAGS@
+ 	cp Source/nsIScriptableMplayerPlugin.xpt mplayerplug-in.xpt
  
- mplayerplug-in.o: Source/mplayerplug-in.c $(HEADERS) 
- 	$(CC) -c $(CFLAGS) Source/mplayerplug-in.c
+ np_entry.o: plugingate/np_entry.cpp
