@@ -36,6 +36,7 @@ PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
 
@@ -45,6 +46,11 @@ pre-fetch:
 pre-patch:
 	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h
+
+post-patch:
+.if ${OSVERSION} >= 500000
+	@${REINPLACE_CMD} -e 's|elf_i386|elf_i386_fbsd|' ${WRKSRC}/config/i386/freebsd.h
+.endif
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
