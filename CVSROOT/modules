@@ -7769,6 +7769,7 @@ pear-Console_Table	ports/devel/pear-Console_Table
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-DB		ports/databases/pear-DB
 pear-DB_DataObject	ports/databases/pear-DB_DataObject
+pear-DB_DataObject_FormBuilder	ports/databases/pear-DB_DataObject_FormBuilder
 pear-DB_Pager	ports/databases/pear-DB_Pager
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
