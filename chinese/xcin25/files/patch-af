@@ -1,0 +1,11 @@
+--- src/Cinput/bimsphone/bimsphone.c.orig	Wed Oct 27 14:37:45 1999
++++ src/Cinput/bimsphone/bimsphone.c	Sat Nov  6 16:30:39 1999
+@@ -362,7 +362,7 @@
+ 	inpinfo->mcch[i].wch = (wchar_t)0;
+         strncpy(inpinfo->mcch[i].s, selection+(*base+i)*2, 2);
+     }
+-    inpinfo->mcch[i].wch = (wchar_t)0;
++    /* inpinfo->mcch[i].wch = (wchar_t)0; */
+     inpinfo->n_mcch = i;
+     iccf->mode &= ~(PHONE_MODE_COMPOSEDOK);
+ 

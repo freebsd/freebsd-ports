@@ -6,17 +6,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xcin-2.5-19991017
-PKGNAME=	zh-xcin-2.5.2b
+DISTNAME=	xcin-2.5-19991027
+PKGNAME=	zh-xcin-2.5.2b2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
 
-MAINTAINER=	jtjang@gcn.net.tw
+MAINTAINER=	keith@freebsd.sinica.edu.tw
 
 LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
 		intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
-RUN_DEPENDS=	${PREFIX}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFree86
+RUN_DEPENDS=	${PREFIX}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFree86 \
+		${PREFIX}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
 WRKSRC=		${WRKDIR}/xcin-2.5
 USE_X_PREFIX=	yes
@@ -31,8 +32,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-intllib=${LOCALBASE}/lib
 
 post-install:
-	${STRIP} ${PREFIX}/bin/xcin2.5
-	${STRIP} ${PREFIX}/lib/X11/xcin25/bin/cin2tab
+	strip ${PREFIX}/bin/xcin2.5
+	strip ${PREFIX}/lib/X11/xcin25/bin/cin2tab
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/Bugs ${PREFIX}/lib/X11/xcin25/doc
@@ -52,6 +53,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/IMdkit \
 		${PREFIX}/lib/X11/xcin25/doc/internal
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/gen_inp \
+		${PREFIX}/lib/X11/xcin25/doc/internal
+	${INSTALL_MAN} ${WRKSRC}/doc/internal/gui_request \
 		${PREFIX}/lib/X11/xcin25/doc/internal
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/module \
 		${PREFIX}/lib/X11/xcin25/doc/internal
