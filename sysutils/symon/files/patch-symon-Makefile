@@ -1,0 +1,14 @@
+--- symon/Makefile.orig	Fri Mar  4 10:39:20 2005
++++ symon/Makefile	Fri Mar  4 10:43:13 2005
+@@ -26,9 +26,9 @@
+ clean:
+ 	rm -f conf.h symon symon.cat8 symon.core ${OBJS}
+ 
+-install: symon symon.cat8 symon.conf
++install: symon symon.8 symon.conf
+ 	${INSTALL} -c -m 555  -g wheel -o root symon      ${PREFIX}/${BINDIR}
+-	${INSTALL} -c -m 444  -g wheel -o root symon.cat8 ${PREFIX}/${MANDIR}/cat8/symon.0
++	${INSTALL} -c -m 444  -g wheel -o root symon.8 ${PREFIX}/${MANDIR}/man8/symon.8
+ 	${INSTALL} -d -m 555  -g bin   -o root ${PREFIX}/${SHRDIR}
+ 	${INSTALL} -c -m 555  -g wheel -o root c_config.sh ${PREFIX}/${SHRDIR}
+ 	${INSTALL} -d -m 555  -g bin   -o root ${PREFIX}/${EXADIR}

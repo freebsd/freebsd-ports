@@ -1,0 +1,16 @@
+The symon project consists of three parts; a data monitor, a data consolidator
+and a data displayer. 
+
+symon is a is a lightweight system monitor that measures cpu, memory, pf,
+interface and disk statistics every 5 seconds. It sends this data on to symux
+for further processing. symon has been designed to inflict minimal performance
+and security impact -- it can be run as nobody on the system it monitors. 
+
+symux is a non-priviledged daemon that listens to incoming symon traffic. symux
+can write the incoming symon streams into rrd files. Clients interested in
+monitoring machine state can also log into symux and receive data as ascii as
+it arrives. 
+
+symon2web is a php script that can show the data stored in the rrd files.
+
+WWW: http://www.xs4all.nl/~wpd/symon

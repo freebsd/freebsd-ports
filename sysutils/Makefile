@@ -442,6 +442,7 @@
     SUBDIR += stress
     SUBDIR += su2
     SUBDIR += symlinks
+    SUBDIR += symon
     SUBDIR += synergy
     SUBDIR += syslog-ng
     SUBDIR += system-tools-backends

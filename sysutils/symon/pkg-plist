@@ -1,0 +1,13 @@
+bin/symon
+bin/symux
+%%EXAMPLESDIR%%/symon.conf
+%%EXAMPLESDIR%%/symux.conf
+%%DATADIR%%/c_config.sh
+%%DATADIR%%/c_smrrds.sh
+%%DATADIR%%/client/SymuxClient.0
+%%DATADIR%%/client/SymuxClient.pm
+%%DATADIR%%/client/getsymonitem.pl
+@dirrm share/symon/client
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the _symon user manually."
