@@ -313,7 +313,7 @@ curses cursesmodule.c -lncurses -ltermcap
 
 # Tommy Burnette's 'new' module (creates new empty objects of certain kinds):
 
-new newmodule.c
+#new newmodule.c
 
 
 # Generic (SunOS / SVR4) dynamic loading module.
@@ -356,13 +356,13 @@ bsddb bsddbmodule.o
 
 
 # David Wayne Williams' soundex module
-soundex soundex.c
+#soundex soundex.c
 
 # Helper module for various ascii-encoders
 binascii binascii.c
 
 # Fred Drake's interface to the Python parser.
-parser parsermodule.c
+#parser parsermodule.c
 
 # Digital Creations' cStringIO and cPickle
 cStringIO cStringIO.c
