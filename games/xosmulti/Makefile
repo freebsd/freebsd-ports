@@ -8,13 +8,13 @@
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
 CATEGORIES=	games
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
 DISTNAME=	${PORTNAME}_${PORTVERSION}_tar
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	flathill@FreeBSD.org
-COMMENT=	A littele girl catoon on the top of the active window
+COMMENT=	A little girl cartoon on the top of the active window
 
 WRKSRC=		${WRKDIR}/xosmulti
 USE_X_PREFIX=	yes
