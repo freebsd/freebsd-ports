@@ -7,7 +7,7 @@
 
 PORTNAME=	oidentd
 PORTVERSION=	1.6.4
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/ojnk/ \
 		http://www.numb.org/~odin/stuff/
 
@@ -17,10 +17,4 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN8=		oidentd.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-BROKEN=		"outdated sys/file.h"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
