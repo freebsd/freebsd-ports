@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.51.4
+PORTVERSION=	1.53.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
 		http://www.cs.berkeley.edu/~jrs/:triangle
@@ -43,10 +43,20 @@ CONFIGURE_ARGS+=	--with-fltk-prefix=${X11BASE} \
 			--with-jpeg-prefix=${LOCALBASE} \
 			--with-png-prefix=${LOCALBASE}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=		yes
+REINPLACE_ARGS=		-i ""
 
 ALL_TARGET=	all converters
 
 MAN1=		gmsh.1
+
+DEMO2FIX=	isosurf.scp lowmem-anim.geo
+
+pre-configure:
+.for demo in ${DEMO2FIX}
+	@${REINPLACE_CMD} -e "s|../tutorial|${DOCSDIR}/tutorial|"	\
+		${WRKSRC}/demos/${demo}
+.endfor
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/gmsh
