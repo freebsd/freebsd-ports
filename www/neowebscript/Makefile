@@ -7,7 +7,7 @@
 
 PORTNAME=	neowebscript
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nws
@@ -20,8 +20,11 @@ LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 WRKSRC=		${WRKDIR}/${DISTNAME}/modules
+TCL_VERSION?=	8.4
 MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
-USE_PERL5_BUILD=yes
+MAKE_ENV+=	TCL_VERSION=${TCL_VERSION}
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 SUBDIRS=	modules neowebscript htdocs # tools
 
@@ -31,8 +34,9 @@ EXTRACT_AFTER_ARGS:=| ${TAR} -xf - ${SUBDIRS:%=${PORTNAME}-${PORTVERSION}/%}
 
 post-patch:
 	# Replacing writeGIF with writePNG
-	${PERL} -pi -e 's/writeGIF/writePNG/g' \
-		`${FIND} ${WRKSRC}/.. -type f|${XARGS} fgrep -l --mmap writeGIF`
+	${REINPLACE_CMD} 's/writeGIF/writePNG/g' \
+		`${FIND} ${WRKSRC}/.. -type f | \
+		${XARGS} ${GREP} -F -l --mmap writeGIF`
 
 pre-install:
 	# Removing *.orig files and empty directories:
