@@ -19,7 +19,6 @@ bin/runtest.rb
 @dirrm %%RUBY_SITELIBDIR%%/runit/cui
 @dirrm %%RUBY_SITELIBDIR%%/runit/ext
 @dirrm %%RUBY_SITELIBDIR%%/runit
-%%RUBY_EXAMPLESDIR%%/runit/howtouse.html
 %%RUBY_EXAMPLESDIR%%/runit/simpletest.rb
 %%RUBY_EXAMPLESDIR%%/runit/testall.rb
 %%RUBY_EXAMPLESDIR%%/runit/testarray.rb
@@ -31,41 +30,50 @@ bin/runtest.rb
 %%RUBY_DOCDIR%%/runit/ToDo
 %%RUBY_DOCDIR%%/runit/assert.html
 %%RUBY_DOCDIR%%/runit/assert.rd
-%%RUBY_DOCDIR%%/runit/assert.rmi
 %%RUBY_DOCDIR%%/runit/cui/testrunner.html
 %%RUBY_DOCDIR%%/runit/cui/testrunner.rd
-%%RUBY_DOCDIR%%/runit/cui/testrunner.rmi
 %%RUBY_DOCDIR%%/runit/error.html
 %%RUBY_DOCDIR%%/runit/error.rd
-%%RUBY_DOCDIR%%/runit/error.rmi
 %%RUBY_DOCDIR%%/runit/ext/repeatedtest.html
 %%RUBY_DOCDIR%%/runit/ext/repeatedtest.rd
-%%RUBY_DOCDIR%%/runit/ext/repeatedtest.rmi
 %%RUBY_DOCDIR%%/runit/ext/testdecorator.html
 %%RUBY_DOCDIR%%/runit/ext/testdecorator.rd
-%%RUBY_DOCDIR%%/runit/ext/testdecorator.rmi
 %%RUBY_DOCDIR%%/runit/ext/testsetup.html
 %%RUBY_DOCDIR%%/runit/ext/testsetup.rd
-%%RUBY_DOCDIR%%/runit/ext/testsetup.rmi
 %%RUBY_DOCDIR%%/runit/index.html
+%%RUBY_DOCDIR%%/runit/ja/assert.html
+%%RUBY_DOCDIR%%/runit/ja/assert.rd
+%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.html
+%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.rd
+%%RUBY_DOCDIR%%/runit/ja/error.html
+%%RUBY_DOCDIR%%/runit/ja/error.rd
+%%RUBY_DOCDIR%%/runit/ja/index.html
+%%RUBY_DOCDIR%%/runit/ja/robserver.html
+%%RUBY_DOCDIR%%/runit/ja/robserver.rd
+%%RUBY_DOCDIR%%/runit/ja/testcase.html
+%%RUBY_DOCDIR%%/runit/ja/testcase.rd
+%%RUBY_DOCDIR%%/runit/ja/testfailure.html
+%%RUBY_DOCDIR%%/runit/ja/testfailure.rd
+%%RUBY_DOCDIR%%/runit/ja/testresult.html
+%%RUBY_DOCDIR%%/runit/ja/testresult.rd
+%%RUBY_DOCDIR%%/runit/ja/testsuite.html
+%%RUBY_DOCDIR%%/runit/ja/testsuite.rd
+%%RUBY_DOCDIR%%/runit/ja/version.html
+%%RUBY_DOCDIR%%/runit/ja/version.rd
 %%RUBY_DOCDIR%%/runit/robserver.html
 %%RUBY_DOCDIR%%/runit/robserver.rd
-%%RUBY_DOCDIR%%/runit/robserver.rmi
 %%RUBY_DOCDIR%%/runit/testcase.html
 %%RUBY_DOCDIR%%/runit/testcase.rd
-%%RUBY_DOCDIR%%/runit/testcase.rmi
 %%RUBY_DOCDIR%%/runit/testfailure.html
 %%RUBY_DOCDIR%%/runit/testfailure.rd
-%%RUBY_DOCDIR%%/runit/testfailure.rmi
 %%RUBY_DOCDIR%%/runit/testresult.html
 %%RUBY_DOCDIR%%/runit/testresult.rd
-%%RUBY_DOCDIR%%/runit/testresult.rmi
 %%RUBY_DOCDIR%%/runit/testsuite.html
 %%RUBY_DOCDIR%%/runit/testsuite.rd
-%%RUBY_DOCDIR%%/runit/testsuite.rmi
 %%RUBY_DOCDIR%%/runit/version.html
 %%RUBY_DOCDIR%%/runit/version.rd
-%%RUBY_DOCDIR%%/runit/version.rmi
 @dirrm %%RUBY_DOCDIR%%/runit/cui
 @dirrm %%RUBY_DOCDIR%%/runit/ext
+@dirrm %%RUBY_DOCDIR%%/runit/ja/cui
+@dirrm %%RUBY_DOCDIR%%/runit/ja
 @dirrm %%RUBY_DOCDIR%%/runit

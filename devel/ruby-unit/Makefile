@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -41,11 +41,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/runit
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/runit/
-	${MKDIR} ${RUBY_DOCDIR}/runit
+	${MKDIR} ${RUBY_DOCDIR}/runit/ja
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/runit/
 .endfor
 	${CP} -R ${WRKSRC}/doc_en/ ${RUBY_DOCDIR}/runit/
+	${CP} -R ${WRKSRC}/doc_ja/ ${RUBY_DOCDIR}/runit/ja/
 .endif
 
 .include <bsd.port.mk>
