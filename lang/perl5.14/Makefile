@@ -1,13 +1,13 @@
 # New ports collection makefile for:	perl5
-# Version required:	5.004_04
+# Version required:	5.005_02
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.23 1998/02/15 23:03:58 steve Exp $
+# $Id: Makefile,v 1.24 1998/08/06 10:43:21 markm Exp $
 #
 
-DISTNAME=	perl5.005_01
-PKGNAME=	perl-5.00501
+DISTNAME=	perl5.005_02
+PKGNAME=	perl-5.00502
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
@@ -72,7 +72,7 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	lib.3 locale.3 ops.3 overload.3 re.3 sigtrap.3 \
 	strict.3 subs.3 vars.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/5.00501/
+MAN3PREFIX=	${PREFIX}/lib/perl5/5.00502/
 
 test:
 	@(cd ${WRKSRC}; make test)
