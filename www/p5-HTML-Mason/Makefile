@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -19,7 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${SITE_PERL}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-prompts
