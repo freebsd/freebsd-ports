@@ -3,6 +3,6 @@ etc/rc.d/cvsd.sh.sample
 sbin/cvsd
 sbin/cvsd-buildroot
 sbin/cvsd-passwd
-%%PORTDOCS%%share/doc/cvsd/README
-%%PORTDOCS%%@dirrm share/doc/cvsd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/cvsd
