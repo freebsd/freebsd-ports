@@ -438,6 +438,7 @@
     SUBDIR += tidy-lib
     SUBDIR += tinyproxy
     SUBDIR += transproxy
+    SUBDIR += turck-mmcache
     SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki
