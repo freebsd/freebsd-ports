@@ -1,0 +1,207 @@
+--- gcc/gcc.1.orig	1999/08/26 09:27:23	1.1.1.2
++++ gcc/gcc.1	1999/09/19 09:00:24	1.14
+@@ -1,3 +1,4 @@
++.\" $from_FreeBSD: src/contrib/gcc/gcc.1,v 1.14 1999/09/19 09:00:24 obrien Exp $
+ .\" Copyright (c) 1991, 1992, 1993, 1994 Free Software Foundation    -*-Text-*-
+ .\" See section COPYING for conditions for redistribution
+ .\"
+@@ -264,6 +265,8 @@
+ \-O
+ \-O2
+ \-O3
++\-O0
++\-Os
+ .TP
+ .B Preprocessor Options
+ .RI \-A assertion
+@@ -444,10 +447,25 @@
+ .Sp
+ .I i386 Options
+ .br
++\-m386
+ \-m486
++\-mpentium
++\-mpentiumpro
+ \-mno\-486
++\-mcpu=\fIcpu type\fP
++\-march=\fIcpu type\fP
+ \-msoft\-float
++\-mrtd
++\-mregparm
++\-msvr3\-shlib
++\-mno\-ieee\-fp
+ \-mno\-fp\-ret\-in\-387
++\-mfancy\-math\-387
++\-mno\-wide\-multiply
++\-mdebug\-addr
++\-mno\-move
++\-mprofiler\-epilogue
++\-reg\-alloc=LIST
+ .Sp
+ .I HPPA Options
+ .br
+@@ -520,6 +538,16 @@
+ \-fverbose\-asm
+ .ad b
+ .hy 1
++.SH FreeBSD SPECIFIC OPTIONS
++.TP
++.BI "\-pthread"
++Link a user-threaded process against libc_r instead of libc. Objects linked
++into user-threaded processes should be compiled with -D_THREAD_SAFE.
++.TP
++.BI "\-kthread"
++Link a kernel-threaded process against libpthread in addition to libc.
++Objects linked into kernel-threaded processes should be compiled with
++-D_THREAD_SAFE.
+ .SH OVERALL OPTIONS
+ .TP
+ .BI "\-x " "language"
+@@ -1202,13 +1230,17 @@
+ .B \-M\c
+ \&\|' but the output mentions only the user header files
+ included with `\|\c
+-.B #include "\c
++.B
++#include "\c
+ .I file\c
++.B
+ \&"\c
+ \&\|'.  System header files
+ included with `\|\c
+-.B #include <\c
++.B
++#include <\c
+ .I file\c
++.B
+ \&>\c
+ \&\|' are omitted.
+ .TP
+@@ -1485,8 +1517,10 @@
+ \&"\c
+ \&\|';
+ they are not searched for `\|\c
+-.B #include <\c
++.B
++#include <\c
+ .I file\c
++.B
+ \&>\c
+ \&\|'.
+ .Sp
+@@ -2000,7 +2034,7 @@
+ .B \-Wnested-externs
+ Warn if an \c
+ .B extern\c
+-\& declaration is encountered within an function.
++\& declaration is encountered within a function.
+ .TP
+ .B \-Wenum\-clash
+ Warn about conversion between different enumeration types (C++ only).
+@@ -2432,6 +2466,12 @@
+ does, along with also turning on
+ .B \-finline\-functions.
+ .TP
++.B \-Os
++Optimize for size. This enables all
++.B \-O2
++optimizations that do not typically increase code size.  It also performs
++further optimizations designed to reduce code size.
++.TP
+ .B \-O0
+ Do not optimize.
+ .Sp
+@@ -2981,17 +3021,17 @@
+ .B \-mcypress
+ .TP
+ .B \-msupersparc
+-These two options select the processor for which the code is optimised.
++These two options select the processor for which the code is optimized.
+ .Sp
+ With
+ .B \-mcypress
+-(the default), the compiler optimises code for the Cypress CY7C602 chip, as
++(the default), the compiler optimizes code for the Cypress CY7C602 chip, as
+ used in the SparcStation/SparcServer 3xx series. This is also appropriate for
+ the older SparcStation 1, 2, IPX etc.
+ .Sp
+ With
+ .B \-msupersparc
+-the compiler optimises code for the SuperSparc cpu, as used in the SparcStation
++the compiler optimizes code for the SuperSparc cpu, as used in the SparcStation
+ 10, 1000 and 2000 series. This flag also enables use of the full SPARC v8
+ instruction set.
+ .PP
+@@ -3570,12 +3610,51 @@
+ These `\|\c
+ .B \-m\c
+ \&\|' options are defined for the Intel 80386 family of computers:
++.TP
+ .B \-m486
+ .TP
+ .B \-mno\-486
+ Control whether or not code is optimized for a 486 instead of an
+ 386.  Code generated for a 486 will run on a 386 and vice versa.
+ .TP
++.B \-mpentium
++Synonym for
++.B \-mcpu=pentium
++.TP
++.B \-mpentiumpro
++Synonym for
++.B \-mcpu=pentiumpro
++.TP
++.B \-mcpu=\fIcpu type\fP
++Assume the defaults for the machine type CPU TYPE when scheduling instructions.
++The choices for CPU TYPE are:
++.B i386,
++.B i486,
++.B i586
++(pentium),
++.B pentium,
++.B i686
++(pentiumpro), and
++.B pentiumpro.
++While picking a specific CPU TYPE will schedule things appropriately for that
++particular chip, the compiler will not generate any code that does not run on
++the i386 without the
++.B \-march=\fIcpu type\fP
++option being used.
++.TP
++.B \-march=\fIcpu type\fP
++Generate instructions for the machine type CPU TYPE.  The choices for CPU TYPE
++are:
++.B i386,
++.B i486,
++.B pentium,
++and
++.B pentiumpro.
++Specifying
++.B \-march=\fIcpu type\fP
++implies
++.B \-mcpu=\fIcpu type\fP.
++.TP
+ .B \-msoft\-float
+ Generate output containing library calls for floating point.
+ .I Warning:
+@@ -3606,6 +3685,11 @@
+ .B \-mno-fp-ret-in-387\c
+ \&\|' causes such values to be returned
+ in ordinary CPU registers instead.
++.TP
++.B \-mprofiler-epilogue
++.TP
++.B \-mno-profiler-epilogue
++Generate extra code to write profile information for function exits.
+ .PP
+ These `\|\c
+ .B \-m\c
+@@ -4141,7 +4225,7 @@
+ .B /tmp\c
+ \&).
+ .SH "SEE ALSO"
+-cpp(1), as(1), ld(1), gdb(1), adb(1), dbx(1), sdb(1).
++as(1), cpp(1), gdb(1), ld(1)
+ .br
+ .RB "`\|" gcc "\|', `\|" cpp \|',
+ .RB "`\|" as "\|', `\|" ld \|',

@@ -1,13 +1,6 @@
 --- gcc/config/i386/freebsd.h.orig	Mon Mar  1 14:47:32 1999
-+++ gcc/config/i386/freebsd.h	Sun Mar 21 16:58:39 1999
-@@ -21,19 +21,13 @@
- the Free Software Foundation, 59 Temple Place - Suite 330,
- Boston, MA 02111-1307, USA.  */
- 
-+
-+/* Get generic FreeBSD definitions.  */
-+#include <freebsd.h>
-+
++++ gcc/config/i386/freebsd.h	Mon Dec  4 14:03:42 2000
+@@ -24,16 +24,6 @@
  #undef TARGET_VERSION
  #define TARGET_VERSION fprintf (stderr, " (i386 FreeBSD/ELF)");
  
@@ -24,7 +17,7 @@
  /* This is how to output an element of a case-vector that is relative.
     This is only used for PIC code.  See comments by the `casesi' insn in
     i386.md for an explanation of the expression this outputs. */
-@@ -113,22 +107,19 @@
+@@ -113,22 +103,19 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
@@ -51,7 +44,7 @@
      }									\
  }
  
-@@ -145,26 +136,16 @@
+@@ -145,26 +132,16 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
