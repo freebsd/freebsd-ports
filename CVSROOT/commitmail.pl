@@ -2,30 +2,33 @@
 #
 # $FreeBSD$
 
-$access = "/home/ncvs/CVSROOT/access";
-@names = ();
-$mailcmd = "/home/majordomo/wrapper resend.nobm -l $ARGV[0] -f owner-$ARGV[0] -h FreeBSD.org";
+use strict;
+
+my $access = "/home/ncvs/CVSROOT/access";
+my @names = ();
+my $mailcmd = "/home/majordomo/wrapper resend.nobm -l $ARGV[0] " .
+    "-f owner-$ARGV[0] -h FreeBSD.org";
 #$mailcmd = "/usr/sbin/sendmail -oem -f owner-$ARGV[0]";
 
 open(ACCESS, "< $access") || exit 75;
 while (<ACCESS>) {
-	chop;
-	@words = split;
-	if ($words[0] =~ /^[#\/;]/) {
-		next;
-	}
-	if ($words[1]) {
-		push @names, $words[1];
+	next if /^[#\/;]/;
+	chomp;
+
+	my ($committer, $alt_emailaddr) = split;
+	if ($alt_emailaddr) {
+		push @names, $alt_emailaddr;
 	} else {
-		push @names, $words[0];
+		push @names, $committer;
 	}
 }
-$list = join(" ", @names);
+
+my $list = join " ", sort @names;
 if ($list ne '') {
 	exec "$mailcmd $list";
-	die "cant exec `$mailcmd': $!";
+	die "Can't exec `$mailcmd': $!";
 } else {
-	die "cannot generate names from $access!";
+	die "Can't generate names from $access!";
 }
 
 
