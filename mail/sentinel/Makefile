@@ -24,6 +24,10 @@ IGNORE=		requires Sendmail 8.12
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.if defined(WITHOUT_SENTINEL_DECODE_SUBJECT)
+CFLAGS+=        -DDO_NOT_DECODE_SUBJECT
+.endif
+
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} ${PTHREAD_CFLAGS} \
