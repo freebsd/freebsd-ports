@@ -1,22 +1,31 @@
 # New ports collection makefile for:	tiff34
-# Version required:	3.4beta035
+# Version required:	3.4beta35
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.ziplink.net>
+#			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/09 10:48:52 max Exp $
+# $Id: Makefile,v 1.2 1997/01/09 12:52:52 max Exp $
 #
 
-DISTNAME=	tiff-v3.4beta035
-PKGNAME=	tiff-3.4b035
+# NOTE:
+# To get rid of rumored incompatibility between libtiff3.3 and 3.4
+# (can somebody confirm it?) installation will be done as libtiff34.a,
+# not libtiff.a.  The port is made so that there's no overwrite
+# for headers, libraries, and documents.  (there may be overwrite of manuals)
+
+DISTNAME=	tiff-v3.4
+PKGNAME=	tiff-3.4
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
 		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
 EXTRACT_SUFX=	-tar.gz
 
+MAINTENER=	itojun@itojun.org
+
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		"Libtiff might be incompatible with older library"
+WRKSRC=		${WRKDIR}/tiff-v3.4
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_LIB=${PREFIX}/lib --with-DIR_INC=${PREFIX}/include \
@@ -57,12 +66,14 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFmemset.3t TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t \
 	TIFFswab.3t TIFFtile.3t libtiff.3t 
 
+DOCDIR=	${PREFIX}/share/doc/tiff34
+
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tiff/images
-	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/tiff
-	${INSTALL_DATA} ${WRKSRC}/html/images/* ${PREFIX}/share/doc/tiff/images
+	@${MKDIR} ${DOCDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
