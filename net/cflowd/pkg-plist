@@ -9,7 +9,7 @@ bin/flowdump
 bin/flowwatch
 etc/cfdcollect.conf.example
 etc/cflowd.conf.example
-etc/rc.d/cflowd.sh.sample
+etc/rc.d/cflowd-base.sh.sample
 include/cflowd/CflowdAsMatrix.hh
 include/cflowd/CflowdAsMatrixKey.hh
 include/cflowd/CflowdAsMatrixTrafficCounter.hh
