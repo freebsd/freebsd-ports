@@ -1,36 +1,37 @@
-sbin/pure-mrtginfo
-sbin/pure-ftpd
-sbin/pure-ftpwho
-sbin/pure-uploadscript
-sbin/pure-quotacheck
-sbin/pure-authd
-bin/pure-statsdecode
 bin/pure-pw
 bin/pure-pwconvert
-sbin/pure-config.pl
+bin/pure-statsdecode
+etc/pure-ftpd.conf.sample
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
 etc/pureftpd-pgsql.conf.sample
-etc/pure-ftpd.conf.sample
+sbin/pure-authd
+sbin/pure-config.pl
+sbin/pure-ftpd
+sbin/pure-ftpwho
+sbin/pure-mrtginfo
+sbin/pure-quotacheck
+sbin/pure-uploadscript
 %%PORTDOCS%%share/doc/pure-ftpd/AUTHORS
 %%PORTDOCS%%share/doc/pure-ftpd/CONTACT
 %%PORTDOCS%%share/doc/pure-ftpd/COPYING
 %%PORTDOCS%%share/doc/pure-ftpd/HISTORY
 %%PORTDOCS%%share/doc/pure-ftpd/NEWS
 %%PORTDOCS%%share/doc/pure-ftpd/README
-%%PORTDOCS%%share/doc/pure-ftpd/README.Virtual-Users
+%%PORTDOCS%%share/doc/pure-ftpd/README.Authentication-Modules
 %%PORTDOCS%%share/doc/pure-ftpd/README.Configuration-File
 %%PORTDOCS%%share/doc/pure-ftpd/README.Contrib
 %%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
 %%PORTDOCS%%share/doc/pure-ftpd/README.MySQL
 %%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
 %%PORTDOCS%%share/doc/pure-ftpd/README.PGSQL
-%%PORTDOCS%%share/doc/pure-ftpd/README.Authentication-Modules
+%%PORTDOCS%%share/doc/pure-ftpd/README.Virtual-Users
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
 %%PORTDOCS%%share/doc/pure-ftpd/poweredby.jpg
-%%PORTDOCS%%@dirrm share/doc/pure-ftpd
-share/examples/pure-ftpd/xml_python_processors.txt
-share/examples/pure-ftpd/sfv-crc-check.pl
+%%PORTDOCS%%share/doc/pure-ftpd/pureftpd.schema
 share/examples/pure-ftpd/pam/pure-ftpd
+share/examples/pure-ftpd/sfv-crc-check.pl
+share/examples/pure-ftpd/xml_python_processors.txt
 @dirrm share/examples/pure-ftpd/pam
 @dirrm share/examples/pure-ftpd
+%%PORTDOCS%%@dirrm share/doc/pure-ftpd
