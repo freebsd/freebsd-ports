@@ -3,12 +3,12 @@
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1999/02/12 18:06:15 flathill Exp $
+# $Id: Makefile,v 1.13 1999/04/30 19:23:58 taoka Exp $
 #
 
 DISTNAME=	tgif-3.0.18
 PKGNAME=	ja-tgif-3.0.18
-CATEGORIES=	japanese
+CATEGORIES=	japanese graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		${MASTER_SITE_XCONTRIB} \
 		${MASTER_SITE_PORTS_JP} \
