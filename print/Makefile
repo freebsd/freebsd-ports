@@ -101,6 +101,7 @@
     SUBDIR += magicfilter
     SUBDIR += makeindex
     SUBDIR += mapagi
+    SUBDIR += mftrace
     SUBDIR += mgv
     SUBDIR += mp-a4
     SUBDIR += mp-letter
@@ -146,7 +147,6 @@
     SUBDIR += pkfonts360
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
-    SUBDIR += pktrace
     SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += preview-latex
