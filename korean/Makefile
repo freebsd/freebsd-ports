@@ -20,7 +20,6 @@
     SUBDIR += han
     SUBDIR += hanIM
     SUBDIR += hanemacs
-    SUBDIR += hanmutt
     SUBDIR += hanterm
     SUBDIR += hanterm-xf86
     SUBDIR += hanyangfonts
