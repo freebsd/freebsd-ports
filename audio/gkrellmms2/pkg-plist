@@ -1,3 +1,5 @@
 libexec/gkrellm2/plugins/gkrellmms.so
+share/locale/da/LC_MESSAGES/gkrellmms.mo
+share/locale/fr/LC_MESSAGES/gkrellmms.mo
 share/locale/nl/LC_MESSAGES/gkrellmms.mo
 share/locale/ru/LC_MESSAGES/gkrellmms.mo
