@@ -284,7 +284,6 @@ MAN3+=	shishi_encticketpart_cname_set.3
 MAN3+=	shishi_encticketpart_crealm_set.3
 MAN3+=	shishi_encticketpart_endtime_set.3
 MAN3+=	shishi_encticketpart_flags_set.3
-MAN3+=	shishi_encticketpart_get_enc_part_etype.3
 MAN3+=	shishi_encticketpart_get_key.3
 MAN3+=	shishi_encticketpart_key_set.3
 MAN3+=	shishi_encticketpart_transited_set.3
