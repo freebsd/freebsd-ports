@@ -1,12 +1,12 @@
 # Ports collection makefile for:    setiathome
-# Version required:     0.46
+# Version required:     1.2
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.9 1999/05/17 10:58:07 stb Exp $
+# $Id: Makefile,v 1.10 1999/05/18 22:40:32 stb Exp $
 #
 
-PKGNAME=	setiathome-1.1
+PKGNAME=	setiathome-1.2
 CATEGORIES=	astro
 MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 		ftp://ftp.cdrom.com/pub/setiathome/ \
@@ -27,27 +27,32 @@ MAN1=		setiathome.1
 .if ${OSVERSION} >= 400000
 DISTFILES=      setiathome-1.1.i386-unknown-freebsd4.0.tar
 WRKSRC=         setiathome-1.1.i386-unknown-freebsd4.0
+PKGNAME=	setiathome-1.1
+.elif ${OSVERSION} >= 320000
+DISTFILES=      setiathome-1.2.i386-unknown-freebsd3.2.tar
+WRKSRC=         setiathome-1.2.i386-unknown-freebsd3.2
 .elif ${OSVERSION} >= 310000
-DISTFILES=      setiathome-1.1.i386-unknown-freebsd3.1.tar
-WRKSRC=         setiathome-1.1.i386-unknown-freebsd3.1
+DISTFILES=      setiathome-1.2.i386-unknown-freebsd3.1.tar
+WRKSRC=         setiathome-1.2.i386-unknown-freebsd3.1
 .elif ${OSVERSION} >= 228000
-DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.8.tar
-WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.8
+DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.8.tar
+WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.8
 .elif ${OSVERSION} >= 227000
-DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.7.tar
-WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.7
+DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.7.tar
+WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.7
 .elif ${OSVERSION} >= 226000
-DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.6.tar
-WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.6
+DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.6.tar
+WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.6
 .else
 DISTFILES=
 .endif
 
 .if make(makesum) | defined(FETCH_ALL)
-DISTFILES=	setiathome-1.1.i386-unknown-freebsd2.2.6.tar	\
-			setiathome-1.1.i386-unknown-freebsd2.2.7.tar	\
-			setiathome-1.1.i386-unknown-freebsd2.2.8.tar	\
-			setiathome-1.1.i386-unknown-freebsd3.1.tar	\
+DISTFILES=	setiathome-1.2.i386-unknown-freebsd2.2.6.tar	\
+			setiathome-1.2.i386-unknown-freebsd2.2.7.tar	\
+			setiathome-1.2.i386-unknown-freebsd2.2.8.tar	\
+			setiathome-1.2.i386-unknown-freebsd3.1.tar	\
+			setiathome-1.2.i386-unknown-freebsd3.2.tar	\
 			setiathome-1.1.i386-unknown-freebsd4.0.tar
 .endif
 
