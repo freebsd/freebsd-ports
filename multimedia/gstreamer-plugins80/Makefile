@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.5
-PORTREVISION=	2
+PORTVERSION=	0.8.6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
 		${MASTER_SITE_GNOME}
@@ -32,6 +31,7 @@ USE_GNOME=	gnomehack \
 		gconf2
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
+GCONF_SCHEMAS=	gstreamer-${GST_VERSION}.schemas
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \
 		--enable-cdrom \
@@ -57,6 +57,7 @@ CONFIGURE_ARGS+=\
 		--disable-lcs \
 		--disable-shout2 \
 		--disable-libvisual \
+		--disable-musepack \
 		--disable-dirac \
 		--disable-librfb
 
@@ -343,6 +344,11 @@ WITH_PANGO=yes
 # png
 .if exists(${LOCALBASE}/lib/libpng.a)
 WITH_PNG=yes
+.endif
+
+# polypaudio
+.if exists(${LOCALBASE}/lib/libpolyp-0.6.a)
+WITH_POLYPAUDIO=yes
 .endif
 
 # sdl
@@ -812,6 +818,16 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .endif
 
+# polypaudio
+.ifndef(WITH_POLYPAUDIO)
+CONFIGURE_ARGS+=	--disable-polyp
+PLIST_SUB+=	POLYPAUDIO="@comment "
+.else
+LIB_DEPENDS+=	polyp-0.6.0:${PORTSDIR}/audio/polypaudio
+
+PLIST_SUB+=	POLYPAUDIO=""
+.endif
+
 # sdl
 .ifndef(WITH_SDL)
 CONFIGURE_ARGS+=	--disable-sdl \
@@ -846,15 +862,15 @@ PLIST_SUB+=	SPEEX="@comment "
 #.endif
 
 # swfdec
-.ifndef(WITH_SWFDEC)
+#.ifndef(WITH_SWFDEC)
 CONFIGURE_ARGS+=	--disable-swfdec
 PLIST_SUB+=	SWFDEC="@comment "
-.else
-LIB_DEPENDS+=	swfdec.0:${PORTSDIR}/graphics/swfdec
-
-CONFIGURE_ARGS+=	--enable-swfdec
-PLIST_SUB+=	SWFDEC=""
-.endif
+#.else
+#LIB_DEPENDS+=	swfdec.0:${PORTSDIR}/graphics/swfdec
+#
+#CONFIGURE_ARGS+=	--enable-swfdec
+#PLIST_SUB+=	SWFDEC=""
+#.endif
 
 # vorbis
 .ifndef(WITH_VORBIS)
@@ -1079,6 +1095,10 @@ pre-everything::
 .ifndef(WITH_PNG)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_PNG to enable png Video plugin'
+.endif
+.ifndef(WITH_POLYPAUDIO)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_POLYPAUDIO to enable polypaudio audio plugin'
 .endif
 .ifndef(WITH_SDL)
 	@${ECHO_MSG} '===>'
