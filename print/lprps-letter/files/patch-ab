@@ -1,0 +1,11 @@
+--- lprps.c.orig	Wed Sep 11 03:12:26 1996
++++ lprps.c	Wed Sep 11 03:14:28 1996
+@@ -346,7 +346,7 @@
+ char *strsignal(n)
+ int n;
+ {
+-  extern char *sys_siglist[];
++  /* extern char *sys_siglist[]; */
+   static char buf[32];
+   if (n >= 0 && n < NSIG)
+     return sys_siglist[n];

@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Sep 11 03:08:08 1996
++++ Makefile	Wed Sep 11 03:11:29 1996
+@@ -3,21 +3,21 @@
+ # Define IIg to enable a workaround for a bug in the serial
+ # driver of the Laserwriter IIf and IIg; this requires the POSIX
+ # tcdrain() function.  (I haven't tested this personally.)
+-DEFINES=-DA4 #-DIIg
+-PREFIX=/usr/local
++DEFINES=-D$(PAPERSIZE)
+ # Where to install public executables.
+ BINDIR=$(PREFIX)/bin
+ # Where to install private executables.
+-LIBDIR=$(PREFIX)/lib
++LIBDIR=$(PREFIX)/libexec
+ # Define REV_COMMAND to be empty if documents don't need to
+ # be printed in reverse order.
+-REV_COMMAND=$(BINDIR)/psrev |
++#REV_COMMAND=$(BINDIR)/psrev |
++REV_COMMAND=
+ # Where to install the filter for text files.
+ TEXT_FILTER=$(LIBDIR)/psif-text
+ # Where to install the filter for PostScript files.
+ PS_FILTER=$(LIBDIR)/psif-ps
+ # Where to install PostScript banner printing code
+-BANNER=$(LIBDIR)/banner.ps
++BANNER=$(PREFIX)/share/misc/banner.ps
+ # Filter to convert text to PostScript.  You can use your own instead.
+ # It must be able to read from standard input.
+ TEXT_TO_PS=$(BINDIR)/textps
