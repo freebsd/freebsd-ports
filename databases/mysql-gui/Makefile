@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	A graphical SQL client for MySQL
 
+BROKEN=		Does not patch
+
 # Global variables
 #
 
