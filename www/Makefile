@@ -482,7 +482,6 @@
     SUBDIR += webstone-ssl
     SUBDIR += wml
     SUBDIR += wmnetselect
-    SUBDIR += wn
     SUBDIR += wsmake
     SUBDIR += www6to4
     SUBDIR += wwwcount
