@@ -29,7 +29,9 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
+	ftp://ftp.mirror.ac.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.x.org/contrib/%SUBDIR%/
 
 MASTER_SITE_XFREE+= \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
@@ -55,7 +57,9 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -78,7 +82,9 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
+	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 
 MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/  \
@@ -232,7 +238,9 @@ MASTER_SITE_TCLTK+= \
 	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
 	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
+	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
 	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
