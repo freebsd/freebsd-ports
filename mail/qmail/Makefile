@@ -246,6 +246,10 @@ pre-pre-fetch:
 	@${ECHO_MSG} "				used by qmail when sending"
 	@${ECHO_MSG} "				outgoing messages"
 .endif # MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
+.if !defined(MAIN_QMAIL_PORT_WITH_PRESERVE_CONFIG_FILES_BARRIER)
+	@${ECHO_MSG} "WITH_PRESERVE_CONFIG_FILES=yes	do not run automatic config"
+	@${ECHO_MSG} "				to preserve your config files"
+.endif # MAIN_QMAIL_PORT_WITH_PRESERVE_CONFIG_FILES_BARRIER
 	@${ECHO_MSG} "#"
 .endif # MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER
 
@@ -322,7 +326,9 @@ do-install:
 .endfor
 	@# This is not part of qmail proper, hence the 2nd class citizenship
 	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/${DOCDIR}
+.if !defined(WITH_PRESERVE_CONFIG_FILES)
 	@cd ${PREFIX}/configure ; ./config
+.endif
 	@${MKDIR} ${LOCALBASE}/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
 	@${ECHO}
