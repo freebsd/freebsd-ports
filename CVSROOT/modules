@@ -6335,6 +6335,7 @@ ptx		src/gnu/usr.bin/ptx
 ptypes		ports/devel/ptypes
 publicfile	ports/www/publicfile
 puf		ports/ftp/puf
+pup		ports/print/pup
 pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
