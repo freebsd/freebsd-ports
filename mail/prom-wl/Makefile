@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prom-wl
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 
