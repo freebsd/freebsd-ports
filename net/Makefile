@@ -223,6 +223,7 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
+    SUBDIR += nylon
     SUBDIR += obnc
     SUBDIR += ohphone
     SUBDIR += openam
