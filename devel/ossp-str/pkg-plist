@@ -1,6 +1,0 @@
-bin/str-config
-include/str.h
-lib/libstr.a
-lib/libstr.la
-lib/libstr.so
-lib/libstr.so.9

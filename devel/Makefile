@@ -514,7 +514,6 @@
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
     SUBDIR += ossp-l2
-    SUBDIR += ossp-str
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += p4.el
