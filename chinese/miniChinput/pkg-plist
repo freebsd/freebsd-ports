@@ -1,4 +1,21 @@
 bin/chinput
+%%DOCSDIR%%/README
+%%DOCSDIR%%/BUGS
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/USAGE
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/Chinese/TODO_cn
+%%DOCSDIR%%/Chinese/Chinput_BUGS
+%%DOCSDIR%%/Chinese/Chinput_CHANGES
+%%DOCSDIR%%/Chinese/Chinput_FAQ
+%%DOCSDIR%%/Chinese/Chinput_INSTALL
+%%DOCSDIR%%/Chinese/Chinput_README
+%%DOCSDIR%%/Chinese/Chinput_USAGE
+%%DOCSDIR%%/Chinese/INSTALL_cn
+%%DOCSDIR%%/Chinese/README_cn
+%%DOCSDIR%%/Chinese/Chinput_API
 lib/Chinput/Chinput.ad
 lib/Chinput/im/TL_hzinput.so
 lib/Chinput/im/cce_hzinput.so
@@ -29,3 +46,5 @@ lib/Chinput/im/gbk/gbkpy_mb.tab
 @dirrm lib/Chinput/im/gbk
 @dirrm lib/Chinput/im
 @dirrm lib/Chinput
+@dirrm %%DOCSDIR%%/Chinese
+@dirrm %%DOCSDIR%%
