@@ -42,6 +42,7 @@
     SUBDIR += chkrootkit
     SUBDIR += chrootuid
     SUBDIR += cksfv
+    SUBDIR += clamassassin
     SUBDIR += clamav
     SUBDIR += clamav-devel
     SUBDIR += clamsmtp
