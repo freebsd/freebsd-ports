@@ -1,0 +1,3 @@
+glclock is a OpenGL demo with benchmarking capability.  For fun and 
+performance testing, glclock will be of some use for those who have 
+hardware-accelerated 3D cards (see www.freebsd.org/~3d) or very fast CPUs.
