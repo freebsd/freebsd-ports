@@ -1,18 +1,54 @@
 bin/ifm
-bin/tkifm
+bin/ifm2dev
+bin/ifm2tex
 bin/scr2ifm
-share/ifm/ifm-init.ifm
-share/ifm/ifm-pro.ps
-share/ifm/ifm-rgb.txt
-share/ifm/puzzle.ifm
-share/ifm/special.ifm
-@unexec install-info --delete %D/info/ifm.info %D/info/dir
-@unexec install-info --delete %D/info/tkifm.info %D/info/dir
-@unexec install-info --delete %D/info/scr2ifm.info %D/info/dir
-info/ifm.info
-info/tkifm.info
-info/scr2ifm.info
-@exec install-info %D/info/ifm.info %D/info/dir
-@exec install-info %D/info/tkifm.info %D/info/dir
-@exec install-info %D/info/scr2ifm.info %D/info/dir
-@dirrm share/ifm
+bin/tkifm
+%%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
+%%PORTDOCS%%%%DOCSDIR%%/html/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/html/footnode.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/ifm.css
+%%PORTDOCS%%%%DOCSDIR%%/html/ifm.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/images.aux
+%%PORTDOCS%%%%DOCSDIR%%/html/images.bbl
+%%PORTDOCS%%%%DOCSDIR%%/html/images.log
+%%PORTDOCS%%%%DOCSDIR%%/html/images.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/images.tex
+%%PORTDOCS%%%%DOCSDIR%%/html/img1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/internals.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/labels.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/next.png
+%%PORTDOCS%%%%DOCSDIR%%/html/node1.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node10.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node11.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node2.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node3.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node4.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node5.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node6.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node7.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node8.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/node9.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/nx_grp_g.png
+%%PORTDOCS%%%%DOCSDIR%%/html/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/html/prev_g.png
+%%PORTDOCS%%%%DOCSDIR%%/html/up.png
+%%PORTDOCS%%%%DOCSDIR%%/html/up_g.png
+%%PORTDOCS%%%%DOCSDIR%%/ifm.pdf
+lib/ifm/gpp
+%%DATADIR%%/helvetica.ifm
+%%DATADIR%%/ifm-color.ifm
+%%DATADIR%%/ifm-compat.ifm
+%%DATADIR%%/ifm-init.ifm
+%%DATADIR%%/ifm-pro.ps
+%%DATADIR%%/ifm-rgb.txt
+%%DATADIR%%/puzzle.ifm
+%%DATADIR%%/reckless.ifm
+%%DATADIR%%/special.ifm
+%%DATADIR%%/verbose.ifm
+@dirrm %%DATADIR%%
+@dirrm lib/ifm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
