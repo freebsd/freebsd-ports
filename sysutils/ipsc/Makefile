@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	jeremy@external.org
 COMMENT=	An IP Subnet Calculator
 
-BUILD_DEPENDS=	${WRKDIRPREFIX}${PORTSDIR}/sysutils/prips/work/prips/prips.o:${PORTSDIR}/sysutils/prips:build
+BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
 
 WRKSRC=		${WRKDIR}/ipsc/src
 
@@ -31,9 +31,10 @@ PLIST_FILES+=	bin/gipsc
 ALL_TARGET=	ipsc
 .endif
 
+PRIPS_WRKSRC!=	cd ${.CURDIR}/../prips && ${MAKE} -V WRKSRC
+
 post-extract:
-	@${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/sysutils/prips/work/prips \
-		${WRKDIR}/prips
+	${LN} -s ${PRIPS_WRKSRC} ${WRKDIR}/prips
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${PREFIX}/bin
