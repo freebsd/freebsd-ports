@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION= 	4.01
+PORTVERSION= 	4.0.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.01/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/4.01/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.01/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.01/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.01/source/
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0.1/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/4.0.1/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0.1/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0.1/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0.1/source/
 DISTFILES=	X401src-1.tgz X401src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
