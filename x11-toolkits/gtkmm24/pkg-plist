@@ -478,6 +478,7 @@ libdata/pkgconfig/gdkmm-2.0.pc
 libdata/pkgconfig/glibmm-2.0.pc
 libdata/pkgconfig/gtkmm-2.0.pc
 libdata/pkgconfig/pangomm-1.0.pc
+share/devhelp/books/gtkmm-2.0/gtkmm-2.0.devhelp
 share/doc/gtkmm-2.0/docs/FAQ/html/index.html
 share/doc/gtkmm-2.0/docs/images/gtkmm_logo.gif
 share/doc/gtkmm-2.0/docs/images/top.gif
@@ -663,6 +664,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1FileError.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1FileError__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1HelperList-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1HelperList.html
+share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1HelperList__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1IConv-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1IConv.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1IOChannel-members.html
@@ -846,9 +848,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ValueBase__inherit__graph.p
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4__inherit__graph.png
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4__inherit__graph.png
@@ -861,9 +861,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01bool_01_4__inheri
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01char_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01char_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01char_01_4__inherit__graph.png
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01const_01T_01_5_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01const_01T_01_5_01_4.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01const_01T_01_5_01_4__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01double_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01double_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01double_01_4__inherit__graph.png
@@ -1600,7 +1598,12 @@ share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__115.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__116.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__117.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__118.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__119.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__12.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__120.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__121.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__122.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__123.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__13.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__14.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__15.png
@@ -2114,7 +2117,6 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch21.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch21s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch22.html
 share/doc/gtkmm-2.0/docs/tutorial/html/index.html
-%%EXAMPLES%%share/devhelp/books/gtkmm-2.0/gtkmm2.devhelp
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/arrow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/direction.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.cc
@@ -2297,8 +2299,14 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/ttt_test.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/treemodelcustom/exampletreemodel.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/treemodelcustom/exampletreemodel.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/treemodelcustom/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/treemodelcustom/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/treemodelcustom/main.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/window/wheelbarrow.cc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/window
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/treemodelcustom
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/tictactoe
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/thread
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/stock
@@ -2365,7 +2373,6 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/arrow
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples
-%%EXAMPLES%%@dirrm share/devhelp/books/gtkmm-2.0
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/html
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/figures
 @dirrm share/doc/gtkmm-2.0/docs/tutorial
@@ -2376,6 +2383,7 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 @dirrm share/doc/gtkmm-2.0/docs/FAQ
 @dirrm share/doc/gtkmm-2.0/docs
 @dirrm share/doc/gtkmm-2.0
+@dirrm share/devhelp/books/gtkmm-2.0
 @dirrm lib/gtkmm-2.0/proc/pm
 @dirrm lib/gtkmm-2.0/proc/m4
 @dirrm lib/gtkmm-2.0/proc
