@@ -19,6 +19,7 @@
     SUBDIR += angst
     SUBDIR += annextools
     SUBDIR += ap-utils
+    SUBDIR += apache-soap
     SUBDIR += apinger
     SUBDIR += archie
     SUBDIR += archie.el

@@ -1,0 +1,19 @@
+Apache SOAP is an open-source implementation of the SOAP v1.1 and SOAP
+Messages with Attachments specifications in Java. Apache SOAP is developed
+by the Apache SOAP community.
+
+
+Apache SOAP can be used as a client library to invoke SOAP services
+available elsewhere or as a server-side tool to implement SOAP accessible
+services. As a client library it provides an API for invoking SOAP RPC
+services as well as an API for sending and receiving SOAP messages. As a
+mechanism to write new RPC accessible services or message accessible
+services, it expects to be hosted by a servlet container (such as Apache
+Tomcat, for example). While the codebase can be extended to support non-HTTP
+transports, the provided code only has limited support for non-HTTP
+transports (specifically, only for SMTP).
+
+WWW:	http://xml.apache.org/soap/
+
+~brian skrab
+ brian@quynh-and-brian.org

@@ -1,0 +1,680 @@
+share/java/classes/soap.jar
+share/doc/apache-soap
+%%T%%/webapps/soap/admin/undeploy.jsp
+%%T%%/webapps/soap/admin/deploy.gif
+%%T%%/webapps/soap/admin/deploy.jsp
+%%T%%/webapps/soap/admin/header.html
+%%T%%/webapps/soap/admin/index.html
+%%T%%/webapps/soap/admin/list.gif
+%%T%%/webapps/soap/admin/list.jsp
+%%T%%/webapps/soap/admin/showdetails.jsp
+%%T%%/webapps/soap/admin/soapadmin.gif
+%%T%%/webapps/soap/admin/toc.html
+%%T%%/webapps/soap/admin/undeploy.gif
+%%T%%/webapps/soap/admin/blankpage.html
+%%T%%/webapps/soap/WEB-INF/web.xml
+%%T%%/webapps/soap/index.html
+%%T%%/webapps/soap.war
+%%T%%/samples/interop/readme.html
+%%T%%/samples/interop/Data.java
+%%T%%/samples/interop/DataSerializer.class
+%%T%%/samples/interop/DataSerializer.java
+%%T%%/samples/interop/DeploymentDescriptor.xml
+%%T%%/samples/interop/EchoTestClient.class
+%%T%%/samples/interop/EchoTestClient.java
+%%T%%/samples/interop/EchoTestService.class
+%%T%%/samples/interop/EchoTestService.java
+%%T%%/samples/interop/Data.class
+%%T%%/samples/addressbook2/testit.sh
+%%T%%/samples/addressbook2/Address.java
+%%T%%/samples/addressbook2/AddressBook.wsdl
+%%T%%/samples/addressbook2/AddressBookProxy.class
+%%T%%/samples/addressbook2/AddressBookProxy.java
+%%T%%/samples/addressbook2/AddressSerializer.class
+%%T%%/samples/addressbook2/AddressSerializer.java
+%%T%%/samples/addressbook2/DeploymentDescriptor.xml
+%%T%%/samples/addressbook2/Main.class
+%%T%%/samples/addressbook2/Main.java
+%%T%%/samples/addressbook2/Phone.class
+%%T%%/samples/addressbook2/Phone.java
+%%T%%/samples/addressbook2/PhoneSerializer.class
+%%T%%/samples/addressbook2/PhoneSerializer.java
+%%T%%/samples/addressbook2/README
+%%T%%/samples/addressbook2/testit.cmd
+%%T%%/samples/addressbook2/Address.class
+%%T%%/samples/bidbuy/client/vInterface.java
+%%T%%/samples/bidbuy/client/ApacheSoapV2.java
+%%T%%/samples/bidbuy/client/reg.lst
+%%T%%/samples/bidbuy/client/rfq$1.class
+%%T%%/samples/bidbuy/client/rfq$10.class
+%%T%%/samples/bidbuy/client/rfq$11.class
+%%T%%/samples/bidbuy/client/rfq$12.class
+%%T%%/samples/bidbuy/client/rfq$13.class
+%%T%%/samples/bidbuy/client/rfq$14.class
+%%T%%/samples/bidbuy/client/rfq$15.class
+%%T%%/samples/bidbuy/client/rfq$16.class
+%%T%%/samples/bidbuy/client/rfq$17.class
+%%T%%/samples/bidbuy/client/rfq$18.class
+%%T%%/samples/bidbuy/client/rfq$19.class
+%%T%%/samples/bidbuy/client/rfq$2.class
+%%T%%/samples/bidbuy/client/rfq$3.class
+%%T%%/samples/bidbuy/client/rfq$4.class
+%%T%%/samples/bidbuy/client/rfq$5.class
+%%T%%/samples/bidbuy/client/rfq$6.class
+%%T%%/samples/bidbuy/client/rfq$7.class
+%%T%%/samples/bidbuy/client/rfq$8.class
+%%T%%/samples/bidbuy/client/rfq$9.class
+%%T%%/samples/bidbuy/client/rfq$MyTableModel.class
+%%T%%/samples/bidbuy/client/rfq.class
+%%T%%/samples/bidbuy/client/rfq.java
+%%T%%/samples/bidbuy/client/vInterface.class
+%%T%%/samples/bidbuy/client/ApacheSoapV2.class
+%%T%%/samples/bidbuy/server/bid/BidService.class
+%%T%%/samples/bidbuy/server/bid/BidService.java
+%%T%%/samples/bidbuy/server/bid/deploy.bat
+%%T%%/samples/bidbuy/server/bid/DeploymentDescriptor.xml
+%%T%%/samples/bidbuy/server/registry/deploy.bat
+%%T%%/samples/bidbuy/server/registry/DeploymentDescriptor.xml
+%%T%%/samples/bidbuy/server/registry/RegistryService.class
+%%T%%/samples/bidbuy/server/registry/RegistryService.java
+%%T%%/samples/bidbuy/shared/ServiceSerializer.java
+%%T%%/samples/bidbuy/shared/Address.java
+%%T%%/samples/bidbuy/shared/AddressSerializer.class
+%%T%%/samples/bidbuy/shared/AddressSerializer.java
+%%T%%/samples/bidbuy/shared/LineItem.class
+%%T%%/samples/bidbuy/shared/LineItem.java
+%%T%%/samples/bidbuy/shared/LineItemSerializer.class
+%%T%%/samples/bidbuy/shared/LineItemSerializer.java
+%%T%%/samples/bidbuy/shared/PurchaseOrder.class
+%%T%%/samples/bidbuy/shared/PurchaseOrder.java
+%%T%%/samples/bidbuy/shared/PurchaseOrderSerializer.class
+%%T%%/samples/bidbuy/shared/PurchaseOrderSerializer.java
+%%T%%/samples/bidbuy/shared/Service.class
+%%T%%/samples/bidbuy/shared/Service.java
+%%T%%/samples/bidbuy/shared/ServiceSerializer.class
+%%T%%/samples/bidbuy/shared/Address.class
+%%T%%/samples/bidbuy/bidbuy.wsdl
+%%T%%/samples/bidbuy/readme.html
+%%T%%/samples/bidbuy/registry.wsdl
+%%T%%/samples/calculator/testit1.sh
+%%T%%/samples/calculator/Calc.java
+%%T%%/samples/calculator/Calculator$1.class
+%%T%%/samples/calculator/Calculator$2.class
+%%T%%/samples/calculator/Calculator$3.class
+%%T%%/samples/calculator/Calculator$4.class
+%%T%%/samples/calculator/Calculator$5.class
+%%T%%/samples/calculator/Calculator.class
+%%T%%/samples/calculator/Calculator.java
+%%T%%/samples/calculator/DeploymentDescriptor.xml
+%%T%%/samples/calculator/input
+%%T%%/samples/calculator/README
+%%T%%/samples/calculator/testit.cmd
+%%T%%/samples/calculator/testit.sh
+%%T%%/samples/calculator/testit1.cmd
+%%T%%/samples/calculator/Calc.class
+%%T%%/samples/com/client/Addit.class
+%%T%%/samples/com/client/Addit.java
+%%T%%/samples/com/client/Sum.class
+%%T%%/samples/com/client/Sum.java
+%%T%%/samples/com/server/totals.cls
+%%T%%/samples/com/server/adder.xml
+%%T%%/samples/com/server/APACHEADDER.dll
+%%T%%/samples/com/server/APACHEADDER.vbp
+%%T%%/samples/com/server/APACHEADDER.vbw
+%%T%%/samples/com/server/APACHESUM.dll
+%%T%%/samples/com/server/APACHESUM.vbp
+%%T%%/samples/com/server/APACHESUM.vbw
+%%T%%/samples/com/server/rundemo.bat
+%%T%%/samples/com/server/sum.xml
+%%T%%/samples/com/server/adder.cls
+%%T%%/samples/com/readme.htm
+%%T%%/samples/ejb/DeploymentDescriptor.xml
+%%T%%/samples/ejb/ejbtest.class
+%%T%%/samples/ejb/ejbtest.java
+%%T%%/samples/ejb/hellobean.jar
+%%T%%/samples/ejb/hellobean.LICENSE.txt
+%%T%%/samples/guidgen/GuidGenClient.class
+%%T%%/samples/guidgen/GuidGenClient.java
+%%T%%/samples/guidgen/README
+%%T%%/samples/addressbook/testit.sh
+%%T%%/samples/addressbook/Address.java
+%%T%%/samples/addressbook/AddressBook.class
+%%T%%/samples/addressbook/AddressBook.java
+%%T%%/samples/addressbook/DeploymentDescriptor.xml
+%%T%%/samples/addressbook/GetAddress.class
+%%T%%/samples/addressbook/GetAddress.java
+%%T%%/samples/addressbook/GetAllListings.class
+%%T%%/samples/addressbook/GetAllListings.java
+%%T%%/samples/addressbook/PhoneNumber.class
+%%T%%/samples/addressbook/PhoneNumber.java
+%%T%%/samples/addressbook/PutAddress.class
+%%T%%/samples/addressbook/PutAddress.java
+%%T%%/samples/addressbook/PutListings.class
+%%T%%/samples/addressbook/PutListings.java
+%%T%%/samples/addressbook/README
+%%T%%/samples/addressbook/sample_listings.xml
+%%T%%/samples/addressbook/testit.cmd
+%%T%%/samples/addressbook/Address.class
+%%T%%/samples/lemurlabs/Fortune.class
+%%T%%/samples/lemurlabs/Fortune.java
+%%T%%/samples/lemurlabs/README
+%%T%%/samples/messaging/testit.sh
+%%T%%/samples/messaging/msg1.xml
+%%T%%/samples/messaging/msg2.xml
+%%T%%/samples/messaging/msg3.xml
+%%T%%/samples/messaging/po.xml
+%%T%%/samples/messaging/POProcessor.class
+%%T%%/samples/messaging/POProcessor.java
+%%T%%/samples/messaging/README
+%%T%%/samples/messaging/SendMessage.class
+%%T%%/samples/messaging/SendMessage.java
+%%T%%/samples/messaging/testit.cmd
+%%T%%/samples/messaging/DeploymentDescriptor.xml
+%%T%%/samples/mime/testmessaging.sh
+%%T%%/samples/mime/fields.gif
+%%T%%/samples/mime/foo.txt
+%%T%%/samples/mime/infile.txt
+%%T%%/samples/mime/MessagingDeploymentDescriptor.xml
+%%T%%/samples/mime/MimeTest.class
+%%T%%/samples/mime/MimeTest.java
+%%T%%/samples/mime/MimeTestClient.class
+%%T%%/samples/mime/MimeTestClient.java
+%%T%%/samples/mime/testit.cmd
+%%T%%/samples/mime/testit.sh
+%%T%%/samples/mime/testmessaging.cmd
+%%T%%/samples/mime/DeploymentDescriptor.xml
+%%T%%/samples/provider/DeploymentDescriptor.xml
+%%T%%/samples/provider/README
+%%T%%/samples/provider/testit.cmd
+%%T%%/samples/provider/testit.sh
+%%T%%/samples/provider/testprovider.class
+%%T%%/samples/provider/testprovider.java
+%%T%%/samples/stockquote/testit.sh
+%%T%%/samples/stockquote/GetQuote.class
+%%T%%/samples/stockquote/GetQuote.java
+%%T%%/samples/stockquote/GetQuoteSMTP.class
+%%T%%/samples/stockquote/GetQuoteSMTP.java
+%%T%%/samples/stockquote/README
+%%T%%/samples/stockquote/StockQuoteService.class
+%%T%%/samples/stockquote/StockQuoteService.java
+%%T%%/samples/stockquote/testit.cmd
+%%T%%/samples/stockquote/DeploymentDescriptor.xml
+%%T%%/samples/weblogic_ejb/weblogic-ejb-jar.xml
+%%T%%/samples/weblogic_ejb/build.sh
+%%T%%/samples/weblogic_ejb/DeploymentDescriptor.xml
+%%T%%/samples/weblogic_ejb/ejb-jar.xml
+%%T%%/samples/weblogic_ejb/ejbtest.class
+%%T%%/samples/weblogic_ejb/ejbtest.java
+%%T%%/samples/weblogic_ejb/HelloService.class
+%%T%%/samples/weblogic_ejb/HelloService.java
+%%T%%/samples/weblogic_ejb/HelloServiceBean.class
+%%T%%/samples/weblogic_ejb/HelloServiceBean.java
+%%T%%/samples/weblogic_ejb/HelloServiceHome.class
+%%T%%/samples/weblogic_ejb/HelloServiceHome.java
+%%T%%/samples/weblogic_ejb/build.cmd
+%%T%%/samples/xmethods/GetTemp.class
+%%T%%/samples/xmethods/GetTemp.java
+%%T%%/samples/xmethods/README
+%%T%%/lib/COMProvider.dll
+%%T%%/lib/soap.jar
+%%T%%/docs/images/IntroductionButton.gif
+%%T%%/docs/images/ChangesButton.gif
+%%T%%/docs/images/InstallationButton.gif
+%%T%%/docs/images/APIDocsButton.gif
+%%T%%/docs/images/SamplesButton.gif
+%%T%%/docs/images/TroubleButton.gif
+%%T%%/docs/images/UsersGuideButton.gif
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Fault.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Constants.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Envelope.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Body.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Header.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/SOAPException.html
+%%T%%/docs/apiDocs/org/apache/soap/class-use/Utils.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/class-use/Log.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/class-use/RPCProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/Log.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/RPCProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/com/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/EntityEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/MsgJavaProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/RPCJavaProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/StatefulEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/StatelessEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/class-use/TemplateProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/MsgJavaProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/RPCJavaProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/StatefulEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/StatelessEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/TemplateProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/providers/EntityEJBProvider.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/Call.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/Parameter.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/Response.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/RPCConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/RPCMessage.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/class-use/SOAPContext.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/Parameter.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/Response.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/RPCConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/RPCMessage.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/Call.html
+%%T%%/docs/apiDocs/org/apache/soap/rpc/SOAPContext.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/class-use/MessageRouterServlet.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/class-use/RPCRouterServlet.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/class-use/ServerHTTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/MessageRouterServlet.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/RPCRouterServlet.html
+%%T%%/docs/apiDocs/org/apache/soap/server/http/ServerHTTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/XMLConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/DefaultConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/DeploymentDescriptor.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/DOMFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/ExceptionFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/InvokeBSF.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/MessageRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/RPCRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/ServerConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/ServerUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/ServiceManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/ServiceManagerClient.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/SMTP2HTTPBridge.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/SOAPEventListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/SOAPFaultEvent.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/SOAPFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/SOAPFaultRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/TypeMapping.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/TypeMappingSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/server/class-use/BaseConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/DeploymentDescriptor.html
+%%T%%/docs/apiDocs/org/apache/soap/server/DOMFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/ExceptionFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/InvokeBSF.html
+%%T%%/docs/apiDocs/org/apache/soap/server/MessageRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/server/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/server/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/server/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/server/RPCRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/ServerConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/server/ServerUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/server/ServiceManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/ServiceManagerClient.html
+%%T%%/docs/apiDocs/org/apache/soap/server/SMTP2HTTPBridge.html
+%%T%%/docs/apiDocs/org/apache/soap/server/SOAPEventListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/SOAPFaultEvent.html
+%%T%%/docs/apiDocs/org/apache/soap/server/SOAPFaultListener.html
+%%T%%/docs/apiDocs/org/apache/soap/server/SOAPFaultRouter.html
+%%T%%/docs/apiDocs/org/apache/soap/server/TypeMapping.html
+%%T%%/docs/apiDocs/org/apache/soap/server/TypeMappingSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/server/BaseConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/XMLConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/server/DefaultConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/VectorSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/Base64.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/Base64Serializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/BeanSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/BooleanDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/BooleanObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ByteDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ByteObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/CalendarSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/DateSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/DecimalDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/DoubleDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/DoubleObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/FloatDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/FPDeserUtil.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/FloatObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/HashtableSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/HexDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/IntDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/IntObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/LongDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/LongObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/MapSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/MimePartSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/QNameSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ShortDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ShortObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/SoapEncUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/StringDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/UrTypeDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use/ArraySerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/Base64.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/Base64Serializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/BeanSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/BooleanDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/BooleanObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ByteDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ByteObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/CalendarSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/DateSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/DecimalDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/DoubleDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/DoubleObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/FloatDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/FloatObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/FPDeserUtil.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/HashtableSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/HexDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/IntDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/IntObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/LongDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/LongObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/MapSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/MimePartSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/SoapEncUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/QNameSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ShortDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ShortObjectDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/StringDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/UrTypeDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/ArraySerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/VectorSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/class-use/Hex.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/class-use/SOAPMappingRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/class-use/XMLParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/XMLParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/class-use/XMIParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/XMIParameterSerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/SOAPMappingRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/encoding/Hex.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/class-use/POP3StatusListener.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/class-use/SMTPConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/class-use/SMTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/class-use/SOAPSMTPConnection.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/POP3StatusListener.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/SMTPConstants.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/SMTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/smtp/SOAPSMTPConnection.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/class-use/SOAPHTTPConnection.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/http/SOAPHTTPConnection.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/EnvelopeEditor.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/EnvelopeEditorAdapter.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/EnvelopeEditorFactory.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/FilterTransport.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/SOAPTransport.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/class-use/TransportMessage.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/EnvelopeEditorFactory.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/FilterTransport.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/SOAPTransport.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/TransportMessage.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/EnvelopeEditor.html
+%%T%%/docs/apiDocs/org/apache/soap/transport/EnvelopeEditorAdapter.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/class-use/ByteArrayDataSource.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/class-use/MimeUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/MimeUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/ByteArrayDataSource.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/util/mime/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/class-use/HTTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/class-use/Relay.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/class-use/SSLUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/class-use/TcpTunnel.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/class-use/TcpTunnelGui.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/HTTPUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/Relay.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/SSLUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/TcpTunnel.html
+%%T%%/docs/apiDocs/org/apache/soap/util/net/TcpTunnelGui.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/MethodUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/ConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/IOUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/Bean.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/ObjectRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/Provider.html
+%%T%%/docs/apiDocs/org/apache/soap/util/class-use/StringUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/XMLParserUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/DOM2Writer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/DOMUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/DOMWriter.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/NSStack.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/PrefixedName.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/QName.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/Serializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/XMIDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/XMISerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/XMLJavaMappingRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use/Deserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/Deserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/DOM2Writer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/DOMUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/DOMWriter.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/NSStack.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/PrefixedName.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/QName.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/Serializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/XMIDeserializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/XMISerializer.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/XMLJavaMappingRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/util/xml/XMLParserUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/Bean.html
+%%T%%/docs/apiDocs/org/apache/soap/util/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/util/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/util/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/util/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/util/Provider.html
+%%T%%/docs/apiDocs/org/apache/soap/util/StringUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/ObjectRegistry.html
+%%T%%/docs/apiDocs/org/apache/soap/util/ConfigManager.html
+%%T%%/docs/apiDocs/org/apache/soap/util/IOUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/util/MethodUtils.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/class-use/Message.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/Message.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/package-tree.html
+%%T%%/docs/apiDocs/org/apache/soap/messaging/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/package-use.html
+%%T%%/docs/apiDocs/org/apache/soap/SOAPException.html
+%%T%%/docs/apiDocs/org/apache/soap/Body.html
+%%T%%/docs/apiDocs/org/apache/soap/Utils.html
+%%T%%/docs/apiDocs/org/apache/soap/Constants.html
+%%T%%/docs/apiDocs/org/apache/soap/Envelope.html
+%%T%%/docs/apiDocs/org/apache/soap/Fault.html
+%%T%%/docs/apiDocs/org/apache/soap/Header.html
+%%T%%/docs/apiDocs/org/apache/soap/package-frame.html
+%%T%%/docs/apiDocs/org/apache/soap/package-summary.html
+%%T%%/docs/apiDocs/org/apache/soap/package-tree.html
+%%T%%/docs/apiDocs/deprecated-list.html
+%%T%%/docs/apiDocs/help-doc.html
+%%T%%/docs/apiDocs/index-all.html
+%%T%%/docs/apiDocs/index.html
+%%T%%/docs/apiDocs/overview-frame.html
+%%T%%/docs/apiDocs/overview-summary.html
+%%T%%/docs/apiDocs/overview-tree.html
+%%T%%/docs/apiDocs/package-list
+%%T%%/docs/apiDocs/packages.html
+%%T%%/docs/apiDocs/serialized-form.html
+%%T%%/docs/apiDocs/allclasses-frame.html
+%%T%%/docs/apiDocs/stylesheet.css
+%%T%%/docs/schema/dd.xsd
+%%T%%/docs/guide/images/WritingRPCServicesButton.gif
+%%T%%/docs/guide/images/DeploymentDescriptorsButton.gif
+%%T%%/docs/guide/images/FaultHandlingButton.gif
+%%T%%/docs/guide/images/GoBackButton.gif
+%%T%%/docs/guide/images/InteropButton.gif
+%%T%%/docs/guide/images/IntroductionButton.gif
+%%T%%/docs/guide/images/ManagingServicesButton.gif
+%%T%%/docs/guide/images/MigrationButton.gif
+%%T%%/docs/guide/images/ServerConfigurationButton.gif
+%%T%%/docs/guide/images/ToolsButton.gif
+%%T%%/docs/guide/images/UsingAttachmentsButton.gif
+%%T%%/docs/guide/images/UsingTransportHooksButton.gif
+%%T%%/docs/guide/images/WritingMessageClientsButton.gif
+%%T%%/docs/guide/images/WritingMessageServicesButton.gif
+%%T%%/docs/guide/images/WritingProvidersButton.gif
+%%T%%/docs/guide/images/WritingRPCClientsButton.gif
+%%T%%/docs/guide/images/CreatingTypeMappingsButton.gif
+%%T%%/docs/guide/config.html
+%%T%%/docs/guide/deploy.html
+%%T%%/docs/guide/errors.html
+%%T%%/docs/guide/index-j.html
+%%T%%/docs/guide/index.html
+%%T%%/docs/guide/interop.html
+%%T%%/docs/guide/intro.html
+%%T%%/docs/guide/manage.html
+%%T%%/docs/guide/message.html
+%%T%%/docs/guide/migration.html
+%%T%%/docs/guide/msgclient.html
+%%T%%/docs/guide/provider.html
+%%T%%/docs/guide/rpc.html
+%%T%%/docs/guide/rpcclient.html
+%%T%%/docs/guide/serializer.html
+%%T%%/docs/guide/toc.html
+%%T%%/docs/guide/tools.html
+%%T%%/docs/guide/attachments.html
+%%T%%/docs/guide/transhooks.html
+%%T%%/docs/install/websphere.html
+%%T%%/docs/install/index-j.html
+%%T%%/docs/install/index.html
+%%T%%/docs/install/iPlanet.html
+%%T%%/docs/install/JRun.html
+%%T%%/docs/install/tomcat.html
+%%T%%/docs/install/weblogic51.html
+%%T%%/docs/install/weblogic60.html
+%%T%%/docs/install/websphere-j.html
+%%T%%/docs/install/FAQ_Tomcat_SOAP_SSL.html
+%%T%%/docs/trouble/index.html
+%%T%%/docs/samples.html
+%%T%%/docs/head.html
+%%T%%/docs/intro.html
+%%T%%/docs/index.html
+%%T%%/docs/changes.html
+%%T%%/docs/toc.html
+%%T%%/docs/body.html
+%%T%%/README
+%%T%%/LICENSE
+@dirrm %%T%%/webapps/soap/admin
+@dirrm %%T%%/webapps/soap/WEB-INF
+@dirrm %%T%%/webapps/soap
+@dirrm %%T%%/webapps
+@dirrm %%T%%/samples/interop
+@dirrm %%T%%/samples/addressbook2
+@dirrm %%T%%/samples/bidbuy/client
+@dirrm %%T%%/samples/bidbuy/server/bid
+@dirrm %%T%%/samples/bidbuy/server/registry
+@dirrm %%T%%/samples/bidbuy/server
+@dirrm %%T%%/samples/bidbuy/shared
+@dirrm %%T%%/samples/bidbuy
+@dirrm %%T%%/samples/calculator
+@dirrm %%T%%/samples/com/client
+@dirrm %%T%%/samples/com/server
+@dirrm %%T%%/samples/com
+@dirrm %%T%%/samples/ejb
+@dirrm %%T%%/samples/guidgen
+@dirrm %%T%%/samples/addressbook
+@dirrm %%T%%/samples/lemurlabs
+@dirrm %%T%%/samples/messaging
+@dirrm %%T%%/samples/mime
+@dirrm %%T%%/samples/provider
+@dirrm %%T%%/samples/stockquote
+@dirrm %%T%%/samples/weblogic_ejb
+@dirrm %%T%%/samples/xmethods
+@dirrm %%T%%/samples
+@dirrm %%T%%/lib
+@dirrm %%T%%/docs/images
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/providers/com/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/providers/com
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/providers/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/providers
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/rpc/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/rpc
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/server/http/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/server/http
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/server/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/server
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/soapenc
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/literalxml
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/xmi/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding/xmi
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/encoding
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport/smtp/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport/smtp
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport/http/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport/http
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/transport
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/mime/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/mime
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/net/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/net
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/xml/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util/xml
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/util
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/messaging/class-use
+@dirrm %%T%%/docs/apiDocs/org/apache/soap/messaging
+@dirrm %%T%%/docs/apiDocs/org/apache/soap
+@dirrm %%T%%/docs/apiDocs/org/apache
+@dirrm %%T%%/docs/apiDocs/org
+@dirrm %%T%%/docs/apiDocs
+@dirrm %%T%%/docs/schema
+@dirrm %%T%%/docs/guide/images
+@dirrm %%T%%/docs/guide
+@dirrm %%T%%/docs/install
+@dirrm %%T%%/docs/trouble
+@dirrm %%T%%/docs
+@dirrm %%T%%
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
