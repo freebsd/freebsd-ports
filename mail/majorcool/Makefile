@@ -3,11 +3,11 @@
 # Date created:			Wed Aug 13 18:34:14 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1997/08/13 18:56:48 andreas Exp $
+# $Id: Makefile,v 1.3 1997/10/13 20:55:31 andreas Exp $
 #
 
 DISTNAME=	majorcool
-PKGNAME=	majorcool-1.1.0
+PKGNAME=	majorcool-1.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://ncrinfo.ncr.com/pub/contrib/unix/MajorCool/
 

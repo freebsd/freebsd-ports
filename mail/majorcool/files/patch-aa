@@ -1,6 +1,6 @@
---- Configure.orig	Wed Aug 13 20:41:47 1997
-+++ Configure	Wed Aug 13 20:45:03 1997
-@@ -104,15 +104,15 @@
+--- Configure.orig	Sat Nov  8 03:22:10 1997
++++ Configure	Sun Nov 30 14:07:58 1997
+@@ -44,16 +44,16 @@
  #  be overwritten by any of the parameters saved in $config.
  #  For yes/no values, 0=no, 1=yes
  
@@ -8,20 +8,21 @@
 +DOMO_DIR=/usr/local/majordomo	# Majordomo home directory
  DOMO_CONF=			# Majordomo configuration file
  DOMO_VERSION=			# Majordomo version number
+ WEB_SCHEME="http"		# Web server scheme/protocol
 -WEB_ROOT=			# Web server root directory
 +WEB_ROOT=/usr/local/www		# Web server root directory
  WEB_CGIDIR=			# Web server CGI directory
- WEB_CGIURL=			# Web server CGI URL
+ WEB_CGIURL="/cgi-bin"		# Web server CGI URL
  WEB_IMGDIR=			# Web server images directory
- WEB_IMGURL=			# Web server images URL
+ WEB_IMGURL="/images"		# Web server images URL
 -WEB_DOCROOT=			# Root for served documents
 +WEB_DOCROOT=/usr/local/www/data	# Root for served documents
  WEB_HEADER=			# Header for common site look
  WEB_FOOTER=			# Footer for common site look
- COOL_CF="$COOL_CF"		# Config file for this installation
-@@ -561,7 +561,7 @@
- $fastread ans
+ COOL_CF=			# Config file for this installation
+@@ -593,7 +593,7 @@
  [ -n "$ans" ] && WEB_FOOTER=$ans
+ [ "$ans" = "none" ] && WEB_FOOTER=""
  
 -[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.htm"
 +[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.html"
