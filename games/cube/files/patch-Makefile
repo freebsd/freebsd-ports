@@ -1,0 +1,28 @@
+--- source/src/Makefile.orig	Mon Oct 21 01:52:20 2002
++++ source/src/Makefile	Mon Jan 20 14:02:01 2003
+@@ -1,8 +1,8 @@
+-CXX=g++
++CXX?=g++
+ CXXOPTFLAGS=-Wall -O3 -fsigned-char -fomit-frame-pointer
+-CXXFLAGS=$(CXXOPTFLAGS) -I../enet/include `sdl-config --cflags`
++CXXFLAGS=$(CXXOPTFLAGS) -I../enet/include -I/usr/X11R6/include `sdl11-config --cflags`
+ 
+-CLIENT_LIBS=-L../enet -lenet `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
++CLIENT_LIBS=-L../enet -lenet -L/usr/X11R6/lib `sdl11-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU
+ CLIENT_OBJS= \
+ 	client.o \
+ 	clientextras.o \
+@@ -43,11 +43,11 @@
+ all: enet client server
+ 
+ enet:
+-	-make -C ../enet all
++	-gmake -C ../enet all
+ 
+ clean:
+ 	-rm -f $(SERVER_OBJS) $(CLIENT_OBJS) cube_server cube_client
+-	-make -C ../enet/ clean
++	-gmake -C ../enet/ clean
+ 
+ standalone.o:
+ 	$(CXX) $(CXXFLAGS) -DSTANDALONE -o standalone.o -c server.cpp
