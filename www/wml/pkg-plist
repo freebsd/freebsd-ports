@@ -27,6 +27,18 @@ lib/wml/aux/logos/logo-vim.png
 lib/wml/aux/logos/logo-wml.gif
 lib/wml/aux/logos/logo-wml.info
 lib/wml/aux/logos/logo-wml.png
+lib/wml/aux/logos/logo-netbsd.gif
+lib/wml/aux/logos/logo-netbsd.info
+lib/wml/aux/logos/logo-netbsd.png
+lib/wml/aux/logos/logo-openbsd.gif
+lib/wml/aux/logos/logo-openbsd.info
+lib/wml/aux/logos/logo-openbsd.png
+lib/wml/aux/logos/logo-php.gif
+lib/wml/aux/logos/logo-php.info
+lib/wml/aux/logos/logo-php.png
+lib/wml/aux/logos/logo-xemacs.gif
+lib/wml/aux/logos/logo-xemacs.info
+lib/wml/aux/logos/logo-xemacs.png
 lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
 lib/wml/aux/wmd.txt
@@ -113,6 +125,8 @@ lib/wml/perl/lib/auto/Image/Size/ppmsize.al
 lib/wml/perl/lib/auto/Image/Size/tiffsize.al
 lib/wml/perl/lib/auto/Image/Size/xbmsize.al
 lib/wml/perl/lib/auto/Image/Size/xpmsize.al
+lib/wml/perl/lib/auto/Image/Size/psdsize.al
+lib/wml/perl/lib/auto/Image/Size/swfsize.al
 lib/wml/perl/lib/%%PERL_ARCH%%/Bit/Vector.pm
 lib/wml/perl/lib/%%PERL_ARCH%%/IO.pm
 lib/wml/perl/lib/%%PERL_ARCH%%/IO/Dir.pm
