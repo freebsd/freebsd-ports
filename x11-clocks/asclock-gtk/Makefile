@@ -7,7 +7,6 @@
 
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
-DISTNAME=	asclock-gtk-2.1.10beta
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	http://www.asclock.org/tar/
 DISTNAME=	${PKGNAME}beta
