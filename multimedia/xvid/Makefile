@@ -7,6 +7,7 @@
 
 PORTNAME=	xvid
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.xvid.org/downloads/
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_GCC=	3.3
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 
