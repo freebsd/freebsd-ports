@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Aug  8 12:19:31 2000
-+++ Makefile.in	Sat Feb 24 20:34:02 2001
+--- Makefile.in.orig	Fri Apr  6 04:03:05 2001
++++ Makefile.in	Fri Apr 13 21:59:30 2001
 @@ -57,7 +57,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)
  
@@ -20,7 +20,16 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -370,8 +372,14 @@
+@@ -346,6 +348,8 @@
+ 	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
+ 	tkPort.h tkScrollbar.h tkText.h
+ 
++INSTALL_HDRS = tk.h tkDecls.h tkInt.h tkIntXlibDecls.h
++
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+ 
+ all: binaries libraries doc
+@@ -365,8 +369,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -35,7 +44,7 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -439,7 +447,7 @@
+@@ -438,7 +448,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -44,7 +53,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -457,12 +465,18 @@
+@@ -456,12 +466,18 @@
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -64,7 +73,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -476,6 +490,7 @@
+@@ -475,6 +491,7 @@
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -72,10 +81,12 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -489,9 +504,18 @@
+@@ -488,10 +505,18 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
+-	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkPlatDecls.h \
+-		$(GENERIC_DIR)/tkDecls.h $(GENERIC_DIR)/tkIntXlibDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
@@ -84,7 +95,7 @@
 +	    do \
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
 +	    done;
- 	@for i in $(INSTALL_HDRS) ; \
++	@for i in $(INSTALL_HDRS) ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    j=`basename $$i` ; \
@@ -92,7 +103,7 @@
  	    done;
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
-@@ -558,7 +582,6 @@
+@@ -558,7 +583,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -100,7 +111,7 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
-@@ -568,7 +591,6 @@
+@@ -568,7 +592,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.3) docs";
@@ -108,7 +119,7 @@
  	@echo "Installing command (.n) docs";
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
-@@ -578,7 +600,6 @@
+@@ -578,7 +601,6 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";
