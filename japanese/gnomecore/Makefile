@@ -17,4 +17,6 @@ MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	gnome-libs-jp:${PORTSDIR}/japanese/gnomelibs
 
+IGNORE=		"gnomecore 1.4.0.6 has these patches merged - just install x11/gnomecore"
+
 .include "${MASTERDIR}/Makefile"
