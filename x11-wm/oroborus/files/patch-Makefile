@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.orig	Mon May 21 00:33:34 2001
-+++ Makefile	Mon May 21 10:23:59 2001
+--- Makefile.orig	Thu May 24 17:40:39 2001
++++ Makefile	Mon May 28 14:04:46 2001
 @@ -1,12 +1,12 @@
 -CC        = gcc
 -CFLAGS    = -g -O2 -Wall
@@ -17,6 +17,26 @@ $FreeBSD$
  PROG      = oroborus
 -PREFIX    = /usr
 +PREFIX    ?= /usr
- DEFFILE   = $(PROG)rc
- RCFILE    = .$(PROG)rc
- DATADIR   = $(PREFIX)/share/$(PROG)
+ FONT      = *-helvetica-bold-r-normal-*-*-120-*
+ THEME     = default
+ RCFILE    = -DRCFILE=\".oroborusrc\"
+@@ -36,10 +36,15 @@
+ 	rm -f $(PROG) $(OBJS) core
+ 
+ install:all
+-	install $(PROG) $(PREFIX)/bin
+-	install -d $(PREFIX)/share/$(PROG)
+-	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) > $(PREFIX)/share/$(PROG)/oroborusrc
+-	cp -R pixmaps $(PREFIX)/share/$(PROG)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(PREFIX)/bin
++	$(MKDIR) $(PREFIX)/share/$(PROG)
++	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) > oroborusrc
++	$(BSD_INSTALL_DATA) oroborusrc $(PREFIX)/share/$(PROG)/oroborusrc
++	for dir in agua default defold mac next win95; do \
++		$(MKDIR) $(PREFIX)/share/$(PROG)/pixmaps/$$dir; \
++		$(BSD_INSTALL_DATA) pixmaps/$$dir/[^.]* \
++			$(PREFIX)/share/$(PROG)/pixmaps/$$dir; \
++	done
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/bin/$(PROG)
