@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	avinfo
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://anime.org.ru/soft/avinfo/
 

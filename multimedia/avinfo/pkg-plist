@@ -1,6 +1,7 @@
 bin/avinfo
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/Readme.ru
+%%PORTDOCS%%%%DOCSDIR%%/info_chunk.txt
 %%PORTDOCS%%%%DOCSDIR%%/meta
 %%PORTDOCS%%%%DOCSDIR%%/reklama.txt
 %%PORTDOCS%%%%DOCSDIR%%/tech_note
