@@ -1,0 +1,3 @@
+bin/sqlite
+lib/libsqlite.a
+include/sqlite.h
