@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.world.co.uk/sba/
 DISTNAME=	rio006
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	derm@ibm.net
+MAINTAINER=	ports@FreeBSD.Org
 
 WRKSRC=		${WRKDIR}/rio
 MAKEFILE=	makefile
