@@ -1,6 +1,6 @@
---- clientloop.c.orig	Fri Apr 20 09:17:51 2001
-+++ clientloop.c	Sat May 26 15:18:51 2001
-@@ -1131,7 +1131,7 @@
+--- clientloop.c.orig	Fri Aug 13 13:18:01 2004
++++ clientloop.c	Mon Sep 20 05:04:48 2004
+@@ -1581,7 +1581,7 @@
  
  	if (strcmp(ctype, "forwarded-tcpip") == 0) {
  		c = client_request_forwarded_tcpip(ctype, rchan);

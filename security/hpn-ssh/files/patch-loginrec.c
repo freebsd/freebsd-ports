@@ -1,6 +1,6 @@
---- loginrec.c.orig	Thu Sep 26 02:38:49 2002
-+++ loginrec.c	Mon Oct 21 06:51:34 2002
-@@ -172,6 +172,9 @@
+--- loginrec.c.orig	Sun Aug 15 11:12:52 2004
++++ loginrec.c	Mon Sep 20 05:04:48 2004
+@@ -167,6 +167,9 @@
  #ifdef HAVE_LIBUTIL_H
  #   include <libutil.h>
  #endif
@@ -10,7 +10,7 @@
  
  /**
   ** prototypes for helper functions in this file
-@@ -654,7 +657,12 @@
+@@ -657,7 +660,12 @@
  	/* Use strncpy because we don't necessarily want null termination */
  	strncpy(ut->ut_name, li->username, MIN_SIZEOF(ut->ut_name, li->username));
  # ifdef HAVE_HOST_IN_UTMP

@@ -1,8 +1,8 @@
---- auth.c.orig	Tue Sep  2 23:32:46 2003
-+++ auth.c	Tue Sep 16 20:05:44 2003
-@@ -259,6 +259,17 @@
- 	}
- #endif /* WITH_AIXAUTHENTICATE */
+--- auth.c.orig	Thu Aug 12 14:40:25 2004
++++ auth.c	Mon Sep 20 05:04:48 2004
+@@ -208,6 +208,17 @@
+ 		return 0;
+ #endif
  
 +#ifdef __FreeBSD__
 +	/* Fail if the account's expiration time has passed. */
@@ -18,7 +18,7 @@
  	/* We found no reason not to let this user try to log on... */
  	return 1;
  }
-@@ -531,7 +542,7 @@
+@@ -472,7 +483,7 @@
  	if (!allowed_user(pw))
  		return (NULL);
  #ifdef HAVE_LOGIN_CAP
