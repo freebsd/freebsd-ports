@@ -69,6 +69,7 @@
     SUBDIR += avr-gcc
     SUBDIR += avr-gdb
     SUBDIR += avr-libc
+    SUBDIR += avra
     SUBDIR += avrdude
     SUBDIR += bcc
     SUBDIR += bcpp

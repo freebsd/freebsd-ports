@@ -1,0 +1,13 @@
+--- SOURCE/Makefile.orig	Tue Feb 15 07:40:36 2005
++++ SOURCE/Makefile	Tue Feb 15 07:40:58 2005
+@@ -27,8 +27,8 @@
+ 
+ install: avra
+ 	cp avra /usr/local/bin
+-	cp avra.1 /usr/local/man/man1
+-	chmod +r /usr/local/man/man1/avra.1
++#	cp avra.1 /usr/local/man/man1
++#	chmod +r /usr/local/man/man1/avra.1
+ 
+ clean:
+ 	rm -f avra *.o *.p *~ avra.exe
