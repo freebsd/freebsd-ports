@@ -1,0 +1,10 @@
+bin/bforce
+bin/bfindex
+bin/bfstat
+bin/nlookup
+etc/bforce/bforce.conf.sample
+etc/bforce/bforce.passwd.sample
+etc/bforce/bforce.subst.sample
+etc/bforce/freq.aliases.sample
+etc/bforce/freq.dirs.sample
+@dirrm etc/bforce
