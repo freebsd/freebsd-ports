@@ -5,6 +5,7 @@ share/java/xerces-%%PORTVERSION%%/data/personal-schema.xml
 share/java/xerces-%%PORTVERSION%%/data/personal.dtd
 share/java/xerces-%%PORTVERSION%%/data/personal.xml
 share/java/xerces-%%PORTVERSION%%/data/personal.xsd
+share/java/xerces-%%PORTVERSION%%/docs/html/api.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/allclasses-frame.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/deprecated-list.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/help-doc.html
@@ -422,7 +423,6 @@ share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/package-list
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/packages.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/serialized-form.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/stylesheet.css
-share/java/xerces-%%PORTVERSION%%/docs/html/api.html
 share/java/xerces-%%PORTVERSION%%/docs/html/caveats.html
 share/java/xerces-%%PORTVERSION%%/docs/html/domcount.html
 share/java/xerces-%%PORTVERSION%%/docs/html/domfilter.html
@@ -545,8 +545,8 @@ share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/IteratorView.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/NameNodeFilter.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/TreeWalkerView.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/wrappers/DOMParser.java
-share/java/xerces-%%PORTVERSION%%/samples/sax/DocumentTracer.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/DTDReader.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/DocumentTracer.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Count.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Writer.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/SAXCount.java
