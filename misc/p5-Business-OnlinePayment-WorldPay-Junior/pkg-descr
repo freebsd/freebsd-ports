@@ -1,0 +1,7 @@
+This module provides a simple way to handle transactions sent to WorldPay
+for payment when using the WorldPay Select Junior service.
+
+This module aims for simplicity. All it does is track the transaction and
+then verify the callback data supplied by WorldPay after a payment has been
+made. The module is designed with the requirement to immediately verify that
+a payment has been made and is as expected in mind.
