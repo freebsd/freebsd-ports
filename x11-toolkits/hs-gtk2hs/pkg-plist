@@ -1,5 +1,9 @@
+lib/glade.conf
+lib/glade2hs.o
 lib/gtk2.conf
 lib/gtk2hs.o
+lib/libglade2hs.a
+lib/libsourceview.a
 lib/hi/AccelLabel.hi
 lib/hi/Adjustment.hi
 lib/hi/Alignment.hi
@@ -41,6 +45,8 @@ lib/hi/GdkEnums.hi
 lib/hi/General.hi
 lib/hi/General_stub.h
 lib/hi/GetWidget.hi
+lib/hi/Glade.hi
+lib/hi/GladeType.hi
 lib/hi/Gtk.hi
 lib/hi/HBox.hi
 lib/hi/HPaned.hi
@@ -88,6 +94,17 @@ lib/hi/Separator.hi
 lib/hi/Signal.hi
 lib/hi/Signal_stub.h
 lib/hi/Socket.hi
+lib/hi/SourceBuffer.hi
+lib/hi/SourceIter.hi
+lib/hi/SourceLanguage.hi
+lib/hi/SourceLanguagesManager.hi
+lib/hi/SourceMarker.hi
+lib/hi/SourceStyleScheme.hi
+lib/hi/SourceTag.hi
+lib/hi/SourceTagStyle.hi
+lib/hi/SourceTagTable.hi
+lib/hi/SourceView.hi
+lib/hi/SourceViewType.hi
 lib/hi/SpinButton.hi
 lib/hi/Statusbar.hi
 lib/hi/StockItems.hi
@@ -124,14 +141,21 @@ lib/hi/Viewport.hi
 lib/hi/Widget.hi
 lib/hi/WidgetTable.hi
 lib/hi/Window.hi
+lib/hi/sourceview.h
 lib/libgtk2hs.a
 lib/libmogul.a
 lib/mogul.conf
 lib/mogul.o
+lib/sourceview.conf
+lib/sourceview.o
 @dirrm lib/hi
+@exec %D/bin/ghc-pkg -i %D/lib/glade.conf -a -g
 @exec %D/bin/ghc-pkg -i %D/lib/gtk2.conf -a -g
 @exec %D/bin/ghc-pkg -i %D/lib/mogul.conf -a -g
+@exec %D/bin/ghc-pkg -i %D/lib/sourceview.conf -a -g
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg -r mogul
 @unexec %D/bin/ghc-pkg -r gtk2
+@unexec %D/bin/ghc-pkg -r glade
+@unexec %D/bin/ghc-pkg -r sourceview
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
