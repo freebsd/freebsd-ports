@@ -10,8 +10,8 @@ PORTNAME=	cscope
 PORTVERSION=	15.1
 PORTREVISION=	1
 CATEGORIES=	devel
-#MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/cscope/  \
-MASTER_SITES=	http://download.sourceforge.net/cscope/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
