@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	X11 18-dot kanji font
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar \
 		mkbold:${PORTSDIR}/x11-fonts/mkbold \

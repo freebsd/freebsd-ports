@@ -19,6 +19,7 @@ PATCHFILES=	${DISTNAME}j-gamma-fixcmpfont.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patches
 
 # Warning: we cannot use USE_IMAKE.
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake

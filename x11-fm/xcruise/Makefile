@@ -12,6 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://tanaka-www.cs.titech.ac.jp/%7Eeuske/prog/
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	Navigate through a three-dimensional view of a file system
 
 USE_IMAKE=	yes
 

@@ -19,6 +19,7 @@ PATCHFILES=	${DISTNAME}-${PORTVERSION}jb2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	A Spreadsheet Program + Japanese patches
 
 # xmkmf is for configure script, not for USE_IMAKE.
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4

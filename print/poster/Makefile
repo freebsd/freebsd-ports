@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/users/jos/poster/
 DISTNAME=	poster
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	Resize a postscript image to print on larger media and/or multiple sheets
 
 ALL_TARGET=	poster
 NO_WRKSUBDIR=	yes

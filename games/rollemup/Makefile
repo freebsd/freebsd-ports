@@ -13,6 +13,7 @@ MASTER_SITES=	http://usa.lostboys.nl/medialab/rollemup/Linux/
 DISTNAME=	Rollemup
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	Multi Ball, Player, Platform, Media, Cool Pinball game
 
 BROKEN=		"Does not fetch"
 

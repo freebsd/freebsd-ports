@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sanpei
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	Diagnose unhealthy DNS domains
 
 AUX_DIR=	lib/doc
 AUX_FILES=	doc1.awk doc3.awk doc4.awk INFO RFC.XXXX
