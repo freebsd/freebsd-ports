@@ -30,7 +30,7 @@ post-patch:
 .for f in ${PL_FILES}
 	@${PERL} -pi -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
 .endfor
-	@${PERL} -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/install.pl
+	@${PERL} -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/install.pl
 
 do-install:
 	cd ${WRKSRC}; ${PERL} install.pl -y -c -bsdport
