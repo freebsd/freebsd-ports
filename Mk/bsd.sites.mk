@@ -584,6 +584,10 @@ MASTER_SITE_RUBY+= \
 	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
+MASTER_SITE_SAVANNAH+= \
+	ftp://ftp.gnu.org/pub/gnu/%SUBDIR%/ \
+	http://savannah.nongnu.org/download/%SUBDIR%/
+
 MASTER_SITE_SOURCEFORGE+= \
 	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	http://eu.dl.sourceforge.net/%SUBDIR%/ \
