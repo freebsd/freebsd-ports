@@ -1,12 +1,3 @@
-This is the MH mail user agent (reader/sender) version 6.8.3 with
-Japanese patches, a command line based mail reader that is powerful
-and extensible.  MH is an excellent choice for people who receive and
-process a LOT of mail.
-
-  This port has integrated some useful patches:
-
-	o speed-up the folder command patch distributed with mew
-				(Message interface to Emacs Window)
-
-	o Patch to smail to suppress X-Authentication-Warning, also 
-	  distributed with mew.
+This is the MH mail user agent (reader/sender) with Japanese patches,
+a command line based mail reader that is powerful and extensible.  MH
+is an excellent choice for people who receive and process a LOT of mail.
