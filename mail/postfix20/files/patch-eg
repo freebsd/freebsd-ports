@@ -1,34 +1,20 @@
---- sendmail/sendmail.c.orig	Sun Mar 26 22:51:33 2000
-+++ sendmail/sendmail.c	Wed Dec 20 18:17:31 2000
-@@ -55,10 +55,12 @@
- /*	\fBjust-send-eight\fR.
- /* .IP "\fB-C \fIconfig_file\fR (ignored :-)"
- /*	The path name of the \fBsendmail.cf\fR file. Postfix configuration
--/*	files are kept in \fB/etc/postfix\fR.
-+/*	files are kept in \fB!!PREFIX!!/etc/postfix\fR.
- /* .IP "\fB-F \fIfull_name\fR
- /*	Set the sender full name. This is used only with messages that
- /*	have no \fBFrom:\fR message header.
-+/* .IP "\fB-G \fR (ignored)"
-+/*	Gateway (relay) submission, as opposed to initial user submission.
- /* .IP \fB-I\fR
- /*	Initialize alias database. See the \fBnewaliases\fR
- /*	command above.
-@@ -157,7 +159,7 @@
- /*	\fBdebugger_command\fR configuration parameter.
- /* FILES
- /*	/var/spool/postfix, mail queue
--/*	/etc/postfix, configuration files
-+/*	!!PREFIX!!/etc/postfix, configuration files
- /* CONFIGURATION PARAMETERS
- /* .ad
- /* .fi
-@@ -710,6 +712,8 @@
- 	    break;
- 	case 'F':				/* full name */
- 	    full_name = optarg;
-+	    break;
-+	case 'G':				/* gateway submission */
- 	    break;
- 	case 'I':				/* newaliases */
- 	    mode = SM_MODE_NEWALIAS;
+*** ./src/sendmail/sendmail.c.orig	Tue Mar 14 10:42:06 2000
+--- ./src/sendmail/sendmail.c	Thu Jun  1 22:47:24 2000
+***************
+*** 57,59 ****
+  /*	The path name of the \fBsendmail.cf\fR file. Postfix configuration
+! /*	files are kept in \fB/etc/postfix\fR.
+  /* .IP "\fB-F \fIfull_name\fR
+--- 57,59 ----
+  /*	The path name of the \fBsendmail.cf\fR file. Postfix configuration
+! /*	files are kept in \fB!!PREFIX!!/etc/postfix\fR.
+  /* .IP "\fB-F \fIfull_name\fR
+***************
+*** 159,161 ****
+  /*	/var/spool/postfix, mail queue
+! /*	/etc/postfix, configuration files
+  /* CONFIGURATION PARAMETERS
+--- 159,161 ----
+  /*	/var/spool/postfix, mail queue
+! /*	!!PREFIX!!/etc/postfix, configuration files
+  /* CONFIGURATION PARAMETERS

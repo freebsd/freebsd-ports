@@ -1,11 +1,11 @@
---- conf/canonical.orig	Sun Sep  5 23:47:01 1999
-+++ conf/canonical	Tue Nov  7 22:24:42 2000
-@@ -4,7 +4,7 @@
- # SUMMARY
- #	format of Postfix canonical table
- # SYNOPSIS
--#	\fBpostmap /etc/postfix/canonical\fR
-+#	\fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
- # DESCRIPTION
- #	The optional \fBcanonical\fR file specifies an address mapping for
- #	local and non-local addresses. The mapping is used by the
+*** ./conf/canonical.orig	Tue Mar  7 10:42:58 2000
+--- ./conf/canonical	Thu Jun  1 21:53:23 2000
+***************
+*** 7,9 ****
+  # SYNOPSIS
+! #        postmap /etc/postfix/canonical
+  # 
+--- 7,9 ----
+  # SYNOPSIS
+! #        postmap !!PREFIX!!/etc/postfix/canonical
+  # 

@@ -3,8 +3,8 @@
 ***************
 *** 1,3 ****
 --- 1,6 ----
-+ *** Note for FreeBSD users: this feature must be specifically enabled with the
-+ *** "-DWITH_MYSQL" option at compile time ("make -DWITH_MYSQL").
++ *** Note for FreeBSD users: this feature must be specifically enabled
++ *** at compile time.
 + 
   [Code contributed by Scott Cotton and Joshua Marcus, IC Group, Inc.]
   

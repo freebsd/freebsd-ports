@@ -1,11 +1,11 @@
---- conf/relocated.orig	Sun Sep  5 23:47:01 1999
-+++ conf/relocated	Tue Nov  7 22:28:27 2000
-@@ -4,7 +4,7 @@
- # SUMMARY
- #	format of Postfix relocated table
- # SYNOPSIS
--#	\fBpostmap /etc/postfix/relocated\fR
-+#	\fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
- # DESCRIPTION
- #	The optional \fBrelocated\fR file provides the information that is
- #	used in "user has moved to \fInew_location\fR" bounce messages.
+*** ./conf/relocated.orig	Tue Mar  7 10:42:58 2000
+--- ./conf/relocated	Thu Jun  1 22:03:59 2000
+***************
+*** 7,9 ****
+  # SYNOPSIS
+! #        postmap /etc/postfix/relocated
+  # 
+--- 7,9 ----
+  # SYNOPSIS
+! #        postmap !!PREFIX!!/etc/postfix/relocated
+  # 

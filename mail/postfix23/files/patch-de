@@ -1,0 +1,20 @@
+*** ./proto/relocated.orig	Sun Apr  9 16:47:31 2000
+--- ./proto/relocated	Thu Jun  1 22:46:02 2000
+***************
+*** 6,8 ****
+  # SYNOPSIS
+! #	\fBpostmap /etc/postfix/relocated\fR
+  # DESCRIPTION
+--- 6,8 ----
+  # SYNOPSIS
+! #	\fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
+  # DESCRIPTION
+***************
+*** 14,16 ****
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap /etc/postfix/relocated\fR in order to rebuild the indexed
+  #	file after changing the relocated table.
+--- 14,16 ----
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap !!PREFIX!!/etc/postfix/relocated\fR in order to rebuild the indexed
+  #	file after changing the relocated table.

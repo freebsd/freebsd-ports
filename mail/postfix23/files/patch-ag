@@ -1,0 +1,15 @@
+*** ./conf/sample-auth.cf.orig	Sun May 28 17:55:19 2000
+--- ./conf/sample-auth.cf	Thu Jun  1 22:05:32 2000
+***************
+*** 91,95 ****
+  # The Postfix SMTP client opens the lookup table before going to
+! # chroot jail, so you can leave the password file in /etc/postfix.
+  #
+! smtp_sasl_password_maps = hash:/etc/postfix/saslpass
+  
+--- 91,95 ----
+  # The Postfix SMTP client opens the lookup table before going to
+! # chroot jail, so you can leave the password file in !!PREFIX!!/etc/postfix.
+  #
+! smtp_sasl_password_maps = hash:!!PREFIX!!/etc/postfix/saslpass
+  

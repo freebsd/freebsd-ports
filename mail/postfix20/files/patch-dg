@@ -1,0 +1,20 @@
+*** ./proto/virtual.orig	Sun Apr  9 17:14:14 2000
+--- ./proto/virtual	Thu Jun  1 22:46:40 2000
+***************
+*** 6,8 ****
+  # SYNOPSIS
+! #	\fBpostmap /etc/postfix/virtual\fR
+  # DESCRIPTION
+--- 6,8 ----
+  # SYNOPSIS
+! #	\fBpostmap !!PREFIX!!/etc/postfix/virtual\fR
+  # DESCRIPTION
+***************
+*** 20,22 ****
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap /etc/postfix/virtual\fR in order to rebuild the indexed
+  #	file after changing the virtual table.
+--- 20,22 ----
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap !!PREFIX!!/etc/postfix/virtual\fR in order to rebuild the indexed
+  #	file after changing the virtual table.
