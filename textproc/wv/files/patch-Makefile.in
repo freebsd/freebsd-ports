@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun May  6 02:52:01 2001
-+++ Makefile.in	Fri May 11 03:27:48 2001
-@@ -63,6 +63,8 @@
+--- Makefile.in.orig	Mon Oct 15 18:09:43 2001
++++ Makefile.in	Sat Nov 17 08:24:35 2001
+@@ -61,6 +61,8 @@
  RM = rm
  
  INSTALL = @INSTALL@
@@ -9,7 +9,16 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  @SET_MAKE@
-@@ -429,31 +431,25 @@
+@@ -81,7 +83,7 @@
+ VPATH = @srcdir@
+ 
+ DEFS = @DEFS@ -DVERSION=\"@VERSION@\" -DXMLCONFIG=\"$(datadir)/wv/wvConfig.xml\" -DHTMLCONFIG=\"$(datadir)/wv/wvHtml.xml\"
+-CPPFLAGS = @ICONV_CFLAGS@ @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @CPPFLAGS@
++CPPFLAGS = @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @ICONV_CFLAGS@ @CPPFLAGS@
+ CFLAGS = @CFLAGS@ -ansi -pedantic
+ INCLUDES = -I. -I./ -I$(srcdir)/ -I$(srcdir)/magick/  -I$(srcdir)/libole2/ -I$(srcdir)/oledecod/
+ 
+@@ -422,31 +424,25 @@
  	$(includedir)	
  
  install: installdirs all
