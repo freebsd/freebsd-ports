@@ -3,7 +3,7 @@
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.6 1999/08/17 19:36:53 cpiazza Exp $
+# $Id: Makefile,v 1.7 1999/08/19 12:35:41 sheldonh Exp $
 #
 
 DISTNAME=	aspell-.27.2
@@ -15,13 +15,7 @@ MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 
 MAINTAINER=	ade@lovett.com
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 400004
-BUILD_DEPENDS=	g++295:${PORTSDIR}/lang/egcs
-CC=	gcc295
-CXX=	g++295
-.endif
-
+USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}"
 USE_GMAKE=	yes
@@ -47,4 +41,4 @@ pre-install:
 	          ${WRKSRC}/manual/man-text/D_Glossary.txt \
 	          ${WRKSRC}/manual/man-text/E_Copyright.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

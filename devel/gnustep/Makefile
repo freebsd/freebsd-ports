@@ -3,7 +3,7 @@
 # Date created:         03 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/07/18 06:28:44 cpiazza Exp $
+# $Id: Makefile,v 1.4 1999/08/17 19:36:55 cpiazza Exp $
 #
 
 DISTNAME=       gstep-core-0.5.5
@@ -21,10 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 .if ${OSVERSION} < 300000
 BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
-.elif ${OSVERSION} < 400000
-BUILD_DEPENDS=	gcc295:${PORTSDIR}/lang/egcs
-RUN_DEPENDS=	gcc295:${PORTSDIR}/lang/egcs
-CC=		gcc295
 .endif
 
 BROKEN=		"Hardcoded freebsd release numbers in PLIST"
@@ -43,6 +39,7 @@ USE_XLIB=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
+USE_NEWGCC=	yes
 
 GNUSTEPLIBDIR=	${PREFIX}/Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw
 

@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id: Makefile,v 1.2 1999/07/08 06:11:24 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/08/17 19:37:11 cpiazza Exp $
 #
 
 DISTNAME=		plib-1.0.12a
@@ -20,17 +20,11 @@ LIB_DEPENDS=		GL.14:${PORTSDIR}/graphics/Mesa3 		\
 
 USE_X_PREFIX=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400003
-BUILD_DEPENDS=		g++295:${PORTSDIR}/lang/egcs
-CXX=			g++295
-.endif
-
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		CPPFLAGS=-I${X11BASE}/include
 CONFIGURE_ARGS+=	--includedir=$(PREFIX)/include/plib
 USE_GMAKE=		yes
+USE_NEWGCC=		yes
 MANCOMPRESSED=		yes
 
 MAN1=			calibrate.1
@@ -42,4 +36,4 @@ pre-build:
 pre-install:
 	@(cd ${WRKDIR}/calibrate-0.0.1; ${MAKE} PREFIX=${PREFIX} install)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
