@@ -1,0 +1,17 @@
+bin/cattach
+bin/cdetach
+bin/cmkdir
+bin/cpasswd
+etc/rc.d/cfsd.sh
+man/man1/cattach.1.gz
+man/man1/cdetach.1.gz
+man/man1/cmkdir.1.gz
+man/man1/cpasswd.1.gz
+man/man8/ccat.8.gz
+man/man8/cfsd.8.gz
+man/man8/cname.8.gz
+sbin/ccat
+sbin/cfsd
+sbin/cname
+share/doc/cfs/README.install
+share/doc/cfs/notes.ms

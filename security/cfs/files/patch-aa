@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Mar 20 09:59:03 1996
++++ Makefile	Wed Jul 30 12:04:03 1997
+@@ -193,12 +193,18 @@
+ ## not sure what to do for NeXT.  I think this works:
+ #CFLAGS=$(COPT) -posix -D_BSD -DANYPORT -I$(RINCLUDES)
+ 
++## use these for FreeBSD
++CFLAGS=$(COPT) -DBSD44 -DANYPORT -DSHORTLINKS
++LIBS=-lrpcsvc
++COMPAT=-lcompat
++RPCOPTS=
++
+ 
+ #==========================================================================
+ # (3/3) CONFIGURE: one last thing
+ #==========================================================================
+ # finally, comment out the next line:
+-CC=you_forgot_to_edit_the_makefile
++#CC=you_forgot_to_edit_the_makefile
+ 
+ # now you're done with local configuration.
+ 
