@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
+PORTREVISION=	0
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,13 +24,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_X_PREFIX=	yes
 USE_GCC=	3.3
+USE_GNOME=	pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-map-extension=jpg --with-freetype --with-gif \
-		--with-png --with-pnm --with-tiff
+		--with-png --with-pnm --with-tiff --with-pango
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 USE_GMAKE=	yes
 
+PLIST_FILES=	bin/xplanet
 MAN1=	xplanet.1
 
 # Install the list of FreeBSD sites & committers locations from astro/xearth
@@ -39,5 +41,9 @@ post-install:
 	@${INSTALL_DATA} ${PORTSDIR}/astro/xearth/files/${file} \
 		${DATADIR}/markers
 .endfor
+	@${FIND} ${DATADIR} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
