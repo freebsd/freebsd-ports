@@ -1,7 +1,6 @@
 bin/gvlc
 bin/vlc
 bin/vlc-config
-bin/wxvlc
 include/vlc/aout.h
 include/vlc/decoder.h
 include/vlc/input.h
@@ -17,12 +16,11 @@ lib/vlc/access/libaccess_http_plugin.so
 lib/vlc/access/libaccess_mms_plugin.so
 lib/vlc/access/libaccess_tcp_plugin.so
 lib/vlc/access/libaccess_udp_plugin.so
-lib/vlc/access/libcdda_plugin.so
 lib/vlc/access/libcddax_plugin.so
 lib/vlc/access/libdvd_plugin.so
 lib/vlc/access/libdvdread_plugin.so
 lib/vlc/access/libslp_plugin.so
-lib/vlc/access/libvcd_plugin.so
+lib/vlc/access/libvcdx_plugin.so
 lib/vlc/access_output/libaccess_output_dummy_plugin.so
 lib/vlc/access_output/libaccess_output_file_plugin.so
 lib/vlc/access_output/libaccess_output_http_plugin.so
@@ -106,7 +104,6 @@ lib/vlc/demux/libsgimb_plugin.so
 lib/vlc/demux/libts_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/gui/libgtk_plugin.so
-lib/vlc/gui/libwxwindows_plugin.so
 lib/vlc/libffmpeg.a
 lib/vlc/libstream_out_transcode.a
 lib/vlc/misc/libdummy_plugin.so

@@ -24,9 +24,11 @@
 # WITH_SVGALIB=yes
 # WITH_XOSD=yes
 # WITH_XVID=yes
+# WITH_WXWINDOWS=yes
 # WITH_OPTIMIZED_CFLAGS=yes
 # WITH_DVD_DEVICE=/dev/somedevice (5.x: default is acd0, 4:x default is acd0c)
 # WITH_CDROM_DEVICE=/dev/somedevice
+# WITHOUT_NLS=yes
 # WITHOUT_LIBID3TAG=yes
 
 PORTNAME=	vlc
@@ -46,7 +48,6 @@ LIB_DEPENDS=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		slp.1:${PORTSDIR}/net/openslp \
 		vcdinfo.0:${PORTSDIR}/multimedia/vcdimager
 
@@ -63,9 +64,8 @@ USE_ICONV=	yes
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
+CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-mad=${LOCALBASE} \
@@ -84,6 +84,10 @@ FFMPEG_PORT?=	multimedia/ffmpeg
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
+BREAKS_IF_PEDANTIC=	yes
+
+# Broken
+WITHOUT_SPEEX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -159,6 +163,10 @@ WITH_XVID=	yes
 WITH_LIBMATROSKA=yes
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
@@ -188,6 +196,16 @@ PLIST_FILES+=	bin/gnome-vlc \
 		lib/vlc/misc/libgnome_main_plugin.so
 .else
 CONFIGURE_ARGS+=--enable-gtk
+.endif
+
+.if defined(WITH_WXWINDOWS) && !defined(WITHOUT_WXWINDOWS)
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+CONFIGURE_ARGS+=--enable-wxwindows
+CONFIGURE_ENV+=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
+PLIST_FILES+=	bin/wxvlc
+PLIST_FILES+=	lib/vlc/gui/libwxwindows_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-wxwindows
 .endif
 
 .if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
@@ -231,6 +249,8 @@ CONFIGURE_ARGS+=--disable-dts
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
 PLIST_FILES+=	lib/vlc/video_output/libggi_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-ggi
 .endif
 
 .if defined(WITH_LIBDVBPSI) && !defined(WITHOUT_LIBDVBPSI)
@@ -261,6 +281,8 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 EXTRA_PATCHES+=	${PATCHDIR}/theora.c-patch
 CONFIGURE_ARGS+=--enable-theora
 PLIST_FILES+=	lib/vlc/libtheora.a
+.else
+CONFIGURE_ARGS+=--disable-theora
 .endif
 
 .if defined(WITH_LIVEMEDIA) && !defined(WITHOUT_LIVEMEDIA)
@@ -268,6 +290,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveM
 CONFIGURE_ARGS+=--enable-livedotcom \
 		--with-livedotcom-tree=${LOCALBASE}/live
 PLIST_FILES+=	lib/vlc/liblivedotcom.a
+.else
+CONFIGURE_ARGS+=--disable-livedotcom
 .endif
 
 .if defined(WITH_NCURSES) && !defined(WITHOUT_NCURSES)
@@ -287,11 +311,15 @@ CONFIGURE_ARGS+=--disable-speex
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-svgalib
 PLIST_FILES+=	lib/vlc/video_output/libsvgalib_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-svgalib
 .endif
 
 .if defined(WITH_XOSD) && !defined(WITHOUT_XOSD)
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=--enable-xosd
+.else
+CONFIGURE_ARGS+=--disable-xosd
 .endif
 
 .if defined(WITH_XVID) && !defined(WITHOUT_XVID)
@@ -323,16 +351,6 @@ PLIST_FILES+=	lib/vlc/libi420_rgb_mmx.a lib/vlc/libi420_ymga_mmx.a \
 		lib/vlc/libmemcpymmxext.a
 .endif
 
-.if ${ARCH} != "i386"
-.if ${OSVERSION} >= 502102 &&  ${OSVERSION} < 503000
-BROKEN=		"conflicts with threads architecture, dumps core"
-.endif
-.else
-.if ${OSVERSION} >= 502102
-BROKEN=		"conflicts with threads architecture, dumps core"
-.endif
-.endif
-
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 # libstdc++.a(eh_terminate.o): gp-relative relocation against dynamic symbol __cxxabiv1::__terminate_handler
 BROKEN=		"gp-relative relocation against dynamic symbol"
@@ -345,7 +363,7 @@ pre-everything::
 	@${ECHO_MSG} "For example, make WITH_AUTODETECT=yes"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-lpthread/-lpthread-broken/' \
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
 		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		${WRKSRC}/configure
