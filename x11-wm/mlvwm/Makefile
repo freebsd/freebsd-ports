@@ -1,15 +1,15 @@
 # New ports collection makefile for:   mlvwm
-# Version required:    0.9.0
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mlvwm090
-PKGNAME=	mlvwm-0.9.0
+PORTNAME=	mlvwm
+PORTVERSION= 	0.9.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
+DISTNAME=	mlvwm090
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mini-icons.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org

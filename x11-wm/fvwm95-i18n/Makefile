@@ -1,13 +1,12 @@
 # New ports collection makefile for:	fvwm95-2
-# Version required:	2.0.43a
 # Date created:		23 Nov 1998
 # Whom:			Yoshishige Arai <ryo2@on.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fvwm95-2.0.43a-Autoconf
-PKGNAME=	fvwm95-i18n-2.0.43a
+PORTNAME=	fvwm95-i18n
+PORTVERSION= 	2.0.43a
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/ \
 		ftp://ftp.plig.org/pub/fvwm95/ \
@@ -15,6 +14,7 @@ MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \
 		${MASTER_SITE_PORTS_JP} \
 		http://people.FreeBSD.org/~sada/distfiles/
+DISTNAME=	fvwm95-2.0.43a-Autoconf
 DISTFILES=	${EXTRACT_ONLY} fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz
 
 PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	piewm
-# Version required:	1.03
 # Date created:		24 November 1994
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	piewm-1.03
+PORTNAME=	piewm
+PORTVERSION= 	1.03
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
 

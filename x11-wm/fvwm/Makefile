@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fvwm
-# Version required:	1.24r
 # Date created:		12 May 1995
 # Whom:			me
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fvwm-1.24r
+PORTNAME=	fvwm
+PORTVERSION= 	1.24r
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   	flwm
-# Version required:			0.25
 # Date created:				12 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	flwm-0.25
+PORTNAME=	flwm
+PORTVERSION= 	0.25
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/flwm/ \
 		ftp://ftp.sai.msu.su/pub/X11/win_man/

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	fvwm95-2
-# Version required:	2.0.43a
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fvwm95-2.0.43a-Autoconf
-PKGNAME=	fvwm95-2.0.43a
+PORTNAME=	fvwm95
+PORTVERSION= 	2.0.43a
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/
+DISTNAME=	${PKGNAME}-Autoconf
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dima@Chg.RU

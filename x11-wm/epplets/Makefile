@@ -1,15 +1,15 @@
 # New ports collection makefile for:   epplets
-# Version required:    0.5
 # Date created:        18 October 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	epplet-base-0.5
-PKGNAME=	epplets-0.5
+PORTNAME=	epplets
+PORTVERSION= 	0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/e/epplets/
+DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 

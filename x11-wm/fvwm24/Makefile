@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Fvwm2
-# Version required:	2.2.4
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fvwm-2.2.4
+PORTNAME=	fvwm
+PORTVERSION= 	2.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 

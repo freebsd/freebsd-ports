@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnome2wmaker
-# Version required:			1.2
 # Date Created:				18 September 1999
 # Whom:				 	Jeremy Lea <reg@shale.csir.co.za>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome2wmaker-1.2
+PORTNAME=	gnome2wmaker
+PORTVERSION= 	1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.linuxbox.com/gnome2wmaker/
 

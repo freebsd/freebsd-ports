@@ -1,17 +1,17 @@
 # New ports collection makefile for:	DockApp Library
-# Version required:	0.2
 # Date created:		17 July 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	docklib-0.2
-PKGNAME=	libdockapp-0.2
+PORTNAME=	libdockapp
+PORTVERSION= 	0.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
 		http://people.FreeBSD.org/~jim/distfiles/ \
 		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+DISTNAME=	docklib-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 

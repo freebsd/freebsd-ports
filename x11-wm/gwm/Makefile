@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gwm
-# Version required:	1.8c
 # Date created:		14 November 1996
 # Whom:			markm
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gwm-1.8c
+PORTNAME=	gwm
+PORTVERSION= 	1.8c
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers/gwm

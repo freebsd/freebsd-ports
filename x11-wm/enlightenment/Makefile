@@ -1,12 +1,12 @@
 # New ports collection makefile for:	enlightenment
-# Version required:		0.16.3
 # Date created:			10 June 1997
 # Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	enlightenment-0.16.3
+PORTNAME=	enlightenment
+PORTVERSION= 	0.16.3
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \

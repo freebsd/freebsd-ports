@@ -1,16 +1,16 @@
 # New ports collection makefile for:	tvtwm
-# Version required:	pl11
 # Date created:		5th December 1994
 # Whom:			gpalmer
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tvtwm.pl11
-PKGNAME=	tvtwm-pl11
+PORTNAME=	tvtwm
+PORTVERSION= 	pl11
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	gpalmer@FreeBSD.org
 
