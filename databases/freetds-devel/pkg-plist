@@ -13,11 +13,11 @@ include/tds.h
 include/tdsutil.h
 include/tdsver.h
 lib/libct.a
-lib/libct.la
+lib/libct.so
 lib/libct.so.0
 lib/libsybdb.a
-lib/libsybdb.la
+lib/libsybdb.so
 lib/libsybdb.so.0
 lib/libtds.a
-lib/libtds.la
+lib/libtds.so
 lib/libtds.so.0
