@@ -122,6 +122,7 @@ POST-INSTALL)
 	;;
     esac
 
+    chown wnn $wnnserver
     for dir in $sys_dirs; do
       $wnntouch $dir/*
     done
