@@ -141,6 +141,7 @@
     SUBDIR += krogue
     SUBDIR += krubik
     SUBDIR += ktamaga
+    SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
     SUBDIR += lexter
