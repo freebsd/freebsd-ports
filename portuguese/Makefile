@@ -16,6 +16,7 @@
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1-pt_BR
     SUBDIR += openoffice-1.1-pt_PT
+    SUBDIR += php_doc-br
     SUBDIR += staroffice52
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT
