@@ -6,24 +6,35 @@
 #
 
 PORTNAME=		sylpheed-gtk2
-PORTVERSION=		0.9.5.20030906
+PORTVERSION=		0.9.8a.20040109
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		sylpheed-0.9.5-gtk2-20030906
+DISTNAME=		sylpheed-${PORTVERSION:R}-gtk2-${PORTVERSION:E}
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=		The GTK+ 2.0 port of a lightweight, featureful, and fast e-mail client
+COMMENT=		The GTK+ 2.0 port of a lightweight, featureful and fast e-mail client
+
+LIB_DEPENDS=		intl.5:${PORTSDIR}/devel/gettext \
+			iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
+USE_OPENSSL=		yes
 USE_LIBTOOL=		yes
 USE_REINPLACE=		yes
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-ipv6
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		--enable-ssl
+
+OPTIONS=		GPGME "GnuPG support (using GPGME)" no \
+			COMPFACE "X-Face support (using compface)" no \
+			JPILOT "JPilot support" no \
+			LDAP "LDAP support" no
+
+CONFLICTS=		sylpheed-0.*
 
 .include <bsd.port.pre.mk>
 
@@ -31,13 +42,10 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-ipv6
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
-.else
-CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 
 .if defined(WITH_COMPFACE)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
-CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
@@ -46,22 +54,11 @@ CONFIGURE_ARGS+=	--disable-compface
 LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
-.else
-CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=	--enable-ldap
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--enable-ssl
-.else
-CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 MAKEFILES=		Makefile.in		\
@@ -76,18 +73,6 @@ MAKEFILES=		Makefile.in		\
 			manual/en/Makefile.in	\
 			manual/ja/Makefile.in	\
 			src/Makefile.in
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
-	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
-	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
-	@${ECHO} "      WITH_LDAP=yes     Enable LDAP support."
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_SSL=yes   Disable OpenSSL support."
-	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \

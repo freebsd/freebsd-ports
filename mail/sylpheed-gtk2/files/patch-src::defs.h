@@ -1,5 +1,5 @@
---- src/defs.h.orig	Thu Sep 25 11:14:02 2003
-+++ src/defs.h	Thu Sep 25 11:15:26 2003
+--- src/defs.h.orig	Sun Sep  7 06:09:06 2003
++++ src/defs.h	Thu Jan 22 20:23:18 2004
 @@ -64,7 +64,7 @@
  #define MARK_VERSION		2
  
