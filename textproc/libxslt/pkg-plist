@@ -48,6 +48,11 @@ share/aclocal/libxslt.m4
 %%DOCSDIR%%/html/APIfiles.html
 %%DOCSDIR%%/html/APIfunctions.html
 %%DOCSDIR%%/html/APIsymbols.html
+%%DOCSDIR%%/html/EXSLT/APIchunk0.html
+%%DOCSDIR%%/html/EXSLT/APIconstructors.html
+%%DOCSDIR%%/html/EXSLT/APIfiles.html
+%%DOCSDIR%%/html/EXSLT/APIfunctions.html
+%%DOCSDIR%%/html/EXSLT/APIsymbols.html
 %%DOCSDIR%%/html/EXSLT/bugs.html
 %%DOCSDIR%%/html/EXSLT/docs.html
 %%DOCSDIR%%/html/EXSLT/downloads.html
