@@ -2990,7 +2990,6 @@ idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
 idnkit		ports/dns/idnkit
 ifc		ports/lang/ifc
-ifc8		ports/lang/ifc8
 ifd-devkit	ports/security/ifd-devkit
 ifd-gempc410	ports/security/ifd-gempc410
 ifd-gpr400	ports/security/ifd-gpr400
