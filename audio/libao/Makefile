@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ao/src/
 

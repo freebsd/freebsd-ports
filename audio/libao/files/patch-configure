@@ -33,24 +33,6 @@ $FreeBSD$
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save"
-@@ -9348,6 +9349,8 @@
-   rm -f conf.esdtest
- 
- 
-+fi
-+
- 
- if test "x$have_esd" = xyes; then
-   HAVE_ESD_TRUE=
-@@ -9357,8 +9360,6 @@
-   HAVE_ESD_FALSE=
- fi
- 
--fi
--
- 
- 
- 
 @@ -12128,7 +12129,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else

@@ -23,6 +23,7 @@ share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/ao_free_options.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_info.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_initialize.html
+%%PORTDOCS%%%%DOCSDIR%%/ao_is_big_endian.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_open_file.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_open_live.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_option.html
