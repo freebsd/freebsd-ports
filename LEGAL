@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.141 1999/05/21 15:32:19 kuriyama Exp $
+# $Id: LEGAL,v 1.142 1999/05/29 08:30:19 kuriyama Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -20,6 +20,8 @@ actx-*			ports/games/actx	contains commercial
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
+bb-*			ports/net/bb		FreeBSD has permission from
+						author to put bb onto CDROM.
 bro-*			ports/security/bro	No distribution due to
 						alpha status
 bochs-*			ports/emulators/bochs	Commercial software.
