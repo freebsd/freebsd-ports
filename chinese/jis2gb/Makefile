@@ -11,7 +11,7 @@ CATEGORIES=    chinese
 MASTER_SITES=  http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 DISTFILES= jis2gb.tar.Z
 
-MAINTAINER=    jo-c@is.aist-nara.ac.jp
+MAINTAINER=    ports@FreeBSD.org
 COMMENT=	Convert JIS Kanji to GuoBiao Hanzi
 
 WRKSRC= ${WRKDIR}/jis2gb

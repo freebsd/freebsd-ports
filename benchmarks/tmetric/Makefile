@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://michael.bacarella.com/projects/tmetric/
 
-MAINTAINER=	mbac@nyct.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bandwidth measurement tool
 
 HAS_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/mail/misc
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	marijn@stack.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Util to rotate your mail/news signature
 
 MAN1=		sigrot.1

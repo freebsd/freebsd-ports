@@ -7,7 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../nethack34
 
-MAINTAINER=	yoshi@parodius.com
+MAINTAINER=	ports@FreeBSD.org
 
 PKGNAMESUFFIX=	-nox11
 

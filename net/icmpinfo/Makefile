@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://hplyot.obspm.fr/net/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/admin
 
-MAINTAINER=	ports@NUXI.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Looks at the icmp messages received by the host
 
 ALL_TARGET=

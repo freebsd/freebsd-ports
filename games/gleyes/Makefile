@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
 # initial distribution location was http://puma.inf.ufpr.br/~claudio/gleyes/
 # which is unresponsive since about 21.12.1998
 
-MAINTAINER=	malte.lance@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT version of Xeyes
 
 USE_X_PREFIX=	yes

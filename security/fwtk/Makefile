@@ -19,7 +19,7 @@ PATCH_SITES=	http://www.fwtk.org/fwtk/patches/
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	a.go@wish.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolkit used for building firewalls based on proxy services
 
 RESTRICTED=	"No form of redistribution is allowed"

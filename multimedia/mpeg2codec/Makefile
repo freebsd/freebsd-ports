@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz
 
-MAINTAINER=	charnier@lirmm.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
 USE_X_PREFIX=	yes

@@ -23,7 +23,7 @@ PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \
 PATCH_SITE_SUBDIR=	sada
 PATCHFILES=	fvwm95-2.0.43a-Autoconf.I18N.diff.gz
 
-MAINTAINER=	ryo2@on.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike fvwm2 window manager with an I18N patch
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay

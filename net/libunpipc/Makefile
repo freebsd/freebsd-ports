@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://compass.net.edu.cn:8000/programming/
 DISTNAME=	unpv22e
 
-MAINTAINER=	james@targetnet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The networking library used in UNIX Network Programming Volume 2 2e
 
 GNU_CONFIGURE=	yes

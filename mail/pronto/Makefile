@@ -9,7 +9,7 @@ PORTVERSION=	2.2.5
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
-MAINTAINER=	killer@prosalg.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mail Client for Gnome/Gtk written in Perl
 
 BUILD_DEPENDS=\

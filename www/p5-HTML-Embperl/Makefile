@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kapr@crosswinds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to allow embedded perl in HTML documents
 
 .if !defined(WITHOUT_APACHE)
