@@ -3,21 +3,25 @@
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.7 1998/10/14 23:30:12 jseger Exp $
+# $Id: Makefile,v 1.8 1998/10/16 02:55:50 jseger Exp $
 #
 
-DISTNAME=	sp-1.2.1
+DISTNAME=	sp-1.3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
-# The shared libsp only works on post 2.1.x systems.
-# shared C++ libraries appear to be broken on post 2.2.1 system too...
-#.if exists(/usr/lib/libstdc++.a)
-#PLIST=		${PKGDIR}/PLIST-shared
-#post-install:
-#	${LDCONFIG} -m ${PREFIX}/lib
-#.endif
+post-patch:
+	$(CP) $(WRKSRC)/Makefile $(WRKSRC)/Makefile.sed
+	$(CP) $(WRKSRC)/Makefile.lib $(WRKSRC)/Makefile.lib.sed
+	$(SED) -e "s%/opt/local%$(PREFIX)%" <$(WRKSRC)/Makefile.sed >$(WRKSRC)/Makefile
+	$(SED) -e "s%/opt/local%$(PREFIX)%" <$(WRKSRC)/Makefile.lib.sed >$(WRKSRC)/Makefile.lib
+
+post-install:
+	$(MKDIR) $(PREFIX)/include/sp
+	$(MKDIR) $(PREFIX)/share/doc/sp
+	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
+	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
 
 .include <bsd.port.mk>
