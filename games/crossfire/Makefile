@@ -60,7 +60,7 @@ post-install:
 	chown games.games ${PREFIX}/bin/crossfire
 	chown -R games.games ${CFDIR}
 	chmod 0664 ${PREFIX}/crossfire/lib/highscore
-	chmod 2555 ${PREFIX}/bin/crossfire
+	chmod 6555 ${PREFIX}/bin/crossfire
 	mkdir ${CFDIR}/doc
 	cp -r ${WRKDIR}/crossfire-0.92.8-doc/* ${CFDIR}/doc
 	@echo ""
