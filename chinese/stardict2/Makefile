@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	libgnome libgnomeui libbonobo bonoboactivation gconf2
+USE_GNOME=	libgnome libgnomeui libbonobo gconf2
 
 MAN1=		stardict.1
 
