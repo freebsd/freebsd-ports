@@ -1,5 +1,5 @@
-bin/gosh
 bin/gauche-config
+bin/gosh
 lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.so
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
@@ -25,6 +25,7 @@ lib/gauche/%%VERSION%%/include/gauche/class.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
+lib/gauche/%%VERSION%%/include/gauche/net.h
 lib/gauche/%%VERSION%%/include/gauche/predef-syms.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
@@ -34,23 +35,14 @@ lib/gauche/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche/%%VERSION%%/include/gc.h
 lib/gauche/%%VERSION%%/include/gc_config_macros.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
-@dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
-@dirrm lib/gauche/site/%%VERSION%%
-@dirrm lib/gauche/site
-@dirrm lib/gauche/%%VERSION%%/include/gauche
-@dirrm lib/gauche/%%VERSION%%/include
-@dirrm lib/gauche/%%VERSION%%/%%TARGET%%
-@dirrm lib/gauche/%%VERSION%%
-@dirrm lib/gauche
 lib/libgauche.so
-lib/libgauche.so.0
-lib/libgauche.so.0.0.0
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
 share/gauche/%%VERSION%%/lib/compat/jfilter.scm
 share/gauche/%%VERSION%%/lib/compat/stk.scm
 share/gauche/%%VERSION%%/lib/dbm.scm
+share/gauche/%%VERSION%%/lib/dbm/fsdbm.scm
 share/gauche/%%VERSION%%/lib/dbm/ndbm.scm
 share/gauche/%%VERSION%%/lib/file/filter.scm
 share/gauche/%%VERSION%%/lib/file/util.scm
@@ -69,6 +61,7 @@ share/gauche/%%VERSION%%/lib/gauche/interactive.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive/info.scm
 share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
+share/gauche/%%VERSION%%/lib/gauche/libutil.scm
 share/gauche/%%VERSION%%/lib/gauche/listener.scm
 share/gauche/%%VERSION%%/lib/gauche/listutil.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
@@ -94,6 +87,7 @@ share/gauche/%%VERSION%%/lib/gauche/serializer.scm
 share/gauche/%%VERSION%%/lib/gauche/serializer/aserializer.scm
 share/gauche/%%VERSION%%/lib/gauche/signal.scm
 share/gauche/%%VERSION%%/lib/gauche/singleton.scm
+share/gauche/%%VERSION%%/lib/gauche/sortutil.scm
 share/gauche/%%VERSION%%/lib/gauche/stringutil.scm
 share/gauche/%%VERSION%%/lib/gauche/syslog.scm
 share/gauche/%%VERSION%%/lib/gauche/termios.scm
@@ -163,12 +157,12 @@ share/gauche/%%VERSION%%/lib/srfi-31.scm
 share/gauche/%%VERSION%%/lib/srfi-37.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
+share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
 share/gauche/%%VERSION%%/lib/sxml/ssax.scm
 share/gauche/%%VERSION%%/lib/sxml/sxpath.scm
+share/gauche/%%VERSION%%/lib/sxml/to-html.scm
 share/gauche/%%VERSION%%/lib/sxml/tools.scm
 share/gauche/%%VERSION%%/lib/sxml/tree-trans.scm
-share/gauche/%%VERSION%%/lib/sxml/to-html.scm
-share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
 share/gauche/%%VERSION%%/lib/text/diff.scm
 share/gauche/%%VERSION%%/lib/text/gettext.scm
@@ -183,6 +177,7 @@ share/gauche/%%VERSION%%/lib/util/isomorph.scm
 share/gauche/%%VERSION%%/lib/util/lcs.scm
 share/gauche/%%VERSION%%/lib/util/list.scm
 share/gauche/%%VERSION%%/lib/util/queue.scm
+share/gauche/%%VERSION%%/lib/util/record.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
@@ -191,11 +186,11 @@ share/gauche/%%VERSION%%/lib/www/cgi.scm
 @dirrm share/gauche/%%VERSION%%/lib/www
 @dirrm share/gauche/%%VERSION%%/lib/util
 @dirrm share/gauche/%%VERSION%%/lib/text
+@dirrm share/gauche/%%VERSION%%/lib/sxml
 @dirrm share/gauche/%%VERSION%%/lib/srfi-19
 @dirrm share/gauche/%%VERSION%%/lib/srfi-14
 @dirrm share/gauche/%%VERSION%%/lib/srfi-13
 @dirrm share/gauche/%%VERSION%%/lib/srfi-1
-@dirrm share/gauche/%%VERSION%%/lib/sxml
 @dirrm share/gauche/%%VERSION%%/lib/rfc
 @dirrm share/gauche/%%VERSION%%/lib/math
 @dirrm share/gauche/%%VERSION%%/lib/gauche/vm
@@ -204,12 +199,20 @@ share/gauche/%%VERSION%%/lib/www/cgi.scm
 @dirrm share/gauche/%%VERSION%%/lib/gauche/interactive
 @dirrm share/gauche/%%VERSION%%/lib/gauche
 @dirrm share/gauche/%%VERSION%%/lib/file
+@dirrm share/gauche/%%VERSION%%/lib/dbm
 @dirrm share/gauche/%%VERSION%%/lib/compat
 @dirrm share/gauche/%%VERSION%%/lib/binary
-@dirrm share/gauche/%%VERSION%%/lib/dbm
 @dirrm share/gauche/%%VERSION%%/lib
 @dirrm share/gauche/%%VERSION%%
 @dirrm share/gauche
+@dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
+@dirrm lib/gauche/site/%%VERSION%%
+@dirrm lib/gauche/site
+@dirrm lib/gauche/%%VERSION%%/include/gauche
+@dirrm lib/gauche/%%VERSION%%/include
+@dirrm lib/gauche/%%VERSION%%/%%TARGET%%
+@dirrm lib/gauche/%%VERSION%%
+@dirrm lib/gauche
 @exec %D/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)" > /dev/null 2>&1 || true
 %%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
 %%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
