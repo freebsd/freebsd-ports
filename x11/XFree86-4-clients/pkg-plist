@@ -551,6 +551,7 @@ lib/X11/xkb/symbols/el
 lib/X11/xkb/symbols/en_US
 lib/X11/xkb/symbols/es
 lib/X11/xkb/symbols/fi
+lib/X11/xkb/symbols/fo
 lib/X11/xkb/symbols/fr
 lib/X11/xkb/symbols/fr_CH
 lib/X11/xkb/symbols/fujitsu/jp
@@ -630,6 +631,7 @@ lib/X11/xkb/symbols/pc/el
 lib/X11/xkb/symbols/pc/en_US
 lib/X11/xkb/symbols/pc/es
 lib/X11/xkb/symbols/pc/fi
+lib/X11/xkb/symbols/pc/fo
 lib/X11/xkb/symbols/pc/fr
 lib/X11/xkb/symbols/pc/fr-latin9
 lib/X11/xkb/symbols/pc/gb
@@ -746,3 +748,12 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
+@dirrm lib/X11/icons/default
+@dirrm lib/X11/icons/handhelds/cursors
+@dirrm lib/X11/icons/handhelds
+@dirrm lib/X11/icons/redglass/cursors
+@dirrm lib/X11/icons/redglass
+@dirrm lib/X11/icons/whiteglass/cursors
+@dirrm lib/X11/icons/whiteglass
+@dirrm lib/X11/xdm/default
+@dirrm lib/X11/xkb/geometry/ibm
