@@ -230,6 +230,12 @@ NETWORK=\#
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on 5.x !i386"
+.endif
+
 #
 # Regular targets
 #
@@ -326,4 +332,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
