@@ -130,6 +130,7 @@ include/isc/print.h
 include/isc/quota.h
 include/isc/random.h
 include/isc/ratelimiter.h
+include/isc/refcount.h
 include/isc/region.h
 include/isc/resource.h
 include/isc/result.h
