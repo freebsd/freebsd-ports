@@ -1,7 +1,10 @@
-###########################################################
-This port does NOT install GRUB on the master boot record
-of your hard drive.
+#############################################################
+To install GRUB on the master boot record of your hard drive
+use 'grub-install <drive-to-install>' command.
 
-To do this, or to use it with a floppy disk, you will need
-to read the info page using 'info grub'.
-###########################################################
+NOTE: Don't forget to run 'sysctl kern.geom.debugflags=16'
+      on 5.x and -CURRENT to enable writing in hard disk
+      system areas.
+
+For details read the GRUB info page using 'info grub'.
+#############################################################
