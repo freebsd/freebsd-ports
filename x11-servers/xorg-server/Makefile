@@ -80,13 +80,19 @@ IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
-MAN4+=		vesa.4x
 .endif
 		
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
 PLIST_SUB+=	IA64_NA=""
+.endif
+
+.if ${ARCH} == powerpc
+PLIST_SUB+=	PPC_NA="@comment "
+MAN4+=		nv.4x
+.else
+PLIST_SUB+=	PPC_NA=""
 .endif
 
 .if ${ARCH} == sparc64
@@ -102,12 +108,19 @@ MAN4+=		sunbw2.4x \
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
+.endif
+
+.if ${ARCH} != powerpc && ${ARCH} != sparc64
 MAN4+=		cirrus.4x \
 		nv.4x \
 		rendition.4x \
 		s3virge.4x \
 		savage.4x \
 		siliconmotion.4x
+.endif
+
+.if ${ARCH} != powerpc && ${ARCH} != alpha
+MAN4+=		vesa.4x
 .endif
 
 .if ${ARCH} == i386

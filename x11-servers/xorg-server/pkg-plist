@@ -3,16 +3,16 @@ bin/Xorg
 bin/getconfig
 bin/getconfig.pl
 bin/gtf
-%%SPARC64_NA%%bin/inb
-%%SPARC64_NA%%bin/inl
-%%SPARC64_NA%%bin/inw
-%%SPARC64_NA%%bin/ioport
+%%SPARC64_NA%%%%PPC_NA%%bin/inb
+%%SPARC64_NA%%%%PPC_NA%%bin/inl
+%%SPARC64_NA%%%%PPC_NA%%bin/inw
+%%SPARC64_NA%%%%PPC_NA%%bin/ioport
 bin/kbd_mode
 bin/mmapr
 bin/mmapw
-%%SPARC64_NA%%bin/outb
-%%SPARC64_NA%%bin/outl
-%%SPARC64_NA%%bin/outw
+%%SPARC64_NA%%%%PPC_NA%%bin/outb
+%%SPARC64_NA%%%%PPC_NA%%bin/outl
+%%SPARC64_NA%%%%PPC_NA%%bin/outw
 bin/pcitweak
 %%I386%%bin/scanpci
 bin/xorgcfg
@@ -83,9 +83,9 @@ lib/X11/xserver/SecurityPolicy
 lib/modules/drivers/ati_drv.o
 lib/modules/drivers/atimisc_drv.o
 %%AMD64_I386%%lib/modules/drivers/chips_drv.o
-%%SPARC64_NA%%lib/modules/drivers/cirrus_alpine.o
-%%SPARC64_NA%%lib/modules/drivers/cirrus_drv.o
-%%SPARC64_NA%%lib/modules/drivers/cirrus_laguna.o
+%%SPARC64_NA%%%%PPC_NA%%lib/modules/drivers/cirrus_alpine.o
+%%SPARC64_NA%%%%PPC_NA%%lib/modules/drivers/cirrus_drv.o
+%%SPARC64_NA%%%%PPC_NA%%lib/modules/drivers/cirrus_laguna.o
 %%AMD64_I386%%lib/modules/drivers/cyrix_drv.o
 %%AMD64_I386%%lib/modules/drivers/dummy_drv.o
 lib/modules/drivers/glint_drv.o
@@ -98,12 +98,12 @@ lib/modules/drivers/mga_drv.o
 %%SPARC64_NA%%lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o
 lib/modules/drivers/radeon_drv.o
-%%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/rendition_drv.o
+%%SPARC64_NA%%%%IA64_NA%%%%PPC_NA%%lib/modules/drivers/rendition_drv.o
 %%SPARC64_NA%%lib/modules/drivers/riva128.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/s3_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/s3virge_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/savage_drv.o
-%%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/siliconmotion_drv.o
+%%SPARC64_NA%%%%IA64_NA%%%%PPC_NA%%lib/modules/drivers/siliconmotion_drv.o
 %%AMD64_I386%%lib/modules/drivers/sis_drv.o
 %%SPARC64%%lib/modules/drivers/sunbw2_drv.o
 %%SPARC64%%lib/modules/drivers/suncg14_drv.o
@@ -113,10 +113,10 @@ lib/modules/drivers/radeon_drv.o
 %%SPARC64%%lib/modules/drivers/sunleo_drv.o
 %%SPARC64%%lib/modules/drivers/suntcx_drv.o
 lib/modules/drivers/tdfx_drv.o
-%%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/tga_drv.o
+%%SPARC64_NA%%%%IA64_NA%%%%PPC_NA%%lib/modules/drivers/tga_drv.o
 %%AMD64_I386%%lib/modules/drivers/trident_drv.o
 %%AMD64_I386%%lib/modules/drivers/tseng_drv.o
-%%ALPHA_NA%%lib/modules/drivers/vesa_drv.o
+%%ALPHA_NA%%%%PPC_NA%%lib/modules/drivers/vesa_drv.o
 lib/modules/drivers/vga_drv.o
 %%I386%%lib/modules/drivers/via_drv.o
 %%I386%%lib/modules/drivers/vmware_drv.o
@@ -182,8 +182,8 @@ lib/modules/libxf4bpp.a
 lib/modules/libxf8_16bpp.a
 lib/modules/libxf8_32bpp.a
 %%SPARC64%%lib/modules/libxf8_32wid.a
-%%SPARC64_NA%%lib/modules/v10002d.uc
-%%SPARC64_NA%%lib/modules/v20002d.uc
+%%SPARC64_NA%%%%PPC_NA%%lib/modules/v10002d.uc
+%%SPARC64_NA%%%%PPC_NA%%lib/modules/v20002d.uc
 @dirrm lib/X11/getconfig
 @dirrm lib/modules/fonts
 @dirrm lib/modules/extensions

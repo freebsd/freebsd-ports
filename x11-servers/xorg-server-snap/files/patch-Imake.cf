@@ -1,0 +1,15 @@
+--- config/cf/Imake.cf.orig	Wed Jan 19 20:53:39 2005
++++ config/cf/Imake.cf	Wed Jan 19 20:55:09 2005
+@@ -282,6 +282,10 @@
+ #  undef __amd64__
+ #  undef __x86_64__
+ # endif
++# ifdef __powerpc__
++#  define PpcArchitecture
++#  undef __powerpc__
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ /* Systems based on kernel of FreeBSD */
+
+
