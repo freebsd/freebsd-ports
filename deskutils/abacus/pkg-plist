@@ -6,12 +6,14 @@ share/abacus/display/defaults.tcl
 share/abacus/display/display.tcl
 share/abacus/display/edit.tcl
 share/abacus/display/entry.tcl
+share/abacus/display/find.tcl
 share/abacus/display/font.tcl
 share/abacus/display/format.tcl
 share/abacus/display/funcmenu.tcl
 share/abacus/display/funcs.tcl
 share/abacus/display/globals.tcl
 share/abacus/display/graphs.tcl
+share/abacus/display/help.tcl
 share/abacus/display/init.tcl
 share/abacus/display/io.tcl
 share/abacus/display/menubar.tcl
@@ -19,7 +21,6 @@ share/abacus/display/print.tcl
 share/abacus/display/sheet.tcl
 share/abacus/display/sort.tcl
 share/abacus/display/standard.tcl
-share/abacus/display/teste.tcl
 share/abacus/display/user_interf.tcl
 share/abacus/display/utils.tcl
 share/abacus/graphics/bar.tcl
@@ -87,14 +88,54 @@ share/abacus/runlib/bitmaps/xxl2.gif
 share/abacus/runlib/bitmaps/xxl_bck.gif
 share/abacus/tcl_interf/nxlc
 share/doc/abacus/TODO
+share/doc/abacus/abacus.ps
 share/doc/abacus/user_interf.fig
 share/doc/abacus/wsff1.txt
 share/doc/abacus/wsff2.txt
 share/doc/abacus/wsff3.txt
 share/doc/abacus/wsff4.txt
+share/doc/abacus/benchmarks/README
+share/doc/abacus/benchmarks/erase_cr.tcl
+share/doc/abacus/benchmarks/graphs.tcl
+share/doc/abacus/benchmarks/morerefs.tcl
+share/doc/abacus/benchmarks/refs.tcl
+share/doc/abacus/benchmarks/sort.tcl
+share/doc/abacus/help/abacus
+share/doc/abacus/help/about
+share/doc/abacus/help/functions
+share/doc/abacus/help/help
+share/doc/abacus/help/installing
+share/doc/abacus/presentation/README
+share/doc/abacus/presentation/Undo_objectos.gif
+share/doc/abacus/presentation/abacus-graphs.gif
+share/doc/abacus/presentation/abacus-layout.gif
+share/doc/abacus/presentation/abacus-presentation.tcl
+share/doc/abacus/presentation/arquitectura_do_abacus.gif
+share/doc/abacus/presentation/demo-help.gif
+share/doc/abacus/presentation/display.gif
+share/doc/abacus/presentation/estados_graficos.gif
+share/doc/abacus/presentation/estrutura_de_dados.gif
+share/doc/abacus/presentation/globalstate1.gif
+share/doc/abacus/presentation/globalstate2.gif
+share/doc/abacus/presentation/globalstate3.gif
+share/doc/abacus/presentation/modelo_em_espiral.gif
+share/doc/abacus/presentation/open-box.gif
+share/doc/abacus/presentation/paste-special.gif
+share/doc/abacus/presentation/save-2-slides.tcl
+share/doc/abacus/presentation/slides.tcl
+share/doc/abacus/presentation/undo_funcionamento.gif
+share/doc/abacus/presentation/xxl.gif
+share/doc/abacus/website/abacus.cgi
+share/doc/abacus/website/abacus.html
+share/doc/abacus/website/abacus.html~
+share/doc/abacus/website/screen.html
+share/doc/abacus/website/screen1.gif
+share/doc/abacus/website/screen2.gif
 share/examples/abacus/allfuncs.wk1
+share/examples/abacus/desp_97.wk1
 share/examples/abacus/emprestimo.wk1
 share/examples/abacus/example.wk1
+share/examples/abacus/macro_example_1.tcl
 share/examples/abacus/notas.wk1
 share/examples/abacus/notas_plain.wk1
 share/examples/abacus/obras.wk1
@@ -107,5 +148,9 @@ share/examples/abacus/tables.wk1
 @dirrm share/abacus/runlib
 @dirrm share/abacus/tcl_interf
 @dirrm share/abacus
+@dirrm share/doc/abacus/benchmarks
+@dirrm share/doc/abacus/help
+@dirrm share/doc/abacus/presentation
+@dirrm share/doc/abacus/website
 @dirrm share/doc/abacus
 @dirrm share/examples/abacus

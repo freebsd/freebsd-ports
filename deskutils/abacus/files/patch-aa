@@ -1,20 +1,20 @@
---- Makefile	Thu Aug  6 21:15:12 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Aug 18 15:24:56 1998
-@@ -8,7 +8,7 @@
- # explicit permission of the copyright holder.
- #
+--- Makefile.options	Tue Oct 20 20:19:08 1998
++++ /home/andy/tmp/wrk/Makefile.options	Tue Jan  5 17:08:02 1999
+@@ -18,7 +18,7 @@
+ LEX = flex
  
--CCFLAGS= -g 
-+CCFLAGS= $(CFLAGS) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.0 -I$(LOCALBASE)/include/tk8.0
- TARGET = tcl_interf/nxlc
- DIRS = display calc  io     graphics include runlib lib canvas tcl_interf
- TARDIRS = $(DIRS) lib  RCS  tests regressive doc
-@@ -32,7 +32,7 @@
- 	rm -f *~ gmon.out tests/* regressive/*.bck
+ # Favourite flags for favourite compiler
+-CCFLAGS = -g
++CCFLAGS = $(CFLAGS)
  
- dep : version
--	for i in $(DIRS); do $(MAKE) dep -C $$i; done
-+	for i in $(DIRS); do $(MAKE) dep -C $$i CCFLAGS="$(CCFLAGS)"; done
- 	rm -f *~
+ # Please don't change the next three lines unless you know what you are doing..
+ AROPTIONS = rc
+@@ -26,7 +26,7 @@
+ LIBDIR = ../lib
  
+ # Add extra include dirs here
+-IFLAGS = -I$(IDIR)
++IFLAGS = -I$(IDIR) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.0 -I$(LOCALBASE)/include/tk8.0
  
+ # Add extra directories where you want the abacus to search for libraries here
+ LFLAGS = -L/usr/local/lib -L/usr/X11R6/lib -L$(LIBDIR) -L.
