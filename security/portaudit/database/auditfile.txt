@@ -34,3 +34,4 @@ apache+mod_ssl>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multip
 apache+ipv6>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
 ru-apache>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
 ru-apache+mod_ssl>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
+clamav<0.65_7|http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/62586|remote exploitable DOS vulnerability
