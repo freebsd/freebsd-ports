@@ -127,6 +127,7 @@
     SUBDIR += gonvert
     SUBDIR += gplbp
     SUBDIR += gpt
+    SUBDIR += gpt31
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += grdb
