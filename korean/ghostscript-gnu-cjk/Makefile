@@ -15,7 +15,7 @@ DISTFILES=	# empty
 
 MAINTAINER=	mita@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/ghostscript-gnu-cjk\
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/ghostscript-gnu-cjk \
 		${LOCALBASE}/share/ghostscript/fonts/Munhwa-Bold:${PORTSDIR}/korean/munhwafonts-cid
 
 NO_BUILD=	yes

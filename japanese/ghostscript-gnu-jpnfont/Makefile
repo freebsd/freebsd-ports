@@ -15,7 +15,7 @@ DISTFILES=	# empty
 
 MAINTAINER=	mita@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/ghostscript-gnu-cjk\
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/ghostscript-gnu-cjk \
 		${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 NO_BUILD=	yes
