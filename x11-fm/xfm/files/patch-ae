@@ -1,0 +1,26 @@
+--- Imake.options.orig	Wed Apr  5 00:05:36 2000
++++ Imake.options	Wed Sep  6 00:37:02 2000
+@@ -31,8 +31,8 @@
+ 
+ #define XAW3D
+ 
+-XAWINCDIR = -I/usr/X11R6/include/X11/Xaw3d
+-XAWLIBDIR = -L/usr/X11R6/lib
++XAWINCDIR = -I$(INCROOT)/X11/Xaw3d
++XAWLIBDIR = -L$(USRLIBDIR)
+ 
+ /* Magic headers. *********************************************************/
+ 
+@@ -164,9 +164,9 @@
+ 
+ #ifdef USE_GCC
+ 
+-CC=gcc
+-CCOPTIONS = -Wall -Wno-parentheses
+-CDEBUGFLAGS = -O2
++XCOMM CC=gcc
++XCOMM CCOPTIONS = -Wall -Wno-parentheses
++XCOMM CDEBUGFLAGS = -O2
+ 
+ #else
+ CC=cc
