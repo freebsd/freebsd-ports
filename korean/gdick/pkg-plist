@@ -1,0 +1,12 @@
+bin/gdick
+bin/gdick_applet
+%%PYTHON_SITELIBDIR%%/YahooDict.py
+%%PYTHON_SITELIBDIR%%/YahooDict.pyc
+%%PYTHON_SITELIBDIR%%/YahooDict.pyo
+%%PYTHON_SITELIBDIR%%/YahooView.py
+%%PYTHON_SITELIBDIR%%/YahooView.pyc
+%%PYTHON_SITELIBDIR%%/YahooView.pyo
+share/gdick/gdick.glade
+@dirrm share/gdick
+%%GNOMEONLY%%@cwd %%X11BASE%%
+%%GNOMEONLY%%libdata/bonobo/servers/GNOME_GDick.server
