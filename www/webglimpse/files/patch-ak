@@ -49,7 +49,7 @@
 - $nhhops, $local_limit, $remote_limit, $addboxes, @urllist) = ReadConfig($indexdir);
 + $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($indexdir);
 +
-+$ENV{LANG}=$locale if ($locale ne '');
++$ENV{LC_CTYPE}=$locale if ($locale ne '');
 +setlocale(LC_CTYPE, "");
 +
 +$charset = "; charset=$charset" if ($charset ne '');

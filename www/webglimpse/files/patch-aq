@@ -13,7 +13,7 @@
  print OUT "# CRONFILE FOR ARCHIVE IN DIRECTORY $indexdir\n\n";
  
 +if (defined($locale) && $locale ne '') {
-+	print OUT "LANG=$locale; export LANG\n";
++	print OUT "LC_CTYPE=$locale; export LC_CTYPE\n";
 +}
 +
  print OUT ('quiet=""',"\n");
