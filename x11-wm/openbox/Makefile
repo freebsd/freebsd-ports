@@ -7,28 +7,27 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	0.3.0.1
-PORTREVISION=	1
+PORTVERSION=	0.3.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
-DISTNAME=	openbox-3.0-beta1
+DISTNAME=	openbox-3.0-rc4
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
-DOCS=		ABOUT-NLS AUTHORS COPYING ChangeLog README TODO
-THEMES=		allegro artwiz blah41 om4ob thebear
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
+		--sysconfdir=${PREFIX}/etc/openbox
+DOCS=		ABOUT-NLS AUTHORS CHANGELOG COPYING README TODO
+GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-#USE_AUTOMAKE=	yes
 
-do-patch:
+post-build:
 	${CP} -P ${WRKSRC}/data/rc.xml ${WRKSRC}/data/rc.xml.orig
 	${CP} -P ${WRKSRC}/data/menu.xml ${WRKSRC}/data/openbox-menu.xml
 	${SED} -E "s:/etc/X11/openbox/:${PREFIX}/share/openbox/:g" \
@@ -47,7 +46,7 @@ pre-configure:
 
 pre-install:
 	${RM} -f ${PLIST}
-.for ii in openbox  kdetrayproxy obconf
+.for ii in gnome-panel-control openbox kdetrayproxy themeupdate.py
 	${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
 	cd ${WRKSRC} && ${FIND} -s data themes -type f \
@@ -57,9 +56,18 @@ pre-install:
 	cd ${WRKSRC}/data && ${FIND} -s * -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST}
 	${ECHO_CMD} share/gnome/wm-properties/openbox.desktop >> ${PLIST}
-.for ii in la so so.0
-		${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
-		${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
+.for ii in menu rc
+	${ECHO_CMD} etc/openbox/xdg/openbox/${ii}.xml >> ${PLIST}
+.endfor
+.for ii in openbox/xdg/openbox openbox/xdg openbox
+	 ${ECHO_CMD} @dirrm etc/${ii} >> ${PLIST}
+.endfor
+.for ii in openbox/3.0 3.0
+	 ${ECHO_CMD} @dirrm include/${ii} >> ${PLIST}
+.endfor
+.for ii in la lai so so.1
+	${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
+	${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 .for ii in ${DOCS}
@@ -69,9 +77,17 @@ pre-install:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/share/openbox
+	${MKDIR} ${DATADIR} ${PREFIX}/etc/openbox/xdg/openbox \
+		${PREFIX}/include/openbox/3.0
+.for ii in parser/parse render/theme render/render
+	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox/3.0
+.endfor
+.for ii in menu rc
+	${INSTALL_DATA} ${WRKSRC}/data/${ii}.xml \
+		${PREFIX}/etc/openbox/xdg/openbox
+.endfor
 .for ii in openbox/.libs/openbox tools/kdetrayproxy/kdetrayproxy \
-	tools/obconf/.libs/obconf
+	tools/gnome-panel-control/gnome-panel-control
 	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/themeupdate/themeupdate.py \
@@ -80,7 +96,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} data/* ${PREFIX}/share/openbox/
 	cd ${WRKSRC} && ${INSTALL_DATA} data/openbox.desktop \
 		${PREFIX}/share/gnome/wm-properties/
-.for ii in la so so.0
+.for ii in la lai so so.1
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} parser/.libs/libobparser.${ii} ${PREFIX}/lib \
 		&& ${INSTALL_DATA} render/.libs/libobrender.${ii} ${PREFIX}/lib
