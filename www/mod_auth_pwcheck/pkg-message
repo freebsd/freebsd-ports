@@ -1,0 +1,4 @@
+Please add the user under which your web server is running to the group
+"cyrus" and ensure that directory /var/pwcheck is readable and searchable
+by group.
+

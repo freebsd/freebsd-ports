@@ -1,0 +1,10 @@
+This module provides the way for user authentication using the pwcheck
+daemon from the Cyrus SASL package. This lets the authentication to be done
+via the system password file without root permissions. The module also
+optionally provides access control via the system group file instead of any
+special group file used by the standard mod_auth_* modules.
+
+Unless you wish to do access control using the system group file, then you
+need any of the standard mod_auth_* modules to be in use.
+
+WWW: http://rnoc.urc.ac.ru/~anton/projects/mod_auth_pwcheck/
