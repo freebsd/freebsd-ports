@@ -1,8 +1,8 @@
 bin/nbench
 share/nbench/NNET.DAT
-%%PORTDOCS%%share/doc/nbench/README
-%%PORTDOCS%%share/doc/nbench/README.submit
-%%PORTDOCS%%share/doc/nbench/RESULTS
-%%PORTDOCS%%share/doc/nbench/bdoc.txt
-%%PORTDOCS%%@dirrm share/doc/nbench
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.submit
+%%PORTDOCS%%%%DOCSDIR%%/RESULTS
+%%PORTDOCS%%%%DOCSDIR%%/bdoc.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/nbench

@@ -1,11 +1,11 @@
 bin/dbs_view
 bin/dbsc
 bin/dbsd
-share/doc/dbs/Copyright
-share/doc/dbs/dbs.man
-share/doc/dbs/dbs.man.jis
-share/doc/dbs/dbs_paper.ps
+%%DOCSDIR%%/Copyright
+%%DOCSDIR%%/dbs.man
+%%DOCSDIR%%/dbs.man.jis
+%%DOCSDIR%%/dbs_paper.ps
 share/examples/dbs/TCP2.cmd
 share/examples/dbs/TCPvsMPEG.cmd
-@dirrm share/doc/dbs
+@dirrm %%DOCSDIR%%
 @dirrm share/examples/dbs

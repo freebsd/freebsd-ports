@@ -6,6 +6,6 @@ netperf/tcp_rr_script
 netperf/udp_stream_script
 netperf/udp_rr_script
 netperf/snapshot_script
-%%PORTDOCS%%share/doc/netperf/netperf.ps.gz
-%%PORTDOCS%%@dirrm share/doc/netperf
+%%PORTDOCS%%%%DOCSDIR%%/netperf.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm netperf

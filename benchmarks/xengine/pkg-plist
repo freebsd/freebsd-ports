@@ -1,3 +1,3 @@
 bin/xengine
-%%PORTDOCS%%share/doc/xengine/README
-%%PORTDOCS%%@dirrm share/doc/xengine
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,5 +6,5 @@ sbin/bonnie++
 sbin/getc_putc
 sbin/getc_putc_helper
 sbin/zcav
-share/doc/bonnie++/readme.html
-@dirrm share/doc/bonnie++
+%%DOCSDIR%%/readme.html
+@dirrm %%DOCSDIR%%
