@@ -1,11 +1,11 @@
---- break_filelist.orig	Mon May 21 02:34:00 2001
-+++ break_filelist	Mon May 21 02:34:13 2001
-@@ -460,7 +460,7 @@
+--- break_filelist.org	Sat Jan 19 22:42:44 2002
++++ break_filelist	Sat Jan 19 22:42:20 2002
+@@ -558,7 +558,7 @@
     return $cached_digest;  # We did, so here's what it was.
   }
  
 - my $results = `md5sum "$filename"`;
 + my $results = `md5 -q "$filename"`;
+  chomp($results);
   $results =~ s/^\s*//;  # Not needed for GNU Textutils.
   $results =~ s/[^a-fA-F0-9].*//; # Strip away end.
-  $cached_digest = $results;           # Store in cache.

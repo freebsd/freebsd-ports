@@ -1,6 +1,6 @@
---- makefile.orig	Tue Jun 12 20:55:23 2001
-+++ makefile	Fri Aug 24 22:29:56 2001
-@@ -7,14 +7,12 @@
+--- makefile.orig	Wed Jan  9 21:38:33 2002
++++ makefile	Sat Jan 19 22:40:15 2002
+@@ -10,14 +10,12 @@
  # Set this for where to store the man pages and executables.
  # If you want to store this as part of an official distribution,
  # change this to "/usr":
@@ -15,7 +15,7 @@
  
  # Set this to the name of your "install" program.  On some systems,
  # "install -C" would be useful (so unchanged files won't be modified),
-@@ -37,7 +35,7 @@
+@@ -41,7 +39,7 @@
  ARCH=i386
  VERSIONEDNAME=$(NAME)-$(VERSION)
  INSTALL_DIR=$(PREFIX)/bin
@@ -24,7 +24,7 @@
  MAN_DIR_MAN1=$(MAN_DIR)/man1
  DOC_DIR=$(PREFIX)/share/doc/$(VERSIONEDNAME)-$(RPM_VERSION)
  POSTED_DIR=/home/dwheeler/dwheeler.com/sloccount
-@@ -78,7 +76,7 @@
+@@ -84,7 +82,7 @@
     sql_count \
     tcl_count
  
@@ -33,8 +33,8 @@
  
  MYDOCS=sloccount.html README TODO ChangeLog
  
-@@ -86,10 +84,10 @@
- all: lexcount1$(EXE_SUFFIX) c_count$(EXE_SUFFIX) java_count$(EXE_SUFFIX) sloccount.1.gz
+@@ -92,13 +90,13 @@
+ all: lexcount1$(EXE_SUFFIX) c_count$(EXE_SUFFIX) java_count$(EXE_SUFFIX) php_count$(EXE_SUFFIX)
  
  lexcount1$(EXE_SUFFIX): lexcount1.c
 -	$(CC) lexcount1.c -o lexcount1$(EXE_SUFFIX)
@@ -44,9 +44,13 @@
 -	$(CC) c_count.c -o c_count$(EXE_SUFFIX)
 +	$(CC) ${CFLAGS} c_count.c -o c_count$(EXE_SUFFIX)
  
+ php_count$(EXE_SUFFIX): php_count.c
+-	$(CC) php_count.c -o php_count$(EXE_SUFFIX)
++	$(CC) ${CFLAGS} php_count.c -o php_count$(EXE_SUFFIX)
+ 
  sloccount.1.gz: sloccount.1
  	gzip -c sloccount.1 > sloccount.1.gz
-@@ -100,18 +98,17 @@
+@@ -109,18 +107,17 @@
  
  # This is USC's code counter, not built by default:
  c_lines: C_LINES.C

@@ -3,8 +3,7 @@ bin/asm_count
 bin/awk_count
 bin/break_filelist
 bin/c_count
-bin/compute_filecount
-bin/compute_sloc
+bin/compute_all
 bin/compute_sloc_lang
 bin/count_extensions
 bin/count_unknown_ext
@@ -20,11 +19,14 @@ bin/lexcount1
 bin/lisp_count
 bin/make_filelists
 bin/makefile_count
+bin/modula3_count
 bin/objc_count
 bin/pascal_count
 bin/perl_count
+bin/php_count
 bin/print_sum
 bin/python_count
+bin/ruby_count
 bin/sed_count
 bin/sh_count
 bin/show_filecount

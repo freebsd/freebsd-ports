@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	1.9
+PORTVERSION=	2.09
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
@@ -19,7 +19,7 @@ INSTALL_TARGET=	install_programs install_man
 MAN1=		sloccount.1
 
 post-install:
-.for file in lexcount1 c_count java_count
+.for file in lexcount1 c_count java_count php_count
 	@strip ${PREFIX}/bin/${file}
 .endfor
 .if !defined(NOPORTDOCS)
