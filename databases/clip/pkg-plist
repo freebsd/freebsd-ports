@@ -438,3 +438,4 @@ clip/term/pcansi
 @dirrm clip/locale.pot/debug
 @dirrm clip/locale.pot
 @dirrm clip/term
+@dirrm clip
