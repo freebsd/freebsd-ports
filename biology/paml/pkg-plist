@@ -4,7 +4,6 @@ bin/basemlg
 bin/chi2
 bin/codeml
 bin/evolver
-bin/mcmctree
 bin/pamp
 bin/yn00
 %%PORTDOCS%%%%DOCSDIR%%/pamlDOC.pdf

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paml
-PORTVERSION=	3.13
+PORTVERSION=	3.14
 CATEGORIES=	biology
 MASTER_SITES=	ftp://abacus.gene.ucl.ac.uk/pub/paml/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-BINARIES=	baseml basemlg chi2 codeml evolver mcmctree pamp yn00
+BINARIES=	baseml basemlg chi2 codeml evolver pamp yn00
 
 do-install:
 .for f in ${BINARIES}
