@@ -1,9 +1,12 @@
 %%RUBY_SITEARCHLIBDIR%%/tmail/cmails.so
+%%RUBY_SITELIBDIR%%/tmail.rb
 @dirrm %%RUBY_SITEARCHLIBDIR%%/tmail
+%%RUBY_SITELIBDIR%%/tmail/_loadlib.rb
 %%RUBY_SITELIBDIR%%/tmail/encode.rb
 %%RUBY_SITELIBDIR%%/tmail/field.rb
 %%RUBY_SITELIBDIR%%/tmail/info.rb
 %%RUBY_SITELIBDIR%%/tmail/loader.rb
+%%RUBY_SITELIBDIR%%/tmail/mail.rb
 %%RUBY_SITELIBDIR%%/tmail/parsemail.rb
 %%RUBY_SITELIBDIR%%/tmail/port.rb
 %%RUBY_SITELIBDIR%%/tmail/rmails.rb
