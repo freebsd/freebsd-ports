@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binder
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
 DISTNAME=	Binder-${PORTVERSION}

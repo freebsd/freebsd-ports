@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fsv
-PORTVERSION= 	0.9
+PORTVERSION=	0.9
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	endeavour
-PORTVERSION= 	1.12
+PORTVERSION=	1.12
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
 DISTNAME=	${PORTNAME}${PORTVERSION}

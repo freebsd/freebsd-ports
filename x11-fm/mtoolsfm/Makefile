@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtoolsfm
-PORTVERSION= 	1.7
+PORTVERSION=	1.7
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
 DISTNAME=	MToolsFM-${PORTVERSION}-2

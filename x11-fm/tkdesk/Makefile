@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkdesk
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	x11-fm tk82
 MASTER_SITES=	http://sd.znet.com/~jchris/tkdesk/ \
 		${MASTER_SITE_SUNSITE}

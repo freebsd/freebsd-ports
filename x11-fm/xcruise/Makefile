@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xcruise
-PORTVERSION= 	0.24
+PORTVERSION=	0.24
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://tanaka-www.cs.titech.ac.jp/%7Eeuske/prog/
 

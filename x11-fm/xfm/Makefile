@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfm
-PORTVERSION= 	1.4.2.4
+PORTVERSION=	1.4.2.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
 MASTER_SITE_SUBDIR=	applications
