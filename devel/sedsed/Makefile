@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sedsed
-PORTVERSION=	0.8
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://sedsed.sourceforge.net/
 EXTRACT_SUFX=	# empty
