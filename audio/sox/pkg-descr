@@ -1,17 +1,7 @@
-sox translates sound samples between different file formats,
-and performs various sound effects.
+SoX (also known as Sound eXchange) translates sound samples between
+different file formats, and optionally applies various sound effects.
+SoX is intended as the Swiss Army knife of sound processing tools.
+It doesn't do anything very well, but sooner or later it comes in
+very handy.
 
-This release understands "raw" files in various binary formats,
-raw textual data,
-Sound Blaster .VOC files, IRCAM SoundFile files, SUN Sparcstation 
-.au files, mutant DEC .au files, Apple/SGI AIFF files, 
-CD-R (music CD format), Macintosh HCOM files, Sounder files, 
-NeXT .snd files, SUN ADPCM (compressed) .au files,
-and Soundtool (DOS) files.
-
-The sound effects include changing the sample rate, adding echo 
-delay lines, applying low-, high, and band-pass filtering, 
-reversing a sample in order to search for Satanic messages,
-and the infamous Fender Vibro effect.
-
-WWW: http://home.sprynet.com/~cbagwell/sox.html
+WWW: http://sox.sourceforge.net/
