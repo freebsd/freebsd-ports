@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.25 1996/04/12 08:20:51 asami Exp $
+# $Id: Makefile,v 1.26 1996/07/06 09:28:34 gpalmer Exp $
 #
 
     SUBDIR += gmod
@@ -8,6 +8,7 @@
     SUBDIR += nas
     SUBDIR += playmidi
     SUBDIR += radio
+    SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
