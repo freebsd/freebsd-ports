@@ -21,8 +21,7 @@ LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-NO_CDROM=	Not all modules may be freely redistributed
-NO_PACKAGE=	Not all modules may be freely redistributed
+RESTRICTED=	Not all modules may be freely redistributed
 
 # Modules may change, but it has no effect on their functionality. I think
 # it's best not to use checksum. Besides, there is no version number on modules.
