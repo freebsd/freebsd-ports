@@ -59,7 +59,7 @@
   # ServerRoot: The directory the server's config, error, and log files
   # are kept in
   
-! ServerRoot /usr/local/www/server
+! ServerRoot /usr/local/etc/apache
   
   # BindAddress: You can support virtual hosts with this option. This option
   # is used to tell the server which IP address to listen to. It can either
