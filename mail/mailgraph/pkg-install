@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PW="/usr/sbin/pw"
+
+${PW} usermod www -d ${PREFIX}/www -s /bin/sh
+

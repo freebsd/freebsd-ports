@@ -6,22 +6,30 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
-RUN_DEPENDS=	${SITE_PERL}/RRDs.pm:${PORTSDIR}/net/rrdtool	\
+RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 NO_BUILD=	yes
 
+STARTUP_SCRIPT=	mailgraph.sh.sample
+
+post-patch:
+	@${SED} -e "s,%%PREFIX%%,${PREFIX}," ${FILESDIR}/mailgraph.sh > ${WRKSRC}/${STARTUP_SCRIPT}
+
 do-install:
 .for FILE in mailgraph.cgi mailgraph.pl
 	@${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/www/cgi-bin/
 .endfor
+	@${INSTALL_SCRIPT} ${WRKSRC}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
+	@${SETENV} ${SCRIPTS_ENV} WWWUSER=${WWWUSER} ${SH} ${PKGINSTALL}
+	@${CHOWN} www:www ${PREFIX}/www/cgi-bin/
 
 .include <bsd.port.mk>
