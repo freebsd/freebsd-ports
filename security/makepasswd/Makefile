@@ -7,7 +7,7 @@
 
 PORTNAME=	makepasswd
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/m/makepasswd
@@ -34,7 +34,8 @@ DOCS=		CHANGES README
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
+post-patch:
+	${REINPLACE_CMD} -e "s/use	bytes;/#use	bytes;/" ${WRKSRC}/makepasswd
 	${REINPLACE_CMD} -e "s/\/dev\/random/\/dev\/urandom/" ${WRKSRC}/makepasswd
 	${REINPLACE_CMD} -e "s/\/dev\/random/\/dev\/urandom/" ${WRKSRC}/makepasswd.1
 
