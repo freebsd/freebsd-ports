@@ -133,8 +133,8 @@
 ! 
 ! install: $(LIBRARY)
 ! 	@echo Installing $(LIBRARY) in $(DEST)
-! 	$(INSTALL) $(LIBRARY) $(DEST)
-! 	$(INSTALL) mpeg.h ${PREFIX}/include
+! 	$(INSTALL) -c $(LIBRARY) $(DEST)
+! 	$(INSTALL) -c mpeg.h ${PREFIX}/include
   
   # easympeg is a short 'n simple MPEG player that requires the SGI Graphics
   # LIbrary; this won't work on non-SGI platforms
