@@ -26,6 +26,8 @@ bin/fwbuilder
 %%DOCSDIR%%/ReleaseNotes_2.0.3.txt
 %%DOCSDIR%%/ReleaseNotes_2.0.4.html
 %%DOCSDIR%%/ReleaseNotes_2.0.4.txt
+%%DOCSDIR%%/ReleaseNotes_2.0.5.html
+%%DOCSDIR%%/ReleaseNotes_2.0.5.txt
 %%DOCSDIR%%/PatchAcceptancePolicy.txt
 %%DATADIR%%/objects_init.xml
 %%DATADIR%%/templates.xml
