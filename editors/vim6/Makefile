@@ -7,21 +7,21 @@
 # $FreeBSD$
 #
 
-PKGVER=		5.5.67
-DISTNAME=	vim-5.5
+PKGVER=		5.6a.12
+DISTNAME=	vim-5.6a
 PKGNAME?=	vim-${PKGVER}
 CATEGORIES=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.vim.org/pub/misc/vim/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
+		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
+		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unreleased/unix/  \
+		ftp://ftp.is.co.za/applications/editors/unreleased/vim/  \
+		ftp://ftp.progsoc.uts.edu.au/pub/unreleased/vim/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 04 05 06 08 09 11 12 13 14 15 17 18 19 20 21 22 23 25 26 27 29 30 32 33 34 35 36 37 38 39 40 41 42 43 44 45 47 48 49 50 51 52 53 54 55 56 57 58 59 61 63 64 65 66 67
-PATCHFILES+=	5.5.0${p}
+.for p in 01 02 03 05 06 07 08 09 10 12
+PATCHFILES+=	5.6a.0${p}
 .endfor
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -29,8 +29,10 @@ MAINTAINER=     obrien@FreeBSD.org
 Y2K=		http://www.vim.org/y2k.html
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
+		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_PERL5=	yes
 .endif
 
@@ -59,13 +61,13 @@ MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena" ${MAKE_FLAGS}
 .endif
 
 .if defined(PACKAGE_BUILDING)
-MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-tclinterp --enable-cscope" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope" ${MAKE_FLAGS}
 .endif
 
 .else	# LITE
 PLIST=		${WRKDIR}/PLIST.nogui
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=no --without-x" ${MAKE_FLAGS}
-MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-tclinterp" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp" ${MAKE_FLAGS}
 .endif	# LITE
 
 pre-build:
