@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://gliv.tuxfamily.org/
+MASTER_SITES=	http://guichaz.free.fr/gliv/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
@@ -20,13 +19,22 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 MAN1=		gliv.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/gliv.desktop \
+		${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/gliv.png \
+		${PREFIX}/share/gnome/pixmaps
 
 .include <bsd.port.mk>
