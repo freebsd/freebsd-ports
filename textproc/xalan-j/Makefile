@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
@@ -19,6 +19,7 @@ USE_JAVA=	1.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 ANT?=		${LOCALBASE}/bin/ant
+ANT_OPTS=	-Xmx16M
 .if defined(NOPORTDOCS)
 ANT_TARGET=	jar
 .else
