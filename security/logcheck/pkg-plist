@@ -13,3 +13,4 @@ etc/logcheck.violations.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.how.to.interpret
 %%PORTDOCS%%%%DOCSDIR%%/README.keywords
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
