@@ -75,6 +75,7 @@
     SUBDIR += tycoon
     SUBDIR += wdm
     SUBDIR += wmbutton
+    SUBDIR += wmcliphist
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
     SUBDIR += wrapper

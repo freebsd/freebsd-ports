@@ -1,0 +1,3 @@
+bin/wmcliphist
+%%PORTDOCS%%share/doc/wmcliphist/README
+%%PORTDOCS%%@dirrm share/doc/wmcliphist
