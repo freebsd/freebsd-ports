@@ -1,19 +1,18 @@
---- tkinfo.orig	Thu Mar  6 02:07:29 1997
-+++ tkinfo	Thu Mar  6 11:41:30 1997
+--- tkinfo.orig	Tue Mar 23 00:56:39 2004
++++ tkinfo	Wed Jul  7 21:40:54 2004
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # This is a Tcl/Tk script to be interpreted by wish (Tk4.0 or better): \
 -exec wish "$0" "$@"
-+exec wish8.3 "$0" "$@"
++exec wish8.4 "$0" "$@"
+ 
  
  ##########################################################################
- # Version of TkInfo:
-@@ -443,7 +443,7 @@
- proc tkiInit { } {
-     global tki env auto_path tkiEmbed geometry
- 
--    set defInfoPath [list . \
-+    set defInfoPath [list . /usr/share/info \
-       /usr/info /usr/local/info /usr/local/gnu/info \
+@@ -515,6 +515,7 @@
        /usr/local/emacs/info /usr/local/lib/emacs/info \
        /usr/lib/xemacs/info /usr/local/lib/xemacs/info \
+       /usr/gnu/info \
++      /usr/X11R6/info \
+       ]
+ 
+     set defInfoSuffix [list .info -info ""]
