@@ -23,7 +23,13 @@ MAN1=		cxpm.1 sxpm.1
 .error You have `USE_XPM' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} > 3
+IGNORE=		is included in XFree86 >3.x
+.endif
+
 post-install:
 	@ranlib ${PREFIX}/lib/libXpm.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
