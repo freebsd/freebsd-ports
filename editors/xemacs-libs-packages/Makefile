@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-libs-packages
-PORTVERSION=	1.3
+PORTVERSION=	2.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		Sun-1.13-pkg.tar.gz \
 		edebug-1.13-pkg.tar.gz \
+		eieio-1.01-pkg.tar.gz \
 		sounds-au-1.10-pkg.tar.gz \
 		sounds-wav-1.10-pkg.tar.gz \
 		tooltalk-1.13-pkg.tar.gz
@@ -22,9 +23,10 @@ DIST_SUBDIR=	xemacs
 MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/xemacs-packages
+WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 
 XEMACSDIR=	${PREFIX}/lib/xemacs
+PACKAGES_SUBDIR=	xemacs-packages
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -35,9 +37,15 @@ do-extract:
 
 do-install:
 	${MKDIR} ${XEMACSDIR}
-	${CP} -Rp ${WRKDIR}/xemacs-packages ${XEMACSDIR}
+	${CP} -R ${WRKSRC} ${XEMACSDIR}
 
 post-install:
+	@cd ${WRKDIR} && \
+	find ${PACKAGES_SUBDIR} -type f|sort|${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
+	find ${PACKAGES_SUBDIR}/*/* -type d|sort -r|${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_MSG} "    This is the set of the packages for xemacs with the libs category. You can"
 	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
 	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
