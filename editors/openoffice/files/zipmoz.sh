@@ -1,14 +1,30 @@
 #!/bin/sh -f
 
-RUNTIME_FILES="components/libabsyncsvc.so components/libaddrbook.so components/libmork.so components/libmozldap.so \
-		components/libnecko.so components/libprofile.so components/librdf.so components/libstrres.so \
-		components/libunicharutil.so components/libuconv.so components/libucvcn.so components/libucvibm.so \
+RUNTIME_FILES=" components/libabsyncsvc.so components/libaddrbook.so \
+		components/libmork.so components/libmozldap.so \
+		components/libnecko.so components/libprofile.so \
+		components/librdf.so components/libstrres.so \
+		components/libunicharutil.so components/libuconv.so \
+		components/libucvcn.so components/libucvibm.so \
 		components/libucvja.so components/libucvko.so \
-		components/libucvlatin.so components/libucvtw.so components/libucvtw2.so components/liburiloader.so \
-		components/libvcard.so components/libxpconnect.so components/libpref.so libmozjs.so libmsgbaseutil.so \
-		libldap50.so libnspr4.so libplc4.so libplds4.so libxpcom.so libmozz.so component.reg"
+		components/libucvlatin.so components/libucvtw.so \
+		components/libucvtw2.so components/liburiloader.so \
+		components/libvcard.so components/libxpconnect.so \
+		components/libpref.so components/libchrome.so libmozjs.so \
+		libmsgbaseutil.so libldap50.so libnspr4.so libplc4.so \
+		libplds4.so libxpcom.so libmozz.so component.reg \
+		components/necko_dns.xpt components/xpcom_xpti.xpt \
+		components/xpcom_threads.xpt components/xpcom_io.xpt \
+		components/xpcom_ds.xpt components/xpcom_components.xpt \
+		components/xpcom_base.xpt components/xpti.dat \
+		defaults/pref/all.js defaults/pref/config.js \
+		defaults/pref/editor.js defaults/pref/initpref.js \
+		defaults/pref/inspector.js defaults/pref/mailnews.js \
+		defaults/pref/security-prefs.js defaults/pref/unix.js \
+		defaults/pref/xpinstall.js"
 
-LIB_FILES="lib/libembed_base_s.a lib/libmozreg_s.a lib/libnspr4.so lib/libxpcom.so"
+LIB_FILES="	lib/libembed_base_s.a lib/libmozreg_s.a \
+		lib/libnspr4.so lib/libxpcom.so lib/libprldap50.so"
 
 INC_FILES="include/"
 INC_FILES2="public/"
@@ -49,6 +65,8 @@ echo --- creating zips for $TARGET, using mozilla distribution in $MOZ_DIST
 # Create the directories
 [ ! -d $TARGET_DIR/$TARGET/runtime ] && mkdir -p $TARGET_DIR/$TARGET/runtime
 [ ! -d $TARGET_DIR/$TARGET/runtime/components ] && mkdir -p $TARGET_DIR/$TARGET/runtime/components
+[ ! -d $TARGET_DIR/$TARGET/runtime/defaults ] && mkdir -p $TARGET_DIR/$TARGET/runtime/defaults
+[ ! -d $TARGET_DIR/$TARGET/runtime/defaults/pref ] && mkdir -p $TARGET_DIR/$TARGET/runtime/defaults/pref
 [ ! -d $TARGET_DIR/$TARGET/lib ] && mkdir -p $TARGET_DIR/$TARGET/lib
 [ ! -d $TARGET_DIR/$TARGET/inc ] && mkdir -p $TARGET_DIR/$TARGET/inc
 [ ! -d $TARGET_DIR/$TARGET/inc/nspr ] && mkdir -p $TARGET_DIR/$TARGET/inc/nspr
@@ -65,6 +83,8 @@ for i in $RUNTIME_FILES; do
 	else
 		if [ `echo $i | grep component` ]; then
 			cp $MOZ_DIST/bin/$i $TARGET_DIR/$TARGET/runtime/components/
+		elif [ `echo $i | grep defaults` ]; then
+			cp $MOZ_DIST/bin/$i $TARGET_DIR/$TARGET/runtime/defaults/pref/
 		else
 			cp $MOZ_DIST/bin/$i $TARGET_DIR/$TARGET/runtime/
 		fi

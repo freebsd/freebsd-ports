@@ -7,25 +7,30 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help
+		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
+		http://people.freebsd.org/~mbr/patches/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
-		gpc231.tar.Z:gpc
+		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
 SORT?=	/usr/bin/sort
+FIND?=	/usr/bin/find
 CUT?=	/usr/bin/cut
 AWK?=	/usr/bin/awk
 GREP?=	/usr/bin/grep
 MOUNT?=	/sbin/mount
+ZIP?=	${PREFIX}/bin/zip
+UNZIP?=	${PREFIX}/bin/unzip
+TCSH?=	/bin/tcsh
 
 .include <bsd.port.pre.mk>
 
@@ -354,6 +359,8 @@ extract-mozilla:
 	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
 
 patch-mozilla:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/patch-openoffice-mozilla101-2002-10-14 \
+		${WRKDIR}/mozilla/files/
 	@cd ${WRKDIR}/mozilla && ${MAKE} patch WRKDIRPREFIX=""
 
 build-mozilla:
@@ -387,11 +394,29 @@ install-mozilla:
 	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 .endif
 
+register-mozilla:
+.if exists(${WRKDIR}/mozilla-runtime)
+	@${RM} -rf ${WRKDIR}/mozilla-runtime
+.endif
+	@${MKDIR} ${WRKDIR}/mozilla-runtime
+	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIruntime.zip
+	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIlib.zip
+	@${CP} ${WRKDIR}/mozilla/work/mozilla/dist/bin/regxpcom ${WRKDIR}/mozilla-runtime/
+	@${RM} ${WRKDIR}/mozilla-runtime/components/component.reg
+	@cd ${WRKDIR}/mozilla-runtime && export MOZILLA_FIVE_HOME=. \
+		&& export LD_LIBRARY_PATH=.:./lib && ./regxpcom 
+	@${CP} ${WRKDIR}/mozilla-runtime/components/xpti.dat \
+		${WRKDIR}/mozilla-runtime/components/xptitemp.dat
+	@${RM} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKDIR}/mozilla-runtime/regxpcom
+	@cd ${WRKDIR}/mozilla-runtime && ${FIND} . -type f \
+		| ${ZIP} ${WRKDIR}/FREEBSDGCCIruntime.zip -@
+
 mozilla:
 	@${MAKE} extract-mozilla
 	@${MAKE} patch-mozilla
 	@${MAKE} build-mozilla
 	@${MAKE} install-mozilla
+	@${MAKE} register-mozilla
 
 do-build:
 	@${MAKE} mozilla
@@ -413,16 +438,16 @@ do-build:
 .endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
 .endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANGEXT}'
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANGEXT}'
 .endif
 
 pre-install:
