@@ -5992,6 +5992,7 @@ ptkei		ports/games/ptkei
 ptl		ports/devel/ptl
 ptoc		ports/lang/ptoc
 ptypes		ports/devel/ptypes
+publib		ports/devel/publib
 publicfile	ports/www/publicfile
 puf		ports/ftp/puf
 pup		ports/print/pup
