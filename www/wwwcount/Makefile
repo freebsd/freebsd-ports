@@ -1,19 +1,19 @@
 # New ports collection makefile for:    wwwcount
-# Version required:     2.3
+# Version required:     2.4
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/13 12:41:34 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:42:25 asami Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
 # http://www.digitmania.holowww.com/
 
-DISTNAME=       wwwcount2.3
-PKGNAME=        wwwcount-2.3
+DISTNAME=       wwwcount2.4
+PKGNAME=        wwwcount-2.4
 CATEGORIES=     www
-MASTER_SITES=   http://www.fccc.edu/users/muquit/src/wwwcount2.3/
+MASTER_SITES=   http://www.fccc.edu/users/muquit/src/wwwcount2.4/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
