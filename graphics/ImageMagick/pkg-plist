@@ -15,15 +15,26 @@ include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
 include/magick/magick.h
+include/magick/memory.h
 include/magick/monitor.h
 include/magick/plug-ins.h
 include/magick/utility.h
 include/magick/widget.h
-include/magick/memory.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.4.9
+lib/perl5/%%PERL_VERSION%%/i386-freebsd/perllocal.pod
+lib/perl5/%%PERL_VERSION%%/man/man3/Image::Magick.3
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Image/Magick.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/autosplit.ix
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Image
 @dirrm include/magick
