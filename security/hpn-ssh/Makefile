@@ -5,33 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openssh
+PORTNAME=	hpn-ssh
 PORTVERSION=	3.9.0.1
-.if defined(OPENSSH_SNAPSHOT)
-PORTREVISION!=	date -v-1d +%Y%m%d
-.endif
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/
-PKGNAMESUFFIX?=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
-MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR2}
-DISTNAME=	${DISTNAME2}
+PKGNAMESUFFIX?=	${GSSAPI_SUFFIX}${BASE_SUFFIX}
+DISTNAME=	openssh-${OPENSSHVERSION}
+.if defined(WITH_NONE_CIPHER)
+PATCHFILES=	openssh-${OPENSSHVERSION}-hpn-none.diff
+.else
+PATCHFILES=	openssh-${OPENSSHVERSION}-hpn.diff
+.endif
+PATCH_SITES=	http://www.psc.edu/networking/projects/hpn-ssh/
+PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The portable version of OpenBSD's OpenSSH
+MAINTAINER=	brooks@FreeBSD.org
+COMMENT=	High Performance Enabled SSH/SCP
 
 OPENSSHVERSION=	3.9p1
-.if defined(OPENSSH_SNAPSHOT)
-MASTER_SITE_SUBDIR2=	snapshot/
-DISTNAME2=	${PORTNAME}-SNAP-${PORTREVISION}
-NO_CHECKSUM=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-.else
-MASTER_SITE_SUBDIR2=	
-DISTNAME2=	${PORTNAME}-${OPENSSHVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${OPENSSHVERSION}
-.endif
+WRKSRC=		${WRKDIR}/openssh-${OPENSSHVERSION}
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
@@ -50,7 +44,6 @@ PRECIOUS=	ssh_config sshd_config \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
 		ssh_host_dsa_key ssh_host_dsa_key.pub
 ETCOLD=		${PREFIX}/etc
-PORTABLE_SUFFIX=	-portable
 
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
@@ -64,13 +57,12 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
+CONFLICTS+=	openssh-*
+
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
-PORTABLE_SUFFIX=
 GSSAPI_SUFFIX=	-gssapi
-CONFLICTS+=	openssh-portable-*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
 .else
-CONFLICTS+=	openssh-gssapi-*
 .if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
 CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch

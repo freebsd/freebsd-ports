@@ -129,6 +129,7 @@
     SUBDIR += hmap
     SUBDIR += hostsentry
     SUBDIR += hping
+    SUBDIR += hpn-ssh
     SUBDIR += hunch
     SUBDIR += hydra
     SUBDIR += ident2

@@ -1,2 +1,6 @@
 MD5 (openssh-3.9p1.tar.gz) = 8e1774d0b52aff08f817f3987442a16e
 SIZE (openssh-3.9p1.tar.gz) = 854027
+MD5 (openssh-3.9p1-hpn.diff) = e6a3ea869739e1725d2580a4ef9889c2
+SIZE (openssh-3.9p1-hpn.diff) = 8387
+MD5 (openssh-3.9p1-hpn-none.diff) = f738de8dea04b87cea7811e996f9eb2b
+SIZE (openssh-3.9p1-hpn-none.diff) = 18971
