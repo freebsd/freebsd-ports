@@ -7,7 +7,7 @@
 
 PORTNAME=	cg
 PORTVERSION=	0.4
-CATEGORIES=	net
+CATEGORIES=	news
 MASTER_SITES=	http://www.nih.at/cg/
 
 MAINTAINER=	bkhl@elektrubadur.se
