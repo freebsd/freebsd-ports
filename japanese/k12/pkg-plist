@@ -1,0 +1,9 @@
+lib/X11/fonts/misc/knmhn12x.pcf.Z
+lib/X11/fonts/misc/knmzn12x.pcf.Z
+lib/X11/k12/gijutsu-siryou.doc
+lib/X11/k12/kaname.doc
+lib/X11/k12/readme.kaname_bdf
+lib/X11/k12/readme.knm
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec echo "updating fonts.alias" ; cd %D/lib/X11/fonts/misc; cp fonts.alias fonts.alias.orig; grep -v '\-mnkaname\-fixed\-medium\-r\-normal' fonts.alias.orig > fonts.alias; rm fonts.alias.orig

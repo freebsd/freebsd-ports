@@ -1,0 +1,19 @@
+*** readme.kaname_bdf.orig	Sat Jul  6 12:02:19 1996
+--- readme.kaname_bdf	Sat Jul  6 12:02:25 1996
+***************
+*** 2,8 ****
+  
+  readme.kaname_bdf このファイル
+  knmhn12x.bdf      X11用の6x12ドットのJISX0201.1976フォント
+! knmhz12x.bdf      X11用の12x12ドットのJISX0208.1983フォント
+  doc.orig/*        元のアーカイブに含まれていたドキュメント
+  この12ドット漢字フォントは、満開製作所(※)の海老原勇士氏に
+  よって作られた X68000 SX-Windows 用のフリーのフォントを
+--- 2,8 ----
+  
+  readme.kaname_bdf このファイル
+  knmhn12x.bdf      X11用の6x12ドットのJISX0201.1976フォント
+! knmzn12x.bdf      X11用の12x12ドットのJISX0208.1983フォント
+  doc.orig/*        元のアーカイブに含まれていたドキュメント
+  この12ドット漢字フォントは、満開製作所(※)の海老原勇士氏に
+  よって作られた X68000 SX-Windows 用のフリーのフォントを
