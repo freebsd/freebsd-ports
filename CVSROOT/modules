@@ -4630,7 +4630,6 @@ nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 newfile		ports/devel/newfile
-newkind		ports/games/newkind
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
 newpg		ports/security/newpg
