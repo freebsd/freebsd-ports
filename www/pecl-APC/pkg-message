@@ -1,0 +1,13 @@
+************************************************************************
+Do not forget to configure your /usr/local/etc/php.ini file:
+add the line:
+
+extension="apc.so"
+
+in the section "Dynamic Extensions".
+
+Then restart your web server and consult the output of phpinfo().
+If there is an informational section for APC, the installation was
+successful.
+************************************************************************
+

@@ -404,6 +404,7 @@
     SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
     SUBDIR += peacock
+    SUBDIR += pear-APC
     SUBDIR += pgdriver
     SUBDIR += photo_gallery
     SUBDIR += php-dyn
