@@ -1,20 +1,22 @@
-R is a language and environment for statistical computing and graphics.
-It is a GNU project which is similar to the S language and environment
-which was developed at Bell Laboratories (formerly AT&T, now Lucent
-Technologies) by John Chambers and colleagues. R can be considered as a
-different implementation of S. There are some important differences,
-but much code written for S runs unaltered under R. 
+From <http://www.R-project.org/about.html>:
 
-R provides a wide variety of statistical (linear and nonlinear modelling,
-classical statistical tests, time-series analysis, classification,
-clustering, ...) and graphical techniques, and is highly extensible.
-The S language is often the vehicle of choice for research in statistical
-methodology, and R provides an Open Source route to participation in that
-activity. 
+    R is a language and environment for statistical computing and graphics.
+    It is a GNU project which is similar to the S language and environment
+    which was developed at Bell Laboratories (formerly AT&T, now Lucent
+    Technologies) by John Chambers and colleagues. R can be considered as a
+    different implementation of S. There are some important differences,
+    but much code written for S runs unaltered under R. 
 
-One of R's strengths is the ease with which well-designed publication-quality
-plots can be produced, including mathematical symbols and formulae where
-needed. Great care has been taken over the defaults for the minor design
-choices in graphics, but the user retains full control. 
+    R provides a wide variety of statistical (linear and nonlinear modelling,
+    classical statistical tests, time-series analysis, classification,
+    clustering, ...) and graphical techniques, and is highly extensible.
+    The S language is often the vehicle of choice for research in statistical
+    methodology, and R provides an Open Source route to participation in that
+    activity. 
+
+    One of R's strengths is the ease with which well-designed
+    publication-quality plots can be produced, including mathematical symbols
+    and formulae where needed. Great care has been taken over the defaults for
+    the minor design choices in graphics, but the user retains full control. 
 
 WWW: http://www.R-project.org/
