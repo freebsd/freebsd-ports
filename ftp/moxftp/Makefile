@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.4 1995/04/15 05:41:39 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/17 07:59:05 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	athena
 
 .include <bsd.port.mk>
 
-install: build
-	@mkdir -p ${PREFIX}/man/man1
-	@install -c -m 0444 ${WRKSRC}/xftp.man ${PREFIX}/man/man1/xftp.1
-	@gzip -9n ${PREFIX}/man/man1/xftp.1
+do-install:
+	mkdir -p ${PREFIX}/man/man1
+	install -c -m 0444 ${WRKSRC}/xftp.man ${PREFIX}/man/man1/xftp.1
+	gzip -9n ${PREFIX}/man/man1/xftp.1

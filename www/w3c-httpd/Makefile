@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.3 1995/04/15 05:41:21 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/17 07:56:09 asami Exp $
 #
 
 DISTNAME=	WWW
@@ -14,7 +14,7 @@ CATEGORIES+=	networking
 
 WWW_ROOT=	${PREFIX}/www
 
-install: build
+do-install:
 	-mkdir ${WWW_ROOT} \
 	       ${WWW_ROOT}/data ${WWW_ROOT}/cgi-bin ${WWW_ROOT}/htbin
 	cd ${WRKSRC}/server_root; pax -rw * ${WWW_ROOT}
@@ -28,5 +28,6 @@ install: build
 		${WRKSRC}/Daemon/unix/cgiparse ${WWW_ROOT}/cgi-bin
 	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${WRKSRC}/Daemon/unix/cgiutils ${WWW_ROOT}/cgi-bin
+	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
