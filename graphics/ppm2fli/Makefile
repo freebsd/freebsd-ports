@@ -3,12 +3,12 @@
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/02/18 04:21:05 steve Exp $
 #
 
 DISTNAME=       ppm2fli_b1.92
 PKGNAME=	ppm2fli-b1
-CATEGORIES=	graphics misc
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://crusty.er.usgs.gov/pub/animation/fli/
 EXTRACT_SUFX=	.tar.Z
 
