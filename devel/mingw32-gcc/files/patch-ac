@@ -1,0 +1,845 @@
+*** libf2c/g2c.hin.orig	Fri Jan 25 16:35:46 2002
+--- libf2c/g2c.hin	Fri Jan 25 16:36:32 2002
+***************
+*** 18,37 ****
+  
+  /* F2C_INTEGER will normally be `int' but would be `long' on 16-bit systems */
+  /* we assume short, float are OK */
+! typedef @F2C_INTEGER@ /* long int */ integer;
+! typedef unsigned @F2C_INTEGER@ /* long */ uinteger;
+  typedef char *address;
+  typedef short int shortint;
+  typedef float real;
+  typedef double doublereal;
+  typedef struct { real r, i; } complex;
+  typedef struct { doublereal r, i; } doublecomplex;
+! typedef @F2C_INTEGER@ /* long int */ logical;
+  typedef short int shortlogical;
+  typedef char logical1;
+  typedef char integer1;
+! typedef @F2C_LONGINT@ /* long long */ longint;		/* system-dependent */
+! typedef unsigned @F2C_LONGINT@ /* long long */ ulongint;	/* system-dependent */
+  #define qbit_clear(a,b)	((a) & ~((ulongint)1 << (b)))
+  #define qbit_set(a,b)	((a) |  ((ulongint)1 << (b)))
+  
+--- 18,37 ----
+  
+  /* F2C_INTEGER will normally be `int' but would be `long' on 16-bit systems */
+  /* we assume short, float are OK */
+! typedef int /* long int */ integer;
+! typedef unsigned int /* long */ uinteger;
+  typedef char *address;
+  typedef short int shortint;
+  typedef float real;
+  typedef double doublereal;
+  typedef struct { real r, i; } complex;
+  typedef struct { doublereal r, i; } doublecomplex;
+! typedef int /* long int */ logical;
+  typedef short int shortlogical;
+  typedef char logical1;
+  typedef char integer1;
+! typedef long long int /* long long */ longint;		/* system-dependent */
+! typedef unsigned long long int /* long long */ ulongint;	/* system-dependent */
+  #define qbit_clear(a,b)	((a) & ~((ulongint)1 << (b)))
+  #define qbit_set(a,b)	((a) |  ((ulongint)1 << (b)))
+  
+***************
+*** 52,60 ****
+  typedef short ftnlen;
+  typedef short ftnint;
+  #else
+! typedef @F2C_INTEGER@ /* long int */ flag;
+! typedef @F2C_INTEGER@ /* long int */ ftnlen;
+! typedef @F2C_INTEGER@ /* long int */ ftnint;
+  #endif
+  
+  /*external read, write*/
+--- 52,60 ----
+  typedef short ftnlen;
+  typedef short ftnint;
+  #else
+! typedef int /* long int */ flag;
+! typedef int /* long int */ ftnlen;
+! typedef int /* long int */ ftnint;
+  #endif
+  
+  /*external read, write*/
+*** libf2c/configure.in.orig	Fri Jan 25 16:35:53 2002
+--- libf2c/configure.in	Fri Jan 25 16:36:55 2002
+***************
+*** 99,196 ****
+  extra_includes="-I$topsrcdir/gcc/f -I$topsrcdir/gcc -I$topsrcdir/include -I$topsrcdir/gcc/config -I$r/gcc"
+  ac_cpp="$late_ac_cpp -DIN_GCC -DHAVE_CONFIG_H $extra_includes"
+  
+- # The AC_EGREP_CPPs below have been known to fail when the header
+- # path is wrong after things have been moved about; the cpp error status
+- # counts for nothing.  First check that there aren't any errors from
+- # the headers.
+- CFLAGS="$CFLAGS -DHAVE_CONFIG_H -DIN_GCC $extra_includes"
+- AC_TRY_COMPILE([#include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"],,,
+- AC_MSG_ERROR([Can't run check for integer sizes -- see config.log]))
+- CFLAGS=$late_cflags
+- 
+- AC_CACHE_VAL(g77_cv_sys_f2cinteger,
+- echo "configure:__oline__: using $ac_cpp" >&AC_FD_CC
+- AC_EGREP_CPP(F2C_INTEGER=long int,
+- [#include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cINTEGER == FFECOM_f2ccodeLONG
+- F2C_INTEGER=long int
+- #elif FFECOM_f2cINTEGER == FFECOM_f2ccodeINT
+- F2C_INTEGER=int
+- #else
+- #  error "Cannot find a suitable type for F2C_INTEGER"
+- #endif
+- ],
+-  g77_cv_sys_f2cinteger="long int",)
+- if test "$g77_cv_sys_f2cinteger" = ""; then
+- echo "configure:__oline__: using $ac_cpp" >&AC_FD_CC
+-   AC_EGREP_CPP(F2C_INTEGER=int,
+- [#include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cINTEGER == FFECOM_f2ccodeLONG
+- F2C_INTEGER=long int
+- #elif FFECOM_f2cINTEGER == FFECOM_f2ccodeINT
+- F2C_INTEGER=int
+- #else
+- #  error "Cannot find a suitable type for F2C_INTEGER"
+- #endif
+- ],
+-    g77_cv_sys_f2cinteger=int,)
+- fi
+- if test "$g77_cv_sys_f2cinteger" = ""; then
+-   AC_MSG_RESULT("")
+-   AC_MSG_ERROR([Can't determine type for f2c integer; config.log may help.])
+- fi
+- )
+- AC_MSG_RESULT($g77_cv_sys_f2cinteger)
+- F2C_INTEGER=$g77_cv_sys_f2cinteger
+- AC_SUBST(F2C_INTEGER)
+- 
+- AC_MSG_CHECKING(f2c long int type)
+- AC_CACHE_VAL(g77_cv_sys_f2clongint,
+- echo "configure:__oline__: using $ac_cpp" >&AC_FD_CC
+- AC_EGREP_CPP(F2C_LONGINT=long int,
+- [#include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cLONGINT == FFECOM_f2ccodeLONG
+- F2C_LONGINT=long int
+- #elif FFECOM_f2cLONGINT == FFECOM_f2ccodeLONGLONG
+- F2C_LONGINT=long long int
+- #else
+- #  error "Cannot find a suitable type for F2C_LONGINT"
+- #endif
+- ],
+-  g77_cv_sys_f2clongint="long int",)
+- 
+- if test "$g77_cv_sys_f2clongint" = ""; then
+- echo "configure:__oline__: using $ac_cpp" >&AC_FD_CC
+-   AC_EGREP_CPP(F2C_LONGINT=long long int,
+- [#include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cLONGINT == FFECOM_f2ccodeLONG
+- F2C_LONGINT=long int
+- #elif FFECOM_f2cLONGINT == FFECOM_f2ccodeLONGLONG
+- F2C_LONGINT=long long int
+- #else
+- #  error "Cannot find a suitable type for F2C_LONGINT"
+- #endif
+- ],
+-    g77_cv_sys_f2clongint="long long int",)
+- fi
+- if test "$g77_cv_sys_f2clongint" = ""; then
+-   AC_MSG_RESULT("")
+-   AC_MSG_ERROR([Can't determine type for f2c long int; config.log may help.])
+- fi
+- )
+- AC_MSG_RESULT($g77_cv_sys_f2clongint)
+- F2C_LONGINT=$g77_cv_sys_f2clongint
+- AC_SUBST(F2C_LONGINT)
+  ac_cpp=$late_ac_cpp
+  
+  # avoid confusion in case the `makefile's from the f2c distribution have
+--- 99,104 ----
+*** libf2c/configure.orig	Fri Jan 25 16:35:57 2002
+--- libf2c/configure	Fri Jan 25 16:37:03 2002
+***************
+*** 28,33 ****
+--- 28,34 ----
+  program_transform_name=s,x,x,
+  silent=
+  site=
++ sitefile=
+  srcdir=
+  target=NONE
+  verbose=
+***************
+*** 142,147 ****
+--- 143,149 ----
+    --help                  print this message
+    --no-create             do not create output files
+    --quiet, --silent       do not print \`checking...' messages
++   --site-file=FILE        use FILE as the site file
+    --version               print the version of autoconf that created configure
+  Directory and file names:
+    --prefix=PREFIX         install architecture-independent files in PREFIX
+***************
+*** 312,317 ****
+--- 314,324 ----
+    -site=* | --site=* | --sit=*)
+      site="$ac_optarg" ;;
+  
++   -site-file | --site-file | --site-fil | --site-fi | --site-f)
++     ac_prev=sitefile ;;
++   -site-file=* | --site-file=* | --site-fil=* | --site-fi=* | --site-f=*)
++     sitefile="$ac_optarg" ;;
++ 
+    -srcdir | --srcdir | --srcdi | --srcd | --src | --sr)
+      ac_prev=srcdir ;;
+    -srcdir=* | --srcdir=* | --srcdi=* | --srcd=* | --src=* | --sr=*)
+***************
+*** 477,488 ****
+  srcdir=`echo "${srcdir}" | sed 's%\([^/]\)/*$%\1%'`
+  
+  # Prefer explicitly selected file to automatically selected ones.
+! if test -z "$CONFIG_SITE"; then
+!   if test "x$prefix" != xNONE; then
+!     CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
+!   else
+!     CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
+    fi
+  fi
+  for ac_site_file in $CONFIG_SITE; do
+    if test -r "$ac_site_file"; then
+--- 484,499 ----
+  srcdir=`echo "${srcdir}" | sed 's%\([^/]\)/*$%\1%'`
+  
+  # Prefer explicitly selected file to automatically selected ones.
+! if test -z "$sitefile"; then
+!   if test -z "$CONFIG_SITE"; then
+!     if test "x$prefix" != xNONE; then
+!       CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
+!     else
+!       CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
+!     fi
+    fi
++ else
++   CONFIG_SITE="$sitefile"
+  fi
+  for ac_site_file in $CONFIG_SITE; do
+    if test -r "$ac_site_file"; then
+***************
+*** 558,564 ****
+  compiler_name=f771
+  rm -f skip-this-dir
+  echo $ac_n "checking if compiler $compiler_name has been built""... $ac_c" 1>&6
+! echo "configure:562: checking if compiler $compiler_name has been built" >&5
+  if eval "test \"`echo '$''{'g77_cv_compiler_exists'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 569,575 ----
+  compiler_name=f771
+  rm -f skip-this-dir
+  echo $ac_n "checking if compiler $compiler_name has been built""... $ac_c" 1>&6
+! echo "configure:573: checking if compiler $compiler_name has been built" >&5
+  if eval "test \"`echo '$''{'g77_cv_compiler_exists'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 589,595 ****
+  # Extract the first word of "gcc", so it can be a program name with args.
+  set dummy gcc; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:593: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 600,606 ----
+  # Extract the first word of "gcc", so it can be a program name with args.
+  set dummy gcc; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:604: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 619,625 ****
+    # Extract the first word of "cc", so it can be a program name with args.
+  set dummy cc; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:623: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 630,636 ----
+    # Extract the first word of "cc", so it can be a program name with args.
+  set dummy cc; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:634: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 670,676 ****
+        # Extract the first word of "cl", so it can be a program name with args.
+  set dummy cl; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:674: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 681,687 ----
+        # Extract the first word of "cl", so it can be a program name with args.
+  set dummy cl; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:685: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 702,708 ****
+  fi
+  
+  echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works""... $ac_c" 1>&6
+! echo "configure:706: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works" >&5
+  
+  ac_ext=c
+  # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
+--- 713,719 ----
+  fi
+  
+  echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works""... $ac_c" 1>&6
+! echo "configure:717: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works" >&5
+  
+  ac_ext=c
+  # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
+***************
+*** 713,724 ****
+  
+  cat > conftest.$ac_ext << EOF
+  
+! #line 717 "configure"
+  #include "confdefs.h"
+  
+  main(){return(0);}
+  EOF
+! if { (eval echo configure:722: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+    ac_cv_prog_cc_works=yes
+    # If we can't run a trivial program, we are probably using a cross compiler.
+    if (./conftest; exit) 2>/dev/null; then
+--- 724,735 ----
+  
+  cat > conftest.$ac_ext << EOF
+  
+! #line 728 "configure"
+  #include "confdefs.h"
+  
+  main(){return(0);}
+  EOF
+! if { (eval echo configure:733: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+    ac_cv_prog_cc_works=yes
+    # If we can't run a trivial program, we are probably using a cross compiler.
+    if (./conftest; exit) 2>/dev/null; then
+***************
+*** 744,755 ****
+    { echo "configure: error: installation or configuration problem: C compiler cannot create executables." 1>&2; exit 1; }
+  fi
+  echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler""... $ac_c" 1>&6
+! echo "configure:748: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler" >&5
+  echo "$ac_t""$ac_cv_prog_cc_cross" 1>&6
+  cross_compiling=$ac_cv_prog_cc_cross
+  
+  echo $ac_n "checking whether we are using GNU C""... $ac_c" 1>&6
+! echo "configure:753: checking whether we are using GNU C" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_gcc'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 755,766 ----
+    { echo "configure: error: installation or configuration problem: C compiler cannot create executables." 1>&2; exit 1; }
+  fi
+  echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler""... $ac_c" 1>&6
+! echo "configure:759: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler" >&5
+  echo "$ac_t""$ac_cv_prog_cc_cross" 1>&6
+  cross_compiling=$ac_cv_prog_cc_cross
+  
+  echo $ac_n "checking whether we are using GNU C""... $ac_c" 1>&6
+! echo "configure:764: checking whether we are using GNU C" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_gcc'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 758,764 ****
+    yes;
+  #endif
+  EOF
+! if { ac_try='${CC-cc} -E conftest.c'; { (eval echo configure:762: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }; } | egrep yes >/dev/null 2>&1; then
+    ac_cv_prog_gcc=yes
+  else
+    ac_cv_prog_gcc=no
+--- 769,775 ----
+    yes;
+  #endif
+  EOF
+! if { ac_try='${CC-cc} -E conftest.c'; { (eval echo configure:773: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }; } | egrep yes >/dev/null 2>&1; then
+    ac_cv_prog_gcc=yes
+  else
+    ac_cv_prog_gcc=no
+***************
+*** 777,783 ****
+  ac_save_CFLAGS="$CFLAGS"
+  CFLAGS=
+  echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+! echo "configure:781: checking whether ${CC-cc} accepts -g" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 788,794 ----
+  ac_save_CFLAGS="$CFLAGS"
+  CFLAGS=
+  echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+! echo "configure:792: checking whether ${CC-cc} accepts -g" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 817,823 ****
+    # Extract the first word of "ranlib", so it can be a program name with args.
+  set dummy ranlib; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:821: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_RANLIB'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+--- 828,834 ----
+    # Extract the first word of "ranlib", so it can be a program name with args.
+  set dummy ranlib; ac_word=$2
+  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+! echo "configure:832: checking for $ac_word" >&5
+  if eval "test \"`echo '$''{'ac_cv_prog_RANLIB'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+***************
+*** 857,863 ****
+  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+  # ./install, which can be erroneously created by make from ./install.sh.
+  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+! echo "configure:861: checking for a BSD compatible install" >&5
+  if test -z "$INSTALL"; then
+  if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+--- 868,874 ----
+  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+  # ./install, which can be erroneously created by make from ./install.sh.
+  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+! echo "configure:872: checking for a BSD compatible install" >&5
+  if test -z "$INSTALL"; then
+  if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+***************
+*** 910,916 ****
+  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+  
+  echo $ac_n "checking whether ${MAKE-make} sets \${MAKE}""... $ac_c" 1>&6
+! echo "configure:914: checking whether ${MAKE-make} sets \${MAKE}" >&5
+  set dummy ${MAKE-make}; ac_make=`echo "$2" | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_prog_make_${ac_make}_set'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+--- 921,927 ----
+  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+  
+  echo $ac_n "checking whether ${MAKE-make} sets \${MAKE}""... $ac_c" 1>&6
+! echo "configure:925: checking whether ${MAKE-make} sets \${MAKE}" >&5
+  set dummy ${MAKE-make}; ac_make=`echo "$2" | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_prog_make_${ac_make}_set'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+***************
+*** 939,945 ****
+  
+  # Sanity check for the cross-compilation case:
+  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+! echo "configure:943: checking how to run the C preprocessor" >&5
+  # On Suns, sometimes $CPP names a directory.
+  if test -n "$CPP" && test -d "$CPP"; then
+    CPP=
+--- 950,956 ----
+  
+  # Sanity check for the cross-compilation case:
+  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+! echo "configure:954: checking how to run the C preprocessor" >&5
+  # On Suns, sometimes $CPP names a directory.
+  if test -n "$CPP" && test -d "$CPP"; then
+    CPP=
+***************
+*** 954,966 ****
+    # On the NeXT, cc -E runs the code through the compiler's parser,
+    # not just through cpp.
+    cat > conftest.$ac_ext <<EOF
+! #line 958 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:964: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+--- 965,977 ----
+    # On the NeXT, cc -E runs the code through the compiler's parser,
+    # not just through cpp.
+    cat > conftest.$ac_ext <<EOF
+! #line 969 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:975: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+***************
+*** 971,983 ****
+    rm -rf conftest*
+    CPP="${CC-cc} -E -traditional-cpp"
+    cat > conftest.$ac_ext <<EOF
+! #line 975 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:981: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+--- 982,994 ----
+    rm -rf conftest*
+    CPP="${CC-cc} -E -traditional-cpp"
+    cat > conftest.$ac_ext <<EOF
+! #line 986 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:992: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+***************
+*** 988,1000 ****
+    rm -rf conftest*
+    CPP="${CC-cc} -nologo -E"
+    cat > conftest.$ac_ext <<EOF
+! #line 992 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:998: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+--- 999,1011 ----
+    rm -rf conftest*
+    CPP="${CC-cc} -nologo -E"
+    cat > conftest.$ac_ext <<EOF
+! #line 1003 "configure"
+  #include "confdefs.h"
+  #include <assert.h>
+  Syntax Error
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:1009: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    :
+***************
+*** 1020,1036 ****
+  
+  ac_safe=`echo "stdio.h" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for stdio.h""... $ac_c" 1>&6
+! echo "configure:1024: checking for stdio.h" >&5
+  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    cat > conftest.$ac_ext <<EOF
+! #line 1029 "configure"
+  #include "confdefs.h"
+  #include <stdio.h>
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:1034: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    rm -rf conftest*
+--- 1031,1047 ----
+  
+  ac_safe=`echo "stdio.h" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for stdio.h""... $ac_c" 1>&6
+! echo "configure:1035: checking for stdio.h" >&5
+  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    cat > conftest.$ac_ext <<EOF
+! #line 1040 "configure"
+  #include "confdefs.h"
+  #include <stdio.h>
+  EOF
+  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+! { (eval echo configure:1045: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+  if test -z "$ac_err"; then
+    rm -rf conftest*
+***************
+*** 1061,1225 ****
+  # (via com.h).  proj.h and com.h are in gcc/f/, config.h which they need
+  # is in gcc/ and the config files are in gcc/config/.
+  echo $ac_n "checking f2c integer type""... $ac_c" 1>&6
+! echo "configure:1065: checking f2c integer type" >&5
+  # Set this back later below!
+  late_ac_cpp=$ac_cpp
+  late_cflags=$CFLAGS
+  extra_includes="-I$topsrcdir/gcc/f -I$topsrcdir/gcc -I$topsrcdir/include -I$topsrcdir/gcc/config -I$r/gcc"
+  ac_cpp="$late_ac_cpp -DIN_GCC -DHAVE_CONFIG_H $extra_includes"
+  
+- # The AC_EGREP_CPPs below have been known to fail when the header
+- # path is wrong after things have been moved about; the cpp error status
+- # counts for nothing.  First check that there aren't any errors from
+- # the headers.
+- CFLAGS="$CFLAGS -DHAVE_CONFIG_H -DIN_GCC $extra_includes"
+- cat > conftest.$ac_ext <<EOF
+- #line 1078 "configure"
+- #include "confdefs.h"
+- #include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- int main() {
+- 
+- ; return 0; }
+- EOF
+- if { (eval echo configure:1087: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+-   :
+- else
+-   echo "configure: failed program was:" >&5
+-   cat conftest.$ac_ext >&5
+-   rm -rf conftest*
+-   { echo "configure: error: Can't run check for integer sizes -- see config.log" 1>&2; exit 1; }
+- fi
+- rm -f conftest*
+- CFLAGS=$late_cflags
+- 
+- if eval "test \"`echo '$''{'g77_cv_sys_f2cinteger'+set}'`\" = set"; then
+-   echo $ac_n "(cached) $ac_c" 1>&6
+- else
+-   echo "configure:1101: using $ac_cpp" >&5
+- cat > conftest.$ac_ext <<EOF
+- #line 1103 "configure"
+- #include "confdefs.h"
+- #include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cINTEGER == FFECOM_f2ccodeLONG
+- F2C_INTEGER=long int
+- #elif FFECOM_f2cINTEGER == FFECOM_f2ccodeINT
+- F2C_INTEGER=int
+- #else
+- #  error "Cannot find a suitable type for F2C_INTEGER"
+- #endif
+- 
+- EOF
+- if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-   egrep "F2C_INTEGER=long int" >/dev/null 2>&1; then
+-   rm -rf conftest*
+-   g77_cv_sys_f2cinteger="long int"
+- fi
+- rm -f conftest*
+- 
+- if test "$g77_cv_sys_f2cinteger" = ""; then
+- echo "configure:1125: using $ac_cpp" >&5
+-   cat > conftest.$ac_ext <<EOF
+- #line 1127 "configure"
+- #include "confdefs.h"
+- #include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cINTEGER == FFECOM_f2ccodeLONG
+- F2C_INTEGER=long int
+- #elif FFECOM_f2cINTEGER == FFECOM_f2ccodeINT
+- F2C_INTEGER=int
+- #else
+- #  error "Cannot find a suitable type for F2C_INTEGER"
+- #endif
+- 
+- EOF
+- if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-   egrep "F2C_INTEGER=int" >/dev/null 2>&1; then
+-   rm -rf conftest*
+-   g77_cv_sys_f2cinteger=int
+- fi
+- rm -f conftest*
+- 
+- fi
+- if test "$g77_cv_sys_f2cinteger" = ""; then
+-   echo "$ac_t""""" 1>&6
+-   { echo "configure: error: Can't determine type for f2c integer; config.log may help." 1>&2; exit 1; }
+- fi
+- 
+- fi
+- 
+- echo "$ac_t""$g77_cv_sys_f2cinteger" 1>&6
+- F2C_INTEGER=$g77_cv_sys_f2cinteger
+- 
+- 
+- echo $ac_n "checking f2c long int type""... $ac_c" 1>&6
+- echo "configure:1161: checking f2c long int type" >&5
+- if eval "test \"`echo '$''{'g77_cv_sys_f2clongint'+set}'`\" = set"; then
+-   echo $ac_n "(cached) $ac_c" 1>&6
+- else
+-   echo "configure:1165: using $ac_cpp" >&5
+- cat > conftest.$ac_ext <<EOF
+- #line 1167 "configure"
+- #include "confdefs.h"
+- #include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cLONGINT == FFECOM_f2ccodeLONG
+- F2C_LONGINT=long int
+- #elif FFECOM_f2cLONGINT == FFECOM_f2ccodeLONGLONG
+- F2C_LONGINT=long long int
+- #else
+- #  error "Cannot find a suitable type for F2C_LONGINT"
+- #endif
+- 
+- EOF
+- if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-   egrep "F2C_LONGINT=long int" >/dev/null 2>&1; then
+-   rm -rf conftest*
+-   g77_cv_sys_f2clongint="long int"
+- fi
+- rm -f conftest*
+- 
+- 
+- if test "$g77_cv_sys_f2clongint" = ""; then
+- echo "configure:1190: using $ac_cpp" >&5
+-   cat > conftest.$ac_ext <<EOF
+- #line 1192 "configure"
+- #include "confdefs.h"
+- #include "proj.h"
+- #define FFECOM_DETERMINE_TYPES 1
+- #include "com.h"
+- #if FFECOM_f2cLONGINT == FFECOM_f2ccodeLONG
+- F2C_LONGINT=long int
+- #elif FFECOM_f2cLONGINT == FFECOM_f2ccodeLONGLONG
+- F2C_LONGINT=long long int
+- #else
+- #  error "Cannot find a suitable type for F2C_LONGINT"
+- #endif
+- 
+- EOF
+- if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-   egrep "F2C_LONGINT=long long int" >/dev/null 2>&1; then
+-   rm -rf conftest*
+-   g77_cv_sys_f2clongint="long long int"
+- fi
+- rm -f conftest*
+- 
+- fi
+- if test "$g77_cv_sys_f2clongint" = ""; then
+-   echo "$ac_t""""" 1>&6
+-   { echo "configure: error: Can't determine type for f2c long int; config.log may help." 1>&2; exit 1; }
+- fi
+- 
+- fi
+- 
+- echo "$ac_t""$g77_cv_sys_f2clongint" 1>&6
+- F2C_LONGINT=$g77_cv_sys_f2clongint
+- 
+  ac_cpp=$late_ac_cpp
+  
+  # avoid confusion in case the `makefile's from the f2c distribution have
+--- 1072,1084 ----
+  # (via com.h).  proj.h and com.h are in gcc/f/, config.h which they need
+  # is in gcc/ and the config files are in gcc/config/.
+  echo $ac_n "checking f2c integer type""... $ac_c" 1>&6
+! echo "configure:1076: checking f2c integer type" >&5
+  # Set this back later below!
+  late_ac_cpp=$ac_cpp
+  late_cflags=$CFLAGS
+  extra_includes="-I$topsrcdir/gcc/f -I$topsrcdir/gcc -I$topsrcdir/include -I$topsrcdir/gcc/config -I$r/gcc"
+  ac_cpp="$late_ac_cpp -DIN_GCC -DHAVE_CONFIG_H $extra_includes"
+  
+  ac_cpp=$late_ac_cpp
+  
+  # avoid confusion in case the `makefile's from the f2c distribution have
+***************
+*** 1267,1273 ****
+  fi
+  
+  echo $ac_n "checking host system type""... $ac_c" 1>&6
+! echo "configure:1271: checking host system type" >&5
+  
+  host_alias=$host
+  case "$host_alias" in
+--- 1126,1132 ----
+  fi
+  
+  echo $ac_n "checking host system type""... $ac_c" 1>&6
+! echo "configure:1130: checking host system type" >&5
+  
+  host_alias=$host
+  case "$host_alias" in
+***************
+*** 1288,1294 ****
+  echo "$ac_t""$host" 1>&6
+  
+  echo $ac_n "checking target system type""... $ac_c" 1>&6
+! echo "configure:1292: checking target system type" >&5
+  
+  target_alias=$target
+  case "$target_alias" in
+--- 1147,1153 ----
+  echo "$ac_t""$host" 1>&6
+  
+  echo $ac_n "checking target system type""... $ac_c" 1>&6
+! echo "configure:1151: checking target system type" >&5
+  
+  target_alias=$target
+  case "$target_alias" in
+***************
+*** 1306,1312 ****
+  echo "$ac_t""$target" 1>&6
+  
+  echo $ac_n "checking build system type""... $ac_c" 1>&6
+! echo "configure:1310: checking build system type" >&5
+  
+  build_alias=$build
+  case "$build_alias" in
+--- 1165,1171 ----
+  echo "$ac_t""$target" 1>&6
+  
+  echo $ac_n "checking build system type""... $ac_c" 1>&6
+! echo "configure:1169: checking build system type" >&5
+  
+  build_alias=$build
+  case "$build_alias" in
+***************
+*** 1487,1494 ****
+  s%@INSTALL_DATA@%$INSTALL_DATA%g
+  s%@SET_MAKE@%$SET_MAKE%g
+  s%@CPP@%$CPP%g
+- s%@F2C_INTEGER@%$F2C_INTEGER%g
+- s%@F2C_LONGINT@%$F2C_LONGINT%g
+  s%@gcc_version@%$gcc_version%g
+  s%@gcc_version_trigger@%$gcc_version_trigger%g
+  s%@host@%$host%g
+--- 1346,1351 ----
+

@@ -128,6 +128,7 @@ lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-spur.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-v850.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/varargs.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libgcc.a
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libg2c.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libobjc.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libstdc++.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/specs
