@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.167 1998/10/19 14:33:56 vanilla Exp $
+# $Id: Makefile,v 1.168 1998/10/20 16:31:22 vanilla Exp $
 #
 
     SUBDIR += acron
@@ -8,6 +8,7 @@
     SUBDIR += bb
     SUBDIR += chord
     SUBDIR += colorls
+    SUBDIR += crosspad
     SUBDIR += ctk
     SUBDIR += cwish
     SUBDIR += deco
