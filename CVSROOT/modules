@@ -3084,10 +3084,10 @@ irrtoolset	ports/net/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 isakmpd		ports/security/isakmpd
-isc-dhcp3	ports/net/isc-dhcp3
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
 isc-dhcp3-relay	ports/net/isc-dhcp3-relay
+isc-dhcp3-server	ports/net/isc-dhcp3-server
 isearch		ports/textproc/isearch
 iselect		ports/misc/iselect
 ish		ports/converters/ish
