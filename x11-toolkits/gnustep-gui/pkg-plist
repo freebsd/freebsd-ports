@@ -4,7 +4,7 @@ System/Headers/AppKit/AppKitExceptions.h
 System/Headers/AppKit/DPSOperators.h
 System/Headers/AppKit/GMAppKit.h
 System/Headers/AppKit/GMArchiver.h
-@comment System/Headers/AppKit/GSDisplayServer.h
+%%DEVEL%%System/Headers/AppKit/GSDisplayServer.h
 System/Headers/AppKit/GSFontInfo.h
 System/Headers/AppKit/GSHbox.h
 System/Headers/AppKit/GSHelpManagerPanel.h
@@ -126,8 +126,8 @@ System/Headers/AppKit/NSTextField.h
 System/Headers/AppKit/NSTextFieldCell.h
 System/Headers/AppKit/NSTextStorage.h
 System/Headers/AppKit/NSTextView.h
-@comment System/Headers/AppKit/NSToolbar.h
-@comment System/Headers/AppKit/NSToolbarItem.h
+%%DEVEL%%System/Headers/AppKit/NSToolbar.h
+%%DEVEL%%System/Headers/AppKit/NSToolbarItem.h
 System/Headers/AppKit/NSUserInterfaceValidation.h
 System/Headers/AppKit/NSView.h
 System/Headers/AppKit/NSWindow.h
@@ -159,26 +159,26 @@ System/Libraries/Resources/Images/common_ArrowRight.tiff
 System/Libraries/Resources/Images/common_ArrowRightH.tiff
 System/Libraries/Resources/Images/common_ArrowUp.tiff
 System/Libraries/Resources/Images/common_ArrowUpH.tiff
-@comment System/Libraries/Resources/Images/common_CenterTabStop.tiff
+%%DEVEL%%System/Libraries/Resources/Images/common_CenterTabStop.tiff
 System/Libraries/Resources/Images/common_Close.tiff
 System/Libraries/Resources/Images/common_CloseBroken.tiff
 System/Libraries/Resources/Images/common_CloseH.tiff
 System/Libraries/Resources/Images/common_ColorSwatch.tiff
-@comment System/Libraries/Resources/Images/common_DecimalTabStop.tiff
+%%DEVEL%%System/Libraries/Resources/Images/common_DecimalTabStop.tiff
 System/Libraries/Resources/Images/common_Diamond.tiff
 System/Libraries/Resources/Images/common_Dimple.tiff
 System/Libraries/Resources/Images/common_DownArrowSmall.tiff
 System/Libraries/Resources/Images/common_Folder.tiff
 System/Libraries/Resources/Images/common_Home.tiff
-@comment System/Libraries/Resources/Images/common_HomeDirectory.tiff
-@comment System/Libraries/Resources/Images/common_LeftTabStop.tiff
+%%DEVEL%%System/Libraries/Resources/Images/common_HomeDirectory.tiff
+%%DEVEL%%System/Libraries/Resources/Images/common_LeftTabStop.tiff
 System/Libraries/Resources/Images/common_Mount.tiff
 System/Libraries/Resources/Images/common_Nibble.tiff
 System/Libraries/Resources/Images/common_RadioOff.tiff
 System/Libraries/Resources/Images/common_RadioOn.tiff
 System/Libraries/Resources/Images/common_Right.tiff
 System/Libraries/Resources/Images/common_RightH.tiff
-@comment System/Libraries/Resources/Images/common_RightTabStop.tiff
+%%DEVEL%%System/Libraries/Resources/Images/common_RightTabStop.tiff
 System/Libraries/Resources/Images/common_Root_Apple.tiff
 System/Libraries/Resources/Images/common_Root_PC.tiff
 System/Libraries/Resources/Images/common_Root_SGI.tiff
@@ -550,26 +550,26 @@ System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
 System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
-@comment System/Library/ColorPickers/StandardPicker.bundle/Contents/Info.plist
-@comment @exec ln -sf ../Resources %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
-@comment @unexec rm -f %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/Info.plist
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
-@comment System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
-@comment System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
-@comment System/Library/ColorPickers/WheelPicker.bundle/Contents/Info.plist
-@comment @exec ln -sf ../Resources %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
-@comment @unexec rm -f %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
-@comment System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
-@comment System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
-@comment System/Library/ColorPickers/WheelPicker.bundle/Resources/Info.plist
-@comment System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Contents/Info.plist
+%%DEVEL%%@exec ln -sf ../Resources %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
+%%DEVEL%%@unexec rm -f %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Info.plist
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
+%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
+%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Contents/Info.plist
+%%DEVEL%%@exec ln -sf ../Resources %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
+%%DEVEL%%@unexec rm -f %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
+%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
+%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
+%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/Info.plist
+%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
 System/Library/Model/ColorPanel.gmodel
 System/Library/Model/SavePanel.gmodel
 System/Library/Model/SpellPanel.gmodel
@@ -593,22 +593,22 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Services/GSspell.service
 @dirrm System/Library/Services
 @dirrm System/Library/Model
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle/Contents
-@comment @dirrm System/Library/ColorPickers/StandardPicker.bundle
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle/Contents
-@comment @dirrm System/Library/ColorPickers/WheelPicker.bundle
-@comment @dirrm System/Library/ColorPickers
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Contents
+%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/Contents
+%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle
+%%DEVEL%%@dirrm System/Library/ColorPickers
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
