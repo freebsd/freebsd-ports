@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/_mssql.so
+%%PYTHON_SITELIBDIR%%/pymssql.py
+%%PYTHON_SITELIBDIR%%/pymssql.pyc
+%%PYTHON_SITELIBDIR%%/pymssql.pyo
