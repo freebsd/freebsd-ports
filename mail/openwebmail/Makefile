@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.41
+PORTVERSION=	2.50
 CATEGORIES=	mail
-MASTER_SITES=	http://openwebmail.org/openwebmail/download/release/ \
-		http://turtle.ee.ncku.edu.tw/openwebmail/download/release/
+MASTER_SITES=	http://openwebmail.org/openwebmail/download/%SUBDIR%/ \
+		http://turtle.ee.ncku.edu.tw/openwebmail/download/%SUBDIR%/
+MASTER_SITE_SUBDIR?=	release
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -136,6 +138,7 @@ post-patch:
 .endif
 .if defined(WITH_SPAMCHECK)
 	@${PERL} -pi.bak -e 's,enable_spamcheck	no,enable_spamcheck	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
+	@${ECHO} "enable_saprefs	yes" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
 .if defined(WITH_SPAMCHECK_ALL)
 	@${ECHO} "spamcheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
