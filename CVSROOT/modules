@@ -7640,6 +7640,7 @@ speex		ports/audio/speex
 spegla		ports/ftp/spegla
 spell		ports/textproc/spell
 spellcast	ports/games/spellcast
+spellutils	ports/textproc/spellutils
 speyes		ports/games/speyes
 sphinx		ports/audio/sphinx
 spice		ports/cad/spice
