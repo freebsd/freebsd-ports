@@ -1,6 +1,8 @@
-lib/libZThread-1.4.so.3
+lib/libZThread-1.4.so.4
+lib/libZThread-1.4.so
 lib/libZThread.so
 lib/libZThread.a
+lib/libZThread.la
 include/zthread/AbstractExecutor.h
 include/zthread/Worker.h
 include/zthread/AsyncExecutor.h
