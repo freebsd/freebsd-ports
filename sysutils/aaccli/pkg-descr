@@ -1,0 +1,8 @@
+Red Hat Linux 8.0 shipping version of Dell's PERC RAID utilities.
+
+The afacli application consists of a command line interface (CLI)
+that lets you perform storage management tasks related to
+managing controllers, disks, containers, and enclosure devices
+by providing a variety of commands.
+
+WWW: http://support.dell.com/
