@@ -5500,6 +5500,7 @@ mcatalog	ports/deskutils/mcatalog
 mcl		ports/mbone/mcl
 mcron		ports/sysutils/mcron
 mcrypt		ports/security/mcrypt
+mcstas		ports/science/mcstas
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
 md5deep		ports/security/md5deep
