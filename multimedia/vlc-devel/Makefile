@@ -38,7 +38,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
 
 LIB_DEPENDS=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav \
@@ -92,7 +92,7 @@ WITHOUT_SPEEX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.4
+USE_GCC=	3.3
 .endif
 
 .if defined(WITH_AUTODETECT) && !defined(BATCH)
