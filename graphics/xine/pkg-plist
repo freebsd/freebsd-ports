@@ -21,6 +21,10 @@ share/doc/xine-ui/README_it
 share/doc/xine-ui/README_pl
 share/doc/xine-ui/bug_report_form
 share/idl/xine.idl
+share/locale/es/LC_MESSAGES/xine-ui.mo
+share/locale/es/LC_MESSAGES/xitk.mo
+share/locale/fr/LC_MESSAGES/xine-ui.mo
+share/locale/fr/LC_MESSAGES/xitk.mo
 share/xine/desktop/xine.desktop
 share/xine/desktop/xine.wmconfig
 share/xine/desktop/xine.xpm
@@ -67,57 +71,17 @@ share/xine/skins/lcd/prev.png
 share/xine/skins/lcd/ptdn.png
 share/xine/skins/lcd/ptup.png
 share/xine/skins/lcd/setup.png
+share/xine/skins/lcd/sk_itembtn.png
+share/xine/skins/lcd/sk_slidv.png
 share/xine/skins/lcd/skinconfig
 share/xine/skins/lcd/skip.png
 share/xine/skins/lcd/slider_bg.png
 share/xine/skins/lcd/slider_pad.png
 share/xine/skins/lcd/smallbtn.png
 share/xine/skins/lcd/stop.png
+share/xine/skins/lcd/tool.png
 share/xine/skins/lcd/volumebg.png
 share/xine/skins/lcd/volumepad.png
-share/xine/skins/metal/arrowdn.png
-share/xine/skins/metal/arrowdn2.png
-share/xine/skins/metal/arrowup.png
-share/xine/skins/metal/arrowup2.png
-share/xine/skins/metal/bg.png
-share/xine/skins/metal/button.png
-share/xine/skins/metal/cam.png
-share/xine/skins/metal/close.png
-share/xine/skins/metal/eject.png
-share/xine/skins/metal/exit.png
-share/xine/skins/metal/fullsc.png
-share/xine/skins/metal/largebtn.png
-share/xine/skins/metal/left.png
-share/xine/skins/metal/letters.png
-share/xine/skins/metal/mrl.png
-share/xine/skins/metal/mrl_play.png
-share/xine/skins/metal/mute.png
-share/xine/skins/metal/next.png
-share/xine/skins/metal/pause.png
-share/xine/skins/metal/pl_bg.png
-share/xine/skins/metal/pl_btn.png
-share/xine/skins/metal/pl_delete.png
-share/xine/skins/metal/pl_deleteall.png
-share/xine/skins/metal/pl_inputtxt.png
-share/xine/skins/metal/pl_itembtn.png
-share/xine/skins/metal/pl_movedown.png
-share/xine/skins/metal/pl_moveup.png
-share/xine/skins/metal/pl_play.png
-share/xine/skins/metal/pl_slidpad.png
-share/xine/skins/metal/pl_slidv.png
-share/xine/skins/metal/play.png
-share/xine/skins/metal/playfast.png
-share/xine/skins/metal/playlist.png
-share/xine/skins/metal/playslow.png
-share/xine/skins/metal/prev.png
-share/xine/skins/metal/right.png
-share/xine/skins/metal/setup.png
-share/xine/skins/metal/skinconfig
-share/xine/skins/metal/slider_bg.png
-share/xine/skins/metal/slider_pad.png
-share/xine/skins/metal/slider_v.png
-share/xine/skins/metal/smallbtn.png
-share/xine/skins/metal/stop.png
 share/xine/skins/pitt/arrowdn.png
 share/xine/skins/pitt/arrowup.png
 share/xine/skins/pitt/bg.png
@@ -154,11 +118,14 @@ share/xine/skins/pitt/prev.png
 share/xine/skins/pitt/ptdn.png
 share/xine/skins/pitt/ptup.png
 share/xine/skins/pitt/setup.png
+share/xine/skins/pitt/sk_itembtn.png
+share/xine/skins/pitt/sk_slidv.png
 share/xine/skins/pitt/skinconfig
 share/xine/skins/pitt/slider_bg.png
 share/xine/skins/pitt/slider_pad.png
 share/xine/skins/pitt/smallbtn.png
 share/xine/skins/pitt/stop.png
+share/xine/skins/pitt/tool.png
 share/xine/skins/pitt/volumebg.png
 share/xine/skins/pitt/volumepad.png
 share/xine/skins/xinetic/ArrowDown.png
@@ -187,6 +154,7 @@ share/xine/skins/xinetic/MainPause.png
 share/xine/skins/xinetic/MainPlay.png
 share/xine/skins/xinetic/MainPower.png
 share/xine/skins/xinetic/MainPrev.png
+share/xine/skins/xinetic/MainSetup.png
 share/xine/skins/xinetic/MainStop.png
 share/xine/skins/xinetic/MainUp.png
 share/xine/skins/xinetic/MainVolumeBg.png
@@ -206,6 +174,11 @@ share/xine/skins/xinetic/PlItemBtn.png
 share/xine/skins/xinetic/PlMoveDn.png
 share/xine/skins/xinetic/PlMoveUp.png
 share/xine/skins/xinetic/PlPlay.png
+share/xine/skins/xinetic/SkArrowDown.png
+share/xine/skins/xinetic/SkArrowUp.png
+share/xine/skins/xinetic/SkItemBtn.png
+share/xine/skins/xinetic/SkSlidBG.png
+share/xine/skins/xinetic/SkSlidPad.png
 share/xine/skins/xinetic/SliderHBg.png
 share/xine/skins/xinetic/SliderHPad.png
 share/xine/skins/xinetic/SliderVBg.png
@@ -214,7 +187,6 @@ share/xine/skins/xinetic/SmallArrowDown.png
 share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
 @dirrm share/xine/skins/lcd
-@dirrm share/xine/skins/metal
 @dirrm share/xine/skins/pitt
 @dirrm share/xine/skins/xinetic
 @dirrm share/xine/scripts
