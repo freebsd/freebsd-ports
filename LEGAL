@@ -201,6 +201,7 @@ xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
 xrisk-*			ports/games/xrisk	Copyright/trademark violation?
+xsmbrowser-*		ports/net/xsmbrowser	Commercial software
 xteddy-*		ports/games/xteddy	Don't sell for profit
 ztelnet-*		ports/net/ztelnet	zmodem code has 
 						restrictive copyright
