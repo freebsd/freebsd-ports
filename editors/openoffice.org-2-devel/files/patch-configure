@@ -1,0 +1,11 @@
+--- config_office/configure.orig	Thu Oct 12 02:34:03 2000
++++ config_office/configure	Fri Oct 13 17:52:25 2000
+@@ -739,7 +739,7 @@
+ echo $ac_n "checking the operating system""... $ac_c" 1>&6
+ echo "configure:741: checking the operating system" >&5
+ _os=`uname`
+-if test "$_os" = "SunOS" -o "$_os" = "Linux" -o "$_os" = "WINNT" -o "$_os" = "Darwin"; then
++if test "$_os" = "SunOS" -o "$_os" = "Linux" -o "$_os" = "WINNT" -o "$_os" = "Darwin" -o "$_os" = "FreeBSD"; then
+    echo "$ac_t""checked ($_os)" 1>&6
+ else
+    { echo "configure: error: $_os operating system is not suitable to build OpenOffice!" 1>&2; exit 1; }

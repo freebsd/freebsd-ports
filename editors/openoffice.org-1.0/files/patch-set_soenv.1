@@ -1,0 +1,218 @@
+--- config_office/set_soenv.1.orig	Thu Oct 12 10:16:28 2000
++++ config_office/set_soenv.1	Sun Oct 15 23:12:53 2000
+@@ -11,7 +11,7 @@
+ # Description:
+ # set_soenv generates a file that contains all necessary 
+ # environment variables for the build proces of OpenOffice
+-# on Linux, Solaris, Windows NT and Macosx.
++# on Linux, Solaris, FreeBSD, Windows NT and Macosx.
+ # This script prompts the installer to enter:
+ #   1. (if necessary) The directory where the jdk is located (JAVA_HOME).
+ #   2. (if necessary) The directory where the Microsoft C/C++ compiler is located (COMPATH).
+@@ -53,7 +53,7 @@
+ #--------------------------------------------------------
+ #
+ my ( $outfile, $bootfile, $newline, $comment, $compiler, $unsetenv, $setenv, $unset, $set, $ds, $ps, $cur_dir, 
+-     $par_dir, $I, $L, $D, $buildenv, $answer, $tmp, $Solaris, $Linux, $Winnt, $Macosx, $WScomp, 
++     $par_dir, $I, $L, $D, $buildenv, $answer, $tmp, $Solaris, $Freebsd, $Linux, $Winnt, $Macosx, $WScomp, 
+      $GNUcomp, $platform, $machine_type, $empty, $no_jdk, $no_tcsh, $no_cl, $no_gcc, $no_gcc_home, $no_gcc_include, 
+      $no_gxx_include, $warnfile, $Warning, $result, $unsetvars, $win_format_var);
+ #
+@@ -121,6 +121,7 @@
+ $L              = " -L";            # library search path
+ $D              = " -D";            # define search path
+ $Solaris        = "SunOS";          # return of uname command on Solaris
++$Freebsd        = "FreeBSD";        # return of uname command on FreeBSD
+ $Linux          = "Linux";          # return of uname command on Linux
+ $Winnt          = "WINNT";          # return of uname command on Windows NT
+ $Macosx         = "Darwin";         # return of uname command on Macosx
+@@ -162,8 +163,8 @@
+ #
+ $platform = `uname`;       # probing the platform
+ chomp( $platform );
+-if ( ( $platform ne $Solaris ) && ( $platform ne $Linux ) && ($platform ne $Winnt) && ($platform ne $Macosx) ) 
+-{  die "This script is only suitable for the Solaris, Linux, Windows NT or Macosx platform!\n";
++if ( ( $platform ne $Solaris ) && ( $platform ne $Linux ) && ($platform ne $Winnt) && ($platform ne $Macosx) ) && ( $platform ne $Freebsd )
++{  die "This script is only suitable for the Solaris, FreeBSD, Linux, Windows NT or Macosx platform!\n";
+ }
+ else
+ {  if ( $platform eq $Solaris ) 
+@@ -254,6 +255,54 @@
+       $PROSWITCH      = "-DPRODUCT";
+       $XPVERSION      = "3";
+ } 
++elsif ( $platform eq "$Freebsd" ) 
++{  if ($machine_type eq "i686") 
++   {  print "Setting FreeBSD Intel specific values... ";
++      $outfile        = "LinuxIntelEnv.Set"; 
++      $BIG_SVX        = "TRUE";
++      $COM            = "GCC";
++      $COMPATH        = $ARGV[ 0 ]; 
++      $CPU            = "I";
++      $CPUNAME        = "INTEL";
++      $CVER           = "C295";
++      $DLLSUFFIX      = "li";
++      $GUI            = "UNX";
++      $GUIBASE        = "unx";
++      $GUIENV         = "sal";
++      $GVER           = "VCL";
++      $OUTPATH        = "unxlngi3";
++      $INPATH         = $OUTPATH.$PROEXT;
++      $GVERDIR        = $INPATH;
++      $OS             = "FREEBSD";
++      $PATH_SEPERATOR = $ps;
++      $PROSWITCH      = "-DPRODUCT";
++      $XPVERSION      = "3";
++   }  
++   else 
++   {  if ($machine_type eq "alpha") 
++      {  print "Setting FreeBSD/Alpha specific values... ";
++         $outfile        = "FreeBSDAlphaEnv.Set"; 
++         $BIG_SVX        = "TRUE";
++         $COM            = "GCC";
++         $COMPATH        = $ARGV[ 0 ]; 
++         $CPU            = "S";
++         $CPUNAME        = "ALPHA";
++         $CVER           = "C295";
++         $DLLSUFFIX      = "li";
++         $GUI            = "UNX";
++         $GUIBASE        = "unx";
++         $GUIENV         = "sal";
++         $GVER           = "VCL";
++         $OUTPATH        = "unxlngs";
++         $INPATH         = $OUTPATH.$PROEXT;
++         $GVERDIR        = $INPATH;
++         $OS             = "FREEBSD";
++         $PATH_SEPERATOR = $ps;
++         $PROSWITCH      = "-DPRODUCT";
++         $XPVERSION      = "3";
++      }
++   }
++}
+ elsif ( $platform eq "$Linux" ) 
+ {  if ($machine_type eq "i686") 
+    {  print "Setting Linux Intel specific values... ";
+@@ -430,7 +479,7 @@
+ }
+ # 4. Gcc path.
+ # Check whether autoconf found the compiler path.
+-if ($platform eq $Linux) 
++if ($platform eq $Linux) -o ($platform eq $Freebsd)
+ {  if ( $ARGV[ 0 ] eq $no_gcc) 
+    {  AddWarning( "set_soenv", "Autoconf did not find correct gcc compiler, prompted for value" );
+       printf "Did you build gcc 2.95.2 from source using the --prefix and --enable-shared flags (y/n)?: ";
+@@ -643,6 +692,13 @@
+                         $ps.$par_dir.$LIB.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+ }
++elsif ($platform eq "$Freebsd") 
++{  $LD_LIBRARY_PATH   = $cur_dir.
++                        $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
++                        $ps.$USR_LOCAL.$LIB.
++                        $ps.$par_dir.$LIB.
++                        $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
++}
+ elsif ($platform eq "$Linux") 
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+@@ -681,6 +737,21 @@
+                         $D."PRODUCT".
+                         $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"'.'"';
+ }
++elsif ($platform eq "$Freebsd") 
++{  $SOLARDEF          = '"'.$D."UNX".
++                        $D.$COM.
++			$D.$CVER.
++                        $D.$GVER.
++                        $D."_PTHREADS".
++                        $D.$OS.
++                        $D.$CPUNAME.
++                        $D."X86".
++                        $D."_REENTRANT".
++                        $D."_POSIX_PTHREAD_SEMANTICS".
++                        $D."SUPD=$UPD".
++                        $D."PRODUCT".
++                        $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"'.'"';
++}
+ elsif ($platform eq "$Linux") 
+ {  $SOLARDEF          = '"'.$D."UNX".
+                         $D.$COM.
+@@ -707,6 +778,12 @@
+                         $L.$USR_DT.$LIB.
+                         $L.$USR_OPENWIN.$LIB.'"';
+ }
++elsif ($platform eq "$Freebsd")
++{  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
++                        $L.$LIB.
++                        $L.$USR.$LIB.
++                        $L.$USR.$LOCAL.$LIB.'"';
++}
+ elsif ($platform eq "$Linux") 
+ {  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
+                         $L.$LIB.
+@@ -721,6 +798,9 @@
+ if ($platform eq "$Solaris") 
+ {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
+ }
++elsif ($platform eq "$Freebsd") 
++{  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
++}
+ elsif ($platform eq "$Linux") 
+ {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
+ }
+@@ -790,6 +870,20 @@
+                         $ps.$USR_DT.$BIN.
+                         $ps.$USR.$LIB;
+ }
++elsif ($platform eq "$Freebsd") 
++{  $PATH              = $cur_dir.
++                        $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
++                        $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
++                        $ps.'$SOLARENV'.$BIN.
++                        $ps.'$JAVA_HOME'.$BIN;
++
++   $PATH             .= GetCorrectPath($COMPATH, $PERL_PATH, $TCSH_PATH, $compiler);
++
++   $PATH             .= $ps.$USR.$ds."sbin".
++                        $ps.$ETC.
++                        $ps.$USR.$BIN.$ds."X11".
++                        $ps.$USR.$LIB;
++}
+ elsif ($platform eq "$Linux") 
+ {  $PATH              = $cur_dir.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
+@@ -861,6 +955,17 @@
+                         $L.'$JAVA_HOME'.$LIB.
+                         $L.$XLIB.'"';
+ }
++elsif ($platform eq "$Freebsd") 
++{  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
++			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
++                        $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
++                        $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
++                        $L.$LIB.
++                        $L.$USR_LIB.
++                        $L.$USR_LOCAL.$LIB.
++                        $L.'$JAVA_HOME'.$LIB.
++                        $L.$XLIB.'"';
++}
+ elsif ($platform eq "$Linux") 
+ {  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
+ 			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
+@@ -898,6 +1003,16 @@
+                         $I.'$JAVA_HOME'.$INCLUDE.
+                         $I.'$JAVA_HOME'.$INCLUDE.$ds."solaris".
+                         $I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include".'"';
++}
++elsif ($platform eq "$Freebsd") 
++{  $SOLARINC         .= $I.$GXX_INCLUDE.
++                        $I.'$SOLARENV'.$INC.$ds."Xp31".
++                        $I.'$JAVA_HOME'.$INCLUDE.
++                        $I.'$JAVA_HOME'.$INCLUDE.$ds."linux".
++                        $I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include".
++                        $I.$XINC.
++			$I.$GCC_INCLUDE.
++                        $I.$USR.$INCLUDE.'"';
+ }
+ elsif ($platform eq "$Linux") 
+ {  $SOLARINC         .= $I.$GXX_INCLUDE.
