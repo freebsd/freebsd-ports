@@ -43,6 +43,7 @@
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvipdfm
+    SUBDIR += dvipdfm-cjk
     SUBDIR += dvips
     SUBDIR += dvips2ascii
     SUBDIR += dviselect
