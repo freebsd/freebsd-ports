@@ -2,3 +2,7 @@ libexec/rep/%%GNUHOST%%/libgtk.a
 libexec/rep/%%GNUHOST%%/libgtk.la
 libexec/rep/%%GNUHOST%%/libgtk.so
 libexec/rep/%%GNUHOST%%/libgtk.so.0
+libexec/rep/%%GNUHOST%%/liblibglade.a
+libexec/rep/%%GNUHOST%%/liblibglade.la
+libexec/rep/%%GNUHOST%%/liblibglade.so
+libexec/rep/%%GNUHOST%%/liblibglade.so.0
