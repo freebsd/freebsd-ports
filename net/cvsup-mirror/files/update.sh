@@ -25,7 +25,7 @@ umask 22
 
 for i in $(/usr/bin/jot ${num_logs} $((${num_logs}-1)) 0)
 do
-	test -f ${log}.$i${gz_ext} && mv -f ${log}.$i${gz_ext} ${log}.$((i+1))${gz_ext}
+	test -f ${log}.$i${gz_ext} && mv -f ${log}.$i${gz_ext} ${log}.$(($i+1))${gz_ext}
 done
 
 test -f ${log}   && mv -f ${log}   ${log}.0 && [ ${use_gzip} != 0 ] && /usr/bin/gzip -9 ${log}.0
