@@ -1,0 +1,8 @@
+--- clip/clip_msgmerge.in.orig	Mon Nov  4 11:21:57 2002
++++ clip/clip_msgmerge.in	Sun Sep 21 00:42:16 2003
+@@ -1,4 +1,4 @@
+-PATH=/bin:/usr/bin
++PATH=/bin:/usr/bin:/usr/local/bin
+ export PATH
+ 
+ if [ "$NO_GETTEXT" = yes ]

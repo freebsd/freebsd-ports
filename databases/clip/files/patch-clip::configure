@@ -1,0 +1,29 @@
+--- clip/configure.orig	Fri Jun 27 09:02:39 2003
++++ clip/configure	Sun Sep 21 00:13:58 2003
+@@ -140,7 +140,7 @@
+ #	initial CFLAGS
+ #
+ #C_FLAGS="-Wall -I. $DEBUGFLAGS $OPTFLAGS $MDBG"
+-C_FLAGS="-Wall -I. -I./include $DEBUGFLAGS $OPTFLAGS"
++C_FLAGS="-Wall -I. -I./include -I/usr/local/include -L/usr/local/lib"
+ 
+ uname=`uname -s`
+ uver=`uname -r`
+@@ -459,7 +459,7 @@
+ #include <iconv.h>
+ int main(int argc, char **argv) { iconv_t it; it = iconv_open("utf-8", "utf-8"); return 0;}
+ ' > /tmp/$$.c
+-$CC -o /tmp/$$ /tmp/$$.c -liconv 2>/dev/null 1>&2
++$CC -o /tmp/$$ /tmp/$$.c -I/usr/local/include -L/usr/local/lib -liconv 2>/dev/null 1>&2
+ if [ $? = 0 ]
+ then
+ 	echo 'ICONV_LIB=-liconv' >&3
+@@ -600,7 +600,7 @@
+ else
+ 	if [ -f /usr/local/bin/wget ]
+ 	then
+-		echo '#define WGET_PRG "/usr/local/bin"' >&3
++		echo '#define WGET_PRG "/usr/local/bin/wget"' >&3
+ 	else
+ 		echo 'Warning: system does not have program WGET'
+ 	fi

@@ -1,17 +1,15 @@
-$FreeBSD$
-
---- cliplibs/clip-gtk/configure.orig	Fri Sep 27 15:38:08 2002
-+++ cliplibs/clip-gtk/configure	Fri Sep 27 16:48:07 2002
+--- cliplibs/clip-gtk/configure.orig	Tue Jan 14 08:09:54 2003
++++ cliplibs/clip-gtk/configure	Mon Mar 24 19:44:16 2003
 @@ -3,6 +3,8 @@
  uname=`uname -s`
  uver=`uname -r`
  hname=`hostname -f 2>/dev/null`
 +gtkconfig=gtk-config
 +gtkpath=
+ oldpwd=`pwd`
  
  [ -z "$CLIPROOT" ] && CLIPROOT=/usr/local/clip
- DLLSUFF='.so'
-@@ -33,6 +35,8 @@
+@@ -34,6 +36,8 @@
  		;;
  	FreeBSD*)
  		osname=FREEBSD
@@ -20,7 +18,7 @@ $FreeBSD$
  		STATICLINK=-static
  		;;
  	NetBSD*)
-@@ -65,7 +69,7 @@
+@@ -66,7 +70,7 @@
  echo '#define SYSTEM "'$uname'"' >&3
  echo '' >&3
  
@@ -29,28 +27,19 @@ $FreeBSD$
  
  if [ $? -ne 0 ]
  then
-@@ -76,7 +80,7 @@
- 	USE_GTK=no
- else
- #	LIBS='-lgtk -lgdk'
+@@ -81,7 +85,7 @@
+ #	cd $gtkincpath/..
+ #	gtkincpath=`pwd`
+ #	cd $oldpwd
 -	LIBS=`gtk-config --libs`
 +	LIBS=`${gtkconfig} --libs`
  
  	if [ "$osname" = "CYGWIN" ]
  	then
-@@ -85,7 +89,7 @@
- 		EXTRACFLAGS='-fnative-struct'
- #		LIBS='-lgtk-1.3 -lgdk-1.3 -lglib-1.3'
- 	fi
--	if [ -f $gtkprefix/include/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
-+	if [ -f $gtkprefix/include$gtkpath/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
- 	then
- 		USE_GTK=yes
- 		echo '#define HAVE_GTK' >&3
-@@ -93,8 +97,8 @@
- 		echo
- 		echo 'Warning: system do not have installed GTK+ development'
- 	fi
+@@ -95,12 +99,14 @@
+ #		echo
+ #		echo 'Warning: system do not have installed GTK+ development'
+ #	fi
 -	GTK_MAJOR=`gtk-config --version|cut -d. -f1`
 -	GTK_MINOR=`gtk-config --version|cut -d. -f2`
 +	GTK_MAJOR=`${gtkconfig} --version|cut -d. -f1`
@@ -58,19 +47,24 @@ $FreeBSD$
  	if [ ! \( "$GTK_MAJOR" -ge 1 -o "$GTK_MINOR" -ge 2 -o "$GTK_MAJOR" -gt 1 \) ]
  	then
  		echo
-@@ -147,7 +151,7 @@
+ 		echo 'Warning: system must have installed GTK+ version 1.2 or above'
++	else
++		USE_GTK=yes
+ 	fi
+ fi
+ 
+@@ -141,14 +147,14 @@
  echo "DLLSUFF='$DLLSUFF'" >&3
  echo "DLLREALSUFF='$DLLREALSUFF'" >&3
  echo "CLIPROOT=$CLIPROOT" >&3
--echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include' >&3
+-echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include '$(gtk-config --cflags) >&3
 +echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include'${gtkpath} >&3
  echo "XTARGETS='"'$(XLIB) $(XSLIB)'"'" >&3
  echo "C_FLAGS=-Wall '"'$(INCLUDEDIRS)'"' '$EXTRACFLAGS'" >&3
  echo "LIBS='$LIBS'" >&3
-@@ -160,7 +164,7 @@
- #	else
- #		XCFLAGS=`gtk-config --cflags`
- #	fi
+ 
+ if [ "$USE_GTK" = yes ]
+ then
 -	XCFLAGS=`gtk-config --cflags`
 +	XCFLAGS=`${gtkconfig} --cflags`
  	echo "XCFLAGS='$XCFLAGS'" >&3

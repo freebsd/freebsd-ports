@@ -1,0 +1,19 @@
+--- cliplibs/clip-odbc/Makefile.in.orig	Fri Dec 20 14:39:13 2002
++++ cliplibs/clip-odbc/Makefile.in	Sat Sep 20 23:42:32 2003
+@@ -8,7 +8,7 @@
+ 
+ LIBODBC=@LIBODBC@
+ LIBOOB=@LIBOOB@
+-CLIPINCLUDE=-I$(CLIPROOT)/include
++CLIPINCLUDE=-I$(CLIPROOT)/include -I/usr/local/include -L/usr/local/lib
+ C_FLAGS=-Wall -g -I.
+ #CC=gcc
+ 
+@@ -38,7 +38,6 @@
+ 
+ install: all
+ 	$(CLIPROOT)/bin/clip_cp $(TARGET) $(CLIPROOT)/lib
+-	$(CLIPROOT)/bin/clip_cp $(TARGET1) $(CLIPROOT)/lib
+ 	#[ "$(TARGET)" = "$(RTARGET)" ] || cp $(RTARGET) $(CLIPROOT)/lib
+ 	#[ "$(TARGET1)" = "$(RTARGET1)" ] || cp $(RTARGET1) $(CLIPROOT)/lib
+ 	mkdir -p $(CLIPROOT)/doc/clip-odbc

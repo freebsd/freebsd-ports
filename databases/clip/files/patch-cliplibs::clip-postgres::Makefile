@@ -1,0 +1,18 @@
+--- cliplibs/clip-postgres/Makefile.orig	Mon Jan 13 12:14:20 2003
++++ cliplibs/clip-postgres/Makefile	Sat Sep 20 23:52:16 2003
+@@ -13,13 +13,13 @@
+ 
+ TARGET=libclip-postgres$(DLLSUFF)
+ RTARGET=libclip-postgres$(DLLREALSUFF)
+-PGINC = -I/usr/include/pgsql -I/usr/include/postgresql -I/usr/include/pgsql/server
++PGINC = -I/usr/include/postgresql -I/usr/include/postgresql/server
+ OBJS=pg_clip.o pg.o
+ 
+ all:  have_lib	$(TARGET)
+ 
+ have_lib:
+-	test -f /usr/include/pgsql/libpq-fe.h -o -f /usr/include/postgresql/libpq-fe.h -o -f /usr/include/libpq-fe.h -o -f /usr/local/include/libpq-fe.h
++	test -f /usr/local/include/pgsql/libpq-fe.h -o -f /usr/local/include/postgresql/libpq-fe.h -o -f /usr/local/include/libpq-fe.h
+ 
+ $(TARGET): $(OBJS)
+ 	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) -lpq -L/usr/local/lib -L/usr/local/pgsql/lib
