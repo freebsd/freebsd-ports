@@ -21,6 +21,7 @@ DISTFILES=	${THOT_SRC} ${EDITOR_SRC}
 MAINTAINER=	chuckr@FreeBSD.org
 
 BROKEN= 'FUBARed'
+WRKSRC=		$(WRKDIR)/Thot/objects
 
 THOT_SRC=	thot-src-2.1e.tar.gz
 EDITOR_SRC=	thoteditor-src-2.1e.tar.gz
@@ -28,12 +29,17 @@ EDITOR_SRC=	thoteditor-src-2.1e.tar.gz
 EXTRACT_ONLY=	${THOT_SRC}
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-thot --enable-plugin
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
 USE_GMAKE=	yes
 ALL_TARGET=	all schemas
 
+do-configure:
+	(cd $(WRKDIR)/Thot/objects;../configure $(CONFIGURE_ARGS))
+
 post-extract:
-	(${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EDITOR_SRC} ${EXTRACT_AFTER_ARGS} -C ${WRKSRC})
+	(${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EDITOR_SRC} ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/Thot)
+	(cd $(WRKDIR)/Thot;$(MKDIR) objects)
 
 post-install:
 	${MKDIR} ${PREFIX}/share/thot/doc
