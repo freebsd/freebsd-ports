@@ -44,7 +44,6 @@
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
     SUBDIR += siconv
-    SUBDIR += tcs
     SUBDIR += tnef
     SUBDIR += trans
     SUBDIR += tuc
