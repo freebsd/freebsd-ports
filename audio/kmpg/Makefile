@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.5 1998/08/25 09:13:01 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/30 02:07:27 jseger Exp $
 #
 
 DISTNAME=	kmpg-0.3.3
@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
-LIB_DEPENDS=	kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
-		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
+		kdeui.1:${PORTSDIR}/x11/kdelibs
 
 BROKEN_ELF=	depends on kdelibs
 
