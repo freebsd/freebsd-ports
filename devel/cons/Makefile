@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cons
-PORTVERSION=	1.8-dev
+PORTVERSION=	1.8.d
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/
+DISTNAME=	cons-1.8-dev
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@dsmit.com
