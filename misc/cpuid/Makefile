@@ -13,6 +13,7 @@ MASTER_SITES=	http://people.qualcomm.com/karn/code/cpuid/
 
 MAINTAINER=	ports@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
 ALL_TARGET=	${PORTNAME}
 
 do-install:
