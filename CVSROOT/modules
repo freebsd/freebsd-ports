@@ -8045,6 +8045,7 @@ usbd		src/usr.sbin/usbd
 usbdevs		src/usr.sbin/usbdevs
 usd		src/share/doc/usd
 userlist	ports/sysutils/userlist
+usermin		ports/sysutils/usermin
 users		src/usr.bin/users
 usr.bin		src/usr.bin
 usr.sbin	src/usr.sbin
