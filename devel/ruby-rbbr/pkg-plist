@@ -5,6 +5,7 @@ bin/rbbr
 %%RUBY_SITELIBDIR%%/rbbr/doc/rd.rb
 %%RUBY_SITELIBDIR%%/rbbr/doc/refe.rb
 %%RUBY_SITELIBDIR%%/rbbr/doc/ri.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc/ri2.rb
 %%RUBY_SITELIBDIR%%/rbbr/metainfo.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/aboutdialog.rb
@@ -14,24 +15,39 @@ bin/rbbr
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/constlist.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/docviewer.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/libselectiondialog.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/linkedtextbuffer.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/methodlist.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduledisplay.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulelabel.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulelistview.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduletreeview.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduleview.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/searchentrybox.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/stockbrowser.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/undo.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/windowutils.rb
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/ui/gtk
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/ui
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
 @dirrm %%RUBY_SITELIBDIR%%/rbbr
+share/locale/fr/LC_MESSAGES/rbbr.mo
+share/locale/ja/LC_MESSAGES/rbbr.mo
+share/locale/be/LC_MESSAGES/rbbr.mo
+share/locale/cy/LC_MESSAGES/rbbr.mo
+share/locale/de/LC_MESSAGES/rbbr.mo
+share/locale/es/LC_MESSAGES/rbbr.mo
+share/locale/it/LC_MESSAGES/rbbr.mo
+share/locale/ko/LC_MESSAGES/rbbr.mo
+share/locale/pt_BR/LC_MESSAGES/rbbr.mo
 share/rbbr/icon.png
 share/rbbr/rd/README
 @dirrm share/rbbr/rd
 @dirrm share/rbbr
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/COPYING.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
