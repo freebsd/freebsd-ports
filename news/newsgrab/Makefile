@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newsgrab
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.2
 CATEGORIES=	news
 MASTER_SITES=	http://phunkbros.dk/newsgrab/
 
