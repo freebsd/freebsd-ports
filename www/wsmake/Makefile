@@ -8,7 +8,8 @@
 PORTNAME=	wsmake
 PORTVERSION=	0.6.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.wsmake.org/dwnlds/stable/
+MASTER_SITES=	${WSMAKE_MASTER_SITE}/dwnlds/stable/ \
+		${WSMAKE_MASTER_SITE}/docs/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} examples.tar.gz
 .ifndef NOPORTDOCS
 DISTFILES+=	user-manual-html.tar.gz
@@ -21,6 +22,7 @@ MAINTAINER=	jkoshy@freebsd.org
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 
+WSMAKE_MASTER_SITE=	http://www.wsmake.org
 WSMAKE_DOCDIR=	${PREFIX}/share/doc/wsmake
 WSMAKE_EXDIR=	${PREFIX}/share/examples/wsmake
 
