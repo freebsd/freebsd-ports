@@ -29,7 +29,7 @@ PLIST_SUB+=	EMACS='@comment '
 
 pre-configure:
 .if !exists(${LOCALBASE}/bin/emacs)
-	${REINPLACE_CMD} -e "s@^(SUBDIRS = .*) emacs (.*)@\1 \2@" \
+	${REINPLACE_CMD} -Ee "s@^(SUBDIRS = .*) emacs (.*)@\1 \2@" \
 		${WRKSRC}/Makefile.in
 .endif
 
