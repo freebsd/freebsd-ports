@@ -1,0 +1,4 @@
+bin/spf.py
+lib/%%PYTHON_VERSION%%/site-packages/spf.py
+lib/%%PYTHON_VERSION%%/site-packages/spf.pyc
+lib/%%PYTHON_VERSION%%/site-packages/spf.pyo

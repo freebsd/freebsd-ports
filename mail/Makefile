@@ -352,6 +352,7 @@
     SUBDIR += py-milter
     SUBDIR += py-mimelib
     SUBDIR += py-spambayes
+    SUBDIR += py-spf
     SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pyzor
