@@ -4,15 +4,6 @@ bin/gst-package
 include/gst.h
 include/gstpub.h
 include/sigsegv.h
-@unexec install-info --delete %D/info/gst-base.info %D/info/dir
-info/gst-base.info
-@exec install-info %D/info/gst-base.info %D/info/dir
-@unexec install-info --delete %D/info/gst-libs.info %D/info/dir
-info/gst-libs.info
-@exec install-info %D/info/gst-libs.info %D/info/dir
-@unexec install-info --delete %D/info/gst.info %D/info/dir
-info/gst.info
-@exec install-info %D/info/gst.info %D/info/dir
 lib/libgst.a
 lib/libgst.la
 %%TCLTK%%lib/smalltalk/blox-tk.la
@@ -33,8 +24,6 @@ share/emacs/site-lisp/gst-mode.el
 share/emacs/site-lisp/smalltalk-mode.el
 share/smalltalk/Load.st
 share/smalltalk/Reload.st
-share/smalltalk/blox-gtk/GtkDecl.st
-share/smalltalk/blox-gtk/proof.st
 share/smalltalk/blox-tk/Blox.st
 share/smalltalk/blox-tk/BloxBasic.st
 share/smalltalk/blox-tk/BloxCanvas.st
@@ -129,6 +118,18 @@ share/smalltalk/examples/regex.st
 share/smalltalk/examples/shell
 share/smalltalk/examples/xml.sed
 share/smalltalk/gst.im
+share/smalltalk/gtk/GtkDecl.st
+share/smalltalk/gtk/GtkImpl.st
+share/smalltalk/gtk/Libs.st
+share/smalltalk/gtk/MoreFuncs.st
+share/smalltalk/gtk/Types.st
+share/smalltalk/gtk/example_arrow.st
+share/smalltalk/gtk/example_aspectframe.st
+share/smalltalk/gtk/example_buttonbox.st
+share/smalltalk/gtk/example_entry.st
+share/smalltalk/gtk/example_eventbox.st
+share/smalltalk/gtk/example_hello.st
+share/smalltalk/gtk/example_tictactoe.st
 share/smalltalk/i18n/ChangeLog
 share/smalltalk/i18n/Collation.st
 share/smalltalk/i18n/Expression.st
@@ -379,13 +380,13 @@ share/smalltalk/xml/XSL.st
 @dirrm share/smalltalk/net
 @dirrm share/smalltalk/kernel
 @dirrm share/smalltalk/i18n
+@dirrm share/smalltalk/gtk
 @dirrm share/smalltalk/examples/modules
 @dirrm share/smalltalk/examples
 @dirrm share/smalltalk/db
 @dirrm share/smalltalk/compiler
 @dirrm share/smalltalk/browser
 @dirrm share/smalltalk/blox-tk
-@dirrm share/smalltalk/blox-gtk
 @dirrm share/smalltalk
 @dirrm lib/smalltalk
 @exec mkdir -p %D/include/snprintfv
