@@ -14,13 +14,11 @@ DISTFILES=	${DISTNAME}-5.tgz
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes
 
-PYTHON?=	${LOCALBASE}/bin/python
-PYTHONLIBDIR?=	${LOCALBASE}/lib/python1.5
-PIDDLEDIR=	${PYTHONLIBDIR}/site-packages/piddle
+PIDDLEDIR=	${PYTHON_SITELIBDIR}/piddle
 PIDDLEDOCDIR=	${PREFIX}/share/doc/piddle
 PIDDLEEGDIR=	${PREFIX}/share/examples/piddle
 
@@ -38,8 +36,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pilfonts/*.pbm ${PIDDLEDIR}/pilfonts
 	${INSTALL_DATA} ${WRKSRC}/pilfonts/metrics.dat ${PIDDLEDIR}/pilfonts
 	${ECHO} 'piddle' > ${PIDDLEDIR}.pth
-	@${PYTHON} ${PYTHONLIBDIR}/compileall.py ${PIDDLEDIR}
-	@${PYTHON} -O ${PYTHONLIBDIR}/compileall.py ${PIDDLEDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PIDDLEDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PIDDLEDIR}
 	${MKDIR} ${PIDDLEDOCDIR}
 	(cd ${WRKSRC}/docs ; tar cf - *) | \
 		(cd ${PIDDLEDOCDIR} ; tar xf -)
