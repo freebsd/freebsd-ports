@@ -1,5 +1,5 @@
---- Makefile.orig	Fri May  5 00:07:57 2000
-+++ Makefile	Fri May  5 00:13:05 2000
+--- Makefile.orig	Sun Dec 17 02:23:13 2000
++++ Makefile	Sun Dec 17 02:26:42 2000
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -18,7 +18,7 @@
  # Additional LIBDIR and libraries if exist
  IPV6LIBDIR=
  IPV6LIB=
-@@ -300,35 +302,55 @@
+@@ -300,35 +302,63 @@
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
@@ -57,6 +57,9 @@
 +.if defined(HAVE_ESOUND)
 +CFLAGS +=-I${LOCALBASE}/include
 +LDFLAGS+=-L${LOCALBASE}/lib
++.elif defined(HAVE_NAS)
++CFLAGS +=-I${X11BASE}/include -DNAS
++LDFLAGS+=-L${X11BASE}/lib
 +.endif
 +
  freebsd:
@@ -81,6 +84,11 @@
 -			$(CFLAGS)' \
 +	$(MAKE) AUDIO_LIB='-lesd -laudiofile' \
 +		OBJECTS='${ARCHFILES} audio_esd.o term.o' \
++		mpg123-make
++
++freebsd-nas:
++	$(MAKE) AUDIO_LIB='-laudio -lXau -lXt' \
++		OBJECTS='${ARCHFILES} audio_nas.o term.o' \
  		mpg123-make
  
  freebsd-frontend:
@@ -95,7 +103,7 @@
  		$(FRONTEND)
   
  
-@@ -567,7 +589,7 @@
+@@ -567,7 +597,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
