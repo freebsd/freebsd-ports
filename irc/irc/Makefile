@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:48:05 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/15 05:41:35 asami Exp $
 #
 
 DISTNAME=	irc2.8.21
@@ -11,10 +11,12 @@ PKGNAME=	irc-2.8.21
 CATEGORIES+=	networking
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/servers/
 
+MAINTAINER=	torstenb@FreeBSD.ORG
+
 pre-install:
-	mkdir -p ${PREFIX}/bin
 	mkdir -p ${PREFIX}/lib/ircd
-	mkdir -p ${PREFIX}/man/man1
-	mkdir -p ${PREFIX}/man/man8
+
+post-install:
+	gzip -9nf ${PREFIX}/man/man8/ircd.8
 
 .include <bsd.port.mk>
