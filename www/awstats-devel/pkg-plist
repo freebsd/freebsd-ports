@@ -1,6 +1,8 @@
 bin/awstats_buildstaticpages.pl
+bin/awstats_exportlib.pl
 bin/awstats_updateall.pl
 bin/awstats_logresolvemerge.pl
+bin/awstats_urlaliasbuilder.pl
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.png
@@ -12,13 +14,14 @@ bin/awstats_logresolvemerge.pl
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo4.png
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo5.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo6.png
 %%PORTDOCS%%%%DOCSDIR%%/images/license_chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/star.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_4.png
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
@@ -99,21 +102,23 @@ www/cgi-bin/lang/awstats-ua.txt
 www/cgi-bin/lang/awstats-wlk.txt
 www/cgi-bin/lib/browsers.pm
 www/cgi-bin/lib/domains.pm
+www/cgi-bin/lib/mime.pm
 www/cgi-bin/lib/operating_systems.pm
 www/cgi-bin/lib/robots.pm
 www/cgi-bin/lib/search_engines.pm
 www/cgi-bin/lib/worms.pm
 www/cgi-bin/plugins/example/example.pm
 www/cgi-bin/plugins/geoip.pm
-www/cgi-bin/plugins/graph3d.pm
 www/cgi-bin/plugins/hashfiles.pm
 www/cgi-bin/plugins/timehires.pm
 www/cgi-bin/plugins/timezone.pm
+www/cgi-bin/plugins/tooltips.pm
 www/cgi-bin/plugins/urlalias.pm
 www/cgi-bin/awstats.model.conf
 www/cgi-bin/awstats.pl
 www/icons/browser/adobe.png
 www/icons/browser/amaya.png
+www/icons/browser/chimera.png
 www/icons/browser/da.png
 www/icons/browser/dreamcast.png
 www/icons/browser/galeon.png
@@ -121,11 +126,14 @@ www/icons/browser/getright.png
 www/icons/browser/gozilla.png
 www/icons/browser/ibrowse.png
 www/icons/browser/icab.png
+www/icons/browser/kmeleon.png
 www/icons/browser/konqueror.png
 www/icons/browser/lynx.png
 www/icons/browser/mediaplayer.png
+www/icons/browser/mozilla.png
 www/icons/browser/msie.png
 www/icons/browser/msie_large.png
+www/icons/browser/multizilla.png
 www/icons/browser/netpositive.png
 www/icons/browser/netscape.png
 www/icons/browser/netscape_large.png
@@ -133,6 +141,8 @@ www/icons/browser/notavailable.png
 www/icons/browser/omniweb.png
 www/icons/browser/opera.png
 www/icons/browser/pdaphone.png
+www/icons/browser/phoenix.png
+www/icons/browser/safari.png
 www/icons/browser/staroffice.png
 www/icons/browser/teleport.png
 www/icons/browser/unknown.png
@@ -160,6 +170,7 @@ www/icons/cpu/mips.png
 www/icons/cpu/motorola.png
 www/icons/cpu/sun.png
 www/icons/cpu/unknown.png
+www/icons/flags/ac.png
 www/icons/flags/ad.png
 www/icons/flags/ae.png
 www/icons/flags/aero.png
@@ -235,6 +246,7 @@ www/icons/flags/er.png
 www/icons/flags/es.png
 www/icons/flags/es_cat.png
 www/icons/flags/et.png
+www/icons/flags/eu.png
 www/icons/flags/fi.png
 www/icons/flags/fj.png
 www/icons/flags/fk.png
@@ -365,6 +377,7 @@ www/icons/flags/si.png
 www/icons/flags/sk.png
 www/icons/flags/sm.png
 www/icons/flags/sn.png
+www/icons/flags/st.png
 www/icons/flags/su.png
 www/icons/flags/sv.png
 www/icons/flags/sy.png
@@ -408,9 +421,22 @@ www/icons/flags/za.png
 www/icons/flags/ze.png
 www/icons/flags/zm.png
 www/icons/flags/zw.png
+www/icons/mime/archive.png
+www/icons/mime/audio.png
+www/icons/mime/doc.png
+www/icons/mime/html.png
+www/icons/mime/image.png
+www/icons/mime/notavailable.png
+www/icons/mime/other.png
+www/icons/mime/pdf.png
+www/icons/mime/script.png
+www/icons/mime/text.png
+www/icons/mime/unknown.png
+www/icons/mime/video.png
 www/icons/os/aix.png
 www/icons/os/amigaos.png
 www/icons/os/apple.png
+www/icons/os/atari.png
 www/icons/os/beos.png
 www/icons/os/bsdi.png
 www/icons/os/cpm.png
@@ -425,6 +451,7 @@ www/icons/os/irix.png
 www/icons/os/java.png
 www/icons/os/linux.png
 www/icons/os/macintosh.png
+www/icons/os/macosx.png
 www/icons/os/netbsd.png
 www/icons/os/netware.png
 www/icons/os/next.png
@@ -448,29 +475,30 @@ www/icons/os/winme.png
 www/icons/os/winnt.png
 www/icons/os/winxp.png
 www/icons/other/awstats_logo1.png
-www/icons/other/barrehe.png
-www/icons/other/barrehh.png
-www/icons/other/barrehk.png
-www/icons/other/barrehp.png
-www/icons/other/barrehx.png
-www/icons/other/barrevh.png
-www/icons/other/barrevk.png
-www/icons/other/barrevp.png
-www/icons/other/barrevu.png
-www/icons/other/barrevv.png
+www/icons/other/awstats_logo5.png
+www/icons/other/awstats_logo6.png
+www/icons/other/he.png
+www/icons/other/hh.png
+www/icons/other/hk.png
+www/icons/other/hp.png
+www/icons/other/ht.png
+www/icons/other/hx.png
 www/icons/other/page.png
+www/icons/other/vh.png
+www/icons/other/vk.png
+www/icons/other/vp.png
+www/icons/other/vu.png
+www/icons/other/vv.png
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/images
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm www/cgi-bin/lang
 @dirrm www/cgi-bin/lib
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
-@dirrm www/cgi-bin
 @dirrm www/icons/browser
 @dirrm www/icons/clock
 @dirrm www/icons/cpu
 @dirrm www/icons/flags
+@dirrm www/icons/mime
 @dirrm www/icons/os
 @dirrm www/icons/other
-@dirrm www/icons
-@dirrm www
