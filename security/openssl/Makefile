@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400014 && exists(/usr/lib/libssl.a)
+.if exists(/usr/lib/libssl.a) && ${OSVERSION} >= 400014
 FORBIDDEN=	"OpenSSL is already in the base system"
 .endif
 
