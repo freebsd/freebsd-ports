@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2

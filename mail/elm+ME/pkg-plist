@@ -16,7 +16,7 @@ bin/newmail
 @unexec rm -f %B/wnewmail
 bin/printmail
 bin/readmsg
-etc/rc.d/00elm.sh
+etc/rc.d/000.elm.sh
 %%LIB_SUBDIR%%/elm-help.0
 %%LIB_SUBDIR%%/elm-help.1
 %%LIB_SUBDIR%%/elm-help.2

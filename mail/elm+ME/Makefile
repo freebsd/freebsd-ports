@@ -72,7 +72,7 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 ELM_VERSION=	2.4
 ELM_REVISION=	99
-ELM_PATCHLEVEL=	_
+ELM_PATCHLEVEL=	b
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f
@@ -98,7 +98,8 @@ DOC_SUBDIR=	share/doc/elm+ME
 RCD_DIR=	${PREFIX}/${RCD_SUBDIR}
 LIB_DIR=	${PREFIX}/${LIB_SUBDIR}
 
-RCD_FILE=	00elm.sh
+_RCD_FILE=	00elm.sh
+RCD_FILE=	000.elm.sh
 MIME_TYPES=	elm.mimetypes
 MIME_CSETS=	elm.mimecharsets
 TERM_INFO=	elm.terminalinfo
@@ -113,11 +114,14 @@ DOC_FILES=	README.ME+ \
 # Post-patch
 #
 
-post-patch: patch-install-script patch-setgid patch-nls-files
+post-patch: fix-permissions patch-install-script patch-setgid patch-nls-files
+
+fix-permissions:
+	@${CHMOD} -R u+w ${WRKSRC}
 
 patch-install-script:
 	@${SED} -e 's,%%SHLIB_SUBDIR%%,${SHLIB_SUBDIR},' \
-		${FILESDIR}/${RCD_FILE} > ${WRKSRC}/${RCD_FILE}
+		${FILESDIR}/${_RCD_FILE} > ${WRKSRC}/${RCD_FILE}
 
 # d_savegrpmboxid is currently broken using setgid(2) instead of setegid(2).
 # will probably be fixed in a next release, for instance, fake a patch.

@@ -1,6 +1,6 @@
---- Configure.orig	Sat Jan 19 01:18:12 2002
-+++ Configure	Sat Jan 19 17:19:40 2002
-@@ -84,10 +84,10 @@
+--- Configure.orig	Tue Jul 23 20:26:30 2002
++++ Configure	Tue Jul 23 20:26:31 2002
+@@ -94,10 +94,10 @@
      yes)
      ;;
      *)
@@ -15,23 +15,7 @@
      ;;
  esac
  
-@@ -157,6 +157,7 @@
- 	nomap=y
-     fi
-     . ConfTool/GenCharmap 
-+    cp doc/terminal.info bin/elm.terminalinfo
-     exit 0
-     ;;
- map)
-@@ -187,6 +188,7 @@
- 	nomap=y
-     fi
-     . ConfTool/GenCharmap 
-+    cp doc/terminal.info bin/elm.terminalinfo
-     exit 0
-     ;;
- esac
-@@ -2050,7 +2052,7 @@
+@@ -2251,7 +2251,7 @@
  	echo "Found shlib directory"
      fi
  
@@ -40,7 +24,7 @@
  
      LibLoc=`cd ..; pwd`/shlib
      
-@@ -2342,7 +2344,10 @@
+@@ -2544,7 +2544,10 @@
  
  : see if crypt exists
  echo " "
@@ -52,7 +36,7 @@
      echo 'crypt() found.'
      d_crypt="$define"
      cryptlib=''
-@@ -2846,6 +2851,7 @@
+@@ -3048,6 +3051,7 @@
  
      $echo $n "Testing if inet_aton can be used ... $c"
      $cat > try.c <<'EOF'
