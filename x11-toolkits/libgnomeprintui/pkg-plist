@@ -30,3 +30,4 @@ share/locale/wa/LC_MESSAGES/libgnomeprintui.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprintui.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprintui.mo
 @dirrm include/libgnomeprintui-2.0/libgnomeprintui
+@dirrm include/libgnomeprintui-2.0
