@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	zaa@ulstu.ru
+MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	Module for translating Wiki formatted text into other formats
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
@@ -22,6 +22,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=		Text::WikiFormat.3
-PLIST_FILES=	%%SITE_PERL%%/Text/WikiFormat.pm
 
 .include <bsd.port.mk>
