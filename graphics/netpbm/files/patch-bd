@@ -1,0 +1,48 @@
+--- pbm/Makefile.orig	Fri Mar 24 07:43:30 2000
++++ pbm/Makefile	Sat Apr  1 12:00:00 2000
+@@ -13,6 +13,7 @@
+ MIN = 2
+ 
+ NETPBMLIBS = $(LIBPBM)
++NETPBMLD = -L. -lpbm
+ 
+ PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
+ 		icontopbm gemtopbm macptopbm mgrtopbm \
+@@ -34,6 +35,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(BINARIES))
+ 
+ LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o
++LIBSOBJECTS = libpbm1.so libpbm2.so libpbm3.so libpbm4.so libpbm5.so
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpbm
+@@ -41,7 +43,7 @@
+ 
+ MERGENAME = pbmmerge
+ 
+-INTERFACE_HEADERS = pbm.h
++INTERFACE_HEADERS = pbm.h ../pbmplus.h
+ 
+ .PHONY: all
+ all:		$(BINARIES)
+@@ -51,15 +53,18 @@
+ 
+ # Rules for plain programs.
+ $(PORTBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
+ 
+ # Rule for math-dependent programs.
+ $(MATHBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
+ 
+ # Rule for objects.
+ $(OBJECTS) $(LIBOBJECTS): %.o: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
++
++$(LIBSOBJECTS): %.so: %.c
++	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
+ 
+ $(MERGE_OBJECTS): %.o2: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<

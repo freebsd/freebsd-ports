@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Mar 25 02:47:02 2000
++++ Makefile	Sat Apr  1 12:00:00 2000
+@@ -56,7 +56,10 @@
+ 	./stamp-date
+ 
+ .PHONY: install
+-install: install.bin install.lib install.man 
++install: install.bin install.lib install.man install.hdr
++
++.PHONY: install-merge
++install-merge: install.merge install.lib install.man install.hdr
+ 
+ .PHONY: merge
+ merge:
+@@ -97,6 +100,13 @@
+ 	-mkdir -p $(INSTALLMANUALS5)
+ 	for i in $(SUBDIRS) ; do \
+ 	    ( echo install.man.$$i ; cd $$i ; $(MAKE) install.man ); \
++	done
++
++.PHONY: install.hdr
++install.hdr:
++	-mkdir -p $(INSTALLHDRS)
++	for i in $(SUBDIRS) ; do \
++	    ( echo install.hdr.$$i ; cd $$i ; $(MAKE) install.hdr ); \
+ 	done
+ 
+ .PHONY: clean

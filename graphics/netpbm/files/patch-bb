@@ -1,0 +1,69 @@
+--- Makefile.common.orig	Sat Mar 25 02:46:12 2000
++++ Makefile.common	Sat Apr  1 12:00:00 2000
+@@ -51,26 +51,22 @@
+ .PHONY: install.merge
+ install.merge: $(MERGENAME) $(NOMERGEBINARIES) install.script
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
+-	cp $< $(INSTALLBINARIES)
++	${BSD_INSTALL_PROGRAM} $(MERGENAME) $(INSTALLBINARIES)
+ 	cd $(INSTALLBINARIES) ; \
+ 	   for i in $(BINARIES) ; do ln $(MERGENAME) $$i ; done
+-	rm -f $(INSTALLBINARIES)/$(MERGENAME)
+ 	cd $(INSTALLBINARIES) ; rm -f $(NOMERGEBINARIES)
+-	cp $(NOMERGEBINARIES) $(INSTALLBINARIES)
+-	cd $(INSTALLBINARIES) ; strip $(NOMERGEBINARIES)
++	${BSD_INSTALL_PROGRAM} $(NOMERGEBINARIES) $(INSTALLBINARIES)
+ 
+ .PHONY: install.bin.common
+ install.bin.common: $(BINARIES) install.script
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
+-	cp $(BINARIES) $(INSTALLBINARIES)
+-	cd $(INSTALLBINARIES) ; strip $(BINARIES)
++	${BSD_INSTALL_PROGRAM} $(BINARIES) $(INSTALLBINARIES)
+ 
+ .PHONY: install.script
+ install.script: $(SCRIPTS)
+ ifneq ($(SCRIPTS)x,x)
+ 	cd $(INSTALLSCRIPTS) ; rm -f $(SCRIPTS)
+-	cp $(SCRIPTS) $(INSTALLSCRIPTS)
+-	cd $(INSTALLSCRIPTS) ; chmod +x $(SCRIPTS)
++	${BSD_INSTALL_SCRIPT} $(SCRIPTS) $(INSTALLSCRIPTS)
+ endif
+ 
+ .PHONY: install.man
+@@ -95,13 +91,12 @@
+ # prefer not to "install" them, but just to access the Netpbm source
+ # directory when you compile your programs.
+ 	cd $(INSTALLHDRS) ; rm -f $(INTERFACE_HEADERS)
+-	cp $(INTERFACE_HEADERS) $(INSTALLHDRS)
++	${BSD_INSTALL_DATA} $(INTERFACE_HEADERS) $(INSTALLHDRS)
+ 
+-lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ).$(MIN)
+-	ln -sf lib$(LIBROOT).so.$(MAJ).$(MIN) $@
+-lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS)
+-	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
+-          $(LIBOBJECTS)
++lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ)
++	ln -sf lib$(LIBROOT).so.$(MAJ) $@
++lib$(LIBROOT).so.$(MAJ): lib$(LIBROOT).a $(LIBSOBJECTS)
++	$(LD) $(LDSHLIB) -Wl,-soname,$@ -o $@ $(LIBSOBJECTS)
+ 
+ lib$(LIBROOT).a: $(LIBOBJECTS)
+ 	-rm -f $@
+@@ -109,11 +104,11 @@
+ 	-ranlib $@
+ 
+ .PHONY: install.lib
+-install.lib: lib$(LIBROOT).so.$(MAJ).$(MIN) 
+-	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
+-	cp $< $(INSTALLLIBS)
+-	cd $(INSTALLLIBS) ; ln -sf $< lib$(LIBROOT).so
+-	cd $(INSTALLLIBS) ; ln -sf $< lib$(LIBROOT).so.$(MAJ)
++install.lib: lib$(LIBROOT).so
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).*
++	${BSD_INSTALL_DATA} lib$(LIBROOT).a $(INSTALLLIBS)
++	${BSD_INSTALL_DATA} lib$(LIBROOT).so.$(MAJ) $(INSTALLLIBS)
++	ln -sf lib$(LIBROOT).so.$(MAJ) $(INSTALLLIBS)/lib$(LIBROOT).so
+ 
+ .PHONY: dep
+ dep Makefile.depend:

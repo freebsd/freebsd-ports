@@ -1,0 +1,78 @@
+--- pnm/Makefile.orig	Sat Mar 25 02:27:50 2000
++++ pnm/Makefile	Sat Apr  1 12:00:00 2000
+@@ -35,6 +35,8 @@
+ 
+ NETPBMLIBS = $(LIBPNM) \
+            $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM) $(PPMDIR)/$(LIBPPM)
++NETPBMLD = -L. -lpnm \
++           -L$(PBMDIR) -lpbm -L$(PGMDIR) -lpgm -L$(PPMDIR) -lppm
+ 
+ ifeq ($(JPEGLIB_DIR),NONE)
+   JPEGLD =
+@@ -87,6 +89,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
+ 
+ LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
++LIBSOBJECTS = libpnm1.so libpnm2.so libpnm3.so libpnm4.so
+ 
+ MANUALS1 = $(BINARIES) $(SCRIPTS)
+ MANUALS3 = libpnm
+@@ -102,45 +105,48 @@
+ merge:    $(MERGENAME) $(NOMERGEBINARIES)
+ 
+ tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -L$(TIFFLIB_DIR) -ltiff \
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
+ 	  $(JPEGLD) $(CDEBUG)
+ 
+ pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -lm -L$(TIFFLIB_DIR) -ltiff \
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
+ 	  $(JPEGLD) $(CDEBUG)
+ 
+ # Rules for plain programs.
+ $(PORTBINARIES): %: %.o $(NETPBMLIBS) 
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG) 
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG) 
+ 
+ # Rule for math-dependent programs.
+ $(MATHBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
+ 
+ pngtopnm pnmtopng: %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
+ 	  -L$(PNGLIB_DIR) -lpng -lz -lm $(CDEBUG)
+ 
+ jpegtopnm: %: %.o $(NETPBMLIBS) $(SRCDIR)/shhopt/libshhopt.a
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD) -lm \
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(JPEGLD) -lm \
+ 	    $(SRCDIR)/shhopt/libshhopt.a $(CDEBUG)
+ 
+ # Rule for objects.
+ $(OBJECTS) $(LIBOBJECTS): %.o: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
+ 
++$(LIBSOBJECTS): %.so: %.c
++	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
++
+ $(MERGE_OBJECTS): %.o2: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
+ 
+ # And libraries.
+ $(PBMDIR)/$(LIBPBM):
+-	cd $(PBMDIR) ; make $(LIBPBM)
++	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
+ $(PGMDIR)/$(LIBPGM):
+-	cd $(PGMDIR) ; make $(LIBPGM)
++	cd $(PGMDIR) ; $(MAKE) $(LIBPGM)
+ $(PPMDIR)/$(LIBPPM):
+-	cd $(PPMDIR) ; make $(LIBPPM)
++	cd $(PPMDIR) ; $(MAKE) $(LIBPPM)
+ $(TIFFDIR)/$(LIBTIFF):
+-	cd $(TIFFDIR) ; make $(LIBTIFF)
++	cd $(TIFFDIR) ; $(MAKE) $(LIBTIFF)
+ 
+ $(SRCDIR)/shhopt/libshhopt.a:
+ 	cd $(SRCDIR)/shhopt; $(MAKE) libshhopt.a
