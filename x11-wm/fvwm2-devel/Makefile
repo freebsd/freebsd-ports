@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.3.32
+PORTVERSION=	2.3.33
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -52,7 +52,10 @@ post-extract:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc
-	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc
+	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist
+	@if [ ! -e ${PREFIX}/etc/system.fvwm2rc ]; then \
+		${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc; \
+	fi
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
 		${PREFIX}/lib/X11/fvwm2/pixmaps
