@@ -10,7 +10,7 @@ DISTNAME=	ciscoconf-1.0beta1
 PKGNAME=	ciscoconf-1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.patho.gen.nz/pub/users/jabley/ \
-		http://www.FreeBSD.org/~billf/
+		http://people.FreeBSD.org/~billf/
 
 MAINTAINER=	jabley@clear.co.nz
 

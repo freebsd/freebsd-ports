@@ -8,7 +8,7 @@
 
 DISTNAME=	xcogitate-1.02
 CATEGORIES=	games
-MASTER_SITES=	http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su
 

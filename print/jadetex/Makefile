@@ -17,7 +17,7 @@ CATEGORIES=		print
 VERSION=		2.3
 PKGNAME=		${DISTNAME}-${VERSION}
 MAINTAINER=		kelly@plutotech.com
-MASTER_SITES=		http://www.freebsd.org/~nik/distfiles/jadetex/
+MASTER_SITES=		http://people.FreeBSD.org/~nik/distfiles/jadetex/
 DISTFILES=		Makefile.jadetex jadetex.dtx jadetex.ini jadetex.ins \
 			pdfjadetex.ini
 DIST_SUBDIR=		jadetex

@@ -9,7 +9,7 @@
 DISTNAME=	mei-1.53
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vector.co.jp/authors/VA001240/archive/ \
-		http://www.freebsd.org/~itojun/distfiles/
+		http://people.FreeBSD.org/~itojun/distfiles/
 DISTFILES=	mei153s.tgz mei153d.tgz
 
 MAINTAINER=	itojun@itojun.org

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 		http://tahoe.inesc.pt/~aml/abacus/
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://www.freebsd.org/~steve/distfiles/
+PATCH_SITES=	http://people.FreeBSD.org/~steve/distfiles/
 PATCHFILES=	${PKGNAME}.patch.gz
 
 MAINTAINER=	andy@icc.surw.chel.su

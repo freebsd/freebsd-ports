@@ -8,7 +8,7 @@
 
 DISTNAME=       xwit-1.0
 CATEGORIES=	x11
-MASTER_SITES=   http://www.freebsd.org/~tg/
+MASTER_SITES=   http://people.FreeBSD.org/~tg/
 
 MAINTAINER=     tg@FreeBSD.org
 

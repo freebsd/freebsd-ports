@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/ \
 		http://www.shiratori.riec.tohoku.ac.jp/~p-katoh/Hack/Docs/mhonarc-jp/ \
-		http://www.freebsd.org/~flathill/distfiles/
+		http://people.FreeBSD.org/~flathill/distfiles/
 DISTFILES=	MHonArc2.3.3.tar.gz iso2022.pl
 
 MAINTAINER=	flathill@FreeBSD.org

@@ -38,7 +38,7 @@
 
 DISTNAME=	glx-990802
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.freebsd.org/~3d/distfiles/glx/XF3.3.5/
+MASTER_SITES=	http://people.FreeBSD.org/~3d/distfiles/glx/XF3.3.5/
 DISTFILES=	${DISTNAME}.tar.bz2 \
 	 	riva-x-glx.faq.bz2 \
 		Mesa-3_0.diff.bz2
@@ -248,7 +248,7 @@ pre-install:
 	  ${ECHO} "This port will work only if your XFree86 3.3.3.1 version"; \
 	  ${ECHO} "has been patched for use with glx!"; \
 	  ${ECHO} ""; \
-	  ${ECHO} "Visit 'http://www.freebsd.org/~3d' for more information"; \
+	  ${ECHO} "Visit 'http://people.FreeBSD.org/~3d' for more information"; \
 	  ${ECHO} ""; \
 	  ${ECHO} "(We continue with fingers crossed)"; \
 	  ${ECHO} ""; \
@@ -257,7 +257,7 @@ pre-install:
 	  ${ECHO} "This port depends on having a proper version of XFree86"; \
 	  ${ECHO} "installed - preferably ${XFREEVER}!"; \
 	  ${ECHO} ""; \
-	  ${ECHO} "Visit 'http://www.freebsd.org/~3d' for more information"; \
+	  ${ECHO} "Visit 'http://people.FreeBSD.org/~3d' for more information"; \
 	  ${ECHO} ""; \
 	  ${ECHO} "Aborting.."; \
 	  ${FALSE} ; \

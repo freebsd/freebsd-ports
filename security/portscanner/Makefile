@@ -10,7 +10,7 @@ DISTNAME=	PortScanner-1.0
 PKGNAME=	portscanner-1.0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
-		http://www.FreeBSD.org/~billf/
+		http://people.FreeBSD.org/~billf/
 
 MAINTAINER=	billf@FreeBSD.org
 

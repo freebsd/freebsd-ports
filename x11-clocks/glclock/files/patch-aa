@@ -21,7 +21,7 @@
 +       LIB_PATH = -L${X11BASE}/lib -Wl,-rpath,/usr/X11R6/lib 
 +
 +# Link with -lGL on FreeBSD so we use hardware-accelerated GL, when installed.
-+# (see http://www.freebsd.org/~3d)
++# (see http://people.FreeBSD.org/~3d)
 +           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm -lXi
  
  #                 for Mesa

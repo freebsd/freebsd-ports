@@ -9,7 +9,7 @@
 DISTNAME=	qpage-3.2
 CATEGORIES=	comms
 #MASTER_SITES=	http://www.qpage.org/download/
-MASTER_SITES=	http://www.freebsd.org/~fenner/
+MASTER_SITES=	http://people.FreeBSD.org/~fenner/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joes@seaport.net

@@ -9,7 +9,7 @@
 DISTNAME=	rat-4.0.4
 CATEGORIES=	mbone audio
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.0.4/ \
-		http://www.freebsd.org/~cpiazza/distfiles/
+		http://people.FreeBSD.org/~cpiazza/distfiles/
 
 MAINTAINER=	O.Hodson@cs.ucl.ac.uk
 

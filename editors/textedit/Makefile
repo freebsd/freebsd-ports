@@ -8,7 +8,7 @@
 
 DISTNAME=	textedit-1.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 
 MAINTAINER=	alex@big.endian.de
 

@@ -9,7 +9,7 @@
 DISTNAME=	sml-mode-3.3
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/contrib/emacs/ \
-		http://www.freebsd.org/~jkoshy/PORTS/
+		http://people.FreeBSD.org/~jkoshy/PORTS/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jkoshy@FreeBSD.org

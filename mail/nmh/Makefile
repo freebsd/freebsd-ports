@@ -32,7 +32,7 @@
 DISTNAME=	nmh-1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
-		http://www.freebsd.org/~jkoshy/PORTS/
+		http://people.FreeBSD.org/~jkoshy/PORTS/
 
 MAINTAINER=     Scott.Blachowicz@seaslug.org
 

@@ -10,7 +10,7 @@ DISTNAME=	zipcodes
 PKGNAME=        us-zipcodes-1.0
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_LOCAL} \
-		http://www.freebsd.org/~wosch/src/
+		http://people.FreeBSD.org/~wosch/src/
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=     ports@FreeBSD.org

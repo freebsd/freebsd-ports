@@ -9,7 +9,7 @@
 DISTNAME=	ffsrecov
 PKGNAME=	ffsrecov-0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.freebsd.org/~jmg/
+MASTER_SITES=	http://people.FreeBSD.org/~jmg/
 
 MAINTAINER=	jmg@freebsd.org
 

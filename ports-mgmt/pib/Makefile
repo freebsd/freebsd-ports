@@ -8,7 +8,7 @@
 
 DISTNAME=	pib-1.1
 CATEGORIES=	sysutils tk82
-MASTER_SITES=	http://www.freebsd.org/~msmith/pib/
+MASTER_SITES=	http://people.FreeBSD.org/~msmith/pib/
 
 MAINTAINER=	msmith@freebsd.org
 

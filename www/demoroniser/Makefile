@@ -10,7 +10,7 @@ DISTNAME=	demoroniser
 PKGNAME=	demoroniser-1.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
-		http://www.freebsd.org/~jedgar/distfiles/
+		http://people.FreeBSD.org/~jedgar/distfiles/
 
 MAINTAINER=	jedgar@FreeBSD.org
 

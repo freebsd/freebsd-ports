@@ -11,10 +11,10 @@ PKGNAME=	ilu-2.0a13
 CATEGORIES=	devel
 MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a13/ \
 		http://www2.cons.org:8000/freebsd-distfiles/ \
-		http://www.freebsd.org/~cracauer/freebsd-distfiles/
+		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/
 
 PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
-		http://www.freebsd.org/~cracauer/freebsd-distfiles/
+		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/
 PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	cracauer@cons.org

@@ -9,7 +9,7 @@
 DISTNAME=	ggsd
 PKGNAME=	ggsd-0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.FreeBSD.org/~billf/distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~billf/distfiles/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tar
 

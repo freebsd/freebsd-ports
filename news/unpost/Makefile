@@ -8,7 +8,7 @@
 
 DISTNAME=	unpost-2.3.4
 CATEGORIES=	news
-MASTER_SITES=	http://www.freebsd.org/~steve/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~steve/distfiles/
 
 MAINTAINER=	volf@oasis.IAEhv.nl
 

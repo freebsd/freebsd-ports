@@ -8,7 +8,7 @@
 
 DISTNAME=	majorcool-1.3.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/
+MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.org
 

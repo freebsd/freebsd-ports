@@ -8,7 +8,7 @@
 
 DISTNAME=		xgfe-2.0
 CATEGORIES=		math
-MASTER_SITES=		http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=		http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 

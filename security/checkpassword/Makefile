@@ -9,7 +9,7 @@
 DISTNAME=	checkpassword-0.81
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/software/ \
-		http://WWW.FreeBSD.org/~sada/distfiles/ \
+		http://people.FreeBSD.org/~sada/distfiles/ \
 		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	sada@FreeBSD.org

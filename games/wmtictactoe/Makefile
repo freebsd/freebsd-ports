@@ -10,7 +10,7 @@ DISTNAME=	wmtictactoe-1.1-1
 PKGNAME=	wmtictactoe-1.1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/ \
-		http://www.freebsd.org/~jim/distfiles/
+		http://people.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 

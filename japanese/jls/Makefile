@@ -10,7 +10,7 @@ DISTNAME=	jls-0.1
 PKGNAME=	ja-ls-0.1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://www.freebsd.org/~shige/ports/
+		http://people.FreeBSD.org/~shige/ports/
 
 MAINTAINER=	shige@FreeBSD.org
 

@@ -9,7 +9,7 @@
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.freebsd.org/~jseger/
+MASTER_SITES=	http://people.FreeBSD.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     jseger@FreeBSD.org

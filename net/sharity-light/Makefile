@@ -11,7 +11,7 @@ PKGNAME=	sharity-light-1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
-		http://www.freebsd.org/~dt/distfiles/
+		http://people.FreeBSD.org/~dt/distfiles/
 
 MAINTAINER=	dt@FreeBSD.org
 

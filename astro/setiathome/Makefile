@@ -10,7 +10,7 @@ PKGNAME=	setiathome-1.2
 CATEGORIES=	astro
 MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 		ftp://ftp.cdrom.com/pub/setiathome/ \
-		http://www.freebsd.org/~stb/mirror/setiathome.ssl.berkeley.edu/software/
+		http://people.FreeBSD.org/~stb/mirror/setiathome.ssl.berkeley.edu/software/
 
 MAINTAINER=	stb@freebsd.org
 

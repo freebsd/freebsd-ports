@@ -8,7 +8,7 @@
 
 DISTNAME=	opengl-man-657
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.freebsd.org/~cracauer/freebsd-distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~cracauer/freebsd-distfiles/ \
 		http://www2.cons.org:8000/freebsd-distfiles/
 
 MAINTAINER=	cracauer@cons.org

@@ -9,7 +9,7 @@
 DISTNAME=		jzip201g
 PKGNAME=		jzip-2.0.1g
 CATEGORIES=		games
-MASTER_SITES=   	http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=   	http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=		mph@freebsd.org
 

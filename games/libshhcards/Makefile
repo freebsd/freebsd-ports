@@ -11,7 +11,7 @@ PKGNAME=		libshhcards-1.0.4
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://home.sol.no/~sverrehu/pub-unix/files/ \
-			http://www.freebsd.org/~mph/distfiles/
+			http://people.FreeBSD.org/~mph/distfiles/
 MASTER_SITE_SUBDIR=	libs/ui
 
 MAINTAINER=		andy@icc.surw.chel.su

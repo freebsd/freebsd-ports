@@ -10,7 +10,7 @@ DISTNAME=	ctags-3.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}\
 		http://fly.hiwaay.net/~darren/archives/ \
-		http://www.freebsd.org/~jkoshy/PORTS/
+		http://people.FreeBSD.org/~jkoshy/PORTS/
 
 MAINTAINER=	jkoshy@FreeBSD.org
 

@@ -9,7 +9,7 @@
 DISTNAME=	a2ps-4.12
 PKGNAME=	a2ps-${PAPERSIZE}-4.12
 CATEGORIES=	print
-MASTER_SITES=	http://www.freebsd.org/~chuckr/ \
+MASTER_SITES=	http://people.FreeBSD.org/~chuckr/ \
 		ftp://ftp.enst.fr/pub/unix/a2ps/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sheets.map
 

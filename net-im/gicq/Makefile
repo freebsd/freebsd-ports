@@ -8,7 +8,7 @@
 
 DISTNAME=	gicq-0.33
 CATEGORIES=	net
-MASTER_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~flathill/distfiles/ \
 		ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	flathill@FreeBSD.org

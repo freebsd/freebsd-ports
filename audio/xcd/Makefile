@@ -8,7 +8,7 @@
 
 DISTNAME=	xcd-1.7
 CATEGORIES=	audio tk82
-MASTER_SITES=	http://www.FreeBSD.org/~jmz/
+MASTER_SITES=	http://people.FreeBSD.org/~jmz/
 
 MAINTAINER=	jmz@FreeBSD.org
 
