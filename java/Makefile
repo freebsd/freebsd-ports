@@ -19,6 +19,7 @@
     SUBDIR += eclipse-gef-examples
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-pmd
+    SUBDIR += eclipse-vep
     SUBDIR += eclipse-xsd
     SUBDIR += forte
     SUBDIR += gj

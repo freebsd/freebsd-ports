@@ -1,0 +1,7 @@
+The Eclipse Visual Editor project is a framework for creating GUI
+builders for Eclipse.  It will include reference implementations of
+Swing/JFC and SWT GUI builders, but intends to be useful for creating
+GUI builders for other languages such as C/C++ and alternate widget
+sets, including those that are not supported under Java.
+
+WWW: http://www.eclipse.org/vep/
