@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teapop
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
@@ -17,6 +17,7 @@ COMMENT=	Yet another RFC1939 compliant POP3 server
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
 
+##
 ## Available knobs:
 ## General options
 ##   WITHOUT_IPV6: disable IPv6 support
@@ -55,10 +56,12 @@ CONFIGURE_ARGS+=	--enable-popauth-file=${POPAUTH_FILE}
 
 MAN8=		teapop.8
 
+##
 ## Authentication backend
 ##   WITH_OPENLDAP: add support for authentication through OpenLDAP server
 ##   WITH_MYSQL: enable support for authentication from MySQL database
 ##   WITH_PGSQL: enable support for authentication from PostgreSQL database
+##
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
@@ -76,7 +79,7 @@ CONFIGURE_ARGS+=	--with-ldap=openldap
 .endif
 
 show-options:
-	@${EGREP} '^##' ${.CURDIR}/Makefile | ${SED} 's/##//'
+	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
 post-install:
 	@${ECHO_MSG} ""
