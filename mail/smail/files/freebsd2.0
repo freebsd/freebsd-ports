@@ -73,4 +73,9 @@ LDFLAGS="-L/usr/local/lib -L!!PREFIX!!/lib"
 # LIBS - libraries to include in binaries
 LIBS="-lident -lwrap"
 
+# OSLIBS - we don't have libresolv
+# I doubt that the change to smail-3.2.0.110/conf/os/bsd4.4 is the right way
+# to do it.
+OSLIBS="-lcrypt"
+
 MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE:USE_LSEARCH_REGEXCMP:USE_STRICT_MX"
