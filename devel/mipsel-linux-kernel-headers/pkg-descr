@@ -1,0 +1,7 @@
+  Kernel headers from linux kernel 2.4.0-pre9 for cross development with
+  mipsel-linux as target.
+  
+  This port was hacked from SRPM for RedHat cross-development toolchain
+  for Linux VR.
+
+WWW: http://www.linux-vr.org/
