@@ -9,7 +9,8 @@ PORTNAME=	links
 PORTVERSION=	2.0
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
+MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/ \
+		http://unixpages.org/distfiles/
 
 MAINTAINER=	demon@FreeBSD.org
 
