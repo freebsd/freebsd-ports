@@ -1,0 +1,8 @@
+   SVr4 and XSI-Curses compatible curses library and terminfo
+tools including tic, infocmp, captoinfo.  The library can
+be configured to fall back to reading /etc/termcap for
+backward compatibility with BSD curses, but the distribution
+includes a copy of the master terminfo database.  Supports
+color, multiple highlights, forms-drawing characters, and
+automatic recognition of keypad and function-key sequences.
+   Approved to replace 4.4BSD curses.
