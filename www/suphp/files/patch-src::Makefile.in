@@ -1,10 +1,35 @@
 --- src/Makefile.in.orig	Mon Aug 25 11:50:48 2003
-+++ src/Makefile.in	Mon Aug 25 11:50:55 2003
-@@ -39,7 +39,6 @@
++++ src/Makefile.in	Thu Jul 15 22:52:13 2004
+@@ -28,11 +28,13 @@
+ INCLUDES = -I$(top_srcdir)/src
+ RM = rm -f
+ 
++SRCS=   suphp.c filesystem.c check.c error.c log.c compat.c
++OBJS=   ${SRCS:.c=.o}
++
+ all: suphp suphp.mod
+ 
+-suphp: suphp.o filesystem.o check.o error.o log.o compat.o
+-	$(CC) $(LDFLAGS) $(DEFS) -o suphp \
+-	 suphp.o filesystem.o check.o error.o log.o compat.o
++suphp: ${OBJS}
++	$(CC) $(LDFLAGS) $(DEFS) -o suphp ${OBJS}
+ 
+ suphp.mod:
+ 	@if test "$(APXS)" != "/notfound/"; then \
+@@ -49,7 +51,6 @@
  	fi
  
  install: suphp suphp.mod
 -	$(INSTALL_PROGRAM) -d $(DESTDIR)$(sbindir)
  	$(INSTALL_PROGRAM) -m 4755 suphp $(DESTDIR)$(sbindir)/suphp
- 	@$(MAKE) $(MAKEDEFS) -C apache install
+ 	@if test "$(APXS)" != "/notfound/"; then \
+ 	  if test "$(APACHE_VERSION_2)" = "true"; then \
+@@ -69,6 +70,6 @@
+ 	@$(MAKE) $(MAKEDEFS) -C apache clean
+ 	@$(MAKE) $(MAKEDEFS) -C apache2 clean
+ 
+-%.o : %.c
++${OBJS}: ${SRCS}
+ 	$(CC) -c $(CFLAGS) $(DEFS) $(INCLUDES) -o $@ $<
  
