@@ -2,6 +2,7 @@
 #
 
     SUBDIR += adodb
+    SUBDIR += arcexplorer
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb
