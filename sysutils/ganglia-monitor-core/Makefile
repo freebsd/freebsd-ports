@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-nogmetad
 .endif
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	"Ganglia cluster monitor, monitoring daemon"
+COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 .if !defined (WITHOUT_GMETAD)
 LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
