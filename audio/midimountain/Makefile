@@ -7,19 +7,24 @@
 #
 
 PORTNAME=	midimountain
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.music-community.ch/midimountain/download/
+MASTER_SITES=	http://www.midimountain.com/download/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
+
+post-patch:
+.for file in midimountain.conf main.cpp
+	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/midimountain/${file}
+.endfor
+.for dir in pixmaps languages
+	${PERL} -pi -e "s, ${dir}/, ${DATADIR}/${dir}/,g" ${WRKSRC}/midimountain/${dir}/Makefile.in
+.endfor
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- midimountain/mcIO.cpp.orig	Thu Apr 19 11:29:46 2001
-+++ midimountain/mcIO.cpp	Thu Apr 19 11:29:55 2001
+--- midimountain/mcOSSIO.cpp.orig	Sat Dec 15 14:03:49 2001
++++ midimountain/mcOSSIO.cpp	Sat Dec 15 14:03:56 2001
 @@ -1,7 +1,7 @@
  //=============================================================================
  // implementation class midi IO
