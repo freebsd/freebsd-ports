@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
-MASTER_SITE_SUBDIR=	pub/Linux/apps/editors/terminal
+MASTER_SITE_SUBDIR=	apps/editors/terminal
 
 MAINTAINER=	ports@FreeBSD.org
 

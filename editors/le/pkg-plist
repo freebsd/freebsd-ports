@@ -10,6 +10,7 @@ share/le/colors-blue
 share/le/colors-defbg
 share/le/colors-green
 share/le/colors-white
+share/le/keymap-emacs
 share/le/le.hlp
 share/le/mainmenu
 share/le/syntax
