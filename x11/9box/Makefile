@@ -24,7 +24,8 @@ USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g; \
+		s|%%CC%%|${CC}|g' \
 		${WRKSRC}/src/Makefile
 
 do-install:
