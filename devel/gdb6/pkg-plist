@@ -1,2 +1,3 @@
 @comment $FreeBSD$
 bin/gdb6
+%%NO_NATIVE_GDB%%bin/gdb
