@@ -1,0 +1,11 @@
+--- tcl7.5/unix/configure.orig	Sat Aug 17 18:36:48 1996
++++ tcl7.5/unix/configure	Sat Aug 17 18:37:07 1996
+@@ -4400,7 +4400,7 @@
+     fi
+ else
+     if test "$AIX" = "yes"; then
+-	TEST_SUFFIX="${.a}"
++	TEST_SUFFIX=".a"
+     else
+ 	TEST_SUFFIX="${SHLIB_SUFFIX}"
+     fi

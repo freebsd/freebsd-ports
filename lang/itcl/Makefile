@@ -1,19 +1,58 @@
 # New ports collection makefile for:	itcl
-# Version required:	1.5
-# Date created:		Mon Oct  3 22:06:21 EDT 1994
-# Whom:			rww
+# Version required:	2.1
+# Date created:		Aug 17 1996
+# Whom:			chuckr
 #
-# $Id: Makefile,v 1.9 1995/11/22 13:12:52 asami Exp $
+# $Id: Makefile,v 1.10 1996/07/02 00:19:10 gpalmer Exp $
 #
 
-DISTNAME=	itcl-1.5
-HAS_CONFIGURE=	yes
+DISTNAME=	itcl2.1
+GNU_CONFIGURE=	yes
 CATEGORIES+=	lang
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/alcatel/extensions/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 
-DEPENDS=	${PORTSDIR}/lang/tcl
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+MAINTAINER=	chuckr@freebsd.org
 
-PATCH_STRIP=	-p1
+CONFIGURE_ARGS=	--enable-shared
+
+post-extract:
+	@$(RM) -f $(WRKSRC)/tcl7.5/library/*.c
+
+post-install:
+.if !defined(NOMANCOMPRESS)
+	@$(ECHO) "Compressing man pages, be patient, there are many."
+	@for m in $(WRKSRC)/tcl7.5/doc/*.1 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tcl7.5/man/man1/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/tcl7.5/doc/*.3 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tcl7.5/man/man3/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/tcl7.5/doc/*.n ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tcl7.5/man/mann/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/tk4.1/doc/*.1 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tk4.1/man/man1/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/tk4.1/doc/*.3 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tk4.1/man/man3/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/tk4.1/doc/*.n ;\
+	do gzip -9nf $(PREFIX)/share/itcl/tk4.1/man/mann/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/itcl/doc/*.1 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/itcl/man/man1/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/itcl/doc/*.n ;\
+	do gzip -9nf $(PREFIX)/share/itcl/itcl/man/mann/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/itk/doc/*.1 ;\
+	do gzip -9nf $(PREFIX)/share/itcl/itk/man/man1/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/itk/doc/*.n ;\
+	do gzip -9nf $(PREFIX)/share/itcl/itk/man/mann/`$(BASENAME) $$m`;done
+	@for m in $(WRKSRC)/iwidgets2.1.0/doc/*.n ; \
+	do gzip -9nf $(PREFIX)/share/itcl/iwidgets/man/mann/`$(BASENAME) $$m`;done
+	@echo "*****************************************************"
+	@echo "There are new man directories to install now:"
+	@echo "Add $(PREFIX)share/itcl/tcl7.5"
+	@echo "                         tk4.1"
+	@echo "                         itcl"
+	@echo "                         itk"
+	@echo "                         iwidgets"
+	@echo "To the manpath in /etc/manpath.config"
+	@echo "*****************************************************"
+.endif
+	/sbin/ldconfig -m $(PREFIX)/lib
 
 .include <bsd.port.mk>
