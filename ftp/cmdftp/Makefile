@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmdftp
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cmdftp
@@ -14,15 +14,11 @@ MASTER_SITE_SUBDIR=	cmdftp
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Command line shell-like ftp client
 
-USE_REINPLACE=	yes
+USE_REINPLACE=yes
+GNU_CONFIGURE=yes
+USE_GMAKE=yes
 
-DOCS=	CHANGELOG README RELEASE
-
-post-patch:
-	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
-		s|^CFLAGS|#CFLAGS|g ; \
-		s|^PREFIX|#PREFIX|g' ${WRKSRC}/Makefile
+DOCS=	ChangeLog README INSTALL NEWS COPYING AUTHORS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmdftp ${PREFIX}/bin
