@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.80.2
-PORTREVISION=	3
+PORTVERSION=	0.90.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -18,8 +17,9 @@ COMMENT=	GNUStep-compliant NeXTStep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
+RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -29,7 +29,7 @@ USE_XPM=	yes
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -41,28 +41,14 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
 		--disable-debug
 
-OPTIONS=	HERMES "Hermes library support" on \
-		XKB_STATUS "XKB STATUS" off \
+OPTIONS=	XKB_STATUS "XKB STATUS" off \
 		KDE "Add hooks for KDE" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-WITHOUT_HERMES=	yes
-.endif
-
-.if !defined(WITHOUT_HERMES)
-LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
-CONFIGURE_ARGS+=	--enable-hermes
-.else
-CONFIGURE_ARGS+=	--disable-hermes
-.endif
-
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
 MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
-		wcopy.1x wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
+		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
 LINGUAS!=	${CAT} ${FILESDIR}/LINGUAS
 
@@ -86,8 +72,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
-# 	XXX
-	@${INSTALL_MAN} ${PREFIX}/man/man1/wcopy.1x ${PREFIX}/man/sk/man1
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
