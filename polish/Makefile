@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += webalizer2
     SUBDIR += aspell
     SUBDIR += ekg
     SUBDIR += gnugadu
