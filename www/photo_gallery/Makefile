@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		photo_gallery
-PORTVERSION=		1.3
+PORTVERSION=		1.5
 CATEGORIES=		www
 MASTER_SITES=		http://www.capybara.org/~dfraser/photo_gallery/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
@@ -20,10 +20,10 @@ RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info\
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 
-WEBOWN?=        www
-WEBGRP?=        www
-APACHEDIR=      ${LOCALBASE}/www/data
-INSTALLDIR=	${APACHEDIR}/photo_gallery
+WEBOWN?=	www
+WEBGRP?=	www
+APACHEDIR=	${LOCALBASE}/www/data
+INSTALLDIR=	${APACHEDIR}/photo
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_GZIP=	no
