@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
 MAINTAINER=     dbaker@FreeBSD.org
 
-DISTFILES=	dgpsip-1.29.tar.gz
-
 GNU_CONFIGURE=	YES
 
 .include <bsd.port.mk>
