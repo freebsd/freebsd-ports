@@ -37,7 +37,6 @@ MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 
