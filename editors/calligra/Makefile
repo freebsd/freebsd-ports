@@ -24,6 +24,7 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		paper.2:${PORTSDIR}/print/libpaper \
+		wv2:${PORTSDIR}/textproc/wv2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet
@@ -41,16 +42,5 @@ GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-OPTIONS=		WV2 "Build with Microsoft Word import filter" off
-
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_WV2)
-LIB_DEPENDS+=	wv2:${PORTSDIR}/textproc/wv2
-PLIST_APPEND+=	plist.wv2
-.elseif defined(WITHOUT_WV2)
-CONFIGURE_ARGS+=--without-libwv2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
