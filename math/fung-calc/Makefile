@@ -17,10 +17,14 @@ USE_KDELIBS_VER=	3
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
