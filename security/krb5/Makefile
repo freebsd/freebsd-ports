@@ -17,7 +17,7 @@ USE_KRB5_TARBALL?=		MIT
 MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
 EXTRACT_SUFX=		.tar.gz
 .else
-MASTER_SITES=		http://web.mit.edu/kerberos/www/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}
+MASTER_SITES=		http://web.mit.edu/kerberos/www/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
 .endif
 
