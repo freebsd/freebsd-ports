@@ -50,14 +50,19 @@ share/gnome/gdesklets/libdesklets/Memory.py
 share/gnome/gdesklets/libdesklets/Network.py
 share/gnome/gdesklets/libdesklets/Sys.py
 share/gnome/gdesklets/libdesklets/__init__.py
+share/gnome/gdesklets/libdesklets/_glibtopmodule.so
+share/gnome/gdesklets/libdesklets/glibtop.py
 share/gnome/gdesklets/libdesklets/polling.py
 share/gnome/gdesklets/locale/ar/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/az/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/de/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/de_BY/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/el/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/es/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/fr/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/he/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/ko/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/ms/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/nl/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/pl/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/pt/LC_MESSAGES/gdesklets.mo
@@ -87,6 +92,7 @@ share/gnome/gdesklets/utils/actionparser.py
 share/gnome/gdesklets/utils/datatypes.py
 share/gnome/gdesklets/utils/dialog.py
 share/gnome/gdesklets/utils/i18n.py
+share/gnome/gdesklets/utils/installer.py
 share/gnome/gdesklets/utils/pwstore.py
 share/gnome/gdesklets/utils/singleton.py
 share/gnome/gdesklets/utils/vfs.py
@@ -113,6 +119,8 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/pl
 @dirrm share/gnome/gdesklets/locale/nl/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/nl
+@dirrm share/gnome/gdesklets/locale/ms/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/ms
 @dirrm share/gnome/gdesklets/locale/ko/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/ko
 @dirrm share/gnome/gdesklets/locale/he/LC_MESSAGES
@@ -123,8 +131,12 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/es
 @dirrm share/gnome/gdesklets/locale/el/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/el
+@dirrm share/gnome/gdesklets/locale/de_BY/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/de_BY
 @dirrm share/gnome/gdesklets/locale/de/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/de
+@dirrm share/gnome/gdesklets/locale/az/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/az
 @dirrm share/gnome/gdesklets/locale/ar/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/ar
 @dirrm share/gnome/gdesklets/locale
