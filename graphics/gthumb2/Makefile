@@ -15,7 +15,8 @@ DISTNAME=	gthumb-${PORTVERSION}
 
 MAINTAINER=	verbophobe@hotmail.com
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
