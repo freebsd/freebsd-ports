@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/%%HACKNAME%%
 %%HACKDIR%%/%%HACKNAME%%
 @exec mkdir %D/%%HACKDIR%%/save
@@ -115,6 +116,7 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/pet_mark.xbm
 %%HACKDIR%%/quest.dat
 %%HACKDIR%%/rip.xpm
+%%HACKDIR%%/recover
 %%HACKDIR%%/rumors
 %%HACKDIR%%/sanctum.lev
 %%HACKDIR%%/soko1-1.lev
