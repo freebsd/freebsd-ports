@@ -20,6 +20,10 @@ COMMENT=	Q-Audio -- digital audio interface for the Q language
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		q.4:${PORTSDIR}/lang/q
 
+BROKEN=		"Broken distinfo"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
