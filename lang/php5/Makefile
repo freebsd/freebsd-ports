@@ -526,7 +526,7 @@ APACHE_MPM!=	${APXS} -q MPM_NAME
 .endif
 .if defined(WITH_APACHE2)
 APACHE_MPM?=	${WITH_MPM}
-APACHE_PORT?=	www/apache2
+APACHE_PORT=	www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp5.so
 .if ${APACHE_MPM} == "worker"
@@ -673,6 +673,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
+	@${TOUCH} ${PREFIX}/include/php/ext/sqlite/libsqlite/src/sqlite.h
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} ""
