@@ -35,7 +35,7 @@ WITHOUT_SSL=	YES
 .   endif
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
-SSL_PLIST=	"@comment"
+SSL_PLIST=	"@comment "
 .else
 .if !exists(${LOCALBASE}/include/apache2/mod_ssl.h)
 BROKEN=		"Please recompile apache2 with SSL support"
