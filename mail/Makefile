@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.38 1997/01/10 02:39:48 pst Exp $
+# $Id: Makefile,v 1.39 1997/02/02 15:27:16 ache Exp $
 #
 
+    SUBDIR += bulk_mailer
     SUBDIR += elm
     SUBDIR += exim
     SUBDIR += exmh
