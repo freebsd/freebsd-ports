@@ -10,7 +10,7 @@ PORTVERSION=	2.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/pppoe/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=	Does not work well with FreeBSD\'s pppd, yet.\
 	Need help to be fixed
