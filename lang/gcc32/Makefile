@@ -56,8 +56,7 @@ PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
 		PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
-CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
+CONFIGURE_ARGS=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
 #CONFIGURE_ARGS+=	--program-suffix=32
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
