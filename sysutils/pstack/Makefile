@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	pstack
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://homepage.eircom.net/~pmedwards/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://bsd-pstack.sourceforge.net/releases/
+MASTER_SITE_SUBDIR=	bsd-pstack
 
 MAINTAINER=	pmedwards@eircom.net
 
