@@ -26,11 +26,6 @@ PERL_CONFIGURE=	YES
 
 USE_GNOME=	gtk12
 MAN1=		gscmxx.1
+MAN3=		SCMxx.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} != 500601
-BROKEN=		"Broken pkg-plist with perl != 5.6.1"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
