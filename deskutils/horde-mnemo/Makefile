@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
+		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
 		ftp://ftp.au.horde.org/pub/horde/mnemo/			\
+		ftp://ftp.be.horde.org/mnemo/				\
 		ftp://ftp.es.horde.org/pub/mnemo/			\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/mnemo/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/mnemo/	\
-		ftp://ftp.pt.horde.org/pub/horde-ftp/mnemo/
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/mnemo/	\
+		http://ftp.horde.org/pub/mnemo/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Mnemo is the Horde notes and memos application
@@ -28,7 +30,8 @@ REINPLACE_ARGS=	-i.beforeMnemo
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} MNEMODIR=${LMNEMODIR}
 
-DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL
+DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
+		docs/RELEASE_NOTES
 CONFFILE=	conf.php menu.php prefs.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
 
@@ -40,6 +43,9 @@ MNEMODIR=	${PREFIX}/${LMNEMODIR}
 CONFDIR=	${MNEMODIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
+
+post-patch:
+	@${RM} ${WRKSRC}/config/conf.php.dist.orig
 
 do-install:
 	@${MKDIR}  ${MNEMODIR}
@@ -73,8 +79,8 @@ do-install:
 
 post-install:
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e "s:%%MNEMODIR%%:${MNEMODIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:"
+	@${SED} -e "s:%%MNEMODIR%%:${MNEMODIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
+		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:" ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
