@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.8
+PORTVERSION=    1.5.9
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 CONFIGURE_ENV=  CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
 		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
-MAKEFILE=	makefile
 ALL_TARGET=	build
 MAN1=		tin.1
 
@@ -56,10 +55,17 @@ post-patch:
 pre-configure:
 	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
 
+post-build:
+	cd ${WRKSRC}/po; gmake
+
 post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
 	if [ ! -f ${PREFIX}/etc/tin.defaults ] ; then \
 		${CP} ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
+	fi
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} mime.types ${PREFIX}/etc/tin.mime.types.dist
+	if [ ! -f ${PREFIX}/etc/mime.types ] ; then \
+		${CP} ${PREFIX}/etc/tin.mime.types.dist ${PREFIX}/etc/mime.types; \
 	fi
 
 .include <bsd.port.mk>
