@@ -50,6 +50,8 @@ CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
 MAN8=	popauth.8 popper.8
 
+LATEST_LINK=	popper
+
 post-patch:
 	$(RM) ${WRKSRC}/md5.h
 	$(CP) ${FILESDIR}/sendto.c ${WRKSRC}
