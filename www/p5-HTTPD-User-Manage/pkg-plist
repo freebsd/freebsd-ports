@@ -1,6 +1,3 @@
-lib/perl5/man/man3/HTTPD::Authen.3.gz
-lib/perl5/man/man3/HTTPD::GroupAdmin.3.gz
-lib/perl5/man/man3/HTTPD::UserAdmin.3.gz
 lib/perl5/site_perl/HTTPD/AdminBase.pm
 lib/perl5/site_perl/HTTPD/Authen.pm
 lib/perl5/site_perl/HTTPD/GroupAdmin.pm

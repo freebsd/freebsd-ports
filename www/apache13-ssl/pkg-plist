@@ -7,8 +7,6 @@ etc/apache-SSL/httpd.conf-SSL
 etc/apache-SSL/mime.types
 etc/apache-SSL/mime.types-SSL
 libexec/gcache
-man/man1/htpasswd.1.gz
-man/man8/httpd.8.gz
 sbin/httpsd
 share/doc/apache/ABOUT_APACHE
 share/doc/apache/LICENSE
