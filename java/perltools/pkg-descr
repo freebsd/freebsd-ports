@@ -1,0 +1,14 @@
+PerlTools(TM) makes using regular expressions in Java almost as
+easy as in Perl!  Built on top of the OROMatcher(TM) regular expression
+package, PerlTools(TM) provides highly reliable Perl5 regular
+expression support for your Java programs while at the same time
+taking the burden of compiling and caching pattern objects off of
+your shoulders.
+
+Author: Daniel F. Savarese
+
+WWW: http://www.savarese.org/oro/downloads/index.html#PerlTools
+
+--
+Marcin Cieslak
+saper@system.pl

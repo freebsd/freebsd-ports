@@ -1,0 +1,46 @@
+share/java/PerlTools-%%PORTVERSION%%/CHANGES
+share/java/PerlTools-%%PORTVERSION%%/License.html
+share/java/PerlTools-%%PORTVERSION%%/README
+share/java/PerlTools-%%PORTVERSION%%/doc/api/AllNames.html
+share/java/PerlTools-%%PORTVERSION%%/doc/api/Package-com.oroinc.text.perl.html
+share/java/PerlTools-%%PORTVERSION%%/doc/api/com.oroinc.text.perl.MalformedPerl5PatternException.html
+share/java/PerlTools-%%PORTVERSION%%/doc/api/com.oroinc.text.perl.Perl5Util.html
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/blue-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/blue-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/class-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/constructor-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/constructors.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/cyan-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/cyan-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/error-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/exception-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/green-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/green-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/interface-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/magenta-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/magenta-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/method-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/methods.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/oroLogoSmall.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/package-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/red-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/red-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/variable-index.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/variables.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/yellow-ball-small.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/images/yellow-ball.gif
+share/java/PerlTools-%%PORTVERSION%%/doc/api/packages.html
+share/java/PerlTools-%%PORTVERSION%%/doc/api/tree.html
+share/java/PerlTools-%%PORTVERSION%%/examples/addCommas.java
+share/java/PerlTools-%%PORTVERSION%%/examples/didNotMatch.java
+share/java/PerlTools-%%PORTVERSION%%/examples/jdfix.java
+share/java/PerlTools-%%PORTVERSION%%/examples/printPasswd.java
+share/java/PerlTools-%%PORTVERSION%%/examples/strings.java
+share/java/classes/PerlTools.jar
+@dirrm share/java/PerlTools-%%PORTVERSION%%/examples
+@dirrm share/java/PerlTools-%%PORTVERSION%%/doc/api/images
+@dirrm share/java/PerlTools-%%PORTVERSION%%/doc/api
+@dirrm share/java/PerlTools-%%PORTVERSION%%/doc
+@dirrm share/java/PerlTools-%%PORTVERSION%%
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true 
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true 
