@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cix.co.uk/~mayday/
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
 DOCS=		ChangeLog README README-0.4
 DOCDIR=		share/doc/${PORTNAME}
 MAN1=		as86.1 ld86.1
@@ -23,9 +24,9 @@ post-extract:
 
 pre-install:
 	${RM} -f ${PLIST}
-	cd ${WRKSRC} && \
-		${FIND} -s ${WRKSRC} -perm 755 -type f -exec ${BASENAME} \{\} \; \
-			| ${SED} -e 's:^:bin/:' >> ${PLIST}
+.for i in ${BINS}
+	${ECHO_CMD} bin/`${BASENAME} ${i}` >> ${PLIST}
+.endfor
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
 	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
@@ -35,8 +36,9 @@ pre-install:
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/*1 ${PREFIX}/man/man1
-	${INSTALL_PROGRAM} `find ${WRKSRC} -type f -perm 755 |grep -v encap` \
-		${PREFIX}/bin
+.for i in ${BINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/as/as86_encap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
