@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -37,14 +37,14 @@ MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \
 
 CONFIGURE_ARGS+=	--disable-examples
 
-.if defined(WITHOUT_STATGRAB)
+.ifdef(WITHOUT_STATGRAB)
 CONFIGURE_ARGS+=	--disable-statgrab
 PLIST_SUB+=		STATGRAB="@comment "
 .else
 PLIST_SUB+=		STATGRAB=""
 .endif
 
-.if defined(WITHOUT_SAIDAR)
+.ifdef(WITHOUT_SAIDAR)
 CONFIGURE_ARGS+=	--disable-saidar
 PLIST_SUB+=		SAIDAR="@comment "
 .else
@@ -52,7 +52,7 @@ PLIST_SUB+=		SAIDAR=""
 .endif
 
 # setgid kmem binaries needed on FreeBSD 4 only
-.if defined(WITHOUT_SETGID_BINARIES)
+.ifdef(WITHOUT_SETGID_BINARIES)
 CONFIGURE_ARGS+=	--disable-setgid-binaries
 .endif
 
