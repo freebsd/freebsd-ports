@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.b1
+PORTVERSION?=	7.3.b2
 PKGNAMESUFFIX=	-devel
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
@@ -18,13 +18,13 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
 		ftp://ftp.us.postgresql.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
-DISTFILES=	postgresql-base-7.3b1${EXTRACT_SUFX} \
-		postgresql-opt-7.3b1${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	source/v7.3beta
+DISTFILES=	postgresql-base-7.3b2${EXTRACT_SUFX} \
+		postgresql-opt-7.3b2${EXTRACT_SUFX}
 
 MAINTAINER?=	seanc@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/postgresql-7.3b1
+WRKSRC=		${WRKDIR}/postgresql-7.3b2
 DIST_SUBDIR=	postgresql
 
 USE_GMAKE=	YES
@@ -126,7 +126,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "CAUTION!!!!!"
 	@${ECHO} ""
-	@${ECHO} "	This is a development port!  You may have to re-initdb between"
+	@${ECHO} "	This is a development port!  You will have to re-initdb between"
 	@${ECHO} "	upgrades as the system catalogs may change between snapshots."
 	@${ECHO} "	Running this version of the port implies a large degree of"
 	@${ECHO} "	familiarity with the PostgreSQL development cycle and process."
@@ -150,7 +150,7 @@ pre-everything::
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS=yes	Builds with compiler optimizations (-O3)"
 	@${ECHO} ""
 .if !defined(BATCH)
-	@sleep 3
+	@sleep 5
 .endif
 
 pre-install:
