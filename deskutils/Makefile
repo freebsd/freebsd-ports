@@ -24,6 +24,7 @@
     SUBDIR += kmymoney2
     SUBDIR += kproject
     SUBDIR += kronolith
+    SUBDIR += krss
     SUBDIR += logjam
     SUBDIR += loserjabber
     SUBDIR += mcal
