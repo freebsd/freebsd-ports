@@ -81,6 +81,7 @@
     SUBDIR += kwatch
     SUBDIR += lc
     SUBDIR += less
+    SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += logsurfer
     SUBDIR += lv

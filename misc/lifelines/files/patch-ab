@@ -1,0 +1,19 @@
+*** tools/btedit.c.orig	Thu Aug 10 01:42:15 2000
+--- tools/btedit.c	Thu Aug 10 01:41:58 2000
+***************
+*** 66,72 ****
+  		exit(0);
+  	}
+  
+! 	if((editor = getenv("LLEDITOR")) && *editor);
+  	else editor = "vi";
+  	sprintf(cmdbuf, "%s btedit.tmp", editor);
+  #ifdef WIN32
+--- 66,72 ----
+  		exit(0);
+  	}
+  
+! 	if((editor = (char *)getenv("LLEDITOR")) && *editor);
+  	else editor = "vi";
+  	sprintf(cmdbuf, "%s btedit.tmp", editor);
+  #ifdef WIN32

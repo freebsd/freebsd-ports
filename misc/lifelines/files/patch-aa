@@ -1,0 +1,19 @@
+*** interp/interp.c.orig	Thu Aug 10 01:35:53 2000
+--- interp/interp.c	Thu Aug 10 01:35:42 2000
+***************
+*** 131,137 ****
+  		if ((fp == NULL) || (ifile == NULL))  {
+  		    	if(fp) fclose(fp);
+  			llwprintf("Error: file \"%s\" not found.\n",
+! 				  (ifile ? ifile : ""));
+  			return;
+  		}
+  		fclose(fp);
+--- 131,137 ----
+  		if ((fp == NULL) || (ifile == NULL))  {
+  		    	if(fp) fclose(fp);
+  			llwprintf("Error: file \"%s\" not found.\n",
+! 				  (ifile ? (char *)ifile : ""));
+  			return;
+  		}
+  		fclose(fp);
