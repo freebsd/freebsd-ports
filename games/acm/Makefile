@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.9 1996/11/18 13:58:36 asami Exp $
+# $Id: Makefile,v 1.10 1997/01/03 11:32:46 obrien Exp $
 #
 
 DISTNAME=	acm-4.7
@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 
 MAINTAINER=	joerg@FreeBSD.org
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	${SH} -x	# don't ask me why, will fail otherwise
 STRIP=
 MAN6=		acm.6
 
