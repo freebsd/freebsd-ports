@@ -1,0 +1,13 @@
+This module implements a parser to convert Pod documents into a simple
+object model form known hereafter as the Pod Object Model.  The object
+model is generated as a hierarchical tree of nodes, each of which
+represents a different element of the original document.  The tree can
+be walked manually and the nodes examined, printed or otherwise
+manipulated.  In addition, Pod::POM supports and provides view objects
+which can automatically traverse the tree, or section thereof, and
+generate an output representation in one form or another.
+
+WWW: http://search.cpan.org/search?dist=Pod-POM
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
