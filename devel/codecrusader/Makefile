@@ -3,7 +3,7 @@
 # Date created:		30 July 1999
 # Whom:			Davec <davec@unforgettable.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/02 23:18:50 cpiazza Exp $
+# $Id: Makefile,v 1.2 1999/08/03 05:34:55 cpiazza Exp $
 #
 
 DISTNAME=	CodeCrusader-2.1.3
@@ -17,6 +17,8 @@ DISTFILES=	code_crusader_source-2.1.3.tar.gz \
 		JToolBar_source-0.5.3.tar.gz
 
 MAINTAINER=	davec@unforgettable.com
+
+BROKEN=		'installs files during build'
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
