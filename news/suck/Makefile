@@ -3,14 +3,14 @@
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.4 1997/08/30 16:23:54 max Exp $
+# $Id: Makefile,v 1.5 1997/10/05 05:06:19 max Exp $
 #
 
 DISTNAME=	suck-3.6.0
 CATEGORIES=	news
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/news/transport/
 
-MAINTAINER=	jseger@scds.com
+MAINTAINER=	jseger@freebsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
