@@ -3950,6 +3950,7 @@ libXdmcp	ports/x11/libXdmcp
 libXfont	ports/x11/libXfont
 libXres		ports/x11/libXres
 libXtrans	ports/x11/libXtrans
+libXv		ports/x11/libXv
 liba52		ports/audio/liba52
 libafterbase	ports/devel/libafterbase
 libafterimage	ports/graphics/libafterimage
