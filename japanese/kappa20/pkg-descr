@@ -1,0 +1,12 @@
+Japanese 20 dot mincho font named `kappa font'.
+
+You can use 
+	"k20m"  	medium mincho
+	"k20b"  	bold mincho
+	"10x20m" 	ascii
+	"10x20b" 	bold ascii
+	"10x20rk" 	kana
+	"10x20rkb" 	bold kana
+
+A simple usage:
+	% kterm -fn 10x20b -fr 10x20rkb -fk k20b
