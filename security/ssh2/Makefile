@@ -1,31 +1,26 @@
 # New ports collection makefile for:	ssh
-# Version required:     1.2.14.1
+# Version required:     1.2.14
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.28 1996/07/16 00:33:10 ache Exp $
+# $Id: Makefile,v 1.27 1996/06/20 14:11:17 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.14.1
+DISTNAME=       ssh-1.2.14
 CATEGORIES=	security net
-MASTER_SITES=   http://ssh.fi/ \
-		ftp://ftp.relcom.ru/unix/crypto/
-#MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
+MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
-
-# WARNING: you need libz 1.0.3 or above, previous versions have a bug
-
-LIB_DEPENDS=    z\\.1\\.0:${PORTSDIR}/devel/libz
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
-MASTER_SITES+=   \
+MASTER_SITES=	\
+	ftp://ftp.cs.hut.fi/pub/ssh/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
 	ftp://ftp.dsi.unimi.it/pub/security/crypt/math/ \
@@ -38,7 +33,7 @@ IS_INTERACTIVE=	YES
 
 GNU_CONFIGURE=	YES
 
-CONFIGURE_ARGS+= --with-etcdir=${PREFIX}/etc --no-recursion
+CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ARGS+= --with-rsaref
@@ -90,8 +85,6 @@ post-install:
 		${PREFIX}/man/man1/ssh-agent.1 ${PREFIX}/man/man1/ssh-keygen.1 \
 		${PREFIX}/man/man1/ssh.1 ${PREFIX}/man/man8/sshd.8 \
 		${PREFIX}/man/man1/make-ssh-known-hosts.1
-	rm ${PREFIX}/man/man1/slogin.1
-	ln -fs ${PREFIX}/man/man1/ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
@@ -104,10 +97,10 @@ post-install:
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
 .if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(${PREFIX}/bin/perl5.003) && \
+    exists(${PREFIX}/bin/perl5.002) && \
     (!defined(USE_PERL) || ${USE_PERL} != NO)
-BUILD_DEPENDS+= perl5.003:${PORTSDIR}/lang/perl5
-CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.003
+BUILD_DEPENDS+= perl5.002:${PORTSDIR}/lang/perl5
+CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.002
 .else
 CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif

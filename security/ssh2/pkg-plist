@@ -1,8 +1,8 @@
 etc/rc.d/sshd.sh
 @unexec rm %D/etc/rc.d/sshd.sh
 bin/scp
+bin/slogin
 bin/ssh
-@exec ln -fs %D/%F %B/slogin
 bin/ssh-add
 bin/ssh-agent
 bin/ssh-askpass
@@ -16,6 +16,5 @@ man/man1/ssh-add.1.gz
 man/man1/ssh-agent.1.gz
 man/man1/ssh-keygen.1.gz
 man/man1/ssh.1.gz
-@exec ln -fs %D/%F %B/slogin.1.gz
 man/man8/sshd.8.gz
 sbin/sshd
