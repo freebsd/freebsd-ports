@@ -1,2 +1,4 @@
 @comment $FreeBSD$
+bin/ef.sh
 lib/libefence.a
+lib/libefence.so.0
