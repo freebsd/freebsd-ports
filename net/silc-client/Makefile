@@ -7,7 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -28,8 +28,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
-BROKEN=		"Broken pkg-plist"
-
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -45,7 +43,6 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--without-libtoolfix
 #INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
-PLIST_SUB+=	ARCH="${ARCH}-freebsd"
 PKGDEINSTALL=	${PKGINSTALL}
 
 MAN1=		silc.1

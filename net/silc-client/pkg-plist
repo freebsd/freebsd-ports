@@ -97,23 +97,18 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
-lib/silc/perl/%%ARCH%%/auto/Irssi/Silc/Silc.so
-lib/silc/perl/%%ARCH%%/auto/Irssi/Silc/Silc.bs
-lib/silc/perl/%%ARCH%%/auto/Irssi/Silc/.packlist
-lib/silc/perl/%%ARCH%%/auto/Irssi/UI/UI.so
-lib/silc/perl/%%ARCH%%/auto/Irssi/UI/UI.bs
-lib/silc/perl/%%ARCH%%/auto/Irssi/UI/.packlist
-lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/TextUI.so
-lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/TextUI.bs
-lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/.packlist
-lib/silc/perl/%%ARCH%%/auto/Irssi/Irssi.so
-lib/silc/perl/%%ARCH%%/auto/Irssi/Irssi.bs
-lib/silc/perl/%%ARCH%%/auto/Irssi/.packlist
-lib/silc/perl/%%ARCH%%/Irssi.pm
-lib/silc/perl/%%ARCH%%/perllocal.pod
-lib/silc/perl/%%ARCH%%/Irssi/UI.pm
-lib/silc/perl/%%ARCH%%/Irssi/Silc.pm
-lib/silc/perl/%%ARCH%%/Irssi/TextUI.pm
+lib/silc/perl/auto/Irssi/.exists
+lib/silc/perl/auto/Irssi/Irssi.so
+lib/silc/perl/auto/Irssi/Irssi.bs
+lib/silc/perl/auto/Irssi/UI/.exists
+lib/silc/perl/auto/Irssi/UI/UI.so
+lib/silc/perl/auto/Irssi/UI/UI.bs
+lib/silc/perl/auto/Irssi/TextUI/.exists
+lib/silc/perl/auto/Irssi/TextUI/TextUI.so
+lib/silc/perl/auto/Irssi/TextUI/TextUI.bs
+lib/silc/perl/auto/Irssi/Silc/.exists
+lib/silc/perl/auto/Irssi/Silc/Silc.so
+lib/silc/perl/auto/Irssi/Silc/Silc.bs
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -129,12 +124,10 @@ lib/silc/perl/%%ARCH%%/Irssi/TextUI.pm
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/silc 2>/dev/null || true
-@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/Silc
-@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI
-@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/UI
-@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi
-@dirrm lib/silc/perl/%%ARCH%%/auto
-@dirrm lib/silc/perl/%%ARCH%%/Irssi
-@dirrm lib/silc/perl/%%ARCH%%
+@dirrm lib/silc/perl/auto/Irssi/Silc
+@dirrm lib/silc/perl/auto/Irssi/TextUI
+@dirrm lib/silc/perl/auto/Irssi/UI
+@dirrm lib/silc/perl/auto/Irssi
+@dirrm lib/silc/perl/auto
 @dirrm lib/silc/perl
 @dirrm lib/silc
