@@ -7,8 +7,11 @@
 
 PORTNAME=	slang
 PORTVERSION=	0.33.a
+PORTREVISION=	1
 CATEGORIES+=	devel ruby
-MASTER_SITES=	http://kondara.sdri.co.jp/~kikutani/
+MASTER_SITES=   ${MASTER_SITE_LOCAL} \
+		http://kondara.sdri.co.jp/~kikutani/
+MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}lib
 DIST_SUBDIR=	ruby
 
