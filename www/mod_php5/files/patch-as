@@ -1,5 +1,5 @@
---- ../php/Makefile.in.orig	Wed May  3 06:51:11 2000
-+++ ../php/Makefile.in	Wed May 17 23:42:28 2000
+--- Makefile.in.orig	Wed May  3 06:51:11 2000
++++ Makefile.in	Wed May 17 23:42:28 2000
 @@ -1,4 +1,4 @@
 -
 + 

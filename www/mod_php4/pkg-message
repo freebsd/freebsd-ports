@@ -1,9 +1,20 @@
 *****************************************************************************
-You have just installed the apache13-php3 package.
+You have installed the mod_php4 package.
 
-Have a look at the apache13-php3 port if you need additional support for
-databases or SSL.
+Have a look at the mod_php4 _port_ if you need additional support for
+databases other than MySQL, e. g.
 
 You can find it at
-ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/apache13-php3.tar
+ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/mod_php4.tar
+
+Make sure the mime.types are connected to the php module properly and
+index.php is part of your DirectoryIndex.
+
+The following should be in your Apache configuration file:
+[...]
+DirectoryIndex index.php index.html
+[...]
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+[...]
 *****************************************************************************
