@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.85
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -23,7 +23,7 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 .if defined(WITH_UPDATES)
-WEBMIN_MODULES=	net.wbm.gz apache.wbm.gz
+WEBMIN_MODULES=	net-0.85-1.wbm.gz apache-0.85-1.wbm.gz
 .endif
 
 post-extract:
