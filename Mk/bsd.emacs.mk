@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.5 2000-07-10 01:06:18 steve Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.6 2000-07-12 15:18:32 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -61,6 +61,7 @@ EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs
 EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		NO
 
 # Emacs-20.x
 .elif (${EMACS_PORT_NAME} == "emacs20")
@@ -71,6 +72,7 @@ EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs20
 EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
 
 # Mule-19.x
 .elif (${EMACS_PORT_NAME} == "mule")
@@ -81,6 +83,7 @@ EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/mule
 EMACS_COMMON_PORT=	YES
+EMACS_HAS_MULE=		YES
 
 # XEmacs-19.x
 .elif (${EMACS_PORT_NAME} == "xemacs")
@@ -91,6 +94,7 @@ EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs
 EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		NO
 
 # XEmacs-20.x
 .elif (${EMACS_PORT_NAME} == "xemacs20")
@@ -101,6 +105,7 @@ EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs20
 EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		NO
 
 # XEmacs-21.x
 .elif (${EMACS_PORT_NAME} == "xemacs21")
@@ -111,6 +116,7 @@ EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21
 EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		NO
 
 # XEmacs-21.x with Mule
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
@@ -121,6 +127,7 @@ EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21-mule
 EMACS_COMMON_PORT=	YES
+EMACS_HAS_MULE=		YES
 
 .else
 .BEGIN:
