@@ -7,24 +7,26 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	0.0.14
+PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Go board and SGF editor written with the Qt library
 
-USE_REINPLACE=	yes
 USE_QT_VER=	3
-GNU_CONFIGURE=	yes
-QTCPPFLAGS+=	-DDONT_USE_GETOPT
-CONFIGURE_ENV=	QTDIR=${X11BASE}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	QTDIR=${QT_PREFIX}
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 post-patch:
-	${REINPLACE_CMD} -e "s,libqt.so,libqt-mt.so,; \
-		s,-O2, ${CFLAGS} ${PTHREAD_CFLAGS}," ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS}," ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/share|$${prefix}/share|g'
 
 .include <bsd.port.mk>

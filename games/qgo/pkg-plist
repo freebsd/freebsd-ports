@@ -1,33 +1,17 @@
-bin/qGo
-share/qgo/sounds/enter.wav
-share/qgo/sounds/match.wav
-share/qgo/sounds/leave.wav
-share/qgo/sounds/say.wav
-share/qgo/sounds/gameend.wav
-share/qgo/sounds/pass.wav
-share/qgo/sounds/stone.wav
-share/qgo/sounds/talk.wav
-share/qgo/sounds/tictoc.wav
-share/qgo/translations/qgo_de.qm
-share/qgo/translations/qgo_fr.qm
-share/doc/qgo/html/images/note.png
-share/doc/qgo/html/images/tip.png
-share/doc/qgo/html/images/warning.png
-share/doc/qgo/html/ch01.html
-share/doc/qgo/html/ch01s04.html
-share/doc/qgo/html/ch02.html
-share/doc/qgo/html/ch02s02.html
-share/doc/qgo/html/ch02s03.html
-share/doc/qgo/html/ch03.html
-share/doc/qgo/html/ch03s02.html
-share/doc/qgo/html/ch03s23.html
-share/doc/qgo/html/ch03s28.html
-share/doc/qgo/html/ch03s31.html
-share/doc/qgo/html/index.html
-share/doc/qgo/html/pr01.html
-@dirrm share/doc/qgo/html/images
-@dirrm share/doc/qgo/html
-@dirrm share/doc/qgo
-@dirrm share/qgo/sounds
-@dirrm share/qgo/translations
-@dirrm share/qgo
+bin/qgo
+share/qGo/sounds/click.wav
+share/qGo/sounds/connect.wav
+share/qGo/sounds/enter.wav
+share/qGo/sounds/gameend.wav
+share/qGo/sounds/leave.wav
+share/qGo/sounds/match.wav
+share/qGo/sounds/pass.wav
+share/qGo/sounds/say.wav
+share/qGo/sounds/stone.wav
+share/qGo/sounds/talk.wav
+share/qGo/sounds/tictoc.wav
+share/qGo/translations/qgo_de.qm
+share/qGo/translations/qgo_fr.qm
+@dirrm share/qGo/translations
+@dirrm share/qGo/sounds
+@dirrm share/qGo
