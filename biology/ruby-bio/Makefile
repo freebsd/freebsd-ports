@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	biology ruby
 MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/
 MASTER_SITE_SUBDIR=	knu
@@ -20,8 +20,6 @@ COMMENT=	Integrated environment for Bioinformatics written in Ruby
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
-
-RUBY_SHEBANG_FILES=	${WRKSRC}/bin/dbget
 
 post-patch:
 	${RUBY} -i -pe 'gsub(%r"(/etc/bioinformatics/)") { "${PREFIX}" + $$1 }' \

@@ -1,6 +1,6 @@
 bin/biofetch
 bin/bioflat
-bin/dbget
+bin/biogetseq
 @unexec if cmp -s %D/etc/bioinformatics/seqdatabase.ini %D/etc/bioinformatics/seqdatabase.ini.sample; then rm -f %D/etc/bioinformatics/seqdatabase.ini; fi
 etc/bioinformatics/seqdatabase.ini.sample
 @exec [ ! -f %B/etc/bioinformatics/seqdatabase.ini ] && cp %B/%f %B/etc/bioinformatics/seqdatabase.ini
@@ -8,14 +8,21 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/format8.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/rexml.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/xmlparser.rb
 %%RUBY_SITELIBDIR%%/bio/appl/emboss.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta/format10.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta/format6.rb
+%%RUBY_SITELIBDIR%%/bio/appl/genscan/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/psort.rb
+%%RUBY_SITELIBDIR%%/bio/appl/psort/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/sosui/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/targetp/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/tmhmm/report.rb
 %%RUBY_SITELIBDIR%%/bio/data/aa.rb
 %%RUBY_SITELIBDIR%%/bio/data/codontable.rb
 %%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
@@ -27,12 +34,15 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/embl/sptr.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/swissprot.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/trembl.rb
+%%RUBY_SITELIBDIR%%/bio/db/fantom.rb
 %%RUBY_SITELIBDIR%%/bio/db/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/ddbj.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/genbank.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/genpept.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/refseq.rb
+%%RUBY_SITELIBDIR%%/bio/db/gff.rb
+%%RUBY_SITELIBDIR%%/bio/db/go.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/compound.rb
@@ -40,6 +50,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genome.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/keggtab.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/ko.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/microarray.rb
 %%RUBY_SITELIBDIR%%/bio/db/litdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/medline.rb
@@ -48,12 +59,15 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/extend.rb
 %%RUBY_SITELIBDIR%%/bio/feature.rb
 %%RUBY_SITELIBDIR%%/bio/io/brdb.rb
+%%RUBY_SITELIBDIR%%/bio/io/das.rb
 %%RUBY_SITELIBDIR%%/bio/io/dbget.rb
+%%RUBY_SITELIBDIR%%/bio/io/ddbjxml.rb
 %%RUBY_SITELIBDIR%%/bio/io/fetch.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile/bdb.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile/index.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile/indexer.rb
+%%RUBY_SITELIBDIR%%/bio/io/keggapi.rb
 %%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
 %%RUBY_SITELIBDIR%%/bio/io/registry.rb
 %%RUBY_SITELIBDIR%%/bio/io/sql.rb
@@ -68,12 +82,18 @@ etc/bioinformatics/seqdatabase.ini.sample
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/embl
 @dirrm %%RUBY_SITELIBDIR%%/bio/db
 @dirrm %%RUBY_SITELIBDIR%%/bio/data
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/tmhmm
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/targetp
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/sosui
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/psort
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/hmmer
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/genscan
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/blast
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/biofetch.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbget
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fasta2tab.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fsplit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gb2fasta.rb
@@ -84,10 +104,12 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genes2tab.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genome2rb.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genome2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/goslim.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gt2fasta.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pmfetch.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pmsearch.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ssearch2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tdiary.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tfastx2tab.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vs-genes.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
