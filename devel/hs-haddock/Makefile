@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-
@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/configure
