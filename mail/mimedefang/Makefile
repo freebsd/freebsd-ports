@@ -10,7 +10,7 @@ PORTVERSION=	2.44
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
-MAINTAINER=	andrey@msfu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Milter based anti-spam and anti-virus filtering program
 
 BUILD_DEPENDS=	\
