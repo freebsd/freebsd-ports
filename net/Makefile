@@ -537,6 +537,7 @@
     SUBDIR += tcpflow
     SUBDIR += tcpillust
     SUBDIR += tcpmssd
+    SUBDIR += tcpreen
     SUBDIR += tcpreplay
     SUBDIR += tcpshow
     SUBDIR += tcpslice
