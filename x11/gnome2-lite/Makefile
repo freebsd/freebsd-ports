@@ -32,7 +32,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnomeaudio2 \
 		file-roller:${PORTSDIR}/archivers/fileroller \
 		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
-		ggv:${PORTSDIR}/print/ggv2 \
+		ggv:${PORTSDIR}/print/ggv \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \

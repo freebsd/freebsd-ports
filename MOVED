@@ -404,7 +404,6 @@ audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 games/gnomegames||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 misc/gnomeutils||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 misc/gnomeuserdocs||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-print/ggv||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-wm/spager||2003-07-15|removed as it depends on sawfish
 mail/gtkgrepmail||2003-07-15|removed as it depends on gnomecore
 x11-toolkits/eazel-themes||2003-07-15|removed as it depends on sawfish
@@ -1379,3 +1378,4 @@ x11-toolkits/eel2|x11-toolkits/eel|2005-01-25|moved to non-versioned directory
 graphics/eog2|graphics/eog|2005-01-25|moved to non-versioned directory
 x11/gdm2|x11/gdm|2005-01-25|moved to non-versioned directory
 editors/gedit2|editors/gedit|2005-01-25|moved to non-versioned directory
+print/ggv2|print/ggv|2005-01-25|moved to non-versioned directory
