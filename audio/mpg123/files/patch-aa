@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jun 15 23:39:06 1999
-+++ Makefile	Tue Jul 27 14:54:26 1999
+--- Makefile.orig	Wed Jun 16 02:09:06 1999
++++ Makefile	Tue Aug 17 16:05:45 1999
 @@ -4,7 +4,7 @@
  
  # Where to install binary and manpage on "make install":
@@ -30,7 +30,7 @@
 +CFLAGS +=-Wall -ansi -pedantic -fomit-frame-pointer \
 +	-funroll-all-loops -ffast-math -DROT_I386 \
 +	-DREAD_MMAP \
-+	-DI386_ASSEM ${ARCHOPT} -DREAL_IS_FLOAT -DUSE_MMAP -DOSS
++	-DI386_ASSEM ${ARCHOPT} -DREAL_IS_FLOAT -DUSE_MMAP -DOSS -DTERM_CONTROL
 +
  freebsd:
 -	$(MAKE) CC=cc LDFLAGS= \
@@ -40,7 +40,7 @@
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
 -		mpg123-make
-+	${MAKE}	OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o' \
++	${MAKE}	OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o term.o' \
 + 		mpg123-make
  
  freebsd-esd:
