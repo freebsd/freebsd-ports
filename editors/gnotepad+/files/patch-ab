@@ -1,0 +1,11 @@
+--- docs/C/Makefile.in.orig	Wed May 17 10:17:47 2000
++++ docs/C/Makefile.in	Wed May 17 10:18:09 2000
+@@ -65,7 +65,7 @@
+ pkgdata_DATA =  	index-1.html			index-2.html			index-3.html			index-4.html			index-5.html			index.html			closedialog.png			doclist.png			doctabs.png			editmenu.png			fileinfo1.png			fileinfo2.png			find1.png			find2.png			find3.png			htmldoc.png			htmltag.png			htmltb1.png			htmltb2.png			htmlwin.png			mainoptions.png			maintb.png			mainwin.png			msgbar.png			msgbox.png			optionsmenu0.png		optionsmenu1.png		optionsmenu2.png		prefs_appearance.png		prefs_document.png		prefs_fonts.png			prefs_fontsel.png		prefs_htmltb.png		prefs_maintb.png		prefs_misc.png			prefs_srcctrl.png		prefs_window.png		printdialog.png			shellcmd.png			splashscreen.png		textarea.png			windowmenu.png			winlist.png			winnew.png			topic.dat
+ 
+ 
+-gnp_helpdir = $(datadir)/gnome/help/gnotepad+/C
++gnp_helpdir = $(datadir)/help/gnotepad+/C
+ 
+ EXTRA_DIST = $(pkgdata_DATA)
+ 
