@@ -1,0 +1,11 @@
+--- config/cf/xorg.cf.orig	Sun May  9 21:05:27 2004
++++ config/cf/xorg.cf	Sun May  9 21:05:28 2004
+@@ -388,7 +388,7 @@
+ 				GlideDriver i128 NscDriver \
+ 				ati i810 AgpGartDrivers DevelDrivers ark \
+ 				cyrix siliconmotion via \
+-				fbdev vesa vga \
++				vesa vga \
+ 				dummy XF86OSCardDrivers XF86ExtraCardDrivers
+ # endif
+ 

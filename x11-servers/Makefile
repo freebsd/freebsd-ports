@@ -13,5 +13,6 @@
     SUBDIR += driglide
     SUBDIR += x2vnc
     SUBDIR += x2x
+    SUBDIR += xorg-server
 
 .include <bsd.port.subdir.mk>

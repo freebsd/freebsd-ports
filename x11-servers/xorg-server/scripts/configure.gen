@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# This script takes some of the system's imake configuration files and munges
+# them to be used in the X.Org build, and allows port configuration located in
+# $LOCALDEF to be included in the generated host.def
+
+SYSSITE=$PREFIX/lib/X11/config/xf86site.def
+BUILDSITE=$WRKDIR/xc/config/cf/xorgsite.def
+SYSHOST=$PREFIX/lib/X11/config/host.def
+LOCALDEF=$WRKDIR/.config
+BUILDHOST=$WRKDIR/xc/config/cf/host.def
+
+# Append system xf86site.def to build's xorgsite.def.
+rm -f $BUILDSITE
+cp -f $SYSSITE $BUILDSITE
+
+# Use system host.def as initial config file, setting ProjectRoot appropriately.
+rm -f $BUILDHOST
+grep -v '#define.*ProjectRoot' $SYSHOST			>> $BUILDHOST
+echo "#define ProjectRoot $PREFIX"			>> $BUILDHOST
+
+# Add in defines that all ports will want.
+echo "#define NothingOutsideProjectRoot YES"		>> $BUILDHOST
+echo "#define FreeBSDCC	${CC}"				>> $BUILDHOST
+echo "#define FreeBSDCXX ${CXX}"			>> $BUILDHOST
+echo "#define FreeBSDPTHREAD_LIBS ${PTHREAD_LIBS}"	>> $BUILDHOST
+echo "#define FreeBSDPTHREAD_CFLAGS ${PTHREAD_CFLAGS}"	>> $BUILDHOST
+echo "#define FreeBSDCFLAGS ${CFLAGS}"			>> $BUILDHOST
+
+cat ${LOCALDEF} >> ${BUILDHOST}

@@ -1,0 +1,67 @@
+--- config/cf/Imake.rules.orig	Mon Dec  9 15:00:42 2002
++++ config/cf/Imake.rules	Mon Oct 13 17:04:19 2003
+@@ -1406,7 +1406,7 @@
+  * this Imakefile is within the source tree.
+  */
+ #ifndef RmanDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define RmanDependency() /**/
+ #else
+ #define RmanDependency() 						@@\
+@@ -1421,7 +1421,7 @@
+ #endif /* RmanDependency */
+ 
+ #ifndef RmanCmdDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define RmanCmdDependency	/**/
+ #else
+ #define RmanCmdDependency	ProgramTargetName($(RMAN))
+@@ -1874,7 +1874,7 @@
+  * this Imakefile is within the source tree.
+  */
+ #ifndef DependDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define DependDependency() /**/
+ #else
+ #define DependDependency() 						@@\
+@@ -1969,7 +1969,7 @@
+  * within the source tree.
+  */
+ #ifndef ImakeDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define ImakeDependency(target) /**/
+ #else
+ #define ImakeDependency(target)						@@\
+@@ -2066,11 +2066,18 @@
+  * ProjectUnsharedLibReferences - variables for unshared libraries
+  */
+ #ifndef ProjectUnsharedLibReferences
++#if defined(UseInstalledLibraries)
++#define ProjectUnsharedLibReferences(varname,libname,libsource,buildlibdir)	@@\
++Concat3(DEP,varname,LIB) = 						@@\
++Concat(varname,LIB) = LoaderLibPrefix Concat(-l,libname)		@@\
++LintLibReferences(varname,libname,libsource)
++#else
+ #define ProjectUnsharedLibReferences(varname,libname,libsource,buildlibdir)	@@\
+ Concat3(DEP,varname,LIB) = _UseCat($(USRLIBDIR)/,buildlibdir/,LibraryTargetName(libname))	@@\
+ Concat(varname,LIB) = LoaderLibPrefix Concat(-l,libname)		@@\
+ LintLibReferences(varname,libname,libsource)
+ #endif
++#endif
+ 
+  /*
+  * ProjectUnsharedFontLibReferences - unshared font libraries
+@@ -3126,6 +3133,9 @@
+ 
+ #ifdef UseInstalled
+ #define ImakeSubCmdHelper $(IMAKE_CMD)
++#elif defined(UseInstalledPrograms)
++#define ImakeSubCmdHelper $(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) \
++			  $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
+ #else
+ #define ImakeSubCmdHelper $(IMAKEPREFIX)$(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) \
+ 			  $(IMAKE_DEFINES) $(IMAKE_WARNINGS)

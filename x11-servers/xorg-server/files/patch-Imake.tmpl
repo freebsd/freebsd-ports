@@ -1,0 +1,75 @@
+--- config/cf/Imake.tmpl.orig	Mon Dec  9 19:20:41 2002
++++ config/cf/Imake.tmpl	Thu Jan  2 14:34:20 2003
+@@ -237,7 +237,8 @@
+ 
+ #ifndef RmanCmd
+ #if BuildRman
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define RmanCmd rman
+ #else
+ #define RmanCmd $(TOP)/config/util/rman
+@@ -1348,7 +1349,8 @@
+ #define LoaderLibPrefix /**/
+ #endif
+ #ifndef ImakeCmd
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define ImakeCmd imake
+ #else
+ #define ImakeCmd $(IMAKESRC)/imake
+@@ -1359,19 +1361,22 @@
+ #endif
+ #ifndef DependCmd
+ #if UseGccMakeDepend
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define DependCmd gccmakedep
+ #else
+ #define DependCmd $(DEPENDSRC)/gccmakedep
+ #endif
+ #elif UseCCMakeDepend
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define DependCmd ccmakedep
+ #else
+ #define DependCmd $(DEPENDSRC)/ccmakedep
+ #endif
+ #else
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define DependCmd makedepend
+ #else
+ #define DependCmd $(DEPENDSRC)/makedepend
+@@ -1398,21 +1403,23 @@
+ #ifndef ExportListCmd
+ # ifndef ExportListGenSource
+ #  define ExportListCmd		/**/
+-# elif !defined(UseInstalled)
++# elif !defined(UseInstalled) && !defined(UseInstalledPrograms)
+ #  define ExportListCmd		$(CONFIGSRC)/util/exportlistgen
+ # else
+ #  define ExportListCmd		exportlistgen
+ # endif
+ #endif
+ #ifndef MkdirHierCmd
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define MkdirHierCmd mkdirhier
+ #else
+ #define MkdirHierCmd $(SHELL) $(CONFIGSRC)/util/mkdirhier.sh
+ #endif
+ #endif
+ #ifndef RevPathCmd
+-#ifdef UseInstalled		/* assume BINDIR in path */
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++/* assume BINDIR in path */
+ #define RevPathCmd revpath
+ #else
+ #define RevPathCmd $(CONFIGSRC)/util/revpath

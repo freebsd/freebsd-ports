@@ -1,0 +1,11 @@
+--- programs/Xserver/os/Imakefile.orig	Sat May  8 18:00:52 2004
++++ programs/Xserver/os/Imakefile	Sat May  8 18:01:08 2004
+@@ -132,7 +132,7 @@
+ 		  $(RANDOM_DEFINES)
+        INCLUDES = -I. -I../include -I$(XINCLUDESRC) -I$(EXTINCSRC) \
+ 		  -I$(SERVERSRC)/Xext -I$(FONTINCSRC) -I$(SERVERSRC)/render \
+-		  -I$(TOP)/lib/Xau -I../lbx Krb5Includes
++		  -I$(TOP)/lib/Xau -I../lbx Krb5Includes -I$(INCROOT)/X11
+  DEPEND_DEFINES = $(DBM_DEFINES) $(XDMCP_DEFINES) $(EXT_DEFINES) \
+ 		  $(TRANS_INCLUDES) $(CONNECTION_FLAGS) DependDefines
+        LINTLIBS = ../dix/llib-ldix.ln
