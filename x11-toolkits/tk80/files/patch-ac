@@ -1,12 +1,12 @@
-*** ../generic/tkText.c.orig	1997/07/04 22:39:41	2.0
---- ../generic/tkText.c	1997/07/04 22:40:54
+*** tkText.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkText.c	1997/08/15 22:25:21
 ***************
 *** 866,871 ****
 --- 866,872 ----
   	    || (textPtr->selTagPtr->spacing2String != NULL)
   	    || (textPtr->selTagPtr->spacing3String != NULL)
   	    || (textPtr->selTagPtr->tabString != NULL)
-+ 	    || (textPtr->selTagPtr->invisibleString != NULL)
++ 	    || (textPtr->selTagPtr->elideString != NULL)
   	    || (textPtr->selTagPtr->underlineString != NULL)
   	    || (textPtr->selTagPtr->wrapMode != NULL)) {
   	textPtr->selTagPtr->affectsDisplay = 1;
@@ -23,7 +23,7 @@
   		    }
   		}
   	    }
-! 	    if (segPtr->typePtr == &tkTextCharType && !TkTextIsInvisible(textPtr, &textPtr->selIndex)) {
+! 	    if (segPtr->typePtr == &tkTextCharType && !TkTextIsElided(textPtr, &textPtr->selIndex)) {
   		memcpy((VOID *) buffer, (VOID *) (segPtr->body.chars
   			+ offsetInSeg), (size_t) chunkSize);
   		buffer += chunkSize;
@@ -40,7 +40,7 @@
       int argc;			/* Number of arguments. */
       char **argv;		/* Argument strings. */
   {
-!     int backwards, exact, searchInvisible, c, i, argsLeft, noCase, leftToScan;
+!     int backwards, exact, searchElide, c, i, argsLeft, noCase, leftToScan;
       size_t length;
       int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
       int code, matchLength, matchChar, passes, stopLine, searchWholeText;
@@ -60,7 +60,7 @@
        */
   
       exact = 1;
-+     searchInvisible = 0;
++     searchElide = 0;
 +     curIndex.tree = textPtr->tree;
       backwards = 0;
       noCase = 0;
@@ -78,7 +78,7 @@
   	    badSwitch:
   	    Tcl_AppendResult(interp, "bad switch \"", arg,
   		    "\": must be -forward, -backward, -exact, -regexp, ",
-! 		    "-nocase, -count, -invisible, or --", (char *) NULL);
+! 		    "-nocase, -count, -elide, or --", (char *) NULL);
   	    return TCL_ERROR;
   	}
   	c = arg[1];
@@ -88,8 +88,8 @@
   	    noCase = 1;
   	} else if ((c == 'r') && (strncmp(argv[i], "-regexp", length) == 0)) {
   	    exact = 0;
-+ 	} else if ((c == 'i') && (strncmp(argv[i], "-invisible", length) == 0)) {
-+ 	    searchInvisible = 1;
++ 	} else if ((c == 'e') && (strncmp(argv[i], "-elide", length) == 0)) {
++ 	    searchElide = 1;
   	} else if ((c == '-') && (strncmp(argv[i], "--", length) == 0)) {
   	    i++;
   	    break;
@@ -111,22 +111,22 @@
 + 	curIndex.linePtr = linePtr; curIndex.charIndex = 0;
   	for (segPtr = linePtr->segPtr; segPtr != NULL;
 ! 		curIndex.charIndex += segPtr->size, segPtr = segPtr->nextPtr) {
-! 	    if (segPtr->typePtr != &tkTextCharType || (!searchInvisible && TkTextIsInvisible(textPtr, &curIndex))) {
+! 	    if (segPtr->typePtr != &tkTextCharType || (!searchElide && TkTextIsElided(textPtr, &curIndex))) {
   		continue;
   	    }
   	    Tcl_DStringAppend(&line, segPtr->body.chars, segPtr->size);
-*** ../generic/tkText.h.orig	1997/07/04 22:39:41	2.0
---- ../generic/tkText.h	1997/07/04 22:40:56
+*** tkText.h	1997/07/04 22:39:41	2.0
+--- ../generic/tkText.h	1997/08/15 22:18:56
 ***************
 *** 370,375 ****
 --- 370,379 ----
   				 * Must be tkTextCharUid, tkTextNoneUid,
   				 * tkTextWordUid, or NULL to use wrapMode
   				 * for whole widget. */
-+     char *invisibleString;	/* -invisible option string (malloc-ed).
++     char *elideString;	/* -elide option string (malloc-ed).
 + 				 * NULL means option not specified. */
-+     int invisible;		/* Non-zero means text is invisible.
-+ 				 * Only valid if invisibleString is non-NULL. */
++     int elide;		/* Non-zero means text is elided.
++ 				 * Only valid if elideString is non-NULL. */
       int affectsDisplay;		/* Non-zero means that this tag affects the
   				 * way information is displayed on the screen
   				 * (so need to redisplay if tag changes). */
@@ -137,12 +137,12 @@
   extern TkTextIndex *	TkTextMakeIndex _ANSI_ARGS_((TkTextBTree tree,
   			    int lineIndex, int charIndex,
 + 			    TkTextIndex *indexPtr));
-+ extern int		TkTextIsInvisible _ANSI_ARGS_((TkText *textPtr,
++ extern int		TkTextIsElided _ANSI_ARGS_((TkText *textPtr,
   			    TkTextIndex *indexPtr));
   extern int		TkTextMarkCmd _ANSI_ARGS_((TkText *textPtr,
   			    Tcl_Interp *interp, int argc, char **argv));
-*** ../generic/tkTextBTree.c.orig	1997/07/04 22:39:41	2.0
---- ../generic/tkTextBTree.c	1997/07/04 22:40:58
+*** tkTextBTree.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextBTree.c	1997/08/15 22:20:16
 ***************
 *** 2427,2432 ****
 --- 2427,2558 ----
@@ -152,18 +152,18 @@
 + 
 + 
 + /*
-+    special case to just return information about invisible attribute
++    special case to just return information about elided attribute
 +    specialized from TkBTreeGetTags(indexPtr, numTagsPtr) and GetStyle(textPtr, indexPtr)
 +    just need to keep track of invisibility settings for each priority, pick highest one active at end
 + */
 + int
-+ TkTextIsInvisible(textPtr, indexPtr)
++ TkTextIsElided(textPtr, indexPtr)
 +     TkText *textPtr;		/* Overall information about text widget. */
 +     TkTextIndex *indexPtr;	/* The character in the text for which
 + 				 * display information is wanted. */
 + {
 + #define LOTSA_TAGS 1000
-+ 	int invisible = 0;		/* if nobody says otherwise, it's visible */
++ 	int elide = 0;		/* if nobody says otherwise, it's visible */
 + 
 + 	int deftagCnts[LOTSA_TAGS];
 + 	int *tagCnts = deftagCnts;
@@ -196,7 +196,7 @@
 + 	if ((segPtr->typePtr == &tkTextToggleOnType)
 + 	    || (segPtr->typePtr == &tkTextToggleOffType)) {
 + 	    tagPtr = segPtr->body.toggle.tagPtr;
-+ 	    if (tagPtr->invisibleString != NULL) {
++ 	    if (tagPtr->elideString != NULL) {
 + 		   tagPtrs[tagPtr->priority] = tagPtr;
 + 		   tagCnts[tagPtr->priority]++;
 + 	    }
@@ -216,7 +216,7 @@
 + 	    if ((segPtr->typePtr == &tkTextToggleOnType)
 + 		   || (segPtr->typePtr == &tkTextToggleOffType)) {
 + 		   tagPtr = segPtr->body.toggle.tagPtr;
-+ 		   if (tagPtr->invisibleString != NULL) {
++ 		   if (tagPtr->elideString != NULL) {
 + 			  tagPtrs[tagPtr->priority] = tagPtr;
 + 			  tagCnts[tagPtr->priority]++;
 + 		   }
@@ -240,7 +240,7 @@
 + 		    summaryPtr = summaryPtr->nextPtr) {
 + 		if (summaryPtr->toggleCount & 1) {
 + 		    tagPtr = summaryPtr->tagPtr;
-+ 		    if (tagPtr->invisibleString != NULL) {
++ 		    if (tagPtr->elideString != NULL) {
 + 			   tagPtrs[tagPtr->priority] = tagPtr;
 + 			   tagCnts[tagPtr->priority] += summaryPtr->toggleCount;
 + 		    }
@@ -252,18 +252,18 @@
 + 
 +     /*
 +      * Now traverse from highest priority to lowest, 
-+      * take invisible value from first odd count (= on)
++      * take elided value from first odd count (= on)
 +      */
 + 
 +     for (i = numTags-1; i >=0; i--) {
 + 	   if (tagCnts[i] & 1) {
 + #ifndef ALWAYS_SHOW_SELECTION
-+ 		  /* who would make the selection invisible? */
++ 		  /* who would make the selection elided? */
 + 		  if ((tagPtr == textPtr->selTagPtr) && !(textPtr->flags & GOT_FOCUS)) {
 + 			 continue;
 + 		  }
 + #endif
-+ 		  invisible = tagPtrs[i]->invisible;
++ 		  elide = tagPtrs[i]->elide;
 + 		  break;
 + 	   }
 +     }
@@ -273,20 +273,20 @@
 + 	   ckfree((char *) tagPtrs);
 +     }
 + 
-+     return invisible;
++     return elide;
 + }
   
   /*
    *----------------------------------------------------------------------
-*** ../generic/tkTextDisp.c.orig	1997/07/04 22:39:41	2.0
---- ../generic/tkTextDisp.c	1997/07/04 22:40:59
+*** tkTextDisp.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextDisp.c	1997/08/16 01:20:18
 ***************
 *** 55,60 ****
 --- 55,61 ----
   				 * be NULL). */
       int underline;		/* Non-zero means draw underline underneath
   				 * text. */
-+     int invisible;		/* Non-zero means draw text */
++     int elide;		/* Non-zero means draw text */
       Tk_Uid wrapMode;		/* How to handle wrap-around for this tag.
   				 * One of tkTextCharUid, tkTextNoneUid,
   				 * or tkTextWordUid. */
@@ -298,17 +298,17 @@
   			    TkTextDispChunk *chunkPtr));
 + 
 + /*
-+    Definitions of invisible procs.  So short we can define them here.
++    Definitions of elided procs.
 +    Compiler can't inline these since we use pointers to these functions.
-+    InvisibleDisplayProc, InvisibleUndisplayProc special-cased for speed,
-+    as potentially many invisible DLine chunks if large, tag toggle-filled
-+    invisible region.
++    ElideDisplayProc, ElideUndisplayProc special-cased for speed,
++    as potentially many elided DLine chunks if large, tag toggle-filled
++    elided region.
 + */
-+ static void		InvisibleBboxProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
++ static void		ElideBboxProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
 + 			    int index, int y, int lineHeight, int baseline,
 + 			    int *xPtr, int *yPtr, int *widthPtr,
 + 			    int *heightPtr));
-+ static int		InvisibleMeasureProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
++ static int		ElideMeasureProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
 + 			    int x));
 + 
   static void		DisplayDLine _ANSI_ARGS_((TkText *textPtr,
@@ -327,7 +327,7 @@
   
       int borderPrio, borderWidthPrio, reliefPrio, bgStipplePrio;
       int fgPrio, fontPrio, fgStipplePrio;
-!     int underlinePrio, invisiblePrio, justifyPrio, offsetPrio;
+!     int underlinePrio, elidePrio, justifyPrio, offsetPrio;
       int lMargin1Prio, lMargin2Prio, rMarginPrio;
       int spacing1Prio, spacing2Prio, spacing3Prio;
       int overstrikePrio, tabPrio, wrapPrio;
@@ -344,7 +344,7 @@
       tagPtrs = TkBTreeGetTags(indexPtr, &numTags);
       borderPrio = borderWidthPrio = reliefPrio = bgStipplePrio = -1;
       fgPrio = fontPrio = fgStipplePrio = -1;
-!     underlinePrio = invisiblePrio = justifyPrio = offsetPrio = -1;
+!     underlinePrio = elidePrio = justifyPrio = offsetPrio = -1;
       lMargin1Prio = lMargin2Prio = rMarginPrio = -1;
       spacing1Prio = spacing2Prio = spacing3Prio = -1;
       overstrikePrio = tabPrio = wrapPrio = -1;
@@ -354,10 +354,10 @@
   	    styleValues.underline = tagPtr->underline;
   	    underlinePrio = tagPtr->priority;
   	}
-+ 	if ((tagPtr->invisibleString != NULL)
-+ 		&& (tagPtr->priority > invisiblePrio)) {
-+ 	    styleValues.invisible = tagPtr->invisible;
-+ 	    invisiblePrio = tagPtr->priority;
++ 	if ((tagPtr->elideString != NULL)
++ 		&& (tagPtr->priority > elidePrio)) {
++ 	    styleValues.elide = tagPtr->elide;
++ 	    elidePrio = tagPtr->priority;
 + 	}
   	if ((tagPtr->wrapMode != NULL)
   		&& (tagPtr->priority > wrapPrio)) {
@@ -375,7 +375,7 @@
   					 * lines with numChars > 0.  Used to
   					 * drop 0-sized chunks from the end
   					 * of the line. */
-!     int offset, ascent, descent, code, invisible, invisiblesize;
+!     int offset, ascent, descent, code, elide, elidesize;
       StyleValues *sValuePtr;
   
       /*
@@ -387,24 +387,24 @@
   
 + 
 +     /*
-+ 	* special case entirely invisible line as there may be 1000s or more
++ 	* special case entirely elide line as there may be 1000s or more
 + 	*/
-+ 	invisible = TkTextIsInvisible(textPtr, indexPtr);		/* save a malloc */
-+ 	if (invisible && indexPtr->charIndex==0) {
++ 	elide = TkTextIsElided(textPtr, indexPtr);		/* save a malloc */
++ 	if (elide && indexPtr->charIndex==0) {
 + 		maxChars = 0;
-+ 		for (segPtr = indexPtr->linePtr->segPtr; invisible && segPtr!=NULL; segPtr = segPtr->nextPtr) {
-+ 			if ((invisiblesize = segPtr->size) > 0) {
-+ 				maxChars += invisiblesize;
++ 		for (segPtr = indexPtr->linePtr->segPtr; elide && segPtr!=NULL; segPtr = segPtr->nextPtr) {
++ 			if ((elidesize = segPtr->size) > 0) {
++ 				maxChars += elidesize;
 + 
 + 			/* if have tag toggle, chance that invisibility state changed, so bail out */
 + 			} else if (segPtr->typePtr == &tkTextToggleOffType || segPtr->typePtr == &tkTextToggleOnType) {
-+ 				if (segPtr->body.toggle.tagPtr->invisibleString!=NULL) {
-+ 					invisible = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->invisible==1);
++ 				if (segPtr->body.toggle.tagPtr->elideString!=NULL) {
++ 					elide = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->elide==1);
 + 				}
 + 			}
 + 		}
 + 
-+ 		if (invisible) {
++ 		if (elide) {
 + 		    dlPtr->count = maxChars;
 + 		    dlPtr->spaceAbove = dlPtr->spaceBelow = dlPtr->length = 0;
 + 		    return dlPtr;
@@ -422,7 +422,7 @@
       lastChunkPtr = NULL;
       chunkPtr = NULL;
       noCharsYet = 1;
-+     invisible = 0;
++     elide = 0;
       breakChunkPtr = NULL;
       breakCharOffset = 0;
       justify = TK_JUSTIFY_LEFT;
@@ -434,18 +434,18 @@
       while (segPtr != NULL) {
 + 
 + 	/* every line still gets at least one chunk due to expectations in rest of code,
-+ 	   but able to skip invisible portions of line quickly */
-+ 	/* if current chunk invisible and last chunk was too, coalese */
-+ 	if (invisible && lastChunkPtr!=NULL && lastChunkPtr->displayProc == NULL/*InvisibleDisplayProc*/) {
-+ 	    if ((invisiblesize = segPtr->size - offset) > 0) {
-+ 		   curIndex.charIndex += invisiblesize;
-+ 		   lastChunkPtr->numChars += invisiblesize;
++ 	   but able to skip elided portions of line quickly */
++ 	/* if current chunk elided and last chunk was too, coalese */
++ 	if (elide && lastChunkPtr!=NULL && lastChunkPtr->displayProc == NULL/*ElideDisplayProc*/) {
++ 	    if ((elidesize = segPtr->size - offset) > 0) {
++ 		   curIndex.charIndex += elidesize;
++ 		   lastChunkPtr->numChars += elidesize;
 + 		   breakCharOffset = lastChunkPtr->breakIndex = lastChunkPtr->numChars;
 + 
 + 	    /* if have tag toggle, chance that invisibility state changed */
 + 	    } else if (segPtr->typePtr == &tkTextToggleOffType || segPtr->typePtr == &tkTextToggleOnType) {
-+ 		   if (segPtr->body.toggle.tagPtr->invisibleString!=NULL) {
-+ 			  invisible = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->invisible==1);
++ 		   if (segPtr->body.toggle.tagPtr->elideString!=NULL) {
++ 			  elide = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->elide==1);
 + 		   }
 + 	    }
 + 
@@ -466,7 +466,7 @@
   	    chunkPtr->nextPtr = NULL;
   	}
   	chunkPtr->stylePtr = GetStyle(textPtr, &curIndex);
-+ 	invisible = chunkPtr->stylePtr->sValuePtr->invisible;
++ 	elide = chunkPtr->stylePtr->sValuePtr->elide;
   
   	/*
   	 * Save style information such as justification and indentation,
@@ -483,7 +483,7 @@
   
   	gotTab = 0;
   	maxChars = segPtr->size - offset;
-! 	if (!invisible && justify == TK_JUSTIFY_LEFT) {
+! 	if (!elide && justify == TK_JUSTIFY_LEFT) {
   	    if (segPtr->typePtr == &tkTextCharType) {
   		char *p;
   
@@ -502,7 +502,7 @@
   	    }
   	}
   	chunkPtr->x = x;
-+ 	if (invisible && maxChars) {
++ 	if (elide && maxChars) {
 + 	    /* don't free style here, as other code expects to be able to do that */
 + 	    /*breakCharOffset =*/ chunkPtr->breakIndex = chunkPtr->numChars = maxChars;
 + 	    chunkPtr->width = 0;
@@ -511,8 +511,8 @@
 + 	    /* would just like to point to canonical empty chunk */
 + 	    chunkPtr->displayProc = (Tk_ChunkDisplayProc *) NULL;
 + 	    chunkPtr->undisplayProc = (Tk_ChunkUndisplayProc *) NULL;
-+ 	    chunkPtr->measureProc = InvisibleMeasureProc;
-+ 	    chunkPtr->bboxProc = InvisibleBboxProc;
++ 	    chunkPtr->measureProc = ElideMeasureProc;
++ 	    chunkPtr->bboxProc = ElideBboxProc;
 + 
 + 	    code = 1;
 + 	} else
@@ -573,8 +573,8 @@
   		    dlPtr->baseline - dlPtr->spaceAbove, display, pixmap,
   		    dlPtr->y + dlPtr->spaceAbove);
   	} else {
-+ 	    /* don't call if invisible.  This tax ok since not very many visible DLine's in
-+ 		  an area, but potentially many invisible ones */
++ 	    /* don't call if elide.  This tax ok since not very many visible DLine's in
++ 		  an area, but potentially many elide ones */
 + 	    if (chunkPtr->displayProc != NULL)
   	    (*chunkPtr->displayProc)(chunkPtr, x, dlPtr->spaceAbove,
   		    dlPtr->height - dlPtr->spaceAbove - dlPtr->spaceBelow,
@@ -650,7 +650,7 @@
   		dlPtr = LayoutDLine(textPtr, &index);
   		dlPtr->nextPtr = lowestPtr;
   		lowestPtr = dlPtr;
-+ 		if (dlPtr->length == 0 && dlPtr->height == 0) { offset--; break; }	/* invisible */
++ 		if (dlPtr->length == 0 && dlPtr->height == 0) { offset--; break; }	/* elide */
   		TkTextIndexForwChars(&index, dlPtr->count, &index);
   		charsToCount -= dlPtr->count;
   	    } while ((charsToCount > 0)
@@ -800,7 +800,7 @@
   }
   
 + static void
-+ InvisibleBboxProc(chunkPtr, index, y, lineHeight, baseline, xPtr, yPtr,
++ ElideBboxProc(chunkPtr, index, y, lineHeight, baseline, xPtr, yPtr,
 + 	widthPtr, heightPtr)
 +     TkTextDispChunk *chunkPtr;		/* Chunk containing desired char. */
 +     int index;				/* Index of desired character within
@@ -826,7 +826,7 @@
 + 
 + 
 + static int
-+ InvisibleMeasureProc(chunkPtr, x)
++ ElideMeasureProc(chunkPtr, x)
 +     TkTextDispChunk *chunkPtr;		/* Chunk containing desired coord. */
 +     int x;				/* X-coordinate, in same coordinate
 + 					 * system as chunkPtr->x. */
@@ -850,20 +850,20 @@
        * Draw the text, underline, and overstrike for this chunk.
        */
   
-!     if (!sValuePtr->invisible && ciPtr->numChars > offsetChars) {
+!     if (!sValuePtr->elide && ciPtr->numChars > offsetChars) {
   	int numChars = ciPtr->numChars - offsetChars;
   	char *string = ciPtr->chars + offsetChars;
   
-*** ../generic/tkTextTag.c.orig	1997/07/04 22:39:41	2.0
---- ../generic/tkTextTag.c	1997/07/04 22:41:02
+*** tkTextTag.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextTag.c	1997/08/15 22:20:32
 ***************
 *** 63,68 ****
 --- 63,71 ----
       {TK_CONFIG_STRING, "-underline", (char *) NULL, (char *) NULL,
   	(char *) NULL, Tk_Offset(TkTextTag, underlineString),
   	TK_CONFIG_NULL_OK},
-+     {TK_CONFIG_STRING, "-invisible", (char *) NULL, (char *) NULL,
-+ 	(char *) NULL, Tk_Offset(TkTextTag, invisibleString),
++     {TK_CONFIG_STRING, "-elide", (char *) NULL, (char *) NULL,
++ 	(char *) NULL, Tk_Offset(TkTextTag, elideString),
 + 	TK_CONFIG_NULL_OK},
       {TK_CONFIG_UID, "-wrap", (char *) NULL, (char *) NULL,
   	(char *) NULL, Tk_Offset(TkTextTag, wrapMode),
@@ -874,9 +874,9 @@
   		    return TCL_ERROR;
   		}
   	    }
-+ 	    if (tagPtr->invisibleString != NULL) {
-+ 		if (Tcl_GetBoolean(interp, tagPtr->invisibleString,
-+ 			&tagPtr->invisible) != TCL_OK) {
++ 	    if (tagPtr->elideString != NULL) {
++ 		if (Tcl_GetBoolean(interp, tagPtr->elideString,
++ 			&tagPtr->elide) != TCL_OK) {
 + 		    return TCL_ERROR;
 + 		}
 + 	    }
@@ -889,7 +889,7 @@
   		    || (tagPtr->spacing3String != NULL)
   		    || (tagPtr->tabString != NULL)
   		    || (tagPtr->underlineString != NULL)
-+ 		    || (tagPtr->invisibleString != NULL)
++ 		    || (tagPtr->elideString != NULL)
   		    || (tagPtr->wrapMode != NULL)) {
   		tagPtr->affectsDisplay = 1;
   	    }
@@ -899,8 +899,8 @@
       tagPtr->tabArrayPtr = NULL;
       tagPtr->underlineString = NULL;
       tagPtr->underline = 0;
-+     tagPtr->invisibleString = NULL;
-+     tagPtr->invisible = 0;
++     tagPtr->elideString = NULL;
++     tagPtr->elide = 0;
       tagPtr->wrapMode = NULL;
       tagPtr->affectsDisplay = 0;
       textPtr->numTags++;
@@ -911,8 +911,8 @@
       if (tagPtr->underlineString != NULL) {
   	ckfree(tagPtr->underlineString);
 +     }
-+     if (tagPtr->invisibleString != NULL) {
-+ 	ckfree(tagPtr->invisibleString);
++     if (tagPtr->elideString != NULL) {
++ 	ckfree(tagPtr->elideString);
       }
       ckfree((char *) tagPtr);
   }
