@@ -15,11 +15,15 @@ share/gnome/gnumeric/glade/print.glade
 share/gnome/gnumeric/glade/row-height.glade
 share/gnome/gnumeric/glade/sheet-rename.glade
 share/gnome/gnumeric/glade/summary.glade
+share/gnome/gnumeric/guile/gnumeric_startup.scm
 share/gnome/gnumeric/plugins/libcsv.so
+share/gnome/gnumeric/plugins/libdif.so
+share/gnome/gnumeric/plugins/libgnumguile.so
 share/gnome/gnumeric/plugins/libhtml.so
 share/gnome/gnumeric/plugins/liblotus.so
 share/gnome/gnumeric/plugins/liboleo.so
 share/gnome/gnumeric/plugins/libpython.so
+share/gnome/gnumeric/plugins/libsc.so
 share/gnome/gnumeric/plugins/libstat.so
 share/gnome/gnumeric/plugins/libsylk.so
 share/gnome/gnumeric/plugins/libtext.so
@@ -180,6 +184,7 @@ share/locale/ru/LC_MESSAGES/gnumeric.mo
 share/locale/sk/LC_MESSAGES/gnumeric.mo
 share/locale/sv/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
+@dirrm share/gnome/gnumeric/guile
 @dirrm share/gnome/gnumeric/glade
 @dirrm share/gnome/gnumeric/plugins
 @dirrm share/gnome/gnumeric/python
