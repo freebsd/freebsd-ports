@@ -10256,6 +10256,7 @@ wanderlust	ports/mail/wanderlust
 wanderlust-emacs20	ports/mail/wanderlust-emacs20
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh
+wargus		ports/games/wargus
 warppipe	ports/net/warppipe
 washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
