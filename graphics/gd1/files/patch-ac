@@ -40,7 +40,7 @@
 -INCLUDEDIRS=-I. -I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
 +INCLUDEDIRS=-I. -I${LOCALBASE}/include
 +.if defined(WITH_X11)
-+INCLUDEDIRS+=-I{LOCALBASE}/include/freetype -I${X11BASE}/include/X11 -I${X11BASE}/include
++INCLUDEDIRS+=-I${LOCALBASE}/include/freetype -I${X11BASE}/include/X11 -I${X11BASE}/include
 +.endif
  
 @@ -50,12 +59,15 @@
