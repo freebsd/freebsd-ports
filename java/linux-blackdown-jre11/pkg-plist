@@ -23,6 +23,7 @@ linux-blackdown-jre%%JRE_VERSION%%/bin/java
 linux-blackdown-jre%%JRE_VERSION%%/bin/javakey
 linux-blackdown-jre%%JRE_VERSION%%/bin/jre
 linux-blackdown-jre%%JRE_VERSION%%/bin/rmiregistry
+linux-blackdown-jre%%JRE_VERSION%%/bin/arch
 linux-blackdown-jre%%JRE_VERSION%%/lib/awt.properties
 linux-blackdown-jre%%JRE_VERSION%%/lib/content-types.properties
 linux-blackdown-jre%%JRE_VERSION%%/lib/font.properties

@@ -7,6 +7,7 @@
 
 PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://gd.tuwien.ac.at/opsys/linux/java/JDK-${PORTVERSION}/${ARCH}/v3/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/JDK-${PORTVERSION}/i386/v3/ \
