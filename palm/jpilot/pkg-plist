@@ -31,6 +31,7 @@ lib/jpilot/plugins/libsynctime.so.0
 %%PORTDOCS%%share/doc/jpilot/jpilot-toplogo.jpg
 %%PORTDOCS%%share/doc/jpilot/manual.html
 %%PORTDOCS%%share/doc/jpilot/plugin.html
+share/gnome/apps/Applications/jpilot.desktop
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
 share/jpilot/ExpenseDB.pdb
@@ -97,3 +98,6 @@ share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps/Applications 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true

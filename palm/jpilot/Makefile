@@ -7,7 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.4
+PORTVERSION=	0.99.5
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 

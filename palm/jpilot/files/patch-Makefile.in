@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Jan 10 18:13:18 2003
-+++ Makefile.in	Mon Jan 13 13:49:57 2003
-@@ -133,7 +133,7 @@
+--- Makefile.in.orig	Sat Feb 22 06:41:55 2003
++++ Makefile.in	Sat Feb 22 17:51:22 2003
+@@ -134,7 +134,7 @@
  install_sh = @install_sh@
  plugin_support = @plugin_support@
  
--SUBDIRS = Expense SyncTime KeyRing docs m4 dialer intl po
-+SUBDIRS = Expense SyncTime KeyRing m4 dialer intl po
+-SUBDIRS = intl Expense SyncTime KeyRing docs dialer po
++SUBDIRS = intl Expense SyncTime KeyRing dialer po
  
  EXTRA_DIST = reconf autogen.sh ChangeLog docs empty icons \
- 	BUGS jpilot.spec jpilot-col.spec jpilot.kdelnk jpilot.rh7.spec \
+ 	config.rpath mkinstalldirs \
