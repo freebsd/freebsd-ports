@@ -1,0 +1,15 @@
+*** Imakefile.orig	Fri Nov 17 14:37:36 1989
+--- Imakefile	Mon Jan  2 23:28:47 1995
+***************
+*** 1,5 ****
+  
+!      SCORE_FILE = -DSCORE_FILE=\"./xrobotscores\"
+        MAXSCORES = -DMAXSCORES=20
+             MAXX = -DMAXX=35
+             MAXY = -DMAXY=20
+--- 1,5 ----
+  
+!      SCORE_FILE = -DSCORE_FILE=\"/usr/X11R6/lib/X11/xrobotscores\"
+        MAXSCORES = -DMAXSCORES=20
+             MAXX = -DMAXX=35
+             MAXY = -DMAXY=20
