@@ -1,0 +1,19 @@
+OBJ	  =	main.o server.o screen.o tree.o multipart.o grouplist.o \
+		findfile.o
+CXX	 ?=	g++
+CXXFLAGS ?=	-O6 
+LIBS	  =	-lncurses
+PREFIX	 ?=	/usr/local
+DEST	  =	$(PREFIX)/bin
+INSTALL	 ?=	install
+
+bgrab: $(OBJ) Makefile common.h
+	$(CXX) $(LIBS) -o bgrab $(OBJ)
+
+clean:
+	rm -f $(OBJ) bgrab 
+
+install: bgrab
+	$(INSTALL) bgrab $(DEST)/bgrab
+
+all: bgrab
