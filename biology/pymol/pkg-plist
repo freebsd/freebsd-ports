@@ -1,4 +1,24 @@
 bin/pymol
+%%PORTDOCS%%share/examples/pymol/chempy/generate_amber.py
+%%PORTDOCS%%share/examples/pymol/chempy/generate_mmff.py
+%%PORTDOCS%%share/examples/pymol/cookbook/contact.pml
+%%PORTDOCS%%share/examples/pymol/cookbook/README
+%%PORTDOCS%%share/examples/pymol/cookbook/density.pml
+%%PORTDOCS%%share/examples/pymol/cookbook/groel_es.pml
+%%PORTDOCS%%share/examples/pymol/cookbook/packing.pml
+%%PORTDOCS%%share/examples/pymol/cookbook/packsurf.pml
+%%PORTDOCS%%share/examples/pymol/cookbook/ribosome.pml
+%%PORTDOCS%%share/examples/pymol/devel/brick01.py
+%%PORTDOCS%%share/examples/pymol/devel/cgo01.py
+%%PORTDOCS%%share/examples/pymol/devel/cgo02.py
+%%PORTDOCS%%share/examples/pymol/devel/cgo03.py
+%%PORTDOCS%%share/examples/pymol/devel/cgo_3Dtext01.py
+%%PORTDOCS%%share/examples/pymol/devel/cgo_label_hack.py
+%%PORTDOCS%%share/examples/pymol/devel/gl01.py
+%%PORTDOCS%%share/examples/pymol/devel/gl02.py
+%%PORTDOCS%%share/examples/pymol/devel/gl03.py
+%%PORTDOCS%%share/examples/pymol/devel/povray01.py
+%%PORTDOCS%%share/examples/pymol/devel/start_pymol.py
 share/pymol/modules/ExtensionClass.so
 share/pymol/modules/_cmd.so
 share/pymol/modules/_glu_nummodule.so
@@ -548,4 +568,8 @@ share/pymol/test/win.py
 @dirrm share/pymol/modules/chempy/bmin
 @dirrm share/pymol/modules/chempy
 @dirrm share/pymol/modules
+%%PORTDOCS%%@dirrm share/examples/pymol/devel
+%%PORTDOCS%%@dirrm share/examples/pymol/cookbook
+%%PORTDOCS%%@dirrm share/examples/pymol/chempy
+%%PORTDOCS%%@dirrm share/examples/pymol
 @dirrm share/pymol

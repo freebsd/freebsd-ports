@@ -6,7 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -17,12 +17,12 @@ MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/PMW:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3
 
-WRKSRC=         ${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GMAKE=	yes
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 
 pre-patch:
@@ -38,6 +38,11 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/pymol
 	@${TAR} -C ${WRKSRC} -chf - modules test | \
 		${TAR} -xf - -C ${PREFIX}/share/pymol
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/examples --exclude package -chf - . | \
+		${TAR} -xf - -C ${EXAMPLESDIR}
+.endif
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/pymol/modules
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/pymol/modules
 
