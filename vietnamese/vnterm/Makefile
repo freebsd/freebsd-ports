@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/xc/programs/xterm
 XMKMF=		xmkmf
 MAN1=		vnterm.1
 CFLAGS+=	-I${PREFIX}/include/viet
+CFLAGS+=	-D_POSIX_SOURCE
 
 post-patch:
 	@${CP} -p ${FILESDIR}/vnvars.* ${WRKSRC}
