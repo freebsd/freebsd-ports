@@ -33,7 +33,8 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and build.
 # RUBY_SETUP		- Set to the alternative name of setup.rb (default: setup.rb).
 # USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
-# USE_RUBY_RD		- Says that the port uses rd to generate documents.
+# USE_RUBY_RDTOOL	- Says that the port uses rdtool to generate documents.
+# USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
 # USE_RUBY_FEATURES	- Says that the port requires some of the following features
 #			  for building and/or running (default: none):
 #			    benchmark dl fileutil optparse pp racc-runtime
@@ -61,18 +62,21 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
-# RUBY_RD		- Full path of rd executable.
+# RUBY_RD2		- Full path of rd2 executable.
+# RUBY_RDOC		- Full path of rdoc executable.
 #
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_SHIM18_PORT	- Port path of ruby16-shim-ruby18 without PORTSDIR.
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
-# RUBY_RD_PORT		- Port path of rd without PORTSDIR.
+# RUBY_RDTOOL_PORT	- Port path of rdtool without PORTSDIR.
+# RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
 # DEPEND_RUBY_SHIM18	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby16-shim-ruby18.
 # DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
-# DEPEND_RUBY_RD2	- BUILD_DEPENDS entry for rd.
+# DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
+# DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent libraries.
 # RUBY_ARCHLIBDIR	- Installation path for architecture dependent libraries.
@@ -82,6 +86,10 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_EXAMPLESDIR	- Installation path for examples.
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
+
+#.if ${ARCH} == alpha
+#RUBY_VER?=		1.7
+#.endif
 
 .if defined(RUBY)
 .if !exists(${RUBY})
@@ -128,7 +136,11 @@ _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 .endif
 #      defined(RUBY)
 
+#.if ${ARCH} == alpha
+#RUBY_DEFAULT_VER?=	1.7
+#.else
 RUBY_DEFAULT_VER?=	1.6
+#.endif
 RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_DISTVERSION?=	${RUBY_VERSION}
@@ -170,20 +182,23 @@ RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 .endif
 
 # Commands
-RUBY_RD?=		${LOCALBASE}/bin/rd2
+RUBY_RD2?=		${LOCALBASE}/bin/rd2
+RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 
 # Ports
 RUBY_PORT?=		lang/ruby${RUBY_SUFFIX}
 RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
-RUBY_RD_PORT?=		textproc/ruby-rdtool
+RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
+RUBY_RDOC_PORT?=	textproc/ruby-rdoc
 
 # Depends
 DEPEND_LIBRUBY?=	${RUBY_NAME}.${RUBY_SHLIBVER}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY_SHIM18?=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/${RUBY_SHIM18_PORT}
 DEPEND_RUBY_AMSTD?=	${RUBY_SITELIBDIR}/amstd/version.rb:${PORTSDIR}/${RUBY_AMSTD_PORT}
-DEPEND_RUBY_RD2?=	${RUBY_RD}:${PORTSDIR}/${RUBY_RD_PORT}
+DEPEND_RUBY_RDTOOL?=	${RUBY_RD2}:${PORTSDIR}/${RUBY_RDTOOL_PORT}
+DEPEND_RUBY_RDTOOL?=	${RUBY_RDOC}:${PORTSDIR}/${RUBY_RDOC_PORT}
 
 # Directories
 RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
@@ -361,12 +376,16 @@ BUILD_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 .endif
 
-.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6 && defined(USE_RUBY_RD)
+.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6 && defined(USE_RUBY_RDTOOL)
 NOPORTDOCS=	yes
 .endif
 
-.if defined(USE_RUBY_RD) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		${DEPEND_RUBY_RD2}
+.if !defined(NOPORTDOCS) && defined(USE_RUBY_RDTOOL)
+BUILD_DEPENDS+=		${DEPEND_RUBY_RDTOOL}
+.endif
+
+.if !defined(NOPORTDOCS) && defined(USE_RUBY_RDOC)
+BUILD_DEPENDS+=		${DEPEND_RUBY_RDOC}
 .endif
 
 MASTER_SITE_BACKUP+=	\
