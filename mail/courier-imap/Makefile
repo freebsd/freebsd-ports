@@ -124,8 +124,10 @@ PLIST_SUB+=	AUTHDFLAG="@comment "
 
 .if !defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=--with-authpam
+PLIST_SUB+=	PAMFLAG="" PWDFLAG="@comment "
 .else
 CONFIGURE_ARGS+=--without-authpam
+PLIST_SUB+=	PAMFLAG="@comment " PWDFLAG=""
 .endif
 
 .if !defined(WITH_CRAM)
