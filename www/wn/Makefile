@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.16 1996/11/18 11:42:21 asami Exp $
+# $Id: Makefile,v 1.17 1996/12/07 11:26:58 max Exp $
 #
 
 DISTNAME=       wn-1.16.1
@@ -11,15 +11,15 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
 IS_INTERACTIVE=
-NO_PACKAGE=	"Hostname compiled in."
+NO_PACKAGE=	"Hostname compiled in"
 
 pre-patch:
-	@cp ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
-	@cp ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
+	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
 
 post-install:
 	@mkdir -p ${PREFIX}/wn/wnlogs ${PREFIX}/wn/bin
-	@cp -PR ${WRKSRC}/docs ${PREFIX}/wn
+	@${CP} -PR ${WRKSRC}/docs ${PREFIX}/wn
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wndex ${PREFIX}/bin
