@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- makefile.common.in.orig	Fri Mar 22 03:48:17 2002
++++ makefile.common.in	Fri Mar 29 00:54:26 2002
+@@ -50,7 +50,7 @@
+ # This should come last in the list of parameters to gcc or ld
+ # because otherwise /usr/lib might be searched when it shouldn't
+ # be.
+-GCC_LIB = -L/usr/lib -lgcc
++GCC_LIB = -L/usr/lib -lgcc -lc_r -lc
+ 
+ # The C runtime static libraries that we need to get an application
+ # up and running.

@@ -1,0 +1,333 @@
+cli-20020326/Microsoft.JScript.dll
+cli-20020326/Microsoft.Vsa.dll
+cli-20020326/Symbols.pri/dll/Microsoft.JScript.ildb
+cli-20020326/Symbols.pri/dll/Microsoft.Vsa.ildb
+cli-20020326/Symbols.pri/dll/SharedSourceCLI.TK.ildb
+cli-20020326/Symbols.pri/dll/System.Runtime.Remoting.ildb
+cli-20020326/Symbols.pri/dll/System.Runtime.Serialization.Formatters.Soap.ildb
+cli-20020326/Symbols.pri/dll/System.Xml.ildb
+cli-20020326/Symbols.pri/dll/System.ildb
+cli-20020326/Symbols.pri/exe/caspol.ildb
+cli-20020326/Symbols.pri/exe/corcls.ildb
+cli-20020326/Symbols.pri/exe/jsc.ildb
+cli-20020326/Symbols.pri/exe/ngrep.ildb
+cli-20020326/Symbols.pri/exe/pighello.ildb
+cli-20020326/Symbols.pri/exe/pigpad.ildb
+cli-20020326/Symbols.pri/exe/resgen.ildb
+cli-20020326/Symbols.pri/exe/secdbedit.ildb
+cli-20020326/Symbols.pri/exe/storeadm.ildb
+cli-20020326/Symbols/dll/Microsoft.JScript.ildb
+cli-20020326/Symbols/dll/Microsoft.Vsa.ildb
+cli-20020326/Symbols/dll/SharedSourceCLI.TK.ildb
+cli-20020326/Symbols/dll/System.Runtime.Remoting.ildb
+cli-20020326/Symbols/dll/System.Runtime.Serialization.Formatters.Soap.ildb
+cli-20020326/Symbols/dll/System.Xml.ildb
+cli-20020326/Symbols/dll/System.ildb
+cli-20020326/Symbols/exe/caspol.ildb
+cli-20020326/Symbols/exe/corcls.ildb
+cli-20020326/Symbols/exe/jsc.ildb
+cli-20020326/Symbols/exe/ngrep.ildb
+cli-20020326/Symbols/exe/pighello.ildb
+cli-20020326/Symbols/exe/pigpad.ildb
+cli-20020326/Symbols/exe/resgen.ildb
+cli-20020326/Symbols/exe/secdbedit.ildb
+cli-20020326/Symbols/exe/storeadm.ildb
+cli-20020326/System.Runtime.Remoting.dll
+cli-20020326/System.Runtime.Serialization.Formatters.Soap.dll
+cli-20020326/System.Xml.dll
+cli-20020326/System.dll
+cli-20020326/al
+cli-20020326/alink.satellite
+cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
+cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll
+cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/System.Runtime.Remoting.dll
+cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
+cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/System.Xml.dll
+cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/System.dll
+cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-20020326/big5.nlp
+cli-20020326/binplace
+cli-20020326/bopomofo.nlp
+cli-20020326/build
+cli-20020326/caspol.exe
+cli-20020326/charinfo.nlp
+cli-20020326/clix
+cli-20020326/clix.satellite
+cli-20020326/config/enterprisesec.config
+cli-20020326/config/enterprisesec.config.cch
+cli-20020326/config/enterprisesec.config.old
+cli-20020326/config/machine.config
+cli-20020326/config/security.config
+cli-20020326/config/security.config.cch
+cli-20020326/config/security.config.old
+cli-20020326/cppmunge
+cli-20020326/csc
+cli-20020326/csc.rsp
+cli-20020326/cscomp.satellite
+cli-20020326/ctype.nlp
+cli-20020326/culture.nlp
+cli-20020326/dump/__mscoree_file__.h
+cli-20020326/dump/allocacheck.h
+cli-20020326/dump/arraylist.h
+cli-20020326/dump/asmoffsets.h
+cli-20020326/dump/blobfetcher.h
+cli-20020326/dump/cahlpr.h
+cli-20020326/dump/caspol.exe
+cli-20020326/dump/ceefilegenwriter.h
+cli-20020326/dump/ceegen.h
+cli-20020326/dump/ceegentokenmapper.h
+cli-20020326/dump/ceesectionstring.h
+cli-20020326/dump/classfac.h
+cli-20020326/dump/clear-class-dump-defs.h
+cli-20020326/dump/columnbinding.h
+cli-20020326/dump/compressionformat.h
+cli-20020326/dump/contxt.h
+cli-20020326/dump/cordbpriv.h
+cli-20020326/dump/corffi.h
+cli-20020326/dump/corhlpr.h
+cli-20020326/dump/corhost.h
+cli-20020326/dump/corimage.h
+cli-20020326/dump/corinfo.h
+cli-20020326/dump/corjit.h
+cli-20020326/dump/corperm.h
+cli-20020326/dump/corperme.h
+cli-20020326/dump/corpermp.h
+cli-20020326/dump/corpolicy.h
+cli-20020326/dump/corpriv.h
+cli-20020326/dump/corsvcpriv.h
+cli-20020326/dump/cortypeinfo.h
+cli-20020326/dump/crtwrap.h
+cli-20020326/dump/dbgalloc.h
+cli-20020326/dump/dbgmeta.h
+cli-20020326/dump/debugmacros.h
+cli-20020326/dump/declsec.h
+cli-20020326/dump/dump-tables.h
+cli-20020326/dump/dump-type-info.h
+cli-20020326/dump/dump-types.h
+cli-20020326/dump/eetwain.h
+cli-20020326/dump/ehencoder.h
+cli-20020326/dump/enc.h
+cli-20020326/dump/endian.h
+cli-20020326/dump/frame-types.h
+cli-20020326/dump/fusion.h
+cli-20020326/dump/fusionbind.h
+cli-20020326/dump/fusionpriv.h
+cli-20020326/dump/fusionsetup.h
+cli-20020326/dump/fusionsink.h
+cli-20020326/dump/fuspriv.h
+cli-20020326/dump/gcdump.h
+cli-20020326/dump/gcinfo.h
+cli-20020326/dump/guidfromname.h
+cli-20020326/dump/holder.h
+cli-20020326/dump/hrex.h
+cli-20020326/dump/iceefilegen.h
+cli-20020326/dump/il_kywd.h
+cli-20020326/dump/ilformatter.h
+cli-20020326/dump/internaldebug.h
+cli-20020326/dump/intrinsic.h
+cli-20020326/dump/ipcfunccall.h
+cli-20020326/dump/ipcmanagerinterface.h
+cli-20020326/dump/jitperf.h
+cli-20020326/dump/log.h
+cli-20020326/dump/loglf.h
+cli-20020326/dump/machine.h
+cli-20020326/dump/md5.h
+cli-20020326/dump/mdcommon.h
+cli-20020326/dump/member-offset-info.h
+cli-20020326/dump/metadata.h
+cli-20020326/dump/metadatatracker.h
+cli-20020326/dump/metamodelpub.h
+cli-20020326/dump/mscorcfg.h
+cli-20020326/dump/nativevaraccessors.h
+cli-20020326/dump/nsutilpriv.h
+cli-20020326/dump/openum.h
+cli-20020326/dump/opinfo.h
+cli-20020326/dump/outstring.h
+cli-20020326/dump/palclr.h
+cli-20020326/dump/perfcounterdefs.h
+cli-20020326/dump/perfcounters.h
+cli-20020326/dump/perflog.h
+cli-20020326/dump/pesectionman.h
+cli-20020326/dump/posterror.h
+cli-20020326/dump/prettyprintsig.h
+cli-20020326/dump/profilepriv.h
+cli-20020326/dump/querybinding.h
+cli-20020326/dump/regdisp.h
+cli-20020326/dump/safegetfilesize.h
+cli-20020326/dump/secdbedit.exe
+cli-20020326/dump/setupcodes.h
+cli-20020326/dump/shimload.h
+cli-20020326/dump/sighelper.h
+cli-20020326/dump/stacktrace.h
+cli-20020326/dump/stdmacros.h
+cli-20020326/dump/stgpool.h
+cli-20020326/dump/stgpooli.h
+cli-20020326/dump/stresslog.h
+cli-20020326/dump/switches.h
+cli-20020326/dump/threadpool.h
+cli-20020326/dump/timeline.h
+cli-20020326/dump/timer.h
+cli-20020326/dump/tpoolfnsp.h
+cli-20020326/dump/unused.h
+cli-20020326/dump/utilcode.h
+cli-20020326/dump/utsem.h
+cli-20020326/dump/vererror.h
+cli-20020326/dump/warningcontrol.h
+cli-20020326/dump/winwrap.h
+cli-20020326/dump/wsinfo.h
+cli-20020326/dump/wsperf.h
+cli-20020326/dump/xmlparser.h
+cli-20020326/fusion.localgac
+cli-20020326/fusion.satellite
+cli-20020326/gacutil
+cli-20020326/int_tools/internalresgen
+cli-20020326/jsc.exe
+cli-20020326/ksc.nlp
+cli-20020326/l_except.nlp
+cli-20020326/l_intl.nlp
+cli-20020326/libalink.so
+cli-20020326/libcscomp.so
+cli-20020326/libfusion.so
+cli-20020326/libildbsymbols.so
+cli-20020326/libmscordbi.so
+cli-20020326/libmscorejt.so
+cli-20020326/libmscorpe.so
+cli-20020326/libmscorrc.so
+cli-20020326/libmscorsn.so
+cli-20020326/librotor_pal.so
+cli-20020326/librotor_palrt.so
+cli-20020326/libsos.so
+cli-20020326/libsscoree.so
+cli-20020326/license.txt
+cli-20020326/mscorlib.dll
+cli-20020326/mscorrc.satellite
+cli-20020326/nmake
+cli-20020326/pigui/SharedSourceCLI.TK.dll
+cli-20020326/pigui/pighello.exe
+cli-20020326/pigui/pigpad.exe
+cli-20020326/prc.nlp
+cli-20020326/prcp.nlp
+cli-20020326/private/lib/System.dll
+cli-20020326/region.nlp
+cli-20020326/resourcecompiler
+cli-20020326/rotor/rotor.ini
+cli-20020326/rotor/strongname.ini
+cli-20020326/rotor_pal.satellite
+cli-20020326/sdk/bin/corcls.exe
+cli-20020326/sdk/bin/cordbg
+cli-20020326/sdk/bin/ilasm
+cli-20020326/sdk/bin/ildasm
+cli-20020326/sdk/bin/ildasm.satellite
+cli-20020326/sdk/bin/metainfo
+cli-20020326/sdk/bin/ngrep.exe
+cli-20020326/sdk/bin/peverify
+cli-20020326/sdk/bin/resgen.exe
+cli-20020326/sdk/bin/sn
+cli-20020326/sdk/bin/sn.satellite
+cli-20020326/sdk/bin/storeadm.exe
+cli-20020326/sdk/include/cor.h
+cli-20020326/sdk/include/cordebug.h
+cli-20020326/sdk/include/corerror.h
+cli-20020326/sdk/include/corhdr.h
+cli-20020326/sdk/include/corprof.h
+cli-20020326/sdk/include/corpub.h
+cli-20020326/sdk/include/corsym.h
+cli-20020326/sdk/include/gchost.h
+cli-20020326/sdk/include/ivalidator.h
+cli-20020326/sdk/include/ivehandler.h
+cli-20020326/sdk/include/mscoree.h
+cli-20020326/sdk/include/opcode.def
+cli-20020326/sdk/include/strongname.h
+cli-20020326/sdk/lib/mscorsn.lib
+cli-20020326/sdk/pal/inc/assert.h
+cli-20020326/sdk/pal/inc/atl.h
+cli-20020326/sdk/pal/inc/ccombstr.h
+cli-20020326/sdk/pal/inc/crtdbg.h
+cli-20020326/sdk/pal/inc/ctype.h
+cli-20020326/sdk/pal/inc/float.h
+cli-20020326/sdk/pal/inc/guiddef.h
+cli-20020326/sdk/pal/inc/io.h
+cli-20020326/sdk/pal/inc/limits.h
+cli-20020326/sdk/pal/inc/malloc.h
+cli-20020326/sdk/pal/inc/math.h
+cli-20020326/sdk/pal/inc/mbstring.h
+cli-20020326/sdk/pal/inc/memory.h
+cli-20020326/sdk/pal/inc/new.h
+cli-20020326/sdk/pal/inc/ntimage.h
+cli-20020326/sdk/pal/inc/oaidl.h
+cli-20020326/sdk/pal/inc/objbase.h
+cli-20020326/sdk/pal/inc/objidl.h
+cli-20020326/sdk/pal/inc/ole2.h
+cli-20020326/sdk/pal/inc/oleauto.h
+cli-20020326/sdk/pal/inc/poppack.h
+cli-20020326/sdk/pal/inc/process.h
+cli-20020326/sdk/pal/inc/pshpack1.h
+cli-20020326/sdk/pal/inc/pshpack2.h
+cli-20020326/sdk/pal/inc/pshpack4.h
+cli-20020326/sdk/pal/inc/pshpack8.h
+cli-20020326/sdk/pal/inc/rotor_pal.h
+cli-20020326/sdk/pal/inc/rotor_palrt.h
+cli-20020326/sdk/pal/inc/rpc.h
+cli-20020326/sdk/pal/inc/rpcndr.h
+cli-20020326/sdk/pal/inc/servprov.h
+cli-20020326/sdk/pal/inc/shlwapi.h
+cli-20020326/sdk/pal/inc/stdarg.h
+cli-20020326/sdk/pal/inc/stddef.h
+cli-20020326/sdk/pal/inc/stdio.h
+cli-20020326/sdk/pal/inc/stdlib.h
+cli-20020326/sdk/pal/inc/string.h
+cli-20020326/sdk/pal/inc/time.h
+cli-20020326/sdk/pal/inc/unknwn.h
+cli-20020326/sdk/pal/inc/wchar.h
+cli-20020326/sdk/pal/inc/winbase.h
+cli-20020326/sdk/pal/inc/wincrypt.h
+cli-20020326/sdk/pal/inc/windef.h
+cli-20020326/sdk/pal/inc/windows.h
+cli-20020326/sdk/pal/inc/winerror.h
+cli-20020326/sdk/pal/inc/winnls.h
+cli-20020326/sdk/pal/inc/winresrc.h
+cli-20020326/sdk/pal/inc/winver.h
+cli-20020326/sortkey.nlp
+cli-20020326/sorttbls.nlp
+cli-20020326/xjis.nlp
+@dirrm cli-20020326/sdk/pal/inc
+@dirrm cli-20020326/sdk/pal
+@dirrm cli-20020326/sdk/lib
+@dirrm cli-20020326/sdk/include
+@dirrm cli-20020326/sdk/bin
+@dirrm cli-20020326/sdk
+@dirrm cli-20020326/rotor
+@dirrm cli-20020326/private/lib/rotor_x86
+@dirrm cli-20020326/private/lib
+@dirrm cli-20020326/private
+@dirrm cli-20020326/pigui
+@dirrm cli-20020326/int_tools
+@dirrm cli-20020326/dump
+@dirrm cli-20020326/config
+@dirrm cli-20020326/assembly/tmp
+@dirrm cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089
+@dirrm cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089
+@dirrm cli-20020326/assembly/GAC/System.Xml
+@dirrm cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap
+@dirrm cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089
+@dirrm cli-20020326/assembly/GAC/System.Runtime.Remoting
+@dirrm cli-20020326/assembly/GAC/System
+@dirrm cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-20020326/assembly/GAC/Microsoft.Vsa
+@dirrm cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-20020326/assembly/GAC/Microsoft.JScript
+@dirrm cli-20020326/assembly/GAC
+@dirrm cli-20020326/assembly
+@dirrm cli-20020326/Symbols/exe
+@dirrm cli-20020326/Symbols/dll
+@dirrm cli-20020326/Symbols.pri/exe
+@dirrm cli-20020326/Symbols.pri/dll
+@dirrm cli-20020326/Symbols.pri
+@dirrm cli-20020326/Symbols
+@dirrm cli-20020326
