@@ -6,40 +6,46 @@
 #
 
 PORTNAME=	eruby
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
-PATCH_SITES=	http://www.ruby-lang.org/~knu/
-PATCHFILES=	${DISTNAME}-2001.05.24.patch.gz
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
 
-CONFIGURE_ARGS=	--enable-shared --default-charset="${DEFAULT_CHARSET}"
+CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALLS_SHLIB=	yes
 
 DEFAULT_CHARSET?=	ISO-8859-1
 
 MAN1=		eruby.1
 
-DOCS_EN=	ChangeLog README.en
+DOCS_EN=	COPYING ChangeLog README.en eruby.html eruby.rd
 DOCS_JA=	README.ja
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 
+post-build:
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}; ${RUBY_RD} eruby.rd > eruby.html
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/eruby/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/eruby/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/eruby/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
 .endif
 

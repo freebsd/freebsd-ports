@@ -1,10 +1,18 @@
 bin/eruby
 include/eruby.h
-lib/liberuby.so.9
+lib/liberuby.so.09
 lib/liberuby.so
 lib/liberuby.a
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/e2r.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/foo.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/test.rhtml
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/eruby
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/eruby.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/eruby.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby
