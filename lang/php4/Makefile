@@ -21,7 +21,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -87,6 +87,11 @@ CONFIGURE_ARGS+=--with-regex=apache
 EXT_DIR=	20020429
 SAPI_FILE=	"@comment "
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+EXT_DIR:=	${EXT_DIR}-debug
+.endif
+
 CONFLICTS=	php4-cli-4* mod_php4-4* php4-cgi-4*
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
@@ -125,7 +130,7 @@ SAPI_FILE=	"bin/php"
 .endif
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX \
-		DEBUG DOMXML DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT \
+		DOMXML DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT \
 		GMP HYPERWAVE ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE \
 		MCRYPT MHASH MIME MING MNOGOSEARCH MYSQL NCURSES OPENLDAP \
 		OPENSSL ORACLE OVERLOAD PCNTL PCRE PDFLIB POSIX POSTGRESQL \
@@ -249,11 +254,6 @@ CONFIGURE_ARGS+=--enable-dbase
 
 .if defined(WITH_DBX)
 CONFIGURE_ARGS+=--enable-dbx
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-EXT_DIR:=${EXT_DIR}-debug
 .endif
 
 .if defined(WITH_DOMXML)
@@ -427,7 +427,7 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7-client
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
@@ -626,13 +626,37 @@ pre-configure:
 	@${ECHO_CMD} ""
 .endif
 
-.if !defined(WITHOUT_CLI)
 post-build:
+	@${ECHO_CMD} "PHP_VER=4" > ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_EXT_DIR=${EXT_DIR}" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_PORT=${.CURDIR}" >> ${WRKDIR}/php.conf
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
+	@${ECHO_CMD} "PHP_PEAR=yes" >> ${WRKDIR}/php.conf
+.else
+	@${ECHO_CMD} "PHP_PEAR=no" >> ${WRKDIR}/php.conf
+.endif
+.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
+	@${ECHO_CMD} "PHP_SAPI=full" >> ${WRKDIR}/php.conf
+.else
+.if defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
+	@${ECHO_CMD} "PHP_SAPI=cli" >> ${WRKDIR}/php.conf
+.endif
+.if !defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
+	@${ECHO_CMD} "PHP_SAPI=mod" >> ${WRKDIR}/php.conf
+.endif
+.if defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
+	@${ECHO_CMD} "PHP_SAPI=cgi" >> ${WRKDIR}/php.conf
+.endif
+.endif
+.if !defined(WITHOUT_CLI)
 	@${ECHO_CMD} "You may run the tests from the PHP test framework, typing 'make test' now."
 	@${ECHO_CMD} "(It is safe to ignore errors about timestamp-related tests,"
 	@${ECHO_CMD} "since they are due to the different FreeBSD mktime() implementation)."
 	@${ECHO_CMD} ""
+.endif
 
+.if !defined(WITHOUT_CLI)
 test: all
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${.TARGET})
@@ -644,6 +668,7 @@ post-install:
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/lib/php/${EXT_DIR}/.php
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"

@@ -3,6 +3,7 @@
 bin/php-config
 bin/phpextdist
 bin/phpize
+etc/php.conf
 etc/php.ini-dist
 etc/php.ini-recommended
 include/php/TSRM/TSRM.h
