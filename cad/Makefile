@@ -12,6 +12,7 @@
     SUBDIR += kaskade
     SUBDIR += magic
     SUBDIR += mars
+    SUBDIR += oregano
     SUBDIR += pcb
     SUBDIR += pisces
     SUBDIR += qcad

@@ -1,0 +1,49 @@
+bin/oregano
+bin/pspice2oregano
+share/locale/ca/LC_MESSAGES/oregano.mo
+share/locale/de/LC_MESSAGES/oregano.mo
+share/locale/es/LC_MESSAGES/oregano.mo
+share/locale/fr/LC_MESSAGES/oregano.mo
+share/locale/it/LC_MESSAGES/oregano.mo
+share/locale/ja/LC_MESSAGES/oregano.mo
+share/locale/ro/LC_MESSAGES/oregano.mo
+share/locale/sv/LC_MESSAGES/oregano.mo
+share/gnome/oregano/glade/part-browser.glade
+share/gnome/oregano/glade/settings.glade
+share/gnome/oregano/glade/sim-settings.glade
+share/gnome/oregano/glade/part-properties-dialog.glade
+share/gnome/oregano/glade/textbox-properties-dialog.glade
+share/gnome/oregano/glade/plot-window.glade
+share/gnome/oregano/glade/log-window.glade
+share/gnome/oregano/glade/simulation.glade
+share/gnome/oregano/glade/summary.glade
+share/gnome/oregano/samples/12ax7a.oregano
+share/gnome/oregano/samples/741.oregano
+share/gnome/oregano/samples/opamp.oregano
+share/gnome/oregano/samples/zener.oregano
+share/gnome/oregano/samples/555.oregano
+share/gnome/oregano/samples/OP177B.oregano
+share/gnome/oregano/samples/transistors.oregano
+share/gnome/oregano/libraries/default.oreglib
+share/gnome/oregano/libraries/opamplib.oreglib
+share/gnome/oregano/libraries/ttl.oreglib
+share/gnome/oregano/models/12AX7A.model
+share/gnome/oregano/models/TLC555.model
+share/gnome/oregano/models/UA741.model
+share/gnome/oregano/models/1N750.model
+share/gnome/oregano/models/PNP.model
+share/gnome/oregano/models/NPN.model
+share/gnome/help/oregano/C/topic.dat
+share/gnome/help/oregano/C/oregano.html
+share/gnome/help/oregano/C/editing.html
+share/gnome/help/oregano/C/simulation.html
+share/gnome/apps/Applications/oregano.desktop
+share/gnome/mime-info/oregano.keys
+share/gnome/mime-info/oregano.mime
+@dirrm share/gnome/oregano/glade
+@dirrm share/gnome/oregano/samples
+@dirrm share/gnome/oregano/libraries
+@dirrm share/gnome/oregano/models
+@dirrm share/gnome/oregano
+@dirrm share/gnome/help/oregano/C
+@dirrm share/gnome/help/oregano
