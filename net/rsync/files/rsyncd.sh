@@ -3,32 +3,31 @@
 # $FreeBSD$
 #
 
-# PROVIDE: rsyncd
+# PROVIDE: %%NAME%%
 # REQUIRE: LOGIN
+# BEFORE:  securelevel
 # KEYWORD: FreeBSD shutdown
 
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
 #
-# Add the following lines to /etc/rc.conf to enable rsyncd:
+#%%NAME%%_enable="YES"
 #
-#rsyncd_enable="YES"
-#
-# See rsync(1) for flags
+# See rsync(1) for %%NAME%%_flags
 #
 
-. %%RC_SUBR%%
+. "%%RC_SUBR%%"
 
-name=rsyncd
+name="%%NAME%%"
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/bin/rsync
+command="%%PREFIX%%/bin/rsync"
 command_args="--daemon"
-pidfile=/var/run/${name}.pid
-required_files=%%PREFIX%%/etc/${name}.conf
+pidfile="/var/run/$name.pid"
+required_files="%%PREFIX%%/etc/$name.conf"
 
-# set defaults
+# read configuration and set defaults
+load_rc_config "$name"
+: ${%%NAME%%_enable="NO"}
+: ${%%NAME%%_flags=""}
 
-rsyncd_enable=${rsyncd_enable:-"NO"}
-rsyncd_flags=${rsyncd_flags:-""}
-
-load_rc_config ${name}
 run_rc_command "$1"

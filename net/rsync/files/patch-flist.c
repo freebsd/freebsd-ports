@@ -21,4 +21,3 @@
  		lastdir_len = -1;
  
  	if (strlcpy(thisname, fname, sizeof thisname)
-

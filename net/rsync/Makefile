@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  rsync
 # Date created:			  Sat Aug 3, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
@@ -8,14 +7,14 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
-		ftp://rsync.samba.org/pub/%SUBDIR%/ \
-		ftp://samba.anu.edu.au/pub/%SUBDIR%/  \
 		ftp://sunsite.auc.dk/pub/unix/%SUBDIR%/  \
 		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
-		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/
+		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
+		http://www.mirror.ac.uk/sites/rsync.samba.org/ \
+		http://public.planetmirror.com/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	rsync
 
 MAINTAINER=	eik@FreeBSD.org
@@ -28,6 +27,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--disable-debug \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -49,7 +49,8 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 
 .include <bsd.port.pre.mk>
 
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+SED_SCRIPT+=	-e 's,%%NAME%%,rsyncd,g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 .if ${OSVERSION} < 400016
@@ -86,13 +87,15 @@ post-build:
 	@${SED} ${SED_SCRIPT} <${FILESDIR}/rsyncd.sh >${WRKDIR}/rsyncd.sh
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/rsync
-	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
-	@[ -f ${PREFIX}/etc/rsyncd.conf ] || ${CP} ${PREFIX}/etc/rsyncd.conf.sample ${PREFIX}/etc/rsyncd.conf
-	@${INSTALL_SCRIPT} ${WRKDIR}/rsyncd.sh ${PREFIX}/etc/rc.d/
+	@${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/rsync
+	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${DESTDIR}${PREFIX}/etc/
+	@[ -f ${DESTDIR}${PREFIX}/etc/rsyncd.conf ] || \
+		${CP} ${DESTDIR}${PREFIX}/etc/rsyncd.conf.sample \
+		${DESTDIR}${PREFIX}/etc/rsyncd.conf
+	@${INSTALL_SCRIPT} ${WRKDIR}/rsyncd.sh ${DESTDIR}${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DESTDIR}${DOCSDIR}
 .endif
 .if !defined(WITHOUT_SSH)
 	@${CAT} ${PKGMESSAGE}
