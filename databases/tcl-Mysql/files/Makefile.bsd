@@ -1,8 +1,6 @@
 TCL_VERSION?=	tcl8.3
 TCL_NODOT?=	${TCL_VERSION:S/.//}
-LIB	=	TclMySQL
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	0
+SHLIB_NAME=	libTclMySQL.so.1
 
 SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
 CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION}
@@ -10,7 +8,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include/mysql
 LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT}
 LDADD  +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 LDADD  +=	-lgcc
-INTERNALLIB=	yeah, don't make the useless static lib
 
 printname:
 	@echo -n ${SHLIB_NAME}
