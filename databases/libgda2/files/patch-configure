@@ -1,56 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Jul 26 15:51:10 2001
-+++ configure	Thu Jul 26 16:09:53 2001
-@@ -6238,7 +6240,7 @@
+--- configure	2001/08/06 08:32:35	1.1
++++ configure	2001/08/06 08:32:59
+@@ -8896,7 +8896,7 @@
  
  
  
--if test $perl_val == true; then
-+if test $perl_val = true; then
-   WITH_PERL_TRUE=
-   WITH_PERL_FALSE='#'
- else
-@@ -7909,7 +7911,7 @@
- #line 7910 "configure"
- #include "confdefs.h"
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- int main() {
- iconv_t cd = iconv_open("","");
-        iconv(cd,NULL,NULL,NULL,NULL);
-@@ -7926,12 +7928,12 @@
- rm -f conftest*
-     if test "$am_cv_func_iconv" != yes; then
-       am_save_LIBS="$LIBS"
--      LIBS="$LIBS -liconv"
-+      LIBS="$LIBS -lgiconv"
-       cat > conftest.$ac_ext <<EOF
- #line 7932 "configure"
- #include "confdefs.h"
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- int main() {
- iconv_t cd = iconv_open("","");
-          iconv(cd,NULL,NULL,NULL,NULL);
-@@ -7969,7 +7971,7 @@
- #include "confdefs.h"
+-GDA_oafdir=`oaf-config --prefix`/share/oaf
++GDA_oafdir="${prefix}/share/gnome/oaf"
  
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- extern
- #ifdef __cplusplus
- "C"
-@@ -8007,7 +8009,7 @@
-   fi
-   LIBICONV=
-   if test "$am_cv_lib_iconv" = yes; then
--    LIBICONV="-liconv"
-+    LIBICONV="-lgiconv"
-   fi
-   
+ 
  

@@ -16,6 +16,7 @@ include/gda/gda++/gdaValue.h
 include/gda/gda-batch.h
 include/gda/gda-client.h
 include/gda/gda-command.h
+include/gda/gda-common-defs.h
 include/gda/gda-common.h
 include/gda/gda-config.h
 include/gda/gda-connection-pool.h
@@ -24,15 +25,26 @@ include/gda/gda-corba.h
 include/gda/gda-error.h
 include/gda/gda-export.h
 include/gda/gda-field.h
+include/gda/gda-listener.h
 include/gda/gda-log.h
+include/gda/gda-quark-list.h
 include/gda/gda-recordset.h
-include/gda/gda-server-impl.h
+include/gda/gda-server-command.h
+include/gda/gda-server-connection.h
+include/gda/gda-server-error.h
+include/gda/gda-server-field.h
+include/gda/gda-server-recordset.h
 include/gda/gda-server.h
 include/gda/gda-thread.h
 include/gda/gda-util.h
 include/gda/gda-value.h
+include/gda/gda-xml-atom-item.h
+include/gda/gda-xml-bin-item.h
 include/gda/gda-xml-database.h
-include/gda/gda-xml-file.h
+include/gda/gda-xml-document.h
+include/gda/gda-xml-item.h
+include/gda/gda-xml-list-item.h
+include/gda/gda-xml-util.h
 lib/libgda-client.a
 lib/libgda-client.so
 lib/libgda-client.so.0
@@ -45,21 +57,11 @@ lib/libgda-common.so.0
 lib/libgda-server.a
 lib/libgda-server.so
 lib/libgda-server.so.0
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA/Common.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/Client.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/Client.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/Common.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/Common.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/autosplit.ix
-share/gda/templates/gda-srv-command.c.tmpl
-share/gda/templates/gda-srv-connection.c.tmpl
-share/gda/templates/gda-srv-recordset.c.tmpl
-share/gda/templates/gda-srv.h.tmpl
-share/gda/templates/main-srv.c.tmpl
+share/gnome/gda/templates/gda-srv-command.c.tmpl
+share/gnome/gda/templates/gda-srv-connection.c.tmpl
+share/gnome/gda/templates/gda-srv-recordset.c.tmpl
+share/gnome/gda/templates/gda-srv.h.tmpl
+share/gnome/gda/templates/main-srv.c.tmpl
 share/gnome/help/libgda/C/architecture.html
 share/gnome/help/libgda/C/clients-building-corba.html
 share/gnome/help/libgda/C/clients-building.html
@@ -99,75 +101,22 @@ share/gnome/help/libgda/C/providers-implementation.html
 share/gnome/help/libgda/C/providers.html
 share/gnome/help/libgda/C/reports.html
 share/gnome/help/libgda/C/topic.dat
-share/gnome/help/libgda/es/architecture.html
-share/gnome/help/libgda/es/clients-building-corba.html
-share/gnome/help/libgda/es/clients-building.html
-share/gnome/help/libgda/es/clients.html
-share/gnome/help/libgda/es/docbook.css
-share/gnome/help/libgda/es/gda-client-batch.html
-share/gnome/help/libgda/es/gda-client-meta.html
-share/gnome/help/libgda/es/gda-client-objects.html
-share/gnome/help/libgda/es/gda-client-types.html
-share/gnome/help/libgda/es/gda-client.html
-share/gnome/help/libgda/es/gda-common-logs.html
-share/gnome/help/libgda/es/gda-common-xml-databases.html
-share/gnome/help/libgda/es/gda-common-xml-queries.html
-share/gnome/help/libgda/es/gda-common.html
-share/gnome/help/libgda/es/index.html
-share/gnome/help/libgda/es/installation-configuring.html
-share/gnome/help/libgda/es/installation-installing.html
-share/gnome/help/libgda/es/installation.html
-share/gnome/help/libgda/es/introduction.html
-share/gnome/help/libgda/es/ln47.html
-share/gnome/help/libgda/es/providers-actual-implementation.html
-share/gnome/help/libgda/es/providers-examples.html
-share/gnome/help/libgda/es/providers-implementation.html
-share/gnome/help/libgda/es/providers.html
-share/gnome/help/libgda/es/reports.html
 share/gnome/help/libgda/es/topic.dat
-share/gnome/help/libgda/pt_BR/architecture.html
-share/gnome/help/libgda/pt_BR/c162.html
-share/gnome/help/libgda/pt_BR/c182.html
-share/gnome/help/libgda/pt_BR/c323.html
-share/gnome/help/libgda/pt_BR/c350.html
-share/gnome/help/libgda/pt_BR/clients-building-corba.html
-share/gnome/help/libgda/pt_BR/clients-building.html
-share/gnome/help/libgda/pt_BR/docbook.css
-share/gnome/help/libgda/pt_BR/gda-client-batch.html
-share/gnome/help/libgda/pt_BR/gda-client-meta.html
-share/gnome/help/libgda/pt_BR/gda-client-objects.html
-share/gnome/help/libgda/pt_BR/gda-client-types.html
-share/gnome/help/libgda/pt_BR/gda-common-logs.html
-share/gnome/help/libgda/pt_BR/gda-common-xml-databases.html
-share/gnome/help/libgda/pt_BR/gda-common-xml-queries.html
-share/gnome/help/libgda/pt_BR/index.html
-share/gnome/help/libgda/pt_BR/installation-configuring.html
-share/gnome/help/libgda/pt_BR/installation-installing.html
-share/gnome/help/libgda/pt_BR/installation.html
-share/gnome/help/libgda/pt_BR/introduction.html
-share/gnome/help/libgda/pt_BR/libgda.html
-share/gnome/help/libgda/pt_BR/ln38.html
-share/gnome/help/libgda/pt_BR/providers-actual-implementation.html
-share/gnome/help/libgda/pt_BR/providers-examples.html
-share/gnome/help/libgda/pt_BR/providers-implementation.html
 share/gnome/help/libgda/pt_BR/topic.dat
-share/gnome/html/libgda-client-decl.txt
 share/gnome/html/libgda-client-sections.txt
 share/gnome/html/libgda-client.args
 share/gnome/html/libgda-client.hierarchy
-share/gnome/html/libgda-client.signals
 share/gnome/html/libgda-client.types
-share/gnome/html/libgda-common-decl.txt
 share/gnome/html/libgda-common-sections.txt
 share/gnome/html/libgda-common.args
 share/gnome/html/libgda-common.hierarchy
-share/gnome/html/libgda-common.signals
 share/gnome/html/libgda-common.types
 share/gnome/idl/GDA.idl
 share/gnome/idl/GDA_Command.idl
 share/gnome/idl/GDA_Connection.idl
 share/gnome/idl/GDA_Error.idl
 share/gnome/idl/GDA_Field.idl
+share/gnome/idl/GDA_Listener.idl
 share/gnome/idl/GDA_Parameter.idl
 share/gnome/idl/GDA_Recordset.idl
 share/gnome/oaf/GNOME_GDA_Provider_Default.oaf
@@ -199,13 +148,7 @@ share/locale/uk/LC_MESSAGES/libgda.mo
 @dirrm share/gnome/help/libgda/C/images
 @dirrm share/gnome/help/libgda/C
 @dirrm share/gnome/help/libgda
-@dirrm share/gda/templates
-@dirrm share/gda
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome
+@dirrm share/gnome/gda/templates
+@dirrm share/gnome/gda
 @dirrm include/gda/gda++
 @dirrm include/gda

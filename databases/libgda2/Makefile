@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	libgda
-PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTVERSION=	0.2.90
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
-		gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+		bonobo.2:${PORTSDIR}/devel/bonobo
 
+USE_X_PREFIX=	yes
 USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
-
-MAN3=		Gnome::GDA::Client.3 Gnome::GDA::Common.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
