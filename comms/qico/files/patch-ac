@@ -1,5 +1,5 @@
 --- src/Makefile.orig	Tue Aug 15 20:53:42 2000
-+++ src/Makefile	Sun Aug 20 10:06:44 2000
++++ src/Makefile	Sat Oct  7 19:06:08 2000
 @@ -14,7 +14,7 @@
  #DEFS   += -DY_DEBUG #-DYYERROR_VERBOSE=1 -DYYDEBUG=100
  
@@ -9,3 +9,12 @@
  ifeq (1,$(STRIP))
  IFLAGS  = -s
  else
+@@ -23,7 +23,7 @@
+ endif
+ #DLIBS   = -lccmalloc -ldl
+ ifeq (1,$(FREE_BSD))
+-LIBS   += -lutil
++#LIBS   += -lutil
+ DEFS   += -DFREE_BSD=1
+ else
+ LIBS   +=
