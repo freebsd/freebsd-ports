@@ -1,0 +1,41 @@
+--- src/sessions.c	Tue Nov 27 04:14:37 2001
++++ /usr/ports/distfiles/jabber/sessions.c.orig	Wed Jan 30 09:07:47 2002
+@@ -221,6 +221,29 @@
+     return 1;
+ }
+ 
++static int aim_icbmparaminfo(aim_session_t* sess, aim_frame_t* fr, ...)
++{
++    struct aim_icbmparameters *params;
++    va_list ap;
++
++	va_start(ap, fr);
++	params = va_arg(ap, struct aim_icbmparameters *);
++	va_end(ap);
++
++	/*
++	 * Set these to your taste, or client medium.  Setting minmsginterval
++	 * higher is good for keeping yourself from getting flooded (esp
++	 * if you're on a slow connection or something where that would be
++	 * useful).
++	 */
++	params->maxmsglen = 8000;
++	params->minmsginterval = 0; /* in milliseconds */
++
++	aim_seticbmparam(sess, params);
++
++	return 1;
++}
++
+ int at_conninitdone_admin(aim_session_t *sess,
+                           aim_frame_t *command, ...)
+ {
+@@ -411,6 +434,8 @@
+                             AIM_CB_SPECIAL_CONNERR, at_parse_connerr, 0);
+         aim_conn_addhandler(sess, bosconn, 0x0001, 0x001f, 
+                             at_memrequest, 0);
++        aim_conn_addhandler(sess, bosconn, 0x0004, 0x0005, 
++                            aim_icbmparaminfo, 0);
+         
+     
+         am = pmalloco(s->p, sizeof(_at_mio));
