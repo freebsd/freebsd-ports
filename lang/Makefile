@@ -91,6 +91,7 @@
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
+    SUBDIR += ocaml-mode.el
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += otcl

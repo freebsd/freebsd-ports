@@ -1,0 +1,11 @@
+share/emacs/site-lisp/caml-mode/caml-compat.el
+share/emacs/site-lisp/caml-mode/inf-caml.el
+share/emacs/site-lisp/caml-mode/camldebug.el
+share/emacs/site-lisp/caml-mode/caml.el
+share/emacs/site-lisp/caml-mode/caml-hilit.el
+share/emacs/site-lisp/caml-mode/caml-font.el
+share/emacs/site-lisp/caml-mode/caml.elc
+share/emacs/site-lisp/caml-mode/inf-caml.elc
+share/emacs/site-lisp/caml-mode/camldebug.elc
+bin/ocamltags
+@dirrm share/emacs/site-lisp/caml-mode

@@ -1,0 +1,11 @@
+--- Makefile--	Tue Mar 27 09:10:46 2001
++++ Makefile	Tue Oct 23 11:57:10 2001
+@@ -11,7 +11,7 @@
+ EMACS=emacs
+ 
+ # Where to install ocamltags script
+-SCRIPTDIR = /usr/local/bin
++SCRIPTDIR = ${PREFIX}/bin
+ 
+ # Command for byte-compiling the files
+ COMPILECMD=(progn \
