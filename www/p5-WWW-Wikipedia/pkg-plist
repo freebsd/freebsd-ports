@@ -1,0 +1,8 @@
+bin/wikipedia
+%%SITE_PERL%%/WWW/Wikipedia.pm
+%%SITE_PERL%%/WWW/Wikipedia/Entry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wikipedia/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wikipedia
+@dirrm %%SITE_PERL%%/WWW/Wikipedia
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>&1 || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>&1 || true
