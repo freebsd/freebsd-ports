@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Mar 13 23:21:57 2004
-+++ Makefile.in	Sat Mar 13 23:22:26 2004
+--- Makefile.in.orig	Mon Mar 22 13:52:13 2004
++++ Makefile.in	Mon Mar 22 13:59:02 2004
 @@ -163,7 +163,7 @@
  
  SUBDIRS = include util
@@ -9,3 +9,11 @@
  
  lib_LTLIBRARIES = libXt.la
  
+@@ -210,7 +210,6 @@
+ 	Manage.c \
+ 	NextEvent.c \
+ 	Object.c \
+-	ObjectP.h \
+ 	PassivGraI.h \
+ 	PassivGrab.c \
+ 	Pointer.c \

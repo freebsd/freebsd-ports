@@ -1,0 +1,10 @@
+--- include/Makefile.in.orig	Mon Mar 22 13:58:27 2004
++++ include/Makefile.in	Mon Mar 22 13:58:41 2004
+@@ -148,6 +148,7 @@
+ 	X11/Intrinsic.h \
+ 	X11/IntrinsicP.h \
+ 	X11/Object.h \
++	X11/ObjectP.h \
+ 	X11/RectObj.h \
+ 	X11/RectObjP.h \
+ 	X11/ShellP.h \
