@@ -31,6 +31,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="b7cb488c-8349-11d8-a41f-0020ed76ef5a">
+    <topic>isakmpd payload handling denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>iaskmpd</name>
+	<range><le>20030903</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Numerous errors in isakmpd's input packet validation lead to
+	  denial-of-service vulnerabilities.  From the Rapid7 advisory:</p>
+	<blockquote cite="http://www.rapid7.com/advisories/R7-0018.html">
+          <p>The ISAKMP packet processing functions in OpenBSD's
+            isakmpd daemon contain multiple payload handling flaws
+            that allow a remote attacker to launch a denial of
+            service attack against the daemon.</p>
+          <p>Carefully crafted ISAKMP packets will cause the isakmpd
+            daemon to attempt out-of-bounds reads, exhaust available
+	    memory, or loop endlessly (consuming 100% of the CPU).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0218</cvename>
+      <cvename>CAN-2004-0219</cvename>
+      <cvename>CAN-2004-0220</cvename>
+      <cvename>CAN-2004-0221</cvename>
+      <cvename>CAN-2004-0222</cvename>
+      <url>http://www.rapid7.com/advisories/R7-0018.html</url>
+      <url>http://www.openbsd.org/errata34.html</url>
+    </references>
+    <dates>
+      <discovery>2004-03-17</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3362f2c1-8344-11d8-a41f-0020ed76ef5a">
     <topic>apache 2 denial-of-service attack (does not affect FreeBSD)</topic>
     <affects>
