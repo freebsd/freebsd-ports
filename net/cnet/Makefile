@@ -3,7 +3,7 @@
 # Date created:         Feb 8th, 1988
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:42 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/21 22:15:56 steve Exp $
 #
 
 DISTNAME=	cnet-1.4-3
@@ -11,7 +11,8 @@ PKGNAME=	cnet-1.4p3
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uwa.edu.au/pls/cnet/
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/cnet-1.4
 ALL_TARGET=
