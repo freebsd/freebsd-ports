@@ -1,25 +1,46 @@
-*** libtemplate/include/autoconf.h.in.orig	Thu Aug 22 07:51:39 1996
---- libtemplate/include/autoconf.h.in	Thu Aug 22 07:51:57 1996
-***************
-*** 156,165 ****
-  #undef HAVE_SRANDOM
-  
-  /* Define if you have strdup.  */
-! #undef HAVE_STRDUP
-  
-  /* Define if you have strerror.  */
-! #undef HAVE_STRERROR
-  
-  /* Define if you have sysconf.  */
-  #undef HAVE_SYSCONF
---- 156,165 ----
-  #undef HAVE_SRANDOM
-  
-  /* Define if you have strdup.  */
-! #define HAVE_STRDUP 1
-  
-  /* Define if you have strerror.  */
-! #define HAVE_STRERROR 1
-  
-  /* Define if you have sysconf.  */
-  #undef HAVE_SYSCONF
+--- libtemplate/include/autoconf.h.in.orig	Thu Nov 21 05:28:49 1996
++++ libtemplate/include/autoconf.h.in	Fri May  5 21:23:48 2000
+@@ -108,7 +108,7 @@
+ #undef HAVE_BZERO
+ 
+ /* Define if you have flock.  */
+-#undef HAVE_FLOCK
++#define HAVE_FLOCK
+ 
+ /* Define if you have fsync.  */
+ #undef HAVE_FSYNC
+@@ -120,7 +120,7 @@
+ #undef HAVE_GETCWD
+ 
+ /* Define if you have getdtablesize.  */
+-#undef HAVE_GETDTABLESIZE
++#define HAVE_GETDTABLESIZE
+ 
+ /* Define if you have lrand48.  */
+ #undef HAVE_LRAND48
+@@ -144,10 +144,10 @@
+ #undef HAVE_RENAME
+ 
+ /* Define if you have setlinebuf.  */
+-#undef HAVE_SETLINEBUF
++#define HAVE_SETLINEBUF
+ 
+ /* Define if you have setrlimit.  */
+-#undef HAVE_SETRLIMIT
++#define HAVE_SETRLIMIT
+ 
+ /* Define if you have srand48.  */
+ #undef HAVE_SRAND48
+@@ -156,10 +156,10 @@
+ #undef HAVE_SRANDOM
+ 
+ /* Define if you have strdup.  */
+-#undef HAVE_STRDUP
++#define HAVE_STRDUP 1
+ 
+ /* Define if you have strerror.  */
+-#undef HAVE_STRERROR
++#define HAVE_STRERROR
+ 
+ /* Define if you have sysconf.  */
+ #undef HAVE_SYSCONF
