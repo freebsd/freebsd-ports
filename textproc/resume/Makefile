@@ -13,13 +13,13 @@ MASTER_SITE_SUBDIR=	xmlresume
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Resume library
 
-NO_BUILD=	yes
 USE_REINPLACE=	yes
-
-JAVALIBDIR=	${PREFIX}/share/java/classes
+NO_BUILD=	yes
+JAVAJARDIR=	${PREFIX}/share/java/classes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
@@ -31,8 +31,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
 	${CP} -R ${WRKSRC}/xsl/* ${PREFIX}/share/xsl/${PORTNAME}
 	${CP} -R ${WRKSRC}/css ${PREFIX}/share/xsl/${PORTNAME}/format
-	${MKDIR} ${JAVALIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${JAVALIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${JAVAJARDIR}
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -41,5 +40,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
+	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" pkg-message >${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
