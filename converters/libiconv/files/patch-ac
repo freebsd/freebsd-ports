@@ -1,20 +1,17 @@
---- man/Makefile.in.orig	Fri Sep 15 11:32:20 2000
-+++ man/Makefile.in	Mon Nov 20 18:49:09 2000
-@@ -30,7 +30,7 @@
- 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
- 	if [ ! -d $(DESTDIR)$(mandir) ] ; then mkdir $(DESTDIR)$(mandir) ; fi
+--- man/Makefile.in.orig	Fri Dec  8 08:49:07 2000
++++ man/Makefile.in	Thu Feb  8 23:00:54 2001
+@@ -32,5 +32,5 @@
+ 	if [ ! -d $(DESTDIR)$(mandir)/man1 ] ; then mkdir $(DESTDIR)$(mandir)/man1 ; fi
+-	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; done
++	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/g$$f ; done
  	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
 -	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; done
++	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; done
  
- installdirs : force
- 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
-@@ -38,7 +38,7 @@
- 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
- 
+@@ -43,4 +43,4 @@
  uninstall : force
+-	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/$$f ; done
 -	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; done
- 
- check :
++	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/g$$f ; done
++	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; done
  

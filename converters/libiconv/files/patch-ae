@@ -1,0 +1,63 @@
+
+$FreeBSD$
+
+--- libcharset/lib/Makefile.in.orig	Tue Dec 12 21:43:30 2000
++++ libcharset/lib/Makefile.in	Fri Feb  9 21:31:11 2001
+@@ -10,6 +10,7 @@
+ local_prefix = /usr/local
+ exec_prefix = @exec_prefix@
+ libdir = $(exec_prefix)/lib
++sysconfdir = $(exec_prefix)/etc
+ 
+ # Programs used by "make":
+ CC = @CC@
+@@ -50,7 +51,7 @@
+ 	$(LIBTOOL_LINK) $(CC) -o libcharset.la -rpath $(libdir) -version-info $(LIBCHARSET_VERSION_INFO) $(OBJECTS)
+ 
+ localcharset.lo : $(srcdir)/localcharset.c
+-	$(LIBTOOL_COMPILE) $(CC) $(CFLAGS) $(INCLUDES) -DHAVE_CONFIG_H -DLIBDIR=\"$(libdir)\" -c $(srcdir)/localcharset.c
++	$(LIBTOOL_COMPILE) $(CC) $(CFLAGS) $(INCLUDES) -DHAVE_CONFIG_H -DLIBDIR=\"$(sysconfdir)\" -c $(srcdir)/localcharset.c
+ 
+ charset.alias: $(srcdir)/config.charset
+ 	$(SHELL) $(srcdir)/config.charset '@host@' > t-$@
+@@ -69,11 +70,12 @@
+ install-lib : all force
+ 	$(MKINSTALLDIRS) $(libdir)
+ 	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libcharset.la $(libdir)/libcharset.la
+-	test -f $(libdir)/charset.alias && orig=$(libdir)/charset.alias \
++	$(MKINSTALLDIRS) $(sysconfdir)
++	test -f $(sysconfdir)/charset.alias && orig=$(sysconfdir)/charset.alias \
+ 	                                || orig=charset.alias; \
+-	sed -f ref-add.sed $$orig > $(libdir)/t-charset.alias; \
+-	$(INSTALL_DATA) $(libdir)/t-charset.alias $(libdir)/charset.alias; \
+-	rm -f $(libdir)/t-charset.alias
++	sed -f ref-add.sed $$orig > $(sysconfdir)/t-charset.alias; \
++	$(INSTALL_DATA) $(sysconfdir)/t-charset.alias $(sysconfdir)/charset.alias; \
++	rm -f $(sysconfdir)/t-charset.alias
+ 
+ # The following is needed in order to install a simple file in $(libdir)
+ # which is shared with other installed packages. We use a list of referencing
+@@ -85,15 +87,16 @@
+ install : all force
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
+ 	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libcharset.la $(DESTDIR)$(libdir)/libcharset.la
+-	if test -f $(DESTDIR)$(libdir)/charset.alias; then \
+-	  sed -f ref-add.sed $(DESTDIR)$(libdir)/charset.alias > $(DESTDIR)$(libdir)/t-charset.alias; \
+-	  $(INSTALL_DATA) $(DESTDIR)$(libdir)/t-charset.alias $(DESTDIR)$(libdir)/charset.alias; \
+-	  rm -f $(DESTDIR)$(libdir)/t-charset.alias; \
++	$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)
++	if test -f $(DESTDIR)$(sysconfdir)/charset.alias; then \
++	  sed -f ref-add.sed $(DESTDIR)$(sysconfdir)/charset.alias > $(DESTDIR)$(sysconfdir)/t-charset.alias; \
++	  $(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/t-charset.alias $(DESTDIR)$(sysconfdir)/charset.alias; \
++	  rm -f $(DESTDIR)$(sysconfdir)/t-charset.alias; \
+ 	else \
+ 	  if test @GLIBC21@ = no; then \
+-	    sed -f ref-add.sed charset.alias > $(DESTDIR)$(libdir)/t-charset.alias; \
+-	    $(INSTALL_DATA) $(DESTDIR)$(libdir)/t-charset.alias $(DESTDIR)$(libdir)/charset.alias; \
+-	    rm -f $(DESTDIR)$(libdir)/t-charset.alias; \
++	    sed -f ref-add.sed charset.alias > $(DESTDIR)$(sysconfdir)/t-charset.alias; \
++	    $(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/t-charset.alias $(DESTDIR)$(sysconfdir)/charset.alias; \
++	    rm -f $(DESTDIR)$(sysconfdir)/t-charset.alias; \
+ 	  fi ; \
+ 	fi
+ 

@@ -1,0 +1,63 @@
+--- lib/Makefile.in.orig	Fri Dec  8 08:49:42 2000
++++ lib/Makefile.in	Thu Feb  8 22:59:57 2001
+@@ -1,2 +1,2 @@
+-# Makefile for libiconv/lib
++# Makefile for libgiconv/lib
+ 
+@@ -51,23 +51,23 @@
+ 
+-all : libiconv.la @PLUGLIB@
++all : libgiconv.la @PLUGLIB@
+ 
+-libiconv.la : $(OBJECTS)
+-	$(LIBTOOL_LINK) $(CC) -o libiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS) $(LIBCHARSET_OBJECTS)
++libgiconv.la : $(OBJECTS)
++	$(LIBTOOL_LINK) $(CC) -o libgiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS) $(LIBCHARSET_OBJECTS)
+ 
+-libiconv_plug.so : libiconv_plug_@OS@.so
+-	$(RM) libiconv_plug.so
+-	$(LN_S) libiconv_plug_@OS@.so libiconv_plug.so
++libgiconv_plug.so : libgiconv_plug_@OS@.so
++	$(RM) libgiconv_plug.so
++	$(LN_S) libgiconv_plug_@OS@.so libgiconv_plug.so
+ 
+-libiconv_plug_linux.so : $(SOURCES)
+-	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -shared -o libiconv_plug_linux.so
++libgiconv_plug_linux.so : $(SOURCES)
++	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -shared -o libgiconv_plug_linux.so
+ 
+-libiconv_plug_solaris.so : $(SOURCES)
+-	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -G -o libiconv_plug_solaris.so
++libgiconv_plug_solaris.so : $(SOURCES)
++	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -G -o libgiconv_plug_solaris.so
+ 
+-libiconv_plug_osf.so : $(SOURCES)
++libgiconv_plug_osf.so : $(SOURCES)
+ 	if test -n "@GCC@"; then \
+-	  $(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -shared -o libiconv_plug_osf.so; \
++	  $(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -fPIC -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -shared -o libgiconv_plug_osf.so; \
+ 	else \
+ 	  $(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -DPIC -DLIBICONV_PLUG $(SOURCES) $(LIBCHARSET_OBJECTS) -c -o iconv_plug.o; \
+-	  /bin/ld -shared -expect_unresolved \* -o libiconv_plug_osf.so iconv_plug.o; \
++	  /bin/ld -shared -expect_unresolved \* -o libgiconv_plug_osf.so iconv_plug.o; \
+ 	fi
+@@ -81,3 +81,3 @@
+ 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
++	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(libdir)/libgiconv.la
+ 
+@@ -87,3 +87,3 @@
+ 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(DESTDIR)$(libdir)/libiconv.la
++	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(DESTDIR)$(libdir)/libgiconv.la
+ 	if test -n "@PLUGLIB@"; then $(INSTALL_DATA) @PLUGLIB@ $(DESTDIR)$(libdir)/@PLUGLIB@.new && mv $(DESTDIR)$(libdir)/@PLUGLIB@.new $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
+@@ -96,3 +96,3 @@
+ uninstall : force
+-	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libiconv.la
++	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libgiconv.la
+ 	if test -n "@PLUGLIB@"; then $(RM) $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
+@@ -104,3 +104,3 @@
+ clean : force
+-	$(RM) *.o *.lo *.a *.la libiconv_plug* core
++	$(RM) *.o *.lo *.a *.la libgiconv_plug* core
+ 	$(RM) -r .libs _libs
