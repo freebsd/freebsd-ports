@@ -186,7 +186,6 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/test/${file} ${PREFIX}/share/examples/ncurses
 .endfor
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/test/tracemunch ${PREFIX}/share/examples/ncurses
-	@ ${INSTALL_DATA} ${FILESDIR}/Makefile ${PREFIX}/share/examples/ncurses
 	@ ${MKDIR} ${PREFIX}/share/examples/ncurses/c++
 .for file in ${EXAMPLES_CPP}
 	@ ${INSTALL_DATA} ${WRKSRC}/c++/${file} ${PREFIX}/share/examples/ncurses/c++
