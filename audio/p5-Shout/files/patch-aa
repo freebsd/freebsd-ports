@@ -1,5 +1,5 @@
---- Makefile.PL.orig	Wed Apr 18 13:29:39 2001
-+++ Makefile.PL	Wed Apr 18 13:31:05 2001
+--- Makefile.PL.orig	Tue Dec 11 11:59:35 2001
++++ Makefile.PL	Tue Dec 11 11:59:41 2001
 @@ -4,8 +4,8 @@
  WriteMakefile(
      'NAME'	=> 'Shout',
@@ -11,3 +11,13 @@
 +    'INC'	=> '-I/usr/local/include',     # e.g., '-I/usr/include/other' 
      'MYEXTLIB'  => ''
  );
+--- MANIFEST.orig	Tue Dec 11 12:43:44 2001
++++ MANIFEST	Tue Dec 11 12:43:49 2001
+@@ -3,7 +3,5 @@
+ Makefile.PL
+ Shout.pm
+ Shout.xs
+-example.pl
+-example2.pl
+ test.pl
+ typemap

@@ -1,10 +1,20 @@
---- MANIFEST.orig	Wed Apr 18 13:58:36 2001
-+++ MANIFEST	Wed Apr 18 13:58:43 2001
-@@ -3,7 +3,5 @@
- Makefile.PL
- Shout.pm
- Shout.xs
--example.pl
--example2.pl
- test.pl
- typemap
+--- Shout.xs.orig	Tue Dec 11 12:36:56 2001
++++ Shout.xs	Tue Dec 11 12:37:20 2001
+@@ -200,13 +200,15 @@
+ 	CODE:
+ 	self->aim = strdup(str);
+ 
+-void shout_set_icq(self, str)
++void
++shout_set_icq(self, str)
+ 	shout_conn_t *self
+ 	char *str
+ 	CODE:
+ 	self->icq = strdup(str);
+ 
+-void shout_set_irc(self, str)
++void
++shout_set_irc(self, str)
+ 	shout_conn_t *self
+ 	char *str
+ 	CODE:
