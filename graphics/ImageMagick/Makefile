@@ -42,6 +42,7 @@ LIB_DEPENDS=	fpx:${PORTSDIR}/graphics/libfpx \
 LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 .endif
 
+USE_GCC295=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
