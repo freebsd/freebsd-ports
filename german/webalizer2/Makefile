@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	webalizer
-PORTVERSION=	2.0.12
+PORTVERSION=	2.1.3
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/ \
 		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-2.00-12-src
+DISTNAME=	${PORTNAME}-2.01-03-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -17,11 +17,12 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 NO_LATEST_LINK=	yes
 
-.include <bsd.port.pre.mk>
-
-WEBALIZER_LANG?=	german
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+WEBALIZER_LANG?=	german
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=	--enable-dns \
 			--with-gdlib=${PREFIX}/lib \
 			--with-gd=${PREFIX}/include/gd \
