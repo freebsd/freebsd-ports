@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.snort.org/Files/ \
 MAINTAINER=	dirk@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-mysql=no --with-odbc=no --with-postgresql=no
 MAN8=		snort.8
 
 .if defined(WITH_FLEXRESP)
