@@ -7,6 +7,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.10.1
+PORTREVISION=	1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
@@ -42,7 +43,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
 
-.if !defined(WITHOUT_IODBC)
+.if !defined(WITHOUT_IODBC) && !exists(${LOCALBASE}/lib/libodbc.so)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
 .elseif !defined(WITHOUT_UNIXODBC)

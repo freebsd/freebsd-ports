@@ -149,6 +149,8 @@ clip/cobra/mod-ini/cobra_hello.po
 clip/cobra/mod-ini/cobra_hello.prg
 clip/cobra/mod-ini/cobra_mod.po
 clip/cobra/mod-ini/cobra_mod.prg
+clip/cobra/mod-ini/mk_tmpdir.po
+clip/cobra/mod-ini/mk_tmpdir.prg
 clip/cobra/module1.po
 clip/cobra/tcp-wrap/Makefile
 clip/cobra/tcp-wrap/tcp-wrap.c
@@ -683,6 +685,16 @@ clip/include/taskcfg.h
 clip/include/tbrowse.ch
 clip/include/tcp.ch
 clip/include/ulimit.ch
+clip/kamache/kamache
+clip/kamache/kamache.ini
+clip/kamache/mod-clip/Makefile
+clip/kamache/mod-clip/hello.po
+clip/kamache/mod-clip/hello.prg
+clip/kamache/mod-ini/Makefile
+clip/kamache/mod-ini/kmch_hello.po
+clip/kamache/mod-ini/kmch_hello.prg
+clip/kamache/mod-ini/mk_tmpdir.po
+clip/kamache/mod-ini/mk_tmpdir.prg
 clip/keymaps/genmap.sh
 clip/keymaps/pl-maz
 clip/keymaps/pl-maz.kmap
@@ -790,6 +802,7 @@ clip/locale.mo/es_ES.8859-1/clip-cti.mo
 clip/locale.mo/es_ES.8859-1/clip-fw.mo
 clip/locale.mo/es_ES.8859-1/clip-gtk.mo
 clip/locale.mo/es_ES.8859-1/clip-gtk2.mo
+clip/locale.mo/es_ES.8859-1/clip-r2d2.mo
 clip/locale.mo/es_ES.8859-1/clip.mo
 clip/locale.mo/es_ES.8859-1/cliprt.mo
 clip/locale.mo/es_ES.8859-1/cobra_clnt.mo
@@ -806,6 +819,7 @@ clip/locale.mo/es_ES.ISO01/clip-cti.mo
 clip/locale.mo/es_ES.ISO01/clip-fw.mo
 clip/locale.mo/es_ES.ISO01/clip-gtk.mo
 clip/locale.mo/es_ES.ISO01/clip-gtk2.mo
+clip/locale.mo/es_ES.ISO01/clip-r2d2.mo
 clip/locale.mo/es_ES.ISO01/clip.mo
 clip/locale.mo/es_ES.ISO01/cliprt.mo
 clip/locale.mo/es_ES.ISO01/cobra_clnt.mo
@@ -824,6 +838,7 @@ clip/locale.mo/ru_RU.KOI8-R/clip-cti.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-fw.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-gtk.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-gtk2.mo
+clip/locale.mo/ru_RU.KOI8-R/clip-r2d2.mo
 clip/locale.mo/ru_RU.KOI8-R/clip.mo
 clip/locale.mo/ru_RU.KOI8-R/cliprt.mo
 clip/locale.mo/ru_RU.KOI8-R/cobra_clnt.mo
@@ -840,6 +855,7 @@ clip/locale.po/es_ES.8859-1/clip-cti.po
 clip/locale.po/es_ES.8859-1/clip-fw.po
 clip/locale.po/es_ES.8859-1/clip-gtk.po
 clip/locale.po/es_ES.8859-1/clip-gtk2.po
+clip/locale.po/es_ES.8859-1/clip-r2d2.po
 clip/locale.po/es_ES.8859-1/clip.po
 clip/locale.po/es_ES.8859-1/cliprt.po
 clip/locale.po/es_ES.8859-1/cobra_clnt.po
@@ -856,6 +872,7 @@ clip/locale.po/es_ES.ISO01/clip-cti.po
 clip/locale.po/es_ES.ISO01/clip-fw.po
 clip/locale.po/es_ES.ISO01/clip-gtk.po
 clip/locale.po/es_ES.ISO01/clip-gtk2.po
+clip/locale.po/es_ES.ISO01/clip-r2d2.po
 clip/locale.po/es_ES.ISO01/clip.po
 clip/locale.po/es_ES.ISO01/cliprt.po
 clip/locale.po/es_ES.ISO01/cobra_clnt.po
@@ -874,6 +891,7 @@ clip/locale.po/ru_RU.KOI8-R/clip-cti.po
 clip/locale.po/ru_RU.KOI8-R/clip-fw.po
 clip/locale.po/ru_RU.KOI8-R/clip-gtk.po
 clip/locale.po/ru_RU.KOI8-R/clip-gtk2.po
+clip/locale.po/ru_RU.KOI8-R/clip-r2d2.po
 clip/locale.po/ru_RU.KOI8-R/clip.po
 clip/locale.po/ru_RU.KOI8-R/cliprt.po
 clip/locale.po/ru_RU.KOI8-R/cobra_clnt.po
@@ -913,15 +931,20 @@ clip/locale.pot/clip-gtk/_.pot
 clip/locale.pot/clip-gtk/gtkermsg.pot
 clip/locale.pot/clip-gtk2/_.pot
 clip/locale.pot/clip-gtk2/gtkermsg.pot
+clip/locale.pot/clip-r2d2/_.pot
+clip/locale.pot/clip-r2d2/balance.pot
 clip/locale.pot/cobra_clnt/_.pot
 clip/locale.pot/cobra_clnt/objbrowse.pot
 clip/locale.pot/cobra_serv/_.pot
 clip/locale.pot/cobra_serv/cobra_serv.pot
 clip/locale.pot/cobra_serv/codbtview.pot
 clip/locale.pot/codb/_.pot
+clip/locale.pot/codb/codb_cobra.pot
 clip/locale.pot/codb/codb_err.pot
 clip/locale.pot/codb/codb_funcs.pot
+clip/locale.pot/codb/dep_all.pot
 clip/locale.pot/codb/dep_dbf.pot
+clip/locale.pot/codb/dict_cobra.pot
 clip/locale.pot/codb/dict_dbf.pot
 clip/locale.pot/codb/list_id.pot
 clip/locale.pot/debug/_.pot
@@ -980,6 +1003,7 @@ clip/locale.pot/udb/ab_report.pot
 clip/locale.pot/udb/acc_oper.pot
 clip/locale.pot/udb/attr.pot
 clip/locale.pot/udb/class.pot
+clip/locale.pot/udb/codb_ab.pot
 clip/locale.pot/udb/codb_addobj.pot
 clip/locale.pot/udb/codb_export.pot
 clip/locale.pot/udb/codb_make.pot
@@ -1035,6 +1059,7 @@ clip/term/pcansi
 @dirrm clip/locale.pot/codb
 @dirrm clip/locale.pot/cobra_serv
 @dirrm clip/locale.pot/cobra_clnt
+@dirrm clip/locale.pot/clip-r2d2
 @dirrm clip/locale.pot/clip-gtk2
 @dirrm clip/locale.pot/clip-gtk
 @dirrm clip/locale.pot/clip-fw
@@ -1051,6 +1076,9 @@ clip/term/pcansi
 @dirrm clip/locale.mo
 @dirrm clip/lib
 @dirrm clip/lang
+@dirrm clip/kamache/mod-clip
+@dirrm clip/kamache/mod-ini
+@dirrm clip/kamache
 @dirrm clip/keymaps
 @dirrm clip/include/netto
 @dirrm clip/include/nanfor
