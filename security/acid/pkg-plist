@@ -1,0 +1,16 @@
+share/doc/apache/acid/README
+share/doc/apache/acid/acid_common.php
+share/doc/apache/acid/acid_conf.php
+share/doc/apache/acid/acid_footer.html
+share/doc/apache/acid/acid_hdr1.html
+share/doc/apache/acid/acid_hdr2.html
+share/doc/apache/acid/acid_main.php
+share/doc/apache/acid/acid_pkt_form.php
+share/doc/apache/acid/acid_pkt_main.php
+share/doc/apache/acid/acid_pkt_sqlcalls.php
+share/doc/apache/acid/acid_stat_alerts.php
+share/doc/apache/acid/acid_stat_common.php
+share/doc/apache/acid/acid_stat_time.php
+share/doc/apache/acid/acid_style.css
+share/doc/apache/acid/index.html
+@dirrm share/doc/apache/acid
