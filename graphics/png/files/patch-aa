@@ -1,5 +1,5 @@
 --- scripts/makefile.std.orig	Thu Dec  9 01:44:40 1999
-+++ scripts/makefile.std	Tue Jul  4 09:16:46 2000
++++ scripts/makefile.std	Wed Jul 26 10:00:14 2000
 @@ -2,18 +2,30 @@
  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
  # For conditions of distribution and use, see copyright notice in png.h
@@ -37,11 +37,16 @@
  
  #RANLIB=echo
  RANLIB=ranlib
-@@ -22,12 +34,24 @@
+@@ -22,12 +34,29 @@
  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
  	pngwtran.o pngmem.o pngerror.o pngpread.o
  
 -all: libpng.a pngtest
++.if defined(USE_MMX)
++CFLAGS+=-DPNG_USE_PNGGCCRD -funroll-loops -fomit-frame-pointer
++OBJS+=pnggccrd.o
++.endif
++
 +.SUFFIXES: .c .so .o
 +
 +.c.so:
@@ -63,7 +68,7 @@
  pngtest: pngtest.o libpng.a
  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
  
-@@ -37,12 +61,12 @@
+@@ -37,12 +66,12 @@
  install: libpng.a
  	-@mkdir $(prefix)/include
  	-@mkdir $(prefix)/lib
@@ -82,3 +87,9 @@
  
  clean:
  	rm -f *.o libpng.a pngtest pngout.png
+@@ -69,4 +98,5 @@
+ pngwtran.o: png.h pngconf.h
+ pngwutil.o: png.h pngconf.h
+ pngpread.o: png.h pngconf.h
++pnggccrd.o: png.h pngconf.h pngasmrd.h
+ 
