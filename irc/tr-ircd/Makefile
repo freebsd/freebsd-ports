@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
 MAINTAINER=	sysadmin@alexdupre.com
 
+USE_GMAKE=	yes
+
 MAN1=		md5sum.1
 MAN5=		ircd.conf.5
 MAN8=		ircd.8
