@@ -25,6 +25,7 @@
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += biblereader
+    SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
