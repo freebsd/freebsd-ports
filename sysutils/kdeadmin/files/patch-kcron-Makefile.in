@@ -1,0 +1,11 @@
+--- kcron/Makefile.in.orig	Mon Mar  5 14:10:55 2001
++++ kcron/Makefile.in	Mon Mar  5 14:11:09 2001
+@@ -245,7 +245,7 @@
+ 
+ DISTCLEANFILES = $(kcron_METASOURCES)
+ 
+-kcron_LDADD = -lICE -lkfile -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
++kcron_LDADD = -lICE -lkfile -lkdeui -lkdecore -lqt2 -lXext -lX11 $(LIBSOCKET)
+ 
+ appsdir = $(kde_appsdir)/System
+ 

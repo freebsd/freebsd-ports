@@ -56,6 +56,7 @@
     SUBDIR += installwatch
     SUBDIR += ipa
     SUBDIR += ipsc
+    SUBDIR += kdeadmin
     SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon

@@ -1,0 +1,11 @@
+--- ksysctrl/ksysctrl/Makefile.in.orig	Mon Mar  5 14:12:06 2001
++++ ksysctrl/ksysctrl/Makefile.in	Mon Mar  5 14:12:15 2001
+@@ -226,7 +226,7 @@
+ 
+ libkcm_ksysctrl_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined $(KDE_RPATH)
+ 
+-libkcm_ksysctrl_la_LIBADD = -lkdeui -lkdecore -lz -lqt -lX11 -lXext
++libkcm_ksysctrl_la_LIBADD = -lkdeui -lkdecore -lz -lqt2 -lX11 -lXext
+ 
+ # LIBS = -Wl,-Bstatic -lqimgio -Wl,-Bdynamic
+ 
