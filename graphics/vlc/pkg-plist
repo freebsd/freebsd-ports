@@ -3,13 +3,14 @@ bin/gvlc
 include/videolan/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.so
-lib/libdvdcss.so.0
-lib/libdvdcss.so.0.0.3
+lib/libdvdcss.so.1
+lib/libdvdcss.so.1.0.1_%%LIB_DATE%%
+lib/videolan/vlc/ac3_spdif.so
 lib/videolan/vlc/dsp.so
 lib/videolan/vlc/gtk.so
 lib/videolan/vlc/sdl.so
+lib/videolan/vlc/spu_dec.so
 lib/videolan/vlc/x11.so
-%%XF4%%lib/videolan/vlc/xvideo.so
 share/videolan/default8x16.psf
 share/videolan/default8x9.psf
 share/videolan/gnome-vlc.png
