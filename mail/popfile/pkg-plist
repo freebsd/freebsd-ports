@@ -149,6 +149,7 @@ sbin/popfile.sh
 %%DATADIR%%/skins/default/xmlrpc-port.thtml
 %%DATADIR%%/skins/glassblue/style.css
 %%DATADIR%%/skins/green/style.css
+%%DATADIR%%/skins/klingon/style.css
 %%DATADIR%%/skins/lavish/bottom.gif
 %%DATADIR%%/skins/lavish/bottomLeft.gif
 %%DATADIR%%/skins/lavish/bottomRight.gif
@@ -228,6 +229,7 @@ sbin/popfile.sh
 @dirrm %%DATADIR%%/skins/oceanblue
 @dirrm %%DATADIR%%/skins/lrclaptop
 @dirrm %%DATADIR%%/skins/lavish
+@dirrm %%DATADIR%%/skins/klingon
 @dirrm %%DATADIR%%/skins/green
 @dirrm %%DATADIR%%/skins/glassblue
 @dirrm %%DATADIR%%/skins/default
