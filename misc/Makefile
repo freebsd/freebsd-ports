@@ -334,7 +334,6 @@
     SUBDIR += pear-Services_Weather
     SUBDIR += pear-Text_Figlet
     SUBDIR += peq
-    SUBDIR += pg
     SUBDIR += php4-calendar
     SUBDIR += php4-mcal
     SUBDIR += php5-calendar
