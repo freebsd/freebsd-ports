@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.3 1998/08/24 01:26:30 steve Exp $
+# $Id: Makefile,v 1.4 1998/10/15 02:08:17 jseger Exp $
 #
 
 DISTNAME=	web500gw-2.1b2
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bjn@visi.com
 
-BROKEN_ELF=	yes
+BROKEN=		build
 
 BUILD_DEPENDS=	${PREFIX}/lib/libldap.a:${PORTSDIR}/net/ldap
 
