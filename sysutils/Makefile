@@ -51,6 +51,7 @@
     SUBDIR += healthd
     SUBDIR += heat
     SUBDIR += idled
+    SUBDIR += ipa
     SUBDIR += ipsc
     SUBDIR += lavaps
     SUBDIR += libretto-config
