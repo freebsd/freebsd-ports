@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 #
-# $Id: check_old_version,v 1.1 1997/07/14 12:43:38 jfitz Exp $
+# $Id: check_old_version,v 1.3 1998/02/13 10:54:49 tg Exp $
 #
 
 if( -d "/var/db/msqldb" ) {
 	chdir( "/var/db/pkg" );
 	opendir( DIR, "." );
 	@oldmsql = grep( /^msql-2.0b[1234]$/, readdir( DIR ) );
-	closedir;
+	closedir( DIR );
 	if( @oldmsql ) {
 		if( ! $ENV{OVERWRITE_DB} ) {
 			print <<END;
