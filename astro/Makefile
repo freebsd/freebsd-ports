@@ -22,6 +22,7 @@
     SUBDIR += match
     SUBDIR += nightfall
     SUBDIR += openuniverse
+    SUBDIR += p5-Astro-ADS
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SunTime
     SUBDIR += p5-Astro-Sunrise
