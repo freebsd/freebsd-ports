@@ -7,6 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.17.2
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU}
@@ -15,12 +16,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${TMAC_DISTNAME}.tar.gz
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	okazaki/groff
-PATCHFILES=	${DISTNAME}-jgroff-0.0.1.diff.gz
+PATCHFILES=	${DISTNAME}-jgroff-0.0.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-TMAC_DATE=	20010811
+TMAC_DATE=	20010820
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
@@ -51,8 +52,7 @@ MAN7=		groff.7 groff_char.7 groff_man.7 groff_mdoc.7 \
 		groff_mwww.7 mmroff.7 roff.7
 
 SITETMACFILES=	mdoc.local
-TMACFILES=	tmac.orig_me tmac.vgrind \
-		an-old.tmac doc.tmac
+TMACFILES=	tmac.orig_me tmac.vgrind
 MDOCFILES=	eucJP
 
 DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
