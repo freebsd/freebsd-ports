@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	5 # SR5
+PORTREVISION=	6 # SR6
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -64,6 +64,7 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . \
 		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	${INSTALL_DATA} ${FILESDIR}/cacerts ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
