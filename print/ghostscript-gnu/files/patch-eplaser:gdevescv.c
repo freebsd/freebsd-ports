@@ -1,15 +1,28 @@
---- eplaser/gdevescv.c.orig	Fri Jul 25 20:59:58 2003
-+++ eplaser/gdevescv.c	Tue Sep  9 22:03:50 2003
-@@ -37,8 +37,6 @@
+--- eplaser/gdevescv.c.orig	Thu Oct 30 21:41:16 2003
++++ eplaser/gdevescv.c	Thu Dec 18 17:51:49 2003
+@@ -37,10 +37,6 @@
  
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
- #include <string.h>
- 
+-#include <string.h>
+-
  #include "math_.h"
-@@ -321,6 +319,16 @@
+ #include "gx.h"
+ #include "gserrors.h"
+@@ -62,6 +58,10 @@
+ #include "gspath.h"
+ #include "gzpath.h"
+ 
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++
+ /* ---------------- Device definition ---------------- */
+ 
+ /* Device procedures */
+@@ -335,6 +335,16 @@
  };
  
  /* Vector device implementation */
@@ -26,7 +39,7 @@
  private int escv_beginpage(P1(gx_device_vector * vdev));
  private int escv_setfillcolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
  private int escv_setstrokecolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
-@@ -329,10 +337,25 @@
+@@ -343,10 +353,25 @@
  private int escv_setflat(P2(gx_device_vector * vdev, floatp flatness));
  private int escv_setlogop(P3(gx_device_vector * vdev, gs_logical_operation_t lop, 
  			       gs_logical_operation_t diff));
@@ -52,7 +65,7 @@
  private int escv_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
  private int escv_moveto(P6(gx_device_vector * vdev, floatp x0, floatp y0,
  			   floatp x, floatp y, gx_path_type_t type));
-@@ -345,6 +368,7 @@
+@@ -359,6 +384,7 @@
  				floatp x_start, floatp y_start, gx_path_type_t type));
  
  private int escv_endpath(P2(gx_device_vector * vdev, gx_path_type_t type));

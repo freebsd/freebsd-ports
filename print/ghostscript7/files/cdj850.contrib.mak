@@ -1,5 +1,4 @@
-### --------------- The H-P Buisiness Inkjet 2200 devices --------------- ###
-
+###- cdj850 - HP 850 Driver under development -------- ###
 cdeskjet8_=$(GLOBJ)gdevcd8.$(OBJ) $(HPPCL)
 
 $(DD)cdj670.dev : $(cdeskjet8_) $(DD)page.dev
@@ -16,9 +15,6 @@ $(DD)cdj890.dev : $(cdeskjet8_) $(DD)page.dev
 
 $(DD)cdj1600.dev : $(cdeskjet8_) $(DD)page.dev
 	$(SETPDEV2) $(DD)cdj1600 $(cdeskjet8_)
-
-$(DD)chp2200.dev : $(cdeskjet8_) $(DD)page.dev
-	$(SETPDEV2) $(DD)chp2200 $(cdeskjet8_)
 
 $(GLOBJ)gdevcd8.$(OBJ) : $(GLSRC)gdevcd8.c $(PDEVH) $(math__h)\
  $(gsparam_h) $(gxlum_h) $(gdevpcl_h)

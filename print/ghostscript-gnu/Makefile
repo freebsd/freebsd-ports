@@ -7,11 +7,10 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
-		http://hp.sourceforge.net/:hp2200 \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
+		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
@@ -23,9 +22,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:gs_fonts \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${GS_VERSION:S/.//}/:gs_srcs
-MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
+MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			gimp-print/:gprint \
 			bjc250gs/:bjc250 \
 			./:ports_jp
@@ -33,7 +32,7 @@ PKGNAMESUFFIX=	-gnu
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${GS_FONTS_STD}:gs_fonts \
 		${GS_FONTS_OTHER}:gs_fonts \
-		${HP2200_SRCS}:hp2200 \
+		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
 		${DJ970_SRCS}:dj970 \
@@ -52,7 +51,6 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${LXM3200_SRCS}:lxm3200 \
 		${LX5000_SRCS}:lx5000 \
 		${LEX7000_SRCS}:lx5000
-
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
 
@@ -116,19 +114,15 @@ PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
-#  Note: the following two are real files that have symlinks with
-#  later version numbers pointing to them.  To avoid unnecessarily
-#  downloading distfiles, do not change these when upgrading the port
-#  unless the files really change.
-GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
-GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-8.11.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
-# HP2200 - additional driver for HP DeskJet 8xx and Business Inkjet 2200
-# http://hp.sourceforge.net/gs-hp2200.php
-HP2200=		hp2200
-HP2200_SRCS=	gs-hp2200.tar.gz
+# HP8XX - additional driver for HP DeskJet 812C/815C/832C/880C/882C/895C
+# http://www.gelhaus.net/hp880c/
+HP8XX=		cdj880
+HP8XX_SRCS=	gdevcd8.tar.gz
 
 # HPDJ - additional driver for HP PCL3 printers, by Martin Lottermoser
 # still present, just for the case pcl3 is missing some hpdj feature
@@ -222,9 +216,9 @@ EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRCS=	${EPAG_NAME}.tar.gz
 
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
-# http://www.epkowa.co.jp/linux/lpd.html
+# http://www.epkowa.co.jp/english/linux_e/index.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.1.1
+EPLASER_VERS=	3.1.3
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
 EPLASER_SRCS=	${EPLASER_NAME}-705.tgz
 
@@ -272,14 +266,12 @@ pre-everything::
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
 # ** 3rd party driver **
-# Note: don't forget to add those devices in scripts/configure and
-# configure.batch, which update unix-gcc.mak to build gs with these
-# new devices !
+# Note: don't forget to add those devices in scripts/configure,    
+# which update unix-gcc.mak to build gs with these new devices !   
 #
-# for HP2200 driver
-	${ECHO_MSG} ">>>   extracting ${HP2200_SRCS} ..."
-	${MKDIR} ${WRKSRC}/${HP2200}
-	${TAR} -C ${WRKSRC}/${HP2200} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP2200_SRCS}
+# for HP8XX driver
+	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
 # for HPDJ driver
 	${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRCS}
@@ -369,9 +361,9 @@ post-patch:
 # advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
 	${ECHO_MSG} ">>> in pre-configure ..."
-# for HP2200 driver
-	${ECHO_MSG} ">>>   adding ${HP2200} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/chp2200.contrib.mak \
+# for HP8XX driver
+	${ECHO_MSG} ">>>   adding ${HP8XX} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/cdj850.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for HPDJ driver
 	${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
@@ -461,11 +453,6 @@ pre-build:
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-# for HP2200 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${HP2200} ..."
-.for i in gdevcd8.c
-	${LN} -sf ${WRKSRC}/${HP2200}/${i} ${WRKSRC}/src
-.endfor
 # for Gimp-Print driver
 	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
