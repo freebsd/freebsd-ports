@@ -9,12 +9,13 @@
 
 PORTNAME=	leo
 PORTVERSION=	3.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME} SbooksLeo
+DISTFILES=	${DISTNAME}.zip ${SBOOKFILE} ${EXAMPLESFILES}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	alane@freebsd.org
 
@@ -26,21 +27,36 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
+ICONSDIR=	${LOCALBASE}/share/icons
+DESKTOPDIR=	${LOCALBASE}/share/applnk
+
 SBOOKNAME=	SbooksLeo
+SBOOKFILE=	${SBOOKNAME}.zip
 TUTORIALDIR=	${DOCSDIR}/${SBOOKNAME}
+
+EXAMPLES=	cweb.leo noweb.leo python.leo tkinter.leo
+EXAMPLESFILES=	${EXAMPLES:S|leo$|leo.zip|}
 
 PLIST=		${WRKDIR}/plist
 
+BINDIR=		${PREFIX}/bin
 DATADIR=	${PREFIX}/share
+ETCDIR=		${PREFIX}/etc
+LIBDIR=		${PREFIX}/lib
 PKGDATADIR=	${DATADIR}/${DISTNAME}
 
-DOCS_SUBDIR=	${DOCSDIR:S|^${PREFIX}/||}
-PKGDATA_SUBDIR=	${PKGDATADIR:S|^${PREFIX}/||}
+BIN_SUBDIR=		${BINDIR:S|^${PREFIX}/||}
+DATA_SUBDIR=		${DATADIR:S|^${PREFIX}/||}
+DOCS_SUBDIR=		${DOCSDIR:S|^${PREFIX}/||}
+ETC_SUBDIR=		${ETCDIR:S|^${PREFIX}/||}
+EXAMPLES_SUBDIR=	${EXAMPLESDIR:S|^${PREFIX}/||}
+LIB_SUBDIR=		${LIBDIR:S|^${PREFIX}/||}
+PKGDATA_SUBDIR=		${PKGDATADIR:S|^${PREFIX}/||}
 
 .if defined(NOPORTDOCS)
 ALL_SUBDIRS=	${PKGDATA_SUBDIR}
 .else
-ALL_SUBDIRS=	${PKGDATA_SUBDIR} ${DOCS_SUBDIR}
+ALL_SUBDIRS=	${PKGDATA_SUBDIR} ${DOCS_SUBDIR} ${EXAMPLES_SUBDIR}
 .endif # defined(NOPORTDOCS)
 
 CPIO?=	/usr/bin/cpio
@@ -60,17 +76,20 @@ do-install:
 		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${TUTORIALDIR}
 # fix docs perms
 	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${DOCMODE}
+# install examples
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKDIR}; ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif # !defined(NOPORTDOCS)
 # fix dir perms
 	cd ${PREFIX}; ${FIND} ${ALL_SUBDIRS} -type d -print0 \
 		| ${XARGS} -0 ${CHMOD} ${BINMODE}
 # create start script
 	${SED} -e 's|@PKGDATADIR@|${PKGDATADIR}|' \
-		<${FILESDIR}/leo.in >${LOCALBASE}/bin/leo
-	${CHMOD} ${BINMODE} ${LOCALBASE}/bin/leo
-	${CHOWN} ${BINOWN}:${BINGRP} ${LOCALBASE}/bin/leo
+		<${FILESDIR}/leo.in >${BINDIR}/leo
+	${CHMOD} ${BINMODE} ${BINDIR}/leo
+	${CHOWN} ${BINOWN}:${BINGRP} ${BINDIR}/leo
 # build plist: bin
-	${ECHO_CMD} "bin/leo" >${PLIST}
+	${ECHO_CMD} "${BIN_SUBDIR}/leo" >${PLIST}
 # build plist: files
 	cd ${PREFIX}; ${FIND} ${ALL_SUBDIRS} -type f \
 		| ${SORT} >>${PLIST}
