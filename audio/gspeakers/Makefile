@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gspeakers
-PORTVERSION=	0.10.1
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,24 +13,44 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome-based loudspeaker design program
 
-LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk--2
-RUN_DEPENDS=	spice3:${PORTSDIR}/cad/spice
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack libxml2 gnomeprefix
-USE_LIBTOOL_VER=	13
+USE_GCC=	3.3
+USE_GNOME=	gnomeprefix gnometarget libxml2
 USE_REINPLACE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+USE_GMAKE=	yes
+WANT_AUTOMAKE_VER=	18
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CFLAGS+=	-O0
+
+.if defined(WITH_SPICE)
+RUN_DEPENDS+=	spice3:${PORTSDIR}/cad/spice
+.else
+RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -type l -delete
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		"s,/share/pixmaps/,/share/gnome/pixmaps/${PORTNAME}/," \
-		-e "s,/share/xml/,/share/gnome/xml/${PORTNAME}/," \
-		${WRKSRC}/src/*.cc
-	@${REINPLACE_CMD} -e \
-		"s,/usr/local/share/xml/,${PREFIX}/share/gnome/xml/${PORTNAME}/,g" \
-		${WRKSRC}/xml/*.xml
+	@${REINPLACE_CMD} -e 's|/gnome/apps/|/apps/|g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(datadir)/pixmaps|$$(pkgdatadir)/pixmaps|g' \
+		${WRKSRC}/pixmaps/Makefile.in
+	@${REINPLACE_CMD} -e 's|-Wall -O0|@CXXFLAGS@|g' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(datadir)/xml|$$(pkgdatadir)/xml|g' \
+		${WRKSRC}/xml/Makefile.in
+	@${FIND} ${WRKSRC} \( -name "*.cc" -or -name "*.xml" \) | \
+		${XARGS} ${REINPLACE_CMD} -e \
+		's|/share/pixmaps/|/share/gnome/gspeakers/pixmaps/|g ; \
+		 s|/share/xml/|/share/gnome/gspeakers/xml/|g'
+
+pre-configure:
+	@${CP} ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
 
 .include <bsd.port.mk>
