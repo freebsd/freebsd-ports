@@ -23,10 +23,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
-
 WRKSRC=		${WRKDIR}/j2sdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
@@ -49,8 +45,12 @@ IGNORE=You must manually fetch the J2SE v1.4 SDK Linux GNUZIP Tar shell script (
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
-post-fetch:
-	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} \
+	&& ${TAIL} +430 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
+	&& ${WRKDIR}/install.sfx > /dev/null
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
