@@ -2660,6 +2660,7 @@ gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespeech	ports/accessibility/gnomespeech
 gnomespell	ports/textproc/gnomespell
+gnomesu		ports/sysutils/gnomesu
 gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnomesystemtools	ports/sysutils/gnomesystemtools
