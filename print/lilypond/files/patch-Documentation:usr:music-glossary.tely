@@ -1,0 +1,11 @@
+--- Documentation/user/music-glossary.tely.orig	Sun Apr 11 09:45:14 2004
++++ Documentation/user/music-glossary.tely	Sun Apr 11 09:45:23 2004
+@@ -4,7 +4,7 @@
+ 
+ @dircategory GNU music project
+ @direntry
+-* Glossary: (lilypond/music-glossary).                  Glossary of music terms.
++* Glossary: (music-glossary).                  Glossary of music terms.
+ @end direntry
+ 
+ @ifhtml
