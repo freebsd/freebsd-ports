@@ -656,6 +656,7 @@
     SUBDIR += sharity-light
     SUBDIR += silc-client
     SUBDIR += silc-server
+    SUBDIR += silky
     SUBDIR += simicq
     SUBDIR += sing
     SUBDIR += sipcalc
