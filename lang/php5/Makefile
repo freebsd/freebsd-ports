@@ -7,9 +7,9 @@
 # There are many ways to select which extensions you want to enable, either
 # in interactive mode or in batch mode.
 #
-# By default, the enabled extensions are: CTYPE, MYSQL, PCRE, POSIX, SESSION,
-# TOKENIZER, XML and ZLIB. This behaviour can be changed overriding the
-# PHP4_OPTIONS variable (e.g. PHP4_OPTIONS="EXT1 EXT2 EXT3").
+# By default, the enabled extensions are: CTYPE, MYSQL, OVERLOAD, PCRE, POSIX,
+# SESSION, TOKENIZER, XML and ZLIB. This behaviour can be changed overriding
+# the PHP4_OPTIONS variable (e.g. PHP4_OPTIONS="EXT1 EXT2 EXT3").
 #
 # Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
 # and default extensions respectively (implies batch mode).
@@ -71,6 +71,18 @@ CONFIGURE_ARGS=	--enable-versioning \
 		--with-zlib-dir=/usr \
 		--disable-all
 
+.if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
+CONFIGURE_ARGS+=--with-regex=php
+.else
+.if ${WITH_REGEX_TYPE} == "system"
+CONFIGURE_ARGS+=--with-regex=system
+.else
+.if ${WITH_REGEX_TYPE} == "apache"
+CONFIGURE_ARGS+=--with-regex=apache
+.endif
+.endif
+.endif
+
 EXT_DIR=	20020429
 SAPI_FILE=	"@comment "
 
@@ -107,9 +119,9 @@ SAPI_FILE=	"bin/php"
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOMXML \
 		DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT GMP HYPERWAVE \
 		ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE MCRYPT MHASH \
-		MIME MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE \
-		PDFLIB POSIX POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP \
-		SNMP SOCKETS SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
+		MIME MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE OVERLOAD PCNTL \
+		PCRE PDFLIB POSIX POSTGRESQL PSPELL READLINE RECODE SESSION \
+		SHMOP SNMP SOCKETS SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
 		UNIXODBC WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
 
 .for opt in ${ALL_OPTIONS}
@@ -161,7 +173,7 @@ PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PHP4_OPTFILE?=	${HOME}/php4_options
 
-PHP4_OPTIONS?=	CTYPE MYSQL PCRE POSIX SESSION TOKENIZER XML ZLIB
+PHP4_OPTIONS?=	CTYPE MYSQL OVERLOAD PCRE POSIX SESSION TOKENIZER XML ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -202,16 +214,16 @@ WITH_DOMXML=	yes
 WITH_ICONV_DEP=	yes
 .endif
 
-.if defined(WITH_POSTGRESQL)
-WITH_OPENSSL_DEP=	yes
-.endif
-
 .if defined(WITH_SNMP)
 WITH_OPENSSL=	yes
 .endif
 
-.if defined(WITH_WDDX) || defined(WITH_XMLRPC) || defined(WITH_XSLT)
+.if defined(WITH_XMLRPC) || defined(WITH_XSLT)
 WITH_XML_DEP=	yes
+.endif
+
+.if defined(WITH_WDDX)
+WITH_XML=	yes
 .endif
 
 .if defined(WITH_BCMATH)
@@ -296,6 +308,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-gd \
 		--enable-gd-native-ttf \
+		--enable-gd-jis-conv \
 		--with-freetype-dir=${LOCALBASE} \
 		--with-jpeg-dir=${LOCALBASE} \
 		--with-png-dir=${LOCALBASE}
@@ -444,6 +457,10 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
 RUN_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
 CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
+.endif
+
+.if defined(WITH_OVERLOAD)
+CONFIGURE_ARGS+=--enable-overload
 .endif
 
 .if defined(WITH_PCNTL)
