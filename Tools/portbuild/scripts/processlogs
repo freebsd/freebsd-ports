@@ -1,64 +1,53 @@
 #!/bin/sh
 
-of=index.html.new
+of=.index.html
 
 # delete .new file if it is more than a day old
-find $of -mtime 2 -delete 2>/dev/null
+find $of .lock -mmin +60 -delete 2>/dev/null
 
-if [ -f $of ]; then exit; fi
+if [ -f $of -o -f .lock ]; then exit; fi
 
 if [ -e .stamp -a $(echo $(find . -maxdepth 1 -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
-echo "<html><head><title>Package building errors</title>" >$of
-echo "<h1>Package building errors</h1>" >>$of
-echo "</head><body>" >>$of
-
 touch .stamp
+touch .lock
 
 set *.log
+> .logs
 
-if [ $# = 1 -a "x$1" = "x*.log" ]; then
-  echo "No errors (yet)" >>$of
-else
-  num=$#
-  if [ -s cvsdone ]; then
-    echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
-  fi
-  echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
-  echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
-  echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN<br><br>" >> $of
-  echo "<table border=1>" >>$of
-  echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
-  while [ $# -gt 0 ]; do
-    echo -n "<tr><td>" >>$of
-    echo -n "<a name=\"$1\"></a>" >> $of
-    echo -n "<a href=\"$1\">" >>$of
-    echo -n $(basename $1 .log) >>$of
-    echo -n "</a>" >>$of
-    echo -n "</td><td align=right>" >>$of
-    affected=$(($(grep -cF $(basename $1 .log) < INDEX) - 1))
-    if [ $affected != 0 ]; then echo -n $affected >>$of; fi
-    echo -n "</td><td align=right>" >>$of
-    size=$(/bin/ls -sk $1 | awk '{print $1}')
-    echo -n "$size KB" >>$of
-    echo -n "</td><td>" >>$of
-    dir=$(sed -n -e '3p' $1 | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
-    echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
-    echo -n "</td><td>" >>$of
-    maint=$(sed -n -e '4p' $1 | awk '{print $3}')
-    maints="$maints $maint"
-    echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
-    echo -n "</td><td>" >>$of
+#
+# Read the log-files and write it to .logs in the format
+#	$filename|$portname|$affected|$logsize|$dir|$maintainer|\
+#	$reason|$tag|$broken|$datetime
+#
+#
+
+if [ $# != 1 -o "x$1" != "x*.log" ]; then
+  while [ ! -z "$1" ]; do
+    filename=$1
+    portname=$(basename $filename .log)
+    affected=$(($(grep -cF $portname < INDEX) -1))
+    logsize=$(/bin/ls -sk $filename | awk '{print $1}')
+    dir=$(sed -n -e '3p' $filename | awk '{print $4}' | \
+		sed -e 's,^/[^/]*/[^/]*/,,')
+    maintainer=$(sed -n -e '4p' $filename | awk '{print $3}')
+    datetime=$(grep 'build started at' $filename | \
+		sed -e 's/build started at ...//' | tr ' ' '_' )
+
     if grep -q 'list of extra files and directories' $1; then
       reason="mtree"; tag="mtree"
     elif grep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
-      reason="gcc bug"; tag="gcc bug"
+      reason="gcc_bug"; tag="gcc-bug"
     elif grep -q 'Checksum mismatch' $1; then
       reason="checksum"; tag="checksum"
+    elif grep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
+      reason="perl"; tag="perl"
+    elif grep -q 'perl: Perl is not installed, try .pkg_add -r perl.' $1; then
+      reason="perl"; tag="perl"
     elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
-      reason="distinfo update"; tag="distinfo"
+      reason="distinfo_update"; tag="distinfo"
     elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
-      reason="configure error"; tag="configure"
+      reason="configure_error"; tag="configure"
     elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
       reason="bison"; tag="bison"
     elif grep -q "Couldn't fetch it - please try" $1; then
@@ -68,7 +57,7 @@ else
     elif grep -q 'Error: category .* not in list of valid categories' $1; then
       reason="CATEGORIES"; tag="categories"
     elif grep -q 'make: don.t know how to make .*\.man. Stop' $1; then
-      reason="X manpage"; tag="xfree4man"
+      reason="X_manpage"; tag="xfree4man"
     elif grep -q 'Xm/Xm\.h: No such file' $1; then
       reason="MOTIF"; tag="motif"
     elif grep -q 'undefined reference to `Xp' $1; then
@@ -90,33 +79,33 @@ else
     elif grep -q ".*\.h: No such file" $1; then
       if grep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
 	if grep -q "XFree86-.*\.tgz" $1; then
-	  reason="missing header"; tag="header"
+	  reason="missing_header"; tag="header"
 	else
 	  reason="USE_XLIB"; tag="usexlib"
 	fi
       else
-	reason="missing header"; tag="header"
+	reason="missing_header"; tag="header"
       fi
     elif grep -q "pnohang: killing make checksum" $1; then
-      reason="fetch timeout"; tag="fetch-timeout"
+      reason="fetch_timeout"; tag="fetch-timeout"
     elif grep -q "pnohang: killing make package" $1; then
-      reason="runaway process"; tag="runaway"
+      reason="runaway_process"; tag="runaway"
     elif grep -q "cd: can't cd to" $1; then
       reason="NFS"; tag="nfs"
     elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
-      reason="disk full"; tag="df"
+      reason="disk_full"; tag="df"
     elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
-      reason="compiler error"; tag="cc"
+      reason="compiler_error"; tag="cc"
     elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class)' $1; then
-      reason="new compiler error"; tag="newgcc"
+      reason="new_compiler_error"; tag="newgcc"
     elif grep -qE '(syntax error before|ISO C++ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not)' $1; then
-      reason="Bad C++ code"; tag="badc++"
+      reason="bad_C++_code"; tag="badc++"
     elif grep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
-      reason="linker error"; tag="ld"
+      reason="linker_error"; tag="ld"
     elif grep -qE 'chown:.*invalid argument' $1; then
       reason="chown"; tag="chown"
     elif grep -q 'install: .*: No such file' $1; then
-      reason="install error"; tag="install"
+      reason="install_error"; tag="install"
     elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
       reason="manpage"; tag="manpage"
     elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
@@ -124,37 +113,227 @@ else
     elif grep -q "Can't open display" $1; then
       reason="DISPLAY"; tag="display"
     elif grep -q " is already installed - perhaps an older version" $1; then
-      reason="depend object"; tag="dependobj"
+      reason="depend_object"; tag="dependobj"
     elif grep -q "error in dependency .*, exiting" $1; then
-      reason="depend package"; tag="dependpkg"
+      reason="depend_package"; tag="dependpkg"
     elif grep -q "#error \"<malloc.h> has been replaced by <stdlib.h>\"" $1; then
       reason="malloc.h"; tag="malloc.h"
     elif grep -q "core dumped" $1; then
       reason="coredump"; tag="coredump"
     elif grep -q "Segmentation fault" $1; then
       reason="segfault"; tag="segfault"
+    elif egrep -q "storage size of.*isn't known" $1; then
+      reason="union_wait"; tag="wait"
+    elif grep -q "initializer element is not constant" $1; then
+      reason="stdio"; tag="stdio"
     elif grep -q "structure has no member named" $1; then
-      reason="struct changes"; tag="struct"
+      reason="struct_changes"; tag="struct"
     else
       reason="???"; tag="unknown"
     fi
+    broken="no"
     if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
-       echo -n "<font color=\"red\">[B]</font>" >> $of
+       broken="broken"
     fi
-    echo -n "<a href=\"../../index.html#$tag\">$reason</a>" >>$of
-    echo "</td></tr>" >>$of
     shift
+
+    echo "$filename|$portname|$affected|$logsize|$dir|$maintainer|$reason|$tag|$broken|$datetime" >> .logs
   done
-  echo "</table><br>" >> $of
-  echo "$num errors<br>" >> $of
 fi
 
-echo "<hr>" >> $of
-echo "<a href=\"../\">back to top</a>" >> $of
+# XXX Sometimes log entries get doubled up for some reason
+uniq .logs > .logs2
+mv .logs2 .logs
 
-echo "</body></html>" >>$of
+num=$(wc -l < .logs)
 
+header() {
+  echo "<html><head><title>Package building errors</title>" >$of
+  echo "</head><body><h1>Package building errors</h1>" >>$of
+  echo "<p>View by " >>$of
+  echo "[ <a href=\"index.html\">port</a> " >>$of
+  echo "| <a href=\"index-maintainer.html\">maintainer</a> " >>$of
+  echo "| <a href=\"index-category.html\">category</a> " >>$of
+  echo "| <a href=\"index-reason.html\">error</a> " >>$of
+  echo "| <a href=\"index-builddate.html\">builddate</a> " >>$of
+  echo "]</p>" >>$of
+
+  if [ $num = "0" ]; then
+    echo "No errors (yet)" >>$of
+  else
+    if [ -s cvsdone ]; then
+      echo "CVS update finished at: $(cat cvsdone)<br>" >> $of
+    fi
+    echo "Timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}')<br><br>" >> $of
+    echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
+    echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN<br><br>" >> $of
+    echo "<p>$num errors</p>" >> $of
+    echo "<table border=1>" >>$of
+    echo "<tr>$1</tr>" >>$of
+  fi
+}
+
+#
+# Create "default" output, sorted on portname
+#
+header "<th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th><th>Date build</th>"
+
+for i in `cat .logs | sort`; do
+    set $(echo $i | tr \| " ")
+    echo "<tr>" >> $of
+    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+
+    affby=$3
+    test $affby = "0" && affby=""
+    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+    echo "<td>" >> $of
+
+    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason=$(echo $7 | tr '_' ' ')
+    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "</td>" >> $of
+
+    date=$(echo ${10} | tr '_' ' ')
+    echo "<td>$date</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+echo "</table>" >> $of
 mv -f $of index.html
+
+#
+# Create output by category
+#
+header "<th>CVS</th><th>Aff.</th><th>Size</th><th>Port</th><th>Maintainer</th><th>Reason</th><th>Date build</th>"
+
+for i in `cat .logs | sort -t \\| +4`; do
+    set $(echo $i | tr \| " ")
+    echo "<tr>" >> $of
+    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+
+    affby=$3
+    test $affby = "0" && affby=""
+    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+
+    echo "<td>" >> $of
+    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason=$(echo $7 | tr '_' ' ')
+    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "</td>" >> $of
+
+    date=$(echo ${10} | tr '_' ' ')
+    echo "<td>$date</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+echo "</table>" >> $of
+mv -f $of index-category.html
+
+#
+# Create output by maintainer
+#
+header "<th>Maintainer</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Reason</th><th>Date build</th>"
+
+for i in `cat .logs | sort -t \\| +5`; do
+    set $(echo $i | tr \| " ")
+    echo "<tr>" >> $of
+    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+
+    affby=$3
+    test $affby = "0" && affby=""
+    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+
+    echo "<td>" >> $of
+    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason=$(echo $7 | tr '_' ' ')
+    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "</td>" >> $of
+
+    date=$(echo ${10} | tr '_' ' ')
+    echo "<td>$date</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+echo "</table>" >> $of
+mv -f $of index-maintainer.html
+
+#
+# Create output by error
+#
+header "<th>Reason</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Date build</th>"
+
+for i in `cat .logs | sort -t \\| +7`; do
+    set $(echo $i | tr \| " ")
+    echo "<tr>" >> $of
+
+    echo "<td>" >> $of
+    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason=$(echo $7 | tr '_' ' ')
+    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "</td>" >> $of
+
+    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+
+    affby=$3
+    test $affby = "0" && affby=""
+    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+
+    date=$(echo ${10} | tr '_' ' ')
+    echo "<td>$date</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+echo "</table>" >> $of
+mv -f $of index-reason.html
+
+#
+# Create output by builddate
+#
+header "<th>Date build</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th>"
+
+for i in `cat .logs | sort -t \\| +9`; do
+    set $(echo $i | tr \| " ")
+    echo "<tr>" >> $of
+
+    date=$(echo ${10} | tr '_' ' ')
+    echo "<td>$date</td>" >> $of
+
+    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+
+    affby=$3
+    test $affby = "0" && affby=""
+    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+
+    echo "<td>" >> $of
+    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason=$(echo $7 | tr '_' ' ')
+    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+echo "</table>" >> $of
+mv -f $of index-builddate.html
+
+#
+# Get list of maintainers.
+#
+for i in `cat .logs | sort -t \\| +9`; do
+    set $(echo $i | tr \| " ")
+    maints="$maints $6"
+done
 
 echo $maints | sed -e 's/ /\
 /g' | sort -fu > maintainers
+
+rm .lock
