@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=       dillo
-PORTVERSION=	0.7.2
-CATEGORIES=     www
+PORTNAME=	dillo
+PORTVERSION=	0.7.3
+CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,11 +17,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
