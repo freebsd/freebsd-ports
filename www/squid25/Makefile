@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.42 1998/02/14 03:12:37 peter Exp $
+# $Id: Makefile,v 1.43 1998/02/14 14:36:12 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta14
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
+NO_LATEST_LINK=	yes
 
 # Some other configure options..
 #  - Compile and use the malloc package from Doug Lea
