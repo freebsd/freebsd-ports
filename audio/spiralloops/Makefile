@@ -32,12 +32,17 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 post-patch:
-	${PERL} -pi -e "s:-ldl::g; s:^CFLAGS:XCFLAGS:g; s:^CXXFLAGS:XCXXFLAGS:g; s:usr/X11R6:${PREFIX}:g" ${WRKSRC}/Makefile.in
-	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
-			s|CFLAGS =|CFLAGS +=|g ; \
-			s|CXXFLAGS=|CXXFLAGS+=|g ; \
-			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
+	${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.orig
+	${SED} -E "s:-ldl::g; \
+		s:^CFLAGS:XCFLAGS:g; \
+		s:^CXXFLAGS:XCXXFLAGS:g; \
+		s:usr/X11R6:${PREFIX}:g; \
+		s:-O3:${PTHREAD_CFLAGS}:g; \
+		s:CFLAGS =:CFLAGS +=:g; \
+		s:CXXFLAGS=:CXXFLAGS+=:g; \
+		s:-lm:${PTHREAD_LIBS} -lm:g; \
+		s:/usr/X11R6:${X11BASE}:g" \
+		< ${WRKSRC}/Makefile.in.orig > ${WRKSRC}/Makefile.in
 
 pre-install:
 	${ECHO_CMD} bin/SpiralLoops > ${PLIST}
