@@ -7,6 +7,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
@@ -107,8 +108,8 @@ post-install:
 
 # local targets
 install-info:
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${INFODIR}/dir 2>/dev/null
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${INFODIR}/dir 2>/dev/null
+	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${INFODIR}/dir
+	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${INFODIR}/dir
 
 install-docs:
 	@${MKDIR} ${PREFIX}/${PORTDOCDIR}

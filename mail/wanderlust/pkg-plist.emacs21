@@ -1,9 +1,9 @@
-@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl.info %D/info/dir 2>/dev/null
+@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl.info %D/info/dir
 info/wl.info
-@exec install-info --section="%%DIRSECTION%%" %D/info/wl.info %D/info/dir 2>/dev/null
-@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl-ja.info %D/info/dir 2>/dev/null
+@exec install-info --section="%%DIRSECTION%%" %D/info/wl.info %D/info/dir
+@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl-ja.info %D/info/dir
 info/wl-ja.info
-@exec install-info --section="%%DIRSECTION%%" %D/info/wl-ja.info %D/info/dir 2>/dev/null
+@exec install-info --section="%%DIRSECTION%%" %D/info/wl-ja.info %D/info/dir
 share/doc/ja/wanderlust/README.ja
 share/doc/ja/wanderlust/NEWS.ja
 share/doc/ja/wanderlust/wl-ja.texi

@@ -1,2 +1,1 @@
 (setq wl-install-utils t)
-(setq wl-info-lang (list "en" "ja"))
