@@ -1,85 +1,85 @@
-@exec mv %D/bin/mozilla-devel %D/bin/mozilla-devel.orig
-@exec mv %D/lib/mozilla-devel/chrome/chrome.rdf %D/lib/mozilla-devel/chrome/chrome.rdf.orig
-@exec mv %D/lib/mozilla-devel/chrome/installed-chrome.txt %D/lib/mozilla-devel/chrome/installed-chrome.txt.orig
-@exec mv %D/lib/mozilla-devel/defaults/pref/unix.js %D/lib/mozilla-devel/defaults/pref/unix.js.orig
-@exec mv %D/lib/mozilla-devel/components/xpti.dat %D/lib/mozilla-devel/xpti.dat.orig
-bin/mozilla-devel
-lib/mozilla-devel/chrome/JP.jar
-lib/mozilla-devel/chrome/chrome.rdf
-lib/mozilla-devel/chrome/installed-chrome.txt
-lib/mozilla-devel/chrome/ja-JP.jar
-lib/mozilla-devel/chrome/ja-mac.jar
-lib/mozilla-devel/chrome/ja-unix.jar
-lib/mozilla-devel/chrome/ja-win.jar
-lib/mozilla-devel/components/xpti.dat
-lib/mozilla-devel/defaults/pref/unix.js
-lib/mozilla-devel/defaults/profile/JP/chrome/userChrome-example.css
-lib/mozilla-devel/defaults/profile/JP/chrome/userContent-example.css
-lib/mozilla-devel/defaults/profile/JP/bookmarks.html
-lib/mozilla-devel/defaults/profile/JP/localstore.rdf
-lib/mozilla-devel/defaults/profile/JP/mimeTypes.rdf
-lib/mozilla-devel/defaults/profile/JP/panels.rdf
-lib/mozilla-devel/defaults/profile/JP/search.rdf
-lib/mozilla-devel/searchplugins/AllAboutJapan.png
-lib/mozilla-devel/searchplugins/AllAboutJapan.src
-lib/mozilla-devel/searchplugins/BiglobeSearch.png
-lib/mozilla-devel/searchplugins/BiglobeSearch.src
-lib/mozilla-devel/searchplugins/Bugzilla-Summary.png
-lib/mozilla-devel/searchplugins/Bugzilla-Summary.src
-lib/mozilla-devel/searchplugins/Bugzilla-jp-Summary.png
-lib/mozilla-devel/searchplugins/Bugzilla-jp-Summary.src
-lib/mozilla-devel/searchplugins/CNETJapan.png
-lib/mozilla-devel/searchplugins/CNETJapan.src
-lib/mozilla-devel/searchplugins/ExciteJapan.png
-lib/mozilla-devel/searchplugins/ExciteJapan.src
-lib/mozilla-devel/searchplugins/Fresheye_Japan.gif
-lib/mozilla-devel/searchplugins/Fresheye_Japan.src
-lib/mozilla-devel/searchplugins/GooNeJp.png
-lib/mozilla-devel/searchplugins/GooNeJp.src
-lib/mozilla-devel/searchplugins/GoogleJapan.png
-lib/mozilla-devel/searchplugins/GoogleJapan.src
-lib/mozilla-devel/searchplugins/ImpressWatchJp.png
-lib/mozilla-devel/searchplugins/ImpressWatchJp.src
-lib/mozilla-devel/searchplugins/InfoseekJapan.png
-lib/mozilla-devel/searchplugins/InfoseekJapan.src
-lib/mozilla-devel/searchplugins/JavaHouse.png
-lib/mozilla-devel/searchplugins/JavaHouse.src
-lib/mozilla-devel/searchplugins/LYCOSJapan.png
-lib/mozilla-devel/searchplugins/LYCOSJapan.src
-lib/mozilla-devel/searchplugins/LYCOSJapan_auction.png
-lib/mozilla-devel/searchplugins/LYCOSJapan_auction.src
-lib/mozilla-devel/searchplugins/MozillaGrJp.png
-lib/mozilla-devel/searchplugins/MozillaGrJp.src
-lib/mozilla-devel/searchplugins/MycomPcWeb.png
-lib/mozilla-devel/searchplugins/MycomPcWeb.src
-lib/mozilla-devel/searchplugins/NikkeiJava.png
-lib/mozilla-devel/searchplugins/NikkeiJava.src
-lib/mozilla-devel/searchplugins/NikkeiLinux.png
-lib/mozilla-devel/searchplugins/NikkeiLinux.src
-lib/mozilla-devel/searchplugins/YahooJapan.png
-lib/mozilla-devel/searchplugins/YahooJapan.src
-lib/mozilla-devel/searchplugins/YahooJapan_auction.png
-lib/mozilla-devel/searchplugins/YahooJapan_auction.src
-lib/mozilla-devel/searchplugins/ascii_24.png
-lib/mozilla-devel/searchplugins/ascii_24.src
-lib/mozilla-devel/searchplugins/ascii_ghelp.png
-lib/mozilla-devel/searchplugins/ascii_ghelp.src
-lib/mozilla-devel/searchplugins/atmarkIT.png
-lib/mozilla-devel/searchplugins/atmarkIT.src
-lib/mozilla-devel/searchplugins/jpnic_rfc.png
-lib/mozilla-devel/searchplugins/jpnic_rfc.src
-lib/mozilla-devel/searchplugins/linux_24.png
-lib/mozilla-devel/searchplugins/linux_24.src
-lib/mozilla-devel/searchplugins/linux_JFJM.png
-lib/mozilla-devel/searchplugins/linux_JFJM.src
-lib/mozilla-devel/searchplugins/rakuten_auction.png
-lib/mozilla-devel/searchplugins/rakuten_auction.src
-lib/mozilla-devel/searchplugins/w3c.png
-lib/mozilla-devel/searchplugins/w3c.src
-@unexec mv %D/bin/mozilla-devel.orig %D/bin/mozilla-devel
-@unexec mv %D/lib/mozilla-devel/chrome/chrome.rdf.orig %D/lib/mozilla-devel/chrome/chrome.rdf
-@unexec mv %D/lib/mozilla-devel/chrome/installed-chrome.txt.orig %D/lib/mozilla-devel/chrome/installed-chrome.txt
-@unexec mv %D/lib/mozilla-devel/defaults/pref/unix.js.orig %D/lib/mozilla-devel/defaults/pref/unix.js
-@unexec mv %D/lib/mozilla-devel/xpti.dat.orig %D/lib/mozilla-devel/components/xpti.dat
-@dirrm lib/mozilla-devel/defaults/profile/JP/chrome
-@dirrm lib/mozilla-devel/defaults/profile/JP
+@exec mv %D/bin/%%MOZILLA%% %D/bin/%%MOZILLA%%.orig
+@exec mv %D/lib/%%MOZILLA%%/chrome/chrome.rdf %D/lib/%%MOZILLA%%/chrome/chrome.rdf.orig
+@exec mv %D/lib/%%MOZILLA%%/chrome/installed-chrome.txt %D/lib/%%MOZILLA%%/chrome/installed-chrome.txt.orig
+@exec mv %D/lib/%%MOZILLA%%/defaults/pref/unix.js %D/lib/%%MOZILLA%%/defaults/pref/unix.js.orig
+@exec mv %D/lib/%%MOZILLA%%/components/xpti.dat %D/lib/%%MOZILLA%%/xpti.dat.orig
+bin/%%MOZILLA%%
+lib/%%MOZILLA%%/chrome/JP.jar
+lib/%%MOZILLA%%/chrome/chrome.rdf
+lib/%%MOZILLA%%/chrome/installed-chrome.txt
+lib/%%MOZILLA%%/chrome/ja-JP.jar
+lib/%%MOZILLA%%/chrome/ja-mac.jar
+lib/%%MOZILLA%%/chrome/ja-unix.jar
+lib/%%MOZILLA%%/chrome/ja-win.jar
+lib/%%MOZILLA%%/components/xpti.dat
+lib/%%MOZILLA%%/defaults/pref/unix.js
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example.css
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example.css
+lib/%%MOZILLA%%/defaults/profile/JP/bookmarks.html
+lib/%%MOZILLA%%/defaults/profile/JP/localstore.rdf
+lib/%%MOZILLA%%/defaults/profile/JP/mimeTypes.rdf
+lib/%%MOZILLA%%/defaults/profile/JP/panels.rdf
+lib/%%MOZILLA%%/defaults/profile/JP/search.rdf
+lib/%%MOZILLA%%/searchplugins/AllAboutJapan.png
+lib/%%MOZILLA%%/searchplugins/AllAboutJapan.src
+lib/%%MOZILLA%%/searchplugins/BiglobeSearch.png
+lib/%%MOZILLA%%/searchplugins/BiglobeSearch.src
+lib/%%MOZILLA%%/searchplugins/Bugzilla-Summary.png
+lib/%%MOZILLA%%/searchplugins/Bugzilla-Summary.src
+lib/%%MOZILLA%%/searchplugins/Bugzilla-jp-Summary.png
+lib/%%MOZILLA%%/searchplugins/Bugzilla-jp-Summary.src
+lib/%%MOZILLA%%/searchplugins/CNETJapan.png
+lib/%%MOZILLA%%/searchplugins/CNETJapan.src
+lib/%%MOZILLA%%/searchplugins/ExciteJapan.png
+lib/%%MOZILLA%%/searchplugins/ExciteJapan.src
+lib/%%MOZILLA%%/searchplugins/Fresheye_Japan.gif
+lib/%%MOZILLA%%/searchplugins/Fresheye_Japan.src
+lib/%%MOZILLA%%/searchplugins/GooNeJp.png
+lib/%%MOZILLA%%/searchplugins/GooNeJp.src
+lib/%%MOZILLA%%/searchplugins/GoogleJapan.png
+lib/%%MOZILLA%%/searchplugins/GoogleJapan.src
+lib/%%MOZILLA%%/searchplugins/ImpressWatchJp.png
+lib/%%MOZILLA%%/searchplugins/ImpressWatchJp.src
+lib/%%MOZILLA%%/searchplugins/InfoseekJapan.png
+lib/%%MOZILLA%%/searchplugins/InfoseekJapan.src
+lib/%%MOZILLA%%/searchplugins/JavaHouse.png
+lib/%%MOZILLA%%/searchplugins/JavaHouse.src
+lib/%%MOZILLA%%/searchplugins/LYCOSJapan.png
+lib/%%MOZILLA%%/searchplugins/LYCOSJapan.src
+lib/%%MOZILLA%%/searchplugins/LYCOSJapan_auction.png
+lib/%%MOZILLA%%/searchplugins/LYCOSJapan_auction.src
+lib/%%MOZILLA%%/searchplugins/MozillaGrJp.png
+lib/%%MOZILLA%%/searchplugins/MozillaGrJp.src
+lib/%%MOZILLA%%/searchplugins/MycomPcWeb.png
+lib/%%MOZILLA%%/searchplugins/MycomPcWeb.src
+lib/%%MOZILLA%%/searchplugins/NikkeiJava.png
+lib/%%MOZILLA%%/searchplugins/NikkeiJava.src
+lib/%%MOZILLA%%/searchplugins/NikkeiLinux.png
+lib/%%MOZILLA%%/searchplugins/NikkeiLinux.src
+lib/%%MOZILLA%%/searchplugins/YahooJapan.png
+lib/%%MOZILLA%%/searchplugins/YahooJapan.src
+lib/%%MOZILLA%%/searchplugins/YahooJapan_auction.png
+lib/%%MOZILLA%%/searchplugins/YahooJapan_auction.src
+lib/%%MOZILLA%%/searchplugins/ascii_24.png
+lib/%%MOZILLA%%/searchplugins/ascii_24.src
+lib/%%MOZILLA%%/searchplugins/ascii_ghelp.png
+lib/%%MOZILLA%%/searchplugins/ascii_ghelp.src
+lib/%%MOZILLA%%/searchplugins/atmarkIT.png
+lib/%%MOZILLA%%/searchplugins/atmarkIT.src
+lib/%%MOZILLA%%/searchplugins/jpnic_rfc.png
+lib/%%MOZILLA%%/searchplugins/jpnic_rfc.src
+lib/%%MOZILLA%%/searchplugins/linux_24.png
+lib/%%MOZILLA%%/searchplugins/linux_24.src
+lib/%%MOZILLA%%/searchplugins/linux_JFJM.png
+lib/%%MOZILLA%%/searchplugins/linux_JFJM.src
+lib/%%MOZILLA%%/searchplugins/rakuten_auction.png
+lib/%%MOZILLA%%/searchplugins/rakuten_auction.src
+lib/%%MOZILLA%%/searchplugins/w3c.png
+lib/%%MOZILLA%%/searchplugins/w3c.src
+@unexec mv %D/bin/%%MOZILLA%%.orig %D/bin/%%MOZILLA%%
+@unexec mv %D/lib/%%MOZILLA%%/chrome/chrome.rdf.orig %D/lib/%%MOZILLA%%/chrome/chrome.rdf
+@unexec mv %D/lib/%%MOZILLA%%/chrome/installed-chrome.txt.orig %D/lib/%%MOZILLA%%/chrome/installed-chrome.txt
+@unexec mv %D/lib/%%MOZILLA%%/defaults/pref/unix.js.orig %D/lib/%%MOZILLA%%/defaults/pref/unix.js
+@unexec mv %D/lib/%%MOZILLA%%/xpti.dat.orig %D/lib/%%MOZILLA%%/components/xpti.dat
+@dirrm lib/%%MOZILLA%%/defaults/profile/JP/chrome
+@dirrm lib/%%MOZILLA%%/defaults/profile/JP
