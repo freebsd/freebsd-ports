@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xdvik
-PORTVERSION=	22.40y1.1.21
+PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
-DISTNAME=	xdvik-22.40y1
+DISTNAME=	xdvik-${VERSION_XDVIK}
 
 PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
-PATCHFILES=	xdvik-22.40y1-j1.21.patch.gz
+PATCHFILES=	xdvik-${VERSION_XDVIK}-j${VERSION_JPATCH}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
@@ -56,6 +57,8 @@ SCRIPTS_ENV=	MV=${MV} SED=${SED}
 PATCH_STRIP=	-p1
 MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 
+VERSION_XDVIK=	22.40y1
+VERSION_JPATCH=	1.21
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 TEXMF=		${PREFIX}/share/texmf
@@ -166,14 +169,21 @@ pre-fetch:
 pre-build:
 	@(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
 	${SED} -e 's,%%CIDFONTDIR%%,${CIDFONTDIR},'\
-		< ${FILESDIR}/vfontmap > ${WRKSRC}/vfontmap
+		< ${FILESDIR}/vfontmap.freetype > ${WRKSRC}/vfontmap.freetype
+	${CP} ${FILESDIR}/vfontmap.vflib ${WRKSRC}/vfontmap.vflib
 
 do-install:
 	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/vfontmap ${XDVIDIR}
+	@${INSTALL_DATA} ${WRKSRC}/vfontmap.freetype ${XDVIDIR}
+	@${INSTALL_DATA} ${WRKSRC}/vfontmap.vflib ${XDVIDIR}
+.if defined(WITH_VF2FT)
+	@${INSTALL_DATA} ${WRKSRC}/vfontmap.freetype ${XDVIDIR}/vfontmap
+.else
+	@${INSTALL_DATA} ${WRKSRC}/vfontmap.vflib ${XDVIDIR}/vfontmap
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/texk/xdvik/texmf/XDvi ${X11BASE}/${APPDEFAULTSDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

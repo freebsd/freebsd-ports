@@ -1,0 +1,41 @@
+% $FreeBSD$
+%
+% Sample "vfontmap" (--with-vflib=yes)
+%
+
+% "tfm name" "/etc/vfontcap entry" "{,tate}"
+
+% for ASCII pTeX
+min	min
+tmin	tmin
+nmin	min
+goth	goth
+tgoth	tgoth
+ngoth	goth
+
+% for JIS font metric
+jis	min
+jis-v	tmin
+jisg	goth
+jisg-v	tgoth
+
+% for NTT JTeX
+dm	min
+dg	goth
+
+% etc
+fmin	fmin
+fgoth	goth
+mgoth	maru
+
+% for morisawa
+ryumin-l    min
+ryumin-l-v  tmin
+gtbbb-m     goth
+gtbbb-m-v   tgoth
+futomin-b   min
+futomin-b-v tmin
+futogo-b    goth
+futogo-b-v  tgoth
+jun101-l    goth
+jun101-l-v  tgoth
