@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	lesstif-0.88.9
+DISTNAME=	lesstif-0.89.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -19,8 +19,8 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS+=--enable-static --enable-shared --with-xdnd \
-		--enable-production --disable-debug
+CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
+		--enable-production --disable-debug --disable-build-Xbae
 
 MAN1 =	lesstif.1 mwm.1 xmbind.1
 
@@ -40,8 +40,7 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 LessTifInternals.3 \
 	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 XmSeparator.3 \
 	XmSeparatorGadget.3 XmSpinBox.3 XmTearOffButton.3 XmText.3 \
 	XmTextField.3 XmToggleButton.3 XmToggleButtonGadget.3 XmVendorShell.3 \
-	XmWorld.3 XtConfigureObject.3 XtDestroyWidget.3 XtManageChild.3 \
-	XtUnmanageChild.3
+	XmWorld.3
 
 MAN5 = mwmrc.5
 
@@ -67,9 +66,9 @@ pre-extract:
 .endif
 
 post-install:
-	${RM} -rf ${PREFIX}/LessTif/doc/man
-	${RM} -rf ${PREFIX}/LessTif/doc/help.html
-	${RM} -rf ${PREFIX}/LessTif/doc/known.html
+	${RM} -f ${PREFIX}/LessTif/TODO
+	${RM} -f ${PREFIX}/LessTif/INSTALL
+	${RM} -rf ${PREFIX}/LessTif/doc
 	${RM} -f ${PREFIX}/lib/libXm.so.2
 	${RM} -f ${PREFIX}/lib/libMrm.so.2
 .if defined(MOTIF2)
