@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iconv
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	converters ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,22 +18,13 @@ LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
 
 INSTALL_TARGET=	site-install
-
-.if !defined(NOPORTDOCS)
-post-build:
-	@cd ${WRKSRC}; \
-	${RUBY_RD} iconv.c > iconv.html
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/iconv
-.for f in iconv.html rd.css
+.for f in *.html iconv.rlog rd.css
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/iconv/
 .endfor
 .endif
