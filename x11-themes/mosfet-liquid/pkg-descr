@@ -1,0 +1,21 @@
+High Performance Liquid KDE style engine
+
+Features include:
+* Translucent Menus.
+* High performance. No scaling is required, and caching (thus memory usage) is
+  kept to a minimum. Custom tile drawing code is used for maximum speed. I
+  wanted to create a style engine that both looked cool and is usable on an
+  everyday basis by people doing stuff like compiling all day. I've even
+  gotten emails from a couple users using it over remote X terminals and they
+  report good speed results! :)
+* Colors are fully configurable. This is really cool with this style. It also
+  handles custom colors like KCalc's correctly. Check out the screenshots
+  below.
+* Mouse Hover is supported for Pushbuttons, ComboBoxes, RadioButtons,
+  CheckBoxes, and ScrollBars. This doesn't use the crappy "draw a box around
+  the widget" mouse hover, either, but makes the widget appear to light up.
+* Automagically themes the KDE panel, according to the color scheme.
+
+MMM: http://www.mosfet.org/liquid.html <broken link>
+
+- AlanE of KDE-FreeBSD team

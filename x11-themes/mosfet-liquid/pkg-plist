@@ -1,0 +1,35 @@
+lib/kde3/libkwinliquid.la
+lib/kde3/libkwinliquid.so
+lib/kde3/libkwinliquidmack.la
+lib/kde3/libkwinliquidmack.so
+lib/kde3/libkwinliquidold.la
+lib/kde3/libkwinliquidold.so
+lib/kde3/plugins/styles/liquid.la
+lib/kde3/plugins/styles/liquid.so
+lib/libkcm_liquid.la
+lib/libkcm_liquid.so
+share/applnk/Settings/LookNFeel/liquid.desktop
+share/apps/kdisplay/color-schemes/Liquid.kcsrc
+share/apps/ksplash/pics/splash_active_bar.png
+share/apps/ksplash/pics/splash_bottom.png
+share/apps/ksplash/pics/splash_inactive_bar.png
+share/apps/ksplash/pics/splash_top.png
+share/apps/kstyle/themes/liquid.themerc
+share/apps/kwin/liquid.desktop
+share/apps/kwin/liquidmack.desktop
+share/apps/kwin/liquidold.desktop
+@comment dirs
+@unexec rmdir %D/share/apps/kwin 2>/dev/null || true
+@unexec rmdir %D/share/apps/kstyle/themes 2>/dev/null || true
+@unexec rmdir %D/share/apps/kstyle 2>/dev/null || true
+@unexec rmdir %D/share/apps/ksplash/pics 2>/dev/null || true
+@unexec rmdir %D/share/apps/ksplash 2>/dev/null || true
+@unexec rmdir %D/share/apps/kdisplay/color-schemes 2>/dev/null || true
+@unexec rmdir %D/share/apps/kdisplay 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings/LookNFeel 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/lib/kde3/plugins/styles 2>/dev/null || true
+@unexec rmdir %D/lib/kde3/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
