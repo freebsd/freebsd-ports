@@ -6,10 +6,13 @@
 
 PORTNAME=	totd
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	kris@FreeBSD.org
+
+MAN8=		totd.8
 
 GNU_CONFIGURE=	YES
 
