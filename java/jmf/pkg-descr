@@ -1,0 +1,10 @@
+Java Media Framework API
+
+The Java Media Framework API (JMF) enables audio, video and other
+time-based media to be added to Java applications and applets. This
+optional package, which can capture, playback, stream and transcode
+multiple media formats, extends the multimedia capabilities on the
+J2SE platform, and gives multimedia developers a powerful toolkit to
+develop scalable, cross-platform technology.
+
+WWW: http://java.sun.com/products/java-media/jmf/
