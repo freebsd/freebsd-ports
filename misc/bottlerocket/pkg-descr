@@ -1,0 +1,21 @@
+What is BottleRocket?
+
+  BottleRocket is a command-line interface for Unix systems to use the
+  FireCracker kit. It is easy to use, has all of the major (non-gui)
+  functionality of the Windows interface, is easy to call from scripts
+  and the backend code is made to be easily linked into other programs.
+
+What is the X10 FireCracker kit?
+
+  The X10 Firecracker kit is a simple wireless home automation system,
+  consisting of a lamp module, an appliance module/radio receiver, a
+  hand held wireless transmitter and a wireless transmitter that plugs
+  into a standard RS-232 serial port. Using either the handheld
+  transmitter or the serial port transmitter, a user can turn on or off
+  any of up to 256 appliances, and brighten/dim any of those that happen
+  to be lamps and plugged into the special lamp modules. Each appliance
+  to be controlled must be plugged into its own module, and each module
+  is set (by turning dials on the front) to a unique address by which it
+  is identified.
+
+WWW: http://mlug.missouri.edu/~tymm/
