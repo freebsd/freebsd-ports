@@ -13,8 +13,6 @@ MASTER_SITES=   http://www.paternostro.org/~ugo/binaries/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Installation fails"
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
@@ -22,5 +20,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 MAKE_ARGS=	-DUSE_JPEG -DUSE_TIFF -DUSE_PNG
 
 MAN1=		dc20ctrl.1
+
+do-install:
+	${INSTALL_PROGRAM} -g dialer -m 02755 ${WRKSRC}/dc20ctrl ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dc20ctrl.man ${MANPREFIX}/man/man1/dc20ctrl.1
 
 .include <bsd.port.mk>
