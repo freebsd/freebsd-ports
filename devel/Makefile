@@ -426,7 +426,6 @@
     SUBDIR += linux-allegro
     SUBDIR += linux-glib2
     SUBDIR += linux-libglade
-    SUBDIR += linux-p4v
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux-understand_ada
