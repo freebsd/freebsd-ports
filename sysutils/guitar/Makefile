@@ -17,13 +17,14 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomelibs
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=--disable-gnome
 .endif
