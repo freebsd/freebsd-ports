@@ -17,6 +17,8 @@ COMMENT=	An OpenGL FreeType fonts rendering library
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes

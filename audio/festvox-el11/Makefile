@@ -20,6 +20,8 @@ COMMENT=	Castilian Spanish male voice for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/festival
 
 CONFLICTS=	festvox-rab8

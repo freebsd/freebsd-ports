@@ -18,6 +18,8 @@ COMMENT=	LaTeX format files with large limits
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
+BROKEN=			Incomplete pkg-plist
+
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
