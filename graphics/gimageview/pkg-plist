@@ -11,29 +11,36 @@ lib/gimageview/thumbnail/libgimv_thumb.so
 lib/gimageview/thumbnail/libgqview_thumb.so
 lib/gimageview/thumbnail/libkonq_old_thumb.so
 lib/gimageview/thumbnail/libkonqueror_thumb.so
+lib/gimageview/thumbnail/libnautilus-2.0_thumb.so
 lib/gimageview/thumbnail/libnautilus_thumb.so
 lib/gimageview/thumbnail/libxvpics_thumb.so
-share/gimageview/doc/html/ja/gimageview-1.html
-share/gimageview/doc/html/ja/gimageview-10.html
-share/gimageview/doc/html/ja/gimageview-11.html
-share/gimageview/doc/html/ja/gimageview-12.html
-share/gimageview/doc/html/ja/gimageview-2.html
-share/gimageview/doc/html/ja/gimageview-3.html
-share/gimageview/doc/html/ja/gimageview-4.html
-share/gimageview/doc/html/ja/gimageview-5.html
-share/gimageview/doc/html/ja/gimageview-6.html
-share/gimageview/doc/html/ja/gimageview-7.html
-share/gimageview/doc/html/ja/gimageview-8.html
-share/gimageview/doc/html/ja/gimageview-9.html
-share/gimageview/doc/html/ja/gimageview.css
-share/gimageview/doc/html/ja/gimageview.html
-share/gimageview/doc/text/C/COPYING
-share/gimageview/doc/text/ja/COPYING.jp
-share/gimageview/doc/text/ja/ChangeLog.jp
-share/gimageview/doc/text/ja/INSTALL.jp
-share/gimageview/doc/text/ja/README.jp
-share/gimageview/doc/text/ja/TIPS.jp
-share/gimageview/doc/text/ja/gimageview.txt
+share/doc/gimageview/html/ja/01.html
+share/doc/gimageview/html/ja/02.html
+share/doc/gimageview/html/ja/03.html
+share/doc/gimageview/html/ja/04.html
+share/doc/gimageview/html/ja/05.html
+share/doc/gimageview/html/ja/06.html
+share/doc/gimageview/html/ja/07.html
+share/doc/gimageview/html/ja/changelog.html
+share/doc/gimageview/html/ja/document.html
+share/doc/gimageview/html/ja/gimageview.css
+share/doc/gimageview/html/ja/gimv_faq.html
+share/doc/gimageview/html/ja/gimv_history.html
+share/doc/gimageview/html/ja/gimv_tips.html
+share/doc/gimageview/html/ja/index.html
+share/doc/gimageview/html/ja/todo.html
+share/doc/gimageview/text/C/AUTHORS
+share/doc/gimageview/text/C/COPYING
+share/doc/gimageview/text/C/ChangeLog
+share/doc/gimageview/text/C/INSTALL
+share/doc/gimageview/text/C/NEWS
+share/doc/gimageview/text/C/TODO
+share/doc/gimageview/text/ja/COPYING.jp
+share/doc/gimageview/text/ja/ChangeLog.jp
+share/doc/gimageview/text/ja/INSTALL.jp
+share/doc/gimageview/text/ja/README.jp
+share/doc/gimageview/text/ja/TODO.jp
+share/doc/gimageview/text/ja/gimageview.txt
 share/gimageview/gtkrc
 share/gimageview/pixmaps/default/alert.xpm
 share/gimageview/pixmaps/default/archive.xpm
@@ -45,6 +52,7 @@ share/gimageview/pixmaps/default/ff.xpm
 share/gimageview/pixmaps/default/folder-go.xpm
 share/gimageview/pixmaps/default/folder-link-open.xpm
 share/gimageview/pixmaps/default/folder-link.xpm
+share/gimageview/pixmaps/default/folder-lock.xpm
 share/gimageview/pixmaps/default/folder-open.xpm
 share/gimageview/pixmaps/default/folder-up.xpm
 share/gimageview/pixmaps/default/folder.xpm
@@ -85,17 +93,20 @@ share/gimageview/pixmaps/default/zoom.xpm
 share/gimageview/pixmaps/default/zoom_fit.xpm
 share/gimageview/pixmaps/default/zoom_in.xpm
 share/gimageview/pixmaps/default/zoom_out.xpm
+share/gnome/apps/Graphics/gimageview.desktop
+share/locale/fr/LC_MESSAGES/gimageview.mo
 share/locale/ja/LC_MESSAGES/gimageview.mo
+share/pixmaps/gimv.png
 @dirrm lib/gimageview/archiver
 @dirrm lib/gimageview/image_saver
 @dirrm lib/gimageview/thumbnail
 @dirrm lib/gimageview
-@dirrm share/gimageview/doc/html/ja
-@dirrm share/gimageview/doc/html
-@dirrm share/gimageview/doc/text/ja
-@dirrm share/gimageview/doc/text/C
-@dirrm share/gimageview/doc/text
-@dirrm share/gimageview/doc
+@dirrm share/doc/gimageview/html/ja
+@dirrm share/doc/gimageview/html
+@dirrm share/doc/gimageview/text/C
+@dirrm share/doc/gimageview/text/ja
+@dirrm share/doc/gimageview/text
+@dirrm share/doc/gimageview
 @dirrm share/gimageview/pixmaps/default
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
