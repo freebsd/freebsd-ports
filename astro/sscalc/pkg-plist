@@ -1,0 +1,4 @@
+bin/sscalc
+share/doc/sscalc/cities.txt
+share/doc/sscalc/README
+@dirrm share/doc/sscalc

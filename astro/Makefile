@@ -13,6 +13,7 @@
     SUBDIR += sattrack
     SUBDIR += seti_applet
     SUBDIR += setiathome
+    SUBDIR += sscalc
     SUBDIR += stars
     SUBDIR += sunclock
     SUBDIR += tkseti
