@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/addr2name.awk
 bin/cpp32
 bin/g++filt32
 bin/g++32
@@ -8,16 +9,23 @@ bin/gcov32
 bin/%%GNU_HOST%%-gcc32
 bin/%%GNU_HOST%%-g++32
 bin/gccbug-%%SNAPVER%%
+bin/gij
 bin/gcj32
 bin/gcjh32
+bin/jv-convert
 bin/jv-scan32
 bin/jcf-dump32
 bin/jar32
 bin/grepjar32
+bin/rmic
+bin/rmiregistry
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
+lib/security/classpath.security
+lib/security/libgcj.security
+share/java/libgcj-3.2.2.jar
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 @unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
