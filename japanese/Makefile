@@ -251,8 +251,6 @@
     SUBDIR += ne
     SUBDIR += nethack32
     SUBDIR += nethack34
-    SUBDIR += netscape48-communicator
-    SUBDIR += netscape48-navigator
     SUBDIR += netscape7
     SUBDIR += netype
     SUBDIR += netypesv

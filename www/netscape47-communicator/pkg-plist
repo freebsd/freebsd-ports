@@ -1,9 +1,0 @@
-bin/%%BROWSER%%-%%BROWSER_VER%%
-@exec ln -sf %f %B/%%BROWSER%%-4
-@exec ln -sf %%BROWSER%%-4 %B/netscape.run
-@unexec rm -f %B/netscape.run
-@unexec rm -f %B/%%BROWSER%%-4
-@comment Insert PLIST.gcc-lib here
-@comment -=[ begin PLIST.ns-lib ]=-
-@comment -=[ end PLIST.ns-lib ]=-
-@unexec rmdir %D/%%NSUBDIR%% 2>/dev/null || true
