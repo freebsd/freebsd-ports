@@ -24,10 +24,28 @@ man/man5/variables.5.gz
 man/man5/snmpd.conf.5.gz
 man/man8/snmptrapd.8.gz
 man/man8/snmpd.8.gz
+lib/libsnmp.a
 lib/snmp/mib.txt
+include/snmp/acl.h
+include/snmp/asn1.h
+include/snmp/context.h
+include/snmp/md5.h
+include/snmp/mib.h
+include/snmp/parse.h
+include/snmp/party.h
+include/snmp/snmp.h
+include/snmp/snmp_api.h
+include/snmp/snmp_client.h
+include/snmp/snmp_impl.h
+include/snmp/system.h
+include/snmp/view.h
+lib/snmp/mibs/ucd-snmp.txt
 sbin/snmpd
 share/examples/ucd-snmp/README
 share/examples/ucd-snmp/acl.conf
 share/examples/ucd-snmp/context.conf
 share/examples/ucd-snmp/party.conf
 share/examples/ucd-snmp/view.conf
+@dirrm lib/snmp/mibs
+@dirrm lib/snmp
+@dirrm include/snmp
