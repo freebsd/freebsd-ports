@@ -30,6 +30,10 @@ PLIST_SUB=	KMODDIR=${KMODDIR}
 PLIST_SUB=	KMODDIR="@comment "
 .endif
 
+.if ${OSVERSION} > 500027
+BROKEN=		"OS versions subsequent to 500027 include smbfs"
+.endif
+
 .if defined(SMP_SUPPORT)
 CONFIGURE_ARGS+= -DSMP_SUPPORT
 .endif
