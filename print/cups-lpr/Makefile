@@ -10,7 +10,7 @@ PORTVERSION=	${CUPS_PORTVER}
 PORTREVISION=	1
 CATEGORIES?=	print
 
-MAINTAINER=	jah4007@cs.rit.edu
+MAINTAINER=	ports@geeksrus.net
 
 LIB_DEPENDS=	cups.2:${.CURDIR}/../../print/cups-base
 RUN_DEPENDS=	espgs:${.CURDIR}/../../print/cups-pstoraster
