@@ -7042,6 +7042,7 @@ scrot		ports/graphics/scrot
 scsh		ports/lang/scsh
 scud		ports/comms/scud
 scummvm		ports/games/scummvm
+scummvm-tools	ports/games/scummvm-tools
 scwm		ports/x11-wm/scwm
 scwm-icons	ports/graphics/scwm-icons
 sdcc		ports/devel/sdcc
