@@ -1,0 +1,18 @@
+--- makefile.orig	Thu Mar  4 16:52:03 1999
++++ makefile	Thu Mar  4 16:53:33 1999
+@@ -129,6 +129,15 @@
+           LDLIBS=`gtk-config --libs` \
+           OBJS="gtk.o editor.o SndUnix.o"
+ 
++freebsd-x:
++	make xstella \
++          INCLUDES="$(INCLUDES) -I$(UI)/x11 -I$(UI)/sound" \
++          SYS_INCLUDES="-I${X11BASE}/include" \
++          OPTIONS="-DBSPF_UNIX -DSHOW_TIMING" \
++          LDFLAGS="-L${X11BASE}/lib" \
++          LDLIBS="-lX11 -lXext" \
++          OBJS="mainX11.o SndUnix.o"
++
+ ###############################################################################
+ ## List of "core" object files
+ ###############################################################################
