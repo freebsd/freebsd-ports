@@ -6,56 +6,31 @@
 #
 
 PORTNAME=	jargon-fpw
-PORTVERSION=	${JG_VER}.${JGFPW_VER}
+PORTVERSION=	1.1a
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/ \
-		http://www.tuxedo.org/~esr/jargon/
-DISTNAME=	jarg-fpw${JGFPW_VER}-src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		jargon-${JG_VER}.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/
+DISTNAME=	jarg-fpw${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		catdump:${PORTSDIR}/japanese/epwutil \
-		nkf:${PORTSDIR}/japanese/nkf
 
-WRKSRC=		${WRKDIR}/jarg-fpw${JGFPW_VER}
-USE_GMAKE=	yes
-JGFPW_VER=	1.1a
-JG_VER=		4.2.0
-FJG_VER=	420
+USE_ZIP=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/jargon
+EXTRACT_BEFORE_ARGS=	-qL
 
-post-extract:
-	cd ${WRKSRC}; \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/jargon-${JG_VER}.tar.gz \
-		${EXTRACT_AFTER_ARGS}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${WRKSRC}/jargon-${JG_VER}/jarg${FJG_VER}.gz \
-		> ${WRKSRC}/jarg${FJG_VER}
-
-post-patch:
-	nkf -eSd ${WRKSRC}/catalogs.sjis > ${WRKSRC}/catalogs.txt
-	${MV} ${WRKSRC}/gaiji/halfchar.txt ${WRKSRC}/gaiji/halfchar.txt.org
-	nkf -eSd ${WRKSRC}/gaiji/halfchar.txt.org > ${WRKSRC}/gaiji/halfchar.txt
-
-do-build:
-	cd ${WRKSRC}; \
-	fpwmake -f ${MAKEFILE} > /dev/null; \
-	fpwmake -f ${MAKEFILE} catalogs
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/data
-	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/jargon-fpw/jargon/data
 	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
-	${INSTALL_DATA} ${WRKSRC}/gai16h ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
+	${INSTALL_DATA} ${WRKSRC}/jargon/data/honmon ${PREFIX}/share/dict/jargon-fpw/jargon/data
+	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16h ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/jargon-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/jargon-fpw
-	${INSTALL_DATA} ${WRKSRC}/readme.1st ${PREFIX}/share/doc/jargon-fpw
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/jargon-fpw
+.for i in readme.1st readme.txt
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/jargon-fpw
+.endfor
 .endif
 
 .include <bsd.port.mk>
