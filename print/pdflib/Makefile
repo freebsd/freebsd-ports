@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/
+MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/503src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src
 
 MAINTAINER=	ale@FreeBSD.org
@@ -19,6 +19,8 @@ RESTRICTED=	"many odd restrictions on usage and distribution"
 LATEST_LINK?=	${PORTNAME}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_GNOME=	lthack
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxx \
@@ -35,6 +37,9 @@ PKGNAMESUFFIX=	-perl
 CONFIGURE_ARGS+=--with-perl=no
 PLIST_SUB=	PERL="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=4|\1=6|g" ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${DATADIR}/fonts

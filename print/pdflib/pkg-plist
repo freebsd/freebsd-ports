@@ -7,19 +7,20 @@ lib/libpdf.so.6
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so.0
-%%PORTDOCS%%share/doc/pdflib/PDFlib-Lite-license.pdf
-%%PORTDOCS%%share/doc/pdflib/PDFlib-manual.pdf
-%%PORTDOCS%%share/doc/pdflib/PDFlib-purchase-order.pdf
-%%PORTDOCS%%share/doc/pdflib/changes.txt
-%%PORTDOCS%%share/doc/pdflib/changes4.txt
-%%PORTDOCS%%share/doc/pdflib/compatibility.txt
-%%PORTDOCS%%share/doc/pdflib/readme-binary.txt
-%%PORTDOCS%%share/doc/pdflib/readme-source-mac.txt
-%%PORTDOCS%%share/doc/pdflib/readme-source-unix.txt
-%%PORTDOCS%%share/doc/pdflib/readme-source-windows.txt
-%%PORTDOCS%%share/doc/pdflib/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/PDFlib-Lite-license.pdf
+%%PORTDOCS%%%%DOCSDIR%%/PDFlib-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/PDFlib-purchase-order.pdf
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes4.txt
+%%PORTDOCS%%%%DOCSDIR%%/compatibility.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-binary.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-source-as400.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-source-mac.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-source-unix.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-source-windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 share/pdflib/fonts/pdflib.upr
 share/pdflib/fonts/print_glyphs.ps
-%%PORTDOCS%%@dirrm share/doc/pdflib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/pdflib/fonts
 @dirrm share/pdflib
