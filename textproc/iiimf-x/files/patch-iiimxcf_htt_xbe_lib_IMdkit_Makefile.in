@@ -1,0 +1,13 @@
+--- iiimxcf/htt_xbe/lib/IMdkit/Makefile.in.orig	Sat Dec  6 05:14:14 2003
++++ iiimxcf/htt_xbe/lib/IMdkit/Makefile.in	Sat Dec  6 05:52:09 2003
+@@ -74,8 +74,8 @@
+ LINKER = @LINKER@
+ RANLIB = @RANLIB@
+ 
+-CFLAGS = @CFLAGS@
+-CXXFLAGS = @CXXFLAGS@
++CFLAGS = @CFLAGS@ @X_CFLAGS@
++CXXFLAGS = @CXXFLAGS@ @X_CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ 

@@ -126,6 +126,7 @@
     SUBDIR += iiimf-le-unit
     SUBDIR += iiimf-protocol-lib
     SUBDIR += iiimf-server
+    SUBDIR += iiimf-x
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += intltool
