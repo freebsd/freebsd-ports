@@ -1,33 +1,32 @@
-# New ports collection makefile for:	gcompris
-# Date created:				21 July 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+# New ports collection makefile for:	gcompris2
+# Date created:				23 April 2003
+# Whom:					Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gcompris
-PORTVERSION=	1.0.5
+PORTNAME=	gcompris2
+PORTVERSION=	2.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITE_SUBDIR=	gcompris
+DISTNAME=	gcompris-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	A simple Gnome-based education game for children starting at 3
+MAINTAINER=	martin.klaffenboeck@gmx.at
+COMMENT=	A simple Gnome2-based education game for children starting at 3
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomecanvas
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
+USE_GNOME=      gnomehack gnomeprefix libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
