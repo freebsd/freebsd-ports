@@ -1,6 +1,6 @@
 # New ports collection Makefile for:   alienwah
 # Date created:                        13 May 2002
-# Whom:                                Tilman Linneweh <freebsdports@arved.de
+# Whom:                                Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.13
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/alienwah/
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 

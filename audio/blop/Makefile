@@ -1,6 +1,6 @@
 # New ports collection Makefile for:	blop
 # Date created:			15 May 2002
-# Whom:				Tilman Linneweh <freebsdports@arved.de>
+# Whom:				Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
