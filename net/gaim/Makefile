@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gaim
-# Version required:		0.9.6
+# Version required:		0.9.7
 # Date created:			26 Mar 1999
-# Whom:				Jim Mock <jim@blues.ghis.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/05/29 03:55:14 steve Exp $
+# $Id: Makefile,v 1.6 1999/08/07 09:31:45 cpiazza Exp $
 #
 
-DISTNAME=	gaim-0.9.6
+DISTNAME=	gaim-0.9.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
 
-MAINTAINER=	jim@blues.ghis.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.2:${PORTSDIR}/devel/glib12
