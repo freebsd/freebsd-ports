@@ -1,2 +1,2 @@
-share/examples/tdiary/tdiaryinst.rb
-share/examples/tdiary/tdiary-FreeBSD.sh
+%%EXAMPLESDIR%%/tdiaryinst.rb
+%%EXAMPLESDIR%%/tdiary-FreeBSD.sh

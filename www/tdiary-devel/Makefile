@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	1.5.4
-PORTREVISION=	3
+PORTVERSION=	1.5.5
+#PORTREVISION=	0
 CATEGORIES=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
@@ -30,7 +30,7 @@ USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/posttdiary.rb misc/plugin/squeeze.rb misc/plugin/weather.rb \
 misc/plugin/windex.rb misc/plugin/a/a_conf.rb misc/plugin/todo/todo.rb misc/plugin/trackback/tb.rb
 
-TDIARYDIR=	${PREFIX}/share/examples/${PORTNAME}
+TDIARYDIR=	${EXAMPLESDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if  !defined(TDIARY_LANG)
@@ -80,7 +80,7 @@ post-install:
 	@${ECHO} 'share/examples/${PORTNAME}/plugin/disp_referrer.rb' >> ${TMPPLIST}
 .endif
 	@${ECHO} 'share/examples/${PORTNAME}/plugin/comment_mail-sendmail.rb' >> ${TMPPLIST}
-.if ${TDIARY_LANG} == tdiary.conf-en	
+.if ${TDIARY_LANG} == tdiary.conf-en
 	@${ECHO} 'share/examples/${PORTNAME}/plugin/00lang.en.rb' >> ${TMPPLIST}
 .endif
 	@cd ${WRKSRC} && ${FIND} . -type d -depth  | ${SED} -e 's,^\.,@dirrm share/examples/${PORTNAME},' >> ${TMPPLIST}
