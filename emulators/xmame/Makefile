@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.57.1
+PORTVERSION?=	0.58.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \

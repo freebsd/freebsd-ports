@@ -1,0 +1,10 @@
+--- src/unix/network.c.orig	Wed Feb  6 04:33:30 2002
++++ src/unix/network.c	Thu Feb  7 15:14:28 2002
+@@ -361,6 +361,7 @@
+ 	   master_hostent->h_addr,
+ 	   master_hostent->h_length);
+     _master_info.addr.sin_port = htons(MASTER_INPUT_PORT);
++    _master_info.addr.sin_family = AF_INET;
+ 
+     gethostname(scratch, MAX_MSG_LEN);
+ 
