@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	filepp
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
