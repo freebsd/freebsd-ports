@@ -29,8 +29,14 @@ USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500043
+IGNORE=		requires pthread stubs not provided by libXThr
+.endif
+
 pre-patch:
 	${REINPLACE_CMD} -e 's_share/_share/xfce4-xmms-controller-plugin/_' ${WRKSRC}/panel-plugin/xfcexmms.c
 	${REINPLACE_CMD} -e 's_/usr/local_${PREFIX}_' ${WRKSRC}/config.h.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
