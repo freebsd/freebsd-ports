@@ -1,6 +1,6 @@
---- configure.orig	Mon Oct  8 14:11:39 2001
-+++ configure	Mon Oct  8 17:45:36 2001
-@@ -260,7 +260,6 @@
+--- configure.orig	Sun Nov 11 11:47:08 2001
++++ configure	Sun Nov 11 21:39:39 2001
+@@ -261,7 +261,6 @@
  : ${ac_max_here_lines=38}
  
  ac_unique_file="src/ferite.c"
@@ -8,12 +8,12 @@
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -2455,18 +2454,6 @@
+@@ -2666,18 +2665,6 @@
    SET_MAKE="MAKE=${MAKE-make}"
  fi
  
 -  case $enable_ltdl_convenience in
--  no) { { echo "$as_me:2459: error: this package needs a convenience libltdl" >&5
+-  no) { { echo "$as_me:2670: error: this package needs a convenience libltdl" >&5
 -echo "$as_me: error: this package needs a convenience libltdl" >&2;}
 -   { (exit 1); exit 1; }; } ;;
 -  "") enable_ltdl_convenience=yes
@@ -27,7 +27,7 @@
  # Check whether --enable-shared or --disable-shared was given.
  if test "${enable_shared+set}" = set; then
    enableval="$enable_shared"
-@@ -6257,7 +6244,7 @@
+@@ -6507,7 +6494,7 @@
  build_old_libs=$enable_static
  
  # Whether or not to add -lc for building shared libraries.
@@ -36,13 +36,13 @@
  
  # Whether or not to optimize for fast installation.
  fast_install=$enable_fast_install
-@@ -6846,13 +6833,13 @@
+@@ -7096,13 +7083,13 @@
     { (exit 1); exit 1; }; }
  fi
  
--echo "$as_me:6849: checking for pthread_mutex_lock in -lpthread" >&5
+-echo "$as_me:7099: checking for pthread_mutex_lock in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6
-+echo "$as_me:6849: checking for pthread_mutex_lock in -pthread" >&5
++echo "$as_me:7099: checking for pthread_mutex_lock in -pthread" >&5
 +echo $ECHO_N "checking for pthread_mutex_lock in -pthread... $ECHO_C" >&6
  if test "${ac_cv_lib_pthread_pthread_mutex_lock+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -51,9 +51,9 @@
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 6857 "configure"
+ #line 7107 "configure"
  #include "confdefs.h"
-@@ -6900,7 +6887,7 @@
+@@ -7150,7 +7137,7 @@
  #define HAVE_LIBPTHREAD 1
  EOF
  
@@ -62,12 +62,3 @@
  
  else
  
-@@ -6937,7 +6924,7 @@
- modules="$modules file"
- 
- echo "checking module math ..."
--math_LIBS=""
-+math_LIBS="-lm"
- math_CFLAGS=""
- 
- modules="$modules math"
