@@ -35,7 +35,7 @@ share/sane/xsane/doc/sane-xsane-fax-doc.html
 share/sane/xsane/doc/sane-xsane-gimp-doc.html
 share/sane/xsane/doc/sane-xsane-histogram-doc.html
 share/sane/xsane/doc/sane-xsane-mail-doc.html
-share/sane/xsane/doc/sane-xsane-main-doc.html
+share/sane/xsane/doc/sane-xsane-medium-definition-doc.html
 share/sane/xsane/doc/sane-xsane-preview-doc.html
 share/sane/xsane/doc/sane-xsane-save-doc.html
 share/sane/xsane/doc/sane-xsane-setup-copy-doc.html
@@ -65,6 +65,7 @@ share/sane/xsane/doc/xsane-default.jpg
 share/sane/xsane/doc/xsane-delete-preview-cache.jpg
 share/sane/xsane/doc/xsane-despeckle.jpg
 share/sane/xsane/doc/xsane-disk.jpg
+share/sane/xsane/doc/xsane-edit-medium.jpg
 share/sane/xsane/doc/xsane-fax-project.jpg
 share/sane/xsane/doc/xsane-fax.jpg
 share/sane/xsane/doc/xsane-gamma.jpg
@@ -74,6 +75,7 @@ share/sane/xsane/doc/xsane-logo2.jpg
 share/sane/xsane/doc/xsane-mail-project.jpg
 share/sane/xsane/doc/xsane-mail.jpg
 share/sane/xsane/doc/xsane-medium.jpg
+share/sane/xsane/doc/xsane-medium-add.jpg
 share/sane/xsane/doc/xsane-mirror-x.jpg
 share/sane/xsane/doc/xsane-mirror-y.jpg
 share/sane/xsane/doc/xsane-negative.jpg
@@ -95,6 +97,7 @@ share/sane/xsane/doc/xsane-pipette-gray.jpg
 share/sane/xsane/doc/xsane-pipette-white.jpg
 share/sane/xsane/doc/xsane-preferences.jpg
 share/sane/xsane/doc/xsane-preset-area.jpg
+share/sane/xsane/doc/xsane-preset-area-context-menu.jpg
 share/sane/xsane/doc/xsane-preview.jpg
 share/sane/xsane/doc/xsane-printer.jpg
 share/sane/xsane/doc/xsane-rename.jpg
@@ -129,7 +132,6 @@ share/sane/xsane/doc/xsane-zoom-not.jpg
 share/sane/xsane/doc/xsane-zoom-out.jpg
 share/sane/xsane/doc/xsane-zoom-undo.jpg
 share/sane/xsane/doc/xsane-zoom.jpg
-share/sane/xsane/doc/xsane.jpg
 share/sane/xsane/sane-epson-logo.xpm
 share/sane/xsane/sane-hp-logo.xpm
 share/sane/xsane/sane-umax-logo.xpm
@@ -142,3 +144,4 @@ share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
 @dirrm share/sane/xsane/doc
 @dirrm share/sane/xsane
+@unexec rmdir %D/share/sane 2> /dev/null || true
