@@ -1,0 +1,13 @@
+bin/agpg
+bin/apgp
+bin/q-agent
+bin/q-client
+%%X11%%bin/secret-query
+%%X11%%bin/secret-ask
+share/locale/de/LC_MESSAGES/quintuple-agent.mo
+share/locale/es_ES/LC_MESSAGES/quintuple-agent.mo
+share/locale/fr/LC_MESSAGES/quintuple-agent.mo
+share/locale/it/LC_MESSAGES/quintuple-agent.mo
+share/locale/pl/LC_MESSAGES/quintuple-agent.mo
+share/locale/pt_BR/LC_MESSAGES/quintuple-agent.mo
+share/locale/ru/LC_MESSAGES/quintuple-agent.mo

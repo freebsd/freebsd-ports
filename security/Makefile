@@ -259,6 +259,7 @@
     SUBDIR += py-twofish
     SUBDIR += qident
     SUBDIR += qtfw
+    SUBDIR += quintuple-agent
     SUBDIR += racoon
     SUBDIR += radiusniff
     SUBDIR += rain
