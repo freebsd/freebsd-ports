@@ -1,1 +1,2 @@
 lib/perl/jcode.pl
+@unexec rmdir %B 2>/dev/null || true
