@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -59,6 +60,10 @@ RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
+
+pre-configure:
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+		${WRKSRC}/kdeprint/descriptions/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
