@@ -1,17 +1,17 @@
---- mozilla/TOCProtocolHandler.cpp.orig	Wed Sep  4 20:41:48 2002
-+++ mozilla/TOCProtocolHandler.cpp	Thu Feb 13 16:15:50 2003
+--- mozilla/TOCProtocolHandler.cpp.orig	Sat Jun 14 11:42:57 2003
++++ mozilla/TOCProtocolHandler.cpp	Mon Jul 21 11:30:04 2003
 @@ -83,8 +83,8 @@
  	oStream->Write (str.c_str(), str.size(), &bytesWriten);
  
- void ParseEnvPath(const nsCString &path, list<string> &dirs);
--int gHelpSelect (const struct dirent *dirEntry);
--int gnomeHelpSelect (const struct dirent *dirEntry);
-+int gHelpSelect (struct dirent *dirEntry);
-+int gnomeHelpSelect (struct dirent *dirEntry);
+ static void ParseEnvPath(const nsCString &path, list<string> &dirs);
+-static int gHelpSelect (const struct dirent *dirEntry);
+-static int gnomeHelpSelect (const struct dirent *dirEntry);
++static int gHelpSelect (struct dirent *dirEntry);
++static int gnomeHelpSelect (struct dirent *dirEntry);
+ static void RenderContentType (nsIOutputStream *oStream, PRUint32 &bytesWriten);
  
  /* Implementation file */
- NS_IMPL_ISUPPORTS1 (GTOCProtocolHandler, nsIProtocolHandler)
-@@ -401,7 +408,7 @@
+@@ -362,7 +362,7 @@
  }
  
  NS_METHOD GTOCProtocolHandler::CreateHelpPage (const char *type,
@@ -20,7 +20,7 @@
  {
  	nsresult rv;
  
-@@ -496,7 +503,7 @@
+@@ -445,7 +445,7 @@
  	}
  }
  
@@ -29,7 +29,7 @@
  {
  #ifdef NOT_PORTED
  	char *helpPath = gnome_help_file_find_file (
-@@ -512,7 +519,7 @@
+@@ -461,7 +461,7 @@
  #endif
  }
  
