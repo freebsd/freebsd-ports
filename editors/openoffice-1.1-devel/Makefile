@@ -82,8 +82,8 @@ LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 # OOo requires gcc 3.2 (currently 3.3 is not supported)
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
-CC=  gcc32
-CXX= g++32
+CC=	gcc32
+CXX=	g++32
 
 EXTRACT_ONLY=	OOo_${PORTVERSION}rc_source.tar.bz2
 
@@ -99,6 +99,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
+		gcp:${PORTSDIR}/sysutils/coreutils \
 		${ANT}:${PORTSDIR}/devel/apache-ant \
 		${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
 		${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries \
@@ -128,7 +129,7 @@ JAVAVM=		${JDKDIR}/bin/java
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
+WRKSRC=		${WRKDIR}/oo_${FRELEASE_NR}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
@@ -181,15 +182,6 @@ pre-fetch:
 	@${ECHO}
 .endif
 	@${ECHO} "OPTIONS:"
-.if !defined(USE_GCC)
-	@${ECHO}
-	@${ECHO} "You can compile OO with different"
-	@${ECHO} "gcc compiler versions:"
-	@${ECHO}
-	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.2"
-	@${ECHO} "to compile openoffice with your"
-	@${ECHO} "preferred compiler."
-.endif
 .if !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} "You can compile OO with debug symbols"
