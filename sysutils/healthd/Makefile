@@ -33,10 +33,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh.sample ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh.sample startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh.sample; \
-	fi
+	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh.sample; \
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
