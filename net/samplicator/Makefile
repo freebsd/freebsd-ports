@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samplicator
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.switch.ch/tf-tant/floma/sw/samplicator/
 
