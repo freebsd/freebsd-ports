@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.8
+PORTVERSION=	1.2.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
-#		${MASTER_SITE_LOCAL:S,$,:local,}
-MASTER_SITE_SUBDIR=	sources/evolution/1.0 \
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2 \
 			sobomax/:local
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17${EXTRACT_SUFX}:local
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	sobomax
-PATCHFILES=	evolution-1.0.2-reply-to.diff.gz
-
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 		nss3.1:${PORTSDIR}/security/nss
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 .endif
-RUN_DEPENDS=	gnome-spell-component:${PORTSDIR}/textproc/gnomespell
+RUN_DEPENDS=	gnome-spell-component-0.5:${PORTSDIR}/textproc/gnomespell
 .if !defined(WITHOUT_PILOT)
 BUILD_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 RUN_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
@@ -42,8 +38,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gtkhtml
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure libical/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
@@ -72,8 +67,8 @@ MAN1=		evolution.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
-		xargs ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
+		${XARGS} ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
 
 # DB3 stuff. Ugly, I know, but that's life.
 DB3_WRKSRC=	${WRKDIR}/db-3.1.17/build_unix
@@ -101,7 +96,7 @@ pre-configure:
 # End of the DB3 stuff
 
 post-install:
-	@find ${PREFIX}/share/gnome/evolution/default_user -type f | \
-		xargs ${CHMOD} 644
+	@${FIND} ${PREFIX}/share/gnome/evolution/default_user -type f | \
+		${XARGS} ${CHMOD} 644
 
 .include <bsd.port.mk>

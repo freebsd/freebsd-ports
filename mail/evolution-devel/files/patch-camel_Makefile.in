@@ -1,0 +1,11 @@
+--- camel/Makefile.in.orig	Thu Sep 19 15:23:54 2002
++++ camel/Makefile.in	Thu Sep 19 15:24:30 2002
+@@ -265,7 +265,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lintl
+ libcamel_la_DEPENDENCIES =  $(top_builddir)/e-util/libeutil.la
+ libcamel_la_OBJECTS =  broken-date-parser.lo camel-address.lo \
+ camel-arg.lo camel-block-file.lo camel-certdb.lo camel-charset-map.lo \
