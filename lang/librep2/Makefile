@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	librep
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://librep.sourceforge.net/pub/librep/
 
@@ -15,8 +15,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		intl.1:${PORTSDIR}/devel/gettext
 
-VERSION=	0.11.1
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${VERSION}
+PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
