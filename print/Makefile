@@ -68,6 +68,7 @@
     SUBDIR += ghostscript-gnu-nox11
     SUBDIR += ghostview
     SUBDIR += gimp-print
+    SUBDIR += gnome-cups-manager
     SUBDIR += gnomeprint
     SUBDIR += gsfonts
     SUBDIR += gtklp

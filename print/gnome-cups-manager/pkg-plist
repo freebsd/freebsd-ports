@@ -1,0 +1,26 @@
+bin/gnome-cups-add
+bin/gnome-cups-icon
+bin/gnome-cups-manager
+include/libgnomecups-1/libgnomecups/gnome-cups-ui-init.h
+include/libgnomecups-1/libgnomecups/gnome-cups-ui-print.h
+lib/libgnomecupsui-1.0.a
+lib/libgnomecupsui-1.0.so
+lib/libgnomecupsui-1.0.so.1
+libdata/bonobo/servers/Gnome_CupsManager.server
+libdata/pkgconfig/libgnomecupsui-1.0.pc
+sbin/gnome-cups-switch
+share/gnome/applications/gnome-cups-manager.desktop
+share/gnome/gnome-cups-manager/gnome-cups-add.glade
+share/gnome/gnome-cups-manager/gnome-cups-manager.glade
+share/gnome/gnome-cups-manager/xd2-testpage-a4.eps
+share/gnome/gnome-cups-manager/xd2-testpage-letter.eps
+share/gnome/pixmaps/gnome-cups-manager/printer-tray-normal.png
+share/gnome/pixmaps/gnome-cups-manager/printer-tray-stopped.png
+share/icons/gnome/48x48/devices/gnome-dev-printer-network.png
+share/icons/gnome/48x48/devices/gnome-dev-printer-new.png
+share/icons/gnome/48x48/emblems/emblem-default.png
+share/icons/gnome/48x48/emblems/emblem-paused.png
+share/locale/he/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/ja/LC_MESSAGES/gnome-cups-manager.mo
+@dirrm share/gnome/pixmaps/gnome-cups-manager
+@dirrm share/gnome/gnome-cups-manager
