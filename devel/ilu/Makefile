@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.2 1997/10/02 04:03:30 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/03 09:16:36 asami Exp $
 #
 
 DISTNAME=       ilu-2.0alpha11
@@ -16,7 +16,10 @@ MAINTAINER=	cracauer@cons.org
 NO_WRKSUBDIR=   yes
 HAS_CONFIGURE=	yes
 # ILU 2.0alpha11 doesn't compile with FreeBSD jdk-1.1 port
-CONFIGURE_ARGS= --disable-java-support --enable-http-protocol
+# The guile port is outdated. If you have 1.2 installed, remove
+# --disable-guile-support
+CONFIGURE_ARGS= --disable-java-support --enable-http-protocol \
+		--disable-guile-support
 
 INSTALL_TARGET=	Install
 NOMANCOMPRESS=
