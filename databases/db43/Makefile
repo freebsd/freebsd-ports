@@ -14,8 +14,8 @@ PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.sleepycat.com/update/4.3.27/
-PATCHFILES=	patch.4.3.27.1
+PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+PATCHFILES=	patch.${PORTVERSION}.1
 # patch.4.3.27.1 affects C++ DbEnv::ref_elect
 # patch.4.3.27.2 is Windows-specific
 PATCH_DIST_STRIP=	-d ..
