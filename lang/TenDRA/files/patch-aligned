@@ -1,17 +1,33 @@
-Index: src/lib/machines/freebsd/80x86/include/gcc_dependency.h
+Index: src/lib/machines/freebsd/80x86/startup/ansi.h
 ===================================================================
-RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/include/gcc_dependency.h,v
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/startup/ansi.h,v
 retrieving revision 1.1
-diff -c -u -r1.1 gcc_dependency.h
---- src/lib/machines/freebsd/80x86/include/gcc_dependency.h	18 Feb 2003 07:35:09 -0000	1.1
-+++ src/lib/machines/freebsd/80x86/include/gcc_dependency.h	25 Feb 2003 10:32:53 -0000
-@@ -17,4 +17,9 @@
- 
- #pragma TenDRA unknown directive warning
+diff -u -r1.1 ansi.h
+--- src/lib/machines/freebsd/80x86/startup/ansi.h	26 Jan 2002 21:31:47 -0000	1.1
++++ src/lib/machines/freebsd/80x86/startup/ansi.h	16 Aug 2003 19:50:55 -0000
+@@ -28,3 +28,8 @@
+ #ifndef __signed
+ #define __signed	signed
+ #endif
++
++/* Work around __aligned() */
++#ifndef	__aligned
++#define	__aligned(x)	/* nothing */
++#endif
+Index: src/lib/machines/freebsd/80x86/startup/system.h
+===================================================================
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/startup/system.h,v
+retrieving revision 1.1
+diff -u -r1.1 system.h
+--- src/lib/machines/freebsd/80x86/startup/system.h	26 Jan 2002 21:31:47 -0000	1.1
++++ src/lib/machines/freebsd/80x86/startup/system.h	4 Aug 2003 21:07:05 -0000
+@@ -36,4 +36,9 @@
+ #define __signed	signed
+ #endif
  
 +/* Work around __aligned() */
 +#ifndef	__aligned
 +#define	__aligned(x)	/* nothing */
 +#endif
 +
- #endif /* __FREEBSD_GCC_DEPENDENCY_H__ */
+ #endif
