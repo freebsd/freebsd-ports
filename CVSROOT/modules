@@ -4736,6 +4736,7 @@ oonsoo		ports/games/oonsoo
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
 op		ports/security/op
+open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
 open-motif-devel	ports/x11-toolkits/open-motif-devel
 openag		ports/audio/openag
