@@ -1,0 +1,16 @@
+Webware for Python is a suite of software components for developing
+object-oriented, web-based applications. The suite uses well known design
+patterns and includes popular features such as:
+
+- A fast, easy-to-use application server
+- Servlets
+- Python Server Pages (PSP)
+- Object-relational mapper
+- Task scheduler
+- User manager with authentication
+- CGI wrapper
+
+WWW: http://webware.sourceforge.net/
+
+- Stefan Schwarzer
+sschwarzer@sschwarzer.net
