@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sccmilter
-PORTVERSION=	0.92.2
+PORTVERSION=	0.92.4
 PORTREVISION=
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
@@ -37,7 +37,7 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS+=	--with-debug
 .endif
 
-pre-everything::
+pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "For debugging information support you should specify"
 	@${ECHO_MSG} "	WITH_DEBUG=yes (press Ctrl-C here and start make  WITH_DEBUG=yes)"
