@@ -68,6 +68,7 @@
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
+    SUBDIR += openoffice
     SUBDIR += psgml-emacs
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
