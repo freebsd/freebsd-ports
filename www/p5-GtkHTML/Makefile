@@ -25,7 +25,6 @@ USE_GNOME=	gnomeprefix gtkhtml
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Gtk::HTML::reference.3pm
 
 .include <bsd.port.mk>

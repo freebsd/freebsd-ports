@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GtkXmHTML
-PORTVERSION=	0.7008
+PORTVERSION=	0.7009
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -16,8 +16,9 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The HTML widget module of Gtk-Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+		${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome
 
 USE_GNOME=	gnomelibs
 PERL_CONFIGURE=	yes

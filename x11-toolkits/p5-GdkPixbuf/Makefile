@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GdkPixbuf
-PORTVERSION=	0.7008
+PORTVERSION=	0.7009
 CATEGORIES=	x11-toolkits lang perl5 gnome
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -23,7 +23,6 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Gtk::Gdk::Pixbuf::reference.3pm
 
 .include <bsd.port.mk>
