@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	4.8
-PORTREVISION=	1
+PORTVERSION=	2000c
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-2000b
+DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
+MAINTAINER=	petef@databits.net
 
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf
