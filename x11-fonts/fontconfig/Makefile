@@ -9,7 +9,7 @@ PORTNAME=	fontconfig
 PORTVERSION=	2.0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://fontconfig.org/release/
+MASTER_SITES=	http://www.fontconfig.org/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
 
 MAINTAINER=	gnome@FreeBSD.org
