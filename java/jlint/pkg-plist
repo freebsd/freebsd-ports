@@ -1,6 +1,3 @@
 bin/jlint
 bin/jlint.sh
 bin/antic
-%%PORTDOCS%%share/doc/jlint/manual.pdf
-%%PORTDOCS%%share/doc/jlint/manual.html
-%%PORTDOCS%%@dirrm share/doc/jlint

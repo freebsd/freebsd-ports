@@ -1,5 +1,7 @@
---- Makefile.orig	Wed Feb 19 17:20:06 2003
-+++ Makefile	Wed Feb 19 17:21:13 2003
+$FreeBSD$
+
+--- Makefile.orig	Wed Jan 14 17:23:41 2004
++++ Makefile	Thu Oct 28 14:17:10 2004
 @@ -3,8 +3,8 @@
  # Makefile for Unix and GNU/Linux with gcc/g++ compiler
  # Edit here:
@@ -11,12 +13,12 @@
  
  # Hints:
  # if you use egcs-2.90.* version of GCC please add option -fno-exceptions 
-@@ -18,7 +18,7 @@
+@@ -20,7 +20,7 @@
  
  # Optimized version
  
--CFLAGS = -c -Wall -O2 -g -DSLIST
-+CFLAGS += -c
+-CFLAGS = -c -Wall -O2 -g
++CFLAGS+= -c -Wall -g
+ # -DSLIST removed because it wouldn't compile under gcc 3.x
  # add -DHASH_TABLE for extra speed (may sometimes produce inconsistent results)
  
- # Optimized version with switched off asserts

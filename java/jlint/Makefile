@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	jlint
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	java
-MASTER_SITES=	http://artho.com/jlint/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java program analyzer and checker
 
 USE_REINPLACE=	YES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if !defined(NOPORTDOCS)
+PORTDOCS=	manual.pdf
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/jlint.sh
+	@${REINPLACE_CMD} -e '1s,/bin/bash,/bin/sh,' ${WRKSRC}/jlint.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jlint ${PREFIX}/bin
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jlint.sh ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${WRKSRC}/manual.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
