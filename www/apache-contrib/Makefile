@@ -49,5 +49,6 @@ AP_LIBEXEC?=    ${PREFIX}/libexec/apache
 .endif
 
 ALL_TARGET=	APXS=${APXS} all
+INSTALL_TARGET=	APXS=${APXS} install
 
 .include <bsd.port.mk>
