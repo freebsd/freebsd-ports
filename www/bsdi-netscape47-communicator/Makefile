@@ -19,6 +19,8 @@ DISTFILES=	${BROWSER}-v473-export.x86-bsdi-bsd2.tar.gz
 
 MAINTAINER=	trevor@jpj.net
 
+NO_FORTIFY=	"frozen until further notice--http://www.fortify.net/latest_main.html"
+
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape-wrapper
 
 ONLY_FOR_ARCHS=	i386
