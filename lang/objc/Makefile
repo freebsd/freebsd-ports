@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	objc
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.32
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	devel/lang/objc chuckr
-DISTFILES=	objc-3.1.5-bootstrap.tar.gz objc-3.1.5.tar.gz
+MASTER_SITES=	http://users.pandora.be/stes/
+DISTFILES=	objc-bootstrap-${PORTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 
 MAINTAINER=	chuckr@freebsd.org
 
-BUILD_DEPENDS=	$(PREFIX)/lib/libgc.a:$(PORTSDIR)/devel/boehm-gc
+#BUILD_DEPENDS=	$(PREFIX)/lib/libgc.a:$(PORTSDIR)/devel/boehm-gc
 
 HAS_CONFIGURE=	yes
 MAN1=		cvtimport.1 objc.1 postlink.1 vici.1
@@ -35,11 +33,7 @@ CONFIGURE_ARGS=	--prefix=$(PREFIX)
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	(cd $(WRKDIR)/$(DISTNAME)-bootstrap;./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install)
-
-post-build:
-	$(ECHO) "Building additional libraries (boehm-gc compatibility)"
-	(cd $(WRKSRC); ${SETENV} PATH=$(WRKDIR)/bin:$(PATH) ./makeLibs)
+	(cd $(WRKDIR)/${PORTNAME}-bootstrap-$(PORTVERSION);./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install)
 
 pre-install:
 	$(MKDIR) $(PREFIX)/share/doc/objc
