@@ -55,6 +55,18 @@ The distfile is on my distfiles dir this time, so I have mirrored it on my
 html page until the distfiles dir gets mirrored in 24-48 hours.
 
 I had to disable Xinerama since it was breaking the build.
+
+0.5_4
+Patch to hopefully fix crash when formatting time string at end of download.
+Thanks to Greg Rumple and Joe Marcus Clarke for the fantastic work debugging
+this one.
+
+Added /usr/X11R6/bin/phoenix.rb. If you have ruby installed, you can run
+this instead of 'phoenix' and it takes care of the 'profile in use' errors
+by automatically using an existing phoenix if one is running. I didn't put
+a dependency because I don't want to require ruby + ruby-shim to run the
+browser.
+
 -- AlanE <phoenix@freebsd.org>
 
 ======================================================================
