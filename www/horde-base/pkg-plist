@@ -1291,6 +1291,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/graphics/user.png
 %%HORDEDIR%%/themes/graphics/website.png
 %%HORDEDIR%%/themes/graphics/za.png
+%%HORDEDIR%%/themes/ie.css
 %%HORDEDIR%%/themes/ie5mac.css
 %%HORDEDIR%%/themes/kolab/graphics/bg.png
 %%HORDEDIR%%/themes/kolab/graphics/kolab.png
@@ -1312,6 +1313,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/mozilla/graphics/menu.png
 %%HORDEDIR%%/themes/mozilla/info.php
 %%HORDEDIR%%/themes/mozilla/screen.css
+%%HORDEDIR%%/themes/opera.css
 %%HORDEDIR%%/themes/postnuke/info.php
 %%HORDEDIR%%/themes/postnuke/screen.css
 %%HORDEDIR%%/themes/print/screen.css
@@ -1516,6 +1518,7 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/Net
 @dirrm %%HORDEDIR%%/lib/Horde/tests
 @dirrm %%HORDEDIR%%/lib/Horde/iCalendar
+@dirrm %%HORDEDIR%%/lib/Horde/docs/examples
 @dirrm %%HORDEDIR%%/lib/Horde/docs
 @dirrm %%HORDEDIR%%/lib/Horde/VC
 @dirrm %%HORDEDIR%%/lib/Horde/UI/VarRenderer
