@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Fri May  1 15:47:40 1998
++++ misc/Makefile.in	Fri Aug  7 23:13:23 1998
+@@ -164,10 +164,8 @@
+ 	@list='$(lisp_LISP)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p; \
+ 	  if test -f $${p}c; then \
+ 	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c"; \
+-	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c; \
+ 	  else : ; fi; \
+ 	done
+ 
