@@ -1,5 +1,4 @@
 # New ports collection makefile for:   wmhm
-# Version required:    1.45
 # Date created:        21 September 1999
 # Whom:                Mike Muir <mmuir@es.co.nz>
 #

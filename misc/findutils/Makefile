@@ -1,5 +1,4 @@
 # New ports collection makefile for:	findutils
-# Version required:			4.1
 # Date created:				29 March 2000
 # Whom:					Robert Withrow <witr@rwwa.com>
 #

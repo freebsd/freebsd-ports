@@ -1,5 +1,4 @@
 # New ports collection makefile for:	PyKDE
-# Version required:	0.9
 # Date created:		Sun Oct 17 00:24:28 PDT 1999
 # Whom:			adsharma@sharmas.dhs.org
 #

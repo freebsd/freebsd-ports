@@ -1,5 +1,4 @@
 # New ports collection makefile for:	imap-uw
-# Version required:	4.7c2
 # Date created:		9 Jan 1997
 # Whom:			pst
 #

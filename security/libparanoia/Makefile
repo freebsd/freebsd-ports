@@ -1,5 +1,4 @@
 # New ports collection makefile for:	libparanoia
-# Version required:			1.4
 # Date created:				1 Jan 1999
 # Whom:					Alexandre Snarskii <snar@paranoia.ru>
 #

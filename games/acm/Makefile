@@ -1,5 +1,4 @@
 # New ports collection makefile for:	acm
-# Version required:	comp.sources.x/volume12 (ver 2.0)
 # Date created:		5 March 1995
 # Whom:			joerg
 #
