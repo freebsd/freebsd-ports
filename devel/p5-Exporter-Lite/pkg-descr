@@ -2,4 +2,4 @@ This is an alternative to Exporter intended to provide a lightweight
 subset of its functionality. It supports import(), @EXPORT and @EXPORT_OK
 and not a whole lot else. 
 
-WWW: http://search.cpan.org/author/MSCHWERN/Exporter-Lite/
+WWW: http://search.cpan.org/dist/Exporter-Lite/

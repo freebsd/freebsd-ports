@@ -17,7 +17,6 @@ COMMENT=	Lightweight exporting of variables
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Exporter::Lite.3
 
 .include <bsd.port.mk>

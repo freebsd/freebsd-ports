@@ -1,3 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/Exporter/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exporter/Lite/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exporter/Lite
+%%SITE_PERL%%/Exporter/Lite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Lite/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Lite
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter 2>/dev/null || true
