@@ -4,7 +4,7 @@ prioritised, list. Additionally, it can automatically list outstanding
 items when you change into a directory (see example shell configurations
 in ${PREFIX}/share/examples/devtodo).
 
-WWW: http://activelysecure.net/~athomas/development/devtodo/
+WWW: http://devtodo.sourceforge.net/
 
 - Pete
 petef@databits.net
