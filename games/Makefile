@@ -200,6 +200,7 @@
     SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
+    SUBDIR += hlstats
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
