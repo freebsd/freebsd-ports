@@ -3077,8 +3077,8 @@
 %%TEXMF%%/doc/tetex/eurotex98-te.pdf
 %%TEXMF%%/doc/texdoctk/README
 %%TEXMF%%/dvipdfm/config/README.config
+%%TEXMF%%/dvipdfm/config/config
 %%TEXMF%%/dvipdfm/config/config.tetex
-%%TEXMF%%/dvipdfm/config/config.tetex-letter
 %%TEXMF%%/dvips/antp/antp.enc
 %%TEXMF%%/dvips/antp/antp.map
 %%TEXMF%%/dvips/antp/config.antp
@@ -3115,8 +3115,8 @@
 %%TEXMF%%/dvips/cc-pl/cc-pl.enc
 %%TEXMF%%/dvips/cc-pl/ccpl.map
 %%TEXMF%%/dvips/config/builtin35.map
+%%TEXMF%%/dvips/config/config.ps
 %%TEXMF%%/dvips/config/config.ps.tetex
-%%TEXMF%%/dvips/config/config.ps.tetex-letter
 %%TEXMF%%/dvips/config/context.map
 %%TEXMF%%/dvips/config/download35.map
 %%TEXMF%%/dvips/config/dvipdfm.map
@@ -9071,7 +9071,7 @@
 %%TEXMF%%/omega/lambda/oinuit/oinuit.sty
 %%TEXMF%%/omega/lambda/omegabook/grcodes.tex
 %%TEXMF%%/omega/lambda/omegabook/grmhyph.tex
-%%TEXMF%%/omega/lambda/omegabook/ltpatch.ltx
+%%TEXMF%%/omega/lambda/omegabook/NOUSE_ltpatch.ltx_
 %%TEXMF%%/omega/lambda/omegabook/ojapan.sty
 %%TEXMF%%/omega/lambda/omegabook/otibet.tex
 %%TEXMF%%/omega/ocp/char2uni/in646.ocp
@@ -11433,8 +11433,8 @@
 %%TEXMF%%/web2c/il2-t1.tcx
 %%TEXMF%%/web2c/il2-pl.tcx
 %%TEXMF%%/web2c/cp8bit.tcx
+%%TEXMF%%/xdvi/XDvi
 %%TEXMF%%/xdvi/XDvi.tetex
-%%TEXMF%%/xdvi/XDvi.tetex-letter
 @exec mkdir -p %D/%%TEXMF%%/fonts/afm/hoekwater
 @exec mkdir -p %D/%%TEXMF%%/fonts/bh
 @exec mkdir -p %D/%%TEXMF%%/fonts/bh/lucidabr
