@@ -4,7 +4,7 @@ LIB=		socket++
 LIBDIR= 	${PREFIX}/lib
 INCDIR=		${PREFIX}/include
 INFODIR=	${PREFIX}/info
-CFLAGS+=	-I.
+CXXFLAGS+=	-I.
 
 SRCS=	sockstream.C sockinet.C sockunix.C pipestream.C Fork.C \
 	echo.C smtp.C ftp.C
