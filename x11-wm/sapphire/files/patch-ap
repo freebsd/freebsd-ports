@@ -1,0 +1,43 @@
+--- src/windowmanager.cc.orig	Wed Feb 23 23:26:21 2000
++++ src/windowmanager.cc	Mon Sep  4 23:15:30 2000
+@@ -127,7 +127,7 @@
+ 	#ifdef SHAPE
+ 		if(! QueryShapeExtentions())
+ 		{
+-			printf("Shape extentions not supported\n");
++			printf("Shape extensions not supported\n");
+ 		}
+ 	#endif
+ 	
+@@ -175,6 +175,10 @@
+ 	t = new Toolbar();
+ 	im = new IconMenu();
+ 
++	// Grab alt+up cursor and alt+down cursor for cycling windows in
++	// WindowManager::do_event_loop().
++	XGrabKey(dpy, XKeysymToKeycode(dpy, XK_Up), Mod1Mask, root, True, GrabModeAsync, GrabModeAsync);
++	XGrabKey(dpy, XKeysymToKeycode(dpy, XK_Down), Mod1Mask, root, True, GrabModeAsync, GrabModeAsync);
+ 	addToMenuList(rm);
+ 	rm->parseMenuConfigurationFile();
+ 
+@@ -511,6 +515,20 @@
+ 					head_client->handle_reparent_event(&ev.xreparent); 
+ 				
+ 				break;
++				}
++
++				case KeyPress:
++				{
++					if (XKeycodeToKeysym(dpy, ev.xkey.keycode, 0) == XK_Up)
++					{
++						XCirculateSubwindowsUp(wm->getDisplay(), wm->getRootWindow());
++						break;
++					}
++					if (XKeycodeToKeysym(dpy, ev.xkey.keycode, 0) == XK_Down)
++					{
++						XCirculateSubwindowsDown(wm->getDisplay(), wm->getRootWindow());
++						break;
++					}
+ 				}
+ 				
+ 				default: 
