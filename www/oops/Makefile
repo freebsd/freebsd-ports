@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oops
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.5
 CATEGORIES=	www
 MASTER_SITES=	http://zipper.paco.net/~igor/oops/
 
