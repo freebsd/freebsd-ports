@@ -31,12 +31,15 @@ include/uds/uds.hh
 lib/libuds.a
 lib/libuds.so
 lib/libuds.so.0
-share/doc/uds/config.html
-share/doc/uds/contributing.html
-share/doc/uds/download.html
-share/doc/uds/features.html
-share/doc/uds/index.html
-share/doc/uds/relnotes.html
-@dirrm share/doc/uds
+lib/libudsthread.a
+lib/libudsthread.so
+lib/libudsthread.so.0
+%%PORTDOCS%%share/doc/uds/config.html
+%%PORTDOCS%%share/doc/uds/contributing.html
+%%PORTDOCS%%share/doc/uds/download.html
+%%PORTDOCS%%share/doc/uds/features.html
+%%PORTDOCS%%share/doc/uds/index.html
+%%PORTDOCS%%share/doc/uds/relnotes.html
+%%PORTDOCS%%@dirrm share/doc/uds
 share/uds/udsdeff.cc
 @dirrm share/uds
