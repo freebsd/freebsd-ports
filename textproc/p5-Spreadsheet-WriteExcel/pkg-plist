@@ -101,6 +101,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1251.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cyrillic.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_japan.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.txt
