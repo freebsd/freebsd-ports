@@ -1,7 +1,0 @@
---- providers/gda-default-server/Makefile.in.orig	Fri Jun 15 15:17:33 2001
-+++ providers/gda-default-server/Makefile.in	Tue Jun 19 00:44:20 2001
-@@ -502,3 +502,3 @@
- 	../sqlite/configure && \
--	make
-+	${MAKE}
- 	cp build_sqlite/libsqlite.a libsqlite.a

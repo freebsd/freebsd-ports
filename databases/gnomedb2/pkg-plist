@@ -3,37 +3,37 @@ bin/gnomedb-components
 bin/gnomedb-config
 bin/gnomedb-fe
 bin/gnomedb-mgr
-include/gnome-db/GNOME_Database_UI.h
-include/gnome-db/gnome-db-browser.h
-include/gnome-db/gnome-db-combo.h
-include/gnome-db/gnome-db-component.h
-include/gnome-db/gnome-db-config.h
-include/gnome-db/gnome-db-control-defprops.h
-include/gnome-db/gnome-db-control-widget.h
-include/gnome-db/gnome-db-control.h
-include/gnome-db/gnome-db-dataset.h
-include/gnome-db/gnome-db-designer.h
-include/gnome-db/gnome-db-dsn-config-druid.h
-include/gnome-db/gnome-db-dsn-config.h
-include/gnome-db/gnome-db-embeddable.h
-include/gnome-db/gnome-db-entry.h
-include/gnome-db/gnome-db-error-dlg.h
-include/gnome-db/gnome-db-error.h
-include/gnome-db/gnome-db-export.h
-include/gnome-db/gnome-db-grid.h
-include/gnome-db/gnome-db-icon-list.h
-include/gnome-db/gnome-db-label.h
-include/gnome-db/gnome-db-list.h
-include/gnome-db/gnome-db-log-viewer.h
-include/gnome-db/gnome-db-login-dlg.h
-include/gnome-db/gnome-db-login.h
-include/gnome-db/gnome-db-moniker.h
-include/gnome-db/gnome-db-report.h
-include/gnome-db/gnome-db-shortcut.h
-include/gnome-db/gnome-db-table-editor.h
-include/gnome-db/gnome-db-util.h
-include/gnome-db/gnome-db-window.h
-include/gnome-db/gnome-db.h
+include/libgnomedb-%%VERSION%%/gnome-db/GNOME_Database_UI.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-browser.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-combo.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-component.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-config.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-control-defprops.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-control-widget.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-control.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-dataset.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-designer.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-dsn-config-druid.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-dsn-config.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-embeddable.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-entry.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-error-dlg.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-error.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-export.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-grid.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-icon-list.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-label.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-list.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-log-viewer.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-login-dlg.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-login.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-moniker.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-report.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-shortcut.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-table-editor.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-util.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-window.h
+include/libgnomedb-%%VERSION%%/gnome-db/gnome-db.h
 lib/bonobo/monikers/libdatabase_moniker.a
 lib/bonobo/monikers/libdatabase_moniker.so
 lib/bonobo/monikers/libdatabase_moniker.so.0
@@ -41,13 +41,46 @@ lib/libgnomedb.a
 lib/libgnomedb.so
 lib/libgnomedb.so.0
 share/gnome/apps/Applications/gnomedb-fe.desktop
+share/gnome/help/gnome-db/C/comlib.html
+share/gnome/help/gnome-db/C/fdl-appendix.sgml
+share/gnome/help/gnome-db/C/gnome-db.sgml
+share/gnome/help/gnome-db/C/index.html
+share/gnome/help/gnome-db/C/introduction.html
 share/gnome/help/gnome-db/C/topic.dat
+share/gnome/help/gnome-db/C/widgetlib-overview.html
+share/gnome/help/gnome-db/C/widgetlib.html
+share/gnome/help/gnome-db/es/comlib.html
+share/gnome/help/gnome-db/es/gnome-db.html
+share/gnome/help/gnome-db/es/gnome-db.sgml
+share/gnome/help/gnome-db/es/index.html
+share/gnome/help/gnome-db/es/introduction.html
 share/gnome/help/gnome-db/es/topic.dat
+share/gnome/help/gnome-db/es/widgetlib-overview.html
+share/gnome/help/gnome-db/es/widgetlib.html
+share/gnome/help/gnome-db/it/comlib.html
+share/gnome/help/gnome-db/it/fdl-appendix.sgml
+share/gnome/help/gnome-db/it/gnome-db.sgml
+share/gnome/help/gnome-db/it/index.html
+share/gnome/help/gnome-db/it/introduction.html
 share/gnome/help/gnome-db/it/topic.dat
+share/gnome/help/gnome-db/it/widgetlib-overview.html
+share/gnome/help/gnome-db/it/widgetlib.html
+share/gnome/help/gnome-db/pt_BR/comlib.html
+share/gnome/help/gnome-db/pt_BR/components.html
+share/gnome/help/gnome-db/pt_BR/fe.html
+share/gnome/help/gnome-db/pt_BR/gnome-db.sgml
+share/gnome/help/gnome-db/pt_BR/index.html
+share/gnome/help/gnome-db/pt_BR/introduction.html
+share/gnome/help/gnome-db/pt_BR/manager-config-components.html
+share/gnome/help/gnome-db/pt_BR/manager.html
 share/gnome/help/gnome-db/pt_BR/topic.dat
+share/gnome/help/gnome-db/pt_BR/widgetlib-overview.html
+share/gnome/help/gnome-db/pt_BR/widgetlib.html
+share/gnome/html/libgnomedb-decl.txt
 share/gnome/html/libgnomedb-sections.txt
 share/gnome/html/libgnomedb.args
 share/gnome/html/libgnomedb.hierarchy
+share/gnome/html/libgnomedb.signals
 share/gnome/html/libgnomedb.types
 share/gnome/idl/GNOME_Database_UI.idl
 share/gnome/oaf/GNOME_DB_Builder.oaf
@@ -58,6 +91,10 @@ share/gnome/oaf/GNOME_DB_Export.oaf
 share/gnome/oaf/GNOME_DB_Log.oaf
 share/gnome/oaf/GNOME_DB_Manager.oaf
 share/gnome/oaf/GNOME_DB_Monikers.oaf
+share/gnome/omf/gnome-db/gnome-db-C.omf
+share/gnome/omf/gnome-db/gnome-db-es.omf
+share/gnome/omf/gnome-db/gnome-db-it.omf
+share/gnome/omf/gnome-db/gnome-db-pt_BR.omf
 share/gnome/pixmaps/gnome-db.png
 share/gnome/ui/gnomedb-com-connection.xml
 share/gnome/ui/gnomedb-com-designer.xml
@@ -81,6 +118,7 @@ share/locale/nl/LC_MESSAGES/gnome-db.mo
 share/locale/nn/LC_MESSAGES/gnome-db.mo
 share/locale/no/LC_MESSAGES/gnome-db.mo
 share/locale/pl/LC_MESSAGES/gnome-db.mo
+share/locale/pt/LC_MESSAGES/gnome-db.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-db.mo
 share/locale/ru/LC_MESSAGES/gnome-db.mo
 share/locale/sk/LC_MESSAGES/gnome-db.mo
@@ -88,7 +126,8 @@ share/locale/sl/LC_MESSAGES/gnome-db.mo
 share/locale/sv/LC_MESSAGES/gnome-db.mo
 share/locale/tr/LC_MESSAGES/gnome-db.mo
 share/locale/uk/LC_MESSAGES/gnome-db.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gnome-db.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-db.mo
+@dirrm share/gnome/omf/gnome-db
 @dirrm share/gnome/help/gnome-db/pt_BR/images
 @dirrm share/gnome/help/gnome-db/pt_BR
 @dirrm share/gnome/help/gnome-db/it/images
@@ -99,4 +138,5 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/C
 @dirrm share/gnome/help/gnome-db
 @dirrm share/gnome/apps/Applications
-@dirrm include/gnome-db
+@dirrm include/libgnomedb-%%VERSION%%/gnome-db
+@dirrm include/libgnomedb-%%VERSION%%

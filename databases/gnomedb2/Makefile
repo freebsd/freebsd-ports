@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomedb
-PORTVERSION=	0.2.90
-PORTREVISION=	3
+PORTVERSION=	0.2.93
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
@@ -25,6 +24,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
