@@ -1,0 +1,6 @@
+%%RUBY_SITELIBDIR%%/numru/units.rb
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/units.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/units.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
