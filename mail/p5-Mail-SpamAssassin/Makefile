@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.60
+PORTVERSION=	2.61
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A highly efficient mail filter for identifying spam
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
@@ -39,7 +39,6 @@ CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
 			RUN_RAZOR_TESTS="no" RUN_RAZOR2_TESTS="no" \
 			CONTACT_ADDRESS="the administrator of that system"
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
@@ -48,7 +47,6 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::AutoWhitelist.3 \
 		Mail::SpamAssassin::ConfSourceSQL.3
 
-MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
