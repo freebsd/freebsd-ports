@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-templates
-PORTVERSION=	0.2
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,24 +21,31 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 USE_LIBTOOL=	yes
-LIBTOOLFILES=	aclocal.m4
+USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/templates
 
-CONFIGURE_ARGS+=--enable-templates=shared \
+CONFIGURE_ARGS=	--enable-templates=shared \
 		--with-php-config=${PREFIX}/bin/php-config
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 post-extract:
+	@${REINPLACE_CMD} -e 's/[[:cntrl:]]$$//' ${WRKSRC}/php_templates.h \
+		${WRKSRC}/templates.c ${WRKSRC}/tmpl_lib.c
 	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
 
+post-build:
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/20010901
+	@${MKDIR} ${PREFIX}/lib/php/extensions
 	@${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
-		${PREFIX}/lib/php/20010901
+		${PREFIX}/lib/php/extensions
 
 post-install:
-	@${SED} "s!%%LOCALBASE%%!${LOCALBASE}!g;s!%%PREFIX%%!${PREFIX}!g" \
-		${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
