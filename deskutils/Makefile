@@ -58,7 +58,6 @@
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += ktagebuch
-    SUBDIR += libmrproject
     SUBDIR += ljcharm
     SUBDIR += logjam
     SUBDIR += logjam2
@@ -72,7 +71,6 @@
     SUBDIR += mnemo
     SUBDIR += moneydance
     SUBDIR += moregroupware
-    SUBDIR += mrproject
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
     SUBDIR += multisync-backup
@@ -84,6 +82,7 @@
     SUBDIR += offix-trash
     SUBDIR += phpgroupware
     SUBDIR += plan
+    SUBDIR += planner
     SUBDIR += preferences.app
     SUBDIR += rolo
     SUBDIR += rox-memo
