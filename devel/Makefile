@@ -1458,6 +1458,7 @@
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkinspect
+    SUBDIR += tkmerge
     SUBDIR += tkp4
     SUBDIR += tkref
     SUBDIR += tla
