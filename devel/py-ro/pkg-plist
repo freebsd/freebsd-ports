@@ -119,6 +119,8 @@ bin/xnsc
 %%PORTDOCS%%share/examples/py-ro/callback/bounce_server.py
 %%PORTDOCS%%share/examples/py-ro/callback/bouncer.py
 %%PORTDOCS%%share/examples/py-ro/callback/bouncer2.py
+%%PORTDOCS%%share/examples/py-ro/callback/bouncer_cberror.py
+%%PORTDOCS%%share/examples/py-ro/callback/cberror_client.py
 %%PORTDOCS%%share/examples/py-ro/callback/shout.py
 %%PORTDOCS%%share/examples/py-ro/callback/shout_client.py
 %%PORTDOCS%%share/examples/py-ro/callback/shout_server.py

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyro
@@ -26,7 +26,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
 post-patch:
 	${ECHO} -e 'install-scripts=${PREFIX}/bin\n' \
 		'\n[install-options]\nunattended=1' >> ${WRKSRC}/setup.cfg
-	${RM} ${WRKSRC}/docs/3-install.html~
 
 .if !defined(NOPORTDOCS)
 post-install:
