@@ -1,0 +1,4 @@
+Copytape duplicates magtapes. It is intended for duplication of
+bootable or other non-file-structured (non-tar-structured) magtapes
+on systems with only one tape drive. Copytape is blissfully ignorant
+of tape formats. It merely makes a bit-for-bit copy of its input.
