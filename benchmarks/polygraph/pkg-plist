@@ -2,6 +2,13 @@ bin/polyclt
 bin/polysrv
 bin/lr
 bin/lx
+bin/distr_test
+bin/pop_test
+bin/rng_test
+bin/aka
+bin/piper
+bin/polymon
+sbin/udp2tcpd
 bin/exprep
 bin/bb.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Blob.pm
