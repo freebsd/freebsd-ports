@@ -18,6 +18,10 @@ RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 
 JDK_VERSION=	1.1.8
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|!!LOCALBASE!!|${LOCALBASE}|" ${WRKSRC}/mapedit
 
 pre-install:
 	@${CAT} ${WRKSRC}/README.TXT
