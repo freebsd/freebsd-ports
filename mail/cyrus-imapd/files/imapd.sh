@@ -10,7 +10,8 @@ start)
 	fi
 	;;
 stop)
-	killall -u cyrus master && echo -n ' imapd'
+	kill `ps -a | awk '/cyrus\/bin\/master$/ {print $1}'` && \
+		echo -n ' imapd'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
