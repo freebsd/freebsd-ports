@@ -7,6 +7,7 @@
 
 PORTNAME=       milter-sender
 PORTVERSION=    0.40
+PORTREVISION=   1
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
 DISTFILES=      libsnert-1.22.tgz milter-sender-${PORTVERSION}.tgz
@@ -20,7 +21,6 @@ GNU_CONFIGURE=  yes
 
 WRKSRC=         ${WRKDIR}/com/snert/src/milter-sender
 MAKEFILE=       makefile
-PKGMESSAGE=     ${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -38,12 +38,8 @@ DOCS= CHANGES.TXT index.shtml style.css mailto.js \
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+= ${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=  LDFLAGS="${LDFLAGS}" LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+= --localstatedir=${PREFIX} --with-db
+CONFIGURE_ARGS+= --with-db
 MAKE_ENV+=       PREFIX="${PREFIX}"
-
-post-patch:
-	@${SED} 's|\/usr\/local|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-	${WRKDIR}/pkg-message
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
@@ -65,9 +61,17 @@ post-install:
 	@cd ${WRKSRC}/Img && \
 	${INSTALL_DATA} *.gif *.png ${DOCSDIR}/Img
 .endif
+	@if [ ! -f ${PREFIX}/etc/rc.d/milter-sender.sh ] ; then \
+	cp ${PREFIX}/etc/rc.d/milter-sender.sh-dist ${PREFIX}/etc/rc.d/milter-sender.sh; \
+	chmod ug+x %B/milter-sender.sh; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
+	@if [ -f ${PREFIX}/etc/rc.d/milter-sender.sh ] && \
+	cmp -s ${PREFIX}/etc/rc.d/milter-sender.sh ${PREFIX}/etc/rc.d/milter-sender.sh-dist; then \
+	rm -f ${PREFIX}/etc/rc.d/milter-sender.sh; \
+	fi
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Do not forget to delete the filter description from /etc/mail/YOUR-CONF.mc"
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"

@@ -1,6 +1,9 @@
+@unexec if [ -f %D/etc/rc.d/milter-sender.sh ] && cmp -s %D/etc/rc.d/milter-sender.sh %D/etc/rc.d/milter-sender.sh-dist; then rm -f %D/etc/rc.d/milter-sender.sh; fi
 etc/rc.d/milter-sender.sh-dist
+@exec if [ ! -f %D/etc/rc.d/milter-sender.sh ] ; then cp %D/%F %B/milter-sender.sh; chmod ug+x %B/milter-sender.sh; fi
 sbin/milter-sender
-@exec install -d -o smmsp -g smmsp -m 755 lib/milter-sender
+@exec install -d -o smmsp -g smmsp -m 755 /var/milter-sender
+@unexec rm -rf /var/milter-sender
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.TXT
 %%PORTDOCS%%%%DOCSDIR%%/Img/bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003071742312.gif
@@ -22,4 +25,3 @@ sbin/milter-sender
 @unexec echo "sendmail.cf file!"
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/milter-sender
