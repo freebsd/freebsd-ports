@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Carp/Clan.pm
+%%SITE_PERL%%/Carp/Clan.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Carp 2>/dev/null || true
