@@ -11,6 +11,9 @@ lib/adasockets/sockets-multicast.ali
 lib/adasockets/sockets-naming.adb
 lib/adasockets/sockets-naming.ads
 lib/adasockets/sockets-naming.ali
+lib/adasockets/sockets-stream_io.adb
+lib/adasockets/sockets-stream_io.ads
+lib/adasockets/sockets-stream_io.ali
 lib/adasockets/sockets-thin.ads
 lib/adasockets/sockets-thin.ali
 lib/adasockets/sockets-utils.adb
