@@ -7,6 +7,7 @@
 
 PORTNAME=	hanIM
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=     korean x11
 MASTER_SITES=   ftp://ftp.mizi.com/pub/hanIM/
 
@@ -22,14 +23,5 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/hanIM
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/LICENSE \
 			${PREFIX}/share/doc/hanIM/
-	# patch XLC_LOCALE for ko_KR.EUC(harmless)
-	if [ -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE ]; then \
-		${MV} -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE \
-			 ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE.orig; \
-	fi
-	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
-		${PREFIX}/lib/X11/locale/ko/
-	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
-		${PREFIX}/share/doc/hanIM/
 
 .include <bsd.port.mk>
