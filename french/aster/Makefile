@@ -15,6 +15,11 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
 
+
+if ${OSVERSION} < 500000
+BROKEN=   "Does not build on systems prior 5.x - work in progress..."
+.endif
+
 #-----------------------------------------------------------------------
 # You may define these options:
 #
