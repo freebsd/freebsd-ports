@@ -1,17 +1,17 @@
 # New ports collection makefile for:	gnome
-# Version required:	1.0.0
+# Version required:	1.0.53
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-1.0.0
+DISTNAME=	gnome-1.0.53
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
@@ -19,13 +19,13 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		esd.2:${PORTSDIR}/audio/esound \
-		gnome.2:${PORTSDIR}/x11/gnomelibs \
+		gnome.3:${PORTSDIR}/x11/gnomelibs \
 		gtop.1:${PORTSDIR}/devel/libgtop \
-		xml.4:${PORTSDIR}/textproc/libxml \
-		gnomeprint.1:${PORTSDIR}/print/gnomeprint \
+		xml.5:${PORTSDIR}/textproc/libxml \
+		gnomeprint.2:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		obgnome.1:${PORTSDIR}/lang/gnomeobjc
-#		glade.1:${PORTSDIR}/devel/libglade
+		glade.2:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
 		panel:${PORTSDIR}/x11/gnomecore \
 		gtcd:${PORTSDIR}/audio/gnomemedia \
@@ -39,7 +39,7 @@ RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeau
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gtop:${PORTSDIR}/sysutils/gtop \
 		gmc:${PORTSDIR}/x11-fm/gnomemc
-#		gnumeric:${PORTSDIR}/math/gnumeric
+		gnumeric:${PORTSDIR}/math/gnumeric
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
