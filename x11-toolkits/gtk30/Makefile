@@ -10,7 +10,7 @@ PORTVERSION=	2.4.14
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.4,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
+		ftp://ftp.gtk.org/pub/gtk/v2.4/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
