@@ -1,55 +1,20 @@
---- configure.orig	Tue Feb 27 06:29:29 1996
-+++ configure	Sun Sep 27 16:15:59 1998
-@@ -9,9 +9,9 @@
+--- configure.orig	Tue Feb 27 21:29:29 1996
++++ configure	Sun Oct 10 17:49:35 1999
+@@ -1593,7 +1593,7 @@
+ CPPFLAGS="${CPPFLAGS} -DLIB_DIR=\\\"\$(XSHISENLIB)\\\""
  
- # Defaults:
- ac_help=
--ac_default_prefix=/usr/local
-+ac_default_prefix=/usr/X11R6
- # Any additions from configure.in:
--ac_default_prefix=/usr/local
-+ac_default_prefix=/usr/X11R6
- ac_help="$ac_help
-   --with-x                use the X Window System"
- ac_help="$ac_help
-@@ -53,7 +53,7 @@
- bindir='${exec_prefix}/bin'
- sbindir='${exec_prefix}/sbin'
- libexecdir='${exec_prefix}/libexec'
--datadir='${prefix}/share'
-+datadir='${prefix}/lib/X11'
- sysconfdir='${prefix}/etc'
- sharedstatedir='${prefix}/com'
- localstatedir='${prefix}/var'
-@@ -1370,7 +1370,11 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  LIBS="-lXt -lX11 $LIBS"
-+  if [ "$PORTOBJFORMAT" = "elf" ]; then
-+    LIBS="-lXpm -lXaw -lXt -lX11 $LIBS"
-+  else
-+    LIBS="-lXt -lX11 $LIBS"
-+  fi
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -1577,13 +1581,13 @@
- 
- 
- # Check whether --enable-japanese or --disable-japanese was given.
--if test "${enable_japanese+set}" = set; then
--  enableval="$enable_japanese"
--  cat >> confdefs.h <<EOF
-+#if test "${enable_japanese+set}" = set; then
-+#  enableval="$enable_japanese"
-+#  cat >> confdefs.h <<EOF
- #define KANJICODE "${enable_japanese}"
--EOF
-+#EOF
- 
--fi
-+#fi
- 
- 
- cat >> confdefs.h <<\EOF
+ for i in ${mandir} /usr/share/man /usr/man /usr/local/man; do
+-  for j in japanese japan ja ja_JP ja_JP.eucJP ja_JP.SJIS; do
++  for j in a_JP.EUC ja_JP.SJIS ja_JP.JIS7; do
+     if [ -d "$i/$j" ]; then
+       JAPANESE="$j"
+       break 2;
+@@ -1603,7 +1603,7 @@
+ case "${JAPANESE}" in
+ j*) ;;
+ *) if [ "${enable_japanese}" = "euc" ]; then
+-     JAPANESE="ja_JP.eucJP"
++     JAPANESE="ja_JP.EUC"
+    elif [ "${enable_japanese}" = "sjis" ]; then
+      JAPANESE="ja_JP.SJIS"
+    else
