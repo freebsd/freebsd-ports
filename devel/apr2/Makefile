@@ -29,10 +29,10 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	257
 USE_PERL5=		yes
 USE_GMAKE=		yes
-USE_LIBTOOL_VER=	14
+USE_LIBTOOL_VER=	15
 LIBTOOLFILES=		# none
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
