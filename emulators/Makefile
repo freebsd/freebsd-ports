@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.23 1998/02/10 03:07:37 jkh Exp $
+# $Id: Makefile,v 1.24 1998/02/21 21:25:03 steve Exp $
 #
 
     SUBDIR += aftp
@@ -26,6 +26,7 @@
     SUBDIR += stonx
     SUBDIR += tkhfs
     SUBDIR += vgb
+    SUBDIR += vice
     SUBDIR += vmsbackup
     SUBDIR += wine
     SUBDIR += x48
