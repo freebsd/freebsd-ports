@@ -3,7 +3,9 @@ for a considerable boost in performance and added flexibility
 in designing web based applications.
 
 WWW: http://www.modpython.org/
-developed by Gregory Trubetskoy <grisha@ispol.com>
+developed by Gregory Trubetskoy <grisha@modpython.org> and others
 
-- Hye-Shik "Perky" Chang
-  perky@python.or.kr
+This port requires a Python installation without threads support. Build &
+(re)install Python with WITHOUT_THREADS set.
+
+- Anders Nordby <anders@fix.no>
