@@ -18,6 +18,21 @@ COMMENT=	Extensive Toolkit for template processing
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=TEXT_AUTOFORMAT "With Text::Autoformat Plugin"		off \
+	GD		"With GD Plugin (needs perl5.6)"	off \
+	GD_TEXT		"With GD::Text Plugin (needs GD)"	off \
+	GD_GRAPH	"With GD::Graph Plugin (needs GD)"	off \
+	GD_GRAPH3D	"With GD::Graph3d Plugin (needs GD)"	off \
+	IMAGE_INFO	"With Image::Info Plugin"		off \
+	IMAGE_SIZE	"With Image::Size Plugin"		off \
+	DATE_CALC	"With Date::Calc Plugin"		off \
+	POD_POM		"With Pod::POM Plugin"			off \
+	TIE_DBI		"With Tie::DBI Plugin"			off \
+	XML_DOM		"With XML::DOM Plugin"			off \
+	XML_RSS		"With XML::RSS Plugin (needs perl5.6)"	off \
+	XML_XPATH	"With XML::XPath Plugin"		off \
+	DBI		"With DBI Plugin"			off
+
 PERL_CONFIGURE=	yes
 
 MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
@@ -28,6 +43,57 @@ MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+.endif
+
+.if defined(WITH_TEXT_AUTOFORMAT)
+BUILD_DEPENDS+=${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat
+.endif
+.if defined(WITH_IMAGE_INFO)
+BUILD_DEPENDS+=${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
+.endif
+.if defined(WITH_IMAGE_SIZE)
+BUILD_DEPENDS+=${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
+.endif
+.if defined(WITH_DATE_CALC)
+BUILD_DEPENDS+=${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+.endif
+.if defined(WITH_POD_POM)
+BUILD_DEPENDS+=${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM
+.endif
+.if defined(WITH_TIE_DBI)
+BUILD_DEPENDS+=${SITE_PERL}/Tie/DBI.pm:${PORTSDIR}/databases/p5-Tie-DBI
+.endif
+.if defined(WITH_XML_DOM)
+BUILD_DEPENDS+=${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
+.endif
+.if defined(WITH_XML_XPATH)
+BUILD_DEPENDS+=${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
+.endif
+
+.if defined(WITH_DBI)
+.if ${PERL_LEVEL} > 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.endif
+.endif
+
+.if ${PERL_LEVEL} > 500600
+.if defined(WITH_GD)
+BUILD_DEPENDS+=${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+.endif
+.if defined(WITH_GD_TEXT)
+BUILD_DEPENDS+=${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+.endif
+.if defined(WITH_GD_GRAPH)
+BUILD_DEPENDS+=${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+.endif
+.if defined(WITH_GD_GRAPH3D)
+BUILD_DEPENDS+=${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d
+.endif
+.if defined(WITH_XML_RSS)
+BUILD_DEPENDS+=${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 .endif
 .endif
 
