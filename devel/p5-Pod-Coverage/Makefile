@@ -26,4 +26,10 @@ MAN3=		Pod::Coverage.3 \
 		Pod::Coverage::ExportOnly.3 \
 		Pod::Coverage::Overloader.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
