@@ -5,5 +5,3 @@
 
 mv ${WRKSRC}/src/pathnames.h ${WRKSRC}/src/pathnames.h.bak
 sed <${WRKSRC}/src/pathnames.h.bak >${WRKSRC}/src/pathnames.h s+!!PREFIX!!+$PREFIX+g
-
-cp ${FILESDIR}/skey-stuff.c ${WRKSRC}/src/skey-stuff.c

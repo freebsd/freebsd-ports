@@ -1,12 +1,12 @@
-*** src/makefiles/Makefile.fbs.orig	Thu Jan 16 11:27:58 1997
---- src/makefiles/Makefile.fbs	Fri Feb  7 17:04:42 1997
+*** src/makefiles/Makefile.fbs.orig	Mon Mar  3 12:34:52 1997
+--- src/makefiles/Makefile.fbs	Mon Apr 28 00:43:47 1997
 ***************
 *** 1,8 ****
   CC       = cc
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   = -O ${IFLAGS} ${LFLAGS}
-! LIBES    = -lsupport -lcrypt
+! LIBES    = -lsupport -lutil -lcrypt 
   LIBC     = /usr/lib/libc.a
   LINTFLAGS=	
   LKERB    = -lauth -lckrb -lkrb -ldes
@@ -15,33 +15,10 @@
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   += ${IFLAGS} ${LFLAGS}
-! LIBES    = -lsupport -lutil -lskey -lmd -lcrypt
+! LIBES    = -lsupport -lutil -lcrypt -lskey -lmd
   LIBC     = /usr/lib/libc.a
   LINTFLAGS=	
   LKERB    = -lauth -lckrb -lkrb -ldes
-***************
-*** 10,19 ****
-  
-  SRCS   = ftpd.c ftpcmd.c glob.c logwtmp.c popen.c vers.c access.c extensions.c \
-  	 realpath.c acl.c private.c authenticate.c conversions.c hostacc.c \
-! 	 sigfix.c
-  OBJS   = ftpd.o ftpcmd.o glob.o logwtmp.o popen.o vers.o access.o extensions.o \
-  	 realpath.o acl.o private.o authenticate.o conversions.o hostacc.o \
-! 	 sigfix.o
-  
-  all: ftpd ftpcount ftpshut ckconfig
-  
---- 10,19 ----
-  
-  SRCS   = ftpd.c ftpcmd.c glob.c logwtmp.c popen.c vers.c access.c extensions.c \
-  	 realpath.c acl.c private.c authenticate.c conversions.c hostacc.c \
-! 	 sigfix.c skey-stuff.c
-  OBJS   = ftpd.o ftpcmd.o glob.o logwtmp.o popen.o vers.o access.o extensions.o \
-  	 realpath.o acl.o private.o authenticate.o conversions.o hostacc.o \
-! 	 sigfix.o skey-stuff.o
-  
-  all: ftpd ftpcount ftpshut ckconfig
-  
 ***************
 *** 24,30 ****
 --- 24,34 ----

@@ -1,24 +1,7 @@
-*** config.h.orig	Mon Jan 20 06:21:30 1997
---- config.h	Thu Jan 30 16:13:31 1997
+*** config.h.bak	Mon Mar  3 12:39:34 1997
+--- config.h	Sun Apr 27 21:03:14 1997
 ***************
-*** 30,35 ****
---- 30,43 ----
-  #define LOG_FAILED
-  
-  /*
-+  * log login attempts that fail because of class connection
-+  * limits.  Busy servers may want to prevent this logging
-+  * since it can fill up the log file and put a high load on
-+  * syslog.
-+  */
-+ #define LOG_TOOMANY
-+ 
-+ /*
-   * allow use of private file.  (for site group and site gpass)
-   */
-  
-***************
-*** 64,68 ****
+*** 72,76 ****
    * See README-2.4-HOBBIT for more information on this option.
    */
   
