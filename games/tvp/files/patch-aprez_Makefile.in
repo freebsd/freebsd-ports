@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- aprez/Makefile.in.orig	Sun Feb  1 22:29:17 2004
++++ aprez/Makefile.in	Sun Feb  1 22:16:59 2004
+@@ -30,6 +30,8 @@
+ 	# code...
+ 	cat ../ABOUT | perl -pe 's/(\")/\\$$1/g;' > tempfile2
+ 	perl -e '$$a=`cat tempfile1`; $$b=`cat tempfile2`; \
++	    $$a=~s/\n/\\n\"\n\"/g; $$a=~s/^/\"/g; $$a=~s/\"//; \
++	    $$b=~s/\n/\\n\"\n\"/g; $$b=~s/^/\"/g; $$b=~s/\"//; \
+ 	    while (<>) { \
+ 	        s/\!COPYING\!/$$a/g; \
+ 	        s/\!ABOUT\!/$$b/g; \
