@@ -152,6 +152,7 @@
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
+    SUBDIR += kkbswitch
     SUBDIR += knutclient
     SUBDIR += krename
     SUBDIR += lavaps

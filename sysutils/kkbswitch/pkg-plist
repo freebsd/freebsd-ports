@@ -1,0 +1,19 @@
+bin/kkbswitch
+share/applnk/Utilities/kkbswitch.desktop
+share/icons/locolor/16x16/apps/kkbswitch.png
+share/icons/locolor/32x32/apps/kkbswitch.png
+share/apps/kkbswitch/group_names
+share/locale/ru/LC_MESSAGES/kkbswitch.mo
+share/doc/HTML/en/kkbswitch/code_style.png
+share/doc/HTML/en/kkbswitch/flag_code_style.png
+share/doc/HTML/en/kkbswitch/flag_style.png
+share/doc/HTML/en/kkbswitch/index.docbook
+share/doc/HTML/en/kkbswitch/index.cache.bz2
+@cwd %%X11BASE%%
+lib/X11/xkb/symbols/ru_ua
+@cwd %%PREFIX%%
+@dirrm share/apps/kkbswitch
+@dirrm share/doc/HTML/en/kkbswitch/common
+@dirrm share/doc/HTML/en/kkbswitch
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
