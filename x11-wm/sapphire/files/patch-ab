@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb  7 07:57:13 2000
++++ src/Makefile.in	Fri Feb 18 03:26:13 2000
+@@ -66,7 +66,7 @@
+ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+ 
+-CXX = g++
++CXX = @CXX@
+ LDADD = $(X_LIBS) 
+ CPPFLAGS = $(X_CFLAGS) 
+ bin_PROGRAMS = sapphire

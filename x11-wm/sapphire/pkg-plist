@@ -1,1 +1,12 @@
 bin/sapphire
+bin/sapphire.inst
+share/sapphire/README
+share/sapphire/menu/default
+share/sapphire/themes/darkblue
+share/sapphire/themes/default
+share/sapphire/themes/slate
+share/sapphire/wmconfig/wmconf
+@dirrm share/sapphire/wmconfig
+@dirrm share/sapphire/themes
+@dirrm share/sapphire/menu
+@dirrm share/sapphire
