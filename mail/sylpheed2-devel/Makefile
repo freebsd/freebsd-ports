@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.9.99
+PORTVERSION=	1.0.0.b.1
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
 		http://sylpheed.good-day.net/sylpheed/:source \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
 MASTER_SITE_SUBDIR=	sylpheed-claws/:source oliver/:mime
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source mime.types:mime
-DIST_SUBDIR=	sylpheed
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	oliver@FreeBSD.org
