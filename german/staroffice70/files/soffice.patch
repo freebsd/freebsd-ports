@@ -1,8 +1,14 @@
---- new	Wed Aug 23 00:09:46 2000
-+++ soffice	Tue Aug 22 23:58:14 2000
-@@ -1,4 +1,4 @@
+--- soffice	Mon May  8 08:20:00 2000
++++ soffice.new	Fri Aug 25 15:19:40 2000
+@@ -1,7 +1,10 @@
 -#!/bin/sh
 +#!/compat/linux/bin/sh
  #
  # StarOffice startup script
  # (c) 1999 Sun Microsystems, Inc.
++
++# fix coredump on remote DISPLAY (IRIX)
++export SAL_IGNOREXERRORS=1
+ 
+ #
+ # STAR_PROFILE_LOCKING_DISABLED=1

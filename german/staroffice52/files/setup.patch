@@ -1,8 +1,18 @@
---- setup.orig	Wed Aug 23 00:02:57 2000
-+++ setup	Wed Aug 23 00:03:11 2000
+--- setup.orig	Fri Aug 25 12:04:52 2000
++++ setup	Fri Aug 25 12:00:21 2000
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/compat/linux/bin/sh
  #
  # StarOffice patch checking script
  # (c) 2000, Sun Microsystems Inc.
+@@ -9,6 +9,9 @@
+         SCO_SV) test=/bin/test     ;;
+         *)      test=/usr/bin/test ;;
+ esac
++
++# fix coredump on remote DISPLAY (IRIX)
++export SAL_IGNOREXERRORS=1
+ 
+ sd_cwd="`pwd`"
+ if $test -L "$0" ; then
