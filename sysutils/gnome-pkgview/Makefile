@@ -1,14 +1,14 @@
-# New ports collection makefile for:	pkgview
-# Date created:				14 November 2002
+# New ports collection makefile for:	gnome-pkgview
+# Date created:				20 November 2002
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	pkgview
-PORTVERSION=	0.0.6
+PORTNAME=	gnome-pkgview
+PORTVERSION=	0.0.7
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.gtnorthern.demon.co.uk/packages/pkgview/
+MASTER_SITES=	http://www.gtnorthern.demon.co.uk/packages/gnome-pkgview/
 
 MAINTAINER=	gnome@FreeBSD.org
 

@@ -1,10 +1,13 @@
-bin/pkgview
-share/gnome/applications/pkgview.desktop
-share/gnome/pixmaps/pkgview/logo.png
-share/gnome/pixmaps/pkgview/pkgview.png
-share/locale/da/LC_MESSAGES/pkgview.mo
-share/locale/de/LC_MESSAGES/pkgview.mo
-share/locale/en_GB/LC_MESSAGES/pkgview.mo
-share/locale/ja/LC_MESSAGES/pkgview.mo
-share/locale/nl/LC_MESSAGES/pkgview.mo
-@dirrm share/gnome/pixmaps/pkgview
+bin/gnome-pkgview
+share/gnome/applications/gnome-pkgview.desktop
+share/gnome/pixmaps/gnome-pkgview/logo.png
+share/gnome/pixmaps/gnome-pkgview/pkgview.png
+share/locale/da/LC_MESSAGES/gnome-pkgview.mo
+share/locale/de/LC_MESSAGES/gnome-pkgview.mo
+share/locale/en_GB/LC_MESSAGES/gnome-pkgview.mo
+share/locale/eo/LC_MESSAGES/gnome-pkgview.mo
+share/locale/es/LC_MESSAGES/gnome-pkgview.mo
+share/locale/it/LC_MESSAGES/gnome-pkgview.mo
+share/locale/ja/LC_MESSAGES/gnome-pkgview.mo
+share/locale/nl/LC_MESSAGES/gnome-pkgview.mo
+@dirrm share/gnome/pixmaps/gnome-pkgview
