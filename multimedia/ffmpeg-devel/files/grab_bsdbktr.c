@@ -39,8 +39,8 @@ typedef struct {
 	int frame_format; /* see VIDEO_PALETTE_xxx */
 	int width, height;
 	int frame_rate;
-	INT64 per_frame;
-	INT64 last_frame_time;
+	int frame_rate_base;
+	int64_t per_frame;
 } VideoData;
 
 const char *video_device = "/dev/bktr0";
@@ -63,11 +63,10 @@ const char *video_device = "/dev/bktr0";
 #define VIDEO_FORMAT NTSC
 #endif
 
-#ifndef VIDEO_INPUT
-#define VIDEO_INPUT METEOR_INPUT_DEV0;
-#endif
+static int bktr_dev[] = { METEOR_DEV0, METEOR_DEV1, METEOR_DEV2,
+                   METEOR_DEV3, METEOR_DEV_SVIDEO };
 
-static UINT8 *video_buf;
+static u_int8_t *video_buf;
 static int nsignals = 0;
 static void catchsignal(int signal)
 {
@@ -75,41 +74,65 @@ static void catchsignal(int signal)
 	return;
 }
 
-static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
+static int bktr_init (const char *video_device, int width, int height,
+	int format, u_int8_t **video_buf, int *video_fd, int *tuner_fd,
+	int idev, double frequency)
 {
-	VideoData *s = s1->priv_data;
-	int width, height, h_max;
-	int video_fd;
-	int format = VIDEO_FORMAT;
 	struct meteor_geomet geo;
+	int h_max;
+	long ioctl_frequency;
+	char *arg;
 	int c;
 	struct sigaction act,old;
+
+	if (idev < 0 || idev > 4)
+	{
+		arg = getenv ("BKTR_DEV");
+		if (arg)
+			idev = atoi (arg);
+		if (idev < 0 || idev > 4)
+			idev = 0;
+	}
+
+	if (format < 1 || format > 6)
+	{
+		arg = getenv ("BKTR_FORMAT");
+		if (arg)
+			format = atoi (arg);
+		if (format < 1 || format > 6)
+			format = VIDEO_FORMAT;
+	}
+
+	if (frequency <= 0)
+	{
+		arg = getenv ("BKTR_FREQUENCY");
+		if (arg)
+			frequency = atof (arg);
+		if (frequency <= 0)
+			frequency = 0.0;
+	}
 
 	memset(&act,0,sizeof(act));
 	sigemptyset(&act.sa_mask);
 	act.sa_handler  = catchsignal;
 	sigaction(SIGUSR1,&act,&old);
-	sigaction(SIGALRM,&act,&old);
 
-	width = s->width;
-	height = s->height;
-	s->last_frame_time = 0;
-
-	s->tuner_fd = open ("/dev/tuner0", O_RDONLY);
-	if (s->tuner_fd < 0) {
+	*tuner_fd = open ("/dev/tuner0", O_RDONLY);
+	if (*tuner_fd < 0) {
 		perror("Warning: Tuner not opened continuing");
 	}
 
-	video_fd = open(video_device, O_RDONLY);
-	if (video_fd < 0) {
-		perror(video_device);
-		return -EIO;
+	*video_fd = open (video_device, O_RDONLY);
+	if (*video_fd < 0) {
+		perror (video_device);
+		return -1;
 	}
-	s->fd=video_fd;
+
 	geo.rows = height;
 	geo.columns = width;
 	geo.frames = 1;
-	geo.oformat = METEOR_GEO_YUV_422 | METEOR_GEO_YUV_12;
+//	geo.oformat = METEOR_GEO_YUV_422 | METEOR_GEO_YUV_12;
+	geo.oformat = METEOR_GEO_YUV_PACKED;
 
 	switch (format) {
 	case PAL:   h_max = PAL_HEIGHT;   c = BT848_IFORM_F_PALBDGHI; break;
@@ -124,32 +147,67 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 		geo.oformat |= METEOR_GEO_EVEN_ONLY;
 	}
 
-	if (ioctl(video_fd, METEORSETGEO, &geo) < 0) {
+	if (ioctl(*video_fd, METEORSETGEO, &geo) < 0) {
 		perror ("METEORSETGEO");
-		return -EIO;
+		return -1;
 	}
 
-	if (ioctl(video_fd, BT848SFMT, &c) < 0) {
+	if (ioctl(*video_fd, BT848SFMT, &c) < 0) {
 		perror ("BT848SFMT");
-		return -EIO;
+		return -1;
 	}
 
-	c = VIDEO_INPUT;
-	if (ioctl(video_fd, METEORSINPUT, &c) < 0) {
+	c = bktr_dev[idev];
+	if (ioctl(*video_fd, METEORSINPUT, &c) < 0) {
 		perror ("METEORSINPUT");
-		return -EIO;
+		return -1;
 	}
-	video_buf = mmap((caddr_t)0, width*height*3, PROT_READ, MAP_SHARED,
-	                 video_fd, (off_t) 0);
-	if (video_buf == MAP_FAILED) {
+	*video_buf = (u_int8_t *) mmap((caddr_t)0, width*height*2,
+		PROT_READ, MAP_SHARED, *video_fd, (off_t) 0);
+	if (*video_buf == MAP_FAILED) {
 		perror ("mmap");
-		return -EIO;
+		return -1;
+	}
+	if (frequency != 0.0) {
+		ioctl_frequency  = (unsigned long)(frequency*16); 
+		if (ioctl(*tuner_fd, TVTUNER_SETFREQ, &ioctl_frequency)<0)
+			perror("TVTUNER_SETFREQ");
 	}
 	c = METEOR_CAP_CONTINOUS;
-	ioctl(s->fd, METEORCAPTUR, &c);
+	ioctl(*video_fd, METEORCAPTUR, &c);
 	c = SIGUSR1;
-	ioctl (s->fd, METEORSSIGNAL, &c);
+	ioctl (*video_fd, METEORSSIGNAL, &c);
 	return 0;
+}
+
+static void bktr_getframe(u_int64_t per_frame)
+{
+	u_int64_t curtime;
+	static u_int64_t last_frame_time = 0;
+
+	curtime = av_gettime();
+	if (!last_frame_time
+	    || ((last_frame_time + per_frame) > curtime)) {
+		if (!usleep (last_frame_time + per_frame + per_frame/8 - curtime)) {
+			if (!nsignals)
+				printf ("\nSLEPT NO signals - %d microseconds late\n",
+				        (int) (av_gettime() - last_frame_time - per_frame));
+		}
+	}
+	nsignals = 0;
+
+	last_frame_time = curtime;
+}
+
+void bf_memcpy (char *dest, char *src, int size)
+{
+	while (size -= 2)
+	{
+		dest[0] = src[1];
+		dest[1] = src[0];
+		dest += 2;
+		src += 2;
+	}
 }
 
 /* note: we support only one picture read at a time */
@@ -157,28 +215,21 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 {
 	VideoData *s = s1->priv_data;
 	int size, halfsize;
-	UINT64 curtime;
 
 	size = s->width * s->height;
 	halfsize = size << 1;
-	if (av_new_packet(pkt, size + halfsize) < 0)
+
+//	if (av_new_packet(pkt, size + halfsize) < 0)
+	if (av_new_packet(pkt, size + size) < 0)
 		return -EIO;
 
-	curtime = av_gettime();
-	if (!s->last_frame_time
-	    || ((s->last_frame_time + s->per_frame) > curtime)) {
-		if (!usleep (s->last_frame_time + s->per_frame + s->per_frame/8 - curtime)) {
-			if (!nsignals)
-				printf ("\nSLEPT NO signals - %d microseconds late\n",
-				        av_gettime() - s->last_frame_time - s->per_frame);
-		}
-	}
-	nsignals = 0;
+	bktr_getframe (s->per_frame);
+	pkt->pts = av_gettime() & ((1LL << 48) - 1);
+	bf_memcpy (pkt->data, video_buf, size + size);
+//	bf_memcpy (pkt->data, video_buf, size + halfsize);
 
-	s->last_frame_time = curtime;
-	pkt->pts = curtime & ((1LL << 48) - 1);
-	memcpy (pkt->data, video_buf, size + halfsize);
-	return size + halfsize;
+//	return size + halfsize;
+	return size + size;
 }
 
 static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
@@ -187,6 +238,8 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	AVStream *st;
 	int width, height;
 	int frame_rate;
+	int frame_rate_base;
+	int format = -1;
 
 	if (!ap || ap->width <= 0 || ap->height <= 0 || ap->frame_rate <= 0)
 		return -1;
@@ -194,26 +247,42 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	width = ap->width;
 	height = ap->height;
 	frame_rate = ap->frame_rate;
+	frame_rate_base = ap->frame_rate_base;
+
 	st = av_new_stream(s1, 0);
 	if (!st)
 		return -ENOMEM;
-	s1->priv_data = s;
-	s1->nb_streams = 1;
-	s1->streams[0] = st;
 
 	s->width = width;
 	s->height = height;
 	s->frame_rate = frame_rate;
-	s->per_frame = (INT64_C(1000000) * FRAME_RATE_BASE) / s->frame_rate;
-	st->codec.pix_fmt = PIX_FMT_YUV420P;
+	s->frame_rate_base = frame_rate_base;
+	s->per_frame = ((int64_t)1000000 * s->frame_rate_base) / s->frame_rate;
+
+	st->codec.codec_type = CODEC_TYPE_VIDEO;
+//	st->codec.pix_fmt = PIX_FMT_YUV420P;
+	st->codec.pix_fmt = PIX_FMT_YUV422;
 	st->codec.codec_id = CODEC_ID_RAWVIDEO;
 	st->codec.width = width;
 	st->codec.height = height;
 	st->codec.frame_rate = frame_rate;
+	st->codec.frame_rate_base = frame_rate_base;
 
-	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in us */
+	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in use */
 
-	return bktr_init(s1, ap);
+   if (ap->standard) {
+		if (!strcasecmp(ap->standard, "pal"))
+		    format = PAL;
+		if (!strcasecmp(ap->standard, "secam"))
+		    format = SECAM;
+		if (!strcasecmp(ap->standard, "ntsc"))
+		    format = NTSC;
+	}
+
+	if (bktr_init (video_device, width, height, format, &video_buf,
+		       &(s->fd), &(s->tuner_fd), -1, 0.0) < 0)
+		return -EIO;
+	return 0;
 }
 
 static int grab_read_close (AVFormatContext *s1)
@@ -224,12 +293,12 @@ static int grab_read_close (AVFormatContext *s1)
 	ioctl(s->fd, METEORCAPTUR, &c);
 	close(s->fd);
 	close(s->tuner_fd);
-	free(s);
+	av_free(s);
 	return 0;
 }
 
 AVInputFormat video_grab_device_format = {
-	"video_grab_device",
+	"video4linux",
 	"video grab",
 	 sizeof(VideoData),
 	 NULL,

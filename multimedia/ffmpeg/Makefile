@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTVERSION=	0.4.7
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -46,14 +45,17 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 WITHOUT_MMX=	yes
 .else
 # only for i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile \
-		${FILESDIR}/extra-bktr-patch-libavformat::avformat.h \
-		${FILESDIR}/extra-bktr-patch-ffmpeg.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 .endif
 
 ## lib detection
 ##
 ##
+## SDL
+.if exists(${LOCALBASE}/lib/libSDL-1.1.so)
+#WITH_SDL=yes
+.endif
+## imlib2
 .if exists(${X11BASE}/lib/libImlib2.so)
 WITH_IMLIB2=yes
 .endif
@@ -90,6 +92,14 @@ PLIST_SUB+=	IMLIB2="@comment "
 .ifdef(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
+## SDL
+.ifdef(WITH_SDL)
+USE_SDL=	yes
+
+PLIST_SUB+=	SDL=""
+.else
+PLIST_SUB+=	SDL="@comment "
+.endif
 ## mp3
 .ifdef(WITH_MP3)
 LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
@@ -121,25 +131,32 @@ CONFIGURE_ARGS+=	--enable-vorbis
 pre-everything::
 .ifndef(WITHOUT_LIBA52)
 	@${ECHO_MSG} "You can disable liba52 support by defining WITHOUT_LIBA52"
+	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_MMX)
 	@${ECHO_MSG} "Define WITHOUT_MMX if your system does not support MMX"
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_SDL)
+	@${ECHO_MSG} 'Define WITH_SDL to enable ffplay SDL version'
+	@${ECHO_MSG}
 .endif
 .ifndef(WITH_MP3)
 	@${ECHO_MSG} 'Define WITH_MP3 to enable lame MP3 codec'
+	@${ECHO_MSG}
 .endif
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG}
 	@${ECHO_MSG} 'You can enable additional compilation optimizations'
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
+	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_VHOOK)
-	@${ECHO_MSG}
 	@${ECHO_MSG} 'You can disable vhook support by defining WITHOUT_VHOOK'
+	@${ECHO_MSG}
 .endif
 .ifndef(WITH_VORBIS)
-	@${ECHO_MSG}
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
+	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
 .if !(defined(WITH_BKTR_FORMAT) && defined(WITH_BKTR_DEV))
@@ -177,17 +194,25 @@ post-patch:
 .endif
 .ifdef(WITH_BKTR_DEV)
 	@${REINPLACE_CMD} -e \
-		"s!VIDEO_INPUT METEOR_INPUT_DEV0!VIDEO_INPUT METEOR_INPUT_DEV${WITH_BKTR_DEV}!" \
+		"s!idev = 0!idev = ${WITH_BKTR_DEV}!" \
 		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
 .endif # ${ARCH} == i386
 # malloc.h was deprecated in favor of stdlib.h
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|malloc.h|stdlib.h|'
+		's|malloc\.h|stdlib\.h|'
 .ifndef(WITHOUT_LIBA52)
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/configure
+.endif
+.ifdef(WITH_SDL)
+	@${REINPLACE_CMD} -E \
+		-e 's|sdl-config|${SDL_CONFIG}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 ${REINPLACE_CMD} -E \
+		-e 's|#include <SDL|#include <SDL11/SDL|'
 .endif
 
 post-install:
