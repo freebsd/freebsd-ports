@@ -3,7 +3,7 @@
 # Date created:        16 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/16 10:47:12 kris Exp $
 #
 
 DISTNAME=	wmCalClock-1.22
@@ -26,7 +26,7 @@ ALL_TARGET=	clean all
 MAN1=		wmCalClock.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/wmCalClock.1 ${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/wmCalClock.1 ${PREFIX}/man/man1/
 	${INSTALL_PROGRAM} ${WRKSRC}/wmCalClock ${PREFIX}/bin/
 
 .include <bsd.port.mk>
