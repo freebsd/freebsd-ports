@@ -16,12 +16,17 @@ MAINTAINER=	domi@saargate.de
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOMAKE=	yes
+AUTOMAKE=	automake -a -i
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+MAN1=		geg.1
 
-CONFIGURE_ENV=	LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/geg ${PREFIX}/bin
+pre-configure:
+	@cd ${WRKSRC}; aclocal -I ${X11BASE}/share/aclocal
 
 .include <bsd.port.mk>

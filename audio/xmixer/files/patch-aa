@@ -1,11 +1,20 @@
---- Makefile.in.orig	Sat Aug 21 15:25:07 1999
-+++ Makefile.in	Wed Oct 27 06:02:28 1999
-@@ -33,16 +33,18 @@
+--- Makefile.in.orig	Sun Aug 22 07:25:07 1999
++++ Makefile.in	Sat Jul  1 15:58:55 2000
+@@ -13,7 +13,7 @@
+ DEF_MIXER = /dev/mixer
+ VERSION	= 0.9.3
+ 
+-CFLAGS	= -O -Wall @CFLAGS@ @X_CFLAGS@ -DDEFAULT_MIXER=\"$(DEF_MIXER)\" \
++CFLAGS	= @CFLAGS@ @X_CFLAGS@ -DDEFAULT_MIXER=\"$(DEF_MIXER)\" \
+ 			-DOSS -I$(top_srcdir) -I$(top_srcdir)/icons \
+ 			-DVERSION=\"$(VERSION)\"
+ LDFLAGS = @LDFLAGS@
+@@ -33,27 +33,29 @@
  	mkfb.pl < XMixer.ad > fallback.h
  
  gui_gtk.o: gui_gtk.c
 -	$(CC) $(CFLAGS) $(INCS) `gtk-config --cflags` -c $<
-+	$(CC) $(CFLAGS) $(INCS) `gtk12-config --cflags` -c $<
++	$(CC) $(CFLAGS) $(INCS) `$(GTK_CONFIG) --cflags` -c $<
  
  %.o:	%.c
  	$(CC) $(CFLAGS) $(INCS) -c $<
@@ -17,20 +26,22 @@
  
  gmixer: $(G_OBJS)
 -	$(LD) $(LDFLAGS) -o $@ $(G_OBJS) `gtk-config --libs`
-+	$(LD) $(LDFLAGS) -o $@ $(G_OBJS) `gtk12-config --libs`
++	$(LD) $(LDFLAGS) -o $@ $(G_OBJS) `$(GTK_CONFIG) --libs`
  
  Xw/libXw.a:
- 	cd Xw && make libXw.a
-@@ -51,9 +53,9 @@
+-	cd Xw && make libXw.a
++	cd Xw && $(MAKE) libXw.a
+ 
+ README: index.html
  	lynx -dump http://www/~rasca/xmixer/index.html | sed "s%//www/%//home.pages.de/%" > README
  
  install: $(PROGS)
 -	install -o bin xmixer $(bindir)
 -	install xmixer.man $(mandir)/xmixer.1
 -	install -o bin gmixer $(bindir)
-+	install -c -o bin xmixer $(bindir)
-+	install -c xmixer.man $(mandir)/xmixer.1
-+	install -c -o bin gmixer $(bindir)
++	${BSD_INSTALL_PROGRAM} xmixer $(bindir)
++	${BSD_INSTALL_MAN} xmixer.man $(mandir)/xmixer.1
++	${BSD_INSTALL_PROGRAM} gmixer $(bindir)
  
  install.lib: libmixer.a
  	install libsmixer.a $(LIBDIR)

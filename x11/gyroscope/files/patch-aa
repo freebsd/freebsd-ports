@@ -1,19 +1,29 @@
---- Makefile.orig	Sun Jan 31 03:30:22 1999
-+++ Makefile	Sat Jul 31 16:27:41 1999
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Sun Jan 31 01:30:22 1999
++++ Makefile	Sat Jul  1 17:49:53 2000
+@@ -1,20 +1,20 @@
 -CC = gcc
 +CC ?= gcc
  BINARYNAME = gyroscope
 -BIN_DIR = /usr/local/bin/
 -GTKINC = `gtk-config --cflags` -Wall -O2
 -GTKLIB = `gtk-config --libs`
-+BIN_DIR = ${X11BASE}/bin
-+GTKINC = `gtk12-config --cflags` -Wall -O2
-+GTKLIB = `gtk12-config --libs`
++BIN_DIR = ${PREFIX}/bin
++GTKINC = `$(GTK_CONFIG) --cflags`
++GTKLIB = `$(GTK_CONFIG) --libs`
  
  $(BINARYNAME):	main.o gtkcolorsel.o
- 	$(CC) -o $(BINARYNAME) main.o gtkcolorsel.o $(GTKLIB)
-@@ -17,4 +17,4 @@
+-	$(CC) -o $(BINARYNAME) main.o gtkcolorsel.o $(GTKLIB)
++	$(CC) $(CFLAGS) -o $(BINARYNAME) main.o gtkcolorsel.o $(GTKLIB)
+ 
+ gtkcolorsel.o:gtkcolorsel.c gtkcolorsel.h
+-	$(CC) gtkcolorsel.c -c $(GTKINC)
++	$(CC) $(CFLAGS) gtkcolorsel.c -c $(GTKINC)
+ 
+ main.o:	main.c
+-	$(CC) main.c -c	$(GTKINC)
++	$(CC) $(CFLAGS) main.c -c	$(GTKINC)
+ 
+ clean:	
  	-@ rm core -f *.o ./$(BINARYNAME)
  
  install:

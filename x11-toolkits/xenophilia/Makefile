@@ -15,8 +15,11 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
-ALL_TARGET=
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+ALL_TARGET=	# empty
 
 pre-install:
 		@${MKDIR} ${PREFIX}/lib/gtk/themes/engines

@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Sun Sep 19 13:56:52 1999
-+++ src/Makefile.in	Sun Sep 19 13:57:20 1999
+--- src/Makefile.in.orig	Fri Sep  3 00:50:10 1999
++++ src/Makefile.in	Sat Jul  1 18:19:43 2000
 @@ -26,9 +26,9 @@
  
  
@@ -12,3 +12,12 @@
  INSTALL = @INSTALL@
  
  SRCS = librc2.c file.c gpasman.c
+@@ -39,7 +39,7 @@
+ 	$(CC) -o gpasman $(OBJS) $(LDFLAGS) $(LIBS)
+ 
+ .c.o: $(SRCS)
+-	$(CC) -O2 -Wall $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ clean:
+ 	rm -f $(OBJS) gpasman core *~ *.bak

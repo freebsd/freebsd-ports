@@ -6,8 +6,8 @@
 -LIBS = `gtk-config --libs`
 -CC = gcc
 +CFLAGS ?= -O2
-+CFLAGS += `gtk12-config --cflags` -I. -Wall
-+LIBS = `gtk12-config --libs`
++CFLAGS += `$(GTK_CONFIG) --cflags` -I.
++LIBS = `$(GTK_CONFIG) --libs`
 +CC ?= gcc
  
  all:

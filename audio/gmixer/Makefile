@@ -15,12 +15,14 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 ALL_TARGET=	gmixer
 
-pre-install:
-	@ ${MKDIR} ${PREFIX}/share/pixmaps
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmixer ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/gmixer.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

@@ -1,11 +1,12 @@
---- Makefile.orig	Sun Jul 18 17:55:35 1999
-+++ Makefile	Sun Jul 18 17:57:42 1999
+--- Makefile.orig	Thu May 27 19:58:06 1999
++++ Makefile	Sat Jul  1 17:48:44 2000
 @@ -1,6 +1,6 @@
- CC = gcc
+-CC = gcc
 -CFLAGS = `gtk-config --cflags`
 -LDLIBS = `gtk-config --libs`
-+CFLAGS = `gtk12-config --cflags`
-+LDLIBS = `gtk12-config --libs`
++CC ?= gcc
++CFLAGS += `$(GTK_CONFIG) --cflags`
++LDLIBS = `$(GTK_CONFIG) --libs`
  
  all:	gmessage
  
@@ -14,7 +15,7 @@
  
  install: gmessage
 -	cp ./gmessage /usr/local/bin
-+	install -m 0555 -o root -g wheel -s gmessage /usr/X11R6/bin
++	${BSD_INSTALL_PROGRAM} gmessage ${PREFIX}/bin
  
  clean:
  	$(RM) *.o core gmessage

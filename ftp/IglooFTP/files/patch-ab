@@ -1,5 +1,5 @@
---- src/Makefile.orig	Thu Apr 15 11:05:15 1999
-+++ src/Makefile	Fri May 28 18:43:37 1999
+--- Makefile.orig	Thu Apr 15 11:05:15 1999
++++ Makefile	Fri May 28 18:43:37 1999
 @@ -1,14 +1,15 @@
  SHELL=/bin/sh
 -CC = gcc
@@ -10,8 +10,8 @@
 +CC?= gcc
 +C_FLAGS = $(CFLAGS)
 +# -Wall -g -O2 -m486 -fno-strength-reduce
-+GTK_CFLAGS = `gtk12-config --cflags`
-+GTK_LIBS = `gtk12-config --libs` 
++GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
++GTK_LIBS = `$(GTK_CONFIG) --libs` 
 +LFLAGS = $(GTK_LIBS) -lXmu -lXt -lSM -lICE
  PROGNAME = IglooFTP
  PROGNAME-STATIC = IglooFTP-static
@@ -34,14 +34,14 @@
 -	/usr/bin/install -m 644 ../share/bookmarks/* $(SHARE_PATH)/bookmarks/
 -	/usr/bin/install -m 644 ../share/app_ass/* $(SHARE_PATH)/app_ass/
 -	/usr/bin/install -m 644 ../share/gtkrc $(SHARE_PATH)/gtkrc	
-+	/usr/bin/install -c -s -m 755 $(PROGNAME) $(BIN_PATH)
-+	/usr/bin/install -c -m 644 ../share/docs/* $(SHARE_PATH)/docs/
-+	/usr/bin/install -c -m 644 ../share/html/*.* $(SHARE_PATH)/html/
-+	/usr/bin/install -c -m 644 ../share/html/images/*.* $(SHARE_PATH)/html/images/
-+	/usr/bin/install -c -m 644 ../share/xpm/* $(SHARE_PATH)/xpm/
-+	/usr/bin/install -c -m 644 ../share/bookmarks/* $(SHARE_PATH)/bookmarks/
-+	/usr/bin/install -c -m 644 ../share/app_ass/* $(SHARE_PATH)/app_ass/
-+	/usr/bin/install -c -m 644 ../share/gtkrc $(SHARE_PATH)/gtkrc	
++	${BSD_INSTALL_PROGRAM} $(PROGNAME) $(BIN_PATH)
++	${BSD_INSTALL_DATA} ../share/docs/* $(SHARE_PATH)/docs/
++	${BSD_INSTALL_DATA} ../share/html/*.* $(SHARE_PATH)/html/
++	${BSD_INSTALL_DATA} ../share/html/images/*.* $(SHARE_PATH)/html/images/
++	${BSD_INSTALL_DATA} ../share/xpm/* $(SHARE_PATH)/xpm/
++	${BSD_INSTALL_DATA} ../share/bookmarks/* $(SHARE_PATH)/bookmarks/
++	${BSD_INSTALL_DATA} ../share/app_ass/* $(SHARE_PATH)/app_ass/
++	${BSD_INSTALL_DATA} ../share/gtkrc $(SHARE_PATH)/gtkrc	
  
  
  

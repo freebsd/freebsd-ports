@@ -5,7 +5,7 @@
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-licq "`glib-config --libs`" $LIBS"
-+LIBS="-licq "`glib12-config --libs`" $LIBS"
++LIBS="-licq "`$GLIB_CONFIG --libs`" $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 3985 "configure"
  #include "confdefs.h"

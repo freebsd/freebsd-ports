@@ -16,6 +16,15 @@ MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-USE_AUTOCONF=	yes
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+USE_AUTOMAKE=	yes
+AUTOMAKE=	automake -a -i
+CONFIGURE_ENV=	CPPFALGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@cd ${WRKSRC}; aclocal -I ${X11BASE}/share/aclocal
 
 .include <bsd.port.mk>

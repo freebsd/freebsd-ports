@@ -18,18 +18,23 @@ MAINTAINER=	dima@chg.ru
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-WRKSRC=		${WRKDIR}/GGSD
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+WRKSRC=		${WRKDIR}/GGSD
+
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
 do-install:
 
-		@ ${INSTALL_PROGRAM} ${WRKSRC}/ggsd ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ggsd ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-		@ ${MKDIR} ${PREFIX}/share/doc/ggsd
-		@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ggsd
-		@ ${INSTALL_DATA} ${WRKSRC}/example.scr ${PREFIX}/share/doc/ggsd
+	@${MKDIR} ${PREFIX}/share/doc/ggsd
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ggsd
+	${INSTALL_DATA} ${WRKSRC}/example.scr ${PREFIX}/share/doc/ggsd
 .endif
 
 .include <bsd.port.mk>

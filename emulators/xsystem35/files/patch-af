@@ -5,14 +5,14 @@
   * include / library / definition
   */
 -SYS_LIBRARIES   = -lm `gtk-config --libs`
-+SYS_LIBRARIES   = -lm `gtk12-config --libs`
++SYS_LIBRARIES   = -lm `$(GTK_CONFIG) --libs`
  #ifdef ENABLE_ESD
  EXTRA_LIBRARIES = $(OSDEPLIB) -lesd
  #else
  EXTRA_LIBRARIES = $(OSDEPLIB)
  #endif
 -EXTRA_INCLUDES  = `gtk-config --cflags` $(OSDEPINC)
-+EXTRA_INCLUDES  = `gtk12-config --cflags` $(OSDEPINC)
++EXTRA_INCLUDES  = `$(GTK_CONFIG) --cflags` $(OSDEPINC)
  EXTRA_DEFINES   = $(OSDEPDEF)
  
  /*

@@ -5,7 +5,7 @@
  
  grimview: grimview.o $(zilla)
 -	gcc -o grimview grimview.o $(zilla) `gtk-config --libs` -ljpeg
-+	gcc -o grimview grimview.o $(zilla) `gtk12-config --libs` -ljpeg
++	$(CC) $(CFLAGS) -o grimview grimview.o $(zilla) `$(GTK_CONFIG) --libs` -ljpeg
  .c.o:
 -	gcc -Wall `gtk-config --cflags` -c $<
-+	gcc -Wall `gtk12-config --cflags` -c $<
++	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags` -c $<

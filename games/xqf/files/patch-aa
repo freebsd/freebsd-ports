@@ -8,8 +8,8 @@
 -CFLAGS	= -O2 -g -Wall `gtk-config --cflags` $(EXTRA_CFLAGS)
 -LDFLAGS	= `gtk-config --libs`
 +CC	?= gcc
-+CFLAGS	+= -Wall `gtk12-config --cflags` $(EXTRA_CFLAGS)
-+LDFLAGS	= `gtk12-config --libs`
++CFLAGS	+= `$(GTK_CONFIG) --cflags` $(EXTRA_CFLAGS)
++LDFLAGS	= `$(GTK_CONFIG) --libs`
  
 -INSTALL_ROOT = /usr/local
 +INSTALL_ROOT = ${PREFIX}
@@ -21,7 +21,7 @@
  
  install:
 -	install -s -m 755 -g root -o root $(TARGET) $(INSTALL_ROOT)/bin
-+	${INSTALL_PROGRAM} $(TARGET) $(INSTALL_ROOT)/bin
++	${BSD_INSTALL_PROGRAM} $(TARGET) $(INSTALL_ROOT)/bin
  
  dist-clean clean:
  	rm -f *.[oasi] *~ core $(TARGET) Makefile.old

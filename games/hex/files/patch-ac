@@ -11,11 +11,11 @@
  
  .c.o:
 -	$(CC) `gtk-config --cflags` -c $*.c -o $*.o
-+	$(CC) $(CFLAGS) `gtk12-config --cflags` -c $*.c -o $*.o
++	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags` -c $*.c -o $*.o
  
  hex: $(OBJS)
 -	$(CC) $(LIBS) `gtk-config --libs` $(OBJS)  -o $@
-+	$(CC) $(LIBS) `gtk12-config --libs` $(OBJS)  -o $@
++	$(CC) $(LIBS) `$(GTK_CONFIG) --libs` $(OBJS)  -o $@
  
  clean: 
  	rm -f *~ *.o hex

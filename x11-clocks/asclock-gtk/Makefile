@@ -15,9 +15,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 HAS_CONFIGURE=	YES
-WRKSRC=		${WRKDIR}/asclock-gtk
 USE_X_PREFIX=	YES
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 ALL_TARGET=	asclock
 
 .if defined(BATCH)

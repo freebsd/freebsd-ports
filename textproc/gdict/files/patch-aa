@@ -8,7 +8,7 @@
 -CFL_GTK	= $(CFLAGS) `gtk-config --cflags` `gtk-config --libs`
 +CC	?= gcc
 +CFLAGS	?= -O6 -Wall
-+CFL_GTK	= $(CFLAGS) `gtk12-config --cflags` `gtk12-config --libs`
++CFL_GTK	= $(CFLAGS) `$(GTK_CONFIG) --cflags` `$(GTK_CONFIG) --libs`
  CFL	= $(CFLAGS)
  OBJECTS_GDICT	= gdict.c 
  OBJECTS_DICT	= dict.c

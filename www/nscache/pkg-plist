@@ -1,1 +1,4 @@
 bin/nscache
+share/locale/de/LC_MESSAGES/nscache.mo
+share/locale/it/LC_MESSAGES/nscache.mo
+share/locale/sk/LC_MESSAGES/nscache.mo

@@ -13,29 +13,30 @@ MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
-USE_X_PREFIX=	YES
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-USE_GMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
-pre-install:
-	@${MKDIR} ${PREFIX}/share/hex
-	@${MKDIR} ${PREFIX}/share/hex/levels
-	@${MKDIR} ${PREFIX}/share/hex/graphics
+USE_X_PREFIX=	YES
+USE_GMAKE=	YES
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin/hex
-	@${INSTALL_DATA} ${WRKSRC}/HISTORY ${PREFIX}/share/hex/HISTORY
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/hex/README
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/hex/TODO
+	${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/hex/graphics
 .for i in 0 1 2 3 4 5 6 7 8
-	@${INSTALL_DATA} ${WRKSRC}/graphics/ball${i}.png \
+	${INSTALL_DATA} ${WRKSRC}/graphics/ball${i}.png \
 			 ${PREFIX}/share/hex/graphics/ball${i}.png
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/levels/Level1 \
+	@${MKDIR} ${PREFIX}/share/hex/levels
+	${INSTALL_DATA} ${WRKSRC}/levels/Level1 \
 			 ${PREFIX}/share/hex/levels/Level1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/hex
+.for file in HISTORY README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/hex
+.endfor
+.endif
 
 .include <bsd.port.mk>
