@@ -41,7 +41,7 @@
    ********************************************************/
   
   
-! #define SUN_OS4		/* Operating System */
+! #define LINUX		/* Operating System */
   /*
      Pick one of the following Operating System types which describes
      your system and replace the SUN_OS4 value above
