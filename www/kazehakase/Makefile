@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/11612/
+MASTER_SITE_SUBDIR=	${PORTNAME}/12026/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ahze@ahze.net
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
@@ -34,6 +34,7 @@ FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .if defined(WITH_MIGEMO)
 USE_RUBY=	yes
+BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .endif
 

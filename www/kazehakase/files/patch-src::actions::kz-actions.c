@@ -1,6 +1,6 @@
---- src/main.c.orig	Thu Oct 28 20:27:54 2004
-+++ src/main.c	Thu Oct 28 20:29:00 2004
-@@ -777,10 +777,10 @@
+--- src/actions/kz-actions.c.orig	Fri Oct 29 23:26:27 2004
++++ src/actions/kz-actions.c	Fri Oct 29 23:29:21 2004
+@@ -1500,10 +1500,10 @@
  	/* windows */
  	for (node = list; node; node = g_list_next(node))
  	{
@@ -10,5 +10,5 @@
  		tabs = kz_bookmark_get_children(window_bookmark);
 -		KzWindow *window;
  
- 		window = KZ_WINDOW(kz_window_new(NULL));
- 	       	/* 
+ 		if (!window_node)
+ 		{

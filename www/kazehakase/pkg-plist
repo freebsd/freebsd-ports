@@ -7,6 +7,7 @@ etc/kazehakase/kz-ui-bookmarks.xml
 etc/kazehakase/kz-ui-expert.xml
 etc/kazehakase/kz-ui-medium.xml
 etc/kazehakase/kzrc
+etc/kazehakase/mozilla/encodings.xml
 etc/kazehakase/proxyrc
 etc/kazehakase/smartbookmarks.xml
 share/gnome/applications/kazehakase.desktop
@@ -51,4 +52,5 @@ share/gnome/pixmaps/kazehakase-icon.png
 share/locale/ja/LC_MESSAGES/kazehakase.mo
 @dirrm share/gnome/kazehakase/icons
 @dirrm share/gnome/kazehakase
+@dirrm etc/kazehakase/mozilla
 @dirrm etc/kazehakase
