@@ -8,7 +8,7 @@
 PORTNAME=	tirc
 PORTVERSION=	1.2
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/Network/Irc/tirc/
+MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/network/irc/tirc/
 
 MAINTAINER=	dr@astorit.com
 
