@@ -7,9 +7,6 @@
 #
 
 RESOLUTION=	400
-
-.include <bsd.port.pre.mk>
-
-MASTERDIR=	${PORTSDIR}/japanese/ptex-pkfonts300
+MASTERDIR=	${.CURDIR}/../ptex-pkfonts300
 
 .include "${MASTERDIR}/Makefile"

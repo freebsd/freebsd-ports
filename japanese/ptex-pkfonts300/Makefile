@@ -15,8 +15,6 @@ MAINTAINER=	inagaki@tg.rim.or.jp
 
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}
 
-.include <bsd.port.pre.mk>
-
 NO_BUILD=	yes
 PKGREQ=		${WRKDIR}/REQ
 
@@ -54,4 +52,4 @@ do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${WRKDIR}/REQ ${PKGNAME} INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
