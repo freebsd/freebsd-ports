@@ -42,16 +42,16 @@ else
     size=$(/bin/ls -sk $log.log | awk '{print $1}')
     echo -n "$size KB" >>$of
     echo -n "</td><td valign=\"top\">" >>$of
-    dir=$(sed -n -e '3p' $log.log | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
+    dir=$(sed -n -e '4p' $log.log | awk '{print $3}' | sed -e 's,^/[^/]*/[^/]*/,,')
     echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
     echo -n "</td><td valign=\"top\">" >>$of
     maint=$(sed -n -e '3p' $log.log | awk '{print $3}')
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
     echo "</td><td valign=\"top\">" >>$of
-    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^=======/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
-      echo "$file<br>" >>$of
-    done
+    cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^list of/,$d' | awk '{print $11}' | sed -E -e 's,^,<font color=\"magenta\">,' -e 's,(usr/(local|X11R6)),<font color=\"black\">\1,g' -e 's,$,</font></font><br>,' >>$of
+    cat $log.log | sed -e '1,/^list of files present before this port was installed/d' -e '/^list of/,$d' -e 's,^\./,,' | awk '{print $1}' | sed -e 's,^,<font color=\"orange\">,' -e 's,$, (missing)</font><br>,' >> $of
+    cat $log.log | sed -e '1,/^list of filesystem changes/d' -e '/^	/d' | awk '{print $1}' | sed -e 's,^,<font color=\"red\">,' -e 's,$, (changed)</font><br>,' >>$of
     echo "</td></tr>" >>$of
     shift
   done
