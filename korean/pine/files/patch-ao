@@ -1,0 +1,20 @@
+*** pico/tcap.c.bak	Fri Mar 15 10:42:31 1996
+--- pico/tcap.c	Thu Jan 29 22:04:28 1998
+***************
+*** 322,328 ****
+  	KPPU   = tgetstr("kP", &p);
+  	KPPD   = tgetstr("kN", &p);
+  	KPHOME = tgetstr("kh", &p);
+! 	KPEND  = tgetstr("kE", &p);
+  	KPDEL  = tgetstr("kD", &p);
+  	KU     = tgetstr("ku", &p);
+  	KD     = tgetstr("kd", &p);
+--- 322,329 ----
+  	KPPU   = tgetstr("kP", &p);
+  	KPPD   = tgetstr("kN", &p);
+  	KPHOME = tgetstr("kh", &p);
+! 	if((KPEND = tgetstr("@7", &p)) == NULL)
+! 	  KPEND  = tgetstr("kE", &p);
+  	KPDEL  = tgetstr("kD", &p);
+  	KU     = tgetstr("ku", &p);
+  	KD     = tgetstr("kd", &p);

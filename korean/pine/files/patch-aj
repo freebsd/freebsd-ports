@@ -1,0 +1,17 @@
+*** imap/ANSI/c-client/os_bsi.h.bak	Wed Feb  7 12:01:07 1996
+--- imap/ANSI/c-client/os_bsi.h	Sun Jul 20 01:47:23 1997
+***************
+*** 36,42 ****
+--- 36,47 ----
+  #include <stdlib.h>
+  #include <string.h>
+  #include <sys/types.h>
++ #ifdef __FreeBSD__
++ #include <dirent.h>
++ #define direct dirent
++ #else
+  #include <sys/dir.h>
++ #endif
+  #include <sys/uio.h>		/* needed for writev() prototypes */
+  #include <fcntl.h>
+  #include <syslog.h>

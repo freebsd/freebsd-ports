@@ -1,0 +1,32 @@
+*** pico/os_unix.h.orig	Thu Jun 13 00:47:23 1996
+--- pico/os_unix.h	Thu Jan 29 21:29:51 1998
+***************
+*** 122,133 ****
+  /*
+   * Place where mail gets delivered (for pico's new mail checking)
+   */
+  #if	defined(sv3) || defined(ct) || defined(isc) || defined(AUX) || defined(sgi)
+  #define	MAILDIR		"/usr/mail"
+  #else
+  #define	MAILDIR		"/usr/spool/mail"
+  #endif
+! 
+  
+  /*
+   * What and where the tool that checks spelling is located.  If this is
+--- 122,136 ----
+  /*
+   * Place where mail gets delivered (for pico's new mail checking)
+   */
++ #ifdef __FreeBSD__
++ #define MAILDIR         "/var/mail"
++ #else
+  #if	defined(sv3) || defined(ct) || defined(isc) || defined(AUX) || defined(sgi)
+  #define	MAILDIR		"/usr/mail"
+  #else
+  #define	MAILDIR		"/usr/spool/mail"
+  #endif
+! #endif
+  
+  /*
+   * What and where the tool that checks spelling is located.  If this is

@@ -63,7 +63,7 @@
 + LOCLIBDIR=   -L$(PICODIR)
 + LIBES=       $(EXTRALIBES) $(LOCLIBDIR) $(LOCLIBES) $(STDLIBES)
 + 
-+ STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
++ STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -DTERMCAP_WINS
 + CFLAGS+=     $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
 + 
 + obj=    addrbook.o adrbklib.o args.o context.o filter.o \

@@ -1,0 +1,32 @@
+diff -uNr ../../pine.old/work/pine396k2/pinerc.sample pine396k2/pinerc.sample
+--- ../../pine.old/work/pine396k2/pinerc.sample	Thu Jun  5 02:09:47 1997
++++ pine396k2/pinerc.sample	Sun Mar 15 19:28:30 1998
+@@ -49,8 +49,8 @@
+ # List, only needed if nntp-server not set, or news is on a different host
+ # than used for NNTP posting. Examples: News *[] or News *{host3/nntp}[]
+ # Syntax: optnl-label *{news-host/protocol}[]
+-news-collections=*{babyblue.cs.yale.edu/nntp}[],
+-	*{net161-61.student.yale.edu/nntp}[]
++#news-collections=*{babyblue.cs.yale.edu/nntp}[],
++#	*{net161-61.student.yale.edu/nntp}[]
+ 
+ # List of folder pairs; the first indicates a folder to archive, and the
+ # second indicates the folder read messages in the first should
+@@ -124,7 +124,7 @@
+ 	Attchmnt:
+ 
+ # Add these customized headers (and possible default values) when composing
+-customized-hdrs=Reply-To: jshin@minerva.cis.yale.edu
++#customized-hdrs=Reply-To: jshin@minerva.cis.yale.edu
+ 
+ # When viewing messages, include this list of headers
+ viewer-hdrs=From:,
+@@ -159,7 +159,7 @@
+ 
+ # Specifies the program invoked by ^_ in the Composer,
+ # or the "enable-alternate-editor-implicitly" feature.
+-editor=hvi
++#editor=hvi
+ 
+ # Specifies the program invoked by ^T in the Composer.
+ speller=

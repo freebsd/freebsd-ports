@@ -1,5 +1,5 @@
-pine-3.96k
-----------
+pine
+----
 
 Pine for FreeBSD 2.x is a tool for reading, sending, and managing
 electronic messages.  It was designed specifically with novice
@@ -20,4 +20,4 @@ It is patched to remove a couple of incompatibilities with RFC 1557
 and Hangul MTA. Patch is by Jungshik Shin <jshin@pantheon.yale.edu>.
 
 --
-Port by Choi Jun Ho <junker@jazz.snu.ac.kr>
+Port by CHOI Junho <junker@jazz.snu.ac.kr>
