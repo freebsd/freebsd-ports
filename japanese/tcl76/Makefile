@@ -37,6 +37,10 @@ NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${DISTNAME}
 
@@ -52,7 +56,7 @@ pre-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
 
 post-install:
-.if ${PORTOBJFORMAT} == "aout" 
+.if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtcl76jp.so.1.0 ${PREFIX}/lib/libtcl76jp.so
 .endif
 .if exists(${PKGINSTALL})
