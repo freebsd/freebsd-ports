@@ -1,0 +1,120 @@
+.\"	$Id: portlint.1,v 1.8 1997/11/25 14:53:14 itojun Exp $
+.\"
+.\" Copyright (c) 1997 by Jun-ichiro Itoh <itojun@itojun.org>.
+.\" All Rights Reserved.  Absolutely no warranty.
+.\"
+.Dd July 11, 1997
+.Dt PORTLINT 1
+.Sh NAME
+.Nm portlint
+.Nd a verifier for port directory
+.Sh SYNOPSIS
+.Nm portlint
+.Op Fl abchvN
+.Op Fl B Ar n
+.Op Ar dir
+.Sh DESCRIPTION
+.Nm
+tries to verify the content of a port directory.
+The purpose of
+.Nm
+can be separated into two parts:
+.Pq 1
+to let the submitters easily polish her/his own port directory, and
+.Pq 2
+to decrease the labor of the committers.
+.Pp
+.Nm
+uses very simple regular-expression matching for verifying
+files that make up a port directory.
+Note that it does NOT implement complete parser for those files.
+Because of this the user may see some extra warnings,
+especially when checking complex
+.Pa Makefile Ns No s .
+.Pp
+.Sy Options
+.Bl -tag -width Fl
+.It Fl a
+Perform additional checks for extra files, such as
+.Pa scripts/*
+and
+.Pa pkg/* .
+.It Fl b
+Warn the use of
+.Pa $(VARIABLE) .
+Some of the committers prefer
+.Pa ${VARIABLE}
+instead of 
+.Pa $(VARIABLE) ,
+even though they are semantically same.
+.It Fl c
+Committer flag.
+It will add several checks useful only for committers.
+If you are a committer and performing check just before commiting a port,
+use this option.
+.It Fl h
+Show the summary of command line options, then exit.
+.It Fl v
+Be verbose.
+Show the progress report for items that are being checked.
+.It Fl N
+New port flag.
+Adds several checks specific to newly submitted port.
+If you are willing to submit the directory to be checked as a new port,
+use this option.
+.It Fl B Ar n
+Set the number of contiguous blank lines allowed in 
+.Pa Makefile
+to
+.Ar n .
+(by default,
+.Ar n
+is 1)
+.It dir
+The port directory to be checked.
+If omitted, check will be performed over the current directory.
+.El
+.Sh DIAGNOSTICS
+Messages will be sent to standard output, not standard error output.
+.Bl -tag -width WARN: foobaa
+.It FATAL: ...
+This type of error messages suggest that there is some fatal error
+in the port directory.
+For example, if some files need a rewrite, or if
+some inevitable files are missing, this message will show up.
+This kind of errors should be avoided BEFORE submitting
+a port via send-pr to the comitters.
+.\"If a submitter submit it without update, committers will need to rewrite
+.\"on behalf of the submitters, which may result in delay of
+.\"the development of operating system itself.
+.It WARN: ...
+This type of error messages suggest that some files may (or may not)
+need some fix.
+Basically, warnings are produced when
+.Nm
+is not completely sure about the result.
+For example, complex
+.Pa Makefile Ns No s
+may need some statements that can match the regular expression
+.Nm
+uses for sanity checks.
+In those cases, the user should evaluate the result manually,
+and obey/ignore the result.
+.It OK: ...
+This type of messages are used in verbose mode
+.Pq Fl v .
+.El
+.Sh FILES
+.Bl -tag -width /usr/share/mk/bsd.port.mk -compact
+.It Pa /usr/share/mk/bsd.port.mk
+master Makefile for ports
+.It Pa /usr/ports/*
+port collection
+.Sh AUTHORS
+Jun-ichiro Itoh <itojun@itojun.org>
+and
+Yoshishige Arai <ryo2@on.rim.or.jp>.
+Many people has contributed patches and comments/suggestions.
+.Sh BUGS
+.Nm
+is not a magic wand, as described above.
