@@ -8,9 +8,10 @@
 PORTNAME=	base64
 PORTVERSION=	1.3
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/
+MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
+		http://dl.droso.net/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
