@@ -8637,7 +8637,6 @@ postfinger	ports/mail/postfinger
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix1	ports/mail/postfix1
-postfix20	ports/mail/postfix20
 postfixadmin	ports/mail/postfixadmin
 postgis		ports/databases/postgis
 postgis-jdbc	ports/databases/postgis-jdbc
