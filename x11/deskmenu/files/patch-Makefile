@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun Jan 19 15:41:43 2003
++++ Makefile	Sun Jan 19 15:42:30 2003
+@@ -1,8 +1,7 @@
+-CC        = gcc
+-CFLAGS    = -g -O2 -Wall `gtk-config --cflags`
+-XROOT     = /usr/X11
++CFLAGS    = -g -O2 -Wall `gtk12-config --cflags`
++XROOT     = ${X11BASE}
+ INCLUDES  = -I$(XROOT)/include
+-LIBS      = -lX11 `gtk-config --libs`
++LIBS      = -lX11 `gtk12-config --libs`
+ LDPATH    = -L$(XROOT)/lib
+ 
+ PROG      = deskmenu
+@@ -10,7 +9,6 @@
+ RCFILE    = -DRCFILE=\".deskmenurc\"
+ DEBUG     = #-DDEBUG
+ DEFINES   = $(RCFILE) $(DEBUG)
+-PREFIX    = /usr
+ 
+ OBJS      = $(PROG).o popup.o workspaces.o windows.o
+ 
+@@ -23,7 +21,7 @@
+ 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -c $< -o $@
+ 
+ install: all
+-	install $(PROG) $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(PREFIX)/bin
+ 
+ clean:
+ 	rm -f $(PROG) $(OBJS)
