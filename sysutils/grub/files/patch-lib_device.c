@@ -1,5 +1,5 @@
 --- lib/device.c.orig	Sat Jan 17 18:57:57 2004
-+++ lib/device.c	Sat Jan 31 06:32:24 2004
++++ lib/device.c	Mon Mar  1 06:36:39 2004
 @@ -78,6 +78,12 @@
  # include <sys/ioctl.h>		/* ioctl */
  # include <sys/disklabel.h>
@@ -36,7 +36,7 @@
    /* FreeBSD, NetBSD or OpenBSD */
    {
      struct disklabel hdg;
-+#if __FreeBSD_version < 500040
++#if !defined(__FreeBSD__) || __FreeBSD_version < 500040
      if (ioctl (fd, DIOCGDINFO, &hdg))
        goto fail;
      
