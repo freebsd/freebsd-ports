@@ -7,11 +7,14 @@
 
 PORTNAME=	socklog
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Small and secure replacement for syslogd
+
+RUN_DEPENDS=	chpst:${PORTSDIR}/sysutils/runit
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default
