@@ -18,5 +18,5 @@ lib/help/robot.info
 %%PORTDOCS%%%%EXAMPLESDIR%%/sinplot_demo.rob
 %%PORTDOCS%%%%EXAMPLESDIR%%/style_demo.rob
 %%PORTDOCS%%%%EXAMPLESDIR%%/title_demo.rob
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
