@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:22:44 asami Exp $
+# $Id: Makefile,v 1.5 1997/04/21 00:30:27 obrien Exp $
 #
 
 DISTNAME=	dlmalloc
@@ -24,6 +24,6 @@ do-extract:
 	${CP} -p ${FILESDIR}/Makefile ${WRKDIR}
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

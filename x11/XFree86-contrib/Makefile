@@ -3,7 +3,7 @@
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1996/12/07 12:51:11 asami Exp $
+# $Id: Makefile,v 1.4 1997/06/09 22:42:16 jmz Exp $
 #
 
 DISTNAME=	XFree86-contrib-3.3
@@ -24,6 +24,6 @@ DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/contrib
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

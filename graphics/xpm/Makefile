@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1997/01/10 03:35:50 ache Exp $
+# $Id: Makefile,v 1.13 1997/01/15 18:30:17 ache Exp $
 #
 
 DISTNAME=       xpm-3.4j
@@ -13,6 +13,6 @@ MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
 USE_IMAKE=	yes
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

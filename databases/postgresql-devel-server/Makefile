@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1997/06/14 19:40:03 andreas Exp $
+# $Id: Makefile,v 1.12 1997/06/14 21:10:42 andreas Exp $
 
 DISTNAME=	postgresql-v6.1
 PKGNAME=	postgresql-6.1
@@ -60,7 +60,7 @@ post-install:
 	fi
 	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
 	@ echo 'Initializing PostgreSQL Databases - this may take a few minutes...'
-	@ /sbin/ldconfig -m ${PREFIX}/pgsql/lib
+	@ ${LDCONFIG} -m ${PREFIX}/pgsql/lib
 	@ su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ if [ ! -f ${PREFIX}/etc/rc.d/postgresql.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/postgresql.sh startup file."; \

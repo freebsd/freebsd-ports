@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:                 pgs
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/14 08:53:05 tg Exp $
+# $Id: Makefile,v 1.2 1997/02/14 09:50:04 asami Exp $
 #
 
 DISTNAME=	fftpack
@@ -30,6 +30,6 @@ post-install:
 	${MKDIR} $(PREFIX)/share/doc/fftlib
 	${CP} $(WRKSRC)/doc.Z $(PREFIX)/share/doc/fftlib/
 .endif
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

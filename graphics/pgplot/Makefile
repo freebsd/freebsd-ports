@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/22 04:36:42 jmz Exp $
+# $Id: Makefile,v 1.2 1997/01/05 12:39:15 asami Exp $
 #
 
 DISTNAME=       pgplot5.1
@@ -16,6 +16,6 @@ MAINTAINER=	jmz@FreeBSD.org
 WRKSRC=		${WRKDIR}/pgplot
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

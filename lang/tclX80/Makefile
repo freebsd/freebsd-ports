@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1997/01/06 12:10:04 jkh Exp $
+# $Id: Makefile,v 1.13 1997/04/20 13:19:13 wosch Exp $
 #
 
 DISTNAME=	tclX7.5.2
@@ -55,6 +55,6 @@ post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclXInit.3 $(PREFIX)/man/man3
 	$(INSTALL_MAN) $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

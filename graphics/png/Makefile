@@ -3,7 +3,7 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/11/18 11:29:00 asami Exp $
+# $Id: Makefile,v 1.9 1997/06/24 13:15:47 ache Exp $
 #
 
 DISTNAME=       libpng-0.96
@@ -17,6 +17,6 @@ MAINTAINER=     ache@FreeBSD.org
 MAKEFILE=       makefile
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

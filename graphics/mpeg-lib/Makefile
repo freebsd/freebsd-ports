@@ -3,7 +3,7 @@
 # Date created:		16 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/06/24 11:38:07 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:28:14 asami Exp $
 #
 
 DISTNAME=	mpeg_lib-1.1
@@ -17,6 +17,6 @@ pre-install:
 	@mkdir -p ${PREFIX}/man/man1 ${PREFIX}/man/man3
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:23:03 asami Exp $
+# $Id: Makefile,v 1.9 1997/01/28 08:26:08 ache Exp $
 #
 
 DISTNAME=       slang0.99-38
@@ -20,6 +20,6 @@ WRKSRC=         ${WRKDIR}/slang
 
 post-install:
 	@rm -f ${PREFIX}/lib/libslang.so.99.3[348]
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

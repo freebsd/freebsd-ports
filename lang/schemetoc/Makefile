@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.8 1995/11/22 13:13:11 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/12 02:19:06 obrien Exp $
 #
 
 DISTNAME= 	schemetoc-93.3.15
@@ -17,6 +17,6 @@ MAINTAINER=	jmacd@FreeBSD.ORG
 NO_WRKSUBDIR=	yes
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.18 1996/12/07 13:03:36 asami Exp $
+# $Id: Makefile,v 1.19 1997/05/31 17:36:10 fenner Exp $
 #
 
 DISTNAME=	itcl2.1
@@ -55,6 +55,6 @@ post-install:
 	@echo "                         iwidgets"
 	@echo "To the manpath in /etc/manpath.config"
 	@echo "*****************************************************"
-	/sbin/ldconfig -m $(PREFIX)/lib
+	${LDCONFIG} -m $(PREFIX)/lib
 
 .include <bsd.port.mk>

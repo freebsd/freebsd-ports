@@ -4,7 +4,7 @@
 # Date created:         2 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1996/11/18 14:13:26 asami Exp $
+# $Id: Makefile,v 1.2 1997/02/02 21:25:02 ache Exp $
 #
 
 PKGNAME=        rsaref-2.0
@@ -32,7 +32,7 @@ do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} librsaref.a librsaref.so.2.0 \
 			${PREFIX}/lib
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 	install -d -m 555 ${PREFIX}/share/doc/rsaref
 	cd ${WRKDIR}/doc && \
 		${INSTALL_DATA} info.txt rsaref.txt \

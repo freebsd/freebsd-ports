@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.10 1996/11/18 11:31:51 asami Exp $
+# $Id: Makefile,v 1.11 1997/04/03 01:10:59 fenner Exp $
 #
 
 DISTNAME=	blas
@@ -57,6 +57,6 @@ pre-extract:
 	chmod +x ${SCRIPTDIR}/uncomp
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

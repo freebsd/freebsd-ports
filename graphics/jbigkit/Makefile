@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/23 07:12:28 tg Exp $
+# $Id: Makefile,v 1.2 1996/12/24 07:35:26 asami Exp $
 #
 
 DISTNAME=	jbigkit-0.9
@@ -26,6 +26,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/jbig
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
 .endif
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

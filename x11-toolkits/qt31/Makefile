@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.10 1997/04/11 04:35:33 jkh Exp $
+# $Id: Makefile,v 1.11 1997/05/14 08:58:01 tg Exp $
 #
 
 DISTNAME=	qt-1.2
@@ -92,7 +92,7 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.2/bin/moc $(X11BASE)/bin
 	${INSTALL_DATA} $(WRKDIR)/qt-1.2/lib/libqt.so.1.2 $(X11BASE)/lib
-	/sbin/ldconfig -m $(PREFIX)/lib
+	${LDCONFIG} -m $(PREFIX)/lib
 	mkdir -p $(PREFIX)/include/X11/qt
 	${INSTALL_DATA} $(WRKDIR)/qt-1.2/include/* $(PREFIX)/include/X11/qt
 	${INSTALL_MAN} $(WRKDIR)/qt-1.2/man/man1/* $(PREFIX)/man/man1

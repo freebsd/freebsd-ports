@@ -4,7 +4,7 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1996/12/17 04:52:12 asami Exp $
+# $Id: Makefile,v 1.3 1997/05/17 15:14:34 max Exp $
 #
 
 DISTNAME=	faces-1.6.1
@@ -20,7 +20,7 @@ MAN1=		compface.1 faces.1 face_update.1
 MAN3=		compface.3 
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOMANCOMPRESS)
 	@${RM} ${PREFIX}/man/man1/uncompface.1 ${PREFIX}/man/man3/uncompface.3
 	@ln -fs compface.1.gz ${PREFIX}/man/man1/uncompface.1.gz

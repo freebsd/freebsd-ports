@@ -3,7 +3,7 @@
 # Date created:		28 June 1997
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.7 1997/01/20 22:13:37 chuckr Exp $
+# $Id: Makefile,v 1.8 1997/06/28 02:32:20 chuckr Exp $
 #
 
 DISTNAME=	octave-2.0.8
@@ -34,7 +34,7 @@ post-install:
 	mv ${PREFIX}/lib/libreadline.so ${PREFIX}/lib/libreadline.so.2.0
 	mv ${PREFIX}/lib/libhistory.so ${PREFIX}/lib/libhistory.so.2.0
 	mv ${PREFIX}/lib/libkpathsea.so ${PREFIX}/lib/libkpathsea.so.2.0
-	/sbin/ldconfig -m $(PREFIX)/lib
+	${LDCONFIG} -m $(PREFIX)/lib
 .ifndef NOPORTDOCS
 .for file in $(OCTAVE-INFO)
 	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/$(file) $(PREFIX)/info

@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.14 1996/11/13 12:40:55 asami Exp $
+# $Id: Makefile,v 1.15 1997/07/13 18:49:14 max Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -35,7 +35,7 @@ MAN3= 	RkRgnBun.3 RkDefineDic.3 RkDeleteDic.3 RkEndBun.3 \
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		echo "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		echo '#!/bin/sh' > ${STARTUP_SCRIPT}; 			\

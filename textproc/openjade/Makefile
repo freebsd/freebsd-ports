@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.3 1997/07/06 02:54:02 jfieber Exp $
+# $Id: Makefile,v 1.4 1997/07/07 02:43:15 jfieber Exp $
 #
 
 DISTNAME=	jade0_8
@@ -28,6 +28,6 @@ BROKEN=		Requires FreeBSD 2.2 or later.
 
 # Shared libraries are currently broken for this port.
 # post-install:
-# 	/sbin/ldconfig -m ${PREFIX}/lib
+# 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

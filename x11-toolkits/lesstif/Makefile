@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.10 1997/07/02 08:28:33 tg Exp $
+# $Id: Makefile,v 1.11 1997/07/03 06:31:46 tg Exp $
 #
 
 DISTNAME=	lesstif-0.80public
@@ -51,7 +51,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
 	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.1 ${PREFIX}/lib/libMrm.so.0.1
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 

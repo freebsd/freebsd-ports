@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin <lukin@okbmei.msk.su>
 #
-# $Id: Makefile,v 1.12 1997/04/02 00:24:18 fenner Exp $
+# $Id: Makefile,v 1.13 1997/04/20 13:19:49 wosch Exp $
 #
 
 DISTNAME=	blt-2.1
@@ -22,6 +22,6 @@ MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
 		vector.n watch.n winop.n
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
