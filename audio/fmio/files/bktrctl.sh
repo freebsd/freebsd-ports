@@ -9,10 +9,10 @@ fi
 
 case "$1" in
 start)
-	bktrctl 2>/dev/null >/dev/null && echo -n " bktrctl"
+	$PREFIX/bin/bktrctl 2>/dev/null >/dev/null && echo -n " bktrctl"
 	;;
 stop)
-	killall bktrctl && echo -n " bktrctl"
+	/usr/bin/killall bktrctl && echo -n " bktrctl"
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
