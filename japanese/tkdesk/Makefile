@@ -29,6 +29,9 @@ CONFIGURE_ENV+=	TKCONF_PATH=${LOCALBASE}/lib/tk4.2jp
 
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
 
+pre-patch:
+	@cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/pre-patch
+
 post-patch:
 	@/usr/bin/find ${WRKSRC}/tcldesk -name "*.orig" -exec ${RM} {} \;
 
