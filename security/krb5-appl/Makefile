@@ -6,12 +6,17 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.2.8
-PORTREVISION=		1
+PORTVERSION=		1.3
 CATEGORIES=		security
 # USE_MIT_TARBALL tells the port that the user has fetched the source
 # directly from MIT rather than the default crypto-publish.org.
-USE_MIT_TARBALL?=	NO
+
+# XXX  At the present time crypto-publish.org does not have krb5-1.3.
+# XXX  We must use the MIT copy instead, requiring the user to manually
+# XXX  fetch the distfile.  As soon as crypto-publish.org distributes
+# XXX  krb5-1.3, USE_MIT_TARBALL should be changed back to NO.
+USE_MIT_TARBALL?=	YES
+
 .if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 MASTER_SITES=		# manual download
 EXTRACT_SUFX=		.tar
@@ -29,8 +34,9 @@ KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
 USE_GMAKE=		yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--enable-shared --with-ccopts="${CFLAGS}"
-CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
+CONFIGURE_ARGS?=	--enable-shared
+CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
+			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
 
@@ -66,10 +72,8 @@ WRKSRC=			${WRKDIR}/${DISTNAME}/src
 
 WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
-HTML_DOCS=		admin.html install_foot.html user-guide.html          \
-			admin_foot.html install_toc.html user-guide_foot.html \
-			admin_toc.html krb425.html user-guide_toc.html        \
-			install.html krb425_toc.html
+HTML_DOCS=		admin.html user-guide.html install.html
+HTML_OUTDIRS=		krb5-admin krb5-install
 
 .if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 do-fetch:
@@ -111,6 +115,10 @@ pre-build:
 post-build:
 	@(cd ${WRKSRC}/../doc && \
 	${MAKE} ${INFO_FILES})
+.if defined(WANT_HTML) && ${WANT_HTML} == "YES"
+	@(cd ${WRKSRC}/../doc && \
+	${MAKE} ${HTML_DOCS})
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -118,10 +126,20 @@ post-install:
 # html documentation
 .if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@${MKDIR} ${PREFIX}/share/doc/krb5
-.for html in ${HTML_DOCS}
-	${INSTALL_MAN} ${HTML_DOC_DIR}/${html} ${PREFIX}/share/doc/krb5
+	for html in ${HTML_DOC_DIR}/*.html; do \
+		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5; \
+		${ECHO_CMD} share/doc/krb5/`${BASENAME} $${html}` >> ${TMPPLIST}; \
+	done
+.for htmldir in ${HTML_OUTDIRS}
+	@${MKDIR} ${PREFIX}/share/doc/krb5/${htmldir}
+	for html in ${HTML_DOC_DIR}/${htmldir}/*; do \
+		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5/${htmldir}; \
+		${ECHO_CMD} share/doc/krb5/${htmldir}/`${BASENAME} $${html}` >> ${TMPPLIST}; \
+	done
+	${ECHO_CMD} @dirrm share/doc/krb5/${htmldir} >> ${TMPPLIST}
 .endfor
 .endif
+	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 # handle info files
 .for info in ${INFO_FILES}
 	${INSTALL_MAN} ${WRKSRC}/../doc/${info} ${PREFIX}/info/${info}

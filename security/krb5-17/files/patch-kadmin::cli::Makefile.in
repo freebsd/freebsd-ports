@@ -1,0 +1,11 @@
+--- kadmin/cli/Makefile.in.orig	Fri Feb  7 13:41:20 2003
++++ kadmin/cli/Makefile.in	Tue Aug  5 16:32:02 2003
+@@ -21,7 +21,7 @@
+ install::
+ 	$(INSTALL_PROGRAM) $(PROG).local ${DESTDIR}$(ADMIN_BINDIR)/$(PROG).local
+ 	$(INSTALL_PROGRAM) $(PROG) ${DESTDIR}$(ADMIN_BINDIR)/$(PROG)
+-	$(INSTALL_PROGRAM) $(srcdir)/k5srvutil.sh ${DESTDIR}$(ADMIN_BINDIR)/k5srvutil
++	$(INSTALL_SCRIPT) $(srcdir)/k5srvutil.sh ${DESTDIR}$(ADMIN_BINDIR)/k5srvutil
+ 	$(INSTALL_DATA) $(srcdir)/k5srvutil.M ${DESTDIR}$(ADMIN_MANDIR)/k5srvutil.8
+ 	$(INSTALL_DATA) $(srcdir)/$(PROG).M ${DESTDIR}$(ADMIN_MANDIR)/$(PROG).8
+ 	$(INSTALL_DATA) $(srcdir)/$(PROG).local.M ${DESTDIR}$(ADMIN_MANDIR)/$(PROG).local.8

@@ -1,6 +1,6 @@
---- appl/bsd/login.c.ORIG	Wed Oct 13 12:55:47 1999
-+++ appl/bsd/login.c	Wed Oct 13 12:56:29 1999
-@@ -1303,19 +1304,6 @@
+--- appl/bsd/login.c.orig	Tue May 27 21:06:25 2003
++++ appl/bsd/login.c	Tue Jul 29 20:52:25 2003
+@@ -1342,19 +1342,6 @@
  		setpriority(PRIO_PROCESS, 0, 0 + PRIO_OFFSET);
  	    }
  
@@ -18,9 +18,9 @@
 -		break;
 -
  	    if (got_v5_tickets) {
- 		if (retval = krb5_verify_init_creds(kcontext, &my_creds, NULL,
- 						    NULL, &xtra_creds,
-@@ -1338,6 +1326,9 @@
+ 		retval = krb5_verify_init_creds(kcontext, &my_creds, NULL,
+ 						NULL, &xtra_creds,
+@@ -1378,6 +1365,9 @@
  	    }
  #endif /* KRB4_GET_TICKETS */
  
@@ -30,36 +30,32 @@
  	bad_login:
  	    setpriority(PRIO_PROCESS, 0, 0 + PRIO_OFFSET);
  
-@@ -1640,20 +1631,28 @@
+@@ -1667,21 +1657,23 @@
  	/* set up credential cache -- obeying KRB5_ENV_CCNAME 
  	   set earlier */
  	/* (KRB5_ENV_CCNAME == "KRB5CCNAME" via osconf.h) */
--	if (retval = krb5_cc_default(kcontext, &ccache)) {
-+	retval = krb5_cc_default(kcontext, &ccache);
-+	if (retval)
+-	if ((retval = krb5_cc_default(kcontext, &ccache))) {
++	if ((retval = krb5_cc_default(kcontext, &ccache)))
  	    com_err(argv[0], retval, "while getting default ccache");
--	} else if (retval = krb5_cc_initialize(kcontext, ccache, me)) {
+-	} else if ((retval = krb5_cc_initialize(kcontext, ccache, me))) {
 -	    com_err(argv[0], retval, "when initializing cache");
--	} else if (retval = krb5_cc_store_cred(kcontext, ccache, &my_creds)) {
+-	} else if ((retval = krb5_cc_store_cred(kcontext, ccache, 
+-						&my_creds))) {
 -	    com_err(argv[0], retval, "while storing credentials");
 -	} else if (xtra_creds &&
 -		   (retval = krb5_cc_copy_creds(kcontext, xtra_creds,
 -						ccache))) {
 -	    com_err(argv[0], retval, "while storing credentials");
 +	else {
-+	    retval = krb5_cc_initialize(kcontext, ccache, me);
-+	    if (retval)
++	    if (retval = krb5_cc_initialize(kcontext, ccache, me))
 +		com_err(argv[0], retval, "when initializing cache");
 +	    else {
-+		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-+		if (retval)
++		if (retval = krb5_cc_store_cred(kcontext, ccache, &my_creds))
 +		    com_err(argv[0], retval, "while storing credentials");
 +		else  {
-+		    if (xtra_creds) {
-+			retval = krb5_cc_copy_creds(kcontext, xtra_creds,
-+						ccache);
-+			if (retval)
-+			    com_err(argv[0], retval, "while storing credentials");
++		    if (xtra_creds &&
++				(retval = krb5_cc_copy_creds(kcontext, xtra_creds, ccache))) {
++			com_err(argv[0], retval, "while storing credentials");
 +			krb5_cc_destroy(kcontext, xtra_creds);
 +		    }
 +		}
@@ -71,7 +67,7 @@
      } else if (forwarded_v5_tickets && rewrite_ccache) {
  	if ((retval = krb5_cc_initialize (kcontext, ccache, me))) {
  	    syslog(LOG_ERR,
-@@ -1727,6 +1727,7 @@
+@@ -1762,6 +1754,7 @@
  
      if (ccname)
  	setenv("KRB5CCNAME", ccname, 1);

@@ -8,6 +8,6 @@
 +@direntry
 +* Upgrading from V4 to V5: (krb425).     Upgrading from Kerberos V4 to V5
 +@end direntry
- @setchapternewpage odd                  @c chapter begins on next odd page
+ @c @setchapternewpage odd                  @c chapter begins on next odd page
  @c @setchapternewpage on                   @c chapter begins on next page
  @c @smallbook                              @c Format for 7" X 9.25" paper
