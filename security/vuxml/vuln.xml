@@ -3648,4 +3648,29 @@ misc.c:
       <modified>2003-10-25</modified>
     </dates>
   </vuln>
+
+  <vuln vid="9fe115e6-cbb9-11d8-a8d4-0002b34cc336">
+    <topic>Remote code injection in phpMyAdmin</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.5.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>This vulnerability would allow remote user to inject PHP code
+	  to be executed by eval() function.  This vulnerability is only
+	  exploitable if variable $cfg['LeftFrameLight'] is set to FALSE (in
+	  file config.inc.php).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.securityfocus.com/archive/1/367486/2004-06-28/2004-07-04/0</url>
+    </references>
+    <dates>
+      <discovery>2004-06-29</discovery>
+      <entry>2004-07-02</entry>
+    </dates>
+  </vuln>
 </vuxml>
