@@ -49,12 +49,3 @@
  
  ### DEBUG: Defining the macro ASSERTIONS will turn on assertions, which
  #       helps to track bugs after modifications, but the programs will run 
-@@ -110,7 +110,7 @@
- #       can reduce the size of the Scid program by only specifying
- #       the languages you want supported.
- #
--LANGUAGES = tcl/deutsch.tcl tcl/francais.tcl tcl/italian.tcl tcl/nederlan.tcl tcl/spanish.tcl tcl/portbr.tcl tcl/swedish.tcl tcl/norsk.tcl tcl/polish.tcl tcl/czech.tcl tcl/serbian.tcl
-+LANGUAGES = 
- 
- 
- ############################################################
