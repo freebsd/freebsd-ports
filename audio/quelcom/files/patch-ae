@@ -1,10 +1,9 @@
---- src/qmp3info.cc.orig	Tue Dec 26 18:55:29 2000
-+++ src/qmp3info.cc		Wed Dec 27 13:23:36 2000
-@@ -2,6 +2,7 @@
- # include "qmp3.hh"
- # include "qexception.hh"
- 
+--- src/qwavinfo.cc.orig	Tue Jan 23 13:05:30 2001
++++ src/qwavinfo.cc	Tue Jan 23 13:05:42 2001
+@@ -1,6 +1,6 @@
+ # include <getopt.h>	// getopt
+ # include <sys/types.h>	// ulong, ...
+-
 +typedef unsigned long ulong;
- 
- void usage () {
- 
+ # include "qwav.hh"
+ # include "qexception.hh"

@@ -1,27 +1,23 @@
---- src/makefile.orig	Tue Dec 26 18:55:30 2000
-+++ src/makefile	Wed Dec 27 13:54:07 2000
-@@ -1,9 +1,11 @@
- TARGETS=qmp3check qwavsilence qwavinfo qwavjoin qwavcut qmp3info qmp3join qmp3cut 
+--- src/makefile.orig	Tue Jan 23 00:02:01 2001
++++ src/makefile	Tue Jan 23 12:59:11 2001
+@@ -1,16 +1,16 @@
+ TARGETS=qwavheaderdump qwavfade qmp3report qmp3check qwavsilence qwavinfo qwavjoin qwavcut qmp3info qmp3join qmp3cut 
  
-+INSTALL_P=/usr/bin/install
-+
+ PACKAGE=\"quelcom\"
+-LOCALEDIR=\"/usr/local/share/locale\"
++LOCALEDIR=$(PREFIX)/share/locale
+ 
  all: $(TARGETS)
  	strip $(TARGETS)
  
 -BINDIR=/usr/local/bin
-+BINDIR=${PREFIX}/bin
- VERSION=\"0.2.0\"
++BINDIR=$(PREFIX)/bin
+ VERSION=\"0.3.0\"
  CXX=g++
- CXXFLAGS=-Wall -DQVERSION=$(VERSION) #-DQVERBOSE# -g -pg -fprofile-ar=cs -ftest-coverage 
-@@ -21,7 +23,10 @@
- 	$(CXX) $(CXXFLAGS) -c $< -o $*.o
+-CXXFLAGS=-Wall -DVERSION=$(VERSION) -DPACKAGE=$(PACKAGE) -DLOCALEDIR=$(LOCALEDIR)
+-LDFLAGS=
++CXXFLAGS+=-Wall -DVERSION=$(VERSION) -DPACKAGE=$(PACKAGE) -DLOCALEDIR=$(LOCALEDIR) -I$(PREFIX)/include
++LDFLAGS=-L$(PREFIX)/lib -lgnugetopt
  
- install:
--	cp $(TARGETS) $(BINDIR)
-+	for i in $(TARGETS); \
-+	do \
-+	$(INSTALL_P) -c -o root -g wheel -m 555 $$i $(BINDIR); \
-+	done
- 
- qwavinfo: qwavinfo.o $(OBJECTS)
- 	$(CXX) -o qwavinfo qwavinfo.o $(OBJECTS) $(LDFLAGS)
+ SOURCES=qwav.cc qwavheader.cc qexception.cc qvf.cc qcuthandler.cc qfile.cc qmisc.cc
+ HEADERS=qwav.hh qwavheader.hh qexception.hh qvf.hh qcuthandler.hh qfile.hh qmisc.hh
