@@ -55,6 +55,7 @@
     SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gtl
+    SUBDIR += gweather
     SUBDIR += gyvescm
     SUBDIR += hello
     SUBDIR += heyu
