@@ -6,13 +6,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=	recode-3.4
+DISTNAME=	recode-3.5
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
 
 MAINTAINER=	torstenb@FreeBSD.org
 
-GNU_CONFIGURE=	YES
+USE_LIBTOOL=	yes
+
+MAN1=		recode.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Jul 30 22:43:08 1999
++++ src/Makefile.in	Fri Jul 30 22:43:21 1999
+@@ -149,7 +149,7 @@
+ 
+ librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c merged.c names.c outer.c recode.c request.c strip-pool.c task.c $(C_STEPS)
+ 
+-librecode_la_LDFLAGS = -version-info 0:0:0
++librecode_la_LDFLAGS = -version-info 3:5:0
+ 
+ INCLUDES = -I.. -I../intl -I$(srcdir) -I$(top_srcdir)/lib
+ 
