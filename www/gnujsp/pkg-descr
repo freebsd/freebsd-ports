@@ -1,8 +1,6 @@
 GNUJSP is a free implementation of Sun's Java Server Pages. Once the
 GNUJSP servlet is correctly installed, files with the extension .jsp
-are translated into java source files, compiled, and run. Although
-this software is quite stable, there is no 1.0 release yet, because
-the JSP specification has not been finalized yet.
+are translated into java source files, compiled, and run.
 
 WWW: http://www.klomp.org/gnujsp/
 
