@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c19
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
@@ -85,7 +85,7 @@ USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 .if defined(WITH_PLUGINS)
-PLUGINS= 	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
 PLIST_SUB+=	PLUGINS:=""
 .else
 CONFIGURE_ARGS+=--without-plugins
@@ -98,7 +98,7 @@ PLIST_SUB+=	XMMS:=""
 PLIST_SUB+=	XMMS:="@comment "
 .endif
 .if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
-PLUGINS= 	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
 .endif
 .if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
 INSTALLS_SHLIB=		yes
