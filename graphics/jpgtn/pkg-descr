@@ -1,0 +1,11 @@
+"jpgtn" is based on "tnpic" by Russell Marks and on "gtnpic" by Willie
+Daniel. "tnpic" was originally distributed as a utility with Marks' "zgv"
+program. "gtnpic" was an attempt to clean up and expand upon the original
+tnpic program and "maybe add some new features along the way." Jpgtn
+differs from both "tnpic" and "gtnpic" in purpose. It is *not* an indexer
+of image files. It simply creates thumbnails of images stored in JPEG
+format.
+
+FTP: ftp://ftp.uu.net/graphics/jpeg/
+WWW: http://cs.millersv.edu/~jdmadea/
+Mail: jdmadea@cs.millersv.edu

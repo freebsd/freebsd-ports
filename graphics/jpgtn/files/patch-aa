@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Jun 14 20:51:01 1999
++++ Makefile	Fri Sep  7 16:51:04 2001
+@@ -17,7 +17,7 @@
+ # Compiler
+ #
+ CC = gcc
+-CFLAGS = -Wall -O2 -L/usr/local/lib/ $(SONYHACK)
++CFLAGS = -Wall -O2 -L$(LOCALBASE)/lib -I$(LOCALBASE)/include $(SONYHACK)
+ 
+ #
+ # Libraries

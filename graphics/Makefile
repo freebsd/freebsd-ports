@@ -110,6 +110,7 @@
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo
+    SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += juno-2
     SUBDIR += kdc2tiff
