@@ -1,4 +1,7 @@
 bin/fd
 bin/fd-unicd.tbl
-share/doc/fd/Guarant
+share/doc/fd/FAQ
+share/doc/fd/HISTORY
+share/doc/fd/README
+share/doc/fd/ToAdmin
 @dirrm share/doc/fd
