@@ -1,0 +1,17 @@
+--- lisp/loadup.el.orig	Wed Nov 28 20:54:00 2001
++++ lisp/loadup.el	Wed Nov 28 20:55:24 2001
+@@ -280,11 +280,11 @@
+ 		    (expand-file-name
+ 		     (cond 
+ 		      ((eq system-type 'ms-dos)
+-		       "../lib-src/fns.el")
++		       "../lib-src/fnsemcws.el")
+ 		      ((eq system-type 'windows-nt)
+-		       (format "../../../lib-src/fns-%s.el" emacs-version))
++		       (format "../../../lib-src/fns-emcws-%s.el" emacs-version))
+ 		      (t
+-		       (format "../lib-src/fns-%s.el" emacs-version)))
++		       (format "../lib-src/fns-emcws-%s.el" emacs-version)))
+ 		     invocation-directory))
+       (erase-buffer)
+       (setq load-history nil))

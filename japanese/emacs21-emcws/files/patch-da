@@ -1,6 +1,16 @@
---- configure.in.orig	Tue Jun 26 11:38:25 2001
-+++ configure.in	Tue Jun 26 11:39:29 2001
-@@ -35,7 +35,11 @@
+--- configure.in.orig	Wed Nov 28 15:25:17 2001
++++ configure.in	Wed Nov 28 15:26:42 2001
+@@ -35,13 +35,21 @@
+ dnl A case that the LEIM package does not exist.
+ dnl
+   locallisppath='${datadir}/emacs/${version}-emcws/site-lisp:'\
+-'${datadir}/emacs/site-lisp'
++'${datadir}/emacs/site-lisp:'\
++'${datadir}/emacs/${version}/site-lisp:'\
++'${datadir}/emacs/${version}-emcws/lisp:'\
++'${datadir}/emacs/${version}/lisp'
+ else
+ dnl
  dnl A case that the LEIM package exists.
  dnl
    locallisppath='${datadir}/emacs/${version}-emcws/site-lisp:'\
@@ -9,18 +19,12 @@
 +'${datadir}/emacs/${version}-emcws/leim:'\
 +'${datadir}/emacs/${version}/site-lisp:'\
 +'${datadir}/emacs/${version}/leim:'\
++'${datadir}/emacs/${version}-emcws/lisp:'\
 +'${datadir}/emacs/${version}/lisp'\
    echo
    echo modifying leim/Makefile.in for emcws
-   mv leim/Makefile.in leim/Makefile.in.orig
-@@ -49,12 +53,14 @@
- dnl A case that the LEIM package does not exist.
- dnl
-   locallisppath='${datadir}/emacs/${version}-emcws/site-lisp:'\
--'${datadir}/emacs/site-lisp'
-+'${datadir}/emacs/site-lisp:'\
-+'${datadir}/emacs/${version}/site-lisp:'\
-+'${datadir}/emacs/${version}/lisp'
+   mv ${srcdir}/leim/Makefile.in ${srcdir}/leim/Makefile.in.orig
+@@ -53,8 +61,8 @@
  fi
  
  lisppath='${locallisppath}:${lispdir}'

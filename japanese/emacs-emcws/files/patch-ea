@@ -1,0 +1,13 @@
+--- lisp/help.el.orig	Wed Nov 28 20:55:37 2001
++++ lisp/help.el	Wed Nov 28 20:56:04 2001
+@@ -561,8 +561,8 @@
+     (load (expand-file-name
+ 	   ;; fns-XX.YY.ZZ.el does not work on DOS filesystem.
+ 	   (if (eq system-type 'ms-dos)
+-	       "fns.el"
+-	     (format "fns-%s.el" emacs-version))
++	       "fnsemcws.el"
++	     (format "fns-emcws-%s.el" emacs-version))
+ 	   exec-directory)
+ 	  ;; The file name fns-%s.el already has a .el extension.
+ 	  nil nil t)
