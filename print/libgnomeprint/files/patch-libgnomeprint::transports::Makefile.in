@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- libgnomeprint/transports/Makefile.in	2002/03/19 16:46:00	1.1
++++ libgnomeprint/transports/Makefile.in	2002/03/19 16:48:02
+@@ -131,7 +131,7 @@
+ 
+ libgnomeprint_file_la_SOURCES = $(FILE_SRC)
+ 
+-libgnomeprint_file_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_file_la_LDFLAGS = -avoid-version -module
+ 
+ libgnomeprint_file_la_LIBADD = 
+ 
+@@ -142,7 +142,7 @@
+ 
+ libgnomeprint_lpr_la_SOURCES = $(LPR_SRC)
+ 
+-libgnomeprint_lpr_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_lpr_la_LDFLAGS = -avoid-version -module
+ 
+ libgnomeprint_lpr_la_LIBADD = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
