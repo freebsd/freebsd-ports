@@ -1,0 +1,11 @@
+--- docs/xmp.1.orig	Wed Mar 15 09:58:49 2000
++++ docs/xmp.1	Sat Aug  5 03:19:50 2000
+@@ -225,7 +225,7 @@
+ Command line options \fB-M\fP and \fB-S\fP don\'t work correctly with xxmp\&.
+ .PP 
+ .SH "FILES" 
+-\f(CW/etc/xmp\&.conf, /etc/xmp-modules\&.conf, $HOME/\&.xmp/xmp\&.conf,
++\f(CW%%PREFIX%%/etc/xmp\&.conf, %%PREFIX%%/etc/xmp-modules\&.conf, $HOME/\&.xmp/xmp\&.conf,
+ $HOME/\&.xmp/xmp-modules\&.conf\fP
+ .PP 
+ .SH "AUTHOR" 

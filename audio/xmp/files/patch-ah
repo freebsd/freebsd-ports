@@ -1,0 +1,15 @@
+--- src/xmms/Makefile.orig	Wed May  3 08:50:48 2000
++++ src/xmms/Makefile	Sat Aug  5 02:45:42 2000
+@@ -9,10 +9,10 @@
+ include ../../Makefile.rules
+ 
+ all: $(OBJS)
+-	gcc -shared -o libxmp.so $+ -L../../lib/ -lxmp
++	$(CC) -shared -o libxmp.so $+ -L../../lib/ -lxmp
+ 
+ install::
+-	$(INSTALL) -s -m755 libxmp.so `xmms-config --input-plugin-dir`
++	$(INSTALL_DATA) libxmp.so `xmms-config --input-plugin-dir`
+ 
+ $(OBJS): Makefile
+ 
