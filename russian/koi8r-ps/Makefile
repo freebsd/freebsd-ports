@@ -20,7 +20,7 @@ DIST_SUBDIR=	koi8r-ps
 
 .if !defined(FONTMAP)
 FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
-			d=`gs -h  | awk '/^Search path:$$/ { nl=1; next } \
+			d=`gs -h  | ${AWK} '/^Search path:$$/ { nl=1; next } \
 					nl { print $$3; exit }'`; \
 			if [ -e $$d/Fontmap ] ; then \
 				${ECHO} $$d/Fontmap; \
@@ -32,8 +32,6 @@ FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
 			${ECHO} /nicht/ ; \
 		fi
 .endif
-
-MAINTAINER=	mi@aldan.algebra.com
 
 NO_PACKAGE=	Nothing to build, configurations only
 NO_WRKSUBDIR=	Yes
