@@ -1,7 +1,7 @@
---- doc/Makefile.in.orig	Thu Jan 24 22:53:25 2002
-+++ doc/Makefile.in	Fri Aug 30 11:26:16 2002
-@@ -61,13 +61,23 @@
- topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+--- doc/Makefile.in.orig	Tue Feb 15 20:28:24 2005
++++ doc/Makefile.in	Mon Mar 14 08:08:25 2005
+@@ -63,13 +63,23 @@
+ 	ChangeLog.old					\
  	README NEWS TODO README.SECURITY README.SSL 
  
 -all: muttrc.man try-html try-txt
@@ -27,7 +27,7 @@
  
  install: all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -87,10 +97,6 @@
+@@ -90,10 +100,6 @@
  		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
@@ -38,11 +38,11 @@
  
  uninstall:
  	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -100,17 +106,20 @@
+@@ -103,17 +109,20 @@
  
  check:
  manual.txt: manual.sgml
--	if sgml2txt -c latin manual ; then \
+-	if linuxdoc -B txt --pass='-P -c' manual ; then \
 -		uniq < manual.txt | expand > _manual.txt ; \
 -		rm manual.txt ; \
 +	if sgmlfmt -f ascii manual; then \
@@ -53,14 +53,14 @@
  
  manual.html: manual.sgml
 -	sgml2html manual  || true
-+	sgmlfmt -f html manual  || true
++	sgmlfmt -f html manual || true
 +
 +manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual  || true
++	sgmlfmt -f latin1 manual || true
  
  manual.ps: manual.sgml
 -	sgml2latex --output=ps manual || true
-+	sgmlfmt -f ps manual  || true
++	sgmlfmt -f ps manual || true
  
  clean: 
  	rm -f *~ *.html *.orig *.rej  stamp-doc-sgml stamp-doc-man *.ps
