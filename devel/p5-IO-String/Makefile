@@ -18,6 +18,5 @@ COMMENT=	Simplified Perl5 module to handle I/O on in-core strings
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::String.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
