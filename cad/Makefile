@@ -8,6 +8,7 @@
     SUBDIR += felt
     SUBDIR += geda
     SUBDIR += irsim
+    SUBDIR += iverilog
     SUBDIR += kaskade
     SUBDIR += magic
     SUBDIR += mars
