@@ -18,7 +18,6 @@ sbin/milter-sender
 %%PORTDOCS%%%%DOCSDIR%%/license-body.html
 %%PORTDOCS%%%%DOCSDIR%%/mailto.js
 %%PORTDOCS%%%%DOCSDIR%%/milter-sender.mc
-%%PORTDOCS%%%%DOCSDIR%%/responses.txt
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 @unexec echo "If permanently deleting this package, don't forget to delete the filter"
 @unexec echo "description of milter-sender from /etc/mail/YOUR-CONF.mc and to rebuild"
