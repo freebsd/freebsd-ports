@@ -6858,6 +6858,7 @@ rox-base	ports/x11-fm/rox-base
 rox-filer	ports/x11-fm/rox-filer
 rox-memo	ports/deskutils/rox-memo
 rox-session	ports/x11-fm/rox-session
+rox-wallpaper	ports/x11/rox-wallpaper
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
 rpc		ports/math/rpc
