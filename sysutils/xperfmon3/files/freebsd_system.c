@@ -214,6 +214,7 @@ struct nlist nl[] = {
         { "_intrcnt" },
 #define X_EINTRCNT 	7
         { "_eintrcnt" },
+#if __FreeBSD_version < 400000
 #define VM_NSWAP        8
         { "_nswap" },   /* size of largest swap device */
 #define VM_NSWDEV       9
@@ -224,6 +225,7 @@ struct nlist nl[] = {
         { "_swaplist" },/* list of free swap areas */
 #define VM_SWDEVT       12
         { "_swdevt" },  /* list of swap devices and sizes */
+#endif
         { "" },
 };
 
@@ -606,6 +608,21 @@ kread(nlx, addr, size)
 int
 get_swapspace()
 {
+#if __FreeBSD_version >= 400000
+	/* based on swapmode from /usr/src/usr.bin/top/machine.c */
+	int n;
+	int percentfree;
+	struct kvm_swap swapary[1];
+
+	n = kvm_getswapinfo(kd, swapary, 1, 0);
+	if (n < 0)
+		return(0);
+
+	percentfree = (int)((((double)swapary[0].ksw_total -
+		(double)swapary[0].ksw_used) * 100.0) /
+		(double)swapary[0].ksw_total);
+	return(percentfree);
+#else
 	char *header;
 	int hlen, nswap, nswdev, dmmax;
 	int i, div, avail, nfree, npfree, used;
@@ -707,6 +724,7 @@ get_swapspace()
 	free(perdev);
 	free(sw);
 	return((100*nfree)/avail);   /* return free swap in percent */
+#endif /* __FreeBSD_version >= 400000 */
 }
 
 #ifdef HAVE_DEVSTAT
