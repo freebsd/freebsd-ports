@@ -1,15 +1,15 @@
---- gnome-config.in.orig	Mon Sep 21 23:15:02 1998
-+++ gnome-config.in	Thu Nov 19 22:55:15 1998
-@@ -45,7 +45,7 @@
+--- gnome-config.in.orig	Thu Dec 24 03:42:13 1998
++++ gnome-config.in	Thu Dec 24 03:43:19 1998
+@@ -46,7 +46,7 @@
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk11	(calls gtk11-config)
++    gtk11		(calls gtk11-config)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
-@@ -116,27 +116,27 @@
+@@ -117,30 +117,30 @@
  	the_libs="$the_libs `glib-config --libs`"
  	the_flags="$the_flags `glib-config --cflags`"
  	;;
@@ -21,24 +21,27 @@
 +	the_flags="$the_flags `gtk11-config --cflags`"
  	;;
      gnome)
--       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
-+       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@ -lintl"
-   	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
+        	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
+-  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
++  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@ -lintl"
  	;;
      gnomeui)
--	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
-+	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@ -lintl"
- 	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
+ 	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
+-	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
++	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@ -lintl"
  	;;
      gtkxmhtml)
 -	the_libs="$the_libs @GNOME_LIBDIR@ @GTKXMHTML_LIBS@"
 +	the_libs="$the_libs @GNOME_LIBDIR@ @GTKXMHTML_LIBS@ -lintl"
  	;;
      gnorba)
--        the_libs="$the_libs @GNOME_LIBDIR@ @ORBIT_LIBS@"
-+        the_libs="$the_libs @GNOME_LIBDIR@ @ORBIT_LIBS@ -lintl"
+-        the_libs="$the_libs @GNOME_LIBDIR@ -lgnorba @ORBIT_LIBS@"
++        the_libs="$the_libs @GNOME_LIBDIR@ -lgnorba @ORBIT_LIBS@ -lintl"
  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @ORBIT_CFLAGS@"
          ;;
+     idl)
+         the_flags="@GNOME_IDLDIR@"
+ 	;;
      zvt)
 -	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@"
 +	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@ -lintl"
