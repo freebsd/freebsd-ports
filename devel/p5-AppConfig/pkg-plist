@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AppConfig/.packlist         
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig/Args.pm
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig/Getopt.pm
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig/State.pm
+lib/perl5/site_perl/%%PERL_VER%%/AppConfig/Sys.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AppConfig
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/AppConfig
