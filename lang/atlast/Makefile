@@ -7,6 +7,7 @@
 
 PORTNAME=	atlast
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
 		http://www.fourmilab.to/atlast/
@@ -14,14 +15,11 @@ MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
 MAINTAINER=	ports@FreeBSD.org
 
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/atlast $(PREFIX)/bin
-
-post-install:
-	strip ${PREFIX}/bin/atlast
+	@${INSTALL_PROGRAM} ${WRKSRC}/atlast ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/atlast
-	${INSTALL_DATA} ${WRKSRC}/atlast.ps ${PREFIX}/share/doc/atlast
-	${INSTALL_DATA} ${WRKSRC}/atlast.rtf ${PREFIX}/share/doc/atlast
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/atlast.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/atlast.rtf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
