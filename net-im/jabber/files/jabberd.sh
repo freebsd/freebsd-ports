@@ -4,27 +4,25 @@ if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jabberd\.sh\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
 fi
-user=jabber
-rundir=/tmp
-out=/var/log/jabber.log
-hostname=`/bin/hostname`
 
-# Load PTH libraries
-ldconfig -m `${PREFIX}/bin/pth-config --libdir`
+USER="jabber"
+RUNDIR="/var/tmp"
+LOG="/var/log/jabber.log"
+HOSTNAME=`/bin/hostname`
 
-export PATH=/bin:/usr/bin:${PREFIX}/bin
+test -x ${PREFIX}/sbin/jabberd || exit 1
+
+export PATH=/sbin:/bin:/usr/bin:${PREFIX}/bin:${PREFIX}/sbin
 umask 077
 
-test -x ${PREFIX}/bin/jabberd || exit 1
-echo -n " jabberd"
-cd ${rundir} || exit
+echo -n " jabberd "
+cd ${RUNDIR} || exit
 
-arg=${1:-start}
-case $arg in
+case ${1:-start} in
 start)
-    su -f -m ${user} -c "jabberd -h ${hostname} -c ${PREFIX}/etc/jabber.xml" >${out} 2>&1 &;;
+    su -f -m ${USER} -c "jabberd -h ${HOSTNAME} -c ${PREFIX}/etc/jabber.xml" >${LOG} 2>&1 &;;
 
 stop)
     killall jabberd;
-    rm -f /var/tmp/jabber.pid;
+    rm -f ${RUNDIR}/jabber.pid;
 esac
