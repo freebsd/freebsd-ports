@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	popd
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
@@ -24,6 +23,6 @@ PLIST_SUB=	NOPROFILE=""
 .endif
 
 post-extract:
-	${MV} ${WRKSRC}/src/popd.8 ${WRKSRC}/src/popd.mdoc
+	${RM} ${WRKSRC}/src/.depend
 
 .include <bsd.port.mk>

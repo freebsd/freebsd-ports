@@ -1,6 +1,6 @@
 include/poputil.h
-libexec/popd
 lib/libpoputil.a
 lib/libpoputil.so
 lib/libpoputil.so.1
 %%NOPROFILE%%lib/libpoputil_p.a
+libexec/popd
