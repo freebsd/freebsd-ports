@@ -6,29 +6,15 @@
 #
 
 PORTNAME=	blackbox
-PORTVERSION= 	0.51.3.1
+PORTVERSION= 	0.60.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
-	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
+MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/
 
 MAINTAINER=	patseal@hyperhost.net
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-
-.if !defined(WITH_KDE)
-pre-configure:
-	@ ${ECHO_MSG}
-	@ ${ECHO_MSG} If you would like build Blackbox with KDE support
-	@ ${ECHO_MSG} you must set the variable WITH_KDE
-	@ ${ECHO_MSG}
-.else
-pre-configure:
-	@ ${ECHO_MSG}
-	@ ${ECHO_MSG} Building Blackbox with KDE support
-	@ ${ECHO_MSG}
-CONFIGURE_ARGS= --enable-kde
-.endif
+CONFIGURE_ARGS= --disable-styled-frames
 
 .include <bsd.port.mk>
