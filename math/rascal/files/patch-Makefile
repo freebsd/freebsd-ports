@@ -15,7 +15,7 @@
  INSTDIR=install -d
  
 -LIBS=-lm -lreadline -lcurses
-+LIBS=-lm -lreadline -lcurses -L%%LOCALBASE%%/lib -lgnugetopt
++LIBS+=-lm -lreadline -lcurses ${LDFLAGS}
  OBJS=y.tab.o lex.yy.o symtab.o value.o
  
  -include value.mak
