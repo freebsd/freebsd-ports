@@ -30,9 +30,11 @@ OpenLDAP	"OpenLDAP support" OFF \
 OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
+XSLT		"Sablotron support (implies XML and iconv)" OFF \
 FTP		"File Transfer Protocol support" OFF \
 CURL		"CURL support" OFF \
 gettext		"gettext library support" OFF \
+iconv		"iconv support" OFF \
 pspell		"pspell support" OFF \
 japanese	"jstring and mbregex module" OFF \
 YP		"YP/NIS support" OFF \
@@ -174,6 +176,18 @@ while [ "$1" ]; do
 		\"XML\")
 			echo "LIB_DEPENDS+=	expat.2:\${PORTSDIR}/textproc/expat2"
 			echo "CONFIGURE_ARGS+=--with-xml=\${PREFIX}"
+			XML=1
+			;;
+		\"XSLT\")
+			echo "LIB_DEPENDS+=	sablot.60:\${PORTSDIR}/textproc/sablotron"
+			echo "CONFIGURE_ARGS+=--with-sablot=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-expat-dir=\${PREFIX}"
+			if [ -z "$XML" ]; then
+				set $* \"XML\"
+			fi
+			if [ -z "$ICONV" ]; then
+				set $* \"iconv\"
+			fi
 			;;
 		\"FTP\")
 			echo "CONFIGURE_ARGS+=--enable-ftp"
@@ -185,6 +199,11 @@ while [ "$1" ]; do
 		\"gettext\")
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
+			;;
+		\"iconv\")
+			echo "LIB_DEPENDS+=	iconv.2:\${PORTSDIR}/converters/iconv"
+			echo "CONFIGURE_ARGS+=--with-iconv=\${PREFIX}"
+			ICONV=1
 			;;
 		\"pspell\")
 			echo "LIB_DEPENDS+=	pspell.4:\${PORTSDIR}/textproc/pspell"
