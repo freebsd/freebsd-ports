@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	interbase
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	databases ruby
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/
+MASTER_SITES=	http://www.rowlandresearch.com/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@freebsd.org
 
 LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird
 
