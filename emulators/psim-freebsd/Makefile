@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-25
+SNAPDATE=	2002-04-02
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	psim-freebsd
@@ -16,19 +16,19 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 #MASTER_SITE_SUBDIR=	gdb/releases
 MASTER_SITE_SUBDIR=	gdb/snapshots/branch
-#DISTNAME=	gdb-${PORTVERSION}
-DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER}
+DISTNAME=	gdb+dejagnu-weekly-5.1.90_${SNAPVER}
 
 MAINTAINER=	mp@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf --program-suffix=psim
+CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
+		--program-suffix=psim
+WRKSRC=		${WRKDIR}/gdb+dejagnu-5.1.90_${SNAPVER}
 
 pre-configure:
-	cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
+	@cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
