@@ -1,43 +1,5 @@
---- src/scim_event.cpp.orig	Wed Aug  4 19:20:29 2004
-+++ src/scim_event.cpp	Wed Aug  4 19:20:49 2004
-@@ -25,6 +25,7 @@
- #define Uses_SCIM_EVENT
- #include "scim_private.h"
- #include "scim.h"
-+#include <cstdio>
- 
- namespace scim {
- 
---- src/scim_global_config.cpp.orig	Wed Aug  4 19:22:06 2004
-+++ src/scim_global_config.cpp	Wed Aug  4 19:22:10 2004
-@@ -32,6 +32,7 @@
- #include <sys/stat.h>
- #include <sys/types.h>
- #include <unistd.h>
-+#include <cstdio>
- 
- #include "scim_private.h"
- #include "scim.h"
---- modules/IMEngine/scim_socket_imengine.cpp.orig	Wed Aug  4 19:25:53 2004
-+++ modules/IMEngine/scim_socket_imengine.cpp	Wed Aug  4 19:26:50 2004
-@@ -39,6 +39,7 @@
- #include "scim.h"
- #include "scim_socket_imengine.h"
- #include <unistd.h>
-+#include <cstdio>
- 
- #define scim_module_init                    socket_LTX_scim_module_init
- #define scim_module_exit                    socket_LTX_scim_module_exit
 --- modules/Config/scim_gconf_config.cpp.orig	Wed Aug  4 19:42:16 2004
 +++ modules/Config/scim_gconf_config.cpp	Wed Aug  4 19:49:22 2004
-@@ -34,6 +34,7 @@
- #include "scim_private.h"
- #include "scim.h"
- #include "scim_gconf_config.h"
-+#include <cstdio>
- 
- #define scim_module_init gconf_LTX_scim_module_init
- #define scim_module_exit gconf_LTX_scim_module_exit
 @@ -496,11 +498,11 @@
      std::vector <String> strs;
      if (scim_split_string_list (strs, str, ':') == 2) {
@@ -81,15 +43,15 @@
   
                          // The config file is newer, so load it.
                          if (m_update_timestamp.tv_sec < sec ||
---- modules/IMEngine/Makefile.in.orig	Thu Aug  5 16:55:50 2004
-+++ modules/IMEngine/Makefile.in	Thu Aug  5 16:57:34 2004
-@@ -74,8 +74,7 @@
- 	libgenerictable.la
- am_table_la_OBJECTS = scim_table_imengine.lo
+--- modules/IMEngine/Makefile.in.orig	Thu Dec 30 05:53:21 2004
++++ modules/IMEngine/Makefile.in	Mon Jan 24 14:35:28 2005
+@@ -88,8 +88,7 @@
  table_la_OBJECTS = $(am_table_la_OBJECTS)
+ @SCIM_BUILD_IMENGINE_TABLE_TRUE@am_table_la_rpath = -rpath \
+ @SCIM_BUILD_IMENGINE_TABLE_TRUE@	$(moduledir)
 -@SCIM_BUILD_IMENGINE_TABLE_TRUE@am__EXEEXT_1 =  \
 -@SCIM_BUILD_IMENGINE_TABLE_TRUE@	scim-make-table$(EXEEXT)
-+@SCIM_BUILD_IMENGINE_TABLE_TRUE@am__EXEEXT_1 =  
++@SCIM_BUILD_IMENGINE_TABLE_TRUE@am__EXEEXT_1 =
  binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
  am_scim_make_table_OBJECTS = scim_make_table.$(OBJEXT)

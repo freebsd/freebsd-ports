@@ -2,8 +2,6 @@ bin/scim
 bin/scim-config-agent
 %%NOSTABLE%%bin/scim-make-table
 bin/scim-setup
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim.schemas >/dev/null 2>&1 || /usr/bin/true
-etc/gconf/schemas/scim.schemas
 etc/scim/config
 etc/scim/global
 include/scim-1.0/gtk/scimkeyselection.h
@@ -61,14 +59,15 @@ lib/scim-1.0/scim-launcher
 lib/scim-1.0/scim-panel-gtk
 libdata/pkgconfig/scim-gtkutils.pc
 libdata/pkgconfig/scim.pc
-share/applications/scim-setup.desktop
-share/control-center-2.0/capplets/scim-setup.desktop
+share/gnome/applications/scim-setup.desktop
+share/gnome/control-center-2.0/capplets/scim-setup.desktop
+share/gnome/pixmaps/scim-setup.png
 share/locale/de/LC_MESSAGES/scim.mo
+share/locale/fr/LC_MESSAGES/scim.mo
 share/locale/ja/LC_MESSAGES/scim.mo
 share/locale/ko/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
-share/pixmaps/scim-setup.png
 %%DATADIR%%/icons/down.png
 %%DATADIR%%/icons/full-letter.png
 %%DATADIR%%/icons/full-punct.png
@@ -88,16 +87,14 @@ share/pixmaps/scim-setup.png
 @dirrm etc/scim
 @dirrm include/scim-1.0/gtk
 @dirrm include/scim-1.0
-@dirrm lib/gtk-2.0/immodules
+@unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
 @dirrm lib/scim-1.0/1.0.0/Config
 @dirrm lib/scim-1.0/1.0.0/FrontEnd
 @dirrm lib/scim-1.0/1.0.0/IMEngine
 @dirrm lib/scim-1.0/1.0.0/SetupUI
 @dirrm lib/scim-1.0/1.0.0
 @dirrm lib/scim-1.0
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/scim.schemas >/dev/null 2>&1 || /usr/bin/true
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
