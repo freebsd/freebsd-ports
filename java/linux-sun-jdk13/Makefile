@@ -14,7 +14,8 @@ DISTFILES=	j2sdk-1_3_0_02-linux.bin
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
+		javavm:${PORTSDIR}/java/javavmwrapper
 
 JDK_VERSION=	1.3.0
 
@@ -51,5 +52,6 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION} -xpf-
+	${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk${JDK_VERSION}/bin/java # Linux-JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>
