@@ -25,8 +25,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha or amd64"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/games/|/|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
