@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	yafic
-PORTVERSION=	1.0
+PORTVERSION=	1.0.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	asaddi@philosophysw.com
+MAINTAINER=	allan@saddi.com
 
-USE_AUTOMAKE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS="-static"
 
@@ -24,7 +24,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/examples/yafic
 	@${CP} ${FILESDIR}/yafic.conf.sample ${PREFIX}/share/examples/yafic
 	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e "s%@@PREFIX@@%${PREFIX}%g" ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.mk>
