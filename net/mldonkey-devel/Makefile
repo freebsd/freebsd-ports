@@ -8,8 +8,9 @@
 PORTNAME=	mldonkey
 PORTVERSION=	1.16
 CATEGORIES=	net
-MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/ \
-		http://freesoftware.fsf.org/download/mldonkey/
+MASTER_SITES=	http://www.schraegerpunkt.de/ \
+		http://ernie.eit.uni-kl.de/mldonkey/
+	
 DISTNAME=	${PORTNAME}-${PORTVERSION}.static.${ARCH}-FreeBSD
 
 MAINTAINER=	holger@e-gitt.net
