@@ -8,7 +8,8 @@
 PORTNAME=	portsentry
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.psionic.com/downloads/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/IDS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port scan detection and active defense
@@ -25,9 +26,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore ${PREFIX}/etc
 	${INSTALL_PROGRAM} ${WRKSRC}/portsentry ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/portsentry
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.install ${WRKSRC}/README.methods ${WRKSRC}/README.stealth \
-	  ${PREFIX}/share/doc/portsentry
+	  ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
