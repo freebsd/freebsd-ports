@@ -179,6 +179,7 @@ share/doc/lout/user/gra_over
 share/doc/lout/user/gra_plac
 share/doc/lout/user/gra_summ
 share/doc/lout/user/gra_tick
+share/doc/lout/user/mydcbook
 share/doc/lout/user/mydefs
 share/doc/lout/user/pascal
 share/doc/lout/user/preface
@@ -326,6 +327,8 @@ share/lout/hyph/french.lh
 share/lout/hyph/french.lp
 share/lout/hyph/german.lh
 share/lout/hyph/german.lp
+share/lout/hyph/italian.lh
+share/lout/hyph/italian.lp
 share/lout/hyph/norweg.lh
 share/lout/hyph/norweg.lp
 share/lout/hyph/polish.lh
@@ -337,6 +340,9 @@ share/lout/hyph/swedish.lh
 share/lout/hyph/swedish.lp
 share/lout/include/README
 share/lout/include/README2
+share/lout/include/bddoc
+share/lout/include/bdoc
+share/lout/include/bdslides
 share/lout/include/book
 share/lout/include/bookf
 share/lout/include/cbook
@@ -360,9 +366,11 @@ share/lout/include/docf
 share/lout/include/dpicture
 share/lout/include/dreport
 share/lout/include/dslides
+share/lout/include/ebdslides
 share/lout/include/ebook
 share/lout/include/edoc
 share/lout/include/epicture
+share/lout/include/eprint
 share/lout/include/eq
 share/lout/include/ereport
 share/lout/include/eslides
@@ -381,6 +389,7 @@ share/lout/include/mydefs
 share/lout/include/pas
 share/lout/include/picture
 share/lout/include/picturef
+share/lout/include/queries
 share/lout/include/report
 share/lout/include/reportf
 share/lout/include/russian.fd

@@ -1,17 +1,17 @@
 # New ports collection makefile for: lout
-# Version required:  3.10
+# Version required:  3.11
 # Date created:      10/22/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.2 1996/11/09 01:17:15 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/05 15:47:07 max Exp $
 #
 
-DISTNAME=	lout.3.10
-PKGNAME=	lout-3.10
+DISTNAME=	lout.3.11
+PKGNAME=	lout-3.11
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}  \
 		ftp://ftp.cs.usyd.edu.au/jeff/lout/
-MASTER_SITE_SUBDIR=	support/lout/lout
+MASTER_SITE_SUBDIR=	support/lout
 
 MAINTAINER=	oly@world.std.com
 
