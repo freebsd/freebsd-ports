@@ -1,0 +1,10 @@
+$NetBSD: patch-aa,v 1.1.1.1 1999/12/23 03:10:59 itohy Exp $
+
+--- Imakefile.orig	Mon Oct 24 23:54:50 1988
++++ Imakefile	Wed Dec 22 13:54:20 1999
+@@ -1,3 +1,5 @@
++         UWMDIR = $(LIBDIR)/uwm
++   TOP_INCLUDES = -I../.. -I$(INCROOT) $(TOP_X_INCLUDES)
+         DEFINES = -DSYSFILE=\"$(UWMDIR)$(PATHSEP)system.uwmrc\"
+ LOCAL_LIBRARIES = $(XLIB)
+   SYS_LIBRARIES = -ll

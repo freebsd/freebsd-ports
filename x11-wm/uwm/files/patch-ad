@@ -1,0 +1,134 @@
+$NetBSD: patch-ad,v 1.3 1999/12/23 23:12:50 itohy Exp $
+
+--- gram.y.orig	Thu Sep 22 22:14:31 1988
++++ gram.y	Thu Dec 23 22:04:02 1999
+@@ -117,18 +117,18 @@
+ 			        case IsString:
+ 			            if ($3 == C_STRING) {
+ 			                strcpy(KeywordTable[$1].sptr,
+-			                        yylval.sval);
++			                        $<sval>2);
+ 			            } else {
+ 			                yyerror("illegal construct");
+ 			            }
+-			            free(yylval.sval);
++			            free($<sval>2);
+ 			            break;
+ 			        case IsNumeric:
+ 			            if ($3 == C_STRING) {
+ 			                *(KeywordTable[$1].nptr) =
+-			                                   y_atoi(yylval.sval);
++			                                   y_atoi($<sval>2);
+ 			            } else yyerror("illegal construct");
+-			            free(yylval.sval);
++			            free($<sval>2);
+ 			            break;
+ 			        case IsBoolTrue:
+ 			        case IsBoolFalse:
+@@ -197,12 +197,12 @@
+ 			    ml_ptr = $3;
+ 			}
+ 	|	STRING
+-			{ $$ = C_STRING; }
++			{ $$ = C_STRING; $<sval>0 = $1; }
+ 	;
+ 
+ boolvar:	STRING
+ 			{
+-			    ki = keywordlookup(yylval.sval);
++			    ki = keywordlookup($1);
+ 			    switch (KeywordTable[ki].type) {
+ 			    case IsBoolTrue:
+ 			        *(KeywordTable[ki].bptr) = TRUE;
+@@ -220,7 +220,7 @@
+ 	;
+ 
+ keyword:	STRING	{
+-			    $$ = keywordlookup(yylval.sval);
++			    $$ = keywordlookup($1);
+ 			}
+ 	;
+ 
+@@ -246,9 +246,9 @@
+ 			{ $$ = CheckButtonState($1); }
+ 	;
+ 
+-kmask:		STRING { $$ = keyexprlookup(yylval.sval); }
++kmask:		STRING { $$ = keyexprlookup($1); }
+ 
+-contmask:	STRING { $$ = contexprlookup(yylval.sval); }
++contmask:	STRING { $$ = contexprlookup($1); }
+ 
+ buttmodexpr: 	buttmodifier
+ 			{ $$ = $1; }
+@@ -257,7 +257,7 @@
+ 	;
+ 
+ buttmodifier:	STRING
+-			{ $$ = buttexprlookup(yylval.sval); }
++			{ $$ = buttexprlookup($1); }
+ 	;
+ 
+ menuname:	STRING
+@@ -304,7 +304,7 @@
+ 
+ menuaction:	STRING
+ 			{
+-			    ki = keywordlookup(yylval.sval);
++			    ki = keywordlookup($1);
+ 			    if ((ki != -1) &&
+ 			        (KeywordTable[ki].type != IsFunction) &&
+ 			        (KeywordTable[ki].type != IsQuitFunction) &&
+@@ -350,7 +350,7 @@
+ 			}
+ 	;
+ 
+-strings:	STRING	{ $$ = yylval.sval; }
++strings:	STRING	{ $$ = $1; }
+ 	|	strings STRING
+ 			{ $$ = strconcat($1, $2); }
+ 	;
+@@ -387,7 +387,7 @@
+ 			}
+ 	;
+ 
+-color:		STRING	{ $$ = yylval.sval; }
++color:		STRING	{ $$ = $1; }
+ 	|	/* empty */	{ $$ = NULL; }
+ 	;
+ %%
+@@ -572,6 +572,8 @@
+         setbinding(ICON, index, mask, name);
+     if (context & WINDOW)
+         setbinding(WINDOW, index, mask, name);
++    if (name)
++	free(name);
+ }
+ 
+ /*
+@@ -599,12 +601,13 @@
+ char *mname;		/* Pointer to menu name, if needed. */
+ {
+     Binding *ptr;
++    extern char *stash();
+ 
+     ptr = AllocBinding();
+     ptr->context = cont;
+     ptr->mask = m;
+     ptr->func = KeywordTable[i].fptr;
+-    ptr->menuname = mname;
++    ptr->menuname = mname ? stash(mname) : NULL;
+ 
+     switch (m & (LeftMask | MiddleMask | RightMask)) {
+     case LeftMask:
+@@ -771,9 +774,8 @@
+     else {
+         for(ptr = list; ptr->next; ptr = ptr->next) /* NULL */;
+         ptr->next = link;
+-        ptr = ptr->next;
+-        ptr->next = NULL;
+     }
++    link->next = NULL;
+     return(list);
+ }
+ 

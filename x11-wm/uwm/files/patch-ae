@@ -1,0 +1,14 @@
+$NetBSD: patch-ae,v 1.1.1.1 1999/12/23 03:10:59 itohy Exp $
+
+--- GetButton.c.orig	Mon Oct 24 19:08:17 1988
++++ GetButton.c	Wed Dec 22 13:59:28 1999
+@@ -255,7 +255,8 @@
+     /* 
+      * We convert the key pressed event to ascii.
+      */
+-    nbytes = XLookupString(kp_event, kbd_str, STRLEN, NULL);
++    nbytes = XLookupString(kp_event, kbd_str, STRLEN, (KeySym *) NULL,
++    				(XComposeStatus *) NULL);
+ 
+     /*
+      * If kbd_str is a "non-string", then don't do anything.

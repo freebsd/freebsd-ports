@@ -1,0 +1,13 @@
+$NetBSD: patch-af,v 1.1.1.1 1999/12/23 03:10:59 itohy Exp $
+
+--- Kill.c.orig	Thu Sep  8 00:28:28 1988
++++ Kill.c	Thu Dec 23 00:54:08 1999
+@@ -11,7 +11,7 @@
+ int button;                             /* Button event detail. */
+ int x, y;                               /* Event mouse position. */
+ {
+-    Window *assoc;
++    Window assoc;
+ 
+     if (IsIcon(window, x, y, TRUE, &assoc))
+         XKillClient(dpy, assoc);
