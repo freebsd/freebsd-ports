@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -23,10 +23,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		msmtp.1
+INFO=	msmtp
 PLIST_FILES=	bin/msmtp
 
 # conflicts with mail/msmtp
 CONFLICTS=	msmtp-1.2.*
+
+# XXX we need gnutls >= 1.2.0 which is not avaible via ports tree
+.if defined(WITH_GNUTLS)
+.undef WITH_GNUTLS
+.endif
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
