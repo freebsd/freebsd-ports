@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.81 1997/07/04 09:37:47 tg Exp $
+# $Id: Makefile,v 1.82 1997/07/09 09:43:40 max Exp $
 #
 
     SUBDIR += acm
+    SUBDIR += agm
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += block
