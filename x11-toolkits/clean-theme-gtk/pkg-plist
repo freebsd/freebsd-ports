@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libclean.so
+share/themes/Clean/ICON.png
+share/themes/Clean/README.html
+share/themes/Clean/gtk/gtkrc
+@dirrm share/themes/Clean/gtk
+@dirrm share/themes/Clean
