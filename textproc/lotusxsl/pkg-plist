@@ -1,94 +1,201 @@
 bin/lotusxsl
 share/java/LotusXSL/apidocs/allclasses-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xml/attlist.html
+share/java/LotusXSL/apidocs/com/lotus/xml/defaulterrorhandler.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formatter.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formatterlistener.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formattertodom.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formattertohtml.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formattertotext.html
+share/java/LotusXSL/apidocs/com/lotus/xml/formattertoxml.html
+share/java/LotusXSL/apidocs/com/lotus/xml/namespace.html
+share/java/LotusXSL/apidocs/com/lotus/xml/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xml/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xml/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xml/prefixresolver.html
+share/java/LotusXSL/apidocs/com/lotus/xml/qname.html
+share/java/LotusXSL/apidocs/com/lotus/xml/treewalker.html
+share/java/LotusXSL/apidocs/com/lotus/xml/wrongparserexception.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j/htmlformatprintvisitor.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j/processxsl.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/dynamicvalidatingdomparser.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/dynamicvalidatingsaxparser.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom/xml4jliaison4dom.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx/htmlformatprintvisitor.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx/xml4jliaison.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xmlparserliaison.html
+share/java/LotusXSL/apidocs/com/lotus/xml/xmlparserliaisondefault.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/dataproviderassociation.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/dispatcher.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/dispatcherfactory.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/extensionfunctionhandler.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/foundindex.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcboolean.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcceiling.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcconcat.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funccontains.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funccount.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funccurrent.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcdoc.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcdoclocation.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcextelementavailable.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcextfunctionavailable.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcfalse.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcfloor.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcformatnumber.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcgenerateid.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcid.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funckey.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funclang.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funclast.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funclocalpart.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcnamespace.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcnormalize.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcnot.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcnumber.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcposition.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcqname.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcround.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcstartswith.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcstring.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcstringlength.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcsubstring.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcsubstringafter.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcsubstringbefore.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcsum.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcsystemproperty.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/function.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/functranslate.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/functrue.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/funcunparsedentityuri.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/keydeclaration.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/mutablenodelist.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/mutablenodelistimpl.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/nodelistimpl.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/process.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/simplenodelocator.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xboolean.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xbooleanstatic.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xlocator.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xnodeset.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xnull.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xnumber.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xobject.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpath.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathenvsupport.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathexception.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathfactory.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathprocessor.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathprocessorexception.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathprocessorimpl.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathsupport.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpathsupportdefault.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xpointer.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xrtreefrag.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xsltjavaclassengine.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xspan.html
+share/java/LotusXSL/apidocs/com/lotus/xpath/xstring.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/arg.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/avt.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/avtpart.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/avtpartsimple.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/avtpartxpath.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/client/lotusxslcontrol.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/client/package-frame.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/client/package-summary.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/client/package-tree.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/constants.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/dispatcher.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/dispatcherfactory.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemapplyimport.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemapplytemplates.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemattribute.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemattributeset.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemcalltemplate.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemchoose.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemcomment.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemcopy.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemcopyof.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemelement.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemextensioncall.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemforeach.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemif.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemliteralresult.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemmessage.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemnumber.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemotherwise.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemparam.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elempi.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemsort.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemtemplate.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemtemplateelement.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemtext.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemtextliteral.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemuse.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemvalueof.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemvariable.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemwhen.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/elemwithparam.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/expression.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formatter.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formatterlistener.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formattertodom.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formattertohtml.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formattertotext.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/formattertoxml.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/idattributeholder.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/keydeclaration.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/extensionnshandler.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/extensions/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/extensions/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/extensions/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/extensions/redirect.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/funcdocument.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/keytable.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/nodesortkey.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/numeratorformatter.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/package-frame.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/package-summary.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/package-tree.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/problemlistener.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/problemlistenerdefault.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/process.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/queryengine.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/queryengineexception.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/queryengineservice.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/resulttreefrag.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/serializableattrlistimpl.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/applyxsl.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/applyxslexception.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/applyxsllistener.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/applyxslproperties.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/defaultapplyxsl.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/server/defaultapplyxslproperties.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/package-frame.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/package-summary.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/server/package-tree.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/treewalker.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/wrongxml4jversionexception.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j/htmlformatprintvisitor.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j/package-frame.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j/package-summary.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j/package-tree.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j/processxsl.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom/package-frame.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom/package-summary.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom/package-tree.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom/xml4jliaison4dom.defaulterrorhandler.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom/xml4jliaison4dom.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx/htmlformatprintvisitor.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx/package-frame.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx/package-summary.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx/package-tree.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx/xml4jliaison.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xmlparserliaison.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xmlparserliaisondefault.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/stylesheet.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/stylesheethandler.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/stylesheetroot.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/generateevent.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/package-frame.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/package-summary.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/package-tree.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/printtracelistener.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/selectionevent.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/tracelistener.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/trace/tracerevent.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/unimplnode.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/xmlsourceinfo.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/xquery.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/xslprocessor.html
-share/java/LotusXSL/apidocs/com/lotus/xsl/xslprocessor.stylesheet.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/xslprocessorcontext.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/xslprocessorexception.html
 share/java/LotusXSL/apidocs/com/lotus/xsl/xslprocessorversion.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/xslsourcetreecounter.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/xsltinputsource.html
+share/java/LotusXSL/apidocs/com/lotus/xsl/xsltresulttarget.html
 share/java/LotusXSL/apidocs/deprecated-list.html
 share/java/LotusXSL/apidocs/help-doc.html
-share/java/LotusXSL/apidocs/images/3611beac.jpg
-share/java/LotusXSL/apidocs/images/blue-ball-small.gif
-share/java/LotusXSL/apidocs/images/blue-ball.gif
-share/java/LotusXSL/apidocs/images/blutop2.gif
-share/java/LotusXSL/apidocs/images/class-index.gif
-share/java/LotusXSL/apidocs/images/constructor-index.gif
-share/java/LotusXSL/apidocs/images/constructors.gif
-share/java/LotusXSL/apidocs/images/cyan-ball-small.gif
-share/java/LotusXSL/apidocs/images/cyan-ball.gif
-share/java/LotusXSL/apidocs/images/error-index.gif
-share/java/LotusXSL/apidocs/images/exception-index.gif
-share/java/LotusXSL/apidocs/images/green-ball-small.gif
-share/java/LotusXSL/apidocs/images/green-ball.gif
-share/java/LotusXSL/apidocs/images/gridbagex.gif
-share/java/LotusXSL/apidocs/images/interface-index.gif
-share/java/LotusXSL/apidocs/images/magenta-ball-small.gif
-share/java/LotusXSL/apidocs/images/magenta-ball.gif
-share/java/LotusXSL/apidocs/images/method-index.gif
-share/java/LotusXSL/apidocs/images/methods.gif
-share/java/LotusXSL/apidocs/images/openbookicon.gif
-share/java/LotusXSL/apidocs/images/package-index.gif
-share/java/LotusXSL/apidocs/images/red-ball-small.gif
-share/java/LotusXSL/apidocs/images/red-ball.gif
-share/java/LotusXSL/apidocs/images/variable-index.gif
-share/java/LotusXSL/apidocs/images/variables.gif
-share/java/LotusXSL/apidocs/images/wthowtw.gif
-share/java/LotusXSL/apidocs/images/yellow-ball-small.gif
-share/java/LotusXSL/apidocs/images/yellow-ball.gif
 share/java/LotusXSL/apidocs/index-all.html
 share/java/LotusXSL/apidocs/index.html
 share/java/LotusXSL/apidocs/overview-frame.html
@@ -98,10 +205,27 @@ share/java/LotusXSL/apidocs/package-list
 share/java/LotusXSL/apidocs/packages.html
 share/java/LotusXSL/apidocs/serialized-form.html
 share/java/LotusXSL/apidocs/stylesheet.css
-share/java/LotusXSL/examples/domino/dominoxmlxslservlet.java
-share/java/LotusXSL/examples/domino/realestate.xsl
-share/java/LotusXSL/examples/servlet/media.properties
-share/java/LotusXSL/examples/servlet/mime.properties
+share/java/LotusXSL/examples/dom1/foo.xml
+share/java/LotusXSL/examples/dom1/foo.xsl
+share/java/LotusXSL/examples/dom1/mkd.bat
+share/java/LotusXSL/examples/dom1/test.bat
+share/java/LotusXSL/examples/dom1/transform.java
+share/java/LotusXSL/examples/params/foo.xml
+share/java/LotusXSL/examples/params/foo.xsl
+share/java/LotusXSL/examples/params/mkd.bat
+share/java/LotusXSL/examples/params/test.bat
+share/java/LotusXSL/examples/params/transform.java
+share/java/LotusXSL/examples/simple/foo.xml
+share/java/LotusXSL/examples/simple/foo.xsl
+share/java/LotusXSL/examples/simple/mkd.bat
+share/java/LotusXSL/examples/simple/test.bat
+share/java/LotusXSL/examples/simple/transform.java
+share/java/LotusXSL/examples/validatexpath/foo.xml
+share/java/LotusXSL/examples/validatexpath/foo.xsl
+share/java/LotusXSL/examples/validatexpath/mkd.bat
+share/java/LotusXSL/examples/validatexpath/test.bat
+share/java/LotusXSL/examples/validatexpath/validatexpath.java
+share/java/LotusXSL/extensions.html
 share/java/LotusXSL/images/3611ba1c.jpg
 share/java/LotusXSL/images/3611ba1d.jpg
 share/java/LotusXSL/images/3611be96.jpg
@@ -127,498 +251,52 @@ share/java/LotusXSL/images/lotus.gif
 share/java/LotusXSL/images/lwpweb.gif
 share/java/LotusXSL/images/wthowtw.gif
 share/java/LotusXSL/index.html
-share/java/LotusXSL/issues.html
 share/java/LotusXSL/lotusxslcomerciallicense.html
 share/java/LotusXSL/overview.html
 share/java/LotusXSL/readme.html
-share/java/LotusXSL/readme_production/apidocoverview.html
-share/java/LotusXSL/readme_production/makeoverview.bat
-share/java/LotusXSL/readme_production/makereadme.bat
-share/java/LotusXSL/readme_production/old-xsl-html.dtd
+share/java/LotusXSL/readme_production/index.xml
+share/java/LotusXSL/readme_production/index.xsl
+share/java/LotusXSL/readme_production/list0_18_1.xml
+share/java/LotusXSL/readme_production/list0_18_2.xml
+share/java/LotusXSL/readme_production/list0_18_3.xml
+share/java/LotusXSL/readme_production/list0_18_4.xml
+share/java/LotusXSL/readme_production/list0_18_d13.xml
+share/java/LotusXSL/readme_production/list0_18_d14.xml
+share/java/LotusXSL/readme_production/makefile
 share/java/LotusXSL/readme_production/osd.xml
 share/java/LotusXSL/readme_production/overview.xml
 share/java/LotusXSL/readme_production/readme.dtd
 share/java/LotusXSL/readme_production/readme.xml
 share/java/LotusXSL/readme_production/readme.xsl
+share/java/LotusXSL/readme_production/readme_xq.xml
 share/java/LotusXSL/readme_production/resources.xml
+share/java/LotusXSL/readme_production/todo.xml
 share/java/LotusXSL/readme_production/xsl-html40s.dtd
 share/java/LotusXSL/run.bat
 share/java/LotusXSL/run.ksh
 share/java/LotusXSL/run.sh
-share/java/LotusXSL/samples/edfiuox2.xml
-share/java/LotusXSL/samples/edfiuox2.xsl
-share/java/LotusXSL/samples/hiawatha.html
-share/java/LotusXSL/samples/hiawatha.xml
-share/java/LotusXSL/samples/hiawatha.xsl
-share/java/LotusXSL/samples/realestate.xml
-share/java/LotusXSL/samples/realestate.xsl
-share/java/LotusXSL/samples/realestate2.xsl
-share/java/LotusXSL/samples/run.bat
-share/java/LotusXSL/samples/tei.bat
-share/java/LotusXSL/samples/teij31.xml
-share/java/LotusXSL/samples/teilite.xsl
-share/java/LotusXSL/testsuite/accp/about.txt
-share/java/LotusXSL/testsuite/accp/accp01.xml
-share/java/LotusXSL/testsuite/accp/accp01.xsl
-share/java/LotusXSL/testsuite/accp/accp02.xml
-share/java/LotusXSL/testsuite/accp/accp02.xsl
-share/java/LotusXSL/testsuite/accp/accp03.xml
-share/java/LotusXSL/testsuite/accp/accp03.xsl
-share/java/LotusXSL/testsuite/accp/accp04.xml
-share/java/LotusXSL/testsuite/accp/accp04.xsl
-share/java/LotusXSL/testsuite/accp/accp05.xml
-share/java/LotusXSL/testsuite/accp/accp05.xsl
-share/java/LotusXSL/testsuite/accp/accp06.xml
-share/java/LotusXSL/testsuite/accp/accp06.xsl
-share/java/LotusXSL/testsuite/accp/accp07.xml
-share/java/LotusXSL/testsuite/accp/accp07.xsl
-share/java/LotusXSL/testsuite/accp/accp08.xml
-share/java/LotusXSL/testsuite/accp/accp08.xsl
-share/java/LotusXSL/testsuite/accp/accp09.xml
-share/java/LotusXSL/testsuite/accp/accp09.xsl
-share/java/LotusXSL/testsuite/accp/html_output_default.xsl
-share/java/LotusXSL/testsuite/accp/tei_header_to_html.xsl
-share/java/LotusXSL/testsuite/accp/tei_highlights_to_html.xsl
-share/java/LotusXSL/testsuite/accp/tei_lists_to_html.xsl
-share/java/LotusXSL/testsuite/accp/tei_tables_to_html.xsl
-share/java/LotusXSL/testsuite/accp/testdir.bat
-share/java/LotusXSL/testsuite/axes/about.txt
-share/java/LotusXSL/testsuite/axes/axes01.xml
-share/java/LotusXSL/testsuite/axes/axes01.xsl
-share/java/LotusXSL/testsuite/axes/axes02.xml
-share/java/LotusXSL/testsuite/axes/axes02.xsl
-share/java/LotusXSL/testsuite/axes/axes03.xml
-share/java/LotusXSL/testsuite/axes/axes03.xsl
-share/java/LotusXSL/testsuite/axes/axes04.xml
-share/java/LotusXSL/testsuite/axes/axes04.xsl
-share/java/LotusXSL/testsuite/axes/axes05.xml
-share/java/LotusXSL/testsuite/axes/axes05.xsl
-share/java/LotusXSL/testsuite/axes/axes06.xml
-share/java/LotusXSL/testsuite/axes/axes06.xsl
-share/java/LotusXSL/testsuite/axes/axes07.xml
-share/java/LotusXSL/testsuite/axes/axes07.xsl
-share/java/LotusXSL/testsuite/axes/axes08.xml
-share/java/LotusXSL/testsuite/axes/axes08.xsl
-share/java/LotusXSL/testsuite/axes/axes09.xml
-share/java/LotusXSL/testsuite/axes/axes09.xsl
-share/java/LotusXSL/testsuite/axes/axes10.xml
-share/java/LotusXSL/testsuite/axes/axes10.xsl
-share/java/LotusXSL/testsuite/axes/axes11.xml
-share/java/LotusXSL/testsuite/axes/axes11.xsl
-share/java/LotusXSL/testsuite/axes/axes12.xml
-share/java/LotusXSL/testsuite/axes/axes12.xsl
-share/java/LotusXSL/testsuite/axes/axes13.xml
-share/java/LotusXSL/testsuite/axes/axes13.xsl
-share/java/LotusXSL/testsuite/axes/axes14.xml
-share/java/LotusXSL/testsuite/axes/axes14.xsl
-share/java/LotusXSL/testsuite/axes/testdir.bat
-share/java/LotusXSL/testsuite/cnfr/about.txt
-share/java/LotusXSL/testsuite/cnfr/cnfr01.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr01.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr02.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr02.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr03.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr03.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr04.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr04.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr05.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr05.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr06.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr06.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr07.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr07.xsl
-share/java/LotusXSL/testsuite/cnfr/cnfr08.xml
-share/java/LotusXSL/testsuite/cnfr/cnfr08.xsl
-share/java/LotusXSL/testsuite/cnfr/testdir.bat
-share/java/LotusXSL/testsuite/copy/about.txt
-share/java/LotusXSL/testsuite/copy/copy01.xml
-share/java/LotusXSL/testsuite/copy/copy01.xsl
-share/java/LotusXSL/testsuite/copy/copy02.xml
-share/java/LotusXSL/testsuite/copy/copy02.xsl
-share/java/LotusXSL/testsuite/copy/copy03.xml
-share/java/LotusXSL/testsuite/copy/copy03.xsl
-share/java/LotusXSL/testsuite/copy/testdir.bat
-share/java/LotusXSL/testsuite/ctrb/ctrb37.xml
-share/java/LotusXSL/testsuite/ctrb/ctrb37.xsl
-share/java/LotusXSL/testsuite/ctrb/ctrb38.xml
-share/java/LotusXSL/testsuite/ctrb/ctrb38.xsl
-share/java/LotusXSL/testsuite/ctrb/fruits.xml
-share/java/LotusXSL/testsuite/ctrb/run.bat
-share/java/LotusXSL/testsuite/expr/about.txt
-share/java/LotusXSL/testsuite/expr/expr01.xml
-share/java/LotusXSL/testsuite/expr/expr01.xsl
-share/java/LotusXSL/testsuite/expr/expr02.xml
-share/java/LotusXSL/testsuite/expr/expr02.xsl
-share/java/LotusXSL/testsuite/expr/expr03.xml
-share/java/LotusXSL/testsuite/expr/expr03.xsl
-share/java/LotusXSL/testsuite/expr/expr04.xml
-share/java/LotusXSL/testsuite/expr/expr04.xsl
-share/java/LotusXSL/testsuite/expr/expr05.xml
-share/java/LotusXSL/testsuite/expr/expr05.xsl
-share/java/LotusXSL/testsuite/expr/expr06.xml
-share/java/LotusXSL/testsuite/expr/expr06.xsl
-share/java/LotusXSL/testsuite/expr/expr07.xml
-share/java/LotusXSL/testsuite/expr/expr07.xsl
-share/java/LotusXSL/testsuite/expr/testdir.bat
-share/java/LotusXSL/testsuite/ext/about.txt
-share/java/LotusXSL/testsuite/ext/currentdate.class
-share/java/LotusXSL/testsuite/ext/currentdate.java
-share/java/LotusXSL/testsuite/ext/entity.class
-share/java/LotusXSL/testsuite/ext/entityref.class
-share/java/LotusXSL/testsuite/ext/entityref.java
-share/java/LotusXSL/testsuite/ext/ext01.xml
-share/java/LotusXSL/testsuite/ext/ext01.xsl
-share/java/LotusXSL/testsuite/ext/ext02.xml
-share/java/LotusXSL/testsuite/ext/ext02.xsl
-share/java/LotusXSL/testsuite/ext/ext03.xml
-share/java/LotusXSL/testsuite/ext/ext03.xsl
-share/java/LotusXSL/testsuite/ext/ext04.xml
-share/java/LotusXSL/testsuite/ext/ext04.xsl
-share/java/LotusXSL/testsuite/ext/ext05.xml
-share/java/LotusXSL/testsuite/ext/ext05.xsl
-share/java/LotusXSL/testsuite/ext/ext06.xml
-share/java/LotusXSL/testsuite/ext/ext06.xsl
-share/java/LotusXSL/testsuite/ext/ext07.xml
-share/java/LotusXSL/testsuite/ext/ext07.xsl
-share/java/LotusXSL/testsuite/ext/ext08.xml
-share/java/LotusXSL/testsuite/ext/ext08.xsl
-share/java/LotusXSL/testsuite/ext/getpidata.class
-share/java/LotusXSL/testsuite/ext/getpidata.java
-share/java/LotusXSL/testsuite/ext/testdir.bat
-share/java/LotusXSL/testsuite/fout/about.txt
-share/java/LotusXSL/testsuite/fout/fout01.xml
-share/java/LotusXSL/testsuite/fout/fout01.xsl
-share/java/LotusXSL/testsuite/fout/fout02.xml
-share/java/LotusXSL/testsuite/fout/fout02.xsl
-share/java/LotusXSL/testsuite/fout/fout03.xml
-share/java/LotusXSL/testsuite/fout/fout03.xsl
-share/java/LotusXSL/testsuite/fout/testdir.bat
-share/java/LotusXSL/testsuite/idky/about.txt
-share/java/LotusXSL/testsuite/idky/compu.xml
-share/java/LotusXSL/testsuite/idky/idky01.xml
-share/java/LotusXSL/testsuite/idky/idky01.xsl
-share/java/LotusXSL/testsuite/idky/idky02.xml
-share/java/LotusXSL/testsuite/idky/idky02.xsl
-share/java/LotusXSL/testsuite/idky/idky03.xml
-share/java/LotusXSL/testsuite/idky/idky03.xsl
-share/java/LotusXSL/testsuite/idky/idky04.dtd
-share/java/LotusXSL/testsuite/idky/idky04.xml
-share/java/LotusXSL/testsuite/idky/idky04.xsl
-share/java/LotusXSL/testsuite/idky/idky05.xml
-share/java/LotusXSL/testsuite/idky/idky05.xsl
-share/java/LotusXSL/testsuite/idky/idky06.xml
-share/java/LotusXSL/testsuite/idky/idky06.xsl
-share/java/LotusXSL/testsuite/idky/testdir.bat
-share/java/LotusXSL/testsuite/lib/mkd.bat
-share/java/LotusXSL/testsuite/lib/run.bat
-share/java/LotusXSL/testsuite/lib/test.xsl
-share/java/LotusXSL/testsuite/lib/xsltest.class
-share/java/LotusXSL/testsuite/lib/xsltest.java
-share/java/LotusXSL/testsuite/math/about.txt
-share/java/LotusXSL/testsuite/math/math01.xml
-share/java/LotusXSL/testsuite/math/math01.xsl
-share/java/LotusXSL/testsuite/math/math02.xml
-share/java/LotusXSL/testsuite/math/math02.xsl
-share/java/LotusXSL/testsuite/math/math03.xml
-share/java/LotusXSL/testsuite/math/math03.xsl
-share/java/LotusXSL/testsuite/math/math04.xml
-share/java/LotusXSL/testsuite/math/math04.xsl
-share/java/LotusXSL/testsuite/math/math05.xml
-share/java/LotusXSL/testsuite/math/math05.xsl
-share/java/LotusXSL/testsuite/math/math06.xml
-share/java/LotusXSL/testsuite/math/math06.xsl
-share/java/LotusXSL/testsuite/math/math07.xml
-share/java/LotusXSL/testsuite/math/math07.xsl
-share/java/LotusXSL/testsuite/math/math08.xml
-share/java/LotusXSL/testsuite/math/math08.xsl
-share/java/LotusXSL/testsuite/math/math09.xml
-share/java/LotusXSL/testsuite/math/math09.xsl
-share/java/LotusXSL/testsuite/math/math10.xml
-share/java/LotusXSL/testsuite/math/math10.xsl
-share/java/LotusXSL/testsuite/math/math11.xml
-share/java/LotusXSL/testsuite/math/math11.xsl
-share/java/LotusXSL/testsuite/math/testdir.bat
-share/java/LotusXSL/testsuite/mkdirs.bat
-share/java/LotusXSL/testsuite/nspc/about.txt
-share/java/LotusXSL/testsuite/nspc/nspc01.xml
-share/java/LotusXSL/testsuite/nspc/nspc01.xsl
-share/java/LotusXSL/testsuite/nspc/nspc02.xml
-share/java/LotusXSL/testsuite/nspc/nspc02.xsl
-share/java/LotusXSL/testsuite/nspc/nspc03.xml
-share/java/LotusXSL/testsuite/nspc/nspc03.xsl
-share/java/LotusXSL/testsuite/nspc/nspc04.xml
-share/java/LotusXSL/testsuite/nspc/nspc04.xsl
-share/java/LotusXSL/testsuite/nspc/nspc05.xml
-share/java/LotusXSL/testsuite/nspc/nspc05.xsl
-share/java/LotusXSL/testsuite/nspc/testdir.bat
-share/java/LotusXSL/testsuite/ntmp/about.txt
-share/java/LotusXSL/testsuite/ntmp/ntmp01.xml
-share/java/LotusXSL/testsuite/ntmp/ntmp01.xsl
-share/java/LotusXSL/testsuite/ntmp/ntmp02.xml
-share/java/LotusXSL/testsuite/ntmp/ntmp02.xsl
-share/java/LotusXSL/testsuite/ntmp/ntmp03.xml
-share/java/LotusXSL/testsuite/ntmp/ntmp03.xsl
-share/java/LotusXSL/testsuite/ntmp/testdir.bat
-share/java/LotusXSL/testsuite/ntst/about.txt
-share/java/LotusXSL/testsuite/ntst/ntst01.xml
-share/java/LotusXSL/testsuite/ntst/ntst01.xsl
-share/java/LotusXSL/testsuite/ntst/ntst02.xml
-share/java/LotusXSL/testsuite/ntst/ntst02.xsl
-share/java/LotusXSL/testsuite/ntst/ntst03.xml
-share/java/LotusXSL/testsuite/ntst/ntst03.xsl
-share/java/LotusXSL/testsuite/ntst/ntst04.xml
-share/java/LotusXSL/testsuite/ntst/ntst04.xsl
-share/java/LotusXSL/testsuite/ntst/testdir.bat
-share/java/LotusXSL/testsuite/pos/about.txt
-share/java/LotusXSL/testsuite/pos/pos01.xml
-share/java/LotusXSL/testsuite/pos/pos01.xsl
-share/java/LotusXSL/testsuite/pos/pos02.xml
-share/java/LotusXSL/testsuite/pos/pos02.xsl
-share/java/LotusXSL/testsuite/pos/pos03.xml
-share/java/LotusXSL/testsuite/pos/pos03.xsl
-share/java/LotusXSL/testsuite/pos/pos04.xml
-share/java/LotusXSL/testsuite/pos/pos04.xsl
-share/java/LotusXSL/testsuite/pos/pos05.xml
-share/java/LotusXSL/testsuite/pos/pos05.xsl
-share/java/LotusXSL/testsuite/pos/pos06.xml
-share/java/LotusXSL/testsuite/pos/pos06.xsl
-share/java/LotusXSL/testsuite/pos/pos07.xml
-share/java/LotusXSL/testsuite/pos/pos07.xsl
-share/java/LotusXSL/testsuite/pos/pos08.xml
-share/java/LotusXSL/testsuite/pos/pos08.xsl
-share/java/LotusXSL/testsuite/pos/pos09.xml
-share/java/LotusXSL/testsuite/pos/pos09.xsl
-share/java/LotusXSL/testsuite/pos/pos10.xml
-share/java/LotusXSL/testsuite/pos/pos10.xsl
-share/java/LotusXSL/testsuite/pos/pos11.xml
-share/java/LotusXSL/testsuite/pos/pos11.xsl
-share/java/LotusXSL/testsuite/pos/pos12.xml
-share/java/LotusXSL/testsuite/pos/pos12.xsl
-share/java/LotusXSL/testsuite/pos/testdir.bat
-share/java/LotusXSL/testsuite/slct/about.txt
-share/java/LotusXSL/testsuite/slct/slct01.xml
-share/java/LotusXSL/testsuite/slct/slct01.xsl
-share/java/LotusXSL/testsuite/slct/slct02.xml
-share/java/LotusXSL/testsuite/slct/slct02.xsl
-share/java/LotusXSL/testsuite/slct/testdir.bat
-share/java/LotusXSL/testsuite/str/about.txt
-share/java/LotusXSL/testsuite/str/str01.xml
-share/java/LotusXSL/testsuite/str/str01.xsl
-share/java/LotusXSL/testsuite/str/str02.xml
-share/java/LotusXSL/testsuite/str/str02.xsl
-share/java/LotusXSL/testsuite/str/str03.xml
-share/java/LotusXSL/testsuite/str/str03.xsl
-share/java/LotusXSL/testsuite/str/str04.xml
-share/java/LotusXSL/testsuite/str/str04.xsl
-share/java/LotusXSL/testsuite/str/str05.xml
-share/java/LotusXSL/testsuite/str/str05.xsl
-share/java/LotusXSL/testsuite/str/str06.xml
-share/java/LotusXSL/testsuite/str/str06.xsl
-share/java/LotusXSL/testsuite/str/str07.xml
-share/java/LotusXSL/testsuite/str/str07.xsl
-share/java/LotusXSL/testsuite/str/str08.xml
-share/java/LotusXSL/testsuite/str/str08.xsl
-share/java/LotusXSL/testsuite/str/str09.xml
-share/java/LotusXSL/testsuite/str/str09.xsl
-share/java/LotusXSL/testsuite/str/str10.xml
-share/java/LotusXSL/testsuite/str/str10.xsl
-share/java/LotusXSL/testsuite/str/str11.xml
-share/java/LotusXSL/testsuite/str/str11.xsl
-share/java/LotusXSL/testsuite/str/str12.xml
-share/java/LotusXSL/testsuite/str/str12.xsl
-share/java/LotusXSL/testsuite/str/str13.xml
-share/java/LotusXSL/testsuite/str/str13.xsl
-share/java/LotusXSL/testsuite/str/testdir.bat
-share/java/LotusXSL/testsuite/templ.xml
-share/java/LotusXSL/testsuite/templ.xsl
-share/java/LotusXSL/testsuite/testall.bat
-share/java/LotusXSL/testsuite/var/about.txt
-share/java/LotusXSL/testsuite/var/testdir.bat
-share/java/LotusXSL/testsuite/var/var01.xml
-share/java/LotusXSL/testsuite/var/var01.xsl
-share/java/LotusXSL/testsuite/var/var02.xml
-share/java/LotusXSL/testsuite/var/var02.xsl
-share/java/LotusXSL/testsuite/var/var03.xml
-share/java/LotusXSL/testsuite/var/var03.xsl
-share/java/LotusXSL/testsuite/var/var04.xml
-share/java/LotusXSL/testsuite/var/var04.xsl
-share/java/LotusXSL/testsuite/whte/about.txt
-share/java/LotusXSL/testsuite/whte/testdir.bat
-share/java/LotusXSL/testsuite/whte/whte01.xml
-share/java/LotusXSL/testsuite/whte/whte01.xsl
-share/java/LotusXSL/testsuite/whte/whte02.xml
-share/java/LotusXSL/testsuite/whte/whte02.xsl
-share/java/LotusXSL/testsuite/whte/whte03.xml
-share/java/LotusXSL/testsuite/whte/whte03.xsl
-share/java/LotusXSL/testsuite/whte/whte04.xml
-share/java/LotusXSL/testsuite/whte/whte04.xsl
-share/java/LotusXSL/testsuite/whte/whte05.xml
-share/java/LotusXSL/testsuite/whte/whte05.xsl
-share/java/LotusXSL/testsuite/whte/whte06.xml
-share/java/LotusXSL/testsuite/whte/whte06.xsl
-share/java/LotusXSL/testsuite/whte/whte07.xml
-share/java/LotusXSL/testsuite/whte/whte07.xsl
-share/java/LotusXSL/testsuite/whte/whte08.xml
-share/java/LotusXSL/testsuite/whte/whte08.xsl
-share/java/LotusXSL/testsuite/whte/whte09.xml
-share/java/LotusXSL/testsuite/whte/whte09.xsl
-share/java/LotusXSL/testsuite/whte/whte10.xml
-share/java/LotusXSL/testsuite/whte/whte10.xsl
-share/java/LotusXSL/testsuite/whte/whte11.xml
-share/java/LotusXSL/testsuite/whte/whte11.xsl
-share/java/LotusXSL/testsuite/whte/whte12.xml
-share/java/LotusXSL/testsuite/whte/whte12.xsl
-share/java/LotusXSL/testsuite/whte/whte13.xml
-share/java/LotusXSL/testsuite/whte/whte13.xsl
-share/java/LotusXSL/testsuite/whte/whte14.xml
-share/java/LotusXSL/testsuite/whte/whte14.xsl
-share/java/LotusXSL/testsuite/whte/whte15.xml
-share/java/LotusXSL/testsuite/whte/whte15.xsl
-share/java/LotusXSL/testsuite/whte/whte16.xml
-share/java/LotusXSL/testsuite/whte/whte16.xsl
-share/java/LotusXSL/testsuite/whte/whte17.xml
-share/java/LotusXSL/testsuite/whte/whte17.xsl
-share/java/LotusXSL/testsuite/whte/whte18.xml
-share/java/LotusXSL/testsuite/whte/whte18.xsl
-share/java/LotusXSL/testsuite/whte/whte19.xml
-share/java/LotusXSL/testsuite/whte/whte19.xsl
-share/java/LotusXSL/testsuite/xml4j1tx/eom.dtd
-share/java/LotusXSL/testsuite/xml4j1tx/test.bat
-share/java/LotusXSL/testsuite/xml4j1tx/test.sh
-share/java/LotusXSL/testsuite/xml4j1tx/testall.bat
-share/java/LotusXSL/testsuite/xml4j2dom/accp.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp01.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp02.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp03.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp04.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp05.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp06.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp07.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp08.html
-share/java/LotusXSL/testsuite/xml4j2dom/accp/accp09.html
-share/java/LotusXSL/testsuite/xml4j2dom/api/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/atrs/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/axes/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/bndr/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/cnfr/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/copy/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/ctrb/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/ctrb/ctrb37.html
-share/java/LotusXSL/testsuite/xml4j2dom/dctv/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/err/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/expr/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/ext/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/fout/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/idky/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/inc/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/intl/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/lot/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/math/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/mtch/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/nspc/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/ntmp/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/ntst/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/perf/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/pos/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/reso/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/slct/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/str/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/test.bat
-share/java/LotusXSL/testsuite/xml4j2dom/test.sh
-share/java/LotusXSL/testsuite/xml4j2dom/test/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/testall.bat
-share/java/LotusXSL/testsuite/xml4j2dom/testdir.bat
-share/java/LotusXSL/testsuite/xml4j2dom/thrd/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/tree/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/var/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/whte/about.txt
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte01.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte02.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte03.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte04.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte05.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte06.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte07.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte08.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte09.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte10.html
-share/java/LotusXSL/testsuite/xml4j2dom/whte/whte11.html
-share/java/LotusXSL/testsuite/xml4j2tx/test.bat
-share/java/LotusXSL/testsuite/xml4j2tx/test.sh
-share/java/LotusXSL/testsuite/xml4j2tx/testall.bat
-share/java/LotusXSL/xsl-html40s.dtd
+share/java/LotusXSL/xquery.html
 share/java/classes/js.jar
 share/java/classes/lotusxsl.jar
+share/java/classes/lotusxslbsf.jar
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xml/xml4j
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2dom
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xml/xml4j2tx
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xml
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xpath
 @dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/client
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/extensions
 @dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/server
-@dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j
-@dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2dom
-@dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/xml4j2tx
+@dirrm share/java/LotusXSL/apidocs/com/lotus/xsl/trace
 @dirrm share/java/LotusXSL/apidocs/com/lotus/xsl
 @dirrm share/java/LotusXSL/apidocs/com/lotus
 @dirrm share/java/LotusXSL/apidocs/com
-@dirrm share/java/LotusXSL/apidocs/images
 @dirrm share/java/LotusXSL/apidocs
-@dirrm share/java/LotusXSL/examples/domino
-@dirrm share/java/LotusXSL/examples/servlet
+@dirrm share/java/LotusXSL/examples/dom1
+@dirrm share/java/LotusXSL/examples/params
+@dirrm share/java/LotusXSL/examples/simple
+@dirrm share/java/LotusXSL/examples/validatexpath
 @dirrm share/java/LotusXSL/examples
 @dirrm share/java/LotusXSL/images
 @dirrm share/java/LotusXSL/readme_production
-@dirrm share/java/LotusXSL/samples
-@dirrm share/java/LotusXSL/testsuite/axes
-@dirrm share/java/LotusXSL/testsuite/accp
-@dirrm share/java/LotusXSL/testsuite/cnfr
-@dirrm share/java/LotusXSL/testsuite/ctrb
-@dirrm share/java/LotusXSL/testsuite/copy
-@dirrm share/java/LotusXSL/testsuite/expr
-@dirrm share/java/LotusXSL/testsuite/ext
-@dirrm share/java/LotusXSL/testsuite/fout
-@dirrm share/java/LotusXSL/testsuite/idky
-@dirrm share/java/LotusXSL/testsuite/lib
-@dirrm share/java/LotusXSL/testsuite/math
-@dirrm share/java/LotusXSL/testsuite/nspc
-@dirrm share/java/LotusXSL/testsuite/ntmp
-@dirrm share/java/LotusXSL/testsuite/ntst
-@dirrm share/java/LotusXSL/testsuite/pos
-@dirrm share/java/LotusXSL/testsuite/slct
-@dirrm share/java/LotusXSL/testsuite/str
-@dirrm share/java/LotusXSL/testsuite/whte
-@dirrm share/java/LotusXSL/testsuite/xml4j1tx
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/accp
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/api
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/atrs
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/axes
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/bndr
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/cnfr
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/copy
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/ctrb
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/dctv
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/err
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/expr
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/ext
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/fout
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/idky
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/inc
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/intl
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/lot
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/math
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/mtch
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/nspc
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/ntmp
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/ntst
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/perf
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/pos
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/reso
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/slct
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/str
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/test
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/thrd
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/tree
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/var
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom/whte
-@dirrm share/java/LotusXSL/testsuite/xml4j2dom
-@dirrm share/java/LotusXSL/testsuite/xml4j2tx
-@dirrm share/java/LotusXSL/testsuite/var
-@dirrm share/java/LotusXSL/testsuite
 @dirrm share/java/LotusXSL
