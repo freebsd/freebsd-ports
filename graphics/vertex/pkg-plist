@@ -1,0 +1,16 @@
+bin/vertex
+share/vertex/help/contacts.html
+share/vertex/help/index.html
+share/vertex/help/keyboard.html
+share/vertex/help/tutorial.html
+share/vertex/help/v3dformat.html
+share/vertex/help/viewing.html
+share/vertex/icons/vertex.xpm
+share/vertex/preset_models/01.3d
+share/vertex/preset_models/02.3d
+share/vertex/preset_primitives/01.3d
+@dirrm share/vertex/preset_primitives
+@dirrm share/vertex/preset_models
+@dirrm share/vertex/icons
+@dirrm share/vertex/help
+@dirrm share/vertex

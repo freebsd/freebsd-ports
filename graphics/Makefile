@@ -245,6 +245,7 @@
     SUBDIR += vcdpad
     SUBDIR += vcdtools
     SUBDIR += vcg
+    SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += whirlgif

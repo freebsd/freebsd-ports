@@ -1,0 +1,24 @@
+Vertex 3D Model Assembler (sometimes reffered to as just Vertex) is a unique
+modeller designed specifically for generating efficient game models for (but
+not limited to) games and applications using OpenGL's style of graphics
+rendering.
+
+This is not a modeller intended to create massive 3D scenes for ray tracers.
+However there are plans to support exporting models to ray tracers (ie POVRAY),
+Vertex is not intended to be an eye candy modeller but rather a strict high
+performance game model maker.
+
+Vertex supports the native V3D format, it is a hybrid text file format designed
+to easilly support third party proprietery data as well as V3D model data in an
+OpenGL friendly layout so that it can be read and loaded quickly into OpenGL
+display lists (if that is what the application wants) or into editable data
+structures in terms of `models' and `primitives'. One V3D file may contain
+multiple modelmodels and embedded third party proprietery data within and
+outside model sections in the file.
+
+Vertex is a modeller written by game programmers for game programmers, its
+intent is to maximize efficiency and detail tradeoff for high performance
+animations in games. Artists using modellers for ray-tracers make need some
+breaking into the differences of making models for ray tracers vs games.
+
+WWW: http://wolfpack.twu.net/Vertex/
