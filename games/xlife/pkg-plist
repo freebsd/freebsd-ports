@@ -1,0 +1,7 @@
+@cwd /usr/X11R6
+bin/xlife
+bin/lifeconv
+bin/collect
+bin/oldpconv
+lib/X11/xlife
+man/man1/xlife.1.gz
