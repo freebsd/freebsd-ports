@@ -1,10 +1,12 @@
---- configure.old	Mon Jan 17 09:53:40 2000
-+++ configure	Mon Jan 17 09:52:44 2000
-@@ -1874,6 +1874,7 @@
- 	case $TARGET in
- 	# XXX fill in for busted systems
- 	*-univel-*)	CONFIG_SOCKARGLENTYPE=size_t;;
-+        *-freebsd4*)	CONFIG_SOCKARGLENTYPE=u_int32_t;;
- 	*)		CONFIG_SOCKARGLENTYPE=int;;
- 	esac
-     }
+diff -ruN man/config.4f.orig man/config.4f
+--- man/config.4f.orig	Mon Jan  4 23:48:18 1999
++++ man/config.4f	Mon Jun 12 21:52:41 2000
+@@ -1446,7 +1446,7 @@
+ The command to place a phone call.
+ The string is assumed to be suitable for use
+ as a parameter to the
+-.IR sprintf (3S)
++.IR snprintf (3S)
+ function; so the ``%'' character should be escaped as ``%%''.
+ The dial command must include a single ``%s'' where the number
+ that is to be dialed is to be substituted.

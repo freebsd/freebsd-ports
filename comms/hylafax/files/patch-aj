@@ -1,0 +1,345 @@
+diff -ruN util/Class2Params.c++.orig util/Class2Params.c++
+--- util/Class2Params.c++.orig	Sun Jun 13 00:41:19 1999
++++ util/Class2Params.c++	Mon Jun 12 21:52:43 2000
+@@ -59,14 +59,15 @@
+ }
+ 
+ static char*
+-addParam(char* cp, u_int v)
++addParam(char* cp, u_int v, int *maxn)
+ {
+     if (v != (u_int)-1) {
+-	sprintf(cp, ",%u", v);
+-	while (*cp != '\0') cp++;
++	snprintf(cp, *maxn, ",%u", v);
++	while (*cp != '\0') { cp++; (*maxn)++; }
+     } else {
+ 	*cp++ = ',';
+ 	*cp = '\0';
++	(*maxn)++;
+     }
+     return (cp);
+ }
+@@ -76,18 +77,19 @@
+ {
+     char buf[1024];
+     char* cp = buf;
++    int n = sizeof(buf);
+ 
+     if (vr != (u_int) -1) {
+-	sprintf(cp, "%u", vr);
+-	while (*cp != '\0') cp++;
++	snprintf(cp, n, "%u", vr);
++	while (*cp != '\0') { cp++; n--; }
+     }
+-    cp = addParam(cp, br);
+-    cp = addParam(cp, wd);
+-    cp = addParam(cp, ln);
+-    cp = addParam(cp, df);
+-    cp = addParam(cp, ec);
+-    cp = addParam(cp, bf);
+-    cp = addParam(cp, st);
++    cp = addParam(cp, br, &n);
++    cp = addParam(cp, wd, &n);
++    cp = addParam(cp, ln, &n);
++    cp = addParam(cp, df, &n);
++    cp = addParam(cp, ec, &n);
++    cp = addParam(cp, bf, &n);
++    cp = addParam(cp, st, &n);
+     return fxStr(buf);
+ }
+ 
+diff -ruN util/FaxClient.c++.orig util/FaxClient.c++
+--- util/FaxClient.c++.orig	Thu Jun 17 04:05:38 1999
++++ util/FaxClient.c++	Mon Jun 12 21:52:43 2000
+@@ -623,7 +623,7 @@
+             traceServer("-> ADMIN XXXX");
+         } else {
+             char buf[128];
+-            sprintf(buf, "-> %s", fmt);
++            snprintf(buf, sizeof(buf), "-> %s", fmt);
+             vtraceServer(buf, ap);
+         }
+     }
+diff -ruN util/PageSize.c++.orig util/PageSize.c++
+--- util/PageSize.c++.orig	Sun Jun 13 00:41:23 1999
++++ util/PageSize.c++	Mon Jun 12 21:52:43 2000
+@@ -72,7 +72,7 @@
+ PageSizeInfo::readPageInfoFile()
+ {
+     char file[1024];
+-    sprintf(file, "%s/%s", FAX_LIBDATA, FAX_PAGESIZES);
++    snprintf(file, sizeof(file), "%s/%s", FAX_LIBDATA, FAX_PAGESIZES);
+     PageInfoArray* info = new PageInfoArray;
+     FILE* fp = fopen(file, "r");
+     u_int lineno = 0;
+diff -ruN util/SNPPClient.c++.orig util/SNPPClient.c++
+--- util/SNPPClient.c++.orig	Sun Jun 13 00:41:24 1999
++++ util/SNPPClient.c++	Mon Jun 12 21:52:43 2000
+@@ -638,7 +638,7 @@
+ 	    traceServer("-> LOGI XXXX");
+ 	else {
+ 	    char buf[128];
+-	    sprintf(buf, "-> %s", fmt);
++	    snprintf(buf, sizeof(buf), "-> %s", fmt);
+ 	    vtraceServer(buf, ap);
+ 	}
+     }
+diff -ruN util/StackBuffer.c++.orig util/StackBuffer.c++
+--- util/StackBuffer.c++.orig	Fri Jan  1 20:12:43 1999
++++ util/StackBuffer.c++	Mon Jun 12 21:52:44 2000
+@@ -105,7 +105,7 @@
+ fxStackBuffer::vput(const char* fmt, va_list ap)
+ {
+     char buf[8*1024];
+-    vsprintf(buf, fmt, ap);
++    vsnprintf(buf, sizeof(buf), fmt, ap);
+     put(buf);
+ }
+ 
+diff -ruN util/Str.c++.orig util/Str.c++
+--- util/Str.c++.orig	Sun Jun 13 00:41:25 1999
++++ util/Str.c++	Mon Jun 12 21:52:44 2000
+@@ -91,7 +91,7 @@
+ {
+     char buffer[NUMBUFSIZE];
+     if (!format) format = "%d";
+-    sprintf(buffer,format,a);
++    snprintf(buffer,sizeof(buffer),format,a);
+     slength = strlen(buffer) + 1;
+     data = (char*) malloc(slength);
+     memcpy(data,buffer,slength);
+@@ -101,7 +101,7 @@
+ {
+     char buffer[NUMBUFSIZE];
+     if (!format) format = "%ld";
+-    sprintf(buffer,format,a);
++    snprintf(buffer,sizeof(buffer),format,a);
+     slength = strlen(buffer) + 1;
+     data = (char*) malloc(slength);
+     memcpy(data,buffer,slength);
+@@ -111,7 +111,7 @@
+ {
+     char buffer[NUMBUFSIZE];
+     if (!format) format = "%g";
+-    sprintf(buffer,format,a);
++    snprintf(buffer,sizeof(buffer),format,a);
+     slength = strlen(buffer) + 1;
+     fxAssert(slength>1, "Str::Str(float): bogus conversion");
+     data = (char*) malloc(slength);
+@@ -122,7 +122,7 @@
+ {
+     char buffer[NUMBUFSIZE];
+     if (!format) format = "%lg";
+-    sprintf(buffer,format,a);
++    snprintf(buffer,sizeof(buffer),format,a);
+     slength = strlen(buffer) + 1;
+     fxAssert(slength>1, "Str::Str(double): bogus conversion");
+     data = (char*) malloc(slength); // XXX assume slength>1
+@@ -141,7 +141,7 @@
+     char buf[4096];
+     va_list ap;
+     va_start(ap, fmt);
+-    vsprintf(buf, fmt, ap);
++    vsnprintf(buf, sizeof(buf), fmt, ap);
+     va_end(ap);
+     return fxStr(buf);
+ }
+@@ -150,7 +150,7 @@
+ fxStr::vformat(const char* fmt, va_list ap)
+ {
+     char buf[4096];
+-    vsprintf(buf, fmt, ap);
++    vsnprintf(buf, sizeof(buf), fmt, ap);
+     return fxStr(buf);
+ }
+ 
+diff -ruN util/Str.h.orig util/Str.h
+--- util/Str.h.orig	Sun Jun 13 00:41:25 1999
++++ util/Str.h	Mon Jun 12 21:52:44 2000
+@@ -93,8 +93,8 @@
+     fxStr(const fxTempStr&);
+     ~fxStr();
+ 
+-    static fxStr format(const char* fmt ...);	// sprintf sort of
+-    static fxStr vformat(const char* fmt, va_list ap);	// vsprintf sort of
++    static fxStr format(const char* fmt ...);	// snprintf sort of
++    static fxStr vformat(const char* fmt, va_list ap);	// vsnprintf sort of
+     static fxStr null;				// null string for general use
+     /////////////////////////////////////////////////////
+     u_long hash() const;
+diff -ruN util/faxadduser.c.orig util/faxadduser.c
+--- util/faxadduser.c.orig	Wed Aug 11 04:59:28 1999
++++ util/faxadduser.c	Mon Jun 12 21:52:44 2000
+@@ -81,7 +81,7 @@
+     }
+     hf = fopen(hostfile, "a+");
+     if (hf == NULL) {
+-        sprintf(buff, "Error - cannot open hosts file: %s", hostfile);
++        snprintf(buff, sizeof(buff), "Error - cannot open hosts file: %s", hostfile);
+         perror(buff);
+         return 0;
+     }
+diff -ruN util/faxconfig.c.orig util/faxconfig.c
+--- util/faxconfig.c.orig	Fri Jan  1 20:04:28 1999
++++ util/faxconfig.c	Mon Jun 12 21:52:45 2000
+@@ -81,12 +81,12 @@
+ 	}
+     if (devid != NULL) {
+ 	if (devid[0] == FAX_FIFO[0])
+-	    strcpy(fifoname, devid);
++	    strlcpy(fifoname, devid, sizeof(fifoname));
+ 	else
+-	    sprintf(fifoname, "%s.%.*s", FAX_FIFO,
++	    snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+ 		sizeof (fifoname) - sizeof (FAX_FIFO), devid);
+     } else
+-	strcpy(fifoname, FAX_FIFO);
++	strlcpy(fifoname, FAX_FIFO, sizeof(fifoname));
+     for (cp = fifoname; cp = strchr(cp, '/'); *cp++ = '_')
+ 	;
+     if (chdir(spooldir) < 0)
+@@ -99,6 +99,8 @@
+ 	do {
+ 	    int quote;
+ 	    char *cmd;
++	    int len;
++
+ 
+ 	    if (argc - optind < 2)
+ 		fatal("Missing value for \"%s\" parameter.\n", argv[optind]);
+@@ -109,12 +111,13 @@
+ 		quote = (*cp != '\0');
+ 	    } else
+ 		quote = 1;
+-	    cmd = malloc(strlen(argv[optind])+strlen(argv[optind+1])+10);
++	    len = strlen(argv[optind])+strlen(argv[optind+1])+10;
++	    cmd = malloc(len);
+ 	    if (quote)
+-		sprintf(cmd, "C%s%s:\"%s\"",
++		snprintf(cmd, len, "C%s%s:\"%s\"",
+ 		    isQueuer ? ":" : "", argv[optind], argv[optind+1]);
+ 	    else
+-		sprintf(cmd, "C%s%s:%s",
++		snprintf(cmd, len, "C%s%s:%s",
+ 		    isQueuer ? ":" : "", argv[optind], argv[optind+1]);
+ 	    if (write(fifo, cmd, strlen(cmd)) != strlen(cmd))
+ 		fatal("%s: FIFO write failed for command (%s)",
+diff -ruN util/faxdeluser.c.orig util/faxdeluser.c
+--- util/faxdeluser.c.orig	Thu Aug  5 02:46:06 1999
++++ util/faxdeluser.c	Mon Jun 12 21:52:45 2000
+@@ -64,14 +64,14 @@
+         }
+     }
+     if ((hf = fopen(hostfile, "r+")) == NULL) {
+-        sprintf(buff, "Error - cannot open file: %s", hostfile);
++        snprintf(buff, sizeof(buff), "Error - cannot open file: %s", hostfile);
+         perror(buff);
+         return 0;
+     }
+-    sprintf(newhostfile, "%s.%i", hostfile, (int)getpid());
++    snprintf(newhostfile, sizeof(newhostfile), "%s.%i", hostfile, (int)getpid());
+     fd = open(newhostfile, O_CREAT | O_EXCL | O_WRONLY, S_IRUSR | S_IWUSR);
+     if (fd == -1) {
+-        sprintf(buff, "Error cannot open file %s", newhostfile);
++        snprintf(buff, sizeof(buff), "Error cannot open file %s", newhostfile);
+         perror(buff);
+         return 0;
+     }
+@@ -87,7 +87,7 @@
+         }
+         if (!skip) {
+             if (write(fd, buff, strlen(buff)) == -1) {
+-                sprintf(buff, "Error writing to file %s", newhostfile);
++                snprintf(buff, sizeof(buff), "Error writing to file %s", newhostfile);
+                 perror(buff);
+                 return 0;
+             }
+diff -ruN util/faxmodem.c.orig util/faxmodem.c
+--- util/faxmodem.c.orig	Fri Jan  1 20:04:28 1999
++++ util/faxmodem.c	Mon Jun 12 21:52:45 2000
+@@ -243,9 +243,9 @@
+     if (optind != argc-1)
+ 	fatal("Missing modem device.\nusage: %s %s modem", argv[0], usage);
+     if (strncmp(argv[optind], _PATH_DEV, strlen(_PATH_DEV)) == 0)
+-	strcpy(devname, argv[optind]+strlen(_PATH_DEV));
++	strlcpy(devname, argv[optind]+strlen(_PATH_DEV), sizeof(devname));
+     else
+-	strcpy(devname, argv[optind]);
++	strlcpy(devname, argv[optind], sizeof(devname));
+     for (cp = devname; cp = strchr(cp, '/'); *cp++ = '_')
+ 	;
+     if (chdir(spooldir) < 0)
+@@ -254,9 +254,10 @@
+     if (fifo < 0)
+ 	fatal("%s: open: %s", FAX_FIFO, strerror(errno));
+     if (priority != -1)
+-	sprintf(cmd, "+%s:R%c%08x:%x", devname, canpoll, caps, priority);
++	snprintf(cmd, sizeof(cmd), "+%s:R%c%08x:%x", devname, canpoll, caps,
++		priority);
+     else
+-	sprintf(cmd, "+%s:R%c%08x", devname, canpoll, caps);
++	snprintf(cmd, sizeof(cmd), "+%s:R%c%08x", devname, canpoll, caps);
+     if (write(fifo, cmd, strlen(cmd)) != strlen(cmd))
+ 	fatal("%s: FIFO write failed for command (%s)",
+ 	    argv[0], strerror(errno));
+diff -ruN util/faxmsg.c.orig util/faxmsg.c
+--- util/faxmsg.c.orig	Fri Jan  1 20:04:28 1999
++++ util/faxmsg.c	Mon Jun 12 21:52:45 2000
+@@ -108,12 +108,12 @@
+ 	}
+     if (optind == argc-1) {
+ 	if (argv[optind][0] == FAX_FIFO[0])
+-	    strcpy(fifoname, argv[optind]);
++	    strlcpy(fifoname, argv[optind], sizeof(fifoname));
+ 	else
+-	    sprintf(fifoname, "%s.%.*s", FAX_FIFO,
++	    snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+ 		sizeof (fifoname) - sizeof (FAX_FIFO), argv[optind]);
+     } else if (!modemRequired) {
+-	strcpy(fifoname, FAX_FIFO);
++	strlcpy(fifoname, FAX_FIFO, sizeof(fifoname));
+     } else
+ 	fatal("usage: %s %s", argv[0], usage);
+     for (cp = fifoname; cp = strchr(cp, '/'); *cp++ = '_')
+@@ -123,7 +123,7 @@
+     fifo = open(fifoname, O_WRONLY|O_NDELAY);
+     if (fifo < 0)
+ 	fatal("%s: open: %s", fifoname, strerror(errno));
+-    sprintf(cmd, cmdfmt, arg);
++    snprintf(cmd, sizeof(cmd), cmdfmt, arg);
+     if (write(fifo, cmd, strlen(cmd)) != strlen(cmd))
+ 	fatal("FIFO write failed for command (%s)", strerror(errno));
+     (void) close(fifo);
+diff -ruN util/faxstate.c.orig util/faxstate.c
+--- util/faxstate.c.orig	Fri Jan  1 20:04:28 1999
++++ util/faxstate.c	Mon Jun 12 21:52:46 2000
+@@ -113,7 +113,7 @@
+ 	}
+     if (optind != argc-1)
+ 	fatal("Bad option `%c'; usage: %s %s modem", c, argv[0], usage);
+-    strcpy(devid, argv[optind]);
++    strlcpy(devid, argv[optind], sizeof(devid));
+     for (cp = devid; cp = strchr(cp, '/'); *cp++ = '_')
+ 	;
+     if (chdir(spooldir) < 0)
+@@ -126,16 +126,16 @@
+ 	fifo = open(FAX_FIFO, O_WRONLY|O_NDELAY);
+ 	if (fifo < 0)
+ 	    fatal("%s: open: %s", FAX_FIFO, strerror(errno));
+-	sprintf(cmd, "+%s:%s", devid, arg);
++	snprintf(cmd, sizeof(cmd), "+%s:%s", devid, arg);
+ 	if (write(fifo, cmd, strlen(cmd)) != strlen(cmd))
+ 	    fatal("FIFO write failed for command (%s)", strerror(errno));
+     } else {
+-	sprintf(fifoname, "%s.%.*s", FAX_FIFO,
++	snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+ 	    sizeof (fifoname) - sizeof (FAX_FIFO), devid);
+ 	fifo = open(fifoname, O_WRONLY|O_NDELAY);
+ 	if (fifo < 0) 
+ 	    fatal("%s: open: %s", fifoname, strerror(errno));
+-	sprintf(cmd, "S%s", arg);
++	snprintf(cmd, sizeof(cmd), "S%s", arg);
+ 	if (write(fifo, cmd, strlen(cmd)) != strlen(cmd))
+ 	    fatal("FIFO write failed for command (%s)", strerror(errno));
+     }
