@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2004.06.07
+PORTVERSION=	2004.07.14
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
@@ -31,6 +31,14 @@ MAN3=		archive.3 \
 		archive_compression.3 \
 		archive_compression_name.3 \
 		archive_entry.3 \
+		archive_entry_acl_add_entry.3 \
+		archive_entry_acl_add_entry_w.3 \
+		archive_entry_acl_clear.3 \
+		archive_entry_acl_count.3 \
+		archive_entry_acl_next.3 \
+		archive_entry_acl_next_w.3 \
+		archive_entry_acl_reset.3 \
+		archive_entry_acl_text_w.3 \
 		archive_entry_clear.3 \
 		archive_entry_clone.3 \
 		archive_entry_copy_fflags_text_w.3 \
@@ -43,28 +51,37 @@ MAN3=		archive.3 \
 		archive_entry_fflags.3 \
 		archive_entry_fflags_text.3 \
 		archive_entry_free.3 \
+		archive_entry_gid.3 \
 		archive_entry_gname.3 \
 		archive_entry_gname_w.3 \
 		archive_entry_hardlink.3 \
-		archive_entry_hardlink_w.3 \
+		archive_entry_ino.3 \
+		archive_entry_mode.3 \
+		archive_entry_mtime.3 \
+		archive_entry_mtime_nsec.3 \
 		archive_entry_new.3 \
 		archive_entry_pathname.3 \
 		archive_entry_pathname_w.3 \
-		archive_entry_set_devmajor.3 \
-		archive_entry_set_devminor.3 \
+		archive_entry_rdev.3 \
+		archive_entry_rdevmajor.3 \
+		archive_entry_rdevminor.3 \
+		archive_entry_set_fflags.3 \
 		archive_entry_set_gid.3 \
 		archive_entry_set_gname.3 \
 		archive_entry_set_hardlink.3 \
 		archive_entry_set_link.3 \
 		archive_entry_set_mode.3 \
 		archive_entry_set_pathname.3 \
+		archive_entry_set_rdevmajor.3 \
+		archive_entry_set_rdevminor.3 \
+		archive_entry_set_size.3 \
 		archive_entry_set_symlink.3 \
 		archive_entry_set_uid.3 \
 		archive_entry_set_uname.3 \
 		archive_entry_size.3 \
 		archive_entry_stat.3 \
 		archive_entry_symlink.3 \
-		archive_entry_symlink_w.3 \
+		archive_entry_uid.3 \
 		archive_entry_uname.3 \
 		archive_entry_uname_w.3 \
 		archive_errno.3 \
