@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.30
+PORTVERSION=	2.31
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	pl${PORTVERSION:S/.//}src
@@ -45,7 +45,7 @@ USE_XPM=	yes
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin/ploticus
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/../prefabs && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
