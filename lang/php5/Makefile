@@ -406,7 +406,7 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
