@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1997/02/12 15:51:39 max Exp $
+# $Id: Makefile,v 1.91 1997/02/16 01:20:57 obrien Exp $
 #
 
     SUBDIR += archie
@@ -14,6 +14,7 @@
     SUBDIR += dgd-net
     SUBDIR += dip
     SUBDIR += fspclient
+    SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gated
     SUBDIR += gnu-finger
