@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2	
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -31,6 +31,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 GDMDIR?=	${PREFIX}/etc/gdm
+
+.include <bsd.port.pre.mk>
+
+.if exists(/usr/include/security/pam_misc.h)
+PLIST_SUB=	PAM_MISC=""
+.else
+PLIST_SUB=	PAM_MISC="@comment "
+.endif
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -62,4 +70,4 @@ post-install:
 	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
