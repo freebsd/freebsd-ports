@@ -88,11 +88,7 @@ CVS?= cvs
 SUPFLAGS+=	-h ${SUPHOST}
 .endif
 update:
-.if defined(SUP_UPDATE)
-.if !defined(PORTSSUPFILE)
-	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
-	@exit 1
-.endif
+.if defined(SUP_UPDATE) && defined(PORTSSUPFILE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${SUP}"
 	@echo "--------------------------------------------------------------"
@@ -102,6 +98,9 @@ update:
 	@echo ">>> Updating ${.CURDIR} from cvs repository" ${CVSROOT}
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${CVS} -q update -P -d
+.elif defined(SUP_UPDATE) && !defined(PORTSSUPFILE)
+	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
+	@exit 1
 .else
 	@${ECHO_MSG} "Error: Please define either SUP_UPDATE or CVS_UPDATE first."
 .endif
