@@ -1,0 +1,78 @@
+--- autoconf/fbsd.in.orig	Sat Apr  6 09:54:21 2002
++++ autoconf/fbsd.in	Sat Apr  6 09:58:55 2002
+@@ -18,7 +18,7 @@
+                  dansguardian.conf config.cache Makefile logrotation
+ 
+ PASSVARS = -DPROXYUSER=\"${PROXYUSER}\"
+-PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}access.log\"
++PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}dansguardian.log\"
+ PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
+ PASSVARS += -DPIDDIR=\"${PIDDIR}\"
+ 
+@@ -43,41 +43,37 @@
+ 	@test -d $(CONFFILELOCATION) || install -d $(CONFFILELOCATION)
+ 	@test -d $(CGIBINLOCATION) || install -d $(CGIBINLOCATION)
+ 	@test -d $(MANUALFILES)man8/ || install -d $(MANUALFILES)man8/
+-	@test -d $(LOGLOCATION) || install -d $(LOGLOCATION)
+-	@test -d $(BINARYLOCATION) || /usr/sbin/install -d $(BINARYLOCATION)
+-	cp -f ./dansguardian $(BINARYLOCATION)dansguardian
+-	cp -f ./dansguardian.conf $(CONFFILELOCATION)dansguardian.conf
+-	cp -f ./bannedphraselist $(CONFFILELOCATION)bannedphraselist
+-	cp -f ./exceptionphraselist $(CONFFILELOCATION)exceptionphraselist
+-	cp -f ./weightedphraselist $(CONFFILELOCATION)weightedphraselist
+-	cp -f ./bannediplist $(CONFFILELOCATION)bannediplist
+-	cp -f ./banneduserlist $(CONFFILELOCATION)banneduserlist
+-	cp -f ./bannedextensionlist $(CONFFILELOCATION)bannedextensionlist
+-	cp -f ./bannedmimetypelist $(CONFFILELOCATION)bannedmimetypelist
+-	cp -f ./bannedurllist $(CONFFILELOCATION)bannedurllist
+-	cp -f ./bannedregexpurllist $(CONFFILELOCATION)bannedregexpurllist
+-	cp -f ./bannedsitelist $(CONFFILELOCATION)bannedsitelist
+-	cp -f ./exceptionsitelist $(CONFFILELOCATION)exceptionsitelist
+-	cp -f ./exceptionurllist $(CONFFILELOCATION)exceptionurllist
+-	cp -f ./exceptionuserlist $(CONFFILELOCATION)exceptionuserlist
+-	cp -f ./exceptioniplist $(CONFFILELOCATION)exceptioniplist
+-	cp -f ./pics $(CONFFILELOCATION)pics
+-	cp -f ./template.html $(CONFFILELOCATION)template.html
+-	cp -f ./logrotation $(CONFFILELOCATION)logrotation
+-	cp -f ./dansguardian.bsdv $(SYSVLOCATION)dansguardian.sh
+-	cp -f ./dansguardian.pl $(CGIBINLOCATION)dansguardian.pl
+-	chmod o+x $(CGIBINLOCATION)dansguardian.pl
+-	cp -f ./dansguardian.8.gz $(MANUALFILES)man8/dansguardian.8.gz
+-	chown -R $(PROXYUSER).$(PROXYGROUP) $(LOGLOCATION)
+-	chmod -R u+wr $(LOGLOCATION)
+-	chmod u+wrx $(LOGLOCATION)
++	@test -d $(BINARYLOCATION) || install -d $(BINARYLOCATION)
++	@install -m 755 -o root -g wheel ./dansguardian $(BINARYLOCATION)dansguardian
++	@install -m 644 -o root -g wheel ./dansguardian.conf $(CONFFILELOCATION)dansguardian.conf
++	@install -m 644 -o root -g wheel ./bannedphraselist $(CONFFILELOCATION)bannedphraselist
++	@install -m 644 -o root -g wheel ./exceptionphraselist $(CONFFILELOCATION)exceptionphraselist
++	@install -m 644 -o root -g wheel ./weightedphraselist $(CONFFILELOCATION)weightedphraselist
++	@install -m 644 -o root -g wheel ./bannediplist $(CONFFILELOCATION)bannediplist
++	@install -m 644 -o root -g wheel ./banneduserlist $(CONFFILELOCATION)banneduserlist
++	@install -m 644 -o root -g wheel ./bannedextensionlist $(CONFFILELOCATION)bannedextensionlist
++	@install -m 644 -o root -g wheel ./bannedmimetypelist $(CONFFILELOCATION)bannedmimetypelist
++	@install -m 644 -o root -g wheel ./bannedurllist $(CONFFILELOCATION)bannedurllist
++	@install -m 644 -o root -g wheel ./bannedregexpurllist $(CONFFILELOCATION)bannedregexpurllist
++	@install -m 644 -o root -g wheel ./bannedsitelist $(CONFFILELOCATION)bannedsitelist
++	@install -m 644 -o root -g wheel ./exceptionsitelist $(CONFFILELOCATION)exceptionsitelist
++	@install -m 644 -o root -g wheel ./exceptionurllist $(CONFFILELOCATION)exceptionurllist
++	@install -m 644 -o root -g wheel ./exceptionuserlist $(CONFFILELOCATION)exceptionuserlist
++	@install -m 644 -o root -g wheel ./exceptioniplist $(CONFFILELOCATION)exceptioniplist
++	@install -m 644 -o root -g wheel ./pics $(CONFFILELOCATION)pics
++	@install -m 644 -o root -g wheel ./template.html $(CONFFILELOCATION)template.html
++	@install -m 755 -o root -g wheel ./dansguardian.bsdv $(SYSVLOCATION)dansguardian.sh
++	@install -m 755 -o root -g wheel ./dansguardian.pl $(CGIBINLOCATION)dansguardian.pl
++	@install -m 644 -o root -g wheel ./dansguardian.8 $(MANUALFILES)man8/dansguardian.8
++	@touch $(LOGLOCATION)dansguardian.log
++	@chown $(PROXYUSER):$(PROXYGROUP) $(LOGLOCATION)dansguardian.log
+ 
+ uninstall:
+ 	rm -f $(BINARYLOCATION)dansguardian
+ 	rm -f $(SYSVLOCATION)dansguardian
+ 	rm -f $(CGIBINLOCATION)dansguardian.pl
+ 	rm -f $(MANUALFILES)man8/dansguardian.8.gz
+-	rm -fr $(CONFFILELOCATION)
++	rm -f $(CONFFILELOCATION)dansguardian.log
+ 	rm -fr $(LOGLOCATION)
+ 
+ clean:
