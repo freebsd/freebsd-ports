@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mango
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mango
@@ -16,8 +16,10 @@ MAINTAINER=	roland.jesse@gmx.net
 
 .if defined(WITH_KDE)
 LIB_DEPENDS+=	kextmdi.2:${PORTSDIR}/devel/qextmdi
+PKGNAMESUFFIX=	-kde
 .else
 LIB_DEPENDS+=	qextmdi.2:${PORTSDIR}/devel/qextmdi
+PKGNAMESUFFIX=	-nokde
 .endif
 
 USE_BZIP2=	yes
