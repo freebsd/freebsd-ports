@@ -4,7 +4,7 @@ bin/fdesign
 @mode 644
 lib/libforms.a
 lib/libforms.so.0.7
-@exec ldconfig -m %B
+@exec /sbin/ldconfig -m %B
 @exec ranlib %D/lib/libforms.a
 @mode 444
 include/Xf/forms.h
