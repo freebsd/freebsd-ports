@@ -7213,6 +7213,7 @@ sword-modules	ports/misc/sword-modules
 sxm		ports/lang/sxm
 sxpc		ports/x11/sxpc
 sxsame		ports/games/sxsame
+sybase-ocsd	ports/databases/sybase-ocsd
 sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
 symlinks	ports/sysutils/symlinks
