@@ -33,6 +33,9 @@
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
+    SUBDIR += exim-doc-html
+    SUBDIR += exim-doc-pdf
+    SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap
     SUBDIR += exim-ldap2
     SUBDIR += exim-monitor
