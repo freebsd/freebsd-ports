@@ -1,0 +1,7 @@
+This Perl module provides interface to the Z39.50 information
+retrieval protocol (aka ISO 23950), a mature and powerful protocol
+used in application domains as diverse as bibliographic information,
+geo-spatial mapping, museums and other cultural heritage information,
+and structured vocabulary navigation.
+
+WWW: http://perl.z3950.org/
