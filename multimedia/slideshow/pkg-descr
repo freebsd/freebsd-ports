@@ -1,0 +1,19 @@
+Slideshow allows you to write slides in Python or XML.  Some features it has to
+offer:
+
+- Use of TrueType fonts
+- Showing stages in a slide
+- Progressive show of text and images
+- Scrolling of text and images
+- Special effects:
+	* Spinner
+	* Fires
+	* Stars
+	* Plasma
+	* Darkness
+- MPEG videos support
+
+WWW: http://www.alobbs.com/slideshow
+
+-- Stefan Farfeleder
+e0026813@stud3.tuwien.ac.at

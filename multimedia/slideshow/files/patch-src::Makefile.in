@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Nov 27 01:32:38 2002
++++ src/Makefile.in	Wed Nov 27 01:32:48 2002
+@@ -790,8 +790,6 @@
+ 	uninstall-recursive
+ 
+ 
+-MgpLoaderLex.cpp: MgpLoader.ll
+-	flex++ -i -oMgpLoaderLex.cpp MgpLoader.ll
+ 
+ #
+ # Python wrapper

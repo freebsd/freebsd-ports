@@ -34,6 +34,7 @@
     SUBDIR += openquicktime
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
+    SUBDIR += slideshow
     SUBDIR += tosvcd
     SUBDIR += vcdgear
     SUBDIR += vcdimager
