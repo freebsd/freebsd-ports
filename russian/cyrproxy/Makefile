@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrproxy
 PORTVERSION=	1.4.2.20010208
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian net www
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/
 DISTNAME=	cyrproxy-1.4.2
@@ -15,11 +15,8 @@ DISTNAME=	cyrproxy-1.4.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cyrillic proxy for network protocols
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == alpha || ${ARCH} == sparc64
-BROKEN=		"Does not compile on ${ARCH}"
-.endif
+post-extract:
+	@ ${RM} ${WRKSRC}/discover/discover
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/cyrproxy
@@ -43,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
