@@ -1,0 +1,50 @@
+This is Eric Young's SSL and Crypto library. It includes
+
+libssl.a:
+	An implementation of Netscapes SSL v 2 protocol.  This library
+	implements the SSL protocol.
+
+libcrypto.a:
+	General encryption and X509 stuff needed by SSL but not
+	actually logically part of it.  It includes routines for the following:
+	RC4 encryption,
+	IDEA encryption - 4 different modes, ecb, cbc, cfb and ofb.
+	MD5 and MD2 message digest algorithms,
+	SHA (SHA-0) and SHA-1 message digest algorithms,
+	RSA encryption/decryption/key generation.  There is no limit
+		on the number of bits.
+	Diffie-Hellman key-exchange/key generation.  There is no limit
+		on the number of bits.
+	X509 encoding/decoding into/from binary ASN1 and a
+		PEM based ascii-binary encoding which supports encryption with
+		a private key.
+        (The DES routines, while a part if this source distribution
+        are not included in the compiled package, as they are part
+        of the base FreeBSD secure/ distribution)
+
+Programs in this package include
+	enc	- a general encryption program that can encrypt/decrypt using
+		one of 17 different cipher/mode combinations.  The
+		input/output can also be converted to/from base64
+		ascii encoding.
+	dgst	- a generate message digesting program that will generate
+		message digests for any of md2, md5, sha (sha-0) or sha-1.
+	asn1parse - parse and display the structure of an asn1 encoded
+		binary file.
+	rsa	- Manipulate RSA private keys.
+	dh	- Manipulate Diffie-Hellman parameter files.
+	crl	- Manipulate certificate revocation lists.
+	x509	- Manipulate x509 certificates, self-sign certificates.
+	req	- Manipulate PKCS#10 certificate requests and also
+		  generate certificate requests.
+	genrsa  - Generates an arbitrary sized RSA private key.
+	gendh	- Generates a set of Diffie-Hellman parameters, the prime
+		will be a strong prime.
+	ca	- Create certificates from PKCS#10 certificate requests.
+		This program also maintains a database of certificates
+		issued.
+	verify	- Check x509 certificate signatures.
+	speed	- Benchmark SSLeay's ciphers.
+	s_server - A test SSL server.
+	s_client - A test SSL client.
+	s_time	 - Benchmark SSL performance of SSL server programs.
