@@ -141,6 +141,7 @@
     SUBDIR += marc-search
     SUBDIR += mathopd
     SUBDIR += mdw
+    SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
