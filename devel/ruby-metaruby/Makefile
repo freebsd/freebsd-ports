@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metaruby
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://hostname.2y.net/~matju/MetaRuby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
