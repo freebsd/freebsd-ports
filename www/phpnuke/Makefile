@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpnuke
-PORTVERSION=	6.0
+PORTVERSION=	6.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +15,26 @@ DISTNAME=	PHP-Nuke-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
-.if defined(WITH_PHP3)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+APACHE_LIBPHP=	${LOCALBASE}/libexec/apache2
 .else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+APACHE_LIBPHP=	${LOCALBASE}/libexec/apache
+.endif
+
+.if defined(WITH_PHP3)
+RUN_DEPENDS+=	${APACHE_LIBPHP}/libphp3.so:${PORTSDIR}/www/mod_php3
+.else
+RUN_DEPENDS+=	${APACHE_LIBPHP}/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
 USE_MYSQL=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-DOCS=		ADDONS-MODULES BLOCKS CHANGES README TODO
+PHPNUKEWWW=	${PREFIX}/www/${PORTNAME}
+DOCS=		ADDONS-MODULES BLOCKS CHANGES CREDITS INSTALL README SUPPORT TODO
 
 pre-everything::
 .if !defined(WITH_PHP3)
@@ -36,14 +45,17 @@ pre-everything::
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/www/phpnuke
-	@${MKDIR} ${PREFIX}/www/phpnuke/html
-	@${MKDIR} ${PREFIX}/www/phpnuke/sql
-	@${CP} -Rp ${WRKDIR}/html ${WRKDIR}/sql ${PREFIX}/www/phpnuke
+	@-${MKDIR} ${PHPNUKEWWW}/html ${PHPNUKEWWW}/sql
+	@${CP} -Rp ${WRKDIR}/html ${WRKDIR}/sql ${PHPNUKEWWW}
 .if !defined(NOPORTDOCS)
 .for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKDIR}/${FILE} ${PREFIX}/www/phpnuke
+	@${INSTALL_DATA} ${WRKDIR}/${FILE} ${PHPNUKEWWW}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+post-install:
+	@cd ${PREFIX}; ${FIND} ${PHPNUKEWWW:S/^${PREFIX}\///} -type f -o -type l | \
+		${SED} -e 's,^\.,${PHPNUKEWWW:S|${PREFIX}/||},' >>${TMPPLIST}
+	@cd ${PREFIX}; ${FIND} ${PHPNUKEWWW:S/^${PREFIX}\///} -type d | sort -r | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
+
+.include <bsd.port.post.mk>
