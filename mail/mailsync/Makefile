@@ -27,12 +27,6 @@ ALL_TARGET=	default
 
 MAN1=		mailsync.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/examples/mailsync \
@@ -48,4 +42,4 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/mailsync ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
