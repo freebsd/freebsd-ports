@@ -19,28 +19,27 @@ USE_JAVA=	1.3+
 NO_BUILD=	YES
 
 PORT_JARFILES=		jaxen-core.jar jaxen-dom.jar jaxen-dom4j.jar jaxen-exml.jar jaxen-full.jar jaxen-jdom.jar
-DEST_JARFILES=		${PORT_JARFILES:S,^,${JAVAJARDIR},}
 JAVA_WRKDOCSDIR=	${WRKSRC}/doc
-PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+PLIST_FILES+=		${PORT_JARFILES:S,^,${JAVAJARDIR:S,^${PREFIX}/,,}/,}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE default.css download.html faq.html index.html javadoc status.html style
 .endif
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR files..."
+	@${ECHO} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 	@${MKDIR} ${JAVAJARDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORT_JARFILES} ${JAVAJARDIR}
-	@${ECHO_CMD} " [DONE]"
+.for JARFILE in ${PORT_JARFILES}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${JARFILE} ${JAVAJARDIR}
+	@${ECHO} -n " ${JARFILE}"
+.endfor
+	@${ECHO} " [DONE]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation..."
+	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
 	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
 	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}/LICENSE
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO} " [DONE]"
 .endif
-
-post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${DEST_JARFILES}"
 
 .include <bsd.port.mk>
