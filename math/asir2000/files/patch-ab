@@ -1,0 +1,11 @@
+--- Imakefile.org	Sun Feb  4 20:11:38 2001
++++ Imakefile	Sun Feb  4 20:12:03 2001
+@@ -98,7 +98,7 @@
+ 
+ install:: $(PROGRAMS)
+ 	MakeDir($(ASIR_LIBDIR))
+-	$(INSTALL) $(INSTALLFLAGS) $(PROGRAMS) $(ASIR_LIBDIR)
++	$(INSTALL) $(INSTALLFLAGS) $(PROGRAMS) $(ASIR_BINDIR)
+ 
+ install-bin-lib:: $(PROGRAMS)
+ 	MakeDir($(ASIR_LIBDIR))
