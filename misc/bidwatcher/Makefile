@@ -17,10 +17,12 @@ PATCH_SITES=		http://sourceforge.net/tracker/download.php?group_id=2973&amp;atid
 PATCHFILES=		add_auction_by_url_also.patch
 
 MAINTAINER=		mph@FreeBSD.org
-COMMENT=	Bid monitor for eBay
+COMMENT=		Bid monitor for eBay
 
 USE_GNOME=		gtk12
 GNU_CONFIGURE=		YES
+
+MAN1=			bidwatcher.1
 
 CFLAGS+=		-UHAVE_GMTIME
 
