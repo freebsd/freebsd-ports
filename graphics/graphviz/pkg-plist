@@ -17,6 +17,18 @@ lib/graphviz/demo/ihi.README
 lib/graphviz/demo/ihi.testdata
 lib/graphviz/demo/pathplan
 lib/graphviz/demo/pathplan.README
+lib/graphviz/demo/pathplan_data/boxes.dat
+lib/graphviz/demo/pathplan_data/dpd.dat
+lib/graphviz/demo/pathplan_data/funny.dat
+lib/graphviz/demo/pathplan_data/maze.dat
+lib/graphviz/demo/pathplan_data/nested.dat
+lib/graphviz/demo/pathplan_data/northo.dat
+lib/graphviz/demo/pathplan_data/obs.dat
+lib/graphviz/demo/pathplan_data/other.dat
+lib/graphviz/demo/pathplan_data/paths.dat
+lib/graphviz/demo/pathplan_data/rotor.dat
+lib/graphviz/demo/pathplan_data/u.dat
+lib/graphviz/demo/pathplan_data/unknown.dat
 lib/graphviz/demo/spline
 lib/graphviz/demo/spline.README
 lib/graphviz/graphs/directed/KW91.dot
@@ -101,5 +113,6 @@ share/doc/graphviz/tcldot.html
 @dirrm lib/graphviz/graphs/undirected
 @dirrm lib/graphviz/graphs/directed
 @dirrm lib/graphviz/graphs
+@dirrm lib/graphviz/demo/pathplan_data
 @dirrm lib/graphviz/demo
 @dirrm lib/graphviz
