@@ -15,8 +15,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 MAINTAINER=	mph@freebsd.org
 
-BROKEN=		"Does not package correctly"
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xpat2.6
