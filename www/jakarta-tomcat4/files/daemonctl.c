@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.7 2002-08-28 09:22:01 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.8 2002-08-28 09:29:59 znerd Exp $
  */
 
 #include <assert.h>
@@ -77,6 +77,9 @@ int main(int argc, char *argv[]) {
 		printUsage();
 		return 0;
 	}
+
+	/* Set the UID to the effective UID to fix SUID */
+	setuid(geteuid());
 
 	argument = argv[1];
 	if (strcmp("start", argument) == 0) {
