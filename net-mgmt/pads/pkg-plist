@@ -1,0 +1,5 @@
+bin/pads
+bin/pads-report
+%%DATADIR%%/pads-signature-list
+%%DATADIR%%/pads-ether-codes
+@dirrm %%DATADIR%%

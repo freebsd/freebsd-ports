@@ -124,6 +124,7 @@
     SUBDIR += p5-Telnet-Cisco
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += packit
+    SUBDIR += pads
     SUBDIR += pancho
     SUBDIR += php4-snmp
     SUBDIR += php5-snmp

@@ -1,0 +1,19 @@
+PADS is a signature based detection engine used to passively detect
+network assets. It is designed to complement IDS technology by
+providing context to IDS alerts.
+
+Goals:
+
+* Passive: Records and identifies traffic seen on a network without
+    actively "scanning" a system. There will never be a packet sent
+    from the pads applications.
+
+* Portable: Has the ability to be placed easily on a remote system.
+    Does not require additional external libraries other than those
+    associated with libpcap.
+
+* Lightweight: Logging is sent to a simple CSV file. There is no need
+    for a database or other data repository installed on the local
+    machine. All correlation is done outside of the pads program.
+
+WWW: http://passive.sourceforge.net
