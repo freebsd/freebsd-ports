@@ -1,0 +1,4 @@
+bin/xgrasp
+bin/glib
+man/man1/xgrasp.1.gz
+man/man1/glib.1.gz
