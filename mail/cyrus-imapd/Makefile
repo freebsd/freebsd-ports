@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.0.17
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -50,9 +50,12 @@ CONFIGURE_ARGS+=--with-ucdsnmp=no
 MAN1=		cyradm.1 imtest.1 installsieve.1
 MAN3=		imclient.3
 MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
-MAN8=		arbitron.8 collectnews.8 ctl_deliver.8 ctl_mboxlist.8 \
-		cyrquota.8 deliver.8 fud.8 idled.8 imapd.8 ipurge.8 \
-		lmtpd.8 master.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 \
+CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
+		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::acap.3 \
+		Cyrus::SIEVE::managesieve.3
+CYRUS_MAN8=	arbitron.8 collectnews.8 ctl_deliver.8 ctl_mboxlist.8 \
+		deliver.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 \
+		master.8 mbpath.8 pop3d.8 quota.8 reconstruct.8 rmnews.8 \
 		syncnews.8 timsieved.8
 
 DOCS=		HEY-YOU-WITH-THE-EDITOR README acl-extension anoncvs bugs \
@@ -73,46 +76,51 @@ post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			${WRKSRC}/tools/mkimap
 
-pre-install:
-		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
-
 post-install:
-		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/cyrus/man
-		${MKDIR} ${PREFIX}/share/doc/cyrus/text
-.for file in ${HTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html \
-			${PREFIX}/share/doc/cyrus
-		@${ECHO_CMD} share/doc/cyrus/${file}.html >>${TMPPLIST}
+.for file in ${CYRUS_MAN3}
+		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${file}
+		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${file}.gz \
+			>>${TMPPLIST}
 .endfor
-.for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
-		ofile=`echo ${file} | ${SED} s/cyrquota/quota/`; \
-		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
-		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
-			${PREFIX}/share/doc/cyrus/man/$${ofile}.html; \
-		${ECHO_CMD} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}; \
+.for file in ${CYRUS_MAN8}
+		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${file}
+		@${ECHO_CMD} cyrus/man/man8/${file}.gz >>${TMPPLIST}
+.endfor
+		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
+.if !defined(NOPORTDOCS)
+		@${MKDIR} ${DOCSDIR}/man
+		@${MKDIR} ${DOCSDIR}/text
+.for file in ${HTDOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${file}.html >>${TMPPLIST}
+.endfor
+.for file in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
+		@if [ -f ${WRKSRC}/doc/man/${file}.html ]; then \
+		${INSTALL_DATA} ${WRKSRC}/doc/man/${file}.html \
+			${DOCSDIR}/man/${file}.html; \
+		${ECHO_CMD} share/doc/${PORTNAME}/man/${file}.html \
+			>>${TMPPLIST}; \
 		fi
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc \
-			${PREFIX}/share/doc/cyrus
-		@${ECHO_CMD} share/doc/cyrus/cyrusv2.mc >>${TMPPLIST}
+		@${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/cyrusv2.mc >>${TMPPLIST}
 .for file in ${DOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} \
-			${PREFIX}/share/doc/cyrus/text
-		@${ECHO_CMD} share/doc/cyrus/text/${file} >>${TMPPLIST}
+		@${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
+		@${ECHO_CMD} share/doc/${PORTNAME}/text/${file} >>${TMPPLIST}
 .endfor
-		@${ECHO_CMD} "@dirrm share/doc/cyrus/text" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/cyrus/man" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/cyrus" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
-		${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
+		@${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
 			${PREFIX}/etc/rc.d/imapd.sh.sample
-		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
+		@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
-		${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
+		@${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
 			${PREFIX}/etc/cyrus.conf.dist
-		${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
+		@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 			${PREFIX}/cyrus/bin/mkimap
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 		@${CAT} ${PKGMESSAGE}

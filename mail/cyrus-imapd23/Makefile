@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -129,10 +129,12 @@ MAN1=		cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
 		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
 MAN3=		imclient.3
 MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
-MAN8=		arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 \
-		deliver.8 fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 \
-		lmtpd.8 master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 \
+CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
+		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
+CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
+		cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 deliver.8 \
+		fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 \
+		master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 quota.8 \
 		reconstruct.8 rmnews.8 smmapd.8 squatter.8 syncnews.8 \
 		timsieved.8 tls_prune.8
 
@@ -143,8 +145,6 @@ DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install-testing install-upgrade install-virtdomains \
 		mailing-list man notes os overview questions readme sieve \
 		sieve-protocol specs
-
-DOCSDIR=	${PREFIX}/share/doc/cyrus-imapd22
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -183,52 +183,61 @@ post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 				  -e "s|/usr/sieve|/var/imap/sieve|g" \
 			${WRKSRC}/tools/masssievec
-		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 .if ${PERL_LEVEL} < 500600
 		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${SITE_PERL} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
 
 post-install:
-		@${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}/man
-		${MKDIR} ${DOCSDIR}/text
-.for file in ${DOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-		@${ECHO_CMD} share/doc/cyrus-imapd22/${file}.html >>${TMPPLIST}
+.for file in ${CYRUS_MAN3}
+		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${file}
+		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${file}.gz \
+			>>${TMPPLIST}
 .endfor
-.for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
-		ofile=`echo ${file} | ${SED} s/cyrquota/quota/`; \
-		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
-		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
-			${DOCSDIR}/man/$${ofile}.html; \
-		${ECHO_CMD} share/doc/cyrus-imapd22/man/$${ofile}.html \
+.for file in ${CYRUS_MAN8}
+		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${file}
+		@${ECHO_CMD} cyrus/man/man8/${file}.gz >>${TMPPLIST}
+.endfor
+		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
+.if !defined(NOPORTDOCS)
+		@${MKDIR} ${DOCSDIR}/man
+		@${MKDIR} ${DOCSDIR}/text
+.for file in ${DOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${file}.html >>${TMPPLIST}
+.endfor
+.for file in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
+		@if [ -f ${WRKSRC}/doc/man/${file}.html ]; then \
+		${INSTALL_DATA} ${WRKSRC}/doc/man/${file}.html \
+			${DOCSDIR}/man/${file}.html; \
+		${ECHO_CMD} share/doc/${PORTNAME}/man/${file}.html \
 			>>${TMPPLIST}; \
 		fi
 .endfor
 .for file in cyrusv2.mc murder.fig murder.png netnews.fig netnews.png
-		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-		@${ECHO_CMD} share/doc/cyrus-imapd22/${file} >>${TMPPLIST}
+		@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${file} >>${TMPPLIST}
 .endfor
 .for file in ${DOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
-		@${ECHO_CMD} share/doc/cyrus-imapd22/text/${file} >>${TMPPLIST}
+		@${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
+		@${ECHO_CMD} share/doc/${PORTNAME}/text/${file} >>${TMPPLIST}
 .endfor
-		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22/text" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22/man" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
 		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
 		@${CHMOD} 755 ${PREFIX}/etc/rc.d/imapd.sh
-		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
+		@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
-		${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
+		@${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
 			${PREFIX}/etc/cyrus.conf.dist
-		${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
+		@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 			${PREFIX}/cyrus/bin/mkimap
-		${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
+		@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
 			${PREFIX}/cyrus/bin/masssievec
 		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 			POST-INSTALL
