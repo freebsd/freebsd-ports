@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Minimal.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Minimal
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI
