@@ -1,0 +1,143 @@
+bin/jhead
+www/data/gallery/add_comment.php
+www/data/gallery/add_photos.php
+www/data/gallery/album_permissions.php
+www/data/gallery/albums.php
+www/data/gallery/ChangeLog
+www/data/gallery/classes/Album.php
+www/data/gallery/classes/AlbumDB.php
+www/data/gallery/classes/AlbumItem.php
+www/data/gallery/classes/Comment.php
+www/data/gallery/classes/Database.php
+www/data/gallery/classes/database/mysql/Database.php
+www/data/gallery/classes/EverybodyUser.php
+www/data/gallery/classes/gallery/User.php
+www/data/gallery/classes/gallery/UserDB.php
+www/data/gallery/classes/Image.php
+www/data/gallery/classes/NobodyUser.php
+www/data/gallery/classes/nuke5/AdminUser.php
+www/data/gallery/classes/nuke5/User.php
+www/data/gallery/classes/nuke5/UserDB.php
+www/data/gallery/classes/User.php
+www/data/gallery/classes/UserDB.php
+www/data/gallery/configure.bat
+www/data/gallery/configure.sh
+www/data/gallery/create_user.php
+www/data/gallery/css/embedded_style.css.default
+www/data/gallery/css/standalone_style.css.default
+www/data/gallery/delete_album.php
+www/data/gallery/delete_photo.php
+www/data/gallery/delete_user.php
+www/data/gallery/do_command.php
+www/data/gallery/edit_appearance.php
+www/data/gallery/edit_caption.php
+www/data/gallery/edit_field.php
+www/data/gallery/edit_thumb.php
+www/data/gallery/errors/configmode.php
+www/data/gallery/errors/configure_instructions.php
+www/data/gallery/errors/needinit.php
+www/data/gallery/errors/reconfigure.php
+www/data/gallery/errors/unconfigured.php
+www/data/gallery/highlight_photo.php
+www/data/gallery/html/errorRow.inc
+www/data/gallery/html/userData.inc
+www/data/gallery/html_wrap/album.footer.default
+www/data/gallery/html_wrap/album.header.default
+www/data/gallery/html_wrap/gallery.footer.default
+www/data/gallery/html_wrap/gallery.header.default
+www/data/gallery/html_wrap/inline_albumthumb.footer.default
+www/data/gallery/html_wrap/inline_albumthumb.header.default
+www/data/gallery/html_wrap/inline_photo.footer.default
+www/data/gallery/html_wrap/inline_photo.header.default
+www/data/gallery/html_wrap/photo.footer.default
+www/data/gallery/html_wrap/photo.header.default
+www/data/gallery/html_wrap/search.footer.default
+www/data/gallery/html_wrap/search.header.default
+www/data/gallery/html_wrap/wrapper.footer.default
+www/data/gallery/html_wrap/wrapper.header.default
+www/data/gallery/images/admin_delete.gif
+www/data/gallery/images/admin_hide.gif
+www/data/gallery/images/admin_highlight.gif
+www/data/gallery/images/admin_move.gif
+www/data/gallery/images/admin_rotate.gif
+www/data/gallery/images/admin_unhide.gif
+www/data/gallery/images/computer.gif
+www/data/gallery/images/gallery-tag.png
+www/data/gallery/images/movie.thumb.jpg
+www/data/gallery/images/nav_dot.gif
+www/data/gallery/images/nav_dot_left.gif
+www/data/gallery/images/nav_dot_right.gif
+www/data/gallery/images/nav_first.gif
+www/data/gallery/images/nav_home.gif
+www/data/gallery/images/nav_last.gif
+www/data/gallery/images/nav_next.gif
+www/data/gallery/images/nav_page.gif
+www/data/gallery/images/nav_prev.gif
+www/data/gallery/images/pixel_trans.gif
+www/data/gallery/index.php
+www/data/gallery/init.php
+www/data/gallery/java/ImageTools.jar
+www/data/gallery/layout/adminbox.inc
+www/data/gallery/layout/breadcrumb.inc
+www/data/gallery/layout/commentdraw.inc
+www/data/gallery/layout/navigator.inc
+www/data/gallery/layout/navphoto.inc
+www/data/gallery/layout/searchdraw.inc
+www/data/gallery/LICENSE.txt
+www/data/gallery/login.php
+www/data/gallery/manage_users.php
+www/data/gallery/modify_user.php
+www/data/gallery/move_album.php
+www/data/gallery/move_photo.php
+www/data/gallery/platform/fs_unix.php
+www/data/gallery/platform/fs_win32.php
+www/data/gallery/progress_uploading.php
+www/data/gallery/README
+www/data/gallery/rename_album.php
+www/data/gallery/resize_photo.php
+www/data/gallery/rotate_photo.php
+www/data/gallery/save_photos.php
+www/data/gallery/search.php
+www/data/gallery/secure.bat
+www/data/gallery/secure.sh
+www/data/gallery/session.php
+www/data/gallery/setup/.htaccess
+www/data/gallery/setup/check.inc
+www/data/gallery/setup/config_data.inc
+www/data/gallery/setup/confirm.inc
+www/data/gallery/setup/constants.inc
+www/data/gallery/setup/defaults.inc
+www/data/gallery/setup/functions.inc
+www/data/gallery/setup/gpl.txt
+www/data/gallery/setup/index.php
+www/data/gallery/setup/init.php
+www/data/gallery/setup/mod_rewrite.template
+www/data/gallery/setup/php_value.template
+www/data/gallery/setup/php_value_ok.php
+www/data/gallery/setup/phpinfo.php
+www/data/gallery/setup/write.inc
+www/data/gallery/sort_album.php
+www/data/gallery/todo
+www/data/gallery/upgrade_album.php
+www/data/gallery/UPGRADING
+www/data/gallery/user_preferences.php
+www/data/gallery/util.php
+www/data/gallery/version.php
+www/data/gallery/view_album.php
+www/data/gallery/view_photo.php
+www/data/gallery/view_photo_properties.php
+@dirrm www/data/gallery/classes/database/mysql
+@dirrm www/data/gallery/classes/database
+@dirrm www/data/gallery/classes/gallery
+@dirrm www/data/gallery/classes/nuke5
+@dirrm www/data/gallery/classes
+@dirrm www/data/gallery/css
+@dirrm www/data/gallery/errors
+@dirrm www/data/gallery/html
+@dirrm www/data/gallery/html_wrap
+@dirrm www/data/gallery/images
+@dirrm www/data/gallery/java
+@dirrm www/data/gallery/layout
+@dirrm www/data/gallery/platform
+@dirrm www/data/gallery/setup
+@dirrm www/data/gallery

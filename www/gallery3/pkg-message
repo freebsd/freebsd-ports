@@ -1,0 +1,16 @@
+*****************************************************************
+
+ Please consider adding the following 3 lines to your httpd.conf
+	
+	<Directory /usr/local/www/data/gallery>
+		AllowOverride Options FileInfo
+	</Directory>
+
+ Then restart apache: 'apachectl restart'
+
+*****************************************************************
+
+ Please visit 'http://{host.domain}/gallery/' in a
+ web-browser and follow the configuration instructions.
+
+*****************************************************************

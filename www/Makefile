@@ -66,6 +66,7 @@
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
+    SUBDIR += gallery
     SUBDIR += glibwww
     SUBDIR += gn
     SUBDIR += gnuinfo
