@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec  7 14:52:24 2003
++++ Makefile.in	Sun Dec  7 14:54:36 2003
+@@ -93,7 +93,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-SUBDIRS = kernel libmpio mpiosh etc tools 
++SUBDIRS = libmpio mpiosh etc tools 
+ 
+ sbin_SCRIPTS = mkmpiodev
+ EXTRA_DIST = mpio.spec mkmpiodev

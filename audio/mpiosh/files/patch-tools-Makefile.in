@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig     Thu Jun 19 20:02:33 2003
++++ tools/Makefile.in  Thu Jun 19 20:02:46 2003
+@@ -138,7 +138,7 @@
+
+ am_mpiologo_OBJECTS = mpiologo.$(OBJEXT)
+ mpiologo_OBJECTS = $(am_mpiologo_OBJECTS)
+-mpiologo_LDADD = $(LDADD)
++mpiologo_LDADD = $(LDADD) -lgnugetopt
+ mpiologo_DEPENDENCIES =
+ mpiologo_LDFLAGS =
+
