@@ -3,5 +3,8 @@ of possible responses and deal with the user interface, (and the
 user!), by displaying the prompt, showing the default, and checking
 to be sure that the response is one of the legal choices.
 
+Author: Allen Smith <actual@spamcop.net>
+WWW: http://search.cpan.org/search?dist=Term-Prompt
+
 -Anton
 <tobez@FreeBSD.org>
