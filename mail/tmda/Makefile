@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.73
+PORTVERSION=	0.74
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -43,13 +43,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/contrib/$f ${DOCSDIR}/contrib
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${DOCSDIR}/htdocs
-	@${MKDIR} ${DOCSDIR}/contrib/cgi
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi/*.py* ${DOCSDIR}/contrib/cgi
-.for f in compile README tmda-cgi.conf tmda-cgi.c
-	@${INSTALL_DATA} ${WRKSRC}/contrib/cgi/$f ${DOCSDIR}/contrib/cgi
-.endfor
-	@${MKDIR} ${DOCSDIR}/contrib/cgi/display
-	@${INSTALL_DATA} ${WRKSRC}/contrib/cgi/display/* ${DOCSDIR}/contrib/cgi/display
 	@${ECHO_MSG}
 	@${ECHO_MSG} See ${DOCSDIR}/INSTALL for configuration instructions
 	@${ECHO_MSG} See ${DOCSDIR}/UPGRADE if upgrading from a previous release
