@@ -16,10 +16,28 @@ MAINTAINER=	troff@paranoia.ru
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk--
 
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME) || defined(WITH_GNOME)
+USE_GNOME=	yes
+
+PLIST_SUB+=	ICKLEDATADIR="share/gnome/" GNOME="" NOGNOME="@comment "
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+
+PLIST_SUB+=	ICKLEDATADIR="share/" GNOME="@comment " NOGNOME=""
+.endif
+
+pre-everything::
+.if !defined(HAVE_GNOME) && !defined(WITH_GNOME)
+	@${ECHO_MSG} "===> Define WITH_GNOME		to enable GNOME support"
+.endif
+
+.include <bsd.port.post.mk>

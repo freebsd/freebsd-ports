@@ -1,4 +1,6 @@
-bin/ickle
+%%NOGNOME%%bin/ickle
+%%GNOME%%bin/ickle_applet
+%%GNOME%%etc/CORBA/servers/ickle_applet.gnorba
 include/ickle/Cache.h
 include/ickle/Client.h
 include/ickle/Contact.h
@@ -33,111 +35,117 @@ include/ickle/userinfoconstants.h
 lib/libicq2000.a
 lib/libicq2000.so
 lib/libicq2000.so.2
-share/ickle/icons/doors/away.xpm
-share/ickle/icons/doors/chat.xpm
-share/ickle/icons/doors/dnd.xpm
-share/ickle/icons/doors/ffc.xpm
-share/ickle/icons/doors/file.xpm
-share/ickle/icons/doors/invisible.xpm
-share/ickle/icons/doors/message.xpm
-share/ickle/icons/doors/na.xpm
-share/ickle/icons/doors/occ.xpm
-share/ickle/icons/doors/offline.xpm
-share/ickle/icons/doors/online.xpm
-share/ickle/icons/doors/sms.xpm
-share/ickle/icons/doors/url.xpm
-share/ickle/icons/gnomeicu/away.xpm
-share/ickle/icons/gnomeicu/chat.xpm
-share/ickle/icons/gnomeicu/dnd.xpm
-share/ickle/icons/gnomeicu/ffc.xpm
-share/ickle/icons/gnomeicu/file.xpm
-share/ickle/icons/gnomeicu/invisible.xpm
-share/ickle/icons/gnomeicu/message.xpm
-share/ickle/icons/gnomeicu/na.xpm
-share/ickle/icons/gnomeicu/occ.xpm
-share/ickle/icons/gnomeicu/offline.xpm
-share/ickle/icons/gnomeicu/online.xpm
-share/ickle/icons/gnomeicu/sms.xpm
-share/ickle/icons/gnomeicu/url.xpm
-share/ickle/icons/ickle/away.xpm
-share/ickle/icons/ickle/chat.xpm
-share/ickle/icons/ickle/dnd.xpm
-share/ickle/icons/ickle/ffc.xpm
-share/ickle/icons/ickle/file.xpm
-share/ickle/icons/ickle/invisible.xpm
-share/ickle/icons/ickle/message.xpm
-share/ickle/icons/ickle/na.xpm
-share/ickle/icons/ickle/occ.xpm
-share/ickle/icons/ickle/offline.xpm
-share/ickle/icons/ickle/online.xpm
-share/ickle/icons/ickle/sms.xpm
-share/ickle/icons/ickle/url.xpm
-share/ickle/icons/icq/away.xpm
-share/ickle/icons/icq/chat.xpm
-share/ickle/icons/icq/dnd.xpm
-share/ickle/icons/icq/ffc.xpm
-share/ickle/icons/icq/file.xpm
-share/ickle/icons/icq/invisible.xpm
-share/ickle/icons/icq/message.xpm
-share/ickle/icons/icq/na.xpm
-share/ickle/icons/icq/occ.xpm
-share/ickle/icons/icq/offline.xpm
-share/ickle/icons/icq/online.xpm
-share/ickle/icons/icq/sms.xpm
-share/ickle/icons/icq/url.xpm
-share/ickle/icons/new/away.xpm
-share/ickle/icons/new/chat.xpm
-share/ickle/icons/new/dnd.xpm
-share/ickle/icons/new/ffc.xpm
-share/ickle/icons/new/file.xpm
-share/ickle/icons/new/invisible.xpm
-share/ickle/icons/new/message.xpm
-share/ickle/icons/new/na.xpm
-share/ickle/icons/new/occ.xpm
-share/ickle/icons/new/offline.xpm
-share/ickle/icons/new/online.xpm
-share/ickle/icons/new/sms.xpm
-share/ickle/icons/new/url.xpm
-share/ickle/translations/ASCII
-share/ickle/translations/CP437
-share/ickle/translations/CP850
-share/ickle/translations/DANISH
-share/ickle/translations/DEC_MCS
-share/ickle/translations/DG_MCS
-share/ickle/translations/DUTCH
-share/ickle/translations/FINNISH
-share/ickle/translations/FRENCH
-share/ickle/translations/FRENCH_CANADIAN
-share/ickle/translations/GERMAN
-share/ickle/translations/HP_MCS
-share/ickle/translations/IRV
-share/ickle/translations/ITALIAN
-share/ickle/translations/JIS
-share/ickle/translations/LATIN_2
-share/ickle/translations/MACINTOSH
-share/ickle/translations/NEXT
-share/ickle/translations/NORWEGIAN_1
-share/ickle/translations/NORWEGIAN_2
-share/ickle/translations/POLISH
-share/ickle/translations/POLISH_NOPL
-share/ickle/translations/PORTUGUESE
-share/ickle/translations/PORTUGUESE_COM
-share/ickle/translations/RUSSIAN
-share/ickle/translations/RUSSIAN_ALT
-share/ickle/translations/RUSSIAN_WIN
-share/ickle/translations/SPANISH
-share/ickle/translations/SWEDISH
-share/ickle/translations/SWEDISH_NAMES
-share/ickle/translations/SWEDISH_NAMES_COM
-share/ickle/translations/SWISS
-share/ickle/translations/UNITED_KINGDOM
-share/ickle/translations/UNITED_KINGDOM_COM
-@dirrm share/ickle/translations
-@dirrm share/ickle/icons/new
-@dirrm share/ickle/icons/icq
-@dirrm share/ickle/icons/ickle
-@dirrm share/ickle/icons/gnomeicu
-@dirrm share/ickle/icons/doors
-@dirrm share/ickle/icons
-@dirrm share/ickle
+%%GNOME%%%%ICKLEDATADIR%%applets/Network/ickle_applet.desktop
+%%ICKLEDATADIR%%ickle/icons/doors/away.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/file.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/message.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/na.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/online.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/url.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/away.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/file.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/message.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/na.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/online.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/url.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/away.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/file.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/message.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/na.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/online.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/url.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/away.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/file.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/message.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/na.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/online.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/url.xpm
+%%ICKLEDATADIR%%ickle/icons/new/away.xpm
+%%ICKLEDATADIR%%ickle/icons/new/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/new/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/new/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/new/file.xpm
+%%ICKLEDATADIR%%ickle/icons/new/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/new/message.xpm
+%%ICKLEDATADIR%%ickle/icons/new/na.xpm
+%%ICKLEDATADIR%%ickle/icons/new/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/new/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/new/online.xpm
+%%ICKLEDATADIR%%ickle/icons/new/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/new/url.xpm
+%%ICKLEDATADIR%%ickle/translations/ASCII
+%%ICKLEDATADIR%%ickle/translations/CP437
+%%ICKLEDATADIR%%ickle/translations/CP850
+%%ICKLEDATADIR%%ickle/translations/DANISH
+%%ICKLEDATADIR%%ickle/translations/DEC_MCS
+%%ICKLEDATADIR%%ickle/translations/DG_MCS
+%%ICKLEDATADIR%%ickle/translations/DUTCH
+%%ICKLEDATADIR%%ickle/translations/FINNISH
+%%ICKLEDATADIR%%ickle/translations/FRENCH
+%%ICKLEDATADIR%%ickle/translations/FRENCH_CANADIAN
+%%ICKLEDATADIR%%ickle/translations/GERMAN
+%%ICKLEDATADIR%%ickle/translations/HP_MCS
+%%ICKLEDATADIR%%ickle/translations/IRV
+%%ICKLEDATADIR%%ickle/translations/ITALIAN
+%%ICKLEDATADIR%%ickle/translations/JIS
+%%ICKLEDATADIR%%ickle/translations/LATIN_2
+%%ICKLEDATADIR%%ickle/translations/MACINTOSH
+%%ICKLEDATADIR%%ickle/translations/NEXT
+%%ICKLEDATADIR%%ickle/translations/NORWEGIAN_1
+%%ICKLEDATADIR%%ickle/translations/NORWEGIAN_2
+%%ICKLEDATADIR%%ickle/translations/POLISH
+%%ICKLEDATADIR%%ickle/translations/POLISH_NOPL
+%%ICKLEDATADIR%%ickle/translations/PORTUGUESE
+%%ICKLEDATADIR%%ickle/translations/PORTUGUESE_COM
+%%ICKLEDATADIR%%ickle/translations/RUSSIAN
+%%ICKLEDATADIR%%ickle/translations/RUSSIAN_ALT
+%%ICKLEDATADIR%%ickle/translations/RUSSIAN_WIN
+%%ICKLEDATADIR%%ickle/translations/SPANISH
+%%ICKLEDATADIR%%ickle/translations/SWEDISH
+%%ICKLEDATADIR%%ickle/translations/SWEDISH_NAMES
+%%ICKLEDATADIR%%ickle/translations/SWEDISH_NAMES_COM
+%%ICKLEDATADIR%%ickle/translations/SWISS
+%%ICKLEDATADIR%%ickle/translations/UNITED_KINGDOM
+%%ICKLEDATADIR%%ickle/translations/UNITED_KINGDOM_COM
+@dirrm %%ICKLEDATADIR%%ickle/translations
+@dirrm %%ICKLEDATADIR%%ickle/icons/new
+@dirrm %%ICKLEDATADIR%%ickle/icons/icq
+@dirrm %%ICKLEDATADIR%%ickle/icons/ickle
+@dirrm %%ICKLEDATADIR%%ickle/icons/gnomeicu
+@dirrm %%ICKLEDATADIR%%ickle/icons/doors
+@dirrm %%ICKLEDATADIR%%ickle/icons
+@dirrm %%ICKLEDATADIR%%ickle
+@unexec rmdir %D/%%ICKLEDATADIR%%applets/Network 2>/dev/null || true
+@unexec rmdir %D/%%ICKLEDATADIR%%applets 2>/dev/null || true
+@unexec rmdir %D/%%ICKLEDATADIR%% 2>/dev/null || true
 @dirrm include/ickle
+@unexec rmdir %D/etc/CORBA/servers 2>/dev/null || true
+@unexec rmdir %D/etc/CORBA 2>/dev/null || true
