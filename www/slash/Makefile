@@ -8,21 +8,37 @@
 PORTNAME=	slash
 PORTVERSION=	2.2.6
 CATEGORIES=	www
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	slashcode
 DISTNAME=	slash-${PORTVERSION}
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Slash-Like Automatic Storytelling Homepage system
 
-BUILD_DEPENDS=  ${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server \
+BUILD_DEPENDS=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql40-server \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash
-RUN_DEPENDS=    ${BUILD_DEPENDS} \
+RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 DOCS=		README INSTALL
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
+		Slash::Apache::Log.3 Slash::Apache::User.3 \
+		Slash::Custom::Bulkmail.3 Slash::DB.3 Slash::DB::MySQL.3 \
+		Slash::DB::Oracle.3 Slash::DB::PostgreSQL.3 \
+		Slash::DB::Static::MySQL.3 Slash::DB::Static::Oracle.3 \
+		Slash::DB::Static::PostgreSQL.3 Slash::DB::Utility.3 \
+		Slash::Display.3 Slash::Display::Plugin.3 \
+		Slash::Display::Provider.3 Slash::Install.3 Slash::Journal.3 \
+		Slash::Messages.3 Slash::Messages::DB::MySQL.3 \
+		Slash::Search.3 Slash::Test.3 Slash::Utility.3 \
+		Slash::Utility::Access.3 Slash::Utility::Anchor.3 \
+		Slash::Utility::Data.3 Slash::Utility::Display.3 \
+		Slash::Utility::Environment.3 Slash::Utility::System.3 \
+		Slash::XML.3 Slash::XML::RSS.3
 
 post-install:
+	@${FIND} ${PREFIX}/slash -name "*.orig" -delete
 	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>

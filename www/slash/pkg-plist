@@ -1,3 +1,47 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/Apache.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/Apache.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/User.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/User.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Journal/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Search/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Messages/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/XML/FZ.pm/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Install.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/XML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/XML/RSS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Access.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Anchor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Display.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Environment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/System.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display/Plugin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display/Provider.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/PostgreSQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/PostgreSQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Custom/Bulkmail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/Banlist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/Log.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash.pm
+%%SITE_PERL%%/Slash/Journal.pm
+%%SITE_PERL%%/Slash/Search.pm
+%%SITE_PERL%%/Slash/Messages.pm
+%%SITE_PERL%%/Slash/Messages/DB/MySQL.pm
+%%SITE_PERL%%/Slash/XML/FZ.pm
 slash/bin/install-theme
 slash/bin/install-plugin
 slash/bin/backup-blocks
@@ -353,48 +397,66 @@ slash/plugins/Makefile
 slash/httpd/slash.conf
 slash/httpd/slash.conf.def
 slash/slash.sites
-@dirrm slash/bin
-@dirrm slash/bin/templates
-@dirrm slash/sbin
-@dirrm slash/sql
-@dirrm slash/sql/mysql
-@dirrm slash/sql/oracle
-@dirrm slash/sql/postgresql
-@dirrm slash/themes
-@dirrm slash/themes/slashcode
-@dirrm slash/themes/slashcode/htdocs
-@dirrm slash/themes/slashcode/htdocs/images
-@dirrm slash/themes/slashcode/htdocs/images/topics
-@dirrm slash/themes/slashcode/sql
-@dirrm slash/themes/slashcode/sql/mysql
-@dirrm slash/themes/slashcode/sql/oracle
-@dirrm slash/themes/slashcode/sql/postgresql
-@dirrm slash/themes/slashcode/backup
-@dirrm slash/themes/slashcode/logs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/XML/FZ.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/XML/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Search
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Messages
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Journal
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/XML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/Custom
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Slash
+@dirrm %%SITE_PERL%%/Slash/XML
+@dirrm %%SITE_PERL%%/Slash/Messages/DB
+@dirrm %%SITE_PERL%%/Slash/Messages
+@dirrm %%SITE_PERL%%/Slash
 @dirrm slash/themes/slashcode/templates
 @dirrm slash/themes/slashcode/tasks
+@dirrm slash/themes/slashcode/sql/postgresql
+@dirrm slash/themes/slashcode/sql/oracle
+@dirrm slash/themes/slashcode/sql/mysql
+@dirrm slash/themes/slashcode/sql
 @dirrm slash/themes/slashcode/misc
-@dirrm slash/plugins
-@dirrm slash/plugins/Admin
-@dirrm slash/plugins/Admin/templates
-@dirrm slash/plugins/Search
+@dirrm slash/themes/slashcode/logs
+@dirrm slash/themes/slashcode/htdocs/images/topics
+@dirrm slash/themes/slashcode/htdocs/images
+@dirrm slash/themes/slashcode/htdocs
+@dirrm slash/themes/slashcode/backup
+@dirrm slash/themes/slashcode
+@dirrm slash/themes
+@dirrm slash/sql/postgresql
+@dirrm slash/sql/oracle
+@dirrm slash/sql/mysql
+@dirrm slash/sql
+@dirrm slash/sbin
 @dirrm slash/plugins/Search/templates
-@dirrm slash/plugins/PubKey
+@dirrm slash/plugins/Search
 @dirrm slash/plugins/PubKey/templates
-@dirrm slash/plugins/Messages
+@dirrm slash/plugins/PubKey
 @dirrm slash/plugins/Messages/templates
-@dirrm slash/plugins/Messages/DB
 @dirrm slash/plugins/Messages/DB/MySQL
-@dirrm slash/plugins/BunchaBlocks
-@dirrm slash/plugins/Hof
+@dirrm slash/plugins/Messages/DB
+@dirrm slash/plugins/Messages
+@dirrm slash/plugins/Journal/templates
+@dirrm slash/plugins/Journal
 @dirrm slash/plugins/Hof/templates
-@dirrm slash/plugins/ForumZilla
+@dirrm slash/plugins/Hof
 @dirrm slash/plugins/ForumZilla/templates
-@dirrm slash/plugins/CheesyPortal
+@dirrm slash/plugins/ForumZilla
 @dirrm slash/plugins/CheesyPortal/templates
 @dirrm slash/plugins/CheesyPortal/tasks
-@dirrm slash/plugins/Journal
-@dirrm slash/plugins/Journal/templates
+@dirrm slash/plugins/CheesyPortal
+@dirrm slash/plugins/BunchaBlocks
+@dirrm slash/plugins/Admin/templates
+@dirrm slash/plugins/Admin
+@dirrm slash/plugins
 @dirrm slash/httpd
-@dirrm slash/site
+@dirrm slash/bin
 @unexec rmdir %D/slash 2>/dev/null || true
