@@ -1,8 +1,11 @@
---- Makefile.orig	Mon May  3 21:17:50 1999
-+++ Makefile	Mon Feb 28 22:53:25 2000
-@@ -23,8 +23,8 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Feb 17 16:24:06 2004
++++ Makefile	Thu Mar 18 18:47:04 2004
+@@ -22,8 +22,8 @@
  #
- # $Id: Makefile,v 1.8 1999/05/03 17:17:50 mleisher Exp $
+ # $Id: Makefile,v 1.13 2004/02/17 15:24:06 mleisher Exp $
  #
 -CC = gcc
 -CFLAGS = -g -Wall
@@ -11,15 +14,15 @@
  
  OTHER = README CHANGES COPYRIGHTS Makefile Imakefile.lesstif Project.tmpl \
          xmbdfedrc xmbdfed.man
-@@ -47,17 +47,17 @@
+@@ -46,17 +46,17 @@
  # Uncomment these if you have the FreeType library and want to use it to
- # import TrueType fonts.
+ # import OpenType fonts.
  #
 -#FTYPE_INCS = -I/usr/local/include
--#FTYPE_LIBS = -L/user/local/lib -lttf
+-#FTYPE_LIBS = -L/usr/local/lib -lfreetype
 -#FTYPE_DEFS = -DHAVE_FREETYPE
-+FTYPE_INCS = -I${LOCALBASE}/include/freetype1/freetype
-+FTYPE_LIBS = -L${LOCALBASE}/lib -lttf
++FTYPE_INCS!= freetype-config --cflags
++FTYPE_LIBS!= freetype-config --libs
 +FTYPE_DEFS = -DHAVE_FREETYPE
  
  #
@@ -35,7 +38,7 @@
  
  #
  # Specify the various defines needed for HBF fonts.  If you do not have GNU
-@@ -65,7 +65,7 @@
+@@ -64,7 +64,7 @@
  # files with a ".gz" extension.  If you don't care about HBF fonts, just
  # comment this line out.
  #
@@ -44,7 +47,7 @@
  
  #
  # Set the defines used for all files except the HBF support.
-@@ -83,9 +83,9 @@
+@@ -82,9 +82,9 @@
  #
  # Uncomment these for Solaris.
  #
@@ -57,17 +60,17 @@
  
  #
  # Uncomment these for Linux.
-@@ -131,7 +131,15 @@
+@@ -129,7 +129,15 @@
  #LIBS = -L/usr/Motif-1.2/lib32 -lXm \
  #       -L/usr/lib/X11 -lXmu -lXt -lXext -lX11 -lSM -lICE $(FTYPE_LIBS)
  
 +INCS = -I${X11BASE}/include ${FTYPE_INCS}
-+LIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext -lxpg4 ${FTYPE_LIBS}
-+
++LIBS = -L${X11BASE}/lib ${MOTIFLIB} \
++       -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext -lxpg4 ${FTYPE_LIBS}
 +
  all: xmbdfed
 +
-+install: xmbdfed
++install:
 +	${BSD_INSTALL_PROGRAM} xmbdfed ${PREFIX}/bin/xmbdfed
 +	${BSD_INSTALL_MAN} xmbdfed.man ${PREFIX}/man/man1/xmbdfed.1
  
