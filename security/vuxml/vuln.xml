@@ -4561,4 +4561,55 @@ misc.c:
       <entry>2004-08-16</entry>
     </dates>
   </vuln>
+
+  <vuln vid="d2102505-f03d-11d8-81b0-000347a4fa7d">
+    <topic>multiple CVS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cvs+ipv6</name>
+	<range><lt>1.11.17</lt></range>
+      </package>
+<!--
+      <system>
+	<name>FreeBSD</name>
+	<range><lt>491101</lt></range>
+	<range><ge>500000</ge><lt>502114</lt></range>
+      </system>
+-->
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports multiple remote exploitable vulnerabilites
+          in the cvs code base.</p>
+        <p>Additionaly there exists an undocumented switch to the history
+          command allows an attacker to determine whether arbitrary files
+          exist and whether the CVS process can access them.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0414</cvename>
+      <cvename>CAN-2004-0416</cvename>
+      <cvename>CAN-2004-0417</cvename>
+      <cvename>CAN-2004-0418</cvename>
+      <cvename>CAN-2004-0778</cvename>
+      <url>http://secunia.com/advisories/11817</url>
+      <url>http://secunia.com/advisories/12309</url>
+      <url>http://security.e-matters.de/advisories/092004.html</url>
+      <url>http://www.idefense.com/application/poi/display?id=130&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <url>https://ccvs.cvshome.org/source/browse/ccvs/NEWS?rev=1.116.2.104</url>
+      <url>http://www.osvdb.org/6830</url>
+      <url>http://www.osvdb.org/6831</url>
+      <url>http://www.osvdb.org/6832</url>
+      <url>http://www.osvdb.org/6833</url>
+      <url>http://www.osvdb.org/6834</url>
+      <url>http://www.osvdb.org/6835</url>
+      <url>http://www.osvdb.org/6836</url>
+      <url>http://www.packetstormsecurity.org/0405-exploits/cvs_linux_freebsd_HEAP.c</url>
+      <bid>10499</bid>
+    </references>
+    <dates>
+      <discovery>2004-05-20</discovery>
+      <entry>2004-08-17</entry>
+    </dates>
+  </vuln>
 </vuxml>
