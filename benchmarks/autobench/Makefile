@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autobench
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 
@@ -25,7 +25,7 @@ MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
 post-patch:
 	@${PERL} -pi -e "s|^PREFIX|#PREFIX|g" ${WRKSRC}/Makefile
 .for file in autobench autobench_admin
-	@${PERL} -pi -e "s|/etc/|${PREFIX}/etc|g" ${WRKSRC}/${file}
+	@${PERL} -pi -e "s|/etc/|${PREFIX}/etc/|g" ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.mk>
