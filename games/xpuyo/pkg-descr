@@ -1,0 +1,25 @@
+Puyo-Puyo, a tetris-like puzzle game for X-Window.
+
+What is 'Puyo-Puyo':
+	The word 'puyo' is the Japanese word that means the state of meterial
+	with some bounce, like a pudding, very soft ball, or very thick fat.
+	The game 'Puyo-Puyo' is one of the most popular and famous video game
+	in Japan.
+
+Rules:
+	Puyo falls down from upper line in pair. You can rotate the puyo
+	pair and fall it where you like. The puyo disapear when four 
+	puyo with their color same are connected into one piece.
+
+Start:
+	Type 'xpuyo' to start xpuyo, but now man vs man mode is only available.
+	'-single' option let you start xpuyo in single mode, but it's debug 
+	mode, so 'Jama-Puyo' fall on yourself.
+	('Jama' means 'disturb' in Japanese.)
+	You start xpuyo, and the other person start xpuyo on other machine
+	such an X terminal, or other host, and push connect button.
+	(Play on defferent machine architechture is not supported.)
+
+See more information read /usr/X11R6/share/doc/xpuyo/README.
+
+Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>

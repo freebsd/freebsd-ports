@@ -1,0 +1,93 @@
+xpuyo version 0.0 (21/Sep/1993)
+        takahasi@huee.hokudai.ac.jp (Una TAKAHASHI)
+
+	translated by Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
+
+Xpuyo is the tetris-like down-type puzzle game for X-Window version.
+Now only man vs man game is available, with two different consoles through 
+ network.
+
+Requested systems
+
+    GCC, X11R4 or upper
+
+    ss2, news, omron luna88k(some fixed) can let xpuyo work with no problem
+    and I receipt a report EWS-4800(NEC) does that also.
+
+Complile
+
+    For written in ANSI C, compiler is set to gcc by default.
+    Type:
+
+    xmkmf
+    make depend
+    make
+
+    to compile xpuyo. You can ignore warning if it appear some.
+    And type:
+
+    make install
+
+    to install xpuyo.
+
+    It needs the application defauls file , so please cp or ln the file 
+    Xpyuo.ad to ~Xpuyo or somewhere 
+
+Play
+
+    Type:
+
+    xpuyo
+
+    to start xpuyo. 
+    Each player must start xpuyo and connect each other.
+
+    Now one player only game is not available. Players must start xpuyo from 
+    each console. When play from different hosts, one of the players specify
+    another hosts. When play from same host with X terminals , it doesn't 
+    need. One is automatically become a server, and the other a client.
+    Then, you play 'puyo puyo'. Look and feel how to bound or rotate.
+
+Extra
+
+    Start xpuyo with -sigle option and do self-playing. But this is for debug
+    , so 'Jama Puyo' fall on yourserf.
+
+Known Bugs
+
+    Play on different type machine may cause byte order problem. 
+	-> Because xpuyo send and receive binary data.(TODO)
+
+    'Far' host may make games what couldn't be games.
+	-> No consideration for low bandwidth. (Hmmmmmm.... ^^);
+
+    Very dirty code around network.
+	-> To rewrite , yes.
+
+    No man pages.
+	-> When I have some time..
+
+    There's no copyright description in the sources.
+	-> Next time (Do I write in English??)
+
+
+    Author(i.e. me) won't do bug fix.
+	-> Only my laziness (sorry)
+
+Bug report
+
+    Please e-mail to me if you have some problem or so.
+    Write your machine environment with it.
+
+Copy rights
+
+    (Please read README.jp)
+
+Special Thanks
+
+   Very pretty bitmaps are made by zenjy@huie.hokudai.ac.jp. Thanks to 
+   who do test play or other.
+
+   Additionaly, thanks to GNU project released GCC, MIT released X-Window.
+
+takahasi@huee.hokudai.ac.jp 
