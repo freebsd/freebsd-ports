@@ -12,6 +12,7 @@
     SUBDIR += gd
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
+    SUBDIR += koi2koi
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
     SUBDIR += messarge
