@@ -455,8 +455,8 @@ jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample4.java
 jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableMap.java
 jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableSorter.java
 jdk%%JDK_VERSION%%/demo/jpda/examples.jar
-jdk%%JDK_VERSION%%/include/bsd/jawt_md.h
-jdk%%JDK_VERSION%%/include/bsd/jni_md.h
+jdk%%JDK_VERSION%%/include/freebsd/jawt_md.h
+jdk%%JDK_VERSION%%/include/freebsd/jni_md.h
 jdk%%JDK_VERSION%%/include/jawt.h
 jdk%%JDK_VERSION%%/include/jni.h
 jdk%%JDK_VERSION%%/include/jvmdi.h
@@ -1126,7 +1126,7 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 @dirrm jdk%%JDK_VERSION%%/demo/jfc
 @dirrm jdk%%JDK_VERSION%%/demo/jpda
 @dirrm jdk%%JDK_VERSION%%/demo
-@dirrm jdk%%JDK_VERSION%%/include/bsd
+@dirrm jdk%%JDK_VERSION%%/include/freebsd
 @dirrm jdk%%JDK_VERSION%%/include
 @dirrm jdk%%JDK_VERSION%%/jre/bin
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
