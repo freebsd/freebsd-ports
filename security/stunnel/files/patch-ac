@@ -1,0 +1,37 @@
+--- configure.orig	Tue Jul 13 10:35:02 1999
++++ configure	Sat Sep 11 18:25:14 1999
+@@ -932,14 +932,14 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:937: checking for pthread_create in -lpthread" >&5
+-ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
++echo "configure:937: checking for pthread_create in -lc_r" >&5
++ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-lc_r  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 945 "configure"
+ #include "confdefs.h"
+@@ -967,13 +967,13 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo pthread | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    ac_tr_lib=HAVE_LIB`echo c_r | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+   cat >> confdefs.h <<EOF
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-lc_r $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
