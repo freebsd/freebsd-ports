@@ -4714,6 +4714,7 @@ nagios		ports/net/nagios
 nagios-plugins	ports/net/nagios-plugins
 nail		ports/mail/nail
 naim		ports/net/naim
+nakenchat	ports/net/nakenchat
 nam		ports/net/nam
 namazu2		ports/databases/namazu2
 namg		ports/mail/namg
