@@ -1,8 +1,8 @@
-include/frame.h
-include/libc.h
-include/libg.h
-include/regexp.h
-include/u.h
+include/9libs/frame.h
+include/9libs/libc.h
+include/9libs/libg.h
+include/9libs/regexp.h
+include/9libs/u.h
 lib/9libs/include/conf9libs.h
 lib/libXg.a
 lib/libXg.la
@@ -12,3 +12,4 @@ lib/libplan9c.a
 lib/libplan9c.la
 @dirrm lib/9libs/include
 @dirrm lib/9libs
+@dirrm include/9libs
