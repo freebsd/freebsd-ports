@@ -153,3 +153,16 @@
 +	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/services
 +	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/services
  	for i in $(DIRS) stream-sound; do $(MAKE) -C $$i install || exit 1; done
+--- demo/siegel/Makefile.orig	Mon Jan 10 23:43:52 2000
++++ demo/siegel/Makefile	Mon Jan 10 23:44:19 2000
+@@ -33,7 +33,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/siegel
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/siegel
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/siegel
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/siegel
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/siegel
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/siegel
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done

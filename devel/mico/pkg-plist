@@ -205,27 +205,25 @@ include/ministl/simplevec.h
 include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
-lib/libmico.2.3.0.so
-lib/libmico2.3.0.a
-lib/libmico2.3.0.so.1
-lib/libmicoaux.2.3.0.so
-lib/libmicoaux2.3.0.a
-lib/libmicoaux2.3.0.so.1
-lib/libmicocoss.2.3.0.so
-lib/libmicocoss2.3.0.a
-lib/libmicocoss2.3.0.so.1
-lib/libmicogtk.2.3.0.so
-lib/libmicogtk2.3.0.a
-lib/libmicogtk2.3.0.so.1
-lib/libmicoqt.2.3.0.so
-lib/libmicoqt2.3.0.a
-lib/libmicoqt2.3.0.so.1
-lib/libmicotcl.2.3.0.so
-lib/libmicotcl2.3.0.a
-lib/libmicotcl2.3.0.so.1
-lib/libmicox.2.3.0.so
-lib/libmicox2.3.0.a
-lib/libmicox2.3.0.so.1
+lib/libmico.%%MICOVER%%.so
+lib/libmico%%MICOVER%%.a
+lib/libmico%%MICOVER%%.so.1
+lib/libmicoaux.%%MICOVER%%.so
+lib/libmicoaux%%MICOVER%%.a
+lib/libmicoaux%%MICOVER%%.so.1
+lib/libmicocoss%%MICOVER%%.a
+lib/libmicogtk.%%MICOVER%%.so
+lib/libmicogtk%%MICOVER%%.a
+lib/libmicogtk%%MICOVER%%.so.1
+lib/libmicoqt.%%MICOVER%%.so
+lib/libmicoqt%%MICOVER%%.a
+lib/libmicoqt%%MICOVER%%.so.1
+lib/libmicotcl.%%MICOVER%%.so
+lib/libmicotcl%%MICOVER%%.a
+lib/libmicotcl%%MICOVER%%.so.1
+lib/libmicox.%%MICOVER%%.so
+lib/libmicox%%MICOVER%%.a
+lib/libmicox%%MICOVER%%.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/mico-setup.csh
@@ -507,8 +505,40 @@ share/doc/mico/examples/shlib/client.cc
 share/doc/mico/examples/shlib/hello
 share/doc/mico/examples/shlib/hello.idl
 share/doc/mico/examples/shlib/server.cc
+share/doc/mico/examples/siegel/Makefile
 share/doc/mico/examples/siegel/README
-share/doc/mico/examples/siegel/diffs
+share/doc/mico/examples/siegel/central/DepotData.cc
+share/doc/mico/examples/siegel/central/DepotData.h
+share/doc/mico/examples/siegel/central/DepotImpl.cc
+share/doc/mico/examples/siegel/central/DepotImpl.h
+share/doc/mico/examples/siegel/central/Makefile
+share/doc/mico/examples/siegel/central/TreeNode.h
+share/doc/mico/examples/siegel/central/depot.dat
+share/doc/mico/examples/siegel/central/depot_server.cc
+share/doc/mico/examples/siegel/idl/Central.idl
+share/doc/mico/examples/siegel/idl/Makefile
+share/doc/mico/examples/siegel/idl/POS.idl
+share/doc/mico/examples/siegel/idl/Store.idl
+share/doc/mico/examples/siegel/pos/InputMediaImpl.cc
+share/doc/mico/examples/siegel/pos/InputMediaImpl.h
+share/doc/mico/examples/siegel/pos/Makefile
+share/doc/mico/examples/siegel/pos/OutputMediaImpl.cc
+share/doc/mico/examples/siegel/pos/OutputMediaImpl.h
+share/doc/mico/examples/siegel/pos/POSTerminalImpl.cc
+share/doc/mico/examples/siegel/pos/POSTerminalImpl.h
+share/doc/mico/examples/siegel/pos/POS_Client.cc
+share/doc/mico/examples/siegel/pos/POS_Server.cc
+share/doc/mico/examples/siegel/primer_utils/Makefile
+share/doc/mico/examples/siegel/primer_utils/NsPublisher.cc
+share/doc/mico/examples/siegel/primer_utils/NsPublisher.h
+share/doc/mico/examples/siegel/store/Makefile
+share/doc/mico/examples/siegel/store/StoreAccessImpl.cc
+share/doc/mico/examples/siegel/store/StoreAccessImpl.h
+share/doc/mico/examples/siegel/store/StoreImpl.cc
+share/doc/mico/examples/siegel/store/StoreImpl.h
+share/doc/mico/examples/siegel/store/TaxImpl.cc
+share/doc/mico/examples/siegel/store/TaxImpl.h
+share/doc/mico/examples/siegel/store/store_server.cc
 share/doc/mico/examples/ssl/Makefile
 share/doc/mico/examples/ssl/cert.pem
 share/doc/mico/examples/ssl/client.cc
@@ -518,6 +548,11 @@ share/doc/mico/examples/ssl/server.cc
 share/doc/mico/examples/ssl/ssl
 share/doc/mico/manual.ps
 @dirrm share/doc/mico/examples/ssl
+@dirrm share/doc/mico/examples/siegel/store
+@dirrm share/doc/mico/examples/siegel/primer_utils
+@dirrm share/doc/mico/examples/siegel/pos
+@dirrm share/doc/mico/examples/siegel/idl
+@dirrm share/doc/mico/examples/siegel/central
 @dirrm share/doc/mico/examples/siegel
 @dirrm share/doc/mico/examples/shlib
 @dirrm share/doc/mico/examples/services/trader

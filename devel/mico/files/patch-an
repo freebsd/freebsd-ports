@@ -1,6 +1,5 @@
-diff -ruN work/mico/auxdir/Makefile mico/auxdir/Makefile
---- work/mico/auxdir/Makefile	Mon Jul 26 20:44:45 1999
-+++ auxdir/Makefile	Sun Sep 26 04:48:35 1999
+--- auxdir/Makefile.orig	Tue Jul 20 15:57:27 1999
++++ auxdir/Makefile	Mon Jan 10 17:51:58 2000
 @@ -24,7 +24,7 @@
  
  LDLIBS    = -lmico$(VERSION) $(CONFLIBS)
@@ -10,3 +9,12 @@ diff -ruN work/mico/auxdir/Makefile mico/auxdir/Makefile
  
  AUX_SRCS=dynany_impl.cc
  STATIC_AUX_OBJS = $(AUX_SRCS:.cc=.o)
+@@ -119,7 +119,7 @@
+ endif
+ 	rm -f $@
+ 	$(LDSO) -o libmicoqt$(VERSION) $(SHARED_QT_OBJS) \
+-		$(PURE_LDFLAGS) -lqt -lX11 -L../libs -lmico$(VERSION)
++		$(PURE_LDFLAGS) -lqt$(QTVER) -lX11 -L../libs -lmico$(VERSION)
+ 	$(IDIRCMD) ../libs
+ 	cd ../libs; rm -f $@; ln -f -s ../auxdir/$@ .
+ 
