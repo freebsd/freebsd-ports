@@ -8,15 +8,11 @@
 PORTNAME=	9wm
 PORTVERSION=	1.1
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
-EXTRACT_SUFX=	.shar.gz
+MASTER_SITES=	http://sources.isc.org/X/window-managers/ \
+		ftp://ftp.mathcs.emory.edu/pub/arnold/
 
 MAINTAINER=	ports@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=		zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
 USE_IMAKE=	yes
 MAN1=		9wm.1
 
