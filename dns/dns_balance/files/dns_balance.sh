@@ -1,30 +1,22 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
+# PROVIDE: dns_balance
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
 
-dns_balance="!!PREFIX!!/sbin/dns_balance"
-pidfile="/var/run/dns_balance.pid"
-logfile="/var/log/dns_balance.log"
-#listen="-i 192.168.0.1"
+dns_balance_enable="NO"
+dns_balance_pidfile="/var/run/dns_balance.pid"
+dns_balance_flags="-l /var/log/dns_balance.log -p ${dns_balance_pidfile}"
 
-case "$1" in
-start)
-	if [ -x $dns_balance ]; then
-	    echo -n ' dns_balance'
-	    $dns_balance -l $logfile -p $pidfile $listen
-	fi
-	;;
-stop)
-	if [ -f $pidfile ]; then
-	    kill `cat $pidfile` && echo -n ' dns_balance'
-	else
-	    echo ' dns_balance: not running'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name=dns_balance
+rcvar=`set_rcvar`
+
+command="env ROOT=%%PREFIX%%/lib/dns_balance %%PREFIX%%/sbin/dns_balance"
+pidfile=${dns_balance_pidfile}
+
+load_rc_config ${name}
+run_rc_command "$1"
