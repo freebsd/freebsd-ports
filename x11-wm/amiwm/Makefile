@@ -1,19 +1,19 @@
 # New ports collection Makefile for: amiwm-0.20pl28
-# Version required: 0.20pl28
+# Version required: 0.20pl48
 # Date created: 13 November 1997
 # Whom: Douglas Carmichael <dcarmich@mcs.com>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:40 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 23:01:37 asami Exp $
 #
 
-DISTNAME=	amiwm0.20pl28
-PKGNAME=	amiwm-0.20p28
+DISTNAME=	amiwm0.20pl48
+PKGNAME=	amiwm-0.20p48
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/amiwm
+#WRKSRC=		${WRKDIR}/amiwm
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		amiwm.1

@@ -1,12 +1,21 @@
 bin/amiwm
-lib/amiwm/requestchoice
-lib/amiwm/executecmd
-lib/amiwm/Background
-lib/amiwm/Keyboard
-lib/amiwm/system.amiwmrc
-lib/amiwm/def_tool.info
+bin/ppmtoinfo
+bin/requestchoice
+lib/X11/amiwm/Background
+lib/X11/amiwm/Keyboard
+lib/X11/amiwm/Xinitrc
+lib/X11/amiwm/Xsession
+lib/X11/amiwm/Xsession2
+lib/X11/amiwm/amiwm-init
+lib/X11/amiwm/def_tool.info
+lib/X11/amiwm/executecmd
+lib/X11/amiwm/magicwb.map
+lib/X11/amiwm/requestchoice
+lib/X11/amiwm/schwartz.map
+lib/X11/amiwm/system.amiwmrc
+lib/X11/amiwm/system.map
 share/doc/amiwm/INSTALL
 share/doc/amiwm/README
 share/doc/amiwm/README.modules
-@dirrm lib/amiwm
+@dirrm lib/X11/amiwm
 @dirrm share/doc/amiwm
