@@ -1,6 +1,1 @@
-bin/afslog
-bin/pagsh
 lib/lib45.a
-lib/libkafs.a
-lib/libkafs.so
-lib/libkafs.so.3
