@@ -1,0 +1,11 @@
+--- dw_mail.c.bak	Mon May  6 14:17:40 2002
++++ dw_mail.c	Fri May 17 21:46:20 2002
+@@ -810,7 +810,7 @@
+     dw_bs_empty( options );
+     if( pscan->need_report )
+     {
+-        dw_bs_add( options, DRWEBD_RETURN_REPORT | DRWEBD_RETURN_CODES );
++	dw_bs_add( options, DRWEBD_RETURN_REPORT );
+     }
+     if( pscan->heuristic )
+     {
