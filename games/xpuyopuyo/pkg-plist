@@ -7,6 +7,7 @@ share/xpuyopuyo/NEWS
 share/xpuyopuyo/README
 share/xpuyopuyo/TESTED
 share/xpuyopuyo/TODO
+share/xpuyopuyo/gtkrc
 share/xpuyopuyo/img/img_0.xpm
 share/xpuyopuyo/img/img_0j.xpm
 share/xpuyopuyo/img/img_1.xpm
@@ -23,6 +24,7 @@ share/xpuyopuyo/img/img_clear.xpm
 share/xpuyopuyo/img/img_clearb.xpm
 share/xpuyopuyo/img/img_expl.xpm
 share/xpuyopuyo/img/img_gameover.xpm
+share/xpuyopuyo/img/img_ind.xpm
 share/xpuyopuyo/img/img_num0.xpm
 share/xpuyopuyo/img/img_num1.xpm
 share/xpuyopuyo/img/img_num2.xpm
