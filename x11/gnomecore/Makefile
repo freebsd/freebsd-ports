@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		bz2.1:${PORTSDIR}/archivers/bzip2
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
