@@ -13,14 +13,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Imaging.h:${PORTSDIR}/graphics/py-imaging \
-		${PYDISTUTILS}
+BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Imaging.h:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
 		${PYXML}
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -L${LOCALBASE}/lib -ltk83 -ltcl83 -L${X11BASE}/lib -lX11"
 
@@ -35,9 +35,6 @@ do-configure:
 	@(cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PYTHON_CMD} setup.py configure ${CONFFLAGS})
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
 
 do-install:
 	@${MKDIR} ${SKETCHDIR}

@@ -19,11 +19,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_FREETYPE=	yes
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
 		SHARE_SUBDIR=${SHARE_SUBDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
-PYDIST_SETUP=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include","${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
 LIB_DIRS=	["${LOCALBASE}/lib","${X11BASE}/lib"]
@@ -44,12 +44,8 @@ post-patch:
 		${CAT} ${file}${TMPSUFFIX} > ${file}
 .endfor
 
-do-build:
-	${PYDIST_SETUP} build
-
-do-install:
-	${PYDIST_SETUP} install
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${PREFIX}/share/examples/${SHARE_SUBDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/${SHARE_SUBDIR}
 .endif

@@ -23,23 +23,16 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 USE_MESA=	yes
 
 OSMAJOR!=	/usr/bin/uname -r | sed -e 's/\..*//'
 PLIST_SUB+=	OSMAJOR=${OSMAJOR} \
 		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
 do-configure:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/config.py ${WRKSRC}/Tkinter.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:        
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 post-install:
 	${LOCALBASE}/bin/tclsh8.3 ${WRKSRC}/register.tcl
