@@ -1,8 +1,8 @@
 === IMPORTANT NOTICE ===
 
-- xdvi(1) searches the necessary files from the share/texmf/xdvi-ptex
+- xdvi(1) searches the necessary files from the share/texmf/xdvi/ptex
   directory first, and then the share/texmf/xdvi directory.
 
-- The files in share/texmf/xdvi-ptex should not be edited
-  directly.  Instead, copy them to share/texmf-var/xdvi-ptex and
+- The files in share/texmf/xdvi/ptex should not be edited
+  directly.  Instead, copy them to share/texmf-config/xdvi/ptex and
   edit them.  xdvi(1) will find the latter files first.
