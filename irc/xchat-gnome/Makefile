@@ -79,4 +79,8 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VERSION/config -lpython\$$PY_VERSION ${PTHREAD_LIBS} -lutil"|' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
