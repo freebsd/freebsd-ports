@@ -4492,6 +4492,7 @@ nspmod		ports/audio/nspmod
 nspostgres	ports/www/nspostgres
 nspr		ports/devel/nspr
 nss		ports/security/nss
+nss_ldap	ports/net/nss_ldap
 nstreams	ports/net/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
