@@ -1,4 +1,4 @@
-%%RUBY_SITEARCHLIBDIR%%/BigFloat.so
+%%RUBY_SITEARCHLIBDIR%%/bigfloat.so
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/ja/bigfloat.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/bigfloat_en.html
