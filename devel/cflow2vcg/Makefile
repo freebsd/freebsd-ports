@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cflow2vcg
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,9 +20,7 @@ GNU_CONFIGURE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for ext in cflow html jpg rtf txt vcg
-	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/cflow* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
