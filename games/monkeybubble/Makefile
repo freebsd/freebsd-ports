@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monkeybubble
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	games gnome
 MASTER_SITES=	http://monkey-bubble.tuxfamily.org/
 DISTNAME=	monkey-bubble-${PORTVERSION}
@@ -28,5 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/-pg//" ${WRKSRC}/src/ui/Makefile.in
+	@${REINPLACE_CMD} -e "s|/usr/share|${LOCALBASE}/share| ; \
+		s|lang or die|lang, 0777 or die|" ${WRKSRC}/intltool-merge.in
 
 .include <bsd.port.mk>
