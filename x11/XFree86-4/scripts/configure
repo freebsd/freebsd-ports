@@ -43,9 +43,9 @@ cat >> $F <<END
 #else
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx savage \
-                                cirrus tseng trident chips apm \
+                                cirrus vmware tseng trident chips apm \
                                 GlideDriver fbdev i128 \
-                                ati ark cyrix \
+                                ati AgpGartDrivers DevelDrivers ark cyrix \
                                 siliconmotion \
                                 vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #endif
@@ -220,10 +220,11 @@ yesno YES "Do you want to compile with PAM support?"
 echo "#define	HasPam			$answ"	>> $F
 
 echo "#define InstallXserverSetUID NO "	>> $F
-if [ $OSVERSION -lt 500013 -a X${MACHINE} != X"alpha" ]; then
-  echo "#define BuildXF86DRI YES" 	>> $F
-  echo "#define BuildXF86DRM YES" 	>> $F
-fi
+# DRI is broken in 4.1
+#if [ $OSVERSION -lt 500013 -a X${MACHINE} != X"alpha" ]; then
+#  echo "#define BuildXF86DRI YES" 	>> $F
+#  echo "#define BuildXF86DRM YES" 	>> $F
+#fi
 }
 
 configure

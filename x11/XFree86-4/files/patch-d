@@ -1,6 +1,6 @@
---- config/cf/FreeBSD.cf.orig	Tue Dec  5 01:45:27 2000
-+++ config/cf/FreeBSD.cf	Tue Dec 19 23:08:57 2000
-@@ -371,14 +373,14 @@
+--- config/cf/FreeBSD.cf~	Thu May  3 22:12:35 2001
++++ config/cf/FreeBSD.cf	Fri May 25 23:45:58 2001
+@@ -444,14 +444,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
