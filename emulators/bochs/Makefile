@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -16,58 +16,179 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	clefevre@citeweb.net
 
+# Global variables
+#
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cpu-level=5 \
-		--enable-cdrom \
+USE_GMAKE=	yes
+
+CONFIGURE_ARGS=	--enable-cdrom \
 		--disable-split-hd
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.ifdef(WITH_BOCHS_DEBUGGER)
+# PREFIX isn't honored. force it w/ prefix.
+MAKE_ARGS=	prefix=${PREFIX}
+
+.if defined(WITH_BOCHS_PROCESSORS)
+.if (WITH_BOCHS_CPU_LEVEL < 1) || (WITH_BOCHS_CPU_LEVEL > 15)
+.error "WITH_BOCHS_CPU_LEVEL must be an integer value between 1 and 15."
+.endif
+CONFIGURE_ARGS+=	--enable-processors=${WITH_BOCHS_PROCESSORS}
+WITH_BOCHS_CPU_LEVEL=	6
+.endif
+
+.if defined(WITH_BOCHS_CPU_LEVEL)
+.if (WITH_BOCHS_CPU_LEVEL < 3) || (WITH_BOCHS_CPU_LEVEL > 6)
+.error "WITH_BOCHS_CPU_LEVEL must be an integer value between 3 and 6."
+.endif
+CONFIGURE_ARGS+=	--enable-cpu-level=${WITH_BOCHS_CPU_LEVEL}
+.endif
+
+.if defined(WITH_BOCHS_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 .endif
-.ifdef(WITH_BOCHS_X86_DEBUGGER)
+
+.if defined(WITH_BOCHS_X86_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-x86-debugger
 .endif
-.ifdef(WITH_SOUND)
+
+.if defined(WITH_SOUND)
 CONFIGURE_ARGS+=	--enable-sb16=linux
 .endif
 
-pre-configure:
-	@${PERL} -pi.fbsd \
-		 -e 's|^vgaromimage:\sbios/|vgaromimage: ${PREFIX}/share/bochs/bios/| ;' \
-		 -e 's|^romimage:\sfile=bios/|romimage: file=${PREFIX}/share/bochs/bios/|' \
-		${WRKSRC}/.bochsrc
+MAN1=		bochs.1 bochsrc.1 bximage.1
 
-post-build:
-	${GZIP_CMD} < ${WRKSRC}/font/vga.pcf > ${WRKSRC}/font/vga.pcf.gz
-	(${ECHO} '#!/bin/sh'; \
-	 ${ECHO} '${X11BASE}/bin/xset fp+ ${PREFIX}/share/bochs/font'; \
-	 ${ECHO} 'exec ${PREFIX}/bin/bochs-bin "$$@"') > ${WRKDIR}/bochs.sh
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin/bochs-bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bximage ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/bochs.sh ${PREFIX}/bin/bochs
-	@${MKDIR} ${PREFIX}/share/bochs
-	${INSTALL_DATA} ${WRKSRC}/.bochsrc ${PREFIX}/share/bochs/dot.bochsrc
-	@${MKDIR} ${PREFIX}/share/bochs/bios
-	${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-* \
-		${PREFIX}/share/bochs/bios
-	${INSTALL_DATA} ${WRKSRC}/bios/BIOS-* \
-		${PREFIX}/share/bochs/bios
-	@${MKDIR} ${PREFIX}/share/bochs/font
-	${INSTALL_DATA} ${WRKSRC}/font/vga.pcf.gz ${WRKSRC}/font/fonts.dir \
-		${PREFIX}/share/bochs/font
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/bochs
-	${INSTALL_MAN} ${WRKSRC}/docs-html/* ${PREFIX}/share/doc/bochs
+# Local variables
+#
+
+BIOS_DIR=	${DATADIR}/bios
+FONT_DIR=	${DATADIR}/font
+
+MKFONTDIR?=	mkfontdir
+
+# Pre-everything
+#
+
+pre-everything::
+.if !defined(WITH_BOCHS_CPU_LEVEL) || !defined(WITH_BOCHS_PROCESSORS) || \
+    !defined(WITH_BOCHS_DEBUGGER) || !defined(WITH_BOCHS_X86_DEBUGGER) || \
+    !defined(WITH_SOUND)
+	@${ECHO_MSG}
+.if !defined(WITH_BOCHS_CPU_LEVEL)
+	@${ECHO_MSG} "If you want to change the processor level to emulate (default is 5, aka Pentium)"
+	@${ECHO_MSG} "Choices are 3,4,5,6 which mean target 386, 486, Pentium or Pentium Pro emulation"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_CPU_LEVEL=<cpu level>\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_PROCESSORS)
+	@${ECHO_MSG} "If you want to compile with SMP support (implies WITH_BOCHS_CPU_LEVEL=6)."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_PROCESSORS=<number of processors>\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_DEBUGGER)
+	@${ECHO_MSG} "If you want to compile with builtin debugger and disassembler support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_DEBUGGER=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_X86_DEBUGGER)
+	@${ECHO_MSG} "If you want to compile with x86 hardware debugger support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_X86_DEBUGGER=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_SOUND)
+	@${ECHO_MSG} "If you want to compile with sound (blaster 16) support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_SOUND=yes\""
+.endif
+	@${ECHO_MSG}
 .endif
 
-post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-		${PKGMESSAGE}
+# Post-configure
+#
+
+post-patch: patch-bochsrc patch-mans patch-wrapper patch-message
+
+patch-bochsrc:
+	@${PERL} -pi.fbsd -e ' \
+		s|^vgaromimage:\sbios/|vgaromimage: ${BIOS_DIR}/|; \
+		s|^romimage:\sfile=bios/|romimage: file=${BIOS_DIR}/|; \
+		' ${WRKSRC}/.bochsrc
+
+patch-mans:
+	@${PERL} -pi.fbsd -e ' \
+		s|/usr/local/bochs|${DATADIR}|; \
+		s|\@VERSION\@|${PORTVERSION}|; \
+		' ${WRKSRC}/doc/man/*.1
+
+patch-wrapper:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|;s|%%X11BASE%%|${X11BASE}|; \
+		 s|%%FONT_DIR%%|${FONT_DIR}| \
+		' ${FILESDIR}/bochs.sh > ${WRKDIR}/bochs.sh
+
+patch-message:
+	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
+
+# Post-build
+#
+
+post-build: compress-font-file
+
+compress-font-file:
+	@${GZIP_CMD} < ${WRKSRC}/font/vga.pcf > ${WRKSRC}/font/vga.pcf.gz
+
+# Install
+#
+
+do-install: install-bins install-mans install-bochsrc \
+	    install-bios install-fonts install-docs
+
+install-bins:
+	@${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/libexec/bochs.bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bximage ${PREFIX}/bin
+
+install-mans:
+.for mansect in 1
+.for man in ${MAN${mansect}}
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} \
+		${MAN${mansect}PREFIX}/man/man${mansect}
+.endfor
+.endfor
+
+install-bochsrc:
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/.bochsrc ${DATADIR}/bochsrc.sample
+
+install-bios:
+	@${MKDIR} ${BIOS_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-* ${BIOS_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/bios/BIOS-* ${BIOS_DIR}
+
+install-fonts:
+	@${MKDIR} ${FONT_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/font/vga.pcf.gz ${FONT_DIR}
+	@${MKFONTDIR} ${FONT_DIR}
+
+install-docs:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_MAN} ${WRKSRC}/docs-html/* ${DOCSDIR}/html
+	@${MV} ${DOCSDIR}/html/*.txt ${DOCSDIR}
+.endif
+
+# Post-install
+#
+
+post-install: install-script display-message
+
+install-script:
+	@${INSTALL_SCRIPT} ${WRKDIR}/bochs.sh ${PREFIX}/bin/bochs
+
+display-message:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
