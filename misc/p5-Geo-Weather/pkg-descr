@@ -1,0 +1,10 @@
+The Geo::Weather module retrieves the current weather from weather.com
+when given city and state or a US zip code.  After fetching the weather,
+the module can print a general weather report, or return specific values
+(ie: URL to a picture of the current weather for use on a website,
+current numerical values for wind speed, temperature, dew point, etc).
+
+WWW: http://search.cpan.org/search?dist=Geo-Weather
+
+- Pete
+petef@databits.net

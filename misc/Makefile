@@ -123,6 +123,7 @@
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-Finance-Quote
+    SUBDIR += p5-Geo-Weather
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
