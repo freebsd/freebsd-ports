@@ -1,0 +1,8 @@
+Chameleon is a Haskell-style language which allows for type programming via
+Constraint Handling Rules (CHRs). Chameleon implements the ideas described in
+``A Theory of Overloading''.
+
+WWW: http://www.comp.nus.edu.sg/~sulzmann/chameleon/
+
+-- Oliver Braun
+obraun@FreeBSD.org
