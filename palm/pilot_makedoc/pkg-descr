@@ -1,0 +1,4 @@
+makedoc is a utility for compressing and converting text files into the Doc
+standard.  Doc is a program by Rick Bram (see
+http://www.concentric.net/~rbram/) to display text files on many popular
+PDAs, such as the USR PalmPilot.
