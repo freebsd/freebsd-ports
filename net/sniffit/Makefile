@@ -8,6 +8,7 @@
 
 PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
 		${MASTER_SITE_LOCAL}
