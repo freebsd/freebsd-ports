@@ -1,2 +1,3 @@
 sbin/totd
+etc/rc.d/totd.sh
 etc/totd.conf.sample
