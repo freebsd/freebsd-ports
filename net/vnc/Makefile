@@ -7,6 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
@@ -14,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
 MAINTAINER=	james@now.ie
 
 GNU_CONFIGURE=	yes
+# vnc supplied zlib seg. faults if compiled with -O
+CONFIGURE_ARGS=	--with-installed-zlib
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
