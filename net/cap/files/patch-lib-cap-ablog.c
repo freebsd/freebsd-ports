@@ -1,16 +1,20 @@
---- lib/cap/ablog.c.orig	Thu Jan 23 01:45:08 2003
-+++ lib/cap/ablog.c	Thu Jan 23 03:14:28 2003
-@@ -66,8 +66,17 @@
+--- lib/cap/ablog.c.orig	Mon Feb  3 01:16:00 2003
++++ lib/cap/ablog.c	Mon Feb  3 03:48:59 2003
+@@ -24,6 +24,7 @@
+  *
+ */
+ 
++#include <osreldate.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+@@ -66,8 +67,13 @@
   * This is something all machine should, but don't have :-)
   */
  
--static FILE *lfp = stderr;
-+#define GCC_VERSION (__GNUC__ * 10000 \
-+			       + __GNUC_MINOR__ * 100 \
-+			       + __GNUC_PATCHLEVEL__)
- 
-+#if GCC_VERSION <= 30200
-+static FILE *lfp = stderr;
++#if defined(__FreeBSD__) && __FreeBSD_version < 470000
+ static FILE *lfp = stderr;
+-
 +#else
 +static FILE *lfp;
 +static void lfp_construct (void) __attribute__((constructor));
@@ -19,7 +23,7 @@
  
  #ifndef USEVPRINTF
  /* Bletch - gotta do it because pyramids don't work the other way */
-@@ -91,7 +100,7 @@
+@@ -91,7 +97,7 @@
  #endif USEVPRINTF
    int saveerr;
    extern int errno;
@@ -28,12 +32,3 @@
  #ifndef __FreeBSD__
    extern char *sys_errlist[];
  #endif
-@@ -164,7 +173,7 @@
- static char *
- mytod()
- {
--  long tloc;
-+  time_t tloc;
-   struct tm *tm, *localtime();
-   static char buf[100];		/* should be large enough */
- 
