@@ -1,0 +1,6 @@
+This module finds a DateTime::Format::* class that is suitable for the use with
+a given DBI connection (and DBD::* driver).
+
+It currently supports the following drivers: MySQL, PostgreSQL (Pg).
+
+WWW: http://datetime.perl.org/
