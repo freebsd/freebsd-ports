@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmlj
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://telia.dl.sourceforge.net/wmlj/ \
 		${MASTER_SITE_SOURCEFORGE}
