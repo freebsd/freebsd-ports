@@ -15,23 +15,15 @@ MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol client
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	dtcpclient.sh
 
 MAN8=		dtcpclient.8
 MANCOMPRESSED=	yes
 
-RC_SCRIPT=	${PREFIX}/etc/rc.d/dtcpclient.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 pre-install:
-	@if [ -f ${RC_SCRIPT} ]; then \
-		${ECHO_CMD} "Remove old ${RC_SCRIPT} before install."; \
+	@if [ -f ${PREFIX}/etc/rc.d/${USE_RC_SUBR} ]; then \
+		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \
 		exit 1; \
 	fi
-
-post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dtcpclient.sh > ${WRKDIR}/dtcpclient.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/dtcpclient.sh ${RC_SCRIPT}
 
 .include <bsd.port.mk>

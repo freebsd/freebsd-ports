@@ -19,18 +19,16 @@ COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	dtcpc.sh dtcps.sh
 USE_RUBY=	yes
 MAKE_ENV+=	RUBY=${RUBY}
 
 MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
 MANCOMPRESSED=	yes
 
-RC_SCRIPTS=	${PREFIX}/etc/rc.d/dtcpc.sh ${PREFIX}/etc/rc.d/dtcps.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} RUBY=${RUBY}
+SUB_LIST+=	RUBY=${RUBY}
 
-PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps \
-		etc/rc.d/dtcpc.sh etc/rc.d/dtcps.sh
+PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps
 
 pre-everything::
 .if !defined(DTCP_CLIENT_ONLY)
@@ -41,19 +39,11 @@ pre-everything::
 .endif
 
 pre-install:
-	@for script in ${RC_SCRIPTS}; do \
-		if [ -f $${script} ]; then \
-			${ECHO_MSG} "Remove old $${script} before install."; \
+	@for script in ${USE_RC_SUBR}; do \
+		if [ -f ${PREFIX}/etc/rc.d/$${script} ]; then \
+			${ECHO_MSG} "Remove old ${PREFIX}/etc/rc.d/$${script} before install."; \
 			exit 1; \
 		fi; \
 	done
-
-post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dtcpc.sh > ${PREFIX}/etc/rc.d/dtcpc.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/dtcpc.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dtcps.sh > ${PREFIX}/etc/rc.d/dtcps.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/dtcps.sh
 
 .include <bsd.port.mk>
