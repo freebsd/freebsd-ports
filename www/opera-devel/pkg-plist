@@ -377,7 +377,6 @@ share/opera/styles/mimehead.css
 share/opera/styles/opf.css
 share/opera/styles/plugins.css
 share/opera/styles/wml.css
-share/opera/unicode.dat
 @dirrm share/opera/styles
 @dirrm share/opera/skin
 @dirrm share/opera/plugins
