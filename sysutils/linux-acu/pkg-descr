@@ -1,0 +1,12 @@
+ACU is the Aironet Cisco Utilities.
+
+The ACU is used to configure Cisco/Aironet 802.11 wireless cards.  This
+GTK utility includes tools for link monitoring, LEAP authentication, and
+other specific functions not available with ancontrol(8).
+
+This port consists of Cisco's Linux ACU client which runs on FreeBSD using
+the linux emulation system.
+
+WWW: http://www.cisco.com/pcgi-bin/tablebuild.pl/aironet-utils-linux
+
+Matt Peterson <matt@peterson.org>

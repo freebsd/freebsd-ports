@@ -1,0 +1,3 @@
+bin/acu
+@exec   mkdir -p /compat/linux/proc/aironet
+@unexec rm -rf   /compat/linux/proc/aironet
