@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_LOCAL}	# ${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	ale		# thunderbird/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -108,9 +107,8 @@ post-patch:
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js \
-		${WRKSRC}/mail/app/profile/all.js \
 		${WRKSRC}/extensions/sroaming/resources/content/prefs/all.js \
-		${WRKSRC}/calendar/sunbird/app/profile/all.js
+		${WRKSRC}/modules/libpref/src/init/all.js
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
