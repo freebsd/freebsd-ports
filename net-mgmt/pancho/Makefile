@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://pancho.lunarmedia.net/
 DISTNAME=	pancho-v${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP
 
+USE_PERL5=	YES
 NO_BUILD=	YES
 
 pre-everything::
@@ -38,7 +39,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pancho ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pancho
-.for i in README LOGGING
+.for i in README LOGGING AUTHOR CREDITS COPYRIGHT
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/pancho
 .endfor
 .endif
