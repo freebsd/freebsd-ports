@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1995/04/15 04:34:07 asami Exp $
+# $Id: Makefile,v 1.13 1995/04/16 22:52:37 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -26,7 +26,7 @@ CTAN=		ftp.tex.ac.uk
 BASES=		mf.base cmmf.base 
 FORMATS=	tex.fmt 
 
-CFLAGS=		-O2
+CFLAGS=		-O2 -L${X11BASE}/lib
 
 BUILD_COOKIE=		${WRKDIR}/.build_done
 
