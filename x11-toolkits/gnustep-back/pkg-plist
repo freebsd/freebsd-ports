@@ -6,7 +6,9 @@ System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
 System/Library/Documentation/man/man1/gpbs.1.gz
 %%USE_XLIB%%System/Tools/font_cacher
 System/Tools/gpbs
+@dirrm System/Library/Documentation/Developer/Gui/Manual
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle
+@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual
