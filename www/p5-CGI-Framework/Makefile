@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Framework
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -23,5 +23,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Framework.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
