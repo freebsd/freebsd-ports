@@ -22,10 +22,11 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 #
 # Stage 1: Define constants
 # Stage 2: Deal with JAVA_HOME if it is already set
-# Stage 3: Decide the exact JDK version if only a minimum version is specified
-# Stage 4: Decide the exact JDK to use
-# Stage 5: Define all settings for the port to use
-# Stage 6: Add any dependencies if necessary
+# Stage 3: Determine which JDK ports are installed
+# Stage 4: Decide the exact JDK version if only a minimum version is specified
+# Stage 5: Decide the exact JDK to use
+# Stage 6: Define all settings for the port to use
+# Stage 7: Add any dependencies if necessary
 #
 
 .	if defined(USE_JAVA)
@@ -68,7 +69,46 @@ _DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
 
 
 #-----------------------------------------------------------------------------
-# Stage 2: Deal with JAVA_HOME if it is already set
+# Stage 2: Determine which JDK ports are installed
+#
+
+.		undef HAVE_JAVA_FREEBSD_1_1
+.		undef HAVE_JAVA_FREEBSD_1_2
+.		undef HAVE_JAVA_FREEBSD_1_3
+.		undef HAVE_JAVA_BLACKDOWN_LINUX_1_2
+.		undef HAVE_JAVA_SUN_LINUX_1_2
+.		undef HAVE_JAVA_SUN_LINUX_1_3
+.		undef HAVE_JAVA_IBM_LINUX_1_3
+.		undef HAVE_JAVA_SUN_LINUX_1_4
+
+.		if exists(${_JAVA_HOME_FREEBSD_1_1}/${_JDK_FILE})
+HAVE_JAVA_FREEBSD_1_1=	YES
+.		endif
+.		if exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE})
+HAVE_JAVA_FREEBSD_1_2=	YES
+.		endif
+.		if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
+HAVE_JAVA_FREEBSD_1_3=	YES
+.		endif
+.		if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE})
+HAVE_JAVA_BLACKDOWN_LINUX_1_2=	YES
+.		endif
+.		if exists(${_JAVA_HOME_SUN_LINUX_1_2}/${_JDK_FILE})
+HAVE_JAVA_SUN_LINUX_1_2=	YES
+.		endif
+.		if exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE})
+HAVE_JAVA_SUN_LINUX_1_3=	YES
+.		endif
+.		if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
+HAVE_JAVA_IBM_LINUX_1_3=	YES
+.		endif
+.		if exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
+HAVE_JAVA_SUN_LINUX_1_4=	YES
+.		endif
+
+
+#-----------------------------------------------------------------------------
+# Stage 3: Deal with JAVA_HOME if it is already set
 #
 
 # See if JAVA_HOME points to a known JDK. If it does, then undefine JAVA_HOME
@@ -100,7 +140,7 @@ JAVA_HOME=	${_JAVA_HOME}
 
 
 #-----------------------------------------------------------------------------
-# Stage 3: Decide the exact JDK version if only a minimum version is specified
+# Stage 4: Decide the exact JDK version if only a minimum version is specified
 #
 
 # If USE_JAVA is 1.1+, 1.2+, 1.3+ or 1.4+, then set it to 1.1, 1.2, 1.3 or
@@ -129,35 +169,35 @@ JAVA_HOME=	${_JAVA_HOME}
 # option at the moment.
 
 .		if (${USE_JAVA} == "1.1+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
+.			if defined(HAVE_JAVA_FREEBSD_1_3)   || \
+			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
+			   defined(HAVE_JAVA_IBM_LINUX_1_3)
 USE_JAVA=	1.3
-.			elif exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE}) || \
-			     exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE}) || \
-			     exists(${_JAVA_HOME_SUN_LINUX_1_2}/${_JDK_FILE})
+.			elif defined(HAVE_JAVA_FREEBSD_1_2) || \
+			     defined(HAVE_JAVA_BLACKDOWN_LINUX_1_2) || \
+			     defined(HAVE_JAVA_SUN_LINUX_1_2)
 USE_JAVA=	1.2
-.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
+.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4)
 USE_JAVA=	1.1
 .			else
 USE_JAVA=	1.4
 .			endif
 
 .		elif (${USE_JAVA} == "1.2+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
+.			if defined(HAVE_JAVA_FREEBSD_1_3)   || \
+			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
+			   defined(HAVE_JAVA_IBM_LINUX_1_3)
 USE_JAVA=	1.3
-.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4})
+.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4)
 USE_JAVA=	1.2
 .			else
 USE_JAVA=	1.4
 .			endif
 .		elif (${USE_JAVA} == "1.3+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE}) || \
-			  !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
+.			if defined(HAVE_JAVA_FREEBSD_1_3)   || \
+			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
+			   defined(HAVE_JAVA_IBM_LINUX_1_3) || \
+			  !defined(HAVE_JAVA_SUN_LINUX_1_4)
 USE_JAVA=	1.3
 .			else
 USE_JAVA=	1.4
@@ -172,7 +212,7 @@ USE_JAVA=	1.4
 
 
 #-----------------------------------------------------------------------------
-# Stage 4: Decide the exact JDK to use
+# Stage 5: Decide the exact JDK to use
 #
 
 # Apply different settings for different values of USE_JAVA.
@@ -200,15 +240,15 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_1}
 # The FreeBSD JDK 1.2 is preferred over the Linux JDK's. Among these, the
 # Blackdown JDK is preferred over the Sun JDK.
 .		elif ${USE_JAVA} == "1.2"
-.			if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE})
+.			if defined(HAVE_JAVA_BLACKDOWN_LINUX_1_2) \
+			&& !defined(HAVE_JAVA_FREEBSD_1_2)
 JAVA_VENDOR=	Blackdown
 JAVA_VER=		1.2.2
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
 JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
-.			elif exists(${_JAVA_HOME_SUN_LINUX_1_2}/${_JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE})
+.			elif defined(HAVE_JAVA_SUN_LINUX_1_2) \
+			&& !defined(HAVE_JAVA_FREEBSD_1_2)
 JAVA_VENDOR=	Sun
 JAVA_VER=		1.2.2
 JAVA_OS=		Linux
@@ -236,16 +276,16 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_2}
 # used. If it is not installed, but the IBM JDK 1.3.1 is installed, then that
 # one will be used.
 .		elif ${USE_JAVA} == "1.3"
-.			if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
+.			if defined(HAVE_JAVA_IBM_LINUX_1_3) \
+			&& !defined(HAVE_JAVA_SUN_LINUX_1_3) \
+			&& !defined(HAVE_JAVA_FREEBSD_1_3)
 JAVA_VENDOR=	IBM
 JAVA_VER=		1.3.1
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_IBM_LINUX_1_3}
 JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_3}
-.			elif exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
+.			elif defined(HAVE_JAVA_SUN_LINUX_1_3) \
+			&& !defined(HAVE_JAVA_FREEBSD_1_3)
 JAVA_VENDOR=	Sun
 JAVA_VER=		1.3.1
 JAVA_OS=		Linux
@@ -275,7 +315,7 @@ JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
 
 
 #-----------------------------------------------------------------------------
-# Stage 5: Define all settings for the port to use
+# Stage 6: Define all settings for the port to use
 
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 
@@ -341,7 +381,7 @@ JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 
 
 #-----------------------------------------------------------------------------
-# Stage 6: Add any dependencies if necessary
+# Stage 7: Add any dependencies if necessary
 
 # Possibly add Jikes to the dependencies
 .		if defined(JAVAC) && (${JAVAC} == ${_JIKES_PATH})
