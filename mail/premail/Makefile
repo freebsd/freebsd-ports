@@ -5,18 +5,18 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1997/05/06 14:28:42 jfitz Exp $
+# $Id: Makefile,v 1.6 1997/05/24 13:17:11 jfitz Exp $
 #
 
 DISTNAME=       premail-0.45
 CATEGORIES=     security mail
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/remailer/
 
-BUILD_DEPENDS=  perl5.004:${PORTSDIR}/lang/perl5
 BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
 
 MAINTAINER=	ache@FreeBSD.ORG
 
+USE_PERL5=      Yes
 NO_BUILD=       Yes
 RESTRICTED=     "Author treats it as ITAR subject"
 
