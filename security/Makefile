@@ -114,6 +114,7 @@
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
     SUBDIR += pam_krb5
+    SUBDIR += pam_ssh
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pgp6
