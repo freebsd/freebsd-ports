@@ -1,4 +1,3 @@
-bin/eficas
 %%EFICASDIR%%/AIDE/__init__.py
 %%EFICASDIR%%/AIDE/__init__.pyc
 %%EFICASDIR%%/AIDE/__init__.pyo
@@ -121,15 +120,39 @@ bin/eficas
 %%EFICASDIR%%/Aster/Cata/Macro/defi_cable_bp_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/defi_cable_bp_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/defi_cable_bp_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/defi_part_feti_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/defi_part_feti_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/defi_part_feti_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_fichier.py
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_fichier.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_fichier.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_mefisto.py
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_mefisto.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/fiabilite_mefisto.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/impr_fonction_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/impr_fonction_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/impr_fonction_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/impr_table_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/impr_table_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/impr_table_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/lire_fonction_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/lire_fonction_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/lire_fonction_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/lire_inte_spec_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/lire_inte_spec_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/lire_inte_spec_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/lire_table_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/lire_table_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/lire_table_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/macr_adap_mail_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macr_adap_mail_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macr_adap_mail_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_calc_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_calc_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_calc_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_mail_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_mail_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ascouf_mail_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/macr_aspic_calc_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macr_aspic_calc_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macr_aspic_calc_ops.pyo
@@ -148,6 +171,9 @@ bin/eficas
 %%EFICASDIR%%/Aster/Cata/Macro/macr_cara_poutre_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macr_cara_poutre_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macr_cara_poutre_ops.pyo
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ecla_pg_ops.py
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ecla_pg_ops.pyc
+%%EFICASDIR%%/Aster/Cata/Macro/macr_ecla_pg_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/macr_fiab_impr_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macr_fiab_impr_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macr_fiab_impr_ops.pyo
@@ -160,9 +186,6 @@ bin/eficas
 %%EFICASDIR%%/Aster/Cata/Macro/macr_recal_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macr_recal_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macr_recal_ops.pyo
-%%EFICASDIR%%/Aster/Cata/Macro/macro_cara_poutre_ops.py
-%%EFICASDIR%%/Aster/Cata/Macro/macro_cara_poutre_ops.pyc
-%%EFICASDIR%%/Aster/Cata/Macro/macro_cara_poutre_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/macro_elas_mult_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macro_elas_mult_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macro_elas_mult_ops.pyo
@@ -181,9 +204,6 @@ bin/eficas
 %%EFICASDIR%%/Aster/Cata/Macro/macro_proj_base_ops.py
 %%EFICASDIR%%/Aster/Cata/Macro/macro_proj_base_ops.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/macro_proj_base_ops.pyo
-%%EFICASDIR%%/Aster/Cata/Macro/pre_gmsh_ops.py
-%%EFICASDIR%%/Aster/Cata/Macro/pre_gmsh_ops.pyc
-%%EFICASDIR%%/Aster/Cata/Macro/pre_gmsh_ops.pyo
 %%EFICASDIR%%/Aster/Cata/Macro/reca_algo.py
 %%EFICASDIR%%/Aster/Cata/Macro/reca_algo.pyc
 %%EFICASDIR%%/Aster/Cata/Macro/reca_algo.pyo
@@ -212,11 +232,37 @@ bin/eficas
 %%EFICASDIR%%/Aster/Cata/ops.py
 %%EFICASDIR%%/Aster/Cata/ops.pyc
 %%EFICASDIR%%/Aster/Cata/ops.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/FORM.py
+%%EFICASDIR%%/Aster/Cata/pre74/FORM.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/FORM.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/__init__.py
+%%EFICASDIR%%/Aster/Cata/pre74/__init__.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/__init__.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compocomm.py
+%%EFICASDIR%%/Aster/Cata/pre74/compocomm.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compocomm.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compoformule.py
+%%EFICASDIR%%/Aster/Cata/pre74/compoformule.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compoformule.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compomacro.py
+%%EFICASDIR%%/Aster/Cata/pre74/compomacro.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compomacro.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compooper.py
+%%EFICASDIR%%/Aster/Cata/pre74/compooper.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compooper.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compoparam.py
+%%EFICASDIR%%/Aster/Cata/pre74/compoparam.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compoparam.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/compoproc.py
+%%EFICASDIR%%/Aster/Cata/pre74/compoproc.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/compoproc.pyo
+%%EFICASDIR%%/Aster/Cata/pre74/ongletpanel.py
+%%EFICASDIR%%/Aster/Cata/pre74/ongletpanel.pyc
+%%EFICASDIR%%/Aster/Cata/pre74/ongletpanel.pyo
 %%EFICASDIR%%/Aster/editeur.ini
 %%EFICASDIR%%/Aster/eficas_aster.py
 %%EFICASDIR%%/Aster/eficas_aster.pyc
 %%EFICASDIR%%/Aster/eficas_aster.pyo
-%%EFICASDIR%%/Aster/materiau/A42_REF_A.NOMI
 %%EFICASDIR%%/Aster/prefs.py
 %%EFICASDIR%%/Aster/prefs.pyc
 %%EFICASDIR%%/Aster/prefs.pyo
@@ -256,6 +302,9 @@ bin/eficas
 %%EFICASDIR%%/Editeur/centerwindow.py
 %%EFICASDIR%%/Editeur/centerwindow.pyc
 %%EFICASDIR%%/Editeur/centerwindow.pyo
+%%EFICASDIR%%/Editeur/comploader.py
+%%EFICASDIR%%/Editeur/comploader.pyc
+%%EFICASDIR%%/Editeur/comploader.pyo
 %%EFICASDIR%%/Editeur/compobloc.py
 %%EFICASDIR%%/Editeur/compobloc.pyc
 %%EFICASDIR%%/Editeur/compobloc.pyo
@@ -313,6 +362,9 @@ bin/eficas
 %%EFICASDIR%%/Editeur/eficas_go.py
 %%EFICASDIR%%/Editeur/eficas_go.pyc
 %%EFICASDIR%%/Editeur/eficas_go.pyo
+%%EFICASDIR%%/Editeur/eficas_test.py
+%%EFICASDIR%%/Editeur/eficas_test.pyc
+%%EFICASDIR%%/Editeur/eficas_test.pyo
 %%EFICASDIR%%/Editeur/faq.py
 %%EFICASDIR%%/Editeur/faq.pyc
 %%EFICASDIR%%/Editeur/faq.pyo
@@ -508,6 +560,9 @@ bin/eficas
 %%EFICASDIR%%/Ihm/I_ETAPE.py
 %%EFICASDIR%%/Ihm/I_ETAPE.pyc
 %%EFICASDIR%%/Ihm/I_ETAPE.pyo
+%%EFICASDIR%%/Ihm/I_EVAL.py
+%%EFICASDIR%%/Ihm/I_EVAL.pyc
+%%EFICASDIR%%/Ihm/I_EVAL.pyo
 %%EFICASDIR%%/Ihm/I_EXCLUS.py
 %%EFICASDIR%%/Ihm/I_EXCLUS.pyc
 %%EFICASDIR%%/Ihm/I_EXCLUS.pyo
@@ -600,9 +655,6 @@ bin/eficas
 %%EFICASDIR%%/Noyau/N_ETAPE.py
 %%EFICASDIR%%/Noyau/N_ETAPE.pyc
 %%EFICASDIR%%/Noyau/N_ETAPE.pyo
-%%EFICASDIR%%/Noyau/N_EVAL.py
-%%EFICASDIR%%/Noyau/N_EVAL.pyc
-%%EFICASDIR%%/Noyau/N_EVAL.pyo
 %%EFICASDIR%%/Noyau/N_Exception.py
 %%EFICASDIR%%/Noyau/N_Exception.pyc
 %%EFICASDIR%%/Noyau/N_Exception.pyo
@@ -768,6 +820,9 @@ bin/eficas
 %%EFICASDIR%%/convert/convert_asterv5.py
 %%EFICASDIR%%/convert/convert_asterv5.pyc
 %%EFICASDIR%%/convert/convert_asterv5.pyo
+%%EFICASDIR%%/convert/convert_homard.py
+%%EFICASDIR%%/convert/convert_homard.pyc
+%%EFICASDIR%%/convert/convert_homard.pyo
 %%EFICASDIR%%/convert/convert_ini.py
 %%EFICASDIR%%/convert/convert_ini.pyc
 %%EFICASDIR%%/convert/convert_ini.pyo
@@ -777,6 +832,9 @@ bin/eficas
 %%EFICASDIR%%/convert/convert_python.py
 %%EFICASDIR%%/convert/convert_python.pyc
 %%EFICASDIR%%/convert/convert_python.pyo
+%%EFICASDIR%%/convert/convert_python6.py
+%%EFICASDIR%%/convert/convert_python6.pyc
+%%EFICASDIR%%/convert/convert_python6.pyo
 %%EFICASDIR%%/convert/parseur_python.py
 %%EFICASDIR%%/convert/parseur_python.pyc
 %%EFICASDIR%%/convert/parseur_python.pyo
@@ -792,6 +850,9 @@ bin/eficas
 %%EFICASDIR%%/generator/generator_asterv5.py
 %%EFICASDIR%%/generator/generator_asterv5.pyc
 %%EFICASDIR%%/generator/generator_asterv5.pyo
+%%EFICASDIR%%/generator/generator_homard.py
+%%EFICASDIR%%/generator/generator_homard.pyc
+%%EFICASDIR%%/generator/generator_homard.pyo
 %%EFICASDIR%%/generator/generator_ini.py
 %%EFICASDIR%%/generator/generator_ini.pyc
 %%EFICASDIR%%/generator/generator_ini.pyo
@@ -801,32 +862,37 @@ bin/eficas
 %%EFICASDIR%%/generator/generator_python.py
 %%EFICASDIR%%/generator/generator_python.pyc
 %%EFICASDIR%%/generator/generator_python.pyo
+%%EFICASDIR%%/generator/generator_python6.py
+%%EFICASDIR%%/generator/generator_python6.pyc
+%%EFICASDIR%%/generator/generator_python6.pyo
+bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U40201g.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U40301d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41101g.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41102h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41103h1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U41203a1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U41203a2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41301g1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U41304a1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U41304a2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41401f1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U41501e.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U42101h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U42201g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U42301f.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U42302e1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U42303f.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U42304e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U42302e2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U42303g1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U42304e2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U42401g.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U42501e.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43101g.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43102g.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U43102h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43103g.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43104f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43105e.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43106a.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43107b1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43201f1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43202f.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43203f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U43203g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43204h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43301f1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43302a1.pdf
@@ -837,32 +903,36 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U43601f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43602f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U43603g1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43605f.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43606a.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U43607a.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U44101h1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U43605g1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U43606b1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U43607b1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44101h2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44201h1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U44202e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44202d.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44202e2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44203g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44204c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44205a1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U44301h1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44301h2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44302c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44303h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44304f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44305b.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U44401h1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44401h2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44402g.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44403g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44404f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44405d.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U44412f1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U44412f2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44421f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44422c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U44431d.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U45001e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U45002b2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45101h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45102d.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U45103g1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U45103g2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U45111a1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45201g.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45202d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45203g1.pdf
@@ -872,7 +942,7 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U45212d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45213f1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45214f.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U45301g1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U45301g2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45302h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45303a2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U45311f.pdf
@@ -922,30 +992,30 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U47202g.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U47203f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U47204c1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U47205e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U47205e2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U47206c.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U47301b.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U47302a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U47302b1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U47401b1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48101h1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48102g1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48103h1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48101h2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48102g2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48103h2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48111f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48112g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48113b1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48121f1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48122f1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48131a.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48201f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48122f2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48131b1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48201g1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48202f1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48203g1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48204g1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48205c1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48203g2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48204g2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48205c2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48206b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48207a.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48301e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48301e2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48302e2.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U48311e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U48311e2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48321c.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48331d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48401f1.pdf
@@ -954,6 +1024,7 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U48404e.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48405d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U48501b.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U49101h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49102d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49103e1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49111h1.pdf
@@ -961,17 +1032,19 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U49201h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49202f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49203d1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U49204a1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U49211c.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U4cb10a1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U4cb20a1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4cf10b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4cf20b.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U4gj30b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4mk10f.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4mk20e.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4mk30e.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4pc10b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U4pc20b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70001b.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U70101h1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70101h2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70111h1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70121b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70131b1.pdf
@@ -983,31 +1056,38 @@ bin/eficas
 %%PORTDOCS%%%%DOCSDIR%%/U70301c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70302c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70311b.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70331a1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70401c1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70411d.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70421b.pdf
 %%PORTDOCS%%%%DOCSDIR%%/U70432e1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U70433d.pdf
-%%PORTDOCS%%%%DOCSDIR%%/U70532b1.pdf
-@dirrm %%EFICASDIR%%/AIDE/fichiers
-@dirrm %%EFICASDIR%%/AIDE
-@dirrm %%EFICASDIR%%/Accas
-@dirrm %%EFICASDIR%%/Aster/Cata/Macro
-@dirrm %%EFICASDIR%%/Aster/Cata
-@dirrm %%EFICASDIR%%/Aster/materiau
-@dirrm %%EFICASDIR%%/Aster
-@dirrm %%EFICASDIR%%/Editeur/icons
-@dirrm %%EFICASDIR%%/Editeur
-@dirrm %%EFICASDIR%%/Extensions
-@dirrm %%EFICASDIR%%/Ihm
-@dirrm %%EFICASDIR%%/Misc
-@dirrm %%EFICASDIR%%/Noyau
-@dirrm %%EFICASDIR%%/Tools/foztools
-@dirrm %%EFICASDIR%%/Tools
-@dirrm %%EFICASDIR%%/Validation
+%%PORTDOCS%%%%DOCSDIR%%/U70433e1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70441a1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70501h2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70511h2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70521b.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70531g.pdf
+%%PORTDOCS%%%%DOCSDIR%%/U70532b2.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EFICASDIR%%/generator
 @dirrm %%EFICASDIR%%/convert/Parserv5
 @dirrm %%EFICASDIR%%/convert
-@dirrm %%EFICASDIR%%/generator
+@dirrm %%EFICASDIR%%/Validation
+@dirrm %%EFICASDIR%%/Tools/foztools
+@dirrm %%EFICASDIR%%/Tools
+@dirrm %%EFICASDIR%%/Noyau
+@dirrm %%EFICASDIR%%/Misc
+@dirrm %%EFICASDIR%%/Ihm
+@dirrm %%EFICASDIR%%/Extensions
+@dirrm %%EFICASDIR%%/Editeur/icons
+@dirrm %%EFICASDIR%%/Editeur
+@dirrm %%EFICASDIR%%/Aster/Doc
+@dirrm %%EFICASDIR%%/Aster/Cata/pre74
+@dirrm %%EFICASDIR%%/Aster/Cata/Macro
+@dirrm %%EFICASDIR%%/Aster/Cata
+@dirrm %%EFICASDIR%%/Aster
+@dirrm %%EFICASDIR%%/Accas
+@dirrm %%EFICASDIR%%/AIDE/fichiers
+@dirrm %%EFICASDIR%%/AIDE
 @dirrm %%EFICASDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/apps 2>/dev/null || true
