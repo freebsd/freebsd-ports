@@ -1,0 +1,11 @@
+--- src/contrib/libtpt-1.10.5/src/lib/parse_funcs.cxx.orig	Tue Apr  8 13:07:51 2003
++++ src/contrib/libtpt-1.10.5/src/lib/parse_funcs.cxx	Tue Apr  8 13:08:21 2003
+@@ -71,7 +71,7 @@
+ 	kiss_seed = (kiss_seed << 16) ^ kiss_seed ^ (getpid()<<1);
+ 	// and end by mixing in the address of *this.
+ 	// is this cast okay?
+-	kiss_seed^= reinterpret_cast<unsigned int>(this);
++	//kiss_seed^= reinterpret_cast<unsigned int>(this);
+ 	kiss_x = kiss_seed | 1;
+ 	kiss_y = kiss_seed | 2;
+ 	kiss_z = kiss_seed | 4;
