@@ -1,0 +1,8 @@
+IO::Multiplex is designed to take the effort out of managing multiple
+file handles.  It is essentially a really fancy front end to the select
+system call.  In addition to maintaining the select loop, it buffers all
+input and output to/from the file handles.  It can also accept incoming
+connections on one or more listen sockets.
+
+Author:	Bruce J Keeler <bruce@gridpoint.com>
+WWW: http://search.cpan.org/search?dist=IO-Multiplex

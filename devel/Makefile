@@ -439,6 +439,7 @@
     SUBDIR += p5-Glade-Perl
     SUBDIR += p5-Heap
     SUBDIR += p5-IO
+    SUBDIR += p5-IO-Multiplex
     SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Stty
     SUBDIR += p5-IO-Tty
