@@ -8,10 +8,10 @@
 PORTNAME=	wmthemeinstall
 PORTVERSION= 	0.62
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.lovett.com/FreeBSD/ \
-		ftp://ftp.cronyx.ru/.w3/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
