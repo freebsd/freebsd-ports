@@ -1,0 +1,9 @@
+Tie::Array::Sorted represents an ordinary array, which is kept sorted.
+All pushes and unshifts cause the elements in question to be inserted in
+the appropriate location to maintain order.
+
+Direct stores ($a[10] = "wibble") effectively splice out the original
+value and insert the new element. It's not clear why you'd want to use
+direct stores like that, but this module does the right thing if you do.
+
+WWW: http://search.cpan.org/dist/Tie-Array-Sorted/

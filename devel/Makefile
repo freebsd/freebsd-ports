@@ -968,6 +968,7 @@
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Unit
+    SUBDIR += p5-Tie-Array-Sorted
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_File-SplitHash
     SUBDIR += p5-Tie-DB_FileLock
