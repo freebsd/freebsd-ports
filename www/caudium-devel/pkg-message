@@ -1,0 +1,9 @@
+***************************************************************
+  If this is the first installation of Caudium, please go the 
+  caudium's directory and execute the server/install script
+  to finish the Caudium installation.
+
+  If your are upgrading, just start caudium as usual.
+
+  NOTE: there is an automatic starting script in etc/rc.d/
+*************************************************************** 
