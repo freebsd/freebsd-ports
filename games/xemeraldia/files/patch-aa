@@ -1,23 +1,19 @@
---- ./Imakefile.org	Thu Mar 23 03:12:46 1995
-+++ ./Imakefile	Tue Mar 28 00:55:44 1995
-@@ -1,11 +1,7 @@
+--- Imakefile.orig	Thu Dec  9 19:16:34 1999
++++ Imakefile	Thu Dec  9 19:27:40 1999
+@@ -1,5 +1,4 @@
 -BIN_DIR=          /usr/local/bin
 -HIGH_SCORE_DIR=   /usr/local/lib
-+HIGH_SCORE_DIR=   ${LIBDIR}
++HIGH_SCORE_DIR=   ${LIBDIR}/xemeraldia
  
  /*---------------------------------------------------------------------*/
  
--/* CC=gcc */
--CDEBUGFLAGS=-g
--
- #ifdef SunOSPlatform
- #if SunOSPlatform
- #if OSMajorVersion == 4
-@@ -15,7 +11,6 @@
+@@ -14,8 +13,7 @@
  #endif
  #endif
  
 -BINDIR=$(BIN_DIR)
- EXTRA_DEFINES = -DHIGH_SCORE_TABLE=\"$(HIGH_SCORE_DIR)/.xemeraldia.scores\"\
+-EXTRA_DEFINES = -DHIGH_SCORE_TABLE=\"$(HIGH_SCORE_DIR)/.xemeraldia.scores\"\
++EXTRA_DEFINES = -DHIGH_SCORE_TABLE=\"$(HIGH_SCORE_DIR)/xemeraldia.scores\"\
                  -D__USE_FIXED_PROTOTYPES__
  
+ HEADERS = games.h graphics.h bitmaps.h

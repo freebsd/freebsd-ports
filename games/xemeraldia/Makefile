@@ -1,36 +1,28 @@
-# New ports collection makefile for:    xemeraldia
-# Version required:     0.3
-# Date created:         22 Mar 1995
-# Whom:                 asami
+# New ports collection makefile for:	xemeraldia
+# Version required:	0.31
+# Date created:		22 Mar 1995
+# Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xemeraldia-0.3
+DISTNAME=	xemeraldia-0.3
+PKGNAME=	xemeraldia-0.31
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.kuis.kyoto-u.ac.jp/News.Archives/fj.sources/1995/
-DISTFILES=	271.gz
+MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/mar/
+
+PATCH_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/apr/
+PATCHFILES=	xemeraldia-0.3to0.31.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
-do-extract:
-	@(cd ${DISTDIR}; \
-	  if [ ! -f ${DISTNAME}.tar.gz ]; then \
-	    zcat ${DISTFILES} | uudecode; \
-	  fi)
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR}; tar -xzf \
-		${DISTDIR}/${DISTNAME}.tar.gz)
-
 post-install:
-	touch ${PREFIX}/lib/X11/.xemeraldia.scores
-	${CHMOD} 666 ${PREFIX}/lib/X11/.xemeraldia.scores
-
-pre-clean:
-	@${RM} -f ${DISTDIR}/${DISTNAME}.tar.gz
+	@${MKDIR} ${PREFIX}/lib/X11/xemeraldia
+	@${TOUCH} ${PREFIX}/lib/X11/xemeraldia/xemeraldia.scores
+	@${CHMOD} 666 ${PREFIX}/lib/X11/xemeraldia/xemeraldia.scores
 
 .include <bsd.port.mk>

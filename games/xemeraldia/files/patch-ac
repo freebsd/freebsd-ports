@@ -1,0 +1,11 @@
+--- init-graphics.c.orig	Mon Mar 20 16:15:38 1995
++++ init-graphics.c	Thu Dec  9 19:50:51 1999
+@@ -50,7 +50,7 @@
+   clearScreen (w);
+ 
+   font = XLoadFont (XtDisplay (w),
+-		    "-*-new century schoolbook-*-*-*-*-20-*-*-*-*-*-*-*");
++		    "-*-new century schoolbook-*-*-*-*-18-*-*-*-*-*-*-*");
+   XSetFont (XtDisplay (w), draw_gc, font);
+ }
+ 
