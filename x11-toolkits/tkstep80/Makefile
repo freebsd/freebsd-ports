@@ -14,7 +14,7 @@ DISTNAME=	tk${PORTVERSION}
 PATCH_SITES= 	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
 PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
