@@ -649,6 +649,7 @@
     SUBDIR += ssltunnel-server
     SUBDIR += sting
     SUBDIR += stone
+    SUBDIR += straw
     SUBDIR += subcalc
     SUBDIR += suckblow
     SUBDIR += sup

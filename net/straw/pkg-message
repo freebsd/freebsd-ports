@@ -1,0 +1,6 @@
+##
+The ADNS feature has been disabled, because it will never work on FreeBSD. There
+has a different function that will do the lookup without ADNS, although ADNS
+should be more smoother. The problem with ADNS is possible has to do with the
+thread safe or something else.
+##
