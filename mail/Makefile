@@ -131,6 +131,7 @@
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libspf
+    SUBDIR += libsrs
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += lmtpd
