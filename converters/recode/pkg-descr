@@ -1,21 +1,11 @@
-GNU `recode' converts files between character sets and usages.  When
-exact transliterations are not possible, it may get rid of the
-offending characters or fall back on approximations.  This program
-recognizes or produces nearly 150 different character sets and is able
-to transliterate files between almost any pair.  Most RFC 1345
-character sets are supported.
+GNU `recode' has the purpose of converting files between various
+character sets and usages. When exact transliterations are not
+possible, as it is often the case, the program may get rid of the
+offending characters or fall back on approximations.
 
-----------------------------------------------------------------
-There is also a patch avaliable for the bibliographic
-character sets: 
+This program recognizes or produces around 150 different character
+sets and is able to transliterate files between almost any pair.
 
-	ISO 5426:1983
-	Extension of the Latin alphabet coded character set for bibliographic
-	information interchange.
+Most RFC 1345 character sets are supported.
 
-	Z39.47-1993 Extended Latin Alphabet Coded Character Set for
-	Bibliographic Use (ANSEL)
-	[also known as 8-Bit ANSEL, used by USMARC]
-
-See http://www.de.freebsd.org/~wosch/src/recode/
-Extract the archive and follow the instructions in README.bib.
+WWW: http://www.gnu.org/software/recode/recode.html
