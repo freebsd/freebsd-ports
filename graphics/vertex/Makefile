@@ -12,13 +12,13 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D modeller designed specifically for generating efficient game models
+COMMENT=	A 3D modeller for generating efficient game models
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GNOME=	imlib
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -34,8 +34,9 @@ post-patch:
 		's|make|$$(MAKE)|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/vertex|${DATADIR}|g' ${WRKSRC}/vertex/config.h
-	@${REINPLACE_CMD} -e \
-		's|echo -n -e|printf|g' ${WRKSRC}/vertex/makefile_append.ini
+	@${REINPLACE_CMD} \
+		-e 's|echo -n -e|printf|g' -e 's|--color=auto||' \
+		${WRKSRC}/vertex/makefile_append.ini
 	@${REINPLACE_CMD} -e \
 		's|%%CC%%|${CC}|g ; \
 		 s|%%CXX%%|${CXX}|g ; \
