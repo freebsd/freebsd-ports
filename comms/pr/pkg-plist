@@ -1,0 +1,6 @@
+etc/PortRedirector.conf.sample
+etc/rc.d/pr.sh.sample
+sbin/PortRedirector
+sbin/PortTest
+share/doc/pr/PR.html
+@dirrm share/doc/pr

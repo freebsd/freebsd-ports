@@ -1,0 +1,19 @@
+The package consists of two programs - PortRedorector and PortTest.
+
+PortRedirector is a daemon that runs telnet to the remote port of the
+terminal server and redirects its input and output to a virtual
+terminal device (/dev/pty*). The corresponding slave device (dev/tty*)
+then can be used by an application that expects a local async terminal
+port. For example, to monitor a UPS (connected to AUX ports on a Cisco router)
+using nut.
+
+Whenever telnet subprocess terminates on any reason, it is restarted
+as soon as any data received from the terminal device.
+
+It can also work when authentication is required, i.e. it can pass username
+and password specified in its configuration file.
+
+PortTest is something like cu(1). You can use either of them to test the
+connection.
+
+WWW:	http://rnoc.urc.ac.ru/~anton/projects/pr/PR.html

@@ -17,6 +17,7 @@
     SUBDIR += mlan
     SUBDIR += mserver
     SUBDIR += plp
+    SUBDIR += pr
     SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += seyon
