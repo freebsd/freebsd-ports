@@ -19,8 +19,14 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 WRKSRC=		${WRKDIR}/props
 USE_IMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 		${MKDIR} ${X11BASE}/lib/X11/locale/C/props; \
 		${INSTALL_DATA} ${WRKSRC}/C/* ${X11BASE}/lib/X11/locale/C/props
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -67,6 +67,10 @@ PATCH_DIST_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	xmkmf:${PORTSDIR}/devel/imake-4
 .endif

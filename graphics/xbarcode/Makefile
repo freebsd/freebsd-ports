@@ -22,9 +22,15 @@ MLINKS=		XBarcode.1 bar.1
 ALL_TARGET=	XBarcode
 USE_XLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/XBarcode ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bar ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/XBarcode.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
