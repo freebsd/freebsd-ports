@@ -25,6 +25,7 @@ RUN_DEPENDS=	battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gedit:${PORTSDIR}/editors/gedit2 \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
+		glade-2:${PORTSDIR}/devel/glade2 \
 		metatheme-edit:${PORTSDIR}/misc/metatheme2 \
 		metacity:${PORTSDIR}/x11-wm/metacity \
 		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
