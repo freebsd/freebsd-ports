@@ -1,18 +1,18 @@
 # New ports collection makefile for:	exim
-# Version required:	2.10
+# Version required:	2.11
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.24 1998/12/08 15:23:42 markm Exp $
+# $Id: Makefile,v 1.25 1998/12/17 10:54:23 markm Exp $
 #
 
-DISTNAME=	exim-2.10
+DISTNAME=	exim-2.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-2.10.tar.gz exim-texinfo-2.10.tar.gz
+DISTFILES=	exim-2.11.tar.gz exim-texinfo-2.10.tar.gz
 
 MAINTAINER=	axl@iafrica.com
 
