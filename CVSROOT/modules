@@ -3389,6 +3389,7 @@ libgrass5	ports/graphics/libgrass5
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtop		ports/devel/libgtop
 libh		ports/misc/libh
+libhash		ports/devel/libhash
 libhelp		ports/x11/libhelp
 libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
