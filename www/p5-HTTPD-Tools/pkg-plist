@@ -1,0 +1,17 @@
+lib/perl5/man/man3/HTTPD::Authen.3.gz
+lib/perl5/man/man3/HTTPD::GroupAdmin.3.gz
+lib/perl5/man/man3/HTTPD::UserAdmin.3.gz
+lib/perl5/site_perl/HTTPD/AdminBase.pm
+lib/perl5/site_perl/HTTPD/Authen.pm
+lib/perl5/site_perl/HTTPD/GroupAdmin.pm
+lib/perl5/site_perl/HTTPD/GroupAdmin/DBM.pm
+lib/perl5/site_perl/HTTPD/GroupAdmin/DBM/apache.pm
+lib/perl5/site_perl/HTTPD/GroupAdmin/Text.pm
+lib/perl5/site_perl/HTTPD/GroupAdmin/Text/cern.pm
+lib/perl5/site_perl/HTTPD/UserAdmin.pm
+lib/perl5/site_perl/HTTPD/UserAdmin/DBM.pm
+lib/perl5/site_perl/HTTPD/UserAdmin/SQL.pm
+lib/perl5/site_perl/HTTPD/UserAdmin/Text.pm
+lib/perl5/site_perl/HTTPD/UserAdmin/Text/cern.pm
+lib/perl5/site_perl/i386-freebsd/auto/HTTPD-Tools/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/HTTPD-Tools

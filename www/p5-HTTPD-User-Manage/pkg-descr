@@ -1,0 +1,10 @@
+       This module provides methods for authenticating a user.
+       It uses HTTPD::UserAdmin to lookup passwords in a
+       database.  Subclasses provide methods specific to the
+       authentication mechanism.
+
+       Currently, under HTTP/1.0 the only supported
+       authentication mechanism is Basic Authentication.  NCSA
+       Mosaic and NCSA HTTPd understand the proposed Message
+       Digest Authentication, which should make it into the HTTP
+       spec someday.  This module supports both.
