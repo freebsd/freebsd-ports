@@ -1,6 +1,18 @@
---- configure.in.orig	Thu Jan 13 23:00:16 2000
-+++ configure.in	Fri Jan 14 17:56:41 2000
-@@ -222,6 +222,7 @@
+--- configure.in.orig	Fri Jan 14 00:00:16 2000
++++ configure.in	Mon Feb  7 15:14:50 2000
+@@ -49,8 +49,9 @@
+ dnl check for -R, etc. switch
+ CMU_GUESS_RUNPATH_SWITCH
+ dnl let's just link against local.  otherwise we never find anything useful.
+-CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
+-CMU_ADD_LIBPATH("/usr/local/lib")
++CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
++CMU_ADD_LIBPATH("${LOCALBASE}/lib")
++CMU_ADD_LIBPATH("${OPENSSLLIB}")
+ 
+ if test "$enable_java" = yes; then
+   AC_PATH_PROG(JAVAC, javac, no)
+@@ -222,6 +223,7 @@
    AC_CHECK_LIB(crypt, crypt,
  	       LIB_CRYPT="-lcrypt"; cmu_have_crypt=yes,
  	       cmu_have_crypt=no))
