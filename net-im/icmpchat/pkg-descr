@@ -1,7 +1,7 @@
-ICMP Chat is a simple chat. The difference to other chat programs is
-the fact that this one is based on the ICMP protocol.
+ICMP-Chat is a simple console-based chat that uses ICMP packets for
+communication.  The data is encrypted using the Rijndael-256 algorithm. 
 
-WWW: http://www.codito.de/
+WWW: http://icmpchat.sourceforge.net/
 
 -- 
 mwest@uct.ac.za
