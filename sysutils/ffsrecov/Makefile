@@ -22,4 +22,8 @@ PLIST_FILES=	bin/ffsrecov
 BROKEN=		"Incompatible with UFS2 header files"
 .endif
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 .include <bsd.port.post.mk>
