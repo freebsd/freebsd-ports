@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	libwpd
 MAINTAINER=	reed@pugetsoundtechnology.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
-LIB_DEPENDS=	gsf-1.9:${PORTSDIR}/devel/libgsf
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	libgsf
 
 .include <bsd.port.mk>

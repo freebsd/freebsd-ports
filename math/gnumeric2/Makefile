@@ -16,13 +16,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	gsf-1.9:${PORTSDIR}/devel/libgsf
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgda2
+USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgda2 libgsf
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

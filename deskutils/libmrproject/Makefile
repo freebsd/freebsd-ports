@@ -14,11 +14,9 @@ MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library backend for MrProject project management application
 
-LIB_DEPENDS=	gsf-1.9:${PORTSDIR}/devel/libgsf
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget
+USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
