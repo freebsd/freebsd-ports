@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecl
-PORTVERSION=	0.9d.040726
+PORTVERSION=	0.9d.041019
 CATEGORIES=	lang
 MASTER_SITES=	http://www.inf.tu-dresden.de/~s1054849/
 EXTRACT_SUFX=	.tbz
