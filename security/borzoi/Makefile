@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://dragongate-technologies.com/borzoi/
 DISTNAME=	borZoi-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
