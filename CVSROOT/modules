@@ -96,6 +96,7 @@ LPRng		ports/sysutils/LPRng
 LPRngTool	ports/sysutils/LPRngTool
 LibraryReport	src/tools/LibraryReport
 Maaate		ports/audio/Maaate
+MathPlanner	ports/editors/MathPlanner
 Mesa3		ports/graphics/Mesa3
 NeTraMet	ports/net/NeTraMet
 ORBacus		ports/devel/ORBacus
