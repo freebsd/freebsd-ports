@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	less
-PORTVERSION=	354
+PORTVERSION=	358
 CATEGORIES=	misc
-MASTER_SITES=	http://home.flash.net/~marknu/less/ \
+MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 
