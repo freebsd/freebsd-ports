@@ -1,7 +1,4 @@
 bin/mlv
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mlview.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mlview.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mlview.schemas > /dev/null || /usr/bin/true
 lib/libmlview.a
 lib/libmlview.so
 lib/libmlview.so.7
