@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	happydoc
-PORTVERSION=	2.1
+PORTVERSION=	3.0.a1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for extracting documentation from Python source code
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_r/-r/}
+WRKSRC=		${WRKDIR}/HappyDoc3-r${PORTVERSION:S/./_/g}
+NO_BUILD=	yes
+PLIST_FILES=	bin/happydoc
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/happydoc ${PREFIX}/bin
+	@${CP} -R ${WRKSRC}/happydoclib ${PYTHON_SITELIBDIR}
+	@${FIND} ${PYTHON_SITELIBDIR}/happydoclib -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/happydoclib -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
