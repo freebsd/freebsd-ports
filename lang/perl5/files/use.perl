@@ -41,16 +41,10 @@ if [ "x$this" = "xuse.perl" ]; then
 	fi
 else
 	if [ "$2" = "POST-INSTALL" ] ; then
-		need_remove_links=yes
-		if [ $osreldate -ge 500036 -a $osreldate -lt 502100 ] ; then
-			need_create_links=yes
-			need_cleanup_make_conf=yes
-			need_cleanup_manpath=yes
-			need_spam_make_conf=yes
-			need_spam_manpath=yes
-		fi
 		need_post_install=yes
 	elif [ "$2" = "POST-DEINSTALL" ] ; then
+		# XXX this needs a more intelligent handling
+		# XXX since we would not want to remove perl5.8's links
 		need_remove_links=yes
 		if [ $osreldate -lt 500036 ] ; then
 			need_base_system_perl=yes
