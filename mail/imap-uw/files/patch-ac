@@ -1,5 +1,5 @@
 --- src/imapd/Makefile.orig	Wed Apr 15 01:41:45 1998
-+++ src/imapd/Makefile	Sun May 24 10:46:34 1998
++++ src/imapd/Makefile	Sat Oct 10 21:47:24 1998
 @@ -31,8 +31,8 @@
  # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
@@ -16,29 +16,29 @@
  CFLAGS = -I$C `cat $C/CFLAGS` -DALERTFILE=\"$(ALERT)\" -DANOFILE=\"$(ANO)\" \
  	$(EXTRACFLAGS)
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -lc-client `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
  
  all:	imapd
  
 --- src/ipopd/Makefile.orig	Wed Apr 15 01:41:55 1998
-+++ src/ipopd/Makefile	Sun May 24 10:46:34 1998
++++ src/ipopd/Makefile	Sat Oct 10 21:48:00 1998
 @@ -39,7 +39,7 @@
  
  CC = `cat $C/CCTYPE`
  CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -lc-client `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
  
  ipopd: ipop2d ipop3d
  
 --- src/mtest/Makefile.orig	Wed Apr 15 01:42:04 1998
-+++ src/mtest/Makefile	Sun May 24 10:46:34 1998
++++ src/mtest/Makefile	Sat Oct 10 21:48:18 1998
 @@ -39,7 +39,7 @@
  
  CC = `cat $C/CCTYPE`
  CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -lc-client `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
  
  all:	mtest
  
