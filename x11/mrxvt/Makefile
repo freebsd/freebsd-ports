@@ -1,44 +1,47 @@
-# New ports collection makefile for:	multi-aterm
-# Date created:		2003-07-11
-# Whom:			Sebastian Yepes <esn@x123.info>
+# New ports collection makefile for:	mrxvt
+# Date created:				27 Nov 2004
+# Whom:					David Yeske <dyeske@yahoo.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	multi-aterm
-PORTVERSION=	0.2.1
+PORTNAME=	mrxvt
+PORTVERSION=	0.3.9
 CATEGORIES=	x11
-MASTER_SITES=	http://www.nongnu.org/materm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	materm
 
-MAINTAINER=	esn@x123.info
-COMMENT=	A multi terminal based on aterm
+MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A tabbed version of rxvt
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
-DOCS=		AUTHORS ChangeLog INSTALL TODO
-MAN1=		multi-aterm.1
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.if defined(WITH_UTMP)
-CONFIGURE_ARGS+=	--enable-utmp
+MAN1=		mrxvt.1
+PLIST_FILES=	bin/mrxvt
+
+PORTDOCS=	TIPS README.greek README.menu README.xvt \
+		xdefaults-sample.txt xterm.seq mrxvt.vbs
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 500000
+IGNORE=		Does not build
 .endif
 
-.if defined(WITH_WTMP)
-CONFIGURE_ARGS+=	--enable-wtmp
-.endif
+do-install:
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
+.endfor
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${MAN1PREFIX}/man/man1
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can specify the following options:"
-	@${ECHO_MSG} "WITH_UTMP=yes - enable utmp support"
-	@${ECHO_MSG} "WITH_WTMP=yes - enable wtmp support"
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
