@@ -1,5 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/bdb.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/basic.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cats.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cursor.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/func.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/join.rb
