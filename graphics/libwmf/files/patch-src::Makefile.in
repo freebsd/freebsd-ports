@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Tue Jan 13 10:30:08 2004
++++ src/Makefile.in	Tue Jan 13 10:31:35 2004
+@@ -251,14 +251,14 @@
+ maintainer-clean-loaderLTLIBRARIES:
+ 
+ install-loaderLTLIBRARIES: $(loader_LTLIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(loaderdir)
+-	@list='$(loader_LTLIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(loaderdir)/$$p"; \
+-	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(loaderdir)/$$p; \
+-	  else :; fi; \
+-	done
++#	@$(NORMAL_INSTALL)
++#	$(mkinstalldirs) $(DESTDIR)$(loaderdir)
++#	@list='$(loader_LTLIBRARIES)'; for p in $$list; do \
++#	  if test -f $$p; then \
++#	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(loaderdir)/$$p"; \
++#	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(loaderdir)/$$p; \
++#	  else :; fi; \
++#	done
+ 
+ uninstall-loaderLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
