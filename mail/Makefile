@@ -105,6 +105,7 @@
     SUBDIR += mail2procmailrc
     SUBDIR += mailagent
     SUBDIR += mailcrypt
+    SUBDIR += maildirsync
     SUBDIR += maildrop
     SUBDIR += mailfilter
     SUBDIR += mailfmt
