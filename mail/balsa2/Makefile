@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -31,14 +31,14 @@ USE_LIBTOOL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack
 LIBTOOLFILES=	libmutt/configure
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--enable-ldap \
 		--disable-more-warnings \
-		--with-ssl \
-		--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
+		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
@@ -49,9 +49,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
 			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
-		 s|[(]gnomedatadir[)]/gnome|(gnomedatadir)|g'
 
 .include <bsd.port.mk>

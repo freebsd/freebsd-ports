@@ -1,14 +1,5 @@
---- doc/C/Makefile.in.orig	Mon Sep 16 02:48:06 2002
-+++ doc/C/Makefile.in	Mon Sep 16 02:48:50 2002
-@@ -208,7 +208,7 @@
- # ************* Begin of section some packagers may need to modify  **************
- # This variable (docdir) specifies where the documents should be installed.
- # This default value should work for most packages.
--docdir = $(datadir)/@PACKAGE@/doc/$(docname)/$(lang)
-+docdir = $(prefix)/share/doc/@PACKAGE@/$(docname)/$(lang)
- 
- # **************  You should not have to edit below this line  *******************
- xml_files = $(entities) $(docname).xml
+--- doc/C/Makefile.in.orig	Tue Oct 29 12:16:58 2002
++++ doc/C/Makefile.in	Tue Oct 29 12:18:46 2002
 @@ -218,7 +218,7 @@
  CLEANFILES = omf_timestamp
  
