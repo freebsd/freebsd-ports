@@ -13,6 +13,7 @@
     SUBDIR += ftpfind
     SUBDIR += ftplocate
     SUBDIR += ftpmirror
+    SUBDIR += ftpproxy
     SUBDIR += ftpq
     SUBDIR += ftpsearch
     SUBDIR += ftptool
