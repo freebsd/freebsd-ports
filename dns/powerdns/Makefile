@@ -10,7 +10,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced DNS server with SQL backend
 
 USE_GMAKE=	YES
