@@ -10,4 +10,4 @@ You can also use this to review changes between two pre-patches.
 Filterdiff will select the portions of a patch file that apply to files
 matching (or, alternatively, not matching) a shell wildcard. 
 
-WWW: http://people.redhat.com/twaugh/patchutils/
+WWW: http://cyberelk.net/tim/patchutils/
