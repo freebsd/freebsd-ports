@@ -34,6 +34,7 @@
     SUBDIR += expat
     SUBDIR += expat2
     SUBDIR += fdp-tools
+    SUBDIR += filepp
     SUBDIR += freegrep
     SUBDIR += fribidi
     SUBDIR += gaspell
