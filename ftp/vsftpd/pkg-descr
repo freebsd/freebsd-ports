@@ -9,3 +9,5 @@ From the README file:
 	Secure.  Obviously this is not a guarantee, but a reflection
 	that I have written the entire codebase with security in mind,
 	and carefully designed the program to be resilient to attack.
+
+WWW: http://vsftpd.beasts.org/
