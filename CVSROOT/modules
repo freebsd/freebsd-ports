@@ -10110,6 +10110,7 @@ zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
 zope-FileSystemSite	ports/www/zope-FileSystemSite
+zope-archetypes	ports/www/zope-archetypes
 zope-cmf	ports/www/zope-cmf
 zope-cmf13	ports/www/zope-cmf13
 zope-cmfforum	ports/www/zope-cmfforum
