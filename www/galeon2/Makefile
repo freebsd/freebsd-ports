@@ -20,6 +20,7 @@ RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		mozilla:${PORTSDIR}/www/mozilla
 
 USE_X_PREFIX=	yes
+USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
