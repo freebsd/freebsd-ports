@@ -17,5 +17,5 @@ fi
 
 [ "x$1" = "x" ] && exit 1
 if [ "x$2" = "xPOST-INSTALL" ]; then
-	${PEAR_INSTALLER} install -r -f ${PKGREGDIR}/package.xml
+	${PEAR_INSTALLER} install -r -n -f ${PKGREGDIR}/package.xml
 fi

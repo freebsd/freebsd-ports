@@ -1,20 +1,17 @@
 --- scripts/pearcmd.php.orig	Wed Oct 27 02:58:21 2004
-+++ scripts/pearcmd.php	Tue Dec 14 14:56:46 2004
++++ scripts/pearcmd.php	Thu Dec 16 17:30:19 2004
 @@ -1,3 +1,4 @@
-+#!@php_bin@ -q -dsafe_mode=0 -doutput_buffering=1
++#!@php_bin@ -n -q -dsafe_mode=0 -doutput_buffering=1
  <?php
  //
  // +----------------------------------------------------------------------+
-@@ -24,8 +25,14 @@
+@@ -24,8 +25,11 @@
  /**
   * @nodep Gtk
   */
-+if (!extension_loaded('pcre')) {
-+    dl('pcre.so');
-+}
-+if (!extension_loaded('xml')) {
-+    dl('xml.so');
-+}
++dl('pcre.so');
++dl('xml.so');
++
  if ('@include_path@' != '@'.'include_path'.'@') {
 -    ini_set('include_path', '@include_path@');
 +    ini_set('include_path', '@include_path@:@include_path@/bootstrap');
