@@ -3,7 +3,7 @@
 # Date created:				1998-nov-01
 # Whom:					Berend de Boer <berend@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/26 08:54:56 kuriyama Exp $
 #
 
 DISTNAME=	IB_4.0_FreeBSD
@@ -17,6 +17,7 @@ NO_WRKSUBDIR=
 NO_BUILD=
 NO_FILTER_SHLIBS=
 RESTRICTED=	"Please get distfile manually."
+IS_INTERACTIVE=	"manual fetch"
 
 IB_PATH=	${PREFIX}/interbase
 ARCHIVE=	${WRKSRC}/interbase.tar
