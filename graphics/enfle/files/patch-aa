@@ -1,0 +1,101 @@
+--- plugins/archiver/misc/misc.c.orig	Sat Sep 25 17:08:18 1999
++++ plugins/archiver/misc/misc.c	Mon Sep 27 23:26:35 1999
+@@ -70,7 +70,7 @@
+   
+   p->version = 1;
+   p->type = _Archiver;
+-  p->pluginname = "Misc Format Archiver Plugin version 0.2";
++  p->pluginname = "Misc Format Archiver Plugin version 0.3";
+   p->pluginshortname = FORMAT_NAME;
+   p->author = "TAJIRI Yasuhiro";
+   p->dlhandle = NULL; /* set by plugin_load */
+@@ -279,7 +279,8 @@
+     FILE * fp;
+     char buf[257];
+ 
+-    fp = fopen(filename,"r");
++    if ((fp = fopen(filename,"r")) == NULL)
++      return 1;
+     buf[256]=0;
+     while(fgets(buf,256,fp)!=NULL){
+         int count = strlen(buf);
+@@ -298,12 +299,12 @@
+ misc_archive_open(Archive *ar)
+ {
+     struct fmt_entry *e;
+-    char tmpsh[20];
++    char tmpsh[256];
+     static char *preName=NULL;
+     /* char curTmpDir[500]; */
+     FILE* fp;
+     pid_t pid_child;
+-    MISC_info *info;
++    MISC_info *info = NULL;
+     char rcfile[50];
+     char *home;
+ 
+@@ -312,26 +313,26 @@
+     fseek(ar->fp, 0L, SEEK_END);
+     ar->asize = ftell(ar->fp);
+     fseek(ar->fp, 0L, SEEK_SET);
+-
++    ar->nfiles=0;
++    ar->info=NULL;
+     home = getenv("HOME");
+     if(home==NULL)
+-        return 0;
++        goto error;
+     if( entries == NULL){
+         sprintf(rcfile,"%s/%s",home,".miscloader");
+         if(load_inifile(rcfile))
+-            return 0;
++            goto error;
+     }
+     if ((ar->info = calloc(1, sizeof(MISC_info))) == NULL) {
+         fprintf(stderr, "No enough memory for info\n");
+         archive_close(ar);
+-        fclose(ar->fp);
+-        return 0;
++        goto error;
+     }
+     info = (MISC_info *)ar->info;
+     info->fname=NULL;
+     e = check_file(ar);
+     if(e==NULL)
+-        return 0;
++        goto error;
+     sprintf(tmpsh,"/tmp/.%s%d",getenv("USER"),(int)(getpid()));
+ //    sprintf(tmpsh,"/tmp/.%s%d%s",getenv("USER"),(int)(getpid()),ar->filename);
+     tmpdir=strdup(tmpsh);
+@@ -354,14 +355,13 @@
+         } else if (pid_child < 0) {
+             fprintf(stderr, "fork failed");
+             exit(0);
+-            return 0;
++            goto error;
+         } else {
+             int status;
+ //            wait(&status);
+             waitpid(pid_child,&status,0);
+         }
+     }
+-    ar->nfiles=0;
+     scan_directory(tmpdir,ar);
+     if (ar->nfiles) {
+         ar->format = FORMAT_NAME;
+@@ -369,6 +369,15 @@
+         ar->close  = misc_archive_close;
+         return 1;
+     }
++  error:
++    if(info!=NULL){
++        int i;
++        for (i = 0; i < ar->nfiles; i++)
++            free(info->fname[i]);
++        free(info->fname);
++        free(ar->info);
++    }
++    fclose(ar->fp);
+     return 0;
+ }
+ 

@@ -1,0 +1,32 @@
+--- plugins/archiver/tar/tar.c.orig	Mon Sep 27 21:42:51 1999
++++ plugins/archiver/tar/tar.c		Mon Sep 27 21:46:15 1999
+@@ -39,7 +39,7 @@
+ {
+   p->version = 1;
+   p->type = _Archiver;
+-  p->pluginname = "TAR Format Archiver Plugin version 0.2";
++  p->pluginname = "TAR Format Archiver Plugin version 0.3";
+   p->pluginshortname = FORMAT_NAME;
+   p->author = "TAJIRI Yasuhiro";
+   p->dlhandle = NULL; /* set by plugin_load */
+@@ -142,8 +142,10 @@
+ 
+     if (hdr[0] == '\0')
+       break;
+-    if (!tar_checksum(hdr))
++    if (!tar_checksum(hdr)){
++      archive_close(info->ar);
+       return 0;
++    }
+     size = octal_value(hdr + 124, 12);
+     flen = strlen(hdr);
+     if (size == 0 && flen > 0 && hdr[flen - 1] == '/')
+@@ -176,7 +178,7 @@
+     ar->close = tar_archive_close;
+     return 1;
+   }
+-
++  archive_close(info->ar);
+   return 0;
+ }
+
