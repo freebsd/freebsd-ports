@@ -1,0 +1,13 @@
+paledit - NTT DoCoMo PHS Paldio telephone number data transfer tool
+
+This program is a perl script.
+Root or users belong to dialer group can only execute this program.
+
+Supported PHS:
+	- NTT Personal Paldio Data Card DC-1S
+	- NTT Personal Paldio 341S
+	- NTT DoCoMo   Paldio 611S
+
+Thanks Mr. Nomura <nom@csce.kyushu-u.ac.jp>!
+
+-- Porting by shige <shige@kuis.kyoto-u.ac.jp>
