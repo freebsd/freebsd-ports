@@ -125,10 +125,6 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp"
 .endif	# LITE
 
-.if exists(${PREFIX}/lib/libiconv.so)
-LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
-.endif
-
 # Until the bsd.gnome.mk people fix their damned file
 .if defined(WITH_GTK)
 USE_XLIB=	yes
