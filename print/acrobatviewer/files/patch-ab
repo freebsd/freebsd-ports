@@ -1,0 +1,11 @@
+--- launixgc.sh.orig	Thu Dec  2 09:30:38 1999
++++ launixgc.sh	Fri Feb 11 18:00:40 2000
+@@ -421,6 +421,8 @@
+ 	if [ ${jittype:-""} = "off" ]
+ 	then
+ 		jitinvoc="-Djava.compiler="
++	else
++		jitinvoc="-Djava.compiler=$jittype"
+ 	fi
+ fi
+ 
