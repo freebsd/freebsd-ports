@@ -245,6 +245,7 @@
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += monkeybubble
+    SUBDIR += monster-masher
     SUBDIR += moon-buggy
     SUBDIR += moonlander
     SUBDIR += moria
