@@ -8,19 +8,18 @@
 PORTNAME=	compat3x
 PORTVERSION=	${COMPAT3X_PORTVERSION}
 CATEGORIES=	misc
-MASTER_SITES=	${COMPAT3X_MASTER_SITES}
-MASTER_SITE_SUBDIR=	${COMPAT3X_MASTER_SITE_SUBDIR}
+MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	motoyuki
 PKGNAMESUFFIX=	-${ARCH}
-DISTFILES=	${COMPAT3X_DISTFILES}
-DIST_SUBDIR=	${ARCH}/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${COMPAT3X_OSRELDATE}
+DIST_SUBDIR=	${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 
-FORBIDDEN=	"FreeBSD-SA-02:28.resolv - buffer overflow in resolver in libc"
-
 ONLY_FOR_ARCHS=	i386
 
-WRKSRC=		${WRKDIR}/usr/lib/compat
+NO_WRKSUBDIR=	yes
 NO_MTREE=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat
@@ -31,44 +30,30 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500000
 COMPAT3X_OSVERSION=	5.0
-COMPAT3X_OSRELDATE=	20020219
-COMPAT3X_OSBRANCH=	CURRENT
-COMPAT3X_MASTER_SITES=	ftp://current.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
-COMPAT3X_DISTFILES=	${PORTNAME}.aa \
-			${PORTNAME}.ab \
-			${PORTNAME}.ac \
-			${PORTNAME}.ad \
-			${PORTNAME}.ae \
-			${PORTNAME}.af \
-			${PORTNAME}.ag
+COMPAT3X_OSRELDATE=	20020925
 PLIST_SUB=		CURRENT_ONLY:=""
 .else
 COMPAT3X_OSVERSION=	4.4
-COMPAT3X_OSRELDATE=	20011227
-COMPAT3X_OSBRANCH=	STABLE
-COMPAT3X_MASTER_SITES=	ftp://stable.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
-COMPAT3X_DISTFILES=	${PORTNAME}.aa \
-			${PORTNAME}.ab \
-			${PORTNAME}.ac \
-			${PORTNAME}.ad \
-			${PORTNAME}.ae
+COMPAT3X_OSRELDATE=	20020925
 PLIST_SUB=		CURRENT_ONLY:="@comment "
 .endif
 
+FREEBSD4_LIBS=	libc_r.so.4 libperl.so.3
+
 .if defined(COMPAT3X_OSRELDATE) && !empty(COMPAT3X_OSRELDATE)
 COMPAT3X_PORTVERSION=	${COMPAT3X_OSVERSION}.${COMPAT3X_OSRELDATE}
-COMPAT3X_MASTER_SITE_SUBDIR=	snapshots/${ARCH}/${COMPAT3X_OSVERSION}-${COMPAT3X_OSRELDATE}-${COMPAT3X_OSBRANCH}/${PORTNAME}
 .else
 COMPAT3X_PORTVERSION=	${COMPAT3X_OSVERSION}
-COMPAT3X_MASTER_SITE_SUBDIR=	releases/${ARCH}/${COMPAT3X_OSVERSION}-RELEASE/${PORTNAME}
 .endif
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	cd ${_DISTDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR}
-	if [ -e ${WRKSRC}/libc_r.so.4 ]; then \
-		${MV} ${WRKSRC}/libc_r.so.4 ${WRKSRC}/libc_r.so.4.compat3x; \
-	fi
+post-extract:
+.for lib in ${FREEBSD4_LIBS}
+.if ${OSVERSION} >= 500000
+	${MV} ${WRKSRC}/${lib} ${WRKSRC}/${lib}.compat3x
+.else
+	${RM} -f ${WRKSRC}/${lib}
+.endif
+.endfor
 
 do-build:
 	@( ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
@@ -76,10 +61,13 @@ do-build:
 
 do-install:
 	${MKDIR} ${TARGET_DIR} ${PREFIX}/etc/rc.d
-	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
-	if [ -e ${TARGET_DIR}/libc_r.so.4.compat3x -a ! -e ${TARGET_DIR}/libc_r.so.4.compat4x ]; then \
-		${LN} -sf ${TARGET_DIR}/libc_r.so.4.compat3x ${TARGET_DIR}/libc_r.so.4; \
+	${INSTALL_DATA} ${WRKSRC}/lib*.so.* ${TARGET_DIR}/
+.for lib in ${FREEBSD4_LIBS}
+	cd ${TARGET_DIR}; \
+	if [ -e ${lib}.compat3x -a ! -e ${lib}.compat4x ]; then \
+		${LN} -sf ${lib}.compat3x ${lib}; \
 	fi
+.endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.post.mk>
