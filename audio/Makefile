@@ -230,6 +230,7 @@
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += sdl_mixer
+    SUBDIR += sdl_sound
     SUBDIR += sfront
     SUBDIR += shntool
     SUBDIR += shorten
