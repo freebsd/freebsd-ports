@@ -1229,7 +1229,7 @@ curly		ports/sysutils/curly
 cursive		ports/games/cursive
 custom-emacs	ports/editors/custom-emacs
 custom-mule	ports/editors/custom-mule
-cut		ports/devel/cut
+ports_cut		ports/devel/cut
 cutecom		ports/comms/cutecom
 cutils		ports/devel/cutils
 cvm		ports/security/cvm
