@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.8l
-PORTREVISION=	1
+PORTVERSION=	1.8m
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/ \
 		ftp://ftp.stealth.net/pub/mirrors/ftp.scrollz.com/pub/ScrollZ/source/ \
