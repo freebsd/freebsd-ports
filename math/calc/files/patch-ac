@@ -5,7 +5,7 @@
  		 * write the line to pager, if possible
  		 */
 -	} while(fputs(buf, cmd) > 0);
-+	} while (fputs(buf, cmd) == 0);
++	} while (fputs(buf, cmd) >= 0);
  
  	/*
  	 * all done, EOF or error, so just clean up
