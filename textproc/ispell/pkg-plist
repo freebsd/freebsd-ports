@@ -8,4 +8,5 @@ bin/sq
 bin/tryaffix
 bin/unsq
 share/ispell/english.aff
+share/ispell/english.dict
 share/ispell/english.hash
