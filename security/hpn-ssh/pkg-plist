@@ -1,6 +1,7 @@
+@comment slogin must be deleted first
+bin/slogin
 bin/ssh
 bin/scp
-bin/slogin
 bin/ssh-add
 bin/ssh-agent
 bin/ssh-keygen
