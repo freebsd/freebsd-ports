@@ -8,6 +8,9 @@ lib/bugle/common.so
 lib/bugle/debugger.a
 lib/bugle/debugger.la
 lib/bugle/debugger.so
+lib/bugle/log.a
+lib/bugle/log.la
+lib/bugle/log.so
 lib/bugle/modify.a
 lib/bugle/modify.la
 lib/bugle/modify.so
