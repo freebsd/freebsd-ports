@@ -1,13 +1,13 @@
---- Makefile.in.orig	Fri Jan 10 12:40:23 1997
-+++ Makefile.in	Mon Jan 13 01:32:39 1997
-@@ -46,10 +46,13 @@
- TAINTED= curs_main.c handler.c hdrline.c init.c keymap.c main.c parse.c \
- 	send.c sendlib.c
+--- Makefile.in.orig	Mon Jan 27 18:15:59 1997
++++ Makefile.in	Wed Jan 29 07:23:40 1997
+@@ -72,10 +72,13 @@
+ 	sendlib.c \
+ 	url.c
  
 -all: mutt
 +all: mutt docs
  
- mutt: $(OBJS)
+ mutt: $(OBJS) $(REGEX)
  	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
 +
 +docs:
