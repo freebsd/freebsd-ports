@@ -6,6 +6,8 @@ include/kbear/site.h
 include/kbear/siteimportfilterpluginiface.h
 lib/kde3/kio_kbearftp.la
 lib/kde3/kio_kbearftp.so
+lib/libkbeardirsynchpart.so
+lib/libkbeardirsynchpart.la
 lib/kde3/libkbeargftpimportfilter.la
 lib/kde3/libkbeargftpimportfilter.so
 lib/kde3/libkbearimportfilter.la
@@ -80,6 +82,7 @@ share/locale/pt/LC_MESSAGES/kbear.mo
 share/locale/ro/LC_MESSAGES/kbear.mo
 share/locale/ru/LC_MESSAGES/kbear.mo
 share/locale/sv/LC_MESSAGES/kbear.mo
+share/locale/zh_TW/LC_MESSAGES/kbear.mo
 share/services/kbearftp.protocol
 share/services/kbeargftimportfilter.desktop
 share/services/kbearkrusaderimportfilter.desktop
@@ -102,3 +105,13 @@ share/servicetypes/kbearimportfilter.desktop
 @dirrm share/apps/kbear/icons
 @dirrm share/apps/kbear
 @dirrm include/kbear
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
