@@ -92,7 +92,7 @@ www/data/jargon/html/Hacker-Writing-Style.html
 www/data/jargon/html/International-Style.html
 www/data/jargon/html/Introduction.html
 www/data/jargon/html/Jargon-Construction.html
-www/data/jargon/html/Lamer-speak.html
+www/data/jargon/html/Leet-speak.html
 www/data/jargon/html/Miscellaneous.html
 www/data/jargon/html/OS-and-JEDGAR.html
 www/data/jargon/html/Other-Interests.html
@@ -118,13 +118,11 @@ www/data/jargon/html/The-Story-of-Mel.html
 www/data/jargon/html/Things-Hackers-Detest-and-Avoid.html
 www/data/jargon/html/Verb-Doubling.html
 www/data/jargon/html/Weaknesses-of-the-Hacker-Personality.html
-www/data/jargon/html/entry/(TM).html
 www/data/jargon/html/entry/-fu.html
 www/data/jargon/html/entry/-oid.html
 www/data/jargon/html/entry/-party.html
 www/data/jargon/html/entry/-ware.html
 www/data/jargon/html/entry/0.html
-www/data/jargon/html/entry/120-reset.html
 www/data/jargon/html/entry/1TBS.html
 www/data/jargon/html/entry/2.html
 www/data/jargon/html/entry/4.2.html
@@ -158,12 +156,15 @@ www/data/jargon/html/entry/Aluminum-Book.html
 www/data/jargon/html/entry/Amiga-Persecution-Complex.html
 www/data/jargon/html/entry/Amiga.html
 www/data/jargon/html/entry/Angband.html
+www/data/jargon/html/entry/Archimedes.html
+www/data/jargon/html/entry/Aunt-Tillie.html
 www/data/jargon/html/entry/B1FF.html
 www/data/jargon/html/entry/B5.html
 www/data/jargon/html/entry/BAD.html
 www/data/jargon/html/entry/BASIC.html
 www/data/jargon/html/entry/BBS.html
 www/data/jargon/html/entry/BCPL.html
+www/data/jargon/html/entry/BDFL.html
 www/data/jargon/html/entry/BFI.html
 www/data/jargon/html/entry/BI.html
 www/data/jargon/html/entry/BITNET.html
@@ -190,7 +191,6 @@ www/data/jargon/html/entry/Big-Gray-Wall.html
 www/data/jargon/html/entry/Big-Red-Switch.html
 www/data/jargon/html/entry/Big-Room.html
 www/data/jargon/html/entry/Black-Screen-of-Death.html
-www/data/jargon/html/entry/Black-Thursday.html
 www/data/jargon/html/entry/Bloggs-Family.html
 www/data/jargon/html/entry/Blue-Book.html
 www/data/jargon/html/entry/Blue-Glue.html
@@ -250,12 +250,14 @@ www/data/jargon/html/entry/Datamation.html
 www/data/jargon/html/entry/Dave-the-Resurrector.html
 www/data/jargon/html/entry/Death-Square.html
 www/data/jargon/html/entry/Death-Star.html
+www/data/jargon/html/entry/Death-X-of.html
 www/data/jargon/html/entry/Devil-Book.html
 www/data/jargon/html/entry/Dilbert.html
 www/data/jargon/html/entry/Discordianism.html
 www/data/jargon/html/entry/Dissociated-Press.html
 www/data/jargon/html/entry/DoS-attack.html
 www/data/jargon/html/entry/Don't-do-that-then!.html
+www/data/jargon/html/entry/Doom-X-of.html
 www/data/jargon/html/entry/Dr.-Fred-Mbogo.html
 www/data/jargon/html/entry/Dragon-Book.html
 www/data/jargon/html/entry/Dread-Questionmark-Disease.html
@@ -330,6 +332,7 @@ www/data/jargon/html/entry/Godwin's-Law.html
 www/data/jargon/html/entry/Godzillagram.html
 www/data/jargon/html/entry/Good-Thing.html
 www/data/jargon/html/entry/Gosperism.html
+www/data/jargon/html/entry/Great-Internet-Explosion.html
 www/data/jargon/html/entry/Great-Renaming.html
 www/data/jargon/html/entry/Great-Runes.html
 www/data/jargon/html/entry/Great-Worm.html
@@ -377,7 +380,6 @@ www/data/jargon/html/entry/InterCaps.html
 www/data/jargon/html/entry/Internet-Death-Penalty.html
 www/data/jargon/html/entry/Internet-Exploder.html
 www/data/jargon/html/entry/Internet-Exploiter.html
-www/data/jargon/html/entry/Internet-address.html
 www/data/jargon/html/entry/Internet.html
 www/data/jargon/html/entry/Iron-Age.html
 www/data/jargon/html/entry/J.-Random-Hacker.html
@@ -386,6 +388,7 @@ www/data/jargon/html/entry/JCL.html
 www/data/jargon/html/entry/JEDR.html
 www/data/jargon/html/entry/Java.html
 www/data/jargon/html/entry/Jeff-K..html
+www/data/jargon/html/entry/Jeopardy-style-quoting.html
 www/data/jargon/html/entry/K.html
 www/data/jargon/html/entry/KIBO.html
 www/data/jargon/html/entry/KIPS.html
@@ -394,7 +397,7 @@ www/data/jargon/html/entry/KLB.html
 www/data/jargon/html/entry/Kamp;R.html
 www/data/jargon/html/entry/Knights-of-the-Lambda-Calculus.html
 www/data/jargon/html/entry/Knuth.html
-www/data/jargon/html/entry/Kool-Aid-to-drink-the.html
+www/data/jargon/html/entry/Kool-Aid.html
 www/data/jargon/html/entry/LAN-party.html
 www/data/jargon/html/entry/LART.html
 www/data/jargon/html/entry/LDB.html
@@ -451,6 +454,7 @@ www/data/jargon/html/entry/New-Testament.html
 www/data/jargon/html/entry/Nightmare-File-System.html
 www/data/jargon/html/entry/Ninety-Ninety-Rule.html
 www/data/jargon/html/entry/Nominal-Semidestructor.html
+www/data/jargon/html/entry/OP.html
 www/data/jargon/html/entry/OS.html
 www/data/jargon/html/entry/OS2.html
 www/data/jargon/html/entry/OSS.html
@@ -478,7 +482,6 @@ www/data/jargon/html/entry/PFY.html
 www/data/jargon/html/entry/PHB.html
 www/data/jargon/html/entry/PM.html
 www/data/jargon/html/entry/POM.html
-www/data/jargon/html/entry/POPJ.html
 www/data/jargon/html/entry/PPN.html
 www/data/jargon/html/entry/Parkinson's-Law-of-Data.html
 www/data/jargon/html/entry/Pascal.html
@@ -514,6 +517,7 @@ www/data/jargon/html/entry/Real-World.html
 www/data/jargon/html/entry/Red-Book.html
 www/data/jargon/html/entry/Right-Thing.html
 www/data/jargon/html/entry/SAIL.html
+www/data/jargon/html/entry/SCNR.html
 www/data/jargon/html/entry/SCSI-voodoo.html
 www/data/jargon/html/entry/SCSI.html
 www/data/jargon/html/entry/SED.html
@@ -526,6 +530,7 @@ www/data/jargon/html/entry/SO.html
 www/data/jargon/html/entry/SOS.html
 www/data/jargon/html/entry/SPACEWAR.html
 www/data/jargon/html/entry/STFW.html
+www/data/jargon/html/entry/STR.html
 www/data/jargon/html/entry/Saturday-night-special.html
 www/data/jargon/html/entry/ScumOS.html
 www/data/jargon/html/entry/See-figure-1.html
@@ -534,6 +539,7 @@ www/data/jargon/html/entry/Share-and-enjoy!.html
 www/data/jargon/html/entry/Shub-Internet.html
 www/data/jargon/html/entry/Silver-Book.html
 www/data/jargon/html/entry/Slowlaris.html
+www/data/jargon/html/entry/Spinning-Pizza-of-Death.html
 www/data/jargon/html/entry/Stone-Age.html
 www/data/jargon/html/entry/Stupids.html
 www/data/jargon/html/entry/Sturgeon's-Law.html
@@ -541,6 +547,7 @@ www/data/jargon/html/entry/Sun.html
 www/data/jargon/html/entry/Suzie-COBOL.html
 www/data/jargon/html/entry/Swiss-Army-chainsaw.html
 www/data/jargon/html/entry/T.html
+www/data/jargon/html/entry/TAN.html
 www/data/jargon/html/entry/TANSTAAFL.html
 www/data/jargon/html/entry/TCB.html
 www/data/jargon/html/entry/TCPIP.html
@@ -548,11 +555,14 @@ www/data/jargon/html/entry/TECO.html
 www/data/jargon/html/entry/TINC.html
 www/data/jargon/html/entry/TINLC.html
 www/data/jargon/html/entry/TLA.html
+www/data/jargon/html/entry/TM.html
 www/data/jargon/html/entry/TMRC.html
 www/data/jargon/html/entry/TMRCie.html
 www/data/jargon/html/entry/TMTOWTDI.html
+www/data/jargon/html/entry/TOFU.html
 www/data/jargon/html/entry/TOPS-10.html
 www/data/jargon/html/entry/TOPS-20.html
+www/data/jargon/html/entry/TOS.html
 www/data/jargon/html/entry/TWENEX.html
 www/data/jargon/html/entry/TeX.html
 www/data/jargon/html/entry/Telerat.html
@@ -601,6 +611,7 @@ www/data/jargon/html/entry/White-Book.html
 www/data/jargon/html/entry/Winchester.html
 www/data/jargon/html/entry/Windoze.html
 www/data/jargon/html/entry/Wintel.html
+www/data/jargon/html/entry/Wintendo.html
 www/data/jargon/html/entry/Wizard-Book.html
 www/data/jargon/html/entry/Wrong-Thing.html
 www/data/jargon/html/entry/X.html
@@ -751,6 +762,8 @@ www/data/jargon/html/entry/blitter.html
 www/data/jargon/html/entry/blivet.html
 www/data/jargon/html/entry/bloatware.html
 www/data/jargon/html/entry/block.html
+www/data/jargon/html/entry/blog.html
+www/data/jargon/html/entry/blogrolling.html
 www/data/jargon/html/entry/blow-an-EPROM.html
 www/data/jargon/html/entry/blow-away.html
 www/data/jargon/html/entry/blow-out.html
@@ -764,6 +777,7 @@ www/data/jargon/html/entry/boa.html
 www/data/jargon/html/entry/board.html
 www/data/jargon/html/entry/boat-anchor.html
 www/data/jargon/html/entry/bob.html
+www/data/jargon/html/entry/bodge.html
 www/data/jargon/html/entry/bogo-sort.html
 www/data/jargon/html/entry/bogometer.html
 www/data/jargon/html/entry/bogon-filter.html
@@ -782,6 +796,7 @@ www/data/jargon/html/entry/boot.html
 www/data/jargon/html/entry/borken.html
 www/data/jargon/html/entry/bot.html
 www/data/jargon/html/entry/bottom-feeder.html
+www/data/jargon/html/entry/bottom-post.html
 www/data/jargon/html/entry/bottom-up-implementation.html
 www/data/jargon/html/entry/bounce-message.html
 www/data/jargon/html/entry/bounce.html
@@ -802,6 +817,7 @@ www/data/jargon/html/entry/break-even-point.html
 www/data/jargon/html/entry/break.html
 www/data/jargon/html/entry/breath-of-life-packet.html
 www/data/jargon/html/entry/breedle.html
+www/data/jargon/html/entry/bricktext.html
 www/data/jargon/html/entry/bring-X-to-its-knees.html
 www/data/jargon/html/entry/brittle.html
 www/data/jargon/html/entry/broadcast-storm.html
@@ -825,7 +841,6 @@ www/data/jargon/html/entry/bug.html
 www/data/jargon/html/entry/buglix.html
 www/data/jargon/html/entry/bulletproof.html
 www/data/jargon/html/entry/bullschildt.html
-www/data/jargon/html/entry/bum.html
 www/data/jargon/html/entry/bump.html
 www/data/jargon/html/entry/burble.html
 www/data/jargon/html/entry/buried-treasure.html
@@ -860,6 +875,7 @@ www/data/jargon/html/entry/cdr.html
 www/data/jargon/html/entry/chad-box.html
 www/data/jargon/html/entry/chad.html
 www/data/jargon/html/entry/chain.html
+www/data/jargon/html/entry/chainik.html
 www/data/jargon/html/entry/channel-hopping.html
 www/data/jargon/html/entry/channel-op.html
 www/data/jargon/html/entry/channel.html
@@ -872,6 +888,7 @@ www/data/jargon/html/entry/check.html
 www/data/jargon/html/entry/cheerfully.html
 www/data/jargon/html/entry/chemist.html
 www/data/jargon/html/entry/chicken-head.html
+www/data/jargon/html/entry/chickenboner.html
 www/data/jargon/html/entry/chiclet-keyboard.html
 www/data/jargon/html/entry/choad.html
 www/data/jargon/html/entry/choke.html
@@ -1153,10 +1170,12 @@ www/data/jargon/html/entry/fan.html
 www/data/jargon/html/entry/fandango-on-core.html
 www/data/jargon/html/entry/faradize.html
 www/data/jargon/html/entry/farkled.html
+www/data/jargon/html/entry/farm.html
 www/data/jargon/html/entry/farming.html
 www/data/jargon/html/entry/fascist.html
 www/data/jargon/html/entry/fat-electrons.html
 www/data/jargon/html/entry/fat-finger.html
+www/data/jargon/html/entry/fat-pipe.html
 www/data/jargon/html/entry/faulty.html
 www/data/jargon/html/entry/fd-leak.html
 www/data/jargon/html/entry/fear-and-loathing.html
@@ -1286,6 +1305,7 @@ www/data/jargon/html/entry/geef.html
 www/data/jargon/html/entry/geek-code.html
 www/data/jargon/html/entry/geek-out.html
 www/data/jargon/html/entry/geek.html
+www/data/jargon/html/entry/geekasm.html
 www/data/jargon/html/entry/gen.html
 www/data/jargon/html/entry/gender-mender.html
 www/data/jargon/html/entry/generate.html
@@ -1310,12 +1330,14 @@ www/data/jargon/html/entry/go-faster-stripes.html
 www/data/jargon/html/entry/go-flatline.html
 www/data/jargon/html/entry/go-gold.html
 www/data/jargon/html/entry/go-root.html
+www/data/jargon/html/entry/goat-file.html
 www/data/jargon/html/entry/gobble.html
 www/data/jargon/html/entry/golden.html
 www/data/jargon/html/entry/golf-ball-printer.html
 www/data/jargon/html/entry/gonk.html
 www/data/jargon/html/entry/gonkulator.html
 www/data/jargon/html/entry/gonzo.html
+www/data/jargon/html/entry/google-juice.html
 www/data/jargon/html/entry/google.html
 www/data/jargon/html/entry/gopher-hole.html
 www/data/jargon/html/entry/gopher.html
@@ -1404,6 +1426,7 @@ www/data/jargon/html/entry/heavy-metal.html
 www/data/jargon/html/entry/heavy-wizardry.html
 www/data/jargon/html/entry/heavyweight.html
 www/data/jargon/html/entry/heisenbug.html
+www/data/jargon/html/entry/hell-desk.html
 www/data/jargon/html/entry/hello-sailor!.html
 www/data/jargon/html/entry/hello-wall!.html
 www/data/jargon/html/entry/hello-world.html
@@ -1422,6 +1445,7 @@ www/data/jargon/html/entry/hobbit.html
 www/data/jargon/html/entry/hog.html
 www/data/jargon/html/entry/hole.html
 www/data/jargon/html/entry/hollised.html
+www/data/jargon/html/entry/holy-penguin-pee.html
 www/data/jargon/html/entry/holy-wars.html
 www/data/jargon/html/entry/home-box.html
 www/data/jargon/html/entry/home-machine.html
@@ -1429,6 +1453,7 @@ www/data/jargon/html/entry/home-page.html
 www/data/jargon/html/entry/honey-pot.html
 www/data/jargon/html/entry/hook.html
 www/data/jargon/html/entry/hop.html
+www/data/jargon/html/entry/horked.html
 www/data/jargon/html/entry/hose.html
 www/data/jargon/html/entry/hosed.html
 www/data/jargon/html/entry/hot-chat.html
@@ -1462,7 +1487,6 @@ www/data/jargon/html/entry/initgame.html
 www/data/jargon/html/entry/insanely-great.html
 www/data/jargon/html/entry/installfest.html
 www/data/jargon/html/entry/interesting.html
-www/data/jargon/html/entry/interrupt-list.html
 www/data/jargon/html/entry/interrupt.html
 www/data/jargon/html/entry/interrupts-locked-out.html
 www/data/jargon/html/entry/intertwingled.html
@@ -1473,12 +1497,14 @@ www/data/jargon/html/entry/ironmonger.html
 www/data/jargon/html/entry/jack-in.html
 www/data/jargon/html/entry/jaggies.html
 www/data/jargon/html/entry/jello.html
+www/data/jargon/html/entry/jibble.html
 www/data/jargon/html/entry/jiffy.html
 www/data/jargon/html/entry/job-security.html
 www/data/jargon/html/entry/jock.html
 www/data/jargon/html/entry/joe-code.html
 www/data/jargon/html/entry/jolix.html
 www/data/jargon/html/entry/juggling-eggs.html
+www/data/jargon/html/entry/juice.html
 www/data/jargon/html/entry/jump-off-into-never-never-land.html
 www/data/jargon/html/entry/jupiter.html
 www/data/jargon/html/entry/k-.html
@@ -1565,6 +1591,7 @@ www/data/jargon/html/entry/loser.html
 www/data/jargon/html/entry/losing.html
 www/data/jargon/html/entry/loss.html
 www/data/jargon/html/entry/lossage.html
+www/data/jargon/html/entry/lossy.html
 www/data/jargon/html/entry/lost-in-the-noise.html
 www/data/jargon/html/entry/lost-in-the-underflow.html
 www/data/jargon/html/entry/lots-of-MIPS-but-no-IO.html
@@ -1589,6 +1616,7 @@ www/data/jargon/html/entry/mailbomb.html
 www/data/jargon/html/entry/mailing-list.html
 www/data/jargon/html/entry/main-loop.html
 www/data/jargon/html/entry/mainframe.html
+www/data/jargon/html/entry/mainsleaze.html
 www/data/jargon/html/entry/management.html
 www/data/jargon/html/entry/mandelbug.html
 www/data/jargon/html/entry/manged.html
@@ -1604,6 +1632,7 @@ www/data/jargon/html/entry/martian.html
 www/data/jargon/html/entry/massage.html
 www/data/jargon/html/entry/math-out.html
 www/data/jargon/html/entry/maximum-Maytag-mode.html
+www/data/jargon/html/entry/me.html
 www/data/jargon/html/entry/meatspace.html
 www/data/jargon/html/entry/meatware.html
 www/data/jargon/html/entry/meeces.html
@@ -1647,6 +1676,7 @@ www/data/jargon/html/entry/mod.html
 www/data/jargon/html/entry/mode-bit.html
 www/data/jargon/html/entry/mode.html
 www/data/jargon/html/entry/modulo.html
+www/data/jargon/html/entry/mojibake.html
 www/data/jargon/html/entry/molly-guard.html
 www/data/jargon/html/entry/monkey-scratch.html
 www/data/jargon/html/entry/monkey-up.html
@@ -1657,6 +1687,7 @@ www/data/jargon/html/entry/mouse-ahead.html
 www/data/jargon/html/entry/mouse-belt.html
 www/data/jargon/html/entry/mouse-droppings.html
 www/data/jargon/html/entry/mouse-elbow.html
+www/data/jargon/html/entry/mouse-pusher.html
 www/data/jargon/html/entry/mouso.html
 www/data/jargon/html/entry/mu.html
 www/data/jargon/html/entry/muddie.html
@@ -1688,6 +1719,7 @@ www/data/jargon/html/entry/nanobot.html
 www/data/jargon/html/entry/nanocomputer.html
 www/data/jargon/html/entry/nanofortnight.html
 www/data/jargon/html/entry/nanotechnology.html
+www/data/jargon/html/entry/narg.html
 www/data/jargon/html/entry/nasal-demons.html
 www/data/jargon/html/entry/nastygram.html
 www/data/jargon/html/entry/nature.html
@@ -1769,6 +1801,7 @@ www/data/jargon/html/entry/overflow-bit.html
 www/data/jargon/html/entry/overflow-pdl.html
 www/data/jargon/html/entry/overrun-screw.html
 www/data/jargon/html/entry/overrun.html
+www/data/jargon/html/entry/owned.html
 www/data/jargon/html/entry/packet-over-air.html
 www/data/jargon/html/entry/padded-cell.html
 www/data/jargon/html/entry/page-in.html
@@ -1808,6 +1841,7 @@ www/data/jargon/html/entry/pig-tail.html
 www/data/jargon/html/entry/pilot-error.html
 www/data/jargon/html/entry/ping-storm.html
 www/data/jargon/html/entry/ping.html
+www/data/jargon/html/entry/pink-contract.html
 www/data/jargon/html/entry/pink-wire.html
 www/data/jargon/html/entry/pipe.html
 www/data/jargon/html/entry/pistol.html
@@ -1831,6 +1865,7 @@ www/data/jargon/html/entry/pointy-hat.html
 www/data/jargon/html/entry/poke.html
 www/data/jargon/html/entry/poll.html
 www/data/jargon/html/entry/polygon-pusher.html
+www/data/jargon/html/entry/ponytail.html
 www/data/jargon/html/entry/pop.html
 www/data/jargon/html/entry/poser.html
 www/data/jargon/html/entry/post.html
@@ -1904,6 +1939,7 @@ www/data/jargon/html/entry/raster-burn.html
 www/data/jargon/html/entry/rasterbation.html
 www/data/jargon/html/entry/rat-belt.html
 www/data/jargon/html/entry/rat-dance.html
+www/data/jargon/html/entry/rathole.html
 www/data/jargon/html/entry/ratio-site.html
 www/data/jargon/html/entry/rave-on!.html
 www/data/jargon/html/entry/rave.html
@@ -1955,6 +1991,7 @@ www/data/jargon/html/entry/root.html
 www/data/jargon/html/entry/rot13.html
 www/data/jargon/html/entry/rotary-debugger.html
 www/data/jargon/html/entry/round-tape.html
+www/data/jargon/html/entry/rubber-hose-cryptanalysis.html
 www/data/jargon/html/entry/rude.html
 www/data/jargon/html/entry/runes.html
 www/data/jargon/html/entry/runic.html
@@ -2035,6 +2072,7 @@ www/data/jargon/html/entry/sidecar.html
 www/data/jargon/html/entry/sig-block.html
 www/data/jargon/html/entry/sig-quote.html
 www/data/jargon/html/entry/sig-virus.html
+www/data/jargon/html/entry/sigmonster.html
 www/data/jargon/html/entry/signal-to-noise-ratio.html
 www/data/jargon/html/entry/silicon.html
 www/data/jargon/html/entry/silly-walk.html
@@ -2052,6 +2090,7 @@ www/data/jargon/html/entry/sleep.html
 www/data/jargon/html/entry/slim.html
 www/data/jargon/html/entry/slop.html
 www/data/jargon/html/entry/slopsucker.html
+www/data/jargon/html/entry/slurp-the-robot.html
 www/data/jargon/html/entry/slurp.html
 www/data/jargon/html/entry/smart-terminal.html
 www/data/jargon/html/entry/smart.html
@@ -2114,6 +2153,7 @@ www/data/jargon/html/entry/spl.html
 www/data/jargon/html/entry/splash-screen.html
 www/data/jargon/html/entry/splat-out.html
 www/data/jargon/html/entry/splat.html
+www/data/jargon/html/entry/splork!.html
 www/data/jargon/html/entry/spod.html
 www/data/jargon/html/entry/spoiler-space.html
 www/data/jargon/html/entry/spoiler.html
@@ -2122,7 +2162,9 @@ www/data/jargon/html/entry/spoof.html
 www/data/jargon/html/entry/spool-file.html
 www/data/jargon/html/entry/spool.html
 www/data/jargon/html/entry/sporgery.html
+www/data/jargon/html/entry/sport-death.html
 www/data/jargon/html/entry/spungle.html
+www/data/jargon/html/entry/spyware.html
 www/data/jargon/html/entry/square-tape.html
 www/data/jargon/html/entry/squirrelcide.html
 www/data/jargon/html/entry/stack-puke.html
@@ -2241,6 +2283,7 @@ www/data/jargon/html/entry/tool.html
 www/data/jargon/html/entry/toolchain.html
 www/data/jargon/html/entry/toolsmith.html
 www/data/jargon/html/entry/toor.html
+www/data/jargon/html/entry/top-post.html
 www/data/jargon/html/entry/topic-drift.html
 www/data/jargon/html/entry/topic-group.html
 www/data/jargon/html/entry/tourist-information.html
@@ -2264,6 +2307,7 @@ www/data/jargon/html/entry/troglodyte-mode.html
 www/data/jargon/html/entry/troglodyte.html
 www/data/jargon/html/entry/troll.html
 www/data/jargon/html/entry/tron.html
+www/data/jargon/html/entry/troughie.html
 www/data/jargon/html/entry/true-hacker.html
 www/data/jargon/html/entry/tty.html
 www/data/jargon/html/entry/tube-time.html
@@ -2281,6 +2325,7 @@ www/data/jargon/html/entry/twirling-baton.html
 www/data/jargon/html/entry/two-pi.html
 www/data/jargon/html/entry/two-to-the-N.html
 www/data/jargon/html/entry/u-.html
+www/data/jargon/html/entry/ubergeek.html
 www/data/jargon/html/entry/undefined-external-reference.html
 www/data/jargon/html/entry/under-the-hood.html
 www/data/jargon/html/entry/undocumented-feature.html
@@ -2293,6 +2338,7 @@ www/data/jargon/html/entry/up.html
 www/data/jargon/html/entry/upload.html
 www/data/jargon/html/entry/upstream.html
 www/data/jargon/html/entry/upthread.html
+www/data/jargon/html/entry/uptime.html
 www/data/jargon/html/entry/urchin.html
 www/data/jargon/html/entry/user-friendly.html
 www/data/jargon/html/entry/user-obsequious.html
@@ -2330,6 +2376,7 @@ www/data/jargon/html/entry/voice-net.html
 www/data/jargon/html/entry/voice.html
 www/data/jargon/html/entry/voodoo-programming.html
 www/data/jargon/html/entry/vulture-capitalist.html
+www/data/jargon/html/entry/w00t.html
 www/data/jargon/html/entry/wabbit.html
 www/data/jargon/html/entry/waldo.html
 www/data/jargon/html/entry/walk-off-the-end-of.html
@@ -2339,11 +2386,12 @@ www/data/jargon/html/entry/wall-follower.html
 www/data/jargon/html/entry/wall-time.html
 www/data/jargon/html/entry/wall-wart.html
 www/data/jargon/html/entry/wall.html
-www/data/jargon/html/entry/wallpaper.html
+www/data/jargon/html/entry/wallhack.html
 www/data/jargon/html/entry/wango.html
 www/data/jargon/html/entry/wank.html
 www/data/jargon/html/entry/wannabee.html
 www/data/jargon/html/entry/war-dialer.html
+www/data/jargon/html/entry/war-driving.html
 www/data/jargon/html/entry/warez-d00dz.html
 www/data/jargon/html/entry/warez-kiddies.html
 www/data/jargon/html/entry/warez.html
@@ -2423,6 +2471,7 @@ www/data/jargon/html/entry/wumpus.html
 www/data/jargon/html/entry/xor.html
 www/data/jargon/html/entry/xref.html
 www/data/jargon/html/entry/xyzzy.html
+www/data/jargon/html/entry/yak-shaving.html
 www/data/jargon/html/entry/yellow-card.html
 www/data/jargon/html/entry/yellow-wire.html
 www/data/jargon/html/entry/yoyo-mode.html
@@ -2444,7 +2493,7 @@ www/data/jargon/html/letters.html
 www/data/jargon/index.html
 www/data/jargon/jargbook.html
 www/data/jargon/jarghist.html
-www/data/jargon/jargon-4.3.1.tar.gz
+www/data/jargon/jargon-4.3.3.tar.gz
 www/data/jargon/jargon.html
 www/data/jargon/jargoogle.html
 www/data/jargon/jargtxt.html

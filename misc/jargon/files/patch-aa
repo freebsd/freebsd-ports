@@ -1,16 +1,5 @@
 --- jargon-search.orig	Tue Apr  6 12:01:51 1999
 +++ jargon-search	Thu Apr 15 13:24:20 1999
-@@ -10,8 +10,8 @@
- 
- # The document directory of the server, with *no* trailing slash.  It sucks
- # that we can't pull this out of the environment, you may have to change it.
--# (The default /home/httpd/html works for Apache running under Red Hat Linux)
--$html_base='/home/httpd/html';
-+# (The default /usr/local/www/data works for Apache running under Red Hat Linux)
-+$html_base='/usr/local/www/data';
- 
- # The relative location of the Jargon File files.
- $jargon_path="/jargon/html";
 @@ -356,10 +356,12 @@
      $server = $ENV{'SERVER_NAME'};
  
