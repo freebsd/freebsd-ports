@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/stable/
 
@@ -22,6 +23,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
