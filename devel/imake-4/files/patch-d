@@ -1,6 +1,6 @@
---- cf/FreeBSD.cf.orig	Tue Jan 14 21:52:12 2003
-+++ cf/FreeBSD.cf	Fri Feb  6 12:27:55 2004
-@@ -89,14 +89,14 @@
+--- cf/FreeBSD.cf.orig	Wed Jun  9 04:53:53 2004
++++ cf/FreeBSD.cf	Wed Jun  9 04:56:47 2004
+@@ -108,14 +108,14 @@
  # endif
  # define HasPosixThreads	YES
  # define ThreadedX		YES
@@ -17,23 +17,24 @@
  # else
  #  if OSRelVersion >= 500043
  #   define BuildThreadStubLibrary  NO
-@@ -106,9 +106,9 @@
+@@ -125,10 +125,10 @@
  #   define NeedUIThrStubs          YES
  #  endif
  #  if (OSRelVersion >= 500016)
 -#   define ThreadsLibraries	-lc_r
 +#   define ThreadsLibraries	%%PTHREAD_LIBS%%
+ #   define SharedGLReqs		$(LDPRELIBS) $(XLIB) -lc
  #  else
 -#   define ThreadsLibraries	-pthread
 +#   define ThreadsLibraries	%%PTHREAD_LIBS%%
  #  endif
  #  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
- #  define SharedXtReqs		$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
-@@ -485,14 +485,14 @@
+ #  define SharedXtReqs		$(LDPRELIB) $(XONLYLIB) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
+@@ -442,14 +442,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
--#define DefaultGcc2i386Opt -O2
+-#define DefaultGcc2i386Opt -O2 GccAliasingArgs
 +#define DefaultGcc2i386Opt
  #endif
  #endif

@@ -1,11 +1,11 @@
---- lib/Imakefile.orig	Sun Mar  2 19:44:29 2003
-+++ lib/Imakefile	Sun Mar  2 19:44:31 2003
-@@ -211,7 +211,7 @@
+--- lib/Imakefile.orig	Thu Apr  8 23:24:13 2004
++++ lib/Imakefile	Thu Apr  8 23:25:07 2004
+@@ -207,7 +207,7 @@
               $(DPSLIBDIR) $(DPSTKLIBDIR) $(PSRESLIBDIR) $(XINERAMADIR) \
               $(ZLIBDIR) $(REGEXDIR) $(RENDERLIBDIR) $(FREETYPE2BUILDDIR) \
               $(LIBXML2BUILDDIR) $(EXPATBUILDDIR) $(FONTCONFIGBUILDDIR) \
 -             $(XFT1LIBDIR) $(XFTLIBDIR) $(XVMCLIBDIR) $(RANDRLIBDIR) \
 +             $(XVMCLIBDIR) $(RANDRLIBDIR) \
-              $(XTRAPLIBDIR) $(XRESLIBDIR) $(XCURSORLIBDIR)
+              $(XTRAPLIBDIR) $(XRESLIBDIR) $(XCURSORLIBDIR) $(APPLELIBDIR)
  
  SUBDIRS = $(BERKDIR) xtrans $(LINTSUBDIRS) $(FONTSUBDIR) $(FONTENCSUBDIR) \

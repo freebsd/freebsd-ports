@@ -1,11 +1,45 @@
---- programs/xdm/config/Imakefile.orig	Tue Feb  1 04:33:43 2000
-+++ programs/xdm/config/Imakefile	Sun Mar 25 06:57:37 2001
-@@ -1,7 +1,7 @@
- XCOMM $XConsortium: Imakefile /main/17 1996/01/15 12:19:32 gildea $
- XCOMM $XFree86: xc/programs/xdm/config/Imakefile,v 1.7 2000/01/31 19:33:43 dawes Exp $
+--- programs/xdm/config/Imakefile.orig	Tue Apr 20 20:42:01 2004
++++ programs/xdm/config/Imakefile	Sun May  9 22:37:08 2004
+@@ -5,7 +5,7 @@
+ 
+ XCOMM $XFree86: xc/programs/xdm/config/Imakefile,v 1.15 2004/01/09 00:25:25 dawes Exp $
  
 -SERVERSTYPE = XdmServersType
 +SERVERSTYPE = ws
  
  all:: Xservers.ws xdm-config Xservers Xresources
  
+@@ -34,6 +34,8 @@
+ XDMPIDDIR = $(XDMDIR)
+ #endif
+ 
++XDMDEFCONFDIR = $(XDMDIR)/default
++
+ #if defined(OpenBSDArchitecture) || defined(NetBSDArchitecture) || defined(FreeBSDArchitecture) || defined(DarwinArchitecture)
+ SU = "su -m"
+ #else
+@@ -47,15 +49,15 @@
+ LinkFile(Xservers,Xservers.$(SERVERSTYPE))
+ 
+ #if InstallXdmConfig
+-InstallNonExecFile(xdm-config,$(XDMDIR))
+-InstallNonExecFile(Xresources,$(XDMDIR))
+-InstallNonExecFile(Xservers,$(XDMDIR))
+-InstallNonExecFile(Xaccess,$(XDMDIR))
+-InstallNamedProg(Xsession,Xsession,$(XDMDIR))
+-InstallNamedProg(GiveConsole,GiveConsole,$(XDMDIR))
+-InstallNamedProg(TakeConsole,TakeConsole,$(XDMDIR))
+-InstallNamedProg(Xsetup_0,Xsetup_0,$(XDMDIR))
+-InstallNamedProg(Xwilling,Xwilling,$(XDMDIR))
++InstallNonExecFile(xdm-config,$(XDMDEFCONFDIR))
++InstallNonExecFile(Xresources,$(XDMDEFCONFDIR))
++InstallNonExecFile(Xservers,$(XDMDEFCONFDIR))
++InstallNonExecFile(Xaccess,$(XDMDEFCONFDIR))
++InstallNamedProg(Xsession,Xsession,$(XDMDEFCONFDIR))
++InstallNamedProg(GiveConsole,GiveConsole,$(XDMDEFCONFDIR))
++InstallNamedProg(TakeConsole,TakeConsole,$(XDMDEFCONFDIR))
++InstallNamedProg(Xsetup_0,Xsetup_0,$(XDMDEFCONFDIR))
++InstallNamedProg(Xwilling,Xwilling,$(XDMDEFCONFDIR))
+ #else
+ InstallNonExecFileNoClobber(xdm-config,$(XDMDIR))
+ InstallNonExecFileNoClobber(Xresources,$(XDMDIR))

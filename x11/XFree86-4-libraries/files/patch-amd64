@@ -1,0 +1,300 @@
+--- config/imake/imakemdep.h.orig	Mon Dec 29 20:53:52 2003
++++ config/imake/imakemdep.h	Tue Mar  2 11:05:16 2004
+@@ -374,6 +374,9 @@
+ # ifdef __AMD64__
+ 	"-D__AMD64__",
+ # endif
++# ifdef __amd64__
++	"-D__amd64__",
++# endif
+ # ifdef __x86_64__
+ 	"-D__AMD64__",
+ # endif
+@@ -1271,6 +1274,9 @@
+ # if defined (__AMD64__) || defined (__x86_64__)
+ 	{"__AMD64__", "1"},
+ 	{"__x86_64__", "1"},
++# endif
++# if defined (__amd64__)
++	{"__amd64__", "1"},
+ # endif
+ # ifdef __i386
+ 	{"__i386", "1"},
+--- extras/Mesa/src/mmath.h.orig	Wed Oct 22 11:44:41 2003
++++ extras/Mesa/src/mmath.h	Thu Mar  4 14:25:57 2004
+@@ -205,7 +205,7 @@
+ 
+ 
+ #if defined(__i386__) || defined(__sparc__) || defined(__s390x__) || \
+-    defined(__powerpc__) || defined(__AMD64__) || \
++    defined(__powerpc__) || defined(__AMD64__) || defined(__amd64__) || \
+     ( defined(__alpha__) && ( defined(__IEEE_FLOAT) || !defined(VMS) ) )
+ #define USE_IEEE
+ #endif
+--- extras/x86emu/include/x86emu/types.h.orig	Mon Jul  7 11:34:21 2003
++++ extras/x86emu/include/x86emu/types.h	Thu Mar  4 14:29:56 2004
+@@ -76,7 +76,7 @@
+     defined(__sparc64__) || \
+     defined(__s390x__) || \
+     (defined(__hppa__) && defined(__LP64)) || \
+-    defined(__AMD64__) || defined(AMD64) || \
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__) || \
+     (defined(__sgi) && (_MIPS_SZLONG == 64))
+ #define NUM32 int
+ #else
+--- include/DPS/dpsconfig.h.orig	Thu Mar  4 14:33:19 2004
++++ include/DPS/dpsconfig.h	Thu Mar  4 14:33:14 2004
+@@ -89,7 +89,7 @@
+ #if defined(__alpha) || defined(__alpha__) || \
+     defined(__ia64__) || defined(ia64) || \
+     defined(__s390x__) || \
+-    defined(__AMD64__) || defined(AMD64)
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__)
+ #define IEEEFLOAT 1
+ #endif
+ 
+--- include/Xmd.h.orig	Thu Oct 23 11:19:01 2003
++++ include/Xmd.h	Wed Mar  3 19:29:07 2004
+@@ -64,7 +64,7 @@
+     defined(__sparc64__) || \
+     defined(__s390x__) || \
+     (defined(__hppa__) && defined(__LP64__)) || \
+-    defined(__AMD64__) || defined(AMD64) || \
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__) || \
+     (defined(sgi) && (_MIPS_SZLONG == 64))
+ #define LONG64				/* 32/64-bit architecture */
+ #endif
+--- lib/Xt/Xtos.h.orig	Fri Oct 24 11:47:35 2003
++++ lib/Xt/Xtos.h	Thu Mar  4 14:37:00 2004
+@@ -67,7 +67,7 @@
+     defined(__sparc64__) || \
+     defined(__s390x__) || \
+     (defined(__hppa__) && defined(__LP64__)) || \
+-    defined(__AMD64__) || defined(AMD64) || \
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__) || \
+     (defined(sgi) && (_MIPS_SZLONG == 64))
+ #define LONG64
+ #endif
+--- lib/font/util/fontxlfd.c.orig	Fri Oct 24 12:11:52 2003
++++ lib/font/util/fontxlfd.c	Thu Mar  4 14:39:56 2004
+@@ -197,7 +197,7 @@
+     defined(ia64) || defined(__ia64__) || \
+     defined(__alpha__) || defined(__alpha) || \
+     defined(__hppa__) || \
+-    defined(__AMD64__) || defined(__AMD64) || \
++    defined(__AMD64__) || defined(__AMD64) || defined(__amd64__) || \
+     defined(sgi)
+ #if !defined(__UNIXOS2__)
+ #include <float.h>
+--- programs/Xserver/fb/fb.h.orig	Mon Nov  3 00:11:00 2003
++++ programs/Xserver/fb/fb.h	Wed Mar  3 19:14:52 2004
+@@ -105,7 +105,7 @@
+       defined(ia64) || defined(__ia64__) || \
+       defined(__sparc64__) || \
+       defined(__s390x__) || \
+-      defined(AMD64) || defined (__AMD64__) || \
++      defined(AMD64) || defined (__AMD64__) || defined (__amd64__) \
+       (defined(sgi) && (_MIPS_SZLONG == 64))
+ typedef unsigned long	    FbBits;
+ #  else
+--- programs/Xserver/hw/xfree86/loader/elfloader.c.orig	Thu Nov  6 13:38:13 2003
++++ programs/Xserver/hw/xfree86/loader/elfloader.c	Thu Mar  4 14:46:17 2004
+@@ -137,7 +137,7 @@
+ # if !defined(linux)
+ #  error    No MAP_ANON?
+ # endif
+-# if !defined (__AMD64__) || !defined(__linux__)
++# if !(defined (__AMD64__) || defined (__amd64__)) || !defined(__linux__)
+ # define MMAP_FLAGS     (MAP_PRIVATE | MAP_ANON)
+ # else
+ # define MMAP_FLAGS     (MAP_PRIVATE | MAP_ANON | MAP_32BIT)
+@@ -156,6 +156,7 @@
+ #if defined (__alpha__) || \
+     defined (__ia64__) || \
+     defined (__AMD64__) || \
++    defined (__amd64__) || \
+     (defined (__sparc__) && \
+      (defined (__arch64__) || \
+       defined (__sparcv9)))
+@@ -247,7 +248,8 @@
+     defined(__alpha__) || \
+     defined(__sparc__) || \
+     defined(__ia64__) || \
+-    defined(__AMD64__)
++    defined(__AMD64__) || \
++    defined(__amd64__)
+ typedef Elf_Rela Elf_Rel_t;
+ #else
+ typedef Elf_Rel Elf_Rel_t;
+@@ -441,7 +443,8 @@
+     defined(__alpha__) || \
+     defined(__sparc__) || \
+     defined(__ia64__) || \
+-    defined(__AMD64__)
++    defined(__AMD64__) || \
++    defined(__amd64__)
+     ELFDEBUG(", r_addend 0x%lx", rel->r_addend);
+ # endif
+     ELFDEBUG("\n");
+@@ -477,6 +480,7 @@
+ #if defined(__alpha__) || \
+     defined(__ia64__) || \
+     defined(__AMD64__) || \
++    defined(__amd64__) || \
+     (defined(__sparc__) && \
+      (defined(__arch64__) || \
+       defined(__sparcv9)))
+@@ -501,6 +505,7 @@
+ #if defined(__alpha__) || \
+     defined(__ia64__) || \
+     defined(__AMD64__) || \
++    defined(__amd64__) || \
+     (defined(__sparc__) && \
+      (defined(__arch64__) || \
+       defined(__sparcv9)))
+@@ -556,6 +561,7 @@
+ #if defined(__alpha__) || \
+     defined(__ia64__) || \
+     defined(__AMD64__) || \
++    defined(__amd64__) || \
+     (defined(__sparc__) && \
+      (defined(__arch64__) || \
+       defined(__sparcv9)))
+@@ -1216,7 +1222,7 @@
+     unsigned long *dest64;
+     unsigned short *dest16;
+ #endif
+-#if  defined(__AMD64__)
++#if defined(__AMD64__) || defined(__amd64__)
+     unsigned long *dest64;
+     int *dest32s;
+ #endif
+@@ -1234,7 +1240,8 @@
+     defined(__alpha__) || \
+     defined(__sparc__) || \
+     defined(__ia64__) || \
+-    defined(__AMD64__)
++    defined(__AMD64__) || \
++    defined(__amd64__)
+     ELFDEBUG("%lx", rel->r_addend);
+ # endif
+     ELFDEBUG("\n");
+@@ -1293,7 +1300,7 @@
+ 
+ 	break;
+ #endif /* i386 */
+-#if defined(__AMD64__)
++#if defined(__AMD64__) || defined(__amd64__)
+     case R_X86_64_32:
+ 	dest32 = (unsigned int *)(secp + rel->r_offset);
+ # ifdef ELFDEBUG
+--- programs/Xserver/hw/xfree86/loader/loader.c.orig	Fri Feb 13 18:58:45 2004
++++ programs/Xserver/hw/xfree86/loader/loader.c	Thu Mar  4 14:50:15 2004
+@@ -507,7 +507,7 @@
+     if ((new_off_bias + size) > new_size)
+ 	new_size += pagesize;
+     ret = (unsigned long)mmap(0, new_size, MMAP_PROT, MAP_PRIVATE
+-#  ifdef __AMD64__
++#  if defined(__AMD64__) || defined(__amd64__)
+ 			      | MAP_32BIT
+ #  endif
+ 			      , fd, new_off);
+@@ -516,7 +516,7 @@
+     return (void *)(ret + new_off_bias);
+ # else
+     ret = (unsigned long)mmap(0, size, MMAP_PROT, MAP_PRIVATE
+-#  ifdef __AMD64__
++#  if defined(__AMD64__) || defined(__amd64__)
+ 			      | MAP_32BIT
+ #  endif
+ 			      , fd, offset + offsetbias);
+--- programs/Xserver/hw/xfree86/os-support/bus/Imakefile.orig	Thu Oct  2 09:30:06 2003
++++ programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Thu Mar  4 01:46:09 2004
+@@ -80,7 +80,8 @@
+ PCIDRVRSRC = ix86Pci.c linuxPci.c
+ PCIDRVROBJ = ix86Pci.o linuxPci.o
+ 
+-#elif defined(FreeBSDArchitecture) && defined(AlphaArchitecture)
++#elif defined(FreeBSDArchitecture) && \
++     (defined(AlphaArchitecture) || defined(AMD64Architecture))
+ 
+ 
+ XCOMM generic FreeBSD PCI driver (using /dev/pci)
+--- programs/Xserver/hw/xfree86/os-support/bus/Pci.h.orig	Fri Feb 13 18:58:47 2004
++++ programs/Xserver/hw/xfree86/os-support/bus/Pci.h	Wed Mar  3 19:39:52 2004
+@@ -347,7 +347,7 @@
+ # if !defined(__FreeBSD__)
+ #  define ARCH_PCI_PCI_BRIDGE sparcPciPciBridge
+ # endif
+-#elif defined(__AMD64__)
++#elif defined(__AMD64__) || defined(__amd64__)
+ # if defined(__FreeBSD__)
+ #  define ARCH_PCI_INIT freebsdPciInit
+ # else
+--- programs/Xserver/hw/xfree86/os-support/xf86drm.h.orig	Wed Oct 29 05:57:47 2003
++++ programs/Xserver/hw/xfree86/os-support/xf86drm.h	Wed Mar  3 20:13:22 2004
+@@ -289,7 +289,7 @@
+ #define DRM_LOCK_CONT  0x40000000 /**< Hardware lock is contended */
+ 
+ #if defined(__GNUC__) && (__GNUC__ >= 2)
+-# if defined(__i386) || defined(__AMD64__)
++# if defined(__i386) || defined(__AMD64__) || defined(__amd64__)
+ 				/* Reflect changes here to drmP.h */
+ #define DRM_CAS(lock,old,new,__ret)                                    \
+ 	do {                                                           \
+--- programs/Xserver/hw/xfree86/xf86cfg/loadmod.c.orig	Thu Jun 12 10:12:38 2003
++++ programs/Xserver/hw/xfree86/xf86cfg/loadmod.c	Thu Mar  4 14:54:57 2004
+@@ -182,7 +182,7 @@
+    SYMFUNC(xf86memchr)
+    SYMFUNC(xf86memcmp)
+    SYMFUNC(xf86memcpy)
+-#if (defined(__powerpc__) && (defined(Lynx) || defined(linux))) || defined(__sparc__) || defined(__ia64__) || defined (__AMD64__)
++#if (defined(__powerpc__) && (defined(Lynx) || defined(linux))) || defined(__sparc__) || defined(__ia64__) || defined (__AMD64__) || defined (__amd64__)
+    /*
+     * Some PPC, SPARC, and IA64 compilers generate calls to memcpy to handle
+     * structure copies.  This causes a problem both here and in shared
+--- programs/Xserver/include/servermd.h.orig	Mon Nov  3 00:11:59 2003
++++ programs/Xserver/include/servermd.h	Tue Mar  2 10:55:03 2004
+@@ -389,7 +389,8 @@
+ 
+ #endif /* ia64 */
+ 
+-#if defined(__AMD64__) || defined(AMD64)
++#if defined(__AMD64__) || defined(AMD64) || \
++    defined(__amd64__)
+ # define IMAGE_BYTE_ORDER	LSBFirst
+ 
+ # if defined(XF86MONOVGA) || defined(XF86VGA16) || defined(XF86MONO)
+--- programs/Xserver/mi/micoord.h.orig	Fri Feb 13 18:58:52 2004
++++ programs/Xserver/mi/micoord.h	Thu Mar  4 14:57:05 2004
+@@ -70,7 +70,7 @@
+     defined(__i386__) || defined(i386) || \
+     defined(__ia64__) || defined(ia64) || \
+     defined(__s390x__) || defined(__s390__) || \
+-    defined(__AMD64__) || defined(AMD64)
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__)
+ #define GetHighWord(x) (((int) (x)) >> 16)
+ #else
+ #define GetHighWord(x) (((int) (x)) / 65536)
+--- programs/Xserver/os/xalloc.c.orig	Mon Nov  3 00:12:00 2003
++++ programs/Xserver/os/xalloc.c	Thu Mar  4 15:00:10 2004
+@@ -184,7 +184,7 @@
+     defined(__ia64__) || defined(ia64) || \
+     defined(__sparc64__) || \
+     defined(__s390x__) || \
+-    defined(__AMD64__) || defined(AMD64) || \
++    defined(__AMD64__) || defined(AMD64) || defined(__amd64__) || \
+     (defined(sgi) && _MIPS_SZLONG == 64))
+ #define MAGIC			0x1404196414071968
+ #define MAGIC_FREE              0x1506196615061966
+--- programs/Xserver/render/picture.h.orig	Mon Nov  3 00:12:01 2003
++++ programs/Xserver/render/picture.h	Thu Mar  4 15:08:31 2004
+@@ -170,7 +170,7 @@
+       defined(ia64) || defined(__ia64__) || \
+       defined(__sparc64__) || \
+       defined(__s390x__) || \
+-      defined(AMD64) || defined (__AMD64__) || \
++      defined(AMD64) || defined (__AMD64__) || defined (__amd64__) || \
+       (defined(sgi) && (_MIPS_SZLONG == 64))
+ typedef long		xFixed_32_32;
+ # else

@@ -394,6 +394,7 @@ lib/X11/fonts/misc/decsess.pcf.gz
 lib/X11/fonts/misc/encodings.dir
 lib/X11/fonts/misc/fonts.alias
 lib/X11/fonts/misc/fonts.dir
+lib/X11/fonts/misc/fonts.scale
 lib/X11/fonts/misc/gb16fs.pcf.gz
 lib/X11/fonts/misc/gb16st.pcf.gz
 lib/X11/fonts/misc/gb24st.pcf.gz

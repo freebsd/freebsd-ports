@@ -465,6 +465,7 @@ lib/X11/fonts/75dpi/courR24.pcf.gz
 lib/X11/fonts/75dpi/encodings.dir
 lib/X11/fonts/75dpi/fonts.alias
 lib/X11/fonts/75dpi/fonts.dir
+lib/X11/fonts/75dpi/fonts.scale
 lib/X11/fonts/75dpi/helvB08-ISO8859-1.pcf.gz
 lib/X11/fonts/75dpi/helvB08-ISO8859-10.pcf.gz
 lib/X11/fonts/75dpi/helvB08-ISO8859-13.pcf.gz
@@ -1035,6 +1036,15 @@ lib/X11/fonts/75dpi/lubB18-ISO8859-3.pcf.gz
 lib/X11/fonts/75dpi/lubB18-ISO8859-4.pcf.gz
 lib/X11/fonts/75dpi/lubB18-ISO8859-9.pcf.gz
 lib/X11/fonts/75dpi/lubB18.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-1.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-10.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-13.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-14.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-15.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-2.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-3.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-4.pcf.gz
+lib/X11/fonts/75dpi/lubB19-ISO8859-9.pcf.gz
 lib/X11/fonts/75dpi/lubB19.pcf.gz
 lib/X11/fonts/75dpi/lubB24-ISO8859-1.pcf.gz
 lib/X11/fonts/75dpi/lubB24-ISO8859-10.pcf.gz

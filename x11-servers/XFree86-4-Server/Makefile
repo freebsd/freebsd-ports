@@ -6,69 +6,49 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.3.0
-PORTREVISION=	14
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x \
+DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
+		XFree86-4.4.0-src-2.tgz:x \
+		XFree86-4.4.0-src-3.tgz:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz
+EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-2.tgz \
+		XFree86-4.4.0-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
 CONFLICTS=	xorg-server-*
 
-EXTRA_PATCHES+= \
-	${FILESDIR}/patch-FreeBSD.cf \
-	${FILESDIR}/patch-Pci.h \
-	${FILESDIR}/patch-Sbus.c \
-	${FILESDIR}/patch-alpha_video.c \
-	${FILESDIR}/patch-bsd-Imakefile \
-	${FILESDIR}/patch-bsd-bsdResource.c \
-	${FILESDIR}/patch-bsd_Imakefile \
-	${FILESDIR}/patch-bus-Imakefile \
-	${FILESDIR}/patch-bus_Imakefile \
-	${FILESDIR}/patch-compiler.h \
-	${FILESDIR}/patch-elfloader.c \
-	${FILESDIR}/patch-freebsdPci.c \
-	${FILESDIR}/patch-ftfuncs.c \
-	${FILESDIR}/patch-int10-generic.c \
-	${FILESDIR}/patch-libc_wrapper.c \
-	${FILESDIR}/patch-loader-Imakefile \
-	${FILESDIR}/patch-loader-elfloader.c \
-	${FILESDIR}/patch-loader.c \
-	${FILESDIR}/patch-mga_dri.c \
-	${FILESDIR}/patch-mga_driver.c \
-	${FILESDIR}/patch-nv_driver.c \
-	${FILESDIR}/patch-nv_setup.c \
-	${FILESDIR}/patch-os-support_Imakefile \
-	${FILESDIR}/patch-r128_driver.c \
-	${FILESDIR}/patch-radeon_cursor.c \
-	${FILESDIR}/patch-radeon_dri.c \
-	${FILESDIR}/patch-radeon_reg.h \
-	${FILESDIR}/patch-savage-pci-id \
-	${FILESDIR}/patch-smi \
-	${FILESDIR}/patch-sunffb_Imakefile \
-	${FILESDIR}/patch-xc::lib::font::fontfile \
-	${FILESDIR}/patch-xf86-common-Imakefile \
-	${FILESDIR}/patch-xf86Events.c \
-	${FILESDIR}/patch-xf86Sbus.h \
-	${FILESDIR}/patch-xf86sym.c \
-	${FILESDIR}/patch-xkbInit.c
+# Override default from XFree86-4-libraries/Makefile.inc
+PATCHDIR=		${MASTERDIR}/files
+
+.for pf in patch-Imake.rules patch-Imake.tmpl \
+			patch-X11.tmpl patch-Xcursor-Imakefile \
+			patch-amd64 patch-c2 patch-dri-Imakefile \
+			patch-f patch-imake.c \
+			patch-texteroids patch-xditview-Imakefile patch-xdm \
+			patch-xdm_session.c patch-xf86.tmpl \
+			patch-xterm-Imakefile patch-z05 patch-z14 \
+			patch-z15 patch-z30 patch-z32 patch-z34 patch-z35 \
+			patch-z41 patch-z44 patch-z45
+# patch-startx
+
+EXTRA_PATCHES+=		${.CURDIR}/../../x11/XFree86-4-libraries/files/${pf}
+.endfor
+
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			WITH_DEBUG="${WITH_DEBUG}"
 MAN1=			XFree86.1 \
 			Xserver.1 \
+			getconfig.1 \
 			gtf.1 \
 			kbd_mode.1 \
 			pcitweak.1 \
@@ -110,7 +90,8 @@ MAN4=			citron.4 \
 			radeon.4 \
 			void.4 \
 			wacom.4
-MAN5=			XF86Config.5
+MAN5=			XF86Config.5 \
+			getconfig.5
 PKGMESSAGE=		${WRKDIR}/.pkg-message
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
@@ -135,6 +116,32 @@ BuildXF86DRI=		NO
 PLIST_SUB+=		DRI="@comment "
 .endif
 
+.if ${ARCH} == alpha
+PLIST_SUB+=	ALPHA_NA="@comment "
+MAN4+=		cirrus.4
+.else
+PLIST_SUB+=	ALPHA_NA=""
+.endif
+
+.if ${ARCH} == amd64
+PLIST_SUB+=	AMD64_NA="@comment "
+PLIST_SUB+=	AMD64_I386=""
+MAN4+=		apm.4 \
+		chips.4 \
+		cirrus.4 \
+		cyrix.4 \
+		fbdev.4 \
+		i128.4 \
+		neomagic.4 \
+		sis.4 \
+		trident.4 \
+		tseng.4 \
+		vesa.4
+.else
+PLIST_SUB+=	AMD64_NA=""
+PLIST_SUB+=	AMD64_I386="@comment "
+.endif
+
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
@@ -142,8 +149,8 @@ PLIST_SUB+=	IA64_NA=""
 .endif
 
 .if ${ARCH} == sparc64
-PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
+PLIST_SUB+=	SPARC64=""
 MAN4+=		sunffb.4
 .else
 PLIST_SUB+=	SPARC64="@comment "
@@ -154,13 +161,13 @@ MAN4+=		glint.4 \
 		s3virge.4 \
 		savage.4 \
 		siliconmotion.4 \
-		sis.4 \
 		tdfx.4 \
 		vga.4
 .endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+PLIST_SUB+=	AMD64_I386=""
 MAN1+=		scanpci.1
 MAN4+=		apm.4 \
 		chips.4 \
@@ -171,23 +178,28 @@ MAN4+=		apm.4 \
 		i810.4 \
 		neomagic.4 \
 		nsc.4 \
+		sis.4 \
 		trident.4 \
 		tseng.4 \
 		vesa.4 \
+		via.4 \
 		vmware.4
 .else
 PLIST_SUB+=	I386="@comment "
+PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
 post-extract::
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+	@${MKDIR} ${WRKDIR}/drmsource
 
 post-build:
 	@${RM} -f ${PKGMESSAGE}
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
 
 post-install::
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
 	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \

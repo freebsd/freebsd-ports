@@ -1,0 +1,11 @@
+--- programs/Xserver/Xext/Imakefile.orig	Mon May 10 01:50:48 2004
++++ programs/Xserver/Xext/Imakefile	Mon May 10 01:53:00 2004
+@@ -160,7 +160,7 @@
+ LinkSourceFile(modinit.h,extmod)
+ 
+ #if BuildXCSecurity && InstallSecurityConfig
+-InstallNonExecFile(SecurityPolicy,$(SERVERCONFIGDIR))
++InstallNamedNonExec(SecurityPolicy,SecurityPolicy.default-NestServer,$(SERVERCONFIGDIR))
+ #endif
+ 
+ DependTarget()

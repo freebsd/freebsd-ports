@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.3.0
-PORTREVISION=	7
+PORTVERSION=	4.4.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x \
+DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
+		XFree86-4.4.0-src-2.tgz:x \
+		XFree86-4.4.0-src-3.tgz:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz
+EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-2.tgz \
+		XFree86-4.4.0-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 libraries and headers
@@ -40,7 +39,54 @@ PREFIX?=		${X11BASE}
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
 SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries}
-MAN3=			Xaw.3 Xcursor.3 Xrandr.3
+MAN3=			FontCacheChangeCacheSettings.3 \
+			FontCacheGetCacheSettings.3 \
+			FontCacheGetCacheStatistics.3 \
+			FontCacheQueryExtension.3 \
+			FontCacheQueryVersion.3 \
+			XDGA.3 \
+			XDGAChangePixmapMode.3 \
+			XDGACloseFramebuffer.3 \
+			XDGACopyArea.3 \
+			XDGACopyTransparentArea.3 \
+			XDGACreateColormap.3 \
+			XDGAFillRectangle.3 \
+			XDGAGetViewportStatus.3 \
+			XDGAInstallColormap.3 \
+			XDGAKeyEventToXKeyEvent.3 \
+			XDGAOpenFramebuffer.3 \
+			XDGAQueryExtension.3 \
+			XDGAQueryModes.3 \
+			XDGAQueryVersion.3 \
+			XDGASelectInput.3 \
+			XDGASetClientVersion.3 \
+			XDGASetMode.3 \
+			XDGASetViewport.3 \
+			XDGASync.3 \
+			XF86DGA.3 \
+			XFree86-DGA.3 \
+			XRes.3 \
+			XResQueryClientPixmapBytes.3 \
+			XResQueryClientResources.3 \
+			XResQueryClients.3 \
+			XResQueryExtension.3 \
+			XResQueryVersion.3 \
+			XScreenSaverAllocInfo.3 \
+			XScreenSaverGetRegistered.3 \
+			XScreenSaverQueryExtension.3 \
+			XScreenSaverQueryInfo.3 \
+			XScreenSaverQueryVersion.3 \
+			XScreenSaverRegister.3 \
+			XScreenSaverSelectInput.3 \
+			XScreenSaverSetAttributes.3 \
+			XScreenSaverUnregister.3 \
+			XScreenSaverUnsetAttributes.3 \
+			Xaw.3 \
+			Xcursor.3 \
+			Xfontcache.3 \
+			Xrandr.3 \
+			Xss.3
+
 XBUILD_DIRS=		lib nls programs/Xserver/include \
 			programs/Xserver/hw/xfree86/parser
 XINCLUDE_DIRS=		programs/proxymngr
@@ -78,20 +124,12 @@ PLIST_SUB+=	XTHRSTUB:="@comment "
 PLIST_SUB+=	XTHRSTUB:=""
 .endif
 
-# amd64 also supplies libxkbfile.so*
-.if ${MACHINE_ARCH} == "amd64"
-PLIST_SUB+=	AMD64:=""
-.else
-PLIST_SUB+=	AMD64:="@comment "
-.endif
-
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
 	${CP} ${FILESDIR}/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
-	${MKDIR} ${WRKSRC}/exports/lib
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \

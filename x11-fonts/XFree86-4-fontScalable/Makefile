@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	fontScalable
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-4.tgz X430src-5.tgz
+DISTFILES=	XFree86-4.4.0-src-4.tgz \
+		XFree86-4.4.0-src-5.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 scalable fonts
@@ -19,7 +20,7 @@ COMMENT=	XFree86-4 scalable fonts
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
-CONFLICTS=	xorg-fonts-type1-* xorg-fonts-truetype-* 
+CONFLICTS=	xorg-fonts-type1-* xorg-fonts-truetype-*
 
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}

@@ -1,9 +1,0 @@
---- programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Sun Feb 23 12:26:49 2003
-+++ programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Wed Jun  4 19:19:39 2003
-@@ -81,5 +81,5 @@
- PCIDRVROBJ = ix86Pci.o linuxPci.o
- 
--#elif defined(FreeBSDArchitecture) && defined(AlphaArchitecture)
-+#elif defined(FreeBSDArchitecture) && (defined(AlphaArchitecture) || defined(x86_64Architecture))
- 
- 

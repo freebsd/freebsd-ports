@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	4.3.0
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	X430src-1.tgz X430src-3.tgz
+DISTFILES=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from XFree86
@@ -19,6 +19,7 @@ COMMENT=	Imake and other utilities from XFree86
 CONFLICTS=	imake-6*
 
 PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 USE_PERL5=	YES
 USE_REINPLACE=	yes
 
@@ -32,14 +33,8 @@ USE_REINPLACE=	yes
 IGNORE=		is part of XFree86-4
 .endif
 
-.if ${OSVERSION} < 500000
-LATEST_LINK=	imake4
-.else
-LATEST_LINK=	imake
-.endif
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc/config
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 PATCH_DIST_ARGS=	--force -d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP} 2>/dev/null || true
 MAN1=		ccmakedep.1 \
 		cleanlinks.1 \

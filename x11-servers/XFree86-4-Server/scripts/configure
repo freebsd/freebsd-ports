@@ -32,6 +32,8 @@ echo "#define XInputDrivers mouse keyboard digitaledge dynapro elo2300 \
 			wacom void citron"	>> $LOCALDEF
 echo "#define BuildXF86DRI ${BuildXF86DRI}"	>> $LOCALDEF
 echo "#define BuildXF86DRM NO"			>> $LOCALDEF
+echo "#define InstSrcDir $WRKDIR/drmsource"	>> $LOCALDEF
+echo "#define HasGlide3 YES"			>> $LOCALDEF
 
 # disable some options
 for i in \
@@ -63,6 +65,7 @@ echo "#define BuildServersOnly YES"		>> $LOCALDEF
 echo "#define BuildGLXLibrary YES"		>> $LOCALDEF
 echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define UseInstalledLibraries YES"	>> $LOCALDEF
 echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
 
 echo "#define FreeBSDCC	${CC}"			>> $LOCALDEF
@@ -80,13 +83,13 @@ cat >> $LOCALDEF <<END
 #if defined(i386Architecture)
 # define XF86CardDrivers	mga glint nv tga s3 s3virge sis rendition \
 				neomagic i740 tdfx savage \
-				cirrus vmware tseng trident chips apm \
+				cirrus vmware tseng trident via chips apm \
 				i128 nsc ati i810 ark cyrix siliconmotion \
 				vesa vga
 #elif defined(ia64Architecture)
 # define XF86CardDrivers	mga nv tdfx glint ati vga
 #elif defined(AlphaArchitecture)
-# define XF86CardDrivers	mga glint nv tga s3 s3virge sis rendition \
+# define XF86CardDrivers	mga glint nv tga s3 s3virge rendition \
 				tdfx savage cirrus ati siliconmotion vga
 #elif defined(Sparc64Architecture)
 # define XF86CardDrivers	nv ati sunffb

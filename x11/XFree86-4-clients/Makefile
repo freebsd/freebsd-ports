@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.3.0
-PORTREVISION=	8
+PORTVERSION=	4.4.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.3.0
+MASTER_SITE_SUBDIR= ${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz \
-		X430src-4.tgz
+DISTFILES=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-2.tgz \
+		XFree86-4.4.0-src-3.tgz \
+		XFree86-4.4.0-src-4.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
@@ -40,7 +39,10 @@ XINSTALL_DIRS=		programs fonts/util
 XINSTALL_MAN_DIRS=	programs
 
 .for pf in patch-bdftruncate.pl patch-ucs2any.pl \
-	   patch-Xres.cpp patch-Imake.rules patch-mkfontscale.c
+	   patch-programs::fonttosfnt::read.c \
+	   patch-programs::xdm::Imakefile \
+	   patch-programs::xdm::session.c \
+	   patch-programs::xdm::socket.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
@@ -70,6 +72,10 @@ pre-everything::
 post-install:
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
 	${CHMOD} 04711 ${PREFIX}/bin/luit
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.else
+post-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"

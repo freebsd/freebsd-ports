@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	PrintServer
-PORTVERSION=	4.3.0
-PORTREVISION=   1
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x \
+DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
+		XFree86-4.4.0-src-2.tgz:x \
+		XFree86-4.4.0-src-3.tgz:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz
+EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-2.tgz \
+		XFree86-4.4.0-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 print server

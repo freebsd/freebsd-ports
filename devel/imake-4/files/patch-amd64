@@ -1,0 +1,22 @@
+--- imake/imakemdep.h.orig	Mon Dec 29 20:53:52 2003
++++ imake/imakemdep.h	Tue Mar  2 11:05:16 2004
+@@ -374,6 +374,9 @@
+ # ifdef __AMD64__
+ 	"-D__AMD64__",
+ # endif
++# ifdef __amd64__
++	"-D__amd64__",
++# endif
+ # ifdef __x86_64__
+ 	"-D__AMD64__",
+ # endif
+@@ -1271,6 +1274,9 @@
+ # if defined (__AMD64__) || defined (__x86_64__)
+ 	{"__AMD64__", "1"},
+ 	{"__x86_64__", "1"},
++# endif
++# if defined (__amd64__)
++	{"__amd64__", "1"},
+ # endif
+ # ifdef __i386
+ 	{"__i386", "1"},
