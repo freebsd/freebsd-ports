@@ -1,9 +1,9 @@
---- libdha/Makefile.orig	Sat Jan 24 20:54:51 2004
-+++ libdha/Makefile	Sat Jan 24 20:55:44 2004
+--- libdha/Makefile.orig	Mon Jul 12 12:54:10 2004
++++ libdha/Makefile	Thu Jul 22 22:18:21 2004
 @@ -4,8 +4,6 @@
  
- MAJOR_VERSION = 0
- MINOR_VERSION = 1
+ MAJOR_VERSION = 1
+ MINOR_VERSION = 0
 -VERSION = $(MAJOR_VERSION).$(MINOR_VERSION) 
 -
  

@@ -1,6 +1,6 @@
---- configure.orig	Mon Apr 26 05:44:06 2004
-+++ configure	Sun Jun 27 03:30:21 2004
-@@ -339,7 +339,7 @@
+--- configure.orig	Thu Jul 15 00:04:42 2004
++++ configure	Thu Jul 22 22:13:22 2004
+@@ -344,7 +344,7 @@
  
  
  # 1st pass checking for vital options
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _cc=cc
  test "$CC" && _cc="$CC"
-@@ -594,22 +594,10 @@
+@@ -601,22 +601,10 @@
  _cpuinfo="echo"
  # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
  # FIXME: Remove the cygwin check once AMD CPUs are supported
@@ -32,7 +32,7 @@
  
  case "$host_arch" in
    i[3-9]86|x86|x86pc|k5|k6|k6-2|k6-3|pentium*|athlon*|i586-i686)
-@@ -1656,8 +1644,8 @@
+@@ -1687,8 +1675,8 @@
      ;;
  
    *)
@@ -43,7 +43,7 @@
      ;;
  
    esac
-@@ -1667,7 +1655,7 @@
+@@ -1698,7 +1686,7 @@
  test -z "$_bindir" && _bindir="$_prefix/bin"
  test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
  test -z "$_mandir" && _mandir="$_prefix/man"
@@ -52,7 +52,7 @@
  test -z "$_libdir" && _libdir="$_prefix/lib"
  test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
  
-@@ -2258,13 +2246,7 @@
+@@ -2371,13 +2359,7 @@
  
  
  echocheck "memalign()"
@@ -66,7 +66,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -2352,40 +2334,8 @@
+@@ -2465,45 +2447,10 @@
  
  
  echocheck "pthread"
@@ -100,16 +100,20 @@
 -  fi
 -fi
 -if test "$_ld_pthread" != '' ; then
--  echores "yes (using $_ld_pthread)"
++_ld_pthread="${PTHREAD_LIBS}"
+   echores "yes (using $_ld_pthread)"
+   _pthreads='yes'
+   _def_pthreads='#define HAVE_PTHREADS 1'
 -else
 -  echores "no"
+-  _pthreads=''
+-  _def_pthreads='#undef HAVE_PTHREADS'
 -fi
-+_ld_pthread="${PTHREAD_LIBS}"
-+echores "yes (using $_ld_pthread)"
- 
+-
  
  echocheck "sys/soundcard.h"
-@@ -4458,11 +4408,11 @@
+ cat > $TMPC << EOF
+@@ -4670,11 +4617,11 @@
  
  
  echocheck "RTC"
@@ -123,7 +127,7 @@
  int main(void) { return RTC_IRQP_READ; }
  EOF
      _rtc=no
-@@ -5736,7 +5686,7 @@
+@@ -5909,7 +5856,7 @@
    _stripbinaries=no
  elif test -z "$CFLAGS" ; then
    if test "$host_arch" != "mips" ; then
@@ -132,7 +136,7 @@
    else
      CFLAGS="-O4 $_march $_mcpu -ffast-math -fomit-frame-pointer"
    fi
-@@ -5746,6 +5696,9 @@
+@@ -5919,6 +5866,9 @@
      _stripbinaries=no
    fi
  else
@@ -142,7 +146,7 @@
    cat <<EOF
  
  MPlayer compilation will use the CFLAGS set by you, but:
-@@ -5772,7 +5725,7 @@
+@@ -5948,7 +5898,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
