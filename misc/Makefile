@@ -32,9 +32,9 @@
     SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
-    SUBDIR += compat22
-    SUBDIR += compat3x
-    SUBDIR += compat4x
+#    SUBDIR += compat22
+#    SUBDIR += compat3x
+#    SUBDIR += compat4x
     SUBDIR += cpuid
     SUBDIR += crosspad
     SUBDIR += cstream
