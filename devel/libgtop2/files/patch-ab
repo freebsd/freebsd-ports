@@ -1,65 +1,65 @@
---- lib/Makefile.in.orig	Sun Sep 27 22:28:31 1998
-+++ lib/Makefile.in	Wed Sep 30 01:47:05 1998
-@@ -125,7 +125,7 @@
+--- lib/Makefile.in.orig	Fri Dec 25 22:09:27 1998
++++ lib/Makefile.in	Fri Dec 25 22:50:30 1998
+@@ -128,7 +128,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = --version-info 0:0:0
++LT_VERSION_INFO = -version-info 0:99:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
---- sysdeps/common/Makefile.in.orig	Sun Sep 27 22:28:06 1998
-+++ sysdeps/common/Makefile.in	Wed Sep 30 01:48:11 1998
-@@ -125,7 +125,7 @@
+ NM = @NM@
+--- sysdeps/common/Makefile.in.orig	Fri Dec 25 22:51:31 1998
++++ sysdeps/common/Makefile.in	Fri Dec 25 22:51:52 1998
+@@ -128,7 +128,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = --version-info 0:0:0
++LT_VERSION_INFO = -version-info 0:99:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
---- sysdeps/freebsd/Makefile.in.orig	Sun Sep 27 22:28:24 1998
-+++ sysdeps/freebsd/Makefile.in	Wed Sep 30 01:48:46 1998
-@@ -124,7 +124,7 @@
+ NM = @NM@
+--- sysdeps/freebsd/Makefile.in.orig	Fri Dec 25 22:51:58 1998
++++ sysdeps/freebsd/Makefile.in	Fri Dec 25 22:52:15 1998
+@@ -128,7 +128,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = --version-info 0:0:0
++LT_VERSION_INFO = -version-info 0:99:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
---- sysdeps/names/Makefile.in.orig	Sun Sep 27 22:28:15 1998
-+++ sysdeps/names/Makefile.in	Wed Sep 30 01:49:10 1998
-@@ -125,7 +125,7 @@
+ NM = @NM@
+--- sysdeps/names/Makefile.in.orig	Fri Dec 25 22:52:24 1998
++++ sysdeps/names/Makefile.in	Fri Dec 25 22:52:44 1998
+@@ -128,7 +128,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = --version-info 0:0:0
++LT_VERSION_INFO = -version-info 0:99:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
---- Makefile.in.orig	Sun Sep 27 22:27:55 1998
-+++ Makefile.in	Wed Sep 30 03:49:17 1998
-@@ -163,8 +163,7 @@
- @GUILE_TRUE@guile_SUBDIRS = guile
- @GUILE_FALSE@guile_SUBDIRS =
+ NM = @NM@
+--- Makefile.in.orig	Fri Dec 25 22:52:51 1998
++++ Makefile.in	Fri Dec 25 22:54:19 1998
+@@ -170,8 +170,7 @@
  
--SUBDIRS = po intl support macros include sysdeps lib src \
+ @BUILD_GNOME_SUPPORT_TRUE@support = support
+ 
+-SUBDIRS = po intl $(support) macros misc include sysdeps lib src \
 -	  $(examples_SUBDIRS)
-+SUBDIRS = po intl macros include sysdeps lib src
++SUBDIRS = po intl macros misc include sysdeps lib src
  
- DIST_SUBDIRS = po intl support macros include sysdeps src lib guile examples
+ include_HEADERS = glibtop.h
  
-@@ -174,7 +173,7 @@
- 	LIBGTOP-VERSION features.def perl/Makefile.PL.in perl/perl.awk \
- 	perl/MANIFEST perl/Changes libgtop-config.in RELNOTES-0.25
+@@ -179,7 +178,7 @@
+ 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 \
+ 	libgtop-sysdeps.m4
  
--confexecdir=$(libdir)
-+confexecdir=$(sysconfdir)
- confexec_DATA = $(top_builddir)/libgtopConf.sh
+-confexecdir	= $(libdir)
++confexecdir	= $(sysconfdir)
+ confexec_DATA	= $(top_builddir)/libgtopConf.sh \
+ 		  $(top_builddir)/libgtop-features.def
  
- bin_SCRIPTS = $(top_builddir)/libgtop-config

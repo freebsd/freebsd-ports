@@ -2,10 +2,11 @@ bin/libgtop_daemon
 bin/libgtop_server
 bin/libgtop-config
 etc/libgtopConf.sh
+etc/libgtop-features.def
+include/glibtop.h
 include/glibtop_machine.h
 include/glibtop_server.h
 include/glibtop_suid.h
-include/glibtop.h
 include/glibtop/close.h
 include/glibtop/command.h
 include/glibtop/cpu.h
@@ -18,8 +19,11 @@ include/glibtop/loadavg.h
 include/glibtop/mem.h
 include/glibtop/mountlist.h
 include/glibtop/msg_limits.h
+include/glibtop/netload.h
 include/glibtop/open.h
 include/glibtop/parameter.h
+include/glibtop/ppp.h
+include/glibtop/procargs.h
 include/glibtop/prockernel.h
 include/glibtop/proclist.h
 include/glibtop/procmap.h
@@ -46,19 +50,27 @@ include/glibtop/xmalloc.h
 lib/libgtop.a
 lib/libgtop.la
 lib/libgtop.so
-lib/libgtop.so.0
+lib/libgtop.so.0.99
 lib/libgtop_common.a
 lib/libgtop_common.la
 lib/libgtop_common.so
-lib/libgtop_common.so.0
+lib/libgtop_common.so.0.99
+lib/libgtop_guile.a
+lib/libgtop_guile.la
+lib/libgtop_guile.so
+lib/libgtop_guile.so.0.99
+lib/libgtop_guile_names.a
+lib/libgtop_guile_names.la
+lib/libgtop_guile_names.so
+lib/libgtop_guile_names.so.0.99
 lib/libgtop_names.a
 lib/libgtop_names.la
 lib/libgtop_names.so
-lib/libgtop_names.so.0
+lib/libgtop_names.so.0.99
 lib/libgtop_suid_common.a
 lib/libgtop_suid_common.la
 lib/libgtop_suid_common.so
-lib/libgtop_suid_common.so.0
+lib/libgtop_suid_common.so.0.99
 lib/libgtop_sysdeps.a
 lib/libgtop_sysdeps.la
 lib/libgtop_sysdeps.so
@@ -66,8 +78,7 @@ lib/libgtop_sysdeps.so.0
 lib/libgtop_sysdeps_suid.a
 lib/libgtop_sysdeps_suid.la
 lib/libgtop_sysdeps_suid.so
-lib/libgtop_sysdeps_suid.so.0
+lib/libgtop_sysdeps_suid.so.0.99
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/locale/fr/LC_MESSAGES/libgtop.mo
 @dirrm include/glibtop
