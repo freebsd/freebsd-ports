@@ -7,7 +7,7 @@
 
 PORTNAME=	zircon
 PORTVERSION=	1.18.256
-CATEGORIES=	irc tk83
+CATEGORIES=	irc
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	dinoex@FreeBSD.org
