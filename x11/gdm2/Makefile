@@ -7,7 +7,7 @@
 
 PORTNAME=	gdm2
 PORTVERSION=	2.6.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.6
@@ -30,12 +30,20 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		gdm.1
 
+OPTIONS=	IPV6 "Enable IPv6 support (This disables IPv4 support)" off
+
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/include/security/pam_misc.h)
 PLIST_SUB=	PAM_MISC=""
 .else
 PLIST_SUB=	PAM_MISC="@comment "
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-extract:
