@@ -3,21 +3,20 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.25 1997/06/25 05:24:43 torstenb Exp $
+# $Id: Makefile,v 1.1.1.1 1997/07/27 03:31:33 chuckr Exp $
 #
 
 DISTNAME=       enscript-1.5.0
 PKGNAME=        enscript-${PAPERSIZE}-1.5.0
 CATEGORIES=	print
 MASTER_SITES=   ${MASTER_SITE_GNU}
-DISTFILES=	enscript-1.5.0.tar.gz
 
 MAINTAINER=	kline@thought.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-nls
-MAKE_FLAGS?=    WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
+MAKE_FLAGS=     WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 
 MAN1=		enscript.1 sliceprint.1 states.1
 STRIP=
@@ -65,7 +64,7 @@ pre-fetch:
 .elif defined(PAPERSIZE_INVALID)
 	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@echo "Possible values are:  A4 (default) or letter"
-	@/usr/bin/false
+	@${FALSE}
 .endif
 letter::
 	${MAKE} PAPERSIZE=Letter
@@ -103,12 +102,9 @@ a4-install::
 A4-install::
 	${MAKE} PAPERSIZE=a4 install
 
-
-
-
 post-install:
 .for file in enscript mkafmmap states
-	strip /usr/local/bin/${file}
+	strip ${PREFIX}/bin/${file}
 .endfor
 
 .include <bsd.port.mk>
