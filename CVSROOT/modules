@@ -6572,6 +6572,7 @@ p5-Digest-Nilsimsa	ports/security/p5-Digest-Nilsimsa
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
 p5-Digest-SHA2	ports/security/p5-Digest-SHA2
 p5-EasyTCP	ports/net/p5-EasyTCP
+p5-Email-Abstract	ports/mail/p5-Email-Abstract
 p5-Email-Filter	ports/mail/p5-Email-Filter
 p5-Email-Find	ports/mail/p5-Email-Find
 p5-Email-Folder	ports/mail/p5-Email-Folder
