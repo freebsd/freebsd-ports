@@ -1,5 +1,5 @@
---- Makefile.inc.orig	Tue Jul 28 21:49:22 1998
-+++ Makefile.inc	Tue Jul 28 21:51:36 1998
+--- Makefile.inc.orig	Wed Aug  4 11:40:24 1999
++++ Makefile.inc	Fri Jan 14 16:00:57 2000
 @@ -2,7 +2,7 @@
  
  # Where to install stuff
@@ -7,14 +7,20 @@
 -MOSMLHOME=${HOME}/mosml
 +#MOSMLHOME=${HOME}/mosml
  
- # To compile the runtime system camlrunm with support for
- # dynamically loadable libraries (DDLs), uncomment these:
-@@ -13,7 +13,7 @@
- # ADDCFLAGS=-rdynamic
+ # Various utility programs
+ INSTALL_PROGRAM=cp
+@@ -15,12 +15,12 @@
+ 
+ ADDPRIMS=dynlib.c
+ ADDOBJS=dynlib.o
+-ADDRUNLIBS=-ldl
++ADDRUNLIBS=
+ ADDRUNCFLAGS=
+ ADDDYNLIBCFLAGS=
  
  # For Linux, use:
 -CPP=/lib/cpp -P -traditional -Dunix -Umsdos
 +CPP=/usr/bin/cpp -P -traditional
  STRIP=strip
- DYNLD=ld -shared 
- 
+ LD=gcc -rdynamic
+ DYNLD=ld -shared
