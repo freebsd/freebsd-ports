@@ -1,0 +1,19 @@
+Cream is a vim extension supports pull-down menus and/or keyboard shortcuts.
+
+Features:
+- Standard and intuitive menus.
+- Syntax highlighting colors, supporting more than 350 languages.
+- Intuitive status line
+- Automatic text indention 
+- Word wrap
+- Multiple documents opening
+- Find and Find/Replace dialogs
+- Spell check with error highlighting
+- Text justification
+- Conversion of and between Unix, Windows and Apple platform format files
+- Macro record and playback
+- File browser
+- Ctags navigation and searching
+- plus lots of addons
+
+WWW:	http://cream.sourceforge.net/
