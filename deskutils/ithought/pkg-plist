@@ -1,0 +1,10 @@
+bin/ithought
+libexec/ithought/action_modules/advogato.so
+libexec/ithought/action_modules/itep.so
+libexec/ithought/action_modules/kuro5hin.so
+libexec/ithought/action_modules/livejournal.so
+libexec/ithought/action_modules/stdout.so
+libexec/ithought/action_scripts/stdout_script
+@dirrm libexec/ithought/action_scripts
+@dirrm libexec/ithought/action_modules
+@dirrm libexec/ithought
