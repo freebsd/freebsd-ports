@@ -9,7 +9,7 @@
 DISTNAME=	cpm-0.2.1
 PKGNAME=	cpmemu-0.2.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/slackware/source/extra-stuff/CPM-80-emulator/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/slackware-4.0/source/extra-stuff/CPM-80-emulator/
 
 MAINTAINER=	ports@FreeBSD.org
 
