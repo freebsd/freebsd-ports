@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.11.0
-PORTREVISION=	1
+PORTVERSION=	7.11.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \

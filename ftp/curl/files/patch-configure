@@ -1,11 +1,11 @@
---- configure.curl	Mon Jun 24 17:23:46 2002
-+++ configure	Mon Jun 24 17:24:10 2002
-@@ -9868,8 +9868,10 @@
+--- configure.orig	Fri Apr  9 14:00:52 2004
++++ configure	Fri Apr  9 14:01:29 2004
+@@ -24123,8 +24123,10 @@
      EXTRA_SSL= ;;
    *)
          EXTRA_SSL=$OPT_SSL
 +    if [ ! "$EXTRA_SSL" = "/usr" ]; then
-     LDFLAGS="$LDFLAGS -L$EXTRA_SSL/lib"
+     LDFLAGS="$LDFLAGS -L$EXTRA_SSL/lib$libsuff"
      CPPFLAGS="$CPPFLAGS -I$EXTRA_SSL/include/openssl -I$EXTRA_SSL/include"
 +    fi
      ;;
