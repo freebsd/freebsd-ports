@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsh
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -24,13 +24,15 @@ USE_GMAKE=	yes
 INSTALL_TARGET=	install
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
-LDFLAGS+=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PLIST_SUB+=	KRB=""
 .else
 PLIST_SUB+=	KRB="@comment "
+.endif
+.if defined(WITH_THREADS) || defined(WITH_LSH_THREADS)
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 .endif
 
 .include <bsd.port.pre.mk>
