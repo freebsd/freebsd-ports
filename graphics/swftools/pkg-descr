@@ -7,6 +7,7 @@ At the moment, this includes:
    - SWFDump : Prints out various informations about SWFs.
    - JPEG2SWF : Takes one or more JPEG pictures and generates a SWF slideshow.
    - PNG2SWF : Like JPEG2SWF, only for PNGs.
+   - GIF2SWF : Converts GIFs to SWF. Also able to handle animated gifs.
    - WAV2SWF : Converts WAV audio files to SWFs with MP3 Streams, using the
      L.A.M.E. MP3 encoder.
    - Font2SWF : Converts font files (TTF, Type1) to SWF.
