@@ -461,41 +461,77 @@ share/gnome/help/user-guide/ro/wgosoverview.xml
 share/gnome/help/user-guide/ro/wgospanel.xml
 share/gnome/help/user-guide/ro/wgosstartsession.xml
 share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosbasic-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosbasic-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosbasic-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosbasic-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosbasic-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosbasic-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustaccess-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustaccess-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustaccess-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustaccess-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustaccess-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustaccess-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustdesk-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustdesk-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustdesk-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustdesk-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustdesk-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustdesk-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustlookandfeel-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustlookandfeel-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustlookandfeel-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustlookandfeel-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goscustlookandfeel-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goscustlookandfeel-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosdeskback-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosdeskback-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosdeskback-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosdeskback-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosdeskback-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosdeskback-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goseditmainmenu-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goseditmainmenu-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goseditmainmenu-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goseditmainmenu-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/goseditmainmenu-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/goseditmainmenu-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosmetacity-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosmetacity-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosmetacity-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosmetacity-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosmetacity-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosmetacity-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosnautilus-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosnautilus-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosnautilus-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosnautilus-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosnautilus-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosnautilus-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosoverview-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosoverview-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosoverview-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosoverview-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosoverview-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosoverview-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gospanel-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gospanel-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gospanel-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gospanel-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gospanel-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gospanel-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosstartsession-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosstartsession-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosstartsession-hu.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosstartsession-hu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/gosstartsession-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/gosstartsession-ro.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/omf/user-guide
 @dirrm share/gnome/omf/gnome2-user-docs
 @dirrm share/gnome/help/user-guide/ro/figures
@@ -513,3 +549,39 @@ share/gnome/omf/user-guide/gosstartsession-ro.omf
 @dirrm share/gnome/help/GNOMESOLACCESS/C/figures
 @dirrm share/gnome/help/GNOMESOLACCESS/C
 @dirrm share/gnome/help/GNOMESOLACCESS
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosbasic-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosbasic-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosbasic-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustaccess-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustaccess-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustaccess-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustdesk-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustdesk-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustdesk-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustlookandfeel-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustlookandfeel-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goscustlookandfeel-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosdeskback-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosdeskback-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosdeskback-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goseditmainmenu-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goseditmainmenu-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/goseditmainmenu-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosmetacity-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosmetacity-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosmetacity-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosnautilus-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosnautilus-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosnautilus-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosoverview-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosoverview-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosoverview-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gospanel-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gospanel-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gospanel-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosstartsession-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosstartsession-hu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosstartsession-ro.omf 2>/dev/null || /usr/bin/true
