@@ -1,0 +1,5 @@
+bin/mpb
+bin/mpb-split
+bin/mpb-data
+share/libctl/specs/mpb.scm
+@unexec rmdir %D/share/libctl/specs 2>/dev/null || true
