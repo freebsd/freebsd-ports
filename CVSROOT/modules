@@ -11153,6 +11153,7 @@ zope-exuserfolder	ports/www/zope-exuserfolder
 zope-formulator	ports/www/zope-formulator
 zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
+zope-mindmapbbs	ports/www/zope-mindmapbbs
 zope-parsedxml	ports/www/zope-parsedxml
 zope-placelesstranslationservice	ports/www/zope-placelesstranslationservice
 zope-proxyindex	ports/www/zope-proxyindex
