@@ -1,12 +1,12 @@
-# New ports collection makefile for:	dclock
-# Version required:	1.6.0
+# New ports collection makefile for:	xosview
+# Version required:	1.6.1.a
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.3 1998/01/26 09:58:35 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/05/22 06:36:00 mph Exp $
 #
 
-DISTNAME=	xosview-1.6.0
+DISTNAME=	xosview-1.6.1.a
 CATEGORIES=	sysutils x11
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
 		http://lambic.lmsal.com/xosview/
