@@ -8,7 +8,7 @@
 PORTNAME=	wsoundprefs
 PORTVERSION=	1.1.1
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	WSoundPrefs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

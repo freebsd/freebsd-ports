@@ -8,7 +8,7 @@
 PORTNAME=	wsoundserver
 PORTVERSION=	0.4.0
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	WSoundServer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
