@@ -7,6 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	19
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/ \
 		http://hanterm.org/download/hanterm-xf/
@@ -25,7 +26,8 @@ CONFIGURE_ENV+=		LIBS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 NO_INSTALL_MANPAGES=	yes
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hanterm ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/Hanterm.ad \
 			 ${PREFIX}/lib/X11/app-defaults/Hanterm
 	${MKDIR} ${PREFIX}/share/doc/hanterm-xf
