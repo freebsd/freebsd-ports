@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	audio
 MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 		http://mercury.chem.pitt.edu/~shank/
@@ -28,7 +28,8 @@ MAN1=		ncmpc.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ncmpc ${PREFIX}/bin/
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ncmpcrc.sample ${EXAMPLESDIR}/ncmpcrc
+	${INSTALL_DATA} ${WRKSRC}/doc/config.sample ${EXAMPLESDIR}/config
+	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${EXAMPLESDIR}/keys
 	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${MAN1PREFIX}/man/man1/
 
