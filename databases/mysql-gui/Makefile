@@ -43,7 +43,7 @@ NEW_FILES=	Fl_Editor.H editengine.h
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 500000)
+.if ${OSVERSION} >= 500000
 BROKEN=		Does not build
 .endif
 
