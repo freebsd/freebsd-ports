@@ -1,0 +1,13 @@
+--- mtr.c.orig	Wed Mar  6 23:48:27 2002
++++ mtr.c	Sun Mar 10 00:28:50 2002
+@@ -22,8 +22,10 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h> 
++#include <arpa/inet.h>
+ 
+ #include "mtr-curses.h"
+ #include "getopt.h"
