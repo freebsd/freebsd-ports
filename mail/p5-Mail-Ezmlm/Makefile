@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Mail-Ezmlm
-PORTVERSION=	0.03.1
+PORTVERSION=	0.05.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		ftp://rucus.ru.ac.za/pub/mail/ezmlm/
+		ftp://ftp.rucus.ru.ac.za/users/guy/ezmlm/
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Ezmlm-${PORTVERSION}
@@ -25,9 +25,8 @@ EZMLM_DIR?=	${LOCALBASE}
 USE_PERL5=	YES
 MAN3=		Mail::Ezmlm.3
 
-
 # For this version, since it is a bugfix
-WRKSRC=		${WRKDIR}/Ezmlm-0.03
+WRKSRC=		${WRKDIR}/Ezmlm-0.05
 
 do-configure:
 .if defined(BATCH)
