@@ -18,6 +18,8 @@ COMMENT=	Libraries to use the FreeType library from the perl language
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
+BROKEN=		Installs perllocal.pod
+
 USE_FREETYPE=	yes
 USE_PERL5=	yes
 NOMANCOMPRESS=	yes
