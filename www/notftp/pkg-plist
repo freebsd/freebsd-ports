@@ -1,0 +1,10 @@
+%%INSTALLDIR%%/config.php
+%%INSTALLDIR%%/ftp.php
+%%INSTALLDIR%%/functions.php
+%%INSTALLDIR%%/index.php
+%%INSTALLDIR%%/LICENSE
+%%INSTALLDIR%%/README
+%%INSTALLDIR%%/lib/footer.php
+%%INSTALLDIR%%/lib/header.php
+@dirrm %%INSTALLDIR%%/lib
+@dirrm %%INSTALLDIR%%
