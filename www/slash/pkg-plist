@@ -42,6 +42,7 @@
 %%SITE_PERL%%/Slash/Messages.pm
 %%SITE_PERL%%/Slash/Messages/DB/MySQL.pm
 %%SITE_PERL%%/Slash/XML/FZ.pm
+etc/rc.d/slash.sh
 slash/bin/install-theme
 slash/bin/install-plugin
 slash/bin/backup-blocks
