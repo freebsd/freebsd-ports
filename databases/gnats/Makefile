@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnats
-PORTVERSION=	3.112.1
+PORTVERSION=	3.113
 CATEGORIES=	databases elisp
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/
 
@@ -16,7 +16,6 @@ Y2K=		http://sourceware.cygnus.com/gnats/
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-WRKSRC=	${WRKDIR}/3.112
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats \
