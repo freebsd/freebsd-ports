@@ -1,22 +1,7 @@
-An object-oriented SGML/XML parser toolkit and DSSSL engine.
+OpenJade is an implementation of the ISO/IEC 10179:1996 standard DSSSL
+language.  It is based on the James Clark implementation of DSSSL named
+Jade.  OpenJade is now developed and maintained by the OpenJade team.
 
-Features summary: 
+For general information about DSSSL, see the OpenJade home page.
 
-    * Includes nsgmls 
-    * Provides access to all information about SGML document 
-    * Supports almost all optional SGML features 
-    * Sophisticated entity manager 
-    * Supports multi-byte character sets 
-    * Object-oriented 
-    * Written in C++ from scratch 
-    * Fast 
-    * Portable 
-    * Production quality 
-    * Free 
-
-Note: This port is a superset of the sp port.  If you have sp
-installed, it is recommended that you remove it before installing
-jade.
-
-John Fieber
-jfieber@FreeBSD.org
+WWW: http://www.netfolder.com/DSSSL/

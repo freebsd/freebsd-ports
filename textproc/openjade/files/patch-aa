@@ -1,13 +1,16 @@
---- Makefile.comm.in.orig	Sun Dec 12 21:06:43 1999
-+++ Makefile.comm.in	Sun Dec 12 21:08:59 1999
-@@ -24,8 +24,8 @@
- LIBS=@LIBS@
- DEFS=@DEFS@
- INCS=-I$(srcdir) -I$(srcdir)/../include $(INCLUDE)
--CXXFLAGS=@CXXFLAGS@ $(INCS) $(DEBUG) $(DEFS)
--CFLAGS=@CFLAGS@ $(DEBUG) $(DEFS)
-+CXXFLAGS=-O $(INCS) $(DEBUG) $(DEFS)
-+CFLAGS=-O $(DEBUG) $(DEFS)
- LDFLAGS=@LDFLAGS@
- MSGGENFLAGS=
- CXXDEPGENFLAGS=-MM
+--- style/LangObj.cxx~	Fri Jul  2 07:49:58 1999
++++ style/LangObj.cxx	Tue May 16 12:59:00 2000
+@@ -12,11 +12,11 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <string.h>
+-#include <wchar.h>
+-#include <wctype.h>
+ 
+ #ifdef SP_HAVE_LOCALE
+ #include <locale.h>
++#include <wchar.h>
++#include <wctype.h>
+ #endif
+ 
+ #ifdef DSSSL_NAMESPACE
