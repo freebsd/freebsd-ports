@@ -34,10 +34,9 @@ do-build:
 		-e 's,/usr/bin/pips${PRTYPE},${PREFIX}/bin/pips${PRTYPE},' \
 		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
 		${WRKDIR}/filter${PRTYPE}.org > ${WRKDIR}/filter${PRTYPE}
-	${SED}	-e 's,/usr/local/EPKowa/PM${PRTYPE}C/gsconfig${PRTYPE},${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
-		-e 's,/usr/bin/pips${PRTYPE},${PREFIX}/bin/pips${PRTYPE},' \
+	${SED}	-e 's,/usr/local/EPKowa/PM800C/gsconfig800,${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
+		-e 's,/usr/local/bin/pips800,${PREFIX}/bin/pips${PRTYPE},' \
 		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
-		-e 's,800$$,${PRTYPE},' \
 		${FILESDIR}/filter.rev > ${WRKDIR}/filter${PRTYPE}.rev
 
 do-install:
@@ -50,7 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libPrt${PRTYPE}.so /compat/linux/usr/lib/
 	-/compat/linux/sbin/ldconfig
 	${INSTALL_DATA} ${WRKSRC}/pips${PRTYPE} ${PREFIX}/bin
-	chmod +x ${PREFIX}/bin/pips${PRTYPE}
+	${CHMOD} +x ${PREFIX}/bin/pips${PRTYPE}
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/readme${PRTYPE} ${PREFIX}/share/doc/${BASE_NAME}
@@ -59,7 +58,6 @@ do-install:
 .include <bsd.port.post.mk>
 
 MD5_FILE=	${.CURDIR}/files/md5
-
 
 # target for maintainer
 _MAKE_COMMENT_DESCR:
