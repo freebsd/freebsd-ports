@@ -12,8 +12,9 @@ MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
 
-USE_GTK=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=    yes
+USE_GNOME=      gtk12
 
 MAN1=		mavbiff.1
 
