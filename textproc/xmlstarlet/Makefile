@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlstarlet
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	xmlstar
@@ -17,19 +17,20 @@ COMMENT=	Command Line XML Toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxml2.a:${PORTSDIR}/textproc/libxml2 \
 		${LOCALBASE}/lib/libxslt.a:${PORTSDIR}/textproc/libxslt
-USE_REINPLACE=	yes
+
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-PLIST_FILES=	bin/xml
 MAN1=		xmlstarlet.1
+PLIST_FILES=	bin/xml
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS," \
-		-e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
