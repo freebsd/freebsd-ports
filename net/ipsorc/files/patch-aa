@@ -1,15 +1,11 @@
---- spellbook.c Sun Dec  2 09:22:58 2001
-+++ ../ipsorc-1.4.patch/spellbook.c     Sun Dec  2 13:04:07 2001
-@@ -114,10 +114,10 @@
-   { type = ICMP_ECHOREPLY; }
+--- Makefile.orig       Sun Dec  2 14:25:31 2001
++++ Makefile    Sun Dec  2 14:25:45 2001
+@@ -6,6 +6,8 @@
+ CON = sorcery.c spells.c ipsorcery.c
+ #OBJS = $(SRC:.c=.o)
  
-   else if(strstr(type_name, "Destination Unreachable"))
--  { type = ICMP_DEST_UNREACH; }
-+  { type = ICMP_UNREACH_PORT; }
++all:   con gtk
++
+ con:
+        $(CC) -g -O2 -Wall -ansi $(CON) -o ipmagic
  
-   else if(strstr(type_name, "Source Quench"))
--  { type = ICMP_SOURCE_QUENCH; }
-+  { type = ICMP_SOURCEQUENCH; }
- 
-   else if(strstr(type_name, "Redirect"))
-   { type = ICMP_REDIRECT; }
