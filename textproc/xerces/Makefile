@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xerces
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 DISTNAME=	Xerces-J-bin.${PORTVERSION}
 
-MAINTAINER=	saper@system.pl
+MAINTAINER=	kevlo@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 
