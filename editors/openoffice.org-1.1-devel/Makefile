@@ -212,15 +212,13 @@ post-patch:
 
 .include <${FILESDIR}/Makefile.mozilla>
 
+.if !defined(WITHOUT_MOZILLA) && \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) && \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) && \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
+do-build: mozilla
+.else
 do-build:
-.if !defined(WITHOUT_MOZILLA)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
-	@${MAKE} mozilla
-.endif
-.endif
-.endif
 .endif
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
