@@ -1,4 +1,5 @@
-# New ports collection makefile for: Electric Fence 
+# ex:ts=8
+# New ports collection makefile for: Electric Fence
 # Version required:	2.0.5
 # Date created: 	13 November 1997
 # Whom:			jraynard
@@ -11,6 +12,8 @@ PKGNAME=	electricfence-2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
+
+MAINTAINER=	obrien@FreeBSD.org
 
 MAN3=		libefence.3
 
