@@ -2,3 +2,4 @@ sbin/shlight
 sbin/unshlight
 share/doc/Sharity-Light/README
 share/doc/Sharity-Light/FAQ
+@dirrm share/doc/Sharity-Light
