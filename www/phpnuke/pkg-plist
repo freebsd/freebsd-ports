@@ -117,6 +117,8 @@ www/phpnuke/html/images/admin/submissions.gif
 www/phpnuke/html/images/admin/topicsman.gif
 www/phpnuke/html/images/admin/users.gif
 www/phpnuke/html/images/articles/index.html
+www/phpnuke/html/images/articles/tribute.gif
+www/phpnuke/html/images/articles/yans.gif
 www/phpnuke/html/images/banners/index.html
 www/phpnuke/html/images/blackpixel.gif
 www/phpnuke/html/images/blue.gif
@@ -522,6 +524,7 @@ www/phpnuke/html/images/topics/sun.gif
 www/phpnuke/html/images/topics/suse.gif
 www/phpnuke/html/images/topics/x.gif
 www/phpnuke/html/images/up.gif
+www/phpnuke/html/includes/index.html
 www/phpnuke/html/includes/javascript.php
 www/phpnuke/html/includes/meta.php
 www/phpnuke/html/index.php
@@ -571,11 +574,11 @@ www/phpnuke/html/manual/topics.html
 www/phpnuke/html/manual/users.html
 www/phpnuke/html/manual/weblinks.html
 www/phpnuke/html/modules.php
-www/phpnuke/html/modules/FAQ/index.html
+www/phpnuke/html/modules/AvantGo/index.php
 www/phpnuke/html/modules/FAQ/index.php
+www/phpnuke/html/modules/Feedback/index.php
 www/phpnuke/html/modules/Members_List/index.php
 www/phpnuke/html/modules/NS-Addon_Sample/f2.php
-www/phpnuke/html/modules/NS-Addon_Sample/index.html
 www/phpnuke/html/modules/NS-Addon_Sample/index.php
 www/phpnuke/html/modules/index.html
 www/phpnuke/html/modules/readme.txt
@@ -712,6 +715,7 @@ www/phpnuke/html/upgrades/upgrade42_43.php
 www/phpnuke/html/upgrades/upgrade43-44.php
 www/phpnuke/html/upgrades/upgrade44-50.php
 www/phpnuke/html/upgrades/upgrade50-51.php
+www/phpnuke/html/upgrades/upgrade51-52.php
 www/phpnuke/html/user.php
 www/phpnuke/html/viewpmsg.php
 www/phpnuke/html/voteinclude.php
@@ -739,7 +743,9 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/themes
 @dirrm www/phpnuke/html/modules/NS-Addon_Sample
 @dirrm www/phpnuke/html/modules/Members_List
+@dirrm www/phpnuke/html/modules/Feedback
 @dirrm www/phpnuke/html/modules/FAQ
+@dirrm www/phpnuke/html/modules/AvantGo
 @dirrm www/phpnuke/html/modules
 @dirrm www/phpnuke/html/manual
 @dirrm www/phpnuke/html/language
