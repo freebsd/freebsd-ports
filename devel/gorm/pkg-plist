@@ -85,6 +85,8 @@ System/Applications/Gorm.app/Resources/GormClassInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormClassInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormCustomClassInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormCustomClassInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/GormDocument.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormDocument.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormEHCoil.tiff
 System/Applications/Gorm.app/Resources/GormEHLine.tiff
 System/Applications/Gorm.app/Resources/GormEVCoil.tiff
@@ -214,6 +216,7 @@ System/Library/Libraries/libGorm.so.%%LIBVERSION%%
 @dirrm System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormFontView.gorm
+@dirrm System/Applications/Gorm.app/Resources/GormDocument.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormCustomClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/Gorm.gorm
