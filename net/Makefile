@@ -96,6 +96,7 @@
     SUBDIR += firetalk
     SUBDIR += flow-tools
     SUBDIR += flowscan
+    SUBDIR += forg
     SUBDIR += fping
     SUBDIR += freebsd-uucp
     SUBDIR += freeradius-devel

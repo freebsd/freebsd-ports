@@ -1,0 +1,19 @@
+A Gopher client.
+
+Feature :
+
+   - Ability to load other programs with different file formats.
+   - Full caching of directories and files.
+   - Searching supported.
+   - Bookmark support.
+   - Directories are searchable by name.
+   - Statistics on size of cache, number of files in the cache, and number
+     of documents in the queue.
+   - Ability to save files and directories.
+   - ASK menus.
+   - Context menus for individual gopher items.
+   - Right click context menus on all items providing all available
+     information on a resource.
+   - Managerspeak.
+
+WWW: http://opop.nols.com/forg.shtml
