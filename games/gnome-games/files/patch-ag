@@ -1,0 +1,18 @@
+--- gtali/cyahtzee.c.orig	Sat Apr 10 22:42:17 1999
++++ gtali/cyahtzee.c	Mon Oct  4 16:29:56 1999
+@@ -37,13 +37,14 @@
+ #include <signal.h>
+ #include <stdarg.h>
+ 
++#include <config.h>
++
+ #if defined(USE_NCURSES) && !defined(RENAMED_NCURSES)
+ #include <ncurses.h>
+ #else
+ #include <curses.h>
+ #endif
+ 
+-#include <config.h>
+ #include "yahtzee.h"
+ #include "cyahtzee.h"
+ #include "scores.h"
