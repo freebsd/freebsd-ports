@@ -12,4 +12,8 @@ if pw usershow "${USER}" 2>/dev/null 1>&2; then
 	echo "To delete Jabber user permanently, use 'pw userdel ${USER}'"
 fi
 
+if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete Jabber group permanently, use 'pw groupdel ${USER}'"
+fi
+
 exit 0
