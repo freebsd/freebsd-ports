@@ -1,0 +1,78 @@
+#!/bin/sh
+# $FreeBSD$
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+LIB_DIR=/usr/lib/divx4
+ETC_DIR=${PKG_PREFIX}/etc
+
+ETC_FILE=ld.so.conf
+
+FMT=fmt
+GREP=grep
+LDCONFIG=/compat/linux/sbin/ldconfig
+PERL=perl
+
+case "$ACTION" in
+
+POST-INSTALL)
+	echo "$PKGNAME: ======> <======" 
+
+	if [ -f ${ETC_DIR}/${ETC_FILE} ]
+	then
+IS_IT_THERE=`${GREP} -E -e "^${LIB_DIR}$" ${ETC_DIR}/${ETC_FILE}`
+
+		if [ -z "${IS_IT_THERE}" ]
+		then
+			echo "${LIB_DIR}" >> ${ETC_DIR}/${ETC_FILE}
+		fi
+	
+	${LDCONFIG}
+
+	else
+		echo "$PKGNAME: ERROR: There is NO ${ETC_DIR}/${ETC_FILE}" | ${FMT}
+		echo "$PKGNAME: ERROR: Check your system." | ${FMT}
+	fi
+
+	echo "$PKGNAME: ======> <======" 
+	;;
+
+DEINSTALL)
+	echo "$PKGNAME: ======> <======" 
+
+	if [ -f ${ETC_DIR}/${ETC_FILE} ]
+	then
+IS_IT_THERE=`${GREP} -E -e "^${LIB_DIR}$" ${ETC_DIR}/${ETC_FILE}`
+
+		if [ -n "${IS_IT_THERE}" ]
+		then
+			${PERL} -pi -e "s|^${LIB_DIR}\n$||" \
+				${ETC_DIR}/${ETC_FILE}
+		else
+			echo "$PKGNAME: ERROR: Existing ${ETC_DIR}/${ETC_FILE} configuration file was modified by hand." | ${FMT}
+			echo "$PKGNAME: You probably edited it by hand. Therefore, I can't automatically modify it."
+			echo "$PKGNAME: There is no problem."
+			echo "$PKGNAME: Just make sure it does not contain a line with '${LIB_DIR}'"
+		fi
+
+	${LDCONFIG}
+
+	else
+		echo "$PKGNAME: ERROR: There is NO ${ETC_DIR}/${ETC_FILE}" | ${FMT}
+		echo "$PKGNAME: ERROR: Check your system." | ${FMT}
+	fi
+
+	echo "$PKGNAME: ======> <======" 
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
