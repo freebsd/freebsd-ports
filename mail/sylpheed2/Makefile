@@ -9,9 +9,13 @@ PORTNAME=	sylpheed
 PORTVERSION=	0.9.12
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sylpheed-claws
+MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
+		http://sylpheed.good-day.net/sylpheed/:source \
+		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
+MASTER_SITE_SUBDIR=	sylpheed-claws/:source oliver/:mime
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source mime.types:mime
+DIST_SUBDIR=	sylpheed
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
@@ -102,6 +106,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|mime\.types|sylpheed-mime\.types|g' \
+		${WRKSRC}/src/procmime.c
 
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
@@ -124,6 +130,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${i}.jp ${DOCSDIR}
 .endfor
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/mime.types ${PREFIX}/etc/sylpheed-mime.types
 .endif
 
 .include <bsd.port.post.mk>
