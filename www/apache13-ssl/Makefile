@@ -3,13 +3,18 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1995/11/27 04:10:09 asami Exp $
+# $Id: Makefile,v 1.5 1995/12/02 23:07:08 jfieber Exp $
 #
 
 DISTNAME=	apache_1.0.0
 PKGNAME=	apache-1.0.0
 CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.ast.cam.ac.uk/pub/WWW/apache/
+MASTER_SITES=	ftp://www.apache.org/apache/dist/
+MASTER_SITES+=	ftp://gd.tuwien.ac.at/pub/infosys/servers/http/apache/dist/
+MASTER_SITES+=	ftp://ftp.uni-regensburg.de/pub/comp/infosystems/www/daemons/apache/dist/
+MASTER_SITES+=	ftp://Bond.edu.au/pub/apache/dist/
+MASTER_SITES+=	ftp://sunsite.mff.cuni.cz/Net/Infosystems/WWW/Servers/Apache/dist/
+MASTER_SITES+=	ftp://ftp.ast.cam.ac.uk/pub/WWW/apache/
 
 MAINTAINER=	pst@freebsd.org
 
