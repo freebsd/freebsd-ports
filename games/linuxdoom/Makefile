@@ -22,14 +22,14 @@ RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emu
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
-PKGINSTALL=	${WRKDIR}/INSTALL
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 post-patch:
 	@(cd ${WRKSRC}/joystick4doom; make clean)
 	@(cd ${WRKSRC}/musserver; make clean)
 
 pre-install:
-	@${SED} 's,@PREFIX@,${PREFIX},' ${PKGDIR}/INSTALL.in > ${PKGINSTALL}
+	@${SED} 's,@PREFIX@,${PREFIX},' ${PKGDIR}/pkg-install.in > ${PKGINSTALL}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
