@@ -1,9 +1,9 @@
-# $Id: Makefile,v 1.3 1995/03/27 12:59:03 asami Exp $
+# $Id: Makefile,v 1.4 1995/03/30 10:19:16 asami Exp $
 #
 # restricted: none
 #
 # doesn't compile: mh
 #
-SUBDIR= Canna Wnn kterm less nkf tcl tk
+SUBDIR= Canna Wnn grep kterm less nkf sed tcl tk
 
 .include <bsd.port.subdir.mk>
