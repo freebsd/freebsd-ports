@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta14
+# Version required:	1.2-beta16
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.43 1998/02/14 14:36:12 peter Exp $
+# $Id: Makefile,v 1.44 1998/02/16 13:16:37 asami Exp $
 #
 
-DISTNAME=	squid-1.2.beta14
-PKGNAME=	squid-1.2b14
+DISTNAME=	squid-1.2.beta16
+PKGNAME=	squid-1.2b16
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
@@ -16,12 +16,12 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.2.beta/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-PATCHFILES+=    1.2.beta14.patches
+#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
+#PATCHFILES+=    1.2.beta16.patches
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b14
+DIST_SUBDIR=	squid1.2b16
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
