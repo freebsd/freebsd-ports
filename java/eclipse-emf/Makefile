@@ -5,15 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eclipse-emf
-PORTVERSION=	1.1.1
+PORTNAME=	emf
+PORTVERSION=	2.0.0
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/downloads/emf/
-DISTNAME=	emf_1.1.1_20031120_1149WL
+MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/2.0/R200406280827/
+PKGNAMEPREFIX=	eclipse-
+DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	alex@FreeBSD.ORG
 COMMENT=	Eclipse Modeling Framework
+
+RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -21,7 +24,7 @@ USE_ZIP=	yes
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
 
 .include <bsd.port.mk>

@@ -1,409 +1,903 @@
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/runtime/ecore.editor.jar
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/ctool16/NewEcore.gif
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/obj16/EcoreModelFile.gif
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/wizban/NewEcore.gif
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/rose/ecore.pty
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/runtime/codegen.ecore.jar
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/ItemProviderAdapterFactory.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/Item.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/ItemProvider.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/CreateChild.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/Plugin.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/plugin.propertiesjet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit/plugin.xmljet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/plugin.xmljet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/Editor.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/ModelFile.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/ModelWizard.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/NewModel.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/Plugin.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/plugin.propertiesjet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor/ActionBarContributor.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/SwitchClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/Class.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/EnumClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/FactoryClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/FactoryInterface.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/Interface.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/PackageClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/PackageInterface.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/Plugin.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/plugin.propertiesjet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/plugin.xmljet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/ResourceClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/ResourceFactoryClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model/AdapterFactoryClass.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/emf-merge.xml
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/Header.javajet
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/generate.bat
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/ecore2genmodel.bat
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/generate
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/Company.mdl
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/rose2ecore.bat
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/rose2genmodel
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test/rose2genmodel.bat
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/runtime/codegen.ui.jar
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/runtime/codegen.jar
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/Interface.javajet
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/code-gen.bat
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/Header.javajet
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/code-gen
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/merge.xml
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/runtest.bat
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test/Skeleton.java
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.codegen_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/runtime/common.ui.jar
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/runtime/common.ui.resources.jar
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/icons/full/ctool16/ViewPullDown.gif
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.common_1.1.1/runtime/common.jar
-eclipse/plugins/org.eclipse.emf.common_1.1.1/runtime/common.resources.jar
-eclipse/plugins/org.eclipse.emf.common_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.common_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.common_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.common_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.common_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/runtime/ecore.edit.jar
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEPackage_eSubpackages_EPackage.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEClass_eOperations_EOperation.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEClass_eReferences_EReference.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEEnum_eLiterals_EEnumLiteral.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEModelElement_eAnnotations_EAnnotation.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEOperation_eParameters_EParameter.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEPackage_eClassifiers_EClass.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEPackage_eClassifiers_EDataType.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEPackage_eClassifiers_EEnum.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16/CreateEClass_eAttributes_EAttribute.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EStringToStringMapEntry.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EAttribute.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EClass.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EDataType.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EEnum.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EEnumLiteral.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EFactory.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EObject.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceN.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceNToM.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceNToUnbounded.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceOne.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceOneToN.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceOneToUnbounded.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceZero.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceZeroToN.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceZeroToOne.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOccurrenceZeroToUnbounded.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EOperation.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EPackage.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EParameter.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EReference.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16/EAnnotation.gif
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/runtime/codegen.ecore.ui.jar
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/ctool16/NewEMFProject.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/ctool16/NewGenModel.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/obj16/GenModel.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/obj16/GenModelModelFile.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/obj16/Underlay.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/obj16/UsedGenPackage.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/wizban/NewEMFProject.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/wizban/NewGenModel.gif
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/runtime/ecore.xmi.jar
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/runtime/ecore.jar
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.ecore_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/runtime/edit.ui.jar
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/runtime/edit.ui.resources.jar
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/runtime/edit.jar
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/runtime/edit.resources.jar
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/ctool16/CreateChild.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/TextValue.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/GenericValue.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/IntegralValue.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/Item.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/ModelFile.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/RealValue.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/Resource.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/ResourceSet.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16/BooleanValue.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/wizban/NewModel.gif
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.edit_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/runtime/mapping.ui.jar
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/ShowOnlyMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/HideAllMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/OutlineFilter.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectBottomMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectNextBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectNextBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectNextTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectNextTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectPreviousBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectPreviousBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectPreviousTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectTopMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/SelectPreviousTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/ShowMultipleTopsOrBottoms.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16/ExchangeSourceAndTarget.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/ctool16/AddRootBottom.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/ctool16/AddRootTop.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/cview16/BottomLogo.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/cview16/OverviewLogo.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/cview16/OverviewLogoFlipped.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/cview16/TopLogo.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/ShowOnlyMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/HideAllMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/OutlineFilter.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectBottomMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectNextBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectNextBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectNextTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectNextTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectPreviousBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectPreviousBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectPreviousTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectTopMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/SelectPreviousTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/ShowMultipleTopsOrBottoms.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16/ExchangeSourceAndTarget.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowTopUnmappedObjectsOnly.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/HideAllMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/OutlineFilter.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectBottomMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectNextBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectNextBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectNextTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectNextTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectPreviousBottomMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectPreviousBottomUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectPreviousTopMappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectTopMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/SelectPreviousTopUnmappedObject.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowBottomFirst.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowBottomMappedObjectsOnly.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowBottomUnmappedObjectsOnly.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowMultipleBottoms.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowMultipleTops.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowMultipleTopsOrBottoms.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowOnlyMappedObjects.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowTopFirst.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ShowTopMappedObjectsOnly.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16/ExchangeSourceAndTarget.gif
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/.project
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/runtime/mapping.jar
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/RemoveOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateManyToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateNoneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateNoneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateNoneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateOneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/MatchByName.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/MatchByType.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/RemoveManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/RemoveManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/RemoveOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16/CreateManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/RemoveOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateManyToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateNoneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateNoneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateNoneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateOneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/MatchByName.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/MatchByType.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/RemoveManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/RemoveManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/RemoveOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16/CreateManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/RemoveOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateManyToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateNoneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateNoneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateNoneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateOneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/MatchByName.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/MatchByType.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/RemoveManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/RemoveManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/RemoveOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16/CreateManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/TypeOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/DisabledManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/DisabledOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/DisabledOneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/ManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/ManyToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/ManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/MappingHelper.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/MultipleImages.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/NoneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/NoneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/NoneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/OneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/OneToNoneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/OneToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/TypeManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/TypeManyToOneMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/TypeOneToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16/DisabledManyToManyMapping.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16/OverlayBlank.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16/OverlayMappedBottom.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16/OverlayMappedTop.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16/OverlayUnmappedBottom.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16/OverlayUnmappedTop.gif
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/about.html
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/.classpath
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf.mapping_1.1.1/.project
-eclipse/plugins/org.eclipse.emf_1.1.1/welcome.xml
-eclipse/plugins/org.eclipse.emf_1.1.1/about.ini
-eclipse/plugins/org.eclipse.emf_1.1.1/about.mappings
-eclipse/plugins/org.eclipse.emf_1.1.1/about.properties
-eclipse/plugins/org.eclipse.emf_1.1.1/eclipse32.gif
-eclipse/plugins/org.eclipse.emf_1.1.1/plugin.properties
-eclipse/plugins/org.eclipse.emf_1.1.1/plugin.xml
-eclipse/plugins/org.eclipse.emf_1.1.1/about.html
-eclipse/features/org.eclipse.emf_1.1.1/cpl-v10.html
-eclipse/features/org.eclipse.emf_1.1.1/eclipse_update_120.jpg
-eclipse/features/org.eclipse.emf_1.1.1/feature.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature.xml
-eclipse/features/org.eclipse.emf_1.1.1/license.html
-
-@dirrm eclipse/plugins/org.eclipse.emf_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ovr16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/etool16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/dtool16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/elcl16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/dlcl16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/cview16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full/clcl16
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.edit_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.edit.ui_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.ecore_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.ecore_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.xmi_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.common_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.common_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.common.ui_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.common.ui_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.codegen_1.1.1/test
-@dirrm eclipse/plugins/org.eclipse.emf.codegen_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.codegen_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/test
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/model
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/editor
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates/edit
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/templates
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1/rose
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_1.1.1
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/runtime
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons/full
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1/icons
-@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_1.1.1
-@dirrm eclipse/features/org.eclipse.emf_1.1.1
-
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/runtime/ecore.editor.jar
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/wizban/NewEcore.gif
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/obj16/EcoreModelFile.gif
+eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/ctool16/NewEcore.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/runtime/ecore.sdo.jar
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/welcome.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/runtime/edit.ui.jar
+eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/runtime/edit.ui.resources.jar
+eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/about.properties
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/about.ini
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/doc.zip
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.doc_2.0.0/toc.xml
+eclipse/plugins/org.eclipse.emf.source_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen_2.0.0/runtime/codegensrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping_2.0.0/runtime/mappingsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/runtime/mapping.ecore2ecore.editorsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore.ui_2.0.0/runtime/codegen.ecore.uisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common_2.0.0/runtime/commonsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore_2.0.0/runtime/codegen.ecoresrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ui_2.0.0/runtime/codegen.uisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.edit_2.0.0/runtime/ecore.editsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ui_2.0.0/runtime/mapping.uisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.editor_2.0.0/runtime/ecore.editorsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit.ui_2.0.0/runtime/edit.uisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change_2.0.0/runtime/ecore.changesrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore_2.0.0/runtime/mapping.ecore2ecoresrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common.ui_2.0.0/runtime/common.uisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore_2.0.0/runtime/ecoresrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change.edit_2.0.0/runtime/ecore.change.editsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit_2.0.0/runtime/editsrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.xmi_2.0.0/runtime/ecore.xmisrc.zip
+eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.xmi_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf.source_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.source_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf.source_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.source_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf.source_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/runtime/ecore.change.edit.jar
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/runtime/ecore.change.edit.resources.jar
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16/EObjectToChangesMapEntry.gif
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16/ChangeDescription.gif
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16/FeatureChange.gif
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16/ListChange.gif
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16/ResourceChange.gif
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0/runtime/mapping.xsd2ecore.jar
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd_2.0.0/runtime/xsd.jar
+eclipse/plugins/org.eclipse.xsd_2.0.0/runtime/xsd.resources.jar
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/XMLSchema-instance.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/XMLSchema.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/datatypes.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/xml.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/MagicXMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001/XMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999/XMLSchema.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999/datatypes.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999/xml.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999/MagicXMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999/XMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10/XMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10/XMLSchema.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10/datatypes.dtd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10/xml.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10/MagicXMLSchema.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/XML/1998/namespace.xsd
+eclipse/plugins/org.eclipse.xsd_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.xsd_2.0.0/about.properties
+eclipse/plugins/org.eclipse.xsd_2.0.0/about.ini
+eclipse/plugins/org.eclipse.xsd_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.xsd_2.0.0/welcome.xml
+eclipse/plugins/org.eclipse.xsd_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.xsd_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/runtime/mapping.xsd2ecore.editor.jar
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/ctool16/NewXSD2Ecore.gif
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/obj16/XSD2EcoreModelFile.gif
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/wizban/NewXSD2Ecore.gif
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/runtime/codegen.ecore.jar
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/SwitchClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/plugin.xmljet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/PackageInterface.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/FactoryClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/PackageClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/FactoryInterface.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/build.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/plugin.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/ResourceClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/EnumClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/Interface.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/ValidatorClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/Class.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/ResourceFactoryClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/Plugin.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model/AdapterFactoryClass.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/ItemProviderAdapterFactory.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/CreateChild.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/Item.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/ItemProvider.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/plugin.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/Plugin.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/build.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit/plugin.xmljet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/plugin.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/Plugin.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/plugin.xmljet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/build.propertiesjet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/ModelWizard.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/Advisor.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/ModelFile.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/ActionBarContributor.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/NewModel.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor/Editor.javajet
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/Header.jetinc
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/emf-merge.xml
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/rose2ecore.bat
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/ecore2genmodel.bat
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/rose2genmodel.bat
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/xsd2genmodel.bat
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/rose2genmodel
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/xsd2genmodel
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/Company.mdl
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/generate
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test/generate.bat
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/rose/ecore.pty
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore_2.0.0/runtime/ecore.jar
+eclipse/plugins/org.eclipse.emf.ecore_2.0.0/runtime/ecore.resources.jar
+eclipse/plugins/org.eclipse.emf.ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/runtime/ecore.edit.jar
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/runtime/ecore.edit.resources.jar
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceN.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EEnum.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EPackage.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceZero.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EEnumLiteral.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EStringToStringMapEntry.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EAttribute.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceOneToUnbounded.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceOne.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOperation.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EObject.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceZeroToN.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EDataType.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EReference.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceOneToN.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EFactory.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EClass.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EParameter.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceZeroToOne.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EAnnotation.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceZeroToUnbounded.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceNToM.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16/EOccurrenceNToUnbounded.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEPackage_eClassifiers_EClass.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEModelElement_eAnnotations_EAnnotation.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEClass_eOperations_EOperation.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEEnum_eLiterals_EEnumLiteral.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEClass_eStructuralFeatures_EAttribute.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEPackage_eSubpackages_EPackage.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEPackage_eClassifiers_EEnum.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEOperation_eParameters_EParameter.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEClass_eStructuralFeatures_EReference.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16/CreateEPackage_eClassifiers_EDataType.gif
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/doc.zip
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/toc.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/runtime/edit.jar
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/runtime/edit.resources.jar
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/ModelFile.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/IntegralValue.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/TextValue.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/RealValue.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/Item.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/Resource.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/GenericValue.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/BooleanValue.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16/ResourceSet.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/wizban/NewModel.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/ctool16/CreateChild.gif
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/toc.xml
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/doc.zip
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.emf.doc_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/runtime/xsd.edit.jar
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/runtime/xsd.edit.resources.jar
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDElementDeclaration.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDIdentityConstraintDefinitionUnique.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMaxLengthFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDPatternFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDLengthFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDWhiteSpaceFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceNToUnbounded.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceN.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupChoice.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSchema.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMinExclusiveFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeGroupUse.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAnnotation.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupAll.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDComplexTypeDefinitionUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDInclude.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceOne.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDEnumerationFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceOneToN.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDIdentityConstraintDefinitionKey.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSimpleTypeDefinition.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDImport.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDComplexTypeDefinition.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDTypeDefinition.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDNotationDeclaration.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDElementUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDWildcardAttribute.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDParticle.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDXPathDefinitionSelector.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceNToM.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDXPathDefinitionField.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSimpleTypeDefinitionUnion.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceZeroToOne.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceZeroToN.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDFractionDigitsFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMaxInclusiveFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceZero.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeUse.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDWildcardElement.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupDefinition.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupUse.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMinLengthFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDTotalDigitsFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSimpleTypeDefinitionList.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMaxExclusiveFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeDeclaration.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceZeroToUnbounded.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDRedefine.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDElementUse.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDOccurrenceOneToUnbounded.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDModelGroupSequence.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSimpleTypeDefinitionAtomic.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDIdentityConstraintDefinitionKeyReference.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDSimpleTypeDefinitionUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDMinInclusiveFacet.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeGroupUnresolved.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16/XSDAttributeGroupDefinition.gif
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.xsd.edit_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/runtime/codegen.ui.jar
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons/full/wizban/ConvertToJETProjectWizard.gif
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons/full/ctool16/ConvertToJETProjectWizard.gif
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/runtime/commonj.sdo.jar
+eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/datagraph.xsd
+eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.edit_2.0.0/runtime/xsd.editsrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.editor_2.0.0/runtime/xsd.editorsrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/runtime/mapping.xsd2ecore.editorsrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore_2.0.0/runtime/mapping.xsd2ecoresrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.test_2.0.0/runtime/xsd.testsrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.test_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd_2.0.0/runtime/xsdsrc.zip
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/about.ini
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/about.properties
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.xsd.source_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0/runtime/ecore.change.jar
+eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/runtime/mapping.ui.jar
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectNextTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowMultipleBottoms.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectNextTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectPreviousBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowTopMappedObjectsOnly.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ExchangeSourceAndTarget.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectNextBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowBottomMappedObjectsOnly.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowOnlyMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectPreviousTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectNextBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowTopUnmappedObjectsOnly.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectBottomMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/HideAllMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowMultipleTopsOrBottoms.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectPreviousBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectPreviousTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/OutlineFilter.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowTopFirst.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowBottomUnmappedObjectsOnly.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowMultipleTops.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/ShowBottomFirst.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16/SelectTopMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/ShowMultipleTopsOrBottoms.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectTopMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectPreviousBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectNextTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectNextBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/OutlineFilter.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/ShowOnlyMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/HideAllMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectNextTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectPreviousBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/ExchangeSourceAndTarget.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectBottomMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectPreviousTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectPreviousTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16/SelectNextBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectPreviousTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectNextTopUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectBottomMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/OutlineFilter.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectTopMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/ShowMultipleTopsOrBottoms.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/ExchangeSourceAndTarget.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectPreviousBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/HideAllMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectPreviousTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectNextBottomUnmappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectPreviousBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectNextBottomMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/SelectNextTopMappedObject.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16/ShowOnlyMappedObjects.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/cview16/TopLogo.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/cview16/OverviewLogoFlipped.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/cview16/OverviewLogo.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/cview16/BottomLogo.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/ctool16/AddRootBottom.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/ctool16/AddRootTop.gif
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/runtime/xsd.editor.jar
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/dlcl16/SelectNextUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/dlcl16/SelectNextDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/dlcl16/SelectPreviousDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/dlcl16/SelectPreviousUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/wizban/NewXSD.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/clcl16/SelectNextDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/clcl16/SelectPreviousUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/clcl16/SelectNextUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/clcl16/SelectPreviousDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/elcl16/SelectNextUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/elcl16/SelectNextDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/elcl16/SelectPreviousUseObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/elcl16/SelectPreviousDiagnosticObject.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/ctool16/NewXSD.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/obj16/XSDModelFile.gif
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.xsd.editor_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/runtime/ecore.sdo.editor.jar
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/wizban/NewSDO.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/obj16/SDOModelFile.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/ctool16/NewSDO.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0/runtime/ecore.xmi.jar
+eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/runtime/codegen.jar
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/Skeleton.java
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/Interface.javajet
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/merge.xml
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/Header.javajet
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/runtest.bat
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/code-gen.bat
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test/code-gen
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.codegen_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/runtime/codegen.ecore.ui.jar
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/ctool16/NewGenModel.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/ctool16/NewEMFProject.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/wizban/NewEMFProject.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/wizban/NewGenModel.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/obj16/GenModelModelFile.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/obj16/Underlay.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/obj16/UsedGenPackage.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/obj16/GenModel.gif
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf_2.0.0/welcome.xml
+eclipse/plugins/org.eclipse.emf_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/runtime/xsd.test.jar
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/xsd-test.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadAttributeDeclaration.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadEnumerationFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMinExclusiveFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadComplexTypeDefinition.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/Bad.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadSchema.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadIdentityConstraintDefinition.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadWildcard.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadPatternFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadModelGroup.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/Other.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadNotationDeclaration.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadSimpleTypeDefinition.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/Okay.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadDataType.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadTotalDigitsFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMaxInclusiveFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMinLengthFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadElementDeclaration.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadLengthFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadFractionDigitsFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMaxExclusiveFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadWhiteSpaceFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadAttributeGroupDefinition.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMaxLengthFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadModelGroupDefinition.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics/BadMinInclusiveFacet.xsd
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/xsd-generate-html.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/run-schema-for-schema-test.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/xsd-standalone-test.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/index.html
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/run-prototypical-schema-test.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/xsd-generate-schema-for-schema-html.bat
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/SampleMarkup.xml
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/about.html
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.xsd.test_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.common_2.0.0/runtime/common.jar
+eclipse/plugins/org.eclipse.emf.common_2.0.0/runtime/common.resources.jar
+eclipse/plugins/org.eclipse.emf.common_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.common_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.common_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/runtime/ecore.sdo.edit.jar
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/runtime/ecore.sdo.edit.resources.jar
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16/EDataObjectSimpleAnyType.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16/EType.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16/EDataObjectAnyType.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16/EProperty.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16/EDataGraph.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/runtime/mapping.jar
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/RemoveOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateNoneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateNoneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/RemoveManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateNoneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/RemoveManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/RemoveOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/MatchByType.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/MatchByName.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateManyToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16/CreateOneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/MatchByType.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/MatchByName.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/RemoveOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateManyToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateNoneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/RemoveManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateNoneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateNoneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/RemoveOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/CreateOneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16/RemoveManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/ManyToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/MappingHelper.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/OneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/NoneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/NoneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/OneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/NoneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/MultipleImages.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/TypeOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/DisabledOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/DisabledManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/TypeOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/ManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/ManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/OneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/TypeManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/DisabledOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/TypeManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16/DisabledManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/RemoveOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/RemoveOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateNoneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/RemoveManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateManyToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateOneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateOneToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateNoneToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateOneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateManyToOneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/MatchByType.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/MatchByName.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/RemoveManyToManyMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16/CreateNoneToNoneMapping.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16/OverlayUnmappedBottom.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16/OverlayMappedBottom.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16/OverlayBlank.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16/OverlayMappedTop.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16/OverlayUnmappedTop.gif
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.mapping_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/runtime/mapping.ecore2ecore.editor.jar
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/ctool16/NewEcore2Ecore.gif
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/obj16/Ecore2EcoreModelFile.gif
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/wizban/NewEcore2Ecore.gif
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.editor_2.0.0/runtime/ecore.sdo.editorsrc.zip
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.editor_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo_2.0.0/runtime/ecore.sdosrc.zip
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.edit_2.0.0/runtime/ecore.sdo.editsrc.zip
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.edit_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.commonj.sdo_2.0.0/runtime/commonj.sdosrc.zip
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.commonj.sdo_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/about.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/about.ini
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/runtime/common.ui.jar
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/runtime/common.ui.resources.jar
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/icons/full/ctool16/ViewPullDown.gif
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0/runtime/mapping.ecore2ecore.jar
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0/about.html
+eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0/plugin.properties
+eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0/license.html
+eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.sdk_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.sdk_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf.sdk_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.sdk_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.sdk_2.0.0/license.html
+eclipse/features/org.eclipse.emf_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf_2.0.0/license.html
+eclipse/features/org.eclipse.emf_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.doc_2.0.0/license.html
+eclipse/features/org.eclipse.emf.doc_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.doc_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.doc_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.doc_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0/license.html
+eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0/license.html
+eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.xsd.source_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.xsd.source_2.0.0/feature.properties
+eclipse/features/org.eclipse.xsd.source_2.0.0/feature.xml
+eclipse/features/org.eclipse.xsd.source_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.xsd.source_2.0.0/license.html
+eclipse/features/org.eclipse.xsd.doc_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.xsd.doc_2.0.0/license.html
+eclipse/features/org.eclipse.xsd.doc_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.xsd.doc_2.0.0/feature.xml
+eclipse/features/org.eclipse.xsd.doc_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.source_2.0.0/feature.xml
+eclipse/features/org.eclipse.emf.source_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.emf.source_2.0.0/license.html
+eclipse/features/org.eclipse.emf.source_2.0.0/feature.properties
+eclipse/features/org.eclipse.emf.source_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.xsd_2.0.0/feature.properties
+eclipse/features/org.eclipse.xsd_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.xsd_2.0.0/license.html
+eclipse/features/org.eclipse.xsd_2.0.0/feature.xml
+eclipse/features/org.eclipse.xsd_2.0.0/cpl-v10.html
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/XML/1998
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/XML
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2001
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000/10
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/2000
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org/1999
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache/www.w3.org
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0/cache
+@dirrm eclipse/plugins/org.eclipse.xsd_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.test_2.0.0/test/diagnostics
+@dirrm eclipse/plugins/org.eclipse.xsd.test_2.0.0/test
+@dirrm eclipse/plugins/org.eclipse.xsd.test_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.test_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.test_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.test_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.xsd.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0/src
+@dirrm eclipse/plugins/org.eclipse.xsd.source_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.xsd.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.xsd.edit_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.xsd.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.xsd.doc_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.edit.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.xmi_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.xmi_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.ecore.change.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.common.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src/org.eclipse.emf.codegen.ecore.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0/src
+@dirrm eclipse/plugins/org.eclipse.emf.source_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ovr16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/etool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/dtool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.mapping_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.xsd2ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.mapping.ecore2ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.edit.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.xmi_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.ecore.sdo.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.commonj.sdo_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src/org.eclipse.emf.commonj.sdo_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0/src
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.source_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.sdo.doc_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.editor_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.doc_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.commonj.sdo_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.common_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.common_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.common.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.common.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.codegen_2.0.0/test
+@dirrm eclipse/plugins/org.eclipse.emf.codegen_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.codegen_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/test
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/model
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/editor
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates/edit
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/templates
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0/rose
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore_2.0.0
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/runtime
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.0.0
+@dirrm eclipse/features/org.eclipse.xsd_2.0.0
+@dirrm eclipse/features/org.eclipse.xsd.source_2.0.0
+@dirrm eclipse/features/org.eclipse.xsd.doc_2.0.0
+@dirrm eclipse/features/org.eclipse.emf_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.source_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.sdk_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.ecore.sdo_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.ecore.sdo.source_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.ecore.sdo.doc_2.0.0
+@dirrm eclipse/features/org.eclipse.emf.doc_2.0.0
 @unexec rmdir %D/eclipse/plugins 2>/dev/null || true
 @unexec rmdir %D/eclipse/features 2>/dev/null || true
 @unexec rmdir %D/eclipse 2>/dev/null || true
