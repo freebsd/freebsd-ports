@@ -55,7 +55,7 @@ EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-deb* linux_base-gen*
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
@@ -77,6 +77,10 @@ UPDATES=		${UPD_SET1} ${UPD_SET2}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+MACHINE_ARCH=		i386
+.endif
 
 RPM_BZIP2=		bzip2-1.0.2-5.i386.rpm
 RPM_FREETYPE=		freetype-2.1.2-7.i386.rpm
@@ -166,3 +170,7 @@ post-install:
 	@${ECHO} ''
 
 .include <bsd.port.post.mk>
+
+.if (${ARCH} == "amd64")
+LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
+.endif
