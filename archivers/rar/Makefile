@@ -7,6 +7,7 @@
 
 PORTNAME=	rar
 PORTVERSION=    3.0b3
+PORTREVISION=   1
 CATEGORIES=	archivers
 MASTER_SITES=   http://209.235.4.116/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
@@ -42,5 +43,6 @@ do-install:
 			${PREFIX}/etc && \
 		${INSTALL_DATA} default.sfx \
 			${PREFIX}/lib
+	@${CAT} ${PKGDIR}/pkg-message
 
 .include <bsd.port.post.mk>
