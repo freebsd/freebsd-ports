@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.31
+PORTVERSION=	2.32
 CATEGORIES=	mail
-MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
+MASTER_SITES=	http://www.mimedefang.org/static/ \
+		http://www.roaringpenguin.com/mimedefang/
 
 MAINTAINER=	andrey@mgul.ac.ru
 COMMENT=	Milter based anti-spam and anti-virus filtering program
