@@ -4,3 +4,4 @@ etc/rc.d/haproxy.sh
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
