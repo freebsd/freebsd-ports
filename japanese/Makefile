@@ -437,6 +437,7 @@
     SUBDIR += xklock
     SUBDIR += xmsgsaver
     SUBDIR += xnetmaj
+    SUBDIR += xpdf
     SUBDIR += xshodo
     SUBDIR += xshodou
     SUBDIR += xv
