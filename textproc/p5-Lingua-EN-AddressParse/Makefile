@@ -16,7 +16,7 @@ MAINTAINER=	svenasse@polaris.ca
 
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/${PERL_VER}/Locale/SubCountry.pm:${PORTSDIR}/misc/p5-Locale-SubCountry
+		${SITE_PERL}/Locale/SubCountry.pm:${PORTSDIR}/misc/p5-Locale-SubCountry
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
