@@ -4,7 +4,7 @@ lib/ewipe/edittable.tcl
 lib/ewipe/setpointer.tcl
 lib/ewipe/viewer.tcl
 lib/ewipe/tclIndex
-share/doc/ewipe/Changes
+share/doc/ewipe/Changes.jp
 share/doc/ewipe/README
 share/doc/ewipe/dot.ewipe
 share/doc/ewipe/sample/a1.gif
