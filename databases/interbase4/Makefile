@@ -13,6 +13,7 @@ DISTNAME=	IB_4.0_FreeBSD
 
 MAINTAINER=	berend@pobox.com
 
+FORBIDDEN=	"Backdoored by Borland"
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=
