@@ -1,0 +1,12 @@
+bin/authforce
+@unexec install-info --delete %D/info/authforce.info %D/info/dir
+info/authforce.info
+@exec install-info %D/info/authforce.info %D/info/dir
+share/authforce/data/blank.lst
+share/authforce/data/dummy.lst
+share/authforce/data/password.lst
+share/authforce/data/username.lst
+share/authforce/data/userpass.lst
+share/locale/nl/LC_MESSAGES/authforce.mo
+@dirrm share/authforce/data
+@dirrm share/authforce

@@ -1,0 +1,8 @@
+Authforce is an HTTP authentication brute forcer. Using various methods,
+it attempts brute force username and password pairs for a site. It has
+the ability to try common username and passwords, username derivations,
+and common username/password pairs. It is used to both test the security
+of your site and to prove the insecurity of HTTP authentication based on
+the fact that users just don't pick good passwords.
+
+WWW: http://kapheine.hypa.net/authforce/

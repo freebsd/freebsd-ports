@@ -10,6 +10,7 @@
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
+    SUBDIR += authforce
     SUBDIR += bcwipe
     SUBDIR += beecrypt
     SUBDIR += bfbtester

@@ -1,0 +1,11 @@
+--- src/extract.c.bak	Wed Feb 14 01:54:53 2001
++++ src/extract.c	Wed May  8 12:34:16 2002
+@@ -20,7 +20,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #ifdef MEMWATCH
+ #include "memwatch.h"
+ #endif /* MEMWATCH */
