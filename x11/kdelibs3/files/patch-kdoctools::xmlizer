@@ -1,0 +1,8 @@
+--- kdoctools/xmlizer.orig	Wed Jan 29 17:17:40 2003
++++ kdoctools/xmlizer	Wed Jan 29 17:17:57 2003
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python
++#! /usr/bin/env python
+ 
+ import re, sys, os, string
+ 
