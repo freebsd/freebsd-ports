@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1999/02/12 14:41:43 kuriyama Exp $
+# $Id: Makefile,v 1.22 1999/05/03 03:59:22 steve Exp $
 #
 
     SUBDIR += X.language
@@ -7,6 +7,7 @@
     SUBDIR += d1489
     SUBDIR += elm.language
     SUBDIR += gd
+    SUBDIR += koi8r-ps
     SUBDIR += netscape3.language
     SUBDIR += pgp.language
     SUBDIR += pine.language
