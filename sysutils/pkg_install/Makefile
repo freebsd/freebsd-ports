@@ -6,15 +6,14 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040530
-PORTREVISION=		1
+PORTVERSION=		20040705
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~marcus/
 MASTER_SITE_SUBDIR=	marcus
 
 MAINTAINER=		portmgr@freebsd.org
-COMMENT=		FreeBSD 5.x version of the package tools for older system releases
+COMMENT=		FreeBSD 5.X version of the package tools for older system releases
 
 MANCOMPRESSED=		yes
 
@@ -22,8 +21,6 @@ MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_version.1
 
 MAKE_ARGS=		-DNOOBJ -DNOCRYPT -DNO_OPENSSL
-
-PKG_FILES=		main.c perform.c pkg_add.1
 
 .include <bsd.port.pre.mk>
 
@@ -53,13 +50,6 @@ post-patch:
 .if ${OSVERSION} < 440001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500024 )
 	@${FIND} ${WRKSRC} -name '*.c' \
 		| ${XARGS} ${PERL} -pi.orig -e 's/__FBSDID\(("[^"]*")\)/static const char rcsid[] = $$1/'
-.endif
-.if ${OSVERSION} < 500039
-.for i in ${PKG_FILES}
-	@${SED} -e 's,\.tbz,.tgz,g' ${WRKSRC}/add/${i} > \
-		${WRKSRC}/add/${i}.bak
-	@${MV} -f ${WRKSRC}/add/${i}.bak ${WRKSRC}/add/${i}
-.endfor
 .endif
 
 deinstall:
