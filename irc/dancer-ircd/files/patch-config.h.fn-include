@@ -1,0 +1,66 @@
+--- include/config.h.fn-include.orig	Wed Aug 20 05:04:07 2003
++++ include/config.h.fn-include	Fri Nov 14 05:29:23 2003
+@@ -109,17 +109,17 @@
+ /* NETWORK_NAME
+  * Displayed in place of the servername when SERVERHIDE is enabled
+  */   
+-#define NETWORK_NAME "irc.freenode.net"
++#define NETWORK_NAME "irc.example.net"
+ 
+ /* NETWORK_REALNAME
+  * Displayed in RPL_WELCOME (at least). Don't put punctuation in here.
+  */
+-#define NETWORK_REALNAME "freenode IRC"
++#define NETWORK_REALNAME "Local IRC"
+ 
+ /* NETWORK_DESC
+  * Displayed in place of the server info when SERVERHIDE is enabled
+  */
+-#define NETWORK_DESC "http://freenode.net/"
++#define NETWORK_DESC "http://www.example.net/"
+ 
+ /* USE_SERVICES
+  * Defines whether or not you're using services on your network
+@@ -637,7 +637,7 @@
+  * the net. for a leaf, 2 is fine. If the number of servers seen
+  * on the net gets less than 2, a split is deemed to have happened.
+  */
+-#define SPLIT_SMALLNET_SIZE 10
++#define SPLIT_SMALLNET_SIZE 0
+ 
+ /*
+  * SPLIT_SMALLNET_USER_SIZE defines how many global users on the
+@@ -647,7 +647,7 @@
+  * number of users seen on net > SPLIT_SMALLNET_USER_SIZE start
+  * counting down the SERVER_SPLIT_RECOVERY_TIME
+  */
+-#define SPLIT_SMALLNET_USER_SIZE 500 /* was 10000 */
++#define SPLIT_SMALLNET_USER_SIZE 0 /* was 10000 */
+ 
+ /*
+  * SPLIT_PONG will send a PING to a server after the connect burst.
+@@ -657,13 +657,13 @@
+  * you should be able to crank DEFAULT_SERVER_SPLIT_RECOVERY_TIME
+  * down to 1.
+  */
+-#define SPLIT_PONG
++#undef SPLIT_PONG
+ 
+ /*
+  * DEFAULT_SERVER_SPLIT_RECOVERY_TIME - determines how long to delay split
+  * status after resyncing
+  */
+-#define DEFAULT_SERVER_SPLIT_RECOVERY_TIME 1
++#define DEFAULT_SERVER_SPLIT_RECOVERY_TIME 0
+ 
+ /* LIMIT_UH
+  * If this is defined, Y line limit is made against the actual
+@@ -787,7 +787,7 @@
+  * it will show up in /list
+  */
+ 
+-#define MIN_USERS_FOR_LIST 4
++#define MIN_USERS_FOR_LIST 2
+ 
+ /* USE_KNOCK
+  * KNOCK allows users to send a "knock" to a +i channel.

@@ -1,6 +1,4 @@
 bin/dancer-ircd
-bin/mkpasswd
-bin/viconf
 @unexec if cmp -s %D/etc/dancer-ircd/ircd.conf %D/etc/dancer-ircd/ircd.conf.sample; then rm -f %D/etc/dancer-ircd/ircd.conf; fi
 etc/dancer-ircd/ircd.conf.sample
 @exec if [ ! -f %B/ircd.conf ]; then cp %B/%f %B/ircd.conf; fi
@@ -22,52 +20,6 @@ etc/dancer-ircd/omotd.sample
 etc/rc.d/dancer-ircd.sh
 @exec install -d -o ircd -g ircd -m 700 /var/log/dancer-ircd /var/run/dancer-ircd
 @unexec rmdir %D/etc/dancer-ircd /var/log/dancer-ircd /var/run/dancer-ircd 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/dancer-ircd /var/log/dancer-ircd /var/run/dancer-ircd`` to remove any configuration files and log files left." | fmt
-%%PORTDOCS%%%%DOCSDIR%%/CIDR.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.hybrid-6
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FIRST.hybrid-6
-%%PORTDOCS%%%%DOCSDIR%%/README.TSora
-%%PORTDOCS%%%%DOCSDIR%%/README.small_nets
-%%PORTDOCS%%%%DOCSDIR%%/README.umodes
-%%PORTDOCS%%%%DOCSDIR%%/RELNOTES.hybrid-6
-%%PORTDOCS%%%%DOCSDIR%%/Tao-of-IRC.940110
-%%PORTDOCS%%%%DOCSDIR%%/blalloc.txt
-%%PORTDOCS%%%%DOCSDIR%%/example.conf
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/ChangeLog.hybrid-6.gz
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/README
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/example.conf
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/example.conf.trillian
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/mtrie.txt
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/opermyth.txt
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/opers.txt
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/server-version-info
-%%PORTDOCS%%%%DOCSDIR%%/hybrid/simple.conf
-%%PORTDOCS%%%%DOCSDIR%%/ircd.8
-%%PORTDOCS%%%%DOCSDIR%%/old/Authors
-%%PORTDOCS%%%%DOCSDIR%%/old/Etiquette
-%%PORTDOCS%%%%DOCSDIR%%/old/README
-%%PORTDOCS%%%%DOCSDIR%%/rfc1459.txt
-%%PORTDOCS%%%%DOCSDIR%%/sgml/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/sgml/README
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/cmodes.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/commands.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/config.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/dancer-oper-guide.ced
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/dancer-oper-guide.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/intro.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-oper-guide/umodes.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/changes.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/channels.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/dancer-user-guide.ced
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/dancer-user-guide.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/intro.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/dancer-user-guide/umodes.sgml
-%%PORTDOCS%%%%DOCSDIR%%/sgml/fdl.sgml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml/dancer-user-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml/dancer-oper-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/old
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hybrid
+%%PORTDOCS%%%%DOCSDIR%%/dancer-oper-guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/dancer-user-guide.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
