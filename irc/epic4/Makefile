@@ -3,7 +3,7 @@
 # Date created:		11 November 1998
 # Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
-# $Id: Makefile,v 1.11 1999/02/28 06:41:09 obrien Exp $
+# $Id: Makefile,v 1.12 1999/02/28 21:25:40 mph Exp $
 #
 
 DISTNAME=	epic-4.pre2.003
@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
 DISTFILES=	epic4pre2.003.tar.gz epic4pre2-help.tar.gz
-
 
 MAINTAINER=	benhutch@xfiles.org.uk
 
