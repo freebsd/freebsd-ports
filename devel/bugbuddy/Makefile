@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bugbuddy
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/bug-buddy
+MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
 DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

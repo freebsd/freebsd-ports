@@ -2,23 +2,18 @@ bin/bug-buddy
 share/gnome/apps/Utilities/bug-buddy.desktop
 share/gnome/bug-buddy/bug-anim.png
 share/gnome/bug-buddy/bug-buddy.glade
+share/gnome/bug-buddy/bug-buddy.png
 share/gnome/bug-buddy/bug-core.png
 share/gnome/bug-buddy/bug-flower.png
 share/gnome/bug-buddy/bugzilla/gnome.bugzilla
 share/gnome/bug-buddy/bugzilla/gnome/config
 share/gnome/bug-buddy/bugzilla/gnome/products
-share/gnome/bug-buddy/debian-packages
+share/gnome/bug-buddy/bugzilla/ximian.bugzilla  
+share/gnome/bug-buddy/bugzilla/ximian/config
+share/gnome/bug-buddy/bugzilla/ximian/products
 share/gnome/bug-buddy/gdb-cmd
-share/gnome/bug-buddy/gnome-packages
-share/gnome/bug-buddy/gnome.appmap
 share/gnome/bug-buddy/gnome.png
-share/gnome/bug-buddy/helix-packages
-share/gnome/bug-buddy/kde-packages
-share/gnome/bug-buddy/xml/Debian.bts
-share/gnome/bug-buddy/xml/GNOME.bts
-share/gnome/bug-buddy/xml/Helix_Code.bts
-share/gnome/bug-buddy/xml/Independent_Project.bts
-share/gnome/bug-buddy/xml/KDE.bts
+share/gnome/bug-buddy/ximian.png
 share/gnome/help/bug-buddy/C/authors.html
 share/gnome/help/bug-buddy/C/bugs.html
 share/gnome/help/bug-buddy/C/component.html
@@ -95,7 +90,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/help/bug-buddy/C/figures
 @dirrm share/gnome/help/bug-buddy/C
 @dirrm share/gnome/help/bug-buddy
-@dirrm share/gnome/bug-buddy/xml
+@dirrm share/gnome/bug-buddy/bugzilla/ximian
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
