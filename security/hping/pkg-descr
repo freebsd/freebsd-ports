@@ -1,0 +1,22 @@
+hping2 is a network tool able to send custom ICMP/UDP/TCP
+packets and to display target replies like ping do with
+ICMP replies. hping2 handle fragmentation, arbitrary packet
+body and size and can be used in order to transfer files
+under supported protocols. Using hping2 you are able at
+least to perform the following jobs:
+
+	- Test firewall rules
+	- [spoofed] port scanning
+	- Test net performance using different protocols,
+	  packet size, TOS (type of service) and fragmentation.
+	- Path MTU discovery
+	- Files transfering even between really fascist firewall rules.
+	- Traceroute like under different protocols.
+	- Firewalk like usage.
+	- Remote OS fingerprint.
+	- TCP/IP stack auditing.
+	- A lot of others. 
+
+WWW: http://www.kyuzz.org/antirez/hping/
+
+-- Roman Shterenzon <roman@xpert.com>

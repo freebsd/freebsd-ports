@@ -1,0 +1,10 @@
+--- getlhs.c.orig	Thu Oct  5 15:26:31 2000
++++ getlhs.c	Thu Oct  5 15:26:26 2000
+@@ -73,6 +73,7 @@
+ 	else if ( strstr(ifname, "eth") /* ? */
+ 	     ||   strstr(ifname, "ed")
+ 	     ||   strstr(ifname, "ne")
++	     ||   strstr(ifname, "xe")	/* Xircom */
+ 	     ||   strstr(ifname, "xl")	/* 3com */
+ 	     ||   strstr(ifname, "vx")	/* 3com (older model) */
+ 	     ||   strstr(ifname, "ep")  /* 3com 3c589 */
