@@ -36,6 +36,7 @@ NO_DESCRIBE=yes
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER) && !defined(WITHOUT_POSTGRESQL_DRIVER)
+BROKEN=		does not compile with postgresql 7.4
 LIB_DEPENDS=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
 CONFIGURE_ARGS+=	--enable-pgsql
 CONFIGURE_MODULES+=	"gpgsql"
@@ -77,6 +78,7 @@ describe:
 .include <bsd.port.pre.mk>
 
 .if defined(POWERDNS_WITH_RECURSOR)
+BROKEN=		does not compile in this version
 USE_GCC=3.2
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
