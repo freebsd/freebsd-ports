@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1997/01/06 21:43:22 ache Exp $
+# $Id: Makefile,v 1.11 1997/04/27 15:59:09 ache Exp $
 #
 
 DISTNAME=       unzip-5.3
@@ -16,7 +16,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 NO_WRKSUBDIR=   YES
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
-MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS}" -f
+MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:
