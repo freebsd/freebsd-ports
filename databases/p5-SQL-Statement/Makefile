@@ -7,6 +7,7 @@
 
 PORTNAME=	SQL-Statement
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -28,6 +29,7 @@ MAN3=		SQL::Dialects::ANSI.3 SQL::Dialects::AnyData.3 \
 post-configure:
 	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
 	${PERL} -pi -e 's,\r\n,\n,' `${FIND} ${WRKSRC} -type f`
+	${PERL} -pi -e 's,^use warnings;,,' ${WRKSRC}/lib/SQL/Parser.pm
 
 .endif
 .include <bsd.port.post.mk>
