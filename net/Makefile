@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1995/08/26 07:49:59 asami Exp $
+# $Id: Makefile,v 1.53 1995/08/28 13:29:37 jkh Exp $
 #
 
     SUBDIR += apache
@@ -8,6 +8,7 @@
     SUBDIR += chimera
     SUBDIR += dgd
     BROKEN += dgd-lpmud
+    SUBDIR += dip
     SUBDIR += fspclient
     SUBDIR += gated
     SUBDIR += gn
