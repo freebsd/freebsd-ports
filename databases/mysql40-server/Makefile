@@ -69,10 +69,10 @@ CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 .else
-LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.[24]:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
 .else
