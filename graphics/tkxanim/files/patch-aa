@@ -1,0 +1,17 @@
+--- tkxanim.orig	Mon Jun 21 18:47:01 1999
++++ tkxanim	Sun Oct 24 13:16:35 1999
+@@ -1,4 +1,4 @@
+-#!/usr/bin/wish -f
++#!CHANGEME/bin/wish8.2 -f
+ 
+ # tkxanim v 0.43
+ # Aaron Faby <aaron@yourlink.net>
+@@ -20,7 +20,7 @@
+ set loops 1
+ set debug 0
+ 
+-set background [image create photo -file /usr/local/tkxanim/tkxanim.gif]
++set background [image create photo -file CHANGEME/share/icons/tkxanim.gif]
+ label .background -image $background
+ label .authorinfo -text "Copyright 1999, Aaron Faby <aaron@yourlink.net>" -justify center
+ 

@@ -1,0 +1,30 @@
+# New ports collection makefile for:	tkxanim
+# Version required:			0.43
+# Date created:				24 October 1999
+# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	tkxanim-0.43
+CATEGORIES=	graphics tk82
+MASTER_SITES=	http://members.yourlink.net/aaron/
+
+MAINTAINER=	jedgar@fxp.org
+
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
+		xanim:${PORTSDIR}/graphics/xanim
+
+WRKSRC=		${WRKDIR}/Tkxanim
+
+do-build:
+		@${MV} ${WRKSRC}/tkxanim ${WRKSRC}/tkxanim.orig
+		@${SED} -e 's|CHANGEME|${PREFIX}|' \
+		    < ${WRKSRC}/tkxanim.orig > ${WRKSRC}/tkxanim
+
+do-install:
+		${INSTALL_SCRIPT} ${WRKSRC}/tkxanim ${PREFIX}/bin
+		-${MKDIR} ${PREFIX}/share/icons
+		${INSTALL_DATA} ${WRKSRC}/tkxanim.gif ${PREFIX}/share/icons
+
+.include <bsd.port.mk>
