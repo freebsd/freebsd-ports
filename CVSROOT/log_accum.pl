@@ -600,8 +600,8 @@ sub do_diff {
 					    "-r$prev_rev", "-r$rev", $file);
 				}
 
-				print "Generating diff: $cfg::PROG_CVS " .
-				    "@args" if  $cfg::DEBUG;
+				print "Generating diff: $cfg::PROG_CVS @args\n"
+				    if  $cfg::DEBUG;
 				open(DIFF, "-|") || exec $cfg::PROG_CVS, @args;
 				while(<DIFF>) {
 					$diff .= $_;
@@ -616,7 +616,7 @@ sub do_diff {
 			    $diff_length . " bytes > " .
 			    $cfg::MAX_DIFF_SIZE * 1024 . " bytes)!\n";
 		}
-		&append_line($outfile, "\n\n$diff");
+		&append_line($outfile, "$diff");
 	}
 }
 
