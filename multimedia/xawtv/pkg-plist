@@ -1,5 +1,6 @@
 bin/alevtd
 bin/dump-mixers
+bin/motv
 bin/ntsc-cc
 bin/propwatch
 bin/record
@@ -13,6 +14,13 @@ bin/v4lctl
 bin/webcam
 bin/xawtv
 bin/xawtv-remote
+lib/xawtv/conv-mjpeg.so
+lib/xawtv/drv0-bsd.so
+lib/xawtv/flt-invert.so
+lib/xawtv/flt-nop.so
+lib/xawtv/snd-oss.so
+lib/xawtv/write-avi.so
+@dirrm lib/xawtv
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
 lib/X11/fonts/misc/led-iso8859-1.pcf.gz

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       xawtv
-PORTVERSION=	3.67
+PORTVERSION=	3.68
 CATEGORIES=     graphics
 MASTER_SITES=   http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,18 +18,13 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-
 FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
 		libng libvbi http
 FILES_X11BASE=	configure Make.config.in
-
 
 MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 record.1 \
 		rootv.1 scantv.1 showriff.1 \
@@ -39,14 +34,10 @@ MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
 PLIST_SUB+=	X11PREFIX=${X11BASE}
-STRCASESTRFILES=src/commands.c
 
 post-patch:
 .for i in ${FILES_X11BASE}
 	${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/$i
-.endfor
-.for i in ${STRCASESTRFILES}
-	${PERL} -pi -e "s|strcasestr|mystrcasestr|g" ${WRKSRC}/$i
 .endfor
 
 post-configure:
