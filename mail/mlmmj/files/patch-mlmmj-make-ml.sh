@@ -1,6 +1,5 @@
-diff -urN mlmmj-0.7.1.orig/src/mlmmj-make-ml.sh mlmmj-0.7.1/src/mlmmj-make-ml.sh
---- mlmmj-0.7.1.orig/src/mlmmj-make-ml.sh	Sun Jun  6 20:26:51 2004
-+++ src/mlmmj-make-ml.sh	Sat Jun 12 15:39:29 2004
+--- ../mlmmj-0.8.1.orig/src/mlmmj-make-ml.sh	Fri Jun 25 02:05:43 2004
++++ src/mlmmj-make-ml.sh	Sun Jun 27 20:31:18 2004
 @@ -5,6 +5,7 @@
  
  VERSION="0.1"
@@ -9,12 +8,12 @@ diff -urN mlmmj-0.7.1.orig/src/mlmmj-make-ml.sh mlmmj-0.7.1/src/mlmmj-make-ml.sh
  
  USAGE="mlmmj-make-ml "$VERSION"
  "$0" [OPTIONS]
-@@ -74,8 +75,11 @@
- 	FQDN=`domainname`
+@@ -81,8 +82,11 @@
  fi
+ echo "$OWNER" > "$LISTDIR"/"control/owner"
  
--echo -n "The path to the directory with the texts for the list? [] : "
-+echo -n "The path to the directory with the texts for the list? [$PREFIX/share/mlmmj/listtexts] : "
+-echo -n "The path to texts for the list? (listtexts/ dir in the src) [] : "
++echo -n "The path to texts for the list? (listtexts/ dir in the src) [$PREFIX/share/mlmmj/listtexts] : "
  read TEXTPATH
 +if [ -z "$TEXTPATH" ]; then
 +	TEXTPATH="$PREFIX/share/mlmmj/listtexts"
