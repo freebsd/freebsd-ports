@@ -1,0 +1,11 @@
+Cel is a computer language. In particular it is of the
+prototype-based, object oriented variety.
+
+It was meant to be high-level, small, simple, and very OO. It's
+syntax is very similar to Self (which is almost like Smalltalk).
+Cel was influenced primarily by the language Self. Other strong
+influencers were Smalltalk, Forth, Newtonscript, Objective-C, and
+Python.
+
+- George Reid
+greid@ukug.uk.freebsd.org
