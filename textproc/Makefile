@@ -121,6 +121,7 @@
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sp
+    SUBDIR += tdtd.el
     SUBDIR += texi2html
     SUBDIR += textutils
     SUBDIR += tkdiff

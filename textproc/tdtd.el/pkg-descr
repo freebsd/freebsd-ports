@@ -1,0 +1,24 @@
+This package contains an emacs major mode for editing SGML and XML DTDs. 
+* FEATURES
+ - Standalone mode for editing DTDs;
+ - "Goto" menu for locating declarations within the current buffer;
+ - `dtd-etags' function for creating Emacs TAGS files for easy lookup
+   across multiple files of any element, parameter entity, or
+   notation's definition using Emacs's built-in tag-lookup functions;
+ - `dtd-grep' function for searching files that shares a file history
+   with `dtd-etags' for easy searching of the same files with both functions;
+ - Specific font lock highlighting of declarations in XML DTDs, SGML
+   DTDs, SGML Declarations, and System Declarations so that the
+   important information stands out;
+ - XML-specific behaviour that, at user option, is triggered by
+   automatic detection of the XML Declaration; 
+ - Functions for writing and editing element, attribute, internal
+   parameter entity and external parameter entity declarations and
+   comments to ease creating and keeping a consistent style; and
+ - Elements and parameter entity names referenced in declarations are
+   stored in minibuffer history to minimise retyping in new declarations.
+
+WWW: http://www.mulberrytech.com/tdtd/
+
+- Leo Kim
+leo@florida.sarang.net

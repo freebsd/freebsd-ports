@@ -1,0 +1,8 @@
+share/emacs/site-lisp/tdtd.el
+share/emacs/site-lisp/tdtd-font.el
+share/doc/tdtd.el/TODO
+share/doc/tdtd.el/changelog.txt
+share/doc/tdtd.el/dot_emacs
+share/doc/tdtd.el/readme.txt
+share/doc/tdtd.el/tutorial.txt
+@dirrm share/doc/tdtd.el
