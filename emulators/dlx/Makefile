@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://max.stanford.edu/pub/max/pub/hennessy-patterson.software/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if ${MACHINE_ARCH} == alpha
 BROKEN=		will not build on alpha
