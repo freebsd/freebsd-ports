@@ -19,7 +19,7 @@ COMMENT=	A Ruby extension library to access PDFlib
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		pdf.4:${PORTSDIR}/print/pdflib
+		pdf.4:${PORTSDIR}/print/pdflib4
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
