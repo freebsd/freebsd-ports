@@ -5,28 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=		swhplugins
-PORTVERSION=		0.3.3
+PORTVERSION=		0.3.6
 CATEGORIES=		audio
 MASTER_SITES=		http://plugin.org.uk/releases/${PORTVERSION}/
 DISTNAME=		swh-plugins-${PORTVERSION}
 
-MAINTAINER=		arved@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 BUILD_DEPENDS=		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=		fftw.2:${PORTSDIR}/math/fftw
 
-USE_AUTOMAKE_VER=	14
-AUTOMAKE_ARGS=		--add-missing --foreign
+GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-pre-extract:
-	@${ECHO_CMD} "NOTE: This port does not build all \
-			Plugins, due to missing lrintf() function on FreeBSD"
 post-patch:
-	${REINPLACE_CMD} -e 's,Bsymbolic,Bsymbolic -L${LOCALBASE}/lib,' ${WRKSRC}/Makefile.am
+		${REINPLACE_CMD} -e "s,-O6,," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
