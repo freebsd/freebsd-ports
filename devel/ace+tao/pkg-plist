@@ -1234,6 +1234,7 @@ include/ace/XtReactor.h
 include/ace/ace_wchar.h
 include/ace/ace_wchar.inl
 include/ace/config-all.h
+include/ace/config-freebsd.h
 include/ace/config-g++-common.h
 include/ace/config-lite.h
 include/ace/config-posix.h

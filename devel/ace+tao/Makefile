@@ -138,6 +138,7 @@ do-install:
 	${FIND} ace -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.cpp" \) \( -not -name "config-*.h" \
 		-o -name config-all.h -o -name config-lite.h -o \
+		-o -name config-freebsd.h \
 		-name config-posix.h -o -name config-g++-common.h \) -exec \
 			${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 .if !defined(WITHOUT_TAO)
