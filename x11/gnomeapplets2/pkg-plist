@@ -1424,8 +1424,6 @@ share/gnome/pixmaps/gnome-cpu.png
 share/gnome/pixmaps/gnome-eyes.png
 share/gnome/pixmaps/gnome-mini-commander.png
 share/gnome/pixmaps/gnome-mixer-applet.png
-share/gnome/pixmaps/gswitchit-applet.png
-share/gnome/pixmaps/gswitchit-properties-capplet.png
 share/gnome/pixmaps/mailcheck/eclouds.png
 share/gnome/pixmaps/mailcheck/email-e.png
 share/gnome/pixmaps/mailcheck/email-eclouds.png
@@ -1540,6 +1538,8 @@ share/gnome/xmodmap/xmodmap.us.old
 share/gnome/xmodmap/xmodmap.us101A_x86
 share/gnome/xmodmap/xmodmap.us_intl
 share/gnome/xmodmap/xmodmap.yu
+share/icons/hicolor/48x48/apps/gswitchit-applet.png
+share/icons/hicolor/48x48/apps/gswitchit-properties-capplet.png
 share/locale/am/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-applets-2.0.mo
