@@ -1,0 +1,13 @@
+--- configure.orig	Wed Aug 27 15:47:59 2003
++++ configure	Wed Aug 27 15:55:40 2003
+@@ -13748,8 +13748,8 @@
+ echo "${ECHO_T}\"$with_mysql\"" >&6
+    if test "$with_mysql" != "no"
+    then
+-    LDFLAGS="-L$with_mysql/lib -L$with_mysql/lib/mysql $LDFLAGS"
+-    CPPFLAGS="-I$with_mysql/include $CPPFLAGS"
++    LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql $LDFLAGS"
++    CPPFLAGS="-I${LOCALBASE}/include $CPPFLAGS"
+ 
+ for ac_header in mysql/mysql.h
+ do

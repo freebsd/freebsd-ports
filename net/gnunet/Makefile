@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -17,6 +18,8 @@ DISTNAME=	GNUnet-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
@@ -24,6 +27,7 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gtk12
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,6 +44,7 @@ PLIST_SUB+=	WITH_GDBM="@comment "
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	323
+CONFIGURE_ARGS+=	--with-mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
