@@ -17,6 +17,14 @@ MAINTAINER=	nbm@FreeBSD.org
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
+
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	YES
+PLIST_SUB=	OPENSSLFLAG=
+.else
+PLIST_SUB=	OPENSSLFLAG="@comment "
+.endif
+
 .if !exists(/usr/include/openssl/idea.h)
 CFLAGS+=	-DNO_IDEA
 .endif

@@ -1,4 +1,4 @@
-bin/couriertls
+%%OPENSSLFLAG%%bin/couriertls
 bin/imapd
 bin/maildirmake
 bin/pop3d
