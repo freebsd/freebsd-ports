@@ -2590,7 +2590,6 @@ gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsdrive	ports/astro/gpsdrive
 gpsman		ports/astro/gpsman
-gpt		ports/misc/gpt
 gputils		ports/devel/gputils
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
@@ -7358,6 +7357,7 @@ ports_games	ports/games
 ports_german	ports/german
 ports_getopt	ports/misc/getopt
 ports_gperf	ports/devel/gperf
+ports_gpt	ports/misc/gpt
 ports_graphics	ports/graphics
 ports_gzip	ports/archivers/gzip
 ports_hebrew	ports/hebrew
