@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-NO_PACKAGE=	Unsure of djb\'s license
+NO_PACKAGE=	"Unsure of djb\'s license"
 
 ALL_TARGET=	it man
 INSTALL_TARGET=	setup
