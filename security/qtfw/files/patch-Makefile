@@ -1,0 +1,32 @@
+--- Makefile.orig	Fri Sep 20 04:42:41 2002
++++ Makefile	Sat Sep 21 01:08:11 2002
+@@ -1,16 +1,14 @@
+ TARGET:=qtfw
+-prefix=/usr/local
+ INSTALL=install
+-CXX:=g++
+ MOC:=moc
+ UIC:=uic
+ RM:=rm -f
+ AWK=awk
+ LDFLAGS=
+-CFLAGS=-O -I. -I.. -Wall
+-QT_INCLUDES:=-I/usr/X11R6/include
+-QT_LIBS:=-L/usr/X11R6/lib
+-LIBS:=-lqt-mt -pthread
++CXXFLAGS+=-I. -I.. -Wall ${PTHREAD_CFLAGS}
++QT_INCLUDES:=-I${X11BASE}/include
++QT_LIBS:=-L${X11BASE}/lib
++LIBS:=-lqt-mt ${PTHREAD_LIBS}
+ 
+ UI_TEMPLATES_DIR:=../qtdesigner-ui
+ UI_TEMPLATES=$(wildcard $(UI_TEMPLATES_DIR)/*.ui)
+@@ -32,7 +30,7 @@
+ $(TARGET) :$(UI_HEADERS) $(UI_SOURCES)  $(OBJECTS)
+ 	$(CXX) $(LDFLAGS) $(QT_LIBS) $(LIBS) $(OBJECTS) -o $@
+ %.o : %.cpp
+-	$(CXX) $(CFLAGS) $(QT_INCLUDES) -c $<
++	$(CXX) $(CXXFLAGS) $(QT_INCLUDES) -c $<
+ $(UI_HEADERS) : %.H : $(UI_TEMPLATES_DIR)/%.ui
+ 	$(UIC) -o $@ $<
+ $(UI_SOURCES) : %.cpp : %.H $(UI_TEMPLATES_DIR)/%.ui

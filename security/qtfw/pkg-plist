@@ -1,11 +1,1 @@
 bin/qtfw
-%%PORTDOCS%%share/doc/qtfw/index.html
-%%PORTDOCS%%share/doc/qtfw/ipfwman.html
-%%PORTDOCS%%share/doc/qtfw/qtfwlogo.jpeg
-%%PORTDOCS%%share/examples/qtfw/base.rules
-%%PORTDOCS%%share/examples/qtfw/client.rules
-share/qtfw/gear.png
-share/qtfw/qtfwlogo.png
-@dirrm share/qtfw
-%%PORTDOCS%%@dirrm share/examples/qtfw
-%%PORTDOCS%%@dirrm share/doc/qtfw
