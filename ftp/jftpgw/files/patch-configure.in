@@ -1,0 +1,11 @@
+--- configure.in~	Sun Feb  3 01:25:28 2002
++++ configure.in	Thu Feb 14 22:21:33 2002
+@@ -49,7 +49,7 @@
+ 
+ dnl Checks for library functions.
+ AC_FUNC_WAIT3
+-AC_CHECK_FUNCS(getcwd strdup seteuid setegid)
++AC_CHECK_FUNCS(getcwd strdup strcasestr seteuid setegid)
+ 
+ dnl From icecast
+ AC_MSG_CHECKING([for unix98 socklen_t])

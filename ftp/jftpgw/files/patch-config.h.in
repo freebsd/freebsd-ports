@@ -1,0 +1,12 @@
+--- config.h.in~	Thu Feb 14 22:40:52 2002
++++ config.h.in	Thu Feb 14 22:42:17 2002
+@@ -100,6 +100,9 @@
+ /* Define if you have the strdup function.  */
+ #undef HAVE_STRDUP
+ 
++/* Define if you have the strcasestr function.  */
++#undef HAVE_STRCASESTR
++
+ /* Define if you have the strerror function.  */
+ #undef HAVE_STRERROR
+ 
