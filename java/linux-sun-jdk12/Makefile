@@ -33,7 +33,7 @@ RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 IGNORE=	"You can not legally distribute binaries"
 .endif
 
-APP_HOME=	${PREFIX}/${PKGNAME}
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}jdk1.2.2
 DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-${ARCH}
 
 .include <bsd.port.pre.mk>
@@ -41,6 +41,9 @@ DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSIO
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=You must manually fetch the Sun Java 2 Standard Edition SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again.
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
 	@${ECHO} -n "Creating destination directory ${APP_HOME}..."
