@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041219:
+  AFFECTS: users of textproc/jdictionary
+  AUTHOR: hq@FreeBSD.org
+
+  The location for JDictionary port installed files has changed. This also
+  affects the various plugins. Hence, users should upgrade all jdictionary
+  related ports at once to avoid inconsistencies:
+
+  $ portupgrade jdictionary\*
+
 20041214:
   AFFECTS: users of net/freenet6
   AUTHOR: edwin@FreeBSD.org
