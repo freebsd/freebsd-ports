@@ -7,6 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -40,6 +41,7 @@ CONFIGURE_ENV+=		THREADSCPPFLAGS="${PTHREAD_CFLAGS}" \
 USE_GMAKE=		yes
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" CC="${CC}" CXX="${CXX}"
 
+MAN1+=	derb.1
 MAN1+=	gencnval.1
 MAN1+=	genrb.1
 MAN1+=	icu-config.1
@@ -47,6 +49,7 @@ MAN1+=	makeconv.1
 MAN1+=	pkgdata.1
 MAN1+=	uconv.1
 MAN8+=	decmn.8
+MAN8+=	gencase.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gennames.8
