@@ -133,6 +133,7 @@
     SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella
     SUBDIR += gtkyahoo
+    SUBDIR += gutenfetch
     SUBDIR += h2n
     SUBDIR += hagelslag
     SUBDIR += hesiod
