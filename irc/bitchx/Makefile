@@ -64,6 +64,10 @@ CONFIGURE_ARGS+=--enable-sound
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64"
+BROKEN="Dumps core on startup"
+.endif
+
 .if defined(WITH_IPV6)
 USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
