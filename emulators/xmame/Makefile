@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.67.1
+PORTVERSION?=	0.67.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -121,7 +121,7 @@ WITH_DATFILES=	yes
 .if ${WITH_DATFILES:L} != "no"
 PLIST_SUB+=	DATFILES=""
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 HIVER=		795
 
