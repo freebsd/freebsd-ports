@@ -7,6 +7,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -48,7 +49,9 @@ post-extract:
 	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/web2c
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@if [ -L ${PREFIX}/share/texmf/web2c/texmf.cnf ]; then \
+	  ${RM} ${PREFIX}/share/texmf/web2c/texmf.cnf; \
+	  fi
 
 post-install:
 .for bin in ${BINARIES}
