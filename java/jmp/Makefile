@@ -16,11 +16,14 @@ COMMENT=	Java Memory Profiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
+OPTIONS=	X11 "Enable X11 support" on
+OPTIONS+=	DEBUG "Enable extra debug output" off
+
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 
 USE_GETTEXT=	yes
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--enable-noui
+CONFIGURE_ARGS+=	--enable-noui
 .else
 USE_XLIB=	yes
 LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
