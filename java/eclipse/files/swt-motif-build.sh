@@ -37,7 +37,7 @@ case $OS in
             echo "Building FreeBSD version of SWT and GNOME DLLs."
             gmake -f make_freebsd.mak ${1} ${2} ${3} ${4}
             build_kde=`pkg_info -xc kdebase | grep "no packages match"`
-            if [ "$build_kde" = "" ]; then
+            if [ "$build_kde" != "" ]; then
                 echo "Building FreeBSD version of KDE DLL."
                 gmake -f make_freebsd.mak make_kde
             fi

@@ -47,9 +47,9 @@
     <property name="header-path" value="${jdk-path}/include"/>
     <property name="header-freebsd-path" value="${header-path}/freebsd" />
 
-	<echo message="gcc33 -o  ${library-file} -shared -I${src-path} -I${header-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
+	<echo message="${CC} -o  ${library-file} -shared -I${src-path} -I${header-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
 
-    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
+    <apply executable="${CC}" dest="${eclipse-home}/" parallel="false">
       <arg value="-o"/>
       <arg value="${library-file}"/>
       <arg value="-shared"/>
