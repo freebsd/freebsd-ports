@@ -26,12 +26,13 @@ CONFIGURE_ARGS=	--disable-static \
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	MYSQL	"With MySQL Driver" on \
+		MSQL	"With MSQL Driver" off \
 		PGSQL	"With PostgreSQL Driver" on \
 		SQLITE	"With SQLite Driver" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_MYSQL) && defined(WITHOUT_PGSQL) && defined(WITHOUT_SQLITE)
+.if defined(WITHOUT_MYSQL) && defined(WITHOUT_PGSQL) && defined(WITHOUT_SQLITE) && defined(WITHOUT_MSQL)
 IGNORE=		You must choose at least one driver
 .endif
 
@@ -59,13 +60,13 @@ PLIST_SUB+=	SQLITE=""
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-#.if defined(WITH_MSQL)
-#LIB_DEPENDS+=	msql.1:${PORTSDIR}/databases/msql
-#CONFIGURE_ARGS+=	--with-msql
-#PLIST_SUB+=	MSQL=""
-#.else
-#PLIST_SUB+=	MSQL="@comment "
-#.endif
+.if defined(WITH_MSQL)
+LIB_DEPENDS+=	msql.1:${PORTSDIR}/databases/msql
+CONFIGURE_ARGS+=	--with-msql
+PLIST_SUB+=	MSQL=""
+.else
+PLIST_SUB+=	MSQL="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|$$CFLAGS|g' ${WRKSRC}/configure
