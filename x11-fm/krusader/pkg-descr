@@ -1,23 +1,27 @@
-Krusader is a File Manager for KDE, patterned after old-school managers like 
-Midnight Commander and Norton Commander. It features basically all your 
-file-management needs, plus extensive archive handling, supporting many archive
-formats, mounted filesystems support, ftp, and much much more.
+Krusader is an advanced twin-panel (commander-style) file-manager for KDE 3.x 
+(similar to Midnight or Total Commander) but with many extras. It provides all 
+the file-management features you could possibly want.
+Plus: extensive archive handling, mounted filesystem support, FTP, advanced 
+search module, viewer/editor, directory synchronisation, file content 
+comparisons, powerful batch renaming and much much more.
+It supports the following archive formats: tar, zip, bzip2, gzip, rar, ace, 
+arj and rpm and can handle other KIOSlaves such as smb:// or fish://
+It is (almost) completely customizable, very user friendly, fast and looks 
+great on your desktop! :-)
 
-List of changes of MAJOR changes from 1.20 version:
-* Creating new files with SHIFT+F4
-* Tabbed - browsing! (click the middle or right mouse button on a folder)
-* a new view dialog, click SHIFT-F3 
-* Panel swapping by Ctrl+U
-* Right click menu, can now "open" multiple files (with the same mimetype)
-* Updates to the search module
-* A new command line widget, with many tweaks (ctrl+enter,ctrl+shift+enter,...)
-* run-in-terminal keeps the terminal open.
-* A new bookmark system is here! courtasy of Jan Halasa
-* In-place renaming (thanks to Heiner Eichmann)
-* New KIO slaves to handle archives.
-* Support for multi-file properties.
-* Krusader now obeys KDE's date time format
+Many things changed since 1.30, so here's some hightlights:
+* Configuring custom color for the panel (much requested feature)
+* Quick-mode for mountman (just press and HOLD the mountman icon)
+* Panel is now configurable (which columns to show, show icons or not ...)
+* Support for single-click selection mode
+* New toolbar for the panel
+* a Locate frontend
+* A new konfigurator (thanks to csaba)
+* New quick-search mode for the panel (thanks to heiner)
+* Ability to edit/view files from the search results window
+* A folder-history button, a-la-total commander. thanks to Hans Loffler
+* Synchronizer (thanks csaba)
+* File splitter
 
 WWW: http://krusader.sourceforge.net
-
 Heiner (h.eichmann@gmx.de)
