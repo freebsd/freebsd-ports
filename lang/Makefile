@@ -199,6 +199,7 @@
     SUBDIR += pnetc
     SUBDIR += pnetlib
     SUBDIR += ptoc
+    SUBDIR += pugs
     SUBDIR += py-compiler
     SUBDIR += py-mx-base
     SUBDIR += py-prolog

@@ -1,0 +1,5 @@
+Pugs is an implementation of Perl 6, written in Haskell.
+It aims to support the full Perl6 specification, 
+as detailed in the Synopses.
+
+WWW: http://pugscode.org/
