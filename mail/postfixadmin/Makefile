@@ -14,12 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rob@debank.tv
 COMMENT=	PHP frontend to postfix and mySQL
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
-
+USE_PHP=	yes
 NO_BUILD=	yes
 FETCH_SITE=	http://high5.net/postfixadmin/download.php
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
