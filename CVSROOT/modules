@@ -6465,6 +6465,7 @@ poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
 polygraph	ports/benchmarks/polygraph
+pop-before-smtp	ports/mail/pop-before-smtp
 pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
 pop3vscan	ports/mail/pop3vscan
