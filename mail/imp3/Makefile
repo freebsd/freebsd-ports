@@ -148,7 +148,11 @@ CONFDIR=	${IMPDIR}/config
 HCONFDIR=	${HORDEDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
-PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
+.if defined(WITH_APACHE2)
+PHPSO=		${LOCALBASE}/libexec/apache2/libphp4.so
+.else
+PHPSO=		${LOCALBASE}/libexec/apache/libphp4.so
+.endif
 
 HOSTNAME?=	`/bin/hostname`
 SERVOS?=	${OPSYS}-${OSREL}
