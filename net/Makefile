@@ -190,6 +190,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-URI
     SUBDIR += p5-pRPC
+    SUBDIR += p5-perl-ldap
     SUBDIR += pathchar
     SUBDIR += pchar
     SUBDIR += pcnfsd
