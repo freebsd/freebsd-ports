@@ -1,38 +1,25 @@
---- gnome-stones/Makefile.in.orig	Wed May  8 16:30:26 2002
-+++ gnome-stones/Makefile.in	Wed May  8 16:30:35 2002
-@@ -156,7 +156,7 @@
- Caves_in_files = default.caves.in tutorial.caves.in gnomekoban.caves.in atari.caves.in
- Caves_DATA = $(Caves_in_files:.caves.in=.caves)
- 
--gtkrcdir = $(datadir)
-+gtkrcdir = $(datadir)/gnome-stones
- gtkrc_DATA = gnome-stonesrc gnome-stonesrc.ko
- 
- Mimedir = $(datadir)/mime-info
---- gnome-stones/objects/Makefile.in.orig	Wed May  8 16:30:10 2002
-+++ gnome-stones/objects/Makefile.in	Wed May  8 16:31:30 2002
-@@ -131,7 +131,7 @@
- 
+--- gnome-stones/objects/Makefile.in.orig	Tue Jul 23 20:35:33 2002
++++ gnome-stones/objects/Makefile.in	Tue Jul 23 20:35:28 2002
+@@ -142,7 +142,7 @@
+ install_sh = @install_sh@
  GSTONES_SRC_DIR = $(srcdir)/../
  
 -objectdir = $(libdir)/gnome-stones/objects
 +objectdir = $(datadir)/gnome-stones/objects
  
- INCLUDES =  	-I$(GSTONES_SRC_DIR)					$(GNOME_GAMES_CFLAGS)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-I$(includedir)					
+ INCLUDES = \
+ 	-I$(GSTONES_SRC_DIR)				\
+@@ -167,11 +167,11 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(object_LTLIBRARIES)
  
-@@ -148,11 +148,11 @@
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- LIBS = @LIBS@
--libgnome_stones_la_LDFLAGS = 
--libgnome_stones_la_LIBADD = 
+-libgnome_stones_la_LDFLAGS =
 +libgnome_stones_la_LDFLAGS = -avoid-version
-+libgnome_stones_la_LIBADD =
- libgnome_stones_la_OBJECTS =  gnome-stones.lo
--libgnomekoban_la_LDFLAGS = 
--libgnomekoban_la_LIBADD = 
+ libgnome_stones_la_LIBADD =
+ am_libgnome_stones_la_OBJECTS = gnome-stones.lo
+ libgnome_stones_la_OBJECTS = $(am_libgnome_stones_la_OBJECTS)
+-libgnomekoban_la_LDFLAGS =
 +libgnomekoban_la_LDFLAGS = -avoid-version
-+libgnomekoban_la_LIBADD =
- libgnomekoban_la_OBJECTS =  gnomekoban.lo
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ libgnomekoban_la_LIBADD =
+ am_libgnomekoban_la_OBJECTS = gnomekoban.lo
+ libgnomekoban_la_OBJECTS = $(am_libgnomekoban_la_OBJECTS)
