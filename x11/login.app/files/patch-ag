@@ -1,0 +1,28 @@
+--- resources.c.orig	Sun Jul 25 11:09:29 1999
++++ resources.c	Mon Jan 17 19:08:45 2000
+@@ -80,10 +80,22 @@
+     }
+ 
+     /* Load fonts */
+-    resources->messageFont = XLoadQueryFont(dpy, preferences->messageFont);
+-    resources->inputFont = XLoadQueryFont(dpy, preferences->inputFont);
++    if ((resources->messageFont = XLoadQueryFont(dpy, preferences->messageFont)) == NULL) {
++    	printError("could not load message font: %s\n%s%s%s%s%s", preferences->messageFont, \
++    		"Try to edit your configuration file: ", appPath, "Themes/", preferences->theme, "/Settings");
++    	return 0;
++    	}
++    if ((resources->inputFont = XLoadQueryFont(dpy, preferences->inputFont)) == NULL) {
++    	printError("could not load input font: %s\n%s%s%s%s%s", preferences->inputFont, \
++    		"Try to edit your configuration file: ", appPath, "Themes/", preferences->theme, "/Settings");
++    	return 0;
++    	}
+     if (preferences->disableHostname == NO) {
+-	resources->hostnameFont = XLoadQueryFont(dpy, preferences->hostnameFont);
++	if ((resources->hostnameFont = XLoadQueryFont(dpy, preferences->hostnameFont)) == NULL) {
++		printError("could not load hostname font: %s\n%s%s%s%s%s", preferences->hostnameFont, \
++			"Try to edit your configuration file: ", appPath, "Themes/", preferences->theme, "/Settings");
++		return 0;
++		}
+     }
+     
+     /* Get hostname */

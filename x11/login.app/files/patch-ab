@@ -1,0 +1,11 @@
+--- config.h.orig	Mon Jan 17 16:35:19 2000
++++ config.h	Mon Jan 17 16:38:24 2000
+@@ -23,7 +23,7 @@
+ #define CONFIG_H
+ 
+ /* Enable shadow passwords, comment out to disable */
+-#define SHADOW_PASSWD
++/*#define SHADOW_PASSWD*/
+ 
+ /* xinit */
+ #define XINIT                   "/usr/X11R6/bin/xinit"

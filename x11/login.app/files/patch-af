@@ -1,0 +1,9 @@
+--- Preferences.orig	Mon Jan 17 16:51:19 2000
++++ Preferences	Mon Jan 17 16:51:33 2000
+@@ -1,5 +1,5 @@
+ {
+-  WelcomeMessage = "Welcome to LINUX";
++  WelcomeMessage = "Welcome to FreeBSD";
+   RestartMessage = "System is rebooting...";
+   PowerOffMessage = "System is shutting down...";
+   ConfirmRestartMessage = "Do you really want to restart the computer?";

@@ -1,0 +1,12 @@
+--- util.c.orig	Mon Jan 17 16:37:49 2000
++++ util.c	Mon Jan 17 16:38:11 2000
+@@ -28,6 +28,9 @@
+ #include <stdarg.h>
+ #include <string.h>
+ 
++#ifdef __FreeBSD__
++extern char **environ;
++#endif
+ 
+ void printError(const char *msg, ...) {
+     va_list args;

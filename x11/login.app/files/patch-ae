@@ -1,0 +1,26 @@
+--- Scripts/Login.user.orig	Sun Aug  1 01:37:50 1999
++++ Scripts/Login.user	Mon Jan 17 18:10:27 2000
+@@ -15,18 +15,18 @@
+ xinitrc=$HOME/.xinitrc
+ xsession=$HOME/.xsession
+ xclients=$HOME/.Xclients
+-systemxinitrc=/etc/X11/xinit/xinitrc
++systemxinitrc=/usr/X11R6/lib/X11/xinit/xinitrc
+ twm=/usr/X11R6/bin/twm
+ xterm=/usr/X11R6/bin/xterm
+ 
+ if [ -r $xinitrc ]; then
+-	exec sh -login $xinitrc
++	exec sh $xinitrc
+ elif [ -r $xsession ]; then
+-	exec sh -login $xsession
++	exec sh $xsession
+ elif [ -r $xclients ]; then
+-	exec sh -login $xclients
++	exec sh $xclients
+ elif [ -r $systemxinitrc ]; then
+-	exec sh -login $systemxinitrc
++	exec sh $systemxinitrc
+ elif [ -x $twm ]; then
+ 	exec $twm
+ elif [ -x $xterm ]; then

@@ -1,0 +1,19 @@
+--- switchuser.c.orig	Mon Jan 17 16:23:02 2000
++++ switchuser.c	Mon Jan 17 16:38:50 2000
+@@ -25,10 +25,16 @@
+ #include <grp.h>
+ #include <paths.h>
+ #include <sys/types.h>
++#ifndef __FreeBSD__
+ #include <shadow.h>
++#endif
+ #include <proplist.h>
+ #include "util.h"
+ #include "config.h"
++
++#ifdef __FreeBSD__
++extern char **environ;
++#endif
+ 
+ static char* baseName(const char* name) {
+     const char *base;

@@ -30,6 +30,7 @@
     SUBDIR += libdnd
     SUBDIR += libhelp
     SUBDIR += libsx
+    SUBDIR += login.app
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
