@@ -1,0 +1,20 @@
+--- src/vide.c.orig	Sun Jun 11 19:04:56 2000
++++ src/vide.c	Sun Jun 11 19:06:53 2000
+@@ -224,6 +224,8 @@
+ 
+ 	getcwd(current_dir, sizeof(current_dir));
+ 
++  /* i18n support */
++  gtk_set_locale();
+   /* Set up handler for sigchild so that we don't get zombies */
+   new_action.sa_handler = received_sigchild;
+   sigemptyset (&new_action.sa_mask);
+@@ -243,7 +245,7 @@
+   gdk_color_parse ("yellow", &TAG_COLOR);
+   gdk_color_parse ("wheat", &DRAG_HILIGHT);
+   COMMAND_TEXT_FONT =
+-    gdk_font_load ("-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*-*");
++    gdk_fontset_load ("-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*-*,*");
+ 
+   cfg.filetypes = NULL;
+   cfg.bookmarks = NULL;
