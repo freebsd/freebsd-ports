@@ -1,13 +1,13 @@
 # New ports collection makefile for:	zsh
-# Version required:     	2.6 beta7
+# Version required:     	2.6 beta13
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.12 1995/06/25 03:32:15 torstenb Exp $
+# $Id: Makefile,v 1.13 1995/07/01 21:51:58 torstenb Exp $
 #
 
-DISTNAME=       zsh-2.6-beta10
-PKGNAME=	zsh-2.6b10
+DISTNAME=       zsh-2.6-beta13
+PKGNAME=	zsh-2.6b13
 CATEGORIES+=	shells
 MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/src/ \
 		ftp://ftp.sterling.com/zsh/src/ \
@@ -15,7 +15,8 @@ MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/src/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/src/ \
 		ftp://mrrl.lut.ac.uk/zsh/src/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/src/ \
-		ftp://ftp.ips.oz.au/pub/packages/zsh/src/
+		ftp://ftp.ips.oz.au/pub/packages/zsh/src/ \
+		ftp://ftp.uit.no/pub/unix/shells/zsh/src/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
