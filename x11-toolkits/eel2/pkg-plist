@@ -1,7 +1,7 @@
 include/eel-2/eel/eel-accessibility.h
 include/eel-2/eel/eel-art-extensions.h
 include/eel-2/eel/eel-art-gtk-extensions.h
-include/eel-2/eel/eel-background-style.h
+include/eel-2/eel/eel-background-box.h
 include/eel-2/eel/eel-background.h
 include/eel-2/eel/eel-canvas-rect.h
 include/eel-2/eel/eel-caption-table.h
