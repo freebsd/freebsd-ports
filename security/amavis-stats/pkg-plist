@@ -1,0 +1,6 @@
+sbin/amavis-stats
+www/amavis-stats/index.php
+www/amavis-stats/amavis-stats.php
+www/amavis-stats/img/.keep
+@dirrm www/amavis-stats/img
+@dirrm www/amavis-stats

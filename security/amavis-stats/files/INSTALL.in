@@ -1,0 +1,37 @@
+#!/bin/sh
+
+USER=%%AMAVISUSER%%
+GROUP=%%AMAVISGROUP%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+       echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+       if /usr/sbin/pw groupadd ${GROUP} -g 113 -h -
+       then
+           echo "Added group \"${GROUP}\"."
+       else
+           echo "Adding group \"${GROUP}\" failed..."
+           echo "Please create it, and try again."
+           exit 1
+       fi
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+       echo "You already have a user \"${USER}\", so I will use it."
+    else
+       if /usr/sbin/pw useradd ${USER} -u 113 -g ${GROUP} -h - \
+          -d /nonexistent \
+          -s /sbin/nologin \
+          -c "Amavis-stats Account"
+       then
+           echo "Added user \"${USER}\"."
+       else
+           echo "Adding user \"${USER}\" failed..."
+           echo "Please create it, and try again."
+           exit 1
+       fi
+    fi
+
+fi

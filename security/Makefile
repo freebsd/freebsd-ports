@@ -13,6 +13,7 @@
     SUBDIR += altivore
     SUBDIR += amap
     SUBDIR += amavis-perl
+    SUBDIR += amavis-stats
     SUBDIR += amavisd
     SUBDIR += amavisd-new
     SUBDIR += antivir-milter

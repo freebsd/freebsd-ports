@@ -1,0 +1,16 @@
+#!/bin/sh
+
+USER=%%AMAVISUSER%%
+GROUP=%%AMAVISGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+    if /usr/sbin/pw group show "${GROUP}" 2>&1 >/dev/null; then
+       echo "You should manually remove the \"${GROUP}\" group."
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>&1 >/dev/null; then
+       echo "You should manually remove the \"${USER}\" user."
+    fi
+
+fi
