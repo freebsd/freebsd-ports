@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tcltls
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel tcl83
-MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tls
-DISTNAME=	tls${PORTVERSION}
+DISTNAME=	tls${PORTVERSION}-src
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	SSL extensions for TCL; dynamicly loadable
@@ -19,6 +18,8 @@ COMMENT=	SSL extensions for TCL; dynamicly loadable
 LIB_DEPENDS+=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND}
 
 USE_OPENSSL=	Yes
+
+WRKSRC=	${WRKDIR}/tls1.4
 
 pre-patch:
 	# Fixing the end-of-lines:
@@ -38,7 +39,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/tls
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${PREFIX}/share/doc/tls/
 
-TCL_VER?=	8.3
+TCL_VER?=	8.4
 TCLVND=		${TCL_VER:S/.//}
 
 .include <bsd.port.mk>
