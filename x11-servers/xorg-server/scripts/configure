@@ -3,7 +3,7 @@
 LOCALDEF=$WRKDIR/.config
 
 rm -f $LOCALDEF
-echo "#define InstallXserverSetUID NO"		>> $LOCALDEF
+echo "#define InstallXserverSetUID ${SUID_XSERVER}" >> $LOCALDEF
 echo "#define JoystickSupport NO"		>> $LOCALDEF
 echo "#define BuildLBX NO"			>> $LOCALDEF
 echo "#define XnestServer NO"			>> $LOCALDEF

@@ -7,7 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	6.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 PKGNAMEPREFIX=	xorg-
@@ -112,14 +112,22 @@ MAN4+=		apm.4 \
 PLIST_SUB+=	I386="@comment "
 .endif
 
+.if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+pre-everything::
+	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
+	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
+	@${ECHO_MSG} "port before handling them normally.  If you are concerned about the security"
+	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm, which"
+	@${ECHO_MSG} "will still run the server as root), you can cancel the build and set"
+	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
+
+SCRIPTS_ENV+=	SUID_XSERVER=YES
+.else
+SCRIPTS_ENV+=	SUID_XSERVER=NO
+.endif
+
 post-build:
 	@${RM} -f ${PKGMESSAGE}
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
-
-post-install::
-	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
-	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
-	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \
-	fi;
 
 .include <bsd.port.post.mk>

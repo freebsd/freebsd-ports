@@ -39,6 +39,17 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.rules \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
+SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-bus-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-fb-renderfixes.diff \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-kernel-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-loadmod.c \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-man-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-os-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-savage-pci-id \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c
+
 .if !target(do-configure)
 do-configure:
 	@cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
