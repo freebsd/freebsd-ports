@@ -218,4 +218,4 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 @dirrm %%RUBY_EXAMPLESDIR%%
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
-@unexec rmdir -p %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
+@dirrm %%RUBY_ELISPDIR%%
