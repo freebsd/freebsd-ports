@@ -9,7 +9,7 @@
 PORTNAME=	finfo
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cfm.o-o.org/software/finfo/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@freebsdcluster.org
 
