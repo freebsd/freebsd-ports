@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-RsyncP
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -25,4 +25,15 @@ MAN3=		File::RsyncP.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500503
+# make PREFIX-clean under perl 5.005_03
+post-configure:
+	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/Digest/Makefile \
+		${WRKSRC}/FileList/Makefile
+.endif
+
+.include <bsd.port.post.mk>
