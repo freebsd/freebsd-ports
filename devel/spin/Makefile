@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://ftp.freesoftware.com/pub/netlib/spin/
-DISTFILES=	spin341.tar.gz html.tar.gz
+DISTFILES=	spin342.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
@@ -24,16 +24,16 @@ post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKDIR}/Xspin3.4/xspin341.tcl
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKDIR}/Xspin3.4/xspin342.tcl
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} clean
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.4/xspin341.tcl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.4/xspin342.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	${LN} -s ${PREFIX}/bin/xspin341.tcl ${PREFIX}/bin/xspin
+	${LN} -s ${PREFIX}/bin/xspin342.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc
