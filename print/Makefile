@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1998/05/06 12:43:57 tg Exp $
+# $Id: Makefile,v 1.60 1998/05/17 20:15:24 andreas Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -29,6 +29,7 @@
     SUBDIR += gv
     SUBDIR += html2latex
     SUBDIR += html2ps
+    SUBDIR += klyx
     SUBDIR += latex
     SUBDIR += lout
     SUBDIR += lprps
