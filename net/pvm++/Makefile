@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pvm++
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://pvm-plus-plus.sourceforge.net/pub/%SUBDIR%/ \
