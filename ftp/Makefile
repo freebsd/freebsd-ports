@@ -25,6 +25,7 @@
     SUBDIR += omi
     SUBDIR += pavuk
     SUBDIR += proftpd
+    SUBDIR += sftp
     SUBDIR += spegla
     SUBDIR += wget
     SUBDIR += wu-ftpd
