@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	1.4.7
+PORTVERSION=	1.6.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/
-DISTNAME=	CMake${PORTVERSION}-src-unix
+MASTER_SITES=	http://www.cmake.org/files/v1.6/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform make
 
-WRKSRC=		${WRKDIR}/CMake-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 MAN1=	cmake.1
