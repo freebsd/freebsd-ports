@@ -5,34 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lapidary
-PORTVERSION=	0.2.1
+PORTNAME=	testunit
+PORTVERSION=	0.1.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://testunit.talbott.ws/packages/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
+USE_RUBY_SETUP=	yes
 
-WRKSRC=		${WRKDIR}/${MODULE_NAME}
-NO_BUILD=	yes
+DOCS=		ChangeLog README TODO doc
+EXAMPLES=	examples/*
 
-MODULE_NAME=	Lapidary
-DOCS_EN=	ChangeLog	README	*.html
+.include <bsd.port.pre.mk>
 
-do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/${MODULE_NAME}
-	${CP} -R ${WRKSRC}/*.rb ${WRKSRC}/UI ${RUBY_SITELIBDIR}/${MODULE_NAME}/
+.if exists(${RUBY_SITELIBDIR}/rubyunit.rb) && !exists(${RUBY_SITELIBDIR}/runit/testunit-installed)
+PLIST_SUB+=	RUNIT_COMPAT:="@comment "
+.else
+PLIST_SUB+=	RUNIT_COMPAT:=""
+.endif
+
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
