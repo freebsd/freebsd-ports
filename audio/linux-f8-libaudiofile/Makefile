@@ -7,7 +7,7 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio linux
 
 MAINTAINER=	taoka@FreeBSD.org
