@@ -29,3 +29,39 @@
   	     else :; fi; \
   	  done
   	echo Housekeeping file >install.man
+*** src/formail.c	Mon Oct 31 18:30:09 1994
+--- src/formail.c	Sat Nov 19 13:09:22 1994
+***************
+*** 35,41 ****
+   x_[]=			"X-",				/* general extension */
+   old_[]=		OLD_PREFIX,			     /* my extension */
+   xloop[]=		"X-Loop:",				/* ditto ... */
+!  daemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
+  
+  static const struct {const char*hedr;int lnr;}cdigest[]=
+  {
+--- 35,41 ----
+   x_[]=			"X-",				/* general extension */
+   old_[]=		OLD_PREFIX,			     /* my extension */
+   xloop[]=		"X-Loop:",				/* ditto ... */
+!  mdaemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
+  
+  static const struct {const char*hedr;int lnr;}cdigest[]=
+  {
+***************
+*** 275,281 ****
+  	      goto pnewname;
+  	 }
+  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
+! 	 { saddr=(char*)daemon;nowm=maxindex(sest)+2;		 /* override */
+  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
+  	   if(namep)
+  	      free(namep);
+--- 275,281 ----
+  	      goto pnewname;
+  	 }
+  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
+! 	 { saddr=(char*)mdaemon;nowm=maxindex(sest)+2;		 /* override */
+  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
+  	   if(namep)
+  	      free(namep);
