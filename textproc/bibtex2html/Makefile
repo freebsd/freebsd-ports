@@ -1,12 +1,12 @@
 # New ports collection makefile for:    bibtex2html
 # Date created:         2002-01-21
-# Whom:			Gerald Pfeifer <pfeifer@dbai.tuwien.ac.at>
+# Whom:			Gerald Pfeifer <gerald@pfeifer.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bibtex2html
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
