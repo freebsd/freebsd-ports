@@ -8596,6 +8596,7 @@ whisker		ports/security/whisker
 whistlerk	ports/x11-toolkits/whistlerk
 white_dune	ports/graphics/white_dune
 whitespace.el	ports/textproc/whitespace.el
+whois		ports/net/whois
 whowatch	ports/sysutils/whowatch
 whups		ports/devel/whups
 wide-dhcp	ports/net/wide-dhcp
