@@ -18,7 +18,6 @@ MAINTAINER=	imura@FreeBSD.org
 BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
 
 USE_LINUX_PREFIX=	yes
-NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/locale-ja-${VERSION}
 PLIST_SUB=	VER=${VERSION}
 
