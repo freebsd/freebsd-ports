@@ -1,5 +1,5 @@
 *** Makefile.orig	Fri Mar 21 12:27:21 1997
---- Makefile	Wed Sep 16 08:42:23 1998
+--- Makefile	Wed Sep 16 17:41:52 1998
 ***************
 *** 47,53 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -191,7 +191,7 @@
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
   
---- 690,726 ----
+--- 690,724 ----
   	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
   	scaffold.h tcpdmatch.8 README.NIS
   
@@ -209,9 +209,7 @@
 ! 		tcpd.h ${PREFIX}/include
 ! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -c -m 644 \
 ! 		$(LIB) $(SLIB) ${PREFIX}/lib
-! .if ${PORTOBJFORMAT} == elf
 ! 	(cd ${PREFIX}/lib;ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`)
-! .endif
 ! 	ranlib ${PREFIX}/lib/$(LIB)
 ! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -cs -m ${BINMODE} \
 ! 		tcpd ${PREFIX}/libexec
@@ -258,7 +256,7 @@
   
   shar:	$(KIT)
   	@shar $(KIT)
---- 737,772 ----
+--- 735,770 ----
   	$(AR) $(ARFLAGS) $(LIB) $(LIB_OBJ)
   	-$(RANLIB) $(LIB)
   
@@ -266,10 +264,10 @@
 ! 	rm -f $(SLIB)
 ! .if ${PORTOBJFORMAT} == elf
 ! 	$(CC) -o $(SLIB) -shared -Wl,-soname,$(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
-! 	ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`
 ! .else
 ! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
 ! .endif
+! 	ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`
 ! 
 ! tcpd:   tcpd.o $(SLIB)
 ! 	$(CC) $(CFLAGS) -o $@ tcpd.o -L. -lwrap $(LIBS)
@@ -304,7 +302,7 @@
   
   tidy:	clean
   	chmod -R a+r .
---- 782,788 ----
+--- 780,786 ----
   
   clean:
   	rm -f tcpd miscd safe_finger tcpdmatch tcpdchk try-from *.[oa] core \
