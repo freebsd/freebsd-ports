@@ -1,0 +1,54 @@
+--- sbin/rt-setup-database.in	Tue Apr 27 03:30:25 2004
++++ sbin/rt-setup-database.in	Wed Sep 22 12:46:43 2004
+@@ -87,10 +108,30 @@
+         print "...skipped as ".$args{'dba'} ." is not " . $RT::DatabaseUser . " or we're working with Oracle.\n";
+     }
+ 
+-    $dbh->disconnect;
+-    $dbh = DBI->connect( $Handle->DSN, $args{'dba'}, $args{'dba-password'} )
+-      || die $DBI::errstr;
++    if ($RT::DatabaseType eq "mysql") {
++        # Check which version we're running
++        my ($version) = $dbh->selectrow_hashref("show variables like 'version'")->{Value} =~ /^(\d\.\d+)/;
++        print "*** Warning: RT is unsupported on MySQL versions before 4.0.x\n" if $version < 4;
++
++        # MySQL must have InnoDB support
++        my $innodb = $dbh->selectrow_hashref("show variables like 'have_innodb'")->{Value};
++        if ($innodb eq "NO") {
++            die "RT requires that MySQL be compiled with InnoDB table support.\n".
++              "See http://dev.mysql.com/doc/mysql/en/InnoDB.html\n";
++        } elsif ($innodb eq "DISABLED") {
++            die "RT requires that MySQL InnoDB table support be enabled.\n".
++              ($version < 4
++               ? "Add 'innodb_data_file_path=ibdata1:10M:autoextend' to the [mysqld] section of my.cnf\n"
++               : "Remove the 'skip-innodb' line from your my.cnf file, restart MySQL, and try again.\n");
++        }
++    }
++    
++    # SQLite can't deal with the disconnect/reconnect
++    unless ($RT::DatabaseType eq 'SQLite') {
+ 
++        $dbh->disconnect;
++        $dbh = DBI->connect( $Handle->DSN, $args{'dba'}, $args{'dba-password'} ) || die $DBI::errstr;
++    }
+     print "Now populating database schema.\n";
+     insert_schema();
+     print "Now inserting database ACLs\n";
+@@ -364,7 +409,7 @@
+         exit(1);
+     }
+     print "done.\n";
+-    $RT::Handle->Disconnect();
++    $RT::Handle->Disconnect() unless ($RT::DatabaseType eq 'SQLite');
+ 
+ }
+ 
+@@ -563,7 +608,7 @@
+         }
+         print "done.\n";
+     }
+-    $RT::Handle->Disconnect();
++    $RT::Handle->Disconnect() unless ($RT::DatabaseType eq 'SQLite');
+ 
+ }
+ 

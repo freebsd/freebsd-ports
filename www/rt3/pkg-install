@@ -2,9 +2,7 @@
 # $FreeBSD$
 #
 
-if [ "$2" != "PRE-INSTALL" ]; then
-    exit 0
-fi
+if [ x"$2" = xPRE-INSTALL ]; then
 
 GROUP=rt
 
@@ -14,6 +12,27 @@ if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	else
 		echo "Adding group \"${GROUP}\" failed..."
 		exit 1
+	fi
+fi
+
+fi
+
+if [ x"$2" = xPOST-INSTALL ]; then
+	if [ x"${RT_PATH}" = x ]; then
+		RT_PATH="${PKG_PREFIX}/rt3"
+	fi
+
+	if [ x"${INITIAL_INSTALL}" = x ]; then
+		echo "Upgrade of RT3 complete."
+		echo ""
+		echo "If this is actually your first installation, please run:"
+		echo "    " perl ${RT_PATH}/sbin/rt-setup-database --action init --dba DB_DBA_USER --prompt-for-dba-password 
+		echo ""
+		echo "Substitute DB_DBA_USER with database administrator's name."
+	else
+		perl ${RT_PATH}/sbin/rt-setup-database --force --action drop --dba ${DB_DBA_USER} --dba-password ${DB_DBA_PASSWORD}
+		perl ${RT_PATH}/sbin/rt-setup-database --force --action init --dba ${DB_DBA_USER} --dba-password ${DB_DBA_PASSWORD}
+		sed s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
 	fi
 fi
 
