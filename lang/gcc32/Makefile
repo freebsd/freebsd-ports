@@ -33,9 +33,18 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
-ONLY_FOR_ARCHS=	i386 alpha sparc64
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" && ${ARCH} == "amd64"
+# libgcj is built on all platforms except sparc64 and ia64 and amd64
+WITHOUT_LIBJAVA=yes
+.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
@@ -51,7 +60,7 @@ PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
 		PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-nls \
+CONFIGURE_ARGS+=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
 #CONFIGURE_ARGS+=	--program-suffix=32
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
@@ -69,6 +78,10 @@ CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
+.if defined(WITHOUT_LIBJAVA)
+CONFIGURE_ARGS+=	--disable-libgcj
+.endif
+
 ALL_TARGET=	bootstrap
 MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1 \
 		gcj32.1 gcjh32.1 gij.1 rmic.1 rmiregistry.1 \
@@ -147,8 +160,7 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
-.if ${ARCH} != "sparc64" && ${ARCH} != ia64
-	# libgcj is built on all platforms except sparc64 and ia64.
+.if !defined(WITHOUT_LIBJAVA)
 	${CAT} ${MASTERDIR}/pkg-plist.libgcj >> ${TMPPLIST}
 .endif
 
