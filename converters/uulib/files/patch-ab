@@ -1,0 +1,14 @@
+*** Makefile.in	Mon Oct 14 16:19:01 1996
+--- /devel/ports/new.new.uulib/src/Makefile.in	Mon Feb 10 00:03:24 1997
+***************
+*** 170,175 ****
+--- 170,179 ----
+  libuu.a:	uulib/config.h
+  	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
+  
++ libuu.so.1.0:	uulib/config.h
++ 	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' \
++ 		libuu.so.1.0 )
++ 
+  minews:
+  	(cd inews; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )

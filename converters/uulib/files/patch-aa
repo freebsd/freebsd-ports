@@ -1,0 +1,39 @@
+*** uulib/Makefile.in	Mon Oct 14 16:19:18 1996
+--- /devel/ports/new.new.uulib/src/uulib/Makefile.in	Sun Feb  9 23:37:42 1997
+***************
+*** 50,56 ****
+  #
+  
+  .SUFFIXES:
+! .SUFFIXES: .c .o
+  
+  all:		libuu.a
+  
+--- 50,56 ----
+  #
+  
+  .SUFFIXES:
+! .SUFFIXES: .c .o .so
+  
+  all:		libuu.a
+  
+***************
+*** 73,80 ****
+--- 73,89 ----
+  	ar r $@ $(UULIB_OBJ)
+  	-$(RANLIB) $@
+  
++ SOBJS=	$(UULIB_OBJ:.o=.so)
++ libuu.so.1.0:	$(SOBJS)
++ 	rm -f $(.TARGET)
++ 	ld -Bshareable -x -o libuu.so.1.0 `lorder $(SOBJS) | tsort -q`
++ 		
++ .c.so:
++ 	$(CC) -fpic -DPIC -c -o $(.TARGET) $(CFLAGS) $(VDEF) $(.IMPSRC)
++ 
+  .c.o:
+  	$(CC) -c $(CFLAGS) $(VDEF) $<
++ 
+  
+  uuencode.o:	uuencode.c uudeview.h uuint.h uustring.h fptools.h config.h
+  uulib.o:	uulib.c uudeview.h uuint.h uustring.h fptools.h config.h
