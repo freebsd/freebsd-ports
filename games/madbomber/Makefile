@@ -8,9 +8,9 @@
 PORTNAME=	madbomber
 PORTVERSION=	0.2.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/
+MASTER_SITES=	http://www.nbswebfx.com/downloads/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
