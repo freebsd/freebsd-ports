@@ -1,0 +1,41 @@
+--- pop_msg.c.orig	Sat Jun 27 03:09:47 1998
++++ pop_msg.c	Sat Jun 27 03:14:27 1998
+@@ -27,6 +27,7 @@
+ {
+     POP             *   p;
+     int                 stat;               /*  POP status indicator */
++    int			l, len;		    /*  remaining buffer length */
+     char            *   format;             /*  Format string for the message */
+     va_list             ap;
+     register char   *   mp;
+@@ -50,6 +51,7 @@
+ 
+     /*  Point to the message buffer */
+     mp = message;
++    len = sizeof(message);
+ 
+     /*  Format the POP status code at the beginning of the message */
+     if (stat == POP_SUCCESS)
+@@ -58,17 +60,18 @@
+         (void)sprintf (mp,"%s ",POP_ERR);
+ 
+     /*  Point past the POP status indicator in the message message */
+-    mp += strlen(mp);
++    l = strlen(mp);
++    len -= l, mp += l;
+ 
+     /*  Append the message (formatted, if necessary) */
+     if (format) 
+ #ifdef HAVE_VPRINTF
+-        vsprintf(mp,format,ap);
++        vsnprintf(mp,len,format,ap);
+ #else
+ # ifdef PYRAMID
+-        (void)sprintf(mp,format, arg1, arg2, arg3, arg4, arg5, arg6);
++        (void)snprintf(mp,len,format, arg1, arg2, arg3, arg4, arg5, arg6);
+ # else
+-        (void)sprintf(mp,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
++        (void)snprintf(mp,len,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
+                 ((int *)ap)[3],((int *)ap)[4]);
+ # endif
+ #endif
