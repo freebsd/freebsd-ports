@@ -26,7 +26,6 @@ lib/X11/ml/mailboxes.help
 lib/X11/ml/mailrename.help
 lib/X11/ml/mainhelp.help
 lib/X11/ml/mime.handlers
-lib/X11/ml/mime.handlers.ORIG
 lib/X11/ml/mime.types.txt
 lib/X11/ml/mimeask.help
 lib/X11/ml/mimeinfo.help
