@@ -1,5 +1,5 @@
---- sample.cf.orig	Thu Aug 28 00:00:31 1997
-+++ sample.cf	Wed Sep 10 00:56:10 1997
+--- sample.cf.orig	Thu Aug 28 01:00:31 1997
++++ sample.cf	Thu Jul 22 11:00:18 1999
 @@ -6,11 +6,11 @@
  
  # $whereami -- What machine am I running on?
@@ -47,9 +47,12 @@
  
  # $mailer -- What program and args do I use to send mail to the list?
  # $bounce_mailer -- What is used to send mail anywhere else?
-@@ -82,9 +78,9 @@
+@@ -80,15 +76,15 @@
+ # high by uncommenting the following lines.  THIS ONLY WORKS if your "uptime" 
+ # command (usually found in /usr/bin/uptime or /usr/bsd/uptime) 
  # returns a string like:
- #   5:23pm  up  5:51,  9 users,  load average: 0.19, 0.25, 0.33
+-#   5:23pm  up  5:51,  9 users,  load average: 0.19, 0.25, 0.33
++#   5:23pm  up  5:51,  9 users,  load averages: 0.19, 0.25, 0.33
  #
 -#$max_loadavg = 10;                 # Choose the maximum allowed load
 +$max_loadavg = 10;                 # Choose the maximum allowed load
@@ -59,6 +62,11 @@
  #$uptime = `/usr/bsd/uptime` if -x '/usr/bsd/uptime';     # or uptime is over here.
  #
  #($avg_1_minute, $avg_5_minutes, $avg_15_minutes) = 
+-#    $uptime =~ /average:\s+(\S+),\s+(\S+),\s+(\S+)/;
++#    $uptime =~ /averages:\s+(\S+),\s+(\S+),\s+(\S+)/;
+ #
+ #exit 75 if ($avg_15_minutes >= $max_loadavg);           # E_TEMPFAIL
+ #
 @@ -190,7 +186,7 @@
  # majordomo has r/w permission to.
  # Uses the environment variable TMPDIR, since that's pretty common
