@@ -155,11 +155,12 @@ while (<AVAIL>) {
 	my $universal_off = 1 if ($flag && !$u && !$m);
 
  	# Expand any group names into a full user list.
- 	$u = expand_users($u);
+ 	my $users = expand_users($u);
 
 	# $cfg::COMMITTER considered "in user list" if actually in list
 	# or is NULL
-	my $in_user = (!$u || grep ($_ eq $cfg::COMMITTER, split(/[\s,]+/,$u)));
+	my $in_user = (!$u || grep ($_ eq $cfg::COMMITTER,
+	    split(/[\s,]+/, $users)));
 	print "$$ \$cfg::COMMITTER ($cfg::COMMITTER) in user list: $rule\n"
 	    if $debug && $in_user;
 
@@ -186,7 +187,7 @@ while (<AVAIL>) {
 	print "$$ \$repos($repos) in repository list: $rule\n"
 	    if $debug && $in_repo;
 
-	print "$$ Expanded user list: $u\n" if $debug;
+	print "$$ Expanded user list: $users\n" if $debug;
 
 	$exit_val = $flag if ($in_user && $in_repo);
 	print "$$ ==== \$exit_val = $exit_val\n$$ ==== \$flag = $flag\n"
