@@ -7,6 +7,7 @@
 
 PORTNAME=	deft
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://theory.chem.uottawa.ca/pub/
 DISTNAME=	DeFT_${PORTVERSION}
