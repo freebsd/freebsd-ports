@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.4.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.4
@@ -31,9 +30,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-PLIST_SUB=      BATTERY="@comment "
+PLIST_SUB=	BATTERY="@comment "
 .else
-PLIST_SUB=      BATTERY=""
+PLIST_SUB=	BATTERY=""
 .endif
 
 .include <bsd.port.post.mk>

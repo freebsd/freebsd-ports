@@ -858,6 +858,8 @@ share/gnome/omf/gnome-applets/gweather-es.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-fr.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-ko.omf
@@ -868,8 +870,6 @@ share/gnome/omf/gnome-applets/gweather-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-zh_TW.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-applets/gweather_applet-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather_applet-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-de.omf
@@ -1519,12 +1519,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-sv.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather_applet-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-es.omf 2>/dev/null || /usr/bin/true
