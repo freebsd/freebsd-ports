@@ -1,0 +1,11 @@
+--- ltmain.sh.orig	Fri Jan 14 23:42:47 2000
++++ ltmain.sh	Mon Feb 14 16:47:36 2000
+@@ -1791,7 +1791,7 @@
+ 	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+-	  deplibs="$deplibs -lc"
++#	  deplibs="$deplibs -lc"
+ 	  ;;
+ 	esac
+       fi
