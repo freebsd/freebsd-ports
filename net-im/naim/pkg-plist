@@ -1,4 +1,9 @@
 bin/naim
-share/doc/naim/naim.hlp
-share/doc/naim/COLORS
-@dirrm share/doc/naim
+lib/naim/libnsocket.so
+lib/naim/libnsocket.so.0
+lib/naim/libnmp3.so
+lib/naim/libnmp3.so.0
+@dirrm lib/naim
+%%PORTDOCS%%share/doc/naim/naim.hlp
+%%PORTDOCS%%share/doc/naim/COLORS
+%%PORTDOCS%%@dirrm share/doc/naim
