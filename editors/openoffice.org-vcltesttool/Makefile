@@ -13,15 +13,13 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.7b/src/&,}:mozsrc \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
 MASTER_SITE_SUBDIR=	maho/openoffice.org
-DISTFILES+=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
+DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-IGNORE=		is not installable because bison 1.875a or newer is required, and port does not work yet
-
-SNAPDATE=	20041122
+SNAPDATE=	20050110
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
@@ -45,41 +43,47 @@ JAVA_BUILD=	jdk
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-LANG_PKGNAME?=	en-US
-LANG_EXT?=	01
-
-.if defined(L10NHELP)
-DISTFILES+=	${L10NHELP}:help
-.endif
-.if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_49_unix.tgz:help
-L10NHELPS+=	helpcontent_49_unix.tgz
+.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} < 492000)
+BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade your rtld"
 .endif
 
-BUILD_NR=		680
-MILESTONE=		m62
-RELEASE_NR=		2.0
+CODELINE=		680
+RELEASE_NR=		1.9
+MILESTONE=		71
+INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
+EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice2.0
-SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
-# gcc 3.3
-BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
-# FIXME
+SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
+PACKAGE_BASENAME=	OOo_${RELEASE_NR}m${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel
+
+LOCALIZED_LANG?=	en-US
+# FIXME (Somehow INDEX build fails)
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=          ${LANG_PKGNAME}-
+.endif
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX?=         -${LANG_SUFFIX}
+.endif
+
+BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
+# FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc33
-CXX=	ccache g++33
+CC=	ccache gcc-ooo
+CXX=	ccache g++-ooo
 .else
-CC=	gcc33
-CXX=	g++33
+CC=	gcc-ooo
+CXX=	g++-ooo
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		epm:${PORTSDIR}/devel/epm \
 		gpatch:${PORTSDIR}/devel/patch \
+		xmkmf:${X_IMAKE_PORT} \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
-#		bison-devel:${PORTSDIR}/devel/bison-devel
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		bison-devel:${PORTSDIR}/devel/bison-devel
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
@@ -91,43 +95,19 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
-
-OOODIR=		oo_${RELEASE_NR}_src
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/${OOODIR}
-CONFIGURE_WRKSRC=	${WRKDIR}/${OOODIR}/config_office
+WRKSRC=		${WRKDIR}
+CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
+PKGMESSAGE=	${WRKDIR}/pkg-message
+NUMOFPROCESSES?=	8
 
-CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
 
-.if defined(WITHOUT_JAVA)
-CONFIGURE_ARGS+=	--disable-java
-.else
-CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
-.endif
-
-.if defined(WITHOUT_MOZILLA)
-CONFIGURE_ARGS+=	--disable-mozilla
-.endif
-
-.if defined(ALL_LOCALIZED_LANGS)
-CONFIGURE_ARGS+=	--with-lang=ALL
-.else
-CONFIGURE_ARGS+=	--with-lang=${LANG_PKG_NAME}
-.endif
-
-.if defined(WITH_DEBUG)
-.if ${WITH_DEBUG} == 2
-CONFIGURE_ARGS+=	--enable-debug
-.else
-CONFIGURE_ARGS+=	--enable-symbols
-.endif
-.endif
+.include <${FILESDIR}/Makefile.knobs>
 
 pre-everything::
 # really tweak, extremely useful when you build all localized language versions
@@ -150,25 +130,11 @@ post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
-.if defined(L10NHELP)
-	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
-	@${MKDIR} ${WRKDIR}/L10NHELP
-	@cd ${WRKDIR}/L10NHELP ; \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf -
-.endif
-.if defined(ALL_LOCALIZED_LANGS)
-	@${ECHO_MSG} "===>  Extracting All available L10NHELPs"
-	@${MKDIR} ${WRKDIR}/L10NHELP
-	@cd ${WRKDIR}/L10NHELP ; \
-	for helpfile in ${L10NHELPS}; do \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$helpfile | ${GZIP_CMD} -d | ${TAR} xf - ; \
-	done
-.endif
 .if !defined(WITHOUT_MOZILLA)
-	cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
-	${MKDIR} ${WRKSRC}/moz/download
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/mozilla-source-1.7b-source.tar.gz ${WRKSRC}/moz/download
-	cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
+	@cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
+	@${MKDIR} ${WRKSRC}/moz/download
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
+	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
 post-patch:
@@ -177,75 +143,98 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
-	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-.endif
+#DEFAULT_TO_ENGLISH_FOR_PACKING=yes, see #iz 35659, 34269 and 36708
 .if !defined(WITHOUT_MOZILLA)
-	cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
+	@cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-	@cd ${WRKSRC} ;	${TCSH} -c 'source FreeBSDEnv.Set ; dmake'
+	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 
-pre-install:
-	@${CP} ${FILESDIR}/oo_setup.resp \
-		${WRKSRC}/instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/
-	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-		${WRKSRC}/instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/oo_setup.resp
+OOOFILES1=	openofficeorg-calc.sw openofficeorg-core.sw openofficeorg-draw.sw openofficeorg-graphicfilter.sw
+OOOFILES2=	openofficeorg-impress.sw openofficeorg-javafilter.sw openofficeorg-mailcap.sw
+OOOFILES3=	openofficeorg-math.sw openofficeorg-spellcheck.sw openofficeorg-testtool.sw
+OOOFILES4=	openofficeorg-writer.sw openofficeorg-xsltfilter.sw
 
 do-install:
-	TEMP=${WRKDIR} ${WRKSRC}/instsetoo/*.pro/${LANG_PKGNAME}/normal/setup -r:oo_setup.resp
-
-install-user:
-	${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	@${RM} -Rf ${WRKDIR}/tmp
+	@${MKDIR} ${WRKDIR}/tmp
+.for i in ${OOOFILES1} ${OOOFILES2} ${OOOFILES3} ${OOOFILES4}
+	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/${i} ${WRKDIR}/tmp
+.endfor
+.for i in ${OOOFILES1} ${OOOFILES2} ${OOOFILES3} ${OOOFILES4}
+	@cd ${WRKDIR}/tmp ; ${TAR} xf ${WRKDIR}/tmp/${i}
+.endfor
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%LANG%%#${USE_LANG}#g' \
-			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
-		${PREFIX}/bin/openoffice-${RELEASE_NR}
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-setup
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sfax
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-smath
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-simpress
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-spadmin
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sweb
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-swriter
-	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} openoffice-${RELEASE_NR} > ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} openoffice-${RELEASE_NR} >> ${TMPPLIST}
+		${PREFIX}/bin/${EXECBASE}
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sagenda
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sdraw
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-setup
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sfax
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-smath
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sweb
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
+	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} > ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
 	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
+	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
+			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
+			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
+			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			${PKGMESSAGE}
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 package-rename:
-	@${ECHO_MSG} "===>   Rename package for OOo mirror upload";
-.if defined(LANG_SUFFIX)
+	@${ECHO_MSG} "===>   Rename package for OpenOffice.org mirror upload";
 	@${MV} ${PKGFILE} \
-	${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}${PKG_SUFX}
-.elif defined(LANG_PKGNAME)
-	@${MV} ${PKGFILE} \
-	${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}${PKG_SUFX}
-.else
-	@${MV} ${PKGFILE} \
-	${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_install${PKG_SUFX}
-.endif
+		${WRKDIR}/../${PACKAGE_BASENAME}_install_${LOCALIZED_LANG}${PKG_SUFX}
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC} && ${SH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	${MV} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
+	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}._SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
+	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_solver.tar.bz2 solver
+
+languagepack:
+	@${ECHO_MSG} "===>   Make languagepack of OpenOffice.org"
+.if defined (ALL_LOCALIZED_LANGS)
+	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack'
+.else
+	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
+.endif
+
+.if !defined (ALL_LOCALIZED_LANGS)
+	@${RM} -fr ${WRKDIR}/langpack_tmp
+	@${MKDIR} ${WRKDIR}/langpack_tmp
+.if defined (LOCALIZED_LANG)
+	@cd ${WRKDIR}/langpack_tmp ; \
+		${TAR} xf ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.sw
+	@cd ${WRKDIR}/langpack_tmp/opt/openoffice* ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
+		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_langpack_${LOCALIZED_LANG}.tar.bz2 ${INSTALLATION_BASEDIR}
+.endif
+.endif
 
 .include <bsd.port.post.mk>

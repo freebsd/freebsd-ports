@@ -1,13 +1,19 @@
-#i27028
-http://qa.openoffice.org/issues/show_bug.cgi?id=27028
+http://www.openoffice.org/issues/show_bug.cgi?id=37731
 
---- config_office/set_soenv.in.old	Tue Mar  9 21:31:38 2004
-+++ config_office/set_soenv.in	Sun Mar 28 09:56:03 2004
-@@ -1419,6 +1419,7 @@
- ToFile( "XSLTPROC",          "@XSLTPROC@",       "e" );
- ToFile( "ANT_HOME",          "@ANT_HOME@",       "e" );
- ToFile( "ANT_LIB",           "@ANT_LIB@",        "e" );
-+ToFile( "ANT",               "@ANT@",            "e" );
- ToFile( "JDKLIB",            $JAVA_LIB,          "e" );
- ToFile( "STLPORT4",          $STLPORT4,          "e" );
- ToFile( "ASM_PATH",          $ASM_PATH,          "e" );
+Index: config_office/set_soenv.in
+===================================================================
+RCS file: /cvs/tools/config_office/set_soenv.in,v
+retrieving revision 1.31
+diff -u -r1.31 set_soenv.in
+--- config_office/set_soenv.in	5 Jan 2005 12:10:00 -0000	1.31
++++ config_office/set_soenv.in	9 Jan 2005 18:51:24 -0000
+@@ -1684,9 +1684,6 @@
+ ToFile( "CC",                $CC,                "e" );
+ ToFile( "CXX",               $CXX,               "e" );
+ ToFile( "USE_SYSTEM_STL",    "@USE_SYSTEM_STL@", "e" );
+-if ( $COM ne "MSC" ) {
+-  ToFile( "LINK",			 $CC,				 "e" );
+-}
+ ToFile( "ENABLE_SYMBOLS",    "@ENABLE_SYMBOLS@",    "e" );
+ ToFile( "ENABLE_CRASHDUMP",  "@ENABLE_CRASHDUMP@",  "e" );
+ ToFile( "ENABLE_CUPS",       "@ENABLE_CUPS@",       "e" );

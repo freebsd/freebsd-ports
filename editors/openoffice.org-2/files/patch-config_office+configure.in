@@ -1,37 +1,40 @@
-#i27028
-http://qa.openoffice.org/issues/show_bug.cgi?id=27028  (ant)
+http://www.openoffice.org/issues/show_bug.cgi?id=40176
+http://www.openoffice.org/issues/show_bug.cgi?id=40226
+
+o Correct PTHREAD_CFLAGS, PTHREAD_LIBS
+o CUPS support via --enable-cups
 
 Index: config_office/configure.in
 ===================================================================
 RCS file: /cvs/tools/config_office/configure.in,v
-retrieving revision 1.63
-diff -u -r1.63 configure.in
---- config_office/configure.in	17 Mar 2004 09:33:26 -0000	1.63
-+++ config_office/configure.in	8 Jun 2004 20:53:16 -0000
-@@ -1830,10 +1831,12 @@
- 
- if test "$enable_java" != "no"; then
- ANT_HOME=; export ANT_HOME
-+WITH_ANT_HOME=; export WITH_ANT_HOME
- if test -z "$with_ant_home"; then
-    AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat])
- else
--   AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat],,$with_ant_home/bin)
-+   AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat],,$with_ant_home/bin:$PATH)
-+   WITH_ANT_HOME=$with_ant_home
- fi
- 
- 
-@@ -1873,7 +1876,11 @@
-   AC_TRY_EVAL(ant_cmd)
-   if test $? = 0 && test -f ./conftest.class ; then
-     AC_MSG_RESULT([Ant works]) 
--    ANT_HOME=`echo $ANT | $SED -n "s/\/bin\/ant.*\$//p"`
-+    if test -z "$WITH_ANT_HOME"; then
-+       ANT_HOME=`echo $ANT | $SED -n "s/\/bin\/ant.*\$//p"`
-+    else
-+       ANT_HOME="$WITH_ANT_HOME"
-+    fi
-   else
-     echo "configure: Ant test failed" >&5
-     cat conftest.java >&5
+retrieving revision 1.82
+diff -u -r1.82 configure.in
+--- config_office/configure.in	5 Jan 2005 12:09:48 -0000	1.82
++++ config_office/configure.in	9 Jan 2005 10:36:08 -0000
+@@ -449,7 +449,7 @@
+ 		test_x=yes
+ 		test_gtk=yes
+       test_kde=yes
+-      test_cups=no
++      test_cups=yes
+ 		AC_MSG_CHECKING([the FreeBSD operating system release])
+ 		if test -n "$with_os_version"; then
+ 			OSVERSION="$with_os_version"
+@@ -457,13 +457,15 @@
+ 			OSVERSION=`/sbin/sysctl -n kern.osreldate`
+ 		fi
+ 		AC_MSG_RESULT([found OSVERSION=$OSVERSION])
+-		PTHREAD_CFLAGS="-D_THREAD_SAFE"
+ 		if test "$OSVERSION" -lt "500016"; then
++			PTHREAD_CFLAGS="-D_THREAD_SAFE"
+ 			PTHREAD_LIBS="-pthread"
+ 		elif test "$OSVERSION" -lt "502102"; then
++			PTHREAD_CFLAGS="-D_THREAD_SAFE"
+ 			PTHREAD_LIBS="-lc_r"
+ 		else 
+-			PTHREAD_LIBS="-lpthread"
++			PTHREAD_CFLAGS=""
++			PTHREAD_LIBS="-pthread"
+ 		fi
+ 		;;
+ 	"OSF1")

@@ -1,7 +1,9 @@
-#iZ XXXX
-porting project xmlsec
-1) we should provide configure based one
-2) malloc.h is deprecated for FreeBSD
+http://www.openoffice.org/issues/show_bug.cgi?id=39958
+http://www.openoffice.org/issues/show_bug.cgi?id=38417
+
+o Not for integration, we should provide configure based one
+  Note: malloc.h is deprecated for FreeBSD.
+o use configure to produce config.h
 
 Index: libxmlsec/xmlsec1-1.2.4.patch
 ===================================================================

@@ -1,0 +1,32 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40181
+
+Index: python/Python-2.3.4.patch
+===================================================================
+RCS file: /cvs/external/python/Python-2.3.4.patch,v
+retrieving revision 1.2
+diff -u -r1.2 Python-2.3.4.patch
+--- python/Python-2.3.4.patch	15 Nov 2004 13:07:52 -0000	1.2
++++ python/Python-2.3.4.patch	3 Dec 2004 09:51:31 -0000
+@@ -13513,6 +13513,22 @@
+ *** misc/Python-2.3.4/configure	Fri May  7 21:13:40 2004
+ --- misc/build/Python-2.3.4/configure	Sun Nov  7 11:43:10 2004
+ ***************
++*** 523,529 ****
++  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
++  	  INSTSONAME="$LDLIBRARY".$SOVERSION
++            ;;
++!     Linux*|GNU*|NetBSD*)
++  	  LDLIBRARY='libpython$(VERSION).so'
++  	  BLDLIBRARY='-L. -lpython$(VERSION)'
++  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
++--- 523,529 ----
++  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
++  	  INSTSONAME="$LDLIBRARY".$SOVERSION
++            ;;
++!     Linux*|GNU*|NetBSD*|FreeBSD*)
++  	  LDLIBRARY='libpython$(VERSION).so'
++  	  BLDLIBRARY='-L. -lpython$(VERSION)'
++  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
+ *** 10129,10134 ****
+ --- 10129,10135 ----
+   	case $ac_sys_system/$ac_sys_release in
