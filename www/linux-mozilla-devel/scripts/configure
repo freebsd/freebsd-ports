@@ -15,7 +15,6 @@ echo "browser langenus regus xpcom" > /tmp/checklist.tmp.$$;
 	--checklist "\n\
 Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 7 \
-"chatzilla"	"IRC client (104 kB)"					ON \
 "deflenus"	"American English profile defaults (8 kB)"		ON \
 "inspector"	"DOM inspector (240 kB)"				ON \
 "mail"		"Mozilla Mail and News (1856 kB)"			ON \

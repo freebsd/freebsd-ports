@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -47,7 +48,6 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 DISTFILES=	browser.xpi \
-		chatzilla.xpi \
 		deflenus.xpi \
 		inspector.xpi \
 		langenus.xpi \
