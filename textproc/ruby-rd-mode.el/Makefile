@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rd-mode.el
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.16
 CATEGORIES=	textproc ruby elisp
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	ruby-	# not ${RUBY_PKGNAMEPREFIX} since this is not version specific
