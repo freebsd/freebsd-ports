@@ -346,6 +346,7 @@
     SUBDIR += netspeed_applet
     SUBDIR += netstrain
     SUBDIR += nettest
+    SUBDIR += newsbot
     SUBDIR += ng_netflow
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
