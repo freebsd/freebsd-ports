@@ -1,0 +1,6 @@
+
+*******************************************************************************
+* This port contains a prebuilt kernel module. Due to the ever changing       *
+* nature of FreeBSD it may be necessary to rebuild the module after a kernel  *
+* source update.  To do this reinstall the port.                              *
+*******************************************************************************
