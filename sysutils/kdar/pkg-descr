@@ -1,0 +1,11 @@
+KDar is the KDE Disk Archiver. It is a convenient graphical interface
+to Denis Corbin's libdar archiving and backup C++ library. You can
+safely backup (with compression if you like), view and restore files
+using KDar, along with a few easy UNIX commands for mounting and
+burning CD-R's, Zip and Jazz drives, DVD-R's, floppies, or any other
+disk-based storage media.
+
+WWW:	http://kdar.sf.net
+
+- Lehmann
+kay_lehmann@web.de
