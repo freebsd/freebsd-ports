@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.137 1999/06/10 23:58:03 steve Exp $
+# $Id: Makefile,v 1.138 1999/06/11 00:14:02 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -46,6 +46,7 @@
     SUBDIR += jdk-tutorial
     SUBDIR += jfc
     SUBDIR += jikes
+    SUBDIR += jsdk
     SUBDIR += kaffe
     SUBDIR += lcc
     SUBDIR += libobjects
