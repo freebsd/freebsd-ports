@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xhippo
-# Version required:			0.85
+# Version required:			1.05
 # Date created:				16 March 1999
 # Whom:					Rod Taylor <tr49986@rcc.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/16 06:43:57 flathill Exp $
+# $Id: Makefile,v 1.2 1999/05/29 03:51:59 steve Exp $
 #
 
-DISTNAME=	xhippo-0.85
+DISTNAME=	xhippo-1.05
 CATEGORIES=	audio
 MASTER_SITES=	http://zenchaos.netpedia.net/software/
 
