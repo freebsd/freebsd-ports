@@ -3602,6 +3602,7 @@ minigzip	src/usr.bin/minigzip
 minimalist	ports/mail/minimalist
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
 mipsel-linux-egcs	ports/devel/mipsel-linux-egcs
+mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
