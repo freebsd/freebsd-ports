@@ -28,8 +28,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
-USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=15
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
@@ -70,11 +69,13 @@ packet 'pth' is installed.";\
 do-configure:
 	(cd ${WRKSRC} && aclocal && ./autogen.sh &&\
 	${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
+
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
 post-configure:
 	@${PERL} -pi -e \
 		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 			${WRKSRC}/libtool
+	${PATCH} ${PATCH_ARGS} -p0 < ${FILESDIR}/libwin32loader.patch
 
 post-install:
 	@${FMT} < ${PKGMESSAGE}
