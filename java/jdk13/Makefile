@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -46,7 +45,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/arphic:${PORTSDIR}/chinese/arphi
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
-JDK_PATCHSET_VERSION=	7
+JDK_PATCHSET_VERSION=	8
 
 .if defined(NATIVE_BOOTSTRAP)
 JDK13DIR?=	${LOCALBASE}/jdk${JDK_VERSION}
