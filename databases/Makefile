@@ -32,7 +32,6 @@
     SUBDIR += mysql323-server
     SUBDIR += mysqltcl
     SUBDIR += mytop
-    SUBDIR += p5-ApacheDBI
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-DBD-CSV
