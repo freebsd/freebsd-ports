@@ -1,0 +1,70 @@
+--- pf/pf_support.h	Mon Apr 14 05:54:15 2003
++++ pf/pf_support.h	Tue Jun 17 14:26:33 2003
+@@ -16,10 +16,16 @@
+  * Original numbers changed from 11, 12, 13.
+  * sys/mbuf.h
+  */
+-#define PACKET_TAG_PF_GENERATED		19 /* PF generated, pass always */
+-#define PACKET_TAG_PF_ROUTED		20 /* PF routed, no route loops */
+-#define PACKET_TAG_PF_FRAGCACHE		21 /* PF fragment cached */
+-#define PACKET_TAG_PF_QID		22 /* PF queue id */
++#if defined(PACKET_TAG_MACLABEL)
++#define PACKET_TAG_FB_END		(PACKET_TAG_MACLABEL)
++#else
++#define PACKET_TAG_FB_END		(PACKET_TAG_IPFORWARD)
++#endif
++#define PACKET_TAG_PF_GENERATED		(PACKET_TAG_FB_END+1)
++#define PACKET_TAG_PF_ROUTED		(PACKET_TAG_FB_END+2)
++#define PACKET_TAG_PF_FRAGCACHE		(PACKET_TAG_FB_END+3)
++#define PACKET_TAG_PF_QID		(PACKET_TAG_FB_END+4)
++#define PACKET_TAG_PF_TAG		(PACKET_TAG_FB_END+5)
+ 
+ /*
+  * sys/limits.h
+--- pfaltq/pf_support.h	Mon Apr 14 06:04:19 2003
++++ pfaltq/pf_support.h	Tue Jun 17 14:26:34 2003
+@@ -16,10 +16,16 @@
+  * Original numbers changed from 11, 12, 13.
+  * sys/mbuf.h
+  */
+-#define PACKET_TAG_PF_GENERATED		19 /* PF generated, pass always */
+-#define PACKET_TAG_PF_ROUTED		20 /* PF routed, no route loops */
+-#define PACKET_TAG_PF_FRAGCACHE		21 /* PF fragment cached */
+-#define PACKET_TAG_PF_QID		22 /* PF queue id */
++#if defined(PACKET_TAG_MACLABEL)
++#define PACKET_TAG_FB_END		(PACKET_TAG_MACLABEL)
++#else
++#define PACKET_TAG_FB_END		(PACKET_TAG_IPFORWARD)
++#endif
++#define PACKET_TAG_PF_GENERATED		(PACKET_TAG_FB_END+1)
++#define PACKET_TAG_PF_ROUTED		(PACKET_TAG_FB_END+2)
++#define PACKET_TAG_PF_FRAGCACHE		(PACKET_TAG_FB_END+3)
++#define PACKET_TAG_PF_QID		(PACKET_TAG_FB_END+4)
++#define PACKET_TAG_PF_TAG		(PACKET_TAG_FB_END+5)
+ 
+ /*
+  * sys/limits.h
+--- pfctl/pf_support.h	Mon Apr 14 05:55:07 2003
++++ pfctl/pf_support.h	Tue Jun 17 14:26:34 2003
+@@ -16,10 +16,16 @@
+  * Original numbers changed from 11, 12, 13.
+  * sys/mbuf.h
+  */
+-#define PACKET_TAG_PF_GENERATED		19 /* PF generated, pass always */
+-#define PACKET_TAG_PF_ROUTED		20 /* PF routed, no route loops */
+-#define PACKET_TAG_PF_FRAGCACHE		21 /* PF fragment cached */
+-#define PACKET_TAG_PF_QID		22 /* PF queue id */
++#if defined(PACKET_TAG_MACLABEL)
++#define PACKET_TAG_FB_END		(PACKET_TAG_MACLABEL)
++#else
++#define PACKET_TAG_FB_END		(PACKET_TAG_IPFORWARD)
++#endif
++#define PACKET_TAG_PF_GENERATED		(PACKET_TAG_FB_END+1)
++#define PACKET_TAG_PF_ROUTED		(PACKET_TAG_FB_END+2)
++#define PACKET_TAG_PF_FRAGCACHE		(PACKET_TAG_FB_END+3)
++#define PACKET_TAG_PF_QID		(PACKET_TAG_FB_END+4)
++#define PACKET_TAG_PF_TAG		(PACKET_TAG_FB_END+5)
+ 
+ /*
+  * sys/limits.h
+

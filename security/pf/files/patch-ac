@@ -1,0 +1,29 @@
+--- pf/pf.c	Wed May  7 09:33:21 2003
++++ pf/pf.c	Tue Jun 17 17:02:08 2003
+@@ -2837,6 +2837,7 @@
+ 		/* check incoming packet for BINAT/RDR */
+ 		if ((rdr = pf_get_translation(PF_IN, ifp, pd->proto,
+ 		    saddr, 0, daddr, 0, &naddr, NULL, af)) != NULL) {
++			PF_ACPY(&baddr, daddr, af);
+ 			switch (af) {
+ #ifdef INET
+ 			case AF_INET:
+@@ -3179,7 +3180,7 @@
+ 	    /* Retrans: not more than one window back */
+ 	    (ackskew >= -MAXACKWINDOW) &&
+ 	    /* Acking not more than one window back */
+-	    (ackskew <= MAXACKWINDOW)) {
++	    (ackskew <= (MAXACKWINDOW << sws))) {
+ 	    /* Acking not more than one window forward */
+ 
+ 		(*state)->packets++;
+@@ -3346,7 +3347,7 @@
+ 			    SEQ_GEQ(seq, src->seqlo - (dst->max_win << dws)) ?
+ 			    ' ': '2',
+ 			    (ackskew >= -MAXACKWINDOW) ? ' ' : '3',
+-			    (ackskew <= MAXACKWINDOW) ? ' ' : '4',
++			    (ackskew <= (MAXACKWINDOW << sws)) ? ' ' : '4',
+ 			    SEQ_GEQ(src->seqhi + MAXACKWINDOW, end) ?' ' :'5',
+ 			    SEQ_GEQ(seq, src->seqlo - MAXACKWINDOW) ?' ' :'6');
+ 		}
+
