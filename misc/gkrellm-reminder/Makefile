@@ -8,7 +8,10 @@
 PORTNAME=	reminder
 PORTVERSION=	0.3.5
 CATEGORIES=	misc
-MASTER_SITES=	http://www.engr.orst.edu/~simonsen/reminder/
+# The original distribution site has gone walking. This site is the
+# gkrellm website with a reference to the plugin, but only with version
+# 2.0.0, not the original one - edwin 20021227
+MASTER_SITES=	http://web.wt.net/~billw/gkrellm/
 PKGNAMEPREFIX=	gkrellm-
 
 MAINTAINER=	pat@FreeBSD.org
