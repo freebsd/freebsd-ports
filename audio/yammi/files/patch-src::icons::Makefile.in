@@ -1,0 +1,22 @@
+--- src/icons/Makefile.in.orig	Tue Dec 14 22:54:21 2004
++++ src/icons/Makefile.in	Tue Dec 14 22:56:39 2004
+@@ -465,9 +465,17 @@
+ #>+ 1
+ 	$(INSTALL_DATA) $(srcdir)/toggle_playlist.png $(DESTDIR)$(kde_datadir)/yammi/icons/crystalsvg/22x22/actions/toggle_playlist.png
+ 
+-#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/{16x16,22x22,32x32,48x48,64x64}/apps/
++#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/16x16/apps/
++#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/22x22/apps/
++#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/32x32/apps/
++#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/48x48/apps/
++#>- 	$(mkinstalldirs) $(kde_icondir)/crystalsvg/64x64/apps/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/{16x16,22x22,32x32,48x48,64x64}/apps/
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/16x16/apps/
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/22x22/apps/
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/32x32/apps/
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/48x48/apps/
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/crystalsvg/64x64/apps/
+ 
+ #>- 	$(INSTALL_DATA) $(srcdir)/yammi16x16.png $(kde_icondir)/crystalsvg/16x16/apps/yammi.png
+ #>+ 1
