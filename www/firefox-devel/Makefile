@@ -21,7 +21,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		IDL.2:${PORTSDIR}/devel/ORBit \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
