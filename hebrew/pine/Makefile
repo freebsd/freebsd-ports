@@ -14,6 +14,8 @@ DISTNAME=	pine4.44_heb2.09
 MAINTAINER?=	nadav@cs.technion.ac.il
 COMMENT?=	PINE(tm) -- a Program for Internet News & Email
 
+FORBIDDEN=	Pine versions less than 4.58 contain serious vulnerabilities.
+
 MAN1=		pine.1 pico.1 pilot.1
 
 pre-fetch:
