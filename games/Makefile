@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1995/12/22 18:51:46 markm Exp $
+# $Id: Makefile,v 1.35 1995/12/23 21:11:49 markm Exp $
 #
 
     SUBDIR += acm
@@ -34,6 +34,7 @@
     SUBDIR += xrisk
     SUBDIR += xroach
     SUBDIR += xrobots
+    SUBDIR += xskat
     SUBDIR += xsol
     SUBDIR += xtetris
     SUBDIR += xtic
