@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1997/07/03 06:21:54 asami Exp $
+#   $Id: Makefile,v 1.9 1997/09/11 19:38:01 jfitz Exp $
 #
 
 DISTNAME=	CGI_Lite-1.8
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI_Lite.3
 
 do-configure:
