@@ -1,0 +1,5 @@
+bin/pornview
+share/gnome/pornview/logo.png
+share/gnome/pixmaps/pornview.png
+share/gnome/apps/Graphics/pornview.desktop
+@dirrm share/gnome/pornview

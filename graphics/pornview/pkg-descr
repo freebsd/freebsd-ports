@@ -1,0 +1,10 @@
+PornView is an image viewer/manager
+
+Features:
+- Thumbnail list display.
+- Thumbnails can be cached to disk for faster subsequent loads.
+- Zoom in, out, and fit to window.
+- Slideshow.
+- Full screen viewing.
+
+WWW: http://pornview.sourceforge.net
