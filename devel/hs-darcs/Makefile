@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTVERSION=	0.9.17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -50,8 +49,6 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/doc/darcs|${DOCSDIR}|' \
-		${WRKSRC}/darcsman.hs
 .if defined(WITH_SERVER)
 	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
 		s|darcs/cgi.conf|cgi.conf.sample|' \
@@ -61,8 +58,7 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/$$(datadir)/d' ${WRKSRC}/${MAKEFILE}
 .else
-	@${REINPLACE_CMD} -e 's|$$(datadir)/doc|${DOCSDIR}| ; /darcs\.ps/d' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/darcs\.ps/d'  ${WRKSRC}/${MAKEFILE}
 .endif
 
 post-configure:
