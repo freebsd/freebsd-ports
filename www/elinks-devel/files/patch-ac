@@ -1,0 +1,19 @@
+--- http.c.orig	Thu Feb 22 12:21:56 2001
++++ http.c	Thu Feb 22 12:22:44 2001
+@@ -540,14 +540,14 @@
+ 			e->redirect_get = h == 303;
+ 		}
+ 	}
+- 	/*if (h == 401) if ((d = parse_http_header(e->head, "WWW-Authenticate", NULL))) {
++ 	if (h == 401) if ((d = parse_http_header(e->head, "WWW-Authenticate", NULL))) {
+  		if (!strncasecmp(d, "Basic", 5)) {
+  			add_auth_entry(host, get_param(d, "realm"));
+  			add_questions_entry(do_auth_dialog);
+  			setcstate(c, S_QUESTIONS);
+   		}
+  		mem_free(d);
+-  	}*/
++  	}
+ 	kill_buffer_data(rb, a);
+ 	c->cache = e;
+ 	info->close = 0;
