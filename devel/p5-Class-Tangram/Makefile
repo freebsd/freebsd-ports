@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Tangram
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -17,7 +17,6 @@ COMMENT=	Create constructors, accessor, update methods for objects from Tangram
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Pod/Constants.pm:${PORTSDIR}/textproc/p5-Pod-Constants \
 		${SITE_PERL}/Tangram.pm:${PORTSDIR}/databases/p5-Tangram
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
