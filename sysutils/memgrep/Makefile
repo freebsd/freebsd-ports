@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.hick.org/code/skape/memgrep/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Utility to manipulate memory from running processes and core files
 
 HAS_CONFIGURE=	yes
