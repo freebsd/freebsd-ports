@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/AxKit/XSP/WebUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP/WebUtils/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP/WebUtils
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AxKit/XSP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AxKit 2>/dev/null || true
