@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	0.9b.20030130
+PORTVERSION=	0.9b.20030308
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -18,18 +18,20 @@ DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:S|.200|-200|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alane@freebsd.org
-COMMENT=	An enhanced version of the 'dialog' command to work with ncurses
+COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
 BINDIR?=	${PREFIX}/bin
+LIBDIR?=	${PREFIX}/lib
 MAN1DIR?=	${MANPREFIX}/man/man1
 
 do-install:
 	cd ${WRKSRC};\
 	${INSTALL_PROGRAM} dialog ${BINDIR}/cdialog;\
+	$(INSTALL_DATA) libdialog.a $(LIBDIR)/libcdialog.a;\
 	${INSTALL_DATA} dialog.1 ${MAN1DIR}/cdialog.1
 
 .include <bsd.port.pre.mk>
