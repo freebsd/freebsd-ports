@@ -22,7 +22,7 @@ DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtoo
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
