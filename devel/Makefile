@@ -559,6 +559,7 @@
     SUBDIR += p5-PerlMenu
     SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-Daemon
+    SUBDIR += p5-Proc-PIDFile
     SUBDIR += p5-Proc-ProcessTable
     SUBDIR += p5-Proc-Reliable
     SUBDIR += p5-Proc-Simple
