@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	nbench
-PORTVERSION=	2.1
+PORTVERSION=	2.2.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.tux.org/pub/tux/mayer/
-MASTER_SITE_SUBDIR=	system/benchmark
+MASTER_SITES=	ftp://ftp.tux.org/pub/tux/mayer/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbench ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/nbench
-	${INSTALL_DATA} ${WRKSRC}/NNET.DAT ${PREFIX}/share/nbench
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/NNET.DAT ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/nbench
-.for file in README README.submit RESULTS bdoc.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/nbench
+	@${MKDIR} ${DOCSDIR}
+.for f in README README.submit RESULTS bdoc.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,5 +1,5 @@
---- sysinfo.sh	Thu Dec 11 20:54:46 1997
-+++ /home/andy/tmp/wrk/sysinfo.sh	Wed Dec 17 08:30:28 1997
+--- sysinfo.sh.orig	Mon Oct 18 00:03:53 2004
++++ sysinfo.sh	Mon Oct 18 00:04:35 2004
 @@ -50,8 +50,8 @@
  
  # this bombs out on Ultrix which expect "cut -d"
@@ -11,7 +11,3 @@
  
  # let's hope that ctrl-c is not part of any string here
  # this also will barf later if " is in any of the strings
-@@ -60,4 +60,4 @@
-  sed -e "s%CCVERSION%$gccversion" -e "s%LIBCVERSION%$libcversion"\
-      -e "s%SYSTEM%$compsystem" -e "s%DATE%$compdate"\
-    ${i}.template > $i
