@@ -1,20 +1,19 @@
 bin/mnews
 lib/mnews/jnames
 lib/mnews/default-domain
-share/mnews/doc/FAQ.doc
-share/mnews/doc/board.doc
-share/mnews/doc/mnews.1
-share/mnews/doc/mnews.doc
-share/mnews/doc/prerel.doc
-share/mnews/doc/present.doc
-share/mnews/doc/read1ST.doc
-share/mnews/doc/readme.doc
-share/mnews/doc/update.doc
-share/mnews/samples/jnames.fj
-share/mnews/samples/jnames.jp
-share/mnews/samples/jnames.smp
-share/mnews/samples/jnames.tnn
+share/doc/mnews/FAQ.doc
+share/doc/mnews/board.doc
+share/doc/mnews/mnews.1
+share/doc/mnews/mnews.doc
+share/doc/mnews/prerel.doc
+share/doc/mnews/present.doc
+share/doc/mnews/read1ST.doc
+share/doc/mnews/readme.doc
+share/doc/mnews/update.doc
+share/examples/mnews/jnames.fj
+share/examples/mnews/jnames.jp
+share/examples/mnews/jnames.smp
+share/examples/mnews/jnames.tnn
 @dirrm lib/mnews
-@dirrm share/mnews/doc
-@dirrm share/mnews/samples
-@dirrm share/mnews
+@dirrm share/doc/mnews
+@dirrm share/examples/mnews
