@@ -1,0 +1,26 @@
+--- gdevlips.mak.orig	Tue Jul 27 17:04:03 1999
++++ gdevlips.mak	Tue Jul 27 17:10:11 1999
+@@ -31,23 +31,3 @@
+  $(ghost_h) $(gzstate_h) $(igstate_h)
+ 	$(GLCC) -DA4 $(GLO_)gdevl4v.$(OBJ) $(C_) $(GLSRC)gdevl4v.c
+ 
+-### ------- Epson ESC/Page printer device ----------------- ###
+-
+-escpage_=$(GLOBJ)gdevespg.$(OBJ) $(GLOBJ)gdevlprn.$(OBJ)
+-$(GLOBJ)gdevespg.$(OBJ): $(GLSRC)gdevespg.c $(GLSRC)gdevlprn.h $(PDEVH)
+-	$(GLCC) -DA4 $(GLO_)gdevespg.$(OBJ) $(C_) $(GLSRC)gdevespg.c
+-
+-escpage.dev: $(escpage_) page.dev
+-	$(SETPDEV) escpage $(escpage_)
+-
+-lp2000.dev: $(escpage_) page.dev
+-	$(SETPDEV) lp2000 $(escpage_)
+-
+-### --- The NEC NPDL language printer device ------ ###
+-
+-npdl_=$(GLOBJ)gdevnpdl.$(OBJ) $(GLOBJ)gdevlprn.$(OBJ)
+-$(GLOBJ)gdevnpdl.$(OBJ): $(GLSRC)gdevnpdl.c $(GLSRC)gdevlprn.h $(PDEVH)
+-	$(GLCC) -DA4 $(GLO_)gdevnpdl.$(OBJ) $(C_) $(GLSRC)gdevnpdl.c
+-
+-npdl.dev: $(npdl_) page.dev
+-	$(SETPDEV) npdl $(npdl_)

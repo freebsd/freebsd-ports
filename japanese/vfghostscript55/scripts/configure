@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev lp2000.dev escpage.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
@@ -94,8 +94,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "declj250" "alternate DEC LJ250 driver" OFF \
    "dmprt"    "Generic Printer" ON \
    "ap3250"   "Epson AP3250" OFF \
-   "escpage"  "Epson ESC/Page laser printer 60-600dpi, mono" ON \
-   "lp2000"   "Epson LP-2000/3000/7000/7000G, mono" ON \
+   "epag"     "Epson ESC/Page laser printer 60-600dpi, mono" ON \
    "md2k"     "ALPS MD2000/2010/4000/1300/1500/5000 driver" ON \
    "md5k"     "ALPS MD5000 driver" ON \
    "md50Mono" "ALPS MD5000 monochrome driver" OFF \
