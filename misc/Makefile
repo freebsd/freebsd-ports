@@ -153,6 +153,7 @@
     SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += ttyrec
     SUBDIR += tvguide
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
