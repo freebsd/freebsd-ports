@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon Mar 25 19:22:25 1996
---- Makefile	Fri Jan  3 10:41:45 1997
+*** Makefile.orig	Tue Mar 26 03:22:25 1996
+--- Makefile	Sat Jun 21 02:40:03 1997
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -17,6 +17,23 @@
   #
   # HP-UX SCO Unicos
   #REAL_DAEMON_DIR=/etc
+***************
+*** 137,143 ****
+  
+  freebsd:
+  	@make REAL_DAEMON_DIR=$(REAL_DAEMON_DIR) STYLE=$(STYLE) \
+! 	LIBS= RANLIB=ranlib ARFLAGS=rv AUX_OBJ= NETGROUP= TLI= \
+  	EXTRA_CFLAGS=-DSYS_ERRLIST_DEFINED VSYSLOG= all
+  
+  linux:
+--- 137,143 ----
+  
+  freebsd:
+  	@make REAL_DAEMON_DIR=$(REAL_DAEMON_DIR) STYLE=$(STYLE) \
+! 	LIBS= RANLIB=ranlib ARFLAGS=rv AUX_OBJ= NETGROUP=-DNETGROUP TLI= \
+  	EXTRA_CFLAGS=-DSYS_ERRLIST_DEFINED VSYSLOG= all
+  
+  linux:
 ***************
 *** 361,367 ****
   # the ones provided with this source distribution. The environ.c module
@@ -153,12 +170,12 @@
   
   SHELL	= /bin/sh
 ! PREFIX  = /usr/local
-  
+! 
 ! .SUFFIXES: .c .so .o
 !   
 ! .c.so:
 ! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-! 
+  
 ! CFLAGS  += -DFACILITY=$(FACILITY) $(ACCESS) $(PARANOID) $(NETGROUP) \
   	$(BUGS) $(SYSTYPE) $(AUTH) $(UMASK) \
   	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
