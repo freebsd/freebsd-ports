@@ -5,4 +5,4 @@ hashes get pretty-printed.
 'decompyle' may also verify the equivalence of the generated source by
 compiling it and comparing both byte-codes.
 
-WWW: http://www.goebel-consult.de/decompyle/
+WWW: http://www.crazy-compilers.com/decompyle/
