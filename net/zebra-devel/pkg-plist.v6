@@ -1,4 +1,0 @@
-sbin/ospf6d
-sbin/ripngd
-etc/zebra/ospf6d.conf.sample
-etc/zebra/ripngd.conf.sample

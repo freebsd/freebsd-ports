@@ -1,8 +1,0 @@
-bin/mtv
-bin/mtvp
-share/mtv/LICENSE
-share/mtv/README
-share/mtv/README-Fullscreen
-share/mtv/README-mtv-redhat
-share/mtv/release-notes.html
-@dirrm share/mtv

@@ -18,7 +18,6 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes
-INSTALLS_SHLIB=	yes
 PORTOBJFORMAT=	aout
 
 USE_X_PREFIX=	yes
@@ -34,5 +33,6 @@ do-install:
 		${SETENV} OBJFORMAT=${PORTOBJFORMAT} \
 		${INSTALL_PROGRAM} $$l ${PREFIX}/lib/aout; \
 	done
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/aout
 
 .include <bsd.port.mk>

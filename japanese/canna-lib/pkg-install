@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
-(grep -v ^# /etc/services | grep canna >/dev/null) || \
-(echo "Now, you need to add following entry to your /etc/services:" ;
- echo ;
-	 echo "	canna           5680/tcp" ;
-	 echo )

@@ -1,4 +1,0 @@
-bin/qhacc
-bin/qhacc.exec
-share/qhacc/config.sample
-@dirrm share/qhacc

@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# configure,v 1.1.1.1 1994/10/23 01:36:59 torstenb Exp
-#
-
-mv ${WRKSRC}/src/pathnames.h ${WRKSRC}/src/pathnames.h.bak
-sed <${WRKSRC}/src/pathnames.h.bak >${WRKSRC}/src/pathnames.h s+!!PREFIX!!+$PREFIX+g
