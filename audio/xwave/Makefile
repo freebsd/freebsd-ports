@@ -8,7 +8,8 @@
 PORTNAME=	xwave
 PORTVERSION=	2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.funet.fi/~kouhia/waves/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./v/}
 
 MAINTAINER=	martin.kraft@fal.de
