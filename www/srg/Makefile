@@ -19,8 +19,10 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
 NO_INSTALL_MANPAGES=	yes
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/srg
 .for i in footer.php header.php ip2user.txt srg.conf
@@ -29,8 +31,9 @@ PLIST_FILES+=	share/examples/srg/${i}
 PLIST_DIRS=	share/examples/srg
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-g |${CFLAGS} |' ${WRKSRC}/Makefile \
+	${REINPLACE_CMD} -e 's|-g |${CFLAGS} ${CPPFLAGS} |' ${WRKSRC}/Makefile \
 		${WRKSRC}/lib/Makefile
+	${REINPLACE_CMD} -e 's|^\(LDFLAGS\)=|\1+=|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/srg ${PREFIX}/bin
