@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.8 1998/11/28 05:38:54 asami Exp $
+# $Id: Makefile,v 1.9 1998/12/18 09:39:35 asami Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -12,6 +12,9 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
+
+PATCH_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+PATCHFILES=	iv-3.1j-gamma-fixcmpfont.patch	
 
 MAINTAINER=	sanpei@sanpei.org
 
