@@ -16,7 +16,7 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 MAINTAINER=	rzheka@users.sourceforge.net
 COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
 USE_LIBTOOL=	yes

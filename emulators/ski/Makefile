@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	freebsd-ia64@FreeBSD.org
 COMMENT=	HP's Ski IA-64 simulator
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
 

@@ -18,7 +18,7 @@ COMMENT=	Perl script to convert VIQR encoding to other Vietnamese encodings.
 
 PORTCOMMENT=	Converts Vietnamese VIQR text into troff format
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 EXTRACT_CMD=		rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
