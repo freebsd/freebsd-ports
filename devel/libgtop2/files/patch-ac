@@ -1,5 +1,5 @@
---- configure.orig	Thu May 27 17:06:48 1999
-+++ configure	Mon Jul 12 12:56:26 1999
+--- configure.orig	Tue Oct 19 04:16:30 1999
++++ configure	Tue Oct 26 11:46:41 1999
 @@ -971,9 +971,9 @@
  
  # libtool versioning
@@ -13,7 +13,7 @@
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
  
-@@ -7895,7 +7895,7 @@
+@@ -8005,7 +8005,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -22,12 +22,3 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -10557,7 +10557,7 @@
- 
- 
- LIBGTOP_LIBS='-L$(libdir)'
--LIBGTOP_INCS='-I$(includedir) -I$(pkglibdir)/include'
-+LIBGTOP_INCS='-I$(includedir)'
- 
- if test x$libgtop_use_machine_h = xyes ; then
-   LIBGTOP_INCS="$LIBGTOP_INCS -DHAVE_GLIBTOP_MACHINE_H"
