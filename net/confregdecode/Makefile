@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	confregdecode
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cosi-nms
@@ -21,17 +21,20 @@ ALL_TARGET=	jar
 MAKE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java
-	@${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${LOCALBASE}/share/java
-	@${SED} \
+	${MKDIR} ${PREFIX}/share/java
+	${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${PREFIX}/share/java
+	${SED} \
 		-e s,%%PREFIX%%,${PREFIX}, \
 		-e s,%%LOCALBASE%%,${LOCALBASE}, \
-		< ${FILESDIR}/confregdecode > ${PREFIX}/bin/confregdecode; \
-	${CHMOD} a+x ${PREFIX}/bin/confregdecode
+		< ${FILESDIR}/confregdecode > ${WRKSRC}/confregdecode; \
+	${INSTALL_SCRIPT} ${WRKSRC}/confregdecode ${PREFIX}/bin
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/confregdecode
-	@${INSTALL_DATA} ${WRKSRC}/README.txt ${LOCALBASE}/share/doc/confregdecode
-	@${INSTALL_DATA} ${WRKSRC}/ConfregDecode.html ${LOCALBASE}/share/doc/confregdecode
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in README.txt ConfregDecode.html
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
