@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.12 1998/06/26 09:16:27 obrien Exp $
+# $Id: Makefile,v 1.13 1998/09/21 22:33:24 steve Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -14,7 +14,7 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
-PKGNAME=	ja-nvi-eucjp-1.79.19970820
+PKGNAME=	ja-nvi-eucjp-1.79.19981119
 
 .include <${.CURDIR}/../../editors/nvi-m17n/Makefile>
 

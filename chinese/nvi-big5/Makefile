@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1998/03/04 19:35:01 asami Exp $
+# $Id: Makefile,v 1.11 1998/06/26 09:16:41 obrien Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -12,7 +12,7 @@ PATCHDIR=	${.CURDIR}/../../editors/nvi-m17n/patches
 PKGDIR=		${.CURDIR}/../../editors/nvi-m17n/pkg
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-PKGNAME=	zh-nvi-big5-1.79.19970820
+PKGNAME=	zh-nvi-big5-1.79.19981119
 
 .include <${.CURDIR}/../../editors/nvi-m17n/Makefile>
 
