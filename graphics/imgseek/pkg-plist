@@ -106,6 +106,9 @@ lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/helpText.pyo
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.py
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.pyc
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/tdict.py
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/tdict.pyc
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/tdict.pyo
 share/imgSeek/color.png
 share/imgSeek/courB12.pbm
 share/imgSeek/courB12.pil
