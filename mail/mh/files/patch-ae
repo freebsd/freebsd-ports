@@ -53,9 +53,26 @@ interesting fields when you do a "show":
  
  @BEGIN: SHAREDLIB
  ODEFS	=	formatdef.o m_msgdef.o
---- sbr/formatsbr.c.orig	Sat Oct 12 23:05:07 1996
-+++ sbr/formatsbr.c	Sun Oct 13 00:08:31 1996
-@@ -114,13 +114,13 @@
+--- sbr/formatsbr.c.orig	Sat Jan 16 20:25:54 1999
++++ sbr/formatsbr.c	Sat Jan 16 20:48:58 1999
+@@ -12,6 +12,7 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <time.h>
+ 
+ /*  */
+ 
+@@ -32,8 +33,6 @@
+ struct mailname fmt_mnull;
+ 
+ 
+-long	time ();
+-
+ /*  */
+ 
+ /* MAJOR HACK:	See MHCHANGES for discussion */
+@@ -114,13 +113,13 @@
   */
  
  static int match (str, sub)
@@ -73,7 +90,7 @@ interesting fields when you do a "show":
  
  #ifdef LOCALE
      while (c1 = *sub) {
-@@ -203,14 +203,14 @@
+@@ -203,14 +202,14 @@
  					i++;\
  				}\
  			} else {\
@@ -91,7 +108,7 @@ interesting fields when you do a "show":
  						sp++;\
  					    *cp++ = ' ';\
  				}\
-@@ -221,13 +221,13 @@
+@@ -221,13 +220,13 @@
  	}
  #define PUTS(cp, str) {\
  		if (sp = (str)) {\
@@ -108,7 +125,7 @@ interesting fields when you do a "show":
  				sp++;\
  			    *cp++ = ' ';\
  			}\
-@@ -358,15 +358,30 @@
+@@ -358,15 +357,30 @@
      long l;
      char        *savestr;
      char	buffer[BUFSIZ];
@@ -139,7 +156,7 @@ interesting fields when you do a "show":
  	    break;
  
  	case FT_LIT:
-@@ -500,6 +515,10 @@
+@@ -500,6 +514,10 @@
  
  	case FT_LS_COMP:
  	    str = fmt->f_comp->c_text;
@@ -150,7 +167,7 @@ interesting fields when you do a "show":
  	    break;
  	case FT_LS_LIT:
  	    str = fmt->f_text;
-@@ -722,6 +741,10 @@
+@@ -722,6 +740,10 @@
  			    else
  				break;
  		    }
@@ -161,7 +178,7 @@ interesting fields when you do a "show":
  		    if (*str)
  			break;
  		}	    
-@@ -744,6 +767,10 @@
+@@ -744,6 +766,10 @@
  			break;
  		}
  	    }

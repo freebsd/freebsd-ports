@@ -1,0 +1,20 @@
+--- sbr/fmtcompile.c.orig	Wed Dec  1 13:01:22 1993
++++ sbr/fmtcompile.c	Sat Jan 16 20:48:09 1999
+@@ -12,6 +12,7 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <time.h>
+ 
+ static struct format *formatvec;	/* array to hold formats */
+ static struct format *next_fp;		/* next free format slot */
+@@ -128,9 +129,6 @@
+ 
+     (char *)0,	0,		0,		0,		0    
+ };
+-
+-
+-long time ();
+ 
+ static struct ftable *lookup(name)
+     register char *name;

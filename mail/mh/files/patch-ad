@@ -165,37 +165,6 @@ The following patch adds shared library support for FreeBSD to MH
   #ifdef	SYS5
   #define	u_short	ushort
   #define u_long  ulong
-*** ../mh-6.8.3.orig/support/pop/mmdfII/pop/lock.c	Wed Dec  1 06:01:30 1993
---- support/pop/mmdfII/pop/lock.c	Tue Dec 27 19:58:05 1994
-***************
-*** 47,52 ****
---- 47,56 ----
-  #include <sys/file.h>
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ #include <fcntl.h>
-+ #endif
-+ 
-  #ifdef	SYS5
-  #define	u_short	ushort
-  #define u_long  ulong
-diff -cdr ../mh-6.8.3.orig/zotnet/mts/lock.c ./zotnet/mts/lock.c
-*** ../mh-6.8.3.orig/zotnet/mts/lock.c	Wed Dec  1 06:01:30 1993
---- zotnet/mts/lock.c	Tue Dec 27 19:58:05 1994
-***************
-*** 47,52 ****
---- 47,56 ----
-  #include <sys/file.h>
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ #include <fcntl.h>
-+ #endif
-+ 
-  #ifdef	SYS5
-  #define	u_short	ushort
-  #define u_long  ulong
 --- conf/makefiles/sbr.orig	Tue Sep 22 16:38:28 1998
 +++ conf/makefiles/sbr	Tue Sep 22 16:51:48 1998
 @@ -157,6 +157,7 @@
