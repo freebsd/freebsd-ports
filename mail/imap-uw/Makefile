@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2001a
+PORTVERSION=	2002
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
 		http://atreides.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
-DISTNAME=	imap-2001a
+DISTNAME=	imap-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.Z imap-utils.tar.Z
 
 MAINTAINER=	anders@FreeBSD.org
@@ -25,13 +24,13 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-WRKSRC=		${WRKDIR}/imap-2001a
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN8=		ipopd.8 imapd.8
 
 ALL_TARGET=	bsf
 .if defined(WITH_SSL)
-MAKE_ARGS+=	SSLTYPE=unix
+MAKE_ARGS+=	SSLTYPE=unix.nopwd
 USE_OPENSSL=	yes
 .endif
 
@@ -120,8 +119,8 @@ post-install:
 	@${ECHO}
 	@${ECHO} "Example inetd config for SSL only services:"
 	@${ECHO}
-	@${ECHO} "pop3s   stream  tcp     nowait  root    /usr/local/libexec/ipop3d       ipop3d"
-	@${ECHO} "imaps   stream  tcp     nowait  root    /usr/local/libexec/imapd        imapd"
+	@${ECHO} "pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d       ipop3d"
+	@${ECHO} "imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd"
 	@${ECHO}
 	@${ECHO} "Remember to recompile and reinstall your cclient port with SSL support too, if"
 	@${ECHO} "you had it installed without SSL support."
