@@ -17,20 +17,3 @@
 
   #include <Library.tmpl>
 
-***************
-*** 166,172 ****
-  #endif
-
-  #ifndef XmClientLibs
-! # define XmClientLibs -lXm $(XTOOLLIB) $(XLIB)
-  #endif
-
-  #ifndef HasSaberC
---- 166,172 ----
-  #endif
-
-  #ifndef XmClientLibs
-! # define XmClientLibs ${MOTIFLIB} $(XTOOLLIB) $(XLIB)
-  #endif
-
-  #ifndef HasSaberC

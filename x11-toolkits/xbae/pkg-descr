@@ -6,3 +6,5 @@ editeable). The XbaeMatrix looks to some extent like a grid of
 XmTextField widgets, but is actually implemented with a single
 XmTextField. This means a big performance improvement due to less
 overhead.
+
+WWW: http://xbae.sourceforge.net/

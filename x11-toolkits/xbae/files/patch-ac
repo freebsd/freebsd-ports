@@ -1,0 +1,88 @@
+--- doc/Makefile.am.orig	Sun Oct  6 13:19:58 2002
++++ doc/Makefile.am	Sat Nov 23 16:20:46 2002
+@@ -15,7 +15,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # polluting /usr/local for default installs.
+ #
+-docdir=	$(prefix)/Xbae
++docdir=	$(datadir)/Xbae
+ 
+ doc_DATA=	\
+       contents.html coverplus.html difffonts.html \
+--- doc/Makefile.in.orig	Wed Oct 16 14:00:35 2002
++++ doc/Makefile.in	Sat Nov 23 16:21:05 2002
+@@ -127,7 +127,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # polluting /usr/local for default installs.
+ #
+-docdir = $(prefix)/Xbae
++docdir = $(datadir)/Xbae
+ 
+ doc_DATA = \
+       contents.html coverplus.html difffonts.html \
+--- Makefile.am.orig	Tue Aug 20 12:03:13 2002
++++ Makefile.am	Sat Nov 23 16:28:21 2002
+@@ -16,7 +16,7 @@
+ 
+ endif
+ 
+-docdir=	$(prefix)/Xbae
++docdir=	$(datadir)/Xbae
+ doc_DATA= NEWS README INSTALL
+ 
+ .PHONY: changelog UpdateCheck
+--- Makefile.in.orig	Wed Oct 16 13:56:23 2002
++++ Makefile.in	Sat Nov 23 16:28:17 2002
+@@ -125,7 +125,7 @@
+ 
+ @Aclocal_TRUE@aclocal_DATA = ac_find_xbae.m4
+ 
+-docdir = $(prefix)/Xbae
++docdir = $(datadir)/Xbae
+ doc_DATA = NEWS README INSTALL
+ 
+ #
+--- examples/builderXcessory/Makefile.am.orig	Tue Jan 25 17:39:52 2000
++++ examples/builderXcessory/Makefile.am	Sat Nov 23 16:27:50 2002
+@@ -9,7 +9,7 @@
+ 	xbae.wml \
+ 	xbae_ctrl.tcl
+ 
+-examplesdir = $(prefix)/Xbae/examples/builderXcessory
++examplesdir = $(datadir)/Xbae/examples/builderXcessory
+ examples_DATA = \
+ 	XbaeCaption.col XbaeInput.col XbaeMatrix.col \
+ 	XbaeCaption.pix XbaeInput.pix XbaeMatrix.pix \
+--- examples/builderXcessory/Makefile.in.orig	Wed Oct 16 14:00:28 2002
++++ examples/builderXcessory/Makefile.in	Sat Nov 23 16:27:46 2002
+@@ -122,7 +122,7 @@
+ 	xbae_ctrl.tcl
+ 
+ 
+-examplesdir = $(prefix)/Xbae/examples/builderXcessory
++examplesdir = $(datadir)/Xbae/examples/builderXcessory
+ examples_DATA = \
+ 	XbaeCaption.col XbaeInput.col XbaeMatrix.col \
+ 	XbaeCaption.pix XbaeInput.pix XbaeMatrix.pix \
+--- doc/images/Makefile.am.orig	Tue Aug 20 14:11:11 2002
++++ doc/images/Makefile.am	Sat Nov 23 16:27:21 2002
+@@ -10,7 +10,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # polluting /usr/local for default installs.
+ #
+-imagedir=	$(exec_prefix)/Xbae/images
++imagedir=	$(datadir)/Xbae/images
+ 
+ 
+ 
+--- doc/images/Makefile.in.orig	Wed Oct 16 14:00:42 2002
++++ doc/images/Makefile.in	Sat Nov 23 16:27:15 2002
+@@ -122,7 +122,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # polluting /usr/local for default installs.
+ #
+-imagedir = $(exec_prefix)/Xbae/images
++imagedir = $(datadir)/Xbae/images
+ 
+ #
+ # Cut the distribution size, don't distribute these in a source
