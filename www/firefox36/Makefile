@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
 MASTER_SITE_SUBDIR=	alane
@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		IDL.2:${PORTSDIR}/devel/ORBit \
-		Xft2.2:${PORTSDIR}/x11-fonts/Xft \
 		iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
@@ -60,6 +59,7 @@ SORT?=/usr/bin/sort
 PLIST=${WRKDIR}/plist
 
 .if defined(WITH_DEBUG)
+WITH_LOGGING=		yes
 WITHOUT_OPTIMIZE=	yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
 .endif # defined(WITH_DEBUG)
@@ -68,6 +68,35 @@ CONFIGURE_ENV+=		WITH_DEBUG=yes
 CFLAGS+=		-O2
 .endif # defined(WITH_OPTIMIZE)
 
+.if defined(WITH_LOGGING)
+CONFIGURE_ENV+=	WITH_LOGGING=yes
+.endif # defined(WITH_LOGGING)
+
+.if defined(WITHOUT_XFT)
+CONFIGURE_ENV+=	WITHOUT_XFT=yes
+.else
+LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
+.endif # !defined(WITHOUT_XFT)
+
+# check for known bad fonts
+.if exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
+BAD_FONTS=yes
+.endif # exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
+.if exists(${X11BASE}/lib/X11/fonts/lfpfonts-fix/fonts.dir)
+BAD_FONTS=yes
+.endif # exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
+
+.if defined(BAD_FONTS) && !defined(WITHOUT_XFT)
+.undef NO_IGNORE
+BROKEN=	"You have X fonts installed (lfpfonts*) that cause breakage unless"
+BROKEN+="WITHOUT_XFT is set, which  turns off AntiAliasing. Blease either"
+BROKEN+="uninstall the fonts or restart the make with 'make -DWITHOUT_XFT'."
+BROKEN+="There may be other third party font packages that also cause this"
+BROKEN+="breakage; they will be tested for as they are identified. If you"
+BROKEN+="find a font port that verifiably causes this breakage, please"
+BROKEN+="let us know by mailing ${MAINTAINER}. Thank you."
+BROKEN+="NOTE: The Microsoft webfonts port is known to be safe."
+.endif # defined(BAD_FONTS) && !defined(WITHOUT_XFT)
 
 CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
