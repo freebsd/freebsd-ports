@@ -7,6 +7,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
