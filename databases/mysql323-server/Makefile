@@ -5,49 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	${MASTERPORTNAME}
+PORTNAME?=	mysql
 PORTVERSION=	3.23.58
-#PORTREVISION?=	1
+PORTREVISION?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
-		http://mysql.he.net/Downloads/MySQL-3.23/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-3.23/ \
-		http://mysql.orst.edu/Downloads/MySQL-3.23/ \
-		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.23/ \
-		ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-3.23/
-DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-3.23/ \
+		http://www.softagency.co.jp/MySQL/Downloads/MySQL-3.23/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-3.23/ \
+		http://mysql.mediatraffic.fi/Downloads/MySQL-3.23/ \
+		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-3.23/ \
+		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-3.23/ \
+		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-3.23/ \
+		http://www.mysql.cz/Downloads/MySQL-3.23/ \
+		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-3.23/ \
+		http://mysql.oms-net.nl/Downloads/MySQL-3.23/ \
+		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-3.23/
+PKGNAMESUFFIX?=	-server
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-WRKSRC=		${WRKDIR}/mysql-${PORTVERSION}
 SLAVEDIRS=	databases/mysql323-client
-MASTERPORTNAME=	mysql-server
+PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
-USE_PERL5=	yes
+USE_GNOME=	lthack
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
+
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
-		--without-perl \
 		--without-debug \
 		--without-readline \
 		--without-bench \
-		--with-mit-threads=no \
 		--with-libwrap \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--program-prefix='' \
-		--with-innodb
+		--with-innodb \
+		--enable-thread-safe-client
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
-.endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .endif
@@ -55,120 +54,115 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .if defined(BUILD_STATIC)
-CONFIGURE_ARGS+=--with-mysqld-ldflags=--static
+CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
-.if defined(BUILD_OPTIMIZED)
-CFLAGS+=	-mcpu=pentiumpro -O3
+
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
 CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
-CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
+CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
 .if ${OSVERSION} > 500000
-CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
+CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 .else
-CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
+.else
+CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
-.if defined(THREAD_SAFE_CLIENT)
-CONFIGURE_ARGS+=--enable-thread-safe-client
-.endif
-CONFIGURE_ENV+=	PERL=${PERL} \
-		PERL5=${PERL} \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		CFLAGS="${CFLAGS}" \
-		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
-# without including these flags mysqld may crash under heavy load
-# and multiple connections at the same time
-CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
+.if ${OSVERSION} < 500000
+CXX=		${CC}
+.endif
+.if defined(BUILD_OPTIMIZED)
+CFLAGS+=	-O3 -fno-omit-frame-pointer
+.if ${OSVERSION} > 500000 || (defined(USE_GCC) && (${USE_GCC} == 3.0 || ${USE_GCC} == 3.1 || ${USE_GCC} == 3.2 || ${USE_GCC} == 3.3))
+CFLAGS+=	-fno-gcse
+.endif
+.endif
+CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
-.endif
-.if ${OSVERSION} < 500000
-CONFIGURE_ENV+=	CXX="${CC}"
 .endif
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-.if !defined(NOPORTDOCS)
-INFO=		mysql
-.endif
+USE_PERL5_RUN=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
 CONFLICTS=	mysql-server-4.* mysql-server-5.*
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+PLIST_SUB=	DB_DIR=${DB_DIR} \
+		MYSQL_VERSION=${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_CHARSET=charset	define the primary built-in charset (latin1);"
-	@${ECHO_MSG} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
-	@${ECHO_MSG} "	DB_DIR=directory	Set alternate directory for database files"
-	@${ECHO_MSG} "				(default is /var/db/mysql)."
-	@${ECHO_MSG} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
-	@${ECHO_MSG} "	SKIP_INSTALL_DB=yes	Skip mysql_install_db"
-	@${ECHO_MSG} "				(i. e. leave ${DB_DIR} alone)."
-	@${ECHO_MSG} "				This is useful for upgrades."
-	@${ECHO_MSG} "				Be sure to know what you are doing!"
-	@${ECHO_MSG} "	SKIP_DNS_CHECK=yes	don't run resolveip to do an additional"
-	@${ECHO_MSG} "				DNS check before inserting local hostname to"
-	@${ECHO_MSG} "				mysql database."
-	@${ECHO_MSG} "				Use if your machine has no offical DNS entry."
-	@${ECHO_MSG} "	BUILD_STATIC=yes	Build a static version of mysqld."
-	@${ECHO_MSG} "	BUILD_OPTIMIZED=yes	Add -mcpu=pentiumpro -O3 to CFLAGS."
-	@${ECHO_MSG} "				This setting may produce broken code and thus"
-	@${ECHO_MSG} "				is not recommended for production servers."
-	@${ECHO_MSG} ""
+DOCS=		manual.html manual.txt manual_toc.html
 
-.if exists(${DB_DIR}) && !defined(PACKAGE_BUILDING) && !defined(OVERWRITE_DB) && !defined(SKIP_INSTALL_DB)
-pre-install:
-	@${ECHO_MSG} "You appear to already have a mysql database directory in ${DB_DIR}."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "In order to preserve your existing data, you should:"
-	@${ECHO_MSG} "	- dump all your databases"
-	@${ECHO_MSG} "	- kill mysql if it is running"
-	@${ECHO_MSG} "	- delete the ${DB_DIR} directory"
-	@${ECHO_MSG} "	- run 'make install'"
-	@${ECHO_MSG} "	- start up mysql"
-	@${ECHO_MSG} "	- re-create all of your database"
-	@${ECHO_MSG} "	- re-load your data"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you understand the consequences of this upgrade, please re-build this"
-	@${ECHO_MSG} "port with the environment variable OVERWRITE_DB defined."
-	@${FALSE}
-.endif
+INFO=		mysql
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
+	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
+	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
+	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
+	@${ECHO} "				(default is /var/db/mysql)."
+	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
+	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional DNS"
+	@${ECHO} "				reverse lookup  before inserting local"
+	@${ECHO} "				hostname into mysql database"
+	@${ECHO} "				(use it if your machine has no official DNS entry)."
+	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
+	@${ECHO} "				(use it if you need speed)."
+	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
+	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+
+post-build:
+	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-.if !defined(SKIP_INSTALL_DB)
+.if exists(${DB_DIR}) && defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no"
+	@${RM} -r ${DB_DIR}/mysql ${DB_DIR}/test 2>/dev/null || true
+.endif
+.if !exists(${DB_DIR}) || (defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no")
 .if defined(SKIP_DNS_CHECK)
-	${PREFIX}/bin/mysql_install_db --force
+	${PREFIX}/bin/mysql_install_db --force --ldata=${DB_DIR}
 .else
-	${PREFIX}/bin/mysql_install_db
+	${PREFIX}/bin/mysql_install_db --ldata=${DB_DIR}
 .endif
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
-
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mysql/Flags
-.for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
-	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
+	@${MKDIR} ${DOCSDIR}/Flags
+.for doc in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${PREFIX}/share/doc/mysql/Flags
-	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
+	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
 .endif
+	@${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 
 # MySQL-Client part
 .else
@@ -182,18 +176,13 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 
 CONFIGURE_ARGS+=--without-server
-MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
-
 .endif
-
-# This is for the maintainer only...
-make-plist:
-	${FIND} foo -type f -or -type l | /usr/bin/cut -d / -f 2- | \
-		/usr/bin/sort  > ${.CURDIR}/pkg-plist.new
-	/usr/bin/perl -i -ne 'if (m#share/doc/#) { print "%%PORTDOCS%%", $$_; } else { print $$_; }' ${.CURDIR}/pkg-plist.new
 
 .include <bsd.port.post.mk>

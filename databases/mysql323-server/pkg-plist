@@ -34,55 +34,52 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
-%%PORTDOCS%%share/doc/mysql/Flags/argentina.gif
-%%PORTDOCS%%share/doc/mysql/Flags/australia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/austria.gif
-%%PORTDOCS%%share/doc/mysql/Flags/brazil.gif
-%%PORTDOCS%%share/doc/mysql/Flags/bulgaria.gif
-%%PORTDOCS%%share/doc/mysql/Flags/canada.gif
-%%PORTDOCS%%share/doc/mysql/Flags/chile.gif
-%%PORTDOCS%%share/doc/mysql/Flags/china.gif
-%%PORTDOCS%%share/doc/mysql/Flags/croatia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/czech-republic.gif
-%%PORTDOCS%%share/doc/mysql/Flags/denmark.gif
-%%PORTDOCS%%share/doc/mysql/Flags/estonia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/finland.gif
-%%PORTDOCS%%share/doc/mysql/Flags/france.gif
-%%PORTDOCS%%share/doc/mysql/Flags/germany.gif
-%%PORTDOCS%%share/doc/mysql/Flags/great-britain.gif
-%%PORTDOCS%%share/doc/mysql/Flags/greece.gif
-%%PORTDOCS%%share/doc/mysql/Flags/hungary.gif
-%%PORTDOCS%%share/doc/mysql/Flags/iceland.gif
-%%PORTDOCS%%share/doc/mysql/Flags/indonesia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/ireland.gif
-%%PORTDOCS%%share/doc/mysql/Flags/island.gif
-%%PORTDOCS%%share/doc/mysql/Flags/israel.gif
-%%PORTDOCS%%share/doc/mysql/Flags/italy.gif
-%%PORTDOCS%%share/doc/mysql/Flags/japan.gif
-%%PORTDOCS%%share/doc/mysql/Flags/kroatia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/latvia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/netherlands.gif
-%%PORTDOCS%%share/doc/mysql/Flags/poland.gif
-%%PORTDOCS%%share/doc/mysql/Flags/portugal.gif
-%%PORTDOCS%%share/doc/mysql/Flags/romania.gif
-%%PORTDOCS%%share/doc/mysql/Flags/russia.gif
-%%PORTDOCS%%share/doc/mysql/Flags/singapore.gif
-%%PORTDOCS%%share/doc/mysql/Flags/south-africa.gif
-%%PORTDOCS%%share/doc/mysql/Flags/south-africa1.gif
-%%PORTDOCS%%share/doc/mysql/Flags/south-korea.gif
-%%PORTDOCS%%share/doc/mysql/Flags/spain.gif
-%%PORTDOCS%%share/doc/mysql/Flags/sweden.gif
-%%PORTDOCS%%share/doc/mysql/Flags/switzerland.gif
-%%PORTDOCS%%share/doc/mysql/Flags/taiwan.gif
-%%PORTDOCS%%share/doc/mysql/Flags/ukraine.gif
-%%PORTDOCS%%share/doc/mysql/Flags/usa.gif
-%%PORTDOCS%%share/doc/mysql/Flags/yugoslavia.gif
-%%PORTDOCS%%share/doc/mysql/include.texi
-%%PORTDOCS%%share/doc/mysql/manual.html
-%%PORTDOCS%%share/doc/mysql/manual.ps
-%%PORTDOCS%%share/doc/mysql/manual.texi
-%%PORTDOCS%%share/doc/mysql/manual.txt
-%%PORTDOCS%%share/doc/mysql/manual_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/Flags/argentina.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/australia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/austria.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/brazil.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/bulgaria.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/canada.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/chile.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/china.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/croatia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/czech-republic.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/denmark.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/estonia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/finland.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/france.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/germany.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/great-britain.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/greece.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/hungary.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/iceland.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/indonesia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/ireland.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/island.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/israel.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/italy.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/japan.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/kroatia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/latvia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/netherlands.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/poland.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/portugal.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/romania.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/russia.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/singapore.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/south-africa.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/south-africa1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/south-korea.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/spain.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/sweden.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/switzerland.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/taiwan.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/ukraine.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/usa.gif
+%%PORTDOCS%%%%DOCSDIR%%/Flags/yugoslavia.gif
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual_toc.html
 share/mysql/binary-configure
 share/mysql/charsets/Index
 share/mysql/charsets/README
@@ -162,8 +159,8 @@ share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
-%%PORTDOCS%%@dirrm share/doc/mysql/Flags
-%%PORTDOCS%%@dirrm share/doc/mysql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/mysql/charsets
 @dirrm share/mysql/czech
 @dirrm share/mysql/danish
@@ -188,5 +185,5 @@ share/mysql/ukrainian/errmsg.txt
 @dirrm share/mysql/swedish
 @dirrm share/mysql/ukrainian
 @dirrm share/mysql
-@exec %D/bin/mysql_install_db
+@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true

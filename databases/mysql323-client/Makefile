@@ -5,11 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mysql-client
-PORTREVISION=	0
+PORTNAME=	mysql
+PORTREVISION=	1
+PKGNAMESUFFIX=	-client
+
+COMMENT=	Multithreaded SQL database (client)
 
 MASTERDIR=	${.CURDIR}/../mysql323-server
-COMMENT=	Multithreaded SQL database (client)
+
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 
