@@ -1,7 +1,7 @@
 A GTK-based mp3 front-end.  Uses mpg123 for decoding and supports
-winamp themes..
+winamp themes.
 
-WWW: http://gqview.netpedia.net/mpeg-over.html 
+WWW: http://gqview.netpedia.net/mpeg-over.html
 
 -Vanilla
 vanilla@FreeBSD.ORG
