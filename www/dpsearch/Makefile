@@ -1,0 +1,130 @@
+# New ports collection makefile for:    dpsearch
+# Date created:         14.06.2004
+# Whom:                 Maxim Zakharov <maxime@sochi.net.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dpsearch
+PORTVERSION=    4.21
+CATEGORIES=	www
+MASTER_SITES=   http://www.dataparksearch.org/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Open source search engine for Internet and Intranet sites
+
+#RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+
+INSTALLS_SHLIB= yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
+		--localstatedir=/var/dpsearch \
+		--enable-mp3 \
+		--with-zlib
+
+OPTIONS=        DPSEARCH_THREADS  "Enable pthreads"                       on  \
+		DPSEARCH_SSL      "Enable SSL"                            on  \
+		DPSEARCH_GUESSER  "Enable charset and language guesser"   on  \
+		DPSEARCH_CHARSETS "Enable all charsets"                   off \
+		DPSEATCH_CHINESE  "Enable chinese charsets"               off \
+		DPSEARCH_JAPANESE "Enable japanese charsets"              off \
+		DPSEARCH_MECAB    "Enable MeCab japanese analyzer"        off \
+		DPSEARCH_CHASEN   "Enable ChaSen japanese analyzer"       off \
+		DPSEARCH_APACHE   "Enable mod_dpsearch for Apache"        off \
+		DPSEARCH_IDN      "Enable Internationalized Domain Names" off \
+		DPSEARCH_PGSQL    "Use PGSQL  (mutually exclusive)"       on  \
+		DPSEARCH_MYSQL    "Use MySQL  (mutually exclusive)"       off \
+		DPSEARCH_SQLITE   "Use SQLite (mutually exclusive)"       off \
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ENV+= PORTNAME="${PORTNAME}"
+
+.if !defined(WITHOUT_DPSEARCH_THREADS)
+CONFIGURE_ARGS+=	--enable-pthreads
+CFLAGS+=        ${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	--disable-pthreads
+.endif
+
+.if !defined(NO_OPENSSL) && !defined(WITHOUT_DPSEARCH_SSL)
+WITH_OPENSSL=    yes
+.endif
+
+.ifdef WITH_OPENSSL
+CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
+.endif
+
+.if defined(WITH_DPSEARCH_GUESSER)
+CONFIGURE_ARGS+= --enable-charset-guesser
+.endif
+
+.if defined(WITH_DPSEARCH_CHASRETS)
+CONFIGURE_ARGS+= --with-extra-charsets=all
+.endif
+
+.if defined(WITH_DPSEARCH_CHINESE)
+CONFIGURE_ARGS+= --with-extra-charsets=chinese
+.endif
+
+.if defined(WITH_DPSEARCH_JAPANESE)
+CONFIGURE_ARGS+= --with-extra-charsets=japanese
+.endif
+
+.if defined(WITH_DPSEARCH_MECAB)
+LIB_DEPEND+=     mecab.0:${PORTSDIR}/japanese/mecab
+CONFIGURE_ARGS+= --enable-mecab
+.endif
+
+.if defined(WITH_DPSEARCH_CHASEN)
+LIB_DEPEND+=     chasen.0:${PORTSDIR}/japanese/chasen
+CONFIGURE_ARGS+= --enable-chasen
+.endif
+
+.if defined(WITH_DPSEARCH_IDN)
+LIB_DEPEND+=     idn.0:${PORTSDIR}/devel/libidn
+CONFIGURE_ARGS+= --enable-idn
+.endif
+
+.if defined(WITH_DPSEARCH_APACHE)
+.if defined (WITH_APACHE2)
+BUILD_DEPEND+=   ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+.else
+BUILD_DEPEND+=   ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.endif
+CONFIGURE_ARGS+= --enable-apache-module
+.endif
+
+.if defined(WITH_DPSEARCH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+
+.elif defined(WITH_DPSEARCH_MYSQL)
+LIB_DEPENDS+=            mysqlclient:${PORTSDIR}/databases/mysql41-client
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+
+.elif defined(WITH_DPSEARCH_SQLITE)
+LIB_DEPEND+=            sqlite.2:${PORTSDIR}/databases/sqlite
+CONFIGURE_ARGS+=        --with-sqlite=${LOCALBASE}
+
+.else
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "One of databases should be chose."
+	@exit 1
+.endif
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/dpsearch
+
+post-install:
+	${CHMOD} 700 /var/dpsearch/cache
+	${CHOWN} -R www:www /var/dpsearch/
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

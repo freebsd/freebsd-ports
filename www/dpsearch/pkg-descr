@@ -1,0 +1,24 @@
+DataparkSearch Engine is a full-featured open sources web-based search
+engine released under the GNU General Public License and designed to organize 
+search within a website, group of websites, intranet or local system. 
+
+Key features:
+* Support for http, https, ftp, nntp and news URL schemes;
+* htdb virtual URL scheme support for indexing SQL databases;
+* text/html, text/xml, text/plain,audio/mpeg (MP3) and image/gif mime types 
+  built-in support;
+* External parsers support for other document types;
+* Ability to index multilangual sites using content negotiation;
+* Searching all of the word forms using ispell affixes and dictionaries;
+* Stopwords and synonyms lists;
+* Boolean query language support;
+* Results sorting by relevancy, popularity rank, last modified time and by 
+  importance (a multiplication of relevancy and popularity rank);
+* Various character sets support;
+* Accent insensitive search;
+* Phrases segmenting for Chinese, Korean, Japanese and Thai languages;
+* mod_dpsearch - search module for Apache web server.
+* Internationalized Domain Names support.
+
+WWW: http://www.dataparksearch.org/
+PAD: http://www.dataparksearch.org/dataparksearch.xml
