@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 .if defined(WITHOUT_JAVA)
-CONFIGURE_ARGS+=	--disable-java
+CONFIGURE_ARGS+=	--without-java
 .else
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
