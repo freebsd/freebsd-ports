@@ -31,16 +31,13 @@ MAN3=	WordContext.3 WordList.3 WordDict.3 WordListOne.3 WordKey.3 \
 	WordKeyInfo.3 WordType.3 WordDBInfo.3 WordRecordInfo.3 \
 	WordRecord.3 WordReference.3 WordCursor.3 WordCursorOne.3 \
 	WordMonitor.3 Configuration.3 mifluz.3
+INFO=	mifluz
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} 's|-D_THREAD_SAFE -pthread|${PTHREAD_CFLAGS}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-
-pre-build:
-	@cd ${WRKSRC}/doc \
-		&& makeinfo --no-split --force mifluz.texinfo || ${TRUE}
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \

@@ -88,9 +88,6 @@ include/mifluz/txn_ext.h
 include/mifluz/unac.h
 include/mifluz/xa.h
 include/mifluz/xa_ext.h
-@unexec install-info --delete %D/info/mifluz.info %D/info/dir
-info/mifluz.info
-@exec install-info %D/info/mifluz.info %D/info/dir
 lib/libmifluz.a
 lib/libmifluz.so
 lib/libmifluz.so.0
