@@ -1,6 +1,6 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.5 2001-10-07 06:40:39 dinoex Exp $
-@exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 501; fi
-@exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 501 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.6 2001-10-07 06:51:44 dinoex Exp $
+@exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 90; fi
+@exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 90 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 @exec mkdir -p /var/spool/clientmqueue
 @exec chown smmsp:smmsp /var/spool/clientmqueue
 @exec chmod 770 /var/spool/clientmqueue

@@ -95,8 +95,8 @@ post-build:
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
-	if ! pw groupshow smmsp; then pw groupadd smmsp -g 501; fi
-	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 501 \
+	if ! pw groupshow smmsp; then pw groupadd smmsp -g 90; fi
+	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 90 \
 		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && find cf -type f | \
