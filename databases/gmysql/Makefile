@@ -1,16 +1,17 @@
-# New ports collection makefile for:    gmysql
-# Version required:     0.3.1
-# Date created:         Sun Nov 15 22:07:12 CET 1998
-# Whom:                 Dirk Froemberg <ibex@physik.TU-Berlin.DE>
+# New ports collection makefile for:	gmysql
+# Version required:	0.3.1
+# Date created:		Sun Nov 15 22:07:12 CET 1998
+# Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/16 15:43:35 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/11/17 03:41:45 asami Exp $
 #
 
-DISTNAME=       gmysql-0.3.1
+DISTNAME=	gmysql-0.3.1
 CATEGORIES=	databases
-MASTER_SITES=   http://www.loth.demon.co.uk/gmysql/
+MASTER_SITES=	http://www.loth.demon.co.uk/gmysql/ \
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=     ibex@physik.TU-Berlin.DE
+MAINTAINER=	dirk@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
