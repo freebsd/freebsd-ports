@@ -7,6 +7,7 @@
 
 PORTNAME=	gzip
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.digex.net/pub/linux/slackware/slackware-8.1/source/a/gzip/ \
 		ftp://sunfreeware.risq.qc.ca/SOURCES/ \
@@ -38,7 +39,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|^SHELL =.*|SHELL=/bin/sh|' ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
