@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.8.0
-PORTREVISION=	3
+PORTVERSION=	0.9.8.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/usenet/readers/unix/slrn/ \
@@ -18,7 +17,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://slrn.sourceforge.net/patches/
-PATCHFILES=	slrn-0.9.8.0-ranges2.diff
+PATCHFILES=	slrn-0.9.8.1-fetch.diff \
+		slrn-0.9.8.1-lastchar2.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	petef@FreeBSD.org
