@@ -469,6 +469,7 @@
     SUBDIR += skencil
     SUBDIR += smoke
     SUBDIR += sng
+    SUBDIR += snx101util
     SUBDIR += sodipodi
     SUBDIR += springgraph
     SUBDIR += stamp
