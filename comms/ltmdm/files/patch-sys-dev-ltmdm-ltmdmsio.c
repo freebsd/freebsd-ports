@@ -1,6 +1,62 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Thu Jul  1 13:03:22 2004
-+++ sys/dev/ltmdm/ltmdmsio.c	Thu Jul  1 13:14:39 2004
-@@ -245,7 +245,9 @@
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Thu Jul 22 15:13:32 2004
++++ sys/dev/ltmdm/ltmdmsio.c	Thu Jul 22 15:15:32 2004
+@@ -60,7 +60,9 @@
+ #include <sys/proc.h>
+ #include <sys/module.h>
+ #include <sys/conf.h>
++#if __FreeBSD_version < 500101
+ #include <sys/dkstat.h>
++#endif
+ #include <sys/fcntl.h>
+ #include <sys/interrupt.h>
+ #include <sys/kernel.h>
+@@ -69,12 +71,21 @@
+ #include <machine/bus.h>
+ #include <sys/rman.h>
+ #if __FreeBSD_version >= 500000
++#if __FreeBSD_version <  500034 /* < 20020426 */
+ #include <sys/timetc.h>
+ #endif
++#endif
++#ifdef ENABLE_PPS
+ #include <sys/timepps.h>
++#endif
+ 
++#if __FreeBSD_version >= 500000
++#include <dev/pci/pcireg.h>
++#include <dev/pci/pcivar.h>
++#else
+ #include <pci/pcireg.h>
+ #include <pci/pcivar.h>
++#endif
+ 
+ #include <machine/clock.h>
+ 
+@@ -88,7 +99,9 @@
+ 
+ #include <machine/resource.h>
+ 
+-#if __FreeBSD_version >= 500027  /* >= 20011022 */
++#if __FreeBSD_version >= 501107  /* >= 20030917 */
++#include <dev/ic/ns16550.h>
++#elif __FreeBSD_version >= 500027  /* >= 20011022 */
+ #include <dev/sio/sioreg.h>
+ #else
+ #include <isa/sioreg.h>
+@@ -124,9 +137,11 @@
+ #endif
+ 
+ #if __FreeBSD_version >= 500023 /* >= 20010912 */
+-#define proc thread         /* temporary hack: struct proc -> stuct thread */
++#define proc thread         /* XXX  struct proc -> stuct thread */
++#if __FreeBSD_version <  500033 /* <  20020401 */
+ #define suser(p) suser_td(p)
+ #endif
++#endif
+ 
+ 
+ #define LOTS_OF_EVENTS  64  /* helps separate urgent events from input */
+@@ -230,7 +245,9 @@
      u_char  last_modem_status;  /* last MSR read by intr handler */
      u_char  prev_modem_status;  /* last MSR handled by high level */
  
@@ -10,7 +66,17 @@
      u_char  *ibuf;          /* start of input buffer */
      u_char  *ibufend;       /* end of input buffer */
      u_char  *ibufold;       /* old input buffer, to be freed */
-@@ -285,7 +287,11 @@
+@@ -256,7 +273,9 @@
+     bool_t  do_dcd_timestamp;
+     struct timeval  timestamp;
+     struct timeval  dcd_timestamp;
++#ifdef ENABLE_PPS
+     struct  pps_state pps;
++#endif
+ 
+     u_long  bytes_in;       /* statistics */
+     u_long  bytes_out;
+@@ -268,7 +287,11 @@
      struct resource *iores[6];
      struct resource *irqres;
      void *cookie;
@@ -22,7 +88,71 @@
  
      /*
       * Data area for output buffers.  Someday we should build the output
-@@ -1478,7 +1484,11 @@
+@@ -352,6 +375,7 @@
+ #endif
+ 
+ static struct cdevsw sio_cdevsw = {
++#if __FreeBSD_version < 500105
+     /* open */  sioopen,
+     /* close */ sioclose,
+     /* read */  sioread,
+@@ -361,7 +385,11 @@
+     /* mmap */  nommap,
+     /* strategy */  nostrategy,
+     /* name */  driver_name,
++#ifdef MAJOR_AUTO
++    /* maj */   MAJOR_AUTO,
++#else
+     /* maj */   CDEV_MAJOR,
++#endif
+     /* dump */  nodump,
+     /* psize */ nopsize,
+ #if __FreeBSD_version < 430000
+@@ -373,10 +401,30 @@
+     /* bmaj */  -1,
+     /* kqfilter */  ttykqfilter,
+ #else /* __FreeBSD_version >= 500000 */
+-    /* flags */ D_TTY | D_KQFILTER,
++    /* flags */ D_TTY,
+     /* kqfilter */  ttykqfilter,
+ #endif
+ #endif
++#else
++    .d_open = sioopen,
++    .d_close = sioclose,
++    .d_read = sioread,
++    .d_write = siowrite,
++    .d_ioctl = sioioctl,
++    .d_name = driver_name,
++#ifdef MAJOR_AUTO
++    .d_maj = MAJOR_AUTO,
++#else
++    .d_maj = CDEV_MAJOR,
++#endif
++    .d_kqfilter = ttykqfilter,
++#if __FreeBSD_version >= 502102
++    .d_flags = D_TTY | D_NEEDGIANT,
++    .d_version = D_VERSION
++#else
++    .d_poll = ttypoll,
++#endif
++#endif
+ };
+ 
+ static  u_int   com_events; /* input chars + weighted output completions */
+@@ -1295,8 +1343,11 @@
+     DPRINTF(1,("  x_chip_version    = %d\n", x_chip_version));
+ 
+     com->flags = flags;
++
++#ifdef ENABLE_PPS
+     com->pps.ppscap = PPS_CAPTUREASSERT | PPS_CAPTURECLEAR;
+     pps_init(&com->pps);
++#endif
+ 
+     /*
+      * initialize the device registers as follows:
+@@ -1433,11 +1484,17 @@
  
      s = splfunc();
      if (tp) {
@@ -34,7 +164,13 @@
          disc_optim(tp, &tp->t_termios, com);
          comstop(tp, FREAD | FWRITE);
          comhardclose(com);
-@@ -1515,7 +1525,11 @@
++#if __FreeBSD_version > 502122
+         ttyclose(tp);
++#endif
+     }
+     vxdPortClose();
+     siosettimeout();
+@@ -1470,7 +1527,11 @@
  }
  
  static int
@@ -46,7 +182,7 @@
  {
      struct com_s    *com;
      int     error;
-@@ -1655,7 +1669,11 @@
+@@ -1610,7 +1671,11 @@
           * the true carrier.
           */
          if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
@@ -58,7 +194,7 @@
      }
      /*
       * Wait for DCD if necessary.
-@@ -1671,7 +1689,11 @@
+@@ -1626,7 +1691,11 @@
              goto out;
          goto open_top;
      }
@@ -70,7 +206,7 @@
      disc_optim(tp, &tp->t_termios, com);
      if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
          com->active_out = TRUE;
-@@ -1684,7 +1706,11 @@
+@@ -1639,7 +1708,11 @@
  }
  
  static int
@@ -82,7 +218,7 @@
  {
      struct com_s    *com;
      int     mynor;
-@@ -1699,7 +1725,11 @@
+@@ -1654,11 +1727,17 @@
          return (ENODEV);
      tp = com->tp;
      s = splfunc();
@@ -94,7 +230,23 @@
      disc_optim(tp, &tp->t_termios, com);
      comstop(tp, FREAD | FWRITE);
      comhardclose(com);
-@@ -1771,7 +1801,11 @@
++#if __FreeBSD_version > 502122
+     ttyclose(tp);
++#endif
+     siosettimeout();
+     splx(s);
+     if (com->gone) {
+@@ -1685,7 +1764,9 @@
+     s = splfunc();
+     com->do_timestamp = FALSE;
+     com->do_dcd_timestamp = FALSE;
++#ifdef ENABLE_PPS
+     com->pps.ppsparam.mode = 0;
++#endif
+     write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
+     {
+         write_vuart_port(UART_IER, 0);
+@@ -1724,7 +1805,11 @@
  }
  
  static int
@@ -106,7 +258,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1782,11 +1816,19 @@
+@@ -1735,11 +1820,19 @@
      com = com_addr(MINOR_TO_UNIT(mynor));
      if (com == NULL || com->gone)
          return (ENODEV);
@@ -126,7 +278,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1801,7 +1843,11 @@
+@@ -1754,7 +1847,11 @@
      if (com == NULL || com->gone)
          return (ENODEV);
  
@@ -138,7 +290,7 @@
  }
  
  static void
-@@ -1907,7 +1953,11 @@
+@@ -1860,7 +1957,11 @@
                  if (line_status & LSR_PE)
                      recv_data |= TTY_PE;
              }
@@ -150,7 +302,42 @@
              lt_disable_intr();
          } while (buf < com->iptr);
      }
-@@ -2006,7 +2056,11 @@
+@@ -1894,23 +1995,34 @@
+     u_char  recv_data;
+     u_char  int_ctl;
+     u_char  int_ctl_new;
++#ifdef ENABLE_PPS
++#if __FreeBSD_version < 500034
+     struct  timecounter *tc;
+     u_int   count;
++#endif
++#endif
+ 
+     int_ctl = read_vuart_port(UART_IER);
+     int_ctl_new = int_ctl;
+ 
+     while (!com->gone) {
++#ifdef ENABLE_PPS
+         if (com->pps.ppsparam.mode & PPS_CAPTUREBOTH) {
+             modem_status = read_vuart_port(UART_MSR);
+             if ((modem_status ^ com->last_modem_status) & MSR_DCD) {
++#if __FreeBSD_version < 500034
+                 tc = timecounter;
+                 count = tc->tc_get_timecount(tc);
+                 pps_event(&com->pps, tc, count, 
++#else
++                pps_capture(&com->pps);
++                pps_event(&com->pps,
++#endif
+                           (modem_status & MSR_DCD) ? 
+                           PPS_CAPTUREASSERT : PPS_CAPTURECLEAR);
+             }
+         }
++#endif
+         line_status = read_vuart_port(UART_LSR);
+ 
+         /* input event? (check first to help avoid overruns) */
+@@ -1948,7 +2060,11 @@
                      recv_data = 0;
              }
              ++com->bytes_in;
@@ -162,7 +349,7 @@
                  setsofttty();
              ioptr = com->iptr;
              if (ioptr >= com->ibufend)
-@@ -2111,7 +2165,11 @@
+@@ -2053,7 +2169,11 @@
  }
  
  static int
@@ -174,7 +361,7 @@
  {
      struct com_s    *com;
      int     error;
-@@ -2192,7 +2250,11 @@
+@@ -2134,7 +2254,11 @@
          if (lt->c_ospeed != 0)
              dt->c_ospeed = tp->t_ospeed;
      }
@@ -186,7 +373,7 @@
      if (error != ENOIOCTL)
          return (error);
      s = splfunc();
-@@ -2247,10 +2309,12 @@
+@@ -2189,13 +2313,17 @@
          com->do_timestamp = TRUE;
          *(struct timeval *)data = com->timestamp;
          break;
@@ -198,8 +385,13 @@
 +#endif
      default:
          splx(s);
- #ifdef ENABLE_PPS
-@@ -2317,8 +2381,13 @@
++#ifdef ENABLE_PPS
+         error = pps_ioctl(cmd, data, &com->pps);
++#endif
+         if (error == ENODEV)
+             error = ENOTTY;
+         return (error);
+@@ -2257,8 +2385,13 @@
              com->state &= ~CS_CHECKMSR;
              lt_enable_intr();
              if (delta_modem_status & MSR_DCD)
@@ -213,7 +405,7 @@
          }
          if (com->state & CS_ODONE) {
              lt_disable_intr();
-@@ -2330,7 +2399,11 @@
+@@ -2270,7 +2403,11 @@
                  sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
                  com->extra_state |= CSE_BUSYCHECK;
              }
@@ -225,7 +417,7 @@
          }
          if (com_events == 0)
              break;
-@@ -2829,11 +2902,21 @@
+@@ -2769,11 +2906,21 @@
          && (!(t->c_iflag & PARMRK)
          || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
          && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
@@ -247,3 +439,12 @@
  }
  
  #ifdef KLD_MODULE
+@@ -2796,7 +2943,7 @@
+ #endif
+ 
+ DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
+-#if 0
++#if 1
+ #if __FreeBSD_version >= 500000
+ DRIVER_MODULE(ltmdm, cardbus, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
+ #endif
