@@ -25,7 +25,6 @@ USE_XPM=	yes
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
-CFLAGS+=	-DBUILD_BROKEN_NEDIT
 
 post-extract:
 	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
