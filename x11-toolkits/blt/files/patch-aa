@@ -1,5 +1,5 @@
---- configure.orig	Tue Jul  7 19:00:28 1998
-+++ configure	Thu Jul  9 13:35:07 1998
+--- configure.orig	Wed Aug 19 11:10:09 1998
++++ configure	Tue Sep 22 15:56:11 1998
 @@ -2298,6 +2298,9 @@
   $blt_ckcmd_tcl_home \
   $blt_ckcmd_tcl_home/lib \
@@ -43,7 +43,7 @@
      tclLib="-ltcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${itclSuffix}"
      tkLib="-ltk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}${itclSuffix}"
      ;;
-@@ -3164,7 +3177,7 @@
+@@ -3170,7 +3183,7 @@
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
        SHLIB_LD_FLAGS="-Bshareable -x"
