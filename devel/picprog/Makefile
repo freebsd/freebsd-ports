@@ -8,7 +8,7 @@
 PORTNAME=	picprog
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.pp.htv.fi/jhyvatti/pic/
+MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,9 +18,9 @@ MAN1=		picprog.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/picprog
-	${INSTALL_MAN} ${WRKSRC}/picprog.html ${PREFIX}/share/doc/picprog
-	${INSTALL_MAN} ${WRKSRC}/*.gif ${PREFIX}/share/doc/picprog
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/picprog.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.gif ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
