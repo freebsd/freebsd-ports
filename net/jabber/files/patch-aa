@@ -1,0 +1,22 @@
+--- src/jserver.xml.in.orig	Mon Mar 20 11:01:32 2000
++++ src/jserver.xml.in	Mon Apr 10 16:39:16 2000
+@@ -24,16 +24,16 @@
+ The session log, make sure the folder exists!
+ 
+   <log>
+-    <session>@prefix@/var/log/jserver.log</session>
++    <session>/var/log/jserver.log</session>
+     <!-- This will log some basic tracking information about every packet of data (TONS!)
+-      <packet>@prefix@/var/log/jserver_packet.log</packet>
++      <packet>/var/log/jserver_packet.log</packet>
+     -->
+   </log>
+ 
+ 
+ Data is stored on the filesystem for each user, make sure the folder exists!
+ 
+-  <spool>@prefix@/var/jspool</spool>
++  <spool>/var/jspool</spool>
+ 
+ Registration instructions and fields, remove to disallow registration:
+ 

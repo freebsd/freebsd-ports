@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr 30 20:32:29 2000
++++ configure	Sun Apr 30 20:33:08 2000
+@@ -2321,7 +2321,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpth $LIBS"
++  LIBS="-L$prefix/lib -lpth $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
