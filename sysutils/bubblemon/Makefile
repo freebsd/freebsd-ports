@@ -1,15 +1,16 @@
 # New ports collection makefile for:	bubblemon
-# Date created:				28 Aug 2002
+# Date created:				4 Jul 2003
 # Whom:					Juan Salaverria <rael@vectorstar.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bubblemon
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/ \
-		http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/attic/
+		http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/attic/ \
+		http://savannah.nongnu.org/download/bubblemon/
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	Bubblemon is a system CPU and memory load monitor for the GNOME panel
