@@ -748,7 +748,6 @@ intel/%%COMPILERDIR%%/docs/flicense
 intel/%%COMPILERDIR%%/docs/fsupport
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/flex_ug.pdf
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/icid.htm
-%%PORTDOCS%%intel/%%COMPILERDIR%%/docs/notes/ifc_fixes.txt
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/notes/ifc_issues.txt
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/docs/notes
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/ref/ann_entr.htm

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	7.1.016
+PORTVERSION=	7.1.024
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_fc_pu_${PORTVERSION}
+DISTNAME=	l_fc_pc_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	maho@FreeBSD.org
@@ -62,10 +62,10 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-ifc7-7.1-14.i386.rpm 
-#	intel-iidb7-7.1-26.i386.rpm \
-#	intel-efc7-7.1-14.ia64.rpm \
-#	intel-eidb7-7.1-26.ia64.rpm 
+	intel-ifc7-7.1-25.i386.rpm
+#	intel-iidb7-7.1-46.i386.rpm \
+#	intel-efc7-7.1-25.ia64.rpm \
+#	intel-eidb7-7.1-46.ia64.rpm
 	@cd ${WRKSRC} ; rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
