@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	st
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
-MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/state-threads/ \
-		http://www.tobez.org/download/port-mirrors/devel/st/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	state-threads
 
 MAINTAINER=	tobez@FreeBSD.org
 
