@@ -1,6 +1,7 @@
 bin/gauche-config
 bin/gosh
 lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.so
+lib/gauche/%%VERSION%%/%%TARGET%%/binary.so
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
 lib/gauche/%%VERSION%%/%%TARGET%%/gosh
@@ -25,9 +26,10 @@ lib/gauche/%%VERSION%%/include/gauche/class.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
+lib/gauche/%%VERSION%%/include/gauche/int64.h
 lib/gauche/%%VERSION%%/include/gauche/net.h
-lib/gauche/%%VERSION%%/include/gauche/predef-syms.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
+lib/gauche/%%VERSION%%/include/gauche/scmconst.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
 lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
@@ -39,9 +41,11 @@ lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
 lib/libgauche.so
 lib/libgauche.so.0
 lib/libgauche.so.0.0.0
+share/aclocal/gauche.m4
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
+share/gauche/%%VERSION%%/lib/cesconv
 share/gauche/%%VERSION%%/lib/compat/jfilter.scm
 share/gauche/%%VERSION%%/lib/compat/stk.scm
 share/gauche/%%VERSION%%/lib/dbm.scm
@@ -52,6 +56,7 @@ share/gauche/%%VERSION%%/lib/file/util.scm
 share/gauche/%%VERSION%%/lib/gauche-init.scm
 share/gauche/%%VERSION%%/lib/gauche/array.scm
 share/gauche/%%VERSION%%/lib/gauche/auxsys.scm
+share/gauche/%%VERSION%%/lib/gauche/cgen.scm
 share/gauche/%%VERSION%%/lib/gauche/charconv.scm
 share/gauche/%%VERSION%%/lib/gauche/collection.scm
 share/gauche/%%VERSION%%/lib/gauche/common-macros.scm
@@ -64,6 +69,7 @@ share/gauche/%%VERSION%%/lib/gauche/hook.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive/info.scm
 share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
+share/gauche/%%VERSION%%/lib/gauche/ioutil.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
 share/gauche/%%VERSION%%/lib/gauche/libutil.scm
 share/gauche/%%VERSION%%/lib/gauche/listener.scm
@@ -160,9 +166,14 @@ share/gauche/%%VERSION%%/lib/srfi-19/read-tai.scm
 share/gauche/%%VERSION%%/lib/srfi-2.scm
 share/gauche/%%VERSION%%/lib/srfi-26.scm
 share/gauche/%%VERSION%%/lib/srfi-27.scm
+share/gauche/%%VERSION%%/lib/srfi-29.scm
+share/gauche/%%VERSION%%/lib/srfi-29/bundle.scm
+share/gauche/%%VERSION%%/lib/srfi-29/format.scm
 share/gauche/%%VERSION%%/lib/srfi-31.scm
 share/gauche/%%VERSION%%/lib/srfi-37.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
+share/gauche/%%VERSION%%/lib/srfi-5.scm
+share/gauche/%%VERSION%%/lib/srfi-7.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
 share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
 share/gauche/%%VERSION%%/lib/sxml/ssax.scm
@@ -187,6 +198,7 @@ share/gauche/%%VERSION%%/lib/util/queue.scm
 share/gauche/%%VERSION%%/lib/util/record.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
+share/gauche/%%VERSION%%/lib/www/cgi-test.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
 share/gauche/site/lib/.keepme
 @dirrm share/gauche/site/lib
@@ -195,6 +207,7 @@ share/gauche/site/lib/.keepme
 @dirrm share/gauche/%%VERSION%%/lib/util
 @dirrm share/gauche/%%VERSION%%/lib/text
 @dirrm share/gauche/%%VERSION%%/lib/sxml
+@dirrm share/gauche/%%VERSION%%/lib/srfi-29
 @dirrm share/gauche/%%VERSION%%/lib/srfi-19
 @dirrm share/gauche/%%VERSION%%/lib/srfi-14
 @dirrm share/gauche/%%VERSION%%/lib/srfi-13
@@ -221,9 +234,3 @@ share/gauche/site/lib/.keepme
 @dirrm lib/gauche/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
-%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
-%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
-%%PORTDOCS%%info/gauche-refe.info
-%%PORTDOCS%%info/gauche-refj.info
-%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
-%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
