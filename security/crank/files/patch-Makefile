@@ -1,17 +1,16 @@
 --- Makefile.orig	Sun Apr 22 22:33:28 2001
-+++ Makefile	Mon Apr 23 14:21:00 2001
-@@ -6,8 +6,8 @@
++++ Makefile	Mon Jul 16 11:35:51 2001
+@@ -5,8 +5,7 @@
+ # See LICENSE for more info
  
  VERSION = $(shell cat VERSION)
- CC = gcc
+-CC = gcc
 -CFLAGS = -g -Wall -pedantic `gtk-config --cflags`
--LIBS  = `gtk-config --libs`
-+CFLAGS += `/usr/X11R6/bin/gtk12-config --cflags`
-+LIBS  = `/usr/X11R6/bin/gtk12-config --libs`
++CFLAGS += `gtk-config --cflags`
+ LIBS  = `gtk-config --libs`
  OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
  PLUGIN-SRC = plugin-src
- PLUGINS = $(PLUGIN-SRC)/monoalphabetic.hillclimb-cracker.so \
-@@ -15,7 +15,7 @@
+@@ -15,7 +14,7 @@
            $(PLUGIN-SRC)/statistics.n-grams.so \
            $(PLUGIN-SRC)/text.simple-filters.so \
            $(PLUGIN-SRC)/utilities.notepad.so
@@ -20,7 +19,7 @@
  
  # Files for source distribution
  DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
-@@ -36,7 +36,7 @@
+@@ -36,7 +35,7 @@
  all: crank plugin
  
  crank: $(OBJFILES)
