@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	quesa
-PORTVERSION=	1.6d18
+PORTVERSION=	1.6d19
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}lib-${PORTVERSION}
+.ifdef (WITH_QUESA_EXAMPLES)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}examples-${PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_REINPLACE=	yes
-WANT_AUTOCONF_VER?=	253
-WANT_AUTOMAKE_VER?=	15
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GL=		yes
 USE_X_PREFIX=	yes
 .ifdef (WITH_QUESA_EXAMPLES)
@@ -26,11 +29,9 @@ USE_GNOME=	gtk12
 .endif
 INSTALLS_SHLIB=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Development/Projects/Unix
+WRKSRC_EXAMPLES=	${WRKDIR}/${PORTNAME}examples-${PORTVERSION}
 
-CSH?=		/bin/csh
-
-.if !defined(WITH_QUESA_EXAMPLES)
+.if !defined (WITH_QUESA_EXAMPLES)
 PLIST_SUB=	WITH_QUESA_EXAMPLES="@comment "
 .else
 PLIST_SUB=	WITH_QUESA_EXAMPLES=""
@@ -43,49 +44,32 @@ pre-everything::
 	@${ECHO_CMD} ""
 .endif
 
-pre-patch:
-	@${FIND} ${WRKSRC} -type f -print0 |	\
-	${XARGS} -0 ${REINPLACE_CMD} -e "y/$$(${PRINTF} '\r')/\n/"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%ACLOCAL%%|${ACLOCAL}|g; \
-		      s|%%AUTOMAKE%%|${AUTOMAKE}|g; \
-		      s|%%AUTOMAKE_ENV%%|${AUTOMAKE_ENV}|g; \
-		      s|%%AUTOCONF%%|${AUTOCONF}|g; \
-		      s|%%AUTOCONF_ENV%%|${AUTOCONF_ENV}|g; \
-		      s|%%SETENV%%|${SETENV}|g' \
-		${WRKSRC}/Scripts/buildUnix.sh
 .ifdef (WITH_QUESA_EXAMPLES)
-	@${REINPLACE_CMD} -e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g' \
-		${WRKSRC}/Makefile.am.examples
+post-patch:
+	@${REINPLACE_CMD} -e 's|-I/usr/local/include/quesa|-I${WRKSRC}/APIincludes|g; \
+			      s|-L/usr/local/lib|-L${LOCALBASE}/lib -L${WRKSRC}|g; \
+			      s|prefix = /usr/local/Quesa|prefix = ${EXAMPLESDIR}|' \
+		${WRKSRC_EXAMPLES}/Makefile.in
 .endif
 
 pre-configure:
-	cd ${WRKSRC}/Scripts && \
-	${CSH} ./prepareUnixTree.sh && ${CSH} ./buildUnix.sh
-.ifdef (WITH_QUESA_EXAMPLES)
-	@(cd ${WRKSRC}/Examples && \
-		${SETENV}	CC="${CC}" CXX="${CXX}" \
-				CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-				INSTALL="${INSTALL}" \
-				INSTALL_DATA="${INSTALL_DATA}" \
-				INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-				INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-.endif
+	@${REINPLACE_CMD} -e 's|-std=c99||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|isfinite|finite|g' \
+		${WRKSRC}/Source/Core/System/E3IOData.c \
+		${WRKSRC}/Source/Core/System/E3View.c
 
 .ifdef (WITH_QUESA_EXAMPLES)
+post-configure:
+	cd ${WRKSRC_EXAMPLES} && \
+	${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
 post-build:
-	@(cd ${WRKSRC}/Examples && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-				${MAKE_ARGS} ${ALL_TARGET})
-.endif
+	cd ${WRKSRC_EXAMPLES} && \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
-.ifdef (WITH_QUESA_EXAMPLES)
 post-install:
-	@(cd ${WRKSRC}/Examples && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-			${MAKE_ARGS} ${INSTALL_TARGET})
+	cd ${WRKSRC_EXAMPLES} && \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 .endif
 
 .include <bsd.port.mk>
