@@ -1,9 +1,10 @@
-A small program for managing a to-do list.  There can be one to-do database
-per directory, or per tree of directories.  Tasks are in a tree structure
-(ie: one task can be a sub-task of another task).  Reports can also be
-generated to summarize tasks completed in a certain time period.
+A small program for managing a to-do list.  There can be one to-do
+database per directory, or per tree of directories.  Tasks are in
+a tree structure (ie: one task can be a sub-task of another task).
+Reports can also be generated to summarize tasks completed in
+a certain time period.
 
-WWW: http://www.rrbcurnow.freeuk.com/tdl/
+WWW: http://www.rc0.org.uk/tdl/
 
 - Pete
 petef@FreeBSD.org
