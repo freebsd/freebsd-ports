@@ -45,19 +45,20 @@ use strict;
 
 my %opts;
 
-getopts('ac:d:fgh:il:mns:tu:', \%opts);
+getopts('ac:d:fgh:il:M:mns:tu:', \%opts);
 
 my $autofill = $opts{'l'};
 my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
-my $h = "freefall.FreeBSD.org";
+my $h = "ncvs.FreeBSD.org";
 $h = $opts{'h'} if ($opts{'h'} ne "");
 my $n = ""; $n = "-n" if $opts{'n'};
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
+my $moduleshost = $opts{'M'};
 my $interactive = $opts{'i'};
 my $nomkdir = $opts{'m'};
 my $addlchk = $opts{'a'};
@@ -78,6 +79,7 @@ my %l10nprefix = (
 my $tmpdir;
 my $repo;
 my $ssh;
+my $sshmod;
 if( !defined $ENV{"CVS_RSH"} ) {
 	$ENV{CVS_RSH} = "ssh";
 }
@@ -95,14 +97,14 @@ my $tmp2; my $offset; my $commitfile = "";
 $tmp = $tmp2 = $offset = 0;
 
 chomp(my $myhost = lc(hostname()));
-if ($myhost ne lc($h)) {
-	$ssh = "$ENV{CVS_RSH} $h -l $u";
-	$repo = "$u\@$h:/home/ncvs" if !$ENV{ADDPCVSROOT};
-} else {
-	$ssh = "";
-	$repo = "/home/ncvs" if !$ENV{ADDPCVSROOT};
-}
+$moduleshost = "freefall.freebsd.org" if ($moduleshost eq "");
+
+# SSH is always required nowadays... ncvs.FreeBSD.org isn't shell accessible.
+$ssh = "$ENV{CVS_RSH} $h -l $u";
+$sshmod = "$ENV{CVS_RSH} $moduleshost -l $u";
+$repo= "$u\@$h:/home/ncvs" if !$ENV{ADDPCVSROOT};
 $repo = "$ENV{ADDPCVSROOT}" if $ENV{ADDPCVSROOT};
+
 my $cvs = "cvs -d $repo";
 
 # Check the editor.
@@ -131,8 +133,7 @@ END {
 my @commands;
 my $passenv = "";
 if ($addlchk && -f $portlint) {
-	$passenv = "DISTDIR=\"$distdir\"" if -d $distdir && $myhost ne "freefall.freebsd.org";
-	$passenv = "DISTDIR=\"$tmpdir\"" if $myhost eq "freefall.freebsd.org";
+	$passenv = "DISTDIR=\"$distdir\"" if -d $distdir;
 	$passenv = $passenv . " PORTSDIR=\"$tmpdir\"" if !$nomkdir;
 	push(@commands, "$make $passenv clean check-categories");
 	push(@commands, "$portlint $plint_args");
@@ -342,7 +343,7 @@ foreach my $thisdir (@dirs) {
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
 	system("$commitfile $cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	if (!$nomodules && ($n ne "-n")) {
-		system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
+		system("$sshmod env CVSROOT=$repo $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
 }
 
@@ -409,7 +410,7 @@ OPTIONS
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
 	-g		Do not commit to CVSROOT/modules.
-	-h host		Use a cvshost besides freefall.FreeBSD.org.
+	-h host		Use a cvshost besides ncvs.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.  This is required in
 			order to change things like module names etc.
