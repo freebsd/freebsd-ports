@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	www
 MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/
-
-PATCH_SITES=	http://jan.kneschke.de/projects/lighttpd/download/
-PATCHFILES=	lighttpd-1.2.7-cond.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	k@123.org
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
