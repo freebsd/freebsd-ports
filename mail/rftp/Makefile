@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/rftp/
 
-MAINTAINER=	kline@thought.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically reconstruct ftpmail- or bitftp-retrieved files
 
 MAN1=		rftp.1 uucat.1
