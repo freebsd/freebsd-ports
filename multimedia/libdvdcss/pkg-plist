@@ -1,5 +1,6 @@
 include/dvdcss/dvdcss.h
 lib/libdvdcss.a
+lib/libdvdcss.la
 lib/libdvdcss.so
 lib/libdvdcss.so.2
 @dirrm include/dvdcss
