@@ -1,42 +1,43 @@
 bin/soup-config
+bin/soup-httpd
 bin/soup-ssl-proxy
 bin/soup-wsdl
 etc/soupConf.sh
 etc/soup_apacheConf.sh
 etc/soup_wsdlConf.sh
-include/soup/soup-context.h
-include/soup/soup-env.h
-include/soup/soup-fault.h
-include/soup/soup-message.h
-include/soup/soup-misc.h
-include/soup/soup-parser.h
-include/soup/soup-serializer.h
-include/soup/soup-server.h
-include/soup/soup-socket.h
-include/soup/soup-uri.h
-include/soup/soup.h
-include/wsdl/wsdl-param.h
-include/wsdl/wsdl-schema-glib.h
-include/wsdl/wsdl-schema.h
-include/wsdl/wsdl-soap-marshal.h
-include/wsdl/wsdl-soap-memory.h
-include/wsdl/wsdl-soap-parse.h
-include/wsdl/wsdl-typecodes-c.h
-include/wsdl/wsdl-typecodes.h
-include/wsdl/wsdl.h
+include/soup/libsoup/soup-context.h
+include/soup/libsoup/soup-dav-server.h
+include/soup/libsoup/soup-dav.h
+include/soup/libsoup/soup-env.h
+include/soup/libsoup/soup-fault.h
+include/soup/libsoup/soup-message.h
+include/soup/libsoup/soup-misc.h
+include/soup/libsoup/soup-parser.h
+include/soup/libsoup/soup-serializer.h
+include/soup/libsoup/soup-server.h
+include/soup/libsoup/soup-socket.h
+include/soup/libsoup/soup-uri.h
+include/soup/libsoup/soup.h
+include/soup/libwsdl/wsdl-param.h
+include/soup/libwsdl/wsdl-schema-glib.h
+include/soup/libwsdl/wsdl-schema.h
+include/soup/libwsdl/wsdl-soap-marshal.h
+include/soup/libwsdl/wsdl-soap-memory.h
+include/soup/libwsdl/wsdl-soap-parse.h
+include/soup/libwsdl/wsdl-typecodes.h
+include/soup/libwsdl/wsdl.h
 lib/libsoup-apache.a
 lib/libsoup-apache.so
 lib/libsoup-apache.so.2
 lib/libsoup.a
 lib/libsoup.so
 lib/libsoup.so.2
-lib/libwsdl-build.a
-lib/libwsdl-build.so
-lib/libwsdl-build.so.2
 lib/libwsdl.a
 lib/libwsdl.so
 lib/libwsdl.so.2
 libdata/pkgconfig/soup.pc
+share/aclocal/soup.m4
 @dirrm share/doc/soup
-@dirrm include/wsdl
+@dirrm include/soup/libwsdl
+@dirrm include/soup/libsoup
 @dirrm include/soup
