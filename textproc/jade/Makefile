@@ -7,11 +7,12 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
-PATCH_SITES=	http://ftp.debian.org/debian/pool/main/j/jade/
+#PATCH_SITES=	http://ftp.debian.org/debian/pool/main/j/jade/
+PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	jade_1.2.1-35.diff.gz
 PATCH_DIST_STRIP=	-p1
 
@@ -47,6 +48,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
 	${MKDIR} ${PREFIX}/share/sgml/jade
 	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
+	${MKDIR} ${PREFIX}/share/xml/jade
+	${INSTALL_DATA} ${WRKSRC}/pubtext/xml* ${PREFIX}/share/xml/jade
 	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
 
 .include <bsd.port.mk>
