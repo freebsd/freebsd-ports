@@ -10,6 +10,16 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040717:
+AUTHOR: eik@FreeBSD.org
+  OpenLDAP version 2.2 is now the default.
+  When your port links against the openldap client libraries use
+    USE_OPENLDAP=	yes
+  and do not depend on a particular version. A user (or package
+  building cluster) can select the desired flavour with
+  WANT_OPENLDAP_VER and WANT_OPENLDAP_SASL, but these must not
+  be used in ports Makefiles.
+
 20040709:
 AUTHOR: portmgr@FreeBSD.org
   USE_LIBTOOL_VER now configures a port to use the ports version of libtool
