@@ -6,6 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	0.4
+PORTCOMMENT=	A documentation tool for Haskell
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/haddock/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.10.17
+PORTCOMMENT=	C->Haskell, an Interface Generator for Haskell
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-

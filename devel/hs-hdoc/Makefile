@@ -6,6 +6,7 @@
 
 PORTNAME=	hdoc
 PORTVERSION=	0.8.2
+PORTCOMMENT=	HTML documentation tool for Haskell
 CATEGORIES=	devel
 MASTER_SITES=	http://www.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
