@@ -3723,6 +3723,7 @@ libv3d		ports/graphics/libv3d
 libvanessa_adt	ports/devel/libvanessa_adt
 libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
+libvc		ports/devel/libvc
 libvm68k	ports/emulators/libvm68k
 libvorbis	ports/audio/libvorbis
 libwmf		ports/graphics/libwmf
