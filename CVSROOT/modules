@@ -6236,6 +6236,7 @@ pike		ports/lang/pike
 pike-gtk	ports/x11-toolkits/pike-gtk
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
+pike73		ports/lang/pike73
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
 pilrc		ports/palm/pilrc
