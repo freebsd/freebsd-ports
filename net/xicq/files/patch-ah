@@ -1,0 +1,26 @@
+--- src/libXicq/net.cc.orig	Sun Feb 27 12:37:37 2000
++++ src/libXicq/net.cc	Sun Feb 27 12:38:59 2000
+@@ -6,6 +6,9 @@
+ **************************************************************************/
+ 
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
+ #include "net.h"
+ 
+ #define MAXWATCH 10
+@@ -144,8 +147,13 @@
+ int net_udpRecv(unsigned char *mesg, int length)
+ {
+     structlength = sizeof(client);
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 400013)
++    recvd = recvfrom(net_information.sock, mesg, length, 0,
++                     (struct sockaddr *) &client, (socklen_t *) &structlength);
++#else
+     recvd = recvfrom(net_information.sock, mesg, length, 0,
+                      (struct sockaddr *) &client, &structlength);
++#endif
+     if (recvd < 0)
+     {
+         perror("libXicq: recvfrom");
