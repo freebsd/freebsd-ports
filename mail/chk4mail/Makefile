@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chk4mail
-PORTVERSION=	2.15
+PORTVERSION=	2.17
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/chk4mail/ \
 	ftp://mud.stack.nl/pub/chk4mail/
