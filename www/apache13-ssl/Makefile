@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 #PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
 #PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
-#PATCHFILES=		
+#PATCHFILES=
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
@@ -36,6 +36,8 @@ APACHE_SSL_VERSION=	1.55
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes
+USE_RC_SUBR=		yes
+RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} WWWOWN=${WWWOWN}
 
 MASTER_SITES_APACHE_SSL= \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
@@ -129,7 +131,8 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist
-
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache.sh
 post-install:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SSL is disabled by default"
@@ -137,6 +140,7 @@ post-install:
 	@${ECHO_CMD} "  http://www.apache-ssl.org/docs.html"
 	@${ECHO_CMD} " to know how to configure correctly apache-ssl"
 	@${ECHO_CMD} ""
+	@${INSTALL_SCRIPT} ${WRKDIR}/apache.sh ${PREFIX}/etc/rc.d
 
 certificate:
 	-${MKDIR} ${PREFIX}/etc/apache/certs
