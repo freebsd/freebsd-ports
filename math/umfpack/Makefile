@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/libumfpack.a ${PREFIX}/lib
 .for mod in AMD UMFPACK
 	@${MKDIR} ${PREFIX}/include/${mod}
-	@for inc in `ls ${WRKSRC}/../${mod}/Include` ; do \
+	@for inc in `${LS} ${WRKSRC}/../${mod}/Include` ; do \
 		${INSTALL_DATA} ${WRKSRC}/../${mod}/Include/$$inc ${PREFIX}/include/${mod}; \
 	done
 .endfor

@@ -199,7 +199,7 @@ pre-patch:
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
 		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \

@@ -37,7 +37,7 @@ post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
 post-patch:
-	@WISH=`(cd ${LOCALBASE}/bin ; ls wish8* ) | tail -1` ; \
+	@WISH=`(cd ${LOCALBASE}/bin ; ${LS} wish8* ) | tail -1` ; \
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \

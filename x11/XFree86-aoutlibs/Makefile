@@ -32,7 +32,7 @@ pre-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/lib/aout
 	cd ${WRKSRC}; \
-	for l in $$(ls lib*); do \
+	for l in $$(${LS} lib*); do \
 		${SETENV} OBJFORMAT=${PORTOBJFORMAT} \
 		${INSTALL_PROGRAM} $$l ${PREFIX}/lib/aout; \
 	done

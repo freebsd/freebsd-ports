@@ -28,7 +28,7 @@ do-install:
 	@${REINPLACE_CMD} -e "s|/usr/local/nikto|${PREFIX}/share/nikto|g" ${WRKSRC}/config.txt
 	@${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto/
 	@${MKDIR} ${PREFIX}/share/nikto/ && ${CHMOD} 755 ${PREFIX}/share/nikto/
-	@for i in `ls ${WRKSRC}/plugins/` ; \
+	@for i in `${LS} ${WRKSRC}/plugins/` ; \
 	do \
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/$$i ${PREFIX}/share/nikto; \
 	done

@@ -41,10 +41,10 @@ post-extract:
 post-install:
 	${MKDIR} ${PREFIX}/share/mesa-demos/images
 	${MKDIR} ${PREFIX}/share/mesa-demos/data
-	@for img in `ls ${WRKDIR}/Mesa-${PORTVERSION}/images/*.rgb`; do \
+	@for img in `${LS} ${WRKDIR}/Mesa-${PORTVERSION}/images/*.rgb`; do \
 		${INSTALL_DATA} $$img ${SHAREDIR}/images ; \
 	done
-	@for dat in `ls ${WRKSRC}/*.dat`; do \
+	@for dat in `${LS} ${WRKSRC}/*.dat`; do \
 		${INSTALL_DATA} $$dat ${SHAREDIR}/data ; \
 	done
 
