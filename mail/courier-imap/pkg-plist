@@ -63,12 +63,12 @@ share/courier-imap/vchkpw2userdb
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/README
-%%AUTHDFLAG%%@dirrm var/authdaemon
-@dirrm var
+%%AUTHDFLAG%%@unexec rmdir %D/var/authdaemon 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 @dirrm %%DOCSDIR%%
 @dirrm share/courier-imap
-@dirrm %%LIBEXECDIR%%/authlib
+@unexec rmdir %D/%%LIBEXECDIR%%/authlib 2>/dev/null || true
 @dirrm %%LIBEXECDIR%%
 @dirrm %%CONFDIR%%/shared
 @dirrm %%CONFDIR%%/shared.tmp
-@dirrm %%CONFDIR%%
+@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
