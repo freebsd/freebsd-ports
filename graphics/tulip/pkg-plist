@@ -6,6 +6,8 @@ include/tulip/Bezier.h
 include/tulip/Camera.h
 include/tulip/Circle.h
 include/tulip/Cluster.h
+include/tulip/ClusterTree.h
+include/tulip/ClusterTreeData.h
 include/tulip/Clustering.h
 include/tulip/Color.h
 include/tulip/Colors.h
@@ -38,6 +40,7 @@ include/tulip/Metric.h
 include/tulip/MetricProxy.h
 include/tulip/MouseInterface.h
 include/tulip/MouseObject.h
+include/tulip/MouseZoomBox.h
 include/tulip/Observable.h
 include/tulip/Plugin.h
 include/tulip/PluginContext.h
@@ -137,6 +140,7 @@ lib/tlp/plugins/import/tlp.so
 lib/tlp/plugins/layout/circular.so
 lib/tlp/plugins/layout/conetree.so
 lib/tlp/plugins/layout/conetreeextended.so
+lib/tlp/plugins/layout/embedder.so
 lib/tlp/plugins/layout/gem.so
 lib/tlp/plugins/layout/gem3d.so
 lib/tlp/plugins/layout/generalgraph.so
@@ -177,6 +181,7 @@ lib/tlp/plugins/selection/inducedsubgraph.so
 lib/tlp/plugins/selection/labelselection.so
 lib/tlp/plugins/selection/loopselection.so
 lib/tlp/plugins/selection/multipleselection.so
+lib/tlp/plugins/selection/pathselection.so
 lib/tlp/plugins/selection/reachable.so
 lib/tlp/plugins/selection/spanningdag.so
 lib/tlp/plugins/selection/spanningtree.so

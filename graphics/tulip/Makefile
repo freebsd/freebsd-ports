@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -44,7 +44,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g ; \
 		 s|-lpthread||g ; \
-		 s|-release @VERSION@|| ; \
+		 s|-release @TULIP_VERSION@|| ; \
 		 s|LDFLAGS = -module|LDFLAGS = @LDFLAGS@ -module|g'
 
 .include <bsd.port.mk>
