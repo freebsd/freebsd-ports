@@ -8,8 +8,9 @@
 PORTNAME=	portupgrade
 PORTVERSION=	20020830
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.iDaemons.org/distfiles/
+MASTER_SITES=	http://www.iDaemons.org/distfiles/ \
+		${MASTER_SITE_LOCAL}
+		
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	pkgtools-${DISTVERSION}
 
