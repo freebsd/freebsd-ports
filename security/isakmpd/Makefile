@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.org
 
-FORBIDDEN=	"unconfirmed report of security bug--see <URL:http://www.openbsd.org/errata.html\#isakmpd>"
+FORBIDDEN=	"unconfirmed reports of security bug--see <URL:http://www.openbsd.org/errata.html\#isakmpd> and <URL:http://www.kb.cert.org/vuls/id/287771>"
 
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
