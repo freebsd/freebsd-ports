@@ -1,5 +1,5 @@
---- sshd/Makefile.orig	Fri Nov 16 06:02:09 2001
-+++ sshd/Makefile	Fri Nov 16 06:03:51 2001
+--- sshd/Makefile.orig	Fri Mar  8 05:54:03 2002
++++ sshd/Makefile	Fri Mar  8 06:00:30 2002
 @@ -5,8 +5,8 @@
  PROG=	sshd
  BINOWN=	root
@@ -11,14 +11,18 @@
  CFLAGS+=-DHAVE_LOGIN_CAP
  #CFLAGS+=-DBSD_AUTH
  
-@@ -17,6 +17,7 @@
+@@ -17,9 +17,10 @@
  	auth-skey.c auth-bsdauth.c
  
  .include <bsd.own.mk> # for KERBEROS and AFS
 +.include "../Makefile.inc"
  
  .if (${KERBEROS5:L} == "yes")
- CFLAGS+=-DKRB5 -I${DESTDIR}/usr/include/kerberosV
+-CFLAGS+=-DKRB5 -I${DESTDIR}/usr/include/kerberosV
++CFLAGS+=-DKRB5 -I/usr/include/kerberosV
+ SRCS+=  auth-krb5.c
+ LDADD+= -lkrb5 -lkafs -lasn1 -lcom_err
+ DPADD+= ${LIBKRB5} ${LIBKAFS} ${LIBASN1}
 @@ -31,15 +32,15 @@
  LDADD+=  -lkafs
  DPADD+=  ${LIBKRBAFS}
@@ -33,7 +37,7 @@
  
  .include <bsd.prog.mk>
  
--LDADD+=	-lcrypto -lutil -lz
+-LDADD+=	-lcrypto -lutil -lz -ldes
 +LDADD+=	${CRYPTOLIBS} -lcrypt -lutil -lz
  DPADD+=	${LIBCRYPTO} ${LIBUTIL} ${LIBZ}
  
