@@ -3,7 +3,7 @@
 # Date created:         Oct, 8 1998
 # Whom:                 cracauer
 #
-# $Id: Makefile,v 1.3 1998/11/05 11:39:51 cracauer Exp $
+# $Id: Makefile,v 1.4 1999/01/06 04:27:56 simokawa Exp $
 #
 
 DISTNAME=       MesaLib-2.6
@@ -14,7 +14,7 @@ MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/old-versions/
 MAINTAINER=	cracauer@cons.org
 
 BUILD_DEPENDS=	/compat/linux/usr/lib/libglide2x.so:${PORTSDIR}/emulators/linux_glide \
-		/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devel
+		/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
 ONLY_FOR_ARCHS=	i386
 

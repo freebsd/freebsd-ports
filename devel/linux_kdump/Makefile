@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1998/12/19 10:41:23 dfr Exp $
+# $Id: Makefile,v 1.5 1999/01/06 04:27:51 simokawa Exp $
 #
 
 DISTNAME=	linux_kdump-1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.gsoft.com.au/misc/
 
 MAINTAINER=	msmith@FreeBSD.org
 
-BUILD_DEPENDS=	/compat/linux/usr/bin/cpp:${PORTSDIR}/devel/linux_devel
+BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
 ONLY_FOR_ARCHS=	i386
 
