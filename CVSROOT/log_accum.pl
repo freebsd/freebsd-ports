@@ -23,11 +23,15 @@
 require 5.003;		# might work with older perl5
 
 ###use strict;
+use lib $ENV{CVSROOT};
+use CVSROOT::cfg;
+
 use Sys::Hostname;	# get hostname() function
 
 ############################################################
 #
 # Configurable options
+# (these are gradually being migrated to cfg.pm)
 #
 ############################################################
 #
@@ -37,9 +41,6 @@ use Sys::Hostname;	# get hostname() function
 # 2 = rcsids in both mail and logs.
 #
 my $RCSIDINFO = 2;
-
-# Debug level, 0 = off
-my $DEBUG = 0;
 
 # The command used to mail the log messages.  Usually something
 # like '/usr/sbin/sendmail'.  
@@ -53,10 +54,6 @@ my $MAILADDRS = "nobody";
 # Extra banner to add to top of commit messages.
 # i.e. $MAILBANNER = "Project X CVS Repository";
 my $MAILBANNER = "";
-
-
-# Location of temporary directory.
-my $TMPDIR = "/tmp/";
 
 
 # The file prefix used for the temporary files.
@@ -77,7 +74,7 @@ if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
 		$meister = 'markm@FreeBSD.org';
 		$MAILBANNER = "FreeBSD International Crypto Repository";
 	}
-	$MAILADDRS = $meister if $DEBUG;
+	$MAILADDRS = $meister if $cfg::DEBUG;
 }
 
 
@@ -92,7 +89,7 @@ my $STATE_ADDED   = 2;
 my $STATE_REMOVED = 3;
 my $STATE_LOG     = 4;
 
-my $BASE_FN       = "$TMPDIR/$FILE_PREFIX";
+my $BASE_FN       = "$cfg::TMPDIR/$FILE_PREFIX";
 my $LAST_FILE     = "$BASE_FN.lastdir";
 my $CHANGED_FILE  = "$BASE_FN.changed";
 my $ADDED_FILE    = "$BASE_FN.added";
@@ -121,14 +118,14 @@ sub cleanup_tmpfiles {
 	my @files;		# The list of temporary files.
 
 	# Don't clean up afterwards if in debug mode.
-	return if $DEBUG;
+	return if $cfg::DEBUG;
 
-	opendir DIR, $TMPDIR or die "Cannot open directory: $TMPDIR!";
+	opendir DIR, $cfg::TMPDIR or die "Cannot open directory: $cfg::TMPDIR!";
 	push @files, grep /^$FILE_PREFIX\..*$PID$/, readdir(DIR);
 	closedir DIR;
 
 	foreach (@files) {
-		unlink "$TMPDIR/$_";
+		unlink "$cfg::TMPDIR/$_";
 	}
 }
 
@@ -203,7 +200,7 @@ sub format_names {
 
 	my @lines = (sprintf($format, $dir));
 
-	if ($DEBUG) {
+	if ($cfg::DEBUG) {
 		print STDERR "format_names(): dir = ", $dir;
 		#print STDERR "; tag = ", $tag;
 		print STDERR "; files = ", join(":", @files), ".\n";
@@ -229,7 +226,7 @@ sub format_lists {
 	my $lastdir = '';
 	my $lastsep = '';
 
-	print STDERR "format_lists(): ", join(":", @lines), "\n" if $DEBUG;
+	print STDERR "format_lists(): ", join(":", @lines), "\n" if $cfg::DEBUG;
 
 	foreach my $line (@lines) {
 		if ($line =~ /.*\/$/) {
@@ -530,7 +527,10 @@ if ($#path == 0) {
 }
 $dir = $dir . "/";
 
-if ($DEBUG) {
+#
+# Throw some values at the developer if in debug mode
+#
+if ($cfg::DEBUG) {
 	print("ARGV  - ", join(":", @ARGV), "\n");
 	print("files - ", join(":", @files), "\n");
 	print("path  - ", join(":", @path), "\n");
