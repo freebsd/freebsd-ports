@@ -1,0 +1,11 @@
+--- main.c.bak	Mon Apr 28 09:14:04 1997
++++ main.c	Mon Nov  2 06:38:46 1998
+@@ -1059,7 +1059,7 @@
+ 		clargc = 0;
+ 		clargv = NULL;
+ 		cli_len = sizeof(cli_addr);
+-		if ((newsockfd = accept(sockfd, &cli_addr, &cli_len)) < 0) continue;
++		if ((newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &cli_len)) < 0) continue;
+ 		if (getreq(newsockfd, glimpse_reqbuf, &clstdin, &clstdout, &clstderr, &clargc, &clargv, &clpid) < 0) {
+ 			ret = -1;
+ #if	DEBUG
