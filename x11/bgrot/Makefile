@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bgrot
-PORTVERSION= 	1.20
+PORTVERSION= 	1.30
 CATEGORIES=	x11
-MASTER_SITES=	http://www.futuresouth.com/~fullermd/bgrot/ \
-		http://www.over-yonder.net/~fullermd/bgrot/
+MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
+		http://www.futuresouth.com/~fullermd/bgrot/
 
-MAINTAINER=	fullermd@futuresouth.com
+MAINTAINER=	fullermd@over-yonder.net
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 
