@@ -1,15 +1,25 @@
+bin/gnome-font-install
+etc/printConf.sh
+include/libgnomeprint/gnome-font-dialog.h
 include/libgnomeprint/gnome-font.h
+include/libgnomeprint/gnome-print-i18n.h
 include/libgnomeprint/gnome-print.h
 include/libgnomeprint/gnome-printer-dialog.h
+include/libgnomeprint/gnome-printer-profile.h
 include/libgnomeprint/gnome-printer.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
-lib/libgnomeprint.la
 lib/libgnomeprint.so
 lib/libgnomeprint.so.0
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/printConf.sh
 share/gnome/fonts/fontmap
+share/gnome/gnome-print/profiles/Postscript.profile
+share/locale/es/LC_MESSAGES/gnome-print.mo
+share/locale/no/LC_MESSAGES/gnome-print.mo
 share/locale/pl/LC_MESSAGES/gnome-print.mo
+share/locale/ru/LC_MESSAGES/gnome-print.mo
+@dirrm share/gnome/gnome-print/profiles
+@dirrm share/gnome/gnome-print
 @dirrm share/gnome/fonts
+@dirrm include/libgnomeprint

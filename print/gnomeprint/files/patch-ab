@@ -1,31 +1,20 @@
---- Makefile.in.orig	Fri Jan 15 20:58:53 1999
-+++ Makefile.in	Fri Jan 15 21:01:08 1999
-@@ -174,7 +174,7 @@
+--- Makefile.in.orig	Tue Feb  2 08:05:00 1999
++++ Makefile.in	Thu Feb 18 17:14:57 1999
+@@ -161,7 +161,7 @@
  
  EXTRA_DIST = printConf.sh.in gnome-font-install.in
  
--confexecdir=$(libdir)
-+confexecdir=$(datadir)
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
  confexec_DATA = printConf.sh
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -504,7 +504,7 @@
- all-recursive-am: config.h
- 	$(MAKE) all-recursive
- 
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) config.h
-+all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) $(HEADERS) config.h
- 
- install-exec-am: install-libLTLIBRARIES install-confexecDATA
- 
---- po/Makefile.in.in.orig	Fri Jan 15 21:01:12 1999
-+++ po/Makefile.in.in	Fri Jan 15 21:01:54 1999
-@@ -18,7 +18,7 @@
- 
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
-+datadir = $(prefix)/share
- localedir = $(datadir)/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
+@@ -562,7 +562,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-confexecDATA \
+ 		uninstall-libgnomeprintincHEADERS
+ uninstall: uninstall-recursive
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
++all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
+ 		$(HEADERS) config.h
+ all-redirect: all-recursive-am
+ install-strip:
