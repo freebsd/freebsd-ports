@@ -123,6 +123,14 @@ case "$1" in
 		exit 1
 	    fi
 	done
+	# XXX Check for need?
+	/usr/sbin/pwd_mkdb -d etc-merged -p etc-merged/master.passwd
+	/usr/bin/cap_mkdb etc-merged/login.conf
+	if diff -q /etc/mail/aliases etc-merged/mail/aliases > /dev/null
+	    NEED_NEWALIASES=yes
+	else
+	    NEED_NEWALIASES=no
+	fi
 	tmpetc=/etc.$(date +%Y%m%d)
 	# XXX The entire set of operations below should be transactional.
 	#     This could be achieved by doing the updates as a series of
@@ -146,6 +154,9 @@ case "$1" in
 	mv /etc/ /etc.etcmergeold
 	mv ${tmpetc} /etc
 	fsync /
+	if [ "${NEED_NEWALIASES}" = "yes" ]; then
+	    /usr/sbin/newaliases
+	fi
 	mv ${REFETC} ${REFETC}.etcmergeold
 	mv ${REFETC}.etcmerge ${REFETC}
 	fsync /var/db
