@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	GD
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://kirara.prec.kyoto-u.ac.jp/~tam/GD/
+MASTER_SITES=	http://www.acc.ne.jp/~tam/GD/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -59,30 +59,6 @@ DOCS_EN=	Changes		\
 		doc/manual_index.html
 DOCS_JA=	readme.ja	\
 		doc/INSTALL.ja
-TUTORIAL_JA=	gd_intro-ja.html	\
-		imgs/0.png		\
-		imgs/1.png		\
-		imgs/256.png		\
-		imgs/arc.png		\
-		imgs/brush1.png		\
-		imgs/brush2.png		\
-		imgs/copy.png		\
-		imgs/copy_merge.png	\
-		imgs/demoin.png		\
-		imgs/demoout.png	\
-		imgs/line.png		\
-		imgs/poly.png		\
-		imgs/poly_setPt.png	\
-		imgs/rectangle.png	\
-		imgs/resolve.png	\
-		imgs/string.png		\
-		imgs/string2.png	\
-		imgs/stringttf1.png	\
-		imgs/stringttf2.png	\
-		imgs/styled_line.png	\
-		imgs/styled_line_transparent.png	\
-		imgs/top.png		\
-		imgs/xpy.png
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${X11BASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
@@ -99,9 +75,6 @@ post-install:
 .endfor
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/ja/
-.endfor
-.for f in ${TUTORIAL_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_DOCDIR}/gd/ja/${f}
 .endfor
 .endif
 
