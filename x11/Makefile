@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1996/07/31 22:09:19 chuckr Exp $
+# $Id: Makefile,v 1.91 1996/08/01 20:47:07 erich Exp $
 #
 
     SUBDIR += FWF
@@ -25,6 +25,7 @@
     SUBDIR += tk
     SUBDIR += tk4
     SUBDIR += tk41
+    SUBDIR += tkdesk
     SUBDIR += tkxpm
     SUBDIR += tvtwm
     SUBDIR += viewfax
