@@ -1295,6 +1295,7 @@
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-inline
     SUBDIR += ruby-intl
+    SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
     SUBDIR += ruby-libglade
     SUBDIR += ruby-libglade2
