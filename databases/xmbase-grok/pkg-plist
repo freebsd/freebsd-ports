@@ -1,7 +1,5 @@
 bin/grok
-include/X11/pixmaps/grok.xpm
 lib/X11/xmbase-grok/grok.hlp
-lib/X11/xmbase-grok/grokdir/Manual.ps
 lib/X11/xmbase-grok/grokdir/biblio.db
 lib/X11/xmbase-grok/grokdir/biblio.gf
 lib/X11/xmbase-grok/grokdir/biblio.mktex.pl
@@ -11,7 +9,6 @@ lib/X11/xmbase-grok/grokdir/countries.db
 lib/X11/xmbase-grok/grokdir/countries.gf
 lib/X11/xmbase-grok/grokdir/diary.db
 lib/X11/xmbase-grok/grokdir/diary.gf
-lib/X11/xmbase-grok/grokdir/grok.hlp
 lib/X11/xmbase-grok/grokdir/howto.gf
 lib/X11/xmbase-grok/grokdir/music.gf
 lib/X11/xmbase-grok/grokdir/occasions.gf
@@ -33,6 +30,15 @@ lib/X11/xmbase-grok/grokdir/weather.gf
 lib/X11/xmbase-grok/grokdir/workplan.gf
 lib/X11/xmbase-grok/grokdir/www_pages.db
 lib/X11/xmbase-grok/grokdir/www_pages.gf
+%%PORTDOCS%%share/doc/xmbase-grok/README
+%%PORTDOCS%%share/doc/xmbase-grok/export.html
+%%PORTDOCS%%share/doc/xmbase-grok/files.html
+%%PORTDOCS%%share/doc/xmbase-grok/formedit.html
+%%PORTDOCS%%share/doc/xmbase-grok/grammar.html
+%%PORTDOCS%%share/doc/xmbase-grok/icon.jpg
+%%PORTDOCS%%share/doc/xmbase-grok/index.html
+%%PORTDOCS%%share/doc/xmbase-grok/intro.html
+%%PORTDOCS%%@dirrm share/doc/xmbase-grok
 @dirrm lib/X11/xmbase-grok/grokdir/phone2.tm
 @dirrm lib/X11/xmbase-grok/grokdir
 @dirrm lib/X11/xmbase-grok
