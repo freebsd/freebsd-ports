@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.115 1997/10/02 02:58:01 max Exp $
+# $Id: Makefile,v 1.116 1997/10/11 04:14:17 obrien Exp $
 #
 
     SUBDIR += amanda
@@ -34,7 +34,6 @@
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
     SUBDIR += plan
-    SUBDIR += qpage
     SUBDIR += rpm
     SUBDIR += screen
     SUBDIR += splitvt

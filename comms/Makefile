@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1997/05/20 06:25:51 asami Exp $
+# $Id: Makefile,v 1.25 1997/06/08 11:24:45 andreas Exp $
 #
 
     SUBDIR += bpl+
@@ -8,6 +8,7 @@
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
+    SUBDIR += qpage
     SUBDIR += rzsz
     SUBDIR += seyon
     SUBDIR += snooper
