@@ -40,6 +40,7 @@
     SUBDIR += baduki
     SUBDIR += barrage
     SUBDIR += bass
+    SUBDIR += bastet
     SUBDIR += battalion
     SUBDIR += battleball
     SUBDIR += biorythm

@@ -1,0 +1,3 @@
+bin/bastet
+%%DATADIR%%/bastet.scores
+@dirrm %%DATADIR%%
