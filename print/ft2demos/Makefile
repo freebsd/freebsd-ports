@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
-		ftp://ftp.freetype.org/pub/%SUBDIR%/
+		ftp://ftp.freetype.org/freetype/%SUBDIR%/
 MASTER_SITE_SUBDIR=	freetype2
 
 MAINTAINER=	kanou@khdd.net
