@@ -14,8 +14,6 @@ MAINTAINER=     ache@freebsd.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-BROKEN= "Not yet ready for latest p5-libwww"
-
 USE_PERL5=	Yes
 
 MAN1=           w3mir.1 w3mfix.1
