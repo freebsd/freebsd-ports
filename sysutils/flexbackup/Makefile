@@ -7,6 +7,7 @@
 
 PORTNAME=	flexbackup
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		${MASTER_SITE_SUNSITE}
@@ -15,10 +16,14 @@ MASTER_SITE_SUBDIR=	system/backup
 MAINTAINER=	johnjen@reynoldsnet.org
 
 RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio \
-		buffer:${PORTSDIR}/misc/buffer
+		buffer:${PORTSDIR}/misc/buffer \
+		gtar:${PORTSDIR}/archivers/gtar
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+
+post-patch:
+	@${PERL} -pi -e "s|tar --|gtar --|g" ${WRKSRC}/flexbackup
 
 post-configure:
 	@${CP} ${WRKSRC}/flexbackup.conf ${WRKSRC}/flexbackup.conf.sample
@@ -26,9 +31,11 @@ post-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flexbackup ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/flexbackup
-	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf.sample ${PREFIX}/share/doc/flexbackup
-	${INSTALL_DATA} ${WRKSRC}/flexbackup.README ${PREFIX}/share/doc/flexbackup
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf.sample ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/flexbackup.README ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:%%PREFIX%%:${PREFIX}:g'
