@@ -6,10 +6,10 @@
 -MOC =		moc
 -LIBS =		-L$(QTDIR)/lib -lqt
 -CXXFLAGS =	-g -I$(QTDIR)/include -I/usr/X11R6/include
-+QTDIR =		/usr/X11R6
++QTDIR =		$(X11BASE)
 +MOC =		moc2
-+LIBS =		-L$(QTDIR)/lib -lqt2
-+CXXFLAGS =	-g -I$(QTDIR)/include/X11/qt2 -I/usr/X11R6/include
++LIBS =		-L$(QTDIR)/lib -lqt2 -lxpg4
++CXXFLAGS =	-g -I$(QTDIR)/include/qt2 -I$(X11BASE)/include
  
  TARGET =	toolbox
  OBJECTS =	misc.o font.o color.o uibox.o menu.o tree.o style.o toolbox.o
