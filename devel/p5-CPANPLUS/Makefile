@@ -20,89 +20,104 @@ CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 USE_REINPLACE=	yes
 
-MAN1=	cpanp.1 cpan2dist.1
-MAN3=	CPANPLUS.3 \
-	CPANPLUS::Backend.3 \
-	CPANPLUS::Backend::RV.3 \
-	CPANPLUS::Config.3 \
-	CPANPLUS::Configure.3 \
-	CPANPLUS::Dist.3 \
-	CPANPLUS::Dist::Build.3 \
-	CPANPLUS::Dist::MM.3 \
-	CPANPLUS::Dist::Sample.3 \
-	CPANPLUS::Error.3 \
-	CPANPLUS::FAQ.3 \
-	CPANPLUS::Hacking.3 \
-	CPANPLUS::Internals.3 \
-	CPANPLUS::Internals::Extract.3 \
-	CPANPLUS::Internals::Fetch.3 \
-	CPANPLUS::Internals::Search.3 \
-	CPANPLUS::Internals::Source.3 \
-	CPANPLUS::Internals::Utils.3 \
-	CPANPLUS::Module.3 \
-	CPANPLUS::Module::Author.3 \
-	CPANPLUS::Module::Author::Fake.3 \
-	CPANPLUS::Module::Checksums.3 \
-	CPANPLUS::Module::Fake.3 \
-	CPANPLUS::Shell.3 \
-	CPANPLUS::Shell::Classic.3 \
-	CPANPLUS::Shell::Default.3 \
-	CPANPLUS::inc.3 \
-	CPANPLUS::inc::Archive::Extract.3 \
-	CPANPLUS::inc::Archive::Tar.3 \
-	CPANPLUS::inc::Archive::Tar::File.3 \
-	CPANPLUS::inc::Config::Auto.3 \
-	CPANPLUS::inc::File::Fetch.3 \
-	CPANPLUS::inc::File::Spec.3 \
-	CPANPLUS::inc::File::Spec::Cygwin.3 \
-	CPANPLUS::inc::File::Spec::Epoc.3 \
-	CPANPLUS::inc::File::Spec::Functions.3 \
-	CPANPLUS::inc::File::Spec::Mac.3 \
-	CPANPLUS::inc::File::Spec::OS2.3 \
-	CPANPLUS::inc::File::Spec::Unix.3 \
-	CPANPLUS::inc::File::Spec::VMS.3 \
-	CPANPLUS::inc::File::Spec::Win32.3 \
-	CPANPLUS::inc::IO::String.3 \
-	CPANPLUS::inc::IO::Zlib.3 \
-	CPANPLUS::inc::IPC::Cmd.3 \
-	CPANPLUS::inc::IPC::Run.3 \
-	CPANPLUS::inc::IPC::Run::Debug.3 \
-	CPANPLUS::inc::IPC::Run::IO.3 \
-	CPANPLUS::inc::IPC::Run::Timer.3 \
-	CPANPLUS::inc::IPC::Run::Win32Helper.3 \
-	CPANPLUS::inc::IPC::Run::Win32IO.3 \
-	CPANPLUS::inc::IPC::Run::Win32Pump.3 \
-	CPANPLUS::inc::Locale::Maketext::Simple.3 \
-	CPANPLUS::inc::Log::Message.3 \
-	CPANPLUS::inc::Log::Message::Config.3 \
-	CPANPLUS::inc::Log::Message::Handlers.3 \
-	CPANPLUS::inc::Log::Message::Item.3 \
-	CPANPLUS::inc::Module::CoreList.3 \
-	CPANPLUS::inc::Module::Load.3 \
-	CPANPLUS::inc::Module::Load::Conditional.3 \
-	CPANPLUS::inc::Module::Pluggable.3 \
-	CPANPLUS::inc::Object::Accessor.3 \
-	CPANPLUS::inc::Params::Check.3 \
-	CPANPLUS::inc::Term::UI.3 \
-	CPANPLUS::inc::installers::Module::Build.3 \
-	CPANPLUS::inc::installers::Module::Build::Base.3 \
-	CPANPLUS::inc::installers::Module::Build::Compat.3 \
-	CPANPLUS::inc::installers::Module::Build::Cookbook.3 \
-	CPANPLUS::inc::installers::Module::Build::PPMMaker.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::Amiga.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::Default.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::EBCDIC.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::MPEiX.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::MacOS.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::RiscOS.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::Unix.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::VMS.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::VOS.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::Windows.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::aix.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::cygwin.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::darwin.3 \
-	CPANPLUS::inc::installers::Module::Build::Platform::os2.3
+OPTIONS=	TEST_REPORTER "Send report to cpan-testers" off \
+		YAML "Check reports from cpan-testers" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TEST_REPORTER)
+BUILD_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
+RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
+.endif
+
+.if defined(WITH_YAML)
+BUILD_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+.endif
+
+MAN1=		cpanp.1 cpan2dist.1
+MAN3=		CPANPLUS.3 \
+		CPANPLUS::Backend.3 \
+		CPANPLUS::Backend::RV.3 \
+		CPANPLUS::Config.3 \
+		CPANPLUS::Configure.3 \
+		CPANPLUS::Dist.3 \
+		CPANPLUS::Dist::Build.3 \
+		CPANPLUS::Dist::MM.3 \
+		CPANPLUS::Dist::Sample.3 \
+		CPANPLUS::Error.3 \
+		CPANPLUS::FAQ.3 \
+		CPANPLUS::Hacking.3 \
+		CPANPLUS::Internals.3 \
+		CPANPLUS::Internals::Extract.3 \
+		CPANPLUS::Internals::Fetch.3 \
+		CPANPLUS::Internals::Search.3 \
+		CPANPLUS::Internals::Source.3 \
+		CPANPLUS::Internals::Utils.3 \
+		CPANPLUS::Module.3 \
+		CPANPLUS::Module::Author.3 \
+		CPANPLUS::Module::Author::Fake.3 \
+		CPANPLUS::Module::Checksums.3 \
+		CPANPLUS::Module::Fake.3 \
+		CPANPLUS::Shell.3 \
+		CPANPLUS::Shell::Classic.3 \
+		CPANPLUS::Shell::Default.3 \
+		CPANPLUS::inc.3 \
+		CPANPLUS::inc::Archive::Extract.3 \
+		CPANPLUS::inc::Archive::Tar.3 \
+		CPANPLUS::inc::Archive::Tar::File.3 \
+		CPANPLUS::inc::Config::Auto.3 \
+		CPANPLUS::inc::File::Fetch.3 \
+		CPANPLUS::inc::File::Spec.3 \
+		CPANPLUS::inc::File::Spec::Cygwin.3 \
+		CPANPLUS::inc::File::Spec::Epoc.3 \
+		CPANPLUS::inc::File::Spec::Functions.3 \
+		CPANPLUS::inc::File::Spec::Mac.3 \
+		CPANPLUS::inc::File::Spec::OS2.3 \
+		CPANPLUS::inc::File::Spec::Unix.3 \
+		CPANPLUS::inc::File::Spec::VMS.3 \
+		CPANPLUS::inc::File::Spec::Win32.3 \
+		CPANPLUS::inc::IO::String.3 \
+		CPANPLUS::inc::IO::Zlib.3 \
+		CPANPLUS::inc::IPC::Cmd.3 \
+		CPANPLUS::inc::IPC::Run.3 \
+		CPANPLUS::inc::IPC::Run::Debug.3 \
+		CPANPLUS::inc::IPC::Run::IO.3 \
+		CPANPLUS::inc::IPC::Run::Timer.3 \
+		CPANPLUS::inc::IPC::Run::Win32Helper.3 \
+		CPANPLUS::inc::IPC::Run::Win32IO.3 \
+		CPANPLUS::inc::IPC::Run::Win32Pump.3 \
+		CPANPLUS::inc::Locale::Maketext::Simple.3 \
+		CPANPLUS::inc::Log::Message.3 \
+		CPANPLUS::inc::Log::Message::Config.3 \
+		CPANPLUS::inc::Log::Message::Handlers.3 \
+		CPANPLUS::inc::Log::Message::Item.3 \
+		CPANPLUS::inc::Module::CoreList.3 \
+		CPANPLUS::inc::Module::Load.3 \
+		CPANPLUS::inc::Module::Load::Conditional.3 \
+		CPANPLUS::inc::Module::Pluggable.3 \
+		CPANPLUS::inc::Object::Accessor.3 \
+		CPANPLUS::inc::Params::Check.3 \
+		CPANPLUS::inc::Term::UI.3 \
+		CPANPLUS::inc::installers::Module::Build.3 \
+		CPANPLUS::inc::installers::Module::Build::Base.3 \
+		CPANPLUS::inc::installers::Module::Build::Compat.3 \
+		CPANPLUS::inc::installers::Module::Build::Cookbook.3 \
+		CPANPLUS::inc::installers::Module::Build::PPMMaker.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::Amiga.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::Default.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::EBCDIC.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::MPEiX.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::MacOS.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::RiscOS.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::Unix.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::VMS.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::VOS.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::Windows.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::aix.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::cygwin.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::darwin.3 \
+		CPANPLUS::inc::installers::Module::Build::Platform::os2.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*\.orig" -delete
@@ -112,4 +127,4 @@ post-configure:
 		"s|('base' => )'.*(/.cpanplus)',|\1\"\$$ENV{'HOME'}\2\",|" \
 		${WRKSRC}/lib/CPANPLUS/Config.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
