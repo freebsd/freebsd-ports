@@ -9,7 +9,8 @@
 DISTNAME=	Gtk---1.0.3
 PKGNAME=	gtk---1.0.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/gtk--/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/Gtk--
 
 MAINTAINER=	nakai@FreeBSD.org
 
