@@ -1,0 +1,11 @@
+--- docs/reference/libgail-util/Makefile.in.orig	Tue Jul 23 12:42:03 2002
++++ docs/reference/libgail-util/Makefile.in	Tue Jul 23 12:42:30 2002
+@@ -103,7 +103,7 @@
+ 
+ INSTALLDIR = $(prefix)/share/gtk-doc
+ 
+-HTML_DIR = ${datadir}/gtk-doc/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 
