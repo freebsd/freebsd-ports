@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bzflag
-PORTVERSION=	1.7g.0
+PORTVERSION=	1.7g.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,28 +16,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 3D tank battle game
 
-USE_XLIB=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
-
-MAKE_ENV=	PORTCFLAGS="${CFLAGS}" PORTCXXFLAGS="${CXXFLAGS}" \
-		PORTPREFIX="${PREFIX}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	213
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
 
-do-configure:
-	@${CP} ${FILESDIR}/config-sys ${WRKSRC}/
-	${REINPLACE_CMD} "s,malloc.h,stdlib.h,g" \
-		${WRKSRC}/src/bzflag/HUDRenderer.cxx
-
-post-build:
-	@(cd ${WRKSRC}/man && ${MAKE} targets)
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/*.6 ${MANPREFIX}/man/man6/
-	@${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/data/
+post-patch:
+	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<malloc\.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} -e 's|@LINUX_TRUE@||g ; \
+		 s|@LINUX_FALSE@|#|g' ${WRKSRC}/src/platform/Makefile.in
 
 .include <bsd.port.mk>
