@@ -77,6 +77,7 @@
     SUBDIR += crawl
     SUBDIR += crp
     SUBDIR += css-mode.el
+    SUBDIR += cssed
     SUBDIR += cybercalendar
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel

@@ -1,0 +1,8 @@
+CSSED is a small developer editor and validator, which tries to ease the CSS
+editing.
+
+It features syntax highlighting, syntax validation, MDI notebook based
+interface, quick CSS properties and values insertion, auto-completion and
+dialog-based insertion of CSS complex values.
+
+WWW: http://cssed.sourceforge.net/
