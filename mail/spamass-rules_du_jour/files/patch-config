@@ -23,7 +23,7 @@
 +
 +SA_LINT="$PREFIX/bin/spamassassin --lint";	# Command used to lint the rules
 +
-+SA_RESTART="$PREFIX/etc/rc.d/spamd.sh restart";	# Command used to restart spamd
++SA_RESTART="$PREFIX/etc/rc.d/sa-spamd.sh restart";	# Command used to restart spamd
 +												# May be /etc/rc.d/init.d/spamassassin restart
 +												# For amavisd, may be /etc/init.d/amavisd restart
 +												# For minedefang, may be /etc/init.d/mimedefang restart

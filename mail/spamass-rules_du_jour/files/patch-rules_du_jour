@@ -1,21 +1,21 @@
---- rules_du_jour.orig	Mon Aug  2 20:38:44 2004
-+++ rules_du_jour	Mon Aug  2 22:29:32 2004
+--- rules_du_jour.orig	Sat Aug 28 23:45:23 2004
++++ rules_du_jour	Tue Nov 30 21:16:05 2004
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
- # Version 1.17a   Added support for curl by default (instead of wget). Requires curl 7.10 or higher.  Integrated "email me only when RDJ has been updated" patch (thanks, Daniel Cohen!) rev 17a: fixed extraneous debug print
+ # Version 1.18  Added kluge to specify configfile location: RDJ_CONFIGFILE.  Fixed SARE_HEADER version extraction.
  
  ##########################
 @@ -52,7 +52,7 @@
  # (my_rules_du_jour wrapper script is no longer recommended)
  # Reads persistent configuration files from /etc, if one exists.  
  # /etc/rulesdujour/config is the recommended configuration file location.
--for i in /etc/rulesdujour/config /etc/rulesdujour /etc/mail/rulesdujour /etc/sysconfig/RulesDuJour /etc/sysconfig/rulesdujour ; do
-+for i in /usr/local/etc/rulesdujour/config /usr/local/etc/rulesdujour /usr/local/etc/mail/rulesdujour ; do
-     [ -f $i ] && source $i ;
+-for i in ${RDJ_CONFIGFILE} /etc/rulesdujour/config /etc/rulesdujour /etc/mail/rulesdujour /etc/sysconfig/RulesDuJour /etc/sysconfig/rulesdujour ; do
++for i in ${RDJ_CONFIGFILE} /usr/local/etc/rulesdujour/config /usr/local/etc/rulesdujour /usr/local/etc/mail/rulesdujour ; do
+     [ -f "$i" ] && source $i ;
  done;
  
-@@ -133,7 +133,7 @@
+@@ -138,7 +138,7 @@
  #### Here are settings for Tripwire. ####
  TRIPWIRE=0; # Index of Tripwire data into the arrays is 0
                CF_URLS[0]="http://www.rulesemporium.com/rules/99_FVGT_Tripwire.cf";
