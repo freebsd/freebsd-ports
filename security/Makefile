@@ -208,6 +208,7 @@
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
+    SUBDIR += py-mcrypt
     SUBDIR += py-mhash
     SUBDIR += py-openssl
     SUBDIR += py-pow
