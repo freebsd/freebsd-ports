@@ -45,6 +45,7 @@
     SUBDIR += fpm
     SUBDIR += fragrouter
     SUBDIR += fressh
+    SUBDIR += fsh
     SUBDIR += fuzz
     SUBDIR += fwbuilder
     SUBDIR += fwlogwatch

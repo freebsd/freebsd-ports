@@ -1,0 +1,14 @@
+fsh -- Fast remote command execution
+
+The problem: logging in to a remote system with a cryptographic
+solution such as lsh or ssh takes time, due to the computationally
+expensive key exchanges that occur when the connection is
+established. It is common to trigger a lot of remote logins while
+using remote CVS, which makes it painfully slow compared to having the
+repository locally.
+
+The solution: reuse the secure tunnel once it has been
+established. fsh is a drop-in rsh-compatible replacement for ssh that
+automatically resuses ssh tunnels.
+
+WWW: http://www.lysator.liu.se/fsh/
