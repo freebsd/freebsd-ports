@@ -48,6 +48,7 @@
     SUBDIR += flashplugin
     SUBDIR += fxhtml
     SUBDIR += g-gcl
+    SUBDIR += galeon
     SUBDIR += glibwww2
     SUBDIR += gn
     SUBDIR += gnuinfo
