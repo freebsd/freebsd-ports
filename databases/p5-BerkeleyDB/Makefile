@@ -23,5 +23,6 @@ ALL_TARGET=	all test
 post-patch:
 	${PERL} -pi -e 's|^(INCLUDE\s+= )./libraries/.*$$|$$1\$(PREFIX)/include/db3|g; \
 		s|^(LIB\s+= )./libraries/.*$$|$$1$(PREFIX)/lib|g' ${WRKSRC}/config.in
+	${PERL} -pi -e 's|^#DBNAME.*|DBNAME = -ldb3|' ${WRKSRC}/config.in
 
 .include <bsd.port.mk>
