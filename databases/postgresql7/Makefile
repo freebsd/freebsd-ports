@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.2
+PORTVERSION?=	7.4.3
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -91,8 +91,18 @@ WITH_KRB5=	yes
 .endif
 
 .if defined(WITH_HEIMDAL_KRB5)
-KRB5CONF=	/usr/bin/krb5-config
 WITH_KRB5=	yes
+.if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
+KRB5CONF=	${HEIMDAL_HOME}/bin/krb5-config
+.elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
+CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
+KRB5CONF=	${DESTDIR}/usr/bin/krb5-config
+.else
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
+KRB5CONF=	${LOCALBASE}/bin/krb5-config
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
