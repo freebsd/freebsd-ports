@@ -49,6 +49,12 @@ CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
+.if ${OSVERSION} > 500023
+LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
 CONFIGURE_ARGS+=	--with-libs='-lxpg4'
 .endif
