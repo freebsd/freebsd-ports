@@ -32,6 +32,65 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
+    <topic>metamail format string bugs and buffer overflows</topic>
+    <affects>
+      <package>
+	<name>metamail</name>
+	<range><lt>2.7_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar reported four bugs in metamail: two are format
+	  string bugs and two are buffer overflows.  The bugs are in
+	  SaveSquirrelFile(), PrintHeader(), and ShareThisHeader().</p>
+	<p>These vulnerabilities could be triggered by a maliciously
+	  formatted email message if `metamail' or `splitmail' is used
+	  to process it, possibly resulting in arbitrary code execution
+	  with the privileges of the user reading mail.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0104</cvename>
+      <cvename>CAN-2004-0105</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-18</discovery>
+      <entry>2004-02-18</entry>
+      <modified>2004-03-03</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
+    <topic>mod_python denial-of-service vulenerability in parse_qs</topic>
+    <affects>
+      <package>
+	<name>mod_python</name>
+	<range><lt>2.7.10</lt></range>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker may cause Apache with mod_python to crash
+          by using a specially constructed query string.</p>
+	<p><em>Note:</em> It was announced that this bug was fixed in
+	  mod_python 2.7.9 also.  However, there are only changes in
+	  documentation between 2.7.8 and 2.7.9.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0973</cvename>
+      <bid>9129</bid>
+      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2004-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
     <topic>fetchmail denial-of-service vulnerabilities</topic>
     <affects>
@@ -382,36 +441,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-01-13</discovery>
       <entry>2004-02-22</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
-    <topic>metamail format string bugs and buffer overflows</topic>
-    <affects>
-      <package>
-	<name>metamail</name>
-	<range><lt>2.7_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf Härnhammar reported four bugs in metamail: two are format
-	  string bugs and two are buffer overflows.  The bugs are in
-	  SaveSquirrelFile(), PrintHeader(), and ShareThisHeader().</p>
-	<p>These vulnerabilities could be triggered by a maliciously
-	  formatted email message if `metamail' or `splitmail' is used
-	  to process it, possibly resulting in arbitrary code execution
-	  with the privileges of the user reading mail.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0104</cvename>
-      <cvename>CAN-2004-0105</cvename>
-    </references>
-    <dates>
-      <discovery>2004-02-18</discovery>
-      <entry>2004-02-18</entry>
-      <modified>2004-02-19</modified>
     </dates>
   </vuln>
 
