@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	toppler
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toppler
@@ -15,19 +14,27 @@ MASTER_SITE_SUBDIR=	toppler
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
-USE_SDL=	mixer sdl
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_SDL=	mixer sdl
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"  \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-lintl"
+CONFIGURE_ARGS=	--program-transform-name= --localstatedir=/var/games
 
 MAN6=		toppler.6
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cc" \) | \
-		${XARGS} ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	can not be compiled because it requires mbrtowc() in libc
+.endif
 
 post-install:
-	@cd ${WRKSRC} && ${MAKE} global_highscore
+	@${CHOWN} root:games ${PREFIX}/bin/toppler
+	@${CHMOD} g+s ${PREFIX}/bin/toppler
+	@${SETENV} "PKG_PREFIX=${PREFIX}" \
+		${SH} pkg-install ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

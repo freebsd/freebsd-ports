@@ -1,27 +1,14 @@
 bin/toppler
+share/locale/de/LC_MESSAGES/toppler.mo
+share/locale/fi/LC_MESSAGES/toppler.mo
+share/locale/fr/LC_MESSAGES/toppler.mo
 share/toppler/abc.ttm
-share/toppler/alarm.wav
 share/toppler/ball1.ttm
 share/toppler/ball2.ttm
 share/toppler/ball3.ttm
-share/toppler/boing.wav
-share/toppler/bubbles.wav
-share/toppler/fanfare.wav
-share/toppler/hit.wav
-share/toppler/honk.wav
 share/toppler/m1.ttm
 share/toppler/m2.ttm
-share/toppler/rumble.wav
-share/toppler/score.wav
-share/toppler/sonar.wav
-share/toppler/splash.wav
-share/toppler/swoosh.wav
-share/toppler/tap.wav
-share/toppler/tick.wav
+share/toppler/pasi2.ttm
 share/toppler/toppler.dat
 share/toppler/toppler.xpm
-share/toppler/torpedo.wav
-share/toppler/water.wav
-var/toppler/toppler.hsc
 @dirrm share/toppler
-@dirrm var/toppler
