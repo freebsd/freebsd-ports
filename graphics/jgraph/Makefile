@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}.shar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that generates postscript graphs
 
+NO_LATEST_LINK=	yes
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| sh

@@ -53,6 +53,7 @@ CONFLICTS=	linux_base-6* linux_base-7.1* linux_base-debian* \
 		linux_base-gentoo* linux_base-rh-9* linux_base-suse-9* \
 		linux-XFree86-libs*
 
+NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		amd64 i386
 DIST_SUBDIR=		rpm/rh-7.3
 PREFIX=			${LINUXBASE}
