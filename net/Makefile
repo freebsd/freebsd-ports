@@ -223,6 +223,7 @@
     SUBDIR += sup
     SUBDIR += tac_plus4
     SUBDIR += tcpflow
+    SUBDIR += tcpillust
     SUBDIR += tcpmssd
     SUBDIR += tcpshow
     SUBDIR += tcptrace
