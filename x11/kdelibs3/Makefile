@@ -7,7 +7,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	3.0.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -42,7 +42,6 @@ CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
 FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 
-_NO_KDE_FINAL=	yes
 .include "${.CURDIR}/../kde3/Makefile.kde"
 
 USE_GMAKE=	yes
