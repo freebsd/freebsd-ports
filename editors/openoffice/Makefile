@@ -162,6 +162,7 @@ pre-fetch:
 	@${ECHO} stable as it should.
 	@${ECHO}
 	@${ECHO} KERNEL CONFIGURATION:
+.if ${USE_GCC} == 2.95
 	@${ECHO}
 	@${ECHO} Openoffice needs a larger stack- and
 	@${ECHO} datasize to build. Check your limit
@@ -171,6 +172,7 @@ pre-fetch:
 	@${ECHO} options	MAXDSIZ=\"\(1024*1024*1024\)\"
 	@${ECHO} options	MAXSSIZ=\"\(256*1024*1024\)\"
 	@${ECHO}
+.endif
 .if !exists(/usr/include/langinfo.h)
 	@${ECHO}
 	@${ECHO} langinfo.h is missing !
