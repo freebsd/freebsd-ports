@@ -10,7 +10,7 @@ PORTVERSION=	2.9.3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.void.jump.org/pub/sinclair/emulators/unix/
 
-MAINTAINER=	sheldonh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
