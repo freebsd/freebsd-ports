@@ -1,4 +1,4 @@
-bin/awstats-1.21.wbm
+bin/awstats-1.3.wbm
 bin/awstats_buildstaticpages.pl
 bin/awstats_configure.pl
 bin/awstats_exportlib.pl
@@ -51,6 +51,7 @@ www/cgi-bin/awredir.pl
 www/cgi-bin/awstats.model.conf
 www/cgi-bin/awstats.pl
 www/cgi-bin/lang/awstats-al.txt
+www/cgi-bin/lang/awstats-ar.txt
 www/cgi-bin/lang/awstats-ba.txt
 www/cgi-bin/lang/awstats-bg.txt
 www/cgi-bin/lang/awstats-br.txt
@@ -86,39 +87,45 @@ www/cgi-bin/lang/awstats-se.txt
 www/cgi-bin/lang/awstats-sk.txt
 www/cgi-bin/lang/awstats-sr.txt
 www/cgi-bin/lang/awstats-tr.txt
-www/cgi-bin/lang/awstats-tt-al.txt
-www/cgi-bin/lang/awstats-tt-ba.txt
-www/cgi-bin/lang/awstats-tt-bg.txt
-www/cgi-bin/lang/awstats-tt-ca.txt
-www/cgi-bin/lang/awstats-tt-cn.txt
-www/cgi-bin/lang/awstats-tt-cz.txt
-www/cgi-bin/lang/awstats-tt-de.txt
-www/cgi-bin/lang/awstats-tt-dk.txt
-www/cgi-bin/lang/awstats-tt-en.txt
-www/cgi-bin/lang/awstats-tt-es.txt
-www/cgi-bin/lang/awstats-tt-fi.txt
-www/cgi-bin/lang/awstats-tt-fr.txt
-www/cgi-bin/lang/awstats-tt-gl.txt
-www/cgi-bin/lang/awstats-tt-hu.txt
-www/cgi-bin/lang/awstats-tt-is.txt
-www/cgi-bin/lang/awstats-tt-it.txt
-www/cgi-bin/lang/awstats-tt-jp.txt
-www/cgi-bin/lang/awstats-tt-kr.txt
-www/cgi-bin/lang/awstats-tt-nb.txt
-www/cgi-bin/lang/awstats-tt-nl.txt
-www/cgi-bin/lang/awstats-tt-nn.txt
-www/cgi-bin/lang/awstats-tt-pl.txt
-www/cgi-bin/lang/awstats-tt-ro.txt
-www/cgi-bin/lang/awstats-tt-ru.txt
-www/cgi-bin/lang/awstats-tt-se.txt
-www/cgi-bin/lang/awstats-tt-sk.txt
-www/cgi-bin/lang/awstats-tt-sr.txt
-www/cgi-bin/lang/awstats-tt-tr.txt
-www/cgi-bin/lang/awstats-tt-tw.txt
-www/cgi-bin/lang/awstats-tt-ua.txt
 www/cgi-bin/lang/awstats-tw.txt
 www/cgi-bin/lang/awstats-ua.txt
 www/cgi-bin/lang/awstats-wlk.txt
+www/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
+www/cgi-bin/lang/tooltips_m/awstats-tt-en.txt
+www/cgi-bin/lang/tooltips_m/awstats-tt-fr.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-al.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-ba.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-bg.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-ca.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-cn.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-cz.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-de.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-dk.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-en.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-es.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-fi.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-fr.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-gl.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-hu.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-is.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-it.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-jp.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-kr.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-nb.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-nl.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-nn.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-pl.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-ro.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-ru.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-se.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-sk.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-sr.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-tr.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-tw.txt
+www/cgi-bin/lang/tooltips_w/awstats-tt-ua.txt
+www/cgi-bin/lang/tooltips_w/awstats-tw.txt
+www/cgi-bin/lang/tooltips_w/awstats-ua.txt
+www/cgi-bin/lang/tooltips_w/awstats-wlk.txt
 www/cgi-bin/lib/browsers.pm
 www/cgi-bin/lib/domains.pm
 www/cgi-bin/lib/mime.pm
@@ -159,6 +166,7 @@ www/icons/browser/dillo.png
 www/icons/browser/dreamcast.png
 www/icons/browser/ecatch.png
 www/icons/browser/encompass.png
+www/icons/browser/firefox.png
 www/icons/browser/fpexpress.png
 www/icons/browser/fresco.png
 www/icons/browser/galeon.png
@@ -572,6 +580,9 @@ www/js/awstats_misc_tracker.js
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
 @dirrm www/cgi-bin/lib
+@dirrm www/cgi-bin/lang/tooltips_w
+@dirrm www/cgi-bin/lang/tooltips_m
+@dirrm www/cgi-bin/lang/tooltips_f
 @dirrm www/cgi-bin/lang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
