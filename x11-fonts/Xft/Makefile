@@ -7,7 +7,7 @@
 
 PORTNAME=	Xft
 PORTVERSION=	2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--with-fontconfig-config="pkg-config fontconfig"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
