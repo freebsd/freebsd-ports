@@ -639,6 +639,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>gd</name>
+	<name>uk-gd</name>
+	<name>ja-gd</name>
 	<range><lt>2.0.29,1</lt></range>
 	<range><gt>1.*,2</gt><lt>2.*,2</lt></range>
       </package>
