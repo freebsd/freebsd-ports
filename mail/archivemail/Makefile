@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	archivemail
-PORTVERSION=	0.1.0
+PORTVERSION=	0.4.9
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@geeksrus.net
 
-NO_BUILD=	yes
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+MAN1=		archivemail.1
 
 .include <bsd.port.mk>
