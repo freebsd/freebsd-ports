@@ -1,25 +1,43 @@
 --- configure.orig	Thu Feb  5 00:24:23 1998
-+++ configure	Sat Jan 12 00:34:52 2002
-@@ -2445,3 +2445,3 @@
++++ configure	Sat Aug  2 08:12:24 2003
+@@ -2443,7 +2443,7 @@
+ echo $ac_n "checking for Python header files""... $ac_c" 1>&6
+ echo "configure:2445: checking for Python header files" >&5
  
 -dirs="$PYINCLUDE $PYINCLUDE/python1.5 $PYINCLUDE/python1.4 $PYINCLUDE/Py $prefix/include/python1.5 $prefix/include/python1.4 /usr/local/include/python1.5 /usr/include/python1.5 /usr/local/include/python1.4 /usr/include/python1.4 $prefix/include/Py /usr/local/include/Py /usr/include/Py"
 +dirs="$PYINCLUDE $PYINCLUDE/python2.2 $PYINCLUDE/python1.5 $PYINCLUDE/Py $prefix/include/python2.2 $prefix/include/python1.5 /usr/local/include/python2.2 /usr/include/python2.2 /usr/local/include/python1.5 /usr/include/python1.5 $prefix/include/Py /usr/local/include/Py /usr/include/Py"
  for i in $dirs ; do
-@@ -2460,3 +2460,3 @@
+ 	if test -r $i/Python.h; then
+ 		echo "$ac_t""$i" 1>&6
+@@ -2458,20 +2458,28 @@
+ 
+ echo $ac_n "checking for Python library""... $ac_c" 1>&6
  echo "configure:2461: checking for Python library" >&5
 -dirs="$PYLIB $PYLIB/config $PYLIB/lib $PYLIB/python1.5/config $PYLIB/python1.4/config $PYLIB/python/lib $prefix/lib/python1.5/config $prefix/lib/python1.4/config /usr/local/lib/python1.5/config /usr/lib/python1.5 /usr/local/lib/python1.4/config /usr/lib/python1.4 $prefix/lib/python/lib /usr/local/lib/python/lib /usr/lib/python/lib /home/sci/local/lib/python"
 +dirs="$PYLIB $PYLIB/config $PYLIB/lib $PYLIB/python2.2/config $PYLIB/python1.5/config $PYLIB/python/lib $prefix/lib/python2.2/config $prefix/lib/python1.5/config /usr/local/lib/python2.2/config /usr/lib/python2.2 /usr/local/lib/python1.5/config /usr/lib/python1.5 $prefix/lib/python/lib /usr/local/lib/python/lib /usr/lib/python/lib /home/sci/local/lib/python"
  
-@@ -2467,6 +2467,6 @@
+ for i in $dirs ; do
+ 	if test -r $i/libpython1.5.a; then
+ 	    echo "$ac_t""$i" 1>&6
+ 	    PYLIB="$i"
  	    PYINCLUDE="$PYINCLUDE -I$i"
 -            PYLINK="-lpython1.5"	
 +	    PYLINK="-lpython1.5"
  	    break
  	fi
 -	if test -r $i/libPython.a; then
-+	if test -r $i/libpython2.2.a; then
++	if test -r $i/lib${PYTHON_VERSION}.so; then
  	    echo "$ac_t""$i" 1>&6
-@@ -2474,2 +2474,3 @@
+ 	    PYLIB="$i"
  	    PYINCLUDE="$PYINCLUDE -I$i"
-+            PYLINK="-lpython2.2"
++            PYLINK="-l${PYTHON_VERSION}"
++	    break
++	fi
++	if test -r $i/lib${PYTHON_VERSION}.a; then
++	    echo "$ac_t""$i" 1>&6
++	    PYLIB="$i"
++	    PYINCLUDE="$PYINCLUDE -I$i"
++            PYLINK="-l${PYTHON_VERSION}"
  	    break
+ 	fi
+ done
