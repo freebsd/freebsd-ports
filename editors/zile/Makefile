@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	apps/editors/emacs/clones zile
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
 
-USE_AUTOCONF=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		zile.1
-MANCOMPRESSED=	no
 
-strip_bins := zile
+post-extract:
+	${RM} -f ${WRKSRC}/doc/zile.info
 
 post-install:
-.for bin in ${strip_bins}
-	@strip ${PREFIX}/bin/${bin}
-.endfor
+	install-info ${PREFIX}/info/zile.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

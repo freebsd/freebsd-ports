@@ -1,12 +1,15 @@
+@comment $FreeBSD$
+bin/zile
+@unexec install-info --delete %D/info/zile.info %D/info/dir
 info/zile.info
-share/zile/zilerc.sample
+@exec install-info %D/info/zile.info %D/info/dir
+share/zile/AUTODOC
 share/zile/FAQ
 share/zile/HELP
+share/zile/LATEST_VERSION
 share/zile/MINIHELP1
 share/zile/MINIHELP2
 share/zile/MINIHELP3
-share/zile/LATEST_VERSION
 share/zile/TUTORIAL
-share/zile/AUTODOC
-bin/zile
+share/zile/zilerc.sample
 @dirrm share/zile
