@@ -22,7 +22,7 @@ MAINTAINER?=	ports@FreeBSD.org
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 
