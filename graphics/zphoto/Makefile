@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	zphoto
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 
-#BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
 		Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		popt.0:${PORTSDIR}/devel/popt
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \

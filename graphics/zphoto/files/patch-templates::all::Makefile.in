@@ -1,0 +1,11 @@
+--- templates/all/Makefile.in.orig	Tue Jan 28 22:56:04 2003
++++ templates/all/Makefile.in	Fri Jan 31 01:51:27 2003
+@@ -70,7 +70,7 @@
+ ZPHOTO_URL = @ZPHOTO_URL@
+ 
+ templatesdir = $(pkgdatadir)/templates/all
+-templates_DATA = zphoto.css
++templates_DATA = zphoto.css .photo.html
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
