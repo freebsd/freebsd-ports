@@ -1,11 +1,12 @@
---- Makefile~	Mon Jul 28 21:55:58 1997
-+++ Makefile	Thu Oct 22 00:46:10 1998
-@@ -19,7 +19,7 @@
+$NetBSD: patch-aa,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
+--- ./Makefile.orig	Thu Apr 22 17:08:15 1999
++++ ./Makefile	Mon Jun  7 18:09:47 1999
+@@ -17,6 +17,6 @@
  
  # --- install directories
- BINDIR = /usr/local/bin
+-BINDIR = /usr/local/bin
 -LIBDIR = /usr/local/lib/chasen
-+LIBDIR = /usr/local/share/chasen
++BINDIR = $(PREFIX)/bin
++LIBDIR = $(PREFIX)/share/chasen
  MKDICDIR = $(LIBDIR)/mkchadic
  DICDIR = $(LIBDIR)/dic
- 
