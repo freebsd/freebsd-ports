@@ -2,7 +2,9 @@
 
 case "$1" in
 'start')
-	%%PREFIX%%/bin/3proxy %%PREFIX%%/etc/3proxy.cfg & echo -n "  3proxy"
+	%%PREFIX%%/bin/3proxy %%PREFIX%%/etc/3proxy.cfg \
+		&& echo -n "  3proxy" \
+		|| echo "3proxy startup failed"
 	;;
 
 'stop')
