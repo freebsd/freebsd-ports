@@ -28,8 +28,13 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-MANUAL_PACKAGE_BUILD=	"Doesn't compile on NFS on -current"
+pre-everything:
+	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
+	@${ECHO_MSG} "require NFS client locking support for the build to"
+	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
+	@${ECHO_MSG} "or greater."
+.if !defined(BATCH)
+	@sleep 5
 .endif
 
 do-extract:
@@ -84,7 +89,7 @@ do-install:
 	cd ${WRKDIR}/firebird-1.0.2.908;				\
 	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/isc4_tmp.gdb || ${TRUE}; \
 	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/lib/gds.so.1 || ${TRUE}; \
-	${CP} /dev/null interbase/interbase.log;			\
+	${TOUCH} interbase/interbase.log;				\
 	${CP} -Rp interbase ${PREFIX}/firebird;				\
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\
