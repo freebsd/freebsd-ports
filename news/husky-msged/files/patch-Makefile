@@ -1,7 +1,11 @@
---- Makefile.orig	Mon Jan  6 00:37:30 2003
-+++ Makefile	Mon Jan  6 00:38:28 2003
-@@ -22,7 +22,8 @@
- CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUNAME=\"$(UNAME)\" \
+--- Makefile.orig	Mon Nov 26 19:13:21 2001
++++ Makefile	Wed Jan 29 00:50:23 2003
+@@ -19,10 +19,11 @@
+   MSGEDCFG=\"$(CFGDIR)/msged.cfg\"
+ endif
+ 
+-CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUNAME=\"$(UNAME)\" \
++CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUSE_CURSES -DUNAME=\"$(UNAME)\" \
        $(ADDCDEFS) -DREADMAPSDAT=\"$(CFGDIR)/readmaps.dat\" \
        -DWRITMAPSDAT=\"$(CFGDIR)/writmaps.dat\" \
 -      -DDEFAULT_CONFIG_FILE=$(MSGEDCFG)
