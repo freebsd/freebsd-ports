@@ -1,0 +1,9 @@
+--- src/RegistrationWin.cc.orig	Sat Jul 29 23:08:27 2000
++++ src/RegistrationWin.cc	Tue Sep 12 13:32:24 2000
+@@ -86,4 +86,4 @@
+ 
+-     append_button_with_pixmap(_("Ok"), GNOME_STOCK_BUTTON_OK);
+-     append_button_with_pixmap(_("Cancel"), GNOME_STOCK_BUTTON_CANCEL);
++     append_button(_("Ok"), GNOME_STOCK_BUTTON_OK);
++     append_button(_("Cancel"), GNOME_STOCK_BUTTON_CANCEL);
+      
