@@ -1,0 +1,12 @@
+--- popups.c.orig	Sun Dec  1 16:07:06 2002
++++ popups.c	Sun Dec  1 16:07:19 2002
+@@ -498,8 +498,8 @@
+ {
+ 	va_list args;
+ 	char *s;
+-	extern int sys_nerr;
+ #if !defined(__FreeBSD__)
++	extern int sys_nerr;
+ 	extern char *sys_errlist[];
+ #endif
+ 
