@@ -1,6 +1,6 @@
---- configure.bak	Mon May  3 19:00:27 2004
-+++ configure	Mon May  3 19:01:08 2004
-@@ -3868,7 +3868,7 @@
+--- configure.bak	Sat Sep 25 12:25:10 2004
++++ configure	Sat Sep 25 12:25:40 2004
+@@ -3788,7 +3788,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3931,7 +3931,7 @@
+@@ -3845,7 +3845,7 @@
  #define HAVE_LIBSSL 1
  _ACEOF
  
@@ -17,4 +17,13 @@
 +  LIBS="-lssl -lcrypto $LIBS"
  
  fi
- 
+ ac_cv_lib_ssl=ac_cv_lib_ssl_main
+@@ -3927,7 +3927,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lssl  $LIBS"
++LIBS="-lssl -lcrypto  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
