@@ -15,6 +15,22 @@ lib/gnofin/plugins/libtext.so.0
 lib/gnofin/plugins/libtext.so
 lib/gnofin/plugins/libtext.la
 lib/gnofin/plugins/libtext.a
+lib/gnofin/plugins/libcbb.so.0
+lib/gnofin/plugins/libcbb.so
+lib/gnofin/plugins/libcbb.la
+lib/gnofin/plugins/libcbb.a
+lib/gnofin/plugins/libfind.so.0
+lib/gnofin/plugins/libfind.so
+lib/gnofin/plugins/libfind.la
+lib/gnofin/plugins/libfind.a
+lib/gnofin/plugins/libreconcile.so.0
+lib/gnofin/plugins/libreconcile.so
+lib/gnofin/plugins/libreconcile.la
+lib/gnofin/plugins/libreconcile.a
+lib/gnofin/plugins/libsched.so.0
+lib/gnofin/plugins/libsched.so
+lib/gnofin/plugins/libsched.la
+lib/gnofin/plugins/libsched.a
 share/gnome/apps/Applications/gnofin.desktop
 @dirrm lib/gnofin/plugins
 @dirrm lib/gnofin
