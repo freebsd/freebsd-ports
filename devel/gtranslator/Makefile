@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME application for creating GNU gettext translation files
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
