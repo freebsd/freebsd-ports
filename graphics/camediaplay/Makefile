@@ -1,26 +1,23 @@
 # New ports collection makefile for:	camediaplay
-# Version required:	971009
+# Version required:	980118
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.8 1997/10/09 16:10:51 itojun Exp $
+# $Id: Makefile,v 1.9 1998/01/16 17:37:11 jkh Exp $
 #
 
-DISTNAME=	camediaplay-971231-beta
+DISTNAME=	camediaplay-980118
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
-		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/ 
+		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/
 
 MAINTAINER=	itojun@itojun.org
 
 WRKSRC=		${WRKDIR}/camediaplay/build
 HAS_CONFIGURE=	yes
+MAN1=	camediaplay.1
 
 DOC=	README.english README.japanese PROTOCOL
-
-# Work-around not being able to apply patches with locked RCS files present.
-pre-patch:
-	${RM} -rf ${WRKSRC}/../src/RCS
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/camediaplay
