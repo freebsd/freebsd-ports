@@ -402,15 +402,6 @@
  
    /* Perform session preparation. */
    do_authenticated(pw);
-@@ -2962,7 +3074,7 @@
- #ifdef UF_OPAQUE
-                                       UF_OPAQUE |
- #endif /* UF_OPAQUE */
--                                      0)) < 0)
-+                                      0) < 0)
-                             {
-                               debug("chflags failed for %s, error: %s",
-                                     ttyname, strerror(errno));
 @@ -3383,15 +3495,16 @@
    char line[256];
    struct stat st;
