@@ -21,6 +21,8 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${MOD_PHP4_PORTDIR}
 
+BROKEN=		"does not work with the latest PHP4"
+
 USE_GMAKE=	yes
 USE_RUBY=	yes
 
