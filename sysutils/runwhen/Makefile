@@ -8,7 +8,7 @@
 PORTNAME=	runwhen
 PORTVERSION=	2003.10.31
 CATEGORIES=	sysutils
-MASTER_SITES=	http://multivac.cwru.edu/${PORTNAME}/releases/
+MASTER_SITES=	http://code.dogmap.org./${PORTNAME}/releases/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Tools for running commands at particular times
