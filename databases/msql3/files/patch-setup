@@ -1,0 +1,21 @@
+--- setup.old	Sat May 29 00:59:37 2004
++++ setup	Sat May 29 00:59:58 2004
+@@ -38,18 +38,6 @@
+ 	FLEX="0"
+ fi
+ 
+-
+-CC=cc
+-for I in `echo $PATH | sed "s/:/ /g"`
+-do
+-        if test -x "$I/gcc"
+-        then
+-                CC="$I/gcc"
+-        fi
+-done
+-
+-
+-
+ echo
+ echo "Using $CC for testing"
+ 

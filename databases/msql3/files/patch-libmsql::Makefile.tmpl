@@ -1,0 +1,11 @@
+--- src/libmsql/Makefile.tmpl.old	Fri May 28 01:06:35 2004
++++ src/libmsql/Makefile.tmpl	Fri May 28 01:06:54 2004
+@@ -1,6 +1,6 @@
+ 
+ !library_unix libmsql.a libmsql.c,net_client.c,time.c ../common/libc_stuff/strlib.o,../common/libc_stuff/tmpnam.o,../common/libc_stuff/strerror.o,../common/libc_stuff/strptime.o,../common/libc_stuff/snprintf.o,../common/config/config.o,../common/types/type_time.o,../common/types/type_date.o
+ 
+-!libinstall libmsql.a $(INST_DIR)/lib/libmsql.a 744 $(ROOT)
+-!install msql.h $(INST_DIR)/include/msql.h 0744
++!libinstall libmsql.a $(INST_DIR)/lib/libmsql.a 644 $(ROOT)
++!install msql.h $(INST_DIR)/include/msql.h 0444
+ 

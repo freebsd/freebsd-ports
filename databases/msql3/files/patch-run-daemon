@@ -1,0 +1,45 @@
+--- scripts/run_daemon.orig	Thu Aug 19 07:33:07 1999
++++ scripts/run_daemon	Sat Jan 27 11:08:59 2001
+@@ -9,24 +9,26 @@
+ #
+ #					bambi@Bond.edu.au
+ 
+-INST_DIR=/usr/local/Minerva
+-ADMIN="you@some.machine"
++umask 077
++
++INST_DIR=%%PREFIX%%
++ADMIN="root@%%HOSTNAME%%"
+ PROG=$1
+ 
+-if test ! -d "${INST_DIR}/debug"
++if test ! -d "/tmp/debug"
+ then
+-	mkdir ${INST_DIR}/debug
++	mkdir /tmp/debug
+ fi
+ 
+-if test ! -d "${INST_DIR}/debug/${PROG}"
++if test ! -d "/tmp/debug/${PROG}"
+ then
+-	mkdir ${INST_DIR}/debug/${PROG}
++	mkdir /tmp/debug/${PROG}
+ fi
+ 
+ while :
+ do
+-	cd ${INST_DIR}/debug/${PROG}
+-	${INST_DIR}/bin/${PROG} > output 2>&1
++	cd /tmp/debug/${PROG}
++	${INST_DIR}/sbin/${PROG} > output 2>&1
+ 	echo "Program : ${PROG}
+ Time : `date`
+ Program Output
+@@ -34,6 +36,6 @@
+ 
+ " > mail.tmp
+ 	cat output >> mail.tmp
+-	/usr/ucb/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
++	/usr/bin/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
+ 	sleep 15
+ done
