@@ -72,7 +72,7 @@
 +    DEMOS_DIR=$prefix/share/examples/plplot
 +fi
 +if test -z "$DATA_DIR"; then
-+    DATA_DIR=$prefix/libdata/plplot
++    DATA_DIR=$prefix/share/plplot
  fi
  
  cat >> confdefs.h <<EOF
