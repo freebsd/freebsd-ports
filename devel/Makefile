@@ -377,6 +377,7 @@
     SUBDIR += p5-Class-ObjectTemplate-DB
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom
+    SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Config-Ini
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-Setting

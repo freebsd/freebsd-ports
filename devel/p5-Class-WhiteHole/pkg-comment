@@ -1,0 +1,1 @@
+Base class to treat unhandled method calls as errors
