@@ -3,7 +3,7 @@
 # Date created:         Sun May  4 21:40:06 CDT 1997
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.6 1998/04/21 00:09:55 jmacd Exp $
+# $Id: Makefile,v 1.7 1998/04/23 07:08:10 jmacd Exp $
 #
 
 DISTNAME=       xdelta-0.18
@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yup
 #
 # this seems to be necessary for libtool :(
 MAKE_ENV= CC=cc
+CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include" \
+	LIBS=-L${LOCALBASE}/lib INSTALL_SCRIPT='$${INSTALL} -m 755'
 MAN1=           xdelta.1
 
 .include <bsd.port.mk>
