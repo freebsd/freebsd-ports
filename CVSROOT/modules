@@ -1265,6 +1265,7 @@ erun		ports/x11/erun
 erwn		ports/www/erwn
 es		ports/shells/es
 esh		ports/shells/esh
+eshell-emacs20	ports/editors/eshell-emacs20
 esound		ports/audio/esound
 estic		ports/misc/estic
 etc		src/etc
