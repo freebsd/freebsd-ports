@@ -1,13 +1,13 @@
 # New ports collection makefile for:	amaya
-# Version required:	2.2
+# Version required:	2.4
 # Date created:		26 Dec 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	amaya-src-2.2
-PKGNAME=	amaya-2.2
+DISTNAME=	amaya-src-2.4
+PKGNAME=	amaya-2.4
 CATEGORIES= 	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -19,14 +19,23 @@ MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 REQUIRES_MOTIF=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-
 DIST_SUBDIR=	amaya
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.ifdef ENGLISH_DICT
-DISTFILES+=	English.tar.gz
+
+DICT?=		none
+
+.if ${DICT} != "none"
+.if ${DICT} == "all"
+DISTFILES+=    Dutch.tgz
+DISTFILES+=    English.tgz
+DISTFILES+=    French.tgz
+DISTFILES+=    German.tgz
+DISTFILES+=    Italian.tgz
+DISTFILES+=    Spanish.tgz
+DISTFILES+=    Swedish.tgz
+.else
+DISTFILES+=    ${DICT:S/$/.tgz/g}
 .endif
-.ifdef FRENCH_DICT
-DISTFILES+=	French.tar.gz
 .endif
 
 WRKSRC=		${WRKDIR}/Amaya/obj
@@ -36,9 +45,9 @@ CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=	--with-amaya
 
 pre-fetch:
-.if !defined(ENGLISH_DICT) && !defined(FRENCH_DICT)
-	@${ECHO_MSG} To enable spell checking, define either
-	@${ECHO_MSG} ENGLISH_DICT or FRENCH_DICT
+.if ${DICT} == "none"
+	@${ECHO_MSG} Several spellchecking dictionaries are available.  To use
+	@${ECHO_MSG} one of them, define DICT to be the appropriate language.
 .endif
 
 post-extract:
@@ -51,18 +60,13 @@ post-install:
 .for file in amaya print
 	strip ${PREFIX}/Amaya/applis/bin/${file}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya/
-.ifdef ENGLISH_DICT
-	${INSTALL_DATA} ${WRKDIR}/dicopar/Eprinc.dic ${PREFIX}/Amaya/dicopar/
+	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html\
+	${PREFIX}/Amaya/amaya/
+.if ${DICT} != "none"
+	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar/
 	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	${ECHO} Amaya/dicopar/Eprinc.dic > ${TMPPLIST}
-	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
-	${RM} ${TMPPLIST}.new
-.endif
-.ifdef FRENCH_DICT
-	${INSTALL_DATA} ${WRKDIR}/dicopar/Fprinc.dic ${PREFIX}/Amaya/dicopar/
-	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	${ECHO} Amaya/dicopar/Fprinc.dic > ${TMPPLIST}
+	cd ${WRKDIR} && ls -1 *.dic | perl -pi -e 's|^|Amaya/dicopar/|'\
+	> ${TMPPLIST}
 	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
 	${RM} ${TMPPLIST}.new
 .endif
