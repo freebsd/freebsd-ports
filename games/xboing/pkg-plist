@@ -67,6 +67,21 @@ lib/X11/xboing/levels/level62.data
 lib/X11/xboing/levels/level63.data
 lib/X11/xboing/levels/level64.data
 lib/X11/xboing/levels/level65.data
+lib/X11/xboing/levels/level66.data
+lib/X11/xboing/levels/level67.data
+lib/X11/xboing/levels/level68.data
+lib/X11/xboing/levels/level69.data
+lib/X11/xboing/levels/level70.data
+lib/X11/xboing/levels/level71.data
+lib/X11/xboing/levels/level72.data
+lib/X11/xboing/levels/level73.data
+lib/X11/xboing/levels/level74.data
+lib/X11/xboing/levels/level75.data
+lib/X11/xboing/levels/level76.data
+lib/X11/xboing/levels/level77.data
+lib/X11/xboing/levels/level78.data
+lib/X11/xboing/levels/level79.data
+lib/X11/xboing/levels/level80.data
 lib/X11/xboing/levels/new.data
 lib/X11/xboing/sounds/Doh1.au
 lib/X11/xboing/sounds/Doh2.au
@@ -116,7 +131,6 @@ lib/X11/xboing/sounds/wzzz2.au
 lib/X11/xboing/sounds/youagod.au
 lib/X11/xboing/problems.doc
 man/man1/xboing.1.gz
-@comment otherwise the new directories will have mode 777...duh
-@exec chmod 755 %D/lib/X11/xboing
-@exec chmod 755 %D/lib/X11/xboing/sounds
-@exec chmod 755 %D/lib/X11/xboing/levels
+@dirrm lib/X11/xboing/sounds
+@dirrm lib/X11/xboing/levels
+@dirrm lib/X11/xboing
