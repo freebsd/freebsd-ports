@@ -82,7 +82,7 @@ include/aspell/vector_hash.hh
 include/aspell/weights.hh
 lib/libaspell.a
 lib/libaspell.so
-lib/libaspell.so.7
+lib/libaspell.so.8
 lib/libpspell_aspell.a
 lib/libpspell_aspell.so
 lib/libpspell_aspell.so.1
@@ -132,6 +132,7 @@ share/aspell/iso8859-9.map
 share/aspell/ispell
 share/aspell/koi8-f.dat
 share/aspell/koi8-r.dat
+share/aspell/spell
 share/aspell/unicode.dat
 share/aspell/viscii.dat
 share/aspell/viscii.map
