@@ -161,6 +161,7 @@
     SUBDIR += nessus-plugins-devel
     SUBDIR += nettle
     SUBDIR += newpg
+    SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapfe
     SUBDIR += nofgpg

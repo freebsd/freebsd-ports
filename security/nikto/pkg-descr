@@ -1,0 +1,23 @@
+Nikto is a web server scanner which performs comprehensive tests against web 
+servers for multiple items, including over 2200 potentially dangerous 
+files/CGIs, versions on over 140 servers, and problems on over 210 servers.
+Scan items and plugins are frequently updated and can be automatically updated
+(if desired).
+
+Nikto is designed to examine web servers and look for items in multiple 
+categories:
+
+- misconfigurations
+- default files and scripts
+- insecure files and scripts
+- outdated software
+
+It uses Rain Forest Puppy's LibWhisker (wiretrip.net) for HTTP functiona lity,
+and can perform checks in HTTP or HTTPS.  It also supports basic port scanning
+ and will determine if a web server is running on any open ports.
+
+WWW: http://www.cirt.net/code/nikto.shtml
+
+- pandzilla
+
+jan@atstake.com
