@@ -3,11 +3,11 @@
 # Date created:		19 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/01 02:56:36 cpiazza Exp $
 #
 
 DISTNAME=	wmstock-0.06
-CATEGORIES=	misc
+CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/ \
 		http://www.psn.net/~andrews/wmstock/
 
