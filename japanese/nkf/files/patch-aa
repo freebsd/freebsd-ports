@@ -1,21 +1,29 @@
---- Makefile.orig	Mon Nov 16 19:21:40 1998
-+++ Makefile	Wed Feb 23 13:37:09 2000
-@@ -1,11 +1,17 @@
-+PREFIX?= /usr/local
- CC = cc
+--- Makefile.orig	Mon Nov 16 19:21:45 1998
++++ Makefile	Sun Mar  5 05:33:25 2000
+@@ -1,14 +1,22 @@
+-CC = cc
 -CFLAGS = -O
++PREFIX?=/usr/local
++CC?= cc
 +CFLAGS?= -O
  SHAR = shar -T
  # SHAR = shar 
- PERL = perl5
+-PERL = perl5
++PERL?= perl5
++INSTALL?=/usr/bin/install
  
  nkf : nkf.c
  	$(CC) $(CFLAGS) -o nkf nkf.c
++	./nkf -e nkf.1j > nkf.1j.euc
 +
 +install:
-+	/usr/bin/install -o root -g wheel -m 755 -c -s nkf ${PREFIX}/bin
-+	/usr/bin/install -o root -g wheel -m 644 -c nkf.1 ${PREFIX}/man/man1/nkf.1
-+	/usr/bin/install -o root -g wheel -m 644 -c nkf.1j ${PREFIX}/man/ja/man1/nkf.1
++	${INSTALL} -c -o root -g wheel -m 555 nkf ${PREFIX}/bin
++	${INSTALL} -c -o root -g wheel -m 444 nkf.1 ${PREFIX}/man/man1/nkf.1
++	${INSTALL} -c -o root -g wheel -m 444 nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
  
  clean:
- 	rm -fr nkf.o nkf nkf.in nkf.out nkf17 *~
+-	rm -fr nkf.o nkf nkf.in nkf.out nkf17 *~
++	rm -fr nkf.o nkf nkf.in nkf.out nkf17 nkf.1j.euc *~
+ test:	nkf
+ 	perl nkf_test.pl
+ 
