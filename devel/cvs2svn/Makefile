@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	cvs2svn
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/16792/
+MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/19743/
 
 MAINTAINER=	jihuang@gate.sinica.edu.tw
 COMMENT=	CVS to Subversion Repository Converter
