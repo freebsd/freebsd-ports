@@ -3,7 +3,7 @@
 # Date created:		Oct 8, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.9 1997/07/21 00:21:45 fenner Exp $
+# $Id: Makefile,v 1.10 1998/10/14 03:30:00 jseger Exp $
 #
 
 DISTNAME=	yale-tftpd-3.0
@@ -12,8 +12,11 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/net/yale-tftpd/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN_ELF=	classes/libclasses.a
-
 NO_WRKSUBDIR=
+MAN8=		tftpd.8
+MANCOMPRESSED=	yes
+
+pre-build:
+	(cd ${WRKSRC}/classes; ${MAKE})
 
 .include <bsd.port.mk>
