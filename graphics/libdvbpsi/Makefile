@@ -8,12 +8,13 @@
 
 PORTNAME=	libdvbpsi
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvbpsi/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release
 INSTALLS_SHLIB=	yes
 
