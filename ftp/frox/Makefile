@@ -41,6 +41,15 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-configfile=${PREFIX}/etc/frox.conf
 
+OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
+		VIRUS_SCAN "Run external virus scaner on each download" off \
+		HTTP_CACHE "Enable use of external cache" on \
+		LOCAL_CACHE "Enable use of local cache" off \
+		CCP "Ftp-proxy style command control programs" on \
+		ROOT_RUN "Allow frox running as root (not recomended)" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_IPFILTER)
 CONFIGURE_ARGS+=	--enable-ipfilter
 .endif
@@ -59,15 +68,6 @@ CONFIGURE_ARGS+=	--enable-ccp
 .if defined(WITH_ROOT_RUN)
 CONFIGURE_ARGS+=	--enable-run-as-root
 .endif
-
-.include <bsd.port.pre.mk>
-
-OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
-		VIRUS_SCAN "Run external virus scaner on each download" off \
-		HTTP_CACHE "Enable use of external cache" on \
-		LOCAL_CACHE "Enable use of local cache" off \
-		CCP "Ftp-proxy style command control programs" on \
-		ROOT_RUN "Allow frox running as root (not recomended)" off
 
 pre-patch:
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message >${PKGMESSAGE}
