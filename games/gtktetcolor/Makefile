@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtktetcolor
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.dvgu.ru/ifit/~panov/gtktetcolor/
