@@ -1,5 +1,8 @@
-Crypt::Twofish is a perl module implementing the Twofish cipher.
+This module implements Twofish encryption.  It supports the Crypt::CBC
+interface.  It also provides an interface that is call- compatible
+with Crypt::Twofish 1.0, but its use in new code is strongly
+discouraged.
 
-Author: Nishant Kakani <nishantkakani@hotmail.com>
+WWW: http://search.cpan.org/search?dist=Crypt-Twofish
 
 --will
