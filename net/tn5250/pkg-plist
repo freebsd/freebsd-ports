@@ -1,6 +1,7 @@
 bin/5250keys
 bin/lp5250d
 bin/scs2ascii
+bin/scs2pdf
 bin/scs2ps
 bin/tn3270d
 bin/tn5250
