@@ -21,7 +21,7 @@ MAN6=		frotz.6
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/frotz ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/frotz.6 ${MANPREFIX}/man/man6
+	@${INSTALL_MAN} ${WRKSRC}/doc/frotz.6 ${MANPREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in BUGS HOW_TO_PLAY README
