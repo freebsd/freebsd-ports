@@ -5,22 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	jools
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	games
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/jools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Addictive jewel-swapping puzzle game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
-do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
-do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${WRKSRC}/setup.py install --prefix=${PREFIX}
+post-patch:
+	@${FIND} ${WRKSRC} -name ".arch-ids" | ${XARGS} ${RM} -r
 
 .include <bsd.port.mk>
