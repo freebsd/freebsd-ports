@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.10
+PORTVERSION=	2.20
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.com/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -100,7 +100,7 @@ post-patch:
 	@${PERL} -pi.bak -e 's,/usr/local/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf
 .if !defined(WITHOUT_SPEEDYCGI)
 	@${ECHO} "savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf
-	@${PERL} -pi.bak -e 's,/usr/local/bin/speedy,${PREFIX}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
+	@${PERL} -pi.bak -e 's,/usr/local/bin/speedy,${LOCALBASE}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
 .endif
@@ -109,8 +109,8 @@ pre-install:
 	@${FIND} ${WRKSRC}/*/openwebmail \( -name "*.bak" -or -name "*.orig" \) -delete
 .if !exists(${PLIST})
 	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | ${SED} -e 's,${WRKSRC},www,g' | sort -u > ${PLIST}
-.for file in b2g g2b lunar
-	@${ECHO} "www/cgi-bin/openwebmail/etc/${file}.db" >> ${PLIST}
+.for f in b2g g2b lunar
+	@${ECHO} "www/cgi-bin/openwebmail/etc/${f}.db" >> ${PLIST}
 .endfor
 .if defined(WITHOUT_SPEEDYCGI)
 	@${FIND} ${WRKSRC}/*/openwebmail -name "openwebmail*pl" | \
