@@ -87,6 +87,7 @@
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint
+    SUBDIR += clo++
     SUBDIR += codecrusader
     SUBDIR += codemedic
     SUBDIR += commoncpp
