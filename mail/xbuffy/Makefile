@@ -3,12 +3,12 @@
 # Date created:		18 June 1995
 # Whom:			dchapes@zeus.leitch.com
 #
-# $Id: Makefile,v 1.3 1997/12/04 02:35:02 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/10/20 01:43:10 steve Exp $
 #
 
 DISTNAME=	xbuffy3.3
 PKGNAME=	xbuffy-3.3
-CATEGORIES=	x11
+CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 

@@ -3,11 +3,11 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.11 1998/10/05 02:52:24 steve Exp $
+# $Id: Makefile,v 1.12 1998/11/11 05:37:17 asami Exp $
 #
 
 DISTNAME=	EZWGL-1.39
-CATEGORIES=	graphics devel x11
+CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-src.tgz ${DISTNAME}-doc.tgz
 

@@ -3,11 +3,11 @@
 # Date created:				28 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/31 19:32:38 nectar Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:30:57 asami Exp $
 #
 
 DISTNAME=		spellcast-1.1
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		http://www.redestb.es/personal/ragnar/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/multiplayer

@@ -3,12 +3,12 @@
 # Date created:				4 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/24 01:51:29 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/25 01:22:23 asami Exp $
 #
 
 DISTNAME=	xataxx
 PKGNAME=	xataxx-1.0
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

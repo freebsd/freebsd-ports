@@ -3,11 +3,11 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.6 1998/09/30 02:07:27 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/09 10:05:45 asami Exp $
 #
 
 DISTNAME=	kmpg-0.3.3
-CATEGORIES=	audio x11 kde
+CATEGORIES=	audio kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/multimedia/sound
 EXTRACT_SUFX=	.tgz

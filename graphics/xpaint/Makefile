@@ -3,11 +3,11 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.27 1998/09/19 05:46:06 steve Exp $
+# $Id: Makefile,v 1.28 1998/10/05 03:13:40 steve Exp $
 #
 
 DISTNAME=       xpaint-2.5.4
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 
 MAINTAINER=	jseger@FreeBSD.org

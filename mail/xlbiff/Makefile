@@ -4,10 +4,10 @@
 # Date created:		23-Aug-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.5 1998/01/08 18:52:10 fenner Exp $
+# $Id: Makefile,v 1.6 1998/10/20 01:43:12 steve Exp $
 
 DISTNAME=	xlbiff-3.0
-CATEGORIES=	mail x11
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/  \
 		ftp://ftp.pacbell.com/mirror/ftp.x.org/X11/R5contrib/  \
 		ftp://ftp.funet.fi/pub/X11/R5contrib/  \

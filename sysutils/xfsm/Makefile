@@ -3,11 +3,11 @@
 # Date Created:				24 Nov 1997
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/06/04 03:49:27 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/10/21 00:57:41 steve Exp $
 #
 
 DISTNAME=	xfsm-1.97
-CATEGORIES=	sysutils x11
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.peoplesoft.com/peoplepages/g/robert_gasch/src/
 EXTRACT_SUFX=	.tgz
 

@@ -3,12 +3,12 @@
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.25 1998/09/21 01:35:31 steve Exp $
+# $Id: Makefile,v 1.26 1998/10/05 03:13:37 steve Exp $
 #
 
 DISTNAME=	xfig.3.2.2
 PKGNAME=	xfig-3.2.2
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 

@@ -3,12 +3,12 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.19 1998/10/21 00:57:41 steve Exp $
+# $Id: Makefile,v 1.20 1998/10/23 16:47:00 fenner Exp $
 #
 
 DISTNAME=	xperfmon++
 PKGNAME=	xperfmon++-2.0
-CATEGORIES=     sysutils x11
+CATEGORIES=     sysutils
 # In Germany try this
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/ \

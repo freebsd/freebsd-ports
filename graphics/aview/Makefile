@@ -3,11 +3,11 @@
 # Date created:         Dec 18 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.2 1998/04/11 18:21:21 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/09/22 16:19:12 asami Exp $
 #
 
 DISTNAME=       aview-1.2
-CATEGORIES=     graphics x11
+CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.ta.jcu.cz/pub/aa/
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
