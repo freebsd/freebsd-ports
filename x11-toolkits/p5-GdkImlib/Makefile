@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Imlib module of Gtk-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 PERL_CONFIGURE=	yes
@@ -31,10 +32,6 @@ MAN3=		Gtk::Gdk::ImlibImage::reference.3pm
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
-.endif
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile"
 .endif
 
 .include <bsd.port.post.mk>
