@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ApacheBench
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTPD
@@ -17,7 +17,6 @@ COMMENT=	Perl module for HTTP benchmarking
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTTPD::Bench::ApacheBench.3
 
 .include <bsd.port.mk>
