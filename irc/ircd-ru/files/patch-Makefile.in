@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Apr 16 07:44:27 2003
++++ Makefile.in	Wed Aug  6 14:47:03 2003
+@@ -30,7 +30,7 @@
+ # Profile linker flags
+ PROFILELDFLAGS=-pg
+ # Default CFLAGS
+-CFLAGS=-Wall -g -O2 $(SYNCIOFLAGS) $(XFLAGS)
++CFLAGS+=-Wall $(SYNCIOFLAGS) $(XFLAGS)
+ 
+ 
+ # Some generally useless stuff:

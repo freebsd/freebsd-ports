@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# This script is a modified copy of the pkg-install script 
+# from the original ircd-hybrid port.
+
+if [ "x$2" != "xPRE-INSTALL" ]; then
+	exit 0;
+fi
+
+
+if ! which -s pw ; then
+	cat <<EOF
+Your system does not include the "pw" utility.  You should upgrade
+to a newer version of FreeBSD.  Without "pw" this script will not
+run.
+EOF
+	exit 1
+fi
+
+uid=72
+user=ircd
+gid=$uid
+group=$user
+gecos="Russian IRC daemon" 
+shell="/bin/sh"
+home="/nonexistent"
+
+echo ""
+if pw groupshow $group 2> /dev/null ; then
+	echo "You already have a group \"$group\", so I will use it."
+else
+	if pw groupshow $gid 2> /dev/null ; then
+		echo "You already have a gid \"$gid\".  Please create a user \"$group\""
+		echo "with a default group of \"$group\"."
+		exit 1
+	fi
+	echo "You need a group \"$group\"."
+	if which -s pw ; then
+		pw groupadd $group -g $gid || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		if ! pw usershow $user 2> /dev/null ; then
+			echo "While you're at it, please create a user \"$user\""
+			echo 'too, with a default group of "$group".'
+		fi
+		exit 1
+	fi
+fi
+
+if pw usershow $user 2> /dev/null ; then
+	echo "You already have a user \"$user\", so I will use it."
+else
+        if pw usershow $uid 2> /dev/null ; then
+                echo "You already have a uid \"$uid\".  Please create a user \"ircd\""
+                echo "with a default group of \"$group\"."
+                exit 1
+        fi
+	echo "You need a user \"$user\"."
+	if which -s pw; then
+		pw useradd $user -g $group -u $uid -h - -d $home \
+			-s "$shell" -c "$gecos" || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		exit 1
+	fi
+fi

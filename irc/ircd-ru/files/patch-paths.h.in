@@ -1,0 +1,56 @@
+--- include/paths.h.in.orig	Thu Apr 17 16:10:36 2003
++++ include/paths.h.in	Fri Jul 25 15:54:43 2003
+@@ -30,7 +30,7 @@
+  * You must define these to something, even if you don't really want them. All
+  * paths except FNAME_USERLOG, FNAME_OPERLOG and FNAME_SYSLOG are mandatory.
+  *
+- * ALL PATHS AFTER DPATH ARE ***RELATIVE*** TO DPATH!
++ * ALL DEFAULT PATHS AFTER DPATH ARE ***RELATIVE*** TO DPATH!
+  * 
+  * DPATH   = Install directory, you can run the configure script with
+  *           --prefix=<DPATH> argument to override the default DPATH.
+@@ -54,25 +54,25 @@
+ 
+ 
+ #define DPATH		"@prefix@"
+-#define SPATH		"bin/ircd@BIN_SUF@"
+-#define CPDIR		"codepages"
+-#define MDIR		"modules"
+-
+-#define CPATH		"etc/ircd.conf"
+-#define KPATH   	"etc/kline.conf"
+-#define MPATH		"etc/ircd.motd"
+-#define SMPATH		"etc/ircd.smotd"
+-#define LPATH		"var/log/ircd.log"
+-#define PPATH		"var/run/ircd.pid"
+-#define HPATH		"doc/opers.txt"
+-
+-#define EPATH		".ircd.entropy"
+-#define MCPATH		".maxclients"
+-
+-
+-#define FNAME_USERLOG	"var/log/users"	
+-#define FNAME_OPERLOG	"var/log/opers"
+-#define FNAME_SYSLOG	"var/log/syslog"
++#define SPATH		"sbin/ircd@BIN_SUF@"
++#define CPDIR		"share/ircd-ru/codepages"
++#define MDIR		"share/ircd-ru/modules"
++
++#define CPATH		"etc/ircd-ru/ircd.conf"
++#define KPATH   	"etc/ircd-ru/kline.conf"
++#define MPATH		"etc/ircd-ru/ircd.motd"
++#define SMPATH		"etc/ircd-ru/ircd.smotd"
++#define LPATH		"/var/log/ircd-ru/ircd.log"
++#define PPATH		"/var/run/ircd-ru/ircd.pid"
++#define HPATH		"share/doc/ircd-ru/opers.txt"
++
++#define EPATH		"/var/run/ircd-ru/.ircd.entropy"
++#define MCPATH		"/var/run/ircd-ru/.maxclients"
++
++
++#define FNAME_USERLOG	"/var/log/ircd-ru/users"	
++#define FNAME_OPERLOG	"/var/log/ircd-ru/opers"
++#define FNAME_SYSLOG	"/var/log/ircd-ru/syslog"
+ 
+ 
+ #endif
