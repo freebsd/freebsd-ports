@@ -1,11 +1,32 @@
---- contrib/Makefile.in.orig	Wed Aug 19 07:15:49 1998
-+++ contrib/Makefile.in	Wed Aug 19 07:16:06 1998
-@@ -28,7 +28,7 @@
- 	${MKINSTALLDIR} ${sbindir}
- 	for x in $?; \
- 	do \
--	${INSTALL_PROGRAM} $$x ${sbindir}; \
-+	${INSTALL_SCRIPT} $$x ${sbindir}; \
- 	done
+--- configure.in.orig	Mon Dec 18 12:12:07 2000
++++ configure.in	Mon Jan  8 20:52:29 2001
+@@ -60,13 +60,13 @@
+ AC_PROG_RANLIB
+ AC_PROG_INSTALL
  
- clean:
+-AC_PATH_PROG(LATEX, latex, /bin/false, \
++AC_PATH_PROG(LATEX, latex, true, \
+ 		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
+-AC_PATH_PROG(TEXI2DVI, texi2dvi, /bin/false, \
++AC_PATH_PROG(TEXI2DVI, texi2dvi, true, \
+ 		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
+-AC_PATH_PROG(DVIPS, dvips, /bin/false, \
++AC_PATH_PROG(DVIPS, dvips, true, \
+ 		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
+-AC_PATH_PROG(MAKEINFO, makeinfo, /bin/false, \
++AC_PATH_PROG(MAKEINFO, makeinfo, true, \
+ 		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
+ 
+ 
+--- doc/Makefile.in.orig	Tue Dec 26 06:58:18 2000
++++ doc/Makefile.in	Mon Jan  8 22:33:39 2001
+@@ -446,8 +446,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-info-am install-man install-htmlDATA \
+-		install-psDATA
++install-data-am: install-info-am install-man
+ install-data: install-data-am
+ 
+ install-am: all-am
