@@ -69,6 +69,7 @@
     SUBDIR += mingunittf
     SUBDIR += miniChinput
     SUBDIR += mkisofs
+    SUBDIR += mldonkey-core
     SUBDIR += moefonts-cid
     SUBDIR += moettf
     SUBDIR += mplayer-fonts
