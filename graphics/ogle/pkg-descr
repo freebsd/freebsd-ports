@@ -1,0 +1,19 @@
+[ from developer's site ]
+
+Ogle is an open DVD player which:
+
+o Supports DVD menus and navigation
+o Reads from mounted, unmounted DVDs and hard drive
+o Reads encrypted and unencrypted DVDs using libdvdread/libdvdcss
+o A new MPEG2 decoder with mmx/altivec/medialib acceleration
+o Normal X11 and XFree86 Xvideo display support with subpicture
+  overlay
+o Accelerated display on Sun FFB2+ cards
+o Angle, audio and subpicture selection
+o Handles advanced subpicture commands such as fade/scroll and wipe
+o Detects and uses correct aspect for movie and menus
+o Possible to play AC3 via S/PDIF with an external command
+o Fullscreen mode
+o Screenshots with and without subpicture overlay
+
+WWW: http://www.dtek.chalmers.se/~dvd/
