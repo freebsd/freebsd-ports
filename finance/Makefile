@@ -50,6 +50,7 @@
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
+    SUBDIR += venice
     SUBDIR += wmstock
     SUBDIR += xinvest
     SUBDIR += xquote
