@@ -1,0 +1,6 @@
+For to configuration information please look at
+%%PREFIX%%/share/doc/aspathtree/readme.txt.
+
+Copy %%PREFIX%%/etc/ASpath-tree.config.dist to
+%%PREFIX%%/etc/ASpath-tree.config
+and modify accordingly to your environment.

@@ -30,6 +30,7 @@
     SUBDIR += arts++
     SUBDIR += asfrecorder
     SUBDIR += aslookup
+    SUBDIR += aspathtree
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet

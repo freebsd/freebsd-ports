@@ -1,0 +1,24 @@
+ASpath-tree program
+============================
+
+ASpath-tree is a tool designed to be used by an IPv6 site involved
+in the experimentation of the BGP4+ protocol inside the 6Bone network.
+It generates summary of:
+
+    * the number of route entries (valid/total/suppressed/damped/history)
+    * the number of AS in table (total, originating only, originating/transit,
+      transit only, private and reserved)
+    * the number of active AS paths
+    * the number of active BGP neighbours (i.e. announcing routing information)
+    * an analysis of the network size, in terms of AS distances
+    * the number of circulating prefixes (total, 6Bone pTLAs, sTLAs, 6to4,
+      others)
+
+The current version supports:
+    * 6Bone pTLAs
+    * RIR's assigned sTLAs
+    * Juniper/Cisco/Zebra routers
+
+WWW: http://carmen.ipv6.cselt.it/ipv6/tools/ASpath-tree/index.html
+
+janos.mohacsi@bsd.hu
