@@ -31,6 +31,11 @@ do-build:
 pre-install:
 	${ECHO_CMD} bin/patanjali > ${PLIST}
 	${ECHO_CMD} share/patanjali/patanjali-sutras-english.txt >> ${PLIST}
+	${ECHO_CMD} @dirrm share/patanjali/ >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	${ECHO_CMD} share/doc/patanjali/display-sutras-patanjali-0.99.lsm >> ${PLIST}
+	${ECHO_CMD} @dirrm share/doc/patanjali/ >> ${PLIST}
+.endif
 
 do-install:
 	${MKDIR} ${DATADIR}
