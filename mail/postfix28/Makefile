@@ -56,13 +56,13 @@ do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/libexec/postfix
 	@for f in bounce cleanup error local master pickup pipe qmgr \
 		 showq smtp smtpd trivial-rewrite ; do \
-		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/libexec/$$f \
-			${PREFIX}/libexec/postfix/$$f ;\
+		${INSTALL} -C -o root -g wheel -m 0755 -s \
+			${WRKSRC}/libexec/$$f ${PREFIX}/libexec/postfix/$$f ;\
 	done
 	@for f in postalias postcat postconf postdrop postfix postkick \
 		postlock postlog postmap postsuper sendmail smtp-sink \
 		smtp-source ; do \
-		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/bin/$$f \
+		${INSTALL} -C -o root -g wheel -m 0755 -s ${WRKSRC}/bin/$$f \
 			${PREFIX}/sbin/$$f ;\
 	done
 	@for f in ${MAN1} ; do \
