@@ -291,6 +291,7 @@
     SUBDIR += mldonkey
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-perlreactor
+    SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-src
     SUBDIR += mldonkey-urlslave
     SUBDIR += mmucl

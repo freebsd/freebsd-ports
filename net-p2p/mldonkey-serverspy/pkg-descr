@@ -1,0 +1,15 @@
+[ excerpt from developer's www site]
+MLDonkey Server Spy is an application for MLDonkey that broadcasts
+your whereabouts on the edonkey network.
+
+It will detect the server that you are connected to, and place this
+information on an image. The image is then uploaded to a Web server
+using FTP. It can then be used on Web pages, message boards etc.
+
+In this way others will be able to see where you are located and
+will then be able to connect to the same edonkey server, making it
+easier to get the files that you are sharing. The application updates
+the image frequently so that the latest information is always shown.
+
+Author: Rodrigo A. Diaz Leven <bruj0 at moviegalaxy.com.ar> 
+WWW: http://www.moviegalaxy.com.ar/mlservspy/
