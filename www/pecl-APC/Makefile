@@ -7,47 +7,42 @@
 
 PORTNAME=	APC
 PORTVERSION=	2.0.4
-CATEGORIES=	www pear
+CATEGORIES=	www
+MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Alternative PHP Cache
-
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
+USE_PHPEXT=	yes
+PHP_MODNAME=	apc
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+OPTIONS=	MMAP	"Enable mmap"	off
 
-.if exists(${LOCALBASE}/bin/php-config)
-EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e \
-			"s:${PHP_BASE}/::"
+.if !defined(WITHOUT_MMAP)
+CONFIGURE_ARGS+=	--enable-mmap
 .endif
-PHP_DIR?=	${LOCALBASE}/etc
-PHP_INI=	${PHP_DIR}/php.ini
-PLIST_SUB+=	EXTDIR=${EXT_DIR}
-DOCS=		CHANGELOG INSTALL NOTICE
 
-post-install-script:
-	@${STRIP_CMD} ${PHP_BASE}/${EXT_DIR}/apc.so
-	@if [ ! -f ${PHP_INI} ]; then \
-		${ECHO_MSG} "===>   Creating ${PHP_INI} for PHP" ; \
-		${CP} -p ${PHP_INI}-dist ${PHP_INI} ; \
-	fi
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${DOCSDIR}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-		${SED} -e "s:/usr/local/etc/php.ini:${PHP_INI}:"
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,4 +3,4 @@ APC is the Alternative PHP Cache.
 It was conceived of to provide a free, open, and robust framework for
 caching and optimizing PHP intermediate code.
 
-WWW: http://pear.php.net/package/APC
+WWW: http://pecl.php.net/package/APC
