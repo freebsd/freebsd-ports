@@ -1,5 +1,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/about.html
-%%PORTDOCS%%%%DOCSDIR%%/html/aboutthisguide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/administration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Bugzilla-Guide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmdline.html
@@ -35,6 +34,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/integration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/newversions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nonroot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/osx.html
 %%PORTDOCS%%%%DOCSDIR%%/html/parameters.html
 %%PORTDOCS%%%%DOCSDIR%%/html/patches.html
@@ -65,6 +65,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/tip.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
 %%PORTDOCS%%%%DOCSDIR%%/makedocs.pl
+%%PORTDOCS%%%%DOCSDIR%%/pdf/Bugzilla-Guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/rel_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/Bugzilla-Guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/xml/Bugzilla-Guide.xml
@@ -279,6 +280,7 @@
 %%PORTDOCS%%%%CONTRIB%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
