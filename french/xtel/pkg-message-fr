@@ -1,0 +1,44 @@
+************************************************************************
+Xtel a été installé sur %%PREFIX%%/bin/xtel.
+
+Pour pouvoir l'utiliser, vous devez modifier le fichier /etc/services
+et y ajouter la ligne :
+
+xtel            1313/tcp   #xtel emulateur Minitel
+
+Vous devez ensuite modifier le fichier /etc/inetd.conf (ou son
+équivalent si vous utilisez un autre super-démon) pour y ajouter la
+ligne :
+
+xtel	stream	tcp	nowait	root	%%PREFIX%%/bin/xteld	xteld
+
+Forcez le super-démon à relire son fichier de configuration par
+killall -1 inetd
+
+Si votre modem est connecté à /dev/cuaax (où x = 0, 1, 2,...)
+détectez sa chaîne d'initialisation par :
+
+mdmdetect cuaax
+
+Après quelques instants pendant lesquels votre ordinateur doit dialoguer
+avec le modem, une ligne semblable à la suivante doit s'afficher :
+
+ModèleModem , 38400 \dat&fm1e0&k3f3\r-OK
+
+Notez le deuxième paramètre (vitesse) et le dernier, et reportez-les
+dans le fichier %%PREFIX%%/lib/X11/xtel/xtel.lignes de façon à avoir
+une ligne telle que :
+
+modem0,/dev/cuaa0,38400,7,E,\dat&fm1e0&k3f3\r OK atdt\T\r CONNECT,30
+
+où cuaa0 doit être adapté à votre n° de port, 38400 à la vitesse
+détectée par mdmdetect, et où la chaîne comprise entre "E," et "atdt"
+correspond au troisième paramètre (Notez que le "-" est remplacé par
+un blanc).
+
+Il ne reste plus qu'à installer les polices, soit en entrant
+xset +fp %%PREFIX%%/lib/X11/fonts/xtel
+xset fp rehash
+soit en ajoutant %%PREFIX%%/lib/X11/fonts/xtel au FontPath de votre
+fichier de XF86Config.
+************************************************************************

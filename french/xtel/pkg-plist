@@ -1,0 +1,40 @@
+bin/xtel
+bin/xteld
+bin/mdmdetect
+bin/make_xtel_lignes
+lib/X11/app-defaults/XTel
+lib/X11/app-defaults/XTel-msg
+lib/X11/xtel/modem.list
+lib/X11/xtel/xtel.lignes
+lib/X11/xtel/xtel.log
+lib/X11/xtel/xtel.services
+lib/X11/fonts/xtel/fonts.alias
+lib/X11/fonts/xtel/fonts.dir
+lib/X11/fonts/xtel/g016x10.pcf.gz
+lib/X11/fonts/xtel/g016x20.pcf.gz
+lib/X11/fonts/xtel/g016x40.pcf.gz
+lib/X11/fonts/xtel/g032x20.pcf.gz
+lib/X11/fonts/xtel/g032x40.pcf.gz
+lib/X11/fonts/xtel/g08x10.pcf.gz
+lib/X11/fonts/xtel/g08x20.pcf.gz
+lib/X11/fonts/xtel/g0s16x10.pcf.gz
+lib/X11/fonts/xtel/g0s16x20.pcf.gz
+lib/X11/fonts/xtel/g0s16x40.pcf.gz
+lib/X11/fonts/xtel/g0s32x20.pcf.gz
+lib/X11/fonts/xtel/g0s32x40.pcf.gz
+lib/X11/fonts/xtel/g0s8x10.pcf.gz
+lib/X11/fonts/xtel/g0s8x20.pcf.gz
+lib/X11/fonts/xtel/g116x20.pcf.gz
+lib/X11/fonts/xtel/g18x10.pcf.gz
+lib/X11/fonts/xtel/g1s16x20.pcf.gz
+lib/X11/fonts/xtel/g1s8x10.pcf.gz
+lib/X11/fonts/xtel/xteldigit.pcf.gz
+%%PORTDOCS%%share/doc/xtel/COPYING
+%%PORTDOCS%%share/doc/xtel/COPYRIGHT
+%%PORTDOCS%%share/doc/xtel/FAQ.txt
+%%PORTDOCS%%share/doc/xtel/HISTOIRE.txt
+%%PORTDOCS%%share/doc/xtel/LISEZMOI.txt
+%%PORTDOCS%%share/doc/xtel/README_IMINITEL.txt
+@dirrm lib/X11/xtel
+@dirrm lib/X11/fonts/xtel
+%%PORTDOCS%%@dirrm share/doc/xtel
