@@ -25,4 +25,7 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		XML2POT=${TRUE} PO2XML=${TRUE}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
