@@ -8026,6 +8026,7 @@ pear-DB_Pager	ports/databases/pear-DB_Pager
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-File_Find	ports/sysutils/pear-File_Find
+pear-File_Gettext	ports/sysutils/pear-File_Gettext
 pear-File_Passwd	ports/security/pear-File_Passwd
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_Common	ports/devel/pear-HTML_Common
