@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.15 1997/08/12 06:37:36 peter Exp $
+# $Id: Makefile,v 1.16 1997/08/21 08:09:54 peter Exp $
 #
 
 DISTNAME=	exmh-2.0zeta
@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	http://www.sunlabs.com/~bwelch/exmh/patches/2.0zeta/
-PATCHFILES=	ispell.patch koir.patch mime.patch seditMime.patch scan.patch
+PATCHFILES=	ispell.patch koir.patch mime.patch seditMime.patch scan.patch \
+		addr.patch html.patch html_dpackage.patch pgpExec.patch
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS= -d ${WRKSRC}/lib -E ${PATCH_DIST_STRIP}
