@@ -1,0 +1,19 @@
+*** Imakefile.orig	Sun Jul 28 21:43:57 1996
+--- Imakefile	Sun Jul 28 21:44:31 1996
+***************
+*** 29,35 ****
+  
+  LOCAL_X_LIBDIR =
+  
+! XMLIB    = -lXm -lPW
+  
+  XCOMM - HP PW setup:  		XMLIB = -lXm -lc -lPW
+  XCOMM - SUN setup:    		XMLIB = -lXm
+--- 29,35 ----
+  
+  LOCAL_X_LIBDIR =
+  
+! XMLIB    = -lXm
+  
+  XCOMM - HP PW setup:  		XMLIB = -lXm -lc -lPW
+  XCOMM - SUN setup:    		XMLIB = -lXm

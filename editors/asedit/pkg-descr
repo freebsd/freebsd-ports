@@ -1,0 +1,8 @@
+asedit  is  an easy to use text editor for X Window System
+built around Motif Text widget. Version 1.3, international
+free  Release,  includes  the following language versions:
+English, Dutch, French,  German,  Polish,  Portuguese  and
+Swedish.  All commands and messages are localized for each
+language. The on-line help is available only in English.
+
+This port requires Motif to build.

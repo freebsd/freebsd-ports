@@ -1,0 +1,9 @@
+@cwd /usr/X11R6
+bin/asedit
+man/man1/asedit.1.gz
+lib/X11/app-defaults/Asedit
+lib/X11/app-defaults/Asedit-sgi
+lib/X11/app-defaults/Asedit_em
+lib/X11/app-defaults/Asedit_em-sgi
+lib/X11/asedit.hlp
+lib/X11/asedit_em.hlp
