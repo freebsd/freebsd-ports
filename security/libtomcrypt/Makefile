@@ -7,12 +7,23 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://libtomcrypt.org/files/
-DISTNAME=	crypt-${PORTVERSION}
+MASTER_SITES=	http://libtomcrypt.org/files/:source \
+		http://libtomcrypt.org/files/patch-1.00/:patch
+DISTFILES=	crypt-${PORTVERSION}.tar.bz2:source \
+		ltc-1.00-001.tar.bz2:patch
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
+
+EXTRA_PATCHES=	${WRKDIR}/src/pk/pkcs1/pkcs_1_oaep_encode.c.patch \
+		${WRKDIR}/src/pk/pkcs1/pkcs_1_oaep_decode.c.patch \
+		${WRKDIR}/src/misc/base64/base64_decode.c.patch \
+		${WRKDIR}/src/headers/tomcrypt.h.patch \
+		${WRKDIR}/makefile.shared.patch \
+		${WRKDIR}/makefile.patch \
+		${WRKDIR}/changes.patch \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
