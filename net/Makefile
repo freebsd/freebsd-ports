@@ -57,6 +57,7 @@
     SUBDIR += cvsupit
     SUBDIR += dante
     SUBDIR += datapipe
+    SUBDIR += ddc
     SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += despoof

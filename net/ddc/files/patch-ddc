@@ -1,0 +1,15 @@
+--- ddc	Mon Dec 18 15:27:48 2000
++++ ddc	Thu Mar  1 22:44:38 2001
+@@ -5,10 +5,10 @@
+ #
+ # global variables, you might have to change them!
+ #
+-DHCPD=/usr/sbin/dhcpd
++DHCPD=/usr/local/sbin/dhcpd
+ PIDFILE=/var/run/dhcpd.pid
+ LF=/var/db/dhcpd.leases
+-CF=/etc/dhcpd.conf
++CF=/usr/local/etc/dhcpd.conf
+ #OPTIONS="-q -p 90 fxp0"
+ #
+ #
