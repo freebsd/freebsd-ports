@@ -1,12 +1,12 @@
 # New ports collection makefile for:   misc/delay
-# Version required:    delay-1.2a
+# Version required:    delay-1.3
 # Date created:        03 Mar 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
 #
 
-DISTNAME=  delay-1.2a
+DISTNAME=  delay-1.3
 CATEGORIES=    misc
 MASTER_SITES=  http://onegeek.org/~tom/software/delay/dl/
 

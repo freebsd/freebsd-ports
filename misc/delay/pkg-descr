@@ -1,24 +1,24 @@
-Delay is a program that counts down the number of seconds specified 
+Delay is a program that counts down the number of seconds specified
 on its command line.
-In this way, it's sort of like the standard sleep(1) command, except 
+In this way, it's sort of like the standard sleep(1) command, except
 for the fact that it provides feedback of the time remaining.
-
 With version 1.2 you can also 'delay' until a given time specification.
-Here some usage example:
+Version 1.3 adds the possibility to launch a command at the
+end of the delay time.
 
+Here some usage example:
 delay 1d 2:03:04.5
 delay 1d 2h 3m 4.5s
 delay 93785.5
-delay until 4 pm
+delay until 4 pm -- cdplay
 delay until noon tomorrow
 delay until midnight 13 september 2000
 delay until now + 5 minutes
+delay 15s -- top
 
 It allows for short, long, and customized messages for the display of 
 the time remaining. 
-
 - author: Tom Rothamel <tom@onegeek.org>
-- distfile: delay-1.2.tar.gz (63 kb)
 - example of output : delay -v until 4 pm tomorrow
 		      Time Remaining: 1 days, 07:51:39.
 - ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
