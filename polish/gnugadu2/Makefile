@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--with-gui \
 		--with-gadu \
 		--with-sms \
 		--with-external \
+		--with-external-libgadu \
 		--with-update
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
