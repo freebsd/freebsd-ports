@@ -10,9 +10,8 @@ PORTVERSION=	2001a
 PORTEPOCH=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		http://www.freenix.no/~anders/ \
+		http://atreides.freenix.no/~anders/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/ \
-		http://mirror.nucba.ac.jp/mirror/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-2001a
