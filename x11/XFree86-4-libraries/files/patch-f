@@ -1,6 +1,14 @@
---- nls/compose.dir.orig	Thu Nov 22 07:29:11 2001
-+++ nls/compose.dir	Sat Jan 19 22:12:13 2002
-@@ -211,7 +211,7 @@
+--- nls/compose.dir.orig	Wed Nov 21 23:29:11 2001
++++ nls/compose.dir	Wed Jul 17 15:05:38 2002
+@@ -62,6 +62,7 @@
+ iso8859-1/Compose:		en_TT.ISO8859-1
+ iso8859-1/Compose:		en_UK.ISO8859-1
+ iso8859-1/Compose:		en_US.ISO8859-1
++iso8859-15/Compose:		en_US.ISO8859-15
+ iso8859-1/Compose:		en_ZA.ISO8859-1
+ iso8859-3/Compose:		eo_XX.ISO8859-3
+ iso8859-1/Compose:		es_AR.ISO8859-1
+@@ -211,7 +212,7 @@
  zh_CN/Compose:			zh_CN.GB2312
  zh_CN.gbk/Compose:		zh_CN.GBK
  zh_TW.big5/Compose:		zh_TW.big5
@@ -34,9 +42,17 @@
  zh_TW.EUC:					zh_TW.eucTW
  
  XCOMM The following locale names are used in SCO 3.0
---- nls/locale.dir.orig	Thu Jan 10 01:14:16 2002
-+++ nls/locale.dir	Sat Jan 19 22:16:56 2002
-@@ -216,7 +216,7 @@
+--- nls/locale.dir.orig	Wed Jan  9 17:14:16 2002
++++ nls/locale.dir	Wed Jul 17 15:06:35 2002
+@@ -68,6 +68,7 @@
+ iso8859-1/XLC_LOCALE:			en_TT.ISO8859-1
+ iso8859-1/XLC_LOCALE:			en_UK.ISO8859-1
+ iso8859-1/XLC_LOCALE:			en_US.ISO8859-1
++iso8859-15/XLC_LOCALE:			en_US.ISO8859-15
+ iso8859-1/XLC_LOCALE:			en_ZA.ISO8859-1
+ iso8859-3/XLC_LOCALE:			eo_EO.ISO8859-3
+ iso8859-3/XLC_LOCALE:			eo_XX.ISO8859-3
+@@ -216,7 +217,7 @@
  zh_CN.gbk/XLC_LOCALE:			zh_CN.gbk
  zh_HK.big5/XLC_LOCALE:			zh_HK.big5
  zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.big5hkscs
@@ -45,9 +61,16 @@
  zh_TW/XLC_LOCALE:			zh_TW.eucTW
  XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
  en_US.UTF-8/XLC_LOCALE:			af_ZA.UTF-8
---- nls/Compose/Imakefile.orig	Sat Nov  3 08:29:28 2001
-+++ nls/Compose/Imakefile	Sat Jan 19 22:17:40 2002
-@@ -70,5 +70,5 @@
+--- nls/Compose/Imakefile.orig	Sun Nov 24 15:54:38 2002
++++ nls/Compose/Imakefile	Sun Nov 24 15:55:37 2002
+@@ -64,11 +64,12 @@
+ ComposeTarget(koi8-r)
+ ComposeTarget(koi8-u)
+ ComposeTarget(koi8-c)
++ComposeTarget(microsoft-cp1251)
+ ComposeTarget(mulelao-1)
+ ComposeTarget(vi_VN.tcvn)
+ ComposeTarget(vi_VN.viscii)
  ComposeTarget(zh_CN)
  ComposeTarget(zh_CN.gbk)
  ComposeTarget(zh_TW)

@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -108,6 +108,7 @@ post-extract:
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
+	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
 	cd ${WRKSRC}/nls; \
 	for i in Compose XI18N_OBJS XLC_LOCALE; do \
 		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \

@@ -472,6 +472,7 @@ lib/X11/locale/koi8-u/XI18N_OBJS
 lib/X11/locale/koi8-u/XLC_LOCALE
 lib/X11/locale/locale.alias
 lib/X11/locale/locale.dir
+lib/X11/locale/microsoft-cp1251/Compose
 lib/X11/locale/microsoft-cp1251/XI18N_OBJS
 lib/X11/locale/microsoft-cp1251/XLC_LOCALE
 lib/X11/locale/microsoft-cp1255/XI18N_OBJS
