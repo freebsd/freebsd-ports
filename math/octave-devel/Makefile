@@ -3,7 +3,7 @@
 # Date created:		8 September 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.16 1998/09/08 14:32:30 chuckr Exp $
+# $Id: Makefile,v 1.17 1998/09/09 05:46:15 asami Exp $
 #
 
 DISTNAME=	octave-2.0.13
@@ -11,6 +11,8 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
 MAINTAINER=	chuckr@FreeBSD.ORG
+
+BROKEN_ELF=	build
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
