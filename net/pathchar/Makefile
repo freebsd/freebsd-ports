@@ -28,7 +28,7 @@ MAN8=		pathchar.8
 
 .if ${PORTOBJFORMAT} == "aout"
 DISTNAME=	pathchar-a0-freebsd-2.2
-PKGNAME=	pathchar-a0
+PORTVERSION=	a0
 .endif
 
 NO_BUILD=	yes
