@@ -1,0 +1,7 @@
+mod_fastcgi is a cgi-module for Apache
+
+FastCGI is a language independent, scalable, open extension to CGI that provides high performance without the limitations of server specific APIs.  See the docs for more details.
+
+--
+Ports by JunSeon Oh <hollywar@mail.holywar.net>
+WWW: http://www.fastcgi.com
