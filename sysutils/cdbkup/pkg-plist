@@ -1,0 +1,5 @@
+sbin/cdappend
+sbin/cdbkup
+sbin/cdcat
+sbin/cdrstr
+sbin/cdsplit
