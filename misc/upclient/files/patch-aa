@@ -1,14 +1,5 @@
 --- src/Makefile.orig	Wed Dec 18 01:01:16 2002
 +++ src/Makefile	Mon Feb  3 20:18:03 2003
-@@ -34,7 +34,7 @@
- #
-   PROGRAMNAME = UpClient
- # UPCLIENT_VERSION = "5.0b7"
--  UPCLIENT_VERSION = `grep '\#define UPCLIENT_VERSION ' version.h | sed -e 's@\#define UPCLIENT_VERSION @@g' | tr -d '"'`
-+  UPCLIENT_VERSION =  `sed -n 's/"//g;/\#define UPCLIENT_VERSION /s///p' version.h`
- #########################################################################
- 
- 
 @@ -46,7 +46,7 @@
  OPTIMIZATION_CFLAGS=-O3
  

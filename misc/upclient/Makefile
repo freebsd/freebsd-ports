@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	5.0.b7
+PORTVERSION=	5.0.b8
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.wonko.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
@@ -36,14 +36,6 @@ DOC_FILES+=	doc/UptimesProtocol5
 DOC_FILES+=	HISTORY-BETA
 
 .include <bsd.port.pre.mk>
-
-# Post-extract
-#
-
-post-extract: rename-doc
-
-rename-doc:
-	@${MV} ${WRKSRC}/doc/"Uptimes Protocol 5" ${WRKSRC}/doc/UptimesProtocol5
 
 # Post-patch
 #
