@@ -1,12 +1,9 @@
-# New ports collection makefile for:	netscape
+# New ports collection makefile for:	netscape (full communicator version)
 # Version required:     4.04
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# Note: you can make the standalone navigator version by typing
-#       make NAVIGATOR=yes
-#
-# $Id: Makefile,v 1.10 1997/11/15 01:10:45 asami Exp $
+# $Id: Makefile,v 1.11 1997/11/15 13:09:11 asami Exp $
 #
 
 DISTNAME=       netscape-communicator-4.04
