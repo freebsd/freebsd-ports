@@ -3,7 +3,7 @@
 # Date created:		03 July 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/16 06:35:29 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/20 20:22:33 asami Exp $
 #
 
 DISTNAME=	pstoedit.2.60p1
@@ -17,8 +17,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
-BROKEN=		fetch
-
+FETCH_BEFORE_ARGS=	-t
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=    -q
 EXTRACT_AFTER_ARGS=     -d ${WRKDIR}
