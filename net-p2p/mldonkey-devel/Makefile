@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.1
+PORTVERSION=	2.5.30.c
 CATEGORIES+=	net
-MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/ \
-		ftp://ftp.berlios.de/pub/mldonkey/spiralvoice/cvs/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/mldonkey/spiralvoice/cvs/ \
+		http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
 
 PATCH_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/patchpacks/
-#PATCHFILES=	patch_pack${PORTVERSION:C/^.\..\.(.)/\1/:C/\.//}.gz
+PATCHFILES=	patch_pack${PORTVERSION:C/^.\..\.(.)/\1/:C/\.//}.gz
 
 MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-#DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30-1
+DOWNLOADVERSION=${PORTVERSION:R}
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
