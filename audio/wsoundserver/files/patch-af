@@ -1,0 +1,25 @@
+--- configure.orig	Sat Jun  3 14:45:53 2000
++++ configure	Sat Jun  3 14:48:21 2000
+@@ -3401,9 +3401,9 @@
+   
+   
+   rm -f conf.audiofiletest
+
+-    CFLAGS=$AUDIOFILE_CFLAGS
+-    LIBS=$AUDIOFILE_LIBS
++    CFLAGS="$CFLAGS $AUDIOFILE_CFLAGS"
++    LIBS="$LIBS $AUDIOFILE_LIBS"
+ 
+     if test "x$AUDIOFILE_LIBS" = "x"; then
+         echo
+@@ -3677,8 +3674,8 @@
+   
+   rm -f conf.esdtest
+ 
+-    CFLAGS=$ESD_CFLAGS
+-    LIBS=$ESD_LIBS
++    CFLAGS="$CFLAGS $ESD_CFLAGS"
++    LIBS="$LIBS $ESD_LIBS"
+     for ac_func in esd_get_latency
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
