@@ -7,6 +7,7 @@
 
 PORTNAME=	giFT
 PORTVERSION=	0.11.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -17,7 +18,7 @@ COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		Magick.5:${PORTSDIR}/graphics/ImageMagick
+		Magick.6:${PORTSDIR}/graphics/ImageMagick
 .if defined(WITH_LIBMAGIC)
 LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
 .endif
