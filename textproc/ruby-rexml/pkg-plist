@@ -28,6 +28,9 @@
 @dirrm %%RUBY_SITELIBDIR%%/rexml/dtd
 @dirrm %%RUBY_SITELIBDIR%%/rexml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/changelog.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/credits.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/faq.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/docs/tutorial.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/docs
