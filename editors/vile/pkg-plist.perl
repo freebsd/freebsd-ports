@@ -37,10 +37,12 @@ lib/vile/vile-pl-filt
 lib/vile/vile-pot-filt
 lib/vile/vile-py-filt
 lib/vile/vile-ps-filt
+lib/vile/vile-rb-filt
 lib/vile/vile-rc-filt
 lib/vile/vile-rcs-filt
 lib/vile/vile-rexx-filt
 lib/vile/vile-rpm-filt
+lib/vile/vile-ruby-filt
 lib/vile/vile-sccs-filt
 lib/vile/vile-sed-filt
 lib/vile/vile-sh-filt
@@ -148,6 +150,7 @@ share/vile/perl.keywords
 share/vile/ps.keywords
 share/vile/py.keywords
 share/vile/pot.keywords
+share/vile/rb.keywords
 share/vile/rc.keywords
 share/vile/rcs.keywords
 share/vile/rexx.keywords
@@ -157,10 +160,12 @@ share/vile/sh.keywords
 share/vile/sml.keywords
 share/vile/spell.rc
 share/vile/sql.keywords
+share/vile/syntax.keywords
 share/vile/tags.keywords
 share/vile/tbl.keywords
 share/vile/tc.keywords
 share/vile/tcl.keywords
+share/vile/tex.keywords
 share/vile/texi.keywords
 share/vile/ti.keywords
 share/vile/which.rc
