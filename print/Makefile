@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1999/01/04 03:36:21 steve Exp $
+# $Id: Makefile,v 1.79 1999/01/13 07:17:23 asami Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -29,6 +29,7 @@
     SUBDIR += ghostscript5
     SUBDIR += ghostscript55
     SUBDIR += ghostview
+    SUBDIR += gnomeprint
     SUBDIR += gp
     SUBDIR += gsfonts
     SUBDIR += gv
