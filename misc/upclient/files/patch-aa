@@ -1,0 +1,30 @@
+--- Makefile.orig	Sat Apr 10 02:47:19 1999
++++ Makefile	Fri Aug 20 14:51:05 1999
+@@ -1,7 +1,7 @@
+ # Uptime Client Makefile
+ 
+ # Location of config file (for example /etc/upclient.conf)
+-CONFIGFILE = upclient.conf
++CONFIGFILE = $(PREFIX)/etc/upclient.conf
+ 
+ 
+ ################
+@@ -29,10 +29,8 @@
+ 		upclient
+ 
+ bsd:
+-	$(MAKE) CC=gcc \
+-		LDFLAGS= \
+-		OBJECTS= \
+-		CFLAGS='-DPLAT_xxxBSD -DCONFIGFILE=\"$(CONFIGFILE)\"' \
++	$(MAKE) OBJECTS= \
++		CFLAGS='$(CFLAGS) -DPLAT_xxxBSD -DCONFIGFILE=\"$(CONFIGFILE)\"' \
+ 		upclient
+ 
+ solaris:
+@@ -88,3 +86,5 @@
+ install:	prepared-for-install
+ 	strip $(BINNAME)
+ 	chmod 755 $(BINNAME)
++	$(INSTALL) $(BINNAME) $(PREFIX)/bin
++	$(CP) upclient.conf $(PREFIX)/etc
