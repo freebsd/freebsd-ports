@@ -1,0 +1,7 @@
+*** source/include/version.h.orig	Sat Apr  5 10:00:34 2003
+--- source/include/version.h	Sat Apr  5 10:00:39 2003
+***************
+*** 1 ****
+! #define VERSION "2.2.8"
+--- 1 ----
+! #define VERSION "2.2.8p1"
