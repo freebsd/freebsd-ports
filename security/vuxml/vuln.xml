@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2de14f7a-dad9-11d8-b59a-00061bc2ad93">
+    <topic>Multiple Potential Buffer Overruns in Samba 3.0.x</topic>
+    <affects>
+      <package>
+        <name>samba3</name>
+        <range><ge>3.0.2</ge><lt>3.0.4_4</lt></range>
+	<range><lt>2.2.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Multiple vulnerabilities in SWAT could
+	  lead to buffer overruns.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0600</cvename>
+      <cvename>CAN-2004-0686</cvename>
+      <url>http://www.samba.org</url>
+    </references>
+    <dates>
+      <discovery>2004-07-14</discovery>
+      <entry>2004-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4aec9d58-ce7b-11d8-858d-000d610a3b12">
     <topic>Format string vulnerability in SSLtelnet</topic>
     <affects>
