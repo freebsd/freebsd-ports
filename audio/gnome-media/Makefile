@@ -42,6 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CDROM%%|acd0|' ${WRKSRC}/configure
 .else
 	@${REINPLACE_CMD} -e 's|%%CDROM%%|acd0c|' ${WRKSRC}/configure
+.endif
+.if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/gnome-cd/gst-cdparanoia-cdrom.c \
 		${WRKSRC}/gst-mixer/src/volume.c
