@@ -1077,4 +1077,6 @@ misc/libh||2004-05-07|Removed broken port
 net/openreg||2004-05-07|Removed broken port
 net/hawk||2004-05-07|Removed broken port
 japanese/tgif2tex|print/tgif2tex|2004-05-09|renamed
+www/caudium-devel|www/caudium12|2004-05-11|development version temporarily retired
+lang/pike74|lang/pike76|2004-05-11|replaced by newer development version
 
