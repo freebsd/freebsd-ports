@@ -1,0 +1,10 @@
+This dictionary client provides access to a dictionary server (as
+defined in RFC 2229) from within Emacs or XEmacs.
+
+It supports utf-8 (currently available in Emacs 21) and allows to
+follow links within the definitions.
+
+WWW: http://www.myrkr.in-berlin.de/dictionary/
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net

@@ -1,0 +1,3 @@
+To use dictionary, add to your ~/.emacs the following line:
+
+(load "dictionary-init")
