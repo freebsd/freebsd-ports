@@ -336,3 +336,5 @@ share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/tex
 @dirrm share/texmf/web2c
 @dirrm share/texmf
+@unexec install-info --delete %D/info/kpathsea.info %D/info/dir
+@unexec install-info --delete %D/info/web2c.info %D/info/dir
