@@ -6,7 +6,7 @@ include/aalib.h
 lib/libaa.a
 lib/libaa.la
 lib/libaa.so
-lib/libaa.so.1
+lib/libaa.so.1.3
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec install-info --delete %D/info/aalib.info %D/info/dir
