@@ -10854,6 +10854,7 @@ zope-cmfforum	ports/www/zope-cmfforum
 zope-cmfphoto	ports/www/zope-cmfphoto
 zope-cmfphotoalbum	ports/www/zope-cmfphotoalbum
 zope-cmfquickinstaller	ports/www/zope-cmfquickinstaller
+zope-cmftransforms	ports/www/zope-cmftransforms
 zope-coreblog	ports/www/zope-coreblog
 zope-epoz	ports/www/zope-epoz
 zope-exuserfolder	ports/www/zope-exuserfolder
