@@ -6505,6 +6505,7 @@ tua		ports/sysutils/tua
 tuc		ports/converters/tuc
 tund		ports/net/tund
 tunefs		src/sbin/tunefs
+turba		ports/mail/turba
 tux-aqfh	ports/games/tux-aqfh
 tuxkart		ports/games/tuxkart
 tuxnes		ports/emulators/tuxnes
