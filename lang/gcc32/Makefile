@@ -22,8 +22,6 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
-#PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-#PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.2.2
@@ -97,7 +95,6 @@ DIST_SUBDIR=	${PKGNAME}
 CVS_CMD?=	cvs -z3 -qR
 CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
 STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
-_CKSUMFILES=	${DIST_SUBDIR}/${PATCHFILES}
 do-fetch:
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
@@ -114,9 +111,6 @@ do-fetch:
 		${ECHO_MSG} ">> Please try again later."; \
 		exit 1; \
 	fi
-	@test -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
-	    || fetch -o ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
-		${PATCH_SITES}${PATCHFILES}
 
 do-extract:
 	${MKDIR} ${SRCDIR}
