@@ -351,7 +351,5 @@ share/locale/af/LC_MESSAGES/webarchiver.mo
 share/locale/af/charset
 share/locale/af/entry.desktop
 share/locale/af/flag.png
-@dirrm share/locale/af/LC_MESSAGES
-@dirrm share/locale/af
 @dirrm share/doc/HTML/af/kicker-applets
 @dirrm share/doc/HTML/af

@@ -153,7 +153,6 @@ share/locale/en_GB/LC_MESSAGES/empath.mo
 share/locale/en_GB/LC_MESSAGES/extensionproxy.mo
 share/locale/en_GB/LC_MESSAGES/filetypes.mo
 share/locale/en_GB/LC_MESSAGES/fontinst.mo
-share/locale/en_GB/LC_MESSAGES/gideon.mo
 share/locale/en_GB/LC_MESSAGES/htmlsearch.mo
 share/locale/en_GB/LC_MESSAGES/imgalleryplugin.mo
 share/locale/en_GB/LC_MESSAGES/kab.mo
@@ -453,8 +452,6 @@ share/locale/en_GB/LC_MESSAGES/webarchiver.mo
 share/locale/en_GB/charset
 share/locale/en_GB/entry.desktop
 share/locale/en_GB/flag.png
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
 @dirrm share/doc/HTML/en_GB/kspell
 @dirrm share/doc/HTML/en_GB/kioslave
 @dirrm share/doc/HTML/en_GB/khelpcenter/visualdict

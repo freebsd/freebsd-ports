@@ -362,7 +362,6 @@ share/locale/uk/LC_MESSAGES/webarchiver.mo
 share/locale/uk/charset
 share/locale/uk/entry.desktop
 share/locale/uk/flag.png
-@dirrm share/locale/uk/LC_MESSAGES
 @dirrm share/doc/HTML/uk/kspell
 @dirrm share/doc/HTML/uk/kioslave
 @dirrm share/doc/HTML/uk/khelpcenter

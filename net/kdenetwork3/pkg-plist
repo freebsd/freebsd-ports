@@ -1,4 +1,3 @@
-@comment 20021010 on wwweasel.geeksrus.net by AlanE@FreeBSD.org.
 bin/dsirc
 bin/kdict
 bin/kit

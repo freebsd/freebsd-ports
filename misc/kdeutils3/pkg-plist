@@ -1,4 +1,3 @@
-@comment files
 bin/ark
 bin/efax
 bin/efix
@@ -9,10 +8,9 @@ bin/kdepasswd
 bin/kdessh
 bin/kdf
 bin/kedit
-%%KFLOPPY%%bin/kfloppy
 bin/khexedit
 bin/kjots
-%%ALPHA_NA%%bin/klaptopdaemon
+bin/klaptopdaemon
 bin/kljettool
 bin/klpq
 bin/klprfax
@@ -31,28 +29,27 @@ lib/kde3/kcharselectapplet.so
 lib/kde3/kcharselectapplet.so.1
 lib/kde3/kcm_kdf.la
 lib/kde3/kcm_kdf.so
-%%ALPHA_NA%%lib/kde3/kcm_laptop.la
-%%ALPHA_NA%%lib/kde3/kcm_laptop.so
+lib/kde3/kcm_laptop.la
+lib/kde3/kcm_laptop.so
 lib/kde3/libkregexpeditorgui.la
 lib/kde3/libkregexpeditorgui.so
 lib/kedit.la
 lib/kedit.so
-%%ALPHA_NA%%lib/klaptopdaemon.la
-%%ALPHA_NA%%lib/klaptopdaemon.so
+lib/klaptopdaemon.la
+lib/klaptopdaemon.so
 lib/libark.la
 lib/libark.so
 lib/libark.so.1
 share/applnk/Editors/KEdit.desktop
 share/applnk/Settings/Information/kcmdf.desktop
-%%ALPHA_NA%%share/applnk/Settings/Information/pcmcia.desktop
-%%ALPHA_NA%%share/applnk/Settings/PowerControl/battery.desktop
-%%ALPHA_NA%%share/applnk/Settings/PowerControl/bwarning.desktop
-%%ALPHA_NA%%share/applnk/Settings/PowerControl/cwarning.desktop
-%%ALPHA_NA%%share/applnk/Settings/PowerControl/power.desktop
+share/applnk/Settings/Information/pcmcia.desktop
+share/applnk/Settings/PowerControl/battery.desktop
+share/applnk/Settings/PowerControl/bwarning.desktop
+share/applnk/Settings/PowerControl/cwarning.desktop
+share/applnk/Settings/PowerControl/power.desktop
 share/applnk/System/kdf.desktop
 share/applnk/System/kwikdisk.desktop
 share/applnk/Utilities/KCharSelect.desktop
-%%KFLOPPY%%share/applnk/Utilities/KFloppy.desktop
 share/applnk/Utilities/KLJetTool.desktop
 share/applnk/Utilities/KLpq.desktop
 share/applnk/Utilities/Kjots.desktop
@@ -82,11 +79,11 @@ share/apps/khexedit/toolbar/hexmask.png
 share/apps/khexedit/toolbar/hexwrite.png
 share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kjots/pics/filedel.png
-%%ALPHA_NA%%share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_charge.png
-%%ALPHA_NA%%share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nobattery.png
-%%ALPHA_NA%%share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nocharge.png
-%%ALPHA_NA%%share/apps/klaptopdaemon/icons/hicolor/16x16/actions/power.png
-%%ALPHA_NA%%share/apps/klaptopdaemon/icons/hicolor/32x32/actions/power.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/power.png
+share/apps/klaptopdaemon/icons/hicolor/32x32/actions/power.png
 share/apps/kljettool/pics/kljetlogo.png
 share/apps/konqueror/servicemenus/arkservicemenu.desktop
 share/apps/kregexpeditor/pics/altn.png
@@ -183,49 +180,44 @@ share/icons/hicolor/16x16/apps/kcharselect.png
 share/icons/hicolor/16x16/apps/kcmdf.png
 share/icons/hicolor/16x16/apps/kdf.png
 share/icons/hicolor/16x16/apps/kedit.png
-%%KFLOPPY%%share/icons/hicolor/16x16/apps/kfloppy.png
 share/icons/hicolor/16x16/apps/khexedit.png
 share/icons/hicolor/16x16/apps/kjots.png
-%%ALPHA_NA%%share/icons/hicolor/16x16/apps/klaptopdaemon.png
+share/icons/hicolor/16x16/apps/klaptopdaemon.png
 share/icons/hicolor/16x16/apps/kljettool.png
 share/icons/hicolor/16x16/apps/klpq.png
 share/icons/hicolor/16x16/apps/klprfax.png
 share/icons/hicolor/16x16/apps/kwikdisk.png
-%%ALPHA_NA%%share/icons/hicolor/16x16/apps/laptop_battery.png
-%%ALPHA_NA%%share/icons/hicolor/16x16/apps/laptop_pcmcia.png
+share/icons/hicolor/16x16/apps/laptop_battery.png
+share/icons/hicolor/16x16/apps/laptop_pcmcia.png
 share/icons/hicolor/32x32/apps/ark.png
 share/icons/hicolor/32x32/apps/kcalc.png
 share/icons/hicolor/32x32/apps/kcmdf.png
 share/icons/hicolor/32x32/apps/kdf.png
 share/icons/hicolor/32x32/apps/kedit.png
-%%KFLOPPY%%share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/32x32/apps/khexedit.png
 share/icons/hicolor/32x32/apps/kjots.png
 share/icons/hicolor/32x32/apps/kljettool.png
 share/icons/hicolor/32x32/apps/klpq.png
 share/icons/hicolor/32x32/apps/klprfax.png
 share/icons/hicolor/32x32/apps/kwikdisk.png
-%%ALPHA_NA%%share/icons/hicolor/32x32/apps/laptop_battery.png
-%%ALPHA_NA%%share/icons/hicolor/32x32/apps/laptop_pcmcia.png
+share/icons/hicolor/32x32/apps/laptop_battery.png
+share/icons/hicolor/32x32/apps/laptop_pcmcia.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/48x48/apps/kcalc.png
 share/icons/hicolor/48x48/apps/kcharselect.png
 share/icons/hicolor/48x48/apps/kedit.png
-%%KFLOPPY%%share/icons/hicolor/48x48/apps/kfloppy.png
 share/icons/hicolor/48x48/apps/khexedit.png
 share/icons/hicolor/48x48/apps/kjots.png
 share/icons/hicolor/48x48/apps/kljettool.png
 share/icons/hicolor/48x48/apps/klpq.png
-%%ALPHA_NA%%share/icons/hicolor/48x48/apps/laptop_battery.png
-%%ALPHA_NA%%share/icons/hicolor/48x48/apps/laptop_pcmcia.png
+share/icons/hicolor/48x48/apps/laptop_battery.png
+share/icons/hicolor/48x48/apps/laptop_pcmcia.png
 share/icons/locolor/16x16/apps/klprfax.png
 share/icons/locolor/32x32/apps/klprfax.png
 share/services/arkpart.desktop
-%%ALPHA_NA%%share/services/klaptopdaemon.desktop
+share/services/klaptopdaemon.desktop
 share/services/kregexpeditorgui.desktop
-@comment empty dirs
 @exec /bin/mkdir -p %D/share/apps/kcalc/pics
-@comment remove dirs
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
@@ -235,6 +227,8 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/klprfax
 @dirrm share/doc/HTML/en/klpq
@@ -248,6 +242,8 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/doc/HTML/en/kab
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/kregexpeditor/predefined/general
 @dirrm share/apps/kregexpeditor/predefined
 @dirrm share/apps/kregexpeditor/pics
@@ -285,4 +281,3 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Editors
-@dirrm share/applnk

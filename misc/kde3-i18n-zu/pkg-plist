@@ -252,5 +252,3 @@ share/locale/zu/LC_MESSAGES/validatorsplugin.mo
 share/locale/zu/LC_MESSAGES/webarchiver.mo
 share/locale/zu/charset
 share/locale/zu/entry.desktop
-@dirrm share/locale/zu/LC_MESSAGES
-@dirrm share/locale/zu
