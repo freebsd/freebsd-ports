@@ -349,8 +349,6 @@ libdvdcss-*.tar.bz2	ports/multimedia/libdvdcss CSS code may violate the DMCA
 libidea-*		ports/security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	ports/lang/compaq-cc	Distribution not allowed
 libSDLx11.so.tar.gz	ports/multimedia/mtv	No redistribution
-libsnert-*		ports/mail/milter-sender Non-commercial distribution
-						of the original files only
 LimeWireLinux.tgz	ports/net/limewire	No redistribution allowed
 Linux-ACU-Driver-v*	ports/sysutils/linux-acu Redistribution not allowed
 linux_devtools		ports/devel/linux_devtools GPL binaries
@@ -375,8 +373,6 @@ md5crk_*_freebsdX86.*	ports/security/md5crk	no commercial use
 mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
 mikachan-ttfonts/ver*.*	ports/japanese/mikachan-ttfonts	Do not sell distfile
-milter-sender-*		ports/mail/milter-sender Non-commercial distribution
-						of the original files only
 milter-spamc-*		ports/mail/milter-spamc	Non-commercial distribution
 						of the original files only
 mindfocus-*		ports/games/mindfocus	contains commercial
