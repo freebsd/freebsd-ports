@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	dod
-PORTVERSION=	1.3b
-MASTER_SITES=	http://www.existonline.net/files/mirrors/dod/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/dod/ \
-		http://hosting.noxordo.com/~monolith/ \
-		http://www.vigilantegamers.com/dod/files/official/ \
-		ftp://ftp2.cistron.nl/pub/games/half-life/modifications/dod/
+PORTVERSION=	2.0
+MASTER_SITES=	http://games.gci.net/pub/Half-Life/Mods/DoD/ \
+		http://download.filefront.com/pub2/halflife/mods/day_of_defeat/ \
+		ftp://ftpuk.jolt.co.uk/games/halflife/mods/dod/patches/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
