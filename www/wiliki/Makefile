@@ -24,6 +24,10 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${MACHINE_ARCH} == "alpha" && ${OSVERSION} >= 500000
+BROKEN=		"Does not build"
+.endif
+
 .if exists(${LOCALBASE}/bin/gauche-config)
 GAUCHE_VER=	`gauche-config -V`
 .else
