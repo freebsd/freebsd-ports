@@ -1,8 +1,9 @@
-bin/nethack
-%%DATADIR%%/nethack
+%%HACKLINK%%bin/nethack
+bin/%%HACKNAME%%
+%%DATADIR%%/%%HACKNAME%%
 @exec mkdir %D/%%DATADIR%%/save
 @exec chmod -R 775 %D/%%DATADIR%%
-@exec chmod 2755 %D/%%DATADIR%%/nethack
+@exec chmod 2755 %D/%%DATADIR%%/%%HACKNAME%%
 @exec chown games:games %D/%%DATADIR%%/save
 @unexec rmdir %D/%%DATADIR%%/save 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
@@ -118,8 +119,11 @@ bin/nethack
 %%DATADIR%%/wizard3.lev
 %%DATADIR%%/wizhelp
 @mode 664
-%%DATADIR%%/logfile
-%%DATADIR%%/record
 %%DATADIR%%/perm
+@mode
+@unexec [ -s %D/%%HACKDIR%%/logfile ] || rm -f %D/%%HACKDIR%%/logfile
+@exec touch %D/%%HACKDIR%%/logfile && chmod 664 %D/%%HACKDIR%%/logfile
+@unexec [ -s %D/%%HACKDIR%%/record ] || rm -f %D/%%HACKDIR%%/record
+@exec touch %D/%%HACKDIR%%/record && chmod 664 %D/%%HACKDIR%%/record
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,7 +1,7 @@
 $FreeBSD$
 
 --- sys/unix/Makefile.doc.orig	Tue Dec 10 13:20:08 1996
-+++ sys/unix/Makefile.doc	Thu Apr  8 16:29:59 2004
++++ sys/unix/Makefile.doc	Sun Apr 11 23:08:20 2004
 @@ -31,15 +31,15 @@
  
  
@@ -24,3 +24,20 @@ $FreeBSD$
  # manual installation for most SYSV-style systems
  # GAMEMANCREATE = nroff -man nethack.6 >
  # LEVMANCREATE = nroff -man lev_comp.6 >
+@@ -48,11 +48,11 @@
+ # DLBMANCREATE = nroff -man dlb.6 >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
++	-$(GAMEMANCREATE) $(MANDIR)/%%HACKNAME%%.$(MANEXT)
++	-$(LEVMANCREATE) $(MANDIR)/lev_comp%%HACKEXT%%.$(MANEXT)
++	-$(DGNMANCREATE) $(MANDIR)/dgn_comp%%HACKEXT%%.$(MANEXT)
++	-$(RCVRMANCREATE) $(MANDIR)/recover%%HACKEXT%%.$(MANEXT)
++	-$(DLBMANCREATE) $(MANDIR)/dlb%%HACKEXT%%.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt
