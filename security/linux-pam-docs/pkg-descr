@@ -1,0 +1,10 @@
+This documantation consists of following three guides for
+
+  * System administrators
+  * Module writers
+  * Application developers
+
+PS/HTML/TXT versions are available.
+
+Author:	<morgan@kernel.org>
+WWW:	http://www.kernel.org/pub/linux/libs/pam/

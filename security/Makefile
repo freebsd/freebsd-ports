@@ -156,6 +156,7 @@
     SUBDIR += libtasn1
     SUBDIR += libwhisker
     SUBDIR += liedentd
+    SUBDIR += linux-pam-docs
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
