@@ -1,0 +1,6 @@
+bin/snowstar
+share/doc/snowstar/README_Snowstar
+share/doc/snowstar/TODO
+share/doc/snowstar/LICENSE
+share/doc/snowstar/CHANGES
+@dirrm share/doc/snowstar
