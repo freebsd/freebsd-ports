@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxditview
-PORTVERSION=	1.17
+PORTVERSION=	1.17.2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
@@ -34,7 +34,23 @@ INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/xditview
 
 MAN1=		gxditview.1
 
+# workaround for autoconf-2.13
+
+CONFIGUREIN_FILTER=	\
+		-e 's|AC_INIT|dnl|g;' \
+		-e 's|AC_CONFIG_SRCDIR|AC_INIT|g;' \
+		-e 's|AC_OUTPUT|dnl|g;' \
+		-e 's|AC_CONFIG_FILES|AC_OUTPUT|g;'
+
+ACLOCAL_FILTER=	-e 's/AC_LANG_POP\(C\+\+\)/AC_LANG_RESTORE/g;' \
+		-e 's/AC_LANG_PUSH\(C\+\+\)/AC_LANG_SAVE\nAC_LANG_CPLUSPLUS/g;'
+
 post-extract:
+	${LN} -sf configure.ac ${WRKSRC}/configure.in
 	${CP} ${FILESDIR}/Imakefile ${WRKSRC}
+
+post-patch:
+	${PERL} -pi ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
+	${PERL} -pi ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>
