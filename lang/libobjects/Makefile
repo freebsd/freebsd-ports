@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1999/01/12 16:50:57 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/01/27 07:41:21 fenner Exp $
 #
 
 DISTNAME=	libobjects-0.1.19
@@ -15,4 +15,9 @@ MAINTAINER=	nacai@iname.com
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 400002
+BROKEN=		no objc header files
+.endif
+
+.include <bsd.port.post.mk>
