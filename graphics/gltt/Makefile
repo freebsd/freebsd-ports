@@ -10,7 +10,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
-MAINTAINER=	tiamat@telegraph.spb.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype

@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
 
-MAINTAINER=	tiamat@telegraph.spb.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes

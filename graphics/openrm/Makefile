@@ -17,7 +17,7 @@ DISTFILES=		${PORTNAME}-devel-${PORTVERSION}${EXTRACT_SUFX} \
 			${PORTNAME}-demo-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	tiamat@telegraph.spb.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg

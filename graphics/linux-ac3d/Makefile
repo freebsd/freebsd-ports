@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	ac3d${PORTVERSION:S/.//}lx
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tiamat@telegraph.spb.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
 .ifdef(INSTALL_DYNLINKED_VERSION)
