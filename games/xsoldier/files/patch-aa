@@ -1,103 +1,121 @@
-*** Makefile.orig	Mon Jan 20 15:52:28 1997
---- Makefile	Wed Jan 22 06:24:30 1997
+*** Imakefile.orig	Sat Mar  1 00:48:57 1997
+--- Imakefile	Sun May 25 19:40:53 1997
 ***************
-*** 5,39 ****
-  # ---------------------------------------------------------------------------
+*** 6,63 ****
   
-  #
-! # インストールディレクトリ
-! # 書き込み権限が無いとインストール出来ません．=> 遊べない．(^^;
-  #
-! PIXMAPDIR = /usr/local/games/lib/xsoldier
-! SCOREDIR  = /usr/local/games/lib/xsoldier
-! BINDIR    = /usr/local/games
   
-  #
-! # スコアファイル名．SCOREDIR 以下に置かれます．
-  #
-  SCOREFILE = .scorefile
+  /* ----------------------------------------------------------------------- */
+! /* -------------------- その1 インストール先の設定 ----------------------- */
+  /* ----------------------------------------------------------------------- */
   
-  #
-! # X のコンパイルにオプションが必要なら．
-! # xpm ライブラリのパスもここで設定します．
-  #
-! INCLUDE = /usr/X11/include
-! LIBPATH = /usr/X11/lib
+! /* インストールディレクトリ						   */
+! /* 書き込み権限が無いとインストール出来ません．=> 遊べない．(^^;           */
+! PIXMAPDIR	= /usr/local/games/lib/xsoldier
+! SCOREDIR	= /usr/local/games/lib/xsoldier
+! BINDIR		= /usr/local/games
   
-  #
-! # ゲームのウエイト
-  #
-  WAIT     = 35000
+! /* スコアファイル名．SCOREDIR 以下に置かれます．			   */
+  SCOREFILE	= .scorefile
   
-  #
-! # コンパイルオプション
-! #     -DDUPSCORE … 同一人物がハイスコアに複数エントリ出来る
-! #     -DDEBUG    … デバッグモード
-! #             すみません．まだこれしかないです．(^^;
-  #
-  DEFINES = -DSCORE=\"$(SCOREDIR)\" -DPIXMAP=\"$(PIXMAPDIR)\" \
-            -DSCOREFILE=\"$(SCOREFILE)\" \
---- 5,39 ----
-  # ---------------------------------------------------------------------------
   
-  #
-! # Install Directory
-! # You cannot install without write permission. => You can't enjoy. (^^;
-  #
-! PIXMAPDIR = /usr/X11R6/lib/X11/xsoldier
-! SCOREDIR  = /usr/X11R6/lib/X11/xsoldier
-! BINDIR    = /usr/X11R6/bin
+  /* ----------------------------------------------------------------------- */
+! /* --------------------- その2 コンパイルの設定 -------------------------- */
+  /* ----------------------------------------------------------------------- */
   
-  #
-! # Score file name. These are under SCOREDIR.
-  #
-  SCOREFILE = .scorefile
+! /* xmkmf の Makefile で cc になっちゃう場合				   */
+  /* CC		= gcc */
   
-  #
-! # If you need options to compile X application, 
-! # please configure xpm library path here.
-  #
-! INCLUDE = /usr/X11R6/include
-! LIBPATH = /usr/X11R6/lib
+! /* xpmがXと異なるディレクトリにインストールされている場合		   */
+  /* XPMINCDIR	= /usr/X11R6/include */
+  /* XPMLIBDIR	= /usr/X11R6/lib */
+! /* 			  ココに path を書いて				   */
+  /* XPMINCFLAGS	= -I$(XPMINCDIR) */
+  /* XPMLIBFLAGS	= -L$(XPMLIBDIR) */
+! /* 上の2つのコメントを解除してください					   */
   
-  #
-! # Game wait
-  #
-  WAIT     = 35000
+! /* ゲームのウエイト							   */
+  WAIT		= 35000
   
-  #
-! # Compile option
-! #     -DDUPSCORE    Multi entries of one person
-! #     -DDEBUG       Debug mode
-! #             Sorry, only these are available. (^^;
-  #
-  DEFINES = -DSCORE=\"$(SCOREDIR)\" -DPIXMAP=\"$(PIXMAPDIR)\" \
-            -DSCOREFILE=\"$(SCOREFILE)\" \
-***************
-*** 44,50 ****
-  INSTALL = install
+! /* その他コンパイルオプション						   */
+! /*     -DDUPSCORE … 同一人物がハイスコアに複数エントリ出来る              */
+! /*     -DSYSV     … SystemV 系などで random 関数が無い場合，		   */
+! /*                   かわりに srand48 と lrand48 関数を使用します	   */
+  LOCAL_DEF	= 
   
-  # ---------------------------------------------------------------------------
-! # 基本的にここから下はいぢらなくて済むハズ．
+! /* ジョイスティックを使う場合						   */
+  /* #define JOYSTICK */
   
-  OBJ     = main.o game.o opening.o ending.o manage.o player.o \
-            common.o callback.o boss.o enemy.o enemyshot.o sin.o \
---- 44,50 ----
-  INSTALL = install
   
-  # ---------------------------------------------------------------------------
-! # Basically, you may not change the following.
+  /* ----------------------------------------------------------------------- */
+! /* ------------------ その3 インストールコマンドの設定 ------------------- */
+  /* ----------------------------------------------------------------------- */
   
-  OBJ     = main.o game.o opening.o ending.o manage.o player.o \
-            common.o callback.o boss.o enemy.o enemyshot.o sin.o \
-***************
-*** 108,111 ****
-  star.o: image.h xsoldier.h extern.h star.h
-  score.o: image.h xsoldier.h extern.h
+! /* Solarisでopenwinを使用してコンパイルするときに必要			   */
+  /* INSTALL		= /usr/ucb/install */
   
-! convert: convert.o
---- 108,111 ----
-  star.o: image.h xsoldier.h extern.h star.h
-  score.o: image.h xsoldier.h extern.h
   
-! #convert: convert.o
+  /* ----------------------------------------------------------------------- */
+  /*									   */
+! /* 		 基本的にここから下はいぢらなくて済むハズ		   */
+  /*									   */
+  /* ----------------------------------------------------------------------- */
+  
+--- 6,63 ----
+  
+  
+  /* ----------------------------------------------------------------------- */
+! /* ---------------------- PART1 INSTALL DIRECTORY ------------------------ */
+  /* ----------------------------------------------------------------------- */
+  
+! /* Install Directory                                                       */
+! /* You can't install without write permission of these. => Unplayable. (^^;*/
+! PIXMAPDIR	= /usr/X11R6/lib/X11/xsoldier
+! SCOREDIR	= /usr/X11R6/lib/X11/xsoldier
+! BINDIR		= /usr/X11R6/bin
+  
+! /* Score File Name. It's under SCOREDIR.                                   */
+  SCOREFILE	= .scorefile
+  
+  
+  /* ----------------------------------------------------------------------- */
+! /* ------------------- PART2 COMPILE CONFIGURATION ----------------------- */
+  /* ----------------------------------------------------------------------- */
+  
+! /* What compiler do you want to use?                                       */
+  /* CC		= gcc */
+  
+! /* If you have xpm not in the X directory.                                 */
+  /* XPMINCDIR	= /usr/X11R6/include */
+  /* XPMLIBDIR	= /usr/X11R6/lib */
+! /*                        Write path name here and .....                   */
+  /* XPMINCFLAGS	= -I$(XPMINCDIR) */
+  /* XPMLIBFLAGS	= -L$(XPMLIBDIR) */
+! /* Uncomment the upper 2 lines.                                            */
+  
+! /* Game Wait                                                               */
+  WAIT		= 35000
+  
+! /* The other compile options                                               */
+! /*     -DDUPSCORE -> Allow multiple entry in the high score                */
+! /*     -DSYSV     -> Specify when not have random functions(SystemV etc.)  */
+! /*                   Use srand48 and lrand48 instead.                      */
+  LOCAL_DEF	= 
+  
+! /* When you use the joystick                                               */
+  /* #define JOYSTICK */
+  
+  
+  /* ----------------------------------------------------------------------- */
+! /* ------------------ PART3 INSTALL COMMAND CONFIGURATION ---------------- */
+  /* ----------------------------------------------------------------------- */
+  
+! /* You need this when you use openwin on Solaris.                          */
+  /* INSTALL		= /usr/ucb/install */
+  
+  
+  /* ----------------------------------------------------------------------- */
+  /*									   */
+! /*               Basically, you don't need change below.                   */
+  /*									   */
+  /* ----------------------------------------------------------------------- */
+  
