@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri May 11 17:38:14 2001
++++ Makefile	Fri May 11 17:38:33 2001
+@@ -44,10 +44,10 @@
+ # openbsd means 2.5 or newer, openbsd-encap is for older kernels with PF_ENCAP
+ # linux is the name for Linux with FreeS/WAN integrated, freebsd/netbsd means
+ # FreeBSD/NetBSD with KAME IPsec.
+-OS=		openbsd
++#OS=		openbsd
+ #OS=		openbsd-encap
+ #OS=		netbsd
+-#OS=		freebsd
++OS=		freebsd
+ #OS=		linux
+ #OS=		bsdi
+ 
