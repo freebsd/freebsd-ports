@@ -14,6 +14,7 @@
     SUBDIR += acroread5-commfont
     SUBDIR += adobe-cmaps
     SUBDIR += afm
+    SUBDIR += alignmargins
     SUBDIR += amspsfnt
     SUBDIR += apsfilter
     SUBDIR += asprint
