@@ -4,7 +4,10 @@ bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
 etc/rndc.conf.sample
-include/dns/a6.h
+%%BIND922%%include/dns/a6.h
+%%BIND931%%include/bind9/check.h
+%%BIND931%%include/bind9/getaddresses.h
+%%BIND931%%include/bind9/version.h
 include/dns/acl.h
 include/dns/adb.h
 include/dns/byaddr.h
@@ -18,6 +21,7 @@ include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dnssec.h
+%%BIND931%%include/dns/ds.h
 include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
@@ -33,8 +37,10 @@ include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
 include/dns/ncache.h
-include/dns/nxt.h
+%%BIND931%%include/dns/nsec.h
+%%BIND922%%include/dns/nxt.h
 include/dns/peer.h
+%%BIND931%%include/dns/portlist.h
 include/dns/rbt.h
 include/dns/rcode.h
 include/dns/rdata.h
@@ -61,6 +67,7 @@ include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
 include/dns/validator.h
+%%BIND931%%include/dns/version.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
@@ -107,6 +114,7 @@ include/isc/mutexblock.h
 include/isc/net.h
 include/isc/netaddr.h
 include/isc/netdb.h
+%%BIND931%%include/isc/parseint.h
 include/isc/offset.h
 include/isc/once.h
 include/isc/ondestroy.h
@@ -127,6 +135,7 @@ include/isc/sha1.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stdio.h
+%%BIND931%%include/isc/stdlib.h
 include/isc/stdtime.h
 include/isc/string.h
 include/isc/symtab.h
@@ -138,6 +147,7 @@ include/isc/time.h
 include/isc/timer.h
 include/isc/types.h
 include/isc/util.h
+%%BIND931%%include/isc/version.h
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
@@ -150,9 +160,13 @@ include/isccc/symtab.h
 include/isccc/symtype.h
 include/isccc/types.h
 include/isccc/util.h
+%%BIND931%%include/isccc/version.h
 include/isccfg/cfg.h
-include/isccfg/check.h
+%%BIND922%%include/isccfg/check.h
+%%BIND931%%include/isccfg/grammar.h
 include/isccfg/log.h
+%%BIND931%%include/isccfg/namedconf.h
+%%BIND931%%include/isccfg/version.h
 include/lwres/context.h
 include/lwres/int.h
 include/lwres/ipv6.h
@@ -165,14 +179,16 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
+%%BIND931%%include/lwres/version.h
+%%BIND931%%lib/libbind9.a
 lib/libdns.a
 lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
 sbin/dnssec-keygen
-sbin/dnssec-makekeyset
-sbin/dnssec-signkey
+%%BIND922%%sbin/dnssec-makekeyset
+%%BIND922%%sbin/dnssec-signkey
 sbin/dnssec-signzone
 sbin/lwresd
 sbin/named
@@ -180,35 +196,36 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/rndc
 sbin/rndc-confgen
-%%PORTDOCS%%share/doc/bind9/CHANGES
-%%PORTDOCS%%share/doc/bind9/COPYRIGHT
-%%PORTDOCS%%share/doc/bind9/FAQ
-%%PORTDOCS%%share/doc/bind9/README
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch01.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch02.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch03.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch04.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch05.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch06.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch07.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch08.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch09.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.html
-%%PORTDOCS%%share/doc/bind9/misc/dnssec
-%%PORTDOCS%%share/doc/bind9/misc/format-options.pl
-%%PORTDOCS%%share/doc/bind9/misc/ipv6
-%%PORTDOCS%%share/doc/bind9/misc/migration
-%%PORTDOCS%%share/doc/bind9/misc/migration-4to9
-%%PORTDOCS%%share/doc/bind9/misc/options
-%%PORTDOCS%%share/doc/bind9/misc/rfc-compliance
-%%PORTDOCS%%share/doc/bind9/misc/roadmap
-%%PORTDOCS%%share/doc/bind9/misc/sdb
-%%PORTDOCS%%@dirrm share/doc/bind9/arm
-%%PORTDOCS%%@dirrm share/doc/bind9/misc
-%%PORTDOCS%%@dirrm share/doc/bind9
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch07.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch08.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch09.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
+%%PORTDOCS%%%%DOCSDIR%%/misc/dnssec
+%%PORTDOCS%%%%DOCSDIR%%/misc/format-options.pl
+%%PORTDOCS%%%%DOCSDIR%%/misc/ipv6
+%%PORTDOCS%%%%DOCSDIR%%/misc/migration
+%%PORTDOCS%%%%DOCSDIR%%/misc/migration-4to9
+%%PORTDOCS%%%%DOCSDIR%%/misc/options
+%%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
+%%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
+%%PORTDOCS%%%%DOCSDIR%%/misc/sdb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%BIND931%%@dirrm include/bind9
 @dirrm include/dns
 @dirrm include/dst
-@dirrm include/isc
+@unexec rmdir %D/include/isc 2>/dev/null || true
 @dirrm include/isccc
 @dirrm include/isccfg
 @dirrm include/lwres

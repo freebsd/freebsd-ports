@@ -4,3 +4,7 @@ MD5 (DLZ-0.7.0.tar.gz) = 2095ceb0be6f86d6ac7e0990a04d08de
 SIZE (DLZ-0.7.0.tar.gz) = 249768
 MD5 (patch.9.2.2-P1) = 063edc41c756ffc6a1051d5f1937fa2c
 SIZE (patch.9.2.2-P1) = 40087
+MD5 (bind-9.3.1.tar.gz) = 9ff3204eea27184ea0722f37e43fc95d
+SIZE (bind-9.3.1.tar.gz) = 4673603
+MD5 (ctrix_dlz_9.3.1-1.patch.gz) = bdc1edae00952181438947716a53c2b0
+SIZE (ctrix_dlz_9.3.1-1.patch.gz) = 92434

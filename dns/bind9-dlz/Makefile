@@ -13,12 +13,11 @@ MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITES_DLZ:S/$/:dlz/}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION} bind-dlz/:dlz
 PKGNAMESUFFIX?=	-dlz${POSTGRESQL_SUFFIX}${MYSQL_SUFFIX}${BERKLEYDB_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
-DISTFILES=	bind-${ISCVERSION}.tar.gz \
-	   	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
+DISTFILES=	bind-${ISCVERSION}.tar.gz
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	${MASTER_SITES} http://projects.navynet.it/DLZ/:it 
 PATCH_SITE_SUBDIR=	bind9/${ISCVERSION}
-PATCHFILES=	patch.9.2.2-P1
+PATCHFILES=	
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -27,12 +26,12 @@ COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 CONFLICTS?=	bind-8.* bind84-8.* bind9-9.* bind9-sdb-mysql-* host-* skalibs-*
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
-ISCVERSION=	9.2.2
 DLZVERSION=	0.7.0
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
+		--with-randomdev=/dev/random
 PATCH_STRIP=	-p1
 
 # use user config if possible
@@ -41,10 +40,23 @@ PATCH_STRIP=	-p1
 .else
 .if defined(BATCH)
 # default package, can be configured in /etc/make.conf
-BINDDLZ_OPTIONS?=	\"OpenSSL\" \"PostgreSQL\" \"FileSystem\"
+BINDDLZ_OPTIONS?=	\"Threads\" \"OpenSSL\" \"PostgreSQL\" \"FileSystem\"
 .endif
 # make INDEX match
 NO_DESCRIBE=yes
+.endif
+
+.if defined(WITH_DLZ_OLD)
+ISCVERSION=	9.2.2
+DISTFILES+=  	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
+PATCHFILES+=	patch.9.2.2-P1
+PLIST_SUB+=	BIND922="" BIND931="@comment "
+EXTRA_PATCHES+=	${WRKDIR}/dlz.patch ${FILESDIR}/db42-bind922.patch
+.else
+ISCVERSION=	9.3.1
+PATCHFILES+=  	ctrix_dlz_${ISCVERSION}-1.patch.gz:it
+EXTRA_PATCHES+=	${FILESDIR}/db42-bind931.patch
+PLIST_SUB+=	BIND931="" BIND922="@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER)
@@ -99,7 +111,6 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
-EXTRA_PATCHES=	${WRKDIR}/dlz.patch
 PLIST=		${WRKDIR}/.PLIST.more
 PLIST_SUB+=	EXTRA_DOCSDIR=${EXTRA_DOCSDIR}
 
@@ -148,10 +159,18 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_noopresponse_parse.3 lwres_noopresponse_render.3 \
 	lwres_packet.3 lwres_resutil.3 lwres_sethostent.3 \
 	lwres_sethostent_r.3 lwres_string_parse.3
+.if defined(WITH_DLZ_OLD)
+MAN1=	dig.1 host.1
 MAN5=	rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
 	rndc-confgen.8 rndc.8
+.else
+MAN1=	dig.1 host.1 nslookup.1
+MAN5=	named.conf.5 rndc.conf.5
+MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
+	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+.endif
 
 pre-fetch:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
@@ -173,11 +192,13 @@ pre-configure:
 pre-install:
 	${CAT} ${MASTERDIR}/pkg-plist >${PLIST}
 .if !defined(NOPORTDOCS)
+.if defined(WITH_DLZ_OLD)
 .for i in ${DOCS}
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
 	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
 .endfor
 	@${ECHO_CMD} "@dirrm %%EXTRA_DOCSDIR%%" >>${PLIST}
+.endif
 .endif
 
 post-install:
@@ -189,20 +210,22 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
+.if defined(WITH_DLZ_OLD)
 	${MKDIR} ${PREFIX}/${EXTRA_DOCSDIR}
 	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
+.endif
+.endif
+
+.if defined(WITH_BIND9_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+.else
+CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500030
-CONFIGURE_ARGS+=	--enable-threads
-.else
-CONFIGURE_ARGS+=	--disable-threads
-.endif
 
 .if defined(NO_DESCRIBE)
 describe:

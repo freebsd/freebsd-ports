@@ -11,8 +11,10 @@ if [ "${BINDDLZ_OPTIONS}" ]; then
 else
 	dialog --title "configuration options" --clear \
 				--checklist "\n\
-Please select desired options:" -1 -1 11 \
+Please select desired options:" -1 -1 13 \
+OldDLZ		"use old Bind9.2.2" OFF \
 OpenSSL		"OpenSSL support" ON \
+Threads		"Thread support" ON \
 PostgreSQL	"PostgreSQL driver" ON \
 MySQL323	"MySQL 3.23 driver" OFF \
 MySQL40	"MySQL 4.0 driver" OFF \
@@ -47,8 +49,14 @@ exec > ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
+		\"OldDLZ\")
+			echo WITH_OLD_DLZ=YES
+			;;
 		\"OpenSSL\")
 			echo WITH_OPENSSL=YES
+			;;
+		\"Threads\")
+			echo WITH_BIND9_THREADS=YES
 			;;
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
