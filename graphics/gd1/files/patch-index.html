@@ -1,0 +1,71 @@
+--- index.html	Mon Nov 25 11:39:31 2002
++++ index.html	Wed Nov 27 12:47:38 2002
+@@ -35,4 +35,9 @@
+ modern image formats such as PNG and JPEG as soon as possible.
+ 
++<p>Note, that the FreeBSD port of gd2 includes support for GIF files
++ported from the earlier releases of gd. If the WITH_LZW was defined at
++build time, the software will also use LZW-compression when creating
++GIF files.
++
+ <p>
+ gd 2.0.8 <strong>requires</strong> that the following libraries 
+@@ -116,4 +121,18 @@
+ Portions relating to WBMP copyright 2000, 2001, 2002 Maurice Szmurlo and Johan Van 
+ den Brande.
++
++<p>
++GIF decompression code copyright 1990, 1991, 1993, by David Koblas
++(koblas@netcom.com).
++<p>
++Non-LZW-based GIF compression code copyright 1998, by Hutchison Avenue
++Software Corporation (<a href="http://www.hasc.com">http://www.hasc.com/<;/a>,
++info@hasc.com).
++<p>
++LZW-based GIF compression code David Rowley.
++Obtaining a license for the Unisys LZW compression patent is
++entirely between the user and Unisys. The authors of gd can provide
++NO assistance in this matter.
++
+ <p>
+ <strong>Permission has been granted to copy, distribute and modify gd in any
+@@ -192,5 +211,22 @@
+ <li><a href="http://martin.gleeson.com/fly/">fly</a>, by Martin Gleeson
+ </ul>
+-<P>
++
++<P><A NAME="gifpatch"><H3>What does the FreeBSD port add?</H3></A>
++
++<p>This version reinstates GIF support. Specifically, the following
++functions are added: gdImageGif, gdImageGifPtr, gdImageGifCtx,
++gdImageGifToSink, gdImageCreateFromGif, gdImageCreateFromGifCtx,
++gdImageCreateFromGifSource.
++The can be used just like the corresponding functions for the other
++image formats.
++
++<p>Other functions added, but not documented, are: gdImageLzw,
++gdImageLzwPtr, gdImageLzwCtx, gdImageBigGif, gdImageBigGifPtr,
++gdImageBigGifCtx.
++
++<p>The <a href=#gdImageOpenPolygon>gdImageOpenPolygon</a> is added.
++This is basically the same as <a href=#gdImagePolygon>gdImagePolygon</A>,
++but it does not join the start and end points. It is required by GD.pm.
++
+ <A NAME="whatsnew2.0.8"><H3>What's new in version 2.0.8?</H3></A>
+ <P>
+@@ -1058,5 +1094,6 @@
+ <DD>
+ Represents a point in the coordinate space of the image; used
+-by <A HREF="#gdImagePolygon">gdImagePolygon</A> and
++by <A HREF="#gdImagePolygon">gdImagePolygon</A>,
++<A HREF="#gdImageOpenPolygon">gdImageOpenPolygon</A>, and
+ <A HREF="#gdImageFilledPolygon">gdImageFilledPolygon</A>.
+ <PRE>
+@@ -1068,5 +1105,6 @@
+ <DD>
+ A pointer to a <A HREF="#gdPoint">gdPoint</A> structure; passed
+-as an argument to <A HREF="#gdImagePolygon">gdImagePolygon</A>
++as an argument to <A HREF="#gdImagePolygon">gdImagePolygon</A>,
++<A HREF="#gdImageOpenPolygon">gdImageOpenPolygon</A>,
+ and <A HREF="#gdImageFilledPolygon">gdImageFilledPolygon</A>.
+ </DL>
