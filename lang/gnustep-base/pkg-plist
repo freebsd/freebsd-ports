@@ -109,6 +109,9 @@ System/Libraries/Resources/Languages/French
 System/Libraries/Resources/Languages/German
 System/Libraries/Resources/Languages/Italian
 System/Libraries/Resources/Languages/Locale.aliases
+System/Libraries/Resources/Languages/Russian
+System/Libraries/Resources/Languages/Slovak
+System/Libraries/Resources/Languages/UkraineRussian
 System/Libraries/Resources/NSCharacterSets/README.CharSet
 System/Libraries/Resources/NSCharacterSets/alphanumericCharSet.dat
 System/Libraries/Resources/NSCharacterSets/controlCharSet.dat

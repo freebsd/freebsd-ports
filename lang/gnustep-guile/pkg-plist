@@ -1,5 +1,4 @@
 ../share/guile/1.4/ice-9/greg.scm
-../share/guile/1.4/languages/gstep-guile.scm
 System/Headers/ScriptKit/Guile.h
 System/Headers/ScriptKit/GuileInterpreter.h
 System/Headers/ScriptKit/GuileInvocation.h
@@ -9,17 +8,15 @@ System/Headers/ScriptKit/GuileScript.h
 System/Headers/ScriptKit/SKInterpreter.h
 System/Headers/ScriptKit/SKScript.h
 System/Headers/ScriptKit/ScriptKit.h
-System/Headers/libgstep_guile/gstep_guile.h
-System/Headers/libgstep_guile/gg_Object.h
+System/Headers/gnustep/guile/gstep_guile.h
+System/Headers/gnustep/guile/gg_Object.h
+System/Libraries/Guile/languages/gstep-guile.scm
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1.0.0
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.%%VERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.1
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.%%VERSION%%
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.1
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.%%VERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.1
@@ -33,8 +30,9 @@ lib/libgreg.a
 lib/libgreg.la
 lib/libgreg.so
 lib/libgreg.so.1
-@dirrm ../share/guile/1.4/languages/gstep-guile
-@dirrm ../share/guile/1.4/languages
+@dirrm System/Libraries/Guile/languages/gstep-guile
+@dirrm System/Libraries/Guile/languages
+@dirrm System/Libraries/Guile
 @dirrm System/Headers/ScriptKit
 @dirrm bin
 @dirrm lib

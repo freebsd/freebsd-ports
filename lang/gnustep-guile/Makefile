@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-guile
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 

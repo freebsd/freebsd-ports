@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://ftp.codefactory.se/pub/gnu/gstep/ \
-		http://planetmirror.com/pub/gnustep/core/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -48,6 +48,7 @@ System/Makefiles/Master/test-tool.make
 System/Makefiles/Master/tool.make
 System/Makefiles/GNUstep.csh
 System/Makefiles/GNUstep.sh
+System/Makefiles/GNUstep-reset.sh
 System/Makefiles/aggregate.make
 System/Makefiles/application.make
 System/Makefiles/bundle.make
@@ -83,6 +84,7 @@ System/Makefiles/names.make
 System/Makefiles/objc.make
 System/Makefiles/os.sh
 System/Makefiles/palette.make
+System/Makefiles/relative_path.sh
 System/Makefiles/resource-set.make
 System/Makefiles/rules.make
 System/Makefiles/service.make
