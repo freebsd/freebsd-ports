@@ -6,6 +6,8 @@ share/gnome/gdesklets/Displays/GoodWeather/gfx/bg-right.png
 share/gnome/gdesklets/Displays/GoodWeather/gfx/bg-weather.png
 share/gnome/gdesklets/Sensors/GoodWeather/README
 share/gnome/gdesklets/Sensors/GoodWeather/__init__.py
+share/gnome/gdesklets/Sensors/GoodWeather/__init__.pyc
+share/gnome/gdesklets/Sensors/GoodWeather/__init__.pyo
 share/gnome/gdesklets/Sensors/GoodWeather/liquid/large_icons/1.png
 share/gnome/gdesklets/Sensors/GoodWeather/liquid/large_icons/10.png
 share/gnome/gdesklets/Sensors/GoodWeather/liquid/large_icons/11.png
@@ -285,6 +287,8 @@ share/gnome/gdesklets/Sensors/GoodWeather/weather.com/small_icons/8.png
 share/gnome/gdesklets/Sensors/GoodWeather/weather.com/small_icons/9.png
 share/gnome/gdesklets/Sensors/GoodWeather/weather.com/small_icons/na.png
 share/gnome/gdesklets/Sensors/GoodWeather/weather.py
+share/gnome/gdesklets/Sensors/GoodWeather/weather.pyc
+share/gnome/gdesklets/Sensors/GoodWeather/weather.pyo
 @dirrm share/gnome/gdesklets/Sensors/GoodWeather/weather.com/small_icons
 @dirrm share/gnome/gdesklets/Sensors/GoodWeather/weather.com/large_icons
 @dirrm share/gnome/gdesklets/Sensors/GoodWeather/weather.com

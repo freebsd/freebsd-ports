@@ -7,8 +7,10 @@
 
 PORTNAME=	goodweather
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	astro gnome
-MASTER_SITES=	http://people.roqe.org/kr/misc/
+MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/ \
+		http://people.roqe.org/kr/misc/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	GoodWeather-${PORTVERSION}
 
@@ -18,6 +20,7 @@ COMMENT=	A desklet that displays current weather condition and forecast
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
@@ -27,6 +30,8 @@ SKINS=		liquid um weather.com
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
+	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
@@ -46,6 +51,8 @@ do-install:
 		${DATADIR}/gdesklets/Sensors/${NAME}/README
 
 post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
