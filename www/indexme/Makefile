@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
 		http://kyb.homepage.com/perl/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	cj@vallcom.net
+MAINTAINER=	LoRd_CJ@dalusers.com
 
 USE_PERL5=	yes
 
