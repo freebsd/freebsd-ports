@@ -63,6 +63,7 @@ PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
 .endif
 .endif
 PHP_SAPI?=	""
+PHP_EXT_INC?=	""
 
 .if defined(BROKEN_WITH_PHP)
 .	for VER in ${BROKEN_WITH_PHP}
@@ -250,14 +251,17 @@ php-ini:
 # Extensions
 .if ${USE_PHP:L} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	bcmath bz2 calendar crack ctype curl dba dbase dbx dio \
-		dom domxml exif fileinfo filepro fribidi ftp gd gettext gmp \
-		iconv imagick imap interbase ldap mbstring mcal mcrypt mcve \
-		mhash ming mnogosearch mssql mysql mysqli ncurses odbc \
-		openssl oracle overload panda pcntl pcre pdf pgsql posix \
-		pspell radius readline recode session shmop simplexml snmp \
-		soap sockets sqlite sybase_ct sysvmsg sysvsem sysvshm \
-		tidy tokenizer wddx xml xmlrpc xsl xslt yaz yp zip zlib
+_USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase dbx dio \
+		exif fileinfo filepro fribidi ftp gd gettext gmp \
+		iconv imagick imap interbase ldap mbstring mcrypt mcve \
+		mhash ming mnogosearch mssql mysql ncurses odbc \
+		openssl oracle panda pcntl pcre pdf pgsql posix \
+		pspell radius readline recode session shmop snmp \
+		sockets sybase_ct sysvmsg sysvsem sysvshm \
+		tokenizer wddx xml xmlrpc yaz yp zip zlib
+# version specific components
+_USE_PHP_VER4=	${_USE_PHP_ALL} crack domxml mcal overload xslt
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli simplexml soap sqlite tidy xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
@@ -333,16 +337,18 @@ zip_DEPENDS=	archivers/pecl-zip
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 
 .	for extension in ${USE_PHP}
-.		if ${_USE_PHP_ALL:M${extension}} != "" && exists(${PORTSDIR}/${${extension}_DEPENDS})
-.			if defined(USE_PHP_BUILD)
+.		if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
+.			if ${PHP_EXT_INC:M${extension}} == ""
+.				if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
-.			endif
+.				endif
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
+.			endif
 .		else
 isyes=		${extension}
 .			if ${isyes:L} != "yes"
 check-makevars::
-				@${ECHO_CMD} "Unknown extension ${extension}."
+				@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
 				@${FALSE}
 .			endif
 .		endif
