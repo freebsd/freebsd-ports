@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	6.0.641
+PORTVERSION=	641c
 CATEGORIES=	editors
-MASTER_SITES=	http://sf1.mirror.openoffice.org/641b/ \
+MASTER_SITES=	http://sf1.mirror.openoffice.org/641c/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/misc/mrauch/ 
-DISTFILES=	oo_641_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
-EXTRACT_ONLY=	oo_641_src.tar.bz2
+DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
+EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -24,18 +24,18 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 
 GCC_VERSION!=	${CC} --version
-JDK13DIR?=	${LOCALBASE}/jdk1.3.1
-JAVAVM=		${JDK13DIR}/bin/java
+JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
+JAVAVM=         ${JDK13DIR}/bin/java
 
-BUILD_DEPENDS=	stlport:${PORTSDIR}/devel/stlport
+BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= bison:${PORTSDIR}/devel/bison
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS+=	pth-config:${PORTSDIR}/devel/pth
+BUILD_DEPENDS+= pth-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
-WRKSRC=	${WRKDIR}/oo_641_src/config_office
+WRKSRC=	${WRKDIR}/oo_${PORTVERSION}_src/config_office
 
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
 			--with-jdk-home=${JDK13DIR}
@@ -80,10 +80,11 @@ post-extract:
 	${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
 
 do-build:
-	@cd ${WRKDIR}/oo_641_src && ./bootstrap
-	@cd ${WRKDIR}/oo_641_src && /bin/tcsh -c 'source FreeBSDEnv.Set && dmake'
+	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		tcsh -c 'source FreeBSDEnv.Set && dmake'
 
 do-install:
-	@cd ${WRKDIR}/oo_641_src && ./setup -r:oo_setup.resp
+	@cd ${WRKSRC}/.. && ./setup -r:oo_setup.resp
 
 .include <bsd.port.post.mk>
