@@ -32,6 +32,8 @@ include/libonyx/nxo_null.h
 include/libonyx/nxo_operator.h
 include/libonyx/nxo_pmark.h
 include/libonyx/nxo_real.h
+include/libonyx/nxo_regex.h
+include/libonyx/nxo_regsub.h
 include/libonyx/nxo_stack.h
 include/libonyx/nxo_string.h
 include/libonyx/nxo_thread.h
@@ -44,7 +46,7 @@ include/libonyx/tsd.h
 include/libonyx/xep.h
 lib/libonyx.a
 lib/libonyx.so
-lib/libonyx.so.7
+lib/libonyx.so.8
 share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png
@@ -52,6 +54,7 @@ share/onyx-%%ONYX_VERSION%%/doc/html/img10.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img11.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img12.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img13.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img14.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img2.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img3.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img4.png
@@ -73,7 +76,14 @@ share/onyx-%%ONYX_VERSION%%/doc/html/node103.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node104.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node105.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node106.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node107.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node108.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node109.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node11.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node110.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node111.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node112.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node113.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node12.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node13.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node14.html
