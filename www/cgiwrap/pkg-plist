@@ -1,25 +1,26 @@
-%%PORTDOCS%%share/doc/cgiwrap/accesscontrol.html
-%%PORTDOCS%%share/doc/cgiwrap/afs.html
-%%PORTDOCS%%share/doc/cgiwrap/changes.html
-%%PORTDOCS%%share/doc/cgiwrap/comments.html
-%%PORTDOCS%%share/doc/cgiwrap/download.html
-%%PORTDOCS%%share/doc/cgiwrap/faq.html
-%%PORTDOCS%%share/doc/cgiwrap/index.html
-%%PORTDOCS%%share/doc/cgiwrap/install.html
-%%PORTDOCS%%share/doc/cgiwrap/intro.html
-%%PORTDOCS%%share/doc/cgiwrap/maillist.html
-%%PORTDOCS%%share/doc/cgiwrap/notes.html
-%%PORTDOCS%%share/doc/cgiwrap/pubs.html
-%%PORTDOCS%%share/doc/cgiwrap/quickref.html
-%%PORTDOCS%%share/doc/cgiwrap/setup.html
-%%PORTDOCS%%share/doc/cgiwrap/thanks.html
-%%PORTDOCS%%share/doc/cgiwrap/todo.html
-%%PORTDOCS%%share/doc/cgiwrap/tricks.html
-%%PORTDOCS%%share/doc/cgiwrap/y2k.html
+%%PORTDOCS%%%%DOCSDIR%%/accesscontrol.html
+%%PORTDOCS%%%%DOCSDIR%%/afs.html
+%%PORTDOCS%%%%DOCSDIR%%/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/chroot.html
+%%PORTDOCS%%%%DOCSDIR%%/comments.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/maillist.html
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/pubs.html
+%%PORTDOCS%%%%DOCSDIR%%/quickref.html
+%%PORTDOCS%%%%DOCSDIR%%/setup.html
+%%PORTDOCS%%%%DOCSDIR%%/thanks.html
+%%PORTDOCS%%%%DOCSDIR%%/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/tricks.html
+%%PORTDOCS%%%%DOCSDIR%%/y2k.html
 www/cgi-bin/cgiwrap
 www/cgi-bin/cgiwrapd
 www/cgi-bin/nph-cgiwrap
 www/cgi-bin/nph-cgiwrapd
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
 @unexec rmdir %D/www 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/cgiwrap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgiwrap
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -59,10 +59,11 @@ post-install:
 	${CHMOD} 644 ${MAINCGIDIR}/cgiwrapd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in accesscontrol.html afs.html changes.html comments.html \
-		download.html faq.html index.html install.html intro.html \
-		maillist.html notes.html pubs.html quickref.html setup.html \
-		thanks.html todo.html tricks.html y2k.html
+.for file in accesscontrol.html afs.html changes.html chroot.html	\
+		comments.html download.html faq.html index.html		\
+		install.html intro.html maillist.html notes.html	\
+		pubs.html quickref.html setup.html thanks.html		\
+		todo.html tricks.html y2k.html
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/${file} ${DOCSDIR}
 .endfor
 	@${ECHO} "Documentation installed in ${DOCSDIR}"
