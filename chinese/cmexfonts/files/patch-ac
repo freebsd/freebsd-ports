@@ -1,0 +1,56 @@
+--- copyright.orig	Wed Jul 25 01:53:09 2001
++++ copyright	Wed Jul 25 01:53:09 2001
+@@ -0,0 +1,53 @@
++This package was debianized by Anthony Fok <foka@debian.org> on
++Sat, 14 Mar 1998 20:20:06 -0700.
++
++It may be downloaded from:
++
++    http://metalab.unc.edu/pub/Linux/X11/fonts/cmexfonts-0.1.tar.gz
++
++Big5+ Standard by: CMEX, http://www.cmex.org.tw/
++ Font Designed by: DynaLab, http://www.dynalab.com.tw/
++ BDF converted by: Wei-Lun Chao <chaoweilun@sinanet.com>
++
++Copyright:
++
++  (Rough translation from the original Chinese copyright notice)
++
++  The standard documents, font files and programs are Copyright (C)
++  by 行政院研究發展考核委員會 (Executive Council Research and Development
++  Committee???) and 中文數位化技術推廣基金會 (中推會, CMEX).
++  The general public are welcome to use and redistribute these files freely,
++  but please retain the copyright notice and give credits to the
++  copyright holders, and to the designers or producers or the fonts
++  or programs.
++
++  Fonts designed by DynaLab, Inc.
++  Converted to HBF and BDF format and further modified by
++  趙惟倫 (Wei-Lun Chao) <chaoweilun@sinanet.com>, 1998.1, 1998.9.
++  Chao claims no extra copyright for the BDF font.
++
++
++Original Chinese copyright notice (Big5 charset) follows:
++
++[著作權聲明]
++
++  本工具磁片所含之規格、字形及程式的著作權為行政院研究發展考核委員會
++  及中文電腦推廣基金會所共有，歡迎各界廣為流傳並視須要複製使用，但請
++  註明著作權擁有者、字形及程式的設計或製作單位。
++  這些轉碼程式，僅供各界參考使用或修改，提供單位恕不負責服務。
++ 
++ 著作權為行政院研究發展考核委員會及中文電腦推廣基金會所共有
++╔═════════════════════════╗
++║◎提供單位：行政院研考會、中文電腦推廣基金會      ║
++║◎字形設計：華康科技                              ║
++╚═════════════════════════╝
++
++Big5 code follows:
++
++COMMENT 著作權為中華民國行政院研考會、中文電腦推廣基金會所共有
++COMMENT 字形設計為華康科技 Dynalab Inc.
++COMMENT http://www.cmex.org.tw/
++COMMENT Modified by 趙惟倫 wchao@hrz.uni-bielefeld.de, 1998.1. 無新增權利宣告
++COMMENT -dynalab-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5p-0
++COMMENT 正確字集名稱為 big5p，因相容性改為 big5
++FONT -dynalab-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5-0

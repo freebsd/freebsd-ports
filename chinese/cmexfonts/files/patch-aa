@@ -1,0 +1,7 @@
+--- cmex_fonts.alias.orig	Wed Jul 25 01:58:21 2001
++++ cmex_fonts.alias	Wed Jul 25 01:58:21 2001
+@@ -0,0 +1,4 @@
++-dynalab-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5p-0 -dynalab-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5-0
++-dynalab-ming-medium-r-normal-fantizi-16-160-75-75-c-160-big5p-0 -dynalab-ming-medium-r-normal-fantizi-16-160-75-75-c-160-big5-0
++cmex24m -dynalab-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5-0
++cmex16m -dynalab-ming-medium-r-normal-fantizi-16-160-75-75-c-160-big5-0

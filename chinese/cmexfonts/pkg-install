@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+fontdir="/usr/X11R6/lib/X11/fonts/local"
+
+# Add FontPath to /etc/X11/XF86Config
+
+if [ -f /etc/X11/XF86Config ]
+then
+    if ! grep -q "^	*FontPath *[\"']$fontdir/" /etc/X11/XF86Config
+    then
+	echo "Adding FontPath \"$fontdir\" to /etc/X11/XF86Config ..."
+	tmpfile="/tmp/tempfile"
+	sed -e '/Section "Files"/,/EndSection/{
+/EndSection/i\
+	FontPath     \"'$fontdir'/:unscaled\"\
+	FontPath     \"'$fontdir'/\"
+}' /etc/X11/XF86Config >> $tmpfile
+	mv -f $tmpfile /etc/X11/XF86Config
+    else
+	echo "Having FontPath \"$fontdir\" to /etc/X11/XF86Config ..."
+    fi
+else
+    echo "/etc/X11/XF86Config not found!"
+    echo "You need to add"
+    echo "    FontPath   \"$fontdir/:unscaled\""
+    echo "to /etc/X11/XF86Config yourself in order to use the font."
+fi

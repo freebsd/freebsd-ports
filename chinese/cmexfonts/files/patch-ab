@@ -1,0 +1,14 @@
+--- Makefile.orig	Wed Jul 25 02:41:34 2001
++++ Makefile	Wed Jul 25 02:41:12 2001
+@@ -0,0 +1,11 @@
++
++CFONTDIR=${PREFIX}/lib/X11/fonts/local
++
++install:
++	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
++	bdftopcf cmex16m.bdf | gzip - > cmex16m.pcf.gz
++	bdftopcf cmex24m.bdf | gzip - > cmex24m.pcf.gz
++	cp cmex*m.pcf.gz $(CFONTDIR)
++	cp cmex_fonts.alias $(CFONTDIR)
++	mkfontdir $(CFONTDIR)
++	cd ${PREFIX}/lib/X11/fonts/local ; cat cmex_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..

@@ -1,0 +1,9 @@
+lib/X11/fonts/local/cmex16m.pcf.gz
+lib/X11/fonts/local/cmex24m.pcf.gz
+lib/X11/fonts/local/cmex_fonts.alias
+@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@exec cd %D/lib/X11/fonts/local ; cat cmex_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..
+@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@unexec if [ -s %D/lib/X11/fonts/local/fonts.alias ]; then perl -e 'while (<>) { if (!/dynalab-ming/) { print <>} }' < %D/lib/X11/fonts/local/fonts.alias > /tmp/fonts.alias.$$; mv /tmp/fonts.alias.$$ %D/lib/X11/fonts/local/fonts.alias; fi
+@unexec if [ `\head -1 %D/lib/X11/fonts/local/fonts.dir` = 0 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
+@unexec if [ ! -s %D/lib/X11/fonts/local/fonts.alias ]; then rm -f %D/lib/X11/fonts/local/fonts.alias; fi
