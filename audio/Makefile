@@ -65,6 +65,7 @@
     SUBDIR += gnapster
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
+    SUBDIR += gnowavcut
     SUBDIR += gogo
     SUBDIR += gqmpeg
     SUBDIR += gramofile
