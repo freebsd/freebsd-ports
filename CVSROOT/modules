@@ -8204,6 +8204,7 @@ sbcl		ports/lang/sbcl
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scalapack	ports/math/scalapack
+scan_ffs	ports/sysutils/scan_ffs
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
