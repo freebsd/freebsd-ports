@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.64
+PORTVERSION=	2.66
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 DISTFILES=	yab.tar.Z
