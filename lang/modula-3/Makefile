@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.26 1998/10/13 01:17:27 jseger Exp $
+# $Id: Makefile,v 1.27 1998/12/04 07:23:01 asami Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -22,17 +22,6 @@ MAN1=		analyze_coverage.1 m3browser.1 m3build.1 \
 		m3totex.1 m3where.1 quake.1 recordheap.1
 SCRIPTS_ENV+=	MAJOR=${major} PKGDIR=${PKGDIR} PLIST=${PLIST}
 
-# Support building on systems with or without X11 installed.  The port
-# only supports X11R6 in the standard location, so we don't bother using
-# the X11BASE macro.  It's not defined yet at this point in the Makefile
-# anyway.
-.if exists(/usr/X11R6/lib/libX11.a)
-PLIST=		${WRKDIR}/PLIST
-MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
-.else
-PLIST=		${WRKDIR}/PLIST.noX11
-.endif
-
 # Shared library major version number.  Keep this in sync with the
 # modula-3-lib port.
 major=		6
@@ -42,6 +31,17 @@ major=		6
 # to do the entire build as root, we arrange for everything to first
 # be "installed" into the following directory, which we own.
 temp_prefix=	${WRKSRC}/installed
+
+# Support building on systems with or without X11 installed.
+.ifdef NO_X11
+PLIST=		${WRKDIR}/PLIST.noX11
+.else
+pre-fetch:
+	@echo "To build this port without X11, define \"NO_X11\"."
+
+PLIST=		${WRKDIR}/PLIST
+MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
+.endif
 
 do-install:
 	@echo "Deleting extraneous cruft"
@@ -93,7 +93,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT ${PREFIX}/share/modula-3
 	@echo "Stripping executables"
 	@cd ${temp_prefix}; \
-	    find bin -type f ! -name recordheap | (cd ${PREFIX}; xargs strip)
+	    find bin -type f ! -name recordheap |\
+		(cd ${PREFIX}; xargs ${SH} ${SCRIPTDIR}/maybe-strip)
 	@cd ${PREFIX}/lib/m3/FreeBSD2; strip m3 m3cgc1 m3mkdir
 	@cd ${PREFIX}/bin; \
 	    ln -f m3build m3build-${major}
