@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.1
+PORTVERSION=	0.83.2
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,11 +20,12 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt \
-		${PTHREAD_LIBS}"
+		${PTHREAD_LIBS:S/"//g}"
 CONFIGURE_ARGS=	--enable-manual-db-detect
 MANCOMPRESSED=	no
 
@@ -36,15 +37,24 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/BerkeleyDB \
 		Documentation/BerkeleyDB.nl \
 		Documentation/DCextensions/p2p_capabilities \
+		Documentation/DCextensions/p2p_capabilities.nl \
 		Documentation/DCextensions/search_by_content \
+		Documentation/DCextensions/search_by_content.nl \
 		Documentation/GDL.nl \
 		Documentation/GDL Documentation/VAR \
+		Documentation/LS_cache Documentation/UNODE.nl \
+		Documentation/VAR.nl \
 		Documentation/UNODE Documentation/Vshare \
 		Documentation/Vshare.nl \
 		Documentation/commands \
+		Documentation/commands.nl \
 		Documentation/programs.nl \
 		Documentation/programs.pl \
+		Documentation/output.nl \
 		Documentation/output Documentation/programs
+
+post-extract:
+	@${CP} ${FILESDIR}/lp_mutex.c ${WRKSRC}/src
 
 post-patch:
 .for file in ${DOC_FILES}
@@ -59,16 +69,18 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${PERL} -pi -e 's|/usr/bin/env perl|${PERL}|' \
 		${WRKSRC}/GDLjoiner
+	@${REINPLACE_CMD} -E -e 's|^(dctc_SOURCES.+)$$|\1 lp_mutex.c|; \
+		s|^(dctc_OBJECTS[^\\]+)(\\*)$$|\1 lp_mutex.o \2|' \
+		${WRKSRC}/src/Makefile.in
 
 pre-build:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO_CMD} '#include <errno.h>' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#ifndef ENODATA' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '# define ENODATA ENOMSG' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO_CMD} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#define HAVE_SYS_PARAM_H 1' >> ${CONFIGURE_WRKSRC}/config.h
 
 do-install:
 .ifndef(NOPORTDOCS)
