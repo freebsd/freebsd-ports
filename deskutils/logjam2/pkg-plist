@@ -1,1 +1,6 @@
 bin/logjam
+share/pixmaps/logjam_goat.png
+share/pixmaps/logjam_pencil.png
+share/pixmaps/logjam_ljuser.png
+share/pixmaps/logjam_ljcomm.png
+@dirrm share/pixmaps
