@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -28,12 +27,15 @@ RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 #
 
 USE_XLIB=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cdrom \
 		--disable-split-hd
-CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
+
+CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer \
+		-I${X11BASE}/include
 
 # PREFIX isn't honored. force it w/ prefix.
 MAKE_ARGS=	prefix=${PREFIX}
