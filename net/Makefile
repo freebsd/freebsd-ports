@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.280 1999/06/27 17:42:48 cpiazza Exp $
+# $Id: Makefile,v 1.281 1999/06/28 01:46:12 billf Exp $
 #
 
     SUBDIR += IglooFTP
@@ -145,7 +145,6 @@
     SUBDIR += proftpd
     SUBDIR += pvm
     SUBDIR += queso
-    SUBDIR += quirc
     SUBDIR += radius
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
