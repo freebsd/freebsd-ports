@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAXDriver/Sablotron/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAXDriver/Sablotron.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAXDriver/Sablotron
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAXDriver 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAXDriver 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true

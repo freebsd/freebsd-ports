@@ -1,0 +1,8 @@
+This extension allows to run the Sablotron XSLT processor as a SAX
+driver.  A stylesheet passed to the constructor is applied to a document
+passed in as the parse_uri method argument.
+
+WWW: http://search.cpan.org/search?dist=XML-SAXDriver-Sablotron
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
