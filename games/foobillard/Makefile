@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
 MAINTAINER=	thomas.vogt@bsdunix.ch
+COMMENT=	A free OpenGL-billard game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \
@@ -26,6 +27,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-SDL --prefix=${PREFIX} \
 		--includedir="${X11BASE}/include"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 
 .if !defined(WITH_NVIDIA_BUMPREF)
 CONFIGURE_ARGS+=	--disable-bumpref
