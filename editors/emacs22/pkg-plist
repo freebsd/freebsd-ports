@@ -8,6 +8,19 @@ bin/emacs-19.29
 bin/etags
 bin/emacsclient
 @exec if [ ! -d %d/share/emacs/site-lisp ]; then mkdir -p %D/share/emacs/site-lisp; fi
+libexec/emacs/19.29/i386--freebsd/wakeup
+libexec/emacs/19.29/i386--freebsd/profile
+libexec/emacs/19.29/i386--freebsd/digest-doc
+libexec/emacs/19.29/i386--freebsd/sorted-doc
+libexec/emacs/19.29/i386--freebsd/movemail
+libexec/emacs/19.29/i386--freebsd/cvtmail
+libexec/emacs/19.29/i386--freebsd/fakemail
+libexec/emacs/19.29/i386--freebsd/yow
+libexec/emacs/19.29/i386--freebsd/emacsserver
+libexec/emacs/19.29/i386--freebsd/hexl
+libexec/emacs/19.29/i386--freebsd/timer
+libexec/emacs/19.29/i386--freebsd/rcs2log
+libexec/emacs/19.29/i386--freebsd/vcdiff
 share/emacs/19.29/etc/e/eterm
 share/emacs/19.29/etc/e/eterm.ti
 share/emacs/19.29/etc/3B-MAXMEM
