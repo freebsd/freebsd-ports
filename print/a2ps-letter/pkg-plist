@@ -218,6 +218,11 @@ share/a2ps/afm/pzdr.afm
 share/a2ps/ppd/README
 share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
+share/emacs/site-lisp/a2ps-print.el
+share/emacs/site-lisp/a2ps.el
+share/emacs/site-lisp/make-regexp.el
+@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
+@unexec rmdir %D/share/emacs 2>/dev/null || true
 bin/a2ps
 bin/ogonkify
 bin/composeglyphs
