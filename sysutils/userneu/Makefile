@@ -17,7 +17,7 @@ COMMENT=	Account management and creation tool
 RUN_DEPENDS=	\
 ${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5/ \
 ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/ \
-${SITE_PERL}/mach/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
+${SITE_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GLOCATE=	${PREFIX}/${PORTNAME}
