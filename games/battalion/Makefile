@@ -1,12 +1,12 @@
 # New ports collection makefile for:	battalion
-# Version required:			1.4
 # Date created:				17 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	battalion-1.4
+PORTNAME=	battalion
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.evl.uic.edu/aej/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	crafty-open-medium
-# Version required:			10 September 1996
 # Date created:				1 June 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	medium
-PKGNAME=	crafty-open-medium-19960910
+PORTNAME=	crafty-open-medium
+PORTVERSION=	19960910
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
+DISTNAME=	medium
 
 MAINTAINER=	seggers@semyam.dinoco.de
 

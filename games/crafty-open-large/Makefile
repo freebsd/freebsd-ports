@@ -1,12 +1,12 @@
 # New ports collection makefile for:	crafty-open-large
-# Version required:			10 September 1996
 # Date created:				1 June 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	crafty-open-large-19960910
+PORTNAME=	crafty-open-large
+PORTVERSION=	19960910
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip

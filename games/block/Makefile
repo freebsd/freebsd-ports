@@ -1,12 +1,12 @@
 # New ports collection makefile for:	block
-# Version required:			0.6
 # Date created:				10 May 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	block-0.6
+PORTNAME=	block
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy

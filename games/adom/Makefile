@@ -1,15 +1,15 @@
 # New ports collection makefile for:    adom
-# Version required:	0.99g15
 # Date created:		22 July 1999
 # Whom:			Oleg V. Volkov <rover@lglobus.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	adom-099g15-elf
-PKGNAME=	adom-0.99.g15
+PORTNAME=	adom
+PORTVERSION=	0.99.g15
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
+DISTNAME=	adom-099g15-elf
 
 MAINTAINER=	rover@lglobus.ru
 

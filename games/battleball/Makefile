@@ -1,15 +1,15 @@
 # New ports collection makefile for:	battleball
-# Version required:			2.0
 # Date created:				18 December 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	battleball.20.src
-PKGNAME=	battleball-2.0
+PORTNAME=	battleball
+PORTVERSION=	2.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.utexas.edu/users/pahardin/
+DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	will@FreeBSD.org
 

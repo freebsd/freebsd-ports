@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cosmo
-# Version required:	2.0.4
 # Date created:		28 December 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cosmo-2.0.4
+PORTNAME=	cosmo
+PORTVERSION=	2.0.4
 CATEGORIES=	games
 MASTER_SITES=	http://taraco.u-aizu.ac.jp/~eiju/cosmo/ \
 		ftp://ftp.jinr.ru/pub/PD/cosmo/
