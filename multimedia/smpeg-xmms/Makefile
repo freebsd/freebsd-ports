@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	smpeg-xmms
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
+MASTER_SITES=	http://www.xmms.org/files/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/ \
+		ftp://ftp.fu-berlin.de/unix/sound/xmms/%SUBDIR%/
+MASTER_SITE_SUBDIR=	plugins/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mpeg video plugin for XMMS
@@ -16,21 +19,16 @@ COMMENT=	A mpeg video plugin for XMMS
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.3:${PORTSDIR}/multimedia/xmms
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_SDL=	yes
+USE_GNOME=	gnomehack gtk12
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
-post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/Input
+do-install:
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/src/.libs/libsmpeg_xmms.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
