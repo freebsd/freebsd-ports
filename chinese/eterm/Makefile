@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
 		ftp://ftp.sogang.ac.kr/.c/tools/X11/Enlightenment/Eterm/
 DISTNAME=	Eterm-${PORTVERSION}
 
-MAINTAINER=	keichii@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts

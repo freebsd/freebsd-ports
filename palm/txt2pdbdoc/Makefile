@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	palm converters
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
-MAINTAINER=	keichii@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 PREFIX=		${LOCALBASE}/
 
