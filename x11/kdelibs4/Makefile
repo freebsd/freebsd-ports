@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/10/01 18:35:32 brian Exp $
+# $Id: Makefile,v 1.21 1998/10/10 06:43:48 kuriyama Exp $
 #
 
 DISTNAME=	kdelibs-1.0
@@ -23,16 +23,18 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-lib=$(X11BASE)/lib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libjscript.so.0.90  ${PREFIX}/lib/libjscript.so; \
-		${LN} -sf libkdecore.so.1.0   ${PREFIX}/lib/libkdecore.so; \
-		${LN} -sf libkdeui.so.1.0     ${PREFIX}/lib/libkdeui.so; \
-		${LN} -sf libkfile.so.1.0     ${PREFIX}/lib/libkfile.so; \
-		${LN} -sf libkfm.so.1.0       ${PREFIX}/lib/libkfm.so; \
-		${LN} -sf libkhtmlw.so.1.0    ${PREFIX}/lib/libkhtmlw.so; \
-		${LN} -sf libmediatool.so.1.0 ${PREFIX}/lib/libmediatool.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libjscript.so.0.90  ${PREFIX}/lib/libjscript.so
+	${LN} -sf libkdecore.so.1.0   ${PREFIX}/lib/libkdecore.so
+	${LN} -sf libkdeui.so.1.0     ${PREFIX}/lib/libkdeui.so
+	${LN} -sf libkfile.so.1.0     ${PREFIX}/lib/libkfile.so
+	${LN} -sf libkfm.so.1.0       ${PREFIX}/lib/libkfm.so
+	${LN} -sf libkhtmlw.so.1.0    ${PREFIX}/lib/libkhtmlw.so
+	${LN} -sf libmediatool.so.1.0 ${PREFIX}/lib/libmediatool.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

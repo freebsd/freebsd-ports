@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1998/09/17 22:31:32 steve Exp $
+# $Id: Makefile,v 1.13 1998/11/11 02:02:14 asami Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -20,11 +20,20 @@ WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+EXTRA_PKG_ARGS=	-i ${PKGDIR}/INSTALL.wish
 
 SHLIB_MAJOR=    1
 SHLIB_MINOR=    2
 MAKEFILE=       makefile
 TK_LIB=		libtk80.so
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}
+.else
+TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
+.endif
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
@@ -44,12 +53,4 @@ post-install:
 test:
 	cd ${WRKSRC}; make test
 
-.include <bsd.port.mk>
-
-PKG_ARGS+=	-i ${PKGDIR}/INSTALL.wish
-
-.if ${PORTOBJFORMAT} == "elf"
-TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}
-.else
-TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
-.endif
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		11 March 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.6 1998/09/26 12:45:10 kuriyama Exp $
+# $Id: Makefile,v 1.7 1998/09/28 09:53:08 asami Exp $
 #
 
 DISTNAME=	tcl7.6p2
@@ -29,6 +29,8 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${MV} ${WRKDIR}/tcl7.6 ${WRKDIR}/${DISTNAME}
 
@@ -45,9 +47,9 @@ pre-install:
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libtcl76jp.so.1.0 ${PREFIX}/lib/libtcl76jp.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout" 
+	${LN} -sf libtcl76jp.so.1.0 ${PREFIX}/lib/libtcl76jp.so
+.endif
 
 test:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
@@ -55,4 +57,4 @@ test:
 install-man:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.22 1998/10/14 03:00:44 jseger Exp $
+# $Id: Makefile,v 1.23 1998/10/20 01:24:32 steve Exp $
 #
 
 DISTNAME=	BLT2.4f
@@ -22,14 +22,16 @@ MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
 		stripchart.n table.n tabset.n tile.n vector.n watch.n winop.n \
 		beep.n cutbuffer.n
 
-post-install:
-	${LN} -sf libBLT.so.${SO_VERSION} ${PREFIX}/lib/libBLT.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
 SO_VERSION=	2
 .else
 SO_VERSION=	2.4
 .endif
+
+post-install:
+	${LN} -sf libBLT.so.${SO_VERSION} ${PREFIX}/lib/libBLT.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.post.mk>

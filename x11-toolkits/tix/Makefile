@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1998/09/25 10:05:14 asami Exp $
+# $Id: Makefile,v 1.19 1998/10/06 08:05:43 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
@@ -35,6 +35,16 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 TIX_LIB=	libtix4180.so
 TIXSAM_LIB=	libtixsam4180.so
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+TIX_LIB_FILE=	${TIX_LIB}.1
+TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
+.else
+TIX_LIB_FILE=	${TIX_LIB}.1.2
+TIXSAM_LIB_FILE=${TIXSAM_LIB}.1.2
+.endif
+
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
@@ -59,12 +69,4 @@ post-install:
 	@# These two files are the same
 	/bin/ln -sf ../../tix.h ${PREFIX}/include/tix/generic
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-TIX_LIB_FILE=	${TIX_LIB}.1
-TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
-.else
-TIX_LIB_FILE=	${TIX_LIB}.1.2
-TIXSAM_LIB_FILE=${TIXSAM_LIB}.1.2
-.endif
+.include <bsd.port.post.mk>

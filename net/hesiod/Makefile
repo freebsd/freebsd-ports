@@ -3,7 +3,7 @@
 # Date created:				6/11/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.2 1998/07/05 13:09:46 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/07 19:34:45 nectar Exp $
 #
 
 DISTNAME=		hesiod-3.0.2
@@ -23,16 +23,7 @@ MAN5=			hesiod.conf.5
 
 GNU_CONFIGURE=		YES
 
-post-install:
-	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
-
-.include <bsd.port.mk>
-
-.if !defined(PORTOBJFORMAT) # bsd.port.mk must be out of date
-PORTOBJFORMAT=		aout
-CONFIGURE_ENV+=		PORTOBJFORMAT="${PORTOBJFORMAT}"
-MAKE_ENV+=		PORTOBJFORMAT="${PORTOBJFORMAT}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == elf
 SHLIB=libhesiod.so.3
@@ -43,3 +34,8 @@ CONFIGURE_ENV+=		LDFLAGS="-shared"
 .endif
 
 MAKE_ENV+=		SHLIB="${SHLIB}"
+
+post-install:
+	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.post.mk>

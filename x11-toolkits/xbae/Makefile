@@ -5,7 +5,7 @@
 # With some
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:56:47 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/21 21:36:27 steve Exp $
 #
 
 DISTNAME=	Xbae-4.6.2
@@ -20,10 +20,12 @@ REQUIRES_MOTIF= YES
 USE_IMAKE=	YES
 MAN3=		XbaeCaption.3 XbaeMatrix.3
 
+.include <bsd.port.pre.mk>
+
 post-install:
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libXbae.so.6.2 ${PREFIX}/lib/libXbae.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libXbae.so.6.2 ${PREFIX}/lib/libXbae.so
+.endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

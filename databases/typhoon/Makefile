@@ -3,7 +3,7 @@
 # Date created:		Wed Dec 11 15:16:19 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1998/10/20 01:30:01 steve Exp $
+# $Id: Makefile,v 1.5 1998/10/22 02:30:24 asami Exp $
 #
 
 DISTNAME=	typhoon-1.10.3
@@ -22,13 +22,15 @@ MAN3=d_close.3 d_crget.3 d_crread.3 d_crset.3 d_dbdpath.3 d_dbfpath.3 \
      d_recwrite.3 d_setfiles.3
 MAN1=ddlp.1
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	@${MKDIR} ${PREFIX}/share/typhoon
 	@${INSTALL_DATA} ${WRKSRC}/man/manual.asc ${PREFIX}/share/typhoon
 	@${INSTALL_DATA} ${WRKSRC}/include/environ.h ${WRKSRC}/include/typhoon.h ${PREFIX}/include
-	@if [ ${PORTOBJFORMAT} = "aout" ]; then \
-		${LN} -sf libtyphoon.so.1.10 ${PREFIX}/lib/libtyphoon.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libtyphoon.so.1.10 ${PREFIX}/lib/libtyphoon.so
+.endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.46 1998/09/22 06:08:34 asami Exp $
+# $Id: Makefile,v 1.47 1998/10/27 04:12:44 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -61,23 +61,26 @@ pre-fetch:
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 pre-install:
-	${MKDIR} /usr/X11R6
+	${MKDIR} ${X11BASE}
+
 post-install:
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-	    for lib in PEX5 SM X11 XIE Xi Xmu Xt oldX; do \
-		${LN} -sf lib$${lib}.so.6.0 ${PREFIX}/lib/lib$${lib}.so; \
-	    done; \
-	    for lib in X11 Xaw Xtst; do \
-		${LN} -sf lib$${lib}.so.6.1 ${PREFIX}/lib/lib$${lib}.so; \
-	    done; \
-	    for lib in Xp; do \
-		${LN} -sf lib$${lib}.so.6.2 ${PREFIX}/lib/lib$${lib}.so; \
-	    done; \
-	    for lib in ICE Xext; do \
-		${LN} -sf lib$${lib}.so.6.3 ${PREFIX}/lib/lib$${lib}.so; \
-	    done; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+.for lib in PEX5 SM X11 XIE Xi Xmu Xt oldX
+	${LN} -sf lib${lib}.so.6.0 ${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in X11 Xaw Xtst
+	${LN} -sf lib${lib}.so.6.1 ${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in Xp
+	${LN} -sf lib${lib}.so.6.2 ${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in ICE Xext
+	${LN} -sf lib${lib}.so.6.3 ${PREFIX}/lib/lib${lib}.so
+.endfor
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

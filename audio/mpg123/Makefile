@@ -3,7 +3,7 @@
 # Date created:			25 June 1997
 # Whom:				Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.7 1998/09/28 01:50:59 steve Exp $
+# $Id: Makefile,v 1.8 1998/10/03 12:09:54 jkoshy Exp $
 #
 
 DISTNAME=	mpg123-0.59o
@@ -15,10 +15,12 @@ MAINTAINER=	jkoshy@freebsd.org
 
 MAN1=		mpg123.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
 ALL_TARGET=	freebsd-elf
 .else
 ALL_TARGET=	freebsd
 .endif
+
+.include <bsd.port.post.mk>

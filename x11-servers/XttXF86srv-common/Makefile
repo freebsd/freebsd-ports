@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.6 1998/10/15 01:18:23 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/22 00:25:53 steve Exp $
 #
 
 DISTNAME=	xc
@@ -82,6 +82,8 @@ TMPPLIST=		${WRKDIR}/.PLIST.common.mktmp
 BROKEN=		This port is dummy.
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(SERVER)
 .if ${SERVER} != xfs
 pre-fetch:
@@ -139,14 +141,14 @@ do-install:
 	@( \
 	cd ${WRKSRC}/lib/font; \
 	${SETENV} ${MAKE_ENV} ${MAKE} install; \
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libfont.so.1.0 ${PREFIX}/lib/libfont.so; \
-	fi; \
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib; \
 	${INSTALL_SCRIPT} ${FILESDIR}/mkfontdir.pl ${PREFIX}/bin; \
 	${MKDIR} ${DOCDIR}; \
 	${INSTALL_DATA} ${XTTDIR}/xtt10-*.eng ${DOCDIR}; \
 	${INSTALL_DATA} ${XTTDIR}/xtt10-*.jis ${DOCDIR} )
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libfont.so.1.0 ${PREFIX}/lib/libfont.so
+.endif
 .elif defined(SERVER) && ${SERVER} == xfs
 do-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${INSTALL_PROGRAM} ${WRKSRC}/programs/xfs/xfs ${PREFIX}/bin/xfs.xtt
@@ -163,4 +165,4 @@ post-install:
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.2 1997/07/13 18:49:24 max Exp $
+# $Id: Makefile,v 1.3 1998/09/27 20:13:13 steve Exp $
 #
 
 DISTNAME=	simpack-3.0
@@ -14,6 +14,14 @@ DISTFILES=	SimPack3.tar.Z
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 
 WRKSRC=	${WRKDIR}/simpack
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	1
+.else
+VERSION=	1.0
+.endif
 
 post-build: create-libs create-scripts
 
@@ -131,10 +139,4 @@ create-deq-alias:
 	@${ECHO} ${PREFIX}/lib/SimPack/constraint/differential/deq $$*       \
 			   >> ${WRKDIR}/temp/deq.alias
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	1
-.else
-VERSION=	1.0
-.endif
+.include <bsd.port.post.mk>

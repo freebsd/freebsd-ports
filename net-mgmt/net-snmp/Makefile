@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.21 1998/08/30 15:51:13 steve Exp $
+# $Id: Makefile,v 1.22 1998/10/19 22:43:08 nectar Exp $
 #
 
 DISTNAME=	ucd-snmp-3.5.3
@@ -36,6 +36,17 @@ SBIN=		snmpd snmptrapd
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 
+.include <bsd.port.pre.mk>
+
+
+.if ${PORTOBJFORMAT} == "aout"
+SHLIB_VERSION=3.5
+PATCHDIR=patches.aout
+.else
+SHLIB_VERSION=3
+.endif
+MAKE_ENV+= SHLIB_VERSION=${SHLIB_VERSION}
+
 post-install:
 	( cd ${PREFIX}/bin && strip ${BIN} )
 	( cd ${PREFIX}/sbin && strip ${SBIN} )
@@ -51,12 +62,4 @@ post-install:
 	 fi
 	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if (${PORTOBJFORMAT} == "aout")
-SHLIB_VERSION=3.5
-PATCHDIR=patches.aout
-.else
-SHLIB_VERSION=3
-.endif
-MAKE_ENV+= SHLIB_VERSION=${SHLIB_VERSION}
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.28
 #
-# $Id: Makefile,v 1.36 1998/10/05 05:02:28 steve Exp $
+# $Id: Makefile,v 1.37 1998/10/10 04:07:04 steve Exp $
 #
 # Note this file is included from japanese/expect/Makefile
 
@@ -28,14 +28,16 @@ MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 MAN3=		libexpect.3
 .endif
 
-post-install:
-	${LN} -sf ${SOLIB} ${PREFIX}/lib/libexpect528.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
 SOLIB=	libexpect528.so.1
 .else
 SOLIB=	libexpect528.so.1.2
 .endif
+
+post-install:
+	${LN} -sf ${SOLIB} ${PREFIX}/lib/libexpect528.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.post.mk>
