@@ -11,3 +11,5 @@ sending (Mail), outline editing (Outline), compiling (Compile),
 running subshells within Emacs windows (Shell), running a Lisp
 read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy
 (Doctor :-) and many more.
+
+WWW: http://www.gnu.org/software/emacs/

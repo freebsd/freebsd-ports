@@ -6,5 +6,7 @@ configuration files for many programs.  Modules are used
 to define the configuration options.  A sample template is
 provided to aid in creating new modules.
 
+WWW: http://www.imada.ou.dk/~blackie/dotfile/
+
 - Oly
 oly@world.std.com
