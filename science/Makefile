@@ -50,6 +50,7 @@
     SUBDIR += simlib
     SUBDIR += vis5d+
     SUBDIR += vmd
+    SUBDIR += x11iraf
     SUBDIR += xloops-ginac
     SUBDIR += xmakemol
 
