@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/
 MAINTAINER=	nsayer@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-posix-threads
+CONFIGURE_ARGS=	--disable-posix-threads
 
 MAN3=		mcrypt.3
 
