@@ -1,12 +1,13 @@
 # New ports collection makefile for:	mnews
-# Version required:		1.19PL2
+# Version required:		1.21
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/03/20 17:40:11 itojun Exp $
+# $Id: Makefile,v 1.11 1998/06/06 03:44:56 itojun Exp $
 #
 
 DISTNAME=	mnews121
+PKGNAME?=	ja-mnews-1.21
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
 
@@ -20,19 +21,13 @@ DOCS=		FAQ.doc board.doc gnspool.doc mnews.doc prerel.doc	\
 		present.doc read1ST.doc readme.doc update.doc youbin.doc
 SAMPLES=	_mnews.smp jnames.fj jnames.jp jnames.smp jnames.tnn
 
-.ifdef WITH_GNSPOOL
-GNSPOOL=	1
-PKGNAME=	ja-mnews-gnspool-1.21
-.else
-GNSPOOL=	0
-.endif
-PKGNAME?=	ja-mnews-1.21
+GNSPOOL?=	0
 
 do-configure:
-	@for f in Makefile site_dep.h ; do \
-	  ${SED} -e s+@PREFIX@+${PREFIX}+ -e s+@GNSPOOL@+${GNSPOOL}+ \
-		${FILESDIR}/$$f.in > ${WRKSRC}/$$f ; \
-	done
+.for f in Makefile site_dep.h
+	${SED} -e s+@PREFIX@+${PREFIX}+ -e s+@GNSPOOL@+${GNSPOOL}+ \
+		${FILESDIR}/$f.in > ${WRKSRC}/$f
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mnews ${PREFIX}/bin
