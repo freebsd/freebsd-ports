@@ -7,7 +7,7 @@
 
 PORTNAME=	pexts
 PORTVERSION=	20020121
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -18,18 +18,24 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	Third party Pike 7.2 extensions
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike72/
-LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash/ \
-		mcrypt.8:${PORTSDIR}/security/libmcrypt/
+LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash/ \
+		mcrypt:${PORTSDIR}/security/libmcrypt/
 
 WRKSRC=		${WRKDIR}/pexts
 
-GNU_CONFIGURE=  yes
+PIKEVERSION=	7.2.570
 
-CONFIGURE_ARGS+= --without-debug
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=	--without-debug
+
+.include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 
 USE_GMAKE=	yes
 
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
