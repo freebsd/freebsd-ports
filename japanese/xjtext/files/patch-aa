@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Jul  8 00:36:46 2000
++++ Makefile	Sat Jul  8 00:36:57 2000
+@@ -2,7 +2,7 @@
+ CFLAGS	=-c -g -O 
+ INCDIRS	=-I/usr/X11R6/include -I/usr/local/include
+ LIBS 	=-lX11 -lXext  -lm -lfl 
+-IMLIBS	=-ljpeg -lpng -ltiff -lz -lgif -lImlib
++IMLIBS	=-ljpeg -lpng -ltiff -lz -lungif -lImlib
+ LIBDIRS	=-L/usr/X11R6/lib/ -L/usr/local/lib
+ OBJS	=xwindow.o xfont.o xtext.o xjtext.o lex.yy.o parser.tab.o xjtext-main.o
+ 
