@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.3 1998/06/29 05:23:40 nectar Exp $
+# $Id: Makefile,v 1.19 1998/07/10 21:06:22 nectar Exp $
 #
 
 DISTNAME=	ucd-snmp-3.5
@@ -37,7 +37,7 @@ SBIN=		snmpd snmptrapd
 post-install:
 	( cd ${PREFIX}/bin; strip ${BIN} )
 	( cd ${PREFIX}/sbin; strip ${SBIN} )
-	(cd ${PREFIX}/lib && ${LN} libsnmp.so libsnmp.so.3.5)
+	(cd ${PREFIX}/lib && ${LN} -f libsnmp.so libsnmp.so.3.5)
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/etc/* ; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
