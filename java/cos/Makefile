@@ -25,8 +25,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/cos
 	@${INSTALL_DATA} ${WRKSRC}/lib/cos.jar ${PREFIX}/share/java/classes
 	@cd ${WRKSRC}; \
-	  ${CP} readme.html ${PREFIX}/share/java/cos; \
-	  ${CP} license.html ${PREFIX}/share/java/cos; \
+	  ${CP} readme.txt ${PREFIX}/share/java/cos; \
+	  ${CP} license.txt ${PREFIX}/share/java/cos; \
 	  ${CP} -R doc ${PREFIX}/share/java/cos; \
 	  ${CP} upload.war ${PREFIX}/share/java/cos/doc
 
