@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gbrun/Makefile.in	2002/06/21 13:21:30	1.1
++++ gbrun/Makefile.in	2002/06/21 13:22:29
+@@ -152,7 +152,7 @@
+ libgbrun_la_LIBADD = $(EXTRA_GNOME_LIBS) -lm @GLIB_LIBS@ 	$(top_builddir)/gbrun/objects/libgbobj.la         $(top_builddir)/gbrun/objects/gba/libgba.la         $(top_builddir)/gb/libgb.la
+ 
+ 
+-CFLAGS =  -g -Wall $(EXTRA_GNOME_CFLAGS)
++CFLAGS =  @CFLAGS@ -Wall $(EXTRA_GNOME_CFLAGS)
+ 
+ libgbrunincludedir = $(includedir)/gbrun
+ 
