@@ -7,6 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
