@@ -1,0 +1,19 @@
+--- modules/src/luafull/Makefile.orig	Thu Nov 25 15:03:03 2004
++++ modules/src/luafull/Makefile	Fri Mar 11 14:43:58 2005
+@@ -5,14 +5,14 @@
+ CFLAGS += -I$(PREFIX)/include -I. \
+ 	-DUSE_DLOPEN=1
+ else
+-CFLAGS += -I$(PREFIX)/include -I. -DUSE_POPEN=1 \
++CFLAGS += -I$(PREFIX)/include -I. -DUSE_POPEN=1 $(PTHREAD_CFLAGS) \
+ 	-DUSE_DLOPEN=1 -DUSE_READLINE=1 -DLUA_USERCONFIG=\"saconfig.c\"
+ endif
+ 
+ 
+ LDFLAGS += -L$(PREFIX)/lib
+ ifeq "$(OS)" "FreeBSD"
+-	LDFLAGS+= -llua -llualib -lm
++	LDFLAGS+= $(PTHREAD_LIBS) -llua -llualib -lm
+ else
+  ifeq "$(OS)" "OpenBSD"
+  	LDFLAGS+= -llua -llualib -lm

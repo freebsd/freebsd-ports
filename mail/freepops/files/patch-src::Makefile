@@ -1,0 +1,29 @@
+--- src/Makefile.orig	Tue Nov 16 17:31:31 2004
++++ src/Makefile	Fri Mar 11 15:02:48 2005
+@@ -41,11 +41,17 @@
+ 	CFLAGS+= -DFREEPOPSLUA_PATH_UNOFFICIAL=\"$HOME/config/settings/freepops/lua_unofficial/\"
+ 
+ else
++ifeq "$(OS)" "FreeBSD"
++	CFLAGS+= -DFREEPOPSLUA_PATH=\"$HOME/config/settings/freepops/lua/\"
++	CFLAGS+= -DFREEPOPSLUA_PATH_UNOFFICIAL=\"$HOME/config/settings/freepops/lua_unofficial/\"
++	CFLAGS+= $(PTHREAD_CFLAGS)
++else
+ 	CFLAGS+= -DFREEPOPSLUA_PATH=\"$(PREFIX)share/freepops/lua/\"
+ 	CFLAGS+= -DFREEPOPSLUA_PATH_UNOFFICIAL=\"$(PREFIX)share/freepops/lua_unofficial/\"
+ endif
+ endif
+ endif
++endif
+ 
+ ifeq "$(OS)" "Cygwin"
+ 	CFLAGS+= -I/usr/include
+@@ -132,7 +138,7 @@
+ else
+ ifeq "$(OS)" "FreeBSD"
+         LIBSTOLINK+= getopt     
+-        LDFLAGS+=-L../modules/lib $(addprefix -l,$(LIBSTOLINK)) -lm -pthread \
++        LDFLAGS+=-L../modules/lib $(addprefix -l,$(LIBSTOLINK)) -lm $(PTHREAD_LIBS) \
+                 $(CURL_LD_FLAGS) $(EXPAT_LD_FLAGS)
+ else
+ ifeq "$(OS)" "Cygwin"
