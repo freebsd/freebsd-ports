@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -31,6 +30,7 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}"
+WITHOUT_CPU_CFLAGS=	yes
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
