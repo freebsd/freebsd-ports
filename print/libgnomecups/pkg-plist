@@ -7,26 +7,6 @@ lib/libgnomecups-1.0.a
 lib/libgnomecups-1.0.so
 lib/libgnomecups-1.0.so.1
 libdata/pkgconfig/libgnomecups-1.0.pc
-share/locale/ca/LC_MESSAGES/libgnomecups.mo
-share/locale/cs/LC_MESSAGES/libgnomecups.mo
-share/locale/de/LC_MESSAGES/libgnomecups.mo
-share/locale/en_CA/LC_MESSAGES/libgnomecups.mo
-share/locale/en_GB/LC_MESSAGES/libgnomecups.mo
-share/locale/es/LC_MESSAGES/libgnomecups.mo
-share/locale/eu/LC_MESSAGES/libgnomecups.mo
-share/locale/fr/LC_MESSAGES/libgnomecups.mo
-share/locale/hr/LC_MESSAGES/libgnomecups.mo
-share/locale/hu/LC_MESSAGES/libgnomecups.mo
-share/locale/is/LC_MESSAGES/libgnomecups.mo
-share/locale/it/LC_MESSAGES/libgnomecups.mo
 share/locale/ja/LC_MESSAGES/libgnomecups.mo
-share/locale/nl/LC_MESSAGES/libgnomecups.mo
-share/locale/no/LC_MESSAGES/libgnomecups.mo
-share/locale/pt/LC_MESSAGES/libgnomecups.mo
-share/locale/pt_BR/LC_MESSAGES/libgnomecups.mo
-share/locale/sr/LC_MESSAGES/libgnomecups.mo
-share/locale/sr@Latn/LC_MESSAGES/libgnomecups.mo
-share/locale/sv/LC_MESSAGES/libgnomecups.mo
-share/locale/uk/LC_MESSAGES/libgnomecups.mo
 @dirrm include/libgnomecups-1/libgnomecups
 @dirrm include/libgnomecups-1

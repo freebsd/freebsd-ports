@@ -1,10 +1,8 @@
 bin/gnome-cups-add
 bin/gnome-cups-icon
 bin/gnome-cups-manager
-include/libgnomecups-1/libgnomecups/gnome-cups-ui-driver.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-init.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-print.h
-include/libgnomecups-1/libgnomecups/gnome-cups-ui-util.h
 lib/libgnomecupsui-1.0.a
 lib/libgnomecupsui-1.0.so
 lib/libgnomecupsui-1.0.so.1
@@ -13,9 +11,7 @@ libdata/pkgconfig/libgnomecupsui-1.0.pc
 sbin/gnome-cups-switch
 share/gnome/applications/gnome-cups-manager.desktop
 share/gnome/gnome-cups-manager/gnome-cups-add.glade
-share/gnome/gnome-cups-manager/gnome-cups-add-druid.png
 share/gnome/gnome-cups-manager/gnome-cups-manager.glade
-share/gnome/gnome-cups-manager/gnome-cups-ui-driver.glade
 share/gnome/gnome-cups-manager/xd2-testpage-a4.eps
 share/gnome/gnome-cups-manager/xd2-testpage-letter.eps
 share/gnome/pixmaps/gnome-cups-manager/printer-tray-normal.png
@@ -34,7 +30,6 @@ share/locale/fi/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/fr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/he/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/hr/LC_MESSAGES/gnome-cups-manager.mo
-share/locale/hu/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/it/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-cups-manager.mo
