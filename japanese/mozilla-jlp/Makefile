@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.6
-PORTREVISION=	3
+PORTVERSION=	1.7
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www33.ocn.ne.jp/~snip/mozilla/jlp/ \
 		http://n.jpn.ph/mozilla/download/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	moz${PORTVERSION}-langjajp-tm0.2.1
+DISTNAME=	moz${PORTVERSION}-langjajp-tm0.1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	fortune@n.jpn.ph
@@ -43,10 +43,6 @@ LOCALENAME=	ja_JP.EUC
 LIBXPG4=	LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
 .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}/defaults/pref
-	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
-
 do-build:
 	${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
 	       -e "s^%%LOCALBASE%%^${LOCALBASE}^g" \
@@ -59,8 +55,6 @@ do-install:
 	(cd ${PREFIX}/lib/${MOZILLA}/chrome; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
-	(cd ${PREFIX}/lib/${MOZILLA}/defaults/pref; \
-	${MV} -f unix.js unix.js.orig)
 	(cd ${PREFIX}/lib/${MOZILLA}/components; \
 	${MV} -f xpti.dat ../xpti.dat.orig)
 	${MV} -f ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/${MOZILLA}.orig
