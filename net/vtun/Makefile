@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--localstatedir=/var \
 ALL_TARGET= 	vtund
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/etc/vtund.conf.example
 	@${MKDIR} ${PREFIX}/share/doc/vtund
 .for doc in FAQ README README.Setup README.Shaper
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${PREFIX}/share/doc/vtund
