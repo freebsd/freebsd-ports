@@ -2,7 +2,7 @@
 +++ bin/svk	Sun Jul 25 21:59:46 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!%%PERL%% -w
++#!%%PPERL%% -w
  use strict;
  use SVK;
  our $VERSION = $SVK::VERSION;
