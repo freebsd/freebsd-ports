@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghex
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ghex
@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	stable/sources/ghex
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint
-
-BROKEN=		"Uses internals from gnomeprint that are no longer present"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
