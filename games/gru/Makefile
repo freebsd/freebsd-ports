@@ -10,7 +10,7 @@ PORTVERSION=	8087
 CATEGORIES=	games
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/gru/
 
-MAINTAINER=	th@cis.ibaraki.ac.jp
+MAINTAINER=	cbc06942@pop06.odn.ne.jp
 
 USE_IMAKE=	yes
 
