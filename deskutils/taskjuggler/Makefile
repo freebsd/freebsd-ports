@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taskjuggler
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
@@ -20,9 +20,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date
 		poster:${PORTSDIR}/print/poster \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-BROKEN=		"Build fails"
-
-OPTIONS=	KTJVIEW "Build KDE KTJView program (Requires KDE)" off
+# KTJView currently doesn't compile
+#OPTIONS=	KTJVIEW "Build KDE KTJView program (Requires KDE)" off
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
@@ -34,11 +33,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_KTJVIEW)
-LIB_DEPENDS+=	kwalletbackend:${PORTSDIR}/x11/kdelibs3
-CONFIGURE_ARGS+=	--with-kde-support=yes
-.include "files/ktjview-plist.mk"
-.endif
+# KTJView currently doesn't compile
+#.if defined(WITH_KTJVIEW)
+#LIB_DEPENDS+=	kwalletbackend:${PORTSDIR}/x11/kdelibs3
+#CONFIGURE_ARGS+=	--with-kde-support=yes
+#.include "files/ktjview-plist.mk"
+#.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
