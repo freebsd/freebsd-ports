@@ -17,6 +17,7 @@ lib/streamtuner/plugins/shoutcast.so
 libdata/pkgconfig/streamtuner.pc
 share/gnome/applications/streamtuner.desktop
 share/gnome/pixmaps/streamtuner.png
+share/locale/de/LC_MESSAGES/streamtuner.mo
 share/locale/fr/LC_MESSAGES/streamtuner.mo
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
