@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.cs.uu.nl/~otfried/Hyperlatex/
 MAINTAINER=	witr@rwwa.com
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21 \
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
+RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 

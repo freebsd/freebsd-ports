@@ -25,7 +25,7 @@ CUSTOM_ELS=	cus-edit.el cus-face.el custom.el \
 PORTCLASS?=	master
 
 .if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs
+EMACS_PORT_NAME=	emacs19
 .endif
 
 PLIST_SUB=	CUSTOMDOCDIR=${CUSTOMDOCDIR}

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
 .if defined(EMACS_LOGO_MODE)
-BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
+BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs19
 .endif
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS

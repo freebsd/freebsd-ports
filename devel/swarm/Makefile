@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 MAINTAINER=	horance@freera.net
 COMMENT=	The Swarm Simulation System
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 .if defined(WITH_HDF5)
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif

@@ -20,7 +20,7 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 COMMENT=	A distributed language with constraint-based inference
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21 \
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		gmp.6:${PORTSDIR}/math/libgmp4 \
