@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mango
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mango
@@ -24,10 +24,12 @@ PKGNAMESUFFIX=	-nokde
 .endif
 
 USE_BZIP2=	yes
-USE_QT_VER=	3
-MAKE_ENV+=	QTDIR=${QT_PREFIX} LDFLAGS="-lkdevelopqextmdi"
+USE_REINPLACE=	yes
+MAKE_ENV+=	QTDIR=${QT_PREFIX} LDFLAGS="-lkextmdi"
 .if defined(WITH_KDE)
 USE_KDEBASE_VER=	3
+.else
+USE_QT_VER=	3
 .endif
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	-j${MAKE_JOBS}
@@ -48,14 +50,14 @@ pre-configure:
 do-configure:
 .if defined(WITH_KDE)
 	@(cd ${WRKSRC} && \
-	${SED} -i -e 's|warn_on debug|warn_off release kde thread|' mango.pro)
+	${REINPLACE_CMD} -e 's|warn_on debug|warn_off release kde|' mango.pro)
 .else
 	@(cd ${WRKSRC} && \
-	${SED} -i -e 's|warn_on debug|warn_off release thread|' mango.pro)
+	${REINPLACE_CMD} -e 's|warn_on debug|warn_off release|' mango.pro)
 .endif
 	@(cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} PREFIX=${PREFIX} QMAKESPEC=freebsd-g++ \
-	qmake mango.pro)
+	${SETENV} ${MAKE_ENV} PREFIX=${PREFIX} \
+	qmake -spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ mango.pro)
 
 pre-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mango ${PREFIX}/bin
