@@ -23,9 +23,5 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-.if defined(WITH_LICQ_DEVEL)
-.include "${INCDIR}/licq-devel/Makefile.inc"
-.else
 .include "${INCDIR}/licq/Makefile.inc"
-.endif
 .include <bsd.port.post.mk>
