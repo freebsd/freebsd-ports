@@ -1,0 +1,9 @@
+The Faq-O-Matic is a CGI-based system that automates the process of
+maintaining a FAQ (or Frequently Asked Questions list). It allows
+visitors to your FAQ to take part in keeping it up-to-date. A
+permission system also makes it useful as a help-desk application,
+bug-tracking database, or documentation system.
+
+WWW: http://search.cpan.org/search?dist=FAQ-OMatic
+
+Seamus Venasse <svenasse@polaris.ca>
