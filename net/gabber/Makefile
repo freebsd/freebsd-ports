@@ -34,13 +34,7 @@ CONFIGURE_ARGS=	--disable-xmms
 
 MAN1=		gabber.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-IGNORE=	"Crashes or hangs on 5.x"
-.endif
-
 pre-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
