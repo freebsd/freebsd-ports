@@ -1277,6 +1277,9 @@ www/data-dist/phpgroupware/doc/en_US/sgml/user/todo.sgml
 www/data-dist/phpgroupware/doc/inlinedocparser.php
 www/data-dist/phpgroupware/doc/inlinedocparser_docbook.tpl
 www/data-dist/phpgroupware/doc/inlinedocparser_html.tpl
+www/data-dist/phpgroupware/doc/rpm-build/build-phpgw-rpms
+www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh-allapp0914.spec
+www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh0914.spec
 www/data-dist/phpgroupware/eldaptir/add.php
 www/data-dist/phpgroupware/eldaptir/addobj.php
 www/data-dist/phpgroupware/eldaptir/addserver.php
@@ -5686,6 +5689,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/eldaptir/inc
 @dirrm www/data-dist/phpgroupware/eldaptir/doc
 @dirrm www/data-dist/phpgroupware/eldaptir
+@dirrm www/data-dist/phpgroupware/doc/rpm-build
 @dirrm www/data-dist/phpgroupware/doc/en_US/sgml/user
 @dirrm www/data-dist/phpgroupware/doc/en_US/sgml/admin
 @dirrm www/data-dist/phpgroupware/doc/en_US/sgml/FAQ
