@@ -1,0 +1,12 @@
+This port CJK TTF on the fly, CIDFnmap, MDRC & GC patch for GNU Ghostscript.
+
+Copyright (C) 2001 gs-cjk project. All rights reserved.
+
+Versions entitled "GNU Ghostscript" are distributed with the GNU General
+Public License, which allows free use, and free copying and redistribution
+under certain conditions (including, in some cases, commercial distribution).
+
+License
+The CJK patches and files in this pacakge are provided under "BSD" license.
+
+WWW: http://www.gyve.org/gs-cjk/

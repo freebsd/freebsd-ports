@@ -1,0 +1,28 @@
+--- lib/gs_res.ps.orig	Mon Jul 16 01:09:41 2001
++++ lib/gs_res.ps	Sun Dec 23 02:14:03 2001
+@@ -248,8 +248,8 @@
+   /pssystemparams 10 dict readonly def
+ } if
+ pssystemparams begin
+-  /FontResourceDir (/Resource/Font/) readonly .forcedef	% pssys'params is r-o
+-  /GenericResourceDir (/Resource/) readonly .forcedef	% pssys'params is r-o
++  /FontResourceDir (/usr/local/share/ghostscript/Resource/Font/) readonly .forcedef	% pssys'params is r-o
++  /GenericResourceDir (/usr/local/share/ghostscript/Resource/) readonly .forcedef	% pssys'params is r-o
+   /GenericResourcePathSep (/) readonly .forcedef	% pssys'params is r-o
+ end
+ end
+@@ -457,10 +457,10 @@
+ /.vmused {
+ 		% - .vmused <usedvalue>
+ 		% usedvalue = vmstatus in global + vmstatus in local.
+-  0 2 {
+-    .currentglobal not .setglobal
+-    vmstatus pop exch pop add
+-  } repeat
++	0 2 {
++		.currentglobal not .setglobal
++		vmstatus pop exch pop add
++	} repeat
+ } bind def
+ /.DoLoadResource {
+ 		% .LoadResource may push entries on the operand stack.

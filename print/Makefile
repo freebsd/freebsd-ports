@@ -54,6 +54,7 @@
     SUBDIR += ghostscript-afpl
     SUBDIR += ghostscript-afpl-nox11
     SUBDIR += ghostscript-gnu
+    SUBDIR += ghostscript-gnu-cjk
     SUBDIR += ghostscript-gnu-nox11
     SUBDIR += ghostview
     SUBDIR += gnomeprint

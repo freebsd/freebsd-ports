@@ -1,0 +1,25 @@
+--- lib/gs_cidcm.ps.orig	Sun Jul  1 17:57:04 2001
++++ lib/gs_cidcm.ps	Sun Dec 23 02:05:48 2001
+@@ -164,7 +164,21 @@
+         { (r) file                            % CSIs /InstName g [ file
+           //GetCIDSystemInfoFromFile exec     % CSIs /InstName g [ CSI
+         } stopped {
+-          cleartomark //.prs_empty             
++	  % Cannot find file from Resource directory
++          cleartomark
++	  % Try to find file from CIDFontmap
++	  % Stack: CSIs /InstName g
++	  1 index dup .CIDFontmapKnownget {
++	      % Stack: CSIs /InstName g /InstName ValueInCIDFontmap
++	      % We do look at CIDFontmap in global space.
++	      % (When stopped, the space is set to local.)
++	      true setglobal
++	      1 index 3 1 roll
++	      .CIDFontmapRunHandler
++	      /CIDFont findresource /CIDSystemInfo get
++	  } {
++	      pop //.prs_empty             
++	  } ifelse
+         } {
+           exch pop
+         } ifelse                              % CSIs /InstName g CSI
