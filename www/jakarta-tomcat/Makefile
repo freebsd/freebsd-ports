@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -30,8 +30,7 @@ APP_SHORTNAME=	tomcat
 APPCTL_NAME=	${APP_SHORTNAME}ctl
 CTL_SCRIPT=	${PREFIX}/bin/${APPCTL_NAME}
 STARTUP_ORDER?=	020
-RC_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
-APP_TITLE=	Jakarta Tomcat
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
 JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
 JAVA_PORT?=	${PORTSDIR}/java/jdk13
 USER_NAME?=	${APP_SHORTNAME}
@@ -42,13 +41,13 @@ PW?=		/usr/sbin/pw
 LISTEN_PORT?=	8080
 STDOUT_LOG?=	${LOG_DIR}/stdout.log
 STDERR_LOG?=	${LOG_DIR}/stderr.log
-AUTO_START?=	YES
+AUTO_START?=	NO
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
 	@${ECHO_CMD} "   Destination directory:   ${APP_HOME}"
 	@${ECHO_CMD} "   Control script location: ${CTL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location: ${RC_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
 	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
 	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO_CMD} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME} (${USER_ID}:${GROUP_ID})"
@@ -86,20 +85,23 @@ do-install:
 	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
 	| ${SED} "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
 	| ${SED} "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
-	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
+	| ${SED} "/%%STARTUP_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
 	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
 	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
 	| ${SED} "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
 	| ${SED} "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
 	> ${CTL_SCRIPT}
-	${CHMOD} 755 ${CTL_SCRIPT}
+	${CHOWN} ${USER_NAME}:${GROUP_NAME} ${CTL_SCRIPT}
+	${CHMOD} 6554 ${CTL_SCRIPT}
 
 	@# Install the startup script
-	${LN} -sf ${CTL_SCRIPT} ${RC_SCRIPT}
+	${CP} ${FILESDIR}/${PORTNAME}.sh ${STARTUP_SCRIPT}
+	${CHMOD} 0554 ${STARTUP_SCRIPT}
 
-	@# Create the directories that the application will create it at the
+	@# Create the directories that the application will create at the
 	@# first run
-	${MKDIR} ${APP_HOME}/logs
+	${MKDIR} ${LOG_DIR}
+	${CHMOD} 6775 ${LOG_DIR}
 
 	@# Install the server.xml file after processing it
 	${CAT} ${WRKSRC}/conf/server.xml \
@@ -109,6 +111,9 @@ do-install:
 
 	@# Change ownership for the files
 	${CHOWN} -R ${USER_NAME}:${GROUP_NAME} ${APP_HOME}
+
+	@# Change the execute permissions for all shell scripts
+	${CHMOD} 0554 ${APP_HOME}/bin/*
 
 	@# Install the man page
 .if !defined(NOPORTDOCS)
@@ -120,6 +125,7 @@ do-install:
 
 post-install:
 	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${ECHO_CMD} "If you would like a user to be able to use ${APPCTL_NAME}, then put this user in the group ${GROUP_NAME}."
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "Use 'man ${APPCTL_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
