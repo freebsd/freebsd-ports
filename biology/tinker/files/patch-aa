@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Sat Apr 19 03:32:36 2003
-+++ ../make/Makefile	Fri Jul 25 11:33:40 2003
+--- ../make/Makefile.orig	Thu Aug 19 17:37:44 2004
++++ ../make/Makefile	Thu Aug 19 22:52:41 2004
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -24,25 +24,6 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -101,12 +101,12 @@
- ##  Compiler: Intel Fortran
- ##
- 
--F77 = /usr/intel/compiler70/ia32/bin/ifc
--LIBS =
--F77FLAGS = -c
--OPTFLAGS = -O2 -cm -w
--LIBFLAGS = -crusv
--LINKFLAGS = -Vaxlib
-+#F77 = /usr/intel/compiler70/ia32/bin/ifc
-+#LIBS =
-+#F77FLAGS = -c
-+#OPTFLAGS = -O2 -cm -w
-+#LIBFLAGS = -crusv
-+#LINKFLAGS = -Vaxlib
- 
- ##
- ##  Machine:  IntelPC / Linux
 @@ -122,6 +122,20 @@
  #LIBFLAGS = -crusv
  #LINKFLAGS =
@@ -64,7 +45,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -522,11 +536,13 @@
+@@ -529,11 +543,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -80,7 +61,7 @@
  
  all:	${EXEFILES}
  
-@@ -537,58 +553,58 @@
+@@ -544,59 +560,59 @@
  	cat *.i *.f > tinker.txt
  
  rename:
@@ -110,6 +91,7 @@
 -	mv  path.x       $(BINDIR)/path
 -	mv  pdbxyz.x     $(BINDIR)/pdbxyz
 -	mv  polarize.x   $(BINDIR)/polarize
+-	mv  prmedit.x    $(BINDIR)/prmedit
 -	mv  protein.x    $(BINDIR)/protein
 -	mv  pss.x        $(BINDIR)/pss
 -	mv  pssrigid.x   $(BINDIR)/pssrigid
@@ -162,6 +144,7 @@
 +	${INSTALL_PROGRAM}  path.x       $(BINDIR)/path
 +	${INSTALL_PROGRAM}  pdbxyz.x     $(BINDIR)/pdbxyz
 +	${INSTALL_PROGRAM}  polarize.x   $(BINDIR)/polarize
++	${INSTALL_PROGRAM}  prmedit.x    $(BINDIR)/prmedit
 +	${INSTALL_PROGRAM}  protein.x    $(BINDIR)/protein
 +	${INSTALL_PROGRAM}  pss.x        $(BINDIR)/pss
 +	${INSTALL_PROGRAM}  pssrigid.x   $(BINDIR)/pssrigid
