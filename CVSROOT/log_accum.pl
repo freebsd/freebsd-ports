@@ -712,8 +712,8 @@ for (my $i = 0; ; $i++) {
 	my @rem_lines = &read_logfile("$REMOVED_FILE.$i.$PID");
 	push @log_msg, &format_lists("Removed", @rem_lines) if @rem_lines;
 
-	my @log_lines = &read_logfile("$LOG_FILE.$i.$PID");
-	push @log_msg, "  Log:", (map { "  $_" } @log_lines) if @log_lines;
+	my @msg_lines = &read_logfile("$LOG_FILE.$i.$PID");
+	push @log_msg, "  Log:", (map { "  $_" } @msg_lines) if @msg_lines;
 
 
 	if ($RCSIDINFO == 2) {
