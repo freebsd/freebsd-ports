@@ -1,6 +1,0 @@
-bin/pcal
-libexec/pcal.cgi
-share/doc/pcal/ReadMe
-share/doc/pcal/pcal.html
-share/doc/pcal/pcalw.html
-@dirrm share/doc/pcal

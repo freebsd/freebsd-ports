@@ -3,7 +3,7 @@ year.  By default, it looks for a file in the home directory named
 "calendar" for entries with leading dates matching dates on the
 calendar, and prints any following text under the appropriate day.
 
-WWW: http://fronzek.akshor.com/pcal/
+WWW: http://pcal.sourceforge.net/
 
 --
 mwest@uct.ac.za
