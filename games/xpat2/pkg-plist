@@ -1,5 +1,12 @@
 bin/xpat2
 lib/X11/app-defaults/XPat
+lib/X11/de_DE/app-defaults/XPat
+lib/X11/fr_FR/app-defaults/XPat
+lib/X11/french/app-defaults/XPat
+lib/X11/german/app-defaults/XPat
+lib/X11/it_IT/app-defaults/XPat
+lib/X11/italian/app-defaults/XPat
+lib/X11/russian/app-defaults/XPat
 lib/xpat/PySol-large/COPYRIGHT
 lib/xpat/PySol-large/Cards.conf
 lib/xpat/PySol-large/Empty.Clubs.xpm
@@ -144,6 +151,20 @@ lib/xpat/small.cards
 lib/xpat/de_DE
 lib/xpat/fr_FR
 lib/xpat/it_IT
+@dirrm lib/X11/de_DE/app-defaults
+@dirrm lib/X11/de_DE
+@dirrm lib/X11/fr_FR/app-defaults
+@dirrm lib/X11/fr_FR
+@dirrm lib/X11/french/app-defaults
+@dirrm lib/X11/french
+@dirrm lib/X11/german/app-defaults
+@dirrm lib/X11/german
+@dirrm lib/X11/it_IT/app-defaults
+@dirrm lib/X11/it_IT
+@dirrm lib/X11/italian/app-defaults
+@dirrm lib/X11/italian
+@dirrm lib/X11/russian/app-defaults
+@dirrm lib/X11/russian
 @dirrm lib/xpat/PySol-large
 @dirrm lib/xpat/PySol-medium
 @dirrm lib/xpat/PySol-small
