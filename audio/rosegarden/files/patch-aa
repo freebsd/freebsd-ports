@@ -1,21 +1,6 @@
---- configure.in.orig	Wed Oct 15 13:42:59 1997
-+++ configure.in	Sat Sep 18 16:15:13 1999
-@@ -4,6 +4,14 @@
- 
- AC_CONFIG_HEADER(config.h)
- 
-+AC_ARG_WITH(tcl,
-+    [--with-tclincl        Set tcl iclude Path],     
-+    [ with_tcl=$withval ],   
-+    [ with_tcl=/usr/local/include ],   
-+)
-+
-+CFLAGS="${CFLAGS} -I ${with_tcl}"
-+
- dnl Checks for programs.
- AC_PROG_CC
- AC_PROG_LN_S
-@@ -67,11 +75,11 @@
+--- configure.in.orig	Tue Sep 21 20:25:38 1999
++++ configure.in	Thu Dec 14 02:14:00 2000
+@@ -67,11 +67,11 @@
  
  Petal=Petal
  
@@ -29,7 +14,7 @@
       if test -n "$TCLSH"
       then
  	# Check Tcl version:
-@@ -88,7 +96,7 @@
+@@ -88,7 +88,7 @@
  	then
  		# Check for TclMIDI
  		AC_CHECKING(if TclMIDI is installed)
@@ -38,14 +23,30 @@
  		if test -n "$TCL_MIDI_CHECK"
  		then
  			Petal=""
-@@ -153,8 +161,8 @@
+@@ -153,7 +153,7 @@
  	*freebsd*)
  	defines="-DNO_SYS_ERRLIST"
  	AC_CHECK_HEADER(machine/soundcard.h, sound_system="-DSYSTEM_OSS")
 -	extra_libs="-lmalloc"
--	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
 +	# extra_libs="-lmalloc"
-+	LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
+ 	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
  
  	PETAL_LD=ld
- 	PETAL_CFLAGS="-fPIC"
+@@ -181,6 +181,17 @@
+ 
+ #x_includes="-I$x_includes"
+ #x_libraries="-L$x_libraries"
++
++AC_MSG_CHECKING(Tcl include Path)
++AC_ARG_WITH(tclincl,
++  [  --with-tclincl	Set tcl include Path],
++  with_tclincl=$withval,
++  with_tclincl=no)
++AC_MSG_RESULT($with_tclincl)
++     
++if test "$with_tclincl" != "no"; then
++  PETAL_CFLAGS="${PETAL_CFLAGS} -I ${with_tclincl}"
++fi      
+ 
+ AC_SUBST(rosegarden)
+ 
