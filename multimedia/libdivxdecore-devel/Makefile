@@ -7,6 +7,7 @@
 
 PORTNAME=	libdivxdecore
 PORTVERSION=	0.4.0.48
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.projectmayo.com/dnload/divxcore/
 PKGNAMESUFFIX=	-devel
