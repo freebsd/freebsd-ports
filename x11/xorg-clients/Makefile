@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-clients
 PORTVERSION=	6.7.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 DISTFILES=	X11R6.7.0-src1.tar.gz \
