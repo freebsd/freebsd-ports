@@ -1,0 +1,19 @@
+*** auxdir/Makefile.orig	Wed Aug  4 13:04:27 1999
+--- auxdir/Makefile	Wed Aug  4 13:04:57 1999
+***************
+*** 49,55 ****
+  ifeq ($(HAVE_GTK), yes)
+  STATIC_LIBS := $(STATIC_LIBS) libmicogtk$(VERSION).a
+  CXXFLAGS := $(CXXFLAGS) $(GTK_CFLAGS)
+! GTK_SRCS := gtkmico.cc gtkmico-c.cc
+  STATIC_GTK_OBJS = $(GTK_SRCS:.cc=.o)
+  SHARED_GTK_OBJS = $(GTK_SRCS:.cc=.pic.o)
+  endif
+--- 49,55 ----
+  ifeq ($(HAVE_GTK), yes)
+  STATIC_LIBS := $(STATIC_LIBS) libmicogtk$(VERSION).a
+  CXXFLAGS := $(CXXFLAGS) $(GTK_CFLAGS)
+! GTK_SRCS := gtkmico.cc 
+  STATIC_GTK_OBJS = $(GTK_SRCS:.cc=.o)
+  SHARED_GTK_OBJS = $(GTK_SRCS:.cc=.pic.o)
+  endif

@@ -1,6 +1,7 @@
 bin/eventd
 bin/idl
 bin/imr
+bin/iordump
 bin/ird
 bin/mico-ar
 bin/mico-c++
@@ -12,7 +13,16 @@ bin/micod
 bin/nsadmin
 bin/nsd
 bin/propertyd
-include/CORBA-c.h
+bin/traderd
+doc/mico/examples/boa/Makefile
+doc/mico/examples/boa/README
+doc/mico/examples/dispatcher/Makefile
+doc/mico/examples/dispatcher/README
+doc/mico/examples/obv/Makefile
+doc/mico/examples/obv/README
+doc/mico/examples/services/Makefile
+doc/mico/examples/services/README
+include/CORBA-SMALL.h
 include/CORBA.h
 include/mico/CosEventChannelAdmin.h
 include/mico/CosEventChannelAdmin.idl
@@ -38,6 +48,7 @@ include/mico/array.h
 include/mico/assert.h
 include/mico/basic.h
 include/mico/basic_seq.h
+include/mico/basic_seq.idl
 include/mico/boa.h
 include/mico/boa_impl.h
 include/mico/buffer.h
@@ -55,10 +66,12 @@ include/mico/current.idl
 include/mico/dii.h
 include/mico/dispatch.h
 include/mico/dsi.h
+include/mico/dynany.h
 include/mico/dynany.idl
 include/mico/dynany_impl.h
 include/mico/except.h
 include/mico/fixed.h
+include/mico/fltkmico.h
 include/mico/gtkmico.h
 include/mico/impl.h
 include/mico/imr.h
@@ -73,13 +86,22 @@ include/mico/ior.h
 include/mico/ior_impl.h
 include/mico/ir.h
 include/mico/ir.idl
+include/mico/ir_base.h
+include/mico/ir_base.idl
 include/mico/ir_fwd.h
 include/mico/ir_impl.h
 include/mico/lmath.h
+include/mico/magic.h
+include/mico/memtrace.h
 include/mico/naming.h
 include/mico/naming.idl
+include/mico/native.h
 include/mico/object.h
+include/mico/operators.h
 include/mico/orb.h
+include/mico/orb.idl
+include/mico/orb_excepts.h
+include/mico/orb_excepts.idl
 include/mico/orb_fwd.h
 include/mico/orb_impl.h
 include/mico/os-math.h
@@ -87,15 +109,20 @@ include/mico/os-misc.h
 include/mico/os-net.h
 include/mico/poa.h
 include/mico/poa.idl
+include/mico/poa_base.h
 include/mico/poa_impl.h
+include/mico/poa_stubs.h
 include/mico/policy.h
 include/mico/policy.idl
+include/mico/policy2.h
+include/mico/policy2.idl
 include/mico/policy_impl.h
 include/mico/process.h
 include/mico/process_impl.h
 include/mico/qtmico.h
 include/mico/rtti.h
 include/mico/sequence.h
+include/mico/sequence_special.h
 include/mico/service_info.h
 include/mico/service_info.idl
 include/mico/shlib.h
@@ -103,20 +130,32 @@ include/mico/shlib_impl.h
 include/mico/ssl.h
 include/mico/ssliop.h
 include/mico/ssliop.idl
+include/mico/static-dispatch.h
 include/mico/static.h
 include/mico/stream.h
 include/mico/stream.idl
 include/mico/stream_impl.h
 include/mico/string.h
+include/mico/sysexc.h
 include/mico/tcconst.h
+include/mico/tckind.h
+include/mico/tckind.idl
 include/mico/tclmico.h
 include/mico/template_impl.h
 include/mico/throw.h
+include/mico/trader.h
+include/mico/trader.idl
 include/mico/transport.h
 include/mico/transport_impl.h
 include/mico/typecode.h
+include/mico/typerepo.h
+include/mico/typerepo.idl
 include/mico/types.h
 include/mico/util.h
+include/mico/value.h
+include/mico/valuetype.h
+include/mico/valuetype.idl
+include/mico/valuetype_impl.h
 include/mico/var.h
 include/mico/version.h
 include/mico/x11.h
@@ -136,83 +175,83 @@ include/ministl/pair
 include/ministl/pair.h
 include/ministl/set
 include/ministl/set.h
+include/ministl/simplevec.h
 include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
-lib/libmico2.2.3.a
-lib/libmicoaux2.2.3.a
-lib/libmicoaux2.2.3.so.1
-lib/libmicocoss2.2.3.a
-lib/libmicoqt2.2.3.a
-lib/libmicoqt2.2.3.so.1
-lib/libmicotcl2.2.3.a
-lib/libmicotcl2.2.3.so.1
-lib/libmicox2.2.3.a
-lib/libmicox2.2.3.so.1
+lib/libmico2.2.7.a
+lib/libmicoaux2.2.7.a
+lib/libmicocoss2.2.7.a
+lib/libmicogtk2.2.7.a
+lib/libmicoqt2.2.7.a
+lib/libmicotcl2.2.7.a
+lib/libmicox2.2.7.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/mico-setup.csh
 lib/mico-setup.sh
 share/doc/mico/examples/MakeVars
 share/doc/mico/examples/README
-share/doc/mico/examples/account/Makefile
-share/doc/mico/examples/account/account.idl
-share/doc/mico/examples/account/main.cc
-share/doc/mico/examples/account2/Makefile
-share/doc/mico/examples/account2/account
-share/doc/mico/examples/account2/account.idl
-share/doc/mico/examples/account2/client.cc
-share/doc/mico/examples/account2/server.cc
-share/doc/mico/examples/account3/Makefile
-share/doc/mico/examples/account3/account
-share/doc/mico/examples/account3/account.idl
-share/doc/mico/examples/account3/client.cc
-share/doc/mico/examples/account3/server.cc
-share/doc/mico/examples/account4/Makefile
-share/doc/mico/examples/account4/account
-share/doc/mico/examples/account4/account.idl
-share/doc/mico/examples/account4/client.cc
-share/doc/mico/examples/account4/server.cc
-share/doc/mico/examples/activate/Makefile
-share/doc/mico/examples/activate/client.cc
-share/doc/mico/examples/activate/hello-permethod
-share/doc/mico/examples/activate/hello-shared
-share/doc/mico/examples/activate/hello-unshared
-share/doc/mico/examples/activate/hello.idl
-share/doc/mico/examples/activate/server.cc
 share/doc/mico/examples/bench/Makefile
 share/doc/mico/examples/bench/bench
 share/doc/mico/examples/bench/bench.idl
 share/doc/mico/examples/bench/bench_impl.h
 share/doc/mico/examples/bench/client.cc
 share/doc/mico/examples/bench/server.cc
+share/doc/mico/examples/boa/account/Makefile
+share/doc/mico/examples/boa/account/account.idl
+share/doc/mico/examples/boa/account/main.cc
+share/doc/mico/examples/boa/account2/Makefile
+share/doc/mico/examples/boa/account2/account
+share/doc/mico/examples/boa/account2/account.idl
+share/doc/mico/examples/boa/account2/client.cc
+share/doc/mico/examples/boa/account2/server.cc
+share/doc/mico/examples/boa/account3/Makefile
+share/doc/mico/examples/boa/account3/account
+share/doc/mico/examples/boa/account3/account.idl
+share/doc/mico/examples/boa/account3/client.cc
+share/doc/mico/examples/boa/account3/server.cc
+share/doc/mico/examples/boa/account4/Makefile
+share/doc/mico/examples/boa/account4/account
+share/doc/mico/examples/boa/account4/account.idl
+share/doc/mico/examples/boa/account4/client.cc
+share/doc/mico/examples/boa/account4/server.cc
+share/doc/mico/examples/boa/activate/Makefile
+share/doc/mico/examples/boa/activate/client.cc
+share/doc/mico/examples/boa/activate/hello-permethod
+share/doc/mico/examples/boa/activate/hello-shared
+share/doc/mico/examples/boa/activate/hello-unshared
+share/doc/mico/examples/boa/activate/hello.idl
+share/doc/mico/examples/boa/activate/server.cc
 share/doc/mico/examples/codesets/Makefile
 share/doc/mico/examples/codesets/client.cc
 share/doc/mico/examples/codesets/hello.idl
 share/doc/mico/examples/codesets/runit
 share/doc/mico/examples/codesets/server.cc
-share/doc/mico/examples/corba-c/Makefile
-share/doc/mico/examples/corba-c/client.c
-share/doc/mico/examples/corba-c/hello
-share/doc/mico/examples/corba-c/hello.idl
-share/doc/mico/examples/corba-c/server.c
+share/doc/mico/examples/dispatcher/gtkmico/Makefile
+share/doc/mico/examples/dispatcher/gtkmico/README
+share/doc/mico/examples/dispatcher/gtkmico/client.cc
+share/doc/mico/examples/dispatcher/gtkmico/gtkhello
+share/doc/mico/examples/dispatcher/gtkmico/hello.idl
+share/doc/mico/examples/dispatcher/gtkmico/server.cc
+share/doc/mico/examples/dispatcher/qtmico/Makefile
+share/doc/mico/examples/dispatcher/qtmico/README
+share/doc/mico/examples/dispatcher/qtmico/client.cc
+share/doc/mico/examples/dispatcher/qtmico/hello.idl
+share/doc/mico/examples/dispatcher/qtmico/qthello1
+share/doc/mico/examples/dispatcher/qtmico/qthello2
+share/doc/mico/examples/dispatcher/qtmico/server.cc
+share/doc/mico/examples/dispatcher/x11/Makefile
+share/doc/mico/examples/dispatcher/x11/client.cc
+share/doc/mico/examples/dispatcher/x11/hello.idl
+share/doc/mico/examples/dispatcher/x11/server.cc
+share/doc/mico/examples/dispatcher/x11/xhello
 share/doc/mico/examples/dynany/Makefile
 share/doc/mico/examples/dynany/dynany.cc
 share/doc/mico/examples/dynany/dynanytest.cc
 share/doc/mico/examples/dynany/test.idl
-share/doc/mico/examples/events/Makefile
-share/doc/mico/examples/events/client.cc
-share/doc/mico/examples/events/client2.cc
-share/doc/mico/examples/events/runit
-share/doc/mico/examples/events/server.cc
-share/doc/mico/examples/events/server2.cc
-share/doc/mico/examples/events/server3.cc
-share/doc/mico/examples/gtkmico/Makefile
-share/doc/mico/examples/gtkmico/README
-share/doc/mico/examples/gtkmico/client.cc
-share/doc/mico/examples/gtkmico/gtkhello
-share/doc/mico/examples/gtkmico/hello.idl
-share/doc/mico/examples/gtkmico/server.cc
+share/doc/mico/examples/henning/README
+share/doc/mico/examples/henning/diffs
 share/doc/mico/examples/interceptor/Makefile
 share/doc/mico/examples/interceptor/client.cc
 share/doc/mico/examples/interceptor/hello.idl
@@ -253,11 +292,47 @@ share/doc/mico/examples/interop/visibroker/README
 share/doc/mico/examples/interop/visibroker/account
 share/doc/mico/examples/interop/visibroker/main.cc
 share/doc/mico/examples/interop/visibroker/run_applet
-share/doc/mico/examples/naming/Makefile
-share/doc/mico/examples/naming/account.idl
-share/doc/mico/examples/naming/account_test
-share/doc/mico/examples/naming/client.cc
-share/doc/mico/examples/naming/server.cc
+share/doc/mico/examples/mcast/Makefile
+share/doc/mico/examples/mcast/client.cc
+share/doc/mico/examples/mcast/hello.idl
+share/doc/mico/examples/mcast/runit
+share/doc/mico/examples/mcast/server.cc
+share/doc/mico/examples/obv/abstract/Makefile
+share/doc/mico/examples/obv/abstract/README
+share/doc/mico/examples/obv/abstract/abstract
+share/doc/mico/examples/obv/abstract/abstract.idl
+share/doc/mico/examples/obv/abstract/abstract_impl.h
+share/doc/mico/examples/obv/abstract/client.cc
+share/doc/mico/examples/obv/abstract/server.cc
+share/doc/mico/examples/obv/custom/Makefile
+share/doc/mico/examples/obv/custom/README
+share/doc/mico/examples/obv/custom/custom
+share/doc/mico/examples/obv/custom/custom.idl
+share/doc/mico/examples/obv/custom/custom_impl.cc
+share/doc/mico/examples/obv/custom/custom_impl.h
+share/doc/mico/examples/obv/custom/test.cc
+share/doc/mico/examples/obv/date/Makefile
+share/doc/mico/examples/obv/date/calendar.idl
+share/doc/mico/examples/obv/date/client.cc
+share/doc/mico/examples/obv/date/date
+share/doc/mico/examples/obv/date/date.idl
+share/doc/mico/examples/obv/date/date_impl.cc
+share/doc/mico/examples/obv/date/date_impl.h
+share/doc/mico/examples/obv/date/server.cc
+share/doc/mico/examples/obv/tree/Makefile
+share/doc/mico/examples/obv/tree/client.cc
+share/doc/mico/examples/obv/tree/server.cc
+share/doc/mico/examples/obv/tree/tree
+share/doc/mico/examples/obv/tree/tree.idl
+share/doc/mico/examples/obv/tree/tree_impl.cc
+share/doc/mico/examples/obv/tree/tree_impl.h
+share/doc/mico/examples/obv/tricky/Makefile
+share/doc/mico/examples/obv/tricky/client.cc
+share/doc/mico/examples/obv/tricky/server.cc
+share/doc/mico/examples/obv/tricky/tricky
+share/doc/mico/examples/obv/tricky/tricky.idl
+share/doc/mico/examples/obv/tricky/tricky_impl.cc
+share/doc/mico/examples/obv/tricky/tricky_impl.h
 share/doc/mico/examples/poa/Makefile
 share/doc/mico/examples/poa/README
 share/doc/mico/examples/poa/account-1/Makefile
@@ -290,13 +365,9 @@ share/doc/mico/examples/poa/inherit/client.cc
 share/doc/mico/examples/poa/inherit/inherit
 share/doc/mico/examples/poa/inherit/inherit.idl
 share/doc/mico/examples/poa/inherit/server.cc
-share/doc/mico/examples/qtmico/Makefile
-share/doc/mico/examples/qtmico/README
-share/doc/mico/examples/qtmico/client.cc
-share/doc/mico/examples/qtmico/hello.idl
-share/doc/mico/examples/qtmico/qthello1
-share/doc/mico/examples/qtmico/qthello2
-share/doc/mico/examples/qtmico/server.cc
+share/doc/mico/examples/random/Makefile
+share/doc/mico/examples/random/client.cc
+share/doc/mico/examples/random/random.idl
 share/doc/mico/examples/redlich/Calc-1/Makefile
 share/doc/mico/examples/redlich/Calc-1/calc.idl
 share/doc/mico/examples/redlich/Calc-1/client.cc
@@ -333,59 +404,92 @@ share/doc/mico/examples/redlich/Hello-4/tty.idl
 share/doc/mico/examples/redlich/Hello-4/ttyplus.idl
 share/doc/mico/examples/redlich/Makefile
 share/doc/mico/examples/redlich/README
-share/doc/mico/examples/relship/Bank.idl
-share/doc/mico/examples/relship/BankServer.cc
-share/doc/mico/examples/relship/Bank_impl.cc
-share/doc/mico/examples/relship/Bank_impl.h
-share/doc/mico/examples/relship/ContainedInRoleServer.cc
-share/doc/mico/examples/relship/Containment.idl
-share/doc/mico/examples/relship/ContainmentServer.cc
-share/doc/mico/examples/relship/Containment_impl.cc
-share/doc/mico/examples/relship/Containment_impl.h
-share/doc/mico/examples/relship/ContainsRoleServer.cc
-share/doc/mico/examples/relship/Documents.idl
-share/doc/mico/examples/relship/Documents_impl.cc
-share/doc/mico/examples/relship/Documents_impl.h
-share/doc/mico/examples/relship/EmployeeRoleServer.cc
-share/doc/mico/examples/relship/EmployerRoleServer.cc
-share/doc/mico/examples/relship/Employment.idl
-share/doc/mico/examples/relship/EmploymentServer.cc
-share/doc/mico/examples/relship/Employment_impl.cc
-share/doc/mico/examples/relship/Employment_impl.h
-share/doc/mico/examples/relship/FigureServer.cc
-share/doc/mico/examples/relship/InterfaceDefsHelper.cc
-share/doc/mico/examples/relship/InterfaceDefsHelper.h
-share/doc/mico/examples/relship/Makefile
-share/doc/mico/examples/relship/NamedRoleTypesHelper.cc
-share/doc/mico/examples/relship/NamedRoleTypesHelper.h
-share/doc/mico/examples/relship/OwnedByRoleServer.cc
-share/doc/mico/examples/relship/OwnerRoleServer.cc
-share/doc/mico/examples/relship/Ownership.idl
-share/doc/mico/examples/relship/OwnershipServer.cc
-share/doc/mico/examples/relship/Ownership_impl.cc
-share/doc/mico/examples/relship/Ownership_impl.h
-share/doc/mico/examples/relship/Person.idl
-share/doc/mico/examples/relship/PersonServer.cc
-share/doc/mico/examples/relship/Person_impl.cc
-share/doc/mico/examples/relship/Person_impl.h
-share/doc/mico/examples/relship/Reference.idl
-share/doc/mico/examples/relship/ReferenceServer.cc
-share/doc/mico/examples/relship/Reference_impl.cc
-share/doc/mico/examples/relship/Reference_impl.h
-share/doc/mico/examples/relship/ReferencedByRoleServer.cc
-share/doc/mico/examples/relship/ReferencesRoleServer.cc
-share/doc/mico/examples/relship/RelationshipFactoryServer.cc
-share/doc/mico/examples/relship/RelationshipIteratorServer.cc
-share/doc/mico/examples/relship/RoleFactoryServer.cc
-share/doc/mico/examples/relship/TextServer.cc
-share/doc/mico/examples/relship/interactive
-share/doc/mico/examples/relship/interactive-client.cc
-share/doc/mico/examples/relship/simple
-share/doc/mico/examples/relship/simple-client.cc
-share/doc/mico/examples/relship/start-servers
-share/doc/mico/examples/relship/stop-servers
-share/doc/mico/examples/relship/test
-share/doc/mico/examples/relship/test-client.cc
+share/doc/mico/examples/services/events/Makefile
+share/doc/mico/examples/services/events/client.cc
+share/doc/mico/examples/services/events/client2.cc
+share/doc/mico/examples/services/events/runit
+share/doc/mico/examples/services/events/server.cc
+share/doc/mico/examples/services/events/server2.cc
+share/doc/mico/examples/services/events/server3.cc
+share/doc/mico/examples/services/naming/Makefile
+share/doc/mico/examples/services/naming/account.idl
+share/doc/mico/examples/services/naming/account_test
+share/doc/mico/examples/services/naming/client.cc
+share/doc/mico/examples/services/naming/server.cc
+share/doc/mico/examples/services/property-daemon/Makefile
+share/doc/mico/examples/services/property-daemon/README
+share/doc/mico/examples/services/property-daemon/bank.idl
+share/doc/mico/examples/services/property-daemon/get_properties.cc
+share/doc/mico/examples/services/property-daemon/set_properties.cc
+share/doc/mico/examples/services/property-daemon/start_demo
+share/doc/mico/examples/services/relship/Bank.idl
+share/doc/mico/examples/services/relship/BankServer.cc
+share/doc/mico/examples/services/relship/Bank_impl.cc
+share/doc/mico/examples/services/relship/Bank_impl.h
+share/doc/mico/examples/services/relship/ContainedInRoleServer.cc
+share/doc/mico/examples/services/relship/Containment.idl
+share/doc/mico/examples/services/relship/ContainmentServer.cc
+share/doc/mico/examples/services/relship/Containment_impl.cc
+share/doc/mico/examples/services/relship/Containment_impl.h
+share/doc/mico/examples/services/relship/ContainsRoleServer.cc
+share/doc/mico/examples/services/relship/Documents.idl
+share/doc/mico/examples/services/relship/Documents_impl.cc
+share/doc/mico/examples/services/relship/Documents_impl.h
+share/doc/mico/examples/services/relship/EmployeeRoleServer.cc
+share/doc/mico/examples/services/relship/EmployerRoleServer.cc
+share/doc/mico/examples/services/relship/Employment.idl
+share/doc/mico/examples/services/relship/EmploymentServer.cc
+share/doc/mico/examples/services/relship/Employment_impl.cc
+share/doc/mico/examples/services/relship/Employment_impl.h
+share/doc/mico/examples/services/relship/FigureServer.cc
+share/doc/mico/examples/services/relship/InterfaceDefsHelper.cc
+share/doc/mico/examples/services/relship/InterfaceDefsHelper.h
+share/doc/mico/examples/services/relship/Makefile
+share/doc/mico/examples/services/relship/NamedRoleTypesHelper.cc
+share/doc/mico/examples/services/relship/NamedRoleTypesHelper.h
+share/doc/mico/examples/services/relship/OwnedByRoleServer.cc
+share/doc/mico/examples/services/relship/OwnerRoleServer.cc
+share/doc/mico/examples/services/relship/Ownership.idl
+share/doc/mico/examples/services/relship/OwnershipServer.cc
+share/doc/mico/examples/services/relship/Ownership_impl.cc
+share/doc/mico/examples/services/relship/Ownership_impl.h
+share/doc/mico/examples/services/relship/Person.idl
+share/doc/mico/examples/services/relship/PersonServer.cc
+share/doc/mico/examples/services/relship/Person_impl.cc
+share/doc/mico/examples/services/relship/Person_impl.h
+share/doc/mico/examples/services/relship/Reference.idl
+share/doc/mico/examples/services/relship/ReferenceServer.cc
+share/doc/mico/examples/services/relship/Reference_impl.cc
+share/doc/mico/examples/services/relship/Reference_impl.h
+share/doc/mico/examples/services/relship/ReferencedByRoleServer.cc
+share/doc/mico/examples/services/relship/ReferencesRoleServer.cc
+share/doc/mico/examples/services/relship/RelationshipFactoryServer.cc
+share/doc/mico/examples/services/relship/RelationshipIteratorServer.cc
+share/doc/mico/examples/services/relship/RoleFactoryServer.cc
+share/doc/mico/examples/services/relship/TextServer.cc
+share/doc/mico/examples/services/relship/interactive
+share/doc/mico/examples/services/relship/interactive-client.cc
+share/doc/mico/examples/services/relship/simple
+share/doc/mico/examples/services/relship/simple-client.cc
+share/doc/mico/examples/services/relship/start-servers
+share/doc/mico/examples/services/relship/stop-servers
+share/doc/mico/examples/services/relship/test
+share/doc/mico/examples/services/relship/test-client.cc
+share/doc/mico/examples/services/stream-bench/Makefile
+share/doc/mico/examples/services/stream-bench/bench
+share/doc/mico/examples/services/stream-bench/req.idl
+share/doc/mico/examples/services/stream-bench/req_client.cc
+share/doc/mico/examples/services/stream-bench/req_server.cc
+share/doc/mico/examples/services/stream-bench/stream_client.cc
+share/doc/mico/examples/services/stream-bench/stream_server.cc
+share/doc/mico/examples/services/stream-sound/Makefile
+share/doc/mico/examples/services/stream-sound/client.cc
+share/doc/mico/examples/services/stream-sound/server.cc
+share/doc/mico/examples/services/stream-sound/sound.h
+share/doc/mico/examples/services/trader/Makefile
+share/doc/mico/examples/services/trader/demo.idl
+share/doc/mico/examples/services/trader/main.cc
+share/doc/mico/examples/services/trader/run
 share/doc/mico/examples/shlib/Makefile
 share/doc/mico/examples/shlib/client.cc
 share/doc/mico/examples/shlib/hello
@@ -400,32 +504,18 @@ share/doc/mico/examples/ssl/hello.idl
 share/doc/mico/examples/ssl/key.pem
 share/doc/mico/examples/ssl/server.cc
 share/doc/mico/examples/ssl/ssl
-share/doc/mico/examples/stream-bench/Makefile
-share/doc/mico/examples/stream-bench/bench
-share/doc/mico/examples/stream-bench/req.idl
-share/doc/mico/examples/stream-bench/req_client.cc
-share/doc/mico/examples/stream-bench/req_server.cc
-share/doc/mico/examples/stream-bench/stream_client.cc
-share/doc/mico/examples/stream-bench/stream_server.cc
-share/doc/mico/examples/stream-sound/Makefile
-share/doc/mico/examples/stream-sound/client.cc
-share/doc/mico/examples/stream-sound/server.cc
-share/doc/mico/examples/stream-sound/sound.h
-share/doc/mico/examples/x11/Makefile
-share/doc/mico/examples/x11/client.cc
-share/doc/mico/examples/x11/hello.idl
-share/doc/mico/examples/x11/server.cc
-share/doc/mico/examples/x11/xhello
 share/doc/mico/manual.ps
-@dirrm include/ministl
-@dirrm include/mico
-@dirrm share/doc/mico/examples/x11
-@dirrm share/doc/mico/examples/stream-sound
-@dirrm share/doc/mico/examples/stream-bench
 @dirrm share/doc/mico/examples/ssl
 @dirrm share/doc/mico/examples/siegel
 @dirrm share/doc/mico/examples/shlib
-@dirrm share/doc/mico/examples/relship
+@dirrm share/doc/mico/examples/services/trader
+@dirrm share/doc/mico/examples/services/stream-sound
+@dirrm share/doc/mico/examples/services/stream-bench
+@dirrm share/doc/mico/examples/services/relship
+@dirrm share/doc/mico/examples/services/property-daemon
+@dirrm share/doc/mico/examples/services/naming
+@dirrm share/doc/mico/examples/services/events
+@dirrm share/doc/mico/examples/services
 @dirrm share/doc/mico/examples/redlich/Hello-4
 @dirrm share/doc/mico/examples/redlich/Hello-3
 @dirrm share/doc/mico/examples/redlich/Hello-2
@@ -435,7 +525,7 @@ share/doc/mico/manual.ps
 @dirrm share/doc/mico/examples/redlich/Calc-2
 @dirrm share/doc/mico/examples/redlich/Calc-1
 @dirrm share/doc/mico/examples/redlich
-@dirrm share/doc/mico/examples/qtmico
+@dirrm share/doc/mico/examples/random
 @dirrm share/doc/mico/examples/poa/inherit
 @dirrm share/doc/mico/examples/poa/hello-2
 @dirrm share/doc/mico/examples/poa/hello-1
@@ -443,23 +533,40 @@ share/doc/mico/manual.ps
 @dirrm share/doc/mico/examples/poa/account-2
 @dirrm share/doc/mico/examples/poa/account-1
 @dirrm share/doc/mico/examples/poa
-@dirrm share/doc/mico/examples/naming
+@dirrm share/doc/mico/examples/obv/tricky
+@dirrm share/doc/mico/examples/obv/tree
+@dirrm share/doc/mico/examples/obv/date
+@dirrm share/doc/mico/examples/obv/custom
+@dirrm share/doc/mico/examples/obv/abstract
+@dirrm share/doc/mico/examples/obv
+@dirrm share/doc/mico/examples/mcast
 @dirrm share/doc/mico/examples/interop/visibroker
 @dirrm share/doc/mico/examples/interop/orbix
 @dirrm share/doc/mico/examples/interop/jdk
 @dirrm share/doc/mico/examples/interop/jacorb
 @dirrm share/doc/mico/examples/interop
 @dirrm share/doc/mico/examples/interceptor
-@dirrm share/doc/mico/examples/gtkmico
-@dirrm share/doc/mico/examples/events
+@dirrm share/doc/mico/examples/henning
 @dirrm share/doc/mico/examples/dynany
-@dirrm share/doc/mico/examples/corba-c
+@dirrm share/doc/mico/examples/dispatcher/x11
+@dirrm share/doc/mico/examples/dispatcher/qtmico
+@dirrm share/doc/mico/examples/dispatcher/gtkmico
+@dirrm share/doc/mico/examples/dispatcher
 @dirrm share/doc/mico/examples/codesets
+@dirrm share/doc/mico/examples/boa/activate
+@dirrm share/doc/mico/examples/boa/account4
+@dirrm share/doc/mico/examples/boa/account3
+@dirrm share/doc/mico/examples/boa/account2
+@dirrm share/doc/mico/examples/boa/account
+@dirrm share/doc/mico/examples/boa
 @dirrm share/doc/mico/examples/bench
-@dirrm share/doc/mico/examples/activate
-@dirrm share/doc/mico/examples/account4
-@dirrm share/doc/mico/examples/account3
-@dirrm share/doc/mico/examples/account2
-@dirrm share/doc/mico/examples/account
 @dirrm share/doc/mico/examples
 @dirrm share/doc/mico
+@dirrm include/ministl
+@dirrm include/mico
+@dirrm doc/mico/examples/services
+@dirrm doc/mico/examples/obv
+@dirrm doc/mico/examples/dispatcher
+@dirrm doc/mico/examples/boa
+@dirrm doc/mico/examples
+@dirrm doc/mico
