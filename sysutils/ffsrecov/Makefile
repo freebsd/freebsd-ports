@@ -8,8 +8,7 @@
 PORTNAME=	ffsrecov
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jmg
+MASTER_SITES=	http://people.FreeBSD.org/~jmg/
 DISTNAME=	ffsrecov
 
 MAINTAINER=	jmg@freebsd.org
