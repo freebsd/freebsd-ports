@@ -25,9 +25,6 @@ INSTALL_TARGET=	site-install
 
 DOCS=		Changes README.en bdb.html bdb.rd docs/*
 
-post-patch:
-	${RUBY} -i -pe 'sub /have_library\("db"/, %q:have_library("db3":' ${WRKSRC}/src/extconf.rb
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
