@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- macros.in.orig	Tue Feb 15 16:35:27 2005
++++ macros.in	Tue Feb 15 16:36:14 2005
+@@ -163,7 +163,7 @@
+ %_tmppath		%{_var}/tmp
+ 
+ #	Path to top of build area.
+-%_topdir		%{_usrsrc}/redhat
++%_topdir		%{_usrsrc}/%{_vendor}
+ 
+ #	The path to the unzip executable (legacy, use %{__unzip} instead).
+ %_unzipbin		%{__unzip}
