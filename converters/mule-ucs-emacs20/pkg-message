@@ -1,0 +1,32 @@
+If you want to use Unicode support included in Mule-UCS package,
+please put one line as below:
+
+(require 'un-define)
+
+in your .emacs, site-start.el, or any other start up configuration file.
+If you want to use auto detection feature on UTF-8/16, add one more:
+
+(require 'un-tools)
+
+See ${PREFIX}/share/doc/mule-ucs/README.Unicode for details.
+
+If you want to use BIG5 conversion support, add the below line either:
+
+(require 'big5c-ucs)
+
+or
+
+(require 'big5c-cns)
+
+to your .emacs depends on which conversion methods you would like to use.
+See ${PREFIX}/share/doc/mule-ucs/README.big5conv for details.
+
+If you want to use JIS X 0213 support, add the following line:
+
+(require 'jisx0213)
+
+to your .emacs. See ${PREFIX}/share/doc/mule-ucs/README.jisx0213
+(written in Japanese) for details.
+
+Mule-UCS is installed under the following directory:
+	${PREFIX}/share/emacs/20.x/site-lisp/mule-ucs/	--- Mule-UCS

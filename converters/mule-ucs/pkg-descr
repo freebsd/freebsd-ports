@@ -1,0 +1,24 @@
+Mule-UCS is an Emacs Lisp library to define encoding/decoding schemes by
+rather simple translation rule.
+
+Emacs prepares encoding/decoding schemes in the following 2 mechanisms.
+
+  (A) ... built-in ISO/IEC 2022 encoder/decoder
+  (B) ... Code Conversion Language(CCL) engine
+
+Although (A) provides powerful encoding/decoding schemes as to
+ISO/IEC 2022, we cannot utilize this for any other encoding schemes.
+(B) is a simple register machine. However, CCL program is arcane
+language because it is infamous and mysterious:-P.
+
+Mule-UCS provides flexible and comprehensible encoding mechanism to Emacs.
+Currently, Mule-UCS generates CCL program from the translation rule, but
+in the future, Mule-UCS may support another conversion engine on Emacs.
+
+Predefined conversions for Mule-UCS included in this package are:
+
+  *  Unicode(UTF-7/8/16) support.
+  *  Big5 <-> CNS conversion support.
+
+---
+Ported by okazaki@be.to
