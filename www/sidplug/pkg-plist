@@ -4,3 +4,4 @@ lib/browser_plugins/npsidplug.so
 %%PORTDOCS%%share/examples/sidplug/README.html
 %%PORTDOCS%%share/examples/sidplug/sidplug.png
 %%PORTDOCS%%@dirrm share/examples/sidplug
+@unexec rmdir %D/lib/browser_plugins/ 2> /dev/null || true
