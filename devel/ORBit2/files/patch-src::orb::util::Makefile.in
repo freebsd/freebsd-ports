@@ -1,11 +1,11 @@
---- src/orb/util/Makefile.in.orig	Fri Mar 14 19:44:05 2003
-+++ src/orb/util/Makefile.in	Fri Mar 14 19:45:11 2003
-@@ -101,7 +101,7 @@
- 
- noinst_LTLIBRARIES = liborb-util.la
- 
--INCLUDES =  	-I$(top_srcdir)/include					-I$(top_builddir)/include				-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbitrc\"		-DORBIT2_INTERNAL_API					$(WARN_CFLAGS)						$(ORBIT_DEBUG_CFLAGS)					$(DISABLE_DEPRECATED_CFLAGS)				$(ORBIT_CFLAGS)
-+INCLUDES =  	-I$(top_srcdir)/include					-I$(top_builddir)/include				-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbit2rc\"		-DORBIT2_INTERNAL_API					$(WARN_CFLAGS)						$(ORBIT_DEBUG_CFLAGS)					$(DISABLE_DEPRECATED_CFLAGS)				$(ORBIT_CFLAGS)
- 
- 
- liborb_util_la_SOURCES =  	orbit-purify.h  	genrand.c       	orbit-options.c 	orbit-options.h 	orbit-util.c
+--- src/orb/util/Makefile.in.orig	Mon Jul 21 11:21:48 2003
++++ src/orb/util/Makefile.in	Mon Jul 21 11:22:19 2003
+@@ -104,7 +104,7 @@
+ INCLUDES = \
+ 	-I$(top_srcdir)/include				\
+ 	-I$(top_builddir)/include			\
+-	-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbitrc\"	\
++	-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbit2rc\"	\
+ 	-DORBIT2_INTERNAL_API				\
+ 	$(WARN_CFLAGS)					\
+ 	$(ORBIT_DEBUG_CFLAGS)				\
