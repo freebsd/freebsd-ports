@@ -5,4 +5,4 @@ status, a charging status and a digital readout with (a) Percent
 battery remaining and (b) estimated time to dead.
 
 NOTE: You need APM driver in your kernel. And enable it to edit
-      file /etc/sysconfig at `apm_enable=NO' to `YES'.
+      file /etc/rc.conf at `apm_enable=NO' to `YES'.
