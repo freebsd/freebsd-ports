@@ -1,6 +1,6 @@
 # New ports collection makefile for:    jgnat-doc
 # Date created:         05 Sept 2001
-# Whom:                 John Merryweather Cooper <jmcoopr@webmail.bmi.net>
+# Whom:                 John Merryweather Cooper <coop9211@uidaho.edu>
 #
 # $FreeBSD$
 #
@@ -21,7 +21,7 @@ PKGNAMESUFFIX=	-${DOCFORMAT}
 DISTNAME=	jgnat-${PORTVERSION}-doc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-doc$//}/doc
 NO_BUILD=	yes
