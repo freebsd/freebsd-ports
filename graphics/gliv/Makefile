@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
-		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+BUILD_DEPENDS=	${LOCALBASE}/bin/Magick-config:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
-			-lGLU -lGL -lXext -lX11 -lm ${PTHREAD_LIBS}"
+			-lXext -lX11 ${PTHREAD_LIBS}" \
+		GDK_PIXBUF_CONFIG="${X11BASE}/bin/gdk-pixbuf-config" \
+		MAGICK_CONFIG="${LOCALBASE}/bin/Magick-config"
+CONFIGURE_ARGS=	--disable-gtk2
 
 MAN1=		gliv.1
-
-post-patch:
-	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
