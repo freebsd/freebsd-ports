@@ -1,0 +1,10 @@
+bin/abc2mtex
+bin/abc_search
+bin/abc_sort_in
+share/doc/abc2mtex/usrguide.ps
+share/doc/abc2mtex/examples/English.abc
+share/doc/abc2mtex/examples/Jigs.abc
+share/doc/abc2mtex/examples/Reels.abc
+share/doc/abc2mtex/examples/Strspys.abc
+@dirrm share/doc/abc2mtex/examples
+@dirrm share/doc/abc2mtex

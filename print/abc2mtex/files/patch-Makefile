@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Sep 25 15:25:40 1996
++++ Makefile	Mon May 28 16:30:58 2001
+@@ -1,14 +1,9 @@
+ # you may need to change these for your system
+-CFLAGS	= -g
+-MAKE	= make
+-CC	= cc
+-RM	= /bin/rm
+ 
+ TEX	= userguide music
+ ABC	= English Jigs Reels Strspys
+ 
+-install: abc2mtex sort_in search
+-	$(RM) -f *.o
++all: abc2mtex sort_in search
+ 
+ abc2mtex: fields.o abc.o tex.o index.o
+ 	$(CC) $(CFLAGS) -o $@ fields.o abc.o tex.o index.o
