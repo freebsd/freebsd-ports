@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.960
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -23,7 +24,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	acl-0.960-1.wbm.gz
+WEBMIN_MODULES=	acl-0.960-1.wbm.gz mon-0.960-1.wbm.gz mount-0.960-1.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
