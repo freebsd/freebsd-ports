@@ -49,6 +49,7 @@ post-configure:
 	${SED}	-e "s;@PREFIX@;${PREFIX};g" -e "s;@NSUBDIR@;${NSUBDIR};g" \
 		-e "s;@BROWSER@;${BROWSER_ARC};g" \
 		-e "s;@BROWSER_VER@;${BROWSER_VER};g" \
+		-e "s;@LOCALBASE@;${LOCALBASE};" \
 		${WRAPPER_TEMPLATE} >${WRKSRC}/netscape
 	${CHMOD} +x ${WRKSRC}/netscape
 	${ECHO_CMD} -n ${INFILE_HEAD},${NDIR} >${WRKSRC}/infile
