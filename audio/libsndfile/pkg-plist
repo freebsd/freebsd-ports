@@ -6,18 +6,18 @@ lib/libsndfile.a
 lib/libsndfile.so
 lib/libsndfile.so.1
 libdata/pkgconfig/sndfile.pc
-%%PORTDOCS%%share/doc/libsndfile/ChangeLog
-%%PORTDOCS%%share/doc/libsndfile/NEWS
-%%PORTDOCS%%share/doc/libsndfile/api.html
-%%PORTDOCS%%share/doc/libsndfile/bugs.html
-%%PORTDOCS%%share/doc/libsndfile/index.html
-%%PORTDOCS%%share/doc/libsndfile/libsndfile.jpg
-%%PORTDOCS%%share/doc/libsndfile/new_file_type.HOWTO
-%%PORTDOCS%%share/doc/libsndfile/sndfile_info.html
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libsndfile.jpg
+%%PORTDOCS%%%%DOCSDIR%%/new_file_type.HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/sndfile_info.html
 share/octave/site/m/sndfile_load.m
 share/octave/site/m/sndfile_play.m
 share/octave/site/m/sndfile_save.m
 @unexec rmdir %D/share/octave/site/m 2>/dev/null || true
 @unexec rmdir %D/share/octave/site 2>/dev/null || true
 @unexec rmdir %D/share/octave 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/libsndfile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

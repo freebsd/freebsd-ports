@@ -642,8 +642,8 @@ share/TekNap/help/7_Docs/Signals
 share/TekNap/help/7_Docs/Special_Vars
 share/TekNap/help/7_Docs/Status_Line
 share/TekNap/help/7_Docs/Text_Highlight
-share/doc/TekNap/README
-@dirrm share/doc/TekNap
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
 @dirrm share/TekNap/help/7_Docs
 @dirrm share/TekNap/help/6_Functions
 @dirrm share/TekNap/help/5_Programming/on

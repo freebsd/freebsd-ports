@@ -1,11 +1,11 @@
 bin/etktab
-%%PORTDOCS%%share/doc/etktab/CHANGES.html
-%%PORTDOCS%%share/doc/etktab/LICENSE.html
-%%PORTDOCS%%share/doc/etktab/README.html
-%%PORTDOCS%%share/doc/etktab/eTktab-small.xpm
-%%PORTDOCS%%share/doc/etktab/eTktab.xpm
-%%PORTDOCS%%share/doc/etktab/canada_multi-3.1.etk
-%%PORTDOCS%%share/doc/etktab/dvorak-3.1.etk
-%%PORTDOCS%%share/doc/etktab/uk-3.1.etk
-%%PORTDOCS%%share/doc/etktab/us-3.1.etk
-@dirrm share/doc/etktab
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.html
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/eTktab-small.xpm
+%%PORTDOCS%%%%DOCSDIR%%/eTktab.xpm
+%%PORTDOCS%%%%DOCSDIR%%/canada_multi-3.1.etk
+%%PORTDOCS%%%%DOCSDIR%%/dvorak-3.1.etk
+%%PORTDOCS%%%%DOCSDIR%%/uk-3.1.etk
+%%PORTDOCS%%%%DOCSDIR%%/us-3.1.etk
+@dirrm %%DOCSDIR%%

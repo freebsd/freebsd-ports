@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 libexec/gkrellm/plugins/gkrellmss.so
-%%PORTDOCS%%share/doc/gkrellmss/Changelog
-%%PORTDOCS%%share/doc/gkrellmss/README
-%%PORTDOCS%%share/doc/gkrellmss/Themes
-%%PORTDOCS%%@dirrm share/doc/gkrellmss
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Themes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

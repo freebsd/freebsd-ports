@@ -36,10 +36,10 @@ lib/libMaaateMPEG.so.1
 lib/libMaaateP.a
 lib/libMaaateP.so
 lib/libMaaateP.so.1
-%%PORTDOCS%%share/doc/Maaate/API.html
-%%PORTDOCS%%share/doc/Maaate/ChangeLog
-%%PORTDOCS%%share/doc/Maaate/THANKS
-%%PORTDOCS%%share/doc/Maaate/applications.html
-%%PORTDOCS%%@dirrm share/doc/Maaate
+%%PORTDOCS%%%%DOCSDIR%%/API.html
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/applications.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/Maaate
 @dirrm include/Maaate

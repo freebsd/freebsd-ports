@@ -1,5 +1,5 @@
 bin/wmmp3
 share/examples/wmmp3/sample.wmmp3
-%%PORTDOCS%%share/doc/wmmp3/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm share/examples/wmmp3
-%%PORTDOCS%%@dirrm share/doc/wmmp3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3,5 +3,5 @@ share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
-%%PORTDOCS%%share/doc/gtkpod/README
-%%PORTDOCS%%@dirrm share/doc/gtkpod
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

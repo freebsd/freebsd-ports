@@ -1,7 +1,7 @@
 bin/sbagen
-%%PORTDOCS%%share/doc/sbagen/sbagen.txt
-%%PORTDOCS%%share/doc/sbagen/theory.txt
-%%PORTDOCS%%share/doc/sbagen/theory2.txt
+%%PORTDOCS%%%%DOCSDIR%%/sbagen.txt
+%%PORTDOCS%%%%DOCSDIR%%/theory.txt
+%%PORTDOCS%%%%DOCSDIR%%/theory2.txt
 share/sbagen/prog-990102
 share/sbagen/prog-990103
 share/sbagen/prog-990104
@@ -39,4 +39,4 @@ share/sbagen/t-truth-other
 share/sbagen/t-wave-1
 share/sbagen/t-wave-2
 @dirrm share/sbagen
-%%PORTDOCS%%@dirrm share/doc/sbagen
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,6 +1,6 @@
 bin/toolame
-%%PORTDOCS%%share/doc/toolame/FUTURE
-%%PORTDOCS%%share/doc/toolame/HISTORY
-%%PORTDOCS%%share/doc/toolame/LGPL.txt
-%%PORTDOCS%%share/doc/toolame/README
-%%PORTDOCS%%@dirrm share/doc/toolame
+%%PORTDOCS%%%%DOCSDIR%%/FUTURE
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LGPL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

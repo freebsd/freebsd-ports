@@ -17,5 +17,5 @@ bin/toc2plax-trk
 bin/toc2toc
 bin/wav2au
 bin/wav2toc
-%%PORTDOCS%%share/doc/autools/README
-%%PORTDOCS%%@dirrm share/doc/autools
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

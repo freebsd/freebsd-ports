@@ -21,8 +21,8 @@ etc/icecast/templates/manual.html
 etc/icecast/templates/mountlist.html
 etc/icecast/templates/statistics.html
 sbin/icecast
-share/doc/icecast/manual.html
+%%DOCSDIR%%/manual.html
 @dirrm etc/icecast/conf
 @dirrm etc/icecast/templates
 @dirrm etc/icecast
-@dirrm share/doc/icecast
+@dirrm %%DOCSDIR%%

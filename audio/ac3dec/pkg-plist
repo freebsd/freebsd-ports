@@ -1,4 +1,4 @@
 bin/ac3dec
 bin/extract_ac3
-%%PORTDOCS%%share/doc/ac3dec/README
-%%PORTDOCS%%@dirrm share/doc/ac3dec
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -9,11 +9,11 @@ bin/gnupod_search.pl
 bin/mktunes.pl
 bin/tunes2pod.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/iPod.pm
-%%PORTDOCS%%share/doc/gnupod/CHANGES
-%%PORTDOCS%%share/doc/gnupod/gnutunesdb.example
-%%PORTDOCS%%share/doc/gnupod/gnupod.html
-%%PORTDOCS%%share/doc/gnupod/gnupod.texi
-%%PORTDOCS%%share/doc/gnupod/fdl.texi
-%%PORTDOCS%%share/doc/gnupod/version.texi
-%%PORTDOCS%%share/doc/gnupod/ipod.svg
-%%PORTDOCS%%@dirrm share/doc/gnupod
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.html
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.texi
+%%PORTDOCS%%%%DOCSDIR%%/fdl.texi
+%%PORTDOCS%%%%DOCSDIR%%/version.texi
+%%PORTDOCS%%%%DOCSDIR%%/ipod.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3,8 +3,8 @@ bin/abc2midi
 bin/mftext
 bin/midi2abc
 bin/yaps
-%%PORTDOCS%%share/doc/abcmidi/abcguide.txt
-%%PORTDOCS%%share/doc/abcmidi/demo.abc
-%%PORTDOCS%%share/doc/abcmidi/readme.txt
-%%PORTDOCS%%share/doc/abcmidi/yaps.txt
-%%PORTDOCS%%@dirrm share/doc/abcmidi
+%%PORTDOCS%%%%DOCSDIR%%/abcguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/demo.abc
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/yaps.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -9,9 +9,9 @@ share/opennap/examples/sample.filter
 share/opennap/examples/sample.motd
 share/opennap/examples/sample.servers
 share/opennap/examples/sample.users
-%%PORTDOCS%%share/doc/opennap/README
-%%PORTDOCS%%share/doc/opennap/napster.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/napster.txt
 @dirrm share/opennap/examples
 @dirrm share/opennap
-%%PORTDOCS%%@dirrm share/doc/opennap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/rc.d/opennap.sh
