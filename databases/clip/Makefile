@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Incorrect pkg-plist"
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	local
