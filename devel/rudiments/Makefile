@@ -21,9 +21,19 @@ MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
+
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${MAKE} doc-install
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -30,7 +30,7 @@ include/rudiments/private/socketnode.h
 lib/librudiments.a
 lib/librudiments.so
 lib/librudiments.so.0
-lib/librudiments_p.a
+%%PROFILE%%lib/librudiments_p.a
 %%PORTDOCS%%share/doc/rudiments/classes/clientsocket.h.html
 %%PORTDOCS%%share/doc/rudiments/classes/commandline.h.html
 %%PORTDOCS%%share/doc/rudiments/classes/daemonprocess.h.html

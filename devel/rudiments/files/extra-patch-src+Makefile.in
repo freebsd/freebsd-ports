@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Mon Apr 15 13:21:24 2002
++++ src/Makefile.in	Sat Dec  7 19:27:01 2002
+@@ -17,7 +17,6 @@
+ 
+ all:
+ 	$(MAKE) ../lib/librudiments.a; \
+-	$(MAKE) ../lib/librudiments_p.a; \
+ 	if ( test ! -n "@MINGW32@" -a ! -n "@CYGWIN@" -a ! -n "@UWIN@" ); then \
+ 		$(MAKE) ../lib/librudiments.so.$(VERSION); \
+ 	else \
+@@ -48,7 +47,6 @@
+ install:
+ 	$(top_srcdir)/mkinstalldirs $(libdir)
+ 	$(INSTALL) -m 644 ../lib/librudiments.a $(libdir); \
+-	$(INSTALL) -m 644 ../lib/librudiments_p.a $(libdir); \
+ 	if ( test ! -n "@MINGW32@" -a ! -n "@CYGWIN@" -a ! -n "@UWIN@" ); then \
+ 		$(RM) $(libdir)/librudiments.so*; \
+ 		$(INSTALL) ../lib/librudiments.so.$(VERSION) $(libdir); \
+@@ -62,6 +60,5 @@
+ uninstall:
+ 	$(RM) $(libdir)/librudiments.so*
+ 	$(RM) $(libdir)/librudiments.a
+-	$(RM) $(libdir)/librudiments_p.a
+ 	$(RM) $(libdir)/librudiments.dll
+ 	$(RM) $(libdir)/librudiments.lib
