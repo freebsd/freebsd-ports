@@ -81,6 +81,7 @@
     SUBDIR += man2html
     SUBDIR += mgdiff
     SUBDIR += mguesser
+    SUBDIR += minidom
     SUBDIR += mkcatalog
     SUBDIR += mswordview
     SUBDIR += nfbtrans
