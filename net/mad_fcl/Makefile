@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mad_fcl
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -31,7 +30,7 @@ pre-patch:
 			${CAT} $$f.noms > $$f && ${RM} $$f.noms; done
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/flute/Makefile
 
 do-install:
