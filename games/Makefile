@@ -128,6 +128,7 @@
     SUBDIR += gniffel
     SUBDIR += gno3dtet
     SUBDIR += gnocatan
+    SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomegames
