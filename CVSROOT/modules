@@ -2489,6 +2489,7 @@ gtoolkit	ports/x11-toolkits/gtoolkit
 gtop		ports/sysutils/gtop
 gtranslator	ports/devel/gtranslator
 gts		ports/graphics/gts
+gturing		ports/games/gturing
 gtypist		ports/games/gtypist
 guavac		ports/java/guavac
 guile		ports/lang/guile
