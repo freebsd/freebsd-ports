@@ -1,27 +1,28 @@
---- Makefile.in.orig	Fri Apr  7 05:23:04 1995
-+++ Makefile.in	Tue Jan 28 20:59:36 1997
-@@ -8,9 +8,12 @@
+--- Makefile.in.orig	Wed May  6 11:03:13 1998
++++ Makefile.in	Fri May  8 10:10:38 1998
+@@ -1,6 +1,6 @@
+ #C-Compiler (gcc if exist):
+ CC=		@CC@
+-CFLAGS=		@CFLAGS@ @X_CFLAGS@
++CFLAGS=		@CFLAGS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DINFO_DIR=\"$(INFODIR)\" -DX_INC=\"$(X_INC)\"@X_CFLAGS@
+ #CFLAGS=		@CFLAGS@ @EXTRA_CFLAGS@ @X_CFLAGS@
+ 
+ #Source Directory:
+@@ -9,13 +9,16 @@
  #Destination Directory
- prefix=/usr/local
+ prefix=@prefix@
  DESTDIR=	$(prefix)/bin
 -LIBDIR=		$(prefix)/lib
--WPELIBDIR=	$(LIBDIR)/wpe
-+LIBSUFX=	share
-+LIBDIR=		$(prefix)/$(LIBSUFX)
-+WPELIBSUFX=	$(LIBSUFX)/wpe
-+WPELIBDIR=	$(prefix)/$(WPELIBSUFX)
++LIBDIR=		$(prefix)/share
+ XWPELIBDIR=	$(LIBDIR)/xwpe
  MANDIR=		$(prefix)/man
-+INFO_FILE=	$(prefix)/info
++INFODIR=	$(prefix)/info
  
- LIBS=@LIBS@
+ LIBS=@X_LIBS@ @X_PRE_LIBS@ @LIBS@ @X_EXTRA_LIBS@
  DEFS=@DEFS@
-@@ -104,7 +107,8 @@
+ INSTALL=	cp
++
++X_INC=		@X_INC@
  
- ELIBFLAGS=	$(LSYSV) $(LXWINDOW) $(TLIB) $(LPOSIX) $(XWINLIB) $(LNET) $(EXTLIBS)
- 
--ACFLAGS=	$(CFLAGS) $(DEFS) $(ECFLAGS) -D"DESTDIR=\"$(DESTDIR)\""
-+ACFLAGS=	$(CFLAGS) $(DEFS) $(ECFLAGS) -D"DESTDIR=\"$(DESTDIR)\""  \
-+		-D"WPE_LIB_DIR=\"$(WPELIBSUFX)\"" -D"INFO_FILE=\"$(prefix)/info\""  
- 
- LIBFLAGS=	$(LIBS) $(ELIBFLAGS)
- 
+ # In case configure fails a description of many of the compilation options
+ # are provided below so that administrators can determine the proper flags.

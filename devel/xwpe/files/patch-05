@@ -1,24 +1,29 @@
---- we_prog.c.orig	Fri Apr  7 05:32:42 1995
-+++ we_prog.c	Mon Jan 27 04:16:00 1997
-@@ -22,6 +22,9 @@
+--- we_prog.c.orig	Wed May  6 11:03:14 1998
++++ we_prog.c	Fri May  8 10:09:49 1998
+@@ -15,6 +15,9 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
  #include <signal.h>
-+#if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__))
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
 +#endif
  
- #define NSTR ""
- 
-@@ -1120,7 +1123,11 @@
-    e_prog.project = e_make_string(e_prog.project, "project.prj");
-    e_prog.exedir = e_make_string(e_prog.exedir, ".");
-    e_prog.sys_include = e_make_string(e_prog.sys_include,
-+#if (defined(BSD) && (BSD >= 199306) && defined(__i386__))
-+			 "/usr/include:/usr/X11R6/include:/usr/local/include");
+ int e_run_sh(FENSTER *f);
+ int e_make_library(char *library, char *ofile, FENSTER *f);
+@@ -944,7 +947,15 @@
+    e_prog.exedir = WpeStringMake(".");
+    if (e_prog.sys_include) FREE(e_prog.sys_include);
+    e_prog.sys_include = WpeStringMake(
+-			 "/usr/include:/usr/5include:/usr/include/X11");
++#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
++			 "/usr/include:/usr/local/include"
 +#else
- 			 "/usr/include:/usr/5include:/usr/include/X11");
++			 "/usr/include:/usr/5include"
 +#endif
++#if !defined(NO_XWINDOWS)
++			 ":"X_INC
++#endif
++   );
     if(e_prog.comp == NULL)
     e_prog.comp = MALLOC(e_prog.num * sizeof(struct e_s_prog *));
     else

@@ -1,0 +1,119 @@
+--- configure.orig	Wed May  6 11:03:15 1998
++++ configure	Fri May  8 10:28:36 1998
+@@ -1374,63 +1374,63 @@
+ set dummy lpr; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1377: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_prog_PRINTER'+set}'`\" = set"; then
++if eval "test \"`echo '$''{'ac_cv_prog_PNTR'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+-  if test -n "$PRINTER"; then
+-  ac_cv_prog_PRINTER="$PRINTER" # Let the user override the test.
++  if test -n "$PNTR"; then
++  ac_cv_prog_PNTR="$PNTR" # Let the user override the test.
+ else
+   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
+   for ac_dir in $PATH; do
+     test -z "$ac_dir" && ac_dir=.
+     if test -f $ac_dir/$ac_word; then
+-      ac_cv_prog_PRINTER="lpr"
++      ac_cv_prog_PNTR="lpr"
+       break
+     fi
+   done
+   IFS="$ac_save_ifs"
+ fi
+ fi
+-PRINTER="$ac_cv_prog_PRINTER"
+-if test -n "$PRINTER"; then
+-  echo "$ac_t""$PRINTER" 1>&6
++PNTR="$ac_cv_prog_PNTR"
++if test -n "$PNTR"; then
++  echo "$ac_t""$PNTR" 1>&6
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-if test -z "${PRINTER}"; then
++if test -z "${PNTR}"; then
+  # Extract the first word of "lp", so it can be a program name with args.
+ set dummy lp; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1406: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_prog_PRINTER'+set}'`\" = set"; then
++if eval "test \"`echo '$''{'ac_cv_prog_PNTR'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+-  if test -n "$PRINTER"; then
+-  ac_cv_prog_PRINTER="$PRINTER" # Let the user override the test.
++  if test -n "$PNTR"; then
++  ac_cv_prog_PNTR="$PNTR" # Let the user override the test.
+ else
+   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
+   for ac_dir in $PATH; do
+     test -z "$ac_dir" && ac_dir=.
+     if test -f $ac_dir/$ac_word; then
+-      ac_cv_prog_PRINTER="lp"
++      ac_cv_prog_PNTR="lp"
+       break
+     fi
+   done
+   IFS="$ac_save_ifs"
+ fi
+ fi
+-PRINTER="$ac_cv_prog_PRINTER"
+-if test -n "$PRINTER"; then
+-  echo "$ac_t""$PRINTER" 1>&6
++PNTR="$ac_cv_prog_PNTR"
++if test -n "$PNTR"; then
++  echo "$ac_t""$PNTR" 1>&6
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+ fi
+-if test -n "${PRINTER}"; then
++if test -n "${PNTR}"; then
+  cat >> confdefs.h <<EOF
+-#define PRNTCMD "$PRINTER"
++#define PRNTCMD "lpr"
+ EOF
+ 
+ else
+@@ -1559,6 +1559,8 @@
+                               \
+     /usr/openwin/include      \
+     /usr/openwin/share/include \
++    /usr/dt/include      \
++    /usr/dt/share/include \
+     ; \
+   do
+     if test -r "$ac_dir/$x_direct_test_include"; then
+@@ -1680,10 +1682,14 @@
+ #define X_DISPLAY_MISSING 1
+ EOF
+ 
+-  X_CFLAGS= X_PRE_LIBS= X_LIBS= X_EXTRA_LIBS=
++  X_INC= X_CFLAGS= X_PRE_LIBS= X_LIBS= X_EXTRA_LIBS=
+ else
+   if test -n "$x_includes"; then
+     X_CFLAGS="$X_CFLAGS -I$x_includes"
++	if [ X"$X_INC" != X ]; then
++	  X_INC="${X_INC}:"
++	fi
++	X_INC="${X_INC}$x_includes"
+   fi
+ 
+   # It would also be nice to do this for all -L options, not just this one.
+@@ -2454,8 +2460,9 @@
+ s%@CPP@%$CPP%g
+ s%@RANLIB@%$RANLIB%g
+ s%@XDB@%$XDB%g
+-s%@PRINTER@%$PRINTER%g
++s%@PNTR@%$PNTR%g
+ s%@X_CFLAGS@%$X_CFLAGS%g
++s%@X_INC@%$X_INC%g
+ s%@X_PRE_LIBS@%$X_PRE_LIBS%g
+ s%@X_LIBS@%$X_LIBS%g
+ s%@X_EXTRA_LIBS@%$X_EXTRA_LIBS%g
