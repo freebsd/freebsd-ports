@@ -1,6 +1,6 @@
---- src/oops.cfg.in.orig	Thu Sep 14 15:35:50 2000
-+++ src/oops.cfg.in	Thu Sep 14 15:38:56 2000
-@@ -452,7 +452,7 @@
+--- src/oops.cfg.in.orig	Wed Dec 13 20:10:58 2000
++++ src/oops.cfg.in	Wed Dec 13 20:11:24 2000
+@@ -519,7 +519,7 @@
  
  module oopsctl {
  	# path to oopsctl unix socket
