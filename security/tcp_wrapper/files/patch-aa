@@ -283,3 +283,10 @@
   
   tidy:	clean
   	chmod -R a+r .
+*** /dev/null	Thu Jan 25 06:52:04 1996
+--- shdata.c	Thu Jan 25 06:54:34 1996
+***************
+*** 0 ****
+--- 1,2 ----
++ int allow_severity;
++ int deny_severity;
