@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2004  IMG SRC, Inc.  All rights reserved.
 #
-# $Id: check_pgcluster.pl,v 1.2 2004/02/25 06:09:25 kuriyama Exp $
+# $Id: check_pgcluster.pl,v 1.4 2004/03/03 11:51:06 kuriyama Exp $
 #
 # Plugin for nagios.
 #
@@ -29,7 +29,7 @@ use strict;
 use Getopt::Std;
 use DBI;
 
-my %O;
+my ($ret, %O, @r) = (0);
 getopts('H:p:U:P:w:', \%O);
 
 $O{p} ||= 5432;
@@ -37,25 +37,29 @@ $O{U} ||= "";
 $O{P} ||= "";
 usage() if (not $O{H} or not $O{w});
 
-my $dbh = DBI->connect("dbi:Pg:dbname=template1;host=$O{H};port=$O{p}", $O{U}, $O{P});
+my $dbh = DBI->connect("dbi:Pg:dbname=template1;host=$O{H};port=$O{p}",
+		       $O{U}, $O{P}, { PrintError => 0 });
 
-die if (not $dbh);
+if ($dbh) {
+  my $sth = $dbh->prepare("select pgr_current_replicator()") or die;
+  $sth->execute or die;
+  @r = $sth->fetchrow_array;
+  $sth->finish;
 
-my $sth = $dbh->prepare("select pgr_current_replicator()") or die;
-$sth->execute or die;
-my @r = $sth->fetchrow_array;
-$sth->finish;
+  $dbh->disconnect;
 
-$dbh->disconnect;
+  if (not defined $r[0] or length($r[0]) < 1) {
+    $ret = 2;
+  } elsif ($r[0] ne $O{w}) {
+    $ret = 1;
+  }
 
-my $ret = 0;
-if ($r[0] ne $O{w}) {
-  $ret = 1;
-  $ret = 2 if (length($r[0]) < 1);
+} else {
+  $ret = 2;
 }
 
 my %STATUS = (2 => "CRITICAL", 1 => "WARNING", 0 => "OK");
-printf "PGCLUSTER %s: %s\n", $STATUS{$ret}, $r[0];
+printf "PGCLUSTER %s: %s\n", $STATUS{$ret}, $r[0] || "";
 exit $ret;
 
 # ============================================================

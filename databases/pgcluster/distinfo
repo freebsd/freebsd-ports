@@ -1,4 +1,4 @@
 MD5 (postgresql/postgresql-base-7.3.4.tar.gz) = 2b8600cc0f0c2d80271b533c394c886b
 SIZE (postgresql/postgresql-base-7.3.4.tar.gz) = 7137288
-MD5 (postgresql/pgcluster-1.0.6b-patch.tar.gz) = 405ea2a5f61a05c31ef16e3791be3ec4
-SIZE (postgresql/pgcluster-1.0.6b-patch.tar.gz) = 181877
+MD5 (postgresql/pgcluster-1.0.6c.a13-patch.tar.gz) = 298e8510ecf293b7f3d7c91da46705a4
+SIZE (postgresql/pgcluster-1.0.6c.a13-patch.tar.gz) = 197987

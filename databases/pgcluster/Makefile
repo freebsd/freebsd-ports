@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	pgcluster
-PORTVERSION=	1.0.6b
-PORTREVISION=	3
+PORTVERSION=	1.0.6c.a13
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	v${BASEPGSQL}
 DISTNAME=	postgresql-base-${BASEPGSQL}
 DIST_SUBDIR=	postgresql
 
-PATCH_SITES=	http://hiroshima.sraw.co.jp/people/mitani/jpug/pgcluster/current/
+PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	pgcluster-${PORTVERSION}-patch.tar.gz
-PATCH_DIST_STRIP=	-p1
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=The multi-master and synchronous replication system for PostgreSQL
@@ -25,6 +24,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	257
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
@@ -79,12 +79,12 @@ post-patch:
 
 post-build:
 .if !defined(WITHOUT_PGCLUSTER_REPLICATION)
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp do-configure
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp do-build
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp run-autotools do-configure
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp AUTOCONF=autoconf257 do-build
 .endif
 .if !defined(WITHOUT_PGCLUSTER_LOADBALANCER)
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb do-configure
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb do-build
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb run-autotools do-configure
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb AUTOCONF=autconf257 do-build
 .endif
 
 pre-install:

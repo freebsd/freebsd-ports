@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2004  IMG SRC, Inc.  All rights reserved.
 #
-# $Id: check_pgreplicate.pl,v 1.1 2004/02/23 06:06:13 kuriyama Exp $
+# $Id: check_pgreplicate.pl,v 1.2 2004/04/16 12:10:53 kuriyama Exp $
 #
 # Plugin for nagios.
 #
@@ -39,9 +39,24 @@ my $HOSTNAME_MAX_LENGTH = 128;
 my $DBNAME_MAX_LENGTH = 128;
 my $USERNAME_MAX_LENGTH = 128;
 
+# typedef struct ReplicateHeaderType
+# {
+# 	char cmdSys;
+# 	char cmdSts;
+# 	char cmdType;
+# 	char dummy;
+# 	char port[INT_LENGTH];
+# 	char pid[INT_LENGTH];
+# 	char query_size[INT_LENGTH];
+# 	char except_host[HOSTNAME_MAX_LENGTH];
+# 	char from_host[HOSTNAME_MAX_LENGTH];
+# 	char dbName[DBNAME_MAX_LENGTH];
+# 	char userName[USERNAME_MAX_LENGTH];
+# 	struct timeval tv;
+# } ReplicateHeader;
 my $query = "dummy";
-my $packet = pack "CCCCllla128a128a128a128ll", 0, 0, 0, ord("o"),
-  0, 0, 5, "except host", "from host", "db name", "user name",
+my $packet = pack "CCCCa12a12a12a128a128a128a128ll", 0, 0, ord("o"), 0,
+  "0", "0", "5", "except host", "from host", "db name", "user name",
   time, 0;
 
 print $sock $packet;
