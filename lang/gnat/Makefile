@@ -5,11 +5,11 @@
 # Date created:         Sat Mar 18 02:16:45 1995
 # Porter:               nils@guru.ims.uni-stuttgart.de
 #
-# $Id: Makefile,v 1.4 1995/04/24 11:29:14 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/13 15:08:45 jmacd Exp $
 
 DISTNAME=       gnat-2.03-src
 PKGNAME=        gnat-2.03
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
 EXTRACT_SUFX=	.tar.gz
 

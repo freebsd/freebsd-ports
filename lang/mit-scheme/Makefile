@@ -6,7 +6,7 @@
 
 DISTNAME=       mit-scheme
 PKGNAME=	mit-scheme-7.3
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
 

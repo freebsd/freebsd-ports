@@ -3,12 +3,12 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/08 22:09:06 jkh Exp $
+# $Id: Makefile,v 1.2 1995/08/09 01:30:00 asami Exp $
 #
 
 DISTNAME=       python1.2
 PKGNAME=        python-1.2
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=	ftp://www.python.org/pub/python/src/
 
 MAINTAINER=	jkh@FreeBSD.org

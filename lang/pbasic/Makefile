@@ -3,12 +3,12 @@
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/08/24 01:43:46 asami Exp $
 #
 
 DISTNAME=	pbasic-2.0-950813
 PKGNAME=	pbasic-2.0
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 KEYWORDS+=	basic interpreter
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
