@@ -1,0 +1,22 @@
+mod_access_referer is an Apache module that understand the "Referer"
+HTTP header, and grant or deny access based on the Web page that
+refered the file.
+
+The "Referer" HTTP header is sent by the browser to the server, and it
+contains the URL of the resource from where the URL of the asked
+resource was obtained. The document "Hypertext Transfer Protocol --
+HTTP/1.1" RFC 2616 gives the following explanation:
+     "The Referer[sic] request-header field allows the client to
+     specify, for the server's benefit, the address (URI) of the
+     resource from which the Request-URI was obtained (the "referrer",
+     although the header field is misspelled.) The Referer
+     request-header allows a server to generate lists of back-links to
+     resources for interest, logging, optimized caching, etc. It also
+     allows obsolete or mistyped links to be traced for maintenance. The
+     Referer field MUST NOT be sent if the Request-URI was obtained from
+     a source that does not have its own URI, such as input from the
+     user keyboard."
+
+WWW:	http://accessreferer.sourceforge.net/
+
+ -- Alex Kapranoff <kapr@crosswinds.net>

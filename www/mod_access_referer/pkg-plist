@@ -1,0 +1,10 @@
+libexec/apache/mod_access_referer.so
+@exec %D/sbin/apxs -e -A -n access_referer %D/%F
+@unexec %D/sbin/apxs -e -A -n access_referer %D/%F
+share/doc/mod_access_referer/HACKING
+share/doc/mod_access_referer/LICENSE.txt
+share/doc/mod_access_referer/ChangeLog
+share/doc/mod_access_referer/README
+share/doc/mod_access_referer/TODO
+share/doc/mod_access_referer/mod_access_referer.html
+@dirrm share/doc/mod_access_referer

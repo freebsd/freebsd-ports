@@ -1,0 +1,14 @@
+************************************************************
+Please edit your apache.conf or httpd.conf to enable and
+setup this module.
+
+You can always refer to the useful documents held in
+${PREFIX}/share/doc/mod_referer_access/, where ${PREFIX} is
+typically /usr/local.
+
+When it's done, do the following to take effect:
+
+  apachectl configtest	(and correct any errors reported)
+  apachectl restart
+
+************************************************************
