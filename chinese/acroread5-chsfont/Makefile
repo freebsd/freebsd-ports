@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	chsfont
 CATEGORIES=	chinese
+DISTNAME=	chsfont
 
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 
