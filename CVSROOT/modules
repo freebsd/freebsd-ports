@@ -6898,6 +6898,7 @@ windowmaker	ports/x11-wm/windowmaker
 wine		ports/emulators/wine
 wingz		ports/math/wingz
 wingz3		ports/math/wingz3
+wizard		ports/devel/wizard
 wlconfig	src/usr.sbin/wlconfig
 wm2		ports/x11-wm/wm2
 wmScoreBoard	ports/misc/wmScoreBoard
