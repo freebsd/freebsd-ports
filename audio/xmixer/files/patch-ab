@@ -1,0 +1,28 @@
+--- configure.in.orig	Sat Aug 21 05:46:55 1999
++++ configure.in	Tue Oct 26 23:48:36 1999
+@@ -17,21 +17,21 @@
+ AC_PATH_X
+ AC_PATH_XTRA
+ LDFLAGS="$LDFLAGS -L$x_libraries/"
+-CFLAGS="$CFLAGS -I$x_includes/"
++CFLAGS="$CFLAGS -I$x_includes/ -I/usr/X11R6/include/gtk12/"
+ 
+ AC_CHECK_LIB(Xt, XtVaSetValues)
+ AC_CHECK_LIB(Xaw, XawPanedGetNumSub)
+ 
+ __cflags=$CFLAGS
+-CFLAGS="$CFLAGS `gtk-config --cflags`"
++CFLAGS="$CFLAGS `gtk12-config --cflags`"
+ __libs=$LIBS
+-LIBS="$LIBS `gtk-config --libs`"
++LIBS="$LIBS `gtk12-config --libs`"
+ AC_CHECK_LIB(gdk, gdk_init)
+ AC_CHECK_LIB(gtk, gtk_main)
+ CFLAGS=$__cflags
+ LIBS=$__libs
+ 
+-__gtk=`gtk-config --version`
++__gtk=`gtk12-config --version`
+ case "$__gtk" in
+ 	1.2*)
+ 	x_progs="xmixer gmixer"

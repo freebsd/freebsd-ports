@@ -1,0 +1,36 @@
+--- Makefile.in.orig	Sat Aug 21 15:25:07 1999
++++ Makefile.in	Wed Oct 27 06:02:28 1999
+@@ -33,16 +33,18 @@
+ 	mkfb.pl < XMixer.ad > fallback.h
+ 
+ gui_gtk.o: gui_gtk.c
+-	$(CC) $(CFLAGS) $(INCS) `gtk-config --cflags` -c $<
++	$(CC) $(CFLAGS) $(INCS) `gtk12-config --cflags` -c $<
+ 
+ %.o:	%.c
+ 	$(CC) $(CFLAGS) $(INCS) -c $<
+ 
++all:	gmixer xmixer
++
+ xmixer: Xw/libXw.a $(OBJS)
+ 	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ gmixer: $(G_OBJS)
+-	$(LD) $(LDFLAGS) -o $@ $(G_OBJS) `gtk-config --libs`
++	$(LD) $(LDFLAGS) -o $@ $(G_OBJS) `gtk12-config --libs`
+ 
+ Xw/libXw.a:
+ 	cd Xw && make libXw.a
+@@ -51,9 +53,9 @@
+ 	lynx -dump http://www/~rasca/xmixer/index.html | sed "s%//www/%//home.pages.de/%" > README
+ 
+ install: $(PROGS)
+-	install -o bin xmixer $(bindir)
+-	install xmixer.man $(mandir)/xmixer.1
+-	install -o bin gmixer $(bindir)
++	install -c -o bin xmixer $(bindir)
++	install -c xmixer.man $(mandir)/xmixer.1
++	install -c -o bin gmixer $(bindir)
+ 
+ install.lib: libmixer.a
+ 	install libsmixer.a $(LIBDIR)
