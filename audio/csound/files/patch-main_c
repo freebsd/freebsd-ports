@@ -1,13 +1,13 @@
---- main.c.orig	Wed Sep 20 10:06:29 2000
-+++ main.c	Wed Oct 11 16:16:56 2000
+--- main.c.orig	Sat Feb 24 14:16:18 2001
++++ main.c	Mon Apr  9 23:04:12 2001
 @@ -150,10 +150,6 @@
      }
  }
  
 -void psignal(int sig, char *str)
 -{
--    fprintf(stderr, "%s: %s\n", str, sig2str(sig));
+-    fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
 -}
  #endif
  
- static void signal_handler(int sig)
+ #if defined(__BEOS__)
