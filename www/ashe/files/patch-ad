@@ -11,4 +11,4 @@
   
   ! Very Important : Change this directory to the directory of help.html
   
-! xhtml*htmldir: /usr/X11R6/lib/X11/xhtml
+! xhtml*htmldir: ${X11BASE}/lib/X11/xhtml
