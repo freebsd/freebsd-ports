@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pugs
-PORTVERSION=	6.0.11
+PORTVERSION=	6.0.14
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -31,8 +31,9 @@ post-configure:
 		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6/mach,' \
 		${WRKSRC}/Makefile
 
+#	we don't want HTTP::Headers.3 LWP::Simple.3
 post-patch:
-	@${REINPLACE_CMD} -e '/-isrc$$/s,-isrc,-isrc -L${PREFIX}/lib,' \
+	@${REINPLACE_CMD} -e 's#blib6/man3$$#/dev/null#' \
 		${WRKSRC}/Makefile.PL
 
 .if !defined(NOPORTDOCS)
