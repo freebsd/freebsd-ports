@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	checkstyle
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	dglo@ssec.wisc.edu
+MAINTAINER=	dglo@icecube.wisc.edu
 COMMENT=	Java style checker
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -46,8 +45,8 @@ pre-install:
 	@${FIND} ${BUILDDIR}/contrib/ -type d -print | ${SORT} -r | \
 		${SED} -e "s,^${BUILDDIR}/contrib,@dirrm ${STYLEDIR:S,${PREFIX}/,,}," >> ${PLIST}
 
-do-install: do-install-jar do-install-data do-install-apidocs
-	@${INSTALL_SCRIPT} ${WRKSRC}/checkstyle ${PREFIX}/bin/checkstyle
+do-install: do-install-jar do-install-data do-install-apidocs \
+		do-install-script
 
 do-install-jar:
 	@${MKDIR} ${JAVAJARDIR}
@@ -67,5 +66,8 @@ do-install-apidocs:
 .endfor
 	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
+
+do-install-script:
+	@${INSTALL_SCRIPT} ${WRKSRC}/checkstyle ${PREFIX}/bin/checkstyle
 
 .include <bsd.port.mk>
