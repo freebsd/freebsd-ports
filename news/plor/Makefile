@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	plor
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
-		ftp://ftp.unipd.it/pub/Linux/pluto/developers/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= system/bbs/mail
 
 MAINTAINER=	hoek@FreeBSD.org
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		plor.1
 
