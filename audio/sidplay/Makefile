@@ -19,5 +19,6 @@ USE_XLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 
 .include <bsd.port.mk>
