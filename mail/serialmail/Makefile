@@ -13,20 +13,24 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.de.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.iway.fr/pub/unix/mail/qmail/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 COMMENT=	Tools for passing mail across serial links
 
-MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 serialsmtp.1 setlock.1
+RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
+		${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail
 
-RUN_DEPENDS=	${PREFIX}/bin/tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
-		${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-
-NO_PACKAGE=	Unsure of djb's license
+NO_PACKAGE=	Unsure of DJB license
 
 ALL_TARGET=	it
+
+PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
+SCRIPTS=	maildirqmtp maildirsmtp
+MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
+		serialsmtp.1 setlock.1
+DOCS=		AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 
 post-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
@@ -35,21 +39,13 @@ post-configure:
 	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
 
 do-install:
-.for file in serialqmtp serialsmtp maildirserial setlock
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
-.for file in maildirqmtp maildirsmtp
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
-.for file in maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 serialsmtp.1 setlock.1
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man1
-.endfor
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
+		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>  Copying documents to ${PREFIX}/share/doc/serialmail"
-	@${MKDIR} ${PREFIX}/share/doc/serialmail
-.for file in FROMISP TOISP AUTOTURN
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/serialmail
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -4,7 +4,12 @@ bin/maildirsmtp
 bin/serialqmtp
 bin/serialsmtp
 bin/setlock
-%%PORTDOCS%%share/doc/serialmail/AUTOTURN
-%%PORTDOCS%%share/doc/serialmail/FROMISP
-%%PORTDOCS%%share/doc/serialmail/TOISP
-%%PORTDOCS%%@dirrm share/doc/serialmail
+%%PORTDOCS%%%%DOCSDIR%%/AUTOTURN
+%%PORTDOCS%%%%DOCSDIR%%/BLURB
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FROMISP
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TOISP
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
