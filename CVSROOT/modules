@@ -8629,6 +8629,7 @@ sdlmm		ports/devel/sdlmm
 sdlroids	ports/games/sdlroids
 sdocbook-xml	ports/textproc/sdocbook-xml
 sdpa		ports/math/sdpa
+sdpara		ports/math/sdpara
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
 se-ispell	ports/textproc/se-ispell
