@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gleyes
+# New ports collection makefile for:	glchess
 # Date created:				Wed Jul 18 08:35:56 EDT 2001
 # Whom:					Patrick Li <pat@databits.net>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
