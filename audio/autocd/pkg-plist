@@ -1,8 +1,0 @@
-bin/acdplay
-bin/autocd
-bin/cdctl
-bin/pause
-bin/eject
-etc/rc.d/autocd.sh
-%%PORTDOCS%%%%DOCSDIR%%/README.rus.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
