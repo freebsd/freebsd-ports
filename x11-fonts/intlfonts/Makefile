@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	intlfonts
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free X11 fonts for all characters that Emacs can handle
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86 \
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
 		type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 USE_X_PREFIX=	yes
