@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.170 1998/07/06 22:48:31 nectar Exp $
+# $Id: Makefile,v 1.171 1998/07/07 20:36:55 mph Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -51,6 +51,7 @@
     SUBDIR += ldap
     SUBDIR += lftp
     SUBDIR += libsocket++
+    SUBDIR += licq
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += macipgw
