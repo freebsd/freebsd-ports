@@ -10,8 +10,6 @@ System/Library/Bundles/libgnustep-xgps.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgnustep-xgps.bundle/Resources/Info.plist
 System/Library/Bundles/libgnustep-xgps.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-xgps
 System/Makefiles/Additional/xgps.make
-System/Tools/font_cacher
-System/Tools/gpbs
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/font_cacher
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gpbs
 @exec ln -sf ../Resources %D/System/Library/Bundles/libgnustep-xgps.bundle/Contents/Resources
