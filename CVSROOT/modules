@@ -1659,6 +1659,7 @@ dumpasn1	ports/converters/dumpasn1
 dumpmpeg	ports/multimedia/dumpmpeg
 dungeon		ports/games/dungeon
 dungeoncrawl	ports/games/dungeoncrawl
+dupfind		ports/sysutils/dupfind
 duplicity	ports/sysutils/duplicity
 durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
