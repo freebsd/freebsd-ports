@@ -101,7 +101,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mhash=\${LOCALBASE}"
 			;;
 		\"pdflib\")
-			echo "LIB_DEPENDS+=	pdf.3:\${PORTSDIR}/print/pdflib3"
+			echo "LIB_DEPENDS+=	pdf.4:\${PORTSDIR}/print/pdflib"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
 			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	tiff.4:\${PORTSDIR}/graphics/tiff"
