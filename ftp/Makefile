@@ -40,6 +40,7 @@
     SUBDIR += ncftpd
     SUBDIR += oftpd
     SUBDIR += omi
+    SUBDIR += p5-Net-FTPServer
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += proftpd
