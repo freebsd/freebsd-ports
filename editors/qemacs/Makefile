@@ -17,6 +17,7 @@ COMMENT=	"QEmacs (for Quick Emacs) is a very small but powerful UNIX editor"
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
+USE_XLIB=	yes
 USE_REINPLACE=	yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
