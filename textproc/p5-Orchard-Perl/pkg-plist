@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/Class/Orchard/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Orchard/TreeBuilder.pm
+lib/perl5/site_perl/%%PERL_VER%%/SAXDriver/XMLParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Orchard.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Orchard-Perl/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Orchard-Perl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SAXDriver 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Orchard
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
