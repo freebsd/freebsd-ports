@@ -9,11 +9,10 @@
 DISTNAME=	Eterm-bg-0.9
 PKGNAME=	eterm-bg-0.9
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
-		http://eterm.is.nontoxic.org/download/ \
-		ftp://ftp.livewire.com.au/pub/linuxberg/files/x11/system/ \
-		ftp://ftp.c-com.net/pub/.30/LinuxBerg/files/x11/system/ \
-		ftp://ftp.sunsite.auc.dk/disk6/linuxberg.com/files/x11/system/
+MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/Eterm/ \
+		ftp://ftp.kddlabs.co.jp/.10/X11/window_manager/enlightenment/Eterm/ \
+		ftp://ftp.sogang.ac.kr/.c/tools/X11/Enlightenment/Eterm/
 
 MAINTAINER=	taoka@FreeBSD.org
 
