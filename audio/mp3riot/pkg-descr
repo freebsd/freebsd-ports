@@ -1,0 +1,12 @@
+mp3riot (formerly known as f2html.pl) is a command line utility
+that searches recursively through directories, builds a file list
+(with additional file information), and generates HTML files,
+playlists, etc. The output can be controlled, links can be corrected,
+and more. The script is mainly desigend to create Web pages,
+playlists, and databases for MP3 and Ogg files, but can also used for
+other purposes.
+
+WWW: http://www.linuxsecure.de/index.php?action=55
+
+- Francisco -
+francisco@gomezmarin.com
