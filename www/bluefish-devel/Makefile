@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.9.20030519
+PORTVERSION=	0.9.20030621
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.shellhung.org/${DOWNLOAD}/
-DISTNAME=	${PORTNAME}-2003-05-19
+DISTNAME=	${PORTNAME}-2003-06-21
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	HTML editor designed for the experienced web designer
