@@ -21,3 +21,5 @@ www/cgi-bin/cgiwrapd
 www/cgi-bin/nph-cgiwrap
 www/cgi-bin/nph-cgiwrapd
 %%PORTDOCS%%@dirrm share/doc/cgiwrap
+@unexec rmdir %D/www/cgi-bin 2>/dev/null || true                               
+@unexec rmdir %D/www 2>/dev/null || true   
