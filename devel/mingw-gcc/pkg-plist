@@ -23,6 +23,7 @@ lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/README
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/exception
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/fixed
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/float.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/g2c.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/iso646.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/limits.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/new
