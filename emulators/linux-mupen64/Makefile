@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://mupen64.emulation64.com/files/:mupen \
 		http://www.liquidx.org/distfiles/:plugins
@@ -19,8 +19,7 @@ COMMENT=	A Nintendo 64 emulator (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 		${LINUXBASE}/usr/X11R6/lib/libXi.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
-		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
-		${LINUXBASE}/usr/lib/libGLcore.so.1:${PORTSDIR}/x11/nvidia-driver \
+		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
@@ -31,6 +30,8 @@ ONLY_FOR_ARCHS=	i386
 INSTALLS_SHLIB=	yes
 NO_BUILD=	yes
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.
 STRIP=
@@ -38,6 +39,7 @@ STRIP=
 post-patch:
 	@(cp ${FILESDIR}/linux-mupen64_install.in ${WRKDIR}/linux-mupen64_install)
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKDIR}/linux-mupen64_install
+	@${SED} 's|%%LINUXBASE%%|${LINUXBASE}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/linux-mupen64
