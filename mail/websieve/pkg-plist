@@ -1,0 +1,4 @@
+www/cgi-bin/websieve.pl
+etc/websieve/websieve.conf.sample
+etc/websieve/funclib.pl
+@dirrm etc/websieve
