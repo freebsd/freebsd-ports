@@ -1,11 +1,11 @@
 lib/FileRunner/FAQ
 lib/FileRunner/HISTORY
 lib/FileRunner/QuickStart.txt
+lib/FileRunner/Tips
 lib/FileRunner/Users_Guide.txt
 lib/FileRunner/chmod.tcl
 lib/FileRunner/cmd.tcl
 lib/FileRunner/config.tcl
-lib/FileRunner/bitmaps/cross.bit
 lib/FileRunner/dialog_about.tcl
 lib/FileRunner/ext.so
 lib/FileRunner/font.tcl
@@ -13,8 +13,10 @@ lib/FileRunner/fr
 lib/FileRunner/frcolor
 lib/FileRunner/frftp
 lib/FileRunner/ftp.tcl
+lib/FileRunner/http.tcl
 lib/FileRunner/palette.tcl
 lib/FileRunner/tclIndex
+lib/FileRunner/bitmaps/cross.bit
 lib/FileRunner/bitmaps/frterm.bit
 lib/FileRunner/bitmaps/larger.bit
 lib/FileRunner/bitmaps/left.bit
@@ -23,6 +25,7 @@ lib/FileRunner/bitmaps/pgdown.bit
 lib/FileRunner/bitmaps/pgup.bit
 lib/FileRunner/bitmaps/right.bit
 lib/FileRunner/bitmaps/smaller.bit
+lib/FileRunner/bitmaps/tree.bit
 lib/FileRunner/bitmaps/toggle.bit
 lib/FileRunner/bitmaps/up.bit
 lib/FileRunner/bitmaps/update.bit
