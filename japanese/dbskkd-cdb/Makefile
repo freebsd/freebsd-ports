@@ -32,6 +32,7 @@ post-patch:
 .endfor
 
 post-install:
+	${MKDIR} ${PREFIX}/share/doc/dbskkd-cdb
 .for docs in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${PREFIX}/share/doc/dbskkd-cdb
 .endfor
