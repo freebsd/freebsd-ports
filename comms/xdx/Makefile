@@ -1,0 +1,22 @@
+# New ports collection makefile for:	xdx
+# Date created:				2004-05-21
+# Whom:					Matt Dawson <matt@mattsnetwork.co.uk>
+#
+# $FreeBSD$
+
+PORTNAME=	xdx
+PORTVERSION=	1.2
+CATEGORIES=	comms
+MASTER_SITES=	http://www.qsl.net/pg4i/download/
+
+MAINTAINER=	matt@mattsnetwork.co.uk
+COMMENT=	Amateur Radio DX cluster monitor
+
+USE_X_PREFIX=	yes
+USE_GNOME=	pkgconfig gtk20
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+MAN1=		xdx.1
+
+.include <bsd.port.mk>
