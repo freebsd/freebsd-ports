@@ -193,6 +193,7 @@
     SUBDIR += nullmailer
     SUBDIR += offlineimap
     SUBDIR += openwebmail
+    SUBDIR += p5-Email-Filter
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Folder
     SUBDIR += p5-Email-FolderType
