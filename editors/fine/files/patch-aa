@@ -39,4 +39,4 @@
  
  fine:	fine.o fine.mo
 -	$(CC) -g -ofine fine.o fine.mo $(OPTIONS) $(LIB) -lFine -lqt -lX11 -lXext
-+	$(CXX) -g -ofine fine.o fine.mo $(OPTIONS) $(LIB) -lFine -lqt2 -lX11 -lXext
++	$(CXX) -g -ofine fine.o fine.mo $(OPTIONS) $(LIB) -lFine -lqt -lX11 -lXext
