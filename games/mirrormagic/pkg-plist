@@ -3,11 +3,9 @@ share/doc/mirrormagic/CHANGES
 share/doc/mirrormagic/COPYRIGHT
 share/doc/mirrormagic/DISCLAIMER
 share/doc/mirrormagic/README
-@mode 666
 share/mirrormagic/data/RAY.level
 share/mirrormagic/data/RAY.names
 share/mirrormagic/data/RAY.score
-@mode
 share/mirrormagic/graphics/DoubleRayDoor.xpm
 share/mirrormagic/graphics/DoubleRayDoorMaske.xbm
 share/mirrormagic/graphics/DoubleRayFont.xpm
