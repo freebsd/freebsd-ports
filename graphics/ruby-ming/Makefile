@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.0.3a
+PORTVERSION=	0.0.9b
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.opaque.net/ming/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,12 +15,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel
-LIB_DEPENDS=	ming.1:${PORTSDIR}/graphics/ming
+LIB_DEPENDS=	ming.2:${PORTSDIR}/graphics/ming
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-MD5_FILE=	${PORTSDIR}/graphics/ming/distinfo
+MD5_FILE=	${.CURDIR}/../ming/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/rb_ext
 CONFIGURE_ARGS=	--with-ming-include="${LOCALBASE}/include/ming"

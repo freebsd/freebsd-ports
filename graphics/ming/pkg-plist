@@ -1,4 +1,5 @@
 include/ming/blocklist.h
+include/ming/blocktypes.h
 include/ming/displaylist.h
 include/ming/fill.h
 include/ming/libming.h
@@ -6,10 +7,70 @@ include/ming/ming.h
 include/ming/movie.h
 include/ming/movieclip.h
 include/ming/position.h
-include/ming/shape.h
+include/ming/shape_util.h
 include/ming/blocks/swf.h
+include/ming/c++/ming.h
 @dirrm include/ming/blocks
+@dirrm include/ming/c++
 @dirrm include/ming
 lib/libming.a
 lib/libming.so
-lib/libming.so.1
+lib/libming.so.2
+share/doc/ming/CHANGES
+share/doc/ming/CREDITS
+share/doc/ming/README
+share/doc/ming/TODO
+@dirrm share/doc/ming
+share/examples/ming/c/action.c
+share/examples/ming/c/alphafill.c
+share/examples/ming/c/animation.c
+share/examples/ming/c/bitmapxform.c
+share/examples/ming/c/button.c
+share/examples/ming/c/cxform.c
+share/examples/ming/c/drag.c
+share/examples/ming/c/glyph.c
+share/examples/ming/c/gradient.c
+share/examples/ming/c/gradientxform.c
+share/examples/ming/c/jpegfill.c
+share/examples/ming/c/keypress.c
+share/examples/ming/c/morph.c
+share/examples/ming/c/mousetrack.c
+share/examples/ming/c/newbutton.c
+share/examples/ming/c/png.c
+share/examples/ming/c/pngalpha.c
+share/examples/ming/c/shape.c
+share/examples/ming/c/sprite.c
+share/examples/ming/c/streammp3.c
+share/examples/ming/c/text.c
+@dirrm share/examples/ming/c
+share/examples/ming/c++/action.cpp
+share/examples/ming/c++/alphafill.cpp
+share/examples/ming/c++/animation.cpp
+share/examples/ming/c++/bitmapxform.cpp
+share/examples/ming/c++/button.cpp
+share/examples/ming/c++/cxform.cpp
+share/examples/ming/c++/drag.cpp
+share/examples/ming/c++/glyph.cpp
+share/examples/ming/c++/gradient.cpp
+share/examples/ming/c++/gradientxform.cpp
+share/examples/ming/c++/jpegfill.cpp
+share/examples/ming/c++/keypress.cpp
+share/examples/ming/c++/morph.cpp
+share/examples/ming/c++/mousetrack.cpp
+share/examples/ming/c++/newbutton.cpp
+share/examples/ming/c++/png.cpp
+share/examples/ming/c++/pngalpha.cpp
+share/examples/ming/c++/shape.cpp
+share/examples/ming/c++/sprite.cpp
+share/examples/ming/c++/streammp3.cpp
+share/examples/ming/c++/text.cpp
+@dirrm share/examples/ming/c++
+share/examples/ming/common/alpha.dbl
+share/examples/ming/common/alphafill.jpg
+share/examples/ming/common/alphafill.msk
+share/examples/ming/common/backyard.jpg
+share/examples/ming/common/distortobass.mp3
+share/examples/ming/common/png.dbl
+share/examples/ming/common/test.fdb
+@dirrm share/examples/ming/common
+@dirrm share/examples/ming

@@ -1,18 +1,25 @@
---- Makefile.orig	Wed Oct 25 07:02:37 2000
-+++ Makefile	Wed Oct 25 13:11:16 2000
-@@ -1,11 +1,10 @@
- all:
--	swig -I.. -python ming.i
--	gcc -I .. -I /usr/include/python1.5/ -fpic -c ming_wrap.c
--	gcc -L .. -shared -o mingcmodule.so ming_wrap.o  -lming
-+	${SWIG} -I.. -python ming.i
-+	${CC} ${CFLAGS} -I${LOCALBASE}/include/ming -I${LOCALBASE}/include/${PYTHON_VERSION} -fpic -c ming_wrap.c
-+	${CC} -shared -o mingcmodule.so ming_wrap.o -L${LOCALBASE}/lib -lming
+--- Makefile.orig	Fri Jan  5 08:05:13 2001
++++ Makefile	Sat Jan 20 05:05:03 2001
+@@ -1,12 +1,12 @@
+ #PYINCDIR = /usr/local/include/python2.0
+ #PYLIBDIR = /usr/local/lib/python2.0
  
- clean:
- 	rm -f mingcmodule.so core *~ *.o ming_wrap*
+-PYINCDIR = /usr/include/python1.5
+-PYLIBDIR = /usr/lib/python1.5
++PYINCDIR = ${LOCALBASE}/include/${PYTHON_VERSION}
++PYLIBDIR = ${LOCALBASE}/lib/${PYTHON_VERSION}
+ 
+ all:
+-	gcc -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
+-	gcc -g -Wall -L .. -shared -o mingcmodule.so ming_wrap.o  -lming
++	${CC} ${CFLAGS} -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
++	${CC} -g -Wall -L .. -shared -o mingcmodule.so ming_wrap.o -L${LOCALBASE}/lib -lming
+ 
+ swig:
+ 	swig -I.. -python ming.i
+@@ -15,4 +15,4 @@
+ 	rm -f mingcmodule.so core *~ *.o
  
  install:
--	cp mingcmodule.so ming.py /usr/lib/python1.5/site-packages
--	chmod 755 /usr/lib/python1.5/site-packages/mingcmodule.so
-+	${BSD_INSTALL_DATA} mingcmodule.so ming.py ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages
+-	cp mingcmodule.so ming.py ${PYLIBDIR}/site-packages
++	${BSD_INSTALL_DATA} mingcmodule.so ming.py ${PYLIBDIR}/site-packages
