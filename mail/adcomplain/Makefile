@@ -1,13 +1,13 @@
 # New ports collection makefile for:    adcomplain
 # http://www.rdrop.com/users/billmc/adcomplain.html
-# Version required:     2.87
+# Version required:     2.87b
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1997/12/15 22:50:48 ache Exp $
+# $Id: Makefile,v 1.9 1998/01/02 05:40:46 ache Exp $
 #
 
-DISTNAME=       adcomplain-2.87
+DISTNAME=       adcomplain-2.87b
 CATEGORIES=     mail news
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 DISTFILES=      adcomplain.pl.uu
