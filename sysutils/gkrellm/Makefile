@@ -21,6 +21,7 @@ CONFLICTS=	gkrellm-2.*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
