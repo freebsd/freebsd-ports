@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/Pantomime
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
+LDCONFIG_DIRS=	${LOCALLIBDIR}
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
