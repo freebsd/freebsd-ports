@@ -1,0 +1,11 @@
+--- ./source/Imakefile.org	Fri Jun 20 15:00:00 1997
++++ ./source/Imakefile	Thu Sep 21 17:13:55 2000
+@@ -211,7 +211,7 @@
+ #endif /* InstallProgram */
+ 
+ MANDIR=$(GV_MANDIR)
+-ComplexProgramTarget(gv)
++ComplexProgramTargetNoMan(gv)
+ InstallNonExec($(GV_SYSTEM_AD),$(GV_LIBDIR))
+ InstallNonExec($(GV_USER_AD),$(GV_LIBDIR))
+ InstallNonExec($(GV_CLASS_AD),$(GV_LIBDIR))
