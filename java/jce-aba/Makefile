@@ -20,9 +20,12 @@ USE_JAVA=	1.1+
 NO_BUILD=	yes
 JDKVERSION=	1.1
 
+CPIO?=		/usr/bin/cpio
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib-${JDKVERSION}/jce.zip ${PREFIX}/share/java/classes/
 	${MKDIR} ${PREFIX}/share/java/jce-aba
-	(cd ${WRKSRC}/docs-${JDKVERSION}; tar cf - .) | (cd ${PREFIX}/share/java/jce-aba ; tar xvf -)
+	cd ${WRKSRC}/docs-${JDKVERSION} && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${PREFIX}/share/java/jce-aba
 
 .include <bsd.port.mk>

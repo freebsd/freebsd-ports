@@ -48,5 +48,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/jsdk.jar ${PREFIX}/share/java/classes
 	@cd ${WRKSRC}; \
 	 ${CP} -R [Rde]* ${PREFIX}/share/java/jsdk20
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/java/jsdk20
 
 .include <bsd.port.mk>
