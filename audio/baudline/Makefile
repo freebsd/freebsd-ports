@@ -7,7 +7,7 @@
 
 PORTNAME=	baudline
 PORTVERSION=	0.90
-CATEGORIES=	audio
+CATEGORIES=	audio linux
 MASTER_SITES=	http://www.geocities.com/sigfriedblip/baudline/ \
 		http://members.telocity.com/~eriko/baudline/
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
