@@ -8,7 +8,7 @@
 PORTNAME=	manck
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Manual page consistency checker

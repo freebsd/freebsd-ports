@@ -9,7 +9,7 @@ PORTNAME=	checkbot
 PORTVERSION=	1.72
 CATEGORIES=	www perl5
 MASTER_SITES=	http://degraaff.org/checkbot/ \
-		http://www.de.freebsd.org/~wosch/src/
+		http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	A WWW link verifier, similar like momspider

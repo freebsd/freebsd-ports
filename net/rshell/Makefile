@@ -8,7 +8,7 @@
 PORTNAME=	rshell
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	A front end for rsh(1) and rcp(1)

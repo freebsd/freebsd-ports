@@ -8,9 +8,7 @@
 PORTNAME=	momspider
 PORTVERSION=	1.00
 CATEGORIES=	www
-MASTER_SITES=   ftp://www.ics.uci.edu/pub/websoft/libwww-perl/ \
-		ftp://www.ics.uci.edu/pub/websoft/MOMspider/ \
-		http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=   http://wolfram.schneider.org/src/
 DISTNAME=	MOMspider-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 

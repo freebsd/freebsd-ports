@@ -8,7 +8,7 @@
 PORTNAME=	phone
 PORTVERSION=	1.0
 CATEGORIES=	german misc
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 DISTNAME=	avon-1996
 EXTRACT_SUFX=	.gz
 
