@@ -6,89 +6,107 @@ bin/metacity-window-demo
 etc/gconf/gconf.xml.defaults/apps/metacity/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings/%gconf.xml
 etc/gconf/schemas/metacity.schemas
 libexec/metacity-dialog
 share/gnome/control-center-2.0/capplets/metacity-properties.desktop
 share/gnome/metacity/glade/metacity-properties.glade
 share/gnome/metacity/icons/metacity-window-demo.png
-share/gnome/metacity/themes/Atlanta/metacity-theme-1.xml
-share/gnome/metacity/themes/Bright/metacity-theme-1.xml
-share/gnome/metacity/themes/Crux/active-bottom-left-border.png
-share/gnome/metacity/themes/Crux/active-bottom-left-corner.png
-share/gnome/metacity/themes/Crux/active-bottom-mid-left-border.png
-share/gnome/metacity/themes/Crux/active-bottom-mid-right-border.png
-share/gnome/metacity/themes/Crux/active-bottom-right-border.png
-share/gnome/metacity/themes/Crux/active-bottom-right-corner.png
-share/gnome/metacity/themes/Crux/active-button-prelight.png
-share/gnome/metacity/themes/Crux/active-button-pressed.png
-share/gnome/metacity/themes/Crux/active-button.png
-share/gnome/metacity/themes/Crux/active-close-button.png
-share/gnome/metacity/themes/Crux/active-left-border.png
-share/gnome/metacity/themes/Crux/active-left-top-border-shaded.png
-share/gnome/metacity/themes/Crux/active-left-top-border.png
-share/gnome/metacity/themes/Crux/active-maximize-button.png
-share/gnome/metacity/themes/Crux/active-menu-button-prelight.png
-share/gnome/metacity/themes/Crux/active-menu-button-pressed.png
-share/gnome/metacity/themes/Crux/active-menu-button.png
-share/gnome/metacity/themes/Crux/active-minimize-button.png
-share/gnome/metacity/themes/Crux/active-right-border.png
-share/gnome/metacity/themes/Crux/active-right-top-border-shaded.png
-share/gnome/metacity/themes/Crux/active-right-top-border.png
-share/gnome/metacity/themes/Crux/active-top-center-left.png
-share/gnome/metacity/themes/Crux/active-top-center-mid-left.png
-share/gnome/metacity/themes/Crux/active-top-center-mid-right.png
-share/gnome/metacity/themes/Crux/active-top-center-right.png
-share/gnome/metacity/themes/Crux/active-top-left-border.png
-share/gnome/metacity/themes/Crux/active-top-right-border.png
-share/gnome/metacity/themes/Crux/inactive-bottom-left-border.png
-share/gnome/metacity/themes/Crux/inactive-bottom-left-corner.png
-share/gnome/metacity/themes/Crux/inactive-bottom-mid-border.png
-share/gnome/metacity/themes/Crux/inactive-bottom-right-border.png
-share/gnome/metacity/themes/Crux/inactive-bottom-right-corner.png
-share/gnome/metacity/themes/Crux/inactive-button-prelight.png
-share/gnome/metacity/themes/Crux/inactive-button-pressed.png
-share/gnome/metacity/themes/Crux/inactive-button.png
-share/gnome/metacity/themes/Crux/inactive-close-button.png
-share/gnome/metacity/themes/Crux/inactive-left-border.png
-share/gnome/metacity/themes/Crux/inactive-left-top-border-shaded.png
-share/gnome/metacity/themes/Crux/inactive-left-top-border.png
-share/gnome/metacity/themes/Crux/inactive-maximize-button.png
-share/gnome/metacity/themes/Crux/inactive-menu-button-prelight.png
-share/gnome/metacity/themes/Crux/inactive-menu-button-pressed.png
-share/gnome/metacity/themes/Crux/inactive-menu-button.png
-share/gnome/metacity/themes/Crux/inactive-minimize-button.png
-share/gnome/metacity/themes/Crux/inactive-right-border.png
-share/gnome/metacity/themes/Crux/inactive-right-top-border-shaded.png
-share/gnome/metacity/themes/Crux/inactive-right-top-border.png
-share/gnome/metacity/themes/Crux/inactive-top-center-left.png
-share/gnome/metacity/themes/Crux/inactive-top-center-mid.png
-share/gnome/metacity/themes/Crux/inactive-top-center-right.png
-share/gnome/metacity/themes/Crux/inactive-top-left-border.png
-share/gnome/metacity/themes/Crux/inactive-top-right-border.png
-share/gnome/metacity/themes/Crux/metacity-theme-1.xml
-share/gnome/metacity/themes/Esco/metacity-theme-1.xml
-share/gnome/metacity/themes/Gorilla/active-button.png
-share/gnome/metacity/themes/Gorilla/active-close-button.png
-share/gnome/metacity/themes/Gorilla/active-maximize-button.png
-share/gnome/metacity/themes/Gorilla/active-menu-button.png
-share/gnome/metacity/themes/Gorilla/active-minimize-button.png
-share/gnome/metacity/themes/Gorilla/inactive-close-button.png
-share/gnome/metacity/themes/Gorilla/inactive-maximize-button.png
-share/gnome/metacity/themes/Gorilla/inactive-menu-button.png
-share/gnome/metacity/themes/Gorilla/inactive-minimize-button.png
-share/gnome/metacity/themes/Gorilla/metacity-theme-1.xml
 share/gnome/pixmaps/metacity-properties.png
+share/gnome/themes/Atlanta/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Bright/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Crux/metacity-1/active-border-top-left-border.png
+share/gnome/themes/Crux/metacity-1/active-border-top-right-border.png
+share/gnome/themes/Crux/metacity-1/active-bottom-left-border.png
+share/gnome/themes/Crux/metacity-1/active-bottom-left-corner.png
+share/gnome/themes/Crux/metacity-1/active-bottom-mid-left-border.png
+share/gnome/themes/Crux/metacity-1/active-bottom-mid-right-border.png
+share/gnome/themes/Crux/metacity-1/active-bottom-right-border.png
+share/gnome/themes/Crux/metacity-1/active-bottom-right-corner.png
+share/gnome/themes/Crux/metacity-1/active-button-prelight.png
+share/gnome/themes/Crux/metacity-1/active-button-pressed.png
+share/gnome/themes/Crux/metacity-1/active-button.png
+share/gnome/themes/Crux/metacity-1/active-close-button.png
+share/gnome/themes/Crux/metacity-1/active-left-border.png
+share/gnome/themes/Crux/metacity-1/active-left-top-border-shaded.png
+share/gnome/themes/Crux/metacity-1/active-left-top-border.png
+share/gnome/themes/Crux/metacity-1/active-maximize-button.png
+share/gnome/themes/Crux/metacity-1/active-menu-button-prelight.png
+share/gnome/themes/Crux/metacity-1/active-menu-button-pressed.png
+share/gnome/themes/Crux/metacity-1/active-menu-button.png
+share/gnome/themes/Crux/metacity-1/active-minimize-button.png
+share/gnome/themes/Crux/metacity-1/active-right-border.png
+share/gnome/themes/Crux/metacity-1/active-right-top-border-shaded.png
+share/gnome/themes/Crux/metacity-1/active-right-top-border.png
+share/gnome/themes/Crux/metacity-1/active-top-center-left.png
+share/gnome/themes/Crux/metacity-1/active-top-center-mid-left.png
+share/gnome/themes/Crux/metacity-1/active-top-center-mid-right.png
+share/gnome/themes/Crux/metacity-1/active-top-center-right.png
+share/gnome/themes/Crux/metacity-1/active-top-left-border.png
+share/gnome/themes/Crux/metacity-1/active-top-left-corner.png
+share/gnome/themes/Crux/metacity-1/active-top-mid-left-border.png
+share/gnome/themes/Crux/metacity-1/active-top-mid-right-border.png
+share/gnome/themes/Crux/metacity-1/active-top-right-border.png
+share/gnome/themes/Crux/metacity-1/active-top-right-corner.png
+share/gnome/themes/Crux/metacity-1/inactive-border-top-left-border.png
+share/gnome/themes/Crux/metacity-1/inactive-border-top-right-border.png
+share/gnome/themes/Crux/metacity-1/inactive-bottom-left-border.png
+share/gnome/themes/Crux/metacity-1/inactive-bottom-left-corner.png
+share/gnome/themes/Crux/metacity-1/inactive-bottom-mid-border.png
+share/gnome/themes/Crux/metacity-1/inactive-bottom-right-border.png
+share/gnome/themes/Crux/metacity-1/inactive-bottom-right-corner.png
+share/gnome/themes/Crux/metacity-1/inactive-button-prelight.png
+share/gnome/themes/Crux/metacity-1/inactive-button-pressed.png
+share/gnome/themes/Crux/metacity-1/inactive-button.png
+share/gnome/themes/Crux/metacity-1/inactive-close-button.png
+share/gnome/themes/Crux/metacity-1/inactive-left-border.png
+share/gnome/themes/Crux/metacity-1/inactive-left-top-border-shaded.png
+share/gnome/themes/Crux/metacity-1/inactive-left-top-border.png
+share/gnome/themes/Crux/metacity-1/inactive-maximize-button.png
+share/gnome/themes/Crux/metacity-1/inactive-menu-button-prelight.png
+share/gnome/themes/Crux/metacity-1/inactive-menu-button-pressed.png
+share/gnome/themes/Crux/metacity-1/inactive-menu-button.png
+share/gnome/themes/Crux/metacity-1/inactive-minimize-button.png
+share/gnome/themes/Crux/metacity-1/inactive-right-border.png
+share/gnome/themes/Crux/metacity-1/inactive-right-top-border-shaded.png
+share/gnome/themes/Crux/metacity-1/inactive-right-top-border.png
+share/gnome/themes/Crux/metacity-1/inactive-top-center-left.png
+share/gnome/themes/Crux/metacity-1/inactive-top-center-mid.png
+share/gnome/themes/Crux/metacity-1/inactive-top-center-right.png
+share/gnome/themes/Crux/metacity-1/inactive-top-left-border.png
+share/gnome/themes/Crux/metacity-1/inactive-top-left-corner.png
+share/gnome/themes/Crux/metacity-1/inactive-top-mid-border.png
+share/gnome/themes/Crux/metacity-1/inactive-top-right-border.png
+share/gnome/themes/Crux/metacity-1/inactive-top-right-corner.png
+share/gnome/themes/Crux/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Esco/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Gorilla/metacity-1/active-button.png
+share/gnome/themes/Gorilla/metacity-1/active-close-button.png
+share/gnome/themes/Gorilla/metacity-1/active-close-menu-icon.png
+share/gnome/themes/Gorilla/metacity-1/active-maximize-button.png
+share/gnome/themes/Gorilla/metacity-1/active-maximize-menu-icon.png
+share/gnome/themes/Gorilla/metacity-1/active-menu-button.png
+share/gnome/themes/Gorilla/metacity-1/active-minimize-button.png
+share/gnome/themes/Gorilla/metacity-1/active-minimize-menu-icon.png
+share/gnome/themes/Gorilla/metacity-1/inactive-close-button.png
+share/gnome/themes/Gorilla/metacity-1/inactive-maximize-button.png
+share/gnome/themes/Gorilla/metacity-1/inactive-menu-button.png
+share/gnome/themes/Gorilla/metacity-1/inactive-minimize-button.png
+share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
 share/gnome/wm-properties/metacity.desktop
 share/locale/az/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
+share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
@@ -103,24 +121,31 @@ share/locale/sk/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
+share/locale/vi/LC_MESSAGES/metacity.mo
+share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
-@dirrm share/gnome/wm-properties
-@dirrm share/gnome/metacity/themes/Gorilla
-@dirrm share/gnome/metacity/themes/Esco
-@dirrm share/gnome/metacity/themes/Crux
-@dirrm share/gnome/metacity/themes/Bright
-@dirrm share/gnome/metacity/themes/Atlanta
-@dirrm share/gnome/metacity/themes
+@dirrm share/gnome/themes/Metabox/metacity-1
+@dirrm share/gnome/themes/Metabox
+@dirrm share/gnome/themes/Gorilla/metacity-1
+@dirrm share/gnome/themes/Gorilla
+@dirrm share/gnome/themes/Esco/metacity-1
+@dirrm share/gnome/themes/Esco
+@dirrm share/gnome/themes/Crux/metacity-1
+@dirrm share/gnome/themes/Crux
+@dirrm share/gnome/themes/Bright/metacity-1
+@dirrm share/gnome/themes/Bright
+@dirrm share/gnome/themes/Atlanta/metacity-1
+@dirrm share/gnome/themes/Atlanta
 @dirrm share/gnome/metacity/icons
 @dirrm share/gnome/metacity/glade
 @dirrm share/gnome/metacity
-@dirrm share/gnome/control-center-2.0/capplets
-@dirrm share/gnome/control-center-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings
+@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/general
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity
