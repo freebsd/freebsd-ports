@@ -1,0 +1,85 @@
+diff -ru ../../work/release/unix/unix.cpp ./unix/unix.cpp
+--- ../../work/release/unix/unix.cpp	Thu Sep 23 19:56:48 1999
++++ ./unix/unix.cpp	Wed Dec 29 01:56:32 1999
+@@ -49,9 +49,11 @@
+ #include <ctype.h>
+ 
+ 
+-#if defined(__linux) || defined(__sun)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
++#if !defined(__FreeBSD__)
+ #undef USE_THREADS
+ #define USE_THREADS
++#endif
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+@@ -66,8 +68,12 @@
+ pthread_mutex_t mutex;
+ #endif
+ 
++#ifndef __sun
+ #ifdef __linux
+ #include <sys/soundcard.h>
++#else
++#include <machine/soundcard.h>
++#endif
+ #include <sys/mman.h>
+ #endif
+ 
+@@ -83,6 +89,10 @@
+ typedef void (*SIG_PF)();
+ #endif
+ 
++#if defined(__FreeBSD__)
++typedef sig_t SIG_PF;
++#endif
++
+ #include "snes9x.h"
+ #include "memmap.h"
+ #include "debug.h"
+@@ -159,7 +169,7 @@
+ char *rom_filename = NULL;
+ char *snapshot_filename = NULL;
+ 
+-#if defined(__linux) || defined(__sun)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
+ static void sigbrkhandler(int)
+ {
+ #ifdef DEBUGGER
+@@ -402,7 +412,7 @@
+ #if !defined(__MSDOS) && defined(DEBUGGER)
+ #if defined(__unix) && !defined(__NeXT__)
+     struct sigaction sa;
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+     sa.sa_handler = sigbrkhandler;
+ #else
+     sa.sa_handler = (SIG_PF) sigbrkhandler;
+@@ -1397,7 +1407,7 @@
+ }
+ #endif
+ 
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+ static int Rates[8] =
+ {
+     0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
+@@ -1514,7 +1524,7 @@
+ }
+ #endif
+ 
+-#if defined (__linux) || defined (__sun)
++#if defined (__linux) || defined (__sun) || defined(__FreeBSD__)
+ void S9xUnixProcessSound (void)
+ {
+ }
+@@ -1613,7 +1623,7 @@
+ 
+ void *S9xProcessSound (void *)
+ {
+-#ifdef __linux
++#if defined(__linux) || defined(__FreeBSD__)
+     audio_buf_info info;
+     count_info count;
+ 

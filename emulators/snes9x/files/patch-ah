@@ -1,0 +1,24 @@
+diff -ru ../../work/release/unzip/unzip.h ./unzip/unzip.h
+--- ../../work/release/unzip/unzip.h	Wed Aug 25 05:52:56 1999
++++ ./unzip/unzip.h	Wed Dec 29 01:54:04 1999
+@@ -41,13 +41,17 @@
+ #ifndef _unz_H
+ #define _unz_H
+ 
++#include <sys/types.h>
++
++#ifndef _ZLIB_H
++#include <zlib.h>
++#endif
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+ 
+-#ifndef _ZLIB_H
+-#include "zlib.h"
+-#endif
++#define ZEXPORT
+ 
+ #if defined(STRICTUNZIP) || defined(STRICTZIPUNZIP)
+ /* like the STRICT of WIN32, we define a pointer that cannot be converted
