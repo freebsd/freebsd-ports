@@ -1,5 +1,5 @@
---- configure.orig	Fri Jan 11 19:39:32 2002
-+++ configure	Fri Jan 11 19:40:17 2002
+--- configure.orig	Tue Apr  9 22:35:07 2002
++++ configure	Tue Apr  9 22:35:17 2002
 @@ -790,7 +790,7 @@
  QT_LIB_DIR=NO
  
@@ -21,6 +21,15 @@
    do
      if test -r "$i/$j"; then
        l_dir=$i
+@@ -814,7 +814,7 @@
+   done
+ done
+ 
+-for i in qt qt2;
++for i in qt2;
+ do
+ 	
+ 
 @@ -850,22 +850,6 @@
  for base_dir in /usr/X11R6 /usr/local /usr;do
  	l_dir=`find $base_dir -name "libqt*.so"|$AWK -F "/" '{gsub($NF,"");print}'|head -n 1`
