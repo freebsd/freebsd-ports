@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	enlightenment-0.15.5
+DISTNAME=	enlightenment-0.16.0
 CATEGORIES=	x11-wm gnome
-MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
-		http://www.rasterman.com/files/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/
+MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
+		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
+		ftp://beaver.its.vu.edu.au/pub/enlightenment/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
@@ -26,7 +27,10 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lxpg4"
+
+post-install:
+	${CHOWN} -R root:wheel ${PREFIX}/share/enlightenment/themes
 
 .include <bsd.port.mk>
