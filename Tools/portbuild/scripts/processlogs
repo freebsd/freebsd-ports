@@ -42,6 +42,8 @@ else
       reason="fetch"; tag="fetch"
     elif grep -q "out of .* hunks .*--saving rejects to" $1; then
       reason="patch"; tag="patch"
+    elif grep -q 'Error: category .* not in list of valid categories' $1; then
+      reason="CATEGORIES"; tag="categories"
     elif grep -q 'undefined reference to `Xp' $1; then
       reason="MOTIFLIB"; tag="motiflib"
     elif grep -qi 'read-only file system' $1; then
@@ -64,7 +66,7 @@ else
       fi
     elif grep -q "cd: can't cd to" $1; then
       reason="NFS"; tag="nfs"
-    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype)' $1; then
+    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|undeclared \(first use this function\))' $1; then
       reason="compiler error"; tag="cc"
     elif grep -qE '(undefined reference to|cannot open -l.*: No such file)' $1; then
       reason="linker error"; tag="ld"
