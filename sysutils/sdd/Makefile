@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sdd
-# Version required:	1.22
 # Date created:		1999-05-05
 # Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sdd-1.22
+PORTNAME=	sdd
+PORTVERSION= 	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 

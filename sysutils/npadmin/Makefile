@@ -1,12 +1,12 @@
 # New ports collection makefile for:	npadmin
-# Version required:     0.7
 # Date created:		13 Nov 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	npadmin-0.7
+PORTNAME=	npadmin
+PORTVERSION= 	0.7
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.penguincomputing.com/pub/prtools/
 

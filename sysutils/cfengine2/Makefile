@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cfengine
-# Version required:     1.5.3
 # Date created:		March 16, 1998
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       cfengine-1.5.3
+PORTNAME=	cfengine
+PORTVERSION= 	1.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	cfengine

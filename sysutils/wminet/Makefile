@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wminet
-# Version required:    2.0.2
 # Date created:        23 May 1999
 # Whom:                Stephen Kiernan <sk-ports@vegamuse.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wminet-2.0.2
+PORTNAME=	wminet
+PORTVERSION= 	2.0.2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.neotokyo.org/illusion/
 

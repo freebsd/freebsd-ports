@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ipsc
-# Version required:	0.4.2
 # Date created:		31 October 1999
 # Whom:			Jeremy Shaffner <jeremy@external.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ipsc-0.4.2-src
-PKGNAME=	ipsc-0.4.2
+PORTNAME=	ipsc
+PORTVERSION= 	0.4.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.interloper.net/~dan/software/dist/ipsc/
+DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	jeremy@external.org
 

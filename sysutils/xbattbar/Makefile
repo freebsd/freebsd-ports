@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xbattbar
-# Version required:     1.3
 # Date created:		Fri Feb 18 10:05:12 JST 2000
 # Whom:                 sumikawa
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xbattbar_1.3
-PKGNAME=	xbattbar-1.3
+PORTNAME=	xbattbar
+PORTVERSION= 	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://infonet.aist-nara.ac.jp/member/suguru/
+DISTNAMe=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 

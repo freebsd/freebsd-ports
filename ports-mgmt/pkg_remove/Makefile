@@ -1,15 +1,15 @@
 # New ports collection makefile for:	pkg_remove
-# Version required:	1.0
 # Date created:		8 Jan 2000
 # Whom:			NAKAJI Hiroyuki <nakaji@tutrp.tut.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pkg_remove
-PKGNAME=	pkg_remove-1.0
+PORTNAME=	pkg_remove
+PORTVERSION= 	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rr.iij4u.or.jp/~sada/scripts/
+DISTNAME=	pkg_remove
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	nakaji@tutrp.tut.ac.jp

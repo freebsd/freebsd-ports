@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wmbattery
-# Version required:	1.11
 # Date created:		18 Sep 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmbattery
-PKGNAME=	${DISTNAME}-1.11
+PORTNAME=	wmbattery
+PORTVERSION= 	1.11
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wmmon
-# Version required:    1.0b2
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmmon-1.0b2
+PORTNAME=	wmmon
+PORTVERSION= 	1.0b2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://ftp.tecnogi.com/pub/linux/WindowMaker/ \
 		http://www.physics.adelaide.edu.au/~kkennawa/ \

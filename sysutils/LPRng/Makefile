@@ -1,12 +1,12 @@
 # New ports collection makefile for:	LPRng
-# Version required:	3.6.8
 # Date created:		2 Apr 1997
 # Whom:			desmo@bandwidth.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	LPRng-${LPRNG_VER}
+PORTNAME=	LPRng
+PORTVERSION=	3.6.8
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=	.tgz
@@ -14,10 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LPRNG_DOC}
 
 MAINTAINER=	desmo@bandwidth.org
 
-LPRNG_VER=	3.6.8
-PLIST_SUB+=	LPRNG_VER=${LPRNG_VER}
+PLIST_SUB+=	LPRNG_VER=${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-LPRNG_DOC=	LPRng_DOC-${LPRNG_VER}.tgz
+LPRNG_DOC=	LPRng_DOC-${PORTVERSION}.tgz
 
 MAKEFILE=	Makefile.bsd
 HAS_CONFIGURE=	yes

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	asrpages
-# Version required:	0.1
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asr.pages
-PKGNAME=	asrpages-0.1
+PORTNAME=	asrpages
+PORTVERSION= 	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
+DISTNAME=	asr.pages
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	sheldonh@FreeBSD.org

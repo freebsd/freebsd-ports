@@ -1,12 +1,12 @@
 # New ports collection makefile for:    afio
-# Version required:     2.4.6
 # Date created:         4 October 1995
 # Whom:                 Juergen Lock <nox@jelal.hb.north.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       afio-2.4.6
+PORTNAME=	afio
+PORTVERSION= 	2.4.6
 CATEGORIES=     sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup

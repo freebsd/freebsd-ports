@@ -1,12 +1,12 @@
 # New ports collection makefile for:	diskusage
-# Version required:	1.01
 # Whom:			maske
 # Date created:		23 August 1999
 #
 # $FreeBSD$
 #
 
-DISTNAME=	diskusage-1.01
+PORTNAME=	diskusage
+PORTVERSION= 	1.01
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thinblue.net/pub/FreeBSD/distfiles/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmapm
-# Version required:	3.01
 # Date created:		99/07/02
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmapm-3.01
+PORTNAME=	wmapm
+PORTVERSION= 	3.01
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

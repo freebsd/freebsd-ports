@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tua
-# Version required:     4.0
 # Date created:		11 Feb. 1995
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       tua-4.0
+PORTNAME=	tua
+PORTVERSION= 	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
 
