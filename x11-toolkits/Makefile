@@ -109,6 +109,7 @@
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade
+    SUBDIR += p5-Glade2
     SUBDIR += p5-Gnome
     SUBDIR += p5-Gnome2
     SUBDIR += p5-Gnome2-Canvas
