@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.61.1
+PORTVERSION=	0.65.1
 
 MAINTAINER=	stijn@win.tue.nl
 COMMENT=	X11 emulator for game consoles
