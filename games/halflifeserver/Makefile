@@ -44,7 +44,6 @@ HL_PROGRAM=	hlds_run
 
 pre-patch:
 # remove trailing ^M
-.for file in
 .for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
 	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
 	*.scr */*.scr *.txt */*.txt
