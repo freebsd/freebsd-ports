@@ -15,7 +15,12 @@ MASTER_SITE_SUBDIR=	bison
 MAINTAINER=		wghicks@bellsouth.net
 MAINTAINER=		obrien@NUXI.com
 
+LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
+
 GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN1=			bison.1
 
 post-install:
