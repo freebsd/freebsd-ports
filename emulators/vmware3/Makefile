@@ -6,7 +6,7 @@
 # $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.15 2000/07/31 00:54:32 vsilyaev Exp $
 #
 
-PORTNAME=	vmware2
+PORTNAME=	vmware3
 PORTVERSION=	2.0.4.1142
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -20,6 +20,8 @@ DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX} \
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
 MAINTAINER=	vsilyaev@mindspring.com
 COMMENT=	A virtual machine emulator - a full PC in a window
+
+BROKEN=		"work in progress"
 
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
