@@ -75,7 +75,6 @@ share/vim/%%VIM_VER%%/doc/visual.txt
 share/vim/%%VIM_VER%%/doc/windows.txt
 share/vim/%%VIM_VER%%/doc/tags
 share/vim/%%VIM_VER%%/doc/vim2html.pl
-share/vim/%%VIM_VER%%/syntax
 share/vim/%%VIM_VER%%/syntax/2html.vim
 share/vim/%%VIM_VER%%/syntax/abc.vim
 share/vim/%%VIM_VER%%/syntax/abel.vim
@@ -265,7 +264,6 @@ share/vim/%%VIM_VER%%/syntax/xxd.vim
 share/vim/%%VIM_VER%%/syntax/yacc.vim
 share/vim/%%VIM_VER%%/syntax/z8a.vim
 share/vim/%%VIM_VER%%/syntax/zsh.vim
-share/vim/%%VIM_VER%%/tutor
 share/vim/%%VIM_VER%%/tutor/README.txt
 share/vim/%%VIM_VER%%/tutor/tutor
 share/vim/%%VIM_VER%%/menu.vim
@@ -276,7 +274,6 @@ share/vim/%%VIM_VER%%/filetype.vim
 share/vim/%%VIM_VER%%/ftoff.vim
 share/vim/%%VIM_VER%%/scripts.vim
 share/vim/%%VIM_VER%%/optwin.vim
-share/vim/%%VIM_VER%%/macros
 share/vim/%%VIM_VER%%/macros/README.txt
 share/vim/%%VIM_VER%%/macros/diffwin.vim
 share/vim/%%VIM_VER%%/macros/dvorak
@@ -286,10 +283,8 @@ share/vim/%%VIM_VER%%/macros/hanoi/click.me
 share/vim/%%VIM_VER%%/macros/hanoi/hanoi.vim
 share/vim/%%VIM_VER%%/macros/html
 share/vim/%%VIM_VER%%/macros/justify.vim
-share/vim/%%VIM_VER%%/macros/life
 share/vim/%%VIM_VER%%/macros/life/click.me
 share/vim/%%VIM_VER%%/macros/life/life.vim
-share/vim/%%VIM_VER%%/macros/maze
 share/vim/%%VIM_VER%%/macros/maze/README.txt
 share/vim/%%VIM_VER%%/macros/maze/Makefile
 share/vim/%%VIM_VER%%/macros/maze/maze.c
@@ -299,12 +294,10 @@ share/vim/%%VIM_VER%%/macros/maze/maze_mac
 share/vim/%%VIM_VER%%/macros/maze/poster
 share/vim/%%VIM_VER%%/macros/shellmenu.vim
 share/vim/%%VIM_VER%%/macros/swapmous.vim
-share/vim/%%VIM_VER%%/macros/urm
 share/vim/%%VIM_VER%%/macros/urm/urm
 share/vim/%%VIM_VER%%/macros/urm/urm.vim
 share/vim/%%VIM_VER%%/macros/urm/examples
 share/vim/%%VIM_VER%%/macros/urm/README.txt
-share/vim/%%VIM_VER%%/tools
 share/vim/%%VIM_VER%%/tools/README.txt
 share/vim/%%VIM_VER%%/tools/blink.c
 share/vim/%%VIM_VER%%/tools/ccfilter.1
