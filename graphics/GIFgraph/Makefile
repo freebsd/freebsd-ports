@@ -3,13 +3,14 @@
 # Date created:				Nov 9, 1998
 # Whom:					laskavy@gambit.msk.su
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/12 15:09:17 kuriyama Exp $
 #
 
-DISTNAME=	GIFgraph-1.01
-PKGNAME=	p5-GIFgraph-1.01
+DISTNAME=	GIFgraph-1.10
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://www.tcp.chem.tue.nl/~tgtcmv/perl/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	GIFgraph
 
 MAINTAINER=	laskavy@gambit.msk.su
 
