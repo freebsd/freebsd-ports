@@ -12,6 +12,7 @@ include/nessus/nessustcp.h
 include/nessus/nessusudp.h
 include/nessus/ntcompat.h
 sbin/nessus-adduser
+sbin/nessus-check-signature
 sbin/nessus-mkcert
 sbin/nessus-rmuser
 sbin/nessusd
