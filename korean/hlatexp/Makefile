@@ -15,6 +15,8 @@ DIST_SUBDIR=	htex
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul (Korean) LaTeX2e system
+DEPRECATED=	"has failed to fetch since November 2002"
+EXPIRATION_DATE=	"June 27, 2004"
 
 # it depends teTeX.
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
