@@ -33,6 +33,12 @@ GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' ${WRKSRC}/src/paths.c
 
@@ -70,4 +76,4 @@ post-install:
 		 ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
