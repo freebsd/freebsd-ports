@@ -1,5 +1,5 @@
---- kdecore/kcharsets.cpp.orig	Mon Nov 20 16:41:35 2000
-+++ kdecore/kcharsets.cpp	Mon Nov 20 16:44:34 2000
+--- kdecore/kcharsets.cpp.orig	Mon Oct 16 19:06:25 2000
++++ kdecore/kcharsets.cpp	Wed Nov 22 14:30:14 2000
 @@ -66,7 +66,7 @@
      "set-gbk",
      "set-zh",
@@ -28,14 +28,11 @@
      QFont::TSCII,
      QFont::Unicode,
      QFont::Unicode,
-@@ -552,8 +552,9 @@
+@@ -552,6 +552,7 @@
  	case QFont::Set_Zh:
  	    return "set-gbk";
      case QFont::Set_Zh_TW:
 +	return "cns11643.1986-*";
      case QFont::Set_Big5:
--	return "big5-0";
-+	return "big5";
+ 	return "big5-0";
      case QFont::AnyCharSet:
-     default:
-         break;
