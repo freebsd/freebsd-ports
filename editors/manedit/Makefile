@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.4.j
+PORTVERSION=	0.4.1
 CATEGORIES=	editors
-MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.j/j/}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/ \
+		ftp://fox.mit.edu/pub/xsw/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+MAKEFILE=	Makefile.FreeBSD
 
 MAN1=		manedit.1
 
