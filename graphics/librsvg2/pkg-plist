@@ -1,5 +1,6 @@
 bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
+include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libsvg.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/svg_loader.so
