@@ -13,7 +13,13 @@ DISTNAME=	7043-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
-USE_GNOME=	gtk12 imlib gtk20
+USE_GNOME=	gtk20
+.if !defined(WITHOUT_GTK1)
+USE_GNOME+=	gtk12 imlib
+PLIST_SUB=	GTK1=""
+.else
+PLIST_SUB=	GTK1="@comment "
+.endif
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
