@@ -1,0 +1,7 @@
+bin/gperf
+@unexec install-info --delete %D/info/gperf.info %D/info/dir
+info/gperf.info
+@exec install-info %D/info/gperf.info %D/info/dir
+share/doc/gperf/gperf.dvi
+share/doc/gperf/gperf.html
+@dirrm share/doc/gperf
