@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -15,9 +15,9 @@ COMMENT=	Regression testing framework for unit tests
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if !defined(WITHOUT_BENCHMARK)
-BUILD_DEPENDS+=	${PEARDIR}/Benchmark/Timer.php:${PORTSDIR}/benchmarks/pear-Benchmark
-.endif
+LATEST_LINK=	pear-PHPUnit2
+OPTIONS=	PEAR_BENCHMARK "PEAR::Benchmark support" on \
+		PEAR_LOG "PEAR::Log support" off
 
 NO_PACKAGE=	Conflicting dependences between PHP4 and PHP5
 
@@ -28,38 +28,60 @@ BROKEN_WITH_PHP=4
 USE_REINPLACE=	yes
 
 CATEGORY=	PHPUnit2
-FILES=		Extensions/RepeatedTest.php Extensions/TestDecorator.php \
-		Extensions/TestSetup.php Extensions/ExceptionTestCase.php \
-		Framework/ComparisonFailure.php Framework/IncompleteTest.php \
-		Framework/IncompleteTestError.php Framework/Test.php \
-		Framework/TestCase.php Framework/TestFailure.php \
+FILES=		Extensions/CodeCoverage/Renderer/HTML.php \
+		Extensions/CodeCoverage/Renderer/Text.php \
+		Extensions/CodeCoverage/Renderer.php Extensions/Log/PEAR.php \
+		Extensions/Log/XML.php Extensions/TestDox/ResultPrinter/HTML.php \
+		Extensions/TestDox/ResultPrinter/Text.php \
+		Extensions/TestDox/NamePrettifier.php \
+		Extensions/TestDox/ResultPrinter.php \
+		Extensions/ExceptionTestCase.php Extensions/PerformanceTestCase.php \
+		Extensions/RepeatedTest.php Extensions/TestDecorator.php \
+		Extensions/TestSetup.php Framework/Assert.php \
+		Framework/AssertionFailedError.php Framework/ComparisonFailure.php \
+		Framework/IncompleteTest.php Framework/IncompleteTestError.php \
+		Framework/Test.php Framework/TestCase.php Framework/TestFailure.php \
 		Framework/TestListener.php Framework/TestResult.php \
-		Framework/TestSuite.php Framework/Warning.php Framework/Assert.php \
-		Framework/AssertionFailedError.php Runner/TestCollector.php \
+		Framework/TestSuite.php Framework/Warning.php \
+		Runner/BaseTestRunner.php Runner/IncludePathTestCollector.php \
+		Runner/StandardTestSuiteLoader.php Runner/TestCollector.php \
 		Runner/TestRunListener.php Runner/TestSuiteLoader.php \
-		Runner/Version.php Runner/BaseTestRunner.php \
-		Runner/StandardTestSuiteLoader.php Tests/Framework/AssertTest.php \
+		Runner/Version.php Tests/Framework/AllTests.php \
+		Tests/Framework/AssertTest.php Tests/Framework/ComparisonFailureTest.php \
 		Tests/Framework/SuiteTest.php Tests/Framework/TestCaseTest.php \
 		Tests/Framework/TestImplementorTest.php \
-		Tests/Framework/TestListenerTest.php Tests/Framework/AllTests.php \
-		Tests/Framework/ComparisonFailureTest.php \
+		Tests/Framework/TestListenerTest.php \
+		Tests/Extensions/TestDox/AllTests.php \
+		Tests/Extensions/TestDox/NamePrettifierTest.php \
+		Tests/Extensions/AllTests.php Tests/Extensions/ExceptionTestCaseTest.php \
 		Tests/Extensions/ExtensionTest.php \
-		Tests/Extensions/RepeatedTestTest.php Tests/Extensions/AllTests.php \
-		Tests/Extensions/ExceptionTestCaseTest.php Tests/Runner/AllTests.php \
-		Tests/Runner/BaseTestRunnerTest.php Tests/DoubleTestCase.php \
-		Tests/Error.php Tests/Failure.php Tests/InheritedTestCase.php \
-		Tests/MockRunner.php Tests/NoArgTestCaseTest.php Tests/NonStatic.php \
+		Tests/Extensions/PerformanceTestCaseTest.php \
+		Tests/Extensions/RepeatedTestTest.php Tests/Runner/AllTests.php \
+		Tests/Runner/BaseTestRunnerTest.php Tests/AllTests.php \
+		Tests/DoubleTestCase.php Tests/Error.php Tests/Failure.php \
+		Tests/InheritedTestCase.php Tests/MockRunner.php \
+		Tests/NoArgTestCaseTest.php Tests/NonStatic.php \
 		Tests/NoTestCaseClass.php Tests/NoTestCases.php \
 		Tests/NotPublicTestCase.php Tests/NotVoidTestCase.php \
-		Tests/OneTestCase.php Tests/OverrideTestCase.php Tests/SetupFailure.php \
-		Tests/Success.php Tests/TearDownFailure.php \
-		Tests/ThrowExceptionTestCase.php Tests/ThrowNoExceptionTestCase.php \
-		Tests/TornDown.php Tests/TornDown2.php Tests/TornDown3.php \
-		Tests/TornDown4.php Tests/TornDown5.php Tests/WasRun.php \
-		Tests/AllTests.php TextUI/TestRunner.php TextUI/ResultPrinter.php \
-		Util/Printer.php Util/Filter.php
+		Tests/OneTestCase.php Tests/OverrideTestCase.php \
+		Tests/SetupFailure.php Tests/Sleep.php Tests/Success.php \
+		Tests/TearDownFailure.php Tests/ThrowExceptionTestCase.php \
+		Tests/ThrowNoExceptionTestCase.php Tests/TornDown.php \
+		Tests/TornDown2.php Tests/TornDown3.php Tests/TornDown4.php \
+		Tests/TornDown5.php Tests/WasRun.php TextUI/ResultPrinter.php \
+		TextUI/TestRunner.php Util/Filter.php Util/Printer.php \
+		Util/Skeleton.php
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PEAR_BENCHMARK)
+BUILD_DEPENDS+=	${PEARDIR}/Benchmark/Timer.php:${PORTSDIR}/benchmarks/pear-Benchmark
+.endif
+
+.if defined(WITH_PEAR_LOG)
+BUILD_DEPENDS+=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+.endif
+
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 post-patch:
