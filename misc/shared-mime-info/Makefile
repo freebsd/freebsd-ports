@@ -6,7 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://www.freedesktop.org/software/shared-mime-info/
@@ -21,6 +21,8 @@ USE_GNOME=	glib20 libxml2 intltool gnomehack
 
 MAN1=		update-mime-database.1
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+
 MIMEDIRS=	${X11BASE}/share/gnome/mime \
 		${LOCALBASE}/share/gnome/mime \
 		${X11BASE}/share/mime \
@@ -33,5 +35,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/update-mime-database.c
+
+post-install:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
+		s|%%MIMEDIRS%%|${MIMEDIRS}|' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 .include <bsd.port.mk>
