@@ -28,11 +28,6 @@ the timestamp of the authentication as RHS (which the sendmail-hack
 ignores). This timestamp is then used to remove old IPs which are older
 than VALIDTIME seconds (defined in the Makefile).
 
-                                Testing
-
-You can check the state by using the following command:
-$ makemap -u hash popauth
-
 			       Disclaimer
 
 This hack has been in production use for a week on our server and though
@@ -52,3 +47,13 @@ at garry@glendown.de
 
 G.Glendown / Dec 15th 2000
 
+                                Testing
+
+You can check the state by using the following command:
+$ makemap -u hash popauth
+
+On very low volume servers you may clean up the databse by setup a cron job:
+cd /etc/mail && find popauth.db -mmin +6 -exec \
+	makemap hash popauth.db <popauth ";"
+
+Dirk Meyer / Jan 19th 2003
