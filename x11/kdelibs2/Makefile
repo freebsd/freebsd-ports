@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	20000829A
-CATEGORIES=	x11
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+PORTVERSION=	1.94
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -51,8 +52,5 @@ post-install:
 .for LIB in artsc artsflow artsflow_idl kmid kmedia2_idl qtmcop soundserver_idl
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.0 ${PREFIX}/lib/lib${LIB}.so
 .endfor
-
-pre-install:
-	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 .include <bsd.port.mk>

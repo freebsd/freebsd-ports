@@ -1,4 +1,5 @@
 bin/kabalone
+bin/kasteroids
 bin/katomic
 bin/kblackbox
 bin/kfouleggs
@@ -21,6 +22,7 @@ bin/ktuberling
 bin/lskat
 bin/lskatproc
 share/applnk/Games/kabalone.desktop
+share/applnk/Games/kasteroids.desktop
 share/applnk/Games/katomic.desktop
 share/applnk/Games/kblackbox.desktop
 share/applnk/Games/kfouleggs.desktop
@@ -57,6 +59,165 @@ share/apps/kabalone/toolbar/stop.xpm
 share/apps/kabalone/toolbar/undo.xpm
 share/apps/kabalone/toolbar/warning.xpm
 share/apps/kabalone/toolbar/yellowball.xpm
+share/apps/kasteroids/sounds/Explosion.wav
+share/apps/kasteroids/sprites/bg.png
+share/apps/kasteroids/sprites/bits/bits0000.png
+share/apps/kasteroids/sprites/bits/bits0001.png
+share/apps/kasteroids/sprites/bits/bits0002.png
+share/apps/kasteroids/sprites/bits/bits0003.png
+share/apps/kasteroids/sprites/bits/bits0004.png
+share/apps/kasteroids/sprites/bits/bits0005.png
+share/apps/kasteroids/sprites/bits/bits0006.png
+share/apps/kasteroids/sprites/bits/bits0007.png
+share/apps/kasteroids/sprites/bits/bits0008.png
+share/apps/kasteroids/sprites/bits/bits0009.png
+share/apps/kasteroids/sprites/bits/bits0010.png
+share/apps/kasteroids/sprites/bits/bits0011.png
+share/apps/kasteroids/sprites/bits/bits0012.png
+share/apps/kasteroids/sprites/bits/bits0013.png
+share/apps/kasteroids/sprites/bits/bits0014.png
+share/apps/kasteroids/sprites/bits/bits0015.png
+share/apps/kasteroids/sprites/exhaust/exhaust.png
+share/apps/kasteroids/sprites/missile/missile.png
+share/apps/kasteroids/sprites/powerups/brake.png
+share/apps/kasteroids/sprites/powerups/energy.png
+share/apps/kasteroids/sprites/powerups/shield.png
+share/apps/kasteroids/sprites/powerups/teleport.png
+share/apps/kasteroids/sprites/rock1/rock10000.png
+share/apps/kasteroids/sprites/rock1/rock10001.png
+share/apps/kasteroids/sprites/rock1/rock10002.png
+share/apps/kasteroids/sprites/rock1/rock10003.png
+share/apps/kasteroids/sprites/rock1/rock10004.png
+share/apps/kasteroids/sprites/rock1/rock10005.png
+share/apps/kasteroids/sprites/rock1/rock10006.png
+share/apps/kasteroids/sprites/rock1/rock10007.png
+share/apps/kasteroids/sprites/rock1/rock10008.png
+share/apps/kasteroids/sprites/rock1/rock10009.png
+share/apps/kasteroids/sprites/rock1/rock10010.png
+share/apps/kasteroids/sprites/rock1/rock10011.png
+share/apps/kasteroids/sprites/rock1/rock10012.png
+share/apps/kasteroids/sprites/rock1/rock10013.png
+share/apps/kasteroids/sprites/rock1/rock10014.png
+share/apps/kasteroids/sprites/rock1/rock10015.png
+share/apps/kasteroids/sprites/rock1/rock10016.png
+share/apps/kasteroids/sprites/rock1/rock10017.png
+share/apps/kasteroids/sprites/rock1/rock10018.png
+share/apps/kasteroids/sprites/rock1/rock10019.png
+share/apps/kasteroids/sprites/rock1/rock10020.png
+share/apps/kasteroids/sprites/rock1/rock10021.png
+share/apps/kasteroids/sprites/rock1/rock10022.png
+share/apps/kasteroids/sprites/rock1/rock10023.png
+share/apps/kasteroids/sprites/rock1/rock10024.png
+share/apps/kasteroids/sprites/rock1/rock10025.png
+share/apps/kasteroids/sprites/rock1/rock10026.png
+share/apps/kasteroids/sprites/rock1/rock10027.png
+share/apps/kasteroids/sprites/rock1/rock10028.png
+share/apps/kasteroids/sprites/rock1/rock10029.png
+share/apps/kasteroids/sprites/rock1/rock10030.png
+share/apps/kasteroids/sprites/rock1/rock10031.png
+share/apps/kasteroids/sprites/rock2/rock20000.png
+share/apps/kasteroids/sprites/rock2/rock20001.png
+share/apps/kasteroids/sprites/rock2/rock20002.png
+share/apps/kasteroids/sprites/rock2/rock20003.png
+share/apps/kasteroids/sprites/rock2/rock20004.png
+share/apps/kasteroids/sprites/rock2/rock20005.png
+share/apps/kasteroids/sprites/rock2/rock20006.png
+share/apps/kasteroids/sprites/rock2/rock20007.png
+share/apps/kasteroids/sprites/rock2/rock20008.png
+share/apps/kasteroids/sprites/rock2/rock20009.png
+share/apps/kasteroids/sprites/rock2/rock20010.png
+share/apps/kasteroids/sprites/rock2/rock20011.png
+share/apps/kasteroids/sprites/rock2/rock20012.png
+share/apps/kasteroids/sprites/rock2/rock20013.png
+share/apps/kasteroids/sprites/rock2/rock20014.png
+share/apps/kasteroids/sprites/rock2/rock20015.png
+share/apps/kasteroids/sprites/rock2/rock20016.png
+share/apps/kasteroids/sprites/rock2/rock20017.png
+share/apps/kasteroids/sprites/rock2/rock20018.png
+share/apps/kasteroids/sprites/rock2/rock20019.png
+share/apps/kasteroids/sprites/rock2/rock20020.png
+share/apps/kasteroids/sprites/rock2/rock20021.png
+share/apps/kasteroids/sprites/rock2/rock20022.png
+share/apps/kasteroids/sprites/rock2/rock20023.png
+share/apps/kasteroids/sprites/rock2/rock20024.png
+share/apps/kasteroids/sprites/rock2/rock20025.png
+share/apps/kasteroids/sprites/rock2/rock20026.png
+share/apps/kasteroids/sprites/rock2/rock20027.png
+share/apps/kasteroids/sprites/rock2/rock20028.png
+share/apps/kasteroids/sprites/rock2/rock20029.png
+share/apps/kasteroids/sprites/rock2/rock20030.png
+share/apps/kasteroids/sprites/rock2/rock20031.png
+share/apps/kasteroids/sprites/rock3/rock30000.png
+share/apps/kasteroids/sprites/rock3/rock30001.png
+share/apps/kasteroids/sprites/rock3/rock30002.png
+share/apps/kasteroids/sprites/rock3/rock30003.png
+share/apps/kasteroids/sprites/rock3/rock30004.png
+share/apps/kasteroids/sprites/rock3/rock30005.png
+share/apps/kasteroids/sprites/rock3/rock30006.png
+share/apps/kasteroids/sprites/rock3/rock30007.png
+share/apps/kasteroids/sprites/rock3/rock30008.png
+share/apps/kasteroids/sprites/rock3/rock30009.png
+share/apps/kasteroids/sprites/rock3/rock30010.png
+share/apps/kasteroids/sprites/rock3/rock30011.png
+share/apps/kasteroids/sprites/rock3/rock30012.png
+share/apps/kasteroids/sprites/rock3/rock30013.png
+share/apps/kasteroids/sprites/rock3/rock30014.png
+share/apps/kasteroids/sprites/rock3/rock30015.png
+share/apps/kasteroids/sprites/rock3/rock30016.png
+share/apps/kasteroids/sprites/rock3/rock30017.png
+share/apps/kasteroids/sprites/rock3/rock30018.png
+share/apps/kasteroids/sprites/rock3/rock30019.png
+share/apps/kasteroids/sprites/rock3/rock30020.png
+share/apps/kasteroids/sprites/rock3/rock30021.png
+share/apps/kasteroids/sprites/rock3/rock30022.png
+share/apps/kasteroids/sprites/rock3/rock30023.png
+share/apps/kasteroids/sprites/rock3/rock30024.png
+share/apps/kasteroids/sprites/rock3/rock30025.png
+share/apps/kasteroids/sprites/rock3/rock30026.png
+share/apps/kasteroids/sprites/rock3/rock30027.png
+share/apps/kasteroids/sprites/rock3/rock30028.png
+share/apps/kasteroids/sprites/rock3/rock30029.png
+share/apps/kasteroids/sprites/rock3/rock30030.png
+share/apps/kasteroids/sprites/rock3/rock30031.png
+share/apps/kasteroids/sprites/shield/shield0000.png
+share/apps/kasteroids/sprites/shield/shield0001.png
+share/apps/kasteroids/sprites/shield/shield0002.png
+share/apps/kasteroids/sprites/shield/shield0003.png
+share/apps/kasteroids/sprites/shield/shield0004.png
+share/apps/kasteroids/sprites/shield/shield0005.png
+share/apps/kasteroids/sprites/shield/shield0006.png
+share/apps/kasteroids/sprites/ship/ship0000.png
+share/apps/kasteroids/sprites/ship/ship0001.png
+share/apps/kasteroids/sprites/ship/ship0002.png
+share/apps/kasteroids/sprites/ship/ship0003.png
+share/apps/kasteroids/sprites/ship/ship0004.png
+share/apps/kasteroids/sprites/ship/ship0005.png
+share/apps/kasteroids/sprites/ship/ship0006.png
+share/apps/kasteroids/sprites/ship/ship0007.png
+share/apps/kasteroids/sprites/ship/ship0008.png
+share/apps/kasteroids/sprites/ship/ship0009.png
+share/apps/kasteroids/sprites/ship/ship0010.png
+share/apps/kasteroids/sprites/ship/ship0011.png
+share/apps/kasteroids/sprites/ship/ship0012.png
+share/apps/kasteroids/sprites/ship/ship0013.png
+share/apps/kasteroids/sprites/ship/ship0014.png
+share/apps/kasteroids/sprites/ship/ship0015.png
+share/apps/kasteroids/sprites/ship/ship0016.png
+share/apps/kasteroids/sprites/ship/ship0017.png
+share/apps/kasteroids/sprites/ship/ship0018.png
+share/apps/kasteroids/sprites/ship/ship0019.png
+share/apps/kasteroids/sprites/ship/ship0020.png
+share/apps/kasteroids/sprites/ship/ship0021.png
+share/apps/kasteroids/sprites/ship/ship0022.png
+share/apps/kasteroids/sprites/ship/ship0023.png
+share/apps/kasteroids/sprites/ship/ship0024.png
+share/apps/kasteroids/sprites/ship/ship0025.png
+share/apps/kasteroids/sprites/ship/ship0026.png
+share/apps/kasteroids/sprites/ship/ship0027.png
+share/apps/kasteroids/sprites/ship/ship0028.png
+share/apps/kasteroids/sprites/ship/ship0029.png
+share/apps/kasteroids/sprites/ship/ship0030.png
+share/apps/kasteroids/sprites/ship/ship0031.png
 share/apps/katomic/katomicui.rc
 share/apps/katomic/levels/level_1
 share/apps/katomic/levels/level_10
@@ -916,6 +1077,7 @@ share/apps/lskat/grafix/type3.png
 share/doc/HTML/en/kabalone/.anchors
 share/doc/HTML/en/kabalone/authors.html
 share/doc/HTML/en/kabalone/commandlineoptions.html
+share/doc/HTML/en/kabalone/common
 share/doc/HTML/en/kabalone/copyright.html
 share/doc/HTML/en/kabalone/epilogue.html
 share/doc/HTML/en/kabalone/index.cvlog
@@ -926,6 +1088,7 @@ share/doc/HTML/en/kabalone/rulesofthegame.html
 share/doc/HTML/en/kabalone/theuserinterface.html
 share/doc/HTML/en/kasteroids/.anchors
 share/doc/HTML/en/kasteroids/authors.html
+share/doc/HTML/en/kasteroids/common
 share/doc/HTML/en/kasteroids/controls.html
 share/doc/HTML/en/kasteroids/epilogue.html
 share/doc/HTML/en/kasteroids/index.cvlog
@@ -936,6 +1099,7 @@ share/doc/HTML/en/kasteroids/ship.html
 share/doc/HTML/en/kasteroids/tips.html
 share/doc/HTML/en/kasteroids/upgrades.html
 share/doc/HTML/en/kblackbox/.anchors
+share/doc/HTML/en/kblackbox/common
 share/doc/HTML/en/kblackbox/copyright.html
 share/doc/HTML/en/kblackbox/epilogue.html
 share/doc/HTML/en/kblackbox/game-rules.html
@@ -947,7 +1111,13 @@ share/doc/HTML/en/kblackbox/index.html
 share/doc/HTML/en/kblackbox/installation.html
 share/doc/HTML/en/kblackbox/user-interaction.html
 share/doc/HTML/en/kblackbox/whatiskblackbox.html
+share/doc/HTML/en/kfouleggs/.anchors
+share/doc/HTML/en/kfouleggs/common
+share/doc/HTML/en/kfouleggs/index.docbook
+share/doc/HTML/en/kfouleggs/index.html
+share/doc/HTML/en/kfouleggs/introduction.html
 share/doc/HTML/en/kjumpingcube/.anchors
+share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/compilation.html
 share/doc/HTML/en/kjumpingcube/credits.html
 share/doc/HTML/en/kjumpingcube/index.docbook
@@ -958,6 +1128,7 @@ share/doc/HTML/en/kjumpingcube/playingkjumpingcube.html
 share/doc/HTML/en/kjumpingcube/questionsanswersandtips.html
 share/doc/HTML/en/kjumpingcube/requirements.html
 share/doc/HTML/en/kmahjongg/.anchors
+share/doc/HTML/en/kmahjongg/common
 share/doc/HTML/en/kmahjongg/epilogue.html
 share/doc/HTML/en/kmahjongg/index.cvlog
 share/doc/HTML/en/kmahjongg/index.docbook
@@ -965,11 +1136,11 @@ share/doc/HTML/en/kmahjongg/index.html
 share/doc/HTML/en/kmahjongg/introduction.html
 share/doc/HTML/en/kmines/.anchors
 share/doc/HTML/en/kmines/command.html
+share/doc/HTML/en/kmines/common
 share/doc/HTML/en/kmines/compilation.html
 share/doc/HTML/en/kmines/credits.html
 share/doc/HTML/en/kmines/help-menu.html
 share/doc/HTML/en/kmines/howtoplay.html
-share/doc/HTML/en/kmines/index.cvlog
 share/doc/HTML/en/kmines/index.docbook
 share/doc/HTML/en/kmines/index.html
 share/doc/HTML/en/kmines/installation.html
@@ -980,6 +1151,7 @@ share/doc/HTML/en/kmines/kmines2.png
 share/doc/HTML/en/kmines/prefs.html
 share/doc/HTML/en/kmines/settings-menu.html
 share/doc/HTML/en/konquest/.anchors
+share/doc/HTML/en/konquest/common
 share/doc/HTML/en/konquest/epilogue.html
 share/doc/HTML/en/konquest/index.cvlog
 share/doc/HTML/en/konquest/index.docbook
@@ -988,13 +1160,13 @@ share/doc/HTML/en/konquest/notes.html
 share/doc/HTML/en/konquest/playingthegame.html
 share/doc/HTML/en/kpat/.anchors
 share/doc/HTML/en/kpat/calculation.html
+share/doc/HTML/en/kpat/common
 share/doc/HTML/en/kpat/compilation.html
 share/doc/HTML/en/kpat/credits.html
 share/doc/HTML/en/kpat/edit-menu.html
 share/doc/HTML/en/kpat/freecell.html
 share/doc/HTML/en/kpat/grandfather.html
 share/doc/HTML/en/kpat/help.html
-share/doc/HTML/en/kpat/index.cvlog
 share/doc/HTML/en/kpat/index.docbook
 share/doc/HTML/en/kpat/index.html
 share/doc/HTML/en/kpat/installation.html
@@ -1009,11 +1181,11 @@ share/doc/HTML/en/kpat/the-idiot.html
 share/doc/HTML/en/kpat/using-kpat.html
 share/doc/HTML/en/kpoker/.anchors
 share/doc/HTML/en/kpoker/command.html
+share/doc/HTML/en/kpoker/common
 share/doc/HTML/en/kpoker/compilation.html
 share/doc/HTML/en/kpoker/credits.html
 share/doc/HTML/en/kpoker/hands.html
 share/doc/HTML/en/kpoker/help-menu.html
-share/doc/HTML/en/kpoker/index.cvlog
 share/doc/HTML/en/kpoker/index.docbook
 share/doc/HTML/en/kpoker/index.html
 share/doc/HTML/en/kpoker/installation.html
@@ -1031,6 +1203,7 @@ share/doc/HTML/en/kpoker/where-do-i-get-the-latest-version-of-kpoker.html
 share/doc/HTML/en/kreversi/.anchors
 share/doc/HTML/en/kreversi/a-minute-to-learn.html
 share/doc/HTML/en/kreversi/authors.html
+share/doc/HTML/en/kreversi/common
 share/doc/HTML/en/kreversi/copyright.html
 share/doc/HTML/en/kreversi/epilogue.html
 share/doc/HTML/en/kreversi/index.cvlog
@@ -1040,6 +1213,7 @@ share/doc/HTML/en/kreversi/introduction.html
 share/doc/HTML/en/kreversi/rulesofthegame.html
 share/doc/HTML/en/kreversi/strategyhints.html
 share/doc/HTML/en/ksame/.anchors
+share/doc/HTML/en/ksame/common
 share/doc/HTML/en/ksame/copyright.html
 share/doc/HTML/en/ksame/epilogue.html
 share/doc/HTML/en/ksame/index.cvlog
@@ -1049,6 +1223,7 @@ share/doc/HTML/en/ksame/introduction.html
 share/doc/HTML/en/ksame/rules-of-the-game.html
 share/doc/HTML/en/ksame/strategy-hint.html
 share/doc/HTML/en/kshisen/.anchors
+share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/compilation.html
 share/doc/HTML/en/kshisen/configuration.html
 share/doc/HTML/en/kshisen/credits.html
@@ -1062,6 +1237,7 @@ share/doc/HTML/en/kshisen/playing-kshisen.html
 share/doc/HTML/en/kshisen/requirements.html
 share/doc/HTML/en/ksirtet/.anchors
 share/doc/HTML/en/ksirtet/authors.html
+share/doc/HTML/en/ksirtet/common
 share/doc/HTML/en/ksirtet/epilogue.html
 share/doc/HTML/en/ksirtet/how-to-gain-points.html
 share/doc/HTML/en/ksirtet/howtoplay.html
@@ -1073,6 +1249,7 @@ share/doc/HTML/en/ksirtet/multiplayer.html
 share/doc/HTML/en/ksirtet/options.html
 share/doc/HTML/en/ksmiletris/.anchors
 share/doc/HTML/en/ksmiletris/changes.html
+share/doc/HTML/en/ksmiletris/common
 share/doc/HTML/en/ksmiletris/credits.html
 share/doc/HTML/en/ksmiletris/developement.html
 share/doc/HTML/en/ksmiletris/epilogue.html
@@ -1085,6 +1262,7 @@ share/doc/HTML/en/ksmiletris/license.html
 share/doc/HTML/en/ksmiletris/to-do.html
 share/doc/HTML/en/ksnake/.anchors
 share/doc/HTML/en/ksnake/authors.html
+share/doc/HTML/en/ksnake/common
 share/doc/HTML/en/ksnake/customization.html
 share/doc/HTML/en/ksnake/epilogue.html
 share/doc/HTML/en/ksnake/index.cvlog
@@ -1094,31 +1272,20 @@ share/doc/HTML/en/ksnake/introduction.html
 share/doc/HTML/en/ksnake/rulesofthegame.html
 share/doc/HTML/en/ksnake/scoring.html
 share/doc/HTML/en/ksokoban/.anchors
+share/doc/HTML/en/ksokoban/common
 share/doc/HTML/en/ksokoban/credits.html
 share/doc/HTML/en/ksokoban/howtoplay.html
 share/doc/HTML/en/ksokoban/index.docbook
 share/doc/HTML/en/ksokoban/index.html
 share/doc/HTML/en/ksokoban/introduction.html
 share/doc/HTML/en/ksokoban/loadingexternallevels.html
-share/doc/HTML/en/kspaceduel/.anchors
-share/doc/HTML/en/kspaceduel/ai.html
-share/doc/HTML/en/kspaceduel/command.html
-share/doc/HTML/en/kspaceduel/compilation.html
-share/doc/HTML/en/kspaceduel/credits.html
-share/doc/HTML/en/kspaceduel/help-menu.html
-share/doc/HTML/en/kspaceduel/index.cvlog
+share/doc/HTML/en/kspaceduel/common
 share/doc/HTML/en/kspaceduel/index.docbook
-share/doc/HTML/en/kspaceduel/index.html
-share/doc/HTML/en/kspaceduel/installation.html
-share/doc/HTML/en/kspaceduel/introduction.html
-share/doc/HTML/en/kspaceduel/keys.html
 share/doc/HTML/en/kspaceduel/kspaceduel1.png
 share/doc/HTML/en/kspaceduel/kspaceduel2.png
 share/doc/HTML/en/kspaceduel/kspaceduel3.png
-share/doc/HTML/en/kspaceduel/options.html
-share/doc/HTML/en/kspaceduel/settings-menu.html
-share/doc/HTML/en/kspaceduel/thegame.html
 share/doc/HTML/en/ktron/.anchors
+share/doc/HTML/en/ktron/common
 share/doc/HTML/en/ktron/compilation.html
 share/doc/HTML/en/ktron/computerplayer.html
 share/doc/HTML/en/ktron/config-behaviour.html
@@ -1134,6 +1301,7 @@ share/doc/HTML/en/ktron/playingktron.html
 share/doc/HTML/en/ktron/requirements.html
 share/doc/HTML/en/ktron/usingkeyboard.html
 share/doc/HTML/en/ktuberling/.anchors
+share/doc/HTML/en/ktuberling/common
 share/doc/HTML/en/ktuberling/compilation-and-installation.html
 share/doc/HTML/en/ktuberling/epilogue.html
 share/doc/HTML/en/ktuberling/for-programmers.html
@@ -1150,6 +1318,7 @@ share/doc/HTML/en/ktuberling/technical-reference.html
 share/doc/HTML/en/ktuberling/the-menu-items.html
 share/doc/HTML/en/ktuberling/the-tool-bar.html
 share/doc/HTML/en/lskat/.anchors
+share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/compilation.html
 share/doc/HTML/en/lskat/credits.html
 share/doc/HTML/en/lskat/help.html
@@ -1164,6 +1333,7 @@ share/doc/HTML/en/lskat/requirements.html
 share/doc/HTML/en/lskat/rules.html
 share/doc/HTML/en/lskat/view-menu.html
 share/icons/hicolor/32x32/apps/kabalone.png
+share/icons/hicolor/32x32/apps/kasteroids.png
 share/icons/hicolor/32x32/apps/kblackbox.png
 share/icons/hicolor/32x32/apps/kmahjongg.png
 share/icons/hicolor/32x32/apps/kmines.png
@@ -1179,6 +1349,7 @@ share/icons/hicolor/32x32/apps/ksnake.png
 share/icons/hicolor/32x32/apps/ksokoban.png
 share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/48x48/apps/kabalone.png
+share/icons/hicolor/48x48/apps/kasteroids.png
 share/icons/hicolor/48x48/apps/kblackbox.png
 share/icons/hicolor/48x48/apps/kmahjongg.png
 share/icons/hicolor/48x48/apps/kmines.png
@@ -1194,6 +1365,7 @@ share/icons/hicolor/48x48/apps/ksnake.png
 share/icons/hicolor/48x48/apps/ksokoban.png
 share/icons/hicolor/48x48/apps/lskat.png
 share/icons/locolor/16x16/apps/kabalone.png
+share/icons/locolor/16x16/apps/kasteroids.png
 share/icons/locolor/16x16/apps/kblackbox.png
 share/icons/locolor/16x16/apps/kjumpingcube.png
 share/icons/locolor/16x16/apps/kmahjongg.png
@@ -1212,6 +1384,7 @@ share/icons/locolor/16x16/apps/kspaceduel.png
 share/icons/locolor/16x16/apps/ktron.png
 share/icons/locolor/16x16/apps/lskat.png
 share/icons/locolor/32x32/apps/kabalone.png
+share/icons/locolor/32x32/apps/kasteroids.png
 share/icons/locolor/32x32/apps/katomic.png
 share/icons/locolor/32x32/apps/kblackbox.png
 share/icons/locolor/32x32/apps/kjumpingcube.png
@@ -1248,13 +1421,17 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kmines
 @dirrm share/doc/HTML/en/kmahjongg
 @dirrm share/doc/HTML/en/kjumpingcube
+@dirrm share/doc/HTML/en/kfouleggs
 @dirrm share/doc/HTML/en/kblackbox
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
 @dirrm share/apps/lskat/grafix
+@dirrm share/apps/lskat
 @dirrm share/apps/ktuberling/sounds/en
+@dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling/pics
 @dirrm share/apps/ktuberling/museum
+@dirrm share/apps/ktuberling
 @dirrm share/apps/ktron
 @dirrm share/apps/kspaceduel/sprites/sun
 @dirrm share/apps/kspaceduel/sprites/ship2
@@ -1279,23 +1456,41 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/ksnake
 @dirrm share/apps/ksmiletris/sounds
 @dirrm share/apps/ksmiletris/data
+@dirrm share/apps/ksmiletris
 @dirrm share/apps/ksirtet
 @dirrm share/apps/kshisen
 @dirrm share/apps/ksame
 @dirrm share/apps/kreversi/sounds
 @dirrm share/apps/kreversi/pics/background
 @dirrm share/apps/kreversi/pics
+@dirrm share/apps/kreversi
 @dirrm share/apps/kpoker/sounds
 @dirrm share/apps/kpoker/pics
+@dirrm share/apps/kpoker
 @dirrm share/apps/kpat/pics
+@dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
+@dirrm share/apps/konquest
 @dirrm share/apps/kmines
 @dirrm share/apps/kmahjongg/toolbar
 @dirrm share/apps/kmahjongg/pics
+@dirrm share/apps/kmahjongg
 @dirrm share/apps/kfouleggs
 @dirrm share/apps/kblackbox/pics
+@dirrm share/apps/kblackbox
 @dirrm share/apps/katomic/pics
 @dirrm share/apps/katomic/levels
 @dirrm share/apps/katomic
+@dirrm share/apps/kasteroids/sprites/ship
+@dirrm share/apps/kasteroids/sprites/shield
+@dirrm share/apps/kasteroids/sprites/rock3
+@dirrm share/apps/kasteroids/sprites/rock2
+@dirrm share/apps/kasteroids/sprites/rock1
+@dirrm share/apps/kasteroids/sprites/powerups
+@dirrm share/apps/kasteroids/sprites/missile
+@dirrm share/apps/kasteroids/sprites/exhaust
+@dirrm share/apps/kasteroids/sprites/bits
+@dirrm share/apps/kasteroids/sprites
+@dirrm share/apps/kasteroids/sounds
 @dirrm share/apps/kabalone/toolbar
 @dirrm share/apps/kabalone

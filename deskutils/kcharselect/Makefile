@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kdeutils
-PORTVERSION=	20000829A
+PORTVERSION=	1.94
 CATEGORIES=	misc kde
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 

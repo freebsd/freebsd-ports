@@ -110,11 +110,14 @@ share/applnk/Office/kpresenter.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kword.desktop
 share/apps/kchart/icons/locolor/22x22/actions/areas.png
+share/apps/kchart/icons/locolor/22x22/actions/areas3d.png
 share/apps/kchart/icons/locolor/22x22/actions/bars.png
+share/apps/kchart/icons/locolor/22x22/actions/bars3d.png
 share/apps/kchart/icons/locolor/22x22/actions/cakes.png
 share/apps/kchart/icons/locolor/22x22/actions/cakes3d.png
 share/apps/kchart/icons/locolor/22x22/actions/data.png
 share/apps/kchart/icons/locolor/22x22/actions/lines.png
+share/apps/kchart/icons/locolor/22x22/actions/lines3d.png
 share/apps/kchart/icons/locolor/22x22/actions/options.png
 share/apps/kchart/icons/locolor/22x22/actions/wizard.png
 share/apps/kchart/kchart.rc
@@ -508,18 +511,6 @@ share/doc/HTML/en/doc/koffice-misc.html
 share/doc/HTML/en/doc/koffice-search-help.html
 share/doc/HTML/en/doc/koffice-search.html
 share/doc/HTML/en/doc/koffice.html
-share/doc/HTML/en/katabase/.anchors
-share/doc/HTML/en/katabase/another-section.html
-share/doc/HTML/en/katabase/compilation-and-installation.html
-share/doc/HTML/en/katabase/copyright.html
-share/doc/HTML/en/katabase/index.cvlog
-share/doc/HTML/en/katabase/index.docbook
-share/doc/HTML/en/katabase/index.html
-share/doc/HTML/en/katabase/installation.html
-share/doc/HTML/en/katabase/introduction.html
-share/doc/HTML/en/katabase/questions-and-answers.html
-share/doc/HTML/en/katabase/requirements.html
-share/doc/HTML/en/katabase/usage.html
 share/doc/HTML/en/killustrator/.anchors
 share/doc/HTML/en/killustrator/about-the-handbook.html
 share/doc/HTML/en/killustrator/align.png
@@ -790,7 +781,9 @@ share/icons/locolor/16x16/actions/abs.png
 share/icons/locolor/16x16/actions/adjustcol.png
 share/icons/locolor/16x16/actions/adjustrow.png
 share/icons/locolor/16x16/actions/areas.png
+share/icons/locolor/16x16/actions/areas3d.png
 share/icons/locolor/16x16/actions/bars.png
+share/icons/locolor/16x16/actions/bars3d.png
 share/icons/locolor/16x16/actions/black_sum.png
 share/icons/locolor/16x16/actions/border_all.png
 share/icons/locolor/16x16/actions/border_bottom.png
@@ -808,6 +801,7 @@ share/icons/locolor/16x16/actions/bottom.png
 share/icons/locolor/16x16/actions/brace.png
 share/icons/locolor/16x16/actions/brackets.png
 share/icons/locolor/16x16/actions/cakes.png
+share/icons/locolor/16x16/actions/cakes3d.png
 share/icons/locolor/16x16/actions/cell_edit.png
 share/icons/locolor/16x16/actions/cell_layout.png
 share/icons/locolor/16x16/actions/center.png
@@ -827,6 +821,7 @@ share/icons/locolor/16x16/actions/inserttable.png
 share/icons/locolor/16x16/actions/int.png
 share/icons/locolor/16x16/actions/left.png
 share/icons/locolor/16x16/actions/lines.png
+share/icons/locolor/16x16/actions/lines3d.png
 share/icons/locolor/16x16/actions/lower.png
 share/icons/locolor/16x16/actions/lsub.png
 share/icons/locolor/16x16/actions/lsup.png
@@ -835,6 +830,7 @@ share/icons/locolor/16x16/actions/mergecell.png
 share/icons/locolor/16x16/actions/middle.png
 share/icons/locolor/16x16/actions/money.png
 share/icons/locolor/16x16/actions/multirow.png
+share/icons/locolor/16x16/actions/options.png
 share/icons/locolor/16x16/actions/oscilloscope.png
 share/icons/locolor/16x16/actions/paren.png
 share/icons/locolor/16x16/actions/percent.png
@@ -903,28 +899,19 @@ share/servicetypes/kotool.desktop
 @dirrm share/doc/HTML/en/kpresenter
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/killustrator
-@dirrm share/doc/HTML/en/katabase
-@dirrm share/doc/HTML/en/doc
 @dirrm share/apps/kword/templates/Publishing/.source
 @dirrm share/apps/kword/templates/Publishing/.icon
 @dirrm share/apps/kword/templates/Publishing
 @dirrm share/apps/kword/templates/Normal/.source
 @dirrm share/apps/kword/templates/Normal/.icon
 @dirrm share/apps/kword/templates/Normal
-@dirrm share/apps/kword/templates
 @dirrm share/apps/kword/icons/locolor/22x22/actions
-@dirrm share/apps/kword/icons/locolor/22x22
-@dirrm share/apps/kword/icons/locolor
-@dirrm share/apps/kword/icons
 @dirrm share/apps/kword/dtd
 @dirrm share/apps/kword
 @dirrm share/apps/kspread/tablestyles
 @dirrm share/apps/kspread/scripts
 @dirrm share/apps/kspread/kpartplugins
 @dirrm share/apps/kspread/icons/locolor/22x22/actions
-@dirrm share/apps/kspread/icons/locolor/22x22
-@dirrm share/apps/kspread/icons/locolor
-@dirrm share/apps/kspread/icons
 @dirrm share/apps/kspread/extensions
 @dirrm share/apps/kspread/dtd
 @dirrm share/apps/kspread
@@ -934,13 +921,9 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kpresenter/templates/Professional/.source
 @dirrm share/apps/kpresenter/templates/Professional/.icon
 @dirrm share/apps/kpresenter/templates/Professional
-@dirrm share/apps/kpresenter/templates
 @dirrm share/apps/kpresenter/slideshow
 @dirrm share/apps/kpresenter/pics
 @dirrm share/apps/kpresenter/icons/locolor/22x22/actions
-@dirrm share/apps/kpresenter/icons/locolor/22x22
-@dirrm share/apps/kpresenter/icons/locolor
-@dirrm share/apps/kpresenter/icons
 @dirrm share/apps/kpresenter/dtd
 @dirrm share/apps/kpresenter/autoforms/Connections
 @dirrm share/apps/kpresenter/autoforms/Arrows
@@ -949,16 +932,9 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/koffice/pics
 @dirrm share/apps/koffice/icons/locolor/22x22/actions/part
 @dirrm share/apps/koffice/icons/locolor/22x22/actions
-@dirrm share/apps/koffice/icons/locolor/22x22
 @dirrm share/apps/koffice/icons/locolor/16x16/actions
-@dirrm share/apps/koffice/icons/locolor/16x16
-@dirrm share/apps/koffice/icons/locolor
 @dirrm share/apps/koffice/icons/hicolor/32x32/actions
-@dirrm share/apps/koffice/icons/hicolor/32x32
 @dirrm share/apps/koffice/icons/hicolor/22x22/actions
-@dirrm share/apps/koffice/icons/hicolor/22x22
-@dirrm share/apps/koffice/icons/hicolor
-@dirrm share/apps/koffice/icons
 @dirrm share/apps/koffice
 @dirrm share/apps/killustrator/templates/Simple/.source
 @dirrm share/apps/killustrator/templates/Simple/.icon
@@ -967,7 +943,4 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/killustrator
 @dirrm share/apps/kchart/pics
 @dirrm share/apps/kchart/icons/locolor/22x22/actions
-@dirrm share/apps/kchart/icons/locolor/22x22
-@dirrm share/apps/kchart/icons/locolor
-@dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart

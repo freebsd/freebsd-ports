@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	20000829A
+PORTVERSION=	1.94
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -19,7 +19,9 @@ RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
 		kjumpingcube:${PORTSDIR}/games/kdegames2 \
 		kdf:${PORTSDIR}/misc/kdeutils2 \
 		kword:${PORTSDIR}/editors/koffice \
-		kppp:${PORTSDIR}/net/kdenetwork2
+		kppp:${PORTSDIR}/net/kdenetwork2 \
+		pixie:${PORTSDIR}/graphics/kdegraphics2 \
+		kaiman:${PORTSDIR}/audio/kdemultimedia2
 
 NO_BUILD=	yes
 
