@@ -9,15 +9,16 @@
 DISTNAME=	emacs-20.5-man-jp
 PKGNAME=	ja-emacs-manual-13.1999.12.13
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
+DISTFILES=	${DISTNAME}.tgz ${EMACS_ARC}
 
 MAINTAINER=	okazaki@be.to
 
-BUILD_DEPENDS=	${EMACS}:${PORTSDIR}/editors/emacs20 \
-		/nonexistent:${PORTSDIR}/editors/emacs20:checksum
+BUILD_DEPENDS=	${EMACS}:${PORTSDIR}/editors/emacs20
 
-# EMACS_ARC is fetched by BUILD_DEPENDS
+EXTRACT_ONLY=	${DISTNAME}.tgz
 EMACS_DISTNAME= emacs-20.5
 EMACS_ARC=	${EMACS_DISTNAME}a.tar.gz
 EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
@@ -26,12 +27,12 @@ EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi \
 
 # We use emacs20 to format texinfo files.
 EMACS=		emacs-20.5
-FORMAT_FLAG=	t
 
-MAKE_ENV=	EMACS="${EMACS}" FORMAT_FLAG="${FORMAT_FLAG}"
+MAKE_ENV=	EMACS="${EMACS}"
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
 	@(cd ${WRKDIR} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES} ; \
 	${CP} ${EXTRACT_FILES} ${WRKSRC})
