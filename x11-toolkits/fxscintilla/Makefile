@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
+BROKEN=		"Does not build with current fox-devel version"
+
 GNU_CONFIGURE=	yes
 
 USE_LIBTOOL_VER=	15

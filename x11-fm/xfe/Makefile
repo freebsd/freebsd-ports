@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
 
+BROKEN=		"Does not build with current fox-devel version"
+
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
 		png.5:${PORTSDIR}/graphics/png
 
