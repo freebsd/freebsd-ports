@@ -51,7 +51,6 @@ include/osg/Material
 include/osg/Math
 include/osg/Matrix
 include/osg/MatrixTransform
-include/osg/MemoryManager
 include/osg/Node
 include/osg/NodeCallback
 include/osg/NodeVisitor
@@ -91,6 +90,7 @@ include/osg/Texture3D
 include/osg/TextureCubeMap
 include/osg/Timer
 include/osg/Transform
+include/osg/TriangleFunctor
 include/osg/Types
 include/osg/UByte4
 include/osg/UnitTestFramework
@@ -98,6 +98,7 @@ include/osg/Vec2
 include/osg/Vec3
 include/osg/Vec4
 include/osg/Version
+include/osg/VertexProgram
 include/osg/Viewport
 include/osg/buffered_value
 include/osg/fast_back_stack
@@ -112,6 +113,7 @@ include/osgDB/FileNameUtils
 include/osgDB/FileUtils
 include/osgDB/Input
 include/osgDB/Output
+include/osgDB/ParameterOutput
 include/osgDB/ReadFile
 include/osgDB/ReaderWriter
 include/osgDB/Registry
@@ -165,12 +167,26 @@ include/osgParticle/Shooter
 include/osgParticle/VariableRateCounter
 include/osgParticle/Version
 include/osgParticle/range
+include/osgProducer/ActionAdapter
+include/osgProducer/CameraGroup
+include/osgProducer/EventAdapter
+include/osgProducer/Export
+include/osgProducer/KeyboardMouseCallback
+include/osgProducer/SceneHandler
+include/osgProducer/Version
+include/osgProducer/Viewer
+include/osgSim/BlinkSequence
+include/osgSim/Export
+include/osgSim/LightPoint
+include/osgSim/LightPointNode
+include/osgSim/Sector
+include/osgSim/Version
+include/osgText/EncodedText
 include/osgText/Export
 include/osgText/Font
 include/osgText/Paragraph
 include/osgText/Text
 include/osgText/Version
-include/osgUtil/AppVisitor
 include/osgUtil/CubeMapGenerator
 include/osgUtil/CullVisitor
 include/osgUtil/DisplayListVisitor
@@ -193,6 +209,7 @@ include/osgUtil/SmoothingVisitor
 include/osgUtil/Tesselator
 include/osgUtil/TransformCallback
 include/osgUtil/TriStripVisitor
+include/osgUtil/UpdateVisitor
 include/osgUtil/Version
 lib/.README
 lib/libosg.so
@@ -225,6 +242,7 @@ lib/osgPlugins/osgdb_tga.so
 lib/osgPlugins/osgdb_tgz.so
 lib/osgPlugins/osgdb_tiff.so
 lib/osgPlugins/osgdb_txp.so
+lib/osgPlugins/osgdb_x.so
 lib/osgPlugins/osgdb_zip.so
 @dirrm include/osg
 @dirrm include/osgDB
@@ -248,6 +266,8 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/bin/osghud
 %%DATADIR%%/bin/osgimpostor
 %%DATADIR%%/bin/osglight
+%%DATADIR%%/bin/osglightpoint
+%%DATADIR%%/bin/osglogo
 %%DATADIR%%/bin/osgmultitexture
 %%DATADIR%%/bin/osgoccluder
 %%DATADIR%%/bin/osgparticle
@@ -255,6 +275,7 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/bin/osgreflect
 %%DATADIR%%/bin/osgscribe
 %%DATADIR%%/bin/osgsequence
+%%DATADIR%%/bin/osgshadowtexture
 %%DATADIR%%/bin/osgshape
 %%DATADIR%%/bin/osgstereoimage
 %%DATADIR%%/bin/osgteapot
@@ -264,6 +285,7 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/bin/osgtexture3D
 %%DATADIR%%/bin/osgunittests
 %%DATADIR%%/bin/osgversion
+%%DATADIR%%/bin/osgvertexprogram
 %%DATADIR%%/bin/osgviews
 %%DATADIR%%/bin/sgv
 %%DATADIR%%/src/Make/makedefs
@@ -299,7 +321,6 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/src/demos/osghangglide/GliderManipulator.cpp
 %%DATADIR%%/src/demos/osghangglide/GliderManipulator.h
 %%DATADIR%%/src/demos/osghangglide/Makefile
-%%DATADIR%%/src/demos/osghangglide/ReaderWriterFLY.cpp
 %%DATADIR%%/src/demos/osghangglide/base.cpp
 %%DATADIR%%/src/demos/osghangglide/hat.cpp
 %%DATADIR%%/src/demos/osghangglide/hat.h
@@ -318,6 +339,10 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/src/demos/osgimpostor/osgimpostor.cpp
 %%DATADIR%%/src/demos/osglight/Makefile
 %%DATADIR%%/src/demos/osglight/osglight.cpp
+%%DATADIR%%/src/demos/osglightpoint/Makefile
+%%DATADIR%%/src/demos/osglightpoint/osglightpoint.cpp
+%%DATADIR%%/src/demos/osglogo/Makefile
+%%DATADIR%%/src/demos/osglogo/osglogo.cpp
 %%DATADIR%%/src/demos/osgmultitexture/Makefile
 %%DATADIR%%/src/demos/osgmultitexture/osgmultitexture.cpp
 %%DATADIR%%/src/demos/osgoccluder/Makefile
@@ -326,12 +351,17 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/src/demos/osgparticle/osgparticle.cpp
 %%DATADIR%%/src/demos/osgprerender/Makefile
 %%DATADIR%%/src/demos/osgprerender/osgprerender.cpp
+%%DATADIR%%/src/demos/osgproducer/Makefile
+%%DATADIR%%/src/demos/osgproducer/osgproducer_viewer.cpp
 %%DATADIR%%/src/demos/osgreflect/Makefile
 %%DATADIR%%/src/demos/osgreflect/osgreflect.cpp
 %%DATADIR%%/src/demos/osgscribe/Makefile
 %%DATADIR%%/src/demos/osgscribe/osgscribe.cpp
 %%DATADIR%%/src/demos/osgsequence/Makefile
 %%DATADIR%%/src/demos/osgsequence/osgsequence.cpp
+%%DATADIR%%/src/demos/osgshadowtexture/CreateShadowedScene.cpp
+%%DATADIR%%/src/demos/osgshadowtexture/Makefile
+%%DATADIR%%/src/demos/osgshadowtexture/osgshadowtexture.cpp
 %%DATADIR%%/src/demos/osgshape/Makefile
 %%DATADIR%%/src/demos/osgshape/osgshape.cpp
 %%DATADIR%%/src/demos/osgstereoimage/Makefile
@@ -350,6 +380,8 @@ lib/osgPlugins/osgdb_zip.so
 %%DATADIR%%/src/demos/osgunittests/osgunittests.cpp
 %%DATADIR%%/src/demos/osgversion/Makefile
 %%DATADIR%%/src/demos/osgversion/osgversion.cpp
+%%DATADIR%%/src/demos/osgvertexprogram/Makefile
+%%DATADIR%%/src/demos/osgvertexprogram/osgvertexprogram.cpp
 %%DATADIR%%/src/demos/osgviews/Makefile
 %%DATADIR%%/src/demos/osgviews/osgviews.cpp
 %%DATADIR%%/src/demos/sgv/Makefile
@@ -371,13 +403,18 @@ lib/osgPlugins/osgdb_zip.so
 @dirrm %%DATADIR%%/src/demos/osghud
 @dirrm %%DATADIR%%/src/demos/osgimpostor
 @dirrm %%DATADIR%%/src/demos/osglight
+@dirrm %%DATADIR%%/src/demos/osglightpoint
+@dirrm %%DATADIR%%/src/demos/osglogo
 @dirrm %%DATADIR%%/src/demos/osgmultitexture
 @dirrm %%DATADIR%%/src/demos/osgoccluder
 @dirrm %%DATADIR%%/src/demos/osgparticle
+@dirrm %%DATADIR%%/src/demos/osgpbuffer
 @dirrm %%DATADIR%%/src/demos/osgprerender
+@dirrm %%DATADIR%%/src/demos/osgproducer
 @dirrm %%DATADIR%%/src/demos/osgreflect
 @dirrm %%DATADIR%%/src/demos/osgscribe
 @dirrm %%DATADIR%%/src/demos/osgsequence
+@dirrm %%DATADIR%%/src/demos/osgshadowtexture
 @dirrm %%DATADIR%%/src/demos/osgshape
 @dirrm %%DATADIR%%/src/demos/osgstereoimage
 @dirrm %%DATADIR%%/src/demos/osgteapot
@@ -386,6 +423,7 @@ lib/osgPlugins/osgdb_zip.so
 @dirrm %%DATADIR%%/src/demos/osgtexture2D
 @dirrm %%DATADIR%%/src/demos/osgtexture3D
 @dirrm %%DATADIR%%/src/demos/osgunittests
+@dirrm %%DATADIR%%/src/demos/osgvertexprogram
 @dirrm %%DATADIR%%/src/demos/osgversion
 @dirrm %%DATADIR%%/src/demos/osgviews
 @dirrm %%DATADIR%%/src/demos/sgv
@@ -451,6 +489,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/CullingSet.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Cylinder.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DOFTransform.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DeleteHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Depth.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DisplaySettings.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DrawArrayLengths.html
@@ -460,6 +499,8 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DrawElementsUShort.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/DrawPixels.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Drawable.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Extensions.2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Extensions.3.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Fog.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/FrameStamp.html
@@ -534,6 +575,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Projection.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/QualifiedTestPrinter.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Quat.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/RefMatrix.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Referenced.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Sequence.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/ShadeModel.html
@@ -591,10 +633,15 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Vec2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Vec3.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Vec4.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorSizei.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorSizei.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUByte.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUByte.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUInt.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUInt.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUShort.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VectorUShort.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/VertexProgram.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/Viewport.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/buffered_value.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/clampArray3BetweenRange.html
@@ -641,6 +688,9 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/ref_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/setNotifyLevel.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osg/tag_au.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/xternSG_EXPORTNotifySeverityg_NotifyLevel.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/xternSG_EXPORTboolg_NotifyInit.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osg/xternSG_EXPORTstdauto_ptrstdofstreamg_NotifyNulStream.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ClassGraph.class
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ClassGraphPanel.class
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ClassLayout.class
@@ -658,6 +708,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/NavigatorButton.class
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/Options.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/Output.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ParameterOutput.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/PushAndPopDataPath.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ReadResult.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgDB/ReaderWriter.html
@@ -774,10 +825,35 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgParticle/rangev2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgParticle/rangev3.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgParticle/rangev4.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/AzimElevationSector.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/AzimRange.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/AzimSector.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/BlinkSequence.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ClassGraph.class
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ClassGraphPanel.class
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ClassLayout.class
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ConeSector.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ElevationRange.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/ElevationSector.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/General.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/HIER.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/HIERjava.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/LightPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/LightPointNode.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/NavigatorButton.class
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/Sector.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/SequenceGroup.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/icon1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/icon2.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/osgSim.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/osgSimGetLibraryName.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgSim/osgSimGetVersion.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/BitmapFont.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/ClassGraph.class
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/ClassGraphPanel.class
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/ClassLayout.class
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/EncodedText.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/Font.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/General.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgText/HIER.html
@@ -836,6 +912,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RegisterRenderBinProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RemoveEmptyNodesVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RemoveLowestStaticTransformsVisitor.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RemoveRedundantNodesVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RemoveRedundentNodesVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RenderBin.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/RenderGraph.html
@@ -853,6 +930,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/TrackballManipulator.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/TransformCallback.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/TriStripVisitor.html
+%%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/UpdateVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/VisualsRequirementsVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/icon1.gif
 %%PORTDOCS%%%%DOCSDIR%%/doc++/osgUtil/icon2.gif
@@ -891,6 +969,7 @@ lib/osgPlugins/osgdb_zip.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgGA
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgGLUT
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgParticle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgSim
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgText
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++/osgUtil
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc++
