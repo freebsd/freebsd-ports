@@ -35,4 +35,7 @@ PATCHDIR=       ${MASTERDIR}/patches.i386
 MAN1+=		iconvert.1
 .endif
 
+post-install:
+	@${LN} -sf ${PREFIX}/lib/libxforms.so.0 ${PREFIX}/lib/libforms.so
+
 .include <bsd.port.post.mk>

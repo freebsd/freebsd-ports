@@ -1,6 +1,7 @@
 bin/fd2ps
 bin/fdesign
 include/forms.h
+lib/libforms.so
 lib/libxforms.a
 lib/libxforms.so
 lib/libxforms.so.0
