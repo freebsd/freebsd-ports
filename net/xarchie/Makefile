@@ -15,5 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
+MAN1=		xarchie.1
 
 .include <bsd.port.mk>
