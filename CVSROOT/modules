@@ -2030,6 +2030,7 @@ gmat		ports/textproc/gmat
 gmcal		ports/deskutils/gmcal
 gmessage	ports/x11/gmessage
 gmetadom	ports/textproc/gmetadom
+gmfsk		ports/comms/gmfsk
 gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
 gmixer		ports/audio/gmixer
