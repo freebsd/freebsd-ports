@@ -2,6 +2,9 @@
 # Version required:     1.14
 # Date created:		7 Jun 1997
 # Whom:			igor@zynaps.ru
+#
+# $Id$
+#
 
 DISTNAME=       cucipop-1.14
 CATEGORIES=	mail
