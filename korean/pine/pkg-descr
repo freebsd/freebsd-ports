@@ -20,4 +20,4 @@ It is patched to remove a couple of incompatibilities with RFC 1557
 and Hangul MTA. Patch is by Jungshik Shin <jshin@pantheon.yale.edu>.
 
 --
-Port by CHOI Junho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

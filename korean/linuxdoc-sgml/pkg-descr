@@ -11,4 +11,4 @@ This version of Linuxdoc-SGML supports Korean language, it supports
 LaTeX(LaTeX2e, HLaTeX-0.95, hlatexp), GNU info, ASCII format for Korean.
 
 --
-Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

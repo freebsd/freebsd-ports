@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/hanterm304beta/f
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/terminal/hanterm/hanterm304beta/fonts/
 DISTNAME=       hanterm304fonts
 
+MAINTAINER=	cjh@FreeBSD.org
+
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
 
