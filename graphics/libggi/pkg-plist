@@ -1,11 +1,14 @@
 bin/cube3d
 bin/monitest
-etc/ggi/libggimisc.conf
 etc/ggi/libggi.conf
+etc/ggi/libggimisc.conf
+include/ggi/default/genkgi.h
 include/ggi/display/aa.h
+include/ggi/display/directx.h
 include/ggi/display/fbdev.h
 include/ggi/display/file.h
 include/ggi/display/glide.h
+include/ggi/display/lcd823.h
 include/ggi/display/linvtsw.h
 include/ggi/display/mansync.h
 include/ggi/display/memory.h
@@ -19,6 +22,7 @@ include/ggi/display/tele.h
 include/ggi/display/tile.h
 include/ggi/display/trueemu.h
 include/ggi/display/vcsa.h
+include/ggi/display/vgl.h
 include/ggi/display/x.h
 include/ggi/display/xcommon.h
 include/ggi/display/xf86dga.h
@@ -57,6 +61,8 @@ lib/ggi/default/linear_32.la
 lib/ggi/default/linear_32.so
 lib/ggi/default/linear_4.la
 lib/ggi/default/linear_4.so
+lib/ggi/default/linear_4_r.la
+lib/ggi/default/linear_4_r.so
 lib/ggi/default/linear_8.la
 lib/ggi/default/linear_8.so
 lib/ggi/default/planar.la
@@ -67,12 +73,14 @@ lib/ggi/default/text_16.la
 lib/ggi/default/text_16.so
 lib/ggi/default/text_32.la
 lib/ggi/default/text_32.so
-lib/ggi/display/X-misc.la
-lib/ggi/display/X-misc.so
 lib/ggi/display/X.la
 lib/ggi/display/X.so
+lib/ggi/display/X_misc.la
+lib/ggi/display/X_misc.so
 lib/ggi/display/Xlib.la
 lib/ggi/display/Xlib.so
+lib/ggi/display/aa.la
+lib/ggi/display/aa.so
 lib/ggi/display/file.la
 lib/ggi/display/file.so
 lib/ggi/display/mansync.la
@@ -95,12 +103,15 @@ lib/ggi/display/tile.la
 lib/ggi/display/tile.so
 lib/ggi/display/trueemu.la
 lib/ggi/display/trueemu.so
+lib/ggi/display/vgl.la
+lib/ggi/display/vgl.so
 lib/libggi.la
 lib/libggi.so
 lib/libggi.so.2
 lib/libggimisc.la
 lib/libggimisc.so
 lib/libggimisc.so.2
+@dirrm include/ggi/default
 @dirrm include/ggi/display
 @dirrm lib/ggi/default
 @dirrm lib/ggi/display
