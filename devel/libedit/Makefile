@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libedit
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTVERSION=	2.6.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.canonware.com/download/libedit/
+MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
+		http://www.canonware.com/download/libedit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line editing library
 
-USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-readline
 INSTALLS_SHLIB=	yes
 
@@ -38,5 +39,9 @@ MLINKS=		editline.3 el_init.3 \
 		editline.3 history_end.3 \
 		editline.3 history.3
 MANCOMPRESSED=	no
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
+		 s|MAJOR="2"|MAJOR="5"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
