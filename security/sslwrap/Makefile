@@ -8,7 +8,7 @@
 PORTNAME=	sslwrap
 PORTVERSION=	2.0.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.rickk.com/sslwrap/
+MASTER_SITES=	http://www.quiltaholic.com/rickk/sslwrap/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ZGabor@CoDe.HU
