@@ -19,7 +19,7 @@ lib/libsound.so
 lib/libsystem.so
 lib/libtoolhelp.so
 lib/libtwin32.so
-lib/libver.so
+lib/libversion.so
 lib/libwin87em.so
 lib/libwinsock.so
 lib/libwinspool.so

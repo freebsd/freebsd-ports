@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	twin-19990616
-PKGNAME=	twin-1999.06.16
+DISTNAME=	twin-19991230
+PKGNAME=	twin-1999.12.30
 CATEGORIES=	emulators devel
 MASTER_SITES=	ftp://ftp.willows.com/pub/development/
 
