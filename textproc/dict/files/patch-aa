@@ -1,13 +1,13 @@
---- configure.orig	Mon Feb 16 12:05:08 1998
-+++ configure	Thu Feb 19 23:48:55 1998
+--- configure	Sun Jul  5 18:38:03 1998
++++ /tmp/configure	Thu Oct  8 16:36:43 1998
 @@ -549,8 +549,8 @@
  
  
  
 -prefix=/usr
 -etcdir=/etc
-+prefix=${PREFIX}
-+etcdir=${PREFIX}/etc
++#prefix=/usr
++etcdir=$prefix/etc
  piddir=/var/run
  
  echo Configuring for dict
