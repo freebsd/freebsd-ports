@@ -11761,7 +11761,6 @@ xparam		ports/devel/xparam
 xpat2		ports/games/xpat2
 xpath2rss	ports/www/xpath2rss
 xpbiff		ports/mail/xpbiff
-xpbiff-youbin	ports/mail/xpbiff-youbin
 xpcd		ports/graphics/xpcd
 xpdf		ports/graphics/xpdf
 xpenguins	ports/games/xpenguins
@@ -11960,7 +11959,6 @@ ymessenger	ports/net/ymessenger
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
 yorick-doc	ports/lang/yorick-doc
-youbin		ports/mail/youbin
 yptransitd	ports/net/yptransitd
 ysm		ports/net/ysm
 ytalk		ports/net/ytalk
