@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hackbot
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	security
 MASTER_SITES=	http://ws.obit.nl/hackbot/
 EXTRACT_SUFX=   .tgz
