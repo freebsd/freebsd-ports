@@ -8,7 +8,11 @@ fi
 tempfile=`/usr/bin/mktemp -t checklist`
 
 if [ "${BATCH}" ]; then
-	set \"zlib\" \"MySQL\"
+	if [ "${PHP4_OPTIONS}" ]; then
+		set ${PHP4_OPTIONS}
+	else
+		set \"zlib\" \"MySQL\"
+	fi
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 		--checklist "\n\
