@@ -4,11 +4,11 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.14 1999/01/19 18:33:13 ache Exp $
+# $Id: Makefile,v 1.15 1999/03/15 02:01:27 steve Exp $
 #
 
-DISTNAME=       analog3.11
-PKGNAME=        analog-3.11
+DISTNAME=       analog3.3
+PKGNAME=        analog-3.3
 CATEGORIES=	www
 MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://brendanr.simplenet.com/analog/ \
@@ -33,22 +33,12 @@ do-install:
 		${PREFIX}/lib/analog/lang
 	install -d -o nobody -g nogroup -m 755 \
 		${PREFIX}/www/data/images
-	cd ${WRKSRC}/docs && \
-		${INSTALL_DATA} * ${PREFIX}/share/doc/analog
 	cd ${WRKSRC}/images && \
 		${INSTALL_DATA} * ${PREFIX}/www/data/images
 	cd ${WRKSRC}/lang && \
 		${INSTALL_DATA} * ${PREFIX}/lib/analog/lang
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} analog ${PREFIX}/bin
-	cd ${WRKSRC} && \
-	for file in domains.tab ; do \
-	    if [ -f ${PREFIX}/lib/analog/$$file ] ; then \
-		${INSTALL_DATA} -m 644 $$file ${PREFIX}/lib/analog/$$file-dist ; \
-	    else \
-		${INSTALL_DATA} -m 644 $$file ${PREFIX}/lib/analog/$$file ; \
-	    fi ; \
-	done
 	cd ${WRKSRC} && \
 	for file in analog.cfg ; do \
 	    if [ -f ${PREFIX}/etc/$$file ] ; then \
@@ -57,5 +47,9 @@ do-install:
 		${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file ; \
 	    fi ; \
 	done
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/docs && \
+		${INSTALL_DATA} * ${PREFIX}/share/doc/analog
+.endif
 
 .include <bsd.port.mk>
