@@ -13,17 +13,15 @@ MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/nc6/ \
 		http://ftp.deepspace6.net/pub/sources/nc6/
 
 MAINTAINER=	filippo@widestore.net
-COMMENT=	Netcat 6 is a netcat clone with IPv6 support
+COMMENT=	Netcat clone with IPv6 support
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-				intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 MAN1=	nc6.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-				CPPFLAGS="${CPPFLAGS}" \
-				LDFLAGS="${LDFLAGS}" \
-				CC="${CC}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
