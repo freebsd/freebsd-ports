@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.28 1997/02/17 08:20:28 obrien Exp $
+# $Id: Makefile,v 1.29 1997/02/24 22:22:32 jmz Exp $
 #
 VERSION=	96.12
 DISTNAME=	latex
@@ -60,6 +60,7 @@ do-install:
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
 
 .include "Makefile.inc"
 
