@@ -4,5 +4,10 @@ sbin/dhclient
 sbin/dhcpd
 sbin/dhcrelay
 etc/rc.d/isc-dhcpd.sh.sample
+include/omapip
+include/isc
+include/dhcpctl.h
+lib/libomapi.a
+lib/libdhcpctl.a
 @exec touch /var/db/dhcpd.leases
 @exec touch %D/etc/dhclient.conf
