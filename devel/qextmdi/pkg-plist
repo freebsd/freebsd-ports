@@ -130,3 +130,4 @@ lib/lib%%LIBNAME%%.so.2
 %%PORTDOCS%%@dirrm share/doc/qextmdi/classref
 %%PORTDOCS%%@dirrm share/doc/qextmdi/handbook
 %%PORTDOCS%%@dirrm share/doc/qextmdi
+@dirrm include/qextmdi
