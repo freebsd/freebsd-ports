@@ -90,6 +90,7 @@
     SUBDIR += dar
     SUBDIR += dc42wrap
     SUBDIR += dcfldd
+    SUBDIR += dd_rescue
     SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += detox

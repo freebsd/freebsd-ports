@@ -1,0 +1,10 @@
+dd_rescue is a dd tool with following features suitable for rescuing data from
+a medium with errors.
+
+- Don't abort on errors on the input file unless the user specify the maximum
+  error number.
+- Don't truncate the output file.
+- Can use two different block sizes for normal operation and the case of errors.
+- Can start from the end of the file and move backwards.
+
+WWW: http://www.garloff.de/kurt/linux/ddrescue/
