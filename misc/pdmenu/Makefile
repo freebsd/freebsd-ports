@@ -5,8 +5,8 @@
 #
 # $FreeBSD$
 
-DISTNAME=       pdmenu_1.2.58
-PKGNAME=	pdmenu-1.2.58
+DISTNAME=       pdmenu_1.2.59
+PKGNAME=	pdmenu-1.2.59
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 
