@@ -22,7 +22,7 @@ LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 .endif
 
-RUN_DEPENDS=	${SITE_PERL}/Net/DNS/Header.pm:${PORTSDIR}/dns/p5-Net-DNS \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
 USE_GMAKE=yes

@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.lonesome.com/FreeBSD/distfiles/
 MAINTAINER=	linimon@lonesome.com
 COMMENT=	Utility primarily designed to find the owner of an IP block
 
-RUN_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		wget:${PORTSDIR}/ftp/wget/
 
 USE_PERL5_RUN=	yes
