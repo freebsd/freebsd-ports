@@ -57,7 +57,8 @@
     SUBDIR += crafty-open-rock
     SUBDIR += crafty-open-small
     SUBDIR += crimson
-    SUBDIR += crossfire
+    SUBDIR += crossfire-client
+    SUBDIR += crossfire-server
     SUBDIR += cryptoslam
     SUBDIR += cursive
     SUBDIR += deal
