@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -81,9 +81,8 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 BROKEN=		"WITH_MYSQL_VER must be 3, 40 or 41"
 .endif
 CONFIGURE_ARGS+=--with-mysql=${PREFIX}
-PLIST_SUB+=	MYSQL=""
 .else
-PLIST_SUB+=	MYSQL="@comment "
+MYSQL=	"@comment "
 .endif
 
 .if defined(WITHOUT_OTP)
@@ -175,6 +174,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		NTLM=${NTLM} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
+		MYSQL=${MYSQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
