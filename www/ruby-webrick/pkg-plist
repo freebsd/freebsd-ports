@@ -1,0 +1,49 @@
+%%RUBY_SITELIBDIR%%/webrick.rb
+%%RUBY_SITELIBDIR%%/webrick/compat.rb
+%%RUBY_SITELIBDIR%%/webrick/config.rb
+%%RUBY_SITELIBDIR%%/webrick/cookie.rb
+%%RUBY_SITELIBDIR%%/webrick/htmlutils.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth.rb
+%%RUBY_SITELIBDIR%%/webrick/httpdate.rb
+%%RUBY_SITELIBDIR%%/webrick/httprequest.rb
+%%RUBY_SITELIBDIR%%/webrick/httpresponse.rb
+%%RUBY_SITELIBDIR%%/webrick/https.rb
+%%RUBY_SITELIBDIR%%/webrick/httpserver.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/abstract.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/cgi_runner.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/cgihandler.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/erbhandler.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/filehandler.rb
+%%RUBY_SITELIBDIR%%/webrick/httpservlet/prochandler.rb
+%%RUBY_SITELIBDIR%%/webrick/httpstatus.rb
+%%RUBY_SITELIBDIR%%/webrick/httputils.rb
+%%RUBY_SITELIBDIR%%/webrick/log.rb
+%%RUBY_SITELIBDIR%%/webrick/mime.types
+%%RUBY_SITELIBDIR%%/webrick/server.rb
+%%RUBY_SITELIBDIR%%/webrick/uri.rb
+%%RUBY_SITELIBDIR%%/webrick/utils.rb
+%%RUBY_SITELIBDIR%%/webrick/version.rb
+@dirrm %%RUBY_SITELIBDIR%%/webrick/httpservlet
+@dirrm %%RUBY_SITELIBDIR%%/webrick
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/conf/sample.crt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/conf/sample.key
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpsd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/rfc/cache/.keep_me
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/rfc/rfc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/webdic/ndtp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/webdic/webdic.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/webdic
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/rfc/cache
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/rfc
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd/conf
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick
+%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/webrick.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/webrick
