@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	koncd
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0r1
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.koncd.de/download/ \
+MASTER_SITES=	http://www.koncd.org/download/ \
 		ftp://apps.kde.com/pub/Multimedia/Audio/Burners_Rippers/KOnCD/
+DISTNAME=	${PORTNAME}-1.0rc1
 
 MAINTAINER=	demon@FreeBSD.org
 
