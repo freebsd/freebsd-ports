@@ -73,8 +73,7 @@
 #     about how to do transparent proxying with ipfw)
 
 PORTNAME=	squid
-PORTVERSION=	2.5.8
-PORTREVISION=	1
+PORTVERSION=	2.5.9
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -83,15 +82,11 @@ MASTER_SITES=	\
 		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE8
+DISTNAME=	squid-2.5.STABLE9
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE8-dns_assert.patch \
-		squid-2.5.STABLE8-format_fixes.patch \
-		squid-2.5.STABLE8-html_high_chars.patch \
-		squid-2.5.STABLE8-ftp_cleanup.patch \
-		squid-2.5.STABLE8-relaxed_header_parser.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
