@@ -20,6 +20,8 @@ USE_PERL5_RUN=	yes
 MAN8=		squeuer.8
 MAN5=		squeuer.conf.5
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 # These must be writeable by the user "squeuer"
 SPOOLDIR?=	/var/spool/squeuer
 LOGDIR?=	/var/spool/squeuer
@@ -32,6 +34,8 @@ do-configure:
 			-e "s:%%LOGDIR%%:${LOGDIR}:g" \
 			-e "s:%%PIDDIR%%:${PIDDIR}:g" $$i; \
 	done
+	${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/squeuer.pl ${PREFIX}/sbin/squeuer
