@@ -19,6 +19,7 @@
     SUBDIR += compaq-cc
     SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog
+    SUBDIR += diveintopython
     SUBDIR += dylan
     SUBDIR += egcs
     SUBDIR += eiffel
