@@ -1189,6 +1189,10 @@ share/locale/gl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/gl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/gl/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/gl/LC_MESSAGES/gimp.mo
+share/locale/hr/LC_MESSAGES/gimp-libgimp.mo
+share/locale/hr/LC_MESSAGES/gimp-script-fu.mo
+share/locale/hr/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/hr/LC_MESSAGES/gimp.mo
 share/locale/hu/LC_MESSAGES/gimp-libgimp.mo
 share/locale/hu/LC_MESSAGES/gimp-script-fu.mo
 share/locale/hu/LC_MESSAGES/gimp-std-plugins.mo
