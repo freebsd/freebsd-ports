@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cthumb
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	graphics www
 MASTER_SITES=	http://puchol.com/cpg/software/cthumb/
 
@@ -21,6 +21,7 @@ SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 SITE_PERL_ARCH=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-themedir=${PREFIX}/share/${PORTNAME}
 
 MAN1=		cthumb.1
 
@@ -51,8 +52,7 @@ THEMES=		blue-steel.theme \
 
 post-configure:
 	@${PERL} -pi \
-		-e 's|${PREFIX}/share/images/cthumb|${DATADIR}|g;' \
-		-e 's|cp -a|cp -R|g;' \
+		-e 's|cp -r|cp -Rf|g;' \
 		${WRKSRC}/cthumb
 
 do-install:

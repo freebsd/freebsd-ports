@@ -1,0 +1,22 @@
+--- cthumb.in.orig	Sat Dec 15 18:00:19 2001
++++ cthumb.in	Sat Mar 23 23:42:12 2002
+@@ -454,6 +454,7 @@
+     if ($CheckThumbnails) {
+ 	eval "require Image::Size";
+ 	if (defined $Image::Size::VERSION) {
++            $Image::Size::VERSION = $Image::Size::VERSION;
+ 	    $HaveImageSizePerlModule=1;
+ 	}
+     }
+@@ -557,7 +558,10 @@
+     if ($NoMainIndex) {
+ 	unlink($indextmp);
+     } else {
+-        if (system ("diff -q $indextmp $MainIndexName &> /dev/null")) {
++	local $ENV{SHELL}='/bin/sh';
++	system ("diff -q $indextmp $MainIndexName 2>/dev/null");
++	my $difret = $? >> 8;
++        if ($difret != 0) {
+ 	    print "Index for $descfname in: $MainIndexName\n";
+ 	    my $cmd = "mv $indextmp $MainIndexName";
+ 	    if (system($cmd)) { print "cthumb warning: command '$cmd' failed: $!\n"; }
