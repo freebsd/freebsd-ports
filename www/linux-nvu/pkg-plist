@@ -1,0 +1,646 @@
+bin/linux-nvu
+%%NVULIB_DIR%%/TestGtkEmbed
+%%NVULIB_DIR%%/bloaturls.txt
+%%NVULIB_DIR%%/chrome/US.jar
+%%NVULIB_DIR%%/chrome/cascades.jar
+%%NVULIB_DIR%%/chrome/chrome.rdf
+%%NVULIB_DIR%%/chrome/chromelist.txt
+%%NVULIB_DIR%%/chrome/classic.jar
+%%NVULIB_DIR%%/chrome/comm.jar
+%%NVULIB_DIR%%/chrome/embed-sample.jar
+%%NVULIB_DIR%%/chrome/en-US.jar
+%%NVULIB_DIR%%/chrome/en-mac.jar
+%%NVULIB_DIR%%/chrome/en-unix.jar
+%%NVULIB_DIR%%/chrome/en-win.jar
+%%NVULIB_DIR%%/chrome/icons/default/default.xpm
+%%NVULIB_DIR%%/chrome/icons/default/editorWindow.xpm
+%%NVULIB_DIR%%/chrome/icons/default/editorWindow16.xpm
+%%NVULIB_DIR%%/chrome/installed-chrome.txt
+%%NVULIB_DIR%%/chrome/modern.jar
+%%NVULIB_DIR%%/chrome/overlayinfo/communicator/content/overlays.rdf
+%%NVULIB_DIR%%/chrome/overlayinfo/editor/content/overlays.rdf
+%%NVULIB_DIR%%/chrome/overlayinfo/messenger/content/overlays.rdf
+%%NVULIB_DIR%%/chrome/overlayinfo/navigator/content/overlays.rdf
+%%NVULIB_DIR%%/chrome/pipnss.jar
+%%NVULIB_DIR%%/chrome/pippki.jar
+%%NVULIB_DIR%%/chrome/toolkit.jar
+%%NVULIB_DIR%%/chrome/venkman.jar
+%%NVULIB_DIR%%/components/accessibility-atk.xpt
+%%NVULIB_DIR%%/components/accessibility.xpt
+%%NVULIB_DIR%%/components/appshell.xpt
+%%NVULIB_DIR%%/components/autocomplete.xpt
+%%NVULIB_DIR%%/components/autoconfig.xpt
+%%NVULIB_DIR%%/components/bookmarks.xpt
+%%NVULIB_DIR%%/components/caps.xpt
+%%NVULIB_DIR%%/components/chardet.xpt
+%%NVULIB_DIR%%/components/commandhandler.xpt
+%%NVULIB_DIR%%/components/composer.xpt
+%%NVULIB_DIR%%/components/compreg.dat
+%%NVULIB_DIR%%/components/content_base.xpt
+%%NVULIB_DIR%%/components/content_html.xpt
+%%NVULIB_DIR%%/components/content_htmldoc.xpt
+%%NVULIB_DIR%%/components/content_xmldoc.xpt
+%%NVULIB_DIR%%/components/content_xslt.xpt
+%%NVULIB_DIR%%/components/cookie.xpt
+%%NVULIB_DIR%%/components/docshell.xpt
+%%NVULIB_DIR%%/components/dom.xpt
+%%NVULIB_DIR%%/components/dom_base.xpt
+%%NVULIB_DIR%%/components/dom_core.xpt
+%%NVULIB_DIR%%/components/dom_css.xpt
+%%NVULIB_DIR%%/components/dom_events.xpt
+%%NVULIB_DIR%%/components/dom_html.xpt
+%%NVULIB_DIR%%/components/dom_range.xpt
+%%NVULIB_DIR%%/components/dom_stylesheets.xpt
+%%NVULIB_DIR%%/components/dom_traversal.xpt
+%%NVULIB_DIR%%/components/dom_views.xpt
+%%NVULIB_DIR%%/components/dom_xbl.xpt
+%%NVULIB_DIR%%/components/dom_xpath.xpt
+%%NVULIB_DIR%%/components/dom_xul.xpt
+%%NVULIB_DIR%%/components/downloadmanager.xpt
+%%NVULIB_DIR%%/components/editor.xpt
+%%NVULIB_DIR%%/components/embed_base.xpt
+%%NVULIB_DIR%%/components/exthandler.xpt
+%%NVULIB_DIR%%/components/filepicker.xpt
+%%NVULIB_DIR%%/components/find.xpt
+%%NVULIB_DIR%%/components/gfx.xpt
+%%NVULIB_DIR%%/components/helperAppDlg.xpt
+%%NVULIB_DIR%%/components/history.xpt
+%%NVULIB_DIR%%/components/htmlparser.xpt
+%%NVULIB_DIR%%/components/imglib2.xpt
+%%NVULIB_DIR%%/components/intl.xpt
+%%NVULIB_DIR%%/components/jar.xpt
+%%NVULIB_DIR%%/components/jsconsole-clhandler.js
+%%NVULIB_DIR%%/components/jsconsole.xpt
+%%NVULIB_DIR%%/components/jsdservice.xpt
+%%NVULIB_DIR%%/components/jsurl.xpt
+%%NVULIB_DIR%%/components/layout_base.xpt
+%%NVULIB_DIR%%/components/layout_xul.xpt
+%%NVULIB_DIR%%/components/layout_xul_tree.xpt
+%%NVULIB_DIR%%/components/libaccessibility.so
+%%NVULIB_DIR%%/components/libappcomps.so
+%%NVULIB_DIR%%/components/libautoconfig.so
+%%NVULIB_DIR%%/components/libcaps.so
+%%NVULIB_DIR%%/components/libchrome.so
+%%NVULIB_DIR%%/components/libcomposer.so
+%%NVULIB_DIR%%/components/libcookie.so
+%%NVULIB_DIR%%/components/libdocshell.so
+%%NVULIB_DIR%%/components/libeditor.so
+%%NVULIB_DIR%%/components/libembedcomponents.so
+%%NVULIB_DIR%%/components/libfileview.so
+%%NVULIB_DIR%%/components/libgfx_gtk.so
+%%NVULIB_DIR%%/components/libgfxps.so
+%%NVULIB_DIR%%/components/libgfxxprint.so
+%%NVULIB_DIR%%/components/libgklayout.so
+%%NVULIB_DIR%%/components/libgkplugin.so
+%%NVULIB_DIR%%/components/libhtmlpars.so
+%%NVULIB_DIR%%/components/libi18n.so
+%%NVULIB_DIR%%/components/libimglib2.so
+%%NVULIB_DIR%%/components/libjar50.so
+%%NVULIB_DIR%%/components/libjsd.so
+%%NVULIB_DIR%%/components/libmork.so
+%%NVULIB_DIR%%/components/libmozfind.so
+%%NVULIB_DIR%%/components/libnecko.so
+%%NVULIB_DIR%%/components/libnecko2.so
+%%NVULIB_DIR%%/components/libnsappshell.so
+%%NVULIB_DIR%%/components/libnsprefm.so
+%%NVULIB_DIR%%/components/libpipboot.so
+%%NVULIB_DIR%%/components/libpipnss.so
+%%NVULIB_DIR%%/components/libpippki.so
+%%NVULIB_DIR%%/components/libpref.so
+%%NVULIB_DIR%%/components/libprofile.so
+%%NVULIB_DIR%%/components/librdf.so
+%%NVULIB_DIR%%/components/libsystem-pref.so
+%%NVULIB_DIR%%/components/libtxmgr.so
+%%NVULIB_DIR%%/components/libuconv.so
+%%NVULIB_DIR%%/components/libuniversalchardet.so
+%%NVULIB_DIR%%/components/libwallet.so
+%%NVULIB_DIR%%/components/libwalletviewers.so
+%%NVULIB_DIR%%/components/libwebbrwsr.so
+%%NVULIB_DIR%%/components/libwebsrvcs.so
+%%NVULIB_DIR%%/components/libwidget_gtk2.so
+%%NVULIB_DIR%%/components/libxmlextras.so
+%%NVULIB_DIR%%/components/libxpcom_compat_c.so
+%%NVULIB_DIR%%/components/libxpconnect.so
+%%NVULIB_DIR%%/components/libxpinstall.so
+%%NVULIB_DIR%%/components/libxremote_client.so
+%%NVULIB_DIR%%/components/libxremoteservice.so
+%%NVULIB_DIR%%/components/locale.xpt
+%%NVULIB_DIR%%/components/lwbrk.xpt
+%%NVULIB_DIR%%/components/mimetype.xpt
+%%NVULIB_DIR%%/components/mozbrwsr.xpt
+%%NVULIB_DIR%%/components/mozfind.xpt
+%%NVULIB_DIR%%/components/necko.xpt
+%%NVULIB_DIR%%/components/necko_about.xpt
+%%NVULIB_DIR%%/components/necko_cache.xpt
+%%NVULIB_DIR%%/components/necko_cookie.xpt
+%%NVULIB_DIR%%/components/necko_data.xpt
+%%NVULIB_DIR%%/components/necko_dns.xpt
+%%NVULIB_DIR%%/components/necko_file.xpt
+%%NVULIB_DIR%%/components/necko_ftp.xpt
+%%NVULIB_DIR%%/components/necko_http.xpt
+%%NVULIB_DIR%%/components/necko_jar.xpt
+%%NVULIB_DIR%%/components/necko_res.xpt
+%%NVULIB_DIR%%/components/necko_socket.xpt
+%%NVULIB_DIR%%/components/necko_strconv.xpt
+%%NVULIB_DIR%%/components/necko_viewsource.xpt
+%%NVULIB_DIR%%/components/nsCloseAllWindows.js
+%%NVULIB_DIR%%/components/nsDictionary.js
+%%NVULIB_DIR%%/components/nsDownloadProgressListener.js
+%%NVULIB_DIR%%/components/nsFilePicker.js
+%%NVULIB_DIR%%/components/nsHelperAppDlg.js
+%%NVULIB_DIR%%/components/nsInterfaceInfoToIDL.js
+%%NVULIB_DIR%%/components/nsProgressDialog.js
+%%NVULIB_DIR%%/components/nsProxyAutoConfig.js
+%%NVULIB_DIR%%/components/nsXmlRpcClient.js
+%%NVULIB_DIR%%/components/pipboot.xpt
+%%NVULIB_DIR%%/components/pipnss.xpt
+%%NVULIB_DIR%%/components/pippki.xpt
+%%NVULIB_DIR%%/components/plugin.xpt
+%%NVULIB_DIR%%/components/pref.xpt
+%%NVULIB_DIR%%/components/prefetch.xpt
+%%NVULIB_DIR%%/components/prefmigr.xpt
+%%NVULIB_DIR%%/components/profile.xpt
+%%NVULIB_DIR%%/components/progressDlg.xpt
+%%NVULIB_DIR%%/components/proxyObjInst.xpt
+%%NVULIB_DIR%%/components/rdf.xpt
+%%NVULIB_DIR%%/components/shistory.xpt
+%%NVULIB_DIR%%/components/sidebar.xpt
+%%NVULIB_DIR%%/components/signonviewer.xpt
+%%NVULIB_DIR%%/components/txmgr.xpt
+%%NVULIB_DIR%%/components/txtsvc.xpt
+%%NVULIB_DIR%%/components/ucnative.xpt
+%%NVULIB_DIR%%/components/uconv.xpt
+%%NVULIB_DIR%%/components/unicharutil.xpt
+%%NVULIB_DIR%%/components/uriloader.xpt
+%%NVULIB_DIR%%/components/venkman-service.js
+%%NVULIB_DIR%%/components/wallet.xpt
+%%NVULIB_DIR%%/components/walleteditor.xpt
+%%NVULIB_DIR%%/components/walletpreview.xpt
+%%NVULIB_DIR%%/components/webBrowser_core.xpt
+%%NVULIB_DIR%%/components/webbrowserpersist.xpt
+%%NVULIB_DIR%%/components/webshell_idls.xpt
+%%NVULIB_DIR%%/components/websrvcs.xpt
+%%NVULIB_DIR%%/components/widget.xpt
+%%NVULIB_DIR%%/components/windowds.xpt
+%%NVULIB_DIR%%/components/windowwatcher.xpt
+%%NVULIB_DIR%%/components/xml-rpc.xpt
+%%NVULIB_DIR%%/components/xmlextras.xpt
+%%NVULIB_DIR%%/components/xpcom_base.xpt
+%%NVULIB_DIR%%/components/xpcom_components.xpt
+%%NVULIB_DIR%%/components/xpcom_ds.xpt
+%%NVULIB_DIR%%/components/xpcom_io.xpt
+%%NVULIB_DIR%%/components/xpcom_obsolete.xpt
+%%NVULIB_DIR%%/components/xpcom_threads.xpt
+%%NVULIB_DIR%%/components/xpcom_xpti.xpt
+%%NVULIB_DIR%%/components/xpconnect.xpt
+%%NVULIB_DIR%%/components/xpinstall.xpt
+%%NVULIB_DIR%%/components/xpti.dat
+%%NVULIB_DIR%%/components/xremoteservice.xpt
+%%NVULIB_DIR%%/components/xuldoc.xpt
+%%NVULIB_DIR%%/components/xultmpl.xpt
+%%NVULIB_DIR%%/defaults/autoconfig/platform.js
+%%NVULIB_DIR%%/defaults/autoconfig/prefcalls.js
+%%NVULIB_DIR%%/defaults/pref/all.js
+%%NVULIB_DIR%%/defaults/pref/editor.js
+%%NVULIB_DIR%%/defaults/profile/US/all.js
+%%NVULIB_DIR%%/defaults/profile/US/bookmarks.html
+%%NVULIB_DIR%%/defaults/profile/US/chrome/userChrome-example.css
+%%NVULIB_DIR%%/defaults/profile/US/chrome/userContent-example.css
+%%NVULIB_DIR%%/defaults/profile/US/editor.js
+%%NVULIB_DIR%%/defaults/profile/US/localstore.rdf
+%%NVULIB_DIR%%/defaults/profile/US/mimeTypes.rdf
+%%NVULIB_DIR%%/defaults/profile/US/panels.rdf
+%%NVULIB_DIR%%/defaults/profile/US/search.rdf
+%%NVULIB_DIR%%/defaults/profile/all.js
+%%NVULIB_DIR%%/defaults/profile/bookmarks.html
+%%NVULIB_DIR%%/defaults/profile/chrome/userChrome-example.css
+%%NVULIB_DIR%%/defaults/profile/chrome/userContent-example.css
+%%NVULIB_DIR%%/defaults/profile/editor.js
+%%NVULIB_DIR%%/defaults/profile/localstore.rdf
+%%NVULIB_DIR%%/defaults/profile/mimeTypes.rdf
+%%NVULIB_DIR%%/defaults/profile/panels.rdf
+%%NVULIB_DIR%%/defaults/profile/search.rdf
+%%NVULIB_DIR%%/defaults/wallet/DistinguishedSchema.tbl
+%%NVULIB_DIR%%/defaults/wallet/FieldSchema.tbl
+%%NVULIB_DIR%%/defaults/wallet/PositionalSchema.tbl
+%%NVULIB_DIR%%/defaults/wallet/SchemaConcat.tbl
+%%NVULIB_DIR%%/defaults/wallet/SchemaStrings.tbl
+%%NVULIB_DIR%%/defaults/wallet/StateSchema.tbl
+%%NVULIB_DIR%%/defaults/wallet/VcardSchema.tbl
+%%NVULIB_DIR%%/elf-dynstr-gc
+%%NVULIB_DIR%%/greprefs/all.js
+%%NVULIB_DIR%%/greprefs/security-prefs.js
+%%NVULIB_DIR%%/greprefs/xpinstall.js
+%%NVULIB_DIR%%/icons/mozicon16.xpm
+%%NVULIB_DIR%%/icons/mozicon50.xpm
+%%NVULIB_DIR%%/libgkgfx.so
+%%NVULIB_DIR%%/libgtkembedmoz.so
+%%NVULIB_DIR%%/libgtkxtbin.so
+%%NVULIB_DIR%%/libmozjs.so
+%%NVULIB_DIR%%/libnspr4.so
+%%NVULIB_DIR%%/libnss3.so
+%%NVULIB_DIR%%/libnssckbi.so
+%%NVULIB_DIR%%/libplc4.so
+%%NVULIB_DIR%%/libplds4.so
+%%NVULIB_DIR%%/libsmime3.so
+%%NVULIB_DIR%%/libsoftokn3.chk
+%%NVULIB_DIR%%/libsoftokn3.so
+%%NVULIB_DIR%%/libssl3.so
+%%NVULIB_DIR%%/libxlibrgb.so
+%%NVULIB_DIR%%/libxpcom.so
+%%NVULIB_DIR%%/libxpcom_compat.so
+%%NVULIB_DIR%%/libxpistub.so
+%%NVULIB_DIR%%/mangle
+%%NVULIB_DIR%%/mozilla-xremote-client
+%%NVULIB_DIR%%/nsinstall
+%%NVULIB_DIR%%/nvu
+%%NVULIB_DIR%%/nvu-bin
+%%NVULIB_DIR%%/nvu-config
+%%NVULIB_DIR%%/plugins/libnullplugin.so
+%%NVULIB_DIR%%/regchrome
+%%NVULIB_DIR%%/regxpcom
+%%NVULIB_DIR%%/res/EditorOverride.css
+%%NVULIB_DIR%%/res/arrow.gif
+%%NVULIB_DIR%%/res/arrowd.gif
+%%NVULIB_DIR%%/res/bloatcycle.html
+%%NVULIB_DIR%%/res/broken-image.gif
+%%NVULIB_DIR%%/res/builtin/htmlBindings.xml
+%%NVULIB_DIR%%/res/builtin/platformHTMLBindings.xml
+%%NVULIB_DIR%%/res/charsetData.properties
+%%NVULIB_DIR%%/res/charsetalias.properties
+%%NVULIB_DIR%%/res/cmessage.txt
+%%NVULIB_DIR%%/res/dtd/xhtml11.dtd
+%%NVULIB_DIR%%/res/entityTables/html40Latin1.properties
+%%NVULIB_DIR%%/res/entityTables/html40Special.properties
+%%NVULIB_DIR%%/res/entityTables/html40Symbols.properties
+%%NVULIB_DIR%%/res/entityTables/htmlEntityVersions.properties
+%%NVULIB_DIR%%/res/entityTables/transliterate.properties
+%%NVULIB_DIR%%/res/fonts/fontEncoding.properties
+%%NVULIB_DIR%%/res/forms.css
+%%NVULIB_DIR%%/res/grabber.gif
+%%NVULIB_DIR%%/res/html.css
+%%NVULIB_DIR%%/res/html/gopher-audio.gif
+%%NVULIB_DIR%%/res/html/gopher-binary.gif
+%%NVULIB_DIR%%/res/html/gopher-find.gif
+%%NVULIB_DIR%%/res/html/gopher-image.gif
+%%NVULIB_DIR%%/res/html/gopher-menu.gif
+%%NVULIB_DIR%%/res/html/gopher-movie.gif
+%%NVULIB_DIR%%/res/html/gopher-sound.gif
+%%NVULIB_DIR%%/res/html/gopher-telnet.gif
+%%NVULIB_DIR%%/res/html/gopher-text.gif
+%%NVULIB_DIR%%/res/html/gopher-unknown.gif
+%%NVULIB_DIR%%/res/langGroups.properties
+%%NVULIB_DIR%%/res/language.properties
+%%NVULIB_DIR%%/res/loading-image.gif
+%%NVULIB_DIR%%/res/platform-forms.css
+%%NVULIB_DIR%%/res/quirk.css
+%%NVULIB_DIR%%/res/rdf/dom-test-4.css
+%%NVULIB_DIR%%/res/rdf/folder-closed.gif
+%%NVULIB_DIR%%/res/rdf/folder-open.gif
+%%NVULIB_DIR%%/res/rdf/ignore-test.xul
+%%NVULIB_DIR%%/res/rdf/loading.gif
+%%NVULIB_DIR%%/res/sample.unixpsfonts.properties
+%%NVULIB_DIR%%/res/samples/Anieyes.gif
+%%NVULIB_DIR%%/res/samples/aform.css
+%%NVULIB_DIR%%/res/samples/beeptest.html
+%%NVULIB_DIR%%/res/samples/bform.css
+%%NVULIB_DIR%%/res/samples/bg.jpg
+%%NVULIB_DIR%%/res/samples/cform.css
+%%NVULIB_DIR%%/res/samples/checkboxTest.xul
+%%NVULIB_DIR%%/res/samples/colorpicker.xul
+%%NVULIB_DIR%%/res/samples/demoform.css
+%%NVULIB_DIR%%/res/samples/dexopenchrome.xul
+%%NVULIB_DIR%%/res/samples/dexparamdialog.html
+%%NVULIB_DIR%%/res/samples/dexparamdialog.xul
+%%NVULIB_DIR%%/res/samples/find.html
+%%NVULIB_DIR%%/res/samples/gear1.gif
+%%NVULIB_DIR%%/res/samples/hidetoolicon.css
+%%NVULIB_DIR%%/res/samples/hidetoolicon.xul
+%%NVULIB_DIR%%/res/samples/image_props.html
+%%NVULIB_DIR%%/res/samples/mozform.css
+%%NVULIB_DIR%%/res/samples/printsetup.html
+%%NVULIB_DIR%%/res/samples/raptor.jpg
+%%NVULIB_DIR%%/res/samples/rock_gra.gif
+%%NVULIB_DIR%%/res/samples/sampleimages/bongo.gif
+%%NVULIB_DIR%%/res/samples/sampleimages/down.gif
+%%NVULIB_DIR%%/res/samples/sampleimages/left.gif
+%%NVULIB_DIR%%/res/samples/sampleimages/right.gif
+%%NVULIB_DIR%%/res/samples/sampleimages/up.gif
+%%NVULIB_DIR%%/res/samples/scrollbarTest1.xul
+%%NVULIB_DIR%%/res/samples/scrollbarTest2.xul
+%%NVULIB_DIR%%/res/samples/sliderTest1.xul
+%%NVULIB_DIR%%/res/samples/soundtest.html
+%%NVULIB_DIR%%/res/samples/tab.xul
+%%NVULIB_DIR%%/res/samples/test.wav
+%%NVULIB_DIR%%/res/samples/test0.html
+%%NVULIB_DIR%%/res/samples/test1.html
+%%NVULIB_DIR%%/res/samples/test10.html
+%%NVULIB_DIR%%/res/samples/test11.html
+%%NVULIB_DIR%%/res/samples/test12.html
+%%NVULIB_DIR%%/res/samples/test13.html
+%%NVULIB_DIR%%/res/samples/test14.html
+%%NVULIB_DIR%%/res/samples/test15.html
+%%NVULIB_DIR%%/res/samples/test16.html
+%%NVULIB_DIR%%/res/samples/test2.html
+%%NVULIB_DIR%%/res/samples/test3.html
+%%NVULIB_DIR%%/res/samples/test4.html
+%%NVULIB_DIR%%/res/samples/test5.html
+%%NVULIB_DIR%%/res/samples/test6.html
+%%NVULIB_DIR%%/res/samples/test7.html
+%%NVULIB_DIR%%/res/samples/test8-1.html
+%%NVULIB_DIR%%/res/samples/test8.html
+%%NVULIB_DIR%%/res/samples/test8dom.html
+%%NVULIB_DIR%%/res/samples/test8sca.html
+%%NVULIB_DIR%%/res/samples/test8siz.html
+%%NVULIB_DIR%%/res/samples/test8tab.html
+%%NVULIB_DIR%%/res/samples/test9.html
+%%NVULIB_DIR%%/res/samples/test9a.html
+%%NVULIB_DIR%%/res/samples/test9b.html
+%%NVULIB_DIR%%/res/samples/test_ed.html
+%%NVULIB_DIR%%/res/samples/test_form.html
+%%NVULIB_DIR%%/res/samples/test_gfx.html
+%%NVULIB_DIR%%/res/samples/test_lbox.html
+%%NVULIB_DIR%%/res/samples/test_pr.html
+%%NVULIB_DIR%%/res/samples/test_weight.html
+%%NVULIB_DIR%%/res/samples/toolbarTest1.xul
+%%NVULIB_DIR%%/res/samples/treeTest1.css
+%%NVULIB_DIR%%/res/samples/treeTest1.xul
+%%NVULIB_DIR%%/res/samples/widgets.xul
+%%NVULIB_DIR%%/res/samples/xpmenu.xul
+%%NVULIB_DIR%%/res/samples/xulTest.css
+%%NVULIB_DIR%%/res/table-add-column-after-active.gif
+%%NVULIB_DIR%%/res/table-add-column-after-hover.gif
+%%NVULIB_DIR%%/res/table-add-column-after.gif
+%%NVULIB_DIR%%/res/table-add-column-before-active.gif
+%%NVULIB_DIR%%/res/table-add-column-before-hover.gif
+%%NVULIB_DIR%%/res/table-add-column-before.gif
+%%NVULIB_DIR%%/res/table-add-row-after-active.gif
+%%NVULIB_DIR%%/res/table-add-row-after-hover.gif
+%%NVULIB_DIR%%/res/table-add-row-after.gif
+%%NVULIB_DIR%%/res/table-add-row-before-active.gif
+%%NVULIB_DIR%%/res/table-add-row-before-hover.gif
+%%NVULIB_DIR%%/res/table-add-row-before.gif
+%%NVULIB_DIR%%/res/table-remove-column-active.gif
+%%NVULIB_DIR%%/res/table-remove-column-hover.gif
+%%NVULIB_DIR%%/res/table-remove-column.gif
+%%NVULIB_DIR%%/res/table-remove-row-active.gif
+%%NVULIB_DIR%%/res/table-remove-row-hover.gif
+%%NVULIB_DIR%%/res/table-remove-row.gif
+%%NVULIB_DIR%%/res/throbber/anim.gif
+%%NVULIB_DIR%%/res/throbber/anims00.gif
+%%NVULIB_DIR%%/res/throbber/anims01.gif
+%%NVULIB_DIR%%/res/throbber/anims02.gif
+%%NVULIB_DIR%%/res/throbber/anims03.gif
+%%NVULIB_DIR%%/res/throbber/anims04.gif
+%%NVULIB_DIR%%/res/throbber/anims05.gif
+%%NVULIB_DIR%%/res/throbber/anims06.gif
+%%NVULIB_DIR%%/res/throbber/anims07.gif
+%%NVULIB_DIR%%/res/throbber/anims08.gif
+%%NVULIB_DIR%%/res/throbber/anims09.gif
+%%NVULIB_DIR%%/res/throbber/anims10.gif
+%%NVULIB_DIR%%/res/throbber/anims11.gif
+%%NVULIB_DIR%%/res/throbber/anims12.gif
+%%NVULIB_DIR%%/res/throbber/anims13.gif
+%%NVULIB_DIR%%/res/throbber/anims14.gif
+%%NVULIB_DIR%%/res/throbber/anims15.gif
+%%NVULIB_DIR%%/res/throbber/anims16.gif
+%%NVULIB_DIR%%/res/throbber/anims17.gif
+%%NVULIB_DIR%%/res/throbber/anims18.gif
+%%NVULIB_DIR%%/res/throbber/anims19.gif
+%%NVULIB_DIR%%/res/throbber/anims20.gif
+%%NVULIB_DIR%%/res/throbber/anims21.gif
+%%NVULIB_DIR%%/res/throbber/anims22.gif
+%%NVULIB_DIR%%/res/throbber/anims23.gif
+%%NVULIB_DIR%%/res/throbber/anims24.gif
+%%NVULIB_DIR%%/res/throbber/anims25.gif
+%%NVULIB_DIR%%/res/throbber/anims26.gif
+%%NVULIB_DIR%%/res/throbber/anims27.gif
+%%NVULIB_DIR%%/res/throbber/anims28.gif
+%%NVULIB_DIR%%/res/throbber/anims29.gif
+%%NVULIB_DIR%%/res/ua.css
+%%NVULIB_DIR%%/res/unixcharset.properties
+%%NVULIB_DIR%%/res/viewer.properties
+%%NVULIB_DIR%%/res/viewsource.css
+%%NVULIB_DIR%%/run-mozilla.sh
+%%NVULIB_DIR%%/shlibsign
+%%NVULIB_DIR%%/xpcshell
+%%NVULIB_DIR%%/xpicleanup
+%%NVULIB_DIR%%/xpidl
+%%NVULIB_DIR%%/xpt_dump
+%%NVULIB_DIR%%/xpt_link
+@dirrm %%NVULIB_DIR%%/res/throbber
+@dirrm %%NVULIB_DIR%%/res/samples/sampleimages
+@dirrm %%NVULIB_DIR%%/res/samples
+@dirrm %%NVULIB_DIR%%/res/rdf
+@dirrm %%NVULIB_DIR%%/res/html
+@dirrm %%NVULIB_DIR%%/res/fonts
+@dirrm %%NVULIB_DIR%%/res/entityTables
+@dirrm %%NVULIB_DIR%%/res/dtd
+@dirrm %%NVULIB_DIR%%/res/builtin
+@dirrm %%NVULIB_DIR%%/res
+@dirrm %%NVULIB_DIR%%/plugins
+@dirrm %%NVULIB_DIR%%/icons
+@dirrm %%NVULIB_DIR%%/greprefs
+@dirrm %%NVULIB_DIR%%/defaults/wallet
+@dirrm %%NVULIB_DIR%%/defaults/profile/chrome
+@dirrm %%NVULIB_DIR%%/defaults/profile/US/chrome
+@dirrm %%NVULIB_DIR%%/defaults/profile/US
+@dirrm %%NVULIB_DIR%%/defaults/profile
+@dirrm %%NVULIB_DIR%%/defaults/pref
+@dirrm %%NVULIB_DIR%%/defaults/autoconfig
+@dirrm %%NVULIB_DIR%%/defaults
+@dirrm %%NVULIB_DIR%%/components
+@dirrm %%NVULIB_DIR%%/chrome/venkman/skin/modern/venkman/images
+@dirrm %%NVULIB_DIR%%/chrome/venkman/skin/modern/venkman
+@dirrm %%NVULIB_DIR%%/chrome/venkman/skin/modern
+@dirrm %%NVULIB_DIR%%/chrome/venkman/skin
+@dirrm %%NVULIB_DIR%%/chrome/venkman/locale/en-US/venkman
+@dirrm %%NVULIB_DIR%%/chrome/venkman/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/venkman/locale
+@dirrm %%NVULIB_DIR%%/chrome/venkman/content/venkman/tests
+@dirrm %%NVULIB_DIR%%/chrome/venkman/content/venkman
+@dirrm %%NVULIB_DIR%%/chrome/venkman/content
+@dirrm %%NVULIB_DIR%%/chrome/venkman
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/mozapps/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/mozapps/downloads
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/mozapps
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/global/bindings
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/global-region
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/global-platform
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content/global
+@dirrm %%NVULIB_DIR%%/chrome/toolkit/content
+@dirrm %%NVULIB_DIR%%/chrome/toolkit
+@dirrm %%NVULIB_DIR%%/chrome/pippki/content/pippki
+@dirrm %%NVULIB_DIR%%/chrome/pippki/content
+@dirrm %%NVULIB_DIR%%/chrome/pippki
+@dirrm %%NVULIB_DIR%%/chrome/pipnss/content/pipnss
+@dirrm %%NVULIB_DIR%%/chrome/pipnss/content
+@dirrm %%NVULIB_DIR%%/chrome/pipnss
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/navigator/content
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/navigator
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/messenger/content
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/messenger
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/editor/content
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/editor
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/communicator/content
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo/communicator
+@dirrm %%NVULIB_DIR%%/chrome/overlayinfo
+@dirrm %%NVULIB_DIR%%/chrome/modern/skin/modern/communicator/cookie
+@dirrm %%NVULIB_DIR%%/chrome/modern/skin/modern/communicator
+@dirrm %%NVULIB_DIR%%/chrome/modern/skin/modern
+@dirrm %%NVULIB_DIR%%/chrome/modern/skin
+@dirrm %%NVULIB_DIR%%/chrome/modern
+@dirrm %%NVULIB_DIR%%/chrome/icons/default
+@dirrm %%NVULIB_DIR%%/chrome/icons
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale/en-US/navigator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale/en-US/global-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale/en-US/communicator-platform/pref
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale/en-US/communicator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/en-win/locale
+@dirrm %%NVULIB_DIR%%/chrome/en-win
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale/en-US/navigator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale/en-US/global-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale/en-US/communicator-platform/pref
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale/en-US/communicator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/en-unix/locale
+@dirrm %%NVULIB_DIR%%/chrome/en-unix
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale/en-US/navigator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale/en-US/global-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale/en-US/communicator-platform/pref
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale/en-US/communicator-platform
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/en-mac/locale
+@dirrm %%NVULIB_DIR%%/chrome/en-mac
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/wallet
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/pippki
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/pipnss
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/necko
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/navigator
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/mozapps/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/mozapps/downloads
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/mozapps
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/global
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/editor
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/cookie
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/xml
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/webservices
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/wallet
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/sidebar
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/security
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/search
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/profile
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/pref
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/layout
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/history
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/downloadmanager
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/dom
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator/directory
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/communicator
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US/autoconfig
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/en-US/locale
+@dirrm %%NVULIB_DIR%%/chrome/en-US
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/skin/classic/embed
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/skin/classic
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/skin
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/locale/en-US/embed
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/locale
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/content/embed
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample/content
+@dirrm %%NVULIB_DIR%%/chrome/embed-sample
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/xbl-marquee
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/wallet
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/necko
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/navigator-region
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/navigator-platform
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/navigator
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/editor/images
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/editor/bindings
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/editor-region
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/editor
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/cookie
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/xml
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/wallet
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/sidebar
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/search
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/related
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/profile
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/pref
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/history
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/downloadmanager
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/directory
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator/alerts
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator-region
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator-platform
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/communicator
+@dirrm %%NVULIB_DIR%%/chrome/comm/content/autoconfig
+@dirrm %%NVULIB_DIR%%/chrome/comm/content
+@dirrm %%NVULIB_DIR%%/chrome/comm
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/navigator/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/navigator/btn1
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/navigator
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/mozapps/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/mozapps/pref
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/mozapps/downloads
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/mozapps
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/smime/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/smime
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/messengercompose
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/addressbook/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger/addressbook
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/messenger
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/tree
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/toolbar
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/splitter
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/scrollbar
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/radio
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/progressmeter
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/menu
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/filepicker
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/console
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/checkbox
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global/arrow
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/global
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/editor/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/editor
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/xpinstall
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/taskbar
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/sidebar
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/search
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/related
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/profile
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/pref
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/icons/smileys
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/icons
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/directory
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/cookie
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/brand
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/bookmarks
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator/alerts
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic/communicator
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin/classic
+@dirrm %%NVULIB_DIR%%/chrome/classic/skin
+@dirrm %%NVULIB_DIR%%/chrome/classic
+@dirrm %%NVULIB_DIR%%/chrome/cascades/locale/en-US/cascades
+@dirrm %%NVULIB_DIR%%/chrome/cascades/locale/en-US
+@dirrm %%NVULIB_DIR%%/chrome/cascades/locale
+@dirrm %%NVULIB_DIR%%/chrome/cascades/content/cascades
+@dirrm %%NVULIB_DIR%%/chrome/cascades/content
+@dirrm %%NVULIB_DIR%%/chrome/cascades
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US/navigator-region
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US/global-region
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US/editor-region
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US/communicator-region/wallet
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US/communicator-region
+@dirrm %%NVULIB_DIR%%/chrome/US/locale/US
+@dirrm %%NVULIB_DIR%%/chrome/US/locale
+@dirrm %%NVULIB_DIR%%/chrome/US
+@dirrm %%NVULIB_DIR%%/chrome
+@dirrm %%NVULIB_DIR%%

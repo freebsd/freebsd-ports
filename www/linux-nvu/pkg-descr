@@ -1,0 +1,22 @@
+Nvu is a complete Web Authoring System that combines web file management and
+easy-to-use WYSIWYG web page editing.  Nvu is designed to be extremely easy to
+use, making it ideal for non-technical computer users who want to create an
+attractive, professional-looking web site without needing to know HTML or web
+coding.
+
+Features:
+ - FTP site manager
+ - A new color picker
+ - Tabs!
+ - CSS editor
+ - A dash of style(s)
+ - Customizable toolbars
+ - Forms
+ - Cleaner markup
+ - Visible marks
+
+This is a pre-compiled Linux/i386 version.
+
+WWW: http://www.nvu.com/
+
+- Ilya Khamushkin <ilya@space.rootshell.ru>
