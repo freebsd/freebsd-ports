@@ -50,3 +50,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net
