@@ -44,11 +44,12 @@
     SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += gawk
-    SUBDIR += gcc-devel
     SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcc295
     SUBDIR += gcc30
+    SUBDIR += gcc31
+    SUBDIR += gcc32
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
