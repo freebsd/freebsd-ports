@@ -1,0 +1,11 @@
+[ excerpt from developer's web site ]
+
+his is an encryption plugin for xchat, it is based on blowfish and
+is fully compatible to original 'blowcrypt' script. It supports
+private chat and channel encryption. A secure key-exchange system
+is included aswell. Please read the whole document, especially the
+'Installation' section, before installing it!
+
+WWW: http://fish.sekure.us/
+
+-- lioux@FreeBSD.org
