@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	XML editor for KDE
 
+BROKEN=		"Does not compile with qt 3.3"
+
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
