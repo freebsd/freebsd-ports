@@ -4,38 +4,38 @@ bin/sconvert
 bin/help
 bin/proc2mod
 bin/multidec
-share/examples/spice/bjtnoise.cir
-share/examples/spice/bsim1tst.cir
-share/examples/spice/bsim2tst.cir
-share/examples/spice/diffpair.cir
-share/examples/spice/diodisto.cir
-share/examples/spice/ltra_1.cir
-share/examples/spice/ltra_2.cir
-share/examples/spice/ltra_3.cir
-share/examples/spice/mixdisto.cir
-share/examples/spice/mos6inv.cir
-share/examples/spice/mosamp2.cir
-share/examples/spice/mosmem.cir
-share/examples/spice/pz2.cir
-share/examples/spice/pzt.cir
-share/examples/spice/rc.cir
-share/examples/spice/rca3040.cir
-share/examples/spice/resnoise.cir
-share/examples/spice/rtlinv.cir
-share/examples/spice/schmitt.cir
-share/examples/spice/simplepz.cir
-share/spice/helpdir/spice.txt
-share/spice/helpdir/spice.idx
-share/spice/scripts/setplot
-share/spice/scripts/spinit
-share/spice/mfbcap
-share/spice/news
+share/examples/spice3/bjtnoise.cir
+share/examples/spice3/bsim1tst.cir
+share/examples/spice3/bsim2tst.cir
+share/examples/spice3/diffpair.cir
+share/examples/spice3/diodisto.cir
+share/examples/spice3/ltra_1.cir
+share/examples/spice3/ltra_2.cir
+share/examples/spice3/ltra_3.cir
+share/examples/spice3/mixdisto.cir
+share/examples/spice3/mos6inv.cir
+share/examples/spice3/mosamp2.cir
+share/examples/spice3/mosmem.cir
+share/examples/spice3/pz2.cir
+share/examples/spice3/pzt.cir
+share/examples/spice3/rc.cir
+share/examples/spice3/rca3040.cir
+share/examples/spice3/resnoise.cir
+share/examples/spice3/rtlinv.cir
+share/examples/spice3/schmitt.cir
+share/examples/spice3/simplepz.cir
+share/spice3/helpdir/spice.txt
+share/spice3/helpdir/spice.idx
+share/spice3/scripts/setplot
+share/spice3/scripts/spinit
+share/spice3/mfbcap
+share/spice3/news
 man/man5/mfbcap.5.gz
 man/man1/sconvert.1.gz
 man/man1/nutmeg.1.gz
 man/man1/spice.1.gz
 man/man3/mfb.3.gz
-@dirrm share/examples/spice
-@dirrm share/spice/helpdir
-@dirrm share/spice/scripts
-@dirrm share/spice
+@dirrm share/examples/spice3
+@dirrm share/spice3/helpdir
+@dirrm share/spice3/scripts
+@dirrm share/spice3
