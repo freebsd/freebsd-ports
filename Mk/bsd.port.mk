@@ -933,7 +933,7 @@ RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .if defined(USE_MOTIF)
 USE_XPM=			yes
 .if !defined(NO_OPENMOTIF)
-LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
+LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 .endif
 
