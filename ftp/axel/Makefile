@@ -7,22 +7,25 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	0.94
+PORTVERSION=	0.96
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
+		intl:${PORTSDIR}/devel/gettext
 
+USE_GMAKE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV=	LFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lintl"
+
+MANCOMPRESSED=	no
 MAN1=	axel.1
 
 post-patch:
-	@${PERL} -pi -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/axel ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/axelrc.example ${PREFIX}/etc/axelrc
-	${INSTALL_MAN} ${WRKSRC}/axel.1 ${PREFIX}/man/man1
+	@${PERL} -pi -e "s,-pthread,${PTHREAD_LIBS},g ; \
+		s,^(CFLAGS = -O3),#\1,g ; \
+		s,gcc,${CC},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
