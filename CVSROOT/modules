@@ -7318,6 +7318,7 @@ p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
 p5-libapreq	ports/www/p5-libapreq
+p5-libapreq-static	ports/www/p5-libapreq-static
 p5-libservlet	ports/www/p5-libservlet
 p5-libvorbis	ports/audio/p5-libvorbis
 p5-libwww	ports/www/p5-libwww
