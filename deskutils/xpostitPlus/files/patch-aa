@@ -1,0 +1,19 @@
+--- Imakefile.orig	Fri Sep 26 12:06:02 1997
++++ Imakefile	Fri Sep 26 12:30:24 1997
+@@ -25,4 +25,4 @@
+ 
+-BINDIR=bin-d
+-MANDIR=man-d
++XCOMM BINDIR=bin-d
++XCOMM MANDIR=man-d
+ 
+@@ -37,3 +37,3 @@
+ XCOMM for debugging purposes
+-DEFINES = -g -Wall
++DEFINES = -Wall
+ 
+@@ -44,3 +44,3 @@
+ XCOMM notes if you haven't specified to save-on-exit on the command line.
+-XCOMM DEFINES = -DPROMPT_FOR_SAVE
++DEFINES = -DPROMPT_FOR_SAVE
+ 
