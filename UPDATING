@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050212:
+  AFFECTS: users of x11-fonts/mkbold, mkitalic and mkbold-mkitalic
+  AUTHOR: koma2@ms.u-tokyo.ac.jp
+
+  The dependency on x11-fonts/mkbold and x11-fonts/mkitalic has been
+  switched over to x11-fonts/mkbold-mkitalic, which is written in C
+  and has far better performance than the old ones.  There is no
+  functional difference between the two, but they will conflict with
+  each other.  Since other ports which depend on x11-fonts/mkbold or
+  x11-fonts/mkitalic will be updated to depend on x11-fonts/mkbold-mkitalic,
+  you might get an error during upgrading such ports.  In such a case,
+  please pkg_delete the old ones first.
+
 20050206:
   AFFECTS: users of print/teTeX and japanese/teTeX
   AUTHOR: hrs@FreeBSD.org

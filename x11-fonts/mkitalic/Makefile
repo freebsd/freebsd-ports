@@ -7,6 +7,7 @@
 
 PORTNAME=	mkitalic
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.bz2
@@ -14,9 +15,11 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	koma2@ms.u-tokyo.ac.jp
 COMMENT=	Perl script to make BDF font italic
 
+PREFIX?=	${X11BASE}
+CONFLICTS=	mkbold-mkitalic-*
+
 PLIST_FILES=	bin/mkitalic
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
