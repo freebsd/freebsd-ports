@@ -11,19 +11,15 @@ CATEGORIES=		net
 MASTER_SITES=   	http://www.uk.research.att.com/vnc/dist/
 DISTFILES=		vnc-3.3.3r1_unixsrc.tgz \
 			vnc-latest_doc.tgz
+EXTRACT_ONLY=		vnc-3.3.3r1_unixsrc.tgz
 
-MAINTAINER=	 	bmah@ca.sandia.gov
+MAINTAINER=	 	bmah@acm.org
 
 USE_PERL5=		YES
-
-EXTRACT_ONLY=		vnc-3.3.3r1_unixsrc.tgz
 IGNOREFILES=		vnc-latest_doc.tgz
-
 WRKSRC=			${WRKDIR}/vnc_unixsrc
-
 USE_IMAKE=		YES
 NO_INSTALL_MANPAGES=	YES
-
 ALL_TARGET=    		World
 
 # We have to frob a few things, and we want our own permissions, so it's easier
@@ -39,7 +35,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
 	${TAR} -C ${PREFIX}/share/doc -xzf ${DISTDIR}/vnc-latest_doc.tgz
-	(cd ${PREFIX}/share/doc; ${MV} vnc_docs vnc)
+	(cd ${PREFIX}/share/doc; ${RM} -rf vnc; ${MV} vnc_docs vnc)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
