@@ -1,5 +1,5 @@
---- rblcheck.c.orig	Thu Aug 20 00:47:03 1998
-+++ rblcheck.c	Sun May  2 12:39:29 1999
+--- rblcheck.c.orig	Wed Aug 19 22:47:03 1998
++++ rblcheck.c	Fri Jan 21 10:56:00 2000
 @@ -79,6 +79,7 @@
  #include <sys/types.h>
  #include <netinet/in.h>
@@ -71,7 +71,7 @@
  			{
  				if( *cp == '\n' || *cp == '"' ||
  				  *cp == '\\' )
-@@ -308,23 +312,28 @@
+@@ -308,23 +312,29 @@
  	char **argv;
  {
  	extern int optind;
@@ -94,6 +94,7 @@
 -	rblsites = togglesite( "rbl.dorkslayers.com", rblsites );
 +	rblsites = togglesite( "relays.orbs.org", rblsites );
 +	rblsites = togglesite( "dul.maps.vix.com", rblsites );
++	rblsites = togglesite( "relays.mail-abuse.org", rblsites );
  
  	progname = argv[ 0 ];
  
@@ -104,7 +105,7 @@
  		{
  			case 'q':
  				/* Quiet */
-@@ -372,10 +381,20 @@
+@@ -372,10 +382,20 @@
  		return -1;
  	}
  
@@ -129,7 +130,7 @@
  		fprintf( stderr, "%s: invalid IP address\n", progname );
  		usage();	
  		return -1;
-@@ -383,7 +402,7 @@
+@@ -383,7 +403,7 @@
  
  	for( ptr = rblsites; ptr != NULL; ptr = ptr->next )
  	{
