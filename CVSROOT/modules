@@ -2645,6 +2645,7 @@ gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
 gthumb2		ports/graphics/gthumb2
 gtic		ports/net/gtic
+gtick		ports/audio/gtick
 gtimer		ports/deskutils/gtimer
 gtk--		ports/x11-toolkits/gtk--
 gtk--2		ports/x11-toolkits/gtk--2
