@@ -1,0 +1,61 @@
+--- Makefile.orig	Thu Nov 13 21:53:33 2003
++++ Makefile	Thu Nov 13 21:57:07 2003
+@@ -1,4 +1,4 @@
+-PYTHON ?= python2.2
++PYTHON ?= python
+ INSTALL ?= install
+ RM ?= rm
+ MSGFMT ?= msgfmt
+@@ -6,16 +6,16 @@
+ XGETTEXT ?= xgettext
+ FIND ?= find
+ 
+-#PREFIX = /usr/local
++PREFIX = %%X11PREFIX%%
+ # autodetect GNOME prefix, change this if you want it elsewhere
+-PREFIX ?= `pkg-config libgnome-2.0 --variable=prefix || echo /usr/local`
++#PREFIX ?= `pkg-config libgnome-2.0 --variable=prefix || echo /usr/local`
+ 
+ # If you edited PYTHON above, edit this to the corresponding python lib dir
+-LIBDIR = $(PREFIX)/lib/python2.2/site-packages/straw
++LIBDIR = $(PREFIX)/share/gnome/straw
+ BINDIR = $(PREFIX)/bin
+-DATADIR = $(PREFIX)/share/straw
+-APPLICATIONSDIR = $(PREFIX)/share/applications
+-ICONDIR = $(PREFIX)/share/pixmaps
++DATADIR = $(PREFIX)/share/gnome/straw
++APPLICATIONSDIR = $(PREFIX)/share/gnome/applications
++ICONDIR = $(PREFIX)/share/gnome/pixmaps
+ LOCALEDIR = $(PREFIX)/share/locale
+ # change this to just "/etc" if you're installing in /usr
+ SYSCONFDIR = $(PREFIX)/etc
+@@ -27,9 +27,9 @@
+ schema_DATA = data/straw.schemas 
+ # modify this if you're running your own build environment (garnome/jhbuild)
+ # change it to "xml://path/to/gnome_build_env/etc/gconf/gconf.xml.defaults"
+-GCONF_SCHEMA_CONFIG_SOURCE = xml::/etc/gconf/gconf.xml.defaults 
++GCONF_SCHEMA_CONFIG_SOURCE = xml::$(SYSCONFDIR)/gconf/gconf.xml.defaults 
+ GCONF_SCHEMA_FILE_DIR = $(SYSCONFDIR)/gconf/schemas/
+-GCONFTOOL = gconftool-2
++GCONFTOOL = $(BINDIR)/gconftool-2
+ 
+ SCHEMADIR = $(GCONF_SCHEMA_FILE_DIR)
+ 
+@@ -60,7 +60,7 @@
+ 	$(INSTALL) -m 644 images/straw.png $(ICONDIR)
+ 	$(INSTALL) -m 644 images/*.png $(DATADIR)
+ 	$(INSTALL) -m 644 data/default_subscriptions.opml $(DATADIR)
+-	$(INSTALL) -m 644 src/lib/*.py[co] $(LIBDIR)
++	$(INSTALL) -m 644 src/lib/*.py $(LIBDIR)
+ 	$(INSTALL) -m 644 straw.desktop $(APPLICATIONSDIR)
+ 	$(INSTALL) -m 644 data/straw.schemas $(SCHEMADIR)
+ 	$(INSTALL) -m 644 images/straw.png $(ICONDIR)
+@@ -69,7 +69,7 @@
+ 	for mo in $$mos; do \
+ 		mo=`basename $$mo`; \
+ 		lang=`echo $$mo | sed -e 's/\.mo$$//'`; \
+-		$(INSTALL) -m 644 -D $$mo $(LOCALEDIR)/$$lang/LC_MESSAGES/straw.mo; \
++		$(INSTALL) -m 644 $$mo $(LOCALEDIR)/$$lang/LC_MESSAGES/straw.mo; \
+ 	done
+ 
+ clean:

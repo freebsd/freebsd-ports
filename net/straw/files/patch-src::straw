@@ -1,0 +1,24 @@
+--- src/straw.orig	Thu Nov 13 21:59:51 2003
++++ src/straw	Thu Nov 13 22:01:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.2
++#!/usr/bin/env python
+ #
+ # Copyright (c) 2002 Juri Pakaste
+ # You may use and distribute this software under the terms of the
+@@ -19,13 +19,14 @@
+             return sd
+     h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
+     if t == 'bin':
+-        libdir = os.path.join(h, 'lib')
++        libdir = os.path.join(h, 'share', 'gnome')
+         fp = os.path.join(libdir, 'straw')
+         if os.path.isdir(fp):
+             return libdir
+     raise "FileNotFoundError", "couldn't find straw library dir"
+ 
+ sys.path.insert(0, find_straw_lib())
++sys.path.insert(0, '%%PYTHON_SITELIBDIR%%')
+ 
+ import straw
+ 
