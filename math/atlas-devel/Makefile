@@ -43,9 +43,8 @@ post-patch:
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO_CMD} "You can optimize lapack sub project by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+ ${PTHREAD_CFLAGS}+' \
-		${WRKSRC}/config.c
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+ ${PTHREAD_LIBS}+' \
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' \
+			  -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
 		${WRKSRC}/config.c
 .if (${MACHINE_ARCH} == "alpha")
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
@@ -70,14 +69,14 @@ ANSWER=	${ANSWER_${ARCH}}
 
 do-configure:
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig && \
-		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED && \
-		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED_PIC \
+		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED && \
+		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED_PIC \
 			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
 			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC')
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch && \
 		${MAKE_ENV} ${MAKE} xconfig && \
-		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -a THREADED && \
-		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -a THREADED_PIC \
+		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED && \
+		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED_PIC \
 			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
 			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC' )
 
