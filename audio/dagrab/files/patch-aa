@@ -1,16 +1,12 @@
-*** Makefile~  Mon Jan  4 00:51:29 1999
---- Makefile   Mon Jan  4 00:51:17 1999
-***************
-*** 1,5 ****
-! CC=gcc
-! CFLAGS=-Wall -g 
-  all:dagrab
-  
-  dagrab:dagrab.o
---- 1,6 ----
-! CC	?= gcc
-! CFLAGS	?= -O2
-! CFLAGS	+= -Wall -g 
-  all:dagrab
-  
-  dagrab:dagrab.o
+--- Makefile.orig	Thu Jun 24 15:55:04 1999
++++ Makefile	Sat Aug 14 21:58:55 1999
+@@ -1,7 +1,7 @@
+-CC=gcc
++#CC=gcc
+ #uncomment the following line for linux 2.0.x  (and maybe 2.1.x or 1.x too ...)
+ #UCD=-DUSE_UCDROM
+-CFLAGS=-Wall -g ${UCD}
++CFLAGS+=-Wall -g ${UCD}
+ all:dagrab
+ 
+ dagrab:dagrab.o
