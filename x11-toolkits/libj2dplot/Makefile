@@ -15,8 +15,8 @@ DISTNAME=	J2DPlot_source-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A 2D plotting library for the JX toolkit
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
-		makemake:${JXPORT}
+EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
+BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jparser-1_1_8.1:${PORTSDIR}/x11-toolkits/libjparser
 

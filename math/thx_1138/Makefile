@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME:S,_,-,}_source-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Electronic Paper for Calculations and Graphs
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
-		makemake:${JXPORT}
+EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
+BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		j2dplot-0_6_5.0:${PORTSDIR}/x11-toolkits/libj2dplot \
 		jparser-1_1_8.1:${PORTSDIR}/x11-toolkits/libjparser
