@@ -10,8 +10,10 @@ CXXFLAGS+=	-I${PLUGIN} -I${DRIVER} \
 		${PTHREAD_CFLAGS} -DQT_THREAD_SUPPORT
 .if ${DB}==mysql
 LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lqt-mt -lmysqlclient 
-.else
+.elif ${DB}==psql
 LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lpq
+.elif ${DB}==odbc
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lodbc
 .endif
 
 SRCS=		qsql_${DB}.cpp main.cpp
