@@ -3,7 +3,7 @@
 # Date created:        6 May 1996
 # Whom:                joerg
 #
-# $Id: Makefile,v 1.4 1997/08/21 18:07:46 joerg Exp $
+# $Id: Makefile,v 1.5 1998/08/07 22:17:54 asami Exp $
 #
 
 DISTNAME=      xpostit3.3.1
@@ -21,5 +21,6 @@ MAINTAINER=    joerg@FreeBSD.ORG
 
 USE_IMAKE=     yes
 WRKSRC=        ${WRKDIR}/xpostit
+MAN1=          xpostit.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		26 Sep 1997
 # Whom:			mi
 #
-# $Id: Makefile,v 1.2 1997/09/30 09:28:10 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:17:55 asami Exp $
 #
 
 DISTNAME=	XPostitPlus-2.3
@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR=	office
 MAINTAINER=	mi@aldan.ziplink.net
 
 USE_IMAKE=	yes
+MAN1=		xpostit+.1
 
 .include <bsd.port.mk>
