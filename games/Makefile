@@ -133,6 +133,7 @@
     SUBDIR += hlserver-si
     SUBDIR += hlserver-snow
     SUBDIR += hlserver-svencoop
+    SUBDIR += hlserver-tsc
     SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
