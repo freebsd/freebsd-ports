@@ -2,6 +2,7 @@ CONFFILE=	host.def.local
 CP=		/bin/cp
 DO_NADA=	/usr/bin/true
 ECHO_MSG=	echo
+ECHO=		echo
 WRKDIR?=	.
 DISTDIR?=	/usr/ports/distfiles
 FILESDIR?=	../files
@@ -28,69 +29,86 @@ HASXDMAUTH=	 YES
 HASKRB4=	 YES
 #endif	
 
-all:: SecureRPCCheck XdmAuthCheck Krb4Check InputExtCheck pexCheck xieCheck
+all:: SecureRPCCheck XdmAuthCheck Krb4Check \
+	InputExtCheck pexCheck xieCheck \
+	ELFCheck
 
 initialize::
 	@( \
 	${ECHO_MSG} "  Now checking your XFree86 environment."; \
 	rm -f ${CONFFILE}; \
-	${ECHO_MSG} "#define FreeTypeLibDir ${LOCALBASE}/lib" >> ${CONFFILE}; \
-	${ECHO_MSG} "#define FreeTypeIncDir ${LOCALBASE}/include" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86SVGAServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86VGA16Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86VGA16DualServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86MonoServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86MonoDualServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86S3Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86S3VServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86I8514Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86Mach8Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86Mach32Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86Mach64Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86P9000Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86AGXServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86W32Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XF86I128Server" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef BuildFontServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef BuildFonts" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XnestServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XVirtualFramebufferServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#undef XprtServer" >> ${CONFFILE}; \
-	${ECHO_MSG} "#define BuildFonts	NO" >> ${CONFFILE}; \
-	${ECHO_MSG} "#define XnestServer NO" >> ${CONFFILE}; \
-	${ECHO_MSG} "#define XVirtualFramebufferServer NO" >> ${CONFFILE}; \
-	${ECHO_MSG} "#define XprtServer	NO" >> ${CONFFILE}; \
+	${ECHO} "#define FreeTypeLibDir ${LOCALBASE}/lib" >> ${CONFFILE}; \
+	${ECHO} "#define FreeTypeIncDir ${LOCALBASE}/include" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86SVGAServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86VGA16Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86VGA16DualServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86MonoServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86MonoDualServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86S3Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86S3VServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86I8514Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86Mach8Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86Mach32Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86Mach64Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86P9000Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86AGXServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86W32Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86I128Server" >> ${CONFFILE}; \
+	${ECHO} "#undef BuildFontServer" >> ${CONFFILE}; \
+	${ECHO} "#undef BuildFonts" >> ${CONFFILE}; \
+	${ECHO} "#undef XnestServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XVirtualFramebufferServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XprtServer" >> ${CONFFILE}; \
+	${ECHO} "#define BuildFonts	NO" >> ${CONFFILE}; \
+	${ECHO} "#define XnestServer NO" >> ${CONFFILE}; \
+	${ECHO} "#define XVirtualFramebufferServer NO" >> ${CONFFILE}; \
+	${ECHO} "#define XprtServer	NO" >> ${CONFFILE}; \
 	)
 
 InputExtCheck:: initialize
 .if defined(BUILDXINPUTEXT) && ${BUILDXINPUTEXT} == YES
 	@( \
-	${ECHO_MSG} "#define BuildXInputExt YES" >> ${CONFFILE}; \
+	${ECHO} "#define BuildXInputExt YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildXInputExt." )
 .else
 	@( \
-	${ECHO_MSG} "#define JoystickSupport YES" >> ${CONFFILE}; \
+	${ECHO} "#define JoystickSupport YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using JoystickSupport." )
 .endif
 
 pexCheck:: initialize
 .if defined(BUILDPEXEXT) && ${BUILDPEXEXT} == YES
 	@( \
-	${ECHO_MSG} "#define BuildPexExt YES" >> ${CONFFILE}; \
+	${ECHO} "#define BuildPexExt YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildPexExt." )
+.else
+	@${DO_NADA}
 .endif
+
 
 xieCheck:: initialize
 .if defined(BUILDXIE) && ${BUILDXIE} == YES
 	@( \
-	${ECHO_MSG} "#define BuildXIE YES" >> ${CONFFILE}; \
+	${ECHO} "#define BuildXIE YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildXIE." )
+.else
+	@${DO_NADA}
 .endif
-	
+
+ELFCheck:: initialize
+.if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
+	@( \
+	${ECHO} "#define UseElfFormat YES" >> ${CONFFILE}; \
+	${ECHO} "#define FreeTypeCConvModule NO" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using ELF format." )
+.else
+	@${DO_NADA}
+.endif
+
 SecureRPCCheck:: initialize
 .if defined(HASSECURERPC) && ${HASSECURERPC} == YES
 	@( \
-	${ECHO_MSG} "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}; \
+	${ECHO} "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using Secure RPC"; \
 	)
 .else
@@ -103,13 +121,13 @@ XdmAuthCheck:: initialize
 	${ECHO_MSG} "   Using XdmAuth." ; \
 	if [ ! -f ${WRKDIR}/xc/lib/Xdmcp/Wraphelp.c ]; then \
 	   if [ -f ${DISTDIR}/xc/Wraphelp.c ]; then \
-		${ECHO_MSG} "===> Whaphelp.c found in DISTDIR directory, copying it to source tree." ; \
+		${ECHO_MSG} "     Whaphelp.c found in DISTDIR directory, copying it to source tree." ; \
 		${CP} ${DISTDIR}/xc/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
-		${ECHO_MSG} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
+		${ECHO} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   elif [ -f ${FILESDIR}/Wraphelp.c ]; then \
-		${ECHO_MSG} "===> Whaphelp.c found in FILESDIR directory, copying it to source tree." ; \
+		${ECHO_MSG} "     Whaphelp.c found in FILESDIR directory, copying it to source tree." ; \
 		${CP} ${FILESDIR}/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
-		${ECHO_MSG} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
+		${ECHO} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   else \
 		${ECHO_MSG} "Wraphelp.c not found. You can not use XDM-AUTHORIZATION-1!" ; \
 		false ; \
@@ -123,9 +141,10 @@ XdmAuthCheck:: initialize
 Krb4Check:: initialize
 .if defined(HASKRB4) && ${HASKRB4} == YES
 	@( \
-	${ECHO_MSG} "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
+	${ECHO} "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
 	${ECHO_MSG} "   Using KerberosIV." ; \
-	${ECHO_MSG} "===>  Applying KerberosIV patches" ; \
+	${ECHO_MSG} "     Applying KerberosIV patches" ; \
+	${CP} ${FILESDIR}/krb4auth.c ${FILESDIR}/krb4auth.h ${WRKDIR}/xc/programs/xdm/; \
 	patch -s -d ${WRKDIR}/xc -E -p0 < ${FILESDIR}/kerberos4.diffs ; \
 	)
 .else

@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.3 1998/09/21 08:41:46 asami Exp $
+# $Id: Makefile,v 1.4 1998/10/08 23:52:03 asami Exp $
 #
 
 DISTNAME=	xc
@@ -11,19 +11,20 @@ PKGNAME?=	xtt-common-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.2/source/ \
-		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/study/freebsd-at-random/x-tt/dists/
-DISTFILES=	X332src-1.tgz xtt-1.0.tar.gz
+		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/ \
+		ftp://www.tohoku.iij.ad.jp/xtt/
+DISTFILES=	X332src-1.tgz xtt-1.0.tar.gz xttdoc10-to-pl00.diff.gz
 
 PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/fixes/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.2/fixes/ \
-PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3
+		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/ \
+		ftp://www.tohoku.iij.ad.jp/xtt/
+PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3 \
+		xtt10-to-pl00.diff.gz 
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
-.if defined(SERVER)
-RUN_DEPENDS=	mkfontdir.pl:${PORTSDIR}/x11/XttXF86srv-common
-.endif
 
 .if !defined(XDM_DES) && defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO
@@ -99,13 +100,14 @@ pre-fetch:
 .endif
 
 pre-patch:
-	@( cd ${WRKDIR}; \
-	${PATCH} ${PATCH_DIST_ARGS} < ${XTTDIR}/xtt-1.0.diff ) 
+	@( ${PATCH} ${PATCH_DIST_ARGS} < ${XTTDIR}/xtt-1.0.diff; \
+	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xttdoc10-to-pl00.diff.gz | \
+	${PATCH} -d ${XTTDIR} )
 
 pre-configure:
 	@( \
 	${CP} ${FILESDIR}/Imakefile ${WRKDIR} ; \
-	(cd ${WRKDIR} ; ${XMKMF} ; ${SETENV} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} FILESDIR=${FILESDIR} LOCALBASE=${LOCALBASE} ${MAKE}) ; \
+	(cd ${WRKDIR} ; ${XMKMF} ; ${SETENV} ${MAKE_ENV} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} FILESDIR=${FILESDIR} ${MAKE}) ; \
 	${CAT} ${HOSTDEFLOCAL} ${HOSTDEFSRV} > ${HOSTDEFDST} )
 
 .if defined(SERVER)
@@ -136,18 +138,18 @@ post-build:
 do-install:
 	@( \
 	cd ${WRKSRC}/lib/font; \
-	${MAKE} install; \
-	${LDCONFIG} -m ${PREFIX}/lib; \
+	${SETENV} ${MAKE_ENV} ${MAKE} install; \
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib; \
 	${INSTALL_SCRIPT} ${FILESDIR}/mkfontdir.pl ${PREFIX}/bin; \
 	${MKDIR} ${DOCDIR}; \
 	${INSTALL_DATA} ${XTTDIR}/xtt10-* ${DOCDIR})
 .elif defined(SERVER) && ${SERVER} == xfs
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/programs/xfs/xfs ${PREFIX}/bin/xfs.xtt
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${INSTALL_PROGRAM} ${WRKSRC}/programs/xfs/xfs ${PREFIX}/bin/xfs.xtt
 .else
 do-install:
 	@( \
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/Xserver/${SERVER} ${PREFIX}/bin/${SERVER}.xtt; \
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${INSTALL_PROGRAM} ${WRKSRC}/programs/Xserver/${SERVER} ${PREFIX}/bin/${SERVER}.xtt; \
 	${LN} -fs ${PREFIX}/bin/${SERVER}.xtt ${PREFIX}/bin/X )
 .endif
 

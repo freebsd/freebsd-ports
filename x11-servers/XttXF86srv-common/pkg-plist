@@ -9,6 +9,8 @@ share/doc/Xtt/xtt10-miscnote.eng
 share/doc/Xtt/xtt10-miscnote.jis
 share/doc/Xtt/xtt10-readme.eng
 share/doc/Xtt/xtt10-readme.jis
+share/doc/Xtt/xtt10-changes.eng
+share/doc/Xtt/xtt10-changes.jis
 include/X11/fonts/codeconv/ftcap.h
 include/X11/fonts/codeconv/ftcconv.h
 include/X11/fonts/codeconv/ftcconvC.h
@@ -34,9 +36,10 @@ lib/modules/codeconv/KOI8.so
 lib/modules/codeconv/KSC5601.so
 lib/modules/codeconv/KSCJOHAB.so
 lib/libfont.a
+lib/libfont.so
 lib/libfont.so.1.0
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/doc/Xtt
 @dirrm include/X11/fonts/codeconv
 @dirrm lib/modules/codeconv
