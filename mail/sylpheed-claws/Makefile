@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.12a
+PORTVERSION=	0.9.12b
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -18,8 +18,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
-
-BROKEN=		Does not compile
 
 THEMEVERSION=	20040525
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
@@ -47,6 +45,13 @@ CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SSL)
+SSLTEST!=test ${OPENSSLVER} \< 0.9.7 && ${ECHO_CMD} bad || ${TRUE}
+. if ${SSLTEST} == "bad"
+IGNORE=You need at least OpenSSL v0.9.7
+. endif
+.endif
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
 PLIST_SUB+=	GNOME=""
@@ -77,15 +82,15 @@ CONFIGURE_ARGS+=	--disable-imlib
 USE_GNOME+=		imlib
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
-.if defined(WITH_GPGME) || defined(WITH_ALL)
+#.if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=		GPGME=""
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
-.else
-PLIST_SUB+=		GPGME="@comment "
-CONFIGURE_ARGS+=	--disable-gpgme
-.endif
+#.else
+#PLIST_SUB+=		GPGME="@comment "
+#CONFIGURE_ARGS+=	--disable-gpgme
+#.endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--enable-compface
@@ -138,7 +143,7 @@ pre-everything::
 	@${ECHO} "      WITH_ALL       Enable all options below"
 	@${ECHO} ""
 	@${ECHO} "      WITH_PIXBUF    Enable GDK Pixbuf support"
-	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME"
+	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME (temporary enabled unconditionally)"
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
 	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
 	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
