@@ -19,9 +19,6 @@ LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		gal.7:${PORTSDIR}/x11-toolkits/gal \
 		gb.0:${PORTSDIR}/lang/gnomebasic
 
-# Temporarily take this out until libgda 0.2.4 or higher is released
-#		gda-common.0:${PORTSDIR}/databases/libgda
-
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
