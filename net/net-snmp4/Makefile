@@ -71,7 +71,8 @@ CONFIGURE_ARGS+= --enable-ipv6
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+= --without-openssl
 .else
-.if defined(WITH_PORTSSL) || ${OSVERSION} >= 500100 || ${OSVERSION} >= 470103
+.if defined(WITH_PORTSSL) || ${OSVERSION} >= 500100 || \
+	(${OSREL} == 4 && ${OSVERSION} >= 470103)
 .if ${OSVERSION} >= 500100
 LIB_DEPENDS+=	crypto.4:${PORTSDIR}/security/openssl
 .else
