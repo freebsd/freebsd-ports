@@ -6,15 +6,16 @@
 # $FreeBSD$
 
 PORTNAME=	ipcalc
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	net
 MASTER_SITES=	http://jodies.de/
 DISTFILES=	ipcalc.pl
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} ${PREFIX}/bin/${PORTNAME}
