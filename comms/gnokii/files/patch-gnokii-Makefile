@@ -1,0 +1,16 @@
+--- gnokii/Makefile.orig	Mon Aug  5 18:21:20 2002
++++ gnokii/Makefile	Thu Aug  8 23:26:03 2002
+@@ -25,12 +25,10 @@
+ 	GNOKII_LIB=libgnokii.so
+ endif
+ 
+-LDLIBS += -L$(TOPDIR)/common -lgnokii
+-
+ all: gnokii
+ 
+ gnokii: $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/$(GNOKII_LIB)
+-	$(CC) $(LDFLAGS) $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
++	$(CC) $(LDFLAGS) $(OBJS) $(TOPDIR)/common/gsm-filetypes.o -L$(TOPDIR)/common -lgnokii $(LDLIBS) -o $@
+ 
+ $(TOPDIR)/getopt/libgetopt.a:
+ 	$(MAKE) -C $(TOPDIR)/getopt

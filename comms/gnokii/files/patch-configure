@@ -1,14 +1,6 @@
---- configure.orig	Fri May 10 00:31:53 2002
-+++ configure	Wed May 22 02:04:02 2002
-@@ -661,7 +661,6 @@
- 
- 
- 
--CFLAGS="-O2 -Wall"
- ALL_LINGUAS="cs de et fi nl sk pl it sl"
- 
- echo $ac_n "checking for include/config.h.in""... $ac_c" 1>&6
-@@ -1970,8 +1969,8 @@
+--- configure.orig	Thu Aug  8 23:11:28 2002
++++ configure	Thu Aug  8 23:12:05 2002
+@@ -1973,8 +1973,8 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
