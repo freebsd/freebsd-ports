@@ -24,6 +24,7 @@
     SUBDIR += jmk-x11-fonts
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
+    SUBDIR += linux-fontconfig
     SUBDIR += mkbold
     SUBDIR += mkfontalias
     SUBDIR += mkitalic
