@@ -3,5 +3,5 @@ include/gcrypt.h
 include/gcrypt-module.h
 lib/libgcrypt.a
 lib/libgcrypt.so
-lib/libgcrypt.so.12
+lib/libgcrypt.so.13
 share/aclocal/libgcrypt.m4

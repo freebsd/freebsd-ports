@@ -6,6 +6,7 @@
 
 PORTNAME=	libksba
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/${PORTNAME}
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	alpha/${PORTNAME}
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	KSBA is an X.509 Library
 
-LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.1:${PORTSDIR}/security/libgpg-error
 
 GNU_CONFIGURE=	yes
