@@ -1,0 +1,36 @@
+*** Makefile.in.orig	Sat Feb 21 19:26:25 1998
+--- Makefile.in	Sat Jun  6 10:50:34 1998
+***************
+*** 17,23 ****
+  infodir = $(prefix)/info
+  docdir = $(datadir)/doc
+  
+! appdefaultsdir = /usr/lib/X11/app-defaults
+  
+  gamelibdir = $(datadir)/lib
+  x11libdir = $(datadir)/lib-x11
+--- 17,23 ----
+  infodir = $(prefix)/info
+  docdir = $(datadir)/doc
+  
+! appdefaultsdir = $(libdir)/X11/app-defaults
+  
+  gamelibdir = $(datadir)/lib
+  x11libdir = $(datadir)/lib-x11
+***************
+*** 44,50 ****
+  
+  CC = cc
+  
+! CFLAGS = -g
+  
+  RANLIB = ranlib
+  
+--- 44,50 ----
+  
+  CC = cc
+  
+! CFLAGS ?= 
+  
+  RANLIB = ranlib
+  
