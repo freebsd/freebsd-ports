@@ -2873,6 +2873,7 @@ hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/security/hping
+hpl		ports/benchmarks/hpl
 hpoj		ports/graphics/hpoj
 hppsmtools	ports/graphics/hppsmtools
 hptools		ports/devel/hptools
