@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -33,6 +33,7 @@ WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.4.2
 JDK_PATCHSET_VERSION=	6
+LATEST_LINK=	jdk14
 
 SUN_LINUX_JDK_VERSION=  1.4.2
 
