@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 # the original master site still uses .gz.
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
