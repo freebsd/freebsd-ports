@@ -1,0 +1,8 @@
+--- src/makefiles/Makefile.freebsd.orig	Wed Aug 29 21:14:40 2001
++++ src/makefiles/Makefile.freebsd	Mon Sep  1 10:16:26 2003
+@@ -23,3 +23,5 @@
+ endif
+ 
+ sqlmansect = 7
++
++allow_nonpic_in_shlib = yes
