@@ -4,11 +4,11 @@ include/t1lib.h
 include/t1libx.h
 lib/libt1.a
 lib/libt1.so
-lib/libt1.so.3
+lib/libt1.so.4
 lib/libt1x.a
 lib/libt1x.so
-lib/libt1x.so.3
-share/t1lib/t1lib.config
+lib/libt1x.so.4
 share/t1lib/doc/t1lib_doc.pdf
+share/t1lib/t1lib.config
 @dirrm share/t1lib/doc
 @dirrm share/t1lib
