@@ -1,5 +1,5 @@
---- ./configure.orig	Sat Feb  3 22:08:12 2001
-+++ configure	Sun Feb  4 21:07:52 2001
+--- configure.orig	Tue Feb 20 20:17:29 2001
++++ configure	Mon Feb 26 11:28:55 2001
 @@ -1833,8 +1833,8 @@
  #define HAVE_DLFCN_H 1
  EOF
@@ -20,6 +20,15 @@
      cat >> confdefs.h <<\EOF
  #define HAVE_DLOPEN 1
  EOF
+@@ -2023,7 +2023,7 @@
+     ELF_CFLAGS="$CFLAGS -fPIC"
+     ELF_LINK="$CC -shared"
+     ELF_LINK_CMD="\$(ELF_LINK)"
+-    ELF_DEP_LIBS="\$(DL_LIB) -lm -lc"
++    ELF_DEP_LIBS="\$(DL_LIB) -lm"
+     CC_SHARED="$CC $CFLAGS -shared -fPIC"
+ esac
+ 
 @@ -2046,6 +2046,19 @@
        IEEE_CFLAGS="-ieee_with_no_inexact"
      fi
