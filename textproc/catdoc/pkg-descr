@@ -2,10 +2,11 @@ This is a program for viewing MS Word documents.  It produces plain
 text output and can optionally convert non-standard characters into 
 TeX control sequences.  It does not work with MS Word 97 documents.
 
-There is also a cute little Tk program included called wordview, which
+There is also a cute little Tcl/Tk program included called wordview, which
 is basically a small GUI frontend to catdoc for viewing word documents.
-The wordview program should work with any verson of Tk, but uses Tk 8.0
-by default.
+The wordview program works with Tcl 7.6 and up, but uses Tk 8.0 by default.
+
+http://www.ice.ru/~vitus/works/works_unix.html
 
 - Brion
 brion@queeg.com
