@@ -11,6 +11,20 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 #############################################################################
+# dspam-3.2.3.20041229.1945
+#
+
+- drop QUARANTINE_AGENT as is not supported by ./configure anymore and
+set in dspam.conf UntrustedDeliveryAgent and QuarantineAgent to default to
+TrustedDeliveryAgent, but leave them commented out
+(ports/75548 by Julien Gabel)
+- change default DSPAM_HOME_MODE to 0770
+(ports/75549 by Julien Gabel <jpeg@thilelli.net>)
+- DSPAM_HOME_{OWNER,GROUP} default to DSPAM_{OWNER,GROUP}
+- fix make describe by USE_MYSQL
+
+
+#############################################################################
 # dspam-3.2.3.20041218.2100_1
 #
 
