@@ -1,0 +1,4 @@
+Noted that the Chinese new year does not coincide with the Gregorian
+new year, so the determination of what year it is in the Chinese
+calendar is only going to be correct for a portion of the Gregorian
+year. This module is API for calculating dates for Chinese calendar.
