@@ -3324,6 +3324,7 @@ hbiff		ports/mail/hbiff
 hcidump		ports/comms/hcidump
 hdconv		ports/palm/hdconv
 hdf		ports/science/hdf
+hdf-szip	ports/science/szip
 hdf5		ports/science/hdf5
 hdup		ports/sysutils/hdup
 health-nut	ports/misc/nut
