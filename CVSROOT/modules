@@ -6950,6 +6950,7 @@ rmt		src/usr.sbin/rmt
 rname		ports/misc/rname
 rndcontrol	src/usr.sbin/rndcontrol
 ro-aspell	ports/textproc/ro-aspell
+roadmap		ports/astro/roadmap
 roap		ports/textproc/roap
 robocode	ports/games/robocode
 robodoc		ports/devel/robodoc
