@@ -1,5 +1,5 @@
---- gui2/Makefile.in.orig	Wed Apr  9 03:57:15 2003
-+++ gui2/Makefile.in	Mon Apr 14 12:35:47 2003
+--- gui2/Makefile.in.orig	Thu Sep 25 22:54:01 2003
++++ gui2/Makefile.in	Sun Oct  5 20:46:18 2003
 @@ -4,6 +4,7 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
@@ -8,15 +8,15 @@
  CC = @CC@
  CFLAGS = @CFLAGS@
  MAKE = @MAKE@
-@@ -44,14 +45,13 @@
-   LIBS = $(GNOME_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
-   GUI_CFLAGS = $(GNOME_CFLAGS) $(GTK_EXTRA_CFLAGS)
+@@ -47,19 +48,18 @@
+   LIBS = $(GNOME_LIBS) $(GTKSOURCEVIEW_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
+   GUI_CFLAGS = $(GNOME_CFLAGS) $(GTKSOURCEVIEW_CFLAGS) $(GTK_EXTRA_CFLAGS)
    query_install_gnome = install-gnome
 -  GNOMEDEF = -DGNOME_DISABLE_DEPRECATED -DDATADIR=\"$(gnome_prefix)/share\"
 +  GNOMEDEF = -DGNOME_DISABLE_DEPRECATED -DDATADIR=\"$(datadir)\"
  else
-   LIBS = $(GTK_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
-   GUI_CFLAGS = $(GTK_CFLAGS) $(GTK_EXTRA_CFLAGS)
+   LIBS = $(GTK_LIBS) $(GTKSOURCEVIEW_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
+   GUI_CFLAGS = $(GTK_CFLAGS) $(GTKSOURCEVIEW_CFLAGS) $(GTK_EXTRA_CFLAGS)
  endif
  ifeq ($(USE_NLS),yes)
 -  datadir = @datadir@
@@ -24,8 +24,14 @@
 +  localedir = $(prefix)/share/locale
    NLSDEF = -DLOCALEDIR=\"$(localedir)\"
  endif
+ ifeq ($(have_gtksourceview),yes)
+   langbase := $(shell pkg-config --variable=prefix gtksourceview-1.0)
+-  langdir = $(langbase)/share/gtksourceview-1.0/language-specs
++  langdir = $(datadir)/gtksourceview-1.0/language-specs
+   query_install_lang = install-lang
+ endif
  
-@@ -64,7 +64,7 @@
+@@ -72,7 +72,7 @@
  
  # Directories
  bindir	= $(prefix)/bin
@@ -34,7 +40,7 @@
  tooldir = $(topsrc)/tools
  libsrc = $(topsrc)/lib/src
  clisrc = $(topsrc)/cli
-@@ -102,7 +102,7 @@
+@@ -110,7 +110,7 @@
  	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
  
  $(GTKEXTRA_LITE): 
@@ -43,8 +49,8 @@
  
  -include $(OBJS:.o=.d)
  
-@@ -115,7 +115,7 @@
- 	$(LIBTOOL) $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
+@@ -122,7 +122,7 @@
+ 	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
  
  install-data: installdirs
 -	$(INSTALL_PROGRAM) ../gretl_sh $(bindir)/gretl
