@@ -17,7 +17,8 @@ while [ $i -lt $argc ] ; do
  val=$1
  shift
  case $val in 
-	-limf|-lirc|-lcprts|-lunwind|\
+	# there was also "-lirc", but it a test with -lirc works here
+	-limf|-lcprts|-lunwind|\
 	${PREFIX}/intel/compiler60/ia32/lib/icrt.link|\
 	-Qy\
 	)
@@ -59,7 +60,7 @@ while [ $i -lt $argc ] ; do
  if [ ${#val} -gt 0 ] ; then
   set -- "$@" "$val"
  fi
- let i=i+1
+ i=$(($i+1))
 done
 # run FreeBSD's ld with our new args
 exec ${PREFIX}/intel/compiler60/ia32/bin/real/ld "$@"
