@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.xoom.com/romainguy/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/.0/final/}.jar swingall.jar
+DISTFILES=	${PORTNAME}-${PORTVERSION}.jar swingall.jar
 EXTRACT_ONLY=	
 
 MAINTAINER=	sobomax@FreeBSD.org
