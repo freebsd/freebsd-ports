@@ -1,8 +1,0 @@
---- console/ncurses.c~	Sat Jun 17 01:39:59 2000
-+++ console/ncurses.c	Sat Jun 17 01:34:56 2000
-@@ -30,4 +30,5 @@
- #ifdef HAVE_NCURSES_H
- # include <ncurses.h>
-+# undef trace
- #else
- # ifdef HAVE_CURSES_H

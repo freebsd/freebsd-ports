@@ -1,24 +1,19 @@
-Index: dlls/Makedll.rules.in
-===================================================================
-RCS file: /home/wine/wine/dlls/Makedll.rules.in,v
-retrieving revision 1.6
-diff -c -3 -p -r1.6 Makedll.rules.in
-*** Makedll.rules.in	2000/08/03 00:04:24	1.6
---- Makedll.rules.in	2000/10/13 18:30:44
+*** dlls/Makedll.rules.in	2000/12/06 00:05:14	1.12
+--- dlls/Makedll.rules.in	2000/12/09 16:39:55
 *************** all: lib$(MODULE).$(LIBEXT) $(ALTNAMES:%
 *** 25,31 ****
   # Rules for .so files
   
-  lib$(MODULE).so.$(SOVERSION): $(OBJS) Makefile.in $(TOPSRCDIR)/Make.rules.in
-! 	$(LDSHARED) $(OBJS) -o $@ -L$(DLLDIR) $(IMPORTS:%=-l%) $(EXTRALIBS)
+  lib$(MODULE).so: $(ALL_OBJS) Makefile.in
+! 	$(LDSHARED) $(LDDLLFLAGS) $(ALL_OBJS) -o $@ -L$(DLLDIR) $(IMPORTS:%=-l%) $(ALL_LIBS)
   
-  $(ALLNAMES): lib$(MODULE).so.$(SOVERSION)
-  	$(RM) $@ && $(LN_S) lib$(MODULE).so.$(SOVERSION) $@
+  $(ALTNAMES:%=lib%.$(LIBEXT)): lib$(MODULE).$(LIBEXT)
+  	$(RM) $@ && $(LN_S) lib$(MODULE).$(LIBEXT) $@
 --- 25,31 ----
   # Rules for .so files
   
-  lib$(MODULE).so.$(SOVERSION): $(OBJS) Makefile.in $(TOPSRCDIR)/Make.rules.in
-! 	$(LDSHARED) $(OBJS) -o $@ -L$(DLLDIR) $(IMPORTS:%=-l%) $(EXTRALIBS) -lgcc_pic
+  lib$(MODULE).so: $(ALL_OBJS) Makefile.in
+! 	$(LDSHARED) $(LDDLLFLAGS) $(ALL_OBJS) -o $@ -L$(DLLDIR) $(IMPORTS:%=-l%) $(ALL_LIBS) -lgcc_pic
   
-  $(ALLNAMES): lib$(MODULE).so.$(SOVERSION)
-  	$(RM) $@ && $(LN_S) lib$(MODULE).so.$(SOVERSION) $@
+  $(ALTNAMES:%=lib%.$(LIBEXT)): lib$(MODULE).$(LIBEXT)
+  	$(RM) $@ && $(LN_S) lib$(MODULE).$(LIBEXT) $@
