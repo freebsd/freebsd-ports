@@ -41,12 +41,13 @@ MYSUBDIR?=
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
 NO_MTREE=	yes
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
-	@${PERL} -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
-	@${PERL} -pi.bak -e '$$_ = "" if /cat/' ${WRKSRC}/hier.c
+	@${REINPLACE_CMD} "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
+	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
+	@${REINPLACE_CMD} 's|02755|0755|g; /cat/d' ${WRKSRC}/hier.c
+	@${REINPLACE_CMD} 's|^man prog|prog|g' ${WRKSRC}/Makefile
 	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.PPREFIX
 	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
 

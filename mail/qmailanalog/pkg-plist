@@ -1,32 +1,32 @@
-%%MYSUBDIR%%bin/matchup
 %%MYSUBDIR%%bin/columnt
-%%MYSUBDIR%%bin/zoverall
-%%MYSUBDIR%%bin/zsendmail
-%%MYSUBDIR%%bin/xqp
-%%MYSUBDIR%%bin/xsender
-%%MYSUBDIR%%bin/xrecipient
 %%MYSUBDIR%%bin/ddist
 %%MYSUBDIR%%bin/deferrals
 %%MYSUBDIR%%bin/failures
-%%MYSUBDIR%%bin/successes
-%%MYSUBDIR%%bin/rhosts
+%%MYSUBDIR%%bin/matchup
 %%MYSUBDIR%%bin/recipients
+%%MYSUBDIR%%bin/rhosts
 %%MYSUBDIR%%bin/rxdelay
 %%MYSUBDIR%%bin/senders
+%%MYSUBDIR%%bin/successes
 %%MYSUBDIR%%bin/suids
+%%MYSUBDIR%%bin/xqp
+%%MYSUBDIR%%bin/xrecipient
+%%MYSUBDIR%%bin/xsender
 %%MYSUBDIR%%bin/zddist
 %%MYSUBDIR%%bin/zdeferrals
 %%MYSUBDIR%%bin/zfailures
-%%MYSUBDIR%%bin/zsuccesses
-%%MYSUBDIR%%bin/zrhosts
+%%MYSUBDIR%%bin/zoverall
 %%MYSUBDIR%%bin/zrecipients
+%%MYSUBDIR%%bin/zrhosts
 %%MYSUBDIR%%bin/zrxdelay
 %%MYSUBDIR%%bin/zsenders
+%%MYSUBDIR%%bin/zsendmail
+%%MYSUBDIR%%bin/zsuccesses
 %%MYSUBDIR%%bin/zsuids
-%%MYSUBDIR%%doc/MATCHUP
 %%MYSUBDIR%%doc/ACCOUNTING
-@dirrm %%MYSUBDIR%%doc
-@dirrm %%MYSUBDIR%%bin
+%%MYSUBDIR%%doc/MATCHUP
 @dirrm %%MYSUBDIR%%man/man1
 @dirrm %%MYSUBDIR%%man
+@dirrm %%MYSUBDIR%%doc
+@dirrm %%MYSUBDIR%%bin
 @dirrm %%MYSUBDIR%%
