@@ -101,6 +101,7 @@ share/locale/xh/LC_MESSAGES/atk10.mo
 share/locale/yi/LC_MESSAGES/atk10.mo
 share/locale/zh_CN/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
+@exec mkdir -p %D/%%DOCSDIR%%
 @unexec rmdir %D/share/locale/as/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/as 2> /dev/null || true
 @unexec rmdir %D/share/locale/li/LC_MESSAGES 2> /dev/null || true
