@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.12 1998/12/30 11:48:34 dirk Exp $
+# $Id: Makefile,v 1.13 1999/01/23 07:05:29 vanilla Exp $
 #
 
 DISTNAME=	povray3
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
 		ftp://ftp.kappa.ro/pub/Linux/Graphics/Editors/povray/
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
-MAINTAINER=	kkennawa@physics.adelaide.edu.au
+MAINTAINER=	kris@FreeBSD.ORG
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
