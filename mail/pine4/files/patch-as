@@ -16,19 +16,7 @@
 ! come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
   be set by the user while in Pine.  Eventually all the local ones should
   be so and maybe the global ones too.
-  
-***************
-*** 597,602 ****
---- 597,605 ----
-  #ifdef	DF_SMTP_SERVER
-      GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
-  #endif
-+ 
-+     F_TURN_ON(F_TCAP_WINS,ps);
-+     F_TURN_ON(F_QUELL_INTERNAL_MSG,ps);
-  
-      /* Set the default mail directory */
-      build_path(buf, GLO_MAIL_DIRECTORY, "[]");
+
 *** pico/edef.h.orig	Thu Apr 23 02:53:44 1998
 --- pico/edef.h	Tue Feb  9 22:14:08 1999
 ***************
