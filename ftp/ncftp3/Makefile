@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.2
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-304-v6-20011102.diff.gz
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+#PATCHFILES=	ncftp-304-v6-20011102.diff.gz
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
