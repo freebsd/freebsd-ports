@@ -11,6 +11,7 @@
 %%TEXMFLOCAL%%/tex/latex/preview/prtracingall.def
 @dirrm %%TEXMFLOCAL%%/tex/latex/preview
 %%TEXMFLOCAL%%/doc/latex/styles/preview.dvi
+@dirrm %%TEXMFLOCAL%%/doc/latex/styles
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.el
