@@ -1,0 +1,13 @@
+--- iodev/serial.cc.orig	Thu Nov 11 21:44:52 1999
++++ iodev/serial.cc	Fri Jan 14 00:59:57 2000
+@@ -75,8 +75,8 @@
+   term_new.c_iflag |= IGNBRK;
+   term_new.c_iflag &= ~BRKINT;
+ #endif
+-  term_new.c_iflag |= IXOFF;
+-  tcsetattr(0, TCSAFLUSH, &term_new);
++  // term_new.c_iflag |= IXOFF;
++  // tcsetattr(0, TCSAFLUSH, &term_new);
+ #endif
+   // nothing for now
+ #if USE_RAW_SERIAL
