@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/eieio.info %D/info/dir
-info/eieio.info
-@exec install-info %D/info/eieio.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/call-tree.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/call-tree.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/chart.el
