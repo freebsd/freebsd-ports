@@ -44,6 +44,7 @@
     SUBDIR += p5-Device-SerialPort
     SUBDIR += plp
     SUBDIR += pr
+    SUBDIR += py-bulksms
     SUBDIR += py-serial
     SUBDIR += qico
     SUBDIR += qpage
