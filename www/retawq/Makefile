@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTVERSION=	0.1.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,16 +19,22 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
 
 MAN1=		retawq.1
 
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.8:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--enable-tls
+CONFIGURE_ARGS+=	--set-tls=1
+.elif defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--set-tls=2
+LDFLAGS+=	-lssl -lcrypto
 .endif
 
 post-configure:
