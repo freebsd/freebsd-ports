@@ -1,0 +1,11 @@
+rtfx converts RTF files into a generic XML format. It majors on keeping 
+meta data like style names, etc... rather than every bit of formatting. 
+This makes it handy for converting RTF documents into a custom XML 
+format (using XSL or an additional processing step).
+
+RTF features supported: page breaks, section breaks, style names, 
+lists (various types), tables, footnotes, info block, bold, italic, 
+underline, super/sub script, hidden text, strike out, text color, fonts.
+
+Author:	Nielsen <nielsen at memberwebs.com>
+WWW:	http://memberwebs.com/nielsen/software/rtfx/

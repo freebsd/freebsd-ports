@@ -493,6 +493,7 @@
     SUBDIR += rot
     SUBDIR += rotix
     SUBDIR += rtfreader
+    SUBDIR += rtfx
     SUBDIR += rubber
     SUBDIR += ruby-amatch
     SUBDIR += ruby-amrita

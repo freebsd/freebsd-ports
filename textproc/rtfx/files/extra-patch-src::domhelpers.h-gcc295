@@ -1,0 +1,18 @@
+--- src/domhelpers.h.orig	Sun Jul 25 06:37:15 2004
++++ src/domhelpers.h	Thu Jul 29 07:56:00 2004
+@@ -44,6 +44,15 @@
+ #include <stack>
+ #include <set>
+ 
++template <class _Category, class _Tp, class _Distance = ptrdiff_t,
++	class _Pointer = _Tp*, class _Reference = _Tp&>
++struct iterator {
++typedef _Category  iterator_category;
++typedef _Tp        value_type;
++typedef _Distance  difference_type;
++typedef _Pointer   pointer;
++typedef _Reference reference;
++};
+ /*
+  * DOMHelpers
+  * 
