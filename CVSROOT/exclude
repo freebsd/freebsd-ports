@@ -21,6 +21,7 @@
 # Skip all ports files except for Makefiles.
 ^ports/.*(?<!/Makefile)$
 
+^src/contrib/gdb/
 ^src/contrib/nvi/catalog
 ^src/crypto/openssh/
 ^src/etc/minfree
