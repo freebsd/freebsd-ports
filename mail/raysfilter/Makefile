@@ -33,7 +33,7 @@ DOCSFILES=	rays-filter.html install.html configure.html operate.html \
 
 .if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
 || defined(SENDMAIL_MILTER_IN_BASE)
-LIBS+=		-lmilter -lsm -lsmutil
+LIBS+=		-lmilter
 .else
 LIBS+=		-lmilter -lsmutil
 .endif
