@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.18 2003-10-29 11:36:44 sumikawa Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.19 2004-06-09 06:16:00 kris Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -668,4 +668,3 @@ www/icons/world2.png
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
-@dirrm www

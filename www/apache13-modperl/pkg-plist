@@ -669,7 +669,6 @@ www/icons/world2.png
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
-@unexec rmdir %D/www 2>/dev/null || true
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Connection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Constants.pm

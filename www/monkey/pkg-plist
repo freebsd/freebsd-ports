@@ -30,4 +30,3 @@ www/data/php/index.php
 @dirrm www/data/docs
 @dirrm www/data
 @dirrm www/cgi-bin
-@dirrm www

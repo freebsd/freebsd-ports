@@ -533,4 +533,3 @@ www/data.default/achievo/version.inc
 @dirrm www/data.default/achievo/atk
 @dirrm www/data.default/achievo
 @unexec rmdir www/data.default 2>/dev/null || true
-@unexec rmdir www 2>/dev/null || true
