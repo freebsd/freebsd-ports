@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
-LDAP_PORT?=	net/openldap20-client
+LDAP_PORT?=	net/openldap21-client
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	YES
 USE_GCC=3.2
