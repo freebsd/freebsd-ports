@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.193 1999/06/11 00:10:41 steve Exp $
+# $Id: Makefile,v 1.194 1999/06/23 19:54:23 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -130,6 +130,7 @@
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
     SUBDIR += p5-TimeDate
+    SUBDIR += p5-Time-HiRes
     SUBDIR += p5-TraceFuncs
     SUBDIR += patch
     SUBDIR += pccts
