@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Regexp/Shellish.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Shellish/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Shellish
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Regexp 2>/dev/null || true

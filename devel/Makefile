@@ -798,6 +798,7 @@
     SUBDIR += p5-Rcs-Agent
     SUBDIR += p5-ReadLine-Gnu
     SUBDIR += p5-ReadLine-Perl
+    SUBDIR += p5-Regexp-Shellish
     SUBDIR += p5-Religion
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
