@@ -1,5 +1,5 @@
---- config.h.orig	Fri Jan 10 20:35:43 1997
-+++ config.h	Sun May 30 11:50:50 1999
+--- config.h-	Thu Sep  2 23:33:48 1999
++++ config.h	Thu Sep 30 11:23:50 1999
 @@ -51,7 +51,11 @@
   *  サウンド関係の設定
   */
