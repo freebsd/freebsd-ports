@@ -1,25 +1,49 @@
 # New ports collection makefile for:	octave
-# Version required:	1.1.1
-# Date created:		26 Apr 1995
-# Whom:			thomas@ghpc8.ihf.rwth-aachen.de
+# Version required:	2.0.1
+# Date created:		12 Jan 1997
+# Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.5 1996/11/18 14:05:34 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/12 08:03:38 tg Exp $
 #
 
-DISTNAME=	octave-1.1.1
+DISTNAME=	octave-2.0.1
 CATEGORIES=	math 
-MASTER_SITES=	ftp://ftp.che.utexas.edu/pub/octave/
+MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	chuckr@FreeBSD.ORG
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-BROKEN=		"Sorry, doesn't link with gcc-2.7.2.1 in our tree"
-
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	/usr/bin/env "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTALL_SCRIPT)"
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --enable-info --enable-shared --host=i386-unknown-freebsd
 USE_GMAKE=	yes
-PATCH_STRIP=	-p1
-MAKE_FLAGS=	CFLAGS="-O2 -pipe -m486" CXXFLAGS="-O2 -pipe -m486" LDFLAGS="-s" -f
 MAN1=		octave.1
+
+post-configure:
+	(cd $(WRKDIR)/octave-2.0.1/scripts; ./configure)
+
+OCTAVE-INFO= octave.info octave.info-1 octave.info-10 octave.info-11 octave.info-12 octave.info-2 octave.info-3 octave.info-4 octave.info-5 octave.info-6 octave.info-7 octave.info-8 octave.info-9
+LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
+
+post-install:
+	mv ${PREFIX}/lib/libcruft.so ${PREFIX}/lib/libcruft.so.2.0
+	mv ${PREFIX}/lib/liboctave.so ${PREFIX}/lib/liboctave.so.2.0
+	mv ${PREFIX}/lib/liboctinterp.so ${PREFIX}/lib/liboctinterp.so.2.0
+	mv ${PREFIX}/lib/libtinst.so ${PREFIX}/lib/libtinst.so.2.0
+	/sbin/ldconfig -m $(PREFIX)/lib
+.ifndef NOPORTDOCS
+.for file in $(OCTAVE-INFO)
+	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/$(file) $(PREFIX)/info
+.endfor
+.for file in $(LIBOCTAVE-INFO)
+	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/$(file) $(PREFIX)/info
+.endfor
+	$(MKDIR) $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/octave.ps $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/liboctave.ps $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-letter.ps $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-a4.ps $(PREFIX)/share/octave/doc
+.endif
 
 .include <bsd.port.mk>
