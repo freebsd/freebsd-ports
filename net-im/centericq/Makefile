@@ -12,8 +12,14 @@ MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 400010
+LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+.endif
+
 WRKSRC=		${WRKDIR}/center
 USE_GMAKE=	yes
+CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include -I/usr/include
 
 post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:' ${WRKSRC}/centerICQ.cc
@@ -26,4 +32,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/center
 	${INSTALL_DATA} ${WRKSRC}/sound/* ${PREFIX}/share/center
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
