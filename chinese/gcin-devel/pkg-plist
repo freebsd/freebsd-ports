@@ -12,6 +12,7 @@ lib/menu/gcin-setup
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gcin-utf8-setup
 %%DATADIR%%/script/modify-XIM
+%%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/dayi3.gtab
