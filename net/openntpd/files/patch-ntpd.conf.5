@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- ntpd.conf.5.orig	Sun Jul 18 14:25:21 2004
++++ ntpd.conf.5	Sun Jul 18 14:25:44 2004
+@@ -80,8 +80,8 @@
+ .Ed
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/ntpd.confXXX" -compact
+-.It Pa /etc/ntpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ntpd.confXXX" -compact
++.It Pa %%PREFIX%%/etc/ntpd.conf
+ default
+ .Xr ntpd 8
+ configuration file

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	20040714p
+PORTVERSION=	20040718p
 CATEGORIES=	net
 MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
 		http://dtucker.freeshell.org/openntpd/
@@ -15,12 +15,15 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
 
 USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8
 
 pre-build:
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
 		-e 's:%%RC_SUBR%%:${RC_SUBR}:g' \
 		${FILESDIR}/openntpd.sh >${WRKDIR}/openntpd.sh
