@@ -1036,6 +1036,7 @@ cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
 crypto		src/crypto
 crypto_kerberosIV	src/crypto/kerberosIV
+crypto_heimdal	src/crypto/heimdal
 crypto_libdes	src/crypto/libdes
 crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
