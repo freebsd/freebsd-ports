@@ -1,151 +1,35 @@
-*** Imlib.tmpl.orig	Tue Nov 25 08:18:26 1997
---- Imlib.tmpl	Thu Nov 27 04:17:35 1997
-***************
-*** 5,18 ****
-  XCOMM	----------------------------
-  XCOMM	The root directory of where the installation will put include and lib.
-  
-! IMLROOT	= /usr/X11
-  
-  XCOMM	imlib custom configuration file
-  XCOMM	--------------------------------
-  XCOMM	Change the following to where you would like imrc and imlib.pal 
-  XCOMM	to be loaded
-  
-! CNFDIR = /etc
-  
-  XCOMM	Location of the NetPBM Utilities
-  XCOMM	--------------------------------
---- 5,18 ----
-  XCOMM	----------------------------
-  XCOMM	The root directory of where the installation will put include and lib.
-  
-! IMLROOT	= ${X11BASE}
-  
-  XCOMM	imlib custom configuration file
-  XCOMM	--------------------------------
-  XCOMM	Change the following to where you would like imrc and imlib.pal 
-  XCOMM	to be loaded
-  
-! CNFDIR = ${X11BASE}/etc/imlib
-  
-  XCOMM	Location of the NetPBM Utilities
-  XCOMM	--------------------------------
-***************
-*** 25,31 ****
-  #ifdef	SunArchitecture
-  NETPBM_DIR = /usr/openwin/bin
-  #else
-! NETPBM_DIR = /usr/local/bin
-  #endif
-  
-  XCOMM	Location of the IJG JPEG Utilities
---- 25,31 ----
-  #ifdef	SunArchitecture
-  NETPBM_DIR = /usr/openwin/bin
-  #else
-! NETPBM_DIR = ${X11BASE}/bin
-  #endif
-  
-  XCOMM	Location of the IJG JPEG Utilities
-***************
-*** 33,39 ****
-  XCOMM	imlib needs convert and djpeg from the IJG.  This is the location
-  XCOMM	of those files.
-  
-! CONVERT_DIR = /usr/local/bin
-  JPEG_DIR = /usr/local/bin
-  
-  XCOMM	JPEG Library Support
---- 33,39 ----
-  XCOMM	imlib needs convert and djpeg from the IJG.  This is the location
-  XCOMM	of those files.
-  
-! CONVERT_DIR = ${X11BASE}/bin
-  JPEG_DIR = /usr/local/bin
-  
-  XCOMM	JPEG Library Support
-***************
-*** 41,47 ****
-  XCOMM	imlib can use the IJG JPEG library (libjpeg) directly.  If you
-  XCOMM	wish to compile this in, set this to YES.
-  
-! #define DoJPEG  NO
-  
-  XCOMM   PNG Library Support
-  XCOMM   --------------------
---- 41,47 ----
-  XCOMM	imlib can use the IJG JPEG library (libjpeg) directly.  If you
-  XCOMM	wish to compile this in, set this to YES.
-  
-! #define DoJPEG  YES
-  
-  XCOMM   PNG Library Support
-  XCOMM   --------------------
-***************
-*** 49,62 ****
-  XCOMM	If you wish to compile this in, set this to YES.
-  XCOMM	[NOTE:  This library requires libz be availabel too.]
-  
-! #define DoPNG  NO
-  
-  XCOMM   TIFF Library Support
-  XCOMM   --------------------
-  XCOMM   imlib can use the TIFF library (libtiff) directly.  If you
-  XCOMM   wish to compile this in, set this to YES.
-  
-! #define DoTIFF  NO
-  
-  XCOMM	Shared Library Support
-  XCOMM	----------------------
---- 49,62 ----
-  XCOMM	If you wish to compile this in, set this to YES.
-  XCOMM	[NOTE:  This library requires libz be availabel too.]
-  
-! #define DoPNG  YES
-  
-  XCOMM   TIFF Library Support
-  XCOMM   --------------------
-  XCOMM   imlib can use the TIFF library (libtiff) directly.  If you
-  XCOMM   wish to compile this in, set this to YES.
-  
-! #define DoTIFF  YES
-  
-  XCOMM	Shared Library Support
-  XCOMM	----------------------
-***************
-*** 94,100 ****
-  
-  XCOMM   GNU C v2.xxx flags
-  #if HasGcc2
-! USR_FLAGS = -Wall -pedantic
-  
-  XCOMM   Solaris v2.6 or Solaris v2.x
-  #elif defined(HasSunC) || defined(SunArchitecture) && defined(SVR4)    
---- 94,100 ----
-  
-  XCOMM   GNU C v2.xxx flags
-  #if HasGcc2
-! USR_FLAGS += -Wall -pedantic
-  
-  XCOMM   Solaris v2.6 or Solaris v2.x
-  #elif defined(HasSunC) || defined(SunArchitecture) && defined(SVR4)    
-*** Imakefile.orig	Tue Nov 25 08:38:34 1997
---- Imakefile	Thu Nov 27 04:14:06 1997
-***************
-*** 21,27 ****
-  XCOMM   Library we are building and the revision
-  
-  IMLLIBNAME=Im
-! IMLLIBREV=0.11
-  
-  XCOMM	These are the directories we are going to also run imake and make in.
-  XCOMM	IHaveSubdirs tells imake to actually look at $(SUBDIRS)
---- 21,27 ----
-  XCOMM   Library we are building and the revision
-  
-  IMLLIBNAME=Im
-! IMLLIBREV=4.0
-  
-  XCOMM	These are the directories we are going to also run imake and make in.
-  XCOMM	IHaveSubdirs tells imake to actually look at $(SUBDIRS)
+--- configure.orig	Tue Feb 17 17:22:20 1998
++++ configure	Tue Feb 17 17:23:31 1998
+@@ -2462,14 +2462,14 @@
+ echo "********** Disabling libpng support ************"
+ fi
+ 
+-echo $ac_n "checking for TIFFOpen in -ltiff""... $ac_c" 1>&6
+-echo "configure:2467: checking for TIFFOpen in -ltiff" >&5
+-ac_lib_var=`echo tiff'_'TIFFOpen | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for TIFFOpen in -ltiff34""... $ac_c" 1>&6
++echo "configure:2467: checking for TIFFOpen in -ltiff34" >&5
++ac_lib_var=`echo tiff34'_'TIFFOpen | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltiff \
++LIBS="-ltiff34 \
+ -L/usr/lib -L/lib -L/usr/local/lib -L/usr/X11/lib -L/usr/local/X11/lib \
+ -L/usr/openwin/lib -lc -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+@@ -2500,11 +2500,11 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   \
+-extras="$extras -DBUILTIN_TIFF"; LIBS="$LIBS -lm -ltiff"
++extras="$extras -DBUILTIN_TIFF"; LIBS="$LIBS -lm -ltiff34"
+ else
+   echo "$ac_t""no" 1>&6
+ \
+-echo "********** Disabling libtiff support ************"
++echo "********** Disabling libtiff34 support ************"
+ fi
+ 
+ echo $ac_n "checking for DGifOpenFileName in -lgif""... $ac_c" 1>&6

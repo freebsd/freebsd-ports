@@ -1,0 +1,79 @@
+--- Makefile.in.orig	Tue Feb 10 07:55:09 1998
++++ Makefile.in	Tue Feb 17 17:49:08 1998
+@@ -29,7 +29,7 @@
+ INSTALL     = @INSTALL@
+ INSTALLBIN  = $(INSTALL) -m 755
+ INSTALLLIB  = $(INSTALL) -m 644
+-SYS_CONFIG  = /etc
++SYS_CONFIG  = /usr/X11R6/etc/imlib
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o
+@@ -39,14 +39,14 @@
+ 
+ top_srcdir = @top_srcdir@
+ srcdir     = @srcdir@
+-prefix      = /usr
+-exec_prefix = /usr
++prefix      = /usr/X11R6
++exec_prefix = /usr/X11R6
+ bindir      = $(exec_prefix)/bin
+-datadir     = /usr/lib
+-incdir      = /usr/include
+-libdir      = /usr/lib
+-exe2dir     = /usr/bin
+-mandir      = /usr/man
++datadir     = /usr/X11R6/share
++incdir      = /usr/X11R6/include
++libdir      = /usr/X11R6/lib
++exe2dir     = /usr/X11R6/bin
++mandir      = /usr/X11R6/man
+ 
+ LN_S   = @LN_S@
+ RANLIB = @RANLIB@
+@@ -79,7 +79,7 @@
+ 
+ LIB         = \
+ -lm           \
+--ltiff        \
++-ltiff34      \
+ -ljpeg        \
+ -lpng         \
+ -lgif         \
+@@ -94,6 +94,7 @@
+ @X_LIBS@       \
+ @X_EXTRA_LIBS@ \
+ $(LIB)         \
++-I/usr/local/lib	\
+ $(XLIB)
+ 
+ OPT=                           \
+@@ -110,8 +111,8 @@
+ @CFLAGS@                \
+ @X_CFLAGS@              \
+ -fPIC                   \
+--shared                 \
+ -I.                     \
++-I/usr/local/include	\
+ $(OPT)
+ 
+ all: $(lib)
+@@ -121,6 +122,9 @@
+ 	$(INSTALLBIN) $(lib) $(libdir)/$(lib)
+ 	/bin/ln -sf $(libdir)/$(lib) $(libdir)/$(libname2)
+ 	/bin/ln -sf $(libdir)/$(lib) $(libdir)/$(libname).so
++	if [ ! -d $(SYS_CONFIG) ]; then \
++		mkdir $(SYS_CONFIG); \
++	fi
+ 	$(INSTALL) $(conf_dir)/imrc $(SYS_CONFIG)/imrc
+ 	$(INSTALL) $(conf_dir)/im_palette.pal $(SYS_CONFIG)/im_palette.pal
+ 	$(INSTALL) Imlib.h $(incdir)/Imlib.h
+@@ -146,7 +150,7 @@
+ 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+ 
+ $(lib): $(OBJS) 
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS) -Wl,-soname,$(libname2)
++	ld -Bshareable -o libImlib.so.1.0 $(OBJS) /usr/lib/c++rt0.o
+ 	@echo "--------------------------------------------------------------------------------"
+ 	@echo "Imlib compiled."
+ 	@echo ""
