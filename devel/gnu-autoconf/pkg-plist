@@ -55,3 +55,9 @@ share/autoconf/m4sugar/version.m4
 @dirrm share/autoconf/autoconf
 @dirrm share/autoconf/Autom4te
 @dirrm share/autoconf
+@unexec /bin/rmdir %D/share/aclocal 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/include 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/bin 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D 2>/dev/null || /usr/bin/true

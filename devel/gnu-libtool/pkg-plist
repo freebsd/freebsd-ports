@@ -26,3 +26,9 @@ share/libtool/libltdl/missing
 share/libtool/ltmain.sh
 @dirrm share/libtool/libltdl
 @dirrm share/libtool
+@unexec /bin/rmdir %D/share/aclocal 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/include 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/bin 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D 2>/dev/null || /usr/bin/true

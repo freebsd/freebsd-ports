@@ -117,3 +117,9 @@ share/automake-1.8/ylwrap
 @dirrm share/automake-1.8/Automake
 @dirrm share/automake-1.8
 @dirrm share/aclocal-1.8
+@unexec /bin/rmdir %D/share/aclocal 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/include 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/bin 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D 2>/dev/null || /usr/bin/true
