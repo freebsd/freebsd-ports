@@ -21,6 +21,8 @@ NO_CDROM=	'old version, not worth the cost in real estate'
 
 LATEST_LINK=	gcc28
 
+DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
