@@ -23,8 +23,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-DEPENDS=	${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Doit etre telecharge depuis le site web de Sun'
@@ -33,7 +32,7 @@ NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
-LD_PATH=	${TMPDIR}:${WRKSRC}:/compat/linux/lib:/compat/linux/usr/lib
+LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/linux/lib:${LINUXBASE}/usr/lib
 
 .include <bsd.port.pre.mk>
 
@@ -43,8 +42,8 @@ pre-fetch:
 	@${ECHO} OS-VERSION ${OSVERSION}
 	@${ECHO}
 	@${ECHO} Staroffice depend d\'une modification du script
-	@${ECHO} src/sys/i386/linux/linux_sysvec. Celui-ci doit etre
-	@${ECHO} au moins en revision 1.55.2.1.
+	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c Celui-ci
+	@${ECHO} Doit etre au moins en revision 1.55.2.1.
 	@${ECHO}
 	@${ECHO} Veuillez mettre à jour vers FreeBSD 4.1 SVP
 	@${ECHO}
@@ -99,11 +98,11 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-.if exists(/compat/linux/${PREFIX})
-	@${LN} -fs /compat/linux/${PREFIX}/office52 ${PREFIX}/office52
+.if exists(${LINUXBASE}/${PREFIX})
+	@${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/office52/program/setup ]; then \
 		${ECHO} ; \
 		${ECHO} Ignorez le message d\'erreur. StarOffice5.2 a correctement ; \
