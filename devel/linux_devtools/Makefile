@@ -52,7 +52,7 @@ LANG=			en
 
 .include <bsd.port.pre.mk>
 
-UPDATES=		XFree86-devel-4.2.1-21.i386.rpm
+UPDATES=		XFree86-devel-4.2.1-23.i386.rpm
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
