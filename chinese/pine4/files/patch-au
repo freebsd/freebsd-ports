@@ -1,5 +1,14 @@
 --- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
-+++ pine/osdep/os-bsf.h	Tue Aug  4 12:42:19 1998
++++ pine/osdep/os-bsf.h	Wed Aug 19 10:45:25 1998
+@@ -74,7 +74,7 @@
+    default-composer-hdrs or customized-hdrs to get at it. Instead of
+    defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
+    changing is to put the feature "no-allow-changing-from" in the
+-   /usr/local/lib/pine.conf.fixed file.
++   /usr/local/etc/pine.conf.fixed file.
+  ----*/
+ /* #define NEVER_ALLOW_CHANGING_FROM /* probably not needed */
+ 
 @@ -87,7 +87,7 @@
     NOTE: You'll also have to make sure the appropriate osdep/postreap.*
           file is included in the os-*.ic file for your system.
