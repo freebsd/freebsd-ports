@@ -3248,6 +3248,7 @@ ipex		ports/net/ipex
 ipfm		ports/net-mgmt/ipfm
 ipfmeta		ports/security/ipfmeta
 ipfw-graph	ports/net/ipfw-graph
+ipfw2dshield	ports/security/ipfw2dshield
 ipgrab		ports/net/ipgrab
 iplog		ports/net/iplog
 ipsc		ports/sysutils/ipsc
