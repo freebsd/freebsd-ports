@@ -109,15 +109,22 @@ NO_PERL_WRAPPER=yo
 EOF
 	close MK;
 
-	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
-	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
-	while (<MPOLD>) {
-		print MPNEW <<EOF if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/\S+/man\s*$|;
+	my $perl_port_manpath = <<EOF;
 # -- use.perl generated line -- #
 OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/man
 EOF
+
+	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
+	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
+	my $modified = 0;
+	while (<MPOLD>) {
+		if (!$modified && m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/\S+/man\s*$|) {
+			print MPNEW $perl_port_manpath;
+			$modified = 1;
+		}
 		print MPNEW;
 	}
+	print MPNEW $perl_port_manpath unless $modified;
 	close MPNEW;
 	close MPOLD;
 	rename '/etc/manpath.config', '/etc/manpath.config.bak';
