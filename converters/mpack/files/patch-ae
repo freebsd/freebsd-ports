@@ -1,0 +1,46 @@
+--- unixos.c.orig	Fri Feb 17 00:39:50 1995
++++ unixos.c	Wed Aug 28 19:56:07 2002
+@@ -80,7 +80,7 @@
+ 
+ /* Create and return directory for a message-id */
+ char *os_idtodir(id)
+-char *id;
++unsigned char *id;
+ {
+     static char buf[4096];
+     char *p;
+@@ -89,7 +89,11 @@
+ 	strcpy(buf, getenv("TMPDIR"));
+     }
+     else {
++#ifdef __FreeBSD__
++	strcpy(buf, "/var/tmp");
++#else
+ 	strcpy(buf, "/usr/tmp");
++#endif
+     }
+     strcat(buf, "/m-prts-");
+     p = getenv("USER");
+@@ -144,7 +148,7 @@
+ int flags;
+ params contentParams;
+ {
+-    char *p;
++    unsigned char *p;
+     static int filesuffix=0;
+     char buf[128], *descfname=0;
+     FILE *outfile = 0;
+@@ -160,6 +164,13 @@
+     /* Get rid of leading ~ or ~/ */
+     while (*fname == '~' || *fname == '/') fname++;
+     
++    for (p=fname; *p; p += 3) {
++	if (!strncmp(p, "../", 3)) {
++	    p[0] = p[1] = 'X';
++	} else
++	    break;
++    }
++
+     /* Clean out bad characters, create directories along path */
+     for (p=fname; *p; p++) {
+ 	if (*p == '/') {

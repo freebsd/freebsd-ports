@@ -1,0 +1,26 @@
+--- uudecode.c.orig	Fri Feb 17 00:39:50 1995
++++ uudecode.c	Wed Aug 28 19:59:49 2002
+@@ -495,12 +495,12 @@
+  */
+ int
+ parseSubject(subject, fnamep, partp, npartsp)
+-char *subject;
++unsigned char *subject;
+ char **fnamep;
+ int *partp;
+ int *npartsp;
+ {
+-    char *scan, *bak, *start;
++    unsigned char *scan, *bak, *start;
+     int part = -1, nparts = 0, hasdot = 0;
+ 
+     /* No subject header */
+@@ -524,7 +524,7 @@
+      * representation syntax
+      */
+     do {
+-	while (*scan != '\n' && isprint(*scan)
++	while (*scan != '\n'
+ 	       && !isalnum(*scan) && *scan != '_') ++scan;
+ 	*fnamep = start = scan;
+ 	while (isalnum(*scan) || *scan == '-' || *scan == '+' || *scan == '&'
