@@ -228,6 +228,7 @@
     SUBDIR += sfio
     SUBDIR += shtool
     SUBDIR += sip
+    SUBDIR += smapi
     SUBDIR += stlport
     SUBDIR += str
     SUBDIR += swarm
