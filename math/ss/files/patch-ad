@@ -1,0 +1,20 @@
+--- interp.c.orig	Tue Apr 20 19:01:03 1999
++++ interp.c	Tue Apr 20 19:03:15 1999
+@@ -560,7 +560,7 @@
+ #if defined(__GO32__) || defined(__NeXT__)
+   	time_t time (time_t *) ;
+ #else
+-#  ifndef OSF1
++#  if !defined(OSF1) && !defined(__FreeBSD__)
+ 	long time();
+ #  endif
+ #endif
+@@ -571,7 +571,7 @@
+ 	long tloc;
+ 
+   if (which == NOW) {
+-#if defined(__GO32__) || defined(__NeXT__)
++#if defined(__GO32__) || defined(__NeXT__) || defined(__FreeBSD__)
+     return (double) time ((time_t *) NULL) ;
+ #else
+     return (double) time((long *)0);    
