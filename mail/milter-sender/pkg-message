@@ -18,4 +18,11 @@ So, if one has observed such behaviour before, or just for the sake
 of stability, he should change the CacheType= setting to flatfile in
 milter-sender.cf and move the old cache file away.
 
+A new solution to the problem exists, which may or may not serve better.
+One may build a BerkeleyDB v.2+ -enabled Sendmail (mail/sendmail port
+has now got knobs for it). This way is, of course, a bit more tricky,
+as in the very minimum one should also rebuild this port with
+corresponding BDB settings (see Makefile), may be a couple of other
+programs that use sendmail databases, and rebuild the very databases.
+
 ************************************************************************
