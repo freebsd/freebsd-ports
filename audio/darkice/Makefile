@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-lame-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}
 
-MAN1=	darkice.1
-MAN5=	darkice.cfg.5
+MAN1=		darkice.1
+MAN5=		darkice.cfg.5
+PLIST_FILES=	bin/darkice etc/darkice.cfg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
