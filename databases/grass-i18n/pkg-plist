@@ -145,7 +145,6 @@ grass5/bin/m.ll2gc
 grass5/bin/m.ll2u
 grass5/bin/m.lulc.USGS
 grass5/bin/m.lulc.read
-grass5/bin/m.proj
 grass5/bin/m.proj2
 grass5/bin/m.qcalc
 grass5/bin/m.region.ll
@@ -278,6 +277,7 @@ grass5/bin/r.spreadpath
 grass5/bin/r.statistics
 grass5/bin/r.stats
 grass5/bin/r.sum
+grass5/bin/r.sun
 grass5/bin/r.sunmask
 grass5/bin/r.support
 grass5/bin/r.surf.area
@@ -325,6 +325,7 @@ grass5/bin/s.territory
 grass5/bin/s.to.rast
 grass5/bin/s.to.vect
 grass5/bin/s.univar
+grass5/bin/s.vol.rst
 grass5/bin/s.voronoi
 grass5/bin/s.what
 grass5/bin/s.windavg
@@ -347,7 +348,6 @@ grass5/bin/v.export
 grass5/bin/v.extract
 grass5/bin/v.import
 grass5/bin/v.in.arc
-grass5/bin/v.in.arc.pg
 grass5/bin/v.in.ascii
 grass5/bin/v.in.atlas
 grass5/bin/v.in.dlg
@@ -363,6 +363,7 @@ grass5/bin/v.in.tig.basic
 grass5/bin/v.in.tig.lndmk
 grass5/bin/v.in.transects
 grass5/bin/v.info
+grass5/bin/v.label
 grass5/bin/v.llabel
 grass5/bin/v.mkgrid
 grass5/bin/v.mkquads
@@ -1349,6 +1350,7 @@ grass5/documents/html/pg.in.dbf.html
 grass5/documents/html/photo.2image.html
 grass5/documents/html/photo.2target.html
 grass5/documents/html/photo.camera.html
+grass5/documents/html/photo.camera.png
 grass5/documents/html/photo.html
 grass5/documents/html/photo.init.html
 grass5/documents/html/photo.rectify.html
@@ -1495,6 +1497,7 @@ grass5/documents/html/r.surf.random.html
 grass5/documents/html/r.thin.html
 grass5/documents/html/r.timestamp.html
 grass5/documents/html/r.to.gnuplot.html
+grass5/documents/html/r.to.pg.html
 grass5/documents/html/r.to.sites.html
 grass5/documents/html/r.topidx.html
 grass5/documents/html/r.topmodel.html
@@ -1526,6 +1529,7 @@ grass5/documents/html/r3.to.sites.html
 grass5/documents/html/raster.html
 grass5/documents/html/rgb.hsv.sh.html
 grass5/documents/html/s.buffer.html
+grass5/documents/html/s.cellstats.html
 grass5/documents/html/s.datum.shift.html
 grass5/documents/html/s.db.rim.html
 grass5/documents/html/s.delaunay.html
@@ -1541,6 +1545,7 @@ grass5/documents/html/s.in.mif.html
 grass5/documents/html/s.in.shape.html
 grass5/documents/html/s.info.html
 grass5/documents/html/s.kcv.html
+grass5/documents/html/s.kernel.html
 grass5/documents/html/s.label.html
 grass5/documents/html/s.mask.html
 grass5/documents/html/s.medp.html
@@ -1582,6 +1587,7 @@ grass5/documents/html/sites.html
 grass5/documents/html/sites.occur.html
 grass5/documents/html/sites.report.html
 grass5/documents/html/slide.show.sh.html
+grass5/documents/html/spearfish_directorytree.html
 grass5/documents/html/split.sh.html
 grass5/documents/html/terminology.html
 grass5/documents/html/tig.rim.sh.html
@@ -1660,6 +1666,7 @@ grass5/documents/html/v.reclass.inf.html
 grass5/documents/html/v.reclass.pg.html
 grass5/documents/html/v.reclass.scs.html
 grass5/documents/html/v.report.html
+grass5/documents/html/v.rm.dangles.html
 grass5/documents/html/v.rmdup.html
 grass5/documents/html/v.rmedge.html
 grass5/documents/html/v.scale.random.html
@@ -1770,6 +1777,7 @@ grass5/documents/raster.html
 grass5/documents/scripts.html
 grass5/documents/searchhtml.html
 grass5/documents/sites.html
+grass5/documents/spearfish_directorytree.html
 grass5/documents/terminology.html
 grass5/documents/tips_and_tricks.html
 grass5/documents/vector.html
@@ -2114,6 +2122,7 @@ grass5/etc/bin/cmd/r.spreadpath
 grass5/etc/bin/cmd/r.statistics
 grass5/etc/bin/cmd/r.stats
 grass5/etc/bin/cmd/r.sum
+grass5/etc/bin/cmd/r.sun
 grass5/etc/bin/cmd/r.sunmask
 grass5/etc/bin/cmd/r.support
 grass5/etc/bin/cmd/r.surf.area
@@ -2159,6 +2168,7 @@ grass5/etc/bin/cmd/s.territory
 grass5/etc/bin/cmd/s.to.rast
 grass5/etc/bin/cmd/s.to.vect
 grass5/etc/bin/cmd/s.univar
+grass5/etc/bin/cmd/s.vol.rst
 grass5/etc/bin/cmd/s.voronoi
 grass5/etc/bin/cmd/s.what
 grass5/etc/bin/cmd/s.windavg
@@ -2192,6 +2202,7 @@ grass5/etc/bin/cmd/v.in.tig.basic
 grass5/etc/bin/cmd/v.in.tig.lndmk
 grass5/etc/bin/cmd/v.in.transects
 grass5/etc/bin/cmd/v.info
+grass5/etc/bin/cmd/v.label
 grass5/etc/bin/cmd/v.llabel
 grass5/etc/bin/cmd/v.mkgrid
 grass5/etc/bin/cmd/v.mkquads
@@ -2267,7 +2278,6 @@ grass5/etc/bin/inter/i.target
 grass5/etc/bin/inter/i.vpoints
 grass5/etc/bin/inter/m.examine.tape
 grass5/etc/bin/inter/m.futil
-grass5/etc/bin/inter/m.proj
 grass5/etc/bin/inter/p.colors
 grass5/etc/bin/inter/p.icons
 grass5/etc/bin/inter/p.labels
@@ -2300,7 +2310,6 @@ grass5/etc/bin/inter/v.export
 grass5/etc/bin/inter/v.extract
 grass5/etc/bin/inter/v.import
 grass5/etc/bin/inter/v.in.arc
-grass5/etc/bin/inter/v.in.arc.pg
 grass5/etc/bin/inter/v.mkgrid
 grass5/etc/bin/inter/v.out.mapinfo
 grass5/etc/bin/inter/v.out.moss
@@ -3214,6 +3223,7 @@ grass5/etc/imagery/photo.target
 grass5/etc/imagery/subgroup
 grass5/etc/imagery/title
 grass5/etc/in_arc
+grass5/etc/license
 grass5/etc/lister/cell
 grass5/etc/lister/dig
 grass5/etc/lister/site_lists
@@ -3298,14 +3308,14 @@ grass5/etc/nviz2.2/scripts/unique.tcl
 grass5/etc/nviz2.2/scripts/widgets.tcl
 grass5/etc/nviz2.2/scripts/wirecolorPopup.tcl
 grass5/etc/paint/char.test
-grass5/etc/paint/driver/ppm
-grass5/etc/paint/driver/preview
-grass5/etc/paint/driver/preview2
 grass5/etc/paint/driver.rsh
 grass5/etc/paint/driver.sh/preview
 grass5/etc/paint/driver.sh/preview2
 grass5/etc/paint/driver.shell
 grass5/etc/paint/driver.uninst/ppm
+grass5/etc/paint/driver/ppm
+grass5/etc/paint/driver/preview
+grass5/etc/paint/driver/preview2
 grass5/etc/paint/header
 grass5/etc/paint/hres.test
 grass5/etc/paint/patcc
@@ -3381,8 +3391,11 @@ grass5/locale/ru/LC_MESSAGES/g.column.pg.mo
 grass5/locale/ru/LC_MESSAGES/g.select.pg.mo
 grass5/locale/ru/LC_MESSAGES/g.stats.pg.mo
 grass5/locale/ru/LC_MESSAGES/g.table.pg.mo
+grass5/locale/ru/LC_MESSAGES/libgis.mo
+grass5/locale/ru/LC_MESSAGES/libraster.mo
 grass5/locale/ru/LC_MESSAGES/pg.in.dbf.mo
 grass5/locale/ru/LC_MESSAGES/s.surf.rst.mo
+grass5/locale/ru/LC_MESSAGES/v.digit.mo
 grass5/locale/ru/LC_MESSAGES/v.in.arc.pg.mo
 grass5/locale/ru/LC_MESSAGES/v.in.shape.pg.mo
 grass5/locale/ru/LC_MESSAGES/v.reclass.pg.mo
@@ -3740,6 +3753,7 @@ grass5/man/man1/r.surf.random.1
 grass5/man/man1/r.thin.1
 grass5/man/man1/r.timestamp.1
 grass5/man/man1/r.to.gnuplot.1
+grass5/man/man1/r.to.pg.1
 grass5/man/man1/r.to.sites.1
 grass5/man/man1/r.topidx.1
 grass5/man/man1/r.topmodel.1
@@ -3770,6 +3784,7 @@ grass5/man/man1/r3.timestamp.1
 grass5/man/man1/r3.to.sites.1
 grass5/man/man1/rgb.hsv.sh.1
 grass5/man/man1/s.buffer.1
+grass5/man/man1/s.cellstats.1
 grass5/man/man1/s.datum.shift.1
 grass5/man/man1/s.db.rim.1
 grass5/man/man1/s.delaunay.1
@@ -3785,6 +3800,7 @@ grass5/man/man1/s.in.mif.1
 grass5/man/man1/s.in.shape.1
 grass5/man/man1/s.info.1
 grass5/man/man1/s.kcv.1
+grass5/man/man1/s.kernel.1
 grass5/man/man1/s.label.1
 grass5/man/man1/s.mask.1
 grass5/man/man1/s.medp.1
@@ -3898,6 +3914,7 @@ grass5/man/man1/v.reclass.inf.1
 grass5/man/man1/v.reclass.pg.1
 grass5/man/man1/v.reclass.scs.1
 grass5/man/man1/v.report.1
+grass5/man/man1/v.rm.dangles.1
 grass5/man/man1/v.rmdup.1
 grass5/man/man1/v.rmedge.1
 grass5/man/man1/v.scale.random.1
@@ -4123,7 +4140,6 @@ grass5/tcltkgrass/module/i.cluster
 grass5/tcltkgrass/module/i.fft
 grass5/tcltkgrass/module/i.gensig
 grass5/tcltkgrass/module/i.gensigset
-grass5/tcltkgrass/module/i.grey.scale
 grass5/tcltkgrass/module/i.his.rgb
 grass5/tcltkgrass/module/i.ifft
 grass5/tcltkgrass/module/i.in.erdas
@@ -4200,6 +4216,7 @@ grass5/tcltkgrass/module/r.out.tiff
 grass5/tcltkgrass/module/r.patch
 grass5/tcltkgrass/module/r.poly
 grass5/tcltkgrass/module/r.profile
+grass5/tcltkgrass/module/r.proj
 grass5/tcltkgrass/module/r.random
 grass5/tcltkgrass/module/r.reclass
 grass5/tcltkgrass/module/r.report
@@ -4217,12 +4234,14 @@ grass5/tcltkgrass/module/r.transect
 grass5/tcltkgrass/module/r.volume
 grass5/tcltkgrass/module/r.watershed
 grass5/tcltkgrass/module/r.what
+grass5/tcltkgrass/module/s.cellstats
 grass5/tcltkgrass/module/s.geom
 grass5/tcltkgrass/module/s.in.ascii
 grass5/tcltkgrass/module/s.in.garmin
 grass5/tcltkgrass/module/s.info
 grass5/tcltkgrass/module/s.mask
 grass5/tcltkgrass/module/s.out.ascii
+grass5/tcltkgrass/module/s.proj
 grass5/tcltkgrass/module/s.surf.idw
 grass5/tcltkgrass/module/s.surf.krig
 grass5/tcltkgrass/module/s.surf.rst
@@ -4418,6 +4437,8 @@ grass5/txt/WEIGHT/dir
 grass5/txt/WEIGHT/general
 grass5/txt/WEIGHT/intro
 grass5/txt/WEIGHT/syntax
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm grass5/txt/WEIGHT
 @dirrm grass5/txt/MONITOR
 @dirrm grass5/txt/DIGIT2

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	5.0.0
-PORTREVISION=	2
+PORTVERSION=	5.0.2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \
@@ -36,7 +35,7 @@ RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude *CVS*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USE_XLIB=	yes
 USE_MESA=	yes
