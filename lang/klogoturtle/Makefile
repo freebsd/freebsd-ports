@@ -9,12 +9,11 @@ PORTVERSION=	0.5
 CATEGORIES=	lang kde
 MASTER_SITES=	http://klogoturtle.sourceforge.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	LOGO Interpreter for the KDE Desktop
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=		yes
 
 post-patch:
