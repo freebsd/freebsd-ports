@@ -7,6 +7,7 @@
 
 PORTNAME=	WebMagick
 PORTVERSION=    2.03p1
+PORTREVISION=   1
 CATEGORIES=	www graphics
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     webmagick
@@ -24,6 +25,10 @@ CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_htimage="" \
 		webmagick_cv_maptype=ncsa \
 		PERL=${PERL}
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ENV+=with_x=no
+.endif
 
 MAN1=		webmagick.1
 
