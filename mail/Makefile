@@ -158,6 +158,7 @@
     SUBDIR += tkrat2
     SUBDIR += vbsfilter
     SUBDIR += vpopmail
+    SUBDIR += vqadmin
     SUBDIR += vrfy
     SUBDIR += wanderlust-emacs
     SUBDIR += wanderlust-emacs20

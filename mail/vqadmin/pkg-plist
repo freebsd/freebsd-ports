@@ -1,0 +1,17 @@
+bin/vqadmin
+www/cgi-bin.default/vqadmin/html/auth_failed.html
+www/cgi-bin.default/vqadmin/html/de
+www/cgi-bin.default/vqadmin/html/edit.html
+www/cgi-bin.default/vqadmin/html/en
+www/cgi-bin.default/vqadmin/html/error.html
+www/cgi-bin.default/vqadmin/html/es
+www/cgi-bin.default/vqadmin/html/fr
+www/cgi-bin.default/vqadmin/html/init_error.html
+www/cgi-bin.default/vqadmin/html/main.html
+www/cgi-bin.default/vqadmin/html/pt
+www/cgi-bin.default/vqadmin/vqadmin.acl
+www/cgi-bin.default/vqadmin/vqadmin.cgi
+@dirrm www/cgi-bin.default/vqadmin/html
+@dirrm www/cgi-bin.default/vqadmin
+@dirrm www/cgi-bin.default
+@dirrm www
