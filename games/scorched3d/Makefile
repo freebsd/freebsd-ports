@@ -33,6 +33,12 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=			"Does not compile on !i386"
+.endif
+
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
 	@cd ${WRKSRC} && aclocal
@@ -43,4 +49,4 @@ pre-install:
 post-install:
 	@ln -fs ${PREFIX}/games/scorched3d/scorched3d ${PREFIX}/bin/scorched3d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
