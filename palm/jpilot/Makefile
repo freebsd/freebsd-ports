@@ -8,6 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99.7
+PORTREVISION=	1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
@@ -20,11 +21,11 @@ CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
 .if (!defined(WITHOUT_NLS))
 USE_GETTEXT=	yes
 .endif
-.if defined(WITH_GTK2)
+.if defined(WITH_GTK1)
+USE_GNOME=	gtk12
+.else
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes
-.else
-USE_GNOME=	gtk12
 .endif
 
 .if !defined(WITHOUT_NLS)
