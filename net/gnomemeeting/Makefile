@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.85.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomemeeting.org/downloads/latest/sources/
 DISTNAME=	GnomeMeeting-0.85.1
@@ -23,6 +24,7 @@ BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 NOCLEANDEPENDS= yes
 
 USE_NEWGCC=     yes
+USE_BISON=	yes
 USE_GNOME=	yes
 USE_AUTOCONF=	yes
 USE_GTK=	yes
@@ -32,7 +34,8 @@ CONFIGURE_ARGS=	 --with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/wor
 		 --with-openh323-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/include \
 		 --with-openh323-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/lib \
 		--with-ldap=/usr/local
-CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
+CONFIGURE_ENV=	OSTYPE=${OPSYS} \
+		LIBS=-L${PREFIX}/lib \
 		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323 \
 
