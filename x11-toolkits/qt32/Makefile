@@ -8,12 +8,12 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
 		ftp://ftp.bero.org/pub/qt/		\
 		ftp://ftp.planetmirror.com.au/pub/trolltech/qt/
-
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
 
 .if defined(DEBUG)
-CONFIGURE_ARGS+= -debug
+CONFIGURE_ARGS+=	-debug
 .endif
 
 .if !defined(WITHOUT_OPENGL)
@@ -68,6 +68,17 @@ ALL_TARGET=	sub-tools
 CFLAGS+=	-O0
 .endif
 
+.if !defined(WITHOUT_OPENGL)
+# Display WITH_OPENGL advisory.
+pre-everything::
+	@${ECHO_MSG} '===> **************************************************'
+	@${ECHO_MSG} '===> NOTE: Use of WITH_OPENGL is not recommended with'
+	@${ECHO_MSG} '===> the NVidia drivers provided by the x11/nvidia port'
+	@${ECHO_MSG} '===> If you use these drivers, we recommend you press'
+	@${ECHO_MSG} '===> Ctrl-C now and set WITHOUT_OPENGL'
+	@${ECHO_MSG} '===> **************************************************'
+.endif
+
 .if ${XFREE86_VERSION} < 4
 BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 .endif # ${XFREE86_VERSION} < 4
@@ -78,6 +89,13 @@ BROKEN+="will result in conflicts between QT3 and QT2!"
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
+	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
+	@cd ${WRKSRC}/include; \
+		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h
+	@cd ${WRKSRC}/extensions/nsplugin/src; \
+		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
+		npunix.c npwin.cpp
 	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
