@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Aug  8 14:40:15 2004
-+++ Makefile.in	Sun Aug  8 18:16:44 2004
+--- Makefile.in.orig	Sun Aug  8 12:40:15 2004
++++ Makefile.in	Wed Mar 16 21:26:50 2005
 @@ -633,21 +633,7 @@
  # lets schedule the perl stuff for installation
  # the special call to install-sh is because the -d switch is not portable
@@ -23,3 +23,14 @@
  
  # rules for building the perl module
  
+@@ -727,8 +713,8 @@
+ site-perl-inst: site-perl-install
+ 
+ site-perl-install: all perl-piped/Makefile perl-shared/Makefile
+-	cd perl-piped && $(MAKE) install
+-	cd perl-shared && $(MAKE) install
++	cd perl-piped && $(MAKE) pure_install
++	cd perl-shared && $(MAKE) pure_install
+ 
+ site-tcl-install: all
+ 	cd tcl && $(MAKE) tcl-install
