@@ -8,7 +8,8 @@
 PORTNAME=	despoof
 PORTVERSION=	0.9
 CATEGORIES=	net security
-MASTER_SITES=	http://razor.bindview.com/tools/files/
+MASTER_SITES=	http://razor.bindview.com/tools/files/ \
+		http://packetstorm.securify.com/UNIX/misc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roam@FreeBSD.org
