@@ -53,7 +53,6 @@ lib/gcc-lib/arm-elf/2.95.2/include/va-v850.h
 lib/gcc-lib/arm-elf/2.95.2/include/varargs.h
 lib/gcc-lib/arm-elf/2.95.2/libgcc.a
 lib/gcc-lib/arm-elf/2.95.2/specs
-@dirrm arm-elf/include
 @dirrm lib/gcc-lib/arm-elf/2.95.2/include
 @dirrm lib/gcc-lib/arm-elf/2.95.2
 @dirrm lib/gcc-lib/arm-elf
