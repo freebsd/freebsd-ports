@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/12/18 10:55:54 jkh Exp $
+# $Id: Makefile,v 1.6 1998/12/20 20:49:13 nik Exp $
 #
 
 DISTNAME=	docproj
@@ -18,6 +18,20 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		tidy:${PORTSDIR}/www/tidy \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html
+
+IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
+
+JADETEX?=
+
+.if empty(JADETEX)
+.BEGIN:
+	@${CAT} pkg/JADETEX
+	@${FALSE}
+.endif
+
+.if ${JADETEX} == yes
+RUN_DEPENDS+= ${PREFIX}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
+.endif
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
