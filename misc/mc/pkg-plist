@@ -1,0 +1,5 @@
+bin/mc
+lib/mc.hlp
+lib/mc.ext
+lib/mc.menu
+man/man1/mc.1.gz

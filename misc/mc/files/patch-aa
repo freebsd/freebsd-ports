@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Sat Jul 15 13:13:47 1995
+--- Makefile.in	Sat Jul 15 13:13:52 1995
+***************
+*** 10,16 ****
+  INSTALL_DATA = @INSTALL_DATA@
+  
+  DEFS = @DEFS@
+! LIBS = @LIBS@ $(XLIB)
+  
+  CFLAGS = @CFLAGS@
+  CPPFLAGS = @CPPFLAGS@ -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DVERSION=\""$(VERSION)"\" $(XINC)
+--- 10,16 ----
+  INSTALL_DATA = @INSTALL_DATA@
+  
+  DEFS = @DEFS@
+! LIBS = @LIBS@ $(XLIB) -lmytinfo
+  
+  CFLAGS = @CFLAGS@
+  CPPFLAGS = @CPPFLAGS@ -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DVERSION=\""$(VERSION)"\" $(XINC)
