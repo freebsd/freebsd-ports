@@ -20,6 +20,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
+BROKEN=		"Does not compile (5.x) or install (4.x)"
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
