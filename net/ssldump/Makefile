@@ -10,7 +10,7 @@ PORTVERSION=	0.9b3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.rtfm.com/ssldump/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSLv3/TLS network protocol analyzer
 
 USE_OPENSSL=	YES

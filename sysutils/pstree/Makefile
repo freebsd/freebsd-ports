@@ -10,7 +10,7 @@ PORTVERSION=	2.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes
