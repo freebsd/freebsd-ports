@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	peops-spu
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	emulators linux
-MASTER_SITES=	http://home.t-online.de/home/PeteBernert/
+MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	spupeopsoss107
+DISTNAME=	spupeopsoss${MAJOR}0${MINOR}
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A PSEmu Pro SPU plugin using the OSS interface (Linux version)
@@ -28,6 +27,10 @@ ONLY_FOR_ARCHS=	i386
 # because as a side effect it brands the binary as FreeBSD.
 STRIP=
 
+MAJOR=		${PORTVERSION:R}
+MINOR=		${PORTVERSION:E}
+PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
+
 .include <bsd.port.pre.mk>
 
 PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
@@ -36,7 +39,7 @@ PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libspuPeopsOSS.so.1.0.7 ${PSEMUPRO_PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libspuPeopsOSS.so.${MAJOR}.0.${MINOR} ${PSEMUPRO_PLUGINS_DIR}
 
 	${MKDIR} ${PSEMUPRO_CFGBINS_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cfgPeopsOSS ${PSEMUPRO_CFGBINS_DIR}
@@ -47,8 +50,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
-		${WRKSRC}/readme_1_7.txt \
-		${WRKSRC}/version_1_7.txt \
+		${WRKSRC}/readme_${MAJOR}_${MINOR}.txt \
+		${WRKSRC}/version_${MAJOR}_${MINOR}.txt \
 		${DOCSDIR}
 .endif
 
