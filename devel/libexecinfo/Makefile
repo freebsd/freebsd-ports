@@ -7,6 +7,7 @@
 
 PORTNAME=	libexecinfo
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://demo.portaone.com/~sobomax/freestuff/
 
