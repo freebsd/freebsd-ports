@@ -1,0 +1,23 @@
+The crawl utility starts a depth-first traversal of the web at the
+specified URLs. It stores all JPEG images that match the configured
+constraints.  Crawl is fairly fast and allows for graceful termination.
+After terminating crawl, it is possible to restart it at exactly
+the same spot where it was terminated. Crawl keeps a persistent
+database that allows multiple crawls without revisiting sites.
+
+The main reason for writing crawl was the lack of simple open source
+web crawlers. Crawl is only a few thousand lines of code and fairly
+easy to debug and customize.
+
+Some of the main features:
+ - Saves encountered JPEG images
+ - Image selection based on regular expressions and size contrainsts
+ - Resume previous crawl after graceful termination
+ - Persistent database of visited URLs
+ - Very small and efficient code
+ - Supports robots.txt
+
+WWW: http://www.monkey.org/~provos/crawl/
+
+- Pete
+petef@databits.net
