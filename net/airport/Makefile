@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	airport
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
-DISTFILES=	configurator${EXTRACT_SUFX} swing${EXTRACT_SUFX}
+DISTFILES=	configurator${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@freebsd.org
 
-RUN_DEPENDS=    ${LOCALBASE}/jre${JDK_VERSION}/bin/jre:${PORTSDIR}/java/jre
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc
 
 USE_ZIP=	YES
 
 NO_WRKSUBDIR=	YES
 
 JDK_VERSION=	1.1.8
+JFC_VERSION=	1.1.1
 
 NO_BUILD=	yes
 
@@ -29,7 +31,10 @@ do-install:
 	@cd ${WRKSRC}; \
 		${MKDIR} ${PREFIX}/share/airport; \
 		${CP} -r ${WRKSRC}/* ${PREFIX}/share/airport; \
-		${SED} -e s,%%PREFIX%%,${PREFIX}, -e s/%%JDK_VERSION%%/${JDK_VERSION}/ < ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
+		${SED} -e s,%%PREFIX%%,${PREFIX},g \
+			-e s/%%JDK_VERSION%%/${JDK_VERSION}/ \
+			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
+			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
 
 .include <bsd.port.post.mk>

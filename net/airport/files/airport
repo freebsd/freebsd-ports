@@ -2,6 +2,6 @@
 
 cd %%PREFIX%%/share/airport
 
-exec %%PREFIX%%/jre%%JDK_VERSION%%/bin/jre -cp "AirportBaseStationConfig.jar:swingall.jar" AirportBaseStationConfigurator
+exec %%PREFIX%%/jdk%%JDK_VERSION%%/bin/jre -cp "%%PREFIX%%/share/java/classes/jfc-%%JFC_VERSION%%/swingall.jar:AirportBaseStationConfig.jar" AirportBaseStationConfigurator
 
 exit 1
