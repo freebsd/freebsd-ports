@@ -28,7 +28,5 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-version-info 2:|-version-info 3:|g' \
-		${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>
