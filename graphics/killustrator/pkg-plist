@@ -33,7 +33,6 @@ share/apps/killustrator/pics/vmirror.xpm
 share/apps/killustrator/pics/tleftalign.xpm
 share/apps/killustrator/pics/tcenteralign.xpm
 share/apps/killustrator/pics/trightalign.xpm
-share/apps/killustrator/pics/lo-killustrator.xpm
 share/apps/killustrator/pics/logo.xpm
 share/apps/killustrator/pics/deletelayer.xpm
 share/apps/killustrator/pics/lowerlayer.xpm
@@ -45,7 +44,6 @@ share/apps/killustrator/pics/joinNodes.xpm
 share/apps/killustrator/pics/moveNode.xpm
 share/apps/killustrator/pics/newNode.xpm
 share/apps/killustrator/pics/split.xpm
-share/apps/killustrator/pics/mini-killustrator.xpm
 share/apps/killustrator/pics/killustrator-intro.gif
 share/doc/HTML/de/killustrator/index-1.html
 share/doc/HTML/de/killustrator/index-2.html
@@ -109,23 +107,10 @@ share/doc/HTML/en/killustrator/rect.png
 share/doc/HTML/en/killustrator/rmpoint.png
 share/doc/HTML/en/killustrator/text.png
 share/doc/HTML/en/killustrator/zoom.png
-share/icons/mini/killustrator.xpm
 share/icons/killustrator.xpm
 share/icons/killustrator-doc.xpm
 share/icons/killustrator-doc-mini.xpm
-share/icons/locolor/killustrator.xpm
-share/locale/da/LC_MESSAGES/killustrator.mo
-share/locale/de/LC_MESSAGES/killustrator.mo
-share/locale/fr/LC_MESSAGES/killustrator.mo
-share/locale/hu/LC_MESSAGES/killustrator.mo
-share/locale/ja/LC_MESSAGES/killustrator.mo
-share/locale/no/LC_MESSAGES/killustrator.mo
-share/locale/pl/LC_MESSAGES/killustrator.mo
-share/locale/pt/LC_MESSAGES/killustrator.mo
-share/locale/pt_BR/LC_MESSAGES/killustrator.mo
-share/locale/sk/LC_MESSAGES/killustrator.mo
 share/mimelnk/application/x-killustrator.kdelnk
-@dirrm share/icons/locolor
 @dirrm share/doc/HTML/de/killustrator
 @dirrm share/doc/HTML/en/killustrator
 @dirrm share/apps/killustrator/pics

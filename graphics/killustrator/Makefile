@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	killustrator
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://wwwiti.cs.uni-magdeburg.de/~sattler/pub/killustrator/
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
 
 USE_QT=		yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
