@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.0.7
+PORTVERSION=	2.2.0a2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
-		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
-		ftp://samba.anu.edu.au/pub/samba/ \
-		ftp://de.samba.org/pub/mirror/samba/ \
-		ftp://se.samba.org/pub/samba/ \
-		ftp://ftp.sunet.se/pub/unix/utilities/samba/
+MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
+		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
+		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
+		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
+MASTER_SITE_SUBDIR= alpha
+DISTNAME=       samba-2.2.0-alpha2
 
-MAINTAINER=	hosokawa@jp.FreeBSD.org
+MAINTAINER=	dwcjr@inethouston.net
 
 # directories
 VARDIR=		/var
@@ -31,7 +32,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
-		--with-lockdir=${VARDIR}/spool/lock --with-privatedir=${SAMBA_PRIVATE}
+		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE}
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
@@ -39,13 +40,14 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
-		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
-		make_unicodemap.1
-MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
+MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 \
+		nmblookup.1 smbclient.1 smbcontrol.1 smbrun.1 \
+		smbsh.1 smbstatus.1 smbtar.1 testparm.1 \
+		testprns.1 wbinfo.1
+MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8 \
-		smbmount.8 smbumount.8 smbmnt.8
+MAN8=		nmbd.8 rpcclient.8 smbd.8 smbmnt.8 smbpasswd.8 \
+		smbspool.8 smbumount.8 swat.8 winbindd.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
@@ -80,9 +82,8 @@ post-install:
 	${ECHO} "private/smbpasswd" >> ${TMPPLIST}
 	${ECHO} "@dirrm private" >> ${TMPPLIST}
 .else
-	${ECHO} "@unexec echo \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
+	${ECHO} "@unexec ${ECHO} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
 .endif
-
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba
