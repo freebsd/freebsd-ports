@@ -1,13 +1,13 @@
 # New ports collection makefile for:    apache HTTPD
 # Version required:     1.3*
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
-# Whom:                 ache@nagual.pp.ru
+# Whom:                 ache@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       apache_1.3.6
-PKGNAME=        apache-1.3.6
+DISTNAME=       apache_1.3.9
+PKGNAME=        apache-1.3.9
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -36,22 +36,14 @@ Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= \
 		 --prefix=${PREFIX} \
-		 --with-layout=GNU \
-		 --sysconfdir=${PREFIX}/etc/apache \
-		 --includedir=${PREFIX}/include/apache \
-		 --localstatedir=/var \
-		 --datadir=${PREFIX}/www \
+		 --with-perl=${PERL} \
+		 --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		 --suexec-docroot=${PREFIX}/www/data \
-		 --proxycachedir=${PREFIX}/www/proxy \
-		 --libexecdir=${PREFIX}/libexec/apache \
 		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
 		 --disable-module=auth_dbm
-
-# Currently perl version don't matter
-#                 --with-perl=${PERL5}
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
