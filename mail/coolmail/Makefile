@@ -1,9 +1,9 @@
 # New ports collection makefile for:	coolmail
 # Version required:		1.3
 # Date created:			Mon  6 Jul 12:00:06 CEST 1998
-# Whom:				Udo Schweigert <Udo.Schweigert@mchp.siemens.de>
+# Whom:				Udo Schweigert <ust@cert.siemens.de>
 #
-# $Id: Makefile,v 1.3 1998/10/13 04:18:50 jseger Exp $
+# $Id: Makefile,v 1.4 1998/11/28 02:18:45 asami Exp $
 #
 
 DISTNAME=	coolmail-1.3
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=system/mail/biffs
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Udo.Schweigert@mchp.siemens.de
+MAINTAINER=	ust@cert.siemens.de
 
 USE_XLIB=	yes
 PATCH_STRIP=	-p1
