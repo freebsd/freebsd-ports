@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bidwatcher
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.5
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/bidwatcher/
+MASTER_SITES=	http://www.midwestcs.com/bidwatcher/download/
 
 MAINTAINER=	will@FreeBSD.org
 
