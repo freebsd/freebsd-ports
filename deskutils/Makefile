@@ -21,7 +21,6 @@
     SUBDIR += ithought
     SUBDIR += jlj
     SUBDIR += kdepim3
-    SUBDIR += kmymoney2
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += logjam
