@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jan 23 18:33:39 2004
++++ Makefile.in	Fri Jan 23 18:37:29 2004
+@@ -547,7 +547,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-desktopDATA install-helpDATA install-iconDATA \
++install-data-am: install-desktopDATA install-iconDATA \
+ 	install-man
+ 
+ install-exec-am:

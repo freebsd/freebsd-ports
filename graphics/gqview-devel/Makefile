@@ -7,37 +7,33 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	cthulhu@cthulhu.ru
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
+
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.if !defined(WANT_GNOME) || defined(WITHOUT_GNOME)
-CONFIGURE_ARGS=	--disable-gnome
-.endif
+CONFLICTS=	gqview-1.2.*
 
 MAN1=		gqview.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g' \
-		${WRKSRC}/aclocal.m4
-
-post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gqview
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
