@@ -14,7 +14,7 @@ DISTNAME=	sidplay-libs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_REINPLACE=	yes
