@@ -310,6 +310,7 @@
     SUBDIR += lmd
     SUBDIR += lmule
     SUBDIR += loadd
+    SUBDIR += loudmouth
     SUBDIR += magictun
     SUBDIR += maradns
     SUBDIR += mars_nwe
