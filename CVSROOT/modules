@@ -5034,6 +5034,7 @@ p5-Class-BlackHole	ports/devel/p5-Class-BlackHole
 p5-Class-Container	ports/devel/p5-Class-Container
 p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-DBI	ports/databases/p5-Class-DBI
+p5-Class-DBI-AbstractSearch	ports/databases/p5-Class-DBI-AbstractSearch
 p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date	ports/devel/p5-Class-Date
 p5-Class-Default	ports/devel/p5-Class-Default
