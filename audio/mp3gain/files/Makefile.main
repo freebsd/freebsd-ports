@@ -1,0 +1,18 @@
+SRCS=	gain_analysis.c mp3gain.c rg_error.c
+PROG=	mp3gain
+
+LDADD=	-LmpglibDBL -lm -lmpglibDBL
+DPADD=	mpglibDBL/libmpglibDBL.a
+OBJS=	libmpglibDBL.a
+
+PREFIX?=	/usr/local
+DESTDIR?=	${PREFIX}
+BINDIR=	/bin
+
+NOMAN=	yes
+
+libmpglibDBL.a:
+	cd mpglibDBL && ${MAKE} ${.TARGET}
+	ln -s mpglibDBL/${.TARGET} ${.TARGET}
+
+.include <bsd.prog.mk>

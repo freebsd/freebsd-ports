@@ -1,0 +1,13 @@
+Tired of reaching for your volume knob every time your mp3 player changes to a
+new song?  MP3Gain analyzes and adjusts mp3 files so that they have the same
+volume.
+
+MP3Gain does not just do peak normalization, as many normalizers do. Instead,
+it does some statistical analysis to determine how loud the file actually
+sounds to the human ear.  Also, the changes MP3Gain makes are completely
+lossless. There is no quality lost in the change because the program adjusts
+the mp3 file directly, without decoding and re-encoding.
+
+WWW: http://www.geocities.com/mp3gain/
+
+- Simon 'corecode' Schubert
