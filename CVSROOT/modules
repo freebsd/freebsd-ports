@@ -2061,6 +2061,7 @@ gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs	ports/misc/gnomeuserdocs
+gnomeuserdocs2	ports/misc/gnomeuserdocs2
 gnomeutils	ports/misc/gnomeutils
 gnomeutils2	ports/misc/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
