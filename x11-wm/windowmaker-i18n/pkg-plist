@@ -115,7 +115,6 @@ GNUstep/Apps/WPrefs.app/xpm/whandling.xpm
 GNUstep/Apps/WPrefs.app/xpm/windowfocus.xpm
 GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/xis.xpm
-bin/convertstyle
 bin/dockit
 bin/geticonset
 bin/getstyle
@@ -149,6 +148,7 @@ share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
+share/WindowMaker/Backgrounds/SeaNight.jpeg
 share/WindowMaker/Defaults/WMGLOBAL
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMState
@@ -172,6 +172,7 @@ share/WindowMaker/Styles/Autumn
 share/WindowMaker/Styles/Black
 share/WindowMaker/Styles/Blue
 share/WindowMaker/Styles/BlueAluminum
+share/WindowMaker/Styles/BlueDawn
 share/WindowMaker/Styles/BlueishGreen
 share/WindowMaker/Styles/Brown
 share/WindowMaker/Styles/Chumbo
@@ -197,12 +198,14 @@ share/WindowMaker/Styles/Summer
 share/WindowMaker/Styles/Traditional
 share/WindowMaker/Styles/VioletBlue
 share/WindowMaker/Themes/Default
+share/WindowMaker/Themes/Night
 share/WindowMaker/Themes/OpenStep
 share/WindowMaker/Themes/Pastel
 share/WindowMaker/autostart.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.de
+share/WindowMaker/menu.dk
 share/WindowMaker/menu.el
 share/WindowMaker/menu.es
 share/WindowMaker/menu.fi
