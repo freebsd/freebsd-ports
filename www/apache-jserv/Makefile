@@ -14,8 +14,10 @@ DISTNAME=	ApacheJServ-${PORTVERSION}
 
 MAINTAINER=	greg@greg.rim.or.jp
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11\
-		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
+USE_JAVA=	1.1+
+NEED_JAVAC=	yes
+
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
@@ -33,10 +35,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--with-logdir=/var/log\
 		--sysconfdir=${PREFIX}/etc/apache\
 		--with-apxs=${LOCALBASE}/sbin/apxs\
-		--with-jdk-home=${LOCALBASE}/jdk1.1.8\
+		--with-jdk-home=${JAVA_HOME}\
 		--with-JSDK=${LOCALBASE}/share/java/classes/jsdk.jar\
-		--with-java=${LOCALBASE}/jdk1.1.8/bin/java\
-		--with-javac=${LOCALBASE}/jdk1.1.8/bin/javac\
+		--with-java=${JAVA}\
+		--with-javac=${JAVAC}\
 		--with-servlets=${PREFIX}/share/java/servlets\
 		--with-gnu-ld\
 		--enable-compressed-jar\
