@@ -1,5 +1,8 @@
---- Makefile.shared.orig	Sat Mar 27 03:17:07 2004
-+++ Makefile.shared	Tue Oct  5 21:43:30 2004
+
+$FreeBSD$
+
+--- Makefile.shared.orig
++++ Makefile.shared
 @@ -4,7 +4,7 @@
  # Makefile for Ayam (shared version)
  
@@ -9,13 +12,22 @@
  #PREFIX = /opt/ayam
  # if you use one of the following, be sure to change LIBDIR
  # and DOCDIR to a more suitable (Ayam specific) path
-@@ -34,14 +34,14 @@
- MKDIR = mkdir -p
+@@ -31,21 +31,21 @@
  
- # the compiler
+ INSTALL = ./ninstall
+ #INSTALL = install
+-MKDIR = mkdir -p
++#MKDIR = mkdir -p
+ 
+ # the C compiler
 -CC = cc
 +CC ?= cc
  #CC = gcc
+ 
+ # the C++ compiler (just in use for the Aycsg plugin)
+-CXX = CC
++CXX = ${CC}
+ #CXX = g++-3.0
  
  # the linker
  # Starting with BMRT2.5, libribout and libslcargs are in C++,
@@ -26,7 +38,7 @@
  # for Linux, use
  #LD = g++
  # MacOSX
-@@ -68,7 +68,8 @@
+@@ -73,7 +73,8 @@
  # o add -DAYOLDSLX if you compile with an Aqsis libslxargs prior to 0.7.19
  # o add -DUSE_NON_CONST if you compile with Tcl/Tk 8.4.x
  
@@ -36,7 +48,7 @@
  # IRIX (-DAYIRIXBUG is needed by ncurve.c to work around a bug in libGLU)::
  #CFLAGS = -O -fullwarn -DAYIRIXBUG -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
  # Linux:
-@@ -115,49 +116,53 @@
+@@ -120,49 +121,53 @@
  TOGLOBJECT = togl/togl.o
  
  # OpenGL
@@ -99,7 +111,7 @@
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
  
  
-@@ -172,18 +177,18 @@
+@@ -177,18 +182,18 @@
  
  
  # Aqsis
@@ -123,7 +135,7 @@
  
  
  # BMRT
-@@ -194,9 +199,9 @@
+@@ -199,9 +204,9 @@
  BMRTINCDIR = $(BMRTDIR)/include
  BMRTLIBDIR = $(BMRTDIR)/lib
  # if you use BMRT libribout and not Affine:
@@ -135,7 +147,7 @@
  # if you do not use libslcargs from BMRT:
  SLCARGSLIB =
  # if you use Affine as BMRT libribout replacement and libslcargs from BMRT:
-@@ -206,9 +211,9 @@
+@@ -211,9 +216,9 @@
  # Dynamic Loading
  # Library for dynamic loading (contains dlopen())
  # Linux, IRIX, Solaris, (MacOSX: get libdl from Fink!):
@@ -147,7 +159,7 @@
  
  # linker flags to produce shared modules:
  # Linux, Solaris, IRIX:
-@@ -222,8 +227,8 @@
+@@ -227,8 +232,8 @@
  RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
@@ -158,9 +170,9 @@
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc
-@@ -373,9 +378,9 @@
- .c.o: 
- 	$(CC) -c $(CFLAGS) $*.c -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(TIFFINCDIR)
+@@ -413,9 +418,9 @@
+ .cpp.o:
+ 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
  
 -all: ayamsh csphere.so mfio.so metaobj.so
 +all: ayamsh csphere.so mfio.so metaobj.so ayslx.so
@@ -169,4 +181,4 @@
 +ayamsh: $(AYAMOBJS) $(TOGLOBJECT)
  	$(LD) $(AYAMOBJS) $(TOGLOBJECT) $(EXLDFLAGS) -o ayamsh $(TKLIB) $(TCLLIB) $(GLLIBS) $(X11LIBS) $(RIBOUTLIB) $(AQSISRI2RIB) $(SLCARGSLIB) $(AFFINEOBJS) $(AQSISOBJS) $(TIFFLIB) -lm $(DL)
  
- csphere.so: $(CSPHEREOBJS)
+ aycsg.so: $(AYCSGOBJS) $(OPENCSGOBJS)
