@@ -3,14 +3,14 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1997/04/27 00:25:51 asami Exp $
+# $Id: Makefile,v 1.9 1997/10/04 14:53:05 andreas Exp $
 #
 
 DISTNAME=	lyx-0.10.7
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/beta_stable/
 
-MAINTAINER=	andreas@klemm.gtn.com
+MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \

@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1997/06/09 19:43:45 andreas Exp $
+# $Id: Makefile,v 1.12 1997/06/14 08:31:05 andreas Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andreas@klemm.gtn.com
+MAINTAINER=	andreas@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay

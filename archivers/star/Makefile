@@ -3,14 +3,14 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1997/06/18 20:42:10 andreas Exp $
+# $Id: Makefile,v 1.5 1997/10/04 14:53:09 andreas Exp $
 #
 
 DISTNAME=	star-1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	andreas@FreeBSD.ORG
 
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=gmake
