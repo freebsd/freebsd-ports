@@ -34,6 +34,10 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_SETUP		- Set to the alternative name of setup.rb (default: setup.rb).
 # USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
 # USE_RUBY_RD		- Says that the port uses rd to generate documents.
+# USE_RUBY_FEATURES	- Says that the port requires some of the following features
+#			  for building and/or running (default: none):
+#			    benchmark dl fileutil optparse pp racc-runtime
+#			    ruby18 set stringio strscan tsort
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building the port.  The constant "Ruby" is set to the integer version number of ruby, and the result of the expression will be set to RUBY_PROVIDED, which is left undefined if the result is nil, false or a zero-length string.  Implies USE_RUBY.
 # RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
 #
@@ -60,11 +64,13 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_RD		- Full path of rd executable.
 #
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
+# RUBY_SHIM18_PORT	- Port path of ruby16-shim-ruby18 without PORTSDIR.
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
 # RUBY_RD_PORT		- Port path of rd without PORTSDIR.
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
+# DEPEND_RUBY_SHIM18	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby16-shim-ruby18.
 # DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
 # DEPEND_RUBY_RD2	- BUILD_DEPENDS entry for rd.
 #
@@ -173,12 +179,14 @@ RUBY_RD?=		${LOCALBASE}/bin/rd2
 
 # Ports
 RUBY_PORT?=		lang/ruby${RUBY_SUFFIX}
+RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RD_PORT?=		textproc/ruby-rdtool
 
 # Depends
 DEPEND_LIBRUBY?=	${RUBY_NAME}.${RUBY_SHLIBVER}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${PORTSDIR}/${RUBY_PORT}
+DEPEND_RUBY_SHIM18?=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/${RUBY_SHIM18_PORT}
 DEPEND_RUBY_AMSTD?=	${RUBY_SITELIBDIR}/amstd/version.rb:${PORTSDIR}/${RUBY_AMSTD_PORT}
 DEPEND_RUBY_RD2?=	${RUBY_RD}:${PORTSDIR}/${RUBY_RD_PORT}
 
@@ -332,6 +340,24 @@ BUILD_DEPENDS+=		${DEPEND_RUBY}
 .endif
 .if !defined(RUBY_NO_RUN_DEPENDS)
 RUN_DEPENDS+=		${DEPEND_RUBY}
+.endif
+.endif
+
+.if defined(USE_RUBY_FEATURES)
+shim=	${USE_RUBY_FEATURES:Mbenchmark} \
+	${USE_RUBY_FEATURES:Mdl} \
+	${USE_RUBY_FEATURES:Mfileutils} \
+	${USE_RUBY_FEATURES:Moptparse} \
+	${USE_RUBY_FEATURES:Mpp} \
+	${USE_RUBY_FEATURES:Mracc-runtime} \
+	${USE_RUBY_FEATURES:Mruby18} \
+	${USE_RUBY_FEATURES:Mset} \
+	${USE_RUBY_FEATURES:Mstringio} \
+	${USE_RUBY_FEATURES:Mstrscan} \
+	${USE_RUBY_FEATURES:Mtsort}
+.if !empty(shim) && ${RUBY_VER} < 1.7
+BUILD_DEPENDS+=		${DEPEND_RUBY_SHIM18}
+RUN_DEPENDS+=		${DEPEND_RUBY_SHIM18}
 .endif
 .endif
 
