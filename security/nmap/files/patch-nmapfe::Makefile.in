@@ -1,11 +1,11 @@
---- nmapfe/Makefile.in.orig	Mon Jan  1 22:22:37 2001
-+++ nmapfe/Makefile.in	Fri Mar 16 16:56:47 2001
-@@ -75 +75 @@
+--- nmapfe/Makefile.in.orig	Mon Oct  6 13:00:32 2003
++++ nmapfe/Makefile.in	Mon Oct  6 13:01:05 2003
+@@ -72,7 +72,7 @@
+ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
 -DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DHAVE_CONFIG_H=1 -I$(srcdir) 
-+DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DHAVE_CONFIG_H=1 -I$(srcdir) -DNMAP_PATH=\"$(bindir)/\"
-@@ -236 +236 @@
--%.o: %.c
-+.c.o:
-@@ -240 +240 @@
--%.lo: %.c
-+.c.lo:
++DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DHAVE_CONFIG_H=1 -DNMAP_PATH=\"$(bindir)/\" -I$(srcdir)
+ CPPFLAGS = @CPPFLAGS@
+ STATIC =
+ LDFLAGS = @LDFLAGS@ $(STATIC)

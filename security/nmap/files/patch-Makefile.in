@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Sep 20 11:00:04 2003
-+++ Makefile.in	Wed Sep 24 23:59:42 2003
+--- Makefile.in.orig	Mon Oct  6 12:57:49 2003
++++ Makefile.in	Mon Oct  6 12:58:00 2003
 @@ -9,7 +9,7 @@
  mandir = @mandir@
  srcdir = @srcdir@
@@ -9,11 +9,3 @@
  
  NBASEDIR=@NBASEDIR@
  NSOCKDIR=@NSOCKDIR@
-@@ -23,6 +23,7 @@
- # For mtrace debugging -- see MTRACE define in main.cc for instructions
- # Should only be enabled during debugging and not in any real release.
- # DEFS += -DMTRACE=1
-+CPPFLAGS = @CPPFLAGS@
- CXXFLAGS = @CXXFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
- # CFLAGS = $(CXXFLAGS)
- # CFLAGS = $(DEFS) $(INCLS)
