@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pflogsumm
 # Date created:				13 April 2001
-# Whom:					Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
+# Whom:					Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	ozz@FreeBSD.org.ru
+MAINTAINER=	osa@FreeBSD.org.ru
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 
