@@ -142,27 +142,27 @@ post-extract:
 #
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_DRV} ..."
-	${TAR} -C ${WRKSRC}/src -xzf ${_DISTDIR}/${HP8XX_DRV}
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_DRV}
 # for HPDJ driver
 	${ECHO_MSG} ">>>   extracting ${HPDJ_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPDJ_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRC}
 	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
 # for PCL3 driver
 	${ECHO_MSG} ">>>   extracting ${PCL3_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${PCL3_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRC}
 	${LN} -sf ${PCL3_NAME} ${WRKSRC}/pcl3
 	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
 		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
 # for HP DeskJet 970 driver
 	${ECHO_MSG} ">>>   extracting ${HP970_DRV} ..."
-	${CP} ${_DISTDIR}/${HP970_DRV} ${WRKSRC}/src
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HP970_DRV} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
 # for gimp-print
 	${ECHO_MSG} ">>>   extracting ${GPRINT_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${GPRINT_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRC}
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPIJS_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRC}
 	${LN} -sf ${HPIJS_NAME} ${WRKSRC}/hpijs
 
 post-patch:
@@ -235,8 +235,8 @@ pre-install:
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${ECHO_MSG} ">>>   extracting ghostscript fonts..."
-	${TAR} -C ${DATADIR} -xzf ${_DISTDIR}/${GS_FONTS_STD}
-	${TAR} -C ${DATADIR} -xzf ${_DISTDIR}/${GS_FONTS_OTHER}
+	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
+	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
@@ -305,7 +305,7 @@ post-install:
 .endfor
 # for reading encrypted PDFs
 	${ECHO_MSG} ">>> installing support for encrypted PDF files ..."
-	${INSTALL_DATA} ${_DISTDIR}/${DECRYPT_PDF} \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DECRYPT_PDF} \
 		${DATADIR}/${PORTVERSION}/lib
 #
 # now NOPORTDOCS dependend stuff
