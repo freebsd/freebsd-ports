@@ -1,0 +1,8 @@
+AVaRICE is a program which interfaces the GNU Debugger GDB with the
+AVR JTAG ICE available from Atmel.
+
+Use AVaRICE standalone as a programmer, or it can be run as an
+intermediary between avr-gdb and the AVR JTAG hardware, allowing one
+to use GDB to debug your AVR code as it runs in-system.
+
+WWW: http://avarice.sourceforge.net/

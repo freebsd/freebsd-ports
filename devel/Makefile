@@ -54,6 +54,7 @@
     SUBDIR += automake
     SUBDIR += automake14
     SUBDIR += automake17
+    SUBDIR += avarice
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
