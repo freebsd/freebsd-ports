@@ -6,7 +6,7 @@
 
 PORTNAME=	kallers
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms kde
 MASTER_SITES=	http://www.nadmm.com/kallers/src/
 
@@ -16,7 +16,12 @@ COMMENT=	KDE Applet that displays Caller IDs
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@CXXFLAGS@|@CXXFLAGS@ -fPIC|' \
+		${WRKSRC}/${PORTNAME}/Makefile.in
 
 .include <bsd.port.mk>
