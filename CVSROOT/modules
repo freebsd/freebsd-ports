@@ -1055,6 +1055,7 @@ contool		ports/sysutils/contool
 cook		ports/devel/cook
 cooledit	ports/editors/cooledit
 coolmail	ports/mail/coolmail
+coppermine	ports/www/coppermine
 cops		ports/security/cops
 copytape	ports/sysutils/copytape
 coreutils	ports/sysutils/coreutils
