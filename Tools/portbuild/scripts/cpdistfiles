@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# configurable variables
+rhost=ftp.freebsd.org
+ruser=asami
+rdir=w/ports/distfiles
+pb=/a/asami/portbuild
+
+unset DISPLAY
+
+# copy one distfile to remote host
+cpdistfile () {
+  tar -C distfiles -cf - $1 | ssh $rhost -l $ruser tar -C $rdir -xvf -
+}
+
+cd $pb/distfiles
+find . -type f | sort | xargs md5 > ../md5-2
+cd $pb
+for i in $(diff md5 md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//'); do
+  cpdistfile $i
+done
+mv md5-2 md5
