@@ -1,6 +1,38 @@
---- Makefile.in.orig	Sat Jun  1 11:37:37 1996
-+++ Makefile.in	Thu Jun 12 21:47:10 1997
-@@ -449,3 +449,5 @@
+--- Makefile.in.orig	Fri Sep 19 06:13:16 1997
++++ Makefile.in	Fri Sep 19 06:15:31 1997
+@@ -131,11 +131,11 @@
+ 	$(mkinstalldirs) $(bindir)
+ 	@list='$(bin_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_SCRIPT) $$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
++	    $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	  else if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
++	    $(INSTALL) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	  else :; fi; fi; \
+ 	done
+ 
+@@ -150,11 +150,11 @@
+ 	$(mkinstalldirs) $(pkgdatadir)
+ 	@list='$(pkgdata_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_SCRIPT) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
++	    $(INSTALL) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
+ 	  else if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
++	    $(INSTALL) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
+ 	  else :; fi; fi; \
+ 	done
+ 
+@@ -569,3 +569,5 @@
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
