@@ -787,9 +787,6 @@ www/data/phpgroupware/transy/templates/verdilak/images/navbar.gif
 @dirrm www/data/phpgroupware/manual/templates
 @dirrm www/data/phpgroupware/manual/inc
 @dirrm www/data/phpgroupware/manual
-@dirrm www/data/phpgroupware/files/users
-@dirrm www/data/phpgroupware/files/groups
-@dirrm www/data/phpgroupware/files
 @dirrm www/data/phpgroupware/filemanager/templates/default/images
 @dirrm www/data/phpgroupware/filemanager/templates/default
 @dirrm www/data/phpgroupware/filemanager/templates
@@ -825,4 +822,10 @@ www/data/phpgroupware/transy/templates/verdilak/images/navbar.gif
 @dirrm www/data/phpgroupware/addressbook/templates
 @dirrm www/data/phpgroupware/addressbook/inc
 @dirrm www/data/phpgroupware/addressbook
+@exec chmod 707 %D/www/data/phpgroupware/files
+@exec chmod 707 %D/www/data/phpgroupware/files/users
+@exec chmod 707 %D/www/data/phpgroupware/files/groups
+@unexec rmdir %D/www/data/phpgroupware/files/users 2>/dev/null || true
+@unexec rmdir %D/www/data/phpgroupware/files/groups 2>/dev/null || true
+@unexec rmdir %D/www/data/phpgroupware/files 2>/dev/null || true
 @unexec rmdir %D/www/data/phpgroupware 2>/dev/null || true
