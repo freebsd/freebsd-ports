@@ -115,7 +115,7 @@
 -LINKFLAGSAPPGUI= -Wl,-export-dynamic
 -LINKFLAGSAPPCUI= -Wl,-export-dynamic
 +# name of linker
-+LINK*=$(CXX)
++LINK=$(CXX)
 +
 +# default linker flags
 +# LINKFLAGSRUNPATH*=-Wl,-rpath\''$$ORIGIN'\'
