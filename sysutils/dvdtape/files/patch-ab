@@ -1,0 +1,84 @@
+--- dvdtape.c.orig	Sat Jul  7 06:00:32 2001
++++ dvdtape.c	Sun Sep 23 00:16:29 2001
+@@ -61,12 +61,12 @@
+ static int combined_length_specified = 0;
+ static unsigned long long layer_length = 0;
+ static int length_specified = 0;
+-static char *owner = "";
+-static char *usertext = "";
+-static char *input_filename = NULL;
+-static char *control_filename = NULL;
+-static char *control_output_filename = NULL;
+-static char *output_filename = "/dev/st0";
++static const char *owner = "";
++static const char *usertext = "";
++static const char *input_filename = NULL;
++static const char *control_filename = NULL;
++static const char *control_output_filename = NULL;
++static const char *output_filename = "/dev/st0";
+ static char time_string[7];
+ static char track_path;		/* Direction of translation for second layer.
+ 				   I = inward, parallel to first layer.
+@@ -135,7 +135,7 @@
+ 				  options, NULL)) != -1) {
+ 		switch (opt) {
+ 			case 'C':
+-				if (sscanf(optarg,"%Ld",&combined_length)!=1) {
++				if (sscanf(optarg,"%qu",&combined_length)!=1) {
+ 					fprintf (stderr,
+ 						 "%s: not an integer\n",
+ 						 optarg);
+@@ -166,7 +166,7 @@
+ 				break;
+ 			case 'N': control_output_filename = optarg; break;
+ 			case 'o':
+-				if (sscanf(optarg, "%Ld", &offset) != 1) {
++				if (sscanf(optarg, "%qu", &offset) != 1) {
+ 					fprintf (stderr,
+ 						 "%s: not an integer\n",
+ 						 optarg);
+@@ -208,7 +208,7 @@
+ 				break;
+ 			case 'u': usertext = optarg; break;
+ 			case 'b':
+-				if (sscanf(optarg, "%Ld", &layer_length) != 1) {
++				if (sscanf(optarg, "%qu", &layer_length) != 1) {
+ 					fprintf (stderr,
+ 						 "%s: not an integer\n",
+ 						 optarg);
+@@ -350,7 +350,7 @@
+ }
+ 
+ static void
+-write_hdr1(int outfd, char *labelid, char *fileid, int block_count) {
++write_hdr1(int outfd, const char *labelid, const char *fileid, int block_count) {
+   	char buf[81];
+   	sprintf(buf,
+ 		"%-4.4s"	/* Label ID */
+@@ -393,7 +393,7 @@
+ }
+ 
+ static void
+-write_hdr2(int outfd, char *labelid, int blocksize, int recordsize) {
++write_hdr2(int outfd, const char *labelid, int blocksize, int recordsize) {
+   	char buf[81];
+   	sprintf(buf,
+ 		"%-4.4s"	/* Label ID */
+@@ -455,7 +455,7 @@
+ }
+ 
+ static void
+-write_ddpms(int outfd, char *streamtype, int start, int len, char *filename) {
++write_ddpms(int outfd, const char *streamtype, int start, int len, const char *filename) {
+   	char buf[129];
+   	sprintf(buf,
+ 		"VVVM"		/* MPV Map Packet Valid */
+@@ -680,7 +680,7 @@
+ 		exit(1);
+ 	}
+ 	guess_length_and_offset(infd);
+-	fprintf (stderr, "Writing %Lu bytes of DVD image starting at offset %Lu (layer %d of %d).\n", layer_length, offset, layer+1, layers);
++	fprintf (stderr, "Writing %llu bytes of DVD image starting at offset %llu (layer %d of %d).\n", layer_length, offset, layer+1, layers);
+ 	if ((outfd = open (output_filename, O_WRONLY|O_CREAT, 0644)) < 0) {
+ 	  	perror(output_filename);
+ 		exit(1);
