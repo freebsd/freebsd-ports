@@ -1,0 +1,96 @@
+--- knapster/icmp.cpp.orig	Tue Jul 25 04:09:45 2000
++++ knapster/icmp.cpp	Sun Oct 15 02:43:08 2000
+@@ -30,6 +30,7 @@
+ #include <sys/file.h>
+ #include <sys/time.h>
+  
++#include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip_icmp.h>
+ #include <arpa/inet.h>
+@@ -39,6 +40,17 @@
+ #include <errno.h>
+ #include <string.h>
+ 
++/*
++ * Linux compatibility crap.
++ */
++
++#ifndef ICMP_DEST_UNREACH
++#define ICMP_DEST_UNREACH ICMP_UNREACH
++#endif
++#ifndef ICMP_TIME_EXCEEDED
++#define ICMP_TIME_EXCEEDED ICMP_TIMXCEED
++#endif
++
+ // Default length of the data in the icmp packet. 
+ #define DATALEN (64 - 8)
+ 
+@@ -78,7 +90,7 @@
+   // Packet data ... note that it is uninitialized, and the 1st bit will
+   //   be used for time info
+   u_char outpack[65535 - 60 - 8]; // Max packet size (???)
+-  struct icmphdr *icp;
++  struct icmp *icp;
+ 
+   if (IcmpPing::rawSkt < 0)
+   	return;
+@@ -88,18 +100,18 @@
+   to->sin_family = AF_INET;
+   to->sin_addr.s_addr = ip_addr;
+  
+-  icp = (struct icmphdr *)outpack;
+-  icp->type = ICMP_ECHO;
+-  icp->code = 0;
+-  icp->checksum = 0;
+-  icp->un.echo.sequence = 0; // Assuming we only transfer one to each host
+-  icp->un.echo.id = 0;  // Not using ID...
++  icp = (struct icmp *)outpack;
++  icp->icmp_type = ICMP_ECHO;
++  icp->icmp_code = 0;
++  icp->icmp_cksum = 0;
++  icp->icmp_hun.ih_idseq.icd_seq = 0; // Assuming we only transfer one to each host
++  icp->icmp_hun.ih_idseq.icd_id = 0;  // Not using ID...
+  
+   // Insert time into packet
+   gettimeofday((struct timeval *)&outpack[8],
+                (struct timezone *)NULL);
+  
+-  icp->checksum = in_cksum((u_short *)icp, DATALEN + 8);
++  icp->icmp_cksum = in_cksum((u_short *)icp, DATALEN + 8);
+  
+   // would the MSG_DONTWAIT flag speed this up?
+   sendto(IcmpPing::rawSkt, (char *)outpack, DATALEN + 8, 0,
+@@ -118,8 +130,8 @@
+   int pktSize;
+   size_t fromlen;
+   u_char packet[PKTLEN];
+-  struct iphdr *ip;
+-  struct icmphdr *icp;
++  struct ip *ip;
++  struct icmp *icp;
+   int hdrLen;
+   struct timeval curTime, *pktTime;
+ 
+@@ -137,11 +149,11 @@
+   else
+   {
+     // TODO: add check for packet length
+-    ip = (struct iphdr *) packet;
+-    hdrLen = ip->ihl << 2;
+-    icp = (struct icmphdr *)(packet + hdrLen);
++    ip = (struct ip *) packet;
++    hdrLen = ip->ip_hl << 2;
++    icp = (struct icmp *)(packet + hdrLen);
+  
+-    switch (icp->type) {
++    switch (icp->icmp_type) {
+     case ICMP_ECHOREPLY :
+       gettimeofday(&curTime, (struct timezone *) NULL);
+  
+@@ -217,4 +229,4 @@
+     out->tv_usec += 1000000;
+   }
+   out->tv_sec -= in->tv_sec;
+-} 
++} 
