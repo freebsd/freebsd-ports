@@ -1,0 +1,25 @@
+--- Makefile.orig	Sun Oct 18 23:17:44 1998
++++ Makefile	Fri Feb 12 21:55:45 1999
+@@ -1,10 +1,10 @@
+ 
+-I  = -I/usr/openwin/include -I/usr/local/include
++I  = -I${X11BASE}/include -I${LOCALBASE}/include -I/usr/include
+ #L  = -Bstatic -lXpm -Bdynamic -lX11 -lXext
+-L  = -L/usr/local/lib -L/usr/openwin/lib -lXpm -lX11 -lXext
++L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
+ CC = gcc -O $I -DXLIB_ILLEGAL_ACCESS
+ 
+-cyrx2:	cyrx2.o cyrmapper.o
++all:	cyrx2.o cyrmapper.o
+ 	$(CC) cyrx2.o  cyrmapper.o -o cyrx2 $L
+ 
+ cyrx: cyrx.o  cyrmapper.o
+@@ -35,7 +35,5 @@
+ 	cat cyrsym.h | xtowin | gen > msw.h
+ 
+ clean:
+-	rm *.o cyrx2
+-
+-
++	rm -rf *.o cyrx2
+ 
