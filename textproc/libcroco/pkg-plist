@@ -1,8 +1,5 @@
 bin/croco-config
 bin/csslint
-include/libcroco/layeng/cr-box-view.h
-include/libcroco/layeng/cr-box.h
-include/libcroco/layeng/cr-lay-eng.h
 include/libcroco/libcroco.h
 include/libcroco/parser/cr-additional-sel.h
 include/libcroco/parser/cr-attr-sel.h
@@ -25,20 +22,9 @@ include/libcroco/parser/cr-tknzr.h
 include/libcroco/parser/cr-token.h
 include/libcroco/parser/cr-utils.h
 include/libcroco/parser/libcroco-config.h
-include/libcroco/seleng/cr-fonts.h
-include/libcroco/seleng/cr-sel-eng.h
-include/libcroco/seleng/cr-style.h
-lib/libcrlayeng.a
-lib/libcrlayeng.so
-lib/libcrlayeng.so.2
 lib/libcroco.a
 lib/libcroco.so
 lib/libcroco.so.1
-lib/libcrseleng.a
-lib/libcrseleng.so
-lib/libcrseleng.so.2
 libdata/pkgconfig/libcroco.pc
-@dirrm include/libcroco/seleng
 @dirrm include/libcroco/parser
-@dirrm include/libcroco/layeng
 @dirrm include/libcroco
