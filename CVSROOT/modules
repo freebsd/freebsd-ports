@@ -1591,6 +1591,7 @@ fsck_ifs	src/sbin/fsck_ifs
 fsck_msdosfs	src/sbin/fsck_msdosfs
 fsdb		src/sbin/fsdb
 fsgs		ports/games/fsgs
+fsh		ports/security/fsh
 fsirand		src/sbin/fsirand
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
