@@ -1,21 +1,17 @@
 #!/bin/sh
-
+set +x
 cd $WRKSRC || exit 1
 
-examples="adagio.tex avemario.tex avemarix.tex carillon.tex \
-carillox.tex gymnoman.tex  havemari.tex \
-havemaro.tex marcello.tex marcellx.tex traeumer.tex xavemari.tex"
-
-for i in $examples; do
-  mv $i $i.old
-  sed -e 's:\(^\\input\).*/\(.*\):\1 \2:' <$i.old >$i
-done
-
+examples="angescao.tex angescax.tex avemaria.tex avemario.tex avemarix.tex \
+         canticor.tex canticox.tex fantaisc.tex fantaisd.tex fantaisi.tex \
+         gloriab.tex glorias.tex gloriax.tex gymnoman.tex ilestne.tex \
+         ilestnex.tex marcello.tex onuitbri.tex parnasum.tex souvenir.tex \
+         souvenix.tex traeumer.tex widor.tex widor_16.tex widor_20.tex"
+              
 cat > Makefile <<END
-
 all:
 	(cd systems/c-source; cc -O2 -o ../../musixflx musixflx.c)
-	(cd tex; export TEXFONTS=${WRKSRC}/tfm:; \
+	(cd tex; export TEXFONTS=${WRKSRC}/tfm:; \\
 		initex '&tex musixtex.ins \dump')
 
 install:
@@ -25,11 +21,11 @@ install:
 	install -c -o bin -g bin tfm/*.tfm $PREFIX/lib/texmf/fonts/tfm/
 	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/lib/texmf/ini/
 	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/lib/texmf/tex/
-	install -c -o bin -g bin doc/musixdoc.tex  doc/musixdoc.sty \
+	install -c -o bin -g bin doc/musixdoc.tex  doc/musixdoc.sty doc/backgrnd.sty \\
 		$PREFIX/lib/texmf/documentation/
 	mkdir -p $PREFIX/lib/texmf/documentation/musixtex.examples
-	install -c -o bin -g bin  $examples \
-		$PREFIX/lib/texmf/documentation/musixtex.examples/
+	for f in $examples; do install -c -o bin -g bin  examples/\$\$f \\
+		$PREFIX/lib/texmf/documentation/musixtex.examples/; done
 END
 
 exit 0
