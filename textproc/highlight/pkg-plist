@@ -6,6 +6,7 @@ bin/highlight
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/README_CGI
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/highlight.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/CodeHighLight.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/SyntaxHighlighter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/frontend/highlight-pyqt-GUI-0.1-4.tar.gz
 %%DATADIR%%/extensions.conf
 %%DATADIR%%/helpmsg/de.help
