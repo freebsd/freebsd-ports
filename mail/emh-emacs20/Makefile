@@ -9,4 +9,4 @@ MASTERDIR=	${.CURDIR}/../emh
 
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
