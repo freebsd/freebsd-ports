@@ -3,12 +3,12 @@
 ***************
 *** 1,14 ****
   #
-  # Makefile for DGD, Dworkin's Game Driver
+  # Makefile for DGD, Dworkin's Generic Driver
   #
-! HOST=	SUNOS4
+! HOST=	NETBSD
   DEFINES=-D$(HOST)
-! DEBUG=	-g -DDEBUG
-  CCFLAGS=$(DEFINES) $(DEBUG)
+  DEBUG=
+  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS=
 ! LIBS=
@@ -18,13 +18,13 @@
   BIN=		../bin
 --- 1,16 ----
   #
-  # Makefile for DGD, Dworkin's Game Driver
+  # Makefile for DGD, Dworkin's Generic Driver
   #
 ! HOST=	BSD386
   DEFINES=-D$(HOST)
-! DEBUG=
-! #DEBUG=	-g -DDEBUG
-  CCFLAGS=$(DEFINES) $(DEBUG)
+  DEBUG=
++ #DEBUG=	-g -DDEBUG
+  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS= -s
 ! #LDFLAGS=
