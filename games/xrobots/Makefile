@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:27:02 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/03 09:37:46 obrien Exp $
 #
 
 DISTNAME=       xrobots
@@ -16,6 +16,6 @@ MAINTAINER=	swallace@FreeBSD.org
 USE_IMAKE=	yes
 
 post-install:
-	install -c -g games -m 664 ${.CURDIR}/files/xrobotscores /usr/X11R6/lib/X11
+	${INSTALL} -c -g games -m 664 ${FILESDIR}/xrobotscores ${PREFIX}/lib/X11
 
 .include <bsd.port.mk>
