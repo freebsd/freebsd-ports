@@ -8,7 +8,8 @@
 PORTNAME=	gfaim
 PORTVERSION=	0.30
 CATEGORIES=	french misc
-MASTER_SITES=	http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
