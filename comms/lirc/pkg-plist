@@ -10,7 +10,6 @@ bin/xmode2
 include/lirc/lirc_client.h
 @dirrm include/lirc
 lib/liblirc_client.a
-lib/liblirc_client.la
 lib/liblirc_client.so
 lib/liblirc_client.so.0
 sbin/lircd
