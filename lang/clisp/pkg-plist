@@ -1,11 +1,8 @@
 bin/clisp
 lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
-lib/clisp/base/libiconv.a
-lib/clisp/base/libintl.a
+lib/clisp/base/libcharset.a
 lib/clisp/base/libnoreadline.a
-lib/clisp/base/libreadline.a
-lib/clisp/base/libsigsegv.a
 lib/clisp/base/lisp.a
 lib/clisp/base/lisp.run
 lib/clisp/base/lispinit.mem
@@ -17,11 +14,8 @@ lib/clisp/data/UnicodeData.txt
 lib/clisp/data/clhs.txt
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
-lib/clisp/full/libiconv.a
-lib/clisp/full/libintl.a
 lib/clisp/full/libnoreadline.a
-lib/clisp/full/libreadline.a
-lib/clisp/full/libsigsegv.a
+lib/clisp/full/libcharset.a
 lib/clisp/full/lisp.a
 lib/clisp/full/lisp.run
 lib/clisp/full/lispinit.mem
@@ -44,19 +38,15 @@ share/doc/clisp/README
 share/doc/clisp/README.de
 share/doc/clisp/README.es
 share/doc/clisp/SUMMARY
-share/doc/clisp/doc/CLOS-guide.txt
-share/doc/clisp/doc/LISP-tutorial.txt
-share/doc/clisp/doc/clisp.1
-share/doc/clisp/doc/clisp.dvi
-share/doc/clisp/doc/clisp.html
-share/doc/clisp/doc/clisp.png
-share/doc/clisp/doc/clreadline.3
-share/doc/clisp/doc/clreadline.dvi
-share/doc/clisp/doc/clreadline.html
-share/doc/clisp/doc/editors.txt
-share/doc/clisp/doc/impnotes.css
-share/doc/clisp/doc/impnotes.html
-share/doc/clisp/doc/readline.dvi
+share/doc/clisp/CLOS-guide.txt
+share/doc/clisp/LISP-tutorial.txt
+share/doc/clisp/clisp.1
+share/doc/clisp/clisp.dvi
+share/doc/clisp/clisp.html
+share/doc/clisp/clisp.png
+share/doc/clisp/editors.txt
+share/doc/clisp/impnotes.css
+share/doc/clisp/impnotes.html
 share/locale/de/LC_MESSAGES/clisp.mo
 share/locale/de/LC_MESSAGES/clisplow.mo
 share/locale/en/LC_MESSAGES/clisp.mo
@@ -67,7 +57,6 @@ share/locale/fr/LC_MESSAGES/clisp.mo
 share/locale/fr/LC_MESSAGES/clisplow.mo
 share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
-@dirrm share/doc/clisp/doc
 @dirrm share/doc/clisp
 @dirrm lib/clisp/base
 @dirrm lib/clisp/data

@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.28
+PORTVERSION=	2.30
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jabrown@caida.org
+MAINTAINER=	henrik.motakef@web.de
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	2.95
 
 # In clisp-2.28, the build dies in the "regexp" module: the build target
 # invokes a configure script, which encounters a different CC variable than
@@ -53,7 +55,7 @@ DATA_PATHS=${PREFIX}/lib/clisp ${PREFIX}/share/doc/clisp \
 	${PREFIX}/share/locale/nl/LC_MESSAGES/clisp.mo \
 	${PREFIX}/share/locale/nl/LC_MESSAGES/clisplow.mo
 PROG_PATHS=${PREFIX}/bin/clisp
-MAN_PATHS=${PREFIX}/man/man1/clisp.1 ${PREFIX}/man/man3/clreadline.3
+MAN_PATHS=${PREFIX}/man/man1/clisp.1
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
 post-extract:
@@ -75,6 +77,5 @@ post-install:
 	${CHMOD} -R ugo+rX,ugo-w ${MAN_PATHS}
 
 MAN1=	clisp.1
-MAN3=	clreadline.3
 
 .include <bsd.port.mk>
