@@ -3,10 +3,11 @@
 # Date created:				28th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.11 1998/02/25 09:47:25 asami Exp $
+# $Id: Makefile,v 1.12 1998/03/02 16:09:29 cwt Exp $
 #
 
 DISTNAME=	amanda-2.4.0-980222
+PKGNAME=	amanda-2.4.0.980222
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
 
