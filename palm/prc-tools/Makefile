@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/01/01 17:29:06 asami Exp $
+# $Id: Makefile,v 1.7 1998/02/19 06:55:19 asami Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -60,6 +60,20 @@ STRIP=		build-prc \
 		m68k-palmos-coff-strip \
 		pilrc \
 		txt2bitm
+
+# check for "-m486" and bomb out if the user has it
+pre-build:
+		@if ${ECHO} ${CFLAGS} | ${GREP} -- "-m486" > /dev/null ; then \
+			${ECHO} "ERROR: You have \"-m486\" defined some-" ; \
+			${ECHO} "       where, either in /etc/make.conf" ; \
+			${ECHO} "       or in the CFLAGS environment" ; \
+			${ECHO} "       variable.  This will cause this" ; \
+			${ECHO} "       port to not build properly.  Please" ; \
+			${ECHO} "       fix this and re-run make." ; \
+			exit 1 ; \
+		else \
+			${ECHO} "Your environment looks OK." ; \
+		fi
 
 # after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
 post-patch:
