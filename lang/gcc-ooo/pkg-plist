@@ -225,7 +225,6 @@ info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/SYSCALLS.c.X
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1obj
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1plus
@@ -269,15 +268,15 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_compat.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_fil.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_nat.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netipx/ipx.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netkey/keysock.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns/ns.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns/spp_var.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/auth.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/svc.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/types.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/security/_pam_compat.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/file.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/dvdio.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/types.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/vnioctl.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/NXConstStr.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/Object.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/Protocol.h

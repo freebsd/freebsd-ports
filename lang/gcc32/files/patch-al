@@ -1,6 +1,6 @@
---- gcc/configure.in.orig	Mon Sep 20 02:59:33 1999
-+++ gcc/configure.in	Sat Sep 25 10:56:01 1999
-@@ -634,6 +634,15 @@
+--- gcc/configure.in.orig	Wed Dec  8 04:30:22 1999
++++ gcc/configure.in	Fri Dec 10 09:44:08 1999
+@@ -626,6 +626,22 @@
   			thread_file='posix'
   		fi
  		;;
@@ -11,42 +11,45 @@
 +		tmake_file="t-freebsd alpha/t-crtbe"
 +		xmake_file=none
 +		fixincludes=fixinc.wrap
-+		gas=yes gnu_ld=yes
++		gas=yes
++		gnu_ld=yes
++		case x${enable_threads} in
++		xyes | xpthreads | xposix)
++			thread_file='posix'
++			tmake_file="${tmake_file} t-freebsd-thread"
++			;;
++		esac
 +		;;
  	alpha*-*-netbsd*)
  		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
  		target_cpu_default="MASK_GAS"
-@@ -1274,9 +1283,15 @@
+@@ -1271,9 +1287,15 @@
  #		use_collect2=yes
  		;;
  changequote(,)dnl
 -	i[34567]86-*-freebsdelf*)
 +	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout* | i[34567]86-*-freebsd-aout*)
-+changequote([,])dnl
-+		tm_file=i386/freebsd-aout.h
+ changequote([,])dnl
+-		tm_file="i386/i386.h i386/att.h svr4.h freebsd.h i386/freebsd-elf.h i386/perform.h"
++		tm_file="freebsd.h i386/freebsd-aout.h"
 +		tmake_file=t-freebsd
 +		;;
 +changequote(,)dnl
 +	i[34567]86-*-freebsd[3-9].* | i[34567]86-*-freebsd[3-9] | i[34567]86-*-freebsd* | i[34567]86-*-freebsdelf* | i[34567]86-*-freebsd*)
- changequote([,])dnl
--		tm_file="i386/i386.h i386/att.h svr4.h i386/freebsd-elf.h i386/perform.h"
++  changequote([,])dnl
 +		tm_file="i386/i386.h i386/att.h svr4.h freebsd.h i386/freebsd.h i386/perform.h"
  		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
  		tmake_file=t-freebsd
  		gas=yes
-@@ -1285,15 +1300,9 @@
- 		case x${enable_threads} in
- 		xyes | xpthreads | xposix)
- 			thread_file='posix'
--			tmake_file="${tmake_file} t-openbsd-thread"
-+			tmake_file="${tmake_file} t-freebsd-thread"
+@@ -1285,12 +1307,6 @@
+ 			tmake_file="${tmake_file} t-freebsd-thread"
  			;;
  		esac
 -		;;
 -changequote(,)dnl
 -	i[34567]86-*-freebsd*)
 -changequote([,])dnl
--		tm_file=i386/freebsd.h
+-		tm_file="i386/freebsd.h i386/perform.h"
 -		tmake_file=t-freebsd
  		;;
  changequote(,)dnl
