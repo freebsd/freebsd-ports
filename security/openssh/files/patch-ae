@@ -1,8 +1,8 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/login.c	Tue Nov 23 18:55:14 1999
-+++ ./login.c	Tue Nov 23 19:35:08 1999
-@@ -20,7 +20,11 @@
+--- sshlogin.c.orig	Sat Mar 24 17:43:27 2001
++++ sshlogin.c	Sat May 26 14:42:30 2001
+@@ -41,7 +41,11 @@
  #include "includes.h"
- RCSID("$Id: login.c,v 1.8 1999/11/23 22:25:54 markus Exp $");
+ RCSID("$OpenBSD: sshlogin.c,v 1.2 2001/03/24 16:43:27 stevesk Exp $");
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
@@ -10,5 +10,5 @@
  #include <util.h>
 +#endif /* __FreeBSD__ */
  #include <utmp.h>
- #include "ssh.h"
- 
+ #include "sshlogin.h"
+ #include "log.h"

@@ -1,8 +1,8 @@
---- /home/bright/ssh/ssh/session.c	Sun Aug 27 20:50:54 2000
-+++ session.c	Fri Feb  9 11:19:14 2001
-@@ -28,6 +28,12 @@
- #include "auth.h"
- #include "auth-options.h"
+--- session.c.orig	Tue Apr 17 21:34:25 2001
++++ session.c	Sat May 26 15:45:15 2001
+@@ -58,6 +58,12 @@
+ #include "canohost.h"
+ #include "session.h"
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
@@ -10,10 +10,10 @@
 +#include <time.h>
 +#endif /* __FreeBSD__ */
 +
- #ifdef HAVE_LOGIN_CAP
- #include <login_cap.h>
- #endif
-@@ -413,6 +419,13 @@
+ /* types */
+ 
+ #define TTYSZ 64
+@@ -461,6 +467,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -22,12 +22,12 @@
 +		 */
 +		if (command != NULL)
 +			options.use_login = 0;
-+		
++
 +		/*
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -516,6 +529,13 @@
+@@ -566,6 +579,13 @@
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
@@ -37,22 +37,26 @@
 +		 */
 +		if (command != NULL)
 +			options.use_login = 0;
-+		
++
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -602,6 +622,7 @@
+@@ -639,6 +659,11 @@
  	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
++#ifdef HAVE_LOGIN_CAP
++	FILE *f;
++	char buf[256];
 +	char *fname;
++#endif /* HAVE_LOGIN_CAP */
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -644,6 +665,20 @@
- 		else
- 			printf("Last login: %s from %s\r\n", time_string, buf);
+@@ -679,6 +704,21 @@
+ 			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
+ 
 +#ifdef HAVE_LOGIN_CAP
 +	if (!options.use_login) {
 +		fname = login_getcapstr(lc, "copyright", NULL, NULL);
@@ -67,10 +71,11 @@
 +	    "All rights reserved.");
 +	}
 +#endif /* HAVE_LOGIN_CAP */
- 	if (options.print_motd) {
- #ifdef HAVE_LOGIN_CAP
- 		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
-@@ -949,7 +984,7 @@
++
+ 	do_motd();
+ }
+ 
+@@ -1027,7 +1067,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -79,11 +84,10 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -973,7 +1008,27 @@
+@@ -1051,6 +1091,26 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
--		if (stat(SSH_USER_RC, &st) >= 0) {
 +#ifdef __FreeBSD__
 +		/*
 +		 * If the password change time is set and has passed, give the
@@ -104,7 +108,6 @@
 +			}
 +		}
 +#endif /* __FreeBSD__ */
-+                if (stat(SSH_USER_RC, &st) >= 0) {
+ 		/* ignore _PATH_SSH_USER_RC for subsystems */
+ 		if (!s->is_subsystem && (stat(_PATH_SSH_USER_RC, &st) >= 0)) {
  			if (debug_flag)
- 				fprintf(stderr, "Running /bin/sh %s\n", SSH_USER_RC);
- 

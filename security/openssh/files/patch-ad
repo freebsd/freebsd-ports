@@ -1,11 +1,11 @@
---- lib/Makefile.orig	Sat Aug 19 17:34:44 2000
-+++ lib/Makefile	Sat Nov  4 16:41:11 2000
-@@ -5,7 +5,12 @@
- 	cipher.c compat.c compress.c crc32.c deattack.c \
+--- lib/Makefile.orig	Tue Apr  3 21:53:30 2001
++++ lib/Makefile	Sat May 26 14:39:03 2001
+@@ -8,7 +8,12 @@
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
  	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
--	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c util.c
-+	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c util.c \
+ 	key.c dispatch.c kex.c mac.c uuencode.c misc.c \
+-	cli.c rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c
++	cli.c rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c \
 +	strlcpy.c strlcat.c
 +
 +.if defined(COMPAT_GETADDRINFO)
@@ -14,11 +14,11 @@
  
  NOPROFILE= yes
  NOPIC=	yes
-@@ -14,6 +19,7 @@
+@@ -17,6 +22,7 @@
  	@echo -n
  
  .include <bsd.own.mk>
 +.include "../Makefile.inc"
  
- .if (${KERBEROS} == "yes")
+ .if (${KERBEROS:L} == "yes")
  CFLAGS+= -DKRB4 -I${DESTDIR}/usr/include/kerberosIV

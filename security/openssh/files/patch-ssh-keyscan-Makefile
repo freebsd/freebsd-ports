@@ -1,0 +1,13 @@
+--- ssh-keyscan/Makefile.orig	Sun Mar  4 00:59:39 2001
++++ ssh-keyscan/Makefile	Sat May 26 16:14:05 2001
+@@ -7,8 +7,8 @@
+ 
+ BINMODE?=555
+ 
+-BINDIR=	/usr/bin
+-MAN=	ssh-keyscan.1
++BINDIR=	/bin
++MAN1=	ssh-keyscan.1
+ 
+ SRCS=	ssh-keyscan.c
+ 
