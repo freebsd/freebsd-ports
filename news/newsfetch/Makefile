@@ -20,12 +20,6 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 MAN1=		newsfetch.1
 MANCOMPRESSED=	maybe
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-configure:
 	cd ${WRKSRC} && ( \
 	${ECHO_CMD} "PROG= newsfetch"; \
@@ -33,4 +27,4 @@ do-configure:
 	${ECHO_CMD} ".include <bsd.prog.mk>"; \
 	) > Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
