@@ -29,9 +29,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/commons-pool-1.1.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
-%%T%%/common/lib/jmx.jar
-%%T%%/common/lib/jmx-remote.jar
 %%T%%/common/lib/jmx-remote-tools.jar
+%%T%%/common/lib/jmx-remote.jar
+%%T%%/common/lib/jmx.jar
 %%T%%/common/lib/jsp-api.jar
 %%T%%/common/lib/naming-common.jar
 %%T%%/common/lib/naming-factory.jar
@@ -40,6 +40,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/servlet-api.jar
 %%T%%/common/lib/tools.jar
 %%T%%/conf/Catalina/localhost/admin.xml
+%%T%%/conf/Catalina/localhost/balancer.xml
 %%T%%/conf/Catalina/localhost/manager.xml
 %%T%%/conf/catalina.policy
 %%T%%/conf/catalina.properties
@@ -164,11 +165,16 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @exec mkdir %D/%%T%%/temp || true
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/classes/org/apache/jsp/index_jsp.class
+%%T%%/webapps/ROOT/WEB-INF/lib/catalina-root.jar
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/index.jsp
 %%T%%/webapps/ROOT/jakarta-banner.gif
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/ROOT/tomcat.gif
+%%T%%/webapps/balancer/WEB-INF/config/rules.xml
+%%T%%/webapps/balancer/WEB-INF/lib/catalina-balancer.jar
+%%T%%/webapps/balancer/WEB-INF/web.xml
+%%T%%/webapps/balancer/balancer.xml
 %%T%%/webapps/jsp-examples/WEB-INF/classes/cal/Entries.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/cal/Entries.java
 %%T%%/webapps/jsp-examples/WEB-INF/classes/cal/Entry.class
@@ -515,6 +521,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
 %%T%%/webapps/tomcat-docs/appdev/source.html
 %%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/balancer-howto.html
 %%T%%/webapps/tomcat-docs/build.xml
 %%T%%/webapps/tomcat-docs/building.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/allclasses-frame.html
@@ -810,6 +817,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CopyParentClassLoaderRule.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/DigesterFactory.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Embedded.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EngineConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EngineRuleSet.html
@@ -821,7 +829,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/NamingRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/SetAllPropertiesRule.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/SetAllPropertiesRule.SystemPropertyPropertyResource.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/SetDocBaseRule.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/TldConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/TldRuleSet.html
@@ -846,6 +853,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Base64.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CGIProcessEnvironment.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CatalinaDigester.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CharsetMapper.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CookieTools.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
@@ -1364,6 +1372,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/SmapUtil.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TagConstants.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TagPluginManager.html
+%%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TextOptimizer.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TldLocationsCache.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-frame.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-summary.html
@@ -1556,6 +1565,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/jspapi/stylesheet.css
 %%T%%/webapps/tomcat-docs/manager-howto.html
 %%T%%/webapps/tomcat-docs/mbeans-descriptor-howto.html
+%%T%%/webapps/tomcat-docs/printer/balancer-howto.html
 %%T%%/webapps/tomcat-docs/printer/building.html
 %%T%%/webapps/tomcat-docs/printer/cgi-howto.html
 %%T%%/webapps/tomcat-docs/printer/changelog.html
@@ -1893,6 +1903,12 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF
 @dirrm %%T%%/webapps/jsp-examples
+@dirrm %%T%%/webapps/balancer/images
+@dirrm %%T%%/webapps/balancer/WEB-INF/lib
+@dirrm %%T%%/webapps/balancer/WEB-INF/config
+@dirrm %%T%%/webapps/balancer/WEB-INF
+@dirrm %%T%%/webapps/balancer
+@dirrm %%T%%/webapps/ROOT/WEB-INF/lib
 @dirrm %%T%%/webapps/ROOT/WEB-INF/classes/org/apache/jsp
 @dirrm %%T%%/webapps/ROOT/WEB-INF/classes/org/apache
 @dirrm %%T%%/webapps/ROOT/WEB-INF/classes/org

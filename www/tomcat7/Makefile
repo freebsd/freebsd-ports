@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	5.0.14
+PORTVERSION=	5.0.16
 CATEGORIES=	www java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}-beta/bin/ \
-		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v{PORTVERSION}-beta/bin/ \
+MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
+		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v{PORTVERSION}/bin/ \
 		http://distfiles.coredump.cn/
 
 MAINTAINER=	liukang@bjpu.edu.cn
 COMMENT=	Open-source Java web server by Apache, 5.0.x branch
 
-USE_JAVA=	1.4+
+USE_JAVA=	1.3+
 NO_BUILD=	YES
 
 MAJOR_VER=	${PORTVERSION:R}
@@ -171,5 +171,4 @@ post-install:
 .if ${AUTO_START} == "YES"
 	@${CONTROL_SCRIPT} start || true
 .endif
-	@${ECHO_CMD} "Using Tomcat 5.x in a production environment is NOT recommended!"
 .include <bsd.port.post.mk>
