@@ -1,5 +1,8 @@
 bin/ipython
 bin/pycolor
+%%PYTHON_SITELIBDIR%%/IPython/background_jobs.py
+%%PYTHON_SITELIBDIR%%/IPython/background_jobs.pyc
+%%PYTHON_SITELIBDIR%%/IPython/background_jobs.pyo
 %%PYTHON_SITELIBDIR%%/IPython/ColorANSI.py
 %%PYTHON_SITELIBDIR%%/IPython/ColorANSI.pyc
 %%PYTHON_SITELIBDIR%%/IPython/ColorANSI.pyo
@@ -127,6 +130,8 @@ bin/pycolor
 %%DOCSDIR%%/manual/img1.png
 %%DOCSDIR%%/manual/img2.png
 %%DOCSDIR%%/manual/img3.png
+%%DOCSDIR%%/manual/img4.png
+%%DOCSDIR%%/manual/img5.png
 %%DOCSDIR%%/manual/index.html
 %%DOCSDIR%%/manual/manual.css
 %%DOCSDIR%%/manual/manual.html
