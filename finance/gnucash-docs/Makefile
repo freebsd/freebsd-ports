@@ -17,7 +17,8 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
+		${LOCALBASE}/include/db4/db_185.h:${PORTSDIR}/databases/db4
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_X_PREFIX=	yes
