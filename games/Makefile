@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.117 1998/03/27 14:08:30 tg Exp $
+# $Id: Makefile,v 1.118 1998/03/28 15:27:18 steve Exp $
 #
 
     SUBDIR += acm
@@ -103,6 +103,7 @@
     SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
+    SUBDIR += xskewb
     SUBDIR += xsok
     SUBDIR += xsokoban
     SUBDIR += xsol
