@@ -35,8 +35,7 @@ DISTFILES=		redhat-release-7.1-1.noarch.rpm \
 			slang-1.4.2-2.${MACHINE_ARCH}.rpm \
 			sh-utils-2.0-13.${MACHINE_ARCH}.rpm \
 			rpm-4.0.2-8.${MACHINE_ARCH}.rpm \
-			${RPM_FREETYPE} \
-			${RPM_XFREE86_LIBS}
+			${RPM_FREETYPE}
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
@@ -68,7 +67,7 @@ UPD_SET1=		glibc-common-2.2.4-32.1.${MACHINE_ARCH}.rpm \
 UPD_SET1=		glibc-common-2.2.4-32.${MACHINE_ARCH}.rpm \
 			glibc-2.2.4-32.${MACHINE_ARCH}.rpm
 .endif
-UPD_SET2=		zlib-1.1.4-8.7x.${MACHINE_ARCH}.rpm
+UPD_SET2=		${RPM_XFREE86_LIBS} zlib-1.1.4-8.7x.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
@@ -85,7 +84,7 @@ RPM_LIBSTDCXX=
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
-RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
+RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-49.i386.rpm
 UPD_SET2+=		libstdc++-2.96-112.7.1.i386.rpm
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
@@ -95,7 +94,7 @@ RPM_LIBSTDCXX=		libstdc++-2.96-87.alpha.rpm
 RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
-RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-21.alpha.rpm
+RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-29.4hp.alpha.rpm
 UPD_SET2+=
 .endif
 
