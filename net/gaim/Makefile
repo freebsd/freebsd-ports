@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
-CONFIGURE_ARGS+=	--diable-audio
+CONFIGURE_ARGS+=	--disable-audio
 .endif
 
 pre-everything::
