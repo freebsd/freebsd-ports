@@ -1,0 +1,14 @@
+DeViSoR is abbreviated for "Design and Visualization of Software Resource". The
+DeViSoRGrid application is part of that software family and is primarily used
+for the following tasks, so far in 2D only:
+
+  * Geometry generation
+  * Manual coarse mesh generation
+  * Grid visualisation at all levels
+
+All of this can be done in a very confortable manner using a simple point and
+click interface like in common vector-based image processing software. Both the
+reliable FEAT file format and the new FEAST format with integrated parallelism
+are supported.
+
+WWW:	http://www.featflow.de/
