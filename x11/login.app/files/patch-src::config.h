@@ -1,5 +1,5 @@
---- config.h	2000/12/13 21:04:54	1.1
-+++ config.h	2000/12/13 21:05:08
+--- src/config.h.orig	Sat Jan  8 18:29:31 2005
++++ src/config.h	Sat Jan  8 18:29:45 2005
 @@ -23,7 +23,7 @@
  #define CONFIG_H
  

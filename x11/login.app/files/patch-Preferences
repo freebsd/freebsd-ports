@@ -1,0 +1,11 @@
+--- Preferences.orig	Sat Jan  8 18:18:14 2005
++++ Preferences	Sat Jan  8 18:19:05 2005
+@@ -5,7 +5,7 @@
+   ConfirmRestartMessage = "Do you really want to restart the computer (y/n)?";
+   ConfirmPowerOffMessage = "Do you really want to turn off the computer (y/n)?";
+ 
+-  XServer = "/usr/X11R6/bin/X -nolisten tcp";
++  XServer = "%%X11BASE%%/bin/X -nolisten tcp";
+   Theme = "Drone";
+ 
+   DisableWelcomeMessage = Yes;

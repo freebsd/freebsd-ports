@@ -1,0 +1,10 @@
+--- Scripts/PowerOff.orig	Sat Jan  8 18:39:45 2005
++++ Scripts/PowerOff	Sat Jan  8 18:39:51 2005
+@@ -3,6 +3,6 @@
+ #
+ # Take the system down for halt.
+ #
+-/sbin/shutdown -h now
++/sbin/shutdown -p now
+ 
+ # End of file

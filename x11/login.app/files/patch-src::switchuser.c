@@ -1,5 +1,5 @@
---- switchuser.c	2000/12/13 19:53:23	1.1
-+++ switchuser.c	2000/12/13 20:23:40
+--- src/switchuser.c.orig	Sun Oct 24 04:15:32 2004
++++ src/switchuser.c	Sat Jan  8 18:37:49 2005
 @@ -77,7 +77,7 @@
     char*  correct;
     struct passwd *pw;

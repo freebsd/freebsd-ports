@@ -1,5 +1,5 @@
---- Scripts/Login.user.orig	Sat Nov 11 09:24:21 2000
-+++ Scripts/Login.user	Thu Dec 14 10:43:08 2000
+--- Scripts/Login.user.orig	Sat Jan  8 18:41:35 2005
++++ Scripts/Login.user	Sat Jan  8 18:45:07 2005
 @@ -1,32 +1,32 @@
  #!/bin/sh
  
