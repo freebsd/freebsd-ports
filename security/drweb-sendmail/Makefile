@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.28.10
+PORTVERSION=    4.28.10a
 CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -15,7 +15,7 @@ MAINTAINER=	anton@chelcom.ru
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
-WRKSRC=         ${WRKDIR}/drweb-filters-${PORTVERSION}-sources
+WRKSRC=         ${WRKDIR}/drweb-filters-4.28.10-sources
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
