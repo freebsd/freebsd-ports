@@ -1,0 +1,3 @@
+This module implements a client interface to NNTP, enabling a Perl 5
+application to talk to NNTP servers.  It uses the OOP (Object Oriented
+Programming) interface introduced with Perl 5.
