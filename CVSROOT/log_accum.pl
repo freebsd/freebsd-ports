@@ -115,7 +115,7 @@ sub cleanup_tmpfiles {
     $wd = `pwd`;
     chdir("/tmp");
     opendir(DIR, ".");
-    push(@files, grep(/^$FILE_PREFIX\..*$id$/, readdir(DIR)));
+    push(@files, grep(/^$FILE_PREFIX\..*$PID$/, readdir(DIR)));
     closedir(DIR);
     foreach (@files) {
 	unlink $_;
@@ -363,7 +363,7 @@ sub do_changes_file {
     local(%unique);
 
     %unique = ();
-    @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
+    @mailaddrs = &read_logfile("$MAIL_FILE.$PID", "");
     foreach $category (@mailaddrs) {
 	next if ($unique{$category});
 	$unique{$category} = 1;
@@ -389,7 +389,7 @@ sub mail_notification {
 
     print "Mailing the commit message...\n";
 
-    @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
+    @mailaddrs = &read_logfile("$MAIL_FILE.$PID", "");
     open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
 
 
@@ -405,7 +405,7 @@ sub mail_notification {
 #    print(MAIL "\n");
 
     $subject = 'Subject: cvs commit:';
-    @subj = &read_logfile("$SUBJ_FILE.$id", "");
+    @subj = &read_logfile("$SUBJ_FILE.$PID", "");
     $subjlines = 0;
     $subjwords = 0;	# minimum of two "words" per line
     LINE: foreach $line (@subj) {
@@ -433,7 +433,7 @@ sub mail_notification {
 
     # Add a header to the mail msg showing which branches
     # were modified during the commit.
-    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$id", "");
+    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID", "");
     print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
 
     print (MAIL "\n");
@@ -498,7 +498,7 @@ umask (002);
 #
 # Initialize basic variables
 #
-$id = getpgrp();
+$PID = getpgrp();
 $state = $STATE_NONE;
 $tag = '';
 $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
@@ -516,12 +516,12 @@ if ($DEBUG) {
   print("files - ", join(":", @files), "\n");
   print("path  - ", join(":", @path), "\n");
   print("dir   - ", $dir, "\n");
-  print("id    - ", $id, "\n");
+  print("pid    - ", $PID, "\n");
 }
 
 # Was used for To: lines, still used for commitlogs naming.
-&append_line("$MAIL_FILE.$id", &mlist_map($files[0] . "/"));
-&append_line("$SUBJ_FILE.$id", $ARGV[0]);
+&append_line("$MAIL_FILE.$PID", &mlist_map($files[0] . "/"));
+&append_line("$SUBJ_FILE.$PID", $ARGV[0]);
 
 #
 # Check for a new directory first.  This will always appear as a
@@ -596,7 +596,7 @@ while (<STDIN>) {
 	push (@log_lines,     $_);
     }
 }
-&append_line("$TAGS_FILE.$id", $tag);
+&append_line("$TAGS_FILE.$PID", $tag);
 
 #
 # Strip leading and trailing blank lines from the log message.  Also
@@ -622,8 +622,8 @@ for ($l = $#log_lines; $l > 0; $l--) {
 # Find the log file that matches this log message
 #
 for ($i = 0; ; $i++) {
-    last if (! -e "$LOG_FILE.$i.$id");
-    @text = &read_logfile("$LOG_FILE.$i.$id", "");
+    last if (! -e "$LOG_FILE.$i.$PID");
+    @text = &read_logfile("$LOG_FILE.$i.$PID", "");
     last if ($#text == -1);
     last if (join(" ", @log_lines) eq join(" ", @text));
 }
@@ -632,30 +632,30 @@ for ($i = 0; ; $i++) {
 # Spit out the information gathered in this pass.
 #
 foreach $tag ( keys %added_files ) {
-    &append_names_to_file("$ADDED_FILE.$i.$id",   $dir, $tag,
+    &append_names_to_file("$ADDED_FILE.$i.$PID",   $dir, $tag,
 	@{ $added_files{$tag} });
 }
 foreach $tag ( keys %changed_files ) {
-    &append_names_to_file("$CHANGED_FILE.$i.$id", $dir, $tag,
+    &append_names_to_file("$CHANGED_FILE.$i.$PID", $dir, $tag,
 	@{ $changed_files{$tag} });
 }
 foreach $tag ( keys %removed_files ) {
-    &append_names_to_file("$REMOVED_FILE.$i.$id", $dir, $tag,
+    &append_names_to_file("$REMOVED_FILE.$i.$PID", $dir, $tag,
 	@{ $removed_files{$tag} });
 }
-&write_logfile("$LOG_FILE.$i.$id", @log_lines);
+&write_logfile("$LOG_FILE.$i.$PID", @log_lines);
 
 if ($RCSIDINFO) {
     foreach $tag ( keys %added_files ) {
-	&change_summary_added("$SUMMARY_FILE.$i.$id", $tag,
+	&change_summary_added("$SUMMARY_FILE.$i.$PID", $tag,
 	    @{ $added_files{$tag} });
     }
     foreach $tag ( keys %changed_files ) {
-	&change_summary_changed("$SUMMARY_FILE.$i.$id", $tag,
+	&change_summary_changed("$SUMMARY_FILE.$i.$PID", $tag,
 	    @{ $changed_files{$tag} });
     }
     foreach $tag ( keys %removed_files ) {
-	&change_summary_removed("$SUMMARY_FILE.$i.$id", $tag,
+	&change_summary_removed("$SUMMARY_FILE.$i.$PID", $tag,
 	    @{ $removed_files{$tag} });
     }
 }
@@ -663,8 +663,8 @@ if ($RCSIDINFO) {
 #
 # Check whether this is the last directory.  If not, quit.
 #
-if (-e "$LAST_FILE.$id") {
-   $_ = &read_line("$LAST_FILE.$id");
+if (-e "$LAST_FILE.$PID") {
+   $_ = &read_line("$LAST_FILE.$PID");
    $tmpfiles=$files[0];
    $tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
    if (! grep(/$tmpfiles$/, $_)) {
@@ -684,29 +684,29 @@ if (-e "$LAST_FILE.$id") {
 #
 push @text, &build_header();
 for ($i = 0; ; $i++) {
-    last if (! -e "$LOG_FILE.$i.$id");
-    @lines = &read_logfile("$CHANGED_FILE.$i.$id", "");
+    last if (! -e "$LOG_FILE.$i.$PID");
+    @lines = &read_logfile("$CHANGED_FILE.$i.$PID", "");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Modified", @lines));
     }
-    @lines = &read_logfile("$ADDED_FILE.$i.$id", "");
+    @lines = &read_logfile("$ADDED_FILE.$i.$PID", "");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Added", @lines));
     }
-    @lines = &read_logfile("$REMOVED_FILE.$i.$id", "");
+    @lines = &read_logfile("$REMOVED_FILE.$i.$PID", "");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Removed", @lines));
     }
 
-    @lines = &read_logfile("$LOG_FILE.$i.$id", "  ");
+    @lines = &read_logfile("$LOG_FILE.$i.$PID", "  ");
     if ($#lines >= 0) {
         push(@text, "  Log:");
 	push(@text, @lines);
     }
     if ($RCSIDINFO == 2) {
-	if (-e "$SUMMARY_FILE.$i.$id") {
+	if (-e "$SUMMARY_FILE.$i.$PID") {
 	    push(@text, "  ");
-	    push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$id");
+	    push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$PID");
 	}
     }
     push(@text, "", "");
@@ -722,8 +722,8 @@ for ($i = 0; ; $i++) {
 if ($RCSIDINFO == 1) {
     my @summary_files;
     for ($i = 0; ; $i++) {
-	last unless -e "$LOG_FILE.$i.$id";
-	push @summary_files, "$SUMMARY_FILE.$i.$id";
+	last unless -e "$LOG_FILE.$i.$PID";
+	push @summary_files, "$SUMMARY_FILE.$i.$PID";
     }
     push @text, format_summaries(@summary_files);
     push @text, "";
