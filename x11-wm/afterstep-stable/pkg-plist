@@ -9,6 +9,7 @@ bin/WinTabs
 bin/afterstep
 bin/afterstep-config
 bin/afterstepdoc
+bin/ascolor
 bin/ascommand.pl
 bin/importasmenu
 bin/installastheme.pl
@@ -480,6 +481,12 @@ share/afterstep/desktop/icons/logos/konqueror
 share/afterstep/desktop/icons/logos/linux-penguin
 share/afterstep/desktop/icons/logos/mozilla
 share/afterstep/desktop/icons/logos/scale48.sh
+share/afterstep/desktop/icons/mini-app.xpm
+share/afterstep/desktop/icons/mini-as.xpm
+share/afterstep/desktop/icons/mini-exit.xpm
+share/afterstep/desktop/icons/mini-folder.xpm
+share/afterstep/desktop/icons/mini-menu.xpm
+share/afterstep/desktop/icons/mini-recycler.xpm
 share/afterstep/desktop/icons/mini/AS
 share/afterstep/desktop/icons/mini/App
 share/afterstep/desktop/icons/mini/Exit
@@ -487,12 +494,6 @@ share/afterstep/desktop/icons/mini/Folder
 share/afterstep/desktop/icons/mini/Menu
 share/afterstep/desktop/icons/mini/Recycler
 share/afterstep/desktop/icons/mini/scale16.sh
-share/afterstep/desktop/icons/mini-app.xpm
-share/afterstep/desktop/icons/mini-as.xpm
-share/afterstep/desktop/icons/mini-exit.xpm
-share/afterstep/desktop/icons/mini-folder.xpm
-share/afterstep/desktop/icons/mini-menu.xpm
-share/afterstep/desktop/icons/mini-recycler.xpm
 share/afterstep/desktop/icons/monalisa.xpm
 share/afterstep/desktop/icons/monitor-bsd.xpm
 share/afterstep/desktop/icons/netscape.xpm
@@ -1595,6 +1596,18 @@ share/afterstep/doc/html/data/desktop/icons/logos/linux-penguin.png
 share/afterstep/doc/html/data/desktop/icons/logos/mozilla.html
 share/afterstep/doc/html/data/desktop/icons/logos/mozilla.png
 share/afterstep/doc/html/data/desktop/icons/logos/scale48.sh.html
+share/afterstep/doc/html/data/desktop/icons/mini-app.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-app.xpm.png
+share/afterstep/doc/html/data/desktop/icons/mini-as.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-as.xpm.png
+share/afterstep/doc/html/data/desktop/icons/mini-exit.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-exit.xpm.png
+share/afterstep/doc/html/data/desktop/icons/mini-folder.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-folder.xpm.png
+share/afterstep/doc/html/data/desktop/icons/mini-menu.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-menu.xpm.png
+share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.html
+share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.png
 share/afterstep/doc/html/data/desktop/icons/mini/AS.html
 share/afterstep/doc/html/data/desktop/icons/mini/AS.png
 share/afterstep/doc/html/data/desktop/icons/mini/App.html
@@ -1610,18 +1623,6 @@ share/afterstep/doc/html/data/desktop/icons/mini/Recycler.png
 share/afterstep/doc/html/data/desktop/icons/mini/background.jpg
 share/afterstep/doc/html/data/desktop/icons/mini/index.html
 share/afterstep/doc/html/data/desktop/icons/mini/scale16.sh.html
-share/afterstep/doc/html/data/desktop/icons/mini-app.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-app.xpm.png
-share/afterstep/doc/html/data/desktop/icons/mini-as.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-as.xpm.png
-share/afterstep/doc/html/data/desktop/icons/mini-exit.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-exit.xpm.png
-share/afterstep/doc/html/data/desktop/icons/mini-folder.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-folder.xpm.png
-share/afterstep/doc/html/data/desktop/icons/mini-menu.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-menu.xpm.png
-share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.html
-share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.png
 share/afterstep/doc/html/data/desktop/icons/monalisa.xpm.html
 share/afterstep/doc/html/data/desktop/icons/monalisa.xpm.png
 share/afterstep/doc/html/data/desktop/icons/monitor-bsd.xpm.html
@@ -2757,7 +2758,9 @@ share/afterstep/themes/DEFAULT.tar.gz
 share/afterstep/themes/Default
 share/afterstep/wharf
 share/afterstep/winlist
-share/gnome/wm-properties/AfterStep.desktop
+share/xsessions/AfterStep.desktop
+@dirrm share/xsessions
+@dirrm share/afterstep_old
 @dirrm share/afterstep/themes
 @dirrm share/afterstep/start/7_About_AfterStep
 @dirrm share/afterstep/start/5_Quit
