@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.21 1998/02/24 21:43:19 jseger Exp $
+# $Id: Makefile,v 1.22 1998/02/27 10:21:32 tg Exp $
 #
 
 DISTNAME=       python1.5
@@ -48,6 +48,7 @@ SETUP_LOCAL=	Setup.tk
 WITH_THREADS?=	yes
 .if exists(/usr/lib/libc_r.a) && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
+CFLAGS+=		-D_THREAD_SAFE
 .endif
 
 #
