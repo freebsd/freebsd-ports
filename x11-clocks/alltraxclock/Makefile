@@ -26,7 +26,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/alltraxclock.so
 WRKSRC=		${WRKDIR}/${PORTNAME}2_0.2/
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2|| ; s|-lpthread||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|;s|-O2||;s|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/alltraxclock.so ${PREFIX}/libexec/gkrellm2/plugins/
