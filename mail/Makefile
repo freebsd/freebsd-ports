@@ -105,6 +105,7 @@
     SUBDIR += rblsmtpd
     SUBDIR += rftp
     SUBDIR += rlytest
+    SUBDIR += ruby-tmail
     SUBDIR += serialmail
     SUBDIR += sigrot
     SUBDIR += smail
