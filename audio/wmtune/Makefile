@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.soren.org/linux/wmtune/dl/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		wmtune.diff.gz
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -26,9 +26,7 @@ PATCH_ARGS	=-p0 -d ${WRKDIR}
 
 post-patch:
 	@${GUNZIP_CMD} -c ${DISTDIR}/wmtune.diff.gz | ${PATCH} ${PATCH_ARGS}
-	@cd ${WRKSRC}/src; \
-		${MV} wmtune.c wmtune.c.orig; \
-		${SED} -e 's|/etc|${PREFIX}/etc|' < wmtune.c.orig > wmtune.c
+	@${PERL} -pi.orig -e 's|/etc|${PREFIX}/etc|' wmtune.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmtune ${PREFIX}/bin
