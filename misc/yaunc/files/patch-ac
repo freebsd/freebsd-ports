@@ -1,0 +1,14 @@
+--- usage.c.orig	Wed Jul 26 09:38:02 2000
++++ usage.c	Sat Dec 16 16:51:31 2000
+@@ -10,9 +10,9 @@
+ 	fprintf(stderr, "\n");
+ 	fprintf(stderr, "Options:\n");
+ 	fprintf(stderr, "\t-f <config file> - use the specified config file instead of \n");
+-	fprintf(stderr, "\t                   of /etc/yaunc.conf\n");
++	fprintf(stderr, "\t                   " DEFAULT_CONF_PATH "\n");
+ 	fprintf(stderr, "\t-d <0/1>         - turn daemon mode off/on\n");
+-	fprintf(stderr, "\t-l <0/1>			- specify logging off/on");
++	fprintf(stderr, "\t-l <0/1>         - specify logging off/on\n");
+ 	fprintf(stderr, "\t-h               - display this help\n");
+ 	fprintf(stderr, "\n");
+ 	exit(0);
