@@ -65,7 +65,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>zh-emacs</name>
 	<name>emacs</name>
 	<range><lt>20.7_4</lt></range>
-	<range><gt>21.*</gt><lt>21.4</lt></range>
+	<range><gt>21.*</gt><lt>21.3_4</lt></range>
       </package>
       <package>
 	<name>xemacs</name>
