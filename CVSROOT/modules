@@ -4047,6 +4047,7 @@ latex-booktabs	ports/print/latex-booktabs
 latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
 latex-feynmf	ports/print/latex-feynmf
+latex-index	ports/print/latex-index
 latex-keystroke	ports/print/latex-keystroke
 latex-layouts	ports/print/latex-layouts
 latex-mathabx	ports/print/latex-mathabx
