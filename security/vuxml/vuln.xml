@@ -57,7 +57,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2004-06-01</discovery>
-      <entry>TO BE FILLED BEFORE COMMIT</entry>
+      <entry>2004-06-24</entry>
     </dates>
   </vuln>
  
@@ -3535,7 +3535,7 @@ misc.c:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>libmcrypt does incomplete input validation, leading to
-	  several buffer overflow vuxml.  Additionally,
+	  several buffer overflows.  Additionally,
 	  a memory leak is present.  Both of these problems may be
 	  exploited in a denial-of-service attack.</p>
       </body>
