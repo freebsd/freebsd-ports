@@ -961,6 +961,7 @@ cscope		ports/devel/cscope
 csh		src/bin/csh
 csound		ports/audio/csound
 csound-manual	ports/audio/csound-manual
+csplit		src/usr.bin/csplit
 css-mode.el	ports/www/css-mode.el
 cssc		ports/devel/cssc
 cstream		ports/misc/cstream
