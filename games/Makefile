@@ -103,6 +103,7 @@
     SUBDIR += gracer
     SUBDIR += greed
     SUBDIR += gru
+    SUBDIR += gshisen
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
