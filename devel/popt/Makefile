@@ -8,27 +8,39 @@
 PORTNAME=	popt
 PORTVERSION=	1.7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
+		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
+		http://gd.tuwien.ac.at/utils/rpm.org/dist/%SUBDIR%/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/rpm/dist/%SUBDIR%/ \
+		ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
+MASTER_SITE_SUBDIR=	rpm-4.1.x
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
-USE_GETTEXT=	yes
-USE_INC_LIBTOOL_VER=	13
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--program-prefix=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		popt.3
 
-post-patch:
-# avoid installing both charset.alias and locale.alias which conflict
-# with libiconv
-	@${REINPLACE_CMD} -E -e 's|(SUBDIRS[[:space:]]+=.*)intl|\1|' \
-		${WRKSRC}/Makefile.in
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--program-prefix=""
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
