@@ -1,6 +1,6 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 #
-# $Id: commit_prep.pl,v 1.3 1996/02/07 14:35:34 peter Exp $
+# $Id: commit_prep.pl,v 1.4 1997/05/15 19:53:32 peter Exp $
 #
 #
 # Perl filter to handle pre-commit checking of files.  This program

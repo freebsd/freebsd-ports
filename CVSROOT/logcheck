@@ -1,6 +1,6 @@
-#! /usr/local/bin/perl
+#! /usr/bin/perl
 #
-# $Id: logcheck,v 1.1 1997/06/08 02:18:37 peter Exp $
+# $Id: logcheck,v 1.2 1997/06/08 16:56:46 peter Exp $
 # 
 # This hack is to sanitise the results of what the user may have
 # "done" while editing the commit log message.. :-)   Peter Wemm.
