@@ -100,9 +100,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-sasla
 .else
 CONFLICTS+=	sendmail*+sasl2*-8.*
 .endif
-.if defined(SENDMAIL_WITH_SOCKETMAP)
-EXTRA_PATCHES+=	${FILESDIR}/socketmap.patch
-.endif
 .if defined(SENDMAIL_WITH_CYRUSLOOKUP)
 EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
 .endif
