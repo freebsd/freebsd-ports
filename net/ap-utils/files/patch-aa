@@ -1,21 +1,19 @@
---- nwn/ap-nwn.c.orig	Sun Oct  6 09:47:54 2002
-+++ nwn/ap-nwn.c	Sun Oct  6 09:46:10 2002
-@@ -18,15 +18,15 @@
-  *
+--- src/wlan.c.orig	Sat Nov  9 08:54:18 2002
++++ src/wlan.c	Sat Nov  9 08:55:28 2002
+@@ -19,13 +19,13 @@
   */
- 
--#include <netinet/in.h>
- #include <stdlib.h>
+ #include <ncurses.h>
  #include <string.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdlib.h>
  #include "ap-utils.h"
  #include <menu.h>
--#include <arpa/inet.h>
--#include <unistd.h>
- #include <sys/types.h>
- #include <sys/socket.h>
-+#include <netinet/in.h>
-+#include <arpa/inet.h>
-+#include <unistd.h>
+-#include <sys/types.h>
+-#include <sys/socket.h>
+-#include <netinet/in.h>
+ #include <unistd.h>
  
- WINDOW *sub_for_menu, *win_for_help, *main_win, *main_sub;
- char *community;
+ #define HIDE_ESSID _("[S] Insert ESSID in broadcast packets: %s")

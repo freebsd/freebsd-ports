@@ -1,8 +1,9 @@
-bin/ap-atmel
+bin/ap-config
 bin/ap-mrtg
-bin/ap-nwn
 sbin/ap-trapd
+lib/charset.alias
 share/locale/uk/LC_MESSAGES/ap-utils.mo
+share/locale/fr/LC_MESSAGES/ap-utils.mo
 %%PORTDOCS%%share/doc/ap-utils/FAQ
 %%PORTDOCS%%share/doc/ap-utils/uk/INSTALL
 %%PORTDOCS%%share/doc/ap-utils/uk/README.atmel

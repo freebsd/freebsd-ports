@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://ap-utils.polesye.net/files/ \
 		http://web.cs.cmu.edu/~dpelleg/download/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-MAN8=		ap-trapd.8 ap-mrtg.8 ap-atmel.8 ap-nwn.8
+MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 .if !defined(NOPORTDOCS)
 post-install:
