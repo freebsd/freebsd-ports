@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.202 1999/07/17 17:24:49 cpiazza Exp $
+# $Id: Makefile,v 1.203 1999/07/18 21:02:31 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -76,8 +76,8 @@
     SUBDIR += libslang
     SUBDIR += libtool
     SUBDIR += libxalloc
-    SUBDIR += linux-devel
     SUBDIR += linux_devel
+    SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += m4
     SUBDIR += m68kbinutils
