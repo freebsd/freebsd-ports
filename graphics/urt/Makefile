@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.2 1997/06/04 01:14:25 asami Exp $
+# $Id: Makefile,v 1.3 1997/06/06 05:31:56 asami Exp $
 #
 
 DISTNAME=	urt
@@ -14,7 +14,7 @@ DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
 MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
-LIB_DEPENDS=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=   yes
