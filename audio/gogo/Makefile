@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gogo no coder
-# Version required:    2.22c
+# Version required:    2.23
 # Date created:        01 July 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gogo222c
-PKGNAME=	gogo-2.22c
+DISTNAME=	gogo223
+PKGNAME=	gogo-2.23
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 
