@@ -43,6 +43,8 @@ PLIST_SUB+=	SERVER=""
 
 .include <bsd.port.pre.mk>
 
+PORTDOCS=	bacula.pdf html-manual/*
+
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "=======> ATTENTION <======="
