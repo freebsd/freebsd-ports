@@ -26,6 +26,7 @@ ALL_TARGET=	default
 CFLAGS+=	-DSYS_FREEBSD
 
 PLIST_FILES=	bin/x264 \
+		include/x264.h \
 		lib/libx264.a
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
@@ -57,6 +58,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x264 ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/x264.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libx264.a ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
