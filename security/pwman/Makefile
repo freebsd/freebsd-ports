@@ -1,0 +1,34 @@
+# New ports collection makefile for:	pwman
+# Date created:				23 June 2002
+# Whom:					Anders Nordby <anders@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pwman
+PORTVERSION=	0.2.1
+CATEGORIES=	security
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	anders@FreeBSD.org
+
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
+RUN_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
+
+GNU_CONFIGURE=	yes
+
+MAN1=	pwman.1
+
+DOCS=	AUTHORS COPYING ChangeLog README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${INSTALL} -d -m 0755 ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+
+.include <bsd.port.mk>

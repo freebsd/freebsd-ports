@@ -1,0 +1,4 @@
+PWman is a console application for managing passwords. It uses GPG (gpgme)
+for encryption and authentication.
+
+WWW: http://pwman.sourceforge.net/

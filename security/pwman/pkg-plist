@@ -1,0 +1,7 @@
+bin/pwman
+%%PORTDOCS%%share/doc/pwman/AUTHORS
+%%PORTDOCS%%share/doc/pwman/COPYING
+%%PORTDOCS%%share/doc/pwman/ChangeLog
+%%PORTDOCS%%share/doc/pwman/README
+%%PORTDOCS%%share/doc/pwman/TODO
+%%PORTDOCS%%@dirrm share/doc/pwman
