@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -61,8 +62,7 @@ WITHOUT_XFT=	yes
 .endif
 
 .if ${OSVERSION} < 502000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
-RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 .endif
 
