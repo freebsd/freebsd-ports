@@ -804,6 +804,7 @@ cabextract	ports/archivers/cabextract
 cacti		ports/net/cacti
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
+cal3d		ports/graphics/cal3d
 calamaris	ports/www/calamaris
 calc		ports/math/calc
 calcoo		ports/math/calcoo
