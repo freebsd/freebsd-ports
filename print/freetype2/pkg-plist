@@ -23,6 +23,7 @@ include/freetype2/freetype/ftmoderr.h
 include/freetype2/freetype/ftmodule.h
 include/freetype2/freetype/ftoutln.h
 include/freetype2/freetype/ftrender.h
+include/freetype2/freetype/ftsizes.h
 include/freetype2/freetype/ftsnames.h
 include/freetype2/freetype/ftsynth.h
 include/freetype2/freetype/ftsystem.h
