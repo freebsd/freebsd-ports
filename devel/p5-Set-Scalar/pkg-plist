@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/Scalar/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Null.pm
 lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Real.pm
 lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/ValuedUniverse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Virtual.pm
 lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Valued.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Null.pm
+lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Virtual.pm
 lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Universe.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/Scalar/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/Scalar
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set 2>/dev/null || true
