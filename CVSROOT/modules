@@ -3895,6 +3895,7 @@ libshhmsg	ports/devel/libshhmsg
 libshhopt	ports/devel/libshhopt
 libshout	ports/audio/libshout
 libsidplay	ports/audio/libsidplay
+libsidplay2	ports/audio/libsidplay2
 libsigc++	ports/devel/libsigc++
 libsigc++12	ports/devel/libsigc++12
 libskey		src/lib/libskey
