@@ -123,6 +123,7 @@ SETIsupport	ports/astro/SETIsupport
 SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 Sather		ports/lang/Sather
+SciPlot		ports/graphics/SciPlot
 SoXt		ports/x11-toolkits/SoXt
 SpecTcl		ports/devel/SpecTcl
 Tee		ports/sysutils/Tee
