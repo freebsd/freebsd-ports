@@ -6,8 +6,6 @@
 %%EMACS_LIBDIR%%/site-lisp/flim/mailcap.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-b-ccl.el
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-b-ccl.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-el.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-el.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-g.el
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-g.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-q.el
