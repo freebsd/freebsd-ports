@@ -1,6 +1,6 @@
---- scribus/scribus.cpp.orig	Sat Jun 14 04:35:07 2003
-+++ scribus/scribus.cpp	Sun Jun 15 19:50:27 2003
-@@ -3040,7 +3040,7 @@
+--- scribus/scribus.cpp.orig	Fri Jul 11 21:58:11 2003
++++ scribus/scribus.cpp	Tue Jul 15 12:40:29 2003
+@@ -3051,7 +3051,7 @@
  void ScribusApp::slotHelpAbout()
  {
  	void *mo;
@@ -15,10 +15,10 @@
  	void *mo;
 -	char *error;
 +	const char *error;
+ 	bool zChange = false;
  	typedef Preferences* (*sdem)(QWidget *d, preV *Vor);
  	sdem demo;
- 	QString pfad = PREL;
-@@ -5153,7 +5153,7 @@
+@@ -5156,7 +5156,7 @@
  
  PSLib* ScribusApp::getPSDriver(bool psart, SCFonts &AllFonts, QMap<QString,QFont> DocFonts, CListe DocColors, bool pdf)
  {
@@ -27,7 +27,7 @@
  	typedef PSLib* (*sdem)(bool psart, SCFonts &AllFonts, QMap<QString,QFont> DocFonts, CListe DocColors, bool pdf);
  	sdem demo;
  	QString pfad = PREL;
-@@ -5188,7 +5188,7 @@
+@@ -5191,7 +5191,7 @@
  bool ScribusApp::getPDFDriver(QString fn, QString nam, int Components, int frPa, int toPa, QMap<int,QPixmap> thumbs)
  {
  	bool ret = false;
@@ -36,7 +36,7 @@
  	void *PDFDriver;
  	typedef bool (*sdem)(ScribusApp *plug, QString fn, QString nam, int Components, int frPa, int toPa, QMap<int,QPixmap> thumbs);
  	sdem demo;
-@@ -5734,7 +5734,7 @@
+@@ -5738,7 +5738,7 @@
  
  void ScribusApp::FinalizePlugs()
  {
@@ -45,7 +45,7 @@
  	QMap<QString, PlugData>::Iterator it;
  	struct PlugData pda;
  	typedef void (*sdem2)();
-@@ -5804,7 +5804,7 @@
+@@ -5808,7 +5808,7 @@
  void ScribusApp::CallDLL(QString name)
  {
  	void *mo;
@@ -54,7 +54,7 @@
  	struct PlugData pda;
  	pda = PluginMap[name];
  	typedef void (*sdem)(QWidget *d, ScribusApp *plug);
-@@ -5838,7 +5838,7 @@
+@@ -5842,7 +5842,7 @@
  bool ScribusApp::DLLName(QString name, QString *PName, int *typ, void **Zeig)
  {
  	void *mo;
