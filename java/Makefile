@@ -24,6 +24,7 @@
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-lomboz
     SUBDIR += eclipse-pmd
+    SUBDIR += eclipse-quantum
     SUBDIR += eclipse-sysdeo-tomcat
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
