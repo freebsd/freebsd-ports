@@ -1,0 +1,11 @@
+--- include/config.h.dist.orig	Sat Apr 10 23:33:33 1999
++++ include/config.h.dist	Sat Apr 10 23:41:21 1999
+@@ -171,7 +171,7 @@
+ #define DEFAULT_HACKED_IDENTD NULL
+ #define DEFAULT_HELP_PAGER 1
+ /*
+-#define DEFAULT_HELP_PATH "/usr/local/lib/ninja/help:/usr/local/lib/irc/help:~/.ninja"
++#define DEFAULT_HELP_PATH "__PREFIX__/share/ninja/help:__PREFIX__/lib/irc/help:~/.ninja"
+ */
+ #define DEFAULT_HELP_PROMPT 1
+ #define DEFAULT_HELP_WINDOW 0

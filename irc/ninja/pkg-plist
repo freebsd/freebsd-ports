@@ -1,0 +1,9 @@
+bin/ninja
+bin/wserv
+share/doc/ninja/colors.txt
+share/doc/ninja/commands.txt
+share/doc/ninja/keyinfo.txt
+share/ninja/help/ninja.help
+@dirrm share/doc/ninja
+@dirrm share/ninja/help
+@dirrm share/ninja
