@@ -21,7 +21,13 @@ MAN3=		cgiclose.3 cgigetvalue.3 cginewquerystr.3
 INSTALLS_SHLIB=	yes
 CFLAGS+=	"-fPIC"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not link on amd64 (mime port needs to provide libmime.so)"
+.endif
+
 post-install:
 	${LN} -sf libcgiparse.so.1 ${PREFIX}/lib/libcgiparse.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
