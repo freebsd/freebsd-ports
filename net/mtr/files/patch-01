@@ -1,9 +1,11 @@
---- net.c.orig	Wed Jun  9 11:06:27 1999
-+++ net.c	Wed Jul 14 02:03:23 1999
-@@ -205,5 +205,5 @@
+--- net.c.orig Wed Jun  9 11:06:27 1999
++++ net.c      Wed Jul 14 02:03:23 1999
+@@ -213,7 +213,7 @@
+     rv = sendto(sendsock, packet, packetsize, 0, 
  		(struct sockaddr *)&remoteaddress, sizeof(remoteaddress));
      if (rv >= 0) {
 -      fprintf (stderr, "You've got a broken (FreeBSD?) system\n");
-+      /* fprintf (stderr, "You've got a broken (FreeBSD?) system\n"); */
++/*      fprintf (stderr, "You've got a broken (FreeBSD?) system\n"); */
        BSDfix = 1;
      }
+   }
