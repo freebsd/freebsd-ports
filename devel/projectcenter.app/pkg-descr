@@ -1,11 +1,13 @@
-ProjectCenter is an application developed for GNUstep which one day should
-become a full blown development environment. 
+Project Center is GNUstep's graphical integrated developement environment
+(IDE). It helps you to create all different kinds of projects like
+Applications, Tools, Libraries and Bundles.
 
-THIS IS A DEVELOPER 'PRE RELEASE RELEASE' ONLY! It is meant to give a
-sneak peak for those who want to help, it is not meant as a usable
-application right now!
+Project Center allows you to easily add and remove, edit and search files;
+writes the project makefiles accordingly and supports you in the actual
+process of building and debugging your project.
 
-If you want to volunteer, please contact
-Philippe C.D. Robert <phr@3dkit.org>
+Even the management of a big project keeps being easy as Project Center's
+file browser lets you always have a well sorted and categorized overview
+over all the files in your project.
 
 WWW: http://www.gnustep.org/experience/ProjectCenter.html
