@@ -1,0 +1,11 @@
+--- sattrack/sattime.c~	Sat Jan  4 22:19:08 1997
++++ sattrack/sattime.c	Wed Jul 26 17:03:49 2000
+@@ -269,7 +269,7 @@
+     if (gdnY < 50)                  /* allow 4 or 2 digit year specifications */
+         gdnY += 2000;
+     else
+-        if (gdnY < 100)
++        if (gdnY <= 100)
+             gdnY += 1900;
+ 
+     result = (long) ((((gdnY-1901)*1461) >> 2) + monthDays[gdnM-1] + gdnD+365);

@@ -130,8 +130,8 @@
   # i386          (i386 with FreeBSD)
   #
 ! CPU		= i386/FreeBSD
-! CC_CMACH	= -O -DFREEBSD -DIOCTL
-! CC_LMACH	=
+! CC_CMACH	= -DFREEBSD -DIOCTL ${CFLAGS}
+! CC_LMACH	= ${LFLAGS}
 ! CC		= gcc
   
   #
