@@ -1,0 +1,8 @@
+lib/gedit-2/plugins/ascii.gedit-plugin
+lib/gedit-2/plugins/cvschangelog.gedit-plugin
+lib/gedit-2/plugins/diff.gedit-plugin
+lib/gedit-2/plugins/libasciitable.so
+lib/gedit-2/plugins/libcvschangelog.so
+lib/gedit-2/plugins/libdiff.so
+share/gnome/gedit-2/glade/asciitable.glade2
+share/gnome/gedit-2/glade/diff.glade2
