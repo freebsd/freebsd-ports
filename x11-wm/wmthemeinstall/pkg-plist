@@ -1,0 +1,5 @@
+bin/wmthemeinstall
+share/wmthemeinstall/AUTHORS
+share/wmthemeinstall/ChangeLog
+share/wmthemeinstall/README
+@dirrm share/wmthemeinstall
