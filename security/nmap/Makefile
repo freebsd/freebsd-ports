@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	2.54.b30
+PORTVERSION=	2.54.b31
 CATEGORIES=	security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
