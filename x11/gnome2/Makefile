@@ -24,14 +24,12 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gedit:${PORTSDIR}/editors/gedit2 \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
-		metacity:${PORTSDIR}/x11-wm/metacity \
 		metacity-setup:${PORTSDIR}/x11-wm/metacity-setup \
 		bug-buddy:${PORTSDIR}/devel/bugbuddy2 \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		yelp:${PORTSDIR}/x11/yelp \
 		gdm:${PORTSDIR}/x11/gdm2 \
-		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
 		screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
 		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
