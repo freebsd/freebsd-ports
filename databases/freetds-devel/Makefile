@@ -24,6 +24,7 @@ post-patch:
 		's| install-includeHEADERS||g'
 	@${PERL} -pi -e 's!/freetds.conf!/freetds.conf.dist!g' \
 		${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's!malloc.h!stdlib.h!' ${WRKSRC}/include/tds.h.in
 
 post-install:
 .if !exists(${PREFIX}/etc/freetds.conf)
