@@ -7,7 +7,7 @@
 
 PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://mlnews.com/marumoji/src/ \
 		${MASTER_SITE_LOCAL} \
@@ -23,8 +23,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese marumoji fonts
 
-BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
-		mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 		bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
