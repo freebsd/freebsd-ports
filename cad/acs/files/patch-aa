@@ -26,6 +26,6 @@
 + 	(cd src; make freebsd)
 + 
 + install:
-+ 	(cd src/FreeBSD; install -c -s -m 755 -g bin -o bin acs /usr/local/bin)
-+ 	(cd doc; install -c -m 644 -g bin -o bin acs.hlp /usr/local/lib)
++ 	(cd src/FreeBSD; install -c -s -m 755 -g bin -o bin acs ${PREFIX}/bin)
++ 	(cd doc; install -c -m 644 -g bin -o bin acs.hlp ${PREFIX}/lib)
 + 
