@@ -7,14 +7,15 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
 #CATEGORIES=		local/sysutils
 #VALID_CATEGORIES+=	${CATEGORIES}	# for FreeBSD to accept our local category
 #-----------------------------------------
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		http://portmanager.sunsite.dk/distfiles/	\
+			${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
 MAINTAINER=		reso3w83@verizon.net
