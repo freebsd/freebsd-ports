@@ -6,6 +6,7 @@ include/qextscintillacommandset.h
 include/qextscintilladocument.h
 include/qextscintillaglobal.h
 include/qextscintillalexer.h
+include/qextscintillalexerbash.h
 include/qextscintillalexercpp.h
 include/qextscintillalexercsharp.h
 include/qextscintillalexerhtml.h

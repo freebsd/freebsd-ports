@@ -6,11 +6,12 @@
 
 PORTNAME=	qscintilla
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/QScintilla/
 DISTNAME=	qscintilla-1.61-gpl-${PORTVERSION}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT port of scintilla
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
