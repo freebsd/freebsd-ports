@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jan  4 13:47:04 2003
++++ Makefile.in	Sat Jan  4 13:47:33 2003
+@@ -362,6 +362,8 @@
+ 	    fi \
+ 	  done \
+ 	fi
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
++		$(INSTALL_DATA) $(srcdir)/NAPS-urlcache.txt $(DESTDIR)$(pkgdatadir);
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \
