@@ -1,8 +1,8 @@
      LHa for UNIX
 
      This unofficial version of lha is based on Version 1.00.  This
-version supports extraction & archiving using -lh5- as well as
-extraction using -lh6- algorithm.
+version supports extraction & archiving using -lh5- & -lh6- as well as
+extraction using -lh7- algorithm.
 
      All the bug reports on this version should be directed to Tsuguo
 Okamoto <tsugio@muc.biglobe.ne.jp>.
