@@ -34,6 +34,9 @@
 #	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
 #	install, package, package-loop, readmes, realinstall, reinstall, tags
 #
+#	search:
+#		Search for ports using either 'make search key=<keyword>'
+#		or 'make search name=<keyword>'.
 
 
 .MAIN: all
@@ -234,4 +237,22 @@ README.html:
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+.endif
+
+# Ports may be symlinked to somewhere else.  Convert the directory path
+# back into one that lives within the ports collection.
+PORTSACTUALDIR!=perl -e '($$subdir = "${.CURDIR}") =~ s!.*/([^/]+)!$$1/!; \
+	print "${PORTSACTUALDIR}/";  print $$subdir unless "${PORTSTOP}";'
+search: ${PORTSDIR}/INDEX
+.if !defined(key) && !defined(name)
+	@echo "The search target requires a keyword parameter or name parameter,"
+	@echo "e.g.: \"make search key=somekeyword\""
+	@echo "or    \"make search name=somekeyword\""
+.else
+.if defined(key)
+	@grep ${PORTSACTUALDIR} ${PORTSDIR}/INDEX | grep -i "${key}" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'
+.endif
+.if defined(name)
+	@grep ${PORTSACTUALDIR} ${PORTSDIR}/INDEX | grep -i "^[^|]*${name}[^|]*|" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'
+.endif
 .endif
