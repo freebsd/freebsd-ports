@@ -12,8 +12,6 @@ info/gettext.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gettext.info %D/info/dir
 lib/libintl.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 lib/locale/de/LC_MESSAGES/gettext.cat
 lib/locale/fr/LC_MESSAGES/gettext.cat
 lib/locale/no/LC_MESSAGES/gettext.cat
@@ -53,6 +51,4 @@ share/locale/locale.alias
 @dirrm lib/locale/no@nynorsk
 @dirrm lib/locale/sv/LC_MESSAGES
 @dirrm lib/locale/sv
-@dirrm lib/locale
 @dirrm share/gettext
-@dirrm share/locale
