@@ -7,6 +7,7 @@
 
 PORTNAME=	libmcrypt
 PORTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
