@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
+
 do-build:
 	@brandelf -t Linux ${WRKSRC}/find_ddos
 
