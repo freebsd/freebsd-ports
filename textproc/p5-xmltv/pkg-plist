@@ -1,8 +1,6 @@
-%%CGIDIR%%/tv_pick.cgi
 bin/tv_cat
 bin/tv_check
 bin/tv_extractinfo_en
-bin/tv_grab_de
 bin/tv_grab_dk
 bin/tv_grab_es
 bin/tv_grab_fi
@@ -17,11 +15,11 @@ bin/tv_grab_uk
 bin/tv_grab_uk_rt
 bin/tv_grep
 bin/tv_imdb
+bin/tv_remove_some_overlapping
 bin/tv_sort
 bin/tv_split
 bin/tv_to_latex
 bin/tv_to_text
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 %%SITE_PERL%%/XMLTV.pm
 %%SITE_PERL%%/XMLTV/Ask.pm
 %%SITE_PERL%%/XMLTV/AskTerm.pm
@@ -41,6 +39,7 @@ bin/tv_to_text
 %%SITE_PERL%%/XMLTV/Usage.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/XMLTV/ZapListings.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 share/doc/xmltv-%%VERSION%%/COPYING
 share/doc/xmltv-%%VERSION%%/QuickStart
 share/doc/xmltv-%%VERSION%%/README
@@ -91,6 +90,7 @@ share/xmltv/tv_grab_uk/channel_pkgs/sport
 share/xmltv/tv_grab_uk/channel_pkgs/travel
 share/xmltv/tv_grab_uk/channel_pkgs/wales
 share/xmltv/tv_grab_uk_rt/channel_ids
+%%CGIDIR%%/tv_pick.cgi
 @dirrm share/xmltv/tv_grab_uk_rt
 @dirrm share/xmltv/tv_grab_uk/channel_pkgs/Telewest
 @dirrm share/xmltv/tv_grab_uk/channel_pkgs/Sky
@@ -102,5 +102,5 @@ share/xmltv/tv_grab_uk_rt/channel_ids
 @dirrm share/xmltv/tv_grab_it
 @dirrm share/xmltv
 @dirrm share/doc/xmltv-%%VERSION%%
-@dirrm %%SITE_PERL%%/XMLTV
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
+@dirrm %%SITE_PERL%%/XMLTV
