@@ -9,7 +9,7 @@ PORTNAME=	cracklib
 PORTVERSION=	2.7
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.crypticide.org/users/alecm/security/
+MASTER_SITES=	http://www.crypticide.com/users/alecm/security/
 DISTNAME=	${PORTNAME},${PORTVERSION}
 
 MAINTAINER=	ajk@iu.edu
