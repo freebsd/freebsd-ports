@@ -130,7 +130,7 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-	${LN} -sf ${WRKDIRPREFIX}/${PORTSDIR}/graphics/jpeg/work/jpeg-6b \
+	${LN} -sf `cd ${PORTSDIR}/graphics/jpeg && ${MAKE} -V WRKSRC` \
 		${WRKSRC}/jpeg
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure and
