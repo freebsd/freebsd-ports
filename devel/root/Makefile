@@ -139,6 +139,10 @@ CONFIGURE_ARGS+=	--disable-srp
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
 # The thread sub-system was not working for ROOT versions 3.x on FreeBSD 4.x
 # systems. Meanwhile maybe it's working with some patches - but I have no
 # FreeBSD 4.x system still running for testing  ;-)
