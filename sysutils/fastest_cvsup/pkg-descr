@@ -1,4 +1,4 @@
-Perl script to find fastest FreeBSD CVSup server:
+Perl script to find fastest CVSup server:
 
 * uses socket connections not just 'pings'
 * takes notice of server responses
@@ -6,9 +6,11 @@ Perl script to find fastest FreeBSD CVSup server:
    - or - 
   connects to the 'local' servers defined in the script
    - or -
-  connects to *all* the servers in *all* the countries
+  connects to ALL the servers in ALL the countries
 * returns either fastest server or top 3 (useful for scripts)
 * returns exit codes (useful for scripts)
-* can update the CVSup server list from www.freebsdmirrors.org
+* can re-write itself to update the CVSup server list, obtained
+  from the online FreeBSD Handbook
+* can easily add other CVSup servers (NetBSD/OpenBSD...etc)
 
 WWW: http://fastest-cvsup.sourceforge.net/

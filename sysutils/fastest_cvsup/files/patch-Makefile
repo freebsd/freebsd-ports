@@ -1,0 +1,13 @@
+--- Makefile.orig	Wed Jul 17 15:16:50 2002
++++ Makefile	Wed Jul 17 15:17:44 2002
+@@ -8,8 +8,8 @@
+ 		--date="17 July 2002" fastest_cvsup > fastest_cvsup.7
+ 
+ install:
+-	install -o root -g wheel -m 0755 fastest_cvsup /usr/local/bin
+-	install -o root -g wheel -m 0644 fastest_cvsup.7 /usr/local/man/man7
++	${BSD_INSTALL_SCRIPT} fastest_cvsup ${PREFIX}/bin
++	${BSD_INSTALL_MAN} fastest_cvsup.7 ${PREFIX}/man/man7
+ 
+ clean:
+ 	rm fastest_cvsup.7
