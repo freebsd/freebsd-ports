@@ -1,0 +1,5 @@
+pDonkey is the set of tools for manipulating eDonkey peer2peer protocol. The
+main goal of the project is to provide basic API for the protocol and to
+create open source server for eDonkey network.
+
+WWW: http://pdonkey.sourceforge.net/
