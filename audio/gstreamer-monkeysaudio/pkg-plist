@@ -1,5 +1,5 @@
 lib/gstreamer-%%VERSION%%/libgstmonkeysaudio.so
 %%PORTDOCS%%%%DOCSDIR%%/GStreamer-monkeysaudio-permit
 @exec %D/bin/gst-register 2>/dev/null || true
-%%PORTDOCS%%@unexec /bin/rmdir %%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@unexec /bin/rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 @unexec %D/bin/gst-register 2>/dev/null || true
