@@ -530,6 +530,7 @@ bigyear		ports/deskutils/bigyear
 bin86		ports/devel/bin86
 bincimap	ports/mail/bincimap
 bind8		ports/net/bind8
+bind84		ports/net/bind84
 bind9		ports/net/bind9
 bind9-dlz	ports/net/bind9-dlz
 binder		ports/x11-fm/binder
