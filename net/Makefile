@@ -74,6 +74,7 @@
     SUBDIR += echoping
     SUBDIR += etherboot
     SUBDIR += ethereal
+    SUBDIR += ettercap
     SUBDIR += everybuddy
     SUBDIR += fidelio
     SUBDIR += firetalk

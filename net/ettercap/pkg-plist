@@ -1,0 +1,12 @@
+bin/ettercap
+%%PORTDOCS%%share/doc/ettercap-0.2.4/AUTHORS
+%%PORTDOCS%%share/doc/ettercap-0.2.4/CHANGELOG
+%%PORTDOCS%%share/doc/ettercap-0.2.4/COPYING
+%%PORTDOCS%%share/doc/ettercap-0.2.4/HISTORY
+%%PORTDOCS%%share/doc/ettercap-0.2.4/KNOWN-BUGS
+%%PORTDOCS%%share/doc/ettercap-0.2.4/PORTINGS
+%%PORTDOCS%%share/doc/ettercap-0.2.4/README
+%%PORTDOCS%%share/doc/ettercap-0.2.4/README.PLUGINS
+%%PORTDOCS%%share/doc/ettercap-0.2.4/THANKS
+%%PORTDOCS%%share/doc/ettercap-0.2.4/TODO
+%%PORTDOCS%%@dirrm share/doc/ettercap-0.2.4
