@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.121 1997/10/23 15:18:55 max Exp $
+# $Id: Makefile,v 1.122 1997/10/30 11:23:28 jseger Exp $
 #
 
     SUBDIR += archie
@@ -30,6 +30,7 @@
     SUBDIR += ircii-epic
     SUBDIR += isc-dhcp
     SUBDIR += ivs
+    SUBDIR += kdenetwork
     SUBDIR += ldap
     SUBDIR += libsocket++
     SUBDIR += mirror
