@@ -1,11 +1,15 @@
---- Makefile.in~	Sat Feb  8 08:39:19 2003
-+++ Makefile.in	Thu Mar 27 22:24:53 2003
-@@ -28,7 +28,7 @@
- GSM_LIB_1 = -lgsm
- GSM_SUPPORT  = @GSM_SUPPORT@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -27,6 +27,9 @@
+ 	nroff -man $(srcdir)/soxexam.1 | col -b > soxexam.txt
+ 	nroff -man $(srcdir)/libst.3 | col -b > libst.txt
  
--CFLAGS	= @CFLAGS@ -I$(srcdir) -I$(builddir)
-+CFLAGS	= @CFLAGS@ @CPPFLAGS@ -I$(srcdir) -I$(builddir)
- LDFLAGS	= -L. -L./gsm @LDFLAGS@
- LIBS	= -lst $(GSM_LIB_$(GSM_SUPPORT)) @LIBS@
- 
++PLAY_INSTALL_0  =
++PLAY_INSTALL_1  = install-play
++
+ install: $(PLAY_INSTALL_$(PLAY_SUPPORT))
+ 	cd src && $(MAKE) $@
+ 	$(srcdir)/mkinstalldirs $(mandir)/man1
