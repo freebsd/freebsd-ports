@@ -1,0 +1,68 @@
+--- sysinfo.c.orig	Tue Apr  6 22:53:17 1999
++++ sysinfo.c	Tue Apr  6 23:09:37 1999
+@@ -102,6 +102,7 @@
+ struct nlist	nl[] = {
+ #define	X_CP_TIME	0
+ 	{ "_cp_time" },
++#if __FreeBSD_version < 400000
+ #define VM_SWAPLIST	1
+ 	{ "_swaplist" },/* list of free swap areas */
+ #define VM_SWDEVT	2
+@@ -129,6 +130,27 @@
+ #define X_DKXFER        12
+         { "_dk_xfer" },
+ #endif
++#else /* __FreeBSD_version < 400000 */
++#define VM_DMMAX	1
++	{ "_dmmax" },	/* maximum size of a swap block */
++#define	V_MOUNTLIST	2
++	{ "_mountlist" },	/* address of head of mount list. */
++#define V_NUMV		3
++	{ "_numvnodes" },
++#define	FNL_NFILE	4
++	{"_nfiles"},
++#define FNL_MAXFILE	5
++	{"_maxfiles"},
++#define NLMANDATORY FNL_MAXFILE	/* names up to here are mandatory */
++#define X_CNT           6
++	{ "_cnt" },                /* struct vmmeter cnt */
++#define N_IFNET         7
++        { "_ifnet" },
++#ifndef HAVE_DEVSTAT
++#define X_DKXFER        8
++        { "_dk_xfer" },
++#endif
++#endif /* __FreeBSD_version < 400000 */
+ 	{ "" },
+ };
+ 
+@@ -444,6 +466,21 @@
+ void
+ swapmode(int *used, int *avail)
+ {
++#if __FreeBSD_version >= 400000
++	/* based on swapmode from /usr/src/usr.bin/top/machine.c */
++	int n;
++	struct kvm_swap swapary[1];
++
++	n = kvm_getswapinfo(kd, swapary, 1, 0);
++	if (n < 0) {
++		*avail = *used = 0;
++		return;
++	}
++
++	*avail = swapary[0].ksw_total - swapary[0].ksw_used;
++	*used = swapary[0].ksw_used;
++	return;
++#else
+ 	char *header;
+ 	int hlen, nswap, nswdev, dmmax;
+ 	int i, div, nfree, npfree;
+@@ -552,6 +589,7 @@
+ 	*used = *avail - nfree;
+ 	free(sw);
+ 	free(perdev);
++#endif /* __FreeBSD_version >= 400000 */
+ }
+ 
+ /*
