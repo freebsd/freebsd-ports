@@ -1,0 +1,8 @@
+==========================================================================
+
+      Icegenerator has now been installed.  To get it up and running, copy
+  ${PREFIX}/etc/icegenerator.conf.dist to ${PREFIX}/etc/icegenerator.conf
+  and modify it to match your setup.
+     For more information see ${PREFIX}/share/doc/icegenerator/README
+
+==========================================================================

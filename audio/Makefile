@@ -146,6 +146,7 @@
     SUBDIR += hydrogen
     SUBDIR += icecast
     SUBDIR += icecast2
+    SUBDIR += icegenerator
     SUBDIR += ices
     SUBDIR += ices0
     SUBDIR += id3ed
