@@ -1,13 +1,13 @@
 bin/sylpheed
 etc/sylpheed-mime.types
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.jp
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TODO.jp
+%%PORTDOCS%%%%DOCSDIR%%/TODO.ja
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/bg/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo

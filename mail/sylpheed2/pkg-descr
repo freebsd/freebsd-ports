@@ -1,4 +1,4 @@
-Sylpheed is an e-mail client (and news reader) based on GTK+, running on
+Sylpheed is an e-mail client (and news reader) based on GTK+ 2, running on
 X Window System, and aiming for:
   * Quick response
   * Graceful, and sophisticated interface
