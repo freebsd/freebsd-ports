@@ -23,7 +23,7 @@ USE_REINPLACE=		yes
 CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g; s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${RM} ${WRKSRC}/ktagebuch/library/ui/inserthtmldialog.cpp \
 		${WRKSRC}/ktagebuch/library/ui/inserthtmldialog.h
