@@ -6417,6 +6417,7 @@ qcad		ports/cad/qcad
 qcamcontrol	src/usr.sbin/qcamcontrol
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
+qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdecoder	ports/www/qdecoder
 qdraw		ports/graphics/qdraw
