@@ -5,6 +5,9 @@ bin/rdesktop
 %%PORTDOCS%%%%DOCSDIR%%/ipv6.txt
 %%PORTDOCS%%%%DOCSDIR%%/keymap-names.txt
 %%PORTDOCS%%%%DOCSDIR%%/keymapping.txt
+%%PORTDOCS%%%%DOCSDIR%%/licensing.txt
+%%PORTDOCS%%%%DOCSDIR%%/patches.txt
+%%PORTDOCS%%%%DOCSDIR%%/redirection.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/keymaps/pt-br
 %%DATADIR%%/keymaps/fr-ch
@@ -20,11 +23,14 @@ bin/rdesktop
 %%DATADIR%%/keymaps/ru
 %%DATADIR%%/keymaps/pt
 %%DATADIR%%/keymaps/pl
+%%DATADIR%%/keymaps/nl
+%%DATADIR%%/keymaps/nl-be
 %%DATADIR%%/keymaps/no
 %%DATADIR%%/keymaps/mk
 %%DATADIR%%/keymaps/lv
 %%DATADIR%%/keymaps/lt
 %%DATADIR%%/keymaps/ja
+%%DATADIR%%/keymaps/is
 %%DATADIR%%/keymaps/it
 %%DATADIR%%/keymaps/hu
 %%DATADIR%%/keymaps/hr
@@ -32,6 +38,7 @@ bin/rdesktop
 %%DATADIR%%/keymaps/fo
 %%DATADIR%%/keymaps/fi
 %%DATADIR%%/keymaps/es
+%%DATADIR%%/keymaps/et
 %%DATADIR%%/keymaps/de
 %%DATADIR%%/keymaps/da
 %%DATADIR%%/keymaps/ar
