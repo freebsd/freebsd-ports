@@ -24,3 +24,4 @@ share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo
 share/locale/uk/LC_MESSAGES/nano.mo
 %%EXAMPLESDIR%%/nanorc.sample
+@dirrm %%EXAMPLESDIR%%
