@@ -389,6 +389,7 @@
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
+    SUBDIR += libowfat
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libredblack
