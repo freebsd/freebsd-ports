@@ -1,0 +1,9 @@
+This package contains the sample X Compositing Manager, which uses the
+Composite, Damage, Fixes, and Render extensions to create shadows around
+windows, translucent windows and menus, and fading effects, when run on a
+capable X Server.
+
+WWW: http://www.freedesktop.org/Software/xapps
+
+- Eric Anholt
+anholt@FreeBSD.org
