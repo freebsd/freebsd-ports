@@ -8,7 +8,10 @@
 PORTNAME=	grisbi
 PORTVERSION=	0.4.1
 CATEGORIES=	finance
-MASTER_SITES=	http://grisbi.gegeweb.net/packages/src/
+MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
+		http://grisbi.cartron.org/download/packages/${PORTVERSION}/sources/	\
+		http://cedricauger.free.fr/download/packages/${PORTVERSION}/sources/	\
+		http://grisbi.gegeweb.net/download/packages/${PORTVERSION}/sources/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A personnal accounting application
