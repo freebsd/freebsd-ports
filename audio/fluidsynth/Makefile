@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	audio
-MASTER_SITES=	http://resonance.org/~josh/fluidsynth/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	fluid
 
-MAINTAINER=	juha.nygard1@netikka.fi
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
 INSTALLS_SHLIB=	yes
