@@ -48,6 +48,7 @@ ECLIPSE_ARCH=	x86
 # This access change has roots in patch-SelectionDispatchAction.java.
 
 post-patch:
+		@${REINPLACE_CMD} -e '/GTK_DISABLE_DEPRECATED/d' '${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/swt.c'
 		@${FIND} ${WRKSRC} -name build.xml | ${XARGS} ${REINPLACE_CMD} 's@verbose="true"@verbose="false"@g'
 
 		# "refactoring" begins here
