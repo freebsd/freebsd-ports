@@ -215,7 +215,7 @@ RUBY_FLAGS+=	-d
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
-CONFIGURE_ARGS+=	--with-opt-dir="${X11BASE}" \
+CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}" \
 			--with-pthread-cflags="${PTHREAD_CFLAGS}" \
 			--with-pthread-libs="${PTHREAD_LIBS}"
 
