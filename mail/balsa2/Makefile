@@ -36,7 +36,5 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|\$\(gnomedatadir\)/gnome|\$\(gnomedatadir\)|g'
-	@find ${WRKSRC}/help -name "*.html" | xargs ${PERL} -pi -e \
-		's|\.gif|.png|g'
 
 .include <bsd.port.mk>
