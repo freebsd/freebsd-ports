@@ -24,18 +24,18 @@ display help
 use SSL (default NO)
 .TP 13
 .I \-s certfile
-use SSL certificate file (default httpd.pem)
+use SSL certificate file (default shttpd.pem)
 .TP 13
 .I \-e errfile
 error log file (default none)
 .TP 13
 .I \-l logfile
-log file  (default httpd.log)
+log file  (default shttpd.log)
 .TP 13
 .I \-i file1[,file2..]
 index file (default index.html,index.cgi,index.php)
 .TP 13
-.I \-c
+.I \-c pattern
 CGI file pattern (default .cgi)
 .TP 13
 .I \-P passfile
@@ -43,10 +43,17 @@ global auth passwords file (default none)
 .TP 13
 .I \-u uid
 run-time numeric UID (default none)
+.TP 13
+.I \-m file
+mime types file (default none)
+.TP 13
+.I \-N realm
+authentication realm (default auth)
+.TP 13
+.I \-D
+do directory listing (default no)
 .SH COPYRIGHT
 .B shttpd
 is licensed under the terms of MIT license.
-.SH BUGS
-Please send bug reports to <valenok@gmail.com>
 .SH AUTHOR
 Sergey Lyubka <valenok@gmail.com>
