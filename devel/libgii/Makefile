@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgii
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
