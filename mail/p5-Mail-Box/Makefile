@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.038
+PORTVERSION=	2.042
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -33,11 +33,12 @@ PERL_CONFIGURE=	yes
 IGNORE=	"This port requires perl 5.6 or newer.  Install lang/perl5 or lang/perl5.8 and try again."
 .endif
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		\
 		Mail::Box-Cookbook.3 \
 		Mail::Box-Overview.3 \
 		Mail::Box.3 \
+		Mail::Box::Dbx.3 \
+		Mail::Box::Dbx::Message.3 \
 		Mail::Box::Dir.3 \
 		Mail::Box::Dir::Message.3 \
 		Mail::Box::File.3 \
@@ -60,6 +61,7 @@ MAN3=		\
 		Mail::Box::Mbox.3 \
 		Mail::Box::Mbox::Message.3 \
 		Mail::Box::Message.3 \
+		Mail::Message::Head::Partial.3 \
 		Mail::Box::Net.3 \
 		Mail::Box::Net::Message.3 \
 		Mail::Box::POP3.3 \
@@ -86,6 +88,13 @@ MAN3=		\
 		Mail::Message::Body::Nested.3 \
 		Mail::Message::Body::String.3 \
 		Mail::Message::Construct.3 \
+		Mail::Message::Construct::Bounce.3 \
+		Mail::Message::Construct::Build.3 \
+		Mail::Message::Construct::Forward.3 \
+		Mail::Message::Construct::Read.3 \
+		Mail::Message::Construct::Rebuild.3 \
+		Mail::Message::Construct::Reply.3 \
+		Mail::Message::Construct::Text.3 \
 		Mail::Message::Convert.3 \
 		Mail::Message::Convert::Html.3 \
 		Mail::Message::Convert::HtmlFormatPS.3 \
