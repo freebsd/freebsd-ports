@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.0.14
+PORTVERSION=	1.1.0
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
@@ -20,6 +20,7 @@ LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
+USE_GCC=	3.2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
