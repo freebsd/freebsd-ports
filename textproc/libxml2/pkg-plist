@@ -85,6 +85,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/relaxng.py
 %%PYTHON:%%share/doc/libxml2-python/examples/resolver.py
 %%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
+%%PYTHON:%%share/doc/libxml2-python/examples/sync.py
 %%PYTHON:%%share/doc/libxml2-python/examples/thread2.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
