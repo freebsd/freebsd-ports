@@ -18,6 +18,8 @@ non-PostScript printers. Sample drivers for HP and EPSON printers are included
 that use these filters. This software is available in the cups-pstoraster
 port.
 
+WWW: http://www.cups.org/
+
 - AlanE (maintainer)
 alane@freebsd.org, ports@geeksrus.net
 [original text by greid@ukug.uk.freebsd.org]
