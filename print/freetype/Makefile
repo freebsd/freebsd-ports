@@ -1,25 +1,22 @@
 # New ports collection makefile for:	freetype
-# Version required:	October 6, 1997 beta
+# Version required:	JAN-21-1998 snapshot
 # Date created:		January 24, 1998
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/24 16:50:41 jseger Exp $
+# $Id: Makefile,v 1.2 1998/01/24 21:51:43 jseger Exp $
 #
 
-DISTNAME=	freetype-beta
-PKGNAME=	freetype-971006
+DISTNAME=	freetype-980121
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.physiol.med.tu-muenchen.de/pub/freetype/
+MASTER_SITES=	http://www.freebsd.org/~jseger/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/freetype
+WRKSRC=		${WRKDIR}/freetype-current
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/ttf2bdf/ttf2bdf ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/libttf.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/*.h ${PREFIX}/include
-	${LDCONFIG} -m ${PREFIX}/lib
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/ttcommon.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/tterror.h ${PREFIX}/include
 .include <bsd.port.mk>
