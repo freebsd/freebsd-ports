@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	photopc
-PORTVERSION=	3.04
+PORTVERSION=	3.05
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.average.org/pub/photopc/
 
