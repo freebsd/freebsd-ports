@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
