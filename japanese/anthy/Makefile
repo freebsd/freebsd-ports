@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	anthy
-PORTVERSION=	6300
-PORTREVISION=	1
+PORTVERSION=	6300d
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/13543
+MASTER_SITE_SUBDIR=	${PORTNAME}/13637
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	anthy
 
@@ -46,14 +45,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 .if defined(WITH_2CHDIC)
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
-	@${REINPLACE_CMD} -e 's/base.t extra.t/base.t extra.t 2ch.t/' \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
+	${REINPLACE_CMD} -e 's/base.t extra.t/base.t extra.t 2ch.t/' \
 		${WRKSRC}/mkanthydic/Makefile.in
 .endif
 
 .if defined(WITH_ODIC)
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20041220.t ${WRKSRC}/mkanthydic
-	@${REINPLACE_CMD} -e \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20041220.t ${WRKSRC}/mkanthydic
+	${REINPLACE_CMD} -e \
 		's/base.t extra.t/base.t extra.t okinawa-20041220.t/' \
 		${WRKSRC}/mkanthydic/Makefile.in
 .endif
@@ -61,15 +60,15 @@ post-extract:
 .if defined(WITH_GSKKDIC)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/gskk-20041208.t.gz ${WRKSRC}/mkanthydic
 	${GUNZIP_CMD} ${WRKSRC}/mkanthydic/gskk-20041208.t.gz
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e 's/base.t extra.t/base.t extra.t gskk-20041208.t/' \
 		${WRKSRC}/mkanthydic/Makefile.in
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's| install-lispLISP||g' ${WRKSRC}/src-util/Makefile.in
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 post-install:
