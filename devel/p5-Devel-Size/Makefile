@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Size
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -18,5 +18,14 @@ COMMENT=	Perl extension for finding the memory usage of Perl variables
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Size.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
