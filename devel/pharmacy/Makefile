@@ -12,7 +12,7 @@ MASTER_SITES=	http://pharmacy.learnrespect.org/
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
