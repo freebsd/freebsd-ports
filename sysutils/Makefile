@@ -249,6 +249,7 @@
     SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += pmap
+    SUBDIR += portdowngrade
     SUBDIR += portsman
     SUBDIR += portupgrade
     SUBDIR += prips
