@@ -9,6 +9,7 @@ INCLUDES=-I${PREFIX}/include/apache -I${PREFIX}/include/tcl${TCL_VERSION}
 CC!=		${PREFIX}/sbin/apxs -q CC
 CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
 CFLAGS+=	-Wall -DSTATUS -DNO_DBM_REWRITEMAP ${INCLUDES}
+CFLAGS+=	-DDEBUG_SCRIPT_DIR="\"${PREFIX}/share/mod_dtcl/\""
 
 LIB=	mod_dtcl
 SHLIB_MAJOR=1
