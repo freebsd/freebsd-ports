@@ -1,25 +1,5 @@
-General Information
--------------------
- libcdaudio is a library designed to provide functions to control
- operation of a CD-ROM when playing audio CDs.
-
-Thanks
-------
- Thanks to:
+libcdaudio is a library designed to provide functions to control
+operation of a CD-ROM when playing audio CDs.  It also contains
+functions for CDDB and CD Index lookup.
  
- Mike Oliphant for parts of the HTTP code.
- Ryan Werber for a box to test the CD-ROM changer code on.
- 
-Bugs
-----
- All bugs reports should be sent to libcdaudio@procyon.mesa.k12.co.us.
-
-A few final words
------------------
- libcdaudio is distributed under the GNU Library General Public License,
- included in this package under the top level source directory in the file
- LICENSE.
- 
- This package uses the CD Database (CDDB), created by CDDB, Inc.
-
 WWW: http://cdcd.undergrid.net/libcdaudio/
