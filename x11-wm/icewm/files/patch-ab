@@ -1,33 +1,11 @@
---- src/Makefile.orig	Wed Jun 24 22:03:37 1998
-+++ src/Makefile	Wed Jun 24 22:05:27 1998
-@@ -7,9 +7,9 @@
- # alternative (link with g++)
- #CXX         = g++
- #LD          = g++
--CXXOPTS     = -pipe $(WARN)
--INCSDIR     = -I/usr/X11R6/include
--LIBSDIR     = -L/usr/X11R6/lib
-+CXXOPTS     = ${CFLAGS} $(WARN)
-+INCSDIR     = -I${PREFIX}/include
-+LIBSDIR     = -L${PREFIX}/lib
- 
- #XPMINCDIR   = -I../../include
- #XPMLIBDIR   = -L../../lib
-@@ -46,7 +46,7 @@
- #if you use linux you need to define X_LOCALE.
- #I18N       = -DI18N -DX_LOCALE
- 
--DEBUG       = -DDEBUG -DAVOID_GRAB
-+#DEBUG       = -DDEBUG -DAVOID_GRAB
- 
- # executable extenstion
- EXEEXT=
-@@ -62,7 +62,7 @@
+--- src/Makefile.orig	Mon Jul 20 03:17:51 1998
++++ src/Makefile	Fri Jul 24 20:32:54 1998
+@@ -35,7 +35,7 @@
  #OPTIMIZE   = -O -g
  #OPTIMIZE   = -O -g -pg
  #OPTIMIZE   = -O
 -OPTIMIZE   = -O2
 +#OPTIMIZE   = -O2
+ #OPTIMIZE   = -O2 -g
  #OPTIMIZE   = -O -s
  #OPTIMIZE   = -O2 -s
- 
