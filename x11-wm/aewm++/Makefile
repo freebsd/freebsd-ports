@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}"
 CXXFLAGS+=	-I${X11BASE}/include
 LIBS+=		-L${X11BASE}/lib
 
