@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.34
+PORTVERSION=	0.37
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tmda
@@ -25,7 +25,7 @@ QMAIL_DIR?=     /var/qmail
 .endif
 
 do-build:
-	(cd ${WRKSRC}; ${PYTHON_CMD} ./setup)
+	(cd ${WRKSRC}; ${PYTHON_CMD} ./compileall)
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA
@@ -43,7 +43,7 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} See ${PREFIX}/share/doc/tmda/INSTALL for configuration instructions
 .endif
-	@${ECHO_MSG} All related binaries have been installed in ${PREFIX}/bin
+	@${ECHO_MSG} All related programs have been installed in ${PREFIX}/bin
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>

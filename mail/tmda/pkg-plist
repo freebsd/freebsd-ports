@@ -5,6 +5,7 @@ bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
 bin/tmda-sender-address
+bin/tmda-sendmail
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
