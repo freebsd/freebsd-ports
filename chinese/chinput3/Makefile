@@ -14,16 +14,13 @@ MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Chinese GB2312,BIG5 code input server
 
 USE_XLIB=	yes
-USE_IMLIB=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 imlib
 
-.include <bsd.port.pre.mk>
+MSG_FILE=	${.CURDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not link"
-.endif
+post-install:
+	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-port-install:
-	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
