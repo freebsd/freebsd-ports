@@ -10,7 +10,8 @@ PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clanlib.org/download/files/ \
-		http://distro.ibiblio.org/pub/linux/distributions/sorcerer/sources/Hermes/1.3.3/
+		http://distro.ibiblio.org/pub/linux/distributions/sorcerer/sources/Hermes/1.3.3/ \
+		http://power-net.linux.tucows.com/files/x11/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
