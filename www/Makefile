@@ -616,6 +616,7 @@
     SUBDIR += zope-groupuserfolder
     SUBDIR += zope-guf
     SUBDIR += zope-parsedxml
+    SUBDIR += zope-placelesstranslationservice
     SUBDIR += zope-proxyindex
     SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
