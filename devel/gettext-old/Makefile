@@ -18,6 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	gettext-0.13*
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
