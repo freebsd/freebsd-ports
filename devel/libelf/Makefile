@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.stud.uni-hannover.de/~michael/software/ \
