@@ -7,6 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://people.mandrakesoft.com/~gc/fb/ \
 		http://frozenbubble.free.fr/fb/
@@ -62,6 +63,7 @@ do-install:
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.gif  ${PREFIX}/share/frozen-bubble/gfx/balls/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/intro/*.png  ${PREFIX}/share/frozen-bubble/gfx/intro/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/pinguins/*.png  ${PREFIX}/share/frozen-bubble/gfx/pinguins/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/data ${PREFIX}/share/frozen-bubble/gfx/shoot/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/*.png  ${PREFIX}/share/frozen-bubble/gfx/shoot/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/menu/*.png  ${PREFIX}/share/frozen-bubble/gfx/menu/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.wav  ${PREFIX}/share/frozen-bubble/snd/
