@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1997/02/01 15:06:56 max Exp $
+# $Id: Makefile,v 1.55 1997/02/14 08:20:08 tg Exp $
 #
 
     SUBDIR += acm
@@ -58,6 +58,7 @@
     SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
+    SUBDIR += xspringies
     SUBDIR += xsokoban
     SUBDIR += xsol
     SUBDIR += xtetris
