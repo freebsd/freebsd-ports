@@ -35,7 +35,7 @@ LANGUAGE?=	en_US
 # If WITH_MYSQL is defined, build with MySQL extensions
 .if defined(WITH_MYSQL)
 ALL_TARGET=	mysql it ${LANGUAGE}
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 .elif defined(WITH_POSTGRESQL)
