@@ -1,15 +1,35 @@
-all: linuxfdisk
+all: fdisk cfdisk sfdisk
 
-OBJS = fdisk.o i386_sys_types.o partname.o \
+FDISK_OBJS = fdisk.o i386_sys_types.o partname.o \
 	fdiskbsdlabel.o fdisksunlabel.o fdiskaixlabel.o fdisksgilabel.o \
 	sys_bsd.o
+
+SFDISK_OBJS = sfdisk.o sys_bsd.o i386_sys_types.o partname.o getopt.o getopt1.o
+
+CFDISK_OBJS = cfdisk.o sys_bsd.o i386_sys_types.o
+
+CFLAGS += -DUTIL_LINUX_VERSION=\"2.11z\" -I../getopt/gnu
+
 INSTALL?=	install -c
 ## Debug
 #CFLAGS+=	-O0 -g -Wall
 
-linuxfdisk: $(OBJS)
-	$(CC) -o linuxfdisk $(OBJS)
+fdisk: $(FDISK_OBJS)
+	$(CC) -o fdisk $(FDISK_OBJS)
+
+sfdisk: $(SFDISK_OBJS)
+	$(CC) -o sfdisk $(SFDISK_OBJS)
+
+cfdisk: $(CFDISK_OBJS)
+	$(CC) -o cfdisk $(CFDISK_OBJS) -lncurses
+
+getopt.o: ../getopt/gnu/getopt.c
+getopt1.o: ../getopt/gnu/getopt1.c
 
 install:
-	$(INSTALL) -c -m 0555 -s linuxfdisk ${DESTDIR}${PREFIX}/sbin/linuxfdisk
-	cat linuxfdisk.8 >${DESTDIR}${PREFIX}/man/man8/linuxfdisk.8
+	$(INSTALL) -c -m 0555 -s fdisk ${DESTDIR}${PREFIX}/sbin/fdisk-linux
+	$(INSTALL) -c -m 0555 -s cfdisk ${DESTDIR}${PREFIX}/sbin/cfdisk-linux
+	$(INSTALL) -c -m 0555 -s sfdisk ${DESTDIR}${PREFIX}/sbin/sfdisk-linux
+	$(INSTALL) -c -m 0644 fdisk.8 ${DESTDIR}${PREFIX}/man/man8/fdisk-linux.8
+	$(INSTALL) -c -m 0644 cfdisk.8 ${DESTDIR}${PREFIX}/man/man8/cfdisk-linux.8
+	$(INSTALL) -c -m 0644 sfdisk.8 ${DESTDIR}${PREFIX}/man/man8/sfdisk-linux.8
