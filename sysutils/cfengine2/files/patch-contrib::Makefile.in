@@ -1,0 +1,11 @@
+--- contrib/Makefile.in.orig	Mon Jul 29 17:24:20 2002
++++ contrib/Makefile.in	Mon Jul 29 17:26:30 2002
+@@ -33,7 +33,7 @@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/emacs/site-lisp
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..

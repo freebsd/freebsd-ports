@@ -1,0 +1,55 @@
+Accept the -STABLE version of OpenSSL
+Use the correct #includes for sys/mount.h
+
+--- configure.orig	Mon Jul 29 15:32:39 2002
++++ configure	Mon Jul 29 15:35:41 2002
+@@ -3637,8 +3637,8 @@
+ if test x"$OPENSSL_LIB_DIR" = xno ; then
+     echo "$as_me:3638: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-    { { echo "$as_me:3640: error: This release of cfengine requires OpenSSL 0.9.6b or later" >&5
+-echo "$as_me: error: This release of cfengine requires OpenSSL 0.9.6b or later" >&2;}
++    { { echo "$as_me:3640: error: This release of cfengine requires OpenSSL 0.9.6a or later" >&5
++echo "$as_me: error: This release of cfengine requires OpenSSL 0.9.6a or later" >&2;}
+    { (exit 1); exit 1; }; }
+ else
+     if test x"$OPENSSL_LIB_DIR" = xyes ; then
+@@ -3700,7 +3700,7 @@
+ #include <openssl/opensslv.h>
+ int main(void)
+ {
+-    if (OPENSSL_VERSION_NUMBER < 0x0090602fL)
++    if (OPENSSL_VERSION_NUMBER < 0x0090601fL)
+         exit(1);
+     exit(0);
+ }
+@@ -3723,8 +3723,8 @@
+   echo "$as_me: program exited with status $ac_status" >&5
+ echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+-{ { echo "$as_me:3726: error: This release of cfengine requires openssl 0.9.6b or later" >&5
+-echo "$as_me: error: This release of cfengine requires openssl 0.9.6b or later" >&2;}
++{ { echo "$as_me:3726: error: This release of cfengine requires openssl 0.9.6a or later" >&5
++echo "$as_me: error: This release of cfengine requires openssl 0.9.6a or later" >&2;}
+    { (exit 1); exit 1; }; }
+ 
+ fi
+@@ -4098,6 +4098,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 4099 "configure"
+ #include "confdefs.h"
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ if { (eval echo "$as_me:4103: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -8485,8 +8486,8 @@
+ echo "$as_me: WARNING: This version requires Berkeley db version 3.2 or" >&2;}
+ { echo "$as_me:8486: WARNING: later from www.sleepycat.com" >&5
+ echo "$as_me: WARNING: later from www.sleepycat.com" >&2;}
+-{ echo "$as_me:8488: WARNING: This version requires OpenSSL 0.9.6b or later" >&5
+-echo "$as_me: WARNING: This version requires OpenSSL 0.9.6b or later" >&2;}
++{ echo "$as_me:8488: WARNING: This version requires OpenSSL 0.9.6a or later" >&5
++echo "$as_me: WARNING: This version requires OpenSSL 0.9.6a or later" >&2;}
+ { echo "$as_me:8490: WARNING: from www.openssl.org" >&5
+ echo "$as_me: WARNING: from www.openssl.org" >&2;}
+ { echo "$as_me:8492: WARNING: " >&5
