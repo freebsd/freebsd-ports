@@ -15,6 +15,7 @@ DISTNAME=	gcompris-${PORTVERSION}
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	A simple Gnome2-based education game for children starting at 3
 
+BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		ao.3:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml
