@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stella
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,44 +15,33 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-platform Atari 2600 VCS emulator
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src/build
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKEFILE=	makefile
+PLIST_SUB=	STELLA_BIN="${STELLA_BIN}"
+
+.if defined(WITHOUT_SDL)
 ALL_TARGET=	freebsd-x
-
-DOCS=		docs/stella.html
-GFX=		docs/graphics/chucky_cheese.png \
-		docs/graphics/circuit.png \
-		docs/graphics/console.png \
-		docs/graphics/jr_pacman.png \
-		docs/graphics/pacman.png \
-		docs/graphics/secret_quest.png \
-		docs/graphics/space_invaders.png
-
-post-build:
-	@(cd ${WRKSRC}/src/ui/sound && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-		${MAKE_ARGS} oss)
+STELLA_BIN=	stella.x11
+.else
+USE_SDL=	yes
+ALL_TARGET=	freebsd-sdl
+STELLA_BIN=	stella.sdl
+.endif
 
 do-install:
-.for exe in src/build/stella.x11 src/ui/sound/stella-sound
-	${INSTALL_PROGRAM} ${WRKSRC}/${exe} ${PREFIX}/bin/
-.endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/emucore/stella.pro ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/build/${STELLA_BIN} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/emucore/stella.pro ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
-.endfor
-	${MKDIR} ${DOCSDIR}/graphics
-.for gfx in ${GFX}
-	${INSTALL_DATA} ${WRKSRC}/${gfx} ${DOCSDIR}/graphics/
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
---- src/ui/sound/TIASound.c.orig	Sun Jan 21 11:26:38 2001
-+++ src/ui/sound/TIASound.c	Mon Jan 22 06:37:37 2001
-@@ -168,10 +168,12 @@
+--- src/emucore/TIASound.c.orig	Tue Feb 18 02:19:44 2003
++++ src/emucore/TIASound.c	Wed Sep 24 15:51:58 2003
+@@ -171,11 +171,13 @@
+ {
     uint8 chan;
     int16 n;
- 
+-
++
 +   srandom(time(NULL));
 +
     /* fill the 9bit polynomial with random bits */
