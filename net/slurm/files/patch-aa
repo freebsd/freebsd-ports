@@ -1,0 +1,28 @@
+$FreeBSD$
+
+Index: src/if_media.c
+===================================================================
+RCS file: /home/cvs/slurm/slurm/src/if_media.c,v
+retrieving revision 1.24
+retrieving revision 1.25
+diff -u -r1.24 -r1.25
+--- src/if_media.c	28 Dec 2002 12:41:36 -0000	1.24
++++ src/if_media.c	10 Jan 2003 17:59:00 -0000	1.25
+@@ -6,7 +6,7 @@
+  * operating systems.
+  *
+  *****************************************************************************
+- * $Id: if_media.c,v 1.24 2002/12/28 12:41:36 hscholz Exp $
++ * $Id: if_media.c,v 1.25 2003/01/10 17:59:00 hscholz Exp $
+  *****************************************************************************/
+ 
+ #if defined (__FreeBSD__) || (__OpenBSD__) || (__NetBSD__)
+@@ -176,7 +176,7 @@
+                 case IFM_IEEE80211_DS11:
+                     speed = 11 * 1000;
+                     break;
+-#ifdef __FreeBSD__
++#if __FreeBSD_version >= 460102
+                 case IFM_IEEE80211_DS22:
+                     speed = 22 * 1000;
+                     break;
