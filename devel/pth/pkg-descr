@@ -1,5 +1,5 @@
 GNU Pth - GNU Portable Threads
-Copyright (c) 1999-2003 Ralf S. Engelschall <rse@engelschall.com>
+Copyright (c) 1999-2004 Ralf S. Engelschall <rse@engelschall.com>
 
 Pth is a very portable POSIX/ANSI-C based library for Unix platforms
 which provides non-preemptive priority-based scheduling for multiple
