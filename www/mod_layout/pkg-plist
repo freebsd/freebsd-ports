@@ -1,0 +1,5 @@
+libexec/apache/mod_layout.so
+%%DOC%%share/doc/mod_layout/faq.html
+%%DOC%%@dirrm share/doc/mod_layout
+@exec ${PKG_PREFIX}/sbin/apxs -e -A -n layout mod_layout.so; echo "	enable the mod_layout in Apache's config manually"
+@unexec ${PKG_PREFIX}/sbin/apxs -e -A -n layout mod_layout.so || echo "	remove the mod_layout from Apache's config manually"
