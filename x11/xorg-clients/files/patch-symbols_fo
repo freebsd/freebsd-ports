@@ -1,0 +1,22 @@
+--- programs/xkbcomp/symbols/pc/Imakefile.orig	Thu Mar  4 17:49:11 2004
++++ programs/xkbcomp/symbols/pc/Imakefile	Wed Nov  3 15:09:52 2004
+@@ -7,7 +7,7 @@
+ 		cz cz_qwerty \
+ 		de dev dk dvorak dz \
+ 		ee el en_US es \
+-		fi fr fr-latin9 \
++		fi fo fr fr-latin9 \
+ 		gb ge_la ge_ru guj gur \
+ 		hr \
+ 		ie il il_phonetic ir is it iu \
+--- programs/xkbcomp/symbols/Imakefile.orig	Thu Mar  4 17:49:10 2004
++++ programs/xkbcomp/symbols/Imakefile	Wed Nov  3 15:09:45 2004
+@@ -15,7 +15,7 @@
+ 		 czsk cz cz_qwerty \
+ 		 de de_CH dev dk dvorak \
+ 		 ee el en_US es \
+-		 fi fr fr_CH \
++		 fi fo fr fr_CH \
+ 		 gb ge_la ge_ru group guj gur \
+ 		 hr hr_US hu hu_US hu_qwerty \
+ 		 ie il il_phonetic iso9995-3 inet ir is it iu \
