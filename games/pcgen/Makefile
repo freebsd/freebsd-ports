@@ -5,24 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.1
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
-DISTFILES=	pcgen${PORTVERSION:S/.//g}_partial.zip \
-		skin.zip
+DISTNAME=	pcgen${PORTVERSION:S/.//g}_partial
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 COMMENT=	A Java-based RPG character generator and maintenance program
 
 USE_ZIP=	YES
+EXTRACT_AFTER_ARGS=	-d pcgen
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+
 NO_BUILD=	YES
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/pcgen
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKDIRS=	characters data lib outputsheets system
+WRKDIRS=	characters data lib outputsheets plugins system
 WRKDOCSDIR=	${WRKSRC}/docs
 WRKSCRIPT=	${WRKSRC}/pcgen.bsd.sh
 PLIST_FILES+=	${DATADIR:S,^${PREFIX}/,,}/filepaths.ini
@@ -35,23 +35,25 @@ PORTDOCS=	acknowledgments faqpages gmgen greetings.html index.html \
 		pcgen.css systemimages tabpages walkthroughpages
 .endif
 
+pre-extract:
+	@${MKDIR} ${WRKSRC}
+
 post-extract:
-	${RM} -rf ${WRKSRC}/lib/themes/CVS
-	${RM} -rf ${WRKSRC}/lib/CVS
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} -t ${RM} -rf
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing in ${DATADIR}..."
 .for SOMEDIR in ${WRKDIRS}
+	@${ECHO_MSG} -n " ${SOMEDIR}"
 	@cd ${WRKSRC} && ${FIND} ${SOMEDIR} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
 	@cd ${WRKSRC} && ${FIND} ${SOMEDIR} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
-	@${ECHO_MSG} -n " ${SOMEDIR}"
 .endfor
-	@cd ${WRKSRC} && ${INSTALL_DATA} pcgen.jar ${DATADIR}
 	@${ECHO_MSG} -n " pcgen.jar"
+	@cd ${WRKSRC} && ${INSTALL_DATA} pcgen.jar ${DATADIR}
+	@${ECHO_MSG} -n " pcgen.sh"
 	@cd ${WRKSRC} && ${SED} "s|^java|${JAVA}|" pcgen.sh | ${SED} 's|`dirname $$0`|${DATADIR}|' > ${WRKSCRIPT}
 	@cd ${WRKSRC} && ${INSTALL_SCRIPT} ${WRKSCRIPT} ${DATADIR}/pcgen.sh
 	@${LN} -fs ${DATADIR}/pcgen.sh ${PREFIX}/bin/pcgen.sh
-	@${ECHO_MSG} -n " pcgen.sh"
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Configuring..."
 	@${ECHO_MSG} "pcgen.filepaths=user" > ${DATADIR}/filepaths.ini

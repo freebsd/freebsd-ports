@@ -83,6 +83,17 @@ bin/pcgen.sh
 %%DATADIR%%/system/D20System.htm
 %%DATADIR%%/pcgen.sh
 %%DATADIR%%/pcgen.jar
+%%DATADIR%%/outputsheets/xsltsl-1.1/uri.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/string.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/stdlib.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/node.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/markup.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/example.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/docbook-extensions.xml
+%%DATADIR%%/outputsheets/xsltsl-1.1/date-time.xsl
+%%DATADIR%%/outputsheets/xsltsl-1.1/RELNOTES
+%%DATADIR%%/outputsheets/xsltsl-1.1/ChangeLog
+%%DATADIR%%/outputsheets/xsltsl-1.1/ANNOUNCE
 %%DATADIR%%/outputsheets/d20/western/text/placeholder.txt
 %%DATADIR%%/outputsheets/d20/western/pdf/placeholder.txt
 %%DATADIR%%/outputsheets/d20/western/htmlxml/psheet_dnd_std.htm
@@ -106,11 +117,33 @@ bin/pcgen.sh
 %%DATADIR%%/outputsheets/d20/historical/htmlxml/psheet_dnd_std.htm
 %%DATADIR%%/outputsheets/d20/historical/htmlxml/eqsheet_dnd_std.htm
 %%DATADIR%%/outputsheets/d20/fantasy/text/csheet_plain.TXT
-%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.xslt
-%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.fo
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/leadership.xsl
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/fantasy_master_std.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/fantasy_master_simple.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/fantasy_common.xsl
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_yellow_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_yellow_full.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_red_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_grey_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_grey.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_green_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_blue_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_blue.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std_blackandwhite.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook_3x5_landscape_3pp.xsl
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook_3x5_landscape.xsl
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook_3x5_3pp.xsl
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook_3x5.xsl
 %%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook.fo
-%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_picture.fo
-%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_descriptions.fo
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_yellow_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_yellow_full.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_red_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_grey_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_grey.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_green_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_blue_light.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_blue.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_simple_blackandwhite.xslt
 %%DATADIR%%/outputsheets/d20/fantasy/htmlxml/psheet_fantasy_std.htm
 %%DATADIR%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_std.htm
 %%DATADIR%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_consumables.htm
@@ -121,21 +154,9 @@ bin/pcgen.sh
 %%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_combined.htm
 %%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_OpenRPG.xml
 %%DATADIR%%/outputsheets/base.xml
-%%DATADIR%%/lib/themes/xplunathemepack.zip
-%%DATADIR%%/lib/themes/whistlerthemepack.zip
-%%DATADIR%%/lib/themes/toxicthemepack.zip
-%%DATADIR%%/lib/themes/themepack.zip
-%%DATADIR%%/lib/themes/modernthemepack.zip
-%%DATADIR%%/lib/themes/macosthemepack.zip
-%%DATADIR%%/lib/themes/cellshadedthemepack.zip
-%%DATADIR%%/lib/themes/beosthemepack.zip
-%%DATADIR%%/lib/themes/bbjthemepack.zip
-%%DATADIR%%/lib/themes/aquathemepack.zip
-%%DATADIR%%/lib/skinlf.jar
-%%DATADIR%%/lib/readme.txt
-%%DATADIR%%/lib/kunststoff.jar
 %%DATADIR%%/lib/jep.LICENSE.txt
 %%DATADIR%%/lib/jep-2.24.jar
+%%DATADIR%%/lib/djep-2.24.jar
 %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesweapprofs.lst
 %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesmutations.lst
 %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesdefects.lst
@@ -711,6 +732,20 @@ bin/pcgen.sh
 %%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchclasses.lst
 %%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritch.pcc
 %%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/OGL.txt
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/ogl.txt
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/errata.txt
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_spells.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_skills.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_races.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_feats.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_equip_staffs.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_equip_artifacts.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_domains.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_deities.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_classes_prestige.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_classes.lst
+%%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous.pcc
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesweapprofs.lst
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracestemplates.lst
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesspells.lst
@@ -841,7 +876,7 @@ bin/pcgen.sh
 %%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflagclasses.lst
 %%DATADIR%%/data/d20ogl/avalanchepress/blackflags/OGL.txt
 %%DATADIR%%/data/customsources/readme-customsources.txt
-%%DATADIR%%/characters/Code Monkey.htm
+%%DATADIR%%/characters/CodeMonkey.pcg
 @dirrm %%DATADIR%%/system/specials
 @dirrm %%DATADIR%%/system/outputFilters
 @dirrm %%DATADIR%%/system/gameModes/Modern
@@ -852,6 +887,19 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/system/bio
 @dirrm %%DATADIR%%/system/Languages
 @dirrm %%DATADIR%%/system
+@dirrm %%DATADIR%%/plugins/Random Names
+@dirrm %%DATADIR%%/plugins/Overland Travel/travel_methods
+@dirrm %%DATADIR%%/plugins/Overland Travel/rnbprice
+@dirrm %%DATADIR%%/plugins/Overland Travel
+@dirrm %%DATADIR%%/plugins/Notes
+@dirrm %%DATADIR%%/plugins/Initiative
+@dirrm %%DATADIR%%/plugins/Experience/experience_tables
+@dirrm %%DATADIR%%/plugins/Experience
+@dirrm %%DATADIR%%/plugins/Encounter/encounter_tables/environments
+@dirrm %%DATADIR%%/plugins/Encounter/encounter_tables
+@dirrm %%DATADIR%%/plugins/Encounter
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/outputsheets/xsltsl-1.1
 @dirrm %%DATADIR%%/outputsheets/d20/western/text
 @dirrm %%DATADIR%%/outputsheets/d20/western/pdf
 @dirrm %%DATADIR%%/outputsheets/d20/western/htmlxml
@@ -877,7 +925,6 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/outputsheets/d20/fantasy
 @dirrm %%DATADIR%%/outputsheets/d20
 @dirrm %%DATADIR%%/outputsheets
-@dirrm %%DATADIR%%/lib/themes
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules
 @dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens
@@ -949,6 +996,8 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight
 @dirrm %%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight
 @dirrm %%DATADIR%%/data/d20ogl/malhavocpress
+@dirrm %%DATADIR%%/data/d20ogl/greenronin/bookrighteous
+@dirrm %%DATADIR%%/data/d20ogl/greenronin
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook
@@ -977,5 +1026,19 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/data/d20ogl/avalanchepress
 @dirrm %%DATADIR%%/data/d20ogl
 @dirrm %%DATADIR%%/data/customsources
+@dirrm %%DATADIR%%/data/alpha/sovereignpress/sovereignstone/altpcc
+@dirrm %%DATADIR%%/data/alpha/sovereignpress/sovereignstone
+@dirrm %%DATADIR%%/data/alpha/sovereignpress
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment/deadlands
+@dirrm %%DATADIR%%/data/alpha/pinnacleentertainment
+@dirrm %%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder
+@dirrm %%DATADIR%%/data/alpha/citizengames/sidewinder
+@dirrm %%DATADIR%%/data/alpha/citizengames
+@dirrm %%DATADIR%%/data/alpha
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/characters
