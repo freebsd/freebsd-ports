@@ -1,11 +1,7 @@
---- pine/help.c.orig	Wed Jul  1 06:22:26 1998
-+++ pine/help.c	Tue Aug  4 12:42:16 1998
-@@ -50,15 +50,15 @@
- 
- static struct key help_keys[] =
-        {MAIN_MENU,
--	{"E","Exit Help",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
-+	{"E","離開",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
+--- pine/help.c.orig	Thu Jan  7 03:50:55 1999
++++ pine/help.c	Tue Feb 23 15:27:01 1999
+@@ -53,12 +53,12 @@
+ 	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
  	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
  	{NULL,NULL,{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
 -	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
@@ -29,7 +25,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -269,7 +269,7 @@
+@@ -262,7 +262,7 @@
  		memset(&sargs, 0, sizeof(SCROLL_S));
  		sargs.text.text	   = so_text(store);
  		sargs.text.src	   = CharStar;
@@ -38,7 +34,7 @@
  		sargs.text.handles = handles;
  		if(!(sargs.bar.title = title)){
  		    if(!struncmp(shown_text[0], "<html>", 6)){
-@@ -297,7 +297,7 @@
+@@ -290,7 +290,7 @@
  		    }
  
  		    if(!sargs.bar.title)
@@ -47,7 +43,7 @@
  		}
  
  		sargs.bar.style	   = TextPercent;
-@@ -313,13 +313,13 @@
+@@ -307,18 +307,18 @@
  		setbitmap(sargs.keys.bitmap);
  		if(flags & HLPD_FROMHELP){
  		    km.keys[HLP_EXIT_KEY].name	     = "P";
@@ -55,6 +51,21 @@
 +		    km.keys[HLP_EXIT_KEY].label	     = "前一說明";
  		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
  		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
+ 
+ 		    km.keys[HLP_SUBEXIT_KEY].name	= "E";
+-		    km.keys[HLP_SUBEXIT_KEY].label	= "Exit Help";
++		    km.keys[HLP_SUBEXIT_KEY].label	= "離開";
+ 		    km.keys[HLP_SUBEXIT_KEY].bind.cmd   = MC_EXIT;
+ 		    km.keys[HLP_SUBEXIT_KEY].bind.ch[0] = 'e';
+ 		}
+ 		else if(text == h_special_help_nav){
+ 		    km.keys[HLP_EXIT_KEY].name	     = "P";
+-		    km.keys[HLP_EXIT_KEY].label	     = "Prev Help";
++		    km.keys[HLP_EXIT_KEY].label	     = "前一說明";
+ 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
+ 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
+ 
+@@ -327,12 +327,12 @@
  		}
  		else{
  		    km.keys[HLP_EXIT_KEY].name	     = "E";
@@ -62,8 +73,14 @@
 +		    km.keys[HLP_EXIT_KEY].label	     = "離開";
  		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_EXIT;
  		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'e';
- 		    clrbitn(HLP_SUBEXIT_KEY, sargs.keys.bitmap);
-@@ -478,7 +478,7 @@
+ 
+ 		    km.keys[HLP_SUBEXIT_KEY].name	= "?";
+-		    km.keys[HLP_SUBEXIT_KEY].label	= "Help Help";
++		    km.keys[HLP_SUBEXIT_KEY].label	= "輔助說明";
+ 		    km.keys[HLP_SUBEXIT_KEY].bind.cmd   = MC_HELP;
+ 		    km.keys[HLP_SUBEXIT_KEY].bind.ch[0] = '?';
+ 		}
+@@ -492,7 +492,7 @@
  	}
  
  	sparms->keys.menu->keys[HLP_VIEW_HANDLE].name  = "V";
@@ -72,7 +89,16 @@
      }
  }
  
-@@ -559,7 +559,7 @@
+@@ -543,7 +543,7 @@
+     print_text(NEWLINE);
+ 
+     if(error = gf_pipe(helper_getc, print_char))
+-      q_status_message1(SM_ORDER | SM_DING, 3, 3, "Printing Error: %s", error);
++      q_status_message1(SM_ORDER | SM_DING, 3, 3, "列印錯誤：%s", error);
+ 
+     print_char(ctrl('L'));		/* new page. */
+ }
+@@ -573,7 +573,7 @@
  #endif
  	    if(ps_global->intr_pending){
  		q_status_message(SM_ORDER, 3, 3,
@@ -81,7 +107,7 @@
  		break;
  	    }
  
-@@ -948,7 +948,7 @@
+@@ -962,7 +962,7 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = tmp_text;
      sargs.text.src  = CharStar;
@@ -90,7 +116,7 @@
      sargs.bar.title = title;
      sargs.start.on  = LastPage;
  
-@@ -1304,7 +1304,7 @@
+@@ -1321,7 +1321,7 @@
  #endif
  	    }
  	    else if(ch == 'x'){
@@ -99,3 +125,41 @@
  		return(-1);
  	    }
  	}
+@@ -1448,13 +1448,13 @@
+     if(in_handle){
+ 	hp_menu[++i].type	= tQueue;
+ 	hp_menu[i].label.style	= lNormal;
+-	hp_menu[i].label.string = "View Help Section";
++	hp_menu[i].label.string = "檢視輔助說明章節";
+ 	hp_menu[i].data.val	= 'V';
+     }
+ 
+     hp_menu[++i].type	    = tQueue;
+     hp_menu[i].label.style  = lNormal;
+-    hp_menu[i].label.string = "Exit Help";
++    hp_menu[i].label.string = "離開";
+     hp_menu[i].data.val	    = 'E';
+ 
+     hp_menu[++i].type = tTail;
+@@ -1479,18 +1479,18 @@
+     if(in_handle){
+ 	hp_menu[++i].type	= tQueue;
+ 	hp_menu[i].label.style  = lNormal;
+-	hp_menu[i].label.string = "View Help Section";
++	hp_menu[i].label.string = "檢視該節說明";
+ 	hp_menu[i].data.val	= 'V';
+     }
+ 
+     hp_menu[++i].type	    = tQueue;
+     hp_menu[i].label.style  = lNormal;
+-    hp_menu[i].label.string = "Previous Help Section";
++    hp_menu[i].label.string = "前一節";
+     hp_menu[i].data.val	    = 'P';
+ 
+     hp_menu[++i].type	    = tQueue;
+     hp_menu[i].label.style  = lNormal;
+-    hp_menu[i].label.string = "Exit Help";
++    hp_menu[i].label.string = "離開";
+     hp_menu[i].data.val	    = 'E';
+ 
+     hp_menu[++i].type = tTail;

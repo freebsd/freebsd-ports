@@ -1,6 +1,6 @@
---- pine/reply.c.orig	Wed Jul 15 08:40:00 1998
-+++ pine/reply.c	Tue Aug  4 12:42:21 1998
-@@ -88,9 +88,9 @@
+--- pine/reply.c.orig	Thu Jan 28 06:32:10 1999
++++ pine/reply.c	Tue Feb 23 15:55:36 1999
+@@ -107,9 +107,9 @@
  /*
   * Little defs to keep the code a bit neater...
   */
@@ -10,19 +10,28 @@
 +#define	FRM_PMT	"使用 \"Reply-To:\" 地址代替 \"From:\" 地址"
 +#define	ALL_PMT		"回覆給所有的收信者"
 +#define	NEWS_PMT	"回覆至新聞組群，回函給作者或兩者皆要？"
+ #define SIGDASHES	"-- "
  
- /*
-  * standard type of storage object used for body parts...
-@@ -411,7 +411,7 @@
+ 
+@@ -293,7 +293,7 @@
+ 	else{				/* cancel reply */
+ 	    role = NULL;
+ 	    close_patterns(&pattern_h);
+-	    cmd_cancelled("Reply");
++	    cmd_cancelled("回覆");
+ 	    goto done_early;
+ 	}
+ 
+@@ -558,7 +558,7 @@
  #endif
  
      /* partially formatted outgoing message */
 -    pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
 +    pine_send(outgoing, &body, "編輯信件回函",
- 	      fcc.tptr, &reply, NULL, NULL, NULL, 0);
+ 	      role, fcc.tptr, &reply, redraft_pos, NULL, NULL, 0);
    done:
      pine_free_body(&body);
-@@ -485,7 +485,7 @@
+@@ -636,7 +636,7 @@
  			 (ADDRESS *) NULL, env->from, 0);
  
      if(ret == 'x') {
@@ -31,7 +40,7 @@
  	return(0);
      }
  
-@@ -534,7 +534,7 @@
+@@ -685,7 +685,7 @@
  	       || (*saved_cc || *saved_resent))){
  	    *flags &= ~RSF_QUERY_REPLY_ALL;
  	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
@@ -40,7 +49,7 @@
  		return(0);
  	    }
  	    else if(ret == 'y')
-@@ -1099,8 +1099,8 @@
+@@ -1406,8 +1406,8 @@
  {
      int ret, edited = 0;
      static ESCKEY_S rtq_opts[] = {
@@ -51,7 +60,7 @@
  	{-1, 0, NULL, NULL},	                  /* may be overridden below */
  	{-1, 0, NULL, NULL}
      };
-@@ -1110,19 +1110,18 @@
+@@ -1417,19 +1417,18 @@
        return(1);
  
      while(1){
@@ -77,7 +86,7 @@
  	}
  	else
  	  rtq_opts[2].ch    = -1;
-@@ -1133,7 +1132,7 @@
+@@ -1440,7 +1439,7 @@
  				   rtq_opts, edited ? 'y' : 'n',
  				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
  	  case 'x':
@@ -86,7 +95,7 @@
  	    return(-1);
  
  	  case 'r':
-@@ -1152,7 +1151,7 @@
+@@ -1459,7 +1458,7 @@
  
  		    switch(optionally_enter(buf, ps->ttyo->screen_rows > 4
  					    ? -FOOTER_ROWS(ps_global) : -1,
@@ -95,7 +104,7 @@
  					    NULL, NO_HELP, &flags)){
  		      case 0:		/* entry successful, continue */
  			if(flags & OE_USER_MODIFIED){
-@@ -1165,7 +1164,7 @@
+@@ -1472,7 +1471,7 @@
  			break;
  
  		      case 1:
@@ -104,7 +113,7 @@
  
  		      case -1:
  			return(-1);
-@@ -1518,9 +1517,9 @@
+@@ -2476,9 +2475,9 @@
      ENVELOPE *env, *outgoing;
  {
      int    ret = 1;
@@ -117,7 +126,7 @@
  				   {-1, 0, NULL, NULL} };
  
      if(env->newsgroups && *env->newsgroups && !reply_poster_followup(env))
-@@ -1544,7 +1543,7 @@
+@@ -2502,7 +2501,7 @@
  
  	case 'x' :		/* cancel or unknown response */
  	default  :
@@ -126,7 +135,7 @@
  	  ret = 0;
  	  break;
        }
-@@ -1552,7 +1551,7 @@
+@@ -2510,7 +2509,7 @@
      if(ret > 1){
  	if(env->followup_to){
  	    q_status_message(SM_ORDER, 2, 3,
@@ -135,21 +144,39 @@
  	    outgoing->newsgroups = cpystr(env->followup_to);
  	}
  	else if(!outgoing->newsgroups)
-@@ -1710,7 +1709,7 @@
-      * up...
-      */
+@@ -3148,7 +3147,7 @@
+ 	     : 0;
+ 
      if(ret == 'x'){
--	q_status_message(SM_ORDER, 0, 3, "Forward message cancelled");
-+	q_status_message(SM_ORDER, 0, 3, "取消信件轉寄");
- 	goto clean_early;
+-	cmd_cancelled("Forward");
++	cmd_cancelled("轉寄");
+ 	so_give((STORE_S **)&msgtext);
+ 	goto clean;
      }
-     else if(ret == 'y'){			/* attach message[s]!!! */
-@@ -1842,7 +1841,7 @@
+@@ -3163,7 +3162,7 @@
+ 	else{				/* cancel reply */
+ 	    role = NULL;
+ 	    close_patterns(&pattern_h);
+-	    cmd_cancelled("Forward");
++	    cmd_cancelled("轉寄");
+ 	    so_give((STORE_S **)&msgtext);
+ 	    goto clean;
+ 	}
+@@ -3360,7 +3359,7 @@
        pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
      else			/* partially formatted outgoing message */
        pine_send(outgoing, &body,
 -		ps->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
 +		ps->nr_mode ? "送出信件" : "轉寄信件",
- 		NULL, NULL, NULL, NULL, NULL, FALSE);
+ 		role, NULL, NULL, redraft_pos, NULL, NULL, FALSE);
  
    clean:
+@@ -3383,7 +3382,7 @@
+     mail_gc(ps->mail_stream, GC_TEXTS);
+ #endif
+     q_status_message(SM_ORDER | SM_DING, 4, 5,
+-		   "Error fetching message contents.  Can't forward message.");
++		   "擷取信件內容時發生錯誤。無法轉寄信件。");
+     goto clean;
+ }
+ 

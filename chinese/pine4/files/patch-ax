@@ -1,8 +1,22 @@
---- pine/folder.c.orig	Thu Sep 17 01:12:27 1998
-+++ pine/folder.c	Tue Sep 22 19:05:59 1998
-@@ -62,13 +62,13 @@
- 			  ((X)->dir->status&CNTXT_PARTFIND) == 0)
+--- pine/folder.c.orig	Fri Feb  5 05:47:33 1999
++++ pine/folder.c	Wed Feb 24 02:50:43 1999
+@@ -58,10 +58,10 @@
+ #include "headers.h"
+ 
+ 
+-#define	CLICKHERE	"[ Select Here to See Expanded List ]"
+-#define	CLICKHERETOO	"[ ** Empty List **  Select Here to Try Re-Expanding ]"
++#define	CLICKHERE	"[ 選這裡以檢視展開的列表 ]"
++#define	CLICKHERETOO	"[ ** 空的列表 **  選這裡來重新展開 ]"
+ #define	CLICKHERETOONEWS \
+-	"[ ** Empty List **  Use \"A Subscribe\" to subscribe to a newsgroup ]"
++	"[ ** 空的列表 **  使用 \"A Subscribe\" 來訂閱一個新聞組群 ]"
+ #define	ALL_FOUND(X)	(((X)->dir->status & CNTXT_NOFIND) == 0 && \
+ 			  ((X)->dir->status & CNTXT_PARTFIND) == 0)
  #define	FLDR_NAME(X)	((X) ? ((X)->nickname ? (X)->nickname : (X)->name) :"")
+@@ -70,13 +70,13 @@
+ 				FOLDERS((S)->text.handles->h.f.context)) \
+ 			 : NULL)
  #define	SUBSCRIBE_PMT	\
 -		       "Enter newsgroup name (or partial name to get a list): "
 -#define	LISTMODE_GRIPE	"Use \"X\" to mark selections in list mode"
@@ -20,21 +34,24 @@
  
  #define	mail_list(S, R, N)	mail_list_internal(S, R, N)
  
-@@ -281,18 +281,18 @@
+@@ -313,21 +313,21 @@
  /*
   * Various screen keymenu/command binding s.
   */
 -#define PREVC_MENU {"P", "PrevCltn",   {MC_PREVITEM, 1, {'p'}}, KS_NONE}
 -#define NEXTC_MENU {"N", "NextCltn",   {MC_NEXTITEM, 2, {'n',TAB}}, KS_NONE}
 -#define	DELC_MENU  {"D", "Del Cltn",   {MC_DELETE,2,{'d',KEY_DEL}}, KS_NONE}
--#define PREVF_MENU {"P", "PrevFldr",   {MC_PREVITEM, 1, {'p'}}, KS_NONE}
--#define NEXTF_MENU {"N", "NextFldr",   {MC_NEXTITEM, 2, {'n',TAB}}, KS_NONE}
--#define	CIND_MENU  {"I", "CurIndex",   {MC_INDEX,1,{'i'}}, KS_FLDRINDEX}
+-#define PREVF_MENU {"P", "PrevFldr",   {MC_PREV_HANDLE, 3, \
 +#define PREVC_MENU {"P", "前一總集",   {MC_PREVITEM, 1, {'p'}}, KS_NONE}
 +#define NEXTC_MENU {"N", "次一總集",   {MC_NEXTITEM, 2, {'n',TAB}}, KS_NONE}
 +#define	DELC_MENU  {"D", "刪除總集",   {MC_DELETE,2,{'d',KEY_DEL}}, KS_NONE}
-+#define PREVF_MENU {"P", "前一資料匣",   {MC_PREVITEM, 1, {'p'}}, KS_NONE}
-+#define NEXTF_MENU {"N", "次一資料匣",   {MC_NEXTITEM, 2, {'n',TAB}}, KS_NONE}
++#define PREVF_MENU {"P", "前一資料匣",   {MC_PREV_HANDLE, 3, \
+ 					  {'p', ctrl('B'), KEY_LEFT}}, KS_NONE}
+-#define NEXTF_MENU {"N", "NextFldr",   {MC_NEXT_HANDLE, 4, \
++#define NEXTF_MENU {"N", "次一資料匣",   {MC_NEXT_HANDLE, 4, \
+ 					  {'n', ctrl('F'), TAB, KEY_RIGHT}}, \
+ 					  KS_NONE}
+-#define	CIND_MENU  {"I", "CurIndex",   {MC_INDEX,1,{'i'}}, KS_FLDRINDEX}
 +#define	CIND_MENU  {"I", "索引",   {MC_INDEX,1,{'i'}}, KS_FLDRINDEX}
  
  static struct key context_mgr_keys[] = 
@@ -47,7 +64,7 @@
  	 {MC_CHOICE,5,{'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -324,15 +324,15 @@
+@@ -359,15 +359,15 @@
  static struct key context_cfg_keys[] = 
         {HELP_MENU,
  	OTHER_MENU,
@@ -67,7 +84,7 @@
  	WHEREIS_MENU,
  
  	HELP_MENU,
-@@ -351,9 +351,9 @@
+@@ -386,9 +386,9 @@
  
  static struct key context_select_keys[] = 
         {HELP_MENU,
@@ -79,7 +96,7 @@
  	 {MC_CHOICE, 5, {'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -367,9 +367,9 @@
+@@ -402,9 +402,9 @@
  
  static struct key context_fcc_keys[] = 
         {HELP_MENU,
@@ -91,16 +108,7 @@
  	 {MC_CHOICE, 5, {'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -384,16 +384,16 @@
- static struct key folder_keys[] =
-        {HELP_MENU,
-   	OTHER_MENU,
--	{"<", NULL, {MC_EXIT,3,{' ','<',','}}, KS_NONE},
--        {">", "[View Fldr]",
-+	{"M", NULL, {MC_EXIT,3,{' ','<',','}}, KS_NONE},
-+        {">", "[檢視檔案匣]",
- 	 {MC_CHOICE,5,{'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
- 	PREVF_MENU,
+@@ -426,23 +426,23 @@
  	NEXTF_MENU,
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
@@ -112,58 +120,35 @@
  	WHEREIS_MENU,
  
  	HELP_MENU,
-@@ -405,9 +405,9 @@
+ 	OTHER_MENU,
+ 	QUIT_MENU,
+ 	MAIN_MENU,
+-	{"V", "[View Fldr]", {MC_OPENFLDR}, KS_NONE},
++	{"V", "[檢視檔案匣]", {MC_OPENFLDR}, KS_NONE},
+ 	GOTO_MENU,
  	CIND_MENU,
  	COMPOSE_MENU,
- 	PRYNTTXT_MENU,
+-	{"%", "Print", {MC_PRINTFLDR,1,{'%'}}, KS_PRINT},
 -	{"Z", "ZoomMode", {MC_ZOOM,1,{'z'}}, KS_NONE},
 -	{";","Select",{MC_SELECT,1,{';'}},KS_SELECT},
 -	{":","SelectCur",{MC_SELCUR,1,{':'}},KS_SELECT}};
++	{"%", "列印", {MC_PRINTFLDR,1,{'%'}}, KS_PRINT},
 +	{"Z", "縮放模式", {MC_ZOOM,1,{'z'}}, KS_NONE},
 +	{";","選擇",{MC_SELECT,1,{';'}},KS_SELECT},
 +	{":","選擇目前的",{MC_SELCUR,1,{':'}},KS_SELECT}};
  INST_KEY_MENU(folder_km, folder_keys);
  #define	KM_COL_KEY	2
  #define	KM_SEL_KEY	3
-@@ -419,9 +419,9 @@
+@@ -455,7 +455,7 @@
  
  static struct key folder_sel_keys[] =
         {HELP_MENU,
-- 	{"E", "ExitSelect", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
--	{"<", "Collections", {MC_COLLECTIONS,2,{'<',','}}, KS_NONE},
--        {"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},KS_NONE},
-+ 	{"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
-+	{"<", "總集", {MC_COLLECTIONS,2,{'<',','}}, KS_NONE},
-+        {"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},KS_NONE},
- 	PREVF_MENU,
- 	NEXTF_MENU,
- 	PREVPAGE_MENU,
-@@ -435,9 +435,9 @@
- 
- static struct key folder_sub_sel_keys[] =
-        {HELP_MENU,
-- 	{"E", "ExitSelect", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
-+ 	{"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
- 	NULL_MENU,
--        {"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},KS_NONE},
-+        {"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},KS_NONE},
- 	PREVF_MENU,
- 	NEXTF_MENU,
- 	PREVPAGE_MENU,
-@@ -451,9 +451,9 @@
- 
- static struct key folder_fcc_keys[] =
-        {HELP_MENU,
 -	{"E", "ExitSelect", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
--	{"<", "Collections", {MC_COLLECTIONS,2,{'<',','}}, KS_NONE},
--	{"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},
 +	{"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
-+	{"<", "總集", {MC_COLLECTIONS,2,{'<',','}}, KS_NONE},
-+	{"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}},
+ 	NULL_MENU,
+ 	{NULL, NULL, {MC_CHOICE,3,{0,ctrl('M'),ctrl('J')}},
  	 KS_NONE},
- 	PREVF_MENU,
- 	NEXTF_MENU,
-@@ -469,9 +469,9 @@
+@@ -474,14 +474,14 @@
  
  static struct key folder_sub_keys[] =
         {HELP_MENU,
@@ -176,7 +161,13 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -488,8 +488,8 @@
+ 	NEXTPAGE_MENU,
+-	{"L", "List Mode", {MC_LISTMODE, 1, {'l'}}, KS_NONE},
++	{"L", "列表模式", {MC_LISTMODE, 1, {'l'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	WHEREIS_MENU};
+@@ -493,8 +493,8 @@
  static struct key folder_post_keys[] =
         {HELP_MENU,
   	NULL_MENU,
@@ -187,7 +178,16 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -610,12 +610,12 @@
+@@ -537,7 +537,7 @@
+     fs.agg_ops		= F_ON(F_ENABLE_AGG_OPS, ps_global) != 0;
+     fs.relative_path	= 1;
+     fs.f.valid		= fl_val_gen;
+-    fs.f.title.bar	= "FOLDER LIST";
++    fs.f.title.bar	= "信件匣列表";
+     fs.f.title.style    = FolderName;
+     fs.f.help.text	= h_folder_maint;
+     fs.f.help.title	= "HELP FOR FOLDERS";
+@@ -621,12 +621,12 @@
      mailcap_free(); /* free resources we won't be using for a while */
  
      memset(&css, 0, sizeof(CONT_SCR_S));
@@ -202,7 +202,51 @@
      css.keymenu	     = &c_cfg_km;
      css.edit	     = 1;
  
-@@ -904,7 +904,7 @@
+@@ -669,10 +669,10 @@
+     fs.context	     = *cntxtp;
+     fs.combined_view = !sublist && F_ON(F_CMBND_FOLDER_DISP, ps_global) != 0;
+     fs.f.valid	     = fl_val_gen;
+-    fs.f.title.bar   = "GOTO: SELECT FOLDER";
++    fs.f.title.bar   = "前往：選擇資料匣";
+     fs.f.title.style = FolderName;
+     fs.f.help.text   = h_folder_open;
+-    fs.f.help.title  = "HELP FOR OPENING FOLDERS";
++    fs.f.help.title  = "開啟資料匣的輔助說明";
+     fs.km	     = &folder_sel_km;
+ 
+     /* If we were provided a string,
+@@ -681,7 +681,7 @@
+     if(sublist && *folder && context_isambig(folder)){
+ 	if((*cntxtp)->use & CNTXT_INCMNG){
+ 	    q_status_message(SM_ORDER, 0, 3,
+-			     "All folders displayed for Incoming Collection");
++			     "所有的資料匣被顯示為來源總集");
+ 	}
+ 	else{
+ 	    folder_sublist_context(folder, *cntxtp, &fake_context,
+@@ -732,10 +732,10 @@
+     fs.context	     = *cntxtp;
+     fs.combined_view = F_ON(F_CMBND_FOLDER_DISP, ps_global) != 0;
+     fs.f.valid	     = fl_val_gen;
+-    fs.f.title.bar   = "SAVE: SELECT FOLDER";
++    fs.f.title.bar   = "存檔：選擇資料匣";
+     fs.f.title.style = MessageNumber;
+     fs.f.help.text   = h_folder_save;
+-    fs.f.help.title  = "HELP FOR SAVING MESSAGES TO FOLDERS";
++    fs.f.help.title  = "將信件存入資料匣的輔助說明";
+     fs.km	     = &folder_sel_km;
+ 
+     /* If we were provided a string,
+@@ -744,7 +744,7 @@
+     if(sublist && *folder && context_isambig(folder)){
+ 	if((*cntxtp)->use & CNTXT_INCMNG){
+ 	    q_status_message(SM_ORDER, 0, 3,
+-			     "All folders displayed for Incoming Collection");
++			     "所有的資料匣被顯示為來源總集");
+ 	}
+ 	else{
+ 	    folder_sublist_context(folder, *cntxtp, &fake_context,
+@@ -921,7 +921,7 @@
  	/* leave (*new_dir)->ref == NULL */
      }
  
@@ -211,7 +255,7 @@
      (*new_dir)->desc = cpystr(tmp_20k_buf);
  }
  
-@@ -1003,12 +1003,12 @@
+@@ -1025,12 +1025,12 @@
  	CONT_SCR_S css;
  
  	memset(&css, 0, sizeof(CONT_SCR_S));
@@ -226,7 +270,7 @@
  	css.keymenu	 = km;
  	css.edit	 = edit_config;
  
-@@ -1079,7 +1079,7 @@
+@@ -1102,7 +1102,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -235,7 +279,7 @@
      pbuf.pine_anchor   = set_titlebar(tmp, ps_global->mail_stream,
  				      ps_global->context_current,
  				      ps_global->cur_folder,ps_global->msgmap, 
-@@ -1322,10 +1322,10 @@
+@@ -1347,10 +1347,10 @@
  	else
  	  exists = (i & FEX_ISDIR);
  
@@ -249,7 +293,7 @@
  	if(want_to(prompt, 'y', 0, NO_HELP, WT_NORM) == 'y'){
  	    if(!exists && !mail_create(NULL, tmp)){
  		flush_status_messages(1);	/* mail_create gripes */
-@@ -1357,7 +1357,7 @@
+@@ -1382,7 +1382,7 @@
      char *rstr = NULL;
      void (*redraw)() = ps_global->redrawer;
  #define	CCA_PROMPT	\
@@ -258,277 +302,262 @@
  
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
-@@ -1474,7 +1474,7 @@
- /*BUG: test writing with NNTP to misc.test via mark's code. reasonable err msg?*/
-     if(NEWS_TEST(fs->context)) {
- 	q_status_message(SM_ORDER | SM_DING, 3, 4,
--		 "Can't save messages to bulletin boards or news groups!");
-+		 "無法將訊息存至電子佈告欄或新聞組群上！");
- 	return(0);
-     }
- #endif
-@@ -1489,7 +1489,7 @@
+@@ -1505,7 +1505,7 @@
      FSTATE_S *fs;
  {
-     if(!strncmp(f->prefix, "SUB", 3)){
+     if(f->subscribed){
 -	q_status_message1(SM_ORDER, 0, 4, "Already subscribed to \"%s\"",
 +	q_status_message1(SM_ORDER, 0, 4, "已訂閱\至 \"%s\"",
  			  FLDR_NAME(f));
  	return(0);
      }
-@@ -1502,7 +1502,7 @@
- fl_hdr_gen(ps)
-     struct pine *ps;
- {
--    set_titlebar("FOLDER LIST", ps->mail_stream, ps->context_current,
-+    set_titlebar("信件匣列表", ps->mail_stream, ps->context_current,
- 		 ps->cur_folder, ps->msgmap, 1, FolderName, 0, 0);
- }
+@@ -1549,7 +1549,7 @@
+ 	}
+ 	else{
+ 	    q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			     "Formatting Error: Can't create space for list");
++			     "格式化錯誤：無法為列表建立空間");
+ 	    return(NULL);
+ 	}
  
-@@ -1617,7 +1617,7 @@
- {
-     int		     ch, cmd, mangled_footer, mangled_header,
- 		     n, rc, cur_row, cur_col, km_size, was_dir = -1,
--		     km_popped = 0, listmode = 0, done = 0, save_sel = 0;
-+		     km_popped = 0, listmode = 0, done = 0, save_sel = 0, exit_to_main = 0;
-     unsigned short   new_col;
-     FOLDER_S        *cur_f = NULL;
-     STRLIST_S	    *sl = NULL;
-@@ -1748,7 +1748,7 @@
- 		    km.keys[KM_MAIN_KEY].bind.cmd = MC_NONE;
- 		    km.keys[KM_MAIN_KEY].bind.nch = 0;
+@@ -1563,7 +1563,7 @@
+ 	    memset(&sargs, 0, sizeof(SCROLL_S));
+ 	    sargs.text.text = so_text(screen_text);
+ 	    sargs.text.src  = CharStar;
+-	    sargs.text.desc = "folder list";
++	    sargs.text.desc = "信件匣列表";
+ 	    if(sargs.text.handles = folder_list_handle(fs, handles))
+ 	      sargs.start.on = Handle;
  
--		    km.keys[KM_COL_KEY].label = "Main Menu";
-+		    km.keys[KM_COL_KEY].label = "主選單";
- 		    km.keys[KM_COL_KEY].bind.cmd = MC_MAIN;
- 		    km.keys[KM_COL_KEY].bind.ch[0] = 'm';
- 		}
-@@ -1768,14 +1768,14 @@
- 		if(listmode){
- 		    clrbitn(SB_LIST_KEY, bitmap);
- 		    km.keys[SB_SEL_KEY].name = "X";
--		    km.keys[SB_SEL_KEY].label = "[Set/Unset]";
-+		    km.keys[SB_SEL_KEY].label = "[設定/取消設定]";
- 		    km.keys[SB_SEL_KEY].bind.cmd = MC_SELCUR;
- 		    km.keys[SB_SEL_KEY].bind.ch[0] = 'x';
- 		}
- 		else{
- 		    clrbitn(SB_SUB_KEY, bitmap);
- 		    km.keys[SB_SEL_KEY].name = "S";
--		    km.keys[SB_SEL_KEY].label = "[Subscribe]";
-+		    km.keys[SB_SEL_KEY].label = "[訂閱\]";
- 		    km.keys[SB_SEL_KEY].bind.cmd = MC_CHOICE;
- 		    km.keys[SB_SEL_KEY].bind.ch[0] = 's';
- 		}
-@@ -1789,7 +1789,7 @@
- 	    }
+@@ -1875,7 +1875,7 @@
+ 	    else if(fp->fs->combined_view
+ 		    && (F_ON(F_CMBND_SUBDIR_DISP, ps_global)
+ 			|| !c_list->dir->prev)){
+-		static char *emptiness = "[No Folders in Collection]";
++		static char *emptiness = "[總集中沒有資料匣]";
  
- 	    if(cur_f && cur_f->isdir){
--		static struct key sel_key = {">", "[View Dir]",
-+		static struct key sel_key = {">", "[檢視目錄]",
- 					     {MC_CHOICE,5,
- 					      {'s','>','.',
- 					       ctrl('M'),ctrl('J')}},
-@@ -1915,8 +1915,15 @@
-             /*---------------------- Key left --------------*/
- 	  case MC_CHARLEFT :
- 	  case MC_PREVITEM :
-+	    if (exit_to_main)
-+	    {
-+		ps_global->next_screen = main_menu_screen;
-+		done++;	    
-+	    }
- 	    if((n = folder_lister_prev(fs)) >= 0)
- 	      fs->folder_index = n;
-+	    else
-+	      exit_to_main = 1;
+ 		gf_puts(folder_list_center_space(emptiness, cols), pc);
+ 		len = folder_list_write(pc, c_list, -1, emptiness,
+@@ -1885,7 +1885,7 @@
+ 	else if(fp->fs->combined_view
+ 		&& (F_ON(F_CMBND_SUBDIR_DISP, ps_global)
+ 		    || !c_list->dir->prev)){
+-	    static char *unexpanded = "[Select Here to See Expanded List]";
++	    static char *unexpanded = "[選這裡以檢視展開後的列表]";
  
- 	    break;
-  
-@@ -1924,6 +1931,7 @@
-             /*--------------------- Key right -------------------*/
- 	  case MC_CHARRIGHT :
- 	  case MC_NEXTITEM :
-+	    exit_to_main = 0;
- 	    if(n = folder_lister_next(fs))
- 	      fs->folder_index = n;
- 
-@@ -1945,7 +1953,7 @@
- 	      rc--;
- 
- 	    if(rc < 0){
--		q_status_message(SM_ORDER, 0, 1, "Already on first line.");
-+		q_status_message(SM_ORDER, 0, 1, "已經到第一行了。");
- 		if(fs->top_row != 0){		/* make sure! */
- 		    fs->top_row    = 0;
- 		    fs->prev_index = -1;
-@@ -1991,7 +1999,7 @@
- 				   FOLDERS(fs->context))->d_line + 1;
- 
- 	    if(rc > fs->last_row){
--		q_status_message(SM_ORDER, 0, 1, "Already on last line.");
-+		q_status_message(SM_ORDER, 0, 1, "已經到最後一行了。");
- 		break;
- 	    }
- 
-@@ -2156,7 +2164,7 @@
- 		  rc++;
- 	    }
- 	    else
--	      q_status_message(SM_ORDER,0,1,"Already on first page.");
-+	      q_status_message(SM_ORDER,0,1,"已經到第一頁了。");
- 
-             break;
- 
-@@ -2169,7 +2177,7 @@
- 	    if((rc = fs->top_row + fs->display_rows) > fs->last_row){
- 		if((int)folder_entry(fs->folder_index,
- 				FOLDERS(fs->context))->d_line >= fs->last_row){
--		    q_status_message(SM_ORDER,0,1,"Already on last page.");
-+		    q_status_message(SM_ORDER,0,1,"已經到最後一頁了。");
- 		    break;
- 		}
- 		else
-@@ -2210,7 +2218,7 @@
- 	    }
- 	    else
- 	      q_status_message(SM_ORDER | SM_DING, 3, 3, 
--			       "Sorry, no help text available");
-+			       "很抱歉，文字說明無法取得");
- 
- 	    break;
- 
-@@ -2219,7 +2227,7 @@
- 	  case MC_CHOICE :
- 	    if(!folder_total(FOLDERS(fs->context))){
- 		q_status_message(SM_ORDER | SM_DING, 3, 3, 
--			      "Empty folder collection.  Nothing to select!");
-+			      "空的資料匣總集。沒有東西可供選擇！");
- 	    }
- 	    else if(folder_lister_select(cur_f, fs, listmode)){
- 		mangled_footer++;
-@@ -2279,7 +2287,7 @@
- 		mangled_footer++;
+ 	    gf_puts(folder_list_center_space(unexpanded, cols), pc);
+ 	    len = folder_list_write(pc, c_list, -1, unexpanded,
+@@ -2092,11 +2092,11 @@
+ 		q_status_message(SM_ORDER, 0, 1, LISTMODE_GRIPE);
  	    }
  	    else
 -	      q_status_message(SM_ORDER, 0, 4, "Already in List Mode");
-+	      q_status_message(SM_ORDER, 0, 4, "已經在列表模式了。");
++	      q_status_message(SM_ORDER, 0, 4, "已經處於列表模式中");
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER, 0, 4,
+-			   "No Folders!  Can't enter List Mode");
++			   "沒有資料匣！無法進入列表模式");
  
- 	    break;
+ 	break;
  
-@@ -2415,8 +2423,8 @@
- 	  case MC_DELETE :
- 	    if(!ALL_FOUND(fs->context) || (fs->context->use & CNTXT_PSEUDO)){
- 		q_status_message1(SM_ORDER | SM_DING, 0, 3,
--				  "No folder selected to delete.  %s list.",
--				  ALL_FOUND(fs->context) ? "Empty" : "Expand");
-+				  "尚未選擇供刪除的資料匣。%s列表。",
-+				  ALL_FOUND(fs->context) ? "空" : "展開");
- 		break;
- 	    }
+@@ -2122,7 +2122,7 @@
+ 				    sparms->text.handles->h.f.index);
+ 	else
+ 	  q_status_message(SM_ORDER, 0, 4,
+-			   "No Folders!  Nothing to View");
++			   "沒有資料匣！沒有可供檢視的項目");
  
-@@ -2494,13 +2502,13 @@
- 		if(fs->zoomed = !fs->zoomed){	/* clear all the prefixes */
- 		    (void) folder_lister_nearest_selected(fs);
- 		    q_status_message1(SM_ORDER, 0, 3,
--	     "In Zoomed list of %s folders. Use \"Z\" to restore regular list",
-+	     "在 %s 個資料匣縮放的列表中。使用 \"Z\" 來回復正常列表",
- 				      int2string(n));
+ 	break;
  
- 		}
- 		else{
+@@ -2206,7 +2206,7 @@
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 0, 4,
+-			   "Empty folder collection.  No folder to rename!");
++			   "空的資料匣總集。沒有可供更名的資料匣！");
+ 
+ 	break;
+ 		     
+@@ -2216,7 +2216,7 @@
+ 	if(!(sparms->text.handles
+ 		 && folder_total(FOLDERS(sparms->text.handles->h.f.context)))){
+ 	    q_status_message(SM_ORDER | SM_DING, 0, 4,
+-			     "Empty folder collection.  No folder to delete!");
++			     "空的資料匣總集。沒有可供刪除的資料匣！");
+ 	}
+ 	else if(delete_folder(sparms->text.handles->h.f.context,
+ 			      sparms->text.handles->h.f.index)){
+@@ -2336,7 +2336,7 @@
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 0, 4,
+-			   "Empty folder collection.  No folder to select!");
++			   "空的資料匣總集。沒有可供選擇的資料匣！");
+ 
+ 	break;
+ 
+@@ -2352,11 +2352,11 @@
+ 		if(sparms->text.handles->h.f.context->use & CNTXT_ZOOM){
+ 		    sparms->text.handles->h.f.context->use &= ~CNTXT_ZOOM;
  		    q_status_message(SM_ORDER, 0, 3,
 -				     "Folder List Zoom mode is now off");
 +				     "資料匣列表縮放模式目前為關閉狀態");
  		}
- 
- 		create_folder_display(fs, ps->ttyo->screen_cols);
-@@ -2508,7 +2516,7 @@
+ 		else{
+ 		    q_status_message1(SM_ORDER, 0, 3,
+-	     "In Zoomed list of %s folders. Use \"Z\" to restore regular list",
++	     "在 %s 個資料匣縮放的列表中。使用 \"Z\" 來回復正常列表",
+ 				      int2string(n));
+ 		    sparms->text.handles->h.f.context->use |= CNTXT_ZOOM;
+ 		}
+@@ -2376,10 +2376,10 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 3,
 -			       "No selected folders to Zoom on");
 +			       "尚未選擇供放大的資料匣。");
- 
- 
- 	    break;
-@@ -2518,16 +2526,16 @@
- 	  case MC_WHEREIS :
- 	    switch(search_folders(fs, -FOOTER_ROWS(ps))){
- 	      case -1 :
--		cmd_cancelled("Folder name search");
-+		cmd_cancelled("搜尋檔案匣名稱");
- 		break;
- 
- 	      case 0 :
--		q_status_message(SM_ORDER | SM_DING, 0, 2, "Word not found");
-+		q_status_message(SM_ORDER | SM_DING, 0, 2, "找不到該字");
- 		break;
- 
- 	      case 2 :
- 		q_status_message(SM_ORDER, 0, 2,
--				 "Search wrapped to beginning");
-+				 "從頭搜尋");
- 		break;
- 	    }
- 
-@@ -2594,8 +2602,8 @@
- 	    && ALL_FOUND(fs->context))
-       return(fs->folder_index + 1);
- 
--    q_status_message1(SM_ORDER, 0, 1, "Already on last %sfolder",
--		      fs->zoomed ? "Zoomed " : "");
-+    q_status_message1(SM_ORDER, 0, 1, "已經在最後一個%s資料匣了",
-+		      fs->zoomed ? "縮放後的" : "");
-     return(0);
- }
- 
-@@ -2616,8 +2624,8 @@
-     else if(fs->folder_index > 0 && ALL_FOUND(fs->context))
-       return(fs->folder_index - 1);
- 
--    q_status_message1(SM_ORDER, 0, 1, "Already on first %sfolder",
--		      fs->zoomed ? "Zoomed " : "");
-+    q_status_message1(SM_ORDER, 0, 1, "已經在第一個%s資料匣了",
-+		      fs->zoomed ? "縮放後的" : "");
-     return(-1);
- }
- 
-@@ -2632,7 +2640,7 @@
-     if(listmode){
- 	if(NEWS_TEST(fs->context) && !strncmp(f->prefix, "SUB", 3)){
- 	    q_status_message1(SM_ORDER, 0, 3,
--			      "Already subscribed to \"%s\"",
-+			      "已訂閱\至 \"%s\"",
- 			      FLDR_NAME(f));
- 	}
- 	else{
-@@ -2642,7 +2650,7 @@
-     }
-     else{
- 	if(f->isdir){
--	    q_status_message(SM_ORDER, 0, 3, "Can't select directories");
-+	    q_status_message(SM_ORDER, 0, 3, "無法選擇目錄");
  	}
  	else
- 	  folder_select_toggle(fs, f);
-@@ -2699,13 +2707,13 @@
-     extern     char *sel_pmt2;
+-	  q_status_message(SM_ORDER, 0, 4, "No Folders to Zoom on!");
++	  q_status_message(SM_ORDER, 0, 4, "沒有可供放大的資料匣！");
  
-     if((f = folder_entry(fs->folder_index, FOLDERS(fs->context)))->isdir){
--	q_status_message(SM_ORDER | SM_DING, 0, 3, "Can't Select directories");
-+	q_status_message(SM_ORDER | SM_DING, 0, 3, "無法選擇目錄");
- 	return(0);
+ 	break;
+ 
+@@ -2469,7 +2469,7 @@
+       empty++;
+ 
+     if(empty)
+-      q_status_message(SM_ORDER | SM_DING, 3, 3, "Empty folder list!");
++      q_status_message(SM_ORDER | SM_DING, 3, 3, "空的資料匣列表！");
+ 
+     return(rv);
+ }
+@@ -2510,14 +2510,14 @@
+ 	 ? sparms->text.handles->h.f.context->dir->prev
+ 	 : FPROC(sparms)->fs->context->dir->prev){
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.ch[0] = 'e';
+-	sparms->keys.menu->keys[KM_COL_KEY].label      = "ParentDir";
++	sparms->keys.menu->keys[KM_COL_KEY].label      = "上層目錄";
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.cmd   = MC_PARENT;
      }
+     else if((FPROC(sparms)->fs->context->next
+ 	     || FPROC(sparms)->fs->context->prev)
+ 	    && !FPROC(sparms)->fs->combined_view){
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.ch[0] = 'e';
+-	sparms->keys.menu->keys[KM_COL_KEY].label      = "ClctnList";
++	sparms->keys.menu->keys[KM_COL_KEY].label      = "總集列表";
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.cmd   = MC_EXIT;
+     }
+     else{
+@@ -2529,7 +2529,7 @@
+ 	sparms->keys.menu->keys[KM_MAIN_KEY].bind.cmd = MC_NONE;
+ 	sparms->keys.menu->keys[KM_MAIN_KEY].bind.nch = 0;
  
-     sel_opts = self_opts2;
-     if(old_tot = selected_folders(fs)){
--	sel_opts1[1].label = "unselect Cur" + (f->selected ? 0 : 2);
-+	sel_opts1[1].label = "取消目前選擇" + (f->selected ? 0 : 2);
- 	sel_opts += 2;			/* disable extra options */
- 	switch(q = radio_buttons(SEL_ALTER_PMT, -FOOTER_ROWS(ps_global),
- 				 sel_opts1, 'c', 'x', help, RB_NORM)){
-@@ -2730,7 +2738,7 @@
+-	sparms->keys.menu->keys[KM_COL_KEY].label      = "Main Menu";
++	sparms->keys.menu->keys[KM_COL_KEY].label      = "主選單";
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.cmd   = MC_MAIN;
+ 	sparms->keys.menu->keys[KM_COL_KEY].bind.ch[0] = 'm';
+     }
+@@ -2545,7 +2545,7 @@
+ 			     FOLDERS(sparms->text.handles->h.f.context)))){
+ 	if(fp->isdir){
+ 	    if(fp->isfolder){
+-		sparms->keys.menu->keys[KM_SEL_KEY].label = "View Dir";
++		sparms->keys.menu->keys[KM_SEL_KEY].label = "檢視目錄";
+ 		menu_clear_binding(sparms->keys.menu, 'v');
+ 		menu_clear_binding(sparms->keys.menu, ctrl('M'));
+ 		menu_clear_binding(sparms->keys.menu, ctrl('J'));
+@@ -2555,7 +2555,7 @@
+ 		setbitn(KM_ALTVIEW_KEY, sparms->keys.bitmap);
+ 	    }
+ 	    else{
+-		sparms->keys.menu->keys[KM_SEL_KEY].label = "[View Dir]";
++		sparms->keys.menu->keys[KM_SEL_KEY].label = "[檢視目錄]";
+ 		menu_add_binding(sparms->keys.menu, 'v', MC_CHOICE);
+ 		menu_add_binding(sparms->keys.menu, ctrl('M'), MC_CHOICE);
+ 		menu_add_binding(sparms->keys.menu, ctrl('J'), MC_CHOICE);
+@@ -2563,7 +2563,7 @@
+ 	    }
+ 	}
+ 	else{
+-	    sparms->keys.menu->keys[KM_SEL_KEY].label = "[View Fldr]";
++	    sparms->keys.menu->keys[KM_SEL_KEY].label = "[檢視資料匣]";
+ 	    menu_add_binding(sparms->keys.menu, 'v', MC_CHOICE);
+ 	    menu_add_binding(sparms->keys.menu, ctrl('M'), MC_CHOICE);
+ 	    menu_add_binding(sparms->keys.menu, ctrl('J'), MC_CHOICE);
+@@ -2573,7 +2573,7 @@
+     else if(FPROC(sparms)->fs->combined_view
+ 	    && sparms->text.handles && sparms->text.handles->h.f.context
+ 	    && !sparms->text.handles->h.f.context->dir->prev){
+-	sparms->keys.menu->keys[KM_SEL_KEY].label = "[View Cltn]";
++	sparms->keys.menu->keys[KM_SEL_KEY].label = "[檢視總集]";
+ 	menu_add_binding(sparms->keys.menu, 'v', MC_CHOICE);
+ 	menu_add_binding(sparms->keys.menu, ctrl('M'), MC_CHOICE);
+ 	menu_add_binding(sparms->keys.menu, ctrl('J'), MC_CHOICE);
+@@ -2616,7 +2623,7 @@
+ 	 ? sparms->text.handles->h.f.context->dir->prev
+ 	 : FPROC(sparms)->fs->context->dir->prev){
+ 	sparms->keys.menu->keys[FC_COL_KEY].name       = "<";
+-	sparms->keys.menu->keys[FC_COL_KEY].label      = "ParentDir";
++	sparms->keys.menu->keys[FC_COL_KEY].label      = "上層目錄";
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.cmd   = MC_PARENT;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.nch   = 2;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.ch[0] = '<';
+@@ -2627,7 +2634,7 @@
+ 	     || FPROC(sparms)->fs->context->prev)
+ 	    && !FPROC(sparms)->fs->combined_view){
+ 	sparms->keys.menu->keys[FC_COL_KEY].name       = "<";
+-	sparms->keys.menu->keys[FC_COL_KEY].label      = "ClctnList";
++	sparms->keys.menu->keys[FC_COL_KEY].label      = "總集列表";
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.cmd   = MC_COLLECTIONS;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.nch   = 2;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.ch[0] = '<';
+@@ -2639,7 +2646,7 @@
+ 	 * turn off "ExitSelect" in first slot
+ 	 */
+ 	sparms->keys.menu->keys[FC_COL_KEY].name       = "E";
+-	sparms->keys.menu->keys[FC_COL_KEY].label      = "ExitSelect";
++	sparms->keys.menu->keys[FC_COL_KEY].label      = "離開";
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.cmd   = MC_EXIT;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.nch   = 1;
+ 	sparms->keys.menu->keys[FC_COL_KEY].bind.ch[0] = 'e';
+@@ -2651,7 +2658,7 @@
+ 			     FOLDERS(sparms->text.handles->h.f.context)))
+        && fp->isdir){
+ 	sparms->keys.menu->keys[FC_SEL_KEY].name  = ">";
+-	sparms->keys.menu->keys[FC_SEL_KEY].label = "[View Dir]";
++	sparms->keys.menu->keys[FC_SEL_KEY].label = "[檢視目錄]";
+ 	menu_clear_binding(sparms->keys.menu, 's');
+ 	menu_add_binding(sparms->keys.menu, 'v', MC_CHOICE);
+ 	menu_add_binding(sparms->keys.menu, '>', MC_CHOICE);
+@@ -2659,7 +2666,7 @@
+     }
+     else{
+ 	sparms->keys.menu->keys[FC_SEL_KEY].name       = "S";
+-	sparms->keys.menu->keys[FC_SEL_KEY].label      = "[Select]";
++	sparms->keys.menu->keys[FC_SEL_KEY].label      = "[選擇]";
+ 	menu_clear_binding(sparms->keys.menu, 'v');
+ 	menu_clear_binding(sparms->keys.menu, '>');
+ 	menu_clear_binding(sparms->keys.menu, '.');
+@@ -2695,14 +2702,14 @@
+     if(FPROC(sparms)->fs->list_cntxt){
+ 	clrbitn(SB_LIST_KEY, sparms->keys.bitmap);
+ 	sparms->keys.menu->keys[SB_SEL_KEY].name = "X";
+-	sparms->keys.menu->keys[SB_SEL_KEY].label = "[Set/Unset]";
++	sparms->keys.menu->keys[SB_SEL_KEY].label = "[設定/取消設定]";
+ 	sparms->keys.menu->keys[SB_SEL_KEY].bind.cmd = MC_SELCUR;
+ 	sparms->keys.menu->keys[SB_SEL_KEY].bind.ch[0] = 'x';
+     }
+     else{
+ 	clrbitn(SB_SUB_KEY, sparms->keys.bitmap);
+ 	sparms->keys.menu->keys[SB_SEL_KEY].name = "S";
+-	sparms->keys.menu->keys[SB_SEL_KEY].label = "[Subscribe]";
++	sparms->keys.menu->keys[SB_SEL_KEY].label = "[訂閱\]";
+ 	sparms->keys.menu->keys[SB_SEL_KEY].bind.cmd = MC_CHOICE;
+ 	sparms->keys.menu->keys[SB_SEL_KEY].bind.ch[0] = 's';
+     }
+@@ -2778,7 +2785,7 @@
  
  	  default :
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -537,7 +566,7 @@
  	    return(0);
  	}
      }
-@@ -2744,7 +2752,7 @@
+@@ -2792,7 +2799,7 @@
       */
      switch(q){
        case 'x':				/* cancel */
@@ -546,9 +575,9 @@
  	return(0);
  
        case 'c' :			/* toggle current's selected state */
-@@ -2766,10 +2774,10 @@
- 	      create_folder_display(fs, ps_global->ttyo->screen_cols);
- 	}
+@@ -2804,10 +2811,10 @@
+ 	for(total = i = 0; i < n; i++)
+ 	  folder_entry(i, FOLDERS(context))->selected = old_tot == 0;
  
 -	q_status_message4(SM_ORDER, 0, 2, "%s%s folder%s %sselected",
 -			  old_tot ? "" : "All ",
@@ -560,7 +589,7 @@
  	return(1);
  
        case 't' :			/* Text */
-@@ -2786,7 +2794,7 @@
+@@ -2824,7 +2831,7 @@
  
        default :
  	q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -569,9 +598,9 @@
  	return(0);
      }
  
-@@ -2815,35 +2823,30 @@
+@@ -2852,34 +2859,30 @@
  
-     if(!(diff = (total = selected_folders(fs)) - old_tot)){
+     if(!(diff = (total = selected_folders(context)) - old_tot)){
  	if(narrow)
 -	  q_status_message4(SM_ORDER, 0, 2,
 -			    "%s.  %s folder%s remain%s selected.",
@@ -581,54 +610,54 @@
 -			    (old_tot == 1L) ? "s" : "");
 +	  q_status_message2(SM_ORDER, 0, 2,
 +			    "%s。  仍有 %s 個資料匣被選擇。",
-+			    j ? "沒有導致改變"
-+			      : "交點中沒有信件", comatose(old_tot));
++			    j ? "沒有造成改變"
++			      : "交點中沒有信件",
++			    comatose(old_tot));
  	else if(old_tot && j)
  	  q_status_message(SM_ORDER, 0, 2,
 -		   "No change resulted.  Matching folders already selected.");
-+		   "沒有導致改變。符合的資料匣已經被選擇了。");
++		   "沒有造成改變。符合的資料匣已經被選擇了。");
  	else
  	  q_status_message1(SM_ORDER | SM_DING, 0, 2,
 -			    "Select failed!  No %sfolders selected.",
 -			    old_tot ? "additional " : "");
 +			    "選擇失敗！沒有%s資料匣被選擇。",
-+			    old_tot ? "額外的 " : "");
++			    old_tot ? "額外的" : "");
      }
-     else{
- 	if(old_tot){
- 	    sprintf(tmp_20k_buf,
--		    "Select matched %ld folder%s!  %s %sfolder%s %sselected.",
-+		    "選擇符合的 %ld 個資料匣！共計 %s 個資料匣被%s選擇.",
- 		    (diff > 0) ? diff : old_tot + diff,
--		    plural((diff > 0) ? diff : old_tot + diff),
- 		    comatose((diff > 0) ? total : -diff),
--		    (diff > 0) ? "total " : "",
--		    plural((diff > 0) ? total : -diff),
--		    (diff > 0) ? "" : "UN");
-+		    (diff > 0) ? "" : "取消");
- 	    q_status_message(SM_ORDER, 0, 2, tmp_20k_buf);
- 	}
- 	else{
--	    q_status_message2(SM_ORDER, 0, 2, "Select matched %s folder%s!",
--			      comatose(diff), plural(diff));
-+	    q_status_message1(SM_ORDER, 0, 2, "選擇符合的 %s 個資料匣！",
-+			      comatose(diff));
+     else if(old_tot){
+ 	sprintf(tmp_20k_buf,
+-		"Select matched %ld folder%s.  %s %sfolder%s %sselected.",
++		"選擇符合的 %ld 個資料匣！共計 %s 個資料匣被%s選擇。",
+ 		(diff > 0) ? diff : old_tot + diff,
+-		plural((diff > 0) ? diff : old_tot + diff),
+ 		comatose((diff > 0) ? total : -diff),
+-		(diff > 0) ? "total " : "",
+-		plural((diff > 0) ? total : -diff),
+-		(diff > 0) ? "" : "UN");
++		(diff > 0) ? "" : "取消");
+ 	q_status_message(SM_ORDER, 0, 2, tmp_20k_buf);
+     }
+     else
+-      q_status_message2(SM_ORDER, 0, 2, "Select matched %s folder%s.",
+-			comatose(diff), plural(diff));
++      q_status_message1(SM_ORDER, 0, 2, "選擇符合的 %s 個資料匣！",
++			comatose(diff));
  
- 	    if(F_OFF(F_SELECTED_SHOWN_BOLD, ps_global)){
- 		folder_prefixes(fs, "    ");
-@@ -3031,9 +3034,9 @@
- 
- 	fs->prev_index = -1;		  /* redraw display */
- 
+     return(1);
+ }
+@@ -2995,9 +2998,9 @@
+ 	fp->prev	  = context->dir;
+ 	fp->status	 |= CNTXT_SUBDIR;
+ 	context->dir  = fp;
 -	q_status_message2(SM_ORDER, 0, 3, "Now in %sdirectory: %s",
 +	q_status_message2(SM_ORDER, 0, 3, "目前在 %s目錄中：%s",
- 			  folder_total(FOLDERS(fs->context))
+ 			  folder_total(FOLDERS(context))
 -			  ? "" : "EMPTY ",  fp->ref);
 +			  ? "" : "空的 ",  fp->ref);
  	rv++;
      }
      else
-@@ -3052,7 +3055,7 @@
+@@ -3016,7 +3019,7 @@
      char *p;
  
      /* Provide context in new collection header */
@@ -637,14 +666,14 @@
  	    ((p = strstr(cntxt->context, "%s")) && !*(p+2)
  	     && !strncmp(fdp->ref, cntxt->context, p - cntxt->context))
  	      ? fdp->ref + (p - cntxt->context) : fdp->ref);
-@@ -3097,12 +3100,12 @@
- 	fs->prev_index = -1;		  /* redraw display */
+@@ -3062,12 +3065,12 @@
+ 	context->dir = fp;
  
  	if(fp->status & CNTXT_SUBDIR)
 -	  q_status_message1(SM_ORDER, 0, 3, "Now in directory: %s",
 +	  q_status_message1(SM_ORDER, 0, 3, "目前所在目錄：%s",
  			    strsquish(tmp_20k_buf + 500, fp->ref,
- 				      fs->display_cols - 22));
+ 				      ps_global->ttyo->screen_cols - 22));
  	else
  	  q_status_message(SM_ORDER, 0, 3,
 -			   "Returned to collection's top directory");
@@ -652,8 +681,8 @@
  
  	rv++;
      }
-@@ -3673,12 +3676,12 @@
-     if(fs->context->use & CNTXT_INCMNG){
+@@ -3258,12 +3261,12 @@
+     if(context->use & CNTXT_INCMNG){
  	char inbox_host[MAXPATH], *beg, *end = NULL;
  	ESCKEY_S *special_key;
 -	static ESCKEY_S host_key[] = {{ctrl('X'),12,"^X","Use Inbox Host"},
@@ -667,7 +696,7 @@
  	    return(FALSE);
  	}
  
-@@ -3700,7 +3703,7 @@
+@@ -3285,7 +3288,7 @@
  	else
  	  special_key = NULL;
  
@@ -676,7 +705,7 @@
  	help = NO_HELP;
  	while(1){
  	    int flags = OE_APPEND_CURRENT;
-@@ -3718,7 +3721,7 @@
+@@ -3303,7 +3306,7 @@
  	    }
  	    else if(rc == 1){
  		q_status_message(SM_ORDER,0,2,
@@ -685,7 +714,7 @@
  		return(FALSE);
  	    }
  	    else if(rc == 0)
-@@ -3728,7 +3731,7 @@
+@@ -3313,7 +3316,7 @@
  
      if(offset = strlen(add_folder)){		/* must be host for incoming */
  	int i;
@@ -694,7 +723,7 @@
  	for(i = offset;i >= 0; i--)
  	  add_folder[i+1] = add_folder[i];
  
-@@ -3737,7 +3740,7 @@
+@@ -3322,7 +3325,7 @@
  	add_folder[++offset] = '\0';		/* +2, total */
      }
      else
@@ -703,7 +732,7 @@
  
      help = NO_HELP;
      while(1){
-@@ -3745,14 +3748,14 @@
+@@ -3330,14 +3333,14 @@
  
  	p = NULL;
  	if(isdir){
@@ -722,34 +751,29 @@
  	}
  
  	flags = OE_APPEND_CURRENT;
-@@ -3766,7 +3769,7 @@
+@@ -3351,10 +3354,10 @@
  	    if(!ps_global->show_dot_names && add_folder[offset] == '.'){
  		if(cnt++ <= 0)
-                   q_status_message(SM_ORDER,3,3,
--		    "Folder name can't begin with dot");
-+		    "資料匣不能以點 \".\" 為名稱開頭");
- 		else{
- 		    NAMEVAL_S *feat;
- 		    int i;
-@@ -3776,7 +3779,7 @@
- 		      ;/* do nothing */
- 
- 		    q_status_message1(SM_ORDER,3,3,
+ 		  q_status_message(SM_ORDER,3,3,
+-				   "Folder name can't begin with dot");
++				   "資料匣不能以點 \".\" 為名稱開頭");
+ 		else
+ 		  q_status_message1(SM_ORDER,3,3,
 -		      "Config feature \"%s\" enables names beginning with dot",
 +		      "設定檔中 \"%s\" 的功\能可使資料匣以點 \".\" 為名稱開頭",
- 		      feat && feat->name ? feat->name : "");
- 		}
+ 		      feature_list_name(F_ENABLE_DOT_FOLDERS));
  
-@@ -3796,7 +3799,7 @@
+                 display_message(NO_OP_COMMAND);
+@@ -3373,7 +3376,7 @@
  	    }
- 	    else if(*p == fs->context->dir->delim){
+ 	    else if(*p == context->dir->delim){
  		q_status_message(SM_ORDER|SM_DING, 3, 3,
 -				 "Can't have trailing directory delimiters!");
 +				 "不能有目錄尾端的分隔號 \"/\"！");
  		display_message('X');
  		continue;
  	    }
-@@ -3818,7 +3821,7 @@
+@@ -3395,7 +3398,7 @@
  			: NO_HELP;
  	}
  	else if(rc == 1 || add_folder[0] == '\0') {
@@ -758,16 +782,16 @@
  	    return(FALSE);
  	}
      }
-@@ -3837,7 +3840,7 @@
+@@ -3414,7 +3417,7 @@
  
      help = NO_HELP;
-     if(fs->context->use & CNTXT_INCMNG){
+     if(context->use & CNTXT_INCMNG){
 -	sprintf(tmp, "Nickname for folder \"%s\" : ", &add_folder[offset]);
 +	sprintf(tmp, "資料匣\"%s\" 的暱稱：", &add_folder[offset]);
  	while(1){
  	    int flags = OE_APPEND_CURRENT;
  
-@@ -3858,7 +3861,7 @@
+@@ -3435,7 +3438,7 @@
  	    }
  	    else if(rc == 1 || (rc != 3 && !*nickname)){
  		q_status_message(SM_ORDER,0,2,
@@ -776,8 +800,8 @@
  		return(FALSE);
  	    }
  	}
-@@ -3873,7 +3876,7 @@
- 	    f = folder_entry(offset, FOLDERS(fs->context));
+@@ -3450,7 +3453,7 @@
+ 	    f = folder_entry(offset, FOLDERS(context));
  	    if(!strucmp(FLDR_NAME(f), nickname[0] ? nickname : add_folder)){
  		q_status_message1(SM_ORDER | SM_DING, 0, 3,
 -				  "Incoming folder \"%s\" already exists",
@@ -785,7 +809,7 @@
  				  nickname[0] ? nickname : add_folder);
  		return(FALSE);
  	    }
-@@ -3927,7 +3930,7 @@
+@@ -3503,18 +3506,18 @@
  	if(nickname[0])
  	  strcpy(add_folder, nickname);		/* known by new name */
  
@@ -794,16 +818,11 @@
  	return_val = add_folder;
      }
      else if(context_isambig(add_folder)){
-@@ -3943,15 +3946,15 @@
- 	     */
- 	    refresh_folder_list(fs, TRUE);
- 
--	    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" created",
--			      isdir ? "Directory" : "Folder", add_folder);
-+	    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" 已建立",
-+			      isdir ? "目錄" : "資料匣", add_folder);
- 	}
- 
+ 	free_folder_list(context);
+-	q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" created",
+-			  isdir ? "Directory" : "Folder", add_folder);
++	q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" 已建立",
++			  isdir ? "目錄" : "資料匣", add_folder);
  	return_val = add_folder;
      }
      else
@@ -813,7 +832,7 @@
  			add_folder);
  
      return(return_val != NULL);
-@@ -3990,13 +3993,13 @@
+@@ -3553,13 +3556,13 @@
      subscribe_keys[i = 0].ch  = ctrl('T');
      subscribe_keys[i].rval    = 12;
      subscribe_keys[i].name    = "^T";
@@ -829,7 +848,7 @@
      }
  
      subscribe_keys[i].ch = -1;
-@@ -4057,7 +4060,7 @@
+@@ -3620,7 +3623,7 @@
  	    }
  	    else{
  		q_status_message(SM_ORDER, 0, 2,
@@ -838,7 +857,7 @@
  		continue;
  	    }
  
-@@ -4110,10 +4113,10 @@
+@@ -3673,10 +3676,10 @@
  	    else{
  		if(rc == 12)
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -851,16 +870,16 @@
  			  folder);
  		free_folder_list(&subscribe_cntxt);
  
-@@ -4162,7 +4165,7 @@
- 
+@@ -3721,7 +3724,7 @@
      if(rc < 0){
+ 	folder[0] = '\0';		/* make sure not to return partials */
  	if(rc == -1)
 -	  q_status_message(SM_ORDER, 0, 3, "Subscribe cancelled");
 +	  q_status_message(SM_ORDER, 0, 3, "取消訂閱\");
      }
      else{
  	if(folders){		/*------ Actually do the subscription -----*/
-@@ -4184,7 +4187,7 @@
+@@ -3743,7 +3746,7 @@
  		     */
  		    q_status_message1(errors ?SM_INFO : SM_ORDER,
  				      errors ? 0 : 3, 3,
@@ -869,7 +888,7 @@
  				      (char *) flp->name);
  		    errors++;
  		}
-@@ -4208,13 +4211,13 @@
+@@ -3767,13 +3770,13 @@
  
  	    if(n == 0)
  	      q_status_message(SM_ORDER | SM_DING, 3, 5,
@@ -886,7 +905,7 @@
  				errors ? comatose((long)errors) : "");
  
  	    free_strlist(&folders);
-@@ -4223,7 +4226,7 @@
+@@ -3782,7 +3785,7 @@
  	    (void) context_apply(tmp_20k_buf, &subscribe_cntxt, folder);
  	    if(mail_subscribe(NULL, tmp_20k_buf) == 0L){
  		q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -895,7 +914,7 @@
  	    }
  	    else if(ALL_FOUND(cntxt)){
  		/*---- Update the screen display data structures -----*/
-@@ -4237,7 +4240,7 @@
+@@ -3796,7 +3799,7 @@
  	}
  
  	if(folder[0])
@@ -904,21 +923,21 @@
      }
  
      free_fdir(&subscribe_cntxt.dir, 1);
-@@ -4277,19 +4280,19 @@
+@@ -3837,19 +3840,19 @@
  
-     if(NEWS_TEST(fs->context)){
+     if(NEWS_TEST(context)){
  	q_status_message(SM_ORDER | SM_DING, 3, 3,
 -			 "Can't rename bulletin boards or news groups!");
 +			 "無法更改電子佈告欄或新聞組群的名稱！");
  	return(0);
      }
-     else if(!folder_total(FOLDERS(fs->context))){
+     else if(!folder_total(FOLDERS(context))){
  	q_status_message(SM_ORDER | SM_DING, 0, 4,
 -			 "Empty folder collection.  No folder to rename!");
 +			 "空的資料匣總集。沒有可供更名的資料匣！");
  	return(0);
      }
-     else if((new_f = folder_entry(fs->folder_index, FOLDERS(fs->context)))
+     else if((new_f = folder_entry(index, FOLDERS(context)))
  	    && (!strucmp(FLDR_NAME(new_f), ps_global->inbox_name)
  		|| new_f->parent)) {
          q_status_message1(SM_ORDER | SM_DING, 3, 4,
@@ -927,13 +946,13 @@
  			  new_f->parent
  			    ? new_f->nickname
  			    : ps_global->inbox_name);
-@@ -4305,11 +4308,11 @@
+@@ -3865,11 +3868,11 @@
  
      ren_cur = strcmp(folder, ps_global->cur_folder) == 0;
  
 -    sprintf(prompt, "Rename %s to : ",
 +    sprintf(prompt, "將 %s 更名為：",
- 	    (fs->context->use & CNTXT_INCMNG)
+ 	    (context->use & CNTXT_INCMNG)
 -	      ? "nickname"
 +	      ? "暱稱"
  	      : (isdir = new_f->isdir)
@@ -942,27 +961,22 @@
      help   = NO_HELP;
      strcpy(new_name, folder);
      while(1) {
-@@ -4330,7 +4333,7 @@
+@@ -3890,10 +3893,10 @@
  	    if(!ps_global->show_dot_names && *new_name == '.'){
  		if(cnt++ <= 0)
                    q_status_message(SM_ORDER,3,3,
 -		    "Folder name can't begin with dot");
 +		    "資料匣不能以點 \".\" 為名稱開頭");
- 		else{
- 		    NAMEVAL_S *feat;
- 		    int i;
-@@ -4340,7 +4343,7 @@
- 		      ;/* do nothing */
- 
- 		    q_status_message1(SM_ORDER,3,3,
+ 		else
+ 		  q_status_message1(SM_ORDER,3,3,
 -		      "Config feature \"%s\" enables names beginning with dot",
 +		      "設定檔中 \"%s\" 的功\能可使資料匣以點 \".\" 為名稱開頭",
- 		      feat && feat->name ? feat->name : "");
- 		}
+ 		      feature_list_name(F_ENABLE_DOT_FOLDERS));
  
-@@ -4350,13 +4353,13 @@
+                 display_message(NO_OP_COMMAND);
+@@ -3902,13 +3905,13 @@
  
- 	    if(folder_index(new_name, fs->context, FI_ANY) >= 0){
+ 	    if(folder_index(new_name, context, FI_ANY) >= 0){
                  q_status_message1(SM_ORDER, 3, 3,
 -				  "Folder \"%s\" already exists",
 +				  "資料匣 \"%s\" 已存在",
@@ -976,25 +990,25 @@
  				  ps_global->inbox_name);
                  display_message(NO_OP_COMMAND);
                  continue;
-@@ -4379,7 +4382,7 @@
+@@ -3931,7 +3934,7 @@
      if(rc == 1
-        || !(*new_name || (fs->context->use & CNTXT_INCMNG))
+        || !(*new_name || (context->use & CNTXT_INCMNG))
         || !strcmp(new_name, folder)){
 -        q_status_message(SM_ORDER, 0, 2, "Folder rename cancelled");
 +        q_status_message(SM_ORDER, 0, 2, "取消資料匣更名");
          return(0);
      }
  
-@@ -4461,7 +4464,7 @@
+@@ -4012,7 +4015,7 @@
  	    /* renaming sent-mail or saved-messages */
- 	    if(context_create(fs->context, NULL, folder)){
+ 	    if(context_create(context, NULL, folder)){
  		q_status_message3(SM_ORDER,0,3,
 -		     "Folder \"%s\" renamed to \"%s\". New \"%s\" created",
 +		     "資料匣 \"%s\" 名稱改為 \"%s\"。建立新的 \"%s\"",
  				  folder, new_name,
  				  pretty_fn(
  				    (strcmp(ps_global->VAR_DEFAULT_SAVE_FOLDER,
-@@ -4472,7 +4475,7 @@
+@@ -4023,7 +4026,7 @@
  	    }
  	    else{
  		q_status_message1(SM_ORDER | SM_DING, 3, 4,
@@ -1002,8 +1016,8 @@
 +				  "建立新的資料匣 \"%s\" 時發生錯誤", folder);
  
  		dprint(2, (debugfile, "Error creating \"%s\" in %s context\n",
- 			   folder, fs->context->context));
-@@ -4480,7 +4483,7 @@
+ 			   folder, context->context));
+@@ -4031,7 +4034,7 @@
  	}
  	else
  	  q_status_message2(SM_ORDER, 0, 3,
@@ -1011,24 +1025,18 @@
 +			    "資料匣 \"%s\" 名稱改為 \"%s\"",
  			    pretty_fn(folder), pretty_fn(new_name));
  
- 	/* Rebuild folder list */
-@@ -4530,12 +4533,12 @@
+ 	free_folder_list(context);
+@@ -4068,7 +4071,7 @@
+     int         ret, close_opened = 0, blast_folder = 1;
  
-     if(!folder_total(FOLDERS(fs->context))){        
-       q_status_message(SM_ORDER | SM_DING, 0, 4,
--		       "Empty folder collection.  No folder to delete!");
-+		       "空的資料匣褻陛C沒有東西可供刪除！");
-       return(0);
-     }
- 
-     if(NEWS_TEST(fs->context)){
+     if(NEWS_TEST(context)){
 -	static char fmt[] = "Really unsubscribe from \"%.*s\"";
 +	static char fmt[] = "確定自 \"%.*s\" 中解除訂閱\嗎";
           
-         folder = folder_entry(fs->folder_index, FOLDERS(fs->context))->name;
+         folder = folder_entry(index, FOLDERS(context))->name;
  	/* 4 is strlen("%.*s") */
-@@ -4557,7 +4560,7 @@
- 	(void) context_apply(tmp_20k_buf, fs->context, folder);
+@@ -4090,7 +4093,7 @@
+ 	(void) context_apply(tmp_20k_buf, context, folder);
  	if(!mail_unsubscribe(NULL, tmp_20k_buf)){
              q_status_message1(SM_ORDER | SM_DING, 3, 3,
 -			      "Error unsubscribing from \"%s\"", folder);
@@ -1036,9 +1044,9 @@
              return(0);
          }
  
-@@ -4579,12 +4582,12 @@
+@@ -4107,12 +4110,12 @@
  
-     if(ps_global->readonly_pinerc && (fs->context->use & CNTXT_INCMNG)){
+     if(ps_global->readonly_pinerc && (context->use & CNTXT_INCMNG)){
  	q_status_message(SM_ORDER,3,5,
 -			 "Deletion cancelled: config file not editable");
 +			 "取消刪除：無法編輯設定檔");
@@ -1050,8 +1058,8 @@
 +		 "無法刪除特殊資料匣 \"%s\"。", ps_global->inbox_name);
  	return(0);
      }
-     else if(fs->context == ps_global->context_current
-@@ -4599,7 +4602,7 @@
+     else if(context == ps_global->context_current
+@@ -4127,7 +4130,7 @@
  
  	if(ret){
  	    q_status_message1(SM_ORDER | SM_DING, 3, 4,
@@ -1060,9 +1068,9 @@
  			      folder);
  	    return(0);
  	}
-@@ -4610,19 +4613,19 @@
+@@ -4138,19 +4141,19 @@
  	 */
- 	if(folder_index(folder, fs->context, FI_FOLDER) >= 0
+ 	if(folder_index(folder, context, FI_FOLDER) >= 0
  	   && (ret = want_to(DIR_FOLD_PMT,'n','x',NO_HELP,WT_NORM)) != 'y'){
 -	    q_status_message(SM_ORDER,0,3, (ret == 'x') ? "Delete cancelled" 
 -			     : "No folder deleted");
@@ -1072,7 +1080,7 @@
  	}
      }
  
-     if(fs->context->use & CNTXT_INCMNG){
+     if(context->use & CNTXT_INCMNG){
  	static ESCKEY_S delf_opts[] = {
 -	    {'n', 'n', "N", "Nickname only"},
 -	    {'b', 'b', "B", "Both Folder and Nickname"},
@@ -1085,7 +1093,7 @@
  
  	switch(radio_buttons(DELF_PROMPT, -FOOTER_ROWS(ps_global),
  			     delf_opts,'n','x',NO_HELP,RB_NORM)){
-@@ -4631,7 +4634,7 @@
+@@ -4159,7 +4162,7 @@
  	    break;
  
  	  case 'x' :
@@ -1094,7 +1102,7 @@
  	    return(0);
  
  	  default :
-@@ -4639,13 +4642,13 @@
+@@ -4167,13 +4170,13 @@
  	}
      }
      else{
@@ -1113,7 +1121,7 @@
  	    return(0);
  	}
      }
-@@ -4688,13 +4691,13 @@
+@@ -4216,13 +4219,13 @@
  /*
   * BUG: what if sent-mail or saved-messages????
   */
@@ -1123,14 +1131,14 @@
  	}
      }
  
--    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" deleted!",
+-    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" deleted.",
 -		      blast_folder ? "Folder" : "Nickname", folder);
-+    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" 已被刪除！",
++    q_status_message2(SM_ORDER, 0, 3, "%s \"%s\" 已刪除。",
 +		      blast_folder ? "資料匣" : "暱稱", folder);
  
  
-     if(fs->context->use & CNTXT_INCMNG){
-@@ -4839,7 +4842,7 @@
+     if(context->use & CNTXT_INCMNG){
+@@ -4299,7 +4302,7 @@
      int  flags;
  
      pat[0] = '\0';
@@ -1139,7 +1147,7 @@
  
      while(1){
  	flags = OE_APPEND_CURRENT | OE_DISALLOW_HELP;
-@@ -4855,7 +4858,7 @@
+@@ -4317,7 +4320,7 @@
  	      return(1);
  
  	  case 1 :
@@ -1148,7 +1156,7 @@
  
  	  default :
  	    return(0);
-@@ -4931,7 +4934,7 @@
+@@ -4394,7 +4397,7 @@
  	  return(1);
      }
  
@@ -1157,7 +1165,7 @@
      return(0);
  }
  
-@@ -4964,7 +4967,7 @@
+@@ -4427,7 +4430,7 @@
      if(!strucmp(folder = f->name, ps_global->inbox_name))
        return(FEX_ISFILE);
  
@@ -1166,7 +1174,7 @@
      we_cancel = busy_alarm(1, tmp, NULL, 0);
  
      mm_list_info	      = &ldata;		/* tie down global reference */
-@@ -5107,7 +5110,7 @@
+@@ -4571,7 +4574,7 @@
  	  return(1);
      }
  
@@ -1175,7 +1183,7 @@
      return(0);
  }
  
-@@ -5129,7 +5132,7 @@
+@@ -4593,7 +4596,7 @@
      while(1){
  	flags = OE_APPEND_CURRENT | OE_DISALLOW_HELP;
  	sprintf(number, "%ld", *count);
@@ -1184,7 +1192,7 @@
  	r = optionally_enter(number, -FOOTER_ROWS(ps_global), 0, 31,
  			     prompt, sel_num_opt, NO_HELP, &flags);
  	switch (r){
-@@ -5138,7 +5141,7 @@
+@@ -4602,7 +4605,7 @@
  	      break;
  	    else if((*count = atol(number)) < 0L)
  	      q_status_message(SM_ORDER, 3, 3,
@@ -1193,91 +1201,16 @@
  	    else
  	      return(1);	/* success */
  
-@@ -5299,7 +5302,7 @@
+@@ -4763,7 +4766,7 @@
  	    for(; i >= 0; i--)
- 	      folder_entry(i, FOLDERS(fs->context))->scanned = 0;
+ 	      folder_entry(i, FOLDERS(context))->scanned = 0;
  
 -	    cmd_cancelled("Select");
 +	    cmd_cancelled("選擇");
  	    rv = 0;
  	    break;
  	}
-@@ -5344,14 +5347,14 @@
-     int             rc, t_index, done = 0;
-     static char     search_string[MAX_SEARCH+1];
-     static ESCKEY_S search_keys[] = {{0, 0, NULL, NULL},
--				     {ctrl('Y'), 10, "^Y","First Fldr"},
--				     {ctrl('V'), 11, "^V","Last Fldr"},
-+				     {ctrl('Y'), 10, "^Y","第一個資料匣"},
-+				     {ctrl('V'), 11, "^V","最後一個資料匣"},
- 				     {-1, 0, NULL, NULL} };
- 
-     nsearch_string[0] = '\0';
-     if(!folder_total(FOLDERS(fd->context))){
- 	q_status_message(SM_ORDER | SM_DING, 0, 4,
--			 "Empty folder collection.  No folders to search!");
-+			 "空的資料匣總集。沒有東西可供搜尋！");
- 	return(0);
-     }
-     else{
-@@ -5359,7 +5362,7 @@
- 	    search_keys[0].ch    = ctrl('X');
- 	    search_keys[0].rval  = 9;
- 	    search_keys[0].name  = "^X";
--	    search_keys[0].label = "List Matches";
-+	    search_keys[0].label = "列出符合者";
- 	}
- 	else{
- 	    search_keys[0].ch    = 0;
-@@ -5370,7 +5373,7 @@
-     }
- 
-     t_index = fd->folder_index;
--    sprintf(prompt, "Folder name to search for %s%s%s: ", 
-+    sprintf(prompt, "欲搜尋的資料匣名稱 %s%s%s：", 
- 	    (*search_string == '\0') ? "" : "[", 
- 	    search_string,
- 	    (*search_string == '\0') ? "" : "] ");
-@@ -5381,7 +5384,7 @@
- 	switch(optionally_enter(nsearch_string, ask_line, 0, MAX_SEARCH,
- 				prompt, search_keys, help, &flags)){
- 	  case -1 :
--	    q_status_message(SM_ORDER | SM_DING, 3, 3, "Error reading word");
-+	    q_status_message(SM_ORDER | SM_DING, 3, 3, "讀取字元時發生錯誤");
- 	    return(0);
- 
- 	  case 0 :			/*----- Search away ------*/
-@@ -5438,9 +5441,9 @@
- 		}
- 
- 		if(rc){
--		    q_status_message2(SM_ORDER, 0, 3,
--				      "Searched matched %s folder%s",
--				      int2string(count), plural(count));
-+		    q_status_message1(SM_ORDER, 0, 3,
-+				      "共有 %s 個資料匣符合搜尋條件",
-+				      int2string(count));
- 		    fd->prev_index = -1;	/* repaint! */
- 		}
- 
-@@ -5454,14 +5457,14 @@
- 	    while((t_index = folder_lister_prev(fd)) >= 0)
- 	      fd->folder_index = t_index;
- 
--	    q_status_message(SM_ORDER, 0, 3, "Searched to First Folder.");
-+	    q_status_message(SM_ORDER, 0, 3, "搜尋至第一個資料匣。");
- 	    return(3);
- 
- 	  case 11 :
- 	    while((t_index = folder_lister_next(fd)))
- 	      fd->folder_index = t_index;
- 
--	    q_status_message(SM_ORDER, 0, 3, "Searched to Last Folder.");
-+	    q_status_message(SM_ORDER, 0, 3, "搜尋至最後一個資料匣。");
- 	    return(3);
- 
- 	  default :
-@@ -6500,7 +6503,7 @@
+@@ -5712,7 +5715,7 @@
  
      if(p = context_digest(c_string, dcontext, host, rcontext, view)){
  	q_status_message2(SM_ORDER | SM_DING, 3, 4,
@@ -1286,7 +1219,7 @@
  	fs_give((void **) &c_string);
  	if(nickname)
  	  fs_give((void **)&nickname);
-@@ -6541,14 +6544,14 @@
+@@ -5753,14 +5756,14 @@
  
      /* fix up label */
      if(NEWS_TEST(c)){
@@ -1305,7 +1238,7 @@
  		(*host) ? host : "", p ? p - rcontext : 0,
  		rcontext, (p && (p - rcontext) > 0) ? "" : "home directory");
      }
-@@ -7745,7 +7748,7 @@
+@@ -6986,7 +6989,7 @@
      if(error && num_in_error){
  	cnt_errs = num_in_error;
  	memset((void *)ng_error, 0, (size_t)90);

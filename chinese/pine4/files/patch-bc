@@ -1,5 +1,5 @@
---- pine/mailpart.c.orig	Wed Sep 16 04:00:39 1998
-+++ pine/mailpart.c	Tue Sep 22 20:29:13 1998
+--- pine/mailpart.c.orig	Fri Feb  5 07:14:39 1999
++++ pine/mailpart.c	Tue Feb 23 15:32:33 1999
 @@ -142,18 +142,18 @@
         {HELP_MENU,
  	OTHER_MENU,
@@ -62,14 +62,14 @@
  
      if(mn_total_cur(ps->msgmap) > 1L){
  	q_status_message(SM_ORDER | SM_DING, 0, 3,
--			 "Can only view one message's attachments at a time!");
+-			 "Can only view one message's attachments at a time.");
 +			 "同一時間僅能檢視一封信的附件！");
  	return;
      }
      else if(ps->atmts && ps->atmts->description && !(ps->atmts + 1)->description)
        q_status_message1(SM_ASYNC, 0, 3,
 -	"Message %s has only one part (the message body), and no attachments.",
-+	"信件 %s 僅有一部分(信件本體)，沒有附件。",
++        "信件 %s 僅有一部分(信件本體)，沒有附件。",
  	long2string(mn_get_cur(ps->msgmap)));
  
      /*
@@ -154,7 +154,7 @@
  		 ps_global->context_current, ps_global->cur_folder,
  		 ps_global->msgmap, 1, FolderName,0,0);
  
-@@ -1318,7 +1318,7 @@
+@@ -1317,7 +1317,7 @@
      gf_io_t     pc;
      STORE_S    *store;
      static ESCKEY_S att_save_opts[] = {
@@ -163,7 +163,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
-@@ -1351,7 +1351,7 @@
+@@ -1346,7 +1346,7 @@
  	att_save_opts[++r].ch  = ctrl('V');
  	att_save_opts[r].rval  = 12;
  	att_save_opts[r].name  = "^V";
@@ -172,7 +172,7 @@
      }
  #endif	/* !(DOS || MAC) */
  
-@@ -1359,7 +1359,7 @@
+@@ -1354,7 +1354,7 @@
  	att_save_opts[++r].ch  =  ctrl('I');
  	att_save_opts[r].rval  = 11;
  	att_save_opts[r].name  = "TAB";
@@ -181,7 +181,7 @@
      }
  
      att_save_opts[++r].ch = -1;
-@@ -1393,7 +1393,7 @@
+@@ -1388,7 +1388,7 @@
  
  	if(ps_global->restricted){
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -190,7 +190,7 @@
  	    return;
  	}
  
-@@ -1401,7 +1401,7 @@
+@@ -1396,7 +1396,7 @@
  	tfp = temp_nam(NULL, "pd");
  	dprint(1, (debugfile, "Download attachment called!\n"));
  	if(store = so_get(FileStar, tfp, WRITE_ACCESS|OWNER_ONLY)){
@@ -199,7 +199,7 @@
  	    we_cancel = init_att_progress(prompt_buf,
  					  ps_global->mail_stream,
  					  a->body);
-@@ -1410,7 +1410,7 @@
+@@ -1405,7 +1405,7 @@
  	    if(err = detach(ps_global->mail_stream, msgno,
  			    a->number, &len, pc, NULL))
  	      q_status_message2(SM_ORDER | SM_DING, 3, 5,
@@ -208,7 +208,7 @@
  				err, tfp);
  
  	    /* cancel regardless, so it doesn't get in way of xfer */
-@@ -1427,18 +1427,18 @@
+@@ -1422,18 +1422,18 @@
  		  (void)close_system_pipe(&syspipe);
  		else
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -230,7 +230,7 @@
  			    a->number);
  			    
  	return;
-@@ -1450,12 +1450,12 @@
+@@ -1445,12 +1445,12 @@
  
      if((store = so_get(FileStar, full_filename, WRITE_ACCESS)) == NULL){
  	q_status_message2(SM_ORDER | SM_DING, 3, 5,
@@ -245,7 +245,7 @@
      we_cancel = init_att_progress(prompt_buf, ps_global->mail_stream, a->body);
  
      gf_set_so_writec(&pc, store);
-@@ -1474,7 +1474,7 @@
+@@ -1469,7 +1469,7 @@
  	  truncate(full_filename, (over == -1) ? orig_size : 0);
  
  	q_status_message2(SM_ORDER | SM_DING, 3, 5,
@@ -254,7 +254,7 @@
  			  err, full_filename);
      }
      else{
-@@ -1552,7 +1552,7 @@
+@@ -1547,7 +1547,7 @@
      MESSAGECACHE *mc;
      STORE_S      *so;
  
@@ -263,7 +263,7 @@
      if(save_prompt(ps_global, &cntxt, newfolder, nmsgs,
  		   a->body->nested.msg->env, msgno, a->number)){
  	save_folder = (strucmp(newfolder, ps_global->inbox_name) == 0)
-@@ -1574,11 +1574,11 @@
+@@ -1569,11 +1569,11 @@
  				   a->body->size.bytes, flags, date, so);
  	    if(rv == 1)
  	      q_status_message2(SM_ORDER, 0, 4,
@@ -277,7 +277,7 @@
  	    /* else whatever broke in save_fetch_append shoulda bitched */
  
  	    so_give(&so);
-@@ -1620,7 +1620,7 @@
+@@ -1615,7 +1615,7 @@
        if(MIME_MSG(part->body.type, part->body.subtype))
  	cnt++;
      
@@ -286,7 +286,7 @@
  
      if(save_prompt(ps_global, &cntxt, newfolder, nmsgs, NULL, 0, NULL)){
  	save_folder = (strucmp(newfolder, ps_global->inbox_name) == 0)
-@@ -1654,11 +1654,11 @@
+@@ -1649,11 +1649,11 @@
  
  	if(rv == 1)
  	  q_status_message2(SM_ORDER, 0, 4,
@@ -300,7 +300,7 @@
  	/* else whatever broke in save_fetch_append shoulda bitched */
  
  	if(our_stream)
-@@ -1712,7 +1712,7 @@
+@@ -1707,7 +1707,7 @@
      ATTACH_S *ap = a;
      STORE_S  *store;
      static ESCKEY_S opts[] = {
@@ -309,7 +309,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -1720,7 +1720,7 @@
+@@ -1715,7 +1715,7 @@
  	opts[i].ch    =  ctrl('I');
  	opts[i].rval  = 11;
  	opts[i].name  = "TAB";
@@ -318,7 +318,7 @@
      }
  
      filename[0] = full_filename[0] = '\0';
-@@ -1733,12 +1733,12 @@
+@@ -1728,12 +1728,12 @@
      if(rv < 0){
  	switch(rv){
  	  case -1:
@@ -333,7 +333,7 @@
  			      ps_global->VAR_OPER_DIR);
  	    break;
  	}
-@@ -1752,17 +1752,17 @@
+@@ -1747,17 +1747,17 @@
  	  q_status_message(SM_ORDER | SM_DING, 3, 4, err);
  	else
            q_status_message3(SM_ORDER, 0, 4,
@@ -355,7 +355,7 @@
  			full_filename, error_description(errno));
  }
  
-@@ -1785,7 +1785,7 @@
+@@ -1780,7 +1780,7 @@
      ATTACH_S *ap;
      STORE_S  *store;
      static ESCKEY_S opts[] = {
@@ -364,7 +364,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -1793,7 +1793,7 @@
+@@ -1788,7 +1788,7 @@
  	opts[i].ch    =  ctrl('I');
  	opts[i].rval  = 11;
  	opts[i].name  = "TAB";
@@ -373,7 +373,7 @@
      }
  
      filename[0] = full_filename[0] = '\0';
-@@ -1806,12 +1806,12 @@
+@@ -1801,12 +1801,12 @@
      if(rv < 0){
  	switch(rv){
  	  case -1:
@@ -388,7 +388,7 @@
  			      ps_global->VAR_OPER_DIR);
  	    break;
  	}
-@@ -1833,7 +1833,7 @@
+@@ -1828,7 +1828,7 @@
  		    sprintf(tmp_20k_buf, "  [Unknown Message subtype: %s ]\n",
  			    ap->body->subtype);
  		    if(!so_puts(store, tmp_20k_buf))
@@ -397,7 +397,7 @@
  		}
  		else{
  		    count++;
-@@ -1842,29 +1842,29 @@
+@@ -1837,29 +1837,29 @@
  		}
  	    }
  	    else if(!so_puts(store, "Unknown type in Digest"))
@@ -434,7 +434,7 @@
  			full_filename, error_description(errno));
  }
  
-@@ -1933,7 +1933,7 @@
+@@ -1928,7 +1928,7 @@
  
  
      q_status_message2(SM_ORDER | SM_DING, 3, 3,
@@ -443,7 +443,7 @@
  		      long2string(msgno), a->number);
      return(0);
  }
-@@ -2014,14 +2014,14 @@
+@@ -2009,14 +2009,14 @@
          /*----- Can't display this type ------*/
  	if(a->body->encoding < ENCOTHER)
  	  q_status_message4(SM_ORDER | SM_DING, 3, 5,
@@ -461,7 +461,7 @@
  			    body_encodings[(a->body->encoding <= ENCMAX)
  					     ? a->body->encoding : ENCOTHER]);
  
-@@ -2243,7 +2243,7 @@
+@@ -2238,7 +2238,7 @@
      clear_index_cache_ent(msgno);
  
      if(store = format_text_att(msgno, a, &handles)){
@@ -470,7 +470,7 @@
  	free_handles(&handles);
  	so_give(&store);	/* free resources associated with store */
      }
-@@ -2411,22 +2411,22 @@
+@@ -2406,22 +2406,22 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text    = so_text(store);
      sargs.text.src     = src;
@@ -497,7 +497,7 @@
      }
  
      if(!handles){
-@@ -2858,9 +2858,9 @@
+@@ -2853,9 +2853,9 @@
      sargs.text.text  = so_text(store);
      sargs.text.src   = CharStar;
      sargs.text.desc  = "attachment info";
@@ -509,18 +509,18 @@
  
      scrolltool(&sargs);
  
-@@ -2922,7 +2922,7 @@
+@@ -2970,7 +2970,7 @@
  		else		/* partially formatted outgoing message */
  		  pine_send(outgoing, &body,
  			    ps_global->nr_mode
 -			      ? "SEND MESSAGE" : "FORWARD MESSAGE",
 +			      ? "送出信件" : "轉寄信件",
- 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 			    role, NULL, NULL, redraft_pos, NULL, NULL, FALSE);
  
  		ps_global->mangled_screen = 1;
-@@ -2938,12 +2938,12 @@
- 		mail_free_body(&body);
+@@ -2988,12 +2988,12 @@
  		so_give((STORE_S **) &msgtext);
+ 		free_redraft_pos(&redraft_pos);
  		q_status_message(SM_ORDER | SM_DING, 4, 5,
 -		   "Error fetching message contents.  Can't forward message.");
 +		   "取得信件內容時發生錯誤。無法轉寄信件。");
@@ -532,17 +532,35 @@
 +			   "無法配置信件文字");
  
  	mail_free_envelope(&outgoing);
-     }
-@@ -3008,7 +3008,7 @@
+ 	free_role(&role);
+@@ -3032,7 +3032,7 @@
+ 
+ 	    ret = 'n';
+ 	    if(ps_global->full_header)
+-	       ret = want_to("Forward message as an attachment", 'n', 0,
++	       ret = want_to("將信件以附件形式轉寄", 'n', 0,
+ 			     NO_HELP, WT_SEQ_SENSITIVE);
+ 	    /* Setup possible role */
+ 	    if(!ps_global->anonymous && (pattern_h = open_nonempty_patterns())){
+@@ -3043,7 +3043,7 @@
+ 		else{				/* cancel reply */
+ 		    role = NULL;
+ 		    close_patterns(&pattern_h);
+-		    cmd_cancelled("Forward");
++		    cmd_cancelled("轉寄");
+ 		    mail_free_envelope(&outgoing);
+ 		    so_give((STORE_S **) &msgtext);
+ 		    return;
+@@ -3121,7 +3121,7 @@
  		  pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
  		else		/* partially formatted outgoing message */
  		  pine_send(outgoing, &body,
 -		      ps_global->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
 +		      ps_global->nr_mode ? "送出信件" : "轉寄信件",
- 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 			    role, NULL, NULL, redraft_pos, NULL, NULL, FALSE);
  
  		ps_global->mangled_screen = 1;
-@@ -3023,16 +3023,16 @@
+@@ -3138,16 +3138,16 @@
  	    else{
  		so_give((STORE_S **) &msgtext);
  		q_status_message(SM_ORDER | SM_DING, 4, 5,
@@ -562,16 +580,16 @@
  			long2string(msgno));
  
      mail_free_envelope(&outgoing);
-@@ -3105,7 +3105,7 @@
- 				 tp = body_partno(stream, msgno, a->body),
- 				 msgtext, prefix, include_text)){
+@@ -3256,7 +3256,7 @@
+ 				    : ps_global->VAR_SIGNATURE_FILE,
+ 				 &redraft_pos)){
  		/* partially formatted outgoing message */
 -		pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
 +		pine_send(outgoing, &body, "編輯信件回函",
- 			  fcc.tptr, NULL, NULL, NULL, NULL, 0);
+ 			  role, fcc.tptr, NULL, redraft_pos, NULL, NULL, 0);
  
  		pine_free_body(&body);
-@@ -3113,13 +3113,13 @@
+@@ -3264,13 +3264,13 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -587,7 +605,7 @@
      }
  
  seeyalater:
-@@ -3186,7 +3186,7 @@
+@@ -3340,7 +3340,7 @@
  
  	sprintf(prompt, "Pipe %sattachment %s to %s: ", raw ? "RAW " : "",
  		a->number, capture ? "" : "(Free Output) ");
@@ -596,7 +614,7 @@
  	pipe_opt[2].label = capture ? "Free Output" : "Capture Output";
  	flags = OE_APPEND_CURRENT | OE_SEQ_SENSITIVE;
  	rc = optionally_enter(pipe_command, -FOOTER_ROWS(ps_global), 0,
-@@ -3204,7 +3204,7 @@
+@@ -3358,7 +3358,7 @@
  	}
  	else if(rc == 0){
  	    if(pipe_command[0] == '\0'){
@@ -605,7 +623,7 @@
  		break;
  	    }
  
-@@ -3278,7 +3278,7 @@
+@@ -3436,7 +3436,7 @@
  	    break;
  	}
  	else if(rc == 1){

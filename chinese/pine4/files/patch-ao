@@ -1,5 +1,5 @@
---- pico/file.c.orig	Fri Aug 28 07:02:07 1998
-+++ pico/file.c	Tue Sep 22 18:45:49 1998
+--- pico/file.c.orig	Sat Jan 30 03:59:32 1999
++++ pico/file.c	Mon Feb 22 22:11:27 1999
 @@ -63,17 +63,17 @@
                  return(s);
  
@@ -15,7 +15,7 @@
  	  return(0);
  	}
  
- 	if((gmode&MDTREE) && !in_oper_tree(fname)){
+ 	if((gmode & MDTREE) && !in_oper_tree(fname)){
 -	  emlwrite("Can't read file from outside of %s", opertree);
 +	  emlwrite("無法讀取 %s 以外的檔案", opertree);
  	  return(0);
@@ -37,7 +37,7 @@
  		KS_OSDATASET(&menu_ins[last_menu], KS_NONE);
  	    }
  
-@@ -159,43 +159,42 @@
+@@ -159,44 +159,43 @@
  	    if(gmode & MDCMPLT){
  		menu_ins[++last_menu].name = msg ? "" : "TAB";
  		menu_ins[last_menu].key    = (CTRL|'I');
@@ -51,13 +51,13 @@
  
 -	sprintf(prompt, "%s to insert from %s %s: ",
 -		msg ? "Number of message" : "File",
--		(msg || (gmode&MDCURDIR)) ? "current"
 +	sprintf(prompt, "自%s%s插入的%s：",
-+		(msg || (gmode&MDCURDIR)) ? "目前的"
- 					  : (gmode&MDTREE) ? opertree
--							   : "home",
+ 		(msg || (gmode&MDCURDIR))
+-		  ? "current"
+-		  : ((gmode & MDTREE) || opertree[0]) ? opertree : "home",
 -		msg ? "folder" : "directory");
-+							   : "家",
++		  ? "目前的"
++		  : ((gmode & MDTREE) || opertree[0]) ? opertree : "家",
 +		msg ? "檔案匣" : "目錄", msg ? "信件編號" : "檔案");
  	s = mlreplyd(prompt, fname, NLINE, QDEFLT, msg ? NULL : menu_ins);
  	/* something to read and it was edited or the default accepted */
@@ -75,7 +75,8 @@
 +		    emlwrite("在限制模式中無法插入檔案",NULL);
  		}
  		else{
- 		    if(gmode&MDTREE && !compresspath(opertree, fname, NLINE)){
+ 		    if((gmode & MDTREE)
+ 		       && !compresspath(opertree, fname, NLINE)){
  			emlwrite(
 -			"Can't insert file from outside of %s: too many ..'s",
 +			"無法在 %s 以外的地方插入檔案：太多 .. 了",
@@ -84,13 +85,13 @@
  		    else{
  			fixpath(fname, NLINE);
  
- 			if((gmode&MDTREE) && !in_oper_tree(fname))
+ 			if((gmode & MDTREE) && !in_oper_tree(fname))
 -			  emlwrite("Can't insert file from outside of %s",
 +			  emlwrite("無法在 %s 以外的地方插入檔案",
  				    opertree);
  			else
  			  retval = ifile(fname);
-@@ -250,7 +249,7 @@
+@@ -252,7 +251,7 @@
  		break;
  	      case (CTRL|'T'):
  		if(msg){
@@ -99,7 +100,7 @@
  		}
  		else{
  		    if(*fname && isdir(fname, NULL, NULL))
-@@ -264,7 +263,7 @@
+@@ -267,7 +266,7 @@
  		    if((s = FileBrowse(dir, NLINE, fname, NLINE, 
  				       NULL, FB_READ)) == 1){
  			if(gmode&MDSCUR){
@@ -108,7 +109,7 @@
  				     NULL);
  			    sleep(2);
  			}
-@@ -305,7 +304,7 @@
+@@ -308,7 +307,7 @@
  
  		    if(gmode&MDSCUR){
  			emlwrite(
@@ -117,15 +118,9 @@
  			      NULL);
  			return(0);
  		    }
-@@ -403,17 +402,17 @@
- 
+@@ -408,20 +407,20 @@
  	strcpy(curbp->b_fname, fname);
- 	if ((gmode&MDTREE) && !in_oper_tree(fname)) {
--	    emlwrite("Can't read file from outside of %s", opertree);
-+	    emlwrite("無法讀取 %s 以外的檔案", opertree);
- 	    s = FIOERR;
- 	}
- 	else if ((s=ffropen(fname)) != FIOSUC){	/* Hard file open.      */
+ 	if ((s=ffropen(fname)) != FIOSUC){	/* Hard file open.      */
  	    if(s == FIOFNF)                     /* File not found.      */
 -	      emlwrite("New file", NULL);
 +	      emlwrite("新檔", NULL);
@@ -138,6 +133,16 @@
  	    nline = 0L;
  	    done  = newline = 0;
  	    while(!done)
+ 	      if((s = ffgetline(line, NLINE, 1)) == FIOEOF){
+ 		  curbp->b_flag &= ~(BFTEMP|BFCHG);
+ 		  gotobob(FALSE, 1);
+-		  sprintf(line,"Read %d line%s",
+-			  nline, (nline > 1) ? "s" : "");
++		  sprintf(line,"讀取第 %d 行",
++			  nline);
+ 		  emlwrite(line, NULL);
+ 		  break;
+ 	      }
 @@ -479,14 +478,14 @@
  	  fname[0] = '\0';
  
@@ -159,7 +164,7 @@
 @@ -497,7 +496,7 @@
  		}
  	      case TRUE:
- 		if(gmode&MDTREE && !compresspath(opertree, fname, NFILEN)){
+ 		if((gmode & MDTREE) && !compresspath(opertree, fname, NFILEN)){
 -		    emlwrite("Can't write outside of %s: too many ..'s",
 +		    emlwrite("無法寫入 %s 以外的檔案：太多 .. 了",
  			     opertree);
@@ -168,13 +173,13 @@
 @@ -505,7 +504,7 @@
  		else{
  		    fixpath(fname, NFILEN);	/*  fixup ~ in file name  */
- 		    if((gmode&MDTREE) && !in_oper_tree(fname)){
+ 		    if((gmode & MDTREE) && !in_oper_tree(fname)){
 -			emlwrite("Can't write outside of %s", opertree);
 +			emlwrite("無法寫入 %s 以外的檔案", opertree);
  			sleep(2);
  			continue;
  		    }
-@@ -586,12 +585,12 @@
+@@ -589,12 +588,12 @@
  		    strcpy(fname, shows);
  		  }
  		  else {
@@ -189,7 +194,7 @@
  		  sleep(3);
  		}
  		refresh(FALSE, 1);
-@@ -629,7 +628,7 @@
+@@ -632,7 +631,7 @@
  		return(ABORT);
  	    }
  	}
@@ -198,7 +203,7 @@
  
          if ((s=writeout(fname, 0)) != -1) {
  	        if(!(gmode&MDTOOL)){
-@@ -646,9 +645,9 @@
+@@ -649,9 +648,9 @@
  		}
  
  		if(s > 1)
@@ -210,7 +215,7 @@
          }
          return ((s == -1) ? FALSE : TRUE);
  }
-@@ -674,12 +673,12 @@
+@@ -677,12 +676,12 @@
          if ((curbp->b_flag&BFCHG) == 0)         /* Return, no changes.  */
                  return (TRUE);
          if (curbp->b_fname[0] == 0) {           /* Must have a name.    */
@@ -225,7 +230,7 @@
          if ((s=writeout(curbp->b_fname, 0)) != -1) {
                  curbp->b_flag &= ~BFCHG;
                  wp = wheadp;                    /* Update mode lines.   */
-@@ -690,10 +689,10 @@
+@@ -693,10 +692,10 @@
                          wp = wp->w_wndp;
                  }
  		if(s > 1){
@@ -238,7 +243,7 @@
          }
          return (s);
  }
-@@ -812,7 +811,7 @@
+@@ -815,7 +814,7 @@
  	curbp->b_flag &= ~BFTEMP;		/* and are not temporary*/
  	curbp->b_linecnt = -1;			/* must be recalculated */
  
@@ -247,7 +252,7 @@
  	done = newline = 0;
  	nline = 0L;
  	while(!done)
-@@ -822,7 +821,7 @@
+@@ -825,7 +824,7 @@
  	      else
  		forwchar(FALSE, 1);
  
@@ -256,7 +261,7 @@
  	      emlwrite(line, NULL);
  	      break;
  	  }
-@@ -910,7 +909,7 @@
+@@ -913,7 +912,7 @@
  	      strcat(fn, S_FILESEP);
  	  }
  	  else{

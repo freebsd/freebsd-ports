@@ -1,5 +1,5 @@
---- pine/osdep/os-bsf.h.orig	Tue Sep 22 11:19:52 1998
-+++ pine/osdep/os-bsf.h	Tue Sep 22 11:23:50 1998
+--- pine/osdep/os-bsf.h.orig	Thu Oct  8 05:51:40 1998
++++ pine/osdep/os-bsf.h	Mon Feb 22 22:21:57 1999
 @@ -74,7 +74,7 @@
     default-composer-hdrs or customized-hdrs to get at it. Instead of
     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
@@ -7,14 +7,14 @@
 -   /usr/local/lib/pine.conf.fixed file.
 +   @@PREFIX@@/etc/pine.conf.fixed file.
   ----*/
- /* #define NEVER_ALLOW_CHANGING_FROM /* probably not needed */
+ /* #define NEVER_ALLOW_CHANGING_FROM */
  
 @@ -87,7 +87,7 @@
     NOTE: You'll also have to make sure the appropriate osdep/postreap.*
           file is included in the os-*.ic file for your system.
   ----*/
--/* #define BACKGROUND_POST  /* comment out to disable posting from child */
-+#define BACKGROUND_POST  /* comment out to disable posting from child */
+-/* #define BACKGROUND_POST */
++/* #define BACKGROUND_POST /* comment out to disable posting from child */
  
  
  
@@ -33,8 +33,8 @@
  /*----------------------------------------------------------------------
     If no nntp-servers are defined, this program will be used to post news.
   ----*/
--#define SENDNEWS	"/usr/local/news/inews -h"	/* news posting cmd */
-+#define SENDNEWS	"/usr/local/news/lib/inews -h"	/* For NN inews    */
+-#define SENDNEWS	"/usr/local/news/inews -h"
++#define SENDNEWS	"/usr/local/news/inews -h"	/* For NN inews    */
 +/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For INN inews   */
 +/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For Cnews inews */
  

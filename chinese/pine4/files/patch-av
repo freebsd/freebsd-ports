@@ -1,7 +1,7 @@
---- pine/addrbook.c.orig	Thu Jul  9 05:35:32 1998
-+++ pine/addrbook.c	Tue Aug  4 12:42:15 1998
-@@ -126,13 +126,13 @@
- int	       addr_scroll_callback PROTO((int, long));
+--- pine/addrbook.c.orig	Tue Feb 23 16:21:22 1999
++++ pine/addrbook.c	Tue Feb 23 18:02:45 1999
+@@ -129,14 +129,14 @@
+ char	      *pcpine_help_addrbook PROTO((char *));
  #endif
  
 -#define CLICKHERE       "[ Address List ]"
@@ -11,6 +11,7 @@
 -#define ADD_GLOBAL      "    [ Move here to add a Global Address Book ]"
 -#define DISTLIST        "DISTRIBUTION LIST:"
 -#define NOABOOKS        "[ No Address Book Configured ]"
+-#define CLICKHERECMB    "[ Select Here to See Expanded List ]"
 +#define CLICKHERE       "[ 地址列表 ]"
 +#define EMPTY           "[ 沒有任何項目 ]"
 +#define ZOOM_EMPTY      "[ 本列表中沒有任何已被選取的項目 ]"
@@ -18,10 +19,11 @@
 +#define ADD_GLOBAL      "    [ 移到這裡加入一個整體的地址簿 ]"
 +#define DISTLIST        "分類列表："
 +#define NOABOOKS        "[ 沒有已經設定好的地址簿 ]"
++#define CLICKHERECMB    "[ 選這裡以檢視展開後的列表 ]"
  
  
  /*
-@@ -283,7 +283,7 @@
+@@ -287,7 +287,7 @@
  
  	    dprint(2, (debugfile, "parse_format: ignoring unrecognized word \"%s\" in address-book-formats\n", p));
  	    q_status_message1(SM_ORDER, warnings++==0 ? 1 : 0, 4,
@@ -30,16 +32,16 @@
  	    /* put back space */
  	    if(r)
  	      *r = SPACE;
-@@ -353,7 +353,7 @@
+@@ -357,7 +357,7 @@
  
      if(column == 0){
  	q_status_message(SM_ORDER, 0, 4,
 -	"address-book-formats has no recognizable words, using default format");
-+	"由於在地址簿格式中找不到足以辨識的字, 因此使用預設模式");
++	"由於在地址簿格式中找不到足以辨識的字，因此使用預設模式");
  	goto assign_default;
      }
  
-@@ -575,7 +575,7 @@
+@@ -599,7 +599,7 @@
      }
      else{
  	q_status_message(SM_ORDER | SM_DING, 5, 10,
@@ -48,7 +50,7 @@
  	dprint(1,
  	    (debugfile,
  	"Bug in addrbook (null dlc in dlist(%ld), not supposed to happen\n",
-@@ -1676,14 +1676,14 @@
+@@ -1705,14 +1705,14 @@
      mailcap_free(); /* free resources we won't be using for a while */
  
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -64,8 +66,8 @@
 +    (void)addr_book(AddrBookScreen, "地址簿", NULL);
      end_adrbks();
  
-     ab_nesting_level = 0;
-@@ -1701,14 +1701,14 @@
+     pine_state->prev_screen = addr_book_screen;
+@@ -1728,14 +1728,14 @@
      mailcap_free(); /* free resources we won't be using for a while */
  
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -81,8 +83,26 @@
 +    (void)addr_book(AddrBookConfig, "設定地址簿", NULL);
      end_adrbks();
  
-     ab_nesting_level = 0;
-@@ -1737,7 +1737,7 @@
+     pine_state->prev_screen = addr_book_screen;
+@@ -1759,7 +1759,7 @@
+     save_nesting_level = cpyint(ab_nesting_level);
+     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
+     if(setjmp(addrbook_changed_unexpectedly)){
+-	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
++	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
+ 	dprint(1,
+ 	    (debugfile, "RESETTING address book... addr_book_compose_oneaddr!\n"));
+ 	addrbook_reset();
+@@ -1768,7 +1768,7 @@
+ 
+     ab_nesting_level++;
+ 
+-    p = addr_book(SelectAddr, "SELECT ADDRESS", NULL);
++    p = addr_book(SelectAddr, "選擇地址", NULL);
+ 
+     if(ab_nesting_level <= 1)
+       end_adrbks();
+@@ -1803,7 +1803,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -91,16 +111,16 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_compose!\n"));
  	addrbook_reset();
-@@ -1746,7 +1746,7 @@
+@@ -1812,7 +1812,7 @@
  
      ab_nesting_level++;
  
 -    p = addr_book(SelectNicksCom, "COMPOSER: SELECT ADDRESS", error);
-+    p = addr_book(SelectNicksCom, "編輯器：選擇地址", error);
++    p = addr_book(SelectNicksCom, "編輯器：選擇列表", error);
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1781,7 +1781,7 @@
+@@ -1847,7 +1847,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -109,7 +129,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_compose_lcc!\n"));
  	addrbook_reset();
-@@ -1794,7 +1794,7 @@
+@@ -1860,7 +1860,7 @@
       * We used to use SelectAddrLccCom here but decided it wasn't necessary
       * to restrict the selection to a list.
       */
@@ -118,7 +138,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1829,7 +1829,7 @@
+@@ -1895,7 +1895,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -127,7 +147,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_change_list!\n"));
  	addrbook_reset();
-@@ -1838,7 +1838,7 @@
+@@ -1904,7 +1904,7 @@
  
      ab_nesting_level++;
  
@@ -136,7 +156,7 @@
  		  error);
  
      if(ab_nesting_level <= 1)
-@@ -1871,7 +1871,7 @@
+@@ -1937,7 +1937,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -145,7 +165,16 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_bounce!\n"));
  	addrbook_reset();
-@@ -1912,7 +1912,7 @@
+@@ -1946,7 +1946,7 @@
+ 
+     ab_nesting_level++;
+ 
+-    p = addr_book(SelectManyNicks, "SELECT ADDRESSES", NULL);
++    p = addr_book(SelectManyNicks, "選擇地址", NULL);
+ 
+     if(ab_nesting_level <= 1)
+       end_adrbks();
+@@ -1978,7 +1978,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -154,7 +183,16 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_takeaddr!\n"));
  	addrbook_reset();
-@@ -1957,7 +1957,7 @@
+@@ -1987,7 +1987,7 @@
+ 
+     ab_nesting_level++;
+ 
+-    p = addr_book(SelectNickTake, "TAKEADDR: SELECT NICKNAME", NULL);
++    p = addr_book(SelectNickTake, "選擇地址：選擇暱稱", NULL);
+ 
+     if(ab_nesting_level <= 1)
+       end_adrbks();
+@@ -2023,7 +2023,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -163,7 +201,16 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_nick_for_edit!\n"));
  	addrbook_reset();
-@@ -2005,7 +2005,7 @@
+@@ -2038,7 +2038,7 @@
+      * and this seemed to be the easiest way to accomplish that.
+      */
+     as.n_serv = 0;
+-    p = addr_book(SelectNickCom, "SELECT NICKNAME", error);
++    p = addr_book(SelectNickCom, "選擇暱稱", error);
+     as.n_serv = save_n_serv;
+ 
+     if(ab_nesting_level <= 1)
+@@ -2071,7 +2071,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -172,18 +219,27 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_selnick!\n"));
  	addrbook_reset();
-@@ -2037,8 +2037,8 @@
+@@ -2080,7 +2080,7 @@
+ 
+     ab_nesting_level++;
+ 
+-    p = addr_book(SelectNick, "SELECT NICKNAME", NULL);
++    p = addr_book(SelectNick, "選擇暱稱", NULL);
+ 
+     if(ab_nesting_level <= 1)
+       end_adrbks();
+@@ -2103,8 +2103,8 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
 -	{"P", "PrevEntry", {MC_PREVITEM,1,{'p'}}, KS_NONE},
 -	{"N", "NextEntry", {MC_NEXTITEM,1,{'n'}}, KS_NONE},
 +	{"P", "前一個項目", {MC_PREVITEM,1,{'p'}}, KS_NONE},
-+	{"N", "下一個項目", {MC_NEXTITEM,1,{'n'}}, KS_NONE},
++	{"N", "次一個項目", {MC_NEXTITEM,1,{'n'}}, KS_NONE},
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	NULL_MENU,
-@@ -2061,10 +2061,10 @@
+@@ -2127,10 +2127,10 @@
  
          HELP_MENU,
  	OTHER_MENU,
@@ -198,7 +254,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -2193,7 +2193,7 @@
+@@ -2259,7 +2259,7 @@
      if(!init_addrbooks(HalfOpen, 1, !as.config, !are_selecting)){
  	if(are_selecting){
  	    q_status_message(SM_ORDER | SM_DING, 0, 4,
@@ -207,7 +263,7 @@
  	    display_message(c);
  	    sleep(2);
  	    return NULL;
-@@ -2201,7 +2201,7 @@
+@@ -2267,7 +2267,7 @@
  	else if(!as.config){
              ps->next_screen = main_menu_screen;
  	    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -216,7 +272,7 @@
  	    ps->mangled_screen = 1;
  	    return NULL;
  	}
-@@ -2211,7 +2211,7 @@
+@@ -2277,7 +2277,7 @@
  	  readonly_warning(NO_DING, NULL);
  	else if(as.adrbks[0].access == NoAccess)
  	  q_status_message(SM_ORDER, 0, 4,
@@ -225,18 +281,21 @@
      }
  
      erase_checks();
-@@ -2342,8 +2342,8 @@
- 	    char buf[80], *bp;
+@@ -2422,10 +2422,10 @@
  
  	    if(style == AddrBookScreen){
--		sprintf(buf, "ADDRESS BOOK%s%s%s",
--			(!as.opened) ? " LIST" : 
-+		sprintf(buf, "地址簿%s%s%s",
-+			(!as.opened) ? "列表" : 
- 			  (as.n_addrbk > 1) ? " <" : "",
- 		        (as.opened && as.n_addrbk > 1 && pab->nickname)
- 							? pab->nickname : "",
-@@ -2418,7 +2418,7 @@
+ 		if(F_ON(F_CMBND_ABOOK_DISP,ps_global))
+-		  sprintf(buf, "ADDRESS BOOK%s", (as.n_addrbk > 1) ? "S" : "");
++		  sprintf(buf, "地址簿");
+ 		else
+-		  sprintf(buf, "ADDRESS BOOK%s%s%s",
+-			  is_custom_title ? " <" : cur_is_open() ? "" : " LIST",
++		  sprintf(buf, "地址簿%s%s%s",
++			  is_custom_title ? " <" : cur_is_open() ? "" : "列表",
+ 		          is_custom_title ? pab->nickname : "",
+ 		          is_custom_title ? ">"  : "");
+ 
+@@ -2490,7 +2490,7 @@
  		km->how_many = 1;
  
  		clrbitn(OTHER_KEY, bitmap);
@@ -245,7 +304,7 @@
  		KS_OSDATASET(&km->keys[TWO_KEY], KS_EXITMODE);
  
  		/*
-@@ -2431,22 +2431,22 @@
+@@ -2503,22 +2503,22 @@
  		    clrbitn(THREE_KEY, bitmap);
  		    menu_init_binding(km, 'A', MC_ADDABOOK, "A",
  				      add_is_global(as.top_ent+as.cur_row)
@@ -275,7 +334,7 @@
  				      ADD_KEY);
  		}
  	    }
-@@ -2459,7 +2459,7 @@
+@@ -2531,7 +2531,7 @@
  		 * The OTHER_KEY is used as the Exit key in selection mode.
  		 * This is because the TWO_KEY is being used for < actions.
  		 */
@@ -284,25 +343,47 @@
  				  OTHER_KEY);
  		KS_OSDATASET(&km->keys[OTHER_KEY], KS_EXITMODE);
  
-@@ -2474,7 +2474,7 @@
- 		      cmd = MC_POPUP;
- 
- 		    menu_init_binding(km, '<', cmd, "<",
--				     cmd == MC_POPUP ? "AddbkList" : "Unexpand",
-+				     cmd == MC_POPUP ? "地址簿列表" : "復原展開",
- 				      TWO_KEY);
- 		    menu_add_binding(km, ',', cmd);
- 		    if(F_ON(F_ARROW_NAV,ps))
-@@ -2489,7 +2489,7 @@
+@@ -2551,8 +2551,8 @@
+ 		      clrbitn(TWO_KEY, bitmap);
+ 		    else{
+ 			menu_init_binding(km, '<', cmd, "<",
+-					  cmd == MC_POPUP ? "AddressBkList"
+-							  : "Unexpand",
++					  cmd == MC_POPUP ? "地址簿列表"
++							  : "復原展開",
+ 					  TWO_KEY);
+ 			menu_add_binding(km, ',', cmd);
+ 			if(F_ON(F_ARROW_NAV,ps))
+@@ -2563,16 +2563,16 @@
+ 		    if(checkedn){
+ 			if(entry_is_clickable_title(as.top_ent+as.cur_row)){
+ 			    menu_init_binding(km, 'S', MC_CHOICE, "S",
+-					      "Select", TWO_KEY);
++					      "選擇", TWO_KEY);
+ 			}
+ 			else{
+ 			    menu_init_binding(km, 'S', MC_CHOICE, "S",
+-					      "[Select]", TWO_KEY);
++					      "[選擇]", TWO_KEY);
+ 			    def_key = TWO_KEY;
+ 			}
+ 		    }
+ 		    else
+-		      menu_init_binding(km, 'S', MC_CHOICE, "S", "Select",
++		      menu_init_binding(km, 'S', MC_CHOICE, "S", "選擇",
+ 				        TWO_KEY);
+ 		}
+ 		else
+@@ -2584,7 +2584,7 @@
  		 * key becomes the ViewAbook key.
  		 */
- 		if(entry_is_askserver(as.top_ent+as.cur_row)){
+ 		if(entry_is_askserver(as.top_ent+as.cur_row) && !as.checkboxes){
 -		    menu_init_binding(km, '>', MC_QUERY_SERV, ">", "[Search]",
 +		    menu_init_binding(km, '>', MC_QUERY_SERV, ">", "[搜尋]",
  				      THREE_KEY);
  		    menu_add_binding(km, 's', MC_QUERY_SERV);
  		    menu_add_binding(km, '.', MC_QUERY_SERV);
-@@ -2497,7 +2497,7 @@
+@@ -2592,7 +2592,7 @@
  		      menu_add_binding(km, KEY_RIGHT, MC_QUERY_SERV);
  		}
  		else if(entry_is_clickable_title(as.top_ent+as.cur_row)){
@@ -311,16 +392,16 @@
  				      THREE_KEY);
  		    menu_add_binding(km, 'v', MC_OPENABOOK);
  		    menu_add_binding(km, '.', MC_OPENABOOK);
-@@ -2505,7 +2505,7 @@
+@@ -2600,7 +2600,7 @@
  		      menu_add_binding(km, KEY_RIGHT, MC_OPENABOOK);
  		}
- 		else if(as.opened){
+ 		else if(cur_is_open()){
 -		    menu_init_binding(km, 'S', MC_CHOICE, "S", "[Select]",
 +		    menu_init_binding(km, 'S', MC_CHOICE, "S", "[選取]",
  				      THREE_KEY);
  		}
  		else
-@@ -2518,7 +2518,7 @@
+@@ -2613,7 +2613,7 @@
  		 */
  		if(entry_is_clickable(as.top_ent+as.cur_row) &&
  		   !entry_is_clickable_title(as.top_ent+as.cur_row)){
@@ -329,22 +410,22 @@
  				      SENDTO_KEY);
  		    menu_add_binding(km, '.', MC_EXPAND);
  		    if(F_ON(F_ARROW_NAV,ps))
-@@ -2528,12 +2528,12 @@
+@@ -2623,12 +2623,12 @@
  		  clrbitn(SENDTO_KEY, bitmap);
  
- 		if(as.opened && as.checkboxes){
+ 		if(cur_is_open() && as.checkboxes){
 -		    menu_init_binding(km, 'X', MC_TOGGLE, "X", "Set/Unset",
 +		    menu_init_binding(km, 'X', MC_TOGGLE, "X", "設定/解除設定",
  				      DELETE_KEY);
  
  		}
- 		else if(as.opened && listmode_ok){
+ 		else if(cur_is_open() && listmode_ok){
 -		    menu_init_binding(km, 'L', MC_LISTMODE, "L", "ListMode",
 +		    menu_init_binding(km, 'L', MC_LISTMODE, "L", "列表模式",
  				      DELETE_KEY);
  		}
  		else
-@@ -2550,7 +2550,7 @@
+@@ -2645,7 +2645,7 @@
  		 * reasonable function call.
  		 */
  		km->keys[OTHER_KEY].name       = "O";
@@ -353,20 +434,53 @@
  		km->keys[OTHER_KEY].bind.cmd   = MC_OTHER;
  		km->keys[OTHER_KEY].bind.ch[0] = 'O';
  		km->keys[OTHER_KEY].bind.nch   = 1;
-@@ -2569,18 +2569,18 @@
+@@ -2664,13 +2664,13 @@
  		    if(F_OFF(F_EXPANDED_DISTLISTS,ps) &&
  		       entry_is_listent(as.top_ent+as.cur_row)){
  			cmd = MC_UNEXPAND;
 -			menu_init_binding(km, '<', cmd, "<", "Unexpand",
 +			menu_init_binding(km, '<', cmd, "<", "復原展開",
  					  TWO_KEY);
+ 			KS_OSDATASET(&km->keys[TWO_KEY], KS_NONE);
  		    }
  		    else{
+ 			cmd = MC_MAIN;
+-			menu_init_binding(km, 'M', cmd, "<", "Main Menu",
++			menu_init_binding(km, 'M', cmd, "<", "主選單",
+ 					  TWO_KEY);
+ 			KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
+ 		    }
+@@ -2679,11 +2679,11 @@
+ 			/*
+ 			 * Add or delete entries from this address book.
+ 			 */
+-			menu_init_binding(km, '@', MC_ADD, "@", "AddNew",
++			menu_init_binding(km, '@', MC_ADD, "@", "新增",
+ 					  ADD_KEY);
+-			menu_init_binding(km, 'D', MC_DELETE, "D", "Delete",
++			menu_init_binding(km, 'D', MC_DELETE, "D", "刪除",
+ 					  DELETE_KEY);
+-			menu_init_binding(km, 'C', MC_COMPOSE, "C", "ComposeTo",
++			menu_init_binding(km, 'C', MC_COMPOSE, "C", "編修",
+ 					  SENDTO_KEY);
+ 			KS_OSDATASET(&km->keys[SENDTO_KEY], KS_COMPOSER);
+ 		    }
+@@ -2709,7 +2709,7 @@
+ 		    if(F_OFF(F_EXPANDED_DISTLISTS,ps) &&
+ 		       entry_is_listent(as.top_ent+as.cur_row)){
+ 			cmd = MC_UNEXPAND;
+-			menu_init_binding(km, '<', cmd, "<", "Unexpand",
++			menu_init_binding(km, '<', cmd, "<", "復原展開",
+ 					  TWO_KEY);
+ 			KS_OSDATASET(&km->keys[TWO_KEY], KS_NONE);
+ 		    }
+@@ -2717,12 +2717,12 @@
  			if(as.n_addrbk > 1 || as.n_serv){
  			    cmd = MC_POPUP;
--			    menu_init_binding(km, '<', cmd, "<", "AddbkList",
-+			    menu_init_binding(km, '<', cmd, "<", "地址簿列表",
- 					      TWO_KEY);
+ 			    menu_init_binding(km, '<', cmd, "<",
+-					      "AddressBkList", TWO_KEY);
++					      "地址簿列表", TWO_KEY);
+ 			    KS_OSDATASET(&km->keys[TWO_KEY], KS_NONE);
  			}
  			else{
  			    cmd = MC_MAIN;
@@ -375,7 +489,7 @@
  					      TWO_KEY);
  			    KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
  			}
-@@ -2592,9 +2592,9 @@
+@@ -2732,9 +2732,9 @@
  			/*
  			 * Add or delete entries from this address book.
  			 */
@@ -387,7 +501,7 @@
  					  DELETE_KEY);
  		    }
  		    else{
-@@ -2604,14 +2604,14 @@
+@@ -2744,14 +2744,14 @@
  
  		    /* Find someplace to put Main Menu command */
  		    if(cmd == MC_POPUP){
@@ -404,7 +518,7 @@
  				      SENDTO_KEY);
  		    KS_OSDATASET(&km->keys[SENDTO_KEY], KS_COMPOSER);
  		}
-@@ -2621,7 +2621,7 @@
+@@ -2761,7 +2761,7 @@
  		     * non-selection mode.
  		     */
  		    cmd = MC_MAIN;
@@ -413,76 +527,39 @@
  				      TWO_KEY);
  		    KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
  
-@@ -2661,10 +2661,10 @@
+@@ -2800,10 +2800,10 @@
  		  cmd = MC_VIEW_ENTRY;
  
  		menu_init_binding(km, '>', cmd, ">",
 -				  cmd == MC_EXPAND ? "[Expand]" :
 -				    cmd == MC_QUERY_SERV ? "[Search]" :
--				      as.opened ? "[View/Update]"
--						: "[ViewAbook]",
+-				      cur_is_open() ? "[View/Update]"
+-						    : "[ViewAbook]",
 +				  cmd == MC_EXPAND ? "[展開]" :
 +				    cmd == MC_QUERY_SERV ? "[搜尋]" :
-+				      as.opened ? "[檢視/更新]"
-+						: "[檢視地址簿]",
++				      cur_is_open() ? "[檢視/更新]"
++						    : "[檢視地址簿]",
  				  THREE_KEY);
  
  		if(cmd == MC_QUERY_SERV)
-@@ -2777,34 +2777,34 @@
+@@ -2941,13 +2941,13 @@
  	    }
  
- 	    if(as.config){
--		helper(h_abook_config, "HELP ON CONFIGURING ADDRESS BOOKS",
-+		helper(h_abook_config, "設定地址簿的輔助說明",
- 		       HLPD_NONE);
- 	    }
- 	    else if(are_selecting){
- 		if(as.opened){
- 		    /* single nick select from TakeAddr */
- 		    if(style == SelectNickTake)
--		      helper(h_abook_select_nicks_take, "HELP ON ADDRESS BOOK",
-+		      helper(h_abook_select_nicks_take, "地址簿的輔助說明",
- 			     HLPD_SIMPLE | HLPD_NEWWIN);
- 		    /* single nick select from addrbook */
- 		    else if(selecting_one_nick)
--		      helper(h_abook_select_nick, "HELP ON ADDRESS BOOK",
-+		      helper(h_abook_select_nick, "地址簿的輔助說明",
- 			     HLPD_SIMPLE | HLPD_NEWWIN);
- 		    /* can use X checkbox command now */
- 		    else if(as.checkboxes)
--		      helper(h_abook_select_checks, "HELP ON ADDRESS BOOK",
-+		      helper(h_abook_select_checks, "地址簿的輔助說明",
- 			     HLPD_SIMPLE | HLPD_NEWWIN);
- 		    /* ListMode command available */
- 		    else if(listmode_ok)
--		      helper(h_abook_select_listmode, "HELP ON ADDRESS BOOK",
-+		      helper(h_abook_select_listmode, "地址簿的輔助說明",
- 			     HLPD_SIMPLE | HLPD_NEWWIN);
- 		    /* no ListMode command available */
- 		    else
--		      helper(h_abook_select_addr, "HELP ON ADDRESS BOOK",
-+		      helper(h_abook_select_addr, "地址簿的輔助說明",
- 			     HLPD_SIMPLE | HLPD_NEWWIN);
- 		}
- 		else{
--		    helper(h_abook_select_top, "HELP ON ADDRESS BOOK",
-+		    helper(h_abook_select_top, "地址簿的輔助說明",
- 			   HLPD_SIMPLE | HLPD_NEWWIN);
- 		}
- 	    }
-@@ -2812,9 +2812,9 @@
- 	    else{
- 		ps->next_screen = SCREEN_FUN_NULL;
- 		if(as.opened)
--		  helper(h_abook_opened, "HELP ON ADDRESS BOOK", HLPD_NONE);
-+		  helper(h_abook_opened, "地址簿的輔助說明", HLPD_NONE);
- 		else
--		  helper(h_abook_top, "HELP ON ADDRESS BOOK", HLPD_NONE);
-+		  helper(h_abook_top, "地址簿的輔助說明", HLPD_NONE);
- 	    }
+ 	    if(as.config)
+-	      helper(gAbookHelp, "HELP ON CONFIGURING ADDRESS BOOKS",
++	      helper(gAbookHelp, "設定地址簿的輔助說明",
+ 		     HLPD_NONE);
+ 	    else if(are_selecting)
+-	      helper(gAbookHelp, "HELP ON ADDRESS BOOK",
++	      helper(gAbookHelp, "地址簿的輔助說明",
+ 		     HLPD_SIMPLE | HLPD_NEWWIN);
+ 	    else	/* general maintenance screen */
+-	      helper(gAbookHelp, "HELP ON ADDRESS BOOK", HLPD_NONE);
++	      helper(gAbookHelp, "地址簿的輔助說明", HLPD_NONE);
  
  	    /*
-@@ -2887,7 +2887,7 @@
+ 	     * Helper() may have a Main Menu key. If user types that
+@@ -3021,7 +3021,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -491,7 +568,7 @@
  
  	    break;
  
-@@ -2923,7 +2923,7 @@
+@@ -3057,7 +3057,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -500,7 +577,7 @@
  
  	    break;
  
-@@ -2984,11 +2984,11 @@
+@@ -3128,11 +3128,11 @@
  		}
  		else if(dlc_to_flush->type == DlcTitleNoPerm)
  	          q_status_message(SM_ORDER, 0, 4,
@@ -514,7 +591,7 @@
  
  	    break;
  
-@@ -3034,7 +3034,7 @@
+@@ -3178,7 +3178,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -523,7 +600,7 @@
  
  	    break;
  
-@@ -3046,7 +3046,7 @@
+@@ -3190,7 +3190,7 @@
                /* Select an entry to mail to or a nickname to add to */
  	      if(!any_addrs_avail(as.top_ent+as.cur_row)){
  	          q_status_message(SM_ORDER | SM_DING, 0, 4,
@@ -532,7 +609,7 @@
  	          break;
  	      }
  
-@@ -3068,7 +3068,7 @@
+@@ -3212,7 +3212,7 @@
  		  }
  		  else if(as.checkboxes && checkedn <= 0){
  		      q_status_message(SM_ORDER, 0, 1,
@@ -541,7 +618,7 @@
  		      break;
  		  }
  		  else if(as.checkboxes){
-@@ -3152,7 +3152,7 @@
+@@ -3296,7 +3296,7 @@
  		      if(selecting_mult_nicks){
  			if(dl->type != ListHead && style == SelectAddrLccCom){
  			    q_status_message(SM_ORDER, 0, 4,
@@ -550,7 +627,7 @@
  			    break;
  			}
  			else{
-@@ -3214,16 +3214,16 @@
+@@ -3358,16 +3358,16 @@
  		  if(entry_is_clickable(as.top_ent+as.cur_row))
  		    clickable_warning(as.top_ent+as.cur_row);
  		  else if(entry_is_askserver(as.top_ent+as.cur_row))
@@ -570,7 +647,7 @@
  
  	    break;
  
-@@ -3247,7 +3247,7 @@
+@@ -3391,7 +3391,7 @@
  	    if(adrbk_check_all_validity_now()){
  		if(resync_screen(pab, style, checkedn)){
  		    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -579,7 +656,7 @@
  		    ps->mangled_screen = 1;
  		    break;
  		}
-@@ -3262,7 +3262,7 @@
+@@ -3406,7 +3406,7 @@
  	    dprint(9, (debugfile,
  		       "Calling edit_entry to add entry manually\n"));
  	    edit_entry(pab->address_book, (AdrBk_Entry *)NULL, NO_NEXT,
@@ -588,7 +665,7 @@
  
  	    /*
  	     * Warped means we got plopped down somewhere in the display
-@@ -3406,7 +3406,7 @@
+@@ -3551,7 +3551,7 @@
  		    }
  		    else{
  			q_status_message1(SM_ORDER|SM_DING, 0, 4,
@@ -597,7 +674,7 @@
  			if(nick)
  			  fs_give((void **)&nick);
  			if(file)
-@@ -3442,7 +3442,7 @@
+@@ -3586,7 +3586,7 @@
  		ps->mangled_screen = 1;
  	    }
  	    else
@@ -606,7 +683,7 @@
  
  	    break;
  
-@@ -3450,7 +3450,7 @@
+@@ -3594,7 +3594,7 @@
              /*---------- Delete an address book -------------------*/
  	  case MC_DELABOOK:
  	    if(as.n_addrbk == 0){
@@ -615,7 +692,7 @@
                  break;
  	    }
  
-@@ -3505,7 +3505,7 @@
+@@ -3665,7 +3665,7 @@
  		start_disp = 0;
  		ps->mangled_body = 1;
  		ps->mangled_footer = 1;
@@ -624,7 +701,7 @@
  	    }
  	    else{
  		if(err){
-@@ -3523,7 +3523,7 @@
+@@ -3683,7 +3683,7 @@
  	  case MC_SHUFFLE:
  	    if(entry_is_addkey(as.top_ent+as.cur_row)){
                  q_status_message(SM_ORDER, 0, 4,
@@ -633,7 +710,7 @@
                  break;
  	    }
  
-@@ -3596,8 +3596,8 @@
+@@ -3756,8 +3756,8 @@
  
  	    q_status_message(SM_ORDER, 0, 3,
  			     msg ? msg :
@@ -644,25 +721,25 @@
  	    if(ret < 0)
  	      dprint(5, (debugfile, "addrbook shuffle failed: %s\n",
  		     msg ? msg : "?"));
-@@ -3615,7 +3615,7 @@
- 	  case MC_PREVITEM:
- 	    r = prev_selectable_line(as.cur_row+as.top_ent, &new_line);
- 	    if(r == 0){
--		q_status_message(SM_INFO, 0, 1, "Already on first line.");
-+		q_status_message(SM_INFO, 0, 1, "已經在第一行了。");
- 		break;
- 	    }
+@@ -3784,7 +3784,7 @@
  
-@@ -3654,7 +3654,7 @@
- 	  case MC_NEXTITEM:
- 	    r = next_selectable_line(as.cur_row+as.top_ent, &new_line);
- 	    if(r == 0){
--		q_status_message(SM_INFO, 0, 1, "Already on last line.");
-+		q_status_message(SM_INFO, 0, 1, "已經在最後一行了。");
- 		break;
- 	    }
+ 		if(new_top_ent == as.top_ent ||
+ 		   (as.cur_row + (as.top_ent-new_top_ent) > as.l_p_page - 1)){
+-		    q_status_message(SM_INFO, 0, 1, "Already on first line.");
++		    q_status_message(SM_INFO, 0, 1, "已經在第一行了。");
+ 		}
+ 		else{
+ 		    as.cur_row += (as.top_ent - new_top_ent);
+@@ -3842,7 +3842,7 @@
  
-@@ -3733,7 +3733,7 @@
+ 		if(new_end_line - as.top_ent <= as.l_p_page - 1 ||
+ 		   as.cur_row - (new_end_line-as.top_ent-(as.l_p_page-1)) < 0){
+-		    q_status_message(SM_INFO, 0, 1, "Already on last line.");
++		    q_status_message(SM_INFO, 0, 1, "已經在最後一行了。");
+ 		}
+ 		else{
+ 		    as.cur_row -= (new_end_line-as.top_ent-(as.l_p_page-1));
+@@ -3930,7 +3930,7 @@
  #endif
  			  default:
  			    q_status_message(SM_INFO, 0, 1,
@@ -671,7 +748,7 @@
  			    break;
  			}
  		    }
-@@ -3786,7 +3786,7 @@
+@@ -4037,7 +4037,7 @@
  		    break;
  
  		if(as.top_ent == new_top_ent && as.cur_row == (fl-as.top_ent)){
@@ -680,16 +757,16 @@
  		    break;
  		}
  
-@@ -3809,7 +3809,7 @@
- 		else{
- 		    new_top_ent = as.top_ent;
- 		    if(as.cur_row == (fl - as.top_ent)){ /* no change */
--			q_status_message(SM_INFO,0,1,"Already on last page.");
-+			q_status_message(SM_INFO,0,1,"已經在最後一頁了。");
- 			break;
- 		    }
- 		}
-@@ -3848,14 +3848,14 @@
+@@ -4073,7 +4073,7 @@
+ 			   as.cur_row -
+ 			       (new_end_line-as.top_ent-(as.l_p_page-1)) < 0){
+ 			    q_status_message(SM_INFO, 0, 1,
+-					     "Already on last page.");
++					     "已經在最後一頁了。");
+ 			}
+ 			else{
+ 			    as.cur_row -=
+@@ -4122,14 +4122,14 @@
  	    if(adrbk_check_all_validity_now()){
  		if(resync_screen(pab, style, checkedn)){
  		    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -706,16 +783,16 @@
                  break;
  	    }
  
-@@ -3917,7 +3917,7 @@
+@@ -4191,7 +4191,7 @@
  	  case MC_TOGGLE:
  togglex:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
 -                q_status_message(SM_ORDER, 0, 4, "No entries to select");
-+                q_status_message(SM_ORDER, 0, 4, "沒有可供選擇的項目");
++                q_status_message(SM_ORDER, 0, 4, "沒有可供刪除的項目");
                  break;
  	    }
  
-@@ -3936,10 +3936,10 @@
+@@ -4210,10 +4210,10 @@
  
  		if(style == SelectAddrLccCom && dl->type == ListEnt)
  		  q_status_message(SM_ORDER, 0, 4,
@@ -728,7 +805,7 @@
  		else if(dl->type == ListHead || dl->type == Simple){
                      current_changed_flag++;
  		    if(entry_is_checked(pab->address_book->checks,
-@@ -3956,11 +3956,11 @@
+@@ -4230,11 +4230,11 @@
  		}
  		else
  		  q_status_message(SM_ORDER, 0, 4,
@@ -742,16 +819,7 @@
  
              break;
  
-@@ -3968,7 +3968,7 @@
- 	    /*------ Turn all checkboxes on ---------*/
- 	  case MC_SELALL:
- 	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
--                q_status_message(SM_ORDER, 0, 4, "No entries to select");
-+                q_status_message(SM_ORDER, 0, 4, "沒有可供選擇的項目");
-                 break;
- 	    }
- 
-@@ -4018,7 +4018,7 @@
+@@ -4252,7 +4252,7 @@
  	    ps->mangled_body = 1;
  	    start_disp  = 0;
              q_status_message(SM_ORDER, 0, 4,
@@ -760,7 +828,7 @@
              break;
  
  
-@@ -4038,13 +4038,13 @@
+@@ -4272,13 +4272,13 @@
  	    if(!directory_ok){
                  q_status_message(SM_ORDER, 0, 4,
  				 (style == SelectAddrLccCom)
@@ -777,7 +845,7 @@
                  break;
  	    }
  
-@@ -4099,7 +4099,7 @@
+@@ -4333,14 +4333,14 @@
              /*----- Select entries to work on --*/
  	  case MC_SELECT:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -786,7 +854,15 @@
                  break;
  	    }
  
-@@ -4134,7 +4134,7 @@
+ 	    if(!cur_is_open()){
+ 		if(entry_is_askserver(as.top_ent+as.cur_row))
+ 		  q_status_message(SM_ORDER, 0, 4,
+-	   "Select is only available from within an expanded address book");
++	   "僅能在展開後的地址簿中選擇");
+ 		else
+ 		  clickable_warning(as.top_ent+as.cur_row);
+ 
+@@ -4373,7 +4373,7 @@
              /*----------- Select current entry ----------*/
  	  case MC_SELCUR:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -795,7 +871,7 @@
                  break;
  	    }
  
-@@ -4195,7 +4195,7 @@
+@@ -4434,7 +4434,7 @@
  				dlc_restart = *dlc;
  				as.zoomed = 0;
  				q_status_message(SM_ORDER, 0, 2,
@@ -804,7 +880,7 @@
  
  				warp_to_dlc(&dlc_restart, 0L);
  				/* put current entry in middle of screen */
-@@ -4262,11 +4262,11 @@
+@@ -4501,11 +4501,11 @@
  		}
  		else
  		  q_status_message(SM_ORDER, 0, 4,
@@ -818,7 +894,7 @@
  
              break;
  
-@@ -4279,7 +4279,7 @@
+@@ -4518,7 +4518,7 @@
  						 : NULL,
  		      &start_disp);
  	    else{
@@ -827,7 +903,7 @@
  		ab_unzoom(&start_disp);
  	    }
  
-@@ -4321,7 +4321,7 @@
+@@ -4560,7 +4560,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 2,
@@ -836,7 +912,7 @@
  
              break;
  
-@@ -4377,7 +4377,7 @@
+@@ -4606,7 +4606,7 @@
  	    /*------ Copy entries into an abook ----*/
  	  case MC_SAVE:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -845,7 +921,7 @@
                  break;
  	    }
  
-@@ -4399,7 +4399,7 @@
+@@ -4628,7 +4628,7 @@
  	    /*------ Forward an entry in mail -----------*/
  	  case MC_FORWARD:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -854,7 +930,7 @@
                  break;
  	    }
  
-@@ -4414,14 +4414,14 @@
+@@ -4643,14 +4643,14 @@
  	    }
  
  	    if(!is_addr(as.top_ent+as.cur_row)){
@@ -871,7 +947,7 @@
  		break;
  	    }
  
-@@ -4453,18 +4453,18 @@
+@@ -4682,18 +4682,18 @@
  	  case MC_UNKNOWN:
  	    if(c == 'e' && !are_selecting){
  		q_status_message(SM_ORDER | SM_DING, 0, 2,
@@ -893,25 +969,25 @@
  		break;
  	    }
  	    /* else, fall through */
-@@ -4499,7 +4499,7 @@
+@@ -4731,7 +4731,7 @@
      as.zoomed = 1;
  
      if(as.selections){
 -	q_status_message(SM_ORDER, 0, 2, "Zoom Mode is now on");
 +	q_status_message(SM_ORDER, 0, 2, "現在開啟縮放模式");
- 	if(as.opened){
+ 	if(cur_is_open()){
  	    dl = dlist(as.top_ent+as.cur_row);
  	    if((dl->type == ListHead ||
-@@ -4540,7 +4540,7 @@
+@@ -4779,7 +4779,7 @@
      }
      else{
  	as.zoomed = 0;
 -	q_status_message(SM_ORDER, 0, 2, "No selected entries to zoom on");
-+	q_status_message(SM_ORDER, 0, 2, "沒有已選擇的項目可供縮放");
++	q_status_message(SM_ORDER, 0, 2, "沒有已選擇的項目可供放大");
      }
  }
  
-@@ -4601,7 +4601,7 @@
+@@ -4840,7 +4840,7 @@
      char      *name;
  {
      q_status_message2(SM_ORDER | (bell ? SM_DING : 0), 0, 4,
@@ -920,7 +996,7 @@
  		      name ? " " : "",
  		      name ? name : "");
  }
-@@ -4622,11 +4622,11 @@
+@@ -4861,11 +4861,11 @@
      dl = dlist(cur_line);
      if(dl->type == NoAbooks)
        q_status_message(SM_ORDER, 0, 4,
@@ -935,20 +1011,20 @@
  }
  
  
-@@ -4643,9 +4643,9 @@
+@@ -4882,9 +4882,9 @@
      register AddrScrn_Disp *dl;
  
      dl = dlist(cur_line);
 -    q_status_message1(SM_ORDER, 0, 4, "%s not expanded, use \">\" to expand",
--	dl->type == Title ? "Address Book"
--			  : "Distribution List");
+-	(dl->type == Title || dl->type == ClickHereCmb) ? "Address Book"
+-						        : "Distribution List");
 +    q_status_message1(SM_ORDER, 0, 4, "%s 未被展開，使用 \">\" 來展開",
-+	dl->type == Title ? "地址簿"
-+			  : "分類列表");
++	(dl->type == Title || dl->type == ClickHereCmb) ? "地址簿"
++						        : "分類列表");
  }
  
  
-@@ -4661,7 +4661,7 @@
+@@ -4900,7 +4900,7 @@
      char *what;
  {
      q_status_message1(SM_INFO | (bell ? SM_DING : 0), 0, 2,
@@ -957,7 +1033,7 @@
  }
  
  
-@@ -4671,7 +4671,7 @@
+@@ -4910,7 +4910,7 @@
  void
  no_tabs_warning()
  {
@@ -966,7 +1042,7 @@
  }
  
  
-@@ -4690,11 +4690,11 @@
+@@ -4929,11 +4929,11 @@
  {
      int ret = 0;
      static ESCKEY_S opts[] = {
@@ -983,7 +1059,16 @@
  	{  0, '%',  "",  ""},
  	{-1,   0, NULL, NULL}};
  
-@@ -4726,7 +4726,7 @@
+@@ -4942,7 +4942,7 @@
+ 
+     opts[5].ch = (F_ON(F_ENABLE_PRYNT, ps_global)) ? 'y' : -1;
+ 
+-    switch(radio_buttons("APPLY command : ", command_line, opts, 0, 'z',
++    switch(radio_buttons("套用命令：", command_line, opts, 0, 'z',
+ 			 NO_HELP, RB_NORM)){
+       case 'c':
+ 	ret = ab_compose_to_addr(cur_line, 1);
+@@ -4965,7 +4965,7 @@
  	break;
  
        case 'z':
@@ -992,7 +1077,7 @@
  	break;
      }
  
-@@ -4748,22 +4748,22 @@
+@@ -4987,22 +4987,22 @@
      int         *start_disp;
  {
      static ESCKEY_S sel_opts1[] = {
@@ -1007,8 +1092,7 @@
 +	{'f', 'f', "F", "切換選擇"},
  	{-1, 0, NULL, NULL}
      };
--    static char *sel_pmt1 = "ALTER message selection : ";
-+    static char *sel_pmt1 = "更改訊息選擇：";
+     static char *sel_pmt1 = "ALTER message selection : ";
      static ESCKEY_S sel_opts2[] = {
 -	{'a', 'a', "A", "select All"},
 -	{'c', 'c', "C", "select Cur"},
@@ -1025,7 +1109,7 @@
      ESCKEY_S      *sel_opts;
      HelpType       help = NO_HELP;
      adrbk_cntr_t   num, ab_count;
-@@ -4791,8 +4791,8 @@
+@@ -5030,8 +5030,8 @@
  	    if(dl && (dl->type == ListHead || dl->type == Simple)){
  		sel_opts1[1].label = entry_is_selected(abook->selects,
  						       (a_c_arg_t)dl->elnum)
@@ -1036,7 +1120,7 @@
  		sel_opts1[1].ch = 'c';
  	    }
  	    else
-@@ -4814,7 +4814,7 @@
+@@ -5053,7 +5053,7 @@
  
  	      default:
  		q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -1045,7 +1129,7 @@
  		return;
  	    }
  	}
-@@ -4823,8 +4823,8 @@
+@@ -5062,8 +5062,8 @@
  	   (dl->type == ListHead || dl->type == Simple)){
  	    sel_opts1[1].label = entry_is_selected(abook->selects,
  						   (a_c_arg_t)dl->elnum)
@@ -1056,7 +1140,7 @@
  	    sel_opts1[1].ch = 'c';
  	}
  	else
-@@ -4841,7 +4841,7 @@
+@@ -5080,7 +5080,7 @@
  
  	switch(q){
  	  case 'x':				/* cancel */
@@ -1065,7 +1149,7 @@
  	    break;
  
  	  case 'c':			/* select/unselect current */
-@@ -4853,7 +4853,7 @@
+@@ -5092,7 +5092,7 @@
  		if(as.selections == 0 && as.zoomed){
  		    as.zoomed = 0;
  		    q_status_message(SM_ORDER, 0, 2,
@@ -1074,7 +1158,7 @@
  		    do_warp++;
  		}
  		else if(as.zoomed){
-@@ -4892,7 +4892,7 @@
+@@ -5131,17 +5131,17 @@
  		if(as.selections == 0 && as.zoomed){
  		    as.zoomed = 0;
  		    q_status_message(SM_ORDER, 0, 2,
@@ -1083,7 +1167,20 @@
  		    do_warp++;
  		}
  		else{
-@@ -4918,7 +4918,7 @@
+ 		    char bb[100];
+ 
+-		    sprintf(bb, "%s entries UNselected%s%s%s",
++		    sprintf(bb, "%s 個項目被取消選擇%s%s%s",
+ 			   comatose(prevsel-as.selections),
+-			   as.selections ? ", still " : "",
++			   as.selections ? "，仍有 " : "",
+ 			   as.selections ? comatose(as.selections) : "",
+-			   as.selections ? " selected in other addrbooks" : "");
++			   as.selections ? " 個項目選擇於其他地址簿中" : "");
+ 		    q_status_message(SM_ORDER, 0, 2, bb);
+ 		    if(as.zoomed)
+ 		      do_beginning++;
+@@ -5157,7 +5157,7 @@
  		    }
  		}
  
@@ -1092,7 +1189,7 @@
  				 comatose(ab_count));
  		if(prevsel == 0 && as.selections > 0 &&
  		   !as.zoomed && F_ON(F_AUTO_ZOOM, ps)){
-@@ -4955,14 +4955,14 @@
+@@ -5194,14 +5194,14 @@
  		  do_beginning++;
  		else{
  		    as.zoomed = 0;
@@ -1109,7 +1206,7 @@
  			     comatose(as.selections));
  
  	    break;
-@@ -4988,7 +4988,7 @@
+@@ -5227,7 +5227,7 @@
  		    if(as.selections == 0){
  			as.zoomed = 0;
  			q_status_message(SM_ORDER, 0, 2,
@@ -1118,7 +1215,7 @@
  			do_warp++;
  		    }
  		    else
-@@ -5007,63 +5007,63 @@
+@@ -5246,63 +5246,63 @@
  		if(prevsel == as.selections && prevsel > 0){
  		    if(as.selections == 1)
  		      q_status_message(SM_ORDER, 0, 2,
@@ -1143,7 +1240,7 @@
  		    else
  		      q_status_message(SM_ORDER, 0, 2,
 -				       "Select failed! No entries selected");
-+				       "選擇失敗! 沒有任何項目被選擇");
++				       "選擇失敗！沒有任何項目被選擇");
  		}
  		else if(as.selections == 0){
  		    if(prevsel == 1)
@@ -1196,7 +1293,7 @@
  			    comatose(as.selections-prevsel),
  			    comatose(as.selections));
  		}
-@@ -5073,13 +5073,13 @@
+@@ -5312,17 +5312,17 @@
  
  	  default :
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -1206,13 +1303,18 @@
  	}
      }
      else{
- 	q_status_message(SM_ORDER | SM_DING, 3, 3,
--			 "Select is not supported from the top-level view");
-+			 "尚未支援自頂層視角選擇");
+ 	if(F_ON(F_CMBND_ABOOK_DISP,ps_global))
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-	   "Select is only available from within an expanded address book");
++	   "僅支援自展開的地址簿中選擇");
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-	   "Select is only available when viewing an individual address book");
++	   "選擇僅能在檢視個人地址簿時使用");
+ 
  	return;
      }
- 
-@@ -5137,11 +5137,11 @@
+@@ -5381,11 +5381,11 @@
      int    narrow;
  {
      static ESCKEY_S ab_sel_type_opt[] = {
@@ -1227,7 +1329,7 @@
      int          type;
      adrbk_cntr_t num, ab_count;
  
-@@ -5159,7 +5159,7 @@
+@@ -5403,7 +5403,7 @@
  	break;
  
        case 'x':
@@ -1236,7 +1338,7 @@
  	return -1;
  
        default:
-@@ -5279,7 +5279,7 @@
+@@ -5523,7 +5523,7 @@
      }
  
      if(type == 'x' || r == 'x'){
@@ -1245,7 +1347,7 @@
  	return -1;
      }
  
-@@ -5362,7 +5362,7 @@
+@@ -5606,7 +5606,7 @@
  	break;
  
        default:
@@ -1254,7 +1356,7 @@
  	return(err);
      }
  
-@@ -5481,18 +5481,18 @@
+@@ -5725,18 +5725,18 @@
      new_top_ent = NO_LINE;
  
      if(rc == -2)
@@ -1277,16 +1379,16 @@
  
  	/* know match is on the same page */
  	if(!*warped &&
-@@ -6115,7 +6115,7 @@
+@@ -6378,7 +6378,7 @@
  
      dprint(7, (debugfile, "- search_book -\n"));
  
 -    sprintf(prompt, "Word to search for [%s]: ", search_string);
-+    sprintf(prompt, "欲搜尋的字串 [%s]：", search_string);
++    sprintf(prompt, "欲搜尋的字串 [%s]: ", search_string);
      help              = NO_HELP;
      nsearch_string[0] = '\0';
  
-@@ -6127,12 +6127,12 @@
+@@ -6390,12 +6390,12 @@
      ekey[1].ch    = ctrl('Y');
      ekey[1].rval  = 10;
      ekey[1].name  = "^Y";
@@ -1301,7 +1403,7 @@
  
      ekey[3].ch    = -1;
  
-@@ -6149,11 +6149,11 @@
+@@ -6412,11 +6412,11 @@
  	    warp_to_beginning();  /* go to top of addrbooks */
  	    if((nl=first_selectable_line(0L)) != NO_LINE){
  		*new_line = nl;
@@ -1315,7 +1417,7 @@
  		return -1;
  	    }
  	}
-@@ -6162,11 +6162,11 @@
+@@ -6425,11 +6425,11 @@
  	    warp_to_end();  /* go to bottom */
  	    if((nl=first_selectable_line(0L)) != NO_LINE){
  		*new_line = nl;
