@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moftpd
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-
-MAN8=		moftpd.8
+CONFIGURE_ENV+=	LIBS=-lcrypt
+MAN8=		moftpd.8 moftpadmin.8
 
 .include <bsd.port.mk>

@@ -1,5 +1,9 @@
 etc/moftpd.conf.dist
+sbin/moftpadmin
 sbin/moftpd
 %%DATADIR%%/locale/sv.loc
+%%DATADIR%%/anon.conf
+%%DATADIR%%/anonsystem.conf
+%%DATADIR%%/system.conf
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
