@@ -9147,6 +9147,7 @@ svgalib		ports/graphics/svgalib
 svk		ports/devel/svk
 svnc		ports/net/svnc
 svr4_base	ports/emulators/svr4_base
+sw-aspell	ports/textproc/sw-aspell
 swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
