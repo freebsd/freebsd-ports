@@ -383,6 +383,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += readlink
     SUBDIR += reoback
+    SUBDIR += rfstool
     SUBDIR += rlogview
     SUBDIR += rmonitor
     SUBDIR += roottail
