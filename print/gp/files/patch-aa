@@ -1,26 +1,57 @@
-*** Makefile.orig	Sun Feb  1 20:48:49 1998
---- Makefile	Sun Feb 22 21:27:43 1998
-***************
-*** 13,20 ****
-  BINDIR = $(PREFIX)/bin
-  LIBDIR = $(PREFIX)/lib/GP
-  
-! FILTERS        = `ls filters`
-! FILTERS.SAMPLE = `ls filters.sample`
-  
-  ICONS   = printer.xbm exit.xbm
-  
---- 13,25 ----
-  BINDIR = $(PREFIX)/bin
-  LIBDIR = $(PREFIX)/lib/GP
-  
-! .if (${LANGUAGE} == "Japanese")
-! FILTERS	=a2ps-j dvi2ps-j ImageMagick
-! .else
-! FILTERS	=a2ps dvips ImageMagick
-! .endif
-! 
-! FILTERS.SAMPLE!=	ls filters.sample
-  
-  ICONS   = printer.xbm exit.xbm
-  
+--- Makefile.orig	Tue May  5 11:57:38 1998
++++ Makefile	Wed Aug 19 22:59:49 1998
+@@ -8,12 +8,18 @@
+ MKDIR   = /bin/mkdir
+ 
+ 
+-PREFIX = /usr/local/
++#PREFIX = /usr/local/
+ BINDIR = $(PREFIX)/bin
+-LIBDIR = $(PREFIX)/lib/GP
++LIBDIR = $(PREFIX)/lib/GP/${LANGEXT}/
+ 
+-FILTERS        = `ls filters`
+-FILTERS.SAMPLE = `ls filters.sample`
++.if (${LANGUAGE} == "English")
++LIBDIR = $(PREFIX)/lib/GP/
++FILTERS=	a2ps dvips ImageMagick
++.elif (${LANGUAGE} == "Japanese")
++FILTERS=	a2ps-j dvi2ps-j ImageMagick
++.endif
++
++FILTERS.SAMPLE!=	ls filters.sample
+ 
+ ICONS   = printer.xbm exit.xbm
+ 
+@@ -45,25 +51,25 @@
+ 
+ install.bin:
+ 	@$(MKDIR) -p $(BINDIR)
+-	@$(INSTALL) -m 755 GP  $(BINDIR)/GP
++	@$(INSTALL) -m 755 GP  $(BINDIR)/GP${LANGEXT}
+ 	@echo Installing GP in $(BINDIR)
+ 
+ install.lib:
+-	@$(MKDIR) -p $(LIBDIR)/filters
+-	@$(MKDIR) -p $(LIBDIR)/icons
++	@$(MKDIR) -p $(LIBDIR)filters
++	@$(MKDIR) -p $(LIBDIR)icons
+ 	@$(INSTALL) -m 644 lib/filetype  $(LIBDIR)
+ 	@$(INSTALL) -m 644 lib/printer   $(LIBDIR)
+ 	@for i in $(ICONS); do \
+-		$(INSTALL) -m 644 icons/$$i $(LIBDIR)/icons; \
++		$(INSTALL) -m 644 icons/$$i $(LIBDIR)icons; \
+ 	done
+ 	@echo Installing GP Configuration files in $(LIBDIR)
+ 
+ install.filters:
+ 	@echo  
+-	@echo Filter Configuration files are now installing in $(LIBDIR)/filters...
++	@echo Filter Configuration files are now installing in $(LIBDIR)filters...
+ 	@for i in $(FILTERS); do \
+ 		echo Installing $$i; \
+-		$(INSTALL) -m 644 filters/$$i $(LIBDIR)/filters; \
++		$(INSTALL) -m 644 filters/$$i $(LIBDIR)filters; \
+ 	done
+ 
+ ja:
