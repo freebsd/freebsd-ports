@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ion-2
-PORTVERSION=	20040601
+PORTVERSION=	20040729
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 
