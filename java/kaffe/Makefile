@@ -1,13 +1,13 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.5p2
-# Date created:         20 February 1995
-# Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
+# Version required:     0.5p3
+# Date created:         08 August 1996
+# Whom:                 Mark Huizer <xaa@stack.urc.tue.nl>
 #
-# $Id: Makefile,v 1.4 1996/07/10 05:24:17 asami Exp $
+# $Id$
 #
 
-DISTNAME=	kaffe-0.5p2
-PKGNAME=	kaffe-0.5.2
+DISTNAME=	kaffe-0.5p3
+PKGNAME=	kaffe-0.5.3
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
 EXTRACT_SUFX=	.tgz

@@ -1,7 +1,7 @@
-KAFFE v0.5p2 - A JIT and interpreting virtual machine to run Java(tm)* code
-===========================================================================
+  KAFFE v0.5p3 - A JIT and interpreting virtual machine to run Java(tm)* code
+  ===========================================================================
 
-This is Kaffe, a virtual machine design to execute Java bytecode.
+Kaffe is a virtual machine design to execute Java bytecode.
 This machine can be configured in two modes.  In one mode it operates as
 a pure bytecode interpreter (not unlike Javasoft's machine); in the second
 mode if performs "just-in-time" code conversion from the abstract code to
@@ -9,157 +9,55 @@ the host machine's native code.  This will ultimately allow execution of
 Java code at the same speed as standard compiled code but while maintaining
 the advantages and flexibility of code independence.
 
-What's new
-==========
-
- * Experimental optimisation for JIT code generation.  This is currently
-   enabled using the '-O' switch (just in case it causes problems).
-
- * Support for NeXTStep on the 386 and Sparc (experimental).
-
- * Support for Linux on the PowerPC (experimental).
-
- * Improvements to garbage collection.  The old systems was recursive so
-   could (and did) silently overrun the stack.
-
- * Improvements to the thread system.  This includes the addition of threaded
-   sleeps, and the threading of file I/O.
-
- * Lots of bug fixes (see ChangeLog).
-
-What can run Kaffe
-==================
-
 This version of Kaffe will run on the following platforms:
 
-	i386	FreeBSD 2.x		(interp + jit)
-	  "	Linux 1.2.13 		(interp + jit)
-	  "	NetBSD 1.x		(interp + jit)
-	  "	Solaris 2.x		(interp + jit)
-	  "	BSDI 2.x		(interp + jit)
-	  "	Unixware		(interp + jit)
-	  "	SCO 3.2v5		(interp + jit)
-	  "	NeXTStep 3		(interp + jit)
-	  "	Windows '95 		(interp)
-	Sparc	SunOS 4.x		(interp)
-	  "	Solaris 2.x		(interp)
-	  "	NetBSD 1.x		(interp)
-	  "	NeXTStep 3		(interp)
-	PowerPC	MkLinux 		(interp)
+        i386    FreeBSD 2.x             (interp + jit)
+          "     Linux 1.2.13            (interp + jit)
+          "     NetBSD 1.x              (interp + jit)
+          "     Solaris 2.x             (interp + jit)
+          "     BSDI 2.x                (interp + jit)
+          "     Unixware                (interp + jit)
+          "     SCO 3.2v5               (interp + jit)
+          "     NeXTStep 3              (interp + jit)
+          "     Windows '95             (interp)
+        Sparc   SunOS 4.x               (interp)
+          "     Solaris 2.x             (interp)
+          "     NetBSD 1.x              (interp)
+          "     NeXTStep 3              (interp)
+        PowerPC MkLinux                 (interp)
 
-Although the system is relatively portable, some machine and processor
-specific code is necessary.  If operating in an interpreting mode, it
-is only necessary to supply thread switching code.  This allows relatively
-simple ports of Kaffe to be made to new platforms.
-If operating in JIT mode, significant machine dependent code is required in
-order to provide the internal native code generator.  Ports to new
-architecture are obviously more complex although the code generator is itself
-reasonably portable.
+I encourage people to make ports to other platforms and to feed them back
+to me.  I would recommend that initial ports concentrate on the interpreter.
+These can then be used as the basis for developing JIT versions for these systems.
 
-Who can use Kaffe
-=================
+The source for Kaffe can be found at the following location:
 
-This version of Kaffe is distributed under a Berkeley style license.
-Essentially you can use Kaffe for both personal and commerical purpose, on
-its own or as part of another package (see license.terms for full details).
+Europe:
+        http://www.sarc.city.ac.uk/homes/tim/kaffe/kaffe-0.5p3.tgz
+        http://sunsite.mff.cuni.cz/ftp/Languages/Java/kaffe/kaffe-0.5p3.tgz
+        ftp://ftp.sarc.city.ac.uk/pub/kaffe/kaffe-0.5p3.tgz
+        ftp://ftp.lysator.liu.se:/pub/languages/java/kaffe/kaffe-0.5p3.tgz
+        ftp://sunsite.mff.cuni.cz/Languages/Java/kaffe/kaffe-0.5p3.tgz
+	ftp://sunsite.auc.dk/pub/anguages/java/kaffe/kaffe-0.5p3.tgz
+USA:
+        ftp://ftp.cs.columbia.edu/pub/kaffe/kaffe-0.5p3.tgz
+        ftp://sunsite.unc.edu/pub/languages/java/kaffe/kaffe-0.5p3.tgz  
+Japan:
+        http://www.webcity.co.jp/info/andoh/java/kaffe/kaffe-0.5p3.tgz
+        ftp://ftp.webcity.co.jp/pub/andoh/java/kaffe/kaffe-0.5p3.tgz
+Others:
+	ftp://ftp.unicamp.br/pub/languages/java/kaffe/kaffe-0.5p3.tgz
 
-Kaffe Web and FTP sites
-=======================
+				========
+				**NOTE**
+				========
 
-Kaffe is available from various sites.  The primary site is:
+You may also need to retrieve kaffe-0.5p3-sun.tgz which contains the
+seperate SUN classes codes if you do not already have it.
 
-        ftp://ftp.sarc.city.ac.uk/pub/kaffe/kaffe-0.5p2.tgz
-
-Kaffe mailing lists
-===================
-
-A couple of mailing lists are available for information and discussion of
-the Kaffe project.  There lists are:
-  
-        kaffe@sarc.city.ac.uk           General Kaffe discussions
-        kaffe-announce@sarc.city.ac.uk  Kaffe related announcements
-  
-To subscribe to these lists send a message containing the word "subscribe"
-to either:
-        
-        kaffe-request@sarc.city.ac.uk                   or
-        kaffe-announce-request@sarc.city.ac.uk
-  
-depending what you are interested in.
-
-You can also check out the Kaffe related web pages at:
-
-	http://www.sarc.city.ac.uk/~tim/kaffe
-
-Running Kaffe
-=============
-
-This version of Kaffe is not supplied with a copy of Sun's class library.
-This can be obtained from Sun's JDK package (from http://www.javasoft.com) or
-pre-prepaired in kaffe-0.5p2-sun.tgz (from the usual Kaffe ftp sites).
-This version of Kaffe uses the class library from JDK 1.0.2.
-
-Before running Kaffe it is necessary to configure the environment.
-This requires the setting of CLASSPATH, KAFFEHOME and LD_LIBRARY_PATH.
-For the standard installation these would be defined as follows:
-
-	CLASSPATH=.:/usr/local/share/kaffe/classes.zip
-	KAFFEHOME=/usr/local/share/kaffe
-	LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
-
-A file "ENVIRONMENT" is generated by the configure program which contains
-a /bin/sh environment setup.  This may help you to figure out what to
-set to what if you alter the standard installation point.
-
-The source comes with a test program "HelloWorldApp" which can be found
-in the test directory in the distribution.  After installation, run this
-program from the test directory by typing the following:
-
-	cd <java source directory>/test
-	kaffe HelloWorldApp
-
-This should load and execute the HelloWorld application.  If all is well
-it will print "Hello World!".   As a further test you might like to try
-compiling the HelloWorldApp source.  To do this type the following:
-
-	javac HelloWorldApp.java
-
-"javac" is a shell script which has been provided to invoke Kaffe on
-the standard Java compiler.  If all is well, the application should compile
-without incident.
-
-The state of play
-=================
-
-Kaffe should run all non-graphical code which will run on a Java
-machine.  However there are still bugs and plenty of untested native
-library functions.  Some functions which are not currently implemented
-(most often because I don't understand exactly what they are suppose to
-do) will simply abort if called.  If you can help out on any of these
-then please do *BUT* remember, this is a clean-room implementation (I
-have never seen any of Sun's Java source code) and I cannot simply
-encorporate Javasoft's* code.
-
-Kaffe is known to correctly run Javasoft's Java compiler "javac" (which is
-included in the classes.zip file and a shell script is included to help
-run it) plus a number of small test programs.  However, other major
-programs have not been tested.
-
-Kaffe and Sun's Java
-====================
-
-Kaffe is a clean-room implementation of a virtual machine which can run
-Java bytecode.  It is capable of interpreting code generated by Sun's
-software but has not been derived from any Sun code.  Currently this version
-utilises Sun's freely available compiled class library but it is hoped
-that this will be replaced with a freely available version in due time.
-At the moment it is impossible to validate whether this software is
-Java compatible(tm) (the test suites are not publically available) and
-the terms under which this can be claimed are unknown.
-
-Erm, that's it ....
+Enjoy.
 
 Tim Wilkinson
 <tim@sarc.city.ac.uk>
 ----
-* Java and Javasoft are registered trademark of Sun Microsystems, Inc.
+* Java is a registered trademark of Sun Microsystems, Inc.
