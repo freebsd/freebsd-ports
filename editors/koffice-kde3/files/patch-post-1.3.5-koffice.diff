@@ -1,0 +1,15 @@
+--- filters/kword/pdf/xpdf/xpdf/XRef.cc	30 Oct 2004 16:35:33 -0000	1.6
++++ filters/kword/pdf/xpdf/xpdf/XRef.cc	20 Jan 2005 17:36:38 -0000	1.8
+@@ -501,6 +501,12 @@ GBool XRef::checkEncrypted(GString *owne
+ 	} else {
+ 	  keyLength = 5;
+ 	}
++	if (keyLength < 1) {
++	  keyLength = 1;
++	}
++	if (keyLength > 16) {
++	  keyLength = 16;
++	}
+ 	permFlags = permissions.getInt();
+ 	if (encVersion >= 1 && encVersion <= 2 &&
+ 	    encRevision >= 2 && encRevision <= 3) {
