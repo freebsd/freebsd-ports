@@ -1,20 +1,32 @@
-diff -c orig/ada/Makefile.in gcc/ada/Makefile.in
-*** orig/ada/Makefile.in	Thu Apr  3 12:40:23 1997
---- gcc-2.7.2.1/ada/Makefile.in	Thu Apr  3 12:41:49 1997
+*** gcc-2.7.2.1/ada/Makefile.in.orig	Sun Nov 16 09:10:32 1997
+--- gcc-2.7.2.1/ada/Makefile.in	Sun Nov 16 09:14:37 1997
 ***************
-*** 956,962 ****
-  	$(srcdir)/../move-if-change tmp-ttypef.ads ttypef.ads
-  	touch stamp-ttypef
-  
-! ADA_INCLUDE_DIR = $(prefix)/adainclude
-  ADA_RTL_OBJ_DIR = $(libsubdir)/adalib
-  
-  # Note: the strings below do not make sense for Ada strings in the OS/2
---- 956,962 ----
-  	$(srcdir)/../move-if-change tmp-ttypef.ads ttypef.ads
-  	touch stamp-ttypef
-  
-! ADA_INCLUDE_DIR = $(prefix)/include/adainclude
-  ADA_RTL_OBJ_DIR = $(libsubdir)/adalib
-  
-  # Note: the strings below do not make sense for Ada strings in the OS/2
+*** 815,820 ****
+--- 815,821 ----
+  			fsu*   | FSU*)  letter=l;;\
+  			native |    *)  letter=i;;\
+  		  esac;;\
++ 	        *86*-freebsd*)		letter=f ;;\
+  	        mips-sgi-irix*)		letter=g ;;\
+  		hppa*-hp-hpux*)		letter=h ;;\
+  		*-ibm-aix4*)		letter=c ;;\
+***************
+*** 865,870 ****
+--- 866,872 ----
+  		*-*-rtems* | *-rtems*  |\
+  		*-go32-msdos | *-go32  |\
+  		*86*-linux*            |\
++ 		*86*-freebsd*          |\
+  		mips-sni-*	       |\
+  		*) \
+  		\
+***************
+*** 920,925 ****
+--- 922,928 ----
+  		*-*-rtems* | *-rtems*  |\
+  		*-go32-msdos | *-go32  |\
+                  *86*-linux*            |\
++ 		*86*-freebsd*          |\
+  		mips-sni-*	       |\
+  		*-*-cygwin32*          |\
+  		*-*-mingw32*           |\

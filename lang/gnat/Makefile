@@ -1,24 +1,25 @@
 # New ports collection makefile for:	GNU Ada gnat
 # Version required:     3.09
 # Date created:         Sat Mar 18 02:16:45 1995
+# Whom:			hsu
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.12 1997/09/25 08:47:35 asami Exp $
-
-# Note: 
+# $Id: Makefile,v 1.13 1997/10/03 09:56:56 asami Exp $
+#
+# Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorportated
 #   into this edition
 # - The default names of a number of binaries have been altered to avoid
 #   conflict with other gcc based products. Standard names can be provided using
 #   symbolic links.
 
-DISTNAME=       gnat-3.09-src
-PKGNAME=        gnat-3.09
+DISTNAME=       gnat-3.10p-src
+PKGNAME=        gnat-3.10p
 CATEGORIES=	lang
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
 		${MASTER_SITE_GNU}
-DISTFILES=      gnat-3.09-src.tar.gz gcc-2.7.2.1.tar.gz
+DISTFILES=      gnat-3.10p-src.tar.gz gcc-2.7.2.1.tar.gz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
 
@@ -40,25 +41,22 @@ CC = /usr/local/bin/adagcc
 # Which version of gcc do we have? Must be 2.7.2.1
 CCVERSION= 2.7.2.1
 
-# which language set 
+# which language set
 LANG = c ada
 
 pre-patch:
-	@echo "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
+	@${ECHO} "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
 	-(  cd ${WRKDIR}/gcc-2.7.2.1; \
-	   patch -s -f < ${PATCHDIR}/patch-freebsdgcc; )
-	@echo "===>  Fixing ${DISTNAME} patches to gcc"
-	-(  cd ${WRKSRC}/src; \
-	   patch -s -f < ${PATCHDIR}/patch-gnat; )
-	@echo "===>  Patching gcc for ${DISTNAME}"
+	   ${PATCH} < ${PATCHDIR}/patch-freebsdgcc; )
+	@${ECHO} "===>  Patching gcc for ${DISTNAME}"
 	-(  cd ${WRKDIR}/gcc-2.7.2.1; \
-	   patch -s -f < ${WRKSRC}/src/gcc-272.dif; )
+	   ${PATCH} < ${WRKSRC}/src/gcc-2721.dif; )
 	(cd ${WRKDIR}/gcc-2.7.2.1; \
-	   cp -R ${WRKSRC}/src/ada ada; )
+	   ${CP} -R ${WRKSRC}/src/ada ada; )
 
 pre-configure:
 	(cd ${WRKDIR}/gcc-2.7.2.1/ada; \
-	   touch treeprs.ads a-[es]info.h nmake.ad[bs] )
+	   ${TOUCH} treeprs.ads a-[es]info.h nmake.ad[bs] )
 
 do-build:
 	(cd ${WRKDIR}/gcc-2.7.2.1; ${GMAKE} CC="${CC}" CFLAGS="-O2" LANGUAGES="${LANG}" )
@@ -71,14 +69,14 @@ do-build:
 do-patch:
 	(cd ${WRKDIR}; \
 	   FILES="${PATCHDIR}/patch-[a-z][a-z]" ; \
-	   SORTEDFILES=`echo $$FILES | tr " " "\n" | sort` ; \
+	   SORTEDFILES=`${ECHO} $$FILES | ${TR} " " "\n" | sort` ; \
 	   for i in $$SORTEDFILES ; do \
-	      echo Applying ---- $$i ;\
-	      patch -s < $$i ;\
+	      ${ECHO} Applying ---- $$i ;\
+	      ${PATCH} < $$i ;\
 	   done )
 	(cd ${FILESDIR}; \
 	   for i in *.adb *.ads ; do \
-	     cp $$i ${WRKDIR}/gcc-2.7.2.1/ada; \
+	     ${CP} $$i ${WRKDIR}/gcc-2.7.2.1/ada; \
 	   done )
 
 do-configure:
@@ -90,12 +88,12 @@ do-install:
 	   ${GMAKE} CC="${CC}" LANGUAGES="${LANG}" install )
 
 post-install:
-	@(echo "-----------------------------------------------------------" )
-	@(echo "" )
-	@(echo "For information about using the tasking library please read" )
-	@(echo "the README.Tasking file" )
-	@(echo "" )
-	@(echo "-----------------------------------------------------------" )
-	@(echo "" )
+	@(${ECHO} "-----------------------------------------------------------" )
+	@(${ECHO} "" )
+	@(${ECHO} "For information about using the tasking library please read" )
+	@(${ECHO} "the README.Tasking file" )
+	@(${ECHO} "" )
+	@(${ECHO} "-----------------------------------------------------------" )
+	@(${ECHO} "" )
 
 .include <bsd.port.mk>

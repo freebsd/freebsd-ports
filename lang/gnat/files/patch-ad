@@ -1,46 +1,36 @@
-diff -c orig/ada/Makefile.in gcc/ada/Makefile.in
-*** orig/ada/Makefile.in	Tue Jan 21 00:01:54 1997
---- gcc-2.7.2.1/ada/Makefile.in	Sat May 10 22:42:27 1997
+*** gcc-2.7.2.1/ada/make.adb.orig	Thu Aug 14 00:02:45 1997
+--- gcc-2.7.2.1/ada/make.adb	Sun Nov 16 09:18:18 1997
 ***************
-*** 189,193 ****
-  	$(CC) -c $(ALL_ADAFLAGS) $<
-  .ads.o:
-! 	$(CC) -c $(ALL_ADAFLAGS) $<
+*** 201,207 ****
+     -- Compiler, Binder & Linker Data and Subprograms --
+     ----------------------------------------------------
   
-  # This tells GNU make version 3 not to export all the variables
---- 189,199 ----
-  	$(CC) -c $(ALL_ADAFLAGS) $<
-  .ads.o:
-! 	@if [ -f $*.adb ]; then \
-! 		echo "$(CC) -c $(ALL_ADAFLAGS) $*.adb"; \
-! 		$(CC) -c $(ALL_ADAFLAGS) $*.adb; \
-! 	else \
-! 		echo "$(CC) -c $(ALL_ADAFLAGS) $*.ads"; \
-! 		$(CC) -c $(ALL_ADAFLAGS) $*.ads; \
-! 	fi
+!    Gcc       : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gcc");
+     Gnatbind  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatbind");
+     Gnatlink  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatlink");
   
-  # This tells GNU make version 3 not to export all the variables
+--- 201,207 ----
+     -- Compiler, Binder & Linker Data and Subprograms --
+     ----------------------------------------------------
+  
+!    Gcc       : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("adagcc");
+     Gnatbind  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatbind");
+     Gnatlink  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatlink");
+  
 ***************
-*** 738,741 ****
---- 744,748 ----
-  		sparc-sun-sunos5*)	letter=s ;;\
-  	        *86*-linux*)		letter=l ;;\
-+ 		*86*-freebsd*)		letter=f ;;\
-  	        mips-sgi-irix*)		letter=g ;;\
-  		hppa*-hp-hpux*)		letter=h ;;\
-***************
-*** 779,782 ****
---- 786,790 ----
-  		*-go32-msdos | *-go32  |\
-  		*86*-linux*            |\
-+ 		*86*-freebsd*          |\
-  		*) \
-  		\
-***************
-*** 845,848 ****
---- 853,857 ----
-  		*-go32-msdos | *-go32  |\
-                  *86*-linux*            |\
-+                 *86*-freebsd*          |\
-                  *)		       \
-                  \
+*** 941,947 ****
+           Comp_Last := Comp_Last + 1;
+           Comp_Args (Comp_Last) := new String'(Name_Buffer (1 .. Name_Len));
+  
+!          Display ("gcc", Comp_Args (Args'First .. Comp_Last));
+  
+           return
+             GNAT.OS_Lib.Non_Blocking_Spawn
+--- 941,947 ----
+           Comp_Last := Comp_Last + 1;
+           Comp_Args (Comp_Last) := new String'(Name_Buffer (1 .. Name_Len));
+  
+!          Display ("adagcc", Comp_Args (Args'First .. Comp_Last));
+  
+           return
+             GNAT.OS_Lib.Non_Blocking_Spawn
