@@ -8,6 +8,7 @@
 
 PORTNAME=	downloader
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/ \
@@ -17,7 +18,7 @@ DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_GNOMENG=	yes
 USE_GNOME=	esound

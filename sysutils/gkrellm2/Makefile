@@ -21,7 +21,7 @@ INSTALL_WRKSRC=	${WRKSRC}/server
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 .else
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 USE_XLIB=	yes
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xfce
@@ -14,7 +15,7 @@ DISTNAME=	gtk-xfce-engine-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 WRKSRC=		${WRKDIR}/gtk-xfce-engine-${PORTVERSION}
 

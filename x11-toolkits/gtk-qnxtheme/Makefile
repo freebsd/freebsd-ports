@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.freshmeat.net/themes/qnxtheme/
 DISTNAME=	qnxtheme-default-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	qnxtheme-default-${PORTVERSION}
 MAINTAINER=	flynn@energyhq.homeip.net
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 PLIST_SUB+=	GTK2=""
 .else
 PLIST_SUB+=	GTK2="@comment "

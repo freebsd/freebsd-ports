@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes

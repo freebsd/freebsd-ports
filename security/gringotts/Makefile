@@ -7,6 +7,7 @@
 
 PORTNAME=	gringotts
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat2
 PORTVERSION=	1.9.8
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/1.9/ \
 		http://xchat.linuxpower.org/files/source/1.9/
@@ -14,7 +15,7 @@ DISTNAME=	xchat-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	lingoteach
 PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ DISTFILES=	${PORTNAME}-sound-${PORTVERSION}.tar.gz \
 MAINTAINER=	mva121@gmx.net
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 .if defined(WITH_SOUND)
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif

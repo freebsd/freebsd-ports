@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-bluecurve-theme
 PORTVERSION=	0.47
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	8.0/en/os/i386/SRPMS
@@ -28,9 +29,9 @@ RH_SUBVERSION=	3
 THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 THEMES_SUBDIRS+=	${WRKSRC}/art/gtk/Bluecurve
-PLIST_SUB+=	GTK2="" GTKVERSION="2.0.0"
+PLIST_SUB+=	GTK2="" GTKVERSION="2.2.0"
 .else
 PLIST_SUB+=	GTK2="@comment "
 .endif
@@ -65,9 +66,9 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/share/themes/Bluecurve && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve
 .if defined(WITH_GTK2)
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/2.0.0/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk-2.0/2.0.0/engines
+	@${MKDIR} ${PREFIX}/lib/gtk-2.0/2.2.0/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk-2.0/2.2.0/engines
 	@${MKDIR} ${PREFIX}/share/themes/Bluecurve/gtk-2.0 && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve/gtk-2.0
-	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve/.libs/libbluecurve.so ${PREFIX}/lib/gtk-2.0/2.0.0/engines
+	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve/.libs/libbluecurve.so ${PREFIX}/lib/gtk-2.0/2.2.0/engines
 	@${INSTALL_DATA} ${WRKSRC}/art/gtk/Bluecurve/gtk-2.0/gtkrc ${PREFIX}/share/themes/Bluecurve/gtk-2.0
 .endif
 	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk/themes/engines

@@ -7,14 +7,15 @@
 
 PORTNAME=	uf-view
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 
 MAINTAINER=	mcgee@wam.umd.edu
 
 LIB_DEPENDS=    gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		gnome-desktop-2.0:${PORTSDIR}/x11/gnomedesktop
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
+		gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
