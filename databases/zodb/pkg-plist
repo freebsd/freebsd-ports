@@ -146,6 +146,9 @@ lib/%%PYTHON_VERSION%%/site-packages/ZODB/Mount.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/POSException.py
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/POSException.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/POSException.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentList.py
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentList.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentList.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentMapping.py
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentMapping.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/PersistentMapping.pyo
@@ -246,6 +249,9 @@ lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testFileStorage.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testMappingStorage.py
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testMappingStorage.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testMappingStorage.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentList.py
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentList.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentList.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentMapping.py
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentMapping.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZODB/tests/testPersistentMapping.pyo

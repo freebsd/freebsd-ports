@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	zodb
-PORTVERSION=	1.0.c1
+PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/
-DISTNAME=	StandaloneZODB-${PORTVERSION:C/\.([^.]*)$/\1/}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	StandaloneZODB-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
