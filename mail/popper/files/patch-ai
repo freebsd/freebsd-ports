@@ -1,5 +1,5 @@
-*** pop_dropcopy.c.orig	Wed Jul  1 00:06:43 1998
---- pop_dropcopy.c	Wed Jul  1 00:16:07 1998
+*** pop_dropcopy.c.orig	Thu Jul  2 07:56:52 1998
+--- pop_dropcopy.c	Thu Jul  2 07:58:24 1998
 ***************
 *** 471,478 ****
   		    *cp++ = '\n';
@@ -36,7 +36,7 @@
   #endif
   		}
   
-! 	    } else if (!strncmp(buffer, "Content-Length:", 15)) {
+! 	    } else if (!strncasecmp(buffer, "Content-Length:", 15)) {
 ! 		if (CONTENT_LENGTH) {
 ! 		    cont_len = atoi(buffer + 15);
 ! 		    MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
@@ -103,7 +103,7 @@
   #endif
   		}
   
-! 	    } else if (!strncmp(buffer, "Content-Length:", 15)) {
+! 	    } else if (!strncasecmp(buffer, "Content-Length:", 15)) {
 ! 		if (CONTENT_LENGTH) {
 ! 		    cont_len = atoi(buffer + 15);
 ! 		    MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
@@ -133,3 +133,13 @@
   		    }
   		}
   		continue;  /* Do not include this value in the message size */
+***************
+*** 1031,1036 ****
+--- 1042,1048 ----
+  	(void)ftruncate(dfd, (OFF_T)offset);
+      }
+  #ifdef BULLDB
++     if (p->bulldir != NULL)
+  #ifdef GDBM
+          gdbm_close(p->bull_db);
+  #else
