@@ -7,7 +7,7 @@ etc/apache/magic
 etc/apache/magic.default
 etc/apache/mime.types
 etc/apache/mime.types.default
-etc/php3.ini-dist
+etc/php.ini-dist
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -253,10 +253,6 @@ share/apache/icons/movie.gif
 share/apache/icons/p.gif
 share/apache/icons/patch.gif
 share/apache/icons/pdf.gif
-share/apache/icons/php2.gif
-share/apache/icons/php3.gif
-share/apache/icons/phpi.gif
-share/apache/icons/phps.gif
 share/apache/icons/pie0.gif
 share/apache/icons/pie1.gif
 share/apache/icons/pie2.gif
