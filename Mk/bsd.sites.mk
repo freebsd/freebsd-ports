@@ -36,7 +36,6 @@ MASTER_SITE_PORTS_JP+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
@@ -259,7 +258,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
@@ -316,7 +314,7 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.si.uniovi.es/mirror/isc/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
 	ftp://ftp.chl.chalmers.se/pub/unix/network/isc/%SUBDIR%/ \
-	ftp://unix.hensa.ac.uk/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
 	ftp://ftp.nominum.com/pub/isc/%SUBDIR%/ \
 	ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
@@ -645,7 +643,6 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ctan.unsw.edu.au/tex-archive/%SUBDIR%/ \
 	ftp://ftp.tex.ac.uk/tex-archive/%SUBDIR%/  \
 	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
-	ftp://ftp.meiji.ac.jp/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/publishing/tex/CTAN/%SUBDIR%/ \
