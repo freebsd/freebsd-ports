@@ -1,4 +1,7 @@
 bin/gkrellm
+include/gkrellm/gkrellm.h
+include/gkrellm/gkrellm_public_proto.h
+include/gkrellm/gkrellm_private_proto.h
 share/doc/gkrellm/COPYRIGHT
 share/doc/gkrellm/README
 share/doc/gkrellm/Themes

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION= 	0.9.7
+PORTVERSION= 	0.9.8
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		http://people.FreeBSD.org/~ume/gkrellm/
@@ -21,6 +21,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
+INCLUDES=	gkrellm.h gkrellm_public_proto.h gkrellm_private_proto.h
 DOCS=		COPYRIGHT README Themes
 
 # You should aware that GKrellM must be setuid root to obtain
@@ -44,8 +45,17 @@ BINMODE=	4111
 BINMODE=	2111
 .endif
 
+post-patch:
+	@${MV} ${WRKSRC}/gkrellm.h ${WRKSRC}/gkrellm.h.orig
+	@${SED} -e "s^/usr/share/^${PREFIX}/share/^" \
+		${WRKSRC}/gkrellm.h.orig > ${WRKSRC}/gkrellm.h
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gkrellm ${PREFIX}/bin/gkrellm
+	${INSTALL_PROGRAM} ${WRKSRC}/gkrellm ${PREFIX}/bin/gkrellm
+	@${MKDIR} ${PREFIX}/include/gkrellm
+.for file in ${INCLUDES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/gkrellm
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gkrellm
 .for file in ${DOCS}
