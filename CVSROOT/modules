@@ -8035,6 +8035,7 @@ pear-I18N	ports/devel/pear-I18N
 pear-Image_Color	ports/graphics/pear-Image_Color
 pear-Log	ports/sysutils/pear-Log
 pear-MDB	ports/databases/pear-MDB
+pear-MDB2	ports/databases/pear-MDB2
 pear-Mail	ports/mail/pear-Mail
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Mail_Queue	ports/mail/pear-Mail_Queue
