@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	du2ps
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.research.co.jp/software/du2ps/
+MASTER_SITES=	http://line.to/mac/soft/du2ps/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mistral@imasy.or.jp
@@ -18,17 +17,22 @@ COMMENT=	Filter for converting output of du to PostScript file
 # Nkf is required for just converting character code of japanese manual
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-MAKEFILE=	makefile
 ALL_TARGET=
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 MAN1=		du2ps.1
 MANLANG=	"" ja
 PLIST_FILES=	bin/du2ps
+PORTDOCS=	README.ver1 README.ver2 README.xdu du2ps.pdf du2psj.pdf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${PREFIX}/bin/du2ps
-	${INSTALL_MAN} ${FILESDIR}/du2ps.1 ${PREFIX}/man/man1/du2ps.1
-	nkf -e ${WRKSRC}/du2ps.man > ${WRKDIR}/du2ps.1.ja
-	${INSTALL_MAN} ${WRKDIR}/du2ps.1.ja ${PREFIX}/man/ja/man1/du2ps.1
+	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${PREFIX}/man/man1/du2ps.1
+	nkf -e ${WRKSRC}/du2ps.1j > ${WRKSRC}/du2ps.1.ja
+	${INSTALL_MAN} ${WRKSRC}/du2ps.1.ja ${PREFIX}/man/ja/man1/du2ps.1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
