@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.106 1997/06/03 20:12:46 max Exp $
+# $Id: Makefile,v 1.107 1997/06/14 16:20:01 max Exp $
 #
 
     SUBDIR += amanda
@@ -42,6 +42,7 @@
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xmaddressbook
+    SUBDIR += xpns
     SUBDIR += xtar
     SUBDIR += xtimer
     SUBDIR += zorro
