@@ -3,7 +3,7 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/04/18 14:02:57 jmz Exp $
+# $Id: Makefile,v 1.7 1995/04/21 00:21:02 jmz Exp $
 #
 
 DISTNAME=	dvi2xx
@@ -17,13 +17,13 @@ MAINTAINER=	jmz@FreeBSD.ORG
 CTAN?=		ftp.tex.ac.uk
 FTPGET=		${FILESDIR}/ftpget
 
-
 dvi2xx.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/dviware dvi2xx.tar.gz ${DISTDIR}/$@
 
+pre-fetch:
+	@chmod +x ${FTPGET}
+
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
 	@mkdir -p ${PREFIX}/lib/dvi2xx
 	@(cd ${WRKSRC}; install -m 755 -c MakeTeXPK ${PREFIX}/bin)
 	@(cd ${WRKSRC}; install -c -m 644 2up.sty  graybox.sty lj3-filter \
