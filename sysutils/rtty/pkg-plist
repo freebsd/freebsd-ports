@@ -6,8 +6,10 @@ rtty/bin/console
 rtty/bin/startsrv
 rtty/bin/agelogs
 rtty/bin/agelog
-rtty/dev
-rtty/sock
-rtty/log
-rtty/pid
-rtty/opt
+@dirrm rtty/bin
+@dirrm rtty/dev
+@dirrm rtty/log
+@dirrm rtty/opt
+@dirrm rtty/pid
+@dirrm rtty/sock
+@dirrm rtty
