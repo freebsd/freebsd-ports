@@ -161,8 +161,9 @@ pre-fetch:
 	@${ECHO} has beta quality and does not yet work as
 	@${ECHO} stable as it should.
 	@${ECHO}
+.if (defined(USE_GCC) && ${USE_GCC} == 2.95) || \
+    (${OSVERSION} < 500000 && !defined(USE_GCC))
 	@${ECHO} KERNEL CONFIGURATION:
-.if defined(USE_GCC) && ${USE_GCC} == 2.95
 	@${ECHO}
 	@${ECHO} Openoffice needs a larger stack- and
 	@${ECHO} datasize to build. Check your limit
