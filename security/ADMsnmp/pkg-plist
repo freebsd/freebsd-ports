@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/ADMsnmp
+share/ADMsnmp/snmp.passwd
+share/doc/ADMsnmp/ADMsnmp.README
+@dirrm share/doc/ADMsnmp
+@dirrm share/ADMsnmp

@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += ADMsnmp
     SUBDIR += aafid2
     SUBDIR += acid
     SUBDIR += aescrypt
