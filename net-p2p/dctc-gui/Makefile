@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.43
+PORTVERSION=	0.45
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -38,6 +38,9 @@ post-patch:
 		${WRKSRC}/src/init_fnc.c
 
 post-configure:
+	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
