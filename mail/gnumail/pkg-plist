@@ -1,4 +1,7 @@
 Local/Applications/GNUMail.app/GNUMail
+Local/Applications/GNUMail.app/Resources/CVS/Entries
+Local/Applications/GNUMail.app/Resources/CVS/Repository
+Local/Applications/GNUMail.app/Resources/CVS/Root
 Local/Applications/GNUMail.app/Resources/Address_add.tiff
 Local/Applications/GNUMail.app/Resources/Address_bcc.tiff
 Local/Applications/GNUMail.app/Resources/Address_cc.tiff
@@ -11,28 +14,48 @@ Local/Applications/GNUMail.app/Resources/GNUMail.tiff
 Local/Applications/GNUMail.app/Resources/GNUMail_Full.tiff
 Local/Applications/GNUMail.app/Resources/German.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/Info-gnustep.plist
-Local/Applications/GNUMail.app/Resources/Magnifier.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_addresses.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_attach.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_bcc.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_bcc_remove.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_add.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_copy.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_delete.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_move.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_open.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_rename.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_box_transfer.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_cc.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_cc_remove.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_create.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_delete.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_forward.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_mailboxes.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_reply.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_retrieve.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_send.tiff
-Local/Applications/GNUMail.app/Resources/MailIcon_stop.tiff
+Local/Applications/GNUMail.app/Resources/add.tiff
+Local/Applications/GNUMail.app/Resources/add_bcc_32.tiff
+Local/Applications/GNUMail.app/Resources/add_bcc_48.tiff
+Local/Applications/GNUMail.app/Resources/add_cc_32.tiff
+Local/Applications/GNUMail.app/Resources/add_cc_48.tiff
+Local/Applications/GNUMail.app/Resources/addresses_32.tiff
+Local/Applications/GNUMail.app/Resources/addresses_48.tiff
+Local/Applications/GNUMail.app/Resources/attach_32.tiff
+Local/Applications/GNUMail.app/Resources/attach_48.tiff
+Local/Applications/GNUMail.app/Resources/create_32.tiff
+Local/Applications/GNUMail.app/Resources/create_48.tiff
+Local/Applications/GNUMail.app/Resources/delete_20.tiff
+Local/Applications/GNUMail.app/Resources/delete_32.tiff
+Local/Applications/GNUMail.app/Resources/delete_48.tiff
+Local/Applications/GNUMail.app/Resources/down_15.tiff
+Local/Applications/GNUMail.app/Resources/duplicate.tiff
+Local/Applications/GNUMail.app/Resources/edit.tiff
+Local/Applications/GNUMail.app/Resources/find_32.tiff
+Local/Applications/GNUMail.app/Resources/find_48.tiff
+Local/Applications/GNUMail.app/Resources/forward_32.tiff
+Local/Applications/GNUMail.app/Resources/forward_48.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_add_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_copy_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_move_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_rename_32.tiff
+Local/Applications/GNUMail.app/Resources/mailboxes_32.tiff
+Local/Applications/GNUMail.app/Resources/mailboxes_48.tiff
+Local/Applications/GNUMail.app/Resources/remove_bcc_32.tiff
+Local/Applications/GNUMail.app/Resources/remove_bcc_48.tiff
+Local/Applications/GNUMail.app/Resources/remove_cc_32.tiff
+Local/Applications/GNUMail.app/Resources/remove_cc_48.tiff
+Local/Applications/GNUMail.app/Resources/reply_32.tiff
+Local/Applications/GNUMail.app/Resources/reply_48.tiff
+Local/Applications/GNUMail.app/Resources/retrieve_32.tiff
+Local/Applications/GNUMail.app/Resources/retrieve_48.tiff
+Local/Applications/GNUMail.app/Resources/send_32.tiff
+Local/Applications/GNUMail.app/Resources/send_48.tiff
+Local/Applications/GNUMail.app/Resources/show_all_headers_32.tiff
+Local/Applications/GNUMail.app/Resources/show_all_headers_48.tiff
+Local/Applications/GNUMail.app/Resources/stop_32.tiff
+Local/Applications/GNUMail.app/Resources/stop_48.tiff
+Local/Applications/GNUMail.app/Resources/up_15.tiff
 Local/Applications/GNUMail.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/Swedish.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/Welcome
@@ -191,5 +214,6 @@ Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Viewing
 @dirrm Local/Applications/GNUMail.app/Resources/German.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/French.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/English.lproj
+@dirrm Local/Applications/GNUMail.app/Resources/CVS
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
