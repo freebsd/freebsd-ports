@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	heyu
-PORTVERSION=	1.31.3
+PORTVERSION=	1.33
 CATEGORIES=	misc
 MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net
-
-BROKEN=		"Patches need to be upgraded."
 
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
@@ -25,6 +23,9 @@ MAN5=		x10config.5 \
 
 do-configure:
 	${PERL} -pi.orig -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+
+pre-patch:
+	(cd ${WRKSRC} && ./Configure)
 
 post-install:
 	strip ${PREFIX}/bin/heyu
