@@ -16,7 +16,6 @@ COMMENT=	A library for developing applications over RTP
 RTP_HEADERS=	rtp_api.h rtp_highlevel.h rtp_lowlevel.h
 
 RESTRICTED=	"Source recipient must acknowledge license"
-NO_CDROM=	"Source recipient must acknowledge license"
 
 GNU_CONFIGURE=	yes
 
