@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-tdg
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
@@ -29,7 +29,7 @@ post-patch:
 
 do-install:
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && find * \
+	@ cd ${WRKSRC} && ${FIND} . \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${FILESDIR}/index.html ${DOCSDIR}
 
