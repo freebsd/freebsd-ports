@@ -3564,6 +3564,7 @@ libdict		ports/devel/libdict
 libdivxdecore	ports/multimedia/libdivxdecore
 libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
 libdivxencore	ports/multimedia/libdivxencore
+libdjbdns	ports/devel/libdjbdns
 libdjvu++	ports/graphics/libdjvu++
 libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
