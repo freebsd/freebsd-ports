@@ -1,7 +1,11 @@
 #!/bin/sh
 # $FreeBSD$
 
-dir="/var/portbuild/4/bak"
+dir=$@
+if [ ! -d $dir ]; then
+	echo "Directory not found.  Aborting."
+	exit 1
+fi
 
 tar xzvf $dir/ports.tar.gz
 cd ports
