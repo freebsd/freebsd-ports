@@ -90,6 +90,21 @@ PYTHON_REL=			200
 PYTHON_SUFFIX=		# empty, default version
 PYTHON_WRKSRC=		${WRKDIR}/Python-2.0
 
+# Python-1.6
+# ${PYTHON_PORTSDIR} is not set because we don't support building 
+# Python-1.6 from the ports anymore. People should use the
+# latest version in ${PORTSDIR}/lang/python. The definitions here
+# are for those who still have 1.6 as their default version.
+.elif ${PYTHON_VERSION} == "python1.6"
+PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
+
+PYTHON_DISTFILE=	Python-1.6.tar.gz
+PYTHON_PORTSDIR=	# empty
+PYTHON_REL=			160
+PYTHON_SUFFIX=		16
+PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
+
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
 PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
@@ -104,7 +119,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 .else
 .BEGIN:
 	@${ECHO} "Error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
-	@${ECHO} "Use one of python1.5 or python2.0 (default)." 
+	@${ECHO} "Use one of python1.5, python1.6 or python2.0 (default)."
 	@${FALSE}
 .endif
 
