@@ -1,0 +1,4 @@
+Dadadodo analyses text files and generates markov chains of word
+frequencies; it can then generate random sentences based on that data.
+
+WWW: http://www.jwz.org/dadadodo/
