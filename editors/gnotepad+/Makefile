@@ -21,7 +21,7 @@ DOCVERSION=	1.2.0
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,8 +40,8 @@ post-extract:
 	@${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs ${WRKSRC}/docs
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME=	gtk12
 .else
 CONFIGURE_ARGS+=--disable-gnome
 .endif

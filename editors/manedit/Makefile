@@ -16,7 +16,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FreeBSD
 
 MAN1=		manedit.1
