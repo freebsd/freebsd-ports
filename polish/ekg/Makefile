@@ -5,22 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=		ekg
-PORTVERSION=		1.4.20040208
+PORTVERSION=		1.4.20040505
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
-DISTNAME=		${PORTNAME}-20040208
+DISTNAME=		${PORTNAME}-20040505
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		Text-mode Gadu-Gadu client
 
+LIB_DEPENDS=		aspell.15:${PORTSDIR}/polish/aspell
+
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-USE_GNOME=		gnomehack
+USE_GNOME=		gnomehack pkgconfig
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--enable-dynamic \
-			--mandir=${PREFIX}/man
+			--enable-aspell \
+			--mandir=${PREFIX}/man \
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 INSTALLS_SHLIB=	yes
 
