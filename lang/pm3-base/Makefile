@@ -1,0 +1,94 @@
+# New ports collection makefile for:	pm3-base
+# Version required:	1.1.13
+# Date created:		6 Feb 2000
+# Whom:			John Polstra <jdp@freebsd.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	pm3-base-${VERSION}
+CATEGORIES=	lang
+MASTER_SITES=	http://www.freebsd.org/~jdp/distfiles/pm3/
+DISTFILES=	${BOOTSTRAP} \
+		pm3-${VERSION}-src.tar.bz2
+
+MAINTAINER=	jdp@polstra.com
+
+DIST_SUBDIR=	pm3
+INSTALL_TARGET=	all
+MAKE_ARGS+=	M3OPTIONS="-DBUILD_ALL -DSHIP_ALL"
+MAN1=		m3bundle.1
+PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
+		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
+SCRIPTS_ENV+=	TARGET=${TARGET}
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/pm3-${VERSION}
+
+PROGS=		bin/m3build \
+		bin/m3bundle \
+		bin/m3coco \
+		bin/m3ship \
+		bin/m3tosgml \
+		bin/sgmlconv \
+		bin/sgmllinear \
+		bin/sgmlnormalize \
+		bin/sgmlstructure \
+		bin/sgmltom3 \
+		lib/m3/${TARGET}/m3cgc1
+SOVERSION=	7
+VERSION=	1.1.13
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+TARGET=		FreeBSD2
+TARGETDIR=	freebsd-2
+WORDSIZE=	32
+BOOTSTRAP=	pm3-${VERSION}-${TARGET}-boot.tar.bz2
+.elif ${ARCH} == "i386"
+.if ${OSVERSION} < 400011
+TARGET=		FreeBSD3
+TARGETDIR=	freebsd-3
+BOOTSTRAP=	pm3-${VERSION}-${TARGET}-boot.tar.bz2
+.else
+TARGET=		FreeBSD4
+TARGETDIR=	freebsd-4
+BOOTSTRAP=	pm3-${VERSION}a-${TARGET}-boot.tar.bz2
+.endif
+WORDSIZE=	32
+.elif ${ARCH} == "alpha"
+.if ${OSVERSION} < 400011
+BROKEN=		Not supported on older versions of FreeBSD/Alpha
+.endif
+CFLAGS+=	-mieee
+TARGET=		FBSD_ALPHA
+TARGETDIR=	fbsd-alpha
+WORDSIZE=	64
+BOOTSTRAP=	pm3-${VERSION}a-${TARGET}-boot.tar.bz2
+.endif
+
+.if empty(TARGET)
+pre-fetch:
+	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
+	@${FALSE}
+.endif
+
+post-patch:
+	@${CP} ${WRKSRC}/libs/m3core/src/runtime/${TARGET}/RTHeapDepC.c \
+	    ${WRKSRC}/boot-${TARGET}/m3core/${TARGET}/RTHeapDepC.c
+
+do-build:
+	@${ECHO_MSG} "This port does everything in the install step."
+	@${ECHO_MSG} "The build step is a no-op."
+
+do-install:
+	@${RM} -rf ${WRKSRC}/${TARGET}
+	@(ulimit -d `ulimit -Hd` && ulimit -m `ulimit -Hm` && \
+	    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
+	@${MKDIR} ${PREFIX}/share/pm3
+	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/pm3
+
+.include <bsd.port.post.mk>
