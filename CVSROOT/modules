@@ -3483,6 +3483,7 @@ libdivxencore	ports/graphics/libdivxencore
 libdjvu++	ports/graphics/libdjvu++
 libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
+libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
 libdsp		ports/devel/libdsp
 libdv		ports/graphics/libdv
