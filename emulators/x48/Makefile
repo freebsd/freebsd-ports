@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	x48
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.1e
 CATEGORIES=	emulators
-MASTER_SITES=	http://home.earthlink.net/~rmmlgetz/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
+MASTER_SITES=	http://www.hpcalc.org/hp48/pc/emulators/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/e//}
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/x48
+	@${MKDIR} ${DOCSDIR}
 .for file in README doc/CARDS.doc doc/ROMDump.doc
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/x48
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
