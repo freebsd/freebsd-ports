@@ -580,6 +580,7 @@ bjorb		ports/security/bjorb
 bk2site		ports/www/bk2site
 bkmrkconv	ports/www/bkmrkconv
 bkpupsd		ports/sysutils/bkpupsd
+bksh		ports/sysutils/bksh
 blackbox	ports/x11-wm/blackbox
 blackened	ports/irc/blackened
 blackjack	ports/games/blackjack
