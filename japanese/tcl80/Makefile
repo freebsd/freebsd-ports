@@ -12,7 +12,7 @@ CATEGORIES=	japanese lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl8.0.5jp1.6.patch.gz
+PATCHFILES=	tcl8.0.5jp1.7.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -27,6 +27,7 @@ PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
+RANLIB=		ranlib
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +52,7 @@ post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtcl80jp.so.1.5 ${PREFIX}/lib/libtcl80jp.so
+	${RANLIB} ${PREFIX}/lib/libtcl80jp.a
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
 

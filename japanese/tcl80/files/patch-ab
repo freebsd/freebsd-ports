@@ -1,0 +1,173 @@
+--- Makefile.in.ORIG	Wed Dec  8 10:58:58 1999
++++ Makefile.in	Wed Dec  8 10:59:06 1999
+@@ -55,11 +55,16 @@
+ BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file tcl.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/unix
+ 
+ # Top-level directory in which to install manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+ 
++# Directory in which to install sharedable other documents:
++DOC_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/share/doc/tcl$(VERSION)
++
+ # Directory in which to install manual entry for tclsh:
+ MAN1_INSTALL_DIR =	$(MAN_INSTALL_DIR)/man1
+ 
+@@ -151,7 +156,7 @@
+ # "install" around;  better to use the install-sh script that comes
+ # with the distribution, which is slower but guaranteed to work.
+ 
+-INSTALL =		@srcdir@/install-sh -c
++INSTALL =		install -c
+ INSTALL_PROGRAM =	${INSTALL}
+ INSTALL_DATA =		${INSTALL} -m 644
+ 
+@@ -184,6 +189,7 @@
+ #BUILD_DLTEST =
+ 
+ TCL_LIB_FILE = @TCL_LIB_FILE@
++TCL_STATIC_LIB_FILE= @TCL_STATIC_LIB_FILE@
+ #TCL_LIB_FILE = libtcl.a
+ 
+ TCL_LIB_FLAG = @TCL_LIB_FLAG@
+@@ -336,7 +342,11 @@
+ 
+ SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(KANJI_SRCS)
+ 
+-all: ${TCL_LIB_FILE} tclsh
++DOCS = $(TOP_DIR)/README $(TOP_DIR)/changes $(TOP_DIR)/README.JP \
++	$(TOP_DIR)/Incompat80jp $(TOP_DIR)/changes.JP \
++	$(UNIX_DIR)/README.FreeBSD
++
++all: ${TCL_LIB_FILE} ${TCL_STATIC_LIB_FILE} tclsh
+ 
+ # The following target is configured by autoconf to generate either
+ # a shared library or non-shared library for Tcl.
+@@ -344,6 +354,14 @@
+ 	rm -f ${TCL_LIB_FILE}
+ 	@MAKE_LIB@
+ 	$(RANLIB) ${TCL_LIB_FILE}
++.if ${PORTOBJFORMAT}X == elfX
++	ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`
++.endif
++
++${TCL_STATIC_LIB_FILE}: ${OBJS}
++	rm -f ${TCL_STATIC_LIB_FILE}
++	ar cr ${TCL_STATIC_LIB_FILE} ${OBJS}	
++	$(RANLIB) ${TCL_STATIC_LIB_FILE}
+ 
+ # Make target which outputs the list of the .o contained in the Tcl lib
+ # usefull to build a single big shared library containing Tcl and other
+@@ -432,13 +450,13 @@
+ 	cd dltest; if test -f configure; then ./configure; else \
+ 	    $(DLTEST_DIR)/configure; fi
+ 
+-install: install-binaries install-libraries install-man
++install: install-binaries install-libraries
+ 
+ # Note: before running ranlib below, must cd to target directory because
+ # some ranlibs write to current directory, and this might not always be
+ # possible (e.g. if installing as root).
+ 
+-install-binaries: $(TCL_LIB_FILE) tclsh
++install-binaries: $(TCL_LIB_FILE) $(TCL_STATIC_LIB_FILE) tclsh
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -451,15 +469,23 @@
+ 	@echo "Installing $(TCL_LIB_FILE)"
+ 	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
++.if ${PORTOBJFORMAT}X == elfX
++	@(cd $(LIB_INSTALL_DIR); ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
++.endif
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
++	@echo "Installing $(TCL_STATIC_LIB_FILE)"
++	@$(INSTALL_DATA) $(TCL_STATIC_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_STATIC_LIB_FILE)
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_STATIC_LIB_FILE))
++	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_STATIC_LIB_FILE)
+ 	@echo "Installing tclsh"
+ 	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
+ 	@echo "Installing tclConfig.sh"
+-	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
++	@mkdir -p $(SCRIPT_INSTALL_DIR)
++	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
+ 
+ install-libraries:
+-	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
+-		$(SCRIPT_INSTALL_DIR); \
++	@for i in $(INSTALL_ROOT)$(prefix)/lib $(GENERIC_INCLUDE_INSTALL_DIR) \
++		$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -477,8 +503,15 @@
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@echo "Installing tcl.h"
+-	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@echo "Installing libraries, tcl.h and other headers"
++	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
++	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
+ 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+@@ -506,30 +539,37 @@
+ 	@cd $(TOP_DIR)/doc; for i in *.1; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN1_INSTALL_DIR)/$$i $(MAN1_INSTALL_DIR)/$$i.gz ; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.3; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN3_INSTALL_DIR)/$$i $(MAN3_INSTALL_DIR)/$$i.gz ; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.n; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MANN_INSTALL_DIR)/$$i; \
++	    rm -f $(MANN_INSTALL_DIR)/$$i $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
++	@echo "**********"
++	@echo "IMPORTANT:"
++	@echo "**********"
++	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
++	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
++	@echo "There are NOT default place, but good place to avoid"
++	@echo "conflicting with another version of Tcl/Tks."
+ 
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
