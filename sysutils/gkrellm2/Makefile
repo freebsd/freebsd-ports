@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.2.5
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
