@@ -8,7 +8,7 @@ fi
 
 case "$1" in
 start)
-	[ -r ${PREFIX}/pure-ftpd.conf ] && \
+	[ -r ${PREFIX}/etc/pure-ftpd.conf ] && \
 	${PREFIX}/sbin/pure-config.pl ${PREFIX}/etc/pure-ftpd.conf > /dev/null && \
 	echo -n ' pure-ftp'
 	;;
