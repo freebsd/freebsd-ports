@@ -13,10 +13,13 @@ DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/battalionSource
+
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-WRKSRC=		${WRKDIR}/battalionSource
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN6=		battalion.6
 
