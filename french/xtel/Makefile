@@ -13,6 +13,8 @@ MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
 MAINTAINER=	thierry@pompo.net
 
+FORBIDDEN=	"Lots of buffer overflows yielding setuid root"
+
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 # Remark: Xtel can serve a network, and emulate TVR and I-Minitel, but this is
