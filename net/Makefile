@@ -230,6 +230,7 @@
     SUBDIR += sdl_net
     SUBDIR += sendfile
     SUBDIR += sharity-light
+    SUBDIR += sing
     SUBDIR += slirp
     SUBDIR += smbtcpdump
     SUBDIR += sniffit

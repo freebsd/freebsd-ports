@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Sat Sep 16 13:03:43 2000
++++ Makefile.in	Fri Oct  6 01:17:29 2000
+@@ -72,7 +72,7 @@
+ getopt_SOURCES = @getopt_SOURCES@
+ libpcapdir = @libpcapdir@
+ 
+-INCLUDES = -I$(includedir) -I$(libpcapdir)
++INCLUDES = -I$(includedir) # -I$(libpcapdir)
+ 
+ LIBS = @LIBS@ -lpcap
+ 
+@@ -108,7 +108,7 @@
+ SOURCES = $(sing_SOURCES)
+ OBJECTS = $(sing_OBJECTS)
+ 
+-all: libpcap all-redirect
++all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+ 
+@@ -149,11 +149,11 @@
+ 
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(sbindir)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+-	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
++	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
++	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -223,8 +223,7 @@
+ 
+ 
+ help.o: help.c config.h
+-sing.o: sing.c config.h libpcap-0.4/pcap.h libpcap-0.4/net/bpf.h \
+-	sing.h ipcompat.h misc.h packet.h dev_struct.h
++sing.o: sing.c config.h sing.h ipcompat.h misc.h packet.h dev_struct.h
+ ip_options.o: ip_options.c config.h ip_options.h ipcompat.h packet.h \
+ 	misc.h
+ device.o: device.c config.h device.h misc.h packet.h dev_struct.h

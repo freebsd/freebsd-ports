@@ -1,0 +1,13 @@
+--- configure.orig	Fri Oct  6 01:19:57 2000
++++ configure	Fri Oct  6 01:20:05 2000
+@@ -1097,10 +1097,6 @@
+   fi
+ fi
+ 
+-if test -n "$GCC"; then
+-      CFLAGS="-O3 -Wall"
+-fi
+-
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:1104: checking how to run the C preprocessor" >&5
+ # On Suns, sometimes $CPP names a directory.
