@@ -12,7 +12,7 @@ MASTER_SITES=	http://linuxberg.uol.com.br/files/kde/network/ \
 		ftp://ftp.bmtmicro.com/tucows/mirror/files/kde/network/ \
 		ftp://ftp.bitcon.no/.4/kde/network/
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.3:${PORTSDIR}/x11/kdelibs11 \

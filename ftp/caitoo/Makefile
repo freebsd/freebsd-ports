@@ -12,7 +12,7 @@ MASTER_SITES=	http://devel-home.kde.org/~caitoo/src/ \
 		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/apps/network
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.3:${PORTSDIR}/x11/kdelibs11 \

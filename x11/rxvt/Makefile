@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

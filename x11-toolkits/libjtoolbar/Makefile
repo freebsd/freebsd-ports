@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
 		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
 DISTNAME=	JToolBar_source-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

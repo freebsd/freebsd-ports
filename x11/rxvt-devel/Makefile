@@ -21,7 +21,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	rxvt-2.7.3.patch1.gz
 PATCH_DIST_STRIP+=      -p1
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

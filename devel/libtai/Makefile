@@ -10,7 +10,7 @@ PORTVERSION=	0.60
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 ALL_TARGET=	it
 INSTALLS_SHLIB= yes

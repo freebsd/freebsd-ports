@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/thx/source/
 DISTNAME=	${PORTNAME:S,_,-,}_source-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

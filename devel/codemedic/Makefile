@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~sobomax/distfiles/
 DISTNAME=	Code_Medic_source-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

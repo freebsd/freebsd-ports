@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-ldap
 PATCH_SITES=	http://www.nrg4u.com/qmail/
 PATCHFILES=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 

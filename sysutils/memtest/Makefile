@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/memtester/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

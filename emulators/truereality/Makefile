@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.emuhq.com/emulators/ \
 		ftp://ftp.mayn.de/pub/unix/emulators/console/
 DISTNAME=	TrueReality-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
