@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	2.00
+PORTVERSION=	3.00
 PORTREVISION=	0
-CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-DISTFILES=	xpdf-chinese-simplified-2002-jun-17.tar.gz \
-		xpdf-chinese-traditional-2002-apr-14.tar.gz
+CATEGORIES=	chinese graphics print
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+                ${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/xpdf
+DISTFILES=	xpdf-chinese-simplified-2004-jan-16.tar.gz \
+		xpdf-chinese-traditional-2004-jan-16.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese-traditional xpdf font support
@@ -21,7 +23,7 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 SIMP_FILES=	Adobe-GB1.cidToUnicode EUC-CN.unicodeMap GBK.unicodeMap \
 		ISO-2022-CN.unicodeMap README
 TRAD_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
