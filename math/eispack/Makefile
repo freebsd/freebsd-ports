@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.13 1998/07/07 18:40:47 scrappy Exp $
+# $Id: Makefile,v 1.14 1998/07/07 19:21:06 scrappy Exp $
 #
 
 DISTNAME=	eispack
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
 
 DIST_SUBDIR=	${DISTNAME}
 
-RUN_DEPENDS=	${PREFIX}/lib/libcor.so.1.0:${PORTSDIR}/math/blas
+RUN_DEPENDS=	${PREFIX}/lib/libblas.so.1:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SCRIPTDIR}/uncomp
 EXTRACT_SUFX=	.gz
