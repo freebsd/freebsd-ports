@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.3
+PORTVERSION=	9.3b
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
 DISTNAME=	vile-9.3
 EXTRACT_SUFX=	.tgz
+
+PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
+PATCHFILES=	vile-9.3a.patch.gz \
+		vile-9.3b.patch.gz
 
 MAINTAINER=	gj@freebsd.org
 
