@@ -4569,6 +4569,7 @@ p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
 p5-Lingua-EN-Gender	ports/textproc/p5-Lingua-EN-Gender
 p5-Lingua-EN-Inflect	ports/textproc/p5-Lingua-EN-Inflect
 p5-Lingua-EN-Numbers-Ordinate	ports/textproc/p5-Lingua-EN-Numbers-Ordinate
+p5-Lingua-EN-Sentence	ports/textproc/p5-Lingua-EN-Sentence
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
 p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
