@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.81 1998/06/24 16:19:54 vanilla Exp $
+# $Id: Makefile,v 1.82 1998/07/12 23:36:34 steve Exp $
 #
 
     SUBDIR += EZWGL
@@ -27,6 +27,10 @@
     SUBDIR += gimp1
     SUBDIR += gplot
     SUBDIR += graphviz
+    SUBDIR += gtkdps
+    SUBDIR += gyvefigs
+    SUBDIR += gyvegui
+    SUBDIR += gyvekernel
     SUBDIR += hdf
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hpscan
