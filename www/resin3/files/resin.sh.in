@@ -15,7 +15,7 @@ fi
 
 # Set some variables
 MYSELF=`basename $0`
-ARGS="-conf $PREFIX/etc/%%APP_NAME%%.xml \
+ARGS="-conf $PREFIX/etc/%%APP_NAME%%/resin.xml \
 -chdir \
 -name %%APP_NAME%% \
 -class com.caucho.server.resin.Resin \

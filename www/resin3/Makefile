@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	resin
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -17,7 +17,9 @@ COMMENT=	Resin, a Java-based Application Server, 3.x branch
 
 USE_JAVA=	1.2+
 HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 # Customizable settings
 RUNASUSER?=	www
@@ -53,7 +55,7 @@ REPLACE_FILES=	${FILESDIR}/pkg-install \
 	${WRKSRC}/conf/resin.conf \
 	${WRKSRC}/bin/wrapper.pl.in \
 	${FILESDIR}/resin.sh.in
-COPYDIRS=	doc lib webapps xsl
+COPYDIRS=	doc lib libexec webapps
 
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME}
@@ -108,7 +110,7 @@ SUBSTITUTIONS=	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 
 post-patch:
 .for FILE in ${REINPLACE_FILES}
-	@${SED} -i bak ${SUBSTITUTIONS} ${FILE}
+	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${FILE}
 .endfor
 .for FILE in ${REPLACE_FILES}
 	@${SED} ${SUBSTITUTIONS} ${FILE} > ${WRKDIR}/`basename ${FILE}`
@@ -121,7 +123,15 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	    in the Apache configuration file, where you should also \
 	    add a line to specify the location of the Resin configuration \
 	    server, for example: | fmt -w 80 >> ${PKGMESSAGE}
-	@${ECHO_CMD} ResinConfigServer localhost 6802 >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+	@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
+.if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
+	@${ECHO_CMD} "    ResinConfigServer localhost 6802" >> ${PKGMESSAGE}
+.endif
+.if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
+	@${ECHO_CMD} "    CauchoConfigFile ${PREFIX}/etc/${APP_NAME}/resin.xml" >> ${PKGMESSAGE}
+.endif
+	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
 	@${MV} ${WRKDIR}/wrapper.pl.in ${WRKSRC}/bin/wrapper.pl.in
 
