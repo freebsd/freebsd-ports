@@ -1,5 +1,5 @@
---- cliplibs/clip-gtkextra/configure.orig	Wed Oct  2 11:03:05 2002
-+++ cliplibs/clip-gtkextra/configure	Tue Mar 25 08:56:34 2003
+--- cliplibs/clip-gtkextra/configure.orig	Fri Dec 26 11:34:59 2003
++++ cliplibs/clip-gtkextra/configure	Mon Apr 19 22:02:13 2004
 @@ -3,6 +3,10 @@
  uname=`uname -s`
  uver=`uname -r`
@@ -10,8 +10,8 @@
 +glibpath=glibpath=
  oldpwd=`pwd`
  
- [ -z "$CLIPROOT" ] && CLIPROOT=/usr/local/clip
-@@ -34,6 +38,10 @@
+ [ -z "$CLIPROOT" ] && CLIPROOT=$(cd ../../../; pwd)/cliproot
+@@ -35,6 +39,10 @@
  		;;
  	FreeBSD*)
  		osname=FREEBSD
@@ -22,7 +22,7 @@
  		STATICLINK=-static
  		;;
  	NetBSD*)
-@@ -66,7 +74,8 @@
+@@ -67,7 +75,8 @@
  echo '#define SYSTEM "'$uname'"' >&3
  echo '' >&3
  
@@ -32,23 +32,23 @@
  
  if [ $? -ne 0 ]
  then
-@@ -76,11 +85,11 @@
+@@ -77,11 +86,11 @@
  	echo "*****************************************************************"
  	USE_GTK=no
  else
 -	gtkincpath=`find $gtkprefix/include -name 'gtk.h' -printf '%h'`
 +	gtkincpath=`find $gtkprefix/include$gtkpath -name 'gtk.h' -exec dirname {} \;`
-         cd $gtkincpath/..
-         gtkincpath=`pwd`
-         cd $oldpwd
+ 	cd $gtkincpath/..
+ 	gtkincpath=`pwd`
+ 	cd $oldpwd
 -	LIBS=`gtk-config --libs`
 +	LIBS=`${gtkconfig} --libs`
  
  	if [ "$osname" = "CYGWIN" ]
  	then
-@@ -96,8 +105,8 @@
+@@ -97,8 +106,8 @@
  		echo 'Warning: system do not have installed GTK+ development'
-                 exit
+ 		exit
  	fi
 -	GTK_MAJOR=`gtk-config --version|cut -d. -f1`
 -	GTK_MINOR=`gtk-config --version|cut -d. -f2`
@@ -57,21 +57,21 @@
  	if [ ! \( "$GTK_MAJOR" -ge 1 -o "$GTK_MINOR" -ge 2 -o "$GTK_MAJOR" -gt 1 \) ]
  	then
  		echo
-@@ -114,7 +123,7 @@
+@@ -115,7 +124,7 @@
  	echo "****************************************************************************"
  	USE_GTK_EXTRA=no
  else
 -	gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -printf '%h'`
-+	gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -exec dirname {} \;`
-         cd $gtkextraincpath/..
-         gtkextraincpath=`pwd`
-         cd $oldpwd
-@@ -171,7 +180,7 @@
++	gtkextraincpath=gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -exec dirname {} \;`
+ 	cd $gtkextraincpath/..
+ 	gtkextraincpath=`pwd`
+ 	cd $oldpwd
+@@ -173,7 +182,7 @@
+ echo "COMPILER='$CC'" >&3
  echo "DLLSUFF='$DLLSUFF'" >&3
  echo "DLLREALSUFF='$DLLREALSUFF'" >&3
- echo "CLIPROOT=$CLIPROOT" >&3
 -echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include -I'$gtkextraprefix'/include' >&3
-+echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include'${gtkpath}' -I'$glibprefix'/include'${glibpath}' -I'$gtkextraprefix'/include' >&3
++echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I$(CLIPROOT)/clip-gtk -I'$gtkprefix'/include'${gtkpath}' -I'$glibprefix'/include'${glibpath}' -I'$gtkextraprefix'/include' >&3
  echo "XTARGETS='"'$(XLIB) $(XSLIB)'"'" >&3
  echo "C_FLAGS=-Wall '"'$(INCLUDEDIRS)'"' '$EXTRACFLAGS'" >&3
  echo "LIBS='$LIBS'" >&3

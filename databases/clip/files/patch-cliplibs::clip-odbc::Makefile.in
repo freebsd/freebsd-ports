@@ -1,5 +1,5 @@
---- cliplibs/clip-odbc/Makefile.in.orig	Fri Dec 20 14:39:13 2002
-+++ cliplibs/clip-odbc/Makefile.in	Sat Sep 20 23:42:32 2003
+--- cliplibs/clip-odbc/Makefile.in.orig	Thu Feb 19 14:16:38 2004
++++ cliplibs/clip-odbc/Makefile.in	Mon Apr 19 22:07:12 2004
 @@ -8,7 +8,7 @@
  
  LIBODBC=@LIBODBC@
@@ -9,11 +9,12 @@
  C_FLAGS=-Wall -g -I.
  #CC=gcc
  
-@@ -38,7 +38,6 @@
+@@ -38,7 +38,7 @@
  
- install: all
- 	$(CLIPROOT)/bin/clip_cp $(TARGET) $(CLIPROOT)/lib
--	$(CLIPROOT)/bin/clip_cp $(TARGET1) $(CLIPROOT)/lib
- 	#[ "$(TARGET)" = "$(RTARGET)" ] || cp $(RTARGET) $(CLIPROOT)/lib
- 	#[ "$(TARGET1)" = "$(RTARGET1)" ] || cp $(RTARGET1) $(CLIPROOT)/lib
- 	mkdir -p $(CLIPROOT)/doc/clip-odbc
+ install:
+ 	$(CLIPROOT)/bin/clip_cp $(TARGET) $(DESTDIR)$(CLIPROOT)/lib
+-	$(CLIPROOT)/bin/clip_cp $(TARGET1) $(DESTDIR)$(CLIPROOT)/lib
++	#$(CLIPROOT)/bin/clip_cp $(TARGET1) $(DESTDIR)$(CLIPROOT)/lib
+ 	#[ "$(TARGET)" = "$(RTARGET)" ] || cp $(RTARGET) $(DESTDIR)$(CLIPROOT)/lib
+ 	#[ "$(TARGET1)" = "$(RTARGET1)" ] || cp $(RTARGET1) $(DESTDIR)$(CLIPROOT)/lib
+ 	mkdir -p $(DESTDIR)$(CLIPROOT)/doc/clip-odbc

@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- cliplibs/clip-gd/gd/configure.orig	Fri Sep 27 15:29:21 2002
-+++ cliplibs/clip-gd/gd/configure	Sat Sep 28 03:03:27 2002
+--- cliplibs/clip-gd/gd/configure.orig	Wed Oct 29 15:23:06 2003
++++ cliplibs/clip-gd/gd/configure	Mon Apr 19 22:26:37 2004
 @@ -23,7 +23,9 @@
  osname=UNIX
  stdlibpath=/usr/local/lib
@@ -29,33 +27,7 @@ $FreeBSD$
  
  if [ -f $stdlibpath/libpng${DLLSUFF} ]
  then
-@@ -108,18 +111,17 @@
- fi
- 
- #??????????
--if [ -f $stdlibpath/freetype${DLLSUFF} ]
-+if [ -f $stdlibpath/libfreetype${DLLSUFF} ]
- then
- 	echo "LIBFREETYPE='-lfreetype'" >&3
- else
- 	echo 'Warning: libfreetype not installed'
--fi
--
--if [ -f $stdlibpath/libttf${DLLSUFF} ]
--then
--	echo "LIBTTF='-lttf'" >&3
--else
--	echo 'Warning: libttf not installed'
-+	if [ -f $stdlibpath/libttf${DLLSUFF} ]
-+	then
-+		echo "LIBTTF='-lttf'" >&3
-+	else
-+		echo 'Warning: libttf not installed'
-+	fi
- fi
- 
- if [ -f /usr/X11R6/include/X11/xpm.h -o -f /usr/include/X11/xpm.h ]
-@@ -178,18 +180,17 @@
+@@ -178,18 +181,17 @@
  	echo '#define HAVE_LIBXPM'  >&3
  fi
  
