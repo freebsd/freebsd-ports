@@ -114,6 +114,7 @@
     SUBDIR += tripwire
     SUBDIR += tripwire-131
     SUBDIR += uvscan-dat
+    SUBDIR += vlock
     SUBDIR += vscan
     SUBDIR += whisker
     SUBDIR += xinetd

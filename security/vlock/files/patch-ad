@@ -1,0 +1,46 @@
+--- vlock.c.orig	Sun Oct  8 18:03:19 2000
++++ vlock.c		Sun Oct  8 18:03:24 2000
+@@ -14,12 +14,10 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+-#include <getopt.h>
+ #include <termios.h>
+ #include <signal.h>
+-#include <sys/vt.h>
+-#include <sys/kd.h>
+ #include <sys/ioctl.h>
++#include <sys/consio.h>
+ #include "vlock.h"
+ #include "version.h"
+ 
+@@ -37,20 +35,12 @@
+ 
+ int main(int argc, char **argv) {
+ 
+-  static struct option long_options[] = { /* For parsing long arguments */
+-    {"current", 0, &o_lock_all, 0},
+-    {"all", 0, &o_lock_all, 1},
+-    {"version", no_argument, 0, O_VERSION},
+-    {"help", no_argument, 0, O_HELP},
+-    {0, 0, 0, 0},
+-  };
+   int option_index; /* Unused */
+   int c;
+   struct vt_mode vtm;
+ 
+   /* First we parse all the command line arguments */
+-  while ((c = getopt_long(argc, argv, "acvh",
+-			  long_options, &option_index)) != -1) {
++  while ((c = getopt(argc, argv, "acvh")) != -1) {
+     switch(c) {
+     case 'c':
+       o_lock_all = 0;
+@@ -107,6 +97,7 @@
+     vtm.mode = VT_PROCESS;
+     vtm.relsig = SIGUSR1; /* handled by release_vt() */
+     vtm.acqsig = SIGUSR2; /* handled by acquire_vt() */
++    vtm.frsig = SIGUSR1;  /* needed by FreeBSD */
+     ioctl(vfd, VT_SETMODE, &vtm);
+   }
+ 

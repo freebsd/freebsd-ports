@@ -1,0 +1,11 @@
+--- input.c.orig	Wed Jan 13 16:19:14 1999
++++ input.c	Sun Oct 22 08:22:42 2000
+@@ -291,7 +291,7 @@
+   setuid(getuid());
+   setgid(getgid());
+ 
+-  sprintf(prompt, "%s's password: ", username);
++  snprintf(prompt, 99, "%s's password: ", username);
+ #endif /* !USE_PAM */
+ }
+ 

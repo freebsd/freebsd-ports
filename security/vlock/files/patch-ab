@@ -1,0 +1,11 @@
+--- signals.c.orig	Sun Oct  8 18:03:19 2000
++++ signals.c		Sun Oct  8 18:03:24 2000
+@@ -16,7 +16,7 @@
+ #include <signal.h>
+ #include <sys/wait.h>
+ #include <sys/ioctl.h>
+-#include <sys/vt.h>
++#include <sys/consio.h>
+ #include "vlock.h"
+ 
+ 
