@@ -41,6 +41,12 @@ PLIST_SUB=	WITH_OPENAL="@comment "
 PLIST_SUB=	WITH_OPENAL=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not build on ia64 or sparc64"
+.endif
+
 .ifndef (WITH_OPENAL)
 pre-everything::
 	@${ECHO_CMD} ""
@@ -66,4 +72,4 @@ post-install:
 	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%DOCSDIR%%|${DOCSDIR}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
