@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 # needs library and private header, but not during runtime
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/editors/sam:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

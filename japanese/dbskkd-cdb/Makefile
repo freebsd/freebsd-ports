@@ -43,7 +43,7 @@ post-install:
 pre-build::
 	${CP} ${LOCALBASE}/share/skk/${SKKJISYO} ${WRKSRC}
 .else
-BUILD_DEPENDS+=	/nonexistent:${.CURDIR}/../../japanese/skk-jisyo:extract
+BUILD_DEPENDS+=	${NONEXISTENT}:${.CURDIR}/../../japanese/skk-jisyo:extract
 pre-build::
 	${CP} ${WRKDIR}/../../../japanese/skk-jisyo/work/*/jisyo/${SKKJISYO} ${WRKSRC}
 .endif

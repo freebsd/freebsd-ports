@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_0.9a3_m09
 
 MAINTAINER=	roger@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

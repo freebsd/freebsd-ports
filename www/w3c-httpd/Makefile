@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/net/wais:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/wais:build
 
 NO_WRKSUBDIR=	yes
 WWW_ROOT?=	${PREFIX}/www

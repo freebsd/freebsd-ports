@@ -33,8 +33,8 @@ MAINTAINER=	cjh@FreeBSD.org
 RUN_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts:${PORTSDIR}/print/gsfonts \
 		$(LOCALBASE)/share/ghostscript/fonts/CMap:${PORTSDIR}/korean/munhwafonts-cid \
 		$(X11BASE)/lib/X11/fonts/TrueType/gulim.ttf:${PORTSDIR}/korean/baekmukfonts-ttf
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
-		/nonexistent:${PORTSDIR}/graphics/png:extract
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
+		${NONEXISTENT}:${PORTSDIR}/graphics/png:extract
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 USE_XLIB=	YES

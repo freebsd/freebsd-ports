@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	nonexistent:${PORTSDIR}/graphics/povray31:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/povray31:configure \
 		aimk:${PORTSDIR}/net/pvm
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm

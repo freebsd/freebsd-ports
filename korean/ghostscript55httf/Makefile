@@ -21,8 +21,8 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
-		/nonexistent:${PORTSDIR}/graphics/png:extract \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
+		${NONEXISTENT}:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	$(X11BASE)/lib/X11/fonts/TrueType/gulim.ttf:${PORTSDIR}/korean/baekmukfonts-ttf

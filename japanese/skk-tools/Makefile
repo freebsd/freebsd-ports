@@ -13,7 +13,7 @@ DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${SKK_MASTERDIR}:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${SKK_MASTERDIR}:configure
 
 SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
 WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}

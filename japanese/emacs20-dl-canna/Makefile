@@ -17,7 +17,7 @@ MAINTAINER=	shige@FreeBSD.org
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 # Building this port requires emacs-dl source tree: ${EMACSDL_DIR}:configure
 BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
-		/nonexistent:${EMACSDL_DIR}:configure \
+		${NONEXISTENT}:${EMACSDL_DIR}:configure \
 		${APEL_DEPENDS}:${PORTSDIR}/editors/apel-emacs20
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 		${APEL_DEPENDS}:${PORTSDIR}/editors/apel-emacs20
