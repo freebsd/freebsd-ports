@@ -5938,6 +5938,7 @@ sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
 savecore	src/sbin/savecore
 sawfish		ports/x11-wm/sawfish
+saxon		ports/textproc/saxon
 sbagen		ports/audio/sbagen
 sbin		src/sbin
 sbin_atm	src/sbin/atm
