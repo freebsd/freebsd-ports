@@ -1,0 +1,22 @@
+--- Makefile.orig	Tue Dec 24 18:58:26 2002
++++ Makefile	Mon Mar 31 22:28:45 2003
+@@ -15,7 +15,7 @@
+ # Vars
+ #
+ 
+-SDLVERSION=$(shell sdl-config --version 2>/dev/null)
++SDLVERSION=$(shell sdl11-config --version 2>/dev/null)
+ ROOTDIR=$(shell pwd)
+ TARGET=$(shell uname -s | tr [a-z] [A-Z])
+ 
+@@ -71,8 +71,8 @@
+ all:
+ 	@echo "ROOTDIR=$(ROOTDIR)" > Makefile.global
+ 	@echo "XOBJ=$(XOBJ)" >> Makefile.global
+-	@echo "CFLAGS=-g -ansi -pedantic -Wall -W -O2 -I $(ROOTDIR)/include $(shell sdl-config --cflags)" >> Makefile.global
+-	@echo "LDFLAGS=-lz $(shell sdl-config --libs)" >> Makefile.global
++	@echo "CFLAGS=-g -ansi -pedantic -Wall -W -O2 -I $(ROOTDIR)/include $(shell sdl11-config --cflags)" >> Makefile.global
++	@echo "LDFLAGS=-lz $(shell sdl11-config --libs)" >> Makefile.global
+ 	@echo "CC=gcc" >> Makefile.global
+ 	@echo "CPP=gcc -E" >> Makefile.global
+ 	$(MAKE) -C src all

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xrick
-PORTVERSION=	010808
+PORTVERSION=	021212
 CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz
@@ -14,18 +14,23 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	drs@rucus.ru.ac.za
 COMMENT=	A clone of Rick Dangerous
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/xrick
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	config
+NO_PACKAGE=	Copyright status of the graphics and sounds is uncertain
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN6=		xrick.6
 MANCOMPRESSED=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|sysarg_args_data = NULL|sysarg_args_data = "${PREFIX}/share/xrick/data.zip"|' ${WRKSRC}/src/sysarg.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrick ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xrick.6.gz ${PREFIX}/man/man6/xrick.6.gz
+	${MKDIR} ${PREFIX}/share/xrick
+	${INSTALL_DATA} ${WRKSRC}/data.zip ${PREFIX}/share/xrick/data.zip
 
 .include <bsd.port.mk>
