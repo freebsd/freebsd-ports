@@ -8,7 +8,7 @@
 
 PORTNAME=	stow
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,9 @@ COMMENT=	GNU version of Carnegie Mellon's "Depot" program
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+
+PLIST_FILES=	bin/stow
+INFO=		stow
 
 INSTALL_INFO?=	install-info
 
