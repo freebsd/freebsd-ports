@@ -1,0 +1,17 @@
+======================================================================
+
+To initialize the database, you should run initdb as the "pgsql" user
+(if you want to use your locale for collation, edit ~pgsql/.profile
+and set the locale to your preference first).
+
+Example:
+
+  su -l pgsql -c initdb
+
+You can then start PostgreSQL by running:
+
+  /usr/local/etc/rc.d/010.pgsql.sh start
+
+For postmaster settings, see ~pgsql/data/postgresql.conf
+For more tips, read ~pgsql/post-install-notes
+======================================================================

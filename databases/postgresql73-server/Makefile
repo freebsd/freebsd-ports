@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.3
-PORTREVISION?=	1
+PORTVERSION?=	7.3.4
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -66,10 +65,12 @@ CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
 .endif
 
 .if defined(WITHOUT_SERVER)
-PKGMESSAGE=	${PKGDIR}/pkg-message.client
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
+PKGMSG=		""
 .else
+PKGMESSAGE=	${FILESDIR}/pkg-message.server
+PKGMSG=		${PKGMESSAGE}
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+= install-all-headers
 MAKEFILE=	GNUmakefile
@@ -139,15 +140,16 @@ pre-everything::
 	@${ECHO} "				still be used if already installed)"
 	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
-	@${ECHO} "	WITHOUT_SERVER		Installs the headers and libraries for"
-	@${ECHO} "				PostgreSQL clients"
+	@${ECHO} "	WITHOUT_SERVER		Don't install the server,"
+	@${ECHO} "                              only install binaries, headers and libs"
+	@${ECHO} "				for PostgreSQL clients"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
 	@${ECHO} "	WITH_TESTS		Allows the use of a \"check\" target"
-	@${ECHO} "				building the module"
+	@${ECHO} "				to run regression tests"
 	@${ECHO} "	WITH_LIBC_R		Link the binaries with libc_r."
 	@${ECHO} "				Needed to run plpython"
 	@${ECHO} ""
@@ -183,7 +185,7 @@ pre-install:
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
-	${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
+	${CAT} ${FILESDIR}/post-install-notes ${PKGMSG} |\
 		${SED} "s|/usr/local|${PREFIX}|g" |\
 		tee ${PREFIX}/share/postgresql/post-install-notes
 .if !defined(WITHOUT_SERVER)
