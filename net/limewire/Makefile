@@ -1,0 +1,39 @@
+# New ports collection makefile for:	limewire
+# Date created:				Fri Feb 22 00:28:41 CST 2002
+# Whom:					Kyle Martin <mkm@ieee.org> et al
+#
+# $FreeBSD$
+#
+
+PORTNAME=	limewire
+PORTVERSION=	2.4
+CATEGORIES=	net java
+MASTER_SITES=	http://www3.limewire.com/download/
+DISTNAME=	LimeWireLinux
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	mkm@ieee.org
+
+USE_JAVA=	1.3+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+NO_CDROM=	"License does not allow"
+
+JAR_DIR=	${PREFIX}/share/java/jar/limewire
+PLIST_SUB=	JAR_DIR="${JAR_DIR:S/${PREFIX}//}"
+
+post-patch:
+	@${SED} 's|%%JAR_DIR%%|${JAR_DIR}|; s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/runLime.sh > ${WRKSRC}/runLime.sh.sed
+
+do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/runLime.sh.sed ${PREFIX}/bin/limewire
+	@${MKDIR} ${JAR_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/MessagesBundle.properties \
+		${JAR_DIR}
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/license_agreement.txt ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

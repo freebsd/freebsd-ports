@@ -244,6 +244,7 @@
     SUBDIR += licq-console
     SUBDIR += licq-devel
     SUBDIR += licq-qt-gui
+    SUBDIR += limewire
     SUBDIR += linc
     SUBDIR += linpopup
     SUBDIR += linux-edonkey-gui-gtk
