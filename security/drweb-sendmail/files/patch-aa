@@ -1,16 +1,15 @@
 --- configure.orig	Tue Oct 16 19:28:21 2001
-+++ configure	Sun Oct 21 00:00:54 2001
-@@ -138,6 +138,9 @@
-     if [ $MILTER_VER = "STD" ] ; then
++++ configure	Wed Feb 20 23:50:34 2002
+@@ -135,7 +135,7 @@
+         MILTER_VER="FFR"
+     fi
+     
+-    if [ $MILTER_VER = "STD" ] ; then
++    if [ $MILTER_VER = "xSTD" ] ; then
          SM_LIB="libsm"
          SM_LIB_CMD="-lsm"
-+    elif [ $OS = "FreeBSD_DW" ] ; then
-+        SM_LIB="libsmutil"
-+        SM_LIB_CMD="-lsmutil"
      elif [ $OS = "Linux_DW" ] ; then
-         SM_LIB="libsmutil"
-         SM_LIB_CMD="-lsmutil"
-@@ -173,40 +176,13 @@
+@@ -173,40 +173,15 @@
      rm -f configure.cache
      echo $n "${SM_DIR}${c}" >> configure.cache
      
@@ -43,9 +42,12 @@
 -    fi
      rm -fr include/libmilter
      rm -f lib/libmilter.a           
-     ln -s "$SM_DIR/include/libmilter" include/libmilter
+-    ln -s "$SM_DIR/include/libmilter" include/libmilter
 -    ln -s "$SM_DIR/$OBJ_DIR/libmilter/libmilter.a" lib/libmilter.a           
-+    ln -s "../libmilter/libmilter.a" lib/libmilter.a
++    if [ ! -f /usr/lib/libmilter.a ] ; then
++	ln -s "$SM_DIR/include/libmilter" include/libmilter
++	ln -s "../libmilter/libmilter.a" lib/libmilter.a
++    fi
      if [  "x$SM_LIB" != "x" ] ; then
          rm -f "lib/$SM_LIB.a"
 -        ln -s "$SM_DIR/$OBJ_DIR/$SM_LIB/$SM_LIB.a" "lib/$SM_LIB.a"

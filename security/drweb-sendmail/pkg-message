@@ -1,5 +1,7 @@
 This software requires Sendmail compiled with mail filter support.
-So be sure you have the following in your /etc/make.conf:
+
+If you have Sendmail less then 8.12.2, be sure you have the following
+in your /etc/make.conf:
 
 SENDMAIL_CFLAGS+= -D_FFR_MILTER=1
 
