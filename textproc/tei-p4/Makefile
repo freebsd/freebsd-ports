@@ -11,7 +11,8 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/P4X/DTD/
 DISTNAME=	dtd
 
-MAINTAINE=	henrik.motakef@web.de
+MAINTAINER=	henrik.motakef@web.de
+COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
