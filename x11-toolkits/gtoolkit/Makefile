@@ -33,6 +33,7 @@ post-patch:
 	${SED} -e 's#gtk-config#gtk12-config#g' \
 		${CONFIGURE_WRKSRC}/configure.sed \
 		> ${CONFIGURE_WRKSRC}/configure
+	${CHMOD} +x ${CONFIGURE_WRKSRC}/configure
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
