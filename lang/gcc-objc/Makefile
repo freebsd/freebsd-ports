@@ -9,36 +9,39 @@ CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
 MAINTAINER=	dinoex@FreeBSD.org
-.if defined(GNUSTEP_WITH_GCC32)
-COMMENT=	GNU Compiler Collection 3.2.3 with threads and shared libs
-.else
-COMMENT=	GNU Compiler Collection 3.3 with threads and shared libs
-.endif
+COMMENT=	GNU Compiler Collection ${COMMENT2} with threads and shared libs
 
 WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
 WITHOUT_LIBJAVA=	yes
-.if defined(GNUSTEP_WITH_GCC32)
-MASTERDIR?=		${.CURDIR}/../gcc32
-.else
-MASTERDIR?=		${.CURDIR}/../gcc33
-.endif
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
+.if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
+GNUSTEP_WITH_GCC33=	yes
+.endif
+
 .if defined(GNUSTEP_WITH_GCC32)
+MASTERDIR?=		${.CURDIR}/../gcc32
 CONFLICTS?=		gcc-3.2*
-.else
+COMMENT2=		3.2.x
+.endif
+.if defined(GNUSTEP_WITH_GCC33)
+MASTERDIR?=		${.CURDIR}/../gcc33
 CONFLICTS?=		gcc-3.3*
+COMMENT2=		3.3.x
+.endif
+.if defined(GNUSTEP_WITH_GCC34)
+MASTERDIR?=		${.CURDIR}/../gcc34
+CONFLICTS?=		gcc-3.4*
+COMMENT2=		3.4.x
 .endif
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
 
-.include "${MASTERDIR}/Makefile"
+MAKE_ENV+=		LD_LIBRARY_PATH=.:${WRKSRC}/gcc
 
-.if ${OSVERSION} >= 502122
-BROKEN=		new ld: linker refuses to find shared libs
-.endif
+.include "${MASTERDIR}/Makefile"
