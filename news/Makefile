@@ -30,6 +30,7 @@
     SUBDIR += p5-News-Newsrc
     SUBDIR += pan
     SUBDIR += pgpmoose
+    SUBDIR += PicMonger
     SUBDIR += plor
     SUBDIR += rkive
     SUBDIR += slnr
