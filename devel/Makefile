@@ -245,6 +245,7 @@
     SUBDIR += fpp
     SUBDIR += freebase
     SUBDIR += freelibiberty
+    SUBDIR += freeride
     SUBDIR += freescope
     SUBDIR += frink
     SUBDIR += fsmgenerator
