@@ -3,7 +3,7 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1999/05/31 05:08:06 steve Exp $
+# $Id: Makefile,v 1.9 1999/06/05 15:31:30 andreas Exp $
 #
 
 DISTNAME=		star-1.2
@@ -14,19 +14,20 @@ MASTER_SITE_SUBDIR=	utils/compress
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-NO_PACKAGE=	ignores cflags
+#NO_PACKAGE=	ignores cflags
 USE_GMAKE=	yes
-MAKE_ENV=	MAKEPROG=gmake
+MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}
 MAN1=		star.1
 
 .if ${MACHINE_ARCH} != "i386"
 post-extract:
-	@${LN} -sf i386-freebsd-cc.rul ${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
+	@${LN} -sf i386-freebsd-cc.rul \
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-cc/star ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/star ${PREFIX}/bin/ustar
+	${INSTALL_PROGRAM} ${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-cc/star \
+		${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
