@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.44 1998/02/16 13:16:43 asami Exp $
+# $Id: Makefile,v 1.45 1998/05/09 18:28:50 obrien Exp $
 #
 
 DISTNAME=	ncftp-3.0beta10-src
@@ -19,6 +19,11 @@ GNU_CONFIGURE=	yes
 MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
 MAN3=		Strn.3
 NO_LATEST_LINK=	yes
+
+post-patch:
+	@${MV} ${WRKSRC}/ncftp/pref.h ${WRKSRC}/ncftp/pref.h.in
+	@${SED} -e 's:/etc/ncftp.firewall:${PREFIX}/etc/ncftp.firewall:' \
+		${WRKSRC}/ncftp/pref.h.in > ${WRKSRC}/ncftp/pref.h
 
 pre-build:
 	cd ${WRKSRC}/Strn ; make so
