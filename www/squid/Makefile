@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -99,7 +99,10 @@ PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
 		squid-2.5.STABLE7-close_other.patch \
 		squid-2.5.STABLE7-fakeauth_auth.patch \
 		squid-2.5.STABLE7-gopher_html_parsing.patch \
-		squid-2.5.STABLE7-wccp_denial_of_service.patch
+		squid-2.5.STABLE7-wccp_denial_of_service.patch \
+		squid-2.5.STABLE7-dns_memleak.patch \
+		squid-2.5.STABLE7-fqdn_truncated.patch \
+		squid-2.5.STABLE7-ldap_spaces.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
