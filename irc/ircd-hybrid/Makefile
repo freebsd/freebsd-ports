@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	7.0
-PORTREVISION=	1
+PORTVERSION=	7.0.2
 CATEGORIES=	irc ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ircd-hybrid
 EXTRACT_SUFX=	.tgz
 
@@ -45,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-kqueue
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-openssl=/usr/include/openssl
+CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLINC}/openssl
 .endif
 
 .if defined(WITH_IPV6)
@@ -75,13 +74,13 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 CONFIGURE_ARGS+=	--with-maxclients=${MAXCLIENTS}
 .endif
 
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid
-CONFIGURE_ARGS+=	--moduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules
-CONFIGURE_ARGS+=	--automoduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules/autoload
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
-CONFIGURE_ARGS+=	--uhelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/users
-CONFIGURE_ARGS+=	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers
-CONFIGURE_ARGS+=	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
+	--moduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules \
+	--automoduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules/autoload \
+	--mandir=${MANPREFIX}/man \
+	--uhelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/users \
+	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
+	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#man8#man/man8#" ${WRKSRC}/doc/Makefile.in
@@ -90,12 +89,13 @@ post-patch:
 	@${MV} ${WRKSRC}/doc/dline.conf ${WRKSRC}/doc/dline.conf.sample
 
 pre-install:
+	${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/
 
 post-install:
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/ircd-hybrid.sh > ${WRKDIR}/ircd-hybrid.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/ircd-hybrid.sh ${LOCALBASE}/etc/rc.d
-	@${SED} -e "s#/usr/local/#${LOCALBASE}/#" ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKDIR}/ircd-hybrid.sh ${PREFIX}/etc/rc.d
+	@${SED} -e "s#/usr/local/#${PREFIX}/#" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
