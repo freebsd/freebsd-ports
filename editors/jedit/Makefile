@@ -36,7 +36,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-FORBIDDEN=	hang
+IGNORE=	hang
 .endif
 
 .include <bsd.port.mk>

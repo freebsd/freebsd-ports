@@ -14,7 +14,7 @@ MAINTAINER=     yushunwa@isi.edu
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 320000
-FORBIDDEN=	"X-Bone does not support FreeBSD prior to 3.2"
+BROKEN=	"X-Bone does not support FreeBSD prior to 3.2"
 .endif
 
 USE_GMAKE=	yes

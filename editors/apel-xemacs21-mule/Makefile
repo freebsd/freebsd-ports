@@ -38,7 +38,7 @@ XEMACS_PKG_CONTENTS=	pkginfo/${MANIFEST} lisp/${XEMACS_PKGNAME}
 APELDOCDIR=	${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-FORBIDDEN=	hang
+IGNORE=	hang
 .endif
 
 xemacs-package: install

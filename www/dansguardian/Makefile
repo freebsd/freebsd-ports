@@ -42,7 +42,7 @@ NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
 .include <bsd.port.pre.mk>
 
 .if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-FORBIDDEN="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
+IGNORE=	"Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
 .endif
 
 post-install:

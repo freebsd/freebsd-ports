@@ -19,7 +19,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-FORBIDDEN=	indefinite hang
+IGNORE=	indefinite hang
 .endif
 
 USE_GMAKE=	yes

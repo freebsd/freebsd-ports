@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PREFIX}/bin/psbook:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 LANGUAGE?=	English
 
 .if (${LANGUAGE} == "English")
-FORBIDDEN=	Broken unless someone makes it work with tcl/tk 8.X
+IGNORE=	Broken unless someone makes it work with tcl/tk 8.X
 ALL_TARGET=	filters
 #LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
 #RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
@@ -41,7 +41,7 @@ DOCDIRNAME=	Doc.ja
 DOCEXT=		.euc
 PAPERSIZE=	a4
 .else
-FORBIDDEN=	Broken unless someone makes it work with tcl/tk 8.X
+IGNORE=	Broken unless someone makes it work with tcl/tk 8.X
 PAPERSIZE=	a4
 .endif
 MAKE_ENV=	LANGUAGE=${LANGUAGE} LANGEXT=${LANGEXT}
