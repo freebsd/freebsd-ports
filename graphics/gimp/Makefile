@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.2/v${PORTVERSION}/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/v1.2/v${PORTVERSION}/ \
