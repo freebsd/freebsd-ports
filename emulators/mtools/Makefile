@@ -7,7 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	3.9.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
@@ -26,7 +26,7 @@ MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
 MAN5=		mtools.5
 
 post-patch:
-	@cd ${WRKSRC}; for f in config.c mtools.5 mtools.texi; do \
+	@cd ${WRKSRC}; for f in config.c mformat.c mtools.5 mtools.texi; do \
 	 ${MV} $$f $$f.orig; \
 	 ${SED} -e s:/etc/mtools.conf:${PREFIX}/etc/mtools.conf: \
 	 < $$f.orig > $$f; done
