@@ -1,17 +1,21 @@
 bin/mlterm
+bin/mlclient
+bin/w3mmlconfig
 etc/mlterm/aafont
 etc/mlterm/color
 etc/mlterm/font
 etc/mlterm/key
 etc/mlterm/main
 etc/mlterm/termcap
+etc/mlterm/taafont
+etc/mlterm/tfont
 etc/mlterm/vaafont
 etc/mlterm/vfont
 etc/mlterm/xim
 lib/libkik.a
 lib/libkik.la
 lib/libkik.so
-lib/libkik.so.3
+lib/libkik.so.4
 lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
@@ -25,7 +29,10 @@ lib/mlterm/libsample2.la
 lib/mlterm/libsample2.so
 lib/mlterm/libsample2.so.0
 libexec/mlconfig
+libexec/w3mmlconfig/mlconfig-data.pl
+libexec/w3mmlconfig/mlconfig.cgi
 %%PORTDOCS%%/share/doc/ja/mlterm/README.ja
 @dirrm etc/mlterm
 @dirrm lib/mlterm
+@dirrm libexec/w3mmlconfig
 %%PORTDOCS%%@dirrm share/doc/ja/mlterm
