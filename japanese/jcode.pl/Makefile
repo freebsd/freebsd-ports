@@ -14,6 +14,7 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	Perl library for Japanese character code conversion
 
+USE_PERL5_RUN=		yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 EXTRACT_CMD=		${CP}
