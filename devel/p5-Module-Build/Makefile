@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.26
+PORTVERSION=	0.26.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module/KWILLIAMS
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Build and install Perl modules
@@ -44,6 +45,15 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::os2.3
 
 MAN1=		config_data.1
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes INSTALL README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
