@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.30 1998/02/11 17:24:41 jseger Exp $
+# $Id: Makefile,v 1.31 1998/02/12 14:26:52 jseger Exp $
 #
 
 DISTNAME=	ImageMagick-4.0.1
@@ -15,8 +15,7 @@ MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
 		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/ \
-		http://hpux.csc.liv.ac.uk/hppd/hpux/X11/Viewers/ImageMagick-4.0/
+		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
 
 MAINTAINER=	jseger@FreeBSD.org
 
