@@ -1,0 +1,6 @@
+share/java/classes/dtdinst.jar
+share/xml/dtdinst/dtdinst2rng.xsl
+@dirrm share/xml/dtdinst
+share/doc/dtdinst/copying.txt
+share/doc/dtdinst/index.html
+@dirrm share/doc/dtdinst
