@@ -554,6 +554,7 @@
     SUBDIR += p5-DateTime-Event-NameDay
     SUBDIR += p5-DateTime-Event-Recurrence
     SUBDIR += p5-DateTime-Event-Sunrise
+    SUBDIR += p5-DateTime-Format-Baby
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Precise
     SUBDIR += p5-DateTime-Set
