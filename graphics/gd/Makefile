@@ -12,6 +12,7 @@ CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
+PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
@@ -29,6 +30,7 @@ SCRIPTDIR=	${FILESDIR}
 
 .if defined(WITH_XPM)
 .if defined(WITHOUT_X11)
+NOX11_SUFFIX?=	-nox11
 LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM -DXPM_NOX
 LDFLAGS+=	-L${X11BASE}/lib -lXpm
