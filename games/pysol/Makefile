@@ -3,22 +3,21 @@
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/03/11 11:11:05 tg Exp $
+# $Id: Makefile,v 1.10 1999/03/12 09:03:27 tg Exp $
 #
 
-DISTNAME=       pysol-2.10
+DISTNAME=       pysol-2.11
 CATEGORIES=	games
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/ \
-		http://www.freebsd.org/~tg/
+MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
 
 MAINTAINER=	tg@FreeBSD.ORG
 
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
-CARDSETS=	pysol-cardsets-2.02
+NO_BUILD=	yes
 
-do-build:
+CARDSETS=	pysol-cardsets-2.11
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pysol.py ${PREFIX}/bin/pysol
