@@ -22,6 +22,7 @@ LDATADIR=	${LPEARDIR}/data/${PORTNAME}
 LDOCSDIR=	share/doc/pear/${PORTNAME}
 LEXAMPLESDIR=	share/examples/pear/${PORTNAME}
 LSQLSDIR=	${LPEARDIR}/sql/${PORTNAME}
+LSCRIPTSDIR=	bin
 LTESTSDIR=	${LPEARDIR}/tests/${PORTNAME}
 PEARDIR=	${PHP_BASE}/${LPEARDIR}
 PKGREGDIR=	${PHP_BASE}/${LPKGREGDIR}
@@ -29,6 +30,7 @@ DATADIR=	${PHP_BASE}/${LDATADIR}
 DOCSDIR=	${PHP_BASE}/${LDOCSDIR}
 EXAMPLESDIR=	${PHP_BASE}/${LEXAMPLESDIR}
 SQLSDIR=	${PHP_BASE}/${LSQLSDIR}
+SCRIPTFILESDIR=	${LOCALBASE}/bin
 TESTSDIR=	${PHP_BASE}/${LTESTSDIR}
 .if defined(CATEGORY) && !empty(CATEGORY)
 LINSTDIR=	${LPEARDIR}/${CATEGORY}
@@ -41,7 +43,8 @@ INSTDIR=	${PHP_BASE}/${LINSTDIR}
 PLIST=		${WRKDIR}/PLIST
 .endif
 PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
-		TESTSDIR=${LTESTSDIR} INSTDIR=${LINSTDIR} SQLSDIR=${LSQLSDIR}
+		TESTSDIR=${LTESTSDIR} INSTDIR=${LINSTDIR} SQLSDIR=${LSQLSDIR} \
+		SCRIPTFILESDIR=${LCRIPTSDIR}
 
 PKGINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-install
 PKGDEINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-deinstall
@@ -51,6 +54,7 @@ DATA?=
 DOCS?=
 EXAMPLES?=
 SQLS?=
+SCRIPTFILES?=
 TESTS?=
 _DATADIR?=	data
 _DOCSDIR?=	docs
@@ -61,7 +65,7 @@ _TESTSDIR?=	tests
 # this is an easy way to eliminate duplicate entries in a variable :)
 # if someone knows how to achieve the result without this terrible
 # hack, please tell me!
-.for v in FILES DOCS TESTS EXAMPLES SQLS DATA
+.for v in FILES DOCS TESTS EXAMPLES SQLS SCRIPTFILES DATA
 X${v}DIRS=	${${v}:M*/*:C;/[^/]+$;;}
 . for XD in ${X${v}DIRS}
 ALREADYTHERE=	0
@@ -99,6 +103,7 @@ do-generate-plist:
 	for file in ${TESTS}; do echo "${LTESTSDIR}/$${file}"; done; \
 	for file in ${DATA}; do echo "${LDATADIR}/$${file}"; done; \
 	for file in ${SQLS}; do echo "${LSQLSDIR}/$${file}"; done; \
+	for file in ${SCRIPTFILES}; do echo "${LSCRIPTSDIR}/$${file}"; done; \
 	for file in ${DOCS}; do echo "%%PORTDOCS%%${LDOCSDIR}/$${file}"; done; \
 	for file in ${EXAMPLES}; do echo "%%PORTDOCS%%${LEXAMPLESDIR}/$${file}"; done; \
 	echo "${LPKGREGDIR}/package.xml"; \
@@ -128,10 +133,11 @@ do-generate-plist:
 	echo "@unexec rmdir %D/${LEXAMPLESDIR:H} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LTESTSDIR:H} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LDATADIR:H} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LSCRIPTSDIR:H} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LSQLSDIR:H} 2> /dev/null || true") > ${PLIST}
 . endif
 
-. for t in files docs tests sqls examples data
+. for t in files docs tests sqls scriptfiles examples data
 .  if !target(do-install-${t}-msg)
 do-install-${t}-msg: .USE
 .  endif
@@ -139,7 +145,7 @@ do-install-${t}-msg: .USE
 
 pre-install: 	do-generate-plist
 do-install: 	do-install-files do-install-docs do-install-tests do-install-sqls \
-		do-install-examples do-install-data
+		do-install-scriptfiles do-install-examples do-install-data
 
 do-install-files: do-install-files-msg
 	@${MKDIR} ${INSTDIR}
@@ -195,6 +201,17 @@ do-install-sqls: do-install-sqls-msg
 .  endfor
 .  for file in ${SQLS}
 	@${INSTALL_DATA} ${WRKSRC}/${_SQLSDIR}/${file} ${SQLSDIR}/${file}
+.  endfor
+. endif
+
+do-install-scriptfiles: do-install-scriptfiles-msg
+. if !empty(SCRIPTFILES)
+	@${ECHO_MSG} "===> Installing scripts in ${SCRIPTFILESDIR}."
+.  for file in ${SCRIPTFILES}
+	@${MV} ${WRKSRC}/pear-${file} ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@php_bin@|${SCRIPTFILESDIR}/php|g" ${WRKSRC}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
+	@${CHMOD} 555 ${SCRIPTFILESDIR}/${file}
 .  endfor
 . endif
 
