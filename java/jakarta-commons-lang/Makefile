@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	commons-lang
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
 PKGNAMEPREFIX=	jakarta-
@@ -39,7 +38,7 @@ do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}.jar..."
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
 	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/${DESTJARFILE}
 	@${ECHO} " [ DONE ]"
 
