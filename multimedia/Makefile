@@ -58,5 +58,6 @@
     SUBDIR += xmms-avi
     SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmps-win32-plugin
+    SUBDIR += xvid
 
 .include <bsd.port.subdir.mk>
