@@ -10383,6 +10383,7 @@ slush		ports/security/slush
 sma		ports/mail/sma
 smacx		ports/games/smacx
 smail		ports/mail/smail
+smake		ports/devel/smake
 smalltalk	ports/lang/smalltalk
 smartdoc	ports/textproc/smartdoc
 smartdoc-devel	ports/textproc/smartdoc-devel
