@@ -1,0 +1,8 @@
+Sqldjbdns is an authoritative DNS server that pulls its data directly
+from a set of SQL tables.  It supports fully dynamic A, MX, TXT, and PTR
+records, and run-time configurable static NS and SOA records.  It also
+supports schedule expiry and introduction of records.
+
+This package also includes dnscache with PostgreSQL backend.
+
+WWW: http://home.tiscali.cz/~cz210552/sqldns.html
