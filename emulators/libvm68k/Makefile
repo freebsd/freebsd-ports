@@ -16,13 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M68000 virtual machine library
 
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
+		${WRKSRC}/memory.cc ${WRKSRC}/memory_map.cc ${WRKSRC}/version.cc
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
