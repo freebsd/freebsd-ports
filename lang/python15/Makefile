@@ -25,6 +25,10 @@ PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
 NO_LATEST_LINK=	yes
 
+USE_PYTHON=	yes
+PYTHON_VERSION=	python1.5
+PYTHON_NO_DEPENDS=	yes
+
 #
 # The standard setup file
 #
