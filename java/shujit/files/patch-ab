@@ -1,21 +1,19 @@
 
 $FreeBSD$
 
---- GNUmakefile.in.orig	Fri Jan 12 12:26:15 2001
-+++ GNUmakefile.in	Mon Aug 27 11:10:25 2001
-@@ -46,12 +46,11 @@
- GENCONST = gentable.rb
- POSTPROC = postcmpl.rb
+--- GNUmakefile.in.orig	Mon Sep  3 15:45:14 2001
++++ GNUmakefile.in	Mon Sep 10 14:54:24 2001
+@@ -51,11 +51,10 @@
+ INCDIR = -I${J_INCDIR1} -I${J_INCDIR1}/${J_INCDIR_MD} -I${J_INCDIR2} -I${J_INCDIR2}/${J_INCDIR_MD} -I${OBJDIR} -I/usr/local/include
  
--INCDIR = -I${J_INCDIR} -I${J_INCDIR}/genunix -I${J_INCDIR}/linux -I${J_INCDIR}/freebsd -I${J_INCDIR}/netbsd -I/usr/local/include
-+INCDIR = -I${J_INCDIR} -I${J_INCDIR}/genunix -I${J_INCDIR}/linux -I${J_INCDIR}/bsd -I${J_INCDIR}/freebsd -I${J_INCDIR}/netbsd -I${LOCALBASE}/include -I${JAVADIR}/include -I${JAVADIR}/include/bsd
- 
--OPTFLAGS = -O2
- CDEBUGFLAGS =# -g -DDEBUG -DCOMPILE_DEBUG# -DRUNTIME_DEBUG
--NOOPTCFLAGS = -pipe -fPIC ${CDEBUGFLAGS} ${INCDIR}
--CFLAGS = ${OPTFLAGS} ${NOOPTCFLAGS}
-+NOOPTCFLAGS = -fPIC ${CDEBUGFLAGS} ${INCDIR}
-+CFLAGS += ${OPTFLAGS} ${NOOPTCFLAGS}
+ CFLAGS_COMMON =# -g -DCOMPILE_DEBUG# -DRUNTIME_DEBUG
+-COPTFLAGS = -O2
+ CFLAGS_OPT =
+ CFLAGS_DBG = -g -DDEBUG -DJCOV
+-NOOPTCFLAGS = -pipe -fPIC ${CFLAGS_${VARIANT}} ${CFLAGS_COMMON} ${INCDIR}
+-CFLAGS = ${COPTFLAGS} ${NOOPTCFLAGS}
++NOOPTCFLAGS = -fPIC ${CFLAGS_${VARIANT}} ${CFLAGS_COMMON} ${INCDIR}
++CFLAGS += ${COPTFLAGS} ${NOOPTCFLAGS}
  LIBS =
  
  ifeq (${METAVM}, yes)
