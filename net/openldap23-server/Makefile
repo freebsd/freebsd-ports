@@ -40,7 +40,7 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTVERSION=	1
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
 
@@ -52,7 +52,7 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTVERSION=	1
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
@@ -255,7 +255,7 @@ post-patch:
 		${WRKSRC}/servers/slapd/slapd.conf
 
 pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.'`" ]; then \
+	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.' 2>/dev/null`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
