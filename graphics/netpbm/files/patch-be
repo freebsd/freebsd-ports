@@ -1,12 +1,6 @@
---- pgm/Makefile.orig	Fri Aug  4 08:45:21 2000
-+++ pgm/Makefile	Sat Aug  5 00:00:00 2000
-@@ -10,11 +10,13 @@
- INCLUDEPBM = -I$(PBMDIR)
- LIBPBM = libpbm.$(NETPBMLIBSUFFIX)
- 
--INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
-+INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
- 
+--- pgm/Makefile.orig	Sat Sep  2 13:00:08 2000
++++ pgm/Makefile	Fri Dec  8 00:00:00 2000
+@@ -16,18 +16,27 @@
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM)
  
@@ -15,11 +9,48 @@
  PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
  		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
  		pgmnoise pgmnorm pgmoil pgmramp pgmslice pgmtofs pgmtolispm \
-@@ -27,6 +29,7 @@
+ 		pgmtopbm psidtopgm spottopgm sbigtopgm
+-MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm pgmkernel
+-BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
++MATHBINARIES =	pgmcrater pgmedge pgmtexture pgmkernel
++
++NOMERGEBINARIES =	rawtopgm
++
++MERGEBINARIES =	$(PORTBINARIES) $(MATHBINARIES)
++
++BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES)
+ 
+ OBJECTS = $(patsubst %, %.o, $(BINARIES))
+-MERGEBINARIES = $(BINARIES)
++
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
++LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
+@@ -40,7 +49,11 @@
+ .PHONY: all
+ all:		$(BINARIES)
+ .PHONY: merge
+-merge: $(MERGENAME)
++merge:	$(MERGENAME) $(NOMERGEBINARIES)
++
++rawtopgm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  -lm $(LIBSHHOPT) $(CDEBUG)
+ 
+ # LIBRARIES
+ 
+@@ -60,6 +73,9 @@
+ install.man: install.man.common
+ 
+ include $(SRCDIR)/Makefile.common
++
++$(SRCDIR)/shhopt/libshhopt.a:
++	cd ../shhopt; $(MAKE) libshhopt.a
+ 
+ .PHONY: clean
+ clean: clean.common

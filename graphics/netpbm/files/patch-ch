@@ -1,0 +1,43 @@
+--- pnm/pnmscalefixed.c.orig	Sun Nov 19 08:20:07 2000
++++ pnm/pnmscalefixed.c	Fri Dec  8 00:00:00 2000
+@@ -12,6 +12,7 @@
+ 
+ #include <math.h>
+ #include "pnm.h"
++#include "shhopt.h"
+ 
+ /* The pnm library allows us to code this program without branching cases
+    for PGM and PPM, but we do the branch anyway to speed up processing of 
+@@ -58,6 +59,15 @@
+     int xysize, xsize, ysize, pixels;
+     float xscale, yscale, scale_parm;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "xsize",     OPT_UINT,    &xsize,         0);
+     OPTENTRY(0,   "width",     OPT_UINT,    &xsize,         0);
+@@ -68,6 +78,7 @@
+     OPTENTRY(0,   "pixels",    OPT_UINT,    &pixels,        0);
+     OPTENTRY(0,   "xysize",    OPT_FLAG,    &xysize,        0);
+     OPTENTRY(0,   "verbose",   OPT_FLAG,    &cmdline_p->verbose,        0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults. -1 = unspecified */
+     xsize = -1;
+@@ -81,7 +92,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (xsize == 0)

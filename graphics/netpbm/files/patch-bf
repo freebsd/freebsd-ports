@@ -1,5 +1,5 @@
---- pnm/Makefile.orig	Sat Sep  2 13:03:27 2000
-+++ pnm/Makefile	Tue Sep  5 00:00:00 2000
+--- pnm/Makefile.orig	Sun Dec  3 07:48:46 2000
++++ pnm/Makefile	Fri Dec  8 00:00:00 2000
 @@ -48,6 +48,8 @@
    JPEGLD = -L$(JPEGLIB_DIR) -ljpeg
  endif
@@ -27,9 +27,10 @@
  		pnmtoplainpnm pnmtops pnmtorast \
 -		pnmtosgi pnmtosir pnmtoxwd pstopnm \
 -		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
+-MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmscalefixed pnmshear
 +		pnmtosgi pnmtosir pnmtoxwd \
 +		rasttopnm sgitopnm sirtopnm zeisstopnm
- MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
++MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmshear
 +SHHOPTBINARIES =	pamchannel pamcut pamfile pamtopnm pnmcrop pnmcut \
 +			pnmfile pnminterp pnmsplit pstopnm xwdtopnm
  
@@ -38,7 +39,7 @@
  # from building all the other programs.
  
 -NOMERGEBINARIES = 
-+NOMERGEBINARIES = $(SHHOPTBINARIES)
++NOMERGEBINARIES = $(SHHOPTBINARIES) pnmscale pnmscalefixed
  ifneq ($(PNGHDR_DIR),NONE)
    ifneq ($(PNGLIB_DIR),NONE)
      NOMERGEBINARIES += pnmtopng pngtopnm
@@ -51,34 +52,31 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -118,12 +123,12 @@
+@@ -125,6 +130,14 @@
+ 	$(MAKE) -C jbig all
+ 	$(MAKE) -C fiasco all
  
- .PHONY: all
- all:      $(BINARIES)
--	$(MAKE) -C jbig all
--	$(MAKE) -C fiasco all
- PHONY: merge
- merge:    $(MERGENAME) $(NOMERGEBINARIES)
--	$(MAKE) -C jbig all
--	$(MAKE) -C fiasco all
-+
 +$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
 +	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
 +	  $(LIBSHHOPT) $(CDEBUG)
- 
++
++pnmscale pnmscalefixed: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  -lm $(LIBSHHOPT) $(CDEBUG)
++
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
-@@ -134,18 +139,18 @@
- endif
+ TIFFLIB_DEP = $(TIFFDIR)/$(LIBTIFF)
+@@ -135,17 +148,18 @@
  
  # The Tiff library references math functions.
--tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o \
--  $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX) $(LIBOPT)
-+tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(LIBOPT) \
-+	$(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX) $(LIBSHHOPT)
+ tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o \
+-  $(NETPBMLIBS) $(TIFFLIB_DEP) $(LIBOPT)
++  $(NETPBMLIBS) $(TIFFLIB_DEP) $(LIBOPT) $(LIBSHHOPT)
  	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
--	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(CDEBUG)
-+	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(LIBSHHOPT) $(CDEBUG)
+-	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(TIFF_LDFLAGS) $(CDEBUG)
++	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(TIFF_LDFLAGS) \
++	   $(LIBSHHOPT) $(CDEBUG)
  
  pngtopnm pnmtopng: %: %.o $(NETPBMLIBS) $(LIBOPT)
  	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
@@ -88,36 +86,17 @@
 +jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
  	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` $(JPEGLD) \
 -	   $(CDEBUG)
-+	  $(LIBSHHOPT) $(CDEBUG)
++	   $(LIBSHHOPT) $(CDEBUG)
  
  ifeq ($(URTLIB_DIR),$(URTDIR))
  # We're using the internal URT library, so make sure it's built
-@@ -182,25 +187,20 @@
- # backward compatibility: program used to be gemtopbm
- 	rm -f $(INSTALLBINARIES)/gemtopbm
- 	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm
--	$(MAKE) -C jbig install.bin
--	$(MAKE) -C fiasco install.bin
- 
- .PHONY: install.merge
- install.merge: install.merge.common
--	$(MAKE) -C jbig install.bin
--	$(MAKE) -C fiasco install.bin
- 
- .PHONY: install.lib
- install.lib: install.lib.common
- 
- .PHONY: install.man
+@@ -197,6 +211,9 @@
  install.man: install.man.common
--	$(MAKE) -C jbig install.man
--	$(MAKE) -C fiasco install.man
+ 	$(MAKE) -C jbig install.man
+ 	$(MAKE) -C fiasco install.man
 +
-+$(SRCDIR)/shhopt/libshhopt.a:   
++$(SRCDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean
  clean: clean.common
--	$(MAKE) -C jbig clean
--	$(MAKE) -C fiasco clean
- 
- FORCE:

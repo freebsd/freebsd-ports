@@ -1,14 +1,11 @@
---- ppm/eyuvtoppm.c.orig	Fri Mar 31 07:09:32 2000
-+++ ppm/eyuvtoppm.c	Sat Apr  8 12:00:00 2000
-@@ -40,8 +40,11 @@
+--- ppm/eyuvtoppm.c.orig	Wed May 17 05:21:57 2000
++++ ppm/eyuvtoppm.c	Fri Dec  8 00:00:00 2000
+@@ -40,8 +40,6 @@
   * HEADER FILES *
   *==============*/
  #include <stdio.h>
-+#ifdef __STDC__
- #include <stdlib.h>
-+#else
- #include <malloc.h>
-+#endif
+-#include <stdlib.h>
+-#include <malloc.h>
  
- typedef unsigned char uint8;
+ #include "ppm.h"
  

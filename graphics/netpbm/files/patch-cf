@@ -1,0 +1,43 @@
+--- pgm/rawtopgm.c.orig	Sun Dec  3 07:28:43 2000
++++ pgm/rawtopgm.c	Fri Dec  8 00:00:00 2000
+@@ -12,6 +12,7 @@
+ 
+ #include <math.h>
+ #include "pgm.h"
++#include "shhopt.h"
+ 
+ 
+ struct cmdline_info {
+@@ -47,6 +48,15 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "bottomfirst",   OPT_FLAG,   &cmdline_p->bottomfirst,    0);
+     OPTENTRY(0,   "bt",            OPT_FLAG,   &cmdline_p->bottomfirst,    0);
+@@ -57,6 +67,7 @@
+     OPTENTRY(0,   "bpp",           OPT_INT,    &cmdline_p->bpp,            0);
+     OPTENTRY(0,   "littleendian",  OPT_FLAG,   &cmdline_p->littleendian,   0);
+     OPTENTRY(0,   "maxval",        OPT_UINT,   &cmdline_p->maxval,         0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->bottomfirst = FALSE;
+@@ -70,7 +81,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We may have parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0) {

@@ -1,0 +1,14 @@
+--- ppm/hpcdtoppm/hpcdtoppm.h.orig	Mon Jun 13 17:04:45 1994
++++ ppm/hpcdtoppm/hpcdtoppm.h	Fri Dec  8 00:00:00 2000
+@@ -11,10 +11,10 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <sys/types.h>
+ #include <ctype.h>
+ #include "config.h"
++#include "ppm.h"
+ 
+ 
+ 

@@ -1,5 +1,5 @@
 --- pbm/Makefile.orig	Sat Sep  2 12:59:29 2000
-+++ pbm/Makefile	Tue Sep  5 00:00:00 2000
++++ pbm/Makefile	Fri Dec  8 00:00:00 2000
 @@ -5,7 +5,7 @@
  include $(BUILDDIR)/Makefile.config
  
@@ -31,44 +31,15 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -54,26 +55,21 @@
- 
- .PHONY: all
- all:		$(BINARIES)
--	$(MAKE) -C pbmtoppa all
- 
- .PHONY: merge
- merge: $(MERGENAME)
--	$(MAKE) -C pbmtoppa all
- 
- .PHONY: install.bin
- install.bin: install.bin.common
--	$(MAKE) -C pbmtoppa install.bin
- 
- .PHONY: install.merge
- install.merge: install.merge.common
--	$(MAKE) -C pbmtoppa install.bin
- 
- .PHONY: install.lib
- install.lib: install.lib.common
- 
- .PHONY: install.man
- install.man: install.man.common
--	$(MAKE) -C pbmtoppa install.man
- 
- include $(SRCDIR)/Makefile.common
- 
-@@ -81,13 +77,7 @@
+@@ -80,11 +81,6 @@
+ # Don't use $(SRCDIR) in the target below because Makefile.dep doesn't !
  ../compile.h: 
  	$(MAKE) -C $(SRCDIR) compile.h
- 
+-
 -$(BUILDDIR)/shhopt/shhopt.o:
 -	cd ../shhopt; $(MAKE) shhopt.o
 -$(BUILDDIR)/shhopt/libshhopt.a:
 -	cd ../shhopt; $(MAKE) libshhopt.a
--
+ 
  .PHONY: clean
  clean: clean.common
--	$(MAKE) -C pbmtoppa clean
- 
- FORCE:

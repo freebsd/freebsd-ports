@@ -1,0 +1,10 @@
+--- ppm/ppmtompeg/opts.c.orig	Sat Aug  5 08:07:31 2000
++++ ppm/ppmtompeg/opts.c	Fri Dec  8 00:00:00 2000
+@@ -37,7 +37,6 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <math.h>
+ #include "opts.h"
+ 
