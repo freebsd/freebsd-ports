@@ -4,7 +4,7 @@
  /* We need `size_t' for the following definitions.  */
  #ifndef __size_t
  # if defined __GNUC__ && __GNUC__ >= 2
-+#ifndef __FreeBSD__
++#if (__FreeBSD__ <= 4)
  typedef __SIZE_TYPE__ __size_t;
 +#else
 +#include <sys/types.h>
