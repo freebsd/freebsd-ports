@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/02/18 18:16:01 vanilla Exp $
+# $Id: Makefile,v 1.13 1998/08/07 18:44:26 asami Exp $
 #
 
 DISTNAME=	Convert-UU-0.20
@@ -14,13 +14,11 @@ MASTER_SITE_SUBDIR=	Convert
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BROKEN=		perl upgrade
-
 USE_PERL5=	YES
 
 MAN1=		puuencode.1 puudecode.1
 MAN3=		Convert::UU.3
-MAN3PREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
