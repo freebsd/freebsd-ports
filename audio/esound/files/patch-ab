@@ -1,0 +1,11 @@
+--- ltconfig.orig	Sun Jul 19 12:15:10 1998
++++ ltconfig	Sun Jul 19 12:15:37 1998
+@@ -778,7 +778,7 @@
+ 
+   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
+   freebsd3*)
+-    archive_cmds='$CC -shared -o $lib$libobjs'
++    archive_cmds='$LD -Bshareable -o $lib$libobjs /usr/lib/aout/c++rt0.o'
+     hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_minus_L=yes

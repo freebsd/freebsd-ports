@@ -1,0 +1,14 @@
+--- audio_oss.c.orig	Sun Jul 19 12:13:08 1998
++++ audio_oss.c	Sun Jul 19 12:14:39 1998
+@@ -29,9 +29,11 @@
+ 
+     /* TODO: check that this is allowable */
+     /* set for full duplex operation, if recording */
++    /*
+     if ( (esd_audio_format & ESD_MASK_FUNC) == ESD_RECORD ) {
+         ioctl( afd, SNDCTL_DSP_SETDUPLEX, 0 );
+     }
++     */
+ 
+     /* set the sound driver fragment size and number */
+     /* fragment = max_buffers << 16 + log2(buffer_size), (256 16) */
