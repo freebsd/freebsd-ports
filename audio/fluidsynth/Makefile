@@ -8,8 +8,7 @@
 PORTNAME=	fluidsynth
 PORTVERSION=	1.0.3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	fluid//stable.pkg/${PORTVERSION}
+MASTER_SITES=	http://resonance.org/~josh/fluidsynth/
 
 MAINTAINER=	juha.nygard1@netikka.fi
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
