@@ -1,6 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/POE.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Component.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/TCP.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server/TCP.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Driver.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Driver/SysRW.pm
@@ -63,14 +64,14 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
 %%PORTDOCS%%share/examples/p5-POE/wheels.perl
 %%PORTDOCS%%share/examples/p5-POE/wheels2.perl
 %%PORTDOCS%%@dirrm share/examples/p5-POE
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Filter
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
