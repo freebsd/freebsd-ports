@@ -3,11 +3,10 @@
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/19 07:03:11 flathill Exp $
 #
 
 DISTNAME=	libicq-0.20
-PKGNAME=	libicq-0.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.montana.com/gabriel/gicq/files/
 
