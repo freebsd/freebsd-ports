@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-MIME-ContentType
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -20,7 +21,11 @@ PERL_CONFIGURE=	yes
 MAN3=		Email::MIME::ContentType.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03-*
-.endif
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /use 5.006;/;' \
+		${WRKSRC}/Makefile.PL
+	${PERL} -pi -e '$$_ = "" if /require 5.006;/;' \
+		    -e '$$_ = "" if /use warnings/;' \
+		    -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
+		${WRKSRC}/ContentType.pm
 .include <bsd.port.post.mk>
