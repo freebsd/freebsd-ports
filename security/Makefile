@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aafid2
+    SUBDIR += acid
     SUBDIR += aide
     SUBDIR += bjorb
     SUBDIR += bro
