@@ -6,6 +6,7 @@
 
 PORTNAME=	totd
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
@@ -14,11 +15,15 @@ COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 MAN8=		totd.8
 
+USE_RC_SUBR=	YES
 GNU_CONFIGURE=	YES
+
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
-	@${SED} 's@%PREFIX%@${LOCALBASE}@g' ${FILESDIR}/totd.sh > ${PREFIX}/etc/rc.d/totd.sh
-	@${CHMOD} +x ${PREFIX}/etc/rc.d/totd.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/totd.sh > ${PREFIX}/etc/rc.d/totd.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/totd.sh
 
 .include <bsd.port.mk>
