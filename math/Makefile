@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yacas
 
     SUBDIR += GiNaC
     SUBDIR += PDL
@@ -62,7 +61,7 @@
     SUBDIR += p5-AI-Perceptron
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
-    SUBIDR += p5-Date-Handler
+    SUBDIR += p5-Date-Handler
     SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-Bezier
     SUBDIR += p5-Math-BigIntFast
@@ -108,6 +107,7 @@
     SUBDIR += ruby-narray
     SUBDIR += sc
     SUBDIR += scigraphica
+    SUBDIR += scilab
     SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += slsc
@@ -135,5 +135,6 @@
     SUBDIR += xplot
     SUBDIR += xspread
     SUBDIR += xwpl
+    SUBDIR += yacas
 
 .include <bsd.port.subdir.mk>
