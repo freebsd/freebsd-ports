@@ -8,10 +8,10 @@
 PORTNAME=	i18ntools
 PORTVERSION=	1.0
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.whizkidtech.net/unix/ \
-		http://www.whizkidtech.net/fports/
+MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/unix/ \
+		http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
 LIB_DEPENDS=	utf-8:${PORTSDIR}/converters/libutf-8
