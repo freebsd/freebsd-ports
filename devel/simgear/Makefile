@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
