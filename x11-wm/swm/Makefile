@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	swm
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BINS=		swm #swmswitch
+BINS=		swm swmbg #swmswitch
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS COMPILE_PARAMS COPYING ChangeLog LIESMICH README \
 		README.iPaq TODO startswm swm.lsm
-MAN1=		swm.1
+MAN1=		swm.1 swmbg.1
 PLIST=		${WRKDIR}/pkg-plist
 SCRIPTS=	startswm.default
 USE_GMAKE=	yes
@@ -29,7 +29,6 @@ pre-install:
 	for i in ${BINS} ${SCRIPTS}; \
 		do ${ECHO} bin/$${i} >> ${PLIST}; \
 	done
-	${ECHO} share/swm/background.jpg >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
 		do ${ECHO} ${DOCDIR}/$${i} >> ${PLIST}; \
@@ -49,11 +48,10 @@ do-install:
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPTS} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/swm.1x ${PREFIX}/man/man1/swm.1
-	${INSTALL_MAN} ${WRKSRC}/swm-de.1x \
-		${PREFIX}/man/de_DE.ISO_8859-1/man1/swm.1x
+	${INSTALL_MAN} ${WRKSRC}/swmbg.1x ${PREFIX}/man/man1/swmbg.1
+#	${INSTALL_MAN} ${WRKSRC}/swm-de.1x \
+#		${PREFIX}/man/de_DE.ISO_8859-1/man1/swm.1x
 	${MKDIR} ${PREFIX}/share/swm
-	${INSTALL_DATA} ${WRKSRC}/share/swm/background.jpg \
-		${PREFIX}/share/swm/background.jpg
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 	cd ${WRKSRC} && \
