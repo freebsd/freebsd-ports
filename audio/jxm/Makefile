@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jxm
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	javaxm
@@ -28,7 +28,7 @@ do-build:
 		< ${FILESDIR}/jxm > ${WRKSRC}/jxm
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} \
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
 		${PREFIX}/share/java/classes/jxm.jar
 	${INSTALL_SCRIPT} ${WRKSRC}/jxm \
 		${PREFIX}/bin/jxm
