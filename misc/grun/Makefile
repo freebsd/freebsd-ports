@@ -8,7 +8,7 @@
 PORTNAME=	grun
 PORTVERSION=	0.8.1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Facility/1468/sg/
+MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
 
