@@ -1,3 +1,0 @@
-bin/doscan
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
