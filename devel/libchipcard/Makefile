@@ -29,14 +29,8 @@ MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \
 
 MAN5=		libchipcard.conf.5 chipcardc.conf.5 chipcardd.conf.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/freebsd/chipcardd.sh ${PREFIX}/etc/rc.d
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
