@@ -1,11 +1,19 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/test_passwd.C work.new/certs/lib/test_passwd.C
---- skipsrc-1.0.orig/certs/lib/test_passwd.C	Fri Oct 25 13:11:50 1996
-+++ work.new/certs/lib/test_passwd.C	Mon Mar  8 21:33:38 1999
-@@ -46,6 +46,7 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/X509skip.h work.new/certs/lib/X509skip.h
+--- skipsrc-1.0.orig/certs/lib/X509skip.h	Fri Oct 25 13:11:44 1996
++++ work.new/certs/lib/X509skip.h	Mon Jan 24 13:34:50 2000
+@@ -63,13 +63,13 @@
+ 	X509SkipCert& operator=(const X509SkipCert&);
  
- #include <stdio.h>
- #include <stdlib.h>
-+#include <unistd.h>
- #include "Bstream.h"
- #include "Bigint.h"
- #include "ObjId.h"
+ 	int CertType();
+-	skip_params(Bigint &, Bigint &);
++	int skip_params(Bigint &, Bigint &);
+ 	Bigint skip_pubkey();
+ 	Bstream skip_name();
+ 	u_long skip_notvalidafter();
+ 	u_long skip_notvalidbefore();
+ 	Bstream encode();
+-	decode(Bstream);
++	int decode(Bstream);
+ 	char* isValid(AuthPolicy&);
+ 	virtual Bstream get_issuer();
+ 	void print();

@@ -1,13 +1,24 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skiplocal.C work.new/skip/keymgrd/skiplocal.C
---- skipsrc-1.0.orig/skip/keymgrd/skiplocal.C	Fri Oct 25 13:12:55 1996
-+++ work.new/skip/keymgrd/skiplocal.C	Mon Mar  8 21:33:38 1999
-@@ -88,8 +88,7 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/cdp_queue.C work.new/skip/keymgrd/cdp_queue.C
+--- skipsrc-1.0.orig/skip/keymgrd/cdp_queue.C	Fri Oct 25 13:12:47 1996
++++ work.new/skip/keymgrd/cdp_queue.C	Mon Jan 24 12:35:40 2000
+@@ -91,17 +91,17 @@
  
- void
- usage(char *s){
--	fprintf(stderr, "%s [add|export|extract|list|keygen|rm"
--		, s);
-+	fprintf(stderr, "%s [add|export|extract|list|keygen|rm]\n", s);
- 	exit(1);
- }
+ 	switch (kind) {
+ 	case RESOLVER_PING:
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(@) (bilateral)");
++		skip_log(SKIP_INFO, "add_cdp_resolver(@) (bilateral)");
+ 		break;
  
+ 	case RESOLVER_TUNNEL:
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(=) (tunnel)");
++		skip_log(SKIP_INFO, "add_cdp_resolver(=) (tunnel)");
+ 		break;
+ 		
+ 	case RESOLVER_HOST:
+ 		if (parse_ip_address(&r.server, arg))
+ 			return;
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(%s)", arg);
++		skip_log(SKIP_INFO, "add_cdp_resolver(%s)", arg);
+ 		break;
+ 
+ 	default:

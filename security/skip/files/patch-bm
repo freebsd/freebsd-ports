@@ -1,43 +1,39 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_if.h work.new/skip/freebsd/skip_if.h
---- skipsrc-1.0.orig/skip/freebsd/skip_if.h	Fri Oct 25 13:12:43 1996
-+++ work.new/skip/freebsd/skip_if.h	Tue Mar  9 20:30:46 1999
-@@ -86,7 +86,9 @@
- 	struct skip_es	*next;
- 	char		if_name[SKIPSZ];/* e.g. "le0" */
- 	struct ifnet	*ifp;		/* network interface */
--	int		(*if_output)();	/* default output handler */
-+	int		(*if_output)	/* default output handler */
-+			    (struct ifnet *, struct mbuf *,
-+			    struct sockaddr *, struct rtentry *);
- 	void		*sd;		/* skip descriptor */
- 	unsigned char	if_mode;	/* interface mode */
- 	int		notifier;	/* who to send events to */
-@@ -104,7 +106,7 @@
- /*
-  * returns TRUE if SKIP has processed this buffer
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/common/skip_keystore.c work.new/skip/common/skip_keystore.c
+--- skipsrc-1.0.orig/skip/common/skip_keystore.c	Fri Oct 25 13:12:41 1996
++++ work.new/skip/common/skip_keystore.c	Mon Jan 24 12:52:53 2000
+@@ -308,7 +308,7 @@
+ 		/*
+ 	 	 * SKIP tunneling mode
+ 	 	 */
+-		params->payload_type = IPPROTO_ENCAP;
++		params->payload_type = IPPROTO_IPIP;
+ 	}
+ 	/*
+ 	 * Return offset of data to decrypt
+@@ -1177,7 +1177,7 @@
+  * Returns: none
   */
--#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_EOR)
-+#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_PROTO1)
+ void
+-skip_key_iterate(int (*f)(), void *arg)
++skip_key_iterate(int (*f)(skip_keycb_t *, void *), void *arg)
+ {
+ 	skip_keycb_t	*cp, *ncp;
+ 	int		i, rc;
+@@ -1209,7 +1209,7 @@
+ 		for (cp = skip_decrypt_hashtable[i]; cp; cp = ncp) {
+ 			ncp = cp->next;
  
- /* 
-  * Macro to retrieve an ifnet 
-@@ -114,14 +116,15 @@
- /*
-  * function prototypes
-  */
-+
-+int			skip_init(void);
-+int			skip_uninit(void);
- int			skip_ifopen(dev_t, int, int, struct proc *);
- int			skip_ifclose(dev_t, int, int, struct proc *);
--int			skip_ifioctl(dev_t, int, caddr_t, int, struct proc *);
--int			skip_ifselect(dev_t, int, struct proc *);
-+int			skip_ifioctl(dev_t, u_long, caddr_t, int, struct proc *);
-+int			skip_ifpoll(dev_t, int, struct proc *);
- int			skip_ifwrite(dev_t, struct uio *, int);
- int			skip_ifread(dev_t, struct uio *, int);
--
--void 			skip_key_tellkm( enum skip_msgs, skip_keycb_t *);
+-			rc = (*f)(cp);
++			rc = (*f)(cp, arg);
  
- /*
-  * exported functions
+ 			if (rc) {
+ 				skip_hash_remove(cp, skip_decrypt_hashtable,
+@@ -1258,7 +1258,7 @@
+ 		return(ENOMEM);
+ 	}
+ 
+-#ifdef KERNEL
++#if defined(KERNEL) || defined(_KERNEL)
+ 	/*
+ 	 * XXX 4.x only
+ 	 * we have knowledge that arg is a pointer to a struct sockaddr which

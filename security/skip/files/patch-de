@@ -1,0 +1,17 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/es_ras.c work.new/skip/tools/skiptool/es_ras.c
+--- skipsrc-1.0.orig/skip/tools/skiptool/es_ras.c	Fri Oct 25 13:13:06 1996
++++ work.new/skip/tools/skiptool/es_ras.c	Mon Jan 24 12:35:42 2000
+@@ -92,6 +92,13 @@
+ 	if (stat(path, &st) == 0) {
+ 		return (path);
+ 	}
++
++	strcpy(path, SKIP_DIR);
++	strcat(path, "/");
++	strcat(path, name);
++	if (stat(path, &st) == 0) {
++		return (path);
++	}
+ 	return (NULL);
+ }
+ 

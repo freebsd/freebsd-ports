@@ -1,18 +1,76 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipdb.1m work.new/skip/man/skipdb.1m
---- skipsrc-1.0.orig/skip/man/skipdb.1m	Fri Oct 25 13:12:57 1996
-+++ work.new/skip/man/skipdb.1m	Mon Mar  8 21:33:40 1999
-@@ -79,13 +79,9 @@
- skipdb will always return 0 on Success and non-zero on error.  An appropriate
- error message will be written to standard error.
- .SH FILES
--.SS Solaris 1.x systems:
- .P
--/etc/skip/certdb
-+@@PREFIX@@/etc/skip/certdb
- .br
--.SS Solaris 2.x systems:
--.P
--/etc/opt/SUNWicg/skip/certdb
- .P
- .SH SEE ALSO
- .BR skiplocal(1m)
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skipd.C work.new/skip/keymgrd/skipd.C
+--- skipsrc-1.0.orig/skip/keymgrd/skipd.C	Fri Oct 25 13:12:54 1996
++++ work.new/skip/keymgrd/skipd.C	Mon Jan 24 12:35:40 2000
+@@ -48,6 +48,7 @@
+  * System includes
+  */
+ #include <skip_os.h>
++#include <err.h>
+ 
+ /*
+  * SKIP includes
+@@ -84,8 +85,9 @@
+ {
+ 	int c;
+ 	int errflag = 0;
++	int noFork = 0;
+ 
+-	while ((c = getopt(argc, argv, "vV?")) != EOF) {
++	while ((c = getopt(argc, argv, "nvV?")) != EOF) {
+ 		switch(c) {
+ 		case 'v':
+ 			verbose = 1;
+@@ -95,6 +97,9 @@
+ 			verbose = 2;
+ 			break;
+ 
++		case 'n':
++			noFork = 1;
++			break;
+ 		case '?':
+ 		default:
+ 			errflag++;
+@@ -106,34 +111,18 @@
+ 		exit(1);
+ 	}
+ 
++	if (!noFork)
+ 	{
+-		extern FILE *skip_log_fp;
+-
+-		skip_log_fp = fopen("/var/log/skipd.log", "w+");
++		extern int skip_log_syslog;
+ 
+-		// if open fails, skip_log will default to stdout/stderr
++		/* output to syslog */
++		openlog("skipd", 0, LOG_DAEMON);
++		skip_log_syslog = 1;
++
++		/* become a background daemon */
++		if (daemon(0, 0))
++			err(1, "daemon");
+ 	}
+-
+-
+-//  put ourselves into the background
+-
+-	switch (fork()) {
+-	case -1:
+-		skip_log(SKIP_ERROR, "fork failed");
+-		exit(1);
+-
+-	case 0:
+-		break;
+-
+-	default:
+-		exit(0);
+-	}
+-
+-	setsid();
+-
+-	freopen("/dev/null", "r", stdin);
+-	freopen("/dev/null", "w", stdout);
+-	freopen("/dev/null", "w", stderr);
+ 
+ 	skip_init();
+ 	skipd_loop();

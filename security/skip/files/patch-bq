@@ -1,42 +1,146 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_key.h work.new/skip/include/skip_key.h
---- skipsrc-1.0.orig/skip/include/skip_key.h	Fri Oct 25 13:12:44 1996
-+++ work.new/skip/include/skip_key.h	Tue Mar  9 20:24:01 1999
-@@ -209,24 +209,22 @@
- 				void *, skip_arg_t *)
- 		);
- #endif
--void		skip_close();
-+void		skip_close(void *sd);
- int		skip_encrypt(void *, SKIP_BUF_T *, SKIP_BUF_T *,
- 			skip_param_t *, void *);
- int		skip_decrypt(void *, SKIP_BUF_T *, SKIP_BUF_T *,
- 			skip_hdr_t *hdr, int, void *);
- int		skip_key_check(skip_keycb_t *, void *);
--void		skip_key_iterate(int (*)(), void *);
-+void		skip_key_iterate(int (*)(skip_keycb_t *, void *), void *);
- int		skip_hdr_encode(skip_hdr_t *, unsigned char *);
- int		skip_iv_encode(skip_hdr_t *, unsigned char *);
- void		skip_hdr_init(skip_keycb_t *);
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/skip/freebsd/rc
+--- skipsrc-1.0.orig/skip/freebsd/rc	Fri Oct 25 13:13:19 1996
++++ work.new/skip/freebsd/rc	Mon Jan 24 12:35:39 2000
+@@ -44,22 +44,30 @@
+  
+ #pragma ident "@(#)rc	1.5 96/10/08 Sun Microsystems"
+ #
+-PATH=/bin:/usr/bin:/sbin:/usr/ucb:/usr/etc
+-SKIP_PATH=${SKIP_PATH-/usr/skip}
+-SKIPD=/usr/skip/bin/skipd
+-SKIP_HOST=/usr/skip/bin/skiphost
+-SKIP_VAR_CMD=/usr/skip/bin/skipvar
+-SKIP_SECURE_HOSTS=/etc/skip/hosts
+-SKIP_ETC=/etc/skip
+-SKIP_VAR=/var/skip
++
++PATH=/bin:/usr/bin:/sbin:/usr/sbin
++PREFIX=@@PREFIX@@
++
++SKIP_BIN=${PREFIX}/bin
++SKIP_ETC=${PREFIX}/etc/skip
++SKIP_LKM=${PREFIX}/modules
++
++SKIPD=${SKIP_BIN}/skipd
++SKIP_HOST=${SKIP_BIN}/skiphost
++SKIP_MKDEV=${SKIP_ETC}/skip.mkdev
++SKIP_SECURE_HOSTS=${SKIP_ETC}/hosts
++
++SKIP_VAR=/var/tmp
+ VAR_SIZE=830
+-SKIP_REQ_FILES="$SKIP_PATH/drv/skip.o $SKIP_ETC/skip.mkdev"
+-PSEUDO_DRVS="skip"
++
++SKIP_MOD="skip.ko"
++SKIP_REQ_FILES="${SKIP_LKM}/${SKIP_MOD} ${SKIP_ETC}/skip.mkdev"
  
--void		skip_key_tellkm(enum skip_msgs, skip_keycb_t *);
--void		skip_key_fromkm(union skip_messages *, unsigned int);
- void		skip_update_encrypt_key(struct Encrypted_key_rsp *);
- void		skip_update_decrypt_key(struct Decrypted_key_rsp *);
+ verify_owner()
+ {
+ 	me=`whoami`
+ 	if [ $me != "root" ]; then
++		echo ""
+ 		echo "skip: this script must be run as root ... fatal error"
+ 		exit 1
+ 	fi
+@@ -68,6 +76,7 @@
+ pre_checks() {
+ 	for FILE in $SKIP_REQ_FILES; do
+ 	if [ ! -f $FILE ]; then
++		echo ""
+ 		echo "skip: installation problem detected"
+ 		echo "skip: $FILE not found"
+ 		echo "skip: please refer to installation guide"
+@@ -76,6 +85,7 @@
+ 	done
  
--void		skip_local_keyid_init();
--void		skip_local_keyid_uninit();
-+void		skip_local_keyid_init(void);
-+void		skip_local_keyid_uninit(void);
- void		skip_set_local_keyid(unsigned char , skip_key_var_t *);
- int		skip_check_keyid(unsigned char , skip_key_var_t *, boolean_t);
- int		skip_get_default_keyid(unsigned char, unsigned char *);
-@@ -254,8 +252,8 @@
-  * function prototypes
-  */
- void		skip_key_fromkm(union skip_messages *, unsigned int);
-+void		skip_key_tellkm(enum skip_msgs, skip_keycb_t *);
- #endif
+ 	if [ ! -w $SKIP_VAR ]; then
++		echo ""
+ 		echo "skip: can not write to $SKIP_VAR"
+ 		exit 1
+ 	fi
+@@ -85,11 +95,12 @@
+ 
+ 	sync
+ 
+-	DISK_AVAIL=`df $SKIP_VAR | awk 'NR==2 {x=$4}
++	DISK_AVAIL=`df -k $SKIP_VAR | awk 'NR==2 {x=$4}
+ 		NR==3 {x=$3}
+ 		END  {print x}'`
+ 
+ 	if [ $DISK_AVAIL -lt $VAR_SIZE ]; then
++		echo ""
+ 		echo "skip: not enough space available in $SKIP_VAR"
+ 		echo "skip: $VAR_SIZE kbytes will be required to run the product"
+ 	exit 1
+@@ -98,45 +109,47 @@
+ 
+ load_driver()
+ {
+-	modstat > $SKIP_VAR/modules
 -
+-	# load pseudo-drivers
+-	for driver in $PSEUDO_DRVS; do
++	kldstat | awk '{ print $5 }' | grep ${SKIP_MOD} > /dev/null 2>&1
  
- /*
-  * external variables
+-		awk '{ print $8 }' $SKIP_VAR/modules | grep $driver > /dev/null 2>&1
++	if [ $? -ne 0 ]; then
+ 
+-		if [ $? -eq 0 ]; then
+-			echo "skip: driver already loaded"
+-		else
+-			echo "skip: loading driver"
+-			modload -o $SKIP_VAR/$driver \
+-				-p $SKIP_ETC/$driver.mkdev \
+-				$SKIP_PATH/drv/$driver.o> /dev/null
+-
+-
+-			if [ $? -ne 0 ]; then
+-				echo "skip: failed to load driver"
+-				echo "skip: perhaps too many drivers are loaded?"
+-				exit 1
+-			fi
++		# Load KLD
++		kldload ${SKIP_LKM}/${SKIP_MOD} > /dev/null
++		if [ $? -ne 0 ]; then
++			echo ""
++			echo "skip: failed to load driver"
++			exit 1
++		fi
+ 
++		# Absurd hack to find out device major number
++		DEV_MAJOR=`/sbin/dmesg | grep 'skip: device major=' | tail -1 | sed 's/^.*=\([0-9]\{1,\}\),.*$/\1/g'`
++		if [ "${DEV_MAJOR}" = "" ]; then
++			echo ""
++			echo "skip: can't determine skip device major number"
++			exit 1
+ 		fi
+-	done
++
++		# Create device nodes
++		${SKIP_MKDEV} ${DEV_MAJOR}
++	fi
++
+ }
+ 
+ start_daemons() {
+ 	if [ -x $SKIPD ]; then
+-		echo -n "starting skip key manager daemon"
+-		$SKIPD > /var/log/skipd.log &
+-		echo "."
++		$SKIPD
+ 	fi
+ 
+ 	if [ -x $SKIP_SECURE_HOSTS -a -x $SKIP_HOST ]; then
+-		$SKIP_SECURE_HOSTS >> /var/log/skipd.log 2>&1 &
++		$SKIP_SECURE_HOSTS >> /var/log/skiphost.log 2>&1 &
+ 	fi
+ }
+ 
+ # main
++
++# keep console output pretty
++echo -n " skip"
++
+ verify_owner
+ pre_checks
+ load_driver

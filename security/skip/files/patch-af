@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/skipd_restart.sh work.new/admin/skipd_restart.sh
 --- skipsrc-1.0.orig/admin/skipd_restart.sh	Fri Oct 25 13:11:19 1996
-+++ work.new/admin/skipd_restart.sh	Mon Mar  8 21:33:39 1999
++++ work.new/admin/skipd_restart.sh	Mon Jan 24 12:35:36 2000
 @@ -4,20 +4,9 @@
  #
  #  Kill and restart the SKIP key management/certificate daemon

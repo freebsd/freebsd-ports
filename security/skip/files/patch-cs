@@ -1,17 +1,24 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/es_ras.c work.new/skip/tools/skiptool/es_ras.c
---- skipsrc-1.0.orig/skip/tools/skiptool/es_ras.c	Fri Oct 25 13:13:06 1996
-+++ work.new/skip/tools/skiptool/es_ras.c	Mon Mar  8 21:33:39 1999
-@@ -92,6 +92,13 @@
- 	if (stat(path, &st) == 0) {
- 		return (path);
- 	}
-+
-+	strcpy(path, SKIP_DIR);
-+	strcat(path, "/");
-+	strcat(path, name);
-+	if (stat(path, &st) == 0) {
-+		return (path);
-+	}
- 	return (NULL);
- }
- 
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipd.1m work.new/skip/man/skipd.1m
+--- skipsrc-1.0.orig/skip/man/skipd.1m	Fri Oct 25 13:12:57 1996
++++ work.new/skip/man/skipd.1m	Mon Jan 24 12:35:41 2000
+@@ -62,17 +62,9 @@
+ skipd.conf(4)
+ .P
+ .SH FILES
+-.SH Solaris 2.x systems:
+-/etc/opt/SUNWicg/skip/skipd.conf
+-.br
+-/etc/opt/SUNWicg/skip/CAs/
+-.br
+-/etc/opt/SUNWicg/skip/localid/
+-.P
+-.SH Other systems:
+ .P
+-/etc/skip/skipd.conf
++@@PREFIX@@/etc/skip/skipd.conf
+ .br
+-/etc/skip/CAs/
++@@PREFIX@@/etc/skip/CAs/
+ .br
+-/etc/skip/localid/
++@@PREFIX@@/etc/skip/localid/

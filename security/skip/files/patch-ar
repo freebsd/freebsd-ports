@@ -1,11 +1,11 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/test_ca.C work.new/certs/lib/test_ca.C
---- skipsrc-1.0.orig/certs/lib/test_ca.C	Fri Oct 25 13:11:50 1996
-+++ work.new/certs/lib/test_ca.C	Mon Mar  8 21:33:38 1999
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/Time.C work.new/certs/lib/Time.C
+--- skipsrc-1.0.orig/certs/lib/Time.C	Fri Oct 25 13:11:43 1996
++++ work.new/certs/lib/Time.C	Mon Jan 24 12:35:37 2000
 @@ -46,6 +46,7 @@
  
- #include <stdio.h>
- #include <stdlib.h>
-+#include <unistd.h>
  #include <sys/types.h>
+ #include <stdio.h>
++#include <string.h>
  #include "Time.h"
- #include "Bigint.h"
+ #include <time.h>
+ #include <sys/time.h>

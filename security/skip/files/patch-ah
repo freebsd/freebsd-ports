@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/bnlib/Makefile.in work.new/bnlib/Makefile.in
 --- skipsrc-1.0.orig/bnlib/Makefile.in	Fri Oct 25 13:11:20 1996
-+++ work.new/bnlib/Makefile.in	Mon Mar  8 21:33:38 1999
++++ work.new/bnlib/Makefile.in	Mon Jan 24 12:35:36 2000
 @@ -61,7 +61,7 @@
  # code compiled with another cc, which doesn't know about -lgcc.
  

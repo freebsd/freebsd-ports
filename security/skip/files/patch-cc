@@ -1,27 +1,24 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/install_skip_keys.1m work.new/skip/man/install_skip_keys.1m
---- skipsrc-1.0.orig/skip/man/install_skip_keys.1m	Fri Oct 25 13:12:56 1996
-+++ work.new/skip/man/install_skip_keys.1m	Mon Mar  8 21:33:39 1999
-@@ -41,20 +41,13 @@
- .RE
- .P
- .SH FILES
--.SS Solaris 1.x systems:
- .P
--/etc/skip/certdb.dir
-+@@PREFIX@@/etc/skip/certdb.dir
- .br
--/etc/skip/localid/..
-+@@PREFIX@@/etc/skip/localid/..
- .br
--/etc/skip/CAs/...
-+@@PREFIX@@/etc/skip/CAs/...
- .br
--.P
--.SS Solaris 2.x systems:
--.P
--/etc/opt/SUNWicg/skip/certdb
--/etc/opt/SUNWicg/skip/localid/...
--/etc/opt/SUNWicg/skip/CAs/...
- .P
- .SH NOTES
- Currently the name of the Certificate is hard coded into the code.  We 
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_init.C work.new/skip/keymgrd/skip_init.C
+--- skipsrc-1.0.orig/skip/keymgrd/skip_init.C	Fri Oct 25 13:12:49 1996
++++ work.new/skip/keymgrd/skip_init.C	Mon Jan 24 12:35:40 2000
+@@ -81,7 +81,7 @@
+ 		return;
+ 	}
+ 
+-        skip_log(SKIP_NOTICE, "local name nsid=%d mkid=%s",
++        skip_log(SKIP_INFO, "local name nsid=%d mkid=%s",
+ 			      nsid, keyid.get_info_str());
+ }
+ 
+@@ -135,9 +135,9 @@
+ 	{
+        	   // Let the random number generator kick off its entropy gathering
+ 
+-           skip_log(SKIP_NOTICE, "Initializing random number generator...");
++           skip_log(SKIP_INFO, "Initializing random number generator...");
+            Bstream dummy = get_random_bytes(1);
+-	   skip_log(SKIP_NOTICE, "done");
++	   skip_log(SKIP_INFO, "done");
+ 	}
+ 
+ 	auth.load(SKIP_DIR);

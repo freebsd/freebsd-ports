@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/skipif.sh work.new/admin/skipif.sh
 --- skipsrc-1.0.orig/admin/skipif.sh	Fri Oct 25 13:11:20 1996
-+++ work.new/admin/skipif.sh	Mon Mar  8 21:33:39 1999
++++ work.new/admin/skipif.sh	Mon Jan 24 12:35:36 2000
 @@ -4,30 +4,15 @@
  #
  # SKIP interface management utility

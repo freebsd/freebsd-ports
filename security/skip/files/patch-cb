@@ -1,13 +1,15 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/t_mem.c work.new/skip/keymgrd/t_mem.c
---- skipsrc-1.0.orig/skip/keymgrd/t_mem.c	Fri Oct 25 13:12:55 1996
-+++ work.new/skip/keymgrd/t_mem.c	Mon Mar  8 21:33:38 1999
-@@ -45,8 +45,7 @@
- #pragma ident "@(#)t_mem.c	1.2 95/11/23 Sun Microsystems"
- 
- #include "global.h"
--#include <memory.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include <string.h>
- 
- void T_memset(POINTER s, int c, unsigned int n )
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/certreq.C work.new/skip/keymgrd/certreq.C
+--- skipsrc-1.0.orig/skip/keymgrd/certreq.C	Fri Oct 25 13:12:47 1996
++++ work.new/skip/keymgrd/certreq.C	Tue Jan 25 12:56:21 2000
+@@ -120,7 +120,11 @@
+ 		FD_SET(sock,&f);
+ 		n=select(sock+1,&f,NULL,NULL,&tv);
+ 		if (n > 0)  {
++#if __FreeBSD_version < 400013
+ 			int fromlen;
++#else
++			socklen_t fromlen;
++#endif
+ 			fromlen=sizeof(from);
+ 			n=recvfrom(sock, (char *)buf,sizeof(buf),0,
+ 				(sockaddr *)&from,&fromlen);

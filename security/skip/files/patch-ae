@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/skip_conf.sh work.new/admin/skip_conf.sh
 --- skipsrc-1.0.orig/admin/skip_conf.sh	Fri Oct 25 13:11:19 1996
-+++ work.new/admin/skip_conf.sh	Mon Mar  8 21:33:39 1999
++++ work.new/admin/skip_conf.sh	Mon Jan 24 12:35:36 2000
 @@ -8,14 +8,9 @@
  	exit 1
  fi
