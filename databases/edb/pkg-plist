@@ -1,0 +1,8 @@
+bin/edb_ed
+bin/edb_vt_ed
+bin/edb-config
+include/Edb.h
+lib/libedb.a
+lib/libedb.so
+lib/libedb.so.1
+libdata/pkgconfig/edb.pc
