@@ -7,9 +7,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	2.2.3
-.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
-PORTREVISION=	2
-.endif
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
@@ -28,13 +26,12 @@ LIB_DEPENDS=	mng.0:${PORTSDIR}/graphics/libmng \
 
 YES?=		/usr/bin/yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_MESA=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
-		-system-libmng -thread \
+		-system-libmng -thread -no-opengl \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
 MAKE_ARGS+=	MAKE="${GMAKE} -j2"
@@ -98,7 +95,9 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2.so.4 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2-mt.so.4 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqutil.so.1 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libqt2-mt.so.4 ${PREFIX}/lib//libqt2-mt.so
 	${LN} -sf ${PREFIX}/lib/libqt2.so.4 ${PREFIX}/lib/libqt2.so
 	${LN} -sf ${PREFIX}/lib/libqutil.so.1 ${PREFIX}/lib/libqutil.so
 .if defined(WANT_STATIC)
