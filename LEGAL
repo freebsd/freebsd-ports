@@ -21,6 +21,7 @@ adom-*			ports/games/adom	Copy of CD must be sent to
 						author
 agsatellite		ports/audio/agsatellite	Unsure of licensing issues
 alephone-data		ports/games/alephone-data Don't sell for profit
+altivore		ports/security/altivore	No redistribution allowed
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
