@@ -1,39 +1,30 @@
---- arch/x86-freebsd/Makefile.in.orig	Fri Jun 23 12:43:22 2000
-+++ arch/x86-freebsd/Makefile.in	Fri Jun 23 12:50:30 2000
-@@ -1,22 +1,27 @@
+--- arch/x86-freebsd/Makefile.in.orig	Tue Jul  4 13:19:55 2000
++++ arch/x86-freebsd/Makefile.in	Tue Jul  4 13:21:33 2000
+@@ -1,10 +1,13 @@
 -CFLAGS=-O2 -Wall
 +CFLAGS?=-O2 -Wall
-+CFLAGS+=-fPIC -DPIC
  
  MAN=@MANSRC@
  LINST=@LINST@
  HINST=@HINST@
  MINST=@MINST@
  
--all: libcoro.a
-+SHARED_LIB=libcoro.so.1
-+SHORT_SHARED_LIB=libcoro.so
- 
--libcoro.a: coro.o
-+all: $(SHARED_LIB)
++BSD_INSTALL_DATA?=install -C -m 644
++BSD_INSTALL_MAN?=install -C -m 644
 +
-+$(SHARED_LIB): coro.o
- 	rm -f $@
--	ar rcs $@ coro.o
-+	$(CC) -shared -Wl,-soname -Wl,$(SHARED_LIB) -o $(SHARED_LIB) coro.o
+ all: libcoro.a
  
+ libcoro.a: coro.o
+@@ -14,9 +17,9 @@
  coro.o: coro.h
  
--install: libcoro.a coro.h $(MAN)
+ install: libcoro.a coro.h $(MAN)
 -	install -m 644 libcoro.a $(LINST)/libcoro.a
 -	install -m 644 coro.h $(HINST)/coro.h
 -	install -m 644 $(MAN) $(MINST)/man2/coro.2
-+install: all $(MAN)
-+	$(BSD_INSTALL_PROGRAM) $(SHARED_LIB) $(LINST)/$(SHARED_LIB)
-+	ln -sf $(LINST)/$(SHARED_LIB) $(LINST)/$(SHORT_SHARED_LIB)
++	$(BSD_INSTALL_DATA) libcoro.a $(LINST)/libcoro.a
 +	$(BSD_INSTALL_DATA) coro.h $(HINST)/coro.h
 +	$(BSD_INSTALL_MAN) $(MAN) $(MINST)/man2/coro.2
  
  clean:
--	rm -f libcoro.a coro.o
-+	rm -f $(SHARED_LIB) coro.o
+ 	rm -f libcoro.a coro.o
