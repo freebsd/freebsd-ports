@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.112 1998/04/25 16:04:50 kuriyama Exp $
+# $Id: Makefile,v 1.113 1998/04/28 15:21:04 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -120,6 +120,7 @@
     SUBDIR += weblint97
     SUBDIR += x0212fonts
     SUBDIR += xdvi
+    SUBDIR += xfig
     SUBDIR += xklock
     SUBDIR += xnetmaj
     SUBDIR += xshodo
