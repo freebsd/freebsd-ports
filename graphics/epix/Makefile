@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	epix
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7a
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/software/
-DISTNAME=	epix_src
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=	epix.1
 

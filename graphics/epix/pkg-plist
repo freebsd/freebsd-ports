@@ -3,12 +3,12 @@ bin/laps
 bin/elaps
 include/epix.h
 lib/libepix.a
+share/epix/epix-%%VERSION%%_samples.tar 
 share/epix/calculus.c
 share/epix/clipplot.c
 share/epix/contour.c
 share/epix/demoivre.c
 share/epix/denom.c
-share/epix/epix_samples.tar
 share/epix/flow-plot.c
 share/epix/geomsum.c
 share/epix/golden_rect.c
