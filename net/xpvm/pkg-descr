@@ -1,0 +1,7 @@
+XPVM provides a graphical interface to the PVM console commands and
+information, along with several animated views to monitor the execution
+of PVM programs. These views provide information about the interactions
+among tasks in a parallel PVM program, to assist in debugging and
+performance tuning.
+
+WWW: http://www.netlib.org/utk/icl/xpvm/xpvm.html

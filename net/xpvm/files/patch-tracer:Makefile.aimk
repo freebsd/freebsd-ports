@@ -1,0 +1,36 @@
+diff -ruN xpvm.orig/tracer/Makefile.aimk xpvm/tracer/Makefile.aimk
+--- tracer/Makefile.aimk	Fri Apr 10 04:40:22 1998
++++ tracer/Makefile.aimk	Thu Apr  1 13:39:33 2004
+@@ -47,7 +47,7 @@
+ # Libraries
+ #
+ 
+-PVMLIBDIR	=	-L$(PVMDIR)/lib/$(PVM_ARCH)
++PVMLIBDIR	=	-L$(LOCALBASE)/lib
+ 
+ TRCLIBDIR	=	-L$(TRCDIR)/$(PVM_ARCH)
+ 
+@@ -71,7 +71,7 @@
+ # Include Directories
+ #
+ 
+-PVMINCL		=	-I$(PVMDIR)/include
++PVMINCL		=	-I$(LOCALBASE)/include
+ 
+ TRCINCL		=	-I$(TRCDIR)
+ 
+@@ -90,12 +90,12 @@
+ HEADERS		=	$(SRCDIR)/tracer.h $(SRCDIR)/trcglob.h \
+ 				$(TRCDIR)/trcdef.h $(TRCDIR)/trctype.h \
+ 				$(TRCDIR)/trcproto.h \
+-				$(PVMDIR)/include/pvm3.h $(PVMDIR)/include/pvmtev.h
++				$(LOCALBASE)/include/pvm3.h $(LOCALBASE)/include/pvmtev.h
+ 
+ TRCHEADERS	=	$(TRCDIR)/trclib.h $(TRCDIR)/trctype.h \
+ 				$(TRCDIR)/trcproto.h \
+ 				$(TRCDIR)/trccompat.h $(TRCDIR)/trccompatrev.h \
+-				$(PVMDIR)/include/pvm3.h $(PVMDIR)/include/pvmtev.h
++				$(LOCALBASE)/include/pvm3.h $(LOCALBASE)/include/pvmtev.h
+ 
+ PROGS		=	$(PVMXDIR)/tracer$(EXESFX) $(PVMXDIR)/trcsort$(EXESFX)
+ 
