@@ -4,7 +4,7 @@ share/rar/dos.sfx
 share/rar/default.sfx
 share/rar/rarfiles.lst
 share/doc/rar/TechNote.Txt
-share/doc/rar/Rar_FAQ.Txt
+share/doc/rar/Rar_FAQ.txt
 share/doc/rar/License.Txt
 share/doc/rar/Internet.Txt
 @dirrm share/doc/rar
