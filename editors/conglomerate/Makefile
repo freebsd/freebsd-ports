@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	conglomerate
-PORTVERSION=	0.7.12
-PORTREVISION=	1
+PORTVERSION=	0.7.13
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack lthack
 USE_LIBTOOL_VER=	13
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
