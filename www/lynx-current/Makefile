@@ -42,7 +42,8 @@ CONFIGURE_ARGS+= --enable-ipv6
 .else
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
-CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib \
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}" \
 		LIBS=-lncurses
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
