@@ -1,11 +1,123 @@
---- configure.in.orig	Sun Mar 25 03:57:10 2001
-+++ configure.in	Thu Apr 12 11:31:07 2001
-@@ -107,7 +107,7 @@
+--- configure.in.orig	Sat Dec  8 11:28:42 2001
++++ configure.in	Mon Dec 24 13:12:03 2001
+@@ -84,55 +84,75 @@
+ 	                     AC_MSG_WARN(*** ZLIB header files not found: PNG Input will be disabled. ***)),
+ 	     AC_MSG_WARN(*** ZLIB library files not found: PNG Input will be disabled. ***))
+ 
+-dnl Test for libpng
+-HAVE_LIBPNG_STAGE1=no
+-AC_CHECK_LIB(png, png_get_image_width,
+-	HAVE_LIBPNG_STAGE1=yes ,,-lz)
+-
+-HAVE_LIBPNG=no
+-if test "x$HAVE_LIBPNG_STAGE1" = "xyes" ; then
+-	AC_CHECK_LIB(png, png_read_png,
+-		HAVE_LIBPNG=yes ,,-lz)
+-	if test "x$HAVE_LIBPNG" = "xyes" ; then
+-		LIBPNG_LDFLAGS="-lpng -lz"
+-		AC_SUBST(LIBPNG_LDFLAGS)
+-		AC_DEFINE(HAVE_LIBPNG)
+-	else
+-	   AC_MSG_WARN([*** libpng exists but cannot find png_read_png in the libpng. ***])
+-	   AC_MSG_WARN([*** libpng might be old.                                      ***])
+-	   AC_MSG_WARN([*** You need libpng 1.0.6 or higher.                          ***])
+-	   AC_MSG_WARN([*** Png input handler is disabled.                            ***])
+-	fi
+-else
+-	AC_MSG_WARN([*** Cannot find libpng.            ***])
+-	AC_MSG_WARN([*** Png input handler is disabled. ***])
+-fi
+-AM_CONDITIONAL(HAVE_LIBPNG, test x$HAVE_LIBPNG = xyes)
+-
  dnl
- HAVE_LIBSWF=no
+-dnl LIBMING(LIBSWF)
++dnl commented out by porter.
+ dnl
+-HAVE_LIBSWF=no
  
 -AC_CHECK_HEADER(ming.h,
-+AC_CHECK_HEADER(ming/ming.h,
- 	        swf_header_found=yes,
- 		swf_header_found=no)
- if test "${swf_header_found}" = yes ; then
+-	        swf_header_found=yes,
+-		swf_header_found=no)
+-if test "${swf_header_found}" = yes ; then
+-	AC_CHECK_LIB(ming, Ming_init, 
+-		     HAVE_LIBSWF=yes,,-lm)
+-	if test "$HAVE_LIBSWF" = "yes" ; then
+-		LIBSWF_LDFLAGS="-lming -lm"
+-		AC_SUBST(LIBSWF_LDFLAGS)
+-		AC_DEFINE(HAVE_LIBSWF)
+-	else
+- 		AC_MSG_WARN([*** Cannot find libming.    ***])
+-		AC_MSG_WARN([*** SWF output is disabled. ***])
+-	fi
+-else
+-	AC_MSG_WARN([*** Cannot find ming.h.     ***])
+-	AC_MSG_WARN([*** SWF output is disabled. ***])
+-fi
++dnl dnl Test for libpng
++dnl HAVE_LIBPNG_STAGE1=no
++dnl AC_CHECK_LIB(png, png_get_image_width,
++dnl 	HAVE_LIBPNG_STAGE1=yes ,,-lz)
++
++dnl HAVE_LIBPNG=no
++dnl if test "x$HAVE_LIBPNG_STAGE1" = "xyes" ; then
++dnl 	AC_CHECK_LIB(png, png_read_png,
++dnl 		HAVE_LIBPNG=yes ,,-lz)
++dnl 	if test "x$HAVE_LIBPNG" = "xyes" ; then
++dnl 		LIBPNG_LDFLAGS="-lpng -lz"
++dnl 		AC_SUBST(LIBPNG_LDFLAGS)
++dnl 		AC_DEFINE(HAVE_LIBPNG)
++dnl 	else
++dnl 	   AC_MSG_WARN([*** libpng exists but cannot find png_read_png in the libpng. ***])
++dnl 	   AC_MSG_WARN([*** libpng might be old.                                      ***])
++dnl 	   AC_MSG_WARN([*** You need libpng 1.0.6 or higher.                          ***])
++dnl 	   AC_MSG_WARN([*** Png input handler is disabled.                            ***])
++dnl 	fi
++dnl else
++dnl 	AC_MSG_WARN([*** Cannot find libpng.            ***])
++dnl 	AC_MSG_WARN([*** Png input handler is disabled. ***])
++dnl fi
++dnl AM_CONDITIONAL(HAVE_LIBPNG, test x$HAVE_LIBPNG = xyes)
++
++dnl dnl
++dnl dnl LIBMING(LIBSWF)
++dnl dnl
++dnl HAVE_LIBSWF=no
++dnl 
++dnl AC_CHECK_HEADER(ming/ming.h,
++dnl 	        swf_header_found=yes,
++dnl 		swf_header_found=no)
++dnl if test "${swf_header_found}" = yes ; then
++dnl 	AC_CHECK_LIB(ming, Ming_init, 
++dnl 		     HAVE_LIBSWF=yes,,-lm)
++dnl 	if test "$HAVE_LIBSWF" = "yes" ; then
++dnl 		LIBSWF_LDFLAGS="-lming -lm"
++dnl 		AC_SUBST(LIBSWF_LDFLAGS)
++dnl 		AC_DEFINE(HAVE_LIBSWF)
++dnl 	else
++dnl  		AC_MSG_WARN([*** Cannot find libming.    ***])
++dnl 		AC_MSG_WARN([*** SWF output is disabled. ***])
++dnl 	fi
++dnl else
++dnl 	AC_MSG_WARN([*** Cannot find ming.h.     ***])
++dnl 	AC_MSG_WARN([*** SWF output is disabled. ***])
++dnl fi
++dnl AM_CONDITIONAL(HAVE_LIBSWF, test x$HAVE_LIBSWF = xyes)
++
++AC_MSG_WARN("************************************")
++AC_MSG_WARN("*** \ \ forcing HAVE_LIBPNG=yes. \ \ \*\*\*")
++HAVE_LIBPNG=yes
++LIBPNG_LDFLAGS="-lpng -lz"
++AC_SUBST(LIBPNG_LDFLAGS)
++AC_DEFINE(HAVE_LIBPNG)
++AM_CONDITIONAL(HAVE_LIBPNG, test x$HAVE_LIBPNG = xyes)
++
++AC_MSG_WARN("*** \ \ forcing HAVE_LIBSWF=yes. \ \ \*\*\*")
++HAVE_LIBSWF=yes
++LIBSWF_LDFLAGS="-lming -lm"
++AC_SUBST(LIBSWF_LDFLAGS)
++AC_DEFINE(HAVE_LIBSWF)
+ AM_CONDITIONAL(HAVE_LIBSWF, test x$HAVE_LIBSWF = xyes)
++AC_MSG_WARN("************************************")
+ 
+ AC_CHECK_HEADERS(malloc.h)
+ 

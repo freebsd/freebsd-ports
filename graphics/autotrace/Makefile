@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	autotrace
-PORTVERSION=	0.27a
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://homepage.go.com/~martweb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
@@ -30,14 +28,9 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE=	yes
 USE_XLIB=	yes
 
-pre-configure:
-	@(cd ${WRKSRC} ; ${AUTOCONF})
-
-do-configure:
-	@(cd ${WRKSRC}/ ; set CPPFLAGS="-I${PREFIX}/include" ; \
-	  set CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib" ; ./configure )
+pre-install:
+	@(cd ${WRKSRC} ; perl -p -i.bak -e s/\\@OBJEXT\\@/o/ Makefile)	
 
 .include <bsd.port.mk>
