@@ -1,19 +1,18 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.beta28
+# Version required:	1.1.0
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1996/12/05 08:42:50 peter Exp $
+# $Id: Makefile,v 1.13 1996/12/06 11:17:57 peter Exp $
 #
 
-DISTNAME=	squid-1.1.beta28
-PKGNAME=	squid-1.1b28
+DISTNAME=	squid-1.1.0
 CATEGORIES=	www
 MASTER_SITES=  \
-	ftp://squid.nlanr.net/pub/squid-1.1.beta/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-1.1.beta/ \
-	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-1.1.beta/ \
-	ftp://ftp.net.lut.ac.uk/squid/squid-1.1.beta/
+	ftp://squid.nlanr.net/pub/squid-1.1/ \
+	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-1.1/ \
+	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-1.1/ \
+	ftp://ftp.net.lut.ac.uk/squid/squid-1.1/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	peter@freebsd.org
