@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Math::BigFloat.3 \
 		Math::BigInt.3 \
-		Math::BigInt::Calc.3 \
-		Math::BigInt::Scalar.3
+		Math::BigInt::Calc.3
 
 .include <bsd.port.mk>
