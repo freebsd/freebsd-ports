@@ -3,7 +3,9 @@ sbin/ospfd
 sbin/ripd
 sbin/zebra
 sbin/zebractl
+etc/zebra/README.mbgp
 etc/zebra/bgpd.conf.sample
+etc/zebra/bgpd.conf.sample2
 etc/zebra/ripd.conf.sample
 etc/zebra/zebra.conf.sample
 etc/zebra/ospfd.conf.sample
