@@ -6,52 +6,41 @@
 #
 
 PORTNAME=	vnc
-PORTVERSION=	3.3.3.2
-PORTREVISION=	1
+PORTVERSION=	3.3.5
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.uk.research.att.com/vnc/dist/ \
-		ftp://ftp.uk.research.att.com/pub/vnc/dist/
-DISTFILES=	vnc-3.3.3r2_unixsrc.tgz \
-		vnc-latest_doc.tgz
-EXTRACT_ONLY=	vnc-3.3.3r2_unixsrc.tgz
+MASTER_SITES=	http://www.realvnc.com/dist/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
 
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	vnc-3.3.3r2-v6-20010421.diff.gz
-PATCH_DIST_STRIP=	-p1
+MAINTAINER=	mchopra@engmail.uwaterloo.ca
 
-MAINTAINER=	ports@FreeBSD.org
+GNU_CONFIGURE=	yes
+USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
 
-USE_PERL5=	yes
-IGNOREFILES=	vnc-latest_doc.tgz
-WRKSRC=		${WRKDIR}/vnc_unixsrc
-USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
-ALL_TARGET=	World
+MAN1=		Xvnc.1 \
+		vncviewer.1 \
+		vncpasswd.1 \
+		vncconnect.1 \
+		vncserver.1
 
-# We have to frob a few things, and we want our own permissions, so it's easier
-# to do the install ourselves.
-post-install:
+post-build:
+	@cd ${WRKSRC}/Xvnc && make World
+
+do-install:
+	${REINPLACE_CMD} -e 's|/usr/local/vnc/classes|${PREFIX}/share/vnc/classes|g' \
+		-e 's|^\#!/usr/bin/perl|\#!${PERL}|g' ${WRKSRC}/vncserver
 	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
 	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
 	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect ${PREFIX}/bin/vncconnect
-	${SED}  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
-		-e s%^\#!/usr/bin/perl%\#!${PERL}% \
-		< ${WRKSRC}/vncserver \
-		> ${WRKSRC}/vncserver.local
-	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin/vncserver
+	${INSTALL_MAN} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc.man ${PREFIX}/man/man1/Xvnc.1
+	${INSTALL_MAN} ${WRKSRC}/vncviewer/vncviewer.man ${PREFIX}/man/man1/vncviewer.1
+	${INSTALL_MAN} ${WRKSRC}/vncpasswd/vncpasswd.man ${PREFIX}/man/man1/vncpasswd.1
+	${INSTALL_MAN} ${WRKSRC}/vncconnect/vncconnect.man ${PREFIX}/man/man1/vncconnect.1
+	${INSTALL_MAN} ${WRKSRC}/vncserver.man ${PREFIX}/man/man1/vncserver.1
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
 	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc
-.if !defined(NOPORTDOCS)
-# The documentation comes with bogus ownerships; this is a little leaky
-# security-wise
-	${TAR} -C ${PREFIX}/share/doc -xzf ${DISTDIR}/vnc-latest_doc.tgz
-	(cd ${PREFIX}/share/doc; ${RM} -rf vnc; ${MV} vnc_docs vnc)
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
-# Add to PLIST because VNC developers can't/won't freeze their doc
-# distfile.
-	(cd ${PREFIX}; ls share/doc/vnc/* >> ${TMPPLIST})
-	${ECHO_CMD} '@dirrm share/doc/vnc' >> ${TMPPLIST}
-.endif
+
 .include <bsd.port.mk>
