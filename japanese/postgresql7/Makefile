@@ -89,8 +89,14 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		NO_OPENSSL="${NO_OPENSSL}" \
 		DISTNAME="${DISTNAME}"
 
+# We must .include here because we need the Makefile.inc @ pre-install
+# to determine the correct plist.
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.else
+# make utility targets like depends and describe happy
+LIB_DEPENDS=	tcl80jp:${PORTSDIR}/japanese/tcl80 \
+		tk80jp:${PORTSDIR}/japanese/tk80
 .endif
 
 pre-everything:
