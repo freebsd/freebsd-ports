@@ -125,7 +125,7 @@ post-extract:
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist.orig
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist
 
 post-install:
 	@${ECHO_CMD} ""
