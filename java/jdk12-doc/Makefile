@@ -16,6 +16,7 @@ DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java Development Kit 1.2 Documentation
 
+LATEST_LINK=	jdk12-doc
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."
 
@@ -35,7 +36,7 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
 	@${ECHO_CMD} " [ DONE ]"
- 
+
 do-install:
 	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
 	@${MKDIR} ${TARGET_DIR}

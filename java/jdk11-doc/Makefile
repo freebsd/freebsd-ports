@@ -16,6 +16,7 @@ DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java Development Kit 1.1 Documentation
 
+LATEST_LINK=	jdk11-doc
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION:C/_.*\$//g}/docs
@@ -33,7 +34,7 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
 	@${ECHO_CMD} " [ DONE ]"
- 
+
 do-install:
 	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
 	@${MKDIR} ${TARGET_DIR}

@@ -14,6 +14,7 @@ DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-doc
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java Development Kit 1.3 Documentation
 
+LATEST_LINK=	jdk13-doc
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This documentation is under license and export control."
 
@@ -39,7 +40,7 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
 	@${ECHO_CMD} " [ DONE ]"
- 
+
 do-install:
 	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
 	@${MKDIR} ${TARGET_DIR}
