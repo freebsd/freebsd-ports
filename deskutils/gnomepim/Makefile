@@ -15,7 +15,7 @@ DISTNAME=	gnome-pim-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-.if defined(WITH_PILOT)
+.if defined(WITHOUT_PILOT)
 BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 .endif
@@ -27,7 +27,7 @@ USE_LIBTOOL=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
-.if !defined(WITH_PILOT)
+.if !defined(WITHOUT_PILOT)
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
 .else
 CPPFLAGS+=	-I${LOCALBASE}/pilot/include
@@ -38,11 +38,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 
 pre-extract:
 	@${ECHO_MSG}
-.if defined(WITH_PILOT)
-	@${ECHO_MSG} "Palm Pilot support enabled. You will be able to syncronize"
+.if defined(WITHOUT_PILOT)
+	@${ECHO_MSG} "Palm Pilot support disabled. You will not be able to syncronize"
 	@${ECHO_MSG} "your palm with gnomecard and gnomecal."
 .else
-	@${ECHO_MSG} "You can enable Palm Pilot support by defining WITH_PILOT"
+	@${ECHO_MSG} "You can disable Palm Pilot support by defining WITHOUT_PILOT."
 .endif
 	@${ECHO_MSG}
 
