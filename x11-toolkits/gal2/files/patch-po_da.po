@@ -1,0 +1,16 @@
+--- po/da.po.orig	Sat Dec 27 20:57:22 2003
++++ po/da.po	Sat Dec 27 20:57:29 2003
+@@ -46,11 +46,11 @@
+ 
+ #: gal/e-table/e-cell-date.c:96
+ msgid "%b %d %l:%M %p"
+-msgstr "%-d. %b. %H:%M"
++msgstr "%d. %b. %H:%M"
+ 
+ #: gal/e-table/e-cell-date.c:98
+ msgid "%b %d %Y"
+-msgstr "%-d. %b %Y"
++msgstr "%d. %b %Y"
+ 
+ #: gal/e-table/e-cell-pixbuf.c:392
+ msgid "Selected Column"

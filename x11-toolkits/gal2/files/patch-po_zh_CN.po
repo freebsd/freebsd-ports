@@ -1,0 +1,41 @@
+--- po/zh_CN.po.orig	Sat Dec 27 20:58:11 2003
++++ po/zh_CN.po	Sat Dec 27 20:58:38 2003
+@@ -31,32 +31,32 @@
+ # gal/e-table/e-cell-date.c:58
+ #: gal/e-table/e-cell-date.c:58
+ msgid "%l:%M %p"
+-msgstr "%-H:%M"
++msgstr "%H:%M"
+ 
+ # gal/e-table/e-cell-date.c:66
+ #: gal/e-table/e-cell-date.c:66
+ msgid "Today %l:%M %p"
+-msgstr "今天 %-H:%M"
++msgstr "今天 %H:%M"
+ 
+ # gal/e-table/e-cell-date.c:81
+ #: gal/e-table/e-cell-date.c:76
+ msgid "Yesterday %l:%M %p"
+-msgstr "昨天 %-H:%M"
++msgstr "昨天 %H:%M"
+ 
+ # gal/e-table/e-cell-date.c:96
+ #: gal/e-table/e-cell-date.c:88
+ msgid "%a %l:%M %p"
+-msgstr "%A %-H:%M"
++msgstr "%A %H:%M"
+ 
+ # gal/e-table/e-cell-date.c:104
+ #: gal/e-table/e-cell-date.c:96
+ msgid "%b %d %l:%M %p"
+-msgstr "%-m月%-d日 %-H:%M"
++msgstr "%m月%d日 %H:%M"
+ 
+ # gal/e-table/e-cell-date.c:106
+ #: gal/e-table/e-cell-date.c:98
+ msgid "%b %d %Y"
+-msgstr "%Y年%-m月%-d日"
++msgstr "%Y年%m月%d日"
+ 
+ #: gal/e-table/e-cell-pixbuf.c:392
+ msgid "Selected Column"
