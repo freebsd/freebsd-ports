@@ -5,7 +5,7 @@ diff -ruN util/exerciser.tcl util/exerciser.tcl
  #!/bin/bash
  #\
 -exec wish8.2 "$0" ${1+"$@"}
-+exec wish8.3 "$0" ${1+"$@"}
++exec wish8.4 "$0" ${1+"$@"}
  
 -set SRLPORT /dev/ttyS0
 +set SRLPORT /dev/cuaa0
