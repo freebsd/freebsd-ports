@@ -8,9 +8,8 @@
 PORTNAME=		desktop-file-utils
 PORTVERSION=		0.9
 CATEGORIES=		devel
-MASTER_SITES=		http://freedesktop.org/Software/desktop-file-utils/releases/ \
-			http://www.marcuscom.com/downloads/
-
+MASTER_SITES=		http://www.marcuscom.com/downloads/ \
+			http://freedesktop.org/Software/desktop-file-utils/releases/
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A couple of command line utilities for working with desktop entries
 
