@@ -36,7 +36,7 @@ post-extract:
 post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
 
-post-install:
+pre-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/info
 	install-info ${PREFIX}/info/yap.info ${PREFIX}/info/dir
 
