@@ -1,0 +1,10 @@
+--- help.c.orig	Mon May 11 11:43:35 1992
++++ help.c	Sat Jun 29 01:43:43 2002
+@@ -579,7 +579,6 @@
+ 			file, row, range, misc, var, rangef, numericf, stringf,
+ 			finf, timef, NULL};
+ 
+-void
+ main()
+ {   int	lineno;
+     char	***pagep = pages;
