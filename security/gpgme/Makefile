@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.3.16
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -16,11 +15,14 @@ MAINTAINER=	markun@onohara.to
 COMMENT=	A library to make access to GnuPG easier
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-pth \
+		--without-pth-test \
+		--with-gpg=${LOCALBASE}/bin/gpg
 
 INFO=	gpgme
 
@@ -32,6 +34,7 @@ WITH_GPGSM=	yes
 
 .if defined(WITH_GPGSM)
 BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg-devel
+CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
 .else
 CONFIGURE_ARGS+=	--without-gpgsm
 .endif

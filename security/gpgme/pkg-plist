@@ -1,6 +1,9 @@
 bin/gpgme-config
 include/gpgme.h
+lib/libgpgme-pthread.a
+lib/libgpgme-pthread.so
+lib/libgpgme-pthread.so.14
 lib/libgpgme.a
 lib/libgpgme.so
-lib/libgpgme.so.9
+lib/libgpgme.so.14
 share/aclocal/gpgme.m4
