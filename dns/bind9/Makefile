@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	9.1.1rc5
+PORTVERSION=	9.1.1rc6
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/ \
