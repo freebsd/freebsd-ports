@@ -11,7 +11,7 @@ MAINTAINER=	kiri@FreeBSD.org
 MEW_MAJOR_VER=	2
 
 # This is a slave port.
-MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}-emacs20
+MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
 
 # set emacs port
 EMACS_PORT_NAME=	xemacs21

@@ -25,7 +25,7 @@ MEW_VER=	${MEW_MAJOR_VER}.1
 MEW_DOCDIR?=	share/doc/${PORTNAME}${MEW_MAJOR_VER}
 
 # emacs port setup
-EMACS_PORT_NAME?=	emacs20
+EMACS_PORT_NAME?=	emacs21
 
 # target name for make build and install
 ALL_TARGET?=	all info jinfo
