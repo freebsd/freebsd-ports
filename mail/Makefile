@@ -1,6 +1,6 @@
 
-# $Id: Makefile,v 1.1.1.1 1994/09/03 20:43:15 jkh Exp $
+# $Id: Makefile,v 1.2 1994/09/25 19:03:04 adam Exp $
 #
-SUBDIR=	pine procmail
+SUBDIR=	mh pine procmail
 
 .include <bsd.port.subdir.mk>
