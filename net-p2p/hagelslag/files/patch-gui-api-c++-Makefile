@@ -1,0 +1,18 @@
+--- gui-api/c++/Makefile.orig	Thu Feb  1 16:28:34 2001
++++ gui-api/c++/Makefile	Wed Feb 14 14:43:15 2001
+@@ -1,5 +1,4 @@
+-CXX=g++
+-CXXFLAGS=-Wall -O2 -g
++CXXFLAGS+=-Wall -O2 -g
+ 
+ H_FILES = List.h DownloadList.h ResultList.h UploadList.h ConnectionList.h \
+ 	ShareList.h HostList.h OptionList.h StatList.h QueryList.h \
+@@ -24,7 +23,7 @@
+ 	rm -f *~ *.o *.a *.bak
+ 
+ depend:
+-	makedepend $(CPP_FILES) -Y
++	makedepend $(CPP_FILES)
+ 
+ count:
+ 	@echo GUI-API c++

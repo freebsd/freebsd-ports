@@ -1,0 +1,18 @@
+--- gui/test/Makefile.orig	Thu Feb  1 16:28:43 2001
++++ gui/test/Makefile	Wed Feb 14 14:42:42 2001
+@@ -1,5 +1,4 @@
+-CXX=g++
+-CXXFLAGS=-Wall -O2 -g -I../../gui-api/c++
++CXXFLAGS+=-Wall -O2 -g -I../../gui-api/c++
+ LFLAGS= ../../lib/HagelslagInterface.a
+ 
+ H_FILES = TestGui.h UserTranslator.h ListTranslator.h
+@@ -14,7 +13,7 @@
+ 	rm -f *~ core *.o testgui *.bak
+ 
+ depend:
+-	makedepend $(CPP_FILES) -Y
++	makedepend $(CPP_FILES) -I../../gui-api/c++/
+ 
+ testgui: TestGui.h TestGui.cpp $(O_FILES) ../../lib/HagelslagInterface.a
+ 	$(CXX) $(CXXFLAGS) TestGui.cpp $(O_FILES) $(LFLAGS) -o testgui

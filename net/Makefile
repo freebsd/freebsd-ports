@@ -106,6 +106,7 @@
     SUBDIR += gtk-gnutella
     SUBDIR += gtkyahoo
     SUBDIR += h2n
+    SUBDIR += hagelslag
     SUBDIR += hesiod
     SUBDIR += icb
     SUBDIR += icmpinfo
