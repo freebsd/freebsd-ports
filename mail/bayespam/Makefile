@@ -10,7 +10,7 @@ PORTVERSION=	0.9.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.garyarnold.com/projects/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	qmail spam filter written in Perl using Bayesian classification
 
 RUN_DEPENDS=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
