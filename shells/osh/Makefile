@@ -10,7 +10,7 @@ PORTVERSION=	031014
 CATEGORIES=	shells
 MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the UNIX 6th Edition shell.
 
 MAN1=		goto.1 if.1 osh.1
