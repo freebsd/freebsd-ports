@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	AquaGatekeeper
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	AquaGatekeeper121FreeBSD
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eugen@grosbein.pp.ru
@@ -18,7 +17,8 @@ COMMENT=	Aqua H323 Gatekeeper and proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 NO_PACKAGE=	"No commercial redistribution"
 NO_CDROM=	"No commercial redistribution"
@@ -52,8 +52,14 @@ post-install:
 
 .if ${OSVERSION} < 400000
 BROKEN=		"Supported only on 4.x systems and later"
-.elif ${OSVERSION} >= 500000
+.elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
+.if ${ARCH} == "amd64"
+DISTNAME=	AquaGatekeeper122FreeBSDamd64
+.else
+DISTNAME=	AquaGatekeeper122FreeBSD
 .endif
 
 .include <bsd.port.post.mk>
