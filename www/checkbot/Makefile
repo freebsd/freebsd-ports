@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	checkbot
-PORTVERSION=	1.67
+PORTVERSION=	1.71
 CATEGORIES=	www perl5
 MASTER_SITES=	http://degraaff.org/checkbot/ \
 		http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	A WWW link verifier, similar like momspider
 
 SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 

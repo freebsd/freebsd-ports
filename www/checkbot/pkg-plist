@@ -1,3 +1,4 @@
 bin/checkbot
+man/man1/checkbot.1.gz
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/checkbot/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/checkbot
