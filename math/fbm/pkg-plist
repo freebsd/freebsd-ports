@@ -11,6 +11,7 @@ bin/bvg-wrap
 bin/calc
 bin/combine
 bin/data-spec
+bin/dft-cases
 bin/dft-circ
 bin/dft-dendrogram
 bin/dft-display
