@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.6
+PORTVERSION=	7.6.9
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pike/7.6/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
-DISTNAME=	Pike-v${PORTVERSION}
+DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
