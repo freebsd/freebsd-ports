@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.34
+PORTVERSION=	2.0.36
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
-DISTNAME=	avidemux-${PORTVERSION}-test1
+DISTNAME=	avidemux-${PORTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
+PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake${WANT_AUTOMAKE_VER}
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
@@ -28,7 +29,6 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ffmpeg \
 		-I${LOCALBASE}/include/a52dec" \
