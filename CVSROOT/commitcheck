@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: commitcheck,v 1.8 1999/01/24 20:07:28 peter Exp $
+# $Id: commitcheck,v 1.9 1999/01/25 01:28:13 peter Exp $
 
 #
 # BEWARE:  If you are "borrowing" this code for use on another cvs
@@ -16,6 +16,16 @@ freefall.freebsd.org)
 	echo "Please commit on freefall...."
 	exit 1
 esac
+
+#
+# Sanity check to make sure we've been run through the wrapper and are now
+# primary group 'ncvs'.
+#
+GRP=`/usr/bin/id -gn`
+if [ "x$GRP" != "xncvs" ]; then
+	echo "You do not have group ncvs!"
+	exit 1
+fi
 
 #
 # Ensure the minimum version of cvs is installed.
