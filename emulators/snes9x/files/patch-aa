@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan  6 03:05:29 2001
-+++ Makefile	Fri Jan 12 23:50:27 2001
+--- Makefile.orig	Wed Feb 28 15:29:58 2001
++++ Makefile	Sat Mar 24 23:16:22 2001
 @@ -4,7 +4,6 @@
  #SPC700ASM=1
  NETPLAY=1
@@ -7,8 +7,8 @@
 -GLIDE=1
  #GUI=1
  THREAD_SOUND=1
- 
-@@ -71,11 +70,6 @@
+ ASMKREED=1
+@@ -81,11 +80,6 @@
  UNZIPDEFINES=-DUNZIP_SUPPORT
  endif
  
@@ -20,7 +20,7 @@
  ifdef GLIDE
  GLIDEOBJS = unix/glide.o
  GLIDEDEFINES = -DUSE_GLIDE -I/usr/include/glide
-@@ -88,13 +82,13 @@
+@@ -98,13 +92,13 @@
  endif
  
  MOC = $(QTDIR)/bin/moc
@@ -30,14 +30,14 @@
  NASM = nasm
  
 -INCLUDES=-I/usr/X11R6/include -I/usr/local/include
-+INCLUDES= -I$(X11BASE)/include -I$(LOCALBASE)/include
++INCLUDES=-I$(X11BASE)/include -I$(LOCALBASE)/include
  
--OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -pipe 
-+OPTIMISE= $(CFLAGS) -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic
+-OPTIMISE= -O6 -mpentium -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -pipe 
++OPTIMISE= $(CFLAGS) -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -pipe 
  
  #OPTIMISE=-g -fno-exceptions
  #-DMITSHM 
-@@ -109,6 +103,7 @@
+@@ -119,6 +113,7 @@
  -DDEBUGGER \
  -DCPU_SHUTDOWN \
  -DSPC700_SHUTDOWN \
@@ -45,8 +45,8 @@
  $(LINUXDEFINES) \
  $(FXDEFINES) \
  $(C4DEFINES) \
-@@ -120,6 +115,11 @@
- $(GUIDEFINES)
+@@ -131,6 +126,11 @@
+ $(KREEDDEFINES)
  #-DNO_INLINE_SET_GET
  
 +ifdef USB_JOYSTICK_SUPPORT
@@ -57,7 +57,7 @@
  #-DSOUND
  #-DDEBUGGER
  #-DNO_INLINE_SET_GET
-@@ -127,12 +127,10 @@
+@@ -138,12 +138,10 @@
  #-DCPU_SHUTDOWN
  #-DSPC700_SHUTDOWN
  
@@ -72,7 +72,7 @@
  
  #ggisnes9x
  #xf86snes9x
-@@ -154,7 +152,7 @@
+@@ -165,7 +163,7 @@
  	./offsets >i386/offsets.h
  
  snes9x: $(OBJECTS) unix/x11.o $(GLIDEOBJS) $(GUIOBJS)
