@@ -1,5 +1,5 @@
---- libgnome/gnome-help.c.orig	Tue Sep  1 13:30:25 1998
-+++ libgnome/gnome-help.c	Tue Sep  1 13:30:44 1998
+--- libgnome/gnome-help.c.orig	Fri Jul 24 02:08:29 1998
++++ libgnome/gnome-help.c	Sat Sep 26 22:12:34 1998
 @@ -35,7 +35,7 @@
        lang= language_list->data;
  

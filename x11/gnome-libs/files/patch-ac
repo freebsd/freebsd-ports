@@ -1,15 +1,15 @@
---- gnome-config.in.orig	Wed Aug 26 19:16:24 1998
-+++ gnome-config.in	Wed Aug 26 19:16:57 1998
-@@ -36,7 +36,7 @@
-     glib	(calls glib-config)
+--- gnome-config.in.orig	Mon Sep 21 23:15:02 1998
++++ gnome-config.in	Sat Sep 26 22:12:16 1998
+@@ -45,7 +45,7 @@
      gnome
      gnomeui
+     gnorba
 -    gtk		(calls gtk-config)
 +    gtk11	(calls gtk11-config)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
-@@ -92,9 +92,9 @@
+@@ -116,9 +116,9 @@
  	the_libs="$the_libs `glib-config --libs`"
  	the_flags="$the_flags `glib-config --cflags`"
  	;;
