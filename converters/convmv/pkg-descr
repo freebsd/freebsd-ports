@@ -1,0 +1,16 @@
+convmv is meant to help convert a single filename, a directory tree and the
+contained files or a whole filesystem into a different encoding. It just
+converts the filenames, not the content of the files. A special feature of
+convmv is that it also takes care of symlinks, also converts the symlink target
+pointer in case the symlink target is being converted, too.
+
+All this comes in very handy when one wants to switch over from old 8-bit
+locales to UTF-8 locales. It is also possible to convert directories to UTF-8
+which are already partly UTF-8 encoded. convmv is able to detect if certain
+files are UTF-8 encoded and will skip them by default. To turn this smartness
+off use the --nosmart switch.
+
+WWW: http://j3e.de/linux/convmv/man/
+
+- Kuang-che Wu
+  kcwu@csie.org
