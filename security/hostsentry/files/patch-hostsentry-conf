@@ -1,0 +1,35 @@
+--- hostsentry.conf.orig	Sat Jul  3 20:59:32 2004
++++ hostsentry.conf	Sat Jul  3 21:00:39 2004
+@@ -27,13 +27,13 @@
+ # $Id: hostsentry.conf,v 1.3 1999/03/25 22:05:44 crowland Exp crowland $
+ 
+ 
+-IGNORE_FILE = "/usr/local/abacus/hostsentry/hostsentry.ignore"
+-ACTION_FILE = "/usr/local/abacus/hostsentry/hostsentry.action"
+-MODULE_FILE = "/usr/local/abacus/hostsentry/hostsentry.modules"
+-MODULE_PATH = "/usr/local/abacus/hostsentry/modules"
++IGNORE_FILE = "/usr/local/etc/hostsentry/hostsentry.ignore"
++ACTION_FILE = "/usr/local/etc/hostsentry/hostsentry.action"
++MODULE_FILE = "/usr/local/etc/hostsentry/hostsentry.modules"
++MODULE_PATH = "/usr/local/lib/hostsentry/modules"
+ WTMP_FILE = "/var/log/wtmp"
+-DB_FILE = "/usr/local/abacus/hostsentry/hostsentry.db"
+-DB_TTY_FILE = "/usr/local/abacus/hostsentry/hostsentry.tty.db"
++DB_FILE = "/usr/local/etc/hostsentry/hostsentry.db"
++DB_TTY_FILE = "/usr/local/etc/hostsentry/hostsentry.tty.db"
+ 
+ 
+ # WTMP formats vary between Unices. As a result you need to let HostSentry
+@@ -70,10 +70,10 @@
+ # I wrap native getutent() functions for Python.
+ #
+ # RedHat
+-WTMP_FORMAT = "384/8:32/44:32/76:256"
++#WTMP_FORMAT = "384/8:32/44:32/76:256"
+ # Slackware
+ #WTMP_FORMAT = "56/8:12/28:8/36:16"
+ # BSD variants
+-#WTMP_FORMAT = "36/0:8/8:8/16:16"
++WTMP_FORMAT = "36/0:8/8:8/16:16"
+                         
+ 

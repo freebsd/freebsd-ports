@@ -1,0 +1,24 @@
+--- hostSentryLog.py.orig	Sat Jul  3 21:56:35 2004
++++ hostSentryLog.py	Sat Jul  3 21:56:40 2004
+@@ -26,7 +26,7 @@
+ # 
+ # $Id: hostSentryLog.py,v 1.1 1999/03/22 04:56:44 crowland Exp crowland $
+ 
+-from hostSentryCore import *
++#from hostSentryCore import *
+ import sys
+ import syslog
+ import hostSentryConfig
+@@ -44,10 +44,9 @@
+ 	if priority == '':
+ 		priority = syslog.LOG_INFO
+ 
+-	syslog.openlog('hostSentry', syslog.LOG_PID, priority)
+-	syslog.syslog(message)
++	syslog.openlog('hostSentry', syslog.LOG_PID, syslog.LOG_LOCAL1)
++	syslog.syslog(priority, message)
+ 	syslog.closelog()
+-
+ 
+ if __name__ == '__main__':
+ 	log('Test log message')
