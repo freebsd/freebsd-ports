@@ -4,7 +4,7 @@
 #
 
 slurpd=@@PREFIX@@/libexec/slurpd
-pidfile=/var/run/slurpd.pid
+pidfile=/var/run/ldap/slurpd.pid
 
 case "$1" in
 start)
