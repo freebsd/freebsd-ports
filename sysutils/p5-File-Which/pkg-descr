@@ -1,0 +1,5 @@
+File::Which is a portable implementation (in Perl) of `which', and can
+be used to get the absolute filename of an executable program
+installed somewhere in your PATH, or just check for its existence. It
+includes the command-line utility `pwhich' which has the same function
+as `which'.
