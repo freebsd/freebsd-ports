@@ -29,8 +29,9 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 
 USE_PERL5=	yes
 .if defined(NOSHARED)
-PLIST=		${PKGDIR}/pkg-plist.noshared
+PLIST_SUB+=	SHARED="@comment "
 .else
+PLIST_SUB+=	SHARED=""
 ALL_TARGET=	freebsd-shared all
 SHLIBVER=	3
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}

@@ -66,11 +66,11 @@ include/openssl/x509.h
 include/openssl/x509_vfy.h
 include/openssl/x509v3.h
 lib/libcrypto.a
-lib/libcrypto.so
-lib/libcrypto.so.%%SHLIBVER%%
+%%SHARED%%lib/libcrypto.so
+%%SHARED%%lib/libcrypto.so.%%SHLIBVER%%
 lib/libssl.a
-lib/libssl.so
-lib/libssl.so.%%SHLIBVER%%
+%%SHARED%%lib/libssl.so
+%%SHARED%%lib/libssl.so.%%SHLIBVER%%
 openssl/misc/CA.pl
 openssl/misc/CA.sh
 openssl/misc/c_hash
