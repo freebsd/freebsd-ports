@@ -145,8 +145,8 @@ post-install:
 .for i in ${SAMPLE_BINS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
 .endfor
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc-sample-src)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc-sample-src"
+.if exists(${.CURDIR}/Makefile.inc-sample-src)
+.include "${.CURDIR}/Makefile.inc-sample-src"
 .endif
 .endif
 .if !defined(NOPORTDOCS)
