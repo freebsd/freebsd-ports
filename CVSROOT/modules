@@ -4466,6 +4466,7 @@ mod_auth_mysql	ports/www/mod_auth_mysql
 mod_auth_mysql_another	ports/www/mod_auth_mysql_another
 mod_auth_pam	ports/www/mod_auth_pam
 mod_auth_pgsql	ports/www/mod_auth_pgsql
+mod_auth_pgsql2	ports/www/mod_auth_pgsql2
 mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_backhand	ports/www/mod_backhand
 mod_bandwidth	ports/www/mod_bandwidth
