@@ -10,15 +10,16 @@ PORTVERSION=	0.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://cdcd.undergrid.net/gdcd/source_archive/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		cdaudio.1:${PORTSDIR}/audio/libcdaudio \
 		Imlib.5:${PORTSDIR}/graphics/imlib
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" GTK_CONFIG="${GTK_CONFIG}"
 
 # for libcdaudio
 CPPFLAGS+=	-I${LOCALBASE}/include
