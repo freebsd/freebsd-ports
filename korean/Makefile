@@ -67,6 +67,7 @@
     SUBDIR += nhppf
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
+    SUBDIR += openoffice
     SUBDIR += pgp.language
     SUBDIR += pine
     SUBDIR += pinetreefonts
