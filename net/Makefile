@@ -485,7 +485,6 @@
     SUBDIR += wmnet
     SUBDIR += wmnet2
     SUBDIR += wmnetmon
-    SUBDIR += wmqmon
     SUBDIR += wmwave
     SUBDIR += xarchie
     SUBDIR += xbone
