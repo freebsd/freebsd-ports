@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
@@ -30,7 +30,7 @@ MAN8=		exim.8
 
 EXIM_VERSION=	4.14
 EXIM_DOCVERSION=	4.10
-EXISCAN_VERSION=	4.14-26
+EXISCAN_VERSION=	${EXIM_VERSION}-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
@@ -75,8 +75,8 @@ POSTGRESQL_PORT?=	databases/postgresql7
 #WITH_OPENLDAP21=	yes
 
 # DB_LIB_VERSION is the version of the Berkeley DB library to use, and
-# may be 1, which corresponds to version 1.85 in the base system, or 4
-# which depends on the databases/db4 port.
+# may be 1, which corresponds to version 1.85 in the base system, 4 or
+# 41 which depends on the databases/db4 or databases/db41 port.
 DB_LIB_VERSION?=1
 
 # The following options may be defined to turn off support for various
@@ -200,8 +200,12 @@ SEDLIST+=	-e 's,^DBMLIB=,\#DBMLIB=,'
 DB_LIBS=	-L${LOCALBASE}/lib -ldb4
 DB_INCLUDES=	-I${LOCALBASE}/include/db4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.elif (${DB_LIB_VERSION} == 41)
+DB_LIBS=	-L${LOCALBASE}/lib -ldb41
+DB_INCLUDES=	-I${LOCALBASE}/include/db41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .else
-.error DB_LIB_VERSION must be either 1 or 4
+.error DB_LIB_VERSION must be either 1, 4 or 41
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
