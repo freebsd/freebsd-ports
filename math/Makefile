@@ -8,6 +8,7 @@
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += apc
+    SUBDIR += arpack
     SUBDIR += asir2000
     SUBDIR += atlas
     SUBDIR += biggles
