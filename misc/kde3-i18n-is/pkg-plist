@@ -29,7 +29,6 @@ share/locale/is/LC_MESSAGES/katomic.mo
 share/locale/is/LC_MESSAGES/kbabel.mo
 share/locale/is/LC_MESSAGES/kbackgammon.mo
 share/locale/is/LC_MESSAGES/kbattleship.mo
-share/locale/is/LC_MESSAGES/kbiff.mo
 share/locale/is/LC_MESSAGES/kblackbox.mo
 share/locale/is/LC_MESSAGES/kbounce.mo
 share/locale/is/LC_MESSAGES/kcalc.mo
@@ -76,11 +75,9 @@ share/locale/is/LC_MESSAGES/kcmlilo.mo
 share/locale/is/LC_MESSAGES/kcmlinuz.mo
 share/locale/is/LC_MESSAGES/kcmlocale.mo
 share/locale/is/LC_MESSAGES/kcmmidi.mo
-share/locale/is/LC_MESSAGES/kcmnapster.mo
 share/locale/is/LC_MESSAGES/kcmnewsticker.mo
 share/locale/is/LC_MESSAGES/kcmnic.mo
 share/locale/is/LC_MESSAGES/kcmnotify.mo
-share/locale/is/LC_MESSAGES/kcmodbc.mo
 share/locale/is/LC_MESSAGES/kcmsamba.mo
 share/locale/is/LC_MESSAGES/kcmscreensaver.mo
 share/locale/is/LC_MESSAGES/kcmsmartcard.mo
@@ -114,7 +111,6 @@ share/locale/is/LC_MESSAGES/kdmgreet.mo
 share/locale/is/LC_MESSAGES/kdvi.mo
 share/locale/is/LC_MESSAGES/kedit.mo
 share/locale/is/LC_MESSAGES/kenolaba.mo
-share/locale/is/LC_MESSAGES/keystone.mo
 share/locale/is/LC_MESSAGES/kfax.mo
 share/locale/is/LC_MESSAGES/kfifteenapplet.mo
 share/locale/is/LC_MESSAGES/kfile_m3u.mo
@@ -126,7 +122,6 @@ share/locale/is/LC_MESSAGES/kfile_ps.mo
 share/locale/is/LC_MESSAGES/kfile_wav.mo
 share/locale/is/LC_MESSAGES/kfind.mo
 share/locale/is/LC_MESSAGES/kfindpart.mo
-share/locale/is/LC_MESSAGES/kfinger.mo
 share/locale/is/LC_MESSAGES/kfloppy.mo
 share/locale/is/LC_MESSAGES/kfmclient.mo
 share/locale/is/LC_MESSAGES/kfmexec.mo

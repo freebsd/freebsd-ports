@@ -549,9 +549,9 @@ share/applnk/System/kfmclient_dir.desktop
 share/applnk/System/kfmclient_html.desktop
 share/applnk/System/kmenuedit.desktop
 share/applnk/System/konquerorsu.desktop
+share/applnk/System/kpersonalizer.desktop
 share/applnk/System/konsole.desktop
 share/applnk/System/konsolesu.desktop
-share/applnk/System/kpersonalizer.desktop
 share/applnk/System/ksysguard.desktop
 share/applnk/Toys/.directory
 share/applnk/Toys/ktip.desktop
@@ -1353,7 +1353,6 @@ share/apps/naughtyapplet/pics/naughty-sad.png
 share/autostart/kdesktop.desktop
 share/autostart/khotkeys.desktop
 share/autostart/klipper.desktop
-share/autostart/kpersonalizer.desktop
 share/autostart/ktip.desktop
 share/autostart/kwrited.desktop
 share/autostart/panel.desktop
@@ -2157,6 +2156,8 @@ share/locale/en_US/entry.desktop
 share/locale/l10n/C/entry.desktop
 share/locale/l10n/C/flag.png
 share/locale/l10n/africa.desktop
+share/locale/l10n/ae/entry.desktop
+share/locale/l10n/ae/flag.png
 share/locale/l10n/ag/entry.desktop
 share/locale/l10n/ag/flag.png
 share/locale/l10n/ar/entry.desktop
@@ -2178,6 +2179,8 @@ share/locale/l10n/be/entry.desktop
 share/locale/l10n/be/flag.png
 share/locale/l10n/bg/entry.desktop
 share/locale/l10n/bg/flag.png
+share/locale/l10n/bh/entry.desktop
+share/locale/l10n/bh/flag.png
 share/locale/l10n/bo/entry.desktop
 share/locale/l10n/bo/flag.png
 share/locale/l10n/br/entry.desktop
@@ -2200,10 +2203,14 @@ share/locale/l10n/cz/entry.desktop
 share/locale/l10n/cz/flag.png
 share/locale/l10n/de/entry.desktop
 share/locale/l10n/de/flag.png
+share/locale/l10n/dj/entry.desktop
+share/locale/l10n/dj/flag.png
 share/locale/l10n/dk/entry.desktop
 share/locale/l10n/dk/flag.png
 share/locale/l10n/do/entry.desktop
 share/locale/l10n/do/flag.png
+share/locale/l10n/dz/entry.desktop
+share/locale/l10n/dz/flag.png
 share/locale/l10n/easteurope.desktop
 share/locale/l10n/ec/entry.desktop
 share/locale/l10n/ec/flag.png
@@ -2257,6 +2264,8 @@ share/locale/l10n/kp/entry.desktop
 share/locale/l10n/kp/flag.png
 share/locale/l10n/kr/entry.desktop
 share/locale/l10n/kr/flag.png
+share/locale/l10n/lb/entry.desktop
+share/locale/l10n/lb/flag.png
 share/locale/l10n/lc/entry.desktop
 share/locale/l10n/lc/flag.png
 share/locale/l10n/lt/entry.desktop
@@ -2265,6 +2274,8 @@ share/locale/l10n/lu/entry.desktop
 share/locale/l10n/lu/flag.png
 share/locale/l10n/lv/entry.desktop
 share/locale/l10n/lv/flag.png
+share/locale/l10n/ly/entry.desktop
+share/locale/l10n/ly/flag.png
 share/locale/l10n/mk/entry.desktop
 share/locale/l10n/mk/flag.png
 share/locale/l10n/mt/entry.desktop
@@ -2279,20 +2290,28 @@ share/locale/l10n/northamerica.desktop
 share/locale/l10n/northeurope.desktop
 share/locale/l10n/nz/entry.desktop
 share/locale/l10n/nz/flag.png
+share/locale/l10n/om/entry.desktop
+share/locale/l10n/om/flag.png
 share/locale/l10n/pa/entry.desktop
 share/locale/l10n/pa/flag.png
 share/locale/l10n/pe/entry.desktop
 share/locale/l10n/pe/flag.png
 share/locale/l10n/pl/entry.desktop
 share/locale/l10n/pl/flag.png
+share/locale/l10n/ps/entry.desktop
+share/locale/l10n/ps/flag.png
 share/locale/l10n/pt/entry.desktop
 share/locale/l10n/pt/flag.png
 share/locale/l10n/py/entry.desktop
 share/locale/l10n/py/flag.png
+share/locale/l10n/qa/entry.desktop
+share/locale/l10n/qa/flag.png
 share/locale/l10n/ro/entry.desktop
 share/locale/l10n/ro/flag.png
 share/locale/l10n/ru/entry.desktop
 share/locale/l10n/ru/flag.png
+share/locale/l10n/sa/entry.desktop
+share/locale/l10n/sa/flag.png
 share/locale/l10n/sd/entry.desktop
 share/locale/l10n/sd/flag.png
 share/locale/l10n/se/entry.desktop
@@ -2307,6 +2326,8 @@ share/locale/l10n/sr/entry.desktop
 share/locale/l10n/sr/flag.png
 share/locale/l10n/sv/entry.desktop
 share/locale/l10n/sv/flag.png
+share/locale/l10n/sy/entry.desktop
+share/locale/l10n/sy/flag.png
 share/locale/l10n/th/entry.desktop
 share/locale/l10n/th/flag.png
 share/locale/l10n/tr/entry.desktop
@@ -2328,6 +2349,8 @@ share/locale/l10n/ve/flag.png
 share/locale/l10n/vn/entry.desktop
 share/locale/l10n/vn/flag.png
 share/locale/l10n/westeurope.desktop
+share/locale/l10n/ye/entry.desktop
+share/locale/l10n/ye/flag.png
 share/locale/l10n/za/entry.desktop
 share/locale/l10n/za/flag.png
 share/mimelnk/application/x-konsole.desktop
@@ -2540,6 +2563,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
 @dirrm share/locale/l10n/za
+@dirrm share/locale/l10n/ye
 @dirrm share/locale/l10n/vn
 @dirrm share/locale/l10n/ve
 @dirrm share/locale/l10n/vc
@@ -2550,29 +2574,36 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/tt
 @dirrm share/locale/l10n/tr
 @dirrm share/locale/l10n/th
+@dirrm share/locale/l10n/sy
 @dirrm share/locale/l10n/sv
 @dirrm share/locale/l10n/sr
 @dirrm share/locale/l10n/sk
 @dirrm share/locale/l10n/si
 @dirrm share/locale/l10n/se
 @dirrm share/locale/l10n/sd
+@dirrm share/locale/l10n/sa
 @dirrm share/locale/l10n/ru
 @dirrm share/locale/l10n/ro
+@dirrm share/locale/l10n/qa
 @dirrm share/locale/l10n/py
 @dirrm share/locale/l10n/pt
+@dirrm share/locale/l10n/ps
 @dirrm share/locale/l10n/pl
 @dirrm share/locale/l10n/pe
 @dirrm share/locale/l10n/pa
+@dirrm share/locale/l10n/om
 @dirrm share/locale/l10n/nz
 @dirrm share/locale/l10n/no
 @dirrm share/locale/l10n/nl
 @dirrm share/locale/l10n/mx
 @dirrm share/locale/l10n/mt
 @dirrm share/locale/l10n/mk
+@dirrm share/locale/l10n/ly
 @dirrm share/locale/l10n/lv
 @dirrm share/locale/l10n/lu
 @dirrm share/locale/l10n/lt
 @dirrm share/locale/l10n/lc
+@dirrm share/locale/l10n/lb
 @dirrm share/locale/l10n/kr
 @dirrm share/locale/l10n/kp
 @dirrm share/locale/l10n/kn
@@ -2599,8 +2630,10 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/eg
 @dirrm share/locale/l10n/ee
 @dirrm share/locale/l10n/ec
+@dirrm share/locale/l10n/dz
 @dirrm share/locale/l10n/do
 @dirrm share/locale/l10n/dk
+@dirrm share/locale/l10n/dj
 @dirrm share/locale/l10n/de
 @dirrm share/locale/l10n/cz
 @dirrm share/locale/l10n/co
@@ -2611,6 +2644,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/by
 @dirrm share/locale/l10n/br
 @dirrm share/locale/l10n/bo
+@dirrm share/locale/l10n/bh
 @dirrm share/locale/l10n/bg
 @dirrm share/locale/l10n/be
 @dirrm share/locale/l10n/bd
@@ -2621,6 +2655,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/at
 @dirrm share/locale/l10n/ar
 @dirrm share/locale/l10n/ag
+@dirrm share/locale/l10n/ae
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/en_US

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde-i18n
-PORTVERSION=	3.0.1
+PORTVERSION=	${KDE_VERSION}
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -32,7 +32,9 @@ RUN_DEPENDS+=\
 ${PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
 .endfor
 
+USE_KDELIBS_VER=3
 NO_BUILD=	yes
+KDE_I18N=	yes
 
 do-install:	# none
 

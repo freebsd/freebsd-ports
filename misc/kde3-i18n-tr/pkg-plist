@@ -212,13 +212,11 @@ share/locale/tr/LC_MESSAGES/kfindpart.mo
 share/locale/tr/LC_MESSAGES/kfloppy.mo
 share/locale/tr/LC_MESSAGES/kfmclient.mo
 share/locale/tr/LC_MESSAGES/kfmexec.mo
-share/locale/tr/LC_MESSAGES/kformviewer.mo
 share/locale/tr/LC_MESSAGES/kfortune.mo
 share/locale/tr/LC_MESSAGES/kfract.mo
 share/locale/tr/LC_MESSAGES/kgantt.mo
 share/locale/tr/LC_MESSAGES/kgeo.mo
 share/locale/tr/LC_MESSAGES/kghostview.mo
-share/locale/tr/LC_MESSAGES/kgnuplot.mo
 share/locale/tr/LC_MESSAGES/khangman.mo
 share/locale/tr/LC_MESSAGES/khelpcenter.mo
 share/locale/tr/LC_MESSAGES/khexedit.mo
@@ -267,7 +265,6 @@ share/locale/tr/LC_MESSAGES/kmidi.mo
 share/locale/tr/LC_MESSAGES/kmines.mo
 share/locale/tr/LC_MESSAGES/kminipagerapplet.mo
 share/locale/tr/LC_MESSAGES/kmix.mo
-share/locale/tr/LC_MESSAGES/kmms.mo
 share/locale/tr/LC_MESSAGES/kmoon.mo
 share/locale/tr/LC_MESSAGES/knewsticker.mo
 share/locale/tr/LC_MESSAGES/knode.mo
@@ -290,10 +287,8 @@ share/locale/tr/LC_MESSAGES/kpaint.mo
 share/locale/tr/LC_MESSAGES/kpartapp.mo
 share/locale/tr/LC_MESSAGES/kpartsaver.mo
 share/locale/tr/LC_MESSAGES/kpat.mo
-share/locale/tr/LC_MESSAGES/kpercentage.mo
 share/locale/tr/LC_MESSAGES/kpersonalizer.mo
 share/locale/tr/LC_MESSAGES/kpf.mo
-share/locale/tr/LC_MESSAGES/kphone.mo
 share/locale/tr/LC_MESSAGES/kpilot.mo
 share/locale/tr/LC_MESSAGES/kpixmap2bitmap.mo
 share/locale/tr/LC_MESSAGES/kpoker.mo
@@ -321,7 +316,6 @@ share/locale/tr/LC_MESSAGES/ksplash.mo
 share/locale/tr/LC_MESSAGES/kstars.mo
 share/locale/tr/LC_MESSAGES/kstart.mo
 share/locale/tr/LC_MESSAGES/kstartperf.mo
-share/locale/tr/LC_MESSAGES/kstockticker.mo
 share/locale/tr/LC_MESSAGES/ksync.mo
 share/locale/tr/LC_MESSAGES/ksysguard.mo
 share/locale/tr/LC_MESSAGES/ksystemtrayapplet.mo
@@ -353,7 +347,6 @@ share/locale/tr/LC_MESSAGES/kwin_glow_config.mo
 share/locale/tr/LC_MESSAGES/kwin_icewm_config.mo
 share/locale/tr/LC_MESSAGES/kwin_modernsys_config.mo
 share/locale/tr/LC_MESSAGES/kwin_quartz_config.mo
-share/locale/tr/LC_MESSAGES/kwintv.mo
 share/locale/tr/LC_MESSAGES/kworldclock.mo
 share/locale/tr/LC_MESSAGES/kwuftpd.mo
 share/locale/tr/LC_MESSAGES/kxkb.mo
@@ -372,7 +365,6 @@ share/locale/tr/LC_MESSAGES/libtaskbar.mo
 share/locale/tr/LC_MESSAGES/libtaskmanager.mo
 share/locale/tr/LC_MESSAGES/lockout.mo
 share/locale/tr/LC_MESSAGES/lskat.mo
-share/locale/tr/LC_MESSAGES/mediacontrol.mo
 share/locale/tr/LC_MESSAGES/multiplayers.mo
 share/locale/tr/LC_MESSAGES/naughtyapplet.mo
 share/locale/tr/LC_MESSAGES/noatun.mo

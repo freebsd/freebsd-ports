@@ -20,6 +20,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+_NO_KDE_PATCHUP=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

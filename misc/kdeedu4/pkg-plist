@@ -684,6 +684,7 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/icons/hicolor
 @dirrm share/icons
 @dirrm share/doc/HTML/en/kvoctrain
+@dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ktouch
 @dirrm share/doc/HTML/en/kstars
 @dirrm share/doc/HTML/en/kmessedwords

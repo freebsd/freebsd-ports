@@ -21,9 +21,7 @@ share/locale/mt/LC_MESSAGES/karm.mo
 share/locale/mt/LC_MESSAGES/kasbarextension.mo
 share/locale/mt/LC_MESSAGES/kate.mo
 share/locale/mt/LC_MESSAGES/katepart.mo
-share/locale/mt/LC_MESSAGES/kautorun.mo
 share/locale/mt/LC_MESSAGES/kbabel.mo
-share/locale/mt/LC_MESSAGES/kbiff.mo
 share/locale/mt/LC_MESSAGES/kcalc.mo
 share/locale/mt/LC_MESSAGES/kcharselect.mo
 share/locale/mt/LC_MESSAGES/kcharselectapplet.mo
@@ -64,7 +62,6 @@ share/locale/mt/LC_MESSAGES/kcmlayout.mo
 share/locale/mt/LC_MESSAGES/kcmlinuz.mo
 share/locale/mt/LC_MESSAGES/kcmlocale.mo
 share/locale/mt/LC_MESSAGES/kcmmidi.mo
-share/locale/mt/LC_MESSAGES/kcmnapster.mo
 share/locale/mt/LC_MESSAGES/kcmnotify.mo
 share/locale/mt/LC_MESSAGES/kcmsamba.mo
 share/locale/mt/LC_MESSAGES/kcmscreensaver.mo
@@ -100,7 +97,6 @@ share/locale/mt/LC_MESSAGES/kfindpart.mo
 share/locale/mt/LC_MESSAGES/kfloppy.mo
 share/locale/mt/LC_MESSAGES/kfmclient.mo
 share/locale/mt/LC_MESSAGES/kfmexec.mo
-share/locale/mt/LC_MESSAGES/kformviewer.mo
 share/locale/mt/LC_MESSAGES/kfract.mo
 share/locale/mt/LC_MESSAGES/kghostview.mo
 share/locale/mt/LC_MESSAGES/khelpcenter.mo
@@ -129,12 +125,9 @@ share/locale/mt/LC_MESSAGES/klipper.mo
 share/locale/mt/LC_MESSAGES/klock.mo
 share/locale/mt/LC_MESSAGES/klpq.mo
 share/locale/mt/LC_MESSAGES/kmail.mo
-share/locale/mt/LC_MESSAGES/kmake.mo
 share/locale/mt/LC_MESSAGES/kmcop.mo
 share/locale/mt/LC_MESSAGES/kmenuedit.mo
 share/locale/mt/LC_MESSAGES/kminipagerapplet.mo
-share/locale/mt/LC_MESSAGES/kmms.mo
-share/locale/mt/LC_MESSAGES/kmonop.mo
 share/locale/mt/LC_MESSAGES/kmoon.mo
 share/locale/mt/LC_MESSAGES/knotes.mo
 share/locale/mt/LC_MESSAGES/knotify.mo
@@ -142,7 +135,6 @@ share/locale/mt/LC_MESSAGES/kodo.mo
 share/locale/mt/LC_MESSAGES/kolourpicker.mo
 share/locale/mt/LC_MESSAGES/konqueror.mo
 share/locale/mt/LC_MESSAGES/konsole.mo
-share/locale/mt/LC_MESSAGES/konv.mo
 share/locale/mt/LC_MESSAGES/kooka.mo
 share/locale/mt/LC_MESSAGES/korganizer.mo
 share/locale/mt/LC_MESSAGES/kpackage.mo

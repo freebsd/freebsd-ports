@@ -220,7 +220,6 @@ share/locale/ja/LC_MESSAGES/kcmbell.mo
 share/locale/ja/LC_MESSAGES/kcmcolors.mo
 share/locale/ja/LC_MESSAGES/kcmcrypto.mo
 share/locale/ja/LC_MESSAGES/kcmcss.mo
-share/locale/ja/LC_MESSAGES/kcmdhcpd.mo
 share/locale/ja/LC_MESSAGES/kcmemail.mo
 share/locale/ja/LC_MESSAGES/kcmenergy.mo
 share/locale/ja/LC_MESSAGES/kcmfonts.mo
@@ -257,7 +256,6 @@ share/locale/ja/LC_MESSAGES/kcmmidi.mo
 share/locale/ja/LC_MESSAGES/kcmnewsticker.mo
 share/locale/ja/LC_MESSAGES/kcmnic.mo
 share/locale/ja/LC_MESSAGES/kcmnotify.mo
-share/locale/ja/LC_MESSAGES/kcmodbc.mo
 share/locale/ja/LC_MESSAGES/kcmsamba.mo
 share/locale/ja/LC_MESSAGES/kcmscreensaver.mo
 share/locale/ja/LC_MESSAGES/kcmsmartcard.mo
@@ -294,7 +292,6 @@ share/locale/ja/LC_MESSAGES/kdvi.mo
 share/locale/ja/LC_MESSAGES/kedit.mo
 share/locale/ja/LC_MESSAGES/keduca.mo
 share/locale/ja/LC_MESSAGES/kenolaba.mo
-share/locale/ja/LC_MESSAGES/keystone.mo
 share/locale/ja/LC_MESSAGES/kfax.mo
 share/locale/ja/LC_MESSAGES/kfifteenapplet.mo
 share/locale/ja/LC_MESSAGES/kfile_diff.mo
