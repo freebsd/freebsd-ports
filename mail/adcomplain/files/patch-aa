@@ -1,28 +1,27 @@
-*** adcomplain.pl.orig	Tue Sep 15 21:12:13 1998
---- adcomplain.pl	Tue Sep 15 21:14:56 1998
-***************
-*** 1,3 ****
---- 1,4 ----
-+ #!%PERL5%
-  #! /bin/sh -- # -*- perl -*-
-  # first line invokes sh.  Some systems may need to refer to perl directly, i.e.:
-  
-***************
-*** 7,14 ****
-  # allows perl to be _anywhere_ in the user's path.  The intent is to reduce
-  # the need to edit this file.
-  
-! eval 'exec perl $0 ${1+"$@"}'
-! if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
-  
-  # use strict;
-  
---- 8,15 ----
-  # allows perl to be _anywhere_ in the user's path.  The intent is to reduce
-  # the need to edit this file.
-  
-! #eval 'exec perl $0 ${1+"$@"}'
-! #if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
-  
-  # use strict;
-  
+--- adcomplain.pl.orig	Wed Nov  3 00:53:10 1999
++++ adcomplain.pl	Wed Nov  3 00:54:21 1999
+@@ -1,3 +1,4 @@
++#!%PERL5%
+ #! /bin/sh -- # -*- perl -*-
+ # first line invokes sh.  Some systems may need to refer to perl directly, i.e.:
+ 
+@@ -7,8 +8,8 @@
+ # allows perl to be _anywhere_ in the user's path.  The intent is to reduce
+ # the need to edit this file.
+ 
+-eval 'exec perl $0 ${1+"$@"}'
+-if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
++#eval 'exec perl $0 ${1+"$@"}'
++#if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
+ 
+ # use strict;
+ 
+@@ -2520,7 +2521,7 @@
+   ($site2 = $host) =~ s/.*\.(.*\..*)/$1/;
+   ($site3 = $host) =~ s/.*\.(.*\..*\..*)/$1/;
+   ($junk = $host) =~ s/.*\.(.*)/$1/;
+-  if (length($junk) >= 3) {
++  if (length($junk) >= 3 || $junk eq "ru") {
+     ($junk = $site3) =~ s/(\W)/\\$1/g;	# remove special characters
+ 
+     if (grep(/^$junk$/, @site_exceptions) != 0) {
