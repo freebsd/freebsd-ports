@@ -24,19 +24,17 @@ MAN6=		xkoules.6
 MANCOMPRESSED=	no
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xkoules ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/xkoules
+	${INSTALL_PROGRAM} ${WRKSRC}/xkoules ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/xkoules
 .if ${MACHINE_ARCH} == "i386"
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/koules.sndsrv.freebsd ${PREFIX}/share/xkoules
+	${INSTALL_PROGRAM} ${WRKSRC}/koules.sndsrv.freebsd ${PREFIX}/share/xkoules
 .endif
-	@ ${INSTALL_DATA} ${WRKSRC}/sounds/*.raw ${PREFIX}/share/xkoules
-	@ ${INSTALL_MAN} ${WRKSRC}/xkoules.6 ${PREFIX}/man/man6
-
-post-install:
+	${INSTALL_DATA} ${WRKSRC}/sounds/*.raw ${PREFIX}/share/xkoules
+	${INSTALL_MAN} ${WRKSRC}/xkoules.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/xkoules
-.for file in ANNOUNCE BUGS COPYING Card ChangeLog Koules.FAQ TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xkoules
+	@${MKDIR} ${PREFIX}/share/doc/xkoules
+.for file in ANNOUNCE BUGS Card ChangeLog Koules.FAQ TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xkoules
 .endfor
 .endif
 
