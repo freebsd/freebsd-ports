@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Epoch
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DateTime::Format::Epoch.3 DateTime::Format::Epoch::MacOS.3 \
-		DateTime::Format::Epoch::TAI64.3 DateTime::Format::Epoch::Unix.3
+MAN3=		DateTime::Format::Epoch.3 DateTime::Format::Epoch::DotNet.3 \
+       		DateTime::Format::Epoch::MacOS.3 DateTime::Format::Epoch::TAI64.3 \
+	       	DateTime::Format::Epoch::Unix.3
 
 .include <bsd.port.mk>
