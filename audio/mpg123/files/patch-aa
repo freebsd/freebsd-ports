@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Jun 16 02:09:06 1999
-+++ Makefile	Tue Aug 17 16:05:45 1999
++++ Makefile	Thu Nov 11 10:21:40 1999
 @@ -4,7 +4,7 @@
  
  # Where to install binary and manpage on "make install":
@@ -9,7 +9,7 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
  SECTION=1
-@@ -285,14 +285,28 @@
+@@ -285,35 +285,42 @@
  #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
@@ -32,6 +32,11 @@
 +	-DREAD_MMAP \
 +	-DI386_ASSEM ${ARCHOPT} -DREAL_IS_FLOAT -DUSE_MMAP -DOSS -DTERM_CONTROL
 +
++.if defined(OPT_ESOUND)
++CFLAGS +=-I${PREFIX}/include
++LDFLAGS+=-L${PREFIX}/lib
++.endif
++
  freebsd:
 -	$(MAKE) CC=cc LDFLAGS= \
 -		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o' \
@@ -44,8 +49,17 @@
 + 		mpg123-make
  
  freebsd-esd:
- 	$(MAKE) CC=cc LDFLAGS= \
-@@ -307,13 +321,8 @@
+-	$(MAKE) CC=cc LDFLAGS= \
+-		AUDIO_LIB='-lesd -laudiofile' \
+-		OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_esd.o' \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-			-funroll-all-loops -ffast-math -DROT_I386 \
+-			-DREAD_MMAP \
+-			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS \
+-			-I/usr/local/include -L/usr/local/lib \
+-			$(CFLAGS)' \
++	$(MAKE) AUDIO_LIB='-lesd -laudiofile' \
++		OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_esd.o term.o' \
  		mpg123-make
  
  freebsd-frontend:
@@ -60,3 +74,12 @@
  		$(FRONTEND)
   
  
+@@ -552,7 +559,7 @@
+ 	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
+ 
+ mpg123-make:
+-	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123 mpg123
++	@ $(MAKE) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS)' BINNAME=mpg123 mpg123
+ 
+ mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+ 		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
