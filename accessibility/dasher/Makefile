@@ -7,24 +7,28 @@
 
 PORTNAME=	dasher
 PORTVERSION=	3.0.2
-CATEGORIES=	editors
-MASTER_SITES=	http://www.inference.phy.cam.ac.uk/${PORTNAME}/download/linux/source/3.0/
+PORTREVISION=	1
+CATEGORIES=	editors x11 gnome accessibility
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	purple@lewiz.net
 COMMENT=	Information efficient text-entry interface
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
-
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk2 --disable-gtkmmtest
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
-
-LDFLAGS+=	-L{LOCALBASE}/lib
+USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		dasher.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-O2||g'
 
 .include <bsd.port.mk>
