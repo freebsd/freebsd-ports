@@ -5,5 +5,5 @@
  XCOMM Directory where NAS will look for it's config file(s)
  #ifndef NasConfigSearchPath
 -#define NasConfigSearchPath /etc/nas/
-+#define NasConfigSearchPath $(PROJECTROOT)/etc
++#define NasConfigSearchPath $(PROJECTROOT)/etc/
  #endif
