@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20011013
+PORTVERSION=	20020705
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/
 DISTFILES=	sb.tar.Z index.shtml
