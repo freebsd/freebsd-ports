@@ -44,6 +44,10 @@ LIB_DEPENDS=	lthread.${LTHREADVERSION}:${PORTSDIR}/devel/linuxthreads
 EXTRA_PATCHES!= ${ECHO_CMD} ${PKGDIR}/files.5/patch-*
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C code)"
+.endif
+
 pre-build:
 	${REINPLACE_CMD} -e "s@ /modules@ ${PREFIX}/share/mwavem@g" \
 		${WRKSRC}/src/drivers/Makefile
