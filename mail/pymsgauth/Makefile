@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pymsgauth
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.ca/~charlesc/software/pymsgauth/
+MASTER_SITES=	http://pyropus.ca/software/pymsgauth/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Automatically process qsecretary confirmation requests
@@ -16,27 +16,26 @@ COMMENT=	Automatically process qsecretary confirmation requests
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 
-NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 DOCS=		BUGS CHANGELOG pymsgauth.txt pymsgauth.html
+EXAMPLES=	pymsgauthrc-example
 
-post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
+do-build:
+	${REINPLACE_CMD} -e 's,#!/usr/bin/python,#!/usr/bin/env python,' \
 	 	${WRKSRC}/pymsgauth-*
 	${RM} ${WRKSRC}/pymsgauth-*.bak
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pymsgauth-* ${PYTHON_SITELIBDIR}
-	${LN} -sf ${PYTHON_SITELIBDIR}/pymsgauth-* ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${WRKSRC}/pymsgauth-* ${DATADIR}
+	${LN} -sf ${DATADIR}/pymsgauth-* ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/pymsgauthrc-example ${EXAMPLESDIR}
-	@${SED} -e 's,__EXAMPLES__,${EXAMPLESDIR},' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
