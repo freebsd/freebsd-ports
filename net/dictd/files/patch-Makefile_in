@@ -76,4 +76,3 @@
 +	${INSTALL_DATA} dictd.8 $(man8_prefix)/dictd.8
  
  install: $(EXES) install.dict install.dictzip install.dictd
- 

@@ -1,0 +1,11 @@
+--- zlib/Makefile~	Mon Jan 29 01:24:42 2001
++++ zlib/Makefile	Mon Jan 29 01:24:56 2001
+@@ -13,7 +13,7 @@
+ 
+ CC=cc
+ 
+-CFLAGS=-O
++CFLAGS=	%%CFLAGS%%
+ #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7
+ #CFLAGS=-g -DDEBUG
+ #CFLAGS=-O3 -Wall -Wwrite-strings -Wpointer-arith -Wconversion \
