@@ -27,6 +27,6 @@ MAN5=		procmailex.5 procmailrc.5 procmailsc.5
 .include <bsd.port.pre.mk>
 
 post-configure:
-       @${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h
+	@${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h
 
 .include <bsd.port.post.mk>
