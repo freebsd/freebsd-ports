@@ -659,6 +659,7 @@ www/icons/world2.png
 @exec mkdir -p %D/www/proxy
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
+@unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
 @dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
