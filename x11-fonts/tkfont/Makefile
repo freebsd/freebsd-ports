@@ -8,20 +8,20 @@
 PORTNAME=	tkfont
 PORTVERSION=	1.1
 PORTREVISION=	1
-CATEGORIES=	x11-fonts tk83
+CATEGORIES=	x11-fonts tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A Tk based replacement for xfontsel
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 
 post-patch:
 	${SED} -e "s,/usr/local,${LOCALBASE}," \
-		-e "s,#!/usr/X11/bin/wish,#!$(LOCALBASE)/bin/wish8.3," \
+		-e "s,#!/usr/X11/bin/wish,#!$(LOCALBASE)/bin/wish8.4," \
 		 < ${WRKSRC}/tkfont > ${WRKSRC}/tkfont.new
 	${MV} ${WRKSRC}/tkfont.new ${WRKSRC}/tkfont
 
