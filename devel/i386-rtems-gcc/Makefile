@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_GNU:S/$/:gcc/}
@@ -53,7 +53,7 @@ NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
-			--enable-languages=c,c++ \
+			--enable-languages="c,c++,java" \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--without-included-gettext
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
@@ -62,15 +62,15 @@ CONFIGURE_SCRIPT?=	../${GCCNAME}/configure
 PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
 
-MAKE_FLAGS=	LANGUAGES="c c++"
+MAKE_FLAGS=	LANGUAGES="c c++ java"
 MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH}
 
-MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 \
-		cpp.1 gcov.1
+MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 ${LCLTARGET}-gcj.1 \
+		cpp.1 gcov.1 gcjh.1 jv-scan.1 jcf-dump.1 gij.1 \
+		jv-convert.1 rmic.1 rmiregistry.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		${LCLTARGET}-cpp ${LCLTARGET}-cppinternals \
-		${LCLTARGET}-gcc ${LCLTARGET}-gccint
-#INFO=		cpp cppinternals gcc gccint
+		${LCLTARGET}-gcc ${LCLTARGET}-gccint ${LCLTARGET}-gcj
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
@@ -111,6 +111,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gccint.info|${LCLTARGET}-gccint.info|g' ${WRKSRC}/gcc/Makefile.in
 	@${REINPLACE_CMD} -e 's|gccint.texi|${LCLTARGET}-gccint.texi|g' ${WRKSRC}/gcc/Makefile.in
 	@${MV} ${WRKSRC}/gcc/doc/gccint.texi ${WRKSRC}/gcc/doc/${LCLTARGET}-gccint.texi
+# Change gcj.info to ${LCLTARGET}-gcj.info
+	@${REINPLACE_CMD} -e 's|setfilename gcj.info|setfilename ${LCLTARGET}-gcj.info|g' ${WRKSRC}/gcc/java/*.texi
+	@${REINPLACE_CMD} -e 's|(gcj)|(${LCLTARGET}-gcj)|g' ${WRKSRC}/gcc/java/*.texi
+	@${REINPLACE_CMD} -e 's|@file{gcj}|@file{${LCLTARGET}-gcj}|g' ${WRKSRC}/gcc/java/*.texi
+	@${REINPLACE_CMD} -e 's|gcj.info|${LCLTARGET}-gcj.info|g' ${WRKSRC}/gcc/java/Make-lang.in
+	@${REINPLACE_CMD} -e 's|gcj.texi|${LCLTARGET}-gcj.texi|g' ${WRKSRC}/gcc/java/Make-lang.in
+	@${MV} ${WRKSRC}/gcc/java/gcj.texi ${WRKSRC}/gcc/java/${LCLTARGET}-gcj.texi
 
 do-build:
 	@(cd ${WRKDIR}/build-${LCLTARGET} ; \

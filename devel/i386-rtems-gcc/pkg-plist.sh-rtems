@@ -4,6 +4,12 @@ bin/sh-rtems-cpp
 bin/sh-rtems-g++
 bin/sh-rtems-gcc
 bin/sh-rtems-gccbug
+bin/grepjar
+bin/sh-rtems-gcj
+bin/sh-rtems-gcjh
+bin/sh-rtems-jv-scan
+bin/sh-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h  
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc  
 include/c++/%%GCCVERSION%%/bits/basic_string.h        
@@ -217,6 +223,8 @@ lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m3e/libgcc.a
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m4-single-only/libgcc.a
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m4-single/libgcc.a
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m4/libgcc.a
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

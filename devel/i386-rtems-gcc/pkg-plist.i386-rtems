@@ -4,6 +4,12 @@ bin/i386-rtems-g++
 bin/i386-rtems-gcc
 bin/i386-rtems-gccbug
 bin/i386-rtems-cpp
+bin/grepjar
+bin/i386-rtems-gcj
+bin/i386-rtems-gcjh
+bin/i386-rtems-jv-scan
+bin/i386-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -236,6 +242,8 @@ lib/gcc-lib/i386-rtems/%%GCCVERSION%%/tradcpp0
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/athlon/libgcc.a
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/athlon/crtbegin.o
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/athlon/crtend.o
+lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

@@ -4,6 +4,12 @@ bin/mips-rtems-cpp
 bin/mips-rtems-g++
 bin/mips-rtems-gcc
 bin/mips-rtems-gccbug
+bin/grepjar
+bin/mips-rtems-gcj
+bin/mips-rtems-gcjh
+bin/mips-rtems-jv-scan
+bin/mips-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -235,6 +241,8 @@ lib/gcc-lib/mips-rtems/%%GCCVERSION%%/crtbegin.o
 lib/gcc-lib/mips-rtems/%%GCCVERSION%%/crtend.o
 lib/gcc-lib/mips-rtems/%%GCCVERSION%%/crti.o
 lib/gcc-lib/mips-rtems/%%GCCVERSION%%/crtn.o
+lib/gcc-lib/mips-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/mips-rtems/%%GCCVERSION%%/jvgenmain
 mips-rtems/bin/gcc
 mips-rtems/bin/c++
 mips-rtems/bin/g++

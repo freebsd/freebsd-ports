@@ -36,7 +36,6 @@
     SUBDIR += arm-rtems-binutils
     SUBDIR += arm-rtems-g77
     SUBDIR += arm-rtems-gcc
-    SUBDIR += arm-rtems-gcj
     SUBDIR += arm-rtems-gdb
     SUBDIR += arm-rtems-objc
     SUBDIR += as80
@@ -289,7 +288,6 @@
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-g77
     SUBDIR += i386-rtems-gcc
-    SUBDIR += i386-rtems-gcj
     SUBDIR += i386-rtems-gdb
     SUBDIR += i386-rtems-objc
     SUBDIR += i960-rtems-binutils
@@ -427,7 +425,6 @@
     SUBDIR += m68k-rtems-binutils
     SUBDIR += m68k-rtems-g77
     SUBDIR += m68k-rtems-gcc
-    SUBDIR += m68k-rtems-gcj
     SUBDIR += m68k-rtems-gdb
     SUBDIR += m68k-rtems-objc
     SUBDIR += make++
@@ -450,7 +447,6 @@
     SUBDIR += mips-rtems-binutils
     SUBDIR += mips-rtems-g77
     SUBDIR += mips-rtems-gcc
-    SUBDIR += mips-rtems-gcj
     SUBDIR += mips-rtems-gdb
     SUBDIR += mips-rtems-objc
     SUBDIR += mipsel-linux-binutils
@@ -900,7 +896,6 @@
     SUBDIR += powerpc-rtems-binutils
     SUBDIR += powerpc-rtems-g77
     SUBDIR += powerpc-rtems-gcc
-    SUBDIR += powerpc-rtems-gcj
     SUBDIR += powerpc-rtems-gdb
     SUBDIR += powerpc-rtems-objc
     SUBDIR += ppl
@@ -1044,7 +1039,6 @@
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-g77
     SUBDIR += sh-rtems-gcc
-    SUBDIR += sh-rtems-gcj
     SUBDIR += sh-rtems-gdb
     SUBDIR += sh-rtems-objc
     SUBDIR += shapelib
@@ -1061,7 +1055,6 @@
     SUBDIR += sparc-rtems-binutils
     SUBDIR += sparc-rtems-g77
     SUBDIR += sparc-rtems-gcc
-    SUBDIR += sparc-rtems-gcj
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
     SUBDIR += spin
