@@ -10,6 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -34,44 +35,72 @@ post-patch:
 		${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+ ${PTHREAD_LIBS}+' \
 		${WRKSRC}/config.c
-.if !defined(USE_THREADS)
-	@${ECHO_MSG} "make USE_THREADS=yes for force to make threaded version"
-.else
-	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch)
-.endif
-
-do-configure:
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} config < ${FILESDIR}/answer)
-.else
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} config)
-.endif
 .if (${MACHINE_ARCH} == "alpha")
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
 
-do-build:
+do-configure:
+	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/non-thread-patch)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} config < ${FILESDIR}/answer)
+	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} config < ${FILESDIR}/answer)
+
+NON_THREADED_ATLAS=`cat ${WRKSRC}/ARCHNAME-NON-THREADED`
+THREADED_ATLAS=`cat ${WRKSRC}/ARCHNAME-THREADED`
+ATLAS_LIBS1=libatlas libcblas libf77blas libtstatlas libalapack
+ATLAS_LIBS2=libptcblas libptf77blas
+
+post-configure:
 .if (${MACHINE_ARCH} == "alpha") || defined(USE_GCC)
-	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g;' ${WRKSRC}/Make.`cat ${WRKSRC}/ARCHNAME`
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g;' ${WRKSRC}/Make.${NON_THREADED_ATLAS}
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g;' ${WRKSRC}/Make.${THREADED_ATLAS}
 .endif
-	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=`cat ${WRKSRC}/ARCHNAME`)
-	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=`cat ${WRKSRC}/ARCHNAME`)
+
+do-build:
+# non thread version
+	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=${NON_THREADED_ATLAS})
+	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${NON_THREADED_ATLAS})
 	(cd ${WRKSRC}; ${MKDIR} tmp ; \
 		${CP} ${LOCALBASE}/lib/liblapack.a tmp ;\
 		cd tmp ;\
 		ar x liblapack.a ;\
-		ar x ../lib/`cat ${WRKSRC}/ARCHNAME`/liblapack.a ;\
-		ar r ../lib/`cat ${WRKSRC}/ARCHNAME`/libalapack.a *.o ;\
-		ranlib ../lib/`cat ${WRKSRC}/ARCHNAME`/libalapack.a )
-.for i in libatlas libcblas libf77blas libtstatlas libalapack
-	( cd ${WRKSRC}/lib/`cat ${WRKSRC}/ARCHNAME`/ ; \
+		ar x ../lib/${NON_THREADED_ATLAS}/liblapack.a ;\
+		ar r ../lib/${NON_THREADED_ATLAS}/libalapack.a *.o ;\
+		ranlib ../lib/${NON_THREADED_ATLAS}/libalapack.a )
+.for i in ${ATLAS_LIBS1}
+	( cd ${WRKSRC}/lib/${NON_THREADED_ATLAS}/ ; \
+		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 --whole-archive ${i}.a )
+.endfor
+
+# thread version
+	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=${THREADED_ATLAS})
+	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${THREADED_ATLAS})
+	(cd ${WRKSRC}; ${MKDIR} tmp2 ; \
+		${CP} ${LOCALBASE}/lib/liblapack.a tmp2 ;\
+		cd tmp2 ;\
+		ar x liblapack.a ;\
+		ar x ../lib/${THREADED_ATLAS}/liblapack.a ;\
+		ar r ../lib/${THREADED_ATLAS}/libalapack.a *.o ;\
+		ranlib ../lib/${THREADED_ATLAS}/libalapack.a )
+.for i in ${ATLAS_LIBS1} ${ATLAS_LIBS2}
+	( cd ${WRKSRC}/lib/${THREADED_ATLAS}/ ; \
 		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 --whole-archive ${i}.a )
 .endfor
 
 do-install:
-.for i in libatlas libcblas libf77blas libtstatlas libalapack
-	@${INSTALL_DATA} ${WRKSRC}/lib/`cat ${WRKSRC}/ARCHNAME`/${i}.a       ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/lib/`cat ${WRKSRC}/ARCHNAME`/${i}.so.1    ${PREFIX}/lib
+.for i in ${ATLAS_LIBS1}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${NON_THREADED_ATLAS}/${i}.a       ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/lib/${NON_THREADED_ATLAS}/${i}.so.1    ${PREFIX}/lib
+	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
+.endfor
+.for i in ${ATLAS_LIBS1}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.a       ${PREFIX}/lib/${i}thr.a
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.so.1    ${PREFIX}/lib/${i}thr.so.1
+	@${LN} -sf ${i}thr.so.1 ${PREFIX}/lib/${i}thr.so
+.endfor
+.for i in ${ATLAS_LIBS2}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.a       ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.so.1    ${PREFIX}/lib
 	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include

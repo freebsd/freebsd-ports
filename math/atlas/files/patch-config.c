@@ -1,5 +1,5 @@
---- config.c.orig	Mon Jun 23 00:58:35 2003
-+++ config.c	Sat Jun 28 16:44:25 2003
+--- config.c.orig	Mon Jun 23 07:58:35 2003
++++ config.c	Tue Jul  1 12:32:49 2003
 @@ -708,7 +708,7 @@
              else if (mach == IA64Itan || MachIsUS(mach) ||
                       mach == Dec21164 || mach == Dec21264)
@@ -66,11 +66,10 @@
           }
           break;
        default:;
-@@ -3136,6 +3154,9 @@
+@@ -3136,6 +3154,8 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
-+   fpout = fopen("ARCHNAME", "w");
 +   fprintf(fpout, "%s", ARCH);
 +   fclose(fpout);
     ATL_mprintf(2, fplog, stdout,"\nCreating make include file Make.%s\n", ARCH);
