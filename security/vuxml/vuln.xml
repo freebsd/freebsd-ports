@@ -33,7 +33,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="a30e5e44-5440-11d9-9e1e-c296ac722cb3">
-    <topic>squid -- confusing results results on empty acl declarations</topic>
+    <topic>squid -- confusing results on empty acl declarations</topic>
     <affects>
       <package>
 	<name>squid</name>
