@@ -1,0 +1,25 @@
+lib/anope/hs_moo.so
+lib/anope/ircd_catserv.so
+libexec/anope/anope
+libexec/anope/listchans
+libexec/anope/listnicks
+%%PORTDOCS%%%%DATADIR%%/example.chk
+%%PORTDOCS%%%%DATADIR%%/example.conf
+%%PORTDOCS%%%%DATADIR%%/languages/cat
+%%PORTDOCS%%%%DATADIR%%/languages/de
+%%PORTDOCS%%%%DATADIR%%/languages/en_us
+%%PORTDOCS%%%%DATADIR%%/languages/es
+%%PORTDOCS%%%%DATADIR%%/languages/fr
+%%PORTDOCS%%%%DATADIR%%/languages/gr
+%%PORTDOCS%%%%DATADIR%%/languages/it
+%%PORTDOCS%%%%DATADIR%%/languages/nl
+%%PORTDOCS%%%%DATADIR%%/languages/pt
+%%PORTDOCS%%%%DATADIR%%/languages/ru
+%%PORTDOCS%%%%DATADIR%%/languages/tr
+%%PORTDOCS%%%%DATADIR%%/tables.sql
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/logs 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DATADIR%%/languages
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/backups 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DATADIR%%
+@dirrm libexec/anope
+@dirrm lib/anope

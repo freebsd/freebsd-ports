@@ -1,0 +1,16 @@
+--- Makefile~	Mon Apr 19 04:36:01 2004
++++ Makefile	Fri Apr 23 18:59:54 2004
+@@ -74,10 +74,10 @@
+ distclean: spotless
+ 
+ install: $(PROGRAM) languages
+-	$(INSTALL) services $(BINDEST)/services
++	$(INSTALL) $(PROGRAM) $(BINDEST)/$(PROGRAM)
+ 	rm -f $(BINDEST)/listnicks $(BINDEST)/listchans
+-	ln $(BINDEST)/services $(BINDEST)/listnicks
+-	ln $(BINDEST)/services $(BINDEST)/listchans
++	ln $(BINDEST)/$(PROGRAM) $(BINDEST)/listnicks
++	ln $(BINDEST)/$(PROGRAM) $(BINDEST)/listchans
+ 	(cd lang ; $(MAKE) install)
+ 	$(CP_ALL) data/* $(DATDEST)
+ 	test -d $(DATDEST)/backups || mkdir $(DATDEST)/backups
