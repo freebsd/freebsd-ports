@@ -1,0 +1,14 @@
+The Python Computer Graphics Kit is a collection of modules that contain the
+basic types and functions to be able to create 3D computer graphics images.
+The most important things to mention are the new types, such as vectors,
+matrices and quaternions and the RenderMan binding to create the input for a
+RenderMan compliant renderer. The kit itself does not contain any
+functionality to produce images directly.
+
+Even though the kit focuses on RenderMan, some of the modules contain general
+types/functions that can be used by any rendering method. For example, the
+vectors and matrices or the noise module don't depend on RenderMan at all and
+can also be used inside an OpenGL program or to produce input for other
+renderers, such as POV-Ray or Virtualight.
+
+WWW: http://cgkit.sourceforge.net/

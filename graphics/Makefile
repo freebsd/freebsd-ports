@@ -326,6 +326,7 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += pvmpov
+    SUBDIR += py-cgkit
     SUBDIR += py-chart
     SUBDIR += py-exif
     SUBDIR += py-gd
