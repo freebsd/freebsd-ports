@@ -15,7 +15,7 @@ MAINTAINER=	ache@FreeBSD.org
 
 INSTALL_TARGET=	install-suid install.man
 
-# It asks for list af directories to do test for file locking
+# It asks for list of directories to do test for file locking
 # (defaults to /tmp and ".", so return should suffice in most cases).
 .if !defined(PACKAGE_BUILDING) # handled in patch-aa
 IS_INTERACTIVE=	yes
