@@ -36,13 +36,15 @@ PERFORCE_HOME?=		${LOCALBASE}/perforce
 PERFORCE_ROOT?=		${PERFORCE_HOME}/root
 PERFORCE_LOGS?=		${PERFORCE_HOME}/logs
 PERFORCE_PORT?=		1666
+PERFORCE_CACHE?=      ${PERFORCE_HOME}/cache
+PERFORCE_TARGET?=     perforce:1666
 
 .if ${ARCH} == i386
-VERSION=	02.1
+VERSION=	02.2
 REVISION=	2
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
-SBIN_FILES=	p4d p4ftpd
+SBIN_FILES=	p4d p4ftpd p4p
 .elif ${ARCH} == alpha
 VERSION=	99.1
 REVISION=	1
@@ -54,10 +56,12 @@ IGNORE=		"Unsupported platform, sorry."
 .endif
 
 do-build:
-	${SED} -e "s,@PERFORCE_ROOT@,${PERFORCE_ROOT},g" \
-	       -e "s,@PERFORCE_LOGS@,${PERFORCE_LOGS},g" \
-	       -e "s,@PERFORCE_USER@,${PERFORCE_USER},g" \
-	       -e "s,@PERFORCE_PORT@,${PERFORCE_PORT},g" \
+	${SED}	-e "s,@PERFORCE_ROOT@,${PERFORCE_ROOT},g" \
+		-e "s,@PERFORCE_LOGS@,${PERFORCE_LOGS},g" \
+		-e "s,@PERFORCE_USER@,${PERFORCE_USER},g" \
+		-e "s,@PERFORCE_PORT@,${PERFORCE_PORT},g" \
+		-e "s,@PERFORCE_CACHE@,${PERFORCE_CACHE},g" \
+		-e "s,@PERFORCE_TARGET@,${PERFORCE_TARGET},g" \
 		< ${FILESDIR}/perforce.conf.in > ${WRKSRC}/perforce.conf
 	${SED} -e "s,@PREFIX@,${PREFIX},g" \
 		< ${FILESDIR}/perforce.sh.in > ${WRKSRC}/perforce.sh
@@ -102,6 +106,6 @@ post-install:
 .for f in ${SBIN_FILES}
 	${ECHO_CMD} sbin/${f} >> ${TMPPLIST}
 .endfor
-	${ECHO_CMD} "@unexec /bin/rmdir ${PERFORCE_ROOT} ${PERFORCE_LOGS} ${PERFORCE_HOME} 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} ${PERFORCE_ROOT} ${PERFORCE_LOGS} ${PERFORCE_HOME} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

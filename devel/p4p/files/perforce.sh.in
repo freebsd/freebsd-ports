@@ -4,6 +4,7 @@
 
 p4d=@PREFIX@/sbin/p4d
 p4ftpd=@PREFIX@/sbin/p4ftpd
+p4p=@PREFIX@/sbin/p4p
 
 case $1 in
 start)
@@ -16,6 +17,11 @@ start)
 	echo -n ' p4ftpd'
 	$p4ftpd $PERFORCE_FTPD_OPTIONS
     fi
+    if [ -x $p4p -a x$PERFORCE_PROXY_START = xyes ]; then
+        echo -n ' p4p'
+        $p4p $PERFORCE_PROXY_OPTIONS
+    fi
+
     ;;
 stop)
     [ -f @PREFIX@/etc/perforce.conf ] && . @PREFIX@/etc/perforce.conf
@@ -24,6 +30,9 @@ stop)
     fi
     if [ -x $p4d ]; then
 	killall -u $PERFORCE_USER p4d >/dev/null 2>&1 && echo -n ' p4d'
+    fi
+    if [ -x $p4p ]; then
+        killall -u 0 p4p > /dev/null 2>&1 && echo -n ' p4p'
     fi
     ;;
 restart)
