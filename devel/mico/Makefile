@@ -115,6 +115,8 @@ MAN8=		ird.8 micod.8 nsd.8
 # Does not build on alpha 4.x
 .if ${OSVERSION} < 500000
 NOT_FOR_ARCHS=	alpha
+.else
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 post-extract:
