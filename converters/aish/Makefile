@@ -12,8 +12,6 @@ CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/unix/aish/
 DISTFILES=	aish112u.tar.gz aish112man.tar.gz
 
-MAINTAINER=	seiken@nbs.co.jp
-
 MANLANG=	ja
 MAN1=		aish.1 autodecode.1
 MAKE_ENV=	PATH=/usr/bin:$$PATH
