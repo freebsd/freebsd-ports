@@ -21,5 +21,6 @@ USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS} -fPIC"
 
 .include <bsd.port.mk>
