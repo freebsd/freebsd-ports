@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	isearch
-PORTVERSION=	1.14
+PORTVERSION=	1.47d
 CATEGORIES=	textproc databases
-MASTER_SITES=	ftp://ftp.cnidr.org/pub/software/Isearch/
+MASTER_SITES=	http://www.etymon.com/pub/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}
 
 MAINTAINER=	giffunip@asme.org
@@ -20,8 +20,8 @@ post-install:
 	strip ${PREFIX}/bin/Iindex
 	strip ${PREFIX}/bin/Iutil
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/Isearch
-	${INSTALL_MAN} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/Isearch
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/html/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
