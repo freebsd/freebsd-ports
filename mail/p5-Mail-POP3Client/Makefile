@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	Mail-POP3Client
-PORTVERSION=	2.9
+PORTVERSION=	2.14
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
-DISTNAME=	POP3Client-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Perl5 module to talk to a POP3 (RFC1081) server
+COMMENT=	Perl5 module to talk to a POP3 (RFC1939) server
 
 PERL_CONFIGURE=	YES
 
 MAN3=		Mail::POP3Client.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
