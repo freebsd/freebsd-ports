@@ -1,0 +1,14 @@
+--- src/Make2.g++.orig	Thu Nov  4 07:52:00 1999
++++ src/Make2.g++	Mon Nov  8 11:26:22 1999
+@@ -3,9 +3,9 @@
+ 
+ # Standard base for g++.
+ 
+-CCC = g++
++CCC ?= c++
+ CCFLAGS = \
+--DUNIX -O3 -DNDEBUG -fno-exceptions \
++-DUNIX -DNDEBUG -fno-exceptions ${CFLAGS} \
+ -Wall -W -Wno-sign-compare \
+ -Wundef -Wpointer-arith -Wbad-function-cast -Wcast-qual \
+ -Wcast-align -Wwrite-strings -Wconversion \
