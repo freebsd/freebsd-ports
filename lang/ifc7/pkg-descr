@@ -1,7 +1,7 @@
-The Intel Fortran Compiler 6.0 for Linux, supporting
-development of performance-oriented applications for
-Pentium processors, including the new Pentium 4
-processor (and the 64-bit Intel Itanium processor).
+This is Intels Fortran compiler, it is set up to produce
+native FreeBSD objects, supporting development of
+performance-oriented applications for Pentium processors,
+including the Pentium 4 processor.
 
 You can obtain 30-day Free Evaluation Software(Includes Support) 
 or, Non-Commercial Unsupported lisence.

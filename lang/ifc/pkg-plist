@@ -1,6 +1,5 @@
 %%PORTDOCS%%intel/compiler60/docs/FortranReleaseNotes.htm
 %%PORTDOCS%%intel/compiler60/docs/asm_lan.pdf
-%%PORTDOCS%%intel/compiler60/docs/asm_ug.pdf
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/_blank.htm
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/anal_cmb.htm
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/anal_exc.htm
@@ -142,6 +141,8 @@
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/webhelp0.cab
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/webhelp0.zip
 %%PORTDOCS%%intel/compiler60/docs/asm_ug/webhelp4.js
+%%PORTDOCS%%@dirrm intel/compiler60/docs/asm_ug
+%%PORTDOCS%%intel/compiler60/docs/asm_ug.pdf
 %%PORTDOCS%%intel/compiler60/docs/enduser.pdf
 %%PORTDOCS%%intel/compiler60/docs/f_ug/_blank.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/add_arg.htm
@@ -246,8 +247,8 @@
 %%PORTDOCS%%intel/compiler60/docs/f_ug/for_srce.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/fortran_help.gif
 %%PORTDOCS%%intel/compiler60/docs/f_ug/ftsbody.htm
-%%PORTDOCS%%intel/compiler60/docs/f_ug/ftsdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/ftsform.htm
+%%PORTDOCS%%intel/compiler60/docs/f_ug/ftsdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/grp_altn.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/grp_args.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/grp_cmp.htm
@@ -422,6 +423,7 @@
 %%PORTDOCS%%intel/compiler60/docs/f_ug/webhelp4.js
 %%PORTDOCS%%intel/compiler60/docs/f_ug/welcome.htm
 %%PORTDOCS%%intel/compiler60/docs/f_ug/xref_bth.htm
+%%PORTDOCS%%@dirrm intel/compiler60/docs/f_ug
 %%PORTDOCS%%intel/compiler60/docs/fcompindex.htm
 %%PORTDOCS%%intel/compiler60/docs/flicense
 %%PORTDOCS%%intel/compiler60/docs/for_lib.pdf
@@ -432,6 +434,7 @@
 %%PORTDOCS%%intel/compiler60/docs/icid.htm
 %%PORTDOCS%%intel/compiler60/docs/notes/ifc_fixes.txt
 %%PORTDOCS%%intel/compiler60/docs/notes/ifc_issues.txt
+%%PORTDOCS%%@dirrm intel/compiler60/docs/notes
 %%PORTDOCS%%intel/compiler60/docs/ref/_blank.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/ann_entr.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/ann_mem.htm
@@ -518,8 +521,8 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/elem_typ.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/elem_val.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/ftsbody.htm
-%%PORTDOCS%%intel/compiler60/docs/ref/ftsdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/ftsform.htm
+%%PORTDOCS%%intel/compiler60/docs/ref/ftsdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/gloss.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/idxbody.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/idxdhtml.htm
@@ -564,10 +567,10 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/sec_stck.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/sec_use.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/sec_win.htm
+%%PORTDOCS%%intel/compiler60/docs/ref/smb_ovw.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/sect_ovw.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/smb_glob.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/smb_locl.htm
-%%PORTDOCS%%intel/compiler60/docs/ref/smb_ovw.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/smb_weak.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/sta_asgn.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/sta_crss.htm
@@ -586,8 +589,8 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/stck_use.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/strt_ovw.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/tabframe.htm
-%%PORTDOCS%%intel/compiler60/docs/ref/tocdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/toclist.htm
+%%PORTDOCS%%intel/compiler60/docs/ref/tocdhtml.htm
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp.cab
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp.jar
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp.res
@@ -595,6 +598,8 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp0.cab
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp0.zip
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp4.js
+%%PORTDOCS%%@dirrm intel/compiler60/docs/ref
+%%PORTDOCS%%@dirrm intel/compiler60/docs
 intel/compiler60/ia32/bin/INTEL
 intel/compiler60/ia32/bin/f90com
 intel/compiler60/ia32/bin/fpp
@@ -602,16 +607,18 @@ intel/compiler60/ia32/bin/icid
 intel/compiler60/ia32/bin/ifc
 intel/compiler60/ia32/bin/ifc.cfg
 intel/compiler60/ia32/bin/ifcbin
+intel/compiler60/ia32/bin/ifcbin.cfg
 intel/compiler60/ia32/bin/ifccem
 intel/compiler60/ia32/bin/ifcvars.csh
 intel/compiler60/ia32/bin/ifcvars.sh
+intel/compiler60/ia32/bin/ld
 intel/compiler60/ia32/bin/lmgrd.intel
 intel/compiler60/ia32/bin/lmutil
 intel/compiler60/ia32/bin/profmerge
 intel/compiler60/ia32/bin/proforder
-intel/compiler60/ia32/bin/uninstall
 intel/compiler60/ia32/bin/xiar
 intel/compiler60/ia32/bin/xild
+@dirrm intel/compiler60/ia32/bin
 intel/compiler60/ia32/include/iflkinds.d
 intel/compiler60/ia32/include/iflkinds.f90
 intel/compiler60/ia32/include/iflkinds.o
@@ -625,51 +632,33 @@ intel/compiler60/ia32/include/iflposix.f90
 intel/compiler60/ia32/include/iflposix.o
 intel/compiler60/ia32/include/work.pc
 intel/compiler60/ia32/include/work.pcl
+@dirrm intel/compiler60/ia32/include
 intel/compiler60/ia32/lib/crtxi.o
 intel/compiler60/ia32/lib/crtxn.o
 intel/compiler60/ia32/lib/icrt.internal.map
 intel/compiler60/ia32/lib/icrt.link
 intel/compiler60/ia32/lib/libBINDF90.a
 intel/compiler60/ia32/lib/libCEPCF90.a
-intel/compiler60/ia32/lib/libCEPCF90.so
 intel/compiler60/ia32/lib/libF90.a
-intel/compiler60/ia32/lib/libF90.so
 intel/compiler60/ia32/lib/libIEPCF90.a
-intel/compiler60/ia32/lib/libIEPCF90.so
 intel/compiler60/ia32/lib/libPEPCF90.a
-intel/compiler60/ia32/lib/libPEPCF90.so
 intel/compiler60/ia32/lib/libPOSF90.a
-intel/compiler60/ia32/lib/libPOSF90.so
 intel/compiler60/ia32/lib/libcprts.a
-intel/compiler60/ia32/lib/libcprts.so
-intel/compiler60/ia32/lib/libcprts.so.1
 intel/compiler60/ia32/lib/libcxa.a
 intel/compiler60/ia32/lib/libcxa.so
 intel/compiler60/ia32/lib/libcxa.so.1
-intel/compiler60/ia32/lib/libguide.a
-intel/compiler60/ia32/lib/libguide.so
+@comment intel/compiler60/ia32/lib/libguide.a
 intel/compiler60/ia32/lib/libimf.a
-intel/compiler60/ia32/lib/libimf.so
 intel/compiler60/ia32/lib/libintrins.a
-intel/compiler60/ia32/lib/libintrins.so
 intel/compiler60/ia32/lib/libirc.a
 intel/compiler60/ia32/lib/libircmt.a
 intel/compiler60/ia32/lib/libompstub.a
 intel/compiler60/ia32/lib/libsvml.a
 intel/compiler60/ia32/lib/libunwind.a
-intel/compiler60/ia32/lib/libunwind.so
-intel/compiler60/ia32/lib/libunwind.so.1
-@dirrm %%PORTDOCS%%intel/licenses
-@dirrm %%PORTDOCS%%intel/compiler60/man/man1
-@dirrm %%PORTDOCS%%intel/compiler60/man
-@dirrm %%PORTDOCS%%intel/compiler60/ia32/lib
-@dirrm %%PORTDOCS%%intel/compiler60/ia32/include
-@dirrm %%PORTDOCS%%intel/compiler60/ia32/bin
-@dirrm %%PORTDOCS%%intel/compiler60/ia32
-@dirrm %%PORTDOCS%%intel/compiler60/docs/ref
-@dirrm %%PORTDOCS%%intel/compiler60/docs/notes
-@dirrm %%PORTDOCS%%intel/compiler60/docs/f_ug
-@dirrm %%PORTDOCS%%intel/compiler60/docs/asm_ug
-@dirrm %%PORTDOCS%%intel/compiler60/docs
-@dirrm %%PORTDOCS%%intel/compiler60
-@dirrm %%PORTDOCS%%intel
+@dirrm intel/compiler60/ia32/lib
+@dirrm intel/compiler60/ia32
+@dirrm intel/compiler60/man/man1
+@dirrm intel/compiler60/man
+@dirrm intel/compiler60
+@dirrm intel/licenses
+@dirrm intel
