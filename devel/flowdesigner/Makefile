@@ -30,10 +30,6 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 .if ${OSVERSION} < 500035
 CFLAGS+=	-O0
 .endif
