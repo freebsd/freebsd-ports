@@ -1,5 +1,5 @@
 --- local/snmpconf.orig	Wed Feb 11 01:33:42 2004
-+++ local/snmpconf	Fri Apr  2 23:42:35 2004
++++ local/snmpconf	Wed May 12 11:51:15 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!%%PERL%% -w
@@ -42,6 +42,15 @@
  	  
  	  move ("$opts{'I'}/$i", "$opts{'I'}/$i.bak") if (-f "$opts{'I'}/$i");
  	  if (move ("$didfile{$i}", "$opts{'I'}")) {
+@@ -171,7 +171,7 @@
+ 	    print ("File $didfile{$i} left in current directory\n");
+ 	  }
+ 	} elsif ($opts{'p'}) {
+-	  if (! (-d "$ENV{HOME}/.snmp") && ! (mkdir ("$ENV{HOME}/.snmp"))) {
++	  if (! (-d "$ENV{HOME}/.snmp") && ! (mkdir("$ENV{HOME}/.snmp", 0777))) {
+ 	    print "\nCould not create $ENV{HOME}/.snmp directory: $!\n";
+ 	    print ("File $didfile{$i} left in current directory\n");
+ 	  }
 @@ -198,7 +198,7 @@
  }
  
