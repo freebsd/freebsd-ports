@@ -2069,6 +2069,7 @@ gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
 gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-toolkits/gtkbe
+gtkdatabox	ports/x11-toolkits/gtkdatabox
 gtkdiff		ports/textproc/gtkdiff
 gtkdps		ports/graphics/gtkdps
 gtkextra	ports/x11-toolkits/gtkextra
