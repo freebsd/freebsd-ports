@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system for personal use
 
 LIB_DEPENDS=	qdbm.3:${PORTSDIR}/databases/qdbm

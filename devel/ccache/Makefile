@@ -10,7 +10,7 @@ PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 GNU_CONFIGURE=	yes

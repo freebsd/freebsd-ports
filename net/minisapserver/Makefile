@@ -11,7 +11,7 @@ CATEGORIES=	net multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/miniSAPserver/${PORTVERSION}/
 DISTNAME=	miniSAPserver-${PORTVERSION}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	SAP and SLP announcement for the VLC Media Player
 
 USE_REINPLACE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	super-tux
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Super Tux is a side-scroller similar to Super Mario Brothers
 
 USE_X_PREFIX=	yes

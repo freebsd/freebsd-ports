@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	OpenGL image compositing library
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvdstyler
 DISTNAME=	DVDStyler-${PORTVERSION}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
 
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \

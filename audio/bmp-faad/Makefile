@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
 PKGNAMEPREFIX=	bmp-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Beep Media Player (BMP) plugin for faad
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \

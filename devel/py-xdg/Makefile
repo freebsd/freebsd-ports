@@ -12,7 +12,7 @@ MASTER_SITES=	http://freedesktop.org/Software/pyxdg/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A python library to access freedesktop.org standards
 
 USE_PYTHON=	yes

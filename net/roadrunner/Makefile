@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.codefactory.se/pub/RoadRunner/source/roadrunner/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A portable BEEP protocol implementation
 
 USE_GNOME=	glib20 libxml2 pkgconfig
