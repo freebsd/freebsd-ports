@@ -20,6 +20,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
