@@ -1,46 +1,21 @@
---- configure.orig	Thu Jun 20 10:08:52 2002
-+++ configure	Sat Jun 22 16:54:00 2002
-@@ -2028,7 +2028,7 @@
- 	OpenBSD | FreeBSD | NetBSD)
- 		# *BSD has important stuff (from ports)
- 		# in /usr/local ...
--		CFLAGS="$CFLAGS -I/usr/local/include -L/usr/local/lib"
-+		CFLAGS="-I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib"
- 		FOUND_OS="bsd"
- 		;;
- 	*)
-@@ -2591,10 +2591,10 @@
- /usr/XFree86/include/X11
- 
- /usr/include
--/usr/local/include
-+%%LOCALBASE%%/include
- /usr/unsupported/include
- /usr/athena/include
--/usr/local/x11r5/include
-+%%LOCALBASE%%/x11r5/include
- /usr/lpp/Xamples/include
- 
- /usr/openwin/include
-@@ -4442,19 +4442,13 @@
- 
- echo "$as_me:4443: checking for X11 config directory" >&5
+--- configure.orig	Wed Jul 24 19:13:38 2002
++++ configure	Sat Jul 27 10:05:07 2002
+@@ -4460,18 +4460,12 @@
+ echo "$as_me:4460: checking for X11 config directory" >&5
  echo $ECHO_N "checking for X11 config directory... $ECHO_C" >&6
--x11conf=/usr/X11R6/lib/X11
+ x11conf=/usr/X11R6/lib/X11
 -if test -d /etc/X11; then
 -	x11conf=/etc/X11
 -fi
-+x11conf=%%X11BASE%%/lib/X11
- echo "$as_me:4449: result: $x11conf" >&5
+ echo "$as_me:4466: result: $x11conf" >&5
  echo "${ECHO_T}$x11conf" >&6
  
- echo "$as_me:4452: checking for X11 app-defaults directory" >&5
+ echo "$as_me:4469: checking for X11 app-defaults directory" >&5
  echo $ECHO_N "checking for X11 app-defaults directory... $ECHO_C" >&6
--resdir=/usr/X11R6/lib/X11
+ resdir=/usr/X11R6/lib/X11
 -if test -d /etc/X11/app-defaults; then
 -	resdir=/etc/X11
 -fi
-+resdir=%%X11BASE%%/lib/X11
- echo "$as_me:4458: result: $resdir/app-defaults" >&5
+ echo "$as_me:4475: result: $resdir/app-defaults" >&5
  echo "${ECHO_T}$resdir/app-defaults" >&6
  
