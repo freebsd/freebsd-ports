@@ -35,14 +35,14 @@
  # "AuthConfig", and "Limit"
  #
 -    AllowOverride None
-+<IfDefine FRONTPAGE>
++<IfDefine MOD_FP>
 +### These are the Minimum options need by the FrontPage Module.
 +### With out these options set the FrontPage Client will not be
 +### able to access the server.
 +    AllowOverride AuthConfig Limit Indexes Options
 +</IfDefine>
 +
-+<IfDefine !FRONTPAGE>
++<IfDefine !MOD_FP>
 +#    AllowOverride None
 +</IfDefine>
  
@@ -54,7 +54,7 @@
  
 +### In Order for FrontPage to work in User and Virtual ###
 +### Web Directories, they need to be set up as shown:  ###
-+<IfDefine FRONTPAGE>
++<IfDefine MOD_FP>
 +    <Directory /*/public_html>
 + 	AllowOverride AuthConfig Limit Indexes Options
 +	Options ExecCGI

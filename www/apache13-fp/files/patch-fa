@@ -1,205 +1,190 @@
-*** frontpage/version4.0/change_server.sh.orig	Mon May 24 13:27:07 1999
---- frontpage/version4.0/change_server.sh	Thu Jun 10 19:43:09 1999
-***************
-*** 38,46 ****
-  {
-    VERSION="4.0"
-    PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
-!   NEWHTTPDNEW="/usr/local/frontpage/version${VERSION}/apache-fp/httpd"
-!   NEWHTTPDCOMPAT="/usr/local/frontpage/version${VERSION}/apache-fp/httpd.Compat"
-!   DEFAULTHTTPD="/usr/local/apache/sbin/httpd"
-  
-  case "`echo 'x\c'`" in
-     'x\c')   echo="echo -n"    nnl= ;;      #BSD
---- 38,46 ----
-  {
-    VERSION="4.0"
-    PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
-!   NEWHTTPDNEW="PREFIX/sbin/httpd"
-!   NEWHTTPDCOMPAT="${NEWHTTPDNEW}"
-!   DEFAULTHTTPD="PREFIX/sbin/httpd"
-  
-  case "`echo 'x\c'`" in
-     'x\c')   echo="echo -n"    nnl= ;;      #BSD
-***************
-*** 60,65 ****
---- 60,68 ----
-       IRIX*)            machine="sgi" ;;
-       SunOS*5.*sun4*)   machine="solaris" ;;
-       SunOS*5.*i386*)   machine="solarisx86" ;;
-+      FreeBSD* | \
-+      NetBSD* | \
-+      OpenBSD* | \
-       BSD/OS*)          machine="bsdi" ;;
-       SCO_SV*)          machine="sco5" ;;
-       UnixWare\ *\ *\ 7*\ i*) machine="uware7" ;;
-***************
-*** 496,505 ****
-        *pache*)   getHttpDirective $configfile AccessConfig $port
-                   if [ "$param" != "" ]
-                   then
-!                     file=`basename $param`
-!                     accessconffile="${configfiledir}${file}"
-                   else
-!                     accessconffile="${configfiledir}access.conf"
-                   fi
-  
-                   if [ ! -f "$accessconffile" ]
---- 499,517 ----
-        *pache*)   getHttpDirective $configfile AccessConfig $port
-                   if [ "$param" != "" ]
-                   then
-!                     if [ "$param" != "/dev/null" ]
-!                     then
-!                         file=`basename $param`
-!                         accessconffile="${configfiledir}${file}"
-!                     else
-!                         configError
-!                     fi
-                   else
-!                     accessconffile="${configfiledir}conf/access.conf"
-!                     if [ ! -f "$accessconffile" ]
-!                     then
-!                         configError2
-!                     fi
-                   fi
-  
-                   if [ ! -f "$accessconffile" ]
-***************
-*** 1061,1070 ****
-                 getHttpDirective $configfile ResourceConfig $port
-                 if [ "$param" != "" ]
-                 then
-!                    file=`basename $param`
-!                    resconffile="${configfiledir}${file}"
-                 else
-!                    resconffile="${configfiledir}srm.conf"
-                 fi
-                 echo "Getting DocumentRoot from $resconffile."
-                 getparam DocumentRoot $resconffile
---- 1073,1091 ----
-                 getHttpDirective $configfile ResourceConfig $port
-                 if [ "$param" != "" ]
-                 then
-!                    if [ "$param" != "/dev/null" ]
-!                    then
-!                        file=`basename $param`
-!                        resconffile="${configfiledir}${file}"
-!                    else
-!                        configError
-!                    fi
-                 else
-!                    resconffile="${configfiledir}conf/srm.conf"
-!                    if [ ! -f "$resconffile" ]
-!                    then
-!                        configError2
-!                    fi
-                 fi
-                 echo "Getting DocumentRoot from $resconffile."
-                 getparam DocumentRoot $resconffile
-***************
-*** 1081,1090 ****
-                 resconffile=$param
-                 if [ "$param" != "" ]
-                 then
-!                    file=`basename $param`
-!                    resconffile="${configfiledir}${file}"
-                 else
-!                    resconffile="${configfiledir}srm.conf"
-                 fi
-                 echo "Getting UserDir from $resconffile."
-                 getparam UserDir $resconffile
---- 1102,1120 ----
-                 resconffile=$param
-                 if [ "$param" != "" ]
-                 then
-!                    if [ "$param" != "/dev/null" ]
-!                    then
-!                        file=`basename $param`
-!                        resconffile="${configfiledir}${file}"
-!                    else
-!                        configError
-!                    fi
-                 else
-!                    resconffile="${configfiledir}conf/srm.conf"
-!                    if [ ! -f "$resconffile" ]
-!                    then
-!                        configError2
-!                    fi
-                 fi
-                 echo "Getting UserDir from $resconffile."
-                 getparam UserDir $resconffile
-***************
-*** 1108,1117 ****
-                          *) getHttpDirective $configfile ResourceConfig $port
-                             if [ "$param" != "" ]
-                             then
-!                                file=`basename $param`
-!                                resconffile="${configfiledir}${file}"
-                             else
-!                                resconffile="${configfiledir}srm.conf"
-                             fi
-  
-                             if [ ! -f "$resconffile" ]
---- 1138,1156 ----
-                          *) getHttpDirective $configfile ResourceConfig $port
-                             if [ "$param" != "" ]
-                             then
-!                                if [ "$param" != "/dev/null" ]
-!                                then
-!                                    file=`basename $param`
-!                                    resconffile="${configfiledir}${file}"
-!                                else
-!                                    configError
-!                                fi
-                             else
-!                                resconffile="${configfiledir}conf/srm.conf"
-!                                if [ ! -f "$resconffile" ]
-!                                then
-!                                    configError2
-!                                fi
-                             fi
-  
-                             if [ ! -f "$resconffile" ]
-***************
-*** 1253,1258 ****
---- 1292,1330 ----
-      getHttpRootDirective $configfile $directive
-   fi 
-  
-+ }
-+ 
-+ configError()
-+ {
-+      echo
-+      echo "ERROR: ${configfile} invalid format"
-+      echo "Change ${configfile} as follows:"
-+      echo
-+      echo "    ResourceConfig ${configfile}"
-+      echo "    AccessConfig ${configfile}"
-+      echo
-+      $echo "hit enter to continue${nnl}"
-+      read continue
-+      echo "Ouch!!!!!!!!!!!!! Not so hard, gently please"
-+      echo
-+      exit 1
-+ }
-+ 
-+ configError2()
-+ {
-+      echo
-+      echo "ERROR: ${configfile} invalid"
-+      echo
-+      echo "Change ${configfile} as follows:"
-+      echo
-+      echo "    ResourceConfig ${configfiledir}srm.conf"
-+      echo "    AccessConfig ${configfiledir}access.conf"
-+      echo
-+      $echo "hit enter to continue${nnl}"
-+      read continue
-+      echo "Ouch!!!!!!!!!!!!! Not so hard, gently please"
-+      echo
-+      exit 1
-  }
-  
-  error()
+--- frontpage/version4.0/change_server.sh.orig	Mon May 24 13:27:07 1999
++++ frontpage/version4.0/change_server.sh	Thu Feb 24 20:39:30 2000
+@@ -38,9 +38,11 @@
+ {
+   VERSION="4.0"
+   PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
+-  NEWHTTPDNEW="/usr/local/frontpage/version${VERSION}/apache-fp/httpd"
+-  NEWHTTPDCOMPAT="/usr/local/frontpage/version${VERSION}/apache-fp/httpd.Compat"
+-  DEFAULTHTTPD="/usr/local/apache/sbin/httpd"
++  NEWHTTPDNEW="PREFIX/sbin/httpd"
++  NEWMODFPNEW="PREFIX/libexec/apache/mod_frontpage.so"
++  NEWHTTPDCOMPAT="${NEWHTTPDNEW}"
++  NEWMODFPCOMAPT="${NEWMODFPNEW}"
++  DEFAULTHTTPD="PREFIX/sbin/httpd"
+ 
+ case "`echo 'x\c'`" in
+    'x\c')   echo="echo -n"    nnl= ;;      #BSD
+@@ -60,6 +62,9 @@
+      IRIX*)            machine="sgi" ;;
+      SunOS*5.*sun4*)   machine="solaris" ;;
+      SunOS*5.*i386*)   machine="solarisx86" ;;
++     FreeBSD* | \
++     NetBSD* | \
++     OpenBSD* | \
+      BSD/OS*)          machine="bsdi" ;;
+      SCO_SV*)          machine="sco5" ;;
+      UnixWare\ *\ *\ 7*\ i*) machine="uware7" ;;
+@@ -214,6 +219,20 @@
+ 
+  clear
+ 
++ if ($strings $httpdfile | $fgrep "etc/apache/httpd.conf" > /dev/null)
++ then
++    NEWHTTPD=$NEWHTTPDNEW
++    NEWMODFP=$NEWMODFPNEW
++    echo "Selected server uses FreeBSD directory structure:"
++
++    targetVersionNumber=`$httpdfile -v | sed 's%^.*Apache/\([0-9\.]*\).*%\1%' | head -1`
++    targetFPVersionNumber=`$strings \`dirname \\\`dirname $httpdfile\\\`\`/libexec/apache/mod_frontpage.so | \
++	$fgrep "FrontPage/" 2> /dev/null | sed -e 's%^.*FrontPage/\([0-9\.]*\).*%\1%' | tail -1`
++
++    sourceVersionNumber=`$NEWHTTPD -v | sed 's%^.*Apache/\([0-9\.]*\).*%\1%' | head -1`
++    sourceFPVersionNumber=`$strings $NEWMODFP | $fgrep "FrontPage/" 2> /dev/null | \
++	 sed -e 's%^.*FrontPage/\([0-9\.]*\).*%\1%' | tail -1`
++ else
+ 
+  if ($strings $httpdfile | $fgrep "etc/httpd.conf" > /dev/null)
+  then
+@@ -232,7 +251,8 @@
+  sourceVersionNumber=`$NEWHTTPD -v | sed 's%^.*Apache/\([0-9\.]*\).*%\1%' | head -1`
+  sourceFPVersionNumber=`$strings $NEWHTTPD | $fgrep "FrontPage/" 2> /dev/null | sed -e '
+                               s%^.*FrontPage/\([0-9\.]*\).*%\1%' | tail -1`
+-            
++ fi
++
+  echo
+  echo "Currently running Apache/${targetVersionNumber} FrontPage/${nnl}" 
+  if [ "${targetFPVersionNumber}" = "" ]
+@@ -496,10 +516,19 @@
+       *pache*)   getHttpDirective $configfile AccessConfig $port
+                  if [ "$param" != "" ]
+                  then
+-                    file=`basename $param`
+-                    accessconffile="${configfiledir}${file}"
++                    if [ "$param" != "/dev/null" ]
++                    then
++                        file=`basename $param`
++                        accessconffile="${configfiledir}${file}"
++                    else
++                        configError
++                    fi
+                  else
+-                    accessconffile="${configfiledir}access.conf"
++                    accessconffile="${configfiledir}conf/access.conf"
++                    if [ ! -f "$accessconffile" ]
++                    then
++                        configError2
++                    fi
+                  fi
+ 
+                  if [ ! -f "$accessconffile" ]
+@@ -1061,10 +1090,19 @@
+                getHttpDirective $configfile ResourceConfig $port
+                if [ "$param" != "" ]
+                then
+-                   file=`basename $param`
+-                   resconffile="${configfiledir}${file}"
++                   if [ "$param" != "/dev/null" ]
++                   then
++                       file=`basename $param`
++                       resconffile="${configfiledir}${file}"
++                   else
++                       configError
++                   fi
+                else
+-                   resconffile="${configfiledir}srm.conf"
++                   resconffile="${configfiledir}conf/srm.conf"
++                   if [ ! -f "$resconffile" ]
++                   then
++                       configError2
++                   fi
+                fi
+                echo "Getting DocumentRoot from $resconffile."
+                getparam DocumentRoot $resconffile
+@@ -1081,10 +1119,19 @@
+                resconffile=$param
+                if [ "$param" != "" ]
+                then
+-                   file=`basename $param`
+-                   resconffile="${configfiledir}${file}"
++                   if [ "$param" != "/dev/null" ]
++                   then
++                       file=`basename $param`
++                       resconffile="${configfiledir}${file}"
++                   else
++                       configError
++                   fi
+                else
+-                   resconffile="${configfiledir}srm.conf"
++                   resconffile="${configfiledir}conf/srm.conf"
++                   if [ ! -f "$resconffile" ]
++                   then
++                       configError2
++                   fi
+                fi
+                echo "Getting UserDir from $resconffile."
+                getparam UserDir $resconffile
+@@ -1108,10 +1155,19 @@
+                         *) getHttpDirective $configfile ResourceConfig $port
+                            if [ "$param" != "" ]
+                            then
+-                               file=`basename $param`
+-                               resconffile="${configfiledir}${file}"
++                               if [ "$param" != "/dev/null" ]
++                               then
++                                   file=`basename $param`
++                                   resconffile="${configfiledir}${file}"
++                               else
++                                   configError
++                               fi
+                            else
+-                               resconffile="${configfiledir}srm.conf"
++                               resconffile="${configfiledir}conf/srm.conf"
++                               if [ ! -f "$resconffile" ]
++                               then
++                                   configError2
++                               fi
+                            fi
+ 
+                            if [ ! -f "$resconffile" ]
+@@ -1253,6 +1309,39 @@
+     getHttpRootDirective $configfile $directive
+  fi 
+ 
++}
++
++configError()
++{
++     echo
++     echo "ERROR: ${configfile} invalid format"
++     echo "Change ${configfile} as follows:"
++     echo
++     echo "    ResourceConfig ${configfile}"
++     echo "    AccessConfig ${configfile}"
++     echo
++     $echo "hit enter to continue${nnl}"
++     read continue
++     echo "Ouch!!!!!!!!!!!!! Not so hard, gently please"
++     echo
++     exit 1
++}
++
++configError2()
++{
++     echo
++     echo "ERROR: ${configfile} invalid"
++     echo
++     echo "Change ${configfile} as follows:"
++     echo
++     echo "    ResourceConfig ${configfiledir}srm.conf"
++     echo "    AccessConfig ${configfiledir}access.conf"
++     echo
++     $echo "hit enter to continue${nnl}"
++     read continue
++     echo "Ouch!!!!!!!!!!!!! Not so hard, gently please"
++     echo
++     exit 1
+ }
+ 
+ error()

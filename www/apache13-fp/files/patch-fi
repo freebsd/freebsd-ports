@@ -1,15 +1,25 @@
---- src/main/http_request.c.orig	Fri May 21 07:16:21 1999
-+++ src/main/http_request.c	Sat Oct 16 18:47:04 1999
-@@ -187,6 +187,8 @@
+--- src/main/http_request.c.orig	Tue Jan 11 08:13:41 2000
++++ src/main/http_request.c	Sun Feb 20 18:44:49 2000
+@@ -175,7 +175,7 @@
+ {
+     char *cp;
+     char *path = r->filename;
+-    char *end = &path[strlen(path)];
++    char *end;
+     char *last_cp = NULL;
+     int rv;
+ #ifdef HAVE_DRIVE_LETTERS
+@@ -187,6 +187,9 @@
  	return OK;
      }
  
 +    if (r->execfilename) path = r->execfilename;
++    end = path + strlen(path);
 +
  #ifdef HAVE_DRIVE_LETTERS
      /* If the directory is x:\, then we don't want to strip
       * the trailing slash since x: is not a valid directory.
-@@ -511,6 +513,7 @@
+@@ -511,6 +514,7 @@
              res = ap_parse_htaccess(&htaccess_conf, r, overrides_here,
                                   ap_pstrdup(r->pool, test_dirname),
                                   sconf->access_name);
@@ -17,7 +27,7 @@
              if (res)
                  return res;
  
-@@ -521,6 +524,7 @@
+@@ -521,6 +525,7 @@
  		r->per_dir_config = per_dir_defaults;
  	    }
          }

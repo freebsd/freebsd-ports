@@ -1,5 +1,5 @@
 --- frontpage/version4.0/fp_install.sh.orig	Mon May 24 12:45:14 1999
-+++ frontpage/version4.0/fp_install.sh	Sat Jun 12 13:56:45 1999
++++ frontpage/version4.0/fp_install.sh	Thu Feb 24 20:22:48 2000
 @@ -48,7 +48,7 @@
  {
    VERSION="4.0"
@@ -19,15 +19,99 @@
      BSD/OS*)            machine="bsdi" ;;
      SCO_SV*)            machine="sco5" ;;
      UnixWare\ *\ *\ 7*\ i*)   machine="uware7" ;;
-@@ -327,7 +330,7 @@
-  echo "link will be created from /usr/local/frontpage/ to the location that" 
-  echo "is chosen." 
-  echo 
-- $echo "FrontPage Extensions directory [/usr/local/frontpage/]:  ${nnl}" 
-+ $echo "FrontPage Extensions directory [${INSTALLDIRDEFAULT}]:  ${nnl}" 
-  read installdir
+@@ -128,7 +131,7 @@
+ checkuser()
+ {
+  #
+- # Make sure we are not running as root.
++ # Make sure we are running as root.
+  #
+ 
+ whoami=`whoami 2>/dev/null` || whoami=`/usr/bin/id | sed -e ' s/).*//; s/^.*(//;'`
+@@ -321,27 +324,27 @@
   
-  if [ "$installdir" = "" ]
+  retval=0
+ 
+- echo 
+- echo "Where would you like to install the FrontPage Extensions.  If you" 
+- echo "select a location other than /usr/local/frontpage/ then a symbolic" 
+- echo "link will be created from /usr/local/frontpage/ to the location that" 
+- echo "is chosen." 
+- echo 
+- $echo "FrontPage Extensions directory [/usr/local/frontpage/]:  ${nnl}" 
+- read installdir
++# echo 
++# echo "Where would you like to install the FrontPage Extensions.  If you" 
++# echo "select a location other than /usr/local/frontpage/ then a symbolic" 
++# echo "link will be created from /usr/local/frontpage/ to the location that" 
++# echo "is chosen." 
++# echo 
++# $echo "FrontPage Extensions directory [${INSTALLDIRDEFAULT}]:  ${nnl}" 
++# read installdir
+  
+- if [ "$installdir" = "" ]
+- then
++# if [ "$installdir" = "" ]
++# then
+     installdir=$INSTALLDIRDEFAULT
+- fi
++# fi
+  installdir=`dirname $installdir`/`basename $installdir`
+ 
+- if [ ! -d "$installdir" ]
+- then
+-    echo "Creating $installdir" 
+-    if mkdir "$installdir"
+-    then
+-       echo "Directory $installdir has been created." 
++# if [ ! -d "$installdir" ]
++# then
++#    echo "Creating $installdir" 
++#    if mkdir "$installdir"
++#    then
++#       echo "Directory $installdir has been created." 
+        if chmod "$prot" "$installdir"
+        then 
+           echo "Directory $installdir chmoded to $prot." 
+@@ -349,22 +352,22 @@
+           echo "ERROR:  Unable to chmod $installdir to $prot." 
+           retval=1
+        fi  
+-    else
+-       echo "ERROR:  Unable to create $installdir!" 
+-       retval=1
+-    fi
+- else
+-    echo "WARNING:  Directory $installdir already exists." 
+-    echo "Installation will overwrite existing files." 
+-    echo 
+-
+-    myprompt 'yYnN' "Continue the installation (y/n)" "N"
+-    echo 
+-    if [ $answer = n ] || [ $answer = N ]
+-    then
+-       exit 0
+-    fi
+- fi
++#    else
++#       echo "ERROR:  Unable to create $installdir!" 
++#       retval=1
++#    fi
++# else
++#    echo "WARNING:  Directory $installdir already exists." 
++#    echo "Installation will overwrite existing files." 
++#    echo 
++
++#    myprompt 'yYnN' "Continue the installation (y/n)" "N"
++#    echo 
++#    if [ $answer = n ] || [ $answer = N ]
++#    then
++#       exit 0
++#    fi
++# fi
+  
+  if [ "$installdir" != "/usr/local/frontpage" ]
+  then
 @@ -414,7 +417,7 @@
   vtfile="fp40.$machine.tar"
   echo "Platform is $machine." 
@@ -207,3 +291,12 @@
  }
  
  getnetscapedocroot()
+@@ -2216,7 +2285,7 @@
+ 
+ initialize
+ step1
+-step2
++#step2
+ step3
+ #
+ # Run the external permissions script.

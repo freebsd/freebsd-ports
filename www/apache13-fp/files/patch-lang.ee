@@ -1,0 +1,28 @@
+--- htdocs/index.html.ee.orig	Fri Aug 20 15:28:46 1999
++++ htdocs/index.html.ee	Sun Feb 20 17:13:15 2000
+@@ -38,16 +38,23 @@
+   <P>
+   Ka Apache
+   <A
+-   HREF="manual/index.html"
++   HREF="http://@@HOSTNAME@@:8080/manual/index.html"
+   >dokumentatsioon</A>
+   on selles distributsioonis olemas.
+   </P>
++<P>The <STRONG>FrontPage 2000 Extentions (mod_frontpage)</STRONG> has been installed, read the
++<A HREF="http://@@HOSTNAME@@:8080/manual/mod/mod_frontpage/index.html">FrontPage 2000 documentation</A> carefully.</P>
++<P>Information on the FreeBSD operating system can be found on the <A HREF="http://www.freebsd.org/">FreeBSD Home Page</A>.</P>
+   <P>
+   Kohalik veebmeister v&otilde;ib vabalt kasutada allpool olevat
+   pilti oma Apache veebiserveril. Ait&auml;h Apachet kasutamast!
+   </P>
+   <DIV ALIGN="CENTER">
+-   <IMG SRC="apache_pb.gif" ALT="">
++  <A HREF="http://www.apache.org/"><IMG SRC="/images/apache_pb.gif" ALT="Powered by Apache"></A>
++  <A HREF="http://www.freebsd.org/">
++        <IMG SRC="/images/powerlogo.gif" ALT="Site driven by FreeBSD - FreeBSD: The Power to Server!"></A>
++  <A HREF="http://www.microsoft.com/frontpage/default.htm">
++        <IMG SRC="/images/fplogo.gif" ALT="Created with Microsoft FrontPage 2000"></A>
+   </DIV>
+  </BODY>
+ </HTML>
