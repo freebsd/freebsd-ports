@@ -1,10 +1,9 @@
 A very small and fast slang-based editor that features syntax-highlighting
 via plug-in modules for C, C++, perl, html, and sgml.
 
-Homepage:
-http://cdsmith.twu.net/lpe/
-Author:
-Chris Smith <cd_smith@ou.edu>
+Author: Chris Smith <cd_smith@ou.edu>
+
+WWW: http://cdsmith.twu.net/lpe/
 
 -Chris Piazza
 cpiazza@home.net
