@@ -16,10 +16,12 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=	0.2.4
-IMG_VERSION=	1.18
-M17N_VERSION=	20020108
-M17N_BASE_W3M_VERSION=	0.2.4
+W3M_VERSION=			0.2.5
+IMG_VERSION=			2.2
+IMG_BASE_W3M_VERSION=		0.2.4
+IMG_BASE_W3M_CVS_REVISION=	1.278
+M17N_VERSION=			20020202
+M17N_BASE_W3M_VERSION=		0.2.5
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-nonstop --prefix=${PREFIX} \
@@ -56,7 +58,6 @@ PORTVERSION:=	${M17N_BASE_W3M_VERSION}+${M17N_VERSION}
 
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 DISTNAME=	${PORTNAME}-${M17N_BASE_W3M_VERSION}-m17n-${M17N_VERSION}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure.m17n
 CONFIGURE_ARGS+=	--suffix=""
 
 PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
@@ -68,6 +69,8 @@ PLIST_SUB+=	M17N_ONLY="@comment " NO_M17N=""
 .endif
 
 .if defined(JAPANESE)
+RUN_DEPENDS=	migemo:${PORTSDIR}/japanese/migemo
+
 MANLANG+=	ja
 DOCS_JP=	${DOCS} README.SSL README.cookie \
 		README.keymap README.mailcap README.menu
@@ -90,7 +93,7 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .if defined(INLINE_IMAGE)
 PORTVERSION:=	${PORTVERSION}+${IMG_VERSION}
 PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-PATCHFILES=	${PORTNAME}-${W3M_VERSION}-img-${IMG_VERSION}.patch.gz
+PATCHFILES=	${PORTNAME}-${IMG_BASE_W3M_VERSION}+cvs-${IMG_BASE_W3M_CVS_REVISION}-img-${IMG_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 USE_IMLIB=	yes
@@ -110,6 +113,18 @@ PKGMESSAGE=	${NONEXISTENT}
 pre-extract:
 .if !defined(WITHOUT_SSL)
 	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
+.endif
+
+post-extract:
+.if defined(INLINE_IMAGE)
+	${SED} -e "s,w3m/0.2.5,w3m/0.2.4+cvs," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
+	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
+.endif
+
+post-patch:
+.if defined(INLINE_IMAGE)
+	${SED} -e "s,w3m/0.2.4+cvs-img-2.2,w3m/0.2.5-img-2.2," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
+	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
 .endif
 
 post-install:
