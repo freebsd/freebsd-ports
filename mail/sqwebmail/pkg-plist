@@ -1,8 +1,11 @@
 libexec/sqwebmail/authlib/authcustom
 libexec/sqwebmail/authlib/authpam
 libexec/sqwebmail/authlib/authuserdb
+%%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
 libexec/sqwebmail/sqwebmail/maildirmake
 libexec/sqwebmail/sqwebmail/makedatprog
+libexec/sqwebmail/sqwebmail/mimegpg
+libexec/sqwebmail/sqwebmail/reformime
 sbin/sqwebmail.makeuserdb
 sbin/sqwebmail.pw2userdb
 sbin/sqwebmail.userdb
@@ -24,8 +27,12 @@ share/sqwebmail/html/en-us/expired.html
 share/sqwebmail/html/en-us/filter.html
 share/sqwebmail/html/en-us/folder.html
 share/sqwebmail/html/en-us/folders.html
+share/sqwebmail/html/en-us/gpg.html
+share/sqwebmail/html/en-us/gpgcreate.html
+share/sqwebmail/html/en-us/gpgerr.html
 share/sqwebmail/html/en-us/index.html
 share/sqwebmail/html/en-us/invalid.html
+share/sqwebmail/html/en-us/keyimport.html
 share/sqwebmail/html/en-us/ldaplist.html
 share/sqwebmail/html/en-us/ldapsearch.html
 share/sqwebmail/html/en-us/login.html
@@ -46,7 +53,9 @@ share/sqwebmail/sbin/userdb
 share/sqwebmail/sbin/userdbpw
 share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
+share/sqwebmail/webgpg
 www/cgi-bin.default/sqwebmail/sqwebmail
+www/data.default/sqwebmail/bg.gif
 www/data.default/sqwebmail/folder.gif
 www/data.default/sqwebmail/folder2.gif
 www/data.default/sqwebmail/folders.gif
@@ -61,6 +70,7 @@ www/data.default/sqwebmail/replyall.gif
 www/data.default/sqwebmail/replylist.gif
 www/data.default/sqwebmail/right.gif
 www/data.default/sqwebmail/right2.gif
+www/data.default/sqwebmail/sqwebmail.css
 www/data.default/sqwebmail/trash2.gif
 @dirrm www/data.default/sqwebmail
 @unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
