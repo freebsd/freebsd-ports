@@ -227,6 +227,7 @@ share/tclhttpd%%PORTVERSION%%/.tml
 @dirrm share/tclhttpd%%PORTVERSION%%/templates
 @dirrm share/tclhttpd%%PORTVERSION%%
 tclhttpd/custom/README
+tclhttpd/custom/ddehack.tcl
 tclhttpd/custom/hello.tcl
 tclhttpd/custom/snmpinit.tcl
 tclhttpd/custom/tclpro.tcl
