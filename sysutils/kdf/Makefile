@@ -7,10 +7,9 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
@@ -37,16 +36,5 @@ CONFLICTS=	kgpg-[0-9]*
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-.include <bsd.port.pre.mk>
-
-#klaptop needs APM, which is i386 only
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	klaptop_check:${PORTSDIR}/sysutils/klaptopdaemon
-.endif
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|#define HAVE_L_FUNCS 1||g' \
-		${WRKSRC}/config.h
-
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

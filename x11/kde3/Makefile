@@ -35,7 +35,7 @@ CONFIG_FILE=	${LOCALBASE}/etc/kde-meta.conf
 
 ALL_MODULES=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEVELOP KDEEDU\
 		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KOFFICE KDEPIM\
-		KDESDK KDETOYS KDEUTILS QUANTA
+		KDESDK KDETOYS KDEUTILS KDEWEBDEV
 
 ## Forwards parts of the environment to scripts/configure.kde3
 
@@ -140,11 +140,11 @@ RUN_DEPENDS+=	khangman:${PORTSDIR}/misc/kdeedu3
 .if !defined(WITHOUT_KDEADMIN)
 RUN_DEPENDS+=	kcron:${PORTSDIR}/sysutils/kdeadmin3
 .endif
-.if !defined(WITHOUT_QUANTA)
-RUN_DEPENDS+=	quanta:${PORTSDIR}/www/quanta
+.if !defined(WITHOUT_KDEWEBDEV)
+RUN_DEPENDS+=	quanta:${PORTSDIR}/www/kdewebdev
 .endif
 .if !defined(WITHOUT_KDETOYS)
-RUN_DEPENDS+=	kmoon:${PORTSDIR}/x11-clocks/kdetoys3
+RUN_DEPENDS+=	amor:${PORTSDIR}/x11-clocks/kdetoys3
 .endif
 .if !defined(WITHOUT_KDEARTWORK)
 RUN_DEPENDS+=	kbanner.kss:${PORTSDIR}/x11-themes/kdeartwork3

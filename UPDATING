@@ -6,6 +6,91 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040830:
+  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  In KDE 3.3, a number of files were moved between ports and some ports
+  were removed. This means that you will have to take some precautions
+  to update your KDE installation. A simple portupgrade -a will not work.
+  portupgrade -R kde can fail as well, depending on what parts of KDE you
+  have currently installed. We therefore recommend sticking to the following
+  procedure. The procedure requires you to have sysutils/portupgrade installed
+  and you to be the superuser (or using sudo). We recommend not being logged in
+  to a KDE session on the machine you're performing the upgrade on. If you
+  choose to perform the update while being logged in to KDE, expect erratic
+  behaviour and crashes from applications launched during the update.
+
+  1.) First, make sure your ports index is up to date.
+
+      	cd /usr/ports && make index
+
+      or, if you're using the sysutils/portindex port
+
+      	portindex
+    
+  2.) Delete installed packages which conflict with the updated KDE
+      ports.
+
+      	pkg_deinstall -f kdeaddons-kontact-plugins-\* \
+      	kdeaddons-kaddressbook-plugins-\* kdepim-\* kdeutils-\* \
+      	kdeaddons-\[0-9\]\* kde-\[0-9\]\*
+
+      kdegraphics now conflicts with the kolourpaint package and kdeedu now 
+      conflicts with the kwordquiz package. If you have kwordquiz and/or
+      kolourpaint installed on your system and you want to use the kdegraphics/
+      kdeedu ports, you should first deinstall the conflicting packages:
+
+      	pkg_deinstall -f kolourpaint\* kwordquiz\*
+
+
+  3.) Now update the remaining KDE ports.
+
+      	portupgrade arts\* kde\* quanta\*
+
+      or, if you want to update KDE along with other updated ports:
+
+      	portupgrade -a
+
+      Note that the quanta port has been renamed to kdewebdev. The commands
+      above will automatically replace quanta with kdewebdev, if you have
+      quanta installed.
+
+  4.) Reinstall any KDE ports you deleted in step 1. Note that the kdeaddons-
+      kontact-plugins (net/kontact-plugins), kdepim-kpilot (palm/kpilot) and 
+      quanta (www/quanta) ports/packages do not exist anymore and cannot be
+      reinstalled.
+
+  Known post-updating issues:
+
+  - If you're missing acoustic notifications (system sounds) after the update:
+    
+    	rm ~/.kde/share/config/knotifyrc
+  
+    Then log out of KDE and back in again.
+
+  - KMail has been heavily modified since KDE 3.2.x. Testing shows that KMail
+    can display erratic behaviour and crashes after the update. If you see any
+    such behaviour, it is recommended to simply close KMail and start it again
+    until it resumes normal operation.
+
+    The integration of GnuPG and KMail for signing, encrypting and verifying
+    PGP/MIME mail has also changed. A quick howto is available at 
+    http://freebsd.kde.org/howtos/gnupg-kmail.php.
+
+  - kdm users might get warnings from kdm about obsolete lines in kdmrc.
+    You can migrate your configuration while preserving your customizations
+    by running
+
+    	genkdmconf
+
+    Make sure to backup your old kdmrc (usually found in
+    /usr/local/share/config/kdm) beforehand in case the merge produces an
+    invalid configuration.
+
+  - Extensive information about changes from KDE 3.2.x can be found at
+    http://www.kde.org/announcements/changelogs/changelog3_2_3to3_3.php
+
 20040829:
   AFFECTS: users of mail/mutt-devel
   AUTHOR: udo.schweigert@siemens.com

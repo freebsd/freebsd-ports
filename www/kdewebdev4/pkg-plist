@@ -1,29 +1,42 @@
+bin/kimagemapeditor
+bin/klinkstatus
 bin/kmdr-editor
 bin/kmdr-executor
+bin/kmdr-plugins
 bin/kxsldbg
 bin/quanta
-include/kxsldbg_partif.h
-include/kxsldbgif.h
+bin/xsldbg
+include/kommanderfactory.h
+include/kommanderplugin.h
+include/kommanderwidget.h
 lib/kde3/libkfilereplacepart.la
 lib/kde3/libkfilereplacepart.so
-lib/kde3/libkfilereplacepart.so.1
+lib/kde3/libkimagemapeditor.la
+lib/kde3/libkimagemapeditor.so
+lib/kde3/libklinkstatuspart.la
+lib/kde3/libklinkstatuspart.so
 lib/kde3/libkxsldbgpart.la
 lib/kde3/libkxsldbgpart.so
-lib/kde3/libkxsldbgpart.so.1
+lib/kde3/quantadebuggergubed.la
+lib/kde3/quantadebuggergubed.so
+lib/libkommanderplugin.la
+lib/libkommanderplugin.so
+lib/libkommanderplugin.so.0
+lib/libkommanderwidget.la
+lib/libkommanderwidget.so
+lib/libkommanderwidget.so.0
 lib/libkommanderwidgets.la
 lib/libkommanderwidgets.so
 lib/libkommanderwidgets.so.0
-lib/libqtnotfier.la
-lib/libqtnotfier.so
-lib/libqtnotfier.so.4
-lib/libxsldbg.la
-lib/libxsldbg.so
-lib/libxsldbg.so.4
-share/applnk/Applications/kmdr-executor.desktop
-share/applnk/Development/kmdr-editor.desktop
+share/applnk/.hidden/kmdr-executor.desktop
+share/applnk/Development/kimagemapeditor.desktop
 share/applnk/Development/kxsldbg.desktop
 share/applnk/Development/quanta.desktop
+share/applnk/Editors/kmdr-editor.desktop
+share/applnk/Utilities/kfilereplacepart.desktop
+share/applnk/Utilities/klinkstatus.desktop
 share/apps/kafkapart/entities
+share/apps/kafkapart/pics/comment.png
 share/apps/kafkapart/pics/php.png
 share/apps/kfilereplacepart/kfilereplacepartui.rc
 share/apps/kfilereplacepart/pics/about.png
@@ -31,32 +44,40 @@ share/apps/kfilereplacepart/pics/error.png
 share/apps/kfilereplacepart/pics/string.png
 share/apps/kfilereplacepart/pics/substring.png
 share/apps/kfilereplacepart/pics/success.png
+share/apps/kfilereplacepart/toolbar/backup.png
+share/apps/kfilereplacepart/toolbar/casesensitive.png
 share/apps/kfilereplacepart/toolbar/filereplace.png
-share/apps/kfilereplacepart/toolbar/filesearch.png
 share/apps/kfilereplacepart/toolbar/filesimulate.png
 share/apps/kfilereplacepart/toolbar/filestop.png
-share/apps/kfilereplacepart/toolbar/optbackup.png
-share/apps/kfilereplacepart/toolbar/optcase.png
-share/apps/kfilereplacepart/toolbar/optconfirm.png
-share/apps/kfilereplacepart/toolbar/optrecursive.png
+share/apps/kfilereplacepart/toolbar/invert.png
+share/apps/kfilereplacepart/toolbar/lineedit.png
 share/apps/kfilereplacepart/toolbar/optvar.png
 share/apps/kfilereplacepart/toolbar/optwildcards.png
+share/apps/kfilereplacepart/toolbar/recursive.png
 share/apps/kfilereplacepart/toolbar/resdiropen.png
 share/apps/kfilereplacepart/toolbar/resfiledel.png
 share/apps/kfilereplacepart/toolbar/resfileedit.png
 share/apps/kfilereplacepart/toolbar/resfileinfo.png
 share/apps/kfilereplacepart/toolbar/resfileopen.png
-share/apps/kfilereplacepart/toolbar/stradd.png
-share/apps/kfilereplacepart/toolbar/strdel.png
-share/apps/kfilereplacepart/toolbar/stredit.png
 share/apps/kfilereplacepart/toolbar/strempty.png
-share/apps/kfilereplacepart/toolbar/strinvert.png
+share/apps/kfilereplacepart/toolbar/unsortedList.png
+share/apps/kfilereplacepart/toolbar/yesno.png
+share/apps/kimagemapeditor/addpointcursor.png
+share/apps/kimagemapeditor/freehandcursor.png
+share/apps/kimagemapeditor/kimagemapeditorpartui.rc
+share/apps/kimagemapeditor/kimagemapeditorui.rc
+share/apps/kimagemapeditor/polygoncursor.png
+share/apps/kimagemapeditor/removepointcursor.png
+share/apps/klinkstatus/klinkstatus_shell.rc
+share/apps/klinkstatuspart/klinkstatus_part.rc
+share/apps/klinkstatuspart/pics/304.png
 share/apps/kxsldbg/kxsldbg_shell.rc
 share/apps/kxsldbgpart/kxsldbg_part.rc
 share/apps/quanta/actions.rc
 share/apps/quanta/chars
 share/apps/quanta/csseditor/atrules.xml
 share/apps/quanta/csseditor/config.xml
+share/apps/quanta/csseditor/dtdTags.xml
 share/apps/quanta/csseditor/pseudo.xml
 share/apps/quanta/doc/aniquanta.gif
 share/apps/quanta/doc/background.png
@@ -323,6 +344,7 @@ share/apps/quanta/dtep/css/z-index.tag
 share/apps/quanta/dtep/docbook-4.2/a.tag
 share/apps/quanta/dtep/docbook-4.2/b.tag
 share/apps/quanta/dtep/docbook-4.2/c.tag
+share/apps/quanta/dtep/docbook-4.2/common.tag
 share/apps/quanta/dtep/docbook-4.2/d.tag
 share/apps/quanta/dtep/docbook-4.2/description.rc
 share/apps/quanta/dtep/docbook-4.2/e.tag
@@ -347,6 +369,7 @@ share/apps/quanta/dtep/docbook-4.2/w.tag
 share/apps/quanta/dtep/docbook-4.2/x.tag
 share/apps/quanta/dtep/docbook-4.2/y.tag
 share/apps/quanta/dtep/html-frameset/basefont.tag
+share/apps/quanta/dtep/html-frameset/common.tag
 share/apps/quanta/dtep/html-frameset/description.rc
 share/apps/quanta/dtep/html-frameset/font.tag
 share/apps/quanta/dtep/html-frameset/frame.tag
@@ -355,6 +378,7 @@ share/apps/quanta/dtep/html-frameset/isindex.tag
 share/apps/quanta/dtep/html-strict/a.tag
 share/apps/quanta/dtep/html-strict/b.tag
 share/apps/quanta/dtep/html-strict/c.tag
+share/apps/quanta/dtep/html-strict/common.tag
 share/apps/quanta/dtep/html-strict/d.tag
 share/apps/quanta/dtep/html-strict/description.rc
 share/apps/quanta/dtep/html-strict/e.tag
@@ -375,6 +399,7 @@ share/apps/quanta/dtep/html-strict/v.tag
 share/apps/quanta/dtep/html-transitional/a.tag
 share/apps/quanta/dtep/html-transitional/b.tag
 share/apps/quanta/dtep/html-transitional/c.tag
+share/apps/quanta/dtep/html-transitional/common.tag
 share/apps/quanta/dtep/html-transitional/d.tag
 share/apps/quanta/dtep/html-transitional/description.rc
 share/apps/quanta/dtep/html-transitional/e.tag
@@ -395,6 +420,7 @@ share/apps/quanta/dtep/html-transitional/v.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/a.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/b.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/c.tag
+share/apps/quanta/dtep/kde-docbook-4.1.2/common.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/d.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/description.rc
 share/apps/quanta/dtep/kde-docbook-4.1.2/e.tag
@@ -417,6 +443,7 @@ share/apps/quanta/dtep/kde-docbook-4.1.2/v.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/w.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/x.tag
 share/apps/quanta/dtep/kde-docbook-4.1.2/y.tag
+share/apps/quanta/dtep/kde-docbook-4.2/common.tag
 share/apps/quanta/dtep/kde-docbook-4.2/description.rc
 share/apps/quanta/dtep/php/apache.tag
 share/apps/quanta/dtep/php/array.tag
@@ -572,6 +599,7 @@ share/apps/quanta/dtep/wml-1-2/access.tag
 share/apps/quanta/dtep/wml-1-2/anchor.tag
 share/apps/quanta/dtep/wml-1-2/br.tag
 share/apps/quanta/dtep/wml-1-2/card.tag
+share/apps/quanta/dtep/wml-1-2/common.tag
 share/apps/quanta/dtep/wml-1-2/description.rc
 share/apps/quanta/dtep/wml-1-2/do.tag
 share/apps/quanta/dtep/wml-1-2/fieldset.tag
@@ -597,6 +625,7 @@ share/apps/quanta/dtep/xhtml-basic/base.tag
 share/apps/quanta/dtep/xhtml-basic/blockquote.tag
 share/apps/quanta/dtep/xhtml-basic/body.tag
 share/apps/quanta/dtep/xhtml-basic/br.tag
+share/apps/quanta/dtep/xhtml-basic/common.tag
 share/apps/quanta/dtep/xhtml-basic/description.rc
 share/apps/quanta/dtep/xhtml-basic/div.tag
 share/apps/quanta/dtep/xhtml-basic/form.tag
@@ -638,6 +667,7 @@ share/apps/quanta/dtep/xhtml-frameset/cite.tag
 share/apps/quanta/dtep/xhtml-frameset/code.tag
 share/apps/quanta/dtep/xhtml-frameset/col.tag
 share/apps/quanta/dtep/xhtml-frameset/colgroup.tag
+share/apps/quanta/dtep/xhtml-frameset/common.tag
 share/apps/quanta/dtep/xhtml-frameset/dd.tag
 share/apps/quanta/dtep/xhtml-frameset/del.tag
 share/apps/quanta/dtep/xhtml-frameset/description.rc
@@ -722,6 +752,7 @@ share/apps/quanta/dtep/xhtml-strict/cite.tag
 share/apps/quanta/dtep/xhtml-strict/code.tag
 share/apps/quanta/dtep/xhtml-strict/col.tag
 share/apps/quanta/dtep/xhtml-strict/colgroup.tag
+share/apps/quanta/dtep/xhtml-strict/common.tag
 share/apps/quanta/dtep/xhtml-strict/dd.tag
 share/apps/quanta/dtep/xhtml-strict/del.tag
 share/apps/quanta/dtep/xhtml-strict/description.rc
@@ -799,6 +830,7 @@ share/apps/quanta/dtep/xhtml/cite.tag
 share/apps/quanta/dtep/xhtml/code.tag
 share/apps/quanta/dtep/xhtml/col.tag
 share/apps/quanta/dtep/xhtml/colgroup.tag
+share/apps/quanta/dtep/xhtml/common.tag
 share/apps/quanta/dtep/xhtml/dd.tag
 share/apps/quanta/dtep/xhtml/del.tag
 share/apps/quanta/dtep/xhtml/description.rc
@@ -882,6 +914,7 @@ share/apps/quanta/dtep/xhtml11/cite.tag
 share/apps/quanta/dtep/xhtml11/code.tag
 share/apps/quanta/dtep/xhtml11/col.tag
 share/apps/quanta/dtep/xhtml11/colgroup.tag
+share/apps/quanta/dtep/xhtml11/common.tag
 share/apps/quanta/dtep/xhtml11/dd.tag
 share/apps/quanta/dtep/xhtml11/del.tag
 share/apps/quanta/dtep/xhtml11/description.rc
@@ -1025,18 +1058,29 @@ share/apps/quanta/quantaui.rc
 share/apps/quanta/scripts/TemplateMagic.pl
 share/apps/quanta/scripts/TemplateMagic.pl.info
 share/apps/quanta/scripts/checkxml.kmdr
-share/apps/quanta/scripts/dwt.info
+share/apps/quanta/scripts/checkxml.kmdr.info
+share/apps/quanta/scripts/dwt.kmdr
+share/apps/quanta/scripts/dwt.kmdr.info
 share/apps/quanta/scripts/dwt.pl
+share/apps/quanta/scripts/dwt.pl.info
 share/apps/quanta/scripts/externalpreview.sh
-share/apps/quanta/scripts/htmlquickstart.info
+share/apps/quanta/scripts/externalpreview.sh.info
+share/apps/quanta/scripts/gubed_install.kmdr
+share/apps/quanta/scripts/gubed_install.kmdr.info
 share/apps/quanta/scripts/htmlquickstart.kmdr
+share/apps/quanta/scripts/htmlquickstart.kmdr.info
 share/apps/quanta/scripts/info.css
+share/apps/quanta/scripts/info.xsl
 share/apps/quanta/scripts/meinproc.kmdr
+share/apps/quanta/scripts/meinproc.kmdr.info
 share/apps/quanta/scripts/scriptinfo.kmdr
-share/apps/quanta/scripts/tidy.info
+share/apps/quanta/scripts/scriptinfo.kmdr.info
 share/apps/quanta/scripts/tidy.kmdr
+share/apps/quanta/scripts/tidy.kmdr.info
 share/apps/quanta/scripts/xmlval.kmdr
+share/apps/quanta/scripts/xmlval.kmdr.info
 share/apps/quanta/scripts/xsltproc.kmdr
+share/apps/quanta/scripts/xsltproc.kmdr.info
 share/apps/quanta/templates/binaries/.dirinfo
 share/apps/quanta/templates/binaries/images/jpg/demo.jpg
 share/apps/quanta/templates/binaries/images/others/demo.tif
@@ -1050,23 +1094,46 @@ share/apps/quanta/templates/images/.dirinfo
 share/apps/quanta/templates/images/jpg/demo.jpg
 share/apps/quanta/templates/images/others/demo.tif
 share/apps/quanta/templates/images/png/demo.png
+share/apps/quanta/templates/pages/.dirinfo
+share/apps/quanta/templates/pages/docbook/kde-doc-template.docbook
+share/apps/quanta/templates/pages/html_4.0.1/basic.html
+share/apps/quanta/templates/pages/php/demo.php
+share/apps/quanta/templates/pages/special/drag_n_drop_men.html
+share/apps/quanta/templates/pages/xhtml/Quanta_Times.html
+share/apps/quanta/templates/pages/xhtml/leftMen_BB.html
+share/apps/quanta/templates/pages/xhtml/leftMen_Quanta.html
+share/apps/quanta/templates/pages/xhtml/rightMen_BB.html
+share/apps/quanta/templates/pages/xhtml/rightMen_Quanta.html
+share/apps/quanta/templates/pages/xhtml/twoSideMen_BB.html
+share/apps/quanta/templates/pages/xhtml/twoSideMen_Quanta.html
+share/apps/quanta/templates/scripts/.dirinfo
+share/apps/quanta/templates/scripts/javascript/email_validate.js
+share/apps/quanta/templates/scripts/javascript/overlib.js
+share/apps/quanta/templates/scripts/javascript/preload.js
+share/apps/quanta/templates/scripts/perl/demo.perl
+share/apps/quanta/templates/scripts/php/demo.php
 share/apps/quanta/templates/text/.dirinfo
 share/apps/quanta/templates/text/html/demo.html
 share/apps/quanta/templates/text/others/demo.txt
 share/apps/quanta/tips
-share/apps/quanta/toolbar/back.png
 share/apps/quanta/toolbar/ball.png
-share/apps/quanta/toolbar/bookmark.png
 share/apps/quanta/toolbar/check.png
 share/apps/quanta/toolbar/check_clear.png
 share/apps/quanta/toolbar/check_grey.png
-share/apps/quanta/toolbar/close.png
-share/apps/quanta/toolbar/color.png
-share/apps/quanta/toolbar/copy.png
 share/apps/quanta/toolbar/css.png
-share/apps/quanta/toolbar/customlayout.png
-share/apps/quanta/toolbar/cut.png
 share/apps/quanta/toolbar/date.png
+share/apps/quanta/toolbar/debug_breakpoint.png
+share/apps/quanta/toolbar/debug_connect.png
+share/apps/quanta/toolbar/debug_currentline.png
+share/apps/quanta/toolbar/debug_disconnect.png
+share/apps/quanta/toolbar/debug_kill.png
+share/apps/quanta/toolbar/debug_leap.png
+share/apps/quanta/toolbar/debug_pause.png
+share/apps/quanta/toolbar/debug_run.png
+share/apps/quanta/toolbar/debug_skip.png
+share/apps/quanta/toolbar/debug_stepinto.png
+share/apps/quanta/toolbar/debug_stepout.png
+share/apps/quanta/toolbar/debug_stepover.png
 share/apps/quanta/toolbar/delete.png
 share/apps/quanta/toolbar/div_center.png
 share/apps/quanta/toolbar/div_justify.png
@@ -1074,51 +1141,31 @@ share/apps/quanta/toolbar/div_left.png
 share/apps/quanta/toolbar/div_right.png
 share/apps/quanta/toolbar/empty16x16.png
 share/apps/quanta/toolbar/empty1x16.png
-share/apps/quanta/toolbar/exit.png
-share/apps/quanta/toolbar/find.png
-share/apps/quanta/toolbar/findnext.png
+share/apps/quanta/toolbar/files.png
 share/apps/quanta/toolbar/font_dec.png
 share/apps/quanta/toolbar/font_inc.png
 share/apps/quanta/toolbar/form.png
-share/apps/quanta/toolbar/forward.png
 share/apps/quanta/toolbar/frame.png
 share/apps/quanta/toolbar/ftab.png
 share/apps/quanta/toolbar/ftpclient.png
 share/apps/quanta/toolbar/java.png
-share/apps/quanta/toolbar/layout1.png
-share/apps/quanta/toolbar/layout2.png
 share/apps/quanta/toolbar/lineedit.png
 share/apps/quanta/toolbar/linepas.png
 share/apps/quanta/toolbar/mini-book1.png
 share/apps/quanta/toolbar/mini-book2.png
 share/apps/quanta/toolbar/mini-modules.png
-share/apps/quanta/toolbar/new.png
-share/apps/quanta/toolbar/open.png
-share/apps/quanta/toolbar/openprj.png
-share/apps/quanta/toolbar/options.png
 share/apps/quanta/toolbar/output_win.png
-share/apps/quanta/toolbar/paste.png
 share/apps/quanta/toolbar/preview.png
-share/apps/quanta/toolbar/preview1.png
-share/apps/quanta/toolbar/preview2.png
-share/apps/quanta/toolbar/preview3.png
-share/apps/quanta/toolbar/preview4.png
-share/apps/quanta/toolbar/print.png
 share/apps/quanta/toolbar/ptab.png
 share/apps/quanta/toolbar/quantalogo.png
+share/apps/quanta/toolbar/quantalogo_be.png
 share/apps/quanta/toolbar/quick_list.png
 share/apps/quanta/toolbar/quick_start.png
 share/apps/quanta/toolbar/quick_table.png
 share/apps/quanta/toolbar/radio.png
-share/apps/quanta/toolbar/redo.png
-share/apps/quanta/toolbar/repaint.png
 share/apps/quanta/toolbar/replace.png
 share/apps/quanta/toolbar/reset.png
-share/apps/quanta/toolbar/save.png
-share/apps/quanta/toolbar/save_all.png
-share/apps/quanta/toolbar/save_small.png
 share/apps/quanta/toolbar/select.png
-share/apps/quanta/toolbar/spellcheck.png
 share/apps/quanta/toolbar/submit.png
 share/apps/quanta/toolbar/table_data.png
 share/apps/quanta/toolbar/table_head.png
@@ -1213,7 +1260,6 @@ share/apps/quanta/toolbar/tag_wml.png
 share/apps/quanta/toolbar/textarea.png
 share/apps/quanta/toolbar/tree_win.png
 share/apps/quanta/toolbar/ttab.png
-share/apps/quanta/toolbar/undo.png
 share/apps/quanta/toolbar/view_text.png
 share/apps/quanta/toolbar/vpl.png
 share/apps/quanta/toolbar/vpl_text.png
@@ -1227,16 +1273,17 @@ share/apps/quanta/toolbars/cfml/cfml.toolbar.tgz
 share/apps/quanta/toolbars/cfml/fonts.toolbar.tgz
 share/apps/quanta/toolbars/cfml/forms.toolbar.tgz
 share/apps/quanta/toolbars/cfml/lists.toolbar.tgz
-share/apps/quanta/toolbars/cfml/other.toolbar.tgz
 share/apps/quanta/toolbars/cfml/standard.toolbar.tgz
 share/apps/quanta/toolbars/cfml/tables.toolbar.tgz
+share/apps/quanta/toolbars/css/css.toolbar.tgz
+share/apps/quanta/toolbars/debug.toolbar.tgz
 share/apps/quanta/toolbars/docbook.toolbar.tgz
 share/apps/quanta/toolbars/docbook/xmltools.toolbar.tgz
-share/apps/quanta/toolbars/html/fonts.toolbar.tgz
 share/apps/quanta/toolbars/html/forms.toolbar.tgz
 share/apps/quanta/toolbars/html/lists.toolbar.tgz
 share/apps/quanta/toolbars/html/other.toolbar.tgz
 share/apps/quanta/toolbars/html/standard.toolbar.tgz
+share/apps/quanta/toolbars/html/style.toolbar.tgz
 share/apps/quanta/toolbars/html/tables.toolbar.tgz
 share/apps/quanta/toolbars/kde-docbook/kdexmltools.toolbar.tgz
 share/apps/quanta/toolbars/kde_docbook.toolbar.tgz
@@ -1256,6 +1303,49 @@ share/apps/quanta/toolbars/wml-1-2/tasks.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/text.toolbar.tgz
 share/apps/quanta/toolbars/xml/fonts.toolbar.tgz
 share/apps/templates/text/scripts/demo.php
+share/config.kcfg/klinkstatus.kcfg
+share/doc/HTML/en/klinkstatus/common
+share/doc/HTML/en/klinkstatus/index.cache.bz2
+share/doc/HTML/en/klinkstatus/index.docbook
+share/doc/HTML/en/klinkstatus/screenshot.png
+share/doc/HTML/en/kommander/basics.docbook
+share/doc/HTML/en/kommander/buttongroup.png
+share/doc/HTML/en/kommander/checkbox.png
+share/doc/HTML/en/kommander/combobox.png
+share/doc/HTML/en/kommander/commands.docbook
+share/doc/HTML/en/kommander/common
+share/doc/HTML/en/kommander/credits.docbook
+share/doc/HTML/en/kommander/dcop.docbook
+share/doc/HTML/en/kommander/editor.docbook
+share/doc/HTML/en/kommander/editor.png
+share/doc/HTML/en/kommander/extending.docbook
+share/doc/HTML/en/kommander/frame.png
+share/doc/HTML/en/kommander/glossary.docbook
+share/doc/HTML/en/kommander/groupbox.png
+share/doc/HTML/en/kommander/index.cache.bz2
+share/doc/HTML/en/kommander/index.docbook
+share/doc/HTML/en/kommander/installation.docbook
+share/doc/HTML/en/kommander/interface.png
+share/doc/HTML/en/kommander/introduction.docbook
+share/doc/HTML/en/kommander/kde-common.css
+share/doc/HTML/en/kommander/kde-default.css
+share/doc/HTML/en/kommander/kde-web.css
+share/doc/HTML/en/kommander/label.png
+share/doc/HTML/en/kommander/lineedit.png
+share/doc/HTML/en/kommander/listbox.png
+share/doc/HTML/en/kommander/listview.png
+share/doc/HTML/en/kommander/multilineedit.png
+share/doc/HTML/en/kommander/pixlabel.png
+share/doc/HTML/en/kommander/pushbutton.png
+share/doc/HTML/en/kommander/q-and-a.docbook
+share/doc/HTML/en/kommander/radiobutton.png
+share/doc/HTML/en/kommander/richtextedit.png
+share/doc/HTML/en/kommander/shadow.png
+share/doc/HTML/en/kommander/specials.docbook
+share/doc/HTML/en/kommander/spinbox.png
+share/doc/HTML/en/kommander/tabwidget.png
+share/doc/HTML/en/kommander/tutorials.docbook
+share/doc/HTML/en/kommander/widgets.docbook
 share/doc/HTML/en/kxsldbg/1downarrow.png
 share/doc/HTML/en/kxsldbg/breakpoints_window.png
 share/doc/HTML/en/kxsldbg/callstack.docbook
@@ -1344,6 +1434,7 @@ share/doc/HTML/en/quanta/ttab.png
 share/doc/HTML/en/quanta/view_sidetree.png
 share/doc/HTML/en/quanta/vplsourceview.png
 share/doc/HTML/en/quanta/working-with-quanta.docbook
+share/icons/crystalsvg/16x16/actions/bug.png
 share/icons/hicolor/16x16/actions/1downarrow.png
 share/icons/hicolor/16x16/actions/configure.png
 share/icons/hicolor/16x16/actions/exit.png
@@ -1361,11 +1452,23 @@ share/icons/hicolor/16x16/actions/xsldbg_refresh.png
 share/icons/hicolor/16x16/actions/xsldbg_source.png
 share/icons/hicolor/16x16/actions/xsldbg_stepdown.png
 share/icons/hicolor/16x16/actions/xsldbg_stepup.png
+share/icons/hicolor/16x16/apps/kimagemapeditor.png
+share/icons/hicolor/16x16/apps/klinkstatus.png
 share/icons/hicolor/16x16/apps/quanta.png
 share/icons/hicolor/22x22/actions/1downarrow.png
+share/icons/hicolor/22x22/actions/addpoint.png
+share/icons/hicolor/22x22/actions/arrow.png
+share/icons/hicolor/22x22/actions/circle.png
+share/icons/hicolor/22x22/actions/circle2.png
 share/icons/hicolor/22x22/actions/configure.png
 share/icons/hicolor/22x22/actions/exit.png
+share/icons/hicolor/22x22/actions/freehand.png
+share/icons/hicolor/22x22/actions/lower.png
 share/icons/hicolor/22x22/actions/next.png
+share/icons/hicolor/22x22/actions/polygon.png
+share/icons/hicolor/22x22/actions/raise.png
+share/icons/hicolor/22x22/actions/rectangle.png
+share/icons/hicolor/22x22/actions/removepoint.png
 share/icons/hicolor/22x22/actions/run.png
 share/icons/hicolor/22x22/actions/step.png
 share/icons/hicolor/22x22/actions/xsldbg_break.png
@@ -1380,18 +1483,25 @@ share/icons/hicolor/22x22/actions/xsldbg_stepup.png
 share/icons/hicolor/22x22/apps/kfilereplace.png
 share/icons/hicolor/22x22/apps/quanta.png
 share/icons/hicolor/32x32/apps/kfilereplace.png
+share/icons/hicolor/32x32/apps/kimagemapeditor.png
+share/icons/hicolor/32x32/apps/klinkstatus.png
 share/icons/hicolor/32x32/apps/quanta.png
 share/icons/hicolor/48x48/apps/kfilereplace.png
+share/icons/hicolor/48x48/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/quanta.png
-share/icons/locolor/16x16/apps/kmdr/executor.png
-share/icons/locolor/32x32/apps/kmdr/executor.png
+share/icons/locolor/16x16/apps/kimagemapeditor.png
+share/icons/locolor/32x32/apps/kimagemapeditor.png
 share/mimelnk/application/x-kommander.desktop
+share/mimelnk/application/x-webprj.desktop
 share/services/kfilereplacepart.desktop
+share/services/kimagemapeditorpart.desktop
+share/services/klinkstatus_part.desktop
 share/services/kxsldbg_part.desktop
-@dirrm share/icons/locolor/32x32/apps/kmdr
+share/services/quanta_preview_config.desktop
+share/services/quantadebuggergubed.desktop
+share/servicetypes/quantadebugger.desktop
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps/kmdr
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
@@ -1407,6 +1517,9 @@ share/services/kxsldbg_part.desktop
 @dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/quanta
 @dirrm share/doc/HTML/en/kxsldbg
+@dirrm share/doc/HTML/en/kommander
+@dirrm share/doc/HTML/en/klinkstatus
+@dirrm share/config.kcfg
 @dirrm share/apps/templates/text/scripts
 @dirrm share/apps/templates/text
 @dirrm share/apps/templates
@@ -1417,12 +1530,23 @@ share/services/kxsldbg_part.desktop
 @dirrm share/apps/quanta/toolbars/kde-docbook
 @dirrm share/apps/quanta/toolbars/html
 @dirrm share/apps/quanta/toolbars/docbook
+@dirrm share/apps/quanta/toolbars/css
 @dirrm share/apps/quanta/toolbars/cfml
 @dirrm share/apps/quanta/toolbars
 @dirrm share/apps/quanta/toolbar
 @dirrm share/apps/quanta/templates/text/others
 @dirrm share/apps/quanta/templates/text/html
 @dirrm share/apps/quanta/templates/text
+@dirrm share/apps/quanta/templates/scripts/php
+@dirrm share/apps/quanta/templates/scripts/perl
+@dirrm share/apps/quanta/templates/scripts/javascript
+@dirrm share/apps/quanta/templates/scripts
+@dirrm share/apps/quanta/templates/pages/xhtml
+@dirrm share/apps/quanta/templates/pages/special
+@dirrm share/apps/quanta/templates/pages/php
+@dirrm share/apps/quanta/templates/pages/html_4.0.1
+@dirrm share/apps/quanta/templates/pages/docbook
+@dirrm share/apps/quanta/templates/pages
 @dirrm share/apps/quanta/templates/images/png
 @dirrm share/apps/quanta/templates/images/others
 @dirrm share/apps/quanta/templates/images/jpg
@@ -1465,11 +1589,17 @@ share/services/kxsldbg_part.desktop
 @dirrm share/apps/quanta
 @dirrm share/apps/kxsldbgpart
 @dirrm share/apps/kxsldbg
+@dirrm share/apps/klinkstatuspart/pics
+@dirrm share/apps/klinkstatuspart
+@dirrm share/apps/klinkstatus
+@dirrm share/apps/kimagemapeditor
 @dirrm share/apps/kfilereplacepart/toolbar
 @dirrm share/apps/kfilereplacepart/pics
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kafkapart/pics
 @dirrm share/apps/kafkapart
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Editors
 @dirrm share/applnk/Development
-@dirrm share/applnk/Applications
+@dirrm share/applnk/.hidden
 @dirrm share/applnk

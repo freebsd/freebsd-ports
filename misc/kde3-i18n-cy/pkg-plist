@@ -27,6 +27,7 @@ share/locale/cy/LC_MESSAGES/htmlsearch.mo
 share/locale/cy/LC_MESSAGES/imagerename_plugin.mo
 share/locale/cy/LC_MESSAGES/imgalleryplugin.mo
 share/locale/cy/LC_MESSAGES/jefferson.mo
+share/locale/cy/LC_MESSAGES/joystick.mo
 share/locale/cy/LC_MESSAGES/kabc2mutt.mo
 share/locale/cy/LC_MESSAGES/kabc_dir.mo
 share/locale/cy/LC_MESSAGES/kabc_file.mo
@@ -96,6 +97,7 @@ share/locale/cy/LC_MESSAGES/kcmktalkd.mo
 share/locale/cy/LC_MESSAGES/kcmkuick.mo
 share/locale/cy/LC_MESSAGES/kcmkurifilt.mo
 share/locale/cy/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/cy/LC_MESSAGES/kcmkwinrules.mo
 share/locale/cy/LC_MESSAGES/kcmkwintheme.mo
 share/locale/cy/LC_MESSAGES/kcmkwm.mo
 share/locale/cy/LC_MESSAGES/kcmkxmlrpcd.mo
@@ -132,6 +134,7 @@ share/locale/cy/LC_MESSAGES/kdcop.mo
 share/locale/cy/LC_MESSAGES/kdebugdialog.mo
 share/locale/cy/LC_MESSAGES/kdelibs.mo
 share/locale/cy/LC_MESSAGES/kdelibs_colors.mo
+share/locale/cy/LC_MESSAGES/kdepasswd.mo
 share/locale/cy/LC_MESSAGES/kdeprint.mo
 share/locale/cy/LC_MESSAGES/kdeprint_part.mo
 share/locale/cy/LC_MESSAGES/kdeprintfax.mo
@@ -163,6 +166,7 @@ share/locale/cy/LC_MESSAGES/kfontviewpart.mo
 share/locale/cy/LC_MESSAGES/kgantt.mo
 share/locale/cy/LC_MESSAGES/kget.mo
 share/locale/cy/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/cy/LC_MESSAGES/kgreet_classic.mo
 share/locale/cy/LC_MESSAGES/khelpcenter.mo
 share/locale/cy/LC_MESSAGES/khotkeys.mo
 share/locale/cy/LC_MESSAGES/khtmlsettingsplugin.mo
@@ -176,6 +180,7 @@ share/locale/cy/LC_MESSAGES/kio_floppy.mo
 share/locale/cy/LC_MESSAGES/kio_help.mo
 share/locale/cy/LC_MESSAGES/kio_imap4.mo
 share/locale/cy/LC_MESSAGES/kio_lan.mo
+share/locale/cy/LC_MESSAGES/kio_ldap.mo
 share/locale/cy/LC_MESSAGES/kio_mac.mo
 share/locale/cy/LC_MESSAGES/kio_man.mo
 share/locale/cy/LC_MESSAGES/kio_mobile.mo
@@ -234,6 +239,7 @@ share/locale/cy/LC_MESSAGES/krdc.mo
 share/locale/cy/LC_MESSAGES/kreadconfig.mo
 share/locale/cy/LC_MESSAGES/krfb.mo
 share/locale/cy/LC_MESSAGES/krunapplet.mo
+share/locale/cy/LC_MESSAGES/kscd.mo
 share/locale/cy/LC_MESSAGES/kscreensaver.mo
 share/locale/cy/LC_MESSAGES/ksig.mo
 share/locale/cy/LC_MESSAGES/ksirc.mo
@@ -254,6 +260,7 @@ share/locale/cy/LC_MESSAGES/kteatime.mo
 share/locale/cy/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/cy/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/cy/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/cy/LC_MESSAGES/kthememanager.mo
 share/locale/cy/LC_MESSAGES/ktimemon.mo
 share/locale/cy/LC_MESSAGES/ktip.mo
 share/locale/cy/LC_MESSAGES/ktnef.mo
@@ -284,6 +291,7 @@ share/locale/cy/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/cy/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/cy/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/cy/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/cy/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/cy/LC_MESSAGES/libkonq.mo
 share/locale/cy/LC_MESSAGES/libkpimexchange.mo
 share/locale/cy/LC_MESSAGES/libkscreensaver.mo
@@ -311,6 +319,7 @@ share/locale/cy/LC_MESSAGES/timezones.mo
 share/locale/cy/LC_MESSAGES/tippecanoe.mo
 share/locale/cy/LC_MESSAGES/tyler.mo
 share/locale/cy/LC_MESSAGES/uachangerplugin.mo
+share/locale/cy/LC_MESSAGES/useraccount.mo
 share/locale/cy/LC_MESSAGES/validatorsplugin.mo
 share/locale/cy/LC_MESSAGES/vimpart.mo
 share/locale/cy/LC_MESSAGES/wakeup.mo

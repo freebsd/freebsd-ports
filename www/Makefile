@@ -174,6 +174,7 @@
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kazehakase
+    SUBDIR += kdewebdev
     SUBDIR += knowledgekit
     SUBDIR += konqueror-nsplugins
     SUBDIR += larbin
@@ -593,7 +594,6 @@
     SUBDIR += py-webware
     SUBDIR += pyweblib
     SUBDIR += qdecoder
-    SUBDIR += quanta
     SUBDIR += quixote
     SUBDIR += reportmagic
     SUBDIR += resin2

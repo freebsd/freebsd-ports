@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.0
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
 # DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
@@ -18,7 +18,6 @@ COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
@@ -38,11 +37,11 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt/html
+CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html
 USE_REINPLACE=	yes
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)
@@ -54,14 +53,5 @@ pre-everything::
 
 post-patch:
 	${TOUCH} -t 200401230000 ${WRKSRC}/Makefile.am.in
-
-pre-configure:
-	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's@$$CXXFLAGS $$X_CFLAGS -ldb@-I/usr/local/include/db4 $$CXXFLAGS $$X_CFLAGS -L/usr/local/lib -ldb4@' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's@INCLUDES = $$(all_includes)@INCLUDES = -I/usr/local/include/db4 $$(all_includes)@' ${WRKSRC}/lib/catalog/Makefile.in
-	${REINPLACE_CMD} -e 's@libkdevcatalog_la_LIBADD = -ldb@libkdevcatalog_la_LIBADD = -L/usr/local/lib -ldb4@' ${WRKSRC}/lib/catalog/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/cpp/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/java/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/pascal/Makefile.in
 
 .include <bsd.port.post.mk>

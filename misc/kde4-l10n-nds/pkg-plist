@@ -167,6 +167,7 @@ share/locale/nds/LC_MESSAGES/kfindpart.mo
 share/locale/nds/LC_MESSAGES/kfloppy.mo
 share/locale/nds/LC_MESSAGES/kfmclient.mo
 share/locale/nds/LC_MESSAGES/kfontinst.mo
+share/locale/nds/LC_MESSAGES/kfouleggs.mo
 share/locale/nds/LC_MESSAGES/kgantt.mo
 share/locale/nds/LC_MESSAGES/kgpg.mo
 share/locale/nds/LC_MESSAGES/kgpgcertmanager.mo
@@ -201,6 +202,7 @@ share/locale/nds/LC_MESSAGES/kjobviewer.mo
 share/locale/nds/LC_MESSAGES/kjots.mo
 share/locale/nds/LC_MESSAGES/klaptopdaemon.mo
 share/locale/nds/LC_MESSAGES/klegacyimport.mo
+share/locale/nds/LC_MESSAGES/klickety.mo
 share/locale/nds/LC_MESSAGES/klipper.mo
 share/locale/nds/LC_MESSAGES/klock.mo
 share/locale/nds/LC_MESSAGES/kmag.mo
@@ -246,6 +248,8 @@ share/locale/nds/LC_MESSAGES/krunapplet.mo
 share/locale/nds/LC_MESSAGES/kscreensaver.mo
 share/locale/nds/LC_MESSAGES/ksig.mo
 share/locale/nds/LC_MESSAGES/ksim.mo
+share/locale/nds/LC_MESSAGES/ksirtet.mo
+share/locale/nds/LC_MESSAGES/ksmiletris.mo
 share/locale/nds/LC_MESSAGES/ksmserver.mo
 share/locale/nds/LC_MESSAGES/ksnake.mo
 share/locale/nds/LC_MESSAGES/ksplash.mo
@@ -301,6 +305,7 @@ share/locale/nds/LC_MESSAGES/libkonq.mo
 share/locale/nds/LC_MESSAGES/libkpimexchange.mo
 share/locale/nds/LC_MESSAGES/libkscreensaver.mo
 share/locale/nds/LC_MESSAGES/libksieve.mo
+share/locale/nds/LC_MESSAGES/libksirtet.mo
 share/locale/nds/LC_MESSAGES/libksync.mo
 share/locale/nds/LC_MESSAGES/libtaskbar.mo
 share/locale/nds/LC_MESSAGES/libtaskmanager.mo

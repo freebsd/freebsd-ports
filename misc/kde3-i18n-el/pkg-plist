@@ -60,6 +60,7 @@ share/locale/el/LC_MESSAGES/katefll_plugin.mo
 share/locale/el/LC_MESSAGES/katehelloworld.mo
 share/locale/el/LC_MESSAGES/katehtmltools.mo
 share/locale/el/LC_MESSAGES/kateinsertcommand.mo
+share/locale/el/LC_MESSAGES/katekjswrapper.mo
 share/locale/el/LC_MESSAGES/katemake.mo
 share/locale/el/LC_MESSAGES/katemodeline.mo
 share/locale/el/LC_MESSAGES/kateopenheader.mo
@@ -153,7 +154,6 @@ share/locale/el/LC_MESSAGES/kdebugdialog.mo
 share/locale/el/LC_MESSAGES/kdelibs.mo
 share/locale/el/LC_MESSAGES/kdelibs_colors.mo
 share/locale/el/LC_MESSAGES/kdelirc.mo
-share/locale/el/LC_MESSAGES/kdepasswd.mo
 share/locale/el/LC_MESSAGES/kdeprint.mo
 share/locale/el/LC_MESSAGES/kdeprint_part.mo
 share/locale/el/LC_MESSAGES/kdeprintfax.mo
@@ -199,6 +199,7 @@ share/locale/el/LC_MESSAGES/kfile_pnm.mo
 share/locale/el/LC_MESSAGES/kfile_po.mo
 share/locale/el/LC_MESSAGES/kfile_ps.mo
 share/locale/el/LC_MESSAGES/kfile_rfc822.mo
+share/locale/el/LC_MESSAGES/kfile_rgb.mo
 share/locale/el/LC_MESSAGES/kfile_rpm.mo
 share/locale/el/LC_MESSAGES/kfile_tga.mo
 share/locale/el/LC_MESSAGES/kfile_tiff.mo
@@ -332,6 +333,7 @@ share/locale/el/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/el/LC_MESSAGES/ksystraycmd.mo
 share/locale/el/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/el/LC_MESSAGES/kteatime.mo
+share/locale/el/LC_MESSAGES/ktexteditor_autobookmarker.mo
 share/locale/el/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/el/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/el/LC_MESSAGES/ktexteditor_kdatatool.mo
@@ -353,6 +355,7 @@ share/locale/el/LC_MESSAGES/kvieweffectsplugin.mo
 share/locale/el/LC_MESSAGES/kviewpresenterplugin.mo
 share/locale/el/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/el/LC_MESSAGES/kviewtemplateplugin.mo
+share/locale/el/LC_MESSAGES/kwatchgnupg.mo
 share/locale/el/LC_MESSAGES/kweather.mo
 share/locale/el/LC_MESSAGES/kwin.mo
 share/locale/el/LC_MESSAGES/kwin4.mo
@@ -401,7 +404,6 @@ share/locale/el/LC_MESSAGES/passwords.mo
 share/locale/el/LC_MESSAGES/pitchablespeed.mo
 share/locale/el/LC_MESSAGES/ppdtranslations.mo
 share/locale/el/LC_MESSAGES/privacy.mo
-share/locale/el/LC_MESSAGES/quanta.mo
 share/locale/el/LC_MESSAGES/quicklauncher.mo
 share/locale/el/LC_MESSAGES/secpolicy.mo
 share/locale/el/LC_MESSAGES/spy.mo
@@ -411,6 +413,7 @@ share/locale/el/LC_MESSAGES/timezones.mo
 share/locale/el/LC_MESSAGES/tippecanoe.mo
 share/locale/el/LC_MESSAGES/tyler.mo
 share/locale/el/LC_MESSAGES/uachangerplugin.mo
+share/locale/el/LC_MESSAGES/useraccount.mo
 share/locale/el/LC_MESSAGES/userinfo.mo
 share/locale/el/LC_MESSAGES/validatorsplugin.mo
 share/locale/el/LC_MESSAGES/wakeup.mo

@@ -250,7 +250,6 @@ share/locale/ja/LC_MESSAGES/dub.mo
 share/locale/ja/LC_MESSAGES/extensionproxy.mo
 share/locale/ja/LC_MESSAGES/ffrs.mo
 share/locale/ja/LC_MESSAGES/filetypes.mo
-share/locale/ja/LC_MESSAGES/flashkard.mo
 share/locale/ja/LC_MESSAGES/fontinst.mo
 share/locale/ja/LC_MESSAGES/fsview.mo
 share/locale/ja/LC_MESSAGES/htmlsearch.mo
@@ -299,7 +298,6 @@ share/locale/ja/LC_MESSAGES/katexmltools.mo
 share/locale/ja/LC_MESSAGES/katomic.mo
 share/locale/ja/LC_MESSAGES/kaudiocreator.mo
 share/locale/ja/LC_MESSAGES/kbabel.mo
-share/locale/ja/LC_MESSAGES/kbabeldict.mo
 share/locale/ja/LC_MESSAGES/kbackgammon.mo
 share/locale/ja/LC_MESSAGES/kbattleship.mo
 share/locale/ja/LC_MESSAGES/kbinaryclock.mo
@@ -330,7 +328,6 @@ share/locale/ja/LC_MESSAGES/kcmcrypto.mo
 share/locale/ja/LC_MESSAGES/kcmcss.mo
 share/locale/ja/LC_MESSAGES/kcmemail.mo
 share/locale/ja/LC_MESSAGES/kcmenergy.mo
-share/locale/ja/LC_MESSAGES/kcmfileshare.mo
 share/locale/ja/LC_MESSAGES/kcmfonts.mo
 share/locale/ja/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/ja/LC_MESSAGES/kcmicons.mo
@@ -519,7 +516,10 @@ share/locale/ja/LC_MESSAGES/kmenuapplet.mo
 share/locale/ja/LC_MESSAGES/kmenuedit.mo
 share/locale/ja/LC_MESSAGES/kmessedwords.mo
 share/locale/ja/LC_MESSAGES/kmid.mo
-share/locale/ja/LC_MESSAGES/kmidi.mo
+share/locale/ja/LC_MESSAGES/kmilo_generic.mo
+share/locale/ja/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/ja/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/ja/LC_MESSAGES/kmilod.mo
 share/locale/ja/LC_MESSAGES/kmines.mo
 share/locale/ja/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ja/LC_MESSAGES/kmix.mo
@@ -531,7 +531,6 @@ share/locale/ja/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/kmrml.mo
 share/locale/ja/LC_MESSAGES/knewsticker.mo
 share/locale/ja/LC_MESSAGES/knode.mo
-share/locale/ja/LC_MESSAGES/knorskverbs.mo
 share/locale/ja/LC_MESSAGES/knotes.mo
 share/locale/ja/LC_MESSAGES/knotify.mo
 share/locale/ja/LC_MESSAGES/kodo.mo
@@ -551,7 +550,6 @@ share/locale/ja/LC_MESSAGES/korganizer.mo
 share/locale/ja/LC_MESSAGES/korn.mo
 share/locale/ja/LC_MESSAGES/kpackage.mo
 share/locale/ja/LC_MESSAGES/kpager.mo
-share/locale/ja/LC_MESSAGES/kpaint.mo
 share/locale/ja/LC_MESSAGES/kpartapp.mo
 share/locale/ja/LC_MESSAGES/kpartsaver.mo
 share/locale/ja/LC_MESSAGES/kpat.mo
@@ -700,7 +698,6 @@ share/locale/ja/LC_MESSAGES/timezones.mo
 share/locale/ja/LC_MESSAGES/tippecanoe.mo
 share/locale/ja/LC_MESSAGES/tyler.mo
 share/locale/ja/LC_MESSAGES/uachangerplugin.mo
-share/locale/ja/LC_MESSAGES/userinfo.mo
 share/locale/ja/LC_MESSAGES/validatorsplugin.mo
 share/locale/ja/LC_MESSAGES/vimpart.mo
 share/locale/ja/LC_MESSAGES/wakeup.mo

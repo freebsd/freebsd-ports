@@ -18,6 +18,8 @@ share/apps/kpackage/pics/dbad.png
 share/apps/kpackage/pics/deb.png
 share/apps/kpackage/pics/dnew.png
 share/apps/kpackage/pics/dupdated.png
+share/apps/kpackage/pics/ftin.xpm
+share/apps/kpackage/pics/ftout.xpm
 share/apps/kpackage/pics/kiss.png
 share/apps/kpackage/pics/knew.png
 share/apps/kpackage/pics/kupdated.png
@@ -31,8 +33,6 @@ share/apps/kpackage/pics/slack.png
 share/apps/kpackage/pics/snew.png
 share/apps/kpackage/pics/supdated.png
 share/apps/kpackage/pics/tick.png
-share/apps/kpackage/toolbar/ftin.xpm
-share/apps/kpackage/toolbar/ftout.xpm
 share/apps/kuser/icons/crystalsvg/22x22/actions/add_group.png
 share/apps/kuser/icons/crystalsvg/22x22/actions/add_user.png
 share/apps/kuser/icons/crystalsvg/22x22/actions/delete_group.png
@@ -42,6 +42,7 @@ share/apps/kuser/icons/crystalsvg/22x22/actions/edit_user.png
 share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
+share/config.kcfg/kuser.kcfg
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -90,22 +91,17 @@ share/icons/crystalsvg/64x64/apps/kuser.png
 share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop
-@dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/128x128/apps
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksysv
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kdat
 @dirrm share/doc/HTML/en/kcron
+@dirrm share/config.kcfg
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kuser/icons/crystalsvg/22x22
 @dirrm share/apps/kuser/icons/crystalsvg
 @dirrm share/apps/kuser/icons
 @dirrm share/apps/kuser
-@dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage

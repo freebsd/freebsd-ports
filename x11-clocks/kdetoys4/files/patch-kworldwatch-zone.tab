@@ -1,5 +1,5 @@
---- kworldwatch/zone.tab	Wed Sep  4 02:18:48 2002
-+++ kworldwatch/zone.tab	Tue Feb 10 21:28:18 2004
+--- kworldwatch/zone.tab	Sat May 22 22:59:07 2004
++++ kwordlwatch/zone.tab	Wed Aug 11 14:48:53 2004
 @@ -1,16 +1,18 @@
 +# @(#)zone.tab	1.29
 +#
@@ -252,7 +252,7 @@
  TN	+3648+01011	Africa/Tunis
  TO	-2110+17510	Pacific/Tongatapu
  TR	+4101+02858	Europe/Istanbul
-@@ -327,20 +354,24 @@
+@@ -327,21 +354,24 @@
  TW	+2503+12130	Asia/Taipei
  TZ	-0648+03917	Africa/Dar_es_Salaam
  UA	+5026+03031	Europe/Kiev	most locations
@@ -274,12 +274,13 @@
  US	+411745-0863730	America/Indiana/Knox	Eastern Standard Time - Indiana - Starke County
  US	+384452-0850402	America/Indiana/Vevay	Eastern Standard Time - Indiana - Switzerland County
  US	+415100-0873900	America/Chicago	Central Time
+-US	+383738-0901152	America/St_Louis	Central Time
  US	+450628-0873651	America/Menominee	Central Time - Michigan - Wisconsin border
 +US	+470659-1011757	America/North_Dakota/Center	Central Time - North Dakota - Oliver County
  US	+394421-1045903	America/Denver	Mountain Time
  US	+433649-1161209	America/Boise	Mountain Time - south Idaho & east Oregon
  US	+364708-1084111	America/Shiprock	Mountain Time - Navajo
-@@ -353,7 +384,8 @@
+@@ -354,7 +384,8 @@
  US	+515248-1763929	America/Adak	Aleutian Islands
  US	+211825-1575130	Pacific/Honolulu	Hawaii
  UY	-3453-05611	America/Montevideo
@@ -289,7 +290,7 @@
  VA	+4154+01227	Europe/Vatican
  VC	+1309-06114	America/St_Vincent
  VE	+1030-06656	America/Caracas
-@@ -365,7 +397,6 @@
+@@ -366,7 +397,6 @@
  WS	-1350-17144	Pacific/Apia
  YE	+1245+04512	Asia/Aden
  YT	-1247+04514	Indian/Mayotte

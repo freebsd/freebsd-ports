@@ -8,10 +8,9 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,6 +18,8 @@ COMMENT=	Basic applications for the KDE system
 
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+
+CONFLICTS=	kdeutils-3.[0-2] kdeutils-3.0.* kdeutils-3.1.* kdeutils-3.2.*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -40,20 +41,13 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
 
-OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		MOTIF       "Support Netscape plugins, requires openmotif" on
+OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
-.endif
-
-.if !defined(WITHOUT_MOTIF)
-RUN_DEPENDS=	nspluginviewer:${PORTSDIR}/www/konqueror-nsplugins
-.elseif defined(WITHOUT_MOTIF)
-CONFIGURE_ARGS+=	--without-motif
 .endif
 
 post-extract:
@@ -72,14 +66,15 @@ post-build:
 	@${CAT} ${PKGDIR}/pkg-install | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGINSTALL}
 	@${CAT} ${FILESDIR}/kdm.sh | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${WRKDIR}/kdm.sh
+		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${WRKDIR}/genkdmconf.sh
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/freebsd.keytab ${PREFIX}/share/apps/konsole/
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	${INSTALL_SCRIPT} ${WRKDIR}/kdm.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/genkdmconf.sh ${PREFIX}/etc/rc.d/
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif

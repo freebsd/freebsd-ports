@@ -14,6 +14,9 @@ bin/dcopref
 bin/dcopserver
 bin/dcopserver_shutdown
 bin/dcopstart
+bin/filesharelist
+bin/fileshareset
+bin/ghns
 bin/imagetops
 bin/kab2kabc
 bin/kaddprinterwizard
@@ -32,6 +35,7 @@ bin/kdontchangethehostname
 bin/kfile
 bin/kfmexec
 bin/kgrantpty
+bin/khotnewstuff
 bin/kimage_concat
 bin/kinstalltheme
 bin/kio_http_cache_cleaner
@@ -50,6 +54,7 @@ bin/kwrapper
 bin/lnusertemp
 bin/make_driver_db_cups
 bin/make_driver_db_lpr
+bin/makekdewidgets
 bin/meinproc
 bin/preparetips
 etc/rc.d/kdelibs.sh
@@ -117,6 +122,9 @@ include/kabc/formatplugin.h
 include/kabc/geo.h
 include/kabc/key.h
 include/kabc/ldapclient.h
+include/kabc/ldapconfigwidget.h
+include/kabc/ldapurl.h
+include/kabc/ldif.h
 include/kabc/ldifconverter.h
 include/kabc/lock.h
 include/kabc/locknull.h
@@ -149,6 +157,7 @@ include/kaccelmanager.h
 include/kaction.h
 include/kactionclasses.h
 include/kactioncollection.h
+include/kactionselector.h
 include/kactionshortcutlist.h
 include/kactivelabel.h
 include/kallocator.h
@@ -179,6 +188,7 @@ include/kbookmarkmanager.h
 include/kbookmarkmenu.h
 include/kbookmarknotifier.h
 include/kbufferedio.h
+include/kbufferedsocket.h
 include/kbugreport.h
 include/kbuttonbox.h
 include/kcalendarsystem.h
@@ -186,6 +196,7 @@ include/kcalendarsystemfactory.h
 include/kcatalogue.h
 include/kcharselect.h
 include/kcharsets.h
+include/kclientsocketbase.h
 include/kclipboard.h
 include/kcmdlineargs.h
 include/kcmenumngr.h
@@ -216,6 +227,7 @@ include/kcpuinfo.h
 include/kcrash.h
 include/kcursor.h
 include/kcustommenueditor.h
+include/kdatagramsocket.h
 include/kdatastream.h
 include/kdatatool.h
 include/kdatepicker.h
@@ -321,6 +333,7 @@ include/khtml_part.h
 include/khtml_settings.h
 include/khtmldefaults.h
 include/khtmlview.h
+include/khttpproxysocketdevice.h
 include/kicondialog.h
 include/kiconeffect.h
 include/kiconloader.h
@@ -330,6 +343,9 @@ include/kidna.h
 include/kimageeffect.h
 include/kimagefilepreview.h
 include/kimageio.h
+include/kimiface.h
+include/kimproxy.h
+include/kimproxyiface.h
 include/kinputdialog.h
 include/kinstance.h
 include/kio/authinfo.h
@@ -389,6 +405,7 @@ include/kjs/value.h
 include/kkeybutton.h
 include/kkeydialog.h
 include/kkeynative.h
+include/klanguagebutton.h
 include/klargefile.h
 include/kled.h
 include/klibloader.h
@@ -396,7 +413,9 @@ include/klineedit.h
 include/klineeditdlg.h
 include/klistbox.h
 include/klistview.h
+include/klistviewsearchline.h
 include/klocale.h
+include/klockfile.h
 include/kmacroexpander.h
 include/kmainwindow.h
 include/kmainwindowiface.h
@@ -421,10 +440,23 @@ include/kmessagebox.h
 include/kmimemagic.h
 include/kmimesourcefactory.h
 include/kmimetype.h
+include/kmimetypechooser.h
 include/kmimetyperesolver.h
 include/kmountpoint.h
+include/kmulticastsocket.h
+include/kmulticastsocketdevice.h
 include/kmultipledrag.h
 include/kmultitabbar.h
+include/knetworkinterface.h
+include/knewstuff/downloaddialog.h
+include/knewstuff/engine.h
+include/knewstuff/entry.h
+include/knewstuff/knewstuff.h
+include/knewstuff/knewstuffgeneric.h
+include/knewstuff/provider.h
+include/knewstuff/providerdialog.h
+include/knewstuff/uploaddialog.h
+include/knfsshare.h
 include/knotifyclient.h
 include/knotifydialog.h
 include/knotifywidgetbase.h
@@ -478,8 +510,10 @@ include/krandomsequence.h
 include/krecentdocument.h
 include/kregexp.h
 include/kregexpeditorinterface.h
+include/kremoteencoding.h
 include/kreplace.h
 include/kreplacedialog.h
+include/kresolver.h
 include/kresources/configdialog.h
 include/kresources/configpage.h
 include/kresources/configwidget.h
@@ -490,11 +524,13 @@ include/kresources/managerimpl.h
 include/kresources/resource.h
 include/kresources/selectdialog.h
 include/krestrictedline.h
+include/kreverseresolver.h
 include/krfcdate.h
 include/krootpixmap.h
 include/krootprop.h
 include/kruler.h
 include/krun.h
+include/ksambashare.h
 include/ksavefile.h
 include/kscan.h
 include/ksconfig.h
@@ -502,6 +538,7 @@ include/kscreensaver.h
 include/kscreensaver_vroot.h
 include/kselect.h
 include/kseparator.h
+include/kserversocket.h
 include/kservice.h
 include/kservicegroup.h
 include/kservicetype.h
@@ -520,9 +557,23 @@ include/ksimpleconfig.h
 include/ksmimecrypto.h
 include/ksock.h
 include/ksockaddr.h
+include/ksocketaddress.h
+include/ksocketbase.h
+include/ksocketdevice.h
 include/ksocks.h
+include/ksockssocketdevice.h
 include/ksortablevaluelist.h
 include/kspell.h
+include/kspell2/backgroundchecker.h
+include/kspell2/broker.h
+include/kspell2/configdialog.h
+include/kspell2/configwidget.h
+include/kspell2/defaultdictionary.h
+include/kspell2/dialog.h
+include/kspell2/dictionary.h
+include/kspell2/filter.h
+include/kspell2/highlighter.h
+include/kspell2/settings.h
 include/kspelldlg.h
 include/ksplashscreen.h
 include/ksqueezedtextlabel.h
@@ -556,6 +607,7 @@ include/kstdaccel.h
 include/kstdaction.h
 include/kstddirs.h
 include/kstdguiitem.h
+include/kstreamsocket.h
 include/kstringhandler.h
 include/kstringvalidator.h
 include/kstyle.h
@@ -600,6 +652,7 @@ include/ktexteditor/selectioninterfaceext.h
 include/ktexteditor/sessionconfiginterface.h
 include/ktexteditor/texthintinterface.h
 include/ktexteditor/undointerface.h
+include/ktexteditor/variableinterface.h
 include/ktexteditor/view.h
 include/ktexteditor/viewcursorinterface.h
 include/ktexteditor/viewstatusmsginterface.h
@@ -697,6 +750,8 @@ lib/kde3/kded_kcookiejar.la
 lib/kde3/kded_kcookiejar.so
 lib/kde3/kded_kdeprintd.la
 lib/kde3/kded_kdeprintd.so
+lib/kde3/kded_kdetrayproxy.la
+lib/kde3/kded_kdetrayproxy.so
 lib/kde3/kded_kpasswdserver.la
 lib/kde3/kded_kpasswdserver.so
 lib/kde3/kded_kssld.la
@@ -723,14 +778,20 @@ lib/kde3/kgzipfilter.la
 lib/kde3/kgzipfilter.so
 lib/kde3/khtmlimagepart.la
 lib/kde3/khtmlimagepart.so
+lib/kde3/kimg_dds.la
+lib/kde3/kimg_dds.so
 lib/kde3/kimg_eps.la
 lib/kde3/kimg_eps.so
+lib/kde3/kimg_exr.la
+lib/kde3/kimg_exr.so
 lib/kde3/kimg_ico.la
 lib/kde3/kimg_ico.so
 lib/kde3/kimg_jp2.la
 lib/kde3/kimg_jp2.so
 lib/kde3/kimg_pcx.la
 lib/kde3/kimg_pcx.so
+lib/kde3/kimg_rgb.la
+lib/kde3/kimg_rgb.so
 lib/kde3/kimg_tga.la
 lib/kde3/kimg_tga.so
 lib/kde3/kimg_tiff.la
@@ -759,6 +820,12 @@ lib/kde3/klauncher.la
 lib/kde3/klauncher.so
 lib/kde3/knotify.la
 lib/kde3/knotify.so
+lib/kde3/kspell_ispell.la
+lib/kde3/kspell_ispell.so
+lib/kde3/ktexteditor_autobookmarker.la
+lib/kde3/ktexteditor_autobookmarker.so
+lib/kde3/ktexteditor_docwordcompletion.la
+lib/kde3/ktexteditor_docwordcompletion.so
 lib/kde3/ktexteditor_insertfile.la
 lib/kde3/ktexteditor_insertfile.so
 lib/kde3/ktexteditor_isearch.la
@@ -859,6 +926,9 @@ lib/libkdeui.so.6
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.6
+lib/libkimproxy.la
+lib/libkimproxy.so
+lib/libkimproxy.so.0
 lib/libkio.la
 lib/libkio.so
 lib/libkio.so.6
@@ -877,6 +947,9 @@ lib/libkmediaplayer.so.0
 lib/libkmid.la
 lib/libkmid.so
 lib/libkmid.so.0
+lib/libknewstuff.la
+lib/libknewstuff.so
+lib/libknewstuff.so.1
 lib/libkparts.la
 lib/libkparts.so
 lib/libkparts.so.3
@@ -892,6 +965,9 @@ lib/libkscript.so.0
 lib/libkspell.la
 lib/libkspell.so
 lib/libkspell.so.6
+lib/libkspell2.la
+lib/libkspell2.so
+lib/libkspell2.so.1
 lib/libktexteditor.la
 lib/libktexteditor.so
 lib/libktexteditor.so.0
@@ -927,54 +1003,81 @@ share/apps/kabc/formats/binary.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
 share/apps/katepart/syntax/ada.xml
+share/apps/katepart/syntax/ahdl.xml
+share/apps/katepart/syntax/alert.xml
+share/apps/katepart/syntax/ansic89.xml
 share/apps/katepart/syntax/asm6502.xml
 share/apps/katepart/syntax/awk.xml
 share/apps/katepart/syntax/bash.xml
 share/apps/katepart/syntax/bibtex.xml
 share/apps/katepart/syntax/c.xml
+share/apps/katepart/syntax/cg.xml
 share/apps/katepart/syntax/changelog.xml
+share/apps/katepart/syntax/cisco.xml
+share/apps/katepart/syntax/clipper.xml
 share/apps/katepart/syntax/coldfusion.xml
+share/apps/katepart/syntax/commonlisp.xml
 share/apps/katepart/syntax/component-pascal.xml
 share/apps/katepart/syntax/cpp.xml
 share/apps/katepart/syntax/cs.xml
+share/apps/katepart/syntax/css-php.xml
 share/apps/katepart/syntax/css.xml
 share/apps/katepart/syntax/cue.xml
 share/apps/katepart/syntax/d.xml
+share/apps/katepart/syntax/debianchangelog.xml
+share/apps/katepart/syntax/debiancontrol.xml
 share/apps/katepart/syntax/desktop.xml
 share/apps/katepart/syntax/diff.xml
+share/apps/katepart/syntax/doxygen.xml
 share/apps/katepart/syntax/e.xml
 share/apps/katepart/syntax/eiffel.xml
+share/apps/katepart/syntax/euphoria.xml
 share/apps/katepart/syntax/ferite.xml
+share/apps/katepart/syntax/fgl-4gl.xml
+share/apps/katepart/syntax/fgl-per.xml
 share/apps/katepart/syntax/fortran.xml
 share/apps/katepart/syntax/gdl.xml
+share/apps/katepart/syntax/gettext.xml
 share/apps/katepart/syntax/gnuassembler.xml
 share/apps/katepart/syntax/haskell.xml
+share/apps/katepart/syntax/html-php.xml
 share/apps/katepart/syntax/html.xml
 share/apps/katepart/syntax/idconsole.xml
 share/apps/katepart/syntax/idl.xml
 share/apps/katepart/syntax/ilerpg.xml
 share/apps/katepart/syntax/inform.xml
 share/apps/katepart/syntax/java.xml
+share/apps/katepart/syntax/javascript-php.xml
 share/apps/katepart/syntax/javascript.xml
+share/apps/katepart/syntax/jsp.xml
 share/apps/katepart/syntax/kbasic.xml
 share/apps/katepart/syntax/language.dtd
 share/apps/katepart/syntax/latex.xml
 share/apps/katepart/syntax/ldif.xml
+share/apps/katepart/syntax/lex.xml
 share/apps/katepart/syntax/literate-haskell.xml
+share/apps/katepart/syntax/logtalk.xml
 share/apps/katepart/syntax/lpc.xml
+share/apps/katepart/syntax/lua.xml
 share/apps/katepart/syntax/mab.xml
 share/apps/katepart/syntax/makefile.xml
 share/apps/katepart/syntax/mason.xml
 share/apps/katepart/syntax/matlab.xml
+share/apps/katepart/syntax/mips.xml
 share/apps/katepart/syntax/modula-2.xml
+share/apps/katepart/syntax/mup.xml
 share/apps/katepart/syntax/objectivec.xml
+share/apps/katepart/syntax/ocaml.xml
 share/apps/katepart/syntax/pascal.xml
 share/apps/katepart/syntax/perl.xml
 share/apps/katepart/syntax/php.xml
 share/apps/katepart/syntax/picsrc.xml
+share/apps/katepart/syntax/pike.xml
 share/apps/katepart/syntax/postscript.xml
+share/apps/katepart/syntax/povray.xml
 share/apps/katepart/syntax/progress.xml
 share/apps/katepart/syntax/prolog.xml
+share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rexx.xml
@@ -992,6 +1095,8 @@ share/apps/katepart/syntax/sql-postgresql.xml
 share/apps/katepart/syntax/sql.xml
 share/apps/katepart/syntax/syntax.template
 share/apps/katepart/syntax/tcl.xml
+share/apps/katepart/syntax/tibasic.xml
+share/apps/katepart/syntax/txt2tags.xml
 share/apps/katepart/syntax/uscript.xml
 share/apps/katepart/syntax/velocity.xml
 share/apps/katepart/syntax/verilog.xml
@@ -1002,7 +1107,9 @@ share/apps/katepart/syntax/xharbour.xml
 share/apps/katepart/syntax/xml.xml
 share/apps/katepart/syntax/xmldebug.xml
 share/apps/katepart/syntax/yacas.xml
+share/apps/katepart/syntax/yacc.xml
 share/apps/kcertpart/kcertpart.rc
+share/apps/kcm_componentchooser/kcm_instantmessenger.desktop
 share/apps/kcm_componentchooser/kcm_ktexteditor.desktop
 share/apps/kconf_update/kcookiescfg.upd
 share/apps/kconf_update/kded.upd
@@ -1125,9 +1232,9 @@ share/apps/kdeprint/tiledown.png
 share/apps/kdeprint/tileup.png
 share/apps/kdeprint/tools/escputil.desktop
 share/apps/kdeui/pics/aboutkde.png
-share/apps/kdeui/pics/keys.png
 share/apps/kdeui/pics/ktip-background.png
 share/apps/kdeui/pics/ktip-bulb.png
+share/apps/kdewidgets/pics/kactionselector.png
 share/apps/kdewidgets/pics/kactivelabel.png
 share/apps/kdewidgets/pics/kcharselect.png
 share/apps/kdewidgets/pics/kcmodule.png
@@ -1135,6 +1242,8 @@ share/apps/kdewidgets/pics/kcolorbutton.png
 share/apps/kdewidgets/pics/kcolorcombo.png
 share/apps/kdewidgets/pics/kcombobox.png
 share/apps/kdewidgets/pics/kdatepicker.png
+share/apps/kdewidgets/pics/kdatetable.png
+share/apps/kdewidgets/pics/kdatetimewidget.png
 share/apps/kdewidgets/pics/kdatewidget.png
 share/apps/kdewidgets/pics/kdialog.png
 share/apps/kdewidgets/pics/kdoublenuminput.png
@@ -1155,6 +1264,7 @@ share/apps/kdewidgets/pics/kled.png
 share/apps/kdewidgets/pics/klineedit.png
 share/apps/kdewidgets/pics/klistbox.png
 share/apps/kdewidgets/pics/klistview.png
+share/apps/kdewidgets/pics/kpalettetable.png
 share/apps/kdewidgets/pics/kpasswordedit.png
 share/apps/kdewidgets/pics/kprogress.png
 share/apps/kdewidgets/pics/kpushbutton.png
@@ -1169,6 +1279,7 @@ share/apps/kdewidgets/pics/kurllabel.png
 share/apps/kdewidgets/pics/kurlrequester.png
 share/apps/khtml/css/html4.css
 share/apps/khtml/css/quirks.css
+share/apps/khtml/domain_info
 share/apps/khtml/icons/crystalsvg/128x128/actions/bug.png
 share/apps/khtml/icons/crystalsvg/16x16/actions/bug.png
 share/apps/khtml/icons/crystalsvg/16x16/actions/images_display.png
@@ -1190,6 +1301,7 @@ share/apps/kio_uiserver/icons/crystalsvg/16x16/apps/kio_uiserver.png
 share/apps/kjava/kjava.jar
 share/apps/kjava/kjava.policy
 share/apps/kjava/pluginsinfo
+share/apps/knewstuff/types
 share/apps/knotify/eventsrc
 share/apps/ksgmltools2/customization/README
 share/apps/ksgmltools2/customization/af/catalog
@@ -1534,6 +1646,7 @@ share/apps/ksgmltools2/customization/kde-navig-online.xsl
 share/apps/ksgmltools2/customization/kde-navig.xsl
 share/apps/ksgmltools2/customization/kde-nochunk.xsl
 share/apps/ksgmltools2/customization/kde-style.xsl
+share/apps/ksgmltools2/customization/kde-ttlpg-online.xsl
 share/apps/ksgmltools2/customization/kde-ttlpg.xsl
 share/apps/ksgmltools2/customization/kde-web-navig.xsl
 share/apps/ksgmltools2/customization/kde-web.xsl
@@ -2428,6 +2541,7 @@ share/apps/kstyle/themes/qtwindows.themerc
 share/apps/kstyle/themes/riscos.themerc
 share/apps/kstyle/themes/system.themerc
 share/apps/kstyle/themes/systemalt.themerc
+share/apps/ktexteditor_docwordcompletion/docwordcompletionui.rc
 share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
 share/apps/ktexteditor_isearch/ktexteditor_isearchui.rc
 share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
@@ -2440,7 +2554,9 @@ share/config/katesyntaxhighlightingrc
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/kdeprintrc
+share/config/khotnewstuffrc
 share/config/ksslcalist
+share/config/ktexteditor_autobookmarkerrc
 share/config/kthemestylerc
 share/config/language.codes
 share/config/ui/kprintpreviewui.rc
@@ -2493,11 +2609,15 @@ share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
 share/doc/HTML/en/kdelibs-apidocs/common
+share/icons/crystalsvg/128x128/apps/password.png
 share/icons/crystalsvg/128x128/devices/blockdevice.png
+share/icons/crystalsvg/128x128/devices/chardevice.png
 share/icons/crystalsvg/128x128/devices/mouse.png
-share/icons/crystalsvg/128x128/filesystems/chardevice.png
+share/icons/crystalsvg/128x128/devices/usbpendrive_mount.png
+share/icons/crystalsvg/128x128/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/128x128/filesystems/desktop.png
 share/icons/crystalsvg/128x128/filesystems/exec.png
+share/icons/crystalsvg/128x128/filesystems/file_broken.png
 share/icons/crystalsvg/128x128/filesystems/folder.png
 share/icons/crystalsvg/128x128/filesystems/folder_crystal.png
 share/icons/crystalsvg/128x128/filesystems/folder_favorite.png
@@ -2529,6 +2649,7 @@ share/icons/crystalsvg/128x128/filesystems/folder_yellow_open.png
 share/icons/crystalsvg/128x128/filesystems/lockoverlay.png
 share/icons/crystalsvg/128x128/filesystems/network.png
 share/icons/crystalsvg/128x128/filesystems/network_local.png
+share/icons/crystalsvg/128x128/filesystems/pipe.png
 share/icons/crystalsvg/128x128/filesystems/trashcan_empty.png
 share/icons/crystalsvg/128x128/filesystems/trashcan_full.png
 share/icons/crystalsvg/128x128/filesystems/www.png
@@ -2539,29 +2660,44 @@ share/icons/crystalsvg/128x128/mimetypes/binary.png
 share/icons/crystalsvg/128x128/mimetypes/cdimage.png
 share/icons/crystalsvg/128x128/mimetypes/cdr.png
 share/icons/crystalsvg/128x128/mimetypes/cdtrack.png
-share/icons/crystalsvg/128x128/mimetypes/colorset.png
+share/icons/crystalsvg/128x128/mimetypes/colorscm.png
 share/icons/crystalsvg/128x128/mimetypes/core.png
 share/icons/crystalsvg/128x128/mimetypes/deb.png
 share/icons/crystalsvg/128x128/mimetypes/document.png
 share/icons/crystalsvg/128x128/mimetypes/document2.png
+share/icons/crystalsvg/128x128/mimetypes/dvi.png
+share/icons/crystalsvg/128x128/mimetypes/empty.png
 share/icons/crystalsvg/128x128/mimetypes/encrypted.png
+share/icons/crystalsvg/128x128/mimetypes/exec_wine.png
 share/icons/crystalsvg/128x128/mimetypes/font.png
 share/icons/crystalsvg/128x128/mimetypes/font_bitmap.png
 share/icons/crystalsvg/128x128/mimetypes/font_truetype.png
+share/icons/crystalsvg/128x128/mimetypes/font_type1.png
+share/icons/crystalsvg/128x128/mimetypes/gf.png
 share/icons/crystalsvg/128x128/mimetypes/html.png
 share/icons/crystalsvg/128x128/mimetypes/image.png
 share/icons/crystalsvg/128x128/mimetypes/info.png
+share/icons/crystalsvg/128x128/mimetypes/karbon_karbon.png
+share/icons/crystalsvg/128x128/mimetypes/kexi_kexi.png
 share/icons/crystalsvg/128x128/mimetypes/kmultiple.png
 share/icons/crystalsvg/128x128/mimetypes/koffice.png
+share/icons/crystalsvg/128x128/mimetypes/krita_kra.png
+share/icons/crystalsvg/128x128/mimetypes/log.png
 share/icons/crystalsvg/128x128/mimetypes/make.png
 share/icons/crystalsvg/128x128/mimetypes/man.png
 share/icons/crystalsvg/128x128/mimetypes/message.png
 share/icons/crystalsvg/128x128/mimetypes/metafont.png
 share/icons/crystalsvg/128x128/mimetypes/midi.png
-share/icons/crystalsvg/128x128/mimetypes/mime.png
+share/icons/crystalsvg/128x128/mimetypes/misc.png
+share/icons/crystalsvg/128x128/mimetypes/mozilla_doc.png
 share/icons/crystalsvg/128x128/mimetypes/netscape_doc.png
 share/icons/crystalsvg/128x128/mimetypes/pdf.png
+share/icons/crystalsvg/128x128/mimetypes/pk.png
 share/icons/crystalsvg/128x128/mimetypes/postscript.png
+share/icons/crystalsvg/128x128/mimetypes/quicktime.png
+share/icons/crystalsvg/128x128/mimetypes/readme.png
+share/icons/crystalsvg/128x128/mimetypes/real_doc.png
+share/icons/crystalsvg/128x128/mimetypes/recycled.png
 share/icons/crystalsvg/128x128/mimetypes/resource.png
 share/icons/crystalsvg/128x128/mimetypes/rpm.png
 share/icons/crystalsvg/128x128/mimetypes/shellscript.png
@@ -2572,23 +2708,32 @@ share/icons/crystalsvg/128x128/mimetypes/source_c.png
 share/icons/crystalsvg/128x128/mimetypes/source_cpp.png
 share/icons/crystalsvg/128x128/mimetypes/source_f.png
 share/icons/crystalsvg/128x128/mimetypes/source_h.png
+share/icons/crystalsvg/128x128/mimetypes/source_j.png
 share/icons/crystalsvg/128x128/mimetypes/source_java.png
 share/icons/crystalsvg/128x128/mimetypes/source_l.png
 share/icons/crystalsvg/128x128/mimetypes/source_moc.png
 share/icons/crystalsvg/128x128/mimetypes/source_o.png
 share/icons/crystalsvg/128x128/mimetypes/source_p.png
+share/icons/crystalsvg/128x128/mimetypes/source_php.png
+share/icons/crystalsvg/128x128/mimetypes/source_pl.png
 share/icons/crystalsvg/128x128/mimetypes/source_py.png
 share/icons/crystalsvg/128x128/mimetypes/source_s.png
 share/icons/crystalsvg/128x128/mimetypes/source_y.png
 share/icons/crystalsvg/128x128/mimetypes/spreadsheet.png
 share/icons/crystalsvg/128x128/mimetypes/tar.png
 share/icons/crystalsvg/128x128/mimetypes/template_source.png
+share/icons/crystalsvg/128x128/mimetypes/tex.png
 share/icons/crystalsvg/128x128/mimetypes/tgz.png
 share/icons/crystalsvg/128x128/mimetypes/txt.png
 share/icons/crystalsvg/128x128/mimetypes/txt2.png
 share/icons/crystalsvg/128x128/mimetypes/unknown.png
+share/icons/crystalsvg/128x128/mimetypes/vcalendar.png
+share/icons/crystalsvg/128x128/mimetypes/vcard.png
+share/icons/crystalsvg/128x128/mimetypes/vectorgfx.png
 share/icons/crystalsvg/128x128/mimetypes/video.png
+share/icons/crystalsvg/128x128/mimetypes/widget_doc.png
 share/icons/crystalsvg/128x128/mimetypes/wordprocessing.png
+share/icons/crystalsvg/128x128/mimetypes/zip.png
 share/icons/crystalsvg/16x16/actions/1downarrow.png
 share/icons/crystalsvg/16x16/actions/1leftarrow.png
 share/icons/crystalsvg/16x16/actions/1rightarrow.png
@@ -2686,6 +2831,7 @@ share/icons/crystalsvg/16x16/actions/kde4.png
 share/icons/crystalsvg/16x16/actions/kde5.png
 share/icons/crystalsvg/16x16/actions/kde6.png
 share/icons/crystalsvg/16x16/actions/key_enter.png
+share/icons/crystalsvg/16x16/actions/knewstuff.png
 share/icons/crystalsvg/16x16/actions/launch.png
 share/icons/crystalsvg/16x16/actions/locationbar_erase.png
 share/icons/crystalsvg/16x16/actions/lock.png
@@ -2745,6 +2891,8 @@ share/icons/crystalsvg/16x16/actions/player_play.png
 share/icons/crystalsvg/16x16/actions/player_rew.png
 share/icons/crystalsvg/16x16/actions/player_start.png
 share/icons/crystalsvg/16x16/actions/player_stop.png
+share/icons/crystalsvg/16x16/actions/player_time.png
+share/icons/crystalsvg/16x16/actions/player_volume.png
 share/icons/crystalsvg/16x16/actions/previous.png
 share/icons/crystalsvg/16x16/actions/project_open.png
 share/icons/crystalsvg/16x16/actions/queue.png
@@ -2760,6 +2908,7 @@ share/icons/crystalsvg/16x16/actions/rotate_ccw.png
 share/icons/crystalsvg/16x16/actions/rotate_cw.png
 share/icons/crystalsvg/16x16/actions/run.png
 share/icons/crystalsvg/16x16/actions/save_all.png
+share/icons/crystalsvg/16x16/actions/services.png
 share/icons/crystalsvg/16x16/actions/share.png
 share/icons/crystalsvg/16x16/actions/signature.png
 share/icons/crystalsvg/16x16/actions/spellcheck.png
@@ -2811,6 +2960,7 @@ share/icons/crystalsvg/16x16/actions/window_fullscreen.png
 share/icons/crystalsvg/16x16/actions/window_new.png
 share/icons/crystalsvg/16x16/actions/window_nofullscreen.png
 share/icons/crystalsvg/16x16/actions/wizard.png
+share/icons/crystalsvg/16x16/apps/password.png
 share/icons/crystalsvg/16x16/devices/3floppy_mount.png
 share/icons/crystalsvg/16x16/devices/3floppy_unmount.png
 share/icons/crystalsvg/16x16/devices/5floppy_mount.png
@@ -2824,6 +2974,7 @@ share/icons/crystalsvg/16x16/devices/cdrom_mount.png
 share/icons/crystalsvg/16x16/devices/cdrom_unmount.png
 share/icons/crystalsvg/16x16/devices/cdwriter_mount.png
 share/icons/crystalsvg/16x16/devices/cdwriter_unmount.png
+share/icons/crystalsvg/16x16/devices/chardevice.png
 share/icons/crystalsvg/16x16/devices/dvd_mount.png
 share/icons/crystalsvg/16x16/devices/dvd_unmount.png
 share/icons/crystalsvg/16x16/devices/hdd_mount.png
@@ -2842,9 +2993,10 @@ share/icons/crystalsvg/16x16/devices/printer1.png
 share/icons/crystalsvg/16x16/devices/scanner.png
 share/icons/crystalsvg/16x16/devices/tablet.png
 share/icons/crystalsvg/16x16/devices/tv.png
+share/icons/crystalsvg/16x16/devices/usbpendrive_mount.png
+share/icons/crystalsvg/16x16/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/16x16/devices/zip_mount.png
 share/icons/crystalsvg/16x16/devices/zip_unmount.png
-share/icons/crystalsvg/16x16/filesystems/chardevice.png
 share/icons/crystalsvg/16x16/filesystems/desktop.png
 share/icons/crystalsvg/16x16/filesystems/exec.png
 share/icons/crystalsvg/16x16/filesystems/file_broken.png
@@ -2896,13 +3048,14 @@ share/icons/crystalsvg/16x16/mimetypes/cdimage.png
 share/icons/crystalsvg/16x16/mimetypes/cdr.png
 share/icons/crystalsvg/16x16/mimetypes/cdtrack.png
 share/icons/crystalsvg/16x16/mimetypes/colorscm.png
-share/icons/crystalsvg/16x16/mimetypes/colorset.png
 share/icons/crystalsvg/16x16/mimetypes/core.png
 share/icons/crystalsvg/16x16/mimetypes/deb.png
 share/icons/crystalsvg/16x16/mimetypes/document.png
 share/icons/crystalsvg/16x16/mimetypes/document2.png
 share/icons/crystalsvg/16x16/mimetypes/dvi.png
+share/icons/crystalsvg/16x16/mimetypes/empty.png
 share/icons/crystalsvg/16x16/mimetypes/encrypted.png
+share/icons/crystalsvg/16x16/mimetypes/exec_wine.png
 share/icons/crystalsvg/16x16/mimetypes/font.png
 share/icons/crystalsvg/16x16/mimetypes/font_bitmap.png
 share/icons/crystalsvg/16x16/mimetypes/font_truetype.png
@@ -2929,9 +3082,7 @@ share/icons/crystalsvg/16x16/mimetypes/man.png
 share/icons/crystalsvg/16x16/mimetypes/message.png
 share/icons/crystalsvg/16x16/mimetypes/metafont.png
 share/icons/crystalsvg/16x16/mimetypes/midi.png
-share/icons/crystalsvg/16x16/mimetypes/mime.png
 share/icons/crystalsvg/16x16/mimetypes/misc.png
-share/icons/crystalsvg/16x16/mimetypes/misc_doc.png
 share/icons/crystalsvg/16x16/mimetypes/netscape_doc.png
 share/icons/crystalsvg/16x16/mimetypes/news.png
 share/icons/crystalsvg/16x16/mimetypes/pdf.png
@@ -2964,7 +3115,6 @@ share/icons/crystalsvg/16x16/mimetypes/tar.png
 share/icons/crystalsvg/16x16/mimetypes/template_source.png
 share/icons/crystalsvg/16x16/mimetypes/tex.png
 share/icons/crystalsvg/16x16/mimetypes/tgz.png
-share/icons/crystalsvg/16x16/mimetypes/trash.png
 share/icons/crystalsvg/16x16/mimetypes/txt.png
 share/icons/crystalsvg/16x16/mimetypes/txt2.png
 share/icons/crystalsvg/16x16/mimetypes/unknown.png
@@ -3064,7 +3214,6 @@ share/icons/crystalsvg/22x22/actions/inline_image.png
 share/icons/crystalsvg/22x22/actions/inline_table.png
 share/icons/crystalsvg/22x22/actions/kde.png
 share/icons/crystalsvg/22x22/actions/key_enter.png
-share/icons/crystalsvg/22x22/actions/klipper_dock.png
 share/icons/crystalsvg/22x22/actions/launch.png
 share/icons/crystalsvg/22x22/actions/leftjust.png
 share/icons/crystalsvg/22x22/actions/locationbar_erase.png
@@ -3188,11 +3337,12 @@ share/icons/crystalsvg/22x22/actions/window_fullscreen.png
 share/icons/crystalsvg/22x22/actions/window_new.png
 share/icons/crystalsvg/22x22/actions/window_nofullscreen.png
 share/icons/crystalsvg/22x22/actions/wizard.png
+share/icons/crystalsvg/22x22/devices/usbpendrive_mount.png
+share/icons/crystalsvg/22x22/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/22x22/filesystems/www.png
 share/icons/crystalsvg/22x22/mimetypes/applix.png
 share/icons/crystalsvg/22x22/mimetypes/ascii.png
 share/icons/crystalsvg/22x22/mimetypes/binary.png
-share/icons/crystalsvg/22x22/mimetypes/cdbo_list.png
 share/icons/crystalsvg/22x22/mimetypes/cdimage.png
 share/icons/crystalsvg/22x22/mimetypes/cdtrack.png
 share/icons/crystalsvg/22x22/mimetypes/colorscm.png
@@ -3236,7 +3386,6 @@ share/icons/crystalsvg/22x22/mimetypes/mozilla_doc.png
 share/icons/crystalsvg/22x22/mimetypes/netscape_doc.png
 share/icons/crystalsvg/22x22/mimetypes/news.png
 share/icons/crystalsvg/22x22/mimetypes/pdf.png
-share/icons/crystalsvg/22x22/mimetypes/php.png
 share/icons/crystalsvg/22x22/mimetypes/pk.png
 share/icons/crystalsvg/22x22/mimetypes/postscript.png
 share/icons/crystalsvg/22x22/mimetypes/quicktime.png
@@ -3276,14 +3425,6 @@ share/icons/crystalsvg/22x22/mimetypes/video.png
 share/icons/crystalsvg/22x22/mimetypes/widget_doc.png
 share/icons/crystalsvg/22x22/mimetypes/wordprocessing.png
 share/icons/crystalsvg/22x22/mimetypes/zip.png
-share/icons/crystalsvg/32x32/actions/1downarrow.png
-share/icons/crystalsvg/32x32/actions/1leftarrow.png
-share/icons/crystalsvg/32x32/actions/1rightarrow.png
-share/icons/crystalsvg/32x32/actions/1uparrow.png
-share/icons/crystalsvg/32x32/actions/2downarrow.png
-share/icons/crystalsvg/32x32/actions/2leftarrow.png
-share/icons/crystalsvg/32x32/actions/2rightarrow.png
-share/icons/crystalsvg/32x32/actions/2uparrow.png
 share/icons/crystalsvg/32x32/actions/about_kde.png
 share/icons/crystalsvg/32x32/actions/apply.png
 share/icons/crystalsvg/32x32/actions/attach.png
@@ -3346,7 +3487,7 @@ share/icons/crystalsvg/32x32/actions/identity.png
 share/icons/crystalsvg/32x32/actions/indent.png
 share/icons/crystalsvg/32x32/actions/kde.png
 share/icons/crystalsvg/32x32/actions/kdevelop_down.png
-share/icons/crystalsvg/32x32/actions/klipper_doc.png
+share/icons/crystalsvg/32x32/actions/knewstuff.png
 share/icons/crystalsvg/32x32/actions/leftjust.png
 share/icons/crystalsvg/32x32/actions/locationbar_erase.png
 share/icons/crystalsvg/32x32/actions/lock.png
@@ -3459,6 +3600,7 @@ share/icons/crystalsvg/32x32/actions/window_fullscreen.png
 share/icons/crystalsvg/32x32/actions/window_new.png
 share/icons/crystalsvg/32x32/actions/window_nofullscreen.png
 share/icons/crystalsvg/32x32/actions/wizard.png
+share/icons/crystalsvg/32x32/apps/password.png
 share/icons/crystalsvg/32x32/devices/3floppy_mount.png
 share/icons/crystalsvg/32x32/devices/3floppy_unmount.png
 share/icons/crystalsvg/32x32/devices/5floppy_mount.png
@@ -3472,6 +3614,7 @@ share/icons/crystalsvg/32x32/devices/cdrom_mount.png
 share/icons/crystalsvg/32x32/devices/cdrom_unmount.png
 share/icons/crystalsvg/32x32/devices/cdwriter_mount.png
 share/icons/crystalsvg/32x32/devices/cdwriter_unmount.png
+share/icons/crystalsvg/32x32/devices/chardevice.png
 share/icons/crystalsvg/32x32/devices/dvd_mount.png
 share/icons/crystalsvg/32x32/devices/dvd_unmount.png
 share/icons/crystalsvg/32x32/devices/hdd_mount.png
@@ -3490,9 +3633,10 @@ share/icons/crystalsvg/32x32/devices/printer1.png
 share/icons/crystalsvg/32x32/devices/scanner.png
 share/icons/crystalsvg/32x32/devices/tablet.png
 share/icons/crystalsvg/32x32/devices/tv.png
+share/icons/crystalsvg/32x32/devices/usbpendrive_mount.png
+share/icons/crystalsvg/32x32/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/32x32/devices/zip_mount.png
 share/icons/crystalsvg/32x32/devices/zip_unmount.png
-share/icons/crystalsvg/32x32/filesystems/chardevice.png
 share/icons/crystalsvg/32x32/filesystems/desktop.png
 share/icons/crystalsvg/32x32/filesystems/exec.png
 share/icons/crystalsvg/32x32/filesystems/file_broken.png
@@ -3540,13 +3684,13 @@ share/icons/crystalsvg/32x32/mimetypes/cdimage.png
 share/icons/crystalsvg/32x32/mimetypes/cdr.png
 share/icons/crystalsvg/32x32/mimetypes/cdtrack.png
 share/icons/crystalsvg/32x32/mimetypes/colorscm.png
-share/icons/crystalsvg/32x32/mimetypes/colorset.png
 share/icons/crystalsvg/32x32/mimetypes/core.png
 share/icons/crystalsvg/32x32/mimetypes/deb.png
 share/icons/crystalsvg/32x32/mimetypes/document.png
 share/icons/crystalsvg/32x32/mimetypes/document2.png
 share/icons/crystalsvg/32x32/mimetypes/dvi.png
 share/icons/crystalsvg/32x32/mimetypes/empty.png
+share/icons/crystalsvg/32x32/mimetypes/exec_wine.png
 share/icons/crystalsvg/32x32/mimetypes/file_locked.png
 share/icons/crystalsvg/32x32/mimetypes/file_temporary.png
 share/icons/crystalsvg/32x32/mimetypes/font.png
@@ -3575,8 +3719,7 @@ share/icons/crystalsvg/32x32/mimetypes/man.png
 share/icons/crystalsvg/32x32/mimetypes/message.png
 share/icons/crystalsvg/32x32/mimetypes/metafont.png
 share/icons/crystalsvg/32x32/mimetypes/midi.png
-share/icons/crystalsvg/32x32/mimetypes/mime.png
-share/icons/crystalsvg/32x32/mimetypes/misc_doc.png
+share/icons/crystalsvg/32x32/mimetypes/misc.png
 share/icons/crystalsvg/32x32/mimetypes/netscape_doc.png
 share/icons/crystalsvg/32x32/mimetypes/pdf.png
 share/icons/crystalsvg/32x32/mimetypes/pk.png
@@ -3620,15 +3763,20 @@ share/icons/crystalsvg/32x32/mimetypes/vectorgfx.png
 share/icons/crystalsvg/32x32/mimetypes/video.png
 share/icons/crystalsvg/32x32/mimetypes/widget_doc.png
 share/icons/crystalsvg/32x32/mimetypes/wordprocessing.png
+share/icons/crystalsvg/48x48/actions/back.png
 share/icons/crystalsvg/48x48/actions/bookmark.png
+share/icons/crystalsvg/48x48/actions/down.png
 share/icons/crystalsvg/48x48/actions/exit.png
 share/icons/crystalsvg/48x48/actions/fileclose.png
+share/icons/crystalsvg/48x48/actions/forward.png
 share/icons/crystalsvg/48x48/actions/gear.png
 share/icons/crystalsvg/48x48/actions/indent.png
 share/icons/crystalsvg/48x48/actions/lock.png
 share/icons/crystalsvg/48x48/actions/misc.png
 share/icons/crystalsvg/48x48/actions/share.png
 share/icons/crystalsvg/48x48/actions/unindent.png
+share/icons/crystalsvg/48x48/actions/up.png
+share/icons/crystalsvg/48x48/apps/password.png
 share/icons/crystalsvg/48x48/devices/3floppy_mount.png
 share/icons/crystalsvg/48x48/devices/3floppy_unmount.png
 share/icons/crystalsvg/48x48/devices/5floppy_mount.png
@@ -3642,6 +3790,7 @@ share/icons/crystalsvg/48x48/devices/cdrom_mount.png
 share/icons/crystalsvg/48x48/devices/cdrom_unmount.png
 share/icons/crystalsvg/48x48/devices/cdwriter_mount.png
 share/icons/crystalsvg/48x48/devices/cdwriter_unmount.png
+share/icons/crystalsvg/48x48/devices/chardevice.png
 share/icons/crystalsvg/48x48/devices/dvd_mount.png
 share/icons/crystalsvg/48x48/devices/dvd_unmount.png
 share/icons/crystalsvg/48x48/devices/hdd_mount.png
@@ -3660,9 +3809,10 @@ share/icons/crystalsvg/48x48/devices/printer1.png
 share/icons/crystalsvg/48x48/devices/scanner.png
 share/icons/crystalsvg/48x48/devices/tablet.png
 share/icons/crystalsvg/48x48/devices/tv.png
+share/icons/crystalsvg/48x48/devices/usbpendrive_mount.png
+share/icons/crystalsvg/48x48/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/48x48/devices/zip_mount.png
 share/icons/crystalsvg/48x48/devices/zip_unmount.png
-share/icons/crystalsvg/48x48/filesystems/chardevice.png
 share/icons/crystalsvg/48x48/filesystems/desktop.png
 share/icons/crystalsvg/48x48/filesystems/exec.png
 share/icons/crystalsvg/48x48/filesystems/file_broken.png
@@ -3713,13 +3863,14 @@ share/icons/crystalsvg/48x48/mimetypes/cdimage.png
 share/icons/crystalsvg/48x48/mimetypes/cdr.png
 share/icons/crystalsvg/48x48/mimetypes/cdtrack.png
 share/icons/crystalsvg/48x48/mimetypes/colorscm.png
-share/icons/crystalsvg/48x48/mimetypes/colorset.png
 share/icons/crystalsvg/48x48/mimetypes/core.png
 share/icons/crystalsvg/48x48/mimetypes/deb.png
 share/icons/crystalsvg/48x48/mimetypes/document.png
 share/icons/crystalsvg/48x48/mimetypes/document2.png
 share/icons/crystalsvg/48x48/mimetypes/dvi.png
+share/icons/crystalsvg/48x48/mimetypes/empty.png
 share/icons/crystalsvg/48x48/mimetypes/encrypted.png
+share/icons/crystalsvg/48x48/mimetypes/exec_wine.png
 share/icons/crystalsvg/48x48/mimetypes/font.png
 share/icons/crystalsvg/48x48/mimetypes/font_bitmap.png
 share/icons/crystalsvg/48x48/mimetypes/font_truetype.png
@@ -3747,8 +3898,8 @@ share/icons/crystalsvg/48x48/mimetypes/man.png
 share/icons/crystalsvg/48x48/mimetypes/message.png
 share/icons/crystalsvg/48x48/mimetypes/metafont.png
 share/icons/crystalsvg/48x48/mimetypes/midi.png
-share/icons/crystalsvg/48x48/mimetypes/mime.png
-share/icons/crystalsvg/48x48/mimetypes/misc_doc.png
+share/icons/crystalsvg/48x48/mimetypes/misc.png
+share/icons/crystalsvg/48x48/mimetypes/mozilla_doc.png
 share/icons/crystalsvg/48x48/mimetypes/netscape_doc.png
 share/icons/crystalsvg/48x48/mimetypes/pdf.png
 share/icons/crystalsvg/48x48/mimetypes/pk.png
@@ -3767,6 +3918,7 @@ share/icons/crystalsvg/48x48/mimetypes/source_c.png
 share/icons/crystalsvg/48x48/mimetypes/source_cpp.png
 share/icons/crystalsvg/48x48/mimetypes/source_f.png
 share/icons/crystalsvg/48x48/mimetypes/source_h.png
+share/icons/crystalsvg/48x48/mimetypes/source_j.png
 share/icons/crystalsvg/48x48/mimetypes/source_java.png
 share/icons/crystalsvg/48x48/mimetypes/source_l.png
 share/icons/crystalsvg/48x48/mimetypes/source_moc.png
@@ -3793,6 +3945,8 @@ share/icons/crystalsvg/48x48/mimetypes/widget_doc.png
 share/icons/crystalsvg/48x48/mimetypes/wordprocessing.png
 share/icons/crystalsvg/48x48/mimetypes/zip.png
 share/icons/crystalsvg/64x64/actions/favorites.png
+share/icons/crystalsvg/64x64/actions/knewstuff.png
+share/icons/crystalsvg/64x64/apps/password.png
 share/icons/crystalsvg/64x64/devices/3floppy_mount.png
 share/icons/crystalsvg/64x64/devices/3floppy_unmount.png
 share/icons/crystalsvg/64x64/devices/5floppy_mount.png
@@ -3806,6 +3960,7 @@ share/icons/crystalsvg/64x64/devices/cdrom_mount.png
 share/icons/crystalsvg/64x64/devices/cdrom_unmount.png
 share/icons/crystalsvg/64x64/devices/cdwriter_mount.png
 share/icons/crystalsvg/64x64/devices/cdwriter_unmount.png
+share/icons/crystalsvg/64x64/devices/chardevice.png
 share/icons/crystalsvg/64x64/devices/dvd_mount.png
 share/icons/crystalsvg/64x64/devices/dvd_unmount.png
 share/icons/crystalsvg/64x64/devices/hdd_mount.png
@@ -3824,9 +3979,10 @@ share/icons/crystalsvg/64x64/devices/printer1.png
 share/icons/crystalsvg/64x64/devices/scanner.png
 share/icons/crystalsvg/64x64/devices/tablet.png
 share/icons/crystalsvg/64x64/devices/tv.png
+share/icons/crystalsvg/64x64/devices/usbpendrive_mount.png
+share/icons/crystalsvg/64x64/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/64x64/devices/zip_mount.png
 share/icons/crystalsvg/64x64/devices/zip_unmount.png
-share/icons/crystalsvg/64x64/filesystems/chardevice.png
 share/icons/crystalsvg/64x64/filesystems/desktop.png
 share/icons/crystalsvg/64x64/filesystems/exec.png
 share/icons/crystalsvg/64x64/filesystems/file_broken.png
@@ -3872,28 +4028,48 @@ share/icons/crystalsvg/64x64/mimetypes/binary.png
 share/icons/crystalsvg/64x64/mimetypes/cdimage.png
 share/icons/crystalsvg/64x64/mimetypes/cdr.png
 share/icons/crystalsvg/64x64/mimetypes/cdtrack.png
-share/icons/crystalsvg/64x64/mimetypes/colorset.png
+share/icons/crystalsvg/64x64/mimetypes/colorscm.png
 share/icons/crystalsvg/64x64/mimetypes/core.png
 share/icons/crystalsvg/64x64/mimetypes/deb.png
 share/icons/crystalsvg/64x64/mimetypes/document.png
 share/icons/crystalsvg/64x64/mimetypes/document2.png
+share/icons/crystalsvg/64x64/mimetypes/dvi.png
+share/icons/crystalsvg/64x64/mimetypes/empty.png
 share/icons/crystalsvg/64x64/mimetypes/encrypted.png
+share/icons/crystalsvg/64x64/mimetypes/exec_wine.png
 share/icons/crystalsvg/64x64/mimetypes/font.png
 share/icons/crystalsvg/64x64/mimetypes/font_bitmap.png
+share/icons/crystalsvg/64x64/mimetypes/font_truetype.png
+share/icons/crystalsvg/64x64/mimetypes/font_type1.png
+share/icons/crystalsvg/64x64/mimetypes/gf.png
 share/icons/crystalsvg/64x64/mimetypes/html.png
 share/icons/crystalsvg/64x64/mimetypes/image.png
 share/icons/crystalsvg/64x64/mimetypes/info.png
+share/icons/crystalsvg/64x64/mimetypes/karbon_karbon.png
+share/icons/crystalsvg/64x64/mimetypes/kchart_chrt.png
+share/icons/crystalsvg/64x64/mimetypes/kformula_kfo.png
+share/icons/crystalsvg/64x64/mimetypes/kivio_flw.png
 share/icons/crystalsvg/64x64/mimetypes/kmultiple.png
+share/icons/crystalsvg/64x64/mimetypes/koffice.png
+share/icons/crystalsvg/64x64/mimetypes/kpresenter_kpr.png
+share/icons/crystalsvg/64x64/mimetypes/krita_kra.png
+share/icons/crystalsvg/64x64/mimetypes/kspread_ksp.png
+share/icons/crystalsvg/64x64/mimetypes/kugar_kud.png
+share/icons/crystalsvg/64x64/mimetypes/kword_kwd.png
+share/icons/crystalsvg/64x64/mimetypes/log.png
 share/icons/crystalsvg/64x64/mimetypes/make.png
 share/icons/crystalsvg/64x64/mimetypes/man.png
 share/icons/crystalsvg/64x64/mimetypes/message.png
 share/icons/crystalsvg/64x64/mimetypes/metafont.png
 share/icons/crystalsvg/64x64/mimetypes/midi.png
-share/icons/crystalsvg/64x64/mimetypes/mime.png
-share/icons/crystalsvg/64x64/mimetypes/misc_doc.png
+share/icons/crystalsvg/64x64/mimetypes/misc.png
+share/icons/crystalsvg/64x64/mimetypes/mozilla_doc.png
 share/icons/crystalsvg/64x64/mimetypes/netscape_doc.png
 share/icons/crystalsvg/64x64/mimetypes/pdf.png
+share/icons/crystalsvg/64x64/mimetypes/pk.png
 share/icons/crystalsvg/64x64/mimetypes/postscript.png
+share/icons/crystalsvg/64x64/mimetypes/quicktime.png
+share/icons/crystalsvg/64x64/mimetypes/readme.png
 share/icons/crystalsvg/64x64/mimetypes/real_doc.png
 share/icons/crystalsvg/64x64/mimetypes/recycled.png
 share/icons/crystalsvg/64x64/mimetypes/resource.png
@@ -3906,42 +4082,41 @@ share/icons/crystalsvg/64x64/mimetypes/source_c.png
 share/icons/crystalsvg/64x64/mimetypes/source_cpp.png
 share/icons/crystalsvg/64x64/mimetypes/source_f.png
 share/icons/crystalsvg/64x64/mimetypes/source_h.png
+share/icons/crystalsvg/64x64/mimetypes/source_j.png
 share/icons/crystalsvg/64x64/mimetypes/source_java.png
 share/icons/crystalsvg/64x64/mimetypes/source_l.png
 share/icons/crystalsvg/64x64/mimetypes/source_moc.png
 share/icons/crystalsvg/64x64/mimetypes/source_o.png
 share/icons/crystalsvg/64x64/mimetypes/source_p.png
+share/icons/crystalsvg/64x64/mimetypes/source_php.png
+share/icons/crystalsvg/64x64/mimetypes/source_pl.png
 share/icons/crystalsvg/64x64/mimetypes/source_py.png
 share/icons/crystalsvg/64x64/mimetypes/source_s.png
 share/icons/crystalsvg/64x64/mimetypes/source_y.png
 share/icons/crystalsvg/64x64/mimetypes/spreadsheet.png
 share/icons/crystalsvg/64x64/mimetypes/tar.png
 share/icons/crystalsvg/64x64/mimetypes/template_source.png
+share/icons/crystalsvg/64x64/mimetypes/tex.png
 share/icons/crystalsvg/64x64/mimetypes/tgz.png
 share/icons/crystalsvg/64x64/mimetypes/txt.png
 share/icons/crystalsvg/64x64/mimetypes/txt2.png
 share/icons/crystalsvg/64x64/mimetypes/unknown.png
+share/icons/crystalsvg/64x64/mimetypes/vcalendar.png
+share/icons/crystalsvg/64x64/mimetypes/vcard.png
+share/icons/crystalsvg/64x64/mimetypes/vectorgfx.png
 share/icons/crystalsvg/64x64/mimetypes/video.png
 share/icons/crystalsvg/64x64/mimetypes/widget_doc.png
 share/icons/crystalsvg/64x64/mimetypes/wordprocessing.png
+share/icons/crystalsvg/64x64/mimetypes/zip.png
 share/icons/crystalsvg/index.theme
-share/icons/crystalsvg/scalable/apps/kate.svgz
-share/icons/crystalsvg/scalable/apps/khelpcenter.svgz
-share/icons/crystalsvg/scalable/apps/klipper.svgz
-share/icons/crystalsvg/scalable/apps/kmail.svgz
-share/icons/crystalsvg/scalable/apps/konqueror.svgz
-share/icons/crystalsvg/scalable/apps/konsole.svgz
-share/icons/crystalsvg/scalable/apps/kwrite.svgz
-share/icons/crystalsvg/scalable/apps/openoffice.svgz
-share/icons/crystalsvg/scalable/apps/shell.svgz
-share/icons/crystalsvg/scalable/apps/staroffice.svgz
-share/icons/crystalsvg/scalable/apps/wine.svgz
+share/icons/crystalsvg/scalable/actions/about_kde.svgz
 share/icons/crystalsvg/scalable/devices/3floppy_mount.svgz
 share/icons/crystalsvg/scalable/devices/3floppy_umount.svgz
 share/icons/crystalsvg/scalable/devices/3floppy_unmount.svgz
 share/icons/crystalsvg/scalable/devices/5floppy_mount.svgz
 share/icons/crystalsvg/scalable/devices/5floppy_umount.svgz
 share/icons/crystalsvg/scalable/devices/5floppy_unmount.svgz
+share/icons/crystalsvg/scalable/devices/blockdevice.svgz
 share/icons/crystalsvg/scalable/devices/camera_mount.svgz
 share/icons/crystalsvg/scalable/devices/camera_umount.svgz
 share/icons/crystalsvg/scalable/devices/camera_unmount.svgz
@@ -3954,6 +4129,7 @@ share/icons/crystalsvg/scalable/devices/cdrom_unmount.svgz
 share/icons/crystalsvg/scalable/devices/cdwriter_mount.svgz
 share/icons/crystalsvg/scalable/devices/cdwriter_umount.svgz
 share/icons/crystalsvg/scalable/devices/cdwriter_unmount.svgz
+share/icons/crystalsvg/scalable/devices/chardevice.svgz
 share/icons/crystalsvg/scalable/devices/dvd_mount.svgz
 share/icons/crystalsvg/scalable/devices/dvd_umount.svgz
 share/icons/crystalsvg/scalable/devices/dvd_unmount.svgz
@@ -3976,11 +4152,11 @@ share/icons/crystalsvg/scalable/devices/printer2.svgz
 share/icons/crystalsvg/scalable/devices/scanner.svgz
 share/icons/crystalsvg/scalable/devices/tablet.svgz
 share/icons/crystalsvg/scalable/devices/tv.svgz
+share/icons/crystalsvg/scalable/devices/usbpendrive_mount.svgz
+share/icons/crystalsvg/scalable/devices/usbpendrive_unmount.svgz
 share/icons/crystalsvg/scalable/devices/zip_mount.svgz
 share/icons/crystalsvg/scalable/devices/zip_umount.svgz
 share/icons/crystalsvg/scalable/devices/zip_unmount.svgz
-share/icons/crystalsvg/scalable/filesystems/blockdevice.svgz
-share/icons/crystalsvg/scalable/filesystems/chardevice.svgz
 share/icons/crystalsvg/scalable/filesystems/desktop.svgz
 share/icons/crystalsvg/scalable/filesystems/exec.svgz
 share/icons/crystalsvg/scalable/filesystems/exec_wine.svgz
@@ -4001,6 +4177,7 @@ share/icons/crystalsvg/scalable/filesystems/folder_image.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_important.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_locked.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_man.svgz
+share/icons/crystalsvg/scalable/filesystems/folder_man2.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_open.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_orange.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_orange_open.svgz
@@ -4027,31 +4204,52 @@ share/icons/crystalsvg/scalable/filesystems/zip.svgz
 share/icons/crystalsvg/scalable/mimetypes/applix.svgz
 share/icons/crystalsvg/scalable/mimetypes/ascii.svgz
 share/icons/crystalsvg/scalable/mimetypes/binary.svgz
+share/icons/crystalsvg/scalable/mimetypes/cdimage.svgz
 share/icons/crystalsvg/scalable/mimetypes/cdr.svgz
+share/icons/crystalsvg/scalable/mimetypes/cdtrack.svgz
+share/icons/crystalsvg/scalable/mimetypes/colorscm.svgz
 share/icons/crystalsvg/scalable/mimetypes/core.svgz
 share/icons/crystalsvg/scalable/mimetypes/deb.svgz
 share/icons/crystalsvg/scalable/mimetypes/document.svgz
 share/icons/crystalsvg/scalable/mimetypes/document2.svgz
 share/icons/crystalsvg/scalable/mimetypes/dvi.svgz
 share/icons/crystalsvg/scalable/mimetypes/empty.svgz
+share/icons/crystalsvg/scalable/mimetypes/encrypted.svgz
+share/icons/crystalsvg/scalable/mimetypes/exec_wine.svgz
+share/icons/crystalsvg/scalable/mimetypes/file_locked.svgz
+share/icons/crystalsvg/scalable/mimetypes/file_temporary.svgz
 share/icons/crystalsvg/scalable/mimetypes/font.svgz
 share/icons/crystalsvg/scalable/mimetypes/font_bitmap.svgz
+share/icons/crystalsvg/scalable/mimetypes/font_truetype.svgz
+share/icons/crystalsvg/scalable/mimetypes/font_type1.svgz
 share/icons/crystalsvg/scalable/mimetypes/gf.svgz
+share/icons/crystalsvg/scalable/mimetypes/html.svgz
 share/icons/crystalsvg/scalable/mimetypes/image.svgz
+share/icons/crystalsvg/scalable/mimetypes/image2.svgz
+share/icons/crystalsvg/scalable/mimetypes/karbon_karbon.svgz
+share/icons/crystalsvg/scalable/mimetypes/kexi_kexi.svgz
 share/icons/crystalsvg/scalable/mimetypes/kmultiple.svgz
+share/icons/crystalsvg/scalable/mimetypes/koffice.svgz
 share/icons/crystalsvg/scalable/mimetypes/kugardata.svgz
 share/icons/crystalsvg/scalable/mimetypes/log.svgz
 share/icons/crystalsvg/scalable/mimetypes/make.svgz
+share/icons/crystalsvg/scalable/mimetypes/man.svgz
 share/icons/crystalsvg/scalable/mimetypes/message.svgz
 share/icons/crystalsvg/scalable/mimetypes/metafont.svgz
-share/icons/crystalsvg/scalable/mimetypes/mime_ascii.svgz
-share/icons/crystalsvg/scalable/mimetypes/mime_empty.svgz
 share/icons/crystalsvg/scalable/mimetypes/mozilla_doc.svgz
+share/icons/crystalsvg/scalable/mimetypes/netscape_doc.svgz
 share/icons/crystalsvg/scalable/mimetypes/pdf.svgz
 share/icons/crystalsvg/scalable/mimetypes/pk.svgz
+share/icons/crystalsvg/scalable/mimetypes/postscript.svgz
+share/icons/crystalsvg/scalable/mimetypes/quicktime.svgz
+share/icons/crystalsvg/scalable/mimetypes/readme.svgz
+share/icons/crystalsvg/scalable/mimetypes/real_doc.svgz
+share/icons/crystalsvg/scalable/mimetypes/recycled.svgz
 share/icons/crystalsvg/scalable/mimetypes/resource.svgz
 share/icons/crystalsvg/scalable/mimetypes/rpm.svgz
+share/icons/crystalsvg/scalable/mimetypes/shellscript.svgz
 share/icons/crystalsvg/scalable/mimetypes/soffice.svgz
+share/icons/crystalsvg/scalable/mimetypes/sound.svgz
 share/icons/crystalsvg/scalable/mimetypes/source.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_c.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_cpp.svgz
@@ -4063,6 +4261,7 @@ share/icons/crystalsvg/scalable/mimetypes/source_l.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_moc.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_o.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_p.svgz
+share/icons/crystalsvg/scalable/mimetypes/source_php.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_pl.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_py.svgz
 share/icons/crystalsvg/scalable/mimetypes/source_s.svgz
@@ -4104,19 +4303,28 @@ share/mimelnk/application/pkcs7-signature.desktop
 share/mimelnk/application/postscript.desktop
 share/mimelnk/application/sieve.desktop
 share/mimelnk/application/smil.desktop
-share/mimelnk/application/starcalc.desktop
-share/mimelnk/application/starimpress.desktop
-share/mimelnk/application/starwriter.desktop
 share/mimelnk/application/vnd.mozilla.xul+xml.desktop
 share/mimelnk/application/vnd.ms-asf.desktop
 share/mimelnk/application/vnd.ms-excel.desktop
 share/mimelnk/application/vnd.ms-word.desktop
 share/mimelnk/application/vnd.palm.desktop
 share/mimelnk/application/vnd.rn-realmedia.desktop
+share/mimelnk/application/vnd.stardivision.calc.desktop
+share/mimelnk/application/vnd.stardivision.chart.desktop
+share/mimelnk/application/vnd.stardivision.draw.desktop
+share/mimelnk/application/vnd.stardivision.impress.desktop
+share/mimelnk/application/vnd.stardivision.math.desktop
+share/mimelnk/application/vnd.stardivision.writer-global.desktop
+share/mimelnk/application/vnd.stardivision.writer.desktop
 share/mimelnk/application/vnd.sun.xml.calc.desktop
+share/mimelnk/application/vnd.sun.xml.calc.template.desktop
 share/mimelnk/application/vnd.sun.xml.draw.desktop
+share/mimelnk/application/vnd.sun.xml.draw.template.desktop
 share/mimelnk/application/vnd.sun.xml.impress.desktop
+share/mimelnk/application/vnd.sun.xml.impress.template.desktop
 share/mimelnk/application/vnd.sun.xml.writer.desktop
+share/mimelnk/application/vnd.sun.xml.writer.master.desktop
+share/mimelnk/application/vnd.sun.xml.writer.template.desktop
 share/mimelnk/application/wordperfect.desktop
 share/mimelnk/application/x-abiword.desktop
 share/mimelnk/application/x-ace.desktop
@@ -4144,6 +4352,7 @@ share/mimelnk/application/x-deb.desktop
 share/mimelnk/application/x-designer.desktop
 share/mimelnk/application/x-desktop.desktop
 share/mimelnk/application/x-dvi.desktop
+share/mimelnk/application/x-executable-script.desktop
 share/mimelnk/application/x-executable.desktop
 share/mimelnk/application/x-font-bdf.desktop
 share/mimelnk/application/x-font-ghostscript.desktop
@@ -4161,6 +4370,7 @@ share/mimelnk/application/x-gzdvi.desktop
 share/mimelnk/application/x-gzip.desktop
 share/mimelnk/application/x-gzpostscript.desktop
 share/mimelnk/application/x-hancomword.desktop
+share/mimelnk/application/x-ica.desktop
 share/mimelnk/application/x-iso.desktop
 share/mimelnk/application/x-jar.desktop
 share/mimelnk/application/x-java-applet.desktop
@@ -4186,11 +4396,13 @@ share/mimelnk/application/x-lzop.desktop
 share/mimelnk/application/x-magicpoint.desktop
 share/mimelnk/application/x-msaccess.desktop
 share/mimelnk/application/x-msdos-program.desktop
+share/mimelnk/application/x-msmetafile.desktop
 share/mimelnk/application/x-mswrite.desktop
 share/mimelnk/application/x-object.desktop
 share/mimelnk/application/x-ogg.desktop
 share/mimelnk/application/x-ooimpress.desktop
 share/mimelnk/application/x-oowriter.desktop
+share/mimelnk/application/x-pak.desktop
 share/mimelnk/application/x-perl-module.desktop
 share/mimelnk/application/x-perl.desktop
 share/mimelnk/application/x-php.desktop
@@ -4227,6 +4439,9 @@ share/mimelnk/audio/aac.desktop
 share/mimelnk/audio/ac3.desktop
 share/mimelnk/audio/basic.desktop
 share/mimelnk/audio/mp4.desktop
+share/mimelnk/audio/mpeg.desktop
+share/mimelnk/audio/mpegurl.desktop
+share/mimelnk/audio/prs.sid.desktop
 share/mimelnk/audio/vnd.rn-realaudio.desktop
 share/mimelnk/audio/vorbis.desktop
 share/mimelnk/audio/x-adpcm.desktop
@@ -4235,8 +4450,11 @@ share/mimelnk/audio/x-flac.desktop
 share/mimelnk/audio/x-matroska.desktop
 share/mimelnk/audio/x-midi.desktop
 share/mimelnk/audio/x-mod.desktop
+share/mimelnk/audio/x-mp2.desktop
 share/mimelnk/audio/x-mp3.desktop
 share/mimelnk/audio/x-mpegurl.desktop
+share/mimelnk/audio/x-ms-wma.desktop
+share/mimelnk/audio/x-musepack.desktop
 share/mimelnk/audio/x-oggflac.desktop
 share/mimelnk/audio/x-pn-realaudio.desktop
 share/mimelnk/audio/x-scpls.desktop
@@ -4254,7 +4472,9 @@ share/mimelnk/image/svg+xml.desktop
 share/mimelnk/image/tiff.desktop
 share/mimelnk/image/wmf.desktop
 share/mimelnk/image/x-bmp.desktop
+share/mimelnk/image/x-dds.desktop
 share/mimelnk/image/x-eps.desktop
+share/mimelnk/image/x-exr.desktop
 share/mimelnk/image/x-ico.desktop
 share/mimelnk/image/x-jng.desktop
 share/mimelnk/image/x-msod.desktop
@@ -4263,6 +4483,7 @@ share/mimelnk/image/x-photo-cd.desktop
 share/mimelnk/image/x-portable-bitmap.desktop
 share/mimelnk/image/x-portable-greymap.desktop
 share/mimelnk/image/x-portable-pixmap.desktop
+share/mimelnk/image/x-rgb.desktop
 share/mimelnk/image/x-targa.desktop
 share/mimelnk/image/x-vnd.adobe.photoshop.desktop
 share/mimelnk/image/x-vnd.trolltech.qpicture.desktop
@@ -4303,6 +4524,7 @@ share/mimelnk/text/x-chdr.desktop
 share/mimelnk/text/x-csrc.desktop
 share/mimelnk/text/x-csv.desktop
 share/mimelnk/text/x-diff.desktop
+share/mimelnk/text/x-hex.desktop
 share/mimelnk/text/x-java.desktop
 share/mimelnk/text/x-katefilelist.desktop
 share/mimelnk/text/x-latex.desktop
@@ -4323,6 +4545,7 @@ share/mimelnk/text/x-vcard.desktop
 share/mimelnk/text/x-xslfo.desktop
 share/mimelnk/text/x-xslt.desktop
 share/mimelnk/text/xml.desktop
+share/mimelnk/video/avi.desktop
 share/mimelnk/video/mp4.desktop
 share/mimelnk/video/mpeg.desktop
 share/mimelnk/video/quicktime.desktop
@@ -4335,9 +4558,13 @@ share/mimelnk/video/x-ms-wmv.desktop
 share/mimelnk/video/x-msvideo.desktop
 share/mimelnk/video/x-ogm.desktop
 share/mimelnk/video/x-theora.desktop
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 share/services/bmp.kimgio
 share/services/data.protocol
+share/services/dds.kimgio
 share/services/eps.kimgio
+share/services/exr.kimgio
 share/services/file.protocol
 share/services/ftp.protocol
 share/services/ghelp.protocol
@@ -4354,6 +4581,7 @@ share/services/kbzip2filter.desktop
 share/services/kcertpart.desktop
 share/services/kded/kcookiejar.desktop
 share/services/kded/kdeprintd.desktop
+share/services/kded/kdetrayproxy.desktop
 share/services/kded/kpasswdserver.desktop
 share/services/kded/kssld.desktop
 share/services/kded/kwalletd.desktop
@@ -4370,6 +4598,9 @@ share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
 share/services/kresources/kabc/net.desktop
+share/services/kspell_ispell.desktop
+share/services/ktexteditor_autobookmarker.desktop
+share/services/ktexteditor_docwordcompletion.desktop
 share/services/ktexteditor_insertfile.desktop
 share/services/ktexteditor_isearch.desktop
 share/services/ktexteditor_kdatatool.desktop
@@ -4380,6 +4611,7 @@ share/services/pcx.kimgio
 share/services/pgm.kimgio
 share/services/png.kimgio
 share/services/ppm.kimgio
+share/services/rgb.kimgio
 share/services/rlogin.protocol
 share/services/rtsp.protocol
 share/services/shellscript.desktop
@@ -4394,6 +4626,7 @@ share/services/xpm.kimgio
 share/services/xv.kimgio
 share/servicetypes/application.desktop
 share/servicetypes/browserview.desktop
+share/servicetypes/dcopinstantmessenger.desktop
 share/servicetypes/kbytesedit.desktop
 share/servicetypes/kcmodule.desktop
 share/servicetypes/kcomprfilter.desktop
@@ -4410,6 +4643,7 @@ share/servicetypes/kresources_plugin.desktop
 share/servicetypes/krop.desktop
 share/servicetypes/krwp.desktop
 share/servicetypes/kscan.desktop
+share/servicetypes/kspellclient.desktop
 share/servicetypes/ktexteditor.desktop
 share/servicetypes/ktexteditoreditor.desktop
 share/servicetypes/ktexteditorplugin.desktop
@@ -4436,6 +4670,8 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
@@ -4470,6 +4706,7 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
@@ -4488,6 +4725,7 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
@@ -4506,6 +4744,7 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
@@ -4536,37 +4775,43 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/scalable/filesystems
 @dirrm share/icons/crystalsvg/scalable/devices
-@dirrm share/icons/crystalsvg/scalable/apps
+@dirrm share/icons/crystalsvg/scalable/actions
 @dirrm share/icons/crystalsvg/scalable
 @dirrm share/icons/crystalsvg/64x64/mimetypes
 @dirrm share/icons/crystalsvg/64x64/filesystems
 @dirrm share/icons/crystalsvg/64x64/devices
+@dirrm share/icons/crystalsvg/64x64/apps
 @dirrm share/icons/crystalsvg/64x64/actions
 @dirrm share/icons/crystalsvg/64x64
 @dirrm share/icons/crystalsvg/48x48/mimetypes
 @dirrm share/icons/crystalsvg/48x48/filesystems
 @dirrm share/icons/crystalsvg/48x48/devices
+@dirrm share/icons/crystalsvg/48x48/apps
 @dirrm share/icons/crystalsvg/48x48/actions
 @dirrm share/icons/crystalsvg/48x48
 @dirrm share/icons/crystalsvg/32x32/mimetypes
 @dirrm share/icons/crystalsvg/32x32/filesystems
 @dirrm share/icons/crystalsvg/32x32/devices
+@dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/32x32/actions/kde
 @dirrm share/icons/crystalsvg/32x32/actions
 @dirrm share/icons/crystalsvg/32x32
 @dirrm share/icons/crystalsvg/22x22/mimetypes
 @dirrm share/icons/crystalsvg/22x22/filesystems
+@dirrm share/icons/crystalsvg/22x22/devices
 @dirrm share/icons/crystalsvg/22x22/actions/kde
 @dirrm share/icons/crystalsvg/22x22/actions
 @dirrm share/icons/crystalsvg/22x22
 @dirrm share/icons/crystalsvg/16x16/mimetypes
 @dirrm share/icons/crystalsvg/16x16/filesystems
 @dirrm share/icons/crystalsvg/16x16/devices
+@dirrm share/icons/crystalsvg/16x16/apps
 @dirrm share/icons/crystalsvg/16x16/actions
 @dirrm share/icons/crystalsvg/16x16
 @dirrm share/icons/crystalsvg/128x128/mimetypes
 @dirrm share/icons/crystalsvg/128x128/filesystems
 @dirrm share/icons/crystalsvg/128x128/devices
+@dirrm share/icons/crystalsvg/128x128/apps
 @dirrm share/icons/crystalsvg/128x128
 @dirrm share/icons/crystalsvg
 @dirrm share/icons
@@ -4580,6 +4825,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kresources
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kparts
+@dirrm share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/knewstuff
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kjs/html
@@ -4618,6 +4865,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/ktexteditor_kdatatool
 @dirrm share/apps/ktexteditor_isearch
 @dirrm share/apps/ktexteditor_insertfile
+@dirrm share/apps/ktexteditor_docwordcompletion
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps/riscos
 @dirrm share/apps/kstyle/pixmaps
@@ -4723,6 +4971,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/ksgmltools2/customization
 @dirrm share/apps/ksgmltools2
 @dirrm share/apps/knotify
+@dirrm share/apps/knewstuff
 @dirrm share/apps/kjava
 @dirrm share/apps/kio_uiserver/icons/crystalsvg/16x16/apps
 @dirrm share/apps/kio_uiserver/icons/crystalsvg/16x16
@@ -4787,9 +5036,11 @@ share/servicetypes/scriptinterface.desktop
 @dirrm lib/kde3
 @dirrm include/libkmid
 @dirrm include/ktexteditor
+@dirrm include/kspell2
 @dirrm include/ksettings
 @dirrm include/kresources
 @dirrm include/kparts
+@dirrm include/knewstuff
 @dirrm include/kmediaplayer
 @dirrm include/kjs
 @dirrm include/kio
