@@ -33,6 +33,7 @@
     SUBDIR += brs
     SUBDIR += buffer
     SUBDIR += cassowary
+    SUBDIR += cheatah
     SUBDIR += chord
     SUBDIR += cmatrix
     SUBDIR += colorls
