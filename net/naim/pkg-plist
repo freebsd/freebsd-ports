@@ -1,5 +1,4 @@
 bin/naim
-share/examples/naim/naimrc_sample
 share/doc/naim/naim.hlp
-@dirrm share/examples/naim
+share/doc/naim/COLORS
 @dirrm share/doc/naim

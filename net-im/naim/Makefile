@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	net
-MASTER_SITES=	http://dev.n.ml.org/
+MASTER_SITES=	http://www.acm.rpi.edu/~n/dev.n.ml.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rtdean@cytherianage.net
 
 GNU_CONFIGURE=	yes
 
+MAN1=		naim.1
+
 post-install:
-	@ ${MKDIR} ${PREFIX}/share/examples/naim
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/naimrc_sample ${PREFIX}/share/examples/naim/
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/naim
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${PREFIX}/share/doc/naim/
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/COLORS ${PREFIX}/share/doc/naim/ 
 .endif
-	@ ${ECHO} "************************************************************"
-	@ ${CAT} ${PKGMESSAGE}
-	@ ${ECHO} "************************************************************"
 
 .include <bsd.port.mk>
