@@ -1,0 +1,25 @@
+*** old/dhcp-1.3beta/server/dhcps.c	Sun Nov  5 23:18:19 1995
+--- new/dhcp-1.3beta/server/dhcps.c	Fri Jan 17 17:14:54 1997
+***************
+*** 1583,1591 ****
+  
+      res = NULL;
+      res = select_wcid(DHCPREQUEST, &cid, curr_epoch);
+!     if (res != NULL && res->ip_addr != NULL &&
+!         res->ip_addr->s_addr == reqip.s_addr)
+!       goto ack;
+      else if (reqforme == 1)
+        goto nak;
+      else
+--- 1583,1593 ----
+  
+      res = NULL;
+      res = select_wcid(DHCPREQUEST, &cid, curr_epoch);
+!     if (res != NULL && res->ip_addr != NULL)
+! 	if (res->ip_addr->s_addr == reqip.s_addr)
+! 	    goto ack;
+! 	else
+! 	    goto nak;
+      else if (reqforme == 1)
+        goto nak;
+      else
