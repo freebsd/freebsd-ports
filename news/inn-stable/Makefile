@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.32 1999/02/16 22:04:30 andreas Exp $
+# $Id: Makefile,v 1.33 1999/02/16 22:07:51 andreas Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-02-14_03-02
@@ -69,6 +69,8 @@ post-install:
 		chown news.news /var/spool/news/articles; \
 		${MKDIR} -m 0775 /var/spool/news/cycbuffs; \
 		chown news.news /var/spool/news/cycbuffs; \
+		${MKDIR} -m 0775 /var/spool/news/incoming; \
+		chown news.news /var/spool/news/incoming; \
 		${MKDIR} -m 0775 /var/spool/news/innfeed; \
 		chown news.news /var/spool/news/innfeed; \
 		${MKDIR} -m 0775 /var/spool/news/outgoing; \
