@@ -4,7 +4,7 @@ bin/mailtool
 sbin/cone-sysconftool
 etc/cone.dist
 libexec/cone
-%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 share/cone/APPLICATION.PDF.filter
 share/cone/IMAGE.GIF.filter
 share/cone/IMAGE.JPEG.filter
@@ -304,20 +304,20 @@ share/cone/rootcerts/xcert-international-inc-xcert-root-00.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-01.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-02.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-03.pem
-share/cone/c2417.html
-share/cone/c2455.html
-share/cone/r7532.html
-share/cone/r7752.html
-share/cone/r9158.html
-share/cone/x10172.html
-share/cone/x10415.html
-share/cone/x10519.html
-share/cone/x10761.html
-share/cone/x11096.html
-share/cone/x11107.html
-share/cone/x9559.html
-share/cone/x9765.html
-share/cone/x9901.html
-@dirrm %%DOCSDIR%%
+share/cone/c2428.html
+share/cone/c2466.html
+share/cone/r7571.html
+share/cone/r7791.html
+share/cone/r9197.html
+share/cone/x10211.html
+share/cone/x10454.html
+share/cone/x10558.html
+share/cone/x10800.html
+share/cone/x11135.html
+share/cone/x11146.html
+share/cone/x9598.html
+share/cone/x9804.html
+share/cone/x9940.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/cone/rootcerts
 @dirrm share/cone

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
@@ -20,7 +20,7 @@ COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		ncurses.5:${PORTSDIR}/devel/ncurses
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg 
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
@@ -36,8 +36,10 @@ MAN1=		cone.1 leaf.1 mailtool.1
 
 do-install:
 		cd ${WRKSRC} && make install-strip
+.if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/ChangeLog ${DOCSDIR}
+.endif
 
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${PREFIX}/sbin/cone-sysconftool
