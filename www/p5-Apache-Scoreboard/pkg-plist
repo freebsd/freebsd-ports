@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/DummyScoreboard.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Scoreboard.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/ScoreboardGraph.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DummyScoreboard/DummyScoreboard.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DummyScoreboard/DummyScoreboard.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Scoreboard/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Scoreboard/Scoreboard.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Scoreboard/Scoreboard.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Scoreboard
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DummyScoreboard
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache 2>/dev/null || true
