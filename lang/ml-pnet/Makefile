@@ -13,7 +13,8 @@ MASTER_SITES=	${PNET_MASTER_SITES}
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Mono's upper-level libraries
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
+BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
+		${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 
 USE_LIBTOOL=	yes
