@@ -1,0 +1,21 @@
+Figaro's Password Manager is a GNOME application that allows you to securely
+store your passwords. Features include:
+
+* Passwords are encrypted with the blowfish algorithm.
+* Copy passwords or usernames to the clipboard.
+* Copy passwords or usernames to the primary selection. (And paste them with a
+middle mouse button click).
+* If the password is for a website, FPM can keep track of the URLs of your
+login screens and can automatically launch your browser. In this capacity, FPM
+acts as a kind of bookmark manager.
+* You can teach FPM to launch other applications, and optionally pass
+hostnames, usernames or passwords to the command line.
+* FPM also has a password generator that can help you choose good passwords.
+It allows you to determine how long the password should be, and what types of
+characters (lower case, upper case, numbers and symbols) should be used. You
+can even have it avoid ambiguous characters such as a capital O and the number
+0.
+
+WWW: http://fpm.sourceforge.net/
+
+- Anders Nordby <anders@fix.no>
