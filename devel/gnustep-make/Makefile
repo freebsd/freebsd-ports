@@ -46,6 +46,5 @@ post-install:
 	${SED} -e "s/\(objc_threaded:=\)/\1 ${PTHREAD_LIBS}/" \
 		< ${WRKSRC}/config.make \
 		> ${PREFIX}/System/Makefiles/${GNU_ARCH}/${OPSYS:L}/config.make
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
