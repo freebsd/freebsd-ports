@@ -12,3 +12,19 @@ $FreeBSD$
  *-openbsd*)	opt_bash_malloc=no ;;	# they claim it needs eight-bit alignment
  *-aix*)		opt_bash_malloc=no ;;	# AIX machines
  *-nextstep*)	opt_bash_malloc=no ;;	# NeXT machines running NeXTstep
+@@ -15218,7 +15218,14 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   if test -d /dev/fd  && test -r /dev/fd/0; then
+-   bash_cv_dev_fd=standard
++   # FreeBSD's devfs only provides /dev/fd/[0-2]
++   exec 3<&0
++   if test -r /dev/fd/3; then
++     bash_cv_dev_fd=standard
++   else
++     bash_cv_dev_fd=absent
++   fi
++   exec 3<&-
+  elif test -d /proc/self/fd && test -r /proc/self/fd/0; then
+    bash_cv_dev_fd=whacky
+  else
