@@ -29,7 +29,7 @@ COMMENT=	The Horde contact management application
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 .if !defined(WITHOUT_LDAP)
 USE_PHP=	ldap

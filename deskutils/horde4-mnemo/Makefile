@@ -21,7 +21,7 @@ DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mnemo is the Horde notes and memos application
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
