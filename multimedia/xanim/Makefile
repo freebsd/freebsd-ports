@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 PATCH_SITES=	http://virtual-estates.net/port-stuff/
 PATCHFILES=	xanim-2801-to-2802-patch.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 .if (${MACHINE_ARCH} == "i386")
 EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
