@@ -7,6 +7,7 @@
 #
 
 MAINTAINER=	kuriyama@FreeBSD.org
+BROKEN=		editors/xemacs-mule is removed.
 
 # This is a slave port.
 PORTCLASS=	slave
