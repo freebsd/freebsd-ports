@@ -1,5 +1,5 @@
 etc/fhttpd.conf
-etc/fhttpd.sh
+etc/rc.d/fhttpd.sh
 %%LOGFILE%%
 sbin/fhttpd
 sbin/fhttpd-file
