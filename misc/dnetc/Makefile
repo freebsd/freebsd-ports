@@ -11,11 +11,16 @@ PKGNAME=	dnetc-2.8007.458b
 CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8007/ \
 		http://http.distributed.net/pub/dcti/v2.8007/
-DISTFILES=	dnetc458b-freebsd-x86-elf.tar.gz
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
+.if ${ARCH} == "i386"
+DISTFILES=	dnetc458b-freebsd-x86-elf.tar.gz
+.elif ${ARCH} == "alpha"
+DISTFILES=	dnetc458-digital_unix-alpha.tar.gz
+.endif
+
+ONLY_FOR_ARCHS=	i386 alpha
 
 .if ${OSVERSION} < 220000
 BROKEN=		"dnetc is not available for your version of FreeBSD.  Please upgrade."
