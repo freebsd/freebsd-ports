@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jan 21 17:47:42 2003
++++ Makefile.in	Sun Jan 26 17:12:58 2003
+@@ -146,7 +146,7 @@
+ 
+ EXTRA_DIST = bootstrap README.OSX README.CVS LICENSE
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = OpenEXR.pc
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
