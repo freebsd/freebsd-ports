@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	nget
-PORTVERSION=	0.19.1
+PORTVERSION=	0.21
 CATEGORIES=	news
-MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/nget/ \
-		http://unc.dl.sourceforge.net/sourceforge/nget/ \
-		http://belnet.dl.sourceforge.net/sourceforge/nget/ \
-		http://www.azstarnet.com/~donut/programs/nget/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	nget
 DISTNAME=	nget-${PORTVERSION}+uulib
 
 MAINTAINER=	george@crackpipe.net
