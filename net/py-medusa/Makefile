@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	net devel python
 MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ MAINTAINER=	perky@fallin.lv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+DIST_SUBDIR=	python
 DOCFILES=	CHANGES.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
 EXAMPLEDIRS=	demo test thread
 DOCSDIR=	${PREFIX}/share/doc/py-medusa
