@@ -1,7 +1,7 @@
 # New ports collection makefile for:	pm3-gui
 # Version required:	1.1.13
 # Date created:		6 Feb 2000
-# Whom:			John Polstra <jdp@freebsd.org>
+# Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,10 +10,10 @@ DISTNAME=	pm3-gui-${VERSION}
 CATEGORIES=	lang
 DISTFILES=
 
-MAINTAINER=	jdp@freebsd.org
+MAINTAINER=	jdp@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/m3/${TARGET}/libm3tcp.so.${SOVERSION}:${PORTSDIR}/lang/pm3-net
-RUN_DEPENDS=	${PREFIX}/lib/m3/${TARGET}/libm3tcp.so.${SOVERSION}:${PORTSDIR}/lang/pm3-net
+BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
+RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
 DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
 
 DIST_SUBDIR=	pm3
@@ -27,16 +27,19 @@ BUILDDIRS=	graphics/gr-libs/X11 \
 		graphics/gr-libs/ui \
 		graphics/gr-libs/images \
 		graphics/gr-libs/vbtkit
+L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
 VERSION=	1.1.13
 
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
+L2=		.so.${SOVERSION}.0
 TARGET=		FreeBSD2
 TARGETDIR=	freebsd-2
 WORDSIZE=	32
 .elif ${ARCH} == "i386"
+L2=		.so.${SOVERSION}
 .if ${OSVERSION} < 400011
 TARGET=		FreeBSD3
 TARGETDIR=	freebsd-3
@@ -50,6 +53,7 @@ WORDSIZE=	32
 BROKEN=		Not supported on older versions of FreeBSD/Alpha
 .endif
 CFLAGS+=	-mieee
+L2=		.so.${SOVERSION}
 TARGET=		FBSD_ALPHA
 TARGETDIR=	fbsd-alpha
 WORDSIZE=	64
@@ -71,5 +75,7 @@ do-install:
 	    cd ${WRKSRC}/$${i} && ${PREFIX}/bin/m3build && \
 		${PREFIX}/bin/m3ship; \
 	done
+	@${MKDIR} ${PREFIX}/share/pm3-gui
+	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/pm3-gui
 
 .include <bsd.port.post.mk>

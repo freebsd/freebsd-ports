@@ -31,6 +31,8 @@ lib/m3/pkg/udp/%%TARGET%%/libUDP.a
 lib/m3/pkg/udp/%%TARGET%%/libUDP.m3x
 lib/m3/pkg/udp/%%TARGET%%/libUDP.so
 lib/m3/pkg/udp/src/Common/UDP.i3
+share/pm3-net/COPYRIGHT
+@dirrm share/pm3-net
 @dirrm lib/m3/pkg/udp/src/Common
 @dirrm lib/m3/pkg/udp/src
 @dirrm lib/m3/pkg/udp/%%TARGET%%

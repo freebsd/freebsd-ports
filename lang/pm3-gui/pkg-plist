@@ -304,6 +304,8 @@ lib/m3/pkg/vbtkit/src/vtext/VTVirtual.i3
 lib/m3/pkg/vbtkit/src/vtext/VText.i3
 lib/m3/pkg/vbtkit/src/vtext/VTextDef.i3
 lib/m3/pkg/vbtkit/src/vtext/VTextRegion.i3
+share/pm3-gui/COPYRIGHT
+@dirrm share/pm3-gui
 @dirrm lib/m3/pkg/vbtkit/src/vtext
 @dirrm lib/m3/pkg/vbtkit/src/vbtkitutils
 @dirrm lib/m3/pkg/vbtkit/src/mtext
