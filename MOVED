@@ -317,3 +317,4 @@ editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.
 x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
 www/nautilus-gtkhtml||2003-05-11|maintenance discontinued
 editors/xemacs21-mule-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-canna||2003-05-12|needless since merged to xemacs-{mule-}packages
