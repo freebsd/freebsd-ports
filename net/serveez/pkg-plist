@@ -4,8 +4,10 @@ bin/serveez-config
 include/libserveez.h
 include/libserveez/alloc.h
 include/libserveez/array.h
+include/libserveez/asprintf.h
 include/libserveez/binding.h
 include/libserveez/boot.h
+include/libserveez/cfg.h
 include/libserveez/codec/codec.h
 include/libserveez/core.h
 include/libserveez/coserver/coserver.h
@@ -14,6 +16,7 @@ include/libserveez/dynload.h
 include/libserveez/hash.h
 include/libserveez/icmp-socket.h
 include/libserveez/interface.h
+include/libserveez/mutex.h
 include/libserveez/passthrough.h
 include/libserveez/pipe-socket.h
 include/libserveez/portcfg.h
