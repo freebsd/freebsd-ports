@@ -1,0 +1,32 @@
+--- drivers/drv_raw.c	2000/05/26 10:10:11	1.1
++++ drivers/drv_raw.c	2000/05/26 10:11:48
+@@ -58,6 +58,7 @@
+ static	int rawout=-1;
+ static	SBYTE *audiobuffer=NULL;
+ static	CHAR *filename=NULL;
++static  unsigned long counter=0;
+ 
+ static void RAW_CommandLine(CHAR *cmdline)
+ {
+@@ -113,13 +114,20 @@
+ 	if (rawout!=-1) {
+ 		close(rawout);
+ 		rawout=-1;
++		if (counter==0)
++			unlink(filename?filename:FILENAME);
++		else
++			counter=0;
+ 	}
+ 	_mm_free(audiobuffer);
+ }
+ 
+ static void RAW_Update(void)
+ {
+-	write(rawout,audiobuffer,VC_WriteBytes(audiobuffer,BUFFERSIZE));
++	int num;
++	num=write(rawout,audiobuffer,VC_WriteBytes(audiobuffer,BUFFERSIZE));
++	if (num>0)
++		counter+=num;
+ }
+ 
+ static BOOL RAW_Reset(void)
