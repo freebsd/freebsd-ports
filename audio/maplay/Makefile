@@ -8,8 +8,8 @@
 PORTNAME=	maplay
 PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.iuma.com/IUMA/ftp/audio_utils/mpeg_players/Workstations/
-DISTNAME=	maplay1_2
+MASTER_SITES=	ftp://ftp.tnt.uni-hannover.de/pub/MPEG/audio/other-servers/Maplay-Mirror/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
