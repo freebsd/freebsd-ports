@@ -603,6 +603,7 @@
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-Maketext-Fuzzy
+    SUBDIR += p5-Locale-Maketext-Gettext
     SUBDIR += p5-Locale-Maketext-Lexicon
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
