@@ -12,6 +12,8 @@
 PORTNAME=	crystal
 PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Crystal-SVG-For-Gnome
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org

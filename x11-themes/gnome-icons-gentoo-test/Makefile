@@ -11,7 +11,10 @@
 
 PORTNAME=	gentoo-test
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Gentoo-Test
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org

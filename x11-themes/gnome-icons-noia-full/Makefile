@@ -11,7 +11,10 @@
 
 PORTNAME=	noia-full
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Noia-full-${PORTVERSION}
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org

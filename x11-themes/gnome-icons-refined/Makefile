@@ -11,7 +11,10 @@
 
 PORTNAME=	refined
 PORTVERSION=	20030203
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Gnome-RH8
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
