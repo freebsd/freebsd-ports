@@ -3,14 +3,12 @@
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.6 1998/01/25 17:44:51 steve Exp $
+# $Id: Makefile,v 1.7 1998/04/19 15:43:29 steve Exp $
 #
 
 DISTNAME=       ifmail-2.14
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
-		ftp://ftp.demos.su/unix/linux/source/fido/ \
 		ftp://ftp.average.org/ifmail/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
 MASTER_SITE_SUBDIR=	system/fido
