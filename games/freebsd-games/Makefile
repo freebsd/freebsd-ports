@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freebsd-games
-PORTVERSION=	5.1
+PORTVERSION=	5.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
@@ -46,8 +46,6 @@ MAN6=	\
 	wump.6
 
 MANCOMPRESSED=	maybe
-
-IGNOREFILES=	freebsd-games-5.0.tar.bz2
 
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
