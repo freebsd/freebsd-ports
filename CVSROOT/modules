@@ -1415,8 +1415,6 @@ dmidecode	ports/sysutils/dmidecode
 dmjava		ports/games/dmjava
 dna-qc		ports/biology/dna-qc
 dnetc		ports/misc/dnetc
-dnetc-alpha	ports/misc/dnetc-alpha
-dnetc-sparc64	ports/misc/dnetc-sparc64
 dnews		ports/news/dnews
 dnrd		ports/dns/dnrd
 dns_balance	ports/dns/dns_balance
