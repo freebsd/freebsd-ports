@@ -19,10 +19,7 @@ etc/modlogan/modlogan.def.conf-dist
 @dirrm etc/modlogan
 lib/libmla_input_bsdftpd.so
 lib/libmla_input_clf.so
-lib/libmla_input_elmeg.so
-lib/libmla_input_flow.so
 lib/libmla_input_flowraw.so
-lib/libmla_input_hicom116.so
 lib/libmla_input_ipchains.so
 lib/libmla_input_isdn4bsd.so
 lib/libmla_input_isdnlog.so
@@ -61,10 +58,8 @@ lib/libmla_mdata_webhist.so
 lib/libmla_output_csv.so
 lib/libmla_output_modlogan.so
 lib/libmla_output_null.so
-lib/libmla_output_sybase_guj.so
 lib/libmla_output_template.so
 lib/libmla_output_text.so
-lib/libmla_output_tkcontrol.so
 lib/libmla_output_webalizer.so
 lib/libmla_processor_accounting.so
 lib/libmla_processor_firewall.so
