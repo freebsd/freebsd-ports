@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.34
+PORTVERSION=	2.36
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/w
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/User.pm:${PORTSDIR}/sysutils/p5-User
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/User.pm:${PORTSDIR}/sysutils/p5-User \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
