@@ -1,0 +1,2 @@
+Flock(1) asserts/waits for/removes advisory locks on descriptors,
+and can be used to sync with other processes using flock(2).
