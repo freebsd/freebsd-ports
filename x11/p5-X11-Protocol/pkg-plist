@@ -1,19 +1,23 @@
-lib/perl5/site_perl/%%PERL_VER%%/X11/Auth.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Keysyms.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/INETFH.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/INETSocket.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/Socket.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/UNIXFH.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/UNIXSocket.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext/BIG_REQUESTS.pm
-lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext/SHAPE.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11/Protocol
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/X11 2>/dev/null || true
+%%SITE_PERL%%/X11/Auth.pm
+%%SITE_PERL%%/X11/Keysyms.pm
+%%SITE_PERL%%/X11/Protocol.pm
+%%SITE_PERL%%/X11/Protocol/Connection.pm
+%%SITE_PERL%%/X11/Protocol/Constants.pm
+%%SITE_PERL%%/X11/Protocol/Connection/FileHandle.pm
+%%SITE_PERL%%/X11/Protocol/Connection/INETFH.pm
+%%SITE_PERL%%/X11/Protocol/Connection/INETSocket.pm
+%%SITE_PERL%%/X11/Protocol/Connection/Socket.pm
+%%SITE_PERL%%/X11/Protocol/Connection/UNIXFH.pm
+%%SITE_PERL%%/X11/Protocol/Connection/UNIXSocket.pm
+%%SITE_PERL%%/X11/Protocol/Ext/BIG_REQUESTS.pm
+%%SITE_PERL%%/X11/Protocol/Ext/DPMS.pm
+%%SITE_PERL%%/X11/Protocol/Ext/SHAPE.pm
+%%SITE_PERL%%/X11/Protocol/Ext/XC_MISC.pm
+%%SITE_PERL%%/X11/Protocol/Ext/XFree86_Misc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol
+@dirrm %%SITE_PERL%%/X11/Protocol/Ext
+@dirrm %%SITE_PERL%%/X11/Protocol/Connection
+@dirrm %%SITE_PERL%%/X11/Protocol
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/X11 2>/dev/null || true
