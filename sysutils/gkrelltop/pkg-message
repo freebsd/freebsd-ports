@@ -1,0 +1,8 @@
+*
+* This port requires /proc to be mounted,
+* if it is not already please add the following to fstab:
+*
+* proc            /proc   procfs  rw 0 0
+*
+* and mount /proc.
+*
