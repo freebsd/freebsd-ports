@@ -10,9 +10,9 @@ PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	grog
+MAINTAINER=	grog@lemis.com
 
-BUILD_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
+RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
 		bash:${PORTSDIR}/shells/bash2 \
 		cdrecord:${PORTSDIR}/sysutils/cdrecord \
 		emacs:${PORTSDIR}/editors/emacs20 \
@@ -26,11 +26,11 @@ BUILD_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mutt:${PORTSDIR}/mail/mutt \
 		netscape:${PORTSDIR}/www/netscape47-communicator \
-		png:${PORTSDIR}/graphics/png \
 		postfix:${PORTSDIR}/mail/postfix \
 		xtset:${PORTSDIR}/x11/xtset \
 		xv:${PORTSDIR}/graphics/xv
 
 NO_WRKSUBDIR=	YES
+NO_BUILD=	YES
 
 .include <bsd.port.mk>
