@@ -29,6 +29,7 @@ PLIST_SUB=	ZSH_VERSION=${DISTNAME:S/zsh-//}
 
 post-build:
 # Fix ".so" macro problem by using "soelim" command.
+	@echo HERE!!!
 	@(cd ${WRKSRC} ; \
 		${LN} -sf ./Doc man1 ; \
 		if [ ! -f ./man1/zshall.1.source ]; then \
