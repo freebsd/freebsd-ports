@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin
+PREFIX=$1
+DISTDIR=$2
+
+BINDIR=${PREFIX}/bin
+LIBDIR=${PREFIX}/lib/civctp_demo
+
+set -e
+
+#mkdir -p ${LIBDIR}/
+
+#SKIP=`strings ${DISTDIR}/rt2-demo.run | head -10 | grep ^skip= | cut -d= -f2`
+#tail +$SKIP /usr/ports/distfiles/rt2-demo.run | \
+#	tar -C ${LIBDIR}/ -xz -f - --exclude rt2_demo --exclude rt2_demo.ppc
+
+tar -C ${PREFIX}/lib/ -xz -f ${DISTDIR}/civctp-demo-10251999.tar.gz
+
+mv ${LIBDIR}/bin/x86/glibc-2.1/civctp ${LIBDIR}
+rm -r ${LIBDIR}/bin 
+
+brandelf -t Linux ${LIBDIR}/civctp
+
+ln -sf ${LIBDIR}/civctp ${BINDIR}/civctp_demo

@@ -33,6 +33,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += bzflag
     SUBDIR += cgoban
+    SUBDIR += civ2demo
     SUBDIR += clanbomber
     SUBDIR += columns
     SUBDIR += connect4
