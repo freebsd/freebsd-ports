@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += trf
     SUBDIR += webalizer2
     SUBDIR += aspell
     SUBDIR += ekg
