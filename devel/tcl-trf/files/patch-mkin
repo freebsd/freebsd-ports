@@ -1,0 +1,70 @@
+--- Makefile.in	Tue Aug 21 01:52:21 2001
++++ Makefile.in	Fri Feb 15 01:37:36 2002
+@@ -34,5 +34,5 @@
+ #========================================================================
+ 
+-lib_BINARIES	=	$(Trf_LIB_FILE) $(Trf_STUB_LIB_FILE) $(MD5_LIB_FILE)
++lib_BINARIES	=	$(Trf_LIB_FILE) $(Trf_STUB_LIB_FILE)
+ BINARIES	=	$(lib_BINARIES)
+ 
+@@ -82,4 +82,5 @@
+ 			$(TRF_GENSRCDIR)/md5dig.c	\
+ 			$(TRF_GENSRCDIR)/haval.c	\
++			$(TRF_GENSRCDIR)/haval.1996/haval.c \
+ 			$(TRF_GENSRCDIR)/sha.c		\
+ 			$(TRF_GENSRCDIR)/adler.c	\
+@@ -125,5 +126,4 @@
+ TRF_BASE_OBJ	=	@DL_OBJS@ bz2lib.$(OBJEXT)	\
+ 			zlib.$(OBJEXT)		\
+-			loadman.$(OBJEXT) 	\
+ 			init.$(OBJEXT)		\
+ 			registry.$(OBJEXT) 	\
+@@ -157,4 +157,5 @@
+ 			md5dig.$(OBJEXT)	\
+ 			haval.$(OBJEXT)		\
++			haval-1996.$(OBJEXT)		\
+ 			sha.$(OBJEXT)		\
+ 			adler.$(OBJEXT)		\
+@@ -191,5 +192,5 @@
+ #========================================================================
+ 
+-Trf_LIB_FILE			=	@Trf_LIB_FILE@
++Trf_LIB_FILE			=	libTrf2.so.1
+ $(Trf_LIB_FILE)_OBJECTS		=	$(Trf_OBJECTS)
+ 
+@@ -301,5 +302,5 @@
+ SHLIB_LD		= @SHLIB_LD@
+ SHLIB_LDFLAGS		= @SHLIB_LDFLAGS@
+-SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
++SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@ -lmd
+ STLIB_LD		= @STLIB_LD@
+ TCL_BIN_DIR		= @TCL_BIN_DIR@
+@@ -346,5 +347,5 @@
+ LIBS		= @LIBS@
+ AR		= ar
+-CFLAGS		= @CFLAGS@
++CFLAGS		+= @CFLAGS@
+ COMPILE		= $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ 
+@@ -431,5 +432,5 @@
+ 
+ check:	test
+-test:
++test:	$(Trf_LIB_FILE)
+ 	LD_LIBRARY_PATH="$(srcdir):../tea/:$(ZLIB_LIB_DIR):$(SSL_LIB_DIR)"; \
+ 	export LD_LIBRARY_PATH; \
+@@ -612,4 +613,7 @@
+ 	$(COMPILE) -c `@CYGPATH@ $(TRF_GENSRCDIR)/haval.c` -o $@
+ 
++haval-1996.o: $(TRF_GENSRCDIR)/haval.1996/haval.c
++	$(COMPILE) -c `@CYGPATH@ $(TRF_GENSRCDIR)/haval.1996/haval.c` -o $@
++
+ sha.$(OBJEXT): $(TRF_GENSRCDIR)/sha.c
+ 	$(COMPILE) -c `@CYGPATH@ $(TRF_GENSRCDIR)/sha.c` -o $@
+@@ -755,5 +759,5 @@
+ 	done
+ 	if test "x$(MAKE_LIB)" = "x$(MAKE_SHARED_LIB)"; then \
+-	  $(TCLSH_PROG) mkIndex.tcl $(lib_BINARIES); \
++	  $(TCLSH_PROG) mkIndex.tcl $(Trf_LIB_FILE); \
+ 	fi
+ 

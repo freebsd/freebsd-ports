@@ -1,0 +1,38 @@
+This patch-set makes the ``all'' script  fail if any of the test scripts
+report an error...
+
+	-mi
+
+--- tests/all	Wed Feb  5 15:51:13 1997
++++ tests/all	Fri Feb 15 00:52:39 2002
+@@ -10,2 +10,5 @@
+     source $i
+ }
++
++puts stderr "$errors error(s)"
++exit $errors
+--- tests/defs	Sat Sep 25 15:04:01 1999
++++ tests/defs	Fri Feb 15 00:51:56 2002
+@@ -300,6 +300,8 @@
+ 
+ proc test {name description script answer args} {
+-    global VERBOSE TESTS testConfig
+-
++    global VERBOSE TESTS testConfig errors
++    if {![info exist errors]} {
++	set errors 0
++    }
+     if {[string compare $TESTS ""] != 0} {
+ 	set ok 0
+@@ -362,4 +364,5 @@
+ 	print_verbose $name $description $constraints $script \
+ 		$code $result
++	incr errors
+     } elseif {[string compare $result $answer] == 0} { 
+ 	if {$VERBOSE} {
+@@ -378,4 +381,5 @@
+ 	puts stdout "$answer"
+ 	puts stdout "---- $name FAILED" 
++	incr errors
+     }
+ }

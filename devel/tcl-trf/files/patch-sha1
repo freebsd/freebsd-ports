@@ -1,0 +1,132 @@
+--- generic/sha1.c	Wed Aug  9 15:13:18 2000
++++ generic/sha1.c	Fri Feb  8 10:39:46 2002
+@@ -30,4 +30,7 @@
+ #include "loadman.h"
+ 
++#include <sys/types.h>
++#include <sha.h>
++
+ /*
+  * Generator description
+@@ -67,9 +70,9 @@
+   sizeof (CTX_TYPE),
+   DIGEST_SIZE,
+-  MDsha1_Start,
++  SHA1_Init,
+   MDsha1_Update,
+-  MDsha1_UpdateBuf,
++  SHA1_Update,
+   MDsha1_Final,
+-  MDsha1_Check
++  NULL
+ };
+ 
+@@ -106,30 +109,4 @@
+  *------------------------------------------------------*
+  *
+- *	MDsha1_Start --
+- *
+- *	------------------------------------------------*
+- *	Initialize the internal state of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDsha1_Start (context)
+-VOID* context;
+-{
+-  sha1f.init ((SHA_CTX*) context);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+  *	MDsha1_Update --
+  *
+@@ -155,33 +132,5 @@
+   unsigned char buf = character;
+ 
+-  sha1f.update ((SHA_CTX*) context, &buf, 1);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDsha1_UpdateBuf --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a character buffer.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDsha1_UpdateBuf (context, buffer, bufLen)
+-VOID* context;
+-unsigned char* buffer;
+-int   bufLen;
+-{
+-  sha1f.update ((SHA_CTX*) context, (unsigned char*) buffer, bufLen);
++  SHA1_Update ((SHA_CTX*) context, &buf, 1);
+ }
+ 
+@@ -211,9 +160,9 @@
+ {
+ #ifndef OTP
+-  sha1f.final ((unsigned char*) digest, (SHA_CTX*) context);
++  SHA1_Final ((unsigned char*) digest, (SHA_CTX*) context);
+ #else
+     unsigned int result[SHA_DIGEST_LENGTH / sizeof (char)];
+ 
+-    sha1f.final ((unsigned char*) result, (SHA_CTX*) context);
++    SHA1_Final ((unsigned char*) result, (SHA_CTX*) context);
+ 
+     result[0] ^= result[2];
+@@ -224,30 +173,3 @@
+     memcpy ((VOID *) digest, (VOID *) result, DIGEST_SIZE);
+ #endif
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDsha1_Check --
+- *
+- *	------------------------------------------------*
+- *	Do global one-time initializations of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		Loads the shared library containing the
+- *		SHA1 functionality
+- *
+- *	Result:
+- *		A standard Tcl error code.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDsha1_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadSHA1 (interp);
+ }

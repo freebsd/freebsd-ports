@@ -1,0 +1,14 @@
+This adds  a link  to the painless-guide-to-crc.txt  -- a  text document
+bundled in with the Trf distribution. Someone browsing the doc directory
+will most likely see the index.html file, and it might be useful if this
+document is referenced from it.
+
+	-mi
+
+--- doc/html/index.html	Tue Aug 21 01:52:27 2001
++++ doc/html/index.html	Fri Feb 15 02:19:50 2002
+@@ -10,3 +10,3 @@
+ <hr>
+-<p align=center><font size=7><b>[</b></font> <a href="sitemap.html">Sitemap</a> <font size=7><b>]</b></font> &#160;&#160;&#160;&#160;&#160; <font size=7><b>[</b></font> <a href="trf_news.html">News</a><font size=7><b>|</b></font> <a href="trf_changelog.html">ChangeLog</a><font size=7><b>|</b></font> <a href="trf_intro.html">Introduction</a><font size=7><b>|</b></font> <a href="trf_where.html">Download</a><font size=7><b>|</b></font> <a href="trf_ack.html">Acknowledgements, Disclaimer</a><font size=7><b>|</b></font> <a href="trf_danger.html">Danger!</a><font size=7><b>|</b></font> <a href="trf_install.html">Installation</a><font size=7><b>|</b></font> <a href="trf_cmds.html">Commands</a><font size=7><b>|</b></font> <a href="trf_capi.html">C API</a><font size=7><b>|</b></font> <a href="trf_copyrights.html">Copyrights</a><font size=7><b>|</b></font> <a href="trf_future.html">Future work</a> <font size=7><b>]</b></font></p>
++<p align=center><font size=7><b>[</b></font> <a href="sitemap.html">Sitemap</a> <font size=7><b>]</b></font> &#160;&#160;&#160;&#160;&#160; <font size=7><b>[</b></font> <a href="trf_news.html">News</a><font size=7><b>|</b></font> <a href="trf_changelog.html">ChangeLog</a><font size=7><b>|</b></font> <a href="trf_intro.html">Introduction</a><font size=7><b>|</b></font> <a href="trf_where.html">Download</a><font size=7><b>|</b></font> <a href="trf_ack.html">Acknowledgements, Disclaimer</a><font size=7><b>|</b></font> <a href="trf_danger.html">Danger!</a><font size=7><b>|</b></font> <a href="trf_install.html">Installation</a><font size=7><b>|</b></font> <a href="trf_cmds.html">Commands</a><font size=7><b>|</b></font> <a href="trf_capi.html">C API</a><font size=7><b>|</b></font> <a href="trf_copyrights.html">Copyrights</a><font size=7><b>|</b></font> <a href="trf_future.html">Future work</a> <font size=7><b>|</b></font> <A href="painless-guide-to-crc.txt">Painless Guide to CRC</A> <font size=7><b>]</b></font></p>
+ <hr>
