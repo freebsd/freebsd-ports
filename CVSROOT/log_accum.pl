@@ -830,6 +830,7 @@ if (-e $LAST_FILE) {
 #
 # Produce the final compilation of the log messages
 #
+my $diff_num_lines = $cfg::DIFF_BLOCK_TOTAL_LINES;
 for (my $i = 0; ; $i++) {
 	last unless -e "$LOG_FILE.$i";
 
@@ -858,10 +859,28 @@ for (my $i = 0; ; $i++) {
 	#
 	&do_changes_file(@log_msg);
 
+	#
 	# Add the diff after writing the log files.
-	if (-e "$DIFF_FILE.$i") {
-		push @log_msg, "  ", map {"  $_"}
-		    read_logfile("$DIFF_FILE.$i");
+	#
+	if (-e "$DIFF_FILE.$i" and $diff_num_lines > 0) {
+		my @diff_block = read_logfile("$DIFF_FILE.$i");
+
+		my $lines_to_use = scalar @diff_block;
+		$lines_to_use = $diff_num_lines
+		    if $lines_to_use > $diff_num_lines;
+
+		push @log_msg, "  ",
+		    map {"  $_"} @diff_block[0 .. $lines_to_use - 1];
+
+		$diff_num_lines -= $lines_to_use;
+		if ($diff_num_lines <= 0) {
+			push @log_msg, "",
+			    "----------------------------------------------",
+			    "Diff block truncated.  (Max lines = " .
+			        $cfg::DIFF_BLOCK_TOTAL_LINES . ")",
+			    "----------------------------------------------",
+			    "";
+		}
 	}
 
 	#
