@@ -1,18 +1,20 @@
---- jude.orig	Tue Jan 27 17:07:58 2004
-+++ jude	Tue Apr 20 10:26:43 2004
-@@ -4,12 +4,12 @@
+--- jude.orig	Tue Oct 26 21:21:53 2004
++++ jude	Tue Nov  9 13:58:28 2004
+@@ -3,13 +3,14 @@
+ #Remove "#" from following two lines, if you'd like to use j2sdk.
  #JAVA_HOME=/usr/lib/j2sdk1.4/;export JAVA_HOME
  #PATH=$JAVA_HOME/bin; export PATH
++PATH=%%DATADIR%%:$PATH
  
--#JUDE_HOME=/usr/local/share/jude_take
+-#JUDE_HOME=/usr/local/share/jude_community
 -JUDE_HOME=`dirname $0`
-+JUDE_HOME=/usr/local/share/jude_take
++JUDE_HOME=%%DATADIR%%
 +#JUDE_HOME=`dirname $0`
- JUDE_JAR=jude-take.jar
+ JUDE_JAR=jude-community.jar
  
  CLASSPATH=$JUDE_HOME/$JUDE_JAR
  
- JAVA_OPTS="-Xms16m -Xmx256m -Xss1m"
+ JAVA_OPTS="-Xms16m -Xmx512m -Xss2m"
  
 -java $JAVA_OPTS -jar $JUDE_HOME/$JUDE_JAR  $1 $2 $3
 +%%JAVA_HOME%%/bin/java $JAVA_OPTS -jar $JUDE_HOME/$JUDE_JAR  $1 $2 $3

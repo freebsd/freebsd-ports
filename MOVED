@@ -1312,3 +1312,4 @@ devel/p5-POE-Component-Client-UserAgent|www/p5-POE-Component-Client-UserAgent|20
 www/galeon2|www/galeon|2004-11-09|renamed to galeon
 www/mozilla-gtk1||2004-11-09|obsoleted by gtk2 version
 devel/sdcc|lang/sdcc|2004-11-18|remove duplicate port
+devel/jude_take|devel/jude-community|2004-11-23|renamed by upstream
