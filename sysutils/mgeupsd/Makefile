@@ -1,4 +1,4 @@
-# Ports collection makefile for:	sono
+# Ports collection makefile for:	mgeupsd
 # Date created:				12 Aug 1999
 # Whom:					Andreas Dobloug <andreasd@ifi.uio.no>
 #
