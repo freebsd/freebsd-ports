@@ -6,14 +6,13 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.30
-PORTREVISION?=	1
+PORTVERSION=	3.23.31
 CATEGORIES=	databases
 MASTER_SITES=	http://www.wipol.uni-bonn.de/MySQL/Downloads/MySQL-3.23/ \
 		http://www.mysql.net/Downloads/MySQL-3.23/ \
 		http://mysql.he.net/Downloads/MySQL-3.23/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/
-DISTNAME=	mysql-${PORTVERSION}-gamma
+DISTNAME=	mysql-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -46,7 +45,7 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 .if !defined(CLIENT_ONLY)
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}-gamma
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
 post-patch:
 	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
