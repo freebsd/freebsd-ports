@@ -16,6 +16,9 @@ DISTNAME=	rCalc-${PORTVERSION}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Symbolic calculator for GNOME
 
+DEPRECATED=	"Stale version with many errors"
+EXPIRATION_DATE=2004-07-10
+
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
