@@ -1,0 +1,25 @@
+lib/libguile-gnome-corba.a
+lib/libguile-gnome-corba.so
+lib/libguile-gnome-corba.so.0
+lib/libguile-gnome-gobject.a
+lib/libguile-gnome-gobject.so
+lib/libguile-gnome-gobject.so.0
+lib/libguile-gnome-gtk.a
+lib/libguile-gnome-gtk.so
+lib/libguile-gnome-gtk.so.0
+lib/orbit/Foo_module.a
+lib/orbit/Foo_module.so
+lib/orbit/Foo_module.so.0
+share/guile/gnome/corba.scm
+share/guile/gnome/corba/primitives.scm
+share/guile/gnome/corba/types.scm
+share/guile/gnome/gobject.scm
+share/guile/gnome/gobject/primitives.scm
+share/guile/gnome/gtk.scm
+@dirrm share/guile/gnome/gobject
+@dirrm share/guile/gnome/corba
+@dirrm share/guile/gnome
+@dirrm share/guile-gobject/0.4.0
+@dirrm share/guile-gobject
+@dirrm share/guile
+@dirrm lib/orbit

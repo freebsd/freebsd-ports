@@ -1,0 +1,15 @@
+--- corba/Makefile.in.orig	Fri May  2 01:41:50 2003
++++ corba/Makefile.in	Fri May  2 01:42:11 2003
+@@ -484,9 +484,9 @@
+ 	guile-snarf $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< > $@ \
+ 	|| { rm $@; false; }
+ .c.doc:
+-	-(guile-func-name-check $<)
+-	(guile-snarf-docs $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< | \
+-	guile_filter_doc_snarfage --filter-snarfage) > $@ || { rm $@; false; }
++#	-(guile-func-name-check $<)
++#	(guile-snarf-docs $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< | \
++#	guile_filter_doc_snarfage --filter-snarfage) > $@ || { rm $@; false; }
+ 
+ guile-gnome-corba.texi: $(DOT_DOC_FILES)
+ 	cat $(DOT_DOC_FILES) | guile-snarf-docs-texi > $@ \

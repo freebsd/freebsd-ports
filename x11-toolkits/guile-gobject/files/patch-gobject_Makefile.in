@@ -1,0 +1,53 @@
+--- gobject/Makefile.in.orig	Mon Nov  4 09:54:05 2002
++++ gobject/Makefile.in	Fri May  2 01:48:41 2003
+@@ -160,8 +160,8 @@
+ 
+ 
+ DOT_DOC_FILES = \
+-	guile-gnome-gobject.doc			\
+-	guile-gnome-gobject-primitives.doc
++#	guile-gnome-gobject.doc			\
++#	guile-gnome-gobject-primitives.doc
+ 
+ 
+ SUFFIXES = .x .doc
+@@ -173,7 +173,7 @@
+ 	$(DOT_X_FILES) $(DOT_DOC_FILES)
+ 
+ 
+-CLEANFILES = $(BUILT_SOURCES) guile-gnome-gobject.texi
++CLEANFILES = $(BUILT_SOURCES) # guile-gnome-gobject.texi
+ 
+ EXTRA_DIST = gobject.scm primitives.scm gnome-gobject.gwp
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -486,9 +486,9 @@
+ 	guile-snarf $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< > $@ \
+ 	|| { rm $@; false; }
+ .c.doc:
+-	-(guile-func-name-check $<)
+-	(guile-snarf-docs $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< | \
+-	guile_filter_doc_snarfage --filter-snarfage) > $@ || { rm $@; false; }
++#	-(guile-func-name-check $<)
++#	(guile-snarf-docs $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< | \
++#	guile_filter_doc_snarfage --filter-snarfage) > $@ || { rm $@; false; }
+ 
+ gnomegobject.h gnomegobject.c gnomegobject.html: gnome-gobject.gwp
+ 	FLAVOR=gnome guile -c \
+@@ -496,12 +496,12 @@
+ 	 (primitive-load \"$(srcdir)/gnome-gobject.gwp\")"
+ 
+ guile-gnome-gobject.texi: $(DOT_DOC_FILES)
+-	cat $(DOT_DOC_FILES) | guile-snarf-docs-texi > $@ \
+-	|| { rm $@; false; }
++#	cat $(DOT_DOC_FILES) | guile-snarf-docs-texi > $@ \
++#	|| { rm $@; false; }
+ 
+-guile-gnome-gobject-procedures.txt: guile-gnome-gobject.texi
+-	rm -f $@
+-	makeinfo --force -o $@ $< || test -f $@
++guile-gnome-gobject-procedures.txt: # guile-gnome-gobject.texi
++#	rm -f $@
++#	makeinfo --force -o $@ $< || test -f $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
