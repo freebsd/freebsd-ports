@@ -1,5 +1,5 @@
-bin/civserver
 bin/civclient
+bin/civserver
 share/freeciv/Freeciv
 share/freeciv/civ1.serv
 share/freeciv/civ1/buildings.ruleset
