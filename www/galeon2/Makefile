@@ -62,6 +62,10 @@ FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 .if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
 # to the compiler.
+NO_WERROR=	yes
+.endif
+# allow build with more warnings enabled
+.if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--disable-werror
 .endif
 
