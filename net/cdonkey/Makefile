@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cdonkey
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 MASTER_SITES=	http://suche.org/
 DISTNAME=	cDonkey-${PORTVERSION}
@@ -25,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-berkeley-db="${LOCALBASE}/include/db3:${LOCALBASE}/lib"
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/cDonkey
+WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 

@@ -1,13 +1,18 @@
---- cygwin.h.orig	Tue Apr 29 10:32:56 2003
-+++ cygwin.h	Tue Apr 29 10:33:16 2003
-@@ -110,8 +110,8 @@
+--- cygwin.h.orig	Sat Apr  5 20:06:44 2003
++++ cygwin.h	Thu Aug 26 18:50:49 2004
+@@ -36,7 +36,6 @@
+ #include <zlib.h>
+ #include <ctype.h>
+ #include <signal.h>
+-#include <malloc.h>
+ 
+ #ifdef __cplusplus
+ #include <string>  // for stl string
+@@ -166,7 +165,6 @@
+ 	#include <netinet/in.h>
+ 	#include <netinet/tcp.h>
+ 	#include <sys/poll.h>
+-	#include <mcheck.h>
+ 	#define dir_delim	'/'
  	#define HAVE_SIGHUP	1
  	#define HAVE_SIGINT	1
- 	#define HAVE_SIGPIPE	1
--	typedef unsigned long long uint64_t;
--	typedef long long int64_t;
-+//	typedef unsigned long long uint64_t;
-+//	typedef long long int64_t;
- 	#define closesocket             close
- 	#define ioctlsocket             ioctl
- #endif

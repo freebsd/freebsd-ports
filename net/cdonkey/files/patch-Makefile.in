@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Mar 26 16:52:39 2003
-+++ Makefile.in	Wed Mar 26 16:52:49 2003
-@@ -50,7 +50,7 @@
- CPPFLAGS = @CPPFLAGS@
- CXX = @CXX@
- CXXDEPMODE = @CXXDEPMODE@
--CXXFLAGS = @CXXFLAGS@ -W -Wall -Wunused -Wformat -Wshadow -Wmultichar -Wpointer-arith -Wcast-qual -Wswitch -Werror @SVN_DB_INCLUDES@
-+CXXFLAGS = @CXXFLAGS@ @SVN_DB_INCLUDES@
+--- Makefile.in.orig	Wed May  7 20:21:59 2003
++++ Makefile.in	Thu Aug 26 18:39:49 2004
+@@ -55,7 +55,7 @@
+ # -fno-for-scope Make the proble with older compiler visible
+ # -pedantic < Zu viele warnings
+ # -Wold-style-cast < Zu viele warnings
+-CXXFLAGS = @CXXFLAGS@ -W -Wall -Wunused -Wformat -Wshadow -Wmultichar -Wpointer-arith -Wcast-qual -Wcast-align -Wswitch -ansi -fno-for-scope -fno-gnu-keywords -fno-rtti @SVN_DB_INCLUDES@ 
++CXXFLAGS = @CXXFLAGS@ -ansi -fno-for-scope -fno-gnu-keywords -fno-rtti @SVN_DB_INCLUDES@ 
  CYGPATH_W = @CYGPATH_W@
- DEFS = @DEFS@
+ DEFS = @DEFS@ -DCDONKEY=1
  DEPDIR = @DEPDIR@
