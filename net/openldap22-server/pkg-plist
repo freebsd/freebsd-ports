@@ -7,7 +7,7 @@ etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.so
-%%SLAPI%%lib/libslapi.so.2
+%%SLAPI%%lib/libslapi.so.202
 libexec/slapd
 libexec/slurpd
 sbin/slapadd
