@@ -5,17 +5,10 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.70
-PORTREVISION=	2
+PORTVERSION=	0.71
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-.if defined(WITH_JPPATCH)
-PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/
-PATCHFILES=		gaim-0.70_jp.patch.gz
-PATCH_DIST_STRIP=	-p1
-.endif
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
@@ -28,13 +21,17 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static=yes --enable-nss=no
+CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=		gaim.1 gaim-remote.1
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libnss3.so)
+WITH_NSS=	yes
+.endif
 
 .if exists(${LOCALBASE}/lib/libgnutls.so)
 WITH_GNUTLS=	yes
@@ -44,6 +41,16 @@ WITH_GNUTLS=	yes
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
+.endif
+
+.if defined(WITH_NSS)
+LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
+CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/include/nspr \
+			--with-nspr-libs=${LOCALBASE}/lib \
+			--with-nss-includes=${LOCALBASE}/include/nss/nss \
+			--with-nss-libs=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--enable-nss=no
 .endif
 
 .if ${PERL_LEVEL} < 500800
@@ -87,7 +94,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
 	@${ECHO_MSG} "	WITH_GNUTLS		Enable TLS encryption support"
-	@${ECHO_MSG} "	WITH_JPPATCH		Enable Japanese character support"
+	@${ECHO_MSG} "	WITH_NSS		Enable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
 

@@ -1,11 +1,24 @@
---- configure.orig	Mon Sep 29 12:41:50 2003
-+++ configure	Mon Sep 29 12:43:14 2003
-@@ -15962,7 +15962,7 @@
+--- configure.orig	Thu Oct  9 20:05:15 2003
++++ configure	Fri Oct 10 13:22:18 2003
+@@ -16164,7 +16164,7 @@
  
- 	if test "x$prefix" != "xNONE"; then
- 		prefix=`eval echo $prefix`
--		PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=$prefix"
-+		PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=%%LOCALBASE%%"
- 	fi
+ 		if test "x$prefix" != "xNONE"; then
+ 			prefix=`eval echo $prefix`
+-			PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=$prefix"
++			PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=%%LOCALBASE%%"
+ 		fi
  
  
+@@ -16915,10 +16915,10 @@
+ 
+ 					enable_nss="no"
+ 				else
+-					nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
++					nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
+ 				fi
+ 			else
+-				nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
++				nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
+ 			fi
+ 
+ 			echo "$as_me:$LINENO: checking for Mozilla nspr libraries" >&5
