@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=		0.2r
+PORTVERSION=		0.2t
 CATEGORIES=		security ipv6
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
