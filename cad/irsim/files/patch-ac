@@ -1,0 +1,12 @@
+--- src/ana11/Makefile.orig	Tue Dec  9 18:41:42 2003
++++ src/ana11/Makefile	Tue Dec  9 18:42:45 2003
+@@ -34,6 +34,9 @@
+ $(EXPORTS): $(SRCS)
+ 	@echo making $(EXPORTS)
+ 	@../utils/export $(SRCS) $(EXPORTS)
++	grep -v PRINTF $(EXPORTS) > $(EXPORTS).tmp
++	echo "extern void PRINTF(char *format, ... );" >> $(EXPORTS).tmp
++	mv $(EXPORTS).tmp $(EXPORTS)
+ 
+ $(SRCS) :
+ 	co $@
