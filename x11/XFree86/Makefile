@@ -1,10 +1,12 @@
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+# uncomment one of the 3 lines below!
+#(X-Consortium CDROM, O'Reilly 'X-Companion' CDROM, or X by FTP (_*BIG*_)
+#X11_ON_X_CDROM	=	yes
+#X11_ON_OR_CDROM	=	yes
+#X11_VIA_FTP	=	yes
 
 #if you are compiling from a cdrom, set the directory where the
 # the patch files are
-#X11FIXES = /home/X11R6
+X11FIXES = /usr/ports/distfiles/xc
 
 #define this if you are short of space - save ~28 Mbytes
 #REMOVE_NOT_ESSENTIAL	=	yes
@@ -16,6 +18,10 @@ WRKDIR?=                ${.CURDIR}/work
 BUILD_COOKIE?=		${WRKDIR}/.build_done
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done
 IS_INTERACTIVE=		yes
+
+.if defined(X11_ON_X_CDROM) || defined(X11_ON_OR_CDROM)
+X11_ON_CDROM	=	yes
+.endif
 
 .if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
 
@@ -51,6 +57,12 @@ ${EXTRACT_COOKIE}:
 	@mkdir -p ${WRKDIR}
 	@echo ${X11FIXES} > ${WRKDIR}/.cdrom
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
+.if defined(X11_ON_X_CDROM)
+	${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.cd_X
+.endif
+.if defined(X11_ON_OR_CDROM)
+	${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.cd_OR
+.endif
 
 .elif defined(X11_VIA_FTP)
 .include "Makefile.ftp"

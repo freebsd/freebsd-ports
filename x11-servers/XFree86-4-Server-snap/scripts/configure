@@ -28,14 +28,19 @@ if [ -f $WRKDIR/.cdrom ]; then
   yesno "Is your cdrom distibution already patched? [y] ";
   if [ $answ = YES ]; then
     echo -n "What is the patchlevel of the distribution? [3] ";
-    read pl; if [ X$pl = X ]; then pl=3; fi
+    read pl; if [ X$pl = X ]; then pl=5; fi
     pl=`expr $pl + 1`
     if [ $pl -lt 10 ]; then pl=0$pl; fi
   else
     pl=01
   fi
   echo "==> building the tree (please wait)"
-  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
+  if [ -f ${WRKDIR}/.cd_OR ] ; then
+    (cd $WRKDIR; cp $X11R6/xc/config/util/lndir.c .; cc -o lndir lndir.c; mkdir ./xc; ./lndir $X11R6/xc ./xc)
+  fi
+  if [ -f ${WRKDIR}/.cd_X ] ; then
+    (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
+  fi
 else
   X11FIXES=`cat $WRKDIR/.ftp`
   pl=01
