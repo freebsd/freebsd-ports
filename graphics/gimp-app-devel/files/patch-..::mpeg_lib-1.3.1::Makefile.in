@@ -1,0 +1,25 @@
+--- ../mpeg_lib-1.3.1/Makefile.in.orig	Thu Nov 26 11:03:29 1998
++++ ../mpeg_lib-1.3.1/Makefile.in	Tue Jul  9 22:28:11 2002
+@@ -19,7 +19,7 @@
+ exec_prefix     = @exec_prefix@
+ INSTALL_INCLUDE = @includedir@
+ INSTALL_LIBRARY = @libdir@
+-INSTALL         = @INSTALL@
++INSTALL_DATA		= @INSTALL_DATA@
+ 
+ # Other miscellaneous programs
+ AR            = @AR@
+@@ -67,10 +67,9 @@
+ 		$(CC) -shared -o $(SHLIB) $(LIBOBJ)
+ 
+ install:	$(LIBRARY)
+-		$(INSTALL) -d $(INSTALL_INCLUDE) $(INSTALL_LIBRARY)
+-		$(INSTALL) -m 0644 $(HEADER) $(INSTALL_INCLUDE)/$(HEADER)
+-		$(INSTALL) -m 0644 $(LIBRARY) $(INSTALL_LIBRARY)/$(LIBRARY)
+-		@if test -f $(SHLIB) ; then echo "warning: $(SHLIB) *not* installed (installing shared libraries is too system-specific)" ; fi
++		$(MKDIR) $(INSTALL_INCLUDE) $(INSTALL_LIBRARY)
++		$(INSTALL_DATA) $(HEADER) $(INSTALL_INCLUDE)/$(HEADER)
++		$(INSTALL_DATA) $(LIBRARY) $(INSTALL_LIBRARY)/$(LIBRARY)
+ 
+ clean:
+ 		rm -f $(LIBRARY) $(EXTRAS) $(LIBOBJ) core
