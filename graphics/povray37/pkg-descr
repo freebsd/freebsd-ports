@@ -1,14 +1,16 @@
-POV-Ray 2.2 Persistence of Vision Ray Tracer
+POV-Ray(tm) 3.0 Persistence of Vision Ray Tracer
 
-The  Persistence of Vision Ray Tracer (POV-Ray) is a copy-
-righted freeware program that allows a user to easily cre-
-ate  fantastic,  three dimensional, photo-realistic images
-on just about any computer. POV-Ray reads  standard  ASCII
-text  files that describe the shapes, colors, textures and
-lighting in a scene and mathematically simulates the  rays
-of  light  moving  through  the  scene to produce a photo-
-realistic image!
+The  Persistence  of  Vision(tm)   Ray-Tracer   creates   three-dimensional,
+photo-realistic images using a rendering  technique  called  ray-tracing.  It
+reads in a text  file  containing  information  describing  the  objects  and
+lighting in a scene and generates an image of that scene from the view  point
+of a camera also described in the  text  file.  Ray-tracing  is  not  a  fast
+process by any means, but it produces very high quality images with realistic
+reflections, shading, perspective and other effects.
 
-Ported to FreeBSD by Josh MacDonald, jmacd@uclink.berkeley.edu
+Legal and License information can be consulted in the following file
+/usr/local/lib/povray3/povlegal.doc 
+
+Ported to FreeBSD by Paulo Menezes, paulo@isr.uc.pt
 
 
