@@ -1,0 +1,23 @@
+--- programs/Xserver/hw/xfree86/os-support/shared/libc_wrapper.c.orig	Mon Mar  4 05:03:27 2002
++++ programs/Xserver/hw/xfree86/os-support/shared/libc_wrapper.c	Mon Mar  4 05:03:40 2002
+@@ -1871,7 +1871,9 @@
+     
+     if (xf86shmflg & XF86SHM_RDONLY) shmflg |= SHM_RDONLY;
+     if (xf86shmflg & XF86SHM_RND) shmflg    |= SHM_RND;
++#ifdef SHM_REMAP
+     if (xf86shmflg & XF86SHM_REMAP) shmflg  |= SHM_REMAP;
++#endif
+ 
+     return shmat(id,addr,shmflg);
+ }
+--- programs/Xserver/hw/xfree86/os-support/bsd/Imakefile.orig	Mon Mar  4 05:02:06 2002
++++ programs/Xserver/hw/xfree86/os-support/bsd/Imakefile	Mon Mar  4 05:03:11 2002
+@@ -130,7 +130,7 @@
+ #endif
+ 
+ DEFINES = $(CONSDEFINES) $(APDEFINES) $(IOPERMDEFINES) $(RESDEFINES) \
+-	  $(MTRRDEFINES) $(USBMOUSEDEFINES)
++	  $(MTRRDEFINES) $(USBMOUSEDEFINES) -DHAVE_SYSV_IPC
+ 
+ #if defined(AlphaArchitecture)
+ SpecialObjectRule(bsd_ev56.o, bsd_ev56.c, -mcpu=ev56)
