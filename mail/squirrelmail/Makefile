@@ -48,10 +48,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
-.if !defined(MASTERDIR)
-MASTERDIR=	${.CURDIR}
-.endif
-
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
 	@${ECHO_CMD} "To use the old location ${PREFIX}/squirrelmail define"
