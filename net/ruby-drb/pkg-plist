@@ -48,10 +48,14 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/changelog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/security.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/security.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/security.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/security.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/drb/ja
