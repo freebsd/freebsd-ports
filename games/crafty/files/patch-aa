@@ -1,6 +1,15 @@
---- Makefile.orig	Tue May 18 07:23:36 1999
-+++ Makefile	Sat Jun 19 10:54:51 1999
-@@ -69,13 +69,13 @@
+--- Makefile.orig	Tue May 18 09:23:36 1999
++++ Makefile	Sat Jun 19 16:31:54 1999
+@@ -23,7 +23,7 @@
+ #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
+ #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
+ #     SUN_BSD  {Sun SparcStation running SunOS (BSD) Unix}
+-#     FreeBSD  {80X86 architecture running FreeBSD (unix)}
++#     FreeBSD  {80X86/Alpha architecture running FreeBSD (unix)}
+ #   
+ #   The next options are optimizations inside Crafty that you will have
+ #   test to see if they help.  on some machines, these will slow things
+@@ -69,13 +69,15 @@
  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
  # asm     = X86.o
  
@@ -15,12 +24,14 @@
 -#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
 +#CFLAGS  = -pipe -O -Wall
 +LDFLAGS = 
-+opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
-+          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
++opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS
++.if ${MACHINE_ARCH} == "i386"
++opt	+= -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
++.endif
  
  # FreeBSD (pgcc)
  #target  = FreeBSD
-@@ -95,18 +95,21 @@
+@@ -95,18 +97,23 @@
   
  # LINUX (pgcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
@@ -41,15 +52,17 @@
  # Uncomment the SECOND `asm' line for ELF systems.
  #
 -#asm     = X86-aout.o
++.if ${MACHINE_ARCH} == "i386"
 +.if ${PORTOBJFORMAT} == "aout"
 +asm     = X86-aout.o
 +.else
  asm     = X86-elf.o
 +.endif
++.endif
   
  # LINUX (gcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
-@@ -162,7 +165,7 @@
+@@ -162,7 +169,7 @@
  
  # Do not change anything below this line!
  
@@ -58,7 +71,7 @@
  
  objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
          nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \
-@@ -189,7 +192,7 @@
+@@ -189,7 +196,7 @@
  
  egtb.o: egtb.cpp
  	@echo $(CC) -c $(CFLAGS) egtb.cpp
