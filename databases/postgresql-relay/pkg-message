@@ -1,0 +1,3 @@
+Databases/postgresql-relay now supports rc.subr.
+Please add 'postgresqlrelay_enable="YES"' to your /etc/rc.conf
+to make it start autoamtically at startup.

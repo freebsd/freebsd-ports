@@ -36,4 +36,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/postgresql-relay.8 ${MAN8PREFIX}/man/man8
 	${INSTALL_SCRIPT} ${WRKDIR}/postgresql-relay.sh ${PREFIX}/etc/rc.d
 
+post-install:
+	${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
