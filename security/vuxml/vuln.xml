@@ -3014,11 +3014,12 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
+      <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
     </references>
     <dates>
       <discovery>2004-10-11</discovery>
       <entry>2004-11-11</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -3372,13 +3373,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
       <references>
-	<mlist msgid="1CE07882ECEE894CA2D5A89B8DEBC4010A2DD2@porgy.admin.idefense.com>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109890310929207</mlist>
+	<mlist msgid="1CE07882ECEE894CA2D5A89B8DEBC4010A2DD2@porgy.admin.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109890310929207</mlist>
 	<url>http://www.gentoo.org/security/en/glsa/glsa-200410-29.xml</url>
 	<url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ssh2-debug.html</url>
       </references>
       <dates>
 	<discovery>2004-10-26</discovery>
 	<entry>2004-11-04</entry>
+	<modified>2005-01-19</modified>
       </dates>
   </vuln>
 
@@ -11573,13 +11575,13 @@ misc.c:
       <uscertta>TA04-356A</uscertta>
       <certvu>497400</certvu>
       <mlist msgid="20041113030542.11396.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110029415208724</mlist>
-      <mlist msgid="20041118123055.28647.qmail@mail.securityfocus.com>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110079436714518</mlist>
+      <mlist msgid="20041118123055.28647.qmail@mail.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110079436714518</mlist>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
     </references>
     <dates>
       <discovery>2004-11-18</discovery>
       <entry>2004-12-22</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
