@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Thu Aug 31 19:02:21 2000
++++ Makefile.PL	Mon Oct  9 16:43:32 2000
+@@ -1,7 +1,7 @@
+ use Config;
+ use ExtUtils::MakeMaker qw(prompt WriteMakefile);
+ 
+-my $choice;
++my $choice = 3;
+ while (!$choice) {
+   $reply = prompt(
+ 		  "\nWhat do you want to build?\n\n" .
