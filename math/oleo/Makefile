@@ -37,6 +37,10 @@ CONFIGURE_ARGS+=	--without-motif
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 pre-everything::
 .if !defined(WITH_MOTIF)
 	@${ECHO_MSG}

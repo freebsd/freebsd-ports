@@ -62,6 +62,12 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			supportedTeXmacros.html \
 			toc.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=			"Does not compile"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -70,4 +76,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
