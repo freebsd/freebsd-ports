@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.0.0.r.1
-PORTREVISION=	1
+PORTVERSION=	1.0.1
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
 		http://sylpheed.good-day.net/sylpheed/:source \
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--disable-imlib
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme03.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else
@@ -106,8 +106,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
-		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
+		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|mime\.types|sylpheed-mime\.types|g' \
 		${WRKSRC}/src/procmime.c
 
