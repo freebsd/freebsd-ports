@@ -1,17 +1,23 @@
 bin/getmail
-%%PORTDOCS%%share/doc/getmail/CHANGELOG
-%%PORTDOCS%%share/doc/getmail/docs.txt
-%%PORTDOCS%%share/doc/getmail/faq.txt
-%%PORTDOCS%%share/doc/getmail/getmail.txt
-share/examples/getmail/getmailrc-example
-share/getmail/ConfParser.py
-share/getmail/getmail.py
-share/getmail/getmail_classes.py
-share/getmail/getmail_constants.py
-share/getmail/getmail_defaults.py
-share/getmail/getmail_mbox.py
-share/getmail/getmail_utilities.py
-share/getmail/timeoutsocket.py
-@dirrm share/getmail
-@dirrm share/examples/getmail
-%%PORTDOCS%%@dirrm share/doc/getmail
+bin/getmail_maildir
+bin/getmail_mbox
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/getmail.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/getmailrc-example
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/ConfParser.py
+%%DATADIR%%/getmail.py
+%%DATADIR%%/getmail_classes.py
+%%DATADIR%%/getmail_constants.py
+%%DATADIR%%/getmail_defaults.py
+%%DATADIR%%/getmail_mbox.py
+%%DATADIR%%/getmail_utilities.py
+%%DATADIR%%/timeoutsocket.py
+@dirrm %%DATADIR%%
