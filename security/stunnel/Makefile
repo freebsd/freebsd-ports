@@ -7,7 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -19,6 +19,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
 USE_LIBTOOL_VER=	15
+USE_RC_SUBR=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -50,9 +51,9 @@ post-patch:
 .endif
 
 post-install:
-	@${SED} "s+!!PREFIX!!+${PREFIX}+g" < ${FILESDIR}/stunnel.sh \
-		> ${PREFIX}/etc/rc.d/stunnel.sh.sample
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/stunnel.sh.sample
+	${SED} "s+!!PREFIX!!+${PREFIX}+g; s+!!RC_SUBR!!+${RC_SUBR}+g" \
+		< ${FILESDIR}/stunnel.sh > ${WRKDIR}/stunnel.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/stunnel.sh ${PREFIX}/etc/rc.d/
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ""
@@ -60,6 +61,13 @@ post-install:
 	@${ECHO} "To create and install a new certificate, type \"make cert\""
 	@${ECHO} ""
 	@${ECHO} "And don't forget to check out the FAQ at http://www.stunnel.org/"
+	@${ECHO} "**************************************************************************"
+	@${ECHO} ""
+	@${ECHO} "*********************** WARNING! WARNING! WARNING! ***********************"
+	@${ECHO} "The stunnel startup script has been converted to rc_subr"
+	@${ECHO} "format now.  You have to set at least the stunnel_enable"
+	@${ECHO} "variable, and maybe also stunnel_config and stunnel_pidfile,"
+	@${ECHO} "if you want stunnel to be started automatically at boot time!"
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
 
