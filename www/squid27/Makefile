@@ -3,10 +3,10 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.56 1999/05/23 21:15:07 peter Exp $
+# $Id: Makefile,v 1.57 1999/06/05 19:58:02 mharo Exp $
 #
 
-DISTNAME=	squid-2.2.STABLE3
+DISTNAME=	squid-2.2.STABLE4
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 MASTER_SITES=  \
