@@ -1,0 +1,14 @@
+--- popper/scram.c.orig	Tue Jul 25 04:07:21 2000
++++ popper/scram.c	Wed Nov  1 11:46:31 2000
+@@ -17,7 +17,10 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ 
+-#include "md5.h"
++#include <md5.h>
++
++#define UINT4 u_int32_t
++
+ #include "hmac-md5.h"
+ #include "scram.h"
+ 

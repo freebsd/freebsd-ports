@@ -1,0 +1,15 @@
+--- popper/hmac.c.orig	Sat Jul  1 00:58:28 2000
++++ popper/hmac.c	Wed Nov  1 11:46:36 2000
+@@ -12,7 +12,11 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include "md5.h"
++#include <sys/types.h>
++#include <md5.h>
++
++#define UINT4 u_int32_t
++
+ #include "hmac-md5.h"
+ 
+ 
