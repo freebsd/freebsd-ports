@@ -32,6 +32,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 .if defined(METAKIT_WITH_PYTHON)
 USE_PYTHON=	yes
+PYTHON_VERSION?=	python2.2
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
@@ -68,16 +69,24 @@ pre-patch:
 	${SED} -e "s=doc/==" \
 		${WRKSRC}/../MetaKit.html.sed > ${WRKSRC}/../MetaKit.html
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
-	@${MV} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
+	@${CP} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
 	${SED} -e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
 		${WRKSRC}/../unix/Makefile.in.sed \
 		> ${WRKSRC}/../unix/Makefile.in
 .endif
 .if defined(METAKIT_WITH_PYTHON)
-	@${MV} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
+	@${CP} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
 	${SED} -e "s=python2.2=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in.sed \
 		> ${WRKSRC}/../unix/Makefile.in
+	@${CP} ${WRKSRC}/../unix/configure ${WRKSRC}/../unix/configure.sed
+	${SED} -e "s=python2.2=${PYTHON_VERSION}=" \
+		${WRKSRC}/../unix/configure.sed \
+		> ${WRKSRC}/../unix/configure
+.endif
+
+post-install:
+.if defined(METAKIT_WITH_PYTHON)
 .endif
 
 post-install:
