@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.4 1995/04/17 07:56:09 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/22 12:29:38 asami Exp $
 #
 
 DISTNAME=	WWW
@@ -28,6 +28,5 @@ do-install:
 		${WRKSRC}/Daemon/unix/cgiparse ${WWW_ROOT}/cgi-bin
 	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${WRKSRC}/Daemon/unix/cgiutils ${WWW_ROOT}/cgi-bin
-	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>

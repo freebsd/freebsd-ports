@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.6 1995/04/18 13:56:22 adam Exp $
+# $Id: Makefile,v 1.7 1995/04/22 12:06:02 asami Exp $
 #
 
 DISTNAME=	cnews
@@ -52,6 +52,5 @@ do-install:
 	@echo "	to suit your local system and news topology."
 	@echo "!!!!!!!!"
 	@echo ""
-	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
