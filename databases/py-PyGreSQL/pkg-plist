@@ -1,0 +1,6 @@
+lib/site-python/pgmodule.so
+lib/site-python/pgext.py
+lib/site-python/pgext.pyc
+lib/site-python/pgtools.py
+lib/site-python/pgtools.pyc
+share/doc/README.PyGreSQL
