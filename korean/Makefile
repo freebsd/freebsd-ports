@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.23 1998/07/29 14:52:10 kuriyama Exp $
+# $Id: Makefile,v 1.24 1998/09/17 14:15:20 kuriyama Exp $
 #
 
     SUBDIR += Wnn
@@ -15,7 +15,6 @@
     SUBDIR += hanyangfonts
     SUBDIR += hcode
     SUBDIR += helvis
-    SUBDIR += hfvwm2
     SUBDIR += hlatexpsfonts
     SUBDIR += hmconv
     SUBDIR += hpscat
