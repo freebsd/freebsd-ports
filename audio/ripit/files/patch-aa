@@ -1,0 +1,41 @@
+diff -uNr ../ripit-1.2.old/ripit.pl ./ripit.pl
+--- ../ripit-1.2.old/ripit.pl	Sun May  2 18:24:11 1999
++++ ./ripit.pl	Sun May  2 18:27:10 1999
+@@ -26,8 +26,8 @@
+ # User configurable variables
+ #
+ 
+-$cddev 		= "/dev/cdrom";		# CD Audio device
+-$outputdir 	= "/dosc/cdrip/";	# Where the MP3s should go
++$cddev 		= "/dev/rcd0c";		# CD Audio device
++$outputdir 	= "/home/mp3/";		# Where the MP3s should go
+ $bitrate	= 160;			# Bitrate for MP3s
+ 
+ $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
+@@ -312,14 +312,11 @@
+ 
+     &printflush(RIPLOG,"Ripping $tracklist[$_ - 1]...\n");
+ 
+-    if (system("cdparanoia -d $cddev $riptrackno \"$riptrackname.rip\"")) {
+-       &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
+-       die "cdparanoia failed on $tracklist[$_ - 1]";
++    if (system("tosha -d $cddev -f wav -t $riptrackno -o \"$riptrackname.wav\"")) {
++       &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
++       die "tosha failed on $tracklist[$_ - 1]";
+     }
+ 
+-    # Rename rip file to a wav so bladeenc will encode it
+-    rename "$riptrackname.rip","$riptrackname.wav";
+-
+     &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
+ 
+     # Start the Encoder in the background. but only once
+@@ -349,7 +346,7 @@
+     print "\nBladeenc Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
+     &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
+ 
+-    # Keep looping until the file appears, ie wait for cdparanoia
++    # Keep looping until the file appears, ie wait for tosha
+     # timeout after 30 minutes
+     $x=0;
+     while( ! -r "$riptrackname.wav" ){ 
