@@ -1,0 +1,6 @@
+A Tcl Package to Read and Write Shapefiles
+
+Gpsmanshp was developed for use in GPSMan, a manager of GPS receiver
+data. It is written in C and is based on shapelib.
+
+WWW: http://www.ncc.up.pt/gpsmanshp/
