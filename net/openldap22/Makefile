@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 #
 BUILD_CLIENTS=	yes
 INSTALLS_SHLIB=	yes
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-client
+PKGNAMESUFFIX=	-client
 COMMENT=	Open source LDAP client software
 CONFIGURE_ARGS+=			\
 	--disable-slapd			\
@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=			\
 # slapd only
 #
 BUILD_SLAPD=	yes
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-slapd
+PKGNAMESUFFIX=	-slapd
 COMMENT=	Open source LDAP server software (slapd only)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 CONFIGURE_ARGS+=			\
@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=			\
 # and some backend we just don't install them later on
 #
 BUILD_SLURPD=	yes
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-slurpd
+PKGNAMESUFFIX=	-slurpd
 COMMENT=	Open source LDAP server software (slurpd only)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 RUN_DEPENDS+=	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap-slapd2.1
@@ -158,7 +158,7 @@ CONFIGURE_ARGS+=			\
 #
 BUILD_SLAPD=	yes
 BUILD_SLURPD=	yes
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-server
+PKGNAMESUFFIX=	-server
 COMMENT=	Open source LDAP server software (slapd and slurpd)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 CONFIGURE_ARGS+=			\
