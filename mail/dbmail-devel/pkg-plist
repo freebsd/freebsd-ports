@@ -7,7 +7,6 @@ bin/dbmail-adduser
 bin/dbmail-readvut
 bin/raw-convertor
 bin/dbmail-mini-injector
-bin/install-dbmail.sh
 etc/dbmail.conf-dist
 %%MYSQL%%lib/libmysqldbmail.a
 %%PGSQL%%lib/libpgsqldbmail.a

@@ -39,7 +39,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
-PORTDOCS=		INSTALL README
+PORTDOCS=		INSTALL README EXTRAS
 
 MAN1=			dbmail-adduser.1 dbmail-imapd.1 \
 			dbmail-maintenance.1 dbmail-pop3d.1 dbmail-smtp.1
@@ -65,6 +65,7 @@ post-install:
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
 	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	@${RM} ${PREFIX}/bin/install-dbmail.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
