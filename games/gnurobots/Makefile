@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnurobots
 
-MAINTAINER=	avh4@usa.net
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 

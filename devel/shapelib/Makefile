@@ -10,7 +10,7 @@ PORTVERSION=	1.2.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 
-MAINTAINER=	aa8vb@nc.rr.com
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 

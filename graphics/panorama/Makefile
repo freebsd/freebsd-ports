@@ -10,7 +10,7 @@ PORTVERSION=	0.13.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/
 
-MAINTAINER=	avh4@usa.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 

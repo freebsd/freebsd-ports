@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	rhh
 DISTNAME=	TerrainApps-${PORTVERSION}
 
-MAINTAINER=	aa8vb@nc.rr.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=    vtdata.1:${PORTSDIR}/graphics/vterrain-sdk \
 		wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk \

@@ -10,7 +10,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.6/
 
-MAINTAINER=	kzentner@u.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
