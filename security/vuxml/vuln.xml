@@ -32,6 +32,119 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cd7e260a-6bff-11d9-a5df-00065be4b5b6">
+   <topic>newsgrab -- insecure file and directory creation</topic>
+   <affects>
+    <package>
+     <name>newsgrab</name>
+     <range><le>0.4.0</le></range>
+    </package>
+   </affects>
+   <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>The newsgrab script uses insecure permissions during the
+     creation of the local output directory and downloaded files.</p>
+     <p>After a file is created, permissions on it are set using the mode
+     value of the newsgroup posting. This can potentially be a problem
+     when the mode is not restrictive enough. In addition, the output
+     directory is created with world writable permissions allowing other
+     users to drop symlinks or other files at that location.</p>
+    </body> 
+   </description>
+   <references>
+    <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
+    <url>http://sourceforge.net/project/shownotes.php?release_id=300562</url>
+    <cvename>CAN-2005-0154</cvename>
+   </references>
+   <dates>
+    <discovery>2005-01-18</discovery>
+    <entry>2005-02-01</entry>
+   </dates>
+  </vuln>
+  <vuln vid="35f6093c-73c3-11d9-8a93-00065be4b5b6">
+   <topic>newsgrab -- directory traversal vulnerability</topic>
+    <affects>
+     <package>
+      <name>newsgrab</name>
+      <range><le>0.4.0</le></range>
+     </package>
+    </affects>
+    <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>The newsgrab script creates files by using the names provided
+     in the newsgroup messages in a perl open() call.  This is done
+     without performing any security checks to prevent a
+     directory traversal. A specially crafted newsgroup message
+     could cause newsgrab to drop an attachment anywhere on the
+     file system using the permissions of the user running the
+     script.</p>
+    </body> 
+   </description>
+   <references>
+    <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
+    <url>http://sourceforge.net/project/shownotes.php?release_id=300562</url>
+    <cvename>CAN-2005-0153</cvename>
+   </references>
+   <dates>
+    <discovery>2005-01-18</discovery>
+    <entry>2005-02-01</entry>
+   </dates>
+  </vuln>
+  <vuln vid="7f13607b-6948-11d9-8937-00065be4b5b6">
+   <topic>newspost -- server response buffer overflow vulnerability</topic>
+   <affects>
+    <package>
+     <name>newspost</name>
+     <range><le>2.1.1</le></range>
+    </package>
+   </affects>
+   <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The newspost program uses a function named socket_getline to
+      read server responses from the network socket. Unfortunately this
+      function does not check the length of the buffer in which the read
+      data is stored and only stops reading when a newline character is found.</p>
+      <p>A malicious NNTP server could use this bug to cause a buffer
+      overflow by sending an overly long response. Such an overflow allows
+      arbitrary code to be executed, with the privileges of the newspost
+      process, on the affected systems.</p>
+    </body> 
+   </description>
+   <references>
+    <url>http://people.freebsd.org/~niels/issues/newspost-20050114.txt</url>
+    <cvename>CAN-2005-0101</cvename>
+   </references>
+   <dates>
+    <discovery>2005-01-14</discovery>
+    <entry>2005-02-01</entry>
+   </dates>
+  </vuln>
+  <vuln vid="76e0b133-6bfd-11d9-a5df-00065be4b5b6">
+   <topic>newsfetch -- server response buffer overflow vulnerability</topic>
+   <affects>
+     <package>
+      <name>newsfetch</name>
+      <range><le>2.1.1_1</le></range>
+    </package>
+   </affects>
+   <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>The newsfetch program uses the sscanf function to read information
+       from server responses into static memory buffers. Unfortunately
+       this is done without any proper bounds checking. As a result long
+       server responses may cause an overflow when a newsgroup listing is
+       requested from an NNTP server.</p>
+    </body> 
+   </description>
+   <references>
+    <url>http://people.freebsd.org/~niels/issues/newsfetch-20050119.txt</url>
+    <cvename>CAN-2005-0132</cvename>
+   </references>
+   <dates>
+    <discovery>2005-01-18</discovery>
+    <entry>2005-02-01</entry>
+   </dates>
+  </vuln>
   <vuln vid="23fb5a04-722b-11d9-9e1e-c296ac722cb3">
     <topic>squid -- buffer overflow in WCCP recvfrom() call</topic>
     <affects>
