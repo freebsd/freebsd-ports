@@ -216,6 +216,7 @@ share/WindowMaker/menu.pt
 share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
 share/WindowMaker/menu.tr
+share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles

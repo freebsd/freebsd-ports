@@ -1,11 +1,11 @@
---- configure.orig	Sun Aug 30 04:01:52 1998
-+++ configure	Tue Sep  1 09:42:43 1998
-@@ -3523,44 +3523,6 @@
- ICONEXT="xpm"
+--- configure.orig	Thu Sep  3 03:46:35 1998
++++ configure	Thu Sep  3 17:53:27 1998
+@@ -3525,49 +3525,6 @@
  #
+ 
  if test "$tif" = yes; then
 -    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
--echo "configure:3528: checking for TIFFGetVersion in -ltiff" >&5
+-echo "configure:3530: checking for TIFFGetVersion in -ltiff" >&5
 -ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
 -if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
@@ -13,7 +13,7 @@
 -  ac_save_LIBS="$LIBS"
 -LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
 -cat > conftest.$ac_ext <<EOF
--#line 3536 "configure"
+-#line 3538 "configure"
 -#include "confdefs.h"
 -/* Override any gcc2 internal prototype to avoid an error.  */
 -/* We use char because int might match the return type of a gcc2
@@ -24,7 +24,7 @@
 -TIFFGetVersion()
 -; return 0; }
 -EOF
--if { (eval echo configure:3547: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-if { (eval echo configure:3549: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
 -  rm -rf conftest*
 -  eval "ac_cv_lib_$ac_lib_var=yes"
 -else
@@ -39,22 +39,26 @@
 -fi
 -if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
 -  echo "$ac_t""yes" 1>&6
--  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" ICONEXT="tiff"
+-  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" 
+-	ICONEXT="tiff"
 -else
 -  echo "$ac_t""no" 1>&6
- echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
- echo "configure:3566: checking for TIFFGetVersion in -ltiff34" >&5
- ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
-@@ -3603,8 +3565,6 @@
- 
- fi
- 
 -fi
 -
+-
+-    if ! test "$ICONEXT" = "tiff"; then
+ 	echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
+ echo "configure:3573: checking for TIFFGetVersion in -ltiff34" >&5
+ ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
+@@ -3609,7 +3566,6 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-    fi
+ fi
  
  
- 
-@@ -3806,7 +3766,7 @@
+@@ -3778,7 +3734,7 @@
  
  
  
