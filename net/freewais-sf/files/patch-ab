@@ -1,0 +1,11 @@
+--- ir/Makefile.in.orig	Tue Jul 30 00:42:14 1996
++++ ir/Makefile.in	Mon Feb 17 16:33:11 1997
+@@ -196,7 +196,7 @@
+ 
+ libwais.a: $(PROTOCOL_OBJS) $(INV_OBJS) $(SIG_OBJS) $(LOCAL_OBJS) $(CLIENT_OBJS)
+ 	$(RM) $@
+-	$(AR) $@ $(PROTOCOL_OBJS) $(INV_OBJS) $(SIG_OBJS) $(LOCAL_OBJS) $(CLIENT_OBJS) ../ctype/ctype.o
++	$(AR) $@ $(PROTOCOL_OBJS) $(INV_OBJS) $(SIG_OBJS) $(LOCAL_OBJS) $(CLIENT_OBJS)
+ 	$(RANLIB) $@
+ 
+ install.lib:: libwais.a libinv.a libsig.a libclient.a $(LIBLOCAL)
