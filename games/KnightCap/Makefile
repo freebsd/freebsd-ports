@@ -15,15 +15,15 @@ DISTNAME=	KnightCap-${PORTVERSION}
 
 MAINTAINER=	bugg@bugg.strangled.net
 
+WRKSRC=		${WRKDIR}/Export
 USE_MESA=	yes
 ALL_TARGET=	KnightCap
-WRKSRC=		${WRKDIR}/Export
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/KnightCap
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/KnightCap
+	@${MKDIR} ${PREFIX}/share/doc/KnightCap
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/KnightCap
 .endif
 
 .include <bsd.port.mk>
