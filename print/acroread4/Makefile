@@ -19,7 +19,7 @@ DISTNAME=	fdec-rs-405
 MAINTAINER=	dima@FreeBSD.org
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+USE_LINUX=	yes
 .elif ${ARCH} == "alpha"
 RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif

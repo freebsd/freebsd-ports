@@ -14,12 +14,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhicks@glenatl.glenayre.com
 
-# XXX - how to fix the following?
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
-ONLY_FOR_ARCHS=	i386
 NO_CDROM=	licensing
 NO_PACKAGE=	no version number on distfile
+
+ONLY_FOR_ARCHS=	i386
+
+USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/${UNTAR_DIR}
 UNTAR_DIR=	usr/local/ETHOberon
 
