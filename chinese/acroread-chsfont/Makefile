@@ -6,7 +6,7 @@
 #
 
 DISTNAME=	chsfont
-CATEGORIES=	chinese linux
+CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 
