@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: check_old_version,v 1.3 1998/02/13 10:54:49 tg Exp $
+# $FreeBSD$
 #
 
 if( -d "/var/db/msqldb" ) {
