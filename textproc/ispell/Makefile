@@ -1,6 +1,6 @@
 DISTFILES=	ispell-3.1.08.tar.gz
 DISTNAME=	ispell-3.1
-MASTER_SITES=	ftp://ftp.math.orst.edu/pub/ispell-3.1/
+MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 
