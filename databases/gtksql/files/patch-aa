@@ -11,16 +11,16 @@
 -PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
 -PGSQLCFLAGS = -I/usr/local/pgsql/include -DUSE_POSTGRESQL
 -PGSQLOBJS   = postgres.o
-+#PGSQLIBS    = -L/usr/local/lib -lpq
-+#PGSQLCFLAGS = -I/usr/local/include/pgsql -DUSE_POSTGRESQL
++#PGSQLIBS    = -L$(LOCALBASE)/lib -lpq
++#PGSQLCFLAGS = -I$(LOCALBASE)/include/postgresql/internal -DUSE_POSTGRESQL
 +#PGSQLOBJS   = postgres.o
  
  # Here, what you need for MySQL
 -MYSQLIBS    = -L/usr/lib/mysql -lmysqlclient
 -MYSQLCFLAGS = -I/usr/include/mysql -DUSE_MYSQL
 -MYSQLOBJS   = mysql.o
-+#MYSQLIBS    = -L/usr/local/lib/mysql -lmysqlclient
-+#MYSQLCFLAGS = -I/usr/local/include/mysql -DUSE_MYSQL
++#MYSQLIBS    = -L$(LOCALBASE)/lib/mysql -lmysqlclient
++#MYSQLCFLAGS = -I$(LOCALBASE)/include/mysql -DUSE_MYSQL
 +#MYSQLOBJS   = mysql.o
  
  # Nothing to change below this point...
