@@ -1,0 +1,11 @@
+--- configure.orig	Wed Apr 22 20:32:48 1998
++++ configure	Wed Apr 22 20:33:09 1998
+@@ -1647,7 +1647,7 @@
+ # Extract the library version ID from jpeglib.h.
+ echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
+ echo "configure:1650: checking libjpeg version number" >&5
+-JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
++JPEG_LIB_VERSION=8
+ echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
+ 
+ 
