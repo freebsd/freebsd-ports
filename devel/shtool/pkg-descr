@@ -1,5 +1,5 @@
 GNU shtool -- The GNU Portable Shell Tool
-Copyright (c) 1994-1999 Ralf S. Engelschall <rse@engelschall.com>
+Copyright (c) 1994-2000 Ralf S. Engelschall <rse@engelschall.com>
 
 The GNU shtool program is a compilation of small but very stable and
 portable shell scripts into a single shell tool. All ingredients were
