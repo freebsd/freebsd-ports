@@ -5,3 +5,5 @@ have three applications and four devices, traditionally you'd have had to
 write 12 different programs. With SANE, this number is reduced to seven:
 the three applications plus the four drivers. Of course, the savings get
 even bigger as more and more drivers and/or applications are added. 
+
+WWW: http://www.mostang.com/sane/

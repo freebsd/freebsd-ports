@@ -8,10 +8,11 @@
 
 DISTNAME=	sane-1.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
-		ftp://ftp.lahn.de/pub/platforms/linux/libs/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://ftp.mostang.com/pub/sane/
+MASTER_SITE_SUBDIR=	apps/graphics/capture
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER= 	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -21,7 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 .if ${OSVERSION} < 300000
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
