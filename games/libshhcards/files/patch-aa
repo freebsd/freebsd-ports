@@ -1,11 +1,11 @@
 --- Makefile.orig	Sun Mar 23 03:02:53 1997
 +++ Makefile	Wed Sep 30 23:28:35 1998
 @@ -1,14 +1,17 @@
- # $Id: patch-aa,v 1.3 1998/10/01 06:09:01 steve Exp $
+ # $Id: patch-aa,v 1.4 1999/01/10 17:21:34 simokawa Exp $
  DIST		= shhcards
  VERMAJ		= 1
 -VERMIN		= 0
--VERPAT		= 3
+-VERPAT		= 4
 -VERSION		= $(VERMAJ).$(VERMIN).$(VERPAT)
 +VERMIN		= 1
 +ifeq ($(PORTOBJFORMAT),elf)
