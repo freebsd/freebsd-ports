@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://www.mod-snmp.com/distr/:mod_snmp \
 		http://sysoev.ru/mod_accel/:mod_accel \
 		http://sysoev.ru/mod_deflate/:mod_deflate
-PKGNAMESUFFIX=	${MODSNMP_SUFFIX}${MODACCEL_SUFFIX}${MODDEFLATE_SUFFIX}${IPV6_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX?=	${MODSNMP_SUFFIX}${MODACCEL_SUFFIX}${MODDEFLATE_SUFFIX}${IPV6_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE}:mod_ssl \
 		${MODSNMP_DISTFILE} ${MODACCEL_DISTFILE} ${MODDEFLATE_DISTFILE}
@@ -157,6 +157,7 @@ CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
 EXTRA_PATCHES+=	${WRKSRC}/src/modules/snmp_agt/mod_snmp.patch
 PLIST_SUB+=	WITHSNMP=""
 .else
+CONFLICTS+=	apache+mod_snmp*-1.*
 PLIST_SUB+=	WITHSNMP="@comment "
 .endif
 
@@ -180,6 +181,7 @@ CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
 EXTRA_PATCHES+=	${FILESDIR}/mod_accel-preservehost.patch
 PLIST_SUB+=	WITHACCEL=""
 .else
+CONFLICTS+=	apache+mod_accel*-1.*
 PLIST_SUB+=	WITHACCEL="@comment "
 .endif
 
@@ -200,6 +202,7 @@ PVERSION_MODDEFLATE=	+${VERSION_MODDEFLATE}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_deflate.o
 PLIST_SUB+=	WITHDEFLATE=""
 .else
+CONFLICTS+=	apache+mod_deflate*-1.*
 PLIST_SUB+=	WITHDEFLATE="@comment "
 .endif
 
