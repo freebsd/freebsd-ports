@@ -7,9 +7,11 @@
 
 PORTNAME=	scim
 PORTVERSION=	0.99.5
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://freedesktop.org/~suzhe/sources/
-
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://freedesktop.org/~suzhe/sources/
+MASTER_SITE_SUBDIR=scim
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	Smart Common Input Method platform
 
@@ -21,15 +23,21 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 499999
-BROKEN=		"4.x lacks C99 compliant wctypes implementation"
+.if ${OSVERSION} < 500035
+BUILD_DEPENDS+= ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=   ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
+                LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-4-stable
+PLIST_SUB=	NOSTABLE="@comment "
+.else
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
 
 post-configure:

@@ -1,6 +1,6 @@
 bin/scim
 bin/scim-config-agent
-bin/scim-make-table
+%%NOSTABLE%%bin/scim-make-table
 bin/scim-setup
 @unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim.schemas >/dev/null || /usr/bin/true
 etc/gconf/schemas/scim.schemas
