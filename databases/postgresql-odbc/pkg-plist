@@ -1,5 +1,5 @@
-lib/psqlodbc.so
 lib/psqlodbc.la
-share/postgresql/odbc.sql
-share/postgresql/odbc-drop.sql
+lib/psqlodbc.so
+share/psqlodbc/odbc-drop.sql
+share/psqlodbc/odbc.sql
 @dirrm share/psqlodbc
