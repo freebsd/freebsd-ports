@@ -1,5 +1,5 @@
---- Makefile	21 May 2002 10:01:23 -0000	1.1.1.3
-+++ Makefile	21 May 2002 10:07:25 -0000	1.5
+--- Makefile	20 Sep 2002 07:24:50 -0000	1.1.1.4
++++ Makefile	20 Sep 2002 07:27:21 -0000	1.6
 @@ -1,12 +1,12 @@
  ##################################################################
  # You can modify CC variable if you have compiler other than GCC
@@ -29,16 +29,16 @@
  cygwin: standalone
  
  apg:
--	${CC} ${FLAGS} ${LIBS} ${LIBM} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES}
-+	${CC} ${CFLAGS} ${LIBS} ${LIBM} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES}
+-	${CC} ${FLAGS} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES} ${LIBS} ${LIBM}
++	${CC} ${CFLAGS} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES} ${LIBS} ${LIBM}
  
  apgd:
--	${CC} ${FLAGS} ${CS_LIBS} ${LIBM} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES}
-+	${CC} ${CFLAGS} ${CS_LIBS} ${LIBM} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES}
+-	${CC} ${FLAGS} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES} ${CS_LIBS} ${LIBM}
++	${CC} ${CFLAGS} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES} ${CS_LIBS} ${LIBM}
  
  apgbfm:
--	${CC} ${FLAGS} ${LIBM} -o ${BFM_PROGNAME} ${BFM_SOURCES}
-+	${CC} ${CFLAGS} ${LIBM} -o ${BFM_PROGNAME} ${BFM_SOURCES}
+-	${CC} ${FLAGS} -o ${BFM_PROGNAME} ${BFM_SOURCES} ${LIBM}
++	${CC} ${CFLAGS} -o ${BFM_PROGNAME} ${BFM_SOURCES} ${LIBM}
  
  strip:
  	strip ${PROGNAME}
