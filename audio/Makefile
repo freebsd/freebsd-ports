@@ -93,6 +93,7 @@
     SUBDIR += festival
     SUBDIR += festival+OGI
     SUBDIR += festlex-cmu
+    SUBDIR += festlex-ifd
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
     SUBDIR += festlex-poslex

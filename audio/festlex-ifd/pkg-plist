@@ -1,0 +1,4 @@
+share/festival/lib/dicts/ifd/lex.out
+share/festival/lib/dicts/ifd/lex.out-README
+@dirrm share/festival/lib/dicts/ifd
+@unexec rmdir %D/share/festival/lib/dicts 2>/dev/null || true
