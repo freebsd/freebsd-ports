@@ -7,6 +7,7 @@
 
 PORTNAME=	RealTimeBattle
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.lysator.liu.se/realtimebattle/Download/
 
