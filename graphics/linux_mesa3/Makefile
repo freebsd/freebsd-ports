@@ -7,9 +7,9 @@
 
 PORTNAME=		mesa
 PORTVERSION=		3.4.2
+PORTREVISION=		1
 CATEGORIES=		graphics linux
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 			ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
 MASTER_SITE_SUBDIR=	mesa3d
 PKGNAMEPREFIX=		linux_
@@ -43,6 +43,7 @@ GL_MAJOR_VER=		1
 GL_MINOR_VER=		3
 GLUT_MAJOR_VER=		3
 GLUT_MINOR_VER=		8
+LIBMESA_MAJOR_VER=	3
 
 MAKE_ENV=		PATH=${LINUXBASE}/usr/bin:${PATH}
 STRIP_CMD=		${LINUXBASE}/usr/bin/strip
@@ -50,14 +51,15 @@ STRIP_CMD=		${LINUXBASE}/usr/bin/strip
 PLIST_SUB+=		GL_MAJOR_VER=${GL_MAJOR_VER} \
 			GL_MINOR_VER=${GL_MINOR_VER} \
 			GLUT_MAJOR_VER=${GLUT_MAJOR_VER} \
-			GLUT_MINOR_VER=${GLUT_MINOR_VER}
+			GLUT_MINOR_VER=${GLUT_MINOR_VER} \
+			LIBMESA_MAJOR_VER=${LIBMESA_MAJOR_VER}
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/libglut.so.${GLUT_MAJOR_VER}.${GLUT_MINOR_VER}.0
 	@for R in GL GLU; do \
 		${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/lib$$R.so.${GL_MAJOR_VER}.${GL_MINOR_VER}.0; \
 		${LN} -s lib$$R.so ${PREFIX}/usr/X11R6/lib/libMesa$$R.so; \
-		${LN} -s lib$$R.so.${GL_MAJOR_VER} ${PREFIX}/usr/X11R6/lib/libMesa$$R.so.${GL_MAJOR_VER}; \
+		${LN} -s lib$$R.so.${GL_MAJOR_VER} ${PREFIX}/usr/X11R6/lib/libMesa$$R.so.${LIBMESA_MAJOR_VER}; \
 	done
 	${LINUXBASE}/sbin/ldconfig
 
