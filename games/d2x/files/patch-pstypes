@@ -1,0 +1,11 @@
+--- include/pstypes.h.orig	Sat Apr 12 01:51:48 2003
++++ include/pstypes.h	Mon Apr  5 17:45:06 2004
+@@ -46,7 +46,7 @@
+ # include <sys/types.h>
+ # define _MAX_PATH 1024
+ # define _MAX_DIR 256
+-# if defined(__APPLE__) && defined(__MACH__)
++# if ( defined(__APPLE__) && defined(__MACH__)) || defined (__FreeBSD__)
+ typedef unsigned long ulong;
+ # endif
+ # ifdef __sun__

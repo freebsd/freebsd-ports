@@ -86,6 +86,7 @@
     SUBDIR += csmash
     SUBDIR += cube
     SUBDIR += cursive
+    SUBDIR += d2x
     SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += digger-vgl
