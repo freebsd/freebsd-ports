@@ -4105,6 +4105,7 @@ opmixer		ports/audio/opmixer
 oproute		ports/net/oproute
 oqtencoder	ports/graphics/oqtencoder
 oqtplayer	ports/graphics/oqtplayer
+orbitcpp	ports/devel/orbitcpp
 oregano		ports/cad/oregano
 orion		ports/www/orion
 oroborus	ports/x11-wm/oroborus
