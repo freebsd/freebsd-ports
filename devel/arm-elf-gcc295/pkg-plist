@@ -2,7 +2,6 @@ arm-elf/bin/gcc
 arm-elf/bin/g++
 arm-elf/include/assert.h
 bin/arm-elf-c++
-bin/arm-elf-c++filt
 bin/arm-elf-g++
 bin/arm-elf-gcc
 bin/arm-elf-cpp
