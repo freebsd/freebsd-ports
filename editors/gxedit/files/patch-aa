@@ -1,5 +1,5 @@
---- config.h.orig	Sun Aug 30 08:16:29 1998
-+++ config.h	Thu Sep 17 06:43:40 1998
+--- config.h.orig	Fri Oct 30 20:36:26 1998
++++ config.h	Sun Nov  1 17:43:51 1998
 @@ -1,8 +1,8 @@
  /* configuration file - precompile options */
  
@@ -11,3 +11,12 @@
  #undef GTKEDITOR_PATCH /* Use the GtkEditor patch */
  
  /* Highlighting styles */
+@@ -15,7 +15,7 @@
+ /* proxy */
+ #undef USE_SOCKS /* you need to add -lsocks5 to the makefile for this */
+ 
+-#undef INTERNATIONAL /* set locale */
++#define INTERNATIONAL /* set locale */
+ 
+ /* mail path */
+ 
