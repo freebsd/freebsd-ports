@@ -1,12 +1,12 @@
-gogo, 'Gogo no coder' (which means 'afternoon coder'), is very fast
-MP3 encoder based on lame-3.23 which is optimized for MMX, K6-2 3DNow!
-and Intel PentiumIII SSE. The latter is available when FreeBSD
-supports SSE. (Linux supports it.)
+GOGO-no-coda is very fast MP3 encoder based on lame-3.29beta,
+optimized with MMX, 3DNow!, Enhanced 3DNow! and SSE (patched nasm required
+to compile with E3DNow! and kernel support needed to enable SSE but FreeBSD
+does not have it yet).
 
-*** DON'T OVERCLOCK YOUR K6-2 ***
-Gogo heavily uses the 3DNow! unit that almost sleeps in usual,
-and the encoding CPU becomes very hot even with its normal clock.
-So overclock may cause serious internal errors or crazy results.
-Also, this may be same on PentiumIII or others.
+*** DO NOT OVERCLOCK YOUR CPUs ***
+GOGO heavily uses the part of processors that almost sleeps in usual,
+so makes them very hot even it runs standard clock.
+Overclocking may cause serious internal errors and crazy results.
+Or you need gigantic heatsink and extra-noisy fans. :-)
 
 WWW: http://homepage1.nifty.com/herumi/gogo_e.html

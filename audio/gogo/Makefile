@@ -1,4 +1,4 @@
-# New ports collection makefile for:   gogo no coder
+# New ports collection makefile for:  GOGO-no-coda
 # Date created:        01 July 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
@@ -6,44 +6,50 @@
 #
 
 PORTNAME=	gogo
-PORTVERSION=	2.30f
+PORTVERSION=	2.35
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/gogo2/src/
-DISTNAME=	gogo230f
+DISTNAME=	gogo235
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
 
 # More than version 0.98
 BUILD_DEPENDS=	nasm-0.98:${PORTSDIR}/devel/nasm
-.if !defined(MINIMAL)
-RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrecord \
-		list_audio_tracks:${PORTSDIR}/sysutils/cdrecord
-.endif
 
 USE_GMAKE=	yes
 ALL_TARGET=	gogo
-.if(!defined(KANJI))
-MAKE_ARGS+=	DONT_USE_KANJI=-DNO_KANJI
-.else
-MAKE_ARGS+=	DONT_USE_KANJI=
-.endif
+
 RESTRICTED=	Condition is not clear
 ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/gogo231f
+
+# A sample of heavily optimized CFLAGS(typically used with pgcc).
+# Recommended ONLY for benchmarks.
+# CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funrol
+
+MAKE_ENV=	"CC=$(CCMD)" "LD=$(CC)"
+
+CCMD!=		${ECHO} "$(CC) -c $(CFLAGS)"
+
+pre-fetch:
+.if !defined(USE_MT)
+	@${ECHO_MSG} "set USE_MT to compile with linuxthreads."
+	@${ECHO_MSG} "It would increase performance in SMP environment."
+.else
+MAKE_ENV+=	"USE_MT=yes"
+LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gogo ${PREFIX}/bin
-.if !defined(MINIMAL)
-	${INSTALL_SCRIPT} ${WRKSRC}/sakai/cdda2mp3.bsd \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/cdda2mp3.bsd \
 		${PREFIX}/bin/cdda2mp3.gogo
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/gogo
-	${INSTALL_DATA} ${WRKSRC}/sakai/cdda2mp3.txt \
-		${PREFIX}/share/doc/gogo/cdda2mp3.gogo.jp
-	${INSTALL_DATA} ${WRKSRC}/sakai/readme_e.txt \
+	${INSTALL_DATA} ${WRKSRC}/contrib/cdda2mp3.txt \
 		${PREFIX}/share/doc/gogo/cdda2mp3.gogo.en
-.endif
+	${INSTALL_DATA} ${WRKSRC}/contrib/cdda2mp3.euc \
+		${PREFIX}/share/doc/gogo/cdda2mp3.gogo.ja
 .endif
 
 .include <bsd.port.mk>
