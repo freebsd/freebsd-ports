@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	checkpasswd-pam
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Implementation of checkpassword authentication program
 
 GNU_CONFIGURE=	yes

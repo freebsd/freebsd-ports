@@ -11,7 +11,7 @@ PORTVERSION=	3.2.3
 CATEGORIES=	www devel
 MASTER_SITES=	ftp://ftp.cgicc.org/
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
 
 USE_REINPLACE=	yes

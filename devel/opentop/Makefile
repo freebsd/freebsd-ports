@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.|-|g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DOCDIST}${EXTRACT_SUFX}
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A cross-platform C++ framework library
 
 USE_REINPLACE=	yes

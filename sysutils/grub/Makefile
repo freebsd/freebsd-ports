@@ -10,7 +10,7 @@ PORTVERSION=	0.95
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
 USE_AUTOMAKE_VER=	18

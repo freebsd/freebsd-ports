@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/misc/
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
 
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	Downloads/MySQLAdministrationSuite
 DISTNAME=	${PORTNAME}-1.0.2b-alpha
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Powerful visual administration console for MySQL environment
 
 USE_X_PREFIX=	yes

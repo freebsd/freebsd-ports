@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Transparent HTTP proxy for ipfw's fwd rule or IPFILTER's ipnat command
 
 MAN8=		tproxy.8

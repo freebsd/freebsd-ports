@@ -10,7 +10,7 @@ CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		sem@ciam.ru
+MAINTAINER=		sem@FreeBSD.org
 COMMENT=		Database frontend for KDE
 
 BUILD_DEPENDS=		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
