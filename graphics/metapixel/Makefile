@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	daniel@roe.ch
 COMMENT=	"Metapixel is a program for generating photomosaics"
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
