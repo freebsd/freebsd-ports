@@ -36,6 +36,7 @@
     SUBDIR += cvsup-mirror
     SUBDIR += cvsupd-bin
     SUBDIR += dante
+    SUBDIR += datapipe
     SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += dgd
