@@ -27,7 +27,4 @@ MAKE_ENV+=	QTDIR="${WRKSRC}"
 INSTALLDIR=	${PREFIX}/tinyq
 NO_FILTER_SHLIBS=yes
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
-
-#EOF
+.include <bsd.port.mk>
