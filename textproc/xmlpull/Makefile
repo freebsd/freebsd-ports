@@ -9,14 +9,13 @@ PORTNAME=	xmlpull
 PORTVERSION=	1.1.3.4a
 PORTREVISION=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.xmlpull.org/v1/download/
+MASTER_SITES=	http://voodoo.oberon.net/download/ \
+		http://www.xmlpull.org/v1/download/
 DISTNAME=	${DISTNAME_PREFX}_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Common API for XML Pull Parsing (XmlPull)
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
