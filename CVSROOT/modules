@@ -1045,6 +1045,7 @@ de-handbook	doc/de_DE.ISO8859-1/books/handbook
 de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
+de-linux-netscape6	ports/german/linux-netscape6
 de-kde2-i18n	ports/german/kde2-i18n
 de-koffice-i18n	ports/german/koffice-i18n
 de-manpages	ports/german/manpages
