@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmtp2nntp
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lmtp2nntp/
 
