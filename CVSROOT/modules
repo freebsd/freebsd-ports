@@ -5236,8 +5236,9 @@ openh323proxy	ports/net/openh323proxy
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
-openldap	ports/net/openldap
-openldap2	ports/net/openldap2
+openldap12	ports/net/openldap12
+openldap20	ports/net/openldap20
+openldap21	ports/net/openldap21
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
