@@ -1,0 +1,9 @@
+--- iiimsf/src/Makefile.am.orig	Sun Sep  5 04:47:50 2004
++++ iiimsf/src/Makefile.am	Sun Sep  5 04:48:50 2004
+@@ -29,5 +29,5 @@
+ 
+ htt_SOURCES = watchdog.c
+ 
+-htt_server_LDADD = $(LIB_DIR)/iml/libiml.la $(IM_LIBDIR)/iiimp/libiiimp.la $(SOCKET_LIBS) $(LIBCRYPT_FLAGS) $(LIBPAM_FLAGS) $(LIBWRAP_FLAGS) $(THREAD_LIBS) $(TLS_LIBS)
++htt_server_LDADD = $(LIB_DIR)/iml/libiml.la -L$(LOCALBASE)/lib -liiimp $(SOCKET_LIBS) $(LIBCRYPT_FLAGS) $(LIBPAM_FLAGS) $(LIBWRAP_FLAGS) $(THREAD_LIBS) $(TLS_LIBS)
+ bin_PROGRAMS = htt_server htt
