@@ -39,10 +39,6 @@ EXAMPLES=	doc/sample/bjorb.conf.doc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-install:
 	@${INSTALL_SCRIPT} ${DOCSRC}/doc/sample/bjorb.sh ${PREFIX}/etc/rc.d/bjorb.sh.sample
 .if !defined(NOPORTDOCS)

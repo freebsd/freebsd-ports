@@ -1,0 +1,14 @@
+--- portoption.cc.orig	Mon Feb 22 03:40:47 1999
++++ portoption.cc	Sun Jan 12 14:41:00 2003
+@@ -3,6 +3,11 @@
+ 
+ 
+ #include "config.h"
++
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif /* HAVE_STRING_H */
++
+ #include "Config.h"
+ 
+ #define MIN_WORD_LENGTH 3

@@ -1,5 +1,5 @@
---- Config.cc.orig	Sun Dec 26 11:25:39 1999
-+++ Config.cc	Sun Dec 26 11:25:57 1999
+--- Config.cc.orig	Mon Feb 22 04:07:51 1999
++++ Config.cc	Sun Jan 12 14:34:28 2003
 @@ -334,7 +334,7 @@
    int retval = 1;
  
@@ -9,3 +9,21 @@
  
  #ifndef NO_DEBUG
    PUTERR(2, ("::accept() begin\n"));
+@@ -574,7 +574,7 @@
+   if (accept_port.getPortinfo()->isVerify()) {
+     _SSL_set_verify(ssl,
+ 		   SSL_VERIFY_PEER|SSL_VERIFY_FAIL_IF_NO_PEER_CERT,
+-		   (int (*)(...))BjorbSSLVerifyCallback);
++		   BjorbSSLVerifyCallback);
+   } else {
+     _SSL_set_verify(ssl, SSL_VERIFY_NONE, 0);
+   }
+@@ -620,7 +620,7 @@
+   } else {
+     _SSL_CTX_set_verify(ctx_connect,
+ 		       SSL_VERIFY_PEER|SSL_VERIFY_FAIL_IF_NO_PEER_CERT,
+-		       (int (*)(...))BjorbSSLVerifyCallback);
++		       BjorbSSLVerifyCallback);
+   }
+ 
+   ssl = _SSL_new(ctx_connect);

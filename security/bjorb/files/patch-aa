@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Feb 22 05:01:20 1999
-+++ Makefile.in	Wed Mar 24 20:52:03 1999
++++ Makefile.in	Sun Jan 12 14:46:10 2003
 @@ -29,7 +29,7 @@
  LDFLAGS =
  LIBS = @LIBS@
@@ -9,6 +9,31 @@
  exec_prefix = $(PREFIX)
  sbindir = $(exec_prefix)/sbin
  etcdir = $(exec_prefix)/etc
+@@ -81,7 +81,7 @@
+ 	$(INSTALL_DATA) ../doc/sample/bjorb.conf.sample $(etcdir)/bjorb.conf.sample
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) -o $(TARGET) $(ALL_LDFLAGS) $(OBJS) $(ALL_LIBS)
++	$(CXX) -o $(TARGET) $(ALL_LDFLAGS) $(OBJS) $(ALL_LIBS)
+ 
+ debug::
+ 	$(MAKE) CFLAGS="-g -DDEBUG"
+@@ -116,13 +116,13 @@
+ 	$(CC) -c $(ALL_CFLAGS)  $<
+ 
+ .cc.o: Makefile
+-	$(CC) -c $(ALL_CFLAGS)  $<
++	$(CXX) -c $(ALL_CFLAGS)  $<
+ 
+ Makefile: Makefile.in
+ 	CONFIG_FILES=./$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ cmd.o: cmd.cc cmd-def.h
+-	$(CC) -c $(ALL_CFLAGS)  $<
++	$(CXX) -c $(ALL_CFLAGS)  $<
+ cmd.cc: cmd.list
+ 	gperf -aptCT -N in_word_set_cmdlist $? > $@
+ bool.cc:bool.list
 @@ -135,9 +135,13 @@
  	autoconf
  
