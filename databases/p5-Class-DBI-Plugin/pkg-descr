@@ -1,0 +1,7 @@
+Class::DBI::Plugin is an abstract base class for Class::DBI plugins.
+Its purpose is to make writing plugins easier. Writers of plugins
+should be able to concentrate on the functionality their module
+provides, instead of having to deal with the symbol table hackery
+involved when writing a plugin module.
+
+WWW: http://search.cpan.org/dist/Class-DBI-Plugin
