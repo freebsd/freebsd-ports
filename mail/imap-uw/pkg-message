@@ -18,3 +18,11 @@ pop3	session	required	pam_deny.so
 
 The pam_unix module does not have session support, so we do not use it for
 session management. Be sure to read up on pam.conf(5).
+
+===>   NB: IMAP-UW now rejects non-encrypted logins by default. To change this
+===>   behaviour, recompile and reinstall cclient and imap-uw ports with one of
+===>   the following make variables defined:
+
+WITHOUT_SSL - build without SSL/encryption support.
+WITH_SSL_AND_PLAINTEXT - build with SSL/encryption support, but allow
+non-encrypted logins.
