@@ -1,0 +1,8 @@
+This package contains resources needed by several other applications,
+including ROX-Filer. It contains:
+
+- Rules for guessing a file's type from its extension.
+- Icons to represent the various types.
+- A few default programs to edit the various types.
+
+WWW: http://rox.sourceforge.net/
