@@ -1,5 +1,5 @@
 #!/bin/sh
-FONTDIR=${PKG_PREFIX}/lib/X11/fonts/truetype
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
 if [ "$2" = "PRE-INSTALL" ]; then
   echo "Please add ${FONTDIR} to your /etc/XF86Config file"
   exit 0

@@ -3,7 +3,7 @@
 # Date created:		16 November 1998
 # Whom:			asami
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/19 08:47:28 asami Exp $
 #
 
 DISTNAME=	ja-truetypefonts-1998.10.20
@@ -16,7 +16,7 @@ MAINTAINER=	candy@kgc.co.jp
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xtt-fonts-0.19981020
 NO_BUILD=	yes
-FONTDIR=	${PREFIX}/lib/X11/fonts/truetype
+FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
 
 .include <bsd.port.pre.mk>
 
