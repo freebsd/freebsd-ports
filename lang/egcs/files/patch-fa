@@ -13,7 +13,7 @@
  	      = TREE_VALUE (TREE_CHAIN (TREE_CHAIN (args)));
  	    int format_num;
  	    int first_arg_num;
-+	    int null_format_ok;
++	    XXX:int null_format_ok;
  	    enum format_type format_type;
  	    tree argument;
  	    int arg_num;
@@ -79,7 +79,7 @@
    tree name;			/* identifier such as "printf" */
    tree assembler_name;		/* optional mangled identifier (for C++) */
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
-+  int null_format_ok;		/* TRUE if the format string may be NULL */
++  XXX:int null_format_ok;		/* TRUE if the format string may be NULL */
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
  } function_format_info;
@@ -88,34 +88,34 @@
  {
    record_function_format (get_identifier ("printf"), NULL_TREE,
 -			  printf_format_type, 1, 2);
-+			  printf_format_type, 0, 1, 2);
++			  printf_format_type, 1, 2, 0);
    record_function_format (get_identifier ("fprintf"), NULL_TREE,
 -			  printf_format_type, 2, 3);
-+			  printf_format_type, 0, 2, 3);
++			  printf_format_type, 2, 3, 0);
    record_function_format (get_identifier ("sprintf"), NULL_TREE,
 -			  printf_format_type, 2, 3);
-+			  printf_format_type, 0, 2, 3);
++			  printf_format_type, 2, 3, 0);
    record_function_format (get_identifier ("scanf"), NULL_TREE,
 -			  scanf_format_type, 1, 2);
-+			  scanf_format_type, 0, 1, 2);
++			  scanf_format_type, 1, 2, 0);
    record_function_format (get_identifier ("fscanf"), NULL_TREE,
 -			  scanf_format_type, 2, 3);
-+			  scanf_format_type, 0, 2, 3);
++			  scanf_format_type, 2, 3, 0);
    record_function_format (get_identifier ("sscanf"), NULL_TREE,
 -			  scanf_format_type, 2, 3);
-+			  scanf_format_type, 0, 2, 3);
++			  scanf_format_type, 2, 3, 0);
    record_function_format (get_identifier ("vprintf"), NULL_TREE,
 -			  printf_format_type, 1, 0);
-+			  printf_format_type, 0, 1, 0);
++			  printf_format_type, 1, 0, 0);
    record_function_format (get_identifier ("vfprintf"), NULL_TREE,
 -			  printf_format_type, 2, 0);
-+			  printf_format_type, 0, 2, 0);
++			  printf_format_type, 2, 0, 0);
    record_function_format (get_identifier ("vsprintf"), NULL_TREE,
 -			  printf_format_type, 2, 0);
-+			  printf_format_type, 0, 2, 0);
++			  printf_format_type, 2, 0, 0);
    record_function_format (get_identifier ("strftime"), NULL_TREE,
 -			  strftime_format_type, 3, 0);
-+			  strftime_format_type, 0, 3, 0);
++			  strftime_format_type, 3, 0, 0);
  
    record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
    record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
@@ -124,12 +124,12 @@
  
  static void
 -record_function_format (name, assembler_name, format_type,
-+record_function_format (name, assembler_name, format_type, null_format_ok,
++record_function_format (name, assembler_name, format_type, XXX:null_format_ok,
  			format_num, first_arg_num)
        tree name;
        tree assembler_name;
        enum format_type format_type;
-+      int null_format_ok;
++      XXX:int null_format_ok;
        int format_num;
        int first_arg_num;
  {
@@ -137,7 +137,7 @@
      }
  
    info->format_type = format_type;
-+  info->null_format_ok = null_format_ok;
++  XXX:info->null_format_ok = null_format_ok;
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
  }
