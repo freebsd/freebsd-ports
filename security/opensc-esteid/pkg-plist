@@ -1,0 +1,56 @@
+bin/cryptoflex-tool
+bin/esteid-tool
+bin/opensc-config
+bin/opensc-explorer
+bin/opensc-tool
+bin/pkcs15-crypt
+bin/pkcs15-init
+bin/pkcs15-tool
+include/opensc/asn1.h
+include/opensc/cardctl.h
+include/opensc/emv.h
+include/opensc/errors.h
+include/opensc/log.h
+include/opensc/opensc.h
+include/opensc/pkcs15-init.h
+include/opensc/pkcs15.h
+include/opensc/scconf.h
+include/opensc/scldap.h
+include/opensc/scrandom.h
+include/opensc/types.h
+include/opensc/esteid.h
+lib/libopensc.a
+lib/libopensc.la
+lib/libopensc.so
+lib/libopensc.so.0
+lib/libpkcs15init.a
+lib/libpkcs15init.la
+lib/libpkcs15init.so
+lib/libpkcs15init.so.0
+lib/libscam.a
+lib/libscam.la
+lib/libscam.so
+lib/libscconf.a
+lib/libscconf.la
+lib/libscconf.so
+lib/libscconf.so.0
+lib/libscldap.a
+lib/libscldap.la
+lib/libscldap.so
+lib/libscldap.so.0
+lib/libscrandom.a
+lib/pkcs11/opensc-pkcs11.so
+lib/security/pam_opensc.a
+lib/security/pam_opensc.la
+lib/security/pam_opensc.so
+share/opensc/flex.profile
+share/opensc/gpk.profile
+share/opensc/miocos.profile
+share/opensc/opensc.conf.example
+share/opensc/pkcs15.profile
+share/opensc/scldap.conf.example
+@dirrm include/opensc
+@dirrm share/opensc/plugins
+@dirrm share/opensc
+@dirrm lib/security
+@dirrm lib/pkcs11
