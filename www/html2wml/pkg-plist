@@ -1,23 +1,25 @@
 bin/html2wml
-share/doc/html2wml/ARTISTIC
-share/doc/html2wml/ChangeLog
-share/doc/html2wml/COPYING
-share/doc/html2wml/INSTALL
-share/doc/html2wml/NEWS
-share/doc/html2wml/NOTES
-share/doc/html2wml/README
-share/doc/html2wml/TODO
-share/doc/html2wml/readme.html
-share/doc/html2wml/readme.pdf
-share/doc/html2wml/readme.pod
-share/doc/html2wml/t/form.html
-share/doc/html2wml/t/samples/inc_para.wml
-share/doc/html2wml/t/samples/inc_prev.wml
-share/doc/html2wml/t/samples/include.html
-share/doc/html2wml/t/samples/links.html
-share/doc/html2wml/t/samples/mix1.html
-share/doc/html2wml/t/samples/mix2.html
-share/doc/html2wml/t/samples/struct.html
-@dirrm share/doc/html2wml/t/samples
-@dirrm share/doc/html2wml/t
-@dirrm share/doc/html2wml
+%%PORTDOCS%%share/doc/html2wml/ARTISTIC
+%%PORTDOCS%%share/doc/html2wml/COPYING
+%%PORTDOCS%%share/doc/html2wml/ChangeLog
+%%PORTDOCS%%share/doc/html2wml/INSTALL
+%%PORTDOCS%%share/doc/html2wml/NEWS
+%%PORTDOCS%%share/doc/html2wml/NOTES
+%%PORTDOCS%%share/doc/html2wml/README
+%%PORTDOCS%%share/doc/html2wml/TODO
+%%PORTDOCS%%share/doc/html2wml/readme.html
+%%PORTDOCS%%share/doc/html2wml/readme.pdf
+%%PORTDOCS%%share/doc/html2wml/readme.pod
+%%PORTDOCS%%share/doc/html2wml/readme.txt
+%%PORTDOCS%%share/doc/html2wml/t/form.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/inc_para.wml
+%%PORTDOCS%%share/doc/html2wml/t/samples/inc_prev.wml
+%%PORTDOCS%%share/doc/html2wml/t/samples/include.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/links.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/mix1.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/mix2.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/struct.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/xtreme.html
+%%PORTDOCS%%@dirrm share/doc/html2wml/t/samples
+%%PORTDOCS%%@dirrm share/doc/html2wml/t
+%%PORTDOCS%%@dirrm share/doc/html2wml

@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar  9 09:28:18 2001
-+++ Makefile	Wed Mar 21 06:53:35 2001
+--- Makefile.orig	Mon May 14 01:07:59 2001
++++ Makefile	Sat May 19 20:07:36 2001
 @@ -1,7 +1,7 @@
  # =========================================================================== #
  # Configuration 
@@ -18,7 +18,7 @@
  
  MAN1DIR=$(MANDIR)/man1
  
-@@ -31,14 +31,14 @@
+@@ -31,14 +31,11 @@
  
  # Installaton targets
  install: check-config directories
@@ -29,9 +29,6 @@
 -	make -C doc/ install DOCDIR=$(DOCDIR)
 +	${BSD_INSTALL_SCRIPT} html2wml.cgi $(BINDIR)/html2wml
 +	${BSD_INSTALL_MAN} doc/html2wml.man $(MAN1DIR)/html2wml.1
-+	${BSD_INSTALL_DATA} ARTISTIC COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR)
-+	cd t; ${MAKE} install DOCDIR=$(DOCDIR)
-+	cd doc; ${MAKE} install DOCDIR=$(DOCDIR)
  
  installcgi: check-config
 -	install -m 555 html2wml.cgi $(CGIDIR)
