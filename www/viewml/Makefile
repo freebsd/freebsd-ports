@@ -14,7 +14,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		wwwzip.1:${PORTSDIR}/www/libwww
+		wwwzip.1:${PORTSDIR}/www/libwww \
+		Imlib.5:${PORTSDIR}/graphics/imlib
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
