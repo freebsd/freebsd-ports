@@ -1,0 +1,25 @@
+# New ports collection makefile for:	xmemory
+# Version required:	3.7
+# Date Created:		Sat Feb  7 21:37:09 EST 1998
+# Whom:			Dave Chapeskie <dchapes@ddm.on.ca>
+#
+# $Id$
+#
+
+DISTNAME=	xmemory-3.7
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games/multiplayer
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	dchapes@ddm.on.ca
+
+USE_IMAKE=	yes
+
+post-install:
+	@${MKDIR} ${X11BASE}/lib/X11/xmemory
+	${INSTALL_DATA} ${WRKSRC}/home.mem ${WRKSRC}/sports.mem \
+			${X11BASE}/lib/X11/xmemory
+	${LN} -sf home.mem ${X11BASE}/lib/X11/xmemory/default.mem
+
+.include <bsd.port.mk>
