@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	frodo
-PORTVERSION=	4.1a
-PORTREVISION=	1
+PORTVERSION=	4.1b
 CATEGORIES=	emulators tk84
-MASTER_SITES=	ftp://metalab.unc.edu/pub/micro/commodore/crossplatform/emulators/Frodo/ \
-		ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/Frodo/
-DISTNAME=	FrodoV4_1a.Src
+MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/
+DISTNAME=	FrodoV4_1b.Src
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
@@ -20,40 +18,40 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	Frodo
-WRKSRC=		${WRKDIR}/Frodo/Src
+WRKNAME=	Frodo-4.1b
+WRKSRC=		${WRKDIR}/${WRKNAME}/Src
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 
 ROM=		1541 Basic Char Kernal
 
 post-patch:
-	@${MV} ${WRKDIR}/Frodo/TkGui.tcl ${WRKDIR}/Frodo/TkGui.tcl.sed
+	@${MV} ${WRKDIR}/${WRKNAME}/TkGui.tcl ${WRKDIR}/${WRKNAME}/TkGui.tcl.sed
 	${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKDIR}/Frodo/TkGui.tcl.sed > ${WRKDIR}/Frodo/TkGui.tcl
-
-do-configure:
-	@(cd ${WRKSRC}; ${SH} ./configure)
+		${WRKDIR}/${WRKNAME}/TkGui.tcl.sed > ${WRKDIR}/${WRKNAME}/TkGui.tcl
 
 do-install:
 	${SED} -e 's=\$${PREFIX}=${PREFIX}=g' \
 		 < ${FILESDIR}/frodo > ${WRKDIR}/frodo
 	${INSTALL_SCRIPT} ${WRKDIR}/frodo ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/frodo
-	${INSTALL_PROGRAM} ${WRKDIR}/Frodo/Frodo ${PREFIX}/libexec/frodo
+	${INSTALL_PROGRAM} ${WRKDIR}/${WRKNAME}/Frodo ${PREFIX}/libexec/frodo
 .for i in ${ROM}
-	${INSTALL_DATA} "${WRKDIR}/Frodo/${i} ROM" ${PREFIX}/libexec/frodo
+	${INSTALL_DATA} "${WRKDIR}/${WRKNAME}/${i} ROM" ${PREFIX}/libexec/frodo
 .endfor
-	${INSTALL_DATA} "${WRKDIR}/Frodo/Frodo Logo" ${PREFIX}/libexec/frodo
-	${INSTALL_SCRIPT} "${WRKDIR}/Frodo/TkGui.tcl" ${PREFIX}/libexec/frodo
+	${INSTALL_DATA} "${WRKDIR}/${WRKNAME}/Frodo Logo" ${PREFIX}/libexec/frodo
+	${INSTALL_SCRIPT} "${WRKDIR}/${WRKNAME}/TkGui.tcl" ${PREFIX}/libexec/frodo
 	${MKDIR} ${PREFIX}/libexec/frodo/64prgs
-	@${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | \
+	@${TAR} -C ${WRKDIR}/${WRKNAME}/64prgs -cf - . | \
 		${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in CHANGES
-	${INSTALL_DATA} ${WRKDIR}/Frodo/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKDIR}/${WRKNAME}/${i} ${DOCSDIR}/
 .endfor
-	@${TAR} -C ${WRKDIR}/Frodo/Docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
+	@${TAR} -C ${WRKDIR}/${WRKNAME}/Docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>

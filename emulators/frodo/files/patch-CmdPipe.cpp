@@ -1,21 +1,10 @@
-
-$FreeBSD$
-
---- CmdPipe.cpp.orig	Wed Aug  6 20:56:26 1997
-+++ CmdPipe.cpp	Sat Nov 30 01:29:18 2002
-@@ -9,16 +9,18 @@
- 
- 
- extern "C" {
--	#include <string.h>
-+	#include <stdlib.h>
- 	#include <unistd.h>
- 	#include <sys/wait.h>
- 	#include <sys/types.h>
+--- CmdPipe.cpp.orig	Wed Jan  2 22:19:34 2002
++++ CmdPipe.cpp	Fri Sep  5 21:13:34 2003
+@@ -17,9 +17,11 @@
  	#include <string.h>
  	#include <signal.h>
  
-+#if ! defined(__FreeBSD__)
++#if !defined(__FreeBSD__)
  #if defined(__alpha__)
  	#include <cma.h>
  #endif
@@ -23,7 +12,7 @@ $FreeBSD$
  
  #if defined(AIX)
  	#include <sys/select.h>
-@@ -27,6 +29,9 @@
+@@ -28,6 +30,9 @@
  #endif
  
  #if defined(__linux__)

@@ -1,0 +1,31 @@
+--- configure.orig	Wed Jan  2 17:44:11 2002
++++ configure	Fri Sep  5 21:39:45 2003
+@@ -1602,15 +1602,15 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="${CFLAGS} -g -O2"
+   else
+-    CFLAGS="-g"
++    CFLAGS="${CFLAGS} -g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS="${CFLAGS} -O2"
+   else
+-    CFLAGS=
++    CFLAGS="${CFLAGS}"
+   fi
+ fi
+ # Some people use a C++ compiler to compile C.  Since we use `exit',
+@@ -2283,7 +2283,7 @@
+ fi
+ 
+ if [ x"$GXX" = "xyes" ]; then
+-  CFLAGS="-O2 -g -fomit-frame-pointer -Wall -Wno-unused -Wno-format"
++  CFLAGS="${CFLAGS} -O2 -g -fomit-frame-pointer -Wall -Wno-unused -Wno-format"
+ fi
+ 
+ UNAME_RELEASE=`(uname -r) 2>/dev/null` || UNAME_RELEASE=unknown
