@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.30 1999/08/09 18:47:50 sada Exp $
+# $Id: Makefile,v 1.31 1999/08/20 17:47:16 sada Exp $
 #
 
 DISTNAME?=	netscape-3.04
@@ -15,8 +15,9 @@ MAINTAINER=	sada@FreeBSD.ORG
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
-NOT_FOR_ARCHS=	alpha
+ONLY_FOR_ARCHS=	i386
 
+USE_XLIB=	yes
 NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
 PKGREQ=		${PORTSDIR}/www/netscape4-communicator/pkg/REQ
