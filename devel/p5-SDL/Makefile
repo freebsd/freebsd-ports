@@ -13,30 +13,31 @@ DISTNAME=	SDL_perl-${PORTVERSION}
 MAINTAINER=	philip@paeps.cx
 COMMENT=	Perl Bindings for SDL
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+USE_SDL=	yes
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SDL_TTF)
-LIB_DEPENDS+=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf
+USE_SDL=	ttf sdl
 .endif
 
 .if !defined(WITHOUT_SDL_NET)
-LIB_DEPENDS+=	SDL_net.0:${PORTSDIR}/net/sdl_net
+USE_SDL=	net sdl
 .endif
 
 .if !defined(WITHOUT_SDL_GFX)
-LIB_DEPENDS+=	SDL_gfx.10:${PORTSDIR}/graphics/sdl_gfx
+USE_SDL=	gfx sdl
 .endif
 
 .if !defined(WITHOUT_SDL_IMAGE)
-LIB_DEPENDS+=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
+USE_SDL=	image sdl
 .endif
 
 .if !defined(WITHOUT_SDL_MIXER)
-LIB_DEPENDS+=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+USE_SDL=	mixer sdl
 .endif
 
 .if ${PERL_LEVEL} < 500600

@@ -16,15 +16,14 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kyra is a simple Sprite engine written in C++
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_LIBTOOL=	yes
-USE_SDL=	yes
+USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

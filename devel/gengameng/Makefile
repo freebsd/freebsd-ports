@@ -13,16 +13,13 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An SDL game engine library
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
+USE_SDL=	image sdl
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ARGS+=	--program-prefix=""
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
-		SDL_CONFIG="${SDL_CONFIG}"
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
 post-patch:
 	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g; \

@@ -15,12 +15,10 @@ DISTNAME=      AdaSDL_${PORTVERSION}
 MAINTAINER=	david@realityrift.com
 COMMENT=	An Ada thin binding to SDL
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		SDL_image:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer:${PORTSDIR}/audio/sdl_mixer \
-		${GL_DEPENDS}
+LIB_DEPENDS=	${GL_DEPENDS}
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
+USE_SDL=	mixer image sdl
 USE_GMAKE=     yes
 USE_REINPLACE= yes
 
