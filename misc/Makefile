@@ -380,6 +380,7 @@
     SUBDIR += xenmenu
     SUBDIR += xfce4-iconbox
     SUBDIR += xfce4-panel-themes
+    SUBDIR += xfce4-wm-themes
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xosd
