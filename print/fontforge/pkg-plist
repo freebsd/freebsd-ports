@@ -7,6 +7,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/Anna.gif
 %%PORTDOCS%%share/doc/pfaedit/Antigone.gif
 %%PORTDOCS%%share/doc/pfaedit/BDFgrey.html
+%%PORTDOCS%%share/doc/pfaedit/Big5.txt
 %%PORTDOCS%%share/doc/pfaedit/BitmapView.png
 %%PORTDOCS%%share/doc/pfaedit/C1.png
 %%PORTDOCS%%share/doc/pfaedit/C10.png
@@ -35,6 +36,8 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/Encodings.ps.gz
 %%PORTDOCS%%share/doc/pfaedit/FontDisplay.png
 %%PORTDOCS%%share/doc/pfaedit/FontSample.png
+%%PORTDOCS%%share/doc/pfaedit/FVHMetrics.png
+%%PORTDOCS%%share/doc/pfaedit/FVVMetrics.png
 %%PORTDOCS%%share/doc/pfaedit/GridFitM.png
 %%PORTDOCS%%share/doc/pfaedit/H-bm.png
 %%PORTDOCS%%share/doc/pfaedit/H-gm.png
@@ -45,11 +48,13 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/HotKeys.html
 %%PORTDOCS%%share/doc/pfaedit/ItalicCompCaslon.png
 %%PORTDOCS%%share/doc/pfaedit/ItalicCompGalliard.png
+%%PORTDOCS%%share/doc/pfaedit/KernPairs.png
 %%PORTDOCS%%share/doc/pfaedit/LICENSE
 %%PORTDOCS%%share/doc/pfaedit/MetaFont.html
 %%PORTDOCS%%share/doc/pfaedit/MetricsView.png
 %%PORTDOCS%%share/doc/pfaedit/NoPointHint.png
 %%PORTDOCS%%share/doc/pfaedit/PageSetup.png
+%%PORTDOCS%%share/doc/pfaedit/PfaEdits.gif
 %%PORTDOCS%%share/doc/pfaedit/Print.png
 %%PORTDOCS%%share/doc/pfaedit/Problems-MacOSX.html
 %%PORTDOCS%%share/doc/pfaedit/ReviewHints.png
@@ -62,8 +67,10 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/aacutemid.png
 %%PORTDOCS%%share/doc/pfaedit/accented.html
 %%PORTDOCS%%share/doc/pfaedit/acenter.png
+%%PORTDOCS%%share/doc/pfaedit/acorn2sfd.html
 %%PORTDOCS%%share/doc/pfaedit/ahighest.png
 %%PORTDOCS%%share/doc/pfaedit/autokern.png
+%%PORTDOCS%%share/doc/pfaedit/autowidth.html
 %%PORTDOCS%%share/doc/pfaedit/autowidth.png
 %%PORTDOCS%%share/doc/pfaedit/bezier.gif
 %%PORTDOCS%%share/doc/pfaedit/bezier.html
@@ -86,6 +93,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/editexample.html
 %%PORTDOCS%%share/doc/pfaedit/editmenu.html
 %%PORTDOCS%%share/doc/pfaedit/elementmenu.html
+%%PORTDOCS%%share/doc/pfaedit/englishkernpairs.txt
 %%PORTDOCS%%share/doc/pfaedit/errrecovery.html
 %%PORTDOCS%%share/doc/pfaedit/expandedlines.png
 %%PORTDOCS%%share/doc/pfaedit/expandstroke.png
@@ -119,6 +127,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/index.html
 %%PORTDOCS%%share/doc/pfaedit/kanjichar.png
 %%PORTDOCS%%share/doc/pfaedit/kanjifont.png
+%%PORTDOCS%%share/doc/pfaedit/kernpairs.html
 %%PORTDOCS%%share/doc/pfaedit/layers.png
 %%PORTDOCS%%share/doc/pfaedit/license.html
 %%PORTDOCS%%share/doc/pfaedit/locale.html
@@ -145,6 +154,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
 %%PORTDOCS%%share/doc/pfaedit/problems.html
 %%PORTDOCS%%share/doc/pfaedit/quotations.html
+%%PORTDOCS%%share/doc/pfaedit/rgetinfo.png
 %%PORTDOCS%%share/doc/pfaedit/rplref.png
 %%PORTDOCS%%share/doc/pfaedit/rplserifs.png
 %%PORTDOCS%%share/doc/pfaedit/scripting.html
@@ -167,6 +177,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/viewmenu.html
 %%PORTDOCS%%share/doc/pfaedit/views.html
 %%PORTDOCS%%share/doc/pfaedit/windowmenu.html
+%%PORTDOCS%%share/doc/pfaedit/xim.html
 %%PORTDOCS%%share/doc/pfaedit/xres.html
 share/pfaedit/Adobe-CNS1-4.cidmap
 share/pfaedit/Adobe-GB1-4.cidmap
@@ -177,6 +188,7 @@ share/pfaedit/Adobe-Korea1-2.cidmap
 share/pfaedit/pfaedit-de.ui
 share/pfaedit/pfaedit-en.ui
 share/pfaedit/pfaedit-fr.ui
+share/pfaedit/pfaedit-ja.ui
 share/pfaedit/pfaedit-ru.ui
 @dirrm share/pfaedit
 %%PORTDOCS%%@dirrm share/doc/pfaedit
