@@ -11,7 +11,7 @@ CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R}/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/v${PORTVERSION:R}/ \
 		ftp://ftp.postgresql.org/pub/v${PORTVERSION:R}/ \
-		${MASTER_SITE_RINGSERVER:R}
+		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	misc/db/postgresql-jp/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=	postgresql
