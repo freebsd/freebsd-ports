@@ -1,35 +1,8 @@
---- src/smtpscan.orig	Fri Nov 22 10:23:22 2002
-+++ src/smtpscan	Fri Nov 22 10:23:09 2002
+--- src/smtpscan.orig  Sun May  4 23:42:44 2003
++++ src/smtpscan       Sun May  4 23:44:07 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!/usr/bin/perl
  #
  # Author : Julien Bordet <zejames@greyhats.org>
- # Copyright (C) 2002 Julien Bordet
-@@ -9,7 +9,7 @@
- #
- 
- use strict;
--use Getopt::Long qw /:config no_ignore_case/;
-+use Getopt::Long;
- use IO::Socket::INET;
- use File::Basename;
- use Net::DNS;
-@@ -28,7 +28,7 @@
- # Global variables
- #
- 
--$VERSION        = '0.3';
-+$VERSION        = '0.3.1';
- 
- $LOCAL_SHARE    = '/usr/local/share';
- $INVALID_SOURCE = 'impossibleaddress@thisdomaindoesnotandmustnotexists.com';
-@@ -34,6 +34,8 @@
- $INVALID_SOURCE = 'impossibleaddress@thisdomaindoesnotandmustnotexists.com';
- $MY_DOMAIN      = 'test.com';
- $VALID_SOURCE   = 'test@yahoo.com';
-+
-+Getopt::Long::Configure("no_ignore_case");
- 
- $| = 1;
- #
+ # Copyright (C) 2002-2003 Julien Bordet
