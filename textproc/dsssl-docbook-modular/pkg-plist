@@ -11,6 +11,8 @@ share/sgml/docbook/dsssl/modular/common/ChangeLog
 share/sgml/docbook/dsssl/modular/common/cs-hack.pl
 share/sgml/docbook/dsssl/modular/common/dbcommon.dsl
 share/sgml/docbook/dsssl/modular/common/dbl10n.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1af.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1af.ent
 share/sgml/docbook/dsssl/modular/common/dbl1ca.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ca.ent
 share/sgml/docbook/dsssl/modular/common/dbl1cs.dsl
@@ -65,6 +67,8 @@ share/sgml/docbook/dsssl/modular/common/dbl1sr.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1sr.ent
 share/sgml/docbook/dsssl/modular/common/dbl1sv.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1sv.ent
+share/sgml/docbook/dsssl/modular/common/dbl1tr.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1tr.ent
 share/sgml/docbook/dsssl/modular/common/dbl1zhcn.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1zhcn.ent
 share/sgml/docbook/dsssl/modular/common/dbl1zhtw.dsl
