@@ -1,8 +1,8 @@
 # Many thanks to Alexander Leidinger <netchild@FreeBSD.org> for
 # help and create those patches.
 
---- libdesklets/Memory.py.orig	Sun Sep 21 14:08:18 2003
-+++ libdesklets/Memory.py	Thu Sep 25 12:08:35 2003
+--- libdesklets/Memory.py.orig	Fri Oct 17 22:57:33 2003
++++ libdesklets/Memory.py	Fri Oct 17 23:01:14 2003
 @@ -1,7 +1,7 @@
  import polling
  
@@ -12,10 +12,10 @@
  
  class Memory:
  
-@@ -17,39 +17,83 @@
+@@ -16,41 +16,85 @@
  
      def __poll_total_ram(self):
-         
+ 
 -        memtotal = os.stat("/proc/kcore")[stat.ST_SIZE]
 +        platform = lib.sys.get_os()
 +        
@@ -31,7 +31,9 @@
 +            memtotal = 0
 +
          return memtotal
-         
+ 
+ 
+ 
      def __poll_mem(self, mode):
  
 -        fd = open("/proc/meminfo", "r")
@@ -39,7 +41,7 @@
 -        fd.close()
 -        lines = mem.splitlines()
 +        platform = lib.sys.get_os()
-         
+ 
          # RAM
          if (mode == 0):
 -            total = int(self.__get_total_ram()/1024)

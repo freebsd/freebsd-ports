@@ -1,8 +1,8 @@
 # Many thanks to Alexander Leidinger <netchild@FreeBSD.org> for
 # help and create those patches.
 
---- libdesklets/CPU.py.orig	Mon Sep 22 12:16:08 2003
-+++ libdesklets/CPU.py	Mon Sep 22 12:22:32 2003
+--- libdesklets/CPU.py.orig	Fri Oct 17 22:47:02 2003
++++ libdesklets/CPU.py	Fri Oct 17 22:53:05 2003
 @@ -1,5 +1,7 @@
  import polling
  
@@ -29,7 +29,7 @@
          except IOError, e:
              import traceback; traceback.print_exc()
              print e
-@@ -40,15 +51,24 @@
+@@ -40,15 +50,24 @@
  
      def __poll_cpu(self):
  
@@ -61,7 +61,7 @@
  
          elif (arch == "ppc"):
              fields = self.__lines[0].split()
-@@ -68,17 +88,34 @@
+@@ -68,17 +87,34 @@
  
      def __poll_load(self):
  
