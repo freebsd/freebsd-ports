@@ -4989,6 +4989,7 @@ metacity-theme-aero	ports/x11-themes/metacity-theme-aero
 metacity-theme-alloy-c	ports/x11-themes/metacity-theme-alloy-c
 metacity-theme-hacked-2	ports/x11-themes/metacity-theme-hacked-2
 metacity-theme-iridium-rounded	ports/x11-themes/metacity-theme-iridium-rounded
+metacity-theme-microgui	ports/x11-themes/metacity-theme-microgui
 metacity-themes	ports/x11-themes/metacity-themes
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
