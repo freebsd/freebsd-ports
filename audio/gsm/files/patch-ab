@@ -1,7 +1,67 @@
-*** Makefile	Tue May 10 14:39:31 1994
---- Makefile	Fri Jan  6 01:42:47 1995
+*** Makefile.orig	Wed Mar  8 01:22:16 1995
+--- Makefile	Thu Apr 18 20:03:21 1996
 ***************
-*** 60,66 ****
+*** 7,17 ****
+  SASR	= -DSASR
+  ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
+  
+! MULHACK = -DUSE_FLOAT_MUL
+  ######### Define this if your host multiplies floats faster than integers,
+  ######### e.g. on a SPARCstation.
+  
+! FAST	= -DFAST
+  ######### Define together with USE_FLOAT_MUL to enable the GSM library's
+  ######### approximation option for incorrect, but good-enough results.
+  
+--- 7,19 ----
+  SASR	= -DSASR
+  ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
+  
+! #MULHACK = -DUSE_FLOAT_MUL      # Don't define it for FreeBSD, cause SIGFPE
+! MULHACK =
+  ######### Define this if your host multiplies floats faster than integers,
+  ######### e.g. on a SPARCstation.
+  
+! #FAST    = -DFAST
+! FAST    =
+  ######### Define together with USE_FLOAT_MUL to enable the GSM library's
+  ######### approximation option for incorrect, but good-enough results.
+  
+***************
+*** 35,41 ****
+  # CC		= /usr/lang/acc
+  # CCFLAGS 	= -c -O
+  
+! CC		= gcc -ansi -pedantic
+  CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1
+  
+  LD 		= $(CC)
+--- 37,43 ----
+  # CC		= /usr/lang/acc
+  # CCFLAGS 	= -c -O
+  
+! #CC              = gcc -ansi -pedantic
+  CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1
+  
+  LD 		= $(CC)
+***************
+*** 51,61 ****
+--- 53,65 ----
+  ######### Includes needed by $(CC)
+  
+  # LDINC	= -L/usr/gnu/lib/gcc-2.1/gcc-lib/sparc-sun-sunos4.1.2/2.1
++ LDINC = -L$(LIB)
+  ######### Library paths needed by $(LD)
+  
+  # LDLIB	= -lgcc
+  ######### Additional libraries needed by $(LD)
+  
++ PREFIX= /usr/local
+  
+  # Where do you want to install libraries, binaries, a header file
+  # and the manual pages?
+***************
+*** 63,69 ****
   # Leave INSTALL_ROOT empty (or just don't execute "make install") to
   # not install gsm and toast outside of this directory.
   
@@ -9,16 +69,16 @@
   
   # Where do you want to install the gsm library, header file, and manpages?
   #
---- 60,66 ----
+--- 67,73 ----
   # Leave INSTALL_ROOT empty (or just don't execute "make install") to
   # not install gsm and toast outside of this directory.
   
-! INSTALL_ROOT	= ${PREFIX}
+! INSTALL_ROOT    =       $(PREFIX)
   
   # Where do you want to install the gsm library, header file, and manpages?
   #
 ***************
-*** 69,75 ****
+*** 72,78 ****
   
   GSM_INSTALL_ROOT = $(INSTALL_ROOT)
   GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
@@ -26,7 +86,7 @@
   GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
   
   
---- 69,75 ----
+--- 76,82 ----
   
   GSM_INSTALL_ROOT = $(INSTALL_ROOT)
   GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
@@ -34,3 +94,91 @@
   GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
   
   
+***************
+*** 128,133 ****
+--- 132,138 ----
+  LFLAGS	= $(LDFLAGS) $(LDINC)
+  ######### It's $(LD) $(LFLAGS)
+  
++ .SUFFIXES: .c .so .o
+  
+  # Targets
+  
+***************
+*** 246,251 ****
+--- 251,257 ----
+  
+  GSM_INSTALL_TARGETS =	\
+  		$(GSM_INSTALL_LIB)/libgsm.a		\
++ 		$(GSM_INSTALL_LIB)/libgsm.so.1.0        \
+  		$(GSM_INSTALL_INC)/gsm.h		\
+  		$(GSM_INSTALL_MAN)/gsm.3		\
+  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
+***************
+*** 265,273 ****
+  		$(CC) $(CFLAGS) $?
+  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
+  
+  # Target rules
+  
+! all:		$(LIBGSM) $(TOAST) $(TCAT) $(UNTOAST)
+  		@-echo $(ROOT): Done.
+  
+  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
+--- 271,282 ----
+  		$(CC) $(CFLAGS) $?
+  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
+  
++ .c.so:
++ 		${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++ 
+  # Target rules
+  
+! all:            $(LIBGSM) $(LIB)/libgsm.so.1.0 $(TOAST) $(TCAT) $(UNTOAST)
+  		@-echo $(ROOT): Done.
+  
+  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
+***************
+*** 287,292 ****
+--- 296,304 ----
+  
+  # The basic API: libgsm
+  
++ $(LIB)/libgsm.so.1.0: $(LIB) $(GSM_OBJECTS:S/o$/so/g)
++ 		ld -Bshareable -o $@ $(GSM_OBJECTS:S/o$/so/g)
++ 
+  $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
+  		-rm $(RMFLAGS) $(LIBGSM)
+  		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
+***************
+*** 296,302 ****
+  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
+  
+  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
+! 		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) $(LIBGSM) $(LDLIB)
+  
+  $(UNTOAST):	$(BIN) $(TOAST)
+  		-rm $(RMFLAGS) $(UNTOAST)
+--- 308,314 ----
+  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
+  
+  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
+! 		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) -lgsm $(LDLIB)
+  
+  $(UNTOAST):	$(BIN) $(TOAST)
+  		-rm $(RMFLAGS) $(UNTOAST)
+***************
+*** 382,387 ****
+--- 394,405 ----
+  		chmod 444 $@
+  
+  $(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
++ 		-rm $@
++ 		cp $? $@
++ 		chmod 444 $@
++ 		ranlib $@
++ 
++ $(GSM_INSTALL_LIB)/libgsm.so.1.0:    $(LIB)/libgsm.so.1.0
+  		-rm $@
+  		cp $? $@
+  		chmod 444 $@
