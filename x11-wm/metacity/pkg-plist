@@ -141,6 +141,7 @@ share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/themes/Bright
 @dirrm share/gnome/themes/Atlanta/metacity-1
 @dirrm share/gnome/themes/Atlanta
+@dirrm share/gnome/themes
 @dirrm share/gnome/metacity/icons
 @dirrm share/gnome/metacity/glade
 @dirrm share/gnome/metacity
