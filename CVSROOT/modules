@@ -3743,6 +3743,7 @@ ishido		ports/games/ishido
 isic		ports/net-mgmt/isic
 isilo		ports/palm/isilo
 ismail		ports/www/ismail
+iso-codes	ports/misc/iso-codes
 iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
 isoqlog		ports/mail/isoqlog
