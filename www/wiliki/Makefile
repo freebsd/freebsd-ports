@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha" && ${OSVERSION} >= 500000
+.if ${MACHINE_ARCH} == "alpha"
 BROKEN=		"Does not build"
 .endif
 
