@@ -3,7 +3,7 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.3 1997/09/26 10:11:03 asami Exp $
+# $Id: Makefile,v 1.4 1998/04/05 04:34:58 max Exp $
 #
 
 DISTNAME=	mei-1.53
@@ -16,7 +16,7 @@ MAINTAINER=	itojun@itojun.org
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 MAN1=	mei.1 moe.1
-MANLANG=	"" ja_JP.EUC
+MANLANG=	"" ja
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	freebsd.mak
