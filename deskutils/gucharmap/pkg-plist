@@ -17,6 +17,7 @@ share/gnome/pixmaps/gucharmap.png
 share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/am/LC_MESSAGES/gucharmap.mo
 share/locale/be/LC_MESSAGES/gucharmap.mo
+share/locale/bn/LC_MESSAGES/gucharmap.mo
 share/locale/cs/LC_MESSAGES/gucharmap.mo
 share/locale/cy/LC_MESSAGES/gucharmap.mo
 share/locale/da/LC_MESSAGES/gucharmap.mo
@@ -29,6 +30,7 @@ share/locale/fi/LC_MESSAGES/gucharmap.mo
 share/locale/fr/LC_MESSAGES/gucharmap.mo
 share/locale/ga/LC_MESSAGES/gucharmap.mo
 share/locale/hi/LC_MESSAGES/gucharmap.mo
+share/locale/hu/LC_MESSAGES/gucharmap.mo
 share/locale/it/LC_MESSAGES/gucharmap.mo
 share/locale/ja/LC_MESSAGES/gucharmap.mo
 share/locale/ko/LC_MESSAGES/gucharmap.mo
@@ -41,6 +43,8 @@ share/locale/pl/LC_MESSAGES/gucharmap.mo
 share/locale/pt/LC_MESSAGES/gucharmap.mo
 share/locale/pt_BR/LC_MESSAGES/gucharmap.mo
 share/locale/ru/LC_MESSAGES/gucharmap.mo
+share/locale/sk/LC_MESSAGES/gucharmap.mo
+share/locale/sq/LC_MESSAGES/gucharmap.mo
 share/locale/sr/LC_MESSAGES/gucharmap.mo
 share/locale/sr@Latn/LC_MESSAGES/gucharmap.mo
 share/locale/sv/LC_MESSAGES/gucharmap.mo
