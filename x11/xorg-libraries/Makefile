@@ -27,13 +27,13 @@ COMMENT=	X11 libraries and headers from X.Org
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-CONFLICTS=	XFree86-libraries-* \
+CONFLICTS=	Mesa-* XFree86-libraries-* \
 		libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* libXaw-* \
 		libXcursor-* libXdmcp-* libXext-* libXfont-* libXi-* \
 		libXinerama-* libXmu-* libXp-* libXpm-* libXrandr-* \
 		libXrender-* libXres-* libXt-* libXv-* libXxf86-* libxkbfile-* \
 		panoramixext-* printext-* randrext-* renderext-* resourceext-* \
-		xextensions-* xf86ext-* xlibs-* xproto-*
+		xextensions-* xf86ext-* xlibs-* xpm-* xproto-*
 
 EXTRA_PATCHES=	${CF_PATCHES}
 
