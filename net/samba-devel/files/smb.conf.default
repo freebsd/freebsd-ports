@@ -3,13 +3,16 @@
 # here. Samba has a huge number of configurable options (perhaps too
 # many!) most of which are not shown in this example
 #
+# For a step by step guide on installation, configuration and usage of Samba, 
+# read the Samba HOWTO Collection.
+#
 # Any line which starts with a ; (semi-colon) or a # (hash) 
 # is a comment and is ignored. In this example we will use a #
 # for commentry and a ; for parts of the config file that you
 # may wish to enable
 #
 # NOTE: Whenever you modify this file you should run the command "testparm"
-# to check that you have not many any basic syntactic errors. 
+# to check that you have not made any basic syntactic errors. 
 #
 #======================= Global Settings =====================================
 [global]
@@ -19,6 +22,31 @@
 
 # server string is the equivalent of the NT Description field
    server string = Samba Server
+
+# Security mode. Defines in which mode Samba will operate. Possible 
+# values are share, user, server, domain and ads. Most people will want 
+# user level security. See the HOWTO Collection for details.
+   security = user
+
+# Use password server option only with security = server
+# The argument list may include:
+#   password server = My_PDC_Name [My_BDC_Name] [My_Next_BDC_Name]
+# or to auto-locate the domain controller/s
+#   password server = *
+;   password server = <NT-Server-Name>
+
+# You may wish to use password encryption. Please read
+# ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
+# Do not enable this option unless you have read those documents
+;  encrypt passwords = yes
+# Use the realm option only with security = ads
+# Specifies the Active Directory realm the host is part of
+;   realm = MY_REALM
+
+# Backend to store user information in. New installations should 
+# use either tdbsam or ldapsam. smbpasswd is available for backwards 
+# compatibility. tdbsam requires no further configuration.
+;   passdb backend = tdbsam
 
 # This option is important for security. It allows you to restrict
 # connections to machines which are on your local network. The
@@ -41,7 +69,7 @@
 
 # It should not be necessary to specify the print system type unless
 # it is non-standard. Currently supported print systems include:
-# bsd, sysv, plp, lprng, aix, hpux, qnx
+# cups, bsd, sysv, plp, lprng, aix, hpux, qnx
 ;   printing = bsd
 
 # Uncomment this if you want a guest account, you must add this to /etc/passwd
@@ -55,24 +83,17 @@
 # Put a capping on the size of the log files (in Kb).
    max log size = 50
 
-# Security mode. Most people will want user level security. See
-# security_level.txt for details.
-   security = user
-# Use password server option only with security = server
-;   password server = <NT-Server-Name>
-
-# You may wish to use password encryption. Please read
-# ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
-# Do not enable this option unless you have read those documents
-;  encrypt passwords = yes
 
 # Using the following line enables you to customise your configuration
 # on a per machine basis. The %m gets replaced with the netbios name
-# of the machine that is connecting
+# of the machine that is connecting.
+# Note: Consider carefully the location in the configuration file of
+#       this line.  The included file is read at that point.
 ;   include = %%SAMBA_CONFDIR%%/smb.conf.%m
 
 # Most people will find that this option gives better performance.
-# See speed.txt and the manual pages for details
+# See the chapter 'Samba performance issues' in the Samba HOWTO Collection
+# and the manual pages for details.
    socket options = TCP_NODELAY 
 
 # Configure Samba to use multiple interfaces
@@ -132,8 +153,7 @@
 ;   wins proxy = yes
 
 # DNS Proxy - tells Samba whether or not to try to resolve NetBIOS names
-# via DNS nslookups. The built-in default for versions 1.9.17 is yes,
-# this has been changed in version 1.9.18 to no.
+# via DNS nslookups. The default is NO.
    dns proxy = no 
 
 # charset settings
@@ -141,19 +161,27 @@
 ;   unix charset = ASCII
 ;   dos charset = ASCII
 
-# 
+# These scripts are used on a domain controller or stand-alone 
+# machine to add or delete corresponding unix accounts
+;  add user script = /usr/sbin/useradd %u
+;  add group script = /usr/sbin/groupadd %g
+;  add machine script = /usr/sbin/adduser -n -g machines -c Machine -d /dev/null -s /bin/false %u
+;  delete user script = /usr/sbin/userdel %u
+;  delete user from group script = /usr/sbin/deluser %u %g
+;  delete group script = /usr/sbin/groupdel %g
+
 #============================ Share Definitions ==============================
 [homes]
    comment = Home Directories
    browseable = no
-   writeable = yes
+   writable = yes
 
 # Un-comment the following and create the netlogon directory for Domain Logons
 ; [netlogon]
 ;   comment = Network Logon Service
 ;   path = /usr/local/samba/lib/netlogon
 ;   guest ok = yes
-;   writeable = no
+;   writable = no
 ;   share modes = no
 
 
@@ -173,7 +201,7 @@
    browseable = no
 # Set public = yes to allow user 'guest account' to print
    guest ok = no
-   writeable = no
+   writable = no
    printable = yes
 
 # This one is useful for people to share files
@@ -189,7 +217,7 @@
 ;   comment = Public Stuff
 ;   path = /home/samba
 ;   public = yes
-;   writeable = yes
+;   writable = yes
 ;   printable = no
 ;   write list = @staff
 
@@ -204,7 +232,7 @@
 ;   path = /homes/fred
 ;   printer = freds_printer
 ;   public = no
-;   writeable = no
+;   writable = no
 ;   printable = yes
 
 # A private directory, usable only by fred. Note that fred requires write
@@ -214,7 +242,7 @@
 ;   path = /usr/somewhere/private
 ;   valid users = fred
 ;   public = no
-;   writeable = yes
+;   writable = yes
 ;   printable = no
 
 # a service which has a different directory for each machine that connects
@@ -225,23 +253,23 @@
 ;  comment = PC Directories
 ;  path = /usr/pc/%m
 ;  public = no
-;  writeable = yes
+;  writable = yes
 
 # A publicly accessible directory, read/write to all users. Note that all files
 # created in the directory by users will be owned by the default user, so
 # any user with access can delete any other user's files. Obviously this
-# directory must be writeable by the default user. Another user could of course
+# directory must be writable by the default user. Another user could of course
 # be specified, in which case all files would be owned by that user instead.
 ;[public]
 ;   path = /usr/somewhere/else/public
 ;   public = yes
 ;   only guest = yes
-;   writeable = yes
+;   writable = yes
 ;   printable = no
 
 # The following two entries demonstrate how to share a directory so that two
 # users can place files there that will be owned by the specific users. In this
-# setup, the directory should be writeable by both users and should have the
+# setup, the directory should be writable by both users and should have the
 # sticky bit set on it to prevent abuse. Obviously this could be extended to
 # as many users as required.
 ;[myshare]
@@ -249,7 +277,7 @@
 ;   path = /usr/somewhere/shared
 ;   valid users = mary fred
 ;   public = no
-;   writeable = yes
+;   writable = yes
 ;   printable = no
 ;   create mask = 0765
 
