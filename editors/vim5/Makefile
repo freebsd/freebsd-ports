@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.29 1998/09/25 10:07:45 asami Exp $
+# $Id: Makefile,v 1.30 1998/10/14 00:19:03 jseger Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 MAINTAINER=     obrien@FreeBSD.org
 
-.if defined(BATCH)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
 		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
@@ -29,7 +29,7 @@ USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --enable-max-features" -f
+MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --enable-max-features --with-tlib=termlib" -f
 ALL_TARGET=	#
 MAN1=		vim.1 xxd.1 ectags.1
 
@@ -41,7 +41,7 @@ MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif" MOTIFHOME=${X11BASE} ${MAKE_FLAGS
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena" ${MAKE_FLAGS}
 .endif
 
-.if defined(BATCH)
+.if defined(PACKAGE_BUILDING)
 MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp" ${MAKE_FLAGS}
 .endif
 
