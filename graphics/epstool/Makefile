@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	1.60
+PORTVERSION=	1.80
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/ghostgum/ \
-		ftp://ftp.fh-koblenz.de/pub/Ghostscript/ghostgum/
-DISTNAME=	gsv36src
+MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+DISTNAME=	gsv40src
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
