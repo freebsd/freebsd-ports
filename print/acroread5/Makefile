@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	acroread5
+PORTNAME=	acroread
 PORTVERSION=	5.05
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
