@@ -7,6 +7,7 @@
 
 PORTNAME=	lemon
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/${PORTNAME}/
 DISTFILES=	lemon.c lempar.c
@@ -20,11 +21,11 @@ do-extract:
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} VPATH=${DISTDIR} PROG=lemon NOMAN=1 \
-		CFLAGS="${CFLAGS} -DLEMPAR='\"${PREFIX}/share/lemon/lempar.c\"'" \
+		CFLAGS="-g ${CFLAGS} -DLEMPAR='\"${PREFIX}/share/lemon/lempar.c\"'" \
 			-f /usr/share/mk/bsd.prog.mk
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/share/lemon
 	${INSTALL_DATA} ${DISTDIR}/lempar.c ${PREFIX}/share/lemon/
 
