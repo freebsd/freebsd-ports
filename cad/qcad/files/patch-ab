@@ -1,0 +1,11 @@
+--- rappwin.cpp.orig	Sat Aug 12 03:31:54 2000
++++ rappwin.cpp	Sat Sep 23 14:37:46 2000
+@@ -3292,7 +3292,7 @@
+     case 0:
+       if(true) {
+         if(!QFileInfo(manualStr).exists()) {
+-          manualStr = "	/usr/share/doc/qcad/html/index.html";
++          manualStr = "	%%PREFIX%%/share/doc/qcad/html/index.html";
+         }
+ 
+         RLOG("\nEXEC:");
