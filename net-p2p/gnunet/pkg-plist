@@ -18,6 +18,9 @@ bin/gnunet-transport-check
 bin/gnunetd
 include/gnunet_afs_esed2.h
 include/gnunet_core.h
+include/gnunet_dht.h
+include/gnunet_dht_lib.h
+include/gnunet_dht_module.h
 include/gnunet_transport.h
 include/gnunet_util.h
 include/platform.h
