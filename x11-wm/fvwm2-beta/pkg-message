@@ -1,0 +1,23 @@
+
+Notes for XFree86 3.3/3.3.1 and LANG=ja_JP.EUC:
+
+There are some bug (?) in already released XFree86 based on X11R6.3, i.e.,
+XFree86 3.3 and XFree86 3.3.1, when X client runs under LANG=ja_JP.EUC.
+
+If you wanna use this fvwm2 with LANG=ja_JP.EUC (which means "run fvwm2,
+with environment variable 'LANG' is set to 'ja_JP.EUC' to enable to display
+Japanese Kanji/Hiragana/Katakana characters"), apply following patch to
+/usr/X11R6/lib/X11/locale/ja/XLC_LOCALE (or equivalent).
+
+*** lib/X11/locale/ja/XLC_LOCALE.dist	Mon Aug  4 16:44:48 1997
+--- lib/X11/locale/ja/XLC_LOCALE	Wed Oct  8 01:28:00 1997
+***************
+*** 35,40 ****
+--- 35,41 ----
+  	}
+  	font	{
+  		primary		JISX0201.1976-0:GR
++ 		substitute	JISX0201.1976-0:GR
+  		vertical_rotate	all
+  	}
+  }
