@@ -5830,6 +5830,7 @@ ruby-msql	ports/databases/ruby-msql
 ruby-mwdom	ports/textproc/ruby-mwdom
 ruby-mysql	ports/databases/ruby-mysql
 ruby-narray	ports/math/ruby-narray
+ruby-ncurses	ports/devel/ruby-ncurses
 ruby-nis	ports/net/ruby-nis
 ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-o_dbm	ports/databases/ruby-o_dbm
