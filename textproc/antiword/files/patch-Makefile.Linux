@@ -1,0 +1,29 @@
+--- Makefile.Linux.orig	Sat Jul 21 15:58:03 2001
++++ Makefile.Linux	Sat Nov  3 15:30:36 2001
+@@ -2,7 +2,7 @@
+ # Makefile for antiword (Linux version)
+ #
+ 
+-CC	= gcc
++CC	?= gcc
+ LD	= gcc
+ 
+ # must be equal to DEBUG or NDEBUG
+@@ -12,7 +12,7 @@
+ 
+ LDLIBS	=
+ 
+-CFLAGS	= -Wall -pedantic $(OPT) -D$(DB)
++CFLAGS	+= -Wall -pedantic -D$(DB)
+ LDFLAGS	=
+ 
+ OBJS	=\
+@@ -27,7 +27,7 @@
+ 	antiword\
+ 	kantiword
+ 
+-INSTALL_DIR = $(HOME)/bin
++INSTALL_DIR = $(PREFIX)/bin
+ 
+ all:		$(PROGS)
+ 
