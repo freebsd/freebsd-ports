@@ -17,7 +17,6 @@ COMMENT=	Show where disk space is taken up
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
-USE_MESA=	yes
 USE_X_PREFIX=	yes
 
 do-build:
