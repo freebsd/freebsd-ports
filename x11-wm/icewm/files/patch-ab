@@ -1,18 +1,29 @@
---- src/Makefile.orig	Fri Apr  3 17:12:54 1998
-+++ src/Makefile	Fri Apr  3 17:14:33 1998
-@@ -1,8 +1,8 @@
- include ../VERSION
- 
+--- src/Makefile.orig	Mon Apr  6 20:30:21 1998
++++ src/Makefile	Fri May  1 08:34:15 1998
+@@ -3,9 +3,9 @@
  # Linux
+ CXX         = g++
+ LD          = gcc
+-CXXOPTS     = -pipe $(WARN)
 -INCSDIR     = -I/usr/X11R6/include
 -LIBSDIR     = -L/usr/X11R6/lib
++CXXOPTS     = $(CFLAGS) $(WARN)
 +INCSDIR     = -I$(PREFIX)/include
 +LIBSDIR     = -L$(PREFIX)/lib
  
- # HPUX
- #INCSDIR     = -I/usr/include/X11R5
-@@ -36,7 +36,7 @@
- #OPTIMIZE    = -g
+ #XPMINCDIR   = -I../../include
+ #XPMLIBDIR   = -L../../lib
+@@ -34,7 +34,7 @@
+ SHAPEDEF    = -DSHAPE
+ SHAPELIB    = -lXext
+ 
+-DEBUG       = -DDEBUG
++#DEBUG       = -DDEBUG
+ 
+ # executable extenstion
+ EXEEXT=
+@@ -48,7 +48,7 @@
+ #OPTIMIZE   = -g
  #OPTIMIZE   = -O -g
  #OPTIMIZE   = -O -g -pg
 -OPTIMIZE   = -O

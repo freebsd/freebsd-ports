@@ -1,4 +1,7 @@
 bin/icewm
+lib/X11/icewm/menu
+lib/X11/icewm/preferences
+lib/X11/icewm/winoptions
 lib/X11/icewm/icons/app_16x16.xpm
 lib/X11/icewm/icons/app_32x32.xpm
 lib/X11/icewm/icons/bomb_16x16.xpm
@@ -38,8 +41,6 @@ lib/X11/icewm/ledclock/n9.xpm
 lib/X11/icewm/ledclock/p.xpm
 lib/X11/icewm/ledclock/slash.xpm
 lib/X11/icewm/ledclock/space.xpm
-lib/X11/icewm/menu
-lib/X11/icewm/preferences
 lib/X11/icewm/taskbar/bsd-daemon.xpm
 lib/X11/icewm/taskbar/linux.xpm
 lib/X11/icewm/taskbar/mail.xpm
@@ -183,7 +184,6 @@ lib/X11/icewm/themes/win95/default.theme
 lib/X11/icewm/themes/win95/maximize.xpm
 lib/X11/icewm/themes/win95/minimize.xpm
 lib/X11/icewm/themes/win95/restore.xpm
-lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/icons
 @dirrm lib/X11/icewm/ledclock
 @dirrm lib/X11/icewm/taskbar
