@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	2.20
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-auth-mysql
@@ -30,7 +30,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
 		--with-apxs=${APXS}
 
-.include "${.CURDIR}/../www/apache2/Makefile.modules.3rd"
+.include "${.CURDIR}/../apache2/Makefile.modules.3rd"
 
 post-install:
 .if !defined(NOPORTDOCS)
