@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.97
+PORTVERSION=	1.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.go-mono.com/archive/rc/
+MASTER_SITES=	http://mono2.ximian.com/archive/${PORTVERSION}/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	An open source implementation of .NET Development Framework
@@ -19,6 +19,8 @@ USE_GNOME=	gnomehack glib20 pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=\'\' \
 		--with-gc=included \
 		--with-nptl=no
@@ -38,11 +40,5 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-signbit
 .elif ${OSVERSION} < 502113
 IGNORE=	"Does not work on 5.X before 502113"
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name configure | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|-pthread|${PTHREAD_LIBS}|g' \
-		-e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|g'
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/libgc/threadlibs.c
 
 .include <bsd.port.post.mk>
