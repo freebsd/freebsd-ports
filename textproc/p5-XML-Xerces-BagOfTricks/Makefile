@@ -27,6 +27,8 @@ MAN3=	XML::Xerces::BagOfTricks.3
 
 .if ${PERL_LEVEL} < 500801
 IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.else
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
