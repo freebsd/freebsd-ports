@@ -26,6 +26,14 @@ NO_BUILD=       Yes
 CDIR=	${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin
 
+NSCP=	/usr/local/libexec/netscape \
+	/usr/local/libexec/netscape-linux \
+	/usr/local/netscape \
+	/usr/local/netscape-linux \
+	/usr/local/lib/netscape \
+	/usr/local/lib/netscape-linux \
+	${MOZILLA_HOME}
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -43,14 +51,18 @@ do-install:
 		${ECHO} "-----------------------------------------------------------" ; \
 		${FALSE} ; \
 	fi
-	@if (test -d "/usr/lib/netscape"\
-	    || test -d "/usr/local/netscape"\
-	    || test -d "/usr/local/lib/netscape") ; \
-	then \
-		${ECHO} -e "1\n${CDIR}\nj\nj\nj\n3" > ${WRKSRC}/response ; \
-	else \
-		${ECHO} -e "1\n${CDIR}\nj\nj\nj\nj\n3" > ${WRKSRC}/response ; \
-	fi
+
+	@${ECHO} -e "1\n${CDIR}\nj\nj\nj\nj\n3" > ${WRKSRC}/response ;
+	@for dir in ${NSCP}; do \
+                if [ -e $${dir}/plugins/libnullplugin.so ]; then \
+                        BIN=`${FILE} $${dir}/plugins/libnullplugin.so | ${AWK} '{print $$11}'` ; \
+                        case $${BIN} in \
+                        \(SYSV\),) \
+				${ECHO} -e "1\n${CDIR}\nj\nj\nj\n3" > ${WRKSRC}/response ; \
+                        esac \
+                fi \
+        done
+
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfcmgr \
 		> ${WRKSRC}/wfcmgr.x
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfica \
