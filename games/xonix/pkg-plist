@@ -1,2 +1,3 @@
 bin/xonix
 lib/X11/app-defaults/Xonix
+@dirrm lib/X11/xonix
