@@ -24,9 +24,9 @@ USE_AUTOMAKE=	yes
 post-configure:
 		${PERL} -pi.fbsd -e 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
 
+.if		!defined(NOPORTDOCS)
 post-install:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${GMAKE} install-docDATA
+		cd ${WRKSRC} && ${GMAKE} install-docDATA
 .endif
 
 .include <bsd.port.mk>

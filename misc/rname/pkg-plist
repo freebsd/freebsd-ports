@@ -1,5 +1,5 @@
 bin/rname
-share/doc/rname/html/index.html
-share/doc/rname/html/created.with.vim.gif
-@dirrm share/doc/rname/html
-@dirrm share/doc/rname
+%%PORTDOCS%%share/doc/rname/html/index.html
+%%PORTDOCS%%share/doc/rname/html/created.with.vim.gif
+%%PORTDOCS%%@dirrm share/doc/rname/html
+%%PORTDOCS%%@dirrm share/doc/rname
