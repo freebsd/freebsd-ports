@@ -57,6 +57,7 @@
     SUBDIR += jaxen
     SUBDIR += jboss2
     SUBDIR += jboss3
+    SUBDIR += jc
     SUBDIR += jce-aba
     SUBDIR += jcommon
     SUBDIR += jdbcpool
