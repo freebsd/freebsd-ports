@@ -1,0 +1,11 @@
+Parsing a program's command line arguments has always been a distraction from
+the main programming task at hand. The argtable library simplifies the job by
+enabling the programmer to define the command line options directly in the
+source code as a static array of structs and then pass that array to argtable
+library functions which parse the command line accordingly. The values
+extracted from the comand line are deposited directly into user-defined program
+variables where they can be accessed by the main program. Argtable can also
+generate descriptions of the command line syntax from that same array for
+display as on-line help.
+
+WWW: http://argtable.sourceforge.net/

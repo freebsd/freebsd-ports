@@ -1,0 +1,17 @@
+include/argtable2.h
+lib/libargtable2.a
+%%DOCSDIR%%/argtable2-intro.html
+%%DOCSDIR%%/argtable2-intro.pdf
+%%DOCSDIR%%/argtable2-intro.ps
+%%DOCSDIR%%/argtable2.html
+%%DOCSDIR%%/argtable2.pdf
+%%DOCSDIR%%/argtable2.ps
+@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/echo.c
+%%EXAMPLESDIR%%/ls.c
+%%EXAMPLESDIR%%/mv.c
+%%EXAMPLESDIR%%/myprog.c
+%%EXAMPLESDIR%%/rm.c
+%%EXAMPLESDIR%%/uname.c
+@dirrm %%EXAMPLESDIR%%

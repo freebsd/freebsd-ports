@@ -30,6 +30,7 @@
     SUBDIR += apr
     SUBDIR += arch
     SUBDIR += argouml
+    SUBDIR += argtable
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
