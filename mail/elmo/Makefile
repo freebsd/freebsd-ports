@@ -7,7 +7,7 @@
 
 PORTNAME=	elmo
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	\
 	http://savannah.nongnu.org/download/elmo/unstable.pkg/${PORTVERSION}/
@@ -16,7 +16,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
