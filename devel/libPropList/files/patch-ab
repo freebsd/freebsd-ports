@@ -1,0 +1,10 @@
+--- filehandling.c.orig	Mon Jan 25 15:30:54 1999
++++ filehandling.c	Wed Feb 10 14:02:41 1999
+@@ -106,6 +106,7 @@
+       return NULL;
+     }
+ 
++  *(str + fstat_buf.st_size) = '\0';
+   flk.l_type = F_UNLCK;
+ #if 0
+   if((flock(fd, LOCK_UN))<0)
