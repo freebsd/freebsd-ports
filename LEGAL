@@ -132,6 +132,7 @@ netshow-*		ports/graphics/netshow	Commercial software
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
+perltools		ports/java/perltools	No redistribution
 pgp*			ports/security/pgp*	Various locality restrictions
 pklin*			ports/archivers/pkzip	Shareware
 platon-*		ports/biology/platon	US$ 5000 for commercial users,
