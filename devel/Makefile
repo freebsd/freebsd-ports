@@ -134,7 +134,6 @@
     SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cxref
-    SUBDIR += dbregc
     SUBDIR += ddd
     SUBDIR += decompyle
     SUBDIR += devtodo

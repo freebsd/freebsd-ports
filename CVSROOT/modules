@@ -1154,7 +1154,6 @@ dbench		ports/benchmarks/dbench
 dbf2mysql	ports/databases/dbf2mysql
 dbh		ports/databases/dbh
 dbmetrix	ports/databases/dbmetrix
-dbregc		ports/devel/dbregc
 dbs		ports/benchmarks/dbs
 dbsym		src/usr.sbin/dbsym
 dbtool		ports/databases/dbtool
