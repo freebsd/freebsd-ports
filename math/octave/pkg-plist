@@ -306,7 +306,7 @@ lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so.%%OCTAVE_VERSION%%
 @unexec /bin/rm -f %D/lib/octave
-@exec /bin/ln -sf %D/lib/octave-%%OCTAVE_VERSION%% %D/lib/octave
+@exec /bin/ln -sf octave-%%OCTAVE_VERSION%% %D/lib/octave
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-octave-help
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/airy.oct
