@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--prefix=${LOCALBASE}/${PORTNAME} --with-freebsd-pthread
+CONFIGURE_ARGS+=	--with-freebsd-pthread
 
 MAN1=	kvirc.1
 
