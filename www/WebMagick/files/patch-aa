@@ -1,0 +1,27 @@
+--- webmagick.in.bak	Thu Aug  9 09:59:52 2001
++++ webmagick.in	Sun Aug 12 07:31:59 2001
+@@ -1828,9 +1828,9 @@
+     #
+     my $helphtml = '';
+     if( $haveReadme ) {
+-        $helphtml = "<A HREF=\"escapeurl(${opt_readme})\" TARGET=\"$frameTargets{'readmeview'}\">
++	$helphtml = "<A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\">
+     <IMG SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"?\" BORDER=0></A>
+-    <A HREF=\"escapeurl(${opt_readme})\" TARGET=\"$frameTargets{'readmeview'}\">ReadMe</A><BR>";
++    <A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\">ReadMe</A><BR>";
+     }
+ 
+     #
+@@ -2265,10 +2265,10 @@
+ 			}
+ 			print( PICHTML ">\n\n" );
+ 			print( PICHTML "$opt_pichtmltop") if $opt_pichtmltop;
+-			if ( $pic =~ /\.(jpg|jpeg?|gif|xbm)$/i ) {
++			if ( $pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i ) {
+ 			    print( PICHTML "<IMG SRC=\"$pic\">" );
+ 			} else {
+-			    print( PICHTML "<A HREF=\"escapeurl($pic)\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>" );
++			    print( PICHTML "<A HREF=\"", escapeurl($pic), "\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>" );
+ 			}
+ 			print( PICHTML "$opt_pichtmlbottom\n") if $opt_pichtmlbottom;
+ 			print( PICHTML "</BODY>\n" );
