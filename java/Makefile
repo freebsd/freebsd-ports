@@ -24,6 +24,7 @@
     SUBDIR += javavmwrapper
     SUBDIR += javel
     SUBDIR += jboss2
+    SUBDIR += jboss3
     SUBDIR += jce-aba
     SUBDIR += jdbcpool
     SUBDIR += jde
