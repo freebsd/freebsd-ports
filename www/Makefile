@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1997/08/12 20:26:49 peter Exp $
+# $Id: Makefile,v 1.59 1997/08/12 20:29:27 peter Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -44,6 +44,7 @@
     SUBDIR += webcopy
     SUBDIR += weblint
     SUBDIR += webstone
+    SUBDIR += wml
     SUBDIR += wn
     SUBDIR += wwwcount
     SUBDIR += wwwstat
