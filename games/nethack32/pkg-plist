@@ -1,7 +1,11 @@
 bin/nethack
-lib/nethackdir/save
+@exec mkdir %D/lib/nethackdir/save
+@exec chmod 775 %D/lib/nethackdir/save
+@exec chown games.games %D/lib/nethackdir/save
+@unexec rmdir %D/lib/nethackdir/save
 lib/nethackdir/nethack
 man/man6/dgn_comp.6.gz
+man/man6/dlb.6.gz
 man/man6/lev_comp.6.gz
 man/man6/nethack.6.gz
 man/man6/recover.6.gz
@@ -69,7 +73,11 @@ lib/nethackdir/air.lev
 lib/nethackdir/asmodeus.lev
 lib/nethackdir/astral.lev
 lib/nethackdir/baalz.lev
-lib/nethackdir/bigroom.lev
+lib/nethackdir/bigrm-1.lev
+lib/nethackdir/bigrm-2.lev
+lib/nethackdir/bigrm-3.lev
+lib/nethackdir/bigrm-4.lev
+lib/nethackdir/bigrm-5.lev
 lib/nethackdir/castle.lev
 lib/nethackdir/cmdhelp
 lib/nethackdir/data
@@ -87,9 +95,11 @@ lib/nethackdir/license
 lib/nethackdir/logfile
 lib/nethackdir/medusa-1.lev
 lib/nethackdir/medusa-2.lev
-lib/nethackdir/mine_end.lev
 lib/nethackdir/minefill.lev
-lib/nethackdir/minetown.lev
+lib/nethackdir/minend-1.lev
+lib/nethackdir/minend-2.lev
+lib/nethackdir/minetn-1.lev
+lib/nethackdir/minetn-2.lev
 lib/nethackdir/opthelp
 lib/nethackdir/options
 lib/nethackdir/oracle.lev
