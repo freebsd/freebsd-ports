@@ -1,11 +1,11 @@
---- src/tools/Makefile.in.orig	Wed Apr 23 10:12:21 2003
-+++ src/tools/Makefile.in	Wed Apr 23 10:12:37 2003
-@@ -76,7 +76,7 @@
+--- src/tools/Makefile.in.orig	Tue Sep 30 14:56:08 2003
++++ src/tools/Makefile.in	Tue Sep 30 14:56:39 2003
+@@ -119,7 +119,7 @@
  
  INCLUDES = -I@top_srcdir@/src/lib
- CFLAGS = -Wall @CFLAGS@
--LDFLAGS = -lldap -llber -lldap_r -lpthread -lresolv @LDFLAGS@
-+LDFLAGS = -lldap -llber -lldap_r -pthread @LDFLAGS@
+ AM_CFLAGS = @CFLAGS@
+-AM_LDFLAGS = -lldap -llber -lldap_r -lpthread -lresolv @LDFLAGS@
++AM_LDFLAGS = -lldap -llber -lldap_r -pthread @LDFLAGS@
  
  bin_PROGRAMS = adtool
  
