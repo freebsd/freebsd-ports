@@ -14,8 +14,10 @@ MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	fjoe@FreeBSD.org
 
+.if !defined(WITHOUT_ISPELL)
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.endif
 .if !defined(WITHOUT_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
@@ -27,6 +29,7 @@ USE_GMAKE=	yes
 USE_GNOMENG=	yes
 .if ${PORTNAME} == "mc"
 USE_GNOME=	glib12
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .else
 USE_GNOME=	gnomeprefix gnomelibs
 .endif
@@ -62,7 +65,7 @@ post-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} \
 		-e 's|\$$(libdir)/mc|\$$(datadir)/mc|g' \
 		-e 's|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
-.if ${PORTNAME} != "mc
+.if ${PORTNAME} != "mc"
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = intl po vfs edit src lib doc|SUBDIRS = intl po vfs lib|' ${WRKSRC}/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e 's|DRAR=/usr/bin|DRAR=${LOCALBASE}/bin|' \
@@ -70,7 +73,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/\(.*\)zip|${LOCALBASE}/bin/\1zip|' \
 		${WRKSRC}/vfs/extfs/uzip
 
+.if ${PORTNAME} == "mc"
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
+.endif
 
 .include <bsd.port.mk>
