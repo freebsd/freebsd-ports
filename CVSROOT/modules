@@ -4189,6 +4189,7 @@ ksig		ports/misc/ksig
 kslide		ports/games/kslide
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
+kst		ports/science/kst
 ksubeditor	ports/multimedia/ksubeditor
 ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
