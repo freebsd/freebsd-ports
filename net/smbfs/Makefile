@@ -41,7 +41,7 @@ pre-fetch:
 .endif
 .if !defined(SMP_SUPPORT)
 	@${ECHO_MSG} "NOTE: SMP suppport can be enabled by adding "
-	@${ECHO_MSG} "\"SMB_SUPPORT=yes\" to argument of make."
+	@${ECHO_MSG} "\"SMP_SUPPORT=yes\" to argument of make."
 .endif
 
 post-install:
