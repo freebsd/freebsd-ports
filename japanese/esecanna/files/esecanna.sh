@@ -1,38 +1,37 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 esecannaserver="!!PREFIX!!/sbin/esecannaserver"
 
 case "$1" in
-restart)
-	if [ -x $esecannaserver ]; then
-	    rm -f /tmp/.iroha_unix/IROHA
-	    echo -n ' esecannai: '
-	    $esecannaserver
-	fi
-	;;
 start)
 	if [ -f !!PREFIX!!/vje30/.version ] \
-	 && grep -qw 'FREE TRIAL VERSION' !!PREFIX!!/vje30/.version \
-	 && [ X"$1" != X"restart" ]; then
-	    echo ""
-	    echo "esecanna:"
-	    echo "  Using VJE-Delta 3.0 trial, it is unable to connect to vjed on startup."
-	    echo "  Please execute \`$0 restart' manually"
-	    echo "  after once you run vje."
+	 && grep -qw 'FREE TRIAL VERSION' !!PREFIX!!/vje30/.version; then
+	    echo ''
+	    echo 'esecanna:'
+	    echo '  Using VJE-Delta 3.0 trial, it is unable to connect to vjed on startup.'
+	    echo '  Please execute $esecannaserver manually after once you run vje.'
 	    exit 1
 	fi
 
 	if [ -x $esecannaserver ]; then
 	    rm -f /tmp/.iroha_unix/IROHA
-	    echo -n ' esecannai: '
+	    echo -n ' esecanna: '
 	    $esecannaserver
 	fi
 	;;
 stop)
-	killall $esecannaserver && echo -n ' esecannai'
+	pidfile="/var/run/esecanna.pid"
+	if [ -f $pidfile ]; then
+	    kill `cat $pidfile` && echo -n ' esecanna'
+	    rm $pidfile
+	else
+	    echo ' esecanna: not running'
+	fi
 	;;
 *)
-	echo "Usage: `basename $0` {restart|start|stop}" >&2
+	echo "Usage: `basename $0` {start|stop}" >&2
 	exit 64
 	;;
 esac
