@@ -1,7 +1,10 @@
 bin/Tulip
 bin/tlprender
 bin/tulip-config
+include/tulip/Array.h
 include/tulip/Bezier.h
+include/tulip/Camera.h
+include/tulip/Circle.h
 include/tulip/Cluster.h
 include/tulip/Clustering.h
 include/tulip/Color.h
@@ -14,9 +17,11 @@ include/tulip/FanError.h
 include/tulip/GlFonts.h
 include/tulip/GlGraph.h
 include/tulip/GlGraphStrategy.h
+include/tulip/GlGraphWidget.h
 include/tulip/GlLines.h
 include/tulip/Glyph.h
 include/tulip/GraphIterator.h
+include/tulip/GraphMeasure.h
 include/tulip/IdManager.h
 include/tulip/ImportModule.h
 include/tulip/Int.h
@@ -24,11 +29,15 @@ include/tulip/IntProxy.h
 include/tulip/Iterator.h
 include/tulip/Layout.h
 include/tulip/LayoutProxy.h
+include/tulip/MapIterator.h
+include/tulip/Matrix.h
 include/tulip/MetaGraph.h
 include/tulip/MetaGraphProxy.h
 include/tulip/MethodFactory.h
 include/tulip/Metric.h
 include/tulip/MetricProxy.h
+include/tulip/MouseInterface.h
+include/tulip/MouseObject.h
 include/tulip/Observable.h
 include/tulip/Plugin.h
 include/tulip/PluginContext.h
@@ -38,12 +47,18 @@ include/tulip/PluginProgress.h
 include/tulip/Property.h
 include/tulip/PropertyProxy.h
 include/tulip/PropertyProxyContainer.h
+include/tulip/PropertyWidgets.h
+include/tulip/Rectangle.h
 include/tulip/Reflect.h
 include/tulip/Selection.h
 include/tulip/SelectionProxy.h
+include/tulip/SimpleVector.h
 include/tulip/Size.h
 include/tulip/Sizes.h
 include/tulip/SizesProxy.h
+include/tulip/Spline.h
+include/tulip/StableIterator.h
+include/tulip/StlFunctions.h
 include/tulip/StlIterator.h
 include/tulip/String.h
 include/tulip/StringProxy.h
@@ -54,17 +69,28 @@ include/tulip/SuperGraphImpl.h
 include/tulip/SuperGraphView.h
 include/tulip/TemplateFactory.h
 include/tulip/TlpTools.h
+include/tulip/TulipElementProperties.h
+include/tulip/TulipElementPropertiesData.h
 include/tulip/TulipPlugin.h
 include/tulip/TypeConverter.h
 include/tulip/Types.h
+include/tulip/Vector.h
 include/tulip/WithParameter.h
+include/tulip/cxx/Array.cxx
+include/tulip/cxx/Circle.cxx
+include/tulip/cxx/Matrix.cxx
 include/tulip/cxx/PropertyProxy.cxx
 include/tulip/cxx/PropertyProxyContainer.cxx
 include/tulip/cxx/Reflect.cxx
 include/tulip/cxx/TemplateFactory.cxx
+include/tulip/cxx/Vector.cxx
+include/tulip/tulipconf.h
 lib/libtulip-ogl.a
 lib/libtulip-ogl.so
 lib/libtulip-ogl.so.0
+lib/libtulip-qt.a
+lib/libtulip-qt.so
+lib/libtulip-qt.so.0
 lib/libtulip.a
 lib/libtulip.so
 lib/libtulip.so.0
@@ -82,8 +108,11 @@ lib/tlp/plugins/clustering/hierarchical.so
 lib/tlp/plugins/clustering/quotientclustering.so
 lib/tlp/plugins/clustering/segment.so
 lib/tlp/plugins/clustering/sizen.so
+lib/tlp/plugins/clustering/strength.so
 lib/tlp/plugins/colors/histogrammapping.so
 lib/tlp/plugins/colors/linearmapping.so
+lib/tlp/plugins/colors/uniformquantif.so
+lib/tlp/plugins/designer/libTulipWidgets.so
 lib/tlp/plugins/export/generic.so
 lib/tlp/plugins/export/gml.so
 lib/tlp/plugins/export/tlp.so
@@ -93,6 +122,7 @@ lib/tlp/plugins/glyph/cubeoutlined.so
 lib/tlp/plugins/glyph/cylinder.so
 lib/tlp/plugins/glyph/sphere.so
 lib/tlp/plugins/import/adjacencymatrix.so
+lib/tlp/plugins/import/circulant.so
 lib/tlp/plugins/import/completebinary.so
 lib/tlp/plugins/import/completegraph.so
 lib/tlp/plugins/import/filesystem.so
@@ -108,6 +138,7 @@ lib/tlp/plugins/layout/circular.so
 lib/tlp/plugins/layout/conetree.so
 lib/tlp/plugins/layout/conetreeextended.so
 lib/tlp/plugins/layout/gem.so
+lib/tlp/plugins/layout/gem3d.so
 lib/tlp/plugins/layout/generalgraph.so
 lib/tlp/plugins/layout/generalgraph3d.so
 lib/tlp/plugins/layout/generalgraphbox.so
@@ -116,6 +147,7 @@ lib/tlp/plugins/layout/springelectrical.so
 lib/tlp/plugins/layout/sugiyama.so
 lib/tlp/plugins/layout/treeleaf.so
 lib/tlp/plugins/layout/treemap.so
+lib/tlp/plugins/layout/treeortho.so
 lib/tlp/plugins/layout/treeradial.so
 lib/tlp/plugins/layout/treereingold.so
 lib/tlp/plugins/layout/treereingoldextended.so
@@ -137,15 +169,22 @@ lib/tlp/plugins/metric/spreadingactivation.so
 lib/tlp/plugins/metric/spreadinginterpolation.so
 lib/tlp/plugins/metric/strahler.so
 lib/tlp/plugins/metric/strahlerall.so
+lib/tlp/plugins/metric/strength.so
 lib/tlp/plugins/metric/strongcomponnet.so
 lib/tlp/plugins/metric/treearitymax.so
 lib/tlp/plugins/metric/viennot.so
 lib/tlp/plugins/selection/inducedsubgraph.so
+lib/tlp/plugins/selection/labelselection.so
+lib/tlp/plugins/selection/loopselection.so
+lib/tlp/plugins/selection/multipleselection.so
 lib/tlp/plugins/selection/reachable.so
 lib/tlp/plugins/selection/spanningdag.so
 lib/tlp/plugins/selection/spanningtree.so
 lib/tlp/plugins/sizes/AutoSize.so
 lib/tlp/plugins/sizes/fittolabels.so
+lib/tlp/plugins/string/idlabels.so
+share/aclocal/tulip.m4
+@dirrm lib/tlp/plugins/string
 @dirrm lib/tlp/plugins/sizes
 @dirrm lib/tlp/plugins/selection
 @dirrm lib/tlp/plugins/metric
@@ -153,6 +192,7 @@ lib/tlp/plugins/sizes/fittolabels.so
 @dirrm lib/tlp/plugins/import
 @dirrm lib/tlp/plugins/glyph
 @dirrm lib/tlp/plugins/export
+@dirrm lib/tlp/plugins/designer
 @dirrm lib/tlp/plugins/colors
 @dirrm lib/tlp/plugins/clustering
 @dirrm lib/tlp/plugins
