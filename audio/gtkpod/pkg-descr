@@ -1,4 +1,5 @@
-gtkpod is a graphical user interface to upload and manage songs to your iPod. 
+gtkpod is a graphical user interface to upload and manage songs to your iPod 
+(1G, 2G, 3G, 4G, mini, photo and shuffle). 
 
 It allows you to :
     * Read your existing iTunesDB (i.e. import the existing contents of 
