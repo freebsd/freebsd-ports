@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-navigator
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.3.6
 CATEGORIES=	databases kde
 MASTER_SITES=	http://sql.kldp.org/snapshots/ \
 		ftp://sise15.mizi.com/pub/
@@ -18,15 +18,12 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_KDELIBS_VER=2
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
+		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 
-MYSQL_NAV_HOME=	${PREFIX}/share/mysql_navigator
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/mysql_navigator ${PREFIX}/bin/
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/libmysqlui.* ${PREFIX}/lib/
-	@ ${MKDIR} ${MYSQL_NAV_HOME}/po
-	@ ${INSTALL_DATA} ${WRKSRC}/po/* ${MYSQL_NAV_HOME}/po/
-	@ ${MKDIR} ${MYSQL_NAV_HOME}/pics
-	@ ${INSTALL_DATA} ${WRKSRC}/pics/* ${MYSQL_NAV_HOME}/pics/
+post-patch:
+	@ ${PERL} -pi -e 's#-O2#$(CXXFLAGS)#g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
