@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.liacs.nl/~jvhemert/disc-cover/download/stable/
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
+BROKEN=		"audio/p5-FreeDB dependency doesn't exist"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/FreeDB.pm:${PORTSDIR}/audio/p5-FreeDB \
 		latex:${PORTSDIR}/print/latex \
