@@ -15,8 +15,12 @@ bin/db_stat
 bin/db_upgrade
 bin/db_verify
 lib/libdb.so
+lib/libdb3.a
+lib/libdb3.la
 lib/libdb3.so
 lib/libdb3.so.3
+lib/libdb_cxx3.a
+lib/libdb_cxx3.la
 lib/libdb_cxx.so
 lib/libdb_cxx3.so
 lib/libdb_cxx3.so.3
