@@ -7,24 +7,22 @@
 #
 
 PORTNAME=	slmon
-PORTVERSION=	0.5.9
-PORTREVISION=	1
+PORTVERSION=	0.5.11
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gtop.1:${PORTSDIR}/devel/libgtop \
-		intl.4:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		slang.1:${PORTSDIR}/devel/libslang
 
-GNU_CONFIGURE=	yes
-LIBGTOP_CONFIG=	${LOCALBASE}/bin/libgtop-config
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lncurses -lintl -lgnugetopt"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lncurses -lintl -lgnugetopt"
 MAN1=	slmon.1
 
 .include <bsd.port.pre.mk>
