@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
+BROKEN=		Does not build
+
 .if defined(WITH_DB3)
 WITH_BDB_VER?=	3
 .elif defined(WITH_DB4)

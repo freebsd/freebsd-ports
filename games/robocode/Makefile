@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
+BROKEN=		Does not build
+
 USE_JAVA=	1.3+
 
 JAVAVM=		${JAVA_HOME}/bin/java
