@@ -7,6 +7,8 @@ share/gnome/scite/SciTEGlobal.properties
 share/gnome/scite/abbrev.properties
 share/gnome/scite/ada.properties
 share/gnome/scite/ave.properties
+share/gnome/scite/baan.properties
+share/gnome/scite/bullant.properties
 share/gnome/scite/conf.properties
 share/gnome/scite/cpp.properties
 share/gnome/scite/eiffel.properties
