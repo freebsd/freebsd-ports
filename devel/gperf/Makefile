@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gperf
-PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gperf
@@ -17,6 +16,7 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 
 GNU_CONFIGURE=	yes
 MAN1=		gperf.1
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 post-install:
 		install-info ${PREFIX}/info/gperf.info ${PREFIX}/info/dir
