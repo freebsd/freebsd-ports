@@ -156,6 +156,7 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += ifp-line
     SUBDIR += jack
     SUBDIR += jamboree
     SUBDIR += juk
