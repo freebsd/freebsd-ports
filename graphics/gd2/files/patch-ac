@@ -1,0 +1,108 @@
+--- Makefile.orig	Wed Oct 13 16:20:11 1999
++++ Makefile	Mon Oct 25 10:43:21 1999
+@@ -3,19 +3,19 @@
+ #If you do not have gcc, change the setting for COMPILER, but you must
+ #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
+ #compiler; get gcc if you are still using it). 
+-COMPILER=gcc
++#COMPILER=gcc
+ 
+ #If the ar command fails on your system, consult the ar manpage
+ #for your system. 
+-AR=ar
++#AR=ar
+ 
+ #If the install command is not in your path, provide
+ #an explicit path for it here, or install manually.
+-INSTALL=install
++#INSTALL=install
+ 
+ #If you don't have FreeType and/or Xpm installed, including the
+ #header files, uncomment this (default).
+-CFLAGS=-O
++#CFLAGS=-O
+ #If you do have FreeType and/or Xpm fully installed, uncomment a
+ #variation of this and comment out the line above. See also LIBS below.
+ #CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
+@@ -31,7 +31,7 @@
+ 
+ #Typical install locations for freetype, zlib, xpm and libpng header files.
+ #If yours are somewhere else, change this. 
+-INCLUDEDIRS=-I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
++CFLAGS+=-I$(LOCALBASE)/include
+ 
+ #Typical install locations for freetype, zlib, xpm and libpng libraries.
+ #If yours are somewhere else, other than a standard location
+@@ -39,16 +39,16 @@
+ #-L. as this allows the gd library itself to be found.
+ #Put -L. first so that old versions of the gd library elsewhere
+ #on your system can't cause conflicts while building a new one.
+-LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
++LIBDIRS=-L. -L$(LOCALBASE)/lib
+ 
+ #Location where libgd.a should be installed by "make install".
+-INSTALL_LIB=/usr/local/lib
++INSTALL_LIB=$(PREFIX)/lib
+ 
+ #Location where .h files should be installed by "make install".
+-INSTALL_INCLUDE=/usr/local/include
++INSTALL_INCLUDE=$(PREFIX)/include/gd
+ 
+ #Location where useful non-test programs should be installed by "make install".
+-INSTALL_BIN=/usr/local/bin
++INSTALL_BIN=$(PREFIX)/bin
+ 
+ #
+ #
+@@ -58,8 +58,8 @@
+ 
+ VERSION=1.7
+ 
+-CC=$(COMPILER) $(INCLUDEDIRS)
+-LINK=$(CC) $(LIBDIRS) $(LIBS)
++#CC=$(COMPILER) $(INCLUDEDIRS)
++#LINK=$(CC) $(LIBDIRS) $(LIBS)
+ 
+ PROGRAMS=$(BIN_PROGRAMS) $(TEST_PROGRAMS)
+ 
+@@ -69,23 +69,23 @@
+ all: libgd.a $(PROGRAMS)
+ 
+ install: libgd.a $(BIN_PROGRAMS)
+-	$(INSTALL) -m 644 libgd.a $(INSTALL_LIB)/libgd.a
+-	$(INSTALL) -m 755 pngtogd $(INSTALL_BIN)/pngtogd
+-	$(INSTALL) -m 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
+-	$(INSTALL) -m 755 gdtopng $(INSTALL_BIN)/gdtopng
+-	$(INSTALL) -m 755 gd2topng $(INSTALL_BIN)/gd2topng
+-	$(INSTALL) -m 755 gd2copypal $(INSTALL_BIN)/gd2copypal
+-	$(INSTALL) -m 755 gdparttopng $(INSTALL_BIN)/gdparttopng
+-	$(INSTALL) -m 755 webpng $(INSTALL_BIN)/webpng
+-	$(INSTALL) -m 755 bdftogd $(INSTALL_BIN)/bdftogd
+-	$(INSTALL) -m 644 gd.h $(INSTALL_INCLUDE)/gd.h
+-	$(INSTALL) -m 644 gdcache.h $(INSTALL_INCLUDE)/gdcache.h
+-	$(INSTALL) -m 644 gd_io.h $(INSTALL_INCLUDE)/gd_io.h
+-	$(INSTALL) -m 644 gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
+-	$(INSTALL) -m 644 gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
+-	$(INSTALL) -m 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
+-	$(INSTALL) -m 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
+-	$(INSTALL) -m 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
++	$(INSTALL) -c -m 644 libgd.a $(INSTALL_LIB)/libgd.a
++	$(INSTALL) -c -m 755 pngtogd $(INSTALL_BIN)/pngtogd
++	$(INSTALL) -c -m 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
++	$(INSTALL) -c -m 755 gdtopng $(INSTALL_BIN)/gdtopng
++	$(INSTALL) -c -m 755 gd2topng $(INSTALL_BIN)/gd2topng
++	$(INSTALL) -c -m 755 gd2copypal $(INSTALL_BIN)/gd2copypal
++	$(INSTALL) -c -m 755 gdparttopng $(INSTALL_BIN)/gdparttopng
++	$(INSTALL) -c -m 755 webpng $(INSTALL_BIN)/webpng
++	$(INSTALL) -c -m 755 bdftogd $(INSTALL_BIN)/bdftogd
++	$(INSTALL) -c -m 644 gd.h $(INSTALL_INCLUDE)/gd.h
++	$(INSTALL) -c -m 644 gdcache.h $(INSTALL_INCLUDE)/gdcache.h
++	$(INSTALL) -c -m 644 gd_io.h $(INSTALL_INCLUDE)/gd_io.h
++	$(INSTALL) -c -m 644 gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
++	$(INSTALL) -c -m 644 gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
++	$(INSTALL) -c -m 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
++	$(INSTALL) -c -m 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
++	$(INSTALL) -c -m 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
+ 
+ gddemo: gddemo.o libgd.a
+ 	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
