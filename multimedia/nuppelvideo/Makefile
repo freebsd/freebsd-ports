@@ -7,7 +7,7 @@
 
 PORTNAME=	NuppelVideo
 PORTVERSION=	0.52.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://frost.htu.tuwien.ac.at/~roman/nuppelvideo/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.)$/\1/}
@@ -15,9 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.)$/\1/}
 MAINTAINER=	steve@sohara.org
 COMMENT=	A very low CPU usage VCR/DVR application
 
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+PORTDOCS=	README
 
 # find dependencies
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
@@ -69,5 +73,13 @@ post-patch:
 		-e 's|^CC.*$$|#|' \
 		-e 's|^(COPTSRT).*$$|\1=\$$(CFLAGS)|' \
 		${WRKSRC}/Makefile
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
