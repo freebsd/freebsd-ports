@@ -14,10 +14,8 @@ MASTER_SITE_SUBDIR=	phpwiki
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A PHP WikiWikiWeb
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/${PHP4_PORT}
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
+.if !defined(WITHOUT_PHP_DEPENDS)
+USE_PHP=	ctype pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
