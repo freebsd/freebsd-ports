@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20041119
+PORTVERSION=	20041214
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/ \
 		http://updates.f-prot.com/files/
