@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.50.13
-PORTREVISION=	2
+PORTVERSION=	0.50.16
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -41,7 +40,7 @@ USE_PERL5=	yes
 MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Video::DVDRip.3
+MAN3=		Video::DVDRip.3 Video::DVDRip::CPAN::Scanf.3
 
 .include <bsd.port.pre.mk>
 
@@ -64,7 +63,7 @@ post-patch:
 		${WRKSRC}/dvdrip-master
 	@${PERL} -pi -e 's#cc#${CC}#' \
 		${WRKSRC}/src/Makefile
-	@${FIND} ${WRKSRC} -name *.orig -delete
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
