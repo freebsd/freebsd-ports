@@ -1,6 +1,6 @@
---- configure.orig	Thu Aug 17 01:48:35 2000
-+++ configure	Thu Aug 17 01:49:01 2000
-@@ -2685,7 +2685,7 @@
+--- configure~	Wed Feb 28 17:34:30 2001
++++ configure	Wed Feb 28 17:34:38 2001
+@@ -2707,7 +2707,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
