@@ -1406,6 +1406,7 @@ flac		ports/audio/flac
 flash		ports/shells/flash
 flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
+flashplugin-mozilla	ports/www/flashplugin-mozilla
 flawfinder	ports/devel/flawfinder
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
