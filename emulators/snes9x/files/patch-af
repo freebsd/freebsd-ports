@@ -1,5 +1,5 @@
 --- unix/unix.cpp.orig	Fri Oct  6 17:02:40 2000
-+++ unix/unix.cpp	Sat Nov 18 23:12:45 2000
++++ unix/unix.cpp	Sun Dec 10 12:39:28 2000
 @@ -49,9 +49,11 @@
  #include <ctype.h>
  
@@ -266,7 +266,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -738,6 +762,179 @@
+@@ -738,6 +762,180 @@
      }
  #endif
  }
@@ -297,7 +297,8 @@
 +		warn("%s", dev);
 +		return (-1);
 +	}
-+	reportlen = hid_report_size(rd, hid_input, &report_id);
++	report_id = 0;
++	reportlen = hid_report_size(rd, report_id, hid_input);
 +	my_info->buf = (char *)malloc(reportlen);
 +	if (my_info->buf == NULL)
 +		err(1, "malloc");
@@ -446,7 +447,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1427,7 +1624,7 @@
+@@ -1427,7 +1625,7 @@
  }
  #endif
  
@@ -455,7 +456,7 @@
  static int Rates[8] =
  {
      0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1546,7 +1743,7 @@
+@@ -1546,7 +1744,7 @@
  }
  #endif
  
@@ -464,7 +465,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1645,7 +1842,7 @@
+@@ -1645,7 +1843,7 @@
  
  void *S9xProcessSound (void *)
  {

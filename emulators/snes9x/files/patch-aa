@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Oct  2 03:36:11 2000
-+++ Makefile	Sun Nov 19 01:59:35 2000
-@@ -3,7 +3,6 @@
+--- Makefile.orig	Sat Jan  6 03:05:29 2001
++++ Makefile	Fri Jan 12 23:50:27 2001
+@@ -4,7 +4,6 @@
  #SPC700ASM=1
  NETPLAY=1
  UNZIP=1
@@ -8,7 +8,7 @@
  #GUI=1
  THREAD_SOUND=1
  
-@@ -60,11 +59,6 @@
+@@ -71,11 +70,6 @@
  UNZIPDEFINES=-DUNZIP_SUPPORT
  endif
  
@@ -20,7 +20,7 @@
  ifdef GLIDE
  GLIDEOBJS = unix/glide.o
  GLIDEDEFINES = -DUSE_GLIDE -I/usr/include/glide
-@@ -77,28 +71,26 @@
+@@ -88,13 +82,13 @@
  endif
  
  MOC = $(QTDIR)/bin/moc
@@ -30,32 +30,24 @@
  NASM = nasm
  
 -INCLUDES=-I/usr/X11R6/include -I/usr/local/include
--
--OPTIMISE=-O6 -mpentium -fno-exceptions -Wall -W -pedantic -pipe -fomit-frame-pointer 
 +INCLUDES= -I$(X11BASE)/include -I$(LOCALBASE)/include
+ 
+-OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -pipe 
++OPTIMISE= $(CFLAGS) -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic
  
  #OPTIMISE=-g -fno-exceptions
  #-DMITSHM 
- 
--CCFLAGS = $(OPTIMISE) -DMITSHM \
-+CCFLAGS = $(CFLAGS) -fomit-frame-pointer -DMITSHM \
- -Ii386 \
- -I. \
- -Iunzip \
---DJOYSTICK_SUPPORT \
- -DZLIB \
- -DNO_INLINE_SET_GET \
- -DVAR_CYCLES \
+@@ -109,6 +103,7 @@
  -DDEBUGGER \
  -DCPU_SHUTDOWN \
  -DSPC700_SHUTDOWN \
 +-DSOUND \
  $(LINUXDEFINES) \
  $(FXDEFINES) \
- $(CPUDEFINES) \
-@@ -108,6 +100,11 @@
- $(GLIDEDEFINES) \
+ $(C4DEFINES) \
+@@ -120,6 +115,11 @@
  $(GUIDEFINES)
+ #-DNO_INLINE_SET_GET
  
 +ifdef USB_JOYSTICK_SUPPORT
 +CCFLAGS += -DJOYSTICK_SUPPORT
@@ -65,14 +57,13 @@
  #-DSOUND
  #-DDEBUGGER
  #-DNO_INLINE_SET_GET
-@@ -115,12 +112,12 @@
+@@ -127,12 +127,10 @@
  #-DCPU_SHUTDOWN
  #-DSPC700_SHUTDOWN
  
 -CFLAGS=$(CCFLAGS)
-+#CFLAGS=$(CCFLAGS)
- 
- .SUFFIXES: .o .cpp .c .cc .h .m .i .S .asm
+-
+ .SUFFIXES: .o .cpp .c .cc .h .m .i .S .asm .obj
 -LDLIBS = -L/usr/X11R6/lib frame.o
 +LDLIBS = -L$(X11BASE)/lib
  
@@ -81,3 +72,12 @@
  
  #ggisnes9x
  #xf86snes9x
+@@ -154,7 +152,7 @@
+ 	./offsets >i386/offsets.h
+ 
+ snes9x: $(OBJECTS) unix/x11.o $(GLIDEOBJS) $(GUIOBJS)
+-	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) $(GLIDEOBJS) unix/x11.o $(GUIOBJS) $(LDLIBS) $(GLIDELIBS) $(GUILIBS) -lXxf86dga -lXxf86vm -lXext -lX11 $(EXTRALIBS) -lz -lm
++	$(CCC) $(INCLUDES) $(OPTIMISE) -o $@ $(OBJECTS) $(GLIDEOBJS) unix/x11.o $(GUIOBJS) $(LDLIBS) $(GLIDELIBS) $(GUILIBS) -lXxf86dga -lXxf86vm -lXext -lX11 $(EXTRALIBS) -lz -lm
+ 
+ ssnes9x: $(OBJECTS) unix/svga.o $(GLIDEOBJS) 
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) $(GLIDEOBJS) unix/svga.o $(LDLIBS) $(GLIDELIBS) -lvga -lvgagl -lz $(EXTRALIBS) -lm
