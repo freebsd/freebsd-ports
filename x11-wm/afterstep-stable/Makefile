@@ -60,6 +60,12 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 CONFIGURE_ARGS+=	--disable-savewindows
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/monitor_bsd.xpm \
 		${WRKSRC}/afterstep/desktop/icons/xml/monitor-bsd.xpm
@@ -89,4 +95,4 @@ post-install:
 	@${ECHO_MSG} ""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
