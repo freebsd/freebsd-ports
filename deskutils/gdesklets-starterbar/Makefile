@@ -16,7 +16,7 @@ DISTNAME=	starterbar-desklet-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	An icon bar for GNOME 2.x where you can put starters into
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 USE_PYTHON=	yes

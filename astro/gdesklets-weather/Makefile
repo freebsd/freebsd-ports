@@ -16,7 +16,7 @@ DISTNAME=	weather-desklet-${PORTVERSION}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A weather monitoring Sensor and Display for gdesklets
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gdesklets-
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An IRC display and sensor for gdesklets
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
 
 USE_PYTHON=	yes

@@ -16,7 +16,7 @@ DISTNAME=	PsiSensorPackage-20040420
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	ExternalInterval sensor from the Psi Sensor Package
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

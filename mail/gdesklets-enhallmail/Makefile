@@ -16,7 +16,7 @@ DISTNAME=	LT${PORTNAME}-${PORTVERSION}
 MAINTAINER=	radek@raadradd.com
 COMMENT=	LT "enhanced" allmail, including IMAP and notification support
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${DATADIR}/gdesklets/Sensors/IconButton/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_iconbutton \
 		${DATADIR}/gdesklets/Sensors/LTVBorder/__init__.py:${PORTSDIR}/deskutils/gdesklets-ltvariations
 

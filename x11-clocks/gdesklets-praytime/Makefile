@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-desklet-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display muslim prayer times on your desktop
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

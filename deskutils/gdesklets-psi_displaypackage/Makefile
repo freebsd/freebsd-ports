@@ -16,7 +16,7 @@ DISTNAME=	PsiDisplayPackage-${DISTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	The Psi Display Package
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${DATADIR}/Sensors/CPU/__init__.py:${PORTSDIR}/sysutils/gdesklets-sensor-psi_cpu \
 		${DATADIR}/Sensors/Disk/__init__.py:${PORTSDIR}/sysutils/gdesklets-sensor-psi_disk \
 		${DATADIR}/Sensors/ExternalInterval/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_externalinterval \

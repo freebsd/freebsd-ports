@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gdesklets-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A calendar for gdesklets
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Theme/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_theme
 
 USE_BZIP2=	yes

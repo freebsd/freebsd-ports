@@ -16,7 +16,7 @@ DISTNAME=	recently-used-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolbar for the most recently used items from ~/.recently-used
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

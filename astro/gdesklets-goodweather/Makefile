@@ -16,7 +16,7 @@ DISTNAME=	GoodWeather-${PORTVERSION}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A desklet that displays current weather condition and forecast
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

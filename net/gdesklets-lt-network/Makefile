@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gdesklets-
 MAINTAINER=	tim@bishnet.net
 COMMENT=	An LTCandy compatible networkinfo display
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Network/__init__.py:${PORTSDIR}/net/gdesklets-sensor-psi_network \
 		${X11BASE}/share/gnome/gdesklets/Sensors/LTVBorder/__init__.py:${PORTSDIR}/deskutils/gdesklets-ltvariations
 

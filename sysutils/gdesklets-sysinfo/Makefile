@@ -16,7 +16,7 @@ DISTNAME=	SysInfo-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Desklet shows various information about your system
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes

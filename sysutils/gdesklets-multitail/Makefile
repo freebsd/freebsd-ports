@@ -16,7 +16,7 @@ DISTNAME=	gDesklets-multitail-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Displays multiple log files in one gDesklets display
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_X_PREFIX=	yes

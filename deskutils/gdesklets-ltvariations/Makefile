@@ -16,7 +16,7 @@ DISTNAME=	LTVariations-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A collection of sensors and displays
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Weather/__init__.py:${PORTSDIR}/astro/gdesklets-weather
 
 USE_PYTHON=	yes

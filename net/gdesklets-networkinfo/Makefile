@@ -16,7 +16,7 @@ DISTNAME=	netload
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network load display for gdesklets system
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Network/__init__.py:${PORTSDIR}/net/gdesklets-sensor-psi_network
 
 USE_X_PREFIX=	yes
