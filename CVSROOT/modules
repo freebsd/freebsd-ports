@@ -11083,6 +11083,7 @@ tkinfo		ports/misc/tkinfo
 tkinspect	ports/devel/tkinspect
 tkirc		ports/irc/tkirc
 tkman		ports/misc/tkman
+tkmerge		ports/devel/tkmerge
 tkmoo		ports/games/tkmoo
 tkp4		ports/devel/tkp4
 tkrat2		ports/mail/tkrat2
