@@ -3,13 +3,14 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1995/04/22 00:05:24 jmz Exp $
+# $Id: Makefile,v 1.15 1995/06/13 20:59:04 jmz Exp $
 #
 
 DISTNAME=	xdvi-20
 PKGNAME=	xdvi-pl20
 CATEGORIES+=	printing
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+MASTER_SITES=	ftp://ftp.x.org/contrib/applications/	\
+		ftp://crl.dec.com/pub/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
