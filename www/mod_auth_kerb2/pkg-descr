@@ -7,8 +7,8 @@ package is built with the KRB5_VERIFY_TICKET and KRB5_SAVE_CREDENTIALS
 options, and *without* Kerberos v4 support.  In order to successfully
 authenticate users, the Web server will need a keytab file containing
 a key for the principal `www/my.host.name.example@MY.REALM.EXAMPLE'
-which is readable by the user Apache runs as; the location of this
+which is readable only by the user Apache runs as; the location of this
 keytab defaults to ${LOCALBASE}/etc/apache/keytab but can be modified
 in the server configuration.
 
-WWW: http://stonecold.unity.ncsu.edu/software/mod_auth_kerb/
+WWW: http://modauthkerb.sourceforge.net/
