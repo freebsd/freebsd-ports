@@ -32,7 +32,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dosbox ${PREFIX}/bin/dosbox
-	${MKDIR} ${PREFIX}/share/dosbox
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/dosbox
