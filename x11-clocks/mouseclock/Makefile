@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	X11/clocks
 
 MAINTAINER=	kazu@jp.freebsd.org
 
+BROKEN=		"Does not build with XFree86-4"
+
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
