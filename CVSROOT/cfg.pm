@@ -26,7 +26,7 @@ $DEBUG = 0;
 # Location of temporary directory.
 $TMPDIR = "/tmp/";
 
-# The file prefix used for the temporary files.
+# The filename prefix used for temporary files.
 $FILE_PREFIX = "#cvs.files";
 
 
@@ -55,18 +55,21 @@ $FILE_PREFIX = "#cvs.files";
 ### log_accum.pl ###
 ####################
 
-# The command used to mail the log messages.  Usually something
-# like '/usr/sbin/sendmail'.  
+# The command used to mail the log messages.
+# Usually something like '/usr/sbin/sendmail'.  
 $MAILCMD = "/usr/local/bin/mailsend -H";
 
-# Email addresses of recipients of commit mail. (might be overridden below)
+# Email addresses of recipients of commit mail.
+# (might be overridden below)
 $MAILADDRS = "nobody";
 
-# Extra banner to add to top of commit messages.
+# Extra banner added to the top of commit email.
 # i.e. $MAILBANNER = "Project X CVS Repository";
+# Use "" if you don't want one.
 $MAILBANNER = "";
 
 # Send mail when directories are created in the repository.
+# 0 = off, 1 = on.
 $MAIL_ON_DIR_CREATION = 0;
 
 
@@ -93,4 +96,4 @@ if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
 
 
 #end
-1; # Perl required all modules to return true.  Don't delete!!!!
+1; # Perl requires all modules to return true.  Don't delete!!!!
