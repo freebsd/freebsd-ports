@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.6.7.1	# Keep databases/gauche-gdbm in sync with this
+PORTVERSION=	0.6.8	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
-	-${PREFIX}/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)" > /dev/null 2>&1
+	-${PREFIX}/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)"
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/info/
