@@ -64,6 +64,7 @@ share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_element.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_up.png
+share/apps/kxmleditor/kxedocument.rc
 share/apps/kxmleditor/kxmleditorpartBrowseUI.rc
 share/apps/kxmleditor/kxmleditorpartEditUI.rc
 share/apps/kxmleditor/kxmleditorshell.rc
@@ -87,7 +88,6 @@ share/doc/HTML/en/kxmleditor/kparts.png
 share/doc/HTML/en/kxmleditor/screenshot.png
 share/doc/HTML/en/kxmleditor/setupdefaults.png
 share/doc/HTML/en/kxmleditor/setupprintout.png
-share/doc/HTML/en/kxmleditor/setupspcchr.png
 share/doc/HTML/en/kxmleditor/setuptargz.png
 share/doc/HTML/en/kxmleditor/setuptexteditor.png
 share/doc/HTML/en/kxmleditor/setuptreeview.png
