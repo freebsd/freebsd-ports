@@ -16,8 +16,6 @@ MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=	i386
 
