@@ -1,0 +1,6 @@
+This package includes a GUI based (dptmgr) and command line (dptutil) utility 
+used to manage Adaptec I2O controllers' (asr(4)) and their devices.
+
+Documentation for the MS-Windows version of dptmgr (much applies to this
+version also) can be found at
+http://www.adaptec.com/pdfs/user_guides/sm_pro_sw_gd_512730vaa.pdf

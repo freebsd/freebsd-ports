@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+bin/dptcom
+bin/dpteng
+bin/dptmgr
+bin/dptscom
+bin/dptsig
+bin/raidutil
+dpt/dptcom
+dpt/dptcom.chk
+dpt/dpteng
+dpt/dptmgr
+dpt/dptmgr.hlp
+dpt/dptmgr.ini
+dpt/dptmgr.rsc
+dpt/dptscom
+dpt/dptsig
+dpt/raidutil
+dpt/read.me
+../X11R6/lib/libXm.so.1
