@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=      	xmms-wma
-PORTVERSION=   	0.1
-CATEGORIES=    	audio
-MASTER_SITES=  	http://mcmcc.bat.ru/xmms-wma/
+PORTNAME=	xmms-wma
+PORTVERSION=	0.1
+CATEGORIES=	audio
+MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
-MAINTAINER=    	bogorodskiy@inbox.ru
-COMMENT=       	WMA plugin for xmms
+MAINTAINER=	bogorodskiy@inbox.ru
+COMMENT=	WMA plugin for xmms
 
-LIB_DEPENDS=   	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
 
