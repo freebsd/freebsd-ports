@@ -2074,6 +2074,7 @@ gauche		ports/lang/gauche
 gauche-gdbm	ports/databases/gauche-gdbm
 gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
+gauche-readline	ports/devel/gauche-readline
 gauche-sxml	ports/textproc/gauche-sxml
 gaul		ports/devel/gaul
 gawk		ports/lang/gawk
