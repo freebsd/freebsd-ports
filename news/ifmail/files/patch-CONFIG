@@ -1,5 +1,5 @@
-*** CONFIG	Sat Sep 13 15:41:44 1997
---- CONFIG.neu	Fri Dec  5 11:01:29 1997
+*** CONFIG	Sun Feb  1 23:33:08 1998
+--- CONFIG.neu	Thu Mar 26 22:01:41 1998
 ***************
 *** 8,21 ****
   # Debug messages turned on by -x key are written here.
@@ -50,7 +50,7 @@
   CICOLOG    = LOG_LOCAL0
   
   # Directory where UUCP lock files reside.
-! LOCKDIR     = "/var/spool/uucp"
+! LOCKDIR     = "/var/spool/lock"
 ! #LOCKDIR     = "/var/lock"
   
   # Directory from which file requests are resolved.
@@ -164,20 +164,3 @@
   # SVR4
   #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
   # SCO
-***************
-*** 275,281 ****
-  # What programs are absent at your system?
-  #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
-  #		regexpr.o
-! # Linux
-  NEEDED =
-  # SVR4
-  #NEEDED = regexpr.o
---- 277,283 ----
-  # What programs are absent at your system?
-  #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
-  #		regexpr.o
-! # Linux, FreeBSD
-  NEEDED =
-  # SVR4
-  #NEEDED = regexpr.o
