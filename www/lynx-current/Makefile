@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.4d19
+PORTVERSION=    2.8.4d20
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=       ${PORTNAME}2.8.4dev.19
+DISTNAME=       ${PORTNAME}2.8.4dev.20
 
 MAINTAINER=	ache@FreeBSD.org
 
