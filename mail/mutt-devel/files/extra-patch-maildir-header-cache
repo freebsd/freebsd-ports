@@ -1,14 +1,12 @@
-diff -Nru a/Makefile.am b/Makefile.am
---- a/Makefile.am	2004-08-18 10:08:12 +02:00
-+++ b/Makefile.am	2004-08-18 10:08:12 +02:00
-@@ -20,2 +20,3 @@
- mutt_SOURCES = $(BUILT_SOURCES) \
-+	hcache.c \
- 	addrbook.c alias.c attach.c base64.c browser.c buffy.c color.c \
+diff -Nru a/PATCHES b/PATCHES
+--- a/PATCHES
++++ b/PATCHES
+@@ -0,0 +1 @@
++patch-1.5.6.tg.hcache.2
 diff -Nru a/configure.in b/configure.in
---- a/configure.in	2004-08-18 10:08:12 +02:00
-+++ b/configure.in	2004-08-18 10:08:12 +02:00
-@@ -768,6 +768,80 @@
+--- a/configure.in	2004-08-18 09:43:09 +02:00
++++ b/configure.in	2004-08-18 06:34:04 +02:00
+@@ -768,6 +768,81 @@
  
          fi])
  
@@ -16,6 +14,7 @@ diff -Nru a/configure.in b/configure.in
 +AC_ARG_ENABLE(hcache, [  --enable-hcache            Enable header caching],
 +[if test x$enableval = xyes; then
 +    AC_DEFINE(USE_HCACHE, 1, [Enable header caching])
++    MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS hcache.o"
 +
 +    OLDCPPFLAGS="$CPPFLAGS"
 +    OLDLIBS="$LIBS"
@@ -90,23 +89,23 @@ diff -Nru a/configure.in b/configure.in
  AC_SUBST(MUTT_LIB_OBJECTS)
  AC_SUBST(LIBIMAP)
 diff -Nru a/globals.h b/globals.h
---- a/globals.h	2004-08-18 10:08:12 +02:00
-+++ b/globals.h	2004-08-18 10:08:12 +02:00
+--- a/globals.h	2004-08-18 09:43:11 +02:00
++++ b/globals.h	2004-08-26 22:32:53 +02:00
 @@ -63,6 +63,10 @@
  WHERE char *Locale;
  WHERE char *MailcapPath;
  WHERE char *Maildir;
 +#if USE_HCACHE
 +WHERE char *HeaderCache;
-+WHERE short HeaderCachePageSize;
++WHERE char *HeaderCachePageSize;
 +#endif
  WHERE char *MhFlagged;
  WHERE char *MhReplied;
  WHERE char *MhUnseen;
 diff -Nru a/hcache.c b/hcache.c
 --- /dev/null	Wed Dec 31 16:00:00 196900
-+++ b/hcache.c	2004-08-18 10:08:12 +02:00
-@@ -0,0 +1,794 @@
++++ b/hcache.c	2004-08-26 22:32:53 +02:00
+@@ -0,0 +1,798 @@
 +/*
 + * Copyright (C) 2004 Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
 + * Copyright (C) 2004 Tobias Werth <sitowert@stud.uni-erlangen.de>
@@ -515,7 +514,7 @@ diff -Nru a/hcache.c b/hcache.c
 +{
 +	int crc = 0;
 +
-+	crc = crc32(crc, (unsigned char const *) "HCACHE V1", mutt_strlen("HCACHE V1"));
++	crc = crc32(crc, (unsigned char const *) "sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040826203315|26242", mutt_strlen("sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040826203315|26242"));
 +
 +#if HAVE_LANGINFO_CODESET
 +	crc = crc32(crc, (unsigned char const *) Charset, mutt_strlen(Charset));
@@ -619,19 +618,21 @@ diff -Nru a/hcache.c b/hcache.c
 +        h->folder = safe_strdup (folder);
 +	h->crc    = generate_crc32();
 +
++	int pagesize = atoi(HeaderCachePageSize) ? atoi(HeaderCachePageSize) : 16384;
++
 +	if (! path || path[0] == '\0') {
 +		FREE(& h->folder);
 +		FREE(& h);
 +		return NULL;
 +	}
 +
-+	h->db = gdbm_open((char *) path, (int) HeaderCachePageSize, GDBM_WRCREAT, 00600, NULL);
++	h->db = gdbm_open((char *) path, pagesize, GDBM_WRCREAT, 00600, NULL);
 +	if (h->db) {
 +		return h;
 +	}
 +
 +	/* if rw failed try ro */
-+	h->db = gdbm_open((char *) path, (int) HeaderCachePageSize, GDBM_READER, 00600, NULL);
++	h->db = gdbm_open((char *) path, pagesize, GDBM_READER, 00600, NULL);
 +	if(h->db) {
 +		return h;
 +	} else {
@@ -703,7 +704,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	key.dptr  = path;
 +	key.dsize = keylen(path);
 +
-+	data.dptr = mutt_hcache_dump(db, header, &data.dsize, uid_validity); 
++	data.dptr = mutt_hcache_dump(db, header, &data.dsize, uid_validity);
 +
 +	ret = gdbm_store(h->db, key, data, GDBM_REPLACE);
 +
@@ -757,6 +758,8 @@ diff -Nru a/hcache.c b/hcache.c
 +	u_int32_t createflags = DB_CREATE;
 +	int ret;
 +	struct header_cache *h = calloc(1, sizeof(HEADER_CACHE));
++	int pagesize = atoi(HeaderCachePageSize);
++
 +
 +	h->crc = generate_crc32();
 +
@@ -799,7 +802,7 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	if (stat(path, &sb) != 0 && errno == ENOENT) {
 +		createflags |= DB_EXCL;
-+		h->db->set_pagesize(h->db, (int) HeaderCachePageSize);
++		h->db->set_pagesize(h->db, pagesize);
 +	}
 +
 +	ret = h->db->open(h->db, NULL, path, folder, DB_BTREE, createflags, 0600);
@@ -875,7 +878,7 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	mutt_hcache_dbt_empty_init(&data);
 +	data.flags = DB_DBT_USERMEM;
-+	data.data = mutt_hcache_dump(db, header, (signed int *) &data.size, uid_validity); 
++	data.data = mutt_hcache_dump(db, header, (signed int *) &data.size, uid_validity);
 +	data.ulen = data.size;
 +
 +	ret = h->db->put(h->db, NULL, &key, &data, 0);
@@ -902,8 +905,8 @@ diff -Nru a/hcache.c b/hcache.c
 +}
 +#endif
 diff -Nru a/imap/imap.c b/imap/imap.c
---- a/imap/imap.c	2004-08-18 10:08:12 +02:00
-+++ b/imap/imap.c	2004-08-18 10:08:12 +02:00
+--- a/imap/imap.c	2004-08-18 09:43:27 +02:00
++++ b/imap/imap.c	2004-08-17 00:34:10 +02:00
 @@ -602,6 +602,17 @@
        if ((pc = imap_get_flags (&(idata->flags), pc)) == NULL)
  	goto fail;
@@ -923,8 +926,8 @@ diff -Nru a/imap/imap.c b/imap/imap.c
      {
        pc = imap_next_word (pc);
 diff -Nru a/imap/imap_private.h b/imap/imap_private.h
---- a/imap/imap_private.h	2004-08-18 10:08:12 +02:00
-+++ b/imap/imap_private.h	2004-08-18 10:08:12 +02:00
+--- a/imap/imap_private.h	2004-08-18 09:43:27 +02:00
++++ b/imap/imap_private.h	2004-07-24 12:39:31 +02:00
 @@ -179,6 +179,9 @@
    unsigned int newMailCount;
    IMAP_CACHE cache[IMAP_CACHE_LEN];
@@ -936,8 +939,8 @@ diff -Nru a/imap/imap_private.h b/imap/imap_private.h
    /* all folder flags - system flags AND keywords */
    LIST *flags;
 diff -Nru a/imap/message.c b/imap/message.c
---- a/imap/message.c	2004-08-18 10:08:12 +02:00
-+++ b/imap/message.c	2004-08-18 10:08:12 +02:00
+--- a/imap/message.c	2004-08-18 09:43:27 +02:00
++++ b/imap/message.c	2004-08-06 02:09:41 +02:00
 @@ -39,6 +39,12 @@
  static int msg_parse_fetch (IMAP_HEADER* h, char* s);
  static char* msg_parse_flags (IMAP_HEADER* h, char* s);
@@ -1192,9 +1195,9 @@ diff -Nru a/imap/message.c b/imap/message.c
  /* msg_has_flag: do a caseless comparison of the flag against a flag list,
   *   return 1 if found or flag list has '\*', 0 otherwise */
 diff -Nru a/init.h b/init.h
---- a/init.h	2004-08-18 10:08:12 +02:00
-+++ b/init.h	2004-08-18 10:08:12 +02:00
-@@ -981,6 +981,30 @@
+--- a/init.h	2004-08-18 09:43:12 +02:00
++++ b/init.h	2004-08-26 22:32:53 +02:00
+@@ -981,6 +981,31 @@
    ** \fBDON'T CHANGE THIS SETTING UNLESS YOU ARE REALLY SURE WHAT YOU ARE
    ** DOING!\fP
    */
@@ -1213,21 +1216,22 @@ diff -Nru a/init.h b/init.h
 +  ** files when the header cache is in use.  This incurs one stat(2) per
 +  ** message every time the folder is opened.
 +  */
-+  { "header_cache_pagesize", DT_NUM, R_NONE, UL &HeaderCachePageSize, 16384 },
++  { "header_cache_pagesize", DT_STR, R_NONE, UL &HeaderCachePageSize, UL "16384" },
 +  /*
 +  ** .pp
 +  ** Change the maildir header cache database page size.  Too large
 +  ** or too small of a page size for the common header can waste
-+  ** space, memory effectiveness, or CPU time.  You can use the
-+  ** db_dump utility to determine the optimal page size.
++  ** space, memory effectiveness, or CPU time. The default should be more or
++  ** less the best you can get. For details google after mutt maildir header
++  ** cache (first hit).
 +  */
 +#endif /* USE_HCACHE */
    { "maildir_trash", DT_BOOL, R_NONE, OPTMAILDIRTRASH, 0 },
    /*
    ** .pp
 diff -Nru a/main.c b/main.c
---- a/main.c	2004-08-18 10:08:12 +02:00
-+++ b/main.c	2004-08-18 10:08:12 +02:00
+--- a/main.c	2004-08-18 09:43:12 +02:00
++++ b/main.c	2004-07-24 12:39:30 +02:00
 @@ -411,6 +411,12 @@
  	"-HAVE_GETADDRINFO  "
  #endif
@@ -1242,8 +1246,8 @@ diff -Nru a/main.c b/main.c
  
  #ifdef ISPELL
 diff -Nru a/mh.c b/mh.c
---- a/mh.c	2004-08-18 10:08:12 +02:00
-+++ b/mh.c	2004-08-18 10:08:12 +02:00
+--- a/mh.c	2004-08-18 09:43:13 +02:00
++++ b/mh.c	2004-07-26 09:37:28 +02:00
 @@ -779,11 +779,68 @@
    return r;
  }
@@ -1397,8 +1401,8 @@ diff -Nru a/mh.c b/mh.c
  
  static char *maildir_canon_filename (char *dest, const char *src, size_t l)
 diff -Nru a/mutt.h b/mutt.h
---- a/mutt.h	2004-08-18 10:08:12 +02:00
-+++ b/mutt.h	2004-08-18 10:08:12 +02:00
+--- a/mutt.h	2004-08-18 09:43:13 +02:00
++++ b/mutt.h	2004-07-24 12:39:30 +02:00
 @@ -345,6 +345,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
@@ -1410,8 +1414,8 @@ diff -Nru a/mutt.h b/mutt.h
    OPTHEADER,
    OPTHELP,
 diff -Nru a/protos.h b/protos.h
---- a/protos.h	2004-08-18 10:08:12 +02:00
-+++ b/protos.h	2004-08-18 10:08:12 +02:00
+--- a/protos.h	2004-08-18 09:43:16 +02:00
++++ b/protos.h	2004-08-09 08:05:48 +02:00
 @@ -99,6 +99,16 @@
  ENVELOPE *mutt_read_rfc822_header (FILE *, HEADER *, short, short);
  HEADER *mutt_dup_header (HEADER *);
@@ -1429,7 +1433,3 @@ diff -Nru a/protos.h b/protos.h
  ATTACHPTR **mutt_gen_attach_list (BODY *, int, ATTACHPTR **, short *, short *, int, int);
  
  time_t mutt_decrease_mtime (const char *, struct stat *);
---- PATCHES.orig    Tue Nov  6 19:59:33 2001
-+++ PATCHES     Tue Nov  6 19:59:42 2001
-@@ -1,0 +1 @@
-+patch-1.5.6.tg.hcache.0

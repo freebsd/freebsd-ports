@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040829:
+  AFFECTS: users of mail/mutt-devel
+  AUTHOR: udo.schweigert@siemens.com
+
+  The defaults of the port have been changed from WITH_MUTT_NCURSES to
+  WITH_MUTT_SLANG to be in sync with the mail/mutt port. If you really have
+  problems with slang (which should be a very rare case) be sure to have set
+  COLORTERM=yes and COLORFGBG="color1;color2" in your environment, or recompile
+  the port with the WITH_MUTT_NCURSES knob set (e.g. by adding
+  WITH_MUTT_NCURSES=yes to your /etc/make.conf).
+
 20040828:
   AFFECTS: users of security/samba-vscan
   AUTHOR: jmelo@freebsdbrasil.com.br
