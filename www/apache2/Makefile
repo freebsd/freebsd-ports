@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.54 1998/06/09 19:49:59 ache Exp $
+# $Id: Makefile,v 1.55 1998/06/13 08:33:41 ache Exp $
 #
 
 DISTNAME=       apache_1.3.0
@@ -40,7 +40,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		echo "[ -x /usr/local/sbin/httpd ] && /usr/local/sbin/httpd && echo -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		echo "[ -x /usr/local/sbin/apachectl ] && /usr/local/sbin/apachectl start && echo -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 
