@@ -1,10 +1,10 @@
 @cwd /usr/local
+@srcdir ${WRKSRC}
 etc/gn_mime.types
-etc/gn
-etc/sgn
-etc/waisgn
+libexec/gn
+libexec/sgn
+libexec/waisgn
 bin/mkcache
-bin/uncache
 gnroot
 @cwd ./gnroot
 @exec ../bin/mkcache -r
