@@ -1,0 +1,31 @@
+--- system/o2c.red.template.orig	Fri Mar 28 13:15:18 1997
++++ system/o2c.red.template	Wed Dec  3 16:54:26 1997
+@@ -8,8 +8,9 @@
+ # paths for sources
+ *.Mod	= 
+-	.;		# first search the current directory
+-	lib;		# the standard libs, they _have to be_ in the path list
+-	compiler	# the compiler sources
+-	+ RCS		# include RCS files in the search
++	.;				# first search the current directory
++	lib;
++	@PREFIX@/lib/o2c-1.16;	# the standard libs, they _have to be_ in the path list
++	compiler			# the compiler sources
++	+ RCS				# include RCS files in the search
+ 
+ # places for the compiler generated files
+@@ -18,8 +19,11 @@
+ 
+ # interface files, have to be in the path list
+-*.c	= lib
++*.c	= 
++	lib;
++	@PREFIX@/lib/o2c-1.16
+ 
+ # system files: standard include file and list of error messages
+-_OGCC.?, ErrorList.Txt = system
+-
++_OGCC.?, ErrorList.Txt = 
++	system; 
++	@PREFIX@/lib/o2c-1.16
+ 

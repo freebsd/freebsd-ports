@@ -1,0 +1,63 @@
+--- Makefile.orig	Fri Mar 28 13:15:40 1997
++++ Makefile	Wed Dec  3 17:21:31 1997
+@@ -5,8 +5,7 @@
+ 
+ # where to install the binaries?
+-BIN     = $(HOME)/bin
+-MANPATH = /usr/man
+-
+-
++BIN     = ${PREFIX}/bin
++MANPATH = ${PREFIX}/man
++LIBPATH = ${PREFIX}/lib/o2c-1.16
+ 
+ # you shouldn't have to change anything below
+@@ -29,5 +28,5 @@
+ 	-rm -f o2c_stage0 o2c_stage1 o2c_stage2 o2c all
+ # check the hardcoded type sizes against the C types
+-	gcc -o sizes system/sizes.c
++	gcc -o sizes system/sizes.c -Isystem
+ 	./sizes
+ # build compiler executable from the distributed C sources
+@@ -63,5 +62,11 @@
+ 	mv o2c o2c_stage2
+ 
+-install: all
++install.man:
++	for i in $(COMMANDS) ; do \
++		cp docs/$$i.1 $(MANPATH)/man1/$$i.1 ; \
++		chmod 644 $(MANPATH)/man1/$$i.1 ; \
++	done
++
++install: all install.man
+ 	if [ ! -f $(HOME)/.o2c.red ]; then \
+ 		cp system/o2c.red.template $(HOME)/.o2c.red; \
+@@ -69,18 +74,20 @@
+ 	chmod -R ugo+rX *
+ 	-rm -f o2c
+-	ln o2c_stage2 o2c
++	cp o2c_stage2 o2c
++	mkdir $(LIBPATH)
++	cp system/_OGCC.c $(LIBPATH)
++	cp system/_OGCC.h $(LIBPATH)
++	cp system/ErrorList.Txt $(LIBPATH)
++	cp lib/* $(LIBPATH)
++	chmod 644 $(LIBPATH)/*
+ 	for i in $(COMMANDS) ; do \
+ 		cp $$i $(BIN)/$$i ; \
+ 		chmod 755 $(BIN)/$$i ; \
+ 	done
+-
+-install.man:
+-	for i in $(COMMANDS) ; do \
+-		cp docs/$$i.1 $(MANPATH)/man1/$$i.1 ; \
+-		chmod 644 $(MANPATH)/man1/$$i.1 ; \
+-	done
++	cp o2 $(BIN)
++	chmod 755 $(BIN)/o2
+ 
+ clean:
+-	-rm -f makefile_o2c Makefile sizes
++	-rm -f sizes
+ 	-rm -f o2c_stage0 o2c_stage1 o2c_stage2 o2c all UpdateLib
+ 	-rm -rf obj.distrib
