@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	(find ${WRKSRC} -name Makefile | xargs ${REINPLACE_CMD} -e \
+	(${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s@-O20@${CFLAGS}@g ; s@-O2@${CFLAGS}@g")
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/Makefile

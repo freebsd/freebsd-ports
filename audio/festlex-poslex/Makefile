@@ -28,7 +28,7 @@ FHOME=		${PREFIX}/share/festival
 
 post-extract:
 	@ ${CHMOD} -R a+r ${WRKSRC}
-	@ find ${WRKSRC} -type d -print0 | xargs -0 ${CHMOD} 755
+	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install:
 	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
