@@ -126,7 +126,11 @@ lib/ggi/helper/helper_x_vidmode.so
 lib/libggi.la
 lib/libggi.so
 lib/libggi.so.2
+@dirrm etc/ggi
 @dirrm include/ggi/display
+@dirrm include/ggi/internal
+@dirrm include/ggi
 @dirrm lib/ggi/default
 @dirrm lib/ggi/display
 @dirrm lib/ggi/helper
+@dirrm lib/ggi

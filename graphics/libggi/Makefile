@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
@@ -25,7 +24,7 @@ USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-internal-dga	#This is broken for now
+CONFIGURE_ARGS=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .ifdef USE_THREADS
@@ -33,76 +32,75 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--enable-threads
 .endif
 
-.if exists(/usr/include/kgi/kgi.h)
-CONFIGURE_ARGS+=	--enable-kgi
+.if exists(/usr/include/dev/kgi/kgi.h)
+CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
 .endif
 
 MAN1=		cube3d.1 ggiteleserver.1 monitest.1
-MAN3=		ggiCopyBox.3 ggiCrossBlit.3 ggiDBGetBuffer.3 \
-		ggiDrawBox.3 ggiDrawHLine.3 ggiDrawLine.3 \
-		ggiDrawPixel.3 ggiDrawVLine.3 ggiEventPoll.3 \
-		ggiFillscreen.3 ggiFlush.3 ggiGetPixelFormat.3 \
-		ggiGetc.3 ggiInit.3 ggiMapColor.3 ggiOpen.3 \
-		ggiPanic.3 ggiParseMode.3 \
-		ggiPutc.3 ggiResourceAcquire.3 \
-		ggiSetColorfulPalette.3 ggiSetDisplayFrame.3 \
-		ggiSetFlags.3 ggiSetGCClipping.3 \
-		ggiSetGCForeground.3 ggiSetGamma.3 \
-		ggiSetGraphMode.3 ggiSetMode.3 ggiSetOrigin.3 \
-		ggiSetPalette.3 \
-		ggiDetachInput.3 ggiEventSelect.3 \
-		ggiGammaMax.3 ggiGetCharSize.3 ggiGetInput.3 \
-		ggi_color.3 ggi_coord.3 ggi_directbuffer.3 \
-		ggi_graphtype.3 ggi_mode.3 ggi_pixel.3 \
-		ggi_pixelformat.3 ggi_pixellinearbuffer.3 \
-		ggi_pixelplanarbuffer.3 ggi_samplelinearbuffer.3 \
-		ggi_sampleplanarbuffer.3
-MAN7=		libggi.7 \
-		display-aa.7 display-dga.7 display-directx.7 \
-		display-directxnt.7 display-fbdev.7 display-file.7 \
-		display-glide.7 display-memory.7 display-monotext.7 \
-		display-multi.7 display-palemu.7 display-sub.7 \
-		display-svgalib.7 display-tele.7 display-tile.7 \
-		display-trueemu.7 display-vcsa.7 display-vgl.7 \
-		display-x.7
-MLINKS=		ggiDBGetBuffer.3 ggiDBGetNumBuffers.3 \
+MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
+		ggiDBGetNumBuffers.3 ggiDrawBox.3 ggiDrawHLine.3 \
+		ggiDrawLine.3 ggiDrawPixel.3 ggiDrawVLine.3 \
+		ggiEventSend.3 ggiFillscreen.3 ggiFlush.3 \
+		ggiGetGamma.3 ggiGetInput.3 ggiGetPixelFormat.3 \
+		ggiGetc.3 ggiInit.3 ggiJoinInputs.3 \
+		ggiMapColor.3 \
+		ggiOpen.3 ggiPanic.3 ggiParseMode.3 \
+		ggiPutc.3 ggiResourceAcquire.3 ggiSetColorfulPalette.3 \
+		ggiSetDisplayFrame.3 ggiSetFlags.3 ggiSetGCClipping.3 \
+		ggiSetGCForeground.3 ggiSetMode.3 ggiSetOrigin.3 \
+		ggiSetPalette.3 ggi_color.3 ggi_directbuffer.3 \
+		ggi_mode.3 ggi_pixelformat.3
+MAN7=		libggi.7 display-aa.7 display-dga.7 display-directx.7 \
+		display-fbdev.7 display-file.7 display-glide.7 \
+		display-memory.7 display-monotext.7 display-multi.7 \
+		display-palemu.7 display-sub.7 display-svgalib.7 \
+		display-tele.7 display-tile.7 display-trueemu.7 \
+		display-vcsa.7 display-vgl.7 display-x.7
+MLINKS=		display-directx.7 display-directxnt.7 \
+		ggiCheckMode.3 ggiCheckGraphMode.3 - ggiCheckSimpleMode.3 \
+		- ggiCheckTextMode.3 ggiDBGetNumBuffers.3 ggiDBGetBuffer.3 \
 		ggiDrawBox.3 ggiGetBox.3 - ggiPutBox.3 \
 		ggiDrawHLine.3 ggiGetHLine.3 - ggiPutHLine.3 \
 		ggiDrawPixel.3 ggiGetPixel.3 - ggiPutPixel.3 \
 		ggiDrawVLine.3 ggiGetVLine.3 - ggiPutVLine.3 \
-		ggiEventPoll.3 ggiAddEventMask.3 - ggiEventRead.3 \
-		- ggiEventSend.3 - ggiEventsQueued.3 \
-		- ggiGetEventMask.3 - ggiJoinInputs.3 \
-		- ggiRemoveEventMask.3 - ggiSetEventMask.3 \
-		ggiFlush.3 ggiFlushRegion.3 ggiGetc.3 ggiKbhit.3 \
+		ggiFlush.3 ggiFlushRegion.3 \
+		ggiGetGamma.3 ggiGammaMax.3 - ggiGetGammaMap.3 \
+		- ggiSetGamma.3 - ggiSetGammaMap.3 \
+		ggiGetInput.3 ggiDetachInput.3 \
+		ggiGetc.3 ggiKbhit.3 \
 		ggiInit.3 ggiExit.3 \
+		ggiJoinInputs.3 ggiAddEventMask.3 - ggiEventPoll.3 \
+		- ggiEventRead.3 \
+		ggiJoinInputs.3 ggiEventSelect.3 - ggiEventsQueued.3 \
+		- ggiGetEventMask.3 - ggiRemoveEventMask.3 \
+		- ggiSetEventMask.3 \
 		ggiMapColor.3 ggiPackColors.3 - ggiUnmapPixel.3 \
-		- ggiUnpackPixels.3 \
-		ggiOpen.3 ggiClose.3 \
+		- ggiUnpackPixels.3 ggiOpen.3 ggiClose.3 \
 		ggiParseMode.3 ggiFPrintMode.3 - ggiPrintMode.3 \
-		- ggiSPrintMode.3 ggiPutc.3 ggiPuts.3 \
-		ggiResourceAcquire.3 ggiResourceMustAcquire.3 \
+		- ggiSPrintMode.3 ggiPutc.3 ggiGetCharSize.3 \
+		- ggiPuts.3 ggiResourceAcquire.3 ggiResourceMustAcquire.3 \
 		- ggiResourceRelease.3 \
-		ggiSetDisplayFrame.3 ggiGetDisplayFrame.3 \
-		- ggiGetReadFrame.3 - ggiGetWriteFrame.3 \
-		- ggiSetReadFrame.3 - ggiSetWriteFrame.3 \
+		ggiSetDisplayFrame.3 ggiGetDisplayFrame.3 - ggiGetReadFrame.3 \
+		ggiSetDisplayFrame.3 ggiGetWriteFrame.3 - ggiSetReadFrame.3 \
+		- ggiSetWriteFrame.3 \
 		ggiSetFlags.3 ggiAddFlags.3 - ggiGetFlags.3 \
 		- ggiRemoveFlags.3 \
 		ggiSetGCClipping.3 ggiGetGCClipping.3 \
 		ggiSetGCForeground.3 ggiGetGCBackground.3 \
 		- ggiGetGCForeground.3 - ggiSetGCBackground.3 \
-		ggiSetGamma.3 ggiGetGamma.3 - ggiGetGammaMap.3 \
-		- ggiSetGammaMap.3 \
-		ggiSetGraphMode.3 ggiCheckGraphMode.3 \
-		- ggiCheckSimpleMode.3 - ggiCheckTextMode.3 \
+		ggiSetMode.3 ggiGetMode.3 - ggiSetGraphMode.3 \
 		- ggiSetSimpleMode.3 - ggiSetTextMode.3 \
-		ggiSetMode.3 ggiCheckMode.3 - ggiGetMode.3 \
 		ggiSetOrigin.3 ggiGetOrigin.3 \
-		ggiSetPalette.3 ggiGetPalette.3
+		ggiSetPalette.3 ggiGetPalette.3 \
+		ggi_color.3 ggi_pixel.3 \
+		ggi_directbuffer.3 ggi_pixellinearbuffer.3 \
+		- ggi_pixelplanarbuffer.3 - ggi_samplelinearbuffer.3 \
+		- ggi_sampleplanarbuffer.3 \
+		ggi_mode.3 ggi_coord.3 - ggi_graphtype.3
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/include/vgl.h) || ${MACHINE_ARCH} != "i386"
+.if !exists(/usr/include/vgl.h) || ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--disable-vgl
 PLIST_SUB+=	WITH_VGL="@comment "
 .else
