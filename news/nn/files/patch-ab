@@ -47,7 +47,7 @@
    *	NOTE: If you plan to use the included inews, it MUST be a full pathname
    */
   
-! #define NNTP_SERVER     "/usr/local/lib/news/nntp_server"
+! #define NNTP_SERVER     "/usr/local/etc/nntpserver"
   
   /*
    *	Define NNTP_POST if you want nn to reject attempts to post via
@@ -138,9 +138,9 @@
    */
   
 ! #define NEWS_DIRECTORY          "/var/news"
-! #define NEWS_LIB_DIRECTORY      "/usr/local/lib/news"
+! #define NEWS_LIB_DIRECTORY      "/usr/local/news/lib"
   
-! /* #define INEWS_PATH           "/usr/local/lib/news/inews"   */
+! /* #define INEWS_PATH           "/usr/local/news/lib/inews"   */
   
   
   /*

@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Trn port to FreeBSD 2.0
-#	$Id: preconf,v 1.1.1.1 1994/10/22 09:28:31 smace Exp $
+#	$Id: preconf,v 1.2 1995/05/06 11:51:57 ache Exp $
 
 PortsDir=$1
   CurDir=$2
@@ -228,7 +228,7 @@ d_berknames='define'
 d_passnames='define'
 d_usgnames='undef'
 nametype='bsd'
-inewsloc='/usr/local/lib/news/inews'
+inewsloc='/usr/local/news/lib/inews'
 newslib='/tmp'
 newslibexp='/tmp'
 newsspool='/tmp'
