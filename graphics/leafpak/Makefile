@@ -1,12 +1,12 @@
 # New ports collection makefile for:	leafpak
-# Date created:				25 Sep 2000
-# Whom:                 		TAKAHASHI Kaoru
+# Date created:		25 Sep 2000
+# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	leafpak
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 
