@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.6.0.r3
-PORTREVISON=	0
+PORTVERSION=	1.6.0.r4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/
-DISTNAME=	${PORTNAME}-1.6.0rc3
+DISTNAME=	${PORTNAME}-1.6.0rc4
 
 MAINTAINER=	vince@blue-box.net
 COMMENT=	A powerfull syslogd replacement
