@@ -1,0 +1,34 @@
+CIDER is a mixed-level circuit and device simulator.
+CIDER attempts to provide greater simulation accuracy than a stand-alone
+circuit or device simulator can provide.
+CIDER is based on the sequential mixed-level circuit and
+device simulator, CODECS.  In common with CODECS, CIDER embeds the circuit
+simulator, SPICE3, which provides circuit simulation capabilities,
+analytical models for semiconductor devices, and an interactive
+user interface.  An interface to the captive device simulator, DSIM,
+provides accurate, one- and two-dimensional numerical models
+based on the solution of Poisson's equation, and the electron and hole
+current-continuity equations.  The input format of CIDER couples
+SPICE-like circuit descriptions
+to a device description format similar to the one
+used by the PISCES device simulator developed at Stanford University.
+As a result, CIDER should seem reasonably familiar to designers
+already accustomed to both these tools.
+
+	From the Cider help file.
+
+
+SPICE is a general-purpose circuit simulation program for nonlinear DC,
+nonlinear transient, and linear AC analyses. Circuits may contain resistors,
+capacitors, inductors, mutual inductors, independent voltage and current
+sources, four types of dependent sources, lossless and lossy transmission
+lines (two separate implementations), switches, uniform distributed RC
+lines, and the five most common semiconductor devices: diodes, BJTs, JFETs,
+MESFETs, and MOSFETs.
+
+	From the SPICE3 Version3f3 User's Manual.
+	This is availble as a postscript document from:
+		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps
+	or you can read the online documentation on the homepage.
+
+WWW: http://infopad.eecs.berkeley.edu/~icdesign/SPICE/

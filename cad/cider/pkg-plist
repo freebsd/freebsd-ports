@@ -1,0 +1,108 @@
+bin/cider
+bin/help
+bin/multidec
+bin/nutmeg
+bin/proc2mod
+bin/sconvert
+bin/spice3
+share/cider/helpdir/cider.idx
+share/cider/helpdir/cider.txt
+share/cider/helpdir/spice.idx
+share/cider/helpdir/spice.txt
+share/cider/scripts/devaxis
+share/cider/scripts/devload
+share/cider/scripts/spinit
+share/examples/cider/bicmos/bicmos.lib
+share/examples/cider/bicmos/bicmpd.cir
+share/examples/cider/bjt/astable.cir
+share/examples/cider/bjt/colposc.cir
+share/examples/cider/bjt/ecp.cir
+share/examples/cider/bjt/invchain.cir
+share/examples/cider/bjt/meclgate.cir
+share/examples/cider/bjt/pebjt.lib
+share/examples/cider/bjt/pz.cir
+share/examples/cider/bjt/rtlinv.cir
+share/examples/cider/bjt/vco.cir
+share/examples/cider/diode/diode.cir
+share/examples/cider/diode/diotran.cir
+share/examples/cider/diode/pindiode.cir
+share/examples/cider/jfet/jfet.cir
+share/examples/cider/mos/bootinv.cir
+share/examples/cider/mos/charge.cir
+share/examples/cider/mos/cmosinv.cir
+share/examples/cider/mos/nmosinv.cir
+share/examples/cider/mos/pass.cir
+share/examples/cider/mos/ringosc.cir
+share/examples/cider/parallel/BICMOS.LIB
+share/examples/cider/parallel/bicmpd.cir
+share/examples/cider/parallel/bicmpu.cir
+share/examples/cider/parallel/clkfeed.cir
+share/examples/cider/parallel/cmosamp.cir
+share/examples/cider/parallel/eclinv.cir
+share/examples/cider/parallel/ecpal.cir
+share/examples/cider/parallel/foobar
+share/examples/cider/parallel/gmamp.cir
+share/examples/cider/parallel/latch.cir
+share/examples/cider/parallel/ppef.1d.cir
+share/examples/cider/parallel/ppef.2d.cir
+share/examples/cider/parallel/readme
+share/examples/cider/parallel/ringosc.1u.cir
+share/examples/cider/parallel/ringosc.2u.cir
+share/examples/cider/readme
+share/examples/cider/resistor/gaasres.cir
+share/examples/cider/resistor/sires.cir
+share/examples/cider/serial/astable.cir
+share/examples/cider/serial/charge.cir
+share/examples/cider/serial/colposc.cir
+share/examples/cider/serial/dbridge.cir
+share/examples/cider/serial/invchain.cir
+share/examples/cider/serial/meclgate.cir
+share/examples/cider/serial/nmosinv.cir
+share/examples/cider/serial/pass.cir
+share/examples/cider/serial/pullup.cir
+share/examples/cider/serial/readme
+share/examples/cider/serial/recovery.cir
+share/examples/cider/serial/rtlinv.cir
+share/examples/cider/serial/vco.cir
+share/examples/spice3/bjtnoise.cir
+share/examples/spice3/bsim1tst.cir
+share/examples/spice3/bsim2tst.cir
+share/examples/spice3/diffpair.cir
+share/examples/spice3/diodisto.cir
+share/examples/spice3/ltra_1.cir
+share/examples/spice3/ltra_2.cir
+share/examples/spice3/ltra_3.cir
+share/examples/spice3/mixdisto.cir
+share/examples/spice3/mos6inv.cir
+share/examples/spice3/mosamp2.cir
+share/examples/spice3/mosmem.cir
+share/examples/spice3/pz2.cir
+share/examples/spice3/pzt.cir
+share/examples/spice3/rc.cir
+share/examples/spice3/rca3040.cir
+share/examples/spice3/resnoise.cir
+share/examples/spice3/rtlinv.cir
+share/examples/spice3/schmitt.cir
+share/examples/spice3/simplepz.cir
+share/spice3/helpdir/spice.idx
+share/spice3/helpdir/spice.txt
+share/spice3/mfbcap
+share/spice3/news
+share/spice3/scripts/setplot
+share/spice3/scripts/spinit
+@dirrm share/cider/helpdir
+@dirrm share/cider/scripts
+@dirrm share/cider
+@dirrm share/examples/cider/bicmos
+@dirrm share/examples/cider/bjt
+@dirrm share/examples/cider/diode
+@dirrm share/examples/cider/jfet
+@dirrm share/examples/cider/mos
+@dirrm share/examples/cider/parallel
+@dirrm share/examples/cider/resistor
+@dirrm share/examples/cider/serial
+@dirrm share/examples/cider
+@dirrm share/examples/spice3
+@dirrm share/spice3/helpdir
+@dirrm share/spice3/scripts
+@dirrm share/spice3
