@@ -10,6 +10,7 @@ include/dvdread/nav_types.h
 include/dvdread/nav_read.h
 include/dvdread/nav_print.h
 %%PORTDOCS%%share/doc/libdvdread/AUTHORS
+%%PORTDOCS%%share/doc/libdvdread/COPYING
 %%PORTDOCS%%share/doc/libdvdread/NEWS
 %%PORTDOCS%%share/doc/libdvdread/README
 %%PORTDOCS%%share/doc/libdvdread/TODO
