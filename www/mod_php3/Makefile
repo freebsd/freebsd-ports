@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.88 1999/08/22 19:00:27 mharo Exp $
+# $Id: Makefile,v 1.89 1999/08/26 09:24:16 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -87,7 +87,8 @@ CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 .endif
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}"
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}"
 
 INSTALL_TARGET=	install-quiet
 
@@ -103,12 +104,11 @@ PHP_CONF_ARGS=	--prefix=${PREFIX} \
 		--with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/etc \
 		--disable-debug \
-		--enable-track-vars
+		--enable-track-vars \
+		--without-gd
 
-.if !defined(BATCH)
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
-.endif
 
 post-extract:
 	@${LN} -s php-${VERSION_PHP} ${WRKDIR}/php
