@@ -8,7 +8,7 @@
 PORTNAME=	pg
 PORTVERSION=	010103
 CATEGORIES=	misc
-MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of System V's pg pager
