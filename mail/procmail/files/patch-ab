@@ -14,7 +14,7 @@
  
  #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
 -			 "list","slist","lists","news",0}
-+			 "list","slist","lists","news","majordom","majordomo",0}
++			 "list","slist","lists","news","mailnull","majordom","majordomo",0}
  
 -/*#define NO_fcntl_LOCK		/* uncomment any of these three if you	     */
 +#define NO_fcntl_LOCK         /* uncomment any of these three if you       */
