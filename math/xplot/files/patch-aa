@@ -53,14 +53,3 @@
  #include "xplot.h"
  #include "coord.h"
  #include <stdio.h>
---- xplot.c.orig	Wed Jan 22 09:38:48 1997
-+++ xplot.c	Mon Mar  3 11:41:31 1997
-@@ -46,7 +46,7 @@
- #include <X11/cursorfont.h>
- #include <math.h>
- #include <ctype.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include "xplot.h"
- #include "coord.h"
- 

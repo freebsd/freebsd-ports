@@ -1,0 +1,84 @@
+--- xplot.c.orig	Wed Jul  2 13:26:09 1997
++++ xplot.c	Sat Aug  1 00:12:42 1998
+@@ -46,7 +46,7 @@
+ #include <X11/cursorfont.h>
+ #include <math.h>
+ #include <ctype.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "xplot.h"
+ #include "coord.h"
+ 
+@@ -813,9 +813,7 @@
+     static struct dpy_info {
+       unsigned long line_plane_mask;
+       Colormap clr_map;
+-      XColor clr;
+-      unsigned long pixel[NCOLORS];
+-      int Colors[NCOLORS];
++      unsigned long Colors[NCOLORS];
+       int virgin;
+       Atom xplot_nagle_atom;
+       Display *saved_dpy;
+@@ -842,38 +840,37 @@
+     /* Allocate some color cells */
+       
+     if (d_i[d].virgin ) {
++      int usewhite;
++
+       d_i[d].virgin = 0;
+       
+       d_i[d].xplot_nagle_atom = XInternAtom(pl->dpy, "XPLOT_NAGLE", False);
+ 
+       d_i[d].clr_map = DefaultColormap(pl->dpy, DefaultScreen(pl->dpy));
+       
+-      if ( option_mono ||
+-
+-	   ! XAllocColorCells(pl->dpy, 
+-			      d_i[d].clr_map, 0,
+-			      &d_i[d].line_plane_mask, 1,
+-			      d_i[d].pixel, NColors) )
+-	{
+-	  /* probably only one bit plane, or all the color cells are taken */
+-#if 1
+-	  if (! option_mono)
+-	    fputs("XAllocColorCells failed, will only have one plot color\n",
+-		  stderr);
+-#endif
+-	  for ( i = 0; i < NColors; i++) {
+-	    d_i[d].Colors[i] = WhitePixelOfScreen(pl->screen);
+-	  }
+-	} else {
+-	  for (i = 0; i < NColors; i++)  {
+-	    XParseColor(pl->dpy, d_i[d].clr_map, ColorNames[i], &d_i[d].clr);
+-	    d_i[d].clr.pixel = d_i[d].pixel[i];
+-	    XStoreColor (pl->dpy, d_i[d].clr_map, &d_i[d].clr);
+-	    d_i[d].clr.pixel |= d_i[d].line_plane_mask;
+-	    XStoreColor (pl->dpy, d_i[d].clr_map, &d_i[d].clr);
+-	    d_i[d].Colors[i] = d_i[d].clr.pixel;
++      if ( option_mono ) {
++	usewhite = 1;
++      } else {
++	usewhite = 0;
++
++	for (i = 0; i < NColors; i++)  {
++	  XColor alloc, exact;
++
++	  if (XAllocNamedColor(pl->dpy, d_i[d].clr_map, ColorNames[i],
++		      &alloc, &exact) == 0) {
++	    XFreeColors(pl->dpy, d_i[d].clr_map, d_i[d].Colors, i, NULL);
++	    usewhite = 1;
++	    fprintf(stderr, "unable to allocate color \"%s\", falling back to only one plot color\n", ColorNames[i]);
++	    break;
+ 	  }
++	  d_i[d].Colors[i] = alloc.pixel;
++	}
++      }
++      if ( usewhite ) {
++	for ( i = 0; i < NColors; i++) {
++	  d_i[d].Colors[i] = WhitePixelOfScreen(pl->screen);
+ 	}
++      }
+     }
+     
+     for (i = 0; i < NColors; i++) {
