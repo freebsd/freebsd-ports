@@ -1,0 +1,12 @@
+bin/zebedee
+etc/server.zbd.sample
+share/examples/zebedee/vncviewer.zbd
+share/examples/zebedee/vncserver.zbd
+share/examples/zebedee/server.key
+share/examples/zebedee/server.id
+share/doc/zebedee/README.txt
+share/doc/zebedee/LICENCE.txt
+share/doc/zebedee/CHANGES.txt
+share/doc/zebedee/zebedee.html
+@dirrm share/examples/zebedee
+@dirrm share/doc/zebedee

@@ -1,0 +1,9 @@
+Zebedee is a simple program to establish an encrypted, compressed TCP/IP
+"tunnel" between two systems. This allows TCP-based traffic such as telnet,
+ftp and X to be protected from snooping as well as potentially gaining
+performance over low-bandwidth networks from compression.
+
+WWW: http://www.winton.org.uk/zebedee/
+
+- Greg Hewgill
+greg@hewgill.com
