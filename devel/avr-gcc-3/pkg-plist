@@ -55,6 +55,8 @@ libexec/gcc/avr/3.4.1/install-tools/mkinstalldirs
 @dirrm lib/gcc/avr/3.4.1/install-tools
 @dirrm lib/gcc/avr/3.4.1
 @dirrm lib/gcc/avr
+@dirrm lib/gcc
 @dirrm libexec/gcc/avr/3.4.1/install-tools
 @dirrm libexec/gcc/avr/3.4.1
 @dirrm libexec/gcc/avr
+@dirrm libexec/gcc
