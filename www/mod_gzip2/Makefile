@@ -19,7 +19,7 @@ RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
-
+MAKE_ENV+=	"APXS=${APXS}"
 ALL_TARGET=	build
 
 post-install:
