@@ -10,4 +10,8 @@ PSFONTSMAP=${TEXMFMAIN}/dvips/config/config.ps
 
 # Edit dvips/config/config.ps
 sed -e /%cwtex_begin/,/%cwtex_end/d $PSFONTSMAP > $PSFONTSMAP.tmp
-mv -f $PSFONTSMAP.tmp $PSFONTSMAP
+if [ -s "$PSFONTSMAP.tmp" ]; then
+  mv $PSFONTSMAP.tmp $PSFONTSMAP
+else
+  rm $PSFONTSMAP.tmp $PSFONTSMAP
+fi
