@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.19.1
+PORTVERSION=	0.20.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
-
-.ifndef NO_OPENSSL
-USE_OPENSSL=	yes
-.endif
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		expat.3:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
-		--enable-netrc \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ARGS=	--enable-netrc \
 		--with-included-neon \
-		--with-included-expat
+		--with-expat
 ALL_TARGET=	cadaver
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/cadaver.1 ${PREFIX}/man/man1
-
 MAN1=	cadaver.1
+
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-ssl --with-force-ssl
+.endif
 
 .include <bsd.port.mk>
