@@ -32,7 +32,7 @@ EXAMPLES=	in-uri.txt test-uri.rb
 
 do-install:
 .for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/uri
