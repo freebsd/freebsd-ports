@@ -6,33 +6,40 @@
 #
 
 PORTNAME=	jdk
-PORTVERSION=	${JDK_VERSION}b${JDK_BETALEVEL}
+PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
 DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
-		freebsd-jdk122-patches-${JDK_BETALEVEL}.tar.gz
+		freebsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
 
 MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
-		${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk12 \
-		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif \
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
+.if !defined(NATIVE_BOOTSTRAP)
+BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk12
+.endif
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts \
-		javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
 WRKSRC=		${WRKDIR}/build/freebsd
 
 JDK_VERSION=	1.2.2
-JDK_BETALEVEL=	10
+JDK_PATCHSET_VERSION=	10
 
 JDK11DIR?=	${LOCALBASE}/jdk1.1.8
 JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
+.if defined(NATIVE_BOOTSTRAP)
+JDK12DIR?=      ${LOCALBASE}/jdk${JDK_VERSION}
+.else
 JDK12DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
+.endif
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
@@ -89,6 +96,28 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}/1.1_libs
 	@${CP} ${JFC11DIR}/*.jar ${WRKSRC}/1.1_libs
 
+.if !defined(NATIVE_BOOTSTRAP)
+pre-build:
+	@if [ "$${WRKDIRPREFIX}" -a \
+	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
+	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	then \
+		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
+		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
+		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
+		exit 1; \
+	fi
+	@if [ `sysctl -n compat.linux.osname` != "Linux" ]; \
+	then \
+		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
+		${ECHO_MSG} "to 'Linux' with the command:"; \
+		${ECHO_MSG} "	sysctl compat.linux.osname=Linux"; \
+		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
+		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
+		exit 1; \
+	fi
+.endif
+
 post-build:
 	for dir in ${JDKIMAGEDIR} ${JDKIMAGEDIR_G} ${JREIMAGEDIR}; do \
 		for file in `${FIND} $${dir} -type  f -name "*.so"`; do \
@@ -114,10 +143,10 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
-		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(NODEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
-		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 
 post-install:
