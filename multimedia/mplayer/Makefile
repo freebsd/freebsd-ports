@@ -6,43 +6,42 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.60.1
-PORTREVISION=	2
+PORTVERSION=	0.90.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
-		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.60
+DISTNAME=	MPlayer-0.90pre4
 
 MAINTAINER=	riggs@rrr.de
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+		mp3lame.0:${PORTSDIR}/audio/lame
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
-NO_PACKAGE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS= --disable-mencoder \
-		--with-extralibdir=${LOCALBASE}/lib \
+CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include
 
+WANT_GTK=	yes
 MAN1=		mplayer.1
+MLINKS=		mplayer.1 mencoder.1
 MANCOMPRESSED=	no
 
-CONFFILES=	codecs.conf example.conf
+CONFFILES=	codecs.conf example.conf input.conf
 DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
 		codecs.html documentation.html faq.html skin-en.html \
-		DXR3 formats.html skin-en.html sound.html tech/tech-eng.txt \
+		encoding.html formats.html sound.html tech/tech-eng.txt \
+		users_against_developers.html \
 		video.html
 
 .include <bsd.port.pre.mk>
@@ -55,6 +54,14 @@ WITH_DVD=	yes
 WITH_SVGALIB=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libSDL-1.1.so.4)
+WITH_SDL=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libjpeg.so.9)
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+.endif
+
 .if exists(${X11BASE}/bin/xanim)
 WITH_XANIM=	yes
 .endif
@@ -63,16 +70,13 @@ WITH_XANIM=	yes
 CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 .endif
 
+.if defined(HAVE_GTK)
+WITH_GUI=	yes
+.endif
+
 .if defined(WITH_GUI)
 USE_GTK=	yes
-
-RUN_DEPENDS+=	${SKIN_DETECTION_FILE}:${SKIN_PORT}
-
 CONFIGURE_ARGS+=	--enable-gui
-
-SKIN_PORT=     ${PORTSDIR}/graphics/mplayer-skins
-#SKIN_PORT=     ${.CURDIR}/../mplayer-skins
-SKIN_DETECTION_FILE!=  ${MAKE} -f ${SKIN_PORT}/Makefile -V SKIN_DETECTION_FILE
 .endif
 
 .if defined(WITH_DVD)
@@ -83,11 +87,15 @@ LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
+.if defined(WITH_SDL)
+LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+.endif
+
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_XANIM) 
+.if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
 
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
@@ -97,6 +105,9 @@ CONFIGURE_ARGS+=--disable-xanim
 
 # "enable" build for other archs
 .if ${ARCH} == "i386"
+.if !defined(WITHOUT_RUNTIME_CPUDETECTION)
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
+.else #WITHOUT_RUNTIME_CPUDETECTION
 .if defined(WITHOUT_MMX)
 CONFIGURE_ARGS+=--disable-mmx
 .endif
@@ -109,8 +120,12 @@ CONFIGURE_ARGS+=--disable-3dnowex
 .if defined(WITHOUT_SSE)
 CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
 .endif
+.endif #WITHOUT_RUNTIME_CPUDETECTION
 .if !defined(WITH_SVGALIB)
 CONFIGURE_ARGS+=--disable-svga
+.endif
+.if !defined(WITH_SDL)
+CONFIGURE_ARGS+=--disable-sdl
 .endif
 .if !defined(WITH_VORBIS)
 CONFIGURE_ARGS+=--disable-vorbis
@@ -127,11 +142,15 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif # ARCH == i386
 
 pre-everything::
+.if defined(WITH_GUI)
+	@${ECHO_MSG} "You can download official skin collections from"
+	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
+.endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
-.if !defined(WITH_GUI)
+.if !defined(WITH_GUI) && !defined(HAVE_GTK)
 	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
 .endif
 .if !defined(WITH_DVD)
@@ -139,6 +158,9 @@ pre-everything::
 .endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
+.endif
+.if !defined(WITH_SDL)
+	@${ECHO_MSG} "You can enable SDL support by defining WITH_SDL."
 .endif
 .if !defined(WITH_VORBIS)
 	@${ECHO_MSG} "You can enable VORBIS sound support by defining WITH_VORBIS."
@@ -149,8 +171,9 @@ pre-everything::
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_WIN32_CODECS)
 	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
-	@${ECHO_MSG} "for Win32 codecs"
+	@${ECHO_MSG} "for Win32 codecs by defining WITHOUT_WIN32_CODECS"
 .endif
+.if defined(WITHOUT_RUNTIME_CPUDETECTION)
 .if !defined(WITHOUT_SSE)
 	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
 	@${ECHO_MSG} "config in order to enable kernel support for SSE/MMX2."
@@ -166,7 +189,13 @@ pre-everything::
 .endif
 	@${ECHO_MSG} "Note: The cpu features are autodetected, so there is probably no need"
 	@${ECHO_MSG} "to manually disable them."
+.else
+	@${ECHO_MSG} "You can disable runtime cpu detection features by defining WITHOUT_RUNTIME_CPUDETECTION"
+.endif
 .endif # ARCH == i386
+
+pre-configure:
+	@${RM} -Rf ${WRKSRC}/libmpdvdkit/
 
 post-install:
 	@${MKDIR} ${DATADIR}

@@ -1,6 +1,6 @@
---- configure.old	Fri Jan  4 23:48:35 2002
-+++ configure	Sat Jan  5 00:26:19 2002
-@@ -415,19 +415,10 @@
+--- configure.orig	Mon May 13 22:52:10 2002
++++ configure	Tue May 21 08:56:42 2002
+@@ -450,19 +450,10 @@
  
  # Try to find the available options for the current CPU
  if x86 ; then
@@ -20,40 +20,29 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1135,14 +1126,7 @@
- int main(void) { (void) malloc(0); return 0; }
- EOF
- _malloc=no
--cc_check && _malloc=yes
--if test "$_malloc" = yes ; then
--  _def_malloc='#define HAVE_MALLOC_H 1'
--else
--  _def_malloc='#undef HAVE_MALLOC_H'
--fi
--# malloc.h emits a warning in FreeBSD
--freebsd && _def_malloc='#undef HAVE_MALLOC_H'
-+_def_malloc='#undef HAVE_MALLOC_H'
- echores "$_malloc"
+@@ -1412,13 +1403,7 @@
  
  
-@@ -1153,12 +1137,7 @@
- int main (void) { (void) memalign(64, sizeof(char)); return 0; }
- EOF
+ echocheck "memalign()"
+-# XXX restrict to x86 ? extend to other CPUs/cacheline sizes ?
+-cat > $TMPC << EOF
+-#include <malloc.h>
+-int main (void) { (void) memalign(64, sizeof(char)); return 0; }
+-EOF
  _memalign=no
 -cc_check && _memalign=yes
--if test "$_memalign" = yes ; then
-- _def_memalign='#define HAVE_MEMALIGN 1'
--else
-- _def_memalign='#undef HAVE_MEMALIGN'
--fi
-+_def_memalign='#undef HAVE_MEMALIGN'
- echores "$_memalign"
+ if test "$_memalign" = yes ; then
+  _def_memalign='#define HAVE_MEMALIGN 1'
+ else
+@@ -1495,31 +1480,7 @@
  
  
-@@ -1235,15 +1214,7 @@
- void* func(void *arg) { return arg; }
- int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
- EOF
+ echocheck "pthread"
+-cat > $TMPC << EOF
+-#include <pthread.h>
+-void* func(void *arg) { return arg; }
+-int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+-EOF
 -if ( cc_check && $TMPO ) ; then              # QNX
 -  _ld_pthread=''
 -elif ( cc_check -lpthread && $TMPO ) ; then
@@ -61,13 +50,24 @@
 -elif ( cc_check -pthread && $TMPO ) ; then
 -  _ld_pthread='-pthread'
 -else
--  die "Lib pthread not found. (needed by windows and networking stuff)"
+-  if test "$_ld_static" ; then
+-    # for crosscompilation, we cannot execute the program, be happy if we can link statically
+-    if ( cc_check -lpthread ) ; then
+-      _ld_pthread='-lpthread'
+-    elif ( cc_check -pthread ) ; then
+-     _ld_pthread='-pthread'
+-    else
+-      die "Static lib pthread not found. (needed by windows and networking stuff)"
+-    fi
+-  else
+-    die "Lib pthread not found. (needed by windows and networking stuff)"
+-  fi
 -fi
 +_ld_pthread="${PTHREAD_LIBS}"
  echores "yes (using $_ld_pthread)"
  
  
-@@ -2692,7 +2663,7 @@
+@@ -3570,7 +3531,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
