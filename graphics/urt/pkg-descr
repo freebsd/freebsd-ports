@@ -1,0 +1,13 @@
+The Utah Raster toolkit is a collection of programs and C routines for
+dealing with raster images commonly encountered in computer graphics.  It
+provides the following major functions:
+
+        * A device and system independent image format for storing images
+          and information about them.  Called the RLE format, it uses
+          run length encoding to reduce storage space for most images.
+
+        * A library of C routines for reading, writing and manipulating
+          images stored in the RLE format.
+
+        * A collections of programs for manipulating and displaying RLE
+          images.
