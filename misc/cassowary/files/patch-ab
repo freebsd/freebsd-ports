@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Wed Oct 18 07:30:35 2000
++++ docs/Makefile.in	Wed Oct 18 07:30:42 2000
+@@ -94,7 +94,7 @@
+ YACC = @YACC@
+ cassoguiledir = @cassoguiledir@
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ 
+ doc_DATA = cassowary-tr.pdf cassowary-tr.ps.gz
+ 
