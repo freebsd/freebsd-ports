@@ -6,8 +6,11 @@ Now that the package is installed, please finish it with the following steps:
 - Run @@PREFIX@@/etc/rc.d/freenet6.sh to start the tunnel.
 - Try to ping a IPv6 host, for example: ping6 www.jp.freebsd.org
 
-*** NOTE FOR UPGRADERS:
+*** NOTE FOR UPGRADERS to version 0.97:
 The configuration file has changed, please change "tsp_version" to
 "1.0.1" and add "retry_delay=1800" to it. See tspc.conf.sample for
 more information. If you don't add this, the tunnel will not be
 setup.
+*** NOTE FOR UPGRADERS to version 1.0
+- servername could be have been changed to 'tsps2.freenet6.net'
+- template has changed to 'tspc-freebsd44'

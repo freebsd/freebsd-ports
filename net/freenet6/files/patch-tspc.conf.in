@@ -1,0 +1,13 @@
+--- src/tspc.conf.in.orig	Thu Oct 23 11:34:40 2003
++++ src/tspc.conf.in	Thu Oct 23 11:35:02 2003
+@@ -37,8 +37,8 @@
+ # You can also use "checktunnel" if you only want the tunnel info print out.
+ # Possible templates are:
+ # template=checktunnel
+-# template=freebsd4
+-# template=freebsd44
++# template=tspc-freebsd4
++# template=tspc-freebsd44
+ # template=netbsd
+ # template=openbsd
+ # template=solaris8
