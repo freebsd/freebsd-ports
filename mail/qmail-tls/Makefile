@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_OPENSSL=	YES
 
-TLS_PATCH_DATE=	20010627
+TLS_PATCH_DATE=	20020825
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
