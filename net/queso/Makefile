@@ -5,7 +5,7 @@
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/24 23:31:27 obrien Exp $
+# $Id: Makefile,v 1.2 1998/11/11 05:37:29 asami Exp $
 #
 
 DISTNAME=	queso-980922
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://apostols.org/AposTools/snapshots/  \
 		ftp://freebsd.ntu.edu.tw/freebsd/_distfiles/
 DISTFILES=	queso-980922.tar.gz
 
-MAINTAINER=	woju@freebsd.ee.ntu.edu.tw
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 
