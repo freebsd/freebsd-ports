@@ -38,7 +38,6 @@ share/canna/dic/canna/bushu.cld
 share/canna/dic/canna/chimei.ctd
 share/canna/dic/canna/dics.dir
 share/canna/dic/canna/fuzokugo.cbd
-share/canna/dic/canna/fuzokugo.cld
 share/canna/dic/canna/hojomwd.ctd
 share/canna/dic/canna/hojoswd.ctd
 share/canna/dic/canna/iroha.cbd
@@ -74,7 +73,6 @@ share/canna/sample/matsu.canna
 share/canna/sample/modes.canna
 share/canna/sample/sample.canna
 share/canna/sample/skk.canna
-share/canna/sample/src/Makefile
 share/canna/sample/src/default.ctd
 share/canna/sample/src/english.ctd
 share/canna/sample/src/is.c
@@ -92,6 +90,7 @@ share/canna/sample/src/vje.ctd
 share/canna/sample/src/wx2+.ctd
 share/canna/sample/tut.canna
 share/canna/sample/unix.canna
+share/canna/sample/verbose.canna
 share/canna/sample/vje.canna
 share/canna/sample/wx2+.canna
 lib/libRKC.a
