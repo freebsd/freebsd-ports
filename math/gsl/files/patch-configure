@@ -15,7 +15,7 @@
 +    sparc64-*-*bsd*)
 +        ac_cv_c_ieee_interface=unknown
 +	;;
-+    amd64-*-*bsd*)
++    alpha-*-*bsd*)
 +        ac_cv_c_ieee_interface=unknown
 +	;;
 +    ia64-*-*bsd*)
