@@ -219,6 +219,7 @@
     SUBDIR += xmx
     SUBDIR += xnee
     SUBDIR += xnodecor
+    SUBDIR += xorg-fonts-100dpi
     SUBDIR += xorg-fonts-encodings
     SUBDIR += xorg-libraries
     SUBDIR += xorg-manpages
