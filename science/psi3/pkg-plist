@@ -99,21 +99,24 @@ lib/libPSI_r12.a
 @dirrm include/libbasis
 %%PORTDOCS%%share/psi3/pbasis.dat
 %%PORTDOCS%%share/psi3/psi.dat
-%%PORTDOCS%%share/doc/psi3/libpsio.html
-%%PORTDOCS%%share/doc/psi3/libdpd.html
-%%PORTDOCS%%share/doc/psi3/cints.html
-%%PORTDOCS%%share/doc/psi3/CINTS/commandline.html
-%%PORTDOCS%%share/doc/psi3/CINTS/compile.html
-%%PORTDOCS%%share/doc/psi3/CINTS/description.html
-%%PORTDOCS%%share/doc/psi3/CINTS/examples.html
-%%PORTDOCS%%share/doc/psi3/CINTS/home.html
-%%PORTDOCS%%share/doc/psi3/CINTS/keywords.html
-%%PORTDOCS%%share/doc/psi3/CINTS/references.html
-%%PORTDOCS%%share/doc/psi3/CINTS/toc.html
-%%PORTDOCS%%share/doc/psi3/libqt.txt
-%%PORTDOCS%%share/doc/psi3/libiwl.txt
+%%PORTDOCS%%%%DOCSDIR%%/libpsio.html
+%%PORTDOCS%%%%DOCSDIR%%/libdpd.html
+%%PORTDOCS%%%%DOCSDIR%%/cints.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/commandline.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/compile.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/description.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/home.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/keywords.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/references.html
+%%PORTDOCS%%%%DOCSDIR%%/CINTS/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/libqt.txt
+%%PORTDOCS%%%%DOCSDIR%%/libiwl.txt
+%%PORTDOCS%%%%DOCSDIR%%/installation.pdf
+%%PORTDOCS%%%%DOCSDIR%%/userman.pdf
+%%PORTDOCS%%%%DOCSDIR%%/progman.pdf
 %%PORTDOCS%%@dirrm share/doc/psi3/CINTS
-%%PORTDOCS%%@dirrm share/doc/psi3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/MakeRules.in
 %%EXAMPLESDIR%%/INDEX
 %%EXAMPLESDIR%%/Basis_Tests/Benchmarks

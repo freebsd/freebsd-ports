@@ -8,11 +8,16 @@
 PORTNAME=	psi3
 PORTVERSION=	3.2.0
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	maho/psi3
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.psicode.org/doc/:doc
 #		http://www.psicode.org/downloads.php
+MASTER_SITE_SUBDIR=	maho/psi3
 DISTNAME=	psi-${PORTVERSION}
 EXTRACT_SUFX=   .tar.bz2
+.if !defined(NOPORTDOCS)
+DISTFILES+=     ${DISTNAME}${EXTRACT_SUFX} installation.pdf:doc userman.pdf:doc progman.pdf:doc
+.endif
+DIST_SUBDIR=	psi3
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
@@ -73,6 +78,9 @@ do-install:
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/man .  | ${TAR} xf - -C ${PREFIX}/man
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/html . | ${TAR} xf - -C ${PREFIX}/share/doc/psi3
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/txt  . | ${TAR} xf - -C ${PREFIX}/share/doc/psi3
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/installation.pdf ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/userman.pdf ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/progman.pdf ${DOCSDIR}
 .endif
 	@${MKDIR} ${PREFIX}/share/examples/psi3
 	@${TAR} cf - -C ${WRKSRC}/tests .       | ${TAR} xf - -C ${PREFIX}/share/examples/psi3
