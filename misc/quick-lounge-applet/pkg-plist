@@ -8,9 +8,23 @@ libdata/bonobo/servers/GNOME_QuickLoungeApplet_Factory.server
 share/gnome/gnome-2.0/ui/GNOME_QuickLoungeApplet.xml
 share/gnome/pixmaps/quick-lounge-applet.png
 share/gnome/quick-lounge/glade/quick-lounge.glade
+share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/cs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/de/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/ja/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/ms/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/nl/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/no/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/pl/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/pt/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/sr/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
 @dirrm share/gnome/quick-lounge/glade
 @dirrm share/gnome/quick-lounge
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/prefs
