@@ -28,5 +28,3 @@ lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.6
 @dirrm include/mysql
 @dirrm lib/mysql
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/mysql
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
