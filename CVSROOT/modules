@@ -1029,6 +1029,7 @@ ctwm		ports/x11-wm/ctwm
 cu-prolog	ports/lang/cu-prolog
 cube		ports/games/cube
 cucipop		ports/mail/cucipop
+cue2toc		ports/audio/cue2toc
 cuecat		ports/misc/cuecat
 cups		ports/print/cups
 cups-base	ports/print/cups-base
