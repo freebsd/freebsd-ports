@@ -2228,6 +2228,7 @@ gtoaster	ports/sysutils/gtoaster
 gtoolkit	ports/x11-toolkits/gtoolkit
 gtop		ports/sysutils/gtop
 gtranslator	ports/devel/gtranslator
+gts		ports/graphics/gts
 gtypist		ports/games/gtypist
 guavac		ports/java/guavac
 guile		ports/lang/guile
