@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 1998/11/15 22:05:26 kuriyama Exp $
+# $Id: Makefile,v 1.5 1998/11/18 20:03:35 billf Exp $
 #
 
     SUBDIR += afterstep
@@ -11,6 +11,7 @@
     SUBDIR += fvwm
     SUBDIR += fvwm2
     SUBDIR += fvwm95
+    SUBDIR += fvwm95-i18n
     SUBDIR += gwm
     SUBDIR += icewm
     SUBDIR += iconmaker
