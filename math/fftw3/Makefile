@@ -7,50 +7,53 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		http://www.fftw.org/ 			\
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
+PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Fast C routines to compute the Discrete Fourier Transform
+COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
+
+# current flavors: default, float, and long
+FFTW3_FLAVOR?=	default
+FFTW3_SUFX=
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
-USE_GNOME=	gnomehack gnometarget lthack pkgconfig
+USE_LIBTOOL_VER=15
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 
-MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1 fftwf-wisdom.1
-INFO=	fftw3
-
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-# FFTW --enable-single Options
-CONFIGURE_ARGS_FFTW3F=--enable-single ${CONFIGURE_ARGS:N--enable-sse2}
-FFTW3F_WRKSRC=	${WRKDIR}/${DISTNAME}-3F
-FFTW3F_INSTALL_TARGET=install-pkgconfigDATA install-libLTLIBRARIES install-exec
+CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}=="default"
+MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1
+INFO=	fftw3
+.else
+MAN1=	fftw${FFTW3_SUFX}-wisdom.1
+INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
+.endif
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
-		SMP_THREADS "Enable FFTW SMP threads library" off
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-OPTIONS+=	OPTIMIZED_ATHLON "Enable AMD K7(Athlon) optimizations" off \
+		SMP_THREADS "Enable FFTW SMP threads library" off \
+		OPTIMIZED_ATHLON "Enable AMD K7(Athlon) optimizations" off \
 		SSE "Enable SSE optimized routines" off
 
-.endif
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS) && !defined(WITH_OPTIMIZED_ATHLON)
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer"
 .endif
 
+.if ${ARCH}=="i386"
 .if defined(WITH_OPTIMIZED_ATHLON)
 CONFIGURE_ARGS+=--enable-k7
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
@@ -62,14 +65,43 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedul
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
+.if ${FFTW3_FLAVOR}=="default"
 CONFIGURE_ARGS+=--enable-sse2
-CONFIGURE_ARGS_FFTW3F+=--enable-sse
+.else
+.if ${FFTW3_FLAVOR}=="float"
+CONFIGURE_ARGS+=--enable-sse
+.endif
+.endif
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2"
 .endif
+.endif #end i386 only options
 
 .if defined(WITH_SMP_THREADS)
 CONFIGURE_ARGS+=--enable-threads
 .endif
+
+.if defined(FFTW3_FLAVOR)
+.if ${FFTW3_FLAVOR}=="float"
+FFTW3_SUFX=	f
+FFTW3_PKGNAMESUFFIX=	-float
+CONFIGURE_ARGS+=--enable-float
+.else
+.if ${FFTW3_FLAVOR}=="long"
+LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
+FFTW3_SUFX=	l
+FFTW3_PKGNAMESUFFIX=	-long
+CONFIGURE_ARGS+=--enable-long-double
+.endif
+.endif
+.endif
+
+.if ${FFTW3_FLAVOR}=="default"
+PLIST_SUB+=	DEF=""
+.else
+PLIST_SUB+=	DEF="@comment "
+.endif
+
+PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -79,37 +111,23 @@ post-patch:
 		${WRKSRC}/doc/fftw3* \
 		${WRKSRC}/tools/fftw*wisdom.1
 	@${FIND} ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
-
-pre-configure:
-	@${CP} -Rf ${WRKSRC} ${FFTW3F_WRKSRC}
+.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
 	@${REINPLACE_CMD} -e \
 		's|EXTRA_DIST = fftw-wisdom-to-conf.in||; \
 		s|fftw-wisdom-to-conf.in||; \
 		s|fftw-wisdom-to-conf: $(top_builddir)/config.status||; \
 		s|bin_SCRIPTS = fftw-wisdom-to-conf||' \
-			${FFTW3F_WRKSRC}/tools/Makefile.in
+			${WRKSRC}/tools/Makefile.in
+.if ${FFTW3_FLAVOR}=="long"
+	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+		's|@LIBS@|-lml @LIBS@|'
+.endif
+.endif
 
-post-configure:
-	@${ECHO_MSG} "===>  Configuring for ${PORTNAME}-${PORTVERSION} (short)"
-	@(cd ${FFTW3F_WRKSRC} && \
-		${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_FFTW3F})
-
-post-build:
-	@${ECHO_MSG} "===>  Building for ${PORTNAME}-${PORTVERSION} (short)"
-	@(cd ${FFTW3F_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	@(cd ${FFTW3F_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${FFTW3F_INSTALL_TARGET})
-	@${INSTALL_MAN} ${FFTW3F_WRKSRC}/tools/fftwf-wisdom.1 ${PREFIX}/man/man1
+.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${PREFIX}/man/man1
+.endif
 
 .include <bsd.port.post.mk>
