@@ -1,0 +1,12 @@
+--- arpwatch.c.orig	Sat Oct 14 04:07:35 2000
++++ arpwatch.c	Wed Nov 22 08:40:40 2000
+@@ -251,7 +251,7 @@
+ 		}
+ 	}
+ 
+-	openlog(prog, 0, LOG_DAEMON);
++	openlog(prog, LOG_PID, LOG_DAEMON);
+ 
+ 	if (chdir(arpdir) < 0) {
+ 		syslog(LOG_ERR, "chdir(%s): %m", arpdir);
+
