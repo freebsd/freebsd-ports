@@ -1,0 +1,17 @@
+This program is pretty slow. Thanks to the caching, repeated visits from the
+same address will only result in one lookup. Therefore large files will be
+processed proportionally faster than small ones.
+
+The load from this program is very light, because it spends most of its time
+waiting for the resolver. This also means that large files can take quite some
+time to process. The solution is to split the log file and run several
+resolution processes in parallel. This is done by the script splitwr:
+
+        splitwr logfile > logfile.resolved
+        webalizer logfile.resolved
+        rm logfile.resolved
+
+By default, splitwr runs 20 parallel resolution processes. The number can be
+changed by editing the script.
+
+WWW: http://siag.nu/webresolve/

@@ -201,6 +201,7 @@
     SUBDIR += webglimpse
     SUBDIR += weblint
     SUBDIR += webredirect
+    SUBDIR += webresolve
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wml
