@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       pysol
+PORTNAME=	pysol
 PORTVERSION=	4.00
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/

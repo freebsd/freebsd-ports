@@ -5,7 +5,7 @@ PySol - a Python Solitaire Game
 Highlights:
 -----------
   - based upon an extensible solitaire engine
-  - currently supports 4 different games - expect more to come
+  - currently supports 173 different games - expect more to come
   - includes my all time favorite "Gypsy"
   - very nice look and feel
   - unlimited undo & redo
@@ -20,4 +20,6 @@ I'm awaiting your suggestions and bug reports :-)
 Have fun,
 Markus
 
-WWW: http://wildsau.idv.uni-linz.ac.at/mfx/pysol.html
+WWW: http://pysol.tsx.org/
+     http://wildsau.idv.uni-linz.ac.at/mfx/pysol.html
+
