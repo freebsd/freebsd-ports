@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 1995/11/26 21:19:12 asami Exp $
+# $Id: Makefile,v 1.18 1995/12/05 02:07:43 ache Exp $
 #
 
     SUBDIR += autoconf
@@ -6,6 +6,7 @@
     SUBDIR += bison
     SUBDIR += cflow
     SUBDIR += dmake
+    SUBDIR += flex
     SUBDIR += gmake
     SUBDIR += gperf
     SUBDIR += libdlmalloc
