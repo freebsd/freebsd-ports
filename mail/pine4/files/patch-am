@@ -1,7 +1,7 @@
-*** pine/pine.h.orig	Wed Sep 16 07:14:56 1998
---- pine/pine.h	Sun Sep 20 00:43:14 1998
+*** pine/pine.h.orig	Mon Feb 22 14:49:07 1999
+--- pine/pine.h	Mon Feb 22 14:49:57 1999
 ***************
-*** 2346,2352 ****
+*** 2588,2594 ****
   } ATABLE_S;
   
   
@@ -9,7 +9,7 @@
   #define	TAG_INVON	'\001'	/* Supported character attributes	  */
   #define	TAG_INVOFF	'\002'
   #define	TAG_BOLDON	'\003'
---- 2346,2352 ----
+--- 2588,2594 ----
   } ATABLE_S;
   
   

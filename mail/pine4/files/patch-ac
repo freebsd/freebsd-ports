@@ -1,5 +1,5 @@
-*** pine/osdep/os-bsf.h.orig	Wed Aug 12 00:50:27 1998
---- pine/osdep/os-bsf.h	Sat Sep 12 17:26:37 1998
+*** pine/osdep/os-bsf.h.orig	Thu Oct  8 00:51:40 1998
+--- pine/osdep/os-bsf.h	Tue Feb  9 20:15:18 1999
 ***************
 *** 74,80 ****
      default-composer-hdrs or customized-hdrs to get at it. Instead of
@@ -7,7 +7,7 @@
      changing is to put the feature "no-allow-changing-from" in the
 !    /usr/local/lib/pine.conf.fixed file.
    ----*/
-  /* #define NEVER_ALLOW_CHANGING_FROM /* probably not needed */
+  /* #define NEVER_ALLOW_CHANGING_FROM */
   
 --- 74,80 ----
      default-composer-hdrs or customized-hdrs to get at it. Instead of
@@ -15,14 +15,14 @@
      changing is to put the feature "no-allow-changing-from" in the
 !    @@PREFIX@@/etc/pine.conf.fixed file.
    ----*/
-  /* #define NEVER_ALLOW_CHANGING_FROM /* probably not needed */
+  /* #define NEVER_ALLOW_CHANGING_FROM */
   
 ***************
 *** 87,93 ****
      NOTE: You'll also have to make sure the appropriate osdep/postreap.*
            file is included in the os-*.ic file for your system.
    ----*/
-! /* #define BACKGROUND_POST  /* comment out to disable posting from child */
+! /* #define BACKGROUND_POST */
   
   
   
@@ -30,7 +30,7 @@
      NOTE: You'll also have to make sure the appropriate osdep/postreap.*
            file is included in the os-*.ic file for your system.
    ----*/
-! #define BACKGROUND_POST     /* comment out to disable posting from child */
+! #define BACKGROUND_POST
   
   
   
@@ -58,7 +58,7 @@
   /*----------------------------------------------------------------------
      If no nntp-servers are defined, this program will be used to post news.
    ----*/
-! #define SENDNEWS	"/usr/local/news/inews -h"	/* news posting cmd */
+! #define SENDNEWS	"/usr/local/news/inews -h"
   
   
   /*--------- Program employed by users to change their password ---------*/

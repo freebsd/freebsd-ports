@@ -1,5 +1,5 @@
-*** pine/mailcap.c.orig	Wed Aug 19 03:47:42 1998
---- pine/mailcap.c	Sat Sep 12 22:00:48 1998
+*** pine/mailcap.c.orig	Wed Nov 18 20:00:15 1998
+--- pine/mailcap.c	Thu Feb 11 23:43:54 1999
 ***************
 *** 61,67 ****
   

@@ -1,9 +1,9 @@
-*** imap/Makefile.orig	Sat Aug  8 05:32:23 1998
---- imap/Makefile	Thu Sep  3 19:36:35 1998
+*** imap/Makefile.orig	Thu Jan 28 01:33:11 1999
+--- imap/Makefile	Tue Feb  9 21:35:37 1999
 ***************
-*** 253,264 ****
+*** 379,390 ****
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
-  	$(LN) `pwd`/src/kerberos/* c-client
+  	sh -c '(test -d src/kerberos) && ($(LN) `pwd`/src/kerberos/* c-client) || true'
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! 	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
@@ -14,9 +14,9 @@
   
   OSTYPE:
   	@echo Building c-client for $(OS)...
---- 253,264 ----
+--- 379,390 ----
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
-  	$(LN) `pwd`/src/kerberos/* c-client
+  	sh -c '(test -d src/kerberos) && ($(LN) `pwd`/src/kerberos/* c-client) || true'
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! #	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! #	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
