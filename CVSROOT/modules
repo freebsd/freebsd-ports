@@ -2918,6 +2918,7 @@ gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
 gtkhx		ports/net/gtkhx
 gtkjournal	ports/deskutils/gtkjournal
+gtklife		ports/games/gtklife
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm24		ports/x11-toolkits/gtkmm24
