@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dmidecode
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A tool for dumping DMI (SMBIOS) contents in human-readable format
