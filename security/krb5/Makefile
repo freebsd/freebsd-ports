@@ -9,13 +9,8 @@ PORTNAME=		krb5
 PORTVERSION=		1.2.6
 CATEGORIES=		security
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
-# XXX crypto-publish.org does not at this time have the krb5-1.2.6 tarball.
-#     Use manual download until crypto-publish.org posts a copy of krb5-1.2.6
-#     on their website.
-# MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
-# EXTRACT_SUFX=		.tar.gz
-MASTER_SITES=		# manual download
-EXTRACT_SUFX=		.tar
+MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
+EXTRACT_SUFX=		.tar.gz
 .else
 MASTER_SITES=		# manual download
 EXTRACT_SUFX=		.tar
