@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.71
+PORTVERSION=	4.72
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
 
