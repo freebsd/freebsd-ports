@@ -1,0 +1,113 @@
+--- INSTALL	Sat May 18 04:12:30 2002
++++ README	Sat Sep  6 18:36:27 2003
+@@ -1,12 +1,7 @@
+-Quick Installation Instructions
++Quick Instructions
+ -------------------------------
+ 
+-1. Unpack the archive (though if you're reading this you've already
+-achieved that)
+-
+-   tar -zxvf tsocks-<version>.tar.gx
+-
+-2. Run ./configure, options which might be of interest (and that are 
++1. Explenations of the ./configure options which might be of interest (and that are 
+    specific to tsocks include):
+ 	--enable-socksdns	This option causes tsocks to intercept
+ 				DNS lookups and attempt to force them
+@@ -39,55 +34,31 @@
+ Other standard autoconf options are provided by typing './configure
+ --help'
+ 
+-NOTE: The install path for the library is _NOT_ prefixed with --prefix,
+-this is because it is strongly recommended that tsocks is installed into
+-/lib (and not /usr/lib). This is important if tsocks is put into
+-/etc/ld.so.preload since /usr is not mounted on many systems at boot
+-time, meaning that programs running before /usr is mounted will try to
+-preload tsocks, fail to find it and die, making the machine unusable. If
+-you really wish to install the library into some other path use --libdir.
+-
+-3. Compile the code by typing:
++2. Created files:
+ 
+-	make
+-
+-This should result in the creation of the following:
+ 	- libtsocks.so - the libtsocks library
+ 	- validateconf - a utility to verify the tsocks configuration file
+ 	- inspectsocks - a utility to determine the version of a socks server
+ 	- saveme - a statically linked utility to remove /etc/ld.so.preload
+ 		   if it becomes corrupt
++	- man pages - tsocks(8), tsocks(1) and tsocks.conf(5)
+ 
+-4. If you experience any errors at this step and don't know how to fix
+-them, seek help using the contacts listed on
+-http://tsocks.sourceforge.net/contact.php
+-
+-5. Install the compiled library. You can skip this step if you only plan
+-to use the library for personal use. If you want all users on the machine
+-to be able to use it however, su to root then type
+-
+-   make install
++3. Configuration
+ 
+-This will install the library, the tsocks script and its man pages
+-(tsocks(8), tsocks(1) and tsocks.conf(5)) to the paths specified to
+-configure.
+-
+-Note that by default the library is installed to /lib and that the
+-configure --prefix is IGNORED. See above for more detail. 
+-
+-6. At this point you'll need to create the tsocks configuration file.
+-There are two samples provided in the build directory called
++You'll need to create the tsocks configuration file.
++There are two samples provided in the build directory and 
++/usr/local/share/examples/tsocks called 
+ tsocks.conf.simple.example and tsocks.conf.complex.example.
+ Documentation on the configuration file format is provided in the
+ tsocks.conf man page ('man tsocks.conf'). 
+ 
+-7. Having created the tsocks.conf file you should verify it using
++4. Having created the tsocks.conf file you should verify it using
+ validateconf (some detail on validateconf can be found in the tsocks.conf
+ man page). Normally validateconf is run without arguments
+ ('./validateconf'). Any errors which are displayed by validateconf need
+ to be rectified before tsocks will function correctly.
+ 
+-8. You can now choose to make the library affect all users or just those
++5. You can now choose to make the library affect all users or just those
+ who choose to use it. If you want users to use it themselves, they can
+ simply use the tsocks(1) shell script to run programs (see 'man tsocks')
+ or do the following in their shell before running applications that need
+@@ -97,25 +68,15 @@
+ 
+ 	(in CSH) setenv LD_PRELOAD <path to library>
+ 
+-	<path to library> = e.g /lib/libtsocks.so.1.8
+-
+-If you want all users to pick up the library, place the full path to the
+-full library in the file /etc/ld.so.preload (e.g "/lib/libtsocks.so"). Be
+-EXTREMELY careful if you do this, if you mistype it or in some way get it
+-wrong this will make your machine UNUSABLE. Also, if you do this, make
+-sure the directory you put the library in is in the root of the
+-filesystem, if the library is not available at boot time, again, your
+-machine will be UNUSABLE. 
++	<path to library> = e.g /usr/local/lib/tsocks/libtsocks.so.1.8
+ 
+-9. Go ahead and use it! At this point everything should work. Again, if
++6. Go ahead and use it! At this point everything should work. Again, if
+ you experience any problems, use the contact points listed at
+-http://tsocks.sourceforge.net/contact.php. If you do happen to break your
+-machine with /etc/ld.so.preload, the build process creates a statically
+-linked executable called saveme in the build directory. This executable
+-simply unlinks /etc/ld.so.preload, this may or may not save you so give
+-it a try. If it fails, you'll need to switch off the machine and get a
+-rescue disk (e.g tomsrtbt) mount the disk and remove the file manually.
++http://tsocks.sourceforge.net/contact.php. 
+ 
+ Thats it, 
+ 
+ Thanks, Shaun Clowes (delius@progsoc.org)
++
++
++Adapted for FreeBSD by Marcin Jessa (yazzy@yazzy.org)

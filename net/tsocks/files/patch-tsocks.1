@@ -1,0 +1,63 @@
+--- tsocks.1.orig	Sat Mar 16 11:34:44 2002
++++ tsocks.1	Sat Sep  6 17:54:49 2003
+@@ -1,24 +1,24 @@
+-.TH TSOCKS 1 "" "TSOCKS"
+-
+-.SH NAME
++.\" 
++.TH "TSOCKS" "1" "" "TSOCKS" ""
++.SH "NAME"
+ .BR tsocks 
+ \- Shell wrapper to simplify the use of the tsocks(8) library to 
+ transparently allow an application to use a SOCKS proxy
+-.SH SYNOPSIS
++.SH "SYNOPSIS"
+ .B tsocks
+ .RB [application\ [application's\ arguments]]
+-.br
++.br 
+ or
+ .B tsocks
+ .RB [on|off]
+-.br
++.br 
+ or
+ .B tsocks
+-.SH DESCRIPTION
++.SH "DESCRIPTION"
+ .B tsocks
+ is a wrapper between the tsocks library and the application what you
+ would like to run socksified.
+-.SH OPTIONS
++.SH "OPTIONS"
+ .IP \fB[application\ \fB[application's\ arguments]]
+ run the application as specified with the environment (LD_PRELOAD) set
+ such that tsocks(8) will transparently proxy SOCKS connections in 
+@@ -28,19 +28,19 @@
+ variable. When tsocks(8) is in this variable all executed
+ applications are automatically socksified. If you want to
+ use this function, you HAVE to source the shell script from yours,
+-like this: "source /usr/bin/tsocks" or ". /usr/bin/tsocks"
+-.br
++like this: "source /usr/local/bin/tsocks" or ". /usr/local/bin/tsocks"
++.br 
+ Example:
+-.br
+-". tsocks on" -- add the tsocks lib to LD_PRELOAD
+-.br
+-". tsocks off" -- remove the tsocks lib from LD_PRELOAD
++.br 
++". tsocks on" \-\- add the tsocks lib to LD_PRELOAD
++.br 
++". tsocks off" \-\- remove the tsocks lib from LD_PRELOAD
+ .IP \fB[show|sh]
+ show the current value of the LD_PRELOAD variable
+ .IP \fB<without\ any\ argument>
+ create a new shell with LD_PRELOAD including tsocks(8). 
+-.PP
+-.SH AUTHOR
++.PP 
++.SH "AUTHOR"
+ This script was created by Tamas SZERB <toma@rulez.org> for the debian
+ package of tsocks. It (along with this manual page) have since been 
+ adapted into the main tsocks project and modified.
