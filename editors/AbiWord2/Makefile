@@ -41,6 +41,9 @@ FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
 		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g ; \
 		     s|\@DEFS\@|-I${WRKSRC}/../libiconv/include \@DEFS\@|g'
 
+post-patch:
+	@${RM} ${WRKSRC}/user/wp/strings/*.orig
+
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
 	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
