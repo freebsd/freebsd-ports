@@ -1,0 +1,24 @@
+include/dvbpsi/descriptor.h
+include/dvbpsi/dr.h
+include/dvbpsi/dr_02.h
+include/dvbpsi/dr_03.h
+include/dvbpsi/dr_04.h
+include/dvbpsi/dr_05.h
+include/dvbpsi/dr_06.h
+include/dvbpsi/dr_07.h
+include/dvbpsi/dr_08.h
+include/dvbpsi/dr_09.h
+include/dvbpsi/dr_0a.h
+include/dvbpsi/dr_0b.h
+include/dvbpsi/dr_0c.h
+include/dvbpsi/dr_0d.h
+include/dvbpsi/dr_0e.h
+include/dvbpsi/dr_0f.h
+include/dvbpsi/dvbpsi.h
+include/dvbpsi/pat.h
+include/dvbpsi/pmt.h
+include/dvbpsi/psi.h
+lib/libdvbpsi.a
+lib/libdvbpsi.so
+lib/libdvbpsi.so.1
+@dirrm include/dvbpsi
