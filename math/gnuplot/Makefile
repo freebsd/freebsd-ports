@@ -13,21 +13,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gd"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--includedir=${LOCALBASE}/include/ \
 		--libdir=${LOCALBASE}/lib \
-		--without-linux-vga \
-		--with-gd=${LOCALBASE}/lib \
-		--with-readline=gnu --with-lasergnu --with-png
+		--without-linux-vga --without-gd \
+		--with-readline=gnu --with-lasergnu --with-png=${LOCALBASE}
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
