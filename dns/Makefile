@@ -46,6 +46,7 @@
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-ZoneFile
+    SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-Tie-DNS
     SUBDIR += pdnsd

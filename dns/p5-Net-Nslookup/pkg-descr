@@ -1,0 +1,9 @@
+Net::Nslookup provides the capabilities of the standard UNIX command
+line tool nslookup(1). Net::DNS is a wonderful and full featured module,
+but quite often, all you need is `nslookup $host`. This module provides
+that functionality.
+
+WWW: http://search.cpan.org/dist/Net-Nslookup/
+
+-- darren chamberlain
+<darren@cpan.org>
