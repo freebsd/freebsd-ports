@@ -34,7 +34,7 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	021025
+DIST_VER=	021102
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
