@@ -23,7 +23,9 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}"
 MAN1=		du2ps.1
 MANLANG=	"" ja
 PLIST_FILES=	bin/du2ps
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README.ver1 README.ver2 README.xdu du2ps.pdf du2psj.pdf
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${PREFIX}/bin/du2ps
