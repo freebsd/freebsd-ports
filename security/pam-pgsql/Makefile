@@ -9,9 +9,9 @@ PORTNAME=	pam-pgsql
 PORTVERSION=	0.5.2
 PORTREVISION=	7
 CATEGORIES=	security databases
-MASTER_SITES=	${MASTER_SITE_DEBIAN_NON_US} \
-		http://libpam-pgsql.codecastle.com/${PORTNAME}-${PORTVERSION}-${PORTREVISION}/
-MASTER_SITE_SUBDIR=	pool/non-US/main/p/pam-pgsql
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://mat.cc/distfiles/
+MASTER_SITE_SUBDIR=	pam-pgsql
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
