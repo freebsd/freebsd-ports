@@ -20,6 +20,7 @@
     SUBDIR += linux-setiathome
     SUBDIR += luna
     SUBDIR += match
+    SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-ADS
