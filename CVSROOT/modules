@@ -1324,6 +1324,7 @@ dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
 dlume		ports/deskutils/dlume
 dlx		ports/emulators/dlx
+dmachine	ports/ftp/dmachine
 dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
 dmidecode	ports/sysutils/dmidecode
