@@ -12,7 +12,7 @@
 # KAFFE_AWT = QT        Qt AWT classes
 
 PORTNAME=	kaffe
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.3
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 PKGNAMESUFFIX=	-devel
@@ -23,9 +23,10 @@ COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		gmp.6:${PORTSDIR}/math/libgmp4
 
-WRKSRC=         ${WRKDIR}/kaffe-${PORTVERSION}
+WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
 NOT_FOR_ARCHS=	amd64
 
@@ -34,7 +35,7 @@ USE_GMAKE=	yes
 LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-iconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib --with-iconv-prefix=${LOCALBASE}
 
 .if defined(KAFFE_AWT)
 .if ${KAFFE_AWT} == "X"
