@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	adgali
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	games devel
 MASTER_SITES=	http://savannah.nongnu.org/download/adgali/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,21 +15,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source game library useful for 2D games programmation
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
