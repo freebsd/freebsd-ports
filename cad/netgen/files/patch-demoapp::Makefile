@@ -1,0 +1,18 @@
+--- demoapp/Makefile.orig	Tue Feb  3 11:47:04 2004
++++ demoapp/Makefile	Mon May  3 22:16:08 2004
+@@ -10,13 +10,13 @@
+ .SUFFIXES: .cc .o 
+ #
+ .cc.o:
+-	$(CPLUSPLUS) -c -O2 $<
++	$(CPLUSPLUS) -c $(CPLUSPLUSFLAGS2) $<
+ #
+ #
+ # make lib from sources:
+ #
+ $(lib):: $(src) 
+-	$(CPLUSPLUS) -c -O2 -I../libsrc/interface  $(CPLUSPLUSFLAGS2) $?
++	$(CPLUSPLUS) -c -I../libsrc/interface $(CPLUSPLUSFLAGS2) $(CPLUSPLUSFLAGS3) $?
+ 	$(AR) $(ARFLAGS) $@ *.o
+ 	-$(RM) *.o
+ #

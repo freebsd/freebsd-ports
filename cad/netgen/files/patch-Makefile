@@ -1,0 +1,56 @@
+--- Makefile.orig	Thu Feb 12 11:46:45 2004
++++ Makefile	Mon May  3 21:56:38 2004
+@@ -16,13 +16,13 @@
+ # system libraries:
+ #
+ # olymp
+-  tcltklib = -ltix8.1.8.4 -ltk8.4  -ltcl8.4
++tcltklib = `echo $(TIX_BUILD_LIB_SPEC)` `echo $(TK_LIB_SPEC)` `echo $(TCL_LIB_FLAG)`
+ #tcltklib = -L. -ltix8.1.8.4 -ltk8.4 -ltcl8.4
+ # tcltklib = -ltix4.1.8.0 -ltk8.0 -ltcl8.0
+ # tcltklib = -ltix8.2 -ltk8.3 -ltcl8.3
+ #
+ #
+-syslib = $(tcltklib)  -lGL -lGLU -lX11  -lXi -lm  -ldl -lpthread $(SYSLIB2) 
++syslib = $(tcltklib)  -lGL -lGLU -lX11 -lXi -lm $(PTHREAD_LIBS) $(SYSLIB2)
+ # (maybe you have to remove -ldl)
+ #
+ #
+@@ -33,9 +33,7 @@
+ OCCINC_DIR=$(OCC_DIR)/inc
+ OCCLIB_DIR=$(OCC_DIR)/lib
+ #
+-# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP 
+-#
+-CPLUSPLUSFLAGS3 = -I$(LIBSRC_DIR)/step
++# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP
+ #
+ include $(LIBSRC_DIR)/makefile.mach.$(MACHINE)
+ #
+@@ -44,7 +42,7 @@
+ .SUFFIXES: .cpp .o
+ #
+ #
+-CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR) -DOPENGL
++CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR) -DOPENGL $(PTHREAD_CFLAGS)
+ LINKFLAGS1 =   -lGL -lGLU -lX11 -lXext -lXmu
+ #
+ #
+@@ -59,7 +57,7 @@
+ # Additional NETGEN Applications:
+ #
+ # the demo add-on application:
+-# appdemo = -L./demoapp -ldemoapp
++appdemo = -L./demoapp -ldemoapp
+ #
+ # appaddon = -L./addon -laddon
+ 
+@@ -86,7 +84,7 @@
+ 	cd libsrc; $(MAKE)
+ #
+ applib:
+-#	cd demoapp; $(MAKE);
++	cd demoapp; $(MAKE);
+ #	cd addon; $(MAKE)
+ #	cd ngsolve; $(MAKE);
+ #	cd metis; $(MAKE)

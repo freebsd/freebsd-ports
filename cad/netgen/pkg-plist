@@ -1,0 +1,3 @@
+bin/ng
+%%DATADIR%%/demoapp.tcl
+@dirrm %%DATADIR%%
