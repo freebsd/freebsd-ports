@@ -1,0 +1,19 @@
+--- Makefile.am	Thu Aug  8 09:32:32 2002
++++ Makefile.am	Sun Aug 25 02:32:20 2002
+@@ -1,4 +1,4 @@
+-SUBDIRS = lib src docs configs bin
++SUBDIRS = lib src docs configs
+ 
+ EXTRA_DIST = bin/flow-mirror bin/flow-rsync bin/flow-search utils/* \
+  SECURITY contrib/* configs/*
+--- Makefile.in	Fri Aug  9 05:06:16 2002
++++ Makefile.in	Sun Aug 25 02:44:57 2002
+@@ -81,7 +81,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-SUBDIRS = lib src docs configs bin
++SUBDIRS = lib src docs configs
+ 
+ EXTRA_DIST = bin/flow-mirror bin/flow-rsync bin/flow-search utils/* \
+  SECURITY contrib/* configs/*

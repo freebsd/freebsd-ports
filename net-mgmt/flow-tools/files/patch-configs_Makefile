@@ -9,12 +9,12 @@
 +ftcfgdir=$(localstatedir)/etc/flow-tools
  ftcfg_DATA = map filter-acl
  
---- configs/Makefile.in	Sat Dec 29 01:05:48 2001
+--- configs/Makefile.in	Fri Aug  9 05:06:41 2002
 +++ configs/Makefile.in	Sat Jan 12 08:04:39 2002
-@@ -66,10 +66,10 @@
- YACC = @YACC@
- YLIB = @YLIB@
- 
+@@ -81,10 +81,10 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
 -ftsymdir = $(localstatedir)/sym
 +ftsymdir = $(localstatedir)/share/flow-tools
  ftsym_DATA = asn ip-prot tcp-port
@@ -22,5 +22,5 @@
 -ftcfgdir = $(localstatedir)/cfg
 +ftcfgdir = $(localstatedir)/etc/flow-tools
  ftcfg_DATA = map filter-acl
+ subdir = configs
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h

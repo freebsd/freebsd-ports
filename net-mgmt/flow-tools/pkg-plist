@@ -9,11 +9,10 @@ bin/flow-gen
 bin/flow-header
 bin/flow-import
 bin/flow-merge
-bin/flow-mirror
+bin/flow-nfilter
 bin/flow-print
 bin/flow-receive
-bin/flow-rsync
-bin/flow-search
+bin/flow-report
 bin/flow-send
 bin/flow-split
 bin/flow-stat
