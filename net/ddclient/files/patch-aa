@@ -1,13 +1,13 @@
---- ddclient.orig	Sun Jul 22 23:23:11 2001
-+++ ddclient	Sun Aug 26 14:56:45 2001
+--- ddclient.orig	Sat Aug 25 17:17:28 2001
++++ ddclient	Sun Aug 26 19:52:01 2001
 @@ -1,5 +1,4 @@
 -#!/usr/bin/perl -w
 -#!/usr/local/bin/perl -w
 +#!%%PERL%% -w
  ######################################################################
- # $Header: /home/paul/src/ddclient/RCS/ddclient,v 1.91 2001/07/22 21:01:33 root Exp $
+ # $Header: /home/paul/src/ddclient/RCS/ddclient,v 3.5 2001/08/25 14:22:00 root Exp $
  #
-@@ -20,12 +19,12 @@
+@@ -20,8 +19,8 @@
  $program  =~ s/d$//;
  my $now       = time;
  my $hostname  = hostname();
@@ -17,6 +17,10 @@
 +my $savedir   = (exists($ENV{TMPDIR}) ? "$ENV{TMPDIR}" : "/var/tmp");
  my $msgs      = '';
  my $last_msgs = '';
+ 
+@@ -29,7 +28,7 @@
+ local $file   = '';
+ local $lineno = '';
  
 -$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:/usr/bin:/etc:/usr/lib:";
 +$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:/usr/bin";
