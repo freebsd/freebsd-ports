@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dejagnu
-PORTVERSION=	1.4.3
-PORTREVISION=	1
-CATEGORIES=	misc tcl83 tk83
+PORTVERSION=	1.4.4
+CATEGORIES=	misc tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	dejagnu
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated program/system tester
@@ -19,6 +18,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		runtest.1
 
