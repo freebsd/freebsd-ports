@@ -1,0 +1,119 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE:	ipacctd
+# REQUIRE:	NETWORKING SERVERS
+# BEFORE:	DAEMON
+# KEYWORD:	shutdown
+
+# Add the following lines to /etc/rc.conf to enable ipacctd:
+#
+#ipacctd_enable="YES"
+#
+# Also additional flags can be specified:
+#
+#ipacctd_flags="-v"
+#
+# See ipacctd(8) for flags.
+#
+# Enumerate all accounted interfaces in "ipacctd_rules":
+#
+#ipacctd_rules="xl0"
+#
+# ...and add related required "ipacctd_rule_*_flags"
+# and optional "ipacctd_rule_*_pid" (equal to "/var/run/ipacctd.*" by default)
+#
+#ipacctd_rule_xl0_flags="-p 666"
+#ipacctd_rule_xl0_pid="/var/run/ipacctd.xl0"
+
+. %%RC_SUBR%%
+
+name="ipacctd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/ipacctd"
+
+start_cmd="start_cmd"
+stop_cmd="stop_cmd"
+poll_cmd="poll_cmd"
+status_cmd="status_cmd"
+
+start_cmd()
+{
+	for rule in ${ipacctd_rules}; do
+		debug "start ipacctd rule ${rule}"
+		local rule_flags
+
+		eval rule_flags=\$ipacctd_rule_${rule}_flags
+		if [ -z "$rule_flags" ]; then
+			echo " you must define flags for ipacctd rule '${rule}'"
+			exit 1
+		fi
+
+		eval pidfile=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		rc_pid=$(check_pidfile $pidfile $command)
+		if [ -n "$rc_pid" ]; then
+			echo "${name} with rule=$rule already running? (pid=$rc_pid)."
+			exit 1
+		fi
+
+		${command} ${ipacctd_flags} ${rule_flags} -r ${pidfile}
+	done
+}
+
+stop_cmd()
+{
+	for rule in ${ipacctd_rules}; do
+		eval pidfile=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		rc_pid=$(check_pidfile $pidfile $command)
+
+		if [ -z "$rc_pid" ]; then
+			if [ -n "$pidfile" ]; then
+				echo "${name} with rule=$rule not running? (check $pidfile)."
+			else
+				echo "${name} with rule=$rule not running?"
+			fi
+			exit 1
+		fi
+
+		echo "Stopping ${name} rule=${rule}."
+		kill -${sig_stop:-TERM} $rc_pid
+		wait_for_pids $rc_pid
+	done
+}
+
+poll_cmd()
+{
+	for rule in ${ipacctd_rules}; do
+		eval pidfile=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		rc_pid=$(check_pidfile $pidfile $command)
+
+		if [ -n "$rc_pid" ]; then
+			wait_for_pids $rc_pid
+		fi
+	done
+}
+
+status_cmd()
+{
+	for rule in ${ipacctd_rules}; do
+		eval pidfile=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		rc_pid=$(check_pidfile $pidfile $command)
+
+		if [ -n "$rc_pid" ]; then
+			echo "${name} rule=${rule} is running as pid $rc_pid."
+		else
+			echo "${name} rule=${rule} is not running."
+		fi
+	done
+}
+
+load_rc_config $name
+
+: ${ipacctd_enable="NO"}
+: ${ipacctd_rules=""}
+: ${ipacctd_flags=""}
+
+run_rc_command "$1"

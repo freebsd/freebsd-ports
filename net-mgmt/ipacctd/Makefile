@@ -7,6 +7,7 @@
 
 PORTNAME=	ipacctd
 PORTVERSION=	1.46
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
@@ -14,8 +15,7 @@ MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	IP accounting using divert socket
 
-STARTUP_SCRIPT=	ipacctd.sh.sample
-PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
+USE_RC_SUBR=	ipacctd.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin"
@@ -30,7 +30,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/ru
 	@${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${DOCSDIR}/ru
 .endif
-	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} \
-			${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 
 .include <bsd.port.mk>
