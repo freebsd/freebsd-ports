@@ -6531,6 +6531,7 @@ p5-Mail-Bulkmail	ports/mail/p5-Mail-Bulkmail
 p5-Mail-CClient	ports/mail/p5-Mail-CClient
 p5-Mail-CheckUser	ports/mail/p5-Mail-CheckUser
 p5-Mail-ClamAV	ports/mail/p5-Mail-ClamAV
+p5-Mail-DeliveryStatus-BounceParser	ports/mail/p5-Mail-DeliveryStatus-BounceParser
 p5-Mail-Ezmlm	ports/mail/p5-Mail-Ezmlm
 p5-Mail-FilterXML	ports/mail/p5-Mail-FilterXML
 p5-Mail-Folder	ports/mail/p5-Mail-Folder
