@@ -61,6 +61,7 @@
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += nspmod
+    SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += pysol-sound-server
