@@ -1634,6 +1634,7 @@ fsdb		src/sbin/fsdb
 fsgs		ports/games/fsgs
 fsh		ports/security/fsh
 fsirand		src/sbin/fsirand
+fspanel		ports/x11/fspanel
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
 fsplit		src/usr.bin/fsplit
