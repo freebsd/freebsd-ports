@@ -1,0 +1,36 @@
+sbin/bgpd
+sbin/ospf6d
+sbin/ospfd
+sbin/ripd
+sbin/ripngd
+sbin/zebra
+sbin/zebractl
+bin/vtysh
+etc/quagga/bgpd.conf.sample
+etc/quagga/bgpd.conf.sample2
+etc/quagga/ospf6d.conf.sample
+etc/quagga/ospfd.conf.sample
+etc/quagga/ripd.conf.sample
+etc/quagga/ripngd.conf.sample
+etc/quagga/vtysh.conf.sample
+etc/quagga/zebra.conf.sample
+include/ospfd/ospf_api.h
+include/ospfd/ospf_asbr.h
+include/ospfd/ospf_dump.h
+include/ospfd/ospf_ism.h
+include/ospfd/ospf_lsa.h
+include/ospfd/ospf_lsdb.h
+include/ospfd/ospf_nsm.h
+include/ospfd/ospf_opaque.h
+include/ospfd/ospfd.h
+lib/libospf.a
+lib/libzebra.a
+@unexec install-info --delete %D/info/quagga.info %D/info/dir
+info/quagga.info
+info/quagga.info-1
+info/quagga.info-2
+info/quagga.info-3
+info/quagga.info-4
+@exec install-info %D/info/quagga.info %D/info/dir
+@dirrm include/ospfd
+@dirrm etc/quagga

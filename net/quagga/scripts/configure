@@ -1,0 +1,85 @@
+#!/bin/sh
+#
+# configure - quagga compile time option configurator
+# by Bruce M Simpson <bms@FreeBSD.org>
+#
+# $FreeBSD$
+
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`mktemp -t checklist`
+
+if [ "${QUAGGA_OPTIONS}" ]; then
+	set ${QUAGGA_OPTIONS}
+fi
+
+for i; do
+	eval status_$i=ON
+done
+
+if [ -z "${BATCH}" ]; then
+	/usr/bin/dialog --title "Quagga configuration options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 8	\
+LIBPAM		"PAM authentication for vtysh"	"$status_LIBPAM" \
+OSPF_NSSA	"NSSA support (RFC1587)"	"$status_OSPF_NSSA" \
+OSPF_OPAQUE_LSA	"OSPF Opaque-LSA with OSPFAPI support (RFC2370)"	"$status_OSPF_OPAQUE_LSA" \
+RTADV		"IPv6 Router Advertisements"	"$status_RTADV" \
+SNMP		"SNMP support"			"$status_SNMP" \
+TCPSOCKETS	"Use TCP/IP sockets for protocol daemons"	"$status_TCPSOCKETS" \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `sed 's/"//g' $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)      if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)      echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+echo "PREFIX=   ${PREFIX}"
+
+while [ "$1" ]; do
+    case $1 in
+	LIBPAM)
+		echo 'CONFIGURE_ARGS+=	--with-libpam'
+		;;
+	OSPF_NSSA)
+		echo 'CONFIGURE_ARGS+=	--enable-nssa'
+		;;
+	OSPF_OPAQUE_LSA)
+		echo 'CONFIGURE_ARGS+=	--enable-opaque-lsa'
+		;;
+	RTADV)
+		echo 'CONFIGURE_ARGS+=	--enable-rtadv'
+		;;
+	SNMP)
+		echo 'LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp:install'
+		echo 'CONFIGURE_ARGS+=	--enable-snmp'
+		;;
+	TCPSOCKETS)
+		echo 'CONFIGURE_ARGS+=	--enable-tcp-zebra'
+		;;
+	*)
+		echo "Unknown option(s): $*" > /dev/stderr
+		rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+		exit 1
+		;;
+    esac
+    shift
+done

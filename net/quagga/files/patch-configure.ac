@@ -1,0 +1,20 @@
+--- configure.ac.orig	Thu Sep 25 21:27:36 2003
++++ configure.ac	Thu Sep 25 21:31:17 2003
+@@ -755,6 +755,17 @@
+ 			LIBS="${LIBS} -lsnmp"
+ 		  fi
+                   ;;
++      /usr/local/include/net-snmp/*)
++		  AC_DEFINE(HAVE_SNMP,,SNMP)
++		  AC_DEFINE(HAVE_NET_SNMP,,SNMP)
++		  AC_DEFINE(UCD_COMPATIBLE,,SNMP)
++		  CFLAGS="${CFLAGS} -I/usr/local/include -I/usr/local/include/net-snmp -I/usr/local/include/net-snmp/library"
++		  if test"{HAVE_NETSNMP}" = "yes"; then
++			LIBS="${LIBS} -L/usr/local/lib -lnetsnmp"
++		  else
++			LIBS="${LIBS} -L/usr/local/lib -lsnmp"
++		  fi
++		  ;;
+       /usr/include/ucd-snmp/*) 
+                   AC_DEFINE(HAVE_SNMP,,SNMP)
+                   CFLAGS="${CFLAGS} -I/usr/include/ucd-snmp"
