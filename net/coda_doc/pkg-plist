@@ -36,7 +36,6 @@ share/doc/coda-doc-4.6.5/html/manual-7.html
 share/doc/coda-doc-4.6.5/html/manual-8.html
 share/doc/coda-doc-4.6.5/html/manual-9.html
 share/doc/coda-doc-4.6.5/html/manual.html
-share/doc/coda-doc-4.6.5/html/rpc2_manual.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-1.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-10.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-11.html
@@ -52,11 +51,11 @@ share/doc/coda-doc-4.6.5/html/rpc2_manual-2.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-3.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-4.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-5.html
-share/doc/coda-doc-4.6.5/html/sec-1.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-6.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-7.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-8.html
 share/doc/coda-doc-4.6.5/html/rpc2_manual-9.html
+share/doc/coda-doc-4.6.5/html/rpc2_manual.html
 share/doc/coda-doc-4.6.5/html/rvm_manual-1.html
 share/doc/coda-doc-4.6.5/html/rvm_manual-10.html
 share/doc/coda-doc-4.6.5/html/rvm_manual-2.html
@@ -68,6 +67,7 @@ share/doc/coda-doc-4.6.5/html/rvm_manual-7.html
 share/doc/coda-doc-4.6.5/html/rvm_manual-8.html
 share/doc/coda-doc-4.6.5/html/rvm_manual-9.html
 share/doc/coda-doc-4.6.5/html/rvm_manual.html
+share/doc/coda-doc-4.6.5/html/sec-1.html
 share/doc/coda-doc-4.6.5/html/sec-2.html
 share/doc/coda-doc-4.6.5/html/sec-3.html
 share/doc/coda-doc-4.6.5/html/sec-4.html
@@ -108,3 +108,7 @@ share/doc/coda-doc-4.6.5/ps/rvm_manual.ps
 share/doc/coda-doc-4.6.5/ps/sec.ps
 share/doc/coda-doc-4.6.5/ps/server.ps
 share/doc/coda-doc-4.6.5/ps/venus-ds.ps
+@dirrm share/doc/coda-doc-4.6.5/html
+@dirrm share/doc/coda-doc-4.6.5/ppt
+@dirrm share/doc/coda-doc-4.6.5/ps
+@dirrm share/doc/coda-doc-4.6.5
