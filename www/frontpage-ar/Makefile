@@ -52,6 +52,9 @@ do-install:
 .endfor
 .for _FP_LCID in ${FP_LCID}
 	@${REINPLACE_CMD} -e 's:IMAGESDIR:../images/:g' ${FP_DIR}/admin/${_FP_LCID}/webadmin.css
+	@if [ -f ${FP_DIR}/admin/${_FP_LCID}/webadmin.css.bak ] ; then \
+		${RM} ${FP_DIR}/admin/${_FP_LCID}/webadmin.css.bak ; \
+	fi
 	@if [ ! -f ${FP_DIR}/help/${_FP_LCID}/wsgindex.htm ]; then \
 		${CP} ${FP_DIR}/help/${_FP_LCID}/wsgIndex.htm ${FP_DIR}/help/${_FP_LCID}/wsgindex.htm ; \
 	fi

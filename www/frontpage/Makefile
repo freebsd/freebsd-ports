@@ -117,6 +117,9 @@ do-install:
 	@${ECHO_MSG} "===> Untaring FrontPage Extensions to ${PREFIX}"
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
 	@${REINPLACE_CMD} -e 's:IMAGESDIR:../images/:g' ${PREFIX}/${FPCSS}
+	@if [ -f ${PREFIX}/${FPCSS} ]; then \
+		${RM} ${PREFIX}/${FPCSS}.bak ; \
+	fi
 	@${RM} ${PREFIX}/${FPHTTPD}/httpd
 	@${MKDIR} ${MOD_FPDOCDIR}
 	@${CP} ${PREFIX}/${README} ${MOD_FPDOCDIR}/index.html
@@ -125,5 +128,6 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+	@${PREFIX}/${FPSETPERM}
 
 .include <bsd.port.post.mk>
