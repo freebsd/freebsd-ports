@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	2.15.7
+PORTVERSION=	2.20.14
 CATEGORIES=	devel
-MASTER_SITES=	http://download.konst.org.ua/ \
-		http://konst.org.ua/download/ \
+MASTER_SITES=	http://konst.org.ua/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl -lgnugetopt"
+
+MAN1=		motor.1
 
 .include <bsd.port.mk>

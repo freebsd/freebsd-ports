@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Mon Apr 16 23:04:06 2001
-+++ src/Makefile.in	Tue Apr 17 16:50:15 2001
+--- src/Makefile.in.orig	Thu Jun  7 10:50:20 2001
++++ src/Makefile.in	Fri Aug  3 11:55:15 2001
 @@ -61,6 +61,7 @@
  CATOBJEXT = @CATOBJEXT@
  CC = @CC@
@@ -11,21 +8,12 @@ $FreeBSD$
  DATADIRNAME = @DATADIRNAME@
  GENCAT = @GENCAT@
  GMOFILES = @GMOFILES@
-@@ -85,7 +86,7 @@
- l = @l@
+@@ -87,7 +88,7 @@
+ INCLUDES = -I../include -I../kkstrtext -I../kkconsui/include     -I../kksystr/include -I../parser/include -I$(top_srcdir)/intl
  
- INCLUDES = -I../include -I../ktools/include -I../parser/include -I$(top_srcdir)/intl
+ 
 -CPPFLAGS = -DSHARE_DIR=\"$(pkgdatadir)\" -DLOCALE_DIR=\"$(datadir)/locale\"
 +CPPFLAGS += -DSHARE_DIR=\"$(pkgdatadir)\" -DLOCALE_DIR=\"$(datadir)/locale\"
  
  bin_PROGRAMS = motor
  
-@@ -93,7 +94,7 @@
- 
- 
- motor_LDADD = -lcurses ../parser/src/libparser.a ../ktools/src/libkonst.a @INTLLIBS@ @LIBS@
--CXXFLAGS = -g
-+#CXXFLAGS = -g
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
