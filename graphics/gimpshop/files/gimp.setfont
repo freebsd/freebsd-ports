@@ -7,6 +7,7 @@
 $progname = "gimp.setfont";
 $version = "Version 0.4 Feb 07 2000";
 
+$fontset{'chinese'} = "-*-helvetica-medium-r-normal--17-*-*-*-*-*-iso8859-1,-*-kai-medium-r-normal--16-*-*-*-*-*-big5-0";
 $fontset{'czech'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
 $fontset{'danish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
 $fontset{'dutch'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
@@ -25,6 +26,7 @@ $fontset{'slovak'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
 $fontset{'swedish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
 $fontset{'ukrainian'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-koi8-r";
 
+$locale{'chinese'} = "zh_TW.Big5";
 $locale{'czech'} = "cs_CZ.ISO8859-2";
 $locale{'danish'} = "da_DK.ISO_8859-1";
 $locale{'dutch'} = "nl_NL.ISO_8859-1";
@@ -50,6 +52,7 @@ Usage: gimp.setfont <language>
 
 ----------------------------------------------------------------
 [language]          [fontset]
+ chinese             -*-helvetica-(iso8859-1),-*-kai-(big5-0)
  czech               -*-fixed-(iso8859-2)
  danish              -*-helvetica-(iso8859-1)
  dutch               -*-helvetica-(iso8859-1)
