@@ -6,40 +6,30 @@
 #
 
 PORTNAME=		mahogany
-PORTVERSION=		0.60
-PORTREVISION=		1
-CATEGORIES=		mail python
+PORTVERSION=		0.65
+CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mahogany
 
 MAINTAINER=		sk-ports@vegamuse.org
-COMMENT=	An X11 mail and news client with an embedded Python interpreter
+COMMENT=		An X11 mail and news client
 
-BROKEN=		"Does not compile"
+LIB_DEPENDS+=		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
-LIB_DEPENDS+=		wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig11
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		latex2html:${PORTSDIR}/textproc/latex2html
-.endif
-
-USE_PYTHON=		yes
-PYTHON_VERSION=		python1.5
-USE_AUTOCONF_VER=	213
+USE_X_PREFIX=		yes
+GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-CONFIGURE_ENV+=		OSTYPE=${OPSYS}
-
+USE_REINPLACE=		yes
+ALL_TARGET=		all locales
 INSTALL_TARGET=		install_bin install_locale
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET+=	install_doc
-.endif
 
-MAN1=			mahogany.1
+MAN1=			M.1 mahogany.1
 
-CONFIGURE_ARGS=		--with-threads
+CONFIGURE_ARGS=		--with-python=none
+CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/mahogany
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DOPENSSL_NO_KRB5||' -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(DATADIR)/locale|$$(DESTDIR)/share/locale|' ${WRKSRC}/locale/Makefile
 
 .include <bsd.port.mk>

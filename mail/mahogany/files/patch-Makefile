@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon Jul 28 23:10:47 2003
++++ Makefile	Sat Oct  4 23:28:15 2003
+@@ -76,9 +76,6 @@
+ 	set -e; for i in \
+ 	   $(BINDIR) \
+ 	   $(DATADIR) \
+-	   $(DATADIR)/$(CANONICAL_HOST) \
+-	   $(DATADIR)/$(CANONICAL_HOST)/bin \
+-	   $(DATADIR)/$(CANONICAL_HOST)/lib \
+ 	   $(DOCDIR) \
+ 	   $(DOCDIR)/Tips \
+ 	;do \
