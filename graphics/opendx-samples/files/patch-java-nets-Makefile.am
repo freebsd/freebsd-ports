@@ -1,0 +1,34 @@
+diff -crN java/nets/Makefile.am java/nets/Makefile.am
+*** java/nets/Makefile.am	Tue Jan 18 17:18:25 2000
+--- java/nets/Makefile.am	Tue Aug 12 23:28:39 2003
+***************
+*** 22,25 ****
+  
+  install-data-local:
+  	$(mkinstalldirs) $(DESTDIR)$(javanetsdir)
+! 	chmod 777 $(DESTDIR)$(javanetsdir)
+--- 22,25 ----
+  
+  install-data-local:
+  	$(mkinstalldirs) $(DESTDIR)$(javanetsdir)
+! 	chmod 775 $(DESTDIR)$(javanetsdir)
+diff -crN dxsamples-4.2.0/java/nets/Makefile.in dxsamples-4.2.0.new/java/nets/Makefile.in
+*** java/nets/Makefile.in	Mon May 20 22:04:38 2002
+--- java/nets/Makefile.in	Tue Aug 12 23:28:28 2003
+***************
+*** 204,210 ****
+  
+  install-data-local:
+  	$(mkinstalldirs) $(DESTDIR)$(javanetsdir)
+! 	chmod 777 $(DESTDIR)$(javanetsdir)
+  
+  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+  # Otherwise a system limit (for SysV at least) may be exceeded.
+--- 204,210 ----
+  
+  install-data-local:
+  	$(mkinstalldirs) $(DESTDIR)$(javanetsdir)
+! 	chmod 775 $(DESTDIR)$(javanetsdir)
+  
+  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+  # Otherwise a system limit (for SysV at least) may be exceeded.
