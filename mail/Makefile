@@ -135,6 +135,7 @@
     SUBDIR += qpopper
     SUBDIR += rblcheck
     SUBDIR += rftp
+    SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += ruby-tmail
     SUBDIR += sendmail

@@ -1,0 +1,15 @@
+RipMIME README:
+
+RipMIME is a small program which has been developed as part of the
+commercial cInflex development (http://cinflex.pldaniels.com).
+
+RipMIME is being presented here to the public under a BSD style
+licence (see the LICENCE file included in with this package).
+
+RipMIME has been written with one sole purpose in mind, to extract the
+attached files out of a MIME encoded email package.
+
+
+WWW: http://www.pldaniels.com/ripmime
+
+- jus (jus@security.za.net)
