@@ -21,10 +21,6 @@ USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	@${RM} ${PREFIX}/share/locale/xx/LC_MESSAGES/kimdaba.mo
-	@${RMDIR} ${PREFIX}/share/locale/xx/LC_MESSAGES/
-	@${RMDIR} ${PREFIX}/share/locale/xx/
+	@${REINPLACE_CMD} -e 's/xx//g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
