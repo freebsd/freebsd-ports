@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.231 1999/03/16 09:01:17 nectar Exp $
+# $Id: Makefile,v 1.232 1999/03/17 08:31:20 nectar Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -52,11 +52,12 @@
     SUBDIR += freewais-sf
     SUBDIR += fspclient
     SUBDIR += ftpfind
+    SUBDIR += ftpmirror
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gated
     SUBDIR += ggsd
-    SUBDIR += gnomeicu
+    SUBDIR += gnome-icu
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher
