@@ -1,0 +1,29 @@
+--- configure.in.orig	Tue Oct 28 05:01:07 2003
++++ configure.in	Tue Oct 28 04:58:27 2003
+@@ -51,7 +51,7 @@
+ dnl if db_185.h is present, we're using db2.0 and should include db_185.h
+ dnl instead of db.h; otherwise, include db.h.  this is handled in the code
+ dnl itself.
+-AC_CHECK_HEADERS(unistd.h sys/select.h db_185.h sys/param.h)
++AC_CHECK_HEADERS(stdarg.h unistd.h sys/select.h db_185.h sys/param.h)
+ AC_REPLACE_FUNCS(memmove strcasecmp ftruncate strerror)
+ AC_HEADER_DIRENT
+ 
+@@ -531,7 +531,7 @@
+       # filename, it should be safe to add it (to the front of the line --
+       # somef vendors have older, badly installed tclshs that we want to avoid
+       # if we can)
+-      AC_PATH_PROGS(TCLSH, [tclsh8.1 tclsh8.0 tclsh], "unknown")
++      AC_PATH_PROGS(TCLSH, [tclsh8.2 tclsh8.1 tclsh8.0 tclsh], "unknown")
+     fi
+ 
+     # Do we know where to get a tclsh?
+@@ -779,6 +779,8 @@
+ 
+     dnl Kerberos wants this so we might as well check on it first
+     AC_CHECK_FUNC(res_search,,AC_CHECK_LIB(resolv,res_search))
++    dnl Kerberos IV on FreeBSD depends on libcom_err, so check for it
++    AC_CHECK_LIB(com_err, init_error_table)
+ 
+     dnl gotta do this: crypt is used by sasl_krb_server.c
+     AC_CHECK_FUNC(crypt,,AC_CHECK_LIB(crypt, crypt))

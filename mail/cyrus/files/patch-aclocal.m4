@@ -1,11 +1,11 @@
---- configure	Thu Jan  6 22:28:51 2000
-+++ /tmp/configure.new	Sat Apr  8 20:55:29 2000
-@@ -4951,7 +4951,7 @@
+--- aclocal.m4.orig	Tue Oct 28 05:08:17 2003
++++ aclocal.m4	Tue Oct 28 05:08:23 2003
+@@ -84,7 +84,7 @@
      # try the user-specified path --- too lazy to test for it right now
      LIB_SASL="-L$sasldir/lib -lsasl"
-     
+     AC_SUBST(LIB_SASL)
 -    SASLFLAGS="-I$sasldir/include"
 +    SASLFLAGS="-I$sasldir/include/sasl1"
-         
+     AC_SUBST(SASLFLAGS)    
    fi
- 
+ ])
