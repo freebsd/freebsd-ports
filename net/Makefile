@@ -455,6 +455,7 @@
     SUBDIR += ttt
     SUBDIR += tund
     SUBDIR += tvark
+    SUBDIR += udptunnel
     SUBDIR += unison
     SUBDIR += urlendec
     SUBDIR += vchat
