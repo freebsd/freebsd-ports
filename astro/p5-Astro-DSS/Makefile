@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Astro-DSS
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.astro.ex.ac.uk/estar/software/
@@ -20,7 +20,6 @@ COMMENT=	An OO interface to the 1st and 2nd Digital Sky Surveys
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
