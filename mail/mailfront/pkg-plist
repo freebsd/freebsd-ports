@@ -2,7 +2,9 @@
 bin/imapfront-auth
 bin/pop3front-auth
 bin/pop3front-maildir
+bin/qmqpfront-echo
 bin/qmqpfront-qmail
+bin/qmtpfront-echo
 bin/qmtpfront-qmail
 bin/smtpfront-echo
 bin/smtpfront-qmail
