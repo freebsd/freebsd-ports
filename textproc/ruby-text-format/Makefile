@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	text-format
-PORTVERSION=	0.52.2
+PORTVERSION=	0.61
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	Text-Format-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
