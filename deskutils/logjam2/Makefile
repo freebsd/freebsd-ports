@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .else
 CONFIGURE_ARGS+=	--without-xmms
 .endif

@@ -34,7 +34,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 WITH_SVGA=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libxmms.so.3)
+.if exists(${X11BASE}/lib/libxmms.so.4)
 WITH_XMMS=	yes
 .endif
 
@@ -66,7 +66,7 @@ PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if !defined(WITHOUT_XMMS) && defined(WITH_XMMS) && !(defined(WITHOUT_X11) && defined(WITHOUT_GLX))
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 MAKE_ARGS+=	-DWITH_XMMS
 .endif
 
@@ -86,7 +86,7 @@ pre-everything::
 .if defined(WITH_SHAREWARE_DATA)
 	@${ECHO_MSG} "Define WITH_SHAREWARE_DATA to install demo version game data"
 .endif
-.if !defined(WITHOUT_XMMS) && exists(${X11BASE}/lib/libxmms.so.3)
+.if !defined(WITHOUT_XMMS) && exists(${X11BASE}/lib/libxmms.so.4)
 	@${ECHO_MSG} "Define WITHOUT_XMMS to build without \`\`MP3 Player'' feature"
 .endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
