@@ -143,19 +143,6 @@ if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
             echo "send-mail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
             echo "mailq		${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
             echo "newaliases	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
-	    cat <<'EOM'
-To enable postfix to start at boot time, please set these variables in
-your /etc/rc.conf file:
-
-sendmail_enable="YES"
-sendmail_flags="-bd"
-sendmail_outbound_enable="NO"
-sendmail_submit_enable="NO"
-sendmail_msp_queue_enable="NO"
-
-This will disable Sendmail completely.
-
-EOM
         fi
     else
         if yesno "Would you like to replace {sendmail,mailq,newaliases} with Postfix versions" n; then
