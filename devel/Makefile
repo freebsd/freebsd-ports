@@ -1038,6 +1038,7 @@
     SUBDIR += xtl
     SUBDIR += xwpe
     SUBDIR += xxgdb
+    SUBDIR += xxl
     SUBDIR += yacl
     SUBDIR += yasm
     SUBDIR += z80-asm
