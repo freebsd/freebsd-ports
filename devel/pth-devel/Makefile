@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pth
-PORTVERSION=	1.4a1
+PORTVERSION=	1.4a2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/ \
 		ftp://ftp.engelschall.com/sw/pth/
