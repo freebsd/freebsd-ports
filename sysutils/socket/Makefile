@@ -3,12 +3,12 @@
 # Date created:         14 August 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.4 1997/04/13 21:51:44 wosch Exp $
+# $Id: Makefile,v 1.5 1997/04/30 03:18:08 asami Exp $
 #
 
 DISTNAME=       socket-1.1
 CATEGORIES=	sysutils net
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=   http://www.apfel.de/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
 
