@@ -4,10 +4,10 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.61 1999/08/18 19:03:09 obrien Exp $
+# $Id: Makefile,v 1.62 1999/08/18 23:58:55 obrien Exp $
 #
 
-DISTNAME=	gcc-2.95
+DISTNAME=	gcc-2.95.1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
 		ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
