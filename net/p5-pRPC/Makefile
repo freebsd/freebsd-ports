@@ -3,7 +3,7 @@
 # Date Created:				Aug 18 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/10/12 03:17:55 jseger Exp $
+# $Id: Makefile,v 1.4 1998/11/11 05:37:28 asami Exp $
 #
 
 DISTNAME=	pRPC-modules-0.1005
@@ -18,12 +18,6 @@ BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Storable.p
 
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         perl
-.endif
-
 MAN3=		Bundle::pRPC-modules.3 \
 		RPC::pClient.3 \
 		RPC::pServer.3
@@ -32,4 +26,4 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
