@@ -4,6 +4,3 @@ can safely access the cache at the same time.  It uses a basic LRU
 algorithm to keep the most used entries in the cache.
 
 WWW: http://search.cpan.org/dist/Cache-FastMmap/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
