@@ -147,7 +147,7 @@
     SUBDIR += wcol
     SUBDIR += web500gw
     SUBDIR += webalizer
-    SUBDIR += webalizer2
+    SUBDIR += webalizer-2
     SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
