@@ -189,6 +189,7 @@ share/gnome/omf/gedit/gedit-zh_TW.omf
 share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
 share/gnome/pixmaps/gedit-plugin-manager.png
+share/locale/af/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/am/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gedit-%%VERSION%%.mo
@@ -211,10 +212,12 @@ share/locale/fi/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/ga/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/gedit-%%VERSION%%.mo
+share/locale/gu/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/he/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hi/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gedit-%%VERSION%%.mo
+share/locale/is/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/kn/LC_MESSAGES/gedit-%%VERSION%%.mo
