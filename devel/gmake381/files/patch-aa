@@ -27,7 +27,7 @@
  	  if [ -r ./make.info ]; then dir=.; else dir=$(srcdir); fi; \
 -	  install-info --infodir=$(infodir) $$dir/make.info; \
 +	  if [ -e $(infodir)/dir ] ; then \
-+	    /usr/bin/install-info --info-dir=$(infodir) --defentry='* gmake: (make).	GNU make utility' $$dir/make.info; fi ; \
++	    /usr/bin/install-info --info-dir=$(infodir) --defentry='* gmake: (make).		GNU make utility' $$dir/make.info; fi ; \
  	else true; fi
  
  $(mandir)/$(manprefix)make.$(manext): make.man
