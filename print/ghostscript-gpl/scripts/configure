@@ -242,8 +242,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" "$status_pjxl300" \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" "$status_pxlmono" \
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" "$status_pxlcolor" \
-  "pcl3"     "HP PCL 3+ (generic) [PCL3]" "$status_pcl3" \
-  "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" "$status_hpdj" \
   "ijs"      "HP Inkjet and other raster devices" "$status_ijs" \
   "ibmpro"   "IBM 9-pin Proprinter" "$status_ibmpro" \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" "$status_jetp3852" \
@@ -282,7 +280,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "bmpsep1"  "BMP Separated 1-bit CMYK" "$status_bmpsep1" \
   "bmpsep8"  "BMP Separated 8-bit CMYK" "$status_bmpsep8" \
   "ccr"      "CalComp Raster format" "$status_ccr" \
-  "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT "$status_"LY" "$status_cgmmono" \
+  "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT ONLY" "$status_cgmmono" \
   "cgm8"     "CGM 8-bit 256-color -- DITTO" "$status_cgm8" \
   "cgm24"    "CGM 24-bit color -- DITTO" "$status_cgm24" \
   "cif"      "CIF file format for VLSI" "$status_cif" \
