@@ -19,7 +19,7 @@ EXTRACT_ONLY=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-BROKEN=         "Bison 1.875a or newer is required, and doesn't work atm"
+IGNORE=		is not installable because bison 1.875a or newer is required, and port does not work yet
 
 SNAPDATE=	20041122
 NO_LATEST_LINK=	yes
