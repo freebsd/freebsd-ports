@@ -1,0 +1,20 @@
+--- configure	Fri Sep 24 05:24:26 1999
++++ configure.new	Wed Mar 22 23:23:09 2000
+@@ -3565,7 +3565,7 @@
+ kde_libdir=NO
+ for i in $kde_libdirs;
+ do
+-  for j in libkdecore.la;
++  for j in libkdecore.so;
+   do
+     if test -r "$i/$j"; then
+       kde_libdir=$i
+@@ -3575,7 +3575,7 @@
+ done
+ 
+ 
+-if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/libkdecore.la"; then
++if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/libkdecore.so"; then
+ { echo "configure: error: 
+ in the prefix, you've chosen, are no kde libraries installed. This will fail.
+ So, check this please and use another prefix!" 1>&2; exit 1; }
