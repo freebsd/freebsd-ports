@@ -21,8 +21,6 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
 NO_WRKSUBDIR=	yes
 
-MANUAL_PACKAGE_BUILD=	has to be built with tex port
-
 do-build:
 	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf 
 	@(cd ${WRKSRC}/base; tex --ini unpack.ins)
