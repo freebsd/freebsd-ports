@@ -7,6 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.12
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
