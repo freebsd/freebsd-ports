@@ -6,30 +6,14 @@
 #
 
 PORTNAME=	scand
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	net
-MASTER_SITES=	http://free.babolo.ru/src/
+MASTER_SITES=	http://free.babolo.ru/src/ http://www.a.pike.ru/src/
 
 MAINTAINER=	sand@links.ru
-COMMENT=	Scan detection and blocking daemon
+COMMENT=	Flood scan detection and blocking daemon
 
 MAN8=		scand.8 scandctl.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/scandctl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/scand.8.gz ${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/scandctl.8.gz ${MANPREFIX}/man/man8
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in README README.ru
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,2 @@
 bin/scand
 bin/scandctl
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
