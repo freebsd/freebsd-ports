@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.90
+PORTVERSION=	0.7.91
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
 
