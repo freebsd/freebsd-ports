@@ -5,6 +5,7 @@ include/ustl/memblock.h
 include/ustl/memlink.h
 include/ustl/mistream.h
 include/ustl/mostream.h
+include/ustl/simd.h
 include/ustl/sistream.h
 include/ustl/sostream.h
 include/ustl/strmsize.h
@@ -27,7 +28,6 @@ include/ustl/umatrix.h
 include/ustl/umemory.h
 include/ustl/umultimap.h
 include/ustl/umultiset.h
-include/ustl/unew.h
 include/ustl/unumeric.h
 include/ustl/upair.h
 include/ustl/upredalgo.h
