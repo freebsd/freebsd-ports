@@ -2823,6 +2823,7 @@ hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
 hu-kde3-i18n	ports/hungarian/kde3-i18n
 hu-koffice-i18n	ports/hungarian/koffice-i18n
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
+huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
