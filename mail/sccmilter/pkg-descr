@@ -1,0 +1,22 @@
+This is a sendmail filter, based on Milter API, intedned to do
+spam control and canceling it. This is multi-thread small filter,
+which sits between sendmail and local mail agent, checks all mail
+by selected rules and cancels spam-qualified messages.
+
+Main features:
+- Charset controlling. No more unreadable mails in your box!
+  You can selectively setup, which codepages for which users
+  are allowed, mail with other codepages will declined
+- HTML isolating. You can setup filter to check all incoming,
+  outgoing or all (or none) mail to HTML mail and decline it.
+  IMHO, HTML mail is a headache only. You can separately setup
+  on per-user basis, which users can send HTML mail, which can
+  receive
+
+Any other features (content filtering, attachment checking) are
+planned, but not imlemented this release.
+
+WWW: http://granch.ru/~shelton/
+
+- Rashid N. Achilov
+shelton@granch.ru

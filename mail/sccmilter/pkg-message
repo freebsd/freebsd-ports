@@ -1,0 +1,12 @@
+************************************************************************
+
+In order to run this port, please add the following line to
+/etc/mail/freebsd.mc:
+
+INPUT_MAIL_FILTER(`sccmilter',`S=unix:/var/run/sccmilter,F=T')
+
+and appropriate correct the line with confINPUT_MAIL_FILTERS, when exist.
+
+Don't forget remake sendmail configuration file after modifying freebsd.mc
+
+************************************************************************
