@@ -1,0 +1,19 @@
+EXSLT is a community initiative to provide extensions to XSLT. The extensions
+are broken down into a number of modules, listed below. Implementers of XSLT
+processors are encouraged to use these extensions, so that your stylesheets can
+be more portable. If your XSLT processor doesn't support a particular
+extension, you will find packages that you can use to provide functions or
+templates for your stylesheets.
+
+- Common: common, basic extension elements and functions. 
+- Math: facilities to do with maths. 
+- Sets: facilities to do with set manipulation. 
+- Functions: allow users to define their own functions for use in expressions
+  and patterns in XSLT. 
+- Dates and Times: date and time-related extension elements and functions. 
+- Strings: facilities to do with string manipulation. 
+- Regular Expressions: facilities to do with regular expressions. 
+- Dynamic: dynamic evaluation of strings containing XPath expressions. 
+- Random: facilities to do with randomness. 
+
+WWW:	http://www.exslt.org/

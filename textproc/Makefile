@@ -93,6 +93,7 @@
     SUBDIR += eruby
     SUBDIR += es-aspell
     SUBDIR += expat2
+    SUBDIR += exslt
     SUBDIR += fdp-tools
     SUBDIR += filepp
     SUBDIR += fist
