@@ -51,7 +51,6 @@
     SUBDIR += java2html
     SUBDIR += latte
     SUBDIR += latex2html
-    SUBDIR += libiconv
     SUBDIR += libxml
     SUBDIR += libxml2
     SUBDIR += libxode
