@@ -1406,6 +1406,7 @@ lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-ieee
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-noframe
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-noieee
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-prom
+lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/pthread
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/Versions
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/Xa
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/Xc
