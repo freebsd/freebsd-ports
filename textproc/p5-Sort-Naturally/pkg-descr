@@ -1,0 +1,31 @@
+This module exports two functions, nsort and ncmp; they are used in implementing
+my idea of a "natural sorting" algorithm. Under natural sorting, numeric
+substrings are compared numerically, and other word-characters are compared
+lexically.
+
+This is the way I define natural sorting:
+
+    * Non-numeric word-character substrings are sorted lexically, 
+case-insensitively: "Foo" comes between "fish" and "fowl".
+    * Numeric substrings are sorted numerically: "100" comes after "20", 
+not before.
+    * \W substrings (neither words-characters nor digits) are ignored.  Our use
+    * of \w, \d, \D, and \W is locale-sensitive: Sort::Naturally 
+uses a use locale statement.
+    * When comparing two strings, where a numeric substring in one place 
+is not up against a numeric substring in another, the non-numeric always comes
+first. This is fudged by reading pretending that the lack of a number substring
+has the value -1, like so:
+    * The start of a string is exceptional: leading non-\W (non-word, 
+non-digit) components are are ignored, and numbers come before letters.
+    * I define "numeric substring" just as sequences matching m/\d+/ -- 
+scientific notation, commas, decimals, etc., are not seen. If your data has
+thousands separators in numbers ("20,000 Leagues Under The Sea" or "20.000
+lieues sous les mers"), consider stripping them before feeding them to nsort or
+ncmp.
+
+WWW: http://search.cpan.org/dist/Sort-Naturally/
+Author: Sean M. Burke <sburke@cpan.org>
+
+- Aaron Dalton
+aaron@daltons.ca
