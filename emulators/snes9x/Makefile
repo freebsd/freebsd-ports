@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.29
+PORTVERSION=	1.32
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
-DISTNAME=	s9xs129
+DISTNAME=	s9xs132
 
 MAINTAINER=	nakai@FreeBSD.org
 
@@ -42,6 +42,5 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/s9xserver ${PREFIX}/bin
 
 .include <bsd.port.mk>
