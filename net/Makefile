@@ -113,6 +113,7 @@
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu
+    SUBDIR += gnomemeeting
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
