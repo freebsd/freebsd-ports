@@ -214,3 +214,4 @@ share/tclhttpd%%PORTVERSION%%/.tml
 @dirrm share/tclhttpd%%PORTVERSION%%/stats
 @dirrm share/tclhttpd%%PORTVERSION%%/templates
 @dirrm share/tclhttpd%%PORTVERSION%%
+@dirrm tclhttpd%%PORTVERSION%%
