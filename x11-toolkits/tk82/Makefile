@@ -1,27 +1,31 @@
-# New ports collection makefile for:	tk8.1.1
-# Version required:	8.1.1
+# New ports collection makefile for:	tk
+# Version required:	8.2.0
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.1.1
-PKGNAME=	tk-8.1.1
-CATEGORIES=	x11-toolkits tk81
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
+DISTNAME=	tk8.2.0
+PKGNAME=	tk-8.2.0
+CATEGORIES=	x11-toolkits tk82
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-LIB_DEPENDS=	tcl81.1:${PORTSDIR}/lang/tcl81
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk81.so.1
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
+CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk82.so.1
 PKGINSTALL=     ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
+
+PLIST_SUB=	TK_VER=8.2 SHORT_TK_VER=82
+
+MANCOMPRESSED=	no
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
@@ -288,7 +292,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_setPalette.n \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
-MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
