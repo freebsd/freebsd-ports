@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Sat Jul  1 18:18:43 1995
+--- Makefile.in	Sat Jul  1 18:19:38 1995
+***************
+*** 138,144 ****
+  	-if test -f autoscan; then \
+  	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
+  	for i in acfunctions acheaders acidentifiers acprograms \
+! 	  acmakevars; do \
+  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
+  	done; \
+  	else :; fi
+--- 138,144 ----
+  	-if test -f autoscan; then \
+  	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
+  	for i in acfunctions acheaders acidentifiers acprograms \
+! 	  acmakevars config.guess config.sub; do \
+  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
+  	done; \
+  	else :; fi
