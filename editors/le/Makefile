@@ -1,12 +1,12 @@
 # New ports collection makefile for:	le
-# Version required:			1.5.1
+# Version required:			1.5.2
 # Date created:				16 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/30 16:00:13 steve Exp $
+# $Id: Makefile,v 1.4 1999/05/01 02:58:43 steve Exp $
 #
 
-DISTNAME=		le-1.5.1
+DISTNAME=		le-1.5.2
 CATEGORIES=		editors
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
