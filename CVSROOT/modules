@@ -394,6 +394,7 @@ aria		ports/www/aria
 ariadne		ports/biology/ariadne
 arirang		ports/security/arirang
 arj		ports/archivers/arj
+arkpandora	ports/x11-fonts/arkpandora
 arla		ports/net/arla
 arm-aout-binutils	ports/devel/arm-aout-binutils
 arm-elf-binutils	ports/devel/arm-elf-binutils
