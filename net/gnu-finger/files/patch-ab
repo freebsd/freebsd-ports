@@ -1,5 +1,5 @@
---- lib/os.c.orig	Fri Oct 23 06:01:10 1992
-+++ lib/os.c	Mon Jan  6 17:47:01 1997
+--- lib/os.c.orig	Mon Jan  6 22:09:06 1997
++++ lib/os.c	Mon Jan  6 22:08:34 1997
 @@ -26,6 +26,8 @@
  #include <sys/acct.h>
  #include <time.h>
@@ -14,7 +14,7 @@
  /* Where the utmp file is located. */
  #ifndef HAVE_GETUTENT
 +#ifdef __FreeBSD__
-+#define UTMP_FILE "/var/run/utmp"
++#define UTMP_FILE _PATH_UTMP
 +#else
  #define UTMP_FILE "/etc/utmp"
  #endif
@@ -22,7 +22,29 @@
  
  /* A non-null value is the address of the utmp entry which contains the
     information for the user using the console. */
-@@ -485,6 +491,7 @@
+@@ -288,6 +294,21 @@
+     {
+       idle = current_time - get_last_access (utmplist[i]->ut_line);
+ 
++#ifdef __FreeBSD__
++      /*
++       *    GNU finger lists two information of one user for one machine,
++       * (1. about login console, 2. tty which has smallest idling time.)
++       *  In listing algorithm, GNU finger server program [fingerd] uses
++       * `console' string in tty.
++       *
++       *   But FreeBSD uses `ttyv[0-3]' as console name.
++       *
++       *   So this patch is to translate `ttyv?' string to `console'
++       */
++      if (strstr (utmplist[i]->ut_line, "ttyv") != NULL) {
++	strcpy (utmplist[i]->ut_line, "console");
++      }
++#endif
+       if (idle < 0)
+ 	idle = 0;
+ 
+@@ -485,6 +506,7 @@
  
    UTMP **result;
    int result_size = 0;
@@ -30,11 +52,19 @@
  
  #ifndef HAVE_GETUTENT
    file = open (UTMP_FILE, O_RDONLY);
-@@ -529,6 +536,19 @@
+@@ -528,6 +550,26 @@
+       if (!UT (entry, ut_name)[0])
  	continue;
  #endif /* sun */
- 
++
 +#ifdef __FreeBSD__
++      /*
++       *   From src/usr.bin/login/login.c CVS log, after 2.2 source tree,
++       * login.c write numerical address to ut_host.
++       * (1.12 comment of login.c)
++       *
++       *   So this patch is to translate numerical address to hostname.
++       */
 +      if (UT(entry, ut_host)[0]) {
 +          if (isdigit(UT(entry, ut_host)[0]) && 
 +              (long)(l = inet_addr(UT(entry, ut_host))) != -1 &&
@@ -46,17 +76,6 @@
 +          }  /* IP addr */
 +      } /* UTMP */
 +#endif
-+
+ 
        for (i = 0; result[i]; i++)
  	{
- 	  /* If the same person is logged in more than once, we are
-@@ -552,6 +572,9 @@
- 	     finding the tty location.  `v0' is what X window terminals
- 	     use for the console login window. */
- 	  if ((strcmp (result[i]->ut_line, "console") == 0) ||
-+#ifdef  __FreeBSD__
-+	      (strstr (result[i]->ut_line, "ttyv") != NULL) ||
-+#endif
- 	      (strcmp (result[i]->ut_line, "v0") == 0))
- 	    {
- 	      console_user = result[i];
