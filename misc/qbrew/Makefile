@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	qbrew
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
-PATCH_SITES=	http://www.usermode.org/code/
-PATCHFILES=	qbrew-0.3.3.1.patch
 
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3
+QT_NONSTANDARD=	yes
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/qbrew
