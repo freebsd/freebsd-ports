@@ -1,31 +1,26 @@
 --- Makefile.orig	Tue Jan  9 08:30:24 1996
-+++ Makefile	Sun Jan  9 09:35:59 2000
++++ Makefile	Thu Dec  5 09:59:23 2002
 @@ -4,7 +4,7 @@
  # The program that knows how to deal with makefiles. [Uncomment if needed.]
  # MAKE=make
  # set CFLAGS to be -Ipath/to/special/includes if needed
 -CFLAGS= -O 
-+CFLAGS+= -I/usr/local/include
++#CFLAGS= -O
  #Uncomment the following for Solaris (and similiar SVR4 systems)
  #NETLIBS   = -lsocket -lnsl 
  #Uncomment the following if the previous one does not work
-@@ -13,6 +13,7 @@
- #DBLIBS	= -ldbz
- #DBLIBS	= /usr/local/lib/dbz.o #/usr/local/lib/dbzdbm.o
- #DBLIBS	= -ldbm
-+DBLIBS	= /usr/local/lib/libcnews.a -lcrypt -lutil
- # add the resolver library if needed
- #RESLIB = -lresolv
- # add the kmem library if needed 
-@@ -21,9 +21,9 @@
+@@ -20,11 +20,11 @@
  #Uncomment the following for Solaris (and similiar SVR4 systems)
  #KVMLIB = -lelf
  # Where nntpd is going to live
 -ETCDIR = /etc
-+ETCDIR = /usr/local/sbin
++#ETCDIR = /usr/local/sbin
  # Where nntpxmit and nntpxfer is going to live
 -BINDIR = /usr/local/bin
-+BINDIR = /usr/local/news/cnewsbin
++#BINDIR = /usr/local/news/cnewsbin
  # Where manual pages live
- MANDIR = /usr/local/man
+-MANDIR = /usr/local/man
++#MANDIR = /usr/local/man
  #
+ LIBS = $(DBLIBS) $(RESLIB) $(NETLIBS) $(KVMLIB)
+ SUBMAKEFLAGS="LIBS=${LIBS}" "CFLAGS=${CFLAGS}" "ETCDIR=${ETCDIR}" "BINDIR=${BINDIR}" "MANDIR=${MANDIR}"

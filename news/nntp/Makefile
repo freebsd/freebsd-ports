@@ -25,6 +25,7 @@ MAN1=		nntpxmit.1
 MAN8=		nntpd.8c acttimes.8c
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
+CFLAGS+=	-I${LOCALBASE}/include
 
 MODIFY=		conf.h Makefile
 DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
@@ -34,6 +35,10 @@ NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${PREFIX}/news/lib
 NEWSARTS?=	/var/news
 NEWSOV?=	/var/news/over.view
+
+MAKE_ENV+=	DBLIBS="${LOCALBASE}/lib/libcnews.a -lcrypt -lutil"
+MAKE_ENV+=	ETCDIR="${LOCALBASE}/sbin" BINDIR="${NEWSBIN}"
+MAKE_ENV+=	MANDIR="${LOCALBASE}/man"
 
 post-extract:
 	@${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
