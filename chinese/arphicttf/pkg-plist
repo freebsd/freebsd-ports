@@ -1,8 +1,18 @@
-lib/X11/fonts/TrueType/ARPHICPL_Big5.TXT
-lib/X11/fonts/TrueType/ARPHICPL_Eng.TXT
-lib/X11/fonts/TrueType/ARPHICPL_GB.TXT
 lib/X11/fonts/TrueType/bkai00mp.ttf
 lib/X11/fonts/TrueType/bsmi00lp.ttf
 lib/X11/fonts/TrueType/gbsn00lp.ttf
 lib/X11/fonts/TrueType/gkai00mp.ttf
+lib/X11/fonts/TrueType/arphic/license/BIG5/ARPHICPL.DOC
+lib/X11/fonts/TrueType/arphic/license/BIG5/ARPHICPL.TXT
+lib/X11/fonts/TrueType/arphic/license/ENGLISH/ARPHICPL.DOC
+lib/X11/fonts/TrueType/arphic/license/ENGLISH/ARPHICPL.TXT
+lib/X11/fonts/TrueType/arphic/license/GB/ARPHICPL.DOC
+lib/X11/fonts/TrueType/arphic/license/GB/ARPHICPL.TXT
+lib/X11/fonts/TrueType/arphic/logo.gif
+lib/X11/fonts/TrueType/arphic/release.txt
+@dirrm lib/X11/fonts/TrueType/arphic/license/BIG5
+@dirrm lib/X11/fonts/TrueType/arphic/license/ENGLISH
+@dirrm lib/X11/fonts/TrueType/arphic/license/GB
+@dirrm lib/X11/fonts/TrueType/arphic/license
+@dirrm lib/X11/fonts/TrueType/arphic
 @unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true
