@@ -1,34 +1,20 @@
---- client/Makefile.FreeBSD.orig	Fri Apr 11 03:50:34 1997
-+++ client/Makefile.FreeBSD	Wed Apr 22 01:46:22 1998
-@@ -1,15 +1,15 @@
- INCLUDE = ../server/dhcp.h dhcpc.h common.h ../server/common_subr.h dhcpc_subr.h
- OBJ = dhcpc_subr.o flushroute.o getmac.o common_subr.o dhcpc.o
+--- client/Makefile.FreeBSD.orig	Wed Sep  9 17:08:15 1998
++++ client/Makefile.FreeBSD	Sat Dec  5 02:52:18 1998
+@@ -5,12 +5,13 @@
+ CFLAGS += -O -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
+ LDFLAGS = -lkvm
  
--CC = gcc
--CFLAGS = -Wall -g -I. -I../server -DRETRY_FOREVER #-DDEBUG
--#CC = cc
--#CFLAGS = -g -I. -I../server -DRETRY_FOREVER #-DDEBUG
--LDFLAGS = -lkvm
-+#CC = gcc
-+#CFLAGS = -Wall -g -I. -I../server -DRETRY_FOREVER #-DDEBUG
-+CC = cc
-+CFLAGS += -Wall -I. -I../server -DRETRY_FOREVER #-DDEBUG
-+LDFLAGS =
- 
--BIN = 		/usr/local/sbin
+-SBIN = 		/usr/local/sbin
 -LIBEXEC =	/usr/local/libexec
 -MAN =		/usr/local/man
-+SBIN = 		${PREFIX}/sbin
-+LIBEXEC =	${PREFIX}/libexec
-+MAN =		${PREFIX}/man
++#PREFIX =	/usr/local
++SBIN = 		$(PREFIX)/sbin
++LIBEXEC =	$(PREFIX)/libexec
++MAN =		$(PREFIX)/man
+ CP =		/bin/cp
+ RM =		/bin/rm
+-GZIP =		/usr/bin/gzip
++GZIP =		/usr/bin/touch		# don't `gzip' anything for FreeBSD
  
  dhcpc: ${OBJ}
  	${CC} ${CFLAGS} -o dhcpc ${OBJ} ${LDFLAGS}
-@@ -17,7 +17,6 @@
- install: dhcpc
- 	${INSTALL} -m 755 -s dhcpc ${SBIN}/dhcpc
- 	cp dhcpc.8 ${MAN}/man8/dhcpc.8
--	gzip ${MAN}/man8/dhcpc.8
- 
- clean:
- 	rm -f *~ *.o *core* dhcpc

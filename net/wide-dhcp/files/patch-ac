@@ -1,5 +1,5 @@
---- client/dhcpc_subr.c.orig	Thu Jul  3 05:19:01 1997
-+++ client/dhcpc_subr.c	Sat Jun 27 19:30:56 1998
+--- client/dhcpc_subr.c.orig	Wed Sep  9 17:06:39 1998
++++ client/dhcpc_subr.c	Sat Dec  5 02:52:57 1998
 @@ -64,6 +64,12 @@
  #ifdef __osf__
  #include <net/pfilt.h>
@@ -22,7 +22,7 @@
  #ifdef VIP
  #include <netinet/vip.h>
  #endif
-@@ -164,6 +172,8 @@
+@@ -165,6 +173,8 @@
  
  int config_if();
  void set_route();
@@ -31,7 +31,7 @@
  void make_decline();
  void make_release();
  Long generate_xid();
-@@ -1853,6 +1863,10 @@
+@@ -1856,6 +1866,10 @@
    register char *cp = m_rtmsg.m_space;
    register int l;
  
@@ -42,7 +42,7 @@
    bzero(&so_dst, sizeof(struct sockaddr));
    bzero(&so_mask, sizeof(struct sockaddr));
    bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1895,6 +1909,45 @@
+@@ -1898,6 +1912,45 @@
  
  #endif
  
@@ -88,24 +88,3 @@
  
  void
  make_decline(lsbuf, reqspecp)
-@@ -2528,11 +2581,9 @@
-   struct msghdr msg;
-   struct iovec bufvec[1];
-   int bufsize = DFLTDHCPLEN;
--#if 0
- #if defined(__bsdi__) || defined(__FreeBSD__)
-   int on;
- #endif
--#endif
- 
-   if (sockfd == -1) {
-     struct sockaddr_in myaddr;
-@@ -2556,7 +2607,7 @@
-       return(-1);
-     }
- 
--#if 0
-+#if defined(__bsdi__) || defined(__FreeBSD__)
-     on = 1;
-     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on)) < 0) {
-       close(sockfd);
