@@ -1,0 +1,11 @@
+--- cgi-src/Makefile.in.orig	Tue Apr 24 19:44:12 2001
++++ cgi-src/Makefile.in	Tue Apr 24 19:44:25 2001
+@@ -31,7 +31,7 @@
+ MANDIR =	@mandir@
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I..
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)

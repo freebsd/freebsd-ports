@@ -1,0 +1,11 @@
+--- extras/Makefile.in.orig	Tue Apr 24 19:46:03 2001
++++ extras/Makefile.in	Tue Apr 24 19:46:13 2001
+@@ -32,7 +32,7 @@
+ MANDIR =	@mandir@
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I..
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
