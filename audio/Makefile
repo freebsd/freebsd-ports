@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.65 1999/01/02 19:41:28 hoek Exp $
+# $Id: Makefile,v 1.66 1999/01/07 12:05:20 asami Exp $
 #
 
     SUBDIR += 8hz-mp3
     SUBDIR += amp
     SUBDIR += ascd
+    SUBDIR += bladeenc
     SUBDIR += cam
     SUBDIR += cdd
     SUBDIR += cddbd
