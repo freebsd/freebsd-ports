@@ -7,11 +7,10 @@
 
 PORTNAME=	divx4linux
 PORTVERSION=	5.0.${RELEASE_DATE}
-CATEGORIES=	graphics linux
+CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/divx/
-
+PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}501-${RELEASE_DATE}
-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org

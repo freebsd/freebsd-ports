@@ -8,7 +8,7 @@
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -26,7 +26,7 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
-#CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+#CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 LIB_VERSION=	0

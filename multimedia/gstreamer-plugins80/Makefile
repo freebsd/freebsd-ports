@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.4.2
-CATEGORIES=	graphics
+CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-plugins
@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		gconf-2.5:${PORTSDIR}/devel/gconf2 \
-		gstreamer.0:${PORTSDIR}/graphics/gstreamer \
+		gstreamer.0:${PORTSDIR}/multimedia/gstreamer \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
@@ -267,7 +267,7 @@ PLIST_SUB+=	ARTS=""
 CONFIGURE_ARGS+=	--disable-avifile
 PLIST_SUB+=	AVIFILE="@comment "
 .else
-LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 
 PLIST_SUB+=	AVIFILE=""
 .endif
@@ -380,7 +380,7 @@ PLIST_SUB+=	LIBAUDIOFILE=""
 CONFIGURE_ARGS+=	--disable-libdv
 PLIST_SUB+=	LIBDV="@comment "
 .else
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
 
 PLIST_SUB+=	LIBDV=""
 .endif
@@ -400,7 +400,7 @@ PLIST_SUB+=	LIBDVDNAV=""
 CONFIGURE_ARGS+=	--disable-dvdread
 PLIST_SUB+=	LIBDVDREAD="@comment "
 .else
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
+LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 
 PLIST_SUB+=	LIBDVDREAD=""
 .endif
@@ -436,7 +436,7 @@ PLIST_SUB+=	LIBMIKMOD=""
 CONFIGURE_ARGS+=	--disable-mpeg2dec
 PLIST_SUB+=	LIBMPEG2="@comment "
 .else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
 CONFIGURE_ARGS+=	--with-mpeg2dec-prefix=${LOCALBASE}
 PLIST_SUB+=	LIBMPEG2=""
@@ -477,7 +477,7 @@ PLIST_SUB+=	LIBMAD=""
 CONFIGURE_ARGS+=	--disable-openquicktime
 PLIST_SUB+=	OPENQUICKTIME="@comment "
 .else
-LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/graphics/openquicktime
+LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
 PLIST_SUB+=	OPENQUICKTIME=""
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	OQTEncoder
 PORTVERSION=	0.1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openquicktime
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/graphics/openquicktime
+LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
 MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

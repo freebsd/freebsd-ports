@@ -7,7 +7,7 @@
 
 PORTNAME=	divxplayer
 PORTVERSION=	0.2.0
-CATEGORIES=	graphics linux
+CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/player/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	divx-player-installer

@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-fonts
 PORTVERSION=	0.50
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 		http://www.rrr.de/~riggs/mplayer/
 

@@ -18,7 +18,7 @@ MAINTAINER=	roman@xpert.com
 BROKEN=		Maintainer is working on a fix
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config

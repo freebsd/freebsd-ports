@@ -7,7 +7,7 @@
 
 PORTNAME=	win32-codecs
 PORTVERSION=	${CODEC_VERSION}.0.${CODEC_MPLAYER_VERSION}
-CATEGORIES=	graphics audio
+CATEGORIES=	multimedia audio
 MASTER_SITES=	http://avifile.sourceforge.net/:binaries \
 		http://ernie.eit.uni-kl.de/avifile/ \
 		http://mplayerhq.hu/MPlayer/releases/:w32codec \

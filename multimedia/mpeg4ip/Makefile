@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	0.9.6
-CATEGORIES=	graphics audio ipv6 net
+CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 

@@ -8,7 +8,7 @@
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.10
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -101,9 +101,9 @@ CONFIGURE_ARGS+=	--enable-gui
 
 .if defined(WITH_DVD)
 .if !defined(WITH_LIBDVDREAD)
-LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss
+LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
 .else
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
+LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 .endif
 .endif
 
@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 			--enable-freetype
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
 .else
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 .endif
 
 .if defined(WITH_XANIM)
@@ -181,7 +181,7 @@ RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 
-CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif # ARCH == i386
