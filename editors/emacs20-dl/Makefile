@@ -86,7 +86,4 @@ do-install:
 	@${INSTALL} -c -s -m 555 -o root -g wheel ${WRKSRC}/src/emacs ${PREFIX}/bin/emacs-dl-${EMACS_VER}
 	@${INSTALL_DATA} ${WRKSRC}/etc/DOC ${PREFIX}/share/emacs/${EMACS_VER}/etc/${DOC_FILE}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>
