@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	scop
 
 # For issues that are not specific to this port/package, please consult
 # the <freebsd-cvsweb@FreeBSD.org> mailing list.
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees version 3
 
 RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
