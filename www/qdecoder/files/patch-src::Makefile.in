@@ -1,0 +1,52 @@
+--- src/Makefile.in.orig	Mon Mar 15 03:30:00 2004
++++ src/Makefile.in	Mon Mar 15 03:31:47 2004
+@@ -90,11 +90,36 @@
+ 		qInternalEntry.o \
+ 		md5/md5c.o
+ 
++# Shared objects List
++SHOBJ		= qDecoder.So \
++		qSession.So \
++		qfDecoder.So \
++		qsDecoder.So \
++		qHttpHeader.So \
++		qError.So \
++		qEnv.So \
++		qEncode.So \
++		qString.So \
++		qFile.So \
++		qValid.So \
++		qArg.So \
++		qAwk.So \
++		qSed.So \
++		qCount.So \
++		qDownload.So \
++		qTime.So \
++		qMisc.So \
++		qInternalCommon.So \
++		qInternalEntry.So \
++		md5/md5c.So
++
++.SUFFIXES: .o .So
++
+ ## Make Library
+-all: ${OBJ}
++all: ${OBJ} ${SHOBJ}
+ 	${AR} ${ARFLAGS} ${LIBNAME} ${OBJ}
+ 	${RANLIB} ${LIBNAME}
+-	${LD} ${LDFLAGS} -o ${SLIBREALNAME} ${OBJ}
++	${LD} ${LDFLAGS} -o ${SLIBREALNAME} ${SHOBJ}
+ 	${CHMOD} 0644 ${SLIBREALNAME}
+ 	${RM} -f ${SLIBNAME}
+ 	${LN_S} ${SLIBREALNAME} ${SLIBNAME}
+@@ -102,6 +127,10 @@
+ ## Compile Module
+ .c.o:
+ 	${CC} ${CFLAGS} ${DEFS} ${INCLUDE} -c -o $@ $<
++
++## Compile PIC Module
++.c.So:
++	${CC} ${CFLAGS} -fPIC ${DEFS} ${INCLUDE} -c -o $@ $<
+ 
+ ## Install Module
+ install: all
