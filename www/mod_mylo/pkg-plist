@@ -1,0 +1,6 @@
+libexec/apache/mod_mylo.so
+@exec %D/sbin/apxs -e -A -n mylo %D/%F
+@unexec %D/sbin/apxs -e -A -n mylo %D/%F
+%%PORTDOCS%%share/doc/mod_mylo/mod_mylo.sql
+%%PORTDOCS%%share/doc/mod_mylo/README
+%%PORTDOCS%%@dirrm share/doc/mod_mylo

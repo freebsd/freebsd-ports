@@ -1,0 +1,6 @@
+This is a module for Apache that sends logs directly to a MySQL database in
+addition to normal logging.
+
+WWW: http://www.orakel.ntnu.no/~oyving/code/mod_mylo/
+
+- Anders Nordby <anders@FreeBSD.org>
