@@ -9,7 +9,9 @@ PORTNAME=	goggles
 PORTVERSION=	0.7.10
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.fifthplanet.net/files/
+MASTER_SITES=	http://www.fifthplanet.net/files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
