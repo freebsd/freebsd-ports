@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.5.2003.11.17
+PORTVERSION?=	7.5.2003.12.03
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -82,7 +82,7 @@ PLIST_SUB+=	PGCRYPTO="@comment "
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
+CONFIGURE_ARGS+= "--with-openssl"
 .endif
 
 .if defined(WITHOUT_SERVER)

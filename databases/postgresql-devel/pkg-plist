@@ -25,8 +25,9 @@ bin/pg_encoding
 include/postgresql/internal/libpq/pqcomm.h
 include/postgresql/internal/lib/dllist.h
 include/postgresql/internal/c.h
-include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/libpq-int.h
+include/postgresql/internal/port.h
+include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/pqexpbuffer.h
 @dirrm include/postgresql/internal/lib
 @dirrm include/postgresql/internal/libpq
@@ -447,8 +448,9 @@ lib/libecpg_compat.so
 %%SERVER%%share/postgresql/pg_hba.conf.sample
 %%SERVER%%share/postgresql/pg_ident.conf.sample
 %%SERVER%%share/postgresql/postgresql.conf.sample
-%%PGCRYPTO%%share/doc/postgresql/contrib/README.pgcrypto
-@unexec rmdir %D/share/doc/postgresql/contrib 2> /dev/null || true
+%%PGCRYPTO%%share/doc/postgresql-devel/contrib/README.pgcrypto
+@unexec rmdir %D/share/doc/postgresql-devel/contrib 2> /dev/null || true
+@unexec rmdir %D/share/doc/postgresql-devel 2> /dev/null || true
 @unexec rm -f %D/share/doc/postgresql/* 2>/dev/null || true
 @unexec rmdir %D/share/doc/postgresql 2> /dev/null || true
 %%PGCRYPTO%%share/postgresql/contrib/pgcrypto.sql
