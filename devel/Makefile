@@ -1032,6 +1032,7 @@
     SUBDIR += php-xdebug
     SUBDIR += php4-dio
     SUBDIR += php4-gettext
+    SUBDIR += php4-mcve
     SUBDIR += php4-pcre
     SUBDIR += php4-pear
     SUBDIR += php5-pcre
