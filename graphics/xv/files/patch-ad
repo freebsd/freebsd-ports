@@ -1,0 +1,74 @@
+--- ./Imakefile.org	Fri Jan 13 12:24:01 1995
++++ ./Imakefile	Wed Jul  5 03:32:57 1995
+@@ -6,13 +6,15 @@
+ /* if, for whatever reason, you're unable to get the JPEG library to compile
+  * on your machine, *COMMENT OUT* the following line
+  */
+-#define HaveJpeg
++/* #define HaveJpeg */
++#define UseInstalledJpeg
+ 
+ 
+ /* if, for whatever reason, you're unable to get the TIFF library to compile
+  * on your machine, *COMMENT OUT* the following line
+  */
+-#define HaveTiff
++/* #define HaveTiff */
++#define UseInstalledTiff
+ 
+ 
+ /* if, for whatever reason, you're unable to get the PDS/VICAR support
+@@ -119,16 +121,30 @@
+ JPEG = -DDOJPEG
+ JPEGDIR = jpeg
+ LIBJPEG = $(JPEGDIR)/libjpeg.a
++DEPLIBJPEG = $(LIBJPEG)
+ JPEGINCLUDE = -I$(JPEGDIR)
+ #endif
+ 
++#ifdef UseInstalledJpeg
++JPEG = -DDOJPEG
++LIBJPEG = -L/usr/local/lib -ljpeg
++JPEGINCLUDE = -I/usr/local/include
++#endif
++
+ #ifdef HaveTiff
+ TIFF = -DDOTIFF
+ TIFFDIR = tiff
+ LIBTIFF = $(TIFFDIR)/libtiff.a
++DEPLIBTIFF = $(LIBTIFF)
+ TIFFINCLUDE = -I$(TIFFDIR)
+ #endif
+ 
++#ifdef UseInstalledTiff
++TIFF = -DDOTIFF
++LIBTIFF = -L/usr/local/lib -ltiff
++TIFFINCLUDE = -I/usr/local/include
++#endif
++
+ #ifdef HavePDS
+ PDS = -DDOPDS
+ #endif
+@@ -142,8 +158,8 @@
+ #endif
+ 
+ 
+-DEPLIBS = $(LIBJPEG) $(LIBTIFF)
+-LOCAL_LIBRARIES = $(XLIB) $(DEPLIBS)
++DEPLIBS = $(DEPLIBJPEG) $(DEPLIBTIFF)
++LOCAL_LIBRARIES = $(XLIB) $(LIBJPEG) $(LIBTIFF) -lgnumalloc
+ 
+ DEFINES= $(SCO) $(UNIX) $(NODIRENT) $(VPRINTF) $(TIMERS) \
+ 	$(HPUX7) $(JPEG) $(TIFF) $(PDS) $(DXWM) $(RAND) \
+--- ./vdcomp.c.org	Thu Dec 22 14:34:47 1994
++++ ./vdcomp.c	Wed Jul  5 03:39:26 1995
+@@ -108,7 +108,8 @@
+      !defined(bsd43)                     && \
+      !defined(aux)                       && \
+      !defined(__bsdi__)                  && \
+-     !defined(sequent)
++     !defined(sequent)			 && \
++     !defined(__FreeBSD__)
+ 
+ #  if defined(hp300) || defined(hp800) || defined(NeXT)
+ #   include <sys/malloc.h>                /* it's in 'sys' on HPs and NeXT */
