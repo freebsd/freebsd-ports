@@ -286,6 +286,7 @@
     SUBDIR += p5-XML-LibRSVG
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXML-Common
+    SUBDIR += p5-XML-LibXML-XPathContext
     SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-NamespaceSupport
     SUBDIR += p5-XML-Node
