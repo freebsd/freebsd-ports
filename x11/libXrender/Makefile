@@ -29,4 +29,10 @@ CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Configure fails"
+.endif
+
+.include <bsd.port.post.mk>
