@@ -13,10 +13,11 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

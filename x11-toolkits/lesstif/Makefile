@@ -15,8 +15,9 @@ MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 
 MAINTAINER=	ports@freebsd.org
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
+
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
