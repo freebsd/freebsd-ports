@@ -247,6 +247,7 @@
     SUBDIR += ipfw-graph
     SUBDIR += iplog
     SUBDIR += ipsorc
+    SUBDIR += ipsumdump
     SUBDIR += ipsvd
     SUBDIR += ipv6calc
     SUBDIR += ipv6socket_scrub
