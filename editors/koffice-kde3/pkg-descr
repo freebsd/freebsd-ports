@@ -1,10 +1,6 @@
-This is the office suite for KDE3 that includes
-KWord, KSpread, KPresenter, KChart, and so forth.
-
-This is a Release Candidate, and therefore may have
-some unresolved issues. The final release should be
-more polished.
+This is the office suite for KDE3 that includes KWord, KSpread, KPresenter,
+KChart, and so forth.
 
 WWW: http://www.koffice.org/
 
---AlanE <ports@geeksrus.net>
+--AlanE <kde@freebsd.org>
