@@ -18,7 +18,7 @@
 -#CFLAGS = -g -O -Ignu-getopt -DFreeBSD
 -#INCLUDES = cqc.h gnu-getopt/getopt.h
 -#OBJS = cqc.o gnu-getopt/getopt.o gnu-getopt/getopt1.o
-+CFLAGS = -g -O -I. -DFreeBSD
++CFLAGS+= -I. -DFreeBSD
 +INCLUDES = cqc.h getopt.h
 +OBJS = cqc.o getopt.o getopt1.o
  ##
