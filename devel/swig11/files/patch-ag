@@ -1,0 +1,9 @@
+--- Runtime/perlrun.h.orig	Mon Jun 23 05:18:37 1997
++++ Runtime/perlrun.h	Tue Aug 22 02:36:55 2000
+@@ -1,3 +1,6 @@
+ #include "EXTERN.h"
+ #include "perl.h"
+ #include "XSUB.h"
++
++#define PERL_POLLUTE 1
++#include "embedvar.h"
