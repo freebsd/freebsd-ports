@@ -19,15 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libconcorde.a:${PORTSDIR}/math/concorde
 
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grappa ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/grappa ${PREFIX}/bin/invdist
 	${LN} -sf ${PREFIX}/bin/grappa ${PREFIX}/bin/distmat
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
