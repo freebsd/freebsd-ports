@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-gtkscintilla
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	PyGtkScintilla-${PORTVERSION}
