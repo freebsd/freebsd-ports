@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -46,6 +47,12 @@ CONFIGURE_ARGS+=	--disable-sm
 CONFIGURE_ARGS+=	--disable-shape
 .endif
 
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
+			--with-png-library=${LOCALBASE}/lib
+.endif
+
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .if ${HAVE_GNOME:Mimlib}!=""
@@ -77,7 +84,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		${WRKSRC}/modules/FvwmM4/FvwmM4.c
+		${WRKSRC}/modules/FvwmM4/FvwmM4.c \
+		${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc \
