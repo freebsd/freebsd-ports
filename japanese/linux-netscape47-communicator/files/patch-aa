@@ -1,0 +1,27 @@
+--- Netscape.ad-ja_euc.orig	Mon Apr  9 06:04:32 2001
++++ Netscape.ad-ja_euc	Mon Apr  9 06:06:04 2001
+@@ -1,5 +1,5 @@
+ ! Insert copyright and license here 1994
+-! Netscape.ad --- app-defaults file for Netscape 4.76.
++! Netscape.ad --- app-defaults file for Netscape 4.77.
+ !
+ ! Bugs and commentary to x_cbug@netscape.com.
+ ! Created: Jamie Zawinski <use the bug address, please>, 23-Jun-94.
+@@ -4491,7 +4491,7 @@
+ ! changed at runtime; these resources won't override that.
+ *title:					Netscape
+ *iconName:				Netscape
+-*Navigator.title:			Netscape Navigator 4.76
++*Navigator.title:			Netscape Navigator 4.77
+ *MailThread.title:			Netscape メール & ニュースグループ
+ *MailThread.iconName:		メール & ニュースグループ
+ 
+@@ -5421,7 +5421,7 @@
+ *drawingArea*XmScrolledWindow.spacing:			0
+ 
+ ! Do not under any circumstances change the following line:
+-Netscape.version: 		4.76
++Netscape.version: 		4.77
+ 
+ 
+ ! ============================================================================
