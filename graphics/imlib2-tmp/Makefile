@@ -3,12 +3,12 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/09/19 03:45:57 max Exp $
+# $Id: Makefile,v 1.6 1997/10/30 22:15:26 max Exp $
 #
 
-DISTNAME=	imlib-0.5.1
+DISTNAME=	imlib_DR-0.5.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/enlightenment/
+MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/imlib/
 
 MAINTAINER=	vanilla@MinJe.com.TW
 
