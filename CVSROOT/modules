@@ -7669,6 +7669,7 @@ posixtestsuite	ports/misc/posixtestsuite
 poslib		ports/devel/poslib
 postal		ports/benchmarks/postal
 poster		ports/print/poster
+postfinger	ports/mail/postfinger
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix1	ports/mail/postfix1
