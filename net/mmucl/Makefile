@@ -10,7 +10,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/mmucl/
 
-MAINTAINER=	matt@LUCIDA.QC.CA
+MAINTAINER=	matt@LUCIDA.CA
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
