@@ -6,25 +6,20 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.8i6
+PORTVERSION=	1.8j
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ns0.hole.org/pub/ScrollZ/Bins/
-DISTNAME=	${PORTNAME}-18i6-fbsd-3.4
-EXTRACT_SUFX=	.bz2
+MASTER_SITES=	http://www.scrollz.com/Bins/
+DISTNAME=	ScrollZ-${PORTVERSION}-FreeBSD-3.4
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=	will@FreeBSD.org
 
-USE_BZIP2=	YES
-NO_BUILD=	YES
+EXTRACT_CMD=	gunzip
+EXTRACT_BEFORE_ARGS=	-c
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/scrollz
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
-
-BZIP2?=		${LOCALBASE}/bin/bzip2
-
-pre-extract:
-	@${MKDIR} ${WRKSRC}
-
-do-extract:
-	@${BZIP2} -dc ${DISTDIR}/${DISTFILES} > ${WRKSRC}/scrollz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scrollz ${PREFIX}/bin/scrollz
