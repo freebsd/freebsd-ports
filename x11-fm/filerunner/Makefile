@@ -1,29 +1,27 @@
 # New ports collection makefile for:	filerunner
-# Version required:	2.4.1
+# Version required:	2.4.2
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.11 1998/01/19 13:21:37 vanilla Exp $
+# $Id: Makefile,v 1.12 1998/02/24 21:43:11 jseger Exp $
 #
 
-DISTNAME=	FileRunner_2.4.1
-PKGNAME=	filerunner-2.4.1
+DISTNAME=	FileRunner-2.4.2
+PKGNAME=	filerunner-2.4.2
 CATEGORIES=	x11 tk81
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11/tk81
 
-WRKSRC=		${WRKDIR}/FileRunner_2.4.1
-MAKEFILE=	Makefile.freebsd
+MAKEFILE=	Makefile.freebsd_gcc
 MAKE_ENV+=	X11BASE=${X11BASE}
 
 pre-build:
-	@ ${RM} ${WRKSRC}/ext.so
-	@ ${CP} ${WRKSRC}/Makefiles/Makefile.freebsd ${WRKSRC}
+#	@ ${RM} ${WRKSRC}/ext.so
+	@ ${CP} ${WRKSRC}/Makefiles/Makefile.freebsd_gcc ${WRKSRC}
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
