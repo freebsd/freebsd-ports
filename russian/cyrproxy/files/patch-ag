@@ -1,0 +1,30 @@
+--- com_gw.c.orig	Sat May  3 20:57:20 1997
++++ com_gw.c	Mon Dec 21 21:19:58 1998
+@@ -169,7 +169,7 @@
+   int  cnt = 0; \
+   while(cnt < ENTLEN && *from && *from!=';' && !isspace(*from)) \
+      {\
+-	*to++=*str++;\
++	*to++=*from++;\
+         cnt++;\
+      }\
+      *to='\0';\
+@@ -222,12 +222,15 @@
+     if(!strncasecmp(buf,"Content-Type:",13))
+       {
+ 	parseContentType(buf+13,ctype,ocharset,garbage);
+-	fprintf(stderr,"Content: %s, charset: %s\n",ctype,ocharset);
++// if enabled, crushes into the mail - mailers get crazy
++// fprintf(stderr,"Content: %s, charset: %s\n",ctype,ocharset);
+ 	if(!strcasecmp(ctype,"text/plain") && strcasecmp(ocharset,"us-ascii")
+ 	   && strlen(garbage)==0)
+ 	  {
+-	    fprintf(stderr,"Content: %s, charset: %s\n",ctype,ocharset);
+-	    sprintf(buf,"Content-Type: text/plain; charset=%s\n",charset);
++// if enabled, crushes into the mail - mailers get crazy
++//   fprintf(stderr,"Content: %s, charset: %s\n",ctype,ocharset);
++// not everyone lives in the UNIX world... \r is still needed :)
++	    sprintf(buf,"Content-Type: text/plain; charset=%s\r\n",charset);
+ 	    blen = strlen(buf);
+ 	  }
+       }
