@@ -27,7 +27,7 @@ share/gnome/help/grhino/C/figures/pattern.png
 share/gnome/help/grhino/C/figures/prefs-ai.png
 share/gnome/help/grhino/C/figures/prefs-board.png
 share/gnome/help/grhino/C/figures/prefs-theme.png
-share/locale/en_GB/LC_MESSAGES/grhino.mo
+@comment share/locale/en_GB/LC_MESSAGES/grhino.mo
 @exec scrollkeeper-install -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/help/grhino/C/grhino.xml
