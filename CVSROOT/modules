@@ -402,6 +402,7 @@ august		ports/www/august
 aumix		ports/audio/aumix
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
+authforce	ports/security/authforce
 autobook	ports/devel/autobook
 autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
