@@ -14,6 +14,8 @@ DISTNAME=	zh-chinput-2.1
 
 MAINTAINER=	phj@cn.FreeBSD.org
 
+BROKEN=		"Patch fails"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
