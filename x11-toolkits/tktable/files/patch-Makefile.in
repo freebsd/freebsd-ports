@@ -1,0 +1,32 @@
+--- Makefile.in.orig	Wed Oct 16 09:40:33 2002
++++ Makefile.in	Wed Jul 23 12:19:40 2003
+@@ -98,6 +98,7 @@
+ datadir		= @datadir@
+ mandir		= @mandir@
+ includedir	= @includedir@
++docsdir		= %%DOCSDIR%%
+ 
+ DESTDIR		=
+ 
+@@ -241,7 +242,6 @@
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+ 	$(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir)
+ 	$(INSTALL_DATA) $(srcdir)/license.txt $(DESTDIR)$(pkglibdir)
+-	$(INSTALL_DATA) $(srcdir)/README.txt $(DESTDIR)$(pkglibdir)
+ 
+ #========================================================================
+ # This rule installs platform-independent files, such as header files.
+@@ -255,10 +255,11 @@
+ #========================================================================
+ 
+ install-doc: doc
+-	@mkdir -p $(DESTDIR)$(pkglibdir)/html
++	@mkdir -p $(docsdir)/html
++	$(INSTALL_DATA) $(srcdir)/README.txt $(docsdir)
+ 	@list='$(PKG_MAN_PAGES)'; for p in $$list; do \
+ 		html=`basename $$p|sed -e 's/.[^.]*$$//'`.html; \
+-	  	$(INSTALL_DATA) $(srcdir)/doc/$$html $(DESTDIR)$(pkglibdir)/html/; \
++		$(INSTALL_DATA) $(srcdir)/doc/$$html $(docsdir)/html/; \
+ 	done
+ 
+ html:
