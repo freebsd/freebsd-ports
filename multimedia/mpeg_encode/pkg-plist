@@ -1,4 +1,3 @@
 bin/mpeg_encode
-man/man1/mpeg_encode.1.gz
 share/doc/mpeg_encode/users-guide.ps
 share/doc/mpeg_encode/template.param

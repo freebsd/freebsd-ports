@@ -3,7 +3,7 @@
 # Date created:         Wed Jul 31 21:59:42 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/02 08:25:02 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:29:16 asami Exp $
 #
 
 DISTNAME=	splitmpg
@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erich@FreeBSD.org
+
+MAN1=		splitmpeg.1
+MANCOMPRESSED=	yes
 
 NO_WRKSUBDIR=	yes
 

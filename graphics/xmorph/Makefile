@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1998/05/07 16:18:50 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/08/05 09:31:17 asami Exp $
 #
 
 DISTNAME=	xmorph-11sep97
@@ -13,6 +13,9 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	graphics
 
 MAINTAINER=	erich@FreeBSD.org
+
+MAN1=		xmorph.1
+MANCOMPRESSED=	yes
 
 USE_X_PREFIX=	yes
 

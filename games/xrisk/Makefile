@@ -3,7 +3,7 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.10 1997/01/03 09:37:42 obrien Exp $
+# $Id: Makefile,v 1.11 1998/08/05 09:31:01 asami Exp $
 #
 
 DISTNAME=       xrisk-2.13
@@ -12,6 +12,9 @@ MASTER_SITES=   ftp://geocub.greco-prog.fr/pub/Games/
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
+
+MAN6=		xrisk.6
+MANCOMPRESSED=	yes
 
 USE_X_PREFIX=	yes
 RESTRICTED=	"Possible trademark infringement"

@@ -3,7 +3,7 @@
 # Date created:         25 July 1996
 # Whom:                 matt@bdd.net
 #
-# $Id: Makefile,v 1.3 1998/02/01 22:25:50 fenner Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:51 asami Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://sidehack.gweep.net/pub/gweep_progs/ \
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 
 MAINTAINER=	matt@bdd.net
+
+MAN1=		xtacy.1
+MANCOMPRESSED=	yes
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Xtacy

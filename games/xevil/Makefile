@@ -3,6 +3,8 @@
 # Date created:         6 May 1995
 # Whom:                 jmz
 #
+# $Id$
+#
 
 PKGNAME=	xevil-1.5
 CATEGORIES=	games
@@ -11,6 +13,9 @@ MASTER_SITE_SUBDIR=	games/xevil1.5
 DISTFILES=	xevil1.5.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+
+MAN6=		xevil.6
+MANCOMPRESSED=	yes
 
 NO_WRKSUBDIR=	yes
 

@@ -3,16 +3,19 @@
 # Date created:         29-March-1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1996/07/12 08:56:52 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/17 08:44:41 obrien Exp $
 #
 
 DISTNAME=	html2latex-0.9c
 PKGNAME=	html2latex-0.9
 CATEGORIES=	print
-# i can't seem to find the original dist site
+# I can't seem to find the original dist site
 MASTER_SITES=	ftp://ftp.germany.eu.net/pub/infosystems/www/ncsa/Web/Mosaic/Contrib/
 DISTFILES=	html2latex-0.9c.tar.Z
 
 MAINTAINER=	joerg@FreeBSD.org
+
+MAN1=		html2latex.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

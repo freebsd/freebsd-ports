@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1996
 # Whom:			David Leonard <leonard@dstc.edu.au>
 #
-# $Id: Makefile,v 1.3 1998/05/03 17:54:39 steve Exp $
+# $Id: Makefile,v 1.4 1998/08/07 22:28:02 asami Exp $
 #
 
 DISTNAME=	dclock
@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+MAN1=		dclock.1
+MANCOMPRESSED=	yes
 
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
