@@ -15,12 +15,12 @@ MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
-ONLY_FOR_ARCHS=	i386 sparc64
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
+
+ONLY_FOR_ARCHS=	i386 sparc64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
@@ -39,7 +39,7 @@ MAN8=		asterisk.8
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${ARCH} != "i386"
 WITHOUT_H323=	1
 WITHOUT_ZAPTEL=	1
 .endif
@@ -55,7 +55,7 @@ PLIST_SUB+=	WITH_H323=""
 
 .if defined(WITHOUT_ZAPTEL)
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
-PLIST_SUB+=     WITH_ZAPTEL="@comment "
+PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
