@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Mar 18 15:40:51 2003
-+++ Makefile.in	Wed Sep 24 20:17:07 2003
-@@ -233,7 +233,7 @@
+--- Makefile.in.orig	Thu Oct 16 00:31:17 2003
++++ Makefile.in	Thu Oct 16 15:39:51 2003
+@@ -234,7 +234,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -9,16 +9,16 @@
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -706,17 +706,13 @@
+@@ -707,17 +707,13 @@
  
  install-dirs-client: install-dirs
  	-mkdir -p $(helpdir)
--	-mkdir -p $(mansdir)/man1
+-	-mkdir -p $(mandir)/man1
  
  install-dirs-server: install-dirs
  	-mkdir -p $(logsdir)
--	-mkdir -p $(mansdir)/man5
--	-mkdir -p $(mansdir)/man8
+-	-mkdir -p $(mandir)/man5
+-	-mkdir -p $(mandir)/man8
  
  doc-install:
  	-$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
@@ -27,7 +27,7 @@
  	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
-@@ -740,12 +736,8 @@
+@@ -741,12 +737,8 @@
  	fi
  
  etc-install-client:
@@ -37,7 +37,7 @@
 -	    	$(etcdir)/silc.conf; \
 -	  fi; \
 -	fi
-+	    	$(etcdir)/silc.conf.sample
++		$(etcdir)/silc.conf.sample
  
  etc-install-server:
  	-@if test '!' -f $(etcdir)/silcd.conf ; then \
