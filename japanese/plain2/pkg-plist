@@ -1,8 +1,8 @@
 bin/plain2
-lib/plain2/OHP.p2
-lib/plain2/OHP_t.p2
-lib/plain2/header.p2
-lib/plain2/header_t.p2
-lib/plain2/jbook.p2
-lib/plain2/supsnum.p2
-@dirrm lib/plain2
+share/plain2/OHP.p2
+share/plain2/OHP_t.p2
+share/plain2/header.p2
+share/plain2/header_t.p2
+share/plain2/jbook.p2
+share/plain2/supsnum.p2
+@dirrm share/plain2
