@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -183,6 +184,14 @@ PLIST_SUB+=		PDB:=""
 PLIST_SUB+=		PDB:="@comment "
 .endif
 
+.if defined(WITH_PSION)
+LIB_DEPENDS+=		psiconv.10:${PORTSDIR}/converters/psiconv
+CONFIGURE_ARGS+=	--with-psion
+PLIST_SUB+=		PSION:=""
+.else
+PLIST_SUB+=		PSION:="@comment "
+.endif
+
 .if defined(WITH_SDW)
 USE_GNOME+=		libgsf
 CONFIGURE_ARGS+=	--enable-sdw
@@ -325,6 +334,9 @@ pre-everything::
 .endif
 .if !defined(WITH_PDB)
 	@${ECHO_MSG} "WITH_PDB=yes		Import/export Palm Database files."
+.endif
+.if !defined(WITH_PSION)
+	@${ECHO_MSG} "WITH_PSION=yes		Import/export Psion files."
 .endif
 .if !defined(WITH_SDW)
 	@${ECHO_MSG} "WITH_SDW=yes		Import StarOffice 5.x files."
