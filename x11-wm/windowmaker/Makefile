@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.80.0
-PORTREVISION=	1
+PORTVERSION=	0.80.1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -26,9 +25,10 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -62,9 +62,9 @@ pre-extract:
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
-	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
-	@${PERL} -pi -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
+	@${REINPLACE_CMD} -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
+	@${REINPLACE_CMD} -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
 		${WRKSRC}/WindowMaker/*menu*
 
 post-install:
