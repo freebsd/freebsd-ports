@@ -22,7 +22,7 @@ upgrades.
   File Version=4
 
   Other changes you are may find in changelog, its
-  available at http://www.opera.com/linux/changelogs/752/
+  available at http://www.opera.com/freebsd/changelogs/752/
 
 20040706:
   AFFECTS: users of Python bindings for textproc/lib{xml2,xslt} libraries
