@@ -1,0 +1,8 @@
+Yet another implementation of an anonymous class with per object
+overrideable methods, but with the added attraction of sort of working
+dispatch to the parent class's method.
+
+WWW: http://search.cpan.org/search?dist=Class-Inner
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
