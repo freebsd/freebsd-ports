@@ -42,5 +42,6 @@ do-build:
 post-install:
 	-@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/python/* ${EXAMPLESDIR}
 
 .include "${MASTERDIR}/Makefile"
