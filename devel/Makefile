@@ -135,6 +135,7 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glade--
+    SUBDIR += glg
     SUBDIR += glib12
     SUBDIR += glib13
     SUBDIR += global
