@@ -9,7 +9,7 @@ PORTNAME=	qmail
 PORTVERSION?= 	${QMAIL_VERSION}
 PORTREVISION?=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://cr.yp.to/software/ \
+MASTER_SITES+=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
