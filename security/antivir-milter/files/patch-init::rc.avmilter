@@ -8,8 +8,8 @@
 -		/usr/sbin/avmilter -p inet:3333@localhost
 +		if [ -x %%PREFIX%%/sbin/avmilter ]; then
 +			umask 0077
-+			rm -f /var/spool/avmilter/avmilter.sock
-+			%%PREFIX%%/sbin/avmilter \
++			/bin/rm -f /var/spool/avmilter/avmilter.sock
++			/usr/sbin/daemon -f %%PREFIX%%/sbin/avmilter \
 +				-C %%PREFIX%%/etc/avmilter.conf \
 +				-p local:/var/spool/avmilter/avmilter.sock &
 +			umask 0022
@@ -20,8 +20,8 @@
 -		echo -n "Shutting down AntiVir Milter."
 -		killall -TERM /usr/sbin/avmilter
 -		echo
-+		killall -TERM avmilter
-+		rm -f /var/spool/avmilter/avmilter.sock
++		/usr/bin/killall -TERM avmilter
++		/bin/rm -f /var/spool/avmilter/avmilter.sock
 +		echo -n " antivir-milter"
  		;;
      restart)

@@ -9,17 +9,54 @@
  queue="`egrep -i '^[Ss][Pp][Oo][Oo][Ll][Dd][Ii][Rr]' ${configuration} | awk '{print $2;}'`"
  queue_set=0
  pname="`basename $0`"
-@@ -48,6 +48,13 @@
- data=
+@@ -49,6 +49,15 @@
  systeme="`uname`"
  date_param="-d"
-+
-+# Make sure the user running this program is root.
+ 
++# Make sure the user running this program is root or the avmilter user.
 +procowner=${procowner:-`/usr/bin/id -u`}
-+if [ "$procowner" != "0" ]; then
-+	echo "${pname}: you must be the super-user (uid 0) to use this utility."
++user="`egrep -i '^user' $configuration | awk '{print $2;}'`"
++uid="`/usr/bin/id -u "$user"`"
++if [ "$procowner" != "0" -a "$procowner" != "$uid" ]; then
++	echo "${pname}: you must be root (uid 0) or the avmilter user to run this utility."
 +	exit 2
 +fi
- 
++
  usage() {
      echo "${pname} usage:"
+     echo "    ${pname} [--queue=DIR] "
+@@ -124,7 +133,7 @@
+         data=`/bin/ls "${queue}"/*/[Dd]f-"${id}"`
+        echo "ctor: ${ctrl} ${data}" 
+         if [ ! -f "${data}" ] ; then
+-            echo "${pname}: there is no data  file id '${id}'"\
++            echo "${pname}: there is no data file id '${id}'"\
+                  "in queue '$queue'."
+             exit 3            
+         fi
+@@ -136,9 +145,13 @@
+         bnam="`basename ${ctrl}`"
+         case $newstate in
+         R)
+-            ( /bin/rm "${ctrl}" && /bin/rm "${data}" ) \
+-            && echo "${pname}: message id '${id}' removed." \
+-            || echo "${pname}: could not remove message id '${id}'."
++            if ( /bin/rm "${ctrl}" && /bin/rm "${data}" ) > /dev/null 2>&1 ; then
++                    echo "${pname}: message id '${id}' removed."
++                    exit 0
++                else
++                    echo "${pname}: could not remove message id '${id}'."
++                    exit 3
++                fi
+             ;;
+         *)
+             Qtrl="`echo $bnam|sed -e 's/^.\(.*\)$/'${newstate}'\1/'`"
+@@ -179,7 +192,7 @@
+             group=`egrep -i '^group' "$configuration"|awk '{print $2;}'`
+             if [ -f "${data}" ] ; then
+                 if /bin/ls "${queue}"/*/??-"${id}" > /dev/null 2>&1 ; then
+-                    echo "${pname}: there is already files with id '${id}'"
++                    echo "${pname}: there are already files with id '${id}'"
+                     echo "${pblan}  in queue '${queue}'."
+                     exit 3
+                 else
