@@ -1,0 +1,11 @@
+etc/ruboard/README
+etc/ruboard/example/ruboard.cf
+etc/ruboard/example/ruboard.html
+etc/ruboard/example/faq.html
+libexec/ruboard/rubadmin.pl
+libexec/ruboard/ruboard.pl
+libexec/ruboard/rublib.pl
+libexec/ruboard/rubstub
+@dirrm libexec/ruboard
+@dirrm etc/ruboard/example
+@dirrm etc/ruboard
