@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.81.0
+PORTVERSION=	0.83.0
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -56,8 +56,8 @@ post-patch:
 		s|<(db.h>)|<db4/\1|'
 	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/ForcejoinGDL.pl
+	@${PERL} -pi -e 's|/usr/bin/env perl|${PERL}|' \
+		${WRKSRC}/GDLjoiner
 
 pre-build:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
@@ -80,7 +80,7 @@ do-install:
 .endfor
 .endif
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/ForcejoinGDL.pl \
+	@${INSTALL_SCRIPT} ${WRKSRC}/GDLjoiner \
 		${PREFIX}/share/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hublist ${PREFIX}/bin/dc_hublist

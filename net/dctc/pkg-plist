@@ -1,6 +1,6 @@
 bin/dc_hublist
 bin/dctc
-%%PORTDOCS%%share/dctc/ForcejoinGDL.pl
+%%PORTDOCS%%share/dctc/GDLjoiner
 %%PORTDOCS%%share/doc/dctc/COPYING
 %%PORTDOCS%%share/doc/dctc/ChangeLog
 %%PORTDOCS%%share/doc/dctc/Documentation/BerkeleyDB
