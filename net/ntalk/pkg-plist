@@ -1,4 +1,5 @@
 bin/ntalk
+%%PORTDOCS%%share/doc/ntalk/AUTHORS
 %%PORTDOCS%%share/doc/ntalk/COPYING
 %%PORTDOCS%%share/doc/ntalk/ChangeLog
 %%PORTDOCS%%share/doc/ntalk/INSTALL
