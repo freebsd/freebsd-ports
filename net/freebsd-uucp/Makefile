@@ -24,6 +24,7 @@ VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
 	uucp/uucp/uucp.1 uucp/uux/uux.1 uucp/uuxqt/uuxqt.8
 FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \
 	etc/periodic/weekly/300.uucp
+BPKGNAME=	base-uucp-1.06.1
 
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
@@ -80,5 +81,18 @@ post-install:
 upgrade:
 	@${ECHO} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
 	@${CP} -rp /etc/uucp ${PREFIX}/etc/uucp
+
+base-package:
+	@if [ ! -d ${PKG_DBDIR}/${BPKGNAME} ]; then \
+		${ECHO_MSG} "===>   Registering installation for ${BPKGNAME}"; \
+		${MKDIR} ${PKG_DBDIR}/${BPKGNAME}; \
+		${PKG_CMD} -v -c ${FILESDIR}/pkg-comment \
+			-d ${FILESDIR}/pkg-descr -f ${FILESDIR}/pkg-plist \
+			-p / -o ${PKGORIGIN} -O ${BPKGNAME} \
+			> ${PKG_DBDIR}/${BPKGNAME}/+CONTENTS; \
+		${CP} ${FILESDIR}/pkg-descr ${PKG_DBDIR}/${BPKGNAME}/+DESC; \
+		${CP} ${FILESDIR}/pkg-comment \
+			${PKG_DBDIR}/${BPKGNAME}/+COMMENT; \
+	fi
 
 .include <bsd.port.mk>
