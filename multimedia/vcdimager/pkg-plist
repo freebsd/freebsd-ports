@@ -6,15 +6,3 @@ bin/vcdxbuild
 bin/vcdxgen
 bin/vcdxrip
 bin/vcdxminfo
-@unexec install-info --delete %D/info/vcdimager.info %D/info/dir
-@unexec install-info --delete %D/info/vcddump.info %D/info/dir
-@unexec install-info --delete %D/info/vcdxrip.info %D/info/dir
-info/vcdimager.info
-info/vcdimager.info-1
-info/vcdimager.info-2
-info/vcdimager.info-3
-info/vcddump.info
-info/vcdxrip.info
-@exec install-info %D/info/vcdimager.info %D/info/dir
-@exec install-info %D/info/vcddump.info %D/info/dir
-@exec install-info %D/info/vcdxrip.info %D/info/dir

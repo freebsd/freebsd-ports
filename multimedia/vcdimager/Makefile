@@ -23,7 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		cdxa2mpeg.1 vcdimager.1 vcdxminfo.1 vcdxrip.1 vcdxgen.1 vcdxbuild.1 \
-		vcddebug.1 vcddump.1
+MAN1=		cdxa2mpeg.1 vcdimager.1 vcdxminfo.1 vcdxrip.1 vcdxgen.1 \
+		vcdxbuild.1 vcddebug.1 vcddump.1
+INFO=		vcdimager vcddump vcdxrip
 
 .include <bsd.port.mk>
