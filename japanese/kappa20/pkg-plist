@@ -62,9 +62,11 @@
 %%FONTSDIR%%/vk20bi.pcf.gz
 %%FONTSDIR%%/vk20m.pcf.gz
 %%FONTSDIR%%/vk20mi.pcf.gz
-%%PORTDOCS%%share/doc/ja/k20fonts/README.euc-jp
-%%PORTDOCS%%@dirrm share/doc/ja/k20fonts
+%%PORTDOCS%%%%DOCSDIR%%/README.euc-jp
+%%PORTDOCS%%%%DOCSDIR%%/fonts.alias
+@dirrm %%DOCSDIR%%
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@exec cat %D/%%DOCSDIR%%/fonts.alias >> %D/%%FONTSDIR%%/fonts.alias
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
