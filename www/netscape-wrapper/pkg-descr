@@ -1,0 +1,13 @@
+Netscape Wrapper
+        (c) 1998,1999 Dave Cinege, H. Peter Anvin, and Red Hat, Inc.
+            2000 Akinori MUSHA <knu@FreeBSD.org>, modified for FreeBSD.
+
+This wrapper first attempts to open the option in a running
+netscape. If no netscape is running, one is executed with the option
+as the starting window.
+
+The command line options are extended to allow opening New Messages
+window, Messenger Mailbox, Collabra Disscussions, Composer, and so on.
+
+--
+Akinori MUSHA <knu@FreeBSD.org>
