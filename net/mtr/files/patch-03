@@ -5,7 +5,7 @@
  mtr: $(mtr_OBJECTS) $(mtr_DEPENDENCIES)
  	@rm -f mtr
 -	$(LINK) $(mtr_LDFLAGS) $(mtr_OBJECTS) $(mtr_LDADD) $(LIBS)
-+	$(LINK) $(mtr_LDFLAGS) $(mtr_OBJECTS) $(mtr_LDADD) -mytinfo $(LIBS)
++	$(LINK) $(mtr_LDFLAGS) $(mtr_OBJECTS) $(mtr_LDADD) -lmytinfo $(LIBS)
  
  install-man8:
  	$(mkinstalldirs) $(DESTDIR)$(man8dir)
