@@ -2,9 +2,9 @@ bin/angband
 share/games/angband/lib/apex/delete.me
 share/games/angband/lib/apex/scores.raw
 share/games/angband/lib/bone/delete.me
-share/games/angband/lib/data/delete.me
 share/games/angband/lib/data/artifact.raw
 share/games/angband/lib/data/cost_adj.raw
+share/games/angband/lib/data/delete.me
 share/games/angband/lib/data/ego_item.raw
 share/games/angband/lib/data/flavor.raw
 share/games/angband/lib/data/limits.raw
@@ -32,19 +32,19 @@ share/games/angband/lib/edit/terrain.txt
 share/games/angband/lib/edit/vault.txt
 share/games/angband/lib/file/dead.txt
 share/games/angband/lib/file/news.txt
-share/games/angband/lib/help/help.hlp
 share/games/angband/lib/help/attack.txt
 share/games/angband/lib/help/birth.txt
 share/games/angband/lib/help/command.txt
 share/games/angband/lib/help/dungeon.txt
 share/games/angband/lib/help/general.txt
+share/games/angband/lib/help/help.hlp
 share/games/angband/lib/help/option.txt
 share/games/angband/lib/help/playing.txt
 share/games/angband/lib/help/version.txt
 share/games/angband/lib/info/delete.me
-share/games/angband/lib/pref/flvr-xxx.prf
+share/games/angband/lib/pref/flvr-dvg.prf
 share/games/angband/lib/pref/flvr-new.prf
-share/games/angband/lib/pref/font.prf
+share/games/angband/lib/pref/flvr-xxx.prf
 share/games/angband/lib/pref/font-ami.prf
 share/games/angband/lib/pref/font-dos.prf
 share/games/angband/lib/pref/font-ibm.prf
@@ -52,8 +52,9 @@ share/games/angband/lib/pref/font-mac.prf
 share/games/angband/lib/pref/font-win.prf
 share/games/angband/lib/pref/font-x11.prf
 share/games/angband/lib/pref/font-xxx.prf
-share/games/angband/lib/pref/graf.prf
+share/games/angband/lib/pref/font.prf
 share/games/angband/lib/pref/graf-ami.prf
+share/games/angband/lib/pref/graf-dvg.prf
 share/games/angband/lib/pref/graf-gcu.prf
 share/games/angband/lib/pref/graf-ibm.prf
 share/games/angband/lib/pref/graf-lsl.prf
@@ -62,8 +63,8 @@ share/games/angband/lib/pref/graf-new.prf
 share/games/angband/lib/pref/graf-win.prf
 share/games/angband/lib/pref/graf-x11.prf
 share/games/angband/lib/pref/graf-xxx.prf
+share/games/angband/lib/pref/graf.prf
 share/games/angband/lib/pref/message.prf
-share/games/angband/lib/pref/pref.prf
 share/games/angband/lib/pref/pref-acn.prf
 share/games/angband/lib/pref/pref-ami.prf
 share/games/angband/lib/pref/pref-emx.prf
@@ -71,18 +72,24 @@ share/games/angband/lib/pref/pref-gcu.prf
 share/games/angband/lib/pref/pref-mac.prf
 share/games/angband/lib/pref/pref-win.prf
 share/games/angband/lib/pref/pref-x11.prf
-share/games/angband/lib/pref/user.prf
+share/games/angband/lib/pref/pref.prf
 share/games/angband/lib/pref/user-mac.prf
+share/games/angband/lib/pref/user.prf
+share/games/angband/lib/pref/xtra-dvg.prf
 share/games/angband/lib/pref/xtra-new.prf
 share/games/angband/lib/pref/xtra-xxx.prf
 share/games/angband/lib/save/delete.me
+share/games/angband/lib/script/birth.lua
+share/games/angband/lib/script/event.lua
 share/games/angband/lib/script/init.lua
 share/games/angband/lib/script/object.lua
 share/games/angband/lib/script/spell.lua
+share/games/angband/lib/script/store.lua
 share/games/angband/lib/script/test.lua
 share/games/angband/lib/script/trace.lua
 share/games/angband/lib/user/delete.me
 share/games/angband/lib/xtra/delete.me
+share/games/angband/lib/xtra/font/16x16.txt
 @dirrm share/games/angband/lib/apex
 @dirrm share/games/angband/lib/bone
 @dirrm share/games/angband/lib/data
@@ -94,6 +101,7 @@ share/games/angband/lib/xtra/delete.me
 @dirrm share/games/angband/lib/save
 @dirrm share/games/angband/lib/script
 @dirrm share/games/angband/lib/user
+@dirrm share/games/angband/lib/xtra/font
 @dirrm share/games/angband/lib/xtra
 @dirrm share/games/angband/lib
 @dirrm share/games/angband
