@@ -1,5 +1,6 @@
+bin/synce-serial-abort
 bin/synce-serial-chat
 bin/synce-serial-config
 bin/synce-serial-start
-bin/synce-serial-abort
 share/synce/synce-serial-common
+@dirrm share/synce
