@@ -1,0 +1,21 @@
+--- eltorito.c.orig	Mon May  5 15:46:11 1997
++++ eltorito.c	Mon May  5 16:11:42 1997
+@@ -33,6 +33,9 @@
+ #include "mkisofs.h"
+ #include "iso9660.h"
+ 
++#undef MIN
++#define MIN(a, b) (((a) < (b))? (a): (b))
++
+ static struct eltorito_validation_entry valid_desc;
+ static struct eltorito_defaultboot_entry default_desc;
+ 
+@@ -158,7 +161,7 @@
+      * but who really reads this stuff!
+      */
+     if (publisher)
+-	memcpy_max(valid_desc.id,  publisher, strlen(publisher));
++	memcpy_max(valid_desc.id,  publisher, MIN(31, strlen(publisher)));
+     
+     valid_desc.key1[0] = 0x55;
+     valid_desc.key2[0] = 0xAA;
