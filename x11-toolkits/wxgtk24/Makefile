@@ -3,7 +3,7 @@
 # Date created:		18 Jun 1999
 # Whom:			Alexander Langer <alex@cichlids.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	wxGTK-2.0.1

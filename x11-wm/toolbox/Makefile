@@ -3,7 +3,7 @@
 # Date created:		05 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/08/07 18:15:46 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	toolbox-0.4.3

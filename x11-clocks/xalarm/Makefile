@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:28:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xalarm-3.06

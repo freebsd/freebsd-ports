@@ -4,7 +4,7 @@
 # Date created:			  24th Feburary 1997
 # Whom:				  obrien@NUXI.com
 #
-# $Id: Makefile,v 1.7 1999/06/24 04:43:55 obrien Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	rclock-2.6.1

@@ -3,7 +3,7 @@
 # Date created:		24 April 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/04/30 09:08:10 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asclock-xlib-2.0.11

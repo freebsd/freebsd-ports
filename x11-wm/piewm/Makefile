@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.15 1998/10/04 04:03:17 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	piewm

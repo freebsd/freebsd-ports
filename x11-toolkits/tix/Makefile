@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.23 1999/04/12 08:53:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Tix4.1.0.006

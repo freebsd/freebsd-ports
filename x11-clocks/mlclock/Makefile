@@ -3,7 +3,7 @@
 # Date created:        December 05 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/22 22:32:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mlclock

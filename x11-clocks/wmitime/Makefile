@@ -3,7 +3,7 @@
 # Date created:		14 March 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/04/19 13:37:08 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmitime-0.3

@@ -3,7 +3,7 @@
 # Date created:		September 08, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/21 08:41:45 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	ttmkfdir
 PKGNAME=	ttmkfdir-0.0

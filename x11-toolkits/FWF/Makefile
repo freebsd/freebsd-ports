@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1999/07/04 20:41:48 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fwf-4.0

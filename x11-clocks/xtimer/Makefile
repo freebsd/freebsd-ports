@@ -3,7 +3,7 @@
 # Date created:		05 Apr 1997
 # Whom:			candy@fct.kgc.co.jp
 #
-# $Id: Makefile,v 1.5 1998/09/22 22:32:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtimer-8087

@@ -3,7 +3,7 @@
 # Date created:        4 September 1998
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/22 22:32:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	eyeclock-1.03

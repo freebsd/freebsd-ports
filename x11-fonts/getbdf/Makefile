@@ -3,7 +3,7 @@
 # Date created:         30 August 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:31:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       getbdf

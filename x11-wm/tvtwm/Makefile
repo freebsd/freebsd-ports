@@ -3,7 +3,7 @@
 # Date created:		5th December 1994
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.14 1998/12/01 23:29:58 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tvtwm.pl11

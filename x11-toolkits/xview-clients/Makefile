@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 ljo (orig)
 #
-# $Id: Makefile,v 1.18 1999/05/12 09:56:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xview3.2p1-X11R6

@@ -3,7 +3,7 @@
 # Date created:        20 Apr 1998
 # Whom:                J Han <hjh@best.com>
 #
-# $Id: Makefile,v 1.3 1998/09/22 22:32:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	t3d

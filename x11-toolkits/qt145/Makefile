@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.32 1999/02/26 19:40:26 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qt-1.42

@@ -3,7 +3,7 @@
 # Date created:				03/14/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.25 1999/05/27 02:25:12 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-python-1.0.3

@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.25 1999/04/12 10:16:38 kjc Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	BLT2.4h

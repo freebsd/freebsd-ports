@@ -3,7 +3,7 @@
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.15 1998/09/17 00:32:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fvwm-${FVWM_DISTVER}

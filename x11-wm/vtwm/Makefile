@@ -3,7 +3,7 @@
 # Date created:		21 December 1998
 # Whom:			bmah@ca.sandia.gov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	vtwm-5.4.5a

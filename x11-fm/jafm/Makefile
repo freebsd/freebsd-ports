@@ -3,7 +3,7 @@
 # Date created:                31 August 1998
 # Whom:                        brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.4 1998/08/30 15:47:10 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jafm-0.5

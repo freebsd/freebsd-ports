@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.17 1998/10/03 22:06:12 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	FileRunner-2.5

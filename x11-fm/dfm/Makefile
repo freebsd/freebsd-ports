@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.11 1999/05/01 03:00:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dfm-0.99.1

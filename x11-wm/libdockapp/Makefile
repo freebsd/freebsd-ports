@@ -3,7 +3,7 @@
 # Date created:		17 July 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/07/19 03:58:10 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	docklib-0.2

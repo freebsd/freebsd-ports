@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	itcl3.0.1

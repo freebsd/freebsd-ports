@@ -3,7 +3,7 @@
 # Date created:		14 April 1998
 # Whom:			Donald J. Maddox <dmaddox@conterra.com>
 #
-# $Id: Makefile,v 1.10 1999/08/28 02:17:32 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       X-Files-1.43

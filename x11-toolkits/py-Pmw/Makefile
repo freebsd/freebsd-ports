@@ -3,7 +3,7 @@
 # Date created:		03 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/12/15 08:13:05 tg Exp $
+# $FreeBSD$
 
 DISTNAME=	Pmw.0.8.1
 PKGNAME=	py-pmw-0.8.1

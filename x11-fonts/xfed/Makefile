@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.20 1999/05/31 04:48:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfed

@@ -3,7 +3,7 @@
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.38 1999/06/08 23:58:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icewm-0.9.48

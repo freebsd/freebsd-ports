@@ -3,7 +3,7 @@
 # Date created:        21 Nov 1998
 # Whom:                Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.6 1999/02/22 04:29:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	astime-2.1

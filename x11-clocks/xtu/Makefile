@@ -3,7 +3,7 @@
 # Date created:		17 Apr 1999
 # Whom:			runge@rostock.zgdv.de
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xtu-1.0

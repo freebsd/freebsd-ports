@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/08 14:09:31 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asclock-gtk-2.1.10beta

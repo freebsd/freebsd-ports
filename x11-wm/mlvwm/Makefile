@@ -3,7 +3,7 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.13 1999/01/12 16:51:02 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mlvwm089

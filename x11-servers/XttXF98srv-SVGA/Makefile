@@ -3,7 +3,7 @@
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@tutrp.tut.ac.jp>
 #
-# $Id: Makefile,v 1.6 1999/05/17 15:19:49 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xc

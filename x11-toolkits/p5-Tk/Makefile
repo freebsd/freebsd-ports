@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.23 1998/11/28 09:07:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Tk800.008

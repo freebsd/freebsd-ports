@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1996
 # Whom:			David Leonard <leonard@dstc.edu.au>
 #
-# $Id: Makefile,v 1.6 1998/09/22 22:32:06 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dclock

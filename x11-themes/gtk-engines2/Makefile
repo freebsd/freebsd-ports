@@ -3,7 +3,7 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/04/08 18:08:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtk-engines-0.5

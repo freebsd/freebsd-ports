@@ -3,7 +3,7 @@
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.11 1999/01/01 22:43:44 gpalmer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdaliclock-2.13

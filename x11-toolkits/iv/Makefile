@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.19 1999/01/26 02:40:21 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	3.1

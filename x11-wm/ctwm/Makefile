@@ -3,7 +3,7 @@
 # Date created:		13 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1998/10/04 04:03:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ctwm-3.5

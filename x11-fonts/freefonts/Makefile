@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 21:32:14 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1998/08/07 22:43:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	freefonts-0.10

@@ -3,7 +3,7 @@
 # Date Created:				7 nov 98
 # Whom:				 	Gilad Rom
 #
-# $Id: Makefile,v 1.7 1999/06/19 07:48:00 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkstep-1.6

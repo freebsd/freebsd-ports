@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			FURUSAWA, Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:28:03 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mouseclock-1.0

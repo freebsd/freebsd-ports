@@ -3,7 +3,7 @@
 # Date created:				12 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.4 1999/04/27 03:34:35 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	flwm-0.24

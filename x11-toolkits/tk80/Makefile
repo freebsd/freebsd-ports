@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1999/05/04 19:33:48 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tk8.0.5

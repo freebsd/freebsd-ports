@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.59 1999/07/17 03:50:11 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WindowMaker-0.60.0

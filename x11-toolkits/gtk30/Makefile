@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.49 1999/05/02 05:21:19 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtk+-1.2.3

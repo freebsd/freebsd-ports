@@ -3,7 +3,7 @@
 # Date created:		11 September 1998
 # Whom:			jabley@clear.co.nz
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 06:36:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Xfstt-0.9.10

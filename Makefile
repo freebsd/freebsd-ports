@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1999/07/23 09:36:50 asami Exp $
+# $FreeBSD$
 #
 
 SUBDIR += archivers

@@ -3,7 +3,7 @@
 # Date created:				27 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/10/20 01:25:55 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	EZFM-0.4-src

@@ -3,7 +3,7 @@
 # Date created:        5 March 1997
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.7 1998/10/15 20:44:20 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SlingShot2.1

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1999/04/30 09:43:35 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += asfiles

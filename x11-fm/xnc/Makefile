@@ -3,7 +3,7 @@
 # Date created:		5 February 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xnc-4.0.8.src

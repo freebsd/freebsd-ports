@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1998
 # Whom:			Yoshishige Arai <ryo2@on.rim.or.jp>
 #
-# $Id: Makefile,v 1.24 1998/11/23 22:35:42 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf

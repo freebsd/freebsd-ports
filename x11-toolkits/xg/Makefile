@@ -3,7 +3,7 @@
 # Date created:				3 December 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xg

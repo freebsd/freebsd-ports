@@ -3,7 +3,7 @@
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.7 1999/01/18 06:43:02 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmtime-1.0b2

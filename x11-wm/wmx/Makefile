@@ -3,7 +3,7 @@
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.6 1998/12/15 18:56:58 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmx-5sec6

@@ -3,7 +3,7 @@
 # Date created: 13 November 1997
 # Whom: Douglas Carmichael <dcarmich@mcs.com>
 #
-# $Id: Makefile,v 1.5 1998/11/23 22:54:25 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	amiwm0.20pl48

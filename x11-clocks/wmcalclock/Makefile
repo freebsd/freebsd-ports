@@ -3,7 +3,7 @@
 # Date created:        16 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/04/19 12:54:37 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmCalClock-1.25

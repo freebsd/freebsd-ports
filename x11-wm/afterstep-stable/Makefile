@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.33 1999/02/21 21:51:01 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	AfterStep-${AS_VERSION}

@@ -3,7 +3,7 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.11 1998/10/10 03:22:20 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkdesk-1.1

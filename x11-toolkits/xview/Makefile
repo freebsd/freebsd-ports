@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			ljo (orig)
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xview3.2p1-X11R6

@@ -3,7 +3,7 @@
 # Date created:                17 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.9 1999/03/15 01:20:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ASFiles-1.0

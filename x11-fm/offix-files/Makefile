@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:32:55 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Files-2.4

@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.27 1998/10/04 04:03:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fvwm-1.24r

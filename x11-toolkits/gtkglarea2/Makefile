@@ -3,7 +3,7 @@
 # Date created:        1 August 1999
 # Whom:                Michael Sardo <jaeger16@yahoo.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	gtkglarea-1.2.1

@@ -3,7 +3,7 @@
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.16 1999/05/04 22:26:56 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fvwm-2.2.2
