@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freebsd-uucp
-PORTVERSION=	1.07
+PORTVERSION=	1.07.1
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -27,6 +27,10 @@ BPKGNAME=	base-uucp-1.06.1
 
 # fix errros for -std=iso9899:1999 in FreeBSD 5.1
 MAKE_ENV+=	CSTD=gnu99
+
+.if defined(WITH_PAM)
+MAKE_ENV+=	WITH_PAM=${WITH_PAM}
+.endif
 
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
