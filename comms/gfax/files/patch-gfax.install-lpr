@@ -1,0 +1,14 @@
+--- gfax.install-lpr	Sun Dec 12 10:47:19 1999
++++ gfax.install-lpr.new	Sun Jan 20 21:17:31 2002
+@@ -10,9 +10,10 @@
+ #
+ BINDIR=/usr/bin
+ LPRBINDIR=/usr/bin
++PREFIX=%%PREFIX%%/bin
+ 
+ if [ ! -x $LPRBINDIR/lpr.dist ]; then
+ 	mv $LPRBINDIR/lpr $LPRBINDIR/lpr.dist
+-	ln -s $BINDIR/lpr.gfax $BINDIR/lpr
++	ln -s $PREFIX/lpr.gfax $BINDIR/lpr
+ 	chmod +x $BINDIR/lpr
+ fi

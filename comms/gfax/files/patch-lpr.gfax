@@ -1,0 +1,13 @@
+--- lpr.gfax	Sun Dec 12 10:47:16 1999
++++ lpr.gfax.new	Sun Jan 20 21:38:07 2002
+@@ -29,8 +29,9 @@
+ FAX=
+ SPOOL_DIR=/tmp
+ 
+-BINDIR=/usr/bin
++#BINDIR=/usr/bin
+ #BINDIR=/usr/local/bin
++BINDIR=%%PREFIX%%/bin
+ 
+ for i in $*
+ do

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Nov 21 21:50:20 2002
++++ src/Makefile.in	Thu Nov 21 21:50:42 2002
+@@ -109,7 +109,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES =          -I$(top_srcdir)/intl                            -I$(top_srcdir)/ftplib-3.1/linux                -DGLADEDIR=\""$(gladedir)"\"                    -DGFAX_DATADIR=\""$(pkgdatadir)"\"              $(GNOME_INCLUDEDIR)
++INCLUDES =          -I$(top_srcdir)/intl                            -I$(top_srcdir)/ftplib-3.1/linux                -DGLADEDIR=\""$(gladedir)"\"                    -DGFAX_DATADIR=\""$(pkgdatadir)"\"              $(GNOME_INCLUDEDIR) `gnome-config --cflags libglade`
+ 
+ 
+ bin_PROGRAMS = gfax
