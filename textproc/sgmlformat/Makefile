@@ -3,7 +3,7 @@
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
+# $Id: Makefile,v 1.10 1998/09/15 21:18:06 jfieber Exp $
 #
 
 DISTNAME=	sgmlformat-1.7
@@ -26,6 +26,10 @@ RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 
 USE_PERL5=	yes
+
+MAN1=		instant.1 sgmlfmt.1
+MAN5=		transpec.5
+MANCOMPRESSED=	yes
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE

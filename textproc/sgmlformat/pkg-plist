@@ -1,8 +1,5 @@
 bin/sgmlfmt
 bin/instant
-man/man1/sgmlfmt.1.gz
-man/man1/instant.1.gz
-man/man5/transpec.5.gz
 share/sgml/transpec/roff.cmap
 share/sgml/transpec/roff.sdata
 share/sgml/transpec/linuxdoc-roff.ts
