@@ -22,8 +22,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		intl.4:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		divxdecore.1:${PORTSDIR}/graphics/libdivxdecore-devel
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
 
