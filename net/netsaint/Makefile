@@ -22,6 +22,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
