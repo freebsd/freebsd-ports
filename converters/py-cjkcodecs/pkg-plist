@@ -6,6 +6,7 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_cp932.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_cp949.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_cp950.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_jisx0213.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_jp.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_kr.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_gb18030.so
@@ -14,9 +15,13 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_hz.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_1.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_2.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_3.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_kr.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_johab.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jis.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jisx0213.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_utf_7.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_utf_8.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/aliases.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/aliases.pyc
@@ -33,6 +38,9 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/cp950.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/cp950.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/cp950.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jisx0213.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jisx0213.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jisx0213.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.pyo
@@ -60,6 +68,9 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_2.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_2.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_2.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.pyo
@@ -74,6 +85,12 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/utf_7.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/utf_7.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/utf_7.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/utf_8.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/utf_8.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/utf_8.pyo
