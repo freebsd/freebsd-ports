@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,7 +45,7 @@ do-extract:
 
 post-patch:
 	${PERL} -i -p \
-		-e 's,"1\.5" "1\.6" "2\.0" "2\.1",${PYTHON_VERSION:S/^python//},g;' \
+		-e 's,"2\.1" "2\.0" "1\.6" "1\.5",${PYTHON_VERSION:S/^python//},g;' \
 			${WRKSRC}/configure
 	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
 	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
