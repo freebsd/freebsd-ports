@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diskprep
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/
 
@@ -15,7 +15,7 @@ COMMENT=	A program to prepare disks for use based on a config file
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
-MAKE_ENV+=	EXAMPLEDIR=${EXAMPLESDIR}
+MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
 MAN8=		diskprep.8
 MANCOMPRESSED=	yes
