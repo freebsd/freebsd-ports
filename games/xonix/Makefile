@@ -3,7 +3,7 @@
 # Date created:		3 May 1995
 # Whom:			joerg
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/05/03 23:33:08 joerg Exp $
 #
 
 WRKSRC=		${WRKDIR}/xonix
@@ -14,7 +14,7 @@ CATEGORIES+=	games
 
 MAINTAINER=	joerg@FreeBSD.org
 
-LIB_DEPENDS=	Xpm\\.:${PORTSDIR}/x11/xpm
+LIB_DEPENDS=	Xpm\\.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=      yes
 
