@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Lingua-EN-Sentence
-PORTVERSION=		0.23
+PORTVERSION=		0.25
 CATEGORIES=		textproc perl5
 MASTER_SITES=		http://www.cpan.org/authors/id/S/SH/SHLOMOY/
 PKGNAMEPREFIX=		p5-
@@ -17,5 +17,8 @@ PERL_CONFIGURE=		yes
 
 MAN3=			Lingua::EN::Sentence.3
 MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-extract:
+	@${RM} -f ${WRKSRC}/lib/Lingua/EN/Sentence.pm~
 
 .include <bsd.port.mk>
