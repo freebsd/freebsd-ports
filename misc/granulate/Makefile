@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:   granulate
 # Date created:			Feb 17, 2001
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
@@ -14,8 +13,10 @@ MASTER_SITES=	http://exe2bin.com/granulate/ \
 
 MAINTAINER=	jharris@widomaker.com
 
+USE_REINPLACE=	yes
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" \
+	${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
