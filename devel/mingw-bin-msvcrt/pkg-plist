@@ -1,5 +1,7 @@
 bin/mingwm10.dll
 i386-mingw32msvc/include/_mingw.h
+i386-mingw32msvc/include/accctrl.h
+i386-mingw32msvc/include/aclapi.h
 i386-mingw32msvc/include/assert.h
 i386-mingw32msvc/include/basetsd.h
 i386-mingw32msvc/include/basetyps.h
@@ -120,6 +122,7 @@ i386-mingw32msvc/include/rpcnterr.h
 i386-mingw32msvc/include/rpcproxy.h
 i386-mingw32msvc/include/scrnsave.h
 i386-mingw32msvc/include/setjmp.h
+i386-mingw32msvc/include/setupapi.h
 i386-mingw32msvc/include/share.h
 i386-mingw32msvc/include/shellapi.h
 i386-mingw32msvc/include/shlguid.h
@@ -135,6 +138,7 @@ i386-mingw32msvc/include/stdint.h
 i386-mingw32msvc/include/stdio.h
 i386-mingw32msvc/include/stdlib.h
 i386-mingw32msvc/include/string.h
+i386-mingw32msvc/include/strings.h
 i386-mingw32msvc/include/subauth.h
 i386-mingw32msvc/include/sys/fcntl.h
 i386-mingw32msvc/include/sys/file.h
@@ -189,6 +193,7 @@ i386-mingw32msvc/lib/crtst.o
 i386-mingw32msvc/lib/dllcrt1.o
 i386-mingw32msvc/lib/dllcrt2.o
 i386-mingw32msvc/lib/gcrt1.o
+i386-mingw32msvc/lib/gcrt2.o
 i386-mingw32msvc/lib/libadvapi32.a
 i386-mingw32msvc/lib/libcap.a
 i386-mingw32msvc/lib/libcoldname.a
@@ -203,6 +208,7 @@ i386-mingw32msvc/lib/libddraw.a
 i386-mingw32msvc/lib/libdinput.a
 i386-mingw32msvc/lib/libdlcapi.a
 i386-mingw32msvc/lib/libdplayx.a
+i386-mingw32msvc/lib/libsetupapi.a
 i386-mingw32msvc/lib/libdsetup.a
 i386-mingw32msvc/lib/libdsound.a
 i386-mingw32msvc/lib/libdxguid.a
