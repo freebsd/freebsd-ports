@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	thttpd-2.04
+DISTNAME=	thttpd-2.05
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@fix.no
 
