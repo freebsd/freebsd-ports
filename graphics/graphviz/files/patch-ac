@@ -1,5 +1,5 @@
---- cmd/lefty/os/unix/io.c.orig	Mon Mar 10 21:45:50 1997
-+++ cmd/lefty/os/unix/io.c	Tue Jan 27 20:45:50 1998
+--- src/cmd/lefty/os/unix/io.c.orig	Mon Mar 10 21:45:50 1997
++++ src/cmd/lefty/os/unix/io.c	Tue Jan 27 20:45:50 1998
 @@ -10,7 +10,11 @@
  #include <fcntl.h>
  #include <signal.h>

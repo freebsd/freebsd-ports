@@ -3,8 +3,7 @@ bin/dotty
 bin/lefty
 bin/lneato
 bin/neato
-lib/Tcldot/Tcldot.so
-lib/Tcldot/Tcldot.so.1.2
+lib/Tcldot/Tcldot.so.1.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/Tcldot/pkgIndex.tcl
@@ -14,11 +13,11 @@ share/doc/graphviz/gd.html
 share/doc/graphviz/lefty.ps.gz
 share/doc/graphviz/neatoguide.ps.gz
 share/doc/graphviz/tcldot.html
-share/lefty/dotty.lefty
-share/lefty/dotty_draw.lefty
-share/lefty/dotty_edit.lefty
-share/lefty/dotty_layout.lefty
-share/lefty/dotty_ui.lefty
+lib/lefty/dotty.lefty
+lib/lefty/dotty_draw.lefty
+lib/lefty/dotty_edit.lefty
+lib/lefty/dotty_layout.lefty
+lib/lefty/dotty_ui.lefty
 @dirrm lib/Tcldot
-@dirrm share/lefty
+@dirrm lib/lefty
 @dirrm share/doc/graphviz
