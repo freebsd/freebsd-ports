@@ -4,12 +4,11 @@
 # based on print/lilypond originally by trevor
 #
 # $FreeBSD$
-# $Id: Makefile,v 1.38 2004/01/12 18:00:21 patrick Exp $
+# $$Id: Makefile,v 1.41 2004/02/05 18:29:10 patrick Exp $
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.1.19
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/v2.1/ \
 		http://www.atabersk.de/lilypond/
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond.1 lilypond-bin.1 \
+MAN1=	abc2ly.1 convert-ly.1 etf2ly.1 lilypond.1 lilypond-bin.1 \
 	lilypond-book.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
 INFO=		lilypond lilypond-internals music-glossary
 
