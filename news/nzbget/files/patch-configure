@@ -1,0 +1,24 @@
+--- configure.orig	Thu Feb 26 15:49:46 2004
++++ configure	Tue Apr 13 22:55:38 2004
+@@ -1303,13 +1303,19 @@
+     CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+     PLATFORM="Linux"
+     ;;
+-  *-solaris*)
++  *-freebsd*)
++    LIBPREF="${LOCALBASE}"
++    CFLAGS="${CFLAGS}"
++    CPPFLAGS="${CPPFLAGS}"
++    PLATFORM="FreeBSD"
++    ;;
++   *-solaris*)
+     LIBPREF="/usr/local"
+     PLATFORM="SunOS"
+     ;;
+ esac
+ 
+-CFLAGS="-Wall -g -O0 -pipe" CPPFLAGS="-I. ${CPPFLAGS}"
++CFLAGS="${CFLAGS} -Wall" CPPFLAGS="-I. ${CPPFLAGS}"
+ 
+ ac_ext=cc
+ ac_cpp='$CXXCPP $CPPFLAGS'
