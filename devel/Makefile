@@ -209,6 +209,7 @@
     SUBDIR += libunicode
     SUBDIR += libusb
     SUBDIR += libuta
+    SUBDIR += libvanessa_logger
     SUBDIR += libxalloc
     SUBDIR += lincvs
     SUBDIR += linguist
