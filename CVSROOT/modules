@@ -6812,6 +6812,7 @@ py-gd		ports/graphics/py-gd
 py-gdbm		ports/databases/py-gdbm
 py-gdchart	ports/graphics/py-gdchart
 py-gnome	ports/x11-toolkits/py-gnome
+py-gnome2	ports/x11-toolkits/py-gnome2
 py-gnupg	ports/security/py-gnupg
 py-gnuplot	ports/math/py-gnuplot
 py-google	ports/net/py-google
