@@ -40,7 +40,7 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomehier libpanel
+USE_GNOME=	gnomehack gnomeprefix gnomehier libpanel bonobo gnomevfs
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
