@@ -3,17 +3,17 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1997/10/08 10:48:52 asami Exp $
+# $Id: Makefile,v 1.6 1997/11/26 22:49:14 pst Exp $
 #
 
-DISTNAME=	tk8.0p1
-PKGNAME=	tk-8.0.1
+DISTNAME=	tk8.0p2
+PKGNAME=	tk-8.0.2
 CATEGORIES=	x11 tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 
 MAINTAINER=	jkh@Freebsd.ORG
 
-LIB_DEPENDS=	tcl80\\.1\\.1:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80\\.1\\.2:${PORTSDIR}/lang/tcl80
 
 WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes

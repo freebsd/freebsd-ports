@@ -1,6 +1,6 @@
 bin/tclsh8.0
 lib/libtcl80.a
-lib/libtcl80.so.1.1
+lib/libtcl80.so.1.2
 @exec /sbin/ldconfig -m %B
 include/tcl8.0/tcl.h
 include/tcl8.0/unix/tclUnixPort.h
