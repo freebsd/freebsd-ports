@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1868
+PORTVERSION=	r1868	# 0.12.0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/196/
 
