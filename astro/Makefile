@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.5 1997/11/28 20:45:09 fenner Exp $
+# $Id: Makefile,v 1.6 1998/04/17 21:29:17 mph Exp $
 #
 
     SUBDIR += ephem
     SUBDIR += luna
     SUBDIR += saoimage
     SUBDIR += sattrack
+    SUBDIR += ssystem
     SUBDIR += stars
     SUBDIR += sunclock
     SUBDIR += xearth
