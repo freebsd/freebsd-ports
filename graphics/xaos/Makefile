@@ -17,6 +17,9 @@ DISTNAME=	XaoS-${PORTVERSION}
 MAINTAINER=	jkoshy@freebsd.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.endif
 
 USE_XLIB=	yes
 
@@ -24,6 +27,9 @@ USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  LDFLAGS=-L${LOCALBASE}/lib
+.if !defined(WITH_SVGALIB)
+CONFIGURE_ARGS=	--with-svga-driver=no
+.endif
 
 CFLAGS=		-DHAVE_SYS_PARAM_H \
 		-I${PREFIX}/include \

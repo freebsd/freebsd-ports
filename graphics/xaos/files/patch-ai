@@ -1,0 +1,11 @@
+--- configure--	Thu Mar  5 03:19:12 1998
++++ configure	Wed Feb 28 14:20:17 2001
+@@ -5522,7 +5522,7 @@
+ #define SVGA_DRIVER 1
+ EOF
+ 
+-  STICKY='chmod +s $(bindir)/xaos; chown root $(bindir)/xaos; chgrp root $(bindir)/xaos'
++  STICKY='chmod +s $(bindir)/xaos; chown root $(bindir)/xaos; chgrp wheel $(bindir)/xaos'
+   DRIVERDIRS="$DRIVERDIRS ui/ui-drv/svga"
+   DRIVERLIBS="$DRIVERLIBS lib/libuisvga.a"
+   if test "x$ac_cv_func_pthread_sighandler" = xyes; then 
