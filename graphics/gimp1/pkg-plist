@@ -1,5 +1,3 @@
-bin/escputil
-bin/escputil-1.2
 bin/gimp
 bin/gimp-1.2
 bin/gimp-config
@@ -1316,6 +1314,7 @@ share/gimp/scripts/pupi-button.scm
 share/gimp/scripts/rendermap.scm
 share/gimp/scripts/ripply-anim.scm
 share/gimp/scripts/round-corners.scm
+share/gimp/scripts/script-fu-util.scm
 share/gimp/scripts/sel-to-anim-img.scm
 share/gimp/scripts/select_to_brush.scm
 share/gimp/scripts/select_to_image.scm
@@ -1357,6 +1356,8 @@ share/gimp/tips/gimp_tips.ko.txt
 share/gimp/tips/gimp_tips.lt.txt
 share/gimp/tips/gimp_tips.pl.txt
 share/gimp/tips/gimp_tips.ru.txt
+share/gimp/tips/gimp_tips.sk.txt
+share/gimp/tips/gimp_tips.sl.txt
 share/gimp/tips/gimp_tips.txt
 share/gimp/tips/gimp_tips.tr.txt
 share/gimp/tips/gimp_tips.uk.txt
@@ -1447,6 +1448,10 @@ share/locale/pl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/pl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/pl/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/pl/LC_MESSAGES/gimp.mo
+share/locale/pt/LC_MESSAGES/gimp-libgimp.mo
+share/locale/pt/LC_MESSAGES/gimp-script-fu.mo
+share/locale/pt/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/pt/LC_MESSAGES/gimp.mo
 share/locale/pt_BR/LC_MESSAGES/gimp-libgimp.mo
 share/locale/pt_BR/LC_MESSAGES/gimp-script-fu.mo
 share/locale/pt_BR/LC_MESSAGES/gimp-std-plugins.mo
@@ -1463,6 +1468,10 @@ share/locale/sk/LC_MESSAGES/gimp-libgimp.mo
 share/locale/sk/LC_MESSAGES/gimp-script-fu.mo
 share/locale/sk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/sk/LC_MESSAGES/gimp.mo
+share/locale/sl/LC_MESSAGES/gimp-libgimp.mo
+share/locale/sl/LC_MESSAGES/gimp-script-fu.mo
+share/locale/sl/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/sl/LC_MESSAGES/gimp.mo
 share/locale/sv/LC_MESSAGES/gimp-libgimp.mo
 share/locale/sv/LC_MESSAGES/gimp-script-fu.mo
 share/locale/sv/LC_MESSAGES/gimp-std-plugins.mo

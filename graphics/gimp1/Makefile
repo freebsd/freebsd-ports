@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -21,7 +20,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		mpeg_lib-1.3.1.tar.gz:mpeg
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	the GNU Image Manipulation Program
+COMMENT=	The GNU Image Manipulation Program
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -43,7 +42,7 @@ LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${MPEG_WRKSRC}" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MPEG_DISTFILE=	${DISTDIR}/mpeg_lib-1.3.1.tar.gz
@@ -52,9 +51,22 @@ MPEG_CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 MPEG_CONFIGURE_ARGS=	--prefix=${PREFIX} \
 			--target=${ARCH}-unknown-freebsd${OSREL}
 
-MAN1=		escputil.1 gimp.1 gimptool.1 gimp-remote.1 \
-		escputil-1.2.1 gimp-1.2.1 gimp-remote-1.2.1 gimptool-1.2.1
+MAN1=		gimp.1 gimptool.1 gimp-remote.1 \
+		gimp-1.2.1 gimp-remote-1.2.1 gimptool-1.2.1
 MAN5=		gimprc.5 gimprc-1.2.5
+
+.if defined(WITHOUT_PRINT)
+CONFIGURE_ARGS+=	--disable-print
+.else
+LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "The Gimp has the following tunable option(s):"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
+	@${ECHO_MSG} ""
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

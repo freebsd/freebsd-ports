@@ -1,9 +1,9 @@
---- plug-ins/Makefile.in.orig	Fri Jul 27 21:36:22 2001
-+++ plug-ins/Makefile.in	Wed Aug 15 22:02:54 2001
-@@ -113,7 +113,7 @@
- HAVE_FINITE = @HAVE_FINITE@
+--- plug-ins/Makefile.in.orig	Mon May 19 19:07:31 2003
++++ plug-ins/Makefile.in	Sat May 31 19:44:38 2003
+@@ -111,7 +111,7 @@
+ GTK_CONFIG = @GTK_CONFIG@
+ GTK_LIBS = @GTK_LIBS@
  HAVE_GTK_DOC = @HAVE_GTK_DOC@
- HAVE_ISFINITE = @HAVE_ISFINITE@
 -HELPBROWSER = @HELPBROWSER@
 +#HELPBROWSER = @HELPBROWSER@
  HTML_DIR = @HTML_DIR@
