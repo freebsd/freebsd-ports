@@ -19,6 +19,7 @@ PATCHFILES=	remember-0.1.14-4.gz
 .endif
 
 MAINTAINER=	hendrik@scholz.net
+COMMENT=	A small and fast window manager based on BlackBox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	ocaml-
 PKGNAMESUFFIX=	${SFXGL}${SFXGNOME}${SFXGLADE}
 
 MAINTAINER=	rk@ronald.org
+COMMENT=	An Objective Caml interface to gtk+
 
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml

@@ -12,6 +12,7 @@ CATEGORIES=	x11-servers
 MAINTAINER=	nakaji@tutrp.tut.ac.jp
 
 RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
+COMMENT=	A X True Type Server for X98 MGA Graphics Cards
 
 ONLY_FOR_ARCHS=	i386
 

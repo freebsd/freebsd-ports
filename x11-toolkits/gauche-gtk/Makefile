@@ -15,6 +15,7 @@ DISTNAME=	Gauche-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	GTK2 binding for Gauche
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	xbae
 DISTNAME=	Xbae-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

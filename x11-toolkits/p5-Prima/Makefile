@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.prima.eu.org/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dmitry@karasik.eu.org
+COMMENT=	An extensible Perl toolkit for multi-platform GUI development
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \

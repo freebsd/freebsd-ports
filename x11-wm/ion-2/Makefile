@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 
 MAINTAINER=	ricci@cs.utah.edu
+COMMENT=	A window manager with a text-editorish, keyboard friendly interface
 
 MAN1=		ion.1x
 

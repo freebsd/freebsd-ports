@@ -12,6 +12,7 @@ MASTER_SITES=	http://developer.gnome.org/doc/API/
 DISTFILES=	glib-2.0-docs.tar.gz gtk-2.0-docs.tar.gz gdk-2.0-docs.tar.gz
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	API reference for the Gimp Toolkit v2.0 for X11 GUI
 
 NO_BUILD=	yes
 NO_CHECKSUM=	yes		# they're rebuild too often to keep track of

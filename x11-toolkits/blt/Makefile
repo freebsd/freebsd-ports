@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://tcltk.sourceforge.net/pub/tcltk/blt/ \
 DISTNAME=	BLT${PORTVERSION}
 
 MAINTAINER=	kjc@csl.sony.co.jp
+COMMENT=	A Tk extension (with shared libs)
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	Hackedbox is a small and fast window manager based on Blackbox
 
 MAN1=		hackedbox.1
 DOCS=		AUTHORS ChangeLog INSTALL README TODO

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-0.46-1
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.46
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	A dock-like applet for KDE3
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

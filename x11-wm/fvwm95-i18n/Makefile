@@ -24,6 +24,7 @@ PATCH_SITE_SUBDIR=	sada
 PATCHFILES=	fvwm95-2.0.43a-Autoconf.I18N.diff.gz
 
 MAINTAINER=	ryo2@on.rim.or.jp
+COMMENT=	Win95 lookalike fvwm2 window manager with an I18N patch
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons

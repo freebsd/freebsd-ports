@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	waimea
 
 MAINTAINER=	danfe@regency.nsu.ru
+COMMENT=	An X11 window manager designed for maximum efficiency
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 

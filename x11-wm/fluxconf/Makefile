@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 
 MAINTAINER=	hendrik@scholz.net
+COMMENT=	Fluxconf is a configuration program for the fluxbox window manager
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

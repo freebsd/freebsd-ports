@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www-personal.umich.edu/~larsb/larswm/
 
 MAINTAINER=	lab@fnurt.net
+COMMENT=	Tiling Window Manager for X
 
 USE_IMAKE=	yes
 

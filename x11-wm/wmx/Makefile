@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.42.org/pub/wmx/ \
 DISTNAME=	${PORTNAME}-5sec6
 
 MAINTAINER=	sec@42.org
+COMMENT=	Extended version of wm2 - A simple window manager for X
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fracture@allusion.net
+COMMENT=	Small window manager with themes and plugins
 
 .if defined(WANT_SOUND)
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound

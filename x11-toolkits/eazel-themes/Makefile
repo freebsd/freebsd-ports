@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.//g}
 
 MAINTAINER=	sobomax@altavista.net
+COMMENT=	A nice GTK+ and Sawfish themes created by Eazel
 
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish \
 		${X11BASE}/lib/gtk/themes/engines/libpixmap.so:${PORTSDIR}/x11-toolkits/gtk-engines

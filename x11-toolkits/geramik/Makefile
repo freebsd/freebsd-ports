@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.kde-look.org/content/files/ \
 DISTNAME=	3952-Geramik-${PORTVERSION}
 
 MAINTAINER=	haesu@TowardEX.com
+COMMENT=	A Keramik KDE styled theme for GTK
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	8.0/en/os/i386/SRPMS
 DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 
 MAINTAINER=	rzheka@users.sourceforge.net
+COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
 		libtool:${PORTSDIR}/devel/libtool

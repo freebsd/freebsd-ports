@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	storrsjm@email.uc.edu
+COMMENT=	Simple window manager with no fat library dependencies
 
 MAN1=		ratpoison.1
 USE_X_PREFIX=	yes
