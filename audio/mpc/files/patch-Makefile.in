@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Mar  3 21:42:59 2004
++++ Makefile.in	Wed Mar  3 21:43:15 2004
+@@ -503,7 +503,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-pkgdataDATA
++install-data-am: install-docDATA
+ 
+ install-exec-am:
+ 

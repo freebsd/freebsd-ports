@@ -1,6 +1,5 @@
 bin/mpc
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/mpc-bashrc
-@dirrm %%DOCSDIR%%
-@dirrm share/mpc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/mpc-bashrc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
