@@ -6,35 +6,18 @@
 #
 
 PORTNAME=	xgammon
-PORTVERSION=	0.98
+PORTVERSION=	0.98a
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_REDHAT}
-MASTER_SITE_SUBDIR=	linux/6.2/en/os/${MACHINE_ARCH}/SRPMS
-EXTRACT_SUFX=	-15.src.rpm
-
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	http://fawn.unibw-hamburg.de/steuer/xgammon/Downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A backgammon program for X11
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
-NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+
 MAN6=		xgammon.6
-
-PATCH_FILES=	${PORTNAME}-${PORTVERSION}-dirent.patch
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@rpm2cpio.pl ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; ${CPIO} -i)
-	@${TAR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
-
-pre-patch:
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-.for file in ${PATCH_FILES}
-	@${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${file}
-.endfor
+PLIST_FILES=	bin/xgammon lib/X11/app-defaults/XGammon \
+		lib/X11/xgammon/xgammon.db
+PLIST_DIRS=	lib/X11/xgammon
 
 .include <bsd.port.mk>
