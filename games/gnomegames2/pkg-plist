@@ -16,29 +16,6 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
-etc/gconf/gconf.xml.defaults/apps/freecell/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/freecell/option/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/freecell/score/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnometris/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnometris/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomine/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomine/geometry/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtali/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/iagno/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/mahjongg/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/same-gnome/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/freecell/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gataxx/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtali/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/iagno/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome/%gconf.xml
 etc/gconf/schemas/freecell.schemas
 etc/gconf/schemas/gataxx.schemas
 etc/gconf/schemas/gnect.schemas
@@ -710,6 +687,7 @@ share/gnome/xbill/pixmaps/toaster.xpm
 share/gnome/xbill/pixmaps/turbolinux.xpm
 share/gnome/xbill/pixmaps/wingdows.xpm
 share/locale/ar/LC_MESSAGES/gnome-games.mo
+share/locale/bg/LC_MESSAGES/gnome-games.mo
 share/locale/ca/LC_MESSAGES/gnome-games.mo
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
@@ -758,26 +736,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/glines/C/figures
 @dirrm share/gnome/help/glines/C
 @dirrm share/gnome/help/glines
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtali
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gataxx
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell
-@dirrm etc/gconf/gconf.xml.defaults/apps/same-gnome
-@dirrm etc/gconf/gconf.xml.defaults/apps/mahjongg
-@dirrm etc/gconf/gconf.xml.defaults/apps/iagno
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtali
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine/geometry
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnometris/options
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnometris
-@dirrm etc/gconf/gconf.xml.defaults/apps/freecell/score
-@dirrm etc/gconf/gconf.xml.defaults/apps/freecell/option
-@dirrm etc/gconf/gconf.xml.defaults/apps/freecell
