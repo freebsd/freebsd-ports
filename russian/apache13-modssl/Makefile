@@ -33,6 +33,15 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 
 MASTER_SITES_RA=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 			ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
+
+# New feature: conflicts
+CONFLICTS=	apache+ipv6-* \
+		apache+mod_ssl-* \
+		apache-* \
+		apache_fp-* \
+		publicfile-* \
+		apache+mod_ssl-*
+
 USE_OPENSSL=	YES
 USE_PERL5=	yes
 
