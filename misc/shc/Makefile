@@ -14,12 +14,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 ALL_TARGET=	shc
 
 MAN1=	shc.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS},g ; \
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS},g ; \
 		s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -13,12 +13,13 @@ MASTER_SITES=	http://www.cichon.com/floatator/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 .for f in floatator floatator_X_interface

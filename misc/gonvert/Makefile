@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
@@ -25,8 +26,8 @@ USE_GMAKE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${PORTNAME}
-	@${PERL} -pi -e "s,gnome-config,${GNOME_CONFIG},g ; \
+	@${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e "s,gnome-config,${GNOME_CONFIG},g ; \
 		s,--directory,-d --mode=755,g ; \
 		s,install ,install -c ,g" ${WRKSRC}/Makefile
 

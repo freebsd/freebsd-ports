@@ -17,12 +17,13 @@ MAINTAINER=		ports@FreeBSD.org
 LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib \
 			mikmod.2:${PORTSDIR}/audio/libmikmod
 
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=			${WRKDIR}/bb-1.3.0
 MAN1=			bb.1
 
 pre-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
 
 post-install:
 .if !defined(NOPORTDOCS)
