@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION= 	2.0.rc1
+PORTVERSION= 	2.0.rc3
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
-DISTNAME=	${PORTNAME}-2.0rc1
+DISTNAME=	${PORTNAME}-2.0rc3
 
 MAINTAINER=	ports@FreeBSD.org
 
