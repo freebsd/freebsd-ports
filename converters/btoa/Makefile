@@ -3,7 +3,7 @@
 # Date created:                      4 Apr 1996
 # Whom:                              Brent J. Nordquist <nordquist@platinum.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/09 03:58:12 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/11 05:49:14 obrien Exp $
 #
 
 DISTNAME=          btoa-5.2
@@ -18,13 +18,9 @@ MAINTAINER=        nordquist@platinum.com
 
 MAKE_FLAGS=        DESTDIR=${PREFIX} -f
 MAKEFILE=          Makefile.sun
+MAN1=		   btoa.1
 
 # Turn off the default from bsd.port.mk (-p0), which screws things up
 PATCH_DIST_STRIP=  
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/btoa.1
-.endif
 
 .include <bsd.port.mk>
