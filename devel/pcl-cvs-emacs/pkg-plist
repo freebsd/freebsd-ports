@@ -1,0 +1,30 @@
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-compat.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-compat.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-edit.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-edit.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-log.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-log.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-status.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/cvs-status.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-defs.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-defs.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-info.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-info.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-parse.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-parse.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-startup.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-util.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs-util.elc
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs.el
+%%EMACS_LIBDIR%%/site-lisp/pcl-cvs/pcl-cvs.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%PORT_SETUPEL%%
+@dirrm %%EMACS_LIBDIR%%/site-lisp/pcl-cvs
+%%PORTDOCDIR%%/ChangeLog
+%%PORTDOCDIR%%/FAQ
+%%PORTDOCDIR%%/NEWS
+%%PORTDOCDIR%%/README
+%%PORTDOCDIR%%/TODO
+@dirrm %%PORTDOCDIR%%
+@unexec install-info --delete %D/info/pcl-cvs.info %D/info/dir
+info/pcl-cvs.info
+@exec install-info %D/info/pcl-cvs.info %D/info/dir
