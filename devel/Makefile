@@ -1244,6 +1244,7 @@
     SUBDIR += subversion
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
+    SUBDIR += sunterlib
     SUBDIR += svk
     SUBDIR += swarm
     SUBDIR += swig11
