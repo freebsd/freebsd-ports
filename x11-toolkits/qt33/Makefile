@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.12 1997/07/17 15:13:01 max Exp $
+# $Id: Makefile,v 1.13 1997/10/27 23:15:07 jkh Exp $
 #
 
 DISTNAME=	qt-1.31
@@ -103,11 +103,11 @@ do-install:
 	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.31/bin/moc $(X11BASE)/bin
 	${INSTALL_DATA} $(WRKDIR)/qt-1.31/lib/libqt.so.1.31 $(X11BASE)/lib
 	${LDCONFIG} -m $(PREFIX)/lib
-	mkdir -p $(PREFIX)/include/X11/qt
+	${MKDIR} $(PREFIX)/include/X11/qt
 	${INSTALL_DATA} $(WRKDIR)/qt-1.31/include/* $(PREFIX)/include/X11/qt
 	${INSTALL_MAN} $(WRKDIR)/qt-1.31/man/man1/* $(PREFIX)/man/man1
 	${INSTALL_MAN} $(WRKDIR)/qt-1.31/man/man3/* $(PREFIX)/man/man3
-	mkdir -p ${PREFIX}/share/doc/qt
+	${MKDIR} ${PREFIX}/share/doc/qt
 	${INSTALL_DATA} ${WRKDIR}/qt-1.31/README ${PREFIX}/share/doc/qt
 	${INSTALL_DATA} ${WRKDIR}/qt-1.31/README.QT ${PREFIX}/share/doc/qt
 
