@@ -11,7 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://makemebad.net/geek/codes/
 
 MAINTAINER=	ponomarew@oberon.net
-COMMENT=	Mymoon displays the phase of the moon
+COMMENT=	Show latitude and longitude of the moon
 
 LIB_DEPENDS=	nova:${PORTSDIR}/astro/libnova
 
