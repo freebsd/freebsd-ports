@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- aimk.site.orig	Tue Jan 20 16:26:10 2004
++++ aimk.site	Tue Jan 20 16:50:19 2004
+@@ -34,7 +34,7 @@
+ # OPENSSL_HOME the directory where the include and lib directory of openssl
+ # is installed
+ #
+-set OPENSSL_HOME = /vol2/tools/SW/openssl-0.9.7c-static/$buildarch
++set OPENSSL_HOME = /usr
+ 
+ # 
+ # KRB_HOME the directory where the include and lib directory of kerberos is

@@ -313,6 +313,7 @@
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
+    SUBDIR += sge
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill

@@ -1,0 +1,30 @@
+
+$FreeBSD$
+
+--- aimk.orig	Tue Jan 20 16:26:10 2004
++++ aimk	Tue Jan 20 16:50:43 2004
+@@ -256,11 +256,11 @@
+ if ( $?SGE_INPUT_CFLAGS ) then
+    set INP_CFLAGS = "$SGE_INPUT_CFLAGS"
+ else
+-   set INP_CFLAGS = ""
++   set INP_CFLAGS = "%%CFLAGS%%"
+ endif
+ 
+ set   CFLAGS       = "$INP_CFLAGS"
+-set   CXXFLAGS     = "$CFLAGS"
++set   CXXFLAGS     = "%%CXXFLAGS%%"
+ set   CORE_INCLUDE = "-I../security/sec -I../common -I../libs/uti -I../libs/gdi -I../libs/cull -I../libs/rmon -I../libs/comm -I../libs/sched -I../daemons/common -I../daemons/commd -I../daemons/qmaster -I../daemons/execd -I../daemons/schedd -I../clients/common -I."
+ 
+ set   ADD_COPYRIGHT     = 0
+@@ -1058,8 +1058,8 @@
+    set MAKE = gmake
+    set OFLAG = "-O"
+    set ARFLAGS     = rcv
+-   set CC       = gcc
+-   set CXX      = g++
++   set CC       = %%CC%%
++   set CXX      = %%CXX%%
+    set DLLIB	= ""
+    set DEPEND_FLAGS = "$CFLAGS $XMTINCD"
+    set PTHRDSFLAGS = "-D_REENTRANT -D__USE_REENTRANT"

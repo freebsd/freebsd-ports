@@ -1,0 +1,52 @@
+
+$FreeBSD$
+
+--- dist/pvm/src/aimk.orig	Fri Jul 20 01:20:20 2001
++++ dist/pvm/src/aimk	Tue Jan 20 16:50:19 2004
+@@ -66,6 +66,8 @@
+    exit 1
+ endif
+ 
++set ARCH = `$SGE_ROOT/util/arch`
++
+ # common compiler and linker settings 
+ #
+ unsetenv LD_LIBRARY_PATH
+@@ -73,9 +75,9 @@
+ set MAKE       = make
+ set MAKEFILE   = ../Makefile
+ set SDIR       = ".."
+-set CFLAGS     = "-I../ -I$PVM_ROOT/include"
++set CFLAGS     = "-I../ -I$PVM_ROOT/include -I%%LOCALBASE%%/include"
+ set QSYST_PVM_DIR = "$SGE_ROOT/pvm/lib/$ARCH"
+-set LFLAGS     = "-L$PVM_ROOT/lib/$PVM_ARCH -L$QSYST_PVM_DIR -L."  
++set LFLAGS = "-L$PVM_ROOT/lib/$PVM_ARCH -L$QSYST_PVM_DIR -L%%LOCALBASE%%/lib -L."  
+ set LIBS       = ""
+ set PVM_ROOT   = "$PVM_ROOT"
+ set PVM_ARCH   = "$PVM_ARCH"
+@@ -133,8 +135,6 @@
+ set CTOR = ""
+ set DTOR = ""
+ 
+-set ARCH = `$SGE_ROOT/util/arch`
+-
+ switch ($ARCH)
+ 
+ case aix41:
+@@ -193,6 +193,16 @@
+ case linux:
+    set CC = gcc
+    set CFLAGS = "-O -Wall -Werror -Wstrict-prototypes -DLINUX $DEBUG_FLAG $CFLAGS"
++   set LFLAGS = "$DEBUG_FLAG $LFLAGS"
++   set LIBS = "$LIBS"
++   set START_FILE = "/usr/lib/crti.o /usr/lib/crtbegin.o"
++   set CTOR = "/usr/lib/crti.o /usr/lib/crtbegin.o"
++   set DTOR = "/usr/lib/crtend.o /usr/lib/crtn.o"
++   breaksw
++
++case fbsd-*:
++   set CC = gcc
++   set CFLAGS = "%%CFLAGS%% -Wall -Werror -Wstrict-prototypes $DEBUG_FLAG $CFLAGS"
+    set LFLAGS = "$DEBUG_FLAG $LFLAGS"
+    set LIBS = "$LIBS"
+    set START_FILE = "/usr/lib/crti.o /usr/lib/crtbegin.o"
