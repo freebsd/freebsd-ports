@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -70,10 +71,6 @@ do-install:	# empty
 
 .if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-.endif
-
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	gnomemeeting:${PORTSDIR}/net/gnomemeeting
 .endif
 
 .include <bsd.port.post.mk>
