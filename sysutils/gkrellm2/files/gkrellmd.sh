@@ -7,9 +7,9 @@ PREFIX=%%PREFIX%%
 
 case "$1" in
 start)
-	if [ -x ${PREFIX}/sbin/gkrellmd -a \
+	if [ -x ${PREFIX}/bin/gkrellmd -a \
 	     -f ${PREFIX}/etc/gkrellmd.conf ]; then
-		${PREFIX}/sbin/gkrellmd &
+		${PREFIX}/bin/gkrellmd &
 		echo -n ' gkrellmd'
 	fi
 	;;

@@ -1,5 +1,5 @@
 bin/gkrellm
-sbin/gkrellmd
+bin/gkrellmd
 include/gkrellm2/gkrellm.h
 include/gkrellm2/gkrellm-public-proto.h
 %%PORTDOCS%%share/doc/gkrellm/COPYRIGHT
