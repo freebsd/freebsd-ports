@@ -15,10 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	Tell programs to which IP-address they should bind
 
+.if defined(NOPROFILE)
+PLIST_SUB+=	NOPROFILE="@comment "
+.else
+PLIST_SUB+=	NOPROFILE=""
+.endif
+
 do-install:
 	-@${MKDIR} ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/libconnect.a ${PREFIX}/lib
+.if !defined(NOPROFILE)
 	@${INSTALL_PROGRAM} ${WRKSRC}/libconnect_p.a ${PREFIX}/lib
+.endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/libconnect.so.1 ${PREFIX}/lib
 	@${LN} -fs libconnect.so.1 ${PREFIX}/lib/libconnect.so
 	-@${MKDIR} ${DOCSDIR}
