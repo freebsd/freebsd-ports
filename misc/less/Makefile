@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       less-337
+DISTNAME=       less-340
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
