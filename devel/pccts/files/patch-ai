@@ -6,7 +6,7 @@
  SCAN = A/ALexer
 -PCCTS = ../..
 -A_H = $(PCCTS)/h
-+PCCTS = /usr/local
++PCCTS = ${PREFIX}
 +A_H = $(PCCTS)/include/pccts
  BIN = $(PCCTS)/bin
  A = $(BIN)/antlr

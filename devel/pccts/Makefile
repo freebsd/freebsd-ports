@@ -1,13 +1,13 @@
 # New ports collection makefile for:	pccts
-# Version required:			1.33.19
+# Version required:			1.33.20
 # Date created:				22 June 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/04/20 02:05:24 mharo Exp $
+# $Id: Makefile,v 1.4 1999/07/05 02:42:22 cpiazza Exp $
 #
 
 DISTNAME=		pccts133mr
-PKGNAME=		pccts-1.33.19
+PKGNAME=		pccts-1.33.20
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
 
@@ -18,21 +18,20 @@ WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=
 MAKEFILE=		makefile
 
-MAN1=			antlr.1 dlg.1 pccts.1
+MAN1=			antlr.1 dlg.1
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/antlr ${PREFIX}/bin
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/dlg ${PREFIX}/bin
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/genmk ${PREFIX}/bin
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/sor ${PREFIX}/bin
-.for file in pccts antlr/antlr dlg/dlg
-	@ ${INSTALL_MAN} ${WRKSRC}/${file}.1 ${PREFIX}/man/man1
-.endfor
+	@ ${INSTALL_MAN} ${WRKSRC}/antlr/antlr.1 ${PREFIX}/man/man1
+	@ ${INSTALL_MAN} ${WRKSRC}/dlg/dlg.1 ${PREFIX}/man/man1
 	@ ${MKDIR} ${PREFIX}/include/pccts
 .for file in ast charptr
 	@ ${INSTALL_DATA} ${WRKSRC}/h/${file}.c ${PREFIX}/include/pccts/${file}.c
 .endfor
-.for file in AParser ASTBase ATokPtr ATokenBuffer DLexer DLexerBase PCCTSAST SList
+.for file in AParser ASTBase ATokPtr ATokenBuffer DLexer DLexerBase PCCTSAST slist
 	@ ${INSTALL_DATA} ${WRKSRC}/h/${file}.cpp ${PREFIX}/include/pccts/${file}.cpp
 .endfor
 .for file in AParser ASTBase ATokPtr AToken ATokenBuffer ATokenStream DLexerBase PBlackBox PCCTSAST SList antlr ast charbuf charptr config dlgauto dlgdef err int pcctscfg pccts_assert pccts_setjmp pccts_stdarg pccts_stdio pccts_stdlib pccts_string pccts_iostream pccts_istream
@@ -49,7 +48,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/pccts
-.for file in CHANGES_FROM_131.txt CHANGES_FROM_133.txt CHANGES_FROM_133_BEFORE_MR13.txt KNOWN_PROBLEMS.txt README RIGHTS SERVICES history.ps history.txt old_README
+.for file in CHANGES_FROM_131.txt CHANGES_FROM_133.txt CHANGES_FROM_133_BEFORE_MR13.txt KNOWN_PROBLEMS.txt README RIGHTS history.ps history.txt old_README
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pccts/${file}
 .endfor
 .endif
