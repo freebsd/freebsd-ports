@@ -22,7 +22,7 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2004.88";	/* server version */
+ char *version = "2004.89";	/* server version */
  short state = AUTHORIZATION;	/* server state */
  short critical = NIL;		/* non-zero if in critical code */
 @@ -89,7 +100,53 @@

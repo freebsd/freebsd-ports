@@ -22,7 +22,7 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2004.352";	/* version number of this server */
+ char *version = "2004.357";	/* version number of this server */
  time_t alerttime = 0;		/* time of last alert */
  time_t sysalerttime = 0;	/* time of last system alert */
 @@ -246,7 +257,50 @@
