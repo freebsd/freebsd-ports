@@ -37,7 +37,7 @@ include/ntfs/volume.h
 lib/libntfs.a
 lib/libntfs.la
 lib/libntfs.so
-lib/libntfs.so.5
+lib/libntfs.so.6
 sbin/mkntfs
 sbin/ntfsclone
 sbin/ntfslabel
