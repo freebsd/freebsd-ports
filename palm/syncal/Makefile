@@ -13,7 +13,7 @@ MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
 NO_PACKAGE=	patches installed ical port
