@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id$
+# $Id: build,v 1.1.1.1 1996/10/10 15:00:53 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -19,10 +19,10 @@ if [ -f ${PREFIX}/bin/expect ]; then
   EXPECT=${PREFIX}/bin/expect		#executable
 fi
 
-if [ -f ${PREFIX}/faces/faces ]; then
-  FACES=${PREFIX}/faces/faces		#dir
+if [ -d ${PREFIX}/share/faces ]; then
+  FACES=${PREFIX}/share/faces		#dir
   shortname="`hostname -s`"
-  domain="`hostname | sed -e s/^${shortname}// -e s/^.//`"
+  domain="`hostname | sed -e s/^${shortname}// -e s/^.// | tr A-Z a-z`"
   if [ "${domain}" != "" ]; then
     DOMAIN="{${domain}}"
   fi
@@ -36,11 +36,14 @@ if [ -f ${PREFIX}/bin/glimpse ]; then
   GLIMPSE=${PREFIX}/bin			#bindir
 fi
 
-if [ -f ${PREFIX}/bin/play ]; then
-  PLAY=${PREFIX}/bin/play		#executable
+if [ -f ${PREFIX}/bin/rplay ]; then
+  PLAY=${PREFIX}/bin/rplay		#executable
 fi
 
 echo "s@^#!wish@#!${WISH}@" >${SEDFILE}
+if [ "${EXPECT}" != "{}" ]; then
+  echo "s@^#!expect@#!${EXPECT}@" >>${SEDFILE}
+fi
 echo "/^#CONFIGURATION/a\\" >>${SEDFILE}
 
 sed <${FILESDIR}/config \
