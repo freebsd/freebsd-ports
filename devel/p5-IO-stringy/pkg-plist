@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/IO/AtomicFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/InnerFile.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Lines.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Scalar.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
