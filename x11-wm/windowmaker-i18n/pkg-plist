@@ -24,26 +24,30 @@ lib/libWINGs.a
 include/proplist.h
 include/wraster.h
 include/WINGs.h
+include/WINGsP.h
 include/WMaker.h
 include/WUtil.h
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
+share/WindowMaker/Defaults/WMGLOBAL
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
 share/WindowMaker/IconSets/Default
-share/WindowMaker/Pixmaps/GNUstep.tiff
-share/WindowMaker/Pixmaps/GNUstep.xpm
-share/WindowMaker/Pixmaps/GNUstep3D.tiff
-share/WindowMaker/Pixmaps/GNUstep3D.xpm
-share/WindowMaker/Pixmaps/GNUterm.tiff
-share/WindowMaker/Pixmaps/GNUterm.xpm
-share/WindowMaker/Pixmaps/clip.tiff
-share/WindowMaker/Pixmaps/clip.xpm
-share/WindowMaker/Pixmaps/defaultAppIcon.tiff
-share/WindowMaker/Pixmaps/defaultAppIcon.xpm
+share/WindowMaker/Icons/GNUstep.tiff
+share/WindowMaker/Icons/GNUstep.xpm
+share/WindowMaker/Icons/GNUstep3D.tiff
+share/WindowMaker/Icons/GNUstep3D.xpm
+share/WindowMaker/Icons/GNUterm.tiff
+share/WindowMaker/Icons/GNUterm.xpm
+share/WindowMaker/Icons/clip.tiff
+share/WindowMaker/Icons/clip.xpm
+share/WindowMaker/Icons/cliptile.tiff
+share/WindowMaker/Icons/cliptile.xpm
+share/WindowMaker/Icons/defaultAppIcon.tiff
+share/WindowMaker/Icons/defaultAppIcon.xpm
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
@@ -58,6 +62,7 @@ share/WindowMaker/Styles/Fire
 share/WindowMaker/Styles/Food
 share/WindowMaker/Styles/Golden
 share/WindowMaker/Styles/Green
+share/WindowMaker/Styles/Gtk
 share/WindowMaker/Styles/LightBlue
 share/WindowMaker/Styles/Pastel
 share/WindowMaker/Styles/Pumpkin
@@ -90,6 +95,7 @@ share/WindowMaker/wmmacros
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Pixmaps
+@dirrm share/WindowMaker/Icons
 @dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Defaults
 @dirrm share/WindowMaker/Backgrounds
