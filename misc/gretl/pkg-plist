@@ -4,6 +4,7 @@ bin/gretlcli
 %%GNOME:%%etc/gconf/gconf.xml.defaults/apps/gretl/%gconf.xml
 %%GNOME:%%etc/gconf/gconf.xml.defaults/schemas/apps/gretl/%gconf.xml
 %%GNOME:%%etc/gconf/schemas/gretl.schemas
+include/gretl/bhhh_max.h
 include/gretl/calendar.h
 include/gretl/clapack_double.h
 include/gretl/compare.h
@@ -22,16 +23,19 @@ include/gretl/gretl_matrix.h
 include/gretl/gretl_matrix_private.h
 include/gretl/gretl_model.h
 include/gretl/gretl_paths.h
+include/gretl/gretl_private.h
+include/gretl/gretl_string_table.h
 include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
 include/gretl/interact.h
-include/gretl/internal.h
 include/gretl/libgretl.h
 include/gretl/libprob.h
+include/gretl/libset.h
 include/gretl/modelprint.h
 include/gretl/monte_carlo.h
 include/gretl/nls.h
 include/gretl/nonparam.h
+include/gretl/options.h
 include/gretl/plugins.h
 include/gretl/printout.h
 include/gretl/pvalues.h
@@ -46,6 +50,7 @@ include/gretl/version.h
 lib/gretl-gtk2/arma.so
 lib/gretl-gtk2/arma_x12.so
 lib/gretl-gtk2/excel_import.so
+lib/gretl-gtk2/garch.so
 lib/gretl-gtk2/gnumeric_import.so
 lib/gretl-gtk2/johansen.so
 lib/gretl-gtk2/lad.so
@@ -178,10 +183,12 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/greene/wg_descriptions
 %%DATADIR%%/data/gretldata.dtd
 %%DATADIR%%/data/misc/arma.gdt
+%%DATADIR%%/data/misc/b-g.gdt
 %%DATADIR%%/data/misc/descriptions
 %%DATADIR%%/data/misc/djclose.gdt
 %%DATADIR%%/data/misc/ects_nls.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
+%%DATADIR%%/data/misc/klein.gdt
 %%DATADIR%%/data/misc/leverage.gdt
 %%DATADIR%%/data/misc/longley.gdt
 %%DATADIR%%/data/misc/sw_ch12.gdt
@@ -216,6 +223,8 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/greene9_3.inp
 %%DATADIR%%/scripts/misc/arma.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
+%%DATADIR%%/scripts/misc/garch.inp
+%%DATADIR%%/scripts/misc/klein.inp
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/ps_descriptions
@@ -326,6 +335,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/cumulate.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/datafiles.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/dffit.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/garch_h.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/greeneC.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/gretl-logo.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/hsk.png
