@@ -8,7 +8,7 @@
 PORTNAME=	scsh
 PORTVERSION=	0.6.0
 CATEGORIES=	shells lang
-MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
+MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/0.6/
 
 MAINTAINER=	alex@FreeBSD.org
 
