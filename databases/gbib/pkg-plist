@@ -1,0 +1,6 @@
+bin/gbib
+share/gbibtex/gbib.rc
+share/gbibtex/lyx.xpm
+share/gbibtex/gbib48.xpm
+@dirrm share/gbibtex
+

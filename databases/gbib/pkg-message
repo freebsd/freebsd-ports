@@ -1,0 +1,12 @@
+
+==========================================================
+
+  To insert citations in a LyX document, verify that LyX
+  is running before clicking on the LyX icon.
+  The LyX server must be enabled, just add this line to
+  your .lyxrc:
+
+       \serverpipe "/YOUR_HOME_DIR/.lyxpipe"
+
+==========================================================
+
