@@ -1,0 +1,9 @@
+Wsmake is a tool that aids in the production and maintenance of web sites.
+It was written to reduce the amount of time it takes to make changes
+to common information across a website, by keeping the content of the
+website separate from the design.
+
+Wsmake supports a model where the contents of the website are statically
+generated from sources.
+
+WWW: http://www.wsmake.org/
