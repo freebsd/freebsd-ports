@@ -379,6 +379,7 @@
     SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
     SUBDIR += white_dune
+    SUBDIR += wings
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += xaos
