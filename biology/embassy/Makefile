@@ -19,8 +19,6 @@ COMMENT=	A collection of contributed EMBOSS applications
 BUILD_DEPENDS=	${LOCALBASE}/include/emboss.h:${PORTSDIR}/biology/emboss
 LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss:install
 
-BROKEN=		Broken distinfo file
-
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -53,7 +51,7 @@ EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP TOPO
 .include <bsd.port.pre.mk>
 
 .for app in ${EMBASSY_APPS}
-.if defined(WITH_${app})
+.if !defined(WITHOUT_${app})
 APPLIST+=	${app}
 ${app}_WRKSRC=	${EMBASSY_WRKDIR}/${app}-${${app}_VERSION}
 ${app}_DISTFILE=${app}-${${app}_VERSION}${EXTRACT_SUFX}
