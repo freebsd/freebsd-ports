@@ -3,11 +3,11 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.10 1997/02/07 09:01:45 tg Exp $
+# $Id: Makefile,v 1.11 1997/03/06 10:50:29 tg Exp $
 #
 
 DISTNAME=	tkinfo-1.2
-CATEGORIES=	misc
+CATEGORIES=	misc tk41
 MASTER_SITES=	http://www.math.ucsb.edu/~boldt/tkinfo/ \
 		http://math-www.uni-paderborn.de/~axel/tkinfo/
 

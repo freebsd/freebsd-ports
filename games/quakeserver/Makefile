@@ -3,11 +3,11 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1997/03/19 02:56:20 jfitz Exp $
+# $Id: Makefile,v 1.9 1997/03/23 15:39:06 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.01
-CATEGORIES=	games
+CATEGORIES=	games tk41
 MASTER_SITES=	ftp://ftp.gamesdomain.com/pub/idsoftware/quake/ \
 		ftp://ftp.cssweb.com/pub/games/idstuff/quake/ \
 		ftp://ftp.feist.com/pub/pc/games/quake/

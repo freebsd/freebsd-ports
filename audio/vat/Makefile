@@ -3,11 +3,11 @@
 # Date created:		2 November 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/10 21:11:47 fenner Exp $
+# $Id: Makefile,v 1.2 1996/11/13 12:41:19 asami Exp $
 #
 
 DISTNAME=	vat-4.0b2
-CATEGORIES=	mbone
+CATEGORIES=	mbone tk41
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
 

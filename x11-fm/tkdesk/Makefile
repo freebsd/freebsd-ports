@@ -3,12 +3,12 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/02 19:57:31 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/11/12 04:54:07 max Exp $
 #
 
 DISTNAME=	tkdesk-1.0b3
 PKGNAME=	tkdesk-1.0b3
-CATEGORIES=	misc x11
+CATEGORIES=	misc x11 tk41
 MASTER_SITES=	http://sun1.rrzn-user.uni-hannover.de/~zzhibol/tkdesk/
 
 MAINTAINER=	nox@jelal.hb.north.de

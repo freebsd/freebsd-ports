@@ -3,11 +3,11 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.16 1997/03/04 22:34:21 phk Exp $
+# $Id: Makefile,v 1.17 1997/03/10 10:49:00 asami Exp $
 #
 
 DISTNAME=	scotty-2.1.5
-CATEGORIES=	net
+CATEGORIES=	net tk41
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
 MAINTAINER=	phk@freebsd.org

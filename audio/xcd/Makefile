@@ -3,11 +3,11 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1996/11/15 23:14:37 obrien Exp $
+# $Id: Makefile,v 1.15 1996/11/18 13:56:49 asami Exp $
 #
 
 DISTNAME=	xcd-1.5
-CATEGORIES=	audio
+CATEGORIES=	audio tk41
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org

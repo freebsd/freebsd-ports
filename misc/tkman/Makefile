@@ -3,11 +3,11 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.20 1996/11/17 09:06:37 obrien Exp $
+# $Id: Makefile,v 1.21 1996/12/07 09:28:45 max Exp $
 #
 
 DISTNAME=	tkman-1.8
-CATEGORIES=	misc
+CATEGORIES=	misc tk41
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 

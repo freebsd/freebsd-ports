@@ -3,12 +3,12 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.11 1997/01/02 10:02:48 tg Exp $
+# $Id: Makefile,v 1.12 1997/02/21 14:57:01 tg Exp $
 #
 
 DISTNAME=       python1.4
 PKGNAME=        python-1.4
-CATEGORIES=	lang
+CATEGORIES=	lang tk41
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/ \
 		ftp://www.python.org/pub/python/contrib/Graphics/Tkinter/ \

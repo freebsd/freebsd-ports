@@ -3,11 +3,11 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.9 1996/11/18 11:32:56 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/19 21:42:08 fenner Exp $
 #
 
 DISTNAME=	imm-3.5a1
-CATEGORIES=	mbone
+CATEGORIES=	mbone tk41
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTFILES=	imm.source.tar.Z
 WRKSRC=		${WRKDIR}/mnm

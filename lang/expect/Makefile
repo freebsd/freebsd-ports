@@ -3,12 +3,12 @@
 # Whom:			pst
 # Version required:	5.22.0
 #
-# $Id: Makefile,v 1.17 1997/01/19 14:13:26 asami Exp $
+# $Id: Makefile,v 1.18 1997/03/11 11:42:14 asami Exp $
 #
 
 DISTNAME=	expect-5.22
 PKGNAME=	expect-5.22.0
-CATEGORIES=	lang
+CATEGORIES=	lang tk41
 MASTER_SITES=	http://expect.nist.gov/ \
 		ftp://expect.nist.gov/mel/div826/subject/expect/
 DISTFILES=	expect.tar.gz

@@ -3,11 +3,11 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.3 1997/01/24 10:27:02 asami Exp $
+# $Id: Makefile,v 1.4 1997/04/03 19:18:22 fenner Exp $
 #
 
 DISTNAME=	dotfile-2.0
-CATEGORIES=	misc
+CATEGORIES=	misc tk41
 MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
 
 MAINTAINER=	oly@world.std.com
