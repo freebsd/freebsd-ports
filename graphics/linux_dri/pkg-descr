@@ -1,0 +1,3 @@
+linux-dri installs binary linux DRI modules, libraries and basic
+programs for use with drm-kmod to get 3d hardware acceleration of
+linux binaries.

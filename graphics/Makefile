@@ -166,6 +166,7 @@
     SUBDIR += linux-jpeg
     SUBDIR += linux-png
     SUBDIR += linux-tiff
+    SUBDIR += linux_dri
     SUBDIR += linux_glide
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
