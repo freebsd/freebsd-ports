@@ -23,6 +23,8 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Packages needed for doing development in Linux mode
 
+BROKEN=			Missing dependency
+
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
