@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DSS-4_1_1.src.tar.gz.
-DISTNAME=	DSS-4_1_1.src
+#		DSS-4_1_2.src.tar.gz.
+DISTNAME=	DSS-${PORTVERSION:S/./_/g}.src
 
 MAINTAINER=	nork@FreeBSD.org
 
