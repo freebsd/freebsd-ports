@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ -n "${PACKAGE_BUILDING}" ]; then
-    exit 0
-fi
-
 if [ "$2" = "POST-INSTALL" ]; then
     mkdir -p ${PKG_PREFIX}/share/gnome/games
     SCORES="gweled.easy.scores"
