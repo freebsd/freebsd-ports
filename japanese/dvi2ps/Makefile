@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}j
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	DVI to PostScript converter Japanese version
 
-BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
+BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-base
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		dvi2ps.1

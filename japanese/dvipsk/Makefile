@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 COMMENT=	A DVI to PostScript translator + Japanese patch
 
-RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-base
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 

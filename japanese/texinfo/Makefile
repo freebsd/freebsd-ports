@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	mitsuru@riken.go.jp
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-euc
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j
