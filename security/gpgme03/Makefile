@@ -31,7 +31,7 @@ WITH_GPGSM=	yes
 .endif
 
 .if defined(WITH_GPGSM)
-BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/newpg
+BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg-devel
 .else
 CONFIGURE_ARGS+=	--without-gpgsm
 .endif

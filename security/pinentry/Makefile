@@ -6,44 +6,29 @@
 #
 
 PORTNAME=	pinentry
-PORTVERSION=	0.6.9
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.klaralvdalens-datakonsult.se/pub/aegypten/alpha/latest/ \
-		${MASTER_SITE_GNUPG} \
-		http://tigress.com/lofi/:lofi
-MASTER_SITE_SUBDIR=	alpha/aegypten
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		common.tar.gz:lofi\
-		jnlib.tar.gz:lofi
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	pinentry
 
 MAINTAINER=	lofi@freebsd.org
-COMMENT=	A collection of simple PIN or passphrase entry dialogs
+COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 
-LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		ksba.7:${PORTSDIR}/security/libksba
+LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
+		ksba.11:${PORTSDIR}/security/libksba
+
+CONFLICTS?=	pinentry-qt* pinentry-gtk* pinentry-curses*
 
 USE_GETOPT_LONG=yes
-USE_AUTOMAKE_VER=	15
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS+=--with-included-gettext=no
 INFO=		pinentry
 
-.include <bsd.port.pre.mk>
-
-.if exists(${X11BASE}/bin/moc)
-WITH_QT=yes
-.endif
-
-.if defined(WITH_QT)
+.if defined(PINENTRY_QT) || defined(PINENTRY_GTK) || defined(PINENTRY_CURSES)
+.if defined(PINENTRY_QT)
 USE_QT_VER=	3
 PLIST_SUB+=	WITH_QT=""
 .else
@@ -51,7 +36,7 @@ CONFIGURE_ARGS+=--disable-pinentry-qt
 PLIST_SUB+=	WITH_QT="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if defined(PINENTRY_GTK)
 USE_GNOME+=	gtk12
 PLIST_SUB+=	WITH_GTK=""
 .else
@@ -59,13 +44,22 @@ CONFIGURE_ARGS+=--disable-pinentry-gtk
 PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
-post-extract:
-	${MV} ${WRKDIR}/common ${WRKSRC}
-	${MV} ${WRKDIR}/jnlib ${WRKSRC}
+.if defined(PINENTRY_CURSES)
+PLIST_SUB+=	WITH_CURSES=""
+.else
+CONFIGURE_ARGS+=--disable-pinentry-curses
+PLIST_SUB+=	WITH_CURSES="@comment "
+.endif
+.else
+USE_QT_VER=	3
+USE_GNOME+=	gtk12
+PLIST_SUB+=	WITH_QT=""
+PLIST_SUB+=	WITH_GTK=""
+PLIST_SUB+=	WITH_CURSES=""
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-	cd ${WRKSRC}; ./autogen.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
