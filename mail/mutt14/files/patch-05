@@ -1,0 +1,79 @@
+--- acconfig.h.orig	Sun Feb 23 08:57:32 1997
++++ acconfig.h	Sat Mar  8 16:58:08 1997
+@@ -53,6 +53,9 @@
+ /* What is your domain name? */
+ #undef DOMAIN
+ 
++/* gethostname() can be used to obtain the domain name */
++#undef GETHOSTNAME_DOMAIN
++
+ /* Should the domain name be appended to unqualified addresses? */
+ #undef USE_DOMAIN
+ 
+--- config.h.in.orig	Sun Feb 23 08:57:36 1997
++++ config.h.in	Sat Mar  8 16:58:13 1997
+@@ -59,6 +59,9 @@
+ /* What is your domain name? */
+ #undef DOMAIN
+ 
++/* gethostname() can be used to obtain the domain name */
++#define GETHOSTNAME_DOMAIN 1
++
+ /* Should the domain name be appended to unqualified addresses? */
+ #undef USE_DOMAIN
+ 
+--- init.c.orig	Thu Mar  6 18:56:03 1997
++++ init.c	Sat Mar  8 16:58:09 1997
+@@ -957,11 +957,25 @@
+   if (debuglevel > 0) start_debug();
+ #endif
+ 
++#ifdef GETHOSTNAME_DOMAIN
++  /* Get host and domain name */
++  gethostname (Hostname, sizeof (Hostname));
++  Hostname[sizeof (Hostname) - 1] = 0;
++  if ((p = strchr (Hostname, '.')) == NULL)
++    /* blech */
++    domain = "";
++  else
++    {
++      *p++ = 0;
++      domain = p;
++    }
++#else
+   /* And about the host... */
+   uname (&utsname);
+   strfcpy (Hostname, utsname.nodename, sizeof (Hostname));
+   /* some systems report the FQDN instead of just the hostname */
+   if ((p = strchr (Hostname, '.'))) *p = 0;
++#endif
+ 
+ #ifdef DOMAIN
+   /* set the default FQDN (can be overridden by the $domain variable) */
+--- globals.h.orig	Fri Feb 28 11:48:21 1997
++++ globals.h	Sat Mar  8 16:57:18 1997
+@@ -129,6 +129,13 @@
+ WHERE gid_t UserGid;
+ #endif /* USE_SETGID */
+ 
++/* if your gethostname() returns the domainname too */
++#ifdef GETHOSTNAME_DOMAIN
++WHERE char *domain;
++#undef DOMAIN
++#define DOMAIN domain
++#endif
++
+ #ifdef MAIN_C
+ const char *Weekdays[] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+ const char *Months[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "ERR" };
+--- main.c.orig	Fri Mar  7 18:57:24 1997
++++ main.c	Sat Mar  8 16:58:16 1997
+@@ -114,7 +114,7 @@
+ 
+   puts ("\n\nCompile time definitions:");
+ 
+-#ifdef DOMAIN
++#if defined(DOMAIN) && !defined(GETHOSTNAME_DOMAIN)
+   printf ("DOMAIN=\"%s\"\n", DOMAIN);
+ #else
+   puts ("-DOMAIN");
