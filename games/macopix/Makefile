@@ -7,7 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 .if defined(WITH_GTK2)
@@ -32,7 +32,7 @@ RESTRICTED_FILES= \
 		macopix-mascot-pia2-ja-1.00.tar.gz \
 		macopix-mascot-triangle_heart-ja-1.00.tar.gz \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
-		macopix-mascot-marimite-euc-ja-2.10.tar.gz
+		macopix-mascot-marimite-euc-ja-2.20.tar.gz
 
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
@@ -100,10 +100,10 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/tsuki.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/README.jp ${PREFIX}/share/macopix/README.tsuki.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.10/*.png ${PREFIX}/share/macopix/pixmap/
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.10/*.mcpx ${PREFIX}/share/macopix/
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.10/marimite.menu ${PREFIX}/share/macopix/
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.10/README.jp ${PREFIX}/share/macopix/README.marimite.jp
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/*.png ${PREFIX}/share/macopix/pixmap/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/*.mcpx ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/marimite.menu ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/README.jp ${PREFIX}/share/macopix/README.marimite.jp
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/macopix
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/macopix
