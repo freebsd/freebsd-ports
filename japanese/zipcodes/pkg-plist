@@ -1,3 +1,5 @@
+share/misc/jp-zipcodes/jigyosyo-euc.csv
+share/misc/jp-zipcodes/ken_all-euc.csv
 share/misc/jp-zipcodes/zipcodes.5digits
 share/misc/jp-zipcodes/zipcodes.7digits
 @dirrm share/misc/jp-zipcodes
