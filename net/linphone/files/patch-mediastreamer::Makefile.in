@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- mediastreamer/Makefile.in.orig	Fri Feb 28 01:20:45 2003
++++ mediastreamer/Makefile.in	Fri Feb 28 01:20:45 2003
+@@ -163,7 +163,7 @@
+ @BUILD_V4L_TRUE@V4L_PLUGIN_TEST = test_v4l
+ 
+ @BUILD_MEDIASTREAMER_TRUE@lib_LTLIBRARIES = libmediastreamer.la $(XINE_PLUGIN) $(SMPEG_PLUGIN)\
+-@BUILD_MEDIASTREAMER_TRUE@			$(FFMPEG_PLUGIN) $(GDK_VO_PLUGIN) $(V4L_PLUGIN) libmsspeex.la
++@BUILD_MEDIASTREAMER_TRUE@			$(FFMPEG_PLUGIN) $(GDK_VO_PLUGIN) $(V4L_PLUGIN) libmsspeex.la $(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ libmediastreamer_la_SOURCES = msfilter.c msfilter.h msutils.h\
+@@ -296,7 +296,7 @@
+ 
+ #the mediastream program that runs a processing that will be used in linphone
+ mediastream_SOURCES = mediastream.c audiostream.c mediastream.h
+-mediastream_LDADD = libmediastreamer.la libmsspeex.la
++mediastream_LDADD = libmediastreamer.la libmsspeex.la $(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ DEFS = @DEFS@ -DG_LOG_DOMAIN=\"MediaStreamer\" 
+ 

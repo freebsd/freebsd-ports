@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon May 19 12:00:43 2003
++++ configure	Fri Jun 13 15:20:49 2003
+@@ -8786,6 +8786,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -11056,19 +11057,19 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_LOCALE_DIR "${realprefix}/${DATADIRNAME}/locale"
++#define PACKAGE_LOCALE_DIR "${realprefix}/share/locale"
+ _ACEOF
+ 
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_DATA_DIR "${realprefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${realprefix}/share/gnome"
+ _ACEOF
+ 
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_SOUND_DIR "${realprefix}/${DATADIRNAME}/sounds/linphone"
++#define PACKAGE_SOUND_DIR "${realprefix}/share/gnome/sounds/linphone"
+ _ACEOF
+ 
+ 
