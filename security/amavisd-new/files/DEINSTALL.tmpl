@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/DEINSTALL.tmpl,v 1.2 2003-01-04 10:59:25 demon Exp $
+#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/DEINSTALL.tmpl,v 1.3 2003-04-20 10:02:44 leeym Exp $
 #
 
 USER=%%AMAVISUSER%%
@@ -11,18 +11,15 @@ QUARANTINE=%%AMAVISQUARANTINE%%
 if [ "$2" = "POST-DEINSTALL" ]; then
 
     if /usr/sbin/pw group show "${GROUP}" 2>&1 >/dev/null; then
-	/usr/sbin/pw groupdel ${GROUP}
-	echo "Deleted group \"${GROUP}\"."
+	echo "You should manually remove the \"${GROUP}\" group."
     fi
 
     if /usr/sbin/pw user show "${USER}" 2>&1 >/dev/null; then
-	/usr/sbin/pw userdel ${USER}
-	echo "Deleted user \"${USER}\"."
+	echo "You should manually remove the \"${USER}\" user."
     fi
 
     if [ -e ${DIR} ]; then
-	/bin/rm -rf ${DIR}
-	echo "Deleted \"${DIR}\" directory."
+	echo "You should manually remove the \"${DIR}\" directory."
     fi
     
     if [ -e ${QUARANTINE} ]; then
