@@ -60,6 +60,7 @@ include/skalibs/uint32alloc.h
 include/skalibs/uint64.h
 include/skalibs/uint64alloc.h
 include/skalibs/uintalloc.h
+include/skalibs/uintbunch.h
 include/skalibs/webipc.h
 lib/skalibs/libbiguint.a
 lib/skalibs/libdatastruct.a
