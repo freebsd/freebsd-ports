@@ -15,7 +15,8 @@ MAINTAINER=	nakai@FreeBSD.org
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 ALL_TARGET=	spager
 

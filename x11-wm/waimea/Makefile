@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	waimea
 MAINTAINER=	danfe@regency.nsu.ru
 
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes

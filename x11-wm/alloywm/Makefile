@@ -16,7 +16,8 @@ HAS_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 SCRIPTS=	${WRKSRC}/scriptdir
 
 pre-configure:
@@ -27,7 +28,7 @@ pre-configure:
 	${CHMOD} +x ${WRKSRC}/configure
 
 do-build:
-	cd ${WRKSRC}/goodies && gmake
+	cd ${WRKSRC}/goodies && ${GMAKE}
 .for ii in client events main misc new screen widgets
 	cd ${WRKSRC}/src && ${CC} -c ${CFLAGS} -I${X11BASE}/include \
 		${ii}.c
@@ -52,7 +53,8 @@ do-install:
 		-exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin \;
 
 .include <bsd.port.pre.mk>
-.if defined(HAVE_GTK)
-USE_GTK=yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .endif
 .include <bsd.port.post.mk>

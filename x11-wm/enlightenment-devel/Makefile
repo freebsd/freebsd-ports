@@ -27,8 +27,8 @@ LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_ESOUND=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	esound imlib
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd

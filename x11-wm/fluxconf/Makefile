@@ -13,7 +13,8 @@ MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 MAINTAINER=	hendrik@scholz.net
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_BZIP2=	yes
 
 .ifndef(WITHOUT_LOGO)

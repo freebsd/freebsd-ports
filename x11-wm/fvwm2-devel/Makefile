@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-USE_BZIP2=	yes
 
 MAINTAINER=	cy@FreeBSD.org
 
@@ -23,11 +22,11 @@ LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
 USE_GMAKE=	yes
-USE_GTK=	yes
-USE_IMLIB=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -40,8 +39,9 @@ PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME+=	imlib
+PKGNAMESUFFIX=	-imlib
 PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 .else
 CONFIGURE_ARGS+=	--without-gnome
