@@ -4078,6 +4078,7 @@ lincvs		ports/devel/lincvs
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
 linguist	ports/devel/linguist
+linkchecker	ports/www/linkchecker
 links		ports/www/links
 links1		ports/www/links1
 linneighborhood	ports/sysutils/linneighborhood
