@@ -203,7 +203,7 @@ RUBY_RD2?=		${LOCALBASE}/bin/rd2
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 
 # Ports
-RUBY_PORT?=		lang/ruby${RUBY_SUFFIX}
+RUBY_PORT?=		lang/ruby${RUBY_R}
 RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
