@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	${RUBY_VER}
 DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
-PATCH_SITES=	http://www.ruby-lang.org/~knu/
+PATCH_SITES=	http://www.ruby-lang.org/~knu/ \
+		http://www.iDaemons.org/distfiles/
 PATCHFILES=	${RUBY_PATCHFILES}
 PATCH_DIST_STRIP=	-p1
 
