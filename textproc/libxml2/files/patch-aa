@@ -1,20 +1,20 @@
---- Makefile.in.orig	Sun Jan 17 03:13:33 1999
-+++ Makefile.in	Sun Jan 17 16:31:54 1999
-@@ -113,7 +113,7 @@
+--- Makefile.in.orig	Mon Feb  1 02:46:13 1999
++++ Makefile.in	Mon Feb  1 02:46:51 1999
+@@ -104,7 +104,7 @@
  tester_DEPENDENCIES = $(DEPS)
- tester_LDADD= $(LDADDS)
+ tester_LDADD = $(LDADDS)
  
--confexecdir=$(libdir)
-+confexecdir=$(sysconfdir)
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
  
  EXTRA_DIST = xmlConf.sh.in libxml.spec
-@@ -157,7 +157,7 @@
- SOURCES = $(libxml_la_SOURCES) $(tester_SOURCES)
- OBJECTS = $(libxml_la_OBJECTS) $(tester_OBJECTS)
- 
--all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) config.h
-+all: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) $(HEADERS) config.h
- 
- .SUFFIXES:
- .SUFFIXES: .S .c .lo .o .s
+@@ -439,7 +439,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS \
+ 		uninstall-confexecDATA uninstall-xmlincHEADERS
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
++all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
+ 		$(HEADERS) config.h
+ all-redirect: all-am
+ install-strip:

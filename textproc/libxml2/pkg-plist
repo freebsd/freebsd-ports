@@ -5,6 +5,7 @@ include/gnome-xml/encoding.h
 include/gnome-xml/entities.h
 include/gnome-xml/parser.h
 include/gnome-xml/tree.h
+include/gnome-xml/valid.h
 lib/libxml.a
 lib/libxml.la
 lib/libxml.so
