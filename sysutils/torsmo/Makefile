@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	torsmo
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	System monitor that renders text on desktop
 
-USE_AUTOCONF_VER=259
-USE_AUTOMAKE_VER=14
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=	torsmo.1
 
@@ -26,9 +24,6 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
-
-post-extract:
-	@${CP} ${FILESDIR}/freebsd.c ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
