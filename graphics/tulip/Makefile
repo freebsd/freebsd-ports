@@ -9,7 +9,7 @@
 PORTNAME=	tulip
 PORTVERSION=	1.2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/
+MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/tulip-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
