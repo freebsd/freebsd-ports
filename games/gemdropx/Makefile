@@ -8,7 +8,8 @@
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
+MASTER_SITES=	http://www.nbswebfx.com/downloads/ \
+		ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx
 
 MAINTAINER=	ports@FreeBSD.org
 
