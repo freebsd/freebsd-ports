@@ -1166,6 +1166,7 @@
     SUBDIR += vb2c
     SUBDIR += veepee
     SUBDIR += viewcvs
+    SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += whups
     SUBDIR += wizard
