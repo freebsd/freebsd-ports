@@ -1,13 +1,14 @@
 --- mstore/mstore.c.orig	Mon Mar 27 06:07:12 2000
-+++ mstore/mstore.c	Tue Dec 11 08:56:58 2001
-@@ -1,4 +1,4 @@
++++ mstore/mstore.c	Sun Jan 20 13:36:14 2002
+@@ -1,31 +1,39 @@
 -/* $Id: mstore.c,v 1.11 2000/03/27 04:07:12 zircote Exp $ */
-+/* $Id: mstore.c,v 1.21 2001/05/07 17:37:10 chuck Exp $ */
++/* $Id: mstore.c,v 1.22 2001/12/25 02:41:44 chuck Exp $ */
  
  #include <stdlib.h>
  #include <string.h>
-@@ -6,26 +6,33 @@
+ #include <errno.h>
  #include <pwd.h>
++#include <sys/time.h>
  #include <unistd.h>
  #include <crypt.h>
 +
@@ -43,7 +44,7 @@
  static bool		mstore_search_range(	CALSTREAM *stream,
  						const datetime_t *start,
  						const datetime_t *end);
-@@ -44,12 +51,18 @@
+@@ -44,12 +52,18 @@
  					unsigned long id);
  static bool             mstore_store(   CALSTREAM *stream, 
  					const CALEVENT *modified_event);
@@ -62,7 +63,7 @@
  	mstore_search_range,
  	mstore_search_alarm,
  	mstore_fetch,
-@@ -57,6 +70,8 @@
+@@ -57,6 +71,8 @@
  	mstore_remove,
  	mstore_snooze,
  	mstore_store,
@@ -71,7 +72,7 @@
  };
  
  
-@@ -88,13 +103,98 @@
+@@ -88,13 +104,98 @@
  }
  
  
@@ -171,7 +172,7 @@
    if(!mpasswd)
      {
        printf("Error! couldn't open mpasswd file!\n");
-@@ -123,36 +223,31 @@
+@@ -123,36 +224,31 @@
      }
  	fclose(mpasswd);
        return false;
@@ -233,7 +234,7 @@
  }
  
  
-@@ -161,8 +256,6 @@
+@@ -161,8 +257,6 @@
  {
  	if (!addr->proto || strcasecmp(addr->proto, "mstore"))
  		return false;
@@ -242,7 +243,7 @@
  	return true;
  }
  
-@@ -197,10 +290,18 @@
+@@ -197,10 +291,18 @@
  	}
  
  		cc_login(&username, &password);
@@ -263,7 +264,7 @@
  	}
  
  	if (!reopen) {
-@@ -212,13 +313,23 @@
+@@ -212,13 +314,23 @@
  
  	if (options & CAL_LOGIN) {
  		/* Copy login_userbuf, folder. */
@@ -289,7 +290,7 @@
  
  	/* Set up folder_user */
  	if(addr->host)
-@@ -229,8 +340,13 @@
+@@ -229,8 +341,13 @@
  		DATA->login_user=DATA->login_userbuf;
  		if (addr->user) {
  		  /* Copy and split folder_userbuf */
@@ -304,7 +305,7 @@
  		  /* Check for identical folder/login users. */
  		  DATA->folder_user=DATA->folder_userbuf;
  		  if (	!strcmp(DATA->login_user, DATA->folder_user))
-@@ -246,7 +362,6 @@
+@@ -246,7 +363,6 @@
  		DATA->folder_user = DATA->login_user;
  	}
  
@@ -312,7 +313,7 @@
  	return stream;
  fail:
  	mstore_freestream(stream);
-@@ -270,6 +385,36 @@
+@@ -270,6 +386,36 @@
  }
  
  
@@ -349,17 +350,7 @@
  CALEVENT *read_event(FILE *calfile)
  {
  	char		line[100];
-@@ -277,7 +422,8 @@
- 	int		size;
- 	CALEVENT	*event;
- 
--	fgets(line, sizeof(line), calfile);
-+	if (fgets(line, sizeof(line), calfile) == NULL)
-+		return NULL;
- 	if (sscanf(line, "%d", &size) != 1)
- 		return NULL;
- 	buf = malloc(size + 2);
-@@ -334,17 +480,18 @@
+@@ -334,79 +480,75 @@
  	datetime_t	_end = DT_INIT;
  	FILE *calfile;
  	char userpath[1000];
@@ -378,21 +369,74 @@
  	rewind(calfile);
  
  	if (start) {
- 		if (!dt_hasdate(start))
-+//LM:should this be _start = NULL? and again below for end?
- 			start = NULL;
- 		else {
- 			dt_setdate(&_start,
-@@ -358,7 +505,7 @@
- 			dt_setdate(&_end, end->year, end->mon, end->mday);
+-		if (!dt_hasdate(start))
+-			start = NULL;
+-		else {
+-			dt_setdate(&_start,
+-				start->year, start->mon, start->mday);
+-		}
++	    if (!dt_hasdate(start)) {
++		// LM:should this be _start = NULL? and again below for end?
++		start = NULL;
++	    } else {
++		dt_setdate(&_start,
++			   start->year, start->mon, start->mday);
++	    }
  	}
- 
+ 	if (end) {
+-		if (!dt_hasdate(end))
+-			end = NULL;
+-		else
+-			dt_setdate(&_end, end->year, end->mon, end->mday);
+-	}
+-
 -	while((event=read_event(calfile))) {
-+	while((event = read_event(calfile))) {
- 		datetime_t	clamp = DT_INIT;
+-		datetime_t	clamp = DT_INIT;
+-
+-		if (!start)
+-			dt_setdate(&clamp, 1, JANUARY, 1);
+-		else {
+-			dt_setdate(&clamp,
+-				_start.year, _start.mon, _start.mday);
+-		}
++	    if (!dt_hasdate(end))
++	      end = NULL;
++	    else
++	      dt_setdate(&_end, end->year, end->mon, end->mday);
++	}
++    
++	while ((event = read_event(calfile))) {
++	    datetime_t	clamp = DT_INIT;
++	    
++	    if (!start) {
++		dt_setdate(&clamp, 1, JANUARY, 1);
++	    } else {
++		dt_setdate(&clamp,
++			   _start.year, _start.mon, _start.mday);
++	    }
  
- 		if (!start)
-@@ -385,28 +532,24 @@
+-		calevent_next_recurrence(event, &clamp, stream->startofweek);
+-		if (	dt_hasdate(&clamp) &&
+-			!(end && dt_compare(&clamp, &_end) > 0))
+-		{
+-			cc_searched(event->id);
+-		}
++	    calevent_next_recurrence(event, &clamp, stream->startofweek);
++	    if (dt_hasdate(&clamp) &&
++		!(end && dt_compare(&clamp, &_end) > 0)) {
++		cc_searched(event->id);
++	    }
+ 
+-		calevent_free(event);
++	    calevent_free(event);
+ 	}
+-	fclose(calfile);
+-	return true;
++    fclose(calfile);
++    return true;
+ }
+ 
+ 
  bool
  mstore_search_alarm(CALSTREAM *stream, const datetime_t *when)
  {
@@ -409,8 +453,8 @@
 -	if(!calfile)
 -	  {
 +	snprintf(userpath, 900, "%s/%s", DATA->base_path, DATA->folder_user);
-+	calfile=fopen (userpath, "a+");
-+	if(!calfile) {
++	calfile = fopen (userpath, "a+");
++	if (!calfile) {
  	    printf("Error! couldn't open calendar file!\n");
  	    exit(1);
 -	  }
@@ -431,7 +475,7 @@
  		}
  		calevent_free(event);
  	}
-@@ -422,13 +565,12 @@
+@@ -422,13 +564,12 @@
  	FILE		*calfile;
  	char		userpath[1000];
  
@@ -449,19 +493,83 @@
  	rewind(calfile);
  	while((event=read_event(calfile))) {
  		if(event->id==id) {
-@@ -459,8 +601,11 @@
- 	if (strcasecmp(addr->folder, "INBOX"))
- 		return false;
+@@ -445,43 +586,45 @@
  
-+	/* comment this out so that we can share calendars
- 	if (DATA->folder_userbuf)
- 		return false;
-+	*/
-+	
- 	if (!dt_hasdate(&event->start))
- 		return false;
  
-@@ -609,3 +754,15 @@
+ bool
+-mstore_append(	CALSTREAM *stream, const CALADDR *addr,
+-			unsigned long *id, const CALEVENT *event)
++mstore_append(CALSTREAM *stream, const CALADDR *addr,
++              unsigned long *id, const CALEVENT *event)
+ {
+-	CALEVENT myevent;
+-	FILE *calfile;
+-	char userpath[1000];
++    CALEVENT myevent;
++    FILE *calfile;
++    char userpath[1000];
++    
++    if (addr->host) {
++	return false;
++    }
++    if (addr->user) {
++	return false;
++    }
++    if (strcasecmp(addr->folder, "INBOX")) {
++	return false;
++    }
+ 
+-	if (addr->host)
+-		return false;
+-	if (addr->user)
+-		return false;
+-	if (strcasecmp(addr->folder, "INBOX"))
+-		return false;
++    if (!dt_hasdate(&event->start)) {
++	return false;
++    }
+ 
+-	if (DATA->folder_userbuf)
+-		return false;
+-	if (!dt_hasdate(&event->start))
+-		return false;
++    snprintf(userpath, 900, "%s/%s", DATA->base_path, DATA->folder_user);
++    calfile = fopen(userpath, "a");
++    if (!calfile) {
++        printf("Error! couldn't open calendar file %s\n",userpath);
++	perror("mstore_append");
++        return false;
++    }
+ 
+-	snprintf(userpath,900,"%s/%s",DATA->base_path,DATA->folder_user);
+-	calfile=fopen (userpath,"a");
+-        if(!calfile)
+-          {
+-            printf("Error! couldn't open calendar file %s\n",userpath);
+-	    perror("mstore_append");
+-            return false;
+-          }
+-
+-	myevent = *event;
+-	myevent.id = time(NULL);
+-	write_event(calfile, &myevent);
++    myevent = *event;
++    myevent.id = time(NULL);
++    
++    write_event(calfile, &myevent);
+ 
+-	fclose(calfile);
++    fclose(calfile);
+ 
+-	*id = myevent.id;
++    *id = myevent.id;
+ 
+-	return true;
++    return true;
+ }
+ 
+ 
+@@ -609,3 +752,15 @@
          return true;
  }
  

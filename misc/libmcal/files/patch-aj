@@ -1,9 +1,9 @@
 --- mcal.c.orig	Sun Feb 27 06:01:54 2000
-+++ mcal.c	Tue Jan  9 04:26:48 2001
++++ mcal.c	Sun Jan 20 13:13:15 2002
 @@ -1,5 +1,5 @@
  /*
 - *	$Id: mcal.c,v 1.6 2000/02/27 05:01:54 inan Exp $
-+ *	$Id: mcal.c,v 1.9 2001/01/09 03:26:48 markie Exp $
++ *	$Id: mcal.c,v 1.10 2001/12/10 03:16:41 chuck Exp $
   * Libmcal - Modular Calendar Access Library
   * Copyright (C) 1999 Mark Musone and Andrew Skalski
   *
@@ -121,19 +121,21 @@
  static bool		dummy_search_range(	CALSTREAM *stream,
  						const datetime_t *start,
  						const datetime_t *end);
-@@ -967,18 +1023,28 @@
+@@ -966,6 +1022,13 @@
+ 					unsigned long id);
  static bool		dummy_snooze(	CALSTREAM *stream,
  					unsigned long id);
- 
++static bool		 dummy_store(	CALSTREAM *stream,
++					const CALEVENT *event);
 +static bool		dummy_delete(	CALSTREAM *stream,
 +					char *calendar);
 +
 +static bool		dummy_rename(	CALSTREAM *stream,
 +					char *src,char *dest);
-+
+ 
  const CALDRIVER dummy_driver =
  {
- 	dummy_valid,
+@@ -973,12 +1036,17 @@
  	dummy_open,
  	dummy_close,
  	dummy_ping,
@@ -144,13 +146,14 @@
  	dummy_append,
  	dummy_remove,
  	dummy_snooze,
++	dummy_store,
 +	dummy_delete,
 +	dummy_rename,
 +	
  };
  
  
-@@ -1011,6 +1077,12 @@
+@@ -1011,6 +1079,12 @@
  	return false;
  }
  
@@ -163,10 +166,16 @@
  
  bool
  dummy_search_range(	CALSTREAM *stream,
-@@ -1052,6 +1124,18 @@
+@@ -1052,6 +1126,24 @@
  
  bool
  dummy_snooze(CALSTREAM *stream, unsigned long id)
++{
++	return false;
++}
++
++bool
++dummy_store(CALSTREAM *stream, const CALEVENT *event)
 +{
 +	return false;
 +}
