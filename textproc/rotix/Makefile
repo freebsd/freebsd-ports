@@ -10,11 +10,9 @@ PORTNAME=	rotix
 PORTVERSION=	0.82
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/
+MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME}/
 
 MAINTAINER=	lintux@debian.org
-
-BROKEN=		"Does not fetch"
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
