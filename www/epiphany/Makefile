@@ -31,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5a"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5b"
 .else
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
