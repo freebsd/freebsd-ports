@@ -15,7 +15,7 @@ DISTNAME=	ClanLib-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 .if defined(WITHOUT_GL)
