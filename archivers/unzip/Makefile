@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1998/01/24 07:11:16 jkh Exp $
+# $Id: Makefile,v 1.19 1998/10/04 10:31:38 jkh Exp $
 #
 
 DISTNAME=	unzip532
@@ -15,7 +15,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/unzip-5.32
 MAKEFILE=       unix/Makefile
-.if ${MACHINE_ARCH} == alpha
+.if ${ARCH} == alpha
 ALL_TARGET=	bsd
 .else
 ALL_TARGET=     freebsd
