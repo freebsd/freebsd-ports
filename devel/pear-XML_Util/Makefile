@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Util
-PORTVERSION=	0.6.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
