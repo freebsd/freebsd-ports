@@ -26,12 +26,30 @@
 #
 
 use strict;
+my $path_tmp = "/tmp";
+eval {
+	require 'paths.ph';
+	$path_tmp = &_PATH_TMP;
+};
 
-my ($user, $origdir, $portname, $tmpdir, $wdpdir, $predir, $hmake);
+sub testdir (@) {
+	my $d;			# currently tested dir
+
+	foreach $d (@_) {
+		next unless defined($d);
+		$d =~ s,/$,,;
+		return $d if ((-d $d) && (-w $d));
+	}
+	return "";
+}
+
+my ($user, $origdir, $portname, $tmpbase, $tmpdir, $wdpdir, $predir, $hmake);
 chomp ($user = `logname`);
 chomp ($origdir = `pwd`);
 chomp ($portname = `basename $origdir`);
-$tmpdir = "/tmp/$user.$portname";
+$tmpbase = testdir($ENV{'TMPDIR'}, $ENV{'TMP'}, $path_tmp);
+($tmpbase eq "") and die("No temp dir, please define either TMPDIR or TMP\n");
+$tmpdir = "$tmpbase/$user.$portname";
 $wdpdir = "$tmpdir/wdp";
 $predir = "$tmpdir/prefix";
 
