@@ -17,4 +17,9 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 
+post-patch:
+	@(cd ${WRKSRC} ; \
+		${GREP} -r -l "<malloc.h>" * | \
+		xargs ${PERL} -pi -e "s/<malloc.h>/<stdlib.h>/")
+
 .include <bsd.port.mk>
