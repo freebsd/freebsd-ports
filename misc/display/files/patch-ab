@@ -1,0 +1,12 @@
+*** ../display.c	Fri Sep 11 21:17:39 1998
+--- display.c	Thu Sep 10 20:51:23 1998
+***************
+*** 67,72 ****
+--- 67,73 ----
+  		addch(ch);
+  	}
+  	clrtoeol();
++ 	clrtobot();
+  	refresh();
+  	pclose(fp);
+  }
