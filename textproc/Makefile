@@ -99,6 +99,7 @@
     SUBDIR += iso12083
     SUBDIR += iso8879
     SUBDIR += ispell
+    SUBDIR += it-aspell
     SUBDIR += jade
     SUBDIR += java2html
     SUBDIR += javacc
