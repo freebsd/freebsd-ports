@@ -2320,6 +2320,7 @@ glean		ports/graphics/glean
 glens		ports/science/glens
 glew		ports/graphics/glew
 gleyes		ports/games/gleyes
+glfw		ports/graphics/glfw
 glg		ports/devel/glg
 glgraph		ports/math/glgraph
 glib12		ports/devel/glib12
