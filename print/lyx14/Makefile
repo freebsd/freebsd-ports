@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.4.3
+PORTVERSION=	1.1.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
-DISTNAME=	lyx-1.1.4
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.1.4fix1.gz patch-1.1.4fix2.gz patch-1.1.4fix3.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dirk@FreeBSD.org
 
