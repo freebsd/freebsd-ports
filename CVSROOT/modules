@@ -4462,6 +4462,7 @@ magicpoint	ports/misc/magicpoint
 magictun	ports/net/magictun
 mahjong		ports/games/mahjong
 mahogany	ports/mail/mahogany
+mail-notification	ports/mail/mail-notification
 mail2procmailrc	ports/mail/mail2procmailrc
 mail2sms	ports/mail/mail2sms
 mailagent	ports/mail/mailagent
