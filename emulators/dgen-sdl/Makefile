@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dgen-sdl
-PORTVERSION=	1.22
-PORTREVISION=	1
+PORTVERSION=	1.23
 CATEGORIES=	emulators
 MASTER_SITES=	http://pknet.com/~joe/
 
@@ -15,13 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 MAN1=		dgen.1 tobin.1
 MAN5=		dgenrc.5
