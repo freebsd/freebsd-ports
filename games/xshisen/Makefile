@@ -1,15 +1,14 @@
 # New ports collection makefile for:   xshisen
-# Version required:           1.35
+# Version required:           1.36
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/03/06 04:05:01 asami Exp $
+# $Id: Makefile,v 1.6 1997/03/06 04:54:41 asami Exp $
 #
 
-DISTNAME=       xshisen-1.35
+DISTNAME=       xshisen-1.36
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	ftp://ftp.win.or.jp/pub/doc-sources/fj.sources/1996/feb/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
@@ -22,12 +21,11 @@ GNU_CONFIGURE=	YES
 #CONFIGURE_ARGS=--enable-japanese=euc	#Japanese char set euc, jis sjis
 MAN6=		xshisen.6
 
+INSTALL_TARGET=	install install.man
+
 post-install:
 	@ strip ${PREFIX}/bin/xshisen
 	@ /bin/chmod 755 ${PREFIX}/bin/xshisen
 	@ /usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshisen
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/ja_JP.JIS7/man6/xshisen.6
-.endif
 
 .include <bsd.port.mk>
