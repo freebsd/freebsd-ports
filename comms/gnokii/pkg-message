@@ -1,0 +1,5 @@
+================================================================================
+The default config is installed in ${PREFIX}/etc/gnokiirc, and is configured
+for Nokia 6110 phones connected on COM1. Have a look at the
+documentation/manpages for more information.
+================================================================================

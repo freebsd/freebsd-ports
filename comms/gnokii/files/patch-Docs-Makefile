@@ -1,0 +1,33 @@
+--- Docs/Makefile.orig	Fri Sep 28 02:07:58 2001
++++ Docs/Makefile	Mon Oct 15 00:42:14 2001
+@@ -24,24 +24,26 @@
+ 		packaging-howto \
+ 		sample.gnokiirc
+ 
+-GNOKII1_MAN = "man/gnokii.1 man/todologo.1"
+-GNOKII8_MAN = "man/gnokiid.8 man/mgnokiidev.8"
++GNOKII1_MAN = man/gnokii.1 man/todologo.1
++GNOKII8_MAN = man/gnokiid.8 man/mgnokiidev.8
+ XGNOKII_MAN = man/xgnokii.1x
+ 
+ all:
+ 	@echo
+ 
+ install:
++ifndef NOPORTDOCS
+ 	$(INSTALL) -d $(docdir)
+ 	@for xxx in $(INSTALL_DOCS); do \
+ 	    if [ -e $$xxx ]; then \
+ 		$(INSTALL) -m 0444 $$xxx $(docdir)/$$xxx; \
+ 	    fi; \
+ 	done
++endif
+ 	$(INSTALL) $(GNOKII1_MAN) $(man1dir)
+ 	$(INSTALL) $(GNOKII8_MAN) $(man8dir)
+-	if [ "x$HAVE_XGNOKII" = xyes ]; then \
+-		$(INSTALL) $(XGNOKII_MAN) $(xmandir) \
++	if [ "x$(HAVE_XGNOKII)" = xyes ]; then \
++		$(INSTALL) $(XGNOKII_MAN) $(xmandir)/xgnokii.1; \
+ 	fi
+ 	@echo "done"
+ 
