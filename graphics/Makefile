@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.77 1998/06/07 06:07:52 vanilla Exp $
+# $Id: Makefile,v 1.78 1998/06/10 13:59:19 dburr Exp $
 #
 
     SUBDIR += EZWGL
@@ -43,6 +43,7 @@
     SUBDIR += mpegedit
     SUBDIR += mplex
     SUBDIR += netpbm
+    SUBDIR += netshow
     SUBDIR += p5-GD
     SUBDIR += p5-Image-Size
     SUBDIR += p5-PerlMagick
