@@ -8,9 +8,9 @@
 PORTNAME=	tirc
 PORTVERSION=	1.2
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/software/Network/Irc/tirc/
+MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/Network/Irc/tirc/
 
-MAINTAINER=	dr@domix.de
+MAINTAINER=	dr@astorit.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-ansi-colours"
