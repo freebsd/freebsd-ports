@@ -8,6 +8,7 @@
     SUBDIR += deft
     SUBDIR += emboss
     SUBDIR += fastdnaml
+    SUBDIR += gaussian98
     SUBDIR += gperiodic
     SUBDIR += hmmer
     SUBDIR += kinemage

@@ -1,0 +1,345 @@
+--- bsd/i386.make.orig	Sun May 16 09:08:58 1999
++++ bsd/i386.make	Thu Feb  8 12:13:25 2001
+@@ -48,12 +48,12 @@
+ #
+ # switch the following two lines if the optimized blas library is not available.  This
+ # library is highly recommended
+-# BLAS = blas.a
+-BLAS = /usr/local/lib/blas-opt.a /usr/local/lib/blas-f2c.a
++BLAS = -lblas
++# BLAS = /usr/local/lib/blas-opt.a /usr/local/lib/blas-f2c.a
+ BLASFLAG = -DCA1_DGEMM -DCA2_DGEMM -DCAB_DGEMM -DLV_DSP
+ # switch the following two lines if compilation for the pentium is desired instead
+ # of for the P6/Pentium-II
+-MACH = -tp p6 
++MACH = #-tp p6 
+ # MACH = -tp p5
+ #
+ BSDDIR = bsd
+@@ -61,6 +61,7 @@
+ BSDDIR1 = ../bsd
+ MAKELOC1 = -f $(BSDDIR1)/g98.make
+ UTILDIR = ..
++LDFLAGS = -L${PREFIX}/lib
+ HLIBDIR = $(g98root)/hermes/lib
+ HSRC = $(g98root)/hermes/gxinterface
+ HINC = $(g98root)/hermes/include
+@@ -72,7 +73,7 @@
+ #
+ GAULIBA = util.a 
+ #GAULIB = $(GAULIBA) $(BLAS)
+-GAULIB = util.so
++GAULIB = libgauutil.so.1 $(BLAS)
+ #
+ # Directory pointers only used for linking the profiling version:
+ #
+@@ -96,35 +97,36 @@
+ # control compilation.
+ #
+ RUNF2C = f2c -kr -T. -R -Nx400 -Nn1604 -NL800
+-RUNCC = cc -g
++RUNCC = $(CC) -g
+ RUNAR  = ar
+ RUNRAN = ranlib
+ RUNCPP = gau-cpp
+ RUNFSP = gau-fsplit
+-RUNMAKE = make#
+-OPTFLAGO = -malign-double -m486 -fexpensive-optimizations -O3 -ffast-math -funroll-loops
+-# Flags for portland compiler.
++RUNMAKE = ${GMAKE}
++OPTFLAGO = 
++# Flags for G77(GNU fortran compiler)
+ #
+-RUNF77 = pgf77 
++RUNF77 = ${F77}
+ F2CLIB =
+ LIBS = 
+-UNROLL = -Munroll
+-VECTOR = -Mvect=cachesize:524288
++UNROLL = #-Munroll
++VECTOR = #-Mvect=cachesize:524288
+ TWOH = 
+-PC64 = -pc 64 -Kieee
++PC64 = #-pc 64 -Kieee
+ #
+ # Standard compilation flags:
+ #
+ DIMENS = $(DIMENSX) $(TWOH)
+-FNOOPT = $(PROFFLAG) -O0 $(TIME)
+-FNOOPT64 = $(FNOOPT) $(PC64)
+-FOPT1 = $(PROFFLAG) -O1 $(MACH)
+-FOPT2 = $(PROFFLAG) -O2 $(MACH)
+-FOPT2UN = $(FOPT2) $(UNROLL)
+-FOPT2VC = $(FOPT2) $(VECTOR)
+-OPTFLAG = $(FOPT2) $(UNROLL) $(VECTOR)
+-FFLAGS = $(PROFFLAG) $(OPTFLAG)
+-CFLAGS = $(DIMENS) $(OPTFLAGO) $(PROFFLAG)
++# g77+FreeBSD box is stable enough
++FNOOPT = $(PROFFLAG) $(FFLAGS)
++FNOOPT64 = $(PROFFLAG) $(FFLAGS)
++FOPT1 = $(PROFFLAG) $(FFLAGS)
++FOPT2 = $(PROFFLAG) $(FFLAGS)
++FOPT2UN = $(PROFFLAG) $(FFLAGS)
++FOPT2VC = $(PROFFLAG) $(FFLAGS)
++#OPTFLAG = $(FOPT2) $(UNROLL) $(VECTOR)
++#FFLAGS = $(PROFFLAG) $(OPTFLAGS) 
++CFLAGS = $(DIMENS) $(PROFFLAG) #$(OPTFLAGO) 
+ EXTOBJ =
+ TESTRTO = 
+ #
+@@ -136,7 +138,11 @@
+ #
+ # Rules for Fortran and C compilation, possible including "on machine"
+ #
+-#.F.o:
++.F.o:
++%.o : %.F
++	$(RUNCPP) $(DIMENS) $*.F $*.f
++	$(RUNF77) $(FFLAGS) -c $*.f
++	rm -f $*.f $*.c
+ %.o : %.F
+ 	$(RUNCPP) $(DIMENS) $*.F $*.f
+ 	$(RUNF77) $(FFLAGS) -c $*.f
+@@ -241,7 +247,7 @@
+ 	- (cd extras ; make -f extras.make delexe)
+ 
+ clean: delexe
+-	rm -f util.so cubegen *.a *.o *.lo local/*.a local/*.o local/rpac/*.a \
++	rm -f libgauutil.so.1 cubegen *.a *.o *.lo local/*.a local/*.o local/rpac/*.a \
+ 	  local/rpac/*.o bsd/g98.make local/rpac/rpac.make
+ 	- (cd extras ; make -f extras.make clean)
+ #
+@@ -257,18 +263,31 @@
+ #
+ # The generic command line for making a link from its library:
+ #
+-#.F.exe: 
++.F.exe: 
++	$(RUNFSP) -e m$* $(BSDDIR)/main.F
++	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a $(EXTRAS) $(GAULIB) $(LIBS)
++	rm -f m$*.*
+ %.exe : %.F
+ 	$(RUNFSP) -e m$* $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o
+-	$(RUNF77) $(FFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f m$*.*
+ 
+ #
+ #
+ # The generic command for making a link library from source:
+ #
+-#.F.a:
++.F.a:
++	rm -f -r temp-$*
++	mkdir temp-$*
++	(cd temp-$* ; $(RUNFSP) ../$*.F ; \
++	  $(BSDDIR1)/updatelink1 $(BSDDIR1)/g98.make OPTFLAG='$(OPTFLAG)' DO-LIB [a-l]*.F ; \
++	  ($(RUNAR) rlv ../$*.a [a-l]*.o; exit 0); \
++	  $(BSDDIR1)/updatelink1 $(BSDDIR1)/g98.make OPTFLAG='$(OPTFLAG)' DO-LIB [m-z]*.F ; \
++	  ($(RUNAR) rlv ../$*.a [m-z]*.o; exit 0))
++	rm -f -r temp-$*
++	$(RUNRAN) $*.a
+ %.a : %.F
+ 	rm -f -r temp-$*
+ 	mkdir temp-$*
+@@ -335,78 +354,78 @@
+ g98: $(GAULIB) $(EXTRAS)
+ 	$(RUNFSP) -e ml0 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml0.o
+-	$(RUNF77) $(FFLAGS) -o g98 ml0.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o g98 ml0.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml0.*
+ 
+ l302.exe l307.exe l314.exe l701.exe l703.exe l1101.exe l1110.exe: $(EXTRAS)
+ 	ar x $(GAULIBA) bdrys.o
+ 	$(RUNFSP) -e m$* $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o 
+-	$(RUNF77) $(FFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bdrys.o $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bdrys.o $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f m$*.* bdrys.o 
+ 
+ l402.exe: $(EXTRAS) l402.a  
+ 	$(RUNFSP) -e m$* $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o 
+ 	ar x l402.a bd0402.o
+-	$(RUNF77) $(FFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bd0402.o $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f m$*.* bd0402.o 
+ 
+ l609.exe: $(EXTRAS) l609.a  
+ 	$(RUNFSP) -e m$* $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o 
+ 	ar x l609.a bd0609.o
+-	$(RUNF77) $(FFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bd0609.o $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f m$*.* bd0609.o 
+ 
+ l705.exe: $(EXTRAS) l306.a l705.a
+ 	$(RUNFSP) -e ml705 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml705.o
+-	$(RUNF77) $(FFLAGS) -o l705.exe ml705.o $(EXTOBJ) l705.a l306.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l705.exe ml705.o $(EXTOBJ) l705.a l306.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml705.*
+ 
+ l709.exe: $(EXTRAS) l309.a l709.a
+ 	$(RUNFSP) -e ml709 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml709.o
+-	$(RUNF77) $(FFLAGS) -o l709.exe ml709.o $(EXTOBJ) l709.a l309.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l709.exe ml709.o $(EXTOBJ) l709.a l309.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml709.*
+ 
+ l806.exe: $(EXTRAS) l806.a  
+ 	$(RUNFSP) -e m$* $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) $*.a m$*.o 
+ 	ar x l806.a bd0806.o
+-	$(RUNF77) $(FFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bd0806.o $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o $*.exe m$*.o $(EXTOBJ) $*.a bd0806.o $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f m$*.* bd0806.o 
+ 
+ l1003.exe: $(EXTRAS) l510.a l1003.a
+ 	$(RUNFSP) -e ml1003 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml1003.o
+-	$(RUNF77) $(FFLAGS) -o l1003.exe ml1003.o $(EXTOBJ) l1003.a l510.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l1003.exe ml1003.o $(EXTOBJ) l1003.a l510.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml1003.*
+ 
+ l1004.exe: $(EXTRAS) l1112.a l1004.a
+ 	$(RUNFSP) -e ml1004 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml1004.o
+-	$(RUNF77) $(FFLAGS) -o l1004.exe ml1004.o $(EXTOBJ) l1004.a l1112.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l1004.exe ml1004.o $(EXTOBJ) l1004.a l1112.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml1004.*
+ 
+ l1014.exe: $(EXTRAS) l1112.a l1014.a l914.a
+ 	$(RUNFSP) -e ml1014 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml1014.o
+-	$(RUNF77) $(FFLAGS) -o l1014.exe ml1014.o $(EXTOBJ) l1014.a l1112.a l914.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l1014.exe ml1014.o $(EXTOBJ) l1014.a l1112.a l914.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f ml1014.*
+ 
+ l9999.exe: $(EXTRAS) l9999.a dummy.o dummy-narch.o
+ 	$(RUNFSP) -e ml9999 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml9999.o
+-	$(RUNF77) $(FFLAGS) -o l9999.exe ml9999.o $(EXTOBJ) $(EXTRAS) l9999.a \
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l9999.exe ml9999.o $(EXTOBJ) $(EXTRAS) l9999.a \
+ 	   dummy.o $(GAULIB) dummy-narch.o $(LIBS)
+ 	rm -f ml9999.*
+ 
+ l9999-hermes: $(EXTRAS) l9999.a archlib.a mdarch.a $(HLIBS) gxxlnk.o
+ 	$(RUNFSP) -e ml9999 $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ml9999.o
+-	$(RUNF77) $(FFLAGS) -o l9999.exe ml9999.o $(EXTOBJ) $(EXTRAS) \
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o l9999.exe ml9999.o $(EXTOBJ) $(EXTRAS) \
+ 	  gxxlnk.o l9999.a archlib.a mdarch.a $(GAULIB) dummy-narch.o \
+ 	  $(HLIBS) $(LIBS)
+ 	rm -f ml9999.*
+@@ -430,13 +449,13 @@
+ 
+ c8698: $(EXTRAS) c8698.o
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) c8698.o
+-	$(RUNF77) $(FFLAGS) -o c8698 c8698.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o c8698 c8698.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ chkchk: $(EXTRAS) chkchk.o
+-	$(RUNF77) $(FFLAGS) -o chkchk chkchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o chkchk chkchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ cktoig: $(EXTRAS) cktoig.o
+-	$(RUNF77) $(FFLAGS) -o cktoig cktoig.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o cktoig cktoig.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ crendx: crendx.o crendxmfl.o $(GAULIB) $(EXTRAS) archlib.a mdarch.a
+ 	$(RUNF77) $(FFLAGS) -o crendx crendx.o crendxmfl.o $(EXTOBJ) $(EXTRAS) \
+@@ -445,62 +464,62 @@
+ chkmove: chkmove.o
+ 	$(RUNFSP) -e mchkmov $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' mchkmov.o
+-	$(RUNF77) $(FFLAGS) -o chkmove mchkmov.o chkmove.o \
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o chkmove mchkmov.o chkmove.o \
+ 	  $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm mchkmov.*
+ 
+ cubman: cubman.o
+-	$(RUNF77) $(FFLAGS) -o cubman cubman.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o cubman cubman.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ cubegen: cubegen.o
+-	$(RUNF77) $(FFLAGS) -o cubegen cubegen.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o cubegen cubegen.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ freqchk: freqchk.o l716.a newzmat.a
+-	$(RUNF77) $(FFLAGS) -o freqchk freqchk.o l716.a newzmat.a $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o freqchk freqchk.o l716.a newzmat.a $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ freqmem: freqmem.o
+-	$(RUNF77) $(FFLAGS) -o freqmem freqmem.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o freqmem freqmem.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ formchk: formchk.o
+-	$(RUNF77) $(FFLAGS) -o formchk formchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o formchk formchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ demofc: demofc.o
+-	$(RUNF77) $(FFLAGS) -o demofc demofc.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o demofc demofc.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ gauopt: $(EXTRAS) gauopt.o
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) gauopt.o
+-	$(RUNF77) $(FFLAGS) -o gauopt gauopt.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o gauopt gauopt.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ ghelp: $(EXTRAS) ghelp.o
+ 	$(RUNFSP) -e mghelp $(BSDDIR)/main.F
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) ghelp.o mghelp.o
+-	$(RUNF77) $(FFLAGS) -o ghelp mghelp.o ghelp.o l9999.a $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o ghelp mghelp.o ghelp.o l9999.a $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 	rm -f mghelp.*
+ 
+ ham506: ham506.o
+-	$(RUNF77) $(FFLAGS) -o ham506 ham506.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o ham506 ham506.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ newzmat: $(EXTRAS) newzmat.a newzmat-bsd.o l101.a l716.a
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) newzmat.a newzmat-bsd.o
+-	$(RUNF77) $(FFLAGS) -o newzmat newzmat-bsd.o newzmat.a $(EXTOBJ) \
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o newzmat newzmat-bsd.o newzmat.a $(EXTOBJ) \
+ 	    l101.a l401.a l716.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ pluck: pluck.o
+-	$(RUNF77) $(FFLAGS) -o pluck pluck.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o pluck pluck.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ unfchk: unfchk.o
+-	$(RUNF77) $(FFLAGS) -o unfchk unfchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o unfchk unfchk.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ reform: reform.o $(GAULIB) $(EXTRAS) archlib.a mdarch.a
+ 	$(RUNF77) $(FFLAGS) -o reform reform.o $(EXTOBJ) $(EXTRAS) archlib.a \
+ 	   mdarch.a $(GAULIB) $(LIBS)
+ 
+ rwfdump: rwfdump.o
+-	$(RUNF77) $(FFLAGS) -o rwfdump rwfdump.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o rwfdump rwfdump.o $(EXTOBJ) $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ testrt: $(EXTRAS) testrt.o l1.a $(TESTRTO)
+ 	$(RUNMAKE) $(MAKELOC) OPTFLAG='$(OPTFLAG)' $(EXTRAS) testrt.o $(TESTRTO)
+-	$(RUNF77) $(FFLAGS) -o testrt testrt.o $(TESTRTO) $(EXTOBJ) l1.a l9999.a $(EXTRAS) $(GAULIB) $(LIBS)
++	$(RUNF77) $(FFLAGS) $(LDFLAGS) -o testrt testrt.o $(TESTRTO) $(EXTOBJ) l1.a l9999.a $(EXTRAS) $(GAULIB) $(LIBS)
+ 
+ gau-cpp: $(BSDDIR)/cpp.c $(BSDDIR)/cpp.h
+ 	$(RUNCC) -o gau-cpp -DHOST=SYS_UNIX -Dstrchr=index -Dstrrchr=rindex \
+@@ -784,9 +803,9 @@
+ 	rm -f $(@:o=f) $(@:o=c)
+ 
+ MARCHOBJ = dummy.o
+-util.so: $(GAULIBA) dummy.o $(BLAS)
+-	ld -shared -o util.so dummy.o --whole-archive util.a \
+-	  --no-whole-archive $(BLAS)
++libgauutil.so.1: $(GAULIBA) dummy.o $(BLAS)
++	ld  -shared -o libgauutil.so.1 \
++	    dummy.o  --whole-archive util.a  
+ 
+ #
+ # Here are rules specific to the Gaussian/Linda parallel version:

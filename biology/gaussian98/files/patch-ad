@@ -1,0 +1,28 @@
+--- bsd/setup-make.orig	Tue Jun  1 10:13:16 1999
++++ bsd/setup-make	Sun Dec 10 20:01:51 2000
+@@ -31,17 +31,18 @@
+   set mstr = "make"
+   set pstr = "-p"
+ else if ("$mach" == "i386") then
+-  if (-e $PGI/linux86/bin/pgf77) then
+-    set fcflag = "FC='pgf77'"
+-    set fcflagp = ""
+-    set blas = "BLAS='' UTIL_NAME='{util,archlib,mdarch,lapack}.a'"
+-    set fc2flag = "FC2='/usr/local/lib/blas-{opt,f2c}.a'"
+-  else
++# comment out for non-pgf but g77 compiler environment
++#  if (-e $PGI/linux86/bin/pgf77) then
++#    set fcflag = "FC='pgf77'"
++#    set fcflagp = ""
++#    set blas = "BLAS='' UTIL_NAME='{util,archlib,mdarch,lapack}.a'"
++#    set fc2flag = "FC2='/usr/local/lib/blas-{opt,f2c}.a'"
++#  else
+     set fcflag = "FC='cc -g'"
+     set fc2flag = "FC2='-lf2c -lm'"
+     set blas = "UTIL_NAME='{util,archlib,mdarch,util,lapack,blas}.a'"
+     set fc2flag = "FC2=''"
+-    endif
++#   endif
+   set blasp = "$blas"
+   set mstr = "make"
+   set pstr = "-p"

@@ -1,0 +1,11 @@
+--- bsd/bldg98.orig	Thu Jun 10 01:50:31 1999
++++ bsd/bldg98	Sun Dec 10 20:01:51 2000
+@@ -13,7 +13,7 @@
+ #
+ uname -a
+ set makeflag = ""
+-set makename = "make"
++set makename = "${GMAKE}"
+ setenv TMPDIR .
+ setenv LC_COLLATE C
+ setenv LANG C

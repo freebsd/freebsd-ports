@@ -1,0 +1,36 @@
+--- bsd/mdutil.c.orig	Fri Jun 11 01:44:58 1999
++++ bsd/mdutil.c	Sun Dec 10 20:01:51 2000
+@@ -1362,6 +1362,11 @@
+ #ifndef i386
+   char *sbrk();
+ #endif
++
++#ifdef __FreeBSD__
++  char *sbrk();
++#endif
++
+   lenbuf = (char *) sbrk(0) - end;
+ #endif
+   ifd = (int) *fd;
+@@ -2610,6 +2615,8 @@
+ #endif
+ 
+ #ifdef i386
++f77_int wait_() { return(wait()); }
++f77_int fork_() { return(fork()); }
+ f77_int loc_ (r) f77_wp *r; {return (f77_int) r; }
+ 
+ f77_int time_ () { return((f77_int) time((time_t *) NULL)); }
+@@ -2637,7 +2644,12 @@
+   offset_type n;
+ #ifdef DO_SHM
+   int shmflags = 0;
++#ifndef __FreeBSD__
+   void *brkadr, *sbrk();
++#else
++  void *brkadr;
++  char *sbrk();
++#endif
+   key_t shmkey;
+ #ifndef IBM_RS6K
+ #ifndef sgi
