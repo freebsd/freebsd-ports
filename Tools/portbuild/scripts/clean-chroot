@@ -8,6 +8,11 @@ noclean=$4
 # directories to clean
 cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
 
+if [ `realpath ${chroot}` = "/" ]; then
+  # Don't spam the root file system if something has gone wrong!
+  exit 1
+fi
+
 #umount ${chroot}/proc
 
 if [ ${arch} = "i386" ]; then
