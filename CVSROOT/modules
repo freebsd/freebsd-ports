@@ -4394,6 +4394,7 @@ p5-Crypt-OpenSSL-RSA	ports/security/p5-Crypt-OpenSSL-RSA
 p5-Crypt-OpenSSL-Random	ports/security/p5-Crypt-OpenSSL-Random
 p5-Crypt-PassGen	ports/security/p5-Crypt-PassGen
 p5-Crypt-Primes	ports/security/p5-Crypt-Primes
+p5-Crypt-RC4	ports/security/p5-Crypt-RC4
 p5-Crypt-RIPEMD160	ports/security/p5-Crypt-RIPEMD160
 p5-Crypt-RSA	ports/security/p5-Crypt-RSA
 p5-Crypt-Random	ports/security/p5-Crypt-Random
