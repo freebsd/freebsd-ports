@@ -24,6 +24,7 @@
     SUBDIR += cmp3
     SUBDIR += csound
     SUBDIR += csound-manual
+    SUBDIR += cymbaline
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += denemo
