@@ -7,14 +7,17 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.3.0.0
+PORTVERSION=	1.3.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS=	CCOPT="${CFLAGS}"
 
 MAN1=	socat.1
 
