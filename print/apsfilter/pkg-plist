@@ -63,6 +63,7 @@ share/apsfilter/driver/lexmark2070c
 share/apsfilter/driver/lexmarkZ11
 share/apsfilter/driver/lj250
 share/apsfilter/driver/ljet4
+share/apsfilter/driver/ljet4l
 share/apsfilter/driver/lx5000
 share/apsfilter/driver/lxm3200
 share/apsfilter/driver/md2k
@@ -189,6 +190,8 @@ share/apsfilter/driver/pips/sc480
 share/apsfilter/driver/pips/sc580
 share/apsfilter/driver/pips/sc60s
 share/apsfilter/driver/pips/sc680_777
+share/apsfilter/driver/pips/sc70s
+share/apsfilter/driver/pips/sc80s
 share/apsfilter/driver/pips/sc880
 share/apsfilter/driver/pips/sc980
 share/apsfilter/driver/pips/sp810_820
@@ -235,6 +238,8 @@ share/apsfilter/driver/stp/lexmark-z52
 share/apsfilter/driver/stp/pcl-1100
 share/apsfilter/driver/stp/pcl-1200
 share/apsfilter/driver/stp/pcl-1220
+share/apsfilter/driver/stp/pcl-2
+share/apsfilter/driver/stp/pcl-4
 share/apsfilter/driver/stp/pcl-600
 share/apsfilter/driver/stp/pcl-690
 share/apsfilter/driver/stp/pcl-750
@@ -242,11 +247,9 @@ share/apsfilter/driver/stp/pcl-810
 share/apsfilter/driver/stylewriter
 share/apsfilter/driver/tiff
 share/apsfilter/setup/README
-share/apsfilter/setup/devices-6.01
 share/apsfilter/setup/devices-6.50
 share/apsfilter/setup/devices-7.00
 share/apsfilter/setup/non-printer
-share/apsfilter/setup/printer-6.01
 share/apsfilter/setup/printer-6.50
 share/apsfilter/setup/printer-7.00
 share/apsfilter/setup/printer-cdj
@@ -259,7 +262,6 @@ share/apsfilter/setup/printer-misc
 share/apsfilter/setup/printer-omni
 share/apsfilter/setup/printer-pcl3
 share/apsfilter/setup/printer-ppa
-share/apsfilter/setup/printer-ps
 share/apsfilter/setup/printer-stp
 share/apsfilter/setup/test.ps
 share/apsfilter/template/README
