@@ -5202,6 +5202,7 @@ nntpcache	ports/news/nntpcache
 no-aspell	ports/textproc/no-aspell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
+nocatauth-gateway	ports/net/nocatauth-gateway
 nocatauth-server	ports/net/nocatauth-server
 nocc		ports/mail/nocc
 nocol		ports/net/nocol
