@@ -1490,6 +1490,7 @@ fpr		src/usr.bin/fpr
 fr-ispell	ports/french/ispell
 fr-kde2-i18n	ports/french/kde2-i18n
 fr-staroffice52	ports/french/staroffice52
+fr-xtel		ports/french/xtel
 fractorama	ports/graphics/fractorama
 fragrouter	ports/security/fragrouter
 freeamp		ports/audio/freeamp
@@ -7378,7 +7379,6 @@ xtail		ports/misc/xtail
 xtar		ports/misc/xtar
 xtattr		ports/x11/xtattr
 xteddy		ports/games/xteddy
-xtel		ports/french/xtel
 xtem		ports/print/xtem
 xten		src/usr.sbin/xten
 xtend		src/libexec/xtend
