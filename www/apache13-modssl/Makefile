@@ -100,6 +100,8 @@ pre-patch:
 	&& ./configure --with-apache=../${DISTNAME} --expert
 
 post-patch:
+	@${PERL} -pi -e 's|-print|-print0|;s|xargs|xargs -0|' \
+		${WRKSRC}/Makefile.tmpl
 	@cd ${WRKSRC} \
 	&& find . -type f -name "*.orig" -print | xargs ${RM} -f
 
