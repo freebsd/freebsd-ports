@@ -1,0 +1,16 @@
+--- score.C.org	Tue Dec 28 17:35:27 1999
++++ score.C	Tue Dec 28 17:37:37 1999
+@@ -82,8 +82,12 @@
+     printLine("%5d game%s played", wins + losses);
+     curx = GAMEWIDTH / 4;
+     cury = 0;
+-    printLine("Winning average: %5.2f%%", 100.0 * 
++    if (wins + losses) {
++        printLine("Winning average: %5.2f%%", 100.0 * 
+ 	    ((double) wins / (double) (wins + losses)));
++    } else {
++        printLine("Winning Average: N/A", 0, "");
++    }
+     curx = GAMEWIDTH / 2;
+     cury = 0;
+     if (streak > 0) {
