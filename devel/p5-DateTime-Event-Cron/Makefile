@@ -26,9 +26,12 @@ MAN3=		DateTime::Event::Cron.3
 
 .include <bsd.port.pre.mk>
 
-# p5-DateTime-Set requires perl 5.6 or later
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} < 500601
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /use (5.006|warnings)/g;' \
+		     -e 's/->\$$_->l/->{\$$_}->/g;' \
+		     ${WRKSRC}/lib/DateTime/Event/Cron.pm
 .endif
+
 
 .include <bsd.port.post.mk>
