@@ -316,7 +316,6 @@
     SUBDIR += rats
     SUBDIR += rc5pipe
     SUBDIR += rid
-    SUBDIR += rsaref
     SUBDIR += ruby-acl
     SUBDIR += ruby-aes
     SUBDIR += ruby-blowfish
