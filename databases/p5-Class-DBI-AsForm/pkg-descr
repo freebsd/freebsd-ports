@@ -1,0 +1,8 @@
+This module helps to generate HTML forms for creating new database
+rows or editing existing rows. It maps column names in a database
+table to HTML form elements which fit the schema. Large text fields
+are turned into textareas, and fields with a has-a relationship to
+other Class::DBI tables are turned into select drop-downs populated
+with objects from the joined class.
+
+WWW: http://search.cpan.org/dist/Class-DBI-AsForm/
