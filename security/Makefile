@@ -347,6 +347,7 @@
     SUBDIR += stunnel
     SUBDIR += subweb
     SUBDIR += sudo
+    SUBDIR += sudoscript
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += tea-total
