@@ -13,11 +13,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 #		http://www.psicode.org/downloads.php
 MASTER_SITE_SUBDIR=	maho/psi3
 DISTNAME=	psi-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} installation.pdf:doc userman.pdf:doc progman.pdf:doc
 .endif
 DIST_SUBDIR=	psi3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387
 CFLAGS+=	-mfancy-math-387
 CXXFLAGS+=	-mfancy-math-387
