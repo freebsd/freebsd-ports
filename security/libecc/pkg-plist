@@ -1,0 +1,8 @@
+include/libecc/bitset.h
+include/libecc/config.h
+include/libecc/debug.h
+include/libecc/rng.h
+include/libecc/sha.h
+@dirrm include/libecc
+lib/libecc.so
+lib/libecc.so.3
