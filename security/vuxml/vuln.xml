@@ -32,6 +32,140 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31952117-3d17-11d9-8818-008088034841">
+    <topic>Cyrus IMAPd -- APPEND command uses undefined programming construct</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><ge>2.2.7</ge><le>2.2.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>To support MULTIAPPENDS the cmd_append handler uses the
+	  global stage array. This array is one of the things that gets
+	  destructed when the fatal() function is triggered. When the
+	  Cyrus IMAP code adds new entries to this array this is done
+	  with the help of the postfix increment operator in combination
+	  with memory allocation functions. The increment is performed
+	  on a global variable counting the number of allocated
+	  stages. Because the memory allocation function can fail and
+	  therefore internally call fatal() this construct is undefined
+	  arcording to ANSI C. This means that it is not clearly defined
+	  if the numstage counter is already increased when fatal() is
+	  called or not. While older gcc versions increase the counter
+	  after the memory allocation function has returned, on newer
+	  gcc versions (3.x) the counter gets actually increased
+	  before. In such a case the stage destructing process will try
+	  to free an uninitialised and maybe attacker supplied
+	  pointer. Which again could lead to remote code
+	  execution. (Because it is hard for an attacker to let the
+	  memory allocation functions fail in the right moment no PoC
+	  code for this problem was designed)</p>
+      </body>
+    </description>
+    <references>
+      <url>http://security.e-matters.de/advisories/152004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-06</discovery>
+      <entry>2004-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0a269d5-3d16-11d9-8818-008088034841">
+    <topic>Cyrus IMAPd -- FETCH command out of bounds memory corruption</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><le>2.2.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The argument parser of the fetch command suffers a bug very
+	  similiar to the partial command problem. Arguments like
+	  "body[p", "binary[p" or "binary[p" will be wrongly detected
+	  and the bufferposition can point outside of the allocated
+	  buffer for the rest of the parsing process. When the parser
+	  triggers the PARSE_PARTIAL macro after such a malformed
+	  argument was received this can lead to a similiar one byte
+	  memory corruption and allows remote code execution, when the
+	  heap layout was successfully controlled by the attacker.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1013</cvename>
+      <url>http://security.e-matters.de/advisories/152004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-06</discovery>
+      <entry>2004-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="114d70f3-3d16-11d9-8818-008088034841">
+    <topic>Cyrus IMAPd -- PARTIAL command out of bounds memory corruption</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><le>2.2.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Due to a bug within the argument parser of the partial
+	  command an argument like "body[p" will be wrongly detected as
+	  "body.peek". Because of this the bufferposition gets increased
+	  by 10 instead of 5 and could therefore point outside the
+	  allocated memory buffer for the rest of the parsing
+	  process. In imapd versions prior to 2.2.7 the handling of
+	  "body" or "bodypeek" arguments was broken so that the
+	  terminating ']' got overwritten by a '\0'. Combined the two
+	  problems allow a potential attacker to overwrite a single byte
+	  of malloc() control structures, which leads to remote code
+	  execution if the attacker successfully controls the heap
+	  layout.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1012</cvename>
+      <url>http://security.e-matters.de/advisories/152004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-06</discovery>
+      <entry>2004-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="816fdd8b-3d14-11d9-8818-008088034841">
+    <topic>Cyrus IMAPd -- IMAPMAGICPLUS preauthentification overflow</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><ge>2.2.4</ge><le>2.2.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When the option imapmagicplus is activated on a server the
+	  PROXY and LOGIN commands suffer a standard stack overflow,
+	  because the username is not checked against a maximum length
+	  when it is copied into a temporary stack buffer. This bug is
+	  especially dangerous because it can be triggered before any
+	  kind of authentification took place.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1011</cvename>
+      <url>http://security.e-matters.de/advisories/152004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-06</discovery>
+      <entry>2004-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a33477e-3a9c-11d9-84ad-000c6e8f12ef">
     <topic>phpMyAdmin -- cross-site scripting vulnerabilities</topic>
     <affects>
