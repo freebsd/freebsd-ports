@@ -1,0 +1,4 @@
+bin/lincvs
+share/doc/lincvs/index.html
+share/doc/lincvs/index-1.html
+@dirrm share/doc/lincvs
