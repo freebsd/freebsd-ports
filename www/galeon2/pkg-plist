@@ -166,8 +166,55 @@ share/gnome/help/galeon/C/other-tools.xml
 share/gnome/help/galeon/C/plugins.xml
 share/gnome/help/galeon/C/preface.xml
 share/gnome/help/galeon/C/preferences.xml
+share/gnome/help/galeon/es/apx-authors.xml
+share/gnome/help/galeon/es/apx-bugs.xml
+share/gnome/help/galeon/es/apx-command-line.xml
+share/gnome/help/galeon/es/apx-compiling.xml
+share/gnome/help/galeon/es/apx-keyboard-shortcuts.xml
+share/gnome/help/galeon/es/apx-mouse-gestures.xml
+share/gnome/help/galeon/es/apx-troubleshooting.xml
+share/gnome/help/galeon/es/bookmarks.xml
+share/gnome/help/galeon/es/browser-window.xml
+share/gnome/help/galeon/es/figures/bookmarks-editor.png
+share/gnome/help/galeon/es/figures/browser-window.png
+share/gnome/help/galeon/es/figures/find-dialog.png
+share/gnome/help/galeon/es/figures/gesture-back.png
+share/gnome/help/galeon/es/figures/gesture-clone-tab.png
+share/gnome/help/galeon/es/figures/gesture-clone-window.png
+share/gnome/help/galeon/es/figures/gesture-close-2.png
+share/gnome/help/galeon/es/figures/gesture-close.png
+share/gnome/help/galeon/es/figures/gesture-contents.png
+share/gnome/help/galeon/es/figures/gesture-forward.png
+share/gnome/help/galeon/es/figures/gesture-fullscreen.png
+share/gnome/help/galeon/es/figures/gesture-homepage.png
+share/gnome/help/galeon/es/figures/gesture-new-tab.png
+share/gnome/help/galeon/es/figures/gesture-new-window.png
+share/gnome/help/galeon/es/figures/gesture-next-link.png
+share/gnome/help/galeon/es/figures/gesture-next-tab.png
+share/gnome/help/galeon/es/figures/gesture-prev-link.png
+share/gnome/help/galeon/es/figures/gesture-prev-tab.png
+share/gnome/help/galeon/es/figures/gesture-reload-bypass.png
+share/gnome/help/galeon/es/figures/gesture-reload.png
+share/gnome/help/galeon/es/figures/gesture-stop.png
+share/gnome/help/galeon/es/figures/gesture-up.png
+share/gnome/help/galeon/es/figures/gesture-view-source.png
+share/gnome/help/galeon/es/figures/othertools-history.png
+share/gnome/help/galeon/es/figures/othertools-pdm.png
+share/gnome/help/galeon/es/figures/othertools-toolbar-editor.png
+share/gnome/help/galeon/es/figures/statusbar.png
+share/gnome/help/galeon/es/figures/tabbed-browsing.png
+share/gnome/help/galeon/es/figures/toolbars-bookmarks.png
+share/gnome/help/galeon/es/figures/toolbars-main.png
+share/gnome/help/galeon/es/galeon.xml
+share/gnome/help/galeon/es/getting-started.xml
+share/gnome/help/galeon/es/other-tools.xml
+share/gnome/help/galeon/es/plugins.xml
+share/gnome/help/galeon/es/preface.xml
+share/gnome/help/galeon/es/preferences.xml
 share/gnome/omf/galeon/galeon-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/galeon/galeon-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/galeon/galeon-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/galeon/galeon-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/galeon.png
 share/gnome/sounds/galeon/clicked.wav
 share/locale/am/LC_MESSAGES/galeon-2.0.mo
@@ -179,6 +226,7 @@ share/locale/cs/LC_MESSAGES/galeon-2.0.mo
 share/locale/da/LC_MESSAGES/galeon-2.0.mo
 share/locale/de/LC_MESSAGES/galeon-2.0.mo
 share/locale/el/LC_MESSAGES/galeon-2.0.mo
+share/locale/en_CA/LC_MESSAGES/galeon-2.0.mo
 share/locale/en_GB/LC_MESSAGES/galeon-2.0.mo
 share/locale/es/LC_MESSAGES/galeon-2.0.mo
 share/locale/et/LC_MESSAGES/galeon-2.0.mo
@@ -223,6 +271,8 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/omf/galeon
 @dirrm share/gnome/help/galeon/C/figures
 @dirrm share/gnome/help/galeon/C
+@dirrm share/gnome/help/galeon/es/figures
+@dirrm share/gnome/help/galeon/es
 @dirrm share/gnome/help/galeon
 @dirrm share/gnome/galeon
 @dirrm lib/galeon/components
@@ -276,3 +326,4 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-es.omf 2>/dev/null || /usr/bin/true

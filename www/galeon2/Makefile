@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.13a
-PORTREVISION=	1
+PORTVERSION=	1.3.14a
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -32,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7b"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -42,7 +41,7 @@ HEADERS_SUFX=
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -88,9 +87,6 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|@datadir@|g' \
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
-	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
