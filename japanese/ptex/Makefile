@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	${KANJICODE}
 WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/web2c/${SRCDIR}
 ALL_TARGET=	default
 
-KANJICODE?=	jis
+KANJICODE?=	euc
 SRCDIR=		ptex-${PORTVERSION}
 TETEX_VERSION=	2.0.1
 BINARIES=	ptex pdvitype jbibtex pltotf tftopl
