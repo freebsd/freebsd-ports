@@ -1,9 +1,13 @@
 bin/bundleTool
 bin/formaticc
 bin/installifd
+bin/pcsc_demo
 %%PORTDOCS%%share/doc/pcsc-lite/README.DAEMON
 %%PORTDOCS%%share/doc/pcsc-lite/pcsc-lite-0.8.7.pdf
 %%PORTDOCS%%share/doc/pcsc-lite/muscle-api-1.3.0.pdf
+share/examples/pcsc-lite/Makefile.am
+share/examples/pcsc-lite/Makefile.in
+share/examples/pcsc-lite/pcsc_demo.c
 etc/rc.d/pcscd.sh.sample
 etc/reader.conf.sample
 include/debuglog.h
@@ -15,8 +19,11 @@ include/wintypes.h
 lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.0
+lib/pkgconfig/libpcsclite.pc
 sbin/pcscd
 %%PORTDOCS%%@dirrm share/doc/pcsc-lite
+@dirrm share/examples/pcsc-lite
+@dirrm lib/pkgconfig
 @dirrm pcsc/drivers
 @dirrm pcsc/services
 @dirrm pcsc

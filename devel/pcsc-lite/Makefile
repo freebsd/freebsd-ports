@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.1.2.b.5
+PORTVERSION=	1.2.0-rc1
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/160/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
+MASTER_SITES=	http://alioth.debian.org/download.php/373/
 
 MAINTAINER=	toni@soth.at
 COMMENT=	A smartcard development library
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b.5//}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=--enable-debug \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--enable-debug \
 		--enable-syslog \
 		--enable-runpid=/var/run/pcscd.pid \
 		--enable-ipcdir=/var/tmp/ \
@@ -33,6 +32,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		formaticc.1
 MAN8=		bundleTool.8 pcscd.8
 
+.if defined(WITH_USB)
+LIB_DEPENDS+=	usb-0.1.7:${PORTSDIR}/devel/libusb
+CONFIGURE_ARGS+=--enable-libusb=${PREFIX}
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "pcsc-lite has the following option(s):"
+	@${ECHO_MSG} "  WITH_USB=yes            Enable USB support"
+	@${ECHO_MSG}
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -40,6 +50,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/pcsc-lite-0.8.7.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/muscle-api-1.3.0.pdf ${DOCSDIR}
 .endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${EXAMPLESDIR}
 	@${MKDIR} ${PREFIX}/pcsc/drivers
 	@${MKDIR} ${PREFIX}/pcsc/services
 	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \

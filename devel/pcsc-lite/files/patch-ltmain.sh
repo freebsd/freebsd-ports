@@ -2,15 +2,15 @@ $FreeBSD$
 
 --- build/ltmain.sh	2001/08/27 09:51:26	1.1
 +++ build/ltmain.sh	2001/08/27 09:51:42
-@@ -1072,7 +1072,7 @@
+@@ -1278,7 +1278,7 @@
  	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
 -	 *-*-openbsd* | *-*-freebsd*)
 +	 *-*-openbsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
 @@ -2408,6 +2408,9 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
