@@ -27,6 +27,11 @@ DOCFILES=	sbagen.txt theory.txt theory2.txt
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} sbagen.c -o sbagen -lm)
 
+post-patch:
+.for F in ${SHAREFILES}
+	@${PERL} -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/$F
+.endfor
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbagen ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/sbagen
