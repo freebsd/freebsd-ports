@@ -909,8 +909,8 @@
 %%T%%/jre/javaws/cacerts
 %%T%%/jre/javaws/javalogo52x88.gif
 %%T%%/jre/javaws/javaws
-%%T%%/jre/javaws/javaws.jar
 %%T%%/jre/javaws/javaws-l10n.jar
+%%T%%/jre/javaws/javaws.jar
 %%T%%/jre/javaws/javaws.policy
 %%T%%/jre/javaws/javawsbin
 %%T%%/jre/javaws/readme.html
