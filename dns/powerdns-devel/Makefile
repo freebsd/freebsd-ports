@@ -22,6 +22,12 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
 #			--enable-debug
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		CURDIR2="${.CURDIR}" \
+		MKDIR="${MKDIR}" \
+		DISTNAME="${DISTNAME}" \
+		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
+MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -36,36 +42,55 @@ NO_DESCRIBE=yes
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER) && !defined(WITHOUT_POSTGRESQL_DRIVER)
-BROKEN=		does not compile with postgresql 7.4
-LIB_DEPENDS=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
+LIB_DEPENDS+=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
 CONFIGURE_ARGS+=	--enable-pgsql
 CONFIGURE_MODULES+=	"gpgsql"
+CFLAGS+=	-DDLLIMPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
-MYSQL_PORT?=	databases/mysql323-client
 LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
+MYSQL_PORT?=	databases/mysql323-client
 CONFIGURE_ARGS+=	--enable-mysql
 CONFIGURE_MODULES+=	"gmysql"
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		CURDIR2="${.CURDIR}" \
-		MKDIR="${MKDIR}" \
-		DISTNAME="${DISTNAME}" \
-		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
+LDAP_PORT?=	net/openldap20-client
+USE_LIBTOOL=	YES
+INSTALLS_SHLIB=	YES
+USE_GCC=3.2
+CONFIGURE_MODULES+=	"ldap"
+PLIST_SUB+=		WITHLDAP=""
+.else
+PLIST_SUB+=		WITHLDAP="@comment "
+.endif
 
-MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
+.if defined(POWERDNS_WITH_RECURSOR)
+USE_GCC=3.2
+CONFIGURE_ARGS+=	--enable-recursor
+PLIST_SUB+=		RECURSOR=""
+.else
+PLIST_SUB+=		RECURSOR="@comment "
+.endif
 
-pre-everything::
-	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
+.include <bsd.port.pre.mk>
 
-post-clean:
-	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+.if defined(POWERDNS_WITH_RECURSOR)
+.if exists(/usr/include/ucontext.h)
+UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
+                /usr/include/ucontext.h
+.if ${UCONTEXT} == ""
+BROKEN=		setcontext for recursor not found
+.endif
+.endif
+.endif
 
 .if defined(NO_DESCRIBE)
 describe:
@@ -75,24 +100,13 @@ describe:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} BATCH=yes ${.TARGET}
 .endif
 
-.include <bsd.port.pre.mk>
+pre-everything::
+	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
 
-.if defined(POWERDNS_WITH_RECURSOR)
-BROKEN=		does not compile in this version
-USE_GCC=3.2
-CONFIGURE_ARGS+=	--enable-recursor
-PLIST_SUB+=		RECURSOR=""
-.else
-PLIST_SUB+=		RECURSOR="@comment "
-.endif
+post-clean:
+	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .if defined(WITH_LDAP)
-USE_GCC=3.2
-LDAP_PORT?=	net/openldap20-client
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
-CONFIGURE_MODULES+=	"ldap"
-
 post-patch:
 	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
 		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
