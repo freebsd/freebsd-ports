@@ -5106,6 +5106,7 @@ pcre++		ports/devel/pcre++
 pcsc-lite	ports/devel/pcsc-lite
 pcvt		src/usr.sbin/pcvt
 pdflib		ports/print/pdflib
+pdfmap		ports/misc/pdfmap
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
 pdmenu		ports/misc/pdmenu
