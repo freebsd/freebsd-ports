@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<range><le>2.0.52_2</le></range>
+	<range><gt>2.*</gt><le>2.0.52_2</le></range>
       </package>
     </affects>
     <description>
@@ -55,6 +55,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-01</discovery>
       <entry>2004-11-10</entry>
+      <modified>2004-11-11</modified>
     </dates>
   </vuln>
 
