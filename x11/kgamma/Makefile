@@ -6,13 +6,14 @@
 #
 
 PORTNAME=		kgamma
-PORTVERSION=		0.9.9.p.1
+PORTVERSION=		0.9.9
 CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 
 MAINTAINER=		arved@FreeBSD.org
 
+USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
