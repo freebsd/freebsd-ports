@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bombermaze
-PORTVERSION= 	0.4.1
+PORTVERSION= 	0.4.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
