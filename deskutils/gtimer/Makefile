@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtimer
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.radix.net/~cknudsen/gtimer/
 
