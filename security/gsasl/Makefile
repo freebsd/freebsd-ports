@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/${PORTNAME}/releases/
@@ -25,7 +25,6 @@ USE_GETOPT_LONG=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-gssapi --disable-kerberos_v5
 INSTALLS_SHLIB=	yes
 
 INFO=	gsasl
