@@ -1,1 +1,3 @@
 bin/ht
+%%PORTDOCS%%share/doc/hte/README
+%%PORTDOCS%%@dirrm share/doc/hte
