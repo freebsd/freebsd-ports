@@ -1,0 +1,6 @@
+The game is played on a table which contains 21 fields. The
+fields have a value of 0 to 9 at the begining of the game.
+The player can jump on the table one field right/left/up/down.
+If the player jumps on a field, the value of the field gets
+decreased by 1. The player cannot jump on a field with a value
+of 0. The purpose of the game is setting all the fields to 0.
