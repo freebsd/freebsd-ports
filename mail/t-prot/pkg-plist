@@ -11,5 +11,5 @@ bin/t-prot
 %%EXAMPLESDIR%%/muttrc.t-prot
 %%EXAMPLESDIR%%/t-prot-r1.190-gpg125.diff
 %%EXAMPLESDIR%%/t-prot-r1.191-gpg124.diff
-%%EXAMPLESDIR%%/t-prot-r1.199-mutt156.diff
+%%EXAMPLESDIR%%/t-prot-r1.206-mutt156.diff
 %%EXAMPLESDIR%%/t-prot.sl
