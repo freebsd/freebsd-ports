@@ -1,8 +1,8 @@
---- hacks/webcollage.orig	Thu Sep  9 20:45:45 1999
-+++ hacks/webcollage	Thu Sep  9 20:46:42 1999
-@@ -81,6 +81,11 @@
+--- hacks/webcollage.orig	Wed Nov 22 17:10:34 2000
++++ hacks/webcollage	Mon Feb 26 01:43:25 2001
+@@ -102,6 +102,11 @@
  if (!-r $wordlist) {
-     $wordlist = "/usr/share/lib/dict/words";    # irix
+     $wordlist = "/usr/share/lib/dict/words";    # Irix
  }
 +
 +if (!-r $wordlist) {

@@ -33,6 +33,7 @@ bin/galaxy
 bin/gears
 bin/gflux
 bin/glplanet
+bin/gltext
 bin/goop
 bin/grav
 bin/greynetic
@@ -92,6 +93,8 @@ bin/sproingies
 bin/squiral
 bin/stairs
 bin/starfish
+bin/starwars
+bin/stonerview
 bin/strange
 bin/superquadrics
 bin/swirl
@@ -102,17 +105,18 @@ bin/vidwhacker
 bin/vines
 bin/wander
 bin/webcollage
+bin/whirlwindwarp
 bin/worm
 bin/xflame
 bin/xjack
 bin/xlyap
 bin/xmatrix
 bin/xrayswarm
-bin/xroger
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-gl-helper
 bin/xspirograph
 bin/xsublim
 bin/xteevee
+bin/zoom
 lib/X11/app-defaults/XScreenSaver
