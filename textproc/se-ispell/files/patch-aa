@@ -1,0 +1,16 @@
+--- Makefile.orig	Thu Jan 29 09:06:32 1998
++++ Makefile	Sun Dec 26 10:35:22 1999
+@@ -1,10 +1,10 @@
+-installdir=/usr/lib/ispell
++installdir=${PREFIX}/lib
+ 
+ all: svenska.hash
+ 
+ install: svenska.hash svenska.aff
+-	install -o root -g root -m 0644 svenska.hash $(installdir)
+-	install -o root -g root -m 0644 svenska.aff $(installdir)
++	install -c -o root -g wheel -m 0644 svenska.hash $(installdir)
++	install -c -o root -g wheel -m 0644 svenska.aff $(installdir)
+ 
+ svenska.hash: svenska.aff svenska.datalista
+ 	buildhash svenska.datalista svenska.aff svenska.hash

@@ -56,6 +56,7 @@
     SUBDIR += rand
     SUBDIR += rman
     SUBDIR += sarep
+    SUBDIR += se-ispell
     SUBDIR += sgmlformat
     SUBDIR += sgrep
     SUBDIR += sp
