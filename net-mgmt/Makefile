@@ -8,6 +8,7 @@
     SUBDIR += angst
     SUBDIR += annextools
     SUBDIR += ap-utils
+    SUBDIR += apan
     SUBDIR += argus
     SUBDIR += arpscan
     SUBDIR += arpwatch

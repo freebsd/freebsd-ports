@@ -1,0 +1,5 @@
+Apan is an addon to Nagios that is used to collect results from Nagios
+plugins and store it in RRD-files. You can the use Apan to view graphs of
+the data in Nagios web-interface.
+
+WWW: http://apan.sourceforge.net
