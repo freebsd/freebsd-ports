@@ -1,0 +1,14 @@
+libdata/bonobo/servers/GNOME_ContactLookupApplet.server
+libexec/contact-lookup-applet
+share/gnome/lookup-applet/GNOME_ContactLookupApplet.xml
+share/gnome/lookup-applet/contact-lookup-applet.glade
+share/locale/cs/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/de/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/en_CA/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/eu/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/hu/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/pa/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/pt_BR/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/sk/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/sv/LC_MESSAGES/contact-lookup-applet.mo
+@dirrm share/gnome/lookup-applet

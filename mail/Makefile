@@ -36,6 +36,7 @@
     SUBDIR += chk4mail
     SUBDIR += cmail
     SUBDIR += cone
+    SUBDIR += contact-lookup-applet
     SUBDIR += coolmail
     SUBDIR += courier
     SUBDIR += courier-imap
