@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtksheet
-# Version required:		7.4
-# Date created:			May 21 1999
+# Version required:		7.6
+# Date created:			Jun 22 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/06 17:29:46 steve Exp $
 #
 
-DISTNAME=	gtksheet-7.4
+DISTNAME=	gtksheet-7.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ripley.ifir.edu.ar/pub/gtk/gtksheet/
 
