@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of libraries to support development of security-enabled applications
+COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
@@ -34,6 +34,12 @@ DIST=		${WRKSRC}/../../dist
 
 CONFLICTS=	btoa-5.* digest-* emboss-2.4.* oases-2.* p5-PAR-0.*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=	"core dumps on alpha during build"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/../../security/coreconf/FreeBSD.mk
@@ -49,4 +55,4 @@ do-install:
 	cd ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib && \
 		${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib -xf -
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
