@@ -8,7 +8,7 @@
 -		"/bin/csh", "/bin/sh", 0
 +		"/bin/csh", "/bin/sh", "/bin/tcsh", "%%LOCALBASE%%/bin/tcsh",
 +		"%%LOCALBASE%%/bin/bash", "%%LOCALBASE%%/bin/ksh",
-+		"%%LOCALBASE%%/bin/zsh", "%%LOCALBASE%%/sbin/scsh", 0
++		"%%LOCALBASE%%/bin/zsh", 0
  	};
  
  	if ((shell = getenv ("SHELL"))){
