@@ -4835,6 +4835,7 @@ ping		src/sbin/ping
 ping6		src/sbin/ping6
 pinstall	ports/devel/pinstall
 pipenightdreams	ports/games/pipenightdreams
+pips-sc20	ports/print/pips-sc20
 pips-sc680_777	ports/print/pips-sc680_777
 pips-sc880	ports/print/pips-sc880
 pips-sc980	ports/print/pips-sc980
