@@ -17,6 +17,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-public-3_6
 
 GNU_CONFIGURE=	yes
 
+# use this option, if log_in_vain="YES"
+.if defined(WITHOUT_SMUX)
+CONFIGURE_ARGS+=        --disable-smux
+.endif
+
 post-configure:
 	cd ${WRKSRC} && ${MAKE} depend
 
