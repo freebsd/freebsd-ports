@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/fonts/X
+USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
