@@ -259,6 +259,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/subsort.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tcontbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tcontend.html
+%%PORTDOCS%%share/doc/MHonArc/resources/textclipfunc.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tfirstpglink.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tfoot.html
 %%PORTDOCS%%share/doc/MHonArc/resources/thead.html
