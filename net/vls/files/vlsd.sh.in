@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: vlsd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. %%RC_SUBR%%
+
+name=vlsd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/vlsd
+required_files=%%PREFIX%%/etc/videolan/vls/vls.cfg
+
+# set default
+vlsd_enable=${vlsd_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
