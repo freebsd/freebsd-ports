@@ -43,6 +43,4 @@ share/applications/ogmrip.desktop
 share/pixmaps/ogmrip.png
 @dirrm include/ogmrip
 @dirrm include/ogmspawn
-@dirrm share/applications
-@dirrm share/ogmrip
-@dirrm share/pixmaps
+@dirrm %%DATADIR%%

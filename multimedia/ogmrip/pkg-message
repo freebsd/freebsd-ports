@@ -1,0 +1,18 @@
+WARNING: libbacon relies on the Common Access Method user library. If you have
+an ATAPI drive, you've got to install the CAM XPT module (atapicam) otherwise
+your drive will never be detected.
+
+-------------------------------------------------------------------------------
+
+Addtionally, to use OGMRip as a user, you should grant such user specific
+permissions on some devices.  You may for example add the following lines into
+/etc/devfs.conf:
+
+perm	cd0	0660
+perm	pass0	0660
+perm	xpt0	0660
+
+(device numbers may vary depending on your configuration)
+
+Any user from the "operator" group should then be able to access those devices
+and use OGMRip.
