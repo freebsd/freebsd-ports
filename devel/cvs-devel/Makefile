@@ -22,7 +22,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 #USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi
 
 MAN1=		cvs.1
 MAN5=		cvs.5
