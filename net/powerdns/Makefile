@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -16,6 +16,7 @@ COMMENT=	An advanced DNS server with SQL backend
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
+USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
@@ -50,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-	        CURDIR="${.CURDIR}" \
+		CURDIR2="${.CURDIR}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
@@ -59,6 +60,14 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
 pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
+
+post-patch:
+	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
+		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
+		${WRKSRC}/modules/ldapbackend/Makefile.in
+	${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
+		-e 's;@modulelibs@;@modulelibs@ -llber;' \
+		${WRKSRC}/pdns/Makefile.in
 
 post-install:
 .if !exists(${PREFIX}/etc/pdns.conf)
@@ -82,4 +91,20 @@ describe:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} BATCH=yes ${.TARGET}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500043
+CONFIGURE_ARGS+=	--enable-recursor
+PLIST_SUB+=		RECURSOR=""
+
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+CONFIGURE_MODULES+=	"ldap"
+.endif
+
+.else
+PLIST_SUB+=		RECURSOR="@comment "
+.endif
+
+.include <bsd.port.post.mk>

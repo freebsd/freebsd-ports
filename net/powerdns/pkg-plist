@@ -1,6 +1,7 @@
 bin/pdns_control
 bin/zone2sql
 sbin/pdns_server
+%%RECURSOR%%bin/pdns_recursor
 @unexec if cmp -s %D/etc/pdns.conf %D/etc/pdns.conf-dist; then rm -f %D/etc/pdns.conf; fi
 etc/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
