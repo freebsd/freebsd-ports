@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.20
+PORTVERSION=	0.54
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/stable/
 
@@ -24,10 +24,18 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-clamav --disable-pthreads
 
-MAN1=		clamscan.1 freshclam.1 sigtool.1
+MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
+MAN5=		clamav.conf.5
+MAN8=		clamd.8
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${FILESDIR}/patch5-*
+.endif
 
 pre-install:
 	@${ECHO} "==>  Creating custom user to run clamav..."
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+#	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
