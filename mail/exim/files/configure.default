@@ -79,7 +79,7 @@ never_users = root
 # expensive, you can specify the networks for which a lookup is done, or
 # remove the setting entirely.
 
-host_lookup_nets = 0.0.0.0/0
+host_lookup = 0.0.0.0/0
 
 
 # Exim contains support for the Realtime Blocking List (RBL) that is being
@@ -99,7 +99,7 @@ host_lookup_nets = 0.0.0.0/0
 # unscrupulous people out there who will make use of open relays to try to
 # disguise the source of unsolicited bulk mail.
 
-sender_net_accept_relay = 127.0.0.1/32
+host_accept_relay = "127.0.0.1/32"
 
 
 # If you want Exim to support the "percent hack" for all your local domains,
@@ -233,6 +233,8 @@ end
 
 system_aliases:
   driver = aliasfile
+  file_transport = address_file
+  pipe_transport = address_pipe
   file = /etc/aliases
   search_type = lsearch
 # user = XX_BINOWN_XX
@@ -248,6 +250,9 @@ system_aliases:
 
 userforward:
   driver = forwardfile
+  file_transport = address_file
+  pipe_transport = address_pipe
+  reply_transport = address_reply
   file = .forward
   no_verify
   no_expn
