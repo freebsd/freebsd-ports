@@ -7,7 +7,7 @@
 
 PORTNAME=	cn2jp
 PORTVERSION=	1.4b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters chinese japanese
 MASTER_SITES=	http://w3.sys.es.osaka-u.ac.jp/~seke/software/cn2jp/
 DISTNAME=	${PORTNAME}${PORTVERSION}
