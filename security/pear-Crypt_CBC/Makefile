@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Crypt_CBC
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	security www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -37,9 +36,6 @@ PLIST_SUB=	PEARDIR=${LPHP_LIB}
 do-install:
 	@${MKDIR} ${PEARDIR}/Crypt
 	@${CP} -Rp ${WRKSRC}/CBC.php ${PEARDIR}/Crypt
-#Note: HCEMD5.php is still needed for IMP 3.1,
-#	but should be removed with the next releases.
-	@${CP} -p ${FILESDIR}/Crypt_HCEMD5.php ${PEARDIR}/Crypt/HCEMD5.php
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Crypt
 
 post-install:
