@@ -15,6 +15,7 @@ MASTER_SITES=   http://www.rhyolite.com/anti-spam/dcc/source/old/ \
 DISTFILES=	dcc-dccd-1.1.15.tar.Z
 
 MAINTAINER=     dean@odyssey.apana.org.au
+COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
