@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget gtk20 libxml2
+USE_GNOME=	gnomeprefix gnometarget gtksourceview libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -42,11 +42,9 @@ BROKEN=		"math/lapack appears to be broken on alpha"
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix libgnomeprintui libgnomeui
-PLIST_SUB+=	GRETLDATADIR="share/gnome"
+USE_GNOME+=	libgnomeprintui libgnomeui
 .else
 CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	GRETLDATADIR="share"
 .endif
 
 post-patch:
