@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
