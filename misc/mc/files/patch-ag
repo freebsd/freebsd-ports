@@ -1,5 +1,5 @@
---- lib/mc.ext.in.orig	Mon Oct 12 15:31:03 1998
-+++ lib/mc.ext.in	Mon Dec  7 00:09:23 1998
+--- lib/mc.ext.in.orig	Wed Jan 13 05:38:06 1999
++++ lib/mc.ext.in	Sat Jan 16 23:41:24 1999
 @@ -265,7 +265,7 @@
  # ar library
  regex/\.s?a$
@@ -170,7 +170,7 @@
  
 @@ -551,7 +551,7 @@
  shell/.cpio.gz
- 	Open=%cd cpio:%d/%p/
+ 	Open=%cd %d/%p#ucpio/
  	View=%view{ascii} gzip -dc '%f' | cpio -ictv
 -	Extract=gzip -dc '%f' | cpio -ic
 +	Extract=gzip -dc '%d/%p' | cpio -ic

@@ -1,19 +1,23 @@
---- Make.common.in.orig	Sun Dec  6 12:04:28 1998
-+++ Make.common.in	Sun Dec  6 12:05:41 1998
-@@ -17,6 +17,7 @@
+--- Make.common.in.orig	Tue Jan 19 00:44:07 1999
++++ Make.common.in	Tue Jan 26 18:50:46 1999
+@@ -17,9 +17,10 @@
  
  builddir   = @builddir@
  bindir     = @bindir@
 +sbindir    = $(exec_prefix)/sbin
- libdir     = $(exec_prefix)/lib/mc
+ sysconfdir = @sysconfdir@
+ corbadir   = $(sysconfdir)/CORBA/servers
+-libdir     = $(exec_prefix)/lib/mc
++libdir     = $(exec_prefix)/share/mc
+ idldir     = $(prefix)/share/idl
  suppbindir = $(libdir)/bin
- tidir      = $(libdir)/term
-@@ -52,7 +53,7 @@
+ gnewdir	   = $(prefix)/share/mc/templates
+@@ -56,7 +57,7 @@
  # No way, to make make happy (except GNU), we cannot use := to append
  # something to these, so that's why there is a leading _
  XCFLAGS = @CFLAGS@
--XCPPFLAGS = @CPPFLAGS@ -I.. -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" 
-+XCPPFLAGS = @CPPFLAGS@ -I.. -DSBINDIR=\""$(sbindir)/"\" -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" 
+-XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" 
++XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. -DSBINDIR=\""$(sbindir)/"\" -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" 
  XLDFLAGS = @LDFLAGS@
  XDEFS = @DEFS@
  XLIBS = @LIBS@

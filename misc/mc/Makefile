@@ -1,21 +1,33 @@
 # New ports collection makefile for:	mc
-# Version required:	4.5.1
+# Version required:	4.5.9
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.25 1998/12/06 09:39:22 vanilla Exp $
+# $Id: Makefile,v 1.26 1998/12/07 08:50:59 obrien Exp $
 #
 
-DISTNAME=	mc-4.5.1
+DISTNAME=	mc-4.5.9
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file/managers/mc/devel
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	mc
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	reg@shale.csir.co.za
 
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-ncurses --without-edit --with-dusum --disable-nls
-CONFIGURE_ENV=	CCOPTS="$(CFLAGS)" INSTALL="$${INSTALL} -c"
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
+
+.if defined(USE_NCURSES_PORT)
+LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
+.endif
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		MAKE="gmake" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		midc.1
 MAN8=		mcserv.8

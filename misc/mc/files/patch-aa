@@ -1,15 +1,113 @@
---- configure.orig	Sun Dec  6 11:57:21 1998
-+++ configure	Sun Dec  6 11:59:02 1998
-@@ -10840,7 +10840,7 @@
-         if test -f /usr/include/ncurses.h
+--- configure.orig	Tue Jan 19 00:44:07 1999
++++ configure	Fri Jan 29 16:51:46 1999
+@@ -3188,15 +3188,15 @@
+ fi
+ 
+         
+-	USE_INCLUDED_LIBINTL=yes
++#	USE_INCLUDED_LIBINTL=yes
+         CATOBJEXT=.gmo
+         INSTOBJEXT=.mo
+         DATADIRNAME=share
+-	INTLDEPS='$(top_builddir)/intl/libintl.a'
+-	INTLLIBS=$INTLDEPS
+-	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+-        nls_cv_header_intl=intl/libintl.h
+-        nls_cv_header_libgt=intl/libgettext.h
++#	INTLDEPS='$(top_builddir)/intl/libintl.a'
++#	INTLLIBS=$INTLDEPS
++#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++#        nls_cv_header_intl=intl/libintl.h
++#        nls_cv_header_libgt=intl/libgettext.h
+       fi
+ 
+             if test "$XGETTEXT" != ":"; then
+@@ -10359,13 +10359,13 @@
+     
+     if $search_ncurses
+     then
+-        if test -f /usr/include/ncurses.h
++        if test -f /usr/local/include/ncurses/ncurses.h
  	then
- 	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -lncurses"
-+ 	    LIBS="$LIBS -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS "
+-	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
+- 	    CURSES_LIBS="-lncurses"
+-	    CURSES_INCLUDEDIR=""
++	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
++ 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
++	    CURSES_INCLUDEDIR="-I/usr/local/include/ncurses"
  	    search_ncurses=false
- 	    screen_manager="ncurses on /usr/include"
-@@ -11648,7 +11648,7 @@
+-	    screen_manager="ncurses on /usr/include"
++	    screen_manager="ncurses on /usr/local/include/ncurses"
+             cat >> confdefs.h <<\EOF
+ #define HAS_CURSES 1
+ EOF
+@@ -10381,13 +10381,13 @@
+     
+     if $search_ncurses
+     then
+-        if test -f /usr/include/ncurses/ncurses.h
++        if test -f /usr/include/ncurses.h
+ 	then
+-	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
+- 	    CURSES_LIBS="-lncurses"
+-	    CURSES_INCLUDEDIR="-I/usr/include/ncurses"
++	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
++ 	    CURSES_LIBS="-lncurses -lmytinfo"
++	    CURSES_INCLUDEDIR=""
+ 	    search_ncurses=false
+-	    screen_manager="ncurses on /usr/include/ncurses"
++	    screen_manager="ncurses on /usr/include"
+             cat >> confdefs.h <<\EOF
+ #define HAS_CURSES 1
+ EOF
+@@ -10403,13 +10403,13 @@
+     
+     if $search_ncurses
+     then
+-        if test -f /usr/local/include/ncurses.h
++        if test -f /usr/include/ncurses/ncurses.h
+ 	then
+-	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
+- 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
+-	    CURSES_INCLUDEDIR="-I/usr/local/include"
++	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
++ 	    CURSES_LIBS="-lncurses"
++	    CURSES_INCLUDEDIR="-I/usr/include/ncurses"
+ 	    search_ncurses=false
+-	    screen_manager="ncurses on /usr/local"
++	    screen_manager="ncurses on /usr/include/ncurses"
+             cat >> confdefs.h <<\EOF
+ #define HAS_CURSES 1
+ EOF
+@@ -10425,13 +10425,13 @@
+     
+     if $search_ncurses
+     then
+-        if test -f /usr/local/include/ncurses/ncurses.h
++        if test -f /usr/local/include/ncurses.h
+ 	then
+-	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
+- 	    CURSES_LIBS="-L/usr/local/lib -L/usr/local/lib/ncurses -lncurses"
+-	    CURSES_INCLUDEDIR="-I/usr/local/include/ncurses"
++	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
++ 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
++	    CURSES_INCLUDEDIR="-I/usr/local/include"
+ 	    search_ncurses=false
+-	    screen_manager="ncurses on /usr/local/include/ncurses"
++	    screen_manager="ncurses on /usr/local"
+             cat >> confdefs.h <<\EOF
+ #define HAS_CURSES 1
+ EOF
+@@ -10676,6 +10676,8 @@
+ fi
+ done
+ 
++CFLAGS="$CFLAGS $CURSES_INCLUDEDIR"
++LIBS="$LIBS $CURSES_LIBS"
+ 
+ if test "x$screen_manager" = "xunknown"; then
+     cat >> confdefs.h <<\EOF
+@@ -11212,7 +11214,7 @@
  vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
  vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  
@@ -18,7 +116,7 @@
  
  intl/Makefile po/Makefile.in
   config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-@@ -11851,7 +11851,7 @@
+@@ -11423,7 +11425,7 @@
  vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
  vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  

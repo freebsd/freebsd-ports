@@ -1,6 +1,15 @@
---- Makefile.in.orig	Sun Dec  6 12:08:01 1998
-+++ Makefile.in	Sun Dec  6 12:08:51 1998
-@@ -45,7 +45,7 @@
+--- Makefile.in.orig	Tue Jan 19 00:44:07 1999
++++ Makefile.in	Tue Jan 26 19:38:26 1999
+@@ -5,7 +5,7 @@
+ @MCFGR@@MCF@
+ 
+ foreigndirs=pc
+-codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl
++codedirs=vfs lib doc slang edit src
+ unixdirs=intl $(codedirs) @POSUB@
+ alldirs=$(unixdirs) $(foreigndirs) 
+ subdirs=$(alldirs)
+@@ -46,7 +46,7 @@
  install: installdirs @vcs@
  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
@@ -9,15 +18,17 @@
  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
  	@echo "Please verify that the configuration values are correctly"
  	@echo "set in the mc.ext file in $(libdir)"
-@@ -57,7 +57,7 @@
+@@ -58,9 +58,8 @@
  installdirs:
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(bindir) $(DESTDIR)$(libdir)
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
 -	$(mcsrcdir)/xmkdir $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
 +	$(mcsrcdir)/xmkdir $(DESTDIR)$(suppbindir)
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
+-	$(mcsrcdir)/xmkdir $(DESTDIR)$(idldir)
  
  mcfninstall:
+ 	-/bin/sh ./mcfn_install
 --- src/Makefile.in.orig	Sun Dec  6 12:08:54 1998
 +++ src/Makefile.in	Sun Dec  6 12:09:24 1998
 @@ -130,7 +130,7 @@
@@ -40,3 +51,15 @@
  	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(mandir)/$(manprefix)mcedit.$(manext)
  	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
  
+--- lib/Makefile.in.orig	Wed Jan 27 01:10:33 1999
++++ lib/Makefile.in	Wed Jan 27 01:10:59 1999
+@@ -13,7 +13,8 @@
+ #
+ 
+ LIBFILES_IN = mc.ext.in mc-gnome.ext.in
+-LIBFILES_OUT = mc.ext mc-gnome.ext
++LIBFILES_OUT = mc.ext
++#LIBFILES_OUT = mc.ext mc-gnome.ext
+ LIBFILES_CONST = mc.hint mc.lib mc.menu
+ TIFILES = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
+ DISTLIB = $(LIBFILES_IN) $(LIBFILES_CONST) $(TIFILES) \
