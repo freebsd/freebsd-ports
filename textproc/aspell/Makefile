@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	aspell
-PORTVERSION=	0.60.1.1
+PORTVERSION=	0.60.2
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
-DISTFILES=	aspell-0.60.1.1.tar.gz	# needed for slave ports / options
-EXTRACT_ONLY=	aspell-0.60.1.1.tar.gz
+DISTFILES=	aspell-0.60.2.tar.gz	# needed for slave ports / options
+EXTRACT_ONLY=	aspell-0.60.2.tar.gz
 
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
@@ -36,7 +36,7 @@ USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
 
 MAKE_ARGS=		NOPORTDOCS=${NOPORTDOCS}
-VERINST=		${PORTVERSION:R:R}
+VERINST=		${PORTVERSION:R}
 PLIST_SUB=		VER=${VERINST}
 
 .if defined(WITH_ISPELL)

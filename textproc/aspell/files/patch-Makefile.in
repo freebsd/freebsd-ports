@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Nov  8 02:12:41 2004
-+++ Makefile.in	Mon Nov  8 10:09:19 2004
+--- Makefile.in.orig	Sun Dec 19 05:59:12 2004
++++ Makefile.in	Tue Dec 21 21:52:26 2004
 @@ -447,7 +447,12 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
@@ -20,11 +20,11 @@
  	modules/filter/url.cpp $(am__append_3)
 -libaspell_la_LIBADD = $(LIBINTL) $(PTHREAD_LIB)
 +libaspell_la_LIBADD = $(LIBINTL) $(PTHREAD_LIB) $(LTLIBINTL)
- @INCREMENTED_SONAME_FALSE@libaspell_la_LDFLAGS = -version-info 16:0:1 -no-undefined
- @INCREMENTED_SONAME_TRUE@libaspell_la_LDFLAGS = -version-info 16:0:0 -no-undefined
+ @INCREMENTED_SONAME_FALSE@libaspell_la_LDFLAGS = -version-info 16:2:1 -no-undefined
+ @INCREMENTED_SONAME_TRUE@libaspell_la_LDFLAGS = -version-info 16:2:0 -no-undefined
  @PSPELL_COMPATIBILITY_TRUE@libpspell_la_SOURCES = lib/dummy.cpp
 @@ -545,7 +550,7 @@
- @INCREMENTED_SONAME_TRUE@@PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = -version-info 16:0:0 -no-undefined
+ @INCREMENTED_SONAME_TRUE@@PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = -version-info 16:2:0 -no-undefined
  word_list_compress_SOURCES = prog/compress.c
  aspell_SOURCES = prog/aspell.cpp prog/check_funs.cpp prog/checker_string.cpp
 -aspell_LDADD = libaspell.la $(CURSES_LIB)
