@@ -14,6 +14,8 @@ DISTNAME=	opfor_linux
 
 MAINTAINER=	lioux@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/gearbox
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

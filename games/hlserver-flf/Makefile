@@ -20,6 +20,8 @@ DISTFILES=	frontline_linux_12a.zip \
 
 USE_ZIP=	yes
 
+WRKSRC=		${WRKDIR}/frontline
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
