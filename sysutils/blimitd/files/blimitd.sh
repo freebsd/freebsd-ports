@@ -22,8 +22,10 @@ status)
 	if [ -f /var/run/blimitd.pid ]; then
 		ps -uxwwp `cat /var/run/blimitd.pid`
 	else
-		echo 'blimitd may not be running'
-		ps -auxww | grep blimitd | grep -v "($0|grep)"
+		echo 'blimitd may not be running...possible processes below...'
+		echo
+		ps -auxww | egrep -e '^USER|blimitd' | egrep -v "($0|grep)"
+	fi
     ;;
 *)
     echo "usage: `basename $0` {start|stop|status}" >&2
