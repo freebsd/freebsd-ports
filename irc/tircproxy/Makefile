@@ -8,7 +8,7 @@
 PORTNAME=	tircproxy
 PORTVERSION=	0.4.3
 CATEGORIES=	irc
-MASTER_SITES=	http://www.mmedia.is/~bre/tircproxy/
+MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 
 MAINTAINER=	CoreDumped@CoreDumped.null.ru
 
