@@ -293,6 +293,7 @@
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += rman
+    SUBDIR += ro-aspell
     SUBDIR += roap
     SUBDIR += rot
     SUBDIR += rotix
