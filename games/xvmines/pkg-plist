@@ -1,0 +1,4 @@
+bin/xvmines
+man/man6/xvmines.6.gz
+share/doc/xvmines/Copyright
+@dirrm share/doc/xvmines

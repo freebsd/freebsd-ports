@@ -1,0 +1,18 @@
+   XVmines is a simple minesweeper game for X Window System.
+   xvmines creates a rectangle on the screen, divided into  equally
+sized cells. Each cell may contain a mine (hence the name xvmines),
+contain a number  indicating  the  number of  mines  present in the 
+8-neighboring cells or be empty.
+   Initially,  all  cells  are  covered  with  tiles. A tile can be
+removed,  uncovering  the  cell  below, by  clicking the left mouse
+button on it. In addition,a cell can be marked as containing a mine
+by clicking the right mouse button on it. Note however that marking
+a cell as containing a mine does not necessarily mean that the cell
+really contains a mine!
+   Clicking  the  middle  mouse  button  on a tile, marks it with a
+question mark, acting as a reminder mechanism. The user can use the
+numbers in the uncovered  cells  to  find  (or sometimes guess ...)
+which cells contain mines and which do not.
+   A game  ends  when  all  cells  not  containing  mines have been 
+uncovered and all cells containing mines have  been marked, or when
+a cell containing a mine is uncovered.

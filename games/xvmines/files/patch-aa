@@ -1,0 +1,9 @@
+--- Imakefile	Sun Jun 27 10:05:51 1993
++++ /home/andy/tmp/wrk/Imakefile	Fri Mar 20 00:45:31 1998
+@@ -1,4 +1,5 @@
+-WHERE :sh = (tmp=`echo /usr/openwin`;echo ${OPENWINHOME:=$tmp})
++#WHERE :sh = (tmp=`echo /usr/openwin`;echo ${OPENWINHOME:=$tmp})
++WHERE=${X11BASE}
+ 
+ #CC = gcc
+ CC = cc 
