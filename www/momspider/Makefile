@@ -3,7 +3,7 @@
 # Date created:         11 October 1997
 # Whom:                 wosch
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/11 17:58:55 wosch Exp $
 
 DISTNAME=       MOMspider-1.00
 CATEGORIES=	www
@@ -14,10 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
 MAINTAINER=	wosch@FreeBSD.org
 
+NO_BUILD=	yes
 momdir=		${PREFIX}/momspider
 wwwdir=		libwww-perl-0.40
-
-do-build:
 
 do-install:
 	${MKDIR} ${momdir}/${wwwdir}
