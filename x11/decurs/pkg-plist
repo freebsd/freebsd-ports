@@ -1,4 +1,14 @@
 bin/decurs
-bin/decurs-real
-share/decurs/cursor.bdf
-@dirrm share/decurs
+bin/decurs.bin
+%%DATADIR%%/DeCurs-cursor.bdf
+%%DATADIR%%/XFree86-4-cursor.bdf
+%%DATADIR%%/cursor.bdf
+%%DATADIR%%/helvBO24.bdf
+%%DATADIR%%/mod.bdf
+%%DATADIR%%/modified.bdf
+%%DATADIR%%/modified.old.bdf
+%%DATADIR%%/modified.save.bdf
+%%DATADIR%%/modified2.bdf
+%%DATADIR%%/pieces.bdf
+%%DATADIR%%/simple.bdf
+@dirrm %%DATADIR%%

@@ -6,36 +6,27 @@
 #
 
 PORTNAME=	decurs
-PORTVERSION=	0.50.1
-PORTREVISION=	1
+PORTVERSION=	0.55.1
 CATEGORIES=	x11
 MASTER_SITES=	http://varg.dyndns.org/psi/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "/^CXXFLAGS/s|-O2||" ${WRKSRC}/src/Makefile.in
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
+		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${X11BASE}/bin/decurs-real
+	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${PREFIX}/bin/decurs.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/decurs.exec ${PREFIX}/bin/decurs
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/cursor.bdf ${DATADIR}
-	${SED} -e "s|%%DECURS_DIR%%|${DATADIR}|; s|%%PREFIX%%|${PREFIX}|" \
-		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
-	${INSTALL_SCRIPT} ${WRKSRC}/decurs.exec ${X11BASE}/bin/decurs
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.bdf ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
