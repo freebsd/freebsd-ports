@@ -4027,6 +4027,7 @@ larswm		ports/x11-wm/larswm
 latd		ports/net/latd
 latex		ports/print/latex
 latex-mk	ports/misc/latex-mk
+latex-pgf	ports/print/latex-pgf
 latex2html	ports/textproc/latex2html
 latex2rtf	ports/print/latex2rtf
 latex2slides	ports/print/latex2slides
