@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-2.19.tar.bz2 \
 
 MAINTAINER?=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
 USE_REINPLACE=	yes
 
