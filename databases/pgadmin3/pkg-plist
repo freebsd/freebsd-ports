@@ -1,32 +1,54 @@
 bin/pgadmin3
+share/pgadmin3/docs/en_US/backup.html
 share/pgadmin3/docs/en_US/bugreport.html
+share/pgadmin3/docs/en_US/connect-error.html
 share/pgadmin3/docs/en_US/connect.html
+share/pgadmin3/docs/en_US/control-server.html
 share/pgadmin3/docs/en_US/cvs.html
 share/pgadmin3/docs/en_US/editgrid.html
 share/pgadmin3/docs/en_US/export.html
+share/pgadmin3/docs/en_US/extend.html
 share/pgadmin3/docs/en_US/freebsd_notes.html
-share/pgadmin3/docs/en_US/images/connect.jpg
-share/pgadmin3/docs/en_US/images/editgrid.jpg
-share/pgadmin3/docs/en_US/images/export.jpg
-share/pgadmin3/docs/en_US/images/main.jpg
-share/pgadmin3/docs/en_US/images/options-tab1.jpg
-share/pgadmin3/docs/en_US/images/options-tab2.jpg
-share/pgadmin3/docs/en_US/images/options-tab3.jpg
-share/pgadmin3/docs/en_US/images/password.jpg
-share/pgadmin3/docs/en_US/images/query.jpg
-share/pgadmin3/docs/en_US/images/status.jpg
+share/pgadmin3/docs/en_US/grantwiz.html
+share/pgadmin3/docs/en_US/gridopts.html
+share/pgadmin3/docs/en_US/guruhints.html
+share/pgadmin3/docs/en_US/images/backup.png
+share/pgadmin3/docs/en_US/images/connect.png
+share/pgadmin3/docs/en_US/images/editgrid.png
+share/pgadmin3/docs/en_US/images/export.png
+share/pgadmin3/docs/en_US/images/grantwiz.png
+share/pgadmin3/docs/en_US/images/gridopt-filter.png
+share/pgadmin3/docs/en_US/images/gridopt-sort.png
+share/pgadmin3/docs/en_US/images/locks.png
+share/pgadmin3/docs/en_US/images/logfile.png
+share/pgadmin3/docs/en_US/images/logs.png
+share/pgadmin3/docs/en_US/images/main.png
+share/pgadmin3/docs/en_US/images/maintenance.png
+share/pgadmin3/docs/en_US/images/no-hba.png
+share/pgadmin3/docs/en_US/images/not-running.png
+share/pgadmin3/docs/en_US/images/options-general.png
+share/pgadmin3/docs/en_US/images/options-logging.png
+share/pgadmin3/docs/en_US/images/options-pref.png
+share/pgadmin3/docs/en_US/images/options-query.png
+share/pgadmin3/docs/en_US/images/password.png
+share/pgadmin3/docs/en_US/images/query.png
+share/pgadmin3/docs/en_US/images/restore-content.png
+share/pgadmin3/docs/en_US/images/restore.png
+share/pgadmin3/docs/en_US/images/server.png
+share/pgadmin3/docs/en_US/images/status.png
 share/pgadmin3/docs/en_US/ime_setting.html
 share/pgadmin3/docs/en_US/index.html
 share/pgadmin3/docs/en_US/licence.html
 share/pgadmin3/docs/en_US/locating_resources.html
 share/pgadmin3/docs/en_US/main.html
 share/pgadmin3/docs/en_US/maintenance.html
+share/pgadmin3/docs/en_US/openssl.html
 share/pgadmin3/docs/en_US/options-tab1.html
 share/pgadmin3/docs/en_US/options-tab2.html
 share/pgadmin3/docs/en_US/options-tab3.html
+share/pgadmin3/docs/en_US/options-tab4.html
 share/pgadmin3/docs/en_US/options.html
 share/pgadmin3/docs/en_US/password.html
-share/pgadmin3/docs/en_US/pg/LEGALNOTICE.html
 share/pgadmin3/docs/en_US/pg/admin.html
 share/pgadmin3/docs/en_US/pg/app-clusterdb.html
 share/pgadmin3/docs/en_US/pg/app-createdb.html
@@ -37,7 +59,6 @@ share/pgadmin3/docs/en_US/pg/app-droplang.html
 share/pgadmin3/docs/en_US/pg/app-dropuser.html
 share/pgadmin3/docs/en_US/pg/app-ecpg.html
 share/pgadmin3/docs/en_US/pg/app-initdb.html
-share/pgadmin3/docs/en_US/pg/app-initlocation.html
 share/pgadmin3/docs/en_US/pg/app-ipcclean.html
 share/pgadmin3/docs/en_US/pg/app-pg-ctl.html
 share/pgadmin3/docs/en_US/pg/app-pg-dumpall.html
@@ -46,8 +67,6 @@ share/pgadmin3/docs/en_US/pg/app-pgcontroldata.html
 share/pgadmin3/docs/en_US/pg/app-pgdump.html
 share/pgadmin3/docs/en_US/pg/app-pgresetxlog.html
 share/pgadmin3/docs/en_US/pg/app-pgrestore.html
-share/pgadmin3/docs/en_US/pg/app-pgtclsh.html
-share/pgadmin3/docs/en_US/pg/app-pgtksh.html
 share/pgadmin3/docs/en_US/pg/app-postgres.html
 share/pgadmin3/docs/en_US/pg/app-postmaster.html
 share/pgadmin3/docs/en_US/pg/app-psql.html
@@ -57,12 +76,12 @@ share/pgadmin3/docs/en_US/pg/applevel-consistency.html
 share/pgadmin3/docs/en_US/pg/arrays.html
 share/pgadmin3/docs/en_US/pg/auth-methods.html
 share/pgadmin3/docs/en_US/pg/backup-file.html
+share/pgadmin3/docs/en_US/pg/backup-online.html
 share/pgadmin3/docs/en_US/pg/backup.html
 share/pgadmin3/docs/en_US/pg/biblio.html
 share/pgadmin3/docs/en_US/pg/bki-commands.html
 share/pgadmin3/docs/en_US/pg/bki-example.html
 share/pgadmin3/docs/en_US/pg/bki.html
-share/pgadmin3/docs/en_US/pg/bookindex.html
 share/pgadmin3/docs/en_US/pg/bug-reporting.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-aggregate.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-am.html
@@ -90,6 +109,7 @@ share/pgadmin3/docs/en_US/pg/catalog-pg-proc.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-rewrite.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-shadow.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-statistic.html
+share/pgadmin3/docs/en_US/pg/catalog-pg-tablespace.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-trigger.html
 share/pgadmin3/docs/en_US/pg/catalog-pg-type.html
 share/pgadmin3/docs/en_US/pg/catalogs.html
@@ -160,20 +180,24 @@ share/pgadmin3/docs/en_US/pg/extend-type-system.html
 share/pgadmin3/docs/en_US/pg/extend.html
 share/pgadmin3/docs/en_US/pg/extensibility.html
 share/pgadmin3/docs/en_US/pg/features.html
+share/pgadmin3/docs/en_US/pg/file-layout.html
+share/pgadmin3/docs/en_US/pg/functions-admin.html
 share/pgadmin3/docs/en_US/pg/functions-aggregate.html
 share/pgadmin3/docs/en_US/pg/functions-array.html
 share/pgadmin3/docs/en_US/pg/functions-binarystring.html
+share/pgadmin3/docs/en_US/pg/functions-bitstring.html
 share/pgadmin3/docs/en_US/pg/functions-comparison.html
 share/pgadmin3/docs/en_US/pg/functions-comparisons.html
 share/pgadmin3/docs/en_US/pg/functions-conditional.html
 share/pgadmin3/docs/en_US/pg/functions-datetime.html
 share/pgadmin3/docs/en_US/pg/functions-formatting.html
 share/pgadmin3/docs/en_US/pg/functions-geometry.html
+share/pgadmin3/docs/en_US/pg/functions-info.html
 share/pgadmin3/docs/en_US/pg/functions-matching.html
 share/pgadmin3/docs/en_US/pg/functions-math.html
-share/pgadmin3/docs/en_US/pg/functions-misc.html
 share/pgadmin3/docs/en_US/pg/functions-net.html
 share/pgadmin3/docs/en_US/pg/functions-sequence.html
+share/pgadmin3/docs/en_US/pg/functions-srf.html
 share/pgadmin3/docs/en_US/pg/functions-string.html
 share/pgadmin3/docs/en_US/pg/functions-subquery.html
 share/pgadmin3/docs/en_US/pg/functions.html
@@ -244,23 +268,11 @@ share/pgadmin3/docs/en_US/pg/install-upgrading.html
 share/pgadmin3/docs/en_US/pg/install-win32.html
 share/pgadmin3/docs/en_US/pg/installation.html
 share/pgadmin3/docs/en_US/pg/internals.html
-share/pgadmin3/docs/en_US/pg/jdbc-binary-data.html
-share/pgadmin3/docs/en_US/pg/jdbc-callproc.html
-share/pgadmin3/docs/en_US/pg/jdbc-datasource.html
-share/pgadmin3/docs/en_US/pg/jdbc-ddl.html
-share/pgadmin3/docs/en_US/pg/jdbc-ext.html
-share/pgadmin3/docs/en_US/pg/jdbc-query.html
-share/pgadmin3/docs/en_US/pg/jdbc-reading.html
-share/pgadmin3/docs/en_US/pg/jdbc-thread.html
-share/pgadmin3/docs/en_US/pg/jdbc-update.html
-share/pgadmin3/docs/en_US/pg/jdbc-use.html
-share/pgadmin3/docs/en_US/pg/jdbc.html
 share/pgadmin3/docs/en_US/pg/kernel-resources.html
 share/pgadmin3/docs/en_US/pg/largeobjects.html
-share/pgadmin3/docs/en_US/pg/libpgtcl-loading.html
-share/pgadmin3/docs/en_US/pg/libpgtcl-ref.html
 share/pgadmin3/docs/en_US/pg/libpq-async.html
 share/pgadmin3/docs/en_US/pg/libpq-build.html
+share/pgadmin3/docs/en_US/pg/libpq-cancel.html
 share/pgadmin3/docs/en_US/pg/libpq-control.html
 share/pgadmin3/docs/en_US/pg/libpq-copy.html
 share/pgadmin3/docs/en_US/pg/libpq-envars.html
@@ -270,10 +282,12 @@ share/pgadmin3/docs/en_US/pg/libpq-fastpath.html
 share/pgadmin3/docs/en_US/pg/libpq-notice-processing.html
 share/pgadmin3/docs/en_US/pg/libpq-notify.html
 share/pgadmin3/docs/en_US/pg/libpq-pgpass.html
+share/pgadmin3/docs/en_US/pg/libpq-ssl.html
 share/pgadmin3/docs/en_US/pg/libpq-status.html
 share/pgadmin3/docs/en_US/pg/libpq-threading.html
 share/pgadmin3/docs/en_US/pg/libpq.html
 share/pgadmin3/docs/en_US/pg/limitations.html
+share/pgadmin3/docs/en_US/pg/ln-legalnotice.html
 share/pgadmin3/docs/en_US/pg/lo-examplesect.html
 share/pgadmin3/docs/en_US/pg/lo-funcs.html
 share/pgadmin3/docs/en_US/pg/lo-implementation.html
@@ -281,10 +295,10 @@ share/pgadmin3/docs/en_US/pg/lo-interfaces.html
 share/pgadmin3/docs/en_US/pg/locking-indexes.html
 share/pgadmin3/docs/en_US/pg/logfile-maintenance.html
 share/pgadmin3/docs/en_US/pg/maintenance.html
-share/pgadmin3/docs/en_US/pg/manage-ag-alternate-locs.html
 share/pgadmin3/docs/en_US/pg/manage-ag-config.html
 share/pgadmin3/docs/en_US/pg/manage-ag-createdb.html
 share/pgadmin3/docs/en_US/pg/manage-ag-dropdb.html
+share/pgadmin3/docs/en_US/pg/manage-ag-tablespaces.html
 share/pgadmin3/docs/en_US/pg/manage-ag-templatedbs.html
 share/pgadmin3/docs/en_US/pg/managing-databases.html
 share/pgadmin3/docs/en_US/pg/migration.html
@@ -301,33 +315,14 @@ share/pgadmin3/docs/en_US/pg/page.html
 share/pgadmin3/docs/en_US/pg/parser-stage.html
 share/pgadmin3/docs/en_US/pg/performance-tips.html
 share/pgadmin3/docs/en_US/pg/perm-functions.html
-share/pgadmin3/docs/en_US/pg/pgtcl-examplesect.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgconndefaults.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgconnect.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgdisconnect.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgexec.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgexecute.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglisten.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgloclose.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglocreat.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgloexport.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgloimport.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglolseek.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgloopen.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgloread.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglotell.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglounlink.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pglowrite.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgon-connection-loss.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgresult.html
-share/pgadmin3/docs/en_US/pg/pgtcl-pgselect.html
-share/pgadmin3/docs/en_US/pg/pgtcl.html
 share/pgadmin3/docs/en_US/pg/planner-optimizer.html
 share/pgadmin3/docs/en_US/pg/planner-stats.html
 share/pgadmin3/docs/en_US/pg/plhandler.html
 share/pgadmin3/docs/en_US/pg/plperl-data.html
 share/pgadmin3/docs/en_US/pg/plperl-database.html
+share/pgadmin3/docs/en_US/pg/plperl-global.html
 share/pgadmin3/docs/en_US/pg/plperl-missing.html
+share/pgadmin3/docs/en_US/pg/plperl-triggers.html
 share/pgadmin3/docs/en_US/pg/plperl-trusted.html
 share/pgadmin3/docs/en_US/pg/plperl.html
 share/pgadmin3/docs/en_US/pg/plpgsql-control-structures.html
@@ -409,15 +404,29 @@ share/pgadmin3/docs/en_US/pg/release-7-2-1.html
 share/pgadmin3/docs/en_US/pg/release-7-2-2.html
 share/pgadmin3/docs/en_US/pg/release-7-2-3.html
 share/pgadmin3/docs/en_US/pg/release-7-2-4.html
+share/pgadmin3/docs/en_US/pg/release-7-2-5.html
+share/pgadmin3/docs/en_US/pg/release-7-2-6.html
 share/pgadmin3/docs/en_US/pg/release-7-2.html
 share/pgadmin3/docs/en_US/pg/release-7-3-1.html
 share/pgadmin3/docs/en_US/pg/release-7-3-2.html
 share/pgadmin3/docs/en_US/pg/release-7-3-3.html
 share/pgadmin3/docs/en_US/pg/release-7-3-4.html
+share/pgadmin3/docs/en_US/pg/release-7-3-5.html
+share/pgadmin3/docs/en_US/pg/release-7-3-6.html
+share/pgadmin3/docs/en_US/pg/release-7-3-7.html
+share/pgadmin3/docs/en_US/pg/release-7-3-8.html
 share/pgadmin3/docs/en_US/pg/release-7-3.html
+share/pgadmin3/docs/en_US/pg/release-7-4-1.html
+share/pgadmin3/docs/en_US/pg/release-7-4-2.html
+share/pgadmin3/docs/en_US/pg/release-7-4-3.html
+share/pgadmin3/docs/en_US/pg/release-7-4-4.html
+share/pgadmin3/docs/en_US/pg/release-7-4-5.html
+share/pgadmin3/docs/en_US/pg/release-7-4-6.html
+share/pgadmin3/docs/en_US/pg/release-7-4.html
 share/pgadmin3/docs/en_US/pg/release.html
 share/pgadmin3/docs/en_US/pg/resources.html
 share/pgadmin3/docs/en_US/pg/routine-reindex.html
+share/pgadmin3/docs/en_US/pg/rowtypes.html
 share/pgadmin3/docs/en_US/pg/rule-system.html
 share/pgadmin3/docs/en_US/pg/rules-privileges.html
 share/pgadmin3/docs/en_US/pg/rules-status.html
@@ -435,8 +444,6 @@ share/pgadmin3/docs/en_US/pg/spi-memory.html
 share/pgadmin3/docs/en_US/pg/spi-realloc.html
 share/pgadmin3/docs/en_US/pg/spi-spi-connect.html
 share/pgadmin3/docs/en_US/pg/spi-spi-copytuple.html
-share/pgadmin3/docs/en_US/pg/spi-spi-copytupledesc.html
-share/pgadmin3/docs/en_US/pg/spi-spi-copytupleintoslot.html
 share/pgadmin3/docs/en_US/pg/spi-spi-cursor-close.html
 share/pgadmin3/docs/en_US/pg/spi-spi-cursor-fetch.html
 share/pgadmin3/docs/en_US/pg/spi-spi-cursor-find.html
@@ -444,21 +451,29 @@ share/pgadmin3/docs/en_US/pg/spi-spi-cursor-move.html
 share/pgadmin3/docs/en_US/pg/spi-spi-cursor-open.html
 share/pgadmin3/docs/en_US/pg/spi-spi-exec.html
 share/pgadmin3/docs/en_US/pg/spi-spi-execp.html
+share/pgadmin3/docs/en_US/pg/spi-spi-execute-plan.html
+share/pgadmin3/docs/en_US/pg/spi-spi-execute.html
 share/pgadmin3/docs/en_US/pg/spi-spi-finish.html
 share/pgadmin3/docs/en_US/pg/spi-spi-fname.html
 share/pgadmin3/docs/en_US/pg/spi-spi-fnumber.html
 share/pgadmin3/docs/en_US/pg/spi-spi-freeplan.html
 share/pgadmin3/docs/en_US/pg/spi-spi-freetuple.html
 share/pgadmin3/docs/en_US/pg/spi-spi-freetupletable.html
+share/pgadmin3/docs/en_US/pg/spi-spi-getargcount.html
+share/pgadmin3/docs/en_US/pg/spi-spi-getargtypeid.html
 share/pgadmin3/docs/en_US/pg/spi-spi-getbinval.html
 share/pgadmin3/docs/en_US/pg/spi-spi-getrelname.html
 share/pgadmin3/docs/en_US/pg/spi-spi-gettype.html
 share/pgadmin3/docs/en_US/pg/spi-spi-gettypeid.html
 share/pgadmin3/docs/en_US/pg/spi-spi-getvalue.html
+share/pgadmin3/docs/en_US/pg/spi-spi-is-cursor-plan.html
 share/pgadmin3/docs/en_US/pg/spi-spi-modifytuple.html
 share/pgadmin3/docs/en_US/pg/spi-spi-palloc.html
 share/pgadmin3/docs/en_US/pg/spi-spi-pfree.html
+share/pgadmin3/docs/en_US/pg/spi-spi-pop.html
 share/pgadmin3/docs/en_US/pg/spi-spi-prepare.html
+share/pgadmin3/docs/en_US/pg/spi-spi-push.html
+share/pgadmin3/docs/en_US/pg/spi-spi-returntuple.html
 share/pgadmin3/docs/en_US/pg/spi-spi-saveplan.html
 share/pgadmin3/docs/en_US/pg/spi-visibility.html
 share/pgadmin3/docs/en_US/pg/spi.html
@@ -469,12 +484,16 @@ share/pgadmin3/docs/en_US/pg/sql-alterdatabase.html
 share/pgadmin3/docs/en_US/pg/sql-alterdomain.html
 share/pgadmin3/docs/en_US/pg/sql-alterfunction.html
 share/pgadmin3/docs/en_US/pg/sql-altergroup.html
+share/pgadmin3/docs/en_US/pg/sql-alterindex.html
 share/pgadmin3/docs/en_US/pg/sql-alterlanguage.html
 share/pgadmin3/docs/en_US/pg/sql-alteropclass.html
+share/pgadmin3/docs/en_US/pg/sql-alteroperator.html
 share/pgadmin3/docs/en_US/pg/sql-alterschema.html
 share/pgadmin3/docs/en_US/pg/sql-altersequence.html
 share/pgadmin3/docs/en_US/pg/sql-altertable.html
+share/pgadmin3/docs/en_US/pg/sql-altertablespace.html
 share/pgadmin3/docs/en_US/pg/sql-altertrigger.html
+share/pgadmin3/docs/en_US/pg/sql-altertype.html
 share/pgadmin3/docs/en_US/pg/sql-alteruser.html
 share/pgadmin3/docs/en_US/pg/sql-analyze.html
 share/pgadmin3/docs/en_US/pg/sql-begin.html
@@ -502,6 +521,7 @@ share/pgadmin3/docs/en_US/pg/sql-createschema.html
 share/pgadmin3/docs/en_US/pg/sql-createsequence.html
 share/pgadmin3/docs/en_US/pg/sql-createtable.html
 share/pgadmin3/docs/en_US/pg/sql-createtableas.html
+share/pgadmin3/docs/en_US/pg/sql-createtablespace.html
 share/pgadmin3/docs/en_US/pg/sql-createtrigger.html
 share/pgadmin3/docs/en_US/pg/sql-createtype.html
 share/pgadmin3/docs/en_US/pg/sql-createuser.html
@@ -524,6 +544,7 @@ share/pgadmin3/docs/en_US/pg/sql-droprule.html
 share/pgadmin3/docs/en_US/pg/sql-dropschema.html
 share/pgadmin3/docs/en_US/pg/sql-dropsequence.html
 share/pgadmin3/docs/en_US/pg/sql-droptable.html
+share/pgadmin3/docs/en_US/pg/sql-droptablespace.html
 share/pgadmin3/docs/en_US/pg/sql-droptrigger.html
 share/pgadmin3/docs/en_US/pg/sql-droptype.html
 share/pgadmin3/docs/en_US/pg/sql-dropuser.html
@@ -543,9 +564,12 @@ share/pgadmin3/docs/en_US/pg/sql-move.html
 share/pgadmin3/docs/en_US/pg/sql-notify.html
 share/pgadmin3/docs/en_US/pg/sql-prepare.html
 share/pgadmin3/docs/en_US/pg/sql-reindex.html
+share/pgadmin3/docs/en_US/pg/sql-release-savepoint.html
 share/pgadmin3/docs/en_US/pg/sql-reset.html
 share/pgadmin3/docs/en_US/pg/sql-revoke.html
+share/pgadmin3/docs/en_US/pg/sql-rollback-to.html
 share/pgadmin3/docs/en_US/pg/sql-rollback.html
+share/pgadmin3/docs/en_US/pg/sql-savepoint.html
 share/pgadmin3/docs/en_US/pg/sql-select.html
 share/pgadmin3/docs/en_US/pg/sql-selectinto.html
 share/pgadmin3/docs/en_US/pg/sql-set-constraints.html
@@ -606,7 +630,6 @@ share/pgadmin3/docs/en_US/pg/view-pg-tables.html
 share/pgadmin3/docs/en_US/pg/view-pg-user.html
 share/pgadmin3/docs/en_US/pg/view-pg-views.html
 share/pgadmin3/docs/en_US/pg/views-overview.html
-share/pgadmin3/docs/en_US/pg/wal-benefits-later.html
 share/pgadmin3/docs/en_US/pg/wal-configuration.html
 share/pgadmin3/docs/en_US/pg/wal-internals.html
 share/pgadmin3/docs/en_US/pg/wal.html
@@ -616,6 +639,7 @@ share/pgadmin3/docs/en_US/pg/xfunc-internal.html
 share/pgadmin3/docs/en_US/pg/xfunc-overload.html
 share/pgadmin3/docs/en_US/pg/xfunc-pl.html
 share/pgadmin3/docs/en_US/pg/xfunc-sql.html
+share/pgadmin3/docs/en_US/pg/xfunc-volatility.html
 share/pgadmin3/docs/en_US/pg/xfunc.html
 share/pgadmin3/docs/en_US/pg/xindex.html
 share/pgadmin3/docs/en_US/pg/xoper-optimization.html
@@ -624,11 +648,14 @@ share/pgadmin3/docs/en_US/pg/xplang.html
 share/pgadmin3/docs/en_US/pg/xtypes.html
 share/pgadmin3/docs/en_US/pgadmin3.css
 share/pgadmin3/docs/en_US/pgadmin3.hhc
+share/pgadmin3/docs/en_US/pgadmin3.hhk
 share/pgadmin3/docs/en_US/pgadmin3.hhp
-share/pgadmin3/docs/en_US/postgresql.hhk
+share/pgadmin3/docs/en_US/pgadmin3.hhp.cached
 share/pgadmin3/docs/en_US/preparing_for_translation.html
 share/pgadmin3/docs/en_US/prop_page_design.html
 share/pgadmin3/docs/en_US/query.html
+share/pgadmin3/docs/en_US/querybuilder.html
+share/pgadmin3/docs/en_US/restore.html
 share/pgadmin3/docs/en_US/snapshots.html
 share/pgadmin3/docs/en_US/status.html
 share/pgadmin3/docs/en_US/team.html
@@ -640,102 +667,109 @@ share/pgadmin3/docs/en_US/translation_team.html
 share/pgadmin3/docs/en_US/unix_compilation.html
 share/pgadmin3/docs/en_US/using.html
 share/pgadmin3/ui/af_ZA/pgadmin3.mo
-share/pgadmin3/ui/bg_BG/pgadmin3.mo
+share/pgadmin3/ui/af_ZA/wxstd.mo
+share/pgadmin3/ui/ca_ES/pgadmin3.mo
+share/pgadmin3/ui/ca_ES/wxstd.mo
 share/pgadmin3/ui/common/dlgAggregate.xrc
 share/pgadmin3/ui/common/dlgCast.xrc
 share/pgadmin3/ui/common/dlgCheck.xrc
 share/pgadmin3/ui/common/dlgColumn.xrc
+share/pgadmin3/ui/common/dlgConnect.xrc
 share/pgadmin3/ui/common/dlgConversion.xrc
 share/pgadmin3/ui/common/dlgDatabase.xrc
 share/pgadmin3/ui/common/dlgDomain.xrc
+share/pgadmin3/ui/common/dlgEditGridOptions.xrc
 share/pgadmin3/ui/common/dlgForeignKey.xrc
 share/pgadmin3/ui/common/dlgFunction.xrc
 share/pgadmin3/ui/common/dlgGroup.xrc
 share/pgadmin3/ui/common/dlgIndex.xrc
 share/pgadmin3/ui/common/dlgIndexConstraint.xrc
+share/pgadmin3/ui/common/dlgJob.xrc
 share/pgadmin3/ui/common/dlgLanguage.xrc
 share/pgadmin3/ui/common/dlgOperator.xrc
 share/pgadmin3/ui/common/dlgRule.xrc
+share/pgadmin3/ui/common/dlgSchedule.xrc
 share/pgadmin3/ui/common/dlgSchema.xrc
 share/pgadmin3/ui/common/dlgSequence.xrc
+share/pgadmin3/ui/common/dlgServer.xrc
+share/pgadmin3/ui/common/dlgStep.xrc
 share/pgadmin3/ui/common/dlgTable.xrc
+share/pgadmin3/ui/common/dlgTablespace.xrc
 share/pgadmin3/ui/common/dlgTrigger.xrc
 share/pgadmin3/ui/common/dlgType.xrc
 share/pgadmin3/ui/common/dlgUser.xrc
 share/pgadmin3/ui/common/dlgView.xrc
 share/pgadmin3/ui/common/frmAddTableView.xrc
-share/pgadmin3/ui/common/frmConnect.xrc
+share/pgadmin3/ui/common/frmBackup.xrc
 share/pgadmin3/ui/common/frmExport.xrc
+share/pgadmin3/ui/common/frmGrantWizard.xrc
+share/pgadmin3/ui/common/frmIndexcheck.xrc
 share/pgadmin3/ui/common/frmMaintenance.xrc
 share/pgadmin3/ui/common/frmOptions.xrc
 share/pgadmin3/ui/common/frmPassword.xrc
 share/pgadmin3/ui/common/frmQBJoin.xrc
-share/pgadmin3/ui/common/frmServer.xrc
+share/pgadmin3/ui/common/frmRestore.xrc
 share/pgadmin3/ui/common/frmStatus.xrc
 share/pgadmin3/ui/da_DK/pgadmin3.mo
+share/pgadmin3/ui/da_DK/wxstd.mo
 share/pgadmin3/ui/de_DE/pgadmin3.mo
 share/pgadmin3/ui/de_DE/wxstd.mo
-share/pgadmin3/ui/el_GR/pgadmin3.mo
 share/pgadmin3/ui/es_ES/pgadmin3.mo
-share/pgadmin3/ui/fa_IR/pgadmin3.mo
+share/pgadmin3/ui/es_ES/wxstd.mo
+share/pgadmin3/ui/fi_FI/pgadmin3.mo
+share/pgadmin3/ui/fi_FI/wxstd.mo
 share/pgadmin3/ui/fr_FR/pgadmin3.mo
 share/pgadmin3/ui/fr_FR/wxstd.mo
-share/pgadmin3/ui/gl_ES/pgadmin3.mo
-share/pgadmin3/ui/hr_HR/pgadmin3.mo
 share/pgadmin3/ui/hu_HU/pgadmin3.mo
+share/pgadmin3/ui/hu_HU/wxstd.mo
 share/pgadmin3/ui/id_ID/pgadmin3.mo
 share/pgadmin3/ui/id_ID/wxstd.mo
 share/pgadmin3/ui/it_IT/pgadmin3.mo
 share/pgadmin3/ui/it_IT/wxstd.mo
 share/pgadmin3/ui/ja_JP/pgadmin3.mo
 share/pgadmin3/ui/ja_JP/wxstd.mo
-share/pgadmin3/ui/nb_NO/pgadmin3.mo
+share/pgadmin3/ui/lv_LV/pgadmin3.mo
 share/pgadmin3/ui/nl_NL/pgadmin3.mo
+share/pgadmin3/ui/nl_NL/wxstd.mo
 share/pgadmin3/ui/pgadmin3.lng
 share/pgadmin3/ui/pl_PL/pgadmin3.mo
 share/pgadmin3/ui/pl_PL/wxstd.mo
-share/pgadmin3/ui/pt_BR/pgadmin3.mo
 share/pgadmin3/ui/pt_PT/pgadmin3.mo
-share/pgadmin3/ui/ro_RO/pgadmin3.mo
 share/pgadmin3/ui/ru_RU/pgadmin3.mo
+share/pgadmin3/ui/ru_RU/wxstd.mo
 share/pgadmin3/ui/sk_SK/pgadmin3.mo
 share/pgadmin3/ui/sl_SI/pgadmin3.mo
+share/pgadmin3/ui/sl_SI/wxstd.mo
 share/pgadmin3/ui/sr_YU/pgadmin3.mo
-share/pgadmin3/ui/sv_SE/pgadmin3.mo
 share/pgadmin3/ui/tr_TR/pgadmin3.mo
 share/pgadmin3/ui/tr_TR/wxstd.mo
 share/pgadmin3/ui/wxstd.mo
 share/pgadmin3/ui/zh_CN/pgadmin3.mo
 share/pgadmin3/ui/zh_CN/wxstd.mo
 share/pgadmin3/ui/zh_TW/pgadmin3.mo
+share/pgadmin3/ui/zh_TW/wxstd.mo
 @dirrm share/pgadmin3/ui/zh_TW
 @dirrm share/pgadmin3/ui/zh_CN
 @dirrm share/pgadmin3/ui/tr_TR
-@dirrm share/pgadmin3/ui/sv_SE
 @dirrm share/pgadmin3/ui/sr_YU
 @dirrm share/pgadmin3/ui/sl_SI
 @dirrm share/pgadmin3/ui/sk_SK
 @dirrm share/pgadmin3/ui/ru_RU
-@dirrm share/pgadmin3/ui/ro_RO
 @dirrm share/pgadmin3/ui/pt_PT
-@dirrm share/pgadmin3/ui/pt_BR
 @dirrm share/pgadmin3/ui/pl_PL
 @dirrm share/pgadmin3/ui/nl_NL
-@dirrm share/pgadmin3/ui/nb_NO
+@dirrm share/pgadmin3/ui/lv_LV
 @dirrm share/pgadmin3/ui/ja_JP
 @dirrm share/pgadmin3/ui/it_IT
 @dirrm share/pgadmin3/ui/id_ID
 @dirrm share/pgadmin3/ui/hu_HU
-@dirrm share/pgadmin3/ui/hr_HR
-@dirrm share/pgadmin3/ui/gl_ES
 @dirrm share/pgadmin3/ui/fr_FR
-@dirrm share/pgadmin3/ui/fa_IR
+@dirrm share/pgadmin3/ui/fi_FI
 @dirrm share/pgadmin3/ui/es_ES
-@dirrm share/pgadmin3/ui/el_GR
 @dirrm share/pgadmin3/ui/de_DE
 @dirrm share/pgadmin3/ui/da_DK
 @dirrm share/pgadmin3/ui/common
-@dirrm share/pgadmin3/ui/bg_BG
+@dirrm share/pgadmin3/ui/ca_ES
 @dirrm share/pgadmin3/ui/af_ZA
 @dirrm share/pgadmin3/ui
 @dirrm share/pgadmin3/docs/en_US/pg

@@ -1,66 +1,13 @@
---- configure.orig	Fri Nov 28 17:36:36 2003
-+++ configure	Fri Nov 26 00:24:05 2004
-@@ -4844,10 +4844,10 @@
-     echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
-     WX_HOME=/usr/local/wx2
--    if test ! -f "${WX_HOME}/include/wx/wx.h"
-+    if test ! -f "${WX_HOME}/include/wx-2.5/wx/wx.h"
-     then
-         WX_HOME=/usr/local
--        if test ! -f "${WX_HOME}/include/wx/wx.h"
-+        if test ! -f "${WX_HOME}/include/wx-2.5/wx/wx.h"
-         then
-             WX_HOME=/usr
-         fi
-@@ -5017,7 +5017,7 @@
-                 LIBS="$LIBS -lwx_gtk2d_stc-${WX_VERSION} -lwx_gtk2d_xrc-${WX_VERSION}"
+--- configure.orig	Tue Nov 30 02:09:55 2004
++++ configure	Wed Jan  5 19:00:36 2005
+@@ -5175,6 +5175,10 @@
+                 LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION}"
                  LIBS="$LIBS $WX_NEW_LDFLAGS"
                  ;;
--            *wx_gtk2u-*)
-+            *wx_gtk2u*)
-                 LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION} -lwx_gtk2u_xrc-${WX_VERSION}"
-                 LIBS="$LIBS $WX_NEW_LDFLAGS"
-                 ;;
-@@ -5033,13 +5033,18 @@
-                 LIBS="$LIBS -lwx_gtk_stc-${WX_VERSION} -lwx_gtk_xrc-${WX_VERSION}"
-                 LIBS="$LIBS $WX_NEW_LDFLAGS"
-                 ;;
-+            *wx_gtk2*)
-+                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION} -lwx_gtk2_xrc-${WX_VERSION}"
++            *wx_gtk2_core*)
++                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION}"
 +                LIBS="$LIBS $WX_NEW_LDFLAGS"
-+		;;
-             *)
-                 ;;
-         esac
-     fi
-+    LIBS="$LIBS $PTHREAD_LIBS"
- 
-     WX_NEW_CPPFLAGS=`${WX_CONFIG} --cxxflags`
--    CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -I${WX_HOME}/include"
-+    CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -I${WX_HOME}/include ${PTHREAD_CFLAGS}"
-     case "${host}" in
-         *-apple-darwin*)
-             CPPFLAGS="$CPPFLAGS -no-cpp-precomp -fno-rtti"
-@@ -5048,18 +5053,18 @@
-             ;;
-     esac
-     wx_wx_h="yes"
--    if test ! -f "${WX_HOME}/include/wx/version.h"
-+    if test ! -f "${WX_HOME}/include/wx-2.5/wx/version.h"
-     then
-         wx_wx_h="no"
-     fi
--    if test ! -f "${WX_HOME}/include/wx/stc/stc.h"
-+    if test ! -f "${WX_HOME}/include/wx-2.5/wx/stc/stc.h"
-     then
-         { { echo "$as_me:$LINENO: error: you need to install the stc package from wxWindows/contrib/src/stc" >&5
- echo "$as_me: error: you need to install the stc package from wxWindows/contrib/src/stc" >&2;}
-    { (exit 1); exit 1; }; }
-         wx_wx_h="no"
-     fi
--    if test ! -f "${WX_HOME}/include/wx/xrc/xmlres.h"
-+    if test ! -f "${WX_HOME}/include/wx-2.5/wx/xrc/xmlres.h"
-     then
-         { { echo "$as_me:$LINENO: error: you need to install the xrc package from wxWindows/contrib/src/xrc" >&5
- echo "$as_me: error: you need to install the xrc package from wxWindows/contrib/src/xrc" >&2;}
++                ;;
+             *wx_gtkud-*)
+                 LIBS="$LIBS -lwx_gtkud_stc-${WX_VERSION}"
+                 LIBS="$LIBS $WX_NEW_LDFLAGS"
