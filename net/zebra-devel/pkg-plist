@@ -1,5 +1,4 @@
 sbin/bgpd
-sbin/client
 sbin/ospfd
 sbin/ripd
 sbin/zebra
