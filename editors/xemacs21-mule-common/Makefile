@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/26 15:02:10 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -12,9 +12,11 @@ CATEGORIES=	editors japanese
 MASTER_SITES=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.4/ \
 		ftp://ftp.xemacs.org/pub/xemacs-20.4/ \
-		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/
+		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/ \
+		ftp://ftp.jpl.org/pub/elisp/alpha/
 DISTFILES=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
-		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
+		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz \
+		ps-print-jp.el.gz
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
@@ -22,10 +24,15 @@ EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
 .for dir in \
 	editors/xemacs-mule \
-	japanese/xemacs japanese/xemacs-canna \
-	japanese/xemacs-canna+wnn4 japanese/xemacs-canna+wnn6 \
-	japanese/xemacs-wnn4 japanese/xemacs-wnn6
-.if exists(${.CURDIR}/../../${dir}/work/.build_done)
+	japanese/xemacs \
+	japanese/xemacs-canna \
+	japanese/xemacs-canna+wnn4 \
+	japanese/xemacs-canna+wnn6 \
+	japanese/xemacs-wnn4 \
+	japanese/xemacs-wnn6
+.if exists(${.CURDIR}/../../${dir}/work/.install_done)
+WRKDIR=		${.CURDIR}/../../${dir}/work
+.elif exists(${.CURDIR}/../../${dir}/work/.build_done)
 WRKDIR?=	${.CURDIR}/../../${dir}/work
 .endif
 .endfor
@@ -37,18 +44,24 @@ BROKEN=		You should build install one of the other xemacs ports first
 
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
+TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 
 USE_GMAKE=	no
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	no
-CONFIGURE_ARGS=	i386-unknown-freebsd --with-x11 --with-mule \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	i386-unknown-freebsd \
+		--with-x11 \
+		--with-mule \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 STRIP=
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 
 INSTALL_TARGET=	install-arch-indep
+
+PLIST_SUB=	XEMACS_DIR=xemacs-20.4
 
 pre-build:
 	${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
@@ -61,6 +74,10 @@ pre-install:
 	fi
 
 post-install:
+# install xemacs-mule.sh into ${PREFIX}/etc/rc.d
+	chmod 1777 /var/run/emacs/lock
+	@${MKDIR} ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
 post-package:

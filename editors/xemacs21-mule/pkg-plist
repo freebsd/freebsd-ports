@@ -1,0 +1,44 @@
+bin/etags
+bin/ctags
+bin/b2m
+bin/gnuclient
+bin/rcs-checkin
+bin/pstogif
+bin/install-sid
+bin/send-pr
+bin/gnudoit
+bin/gnuattach
+bin/xemacs-20.4
+@exec ln -sf %D/%F %B/xemacs
+@unexec rm %B/xemacs
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/make-path
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/wakeup
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/profile
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/make-docfile
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/digest-doc
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/sorted-doc
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/movemail
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/cvtmail
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/fakemail
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/yow
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/hexl
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/gnuserv
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/mmencode
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/rcs2log
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/vcdiff
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/gzip-el.sh
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/install-sid
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/send-pr
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-au
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-file
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-html
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-image
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-mpeg
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-plain
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tm-ps
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/tmdecode
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/add-little-package.sh
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/add-big-package.sh
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/DOC
+lib/%%XEMACS_DIR%%/i386-unknown-freebsd/config.values
+@dirrm lib/%%XEMACS_DIR%%/i386-unknown-freebsd
