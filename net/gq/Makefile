@@ -6,34 +6,43 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	1.0b1
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gqclient
+DISTNAME=	gq-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	ports@oven.org
 COMMENT=	GTK-based LDAP client
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
-.if defined(WITH_OPENLDAP1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-.endif
-
-.if !defined(WITHOUT_JPEGPHOTO)
+.if !defined(WITHOUT_JPEG)
 USE_GNOME=	gdkpixbuf
 .endif
 
+USE_GMAKE=		yes
+USE_ICONV=		yes
+USE_GETTEXT=	yes
+USE_OPENLDAP=	yes
+USE_OPENSSL=	yes
 USE_X_PREFIX=	yes
-USE_GNOME+=	gtk12 gnomehier
+USE_GNOME+=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap=${LOCALBASE}
 
-pre-configure:
-	@${ECHO_MSG} "You can disable jpegPhoto attr. handling by defining WITHOUT_JPEGPHOTO=yes"
+.if defined(WITH_DND)
+CONFIGURE_ARGS+=	--enable-browser-dnd
+.endif
+
+.if defined(WITH_CACHE)
+CONFIGURE_ARGS+=	--enable-cache
+.endif
+
+post-extract:
+	@${ECHO_MSG} "This port supports the following configuration knobs:"
+	@${ECHO_MSG} "WITHOUT_JPEG=yes  Disable jpegPhoto attr. handling"
+	@${ECHO_MSG} "WITH_DND=yes      Enable Drag and drop support in browse mode"
+	@${ECHO_MSG} "WITH_CACHE=yes    Support the OpenLDAP experimental client cache"
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>

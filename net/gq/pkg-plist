@@ -1,8 +1,10 @@
 bin/gq
 share/gnome/apps/Internet/gq.desktop
 share/gq/bomb.xpm
+share/gq/hide.xpm
 share/gq/line.xpm
 share/gq/logo.xpm
+share/gq/new.xpm
 share/gq/textarea.xpm
 share/gq/warning.xpm
 @dirrm share/gq
