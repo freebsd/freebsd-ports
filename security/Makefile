@@ -84,6 +84,7 @@
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
+    SUBDIR += p5-Crypt-UnixCrypt
     SUBDIR += p5-Digest-MD5
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-IO-Socket-SSL
