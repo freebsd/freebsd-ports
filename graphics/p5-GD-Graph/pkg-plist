@@ -6,6 +6,7 @@ lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/area.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/colour.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/hbars.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/lines.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/linespoints.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/mixed.pm
