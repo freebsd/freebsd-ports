@@ -28,10 +28,11 @@ do-configure:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/py-MySQL
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-MySQL
-	${ECHO} "share/doc/py-MySQL/README" >> ${TMPPLIST}
-	${ECHO} "@dirrm share/doc/py-MySQL" >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/share/doc/py-MySQL
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-MySQL
+	@${ECHO} "share/doc/py-MySQL/README" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/py-MySQL" >> ${TMPPLIST}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
