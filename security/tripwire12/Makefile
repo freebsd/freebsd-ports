@@ -20,30 +20,38 @@ NO_PACKAGE=	"requires local database to be built"
 RESTRICTED=	"contains crypto class algorithms"
 
 post-extract:
-	@ (cd ${WRKDIR}; tar xf T1.2.tar)
+	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
+
+post-patch:
+	@${PERL} -pi -e 's|/secureplace/bin|${PREFIX}/bin|g;' \
+		-e 's|/usr/man|${PREFIX}/man|g;' ${WRKSRC}/Makefile
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
-	@ ${CP} ${FILESDIR}/tw.conf.freebsd2 ${WRKSRC}/configs/tw.conf.freebsd2
+	@ ${SED} s%/kernel%`sysctl -bn kern.bootfile`% \
+		< ${FILESDIR}/tw.conf.freebsd2 \
+		> ${WRKSRC}/configs/tw.conf.freebsd2
 
 post-install:
 	@ ${MKDIR} /var/adm/tcheck
 	@ ${CP} ${FILESDIR}/tw.conf.freebsd2 /var/adm/tcheck/tw.config
-	@ ${ECHO} Creating tripwire database
+	# Creating tripwire database
 	@ (cd /var/adm/tcheck; tripwire -initialize)
 .if defined(TRIPWIRE_FLOPPY) && ${TRIPWIRE_FLOPPY} == YES
+	# preparing the floppy
 	@ disklabel -w -B /dev/rfd0c fd1440
 	@ newfs -u 0 -t 0 -i 196608 -m 0 -T minimum -o space /dev/rfd0c
-	@ mount /dev/fd0c /mnt
-	@ ${GZIP_CMD} < ${PREFIX}/bin/tripwire > /mnt/tripwire
+	mount /dev/fd0c /mnt
+	# transferring things to the floppy
 	@ ${CP} -p /var/adm/tcheck/tw.config /mnt/tw.config
 	@ ${GZIP_CMD} < /var/adm/tcheck/databases/tw.db_`hostname` \
 		> /mnt/tw.db_`hostname`.gz
-	@ ${CP} -p ${FILESDIR}/twcheck /mnt/twcheck
-	@ ${GZIP_CMD} < /usr/bin/gunzip > /mnt/gunzip
+	@ ${CP} -p ${FILESDIR}/twcheck /usr/bin/gunzip \
+			${PREFIX}/bin/tripwire \
+		/mnt/
 	@ ${CHMOD} 555 /mnt/tripwire /mnt/gunzip /mnt/twcheck
 	@ umount /mnt
-	@ ${ECHO} Do not forget to remove and write-protect the floppy.
+	# Do not forget to remove and write-protect the floppy.
 .endif
 
 .include <bsd.port.mk>

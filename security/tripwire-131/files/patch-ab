@@ -1,28 +1,23 @@
-*** Makefile.orig	Mon Jul 25 10:59:41 1994
+*** Makefile	Mon Jul 25 10:59:41 1994
 --- Makefile	Thu Jan  2 12:04:35 1997
 ***************
-*** 12,21 ****
-  ###
+*** 34,36 ****
+  # you can use ANSI C if you like, but K&R is equally fine.
+! CC     = cc			# common
+  #CC     = gcc			# also common
+--- 34,36 ----
+  # you can use ANSI C if you like, but K&R is equally fine.
+! #CC     = cc			# common
+  #CC     = gcc			# also common
+***************
+*** 38,40 ****
   
-  # destination directory for final executables
-! DESTDIR = /secureplace/bin
+! CFLAGS = -O			# common 
+  #CFLAGS = -g 			# common 
+--- 38,40 ----
   
-  # destination for man pages
-! MANDIR  = /usr/man
-  
-  # system utilities
-  LEX	= lex
---- 12,21 ----
-  ###
-  
-  # destination directory for final executables
-! DESTDIR = /usr/local/bin
-  
-  # destination for man pages
-! MANDIR  = /usr/local/man
-  
-  # system utilities
-  LEX	= lex
+! #CFLAGS = -O			# common 
+  #CFLAGS = -g 			# common 
 ***************
 *** 60,66 ****
   #CPP	= /lib/cpp		# on older systems
@@ -41,3 +36,27 @@
   #LDFLAGS= -non_shared		# OSF/1
   #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
                             	#          on Solaris 2.3)
+
+
+--- src/Makefile.orig	Mon Jul 25 10:40:54 1994
++++ src/Makefile	Sun May 28 15:52:25 2000
+@@ -3,7 +3,7 @@
+ # 	Tripwire build
+ #
+ 
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ OFILES = 	config.parse.o main.o list.o ignorevec.o dbase.build.o \
+ 		utils.o preen.o preen.interp.o preen.report.o \
+@@ -103,8 +103,9 @@
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+-install:	tripwire
++install:	tripwire siggen
+ 	$(INSTALL) tripwire $(DESTDIR)
++	$(INSTALL) siggen $(DESTDIR)
+ 
+ clean:
+ 	-rm -f $(OFILES) config.lex.c config.pre.c y.tab.c lex.yy.c help.c \
