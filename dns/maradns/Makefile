@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.18
-PORTREVISION=	0
+PORTVERSION=	1.0.20
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.glou.net/download/ \
 		http://maradns.3va.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DNS server implementation with focus on security and simplicity
+MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	DNS server with focus on security and simplicity
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
