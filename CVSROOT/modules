@@ -7939,6 +7939,7 @@ pear-Log	ports/sysutils/pear-Log
 pear-MDB	ports/databases/pear-MDB
 pear-Mail	ports/mail/pear-Mail
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
+pear-Mail_Queue	ports/mail/pear-Mail_Queue
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
 pear-Net_DIME	ports/net/pear-Net_DIME
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
