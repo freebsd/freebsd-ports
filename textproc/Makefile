@@ -367,6 +367,7 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += spell
+    SUBDIR += spellutils
     SUBDIR += sv-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el

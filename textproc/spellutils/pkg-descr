@@ -1,0 +1,20 @@
+Spellutils is a suite of programs which are used to isolate some parts
+or texts from various types of files and hand them over to another
+program which may change the texts; it is typically a spell checker.
+Afterwards the possibly changed text parts are copied back in place in
+the original file.
+
+1) The newsbody utility
+The program newsbody is a utility to isolate the body part of a news or
+email message in a separate file and then call some other program which
+may change the body, and eventually merge the headers with the possibly
+changed body. Optionally quotes and/or signature can be removed too, as
+well as all or selected header lines can be kept.
+
+2) The pospell utility
+The program pospell is a utility to isolate the translations from a .po
+file, then call some other program which may change the translations
+(typically a spell checker), and eventually copy them back in place in
+the .po file. 
+
+WWW: http://home.worldonline.dk/byrial/spellutils/
