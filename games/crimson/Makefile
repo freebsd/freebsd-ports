@@ -8,6 +8,7 @@ PORTNAME=	crimson
 PORTVERSION=	0.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.lanipage.de/jens/crimson/
+PKGNAMESUFFIX=	-fields
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jan@jungnickel.com
