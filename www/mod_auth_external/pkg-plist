@@ -1,6 +1,8 @@
 libexec/apache/mod_auth_external.so
 @exec %D/sbin/apxs -e -A -n auth_external %D/%F
 @unexec %D/sbin/apxs -e -A -n auth_external %D/%F
+%%PORTDOCS%%share/doc/mod_auth_external/examples/mysql/mysql-auth.pl
+%%PORTDOCS%%share/doc/mod_auth_external/examples/mysql/README
 %%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/unixgroup
 %%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/pwauth.c
 %%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/config.h
@@ -27,6 +29,7 @@ libexec/apache/mod_auth_external.so
 %%PORTDOCS%%share/doc/mod_auth_external/INSTALL
 %%PORTDOCS%%share/doc/mod_auth_external/README
 %%PORTDOCS%%share/doc/mod_auth_external/TODO
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/mysql
 %%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/pwauth
 %%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/radius
 %%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/sybase

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.wwnet.net/~janc/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -28,7 +28,7 @@ do-install:
 	${APXS} -i -A -n auth_external ${WRKSRC}/mod_auth_external.so
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}/examples
-	cd ${WRKSRC} && ${TAR} -chf - pwauth radius sybase test \
+	cd ${WRKSRC} && ${TAR} -chf - mysql pwauth radius sybase test \
 		| ${TAR} -xf - -C ${DOCDIR}/examples
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCDIR}/
