@@ -15,7 +15,6 @@ MAINTAINER=	nakai@FreeBSD.org
 WRKSRC=		${WRKDIR}/xpuyo
 USE_IMAKE=	yes
 XMKMF=		xmkmf
-NO_INSTALL_MANPAGES= yes
 
 RESTRICTED=	"The author\'s ashamed of the quality of this version"
 
