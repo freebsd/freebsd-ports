@@ -1,7 +1,7 @@
 DISTNAME=	jetpack
 DISTFILES=	jetpack.tar.Z
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/
+MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 MAKE_FLAGS=	PREFIX=${PREFIX} -f
 
 .include <bsd.port.mk>
