@@ -41,7 +41,7 @@ MMDIR?=		mailman
 #
 # MTA     | MAIL_GID | Submitted by
 # Exim    | 6        | <wjv>
-# Postfix | ???      | <shamrock@cypherpunks.to>
+# Postfix | 65534    | <shamrock@cypherpunks.to>
 # Qmail   | ???      |
 #
 MAIL_GID?=	1
