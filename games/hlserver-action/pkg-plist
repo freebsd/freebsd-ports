@@ -1124,5 +1124,5 @@
 @dirrm %%HLDSDIR%%action/events
 @dirrm %%HLDSDIR%%action/dlls
 @dirrm %%HLDSDIR%%action/cl_dlls
-@dirrm %%HLDSDIR%%action/SAVE
-@dirrm %%HLDSDIR%%action
+@unexec rmdir %D/%%HLDSDIR%%action/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%action 2>/dev/null || echo "If you are permanently removing this port, you should also ``rm -Rf ${PKG_PREFIX}/%%HLDSDIR%%action'' removing any configuration files left." | fmt
