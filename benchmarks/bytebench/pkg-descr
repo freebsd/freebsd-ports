@@ -1,0 +1,48 @@
+The BYTE benchmark suite tests several aspects of system performance.
+
+An article, which describes the concepts and helps understand the results 
+can be found in the doc directory (/usr/local/lib/bytebench/doc if you use 
+a PREFIX of /usr/local).
+
+This benchmark is quite prominent among Linux users, and there is a patched 
+version available from some web suite, from where results are made available, 
+too.
+
+Since they offer some results of non-Linux systems for comparison, they might 
+be interested in FreeBSD reports, too ;-)
+
+
+Quoting from "README.submittal" of the Linux version of this benchmark suite:
+
+% Please e-mail test results along with platform info to:
+% 
+% results@silkroad.com
+% 
+% Included CPU info, speed, RAM, and host adapter and bus
+% info as well as any special compilation flags.
+% 
+% See TEMPLATE Below....
+% 
+% results will be included in the URL:
+% 
+% http://www.silkroad.com/bass/linux/bm.html
+% 
+% 
+% Thanks,
+% 
+% Tim Bass   (bass@silkroad.com)
+
+Example:
+
+CPU/Speed:   	Pentium 100
+Ram:    	32M EDO Ram
+Motherboard:    ASUS blah blah
+Bus:		4 PCI, 4 ISA
+Cache:  	256K sync-burst
+Controller:	PCI - Adaptec 2940W ctrler
+Disk:   	1.08 Gig Fujitsu SCSI-III (Wide SCSI)
+Load:   	1 user, running pppd and httpd
+Kernel:		FreeBSD-2.1R
+pgms:   	gcc 2.6.3 compiled;
+        	options = -s -static -O -m486 -finline-functions \
+				funroll-loops -fomit-frame-pointer
