@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -26,8 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LOCALBASE="${LOCALBASE}"
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 .ifdef (WITH_XINE)
 LIB_DEPENDS+=		xine.8:${PORTSDIR}/multimedia/libxine
