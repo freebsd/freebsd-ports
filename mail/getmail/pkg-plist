@@ -9,6 +9,7 @@ share/getmail/getmail.py
 share/getmail/getmail_classes.py
 share/getmail/getmail_constants.py
 share/getmail/getmail_defaults.py
+share/getmail/getmail_mbox.py
 share/getmail/getmail_utilities.py
 share/getmail/timeoutsocket.py
 @dirrm share/getmail
