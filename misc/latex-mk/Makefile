@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of makefile and scripts for LaTeX documents
 
-BUILD_DEPEND=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPEND=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
 
