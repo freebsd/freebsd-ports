@@ -3,16 +3,16 @@
 # Date created:         4 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 08:35:44 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/22 16:22:02 max Exp $
 #
 
 DISTNAME=	hpscat-jshin
 PKGNAME=	ko-hpscat-1.3jshin
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/print/ \
+MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/print/hpscat/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/editor/ked/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/print/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/editor/ked/
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/print/hpscat/ \
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/ked/
 DISTFILES=	hpscat-jshin.tar.gz ked.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
