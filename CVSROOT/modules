@@ -5249,6 +5249,7 @@ ncp		ports/net/ncp
 ncplib		ports/net/ncplib
 ncurses		ports/devel/ncurses
 nd		ports/www/nd
+ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
 neXtaw		ports/x11-toolkits/neXtaw
 nedit		ports/editors/nedit
