@@ -37,6 +37,7 @@
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
+    SUBDIR += gtk-aluminumalloy-toxic-theme
     SUBDIR += gtk-aluminumalloy-volcanic-theme
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-bluecurve-theme
