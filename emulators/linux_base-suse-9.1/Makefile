@@ -48,6 +48,7 @@ EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-debian* \
 		linux_base-gentoo* linux_base-rh-9*
 
+NO_LATEST_LINK=		yes
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		rpm/${MACHINE_ARCH}/suse
