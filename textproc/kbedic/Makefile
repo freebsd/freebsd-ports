@@ -16,12 +16,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	todorov@freebsd-bg.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
 DICT_CHECK?=	buleng.dat
@@ -37,6 +31,12 @@ USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--with-x
 .else
 PLIST=		${PKGDIR}/pkg-plist.console
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
 .endif
 
 pre-fetch:

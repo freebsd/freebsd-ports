@@ -18,17 +18,17 @@ COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
 BROKEN=		compiler error in function fixup_memory_subreg
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 WRKSRC=		${WRKDIR}/v
 
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-configure:
 	${CP} ${WRKSRC}/ConfigX.mk ${WRKSRC}/Config.mk

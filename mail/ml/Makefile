@@ -14,15 +14,15 @@ MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IMAP client
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_IMAKE=	yes
+USE_MOTIF=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_IMAKE=	yes
-USE_MOTIF=	yes
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building c-client"

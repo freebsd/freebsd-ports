@@ -16,18 +16,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code browsing on UNIX-like operating systems
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	freescope.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \

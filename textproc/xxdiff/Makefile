@@ -22,18 +22,18 @@ COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	2
 TMAKEENV=	TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++ QTDIR=${X11BASE}
 MAKE_ENV+=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
 WRKSRC=	${WRKDIR}/xxdiff-${PORTVERSION}/src
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-build:
 	(cd ${WRKSRC}; ${SETENV} ${TMAKEENV} tmake -o Makefile xxdiff.pro)

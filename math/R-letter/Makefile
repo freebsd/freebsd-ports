@@ -28,12 +28,6 @@ COMMENT=	A language for statistical computing and graphics
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
@@ -48,6 +42,12 @@ PAPERSIZE?=	letter
 .endif
 
 MAN1=	R.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 test check: build
 	@(cd ${WRKSRC}; make check)

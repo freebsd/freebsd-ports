@@ -16,18 +16,18 @@ COMMENT=	FTN Messages tracker
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsmapi.a:${PORTSDIR}/mail/smapi
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \

@@ -16,12 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.t/test/}
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Yet another download tool
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_OPENSSL=	yes
@@ -30,6 +24,12 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g; \

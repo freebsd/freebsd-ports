@@ -16,13 +16,13 @@ COMMENT=	A program to edit encoded mpeg streams
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_X_PREFIX=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '.depend' | ${XARGS} ${RM} -f

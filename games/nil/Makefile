@@ -17,12 +17,6 @@ COMMENT=	A multiplayer game that can be described as Quake in 2D or Worms done r
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -30,6 +24,12 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \

@@ -16,12 +16,6 @@ COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes
@@ -30,6 +24,12 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	${PERL} -pi -e "s:-ldl::g; s:^CFLAGS:XCFLAGS:g; s:^CXXFLAGS:XCXXFLAGS:g; s:usr/X11R6:${PREFIX}:g" ${WRKSRC}/Makefile.in

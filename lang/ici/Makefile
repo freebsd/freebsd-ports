@@ -13,12 +13,6 @@ MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 MAINTAINER=	atrn@zeta.org.au
 COMMENT=	An interpretive language with C's overall feel combined with high level data types
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 MAKEFILE=	Makefile.bsd
 MAN1=		ici3.1
 MANCOMPRESSED=	yes
@@ -33,6 +27,12 @@ ICIHDRS=	alloc.h array.h buf.h catch.h cfunc.h conf-bsd.h exec.h file.h \
 ICIPCREHDRS=	pcre/internal.h pcre/pcre.h
 
 ICIDOCS=	doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} libici3.a

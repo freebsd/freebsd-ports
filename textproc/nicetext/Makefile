@@ -13,12 +13,6 @@ MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_GMAKE=	YES
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} -pedantic" CFLAGS="${CFLAGS} -pedantic"
 
@@ -28,6 +22,12 @@ MAN1=		bitcp.1 dct2mstr.1 expgram.1 genmodel.1 gramtest.1 impkimmo.1 \
 PROGRAMS=	bitcp dct2mstr expgram genmodel gramtest impkimmo impmsc \
 		impwbstr listword nicetext nttpd printint rinfo scramble \
 		sortdct txt2dct
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-install:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/bin/qstart-nttpd

@@ -30,12 +30,6 @@ COMMENT=	DVI Previewer for X. + Japanese patch + vector font support
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 NO_WRKSUBDIR=	yes
 USE_IMAKE=      yes
 XMKMF=	xmkmf
@@ -53,6 +47,12 @@ RESOLUTION=	300
 	@${ECHO} "Possible values are: 118, 240, 300, 360, 400 and 600."
 	@${FALSE}
 .endif
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
 .endif
 
 pre-patch:

@@ -18,17 +18,17 @@ COMMENT=	An extensible hardware simulation framework with MC68K support
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_REINPLACE=	yes
 
 MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile

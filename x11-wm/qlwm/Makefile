@@ -15,12 +15,6 @@ MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Qt-based window manager
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Fails to link"
-.endif
-
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		CHANGES README
 LIBDIR=		lib/${PORTNAME}
@@ -33,6 +27,12 @@ REINPLACE_ARGS=	-i'' -E
 
 MAKE_ENV=	DEST="${PREFIX}/${LIBDIR}" INCPATH="${QTCPPFLAGS}" \
 		LIBS="${QTCFGLIBS} -lqt-mt -pthread" LINK="${CXX}" MOC="${MOC}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Fails to link"
+.endif
 
 post-patch:
 	find ${WRKSRC} -name "Makefile" | xargs ${REINPLACE_CMD} \

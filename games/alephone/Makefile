@@ -18,17 +18,17 @@ COMMENT=	The open source version of Bungie's Marathon game
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12:install \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image:install
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	@${PERL} -pi -e 's,^#include \"network_modem.h\".*,,' \

@@ -13,15 +13,15 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Chinese GB2312,BIG5 code input server
 
+USE_XLIB=	yes
+USE_IMLIB=	yes
+USE_GNOME=	gtk12
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not link"
 .endif
-
-USE_XLIB=	yes
-USE_IMLIB=	yes
-USE_GNOME=	gtk12
 
 port-install:
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}

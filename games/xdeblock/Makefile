@@ -14,16 +14,16 @@ DISTFILES=	${PORTNAME}.tgz
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Block action game
 
+WRKSRC=		${WRKDIR}/xdeblo_v1.0
+USE_IMAKE=	yes
+USE_XPM=	yes
+NO_INSTALL_MANPAGES=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-WRKSRC=		${WRKDIR}/xdeblo_v1.0
-USE_IMAKE=	yes
-USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c

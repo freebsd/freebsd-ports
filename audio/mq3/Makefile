@@ -19,12 +19,6 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		qthreads.15:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 USE_QT_VER=	2
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
@@ -33,5 +27,11 @@ MAKE_ENV=	CPPFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib}" \
 		LIBDIR_QT="${X11BASE}/lib" \
 		QTDIR="${X11BASE}"
 CONFIGURE_ARGS=	-prefix ${PREFIX} -platform FreeBSD
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
 
 .include <bsd.port.post.mk>

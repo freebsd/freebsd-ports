@@ -14,12 +14,6 @@ DISTNAME=		yacl-0170-beta
 MAINTAINER=		ports@freebsd.org
 COMMENT=	Portable programming library for C++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 MAKE_ENV=		YACLPATH=${WRKDIR}
@@ -28,6 +22,12 @@ MAKEFILE=		gnuc.mak
 ALL_TARGET=		yacl
 
 USE_MOTIF=		true
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-build:
 	@(cd ${WRKSRC}/apps/bmpview; ${MAKE} ${MAKE_ENV} -f gnuc.mak)

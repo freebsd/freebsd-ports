@@ -18,12 +18,6 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		gs:${PORTSDIR}/print/ghostscript-gnu \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -60,6 +54,12 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			supportedHTMLmacros.html \
 			supportedTeXmacros.html \
 			toc.html
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-install:
 .if !defined(NOPORTSDOCS)

@@ -13,15 +13,15 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/ved/
 MAINTAINER=	greid@ukug.uk.freebsd.org
 COMMENT=	A small and fast screen-oriented editor.
 
+USE_GMAKE=	yes
+
+MAN1=		ved.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-USE_GMAKE=	yes
-
-MAN1=		ved.1
 
 post-patch:
 .for F in ved.h ved.1

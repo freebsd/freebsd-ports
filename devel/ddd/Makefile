@@ -15,12 +15,6 @@ MASTER_SITE_SUBDIR= ddd
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
@@ -43,6 +37,12 @@ LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
 .endif
 .else
 LIBXMDIR=	${X11BASE}
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-patch:

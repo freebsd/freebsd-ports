@@ -16,15 +16,15 @@ COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk12
+GNU_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${X11BASE}/bin/decurs-real

@@ -16,12 +16,6 @@ COMMENT=	Color Quickcam control program
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
@@ -37,6 +31,12 @@ MLINKS=		cqcam.1 webcam.1 \
 
 PORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
 		docs/refresh.html docs/webcam.html docs/README.movies
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 post-install:
 .for file in cqcam gtkcam webcam xcqcam

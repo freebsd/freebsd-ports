@@ -13,12 +13,6 @@ MASTER_SITES=	http://www.mico.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2.0 implementation which goal is freely available
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 WRKSRC=			${WRKDIR}/mico
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
@@ -31,6 +25,12 @@ CONIFUGRE_ARGS+=	--enable-minimum-corba --enable-cd \
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,so.1.0,so, ;s,-O2,${CFLAGS}," ${WRKSRC}/configure

@@ -24,12 +24,6 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
 USE_PERL5=	yes
@@ -46,6 +40,12 @@ LIBTOOLFILES=	configure etc/configure gcc/configure libiberty/configure \
 		libobjc/configure texinfo/configure \
 		texinfo/testsuite/configure
 MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cccp.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 .if !defined(DEFAULT_CPU)
 pre-extract:

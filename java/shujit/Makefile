@@ -15,12 +15,6 @@ COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
 
@@ -35,6 +29,12 @@ RUBY_NO_RUN_DEPENDS=	yes
 USE_JAVA=	1.1+
 CONFIGURE_ARGS=	--with-jdk="${JAVA_HOME}"
 MAKE_ENV=	JAVADIR="${JAVA_HOME}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README

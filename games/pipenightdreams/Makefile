@@ -15,12 +15,6 @@ COMMENT=	A puzzle game similar to PipeMania
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -29,6 +23,12 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
 USE_REINPLACE=	yes
 
 MAN6=		pipenightdreams.6
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; \

@@ -22,18 +22,18 @@ DISTNAME=	pgpsrc658unix
 MAINTAINER=	mike@fate.com
 COMMENT=	Public-Key encryption for the masses
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes
 
 MAN1=		pgp.1
 
 LATEST_LINK=	pgp6
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 # the distfile is actually a tar of three compressed tars and their
 # signatures

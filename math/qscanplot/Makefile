@@ -15,12 +15,6 @@ COMMENT=	A program to extract data from scanned plots, graphs and figures
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes
@@ -29,6 +23,12 @@ CONFIGURE_ENV=	LDFLAGS="-lm ${PTHREAD_LIBS}" \
 		QTDIR=${X11BASE} \
 		LIBQT=-lqt2
 MAKE_ENV=	QTDIR=${X11BASE}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \

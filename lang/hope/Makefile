@@ -14,12 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lev@serebryakov.spb.ru
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not install"
-.endif
-
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
 		latex2html:${PORTSDIR}/textproc/latex2html
@@ -32,6 +26,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		hope.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not install"
+.endif
 
 pre-fetch:
 .if !defined(WITH_DOCS)

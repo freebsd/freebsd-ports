@@ -15,18 +15,18 @@ EXTRACT_SUFX=	-1.tar.gz
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A featureful directory lister
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	compile
 CFLAGS+=	-DNO_THOUSANDS_GROUPING
 MAN1=		ndir.1
 MLINKS=		ndir.1 lv.1 ndir.1 lw.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -E "s/^export GLOBAL.+//g" ${WRKSRC}/Makefile

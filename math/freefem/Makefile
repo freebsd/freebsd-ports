@@ -14,12 +14,6 @@ MASTER_SITE_SUBDIR=	kfem
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -28,6 +22,12 @@ CONFIGURE_ARGS=	--with-optimization
 INSTALLS_SHLIB=	yes
 
 MAN1=		freefem.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure

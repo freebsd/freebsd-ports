@@ -18,12 +18,6 @@ COMMENT=	A DirectConnect (www.neo-modus.com) text client for file sharing
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
 USE_GETOPT_LONG=	yes
 USE_GNOME=	glib12
 USE_PERL5_RUN=	yes
@@ -61,6 +55,12 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/programs.pl \
 		Documentation/output.nl \
 		Documentation/output Documentation/programs
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/lp_mutex.c ${WRKSRC}/src

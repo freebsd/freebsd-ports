@@ -18,16 +18,16 @@ COMMENT=	An extensible system for creating ray-traced images
 
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	Configure
+CONFIGURE_ARGS+=	< ${WRKDIR}/config.ans
+ALL_TARGET=
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS+=	< ${WRKDIR}/config.ans
-ALL_TARGET=
 
 pre-configure:
 	$(SED) -e "s,@CFLAGS@,${CFLAGS}," < ${FILESDIR}/config.ans > \

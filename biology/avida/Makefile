@@ -13,16 +13,16 @@ MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
 MAINTAINER=	karlj000@unbc.ca
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-viewer --enable-standard-prefix --prefix=${PREFIX} --datadir=${PREFIX}/share/${PORTNAME}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-viewer --enable-standard-prefix --prefix=${PREFIX} --datadir=${PREFIX}/share/${PORTNAME}
 
 post-patch:
 	# Change source/defs.hh prefix and port name.

@@ -24,14 +24,14 @@ COMMENT=	CDROM dictionary server & clients
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GMAKE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
 
 pre-patch:
 	${PATCH} -d ${WRKSRC}/clients -E  < ${DISTDIR}/kenjiro-ndtpd.diff

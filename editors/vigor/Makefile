@@ -17,18 +17,18 @@ COMMENT=	A vi clone inspired by the userfriendly comic strip
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		tcl82.1:${PORTSDIR}/lang/tcl82
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
 CFLAGS+= 	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 # Uglyness. So is "-ltcl -ltk -ltcl", so I don't feel bad.
 post-patch:
