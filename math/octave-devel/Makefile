@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.1.57
+PORTVERSION=	2.1.63
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
@@ -17,7 +17,7 @@ COMMENT=	High-level interactive language for numerical computations
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		f77blas.1:${PORTSDIR}/math/atlas
+		atlas.1:${PORTSDIR}/math/atlas
 
 USE_BZIP2=	yes
 
