@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Sat Oct 16 17:43:47 2004
++++ Makefile.am	Sat Oct 16 17:44:12 2004
+@@ -20,6 +20,6 @@
+ 
+ bin_SCRIPTS=clamav-config
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libclamav.pc
+ 

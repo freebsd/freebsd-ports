@@ -1,0 +1,12 @@
+--- etc/Makefile.am.orig	Sat Oct  2 23:09:13 2004
++++ etc/Makefile.am	Sun Oct 17 13:04:24 2004
+@@ -20,7 +20,5 @@
+  
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(CFGINST)
+-	@test -f $(DESTDIR)$(CFGINST)/clamd.conf || \
+-	$(INSTALL_DATA) $(srcdir)/clamd.conf $(DESTDIR)$(CFGINST)
+-	@test -f $(DESTDIR)$(CFGINST)/freshclam.conf || \
+-	$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)
++	$(INSTALL_DATA) $(srcdir)/clamd.conf $(DESTDIR)$(CFGINST)/clamd.conf.default
++	$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)/freshclam.conf.default
