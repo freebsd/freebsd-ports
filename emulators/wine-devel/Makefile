@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20041201
+PORTVERSION=	20050111
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -29,9 +29,6 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
-# GCC 3.2 also seems fine, but the ports collection requires specifying
-# a concrete version.
-USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
 
