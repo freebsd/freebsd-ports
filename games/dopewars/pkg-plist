@@ -1,1 +1,15 @@
 bin/dopewars
+share/doc/dopewars/README
+share/doc/dopewars/aiplayer.html
+share/doc/dopewars/clientplay.html
+share/doc/dopewars/commandline.html
+share/doc/dopewars/configfile.html
+share/doc/dopewars/credits.html
+share/doc/dopewars/developer.html
+share/doc/dopewars/index.html
+share/doc/dopewars/installation.html
+share/doc/dopewars/metaserver.html
+share/doc/dopewars/server.html
+share/doc/dopewars/servercommands.html
+share/doc/dopewars/windows.html
+@dirrm share/doc/dopewars

@@ -1,10 +1,31 @@
---- Makefile.orig	Tue Jun 22 12:24:38 1999
-+++ Makefile	Fri Jul 30 20:26:02 1999
-@@ -1,5 +1,5 @@
+--- Makefile.orig	Thu Nov 11 15:54:12 1999
++++ Makefile	Fri Dec  3 12:22:35 1999
+@@ -1,10 +1,10 @@
 -CFLAGS = -Wall
 -CC = gcc
-+CFLAGS ?= -Wall
++iCFLAGS ?= -Wall
 +CC ?= gcc
- HEADERS = message.h dopewars.h serverside.h clientside.h AIPlayer.h
- OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o
+ HEADERS = message.h dopewars.h serverside.h clientside.h AIPlayer.h dopeos.h
+ OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o dopeos.o
  LIBS = -lncurses
+ VERSION = 1.4.6
+-DOCPATH = /usr/doc/dopewars-$(VERSION)
++DOCPATH = ${LOCALBASE}/share/doc/dopewars-$(VERSION)
+ DOCS = index.html installation.html clientplay.html server.html credits.html \
+        aiplayer.html configfile.html commandline.html developer.html \
+        metaserver.html servercommands.html \
+@@ -32,14 +32,6 @@
+ 
+ dopeos.o : dopeos.c $(HEADERS)
+ 	$(CC) $(CFLAGS) -c dopeos.c
+-
+-install : all
+-	install -o root -g games -m 2755 dopewars /usr/bin/dopewars
+-	touch /var/lib/games/dopewars.sco
+-	chown root.games /var/lib/games/dopewars.sco
+-	chmod 0660 /var/lib/games/dopewars.sco
+-	install -d -o root -g root -m 0755 $(DOCPATH)
+-	install -o root -g root -m 0644 $(DOCS) $(DOCPATH)
+ 
+ clean :
+ 	rm -f $(OBJS)
