@@ -92,7 +92,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2004-03-29</discovery>
-      <entry>2004-03-09</entry>
+      <entry>2004-03-29</entry>
     </dates>
   </vuln>
 
@@ -175,10 +175,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
+      <bid>9980</bid>
     </references>
     <dates>
       <discovery>2004-03-04</discovery>
       <entry>2004-03-28</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -199,10 +201,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
+      <bid>9984</bid>
     </references>
     <dates>
-      <discovery>2004-03-28</discovery>
-      <entry>2004-03-26</entry>
+      <discovery>2004-03-26</discovery>
+      <entry>2004-03-28</entry>
     </dates>
   </vuln>
 
@@ -232,8 +235,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</ul>
 	<p>In addition, a vulnerability in the RADIUS decoder was found
 	  by Jonathan Heusser.</p>
-	<p>Finally, there are is one uncredited
-	  vulnerability described by the Ethereal team as:</p>
+	<p>Finally, there is one uncredited vulnerability described by the
+	   Ethereal team as:</p>
 	<blockquote
 	  cite="http://www.ethereal.com/appnotes/enpa-sa-00013.html">
 	    <p>A zero-length Presentation protocol selector could make
@@ -246,10 +249,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0176</cvename>
       <cvename>CAN-2004-0365</cvename>
       <cvename>CAN-2004-0367</cvename>
+      <bid>9952</bid>
     </references>
     <dates>
       <discovery>2004-03-23</discovery>
       <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -302,10 +307,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
+      <bid>9939</bid>
     </references>
     <dates>
       <discovery>2004-03-20</discovery>
       <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -327,10 +334,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.gulftech.org/03202004.php</url>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?t=183982</url>
+      <bid>9942</bid>
     </references>
     <dates>
       <discovery>2004-03-20</discovery>
       <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -353,10 +362,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2003-0510</cvename>
       <url>http://ezbounce.dc-team.com/</url>
+      <bid>8071</bid>
     </references>
     <dates>
       <discovery>2003-07-01</discovery>
       <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -379,10 +390,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107403331309838</url>
+      <bid>9416</bid>
+      <bid>9417</bid>
+      <cvename>CAN-2004-0164</cvename>
     </references>
     <dates>
       <discovery>2004-01-13</discovery>
       <entry>2004-03-25</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -437,10 +452,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0079</cvename>
       <url>http://www.openssl.org/news/secadv_20040317.txt</url>
+      <freebsdsa>SA-04:05.openssl</freebsdsa>
+      <certvu>288574</certvu>
+      <bid>9899</bid>
     </references>
     <dates>
       <discovery>2004-03-17</discovery>
       <entry>2004-03-17</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -461,10 +480,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://www.s-quadra.com/advisories/Adv-20040315.txt</url>
+      <bid>9885</bid>
     </references>
     <dates>
       <discovery>2004-02-09</discovery>
       <entry>2004-03-17</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -526,10 +547,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0148</cvename>
+      <bid>9832</bid>
     </references>
     <dates>
       <discovery>2004-02-17</discovery>
       <entry>2004-03-08</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -607,11 +630,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&amp;r2=1.100.2.12</url>
       <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</url>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=27106</url>
+      <bid>9826</bid>
     </references>
     <dates>
       <discovery>2004-02-20</discovery>
       <entry>2004-03-08</entry>
-      <modified>2004-03-28</modified>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -668,10 +692,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</url>
+      <bid>9772</bid>
+      <cvename>CAN-2004-0353</cvename>
+      <cvename>CAN-2004-0354</cvename>
     </references>
     <dates>
       <discovery>2004-03-04</discovery>
       <entry>2004-03-06</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -700,11 +728,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0083</cvename>
       <cvename>CAN-2004-0084</cvename>
       <cvename>CAN-2004-0106</cvename>
+      <bid>9636</bid>
+      <bid>9652</bid>
+      <bid>9655</bid>
     </references>
     <dates>
       <discovery>2004-02-10</discovery>
       <entry>2004-02-12</entry>
-      <modified>2004-03-06</modified>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -777,10 +808,12 @@ misc.c:
     <references>
       <cvename>CAN-2004-0149</cvename>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924</url>
+      <bid>9764</bid>
     </references>
     <dates>
       <discovery>2003-01-01</discovery>
       <entry>2004-03-05</entry>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
@@ -806,11 +839,12 @@ misc.c:
     <references>
       <cvename>CAN-2004-0104</cvename>
       <cvename>CAN-2004-0105</cvename>
+      <bid>9692</bid>
     </references>
     <dates>
       <discovery>2004-02-18</discovery>
       <entry>2004-02-18</entry>
-      <modified>2004-03-03</modified>
+      <modified>2004-03-29</modified>
     </dates>
   </vuln>
 
