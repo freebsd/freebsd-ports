@@ -893,6 +893,7 @@ jdk%%JDK_VERSION%%/jre/Welcome.html
 %%MINIMAL:%%jdk%%JDK_VERSION%%/jre/bin/ControlPanel
 jdk%%JDK_VERSION%%/jre/bin/java
 %%MINIMAL:%%jdk%%JDK_VERSION%%/jre/bin/java_vm
+%%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/java_vm_g
 jdk%%JDK_VERSION%%/jre/bin/keytool
 jdk%%JDK_VERSION%%/jre/bin/kinit
 jdk%%JDK_VERSION%%/jre/bin/klist
@@ -980,6 +981,7 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libioser12.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjaas_unix.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so
 %%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni.so
+%%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjawt.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjcov.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp.so

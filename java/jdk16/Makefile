@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	7
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -32,7 +31,7 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfo
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.4.2
-JDK_PATCHSET_VERSION=	6
+JDK_PATCHSET_VERSION=	7
 LATEST_LINK=	jdk14
 
 SUN_LINUX_JDK_VERSION=  1.4.2
@@ -315,6 +314,9 @@ do-install:
 .endif
 
 post-install:
+.if !defined(MINIMAL)
+	${FIND} "${PREFIX}/jdk${JDK_VERSION}/jre/plugin" -type d | ${XARGS} ${CHMOD} a+rx
+.endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 	@${SED} -e "s:%%JRE_HOME%%:${PREFIX}/jdk${JDK_VERSION}/jre:g" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
