@@ -15,6 +15,7 @@ include/libxml/parserInternals.h
 include/libxml/tree.h
 include/libxml/uri.h
 include/libxml/valid.h
+include/libxml/xinclude.h
 include/libxml/xlink.h
 include/libxml/xmlIO.h
 include/libxml/xmlerror.h
@@ -44,6 +45,7 @@ share/gnome-xml/gnome-xml-sax.html
 share/gnome-xml/gnome-xml-tree.html
 share/gnome-xml/gnome-xml-uri.html
 share/gnome-xml/gnome-xml-valid.html
+share/gnome-xml/gnome-xml-xinclude.html
 share/gnome-xml/gnome-xml-xml-error.html
 share/gnome-xml/gnome-xml-xmlio.html
 share/gnome-xml/gnome-xml-xmlmemory.html
