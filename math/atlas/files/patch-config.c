@@ -1,6 +1,6 @@
---- config.c.orig	Mon Jun 17 10:37:24 2002
-+++ config.c	Sun Aug 18 03:11:24 2002
-@@ -692,7 +692,7 @@
+--- config.c.orig	Fri Apr 25 03:10:17 2003
++++ config.c	Mon May  5 07:40:36 2003
+@@ -697,7 +697,7 @@
           else if (mach == IA64Itan || MachIsUS(mach) ||
                    mach == Dec21164 || mach == Dec21264)
           {
@@ -9,7 +9,7 @@
              {
                 strcpy(goodgcc, files[i]);
                 return(0);
-@@ -2040,7 +2040,10 @@
+@@ -2104,7 +2104,10 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "433au")) mach = Dec21164;
@@ -20,23 +20,25 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2049,12 +2052,14 @@
+@@ -2113,14 +2116,17 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
              else if (strstr(ln, "Pentium III")) mach = IntPIII;
              else if (strstr(ln, "Pentium II ")) mach = IntPII;
++            else if (strstr(ln, "Celeron")) mach = IntPII;
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
+             else if (strstr(ln, "32 bit Hammer")) mach = AmdHammer32;
+             else if (strstr(ln, "64 bit Hammer")) mach = AmdHammer64;
              else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
--            else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
-+            else if (strstr(ln, "Pentium")) mach = IntP5;       /* Nakata Maho */
+             else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
 +            else mach = IntP5;
           }
           break;
        default:;
-@@ -3024,6 +3029,9 @@
+@@ -3124,6 +3130,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
