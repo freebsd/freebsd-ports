@@ -16,7 +16,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	marshall@chezmarshall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce client and server
 
 #
@@ -29,7 +29,7 @@ ARCH?= i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
 VERSION=	04.2
-REVISION=	5
+REVISION=	6
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
@@ -52,6 +52,9 @@ NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution
 
 NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
+		${SBIN_FILES:S+^+sbin/+g}
 
 .include <bsd.port.pre.mk>
 
@@ -115,20 +118,8 @@ do-install:
 		${CP} -p ${PREFIX}/etc/perforce.conf.default ${PREFIX}/etc/perforce.conf; \
 	fi
 	${INSTALL_SCRIPT} ${WRKSRC}/perforce.sh ${PREFIX}/etc/rc.d/
-.for f in ${BIN_FILES}
-	${INSTALL_PROGRAM} ${_DISTDIR}/${f} ${PREFIX}/bin/
-.endfor
-.for f in ${SBIN_FILES}
-	${INSTALL_PROGRAM} ${_DISTDIR}/${f} ${PREFIX}/sbin/
-.endfor
 
 post-install:
-.for f in ${BIN_FILES}
-	${ECHO_CMD} bin/${f} >> ${TMPPLIST}
-.endfor
-.for f in ${SBIN_FILES}
-	${ECHO_CMD} sbin/${f} >> ${TMPPLIST}
-.endfor
 	${ECHO_CMD} "@unexec ${RMDIR} ${PERFORCE_ROOT} ${PERFORCE_LOGS} ${PERFORCE_HOME} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
