@@ -10,25 +10,21 @@ PORTNAME=	gdb
 PORTVERSION=	5.2.1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/releases
+MASTER_SITE_SUBDIR=	gdb/old-releases
 PKGNAMEPREFIX=	fpc-
 
-PATCH_SITES=	ftp://ftp.freepascal.org/fpc/contrib/libgdb/v5.2.1 \
-		ftp://planetmirror.com/pub/fpc/contrib/libgdb/v5.2.1/ \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/contrib/libgdb/v5.2.1/ \
-		ftp://freepascal.stack.nl/pub/fpc/contrib/libgdb/v5.2.1/ \
-		ftp://ftp.no.freepascal.org/pub/fpc/contrib/libgdb/v5.2.1/ \
-		ftp://ftp.us.freepascal.org/pub/fpc/contrib/libgdb/v5.2.1/ \
+PATCH_SITES=	ftp://ftp.freepascal.org/fpc/contrib/libgdb/old/v5.2.1/ \
+		ftp://planetmirror.com/pub/fpc/contrib/libgdb/old/v5.2.1/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/contrib/libgdb/old/v5.2.1/ \
+		ftp://freepascal.stack.nl/pub/fpc/contrib/libgdb/old/v5.2.1/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/contrib/libgdb/old/v5.2.1/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/contrib/libgdb/old/v5.2.1/ \
 		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	gdb521.dif gdb521_xfree-loadmod.diff
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GDB 5.2.1 modified for Free Pascal
-
-BROKEN=		"Does not compile"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 .include <bsd.port.pre.mk>
 

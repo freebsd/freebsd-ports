@@ -1,0 +1,11 @@
+--- bfd/configure.orig	Fri Feb 18 00:31:38 2005
++++ bfd/configure	Fri Feb 18 00:31:40 2005
+@@ -5059,7 +5059,7 @@
+   i[3456]86-*-bsdi)
+ 	COREFILE=
+ 	;;
+-  i[3456]86-*-bsd* | i[34567]86-*-freebsd[123] | i[34567]86-*-freebsd[123]\.* | i[34567]86-*-freebsd4\.[01234]* | i[34567]86-*-freebsd*aout*)
++  i[3456]86-*-bsd* | i[34567]86-*-freebsd[123] | i[34567]86-*-freebsd[123]\.* | i[34567]86-*-freebsd4\.[01234] | i[34567]86-*-freebsd*aout*)
+ 	COREFILE=trad-core.lo
+ 	TRAD_HEADER='"hosts/i386bsd.h"'
+ 	;;
