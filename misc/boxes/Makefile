@@ -23,9 +23,6 @@ MAKE_ARGS=	GLOBALCONF=${GLOBALCONF} CFLAGS_ADDTL="${CFLAGS}"
 
 GLOBALCONF=	${PREFIX}/share/boxes/boxes-config
 
-do-patch:
-	${TOUCH} ${WRKSRC}/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/boxes
