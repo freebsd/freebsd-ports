@@ -1038,6 +1038,7 @@ dict		src/share/dict
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
 diction		ports/misc/diction
+didentd		ports/security/didentd
 diff		src/gnu/usr.bin/diff
 diff-mode.el	ports/textproc/diff-mode.el
 diff3		src/gnu/usr.bin/diff3
