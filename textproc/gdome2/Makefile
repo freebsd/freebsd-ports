@@ -7,6 +7,7 @@
 
 PORTNAME=	gdome2
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
@@ -16,7 +17,7 @@ COMMENT=	Gnome DOM Engine
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	glib12 gnomehack
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"

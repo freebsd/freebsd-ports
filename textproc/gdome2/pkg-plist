@@ -12,7 +12,7 @@ include/libgdome/gdome-treegc.h
 include/libgdome/gdome-util.h
 include/libgdome/gdome-xpath.h
 @dirrm include/libgdome
-lib/pkgconfig/gdome2.pc
+libdata/pkgconfig/gdome2.pc
 share/aclocal/gdome2.m4
 %%PORTDOCS%%%%DOCSDIR%%/book1.html
 %%PORTDOCS%%%%DOCSDIR%%/gdome2-basic-types-and-enumerations.html
