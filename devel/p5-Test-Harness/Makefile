@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	2.28
+PORTVERSION=	2.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
