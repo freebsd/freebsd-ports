@@ -1,6 +1,6 @@
 # New ports collection Makefile for: 	xmms-ladspa
 # Date created:			11 May 2002
-# Whom:				Tilman Linneweh <freebsdports@arved.de
+# Whom:				Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/
 DISTNAME=	xmms_ladspa-${PORTVERSION}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
