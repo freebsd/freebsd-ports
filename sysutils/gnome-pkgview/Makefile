@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-pkgview
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.greatnorthern.demon.co.uk/packages/gnome-pkgview/
 
