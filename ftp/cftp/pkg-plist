@@ -8,3 +8,4 @@ info/cftp.info
 %%PORTDOCS%%share/doc/cftp/README
 %%PORTDOCS%%share/doc/cftp/THANKS
 %%PORTDOCS%%share/doc/cftp/TODO
+%%PORTDOCS%%@dirrm share/doc/cftp

@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cftp
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog NEWS README THANKS TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
