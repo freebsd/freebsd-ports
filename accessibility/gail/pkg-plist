@@ -76,4 +76,3 @@ share/locale/zh_TW/LC_MESSAGES/gail.mo
 @dirrm share/doc/gail-libgail-util
 @dirrm include/gail-1.0/libgail-util
 @dirrm include/gail-1.0
-@unexec /bin/rmdir %D/lib/gtk-2.0/modules 2>/dev/null || /usr/bin/true
