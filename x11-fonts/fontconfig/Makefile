@@ -8,7 +8,8 @@
 PORTNAME=	fontconfig
 PORTVERSION=	2.1.94
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://nexp.cs.pdx.edu/fontconfig/release/
+MASTER_SITES=	http://www.fontconfig.org/release/
+		http://nexp.cs.pdx.edu/fontconfig/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
