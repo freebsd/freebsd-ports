@@ -1,0 +1,40 @@
+--- doc/Makefile.latex.orig	Thu Jun 20 14:06:16 2002
++++ doc/Makefile.latex	Tue Oct 15 16:50:30 2002
+@@ -12,20 +12,31 @@
+ # Documents produced by Doxygen are derivative works derived from the
+ # input used in their production; they are not affected by this license.
+ 
+-all: doxygen_manual.pdf
++all: doxygen_manual.pdf doxygen_manual.ps
+ 
+ #doxygen_manual.pdf: doxygen_manual.ps
+ #	ps2pdf doxygen_manual.ps doxygen_manual.pdf
+ 
+-#doxygen_manual.ps: doxygen_manual.dvi
+-#	dvips -o doxygen_manual.ps doxygen_manual.dvi
++graphics:
++	cp ../doc/doxygen_logo.eps .
++	cp ../doc/doxygen_logo.gif .
++
++doxygen_manual.dvi: doxygen_manual.pdf graphics
++	@echo "Running latex again to get a .dvi file..."
++	latex doxygen_manual.tex
++
++doxygen_manual.ps: doxygen_manual.dvi
++	dvips -o doxygen_manual.ps doxygen_manual.dvi
+ 
+ doxygen_manual.pdf: doxygen_manual.tex doxygen.sty
+-	echo "Running latex..."
++	@echo "Running latex..."
+ 	pdflatex doxygen_manual.tex 
+-	echo "Running makeindex..."
++	@echo "Running makeindex..."
+ 	makeindex doxygen_manual.idx
+-	echo "Rerunning latex...."
++	@echo "Rerunning latex...."
+ 	pdflatex doxygen_manual.tex
++
+ clean:
+ 	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log doxygen_manual.pdf
++
++.PHONY:	graphics

@@ -68,7 +68,6 @@ bin/doxywizard
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/annotated.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a-members.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__coll__graph.png
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__inherit__graph.png
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b-members.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b.html
