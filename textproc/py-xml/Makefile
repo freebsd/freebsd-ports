@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xml
-PORTVERSION=		0.7
+PORTVERSION=		0.7.1
 CATEGORIES=		textproc python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyxml
@@ -15,10 +15,6 @@ DISTNAME=		PyXML-${PORTVERSION}
 
 MAINTAINER=		wjv@FreeBSD.org
 
-INSTALLS_SHLIB=		yes
-# On a system with more than one version of Python installed, you can force
-# this port to install for a specific version of Python by explicitly setting
-# ${PYTHON_VERSION} during build/installation.
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
@@ -37,10 +33,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ANNOUNCE CREDITS LICENCE README* TODO
-	@ ${INSTALL_MAN} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	@ cd ${WRKSRC}/doc && find * \
-	  | ${CPIO} ${MANOWN}:${MANGRP} ${DOCSDIR}
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ cd ${WRKSRC} && find demo test \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}

@@ -1,12 +1,23 @@
-This is the Python XML package.  The distribution contains a
-validating XML parser, an implementation of the SAX and DOM
-programming interfaces, an interface to the Expat parser (and the
-Expat parser itself), and a C helper module that can speed up
-xmllib.py by a factor of 5.  There's even documentation!
+From the website:
 
-The current version is still to be considered a beta release.
+  The PyXML package is a collection of libraries to process XML with Python.
+  It contains, among other things 
 
-WWW: http://www.python.org/sigs/xml-sig/
+  - xmlproc: a validating XML parser
+  - sgmlop:  a C helper module that can speed-up xmllib.py and sgmllib.py by
+             a factor of 5
+  - PySAX:   SAX 1 and SAX2 libraries with drivers for most of the parsers
+  - 4DOM:    A fully compliant DOM Level 2 implementation 
+  - javadom: An adapter from Java DOM implementations to the standard Python
+             DOM binding
+  - pulldom: a DOM implementation that supports lazy instantiation of nodes
+  - marshal: a module with several options for serializing Python objects to
+             XML, including WDDX and XML-RPC
+  - unicode: a helper module for Python 1.5 users who need conversions
+             between UTF-8 and ISO-8859-?
+
+WWW:      http://www.pyxml.sourceforge.net/
+See also: http://www.python.org/sigs/xml-sig/
 
 -- Jacques Vidrine <nectar@FreeBSD.ORG> (original port)
 -- Johann Visagie  <wjv@FreeBSD.org>    (current maintainer)
