@@ -1,17 +1,9 @@
 %%LISPDIR%%/irchat-commands.el
 %%LISPDIR%%/irchat-commands.elc
-%%LISPDIR%%/irchat-copyright.el
-%%LISPDIR%%/irchat-copyright.elc
 %%LISPDIR%%/irchat-filter.el
 %%LISPDIR%%/irchat-filter.elc
 %%LISPDIR%%/irchat-handle.el
 %%LISPDIR%%/irchat-handle.elc
-%%LISPDIR%%/irchat-inlines.el
-%%LISPDIR%%/irchat-inlines.elc
-%%LISPDIR%%/irchat-pj-action.el
-%%LISPDIR%%/irchat-pj-action.elc
-%%LISPDIR%%/irchat-pj-dcc.el
-%%LISPDIR%%/irchat-pj-dcc.elc
 %%LISPDIR%%/irchat-pj-modeline.el
 %%LISPDIR%%/irchat-pj-modeline.elc
 %%LISPDIR%%/irchat-pj-sound.el

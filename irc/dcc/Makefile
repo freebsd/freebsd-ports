@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.5
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/
 DISTNAME=	irchat-pj-${PORTVERSION}p
