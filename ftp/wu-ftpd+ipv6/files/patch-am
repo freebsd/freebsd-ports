@@ -1,24 +1,22 @@
-*** src/makefiles/Makefile.fbs.orig	Tue Aug 12 07:43:39 1997
---- src/makefiles/Makefile.fbs	Tue Sep  9 20:10:33 1997
+*** src/makefiles/Makefile.fbs.orig	Sun Dec 21 07:04:49 1997
+--- src/makefiles/Makefile.fbs	Wed Dec 24 20:26:01 1997
 ***************
-*** 4,11 ****
+*** 4,10 ****
   #CC       = cc
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   = -O ${IFLAGS} ${LFLAGS}
-! LIBES    = -lsupport -lutil -lcrypt 
+  LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
   LIBC     = /usr/lib/libc.a
   LINTFLAGS=	
-  LKERB    = -lauth -lckrb -lkrb -ldes
---- 4,11 ----
+--- 4,10 ----
   #CC       = cc
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   += ${IFLAGS} ${LFLAGS}
-! LIBES    = -lsupport -lutil -lcrypt -lskey -lmd
+  LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
   LIBC     = /usr/lib/libc.a
   LINTFLAGS=	
-  LKERB    = -lauth -lckrb -lkrb -ldes
 ***************
 *** 27,33 ****
 --- 27,37 ----
