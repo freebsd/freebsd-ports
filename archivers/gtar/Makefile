@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.13.25
-PORTREVISION=	8
+PORTVERSION=	1.13.94
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +17,13 @@ COMMENT=	GNU version of the traditional tar archiver
 
 INFO=		tar
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
-		DEFAULT_ARCHIVE='/dev/sa0' \
-		MAKEINFO='makeinfo --no-split' \
-		am_cv_func_iconv=no
+		DEFAULT_ARCHIVE='/dev/sa0'
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static
@@ -33,10 +31,4 @@ LDSTATIC=	-static
 LDSTATIC=
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 470000
-IGNORE=		is in the base system
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
