@@ -111,11 +111,6 @@ CONFIGURE_ARGS+=--with-openssl=yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
-		OPENSSLINC=${OPENSSLINC} \
-		OPENSSLLIB=${OPENSSLLIB} \
-		LDFLAGS=${LDFLAGS}
-
 SASLAUTHD_RUNPATH?=	/var/state/saslauthd
 .if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
 RUNPATH=	"@comment "
