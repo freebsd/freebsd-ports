@@ -1,0 +1,11 @@
+--- Makefile.orig      Thu Mar 20 02:19:07 2003
++++ Makefile   Fri Aug 22 16:11:21 2003
+@@ -34,5 +34,8 @@
+ $(PROGRAM):$(OBJS)
+       $(CC) -o $(PROGRAM) $(LDFLAGS) $(OBJS)
+
++install:
++	${INSTALL} ${PROGRAM} ${LOCALBASE}/bin
++
+ clean:
+       rm -f *.o *.bak $(PROGRAM)
