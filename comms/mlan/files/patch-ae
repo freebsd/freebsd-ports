@@ -1,0 +1,10 @@
+--- ./source/lib/general/mlan.h.orig	Sat Sep 28 23:53:45 2002
++++ ./source/lib/general/mlan.h	Sat Sep 28 23:53:54 2002
+@@ -34,7 +34,6 @@
+ #ifndef MLAN_UCHAR
+    #define MLAN_UCHAR
+    typedef unsigned char  uchar;
+-   typedef unsigned short ushort;
+    typedef unsigned long  ulong;
+ #endif
+ 
