@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://members.ferrara.linux.it/calicant/mapagi/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pagination utility that prints your images/comics in 'in folio' format
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

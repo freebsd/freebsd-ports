@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.freehackers.org/pub/opale/
 MASTER_SITE_SUBDIR=	lioux
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple personal bank account manager for KDE and KOffice
 
 BUILD_DEPENDS=	korganizer:${PORTSDIR}/deskutils/kdepim3
