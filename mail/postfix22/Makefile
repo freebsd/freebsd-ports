@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	postfix-19991231-pl03
-PKGNAME=	postfix-19991231.03
+DISTNAME=	postfix-19991231-pl04
+PKGNAME=	postfix-19991231.04
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.snoopy.net/pub/mirrors/postfix/official/ \
@@ -22,17 +22,17 @@ MAINTAINER=	torstenb@FreeBSD.org
 # WARNING: this is based on a patch submitted by a user and has not been
 # tested. Use it at your own risk !
 .if defined(USE_MYSQL) && ${USE_MYSQL} == YES
-BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql322-client
-POSTFIX_CCARGS+=	-DHAS_MYSQL -I${PREFIX}/include/mysql
-POSTFIX_AUXLIBS+=	${PREFIX}/lib/mysql/libmysqlclient.a -lm
+BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql322-client
+POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
+POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a -lm
 .endif
 
 # WARNING: this is based on a patch submitted by a user and has not been
 # tested. Use it at your own risk !
 .if defined(USE_LDAP) && ${USE_LDAP} == YES
-BUILD_DEPENDS+=		${PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap
-POSTFIX_CCARGS+=	-DHAS_LDAP -I${PREFIX}/include
-POSTFIX_AUXLIBS+=	${PREFIX}/lib/libldap.a ${PREFIX}/lib/liblber.a
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
+POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libldap.a ${PREFIX}/lib/liblber.a
 .endif
 
 ALL_TARGET=	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}"
@@ -58,7 +58,6 @@ do-install:
 		${INSTALL} -C -o root -g wheel -m 0644 ${WRKSRC}/conf/$$f \
 		${PREFIX}/etc/postfix/sample-$$f ; \
 	done
-	@exit
 	@for f in sample-aliases.cf sample-canonical.cf sample-debug.cf \
 		sample-ldap.cf sample-local.cf sample-misc.cf sample-pcre.cf \
 		sample-rate.cf sample-relocated.cf sample-resource.cf \
@@ -75,12 +74,13 @@ do-install:
 		${INSTALL} -C -o root -g wheel -m 0755 -s \
 			${WRKSRC}/libexec/$$f ${PREFIX}/libexec/postfix/$$f ;\
 	done
-	@for f in postalias postcat postconf postdrop postfix postkick \
-		postlock postlog postmap postsuper sendmail smtp-sink \
-		smtp-source ; do \
+	@for f in postalias postcat postconf postfix postkick postlock postlog\
+		postmap postsuper sendmail smtp-sink smtp-source ; do \
 		${INSTALL} -C -o root -g wheel -m 0755 -s ${WRKSRC}/bin/$$f \
 			${PREFIX}/sbin/$$f ;\
 	done
+	@${INSTALL} -C -o root -g maildrop -m 2755 -s ${WRKSRC}/bin/postdrop \
+		${PREFIX}/sbin/postdrop
 	@for f in ${MAN1} ; do \
 		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/man/man1/$$f \
 			${PREFIX}/man/man1/$$f ;\
@@ -94,21 +94,16 @@ do-install:
 			${PREFIX}/man/man8/$$f ;\
 	done
 	@${MKDIR} -m 0755 /var/spool/postfix
-	@if [ ! -e ${PREFIX}/etc/postfix/main.cf ]; then \
-		${CP} -p ${PREFIX}/etc/postfix/sample-main.cf \
-			${PREFIX}/etc/postfix/main.cf; \
-	fi
-	@if [ ! -e ${PREFIX}/etc/postfix/master.cf ]; then \
-		${CP} -p ${PREFIX}/etc/postfix/sample-master.cf \
-			${PREFIX}/etc/postfix/master.cf; \
-	fi
 	@${ECHO_MSG} "--------------------------------------------------"
 	@${ECHO_MSG} "- To replace your existing sendmail with postfix -"
 	@${ECHO_MSG} "- type \"make replace\"                          -"
 	@${ECHO_MSG} "--------------------------------------------------"
 
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+
 post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 replace:
 	@${ECHO_MSG} "===> Replacing sendmail"
