@@ -40,6 +40,7 @@
     SUBDIR += decss
     SUBDIR += demoroniser
     SUBDIR += djvuplugin
+    SUBDIR += encompass
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
