@@ -17,7 +17,7 @@
 -CC = /opt/pure/purify/purify cc
 -CC = cc
 +CC ?= cc
-+CC := ${CC} -Wall -g -Wwrite-strings
++CC := ${CC} -Wall -g -Wwrite-strings -DHAS_ISBLANK
 +#CC = gcc -Wall -g
 +#CC = /opt/SUNWspro/bin/cc
 +#CC = /opt/pure/purify/purify cc

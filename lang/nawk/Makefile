@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20021213
+PORTVERSION=	20030314
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 DISTNAME=	awk
@@ -26,3 +26,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/nawk.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
+
+CFLAGS+=	-DHAS_ISBLANK
