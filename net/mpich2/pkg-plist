@@ -1,4 +1,27 @@
+mpich/MPI-2-C++/examples/Makefile
+mpich/MPI-2-C++/examples/Makefile.in
+mpich/MPI-2-C++/examples/README
+mpich/MPI-2-C++/examples/chapter_10_mpi2
+mpich/MPI-2-C++/examples/chapter_10_mpi2.cc
+mpich/MPI-2-C++/examples/chapter_10_mpi2.o
+mpich/MPI-2-C++/examples/hello_world
+mpich/MPI-2-C++/examples/hello_world.cc
+mpich/MPI-2-C++/examples/hello_world.o
+mpich/MPI-2-C++/examples/mpirun
+mpich/MPI-2-C++/examples/pi
+mpich/MPI-2-C++/examples/pi.cc
+mpich/MPI-2-C++/examples/pi.o
+mpich/MPI-2-C++/examples/ring
+mpich/MPI-2-C++/examples/ring.cc
+mpich/MPI-2-C++/examples/ring.o
+mpich/MPI-2-C++/examples/topology
+mpich/MPI-2-C++/examples/topology.cc
+mpich/MPI-2-C++/examples/topology.o
+mpich/MPI-2-C++/examples/user_bcast
+mpich/MPI-2-C++/examples/user_bcast.cc
+mpich/MPI-2-C++/examples/user_bcast.o
 mpich/bin/execer
+mpich/bin/mpiCC
 mpich/bin/mpicc
 mpich/bin/mpif77
 mpich/bin/mpif90
@@ -23,7 +46,9 @@ mpich/examples/cpi.o
 mpich/examples/cpilog
 mpich/examples/cpilog.c
 mpich/examples/cpilog.o
+mpich/examples/hello++
 mpich/examples/hello++.cc
+mpich/examples/hello++.o
 mpich/examples/mpif.h
 mpich/examples/mpirun
 mpich/examples/pi3
@@ -64,6 +89,51 @@ mpich/lib/bitmaps/vlines3
 mpich/lib/bitmaps/vlines4
 mpich/lib/bitmaps/white
 mpich/lib/freebsd/ch_p4/Makefile.sample
+mpich/lib/freebsd/ch_p4/c++/comm.h
+mpich/lib/freebsd/ch_p4/c++/comm_inln.h
+mpich/lib/freebsd/ch_p4/c++/config.h
+mpich/lib/freebsd/ch_p4/c++/constants.h
+mpich/lib/freebsd/ch_p4/c++/datatype.h
+mpich/lib/freebsd/ch_p4/c++/datatype_inln.h
+mpich/lib/freebsd/ch_p4/c++/errhandler.h
+mpich/lib/freebsd/ch_p4/c++/errhandler_inln.h
+mpich/lib/freebsd/ch_p4/c++/exception.h
+mpich/lib/freebsd/ch_p4/c++/functions.h
+mpich/lib/freebsd/ch_p4/c++/functions_inln.h
+mpich/lib/freebsd/ch_p4/c++/group.h
+mpich/lib/freebsd/ch_p4/c++/group_inln.h
+mpich/lib/freebsd/ch_p4/c++/header.h
+mpich/lib/freebsd/ch_p4/c++/intercomm.h
+mpich/lib/freebsd/ch_p4/c++/intercomm_inln.h
+mpich/lib/freebsd/ch_p4/c++/intracomm.h
+mpich/lib/freebsd/ch_p4/c++/intracomm_inln.h
+mpich/lib/freebsd/ch_p4/c++/list.h
+mpich/lib/freebsd/ch_p4/c++/map.h
+mpich/lib/freebsd/ch_p4/c++/mpi++.h
+mpich/lib/freebsd/ch_p4/c++/op.h
+mpich/lib/freebsd/ch_p4/c++/op_inln.h
+mpich/lib/freebsd/ch_p4/c++/pcomm.h
+mpich/lib/freebsd/ch_p4/c++/pdatatype.h
+mpich/lib/freebsd/ch_p4/c++/perrhandler.h
+mpich/lib/freebsd/ch_p4/c++/pexception.h
+mpich/lib/freebsd/ch_p4/c++/pgroup.h
+mpich/lib/freebsd/ch_p4/c++/pgroup_inln.h
+mpich/lib/freebsd/ch_p4/c++/pintercomm.h
+mpich/lib/freebsd/ch_p4/c++/pintracomm.h
+mpich/lib/freebsd/ch_p4/c++/pmpi++.h
+mpich/lib/freebsd/ch_p4/c++/pop.h
+mpich/lib/freebsd/ch_p4/c++/pop_inln.h
+mpich/lib/freebsd/ch_p4/c++/prequest.h
+mpich/lib/freebsd/ch_p4/c++/prequest_inln.h
+mpich/lib/freebsd/ch_p4/c++/pstatus.h
+mpich/lib/freebsd/ch_p4/c++/pstatus_inln.h
+mpich/lib/freebsd/ch_p4/c++/ptopology.h
+mpich/lib/freebsd/ch_p4/c++/request.h
+mpich/lib/freebsd/ch_p4/c++/request_inln.h
+mpich/lib/freebsd/ch_p4/c++/status.h
+mpich/lib/freebsd/ch_p4/c++/status_inln.h
+mpich/lib/freebsd/ch_p4/c++/topology.h
+mpich/lib/freebsd/ch_p4/c++/topology_inln.h
 mpich/lib/freebsd/ch_p4/chkserv
 mpich/lib/freebsd/ch_p4/chp4_servs
 mpich/lib/freebsd/ch_p4/config.status
@@ -73,8 +143,10 @@ mpich/lib/freebsd/ch_p4/liblmpi.a
 mpich/lib/freebsd/ch_p4/libmpe.a
 mpich/lib/freebsd/ch_p4/libmpe_nompi.a
 mpich/lib/freebsd/ch_p4/libmpich.a
+mpich/lib/freebsd/ch_p4/libmpich++.a
 mpich/lib/freebsd/ch_p4/libpmpich.a
 mpich/lib/freebsd/ch_p4/libtmpi.a
+mpich/lib/freebsd/ch_p4/mpiCC
 mpich/lib/freebsd/ch_p4/mpicc
 mpich/lib/freebsd/ch_p4/mpichconf.h
 mpich/lib/freebsd/ch_p4/mpidefs.h
@@ -100,11 +172,14 @@ mpich/util/chkserv
 mpich/util/chp4_servs
 mpich/util/machines/machines.freebsd
 mpich/util/machines/machines.sample
+@dirrm mpich/MPI-2-C++/examples
+@dirrm mpich/MPI-2-C++
 @dirrm mpich/bin
 @dirrm mpich/doc
 @dirrm mpich/examples
 @dirrm mpich/include
 @dirrm mpich/lib/bitmaps
+@dirrm mpich/lib/freebsd/ch_p4/c++
 @dirrm mpich/lib/freebsd/ch_p4
 @dirrm mpich/lib/freebsd
 @dirrm mpich/lib
