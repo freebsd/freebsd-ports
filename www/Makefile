@@ -463,6 +463,7 @@
     SUBDIR += swish++
     SUBDIR += swish-e
     SUBDIR += tclhttpd
+    SUBDIR += tdiary
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += tidy

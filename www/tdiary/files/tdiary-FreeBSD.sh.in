@@ -14,9 +14,11 @@ USERNAME=$1
 DIARYDIR=diary
 PUBLICHTML=public_html
 PREFIX=@@@@PREFIX@@@@
+TDCONFIG=@@@@LANG@@@@
 EXAMPLES=${PREFIX}/share/examples
 HOMEOWN=`grep ^$1: /etc/passwd | cut -f3 -d':'`
 HOMEGRP=`grep ^$1: /etc/passwd | cut -f4 -d':'`
+AUTHORN=`grep ^$1: /etc/passwd | cut -f5 -d':'`
 HOMEDIR=`grep ^$1: /etc/passwd | cut -f6 -d':'`
 HOSTSMTP=`hostname`
 
@@ -93,21 +95,14 @@ if [ -x ${HOMEDIR} ]; then
 		chown -R ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/
 		chmod o+rwx ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}
 		echo "Done"
-		if [ -e ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf ]; then
-			sed -e 's#'/home/foo/diary'#'${HOMEDIR}'/'${DIARYDIR}'#g' \
-				-e 's#smtp.example.net#'${HOSTSMTP}'#g' \
-				-e "s#foo@example.net#"${USERNAME}"@"${HOSTSMTP}"#g" \
-				-e "s#http://www.example.net/~foo/#http://"${HOSTSMTP}"/~"${USERNAME}"#g" \
-				< ${EXAMPLES}/tdiary/tdiary.conf.sample > ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf.orig
-				chown ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf.orig
-		else
-			sed -e 's#'/home/foo/diary'#'${HOMEDIR}'/'${DIARYDIR}'#g' \
-				-e 's#smtp.example.net#'${HOSTSMTP}'#g' \
-				-e "s#foo@example.net#"${USERNAME}"@"${HOSTSMTP}"#g" \
-				-e "s#http://www.example.net/~foo/#http://"${HOSTSMTP}"/~"${USERNAME}"#g" \
-				< ${EXAMPLES}/tdiary/tdiary.conf.sample > ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf
-				chown ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf
-		fi
+		sed -e 's#'/home/foo/diary'#'${HOMEDIR}'/'${DIARYDIR}'#g' \
+			-e 's#smtp.example.net#'${HOSTSMTP}'#g' \
+			-e "s#foo@example.net#"${USERNAME}"@"${HOSTSMTP}"#g" \
+			-e "s#Your name#${AUTHORN}#g" \
+			-e "s#hogehoge diary#${AUTHORN} Diary#g" \
+			-e "s#http://www.example.net/~foo/#http://"${HOSTSMTP}"/~"${USERNAME}"#g" \
+			< ${EXAMPLES}/tdiary/tdiary.conf.sample > ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf-ja
+		chown ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf-ja
 		if [ -e ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/.htaccess ]; then
 			sed -e 's#foo#'${USERNAME}'#g' < ${EXAMPLES}/tdiary/dot.htaccess > ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/dot.htaccess.orig
 			chown ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/dot.htaccess.orig
@@ -118,10 +113,19 @@ if [ -x ${HOMEDIR} ]; then
 		sed -e 's#'/home/foo/diary'#'${HOMEDIR}'/'${DIARYDIR}'#g' \
 			-e 's#smtp.example.net#'${HOSTSMTP}'#g' \
 			-e "s#foo@example.net#"${USERNAME}"@"${HOSTSMTP}"#g" \
+			-e "s#Your name#${AUTHORN}#g" \
+			-e "s#foobar diary#${AUTHORN} Diary#g" \
+			-e "s#Foo\'s diary#${AUTHORN}\'s Diary#g" \
 			-e "s#http://www.example.net/~foo/#http://"${HOSTSMTP}"/~"${USERNAME}"#g" \
 			< ${EXAMPLES}/tdiary/misc/i18n/tdiary.conf.sample-en > ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf-en
 		chown ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf-en
 		rm -f ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary-FreeBSD.sh
+		if [ -e ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf ]; then
+			echo ""
+		else
+			echo "Install ${TDCONFIG} ... Done"
+			mv ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/${TDCONFIG} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf
+		fi
 	fi
 else
 	echo ""
