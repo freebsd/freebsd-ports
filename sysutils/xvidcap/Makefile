@@ -18,6 +18,8 @@ COMMENT=		Capture your X display to individual frames or MPEG video
 LIB_DEPENDS=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=			"Does not compile with ffmpeg-0.4.9.p1"
+
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
