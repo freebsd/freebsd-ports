@@ -1,5 +1,5 @@
 --- gcc-3.2.3/gcc/Makefile.in.orig	Tue Jan 28 16:54:07 2003
-+++ gcc-3.2.3/gcc/Makefile.in	Sat Sep  6 19:45:51 2003
++++ gcc-3.2.3/gcc/Makefile.in	Sun Nov 16 21:11:17 2003
 @@ -405,7 +405,7 @@
  
  # It is convenient for configure to add the assignment at the beginning,
@@ -30,7 +30,7 @@
  
  # Handle cpp installation.
  install-cpp: cpp$(exeext)
-@@ -2581,53 +2580,6 @@
+@@ -2581,54 +2580,6 @@
  	  else true; \
  	  fi; \
  	done
@@ -81,6 +81,7 @@
 -	    rm -f $(DESTDIR)$(bindir)/gcov$(exeext); \
 -	    $(INSTALL_PROGRAM) gcov$(exeext) $(DESTDIR)$(bindir)/$(GCOV_INSTALL_NAME)$(exeext); \
 -	fi
- 	$(INSTALL_SCRIPT) gccbug $(DESTDIR)$(bindir)/$(GCCBUG_INSTALL_NAME)
+-	$(INSTALL_SCRIPT) gccbug $(DESTDIR)$(bindir)/$(GCCBUG_INSTALL_NAME)
  
  # Install the driver program as $(target_alias)-gcc
+ # and also as either gcc (if native) or $(gcc_tooldir)/bin/gcc.
