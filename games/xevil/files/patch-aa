@@ -1,0 +1,19 @@
+*** main.C~	Wed Feb  8 21:31:58 1995
+--- main.C	Sat May  6 00:16:24 1995
+***************
+*** 49,55 ****
+  
+  
+  // Defines
+! #define MSEC_PER_CLOCK (1.0e3 / CLOCKS_PER_SEC) 
+  
+  
+  #ifdef SELECT_NEEDS_PROTOTYPES
+--- 49,55 ----
+  
+  
+  // Defines
+! #define MSEC_PER_CLOCK 8 //(1.0e3 / CLOCKS_PER_SEC)
+  
+  
+  #ifdef SELECT_NEEDS_PROTOTYPES

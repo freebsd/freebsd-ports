@@ -1,0 +1,23 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+cat >> Makefile << END
+
+all:
+	@\$(MAKE) CC="g++" CFLAGS="-DUSE_RANDOM -DPROTECTED_IS_PUBLIC" \
+		INCL_DIRS=-I/usr/X11R6/include LIBS_DIRS=-L/usr/X11R6/lib \
+		LIBS="-lX11 -lm" \$(TARGETS)
+
+DEBUG_OPT = -O2
+
+install:
+	cp xevil \$(PREFIX)/bin
+	mkdir -p \$(PREFIX)/lib/app-defaults
+	for f in iris mac sun3 sun4_sparc; do \
+	  cp app-defaults/XEvil.\$\$f \$(PREFIX)/lib/app-defaults/; done
+	gzip -9 <xevil.6 >\$(PREFIX)/man/man6/xevil.6.gz
+
+END
+
+exit 0
