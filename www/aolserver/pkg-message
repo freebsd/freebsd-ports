@@ -1,7 +1,7 @@
 
 Assuming you have changed to /usr/local, please copy
-etc/aolserver3/nsd.tcl.sample to etc/aolserver3/nsd.tcl and season to
-taste.  An example server is in at www/data/aolserver/servers, and you
-should similarly copy the contents of this directory to, e.g.,
-www/data/aolserver/servers/www.mydomain.com before modifying them.
+www/aolserver/nsd.tcl.sample to www/aolserver/nsd.tcl and season to
+taste.  An example server is in at www/aolserver/servers/server1, and
+you should similarly copy the contents of this directory to, e.g.,
+www/aolserver/servers/www.mydomain.com before modifying them.
 
