@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus
 PORTVERSION=	1.6.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	YES
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
 		--with-sasldir=${LOCALBASE} \
@@ -37,12 +37,6 @@ MAN5=		imapd.conf.5 krb.equiv.5
 MAN8=		arbitron.8 collectnews.8 cyrquota.8 deliver.8 fud.8 \
 		imapd.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 syncnews.8 \
 		timsieved.8
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/600.cyrus ${WRKDIR}
@@ -110,4 +104,4 @@ post-install:
 		@${ECHO_CMD} "@dirrm spool/imap" >>${TMPPLIST}
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
