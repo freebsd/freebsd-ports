@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rdenisc.free.fr/tcpreen/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 MAN1=		tcpreen.1
 
 DOC_FILES=	README
