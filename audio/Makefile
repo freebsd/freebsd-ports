@@ -344,6 +344,7 @@
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib
+    SUBDIR += tap-plugins
     SUBDIR += tclmidi
     SUBDIR += teamspeak_client
     SUBDIR += teamspeak_server
