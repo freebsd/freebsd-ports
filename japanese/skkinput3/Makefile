@@ -11,7 +11,7 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/2222/
 DISTNAME=	skkinput-${PORTVERSION}
 
-MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+MAINTAINER=	koma2@ms.u-tokyo.ac.jp
 COMMENT=	An SKK-like Japanese input method for X11
 
 USE_IMAKE=		yes

@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+MAINTAINER=	koma2@ms.u-tokyo.ac.jp
 COMMENT=	Perl script to make BDF font bold
 
 PLIST_FILES=	bin/mkbold
