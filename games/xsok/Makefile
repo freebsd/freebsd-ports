@@ -15,6 +15,12 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+.if defined(XFREE86_VERSION) && (${XFREE86_VERSION} == 4)
+BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86-4
+.else
+BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86
+.endif
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN6=		xsok.6x
