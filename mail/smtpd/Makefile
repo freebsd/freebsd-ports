@@ -7,6 +7,7 @@
 
 PORTNAME=	smtpd
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	ftp://ftp.obtuse.com/pub/smtpd/
 
