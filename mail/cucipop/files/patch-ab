@@ -1,0 +1,58 @@
+--- cucipop.8.orig	Fri Apr 11 18:08:31 1997
++++ cucipop.8	Mon Jul  7 11:19:01 1997
+@@ -48,11 +48,11 @@
+ .SH NAME
+ cucipop \- Cubic Circle POP3 daemon
+ .SH SYNOPSIS
+-.B /usr/sbin/cucipop
++.B cucipop
+ .RB [ \-qaYdPUSDAT ]
+ .RB [ "\-p \fIport\fP" ]
+ .br
+-.B /usr/sbin/cucipop
++.B cucipop
+ .B \-v
+ .ad
+ .SH DESCRIPTION
+@@ -118,12 +118,12 @@
+ .IR port .
+ .SH EXAMPLES
+ Typically
+-.I pop-3
++.I pop3
+ service is defined in
+ .BR services (5)
+ as follows:
+ .Sx 1
+-pop-3           110/tcp
++pop3           110/tcp
+ .Ex
+ In order to start cucipop from within
+ .BR inetd (8),
+@@ -131,22 +131,22 @@
+ .BR inetd.conf (5)
+ would be suitable:
+ .Sx 1
+-pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
++pop3   stream  tcp     nowait  root    /usr/local/libexec/cucipop cucipop -Y
+ .Ex
+ If your site gets many hits from popclients, it would be preferable
+ to start cucipop standalone as in:
+ .Sx 1
+-/usr/sbin/cucipop -Y
++cucipop -Y
+ .Ex
+ .SH FILES
+ .TP 2.3i
+ .B /etc/passwd
+ for the default authentication method
+ .TP
+-.B /var/spool/mail/$LOGNAME
++.B /var/mail/$LOGNAME
+ system mailbox
+ .TP
+-.B /var/spool/mail/$LOGNAME.lock
++.B /var/mail/$LOGNAME.lock
+ lockfile for the system mailbox
+ .TP
+ .B _????`hostname`

@@ -1,0 +1,62 @@
+--- Makefile.orig	Wed Oct 30 19:24:29 1996
++++ Makefile	Mon Jul  7 14:27:28 1997
+@@ -1,29 +1,29 @@
+ #$Id: Makefile,v 1.2 1996/10/30 16:24:29 srb Exp $
+ 
+-BASENAME= /usr
++BASENAME= $(PREFIX)
+ 
+ GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+  -Wpointer-arith -Wconversion -Waggregate-return \
+  #-Wimplicit -Wshadow #-Wuninitialized
+ 
+-CFLAGS	= -O #$(GCC_WARNINGS)
+-LDFLAGS =
++#CFLAGS	= -O #$(GCC_WARNINGS)
++LDFLAGS += -lcrypt -lmd
+ 
+ O=o
+ 
+-BINDIR=$(BASENAME)/sbin
++BINDIR=$(BASENAME)/libexec
+ MANDIR=$(BASENAME)/man/man8
+ 
+-INSTALL=install -o root -m
+-BINPERM=02755 -s -g mail
+-REGPERM=0644
++INSTALL=install -o bin -m
++BINPERM=02555 -s -g mail
++REGPERM=0444 -g bin
+ 
+ #
+ # When compiling without APOP support, the md5 library can be omitted.
+ 
+ MD5_OBJ=md5/md5c.$(O)
+ 
+-OBJS=cucipop.$(O) authenticate.$(O) locking.$(O) xcreat.$(O) $(MD5_OBJ)
++OBJS=cucipop.$(O) authenticate.$(O) locking.$(O) xcreat.$(O) #$(MD5_OBJ)
+ 
+ all: cucipop
+ 
+--- authenticate.c.orig	Fri Apr 11 18:08:31 1997
++++ authenticate.c	Mon Jul  7 14:23:19 1997
+@@ -36,7 +36,7 @@
+ #include "authenticate.h"
+ 
+ #ifndef MAILSPOOLDIR
+-#define MAILSPOOLDIR	"/var/spool/mail/"	     /* watch the trailing / */
++#define MAILSPOOLDIR	"/var/mail/"		     /* watch the trailing / */
+ #endif
+ #ifndef MAILSPOOLHASH
+ #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
+--- xcreat.c.orig	Thu Apr  3 05:53:24 1997
++++ xcreat.c	Mon Jul  7 14:23:19 1997
+@@ -22,7 +22,7 @@
+ /*#define NOuname		      /* uncomment if uname is not available */
+ /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */
+ /*#define strchr(s,c) index(s,c)     /* uncomment if strchr is not available */
+-#define const			      /* can be undefined for ANSI compilers */
++/*#define const			      /* can be undefined for ANSI compilers */
+ 
+ #include <unistd.h>			/* open() close() link() unlink()
+ 					   getpid() */
