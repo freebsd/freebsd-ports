@@ -894,7 +894,7 @@ lib/perl5/%%PERL_VER%%/validate.pl
 lib/perl5/%%PERL_VER%%/vars.pm
 lib/perl5/%%PERL_VER%%/warnings.pm
 lib/perl5/%%PERL_VER%%/warnings/register.pm
-@unexec find %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ -name '*.ph' -print | xargs rm -f
+@unexec find %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/sys 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/machine 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
