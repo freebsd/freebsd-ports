@@ -5,3 +5,5 @@ might be used as operators. The operators can consist of multiple
 characters.  The only limitation is that a variable or function
 name may not start on a digit, and not all chars are accepted in
 operation names.
+
+WWW: http://search.cpan.org/search?dist=Math-Expr
