@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-power-tools
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,6 +26,7 @@ RUN_DEPENDS=	${X11BASE}/lib/gnome-vfs-2.0/modules/libsmb.so:${PORTSDIR}/devel/gn
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
 		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
+		splashsetter:${PORTSDIR}/deskutils/splashsetter \
 		gnome-netinfo:${PORTSDIR}/net/gnomenetwork
 
 NO_BUILD=	yes
