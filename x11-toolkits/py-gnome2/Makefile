@@ -7,6 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.99.15
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.99
@@ -19,6 +20,8 @@ COMMENT=	A set of Python bindings for GNOME 2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
 LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
+		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
+		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
 		nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
 
