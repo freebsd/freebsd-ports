@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.6 1999/06/28 06:03:45 cpiazza Exp $
+# $Id: Makefile,v 1.7 1999/06/28 17:19:28 cpiazza Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -30,7 +30,7 @@ post-patch:
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/configure-pstoimg
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/install-test
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/makemap
-	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/psttoimg
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/pstoimg
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/pstoimg_nopipes
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/texexpand
 
