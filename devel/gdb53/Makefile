@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-15
+SNAPDATE=	2002-03-23
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
@@ -16,7 +16,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 #MASTER_SITE_SUBDIR=	gdb/releases
 MASTER_SITE_SUBDIR=	gdb/snapshots/branch
-DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER}
+DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER} # gdb+dejagnu-weekly-5.1.90_${SNAPVER}
 
 MAINTAINER=	obrien@FreeBSD.org
 
