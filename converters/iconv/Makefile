@@ -21,6 +21,11 @@ MANCOMPRESSED=	yes
 MAN1=		biconv.1
 MAN3=		biconv.3 biconv_open.3 biconv_close.3
 
+.ifdef USE_ICONV
+.error	USE_ICONV is defined as an environment variable, or in the arguments \
+	to "make".  Please unset it and restart the build.
+.endif
+
 .if defined(NOPROFILE)
 PLIST_SUB=	PROFILE:="@comment "
 .else

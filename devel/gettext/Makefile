@@ -43,6 +43,11 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 
 INFO=		autosprintf gettext
 
+.ifdef USE_GETTEXT
+.error	USE_GETTEXT is defined as an environment variable, or in the arguments \
+	to "make".  Please unset it and restart the build.
+.endif
+
 post-install:
 .for f in po-compat.el po-mode.el
 	${INSTALL_DATA} ${WRKSRC}/gettext-tools/misc/${f} ${PREFIX}/share/emacs/site-lisp
