@@ -10,19 +10,26 @@ PORTVERSION=	2.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 
-MAINTAINER=	batman@udel.edu
+MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
+		atlas:${PORTSDIR}/math/atlas
 
 USE_BISON=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libdirs=-L${LOCALBASE}/lib
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--with-libdirs=-L${PREFIX}/lib \
+		--with-blas="-lf77blas -latlas" \
+		--with-lapack="-lalapack -lcblas" \
+		--with-coptflags="${CFLAGS}" \
+		--with-cxxoptflags="${CFLAGS}" \
+		--with-f77optflags="${FFLAGS}"
 USE_PERL5=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
-post-patch:
-	@${PERL} -pi -e "s,-lpthreads,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+pre-configure:
+	@${ECHO} "You can override and CFLAGS on the command line."
+	@${ECHO} "Following is a recommended one."
+	@${ECHO} "make CFLAGS=\"-malign-double -fexpensive-optimizations -O4 -ffast-math -funroll-loops\""
 
 .include <bsd.port.mk>

@@ -1,0 +1,150 @@
+--- configure.in.orig	Sun Apr 21 11:36:19 2002
++++ configure.in	Tue Jul 16 06:44:27 2002
+@@ -334,6 +334,31 @@
+ 
+ ac_default_prefix="/usr/local/mpqc/$SC_VERSION"
+ 
++AC_ARG_WITH(blas,
++[  --with-blas             Gives BLAS name you use(e.g., -lblas).],
++BLASNAME=$withval
++)
++
++AC_ARG_WITH(lapack,
++[  --with-lapack           Gives LAPACK name you use(e.g., -llapack).],
++LAPACKNAME=$withval
++)
++
++AC_ARG_WITH(cxxoptflags,
++[  --with-cxxoptflags      Gives the C++ compiler optimization flags to use.],
++CXXOPTFLAGS=$withval
++)
++
++AC_ARG_WITH(ccoptflags,
++[  --with-ccoptflags       Gives the C compiler optimization flags to use.],
++CCOPTFLAGS=$withval
++)
++
++AC_ARG_WITH(f77optflags,
++[  --with-f77optflags      Gives the FORTRAN 77 optimization compiler flags to use.],
++F77OPTFLAGS=$withval
++)
++
+ AC_ARG_WITH(cc,
+ [  --with-cc               Gives the name of the C compiler to use.],
+ CC=$withval
+@@ -636,6 +661,23 @@
+   ;;
+ esac
+ 
++if test "$CCOPTFLAGS" = NONE; then
++else
++   echo "overrides the cc optimization flag with $CCOPTFLAGS"
++   COPTIONS_OPT="$CCOPTFLAGS"
++fi
++if test "$CXXOPTFLAGS" = NONE; then
++else
++   echo "overrides the c++ optimization flag with $CXXOPTFLAGS"
++   CXXOPTIONS_OPT="$CXXOPTFLAGS"
++fi
++
++if test "$F77OPTFLAGS" = NONE; then
++else
++   echo "overrides the Fortrna 77 optimization flag with $F77OPTFLAGS"
++   F77OPTIONS_OPT="$F77OPTFLAGS"
++fi
++
+ dnl -- special architecture options --
+ 
+ AC_MSG_CHECKING([for special architecture options])
+@@ -839,10 +881,12 @@
+ elif test $DEBUG = opt; then
+   CFLAGS="$COPTIONS_DBG $COPTIONS_OPT $COPTIONS_MISC"
+   CXXFLAGS="$CXXOPTIONS_DBG $COPTIONS_OPT $CXXOPTIONS_MISC"
++  FFLAGS="$F77OPTIONS_OPT"
+   LDFLAGS="$LDFLAGS -g"
+ else
+   CFLAGS="$COPTIONS_OPT $COPTIONS_MISC"
+   CXXFLAGS="$CXXOPTIONS_OPT $CXXOPTIONS_MISC"
++  FFLAGS="$F77OPTIONS_OPT"
+ fi
+ 
+ AC_SUBST(EXTRAINCLUDE)
+@@ -979,6 +1023,19 @@
+ AC_LANG_RESTORE
+ fi
+ 
++dnl see if posix threads are in -pthreads
++if test $HAVE_PTHREAD = no; then
++AC_LANG_SAVE
++AC_LANG_CPLUSPLUS
++LIBSSAV="$LIBS"
++LIBS="$LIBS -pthread"
++AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
++HAVE_PTHREAD=yes],[
++HAVE_PTHREAD=no
++LIBS="$LIBSSAV"])
++AC_LANG_RESTORE
++fi
++
+ AC_MSG_RESULT($HAVE_PTHREAD)
+ fi
+ if test X$HAVE_PTHREAD = Xyes; then
+@@ -1280,18 +1337,26 @@
+ LIBS="$LIBSSAV $FLIBS"
+ 
+ LIBBLAS=""
++
+ F77_DGEMM=`$PERL $srcdir/bin/mkf77sym.pl.in -method $F77_SYMBOLS DAXPY`
+-AC_CHECK_FUNC($F77_DGEMM,HAVE_BLAS=yes,[
+-  AC_CHECK_LIB(essl,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lessl"],
+-    AC_CHECK_LIB(blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lblas"])
+-  )]
+-)
+-if test X$HAVE_BLAS != Xyes; then
+-  LIBSSAV2="$LIBS"
+-  LIBS="-latlas $LIBS"
+-  AC_CHECK_LIB(f77blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lf77blas -latlas"],
+-               LIBS="$LIBSSAV2")
++
++if test "$BLASNAME" = NONE; then
++  AC_CHECK_FUNC($F77_DGEMM,HAVE_BLAS=yes,[
++    AC_CHECK_LIB(essl,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lessl"],
++      AC_CHECK_LIB(blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lblas"])
++    )]
++  )
++  if test X$HAVE_BLAS != Xyes; then
++    LIBSSAV2="$LIBS"
++    LIBS="-latlas $LIBS"
++    AC_CHECK_LIB(f77blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lf77blas -latlas"],
++                 LIBS="$LIBSSAV2")
++  fi
++else
++  HAVE_BLAS="yes"
++  LIBBLAS="$BLASNAME"
+ fi
++
+ AC_SUBST(HAVE_BLAS)
+ if test X$HAVE_BLAS != Xyes; then
+   echo "WARNING: Could not link to the BLAS library.  It can be obtained at"
+@@ -1304,10 +1369,17 @@
+ 
+ LIBLAPACK=""
+ F77_DGESVD=`$PERL $srcdir/bin/mkf77sym.pl.in -method $F77_SYMBOLS DGESVD`
+-AC_CHECK_FUNC($F77_DGESVD,HAVE_LAPACK=yes,[
+-  AC_CHECK_LIB(lapack,$F77_DGESVD,[HAVE_LAPACK=yes;LIBLAPACK="-llapack"]
+-  )]
+-)
++
++if test "$LAPACKNAME" = NONE; then
++  AC_CHECK_FUNC($F77_DGESVD,HAVE_LAPACK=yes,[
++    AC_CHECK_LIB(lapack,$F77_DGESVD,[HAVE_LAPACK=yes;LIBLAPACK="-llapack"]
++    )]
++  )
++else
++  HAVE_LAPACK="yes"
++  LIBLAPACK="$LAPACKNAME"
++fi
++
+ AC_SUBST(HAVE_LAPACK)
+ if test X$HAVE_LAPACK != Xyes; then
+   echo "Could not link to the LAPACK library.  It can be obtained at"
