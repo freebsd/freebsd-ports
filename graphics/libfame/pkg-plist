@@ -5,6 +5,8 @@ include/fame_decoder.h
 include/fame_decoder_mpeg.h
 include/fame_encoder.h
 include/fame_encoder_mpeg.h
+include/fame_malloc.h
+include/fame_monitor.h
 include/fame_motion.h
 include/fame_motion_fourstep.h
 include/fame_motion_none.h
@@ -14,7 +16,10 @@ include/fame_profile_mpeg.h
 include/fame_profile_mpeg1.h
 include/fame_profile_mpeg4_shape.h
 include/fame_profile_mpeg4_simple.h
+include/fame_profile_stats.h
 include/fame_rate.h
+include/fame_rate_1param.h
+include/fame_rate_simple.h
 include/fame_shape.h
 include/fame_syntax.h
 include/fame_syntax_mpeg1.h
@@ -22,5 +27,5 @@ include/fame_syntax_mpeg4.h
 include/fame_version.h
 lib/libfame.a
 lib/libfame.so
-lib/libfame.so.8
+lib/libfame.so.10
 share/aclocal/libfame.m4
