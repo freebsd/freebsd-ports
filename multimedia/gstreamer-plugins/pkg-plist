@@ -1,8 +1,5 @@
 bin/gst-launch-ext-%%VERSION%%
 bin/gst-visualise-%%VERSION%%
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
-etc/gconf/schemas/gstreamer-%%VERSION%%.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/audioclock.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
@@ -67,6 +64,7 @@ lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 %%LIBDVDREAD%%lib/gstreamer-%%VERSION%%/libgstdvdreadsrc.so
 lib/gstreamer-%%VERSION%%/libgstefence.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
+lib/gstreamer-%%VERSION%%/libgstequalizer.so
 %%ESOUND%%lib/gstreamer-%%VERSION%%/libgstesd.so
 %%FAAC%%lib/gstreamer-%%VERSION%%/libgstfaac.so
 %%FAAD%%lib/gstreamer-%%VERSION%%/libgstfaad.so
@@ -175,6 +173,7 @@ lib/gstreamer-%%VERSION%%/libgstximagesink.so
 lib/gstreamer-%%VERSION%%/libgstxvimagesink.so
 lib/gstreamer-%%VERSION%%/libgstxwindowlistener.so
 lib/gstreamer-%%VERSION%%/libgsty4menc.so
+%%POLYPAUDIO%%lib/gstreamer-%%VERSION%%/libpolypaudio.so
 lib/libgstgconf-%%VERSION%%.a
 lib/libgstgconf-%%VERSION%%.so
 lib/libgstgconf-%%VERSION%%.so.%%SHLIB_VERSION%%
@@ -198,6 +197,8 @@ share/locale/az/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
@@ -209,6 +210,7 @@ share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tuner
+@dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/riff
 @dirrm include/gstreamer-%%VERSION%%/gst/resample
 @dirrm include/gstreamer-%%VERSION%%/gst/propertyprobe
