@@ -62,6 +62,7 @@
     SUBDIR += ipfm
     SUBDIR += ipplan
     SUBDIR += ipv6calc
+    SUBDIR += ipv6gen
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += junipoll
