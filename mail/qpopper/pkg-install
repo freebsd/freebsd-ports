@@ -1,0 +1,53 @@
+#!/bin/sh
+# $FreeBSD$
+
+# based on original from op port, written by Cyrille Lefevre
+# <clefevre@citeweb.net>
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+CONF_DIR=${PKG_PREFIX}/etc/qpopper
+
+CONF_FILE=popusers
+CONF_OWN=pop
+CONF_GRP=daemon
+CONF_MODE=444
+
+SAMP_SUFX=.sample
+
+INSTALL=install
+CMP=cmp
+RM=rm
+
+case "$ACTION" in
+
+POST-INSTALL)
+	if [ -f ${CONF_DIR}/${CONF_FILE} ]; then
+		echo "$PKGNAME: Will not overwrite existing ${CONF_DIR}/${CONF_FILE} file."
+	else
+		${INSTALL} -c -o ${CONF_OWN} -g ${CONF_GRP} -m ${CONF_MODE} \
+			${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+			${CONF_DIR}/${CONF_FILE}
+	fi
+	;;
+
+DEINSTALL)
+	if ${CMP} -s ${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+		  ${CONF_DIR}/${CONF_FILE}; then
+		${RM} -f ${CONF_DIR}/${CONF_FILE}
+	else
+		echo "$PKGNAME: Will not remove existing ${CONF_DIR}/${CONF_FILE} file."
+	fi
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
