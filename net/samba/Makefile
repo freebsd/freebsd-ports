@@ -4,14 +4,14 @@
 #
 # $FreeBSD$
 #
-
+n
 PORTNAME=	samba
 PORTVERSION=	2.0.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
-		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
+		ftp://de.samba.org/samba.org/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions old
