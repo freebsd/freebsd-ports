@@ -8,7 +8,7 @@
 PORTNAME=	streamripper
 PORTVERSION=	1.0.5
 CATEGORIES=	audio
-MASTER_SITES=	http://streamripper.sourceforge.net/dl/
+MASTER_SITES=	http://streamripper.sourceforge.net/files/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
