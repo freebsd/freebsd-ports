@@ -1,6 +1,6 @@
---- src/Makefile.tmpl.orig	Mon Jan 13 10:14:52 1997
-+++ src/Makefile.tmpl	Sun Jan 19 14:04:28 1997
-@@ -32,18 +32,18 @@
+--- src/Makefile.tmpl.orig	Sat Jan 18 10:44:04 1997
++++ src/Makefile.tmpl	Tue Feb  4 17:26:44 1997
+@@ -32,19 +32,19 @@
  	echo
  
  install ::
@@ -9,6 +9,7 @@
 -	cp -r ../../misc/setup_* $(INST_DIR)/misc; \\
 -	cp ../../README* $(INST_DIR);\\
 -	cp makegen/* $(INST_DIR)/makegen;\\
+-	chmod 755 $(INST_DIR)/makegen/*;\\
 -	cp site.mm $(INST_DIR)/makegen;\\
 -        if test -f $(INST_DIR)/msql.conf;\
 +	@cp -r ../../doc/* $(INST_DIR)/share/doc/msql; \\
@@ -16,6 +17,7 @@
 +	cp -r ../../misc/setup_* $(INST_DIR)/share/msql/misc; \\
 +	cp ../../README* $(INST_DIR)/share/doc/msql;\\
 +	cp makegen/* $(INST_DIR)/share/msql/makegen;\\
++	chmod 755 $(INST_DIR)/share/msql/makegen/*;\\
 +	cp site.mm $(INST_DIR)/share/msql/makegen;\\
 +        if test -f $(INST_DIR)/etc/msql2/msql.conf;\
          then\
