@@ -538,8 +538,19 @@ diff -c -N ../faces/faces.h ./faces.h
                   R_AUDIO,   R_AUDIOCMD, R_BELLFILE
   #endif /*AUDIO_SUPPORT*/
 ***************
+*** 193,200 ****
+  #endif /*NOUTIME*/
+  
+  extern char *getenv P(()) ;
+- extern char *malloc P(()) ;
+- extern char *realloc P(()) ;
+  extern char *index P(()) ;
+  extern char *rindex P(()) ;
+  extern char *strcpy P(()) ;
+--- 194,199 ----
+***************
 *** 217,223 ****
---- 218,228 ----
+--- 216,226 ----
   #define  PRINTDEF   "lpq -P %s"
   
   /* Updating the faces database:   %s replaced with mail update alias name. */
