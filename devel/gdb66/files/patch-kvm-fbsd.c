@@ -1,6 +1,6 @@
---- gdb/kvm-fbsd.c	Wed Dec 31 16:00:00 1969
-+++ gdb/kvm-fbsd.c	Sun Oct 13 13:57:00 2002
-@@ -0,0 +1,684 @@
+--- /dev/null	Mon Oct 21 01:38:23 2002
++++ gdb/kvm-fbsd.c	Mon Oct 21 01:37:48 2002
+@@ -0,0 +1,743 @@
 +/* Kernel core dump functions below target vector, for GDB.
 +   Copyright 1986, 1987, 1989, 1991, 1992, 1993, 1994, 1995
 +   Free Software Foundation, Inc.
@@ -22,7 +22,7 @@
 +Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 +*/
 +
-+/* $FreeBSD: /tmp/pcvs/ports/devel/gdb66/files/Attic/patch-kvm-fbsd.c,v 1.2 2002-10-13 21:22:39 mp Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/devel/gdb66/files/Attic/patch-kvm-fbsd.c,v 1.3 2002-10-21 21:29:09 mp Exp $ */
 +
 +/*
 + * This works like "remote" but, you use it like this:
@@ -508,19 +508,78 @@
 +
 +#ifdef __sparc64__
 +
-+/*
-+#include "sparc/tm-sp64.h"
-+*/
++#define	SPARC_INTREG_SIZE	8
 +
++static void
 +fetch_kcore_registers (struct pcb *pcbp)
 +{
-+}
++  static struct frame top;
++  CORE_ADDR f_addr;
++  int i;
 +
++  /* Get the register values out of the sys pcb and store them where
++     `read_register' will find them.  */
++  /*
++   * XXX many registers aren't available.
++   * XXX for the non-core case, the registers are stale - they are for
++   *     the last context switch to the debugger.
++   * XXX do something with the floating-point registers?
++   */
++  supply_register (SP_REGNUM, &pcbp->pcb_fp);
++  supply_register (PC_REGNUM, &pcbp->pcb_pc);
++  f_addr = extract_address (&pcbp->pcb_fp, SPARC_INTREG_SIZE);
++  /* Load the previous frame by hand (XXX) and supply it. */
++  read_memory (f_addr + SPOFF, (char *)&top, sizeof (top));
++  for (i = 0; i < 8; i++)
++    supply_register (i + L0_REGNUM, &top.fr_local[i]);
++  for (i = 0; i < 8; i++)
++    supply_register (i + I0_REGNUM, &top.fr_in[i]);
++}
 +
 +CORE_ADDR
 +fbsd_kern_frame_saved_pc (struct frame_info *fi)
 +{
-+	return NULL;
++  struct minimal_symbol *sym;
++  CORE_ADDR frame, pc_addr, pc;
++  char *buf;
++
++  buf = alloca (MAX_REGISTER_RAW_SIZE);
++  /* XXX: duplicates fi->extra_info->bottom. */
++  frame = (fi->next != NULL) ? fi->next->frame : read_sp ();
++  pc_addr = frame + offsetof (struct frame, fr_in[7]);
++
++#define	READ_PC(pc, a, b) do { \
++  read_memory (a, b, SPARC_INTREG_SIZE); \
++  pc = extract_address (b, SPARC_INTREG_SIZE); \
++} while (0)
++
++  READ_PC (pc, pc_addr, buf);
++
++  sym = lookup_minimal_symbol_by_pc (pc);
++  if (sym != NULL)
++    {
++      if (strncmp (SYMBOL_NAME (sym), "tl0_", 4) == 0 ||
++	  strcmp (SYMBOL_NAME (sym), "btext") == 0 ||
++	  strcmp (SYMBOL_NAME (sym), "mp_startup") == 0 ||
++	  strcmp (SYMBOL_NAME (sym), "fork_trampoline") == 0)
++        {
++	  /*
++	   * Ugly kluge: user space addresses aren't separated from kernel
++	   * ones by range; if encountering a trap from user space, just
++	   * return a 0 to stop the trace.
++	   * Do the same for entry points of kernel processes to avoid
++	   * printing garbage.
++	   */
++	  pc = 0;
++        }
++      if (strncmp (SYMBOL_NAME (sym), "tl1_", 4) == 0)
++        {
++          pc_addr = fi->frame + sizeof (struct frame) +
++	    offsetof (struct trapframe, tf_tpc);
++          READ_PC (pc, pc_addr, buf);
++	}
++    }
++  return (pc);
 +}
 +
 +#endif /* __sparc64__ */
@@ -685,3 +744,4 @@
 +  add_target (&kcore_ops);
 +  add_com ("proc", class_obscure, set_proc_cmd, "Set current process context");
 +}
+
