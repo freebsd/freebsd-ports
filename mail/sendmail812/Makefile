@@ -74,7 +74,7 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 .else
 CONFLICTS+=	sendmail*+ldap*-8.*
 .endif
-.if defined(SENDMAIL_WITH_SASL)
+.if defined(SENDMAIL_WITH_SASL) && !defined(SENDMAIL_WITH_SASL2)
 SASL_SUFFIX?=	+sasl1
 CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+tls+ldap-8.* \
@@ -98,7 +98,6 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+sasl+ldap-8.* \
 		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 .else
