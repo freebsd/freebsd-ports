@@ -83,8 +83,6 @@ share/examples/pccts/13/test.g
 @dirrm share/examples/pccts/3
 @dirrm share/examples/pccts/4
 @dirrm share/examples/pccts/5
-@dirrm share/examples/pccts/6/A
-@dirrm share/examples/pccts/6/B
 @dirrm share/examples/pccts/6
 @dirrm share/examples/pccts/7
 @dirrm share/examples/pccts/8
