@@ -12,6 +12,8 @@ MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 
 MAINTAINER=	batman@udel.edu
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 GNU_CONFIGURE=	yes

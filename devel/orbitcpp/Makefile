@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
 USE_GLIB=	yes
