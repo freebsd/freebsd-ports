@@ -23,19 +23,19 @@ lib/libsigc.a
 lib/libsigc.so
 lib/libsigc.so.1
 share/aclocal/sigc++.m4
-share/doc/libsigc++/API
-share/doc/libsigc++/FAQ
-share/doc/libsigc++/FEATURES
-share/doc/libsigc++/README
-share/doc/libsigc++/UML
-share/doc/libsigc++/conventions
-share/doc/libsigc++/diagrams
-share/doc/libsigc++/marshal
-share/doc/libsigc++/powerusers
-share/doc/libsigc++/requirements
-share/doc/libsigc++/riscos
-share/doc/libsigc++/signals
-share/doc/libsigc++/win32
+%%PORTDOCS%%share/doc/libsigc++/API
+%%PORTDOCS%%share/doc/libsigc++/FAQ
+%%PORTDOCS%%share/doc/libsigc++/FEATURES
+%%PORTDOCS%%share/doc/libsigc++/README
+%%PORTDOCS%%share/doc/libsigc++/UML
+%%PORTDOCS%%share/doc/libsigc++/conventions
+%%PORTDOCS%%share/doc/libsigc++/diagrams
+%%PORTDOCS%%share/doc/libsigc++/marshal
+%%PORTDOCS%%share/doc/libsigc++/powerusers
+%%PORTDOCS%%share/doc/libsigc++/requirements
+%%PORTDOCS%%share/doc/libsigc++/riscos
+%%PORTDOCS%%share/doc/libsigc++/signals
+%%PORTDOCS%%share/doc/libsigc++/win32
 share/sigc++-1.0/sigc++/macros/basic_signal.h.m4
 share/sigc++-1.0/sigc++/macros/bind.h.m4
 share/sigc++-1.0/sigc++/macros/class_slot.h.m4
@@ -46,3 +46,9 @@ share/sigc++-1.0/sigc++/macros/retbind.h.m4
 share/sigc++-1.0/sigc++/macros/rettype.h.m4
 share/sigc++-1.0/sigc++/macros/slot.h.m4
 share/sigc++-1.0/sigc++/macros/template.macros.m4
+@dirrm include/sigc++-1.0/sigc++
+@dirrm include/sigc++-1.0
+%%PORTDOCS%%@dirrm share/doc/libsigc++
+@dirrm share/sigc++-1.0/sigc++/macros
+@dirrm share/sigc++-1.0/sigc++
+@dirrm share/sigc++-1.0
