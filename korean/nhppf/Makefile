@@ -1,13 +1,12 @@
 # New ports collection makefile for:    nhppf-2.1
-# Version required:     2.1
 # Date created:         19 Apr 1997
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nhppf-2.1
-PKGNAME=	ko-nhppf-2.1
+PORTNAME=	nhppf
+PORTVERSION=	2.1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/ \
 		ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/

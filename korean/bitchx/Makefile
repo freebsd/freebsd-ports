@@ -1,16 +1,16 @@
 # New ports collection makefile for:	BitchX ircII client patched for korean
-# Version required:	kr-75p1
 # Date created:		3 Jun 1999
 # Whom:			hollywar
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bitchx-ko
-PKGNAME=        ko-bitchx-75p1
+PORTNAME=	bitchx
+PORTVERSION=	75.1
 CATEGORIES=	korean net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+DISTNAME=	bitchx-ko
 
 MAINTAINER=	hollywar@mail.holywar.net
 

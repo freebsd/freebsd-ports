@@ -1,13 +1,12 @@
 # New ports collection makefile for:    nhpf-1.42
-# Version required:     1.42
 # Date created:         25 May 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nhpf-1.42
-PKGNAME=	ko-nhpf-1.42
+PORTNAME=	nhpf
+PORTVERSION=	1.42
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/applications/
 

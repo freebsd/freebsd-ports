@@ -1,16 +1,16 @@
 # New ports collection makefile for:    HLaTeX PS fonts-wansungstd
-# Version required:             0.98
 # Date created:                 Sun Aug  9 18:05:29 KST 1998
 # Whom:                         CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=               HLaTeX-${HLATEX_ENCODING}-0.98
-PKGNAME=                ko-HLaTeX-${HLATEX_ENCODING}std-0.98
+PORTNAME=		HLaTeX-${HLATEX_ENCODING}std
+PORTVERSION=		0.98
 CATEGORIES=             korean print
 MASTER_SITES=           ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/ \
 			ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/${HLATEX_ENCODING}/
+DISTNAME=               HLaTeX-${HLATEX_ENCODING}-0.98
 DISTFILES=              HLaTeX-0.98.tar.bz2 ${HLATEX_FONTS_BASE}
 
 MAINTAINER=             cjh@kr.freebsd.org

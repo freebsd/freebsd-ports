@@ -1,12 +1,11 @@
 # New ports collection makefile for:	nvi-1.79 + multilingual patch(euc-kr)
-# Version required:	1.79
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	ko-nvi-euckr-1.79.19991117
+PKGNAMESUFFIX=	-euckr
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT

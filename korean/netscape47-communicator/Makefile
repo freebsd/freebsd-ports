@@ -1,5 +1,4 @@
 # New ports collection makefile for: Netscape browser with Korean resources
-# Version required:	4.7
 # Date created:		14 Jun 1999
 # Whom:			cjh@kr.freebsd.org
 #

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    hmconv
-# Version required:     1.0p3
 # Date created:         31 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hmconv1.0pl3
-PKGNAME=	ko-hmconv-1.0p3
+PORTNAME=	hmconv
+PORTVERSION=	1.0.3
 CATEGORIES=	korean mail
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hmconv/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/code/hmconv/
+DISTNAME=	hmconv1.0pl3
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 

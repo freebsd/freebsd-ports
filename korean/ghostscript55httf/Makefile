@@ -1,5 +1,4 @@
 # New ports collection makefile for:	freetype-ghostscript
-# Version required:	5.10ft
 # Date created:		27 Mar 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
@@ -10,7 +9,8 @@
 #   default korean font yet
 #
 
-DISTNAME=	ko-ghostscript-ft-5.10
+PORTNAME=	ghostscript
+PORTVERSION=	5.10
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.pdb.sni.de/pub/utilities/misc/	\
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/	\
@@ -21,6 +21,8 @@ MASTER_SITES=	ftp://ftp.pdb.sni.de/pub/utilities/misc/	\
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/misc/
 MASTER_SITE_SUBDIR=	ghostscript
+PKGNAMESUFFIX=	-ft
+DISTNAME=	${PKGNAME}
 DISTFILES=	${PCL3_DRV} ${DECRYPT_PDF} ${GS_SOURCES} \
 		${VFLIB_GS} ${KFFTYPE} ${KFFTYPE_PATCH} \
 		${HFFTYPE} ${GS_CID_PATCH}
