@@ -8,7 +8,8 @@
 PORTNAME=	icoconvert
 PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mox.net/downloads/
+MASTER_SITES=	http://www.mox.net/downloads/ \
+		http://www.xunix.org/~flz/distfiles/
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A small utility to convert Windows icon files into .xpm and .png files
