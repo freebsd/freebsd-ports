@@ -34,7 +34,7 @@
 +#if defined(__FreeBSD__) && defined(LDT_AUTO_ALLOC)
 +        ret = i386_set_ldt(LDT_AUTO_ALLOC, (union descriptor *)d, 1);
 +        array.entry_number = ret;
-+        teb_sel = ret;
++        teb_sel = LDT_SEL(ret);
 +#else
          ret = i386_set_ldt(array.entry_number, (union descriptor *)d, 1);
 +#endif
