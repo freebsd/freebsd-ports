@@ -1,0 +1,13 @@
+****************************************************************************
+ NOTE: Warning message about locale.
+
+  This binary is not linked with libxpg4 shared library by default.
+  If your LANG environment variable has a value but "C", the following
+  warning message may be displayed:
+
+  	Warning: locale not supported by C library, locale unchanged
+
+  If you complain about this message, type `make install USE_XPG4=YES'
+  at the "${PORTSDIR}/editors/japanese" directory to re-make this package.
+
+****************************************************************************
