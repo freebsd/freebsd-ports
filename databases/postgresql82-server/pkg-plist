@@ -1,5 +1,5 @@
 @unexec if cmp -s %D/pgsql/.profile %D/pgsql/dot.profile.dist; then rm -f %D/pgsql/.profile; fi
-etc/rc.d/pgsql.sh
+etc/rc.d/010.pgsql.sh
 pgsql/dot.profile.dist
 @exec [ -f %D/pgsql/.profile ] || (cp %D/pgsql/dot.profile.dist %D/pgsql/.profile && chown pgsql:pgsql %D/pgsql/.profile)
 pgsql/bin/createdb
@@ -92,5 +92,4 @@ pgsql/post-install-notes
 @dirrm pgsql/man/man1
 @dirrm pgsql/man/manl
 @dirrm pgsql/man
-@unexec rmdir %D/pgsql/data 2>/dev/null || true
-@unexec rmdir %D/pgsql 2>/dev/null || true
+@dirrm pgsql

@@ -16,4 +16,4 @@ If you built in the TCL support, you can load the Pg package into your
 TCL scripts as easily as ``package require Pgtcl''.
 
 To start PostgreSQL, run the startup script:
-%%PREFIX%%/etc/rc.d/pgsql.sh start
+%%PREFIX%%/etc/rc.d/010.pgsql.sh start
