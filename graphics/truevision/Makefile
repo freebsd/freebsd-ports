@@ -8,6 +8,7 @@
 
 PORTNAME=	truevision
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +19,18 @@ LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_GTK=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
-CFLAGS+=	${PTHREAD_FLAGS}
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_FLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-post-patch:
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@${PERL} -pi -e "s,Bison ,Bison,g" ${WRKSRC}/configure
 	@${PERL} -pi -e "s,-lgthread,-lgthread12,g ; \
 		s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/src/Makefile.in
