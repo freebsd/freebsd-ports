@@ -1,0 +1,7 @@
+# pure-ftpd
+pure-ftpd	auth	sufficient	pam_skey.so
+pure-ftpd	auth	requisite	pam_cleartext_pass_ok.so
+#pure-ftpd	auth	sufficient	pam_kerberosIV.so	try_first_pass
+pure-ftpd	auth	required	pam_unix.so		try_first_pass
+pure-ftpd	account	required	pam_permit.so
+pure-ftpd	session	required	pam_permit.so

@@ -18,4 +18,6 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
 %%PORTDOCS%%@dirrm share/doc/pure-ftpd
 share/examples/pure-ftpd/xml_python_processors.txt
+share/examples/pure-ftpd/pam/pure-ftpd
+@dirrm share/examples/pure-ftpd/pam
 @dirrm share/examples/pure-ftpd
