@@ -788,6 +788,7 @@ v6eval/ct/ipsec/RTU_common.def
 v6eval/ct/ipsec/index.html
 v6eval/ct/ipsec/ipsecaddr.def
 v6eval/ct/ipsec/ipsecaddr.def.tmpl
+v6eval/ct/ipsec/HTR_A_In_DM_DSTH_optdata_afterAH.html
 v6eval/ct/ipsec4-udp/.footer
 v6eval/ct/ipsec4-udp/00README
 v6eval/ct/ipsec4-udp/HTR_A_2SA_DspiDip.def
