@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	odbc
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.ch-werner.de/rubyodbc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,15 +20,13 @@ LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-cflags="${PTHREAD_CFLAGS}"
+RUBY_WITH_PTHREAD=	yes
+
+CONFIGURE_ARGS=	--with-pthread-cflags="${PTHREAD_CFLAGS}" \
+		--with-pthread-libs="${PTHREAD_LIBS}"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README doc/odbc.html
-
-post-patch:
-	${RUBY} -i -pe '/require \x27mkmf\x27/ and $$_ += "$$libs.sub!(/-lc\\b/, ENV[\x27PTHREAD_LIBS\x27])\n"' \
-		${WRKSRC}/${RUBY_EXTCONF}
 
 post-install:
 .if !defined(NOPORTDOCS)
