@@ -10,7 +10,7 @@ PORTVERSION=	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 
-MAINTAINER=	naddy@mips.rhein-neckar.de
+MAINTAINER=	naddy@mips.inka.de
 
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}

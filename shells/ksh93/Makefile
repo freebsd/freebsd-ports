@@ -14,7 +14,7 @@ CATEGORIES=		shells
 DISTNAME=		ast-base-98.bsd.i386
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		naddy@mips.rhein-neckar.de
+MAINTAINER=		naddy@mips.inka.de
 
 ONLY_FOR_ARCHS=		i386
 RESTRICTED=		"Requires user to register with AT&T."
