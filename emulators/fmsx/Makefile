@@ -6,21 +6,42 @@
 #
 
 PORTNAME=	fmsx
-PORTVERSION=	2.2
+PORTVERSION=	2.7
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/fMSX/
-DISTNAME=	fMSX22
+DISTNAME=	fMSX27
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
+
 USE_XLIB=	yes
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}/MSX
 
+OPTIONS=	BPP16 "With BPP16" Off \
+		BPP24 "With BPP24" Off \
+		BPP32 "With BPP32 (see pkg-message)" On
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.ifdef(WITH_BPP32)
+	${REINPLACE_CMD} -e 's/%%BPP%%/BPP32/' ${WRKSRC}/Makefile
+.endif
+.ifdef(WITH_BPP24)
+	${REINPLACE_CMD} -e 's/%%BPP%%/BPP24/' ${WRKSRC}/Makefile
+.endif
+.ifdef(WITH_BPP16)
+	${REINPLACE_CMD} -e 's/%%BPP%%/BPP16/' ${WRKSRC}/Makefile
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${PREFIX}/bin
+	${REINPLACE_CMD} "s,PREFIX,${PREFIX},g" ${PREFIX}/bin/fmsx
 	${INSTALL_PROGRAM} ${WRKSRC}/fmsx ${PREFIX}/bin/fmsx.bin
 	${INSTALL_PROGRAM} ${WRKSRC}/rddsk ${PREFIX}/bin/fmsx-rddsk
 	${INSTALL_PROGRAM} ${WRKSRC}/wrdsk ${PREFIX}/bin/fmsx-wrdsk
@@ -31,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/fmsx
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

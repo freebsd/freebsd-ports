@@ -1,26 +1,26 @@
---- Makefile.orig	Fri Aug  4 02:23:33 2000
-+++ Makefile	Thu Aug 17 04:50:41 2000
-@@ -43,11 +43,10 @@
+--- Makefile.orig	Mon Dec 31 20:01:16 2001
++++ Makefile	Sat Feb 28 11:20:12 2004
+@@ -51,10 +51,10 @@
  # If you are getting linker errors about not found X11 functions,
  # change the -L/usr/X11R6/lib to the directory where X11
  # libraries libX11.* and libXext.* are located on your system.
 -CC      = gcc
 -DEFINES = -DFMSX -DUNIX -DLSB_FIRST -DDEBUG -DMITSHM \
+-          -DDISK -DNARROW -DSOUND -DBPP16 -DZLIB
+-CFLAGS  = -O3 -Wall -I/usr/X11R6/include -L/usr/X11R6/lib ${DEFINES}
 +CC      ?= gcc
 +DEFINES = -DFMSX -DUNIX -DLSB_FIRST -DMITSHM \
-           -DDISK -DNARROW -DSOUND -DBPP16
--CFLAGS  = -O3 -fomit-frame-pointer \
--          -I/usr/X11/include -L/usr/X11/lib ${DEFINES}
-+CFLAGS  += -I${X11BASE}/include ${DEFINES}
- OBJECTS = fMSX.o MSX.o Z80.o AY8910.o SCC.o V9938.o Patch.o Debug.o \
-           Disk.o Unix.o LibUnix.o SndUnix.o MIDI.o
- 
-@@ -63,7 +62,7 @@
++          -DDISK -DNARROW -DSOUND -D%%BPP%% -DZLIB
++CFLAGS  = -O3 -Wall -I${X11BASE}/include -L${X11BASE}/lib ${DEFINES}
+ OBJECTS = fMSX.o MSX.o Patch.o Debug.o Disk.o Sound.o \
+ 	  Z80.o I8255.o AY8910.o YM2413.o SCC.o V9938.o I8251.o \
+ 	  Unix.o LibUnix.o SndUnix.o 
+@@ -71,7 +71,7 @@
  # fMSX Unix/X requires X11 libraries. See note above if you are
  # experiencing any problems.
  fmsx:	${OBJECTS}
--	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11
-+	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11 -L${X11BASE}/lib
+-	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11 -lz
++	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11 -L${X11BASE}/lib -lz
  
  # Clean up.
  clean:
