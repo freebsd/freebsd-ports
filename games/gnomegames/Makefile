@@ -20,20 +20,18 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  `gdk-pixbuf-config --cflags`" \
 		LIBS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
-		's|malloc\.h|stdlib.h|g'
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
+		's|malloc[.]h|stdlib.h|g'
 
 .include <bsd.port.mk>
