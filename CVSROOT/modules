@@ -680,6 +680,7 @@ btc		ports/audio/btc
 btoa		ports/converters/btoa
 bubblegum	ports/security/bubblegum
 bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
+bubblemon2	ports/sysutils/bubblemon2
 buffer		ports/misc/buffer
 buffy		ports/x11-toolkits/buffy
 bugbuddy2	ports/devel/bugbuddy2
