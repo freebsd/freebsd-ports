@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	linux-netscape
-PORTVERSION=	6.2
-PORTREVISION=	1
+PORTVERSION=	6.2.1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -62,7 +61,7 @@ DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files-v2.tar.gz
+PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -76,7 +75,7 @@ LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
-RESTRICTED=	"license for Java plugin allows `internal use only'"
+RESTRICTED=	"License for Java plugin allows internal use only.  Also see license for Netscape itself."
 NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 USE_XLIB=	yes
