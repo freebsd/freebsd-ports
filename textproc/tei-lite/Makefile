@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-lite
 DISTFILES=	teilite.dtd teilite.tag
 EXTRACT_ONLY=	# Empty
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML version of the TEI-Lite DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 		ftp://80.72.71.229/pub/FreeBSD/X11/cyrillic/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vess@slavof.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
 
 PLIST_FILES=	bin/xcyrBGR

@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jamlib
 
-MAINTAINER=	cyrilm@tower.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A JAM subroutine library
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

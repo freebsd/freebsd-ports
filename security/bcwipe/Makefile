@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jetico.com/linux/ \
 		http://www.underworld.hu/~crow/distfiles/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
-MAINTAINER=	crow@nektor.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BCWipe securely erase data from magnetic and solid-state memory
 
 NO_CDROM=	yes

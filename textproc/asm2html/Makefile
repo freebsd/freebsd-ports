@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://virtus.ath.cx/asm2html/ \
 		http://asm2html.kerneled.com/
 
-MAINTAINER=	tuxsuximus@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts NASM syntax assembly code to HTML code
 
 MAN1=		asm2html.1

@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/P4X/DTD/
 DISTNAME=	dtd
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr

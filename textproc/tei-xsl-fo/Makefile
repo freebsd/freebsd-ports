@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-xsl-fo
 DISTNAME=	teixsl-fo
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT Stylesheets to convert TEI to XSL Formatting Objects
 
 BROKEN=		"Checksum mismatch"

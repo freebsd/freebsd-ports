@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt toolkit library for Coin
 
 LIB_DEPENDS=	Coin.41:${PORTSDIR}/graphics/Coin

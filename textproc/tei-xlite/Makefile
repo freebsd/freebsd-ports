@@ -15,7 +15,7 @@ DISTNAME=	teixlite
 EXTRACT_SUFX=	.dtd
 EXTRACT_ONLY=	# Empty
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML version of the TEI-Lite DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr

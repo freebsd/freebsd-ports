@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Software/carthage/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser and clean-up tool for SGML DTDs
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison

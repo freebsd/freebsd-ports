@@ -30,7 +30,7 @@ EXTRACT_ONLY+=	# Empty, needed for PDF-only install
 EXTRACT_ONLY+=	teip3p3x.tar.gz
 .endif
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
 LATEST_LINK=	tei-guidelines-p3
