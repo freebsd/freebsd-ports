@@ -24,7 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=	wmwork.1
+MAN1=		wmwork.1
+PLIST_FILES=	bin/wmwork
 
 CPPFLAGS=	-I${X11BASE}/include
 LDFLAGS=	-L${X11BASE}/lib

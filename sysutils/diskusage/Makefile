@@ -15,6 +15,7 @@ COMMENT=	Shows current user diskusage and sum in human-readable format
 
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/diskusage
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/diskusage

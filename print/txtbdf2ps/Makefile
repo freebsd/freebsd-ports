@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.txt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator TXT + BDF to PS
 
+PLIST_FILES=	bin/txtbdf2ps
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

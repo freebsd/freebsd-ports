@@ -21,6 +21,7 @@ EXTRACT_AFTER_ARGS=	#empty
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNO_MALLOC_DECL"
 MAN1=		detex.1
+PLIST_FILES=	bin/detex
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin

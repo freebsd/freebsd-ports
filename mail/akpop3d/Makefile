@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 daemon aimed to be small and secure
 
 MAN8=		akpop3d.8
+PLIST_FILES=	bin/akpop3d
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

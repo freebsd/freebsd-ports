@@ -17,6 +17,7 @@ COMMENT=	Backup Copy programm
 
 MAN1=		cpbk.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/cpbk
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cpbk ${PREFIX}/bin

@@ -18,7 +18,8 @@ COMMENT=	CVS patchsets
 USE_GMAKE=	yes
 ALL_TARGET=	cvsps
 
-MAN1=	cvsps.1
+MAN1=		cvsps.1
+PLIST_FILES=	bin/cvsps
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsps ${PREFIX}/bin

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse compile man pages from formatted form
 
 MAN1=		rman.1
+PLIST_FILES=	bin/rman
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rman

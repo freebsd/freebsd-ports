@@ -15,5 +15,6 @@ COMMENT=	Translate GNU info files into HTML pages
 
 MAN1=		info2html.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/info2html
 
 .include <bsd.port.mk>

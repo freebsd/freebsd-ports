@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to print a large (one month per page) calendar
 
 MAN1=		bigyear.1
+PLIST_FILES=	bin/bigyear
 
 post-extract:
 	${RM} ${WRKSRC}/bigyear

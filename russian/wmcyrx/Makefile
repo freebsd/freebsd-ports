@@ -17,6 +17,7 @@ COMMENT=	The cyrillic keyboard layout manager for Window Maker
 
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/wmcyrx2
 
 .include <bsd.port.pre.mk>
 

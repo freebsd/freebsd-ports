@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical file manager and image viewer aimed towards new users
 
+PLIST_FILES=	bin/endeavour
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

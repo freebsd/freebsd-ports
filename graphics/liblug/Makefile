@@ -16,6 +16,7 @@ COMMENT=	A multi-format graphics manipulation library
 
 LIB_DEPENDS=		tiff.4:${PORTSDIR}/graphics/tiff
 
+PLIST_FILES=		lib/liblug.a
 USE_XLIB=		yes
 
 WRKSRC=			${WRKDIR}/lug

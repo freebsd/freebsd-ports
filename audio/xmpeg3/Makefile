@@ -18,6 +18,7 @@ COMMENT=	Simple TCL interface to the Amp Mpeg-3 player
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+PLIST_FILES=	bin/xmpeg3
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/xmpeg3

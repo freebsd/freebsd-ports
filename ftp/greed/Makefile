@@ -20,6 +20,7 @@ USE_REINPLACE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		greed.1
+PLIST_FILES=	bin/greed
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-funroll-all-loops -ffast-math,${CFLAGS}," \

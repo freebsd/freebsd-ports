@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WinZip like program written in java
 
+PLIST_FILES=	share/java/classes/jzip.org.jar
 USE_ZIP=	yes
 USE_JAVA=	1.2+
 NEED_JAVAC=	yes

@@ -17,6 +17,8 @@ NO_WRKSUBDIR=	yes
 
 CONFLICTS=	psmisc-*
 
+PLIST_FILES=	bin/pstree
+
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
 

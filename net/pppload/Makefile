@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		pppload.1
+PLIST_FILES=	bin/pppload
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pppload ${PREFIX}/bin

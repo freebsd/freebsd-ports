@@ -18,6 +18,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=   yes
+PLIST_FILES=	bin/tkregexp
 USE_X_PREFIX=	yes
 
 do-install:

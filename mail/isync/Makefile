@@ -22,6 +22,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		isync.1
+PLIST_FILES=	bin/isync
 
 CPPFLAGS=	-I${LOCALBASE}/include/db3 -I${OPENSSLINC}
 LDFLAGS=	-L${LOCALBASE}/lib -ldb3 -L${OPENSSLLIB} -lssl -lcrypto

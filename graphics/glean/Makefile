@@ -19,6 +19,7 @@ COMMENT=	Suite of OpenGL conformance tests
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+PLIST_FILES=	bin/glean
 WRKSRC=		${WRKDIR}/glean/src
 USE_BZIP2=	yes
 USE_GL=		yes

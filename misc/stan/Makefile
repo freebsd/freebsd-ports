@@ -16,6 +16,7 @@ COMMENT=	Generate several statisical information of a stream
 
 GNU_CONFIGURE=	yes
 
-MAN1=	stan.1
+MAN1=		stan.1
+PLIST_FILES=	bin/stan
 
 .include <bsd.port.mk>

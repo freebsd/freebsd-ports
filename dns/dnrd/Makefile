@@ -21,6 +21,7 @@ USE_GMAKE=		yes
 USE_REINPLACE=		yes
 
 MAN8=			dnrd.8
+PLIST_FILES=		sbin/dnrd
 
 post-patch:
 .for F in main.c master.c

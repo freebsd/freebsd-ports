@@ -17,6 +17,7 @@ COMMENT=	Sun PC NFS authentication and printing server
 
 MAN8=		pcnfsd.8
 MANCOMPRESSED=	maybe
+PLIST_FILES=	libexec/rpc.pcnfsd
 
 NO_WRKSUBDIR=
 

@@ -20,6 +20,7 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 NO_CDROM=	Possible trademark infringement
 
+PLIST_FILES=	bin/xothello
 USE_X_PREFIX=	yes
 
 pre-build:

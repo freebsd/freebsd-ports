@@ -14,6 +14,7 @@ DISTFILES=	new-osaka.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator of Japanese EUC documents into Osaka language
 
+PLIST_FILES=	bin/osaka
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:

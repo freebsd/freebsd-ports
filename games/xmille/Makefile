@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/Mille
 
 USE_IMAKE=	yes
 MAN1=		xmille.1
+PLIST_FILES=	bin/xmille
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.[ao]' -delete

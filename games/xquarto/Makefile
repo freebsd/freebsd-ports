@@ -16,6 +16,7 @@ COMMENT=	X version of simple but tricky board game
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xquarto.6
+PLIST_FILES=	bin/xquarto
 
 pre-configure:
 	@${ECHO_CMD} "MANSUFFIX=6" >>${WRKSRC}/src/Imakefile

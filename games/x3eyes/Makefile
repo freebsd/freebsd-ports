@@ -16,6 +16,7 @@ COMMENT=	An xeyes-like game except with 3 eyes
 
 USE_IMAKE=	yes
 MAN1=		x3eyes.1
+PLIST_FILES=	bin/x3eyes
 
 post-extract:
 	@( cd ${WRKSRC}; ${CP} x3eyes.1 x3eyes.man )

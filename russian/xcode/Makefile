@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto detect encoding and convert to koi8, CP-1251 or cp866
 
+PLIST_FILES=	bin/xcode
 USE_BZIP2=	yes
 
 do-install:

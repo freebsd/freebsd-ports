@@ -20,5 +20,6 @@ USE_XPM=	yes
 ALL_TARGET=	clean all
 
 MAN1=	wmSun.1
+PLIST_FILES=	bin/wmSun
 
 .include <bsd.port.mk>

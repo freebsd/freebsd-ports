@@ -19,6 +19,7 @@ USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	rfbproxy.1
+MAN1=		rfbproxy.1
+PLIST_FILES=	bin/rfbproxy
 
 .include <bsd.port.mk>

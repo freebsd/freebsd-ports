@@ -25,6 +25,7 @@ USE_GNOME=	glib12
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include `${IMLIB2_CONFIG} --cflags`
 MAKE_ENV=	CC=${CXX} LDFLAGS="`${IMLIB2_CONFIG} --libs`"
+PLIST_FILES=	bin/deep_zoom
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" -e "s|^CFLAGS=|CFLAGS+=|g" \

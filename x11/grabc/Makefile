@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab a color from screen
 
+PLIST_FILES=	bin/grabc
 USE_XLIB=	yes
 CFLAGS+=	-I${X11BASE}/include
 LIBS+=		-L${X11BASE}/lib -lX11

@@ -22,6 +22,7 @@ USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/ija
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

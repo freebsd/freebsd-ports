@@ -16,6 +16,7 @@ COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 MAN1=		dxpc.1
+PLIST_FILES=	bin/dxpc
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

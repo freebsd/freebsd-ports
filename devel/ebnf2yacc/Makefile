@@ -17,4 +17,6 @@ COMMENT=	EBNF to YACC
 
 GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/ebnf2yacc
+
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Sendmail logfile summary tool
 USE_REINPLACE=	yes
 ALL_TARGET=	ALL
 MAN8=		mreport.8
+PLIST_FILES=	sbin/mreport
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/^.TH mreport 1/.TH mreport 8/g; s/^.LO 1/.LO 8/g;" \

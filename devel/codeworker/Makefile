@@ -16,6 +16,7 @@ DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parsing tool and a source code generator
 
+PLIST_FILES=	bin/codeworker
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes

@@ -19,6 +19,7 @@ CONFLICTS=	ImageMagick-[0-9]* goblin-*
 GNU_CONFIGURE=	yes
 
 MAN1=		display.1
+PLIST_FILES=	bin/display
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/display ${PREFIX}/bin/display

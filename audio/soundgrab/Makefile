@@ -29,6 +29,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=	soundgrab.1
+PLIST_FILES=	bin/soundgrab
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/soundgrab ${PREFIX}/bin

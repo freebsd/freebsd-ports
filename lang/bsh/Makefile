@@ -16,6 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java scripting environment
 
+PLIST_FILES=	share/java/classes/bsh.jar
 USE_JAVA=	1.1+
 NO_BUILD=	yes
 

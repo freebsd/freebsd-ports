@@ -21,6 +21,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 
 MAN1=		ctrace.1
+PLIST_FILES=	sbin/ctrace
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${PREFIX}/sbin

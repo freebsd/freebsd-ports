@@ -16,6 +16,7 @@ COMMENT=	Enhanced tftpd(8) from Yale University and cisco Systems
 NO_WRKSUBDIR=
 MAN8=		tftpd.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	libexec/tftpd
 
 pre-build:
 	(cd ${WRKSRC}/classes; ${MAKE})

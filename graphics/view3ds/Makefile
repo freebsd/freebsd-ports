@@ -23,6 +23,7 @@ LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PLIST_FILES=	bin/view3ds
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_MESA=	yes

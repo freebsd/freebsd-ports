@@ -18,6 +18,7 @@ COMMENT=	Tool for testing software by bombarding the program with random data
 GNU_CONFIGURE=	yes
 
 MAN1=		fuzz.1
+PLIST_FILES=	bin/fuzz
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

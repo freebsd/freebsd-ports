@@ -20,5 +20,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -zxf -
 USE_BZIP2=	yes
 MAKEFILE=	${FILESDIR}/Makefile.dist
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+PLIST_FILES=	bin/bgrab
 
 .include <bsd.port.mk>

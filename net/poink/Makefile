@@ -20,7 +20,8 @@ USE_ZIP=	yes
 BROKEN=		"Hostname resolution broken on ${MACHINE_ARCH}"
 .endif
 
-MAN1=	poink.1
+MAN1=		poink.1
+PLIST_FILES=	bin/poink
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/poink ${PREFIX}/bin

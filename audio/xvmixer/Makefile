@@ -16,6 +16,7 @@ COMMENT=	Open Look-based audio mixer
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+PLIST_FILES=	bin/xvmixer
 USE_REINPLACE=	yes
 
 post-patch:

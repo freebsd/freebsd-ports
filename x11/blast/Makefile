@@ -19,6 +19,7 @@ COMMENT=	Blast blows holes through windows
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 MAN1=		blast.1
+PLIST_FILES=	bin/blast
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/blast.c -I${X11BASE}/include -L${X11BASE}/lib -lX11 -lXext -o ${WRKSRC}/blast

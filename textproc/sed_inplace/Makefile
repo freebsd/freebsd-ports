@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modified version of the sed(1) which can do in-place editing of files
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/sed_inplace
 
 MAKEFILE=	${PKGDIR}/src/Makefile
 MAKE_ENV=	PKGDIR="${PKGDIR}"

@@ -15,6 +15,8 @@ COMMENT=	Graphics tool to split up a JPEG image and provide HTML for the slices
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+PLIST_FILES=	bin/jslice
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jslice ${PREFIX}/bin
 

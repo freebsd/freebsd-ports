@@ -18,6 +18,7 @@ COMMENT=	A fractal rendering program with nice 3d-display in realtime
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
+PLIST_FILES=	bin/kisomandel
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_QT_VER=	3

@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java version of GNU getopt family functions
 
+PLIST_FILES=	share/java/classes/getopt.jar
 USE_JAVA=	1.1+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

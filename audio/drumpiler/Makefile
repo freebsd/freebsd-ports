@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 USE_SDL=	yes
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 LIBS+=		`${SDL_CONFIG} --libs`
+PLIST_FILES=	bin/drumpiler
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SDL.h|SDL11/SDL.h|" ${WRKSRC}/drumpiler.c

@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		tvtwm.1
+PLIST_FILES=	bin/tvtwm
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	Read information about mp3s and oggs bitstream
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PLIST_FILES=	bin/mp3stat
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"

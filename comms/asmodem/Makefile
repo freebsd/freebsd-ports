@@ -19,5 +19,6 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 
 MAN1=		asmodem.1
+PLIST_FILES=	bin/asmodem
 
 .include <bsd.port.mk>

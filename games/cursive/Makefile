@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create ASCII character cursive handwriting
 
 MAN6=		cursive.6
+PLIST_FILES=	bin/cursive
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cursive ${PREFIX}/bin

@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover files from a corrupt FFS
 
 MAN8=		ffsrecov.8
+PLIST_FILES=	bin/ffsrecov
 
 .include <bsd.port.pre.mk>
 

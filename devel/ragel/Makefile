@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	AWK="${AWK}"
 
-MAN1=	ragel.1
+MAN1=		ragel.1
+PLIST_FILES=	bin/ragel
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

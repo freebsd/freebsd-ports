@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.hibernaculum.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
+PLIST_FILES=	bin/wmsmixer
 USE_XPM=	YES
 USE_IMAKE=	YES
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"

@@ -18,6 +18,7 @@ USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		asfsm.1
+PLIST_FILES=	bin/asfsm
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/asfsm.man ${PREFIX}/man/man1/asfsm.1

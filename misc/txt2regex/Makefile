@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/txt2regex
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash,g ; \

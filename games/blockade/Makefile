@@ -16,7 +16,8 @@ COMMENT=	An X version of the `blockade' Macintosh game
 
 USE_XLIB=	yes
 
-MAN6=	blockade.6
+MAN6=		blockade.6
+PLIST_FILES=	bin/blockade
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blockade ${PREFIX}/bin

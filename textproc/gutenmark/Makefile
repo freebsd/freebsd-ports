@@ -15,6 +15,7 @@ DISTNAME=	GutenMark_source_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Attractively formatting Project Gutenberg texts
 
+PLIST_FILES=	bin/GutenMark
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/GutenMark-source
 USE_GMAKE=	yes

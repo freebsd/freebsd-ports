@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.zophar.net/unix/Files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
+PLIST_FILES=	bin/gbe
 USE_GETOPT_LONG=yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

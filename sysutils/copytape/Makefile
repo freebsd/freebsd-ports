@@ -26,6 +26,7 @@ EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
 
 MAN1=			copytape.1
 MAN5=			copytape.5
+PLIST_FILES=		bin/copytape
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/copytape ${PREFIX}/bin/copytape

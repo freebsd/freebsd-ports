@@ -18,6 +18,7 @@ COMMENT=	Generates mazes on a text terminal and lets you traverse them
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/TextMaze
 NO_BUILD=	yes
+PLIST_FILES=	bin/textmaze
 
 post-patch:
 	@${PERL} -pi -e "s,/usr/local/bin/perl,${PERL},g" ${WRKSRC}/textmaze

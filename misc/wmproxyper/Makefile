@@ -17,6 +17,7 @@ COMMENT=	Displays Distributed.net Personal Proxy current status and progress
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
+PLIST_FILES=	bin/wmproxyper
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes

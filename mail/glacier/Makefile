@@ -15,6 +15,7 @@ MASTER_SITES=	http://linuxberg.tele.net/files/gnome/network/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GNOME mail user agent
 
+PLIST_FILES=	bin/glacier
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		skkfep.1
+PLIST_FILES=	bin/skkfep
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/skkfep ${PREFIX}/bin

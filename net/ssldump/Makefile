@@ -25,5 +25,6 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--sbindir=${PREFIX}/bin	
 
 MAN1=		ssldump.1
+PLIST_FILES=	bin/ssldump
 
 .include <bsd.port.post.mk>

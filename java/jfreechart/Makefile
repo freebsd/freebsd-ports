@@ -17,6 +17,7 @@ COMMENT=	A free Java class library for generating charts
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
+PLIST_FILES=	share/java/classes/jfreechart.jar
 USE_JAVA=	1.2+
 
 ANT?=		${LOCALBASE}/bin/ant

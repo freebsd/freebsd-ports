@@ -17,6 +17,7 @@ COMMENT=	Inserts the GNOME menu into the WindowMaker menu
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
+PLIST_FILES=	bin/gnome2wmaker
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

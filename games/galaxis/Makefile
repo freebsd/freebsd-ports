@@ -15,6 +15,7 @@ COMMENT=	Clone of the nifty little Macintosh game
 
 ALL_TARGET=	# empty
 MAN6=		galaxis.6
+PLIST_FILES=	bin/galaxis
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/galaxis ${PREFIX}/bin/galaxis

@@ -23,7 +23,8 @@ MAKE_ENV=	CXX="${CXX} ${QTCPPFLAGS} -I${X11BASE}/include" \
 		LIBS="${QTCFGLIBS} -L${X11BASE}/lib"
 ALL_TARGET=	# empty
 
-MAN1=	xfontselector.1
+MAN1=		xfontselector.1
+PLIST_FILES=	bin/xfontselector
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CXX,#CXX,g ; s,^CXXFLAGS,#CXXFLAGS,g ; \

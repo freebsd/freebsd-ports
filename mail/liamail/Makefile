@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A graphical mail client
 
+PLIST_FILES=	bin/liamail
 USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes

@@ -22,5 +22,6 @@ COMMENT=	A 7-segment digital clock with optional military time and alarm
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes
 MAN1=		dclock.1
+PLIST_FILES=	bin/dclock
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable application/ms-rtf parser
 
 ALL_TARGET=	rtfreader
+PLIST_FILES=	bin/rtfreader
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rtfreader ${PREFIX}/bin

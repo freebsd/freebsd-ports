@@ -16,5 +16,6 @@ COMMENT=	Utility for monitoring disk usage in a more visual way than du
 USE_PERL5=	yes
 
 MAN1=		durep.1
+PLIST_FILES=	bin/durep
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=	abcselect.1
+PLIST_FILES=	bin/abcselect
 
 post-patch:
 	@${PERL} -pi -e "s,/usr/bin/perl,${SETENV} perl,g" ${WRKSRC}/abcselect

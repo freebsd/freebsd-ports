@@ -16,6 +16,7 @@ COMMENT=	FTP replacement with advanced user interface
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes
 MAN1=		ncftp2.1
+PLIST_FILES=	bin/ncftp2
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5

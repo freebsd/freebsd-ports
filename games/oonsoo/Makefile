@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A solitaire card game for X
 
+PLIST_FILES=	bin/oonsoo
 USE_XLIB=	yes
 
 pre-patch:

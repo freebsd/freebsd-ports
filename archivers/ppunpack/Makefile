@@ -21,6 +21,7 @@ NO_CDROM=	${RESTRICTED}
 
 WRKSRC=		${WRKDIR}/PPUnpack
 MAKE_ARGS=	CC="${CC}" COPTS="${CFLAGS}"
+PLIST_FILES=	bin/ppunpack
 ALL_TARGET=	ppunpack
 
 do-install:

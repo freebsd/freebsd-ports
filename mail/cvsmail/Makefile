@@ -17,6 +17,7 @@ COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no
 MAN1=		cvsmail.1
+PLIST_FILES=	bin/cvsmail
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${PREFIX}/bin

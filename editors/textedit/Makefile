@@ -19,5 +19,6 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 WRKSRC=		${WRKDIR}/textedit
 USE_IMAKE=	yes
 MAN1=		textedit.1
+PLIST_FILES=	bin/textedit
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ USE_REINPLACE=	yes
 ALL_TARGET=	unrtf
 
 MAN1=		unrtf.1
+PLIST_FILES=	bin/unrtf
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC| ; s|^CFLAGS|#CFLAGS| ; \

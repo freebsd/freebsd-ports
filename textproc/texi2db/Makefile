@@ -19,6 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	texi2db.1
+MAN1=		texi2db.1
+PLIST_FILES=	bin/texi2db
 
 .include <bsd.port.mk>

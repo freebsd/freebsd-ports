@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
+PLIST_FILES=	bin/Mixer.app
 WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
 
 USE_XPM=	yes

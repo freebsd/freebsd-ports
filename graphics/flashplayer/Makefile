@@ -18,6 +18,7 @@ COMMENT=	GPL standalone Flash (TM) player
 
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 
+PLIST_FILES=	bin/swfplayer
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Player

@@ -19,5 +19,6 @@ USE_GETOPT_LONG=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		dvdtape.1
+PLIST_FILES=	bin/dvdtape
 
 .include <bsd.port.mk>

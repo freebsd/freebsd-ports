@@ -17,5 +17,6 @@ COMMENT=	Ant hill simulation on X11 root window
 WRKSRC=		${WRKDIR}/xantfarm
 USE_IMAKE=	yes
 MAN1=		xantfarm.1
+PLIST_FILES=	bin/xantfarm
 
 .include <bsd.port.mk>

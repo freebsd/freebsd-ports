@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 ALL_TARGET=	disktool
 
 MAN1=		disktool.1
+PLIST_FILES=	bin/disktool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile

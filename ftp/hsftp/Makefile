@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline
 MAKEFILE=	makefile
 MAN1=		hsftp.1
+PLIST_FILES=	bin/hsftp
 
 .if defined(WITH_OPENSSH)
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh

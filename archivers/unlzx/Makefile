@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts .lzx archives from Amiga systems
 
 NO_WRKSUBDIR=		yes
+PLIST_FILES=	bin/unlzx
 
 do-extract:
 	${MKDIR} ${WRKDIR}

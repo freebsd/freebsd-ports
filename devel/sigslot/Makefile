@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Signal/Slot Library
 
+PLIST_FILES=	include/sigslot.h
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -30,6 +30,7 @@ do-install:
 		@${INSTALL_PROGRAM}	${WRKSRC}/flow-extract ${PREFIX}/bin
 		@${INSTALL_MAN}		${WRKSRC}/flow-extract.1 ${PREFIX}/man/man1
 
-MAN1=	flow-extract.1
+MAN1=		flow-extract.1
+PLIST_FILES=	bin/flow-extract
 
 .include <bsd.port.mk>

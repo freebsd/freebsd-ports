@@ -18,5 +18,6 @@ GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	no
 MAN1=	cfe.1
+PLIST_FILES=	bin/cfe
 
 .include <bsd.port.mk>

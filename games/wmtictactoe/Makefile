@@ -17,6 +17,7 @@ DISTNAME=	wmtictactoe-1.1-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable TicTacToe game for WindowMaker and AfterStep
 
+PLIST_FILES=	bin/wmtictactoe
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/wmtictactoe.app/wmtictactoe
 USE_X_PREFIX=	yes

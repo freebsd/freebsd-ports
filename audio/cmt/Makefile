@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/cmt
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+PLIST_FILES=	lib/ladspa/cmt.so
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} \

@@ -18,5 +18,6 @@ COMMENT=	A tool for changing xterm attributes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAN1=		xtattr.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/xtattr
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.01.246.ne.jp/~m-sugano/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that outputs fortune messages
 
+PLIST_FILES=	bin/wmfortune
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes

@@ -30,7 +30,7 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV=	JX_INSTALL_ROOT="${X11BASE}/bin" \
 		JX_LIB_ROOT="${X11BASE}/lib"
-PLIST_SUB=	PORTNAME="${PORTNAME}"
+PLIST_FILES=	bin/systemg
 
 # Make environment
 PORTINCLUDES=	-I${X11BASE}/include/jx \

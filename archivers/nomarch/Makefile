@@ -21,6 +21,7 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN1=	nomarch.1
+PLIST_FILES=	bin/nomarch
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nomarch ${PREFIX}/bin

@@ -17,6 +17,8 @@ COMMENT=	A simple epplet for launching arbitrary programs
 
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 
+PLIST_FILES=	bin/E-Run.epplet
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes

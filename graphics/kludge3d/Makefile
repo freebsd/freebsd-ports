@@ -19,6 +19,7 @@ COMMENT=	A simple 3d editor
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds \
 		gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
+PLIST_FILES=	bin/kludge3d
 USE_PYTHON=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk20

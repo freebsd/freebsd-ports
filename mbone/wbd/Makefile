@@ -16,6 +16,7 @@ COMMENT=	A shared drawing (whiteboard) tool using multicast, compatible with wb
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
+PLIST_FILES=	bin/wbd
 WRKSRC=		${WRKDIR}/wbd
 MAKEFILE=	makefile
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based color picker
 
+PLIST_FILES=	bin/gcolor
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

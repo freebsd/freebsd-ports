@@ -20,5 +20,6 @@ COMMENT=	Daemonic X Labyrinth played directly with the mouse pointer
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xlaby.6
+PLIST_FILES=	bin/xlaby
 
 .include <bsd.port.mk>

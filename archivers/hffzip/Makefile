@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File compressor based on Huffman coding
 
+PLIST_FILES=	bin/hffzip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:

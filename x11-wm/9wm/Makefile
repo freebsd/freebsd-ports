@@ -15,5 +15,6 @@ COMMENT=	An 8 1/2-like Window Manager for X
 
 USE_IMAKE=	yes
 MAN1=		9wm.1
+PLIST_FILES=	bin/9wm
 
 .include <bsd.port.mk>

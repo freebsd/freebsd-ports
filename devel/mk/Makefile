@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
 
 MAN1=		mk.1
+PLIST_FILES=	bin/mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mk ${PREFIX}/bin

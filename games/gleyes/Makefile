@@ -23,5 +23,6 @@ USE_MESA=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		gleyes.1
+PLIST_FILES=	bin/gleyes
 
 .include <bsd.port.mk>

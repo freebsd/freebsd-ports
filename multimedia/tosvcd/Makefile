@@ -18,6 +18,7 @@ COMMENT=	SVCD transcoder
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
 
+PLIST_FILES=	bin/tosvcd
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile

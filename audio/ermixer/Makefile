@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=--enable-qt
 CONFIGURE_ENV+=	QTDIR="${X11BASE}"
 CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS} -L${X11BASE}/lib"
 CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
+PLIST_FILES=	bin/ermixer
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"

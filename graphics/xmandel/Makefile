@@ -24,6 +24,7 @@ USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
 NO_WRKSUBDIR=	yes
 MAN1=		xmandel.1
+PLIST_FILES=	bin/xmandel
 
 pre-patch:
 	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c

@@ -18,6 +18,7 @@ COMMENT=	Python script that downloads weather data and can be cronned
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/pyWeather
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g ; \

@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remotely kill trino nodes
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	sbin/trinokiller
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DockApp Graphics Library
 
+PLIST_FILES=	lib/libwmapp.a
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

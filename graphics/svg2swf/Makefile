@@ -19,6 +19,7 @@ COMMENT=	Convert an SVG file into a Macromedia Flash (swf) file
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PACKAGE_DIR}/sax/saxexts.py:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/ming.py:${PORTSDIR}/graphics/py-ming
 
+PLIST_FILES=	bin/svg2swf
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes

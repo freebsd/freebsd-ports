@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+PLIST_FILES=	lib/ladspa/aw.so
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/aw.so ${LOCALBASE}/lib/ladspa

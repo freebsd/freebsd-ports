@@ -15,5 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
 MAN8=		choparp.8
+PLIST_FILES=	sbin/choparp
 
 .include <bsd.port.mk>

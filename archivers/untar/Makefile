@@ -19,6 +19,7 @@ COMMENT=	Lists/Extracts files from a "*.tgz" or "*.gz" archive
 
 NO_WRKSUBDIR=	yes
 NO_INSTALL_MANPAGES=		yes
+PLIST_FILES=	bin/untar
 
 PROG=	untar
 

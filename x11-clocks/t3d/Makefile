@@ -23,5 +23,6 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
 MAN1=		t3d.1
+PLIST_FILES=	bin/t3d
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	ELF to a.out conversion tool by Jakub Jelinek and Pete Zaitcev
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		elftoaout.1
+PLIST_FILES=	bin/elftoaout
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/elftoaout ${PREFIX}/bin

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quine-McClusky process simplification tool
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/qmc
 
 do-build:
 	@cd ${WRKSRC} ; \

@@ -17,6 +17,7 @@ MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	# empty
 
 MAN6=		bs.6
+PLIST_FILES=	bin/bs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bs ${PREFIX}/bin

@@ -19,6 +19,7 @@ EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.postcodes
 NO_BUILD=	yes
+PLIST_FILES=	share/misc/uk.postcodes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uk.postcodes ${PREFIX}/share/misc

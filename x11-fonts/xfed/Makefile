@@ -19,5 +19,6 @@ USE_IMAKE=	yes
 MAKE_FLAGS=	MANDIR=${PREFIX}/man/man1 BINDIR=${PREFIX}/bin -f
 WRKSRC=		${WRKDIR}/xfed
 MAN1=		xfed.1
+PLIST_FILES=	bin/xfed
 
 .include <bsd.port.mk>

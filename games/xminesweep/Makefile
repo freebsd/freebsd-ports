@@ -20,5 +20,6 @@ COMMENT=	X11 minesweeper game
 
 USE_IMAKE=	yes
 MAN1=		xminesweep.1
+PLIST_FILES=	bin/xminesweep
 
 .include <bsd.port.mk>

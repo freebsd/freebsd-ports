@@ -16,6 +16,7 @@ COMMENT=	A XML stream reformatter
 
 MAN1=	xmlindent.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/xmlindent
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} lexer

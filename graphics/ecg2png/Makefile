@@ -18,6 +18,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/ecg2png
 USE_REINPLACE=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes

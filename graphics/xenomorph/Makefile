@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image filter system based on volterra and morphologic filters
 
+PLIST_FILES=	bin/xenomorph
 USE_BZIP2=	yes
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes

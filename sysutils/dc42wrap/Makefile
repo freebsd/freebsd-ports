@@ -16,5 +16,6 @@ COMMENT=	Wrap a \"raw\" floppy image as an Apple DiskCopy 4.2 file
 MAKEFILE=	Makefile,freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} NOMANCOMPRESS=yes
 MAN1=		dc42wrap.1
+PLIST_FILES=	bin/dc42wrap
 
 .include <bsd.port.mk>

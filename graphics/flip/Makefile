@@ -19,6 +19,7 @@ RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 
 WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
+PLIST_FILES=	bin/flip
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"

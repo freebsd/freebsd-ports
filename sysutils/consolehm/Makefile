@@ -20,5 +20,6 @@ WRKSRC=		${WRKDIR}/consolehm/consolehm
 GNU_CONFIGURE=	yes
 MAN8=		chm.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/chm
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	Extract binary files from multi-segment uuencoded postings
 
 MAKEFILE=	makefils/linux.mkf
 MAN1=		unpost.1
+PLIST_FILES=	bin/unpost
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unpost ${PREFIX}/bin

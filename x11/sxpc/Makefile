@@ -22,5 +22,6 @@ EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}
 
 MAN1=		sxpc.1
+PLIST_FILES=	bin/sxpc
 
 .include <bsd.port.mk>

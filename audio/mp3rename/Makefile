@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A renaming program for mp3 files based on their id3tag
 
+PLIST_FILES=	bin/mp3rename
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 do-build:

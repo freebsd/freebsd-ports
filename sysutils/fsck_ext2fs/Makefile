@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ext2fs filesystem consistency check and interactive repair
 
 MAN8=		fsck_ext2fs.8
+PLIST_FILES=	sbin/fsck_ext2fs
 
 do-build:
 	@cd ${WRKSRC}/fsck_ext2fs && ${SETENV} ${MAKE_ENV} ${MAKE}

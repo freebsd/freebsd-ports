@@ -21,6 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 USE_PERL5=	YES
 
 NO_BUILD=	YES
+PLIST_FILES=	%%SITE_PERL%%/PV.pm
 
 do-install:
 	${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}

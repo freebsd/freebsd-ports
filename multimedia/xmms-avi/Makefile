@@ -20,6 +20,7 @@ COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	lib/xmms/Input/libavixmms.so
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl

@@ -23,6 +23,7 @@ BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
+PLIST_FILES=	bin/sam2p
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

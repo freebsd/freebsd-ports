@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--enable-netrc \
 		--with-expat
 ALL_TARGET=	cadaver
 
-MAN1=	cadaver.1
+MAN1=		cadaver.1
+PLIST_FILES=	bin/cadaver
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

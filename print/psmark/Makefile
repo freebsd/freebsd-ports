@@ -18,7 +18,8 @@ COMMENT=	Renders a vertical string on any PostScript document
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=	psmark.1
+MAN1=		psmark.1
+PLIST_FILES=	bin/psmark
 
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c

@@ -14,6 +14,7 @@ MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML color picker written using GTK
 
+PLIST_FILES=	bin/gyroscope
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes

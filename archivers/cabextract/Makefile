@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
+PLIST_FILES=	bin/cabextract
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 

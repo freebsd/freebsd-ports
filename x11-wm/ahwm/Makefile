@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 
 MAN5=		ahwmrc.5
 MLINKS=		ahwmrc.5 ahwm.5
+PLIST_FILES=	bin/ahwm
 
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		kenny.1
+PLIST_FILES=	bin/kenny
 
 program=	kenny
 manpage=	kenny.1

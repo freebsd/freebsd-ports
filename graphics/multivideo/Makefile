@@ -18,6 +18,7 @@ COMMENT=	An image sequence viewer
 
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
+PLIST_FILES=	bin/multivideo
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes

@@ -18,7 +18,8 @@ COMMENT=	Rotates a file so that lines become columns and vice versa
 
 ALL_TARGET=	${PORTNAME}
 
-MAN1=	rot.1
+MAN1=		rot.1
+PLIST_FILES=	bin/rot
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rot ${PREFIX}/bin

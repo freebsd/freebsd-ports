@@ -26,7 +26,8 @@ USE_JAVA=	1.2+
 POD2MAN?=	pod2man
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=	denature.1
+MAN1=		denature.1
+PLIST_FILES=	bin/denature
 
 post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}| ; \

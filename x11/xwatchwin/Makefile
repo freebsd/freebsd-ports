@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watch a window on another X server
 
 MAN1=		xwatchwin.1
+PLIST_FILES=	bin/xwatchwin
 
 USE_IMAKE=	yes
 

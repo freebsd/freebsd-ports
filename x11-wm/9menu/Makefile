@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
 #BROKEN=		unfetchable
 
+PLIST_FILES=		bin/9menu
 USE_XLIB=		yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=

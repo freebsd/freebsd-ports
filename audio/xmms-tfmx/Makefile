@@ -17,6 +17,7 @@ COMMENT=	XMMS Input plugin for playing TFMX tunes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libtfmx.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

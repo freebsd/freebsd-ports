@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+PLIST_FILES=	%%SITE_PERL%%/perlmenu.pm
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/perlmenu.pm ${SITE_PERL}

@@ -23,5 +23,6 @@ USE_FREETYPE=	yes
 USE_MOTIF=	yes
 
 MAN1=		xmbdfed.1
+PLIST_FILES=	bin/xmbdfed
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	NuFX archive utility
 
 WRKSRC=		${WRKDIR}/nulib
 MAN1=		nulib.1
+PLIST_FILES=	bin/nulib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nulib ${PREFIX}/bin/nulib

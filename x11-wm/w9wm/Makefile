@@ -19,6 +19,7 @@ USE_IMAKE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		w9wm.1
+PLIST_FILES=	bin/w9wm
 
 post-patch:
 	@${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/client.c

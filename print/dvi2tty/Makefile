@@ -18,5 +18,6 @@ COMMENT=	A dvi-file previewer for text only devices
 
 IGNOREFILES=	${DISTFILES}
 MAN1=		dvi2tty.1
+PLIST_FILES=	bin/dvi2tty
 
 .include <bsd.port.mk>

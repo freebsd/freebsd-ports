@@ -22,7 +22,8 @@ USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=	nofgpg.1
+MAN1=		nofgpg.1
+PLIST_FILES=	bin/nofgpg
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/share,${X11BASE}/share/gnome,g" ${WRKSRC}/nofgpg

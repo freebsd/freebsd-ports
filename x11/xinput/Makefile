@@ -17,5 +17,6 @@ COMMENT=	Very useful utility for configuring and testing XInput devices
 USE_IMAKE=	yes
 
 MAN1=		xinput.1
+PLIST_FILES=	bin/xinput
 
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		aviplay.0:${PORTSDIR}/multimedia/avifile \
 		popt:${PORTSDIR}/devel/popt
 
+PLIST_FILES=	bin/rebler
 USE_BZIP2=	yes
 AVIFILE_CONFIG?=	${LOCALBASE}/bin/avifile-config
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \

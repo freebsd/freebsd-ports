@@ -18,5 +18,6 @@ COMMENT=	Pool/snooker/billiards/carrom/etc game
 
 USE_IMAKE=	yes
 MAN1=		flying.1
+PLIST_FILES=	bin/flying
 
 .include <bsd.port.mk>

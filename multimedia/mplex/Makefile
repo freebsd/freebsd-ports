@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplexes MPEG component streams into system layers
 
 MAN1=		mplex.1
+PLIST_FILES=	bin/mplex
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mplex ${PREFIX}/bin

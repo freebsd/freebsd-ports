@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" prefix="${PREFIX}" \
 		INCLUDES="-I${X11BASE}/include" LIBPATH="-L${X11BASE}/lib"
 MAN1=		aewm++.1x
+PLIST_FILES=	bin/aewm++
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

@@ -16,5 +16,6 @@ COMMENT=	A paint tool for Shodo, the Japanese traditional writing character
 
 USE_IMAKE=	yes
 MAN1=		xshodo.1
+PLIST_FILES=	bin/xshodo
 
 .include <bsd.port.mk>

@@ -21,5 +21,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		lzop.1
+PLIST_FILES=	bin/lzop
 
 .include <bsd.port.mk>

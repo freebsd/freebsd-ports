@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for measuring general performance of the Internet
 
+PLIST_FILES=	bin/oproute
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>

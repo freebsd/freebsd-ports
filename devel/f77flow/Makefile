@@ -16,7 +16,8 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Analyze the structure of a fortran77 program
 
 ALL_TARGET=
-MAN1=			flow.1
+MAN1=		flow.1
+PLIST_FILES=	bin/flow
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/flow ${PREFIX}/bin/flow

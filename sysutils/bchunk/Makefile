@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	utils/disk-management
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts .bin/.cue files to .iso/audio
 
-MAN1=	bchunk.1
+MAN1=		bchunk.1
+PLIST_FILES=	bin/bchunk
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} bchunk.c -o bchunk

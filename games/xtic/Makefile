@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xtic.1
+PLIST_FILES=	bin/xtic
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/configure.h

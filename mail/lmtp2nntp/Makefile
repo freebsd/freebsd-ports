@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"OSSP mail to news gateway"
 
 MAN8=		lmtp2nntp.8
+PLIST_FILES=	sbin/lmtp2nntp
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	Samba configuration tool for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
+PLIST_FILES=	bin/gnosamba
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_REINPLACE=	yes

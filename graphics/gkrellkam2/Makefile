@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 MAN5=		gkrellkam-list.5
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellkam2.so
 
 MAKE_ENV+=	MKDIR="${MKDIR}" \
 		INSTALL_DATA="${INSTALL_DATA}"

@@ -17,6 +17,7 @@ COMMENT=	Python extension module to play sounds and background music
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/pysolsoundserver.so
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_SDL=	mixer sdl

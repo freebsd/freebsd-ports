@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	star
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A program to create encrypted tar archives
 
+PLIST_FILES=	bin/sectar
 USE_GETOPT_LONG=	yes
 USE_LIBTOOL=		yes
 

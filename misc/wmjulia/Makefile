@@ -14,6 +14,7 @@ MASTER_SITES=	http://web.novalis.org/programs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that creates an animated Julia set
 
+PLIST_FILES=	bin/wmjulia
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XPM=	yes

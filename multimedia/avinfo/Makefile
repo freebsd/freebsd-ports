@@ -17,6 +17,7 @@ COMMENT=	A utility for displaying AVI header information
 
 WRKSRC=		${WRKDIR}/src
 
+PLIST_FILES=	bin/avinfo
 USE_ZIP=	yes
 
 post-patch:

@@ -18,6 +18,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bubblegum.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/bubblegum
 
 pre-build:
 	${CP} ${WRKSRC}/doc/bubblegum.man ${WRKSRC}/doc/bubblegum.1

@@ -16,6 +16,7 @@ COMMENT=	A proxy for DNS queries
 GNU_CONFIGURE=	YES
 
 MAN1=		dnsproxy.1
+PLIST_FILES=	sbin/dnsproxy
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${PREFIX}/sbin

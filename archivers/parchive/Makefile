@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parity Archiver - makes multiple parity volumes from a set of files
 
 MAKEFILE=	${FILESDIR}/Makefile
+PLIST_FILES=	bin/parchive
 WRKSRC=		${WRKDIR}/par-cmdline
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Another WindowMaker load gauge
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/wmavgload
 ALL_TARGET=	wmavgload
 
 .include <bsd.port.mk>

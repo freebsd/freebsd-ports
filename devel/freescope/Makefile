@@ -21,7 +21,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=	freescope.1
+MAN1=		freescope.1
+PLIST_FILES=	bin/freescope
 
 .include <bsd.port.pre.mk>
 
