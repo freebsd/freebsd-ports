@@ -7,20 +7,17 @@
 
 PORTNAME=	opera
 PKGNAMEPREFIX=	linux-
-PORTVERSION=	5.05-tp1
-PORTREVISION=	2
+PORTVERSION=	6.0-20011122.1
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/tgz/505/ \
-		ftp://ftp.opera.com/pub/opera/linux/505/
-DISTNAME=	opera-5.05_tp1-static_qt-libnpp-0.1.1
-DISTFILES=	${DISTNAME}.x86${EXTRACT_SUFX}
+MASTER_SITES=	http://opera.online.no/linux/600/tp1/ \
+		ftp://ftp.opera.com/pub/opera/linux/600/tp1/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-static_qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
-		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
+		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 
 ONLY_FOR_ARCHS=	i386
 
@@ -28,8 +25,7 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 do-configure:
-	${SED} 's|%%PREFIX%%|${PREFIX}|; s|%%DATADIR%%|${DATADIR}|;' \
-	    <${FILESDIR}/opera.sh >${WRKSRC}/wrapper.sh
+	${PERL} -p -i -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/install.sh
 
 do-install:
 	(cd ${WRKSRC} && ./install.sh \
@@ -38,5 +34,7 @@ do-install:
 	    --docdir=${DOCSDIR} \
 	    --sharedir=${DATADIR} \
 	    --plugindir=${DATADIR}/plugins )
+	rmdir ${DATADIR}/uninst/rollback_${PORTVERSION}
+	rmdir ${DATADIR}/uninst
 
 .include <bsd.port.mk>
