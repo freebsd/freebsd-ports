@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.36
+PORTVERSION=	0.11.37
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ PORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in
-	@rm ${WRKSRC}/docs/FAQ~ ${WRKSRC}/docs/gentoo.1x~
+	@rm ${WRKSRC}/docs/gentoo.1x~
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
