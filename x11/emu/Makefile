@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	me@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS+=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
@@ -30,4 +32,4 @@ MAN1=		emu.1
 pre-configure:
 	cd ${WRKSRC}/client ; ${LN} -s ../doc/emu.man .
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
@@ -197,4 +199,4 @@ display-message:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
