@@ -1,0 +1,18 @@
+--- Makefile.orig	Thu Feb 25 21:31:39 1999
++++ Makefile	Thu Feb 25 21:36:58 1999
+@@ -1,11 +1,11 @@
+-CC = gcc
++#CC = gcc
+ #CC = egcs
+ #FLAGS = -g
+ 
+ gmixer: gmixer.c 
+-	$(CC) $(FLAGS) `gtk-config --cflags` `gtk-config --libs` gmixer.c -o gmixer
++	$(CC) $(CFLAGS) `gtk11d-config --cflags` `gtk11d-config --libs` gmixer.c -o gmixer
+ install: gmixer
+-	install -s -m 755 -o 0 -g 0 gmixer /usr/X11R6/bin/
+-	install -m 644 -o 0 -g 0 icons/gmixer.xpm /usr/share/pixmaps/
++	install -c -s -m 755 -o 0 -g 0 gmixer $(PREFIX)/bin
++	install -c -m 644 -o 0 -g 0 icons/gmixer.xpm $(PREFIX)/share/pixmaps 
+ clean:
+ 	rm -f gmixer
