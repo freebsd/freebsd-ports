@@ -21,8 +21,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xgs.rom
 
 BROKEN='fetch'
 
-MAINTAINER=	sutton@aardvark.apana.org.au
-
 DIST_SUBDIR=	xgs
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
