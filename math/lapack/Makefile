@@ -17,6 +17,7 @@ MAINTAINER=	jmz@FreeBSD.org
 DIST_SUBDIR=	lapack
 
 INSTALLS_SHLIB=	yes
+PLIST=		${WRKDIR}/PLIST
 
 MANCOMPRESSED=	maybe
 MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \
@@ -210,10 +211,20 @@ pre-fetch:
 .if !defined(ENABLE_TESTING) || ${ENABLE_TESTING} != "YES"
 	@${ECHO} "Set ENABLE_TESTING to YES to enable testing and timing."
 .endif
+pre-install:
+.if !defined(NOPROFILE)
+	@${CAT} ${PKGDIR}/PLIST > ${PLIST}
+.else
+	@${SED} -e /_p.a/d ${PKGDIR}/PLIST > ${PLIST}
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
+.if !defined(NOPROFILE)
+	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas_p.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack_p.a ${PREFIX}/lib
+.endif
 .if ${PORTOBJFORMAT} == "elf"
 	${LN} -sf libblas.so.2 ${PREFIX}/lib/libblas.so
 	${LN} -sf liblapack.so.3 ${PREFIX}/lib/liblapack.so
