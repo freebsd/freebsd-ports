@@ -3466,6 +3466,7 @@ koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
 koffice-i18n-sv	ports/misc/koffice-i18n-sv
 koffice-i18n-th	ports/misc/koffice-i18n-th
+koffice-i18n-tr	ports/misc/koffice-i18n-tr
 koffice-kde3	ports/editors/koffice-kde3	
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
