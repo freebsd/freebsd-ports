@@ -203,6 +203,7 @@
     SUBDIR += p5-Apache-Language
     SUBDIR += p5-Apache-MP3
     SUBDIR += p5-Apache-NNTPGateway
+    SUBDIR += p5-Apache-PageKit
     SUBDIR += p5-Apache-Peek
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-Apache-Reload

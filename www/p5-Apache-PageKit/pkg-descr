@@ -1,0 +1,29 @@
+PageKit is a web applications framework that is based on mod_perl.
+This framework is distinguished from others such as Embperl and Mason
+by providing a clear separation of programming, content and
+presentation.
+
+It does this by implementing a Model/View/Content/Controller (MVCC)
+design paradigm:
+    - Model is user supplied Perl Classes
+    - View is set of PageKit Templates and/or XSLT files
+    - Content is set of XML Files
+    - Controller is PageKit
+
+This allows your programmers, designers and content editors to work
+independently with clean well-defined interfaces.
+
+PageKit provides the following features:
+    - Component-based architecture
+    - Language Localization and charset translation
+    - Session Management
+    - Input Validation
+    - Sticky HTML Forms
+    - Authentication
+    - Co-branding and XML,WML, and PDF output
+    - Automatic Dispatching of URIs
+    - Easy Error Handling
+
+WWW: http://pagekit.org/
+
+Seamus Venasse <svenasse@polaris.ca>

@@ -1,0 +1,73 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Content.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/View.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Model.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Param.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/setup_eg.pl
+lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/ErrorReport.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPathTemplate.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/PageKit/.packlist
+%%PORTDOCS%%share/doc/Apache-PageKit/README
+%%PORTDOCS%%share/doc/Apache-PageKit/features.xml
+%%PORTDOCS%%share/doc/Apache-PageKit/manual.xml
+%%PORTDOCS%%share/doc/Apache-PageKit/reference.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Config/Config.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Config/PageKit_Config-0.97.dtd
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/charset.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/content_loop.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/customize.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/form_validation.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/index.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/language.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/license.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/login1.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/media_xslt.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/newacct1.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Content/restricted.xml
+%%PORTDOCS%%share/examples/Apache-PageKit/Model/MyPageKit/Common.pm
+%%PORTDOCS%%share/examples/Apache-PageKit/Model/MyPageKit/MyModel.pm
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/begin_cell.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/bottom.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/charset.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/content_loop.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/customize.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/demo_desc.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/end_cell.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/form_validation.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/index.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/language.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/license.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/login1.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/media.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/newacct1.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/restricted.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/simple_page.xsl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/top.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/pdf/media.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/pdf/simple_page.xsl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/print/bottom.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/print/top.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/wml/media.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/wml/simple_page.xsl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/xml/media.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/xml/simple_page.xsl
+%%PORTDOCS%%share/examples/Apache-PageKit/README
+%%PORTDOCS%%@dirrm share/doc/Apache-PageKit
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Config
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Content
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Model/MyPageKit
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Model
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View/Default
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View/pdf
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View/print
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View/wml
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View/xml
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit/View
+%%PORTDOCS%%@dirrm share/examples/Apache-PageKit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/PageKit
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
