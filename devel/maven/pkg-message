@@ -3,10 +3,10 @@ To work with Maven you need to set the following environment variables:
   * JAVA_HOME
     Set it to the base directory of your java installation.
   * MAVEN_HOME
-    Set it to ``%%PREFIX%%/%%DIR%%''.
+    Set it to ``%%DATADIR%%''.
 
 Then, you should initialize your repository with:
-  %%PREFIX%%/%%DIR%%/bin/install_repo.sh ~/.maven/repository
+  %%DATADIR%%/bin/install_repo.sh ~/.maven/repository
 
 If you are behind a proxy, create a ~/.mavenrc file with something like:
   MAVEN_OPTS="$MAVEN_OPTS -Dmaven.proxy.host=YOUR_PROXY_HOSTNAME
