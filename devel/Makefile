@@ -350,6 +350,7 @@
     SUBDIR += ruby-filelock
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-intl
+    SUBDIR += ruby-libglade
     SUBDIR += ruby-locale
     SUBDIR += ruby-optparse
     SUBDIR += ruby-property
