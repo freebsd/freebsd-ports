@@ -1,0 +1,11 @@
+--- man/Makefile.in~	Tue Jan  2 18:34:30 2001
++++ man/Makefile.in	Tue Jan  2 18:34:42 2001
+@@ -29,7 +29,7 @@
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
+ infodir = $(prefix)/info
+-mandir = $(mandirprefix)/man/man1
++mandir = $(mandirprefix)/man1
+ localedir = @localedir@
+ gnulocaledir = $(prefix)/share/locale
+ aliaspath = $(localedir):.
