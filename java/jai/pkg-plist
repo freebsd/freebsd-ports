@@ -1,0 +1,20 @@
+%%T%%/COPYRIGHT-jai.txt
+%%T%%/INSTALL-jai.txt
+%%T%%/LICENSE-jai.txt
+%%T%%/README-jai.txt
+%%T%%/jar/jai_codec.jar
+%%T%%/jar/jai_core.jar
+%%T%%/jar/mlibwrapper_jai.jar
+%%T%%/lib/libmlib_jai.so
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/jai_codec.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/jai_core.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/mlibwrapper_jai.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/lib/libmlib_jai.so %D/%%JAVA_HOME%%/jre/lib/i386
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/jai_codec.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/jai_core.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/mlibwrapper_jai.jar
+%%INSTALL_IN_JRE%%@unexec [ ! -e %D/%%IMAGEIO_DIR%%/jar/mlibwrapper_jai.jar ] || /bin/ln -sf %D/%%IMAGEIO_DIR%%/jar/mlibwrapper_jai.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/i386/libmlib_jai.so
+@dirrm %%T%%/lib
+@dirrm %%T%%/jar
+@dirrm %%T%%

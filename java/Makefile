@@ -27,6 +27,7 @@
     SUBDIR += j2sdkee13
     SUBDIR += jad
     SUBDIR += jaf
+    SUBDIR += jai
     SUBDIR += jakarta-bcel
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
