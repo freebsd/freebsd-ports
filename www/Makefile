@@ -84,6 +84,7 @@
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += netscape-remote
+    SUBDIR += netscape-wrapper
     SUBDIR += netscape3
     SUBDIR += netscape3-gold
     SUBDIR += netscape4-communicator
