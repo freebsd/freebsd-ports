@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.14.r17
-PORTREVISION=	1
+PORTVERSION=	0.94.14.r20
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
@@ -21,7 +21,12 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+INFO=		boa
 MAN8=		boa.8
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	boa.texi boa.html boa.txt boa_banner.png
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -38,13 +43,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/resolver.pl ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/boa.texi ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/boa.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/boa.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/boa_banner.png ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
+.endfor
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/docs/boa.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/boa.info ${PREFIX}/info/dir
-.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/boa.sh ]; then \
