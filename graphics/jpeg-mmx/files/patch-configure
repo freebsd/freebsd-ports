@@ -1,5 +1,14 @@
---- configure.orig	Sat Mar 21 14:08:57 1998
-+++ configure	Mon Aug  4 21:49:44 2003
+--- configure.orig	Tue Feb  3 16:49:23 2004
++++ configure	Fri Jul 30 04:20:34 2004
+@@ -1530,7 +1530,7 @@
+ if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
+   USELIBTOOL="yes"
+   LIBTOOL="./libtool"
+-  O="lo"
++  O="o"
+   A="la"
+   LN='$(LIBTOOL) --mode=link $(CC)'
+   INSTALL_LIB='$(LIBTOOL) --mode=install ${INSTALL}'
 @@ -1559,7 +1559,8 @@
    if test "x$LTSTATIC" = xno; then
      disable_static="--disable-static"
@@ -10,12 +19,3 @@
  fi
  
  # Select memory manager depending on user input.
-@@ -1647,7 +1648,7 @@
- # Extract the library version ID from jpeglib.h.
- echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
- echo "configure:1650: checking libjpeg version number" >&5
--JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
-+JPEG_LIB_VERSION=9
- echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
- 
- 

@@ -4,56 +4,60 @@
 #
 # $FreeBSD$
 #
-# PLEASE update print/ghostscript5 (there's a symlink that uses a hardwired
-# version number) when updating this port.  Thank you.
 
-PORTNAME=	jpeg
-PORTVERSION=	6b
-PORTREVISION=	3
+PORTNAME=	jpeg-mmx
+PORTVERSION=	0.1.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ijg.org/files/ \
-		ftp://ftp.uu.net/graphics/jpeg/ \
-		http://sylvana.net/jpegcrop/:exif
-DISTNAME=	jpegsrc.v${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		jpegexiforient.c:exif exifautotran.txt:exif
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mjpeg
 
-MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	IJG's jpeg compression utilities
+MAINTAINER=	ahze@ahze.net
+COMMENT=	IJG's jpeg compression utilities with MMX optimization
 
-WRKSRC=		${WRKDIR}/jpeg-6b
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
+
+ONLY_FOR_ARCHS=	i386
 
 USE_LIBTOOL_VER=13
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 
-ADDITIONAL_HEADER=	jinclude.h jpegint.h
+JPEG_EXT=	-mmx
+INCDIR=		include/${PORTNAME}
+
+BIN_FILES=	cjpeg djpeg jpegtran
+INC_FILES=	jconfig.h jerror.h jinclude.h jmorecfg.h jpegint.h jpeglib.h
+LIB_FILES=	libjpeg-mmx.a libjpeg-mmx.so libjpeg-mmx.so.62
+
+PORTDOCS=	README coderules.doc filelist.doc install.doc jconfig.doc \
+		libjpeg.doc structure.doc usage.doc wizard.doc
+PLIST_DIRS=	include/jpeg-mmx
+PLIST_FILES=	${BIN_FILES:S|^|bin/|:S|$|${JPEG_EXT}|} \
+		${INC_FILES:S|^|${INCDIR}/|} \
+		${LIB_FILES:S|^|lib/|}
 
 # define J_MAXMEM like "make J_MAXMEM=32" to limit max processing memory to 32Mb
 .if defined(J_MAXMEM)
 CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 .endif
 
-MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
-
-post-extract:
-	@${CP} ${DISTDIR}/jpegexiforient.c ${WRKSRC}/
-	@${CP} ${DISTDIR}/exifautotran.txt ${WRKSRC}/exifautotran
-
-post-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/jpeg
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
-	@${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
-.endif
-.for header in ${ADDITIONAL_HEADER}
-	@${INSTALL_DATA} ${WRKSRC}/${header} ${PREFIX}/include
+do-install:
+.for f in ${BIN_FILES}
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/${f} ${PREFIX}/bin/${f}${JPEG_EXT}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/jpegexiforient ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/exifautotran ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/${INCDIR}
+.for f in ${INC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${INCDIR}
+.endfor
+.for f in ${LIB_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/.libs/${f} ${PREFIX}/lib/
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
