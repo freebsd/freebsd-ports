@@ -7,6 +7,7 @@
 
 PORTNAME=	navi2ch
 PORTVERSION=	011030
+PORTREVISION?=	1
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/lisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,13 +17,17 @@ MAINTAINER=	sf@FreeBSD.org
 EMACS_PORT_NAME?=	emacs20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp/navi2ch
+CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch
 
 DOCDIR=		share/doc/ja/navi2ch
-.if ${EMACS_PORT_NAME} == emacs20
-PLIST_SUB=	XEMACS="@comment "
-.elif ${EMACS_PORT_NAME} == xemacs21-mule
-PLIST_SUB=	XEMACS=""
+PLIST_SUB=	LISPDIR=${LISPDIR}
+
+.if ${EMACS_PORT_NAME} == xemacs21-mule
+LISPDIR=	${EMACS_SITE_LISPDIR}
+PLIST_SUB+=	FSF="@comment " 
+.else
+LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
+PLIST_SUB+=	FSF=""
 .endif
 
 post-install:
