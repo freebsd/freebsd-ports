@@ -452,6 +452,7 @@ share/doc/db3/api_cxx/env_set_pageyield.html
 share/doc/db3/api_cxx/env_set_panicstate.html
 share/doc/db3/api_cxx/env_set_rec_init.html
 share/doc/db3/api_cxx/env_set_region_init.html
+share/doc/db3/api_cxx/env_set_server.html
 share/doc/db3/api_cxx/env_set_shm_key.html
 share/doc/db3/api_cxx/env_set_tas_spins.html
 share/doc/db3/api_cxx/env_set_tmp_dir.html
@@ -618,12 +619,15 @@ share/doc/db3/api_java/env_set_pageyield.html
 share/doc/db3/api_java/env_set_panicstate.html
 share/doc/db3/api_java/env_set_rec_init.html
 share/doc/db3/api_java/env_set_region_init.html
+share/doc/db3/api_java/env_set_server.html
 share/doc/db3/api_java/env_set_shm_key.html
+share/doc/db3/api_java/env_strerror.html
 share/doc/db3/api_java/env_set_tas_spins.html
 share/doc/db3/api_java/env_set_tmp_dir.html
 share/doc/db3/api_java/env_set_tx_max.html
 share/doc/db3/api_java/env_set_tx_timestamp.html
 share/doc/db3/api_java/env_set_verbose.html
+share/doc/db3/api_java/env_version.html
 share/doc/db3/api_java/lock_detect.html
 share/doc/db3/api_java/lock_get.html
 share/doc/db3/api_java/lock_id.html
@@ -684,7 +688,7 @@ share/doc/db3/index.html
 @dirrm share/doc/db3/ref/am
 @dirrm share/doc/db3/ref/upgrade.3.0
 @dirrm share/doc/db3/ref/am_conf
-@dirrm share/doc/db3/ref/arch 
+@dirrm share/doc/db3/ref/arch
 @dirrm share/doc/db3/ref/build_unix
 @dirrm share/doc/db3/ref/build_vxworks
 @dirrm share/doc/db3/ref/build_win
