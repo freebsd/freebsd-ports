@@ -22,4 +22,6 @@ PATCHFILES=	sedmb108.diff.gz
 PATCH_DIST_STRIP=	-p1
 FETCH_BEFORE_ARGS=	-b
 
+MAN1=		sed.1
+
 .include <bsd.port.mk>
