@@ -23,13 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAG
 
 MAN1=		gmake.1
 
-# Fscking GNU developers put 777 dirs into their tarball, so that anybody
-# could insert evil code into gmake without you even noticing by modifying
-# files during do-extract or do-configure.
-
-pre-extract:
-	${CHMOD} 700 ${WRKDIR}
-
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 
 post-install:
