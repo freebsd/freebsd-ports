@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1997/07/08 08:44:17 tg Exp $
+# $Id: Makefile,v 1.70 1997/07/08 10:11:10 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -61,6 +61,7 @@
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
     SUBDIR += p5-Sort-Versions
+    SUBDIR += p5-Storable
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
     SUBDIR += p5-TraceFuncs
