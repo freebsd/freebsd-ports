@@ -34,7 +34,7 @@ do-install:
 # For xemacs package install configuration
 	@${MKDIR} ${SITEPKGDIR}/lisp/prom-mew ${SITEPKGDIR}/pkginfo
 	@${LN} -sf ${ELISPDIR}/prom-mew.el ${SITEPKGDIR}/lisp/prom-mew/prom-mew.el
-	@${ECHO} 'pkginfo/MANIFEST.prom-mew' > ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
-	@${ECHO} 'lisp/prom-mew/prom-mew.el' >> ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
+	@${ECHO_CMD} 'pkginfo/MANIFEST.prom-mew' > ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
+	@${ECHO_CMD} 'lisp/prom-mew/prom-mew.el' >> ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
 
 .include <bsd.port.mk>

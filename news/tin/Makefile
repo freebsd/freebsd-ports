@@ -59,11 +59,11 @@ pre-configure:
 
 post-configure:
 	if nm /usr/lib/libc.a | ${GREP} -q strcasestr; then \
-		${ECHO} "#define HAVE_STRCASESTR 1" \
+		${ECHO_CMD} "#define HAVE_STRCASESTR 1" \
 			>> ${WRKSRC}/include/autoconf.h; \
 	fi
-	${ECHO} "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
-	${ECHO} "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
+	${ECHO_CMD} "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
+	${ECHO_CMD} "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
 
 post-build:
 	cd ${WRKSRC}/po; ${GMAKE}

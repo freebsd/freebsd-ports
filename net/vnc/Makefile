@@ -52,6 +52,6 @@ post-install:
 # Add to PLIST because VNC developers can't/won't freeze their doc
 # distfile.
 	(cd ${PREFIX}; ls share/doc/vnc/* >> ${TMPPLIST})
-	${ECHO} '@dirrm share/doc/vnc' >> ${TMPPLIST}
+	${ECHO_CMD} '@dirrm share/doc/vnc' >> ${TMPPLIST}
 .endif
 .include <bsd.port.mk>

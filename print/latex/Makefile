@@ -51,8 +51,8 @@ do-install:
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
 	@(cd ${WRKSRC}/graphics; for f in *.sty *.tex *.def; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done;\
-	    ${ECHO} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/graphics.cfg;\
-	    ${ECHO} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/color.cfg)
+	    ${ECHO_CMD} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/graphics.cfg;\
+	    ${ECHO_CMD} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/color.cfg)
 	@(cd ${WRKSRC}/psnfss; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done;\
 	 tar cf - tex fonts | tar -C ${PREFIX}/share/texmf/ -xf -)

@@ -110,12 +110,12 @@ pre-install:
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
 	@cd ${WRKSRC} && find -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
-	@${ECHO} "@dirrm share/sendmail" >>${PLIST}
+	@${ECHO_CMD} "@dirrm share/sendmail" >>${PLIST}
 .for i in ${DOCS}
-	@${ECHO} `${BASENAME} ${i}` | \
+	@${ECHO_CMD} `${BASENAME} ${i}` | \
 	${AWK} '{print "share/doc/sendmail/" $$1}' >>${PLIST}
 .endfor
-	@${ECHO} "@dirrm share/doc/sendmail" >>${PLIST}
+	@${ECHO_CMD} "@dirrm share/doc/sendmail" >>${PLIST}
 .endif
 
 # We want mail.local and rmail for our system.

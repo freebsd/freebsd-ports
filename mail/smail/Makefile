@@ -41,14 +41,14 @@ replace:
 .if ${OSVERSION} >= 400014
 	@${ECHO_MSG} "===> Activating smail in /etc/mail/mailer.conf"
 	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
-	@${ECHO} "#" > /etc/mail/mailer.conf
-	@${ECHO} -n "# Execute the smail sendmail program" >> /etc/mail/mailer.conf
-	@${ECHO} ", named ${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
-	@${ECHO} "#" >> /etc/mail/mailer.conf
-	@${ECHO} "sendmail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
-	@${ECHO} "send-mail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
-	@${ECHO} "mailq		${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
-	@${ECHO} "newaliases	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "#" > /etc/mail/mailer.conf
+	@${ECHO_CMD} -n "# Execute the smail sendmail program" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} ", named ${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "#" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "sendmail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "send-mail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "mailq		${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "newaliases	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
 .else
 	@${ECHO_MSG} "===> Replacing sendmail programs"
 	if [ -e /usr/sbin/sendmail ]; then \

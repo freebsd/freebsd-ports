@@ -27,8 +27,8 @@ do-build:
 		-DVERSION=\"1.0\" ${WRKSRC}/patanjali.c -o ${WRKSRC}/patanjali
 
 pre-install:
-	${ECHO} bin/patanjali > ${PLIST}
-	${ECHO} share/patanjali/patanjali-sutras-english.txt >> ${PLIST}
+	${ECHO_CMD} bin/patanjali > ${PLIST}
+	${ECHO_CMD} share/patanjali/patanjali-sutras-english.txt >> ${PLIST}
 
 do-install:
 	${MKDIR} ${DATADIR}

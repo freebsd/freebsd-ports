@@ -46,7 +46,7 @@ post-install:
 	@${MKDIR} ${GISTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*/Lib/* ${GISTDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${GISTDIR}
-	@${ECHO} "PyGist" > ${GISTDIR}/../PyGist.pth
+	@${ECHO_CMD} "PyGist" > ${GISTDIR}/../PyGist.pth
 	${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/*/Demo/* ${EXAMPLEDIR}
 

@@ -27,9 +27,9 @@ EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
 PLIST=		${WRKDIR}/.PLIST.more
 
 pre-configure:
-	@${ECHO} "%%PORTDOCS%%share/doc/popa3d/POPAUTH" >${PLIST}
+	@${ECHO_CMD} "%%PORTDOCS%%share/doc/popa3d/POPAUTH" >${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist >>${PLIST}
-	@${ECHO} "share/sendmail/cf/hack/popauth.m4" >>${PLIST}
+	@${ECHO_CMD} "share/sendmail/cf/hack/popauth.m4" >>${PLIST}
 
 post-patch:
 	@${PERL5} -pi -e "s=db1/db.h=db.h=" ${WRKSRC}/pop_root.c

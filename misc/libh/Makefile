@@ -29,7 +29,7 @@ DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 CVS_CMD?=	cvs -z3
 # arbitrary date for now.
 CVS_DATE=	Thu December 21 18:20:00 GMT 2001
-CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
+CVS_DATE_!=	${ECHO_CMD} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	:pserver:anonymous@usw4.freebsd.org:/home/libh/cvs
 STAMPFILE=	${DISTDIR}/${DISTNAME}/.stamp
 
@@ -50,7 +50,7 @@ do-fetch:
 			cd ${DISTDIR}; \
 			${TAR} xfz ${DISTNAME}.${CVS_DATE_}.tar.gz \
 				${DISTFILES}; \
-			${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
+			${ECHO_CMD} -n "${CVS_DATE}" > ${STAMPFILE}; \
 			exit; \
 		fi; \
 		unset CVS_RSH CVS_SERVER CVS_LOGIN || ${TRUE}; \
@@ -80,7 +80,7 @@ do-fetch:
 				if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
 					${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 				fi; \
-				${ECHO} -n ${CVS_DATE} > ${STAMPFILE}; \
+				${ECHO_CMD} -n ${CVS_DATE} > ${STAMPFILE}; \
 				${ECHO_MSG} ">> CVS checkout successful." ;\
 				exit; \
 			fi ;\

@@ -27,9 +27,9 @@ post-patch:
 	${PERL} -pi -e "s|^#!.+|#!${PERL}|; \
 		s|/usr/local/etc/sitescooper.cf|${PREFIX}/etc/sitescooper.cf|g; \
 		s|/usr/local/etc/sitescooper/sitescooper.cf|${PREFIX}/etc/sitescooper.cf.sample|g;" ${WRKSRC}/*.pl
-	${ECHO} "MakeDoc: pilot_makedoc" >> ${WRKSRC}/sitescooper.cf
-	${ECHO} "iSilo: iSiloBSD" >> ${WRKSRC}/sitescooper.cf
-	${ECHO} "SitescooperDir: ${PREFIX}/share/sitescooper" >> \
+	${ECHO_CMD} "MakeDoc: pilot_makedoc" >> ${WRKSRC}/sitescooper.cf
+	${ECHO_CMD} "iSilo: iSiloBSD" >> ${WRKSRC}/sitescooper.cf
+	${ECHO_CMD} "SitescooperDir: ${PREFIX}/share/sitescooper" >> \
 		${WRKSRC}/sitescooper.cf
 
 do-install:

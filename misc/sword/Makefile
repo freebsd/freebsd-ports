@@ -34,14 +34,14 @@ INCLUDES=	Greek2Greek.h GreekChars.h canon.h cipherfil.h defs.h \
 		zipcomprs.h zlib.h ztext.h zverse.h
 
 pre-build:
-	@${ECHO} "instdir:=	${PREFIX}" >${WRKSRC}/localport.cfg
+	@${ECHO_CMD} "instdir:=	${PREFIX}" >${WRKSRC}/localport.cfg
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libsword.a ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libsword.so ${PREFIX}/lib/libsword.so.1
 	${LN} -sf ${PREFIX}/lib/libsword.so.1 ${PREFIX}/lib/libsword.so
-	@${ECHO} "[Install]" >${PREFIX}/etc/sword.conf
-	@${ECHO} "DataPath=${DATADIR}" >>${PREFIX}/etc/sword.conf
+	@${ECHO_CMD} "[Install]" >${PREFIX}/etc/sword.conf
+	@${ECHO_CMD} "DataPath=${DATADIR}" >>${PREFIX}/etc/sword.conf
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${PREFIX}/include/sword
 .for file in ${INCLUDES}

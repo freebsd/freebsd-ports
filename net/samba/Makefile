@@ -103,10 +103,10 @@ post-install:
 	${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
 .if defined(PACKAGE_BUILDING)
-	${ECHO} "private/smbpasswd" >> ${TMPPLIST}
-	${ECHO} "@dirrm private" >> ${TMPPLIST}
+	${ECHO_CMD} "private/smbpasswd" >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm private" >> ${TMPPLIST}
 .else
-	${ECHO} "@unexec ${ECHO} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
 .endif
 
 .if !defined(NOPORTDOCS)

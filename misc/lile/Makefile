@@ -20,6 +20,6 @@ MAN1=		ile.1
 do-configure:
 	@(cd ${WRKSRC}; ${MV} Makefile Makefile.old; \
 	${SED} -e s:/usr/local:${PREFIX}: <Makefile.old > Makefile; \
-	${ECHO} all: ile >> Makefile; ${ECHO} CC=cc ${CFLAGS} >> Makefile)
+	${ECHO_CMD} all: ile >> Makefile; ${ECHO_CMD} CC=cc ${CFLAGS} >> Makefile)
 
 .include <bsd.port.mk>

@@ -39,17 +39,17 @@ MY_PROGRAMS=	ezmlm-make ezmlm-manage ezmlm-send ezmlm-reject ezmlm-return \
 		ezmlm-warn ezmlm-weed ezmlm-list ezmlm-sub ezmlm-unsub
 
 post-patch:
-	@${ECHO} ${PREFIX}/bin > ${WRKSRC}/conf-bin
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
-	@${ECHO} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
-	@${ECHO} ${PREFIX} > ${WRKDIR}/.PPREFIX
-	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
+	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
+	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.PPREFIX
+	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
 
 pre-install:
-	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
-	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
+	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.IPREFIX
+	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
 
 do-install:

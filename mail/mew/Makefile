@@ -85,7 +85,7 @@ post-install:
 #		${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 #
 #pre-arrange:
-#	${ECHO} ${COMMENT_TEXT} > ${PKGDIR}/pkg-comment
+#	${ECHO_CMD} ${COMMENT_TEXT} > ${PKGDIR}/pkg-comment
 #	${SETENV} ${SCRIPTS_ENV} WRKTMPDIR=${PKGDIR} TMPL_FILES=pkg-descr \
 #		${SH} ${FILESDIR}/tmpl2file.sh
 #	${SETENV} ${SCRIPTS_ENV} WRKTMPDIR=${PKGDIR} ${SH} ${FILESDIR}/message.sh

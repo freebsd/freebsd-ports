@@ -70,12 +70,12 @@ post-install:
 	 for i in ${MODULE_FILES}; do \
 		tfiles=`${EXTRACT_CMD} -Z -1 ${DISTDIR}/${DIST_SUBDIR}/$${i}`; \
 		for j in $${tfiles}; do \
-			${ECHO} "share/sword/$${j}" >>${TMPPLIST}; \
-			if [ "`${ECHO} $${j} | ${GREP} -v mods.d`" ]; then \
+			${ECHO_CMD} "share/sword/$${j}" >>${TMPPLIST}; \
+			if [ "`${ECHO_CMD} $${j} | ${GREP} -v mods.d`" ]; then \
 				dirn=`${DIRNAME} $${j}`; \
 				while [ "$${dirn}" -a "$${dirn}" != "." -a \
 					"$${dirn}" != "/" ]; do \
-					if [ ! "`${ECHO} \"$${tdirs}\" | ${GREP} \"$${dirn} \"`" ]; then \
+					if [ ! "`${ECHO_CMD} \"$${tdirs}\" | ${GREP} \"$${dirn} \"`" ]; then \
 						tdirs="$${tdirs}$${dirn} "; \
 					fi; \
 					dirn=`${DIRNAME} $${dirn}`; \
@@ -85,8 +85,8 @@ post-install:
 	 done; \
 	 ksorted=`for k in $${tdirs}; do printf "%s\n" $${k}; done | ${SORT} -r -t" "`;\
 	 for j in $${ksorted}; do \
-		${ECHO} "@dirrm share/sword/$${j}" >>${TMPPLIST}; \
+		${ECHO_CMD} "@dirrm share/sword/$${j}" >>${TMPPLIST}; \
 	 done; \
-	 ${ECHO} "@dirrm share/sword/mods.d" >>${TMPPLIST};
+	 ${ECHO_CMD} "@dirrm share/sword/mods.d" >>${TMPPLIST};
 
 .include <bsd.port.mk>

@@ -38,7 +38,7 @@ MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1
 
 .include <bsd.port.pre.mk>
 
-CFLAGS!=	${ECHO} "${CFLAGS}" | ${SED} -e 's/-m[0-9a-z]*//g'
+CFLAGS!=	${ECHO_CMD} "${CFLAGS}" | ${SED} -e 's/-m[0-9a-z]*//g'
 
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})

@@ -41,14 +41,14 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-	@${ECHO} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#include <errno.h>' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#ifndef ENODATA' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '# define ENODATA ENOMSG' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#include <errno.h>' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#ifndef ENODATA' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '# define ENODATA ENOMSG' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
 
 do-install:
 .ifndef(NOPORTDOCS)

@@ -36,9 +36,9 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 .for file in ${DOCS}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${file} ${PREFIX}/share/doc/${PORTNAME}
-	@${ECHO} share/doc/${PORTNAME}/${file} >>${TMPPLIST}
+	@${ECHO_CMD} share/doc/${PORTNAME}/${file} >>${TMPPLIST}
 .endfor
-	@${ECHO} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

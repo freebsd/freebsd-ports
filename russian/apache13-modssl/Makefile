@@ -121,7 +121,7 @@ post-install:
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rc.apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 .if defined(WITH_SUEXEC)
-	@${ECHO} "sbin/suexec" >> ${TMPPLIST}
+	@${ECHO_CMD} "sbin/suexec" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>

@@ -70,12 +70,12 @@ post-install:
 		-e s:@PORTSDIR@:${PORTSDIR}:g
 
 # set up the initial mail.conf with reasonable settings.
-	@${ECHO} "# Where am I?" > ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO} "orgdomain="${DOMAIN} >> ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO} "# Who am I?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO} "hostname="`/bin/hostname -s`'.$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO} "# Who do I claim to be?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO} 'mydomain=$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "# Where am I?" > ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "orgdomain="${DOMAIN} >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "# Who am I?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "hostname="`/bin/hostname -s`'.$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "# Who do I claim to be?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} 'mydomain=$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
 
 # obtained directly from ports/mail/postfix
 # with minor hacks by the originator of this port <veers@disturbed.net>

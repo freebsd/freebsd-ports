@@ -26,14 +26,14 @@ do-patch:
 		${WRKSRC}/include/server_conf.h
 
 pre-install:
-	${ECHO} "sbin/fspd" > ${PLIST}
+	${ECHO_CMD} "sbin/fspd" > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
-	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
-	${ECHO} share/examples/fspd/example.conf >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
-	${ECHO} @dirrm share/examples/fspd >> ${PLIST}
+	${ECHO_CMD} share/examples/fspd/example.conf >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm share/examples/fspd >> ${PLIST}
 .endif
 
 do-install:

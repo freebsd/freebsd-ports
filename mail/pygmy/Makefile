@@ -22,8 +22,8 @@ MAKE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
 ALL_TARGET=	pythonprogs
 
 do-configure:
-	@${ECHO} "PYGMY_PREFIX='${PREFIX}/share'" > ${WRKSRC}/prefix.py
-	@${ECHO} "PYGMY_ICONDIR='${PREFIX}/share/pygmy/icons'" >> ${WRKSRC}/prefix.py
+	@${ECHO_CMD} "PYGMY_PREFIX='${PREFIX}/share'" > ${WRKSRC}/prefix.py
+	@${ECHO_CMD} "PYGMY_ICONDIR='${PREFIX}/share/pygmy/icons'" >> ${WRKSRC}/prefix.py
 
 do-install:
 	${MKDIR} ${PREFIX}/share/pygmy/icons

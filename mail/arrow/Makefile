@@ -75,7 +75,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+	@${ECHO_CMD} "SEARCHDIRS += ${PORTINCLUDES}" >> \
 		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
 	@${PERL} -pi -e 's|/var/spool/mail/|/var/mail/|' \
 		${WRKSRC}/programs/arrow/code/*.cc

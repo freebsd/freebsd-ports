@@ -31,8 +31,8 @@ post-extract:
 	${CP} -rp ${LIBTELNETDIR} ${WRKSRC}
 
 do-configure:
-	${ECHO} "BINDIR=	${PREFIX}/bin" > ${WRKDIR}/Makefile.inc
-	${ECHO} "MANDIR=	${PREFIX}/man/man" >> ${WRKDIR}/Makefile.inc
+	${ECHO_CMD} "BINDIR=	${PREFIX}/bin" > ${WRKDIR}/Makefile.inc
+	${ECHO_CMD} "MANDIR=	${PREFIX}/man/man" >> ${WRKDIR}/Makefile.inc
 do-build:
 	cd ${WRKSRC}; \
 	${MAKE} depend; \

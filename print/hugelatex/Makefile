@@ -26,7 +26,7 @@ do-install:
 	${CP} -p ${TEXMF_CNF} ${TEXMF_CNF}-before-hugelatex
 	${CAT} ${FILESDIR}/texmf.cnf-add >>${TEXMF_CNF}
 	cd `dirname ${TEXMF_CNF}`; \
-	${ECHO} "" | ${PREFIX}/bin/latex -ini -fmt=hugelatex -progname=hugelatex latex.ini || ${TRUE}; \
+	${ECHO_CMD} "" | ${PREFIX}/bin/latex -ini -fmt=hugelatex -progname=hugelatex latex.ini || ${TRUE}; \
 	${RM} -f texsys.aux
 	${RM} -f ${PREFIX}/bin/hugelatex
 	${LN} -s latex ${PREFIX}/bin/hugelatex

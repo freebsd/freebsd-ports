@@ -45,14 +45,14 @@ do-build:
 		${WRKDIR}/vnc_unixsrc/libvncauth/libvncauth.a
 
 pre-install:
-	${ECHO} "bin/svncviewer" > ${PLIST}
+	${ECHO_CMD} "bin/svncviewer" > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
-	${ECHO} -n ${DOCDIR} >> ${PLIST}
-	${ECHO} ${i} >> ${PLIST}
+	${ECHO_CMD} -n ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} ${i} >> ${PLIST}
 .endfor
-	${ECHO} -n "@dirrm " >> ${PLIST}
-	${ECHO} ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} -n "@dirrm " >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

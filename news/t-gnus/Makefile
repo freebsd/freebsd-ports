@@ -79,7 +79,7 @@ PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 
 .if (${EMACS_PORT_NAME} == "mule")
 post-extract:
-	${ECHO} "${EMACS_CMD} -l apel-setupel.el \$$@" > ${WRKDIR}/mule-apel
+	${ECHO_CMD} "${EMACS_CMD} -l apel-setupel.el \$$@" > ${WRKDIR}/mule-apel
 	${CHMOD} +x ${WRKDIR}/mule-apel
 .endif
 

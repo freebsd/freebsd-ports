@@ -226,14 +226,14 @@ post-post-patch:
 do-configure:
 	@# Create/Check the necessary groups/users
 	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
-	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
 	&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER) \
 	&& defined(WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT)
 	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; \
 	then \
-		${ECHO} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
+		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
 			> ${WRKSRC}/conf-spawn ; \
 	fi
 .endif # MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
@@ -258,7 +258,7 @@ do-install:
 	${INSTALL_DATA} ${DOCFILES} ${PREFIX}/${DOCDIR}
 .endif
 .if defined(PACKAGE_BUILDING)
-	@${ECHO} "FreeBSD Binary package qmail installation" \
+	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
 		> ${PREFIX}/${DOCDIR}/SYSDEPS
 .else
 	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
@@ -287,10 +287,10 @@ thereal-post-patch:
 .for i in ${BOOTFILES}
 	@if  [ -f ${i}.sh ] ; \
 	then \
-		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i.sh > ${WRKDIR}/${i:T} ; \
+		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO_CMD} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i.sh > ${WRKDIR}/${i:T} ; \
 	elif [ -f ${i} ] ; \
 	then \
-		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i > ${WRKDIR}/${i:T} ; \
+		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO_CMD} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i > ${WRKDIR}/${i:T} ; \
 	fi
 .endfor
 	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
@@ -327,7 +327,7 @@ disable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\¨NO\¨ to rc.conf)"
 	@if [ -f ${RC_CONF_FILE} ]; \
 	then \
-		${ECHO} sendmail_enable=\"NO\" >> ${RC_CONF_FILE} ; \
+		${ECHO_CMD} sendmail_enable=\"NO\" >> ${RC_CONF_FILE} ; \
 	fi
 
 enable-sendmail: thereal-disable-sendmail

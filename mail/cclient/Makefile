@@ -60,11 +60,11 @@ HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flocksim.h \
 PORTREV_H=	${WRKDIR}/portrevision.h
 
 post-build:
-	@${ECHO} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
+	@${ECHO_CMD} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
 .if defined(WITH_SSL)
-	@${ECHO} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
+	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
 .else
-	@${ECHO} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
+	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
 .endif
 
 do-install:

@@ -27,8 +27,8 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 post-patch: patch-makefile patch-message
 
 patch-makefile:
-	@${ECHO} all: betterdefault > ${WRKSRC}/Makefile.tmp
-	@${ECHO} betterdefault: jadetex.fmt pdfjadetex.fmt >> ${WRKSRC}/Makefile.tmp
+	@${ECHO_CMD} all: betterdefault > ${WRKSRC}/Makefile.tmp
+	@${ECHO_CMD} betterdefault: jadetex.fmt pdfjadetex.fmt >> ${WRKSRC}/Makefile.tmp
 	@${CAT} ${WRKSRC}/Makefile >> ${WRKSRC}/Makefile.tmp
 	@${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
 
