@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	chrise@scardini.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desk calculator language
 
 USE_BZIP2=	yes
