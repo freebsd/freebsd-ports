@@ -7,15 +7,17 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/ \
-		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:ptex \
+		${MASTER_SITE_TEX_CTAN}:ctan \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:dvips \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/:ctan
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-base
-DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH} ${UDVIPS_PATCH}:udvipspatch
+DISTFILES=	${TETEX_SRC}:ctan ${TETEX_TEXMF}:ctan ${PTEX_TEXMF}:ptex \
+		 ${DVIPSK_JPATCH}:dvips ${UDVIPS_PATCH}:udvipspatch
 EXTRACT_ONLY=	${TETEX_SRC} ${DVIPSK_JPATCH}
 
 MAINTAINER=	max@FreeBSD.org

@@ -6,5 +6,5 @@ MD5 (teTeX/ptex-texmf-2.1.tar.gz) = d0c01d4114dde202e96c97b1a2ef8523
 SIZE (teTeX/ptex-texmf-2.1.tar.gz) = 1864219
 MD5 (teTeX/dvipsk-jpatch-p1.6.tar.gz) = a072a2196015caa15834522728a91a78
 SIZE (teTeX/dvipsk-jpatch-p1.6.tar.gz) = 28637
-MD5 (teTeX/udvips-5.94a-p1.6.patch) = c5320cc5d11cd35a0e0a1b50cb9d8732
-SIZE (teTeX/udvips-5.94a-p1.6.patch) = 10583
+MD5 (teTeX/udvips-5.94a-p1.6.patch) = a41fd7b5532d72a133d8da4ff39eb45b
+SIZE (teTeX/udvips-5.94a-p1.6.patch) = 15975
