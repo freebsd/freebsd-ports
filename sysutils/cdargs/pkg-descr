@@ -1,0 +1,7 @@
+CDargs heavily enhances the navigation of the common unix file-system
+inside the shell. It plugs into the shell built-in cd-command (via a shell
+function or an alias) and thus adds bookmarks and a browser to it. It
+enables you to move to a very distant place in the file-system with just
+a few keystrokes.
+
+WWW: http://www.skamphausen.de/software/cdargs/
