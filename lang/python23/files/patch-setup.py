@@ -1,5 +1,5 @@
---- setup.py.orig	Sat Aug 21 08:12:35 2004
-+++ setup.py	Sat Aug 21 08:12:48 2004
+--- setup.py.orig	Wed Oct 22 05:01:21 2003
++++ setup.py	Wed Dec  1 23:07:00 2004
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -18,3 +18,12 @@
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
  
          if platform == 'sunos5':
+@@ -1140,7 +1140,7 @@
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle']
++          scripts = []
+         )
+ 
+ # --install-platlib

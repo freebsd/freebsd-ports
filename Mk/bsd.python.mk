@@ -116,8 +116,8 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYSETUP:		Name of the setup script used by the distutils package.
 #				default: setup.py
 
-_PYTHON_PORTBRANCH=		2.3
-_PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.4 # preferred first
+_PYTHON_PORTBRANCH=		2.4
+_PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 # preferred first
 
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION!=	${ECHO_CMD} "${PYTHON_VERSION}" | ${SED} 's/^python//'
@@ -202,15 +202,15 @@ PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 
 # Python-2.4
 .if ${PYTHON_VERSION} == "python2.4"
-PYTHON_PORTVERSION?=2.4.c1
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+PYTHON_PORTVERSION?=2.4
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			240
 PYTHON_SUFFIX=		24
 
 # Python-2.3
 .elif ${PYTHON_VERSION} == "python2.3"
 PYTHON_PORTVERSION?=2.3.4
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python23
 PYTHON_REL=			234
 PYTHON_SUFFIX=		23
 

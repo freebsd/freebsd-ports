@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.3.4
-PORTREVISION?=	2
+PORTVERSION=	2.4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -29,7 +28,7 @@ INSTALL_TARGET=	install
 MAN1=		python.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.3
+PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 USE_REINPLACE=	yes
 
@@ -108,21 +107,23 @@ PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 
 post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.3
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.4
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.3
+		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.4
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.4.py
 
 pre-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
 	${REINPLACE_CMD} -e \
-		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
 	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
 	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
 
-post-configure: ${STACKLESS_POST_CONFIGURE}
+post-configure:
 	@# prepare a subdir for shared build
 .for subdir in Modules Parser Python Objects
 	${MKDIR} ${SHARED_WRKSRC}/${subdir}
@@ -131,6 +132,7 @@ post-configure: ${STACKLESS_POST_CONFIGURE}
 		-e 's,^\(BLDLIBRARY=\).*$$,\1-L. -lpython$$(VERSION),' \
 		-e 's,^\(CFLAGSFORSHARED=\).*$$,\1$$(CCSHARED),' \
 		-e 's,^\(Makefile Modules/config.c:.*\)Makefile.pre,\1,' \
+		-e 's,^\(.(BUILDPYTHON):.*\).(LIBRARY),\1,' \
 		${WRKSRC}/Makefile > ${SHARED_WRKSRC}/Makefile
 	${LN} -sf ${WRKSRC}/pyconfig.h ${WRKSRC}/Include ${WRKSRC}/Grammar \
 		${SHARED_WRKSRC}/
@@ -162,8 +164,7 @@ post-install:
 		${PREFIX}/lib
 	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
 		lib${PYTHON_VERSION}.so
-	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so \
-		${PYTHONPREFIX_LIBDIR}/config
+	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so ${PYTHONPREFIX_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
@@ -173,8 +174,8 @@ post-install:
 	@# additional files installing by ports
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 		${PREFIX}/share/emacs/site-lisp
-	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
-		${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
+		${WRKDIR}/smtpd2.4.py ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}

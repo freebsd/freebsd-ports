@@ -1,5 +1,5 @@
---- setup.py.orig	Sat Aug 21 08:12:35 2004
-+++ setup.py	Sat Aug 21 08:12:48 2004
+--- setup.py.orig      Tue Aug 31 10:37:25 2004
++++ setup.py   Fri Sep  3 10:42:53 2004
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -9,12 +9,3 @@
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -770,7 +770,7 @@
-             # Linux-specific modules
-             exts.append( Extension('linuxaudiodev', ['linuxaudiodev.c']) )
- 
--        if platform in ('linux2', 'freebsd4'):
-+        if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6'):
-             exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
- 
-         if platform == 'sunos5':
