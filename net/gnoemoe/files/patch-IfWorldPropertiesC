@@ -1,0 +1,11 @@
+--- src/if_world_properties.c.orig	Wed Jan 12 09:58:03 2005
++++ src/if_world_properties.c	Wed Jan 12 09:57:44 2005
+@@ -234,7 +234,7 @@
+ create_world_properties(world * wld) {
+   gchar *oldPath;
+   GtkWidget *dlg = create_dlgWorld_properties(wld);
+-  gint result;
++  gint result = 0;
+   gboolean isOkay = FALSE;
+ 
+   if (wld->path != NULL) {

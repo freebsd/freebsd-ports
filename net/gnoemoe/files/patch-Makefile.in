@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Dec 14 09:34:20 2004
++++ Makefile.in	Fri Jan 14 18:51:47 2005
+@@ -186,7 +186,7 @@
+ langdir = $(datadir)/gtksourceview-1.0/language-specs
+ lang_DATA = moo.lang
+ 
+-mimedir = $(datadir)/mime/packages
++mimedir = $(prefix)/share/mime/packages
+ mime_DATA = gnoemoe.xml
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
