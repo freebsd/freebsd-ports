@@ -1,0 +1,9 @@
+A perl script to flatten some mime types to make mailing lists and
+archives more readable. This tool is designed to run with the
+Majordomo list manager, but can most likely be adapted to different
+list software.
+
+WWW: http://scifi.squawk.com/demime.html
+
+- Pete
+petef@databits.net
