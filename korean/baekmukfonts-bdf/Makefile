@@ -7,13 +7,14 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/ \
-		http://chem.skku.ac.kr/~wkpark/linux/archive/
+		http://zinc.skku.ac.kr/~wkpark/baekmuk/
 PKGNAMESUFFIX=	-bdf
 DISTNAME=       baekmuk-${PORTVERSION}
 DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
-		gulim10.pcf.gz gulim10b.pcf.gz
+		gulim10.bdf.gz gulim10b.bdf.gz
 EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	cjh@freebsd.org
@@ -44,16 +45,18 @@ FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+# manually install hinted fonts
+do-configure:
+.for FONTNAME in ${FONTLIST_MANUAL}
+	${GZIP_CMD} -cd ${_DISTDIR}/${FONTNAME}.bdf.gz \
+		> ${WRKDIR}/${FONTNAME}.bdf
+.endfor
+
 # change charset to ksc5601.1987...
 do-build:
 .for FONTNAME in ${FONTLIST}
 	${PERL} -pi -e ${CHARSETSUB} ${WRKDIR}/${FONTNAME}.bdf
 	${BDFTOPCF} ${WRKDIR}/${FONTNAME}.bdf | ${GZIP_CMD} -c \
-		> ${WRKDIR}/${FONTNAME}.pcf.gz
-.endfor
-.for FONTNAME in ${FONTLIST_MANUAL}
-	${GZIP_CMD} -cd ${_DISTDIR}/${FONTNAME}.pcf.gz | \
-		${PERL} -p -e ${CHARSETSUB} | ${GZIP_CMD} -c \
 		> ${WRKDIR}/${FONTNAME}.pcf.gz
 .endfor
 
