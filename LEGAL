@@ -150,7 +150,7 @@ swing11.tar.Z		ports/devel/jfc		Don't distribute without
 						value-added application.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
-tkman-2.*		ports/misc/tkman	Don't sell for profit.
+tkman-2.{0,1b?}		ports/misc/tkman	Don't sell for profit.
 tuc-*			ports/converters/tuc	Author does not allow
 						CD-ROM distribution
 upsmon*			ports/sysutils/upsmon	Redistribute only with
