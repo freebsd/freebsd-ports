@@ -1,8 +1,8 @@
-lib/libgengameng.so.2
+lib/libgengameng.so.3
 lib/libgengameng.so
-lib/libgengameng.a
 include/gengameng/Couple.h
 include/gengameng/GameEngine.h
+include/gengameng/Gengameng_LoadCompiledXPM.h
 include/gengameng/PixmapArray.h
 include/gengameng/PixmapLoadError.h
 include/gengameng/Sprite.h
