@@ -1,0 +1,9 @@
+--- Makefile.orig	Wed Oct 13 18:01:46 1999
++++ Makefile	Sun Nov 28 23:26:42 1999
+@@ -1,5 +1,5 @@
+ CC	= cc
+-CFLAGS	= -xO3
++CFLAGS	= -O3
+ LDFLAGS	=
+ 
+ PROG	= ipv6socket_scrub

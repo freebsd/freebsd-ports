@@ -1,0 +1,31 @@
+--- ipv6socket_scrub.c.orig	Fri Oct 15 05:51:40 1999
++++ ipv6socket_scrub.c	Mon Feb  5 11:26:41 2001
+@@ -32,4 +32,5 @@
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <pwd.h>
+ #include <sys/types.h>
+@@ -309,5 +310,5 @@
+                                -e 's/#.*else/_#_else/' \
+                                %s | \
+-                  /usr/ccs/lib/cpp -BP 2>&1 | \
++                  /usr/bin/cpp -P 2>&1 | \
+                   /usr/bin/sed -e 's/_#_include/#include/' \
+                                -e 's/_#_end/#end/' \
+@@ -665,6 +666,6 @@
+ 
+   if ((stat("/usr/bin/sed", &statbuff) == -1) ||
+-     stat("/usr/ccs/lib/cpp", &statbuff) == -1) {
+-         fprintf (stderr, "\nCannot find /usr/bin/sed and/or /usr/ccs/lib/cpp -BP.\n Terminating...\n");
++     stat("/usr/bin/cpp", &statbuff) == -1) {
++         fprintf (stderr, "\nCannot find /usr/bin/sed and/or /usr/bin/cpp -P.\n Terminating...\n");
+          exit (2);
+ 
+@@ -1344,5 +1345,5 @@
+ 
+       if (check_file (buf,ignore_conf,pri_conf,sec_conf,fo1,fo2,tmpfile)) {
+-         fprintf (stderr, "\nCannot process file %s.  Cannot find /usr/bin/sed and/or /usr/ccs/lib/cpp -BP.\n Terminating...\n",buf);
++         fprintf (stderr, "\nCannot process file %s.  Cannot find /usr/bin/sed and/or /usr/bin/cpp -P.\n Terminating...\n",buf);
+          unlink(tmpfile);
+          exit (2);
