@@ -404,6 +404,7 @@
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libbfd
+    SUBDIR += libbnr
     SUBDIR += libbonobo
     SUBDIR += libbonobomm
     SUBDIR += libcapsinetwork

@@ -1,0 +1,9 @@
+include/libbnr/bnr.h
+include/libbnr/hash.h
+include/libbnr/list.h
+lib/libbnr.a
+lib/libbnr.so
+lib/libbnr.so.2
+%%EXAMPLESDIR%%/example.c
+@dirrm share/examples/libbnr
+@dirrm include/libbnr

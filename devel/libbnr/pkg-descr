@@ -1,0 +1,15 @@
+Bayesian Noise Reduction is a statistical approach to evaluating coherence by
+instantiating a series of machine-generated contexts to serve as a means of
+contrast. This makes it possible to identify text that is out of context using
+a form of pattern consistency checking. BNR attempts to solve the problem
+commonly referred to as "Bayesian Noise" which, in its simplest definition,
+refers to irrelevant data present in a message being classified. Bayesian Noise
+Reduction dubs irrelevant text in order to provide cleaner classification and
+is implemented as a pre-filter to existing language classification functions.
+
+BNR is used in Dspam (mail/dspam, mail/dspam-devel - the ports don't depent on
+this one)
+
+See www for white-paper and presentation.
+
+WWW: http://www.nuclearelephant.com/papers/bnr.html
