@@ -1,0 +1,11 @@
+bin/dnswalk
+man/man1/dnswalk.1.gz
+share/examples/dnswalk/do-dnswalk
+share/examples/dnswalk/makereports
+share/examples/dnswalk/sendreports
+share/doc/dnswalk/README
+share/doc/dnswalk/dnswalk.errors
+@exec mkdir -p %D/share/examples/dnswalk
+@exec mkdir -p %D/share/doc/dnswalk
+@dirrm share/examples/dnswalk
+@dirrm share/doc/dnswalk
