@@ -15,18 +15,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that provides access control based on Referer HTTP header
 
 USE_APACHE=	yes
-DOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
+PORTDOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
 
 do-build:
-	@cd ${WRKSRC} && \
-	${APXS} -c mod_access_referer.c
+	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
 
 do-install:
-	${APXS} -i -A -n access_referer ${WRKSRC}/mod_access_referer.so
+	@(cd ${WRKSRC} && ${APXS} -i -A -n ${PORTNAME:S/mod_//} ${PORTNAME}.so)
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mod_access_referer
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_access_referer/
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	${CAT} ${PKGMESSAGE}
