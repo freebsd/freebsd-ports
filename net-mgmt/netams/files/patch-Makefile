@@ -1,13 +1,13 @@
---- Makefile.orig	Wed Dec 31 11:43:37 2003
-+++ Makefile	Mon Jan  5 17:16:41 2004
+--- Makefile.orig	Thu May  6 14:37:08 2004
++++ Makefile	Tue Aug 17 11:35:46 2004
 @@ -10,11 +10,11 @@
- # $NetAMS: netams/Makefile,v 1.25.2.4 2003/12/31 08:43:37 jura Exp $
+ # $Id: Makefile,v 1.25.2.7 2004/05/06 10:37:08 jura Exp $
  ##########################################################################
  # for FreeBSD, uncomment this
 -DEFINE = -DFREEBSD -D_THREAD_SAFE
--LIB = -lpcap -lcrypt
 +DEFINE += -DFREEBSD
-+LIB += -lpcap -lcrypt
+-LIB = -lpcap -lcrypt -lz
++LIB += -lpcap -lcrypt -lz
  #
  # For FreeBSD-4.x uncomment this
 -LIB += -pthread
@@ -52,4 +52,3 @@
 +INCLUDE = ${LOCALBASE}/include
  OBJ	= $(SRC:.c=.o)
  CFLAGS	= $(FLAGS) -I$(INCLUDE) $(DEFINE)
- 

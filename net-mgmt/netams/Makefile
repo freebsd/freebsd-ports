@@ -7,10 +7,10 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netams.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1790
+DISTNAME=	${PORTNAME}-${PORTVERSION}.1830
 
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
@@ -27,9 +27,8 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_MYSQL="${WITH_MYSQL}" \
 		WITH_MYSQL40="${WITH_MYSQL40}" \
 		WITH_MYSQL41="${WITH_MYSQL41}" \
-		WITH_PGSQL="${WITH_PGSQL}" \
-		WITH_DEBUG="${WITH_DEBUG}" \
-		LOG_DROP="${LOG_DROP}"
+		WITH_POSTGRESQL="${WITH_POSTGRESQL}" \
+		WITH_DEBUG="${WITH_DEBUG}"
 
 .include <bsd.port.pre.mk>
 
@@ -47,8 +46,8 @@ MAKE_ENV+=	DEFINE="${DEFINE}" FLAGS="${FLAGS}" LIB="${LIB}"
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/sbin/flowprobe
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/sbin/ipfw2netflow
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/flowprobe ${PREFIX}/sbin/flowprobe
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/ipfw2netflow ${PREFIX}/sbin/ipfw2netflow
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netamsctl ${PREFIX}/bin/netamsctl
 	@ ${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.conf.sample
 	@ ${INSTALL_SCRIPT} ${FILESDIR}/netams.sh ${PREFIX}/etc/rc.d/netams.sh.sample
