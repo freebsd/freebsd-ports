@@ -1,5 +1,5 @@
 --- ../sal/osl/unx/nlsupport.c.orig	Tue May 21 15:22:11 2002
-+++ ../sal/osl/unx/nlsupport.c	Sat Jul 20 22:42:15 2002
++++ ../sal/osl/unx/nlsupport.c	Wed Jul 31 10:28:29 2002
 @@ -63,7 +63,7 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
@@ -9,7 +9,7 @@
  #include <pthread.h>
  #include <locale.h>
  #include <langinfo.h>
-@@ -241,7 +241,7 @@
+@@ -241,12 +241,13 @@
      return NULL;
  }
          
@@ -18,25 +18,46 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -254,7 +254,7 @@
-  * XXX this code has the usual mt problems aligned with setlocale() XXX
-  */
- 
--#ifdef LINUX
-+#if defined(LINUX) || defined(NETBSD) || defined(FREEBSD)
- #if !defined(CODESET)
- #define CODESET _NL_CTYPE_CODESET_NAME
- #endif
-@@ -315,7 +315,7 @@
-    { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
+  * from nl_langinfo(CODESET) to rtl_textencoding defines. 
+- * nl_langinfo() is supported only on Linux, Solaris and IRIX. 
++ * nl_langinfo() is supported only on Linux, Solaris and IRIX
++ * and FreeBSD. 
+  *
+  * This routine is SLOW because of the setlocale call, so
+  * grab the result and cache it.
+@@ -312,7 +313,30 @@
+    { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
+    { "eucgbk",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
+    { "gbk",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
+-   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
++   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}  /* Japan */
++};
++
++#elif defined(FREEBSD)
++
++const _pair _nl_language_list[] = {
++   { "US-ASCII",	RTL_TEXTENCODING_ASCII_US	}, /* US-ASCII */
++   { "ASCII",		RTL_TEXTENCODING_ASCII_US	}, /* US-ASCII */
++   { "ISO8859-1",	RTL_TEXTENCODING_ISO_8859_1	}, /* Western */
++   { "ISO8859-2",	RTL_TEXTENCODING_ISO_8859_2	}, /* Central European */
++   { "ISO8859-4",	RTL_TEXTENCODING_ISO_8859_4	}, /* LATIN4 L4 */
++   { "ISO8859-5",	RTL_TEXTENCODING_ISO_8859_5	}, /* Cyrillic */
++   { "ISO8859-7",	RTL_TEXTENCODING_ISO_8859_7	}, /* Greek */
++   { "ISO8859-9",	RTL_TEXTENCODING_ISO_8859_9	}, /* Turkish */
++   { "ISO8859-15",	RTL_TEXTENCODING_ISO_8859_15	}, /* Western Updated (w/Euro sign) */
++   { "KOI8-R",		RTL_TEXTENCODING_KOI8_R		},
++   { "KOI8-U",		RTL_TEXTENCODING_DONTKNOW	},
++   { "CP866",		RTL_TEXTENCODING_IBM_866	}, /* CP866 866 */
++   { "CP1251",		RTL_TEXTENCODING_MS_1251	}, /* MS-CYRL */
++   { "eucJP",		RTL_TEXTENCODING_EUC_JP		}, /* Japan */
++   { "eucKR",		RTL_TEXTENCODING_EUC_KR		}, /* Korea */
++   { "eucCN",		RTL_TEXTENCODING_EUC_CN		}, /* China */
++   { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
++   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}  /* Japan */
  };
  
--#elif defined(LINUX) || defined(NETBSD)
-+#elif defined(LINUX) || defined(NETBSD) || defined(FREEBSD)
- 
- const _pair _nl_language_list[] = {
-     { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
-@@ -496,7 +496,7 @@
+ #elif defined(LINUX) || defined(NETBSD)
+@@ -496,7 +520,7 @@
      { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
  };
  
@@ -45,7 +66,7 @@
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  
-@@ -618,7 +618,7 @@
+@@ -618,7 +642,7 @@
      return ret;
  }
  
@@ -54,7 +75,7 @@
  
  /*
   * FIXME: the MacOS X implemetation is missing
-@@ -651,7 +651,7 @@
+@@ -651,7 +675,7 @@
      return 0;
  }
  
@@ -63,7 +84,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -887,6 +887,6 @@
+@@ -887,6 +911,6 @@
      return 0;
  }
  
