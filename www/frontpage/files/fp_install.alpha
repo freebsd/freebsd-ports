@@ -1,11 +1,11 @@
---- frontpage/version5.0/fp_install.sh.orig	Fri Apr 20 09:00:59 2001
-+++ frontpage/version5.0/fp_install.sh	Tue May  1 23:14:53 2001
-@@ -155,7 +155,7 @@
+--- frontpage/version5.0/fp_install.sh.orig	Tue Jul 15 16:58:01 2003
++++ frontpage/version5.0/fp_install.sh	Tue Jul 15 17:20:23 2003
+@@ -171,7 +171,7 @@
          SunOS*5.*sun4*)     machine="solaris" ;;
          SunOS*5.*i386*)     machine="solarisx86" ;;
          BSD/OS*)            machine="bsdi" ;;
--        FreeBSD*)           machine="freebsd" ;;
-+        FreeBSD*)           machine="alpha" ;;
+-        FreeBSD*)           machine="freebsd"
++        FreeBSD*)           machine="alpha"
+                             DEFAULTAPXS="PREFIX/sbin/apxs"
+                             ;;
          *)              echo "ERROR:  Unsupported platform!  Uname is $system."
-                         return 1
-                          ;;

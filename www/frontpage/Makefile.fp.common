@@ -1,0 +1,52 @@
+# Microsoft FrontPage Extensions common Makefile
+# Date created:		Sun Feb  6 13:53:50 CST 2005
+# Whom:                 swhetzel@gmail.com
+#
+# $FreeBSD$
+#
+
+FP_VER=		${PORTVERSION:C|^([0-9]+)\.([0-9]+).*|\1.\2|}
+PLIST_SUB+=	FP_VER=${FP_VER}
+
+.if defined(ALL_FP)
+FRONTPAGE=	fp${FP_VER:S/.//}.alpha${EXTRACT_SUFX} \
+		fp${FP_VER:S/.//}.bsdi${EXTRACT_SUFX} \
+		fp${FP_VER:S/.//}.freebsd${EXTRACT_SUFX} \
+		fp${FP_VER:S/.//}.solaris${EXTRACT_SUFX}
+
+.elif ${ARCH} == i386
+.if ${OSVERSION} < 440000
+WANT_BSDI_EXTENSIONS=	yes
+.endif
+.if defined(WANT_BSDI_EXTENSIONS)
+FRONTPAGE=	fp${FP_VER:S/.//}.bsdi${EXTRACT_SUFX}
+.else
+FRONTPAGE=	fp${FP_VER:S/.//}.freebsd${EXTRACT_SUFX}
+.endif
+
+.elif ${ARCH}== ia64 || ${ARCH} == amd64
+.if ${OSVERSION} < 500000
+IGNORE=	"The Frontpage Extensions require FreeBSD-${ARCH} 5.0 or better"
+.endif
+WANT_BSDI_EXTENSIONS=	yes
+FRONTPAGE=	fp${FP_VER:S/.//}.bsdi${EXTRACT_SUFX}
+
+.elif ${ARCH} == alpha
+FRONTPAGE=	fp${FP_VER:S/.//}.alpha${EXTRACT_SUFX}
+
+.elif ${ARCH} == sparc64
+FRONTPAGE=	fp${FP_VER:S/.//}.solaris${EXTRACT_SUFX}
+.endif
+
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
+IGNORE=	"The Frontpage Extensions haven't been tested on this ${ARCH}.  If the Frontpage Extensions work on your ${ARCH}, please submit a pr to remove this warning from ${PORTSDIR}/www/frontpage/Makefile.fp.common for your ${ARCH}"
+.endif
+
+.for fpdist in ${FRONTPAGE}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${fpdist})
+IGNORE="You must manualy fetch ${fpdist} from http://www.rtr.com.  Place the file in ${DISTDIR}/${DIST_SUBDIR}"
+.endif
+.endfor
+
+NO_CDROM=	"Redistribution is not permitted"
+RESTRICTED=	${NO_CDROM}

@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: frontpage
+# REQUIRE: DAEMON
+# BEFORE: apache
+# KEYWORD: FreeBSD
+
+# Define the following frontpage_* variables in one of the following:
+#       /etc/rc.conf
+#       /etc/rc.conf.d/frontpage
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${frontpage_enable="YES"}
+
+. %%RC_SUBR%%
+
+# Create New FrontPage suidkey
+
+frontpage_key() {
+
+	CUR_UMASK=`umask`
+	skdir=${prefix}/frontpage/version%%FP_VER%%/apache-fp
+	PERL=%%PERL5%%
+
+	# Alternate way of generating the suidkey file with out PERL
+	# taken from the OpenBSD mod_frontpage port.
+	#
+	# umask 077
+	# dd if=/dev/random of=${skdir}/suidkey bs=129 count=1
+	# umask ${CUR_UMASK}
+
+	#NOTE: We need Perl 5, to generate a new key
+	if [ -x ${PERL} ]
+	then
+		umask 077
+		${PERL} -e '@a=(split(//, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*-=_+")); print((map {$a[rand(scalar @a)]} (1..128)), "\n");' > $skdir/suidkey
+		umask ${CUR_UMASK}
+	fi
+
+}
+
+name="frontpage"
+rcvar=`set_rcvar`
+start_cmd="frontpage_key"
+stop_cmd=":"
+
+load_rc_config $name
+run_rc_command "$1"

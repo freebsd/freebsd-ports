@@ -6,127 +6,88 @@
 #
 
 PORTNAME=	frontpage
-PORTVERSION=	5.0.2.2623
-PORTREVISION=	1
+PORTVERSION=	5.0.2.2635
+PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/ \
-		ftp://www.westbend.net/pub/microsoft/frontpage/
-DISTFILES=	${FRONTPAGE}
+MASTER_SITES=	# Needs to be manually fetched from http://www.rtr.com
 
-MAINTAINER=	ports@FreeBSD.org
+DISTFILES=	${FRONTPAGE}
+DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
+
+MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft Frontpage 2002 Extensions
 
-.include <bsd.port.pre.mk>
-
-USE_REINPLACE=	yes
-
-ONLY_FOR_ARCHS=	i386 alpha
-
-FP_VER=		${PORTVERSION:C|^([0-9]+)\.([0-9]+).*|\1.\2|}
-
-.if ${ARCH} == i386
-.ifdef WANT_BSDI_EXT
-FRONTPAGE=	fp${FP_VER:S/.//}.bsdi.tar.Z
-EXTRA_PATCHES=	${FILESDIR}/fp_install.bsdi
-.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-PKGMESSAGE=	pkg-message.bsdi
-.endif
-.else
-.if (defined(BATCH) && ${BATCH} == YES ) || !exists(/usr/lib/compat/libc.so.3)
-LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
-.endif
-FRONTPAGE=	fp${FP_VER:S/.//}.freebsd.tar.Z
-.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-PKGMESSAGE=	pkg-message.freebsd
-.endif
-.endif
-.elif ${ARCH} == alpha
-FRONTPAGE=	fp${FP_VER:S/.//}.alpha.tar.Z
-EXTRA_PATCHES=	${FILESDIR}/fp_install.alpha
-.endif
-
-.ifdef ALL_FP
-FRONTPAGE=	fp${FP_VER:S/.//}.freebsd.tar.Z \
-		fp${FP_VER:S/.//}.bsdi.tar.Z \
-		fp${FP_VER:S/.//}.alpha.tar.Z
-.endif
+ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc
 
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
 BATCH?=		NO
-CHMOD?=		/bin/chmod
-NM=		/usr/bin/nm
-CRYPT_DES!=	${NM} /usr/lib/libcrypt.a | ${GREP} -q -e "crypt_des" ; echo $$?
+
+USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS=	frontpage:0010
+RC_SCRIPT_PREFIX=	${RC_SCRIPTS:S/${RC_SCRIPTS:C/:[^:]+$//}//:S/://}
+RC_SCRIPT=	${RC_SCRIPTS:C/:[^:]+$//}.sh
+
+SUB_FILES=	${RC_SCRIPT}
+SUB_LIST+=	RC_SUBR=${RC_SUBR} PERL5=${PERL} FP_VER=${FP_VER}
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.fp.common"
+
 FP_DIR=		frontpage/version${FP_VER}
-FPINSTALL=	${FP_DIR}/fp_install.sh
-FPEXEC=		${FP_DIR}/apache-fp/fpexe.c
-FPSETPERM=	${FP_DIR}/set_default_perms.sh
-README=		${FP_DIR}/readme.htm
-FPHTTPD=	${FP_DIR}/apache-fp
-FPCSS=		${FP_DIR}/admin/1033/webadmin.css
+FP_INSTALL=	${FP_DIR}/fp_install.sh
+FP_SETPERM=	${FP_DIR}/set_default_perms.sh
+FP_DOCS=	readme.htm readme_apache_dso.txt LICENSE.TXT
 
-MOD_FPDOCDIR=	${PREFIX}/share/doc/apache/manual/frontpage
+EXTRACT_FILES=	${FP_INSTALL} ${FP_SETPERM}
 
-PLIST_SUB=	FP_VER=${FP_VER}
+.if ${ARCH} == alpha
+EXTRA_PATCHES=	fp_install.alpha
+.elif ${ARCH} == sparc64
+EXTRA_PATCHES=	fp_install.sparc
+.elif defined(WANT_BSDI_EXTENSIONS)
+EXTRA_PATCHES=	fp_install.bsdi
+.endif
 
-pre-extract:
-.if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
-	   ${ECHO} ; \
-	   ${ECHO} "WARNING: MS FrontPage Extensions requires the libdescrypt library"; \
-	   ${ECHO} "  Install the libdescrypt Library, then build apache-fp"; \
-	   ${ECHO} ; \
-	   ${ECHO} "  FreeBSD Handbook - Security (chapter 10)"; \
-	   ${ECHO} "    http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/crypt.html"; \
-	   ${ECHO} ; \
-	   ${FALSE} ; \
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${_DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES}); \
+	then \
+		exit 1; \
 	fi
-.else
-.if ${CRYPT_DES} == 1
-	@${ECHO}
-	@${ECHO} "WARNING: MS FrontPage Extensions requires crypt_des in"
-	@${ECHO} "   the /usr/lib/libcrypt library.  You will need to"
-	@${ECHO} "   rebuild the libcrypt library with DES support."
-.if defined(NOSECURE) || defined(NOCRYPT)
-	@${ECHO}
-	@${ECHO} "   You need to comment out both NOSECURE and NOCRYPT"
-	@${ECHO} "   in the /etc/make.conf file before rebuilding the"
-	@${ECHO} "   libcrypt library."
-.endif
-	@${ECHO}
-	@${FALSE}
-.endif
-.endif
-
-post-extract:
-	@${ECHO} "===>  Extracting FrontPage install scripts"
-	cd ${WRKDIR} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} \
-		${EXTRACT_AFTER_ARGS} ${FPINSTALL} ${FPEXEC} \
-		${README} ${FPSETPERM}
 
 post-patch:
 .if !defined(PATCH_DEBUG)
-	@${REINPLACE_CMD} -e 's:PREFIX:${PREFIX}:g' ${WRKDIR}/${FPINSTALL}
+	@${REINPLACE_CMD} -e 's:PREFIX:${PREFIX}:g' \
+			  -e 's:DOCSDIR:${DOCSDIR}:g' ${WRKDIR}/${FP_INSTALL}
 .endif
 
 do-install:
 	@${ECHO_MSG} "===> Untaring FrontPage Extensions to ${PREFIX}"
-	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
-	@${REINPLACE_CMD} -e 's:IMAGESDIR:../images/:g' ${PREFIX}/${FPCSS}
-	@if [ -f ${PREFIX}/${FPCSS} ]; then \
-		${RM} ${PREFIX}/${FPCSS}.bak ; \
-	fi
-	@${RM} ${PREFIX}/${FPHTTPD}/httpd
-	@${MKDIR} ${MOD_FPDOCDIR}
-	@${CP} ${PREFIX}/${README} ${MOD_FPDOCDIR}/index.html
-	@${INSTALL_SCRIPT} ${WRKDIR}/${FPINSTALL} ${PREFIX}/${FPINSTALL}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
-	@${PREFIX}/${FPSETPERM}
+	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${_DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
+	@${INSTALL_SCRIPT} ${WRKDIR}/${FP_INSTALL} ${PREFIX}/${FP_INSTALL}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${FP_SETPERM} ${PREFIX}/${FP_SETPERM}
+	@${PREFIX}/${FP_SETPERM}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for DOC in ${FP_DOCS}
+	@${INSTALL_DATA} ${PREFIX}/${FP_DIR}/${DOC} ${DOCSDIR}
+.endfor
+.endif
+.for RMFILE in ${FP_DOCS} apache-fp/httpd
+	@${RM}	${PREFIX}/${FP_DIR}/${RMFILE}
+.endfor
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${RC_SCRIPT} \
+		${PREFIX}/etc/rc.d/${RC_SCRIPT_PREFIX}.${RC_SCRIPT}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
