@@ -1,5 +1,5 @@
---- Netscape.ad-ja_euc.orig	Wed Jul 19 08:35:27 2000
-+++ Netscape.ad-ja_euc	Wed Jul 19 08:43:31 2000
+--- Netscape.ad-ja_euc.orig	Sun Jul 23 00:24:46 2000
++++ Netscape.ad-ja_euc	Wed Jul 26 02:32:57 2000
 @@ -60,7 +60,7 @@
  ! code. The directory and file listings are always maintained
  ! as equal size. We don't do this for SGI, as they have solved
@@ -49,7 +49,7 @@
  
  *message_popup.title:			Netscape
  *message_popup*OK.labelString:	OK
-@@ -6017,7 +6019,7 @@
+@@ -6018,7 +6020,7 @@
  
  
  *urlLocationLabel.netsiteLabelString:		Netsite:
@@ -58,7 +58,7 @@
  *urlLocationLabel.editedLabelString:		ジャンプ:
  
  ! this must be the longer of the two...
-@@ -6429,10 +6431,10 @@
+@@ -6430,10 +6432,10 @@
  
  *prefs*cache*cacheLabel.labelString:		\
  キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
@@ -71,7 +71,7 @@
  ボタンをクリックします。
  *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
  *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
-@@ -6461,7 +6463,7 @@
+@@ -6462,7 +6464,7 @@
  *prefs*proxies*auto.labelString:			自動プロキシ設定
  *prefs*proxies*config.labelString:			設定ファイルの場所 (URL)
  *prefs*proxies*view.labelString:			表示...
@@ -80,7 +80,7 @@
  
  ! Preferences dialog - General - Proxies - View
  
-@@ -7416,7 +7418,7 @@
+@@ -7421,7 +7423,7 @@
  *print.tipString:                   このページを印刷
  *MailThread*print.tipString:        選択したメッセージを印刷
  *MailMsg*print.tipString:           選択したメッセージを印刷
@@ -89,7 +89,7 @@
  
  ! buttons specific to the compose frame.
  *toolBar*sendMessageNow.labelString:	送信
-@@ -7470,7 +7472,7 @@
+@@ -7475,7 +7477,7 @@
  *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
  !
  ! buttons used everywhere (it seems.)
@@ -98,7 +98,7 @@
  *toolBar*stopLoading.labelString:	停止
  
  *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
-@@ -9024,7 +9026,7 @@
+@@ -9029,7 +9031,7 @@
  
  *strings.23715:新規/編集 ...
  
@@ -107,7 +107,7 @@
  
  *strings.23717:削除
  
-@@ -11157,7 +11159,7 @@
+@@ -11162,7 +11164,7 @@
  
  *strings.21597: キャッシュに一部だけあります。残りはサーバから取り出しています:\n
  
@@ -116,7 +116,7 @@
  
  *strings.21599: オブジェクトの期限が切れています。もう一度読み込みます:\n
  
-@@ -14579,3 +14581,6 @@
+@@ -14584,3 +14586,6 @@
  *tableCreateDialog.ApplyLabelString:		クリア
  *documentPropertiesDialog.ApplyLabelString:	クリア
  
