@@ -9,3 +9,5 @@
        Search results are limited and there is a pause between
        each request for results to avoid overloading either the
        client or the server.
+
+WWW: http://search.cpan.org/search?dist=WWW-Search

@@ -16,6 +16,7 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/NetFind.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/PLweb.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/SearchResult.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Result.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/SFgate.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Search97.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Simple.pm
