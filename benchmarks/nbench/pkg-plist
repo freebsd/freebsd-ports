@@ -1,0 +1,8 @@
+bin/nbench
+share/nbench/NNET.DAT
+share/doc/nbench/README
+share/doc/nbench/README.submit
+share/doc/nbench/RESULTS
+share/doc/nbench/bdoc.txt
+@dirrm share/nbench
+@dirrm share/doc/nbench
