@@ -8362,6 +8362,7 @@ pear-Console_Getargs	ports/devel/pear-Console_Getargs
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Console_Table	ports/devel/pear-Console_Table
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
+pear-Crypt_CHAP	ports/security/pear-Crypt_CHAP
 pear-Crypt_HMAC	ports/security/pear-Crypt_HMAC
 pear-Crypt_RC4	ports/security/pear-Crypt_RC4
 pear-DB		ports/databases/pear-DB
