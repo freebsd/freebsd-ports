@@ -1,0 +1,11 @@
+paintlib is a portable C++ class library for image loading, saving
+and manipulation. Images can be loaded from BMP, GIF, IFF, JPEG,
+PCX, PGM, PICT, PNG, PSD, SGI, TGA, TIFF and WMF files and saved
+in BMP, JPEG, PNG and TIFF formats. Image manipulation can be done
+either through filters implemented in filter classes or by directly
+accessing the bitmap bits.
+
+WWW: http://www.paintlib.de/paintlib/
+
+- Frerich Raabe
+frerich.raabe@gmx.de

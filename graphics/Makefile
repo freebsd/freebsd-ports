@@ -303,6 +303,7 @@
     SUBDIR += p5-VCG
     SUBDIR += p5-chart
     SUBDIR += p5-ming
+    SUBDIR += paintlib
     SUBDIR += panorama
     SUBDIR += passepartout
     SUBDIR += peps
