@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	Canna
-PORTVERSION=	3.6p4
-PORTREVISION=	1
+PORTVERSION=	3.7p1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	canna/6059
+MASTER_SITE_SUBDIR=	canna/7449/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Kana-Kanji conversion system
 
+USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_X_PREFIX=	no
 ALL_TARGET=	canna
 INSTALLS_SHLIB=	yes
+MAKE_ENV+=	CC=$(CC)
 
 MANLANG="" ja
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
@@ -39,6 +40,11 @@ MLINKS=		uilib.3 XKanjiControl.3  uilib.3 XLookupKanjiString.3 \
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	canna.bib canna.sty Imakefile README.jp Makefile \
+		intern lisp man
+.endif
+
 post-build:
 	@${SED} -e "s,@RM@,${RM},g; s,@TOUCH@,${TOUCH},g; \
 		s,@CHOWN@,${CHOWN},g" ${FILESDIR}/canna.sh.in \
@@ -54,5 +60,12 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/canna.sh.sample ${PREFIX}/etc/rc.d/canna.sh.sample
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${CP} -R ${WRKSRC}/doc/$f ${DOCSDIR}
+.endfor
+	@${CHOWN} -R root:wheel ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
