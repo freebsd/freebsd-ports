@@ -1,14 +1,10 @@
-[ From the distribution's README-experimental.txt ]
+BitTornado is a tool for distributing files. It's based on the BitTorrent
+tool but has many enhancement over it (it was also knows as SHADOWS 
+experimental Bittorrent client):
+- multitracker support - to have redundant tracker
+- preferences menu for GUI client
+- webseed support to have better control of download
+- graphical torrent file maker
+- experimental IPv6 support
 
-* Background file allocation - missing file space is allocated in
-  the background, and hashes are checked only for pre-existing data
-
-* Multitracker addition - .torrent file can now specify multiple
-  trackers
-
-* Preferences menu - lets you conveniently configure the GUI client
-
-* Status light - gives you important information about the torrent
-  at a glance
-
-WWW: http://bt.degreez.net/
+WWW: http://www.bittornado.com

@@ -8,11 +8,11 @@
 PKGNAMESUFFIX=	-core
 CATEGORIES=	net python
 
-COMMENT=	Experimental client 'core' for the BitTorrent P2P network
+COMMENT=	An extended BitTorrent peer-to-peer core tool for distributing files
 
 # build only the CORE
 WITHOUT_GUI=	yes
 
-MASTERDIR=	${.CURDIR}/../py-shadow-bittorrent
+MASTERDIR=	${.CURDIR}/../py-bittornado
 
 .include "${MASTERDIR}/Makefile"
