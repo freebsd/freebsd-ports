@@ -7,6 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	5.0i
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/5.0/unix/ \
 		ftp://ftp.doc.ic.ac.uk/pub/Mirrors/ftp.ifi.uio.no/pub/pgp/5.0/unix/
