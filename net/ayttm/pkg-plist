@@ -6,3 +6,4 @@ share/sounds/everybuddy/BuddyLeave.au
 share/sounds/everybuddy/Send.au
 share/sounds/everybuddy/Receive.au
 @dirrm share/sounds/everybuddy
+@dirrm share/sounds
