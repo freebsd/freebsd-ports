@@ -29,9 +29,9 @@ lib/pstoedit/libp2edrvswf.so
 lib/pstoedit/libp2edrvswf.so.0
 libdata/pkgconfig/pstoedit.pc
 share/aclocal/pstoedit.m4
-%%PORTDOCS%%share/doc/pstoedit/changelog.htm
-%%PORTDOCS%%share/doc/pstoedit/index.htm
-%%PORTDOCS%%share/doc/pstoedit/pstoedit.htm
+%%PORTDOCS%%%%DOCSDIR%%/changelog.htm
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/pstoedit.htm
 share/pstoedit/latex2e.fmp
 share/pstoedit/mpost.fmp
 share/pstoedit/safer.ps
@@ -40,6 +40,6 @@ share/pstoedit/swffonts/default.fdb
 share/pstoedit/wemf.fmp
 @dirrm share/pstoedit/swffonts
 @dirrm share/pstoedit
-%%PORTDOCS%%@dirrm share/doc/pstoedit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pstoedit
 @dirrm include/pstoedit
