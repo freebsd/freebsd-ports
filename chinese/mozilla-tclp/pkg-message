@@ -1,11 +1,9 @@
-********************************
-If your XIM wouldn't work propery, try to make a file
-"${HOME}/.mozilla/${USER}/*.slt/user.js"
-with below content;
---
-user_pref("xim.input_style", "over-the-spot")
---
+***********************************************************************
+Edit the file "${HOME}/.mozilla/${USER}/*.slt/user.js"
+     or "/usr/X11R6/lib/mozilla/defaults/pref/unix.js"
+ to change XIM settings (if not working),
+ Anti-Alias settings, and Printing settings.
 If need printing, go /usr/ports/chinese/arphicttf to make WANT_GS6=yes
-Then go /usr/ports/chinese/ghostscript6 to make all install
-Check http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html for detail
-********************************
+ Then go /usr/ports/chinese/ghostscript6 to make all install
+For detail: http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
+***********************************************************************

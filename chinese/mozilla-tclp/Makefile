@@ -9,13 +9,13 @@
 # And just download and install there.
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.0rc2
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mozilla/langpack/
 PKGNAMESUFFIX=	-tclp
-# Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/moz0.98/langzhtw.xpi.
+# Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/$MOZVER/langzhtw.xpi.
 # Use this to avoid checksum problems.
-DISTNAME=	langzhtw-0.9.9-0313
+DISTNAME=	langzhtw-1.0.0rc2-0516
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	piaip@csie.ntu.edu.tw
@@ -39,17 +39,21 @@ MOZILLA_SH=	mozilla.xpg4
 
 post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
-	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
+	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref/.
+	${CP} ${FILESDIR}/user.js ${WRKSRC}/defaults/profile/.
+	${CP} ${FILESDIR}/user.js ${WRKSRC}/defaults/profile/TW/.
 	${CHMOD} -R a+rX ${WRKSRC}
 
 do-build:
 	${SED} -e "s;@PREFIX@;${PREFIX};g" \
 	${FILESDIR}/${MOZILLA_SH} > ${WRKDIR}/mozilla
 
+# The 'HOME=/tmp' was solving 1.0rc2 regxpcom bug
+
 do-install:
 	(cd ${PREFIX}/lib/mozilla; \
-	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	${SETENV} HOME=/tmp LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	${SETENV} HOME=/tmp LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
@@ -60,14 +64,14 @@ do-install:
 	${MV} -f google.src google.src.orig)
 	${MV} -f ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/mozilla ${PREFIX}/bin
-	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults searchplugins) | \
+	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults searchplugins res) | \
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
 	(cd ${PREFIX}/lib/mozilla; \
-	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	${SETENV} HOME=/tmp LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	${SETENV} HOME=/tmp LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
