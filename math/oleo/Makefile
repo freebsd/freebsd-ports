@@ -40,4 +40,8 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+post-patch:
+	@find ${WRKSRC} -name '*.[ch]' | xargs \
+		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
+
 .include <bsd.port.mk>
