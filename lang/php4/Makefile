@@ -20,7 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.4.r1
+PORTVERSION=	4.3.4
 PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
@@ -45,7 +45,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.r/RC/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
@@ -141,13 +141,6 @@ BATCH=		yes
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
-.endif
-
-.if !defined(WITHOUT_APACHE)
-APXS?=		${LOCALBASE}/sbin/apxs
-PLIST_SUB+=	APACHE=""
-.else
-PLIST_SUB+=	APACHE="@comment "
 .endif
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
@@ -342,7 +335,7 @@ CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
 .endif
 
 .if defined(WITH_MBSTRING)
-CONFIGURE_ARGS+=--enable-mbstring --enable-mbregex
+CONFIGURE_ARGS+=--enable-mbstring
 .endif
 
 .if defined(WITH_MCAL)
@@ -529,6 +522,7 @@ CONFIGURE_ARGS+=--with-zlib=yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
+APXS?=		${LOCALBASE}/sbin/apxs
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes
 .endif
