@@ -1,0 +1,68 @@
+#!/bin/sh
+#
+# processfail <arch> <branch>
+
+arch=$1
+branch=$2
+
+pb=/var/portbuild
+
+of=/usr/local/www/data/errorlogs/.${arch}-${branch}-failure.html
+
+cd ${pb}/${arch}/${branch}
+
+find $of .failure.html.lock -mmin +60 -delete 2>/dev/null
+
+if [ -f $of -o -f .failure.html.lock ]; then exit; fi
+
+if [ -e .newfailure.stamp -a $(echo $(find . -maxdepth 1 -newer .newfailure.stamp -name newfailure 2>&1 /dev/null | wc -l)) = "0" ]; then exit; fi
+
+touch .newfailure.stamp
+touch .failure.html.lock
+
+newfailure=${pb}/${arch}/${branch}/newfailure
+num=$(wc -l ${newfailure})
+
+header() {
+  echo "<html><head><title>New package building errors</title>" >$of
+  echo "</head><body><h1>New package building errors</h1>" >>$of
+
+  if [ "$num" -eq "0" ]; then
+    echo "No errors (yet)" >>$of
+  else
+    echo "<table border=1>" >>$of
+    echo "<tr>$1</tr>" >>$of
+  fi
+}
+
+footer() {
+  echo "</table>" >>$of
+  echo "</body>" >>$of
+  echo "</html>" >>$of
+}
+
+#
+# Create "default" output, sorted on portname
+#
+header "<th>Port</th><th>Package</th><th>Date broken</th>"
+
+for i in `cat ${newfailure}`; do
+    set $(echo $i | tr ' ' '_' | tr \| " ")
+
+    echo "<tr>" >> $of
+    echo "<td><a href=\"http://cvsweb.freebsd.org/ports/$1\">$1</a></td>" >> $of
+    echo "<td><a href=\"${arch}-${branch}-latest/$3.log\">$3</a></td>" >> $of
+
+#    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+#    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
+#    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
+#    echo "<td>" >> $of
+
+    date=$(echo $4 | tr '_' ' ')
+    echo "<td>${date}</td>" >> $of
+
+    echo "</tr>" >> $of
+done
+footer ""
+rm .failure.html.lock
+mv -f $of /usr/local/www/data/errorlogs/${arch}-${branch}-failure.html
