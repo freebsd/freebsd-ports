@@ -27,6 +27,7 @@ include/ftgl/FTVector.h
 include/ftgl/FTVectoriser.h
 @dirrm include/ftgl
 lib/libftgl.a
+libdata/pkgconfig/ftgl.pc
 %%EXAMPLESDIR%%/makefile
 %%EXAMPLESDIR%%/tb.c
 %%EXAMPLESDIR%%/trackball.c

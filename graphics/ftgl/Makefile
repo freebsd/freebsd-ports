@@ -7,6 +7,7 @@
 
 PORTNAME=	ftgl
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.paradise.net.nz/henryj/code/
 DISTNAME=	${PORTNAME:U}
@@ -29,6 +30,7 @@ INSTALLS_SHLIB=	yes
 
 do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/src/.libs/lib${PORTNAME}.a ${PREFIX}/lib
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTNAME}.pc ${PREFIX}/libdata/pkgconfig
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/${PORTNAME}
 
