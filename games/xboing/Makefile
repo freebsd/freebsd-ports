@@ -6,22 +6,26 @@
 
 PORTNAME=	xboing
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.Org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11 arcade game
-
-.if ${MACHINE_ARCH} == "alpha"
-PLIST=		${PKGDIR}/pkg-plist.alpha
-.endif
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xboing
 MAN1=		xboing.1
+
+.if defined(WITHOUT_AUDIO)
+MAKE_ENV+=	WITHOUT_AUDIO=True
+PLIST_SUB+=	WITH_SOUND="@comment "
+.else
+PLIST_SUB+=	WITH_SOUND=""
+.endif
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/xboing
