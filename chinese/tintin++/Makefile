@@ -9,6 +9,6 @@ MASTERDIR=	${.CURDIR}/../../net/tintin++
 
 MAINTAINER=	foxfair@FreeBSD.org
 
-EXTRA_PATCHES=	${.CURDIR}/patches/patch.1
+EXTRA_PATCHES=	${.CURDIR}/files/extra-patch.1
 
 .include "${MASTERDIR}/Makefile"
