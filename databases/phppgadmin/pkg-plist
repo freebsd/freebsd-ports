@@ -5,6 +5,7 @@ www/data.default/phpPgAdmin/Documentation.html
 www/data.default/phpPgAdmin/INSTALL
 www/data.default/phpPgAdmin/README
 www/data.default/phpPgAdmin/TODO
+www/data.default/phpPgAdmin/all_db.php
 www/data.default/phpPgAdmin/catala.inc.php
 www/data.default/phpPgAdmin/chinese_big5.inc.php
 www/data.default/phpPgAdmin/chinese_gb.inc.php
@@ -25,7 +26,6 @@ www/data.default/phpPgAdmin/func_properties.php
 www/data.default/phpPgAdmin/german.inc.php
 www/data.default/phpPgAdmin/grp_admin.php
 www/data.default/phpPgAdmin/header.inc.php
-www/data.default/phpPgAdmin/images/.cvsignore
 www/data.default/phpPgAdmin/images/bkg.gif
 www/data.default/phpPgAdmin/images/browse.gif
 www/data.default/phpPgAdmin/images/minus.gif
@@ -41,8 +41,13 @@ www/data.default/phpPgAdmin/login.inc.php
 www/data.default/phpPgAdmin/main.php
 www/data.default/phpPgAdmin/norwegian.inc.php
 www/data.default/phpPgAdmin/old.chinese_big5.inc.php
+www/data.default/phpPgAdmin/oper_create.php
+www/data.default/phpPgAdmin/oper_properties.php
 www/data.default/phpPgAdmin/portuguese.inc.php
 www/data.default/phpPgAdmin/postgres.sh
+www/data.default/phpPgAdmin/rep_create.php
+www/data.default/phpPgAdmin/rep_properties.php
+www/data.default/phpPgAdmin/reports.php
 www/data.default/phpPgAdmin/russian-koi8.inc.php
 www/data.default/phpPgAdmin/russian-win1251.inc.php
 www/data.default/phpPgAdmin/seq_create.php
