@@ -1,5 +1,5 @@
---- doc/libtool.texi.orig	Mon Apr 14 22:10:10 2003
-+++ doc/libtool.texi	Wed Jul  2 18:01:14 2003
+--- doc/libtool.texi.orig	Fri Jan 23 06:05:27 2004
++++ doc/libtool.texi	Thu Oct 14 20:26:28 2004
 @@ -2,4 +2,4 @@
  @c %**start of header
 -@setfilename libtool.info
@@ -7,13 +7,13 @@
 +@setfilename libtool15.info
 +@settitle Libtool15
  @c For double-sided printing, uncomment:
-@@ -15,3 +15,3 @@
+@@ -15,8 +15,3 @@
  @direntry
 -* Libtool: (libtool).           Generic shared library support script.
-+* Libtool15: (libtool15).           Generic shared library support script.
- @end direntry
-@@ -20,3 +20,3 @@
- @direntry
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
 -* libtoolize: (libtool)Invoking libtoolize.     Adding libtool support.
-+* libtoolize15: (libtool15)Invoking libtoolize.     Adding libtool support.
++* Libtool15: (libtool15).           Generic shared library support script.
  @end direntry

@@ -3,9 +3,6 @@ bin/libtool%%BUILD_VERSION%%
 bin/libtoolize%%BUILD_VERSION%%
 libexec/libtool%%BUILD_VERSION%%/libtool
 libexec/libtool%%BUILD_VERSION%%/libtoolize
-@unexec install-info --delete %D/info/libtool%%BUILD_VERSION%%.info %D/info/dir
-info/libtool%%BUILD_VERSION%%.info
-@exec install-info %D/info/libtool%%BUILD_VERSION%%.info %D/info/dir
 share/aclocal/libtool%%BUILD_VERSION%%.m4
 share/aclocal/ltdl%%BUILD_VERSION%%.m4
 share/libtool%%BUILD_VERSION%%/config.guess
