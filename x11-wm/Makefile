@@ -22,6 +22,7 @@
     SUBDIR += boxtools
     SUBDIR += clementine
     SUBDIR += ctwm
+    SUBDIR += devilspie
     SUBDIR += e16utils
     SUBDIR += ede
     SUBDIR += enlightenment
