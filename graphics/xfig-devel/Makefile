@@ -20,28 +20,18 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-.if defined(WANT_GS_SUPPORT)
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript5
-.endif
-
 USE_IMAKE=	yes
 MAN1=		xfig.1
 
 pre-fetch:
-.if !defined(WANT_GS_SUPPORT)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you would like build xfig with Ghostscript support"
-	@${ECHO_MSG} "you must set the variable WANT_GS_SUPPORT"
-	@${ECHO_MSG} ""
-.else
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Building xfig with Ghostscript support"
-	@${ECHO_MSG} ""
+.if !defined(NO_GSBIT)
+	@${ECHO_MSG} "To build this port without Ghostscript support,"
+	@${ECHO_MSG} "define \"NO_GSBIT\"."
 .endif
 
 post-patch:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
-.if !defined(WANT_GS_SUPPORT)
+.if defined(NO_GSBIT)
 	@${PERL} -pi -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 
