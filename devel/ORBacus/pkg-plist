@@ -29,13 +29,12 @@ include/OB/DynAny.h
 include/OB/Dynamic.h
 include/OB/Environment.h
 include/OB/Except.h
-include/OB/ExtNaming.h
-include/OB/ExtNaming_skel.h
 include/OB/GIOP.h
 include/OB/Hashers.h
 include/OB/Hashtable.h
 include/OB/HashtableI.h
 include/OB/IIOP.h
+include/OB/INS.h
 include/OB/IOP.h
 include/OB/ImplRep.h
 include/OB/IntRep.h
@@ -46,6 +45,8 @@ include/OB/NTService.h
 include/OB/NamedValue.h
 include/OB/Narrow_impl.h
 include/OB/Net.h
+include/OB/OBNaming.h
+include/OB/OBNaming_skel.h
 include/OB/OBPolicies.h
 include/OB/OCI.h
 include/OB/OCIBuffer.h
@@ -75,3 +76,6 @@ lib/libOBX11.a
 share/doc/ORBacus/LICENSE
 @dirrm share/doc/ORBacus
 @dirrm include/OB
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+
