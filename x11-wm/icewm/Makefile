@@ -66,7 +66,7 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
-	${CHOWN} root.kmem ${PREFIX}/bin/icewm
+	${CHOWN} root:kmem ${PREFIX}/bin/icewm
 	${CHMOD} 2555 ${PREFIX}/bin/icewm
 
 .include <bsd.port.post.mk>
