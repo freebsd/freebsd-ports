@@ -1,11 +1,11 @@
---- tab/Makefile.in.orig	Sat Jan  4 16:36:23 2003
-+++ tab/Makefile.in	Sat Jan  4 16:36:52 2003
-@@ -79,7 +79,7 @@
+--- tab/Makefile.in.orig	Thu Aug 19 15:18:29 2004
++++ tab/Makefile.in	Thu Aug 19 15:18:37 2004
+@@ -86,7 +86,7 @@
  ZPERL_LIBS = @ZPERL_LIBS@
  yazconfig = @yazconfig@
  
 -tabdatadir = $(pkgdatadir)/tab
 +tabdatadir = $(datadir)/@PACKAGE@/tab
- tabdata_DATA = bib1.att dan1.att danmarc.abs danmarc.mar default.idx  explain.abs explain.att explain.tag generic.tag gils.abs gils-a.est  gils.att gils-b.est gils-f.est gils-g.est gils-summary.map gils.tag  gils-usmarc.map gils-variant.est hci.flt mail.flt  meta.abs meta-b.est meta.tag meta-usmarc.map news.flt numeric.chr  nwi.flt refer.flt scan.chr sgml.flt soif.flt string.chr summary.abs  summary.tag tagsetg.tag tagsetm.tag urx.chr usmarc.abs usmarc-b.est  usmarc.flt usmarc.mar usmarc.tag var1.var wais.abs wais-b.est  wais-variant.est
+ tabdata_DATA = bib1.att dan1.att danbib.abs danmarc.abs danmarc.mar  default.idx explain.abs explain.att explain.tag generic.tag gils.abs  gils-a.est gils.att gils-b.est gils-f.est gils-g.est gils-summary.map  gils.tag gils-usmarc.map gils-variant.est hci.flt mail.flt  meta.abs meta-b.est meta.tag meta-usmarc.map news.flt numeric.chr  nwi.flt refer.flt scan.chr sgml.flt soif.flt string.chr summary.abs  summary.tag tagsetg.tag tagsetm.tag urx.chr usmarc.abs usmarc-b.est  usmarc.flt usmarc.mar usmarc.tag var1.var wais.abs wais-b.est  wais-variant.est
  
  

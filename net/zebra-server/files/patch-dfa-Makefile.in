@@ -1,9 +1,9 @@
---- dfa/Makefile.in.orig	Sat Jan  4 16:35:12 2003
-+++ dfa/Makefile.in	Sat Jan  4 16:35:30 2003
-@@ -84,7 +84,7 @@
+--- dfa/Makefile.in.orig	Tue Aug 17 11:00:25 2004
++++ dfa/Makefile.in	Thu Aug 19 15:16:58 2004
+@@ -91,7 +91,7 @@
  noinst_PROGRAMS = agrep lexer grepper
  
- INCLUDES = -I$(srcdir)/../include @YAZINC@
+ AM_CPPFLAGS = -I$(srcdir)/../include $(YAZINC)
 -LDADD = libdfa.a ../util/libutil.a $(YAZLIB) $(TCL_LIB)
 +LDADD = libdfa.a ../util/libutil.a $(YAZLIB) $(TCL_LIB) @PTHREAD_LIBS@
  
