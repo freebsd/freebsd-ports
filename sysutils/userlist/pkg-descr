@@ -1,0 +1,7 @@
+Userlist is a simple awk script that will parse /etc/passwd
+and print a list of all usernames with a UID greater than 100.
+
+WWW: http://www.jamiesdomain.org.uk/
+
+- Jamie Heckford
+jamie@jamiesdomain.org.uk
