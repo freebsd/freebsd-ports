@@ -6,46 +6,55 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mysql=no --with-odbc=no --with-postgresql=no
-MAN8=		snort.8
 
 .if defined(WITH_FLEXRESP)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
-CONFIGURE_ARGS+=--enable-flexresp
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
+BUILD_DEPENDS=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+CONFIGURE_ARGS=		--enable-flexresp
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS}"
+LDFLAGS+=		"-L${LOCALBASE}/lib"
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
-LDFLAGS+=	${PTHREAD_LIBS}
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
+LDFLAGS+=		${PTHREAD_LIBS}
+.else
+CONFIGURE_ARGS+=	--with-odbc=no
 .endif
 
 .if defined(WITH_POSTGRES)
 POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE}/pgsql
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
-LDFLAGS+=	-lssl -lcrypto
+LDFLAGS+=		-lssl -lcrypto
 .endif
+.else
+CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-USE_REINPLACE=	yes
+MAN8=	snort.8
+DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
+	CREDITS README.FLEXRESP FAQ snort_manual.pdf \
+	README.PLUGINS USAGE README.thresholding README.flow \
+	README.flow-portscan README.http_inspect README.wireless
 
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
@@ -56,19 +65,13 @@ pre-configure:
 	@${ECHO} "to get additional support."
 	@${ECHO} ""
 
-DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
-	CREDITS README.FLEXRESP RULES.todo FAQ \
-	SnortUsersManual.pdf README.PLUGINS USAGE README.thresholding
-
 post-install:
-	${MKDIR} ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}; \
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}; \
 	${INSTALL_DATA} ${WRKSRC}/etc/classification.config ${DATADIR}/classification.config-sample; \
 	if [ ! -f ${DATADIR}/classification.config ]; then \
 	    ${CP} ${DATADIR}/classification.config-sample \
