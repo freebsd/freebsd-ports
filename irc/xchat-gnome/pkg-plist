@@ -1,19 +1,19 @@
 bin/xchat
 bin/xchat-text
-share/doc/xchat/ChangeLog
-share/doc/xchat/README
-share/doc/xchat/xchat-1.html
-share/doc/xchat/xchat-10.html
-share/doc/xchat/xchat-2.html
-share/doc/xchat/xchat-3.html
-share/doc/xchat/xchat-4.html
-share/doc/xchat/xchat-5.html
-share/doc/xchat/xchat-6.html
-share/doc/xchat/xchat-7.html
-share/doc/xchat/xchat-8.html
-share/doc/xchat/xchat-9.html
-share/doc/xchat/xchat.html
-share/doc/xchat/xchat.sgml
+%%PORTDOCS%%share/doc/xchat/ChangeLog
+%%PORTDOCS%%share/doc/xchat/README
+%%PORTDOCS%%share/doc/xchat/xchat-1.html
+%%PORTDOCS%%share/doc/xchat/xchat-10.html
+%%PORTDOCS%%share/doc/xchat/xchat-2.html
+%%PORTDOCS%%share/doc/xchat/xchat-3.html
+%%PORTDOCS%%share/doc/xchat/xchat-4.html
+%%PORTDOCS%%share/doc/xchat/xchat-5.html
+%%PORTDOCS%%share/doc/xchat/xchat-6.html
+%%PORTDOCS%%share/doc/xchat/xchat-7.html
+%%PORTDOCS%%share/doc/xchat/xchat-8.html
+%%PORTDOCS%%share/doc/xchat/xchat-9.html
+%%PORTDOCS%%share/doc/xchat/xchat.html
+%%PORTDOCS%%share/doc/xchat/xchat.sgml
 %%GNOME:%%share/gnome/apps/Internet/xchat.desktop
 %%GNOME:%%share/gnome/pixmaps/xchat.png
-@dirrm share/doc/xchat
+%%PORTDOCS%%@dirrm share/doc/xchat
