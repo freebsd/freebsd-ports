@@ -1,1 +1,3 @@
 bin/wmtimebomb
+lib/X11/wmtimebomb/example.modefile
+@dirrm lib/X11/wmtimebomb

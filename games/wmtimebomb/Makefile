@@ -12,20 +12,18 @@ MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		PropList.2:${PORTSDIR}/devel/libPropList \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.3:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${X11BASE}/lib/libWMaker.a:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
+		wraster.3:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	${PERL} -pi -e 's,\@LOCALBASE\@,${LOCALBASE},g' ${WRKSRC}/Imakefile
-	${PERL} -pi -e 's,\@X11BASE\@,${X11BASE},g' ${WRKSRC}/Imakefile
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/X11/wmtimebomb
+	${INSTALL_DATA} ${WRKSRC}/example.modefile ${PREFIX}/lib/X11/wmtimebomb
 
 .include <bsd.port.mk>

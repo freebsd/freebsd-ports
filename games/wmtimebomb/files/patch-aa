@@ -1,14 +1,14 @@
---- Imakefile.orig	Thu Apr  8 09:13:44 1999
-+++ Imakefile	Thu Apr  8 09:14:16 1999
+--- Imakefile.orig	Mon Nov 16 21:40:24 1998
++++ Imakefile	Thu Feb 17 23:02:07 2000
 @@ -1,7 +1,9 @@
--XPMLIB = -L/usr/X11R6/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lgif
+-XPMLIB = -L/usr/X11R6/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lungif
 -WMAKER = -L/usr/local/lib -lWMaker -lWINGs -lwraster -lPropList
-+XPMLIB = -L@X11BASE@/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lungif
-+WMAKER = -L@LOCALBASE@/lib -lWMaker -lWINGs -lwraster -lPropList
++XPMLIB = `get-wraster-flags --libs`
++WMAKER = -lWMaker -lWINGs -lPropList -L%%LOCALBASE%%/lib
   
  LOCAL_LIBRARIES = $(WMAKER) $(XPMLIB) $(XLIB)
 +
-+EXTRA_INCLUDES= -I@LOCALBASE@/include
++EXTRA_INCLUDES= `get-wraster-flags --cflags` -I%%LOCALBASE%%/include
  
  SRCS = timebomb.c
  OBJS = timebomb.o
