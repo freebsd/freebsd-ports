@@ -5,60 +5,79 @@
 # $FreeBSD$
 #
 
-PORTNAME=	torcs
-PORTVERSION=	1.2.1
-PORTREVISION=	2
-CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		torcs
+PORTVERSION=		1.2.2
+CATEGORIES=		games
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${TARBALL}-src
-EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}			\
-		${EXTRADIST}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}			\
-		${DISTNAME}-robots-base${EXTRACT_SUFX}
+DISTNAME=		${TARBALL}-src
+EXTRACT_SUFX=		.tgz
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}			\
+			${EXTRADIST}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}			\
+			${DISTNAME}-robots-base${EXTRACT_SUFX}		\
+			${DISTNAME}-robots-astigot${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-# doxygen would be required to build the doc (TODO?)
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-USE_MESA=	yes
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGSD}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	default
+
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TARBALL=	${PORTNAME:U}-${PORTVERSION}
 DATANAME=	${TARBALL}-data
-EXTRADIST=	${DATANAME}${EXTRACT_SUFX}			\
-		${DISTNAME}-robots-base${EXTRACT_SUFX}		\
-		${DATANAME}-tracks-base${EXTRACT_SUFX}		\
-		${DATANAME}-cars-extra${EXTRACT_SUFX}		\
-		${DATANAME}-cars-Patwo-Design${EXTRACT_SUFX}
-INSTDIR=	${PREFIX}/share/games/${PORTNAME}
+EXTRADIST=	${DATANAME}${EXTRACT_SUFX}				\
+		${DISTNAME}-robots-base${EXTRACT_SUFX}			\
+		${DISTNAME}-robots-astigot${EXTRACT_SUFX}		\
+		${DATANAME}-tracks-dirt${EXTRACT_SUFX}			\
+		${DATANAME}-tracks-oval${EXTRACT_SUFX}			\
+		${DATANAME}-tracks-road${EXTRACT_SUFX}			\
+		${DATANAME}-cars-extra${EXTRACT_SUFX}			\
+		${DATANAME}-cars-kcendra-gt${EXTRACT_SUFX}		\
+		${DATANAME}-cars-kcendra-roadsters${EXTRACT_SUFX}	\
+		${DATANAME}-cars-kcendra-sport${EXTRACT_SUFX}		\
+		${DATANAME}-cars-nascar${EXTRACT_SUFX}			\
+		${DATANAME}-cars-Patwo-Design${EXTRACT_SUFX}		\
+		${DATANAME}-cars-VM${EXTRACT_SUFX}
+LINSTDIR=	share/games/${PORTNAME}
+INSTDIR=	${PREFIX}/${LINSTDIR}
 
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64")
-BROKEN=		"does not build on ${ARCH}"
-.endif
+PLIST_SUB=	TORCSDIR=${LINSTDIR} TORCSVER=${PORTVERSION}
 
 .if !defined(WITHOUT_BERNIW)
 DISTFILES+=	${DISTNAME}-robots-berniw${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}-robots-berniw${EXTRACT_SUFX}
-PLIST_SUB=	BERNIW=""
+PLIST_SUB+=	BERNIW=""
 .else
-PLIST_SUB=	BERNIW="@comment "
+PLIST_SUB+=	BERNIW="@comment "
+.endif
+
+.if !defined(WITHOUT_BILLY)
+DISTFILES+=	${DISTNAME}-robots-billy${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${DISTNAME}-robots-billy${EXTRACT_SUFX}
+PLIST_SUB+=	BILLY=""
+.else
+PLIST_SUB+=	BILLY="@comment "
+.endif
+
+.if !defined(WITHOUT_BT)
+DISTFILES+=	${DISTNAME}-robots-bt${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${DISTNAME}-robots-bt${EXTRACT_SUFX}
+PLIST_SUB+=	BT=""
+.else
+PLIST_SUB+=	BT="@comment "
 .endif
 
 .if !defined(WITHOUT_K1999)
@@ -69,41 +88,47 @@ PLIST_SUB+=	K1999=""
 PLIST_SUB+=	K1999="@comment "
 .endif
 
-2BCLEANED=	Make-config src/libs/txml/gennmtab/gennmtab.o
-BASH2FIX=	src/modules/telemetry/telemetry.sh src/tools/launcher/torcs.in	\
-		Make-default.mk robotgen		\
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
+CPPFLAGS+=	-I${X11BASE}/include
+.else
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+
+.if !defined(WITHOUT_FREEGLUT)
+LIB_DEPENDS+=	glut.11:${PORTSDIR}/x11-toolkits/freeglut
+.else
+USE_MESA=	yes
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	You might define these options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	- WITHOUT_BERNIW and WITHOUT_K1999: do not install optional"
-	@${ECHO_MSG} "	  robots."
+	@${ECHO_MSG} "	- WITHOUT_BERNIW, WITHOUT_BILLY, WITHOUT_BT and WITHOUT_K1999:"
+	@${ECHO_MSG} "	  do not install optional robots."
 	@${ECHO_MSG} ""
 
 post-extract:
-.for SLAG in ${2BCLEANED}
-	@${RM} ${WRKSRC}/${SLAG}
-.endfor
+	@${FIND} ${WRKSRC} -name \*\.o -exec ${RM} {} \;
 
 post-patch:
-.for file in ${BASH2FIX}
-	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g"	\
-		${WRKSRC}/${file}
-.endfor
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 20 -x				\
+		${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|g"
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/games
 
 post-install:
-.for file in ${EXTRADIST}
+.for extra in ${EXTRADIST}
 	@ cd ${INSTDIR} &&	\
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${file} \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${extra} \
 			${EXTRACT_AFTER_ARGS}
 .endfor
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	@${CHMOD} -R go-w ${INSTDIR}
-	@${CHMOD} +x ${INSTDIR}/setup_linux.sh
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*****************************************************************************"
 	@${ECHO_MSG} ""
