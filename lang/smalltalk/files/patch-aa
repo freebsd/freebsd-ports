@@ -1,18 +1,22 @@
---- lib/lex.c.old	Sun Dec 26 10:56:37 1999
-+++ lib/lex.c	Sun Dec 26 10:57:50 1999
-@@ -48,6 +48,7 @@
- #include "sysdep.h"
+--- lib/lex.c.orig	Mon Feb 21 19:05:50 2000
++++ lib/lex.c	Sat Mar 25 21:43:17 2000
+@@ -50,6 +50,9 @@
+ 
  #include <stdio.h>
  #include <math.h>
++#if defined(__FreeBSD__)
 +#include <floatingpoint.h>
++#endif
+ 
  #ifdef HAVE_READLINE
  #include <readline/readline.h>
- #include <readline/history.h>
-@@ -693,6 +694,7 @@
+@@ -735,6 +738,9 @@
    if (isNegative) {
      num = -num;
    }
++#if defined(__FreeBSD__)
 +  fpsetmask(0);
++#endif
      
-   if (dotSeen) {
+   if (isFloat) {
      lvalp->fval = num;
