@@ -1,0 +1,33 @@
+bin/introspect
+bin/meerkat_client
+bin/sum_server
+bin/ulxrstubber
+include/ulxmlrpcpp.h
+include/ulxmlrpcpp/ulxr_config.h
+include/ulxr_call.h
+include/ulxr_callparse.h
+include/ulxr_connection.h
+include/ulxr_dispatcher.h
+include/ulxr_except.h
+include/ulxr_expatwrap.h
+include/ulxr_http_client.h
+include/ulxr_http_connection.h
+include/ulxr_http_server.h
+include/ulxr_mtrpc_server.h
+include/ulxr_mutex.h
+include/ulxr_requester.h
+include/ulxr_response.h
+include/ulxr_responseparse.h
+include/ulxr_signature.h
+include/ulxr_tcpip_connection.h
+include/ulxr_value.h
+include/ulxr_valueparse.h
+include/ulxr_xmlparse.h
+@dirrm include/ulxmlrpcpp
+lib/libulxmlrpcpp.a
+lib/libulxmlrpcpp.so
+lib/libulxmlrpcpp.so.4
+%%DATADIR%%/httpd/index.html
+%%DATADIR%%/httpd/logo-ulxmlrpcpp.png
+@dirrm %%DATADIR%%/httpd
+@dirrm %%DATADIR%%

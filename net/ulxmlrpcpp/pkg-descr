@@ -1,0 +1,11 @@
+XML-RPC is an extensible mechanism allowing a computer to offer a limited set
+of services which can be accessed from anywhere in the net.
+
+XML-RPC uses common and easy to learn internet standards like XML. and HTTP.
+
+ulxmlrpcpp is a library to perform such calls in an object oriented approach
+implemented in C++. It is intended to have simple interfaces and to be easy to
+learn. But it shall still be fully compliant to the standards and safe in it's
+use.
+
+WWW: http://ulxmlrpcpp.sourceforge.net/
