@@ -1,0 +1,76 @@
+*** Makefile~	Tue Aug 24 11:14:33 1999
+--- Makefile	Tue Aug 24 18:08:01 1999
+***************
+*** 14,25 ****
+  # TEXHASH is MakeTeXls-R for WEB2C Unix distribution, texhash for TETEX, blank
+  # for NTEX.
+  
+! MFDIR=/usr/lib/texmf/texmf/fonts/source/public/GOOE
+! TFMDIR=/usr/lib/texmf/texmf/fonts/tfm/public/GOOE
+! TEXINPUTS=/usr/lib/texmf/texmf/tex/GOOE
+! MANDIR=/usr/man/man1/
+! BINDIR=/usr/local/bin/
+  TEXHASH=texhash
+  
+  # PKFONTS may be left undefined for the initial installation. If you are
+  # reinstalling fonts for which you have made modifications to the metafont
+--- 14,31 ----
+  # TEXHASH is MakeTeXls-R for WEB2C Unix distribution, texhash for TETEX, blank
+  # for NTEX.
+  
+! MFDIR=${PREFIX}/share/texmf/metafont
+! TFMDIR=${PREFIX}/share/texmf/fonts/tfm
+! TEXINPUTS=${PREFIX}/share/texmf/tex
+! MANDIR=${PREFIX}/man/man1
+! BINDIR=${PREFIX}/bin
+! .if exists(/usr/local/bin/MakeTeXls-R)
+! TEXHASH=MakeTeXls-R
+! .elif exists(/usr/local/bin/texhash)
+  TEXHASH=texhash
++ .else
++ TEXHASH=
++ .endif
+  
+  # PKFONTS may be left undefined for the initial installation. If you are
+  # reinstalling fonts for which you have made modifications to the metafont
+***************
+*** 45,50 ****
+--- 51,58 ----
+  
+  .SUFFIXES : .mf .tfm .300pk .360pk .432pk .600pk .720pk .864pk .300gf .360gf .432gf .600gf .720gf .864gf
+  
++ all: sgfsplit
++ 
+  sgfsplit: sgfsplit.c
+  	cc -g -o sgfsplit sgfsplit.c
+  
+***************
+*** 53,65 ****
+  
+  install: sgfsplit 
+  	rm -f $(PKFONTS)
+! 	install -m 0644 *.mf $(MFDIR)
+! 	install -m 0644 *.tfm $(TFMDIR)
+! 	install -m 0755 sgf2tex sgfsplit $(BINDIR)
+! 	install -m 0644 sgf2tex.1 sgfsplit.1 $(MANDIR)
+! 	install -m 0644 gooemacs.tex gotcmacs.tex $(TEXINPUTS)
+  	$(TEXHASH)
+  	tex manual
+  
+  # The preferred method of installation is just to copy the metafont
+  # sources and tfm files into appropriated directories in MakeTeXPK's
+--- 61,74 ----
+  
+  install: sgfsplit 
+  	rm -f $(PKFONTS)
+! 	install -c -m 0644 *.mf $(MFDIR)
+! 	install -c -m 0644 *.tfm $(TFMDIR)
+! 	install -c -m 0755 sgf2tex sgfsplit $(BINDIR)
+! 	install -c -m 0644 sgf2tex.1 sgfsplit.1 $(MANDIR)
+! 	install -c -m 0644 gooemacs.tex gotcmacs.tex $(TEXINPUTS)
+  	$(TEXHASH)
+  	tex manual
++ 	install -c -m 0644 manual.dvi ${PREFIX}/share/doc/sgf2tex.dvi
+  
+  # The preferred method of installation is just to copy the metafont
+  # sources and tfm files into appropriated directories in MakeTeXPK's

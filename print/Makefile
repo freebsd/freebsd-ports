@@ -92,6 +92,7 @@
     SUBDIR += rlpr
     SUBDIR += rtf2latex
     SUBDIR += ruby-clibpdf
+    SUBDIR += sgf2tex
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += tex
