@@ -15,6 +15,7 @@ LANG_LIST=	de_DE.ISO8859-15 de_AT.ISO8859-15 de_DE.ISO8859-15 \
 LANG_PKGNAME=	de
 LANG_EXT=	49
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	GER
 #
 # Special case. We do not need LANG_CONFIGURE_ARG cause
 # the EN_US and DE_DE versions are always built.
