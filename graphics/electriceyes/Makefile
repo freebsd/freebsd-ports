@@ -1,13 +1,13 @@
 # New ports collection makefile for:   electriceyes
-# Version required:    0.3
+# Version required:    0.3.5
 # Date created:        21 August 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/11/15 14:04:04 jseger Exp $
+# $Id: Makefile,v 1.5 1998/11/18 12:09:03 asami Exp $
 #
 
-DISTNAME=	ee-0.3
-PKGNAME=	electriceyes-0.3
+DISTNAME=	ee-0.3.5
+PKGNAME=	electriceyes-0.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:

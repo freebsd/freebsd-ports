@@ -1,5 +1,5 @@
---- ee.desktop.orig	Tue Sep  1 12:06:06 1998
-+++ ee.desktop	Tue Sep  1 12:06:51 1998
+--- ee.desktop.orig	Tue Dec 15 00:36:56 1998
++++ ee.desktop	Fri Jan  1 14:56:15 1999
 @@ -11,7 +11,7 @@
  Comment[de]=Bildbetrachter
  Comment[no]=Program for bildeframvisning
