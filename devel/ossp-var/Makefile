@@ -23,7 +23,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha or amd64"
+BROKEN=		"Does not compile on alpha"
 .endif
 
 .include "${FILESDIR}/manpages.mk"
