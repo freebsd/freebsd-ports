@@ -17,6 +17,8 @@ DISTNAME=	3dm-bsd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3ware ATA RAID monitoring daemon and web server
 
+IGNORE=		This port is obsolete and should not be used.  Please visit the 3ware website (www.3ware.com) for a newer version of the 3dm utility
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 450000
