@@ -1,26 +1,35 @@
---- Makefile.in.orig	Fri Apr 30 08:23:33 1999
-+++ Makefile.in	Tue May 11 01:48:45 1999
-@@ -55,7 +55,9 @@
- BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
+--- Makefile.in.orig	Fri Aug 13 18:02:47 1999
++++ Makefile.in	Sun Sep  5 10:44:32 1999
+@@ -48,7 +48,9 @@
+ SCRIPT_INSTALL_DIR = $(INSTALL_ROOT)$(TCL_LIBRARY)
  
  # Directory in which to install the include file tcl.h:
--INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
-+INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
-+GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/unix
+-INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(PREFIX)/include/tcl$(VERSION)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(PREFIX)/include/tcl$(VERSION)/unix
  
  # Top-level directory in which to install manual entries:
- MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -86,7 +88,7 @@
+ MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man
+@@ -65,7 +67,7 @@
+ MANN_INSTALL_DIR = $(MAN_INSTALL_DIR)/mann
+ 
+ # Directory in which to install the include file tcl.h:
+-INCLUDE_INSTALL_DIR = @includedir@
++#INCLUDE_INSTALL_DIR = @includedir@
+ 
+ # Package search path.
+ TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
+@@ -85,7 +87,7 @@
  #CFLAGS = 		$(CFLAGS_DEBUG)
  #CFLAGS = 		$(CFLAGS_OPTIMIZE)
  #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
 -CFLAGS = 		@CFLAGS@
 +CFLAGS? = 		@CFLAGS@
  
- 
  # To disable ANSI-C procedure prototypes reverse the comment characters
-@@ -161,7 +163,7 @@
+ # on the following lines:
+@@ -159,7 +161,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -29,53 +38,45 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -391,15 +393,21 @@
+@@ -386,7 +388,7 @@
  
- SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(STUB_SRCS)
+ all: binaries libraries doc
  
--all: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) tclsh
-+all: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) libtcl81.a tclsh
+-binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) tclsh
++binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) libtcl82.a tclsh
  
- # The following target is configured by autoconf to generate either
- # a shared library or non-shared library for Tcl.
+ libraries:
+ 
+@@ -397,8 +399,14 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
-+	ln -sf ${TCL_LIB_FILE} libtcl81.so
++	ln -sf ${TCL_LIB_FILE} libtcl82.so
  	$(RANLIB) ${TCL_LIB_FILE}
  
-+libtcl81.a: ${OBJS}
-+	rm -f libtcl81.a
-+	ar cr libtcl81.a ${OBJS}	
-+	$(RANLIB) libtcl81.a
++libtcl82.a: ${OBJS}
++	rm -f libtcl82.a
++	ar cr libtcl82.a ${OBJS}
++	$(RANLIB) libtcl82.a
 +
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -499,7 +507,7 @@
- # possible (e.g. if installing as root).
- 
- install-binaries: $(TCL_LIB_FILE) $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) \
--		tclsh
-+		libtcl81.a tclsh
- 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
- 	    do \
- 	    if [ ! -d $$i ] ; then \
-@@ -511,8 +519,13 @@
- 	    done;
+@@ -504,8 +512,13 @@
  	@echo "Installing $(TCL_LIB_FILE)"
+ 	chmod +x $(SRC_DIR)/install-sh
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
-+	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl81.so
++	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl82.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
-+	@echo "Installing libtcl81.a"
-+	@$(INSTALL_DATA) libtcl81.a $(LIB_INSTALL_DIR)/libtcl81.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl81.a)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtcl81.a
++	@echo "Installing libtcl82.a"
++	@$(INSTALL_DATA) libtcl82.a $(LIB_INSTALL_DIR)/libtcl82.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl82.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtcl82.a
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE)"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -521,7 +534,8 @@
+@@ -514,7 +527,8 @@
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"
@@ -85,7 +86,7 @@
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(TCL_STUB_LIB_FILE)"; \
  	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
-@@ -529,8 +543,8 @@
+@@ -522,8 +536,8 @@
  	    fi
  
  install-libraries:
@@ -96,10 +97,10 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -548,11 +562,16 @@
- 		else true; \
+@@ -542,11 +556,20 @@
  		fi; \
  	    done;
+ 	chmod +x $(SRC_DIR)/install-sh
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h ; \
 +	@echo "Installing libraries, tcl.h and other headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
@@ -108,48 +109,44 @@
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
  	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
++	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
-+	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
-+	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
++
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -584,30 +603,35 @@
+@@ -579,21 +602,19 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
 -	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN1_INSTALL_DIR)/$$i $(MAN1_INSTALL_DIR)/$$i.gz ; \
++	    rm -f $(MAN1_INSTALL_DIR)/$$i ; \
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+ 	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
 -	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
  	    echo "Installing doc/$$i"; \
 -	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i $(MAN3_INSTALL_DIR)/$$i.gz ; \
++	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
+ 		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+ 	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
 -	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
  	    echo "Installing doc/$$i"; \
--	    rm -f $(MANN_INSTALL_DIR)/$$i; \
-+	    rm -f $(MANN_INSTALL_DIR)/$$i $(MANN_INSTALL_DIR)/$$i.gz; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MANN_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
+@@ -602,7 +623,14 @@
+ 		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+ 	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
 -	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
 +	@echo "**********"
