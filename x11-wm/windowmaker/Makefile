@@ -104,4 +104,4 @@ update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
