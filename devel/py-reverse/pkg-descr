@@ -1,0 +1,6 @@
+PyReverse is a set of tools for reverse engineering Python code. So far, it
+features dependency analysis tools, documentation generation, and XMI
+generation for importation in a UML modeling tool. A special module can be
+used to generate files readable by Argo UML.
+
+WWW: http://www.logilab.org/pyreverse/

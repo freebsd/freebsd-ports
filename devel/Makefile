@@ -550,6 +550,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-period
     SUBDIR += py-pqueue
+    SUBDIR += py-reverse
     SUBDIR += py-spark
     SUBDIR += py-twisted
     SUBDIR += py-unit
