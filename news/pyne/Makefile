@@ -15,10 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^PREFIX,#PREFIX,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

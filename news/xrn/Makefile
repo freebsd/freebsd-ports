@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 MAN1=		xrn.1
 MANCOMPRESSED=	no
@@ -22,7 +23,7 @@ XFREE86_HTML_MAN=	no
 DOCS=		COMMON-PROBLMS COPYRIGHT CREDITS ChangeLog
 
 post-patch:
-	@${PERL} -pi -e "s|^#error.+||g; \
+	@${REINPLACE_CMD} -E -e "s|^#error.+||g; \
 		s|/usr/lib/sendmail|/usr/sbin/sendmail|g;" ${WRKSRC}/config.h
 
 do-install:
