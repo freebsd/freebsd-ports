@@ -82,6 +82,9 @@ include/gsl/gsl_odeiv.h
 include/gsl/gsl_permutation.h
 include/gsl/gsl_permute.h
 include/gsl/gsl_permute_char.h
+include/gsl/gsl_permute_complex_double.h
+include/gsl/gsl_permute_complex_float.h
+include/gsl/gsl_permute_complex_long_double.h
 include/gsl/gsl_permute_double.h
 include/gsl/gsl_permute_float.h
 include/gsl/gsl_permute_int.h
@@ -94,6 +97,9 @@ include/gsl/gsl_permute_ulong.h
 include/gsl/gsl_permute_ushort.h
 include/gsl/gsl_permute_vector.h
 include/gsl/gsl_permute_vector_char.h
+include/gsl/gsl_permute_vector_complex_double.h
+include/gsl/gsl_permute_vector_complex_float.h
+include/gsl/gsl_permute_vector_complex_long_double.h
 include/gsl/gsl_permute_vector_double.h
 include/gsl/gsl_permute_vector_float.h
 include/gsl/gsl_permute_vector_int.h
@@ -233,6 +239,7 @@ lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
 lib/libgslcblas.so.0
+libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
 %%PORTDOCS%%share/doc/gsl/gsl-ref.ps
 %%PORTDOCS%%@dirrm share/doc/gsl
