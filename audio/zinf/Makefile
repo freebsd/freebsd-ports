@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeamp
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
@@ -21,7 +20,6 @@ LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
-WANT_ESOUND=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
@@ -36,7 +34,7 @@ CFLAGS+=	"-D_M_IX86"
 CFLAGS+=	"-D_M_ALPHA"
 .endif
 
-.if defined(HAVE_ESOUND)
+.if defined(WITH_ESOUND) || defined(WITH_ALL_PLUGINS)
 USE_ESOUND=	yes
 PLIST_SUB+=	ESOUND=""
 .else
@@ -44,13 +42,32 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_LIBARTS)
+.if defined(WITH_LIBARTS) || defined(WITH_ALL_PLUGINS)
 LIB_DEPENDS=	libartsc.0:${PORTSDIR}/x11/kdelibs2
 PLIST_SUB+=	LIBARTS=""
 .else
 CONFIGURE_ARGS+=	--disable-arts
 PLIST_SUB+=	LIBARTS="@comment "
 .endif
+
+.if defined(WITH_VORBIS) || defined(WITH_ALL_PLUGINS)
+LIB_DEPENDS=	vorbis.0:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	VORBIS=""
+.else
+CONFIGURE_ARGS+=	--disable-vorbis
+PLIST_SUB+=	VORBIS="@comment"
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITH_ESOUND=yes       build with ESounD outout plugin"
+	@${ECHO_MSG} "WITH_LIBARTS=yes      build with libArts output plugin"
+	@${ECHO_MSG} "WITH_VORBIS=yes       build with Ogg/Vorbis codec plugin"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
+	@${ECHO_MSG}
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins

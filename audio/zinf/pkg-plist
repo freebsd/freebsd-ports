@@ -26,8 +26,9 @@ lib/freeamp/plugins/pls.plf
 lib/freeamp/plugins/rmp.dlf
 lib/freeamp/plugins/signature.pmo
 lib/freeamp/plugins/soundcard.pmo
-lib/freeamp/plugins/vorbis.lmc
-lib/freeamp/plugins/vorbis.mdf
+%%VORBIS%%lib/freeamp/plugins/vorbis.lmc
+%%VORBIS%%lib/freeamp/plugins/vorbis.mdf
+lib/freeamp/plugins/wav.lmc
 lib/freeamp/plugins/wavout.pmo
 lib/freeamp/plugins/winamp.ftf
 lib/freeamp/plugins/winamp_theme.xml
@@ -205,4 +206,4 @@ share/freeamp/themes/Tommy.fat
 @dirrm lib/freeamp/plugins
 @dirrm lib/freeamp
 @unexec rmdir %D/etc/sdr/plugins 2>/dev/null || true
-@unexec rmdir %D/etc/sdr 2&>/dev/null || true
+@unexec rmdir %D/etc/sdr 2>/dev/null || true
