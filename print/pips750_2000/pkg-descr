@@ -5,21 +5,3 @@ print out as high quality as you use the Windows driver. See the below
 URL:
 
 WWW: http://www.epkowa.co.jp/
-
-This port has a modified filter "filter750_2000.rev" which is useful to
-print out more than one page. Then you execute the next command:
-
-/usr/local/libexec/pips750_2000/setup
-
-to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips750_2000          env LANG=fr pips750_2000	  
-  env LANG=de pips750_2000             env LANG=es pips750_2000	  
-  env LANG=it pips750_2000             env LANG=nl pips750_2000
-  env LANG=pt pips750_2000             env LANG=ko pips750_2000 (*)
-  env LANG=zh_CN pips750_2000 (*)(**)  env LANG=zh_TW.Big5 pips750_2000 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips750_2000/readme_for_zh

@@ -5,10 +5,3 @@ print out as high quality as you use the Windows driver. See the below
 URL:
 
 WWW: http://www.epkowa.co.jp/
-
-This port has a modified filter "filter780.rev" which is useful to
-print out more than one page. Then you execute the next command:
-
-/usr/local/libexec/pips780/setup
-
-to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.

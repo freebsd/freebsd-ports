@@ -1,0 +1,22 @@
+Index: ekpnavi/Makefile.in
+diff -u ekpnavi/Makefile.in.orig ekpnavi/Makefile.in
+--- ekpnavi/Makefile.in.orig	Fri Dec 20 00:09:56 2002
++++ ekpnavi/Makefile.in	Wed Aug 25 18:57:41 2004
+@@ -232,7 +232,7 @@
+ 	if test ! -s Makefile; then \
+ 		./configure --prefix=$(prefix) ;\
+ 	fi ;\
+-	make
++	$(MAKE)
+ 
+ clean-local:
+ 	if test -d $(srcdir)/$(EKPNAVI_PKGNAME); then \
+@@ -243,7 +243,7 @@
+ install-exec-local:
+ 	if test -d $(srcdir)/$(EKPNAVI_PKGNAME); then \
+ 		cd $(srcdir)/$(EKPNAVI_PKGNAME) ;\
+-		make install ;\
++		$(MAKE) install ;\
+ 	fi
+ 
+ $(EKPNAVI_PKGNAME).tar.gz:

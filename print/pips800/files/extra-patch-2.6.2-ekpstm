@@ -1,0 +1,22 @@
+Index: ekpstm/Makefile.in
+diff -u ekpstm/Makefile.in.orig ekpstm/Makefile.in
+--- ekpstm/Makefile.in.orig	Fri Dec 20 00:09:56 2002
++++ ekpstm/Makefile.in	Wed Aug 25 18:55:20 2004
+@@ -213,7 +213,7 @@
+ 			./configure --prefix=$(prefix) ;\
+ 		fi ;\
+ 	fi ;\
+-	make
++	$(MAKE)
+ 
+ clean-local:
+ 	if test -d $(srcdir)/$(EKPSTM_PKGNAME); then \
+@@ -224,7 +224,7 @@
+ install-exec-local:
+ 	if test -d $(srcdir)/$(EKPSTM_PKGNAME); then \
+ 		cd $(srcdir)/$(EKPSTM_PKGNAME) ;\
+-		make install ;\
++		$(MAKE) install ;\
+ 	fi
+ 
+ #dist-hook:

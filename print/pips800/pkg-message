@@ -6,3 +6,9 @@ You need to add following lines into /etc/libmap.conf:
 libc.so.6			pluginwrapper/pips.so
 libdl.so.2			pluginwrapper/pips.so
 
+Please execute the following command:
+
+    /usr/local/libexec/pips/%%PRT_MODEL%%/setup
+
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
