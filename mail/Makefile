@@ -141,6 +141,7 @@
     SUBDIR += majordomo
     SUBDIR += mavbiff
     SUBDIR += mb2md
+    SUBDIR += mboxcheck-applet
     SUBDIR += mboxgrep
     SUBDIR += mboxstats
     SUBDIR += mbx2mbox

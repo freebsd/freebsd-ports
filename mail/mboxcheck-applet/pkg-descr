@@ -1,0 +1,4 @@
+Mboxcheck is a GNOME2 applet which check mails arrive in your mboxes. It uses
+python and its gnome binding.
+
+WWW: http://perso.wanadoo.fr/seb128/mboxcheck-en.html
