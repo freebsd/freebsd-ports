@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.3.3
-PORTREVISION=	5
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -18,8 +17,9 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A verifier for FreeBSD port directory
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/src
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 SRC=		${.CURDIR}/src
 
@@ -28,8 +28,14 @@ MAN1=		portlint.1
 do-fetch:
 	@${DO_NADA}
 
+pre-patch:
+	@${CP} -R ${SRC} ${WRKDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/portlint.pl
+
 do-install:
-	${INSTALL_SCRIPT} ${SRC}/portlint.pl ${PREFIX}/bin/portlint
-	${INSTALL_MAN} ${SRC}/portlint.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl ${PREFIX}/bin/portlint
+	${INSTALL_MAN} ${WRKSRC}/portlint.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 portlint makes a small set of sanity checks for port directory.
 
-usage: portlint [-abctvN] [-B#] [port_directory]
+usage: portlint [-AabctvN] [-B#] [port_directory]
         -a      additional check for scripts/* and pkg/*
+        -A      turn on all additional checks (equivalent to -abcNt)
         -b      warn $(VARIABLE)
         -c      committer mode
         -v      verbose mode

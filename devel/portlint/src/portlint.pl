@@ -17,10 +17,10 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.28.2.1 2000/04/24 02:12:36 mharo Exp $
+# $Id: portlint.pl,v 1.3 2003/07/20 00:24:42 marcus Exp $
 #
 
-use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
+use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
 use Getopt::Std;
 use File::Find;
 use IPC::Open2;
@@ -82,8 +82,9 @@ my $re_lang_pref = '(' . join('|', @lang_pref) . ')-';
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
 	print STDERR <<EOF;
-usage: $prog [-abchvtN] [-M ENV] [-B#] [port_directory]
+usage: $prog [-AabchvtN] [-M ENV] [-B#] [port_directory]
 	-a	additional check for scripts/* and pkg-*
+	-A	turn on all additional checks (equivalent to -abcNt)
 	-b	warn \$(VARIABLE)
 	-c	committer mode
 	-h	show summary of command line options
@@ -216,9 +217,9 @@ open(MK, $sites_mk) || die "$sites_mk: $!";
 my @site_groups = grep($_ = /^MASTER_SITE_(\w+)/ && $1, <MK>);
 close(MK);
 
-my $cmd = join(' -V MASTER_SITE_', "make $makeenv -f - all", @site_groups);
+$cmd = join(' -V MASTER_SITE_', "make $makeenv -f - all", @site_groups);
 
-my $i = 0;
+$i = 0;
 
 open2(IN, OUT, $cmd);
 
@@ -288,6 +289,12 @@ foreach my $i (@checker) {
 		}
 	}
 }
+
+# Check to make sure there is no pkg-comment file anymore.
+if (-f 'pkg-comment') {
+	&perror("FATAL: Use of pkg-comment is obsolete.  Use the COMMENT macro within the port's Makefile instead.");
+}
+
 if ($committer) {
 	sub find_proc {
 		return if /^\.\.?$/;
@@ -308,8 +315,7 @@ if ($committer) {
 			&perror("FATAL: $fullname: empty file and should be removed. ".
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
-			$problem = 1;
-		} elsif (-d && scalar(@x = <$_/{*,.?*}>) <= 1) { 
+		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) { 
 			&perror("FATAL: $fullname: empty directory should be removed.");
 		} elsif (/^\./) {
 			&perror("Warning: $fullname: dotfiles are not preferred. ".
@@ -396,13 +402,21 @@ sub checkdescr {
 sub checkplist {
 	my($file) = @_;
 	my($curdir) = ($localbase);
+	my(%omfremoveseen) = ();
+	my(%omfinstallseen) = ();
+	my(%omfseen) = ();
 	my($inforemoveseen, $infoinstallseen, $infoseen) = (0, 0, 0);
+	my(%omfafterinstall) = ();
+	my(%omfafterremove) = ();
 	my($infobeforeremove, $infoafterinstall) = (0, 0);
 	my($infooverwrite) = (0);
 	my($rcsidseen) = (0);
 
+	my(@exec_omf) = ();
 	my(@exec_info) = ();
+	my(@unexec_omf) = ();
 	my(@unexec_info) = ();
+	my(@omffile) = ();
 	my(@infofile) = ();
 
 	open(IN, "< $file") || return 0;
@@ -420,6 +434,10 @@ sub checkplist {
 			&perror("WARN: $file $.: use of <\$ARCH> deprecated, ".
 				"use \${MACHINE_ARCH} instead.");
 		}
+		if (m'lib/perl5/site_perl/%%PERL_VER%%') {
+			&perror("WARN: $file $.: use \%\%SITE_PERL\%\% ".
+					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
+		}
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
@@ -428,9 +446,19 @@ sub checkplist {
 				&perror("WARN: use \"\@dirrm\" ".
 					"instead of \"\@unexec rmdir\".");
 				}
+			} elsif ($_ =~ /^\@exec[ \t]+scrollkeeper-install[ \t]+-q\s+(\S+)\s+.+$/) {
+				push(@exec_omf, $1);
+				my $ot = $1;
+				$ot =~ s/^\%D\///;
+				$omfinstallseen{$ot} = $.;
 			} elsif ($_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
 				push(@exec_info, $1);
+			} elsif ($_ =~ /^\@unexec[ \t]+scrollkeeper-uninstall[ \t]+-q\s+(\S+)\s+.+$/) {
+				push(@unexec_omf, $1);
+				my $ot = $1;
+				$ot =~ s/^\%D\///;
+				$omfremoveseen{$ot} = $.;
 			} elsif ($_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				$inforemoveseen = $.;
 				push(@unexec_info, $1);
@@ -475,6 +503,13 @@ sub checkplist {
 				"please define INSTALLS_SHLIB as appropriate");
 		}
 
+		if ($_ =~ /.*\.omf$/) {
+			$omfseen{$_} = $.;
+			$omfafterinstall{$_}++ if ($omfinstallseen{$_});
+			$omfafterremove{$_}++ if ($omfremoveseen{$_});
+			push(@omffile, $_);
+		}
+
 		if ($_ =~ /^info\/.*info(-[0-9]+)?$/) {
 			$infoseen = $.;
 			$infoafterinstall++ if ($infoinstallseen);
@@ -487,6 +522,14 @@ sub checkplist {
 				"$file. use install-info to add/remove ".
 				"an entry.");
 			$infooverwrite++;
+		}
+
+		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
+			&perror("WARN: $file $.: consider using DOCSDIR macro");
+		}
+
+		if ($_ =~ /^share\/examples\//) {
+			&perror("WARN: $file $.: consider using EXAMPLESDIR macro");
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
@@ -526,6 +569,21 @@ sub checkplist {
 		}
 	}
 
+	# Check that each OMF file has an install and deinstall line.
+	my $omf_install = join(" ", @exec_omf);
+	$omf_install .= ' ';
+	my $omf_deinstall = join(" ", @unexec_omf);
+	$omf_deinstall .= ' ';
+
+	foreach my $of (@omffile) {
+		if ($omf_install !~ /\%D\/\Q$of\E/) {
+			&perror("FATAL: you need an '\@exec scrollkeeper-install -q \%D/$of 2>/dev/null || /usr/bin/true' line in your pkg-plist");
+		}
+		if ($omf_deinstall !~ /\%D\/$of/) {
+			&perror("FATAL: you need an '\@unexec scrollkeeper-uninstall -q \%D/$of 2>/dev/null || /usr/bin/true' line in your pkg-plist");
+		}
+	}
+
 # check that every infofile has an exec install-info and unexec install-info
 	my $exec_install = join(" ", @exec_info);
 	$exec_install .= ' ';
@@ -547,30 +605,61 @@ sub checkplist {
 			"in $file as \@comment.")
 	}
 
-	if (!$infoseen) {
+	if (!$infoseen && !scalar(keys %omfseen)) {
 		close(IN);
 		return 1;
 	}
-	if (!$infoinstallseen) {
-		if ($infooverwrite) {
-			&perror("FATAL: install-info must be used to ".
-				"add/delete entries into \"info/dir\".");
+	if (scalar(keys %omfseen)) {
+		if (!scalar(keys %omfinstallseen)) {
+			&perror("FATAL: scrollkeeper-install must be used to ".
+					"add/delete entries from the ScrollKeeper OMF database.");
+		} else {
+			foreach my $of (keys %omfseen) {
+				if ($omfafterinstall{$of}) {
+					&perror("FATAL: move \"\@exec scrollkeeper-install\" ".
+							"line to make sure that it is placed after ".
+							"the $of entry. (currently on line ".
+							"$omfinstallseen{$of} in $file)");
+				}
+			}
 		}
-		&perror("FATAL: \"\@exec install-info \%D/...  \%D/info/dir\" must be placed ".
-			"after all the info files.");
-	} elsif ($infoafterinstall) {
-		&perror("FATAL: move \"\@exec install-info\" line to make ".
-			"sure that it is placed after all the info files. ".
-			"(currently on line $infoinstallseen in $file)");
+		if (!scalar(keys %omfremoveseen)) {
+			&perror("FATAL: \"\@unexec scrollkeeper-uninstall\" must be ".
+					"placed after the OMF file it uninstalls.");
+		} else {
+			foreach my $of (keys %omfseen) {
+				if ($omfafterremove{$of}) {
+					&perror("FATAL: move \"\@unexec scrollkeeper-uninstall\" ".
+							"line to make sure that it is placed after ".
+							"the $of entry. (currently on line ".
+							"$omfremoveseen{$of} in $file)");
+				}
+			}
+		}
 	}
-	if (!$inforemoveseen) {
-		&perror("FATAL: \"\@unexec install-info --delete \%D/... \%D/info/dir\" must ".
-			"be placed before any of the info files listed.");
-	} elsif ($infobeforeremove) {
-		&perror("FATAL: move \"\@exec install-info --delete\" ".
-			"line to make sure ".
-			"that it is placed before any of the info files. ".
-			"(currently on line $inforemoveseen in $file)");
+
+	if ($infoseen) {
+		if (!$infoinstallseen) {
+			if ($infooverwrite) {
+				&perror("FATAL: install-info must be used to ".
+					"add/delete entries into \"info/dir\".");
+			}
+			&perror("FATAL: \"\@exec install-info \%D/...  \%D/info/dir\" must be placed ".
+				"after all the info files.");
+		} elsif ($infoafterinstall) {
+			&perror("FATAL: move \"\@exec install-info\" line to make ".
+				"sure that it is placed after all the info files. ".
+				"(currently on line $infoinstallseen in $file)");
+		}
+		if (!$inforemoveseen) {
+			&perror("FATAL: \"\@unexec install-info --delete \%D/... \%D/info/dir\" must ".
+				"be placed before any of the info files listed.");
+		} elsif ($infobeforeremove) {
+			&perror("FATAL: move \"\@exec install-info --delete\" ".
+				"line to make sure ".
+				"that it is placed before any of the info files. ".
+				"(currently on line $inforemoveseen in $file)");
+		}
 	}
 	close(IN);
 }
@@ -779,8 +868,8 @@ sub checkmakefile {
 	my %cmdnames = ();
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
-awk basename cat chmod chown cp echo expr false gmake grep gzcat
-ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xmkmf
+awk basename cat chmod chown cp echo expr false file find gmake grep gzcat
+ldconfig ln md5 mkdir mv patch rm rmdir sed sh strip touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
@@ -796,7 +885,8 @@ ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xmkmf
 	$j =~ s/([ \t][\@-]?)(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
 	foreach my $i (keys %cmdnames) {
 		if ($j =~ /[ \t\/]$i[ \t\n;]/
-		 && $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/) {
+		 && $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
+	     && $j !~ /^COMMENT(.)?=/) {
 			&perror("WARN: possible direct use of command \"$i\" ".
 				"found. use $cmdnames{$i} instead.");
 		}
@@ -832,6 +922,23 @@ ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xmkmf
 	# whole file: full path name
 	#
 	&abspathname($whole, $file);
+
+	#
+	# whole file: SITE_PERL
+	#
+	print "OK: checking SITE_PERL.\n" if ($verbose);
+	if ($whole =~ /\nSITE_PERL[?:]?=/) {
+		&perror("FATAL: use of SITE_PERL discouraged. ".
+				"it is set in bsd.port.mk.");
+	}
+
+	#
+	# whole file: ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+	#
+	if ($j =~ m'\${(?:LOCALBASE|PREFIX)}/lib/perl5/site_perl/\${PERL_VER}') {
+		&perror("WARN: possible use of \"\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}\" ".
+				"found. use \"\${SITE_PERL}\" instead.");
+	}
 
 	#
 	# slave port check
@@ -1019,7 +1126,13 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		print "OK: seen MASTER_SITES, sanity checking URLs.\n"
 			if ($verbose);
 		my @sites = split(/\s+/, $1);
+		my $skipnext = 0;
 		foreach my $i (@sites) {
+			if ($skipnext) {
+				$skipnext = 0;
+				next;
+			}
+			$skipnext++ if ($i =~ /^#/);
 			if ($i =~ m#^\w+://#) {
 				&urlcheck($i);
 				unless (&is_predefined($i)) {
@@ -1102,7 +1215,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	# should be
 	#	DISTNAME=     package-1.0
 	#	EXTRACT_SUFX= .tgz
-	if ($distfiles =~ /^\S+$/) {
+	if ($distfiles =~ /^\S+$/ && $distfiles !~ /:[^\/:]+$/) {
 		$bogusdistfiles++;
 		print "OK: seen DISTFILES with single item, checking value.\n"
 			if ($verbose);
@@ -1208,6 +1321,9 @@ MAINTAINER COMMENT
 		if ($addr =~ /[\s,<>()]/) {
 			&perror("FATAL: MAINTAINER should be a single address without comment.");
 		}
+		if ($addr !~ /^[^\@]+\@[\w\d\-\.]+$/) {
+			&perror("FATAL: MAINTAINER address, $addr, does not appear to be a valid email address.");
+		}
 		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
 	} elsif ($whole !~ /\nMAINTAINER[?]?=/) {
 		&perror("FATAL: no MAINTAINER listed in $file.") unless ($slaveport && $makevar{MAINTAINER} ne '');
@@ -1241,7 +1357,8 @@ MAINTAINER COMMENT
 
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
-LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS FETCH_DEPENDS DEPENDS DEPENDS_TARGET
+EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
+FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	);
 
 	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)?DEPENDS/) {
@@ -1316,6 +1433,13 @@ LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 					&perror("WARN: dependency to $1 ".
 						"listed in $j. consider using ".
 						"USE_QT.");
+				}
+
+				# check USE_GETOPT_LONG
+				if ($m{'dep'} =~ /^(gnugetopt\.\d)+$/) {
+					&perror("WARN: dependency to $1 ".
+							"listed in $j.  consider using ".
+							"USE_GETOPT_LONG.");
 				}
 
 				# check backslash in LIB_DEPENDS
@@ -1707,9 +1831,9 @@ sub urlcheck {
 	if ($url !~ m#^\w+://#) {
 		&perror("WARN: \"$url\" doesn't appear to be a URL to me.");
 	}
-	if ($url !~ m#/$#) {
+	if ($url !~ m#/(:[^/:]+)?$#) {
 		&perror("FATAL: URL \"$url\" should ".
-			"end with \"/\".");
+			"end with \"/\" or a group name (e.g. :something).");
 	}
 	if ($url =~ m#://[^/]*:/#) {
 	&perror("FATAL: URL \"$url\" contains ".
