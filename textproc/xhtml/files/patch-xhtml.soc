@@ -5,4 +5,4 @@
  PUBLIC	"-//W3C//ENTITIES Special for XHTML//EN" "xhtml-special.ent"
  
 -SGMLDECL "xhtml1.dcl"
-+-- SGMLDECL "xhtml1.dcl"
++-- SGMLDECL "xhtml1.dcl" --
