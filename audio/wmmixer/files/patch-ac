@@ -1,0 +1,11 @@
+--- wmmixer.cc.orig	Thu Sep 12 15:06:32 2002
++++ wmmixer.cc	Thu Sep 12 15:06:48 2002
+@@ -503,7 +503,7 @@
+    }
+ }
+ 
+-void checkVol(bool forced=true){
++void checkVol(bool forced){
+    mixctl->readVol(channel[curchannel], true);
+    int nl=mixctl->readLeft(channel[curchannel]);
+    int nr=mixctl->readRight(channel[curchannel]);
