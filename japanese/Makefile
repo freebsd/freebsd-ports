@@ -167,6 +167,7 @@
     SUBDIR += kinput2-wnn6
     SUBDIR += kinput2-wnn7
     SUBDIR += kochi-ttfonts
+    SUBDIR += koffice-i18n
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
