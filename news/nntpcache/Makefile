@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	nntpcache
-PORTVERSION=	2.4.0b5
+PORTVERSION=	3.0.1
 CATEGORIES=	news
-MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
+MASTER_SITES=	ftp://ftp.nntpcache.org/pub/nntpcache/ \
 		ftp://ftp.nethelp.no/pub/news/ \
 		ftp://ftp.netsw.org/net/news/proxy/nntpcache/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
-
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 .if defined(WITH_LDAP) && !defined(WITH_LDAP2)
-LIB_DEPENDS+= ldap.1:${PORTSDIR}/net/openldap
-LIB_DEPENDS+= lber.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
 .endif
-
 .if defined(WITH_LDAP2)
-LIB_DEPENDS+=   ldap.2:${PORTSDIR}/net/openldap2
-LIB_DEPENDS+=   lber.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 .endif
 
 # This may be set interactively at install-time.  NNTPCache will
@@ -36,18 +34,19 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
 
-AUTHINFO_EXT= authinfo_pam.ext
+AUTHINFO_EXT=	authinfo_pam.ext
 .if !defined(WITHOUT_RADIUS)
-CONFIGURE_ARGS+= --with-authinfo-radius
-AUTHINFO_EXT+= authinfo_radius.ext
+CONFIGURE_ARGS+=	--with-authinfo-radius
+AUTHINFO_EXT+=		authinfo_radius.ext
 .endif
 .if defined(WITH_LDAP) || defined(WITH_LDAP2)
-CONFIGURE_ARGS+= --with-authinfo-ldap
-CPPFLAGS+= -I${PREFIX}/include -I${LOCALBASE}/include
-LDFLAGS+= -L${PREFIX}/lib -L${LOCALBASE}/lib
-AUTHINFO_EXT+= authinfo_ldap.ext
-CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-authinfo-ldap
+CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
+LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
+AUTHINFO_EXT+=	authinfo_ldap.ext
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
+CONFIGURE_ARGS+=	--program-transform-name=''
 
 NNTPSPOOLDIR?=	${SPOOLDIR}/${PORTNAME}
 PLIST_SUB+=	SPOOLDIR=${NNTPSPOOLDIR}
@@ -67,10 +66,6 @@ post-fetch:
 
 post-configure:
 	@cd ${WRKSRC}/src && ${GMAKE} ${AUTHINFO_EXT}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,AUTOMAKE=automake,AUTOMAKE=automake14,' \
-		${WRKSRC}/configure
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/etc/rc.d
