@@ -7,11 +7,12 @@
 #
 
 
-DISTNAME=	nvi-1.79
-PKGNAME?=	nvi-m17n-1.79.19991117
+PORTNAME=	nvi
+PORTVERSION=	1.79.19991117
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/\
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+DISTNAME=	nvi-1.79
 
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
