@@ -1,0 +1,11 @@
+--- mixer.c.orig	Sun Jan 30 03:52:17 2000
++++ mixer.c	Sun Jan 30 03:52:51 2000
+@@ -80,7 +80,7 @@
+ 		}
+ 
+ 	t = ioctl(mf, SOUND_MIXER_READ_DEVMASK, &dev_mask);
+-	t|= ioctl(mf, SOUND_MIXER_READ_RECMASK, &rec_mask);
++	// t|= ioctl(mf, SOUND_MIXER_READ_RECMASK, &rec_mask);
+ 	t|= ioctl(mf, SOUND_MIXER_READ_STEREODEVS, &stereo_mask);
+ 	if (t!=0)
+ 		{
