@@ -1,0 +1,20 @@
+#!/bin/sh
+XFLDNAME="-Bitstream-Bitstream Cyberbit-"
+FONTNAME=cyberbit
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+if [ "$2" = "PRE-INSTALL" ]; then
+  echo "Please add ${FONTDIR} to your /etc/x11/xorg.conf file"
+  exit 0
+fi
+cd ${FONTDIR}
+touch fonts.dir
+sed -e "/${XFLDNAME}/d" fonts.dir > fonts.dir.tmp
+numfonts=$(echo $(cat fonts.dir.tmp fonts.dir.${FONTNAME} | wc -l) - 2 | bc)
+echo ${numfonts} > fonts.dir
+sed -e 1d fonts.dir.tmp >> fonts.dir
+sed -e 1d fonts.dir.$FONTNAME >> fonts.dir
+touch fonts.alias
+sed -e "/^${XFLDNAME}/d" fonts.alias > fonts.alias.tmp
+mv -f fonts.alias.tmp fonts.alias
+cat fonts.alias.${FONTNAME} >> fonts.alias
+rm -f fonts.dir.tmp fonts.alias.tmp
