@@ -1,0 +1,10 @@
+mod_auth_remote allows you to authenticate users on one (or more) remote web 
+server(s), using basic HTTP authentication.
+When a request comes in, mod_auth_remote obtains the client username &
+password from the client via basic authentication scheme.
+It then builds a HTTP header with authorization header built from the client's
+userid:passwd. mod_auth_remote then makes a HEAD request to the authentication
+server. On reciept of a 2XX response, the client is validated; for all other
+responses the client is not validated.
+
+WWW: http://puggy.symonds.net/~srp/stuff/
