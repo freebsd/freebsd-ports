@@ -1,0 +1,4 @@
+# Uptimec configuration file. This file is used by startup script
+HOSTID=2345
+PASSWORD=blabla
+#SERVER=uptimes.mreriksson.net

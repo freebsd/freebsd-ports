@@ -1,0 +1,13 @@
+Tips for participating in Uptime contest:
+
+  - You need to obtain hostid and password on project home page
+    http://mreriksson.net/uptimes/
+    
+  - Enter hostid and password into %%LOCALBASE%%/etc/uptimecrc
+
+  - client uses UDP protocol for talking to server on port 2050
+
+  You may need to open this port in firewall:
+  ipfw add allow udp from any to any dst-port 2050 out keep-state
+   
+Radim Kolar   
