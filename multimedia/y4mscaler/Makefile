@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
-LIB_DEPENDS=	lavjpeg-1.6.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	lavjpeg-1.6.2:${PORTSDIR}/multimedia/mjpegtools
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
