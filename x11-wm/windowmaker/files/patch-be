@@ -1,5 +1,5 @@
---- libwmfun-0.0.2/libwmfun/Makefile.in.orig	Tue Feb 15 16:04:35 2000
-+++ libwmfun-0.0.2/libwmfun/Makefile.in	Tue Feb 15 15:44:31 2000
+--- libwmfun-0.0.3/libwmfun/Makefile.in.orig	Tue Feb 15 16:04:35 2000
++++ libwmfun-0.0.3/libwmfun/Makefile.in	Tue Feb 15 15:44:31 2000
 @@ -38,7 +38,7 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
