@@ -875,6 +875,7 @@ clusterit	ports/net/clusterit
 cmail		ports/mail/cmail
 cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
+cmdwatch	ports/sysutils/cmdwatch
 cmp		src/usr.bin/cmp
 cmp3		ports/audio/cmp3
 cmpsfont	ports/print/cmpsfont
