@@ -10,6 +10,9 @@
 #
 
 use strict;
+use lib $ENV{CVSROOT};
+use CVSROOT::cfg;
+
 
 my $CVSROOT = $ENV{CVSROOT} || die "Can't determine CVSROOT (commitcheck)!\n";
 
@@ -17,10 +20,13 @@ my $MINCVSVERSION = "1090900";	# 1.9.9p0
 
 # Check that the user is committing on the right machine.
 #
-use Sys::Hostname;			# get hostname() function
+use Sys::Hostname;
 my $hostname = hostname();
-if ($hostname !~ /^freefall.freebsd.org$/) {
-	print "Please commit on Freefall!\n";
+if (@cfg::COMMIT_HOSTS && !grep(/^\Q$hostname\E$/i, @cfg::COMMIT_HOSTS)) {
+	print "Please don't commit on this host!\n";
+	print "Please commit on ",
+	    join(" or ", @cfg::COMMIT_HOSTS),
+	    " instead.\n";
 	exit 1;
 }
 

@@ -15,7 +15,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
-	    $ADD_TO_LINE $TMPDIR %TEMPLATE_HEADERS
+	    $ADD_TO_LINE $TMPDIR %TEMPLATE_HEADERS @COMMIT_HOSTS
 	    $CHECK_HEADERS $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
 
@@ -40,6 +40,16 @@ $FILE_PREFIX = "#cvs.files.$PID";
 # The file used to store the name of the last directory examined
 # when processing a multi-directory commit.
 $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";                                         
+
+###################
+### commitcheck ###
+###################
+
+# A list of hosts the it's ok to commit on.  Useful if your committers
+# take local copies of the repository to work off-line.
+# (Empty if you don't want checks.)
+@COMMIT_HOSTS = ();
+
 
 ################
 ### logcheck ###

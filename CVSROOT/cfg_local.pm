@@ -41,6 +41,8 @@ if ($hostname =~ /^freefall\.freebsd\.org$/i) {
 
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 	$MAILADDRS = 'cvs@FreeBSD.org' if $DEBUG;
+
+	@COMMIT_HOSTS = qw(freefall.freebsd.org);
 }
 
 
