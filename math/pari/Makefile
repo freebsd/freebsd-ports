@@ -3,7 +3,7 @@
 # Date created:		19 January 1999
 # Whom:	Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 #
-# $Id:$
+# $Id: Makefile,v 1.6 1999/01/26 02:46:49 steve Exp $
 #
 
 DISTNAME=	pari-2.0.13.alpha
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://megrez.math.u-bordeaux.fr/pub/pari/unix/ \
 				ftp://hasse.mathematik.tu-muenchen.de/pub/pari/
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
+
+ONLY_FOR_ARCHS=	i386
 
 HAS_CONFIGURE = Yes
 CONFIGURE_SCRIPT = Configure
