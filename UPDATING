@@ -26,9 +26,6 @@ upgrades.
         | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards by hand.
-      Please note, that this last step is, strictly speaking, not necessary,
-      if you are upgrading from 5.8.[45] to 5.8.6, or from 5.6.1 to
-      5.6.2.  But it is cleaner to do so anyway.
 
 20050130:
   AFFECTS: users of PostgreSQL
