@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MasonX/Request/WithApacheSession.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MasonX/Request/WithApacheSession/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MasonX/Request/WithApacheSession
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MasonX/Request
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MasonX
+@dirrm %%SITE_PERL%%/MasonX/Request
+@dirrm %%SITE_PERL%%/MasonX
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MasonX 2>/dev/null || true

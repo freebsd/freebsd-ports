@@ -370,6 +370,7 @@
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-Tools
+    SUBDIR += p5-MasonX-Request-WithApacheSession
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Sledge
