@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.27
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -33,6 +33,7 @@ DISTNAME=	apache_${PORTVERSION}
 
 MAINTAINER=	ache@freebsd.org
 
+LIB_DEPENDS+=   expat.4:${PORTSDIR}/textproc/expat2
 USE_PERL5=	yes
 
 DATADIR=${PREFIX}/www
@@ -81,33 +82,36 @@ CONFIGURE_ARGS+=	\
 		--with-layout=FreeBSD \
 		--without-confadjust \
 		--enable-module=most \
+		--enable-rule=EXPAT \
 		--enable-module=auth_db \
 		--enable-module=mmap_static \
 		--disable-module=auth_dbm \
 		--enable-shared=max \
 		${SUEXEC_CONF}
 
-OPTIM=          -DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
-		-DDEFAULT_PATH=\\"${DEFAULT_PATH}\\"
+CFLAGS+=-DDOCUMENT_LOCATION='\"${DOCUMENT_ROOT}\"' \
+	-DDEFAULT_PATH='\"${DEFAULT_PATH}\"'
 
 #
 # Set APACHE_HARD_SERVER_LIMIT env. variable to desired value
 #
 .if defined(APACHE_HARD_SERVER_LIMIT)
-OPTIM+=         -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
+CFLAGS+=-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
-OPTIM+=         -DHARD_SERVER_LIMIT=512
+CFLAGS+=-DHARD_SERVER_LIMIT=512
 .endif
 
 #
 # Set WITH_APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 .if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
-OPTIM+=		-DBUFFERED_LOGS
-CFLAGS+=	-O6 -fomit-frame-pointer
+CFLAGS+=-DBUFFERED_LOGS
+CFLAGS+=-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}'
+CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}' \
+		INCLUDES=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=           ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
