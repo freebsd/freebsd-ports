@@ -1,5 +1,5 @@
---- fping.c.orig	Tue Mar 25 01:24:16 1997
-+++ fping.c	Tue Mar 25 01:24:02 1997
+--- fping.c.orig	Mon Sep 20 13:10:23 1999
++++ fping.c	Mon Sep 20 13:15:05 1999
 @@ -185,7 +185,9 @@
  
  extern char *optarg;
@@ -10,3 +10,108 @@
  
  
  #ifdef __cplusplus
+@@ -234,9 +236,9 @@
+ int timeout = DEFAULT_TIMEOUT;
+ int interval = DEFAULT_INTERVAL;
+ 
+-long max_reply=0;
+-long min_reply=10000;
+-int total_replies=0;
++long max_reply=0;	/* usec */
++long min_reply=10000;	/* usec */
++int total_replies=0;	/* usec */
+ double sum_replies=0;
+ 
+ struct timeval timeout_timeval;
+@@ -385,6 +387,7 @@
+          }
+          if (!ping_file) errno_crash_and_burn("fopen");
+          while(fgets(line,132,ping_file)) {
++           line[132-1] = '\0';
+            sscanf(line,"%s",host);
+               if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
+                 continue;
+@@ -411,8 +414,8 @@
+       cursor=cursor->next;
+   }
+ 
+-  gettimeofday(&start_time,&tz);
+   cursor=rrlist;
++  gettimeofday(&start_time,&tz);
+   while (num_waiting) {  /* while pings are outstanding */
+         if ( (timeval_diff(&current_time,&cursor->last_time)> timeout) ||
+                                                 cursor->num_packets_sent==0)  {
+@@ -455,11 +458,11 @@
+           min_reply=0; max_reply=0; total_replies=1; sum_replies=0;
+ }
+ 
+-     fprintf(stderr," %8d msec (min round trip time)\n",min_reply);
+-     fprintf(stderr," %8d msec (avg round trip time)\n",(int)sum_replies/total_replies);
+-     fprintf(stderr," %8d msec (max round trip time)\n",max_reply);
++     fprintf(stderr," %8.3f msec (min round trip time)\n",min_reply/1000.0);
++     fprintf(stderr," %8.3f msec (avg round trip time)\n",sum_replies/total_replies/1000.0);
++     fprintf(stderr," %8.3f msec (max round trip time)\n",max_reply/1000.0);
+      fprintf(stderr," %8.3f sec (elapsed real time)\n",
+-	     timeval_diff( &end_time,&start_time)/1000.0);
++	     timeval_diff( &end_time,&start_time)/1000000.0);
+      fprintf(stderr,"\n");
+ 
+   }
+@@ -493,8 +496,6 @@
+   struct icmp *icp = (struct icmp *) buffer;
+   int n,len;
+ 
+-  gettimeofday(&h->last_time,&tz);
+-
+   icp->icmp_type = ICMP_ECHO;
+   icp->icmp_code = 0;
+   icp->icmp_cksum = 0;
+@@ -504,12 +505,15 @@
+ #define SIZE_PACK_SENT (sizeof(h->num_packets_sent))
+ #define SIZE_LAST_TIME (sizeof(h->last_time))
+ 
+-  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
+   bcopy(&h->num_packets_sent,
+              &buffer[SIZE_ICMP_HDR+SIZE_LAST_TIME], SIZE_PACK_SENT);
+ 
+   len = SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT;
+ 
++  /* set the time at the very last possible point */
++  gettimeofday(&h->last_time,&tz);
++  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
++
+   icp->icmp_cksum = in_cksum( (u_short *)icp, len );
+ 
+   n = sendto( s, buffer, len, 0, (struct sockaddr *)&h->saddr, 
+@@ -578,10 +582,12 @@
+        return 1; /* packet received, don't about it anymore */
+   }
+ 
++    /* get time of receipt as close to the real time as possible */
++    gettimeofday(&current_time,&tz);
++
+     n=icp->icmp_seq;
+     h=table[n];
+ 
+-    gettimeofday(&current_time,&tz);
+     bcopy(&icp->icmp_data[0],&sent_time,sizeof(sent_time));
+     bcopy(&icp->icmp_data[SIZE_LAST_TIME],&the_index,  sizeof(the_index));
+     this_reply = timeval_diff(&current_time,&sent_time);
+@@ -594,7 +600,7 @@
+        if (dns_flag) printf("%s",get_host_by_address(response_addr.sin_addr));
+        else printf("%s",h->host);
+        if (verbose_flag) printf(" is alive");
+-       if (elapsed_flag) printf(" (%d msec)",this_reply);
++       if (elapsed_flag) printf(" (%.3f msec)",this_reply/1000.0);
+        printf("\n");
+     }
+     num_alive++;
+@@ -756,7 +762,7 @@
+ 
+ temp = 
+   (((a->tv_sec*1000000)+ a->tv_usec) - 
+-     ((b->tv_sec*1000000)+ b->tv_usec))/1000;
++     ((b->tv_sec*1000000)+ b->tv_usec));
+ 
+ return (long) temp;
+ 
