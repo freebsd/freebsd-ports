@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	spinner
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/spinner/
 
