@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.6.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,7 @@ WITH_FRIBIDI=		yes
 .if exists(${LOCALBASE}/lib/libiconv.so)
 WITH_ICONV=		yes
 .endif
-.if exists(${LOCALBASE}/lib/libMagick.so.7)
+.if exists(${LOCALBASE}/lib/libMagick.so.8)
 WITH_IMAGEMAGICK=	yes
 .endif
 
