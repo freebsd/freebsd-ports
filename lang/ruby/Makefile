@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ruby
-# Version required:     1.4.2
+# Version required:     1.4.3
 # Date created:         04 September 1997
 # Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ruby-1.4.2
+DISTNAME=	ruby-1.4.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
