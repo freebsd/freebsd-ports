@@ -17,7 +17,7 @@ LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
 		wwwzip.1:${PORTSDIR}/www/libwww \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		pspell.4:${PORTSDIR}/textproc/pspell \
-		gal.3:${PORTSDIR}/x11-toolkits/gal
+		gal.4:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

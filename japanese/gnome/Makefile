@@ -17,7 +17,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/japanese/gnomelibs \
 		panel_applet.4:${PORTSDIR}/japanese/gnomecore \
-		gal.3:${PORTSDIR}/japanese/gal
+		gal.4:${PORTSDIR}/japanese/gal
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/japanese/gnumeric
 
 NO_BUILD=	yes
