@@ -16,7 +16,7 @@ share/doc/xvile/perl.doc
 share/doc/xvile/visvile.doc
 share/doc/xvile/w32modes.doc
 @dirrm share/doc/xvile
-@unexec rm -f %D/share/xvile/vile/.vilemenu
+@unexec rm -f %D/share/xvile/vile/vilemenu.rc
 share/xvile/vile/color-ls.rc
 share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
