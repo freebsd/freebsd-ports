@@ -40,8 +40,8 @@ diff -rc ../radio/Makefile ./Makefile
   		LIBS="$(AFLIBDIRS) -lAF -lAFUtil -lm"
   
 + install:	all
-+ 		$(INSTALL) -c -o bin -g bin -m 755 broadcast /usr/local/bin/broadcast
-+ 		$(INSTALL) -c -o bin -g bin -m 755 radio /usr/local/bin/radio
++ 		$(INSTALL) -c -s -o bin -g bin -m 755 broadcast /usr/local/bin/broadcast
++ 		$(INSTALL) -c -s -o bin -g bin -m 755 radio /usr/local/bin/radio
 + 		$(INSTALL) -c -o bin -g bin -m 644 broadcast.man /usr/local/man/man1/broadcast.1
 + 		$(INSTALL) -c -o bin -g bin -m 644 radio.man /usr/local/man/man1/radio.1
   
