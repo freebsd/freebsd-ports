@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Inline
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Write Perl subroutines in other programming languages
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
