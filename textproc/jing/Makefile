@@ -20,13 +20,15 @@ NO_BUILD=	yes
 
 NO_BUILD_DEPENDS_JAVA=	yes
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/jing.jar ${JAVAJARDIR}
-
-post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-.if !defined(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${EXAMPLESDIR}
