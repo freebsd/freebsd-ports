@@ -7,6 +7,7 @@
 
 PORTNAME=	xalf
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/ \
 		http://www.lysator.liu.se/~astrand/projects/xalf/old/

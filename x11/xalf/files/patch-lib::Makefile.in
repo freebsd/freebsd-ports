@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Wed Aug 15 15:46:39 2001
++++ lib/Makefile.in	Wed Aug 15 15:48:21 2001
+@@ -82,9 +82,9 @@
+ 
+ libxalflaunch_la_LDFLAGS = -version-info 0:1:0
+ 
+-CFLAGS = $(X_CFLAGS) -DLIBDIR=\""$(libdir)"\"
++CFLAGS = @CFLAGS@ $(X_CFLAGS) -DLIBDIR=\""$(libdir)"\"
+ 
+-LDFLAGS = -ldl
++LDFLAGS =
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

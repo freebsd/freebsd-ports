@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/08/15 12:48:36	1.1
++++ src/Makefile.in	2001/08/15 12:49:04
+@@ -86,7 +86,7 @@
+ 
+ INCLUDES = @GTK_CFLAGS@ 
+ 
+-CFLAGS = -DLIBDIR=\""$(libdir)"\"
++CFLAGS = @CFLAGS@ -DLIBDIR=\""$(libdir)"\"
+ 
+ EXTRA_DIST = hourglass.xpm splash.xpm hgcursor.h hgcursor_mask.h getopt.h 	sp1.xpm sp2.xpm sp3.xpm sp4.xpm sp5.xpm sp6.xpm sp7.xpm sp8.xpm sp9.xpm 
+ 
