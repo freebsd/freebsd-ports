@@ -8,7 +8,7 @@
 PORTNAME=	qtarch
 PORTVERSION=	1.4.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.qtarch.intranova.net/pub/qtarch/
+MASTER_SITES=	ftp://qtarch.sourceforge.net/pub/qtarch/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
