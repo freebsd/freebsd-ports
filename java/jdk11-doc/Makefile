@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
 MAINTAINER=	znerd@FreeBSD.org
-COMMENT=	Java Development Kit 1.1 Documentation
+COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
-LATEST_LINK=	jdk11-doc
+LATEST_LINK=	jdk${JDK_CONCAT_VER}-doc
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION:C/_.*\$//g}/docs
 JDK_VERSION=	1.1.8_003
 JDK_MAJOR_VER=	${JDK_VERSION:R}
+JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
 DOWNLOAD_URL=	http://java.sun.com/jdk/${JDK_MAJOR_VER}/docs.html
 
 NO_BUILD=	yes
