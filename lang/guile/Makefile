@@ -3,8 +3,10 @@
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1997/11/09 14:13:05 jseger Exp $
+# $Id: Makefile,v 1.9 1997/11/10 09:40:35 asami Exp $
 #
+
+BROKEN=		build
 
 DISTNAME=	guile-1.2
 CATEGORIES=	lang
