@@ -15,10 +15,24 @@ MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/ \
 MAINTAINER=	bremner@unb.ca
 COMMENT=	Extensible drawing editor
 
-RUN_DEPENDS= 	gs:${PORTSDIR}/print/ghostscript-gnu \
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS= 	gs:${PORTSDIR}/${GSPORT} \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_XLIB=	yes
 USE_MOTIF= 	yes
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 .include <bsd.port.mk>
