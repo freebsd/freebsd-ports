@@ -8,8 +8,10 @@
 PORTNAME=	cook
 PORTVERSION=	2.15
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.canb.auug.org.au/~millerp/cook/
+
+# MASTER_SITES would normally include ${MASTER_SITE_SUNSITE}, but updated
+# cook distributions have not been propagated to sunsite since 2.12.
+MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 MASTER_SITE_SUBDIR=	devel/make
 
 MAINTAINER=	jasone@freebsd.org
