@@ -847,6 +847,7 @@ share/icons/hicolor/16x16/stock/io/stock_print.png
 share/icons/hicolor/16x16/stock/io/stock_printers.png
 share/icons/hicolor/16x16/stock/io/stock_reload.png
 share/icons/hicolor/16x16/stock/io/stock_save-as.png
+share/icons/hicolor/16x16/stock/io/stock_save_as.png
 share/icons/hicolor/16x16/stock/io/stock_save-pdf.png
 share/icons/hicolor/16x16/stock/io/stock_save-template.png
 share/icons/hicolor/16x16/stock/io/stock_save.png
@@ -1101,6 +1102,7 @@ share/icons/hicolor/16x16/stock/table/stock_insert-cells.png
 share/icons/hicolor/16x16/stock/table/stock_insert-columns.png
 share/icons/hicolor/16x16/stock/table/stock_insert-names-define.png
 share/icons/hicolor/16x16/stock/table/stock_insert-rows.png
+share/icons/hicolor/16x16/stock/table/stock_select-cell.png
 share/icons/hicolor/16x16/stock/table/stock_select-column.png
 share/icons/hicolor/16x16/stock/table/stock_select-row.png
 share/icons/hicolor/16x16/stock/table/stock_select-table.png
@@ -1633,6 +1635,7 @@ share/icons/hicolor/24x24/stock/io/stock_print.png
 share/icons/hicolor/24x24/stock/io/stock_printers.png
 share/icons/hicolor/24x24/stock/io/stock_reload.png
 share/icons/hicolor/24x24/stock/io/stock_save-as.png
+share/icons/hicolor/24x24/stock/io/stock_save_as.png
 share/icons/hicolor/24x24/stock/io/stock_save-pdf.png
 share/icons/hicolor/24x24/stock/io/stock_save-template.png
 share/icons/hicolor/24x24/stock/io/stock_save.png
@@ -1822,6 +1825,7 @@ share/icons/hicolor/24x24/stock/table/stock_insert-cells.png
 share/icons/hicolor/24x24/stock/table/stock_insert-columns.png
 share/icons/hicolor/24x24/stock/table/stock_insert-names-define.png
 share/icons/hicolor/24x24/stock/table/stock_insert-rows.png
+share/icons/hicolor/24x24/stock/table/stock_select-cell.png
 share/icons/hicolor/24x24/stock/table/stock_select-column.png
 share/icons/hicolor/24x24/stock/table/stock_select-row.png
 share/icons/hicolor/24x24/stock/table/stock_select-table.png
