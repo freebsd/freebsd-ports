@@ -1,0 +1,16 @@
+This is UCD SNMP, a derivative of CMU's SNMP package.
+
+From the README:
+
+This package contains a port and modified code of the CMU 2.1.2.1
+snmp agent.  It has been modified to allow extensibility quickly
+and easily.  It is far from the best and most configurable systems;
+but hey: its free.
+  
+We use this agent here to monitor known system problems before they
+take the machine over.  The agent can be easily configured to
+monitor the number of a given process running, run external scripts
+to check and report functional status.  Examples: mountd(s) under
+Ultrix 4.3 which tend to fork themselves crazy and eventually fill
+up the process table; On our hp700s, "amd" sometimes stops working,
+HP VUE hangs and fails to start X, etc.
