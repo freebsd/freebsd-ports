@@ -8,7 +8,9 @@
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.29.12f
 CATEGORIES=	security mail
-MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
+		ftp://ftp.drweb.ru/pub/unix/archive/ \
+		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-4.29.12/
 DISTNAME=       drweb-clients-4.29.12-F-sources
 
 MAINTAINER=	anton@chelcom.ru
