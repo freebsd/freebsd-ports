@@ -37,12 +37,6 @@ MAN3=	bitstring.3
 MAN5=	fcrontab.5 fcron.conf.5
 MAN8=	fcron.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -57,4 +51,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
