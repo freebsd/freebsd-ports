@@ -6,15 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=       baekmuk-1.1
-PKGNAME=	ko-baekmukfonts-bdf-1.1
+DISTNAME=       baekmuk-2.0
+PKGNAME=	ko-baekmukfonts-bdf-2.0
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/baekmuk/ \
-		http://www.FreeBSD.org/~sada/distfiles/
-DISTFILES=	baekmuk-1.1.tar.gz gulim12-19990903.bdf.gz
-EXTRACT_ONLY=	baekmuk-1.1.tar.gz
+MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/baekmuk/
 
 MAINTAINER=	cjh@kr.freebsd.org
+
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 
 USE_X_PREFIX=	yes
 
@@ -28,25 +27,25 @@ FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 
 BDFTOPCF=	${PREFIX}/bin/bdftopcf
 MKFONTDIR=	${PREFIX}/bin/mkfontdir
+CHARSETSUB=	s/ksx1001.1997/ksc5601.1987/g
+FONTSDIR=	lib/X11/fonts/local
+MAKE_ENV=	FONTSDIR=${FONTSDIR}
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+# change charset to ksc5601.1987...
 do-build:
-	${GUNZIP_CMD} -c ${_DISTDIR}/gulim12-19990903.bdf.gz \
-		> ${WRKDIR}/gulim12.bdf
 .for FONTNAME in ${FONTLIST}
+	perl -pi -e ${CHARSETSUB} ${WRKDIR}/${FONTNAME}.bdf
 	${BDFTOPCF} ${WRKDIR}/${FONTNAME}.bdf | ${GZIP_CMD} -c \
 		> ${WRKDIR}/${FONTNAME}.pcf.gz
 .endfor
 
 do-install:
-	-mkdir -p ${PREFIX}/lib/X11/fonts/baekmuk
+	-mkdir -p ${PREFIX}/${FONTSDIR}
 .for FONTNAME in ${FONTLIST}
 	${INSTALL_DATA} ${WRKDIR}/${FONTNAME}.pcf.gz \
-			${PREFIX}/lib/X11/fonts/baekmuk
+			${PREFIX}/${FONTSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${PREFIX}/lib/X11/fonts/baekmuk
-	${MKFONTDIR} ${PREFIX}/lib/X11/fonts/baekmuk
-
-post-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@(cd ${PREFIX}/${FONTSDIR} && mkfontdir .)
 
 .include <bsd.port.mk>
