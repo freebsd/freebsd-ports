@@ -1,5 +1,3 @@
 bin/bbmail
-share/bbtools/README.bbmail
 share/bbtools/bbmail.bb
-share/bbtools/bbmail.nobb
 @dirrm share/bbtools
