@@ -27,9 +27,13 @@ LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
+.if defined(WITHOUT_GTK)
+CONFIGURE_ARGS+=	--disable-gtk
+.else
 USE_GTK=	yes
-USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
+.endif
+USE_LIBTOOL=	yes
 
 MAN1=		nessus.1
 MAN8=		nessusd.8 nessus-adduser.8
