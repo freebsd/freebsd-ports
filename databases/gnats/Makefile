@@ -7,7 +7,7 @@
 
 PORTNAME=	gnats
 PORTVERSION=	3.113.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 MAN1=		edit-pr.1 query-pr.1 send-pr.1
 MAN7=		gnats.7
 MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
+INFO=		gnats send-pr
 
 # this stops the configuration program from pulling installation
 # information in from the standard freebsd send-pr program
