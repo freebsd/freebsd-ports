@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	nvi
-PORTVERSION=	1.79.20111024
-PORTREVISION=	1
+PORTVERSION=	1.79.20040401
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://ftp.sleepycat.com/pub/
 PKGNAMESUFFIX?=	-m17n
 DISTNAME=	nvi-1.79
 
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-PATCHFILES=	nvi-1.79.m17n-20011024.diff.gz
+PATCHFILES=	nvi-1.79.m17n-20040401.diff.gz
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A clone of vi/ex, with multilingual patch, no default settings
@@ -24,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
-CONFIGURE_ARGS?=       --enable-multibyte --program-prefix=n
+CONFIGURE_ARGS?=	--enable-multibyte --program-prefix=n
 
 MAN1=		nvi.1
 MLINKS=		nvi.1 nex.1  nvi.1 nview.1
