@@ -1,16 +1,6 @@
 bin/glimmer
+bin/glimmerout
 share/gnome/apps/Development/glimmer.desktop
-share/gnome/help/glimmer/C/bugs.html
-share/gnome/help/glimmer/C/customize.html
-share/gnome/help/glimmer/C/faq.html
-share/gnome/help/glimmer/C/gpl.html
-share/gnome/help/glimmer/C/index.html
-share/gnome/help/glimmer/C/menus.html
-share/gnome/help/glimmer/C/mission.html
-share/gnome/help/glimmer/C/preferences.html
-share/gnome/help/glimmer/C/properties.html
-share/gnome/help/glimmer/C/sessions.html
-share/gnome/help/glimmer/C/topic.dat
 share/gnome/glimmer/docs/AUTHORS
 share/gnome/glimmer/docs/COPYING
 share/gnome/glimmer/docs/ChangeLog
@@ -18,15 +8,18 @@ share/gnome/glimmer/docs/NEWS
 share/gnome/glimmer/docs/PROPS
 share/gnome/glimmer/docs/README
 share/gnome/glimmer/docs/TODO
+share/gnome/glimmer/languages/ada.lang
 share/gnome/glimmer/languages/bash.lang
 share/gnome/glimmer/languages/c.lang
 share/gnome/glimmer/languages/cpp.lang
+share/gnome/glimmer/languages/dtml.lang
 share/gnome/glimmer/languages/html.lang
 share/gnome/glimmer/languages/java.lang
 share/gnome/glimmer/languages/js.lang
 share/gnome/glimmer/languages/lang.lang
 share/gnome/glimmer/languages/latex.lang
 share/gnome/glimmer/languages/make.lang
+share/gnome/glimmer/languages/ocaml.lang
 share/gnome/glimmer/languages/perl.lang
 share/gnome/glimmer/languages/php.lang
 share/gnome/glimmer/languages/po.lang
@@ -34,6 +27,7 @@ share/gnome/glimmer/languages/python.lang
 share/gnome/glimmer/languages/scheme.lang
 share/gnome/glimmer/languages/sgml.lang
 share/gnome/glimmer/languages/sql.lang
+share/gnome/glimmer/languages/tcltk.lang
 share/gnome/glimmer/languages/wml.lang
 share/gnome/glimmer/languages/x86.lang
 share/gnome/glimmer/languages/xml.lang
@@ -45,8 +39,21 @@ share/gnome/glimmer/scripts/ISO2HTML.py
 share/gnome/glimmer/scripts/Replace_Spaces.py
 share/gnome/glimmer/scripts/Replace_Tabs.py
 share/gnome/glimmer/scripts/To_Upper.py
+share/gnome/help/glimmer/C/bugs.html
+share/gnome/help/glimmer/C/customize.html
+share/gnome/help/glimmer/C/faq.html
+share/gnome/help/glimmer/C/gpl.html
+share/gnome/help/glimmer/C/index.html
+share/gnome/help/glimmer/C/menus.html
+share/gnome/help/glimmer/C/mission.html
+share/gnome/help/glimmer/C/preferences.html
+share/gnome/help/glimmer/C/properties.html
+share/gnome/help/glimmer/C/sessions.html
+share/gnome/help/glimmer/C/topic.dat
 share/gnome/pixmaps/glimmer-icon.png
 share/gnome/pixmaps/glimmer-title.png
+share/locale/ja/LC_MESSAGES/glimmer.mo
+share/locale/sv/LC_MESSAGES/glimmer.mo
 @dirrm share/gnome/glimmer/scripts
 @dirrm share/gnome/glimmer/languages
 @dirrm share/gnome/glimmer/docs
