@@ -2,3 +2,6 @@ Spreadsheet::WriteExcel - Write formatted text and numbers to a
 cross-platform Excel binary file.
 
 WWW: http://search.cpan.org/search?module=Spreadsheet::WriteExcel
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
