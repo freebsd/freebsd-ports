@@ -23,8 +23,7 @@ EXTRA_FILES=    vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_iv41_1.1_freebsdELFx86.tgz \
 		vid_iv50_1.0_freebsdELFx86.tgz
 USE_IMAKE=	yes
-MANN=		xanim.n
-MANCOMPRESSED=	no
+MAN1=		xanim.1
 
 DLLDIR=		${PREFIX}/lib/X11/xanim
 
