@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAN1=		xpad.1
 MANCOMPRESSED=	no
 
+BROKEN=	"Does not build with gtk+-2.4"
+
 do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xpad ${PREFIX}/bin/
