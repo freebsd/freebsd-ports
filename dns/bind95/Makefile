@@ -32,10 +32,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
 
 USE_OPENSSL=	yes
 
-OPTIONS=	BIND9_THREADS "Support in 9.3.x is much improved" on \
-		PORT_REPLACES_BASE_BIND9 "Completely replace system BIND" off
-
-.if defined(WITH_BIND9_THREADS) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_BIND9_THREADS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
@@ -98,6 +95,7 @@ pre-fetch:
 	@${ECHO} "***************************************************"
 	@${ECHO} "Support for the old PORT_REPLACES_BASE_BIND9 option"
 	@${ECHO} "will be removed in future versions of the port."
+	@${ECHO} "Use WITH_PORT_REPLACES_BASE_BIND9 instead."
 	@${ECHO} "***************************************************"
 	@${ECHO} ""
 	@/bin/sleep 5
