@@ -26,4 +26,10 @@ CONFIGURE_ARGS=	INC="-I${PREFIX}/include"
 
 MAN3=		Parallel::Pvm.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (pvm needs to provide shared libraries)"
+.endif
+
+.include <bsd.port.post.mk>
