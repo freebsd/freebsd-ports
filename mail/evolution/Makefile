@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -42,7 +43,8 @@ CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--enable-nss=no \
 		--enable-openssl=yes
-CONFLICTS=	evolution-1.2*
+
+EVO_VERSION=	"1.4"
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
@@ -58,7 +60,8 @@ PLIST_SUB=	PILOT:="@comment "
 CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
-PLIST_SUB+=	VERSION="1.4"
+PLIST_SUB+=	VERSION=${EVO_VERSION}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${GREP} -l '<db.h>' | \
@@ -88,5 +91,13 @@ pre-configure:
 	@${RM} -f ${DB3_WRKSRC}/db3
 	@${LN} -s . ${DB3_WRKSRC}/db3
 # End of the DB3 stuff
+
+post-install:
+	@${SED} -e 's|%%X11BASE%%|${X11BASE}|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
+		> ${PKGINSTALL}
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.mk>
