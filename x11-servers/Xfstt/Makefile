@@ -1,20 +1,19 @@
 # New ports collection makefile for:	Xfstt
-# Version required:	0.9.10
+# Version required:	1.0
 # Date created:		11 September 1998
 # Whom:			jabley@clear.co.nz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Xfstt-0.9.10
+DISTNAME=	xfstt-1.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=	X11/fonts
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jabley@clear.co.nz
 
-WRKSRC=		$(WRKDIR)/xfstt0910
+WRKSRC=		$(WRKDIR)/xfstt-1.0
 
 USE_X_PREFIX=	yes
 MAN1=		xfstt.1

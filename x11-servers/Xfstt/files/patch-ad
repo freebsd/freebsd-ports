@@ -1,0 +1,11 @@
+--- INSTALL.orig	Mon Dec  6 16:56:27 1999
++++ INSTALL	Mon Dec  6 16:56:48 1999
+@@ -2,7 +2,7 @@
+ 	make && make install
+    (use gmake instead of the standard make on FreeBSD)
+ 
+-2) Create a writeable directory /usr/share/fonts/truetype, copy some truetype *.ttf
++2) Create a writeable directory /usr/X11R6/lib/X11/fonts/TrueType, copy some truetype *.ttf
+    files or create soflinks to truetype directories in there, then run
+ 	xfstt --sync
+ 
