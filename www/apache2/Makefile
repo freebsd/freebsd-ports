@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.43 1998/01/07 22:19:03 ache Exp $
+# $Id: Makefile,v 1.44 1998/02/20 11:08:40 ache Exp $
 #
 
 DISTNAME=       apache_1.3b5
@@ -16,6 +16,8 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src/main -E -p0
 
 MAINTAINER=     ache@freebsd.org
+
+NO_LATEST_LINK=	yes
 
 # Set it for local-supplied patch, f.e.
 # VERS_ID = mods-1.0/me
