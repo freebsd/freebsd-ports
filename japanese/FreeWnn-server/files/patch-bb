@@ -1,0 +1,132 @@
+--- config/Project.tmpl.orig	Wed Jan  6 00:32:36 1999
++++ config/Project.tmpl	Wed Jan  6 02:36:03 1999
+@@ -389,6 +389,8 @@
+ XCOMM -----------------------------------------------------------------------
+ XCOMM X Window System make variables; these need to be coordinated with rules
+ 
++    SYS_LIBRARIES = -lcrypt		/* For FreeBSD */
++
+ /*
+  * This list must be reflected in the DIRS_TO_BUILD list in the top-level
+  * Makefile.
+@@ -413,6 +415,9 @@
+       XAPPLOADDIR = XAppLoadDir		/* application default resource dir */
+        FONTCFLAGS = FontCompilerFlags
+ 
++     INSTINCFLAGS = InstIncFlags -c     /* XXX - dirty hack by */
++     INSTDATFLAGS = InstDatFlags -c     /* XXX -  Satoshi */
++     INSTBINFLAGS = InstBinFlags -c     /* XXX -   Asami */
+      INSTAPPFLAGS = $(INSTDATFLAGS)	/* XXX - this should go away - XXX */
+ 
+ #ifdef UseInstalled
+@@ -465,6 +470,7 @@
+ #define ProfileLibX11		NO	/* profiled X library */
+ #endif
+           XLIBSRC = $(LIBSRC)/X11
++#ifndef XFree86Version
+ #if SharedLibX11
+ #ifndef SharedX11Rev
+ #define SharedX11Rev 6.0
+@@ -481,6 +487,16 @@
+ UnsharedLibReferences(XONLY,X11,$(XLIBSRC))
+ #endif
+ #endif
++#else
++#if SharedLibX11
++#ifndef SharedX11Rev
++#define SharedX11Rev 6.0
++#endif
++SharedLibReferences(XONLY,X11,$(XLIBSRC),SOXLIBREV,SharedX11Rev)
++#else
++UnsharedLibReferences(XONLY,X11,$(XLIBSRC))
++#endif
++#endif
+          XLIBONLY = $(XONLYLIB)
+ 
+ #ifndef SharedLibXext
+@@ -1097,6 +1113,13 @@
+ obj : depends							@@\
+ 	$(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c	@@\
+ 
++#define	WnnSpecialSharedObjectRule(obj, depends, direct, define)	@@\
++obj : depends								@@\
++	(cd unshared ; \						@@\
++	$(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c)		@@\
++	$(CC) -c $(CFLAGS) define $(SHLIBDEF) $(SHAREDCODEDEF) \	@@\
++	  $(PICFLAGS) direct/`basename $@ .o`.c				@@\
++
+ #ifdef WnnMakeDirectories
+ #undef WnnMakeDirectories
+ #endif
+@@ -1117,10 +1140,16 @@
+ #undef ImakeSubCmdHelper
+ #endif 
+ 
++/*
++ * Change a variavle's name from "$imakeprefix" to "$(IMAKEPREFIX)".
++ * Because it caused a error on XFree86 3.1.2S and 3.1.2E.
++ * The Imake rule of XFree86 3.1.2S and 3.1.2E FreeBSD was changed.
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
+ #ifdef UseInstalled
+-#define ImakeSubCmdHelper $(IMAKE) -DUseInstalled -I$$imakeprefix$(IMIRULESRC) -I$(IRULESRC) $(IMAKE_DEFINES)
++#define ImakeSubCmdHelper $(IMAKE) -DUseInstalled -I$(IMAKEPREFIX)$(IMIRULESRC) -I$(IRULESRC) $(IMAKE_DEFINES)
+ #else
+-#define ImakeSubCmdHelper $$imakeprefix$(IMAKE) -I$$imakeprefix$(IMIRULESRC) -I$$imakeprefix$(IRULESRC) $(IMAKE_DEFINES)
++#define ImakeSubCmdHelper $(IMAKEPREFIX)$(IMAKE) -I$(IMAKEPREFIX)$(IMIRULESRC) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
+ #endif
+ 
+ #define WnnInstallDicMultiple(list,dest)				@@\
+@@ -1135,16 +1164,16 @@
+ 	done
+ 
+ #ifndef BuildWnn
+-#define BuildWnn	YES
++#define BuildWnn	%%BuildWnn%%
+ #endif
+ #ifndef BuildCWnn
+-#define BuildCWnn	YES
++#define BuildCWnn	%%BuildCWnn%%
+ #endif
+ #ifndef BuildKWnn
+-#define BuildKWnn	YES
++#define BuildKWnn	%%BuildKWnn%%
+ #endif
+ #ifndef BuildXwnmo
+-#define BuildXwnmo	YES
++#define BuildXwnmo	%%BuildXwnmo%%
+ #endif
+ 
+ #ifndef BuildJserver
+@@ -1169,7 +1198,7 @@
+ #define BuildWnnMan	YES
+ #endif
+ #ifndef BuildJlibV3
+-#define BuildJlibV3	NO
++#define BuildJlibV3	%%BuildJlibV3%%
+ #endif
+ #if BuildPubdic || BuildWnnConsDic
+ #define BuildWnnDicUtilForCompile	YES
+@@ -1236,8 +1265,9 @@
+ #else
+           IMTOP = $(CONTRIBSRC)/programs/Xsi
+ #endif
+-      WNNWNNDIR = /usr/local/lib/wnn
+-      WNNBINDIR = /usr/local/bin
++         PREFIX = /usr/local
++      WNNWNNDIR = ${PREFIX}/lib/wnn
++      WNNBINDIR = ${PREFIX}/bin
+       WNNINCDIR = $(INCROOT)
+       WNNLIBDIR = $(USRLIBDIR)
+     WNNTERM_LIB = termLibrary
+@@ -1352,6 +1382,10 @@
+   XWNMOINCLUDES = -I$(XWNMOROMKANMSRC) -I$(WNNINCLUDESRC) $(XWNMOXLIBINC)
+       XWNMOJLIB = $(XWNMOJLIBSRC)/libwnn_m.a
+  XWNMOLIBRARIES = $(XWNMOJLIB)
++
++XCOMM for FreeBSD port
++XCOMM
++MANPATH= /usr/X11R6/man/%%LOCAL_MAN_LANG%%
+ 
+        XWNMODEF = -DBC_X11R5
+ 

@@ -1,0 +1,47 @@
+By KATAYAMA Yoshio <kate@pfu.co.jp>
+
+--- Wnn/jserver/de_header.h.ORG	Tue Jun 28 11:06:53 1994
++++ Wnn/jserver/de_header.h	Sun Jan 24 14:45:58 1999
+@@ -240,6 +240,7 @@
+ extern int get4_cur();
+ extern int getc_cur();
+ extern void puts_cur();
++extern void puts_n_cur();
+ extern void putws_cur();
+ extern void putnws_cur();
+ extern void put2_cur();
+--- Wnn/jserver/do_dic_no.c.ORG	Tue Sep 22 13:49:03 1992
++++ Wnn/jserver/do_dic_no.c	Sun Jan 24 14:45:03 1999
+@@ -119,9 +119,9 @@
+     puts_cur(files[fid].name);
+     if(hfid >= 0) puts_cur(files[hfid].name);
+     else puts_cur("");
+-    puts_cur(files[fid].passwd);
+-    if(hfid >= 0) puts_cur(files[hfid].passwd);
+-    else puts_cur(jtl->hpasswd);
++    puts_n_cur(files[fid].passwd, WNN_PASSWD_LEN);
++    if(hfid >= 0) puts_n_cur(files[hfid].passwd, WNN_PASSWD_LEN);
++    else puts_n_cur(jtl->hpasswd, WNN_PASSWD_LEN);
+     put4_cur(jtl->syurui);
+     put4_cur(jtl->gosuu);
+     put4_cur(files[fid].localf);
+--- Wnn/jserver/de.c.98-10-12	Mon Oct 12 01:01:28 1998
++++ Wnn/jserver/de.c	Sun Jan 24 14:50:14 1999
+@@ -665,6 +665,17 @@
+ 
+ /**	**/
+ void
++puts_n_cur(p,n)
++char *p;
++int n;
++{
++    register int c;
++    while((c = *p++) && --n >= 0) putc_cur(c);
++    putc_cur(0);
++}
++
++/**	**/
++void
+ putws_cur(p)
+ w_char *p;
+ {

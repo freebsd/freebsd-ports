@@ -1,2 +1,6 @@
 MD5 (Wnn4.2.tar.gz) = dcb6271403577199e8141d07cd54be73
-MD5 (Wnn4.2.patch.tar.gz) = 9cfd1547623774f2f8e92f05c1725da8
+MD5 (Wnn4.2.patch-981201.tar.gz) = 542847bff36e88f0ea588153b387e932
+MD5 (pubdic+.tar.gz) = 92dc7dfeae7eb3b637157fe2fd25480a
+MD5 (pubdic+-fix01.gz) = 2469f2e65ac5f3248dd4225ca5383c49
+MD5 (pubdic+.diff) = 51e53024862273f51d8f3c51a3ea70b2
+MD5 (pubdic+.special.diff) = acf3faa8ba8219ed97ca0c4e59030145

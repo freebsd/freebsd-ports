@@ -1,0 +1,7 @@
+--- cWnn/jserver/Imakefile.ORG	Tue Aug 23 11:22:25 1994
++++ cWnn/jserver/Imakefile	Fri Apr 14 23:47:57 1995
+@@ -148,3 +148,3 @@
+ LinkDiffNameFile($(TSRC0),$(SRC0),.)
+-LinkDiffNameFile($(TSRCGETHINSI),$(SRCGETHINSI),$(CWNNETCSRC))
++LinkDiffNameFile($(TSRCGETHINSI),$(SRCGETHINSI),)
+ 

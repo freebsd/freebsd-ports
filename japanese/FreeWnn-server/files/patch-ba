@@ -1,0 +1,75 @@
+--- ../Wnn-4.2-patched/cWnn/cdic/Imakefile	Tue Aug 23 11:26:22 1994
++++ cWnn/cdic/Imakefile	Mon Nov  2 18:44:39 1998
+@@ -55,6 +55,12 @@
+ instserver:: install
+ 
+ WnnMakeDirectories(install,$(CWNNDICDIR))
++/*
++ * Bugfix.
++ * Because "NO" is same to "YES"!!
++ * And some additional bugfix.
++ */
++#if (WnnInstallDicForcibly == YES)
+ InstallMultiple($(ALLTGT),$(CWNNSYSDICDIR))
+ 
+ install::
+@@ -62,6 +68,9 @@
+ 	do \
+ 		$(WNNTOUCH) $(DESTDIR)$(CWNNSYSDICDIR)/$$i ;\
+ 	done
++#else
++WnnInstallDicMultiple($(ALLTGT),$(CWNNSYSDICDIR))
++#endif
+ 
+ depend::
+ 	@echo "skipping make in my dir"
+--- ../Wnn-4.2-patched/cWnn/tdic/Imakefile	Tue Aug 23 11:26:41 1994
++++ cWnn/tdic/Imakefile	Mon Nov  2 18:46:56 1998
+@@ -45,6 +45,12 @@
+ instserver:: install
+ 
+ WnnMakeDirectories(install,$(TWNNDICDIR))
++/*
++ * Bugfix.
++ * Because "NO" is same to "YES"!!
++ * And some additional bugfix.
++ */
++#if (WnnInstallDicForcibly == YES)
+ InstallMultiple($(ALLTGT),$(TWNNSYSDICDIR))
+ 
+ install::
+@@ -52,6 +58,9 @@
+ 	do \
+ 		$(WNNTOUCH) $(DESTDIR)$(TWNNSYSDICDIR)/$$i ;\
+ 	done
++#else
++WnnInstallDicMultiple($(ALLTGT),$(TWNNSYSDICDIR))
++#endif
+ 
+ depend::
+ 	@echo "skipping make in my dir"
+--- ../Wnn-4.2-patched/kWnn/kdic/Imakefile	Tue Aug 23 11:25:31 1994
++++ kWnn/kdic/Imakefile	Mon Nov  2 18:49:05 1998
+@@ -41,6 +41,12 @@
+ instserver:: install
+ 
+ WnnMakeDirectories(install,$(KWNNDICDIR))
++/*
++ * Bugfix.
++ * Because "NO" is same to "YES"!!
++ * And some additional bugfix.
++ */
++#if (WnnInstallDicForcibly == YES)
+ InstallMultiple($(ALLTGT),$(KWNNSYSDICDIR))
+ 
+ install::
+@@ -48,6 +54,9 @@
+ 	do \
+ 		$(WNNTOUCH) $(DESTDIR)$(KWNNSYSDICDIR)/$$i ;\
+ 	done
++#else
++WnnInstallDicMultiple($(ALLTGT),$(KWNNSYSDICDIR))
++#endif
+ 
+ depend::
+ 	@echo "skipping make in my dir"

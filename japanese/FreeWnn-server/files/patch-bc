@@ -1,0 +1,78 @@
+--- Wnn/jlib/Imakefile.orig	Wed Aug 17 10:10:03 1994
++++ Wnn/jlib/Imakefile	Wed Nov 18 01:17:23 1998
+@@ -2,6 +2,7 @@
+ XCOMM $Id: Imakefile,v 1.10 1994/08/17 01:10:03 kuwa Exp $
+ XCOMM
+ #define DoNormalLib YES
++#define DoSharedLib YES
+ 
+ #include <Library.tmpl>
+ 
+@@ -45,13 +46,26 @@
+ 	$(WNNROMKANSRC)/rk_read.o \
+ 	$(WNNROMKANSRC)/rk_vars.o
+ 
++UNSHARED_LOCAL_RKOBJS= $(WNNROMKANSRC)/unshared/rk_bltinfn.o \
++	$(WNNROMKANSRC)/unshared/rk_main.o \
++	$(WNNROMKANSRC)/unshared/rk_modread.o \
++	$(WNNROMKANSRC)/unshared/rk_read.o \
++	$(WNNROMKANSRC)/unshared/rk_vars.o
++
+ LOCAL_ETCSRCS = $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
+ LOCAL_ETCOBJS = $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
+ SRCS= $(SRC1) $(LOCAL_ETCSRCS)
+ OBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
++UNSHAREDOBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
+ 
++SOWNN4LIBREV=1.0
++ 
+ LibraryObjectRule()
++#if DoSharedLib
++AllTarget($(OBJS) libwnn.a libwnn4.so.$(SOWNN4LIBREV))
++#else
+ AllTarget($(OBJS) libwnn.a)
++#endif
+ 
+ NormalLibraryTarget(getopt,$(OBJ2))
+ LintLibraryTarget(getopt,$(SRC2))
+@@ -65,11 +79,20 @@
+ 
+ SingleProgramTarget(kankana,kankana.o,$(WNNJLIB),)
+ 
+-NormalLibraryTarget(wnn,$(OBJS))
++
++#if DoSharedLib
++SharedLibraryTarget(wnn4,$(SOWNN4LIBREV),$(OBJS),.,.)
++#endif
++
++UnsharedLibraryTarget(wnn,$(UNSHAREDOBJS),unshared,..)
+ LintLibraryTarget(wnn,$(SRCS))
+ 
+ instlib:: install
+ 
++#if DoSharedLib
++InstallSharedLibrary(wnn4,$(SOWNN4LIBREV),$(WNNLIBDIR))
++#endif
++
+ InstallLibrary(wnn,$(WNNLIBDIR))
+ 
+ #if ProfileLibJlib
+@@ -77,12 +100,12 @@
+ InstallLibrary(wnn_p,$(WNNLIBDIR))
+ #endif
+ 
+-WnnSpecialObjectRule($(OBJ3),$(SRC3),$(WNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ4),$(SRC4),$(WNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ5),$(SRC5),$(WNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ6),$(SRC6),$(WNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ7),$(SRC7),$(WNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ8),$(SRC8),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ3),$(SRC3),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ4),$(SRC4),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ5),$(SRC5),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ6),$(SRC6),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ7),$(SRC7),$(WNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ8),$(SRC8),$(WNNETCSRC),)
+ 
+ $(LOCAL_RKOBJS) : $(LOCAL_RKSRCS)
+ 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \

@@ -1,0 +1,10 @@
+--- Wnn/romkan/Imakefile.orig	Wed Aug 17 10:10:21 1994
++++ Wnn/romkan/Imakefile	Wed Nov 18 00:08:23 1998
+@@ -2,6 +2,7 @@
+ XCOMM $Id: Imakefile,v 1.4 1994/08/17 01:10:21 kuwa Exp $
+ XCOMM
+ #define DoNormalLib YES
++#define DoSharedLib YES
+ 
+ #include <Library.tmpl>
+ 

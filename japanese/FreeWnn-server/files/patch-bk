@@ -1,0 +1,21 @@
+By KATAYAMA Yoshio <kate@pfu.co.jp>
+
+--- Wnn/etc/pwd.c.ORG	Tue Sep 22 13:29:26 1992
++++ Wnn/etc/pwd.c	Mon Jan 25 13:14:27 1999
+@@ -68,7 +68,7 @@
+ char *src, *encd;
+ {
+     int i, x,c;
+-    char xx[2];
++    char xx[3];
+     char *cr;
+ 
+     if(encd == NULL)encd = src;
+@@ -76,6 +76,7 @@
+     x = time(NULL);
+     xx[0] = x & 0x3f;
+     xx[1] = (x & 0x3f00) >> 8;
++    xx[2] = '\0';  /* for MD5 (that requires terminator) */
+     for (i = 0; i < 2; i++) {
+ 	c = xx[i] + '.';
+ 	if (c > '9')

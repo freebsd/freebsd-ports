@@ -1,0 +1,66 @@
+--- Xwnmo/xwnmo/client.c.~1~	Mon Aug 23 11:06:16 1993
++++ Xwnmo/xwnmo/client.c	Fri Feb  6 06:44:03 1998
+@@ -53,7 +53,7 @@
+ {
+     char *p;
+     char ret = '\0';
+-    extern char *index();
++/*    extern char *index();*/
+ 
+     if ((p = romkan_dispmode()) == NULL) return(ret);
+     if ((p = (char*)index(p, ':')) == NULL) return(ret);
+--- Xwnmo/xwnmo/screen.c.~1~	Tue Dec  1 15:10:57 1992
++++ Xwnmo/xwnmo/screen.c	Fri Feb  6 06:48:15 1998
+@@ -361,7 +361,7 @@
+ get_rk_modes()
+ {
+     char        *p;
+-    extern char *index();
++/*    extern char *index();*/
+ 
+     strcpy(rk_modes, (NULL == (p = romkan_dispmode()) ? "[   ]" : p));
+     if ((p = (char*)index(rk_modes, ':')) != NULL && *(p + 1)) {
+--- Xwnmo/xwnmo/jhlp.c.~1~	Thu Aug  4 16:10:14 1994
++++ Xwnmo/xwnmo/jhlp.c	Fri Feb  6 06:50:24 1998
+@@ -415,7 +415,7 @@
+     XLCd xlc;
+ #endif /* X11R5 */
+     extern char *get_server_env();
+-    extern char *index();
++/*    extern char *index(); */
+ 
+     prgname = argv[0];
+     if (create_arg_string(argv, argc) == -1) exit(1);
+--- Xwnmo/xjutil/init_w.c.~1~	Thu Aug  4 16:10:10 1994
++++ Xwnmo/xjutil/init_w.c	Fri Feb  6 07:54:48 1998
+@@ -76,7 +76,7 @@
+     char *p;
+     char ret = '\0';
+ #ifndef SYSVR2
+-    extern char *index();
++/*    extern char *index(); */
+ #else
+     extern char *strchr();
+ #endif
+--- Xwnmo/xjutil/jutil.c.~1~	Thu Jan 21 17:05:44 1993
++++ Xwnmo/xjutil/jutil.c	Fri Feb  6 07:56:50 1998
+@@ -664,7 +664,7 @@
+     extern int srand();
+     extern long rand();
+ #else
+-    extern int srandom();
++/*    extern int srandom(); */
+     extern long random();
+ #endif
+     extern long time();
+--- Xwnmo/xjutil/kensaku.c.~1~	Tue Dec  1 14:59:48 1992
++++ Xwnmo/xjutil/kensaku.c	Fri Feb  6 07:58:54 1998
+@@ -154,7 +154,7 @@
+     static char message4[2048];
+     int ret;
+     char *table_t[6];
+-    extern int qsort();
++/*    extern int qsort();*/
+ 
+     if (get_env() == -1) return(NULL);
+ 

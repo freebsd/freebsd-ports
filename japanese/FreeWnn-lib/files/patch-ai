@@ -1,6 +1,6 @@
---- ./kWnn/jlib/Imakefile.orig	Wed Aug 17 10:11:40 1994
-+++ ./kWnn/jlib/Imakefile	Sat Jul 19 23:55:17 1997
-@@ -1,6 +1,9 @@
+--- kWnn/jlib/Imakefile.orig	Wed Aug 17 10:11:40 1994
++++ kWnn/jlib/Imakefile	Tue Jan  5 23:06:15 1999
+@@ -1,7 +1,11 @@
  XCOMM
  XCOMM $Id: Imakefile,v 1.2 1994/08/17 01:11:40 kuwa Exp $
  XCOMM
@@ -8,9 +8,11 @@
 +XCOMM   -- S. Taoka
 +XCOMM
  #define DoNormalLib YES
++#define DoSharedLib YES
  
  #include <Library.tmpl>
-@@ -10,7 +13,9 @@
+ 
+@@ -10,7 +14,9 @@
  LINKS = getopt.c jl.c js.c wnnerrmsg.c
      JLIBDEFINES = -DWRITE_CHECK
         INCLUDES = -I$(KWNNINCLUDESRC) -I$(TOP)
@@ -21,7 +23,7 @@
     INSTALLFLAGS = $(INSTBINFLAGS)
         LINTLIBS = 
  
-@@ -28,6 +33,15 @@
+@@ -28,6 +34,15 @@
  OBJ4= strings.o
  SRC5= $(KWNNETCSRC)/bcopy.c
  OBJ5= bcopy.o
@@ -37,25 +39,69 @@
  LOCAL_RKSRCS= $(KWNNROMKANSRC)/rk_bltinfn.c \
  	$(KWNNROMKANSRC)/rk_main.c \
  	$(KWNNROMKANSRC)/rk_modread.c \
-@@ -40,8 +54,8 @@
+@@ -40,13 +55,26 @@
  	$(KWNNROMKANSRC)/rk_read.o \
  	$(KWNNROMKANSRC)/rk_vars.o
  
 -LOCAL_ETCSRCS = $(SRC4) $(SRC5)
 -LOCAL_ETCOBJS = $(OBJ4) $(OBJ5)
++UNSHARED_LOCAL_RKOBJS= $(KWNNROMKANSRC)/unshared/rk_bltinfn.o \
++	$(KWNNROMKANSRC)/unshared/rk_main.o \
++	$(KWNNROMKANSRC)/unshared/rk_modread.o \
++	$(KWNNROMKANSRC)/unshared/rk_read.o \
++	$(KWNNROMKANSRC)/unshared/rk_vars.o
++
 +LOCAL_ETCSRCS = $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
 +LOCAL_ETCOBJS = $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
  SRCS= $(SRC1) $(SRC3) $(LOCAL_ETCSRCS)
  OBJS= $(OBJ1) $(OBJ3) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
- 
-@@ -80,6 +94,10 @@
- WnnSpecialObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
- WnnSpecialObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
- WnnSpecialObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)
-+WnnSpecialObjectRule($(OBJ6),$(SRC6),$(KWNNETCSRC),)
-+WnnSpecialObjectRule($(OBJ7),$(SRC7),$(KWNNETCSRC),)
-+WnnSpecialObjectRule($(OBJ8),$(SRC8),$(KWNNETCSRC),)
++UNSHAREDOBJS= $(OBJ1) $(OBJ3) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
 +
++SOKWNN4LIBREV=1.0
+ 
+ LibraryObjectRule()
++#if DoSharedLib
++AllTarget($(OBJS) libkwnn.a libkwnn4.so.$(SOKWNN4LIBREV))
++#else
+ AllTarget($(OBJS) libkwnn.a)
++#endif
+ 
+ includes:: $(LINKS)
+ 
+@@ -65,11 +93,19 @@
+ 
+ NormalLintTarget($(SRC2))
+ 
+-NormalLibraryTarget(kwnn,$(OBJS))
++#if DoSharedLib
++SharedLibraryTarget(kwnn4,$(SOKWNN4LIBREV),$(OBJS),.,.)
++#endif
++
++UnsharedLibraryTarget(kwnn,$(UNSHAREDOBJS),unshared,..)
+ LintLibraryTarget(kwnn,$(SRCS))
+ 
+ instlib:: install
+ 
++#if DoSharedLib
++InstallSharedLibrary(kwnn4,$(SOKWNN4LIBREV),$(WNNLIBDIR))
++#endif
++
+ InstallLibrary(kwnn,$(WNNLIBDIR))
+ 
+ #if ProfileLibJlib
+@@ -77,9 +113,12 @@
+ InstallLibrary(kwnn_p,$(WNNLIBDIR))
+ #endif
+ 
+-WnnSpecialObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
+-WnnSpecialObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ6),$(SRC6),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ7),$(SRC7),$(KWNNETCSRC),)
++WnnSpecialSharedObjectRule($(OBJ8),$(SRC8),$(KWNNETCSRC),)
  
  $(LOCAL_RKOBJS) : $(LOCAL_RKSRCS)
  	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \

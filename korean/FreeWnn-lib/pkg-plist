@@ -29,12 +29,53 @@ lib/wnn/ko_KR/wnnenvrc
 lib/wnn/ko_KR/wnnenvrc_R
 lib/wnn/ko_KR/wnnstat.msg
 lib/wnn/serverdefs
+@comment for Xwnmo
+lib/wnn/ja_JP/uumrc_vi.xim
+lib/wnn/ja_JP/uumrc_e.xim
+lib/wnn/ja_JP/uumrc.xim
+lib/wnn/ja_JP/uumkey.xim
+lib/wnn/ja_JP/uumkey_v.xim
+lib/wnn/ja_JP/uumkey_e.xim
+lib/wnn/ja_JP/xim.msg
+lib/wnn/ja_JP/xjutil.msg
+lib/wnn/ko_KR/uumkey.xim
+lib/wnn/ko_KR/uumrc.xim
+lib/wnn/ko_KR/xim.msg
+lib/wnn/ko_KR/xjutil.msg
+lib/wnn/lt_LN/uumkey.xim
+lib/wnn/lt_LN/uumrc.xim
+lib/wnn/lt_LN/xim.msg
+lib/wnn/zh_CN/uumkey.xim
+lib/wnn/zh_CN/uumkey_p.xim
+lib/wnn/zh_CN/uumrc.xim
+lib/wnn/zh_CN/uumrc_p.xim
+lib/wnn/zh_CN/uumrc_z.xim
+lib/wnn/zh_CN/xim.msg
+lib/wnn/zh_CN/xjutil.msg
+lib/wnn/zh_TW/uumkey.xim
+lib/wnn/zh_TW/uumkey_p.xim
+lib/wnn/zh_TW/uumrc.xim
+lib/wnn/zh_TW/uumrc_p.xim
+lib/wnn/zh_TW/uumrc_z.xim
+lib/wnn/zh_TW/xim.msg
+lib/wnn/zh_TW/xjutil.msg
+lib/wnn/cvt_xim_tbl
+lib/wnn/ximconf
+lib/wnn/ximrc
+lib/wnn/ximrc_vi
+@comment END for Xwnmo
 @dirrm lib/wnn/ko_KR/rk
 @dirrm lib/wnn/ko_KR/dic/sys
 @dirrm lib/wnn/ko_KR/dic/usr
 @dirrm lib/wnn/ko_KR/dic
 @dirrm lib/wnn/ko_KR
+@comment for Xwnmo
+@dirrm lib/wnn/ja_JP
+@dirrm lib/wnn/lt_LN
+@dirrm lib/wnn/zh_CN
+@dirrm lib/wnn/zh_TW
 @dirrm lib/wnn
+@comment END for Xwnmo
 bin/kWnn4/katod
 bin/kWnn4/katof
 bin/kWnn4/kdtoa
@@ -47,6 +88,16 @@ bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
 @dirrm bin/kWnn4
 @cwd /usr/X11R6
+@comment for Xwnmo
+bin/xwnmo
+bin/killxwnmo
+bin/xjutil
+lib/X11/app-defaults/Xwnmo
+@comment END for Xwnmo
+lib/libkwnn4.so
+lib/libkwnn4.so.1.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/libkwnn.a
 include/kwnn/commonhd.h
 include/kwnn/cplib.h
@@ -56,3 +107,13 @@ include/kwnn/msg.h
 include/kwnn/rk_spclval.h
 include/kwnn/wnnerror.h
 @dirrm include/kwnn
+@comment for Xwnmo
+man/man1/xwnmo.1.gz
+man/man1/ximrc.1.gz
+man/man1/ximconf.1.gz
+man/man1/cvt_fun_tbl.1.gz
+man/man1/cvt_meta_tbl.1.gz
+man/man1/killxwnmo.1.gz
+man/man1/cvt_xim_tbl.1.gz
+man/man1/xjutil.1.gz
+@comment END for Xwnmo
