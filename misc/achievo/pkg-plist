@@ -53,6 +53,7 @@ www/data.default/achievo/atk/languages/hungarian.lng
 www/data.default/achievo/atk/languages/italian.lng
 www/data.default/achievo/atk/languages/nederlands.lng
 www/data.default/achievo/atk/languages/norwegian.lng
+www/data.default/achievo/atk/languages/russian.lng
 www/data.default/achievo/atk/languages/spanish.lng
 www/data.default/achievo/atk/modules/atkmoduletools.inc
 www/data.default/achievo/atk/modules/class.atkmodule.inc
@@ -245,6 +246,7 @@ www/data.default/achievo/languages/hungarian.lng
 www/data.default/achievo/languages/italian.lng
 www/data.default/achievo/languages/nederlands.lng
 www/data.default/achievo/languages/norwegian.lng
+www/data.default/achievo/languages/russian.lng
 www/data.default/achievo/languages/spanish.lng
 www/data.default/achievo/languages/unmaintained/README
 www/data.default/achievo/license.php

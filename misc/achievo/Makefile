@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	misc www
-MASTER_SITES=	http://ftp.achievo.org/pub/achievo/archive/
+MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
