@@ -1,0 +1,17 @@
+--- Makefile.freebsd.orig	Fri Aug 30 04:41:24 1996
++++ Makefile.freebsd	Fri Sep 25 02:51:25 1998
+@@ -71,12 +71,12 @@
+ 
+ CFILES=		cwish.c files.c movement.c commandline.c rcinit.c \
+ 		fkeys.c paging.c cursor.c header.c history.c help.c \
+-		usrgrp.c showtime.c config.c chdir.c complete.c\
++		showtime.c config.c chdir.c complete.c\
+ 		system.c usage.c 
+ 
+ OFILES=		cwish.o files.o movement.o commandline.o rcinit.o \
+ 		fkeys.o paging.o cursor.o header.o history.o help.o \
+-		usrgrp.o showtime.o config.o chdir.o complete.o\
++		showtime.o config.o chdir.o complete.o\
+ 		system.o usage.o 
+ 
+ HFILES=		config.h control.h cwish.h rcinit.h patchlevel.h
