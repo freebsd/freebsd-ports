@@ -33,8 +33,8 @@ CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 # Set these vars as the version numbers (without decimal points) of Tcl/Tk
 # you want to use with Ruby/Tk.
 # e.g.: make TCL_VERSION=42 TK_VERSION=76 WITH_TCL_JP=yes build
-TCL_VERSION?=	82
-TK_VERSION?=	82
+TCL_VERSION?=	84
+TK_VERSION?=	84
 .if defined(WITH_TCLTK_JP)
 TCL_CATEGORY=	japanese
 TK_CATEGORY=	japanese
@@ -69,9 +69,9 @@ do-extract:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/demo
-	${INSTALL_DATA} ${WRKSRC}/demo/* ${RUBY_MODEXAMPLESDIR}/demo/
+	${CP} -R ${WRKSRC}/demo/* ${RUBY_MODEXAMPLESDIR}/demo/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/*.euc ${RUBY_MODDOCDIR}/ja/
 .endif
