@@ -1,6 +1,15 @@
---- amavisd.orig	Sun Jul  4 03:19:35 2004
-+++ amavisd	Sun Jul  4 11:28:36 2004
-@@ -7367,7 +7367,7 @@
+--- amavisd.orig	Tue Aug 24 16:25:52 2004
++++ amavisd	Wed Aug 25 17:54:10 2004
+@@ -371,7 +371,7 @@
+   !defined($var) ? [] : !ref($var) ? [$var] : $var;
+ }
+
+-$myversion = 'amavisd-new-2.1.0';
++$myversion = 'amavisd-new-2.1.1';
+
+ $eol = "\n";  # native record separator in files: LF or CRLF or even CR
+ $unicode_aware = $]>=5.008 && length("\x{263a}")==1 && eval { require Encode };
+@@ -7409,7 +7409,7 @@
  $Amavis::Conf::log_recip_templ = $1
    if $Amavis::Conf::log_recip_templ=~/^(.*?)[\r\n]+\z/s;
  
