@@ -1,0 +1,11 @@
+Prosper is a LaTeX class for writing transparencies.
+
+It is written on top of the seminar class by Timothy Van Zandt.
+
+It aims at offering an environment for easily creating slides for both
+presentations with an overhead projector and a video projector.
+
+Slides prepared for a presentation with a computer and a video projector
+may integrate animation effects, incremental display, and such.
+
+WWW: http://sourceforge.net/projects/prosper/
