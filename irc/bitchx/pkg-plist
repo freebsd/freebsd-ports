@@ -1,7 +1,7 @@
 %%NOGNOME:%%bin/BitchX
-%%NOGNOME:%%bin/BitchX-1.0c19
+%%NOGNOME:%%bin/BitchX-1.1-final
 %%GNOME:%%bin/gtkBitchX
-%%GNOME:%%bin/gtkBitchX-1.0c19
+%%GNOME:%%bin/gtkBitchX-1.1-final
 %%NOGNOME:%%bin/scr-bx
 share/bx/BitchX.help
 share/bx/BitchX.ircnames
@@ -936,13 +936,19 @@ share/bx/BitchX.kick
 %%PLUGINS:%%share/bx/plugins/cavlink.so
 %%PLUGINS:%%share/bx/plugins/identd.so
 %%XMMS:%%share/bx/plugins/xmms.so
+share/bx/script/SCRIPTS
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
+share/bx/script/bxglobal.old
 share/bx/script/bxtcl.tcl
+share/bx/script/cyp1.0k.tar.gz
+share/bx/script/dcc_fserve-0.50.tgz
 share/bx/script/example-.bitchxrc
 share/bx/script/file.tcl
 share/bx/script/fserve+vfs.tar.gz
+share/bx/script/logger.bx
 share/bx/script/menu.bx
+share/bx/script/operchallenge-1.3.tar
 share/bx/script/query.bx
 share/bx/script/auto_resume
 share/bx/script/fserve.irc
@@ -981,7 +987,6 @@ share/bx/translation/SWISS
 share/bx/translation/UNITED_KINGDOM
 share/bx/translation/UNITED_KINGDOM_COM
 %%NOGNOME:%%share/bx/wserv
-%%PORTDOCS%%share/doc/bitchx/bxfaq.html
 %%PORTDOCS%%@dirrm share/doc/bitchx
 @dirrm share/bx/translation
 @dirrm share/bx/script

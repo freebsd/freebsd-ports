@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	BitchX
-PORTVERSION=	1.0c19
-PORTREVISION?=	4
-CATEGORIES+=	irc gnome
+PORTVERSION=	1.1
+CATEGORIES+=	irc
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
-DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
-		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX} \
+		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 
 MAINTAINER?=	arved@FreeBSD.org
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
@@ -46,21 +45,6 @@ MAN1=		BitchX.1
 #		SSL "With SSL" off \
 #		TCL "With TCL support" off \
 #		XMMS "With XMMS plugin" off
-		
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_TCL)
-DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
-		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
-.endif
-
-.if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.endif
-
-.if defined(WITH_IPV6)
-USE_AUTOCONF_VER=253
-.endif
 
 .if defined(WITH_GNOME)
 USE_X_PREFIX=	yes
@@ -81,7 +65,22 @@ CONFIGURE_ARGS+=--enable-sound
 USE_OPENSSL=		yes
 .endif
 
-.if ${ARCH} == "alpha" || ${ARCH} == "ia64"
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL)
+DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
+		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
+.endif
+
+.if defined(WITH_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.endif
+
+.if defined(WITH_IPV6)
+USE_AUTOCONF_VER=253
+.endif
+
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
 BROKEN="Dumps core on startup"
 .endif
 
@@ -139,7 +138,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	/usr/bin/dialog --yesno "SECURITY NOTICE: TCL support is only \
+	${DIALOG} --yesno "SECURITY NOTICE: TCL support is only \
 	available by linking a precompiled binary object into the Application. \
 	Do you really want to proceed building BitchX with TCL support?" 7 70 || ${FALSE}
 .endif # BATCH
@@ -153,8 +152,8 @@ pre-extract:
 	-gpg --keyserver pgp.mit.edu --no-default-keyring \
 		--keyring ${WRKDIR}/keyring --recv-key 42D1F77C
 	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
-		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig \
-		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
+		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}.sig \
+		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 .if defined(WITH_TCL)
 	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
 		freebsd4-tcl83-bx1.0c19-tcl.o.sig \
@@ -210,7 +209,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/bitchx
 	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . --exclude CVS | \
 	${TAR} --directory ${PREFIX}/share/bx/help -xf -
-	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
 .else
 	${RMDIR} ${PREFIX}/share/bx/help
 .endif
