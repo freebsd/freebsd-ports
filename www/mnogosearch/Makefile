@@ -73,7 +73,7 @@ LIB_DEPENDS=            msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 
 .elif defined(WITH_MNOGO_MYSQL)
-LIB_DEPENDS=            mysqlclient:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS=		mysqlclient:${PORTSDIR}/databases/mysql41-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .elif defined(WITH_MNOGO_BUILTIN)
