@@ -10,6 +10,7 @@
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += forkbomb
+    SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += httperf
     SUBDIR += iozone
