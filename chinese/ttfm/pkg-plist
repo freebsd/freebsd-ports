@@ -11,5 +11,5 @@ share/ttfm/xfreetype.ttfm
 share/ttfm/xttfm.ttfm
 @dirrm share/ttfm
 @dirrm share/doc/ttfm
-@unexec rmdir %D/share/fonts/ttf 2>/dev/null || true
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
 @unexec rmdir %D/share/fonts 2>/dev/null || true
