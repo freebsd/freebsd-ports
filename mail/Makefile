@@ -277,6 +277,7 @@
     SUBDIR += popa3d-before-sendmail
     SUBDIR += popcheck
     SUBDIR += popd
+    SUBDIR += popfile
     SUBDIR += poppassd
     SUBDIR += popper
     SUBDIR += poppwd

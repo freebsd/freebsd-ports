@@ -1,0 +1,163 @@
+%%DATADIR%%/0_20_1_1/POPFile/0.20.0/Classifier/Bayes.pm
+%%DATADIR%%/0_20_1_1/POPFile/0.20.1/Classifier/Bayes.pm
+%%DATADIR%%/0_20_1_1/README_euc
+%%DATADIR%%/0_20_1_1/README_sjis
+%%DATADIR%%/0_20_1_1/license
+%%DATADIR%%/0_20_1_1/popfile_jpn.nsi
+%%DATADIR%%/Classifier/Bayes.pm
+%%DATADIR%%/Classifier/MailParse.pm
+%%DATADIR%%/Classifier/WordMangle.pm
+%%DATADIR%%/POPFile/Configuration.pm
+%%DATADIR%%/POPFile/Loader.pm
+%%DATADIR%%/POPFile/Logger.pm
+%%DATADIR%%/POPFile/MQ.pm
+%%DATADIR%%/POPFile/Module.pm
+%%DATADIR%%/Proxy/POP3.pm
+%%DATADIR%%/Proxy/Proxy.pm
+%%DATADIR%%/UI/HTML.pm
+%%DATADIR%%/UI/HTTP.pm
+%%DATADIR%%/bayes.pl
+%%DATADIR%%/black.gif
+%%DATADIR%%/favicon.ico
+%%DATADIR%%/insert.pl
+%%DATADIR%%/languages/Bulgarian.msg
+%%DATADIR%%/languages/Chinese-Simplified.msg
+%%DATADIR%%/languages/Chinese-Traditional.msg
+%%DATADIR%%/languages/Czech.msg
+%%DATADIR%%/languages/Dansk.msg
+%%DATADIR%%/languages/Deutsch.msg
+%%DATADIR%%/languages/English-UK.msg
+%%DATADIR%%/languages/English.msg
+%%DATADIR%%/languages/Espanol.msg
+%%DATADIR%%/languages/Francais.msg
+%%DATADIR%%/languages/Hebrew.msg
+%%DATADIR%%/languages/Hellenic.msg
+%%DATADIR%%/languages/Hungarian.msg
+%%DATADIR%%/languages/Italiano.msg
+%%DATADIR%%/languages/Korean.msg
+%%DATADIR%%/languages/Nederlands.msg
+%%DATADIR%%/languages/Nihongo.msg
+%%DATADIR%%/languages/Norsk.msg
+%%DATADIR%%/languages/Polish.msg
+%%DATADIR%%/languages/Portugues.msg
+%%DATADIR%%/languages/Russian.msg
+%%DATADIR%%/languages/Slovak.msg
+%%DATADIR%%/languages/Suomi.msg
+%%DATADIR%%/languages/Svenska.msg
+%%DATADIR%%/languages/Turkce.msg
+%%DATADIR%%/languages/Ukrainian.msg
+%%DATADIR%%/license
+%%DATADIR%%/manual/e_filter1.gif
+%%DATADIR%%/manual/e_filter2.gif
+%%DATADIR%%/manual/e_filter3.gif
+%%DATADIR%%/manual/e_filter4.gif
+%%DATADIR%%/manual/e_popfile1.gif
+%%DATADIR%%/manual/e_popfile2.gif
+%%DATADIR%%/manual/e_popfile3.gif
+%%DATADIR%%/manual/en/email.html
+%%DATADIR%%/manual/en/firewalls.html
+%%DATADIR%%/manual/en/firsttime.html
+%%DATADIR%%/manual/en/installing.html
+%%DATADIR%%/manual/en/manual.html
+%%DATADIR%%/manual/en/multiple.html
+%%DATADIR%%/manual/en/proxies.html
+%%DATADIR%%/manual/en/spa.html
+%%DATADIR%%/manual/en/training.html
+%%DATADIR%%/manual/o_filter1.gif
+%%DATADIR%%/manual/o_filter2.gif
+%%DATADIR%%/manual/o_filter3.gif
+%%DATADIR%%/manual/o_filter4.gif
+%%DATADIR%%/manual/o_filter5.gif
+%%DATADIR%%/manual/o_filter6.gif
+%%DATADIR%%/manual/o_popfile1.gif
+%%DATADIR%%/manual/o_popfile2.gif
+%%DATADIR%%/manual/o_popfile3.gif
+%%DATADIR%%/manual/oe_filter1.gif
+%%DATADIR%%/manual/oe_filter2.gif
+%%DATADIR%%/manual/oe_filter3.gif
+%%DATADIR%%/manual/oe_filter4.gif
+%%DATADIR%%/manual/oe_filter5.gif
+%%DATADIR%%/manual/oe_popfile1.gif
+%%DATADIR%%/manual/oe_popfile2.gif
+%%DATADIR%%/manual/oe_popfile3.gif
+%%DATADIR%%/manual/oe_popfile4.gif
+%%DATADIR%%/manual/p_filter1.gif
+%%DATADIR%%/manual/p_filter2.gif
+%%DATADIR%%/manual/p_filter3.gif
+%%DATADIR%%/manual/p_filter4.gif
+%%DATADIR%%/manual/p_popfile1.gif
+%%DATADIR%%/manual/p_popfile2.gif
+%%DATADIR%%/manual/p_popfile3.gif
+%%DATADIR%%/manual/zonealaram.gif
+%%DATADIR%%/otto.gif
+%%DATADIR%%/pipe.pl
+%%DATADIR%%/pix.gif
+%%DATADIR%%/popfile.pl
+%%DATADIR%%/setup-popfile.sh
+%%DATADIR%%/skins/CoolBlue.css
+%%DATADIR%%/skins/CoolBrown.css
+%%DATADIR%%/skins/CoolGreen.css
+%%DATADIR%%/skins/CoolOrange.css
+%%DATADIR%%/skins/CoolYellow.css
+%%DATADIR%%/skins/LRCLaptop.css
+%%DATADIR%%/skins/Lavish.css
+%%DATADIR%%/skins/PRJBlueGrey.css
+%%DATADIR%%/skins/PRJSteelBeach.css
+%%DATADIR%%/skins/SimplyBlue.css
+%%DATADIR%%/skins/Sleet.css
+%%DATADIR%%/skins/StrawberryRose.css
+%%DATADIR%%/skins/blue.css
+%%DATADIR%%/skins/chipped_obsidian.gif
+%%DATADIR%%/skins/default.css
+%%DATADIR%%/skins/glassblue.css
+%%DATADIR%%/skins/green.css
+%%DATADIR%%/skins/lavishImages/bottom.gif
+%%DATADIR%%/skins/lavishImages/bottomLeft.gif
+%%DATADIR%%/skins/lavishImages/bottomRight.gif
+%%DATADIR%%/skins/lavishImages/buttonSelected.gif
+%%DATADIR%%/skins/lavishImages/buttonUnselected.gif
+%%DATADIR%%/skins/lavishImages/left.gif
+%%DATADIR%%/skins/lavishImages/right.gif
+%%DATADIR%%/skins/lavishImages/top.gif
+%%DATADIR%%/skins/lavishImages/topLeft.gif
+%%DATADIR%%/skins/lavishImages/topRight.gif
+%%DATADIR%%/skins/metalback.gif
+%%DATADIR%%/skins/orange.css
+%%DATADIR%%/skins/orangeCream.css
+%%DATADIR%%/skins/outlook.css
+%%DATADIR%%/skins/sleetImages/bottom.gif
+%%DATADIR%%/skins/sleetImages/bottomLeft.gif
+%%DATADIR%%/skins/sleetImages/bottomRight.gif
+%%DATADIR%%/skins/sleetImages/button.gif
+%%DATADIR%%/skins/sleetImages/left.gif
+%%DATADIR%%/skins/sleetImages/menu.gif
+%%DATADIR%%/skins/sleetImages/menuButton.gif
+%%DATADIR%%/skins/sleetImages/right.gif
+%%DATADIR%%/skins/sleetImages/top.gif
+%%DATADIR%%/skins/sleetImages/topLeft.gif
+%%DATADIR%%/skins/sleetImages/topRight.gif
+%%DATADIR%%/skins/smalldefault.css
+%%DATADIR%%/skins/smallgrey.css
+%%DATADIR%%/skins/tinydefault.css
+%%DATADIR%%/skins/tinygrey.css
+%%DATADIR%%/skins/white.css
+%%DATADIR%%/skins/windows.css
+%%DATADIR%%/stopwords
+%%DATADIR%%/v0.20.1.change
+@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.0/Classifier
+@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.0
+@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.1/Classifier
+@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.1
+@dirrm %%DATADIR%%/0_20_1_1/POPFile
+@dirrm %%DATADIR%%/0_20_1_1
+@dirrm %%DATADIR%%/Classifier
+@dirrm %%DATADIR%%/POPFile
+@dirrm %%DATADIR%%/Proxy
+@dirrm %%DATADIR%%/UI
+@dirrm %%DATADIR%%/manual/en
+@dirrm %%DATADIR%%/manual
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/skins/lavishImages
+@dirrm %%DATADIR%%/skins/sleetImages
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%
