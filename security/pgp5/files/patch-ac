@@ -26,5 +26,5 @@
 +	    $(LN_S) $(INSTPGP) pgpe;			\
 +	    $(LN_S) $(INSTPGP) pgps;			\
 +	    $(LN_S) $(INSTPGP) pgpv;			\
-+	    $(LN_S) $(INSTPGP) pgp_old			\
++	    $(LN_S) $(INSTPGP) pgpo;			\
  	)
