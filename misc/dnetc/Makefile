@@ -45,6 +45,8 @@ MAN1=		dnetc.1
 
 .if ${ARCH} == sparc64 || ${ARCH} == alpha
 VERSION=	2.9003.481
+.elif ${ARCH} == amd64
+VERSION=	2.9009.494
 .else
 VERSION=	2.9008.491
 .endif

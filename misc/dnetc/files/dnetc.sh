@@ -16,7 +16,7 @@ user="%%CLIENTUSER%%"
 name="dnetc"
 rcvar=`set_rcvar`
 
-required_files=${dir}/dnetc.ini
+required_files=${dir}/${name}.ini
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
@@ -29,8 +29,8 @@ dnetc_start()
 
 dnetc_stop()
 {
-	echo -n " dnetc"
 	su -m ${user} -c "${dir}/dnetc -shutdown" 2>/dev/null >/dev/null
+	echo -n " dnetc"
 }
 
 load_rc_config $name
