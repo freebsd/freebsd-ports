@@ -3,12 +3,12 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 @exec ln -sf %%BROWSER%%-4 %B/netscape.run
 @unexec rm -f %B/netscape.run
 @unexec rm -f %B/%%BROWSER%%-4
+%%NSUBDIR%%/%%BROWSER%%-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/LICENSE
 %%NSUBDIR%%/Netscape.ad
 %%NSUBDIR%%/README
 %%NSUBDIR%%/XKeysymDB
 %%NSUBDIR%%/bookmark.htm
-%%NSUBDIR%%/communicator-linux-4.8.bin
 %%NSUBDIR%%/java/classes/aix/font.properties
 %%NSUBDIR%%/java/classes/aix/font.properties.cs
 %%NSUBDIR%%/java/classes/aix/font.properties.hu
@@ -71,10 +71,8 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/ldap40.jar
 %%NSUBDIR%%/java/classes/resource.jar
 %%NSUBDIR%%/java/classes/scd10.jar
-%%NSUBDIR%%/libjsd.so
 %%NSUBDIR%%/libnullplugin-dynMotif.so
 %%NSUBDIR%%/mailcap
-%%NSUBDIR%%/movemail
 %%NSUBDIR%%/nethelp/Back_dep.gif
 %%NSUBDIR%%/nethelp/Back_dis.gif
 %%NSUBDIR%%/nethelp/Back_sel.gif
@@ -115,46 +113,14 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/nethelp/Topic.js
 %%NSUBDIR%%/nethelp/Utility.js
 %%NSUBDIR%%/nethelp/Wait.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/coll.htm
-%%NSUBDIR%%/nethelp/netscape/collabra/collHdr.htm
-%%NSUBDIR%%/nethelp/netscape/collabra/collabra.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/discgrps.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/help.hpf
-%%NSUBDIR%%/nethelp/netscape/collabra/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/composer/comp.htm
-%%NSUBDIR%%/nethelp/netscape/composer/compHdr.htm
-%%NSUBDIR%%/nethelp/netscape/composer/composer.gif
-%%NSUBDIR%%/nethelp/netscape/composer/comtlbr2.gif
-%%NSUBDIR%%/nethelp/netscape/composer/fmtlbr3.gif
-%%NSUBDIR%%/nethelp/netscape/composer/help.hpf
-%%NSUBDIR%%/nethelp/netscape/composer/tagicon2.gif
 %%NSUBDIR%%/nethelp/netscape/home/help.hpf
 %%NSUBDIR%%/nethelp/netscape/home/home.gif
 %%NSUBDIR%%/nethelp/netscape/home/home.htm
 %%NSUBDIR%%/nethelp/netscape/home/homeHdr.htm
-%%NSUBDIR%%/nethelp/netscape/messengr/abook.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/compbar.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/help.hpf
-%%NSUBDIR%%/nethelp/netscape/messengr/mailbox.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mess.htm
-%%NSUBDIR%%/nethelp/netscape/messengr/messHdr.htm
-%%NSUBDIR%%/nethelp/netscape/messengr/messengr.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mpctrl.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/newsgrp.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/tabs.gif
 %%NSUBDIR%%/nethelp/netscape/navigatr/help.hpf
 %%NSUBDIR%%/nethelp/netscape/navigatr/nav.htm
 %%NSUBDIR%%/nethelp/netscape/navigatr/navHdr.htm
 %%NSUBDIR%%/nethelp/netscape/navigatr/navigatr.gif
-%%NSUBDIR%%/nethelp/netscape/news/abook.gif
-%%NSUBDIR%%/nethelp/netscape/news/collabra.gif
-%%NSUBDIR%%/nethelp/netscape/news/compbar.gif
-%%NSUBDIR%%/nethelp/netscape/news/discgrps.gif
-%%NSUBDIR%%/nethelp/netscape/news/help.hpf
-%%NSUBDIR%%/nethelp/netscape/news/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/news/news.htm
-%%NSUBDIR%%/nethelp/netscape/news/newsgrp.gif
 %%NSUBDIR%%/nethelp/netscape/shared/NetHelpm.css
 %%NSUBDIR%%/nethelp/netscape/shared/NetHelpu.css
 %%NSUBDIR%%/nethelp/netscape/shared/NetHelpw.css
@@ -168,8 +134,6 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/nethelp/netscape/shared/messIcon.gif
 %%NSUBDIR%%/nethelp/netscape/shared/navIcon.gif
 %%NSUBDIR%%/nethelp/netscape/shared/netIcon.gif
-%%NSUBDIR%%/nethelp/netscape/trouble/help.hpf
-%%NSUBDIR%%/nethelp/netscape/trouble/trouble.htm
 %%NSUBDIR%%/nethelp/netwatch.gif
 %%NSUBDIR%%/nethelp/picsfail.htm
 %%NSUBDIR%%/nethelp/picsfail.jar
@@ -179,24 +143,16 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/plugins/libflashplayer.so
 %%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/registry
-%%NSUBDIR%%/spell/netscape.dic
-%%NSUBDIR%%/spell/pen4s324.dat
 %%NSUBDIR%%/vreg
-@dirrm %%NSUBDIR%%/spell
-@dirrm %%NSUBDIR%%/plugins
-@dirrm %%NSUBDIR%%/nethelp/netscape/trouble
-@dirrm %%NSUBDIR%%/nethelp/netscape/shared
-@dirrm %%NSUBDIR%%/nethelp/netscape/news
-@dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
-@dirrm %%NSUBDIR%%/nethelp/netscape/messengr
-@dirrm %%NSUBDIR%%/nethelp/netscape/home
-@dirrm %%NSUBDIR%%/nethelp/netscape/composer
-@dirrm %%NSUBDIR%%/nethelp/netscape/collabra
-@dirrm %%NSUBDIR%%/nethelp/netscape
-@dirrm %%NSUBDIR%%/nethelp
-@dirrm %%NSUBDIR%%/java/classes/irix
-@dirrm %%NSUBDIR%%/java/classes/hpux
 @dirrm %%NSUBDIR%%/java/classes/aix
+@dirrm %%NSUBDIR%%/java/classes/hpux
+@dirrm %%NSUBDIR%%/java/classes/irix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
-@unexec rmdir %D/%%NSUBDIR%% 2>/dev/null || true
+@dirrm %%NSUBDIR%%/nethelp/netscape/home
+@dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
+@dirrm %%NSUBDIR%%/nethelp/netscape/shared
+@dirrm %%NSUBDIR%%/nethelp/netscape
+@dirrm %%NSUBDIR%%/nethelp
+@dirrm %%NSUBDIR%%/plugins
+@dirrm %%NSUBDIR%%
