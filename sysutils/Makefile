@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1998/08/03 06:28:56 nectar Exp $
+# $Id: Makefile,v 1.42 1998/08/10 00:38:09 steve Exp $
 #
 
     SUBDIR += LPRng
@@ -17,6 +17,7 @@
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
+    SUBDIR += mergemaster
     SUBDIR += mkhybrid11
     SUBDIR += mkhybrid12
     SUBDIR += mkisofs
