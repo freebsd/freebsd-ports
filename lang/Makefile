@@ -136,6 +136,7 @@
     SUBDIR += tclX80
     SUBDIR += tclX82
     SUBDIR += tclplugin
+    SUBDIR += tcltutor
     SUBDIR += tinycobol
     SUBDIR += wamcc
     SUBDIR += yabasic
