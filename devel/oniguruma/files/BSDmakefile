@@ -6,8 +6,8 @@ SHLIB_MINOR?=	0
 CFLAGS+=	-DHAVE_CONFIG_H -DNOT_RUBY
 SRCS=		regerror.o regcomp.o regexec.o reggnu.o \
 		regposix.o regposerr.o regparse.o
-INCS=		regex.h \
-		onigposix.h
+INCS=		onigposix.h \
+		oniguruma.h
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib
 INCSDIR=	${LOCALBASE}/include/onig

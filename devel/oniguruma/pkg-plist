@@ -1,13 +1,15 @@
 include/onig/onigposix.h
-include/onig/regex.h
+include/onig/oniguruma.h
 @dirrm include/onig
 lib/libonig.a
 lib/libonig.so
 lib/libonig.so.0
 %%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/RE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/names.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/posix.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.c
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
