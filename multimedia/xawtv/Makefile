@@ -20,8 +20,10 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib
 
-.if !exists(/usr/include/machine/ioctl_bt848.h)
-BROKEN=		No ioctl_bt848.h on this architecture
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
