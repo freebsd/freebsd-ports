@@ -82,8 +82,13 @@ share/gnome/maps/gnofract4d/vooon.map
 share/gnome/maps/gnofract4d/wild.map
 share/gnome/maps/gnofract4d/wine.map
 share/gnome/maps/gnofract4d/world.map
+share/gnome/pixmaps/gnofract4d/deepen_now.png
+share/gnome/pixmaps/gnofract4d/deepen_now_1.png
+share/gnome/pixmaps/gnofract4d/filmstrip.png
 share/gnome/pixmaps/gnofract4d/full_screen.png
 share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
+share/gnome/pixmaps/gnofract4d/pause.png
+share/gnome/pixmaps/gnofract4d/ptest.png
 share/locale/fr/LC_MESSAGES/gnofract4d.mo
 @dirrm share/gnome/pixmaps/gnofract4d
 @dirrm share/gnome/maps/gnofract4d
