@@ -15,7 +15,13 @@ MASTER_SITE_SUBDIR=	../../authors/Johan_Vromans
 MAINTAINER=	nik@freebsd.org
 COMMENT=	Converts EPS images to PNG
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 PERL_CONFIGURE=	yes
 
