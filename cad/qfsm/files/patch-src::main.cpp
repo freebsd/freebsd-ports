@@ -1,14 +1,11 @@
---- src/main.cpp.orig	Sun Mar  7 01:12:13 2004
-+++ src/main.cpp	Wed Mar 17 00:12:23 2004
-@@ -16,8 +16,9 @@
+--- src/main.cpp.orig	Mon Jan 17 06:23:41 2005
++++ src/main.cpp	Wed Jan 19 21:39:30 2005
+@@ -16,7 +16,7 @@
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
  
 -#include <stdlib.h>
--#include <iostream.h>
 +#include <cstdlib>
-+#include <iostream>
-+using namespace std;
+ #include <iostream>
  #include <qtranslator.h>
  #include <qapplication.h>
- #include <qstring.h>
