@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.50
+PORTVERSION?=	2.50
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/%SUBDIR%/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/%SUBDIR%/
 MASTER_SITE_SUBDIR?=	release
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER?=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
+
+CONFLICTS?=	${PORTNAME}-[0-9].[0-9][0-9].[0-9]*
 
 USE_PERL5=	yes
 NO_BUILD=	yes
