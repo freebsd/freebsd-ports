@@ -1,0 +1,7 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/fltk.so
+share/examples/ruby/fltk/adjuster.rb
+@dirrm share/examples/ruby/fltk
+share/doc/ruby/fltk/README
+share/doc/ruby/fltk/ja/README.jp
+@dirrm share/doc/ruby/fltk/ja
+@dirrm share/doc/ruby/fltk
