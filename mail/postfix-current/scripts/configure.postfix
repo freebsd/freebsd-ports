@@ -23,14 +23,15 @@ NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
-TLS		"SSL and TLS" "$status_TLS" \
+TLS		"SSL and TLS (broken)" "$status_TLS" \
 IPv6		"IPv6 support (broken)" "$status_IPv6" \
 IPv6TLS		"IPv6 support with SSL and TLS (broken)" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
-PgSQL		"PostgreSQL v7.3 map lookups" "$status_PgSQL" \
+PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
+PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
 PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
 OpenLDAP12	"OpenLDAP 1.2 map lookups" "$status_OpenLDAP" \
 OpenLDAP20	"OpenLDAP 2.0 map lookups" "$status_OpenLDAP" \
@@ -156,6 +157,13 @@ while [ "$1" ]; do
 			;;
 		PgSQL)
 			echo "POSTGRESQL_PORT?=	databases/postgresql7"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
+			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			echo "PGSQL_SUFFIX=	+pgsql"
+			;;
+		PgSQL73)
+			echo "POSTGRESQL_PORT?=	databases/postgresql73"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
