@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
-		http://www.wwdsi.com/saint/downloads/		\
-		ftp://ukug.uk.freebsd.org/pub/lord_cj/
+		http://www.wwdsi.com/saint/downloads/		
 
 MAINTAINER=	cj@vallcom.net
 
