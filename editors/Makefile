@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1999/05/06 14:29:54 taoka Exp $
+# $Id: Makefile,v 1.76 1999/05/09 17:15:51 shige Exp $
 #
 
     SUBDIR += AbiWord
@@ -58,8 +58,12 @@
     SUBDIR += vile
     SUBDIR += vilearn
     SUBDIR += vim5
+    SUBDIR += wemi-emacs
+    SUBDIR += wemi-emacs-current
     SUBDIR += wemi-emacs20
     SUBDIR += wemi-emacs20-current
+    SUBDIR += wemi-mule
+    SUBDIR += wemi-mule-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
