@@ -1,3 +1,4 @@
 bin/wmnd
+info/gpl.info
 share/examples/wmnd/wmndrc
 @dirrm share/examples/wmnd
