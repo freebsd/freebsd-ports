@@ -15,5 +15,6 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
 GNU_CONFIGURE=	yes
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>
