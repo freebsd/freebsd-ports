@@ -49,7 +49,7 @@ PLIST_SUB+=	LINUX="@comment "
 .endif
 
 .if ${OSVERSION} < 490000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
-IGNORE=		"supports FreeBSD -STABLE (4.9 or later), or FreeBSD -CURRENT (5.2.1 or later)"
+IGNORE=		supports FreeBSD -STABLE (4.9 or later), or FreeBSD -CURRENT (5.2.1 or later)
 .endif
 
 .if ${OSVERSION} < 500000
