@@ -32,6 +32,55 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
+    <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
+    <affects>
+      <package>
+	<name>oftpd</name>
+	<range><lt>0.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Philippe Oechslin reported a denial-of-service vulnerability
+	  in oftpd.  The oftpd server can be crashed by sending a PORT
+	  command containing an integer over 8 bits long (over 255).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
+    </references>
+    <dates>
+      <discovery>2004-03-04</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70f5b3c6-80f0-11d8-9645-0020ed76ef5a">
+    <topic>Critical SQL injection in phpBB</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Anyone can get admin's username and password's md5 hash via a
+	  single web request.
+	  A working example is provided in the advisory.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
+    </references>
+    <dates>
+      <discovery>2004-03-28</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
+
   <vuln vid="cdf18ed9-7f4a-11d8-9645-0020ed76ef5a">
     <topic>multiple vulnerabilities in ethereal</topic>
     <affects>
@@ -412,7 +461,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<range><ge>2.0</ge><le>apache-2.0.48_3</le></range>
+	<range><ge>2.0</ge><le>2.0.48_3</le></range>
       </package>
     </affects>
     <description>
@@ -436,6 +485,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-20</discovery>
       <entry>2004-03-08</entry>
+      <modified>2004-03-28</modified>
     </dates>
   </vuln>
 
