@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cftp
-PORTVERSION=	0.11
+PORTVERSION=	0.11.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
 		ftp://sunsite.univie.ac.at/pub/nih/cftp/
