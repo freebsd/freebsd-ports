@@ -21,6 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		cxref.1 cxref-query.1
+MAN1=		cxref.1 cxref-cpp.1 cxref-query.1
 
 .include <bsd.port.mk>
