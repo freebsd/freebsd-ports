@@ -53,6 +53,7 @@ share/kvirc/help/en/syntax_objects.kvihelp
 share/kvirc/help/en/syntax_variables.kvihelp
 share/kvirc/locale/de.mo
 share/kvirc/locale/es.mo
+share/kvirc/locale/hu.mo
 share/kvirc/locale/it.mo
 share/kvirc/locale/pl.mo
 share/kvirc/locale/pt_br.mo
