@@ -1,0 +1,10 @@
+FPL is a complete script programming language _very_ similar to C. If
+you are a software developer and plans to add any kind of macro/script
+control, consider the FPL alternative!
+
+FPL library lets the software programmer define functions and variables
+that FPL should accept. The library will call a function in the software
+whenever any of these functions are used or variables are read in an FPL
+program.
+
+WWW: http://ich.bin.kein.hoschi.de/fpl/
