@@ -3910,6 +3910,7 @@ mtr		ports/net/mtr
 mtree		src/usr.sbin/mtree
 mtrxmath	ports/math/mtrxmath
 mtv		ports/graphics/mtv
+mtx		ports/misc/mtx
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudsh		ports/shells/mudsh
