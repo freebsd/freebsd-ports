@@ -9,8 +9,8 @@
 -DESTDIR=/usr/local/bin
 +CC?= cc
 +CFLAGS?= -O -pipe -Wall
-+LNETINC= -I/usr/local/include
-+LNETLIB= -L/usr/local/lib
++LNETINC= -I${LOCALBASE}/include
++LNETLIB= -L${LOCALBASE}/lib
 +
 +BINDIR= ${PREFIX}/sbin
 +MANDIR= ${PREFIX}/man
