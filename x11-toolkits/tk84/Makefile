@@ -346,15 +346,12 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADS)
+pre-everything::
+	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-
-.endif
-
-pre-extract:
-	@if test -e "${NONEXISTENT}"; then echo "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
 
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
@@ -367,7 +364,7 @@ post-install:
 .endif
 
 test:
-	cd ${WRKSRC}; make test
+	cd ${WRKSRC}; ${MAKE} test
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
