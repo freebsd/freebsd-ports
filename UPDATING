@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050117:
+  AFFECTS: users of mail/spambnc
+  AUTHOR: thierry@FreeBSD.org
+
+The SpamBouncer has been upgraded from version 1.9 to 2.0-RC3, and you
+have to modify your ~/.procmailrc files. Please read upgrading.html in
+/usr/local/share/doc/spambnc.
+
+20050117:
   AFFECTS: users of astk-client
   AUTHOR: thierry@FreeBSD.org
 
@@ -30,7 +38,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
 
   	# rm /etc/pam.d/gnomesu-pam
   	# rmdir /etc/pam.d/
-	
+
   or all users will be locked out of your system!
 
 20050110:
