@@ -7,15 +7,16 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
-PORTREVISION=	1
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	psgml
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-PSGML_VER=		1.2.2
+PSGML_VER=		1.2.3
 PSGML_STARTUPEL=	psgml-startup.el
 
 SCRIPTS_ENV=		TARGETS="${PSGML_STARTUPEL}"
