@@ -1,0 +1,31 @@
+# New ports collection makefile for:	erwin
+# Version required:		0.3.1
+# Date created:			31 July 1999
+# Whom:				Jim Mock <jimFreeBSD.org>
+#
+# $Id: Makefile,v 1.2 1999/08/22 19:00:33 mharo Exp $
+#
+
+DISTNAME=	erwin-0.3.1
+PKGNAME=	erwn-0.3.1
+CATEGORIES=	www editors
+MASTER_SITES=	http://www-stud.fht-esslingen.de/erwin/
+
+MAINTAINER=	jim@FreeBSD.org
+
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+
+post-install:
+	@strip ${PREFIX}/bin/erwin
+.if !defined(NOPORTDOCS)
+	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/erwin"
+	@${MKDIR} ${PREFIX}/share/doc/erwin && ${CHMOD} a+rx ${PREFIX}/share/doc/erwin
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/erwin
+.endif
+
+.include <bsd.port.mk>

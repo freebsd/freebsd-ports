@@ -1,0 +1,24 @@
+--- Makefile.orig	Sat Jul 31 17:03:44 1999
++++ Makefile	Sat Jul 31 17:04:37 1999
+@@ -2,7 +2,7 @@
+ bindir		= $(prefix)/bin
+ 
+ NAME		= erwin-0.3.1
+-CC		= gcc
++CC		?= gcc
+ PROG		= erwin
+ OBJS		= erwin.o erwinmenu.o erwinfunctions.o erwintoolbar.o \
+ 		  erwinnotebook.o erwindialogs.o erwintags.o gtkmessage.o
+@@ -28,10 +28,10 @@
+ 	rm -f $(PROG) $(OBJS) *.?~ core license.h
+ 
+ $(PROG):	$(OBJS)
+-	$(CC) $(LDFLAGS) $(shell gtk-config --libs) -o $@ $(OBJS)
++	$(CC) $(LDFLAGS) $(shell gtk12-config --libs) -o $@ $(OBJS)
+ 
+ %.o:		%.c
+-	$(CC) $(CFLAGS) $(shell gtk-config --cflags) -o $@ -c $<
++	$(CC) $(CFLAGS) $(shell gtk12-config --cflags) -o $@ -c $<
+ 
+ tar:	clean
+ 	cd ..; ln -s erwin $(NAME);tar cf - $(NAME)/* > $(NAME).tar;rm $(NAME);gzip -f $(NAME).tar
