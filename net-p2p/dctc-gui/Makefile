@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.63
+PORTVERSION=	0.65
 CATEGORIES=	net gnome
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -21,31 +21,37 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomelibs
+USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--with-gtk-prefix=${LOCALBASE} \
-		--datadir=${X11BASE}/share/gnome \
 		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}
 
 DOC_FILES= COPYING ChangeLog README TODO
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi -e \
-		's|(\$$\(datadir\))/gnome|\1|; \
-		s|ldb-4.0|ldb4|; \
-		s|<(db.h>)|<db4/\1|; \
-		s|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
-	@${PERL} -pi -e 's|(hublist)|dc_\1|m' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|; \
-		s|(cmdline.+)(hublist)|\1dc_\2|' \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} -E -e \
+		's|ldb-4.0|ldb4|; \
+		s|<(db.h>)|<db4/\1|'
+	@${REINPLACE_CMD} -E -e 's|(hublist)|dc_\1|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E -e \
+		's|(hublist)(.+argv)|dc_\1\2|' \
 		${WRKSRC}/src/init_fnc.c
 # XXX - revise at every port update
 	@${REINPLACE_CMD} -e "s|%'|%|g" ${WRKSRC}/src/*.c
+#	@${REINPLACE_CMD} -E -e \
+#		's|%lf|%f|; \
+#		s|(%\.[[:digit:]])lf|\1f|' \
+#		${WRKSRC}/src/*.c
+# clean up so as to not break installation
+	@${FIND} ${WRKSRC} -type f \
+		-name "*.bak" \
+		| ${XARGS} -n 10 -x ${RM}
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
