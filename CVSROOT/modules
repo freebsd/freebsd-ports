@@ -5435,6 +5435,7 @@ mod_tsunami	ports/www/mod_tsunami
 mod_uid		ports/www/mod_uid
 mod_v2h		ports/www/mod_v2h
 mod_vdbh	ports/www/mod_vdbh
+mod_vhs		ports/www/mod_vhs
 mod_watch	ports/www/mod_watch
 mod_watch4	ports/www/mod_watch4
 mod_webapp	ports/www/mod_webapp
