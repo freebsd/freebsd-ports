@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spreadsheet-excel
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	 rubyspreadsheet
