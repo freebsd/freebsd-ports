@@ -13,7 +13,6 @@ include/xmms/plugin.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
 lib/libxmms.a
-lib/libxmms.la
 lib/libxmms.so.1
 @exec ln -fs %D/%F %B/libxmms.so
 @unexec rm -f %B/libxmms.so

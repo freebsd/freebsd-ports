@@ -16,6 +16,10 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.nl.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.de.xmms.org/xmms/1.2.x/
 
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	sobomax
+PATCHFILES=	xmms-1.2.1-3dnow-20000620.patch.gz
+
 MAINTAINER=	esk@ira.uka.de
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
@@ -24,6 +28,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 
 USE_X_PREFIX=   yes
 USE_LIBTOOL=    yes
+LIBTOOLFILES=	configure libxmms/configure
 INSTALLS_SHLIB= yes
 
 .if !defined(WITHOUT_MIKMOD)
@@ -64,10 +69,16 @@ CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		HAVE_ESD_OVERRIDE="${HAVE_ESD_OVERRIDE}" \
 		HAVE_MIKMOD_OVERRIDE="${HAVE_MIKMOD_OVERRIDE}"
 
-pre-extract:
-.if !defined(WITH_GNOME) || !defined(WITHOUT_ESD) || !defined(WITHOUT_MIKMOD)
-	@${ECHO_MSG}
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=	--enable-3dnow
 .endif
+
+pre-extract:
+.if !defined(WITH_GNOME) || !defined(WITHOUT_ESD) || !defined(WITHOUT_MIKMOD) || \
+    ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 )
+	@${ECHO_MSG}
 .if !defined(WITH_GNOME)
 	@${ECHO_MSG} "You can add support for GNOME by defining WITH_GNOME."
 .endif
@@ -77,10 +88,13 @@ pre-extract:
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
 .endif
-.if !defined(WITH_GNOME) || !defined(WITHOUT_ESD) || !defined(WITHOUT_MIKMOD)
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable 3DNOW optimized decoding routines by defining WITHOUT_3DNOW."
+.endif
 	@${ECHO_MSG}
 .endif
 
+.if defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  ${MV} getbits.s getbits.S && cd ${WRKSRC}/Visualization/blur_scope && \
@@ -88,5 +102,6 @@ post-extract:
 	${PERL} -pi.bak -e 's:\.s :\.S :g' ${WRKSRC}/Input/mpg123/Makefile.in
 	${PERL} -pi.bak -e 's:blur_8.s:blur_8.S:g' \
 	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
