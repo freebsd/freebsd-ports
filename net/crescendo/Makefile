@@ -13,7 +13,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gnome frontend for tinyfuge
 
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue

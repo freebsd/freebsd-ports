@@ -7,7 +7,7 @@
 CATEGORIES=	portuguese
 PKGNAMEPREFIX?=	pt_PT-
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../../www/webalizer
 WEBALIZER_LANG=	portuguese
