@@ -1,51 +1,66 @@
-viewcvs-0.8/cvsdbadmin
-viewcvs-0.8/loginfo-handler
-viewcvs-0.8/make-database
-viewcvs-0.8/standalone.py
-viewcvs-0.8/cgi/viewcvs.cgi
-viewcvs-0.8/cgi/query.cgi
-viewcvs-0.8/doc/help_rootview.html
-viewcvs-0.8/doc/help_dirview.html
-viewcvs-0.8/doc/images/logo.png
-viewcvs-0.8/doc/images/chalk.jpg
-viewcvs-0.8/doc/images/cvsgraph_16x16.png
-viewcvs-0.8/doc/images/cvsgraph_32x32.png
-viewcvs-0.8/lib/PyFontify.py
-viewcvs-0.8/lib/PyFontify.pyc
-viewcvs-0.8/lib/blame.py
-viewcvs-0.8/lib/blame.pyc
-viewcvs-0.8/lib/compat.py
-viewcvs-0.8/lib/compat.pyc
-viewcvs-0.8/lib/config.py
-viewcvs-0.8/lib/config.pyc
-viewcvs-0.8/lib/cvsdb.py
-viewcvs-0.8/lib/cvsdb.pyc
-viewcvs-0.8/lib/dbi.py
-viewcvs-0.8/lib/dbi.pyc
-viewcvs-0.8/lib/debug.py
-viewcvs-0.8/lib/debug.pyc
-viewcvs-0.8/lib/popen.py
-viewcvs-0.8/lib/popen.pyc
-viewcvs-0.8/lib/py2html.py
-viewcvs-0.8/lib/py2html.pyc
-viewcvs-0.8/lib/query.py
-viewcvs-0.8/lib/query.pyc
-viewcvs-0.8/lib/rcsparse.py
-viewcvs-0.8/lib/rcsparse.pyc
-viewcvs-0.8/lib/rlog.py
-viewcvs-0.8/lib/rlog.pyc
-viewcvs-0.8/lib/viewcvs.py
-viewcvs-0.8/lib/viewcvs.pyc
-viewcvs-0.8/lib/ezt.py
-viewcvs-0.8/lib/ezt.pyc
-viewcvs-0.8/lib/apache_icons.py
-viewcvs-0.8/lib/apache_icons.pyc
-viewcvs-0.8/templates/directory.ezt
-viewcvs-0.8/templates/log.ezt
-viewcvs-0.8/templates/log_table.ezt
-viewcvs-0.8/templates/query.ezt
-@dirrm viewcvs-0.8/cgi
-@dirrm viewcvs-0.8/doc/images
-@dirrm viewcvs-0.8/doc
-@dirrm viewcvs-0.8/lib
-@dirrm viewcvs-0.8/templates
+%%INSTDIR%%/cgi/query.cgi
+%%INSTDIR%%/cgi/viewcvs.cgi
+%%INSTDIR%%/cvsdbadmin
+%%INSTDIR%%/cvsgraph.conf
+%%INSTDIR%%/doc/help_dirview.html
+%%INSTDIR%%/doc/help_log.html
+%%INSTDIR%%/doc/help_logtable.html
+%%INSTDIR%%/doc/help_query.html
+%%INSTDIR%%/doc/help_rootview.html
+%%INSTDIR%%/doc/images/chalk.jpg
+%%INSTDIR%%/doc/images/cvsgraph_16x16.png
+%%INSTDIR%%/doc/images/cvsgraph_32x32.png
+%%INSTDIR%%/doc/images/logo.png
+%%INSTDIR%%/lib/PyFontify.py
+%%INSTDIR%%/lib/PyFontify.pyc
+%%INSTDIR%%/lib/accept.py
+%%INSTDIR%%/lib/accept.pyc
+%%INSTDIR%%/lib/apache_icons.py
+%%INSTDIR%%/lib/apache_icons.pyc
+%%INSTDIR%%/lib/blame.py
+%%INSTDIR%%/lib/blame.pyc
+%%INSTDIR%%/lib/compat.py
+%%INSTDIR%%/lib/compat.pyc
+%%INSTDIR%%/lib/config.py
+%%INSTDIR%%/lib/config.pyc
+%%INSTDIR%%/lib/cvsdb.py
+%%INSTDIR%%/lib/cvsdb.pyc
+%%INSTDIR%%/lib/dbi.py
+%%INSTDIR%%/lib/dbi.pyc
+%%INSTDIR%%/lib/debug.py
+%%INSTDIR%%/lib/debug.pyc
+%%INSTDIR%%/lib/ezt.py
+%%INSTDIR%%/lib/ezt.pyc
+%%INSTDIR%%/lib/popen.py
+%%INSTDIR%%/lib/popen.pyc
+%%INSTDIR%%/lib/py2html.py
+%%INSTDIR%%/lib/py2html.pyc
+%%INSTDIR%%/lib/query.py
+%%INSTDIR%%/lib/query.pyc
+%%INSTDIR%%/lib/rcsparse.py
+%%INSTDIR%%/lib/rcsparse.pyc
+%%INSTDIR%%/lib/rlog.py
+%%INSTDIR%%/lib/rlog.pyc
+%%INSTDIR%%/lib/viewcvs.py
+%%INSTDIR%%/lib/viewcvs.pyc
+%%INSTDIR%%/loginfo-handler
+%%INSTDIR%%/make-database
+%%INSTDIR%%/standalone.py
+%%INSTDIR%%/templates/annotate.ezt
+%%INSTDIR%%/templates/diff.ezt
+%%INSTDIR%%/templates/dir_alternate.ezt
+%%INSTDIR%%/templates/directory.ezt
+%%INSTDIR%%/templates/footer.ezt
+%%INSTDIR%%/templates/graph.ezt
+%%INSTDIR%%/templates/header.ezt
+%%INSTDIR%%/templates/log.ezt
+%%INSTDIR%%/templates/log_table.ezt
+%%INSTDIR%%/templates/markup.ezt
+%%INSTDIR%%/templates/query.ezt
+%%INSTDIR%%/viewcvs.conf
+@dirrm %%INSTDIR%%/templates
+@dirrm %%INSTDIR%%/lib
+@dirrm %%INSTDIR%%/doc/images
+@dirrm %%INSTDIR%%/doc
+@dirrm %%INSTDIR%%/cgi
+@dirrm %%INSTDIR%%

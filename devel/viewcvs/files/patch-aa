@@ -1,6 +1,24 @@
---- viewcvs-install	Fri May 12 06:26:11 2000
-+++ viewcvs-install.new	Sun Jul  2 19:59:28 2000
-@@ -159,10 +159,10 @@
+--- viewcvs-install.orig	Fri Dec 21 20:59:45 2001
++++ viewcvs-install	Mon Dec 24 02:16:56 2001
+@@ -51,7 +51,7 @@
+ """ % version
+ 
+ ## installer defaults
+-ROOT_DIR = "/usr/local/viewcvs-" + version
++ROOT_DIR = os.environ['INSTDIR']
+ 
+ 
+ ## list of files for installation
+@@ -192,7 +192,7 @@
+     if type(prompt_replace) == type(""):
+       print prompt_replace
+     while 1:
+-      temp = raw_input("\n    File %s\n    exists and is different from source file.\n      DO YOU WANT TO,\n        overwrite [o]\n        do not overwrite [d]\n        view differences [v]: " % (dest_path))
++      temp = 'o'
+       print
+ 
+       temp = string.lower(temp[0])
+@@ -245,10 +245,10 @@
      print INFO_TEXT
      
      ## get the install path
