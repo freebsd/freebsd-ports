@@ -55,16 +55,21 @@ $NoId = "
 $NoName = "
 %s - The ID line should contain only \"\$\FreeBSD\$\" for a newly created file.\n";
 
+$DelPath = "
+%s - The old path and version has been deleted from \$\FreeBSD\$.\n";
+
+$BadId = "%s - The \$\FreeBSD\$ is mangled.\n";
+
 $BadName = "
 %s - The pathname '%s'
     in the \$\FreeBSD\$ line does not match the actual filename.\n";
 
 $BadVersion = "
-%s - How dare you!!  You replaced your copy of the file '%s',
-    which was based upon version %s, with an %s version based
-    upon %s.  Please move your '%s' out of the way, perform an
-    update to get the current version, and then CAREFULLY
-    merge your changes into that file.\n";
+%s - GRRR!!  You spammed your copy of the file
+    which was based upon version %s, with a different version based
+    upon %s.  Please move your '%s' out of the way,
+    perform an update to get the current version, and then
+    CAREFULLY merge your changes into that file.\n";
 
 ############################################################
 #
@@ -80,7 +85,7 @@ sub write_line {
 }
 
 sub check_version {
-    local($i, $id, $rname, $version);
+    local($i, $id, $rname, $version, $bareid);
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
@@ -96,33 +101,45 @@ sub check_version {
 	printf($NoId, $filename);
 	return(1);
     }
-
+    $bareid = (index($line, "\$\FreeBSD: \$") >= 0 &&
+		index($line, "\$\FreeBSD\$") >= 0);
+    if (!$bareid && $line !~ /\$\FreeBSD: .* \$/) {
+	printf($BadId, $filename);
+	return(1);
+    }
     # Ignore version mismatches (MFC spamming etc) on branches.
     if ($hastag) {
 	return (0);
     }
     ($id, $rname, $version) = split(' ', substr($line, $pos));
     if ($cvsversion{$filename} == 0) {
-	if (index($line, "\$\FreeBSD: \$") == -1 &&
-		index($line, "\$\FreeBSD\$") == -1) {
+	if (!$bareid) {
 	    printf($NoName, $filename);
 	    return(1);
 	}
 	return(0);
     }
-
-    if ($rname ne "$directory/$filename,v" && $rname ne "$filename,v") {
-	printf($BadName, "$directory/$filename,v", $rname);
+    if ($bareid) {
+	if ($directory =~ /^ports\//) {
+	    return (0);	# ok for ports
+	}
+	# Don't know whether to allow or trap this.  It means one could
+	# bypass the version spam checks by simply using a bare tag.
+	printf($DelPath, $filename);
 	return(1);
     }
-    if ($cvsversion{$filename} < $version) {
-	printf($BadVersion, $filename, $filename, $cvsversion{$filename},
-	       "newer", $version, $filename);
-	return(1);
+    if ($rname ne "$directory/$filename,v") {
+	# If ports and the pathname is just the basename (eg: somebody sent
+	# in a port with $Id$ and the committer changed Id -> FreeBSD and
+	# the version numbers otherwise match.
+	if (!($directory =~ /^ports\// && $rname eq "$filename,v")) {
+	    printf($BadName, "$directory/$filename,v", $rname);
+	    return(1);
+	}
     }
-    if ($cvsversion{$filename} > $version) {
-	printf($BadVersion, $filename, $filename, $cvsversion{$filename},
-	       "OLDER", $version, $filename);
+    if ($cvsversion{$filename} ne $version) {
+	printf($BadVersion, $filename, $cvsversion{$filename},
+	       $version, $filename);
 	return(1);
     }
     return(0);
@@ -134,7 +151,6 @@ sub check_version {
 #
 ############################################################
 
-$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 $id = getpgrp();
 #print("ARGV - ", join(":", @ARGV), "\n");
 #print("id   - ", id, "\n");
@@ -159,18 +175,19 @@ shift @ARGV;
 $cvsroot=$ENV{'CVSROOT'} || "/home/ncvs";
 $directory =~ s,^$cvsroot[/]+,,;
 
-if ($directory =~ /src\//) {
+if ($directory =~ /^src\//) {
 	$check_id = 1;
 }
-#if ($directory =~ /ports\//) {
+#if ($directory =~ /^ports\//) {
 #	$check_id = 2;
 #}
-if ($directory =~ /src\/contrib\//) {
+if ($directory =~ /^src\/contrib\//) {
 	$check_id = 3;
 }
-if ($directory =~ /src\/crypto\//) {
+if ($directory =~ /^src\/crypto\//) {
 	$check_id = 3;
 }
+#$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 #if ($login eq "peter") {
 #	print "directory:$directory, check_id:$check_id\n";
 #} else {
