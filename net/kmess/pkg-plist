@@ -55,6 +55,7 @@ share/apps/kmess/emoticons/wink.png
 share/apps/kmess/eventsrc
 share/apps/kmess/icons/hicolor/16x16/apps/gnomemeeting.png
 share/apps/kmess/pics/away.png
+share/apps/kmess/pics/background.png
 share/apps/kmess/pics/berightback.png
 share/apps/kmess/pics/blocked.png
 share/apps/kmess/pics/busy.png
@@ -93,6 +94,8 @@ share/icons/locolor/48x48/apps/kmess.png
 share/locale/ar/LC_MESSAGES/kmess.mo
 share/locale/ca/LC_MESSAGES/kmess.mo
 share/locale/de/LC_MESSAGES/kmess.mo
+share/locale/dk/LC_MESSAGES/kmess.mo
+share/locale/ee/LC_MESSAGES/kmess.mo
 share/locale/es/LC_MESSAGES/kmess.mo
 share/locale/fr/LC_MESSAGES/kmess.mo
 share/locale/it/LC_MESSAGES/kmess.mo
