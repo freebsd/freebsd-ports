@@ -3,7 +3,7 @@
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/12 17:30:28 hoek Exp $
 #
 
 DISTNAME=	catdoc
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	brion@queeg.com
 
 EXTRACT_BEFORE_ARGS=	-xf
+CFLAGS+=	-DLATIN1=1
 
 MAN1=		catdoc.1
 
