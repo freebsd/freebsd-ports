@@ -1,13 +1,13 @@
-#
+# ports collection Makefile for: leafnode
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.25
+PORTVERSION=	1.9.26
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/leafnode/ \
+MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
 		http://www.Awfulhak.org/leafnode/ \
@@ -40,7 +40,8 @@ post-install:
 		  ${INSTALL_MAN} ${WRKSRC}/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME} ; done
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/doc_german
-		for i in INSTALL_de README README_de ${MAN1} ${MAN8} ; do \
+		for i in INSTALL_de LIESMICH-daemontools README \
+			README_de ${MAN1} ${MAN8} ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/doc_german/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME}/doc_german ; done
 .endif
