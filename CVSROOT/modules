@@ -7152,6 +7152,7 @@ qcc		ports/games/qcc
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
+qdbm		ports/databases/qdbm
 qdecoder	ports/www/qdecoder
 qemacs		ports/editors/qemacs
 qextmdi		ports/devel/qextmdi
