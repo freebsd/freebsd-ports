@@ -7,6 +7,7 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.littlecms.com/
 
