@@ -7,7 +7,7 @@
 
 PORTNAME=	vep
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-1.0-200409191449/
@@ -24,7 +24,6 @@ RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.1/feature.xml:${
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
