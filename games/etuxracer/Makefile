@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=tuxracer
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
-MAINTAINER=	eanholt@gladstone.uoregon.edu
+MAINTAINER=	anholt@freebsd.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83
