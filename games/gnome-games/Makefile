@@ -1,37 +1,42 @@
-# New ports collection makefile for:	gnomegames
-# Date created:				03 July 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:	gnomegames2
+# Date created:				08 May 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnomegames
-PORTVERSION=	1.4.0.3
-PORTREVISION=	1
+PORTNAME=	gnomegames2
+PORTVERSION=	1.91.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-games
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020501
 DISTNAME=	gnome-games-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		guile.9:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  `gdk-pixbuf-config --cflags`" \
+CONFIGURE_ARGS= --localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>

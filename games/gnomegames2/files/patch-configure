@@ -1,0 +1,19 @@
+--- configure.orig	Sun Apr 21 13:50:05 2002
++++ configure	Wed May  8 15:34:41 2002
+@@ -7864,6 +7864,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -12411,7 +12412,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ _ACEOF
+ 
+ 

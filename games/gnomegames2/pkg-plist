@@ -2,6 +2,7 @@ bin/ctali
 bin/freecell
 bin/gataxx
 bin/glines
+bin/gnect
 bin/gnibbles
 bin/gnobots2
 bin/gnome-stones
@@ -15,7 +16,29 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
+etc/gconf/gconf.xml.defaults/apps/gnomine/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomine/geometry/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gtali/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/iagno/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/same-gnome/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/freecell/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gataxx/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gtali/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/iagno/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome/%gconf.xml
+etc/gconf/schemas/freecell.schemas
+etc/gconf/schemas/gataxx.schemas
+etc/gconf/schemas/gnect.schemas
+etc/gconf/schemas/gnomine.schemas
+etc/gconf/schemas/gtali.schemas
+etc/gconf/schemas/iagno.schemas
+etc/gconf/schemas/same-gnome.schemas
 etc/sound/events/gataxx.soundlist
+etc/sound/events/gnect.soundlist
 etc/sound/events/gnibbles.soundlist
 etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
@@ -23,22 +46,23 @@ include/gdkcardimage/gdk-card-image.h
 lib/libgdkcardimage.a
 lib/libgdkcardimage.so
 lib/libgdkcardimage.so.1
-share/gnome/apps/Games/freecell.desktop
-share/gnome/apps/Games/gataxx.desktop
-share/gnome/apps/Games/glines.desktop
-share/gnome/apps/Games/gnibbles.desktop
-share/gnome/apps/Games/gnobots2.desktop
-share/gnome/apps/Games/gnome-stones.desktop
-share/gnome/apps/Games/gnometris.desktop
-share/gnome/apps/Games/gnomine.desktop
-share/gnome/apps/Games/gnotravex.desktop
-share/gnome/apps/Games/gnotski.desktop
-share/gnome/apps/Games/gtali.desktop
-share/gnome/apps/Games/iagno.desktop
-share/gnome/apps/Games/mahjongg.desktop
-share/gnome/apps/Games/same-gnome.desktop
+share/gnome/applications/freecell.desktop
+share/gnome/applications/gataxx.desktop
+share/gnome/applications/glines.desktop
+share/gnome/applications/gnect.desktop
+share/gnome/applications/gnibbles.desktop
+share/gnome/applications/gnobots2.desktop
+share/gnome/applications/gnome-stones.desktop
+share/gnome/applications/gnometris.desktop
+share/gnome/applications/gnomine.desktop
+share/gnome/applications/gnotravex.desktop
+share/gnome/applications/gnotski.desktop
+share/gnome/applications/gtali.desktop
+share/gnome/applications/iagno.desktop
+share/gnome/applications/mahjongg.desktop
+share/gnome/applications/same-gnome.desktop
+share/gnome/applications/xbill.desktop
 share/gnome/apps/Games/sol.desktop
-share/gnome/apps/Games/xbill.desktop
 share/gnome/games/glines.scores
 share/gnome/games/gnibbles.1.0.scores
 share/gnome/games/gnibbles.1.1.scores
@@ -104,6 +128,23 @@ share/gnome/games/iagno.w2.scores
 share/gnome/games/iagno.w3.scores
 share/gnome/games/mahjongg.{easy,difficult}.scores
 share/gnome/games/same-gnome.scores
+share/gnome/gnect/catseyes_40x40.gnect
+share/gnome/gnect/classic_40x40.gnect
+share/gnome/gnect/classic_50x50.gnect
+share/gnome/gnect/clean_40x40.gnect
+share/gnome/gnect/clean_40x40_nightfall.gnect
+share/gnome/gnect/clean_50x50.gnect
+share/gnome/gnect/clean_50x50_nightfall.gnect
+share/gnome/gnect/default.gnect
+share/gnome/gnect/emulator_48x32.gnect
+share/gnome/gnect/glassy_40x40.gnect
+share/gnome/gnect/glassy_40x40_grotty.gnect
+share/gnome/gnect/glassy_50x50.gnect
+share/gnome/gnect/glassy_50x50_grotty.gnect
+share/gnome/gnect/safari_45x45.gnect
+share/gnome/gnect/square_40x40.gnect
+share/gnome/gnect/square_50x50.gnect
+share/gnome/gnect/white_ob.cn4
 share/gnome/gnibbles/level001.gnl
 share/gnome/gnibbles/level002.gnl
 share/gnome/gnibbles/level003.gnl
@@ -135,89 +176,89 @@ share/gnome/gnobots2/nightmare.cfg
 share/gnome/gnobots2/robots2.cfg
 share/gnome/gnobots2/robots2_easy.cfg
 share/gnome/gnobots2/robots_with_safe_teleport.cfg
+share/gnome/gnome-stones/atari.caves
 share/gnome/gnome-stones/default.caves
 share/gnome/gnome-stones/gnome-stonesrc
 share/gnome/gnome-stones/gnome-stonesrc.ko
 share/gnome/gnome-stones/gnomekoban.caves
-share/gnome/gnome-stones/objects/libgnome-stones.a
 share/gnome/gnome-stones/objects/libgnome-stones.so
-share/gnome/gnome-stones/objects/libgnomekoban.a
 share/gnome/gnome-stones/objects/libgnomekoban.so
 share/gnome/gnome-stones/tutorial.caves
-share/gnome/help/aisleriot/C/agnes.sgml
-share/gnome/help/aisleriot/C/aisleriot.sgml
-share/gnome/help/aisleriot/C/auld_lang_syne.sgml
-share/gnome/help/aisleriot/C/bakers_dozen.sgml
-share/gnome/help/aisleriot/C/bakers_game.sgml
-share/gnome/help/aisleriot/C/beleaguered_castle.sgml
-share/gnome/help/aisleriot/C/block_ten.sgml
-share/gnome/help/aisleriot/C/bristol.sgml
-share/gnome/help/aisleriot/C/camelot.sgml
-share/gnome/help/aisleriot/C/canfield.sgml
-share/gnome/help/aisleriot/C/chessboard.sgml
-share/gnome/help/aisleriot/C/clock.sgml
-share/gnome/help/aisleriot/C/cover.sgml
-share/gnome/help/aisleriot/C/definitions.sgml
-share/gnome/help/aisleriot/C/diamond_mine.sgml
-share/gnome/help/aisleriot/C/doublets.sgml
-share/gnome/help/aisleriot/C/eagle-wing.sgml
-share/gnome/help/aisleriot/C/easthaven.sgml
-share/gnome/help/aisleriot/C/eight_off.sgml
-share/gnome/help/aisleriot/C/elevator.sgml
-share/gnome/help/aisleriot/C/escalator.sgml
+share/gnome/help/aisleriot/C/agnes.xml
+share/gnome/help/aisleriot/C/aisleriot.xml
+share/gnome/help/aisleriot/C/auld_lang_syne.xml
+share/gnome/help/aisleriot/C/bakers_dozen.xml
+share/gnome/help/aisleriot/C/bakers_game.xml
+share/gnome/help/aisleriot/C/beleaguered_castle.xml
+share/gnome/help/aisleriot/C/block_ten.xml
+share/gnome/help/aisleriot/C/bristol.xml
+share/gnome/help/aisleriot/C/camelot.xml
+share/gnome/help/aisleriot/C/canfield.xml
+share/gnome/help/aisleriot/C/chessboard.xml
+share/gnome/help/aisleriot/C/clock.xml
+share/gnome/help/aisleriot/C/cover.xml
+share/gnome/help/aisleriot/C/definitions.xml
+share/gnome/help/aisleriot/C/diamond_mine.xml
+share/gnome/help/aisleriot/C/doublets.xml
+share/gnome/help/aisleriot/C/eagle-wing.xml
+share/gnome/help/aisleriot/C/easthaven.xml
+share/gnome/help/aisleriot/C/eight_off.xml
+share/gnome/help/aisleriot/C/elevator.xml
+share/gnome/help/aisleriot/C/escalator.xml
 share/gnome/help/aisleriot/C/figures/camelot-goal.png
 share/gnome/help/aisleriot/C/figures/clock-rules.png
-share/gnome/help/aisleriot/C/first_law.sgml
-share/gnome/help/aisleriot/C/fortress.sgml
-share/gnome/help/aisleriot/C/fortunes.sgml
-share/gnome/help/aisleriot/C/fourteen.sgml
-share/gnome/help/aisleriot/C/freecell.sgml
-share/gnome/help/aisleriot/C/gay_gordons.sgml
-share/gnome/help/aisleriot/C/glenwood.sgml
-share/gnome/help/aisleriot/C/golf.sgml
-share/gnome/help/aisleriot/C/gypsy.sgml
-share/gnome/help/aisleriot/C/helsinki.sgml
-share/gnome/help/aisleriot/C/hopscotch.sgml
-share/gnome/help/aisleriot/C/isabel.sgml
-share/gnome/help/aisleriot/C/jamestown.sgml
-share/gnome/help/aisleriot/C/jumbo.sgml
-share/gnome/help/aisleriot/C/kansas.sgml
-share/gnome/help/aisleriot/C/king_albert.sgml
-share/gnome/help/aisleriot/C/klondike.sgml
-share/gnome/help/aisleriot/C/labyrinth.sgml
-share/gnome/help/aisleriot/C/lady_jane.sgml
-share/gnome/help/aisleriot/C/maze.sgml
-share/gnome/help/aisleriot/C/monte_carlo.sgml
-share/gnome/help/aisleriot/C/neighbor.sgml
-share/gnome/help/aisleriot/C/odessa.sgml
-share/gnome/help/aisleriot/C/osmosis.sgml
-share/gnome/help/aisleriot/C/peek.sgml
-share/gnome/help/aisleriot/C/pileon.sgml
-share/gnome/help/aisleriot/C/poker.sgml
-share/gnome/help/aisleriot/C/quatorze.sgml
-share/gnome/help/aisleriot/C/royal_east.sgml
-share/gnome/help/aisleriot/C/scorpion.sgml
-share/gnome/help/aisleriot/C/scuffle.sgml
-share/gnome/help/aisleriot/C/seahaven.sgml
-share/gnome/help/aisleriot/C/sir_tommy.sgml
-share/gnome/help/aisleriot/C/spider.sgml
-share/gnome/help/aisleriot/C/spiderette.sgml
-share/gnome/help/aisleriot/C/straight_up.sgml
-share/gnome/help/aisleriot/C/streets_and_alleys.sgml
-share/gnome/help/aisleriot/C/ten_across.sgml
-share/gnome/help/aisleriot/C/thieves.sgml
-share/gnome/help/aisleriot/C/thirteen.sgml
-share/gnome/help/aisleriot/C/thumb_and_pouch.sgml
-share/gnome/help/aisleriot/C/topic.dat
-share/gnome/help/aisleriot/C/treize.sgml
-share/gnome/help/aisleriot/C/union_square.sgml
-share/gnome/help/aisleriot/C/valentine.sgml
-share/gnome/help/aisleriot/C/westhaven.sgml
-share/gnome/help/aisleriot/C/whitehead.sgml
-share/gnome/help/aisleriot/C/will_o_the_wisp.sgml
-share/gnome/help/aisleriot/C/yield.sgml
-share/gnome/help/aisleriot/C/yukon.sgml
-share/gnome/help/aisleriot/C/zebra.sgml
+share/gnome/help/aisleriot/C/first_law.xml
+share/gnome/help/aisleriot/C/fortress.xml
+share/gnome/help/aisleriot/C/fortunes.xml
+share/gnome/help/aisleriot/C/fourteen.xml
+share/gnome/help/aisleriot/C/freecell.xml
+share/gnome/help/aisleriot/C/gay_gordons.xml
+share/gnome/help/aisleriot/C/glenwood.xml
+share/gnome/help/aisleriot/C/golf.xml
+share/gnome/help/aisleriot/C/gypsy.xml
+share/gnome/help/aisleriot/C/helsinki.xml
+share/gnome/help/aisleriot/C/hopscotch.xml
+share/gnome/help/aisleriot/C/isabel.xml
+share/gnome/help/aisleriot/C/jamestown.xml
+share/gnome/help/aisleriot/C/jumbo.xml
+share/gnome/help/aisleriot/C/kansas.xml
+share/gnome/help/aisleriot/C/king_albert.xml
+share/gnome/help/aisleriot/C/klondike.xml
+share/gnome/help/aisleriot/C/labyrinth.xml
+share/gnome/help/aisleriot/C/lady_jane.xml
+share/gnome/help/aisleriot/C/legal.xml
+share/gnome/help/aisleriot/C/maze.xml
+share/gnome/help/aisleriot/C/monte_carlo.xml
+share/gnome/help/aisleriot/C/neighbor.xml
+share/gnome/help/aisleriot/C/odessa.xml
+share/gnome/help/aisleriot/C/osmosis.xml
+share/gnome/help/aisleriot/C/peek.xml
+share/gnome/help/aisleriot/C/pileon.xml
+share/gnome/help/aisleriot/C/plait.xml
+share/gnome/help/aisleriot/C/poker.xml
+share/gnome/help/aisleriot/C/quatorze.xml
+share/gnome/help/aisleriot/C/royal_east.xml
+share/gnome/help/aisleriot/C/scorpion.xml
+share/gnome/help/aisleriot/C/scuffle.xml
+share/gnome/help/aisleriot/C/seahaven.xml
+share/gnome/help/aisleriot/C/sir_tommy.xml
+share/gnome/help/aisleriot/C/spider.xml
+share/gnome/help/aisleriot/C/spiderette.xml
+share/gnome/help/aisleriot/C/straight_up.xml
+share/gnome/help/aisleriot/C/streets_and_alleys.xml
+share/gnome/help/aisleriot/C/ten_across.xml
+share/gnome/help/aisleriot/C/thieves.xml
+share/gnome/help/aisleriot/C/thirteen.xml
+share/gnome/help/aisleriot/C/thumb_and_pouch.xml
+share/gnome/help/aisleriot/C/treize.xml
+share/gnome/help/aisleriot/C/union_square.xml
+share/gnome/help/aisleriot/C/valentine.xml
+share/gnome/help/aisleriot/C/westhaven.xml
+share/gnome/help/aisleriot/C/whitehead.xml
+share/gnome/help/aisleriot/C/will_o_the_wisp.xml
+share/gnome/help/aisleriot/C/yield.xml
+share/gnome/help/aisleriot/C/yukon.xml
+share/gnome/help/aisleriot/C/zebra.xml
 share/gnome/help/aisleriot/it/aisleriot.sgml
 share/gnome/help/aisleriot/it/auld_lang_syne.sgml
 share/gnome/help/aisleriot/it/bakers_dozen.sgml
@@ -266,7 +307,8 @@ share/gnome/help/aisleriot/it/zebra.sgml
 share/gnome/help/gataxx/C/figures/gataxx-legalmoves.png
 share/gnome/help/gataxx/C/figures/gataxx-prefs.png
 share/gnome/help/gataxx/C/figures/gataxx-startgame.png
-share/gnome/help/gataxx/C/gataxx.sgml
+share/gnome/help/gataxx/C/gataxx.xml
+share/gnome/help/gataxx/C/legal.xml
 share/gnome/help/gataxx/C/topic.dat
 share/gnome/help/gataxx/es/figures/gataxx-legalmoves.png
 share/gnome/help/gataxx/es/figures/gataxx-prefs.png
@@ -278,15 +320,33 @@ share/gnome/help/gataxx/it/figures/gataxx-prefs.png
 share/gnome/help/gataxx/it/figures/gataxx-startgame.png
 share/gnome/help/gataxx/it/gataxx.sgml
 share/gnome/help/gataxx/it/topic.dat
+share/gnome/help/glines/C/figures/glines-gameover.png
+share/gnome/help/glines/C/figures/glines-startgame.png
+share/gnome/help/glines/C/figures/preferences.png
+share/gnome/help/glines/C/glines.xml
+share/gnome/help/glines/C/legal.xml
+share/gnome/help/glines/C/topic.dat
+share/gnome/help/glines/it/figures/glines-gameover.png
+share/gnome/help/glines/it/figures/glines-startgame.png
+share/gnome/help/glines/it/figures/preferences.png
+share/gnome/help/glines/it/glines.sgml
+share/gnome/help/glines/it/topic.dat
+share/gnome/help/gnect/C/figures/mainwindow.png
+share/gnome/help/gnect/C/figures/tileset.png
+share/gnome/help/gnect/C/gnect.xml
+share/gnome/help/gnect/C/legal.xml
+share/gnome/help/gnect/C/topic.dat
 share/gnome/help/gnibbles/C/figures/game.png
 share/gnome/help/gnibbles/C/figures/graphics.png
 share/gnome/help/gnibbles/C/figures/intro.png
 share/gnome/help/gnibbles/C/figures/playing.png
 share/gnome/help/gnibbles/C/figures/worm_op.png
-share/gnome/help/gnibbles/C/gnibbles.sgml
+share/gnome/help/gnibbles/C/gnibbles.xml
+share/gnome/help/gnibbles/C/legal.xml
 share/gnome/help/gnibbles/C/topic.dat
 share/gnome/help/gnobots2/C/figures/gnobots2-main.png
-share/gnome/help/gnobots2/C/gnobots2.sgml
+share/gnome/help/gnobots2/C/gnobots2.xml
+share/gnome/help/gnobots2/C/legal.xml
 share/gnome/help/gnobots2/C/topic.dat
 share/gnome/help/gnobots2/da/index.html
 share/gnome/help/gnobots2/da/topic.dat
@@ -305,21 +365,43 @@ share/gnome/help/gnome-mines/C/figures/gnomine-fail.png
 share/gnome/help/gnome-mines/C/figures/gnomine-fresh.png
 share/gnome/help/gnome-mines/C/figures/gnomine-preferences.png
 share/gnome/help/gnome-mines/C/figures/gnomine-won.png
-share/gnome/help/gnome-mines/C/gnome-mines.sgml
+share/gnome/help/gnome-mines/C/gnome-mines.xml
+share/gnome/help/gnome-mines/C/legal.xml
 share/gnome/help/gnome-mines/C/topic.dat
 share/gnome/help/gnome-stones/C/figures/main-game.png
 share/gnome/help/gnome-stones/C/figures/main-start.png
 share/gnome/help/gnome-stones/C/figures/preferences-joystick.png
 share/gnome/help/gnome-stones/C/figures/preferences-main.png
-share/gnome/help/gnome-stones/C/gnome-stones.sgml
+share/gnome/help/gnome-stones/C/gnome-stones.xml
+share/gnome/help/gnome-stones/C/legal.xml
 share/gnome/help/gnome-stones/it/figures/main-game.png
 share/gnome/help/gnome-stones/it/figures/main-start.png
 share/gnome/help/gnome-stones/it/figures/preferences-joystick.png
 share/gnome/help/gnome-stones/it/figures/preferences-main.png
 share/gnome/help/gnome-stones/it/gnome-stones.sgml
+share/gnome/help/gnome-xbill/C/figures/bucket.png
+share/gnome/help/gnome-xbill/C/figures/cable.png
+share/gnome/help/gnome-xbill/C/figures/computer.png
+share/gnome/help/gnome-xbill/C/figures/fakeseg.png
+share/gnome/help/gnome-xbill/C/figures/fallenos.png
+share/gnome/help/gnome-xbill/C/figures/infected.png
+share/gnome/help/gnome-xbill/C/figures/mainwin.png
+share/gnome/help/gnome-xbill/C/figures/microbill.png
+share/gnome/help/gnome-xbill/C/figures/network.png
+share/gnome/help/gnome-xbill/C/figures/remove.png
+share/gnome/help/gnome-xbill/C/figures/removeos.png
+share/gnome/help/gnome-xbill/C/figures/score.png
+share/gnome/help/gnome-xbill/C/figures/scores.png
+share/gnome/help/gnome-xbill/C/figures/spark.png
+share/gnome/help/gnome-xbill/C/figures/splat.png
+share/gnome/help/gnome-xbill/C/figures/startgame.png
+share/gnome/help/gnome-xbill/C/figures/toasters.png
+share/gnome/help/gnome-xbill/C/gnome-xbill.xml
+share/gnome/help/gnome-xbill/C/legal.xml
 share/gnome/help/gnotravex/C/figures/gnotravex_game.png
 share/gnome/help/gnotravex/C/figures/gnotravex_mainwindow.png
-share/gnome/help/gnotravex/C/gnotravex.sgml
+share/gnome/help/gnotravex/C/gnotravex.xml
+share/gnome/help/gnotravex/C/legal.xml
 share/gnome/help/gnotravex/C/topic.dat
 share/gnome/help/gnotravex/es/figures/gnotravex_game.png
 share/gnome/help/gnotravex/es/figures/gnotravex_mainwindow.png
@@ -327,7 +409,8 @@ share/gnome/help/gnotravex/es/gnotravex.sgml
 share/gnome/help/gnotravex/es/topic.dat
 share/gnome/help/gtali/C/figures/mainwindow.png
 share/gnome/help/gtali/C/figures/preferences.png
-share/gnome/help/gtali/C/gtali.sgml
+share/gnome/help/gtali/C/gtali.xml
+share/gnome/help/gtali/C/legal.xml
 share/gnome/help/gtali/C/topic.dat
 share/gnome/help/gtali/da/index.html
 share/gnome/help/gtali/da/topic.dat
@@ -336,7 +419,8 @@ share/gnome/help/iagno/C/figures/BLOCK.png
 share/gnome/help/iagno/C/figures/FIRST.png
 share/gnome/help/iagno/C/figures/PLAYER.png
 share/gnome/help/iagno/C/figures/START.png
-share/gnome/help/iagno/C/iagno.sgml
+share/gnome/help/iagno/C/iagno.xml
+share/gnome/help/iagno/C/legal.xml
 share/gnome/help/iagno/C/topic.dat
 share/gnome/help/iagno/it/figures/ANIMATION.png
 share/gnome/help/iagno/it/figures/BLOCK.png
@@ -354,7 +438,8 @@ share/gnome/help/mahjongg/C/figures/preferences.png
 share/gnome/help/mahjongg/C/figures/scores.png
 share/gnome/help/mahjongg/C/figures/seed.png
 share/gnome/help/mahjongg/C/figures/toolbar.png
-share/gnome/help/mahjongg/C/mahjongg.sgml
+share/gnome/help/mahjongg/C/legal.xml
+share/gnome/help/mahjongg/C/mahjongg.xml
 share/gnome/help/mahjongg/C/topic.dat
 share/gnome/help/mahjongg/it/figures/color.png
 share/gnome/help/mahjongg/it/figures/mahjongg.png
@@ -365,7 +450,8 @@ share/gnome/help/mahjongg/it/figures/seed.png
 share/gnome/help/mahjongg/it/figures/toolbar.png
 share/gnome/help/mahjongg/it/mahjongg.sgml
 share/gnome/help/mahjongg/it/topic.dat
-share/gnome/help/same-gnome/C/same-gnome.sgml
+share/gnome/help/same-gnome/C/legal.xml
+share/gnome/help/same-gnome/C/same-gnome.xml
 share/gnome/help/same-gnome/C/topic.dat
 share/gnome/help/same-gnome/es/same-gnome.sgml
 share/gnome/help/same-gnome/es/topic.dat
@@ -378,11 +464,15 @@ share/gnome/omf/gnome-games/aisleriot-it.omf
 share/gnome/omf/gnome-games/gataxx-C.omf
 share/gnome/omf/gnome-games/gataxx-es.omf
 share/gnome/omf/gnome-games/gataxx-it.omf
+share/gnome/omf/gnome-games/glines-C.omf
+share/gnome/omf/gnome-games/glines-it.omf
+share/gnome/omf/gnome-games/gnect-C.omf
 share/gnome/omf/gnome-games/gnibbles-C.omf
 share/gnome/omf/gnome-games/gnobots2-C.omf
 share/gnome/omf/gnome-games/gnome-mines-C.omf
 share/gnome/omf/gnome-games/gnome-stones-C.omf
 share/gnome/omf/gnome-games/gnome-stones-it.omf
+share/gnome/omf/gnome-games/gnome-xbill-C.omf
 share/gnome/omf/gnome-games/gnotravex-C.omf
 share/gnome/omf/gnome-games/gnotravex-es.omf
 share/gnome/omf/gnome-games/gtali-C.omf
@@ -440,6 +530,21 @@ share/gnome/pixmaps/glines/dots.png
 share/gnome/pixmaps/glines/gray.xpm
 share/gnome/pixmaps/glines/pulse.png
 share/gnome/pixmaps/glines/woody.xpm
+share/gnome/pixmaps/gnect-icon.png
+share/gnome/pixmaps/gnect/bg_grotty.jpg
+share/gnome/pixmaps/gnect/bg_nightfall.jpg
+share/gnome/pixmaps/gnect/tileset_40x40_catseyes.png
+share/gnome/pixmaps/gnect/tileset_40x40_classic.png
+share/gnome/pixmaps/gnect/tileset_40x40_clean.png
+share/gnome/pixmaps/gnect/tileset_40x40_glassy.png
+share/gnome/pixmaps/gnect/tileset_40x40_square.png
+share/gnome/pixmaps/gnect/tileset_45x45_safari.png
+share/gnome/pixmaps/gnect/tileset_48x32_emulator.png
+share/gnome/pixmaps/gnect/tileset_50x50_catseyes.png
+share/gnome/pixmaps/gnect/tileset_50x50_classic.png
+share/gnome/pixmaps/gnect/tileset_50x50_clean.png
+share/gnome/pixmaps/gnect/tileset_50x50_glassy.png
+share/gnome/pixmaps/gnect/tileset_50x50_square.png
 share/gnome/pixmaps/gnibbles/gnibbles-logo.png
 share/gnome/pixmaps/gnibbles/gnibbles.png
 share/gnome/pixmaps/gnobots2/aieee.png
@@ -460,6 +565,7 @@ share/gnome/pixmaps/gnome-nibbles.png
 share/gnome/pixmaps/gnome-stones-file.png
 share/gnome/pixmaps/gnome-stones.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
+share/gnome/pixmaps/gnome-stones/animated_curtain.png
 share/gnome/pixmaps/gnome-stones/background.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png
@@ -480,13 +586,27 @@ share/gnome/pixmaps/gnometris/5blocks-tim.png
 share/gnome/pixmaps/gnometris/5blocks.png
 share/gnome/pixmaps/gnometris/7blocks-tig.png
 share/gnome/pixmaps/gnometris/7blocks.png
+share/gnome/pixmaps/gnometris/7stones-gn.png
+share/gnome/pixmaps/gnometris/7stones2-gn.png
+share/gnome/pixmaps/gnometris/bg/dog-bg.png
 share/gnome/pixmaps/gnometris/bg/fishy-bg.png
+share/gnome/pixmaps/gnometris/bg/geschier-bg.png
+share/gnome/pixmaps/gnometris/bg/gitter-bg.png
+share/gnome/pixmaps/gnometris/bg/gnometris-bg.png
 share/gnome/pixmaps/gnometris/bg/greyprint-bg.png
 share/gnome/pixmaps/gnometris/bg/leaves-bg.png
+share/gnome/pixmaps/gnometris/bg/rhinoceros-bg.png
+share/gnome/pixmaps/gnometris/bg/scrcow-bg.png
 share/gnome/pixmaps/gnometris/bg/sweet-bg.png
+share/gnome/pixmaps/gnometris/bg/trees-bg.png
 share/gnome/pixmaps/gnometris/bg/vortex-bg.png
 share/gnome/pixmaps/gnometris/bg/watery-bg.png
 share/gnome/pixmaps/gnometris/bg/weirdo-bg.png
+share/gnome/pixmaps/gnomine/face-cool.xpm
+share/gnome/pixmaps/gnomine/face-sad.xpm
+share/gnome/pixmaps/gnomine/face-smile.xpm
+share/gnome/pixmaps/gnomine/face-win.xpm
+share/gnome/pixmaps/gnomine/face-worried.xpm
 share/gnome/pixmaps/gnotravex/gnome-gnotravex.png
 share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/gnotski-icon.png
@@ -517,7 +637,6 @@ share/gnome/sol-games/auld_lang_syne.scm
 share/gnome/sol-games/bakers_dozen.scm
 share/gnome/sol-games/bakers_game.scm
 share/gnome/sol-games/beleaguered_castle.scm
-share/gnome/sol-games/block_ten.scm
 share/gnome/sol-games/bristol.scm
 share/gnome/sol-games/camelot.scm
 share/gnome/sol-games/canfield.scm
@@ -600,6 +719,13 @@ share/gnome/sounds/gnobots2/splat.wav
 share/gnome/sounds/gnobots2/teleport.wav
 share/gnome/sounds/gnobots2/victory.wav
 share/gnome/sounds/gnobots2/yahoo.wav
+share/gnome/sounds/gnome-stones/born.wav
+share/gnome/sounds/gnome-stones/boulder.wav
+share/gnome/sounds/gnome-stones/dig.wav
+share/gnome/sounds/gnome-stones/door_open.wav
+share/gnome/sounds/gnome-stones/explosion.wav
+share/gnome/sounds/gnome-stones/get_diamond.wav
+share/gnome/sounds/gnome-stones/title.wav
 share/gnome/sounds/iagno/flip-piece.wav
 share/gnome/sounds/iagno/gameover.wav
 share/gnome/xbill/cursors/apple.xpm
@@ -619,6 +745,7 @@ share/gnome/xbill/cursors/next.xpm
 share/gnome/xbill/cursors/os2.xpm
 share/gnome/xbill/cursors/redhat.xpm
 share/gnome/xbill/cursors/sgi.xpm
+share/gnome/xbill/cursors/slackware.xpm
 share/gnome/xbill/cursors/sun.xpm
 share/gnome/xbill/cursors/suse.xpm
 share/gnome/xbill/cursors/turbolinux.xpm
@@ -667,6 +794,7 @@ share/gnome/xbill/pixmaps/os2cpu.xpm
 share/gnome/xbill/pixmaps/redhat.xpm
 share/gnome/xbill/pixmaps/sgi.xpm
 share/gnome/xbill/pixmaps/sgicpu.xpm
+share/gnome/xbill/pixmaps/slackware.xpm
 share/gnome/xbill/pixmaps/spark_0.xpm
 share/gnome/xbill/pixmaps/spark_1.xpm
 share/gnome/xbill/pixmaps/sun.xpm
@@ -692,6 +820,7 @@ share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
 share/locale/lt/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
+share/locale/nn/LC_MESSAGES/gnome-games.mo
 share/locale/no/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
@@ -704,12 +833,13 @@ share/locale/sv/LC_MESSAGES/gnome-games.mo
 share/locale/tr/LC_MESSAGES/gnome-games.mo
 share/locale/uk/LC_MESSAGES/gnome-games.mo
 share/locale/wa/LC_MESSAGES/gnome-games.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-games.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/xbill/pixmaps
 @dirrm share/gnome/xbill/cursors
 @dirrm share/gnome/xbill
 @dirrm share/gnome/sounds/iagno
+@dirrm share/gnome/sounds/gnome-stones
 @dirrm share/gnome/sounds/gnobots2
 @dirrm share/gnome/sounds/gnibbles
 @dirrm share/gnome/sounds/gataxx
@@ -719,11 +849,13 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/iagno
 @dirrm share/gnome/pixmaps/gnotravex
+@dirrm share/gnome/pixmaps/gnomine
 @dirrm share/gnome/pixmaps/gnometris/bg
 @dirrm share/gnome/pixmaps/gnometris
 @dirrm share/gnome/pixmaps/gnome-stones
 @dirrm share/gnome/pixmaps/gnobots2
 @dirrm share/gnome/pixmaps/gnibbles
+@dirrm share/gnome/pixmaps/gnect
 @dirrm share/gnome/pixmaps/glines
 @dirrm share/gnome/pixmaps/gataxx
 @dirrm share/gnome/pixmaps/cards/suits_small
@@ -742,72 +874,73 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/same-gnome/es/stylesheet-images
 @dirrm share/gnome/help/same-gnome/es/figures
 @dirrm share/gnome/help/same-gnome/es
-@dirrm share/gnome/help/same-gnome/C/stylesheet-images
 @dirrm share/gnome/help/same-gnome/C/figures
 @dirrm share/gnome/help/same-gnome/C
 @dirrm share/gnome/help/same-gnome
 @dirrm share/gnome/help/mahjongg/it/stylesheet-images
 @dirrm share/gnome/help/mahjongg/it/figures
 @dirrm share/gnome/help/mahjongg/it
-@dirrm share/gnome/help/mahjongg/C/stylesheet-images
 @dirrm share/gnome/help/mahjongg/C/figures
 @dirrm share/gnome/help/mahjongg/C
 @dirrm share/gnome/help/mahjongg
 @dirrm share/gnome/help/iagno/it/stylesheet-images
 @dirrm share/gnome/help/iagno/it/figures
 @dirrm share/gnome/help/iagno/it
-@dirrm share/gnome/help/iagno/C/stylesheet-images
 @dirrm share/gnome/help/iagno/C/figures
 @dirrm share/gnome/help/iagno/C
 @dirrm share/gnome/help/iagno
 @dirrm share/gnome/help/gtali/da
-@dirrm share/gnome/help/gtali/C/stylesheet-images
 @dirrm share/gnome/help/gtali/C/figures
 @dirrm share/gnome/help/gtali/C
 @dirrm share/gnome/help/gtali
 @dirrm share/gnome/help/gnotravex/es/stylesheet-images
 @dirrm share/gnome/help/gnotravex/es/figures
 @dirrm share/gnome/help/gnotravex/es
-@dirrm share/gnome/help/gnotravex/C/stylesheet-images
 @dirrm share/gnome/help/gnotravex/C/figures
 @dirrm share/gnome/help/gnotravex/C
 @dirrm share/gnome/help/gnotravex
+@dirrm share/gnome/help/gnome-xbill/C/figures
+@dirrm share/gnome/help/gnome-xbill/C
+@dirrm share/gnome/help/gnome-xbill
 @dirrm share/gnome/help/gnome-stones/it/stylesheet-images
 @dirrm share/gnome/help/gnome-stones/it/figures
 @dirrm share/gnome/help/gnome-stones/it
-@dirrm share/gnome/help/gnome-stones/C/stylesheet-images
 @dirrm share/gnome/help/gnome-stones/C/figures
 @dirrm share/gnome/help/gnome-stones/C
 @dirrm share/gnome/help/gnome-stones
-@dirrm share/gnome/help/gnome-mines/C/stylesheet-images
 @dirrm share/gnome/help/gnome-mines/C/figures
 @dirrm share/gnome/help/gnome-mines/C
 @dirrm share/gnome/help/gnome-mines
 @dirrm share/gnome/help/gnobots2/it
 @dirrm share/gnome/help/gnobots2/es
 @dirrm share/gnome/help/gnobots2/da
-@dirrm share/gnome/help/gnobots2/C/stylesheet-images
 @dirrm share/gnome/help/gnobots2/C/figures
 @dirrm share/gnome/help/gnobots2/C
 @dirrm share/gnome/help/gnobots2
-@dirrm share/gnome/help/gnibbles/C/stylesheet-images
 @dirrm share/gnome/help/gnibbles/C/figures
 @dirrm share/gnome/help/gnibbles/C
 @dirrm share/gnome/help/gnibbles
+@dirrm share/gnome/help/gnect/C/figures
+@dirrm share/gnome/help/gnect/C
+@dirrm share/gnome/help/gnect
+@dirrm share/gnome/help/glines/it/stylesheet-images
+@dirrm share/gnome/help/glines/it/figures
+@dirrm share/gnome/help/glines/it
+@dirrm share/gnome/help/glines/C/figures
+@dirrm share/gnome/help/glines/C
+@dirrm share/gnome/help/glines
 @dirrm share/gnome/help/gataxx/it/stylesheet-images
 @dirrm share/gnome/help/gataxx/it/figures
 @dirrm share/gnome/help/gataxx/it
 @dirrm share/gnome/help/gataxx/es/stylesheet-images
 @dirrm share/gnome/help/gataxx/es/figures
 @dirrm share/gnome/help/gataxx/es
-@dirrm share/gnome/help/gataxx/C/stylesheet-images
 @dirrm share/gnome/help/gataxx/C/figures
 @dirrm share/gnome/help/gataxx/C
 @dirrm share/gnome/help/gataxx
 @dirrm share/gnome/help/aisleriot/it/stylesheet-images
 @dirrm share/gnome/help/aisleriot/it/figures
 @dirrm share/gnome/help/aisleriot/it
-@dirrm share/gnome/help/aisleriot/C/stylesheet-images
 @dirrm share/gnome/help/aisleriot/C/figures
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
@@ -815,4 +948,21 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/gnome-stones
 @dirrm share/gnome/gnobots2
 @dirrm share/gnome/gnibbles
+@dirrm share/gnome/gnect
+@dirrm share/gnome/games
+@dirrm share/gnome/apps/Games
 @dirrm include/gdkcardimage
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtali
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gataxx
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell
+@dirrm etc/gconf/gconf.xml.defaults/apps/same-gnome
+@dirrm etc/gconf/gconf.xml.defaults/apps/iagno
+@dirrm etc/gconf/gconf.xml.defaults/apps/gtali
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine/geometry
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine

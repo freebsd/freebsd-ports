@@ -100,6 +100,7 @@
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomegames
+    SUBDIR += gnomegames2
     SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind

@@ -1,6 +1,6 @@
---- gnome-stones/main.c.orig	Fri Jan  1 15:32:40 1999
-+++ gnome-stones/main.c	Fri Jan  1 15:33:00 1999
-@@ -1249,7 +1249,7 @@
+--- gnome-stones/main.c.orig	Wed May  8 16:01:18 2002
++++ gnome-stones/main.c	Wed May  8 16:25:11 2002
+@@ -1087,7 +1087,7 @@
  static gboolean
  scan_public_plugin_directory (void)
  {
