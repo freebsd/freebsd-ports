@@ -29,4 +29,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
+pre-configure:
+	@${RM} ${WRKSRC}/config.guess
+
 .include <bsd.port.mk>
