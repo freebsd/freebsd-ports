@@ -1,3 +1,4 @@
+bin/wmk
 bin/wml
 bin/wml_p1_ipp
 bin/wml_p2_mhc
@@ -16,9 +17,11 @@ bin/wml_aux_map2html
 bin/wml_aux_weblint
 lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
+lib/wml/aux/generated-via-wml.gif
 lib/wml/include/all.wml
 lib/wml/include/des/all.wml
 lib/wml/include/des/gfont.wml
+lib/wml/include/des/lowsrc.wml
 lib/wml/include/des/imgdot.wml
 lib/wml/include/des/navbar.wml
 lib/wml/include/des/rollover.wml
@@ -84,6 +87,7 @@ lib/wml/perl/lib/site_perl/IO/Socket.pm
 lib/wml/perl/lib/site_perl/IO/Handle.pm
 lib/wml/perl/lib/site_perl/IO/Seekable.pm
 lib/wml/perl/lib/site_perl/IO.pm
+man/man1/wmk.1.gz
 man/man1/wml.1.gz
 man/man1/wml_p1_ipp.1.gz
 man/cat1/wml_p2_mhc.1.gz
@@ -103,6 +107,7 @@ man/man1/wml_aux_weblint.1.gz
 man/man3/wml::all.3.gz
 man/man3/wml::des::all.3.gz
 man/man3/wml::des::gfont.3.gz
+man/man3/wml::des::lowsrc.3.gz
 man/man3/wml::des::imgdot.3.gz
 man/man3/wml::des::navbar.3.gz
 man/man3/wml::des::rollover.3.gz
@@ -138,6 +143,7 @@ man/man3/wml::usr::all.3.gz
 man/man3/wml::usr::rse.3.gz
 man/man7/wml_intro.7.gz
 man/man7/wml_tutorial.7.gz
+man/man7/wml_faq.7.gz
 @dirrm lib/wml/aux
 @dirrm lib/wml/include/des
 @dirrm lib/wml/include/fmt
