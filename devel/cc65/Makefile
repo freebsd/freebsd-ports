@@ -17,6 +17,7 @@ DISTNAME=	cc65-sources-2.4.1
 
 MAINTAINER=	hoek@FreeBSD.org
 
+USE_GMAKE=	yes
 CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 		-DCC65_LIB=\\\"${PREFIX}/lib/cc65/lib\\\"
 
