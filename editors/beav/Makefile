@@ -3,7 +3,7 @@
 # Date created:		01 July 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1997/11/27 00:07:31 jseger Exp $
+# $Id: Makefile,v 1.11 1998/08/10 09:00:02 tg Exp $
 #
 
 DISTNAME=	beav_1.40-11
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.debian.org/debian/hamm/hamm/source/editors/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+MAN1=		beav.1
 WRKSRC=		${WRKDIR}/beav-1.40
 
 .include <bsd.port.mk>
