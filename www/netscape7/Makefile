@@ -1,7 +1,7 @@
 # New ports collection makefile for:		netscape7
 # Date created:					2002-05-22
 # Whom:						trevor
-# based on www/linux-netscape6 port by sada and others
+# based on the www/linux-netscape6 port by sada and others
 #
 # $FreeBSD$
 #
