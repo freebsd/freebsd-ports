@@ -199,7 +199,6 @@
     SUBDIR += mendexk-euc
     SUBDIR += mendexk-sjis
     SUBDIR += mh
-    SUBDIR += mhonarc
     SUBDIR += migemo
     SUBDIR += migemo-emacs20
     SUBDIR += migemo-emacs21
