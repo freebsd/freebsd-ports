@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1998/08/10 00:38:09 steve Exp $
+# $Id: Makefile,v 1.43 1998/09/17 22:38:47 steve Exp $
 #
 
     SUBDIR += LPRng
@@ -13,6 +13,7 @@
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += gtar
+    SUBDIR += gtop
     SUBDIR += idled
     SUBDIR += lsof
     SUBDIR += manck
