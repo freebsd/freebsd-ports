@@ -3,7 +3,7 @@
 # Date created:         Mar 14 1998
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/16 06:57:10 vanilla Exp $
 #
 
 DISTNAME=	povchem-1.0
@@ -16,12 +16,13 @@ DISTFILES=	povchem.c \
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
 NO_WRKSUBDIR=	yes
+DIST_SUBDIR=	povchem
 
 pre-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/povchem.c ${WRKSRC}
-	@${CP} ${DISTDIR}/povchem.cfg ${WRKSRC}
-	@${CP} ${DISTDIR}/periodic.tab ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/povchem.c ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/povchem.cfg ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/periodic.tab ${WRKSRC}
 
 do-extract:
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
