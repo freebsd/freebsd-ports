@@ -3,12 +3,16 @@
 # Date created:		2 December 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/17 14:34:50 flathill Exp $
 #
 
 DISTNAME=	gleyes-0.2
 CATEGORIES=	games
-MASTER_SITES=	http://puma.inf.ufpr.br/~claudio/gleyes/
+MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
+		ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
+		ftp://ftp.cit.nepean.uws.edu.au/unix/X/graphics/
+# initial distribution location was http://puma.inf.ufpr.br/~claudio/gleyes/
+# which is unresponsive since about 21.12.1998
 
 MAINTAINER=	malte.lance@gmx.net
 
