@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Prompt/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Term/Prompt.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Prompt
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Term 2>/dev/null || true
