@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.13
+PORTVERSION=	2.15
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -25,8 +25,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc/dnsmasq.conf.example
-	${INSTALL_SCRIPT} ${FILESDIR}/dnsmasq.sh ${PREFIX}/etc/rc.d/dnsmasq.sh
+	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${FILESDIR}/dnsmasq.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
