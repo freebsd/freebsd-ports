@@ -1,0 +1,49 @@
+--- configure.orig	Thu May 28 04:08:00 1998
++++ configure	Tue Dec 12 02:51:01 2000
+@@ -1631,41 +1631,6 @@
+ fi;
+ 
+ 
+-# Extract the first word of "makedepend", so it can be a program name with args.
+-set dummy makedepend; ac_word=$2
+-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+-echo "configure:1638: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_prog_MAKEDEP'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  if test -n "$MAKEDEP"; then
+-  ac_cv_prog_MAKEDEP="$MAKEDEP" # Let the user override the test.
+-else
+-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+-  ac_dummy="$PATH"
+-  for ac_dir in $ac_dummy; do
+-    test -z "$ac_dir" && ac_dir=.
+-    if test -f $ac_dir/$ac_word; then
+-      ac_cv_prog_MAKEDEP="makedepend"
+-      break
+-    fi
+-  done
+-  IFS="$ac_save_ifs"
+-  test -z "$ac_cv_prog_MAKEDEP" && ac_cv_prog_MAKEDEP="nomakedep"
+-fi
+-fi
+-MAKEDEP="$ac_cv_prog_MAKEDEP"
+-if test -n "$MAKEDEP"; then
+-  echo "$ac_t""$MAKEDEP" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-if test "$MAKEDEP" = "nomakedep"; then
+-  { echo "configure: error: No ``makedepend'' found." 1>&2; exit 1; }
+-fi;
+-
+-
+ # Extract the first word of "ranlib", so it can be a program name with args.
+ set dummy ranlib; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -2297,4 +2262,3 @@
+ test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
+ 
+ 
+-$MAKE depend
