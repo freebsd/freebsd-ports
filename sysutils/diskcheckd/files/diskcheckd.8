@@ -43,7 +43,7 @@ The disks which should be scanned,
 and the rates at which they should be scanned,
 must be specified in the configuration file,
 which is
-.Pa /etc/diskcheckd.conf
+.Pa /usr/local/etc/diskcheckd.conf
 by default.
 .Pp
 Any blank lines or lines starting with a
@@ -137,7 +137,7 @@ This flag is primarily used for debugging.
 .It Fl f
 Specify the configuration file to use,
 instead of the default
-.Pa /etc/diskcheckd.conf .
+.Pa /usr/local/etc/diskcheckd.conf .
 .It Fl o
 Specify the file to save disk offsets to,
 instead of the default
@@ -145,7 +145,7 @@ instead of the default
 .El
 .Sh FILES
 .Bl -tag -width /var/db/diskcheckd.offsets -compact
-.It Pa /etc/diskcheckd.conf
+.It Pa /usr/local/etc/diskcheckd.conf
 Default configuration file.
 .It Pa /var/db/diskcheckd.offsets
 Default location of saved offsets.
