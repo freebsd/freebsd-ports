@@ -6402,6 +6402,7 @@ ray++		ports/graphics/ray++
 raysfilter	ports/mail/raysfilter
 rayshade	ports/graphics/rayshade
 razor-agents	ports/mail/razor-agents
+rbl-milter	ports/mail/rbl-milter
 rblcheck	ports/mail/rblcheck
 rboot		ports/net/rboot
 rbot		ports/irc/rbot
