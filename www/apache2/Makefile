@@ -132,8 +132,8 @@ CONFIGURE_ARGS+=	--with-ldap \
 IGNORE=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is defined"
 .    endif
 LIB_DEPENDS+=		apr-1:${PORTSDIR}/devel/apr
-CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-config \
-			--with-apr-util=${LOCALBASE}/bin/apu-config
+CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
+			--with-apr-util=${LOCALBASE}/bin/apu-1-config
 CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 PLIST_SUB+=	PORTS_APR="@comment "
 .else
