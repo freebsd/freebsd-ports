@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 print "#!/bin/csh\n";
-print "/usr/bin/time make WITH_CCACHE=yes package package-rename solver sdk deinstall languagepack clean >& log.en\n";
+print "/usr/bin/time make WITH_CCACHE=yes package package-rename solver sdk deinstall languagepack >& log.en\n";
+print "rm work/.configure* work/.build* \n";
 print "/usr/bin/time make ALL_LOCALIZED_LANGS=yes >& log.all\n";
 
 open ( FILE,  "< Makefile.localized") ;

@@ -2,10 +2,11 @@
 
 # generate full build shell script for OpenOffice.org
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/generate.pl,v 1.1 2005-01-10 12:28:19 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/generate.pl,v 1.2 2005-01-24 12:45:55 maho Exp $
 
 print "#!/bin/csh\n";
-print "/usr/bin/time make WITH_CCACHE=yes package package-rename solver sdk deinstall languagepack clean >& log.en\n";
+print "/usr/bin/time make WITH_CCACHE=yes package package-rename solver sdk deinstall languagepack >& log.en\n";
+print "rm work/.configure* work/.build* \n";
 print "/usr/bin/time make ALL_LOCALIZED_LANGS=yes >& log.all\n";
 
 open ( FILE,  "< Makefile.localized") ;
