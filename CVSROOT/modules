@@ -9549,7 +9549,7 @@ wmbinclock	ports/x11-clocks/wmbinclock
 wmblob		ports/x11/wmblob
 wmblueclock	ports/x11-clocks/wmblueclock
 wmbluecpu	ports/sysutils/wmbluecpu
-wmbsdbatt	ports/x11/wmbsdbatt
+wmbsdbatt	ports/sysutils/wmbsdbatt
 wmbutton	ports/x11/wmbutton
 wmcalc		ports/math/wmcalc
 wmcalclock	ports/x11-clocks/wmcalclock
