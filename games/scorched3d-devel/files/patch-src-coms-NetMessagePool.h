@@ -1,5 +1,5 @@
---- src/coms/NetMessagePool.h.orig	Wed Jul 30 17:41:28 2003
-+++ src/coms/NetMessagePool.h	Sun Aug  3 09:07:12 2003
+--- ./src/coms/NetMessagePool.h.orig	Fri Jan 23 17:59:08 2004
++++ ./src/coms/NetMessagePool.h	Fri Jan 23 18:02:11 2004
 @@ -24,7 +24,7 @@
  
  #include <coms/NetMessage.h>

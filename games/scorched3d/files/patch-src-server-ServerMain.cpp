@@ -1,11 +1,11 @@
---- src/server/ServerMain.cpp.orig	Wed Jul 30 17:41:27 2003
-+++ src/server/ServerMain.cpp	Sun Aug  3 09:07:13 2003
-@@ -46,7 +46,7 @@
- #include <server/ServerBuyAccessoryHandler.h>
- #include <server/ServerConnectHandler.h>
+--- ./src/server/ServerMain.cpp.orig	Fri Jan 23 17:59:16 2004
++++ ./src/server/ServerMain.cpp	Fri Jan 23 18:03:17 2004
+@@ -48,7 +48,7 @@
+ #include <server/ServerBrowserInfo.h>
  #include <server/ServerState.h>
+ #include <server/ScorchedServer.h>
 -#include <SDL/SDL.h>
 +#include <SDL11/SDL.h>
  
- Timer serverTimer;
+ Clock serverTimer;
  

@@ -1,5 +1,5 @@
---- src/scorched/main.cpp.orig	Wed Jul 30 17:41:27 2003
-+++ src/scorched/main.cpp	Sun Aug  3 09:07:13 2003
+--- ./src/scorched/main.cpp.orig	Fri Jan 23 17:59:15 2004
++++ ./src/scorched/main.cpp	Fri Jan 23 18:03:16 2004
 @@ -20,7 +20,7 @@
  
  
