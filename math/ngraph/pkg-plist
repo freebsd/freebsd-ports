@@ -38,4 +38,7 @@ lib/Ngraph/ngraph
 lib/Ngraph/ngraph.sh
 lib/Ngraph/terminal
 lib/Ngraph/text-in.nsc
+@dirrm lib/Ngraph/demo
+@dirrm lib/Ngraph/doc
+@dirrm lib/Ngraph/ja
 @dirrm lib/Ngraph
