@@ -10,27 +10,24 @@ PORTVERSION=	2.4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.lightlink.com/pub/vulcan/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
+EXTRACT_BEFORE_ARGS=	-aq
+EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}
 
-pre-patch:
-.for FILE in compiler.h physcalc.h physconv.c physdecl.h physmain.c physmlib.c \
-	     physnode.c physoper.c physsolv.c
-	@${MV} ${WRKSRC}/${FILE} ${WRKSRC}/${FILE}.sed
-	${SED} -e 's,,,g' ${WRKSRC}/${FILE}.sed > ${WRKSRC}/${FILE} ; ${RM} ${WRKSRC}/${FILE}.sed
-.endfor
+NO_WRKSUBDIR=	yes
+USE_ZIP=	yes
+
+DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""
+SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
+		physsolv.c 
 
 pre-build:
 	${PERL} -pi -e "s@void main@int main@g" ${WRKSRC}/physmain.c
-	${RM} -f ${WRKSRC}/physcalc
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DSHAREDIR="\"${PREFIX}/share/physcalc/\"" -lm \
-		physmain.c physconv.c physmlib.c physnode.c physoper.c physsolv.c -o physcalc)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} ${SRCS} -lm -o physcalc)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/physcalc ${PREFIX}/bin
