@@ -21,14 +21,18 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == "python2.2"
+.if ${PYTHON_REL} >= 220
 MAKEFILE_PREIN=	${FILESDIR}/Makefile.pre.in
 .else
 MAKEFILE_PREIN=	${LOCALBASE}/lib/${PYTHON_VERSION}/config/Makefile.pre.in
 .endif
 
 pre-configure:
+.if ${PYTHON_REL} >= 230
+	${SED} -e 's,@DEFS@,,g' ${MAKEFILE_PREIN} > ${WRKSRC}/Makefile.pre.in
+.else
 	${LN} -sf ${MAKEFILE_PREIN} ${WRKSRC}/
+.endif
 	${LN} -sf ${WRKSRC}/Setup.w32 ${WRKSRC}/Setup.in
 	${RM} -f ${WRKSRC}/Setup
 
