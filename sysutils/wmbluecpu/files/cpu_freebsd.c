@@ -18,15 +18,21 @@
  *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
  */
 
+#include <osreldate.h>
+#if __FreeBSD_version > 500100
+#include <sys/time.h>
+#include <sys/resource.h>
+#else
+#include <sys/dkstat.h>
+#endif
+#include <sys/types.h>
+#include <fcntl.h>
+#include <kvm.h>
+#include <nlist.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <kvm.h>
-#include <nlist.h>
-#include <fcntl.h>
-#include <sys/dkstat.h>
 
 static kvm_t *kd;
 static struct nlist nlst[] = { {"_cp_time"}, {0} };
