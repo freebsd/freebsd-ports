@@ -14,6 +14,8 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/guitest_happydoc.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/guitest_happydoc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocset.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocset.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocwin.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocwin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.py

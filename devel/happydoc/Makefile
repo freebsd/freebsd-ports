@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	happydoc
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,13 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 USE_PYTHON=	yes
 
-NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:S/_r/-r/}
+SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+
+do-build:
+	@${SETUP_CMD} build
 
 do-install:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} ./setup.py install)
+	@${SETUP_CMD} install
 
 .include <bsd.port.mk>
