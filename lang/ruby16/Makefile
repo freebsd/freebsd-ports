@@ -13,6 +13,10 @@ MASTER_SITE_SUBDIR=	${RUBY_VER}
 DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
+PATCH_SITES=	http://www.ruby-lang.org/~knu/
+PATCHFILES=	ruby-${RUBY_VERSION}-${RUBY_SNAPSHOTDATE}.patch.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
@@ -42,6 +46,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
+	find ${WRKSRC} -name '*.orig' -delete
 	${RM} -f ${WRKSRC}/ext/gdbm/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tcltklib/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tk/MANIFEST
