@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 .if defined(WITH_RUNAS_USER)
 CONFIGURE_ARGS+=	--enable-identity=${WITH_RUNAS_USER}
 .endif
-.if !defined(WITHOUT_KCHECK)
+.if defined(WITH_KCHECK)
 CONFIGURE_ARGS+=	--with-kcheck
 .endif
 .if defined(WITH_GPG)
@@ -109,7 +109,7 @@ pre-everything::
 .error "Can't build client and server at once!"
 .endif
 
-.if !defined(WITHOUT_KCHECK)
+.if defined(WITH_KCHECK)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem"
 	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit"
