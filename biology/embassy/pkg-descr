@@ -1,0 +1,14 @@
+EMBASSY is a collection of contributed EMBOSS software. From the web
+pages:
+
+ "EMBOSS is GPL licensed. The libraries are under the Lesser GPL (LGPL).
+ Programs which have been included from third parties who have their own
+ licencing terms are kept apart under the EMBASSY grouping.
+
+ This allows the EMBOSS libraries to link to other software, and only
+ requires that software to have an LGPL-compatible licence. Phylip, for
+ example, fits this model.
+
+ But, to the user they do look exactly like EMBOSS aplications."
+
+WWW: http://emboss.sourceforge.net/apps/#Embassy

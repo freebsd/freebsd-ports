@@ -18,6 +18,7 @@
     SUBDIR += deft
     SUBDIR += distribfold
     SUBDIR += dna-qc
+    SUBDIR += embassy
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
