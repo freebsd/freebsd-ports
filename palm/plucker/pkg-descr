@@ -1,0 +1,7 @@
+Plucker is an offline HTML viewer for PalmOS devices packaged with UNIX and
+Linux conduits.  An included set of scripts will spider HTML pages which you
+specify to a supplied depth, and parse them on your desktop machine. Those
+webpages are processed there and transferred to the Palm for viewing by
+Plucker.
+
+WWW: http://plkr.org/
