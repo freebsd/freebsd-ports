@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	dnstracer
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Trace a chain of DNS servers to the source
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
