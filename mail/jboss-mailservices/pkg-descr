@@ -1,0 +1,21 @@
+JBossMail was created to enable JBoss to serve as an email server.
+
+JBossMail currently consists of:
+
+    * Core Server - which provides thread pooling, connection handling, and
+      timeout configuration.
+    * POP Protocol Implementation - plugs into the Server MBean to provide a
+      POP implementation.
+    * SMTP Server - plugs into the Server MBean to provide an SMTP protocol
+      implementation.
+    * Mail Listeners - plug into the SMTP server to forward mail to the various
+      backends. Currently the JMSMailListener is provided. It forwards mails
+      to various JBossMQ queues. Message Driven Beans for remote and local
+      delivery are also provided.
+    * Mailbox implementations - provides backends to the mail server. Presently
+      an EJB Entity-based version is provided.
+    * SMTPSender - uses JavaMail to mail messages to remote servers
+    * Test suite - JUnit tests for the various portions of mail services.
+      Includes a few services including mock-jndi.
+
+WWW: http://www.jboss.org/products/mailservices
