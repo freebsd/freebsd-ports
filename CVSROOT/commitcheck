@@ -12,11 +12,8 @@
 use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
-
-
 my $CVSROOT = $ENV{CVSROOT} || die "Can't determine CVSROOT (commitcheck)!\n";
 
-my $MINCVSVERSION = "1090900";	# 1.9.9p0
 
 # Check that the user is committing on the right machine.
 #
@@ -47,7 +44,7 @@ my $VERSTR = `/usr/bin/cvs -v`;
 $VERSTR =~ s/.*Concurrent\D*(\S*).*/$1/s;
 $VERSTR =~ s/\D+/./g;
 my $VERSION = sprintf "%d%02d%02d%02d\n", split /\./, $VERSTR;
-unless ( $VERSION && $VERSION >= $MINCVSVERSION ) {
+unless ($VERSION && $VERSION >= $cfg::MINCVSVERSION) {
 	print "The wrong version of CVS is installed (commitcheck)!\n";
 	exit 1;
 }

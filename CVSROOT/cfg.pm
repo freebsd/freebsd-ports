@@ -16,8 +16,8 @@ use strict;
 use vars qw(
 	$ADD_TO_LINE $CHECK_HEADERS $DEBUG $EXCLUDE_FILE $FILE_PREFIX
 	$IDHEADER $LAST_FILE $MAILADDRS $MAILBANNER $MAILCMD $MAIL_BRANCH_HDR
-	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $PID $PROG_CVS $PROG_MV
-	$TMPDIR $UNEXPAND_RCSID %TEMPLATE_HEADERS @COMMIT_HOSTS
+	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $MINCVSVERSION $PID $PROG_CVS
+	$PROG_MV $TMPDIR $UNEXPAND_RCSID %TEMPLATE_HEADERS @COMMIT_HOSTS
 );
 
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
@@ -58,6 +58,9 @@ $PROG_MV =	'/bin/mv';		# mv(1)
 # take local copies of the repository to work off-line.
 # (Empty if you don't want checks.)
 @COMMIT_HOSTS = ();
+
+# The minimum version of cvs that we will work with.
+$MINCVSVERSION = "1090900";  # 1.9.9p0
 
 
 ################
