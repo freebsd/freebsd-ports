@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
@@ -35,10 +34,11 @@ NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier gtk20 gnomevfs2
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gnome2-menu=${PREFIX}/share/gnome/apps/Applications \
+CONFIGURE_ARGS=	--with-gnome2-prefix=${PREFIX}/share/gnome \
 		--with-icon-path=${PREFIX}/share/gnome/pixmaps
 
 # Turns debugging output on
@@ -58,5 +58,9 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_TIDY		for the tidy html cleanup program"
 	@${ECHO_MSG} "  WITHOUT_SPLASH	disable the splash screen"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/applications/|/apps/Applications/|g' \
+		${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>
