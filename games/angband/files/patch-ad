@@ -1,0 +1,13 @@
+--- src/Makefile.orig	Sat Mar  8 05:52:32 1997
++++ src/Makefile	Mon Mar 31 20:10:52 1997
+@@ -136,8 +136,8 @@
+ ##
+ ## Variation -- Use "main-xaw.c" instead of "main-x11.c"
+ ##
+-#CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
+-#LIBS = -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
++CFLAGS = -Wall -O1 -pipe -I/usr/X11R6/include -DDEFAULT_PATH=\"${PREFIX}/lib/angband/\" -D"USE_XAW" -D"USE_GCU"
++LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
+ 
+ 
+ ##

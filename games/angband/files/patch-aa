@@ -1,6 +1,5 @@
-diff -r -P -u ../../angband-280/Makefile angband-280/Makefile
---- ../../angband-280/Makefile	Wed Dec 31 19:00:00 1969
-+++ angband-280/Makefile	Thu Feb 20 19:54:23 1997
+--- Makefile.orig	Mon Mar 31 20:08:53 1997
++++ Makefile	Mon Mar 31 20:08:53 1997
 @@ -0,0 +1,17 @@
 +# My makefile for Angband
 +# Matthew Hunt <mph@pobox.com>
@@ -11,44 +10,11 @@ diff -r -P -u ../../angband-280/Makefile angband-280/Makefile
 +	cd src && make
 +
 +install: angband
-+	install -c -o games -g bin -m 4755 angband ${PREFIX}/bin
-+	mkdir -p ${PREFIX}/lib/X11/angband
-+	(cd lib && tar cf - * ) | (cd ${PREFIX}/lib/X11/angband && tar xf - )
-+#	install -c lib/* ${PREFIX}/lib/X11/angband
-+	/usr/sbin/chown -R games.bin ${PREFIX}/lib/X11/angband
-+	(cd ${PREFIX}/lib/X11/angband && \
++	install -c -o games -g bin -m 4755 testing ${PREFIX}/bin/angband
++	mkdir -p ${PREFIX}/lib/angband
++	(cd lib && tar cf - * ) | (cd ${PREFIX}/lib/angband && tar xf - )
++#	install -c lib/* ${PREFIX}/lib/angband
++	/usr/sbin/chown -R games.bin ${PREFIX}/lib/angband
++	(cd ${PREFIX}/lib/angband && \
 +		/bin/chmod 755 apex bone data edit file help info xtra && \
 +		/bin/chmod 1777 save user )
-diff -r -P -u ../../angband-280/src/Makefile angband-280/src/Makefile
---- ../../angband-280/src/Makefile	Sun Oct 13 20:06:49 1996
-+++ angband-280/src/Makefile	Thu Feb 20 19:56:09 1997
-@@ -136,8 +136,8 @@
- ##
- ## Variation -- Use "main-xaw.c" instead of "main-x11.c"
- ##
--#CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
--#LIBS = -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
-+CFLAGS = -Wall -O1 -pipe -I/usr/X11R6/include -DDEFAULT_PATH=\"${PREFIX}/lib/X11/angband/\" -D"USE_XAW" -D"USE_GCU"
-+LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
- 
- 
- ##
-diff -r -P -u ../../angband-280/src/config.h angband-280/src/config.h
---- ../../angband-280/src/config.h	Sun Oct 13 19:13:01 1996
-+++ angband-280/src/config.h	Thu Feb 20 19:56:09 1997
-@@ -48,13 +48,13 @@
-  * OPTION: define "SPECIAL_BSD" for using certain versions of UNIX
-  * that use the 4.4BSD Lite version of Curses in "main-gcu.c"
-  */
--/* #define SPECIAL_BSD */
-+#define SPECIAL_BSD
- 
- 
- /*
-  * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
-  */
--/* #define USE_TPOSIX */
-+#define USE_TPOSIX
- 
- /*
-  * OPTION: Use the "termio" methods in "main-gcu.c"
