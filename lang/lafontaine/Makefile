@@ -23,6 +23,12 @@ USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|pixmaps/[\$$]PACKAGE|\$$PACKAGE|g ; \
 		 s|-O3|\$$CFLAGS|g' ${WRKSRC}/configure
@@ -31,4 +37,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/share/pixmaps|/share|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
