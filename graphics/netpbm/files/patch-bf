@@ -1,6 +1,6 @@
---- pnm/Makefile.orig	Thu May 10 06:48:25 2001
-+++ pnm/Makefile	Tue May 15 00:00:00 2001
-@@ -108,6 +108,7 @@
+--- pnm/Makefile.orig	Mon Sep  3 09:45:17 2001
++++ pnm/Makefile	Wed Sep  5 00:00:00 2001
+@@ -155,6 +155,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o libpam.o
@@ -8,3 +8,21 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
+@@ -172,7 +173,7 @@
+ 	$(MAKE) -C jbig all
+ 	$(MAKE) -C pnmtopalm all
+ PHONY: merge
+-merge:    $(MERGENAME) $(NOMERGEBINARIES)
++merge:    $(MERGENAME) $(NOMERGEBINARIES) $(EXTRA_STATICLIB)
+ ifneq ($(BUILD_FIASCO), N) 
+ 	$(MAKE) -C fiasco all
+ endif
+@@ -190,7 +191,7 @@
+ 
+ jpegtopnm: %: %.o exif.o $(NETPBMLIBS) $(LIBOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $< exif.o `$(LIBOPT) $(NETPBMLIBS)` $(JPEGLD) \
+-	   $(CDEBUG)
++	   -lm $(CDEBUG)
+ 
+ ifeq ($(URTLIB_DIR),$(URTDIR))
+ # We're using the internal URT library, so make sure it's built

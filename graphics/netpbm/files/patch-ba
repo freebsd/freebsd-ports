@@ -1,16 +1,23 @@
---- GNUmakefile.orig	Sat Jun  2 11:42:02 2001
-+++ GNUmakefile	Tue Jun 26 00:00:00 2001
-@@ -153,10 +153,12 @@
+--- GNUmakefile.orig	Fri Aug 17 13:34:44 2001
++++ GNUmakefile	Wed Sep  5 00:00:00 2001
+@@ -69,7 +69,7 @@
+ 
+ default: $(DEFAULT_TARGET)
+ 
+-all: nonmerge
++all: default
+ 
+ .PHONY: nonmerge
+ nonmerge: $(SUBDIRS)
+@@ -160,10 +160,10 @@
+ 
  .PHONY: install.hdr
- install.hdr:
- 	$(SRCDIR)/mkinstalldirs $(INSTALLHDRS)
+ install.hdr: $(INSTALLHDRS) $(SRCDIR)/pm_config.h
 -	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
 +	${BSD_INSTALL_DATA} \
- 	    $(SRCDIR)/pbmplus.h $(INSTALLHDRS)
+ 	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
 -	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
 -	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
-+	${BSD_INSTALL_DATA} \
-+	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} \
 +	    $(SRCDIR)/shhopt/pm_shhopt.h $(INSTALLHDRS)
  	for i in $(SUBDIRS) ; do \

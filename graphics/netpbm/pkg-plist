@@ -28,6 +28,7 @@ bin/macptopbm
 bin/mdatopbm
 bin/mgrtopbm
 bin/mtvtoppm
+bin/neotoppm
 bin/palmtopnm
 bin/pamchannel
 bin/pamcut
@@ -184,6 +185,7 @@ bin/ppmtolj
 bin/ppmtomap
 bin/ppmtomitsu
 bin/ppmtompeg
+bin/ppmtoneo
 bin/ppmtopcx
 bin/ppmtopgm
 bin/ppmtopi1
@@ -229,7 +231,6 @@ bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
 include/pbm.h
-include/pbmplus.h
 include/pgm.h
 include/pm.h
 include/pm_config.h
