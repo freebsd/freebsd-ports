@@ -1,0 +1,11 @@
+--- contrib/trytime/Makefile.in.orig	Fri Jan  7 21:11:21 2000
++++ contrib/trytime/Makefile.in	Fri Jan  7 21:11:41 2000
+@@ -76,7 +76,7 @@
+ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = trytime.c
+-contribdir = $(prefix)/contrib/trytime
++contribdir = $(prefix)/share/examples/rrdtool/trytime
+ contrib_DATA = README trytime.c
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../../config/config.h

@@ -1,0 +1,11 @@
+--- contrib/rrd-file-icon/Makefile.in.orig	Fri Jan  7 21:08:22 2000
++++ contrib/rrd-file-icon/Makefile.in	Fri Jan  7 21:08:46 2000
+@@ -76,7 +76,7 @@
+ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = rrd.png
+-contribdir = $(prefix)/contrib/rrd-file-icon
++contribdir = $(prefix)/share/examples/rrdtool/rrd-file-icon
+ contrib_DATA = README       rrd.png
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../../config/config.h

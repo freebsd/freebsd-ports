@@ -1,0 +1,11 @@
+--- contrib/log2rrd/Makefile.in.orig	Fri Jan  7 21:07:22 2000
++++ contrib/log2rrd/Makefile.in	Fri Jan  7 21:07:45 2000
+@@ -77,7 +77,7 @@
+ 
+ EXTRA_DIST = log2rrd.pl.in
+ 
+-contribdir = $(prefix)/contrib/log2rrd
++contribdir = $(prefix)/share/examples/rrdtool/log2rrd
+ contrib_DATA = README
+ contrib_SCRIPTS = log2rrd.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

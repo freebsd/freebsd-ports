@@ -1,0 +1,14 @@
+--- doc/Makefile.in.orig	Fri Jan  7 20:56:21 2000
++++ doc/Makefile.in	Fri Jan  7 20:57:05 2000
+@@ -96,9 +96,9 @@
+ EXTRA_DIST = $(POD) $(HTML) $(TXT)
+ 
+ # some install rules
+-idocdir = $(prefix)/doc
++idocdir = $(prefix)/share/doc/rrdtool
+ idoc_DATA = $(POD) $(TXT)
+-ihtmldir = $(prefix)/html
++ihtmldir = $(prefix)/share/doc/rrdtool/html
+ ihtml_DATA = $(HTML)
+ imandir = $(prefix)/man/man1
+ iman_DATA = $(MAN)
