@@ -10,7 +10,7 @@ PORTVERSION=	0.33
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 USE_REINPLACE=	yes
 INSTALL_TARGET=	global_install

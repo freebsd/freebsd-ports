@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5

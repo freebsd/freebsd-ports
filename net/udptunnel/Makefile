@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

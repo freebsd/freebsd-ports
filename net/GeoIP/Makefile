@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	misc
 MASTER_SITES=	http://maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Dialog
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500007
