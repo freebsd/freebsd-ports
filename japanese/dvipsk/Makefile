@@ -10,7 +10,8 @@ PORTVERSION=	5.95a
 PORTREVISION=	0
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,}
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,} \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
 #		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:jpatch \
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib/
 PKGNAMEPREFIX=	ja-
