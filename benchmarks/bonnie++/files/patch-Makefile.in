@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Mar 25 00:33:43 2001
++++ Makefile.in	Sun Mar 25 00:35:44 2001
+@@ -34,7 +34,7 @@
+ install-bin: $(EXES)
+ 	mkdir -p $(eprefix)/bin $(eprefix)/sbin
+ 	@INSTALL_PROGRAM@ @stripping@ $(EXES) $(eprefix)/sbin
+-	@INSTALL_PROGRAM@ $(SCRIPTS) $(eprefix)/bin
++	@INSTALL_SCRIPT@ $(SCRIPTS) $(eprefix)/bin
+ 
+ install: install-bin
+ 	mkdir -p @mandir@/man1 @mandir@/man8
