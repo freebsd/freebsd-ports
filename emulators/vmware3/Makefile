@@ -7,14 +7,14 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
-		vmmon-only-${PORTVERSION:R}-20040705${EXTRACT_SUFX}:patch \
+		vmmon-only-${PORTVERSION:R}-20040727${EXTRACT_SUFX}:patch \
 		vmnet-only-${PORTVERSION:R}-20040705${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
@@ -22,7 +22,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 MAINTAINER=	orlando@break.net
 COMMENT=	A virtual machine emulator - a full PC in a window
 
-RUN_DEPENDS=	${PORTSDIR}/emulators/rtc
+RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
