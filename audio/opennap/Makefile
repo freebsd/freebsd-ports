@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opennap
-PORTVERSION=	0.35
+PORTVERSION=	0.37
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/opennap/ \
 		ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/console/servers/ \
