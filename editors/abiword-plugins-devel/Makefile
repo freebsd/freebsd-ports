@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTVERSION=	2.2.6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
@@ -254,10 +253,10 @@ PLIST_SUB+=		XSLFO:="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
-USE_GNOME+=		nautilus2 libgnomeprintui
-CONFIGURE_ARGS+=	--enable-gnome
-.endif
+#.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
+#USE_GNOME+=		nautilus2 libgnomeprintui
+#CONFIGURE_ARGS+=	--enable-gnome
+#.endif
 
 .if ${HAVE_GNOME:Mlibrsvg2}!=""
 CONFIGURE_ARGS+=	--enable-librsvg
