@@ -21,8 +21,8 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-%%SERVICE%%_enable=${%%SERVICE%%_enable:-"NO"}
-%%SERVICE%%_flags=${%%SERVICE%%_flags:-""}	# Can be "-f /path/alternate_rc"
+%%SERVICE%%_enable=${%%SERVICE%%_enable-"NO"}
+# %%SERVICE%%_flags can be something like "-f /path/alternate_rc"
 
 . %%RC_SUBR%%
 
