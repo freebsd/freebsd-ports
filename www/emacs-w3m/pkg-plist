@@ -90,6 +90,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-lump.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-m17n.el
 %%SHIMBUN%%%%LISPDIR%%/sb-m17n.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-macosx-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-macosx-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mailarc.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mailarc.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mailman.el
@@ -126,6 +128,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-pilot-link.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-redhat.el
+%%SHIMBUN%%%%LISPDIR%%/sb-redhat.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-savannah.el
@@ -165,6 +169,7 @@
 %%LISPDIR%%/w3m-antenna.el
 %%LISPDIR%%/w3m-antenna.elc
 %%LISPDIR%%/w3m-bitmap.el
+%%EMACS20%%%%LISPDIR%%/w3m-bitmap.elc
 %%LISPDIR%%/w3m-bookmark.el
 %%LISPDIR%%/w3m-bookmark.elc
 %%LISPDIR%%/w3m-bug.el
