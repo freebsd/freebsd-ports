@@ -1,0 +1,27 @@
+share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx/bg.png
+share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx/border-left.png
+share/gnome/gdesklets/Displays/MultiTail/dark-theme/multitail.display
+share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx/bg.png
+share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx/border-left.png
+share/gnome/gdesklets/Displays/MultiTail/light-theme/multitail.display
+share/gnome/gdesklets/Displays/MultiTail/trans-theme/gfx/border-left.png
+share/gnome/gdesklets/Displays/MultiTail/trans-theme/multitail.display
+share/gnome/gdesklets/Displays/MultiTail/README
+share/gnome/gdesklets/Sensors/DisplayConstraints/__init__.py
+share/gnome/gdesklets/Sensors/DisplayConstraints/__init__.pyc
+share/gnome/gdesklets/Sensors/DisplayConstraints/__init__.pyo
+share/gnome/gdesklets/Sensors/MultiTail/__init__.py
+share/gnome/gdesklets/Sensors/MultiTail/__init__.pyc
+share/gnome/gdesklets/Sensors/MultiTail/__init__.pyo
+share/gnome/gdesklets/Sensors/MultiTail/tailer.py
+share/gnome/gdesklets/Sensors/MultiTail/tailer.pyc
+share/gnome/gdesklets/Sensors/MultiTail/tailer.pyo
+@dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx
+@dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme
+@dirrm share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx
+@dirrm share/gnome/gdesklets/Displays/MultiTail/light-theme
+@dirrm share/gnome/gdesklets/Displays/MultiTail/trans-theme/gfx
+@dirrm share/gnome/gdesklets/Displays/MultiTail/trans-theme
+@dirrm share/gnome/gdesklets/Displays/MultiTail/
+@dirrm share/gnome/gdesklets/Sensors/DisplayConstraints/
+@dirrm share/gnome/gdesklets/Sensors/MultiTail/

@@ -1,0 +1,19 @@
+##
+To view the README:
+
+	cat ${PREFIX}/share/gnome/gdesklets/Displays/${name}/README
+
+To view all installed applets:
+
+	ls ${PREFIX}/share/gnome/gdesklets/Displays
+
+To use those applets:
+
+	gdesklets ${PREFIX}/share/gnome/gdesklets/Displays/${name}/${theme}/${name}.display
+
+Replace ${name} with the correct name of the applets you want to use.
+Replace ${theme} with the correct name of the applets theme.
+
+NOTE: Be sure to login as your user when you use the gdesklets command,
+      as the configuration will be stored in the ~/.gdesklets/ directory.
+##
