@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rblcheck
-# Version required:	1.2
+# Version required:	1.4
 # Date created:		28 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/30 04:52:11 itojun Exp $
+# $Id: Makefile,v 1.4 1998/06/27 05:19:14 asami Exp $
 #
 
-DISTNAME=	rblcheck-1.2
+DISTNAME=	rblcheck-1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.xnet.com/%7Eemarshal/rblcheck/
 
