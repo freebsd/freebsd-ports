@@ -1,0 +1,20 @@
+--- configs/freebsd-g++-shared	Fri Jan  4 21:39:23 2002
++++ configs/freebsd-g++-shared.new	Fri Jan  4 21:37:23 2002
+@@ -32,7 +32,7 @@
+ SYSCONF_LIBS_YACC	= 
+ 
+ # Linking applications
+-SYSCONF_LINK		= g++
++SYSCONF_LINK		= objprelink $(OBJECTS) $(OBJMOC) && g++
+ SYSCONF_LFLAGS		= 
+ SYSCONF_LIBS		= 
+ 
+@@ -58,7 +58,7 @@
+ #
+ SYSCONF_LINK_SHLIB	= g++
+ SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
+-SYSCONF_LINK_LIB_SHARED	=  \
++SYSCONF_LINK_LIB_SHARED	=  objprelink $(OBJECTS) $(OBJMOC) && \
+ 	$(SYSCONF_LINK_SHLIB) -shared -Wl,-soname,lib$(TARGET).so.$(VER_MAJ) \
+ 				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
+ 				     $(OBJECTS) $(OBJMOC) $(LIBS) && \

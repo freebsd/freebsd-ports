@@ -19,7 +19,9 @@ MAINTAINER?=	kde@FreeBSD.org
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
 BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
@@ -81,6 +83,17 @@ pre-fetch:
 
 qt-pre-configure:
 	@true
+
+post-patch:
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
+.if !exists(${WRKDIR}/.${PKGNAME}.objprelink_patched)
+	@echo "Doing special objprelink patching..."
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/objprelink.patch
+	${TOUCH} ${WRKDIR}/.${PKGNAME}.objprelink_patched
+.else
+	@echo "Already did the objprelink patching, skipping..."
+.endif
+.endif
 
 pre-configure: qt-pre-configure
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
