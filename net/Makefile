@@ -738,6 +738,7 @@
     SUBDIR += v6eval
     SUBDIR += vchat
     SUBDIR += verlihub
+    SUBDIR += verlihub-plugins
     SUBDIR += vicq
     SUBDIR += vino
     SUBDIR += vls
