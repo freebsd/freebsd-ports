@@ -97,6 +97,9 @@
 # WITH_ARTS
 # default: autodetect
 #
+# WITH_CDPARANOIA
+# default: autodetect
+#
 # WITH_LIBDV
 # default: autodetect
 #
@@ -218,6 +221,10 @@ TOOLFILES=	calcbpp.pl countquant.pl \
 WITH_ARTS=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.so)
+WITH_CDPARANOIA=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libdv.so.3)
 WITH_LIBDV=	yes
 .endif
@@ -319,6 +326,12 @@ LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
+.endif
+
+.if defined(WITH_CDPARANOIA)
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+.else
+CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
 .if defined(WITH_DVD)
