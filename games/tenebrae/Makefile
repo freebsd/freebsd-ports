@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_XLIB=	yes
 USE_SDL=	yes
+USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0
@@ -31,7 +32,7 @@ MAKE_ENV=	DATADIR="${DATADIR}" \
 		SDL_CONFIG="${SDL_CONFIG}"
 
 pre-patch:
-	@${PERL} -pi -e 's|\r||g' `${FIND} ${WRKSRC} -type f`
+	@${REINPLACE_CMD} -e "s|$$(${PRINTF} '\r')||g" `${FIND} ${WRKSRC} -type f`
 
 pre-build:
 	@${LN} -sf ${WRKSRC}/linux/Makefile.i386linux ${WRKSRC}/linux/Makefile
