@@ -26,6 +26,12 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Installation fails"
+.endif
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
@@ -65,4 +71,4 @@ do-install:
 				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

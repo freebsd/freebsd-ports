@@ -22,6 +22,10 @@ MAKE_ENV=	DESTDIR="${PREFIX}/lib/matrix"
 BROKEN=		"Need FreeBSD 4.0 or above"
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Installation fails"
+.endif
+
 pre-install:
 	${MKDIR} ${PREFIX}/lib/matrix/modules
 
