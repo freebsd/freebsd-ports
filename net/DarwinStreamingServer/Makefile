@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.0
-PORTREVISION=	1
+PORTVERSION=	5.0.1.1
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
