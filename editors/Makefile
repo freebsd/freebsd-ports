@@ -186,6 +186,7 @@
     SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += tpad
+    SUBDIR += tree-widget
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += ved
