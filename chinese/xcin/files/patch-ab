@@ -8,10 +8,10 @@
    last_win = cli_win;
 
    if ( ignore_cli_stat )
-        ignore_cli_stat = 0;
+       ignore_cli_stat = 0;
    else
       if ( state->_CurInMethod )
--       memcpy( &inmdstate, state, sizeof( inmdstate ) );
+-      memcpy( &inmdstate, state, sizeof( inmdstate ) );
 +       if(memcmp(&inmdstate, state, sizeof( inmdstate)))
 +           memcpy( &inmdstate, state, sizeof( inmdstate ) );
 +       else
