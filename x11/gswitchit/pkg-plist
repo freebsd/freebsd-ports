@@ -1,3 +1,4 @@
+bin/gswitchit-plugins-capplet
 bin/gswitchit-properties-capplet
 bin/xkb-properties-capplet
 etc/gconf/gconf.xml.defaults/apps/gswitchit/%gconf.xml
