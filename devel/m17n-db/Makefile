@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 USE_GMAKE=	yes
 
 M17N_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
-GLIBC_VERSION=	2.3.2
+GLIBC_VERSION=	2.3.3
 GLIBC_DISTFILE=	glibc-${GLIBC_VERSION}.tar.bz2
 CHARMAPSDIR=	glibc-${GLIBC_VERSION}/localedata/charmaps
 
