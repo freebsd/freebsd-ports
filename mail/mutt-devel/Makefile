@@ -31,10 +31,8 @@
 #  WITHOUT_MUTT_SGMLFORMAT
 #    (this can't be stated if WITH_MUTT_HTML is defined)
 #
-# If you want to read news with mutt define:
+# If you want to read and post news with mutt define:
 #  WITH_MUTT_NNTP
-#    (note that this implies building of the inn-stable port to be able to
-#     post new articles)
 #
 # WITH_MUTT_SSL can be enabled if your IMAP/POP server is SSL capable.
 #
@@ -48,15 +46,12 @@
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #
-# If you want to enable extended functions for the ru locale define:
-#  WITH_MUTT_RU_PATCH
-#
 # If you want to enable the pgp_outlook_compat function for use with pgp define:
 #  WITH_MUTT_PGP_OUTLOOK_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.27
-PORTREVISION?=	7
+PORTVERSION=	1.3.28
+#PORTREVISION?=	0
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -87,7 +82,7 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 USE_AUTOMAKE=	yes
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
-		defined(WITH_MUTT_RU_PATCH) || defined(WITH_MUTT_QUOTE_PATCH)
+		defined(WITH_MUTT_QUOTE_PATCH)
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/ \
@@ -149,11 +144,6 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .if defined(WITH_MUTT_SSL)
 USE_OPENSSL=	yes
 .endif
-.if defined(WITH_MUTT_NNTP)
-BUILD_DEPENDS+=	${LOCALBASE}/news/bin/inews:${PORTSDIR}/news/inn-stable
-pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-inews
-.endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
@@ -183,22 +173,19 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 PATCH_DIST_STRIP=	-p1
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz
+PATCHFILES+=	mutt-${PATCH_VERSION}.rr.compressed.gz
 CONFIGURE_ARGS+=	--enable-compressed
 .if !defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	yes
 .endif
 .endif
 .if defined(WITH_MUTT_NNTP)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz
+PATCHFILES+=	mutt-${PATCH_VERSION}.vvv.nntp.gz
 CONFIGURE_ARGS+=	--enable-nntp
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
-		patch-${PATCH_VERSION}.vvv.quote.gz
-.endif
-.if defined(WITH_MUTT_RU_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.ru.gz
+PATCHFILES+=	mutt-${PATCH_VERSION}.vvv.initials.gz \
+		mutt-${PATCH_VERSION}.vvv.quote.gz
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
@@ -229,7 +216,7 @@ PLIST_SUB+=	SUB_NNTP="@comment "
 SGML_USED=	yes
 PLIST_SUB+=	SUB_HTML=""
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_G=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -239,27 +226,7 @@ PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_F=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_G=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_F=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -269,7 +236,7 @@ PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_C=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -279,27 +246,7 @@ PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_B=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_C=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_B=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -309,7 +256,7 @@ PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_E=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -319,27 +266,7 @@ PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_D=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_E=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_D=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -349,7 +276,7 @@ PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_A=""
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -359,7 +286,7 @@ PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -368,26 +295,6 @@ PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_A=""
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A=""
 .else # patches
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -459,15 +366,6 @@ post-install:
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 .endif
-.endif
-.if defined(WITH_MUTT_NNTP)
-	@${ECHO}
-	@${ECHO} "------------------------------------------------"
-	@${ECHO} "Be sure to define NNTPSERVER in your environment"
-	@${ECHO} "and to be part of the group news in /etc/group"
-	@${ECHO} "if you want to post news with mutt"
-	@${ECHO} "------------------------------------------------"
-	@${ECHO}
 .endif
 
 .include <bsd.port.post.mk>
