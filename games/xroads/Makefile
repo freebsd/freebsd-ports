@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.autobahn.mb.ca/~foxtrot/ \
 		http://supernova.dyn.ml.org/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 FETCH_BEFORE_ARGS=	-t -b

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	udeproject
 DISTNAME=	${PORTNAME}-0.2.7-BETA
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext

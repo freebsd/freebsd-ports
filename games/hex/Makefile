@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 		http://www.psn.net/~andrews/dist/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12

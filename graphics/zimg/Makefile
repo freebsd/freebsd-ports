@@ -10,7 +10,7 @@ PORTVERSION=	2.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 

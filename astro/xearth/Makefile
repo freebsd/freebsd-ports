@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade
 

@@ -11,7 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.qcad.org/archives/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 MAKE_ENV=	CC="${CXX}"

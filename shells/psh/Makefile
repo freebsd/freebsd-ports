@@ -11,7 +11,7 @@ CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.focusresearch.com/gregor/psh/
 DISTNAME=	psh-${PORTVERSION}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 FETCH_BEFORE_ARGS+=	-t

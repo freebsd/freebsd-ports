@@ -10,7 +10,7 @@ PORTVERSION=	0.16d
 CATEGORIES=	devel
 MASTER_SITES=	http://www.msoe.edu/~geiseri/files/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 

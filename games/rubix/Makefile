@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKE_ENV=	GMAKE=${GMAKE}

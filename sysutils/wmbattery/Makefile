@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

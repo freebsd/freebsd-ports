@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.styx.net/projects/flux/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

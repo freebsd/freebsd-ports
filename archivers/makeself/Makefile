@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lokigames.com/~megastep/makeself/
 DISTNAME=	makeself
 EXTRACT_SUFX=	.gz.sh
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

@@ -15,7 +15,7 @@ MASTER_SITES=	\
 DISTNAME=	${PORTNAME}-0.50-13
 EXTRACT_SUFX=	.src.rpm
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		tcl82.1:${PORTSDIR}/lang/tcl82 \

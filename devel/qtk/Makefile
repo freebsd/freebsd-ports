@@ -11,7 +11,7 @@ CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.psn.net/~andrews/dist/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

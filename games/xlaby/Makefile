@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.eleves.ens.fr:8080/home/madore/ \
 MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		will@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_IMAKE=		yes
 NO_WRKSUBDIR=		yes

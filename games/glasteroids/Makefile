@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 DISTNAME=	Glasteriods
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 

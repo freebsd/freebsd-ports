@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
