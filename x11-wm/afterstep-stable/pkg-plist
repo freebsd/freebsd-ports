@@ -2,6 +2,7 @@ bin/ascd
 bin/afterstep
 bin/asclock
 bin/asmail
+bin/asmodem
 bin/xiterm
 bin/ASSound
 bin/Animate
@@ -33,6 +34,7 @@ man/man1/Audio.1.gz
 man/man1/Auto.1.gz
 man/man1/asclock.1.gz
 man/man1/asmail.1.gz
+man/man1/asmodem.1.gz
 man/man1/xiterm.1.gz
 man/man1/Clean.1.gz
 man/man1/ASSound.1.gz

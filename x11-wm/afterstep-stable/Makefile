@@ -3,26 +3,22 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.20 1998/05/18 03:23:39 mph Exp $
+# $Id: Makefile,v 1.21 1998/05/22 18:50:18 mph Exp $
 #
 
 DISTNAME=	AfterStep-1.4.5.0
 PKGNAME=	afterstep-1.4.5.3
 CATEGORIES=     x11
-MASTER_SITES=   ftp://ftp.afterstep.org/pub/
+MASTER_SITES=   ftp://ftp.afterstep.org/pub/attic/
 EXTRACT_SUFX=   .tgz
 
-PATCH_SITES=    ftp://ftp.afterstep.org/pub/
+PATCH_SITES=    ftp://ftp.afterstep.org/pub/attic/
 PATCHFILES=	AfterStep1450-to-1451.patch.gz AfterStep1451-to-1453.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-
-NO_PACKAGE=	yes
-#there are 130 files or so with spaces or parens in their name which
-#makes pkg_add die so we can't easily package this
 
 WRKSRC=         ${WRKDIR}/AfterStep
 
