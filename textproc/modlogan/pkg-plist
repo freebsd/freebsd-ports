@@ -21,6 +21,7 @@ lib/libmla_input_bsdftpd.so
 lib/libmla_input_clf.so
 lib/libmla_input_flowraw.so
 lib/libmla_input_ipchains.so
+lib/libmla_input_ippl.so
 lib/libmla_input_isdn4bsd.so
 lib/libmla_input_isdnlog.so
 lib/libmla_input_msiis.so
@@ -41,6 +42,7 @@ lib/libmla_input_viruswall.so
 lib/libmla_input_wuftpd.so
 lib/libmla_mdata_brokenlink.so
 lib/libmla_mdata_count.so
+lib/libmla_mdata_ipplwatch.so
 lib/libmla_mdata_location.so
 lib/libmla_mdata_match.so
 lib/libmla_mdata_mailhist.so
@@ -63,11 +65,11 @@ lib/libmla_output_text.so
 lib/libmla_output_webalizer.so
 lib/libmla_processor_accounting.so
 lib/libmla_processor_firewall.so
+lib/libmla_processor_ippl.so
 lib/libmla_processor_mail.so
 lib/libmla_processor_null.so
 lib/libmla_processor_telecom.so
 lib/libmla_processor_web.so
-%%PORTDOCS%%share/doc/modlogan/Changes-0.8.0.txt
 %%PORTDOCS%%share/doc/modlogan/faq.txt
 %%PORTDOCS%%share/doc/modlogan/glosar
 %%PORTDOCS%%share/doc/modlogan/manual.txt
