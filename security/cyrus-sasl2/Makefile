@@ -56,24 +56,25 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 .if defined(WITH_BDB_VER)
 .if ${WITH_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db3 --with-bdb=db3
+BDB_MAJOR=	3
 .elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db4 --with-bdb=db4
+BDB_MAJOR=	0
 .elif ${WITH_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
+BDB_MAJOR=	1
 .elif ${WITH_BDB_VER} == 42
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
+BDB_SUFFIX=	-4.2
+BDB_MAJOR=	2
 .elif ${WITH_BDB_VER} == 43
-LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db43 --with-bdb=db-4.3
+BDB_SUFFIX=	-4.3
+BDB_MAJOR=	0
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
-CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib
+BDB_SUFFIX?=	${WITH_BDB_VER}
+LIB_DEPENDS=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
+		--with-bdb-incdir=${LOCALBASE}/include/db${WITH_BDB_VER} \
+		--with-bdb=db${BDB_SUFFIX}
 SASLDB_NAME=	sasldb2
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm
