@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	0.85
+PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	http://ipcheck.sourceforge.net/
 DISTNAME=	ipcheck.py
