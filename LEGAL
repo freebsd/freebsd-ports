@@ -87,6 +87,7 @@ inn2-*			ports/news/inn2		Copyright file in package
 						now maintained by ISC. Otherwise
 						no usage restriction.
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
+jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
 john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
 jdk*-doc		ports/lang/jdk-doc	under license and export control
