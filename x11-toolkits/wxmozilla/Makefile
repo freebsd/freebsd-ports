@@ -25,7 +25,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack
 WXGTK_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/firebird/lib/pkgconfig"
+CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/firefox/lib/pkgconfig"
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
 INSTALLS_SHLIB=	yes
 
