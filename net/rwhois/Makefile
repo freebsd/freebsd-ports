@@ -3,7 +3,7 @@
 # Date created:				May 9th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/05/30 20:13:23 jfitz Exp $
 #
 
 DISTNAME=	rwhois-1.0B9.2
@@ -13,11 +13,10 @@ MASTER_SITES=	ftp://ftp.rwhois.net/pub/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-HAS_CONFIGURE=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
-
 LIB_DEPENDS=	wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
 
+HAS_CONFIGURE=	YES
+CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
 INSTALL_TARGET=	install install-sample-data install-chroot
 
 MAN8=		rmkdbindex.8 rwhoisd.8
