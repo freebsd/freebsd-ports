@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Glade-Perl
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5 gnome
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	http://www.glade.perl.connectfree.co.uk/ \
+		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Glade
 PKGNAMEPREFIX=	p5-
 
