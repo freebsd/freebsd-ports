@@ -17,12 +17,6 @@ COMMENT=	Has title bars, iconizing, and styles (unstable)
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 			rxvt:${PORTSDIR}/x11/rxvt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
@@ -69,4 +63,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
