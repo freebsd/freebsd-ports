@@ -1,4 +1,3 @@
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libindustrial.so
 share/gnome/themes/Amaranth/metacity-1/left-side.png
 share/gnome/themes/Amaranth/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Amaranth/metacity-1/right-side.png
@@ -1070,6 +1069,7 @@ share/locale/pa/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/pl/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/pt/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-themes-extras.mo
+share/locale/ru/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/sk/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/sq/LC_MESSAGES/gnome-themes-extras.mo
 share/locale/sr/LC_MESSAGES/gnome-themes-extras.mo
@@ -1085,29 +1085,6 @@ share/themes/Gorilla/gtk-2.0/gtkrc
 share/themes/Gorilla/gtk-2.0/iconrc
 share/themes/Gorilla/gtk/gtkrc
 share/themes/Gorilla/index.theme
-share/themes/Industrial/gtk-2.0/gtkrc
-share/themes/Industrial/gtk-2.0/stock_apply.png
-share/themes/Industrial/gtk-2.0/stock_bottom-16.png
-share/themes/Industrial/gtk-2.0/stock_bottom.png
-share/themes/Industrial/gtk-2.0/stock_cancel-16.png
-share/themes/Industrial/gtk-2.0/stock_cancel.png
-share/themes/Industrial/gtk-2.0/stock_down-16.png
-share/themes/Industrial/gtk-2.0/stock_down.png
-share/themes/Industrial/gtk-2.0/stock_first-16.png
-share/themes/Industrial/gtk-2.0/stock_first.png
-share/themes/Industrial/gtk-2.0/stock_last-16.png
-share/themes/Industrial/gtk-2.0/stock_last.png
-share/themes/Industrial/gtk-2.0/stock_left-16.png
-share/themes/Industrial/gtk-2.0/stock_left.png
-share/themes/Industrial/gtk-2.0/stock_ok.png
-share/themes/Industrial/gtk-2.0/stock_refresh-16.png
-share/themes/Industrial/gtk-2.0/stock_refresh.png
-share/themes/Industrial/gtk-2.0/stock_right-16.png
-share/themes/Industrial/gtk-2.0/stock_right.png
-share/themes/Industrial/gtk-2.0/stock_top-16.png
-share/themes/Industrial/gtk-2.0/stock_top.png
-share/themes/Industrial/gtk-2.0/stock_up-16.png
-share/themes/Industrial/gtk-2.0/stock_up.png
 share/themes/Lush/gtk-2.0/gtkrc
 share/themes/Lush/gtk-2.0/iconrc
 share/themes/Lush/index.theme
@@ -1125,8 +1102,6 @@ share/themes/Wasp/index.theme
 @dirrm share/themes/Nuvola
 @dirrm share/themes/Lush/gtk-2.0
 @dirrm share/themes/Lush
-@dirrm share/themes/Industrial/gtk-2.0
-@dirrm share/themes/Industrial
 @dirrm share/themes/Gorilla/gtk-2.0
 @dirrm share/themes/Gorilla/gtk
 @dirrm share/themes/Gorilla
