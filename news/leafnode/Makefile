@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.42
+PORTVERSION=	1.9.43
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/leafnode \
 		--with-lockfile=${LEAFNODE_SPOOLDIR}/leaf.node/lock.file \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
-CONFIGURE_TARGET=    --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=
 MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
@@ -55,7 +55,9 @@ post-install:
 		for i in ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 			 INSTALL NEWS README ChangeLog.old \
 			 README-FQDN README-FQDN.html README-daemontools \
-			 README.FIRST TODO leafnode.cron.daily ; do \
+			 README.FIRST TODO leafnode.cron.daily \
+			 leafnode-SA-2002-01 leafnode-SA-2003-01 \
+			 KNOWNBUGS ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/$$i ${DOCSDIR} ; \
 		done
 		${MKDIR} ${DOCSDIR}/doc_german

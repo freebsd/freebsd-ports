@@ -15,35 +15,39 @@ sbin/checkgroups
 sbin/applyfilter
 sbin/setup-daemontools.sh
 sbin/quickmkdir
-share/doc/leafnode/ChangeLog
-share/doc/leafnode/ChangeLog.old
-share/doc/leafnode/COPYING
-share/doc/leafnode/CREDITS
-share/doc/leafnode/FAQ.txt
-share/doc/leafnode/FAQ.html
-share/doc/leafnode/FAQ.pdf
-share/doc/leafnode/INSTALL
-share/doc/leafnode/NEWS
-share/doc/leafnode/README
-share/doc/leafnode/README-FQDN
-share/doc/leafnode/README-FQDN.html
-share/doc/leafnode/README-daemontools
-share/doc/leafnode/README.FIRST
-share/doc/leafnode/TODO
-share/doc/leafnode/leafnode.cron.daily
-share/doc/leafnode/doc_german/INSTALL_de
-share/doc/leafnode/doc_german/LIESMICH-daemontools
-share/doc/leafnode/doc_german/README
-share/doc/leafnode/doc_german/README_de
-share/doc/leafnode/doc_german/newsq.1
-share/doc/leafnode/doc_german/applyfilter.8
-share/doc/leafnode/doc_german/checkgroups.8
-share/doc/leafnode/doc_german/fetchnews.8
-share/doc/leafnode/doc_german/leafnode.8
-share/doc/leafnode/doc_german/texpire.8
-@dirrm share/doc/leafnode/doc_german
-@dirrm share/doc/leafnode
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/ChangeLog.old
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/FAQ.txt
+%%DOCSDIR%%/FAQ.html
+%%DOCSDIR%%/FAQ.pdf
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/KNOWNBUGS
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README-FQDN
+%%DOCSDIR%%/README-FQDN.html
+%%DOCSDIR%%/README-daemontools
+%%DOCSDIR%%/README.FIRST
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/leafnode-SA-2002-01
+%%DOCSDIR%%/leafnode-SA-2003-01
+%%DOCSDIR%%/leafnode.cron.daily
+%%DOCSDIR%%/doc_german/INSTALL_de
+%%DOCSDIR%%/doc_german/LIESMICH-daemontools
+%%DOCSDIR%%/doc_german/README
+%%DOCSDIR%%/doc_german/README_de
+%%DOCSDIR%%/doc_german/newsq.1
+%%DOCSDIR%%/doc_german/applyfilter.8
+%%DOCSDIR%%/doc_german/checkgroups.8
+%%DOCSDIR%%/doc_german/fetchnews.8
+%%DOCSDIR%%/doc_german/leafnode.8
+%%DOCSDIR%%/doc_german/texpire.8
+@dirrm %%DOCSDIR%%/doc_german
+@dirrm %%DOCSDIR%%
 @comment only remove these when empty:
+@comment we don't want to kill the news spool across updates
 @unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
 @unexec rmdir %%SPOOLDIR%%/failed.postings 2>/dev/null || :
 @unexec rmdir %%SPOOLDIR%%/failed.postings 2>/dev/null || :
