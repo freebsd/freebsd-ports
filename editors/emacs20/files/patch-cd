@@ -1,5 +1,5 @@
---- src/config.in.orig	Sat Nov 21 09:00:30 1998
-+++ src/config.in	Sat Nov 21 09:00:58 1998
+--- src/config.in.orig	Mon Jun 26 19:06:49 2000
++++ src/config.in	Mon Jun 26 19:07:38 2000
 @@ -118,6 +118,9 @@
  /* Define to support using a Hesiod database to find the POP server.  */
  #undef HESIOD
@@ -10,3 +10,11 @@
  /* Some things figured out by the configure script, grouped as they are in
     configure.in.  */
  #ifndef _ALL_SOURCE  /* suppress warning if this is pre-defined */
+@@ -236,6 +239,7 @@
+ #undef HAVE_STRFTIME
+ #undef HAVE_GRANTPT
+ #undef HAVE_GETPT
++#undef HAVE_GETADDRINFO
+ 
+ #undef LOCALTIME_CACHE
+ #undef HAVE_INET_SOCKETS
