@@ -8,8 +8,7 @@
 PORTNAME=	birda
 PORTVERSION=	1.00
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
-		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 MAINTAINER=	allbery@ece.cmu.edu
 
