@@ -222,6 +222,7 @@
     SUBDIR += soundgrab
     SUBDIR += soundtracker
     SUBDIR += sox
+    SUBDIR += speex
     SUBDIR += sphinx
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
