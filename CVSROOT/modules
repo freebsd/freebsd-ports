@@ -2120,6 +2120,7 @@ goblin		ports/misc/goblin
 gofish		ports/net/gofish
 goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
+gok		ports/sysutils/gok
 golddig		ports/games/golddig
 goldstr		ports/misc/goldstr
 golem		ports/x11-wm/golem
