@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Jun 21 18:42:29 2000
++++ Makefile.in	Wed Jun 21 18:42:36 2000
+@@ -70,8 +70,8 @@
+ 	rm -rf ./*.o
+ 	rm -f whowatch
+ install: whowatch
+-	$(INSTALL) -m 755 whowatch $(bindir)/whowatch
+-	$(INSTALL) -m 644 whowatch.1 $(mandir)/man1/whowatch.1
++	$(BSD_INSTALL_PROGRAM) whowatch $(bindir)/whowatch
++	$(BSD_INSTALL_MAN) whowatch.1 $(mandir)/man1/whowatch.1
+ 	
+ distclean:
+ 	make clean
