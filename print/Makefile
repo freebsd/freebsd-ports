@@ -43,6 +43,7 @@
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-lpr
+    SUBDIR += cups-pdf
     SUBDIR += cups-pstoraster
     SUBDIR += detex
     SUBDIR += dvi2tty

@@ -1,0 +1,4 @@
+libexec/cups/backend/cups-pdf
+share/cups/model/PostscriptColor.ppd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

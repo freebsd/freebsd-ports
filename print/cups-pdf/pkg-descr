@@ -1,0 +1,10 @@
+CUPS-PDF is designed to produce PDF files in a heterogeneous network by
+providing a PDF printer on the central fileserver.
+
+After restarting CUPS, you will be able to choose
+"Virtual Printer (PDF Printer)" when setting up a new printer in CUPS.
+
+Once you print to the new device all converted PDF files will be placed in
+the specified directory.
+
+WWW:	http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
