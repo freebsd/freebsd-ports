@@ -6003,6 +6003,7 @@ p5-Set-Window	ports/math/p5-Set-Window
 p5-Shout	ports/audio/p5-Shout
 p5-Sledge	ports/www/p5-Sledge
 p5-Sledge-Plugin-Download	ports/www/p5-Sledge-Plugin-Download
+p5-Sledge-Plugin-Dumper	ports/www/p5-Sledge-Plugin-Dumper
 p5-Socket6	ports/net/p5-Socket6
 p5-Socks	ports/net/p5-Socks
 p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
