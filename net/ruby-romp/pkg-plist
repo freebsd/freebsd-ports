@@ -1,5 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/romp_helper.so
-%%RUBY_SITELIBDIR%%/druby4.rb
 %%RUBY_SITELIBDIR%%/romp.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romp/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romp/server.rb
