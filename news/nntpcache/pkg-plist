@@ -1,0 +1,5 @@
+@cwd /usr/local
+sbin/nntpcached
+man/man8/nntpcached.8
+@unexec rm -rf %D/etc/nntpcache
+@unexec rm -rf %D/newscache
