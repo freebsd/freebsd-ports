@@ -5,7 +5,7 @@ The NAT extention is from
 	<URL:http://www2a.meshnet.or.jp/~junichi/freebsd/lowtech/nat.html>.
 	Example setup line: "set taddr 192.168.0.0/24"
 
-The time schdule extention is from
+The time schedule extention is from
 	<URL:http://www.bremen.or.jp/shigeru/FreeBSD/ppp.html>.
 	Example setup line: "set schedule deny 7:58 23:01"
 
