@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src
 
-MAINTAINER=	pjenvey@turntables.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight RDF database
 
 IGNORE=		"Uses unregistered uid that conflicts with oracle7-client"
