@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A customizable IDE that supports a wide variety of languages
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
@@ -28,7 +31,7 @@ QTCPPFLAGS+=	-I${X11BASE}/include
 BROKEN=		"Does not compile"
 .endif
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
