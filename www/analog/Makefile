@@ -3,13 +3,13 @@
 # Date created:		9 June 1996
 # Whom:			jraynard
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/06/09 23:24:53 asami Exp $
 #
 
-DISTNAME=	analog.1.9.6
-PKGNAME=	analog-1.9.6
+DISTNAME=	analog.1.91.4
+PKGNAME=	analog-1.91.4
 CATEGORIES+=	www
-MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/
+MASTER_SITES=	ftp.statslab.cam.ac.uk/pub/users/sret1/analog/
 
 MAINTAINER=	jraynard@freebsd.org
 
@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/analog
 
 do-install:
 	@mkdir -p ${PREFIX}/share/analog
-	@(cd ${WRKSRC}; cp -r Readme.html domains.tab primes.tab analogo.gif images ${PREFIX}/share/analog; cp analog ${PREFIX}/bin)
+	@(cd ${WRKSRC}; cp -r Readme.html domains.tab primes.tab images ${PREFIX}/share/analog; cp analog ${PREFIX}/bin)
 	@(cd ${PREFIX}/share/analog; chmod +r *)
 
 .include <bsd.port.mk>
