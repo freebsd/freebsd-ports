@@ -1,33 +1,11 @@
-*** src/makefiles/Makefile.fbs.orig	Sun Dec 21 07:04:49 1997
---- src/makefiles/Makefile.fbs	Wed Dec 24 20:26:01 1997
-***************
-*** 4,10 ****
-  #CC       = cc
-  IFLAGS   = -I.. -I../support
-  LFLAGS   = -L../support -s
-! CFLAGS   = -O ${IFLAGS} ${LFLAGS}
-  LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
-  LIBC     = /usr/lib/libc.a
-  LINTFLAGS=	
---- 4,10 ----
-  #CC       = cc
-  IFLAGS   = -I.. -I../support
-  LFLAGS   = -L../support -s
-! CFLAGS   += ${IFLAGS} ${LFLAGS}
-  LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
-  LIBC     = /usr/lib/libc.a
-  LINTFLAGS=	
-***************
-*** 27,33 ****
---- 27,37 ----
-  	${CC} ${CFLAGS} -o $@ ftpshut.c vers.o ${LIBES}
-  
-  ftpd: ${OBJS} ${LIBC}
-+ .if defined(PACKAGE_BUILDING)
-  	${CC} ${CFLAGS} -o $@ ${OBJS} ${LIBES}
-+ .else
-+ 	${CC} -static ${CFLAGS} -o $@ ${OBJS} ${LIBES}
-+ .endif
-  
-  ckconfig:   ckconfig.c
-  	${CC} ${CFLAGS} -o $@ ckconfig.c
+--- src/makefiles/Makefile.fbs.orig	Sat Oct 31 18:58:15 1998
++++ src/makefiles/Makefile.fbs	Wed Feb 10 11:54:57 1999
+@@ -4,7 +4,7 @@
+ #CC       = cc
+ IFLAGS   = -I.. -I../support
+ LFLAGS   = -L../support -s
+-CFLAGS   = -O ${IFLAGS} ${LFLAGS}
++CFLAGS   += ${IFLAGS} ${LFLAGS}
+ XOBJS    = 
+ LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
+ LIBC     = /usr/lib/libc.a
