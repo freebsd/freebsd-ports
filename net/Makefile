@@ -224,6 +224,7 @@
     SUBDIR += libkmsn
     SUBDIR += libnet
     SUBDIR += libnids
+    SUBDIR += libosip
     SUBDIR += librsync
     SUBDIR += libsmi
     SUBDIR += libsocket++
