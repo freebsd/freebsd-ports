@@ -105,6 +105,7 @@
     SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += ocaml-lablgtk
+    SUBDIR += ocaml-lablgtk2
     SUBDIR += open-motif
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf
