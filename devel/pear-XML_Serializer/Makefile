@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.13.1
+PORTVERSION=	0.15.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -18,11 +18,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
-EXAMPLES=	example.xml serializeArrayWithObjects.php serializeEmptyArray.php \
+EXAMPLES=	example.xml serializeAndEncode.php serializeAndReturn.php \
+		serializeArrayWithObjects.php serializeEmptyArray.php \
 		serializeIndexedArray.php serializeObject.php serializeRDF.php \
 		serializeWithAttributes.php serializeWithAttributes2.php \
 		serializeWithDtd.php serializeWithIndentedAttributes.php \
-		serializeWithTagMap.php unserializeAnyXML.php unserializeEnum.php \
+		serializeWithNamespace.php serializeWithTagMap.php unserializeAnyXML.php \
+		unserializeClassNames.php unserializeEncoded.php unserializeEnum.php \
 		unserializeObject.php unserializeRDF.php unserializeWithAttributes.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
