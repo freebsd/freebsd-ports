@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Dec 30 15:19:37 2004
-+++ configure.in	Sun Jan 30 13:16:43 2005
+--- configure.in.orig	Fri Feb  4 01:44:27 2005
++++ configure.in	Sun Feb 27 15:17:24 2005
 @@ -10,7 +10,7 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -68,7 +68,7 @@
  
  
  dnl Check for mysql libraries
-@@ -581,234 +588,11 @@
+@@ -585,234 +592,11 @@
  
  AC_PATH_PROG(PATH_TO_PS,ps)
  
@@ -308,7 +308,7 @@
  
  if test -n "$ac_cv_ps_varlist" ; then
  	AC_DEFINE_UNQUOTED(PS_VARLIST,$ac_cv_ps_varlist,
-@@ -1161,6 +945,8 @@
+@@ -1165,6 +949,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -317,7 +317,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -1183,7 +969,10 @@
+@@ -1187,7 +973,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -328,7 +328,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  
-@@ -1205,7 +994,10 @@
+@@ -1209,7 +998,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -339,11 +339,50 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -1213,6 +1005,7 @@
- 	EXTRAS="$EXTRAS check_fping"
+@@ -1218,6 +1010,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
-+fi
  fi
++fi
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
+ 
+@@ -1280,32 +1073,12 @@
+ dnl end if for PATH_TO_SWAP
+ fi
+ 
+-AC_PATH_PROG(PATH_TO_SWAPINFO,swapinfo)
+-if (test -n "$PATH_TO_SWAPINFO")
+-then
+-AC_MSG_CHECKING([for $PATH_TO_SWAPINFO format])
+-if [$PATH_TO_SWAPINFO -k 2>&1 | egrep -i "^Device" >/dev/null]
+-then
+-	ac_cv_have_swap=yes
+-	ac_cv_swap_command="$PATH_TO_SWAPINFO -k"
+-
+-	if [$PATH_TO_SWAPINFO -k 2>/dev/null | egrep -i "^Device +1K-blocks +Used +Avail" >/dev/null]
+-	then
+-		ac_cv_swap_format=["%*s %f %*d %f"]
+-		ac_cv_swap_conv=1024
+-		AC_MSG_RESULT([using FreeBSD format swapinfo])
+-	fi
+-
+-elif [$PATH_TO_SWAPINFO -dfM 2>/dev/null | egrep -i "^TYPE +AVAIL +USED +FREE" >/dev/null]
+-then
+-	ac_cv_have_swap=yes
+-	ac_cv_swap_command="$PATH_TO_SWAPINFO -dfM",
+-	ac_cv_swap_format=["%*s %f %*d %f"]
+-	ac_cv_swap_conv=1024
+-	AC_MSG_RESULT([using HP-UX format swapinfo])
+-fi
+-dnl end if for PATH_TO_SWAPINFO
+-fi
++PATH_TO_SWAPINFO="/usr/sbin/swapinfo"
++ac_cv_have_swap=yes
++ac_cv_swap_command="$PATH_TO_SWAPINFO -k"
++ac_cv_swap_format=["%*s %f %*d %f"]
++ac_cv_swap_conv=1024
++AC_MSG_RESULT([using FreeBSD format swapinfo])
+ 
+ AC_PATH_PROG(PATH_TO_LSPS,lsps)
+ if (test -n "$PATH_TO_LSPS")
