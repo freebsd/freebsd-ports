@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.47
+PORTVERSION=	1.0.47r7
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xs4all.nl/~apinkus/backups/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
