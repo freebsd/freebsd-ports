@@ -13,13 +13,12 @@ MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomelibs libglade gnomeprefix gnomehack
+USE_GNOMENG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -36,10 +35,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+		 s|$$(top_builddir)/intl/libintl.a| -lintl|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+		 's|-I$$(top_srcdir)/intl||g ; s|intl po|po|g ;'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MANPREFIX}/man/man1
