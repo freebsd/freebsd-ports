@@ -1,5 +1,7 @@
 bin/ayam
 bin/ayamsh
+lib/ayam/ayslx.so
+lib/ayam/loadayslx.tcl
 lib/ayam/csphere.tcl
 lib/ayam/csphere.so
 lib/ayam/metaobj.so
@@ -155,7 +157,9 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/Setup.txt
+%%PORTDOCS%%%%DOCSDIR%%/ayam.pdf
 %%PORTDOCS%%%%DOCSDIR%%/refcard.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-3.html

@@ -7,6 +7,7 @@
 
 PORTNAME=	ayam
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	tiamat@comset.net
 COMMENT=	3D modeling environment for the RenderMan interface
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
+LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
+		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
@@ -26,8 +28,10 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 AYAM_PLUGINS=	csphere mfio
+PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
@@ -36,34 +40,34 @@ do-install:
 # binary and wrapper
 	${INSTALL_PROGRAM} ${WRKSRC}/ayamsh ${PREFIX}/bin
 	@(${ECHO_CMD} "#!${SH}"; \
-	  ${ECHO_CMD} "${PREFIX}/bin/ayamsh ${PREFIX}/lib/ayam/tcl/ayam.tcl \$$@" \
+	  ${ECHO_CMD} "${PREFIX}/bin/ayamsh ${PLUGINS_DIR}/tcl/ayam.tcl \$$@" \
 	) >${PREFIX}/bin/ayam
 	@${CHMOD} ugo+x ${PREFIX}/bin/ayam
 
 # plugins
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${PLUGINS_DIR}
 .for i in ${AYAM_PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/plugins/${i}.tcl \
-		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${i}.so \
-		${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/plugins/${i}.tcl ${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${i}.so ${PLUGINS_DIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/meta/*.tcl ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/meta/metaobj.so ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/ayslx.so ${PLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/loadayslx.tcl ${PLUGINS_DIR}
+
+	${INSTALL_DATA} ${WRKSRC}/contrib/meta/*.tcl ${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/meta/metaobj.so ${PLUGINS_DIR}
 
 # tcl libs
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/tcl
-	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${PREFIX}/lib/${PORTNAME}/tcl
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1
+	@${MKDIR} ${PLUGINS_DIR}/tcl
+	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${PLUGINS_DIR}/tcl
+	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/*.tcl \
-		${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1/images
+		${PLUGINS_DIR}/tcl/BWidget-1.2.1
+	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/images/* \
-		${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1/images
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1/lang
+		${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
+	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/lang/* \
-		${PREFIX}/lib/${PORTNAME}/tcl/BWidget-1.2.1/lang
+		${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
 
 # data
 	@${MKDIR} ${DATADIR}
@@ -73,7 +77,9 @@ do-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/ayam.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.ps ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.tcl ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/*.html ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/html/pics
