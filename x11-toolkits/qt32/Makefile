@@ -27,6 +27,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
+# YES, THIS PORT HAS ANTIALIASING SUPPORT IF YOUR XFREE86 SUPPORTS IT!
+# JUST BECAUSE -xft IS NOT LISTED BELOW DOESN'T MEAN IT'S NOT THERE!
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng -thread -no-opengl -no-g++-exceptions \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
