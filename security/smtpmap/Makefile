@@ -7,9 +7,9 @@
 
 PORTNAME=	smtpmap
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security mail net
-MASTER_SITES=	http://plasmahh.free-bsd.org/
+MASTER_SITES=	http://plasmahh.hopto.org/
 
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
