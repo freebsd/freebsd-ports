@@ -11,7 +11,7 @@ CATEGORIES=	games net
 MASTER_SITES=	http://achurch.org/tetrinet/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	<fredrik@wasadata.com>
+MAINTAINER=	fredrik@wasadata.com
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet ${PREFIX}/bin
