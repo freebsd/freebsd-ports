@@ -3600,6 +3600,7 @@ marc-search	ports/www/marc-search
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 mastergear	ports/emulators/mastergear
+match		ports/astro/match
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
