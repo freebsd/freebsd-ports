@@ -7,6 +7,7 @@
 
 PORTNAME=		fam
 PORTVERSION=		2.6.9
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
 PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
@@ -30,7 +31,6 @@ pre-configure:
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
 
 post-install:
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/fam.sh.sample ${PREFIX}/etc/rc.d/fam.sh.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
