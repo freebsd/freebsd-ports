@@ -7,10 +7,10 @@
 
 PORTNAME=	ebview
 PORTVERSION=	0.3.1
-PKGNAMESUFFIX=	-gtk2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
+pre-build:
 .for file in src/grep.c
 	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
