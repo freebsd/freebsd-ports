@@ -253,6 +253,8 @@
 %%DTCROOT%%/admin/imgcache
 %%DTCROOT%%/client/gfx
 %%DTCROOT%%/client/imgcache
+sbin/dtc-install
+sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared/vars
 @dirrm %%DTCROOT%%/shared/template
 @dirrm %%DTCROOT%%/shared/securepay
