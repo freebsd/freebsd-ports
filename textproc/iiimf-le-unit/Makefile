@@ -20,6 +20,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes

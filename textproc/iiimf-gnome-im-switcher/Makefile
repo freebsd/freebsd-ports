@@ -19,6 +19,7 @@ COMMENT=	IIIMF gnome input method switcher
 USE_X_PREFIX=	yes
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool gconf2 libglade2 libgnomeui \

@@ -17,9 +17,11 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	FreeWnn language engine for IIIMF
 
 LIB_DEPENDS=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
-RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
+RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server \
+		${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/FreeWnn-server
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes

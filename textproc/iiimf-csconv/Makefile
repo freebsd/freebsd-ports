@@ -17,6 +17,7 @@ MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Framework encoding convert library
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool

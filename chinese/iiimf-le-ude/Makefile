@@ -19,6 +19,7 @@ COMMENT=	IIIMF User Defined language Engine for Simplified Chinese conversion
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=      yes
 USE_GNOME=      intltool
