@@ -1,0 +1,31 @@
+This file documents some of the problems you may encounter when
+upgrading your ports.  We try our best to minimize these disruptions,
+but sometimes they are unavoidable.
+
+You should get into the habit of checking this file for changes each
+time you update your ports collection, before attempting any port
+upgrades.
+
+20040226:
+  AFFECTS: i386 users of ruby and portupgrade
+
+  Change the default version of ruby to 1.8 for i386.
+
+  If you are a ruby developer and want to keep ruby 1.6 as default,
+  please add RUBY_DEFAULT_VER=1.6 to /etc/make.conf.  Otherwise, please
+  run the following series of commands to migrate to ruby 1.8:
+
+  1) Reinstall portupgrade manually (and ruby 1.8 will be installed)
+        pkg_delete portupgrade-\*
+        (cd /usr/ports/sysutils/portupgrade; make install clean)
+
+  2) Reinstall everything that depends on ruby 1.6 (to use ruby 1.8)
+        portupgrade -fr lang/ruby16
+
+  3) Reinstall ruby 1.8 (because the previous step kills symlinks)
+        portupgrade -f lang/ruby18
+
+  4) Deinstall ruby 1.6 stuff (if you are paranoia)
+        pkg_deinstall -ri lang/ruby16
+
+$FreeBSD$
