@@ -1,6 +1,7 @@
 %%RUBY_SITELIBDIR%%/amstd/bench.rb
 %%RUBY_SITELIBDIR%%/amstd/bug.rb
 %%RUBY_SITELIBDIR%%/amstd/collfrom.rb
+%%RUBY_SITELIBDIR%%/amstd/constdef.rb
 %%RUBY_SITELIBDIR%%/amstd/dispatch.rb
 %%RUBY_SITELIBDIR%%/amstd/errutil.rb
 %%RUBY_SITELIBDIR%%/amstd/extmod.rb
@@ -22,5 +23,6 @@
 @dirrm %%RUBY_SITELIBDIR%%/amstd
 %%RUBY_DOCDIR%%/amstd/README.en
 %%RUBY_DOCDIR%%/amstd/ja/README.ja
+%%RUBY_DOCDIR%%/amstd/ja/amstd-ja.rd
 @dirrm %%RUBY_DOCDIR%%/amstd/ja
 @dirrm %%RUBY_DOCDIR%%/amstd
