@@ -2,6 +2,8 @@
 #
 
     SUBDIR += babel
+    SUBDIR += chemeq
+    SUBDIR += clustalw
     SUBDIR += deft
     SUBDIR += gperiodic
     SUBDIR += hmmer
@@ -9,6 +11,8 @@
     SUBDIR += molden
     SUBDIR += mopac
     SUBDIR += ortep3
+    SUBDIR += paml
+    SUBDIR += phylip
     SUBDIR += platon
     SUBDIR += povchem
     SUBDIR += psi88
