@@ -1,0 +1,28 @@
+--- miltermodule.c.orig	Tue Jun 24 21:57:04 2003
++++ miltermodule.c	Wed Sep 24 15:30:04 2003
+@@ -110,6 +110,7 @@
+ 
+ #include <pthread.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <Python.h>
+ #include <libmilter/mfapi.h>
+ 
+@@ -503,7 +504,7 @@
+ static PyObject *
+ makeip6addr(struct sockaddr_in6 *addr) {
+ 	char buf[100]; /* must be at least INET6_ADDRSTRLEN + 1 */
+-	char * s;
++	const char * s;
+ 	s = inet_ntop(AF_INET6, &addr->sin6_addr, buf, sizeof(buf));
+ 	if( s )
+ 	  return PyString_FromString(buf);
+@@ -987,7 +988,7 @@
+ static char milter_quarantine__doc__[] =
+ "quarantine(string) -> None\n\
+ Place the message in quarantine.  A string with a description of the reason\n\
+-is the only argument.
++is the only argument.\
+ ";
+ 
+ static PyObject *
