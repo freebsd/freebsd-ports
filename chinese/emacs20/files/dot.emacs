@@ -5,14 +5,14 @@
 (set-buffer-file-coding-system 'chinese-big5)
 (set-selection-coding-system 'chinese-big5)
 (modify-coding-system-alist 'process "*" 'chinese-big5)
-;; Do not conflicts with xcin hook
+;; Do not conflict with xcin hook
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 ;; ---------------------------------------------------------------------------
-;; to get emacs a bit more consistent, replace all yes or no questions with
+;; To get emacs a bit more consistent, replace all yes or no questions with
 ;; simple y or n. 
 ;; ---------------------------------------------------------------------------
 ;;(fset 'yes-or-no-p 'y-or-n-p)
-;; --Use Windoze style selection
+;; -- Use Windows(tm) style selection
 ;;(custom-set-variables
 ;; '(pc-selection-mode t nil (pc-select)))
 ;; To make sure you get as much highlighting as possible
