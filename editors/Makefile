@@ -30,6 +30,7 @@
     SUBDIR += color-mate
     SUBDIR += conglomerate
     SUBDIR += cooledit
+    SUBDIR += cream
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
     SUBDIR += dedit
