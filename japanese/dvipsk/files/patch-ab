@@ -1,5 +1,5 @@
---- dvipsk/config.ps.orig	Sun Jun 28 11:43:25 1998
-+++ dvipsk/config.ps	Sun Jun 28 11:46:02 1998
+--- dvipsk/config.ps.orig	Tue Jan 22 03:32:55 2002
++++ dvipsk/config.ps	Tue Jan 22 04:03:44 2002
 @@ -4,9 +4,9 @@
  *
  m 470000
@@ -11,4 +11,16 @@
 +f
  *
  *  Additional .map files
+ *
+@@ -14,6 +14,11 @@
+ * p +lafonts.map
+ * p +cyrfonts.map
+ * p +eufonts.map
++*
++* These two lines are added to obtain good-looking PDF files. 
++* (Refer [ports-jp 12248])
++p +psfonts.cmz
++p +psfonts.amz
+ *
+ *   Default resolution.
  *
