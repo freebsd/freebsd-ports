@@ -21,7 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable
 		pstree:${PORTSDIR}/sysutils/pstree
 .endif
 .if defined(WITH_XINE)
-RUN_DEPENDS+=	xine:${PORTSDIR}/graphics/xine \
+RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine \
 		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/graphics/xine_d4d_plugin
 .endif
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \

@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS+=	xine.3:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
 .endif
 
