@@ -1,0 +1,44 @@
+*** src/common/vars.c.orig	Thu Jul 22 09:47:00 1999
+--- src/common/vars.c	Thu Jul 22 10:25:58 1999
+***************
+*** 175,185 ****
+     /* default filter */
+  { "filter", STRING_K, &Filter_DYN,0,0},
+     /* filter LD_LIBRARY_PATH value */
+! { "filter_ld_path", STRING_K, &Filter_ld_path_DYN,0,0,"=/lib:/usr/lib:/usr/5lib:/usr/ucblib"},
+     /* filter options */
+  { "filter_options", STRING_K, &Filter_options_DYN,0,0,"=$C $A $F $H $J $K $L $P $Q $R $Z $a $c $d $e $f $h $i $j $k $l $n $p $r $s $w $x $y $-a"},
+     /* filter PATH environment variable */
+! { "filter_path", STRING_K, &Filter_path_DYN,0,0,"=/bin:/usr/bin:/usr/local/bin:/usr/ucb:/usr/sbin:/usr/etc:/etc"},
+     /* interval at which to check OF filter for error status */
+  { "filter_poll_interval", INTEGER_K, &Filter_poll_interval_DYN,0,0,"=30"},
+     /*  print a form feed when device is opened */
+--- 175,185 ----
+     /* default filter */
+  { "filter", STRING_K, &Filter_DYN,0,0},
+     /* filter LD_LIBRARY_PATH value */
+! { "filter_ld_path", STRING_K, &Filter_ld_path_DYN,0,0,"=/lib:/usr/lib:/usr/local/lib"},
+     /* filter options */
+  { "filter_options", STRING_K, &Filter_options_DYN,0,0,"=$C $A $F $H $J $K $L $P $Q $R $Z $a $c $d $e $f $h $i $j $k $l $n $p $r $s $w $x $y $-a"},
+     /* filter PATH environment variable */
+! { "filter_path", STRING_K, &Filter_path_DYN,0,0,"=/bin:/usr/bin:/usr/libexec:/usr/local/libexec:/usr/sbin:/var/spool/bin"},
+     /* interval at which to check OF filter for error status */
+  { "filter_poll_interval", INTEGER_K, &Filter_poll_interval_DYN,0,0,"=30"},
+     /*  print a form feed when device is opened */
+***************
+*** 209,215 ****
+     /*  Running IPV6 */
+  { "ipv6",  FLAG_K,  &IPV6Protocol_DYN,0,0},
+  	/* keytab file location for kerberos, used by server */
+! { "kerberos_keytab", STRING_K, &Kerberos_keytab_DYN,0,0,"=/etc/lpd.keytab"},
+  	/* key lifetime for kerberos, used by server */
+  { "kerberos_life", STRING_K, &Kerberos_life_DYN,0,0},
+  	/* key renewal time for kerberos, used by server */
+--- 209,215 ----
+     /*  Running IPV6 */
+  { "ipv6",  FLAG_K,  &IPV6Protocol_DYN,0,0},
+  	/* keytab file location for kerberos, used by server */
+! { "kerberos_keytab", STRING_K, &Kerberos_keytab_DYN,0,0,"=/usr/local/etc/lpd.keytab:/etc/lpd.keytab"},
+  	/* key lifetime for kerberos, used by server */
+  { "kerberos_life", STRING_K, &Kerberos_life_DYN,0,0},
+  	/* key renewal time for kerberos, used by server */
