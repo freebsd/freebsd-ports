@@ -1,0 +1,9 @@
+Several utilies for managing jails.
+
+killjail:	shutdown or restart a jail (when used with jailer)
+jails:		list the jails running on a system
+
+WWW: http://memberwebs.com/nielsen/freebsd/jails/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
