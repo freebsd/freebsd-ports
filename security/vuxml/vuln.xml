@@ -391,8 +391,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>ruby</name>
 	<name>ruby_r</name>
-	<name>ruby_static</name>
-	<range><lt>1.8.2.p3</lt></range>
+	<range><gt>1.7.*</gt><lt>1.8.2.p2_2</lt></range>
+	<range><lt>1.6.8.2004.07.28_1</lt></range>
       </package>
       <package>
 	<name>ruby-1.7.0</name>
@@ -414,6 +414,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-06</discovery>
       <entry>2004-11-13</entry>
+      <modified>2004-11-25</modified>
     </dates>
   </vuln>
 
