@@ -458,6 +458,7 @@
     SUBDIR += tclreadline
     SUBDIR += tcltls
     SUBDIR += templ
+    SUBDIR += terminality
     SUBDIR += tide
     SUBDIR += titano
     SUBDIR += tkcon
