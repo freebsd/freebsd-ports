@@ -1,16 +1,15 @@
 # New ports collection makefile for:	calmaris
-# Version required:	2.16
+# Version required:	2.22
 # Date created:         25 December 1998
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/21 23:28:03 billf Exp $
+# $Id: Makefile,v 1.2 1999/01/26 22:39:20 billf Exp $
 #
 
-DISTNAME=	calamaris-2.16
+DISTNAME=	calamaris-2.22
 CATEGORIES=	www textproc
 MASTER_SITES=	http://calamaris.cord.de/ \
-		ftp://ftp.bse.bg/pub/Unix/proxy/ \
-		ftp://ftp.sai.msu.su/pub/unix/WWW/cache/squid/
+		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dima@Chg.RU
 
@@ -21,7 +20,7 @@ post-patch:
 
 	@ ${MV} ${WRKSRC}/calamaris ${WRKSRC}/calamaris.pre_sed
 	@ ${SED} -e 's#/usr/bin/perl#${PERL5}#' ${WRKSRC}/calamaris.pre_sed \
-	>> ${WRKSRC}/calamaris
+	> ${WRKSRC}/calamaris
 
 do-install:
 
