@@ -145,38 +145,47 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
-# USE_AUTOMAKE (PORT MAY SET THIS VALUE)	
-#				- Says that the port uses automake.  
-#				- Implies USE_AUTOCONF and USE_AUTOMAKE_VER?=14.
-#				- Causes automake execution prior to configure step.
+##
 # USE_AUTOMAKE_VER (PORT MAY SET THIS VALUE)
-#				- Says that the port uses automake; legal values
+#				- Implies USE_AUTOMAKE. 
+#				- Implies WANT_AUTOMAKE_VER=(value)
+# USE_AUTOMAKE (PORT MAY SET THIS VALUE)	
+#				- Implies USE_AUTOCONF.
+#				- Implies WANT_AUTOMAKE_VER?=14.
+#				- Causes automake execution prior to configure step.
+# WANT_AUTOMAKE_VER (PORT MAY SET THIS VALUE)
+#				- Implies GNU_CONFIGURE=yes.
+#				- Says that the port wants automake; legal values
 #				  are: 14, 15, 17.
 #				- Each specify a version of automake to use
 #				  and appropriatly set both AUTOMAKE{,_DIR}
 #				  and ACLOCAL{,_DIR} variables.
-#				- Implies USE_AUTOMAKE. 
 #				- If set with an unknown value, the port is marked BROKEN.
+#				- Implies WANT_AUTOCONF_VER=(appropriate version)
 # AUTOMAKE_ARGS (PORT MAY ALTER THIS VALUE)
 #				- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} 
 #				  is set. If an application sets this value, it should
 #				  use the += form of assignment to append, not overwrite.
-# USE_AUTOCONF (PORT MAY SET THIS VALUE)
-#				- Says that the port uses autoconf.
-#				- Implies GNU_CONFIGURE=yes and USE_AUTOCONF_VER?=213.
-#				- Causes autoconf execution prior to configure step.
+##
 # USE_AUTOCONF_VER (PORT MAY SET THIS VALUE)
-#				- Says that the port uses autoconf; legal values
+#				- Implies USE_AUTOCONF.
+#				- Implies WANT_AUTOCONF_VER=(value)
+# USE_AUTOCONF (PORT MAY SET THIS VALUE)
+#				- Implies WANT_AUTOCONF_VER?=213.
+#				- Causes autoconf execution prior to configure step.
+# WANT_AUTOCONF_VER (PORT MAY SET THIS VALUE)
+#				- Implies GNU_CONFIGURE=yes.
+#				- Says that the port wants autoconf; legal values
 #				  are: 213, 253, 254.
 #				- Each specify a version of autoconf to use
 #				  and appropriatly set AUTOCONF{,_DIR} and other
 #				  autoconf-related program paths.
-#				- Implies USE_AUTOCONF.
 #				- If set with an unknown value, the port is marked BROKEN.
 # AUTOCONF_ARGS (PORT MAY ALTER THIS VALUE)
 #				- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF_VER} 
 #				  is set. If an application sets this value, it should
 #				  use the += form of assignment to append, not overwrite.
+##
 # AUTOMAKE (READ-ONLY)
 #				- Set to path of GNU automake (default:
 #				  according to USE_AUTOMAKE_VER value)
@@ -192,6 +201,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # AUTOMAKE_DIR (READ-ONLY)
 #				- Set to path of GNU automake shared directory (default:
 #				  according to USE_AUTOMAKE_VER value)
+##
 # AUTOCONF (READ-ONLY)
 #				- Set to path of GNU autoconf (default:
 #				  according to USE_AUTOCONF_VER value)
@@ -213,6 +223,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # AUTOCONF_DIR (READ-ONLY)
 #				- Set to path of GNU autoconf shared directory (default:
 #				  according to USE_AUTOCONF_VER value)
+##
 # USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
@@ -952,15 +963,22 @@ cur_acver=	253
 dev_acver=	254
 
 ########## automake setup
-.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
+.if defined(USE_AUTOMAKE_VER)
 USE_AUTOMAKE?=		yes
-USE_AUTOMAKE_VER?=	${old_amver}
-use_amver=			${USE_AUTOMAKE_VER:L}
+WANT_AUTOMAKE_VER?=	${USE_AUTOMAKE_VER}
+.endif # defined(USE_AUTOMAKE_VER)
+.if defined(USE_AUTOMAKE)
+USE_AUTOCONF?=		yes
+WANT_AUTOMAKE_VER?=	${old_amver}
+.endif # defined(USE_AUTOMAKE)
+.if defined(WANT_AUTOMAKE_VER)
+GNU_CONFIGURE?=		yes
+use_amver=			${WANT_AUTOMAKE_VER:L}
 .if ${use_amver} == ${cur_amver}
 ACLOCAL_DIR=		${LOCALBASE}/share/aclocal
 AUTOMAKE_DIR=		${LOCALBASE}/share/automake
 BUILD_DEPENDS+=		automake:${PORTSDIR}/devel/automake
-USE_AUTOCONF_VER=	${cur_acver}
+WANT_AUTOCONF_VER?=	${cur_acver}
 .elif ${use_amver} == ${old_amver} || ${use_amver} == ${dev_amver}
 ACLOCAL_DIR=	${LOCALBASE}/share/aclocal${use_amver}
 AUTOMAKE_DIR=	${LOCALBASE}/share/automake${use_amver}
@@ -968,24 +986,29 @@ BUILD_DEPENDS+=	automake${use_amver}:${PORTSDIR}/devel/automake${use_amver}
 ampath=			${LOCALBASE}/libexec/automake${use_amver}:
 .if ${use_amver} == ${old_amver}
 AUTOMAKE_ARGS+=	-i
-USE_AUTOCONF_VER=${old_acver}
+WANT_AUTOCONF_VER?=${old_acver}
 .else
-USE_AUTOCONF_VER=${dev_acver}
+WANT_AUTOCONF_VER?=${dev_acver}
 .endif # ${use_amver} == ${old_amver}
 .else # bad automake version
 BROKEN="unknown AUTOMAKE version: ${USE_AUTOMAKE_VER}"
 .endif # ${use_amver} == ${cur_amver}
-.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
+.endif # defined(WANT_AUTOMAKE_VER)
 
 ########## autoconf setup
-.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
+.if defined(USE_AUTOCONF_VER)
 USE_AUTOCONF?=		yes
-USE_AUTOCONF_VER?=	${old_acver}
-use_acver=			${USE_AUTOCONF_VER:L}
+WANT_AUTOCONF_VER?=	${USE_AUTOCONF_VER}
+.endif # defined(USE_AUTOCONF_VER)
+.if defined(USE_AUTOCONF)
+WANT_AUTOCONF_VER?=	${old_acver}
+.endif # defined(USE_AUTOCONF)
+.if defined(WANT_AUTOCONF_VER)
+GNU_CONFIGURE?=		yes
+use_acver=			${WANT_AUTOCONF_VER:L}
 .if ${use_acver} == ${cur_acver}
 AUTOCONF_DIR=		${LOCALBASE}/share/autoconf
 BUILD_DEPENDS+=		autoconf:${PORTSDIR}/devel/autoconf
-USE_AUTOCONF_VER=	${cur_acver}
 .elif ${use_acver} == ${old_acver} || ${use_acver} == ${dev_acver}
 AUTOCONF_DIR=	${LOCALBASE}/share/autoconf${use_acver}
 BUILD_DEPENDS+=	autoconf${use_acver}:${PORTSDIR}/devel/autoconf${use_acver}
@@ -993,12 +1016,7 @@ acpath=			${LOCALBASE}/libexec/autoconf${use_acver}
 .else # bad autoconf version
 BROKEN="unknown AUTOCONF version: ${USE_AUTOCONF_VER}"
 .endif # ${use_acver} == ${cur_acver}
-.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-
-########## auto* ==> GNU 'configure'
-.if defined(USE_AUTOMAKE_VER) || defined(USE_AUTOCONF_VER)
-GNU_CONFIGURE=	yes
-.endif # defined(USE_AUTOMAKE_VER) || defined(USE_AUTOCONF_VER)
+.endif # defined(WANT_AUTOCONF_VER)
 
 ########## set up paths to tools
 .if defined(ampath)
@@ -1058,6 +1076,9 @@ AUTOIFNAMES?=${FALSE}
 AUTORECONF?=${FALSE}
 AUTOSCAN?=	${FALSE}
 AUTOUPDATE?=${FALSE}
+ACLOCAL_DIR?=${NONEXISTENT}
+AUTOMAKE_DIR?=${NONEXISTENT}
+AUTOCONF_DIR?=${NONEXISTENT}
 
 # END AUTOMAKE/AUTOCONF
 ######################################################################
@@ -1244,17 +1265,6 @@ NONEXISTENT?=	/nonexistent
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
-ACLOCAL?=		aclocal14
-AUTOMAKE?=		automake14
-ACLOCAL_DIR?=		${LOCALBASE}/share/automake14/aclocal
-AUTOMAKE_DIR?=		${LOCALBASE}/share/automake14/automake
-AUTOCONF?=		autoconf213
-AUTOHEADER?=		autoheader213
-AUTORECONF?=		autoreconf213
-AUTOSCAN?=		autoscan213
-AUTOUPDATE?=		autoupdate213
-AUTOIFNAMES?=		ifnames213
-AUTOCONF_DIR?=		${LOCALBASE}/share/autoconf213/autoconf
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 MKHTMLINDEX?=		mkhtmlindex
