@@ -259,6 +259,7 @@
     SUBDIR += videogen
     SUBDIR += vobcopy
     SUBDIR += wait_on
+    SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += whatpix
     SUBDIR += whowatch
