@@ -1,0 +1,11 @@
+--- nmap-services.orig	Thu Feb 17 17:10:03 2000
++++ nmap-services	Thu Feb 17 17:11:16 2000
+@@ -1719,7 +1719,7 @@
+ dls-monitor       2048/udp   # 
+ nfs               2049/tcp   # networked file system
+ nfs               2049/udp   # networked file system
+-distrib-netassholes 2064/tcp # A group of lamers working on a silly closed-source client for solving the RSA cryptographic challenge.  This is the keyblock proxy port.
++distributed-net   2064/tcp   # distributed.net server port
+ dlsrpn            2065/tcp   # Data Link Switch Read Port Number
+ dlsrpn            2065/udp   # Data Link Switch Read Port Number
+ dlswpn            2067/tcp   # Data Link Switch Write Port Number
