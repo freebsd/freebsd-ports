@@ -20,6 +20,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
 # RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
 # USE_LIBRUBY		- Says that the port uses libruby.
+# RUBY_WITH_PTHREAD	- Says that the port needs to be compiled with pthread.
 # USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb (default: extconf.rb).
 # RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules are included.
@@ -215,11 +216,19 @@ ruby-extconf-configure:
 .if defined(RUBY_EXTCONF_SUBDIRS)
 .for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
+.if defined(RUBY_WITH_PTHREAD)
+	cd ${WRKSRC}/${d}; \
+	${RUBY} ${RUBY_FLAGS} -i -pe 'if ~ /\brequire\s+[\047"]mkmf[\047"]/ then $$_ += "$$libs.sub!(/-lc\\b/, \"\"); $$libs += \" -pthread \"\n"; end' ${RUBY_EXTCONF}
+.endif
 	@cd ${WRKSRC}/${d}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endfor
 .else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
+.if defined(RUBY_WITH_PTHREAD)
+	cd ${WRKSRC}; \
+	${RUBY} ${RUBY_FLAGS} -i -pe 'if ~ /\brequire\s+[\047"]mkmf[\047"]/ then $$_ += "$$libs.sub!(/-lc\\b/, \"\"); $$libs += \" -pthread \"\n"; end' ${RUBY_EXTCONF}
+.endif
 	@cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endif
