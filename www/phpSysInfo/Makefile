@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpsysinfo
 
-MAINTAINER=	alane@freebsd.org
+MAINTAINER=	so14k@so14k.com
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
