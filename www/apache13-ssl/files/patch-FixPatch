@@ -1,0 +1,18 @@
+--- FixPatch.orig	Sun May 23 13:34:08 1999
++++ FixPatch	Mon May 31 09:03:49 1999
+@@ -112,13 +112,6 @@
+ 	echo "Your version of patch is out-of-date. You need patch 2.1 or 2.5."
+ fi
+ 
+-echo -n "Do you want me to apply the fixed-up Apache-SSL patch for you? [n] "
+-read ans
+-echo $ans | grep -i "^[ \t]*y" >/dev/null
+-if [ $? = 0 ]; then
+-    patch -p1 <SSLpatch.fixed-up
+-else
+-    echo "OK, I won't apply the fixed-up patch.  I've left it in SSLpatch.fixed-up";
+-fi
++patch -p1 <SSLpatch.fixed-up
+ 
+ exit
+

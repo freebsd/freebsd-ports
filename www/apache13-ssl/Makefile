@@ -9,6 +9,7 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -59,7 +60,8 @@ SUEXEC_CONF=\
 	--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
 	--suexec-logfile=${APACHE_SUEXEC_LOG} \
 	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
-	--suexec-safepath=${DEFAULT_PATH}
+	--suexec-safepath=${DEFAULT_PATH} \
+	--target=httpsd
 
 .if defined(APACHE_SUEXEC_UMASK)
 SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
