@@ -981,6 +981,14 @@ EOF
 						"$j is deprecated.");
 				}
 
+				# check for PREFIX
+				if ($m{'dep'} =~ /\${PREFIX}/) {
+					&perror("FATAL: \${PREFIX} must not be ".
+						"contained in *_DEPENDS. ".
+						"use \${LOCALBASE} or ".
+						"\${X11BASE} instead.");
+				}
+
 				# check port dir existence
 				$k = $m{'dir'};
 				$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
