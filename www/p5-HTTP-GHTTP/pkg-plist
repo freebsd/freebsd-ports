@@ -1,3 +1,4 @@
+bin/g-request
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/GHTTP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTP/GHTTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/GHTTP/GHTTP.bs
