@@ -226,6 +226,7 @@
     SUBDIR += opensched
     SUBDIR += opensp
     SUBDIR += p5-Apache-ParseLog
+    SUBDIR += p5-Apache-XBEL
     SUBDIR += p5-CSS-SAC
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Data-FormValidator
