@@ -4,7 +4,5 @@ PGM bitmap (with a variable resolution and anti-aliasing level).
 If the -p option is specified, the resulting bitmap is piped through
 pnmtopng to create a PNG image.
 
-WWW: http://www.whizkidtech.net/peps/
-
 - Pete
 petef@databits.net
