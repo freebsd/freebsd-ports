@@ -1,0 +1,12 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+for i in ${CONFIGURE_TARGETS}
+do
+	if [ -f ${WRKDIR}/${i}.in ]; then
+	cat ${WRKDIR}/${i}.in | /usr/bin/sed \
+		-e "s;@@PREFIX@@;${PREFIX};g" \
+	> ${WRKDIR}/${i}
+	fi
+done
