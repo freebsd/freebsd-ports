@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arj
-PORTVERSION=	3.10.18
+PORTVERSION=	3.10.19
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kot@premierbank.dp.ua
 COMMENT=	Open-source ARJ
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
@@ -38,7 +38,7 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} debug.txt ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${DOCSDIR}
 .endif
