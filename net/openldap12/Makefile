@@ -29,6 +29,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lodea@vet.com.au
 COMMENT=	Open source LDAP client and server software
 
+BROKEN=		ancient, unsupported, potential security issues
+
 USE_LIBTOOL=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db \
