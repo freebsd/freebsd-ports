@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.14 1995/04/16 13:49:07 ache Exp $
+# $Id: Makefile,v 1.15 1995/04/17 07:50:37 asami Exp $
 #
 
 DISTNAME=       procmail-3.11pre1
@@ -15,10 +15,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes
 
-install: build
-.if !defined(BATCH)
-	@echo "===>  Installing for ${DISTNAME}"
+do-install:
 	@cd ${WRKSRC}; ${MAKE} install-suid install.man
-.endif
 
 .include <bsd.port.mk>
