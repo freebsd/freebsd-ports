@@ -1,6 +1,3 @@
-@cd /usr/local
-@owner bin
-@mode 755
-bin/g3view
-@mode 644
-man/man1/g3view.1
+bin/viewfax
+lib/viewfax.tif
+man/man1/viewfax.1.gz
