@@ -100,6 +100,7 @@ share/locale/sl/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
 share/locale/uk/LC_MESSAGES/sawfish.mo
+share/locale/wa/LC_MESSAGES/sawfish.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/sawfish.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sawfish.mo
 share/sawfish/%%VERSION%%/lisp/anim-outline.jl
@@ -375,6 +376,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/gtkrc.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/gtkrc.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap-diff.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap-diff.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/nokogiri.jl
