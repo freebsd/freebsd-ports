@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.shoup.net/ntl/
 
 MAINTAINER=	matthiasb@acm.org
 
-LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
