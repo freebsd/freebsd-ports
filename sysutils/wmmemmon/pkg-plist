@@ -1,0 +1,3 @@
+bin/wmmemmon
+%%PORTDOCS%%share/doc/wmmemmon/README
+%%PORTDOCS%%@dirrm share/doc/wmmemmon
