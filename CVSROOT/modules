@@ -3345,6 +3345,7 @@ jed		ports/editors/jed
 jedit		ports/editors/jedit
 jesred		ports/www/jesred
 jetpack		ports/games/jetpack
+jetspeed	ports/www/jetspeed
 jetty		ports/www/jetty
 jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
