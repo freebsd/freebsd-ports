@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.lemburg.com/files/python/ \
+MASTER_SITES=	http://www.egenix.com/files/python/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,9 @@ COMMENT=	The eGenix mx-Extension Series for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+.if defined(WITH_ZOPE)
+USE_ZOPE=	yes
+.endif
 
 DOCDIR=		${PREFIX}/share/doc/py-mx
 MXHDRDIR=	${PYTHONPREFIX_SITELIBDIR}/mx/stdlib
