@@ -137,7 +137,8 @@ cat >> $F <<END
                                 neomagic i740 tdfx \
                                 cirrus tseng trident chips apm \
                                 GlideDriver fbdev \
-                                ati r128 vga XF86ExtraCardDrivers
+                                ati r128 AgpGartDrivers cyrix \
+                                vga XF86OSCardDrivers XF86ExtraCardDrivers
 END
 
 cat <<END
@@ -308,12 +309,13 @@ if [ $cpwh != NO ]; then
 fi
 
 echo
-yesno "Do you want to compile with PAM support?"
-if [ $answ = YES ]; then
-  echo "#define	HasPam			YES"	>> $F
-else
-  echo "#define	HasPam			NO"	>> $F
-fi
+# no PAM support in XFree86-4 !
+#yesno "Do you want to compile with PAM support?"
+#if [ $answ = YES ]; then
+#  echo "#define	HasPam			YES"	>> $F
+#else
+#  echo "#define	HasPam			NO"	>> $F
+#fi
 
 echo
 echo
