@@ -25,8 +25,8 @@ SEMI, Library of MIME feature for GNU Emacs for emacs.
 
 To use flim, put the following setup into your ~/.emacs:
 
-	(require 'apel-setup)
-	(require 'flim-setup)
+	(require 'apel-setupel)
+	(require 'flim-setupel)
 	(require 'semi-setupel)
 
 --- Porting by shige <shige@FreeBSD.ORG>
