@@ -7,7 +7,7 @@
 
 PORTNAME=	distel
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
 
 BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS+=	${LOCALBASE}/lib/erlang/lib/syntax_tools/ebin/erl_syntax.beam:${PORTSDIR}/devel/syntax_tools
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
