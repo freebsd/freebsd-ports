@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stlport.com/archive/
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
