@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-btdownload
-PORTVERSION=	0.0.17
-PORTREVISION=	2
+PORTVERSION=	0.0.20
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,29 +17,27 @@ COMMENT=	A simple Gnome interface designed as a mime-sink for BitTorrent files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BitTorrent/__init__.py:${PORTSDIR}/net/py-bittorrent-core
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	desktopfileutils gnomehack gnomeprefix pygnome2
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gnome-btdownload.1
-DOCS=		AUTHORS COPYING ChangeLog README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/src/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${PREFIX}|g ; \
+		 s|gnome\.vfs|gnomevfs|g' ${WRKSRC}/src/${PORTNAME}
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' \
 		${WRKSRC}/share/desktop/gnome-btdownload.desktop
 
 post-install:
 	@-update-desktop-database
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for file in AUTHORS ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,6 +1,5 @@
 bin/gnome-btdownload
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/gnome/application-registry/gnome-btdownload.applications
