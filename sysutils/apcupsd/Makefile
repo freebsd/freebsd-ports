@@ -8,7 +8,8 @@
 PORTNAME=	apcupsd
 PORTVERSION=	3.8.6
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.apcupsd.com/pub/apcupsd/stable/tar/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A daemon for controlling APC UPS
