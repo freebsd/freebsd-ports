@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-modules
-PORTVERSION=	2002.1001
+PORTVERSION=	2003.0211
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -17,7 +17,6 @@ COMMENT=	Set of modules for time manipulation
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Time::CTime.3 Time::DaysInMonth.3 Time::JulianDay.3 \
 		Time::ParseDate.3 Time::Timezone.3
 
