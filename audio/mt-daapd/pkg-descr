@@ -1,0 +1,6 @@
+daapd scans a directory for music files and makes them available via
+the Apple proprietary protocol DAAP. DAAP clients can browse the
+directory and retrieve individual files, either by streaming or by
+downloading them. 
+
+WWW: http://mt-daapd.sourceforge.net/
