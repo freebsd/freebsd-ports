@@ -104,7 +104,7 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
 	@sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
-	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
+		cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
 
 # All non-library files.
 
@@ -116,13 +116,13 @@ post-install:
 
 # Stock OTP libraries.
 
-	for LIBRARY in ${OTP_LIBS}; do \
+	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
 	done | sort >> ${WRKDIR}/PLIST.lib-erlang
 
 # Stock OTP library directories.
 
-	for LIBRARY in ${OTP_LIBS}; do \
+	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 		    	| ${SED} -e 's/^/@dirrm /g'; \
 	done | sort -r >> ${WRKDIR}/PLIST.lib-erlang
