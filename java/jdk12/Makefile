@@ -10,8 +10,9 @@ PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
-DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
-		bsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
+SRCFILE=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX}
+PATCHSETFILE=	bsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
+DISTFILES=	${SRCFILE} ${PATCHSETFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
 
@@ -74,11 +75,31 @@ PLIST_SUB+=	DEBUG:=""
 
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DISTFILES}) from http://www.sun.com/software/java2/download.html and http://www.eyesbeyond.com/freebsddom/java/jdk.html, place it in ${DISTDIR} and then run make again
+# Check for JDK sources
+.if !exists(${DISTDIR}/${SRCFILE})
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+Because of licensing restrictions, you must fetch the source distribution\n\
+manually.  Please access http://www.sun.com/software/java2/download.html\n\
+with a web browser and follow the second \"Download\" link for the\n\
+\"Java(TM) SDK ${JDK_VERSION}\".  You will be required to log in and register,\n\
+but you can create an account on this page.  After registration and\n\
+accepting the Sun Community Source License, select \"JDK-${JDK_VERSION}\" and\n\
+download the file \"${SRCFILE}\".  Please place this file in\n\
+/usr/ports/distfiles.\n
 .endif
-.endfor
+
+# Check for patchset
+.if !exists(${DISTDIR}/${PATCHSETFILE})
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+The source distribution exists on your system, but due to\n\
+licensing restrictions you still need to download the\n\
+patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n\
+Please place the patchset in /usr/ports/distfiles.\n
+.endif
+
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}
