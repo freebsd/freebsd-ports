@@ -17,6 +17,9 @@ COMMENT=		A PHP script for managing your accounts
 RUN_DEPENDS=		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=		mysqlclient:${PORTSDIR}/databases/mysql323-client
 
+BROKEN=			"Inconsistent dependencies (mysql 3.x and 4.x)"
+DEPRECATED=		"This port will be removed on April 15 if still broken."
+
 PREFIX=			${LOCALBASE}
 WEBOWN?=		www
 WEBGRP?=		www

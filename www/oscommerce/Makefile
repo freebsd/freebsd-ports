@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/ms/}
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	An full-featured open source e-commerce system
 
+BROKEN=		"Inconsistent dependencies (on mysql-client 3.x and 4.x)"
+DEPRECATED=	"This port will be removed on April 15 if it is still broken."
+
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	323
 NO_BUILD=	YES

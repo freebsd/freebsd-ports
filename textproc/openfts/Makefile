@@ -19,6 +19,9 @@ COMMENT=	Open Source Full Text Search engine
 EXTRACT_DEPENDS=/nonexistent:${PORTSDIR}/databases/postgresql7:configure
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
+BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
+DEPRECATED=	"This port will be removed on April 15 if still broken."
+
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
