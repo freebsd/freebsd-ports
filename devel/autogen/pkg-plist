@@ -20,6 +20,8 @@ share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/agman1.tpl
 share/autogen/fsm.tpl
+share/autogen/fsm-example.tpl
+share/autogen/fsm-state.tpl
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
