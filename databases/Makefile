@@ -222,6 +222,7 @@
     SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
+    SUBDIR += useracc
     SUBDIR += usogres
     SUBDIR += wfb2sql
     SUBDIR += xmbase-grok
