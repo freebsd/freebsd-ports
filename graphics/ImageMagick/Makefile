@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.7.4
-PORTREVISION=	2
+PORTVERSION=	5.4.8.3
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
@@ -26,21 +26,21 @@ MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://giswitch.sggw.waw.pl/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
-		jasper.4:${PORTSDIR}/graphics/jasper \
+LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
+		fpx.1:${PORTSDIR}/graphics/libfpx \
+		wmf.2:${PORTSDIR}/graphics/libwmf \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		wmf.2:${PORTSDIR}/graphics/libwmf \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
@@ -49,9 +49,9 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--without-threads
 
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
-CONFIGURE_ARGS+=	--disable-16bit-pixel
+CONFIGURE_ARGS+=	--with-quantum-depth=8
 .endif
 
 # Produce standard (small) GIFs
