@@ -68,6 +68,7 @@
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule
+    SUBDIR += superkaramba
     SUBDIR += teapot
     SUBDIR += tuxcards
     SUBDIR += wmpinboard
