@@ -10,16 +10,13 @@ PORTVERSION=	a5
 PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ithought
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible text management system
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
+USE_GNOME=	gtk12 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
-
-USE_GNOME=	gtk12
 
 .include <bsd.port.mk>
