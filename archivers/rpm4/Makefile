@@ -7,9 +7,8 @@
 PORTNAME=	rpm
 PORTVERSION=	4.0.4
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/
-MASTER_SITE_SUBDIR=	rpm-4.0.x
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The RPM Package Manager
