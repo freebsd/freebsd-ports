@@ -105,79 +105,79 @@ lib/libefs.a
 lib/libefs.so
 lib/libefs.so.1
 libdata/pkgconfig/libefs.pc
-share/gnome/bonobo/docs/audio_ulaw/C/index.html
-share/gnome/bonobo/html/bonobo-api.html
-share/gnome/bonobo/html/bonobo-api.sgml
-share/gnome/bonobo/html/bonobo-decl.txt
-share/gnome/bonobo/html/bonobo-sections.txt
-share/gnome/bonobo/html/bonobo.hierarchy
-share/gnome/bonobo/html/bonobo.signals
-share/gnome/bonobo/html/bonobo.types
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-arg.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-async.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-canvas-component.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-canvas-item.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-client-site.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-context.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-control-frame.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-control.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-embeddable.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-event-source.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-exception.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-generic-factory.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-item-container.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-item-handler.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-listener.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-main.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-moniker-extender.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-moniker-simple.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-moniker-util.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-moniker.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-object-client.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-object.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-persist-file.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-persist-stream.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-persist.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-plug.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-print-client.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-print.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-property-bag-client.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-property-bag-xml.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-property-bag.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-property-control.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-selector.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-socket.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-storage-plugin.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-storage.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-stream-client.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-stream-memory.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-stream.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-transient.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-component.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-container.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-engine.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-node.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-sync.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-ui-util.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-view-frame.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-view.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-widget.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-win.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-wrapper.html
-share/gnome/bonobo/html/bonobo/bonobo-bonobo-xobject.html
-share/gnome/bonobo/html/bonobo/bonobo-controls.html
-share/gnome/bonobo/html/bonobo/bonobo-core.html
-share/gnome/bonobo/html/bonobo/bonobo-documents.html
-share/gnome/bonobo/html/bonobo/bonobo-moniker-handlers.html
-share/gnome/bonobo/html/bonobo/bonobo-notification.html
-share/gnome/bonobo/html/bonobo/bonobo-object-activation.html
-share/gnome/bonobo/html/bonobo/bonobo-print.html
-share/gnome/bonobo/html/bonobo/bonobo-properties.html
-share/gnome/bonobo/html/bonobo/bonobo-storage.html
-share/gnome/bonobo/html/bonobo/bonobo-support-utilities.html
-share/gnome/bonobo/html/bonobo/bonobo-ui.html
-share/gnome/bonobo/html/bonobo/bonobo-view.html
-share/gnome/bonobo/html/bonobo/book1.html
+share/doc/bonobo/bonobo-api.html
+share/doc/bonobo/bonobo-api.sgml
+share/doc/bonobo/bonobo-decl.txt
+share/doc/bonobo/bonobo-sections.txt
+share/doc/bonobo/bonobo.hierarchy
+share/doc/bonobo/bonobo.signals
+share/doc/bonobo/bonobo.types
+share/doc/bonobo/bonobo/bonobo-bonobo-arg.html
+share/doc/bonobo/bonobo/bonobo-bonobo-async.html
+share/doc/bonobo/bonobo/bonobo-bonobo-canvas-component.html
+share/doc/bonobo/bonobo/bonobo-bonobo-canvas-item.html
+share/doc/bonobo/bonobo/bonobo-bonobo-client-site.html
+share/doc/bonobo/bonobo/bonobo-bonobo-context.html
+share/doc/bonobo/bonobo/bonobo-bonobo-control-frame.html
+share/doc/bonobo/bonobo/bonobo-bonobo-control.html
+share/doc/bonobo/bonobo/bonobo-bonobo-embeddable.html
+share/doc/bonobo/bonobo/bonobo-bonobo-event-source.html
+share/doc/bonobo/bonobo/bonobo-bonobo-exception.html
+share/doc/bonobo/bonobo/bonobo-bonobo-generic-factory.html
+share/doc/bonobo/bonobo/bonobo-bonobo-item-container.html
+share/doc/bonobo/bonobo/bonobo-bonobo-item-handler.html
+share/doc/bonobo/bonobo/bonobo-bonobo-listener.html
+share/doc/bonobo/bonobo/bonobo-bonobo-main.html
+share/doc/bonobo/bonobo/bonobo-bonobo-moniker-extender.html
+share/doc/bonobo/bonobo/bonobo-bonobo-moniker-simple.html
+share/doc/bonobo/bonobo/bonobo-bonobo-moniker-util.html
+share/doc/bonobo/bonobo/bonobo-bonobo-moniker.html
+share/doc/bonobo/bonobo/bonobo-bonobo-object-client.html
+share/doc/bonobo/bonobo/bonobo-bonobo-object.html
+share/doc/bonobo/bonobo/bonobo-bonobo-persist-file.html
+share/doc/bonobo/bonobo/bonobo-bonobo-persist-stream.html
+share/doc/bonobo/bonobo/bonobo-bonobo-persist.html
+share/doc/bonobo/bonobo/bonobo-bonobo-plug.html
+share/doc/bonobo/bonobo/bonobo-bonobo-print-client.html
+share/doc/bonobo/bonobo/bonobo-bonobo-print.html
+share/doc/bonobo/bonobo/bonobo-bonobo-property-bag-client.html
+share/doc/bonobo/bonobo/bonobo-bonobo-property-bag-xml.html
+share/doc/bonobo/bonobo/bonobo-bonobo-property-bag.html
+share/doc/bonobo/bonobo/bonobo-bonobo-property-control.html
+share/doc/bonobo/bonobo/bonobo-bonobo-selector.html
+share/doc/bonobo/bonobo/bonobo-bonobo-socket.html
+share/doc/bonobo/bonobo/bonobo-bonobo-storage-plugin.html
+share/doc/bonobo/bonobo/bonobo-bonobo-storage.html
+share/doc/bonobo/bonobo/bonobo-bonobo-stream-client.html
+share/doc/bonobo/bonobo/bonobo-bonobo-stream-memory.html
+share/doc/bonobo/bonobo/bonobo-bonobo-stream.html
+share/doc/bonobo/bonobo/bonobo-bonobo-transient.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-component.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-container.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-engine.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-node.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-sync.html
+share/doc/bonobo/bonobo/bonobo-bonobo-ui-util.html
+share/doc/bonobo/bonobo/bonobo-bonobo-view-frame.html
+share/doc/bonobo/bonobo/bonobo-bonobo-view.html
+share/doc/bonobo/bonobo/bonobo-bonobo-widget.html
+share/doc/bonobo/bonobo/bonobo-bonobo-win.html
+share/doc/bonobo/bonobo/bonobo-bonobo-wrapper.html
+share/doc/bonobo/bonobo/bonobo-bonobo-xobject.html
+share/doc/bonobo/bonobo/bonobo-controls.html
+share/doc/bonobo/bonobo/bonobo-core.html
+share/doc/bonobo/bonobo/bonobo-documents.html
+share/doc/bonobo/bonobo/bonobo-moniker-handlers.html
+share/doc/bonobo/bonobo/bonobo-notification.html
+share/doc/bonobo/bonobo/bonobo-object-activation.html
+share/doc/bonobo/bonobo/bonobo-print.html
+share/doc/bonobo/bonobo/bonobo-properties.html
+share/doc/bonobo/bonobo/bonobo-storage.html
+share/doc/bonobo/bonobo/bonobo-support-utilities.html
+share/doc/bonobo/bonobo/bonobo-ui.html
+share/doc/bonobo/bonobo/bonobo-view.html
+share/doc/bonobo/bonobo/book1.html
+share/gnome/help/audio_ulaw/C/index.html
 share/gnome/idl/Bonobo.idl
 share/gnome/idl/Bonobo_Advise.idl
 share/gnome/idl/Bonobo_Canvas.idl
@@ -245,16 +245,12 @@ share/locale/wa/LC_MESSAGES/bonobo.mo
 share/locale/zh_CN/LC_MESSAGES/bonobo.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo.mo
 @dirrm share/gnome/ui
-@dirrm share/gnome/libefs/html/libefs
-@dirrm share/gnome/libefs/html
-@dirrm share/gnome/libefs
-@dirrm share/gnome/bonobo/html/bonobo
-@dirrm share/gnome/bonobo/html
-@dirrm share/gnome/bonobo/docs/audio_ulaw/C/images
-@dirrm share/gnome/bonobo/docs/audio_ulaw/C
-@dirrm share/gnome/bonobo/docs/audio_ulaw
-@dirrm share/gnome/bonobo/docs
-@dirrm share/gnome/bonobo
+@dirrm share/gnome/help/audio_ulaw/C/images
+@dirrm share/gnome/help/audio_ulaw/C
+@dirrm share/gnome/help/audio_ulaw
+@dirrm share/doc/bonobo/libefs
+@dirrm share/doc/bonobo/bonobo
+@dirrm share/doc/bonobo
 @dirrm lib/bonobo/plugin
 @dirrm include/gnome-1.0/bonobo
 @unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
