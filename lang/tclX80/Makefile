@@ -32,6 +32,8 @@ MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 MANN=	Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n memory.n
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 post-install:
