@@ -19,6 +19,7 @@ COMMENT=	GGI API for input sources
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
@@ -60,7 +61,7 @@ EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
 
 post-configure:
-	@${PERL} -p -i.bak -e 's/deplibs -lc/deplibs/;' ${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e 's/\(deplibs\) -lc/\1/;' ${WRKSRC}/libtool
 
 post-install:
 	@${CP} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist

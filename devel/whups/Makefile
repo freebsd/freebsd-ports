@@ -19,6 +19,8 @@ BROKEN=		"Doesn't run with Horde 2.1 or 2.2"
 
 NO_BUILD=	yes
 
+USE_REINPLACE=	yes
+
 DOCS=		LICENSE docs/CHANGES
 CONFFILE=	conf.php html.php prefs.php
 SUB_DIRS=	config graphics lib locale po scripts templates
@@ -49,9 +51,9 @@ do-install:
 	@${CHOWN} -R www:www ${WHUPSDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.whups ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/whups:${WHUPSDIR}:g" \
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/whups:${WHUPSDIR}:g" \
 		${HORDE_INC}/httpd.conf.whups
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTWHUPS::" ${HORDEDIR}/config/registry.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTWHUPS::" ${HORDEDIR}/config/registry.php
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

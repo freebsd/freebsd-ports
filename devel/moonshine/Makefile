@@ -17,6 +17,7 @@ COMMENT=	A customizable IDE that supports a wide variety of languages
 USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
 QTCPPFLAGS+=	-I${X11BASE}/include
@@ -32,10 +33,10 @@ CFLAGS+=	-O0
 .endif
 
 pre-configure:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\{prefix\}/moonshine|\$$\{prefix\}/share/moonshine| ; \
-		 s|\@INSTBIN\@|${PREFIX}/bin| ; s|moc -o|\$$\(MOC\) -o|'
-	@${PERL} -pi -e 's|/usr/share/moonshine|${PREFIX}/share/moonshine|' \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$${prefix}/moonshine|$${prefix}/share/moonshine| ; \
+		 s|@INSTBIN@|${PREFIX}/bin| ; s|moc -o|$$(MOC) -o|'
+	@${REINPLACE_CMD} -e 's|/usr/share/moonshine|${PREFIX}/share/moonshine|' \
 		${WRKSRC}/include/tags.h
 
 .include <bsd.port.post.mk>

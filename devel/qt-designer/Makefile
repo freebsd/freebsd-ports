@@ -22,22 +22,23 @@ PATCH_WRKSRC=	${WRKSRC}
 PKGDIR=		${.CURDIR}
 MAKE_ENV=	QTDIR=${PREFIX} LD_LIBRARY_PATH=${PREFIX}/lib PREFIX=${PREFIX}
 ALL_TARGET=	sub-tools
+USE_REINPLACE=	yes
 
 post-patch:
-	${PERL} -pi -e "s@-fno-exceptions@-fno-exceptions -I${X11BASE}/include/qt2@g" ${CONFIG}
+	${REINPLACE_CMD} -e "s@-fno-exceptions@& -I${X11BASE}/include/qt2@g" ${CONFIG}
 
 do-build:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 qt-pre-configure:
-	${PERL} -pi -e 's@DESTDIR = \$$\(QTDIR\)/bin@DESTDIR = ../../../bin@g' \
+	${REINPLACE_CMD} -e 's@\(DESTDIR = \)\$$(QTDIR)/bin@\1../../../bin@' \
 		${WRKSRC}/tools/designer/designer/Makefile.in
-	${PERL} -pi -e 's@sub-tools: sub-src @sub-tools: @g' ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@\$$(MAKE) util@@g; s@\$$(MAKE) uic@@g; \
-			s@util \\\@designer@g; s@uic \\\@@g; \
-			s@\t\tdesigner@@g" ${WRKSRC}/tools/designer/Makefile.in
-	${PERL} -pi -e "s@getenv\( \"QTDIR\" \)@QT_PREFIX@g; \
-		s@/tools/designer/templates@/share/qt2/designer/templates@g" \
+	${REINPLACE_CMD} -e 's@\(sub-tools: \)sub-src @\1@' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's@\$$\(MAKE\) util@@; s@\$$\(MAKE\) uic@@; \
+		s@util \\@designer@g; s@uic \\@@g; \
+		s@'"`printf '\t\t'`"'designer@@g' ${WRKSRC}/tools/designer/Makefile.in
+	${REINPLACE_CMD} -e 's@getenv( "QTDIR" )@QT_PREFIX@g; \
+		s@/tools/designer/templates@/share/qt2/designer/templates@g' \
 		${WRKSRC}/tools/designer/designer/newformimpl.cpp
 
 .include "${MASTERDIR}/Makefile"
