@@ -3,7 +3,7 @@
 # Date created:         19 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/03/03 13:19:10 tg Exp $
+# $Id: Makefile,v 1.4 1998/03/04 08:17:34 tg Exp $
 #
 
 DISTNAME=       tth_C
@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.ORG
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		latex:${PORTSDIR}/print/teTeX
+
+BROKEN=		checksum
 
 NO_WRKSUBDIR=	yes
 MAN1=		tth.1
