@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adasockets
-PORTVERSION=	0.1.15
+PORTVERSION=	0.1.19
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 
