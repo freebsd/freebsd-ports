@@ -16,6 +16,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
+CONFLICTS=	stackless_python-*
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
@@ -123,7 +124,7 @@ post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.3
 
-post-patch:
+pre-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
