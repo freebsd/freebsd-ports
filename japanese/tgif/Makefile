@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.16
+PORTVERSION=	4.1.34
 CATEGORIES=	japanese
 MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTNAME=	ja-${PORTNAME}-980222
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif
+RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif-nls
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
