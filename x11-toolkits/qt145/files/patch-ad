@@ -1,0 +1,15 @@
+--- src/kernel/qapplication_x11.cpp.orig	Thu Mar 23 21:51:42 2000
++++ src/kernel/qapplication_x11.cpp	Thu Mar 23 21:57:48 2000
+@@ -108,6 +108,12 @@
+ #undef select
+ extern "C" int select( int, void *, void *, void *, struct timeval * );
+ 
++extern "C" char *XSetIMValues(
++#if NeedVarargsPrototypes
++    XIM /* im */, ...
++#endif
++);
++
+ #if defined(_OS_AIX_)
+ // for FD_ZERO
+ static inline void bzero( void *s, int n )
