@@ -1,0 +1,24 @@
+[ excerpt from developer's WWW site ]
+
+A multi-channel MPEG encoder, using the ISO13818 standard and the
+dist10 source code. Multi-channel files may have up to 6 defined
+channels: Left(L), Right(R), Center(C), Left Surround (LS), Right
+Surround (RS) and a Low Frequency Enhancement channel (LFE).
+
+ISO13818 defines 5 multichannel modes (on top of the normal stereo
+mode), each of these modes may have an optional LFE channel:
+
+3/2: L, R, C, LS, RS 
+3/1: L, R, C, mono surround 
+2/2: L, R, LS, RS 
+2/1: L, R, mono surround 
+3/0: L, R, C 
+
+The "standard" surround sound encoding of "5.1 channels" is achieved
+by using mode 3/2 plus an LFE channel.
+
+A multi-channel MPEG file should decode OK on any MPEG decoder. If
+the decoder doesn't recognize the multi-channel extensions, then
+you'll just get a stereo file containing a down mix of the 5 channels.
+
+WWW: http://www.planckenergy.com/

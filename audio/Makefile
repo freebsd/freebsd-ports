@@ -144,6 +144,7 @@
     SUBDIR += mad
     SUBDIR += maplay
     SUBDIR += mctoolame-decoder
+    SUBDIR += mctoolame-encoder
     SUBDIR += mhwaveedit
     SUBDIR += midimountain
     SUBDIR += mikmod
