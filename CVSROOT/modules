@@ -5730,6 +5730,7 @@ p5-String-Strip	ports/textproc/p5-String-Strip
 p5-Sub-Uplevel	ports/devel/p5-Sub-Uplevel
 p5-Switch	ports/lang/p5-Switch
 p5-Sys-CpuLoad	ports/sysutils/p5-Sys-CpuLoad
+p5-Sys-Mmap	ports/devel/p5-Sys-Mmap
 p5-SyslogScan	ports/sysutils/p5-SyslogScan
 p5-System2	ports/devel/p5-System2
 p5-Tangram	ports/databases/p5-Tangram
