@@ -1,0 +1,4 @@
+Class::DBI::SQLite is an extension to Class::DBI for DBD::SQLite, which allows
+you to populate auto incremented row id after insert.
+
+WWW: http://search.cpan.org/dist/Class-DBI-SQLite/
