@@ -1,0 +1,9 @@
+--- src/blas/gemm/GOTO/ATLU_usergemm.c~ Mon Jun 17 10:38:22 2002
++++ src/blas/gemm/GOTO/ATLU_usergemm.c  Sun Aug 18 10:41:19 2002
+@@ -1,5 +1,5 @@
+ #include "atlas_misc.h"
+-#include <sys/mman.h>
++/*#include <sys/mman.h>*/
+ 
+ #ifdef EV6
+    #ifdef ATL_OS_OSF1

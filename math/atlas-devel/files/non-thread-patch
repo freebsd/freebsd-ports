@@ -1,0 +1,18 @@
+--- config.c.orig	Tue Jul  1 12:32:49 2003
++++ config.c	Tue Jul  1 12:35:09 2003
+@@ -2737,6 +2737,7 @@
+       Use3DNow = IsYes('n', "   ", "Use 3DNow! for computation?");
+    }
+    ncpu = ProbeNCPU(OS, mach, targ, TOPdir);
++   ncpu = 1; // force non-threading
+    if (ncpu != 1) /* user may want to thread */
+    {
+       DisplayFile("CONFIG/pthread.txt", stdout, NLINES);
+@@ -3154,6 +3155,7 @@
+    }
+    if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
+ 
++   fpout = fopen("ARCHNAME-NON-THREADED", "w");
+    fprintf(fpout, "%s", ARCH);
+    fclose(fpout);
+    ATL_mprintf(2, fplog, stdout,"\nCreating make include file Make.%s\n", ARCH);
