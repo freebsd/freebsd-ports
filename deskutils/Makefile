@@ -110,6 +110,7 @@
     SUBDIR += phprojekt
     SUBDIR += plan
     SUBDIR += planner
+    SUBDIR += planner.el
     SUBDIR += plans
     SUBDIR += preferences.app
     SUBDIR += py-dosage
