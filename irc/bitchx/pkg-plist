@@ -1,12 +1,12 @@
 %%NOGNOME:%%bin/BitchX
-%%NOGNOME:%%bin/BitchX-1.0c17
+%%NOGNOME:%%bin/BitchX-1.0c18
 %%GNOME:%%bin/gtkBitchX
-%%GNOME:%%bin/gtkBitchX-1.0c17
+%%GNOME:%%bin/gtkBitchX-1.0c18
 %%NOGNOME:%%bin/scr-bx
 share/bx/BitchX.help
 share/bx/BitchX.ircnames
 share/bx/BitchX.quit
-share/bx/BitchX.reasons
+share/bx/BitchX.kick
 share/bx/help/1_General/1_General
 share/bx/help/1_General/4op
 share/bx/help/1_General/about
@@ -57,6 +57,7 @@ share/bx/help/1_General/dcc/activecount
 share/bx/help/1_General/dcc/autoget
 share/bx/help/1_General/dcc/autooverwrite
 share/bx/help/1_General/dcc/autorename
+share/bx/help/1_General/dcc/autoresume
 share/bx/help/1_General/dcc/bot
 share/bx/help/1_General/dcc/chat
 share/bx/help/1_General/dcc/close
@@ -466,7 +467,6 @@ share/bx/help/4_Misc/window/window
 share/bx/help/5_Programming/5_Programming
 share/bx/help/5_Programming/alias
 share/bx/help/5_Programming/assign
-share/bx/help/5_Programming/blah
 share/bx/help/5_Programming/bless
 share/bx/help/5_Programming/break
 share/bx/help/5_Programming/call
@@ -795,6 +795,7 @@ share/bx/help/6_Functions/winvisible
 share/bx/help/6_Functions/word
 share/bx/help/6_Functions/write
 share/bx/help/6_Functions/writeb
+share/bx/help/6_Functions/ovserver
 share/bx/help/7_Docs/7_Docs
 share/bx/help/7_Docs/About_BitchX
 share/bx/help/7_Docs/Arrays
@@ -930,6 +931,11 @@ share/bx/help/out
 %%PLUGINS:%%share/bx/plugins/scan.so
 %%PLUGINS:%%share/bx/plugins/wavplay.so
 %%PLUGINS:%%share/bx/plugins/qbx.so
+%%PLUGINS:%%share/bx/plugins/aim.so
+%%PLUGINS:%%share/bx/plugins/arcfour.so
+%%PLUGINS:%%share/bx/plugins/autocycle.so
+%%PLUGINS:%%share/bx/plugins/cavlink.so
+%%PLUGINS:%%share/bx/plugins/identd.so
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
 share/bx/script/bxtcl.tcl
@@ -938,6 +944,9 @@ share/bx/script/file.tcl
 share/bx/script/fserve+vfs.tar.gz
 share/bx/script/menu.bx
 share/bx/script/query.bx
+share/bx/script/auto_resume
+share/bx/script/fserve.irc
+share/bx/script/query
 share/bx/translation/ASCII
 share/bx/translation/CP437
 share/bx/translation/CP850
@@ -976,7 +985,7 @@ share/doc/bitchx/bxfaq.html
 @dirrm share/doc/bitchx
 @dirrm share/bx/translation
 @dirrm share/bx/script
-%%PLUGINS:%%@dirrm share/bx/plugins
+@dirrm share/bx/plugins
 @dirrm share/bx/help/8_Scripts
 @dirrm share/bx/help/7_Docs
 @dirrm share/bx/help/6_Functions
