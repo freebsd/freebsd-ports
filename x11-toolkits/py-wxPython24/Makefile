@@ -13,12 +13,11 @@ DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_PYTHON=	YES
 USE_GMAKE=	YES
 USE_NEWGCC=	YES
 MAKE_ENV=	"LN_S=${LN} -s" "INSTALL_DATA=${INSTALL_DATA}"
@@ -26,6 +25,7 @@ ALL_TARGET=	default
 INSTALL_TARGET=	install-freebsd
 
 TARGETDIR=	${PREFIX}/lib/python1.5/site-packages/wxPython
+TARGETDIR=	${PYTHON_SITELIBDIR}/wxPython
 HELPERLIBDIR=	${PREFIX}/lib
 
 do-configure:
