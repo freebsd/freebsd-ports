@@ -22,6 +22,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi
 
+MAN1=		jc.1
+
 USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
