@@ -1,0 +1,12 @@
+--- Makefile.orig	Wed Jan 19 19:50:30 2005
++++ Makefile	Wed Jan 26 16:36:34 2005
+@@ -3,8 +3,7 @@
+ SNAPDIR=erc-$(VERSION).cvs.$(SNAPSHOTDATE)
+ 
+ SPECIAL = erc-auto.el
+-UNCOMPILED = erc-chess.el erc-bbdb.el erc-ibuffer.el erc-speak.el \
+-		erc-speedbar.el erc-compat.el
++UNCOMPILED = erc-ibuffer.el erc-speak.el erc-compat.el
+ TESTING = erc-members.el erc-macs.el
+ ALLSOURCE = $(wildcard *.el)
+ SOURCE	= $(filter-out $(SPECIAL) $(UNCOMPILED) $(TESTING),$(ALLSOURCE))
