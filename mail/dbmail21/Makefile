@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -53,6 +52,9 @@ pre-everything::
 	@${ECHO} "   To build dbmail with PostgreSQL as backend database,"
 	@${ECHO} "	define WITH_PGSQL"
 	@${ECHO} ""
+
+post-patch:
+	@${FIND} ${WRKSRC} -name CVS -type d | xargs ${RM} -fr
 
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
