@@ -1,16 +1,16 @@
 bin/dopewars
-share/doc/dopewars-1.5.0/aiplayer.html
-share/doc/dopewars-1.5.0/clientplay.html
-share/doc/dopewars-1.5.0/commandline.html
-share/doc/dopewars-1.5.0/configfile.html
-share/doc/dopewars-1.5.0/credits.html
-share/doc/dopewars-1.5.0/developer.html
-share/doc/dopewars-1.5.0/i18n.html
-share/doc/dopewars-1.5.0/index.html
-share/doc/dopewars-1.5.0/installation.html
-share/doc/dopewars-1.5.0/metaserver.html
-share/doc/dopewars-1.5.0/server.html
-share/doc/dopewars-1.5.0/servercommands.html
-share/doc/dopewars-1.5.0/windows.html
+share/doc/%%DOPEWARS%%/aiplayer.html
+share/doc/%%DOPEWARS%%/clientplay.html
+share/doc/%%DOPEWARS%%/commandline.html
+share/doc/%%DOPEWARS%%/configfile.html
+share/doc/%%DOPEWARS%%/credits.html
+share/doc/%%DOPEWARS%%/developer.html
+share/doc/%%DOPEWARS%%/i18n.html
+share/doc/%%DOPEWARS%%/index.html
+share/doc/%%DOPEWARS%%/installation.html
+share/doc/%%DOPEWARS%%/metaserver.html
+share/doc/%%DOPEWARS%%/server.html
+share/doc/%%DOPEWARS%%/servercommands.html
+share/doc/%%DOPEWARS%%/windows.html
 share/dopewars.sco
-@dirrm share/doc/dopewars-1.5.0
+@dirrm share/doc/%%DOPEWARS%%
