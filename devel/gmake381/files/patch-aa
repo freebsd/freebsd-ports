@@ -1,48 +1,39 @@
-*** Makefile.in.orig	Wed Apr  5 08:41:26 1995
---- Makefile.in	Sat Apr  8 17:49:22 1995
-***************
-*** 92,98 ****
-  # Number to put on the man page filename.
-  manext = 1
-  # Prefix to put on installed `make' binary file name.
-! binprefix =
-  # Prefix to put on installed `make' man page file name.
-  manprefix = $(binprefix)
-  
---- 92,98 ----
-  # Number to put on the man page filename.
-  manext = 1
-  # Prefix to put on installed `make' binary file name.
-! binprefix = g
-  # Prefix to put on installed `make' man page file name.
-  manprefix = $(binprefix)
-  
-***************
-*** 186,191 ****
---- 186,193 ----
-  
-  installdirs:
-  	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir) $(mandir)
-+ 	rm -f $(bindir)/$(binprefix)make $(infodir)/make.info \
-+ 		$(mandir)/$(manprefix)make.$(manext)
-  
-  $(bindir)/$(binprefix)make: make
-  	$(INSTALL_PROGRAM) make $@.new
-***************
-*** 260,266 ****
-  	$(SHELL) config.status
-  glob/Makefile: config.status $(srcdir)/glob/Makefile.in
-  	$(SHELL) config.status
-! config.h: stamp-config ;
-  stamp-config: config.status $(srcdir)/config.h.in
-  	$(SHELL) config.status
-  	touch stamp-config
---- 262,269 ----
-  	$(SHELL) config.status
-  glob/Makefile: config.status $(srcdir)/glob/Makefile.in
-  	$(SHELL) config.status
-! config.h: stamp-config
-! 
-  stamp-config: config.status $(srcdir)/config.h.in
-  	$(SHELL) config.status
-  	touch stamp-config
+--- Makefile.in.orig	Thu Aug 29 06:13:09 1996
++++ Makefile.in	Thu Feb  6 01:46:54 1997
+@@ -79,7 +79,7 @@
+ # Number to put on the man page filename.
+ manext = 1
+ # Prefix to put on installed `make' binary file name.
+-binprefix =
++binprefix = g
+ # Prefix to put on installed `make' man page file name.
+ manprefix = $(binprefix)
+ 
+@@ -175,6 +175,8 @@
+ 
+ installdirs:
+ 	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir) $(mandir)
++	rm -f $(bindir)/$(binprefix)make $(infodir)/make.info \
++		$(mandir)/$(manprefix)make.$(manext)
+ 
+ $(bindir)/$(binprefix)make: make
+ 	$(INSTALL_PROGRAM) make $@.new
+@@ -206,7 +208,7 @@
+ # fail gracefully when there is an unknown command.
+ 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+ 	  if [ -r ./make.info ]; then dir=.; else dir=$(srcdir); fi; \
+-	  install-info --infodir=$(infodir) $$dir/make.info; \
++	  install-info --info-dir=$(infodir) --defentry='* gmake: (make).	GNU make utility' $$dir/make.info; \
+ 	else true; fi
+ 
+ $(mandir)/$(manprefix)make.$(manext): make.man
+@@ -250,7 +252,8 @@
+ 	$(SHELL) config.status
+ glob/Makefile: config.status $(srcdir)/glob/Makefile.in
+ 	$(SHELL) config.status
+-config.h: stamp-config ;
++config.h: stamp-config
++
+ stamp-config: config.status $(srcdir)/config.h.in
+ 	$(SHELL) config.status
+ 	touch stamp-config
