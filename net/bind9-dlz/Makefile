@@ -6,39 +6,65 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	${VERSION_BIND}+${DLZVERSION}
+PORTVERSION=	${ISCVERSION}+${DLZVERSION}
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${ISCVERSION}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,}
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bind-dlz
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,} \
+		${MASTER_SITES_DLZ:S/$/:dlz/}
 PKGNAMESUFFIX=	-dlz
-DISTFILES=	bind-9.2.1.tar.gz
-DISTFILES+=	DLZ-${DLZVERSION}${EXTRACT_SUFX}
+DISTFILES=	bind-${ISCVERSION}.tar.gz \
+	   	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bind-dlz/:dlz
 
 ISCVERSION=	9.2.1
-VERSION_BIND=	9.2.1
-EXTRA_PATCHES=	${WRKDIR}/dlz.patch
-EXTRA_PATCHES+=	${.CURDIR}/files/dlz_postgres_driver.c.diff
-PLIST=		${WRKDIR}/.PLIST.more
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps
+DLZVERSION=	0.3.0
+USE_SUBMAKE=	YES
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.if defined(WITH_POSTGRESQL_DRIVER)
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+= --with-dlz-postgres
+.endif
+
+.if defined(WITH_MYSQL_DRIVER)
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+= --with-dlz-mysql
+.endif
+
+.if defined(WITH_FILESYSTEM_DRIVER)
+CONFIGURE_ARGS+= --with-dlz-filesystem
+.endif
+
+.if defined(WITH_STUB_DRIVER)
+CONFIGURE_ARGS+= --with-dlz-stub
+.endif
+
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
+EXTRA_PATCHES=	${WRKDIR}/dlz.patch
+PLIST=		${WRKDIR}/.PLIST.more
+
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+	        CURDIR="${.CURDIR}" \
+		MKDIR="${MKDIR}" \
+		DISTNAME="${DISTNAME}" \
+		BINDDLZ_OPTIONS="${BINDDLZ_OPTIONS}"
 
 DIR=		${WRKSRC}/bin/
-DLZVERSION=	0.2.1
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
-EXTRA_FIX=	${WRKSRC}/bin/named/Makefile.in
-DOCS=		README.txt bind_dlz.txt changelog.txt dlz_interface.txt \
-		dlz_postgres_driver.txt dlz_stub_driver.txt \
-		sdlz_helper.txt sdlz_interface.txt
+EXTRA_FIX=	${WRKSRC}/configure
+DOCS=		README.txt bind_dlz.txt changelog.txt \
+		dlz_filesystem_driver.txt dlz_interface.txt \
+		dlz_mysql_driver.txt dlz_postgres_driver.txt \
+		dlz_stub_driver.txt sdlz_helper.txt sdlz_interface.txt
 
 MAN1=	dig.1 host.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -79,17 +105,20 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
 	rndc-confgen.8 rndc.8
 
+pre-everything:
+	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
+
 pre-patch:
 .for FILE in dlz.patch
 	@ ${MV} ${WRKDIR}/${FILE} ${WRKDIR}/${FILE}.sed
-	${SED} -e "s=bind-9.2.1/==" ${WRKDIR}/${FILE}.sed > ${WRKDIR}/${FILE}
+	${SED} -e "s=bind-${ISCVERSION}/==" \
+		${WRKDIR}/${FILE}.sed > ${WRKDIR}/${FILE}
 .endfor
 
 post-patch:
 	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
-	${SED} -e "s=/usr/local/pgsql/include=${LOCALBASE}/include=" \
-		-e "s=/usr/local/pgsql/lib=${LOCALBASE}/lib=" \
-		${EXTRA_FIX}.sed > ${EXTRA_FIX}
+	${SED} -e "s=-lnsl==" ${EXTRA_FIX}.sed > ${EXTRA_FIX}
+	@ ${CHMOD} +x ${EXTRA_FIX}
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
 	@ ${MV} ${DIR}/${FILE} ${DIR}/${FILE}.sed
@@ -127,11 +156,14 @@ post-install:
 	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
 .endif
 
+post-clean:
+	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.if defined(WITH_OPENSSL)
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
 .endif
 
 .if ${OSVERSION} > 500030
