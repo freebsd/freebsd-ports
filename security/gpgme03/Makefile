@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.3.15
-PORTREVISION=	1
+PORTVERSION=	0.3.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -19,9 +18,10 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+INFO=	gpgme
 
 .include <bsd.port.pre.mk>
 
@@ -34,8 +34,5 @@ BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/newpg
 .else
 CONFIGURE_ARGS+=	--without-gpgsm
 .endif
-
-pre-configure:
-	@${RM} -r ${WRKSRC}/doc/gpgme.info*
 
 .include <bsd.port.post.mk>
