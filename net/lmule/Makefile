@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmule
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lmule
@@ -15,6 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		expat.4:${PORTSDIR}/textproc/expat2 \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
@@ -25,12 +26,13 @@ USE_GNOME=	gnomehier \
 		gnomeprefix \
 		gtk12
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-wx-config=${WX_CONFIG}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 WX_CONFIG?=	"${X11BASE}/bin/wx-config"
 
@@ -39,5 +41,11 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(Linux)|FreeBSD/\1|' \
 		${WRKSRC}/src/*.cpp
+
+pre-configure:
+	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
+		${XARGS} -x -n 10 \
+		${REINPLACE_CMD} -E \
+		-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
 
 .include <bsd.port.mk>
