@@ -34,6 +34,7 @@ lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/file.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ftp.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/gopher.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/http.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/http11.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/https.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/mailto.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/nntp.pm
