@@ -3,14 +3,13 @@
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.2 1999/02/11 11:27:30 obrien Exp $
+# $Id: Makefile,v 1.3 1999/03/30 10:13:26 dirk Exp $
 
-DISTNAME=	curl-5.5
+DISTNAME=	curl-5.5.1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
-		ftp://ftp.all.de/pub2/unix/network/www/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 
 MAINTAINER=	kkennawa@physics.adelaide.edu.au
