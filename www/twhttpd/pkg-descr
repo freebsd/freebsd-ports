@@ -1,0 +1,14 @@
+twhttpd is a powerful secure HTTP proxy.
+twhttpd protects your internal Web server by acting as an inbound proxy 
+(like a reserve Squid proxy). It can also work as a secure outbound proxy 
+to protect your browser client. It allows you to inspect almost every 
+detail of the HTTP protocol headers, including the URL request line, the 
+server version, user-agent, referrer, cookie, query, etc., in a 
+easy-to-use script-like configuration file. 
+This program is generally considered an "Expert Tool"; you will need 
+knowledge of the HTTP protocol to configure the proxy properly.  
+
+WWW: http://www.geocities.com/samngms/twhttpd/
+
+- Pieter
+opr@bsdaemon.be

@@ -1,0 +1,16 @@
+--- httplog.c.orig	Sat Dec  8 15:15:44 2001
++++ httplog.c	Wed Sep 25 12:02:28 2002
+@@ -40,6 +40,7 @@
+ #include <time.h>
+ #include <stdio.h>
+ #include <syslog.h>
++#include <arpa/inet.h>
+ #include <netinet/in.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+@@ -151,4 +152,4 @@
+             }
+         }
+     }
+-}
++}
