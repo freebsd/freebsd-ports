@@ -15,6 +15,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
+BROKEN=		Unfetchable
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13

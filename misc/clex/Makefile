@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A commandline file manager
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

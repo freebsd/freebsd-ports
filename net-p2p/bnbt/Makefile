@@ -14,6 +14,8 @@ DISTNAME=	bnbt81b-3
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A C++ BitTorrent Tracker
 
+BROKEN=		Unfetchable
+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 PKGMESSAGE=	${WRKDIR}/pkg-message
