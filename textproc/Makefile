@@ -335,6 +335,7 @@
     SUBDIR += sgmltools
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
+    SUBDIR += sk-aspell
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
