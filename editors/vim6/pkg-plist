@@ -34,6 +34,7 @@ share/vim/%%VIM_VER%%/doc/if_cscope.txt
 share/vim/%%VIM_VER%%/doc/if_ole.txt
 share/vim/%%VIM_VER%%/doc/if_perl.txt
 share/vim/%%VIM_VER%%/doc/if_python.txt
+share/vim/%%VIM_VER%%/doc/if_ruby.txt
 share/vim/%%VIM_VER%%/doc/if_sniff.txt
 share/vim/%%VIM_VER%%/doc/if_tcl.txt
 share/vim/%%VIM_VER%%/doc/index.txt
@@ -97,7 +98,26 @@ share/vim/%%VIM_VER%%/doc/windows.txt
 share/vim/%%VIM_VER%%/doc/workshop.txt
 share/vim/%%VIM_VER%%/filetype.vim
 share/vim/%%VIM_VER%%/ftoff.vim
+share/vim/%%VIM_VER%%/ftplugin.vim
+share/vim/%%VIM_VER%%/ftplugin/README.txt
+share/vim/%%VIM_VER%%/ftplugin/c/default.vim
+share/vim/%%VIM_VER%%/ftplugin/cpp/default.vim
+share/vim/%%VIM_VER%%/ftplugin/fortran/default.vim
+share/vim/%%VIM_VER%%/ftplugin/mail/default.vim
+share/vim/%%VIM_VER%%/ftplugin/make/default.vim
+share/vim/%%VIM_VER%%/ftplugin/man/default.vim
+share/vim/%%VIM_VER%%/ftplugin/xs/default.vim
+share/vim/%%VIM_VER%%/ftplugof.vim
 share/vim/%%VIM_VER%%/gvimrc_example.vim
+share/vim/%%VIM_VER%%/indent.vim
+share/vim/%%VIM_VER%%/indent/fortran.vim
+share/vim/%%VIM_VER%%/indent/html.vim
+share/vim/%%VIM_VER%%/indent/make.vim
+share/vim/%%VIM_VER%%/indent/python.vim
+share/vim/%%VIM_VER%%/indent/sh.vim
+share/vim/%%VIM_VER%%/indent/vim.vim
+share/vim/%%VIM_VER%%/indent/xml.vim
+share/vim/%%VIM_VER%%/indoff.vim
 share/vim/%%VIM_VER%%/macros/README.txt
 share/vim/%%VIM_VER%%/macros/diffwin.vim
 share/vim/%%VIM_VER%%/macros/dvorak
@@ -105,6 +125,7 @@ share/vim/%%VIM_VER%%/macros/explorer.vim
 share/vim/%%VIM_VER%%/macros/hanoi/click.me
 share/vim/%%VIM_VER%%/macros/hanoi/hanoi.vim
 share/vim/%%VIM_VER%%/macros/hanoi/poster
+share/vim/%%VIM_VER%%/macros/hdiffwin.vim
 share/vim/%%VIM_VER%%/macros/html
 share/vim/%%VIM_VER%%/macros/justify.vim
 share/vim/%%VIM_VER%%/macros/life/click.me
@@ -181,6 +202,10 @@ share/vim/%%VIM_VER%%/syntax/dosbatch.vim
 share/vim/%%VIM_VER%%/syntax/dosini.vim
 share/vim/%%VIM_VER%%/syntax/dracula.vim
 share/vim/%%VIM_VER%%/syntax/dtd.vim
+share/vim/%%VIM_VER%%/syntax/dtml.vim
+share/vim/%%VIM_VER%%/syntax/dylan.vim
+share/vim/%%VIM_VER%%/syntax/dylanintr.vim
+share/vim/%%VIM_VER%%/syntax/dylanlid.vim
 share/vim/%%VIM_VER%%/syntax/eiffel.vim
 share/vim/%%VIM_VER%%/syntax/elf.vim
 share/vim/%%VIM_VER%%/syntax/elmfilt.vim
@@ -215,6 +240,7 @@ share/vim/%%VIM_VER%%/syntax/ist.vim
 share/vim/%%VIM_VER%%/syntax/java.vim
 share/vim/%%VIM_VER%%/syntax/javacc.vim
 share/vim/%%VIM_VER%%/syntax/javascript.vim
+share/vim/%%VIM_VER%%/syntax/jess.vim
 share/vim/%%VIM_VER%%/syntax/jgraph.vim
 share/vim/%%VIM_VER%%/syntax/jproperties.vim
 share/vim/%%VIM_VER%%/syntax/jsp.vim
@@ -229,6 +255,7 @@ share/vim/%%VIM_VER%%/syntax/lisp.vim
 share/vim/%%VIM_VER%%/syntax/lite.vim
 share/vim/%%VIM_VER%%/syntax/lotos.vim
 share/vim/%%VIM_VER%%/syntax/lout.vim
+share/vim/%%VIM_VER%%/syntax/lprolog.vim
 share/vim/%%VIM_VER%%/syntax/lss.vim
 share/vim/%%VIM_VER%%/syntax/lua.vim
 share/vim/%%VIM_VER%%/syntax/m4.vim
@@ -243,6 +270,7 @@ share/vim/%%VIM_VER%%/syntax/master.vim
 share/vim/%%VIM_VER%%/syntax/matlab.vim
 share/vim/%%VIM_VER%%/syntax/mel.vim
 share/vim/%%VIM_VER%%/syntax/mf.vim
+share/vim/%%VIM_VER%%/syntax/mgp.vim
 share/vim/%%VIM_VER%%/syntax/mib.vim
 share/vim/%%VIM_VER%%/syntax/model.vim
 share/vim/%%VIM_VER%%/syntax/modsim3.vim
@@ -258,14 +286,18 @@ share/vim/%%VIM_VER%%/syntax/nosyntax.vim
 share/vim/%%VIM_VER%%/syntax/nroff.vim
 share/vim/%%VIM_VER%%/syntax/objc.vim
 share/vim/%%VIM_VER%%/syntax/ocaml.vim
+share/vim/%%VIM_VER%%/syntax/omnimark.vim
+share/vim/%%VIM_VER%%/syntax/openroad.vim
 share/vim/%%VIM_VER%%/syntax/opl.vim
 share/vim/%%VIM_VER%%/syntax/ora.vim
 share/vim/%%VIM_VER%%/syntax/pascal.vim
 share/vim/%%VIM_VER%%/syntax/pcap.vim
 share/vim/%%VIM_VER%%/syntax/pccts.vim
 share/vim/%%VIM_VER%%/syntax/perl.vim
+share/vim/%%VIM_VER%%/syntax/php.vim
 share/vim/%%VIM_VER%%/syntax/php3.vim
 share/vim/%%VIM_VER%%/syntax/phtml.vim
+share/vim/%%VIM_VER%%/syntax/pic.vim
 share/vim/%%VIM_VER%%/syntax/pike.vim
 share/vim/%%VIM_VER%%/syntax/pine.vim
 share/vim/%%VIM_VER%%/syntax/plsql.vim
@@ -279,6 +311,7 @@ share/vim/%%VIM_VER%%/syntax/ptcap.vim
 share/vim/%%VIM_VER%%/syntax/purifylog.vim
 share/vim/%%VIM_VER%%/syntax/python.vim
 share/vim/%%VIM_VER%%/syntax/qf.vim
+share/vim/%%VIM_VER%%/syntax/r.vim
 share/vim/%%VIM_VER%%/syntax/radiance.vim
 share/vim/%%VIM_VER%%/syntax/rc.vim
 share/vim/%%VIM_VER%%/syntax/rcslog.vim
@@ -286,7 +319,9 @@ share/vim/%%VIM_VER%%/syntax/rebol.vim
 share/vim/%%VIM_VER%%/syntax/registry.vim
 share/vim/%%VIM_VER%%/syntax/remind.vim
 share/vim/%%VIM_VER%%/syntax/rexx.vim
+share/vim/%%VIM_VER%%/syntax/robots.vim
 share/vim/%%VIM_VER%%/syntax/rpcgen.vim
+share/vim/%%VIM_VER%%/syntax/rtf.vim
 share/vim/%%VIM_VER%%/syntax/ruby.vim
 share/vim/%%VIM_VER%%/syntax/samba.vim
 share/vim/%%VIM_VER%%/syntax/sas.vim
@@ -320,10 +355,12 @@ share/vim/%%VIM_VER%%/syntax/sqr.vim
 share/vim/%%VIM_VER%%/syntax/squid.vim
 share/vim/%%VIM_VER%%/syntax/st.vim
 share/vim/%%VIM_VER%%/syntax/stp.vim
+share/vim/%%VIM_VER%%/syntax/strace.vim
 share/vim/%%VIM_VER%%/syntax/synload.vim
 share/vim/%%VIM_VER%%/syntax/syntax.vim
 share/vim/%%VIM_VER%%/syntax/tads.vim
 share/vim/%%VIM_VER%%/syntax/tags.vim
+share/vim/%%VIM_VER%%/syntax/tasm.vim
 share/vim/%%VIM_VER%%/syntax/tcl.vim
 share/vim/%%VIM_VER%%/syntax/tex.vim
 share/vim/%%VIM_VER%%/syntax/texinfo.vim
@@ -337,12 +374,15 @@ share/vim/%%VIM_VER%%/syntax/vgrindefs.vim
 share/vim/%%VIM_VER%%/syntax/vhdl.vim
 share/vim/%%VIM_VER%%/syntax/vim.vim
 share/vim/%%VIM_VER%%/syntax/viminfo.vim
+share/vim/%%VIM_VER%%/syntax/virata.vim
 share/vim/%%VIM_VER%%/syntax/vrml.vim
+share/vim/%%VIM_VER%%/syntax/wdiff.vim
 share/vim/%%VIM_VER%%/syntax/web.vim
 share/vim/%%VIM_VER%%/syntax/webmacro.vim
 share/vim/%%VIM_VER%%/syntax/whitespace.vim
 share/vim/%%VIM_VER%%/syntax/winbatch.vim
 share/vim/%%VIM_VER%%/syntax/wml.vim
+share/vim/%%VIM_VER%%/syntax/wsh.vim
 share/vim/%%VIM_VER%%/syntax/xdefaults.vim
 share/vim/%%VIM_VER%%/syntax/xmath.vim
 share/vim/%%VIM_VER%%/syntax/xml.vim
@@ -378,6 +418,15 @@ share/vim/%%VIM_VER%%/vimrc_example.vim
 @exec mkdir share/vim/%%VIM_VER%%/lang
 @dirrm share/vim/%%VIM_VER%%/doc
 @dirrm share/vim/%%VIM_VER%%/lang
+@dirrm share/vim/%%VIM_VER%%/ftplugin/c
+@dirrm share/vim/%%VIM_VER%%/ftplugin/cpp
+@dirrm share/vim/%%VIM_VER%%/ftplugin/fortran
+@dirrm share/vim/%%VIM_VER%%/ftplugin/mail
+@dirrm share/vim/%%VIM_VER%%/ftplugin/make
+@dirrm share/vim/%%VIM_VER%%/ftplugin/man
+@dirrm share/vim/%%VIM_VER%%/ftplugin/xs
+@dirrm share/vim/%%VIM_VER%%/ftplugin
+@dirrm share/vim/%%VIM_VER%%/indent
 @dirrm share/vim/%%VIM_VER%%/macros/hanoi
 @dirrm share/vim/%%VIM_VER%%/macros/life
 @dirrm share/vim/%%VIM_VER%%/macros/maze
