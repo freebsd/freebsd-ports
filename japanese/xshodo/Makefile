@@ -3,7 +3,7 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/29 07:20:58 tg Exp $
 #
 
 DISTNAME=	xbakuzan
@@ -17,9 +17,9 @@ ALL_TARGET=	xbakuzan
 USE_X11=	yes
 
 do-install:
-	@mkdir -p ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xbakuzan ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib/X11/xbakuzan
+	@${MKDIR} ${PREFIX}/lib/X11/xbakuzan
 	${INSTALL_DATA} ${WRKSRC}/sakana.xbm ${PREFIX}/lib/X11/xbakuzan
 	${INSTALL_DATA} ${WRKSRC}/xbakuzan.doc ${PREFIX}/lib/X11/xbakuzan
 
