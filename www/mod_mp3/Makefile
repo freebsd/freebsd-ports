@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_mp3
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	www audio
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/ \
@@ -24,7 +24,7 @@ USE_PERL5=	yes
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
-DOCS=		ChangeLog README TODO faq.html
+DOCS=		ChangeLog README TODO faq.html CONTRIBUTORS
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		YES
