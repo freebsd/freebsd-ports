@@ -1,27 +1,26 @@
 # New ports collection makefile for:   R
-# Version required:    R-0.62.1
+# Version required:    R-0.62.2
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.3 1998/06/28 23:37:34 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/02 06:27:40 asami Exp $
 #
 
-DISTNAME=	R-0.62.1
-PKGNAME=	R-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-0.62.1
+DISTNAME=	R-0.62.2
+PKGNAME=	R-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-0.62.2
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.ci.tuwien.ac.at/pub/R/src/base/ \
-		ftp://SunSITE.auc.dk/pub/languages/R/src/base/ \
+MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
+		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
+		http://cran.stat.wisc.edu/src/base/ \
+		ftp://ftp.ci.tuwien.ac.at/R/src/base/ \
+		http://SunSITE.auc.dk/R/src/base/ \
 		http://www.stat.unipg.it/pub/stat/statlib/R/CRAN/src/base/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/ \
-		ftp://ftp.stat.math.ethz.ch/R-CRAN/src/base/ \
-		http://lib.stat.cmu.edu/R/CRAN/src/base/ \
-		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
-		ftp://franz.stat.wisc.edu/pub/R/src/base/
+		ftp://dola.snu.ac.kr/pub/R/CRAN/src/base/ \
+		http://www.stat.math.ethz.ch/R-CRAN/src/base/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
-
-BROKEN=		package
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
@@ -41,6 +40,8 @@ PAPERSIZE_INVALID=yes
 
 ALL_TARGET=all help html
 
+MAN1=	R.1 Rdconv.1
+
 pre-fetch:
 .if defined(PAPERSIZE_INVALID)
 	@${ECHO} "Invalid value for PAPERSIZE: \"${PAPERSIZE}\""
@@ -48,11 +49,12 @@ pre-fetch:
 	@${FALSE}
 .endif
 
+test:
+	@(cd ${WRKSRC}; make test-All)
+
 do-install:
-	-gzip ${WRKSRC}/R.1
-	-gzip ${WRKSRC}/Rdconv.1
-	${INSTALL_DATA} ${WRKSRC}/R.1.gz ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/Rdconv.1.gz ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/R.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Rdconv.1 ${PREFIX}/man/man1
 	${SED} 's:PREFIX:${PREFIX}:;s:DEFAULTPAPER:${PAPERSIZE}:' ${FILESDIR}/R > ${PREFIX}/bin/R
 	(cd ${WRKSRC}; find . -type d -exec chmod a+rx \{\} \; )
 	(cd ${WRKSRC}; find . -type f -exec chmod a+r \{\} \; )
