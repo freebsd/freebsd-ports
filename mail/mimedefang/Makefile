@@ -1,0 +1,47 @@
+# New ports collection makefile for:	mimedefang
+# Date created:				13 May 2002
+# Whom:					Andrey V. Pevnev <andrey@mgul.ac.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mimedefang
+PORTVERSION=	2.11
+CATEGORIES=	mail
+MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
+
+MAINTAINER=	andrey@mgul.ac.ru
+
+BUILD_DEPENDS=	\
+	${PERL_SITELIBDIR}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+	${PERL_SITELIBDIR}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+	${PERL_SITELIBDIR}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+	${PERL_SITELIBDIR}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+	${PERL_SITELIBDIR}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+	${PERL_SITELIBDIR}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+
+USE_PERL5=	yes
+PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+GNU_CONFIGURE=	yes
+
+MAN5=	mimedefang-filter.5
+MAN7=	mimedefang-protocol.7
+MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8
+
+.if !exists( /usr/include/libmilter/mfapi.h )
+IGNORE=	"requires libmilter installed in the base system, upgrade your FreeBSD"
+.endif
+
+post-install:
+	${INSTALL} -m 755 ${FILESDIR}/mimedefang.sh ${PREFIX}/etc/rc.d/mimedefang.sh
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
+.endif
+	${CHOWN} mailnull:mailnull /var/spool/MIMEDefang
+	${CHMOD} 700 /var/spool/MIMEDefang
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

@@ -1,0 +1,20 @@
+bin/mimedefang-multiplexor
+bin/mimedefang
+bin/mimedefang.pl
+etc/rc.d/mimedefang.sh
+%%PORTDOCS%%share/doc/mimedefang/README
+%%PORTDOCS%%share/doc/mimedefang/README.ANOMY
+%%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
+%%PORTDOCS%%share/examples/mimedefang/suggested-minimum-filter-for-windows-clients
+%%PORTDOCS%%share/examples/mimedefang/README
+%%PORTDOCS%%share/examples/mimedefang/redhat-logrotate-file
+%%PORTDOCS%%share/examples/mimedefang/redhat-sendmail-init-script
+%%PORTDOCS%%share/examples/mimedefang/redhat-sendmail-init-script-with-multiplexor
+%%PORTDOCS%%share/examples/mimedefang/stream-by-domain-filter
+%%PORTDOCS%%@dirrm share/doc/mimedefang
+%%PORTDOCS%%@dirrm share/examples/mimedefang
+@cwd /var/spool
+@dirrm MIMEDefang
+@cwd /etc
+mail/mimedefang-filter.example
+mail/spamassassin/sa-mimedefang.cf.example
