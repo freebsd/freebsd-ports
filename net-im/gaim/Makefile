@@ -10,6 +10,8 @@ CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+FORBIDDEN=	MSN component contains remotely exploitable buffer overflows http://vuxml.freebsd.org/5b8f9a02-ec93-11d8-b913-000c41e2cdad.html
+
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Multi-protocol instant messaging client
 
