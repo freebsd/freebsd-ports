@@ -23,6 +23,7 @@
     SUBDIR += prc-tools-binutils
     SUBDIR += prc-tools-gcc
     SUBDIR += syncal
+    SUBDIR += txt2pdbdoc
     SUBDIR += xcopilot
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,20 @@
+# New ports collection makefile for:    txt2pdbdoc
+# Date created:         Mon Jan 8 2001
+# Whom:                 keichii@iteration.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	txt2pdbdoc
+PORTVERSION=	1.2.1
+CATEGORIES=	palm converters
+MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
+
+MAINTAINER=	keichii@iteration.net
+
+PREFIX=		${LOCALBASE}/
+
+MAN1=		txt2pdbdoc.1 pdbtxt2html.1 html2pdbtxt.1
+MAN4=		pdb.4 doc.4
+
+.include <bsd.port.mk>
