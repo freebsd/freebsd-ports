@@ -1,5 +1,5 @@
---- src/unix-gcc.mak.orig	Mon Sep 25 17:06:28 2000
-+++ src/unix-gcc.mak	Tue Jan  9 17:30:58 2001
+--- src/unix-gcc.mak.orig	Mon Sep 25 16:06:28 2000
++++ src/unix-gcc.mak	Sun Feb 25 17:58:59 2001
 @@ -26,14 +26,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -119,12 +119,16 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -266,12 +266,12 @@
+@@ -266,12 +266,16 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
 -#XLIBS=Xt SM ICE Xext X11
++ifdef NO_X
++XLIBS=
++else
 +XLIBS=Xt SM ICE Xext X11
++endif
  
  #XLIBDIRS=-L/usr/local/X/lib
 -XLIBDIRS=-L/usr/X11/lib
@@ -135,7 +139,7 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -329,7 +329,7 @@
+@@ -329,7 +333,7 @@
  # Choose the device(s) to include.  See devs.mak for details,
  # devs.mak and contrib.mak for the list of available devices.
  
@@ -144,7 +148,7 @@
  
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
-@@ -352,27 +352,27 @@
+@@ -352,27 +356,27 @@
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -193,7 +197,7 @@
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -386,13 +386,13 @@
+@@ -386,13 +390,13 @@
  # detect whether we're running a version of gcc with the const optimization
  # bug.
  
@@ -210,7 +214,7 @@
  CC_LEAF=$(CC_) -fomit-frame-pointer
  # gcc can't use -fomit-frame-pointer with -pg.
  CC_LEAF_PG=$(CC_)
-@@ -419,5 +419,5 @@
+@@ -419,5 +423,5 @@
  include $(GLSRCDIR)/unixinst.mak
  
  # This has to come last so it won't be taken as the default target.
