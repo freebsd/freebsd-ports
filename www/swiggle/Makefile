@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swiggle
-PORTVERSION=	0.3
+PORTVERSION=	0.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://mailbox.univie.ac.at/~le/swiggle/files/ \
 		http://www.daemon.li/downloads/
