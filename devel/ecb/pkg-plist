@@ -1,3 +1,8 @@
+@unexec install-info --delete %D/info/ecb.info %D/info/dir
+info/ecb.info
+@exec install-info %D/info/ecb.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-buffertab.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-buffertab.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cycle.el
@@ -14,6 +19,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.el

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ecb
-PORTVERSION=	1.70
+PORTVERSION=	1.80
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecb
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -26,13 +26,21 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's/.$$//' \
+		-e 's/GNU Emacs Lisp/The Emacs editor and associated tools/' \
+		 ${WRKSRC}/ecb.texi
 
 do-install:
 	${MKDIR} ${LISPDIR}
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/ecb.info ${PREFIX}/info
+	install-info ${PREFIX}/info/ecb.info ${PREFIX}/info/dir
 
 post-install:
 .if !defined(NOPORTDOCS)
