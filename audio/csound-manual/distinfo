@@ -1,5 +1,9 @@
 $FreeBSD$
 MD5 (csound/manual-docbook-4.23.tar.gz) = 8201c6184df2620161a059a90a31c414
+SIZE (csound/manual-docbook-4.23.tar.gz) = 1548606
 MD5 (csound/manual-html-4.23.tar.gz) = 582852b692c254dab6ec797bc3de161b
+SIZE (csound/manual-html-4.23.tar.gz) = 1722792
 MD5 (csound/manual-pdf-4.23.tar.gz) = 1075642721676183815431388d9b6750
+SIZE (csound/manual-pdf-4.23.tar.gz) = 4257930
 MD5 (csound/manual-text-4.23.tar.gz) = a4089336656a3a4da14801c82c9e6754
+SIZE (csound/manual-text-4.23.tar.gz) = 1172632
