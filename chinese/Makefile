@@ -28,6 +28,7 @@
     SUBDIR += cwtex
     SUBDIR += cxterm
     SUBDIR += dia
+    SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += emacs20
     SUBDIR += enscript
