@@ -433,6 +433,7 @@ autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
+avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
 avida		ports/biology/avida
 avidemux	ports/multimedia/avidemux
