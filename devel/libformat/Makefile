@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libformat
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://members.chello.at/oberzalek/development/
 DISTNAME=	Format-${PORTVERSION}
