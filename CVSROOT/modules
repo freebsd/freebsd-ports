@@ -7640,6 +7640,7 @@ prelude-lml	ports/security/prelude-lml
 prelude-manager	ports/security/prelude-manager
 prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
+premake		ports/devel/premake
 preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
 prips		ports/sysutils/prips
