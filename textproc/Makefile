@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zu-aspell
 
     SUBDIR += 2bsd-diff
     SUBDIR += Ebnf2ps
