@@ -1,58 +1,15 @@
-*** gv/config.Unix.orig	Mon Aug 26 18:02:18 1996
---- gv/config.Unix	Mon Aug 26 18:25:27 1996
-***************
-*** 28,34 ****
-  XCOMM ====================================================================
-  XCOMM === The print command.
-  XCOMM ====================================================================
-!       PRINT_COMMAND = lpr
-  
-  XCOMM ====================================================================
-  XCOMM === The name of the Xaw3d library.
---- 28,34 ----
-  XCOMM ====================================================================
-  XCOMM === The print command.
-  XCOMM ====================================================================
-!       PRINT_COMMAND = lpr -s
-  
-  XCOMM ====================================================================
-  XCOMM === The name of the Xaw3d library.
-***************
-*** 77,94 ****
-  XCOMM ====================================================================
-  XCOMM === Destination directory for the gv manpage.
-  XCOMM ====================================================================
-!       MANDIR    = /usr/local/man/man1
-  
-  XCOMM ====================================================================
-  XCOMM === Destination directory for the gv executable.
-  XCOMM ====================================================================
-!       BINDIR    = /usr/local/bin
-  
-  XCOMM ====================================================================
-  XCOMM === Destination directory for gv data files.
-  XCOMM === Must be terminated with a trailing '/'.
-  XCOMM ====================================================================
-!       GV_LIB	= /usr/local/lib/gv/
-  
-  
-  
---- 77,94 ----
-  XCOMM ====================================================================
-  XCOMM === Destination directory for the gv manpage.
-  XCOMM ====================================================================
-! XCOMM      MANDIR    = /usr/local/man/man1
-  
-  XCOMM ====================================================================
-  XCOMM === Destination directory for the gv executable.
-  XCOMM ====================================================================
-! XCOMM      BINDIR    = /usr/local/bin
-  
-  XCOMM ====================================================================
-  XCOMM === Destination directory for gv data files.
-  XCOMM === Must be terminated with a trailing '/'.
-  XCOMM ====================================================================
-!       GV_LIB	= $(LIBDIR)/gv/
-  
-  
-  
+--- config.Unix.orig	Tue Apr 15 00:00:00 1997
++++ config.Unix	Thu Apr 17 16:13:48 1997
+@@ -32,9 +32,9 @@
+ XCOMM --------------------------------------------------------------------
+ XCOMM  Destination directories.
+ XCOMM --------------------------------------------------------------------
+-      GV_MANDIR    = /usr/local/man/man1/
+-      GV_BINDIR    = /usr/local/bin/
+-      GV_LIBDIR    = /usr/local/lib/gv/
++      GV_MANDIR    = $(MANDIR)
++      GV_BINDIR    = $(BINDIR)
++      GV_LIBDIR    = $(LIBDIR)/gv/
+ 
+ XCOMM --------------------------------------------------------------------
+ XCOMM --- The name of the Xaw3d library.
