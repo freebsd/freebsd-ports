@@ -1,0 +1,62 @@
+bin/mhub
+bin/xsendbut
+etc/ggi/libgii.conf
+include/ggi/errors.h
+include/ggi/events.h
+include/ggi/gg.h
+include/ggi/gii-unix.h
+include/ggi/gii.h
+include/ggi/input/lin_kbd.h
+include/ggi/input/xwin.h
+include/ggi/internal/gii-dl.h
+include/ggi/internal/gii.h
+include/ggi/internal/gii_debug.h
+include/ggi/keyboard.h
+include/ggi/system.h
+lib/ggi/filter/mouse.la
+lib/ggi/filter/mouse.so
+lib/ggi/filter/save.la
+lib/ggi/filter/save.so
+lib/ggi/input/file.la
+lib/ggi/input/file.so
+lib/ggi/input/linux_mouse.la
+lib/ggi/input/linux_mouse.so
+lib/ggi/input/mouse.la
+lib/ggi/input/mouse.so
+lib/ggi/input/null.la
+lib/ggi/input/null.so
+lib/ggi/input/spaceorb.la
+lib/ggi/input/spaceorb.so
+lib/ggi/input/stdin.la
+lib/ggi/input/stdin.so
+lib/ggi/input/x.la
+lib/ggi/input/x.so
+lib/ggi/input/xwin.la
+lib/ggi/input/xwin.so
+lib/libgg.la
+lib/libgg.so
+lib/libgg.so.0
+lib/libgii.la
+lib/libgii.so
+lib/libgii.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/doc/libgii/ChangeLog
+share/doc/libgii/NEWS
+share/doc/libgii/README
+share/doc/libgii/env.txt
+share/doc/libgii/inputs.txt
+share/doc/libgii/libgii-api.sgml
+share/examples/libgii/demo.c
+share/examples/libgii/filter.c
+share/examples/libgii/mhub.c
+share/examples/libgii/xsendbut.c
+@dirrm etc/ggi
+@dirrm include/ggi/input
+@dirrm include/ggi/internal
+@dirrm include/ggi
+@dirrm lib/ggi/filter
+@dirrm lib/ggi/input
+@dirrm lib/ggi
+@dirrm share/doc/libgii
+@dirrm share/examples/libgii

@@ -1,0 +1,12 @@
+The goal of LibGII is to provide a single easy to use, but yet powerful, API
+for all possible input sources.  However we are not there yet.  The API is far
+from set in stone yet, and is likely to change.
+
+The main purpose of this LibGII release is to accompany our LibGGI beta
+release, but you're still very welcome to use LibGII as a standalone library
+for your non-LibGGI applications.
+
+WWW: http://www.ggi-project.org/
+
+--
+mwest@uct.ac.za
