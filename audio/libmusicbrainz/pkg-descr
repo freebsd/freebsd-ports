@@ -1,0 +1,9 @@
+MusicBrainz is the second generation incarnation of the CD Index.
+This server is designed to enable Audio CD and MP3/Vorbis players
+to download metadata about the music they are playing. All of the
+data collected on the Musicbrainz server is made available to the
+public under the OpenContent license.
+
+WWW: http://www.musicbrainz.org/
+
+Roman Shterenzon <roman@xpert.com>
