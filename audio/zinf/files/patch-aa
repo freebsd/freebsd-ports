@@ -1,0 +1,19 @@
+*** configure.in.orig	Sun Jul  1 15:31:13 2001
+--- configure.in	Sun Jul  1 15:32:03 2001
+***************
+*** 928,934 ****
+  AC_LANG_SAVE
+  AC_LANG_CPLUSPLUS
+  AC_CHECK_LIB(musicbrainz, mb_New, ,
+!   AC_MSG_ERROR([FreeAmp requires that the MusicBrainz client library be installed.]),-ldl)
+  AC_LANG_RESTORE
+  
+  AC_CONFIG_HEADER(config/config.h)
+--- 928,934 ----
+  AC_LANG_SAVE
+  AC_LANG_CPLUSPLUS
+  AC_CHECK_LIB(musicbrainz, mb_New, ,
+!   AC_MSG_ERROR([FreeAmp requires that the MusicBrainz client library be installed.]))
+  AC_LANG_RESTORE
+  
+  AC_CONFIG_HEADER(config/config.h)
