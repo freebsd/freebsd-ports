@@ -46,6 +46,7 @@
     SUBDIR += jewel
     SUBDIR += kappdock
     SUBDIR += kdeartwork3
+    SUBDIR += kwin_flatcurve
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
