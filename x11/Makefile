@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.10 1994/10/14 01:37:52 wollman Exp $
+# $Id: Makefile,v 1.11 1994/10/17 21:54:22 wollman Exp $
 #
-SUBDIR=	emu fvwm iv ivs tk xarchie xpm
+SUBDIR=	emu fvwm iv ivs tk xarchie xcdplayer xdvi xpm xtexshell
 #
 # nv depends on tk, so might as well build tk first...
 #
