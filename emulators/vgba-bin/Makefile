@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vgba
-PORTVERSION=	1.7
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGBA/
 PKGNAMESUFFIX=	-bin
@@ -30,4 +30,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/VGBA.html ${DOCSDIR}
 .endif # !defined(NOPORTDOCS)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
+
+.include <bsd.port.post.mk>
+
