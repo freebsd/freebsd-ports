@@ -320,6 +320,7 @@
 %%HLDSDIR%%/frontline/gfx/shell/min_d.bmp
 %%HLDSDIR%%/frontline/gfx/shell/min_f.bmp
 %%HLDSDIR%%/frontline/gfx/shell/min_n.bmp
+%%PORTDOCS%%%%HLDSDIR%%/frontline/gfx/shell/readme.txt
 %%HLDSDIR%%/frontline/gfx/shell/splash.bmp
 %%HLDSDIR%%/frontline/gfx/shell/up.bmp
 %%HLDSDIR%%/frontline/gfx/shell/uparrowd.bmp
@@ -496,6 +497,7 @@
 %%HLDSDIR%%/frontline/models/gib_dirt.mdl
 %%HLDSDIR%%/frontline/models/gib_glass.mdl
 %%HLDSDIR%%/frontline/models/gib_wood.mdl
+%%HLDSDIR%%/frontline/models/hk_fish3.mdl
 %%HLDSDIR%%/frontline/models/hubi.mdl
 %%HLDSDIR%%/frontline/models/hubit.mdl
 %%HLDSDIR%%/frontline/models/key.mdl
@@ -844,6 +846,7 @@
 %%HLDSDIR%%/frontline/sprites/d_sako.spr
 %%HLDSDIR%%/frontline/sprites/d_spas12.spr
 %%HLDSDIR%%/frontline/sprites/d_ump45.spr
+%%HLDSDIR%%/frontline/sprites/dead_radar.spr
 %%HLDSDIR%%/frontline/sprites/debris_concrete1.spr
 %%HLDSDIR%%/frontline/sprites/debris_concrete2.spr
 %%HLDSDIR%%/frontline/sprites/debris_concrete3.spr
@@ -875,6 +878,7 @@
 %%HLDSDIR%%/frontline/sprites/impact_concrete.spr
 %%HLDSDIR%%/frontline/sprites/impact_metal.spr
 %%HLDSDIR%%/frontline/sprites/impact_wood.spr
+%%HLDSDIR%%/frontline/sprites/item_key.spr
 %%HLDSDIR%%/frontline/sprites/lf_dust.spr
 %%HLDSDIR%%/frontline/sprites/lr_stamina.spr
 %%HLDSDIR%%/frontline/sprites/lr_team1.spr
@@ -903,6 +907,10 @@
 %%HLDSDIR%%/frontline/sprites/team1.spr
 %%HLDSDIR%%/frontline/sprites/team2.spr
 %%HLDSDIR%%/frontline/sprites/team3.spr
+%%HLDSDIR%%/frontline/sprites/team_icon.spr
+%%HLDSDIR%%/frontline/sprites/team_icon_assault.spr
+%%HLDSDIR%%/frontline/sprites/team_icon_recon.spr
+%%HLDSDIR%%/frontline/sprites/team_icon_support.spr
 %%HLDSDIR%%/frontline/sprites/wallpuff.spr
 %%HLDSDIR%%/frontline/sprites/wallpuff0.spr
 %%HLDSDIR%%/frontline/sprites/wallpuff1.spr

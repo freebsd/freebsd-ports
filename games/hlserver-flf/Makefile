@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flf
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 MASTER_SITES=	http://www.flfmod.net/site/info/files/ \
-		http://www.spies.com/~sandhawk/flf/ \
+		http://flf.spies.com/files/cur_release/ \
 		http://mirror.nuclearfallout.net:113/ \
 		http://nephilim.net/files/
 DISTNAME=	frontline${PORTVERSION:S/.//}_linux
