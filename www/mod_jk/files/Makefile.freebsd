@@ -23,7 +23,7 @@ JAVA_INCL=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS}
 JAVA_LIB=-L${JAVA_HOME}/jre/lib/${ARCH} -L${JAVA_HOME}/lib/${ARCH}/native_threads
 
 # Some more C compiler flags
-CFLAGS=-DHAVE_CONFIG_H -g -fpic -DSHARED_MODULE -O2 -D_REENTRANT -pthread -DLINUX -Wall
+CFLAGS=-DHAVE_CONFIG_H -g -fpic -DSHARED_MODULE -O2 -pthread -DLINUX -Wall
 
 JK=../common/
 SRCS=jk_ajp12_worker.c jk_connect.c jk_msg_buff.c jk_util.c jk_ajp13.c \
