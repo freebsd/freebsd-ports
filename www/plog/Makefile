@@ -28,7 +28,7 @@ OPTIONS=	GD		"With GD Support" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GD)
+.if !defined(WITHOUT_GD)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
 .endif
 
@@ -36,7 +36,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
 .endif
 
-.if !defined(WITH_GD) && !defined(WITH_IMAGICK)
+.if defined(WITHOUT_GD) && !defined(WITH_IMAGICK)
 pre-patch:
 	@${ECHO_CMD} "Without GD or ImageMagick support. No thumbnails will be generated at all."
 .endif

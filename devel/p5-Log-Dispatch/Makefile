@@ -69,7 +69,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
 .endif
 
-.if defined(WITH_EMAIL_MAILSENDMAIL)
+.if !defined(WITHOUT_EMAIL_MAILSENDMAIL)
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
 .endif
 
