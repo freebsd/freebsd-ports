@@ -1,16 +1,16 @@
 # New ports collection makefile for:	METIS
-# Version required:	3.0
+# Version required:	4.0
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/26 03:55:22 mph Exp $
 #
 
-DISTNAME=	metis-3.0
+DISTNAME=	metis-4.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.umn.edu/~karypis/metis/metis/files/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 
