@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Nov 25 06:37:11 2003
++++ Makefile.in	Tue Nov 25 06:37:19 2003
+@@ -83,7 +83,7 @@
+ lib_LTLIBRARIES = libartsout.la
+ CFLAGS = @CFLAGS@ @GTK_CFLAGS@ `artsc-config --cflags`
+ LIBS = @LIBS@ @GTK_LIBS@ @PTHREAD_LIBS@
+-libartsout_la_LDFLAGS = `artsc-config --libs` -lcmallocc
++libartsout_la_LDFLAGS = `artsc-config --libs`
+ libartsout_la_SOURCES = about.c artsout.c artsout.h audio.c configure.c init.c mixer.c
+ libdir = $(xmms_output_plugin_dir)
+ XMMSPATH = $(XMMS_PATH)
