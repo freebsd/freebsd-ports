@@ -1,6 +1,6 @@
---- src/acpustatus.cc.orig	Wed Feb 20 19:55:04 2002
-+++ src/acpustatus.cc	Wed Feb 20 20:19:20 2002
-@@ -26,7 +26,15 @@
+--- src/acpustatus.cc.orig	Sun Mar  9 04:37:52 2003
++++ src/acpustatus.cc	Thu Apr 24 05:09:50 2003
+@@ -26,7 +26,16 @@
  
  #include "intl.h"
  
@@ -12,12 +12,13 @@
 +#include <kvm.h>
 +#include <nlist.h>
 +#include <sys/dkstat.h>
++#include <sys/resource.h>
 +#include <devstat.h>
 +#endif
  
  #define UPDATE_INTERVAL 500
  
-@@ -49,13 +57,42 @@
+@@ -49,13 +58,42 @@
      color[IWM_SYS]  = new YColor(clrCpuSys);
      color[IWM_IDLE] = *clrCpuIdle
      		    ? new YColor(clrCpuIdle) : NULL;
@@ -61,7 +62,7 @@
      getStatus();
      updateStatus();
      updateToolTip();
-@@ -70,6 +107,13 @@
+@@ -70,6 +108,13 @@
      delete color[IWM_NICE]; color[IWM_NICE] = 0;
      delete color[IWM_SYS];  color[IWM_SYS]  = 0;
      delete color[IWM_IDLE]; color[IWM_IDLE] = 0;
@@ -74,8 +75,8 @@
 +#endif
  }
  
- void CPUStatus::paint(Graphics &g, int /*x*/, int /*y*/, unsigned int /*width*/, unsigned int /*height*/) {
-@@ -80,13 +124,34 @@
+ void CPUStatus::paint(Graphics &g, const YRect &/*r*/) {
+@@ -80,13 +125,34 @@
          int nice = cpu[i][IWM_NICE];
          int sys = cpu[i][IWM_SYS];
          int idle = cpu[i][IWM_IDLE];
@@ -110,7 +111,7 @@
                  if (n >= y) n = y;
                  g.setColor(color[IWM_SYS]);
                  g.drawLine(i, y, i, n);
-@@ -102,7 +167,12 @@
+@@ -102,7 +168,12 @@
              }
  
              if (user) {
@@ -123,7 +124,7 @@
                  if (n >= y) n = y;
                  g.setColor(color[IWM_USER]);
                  g.drawLine(i, y, i, n);
-@@ -152,6 +222,14 @@
+@@ -152,6 +223,14 @@
      sprintf(load, _("CPU Load: %3.2f %3.2f %3.2f, %d processes."),
              l1, l5, l15, sys.procs);
      setToolTip(load);
@@ -138,7 +139,7 @@
  #endif
  }
  
-@@ -169,13 +247,43 @@
+@@ -169,13 +248,43 @@
          cpu[i - 1][IWM_NICE] = cpu[i][IWM_NICE];
          cpu[i - 1][IWM_SYS]  = cpu[i][IWM_SYS];
          cpu[i - 1][IWM_IDLE] = cpu[i][IWM_IDLE];
@@ -183,7 +184,7 @@
      char *p, buf[128];
      long cur[IWM_STATES];
      int len, fd = open("/proc/stat", O_RDONLY);
-@@ -209,8 +317,8 @@
+@@ -209,8 +318,8 @@
              cpu[taskBarCPUSamples-1][IWM_USER], cpu[taskBarCPUSamples-1][IWM_NICE],
              cpu[taskBarCPUSamples-1][IWM_SYS],  cpu[taskBarCPUSamples-1][IDLE]);
  #endif
