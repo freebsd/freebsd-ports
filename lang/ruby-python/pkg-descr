@@ -11,4 +11,5 @@ enables Ruby users to have the advantages of both languages:
 If you are attracted by Python modules but not fully satisfied with
 Python's syntax or type system, try this library!
 
+Author:	Masaki Fukushima <fukusima@goto.info.waseda.ac.jp>
 WWW:	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/python-e.html

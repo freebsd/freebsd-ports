@@ -33,9 +33,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 EXAMPLES_EN=	dtd/ext1.dtd	dtd/ext2.dtd	dtd/extdtd.rb	dtd/extdtd.xml \
 		namespaces/namespace1.rb	namespaces/namespace1.xml \
@@ -59,6 +59,7 @@ do-configure:
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/dtd
 	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/namespaces
 	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/ja
@@ -70,7 +71,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} \
 		${PREFIX}/share/examples/ruby/xmlparser/ja/${f}
 .endfor
-.if !defined(NOPORTDOCS)
 .for f in ${RD_DOCS}
 	@cd ${WRKSRC}/lib; \
 	rd2 ${f} > ${f:S/.rb$/.html/}

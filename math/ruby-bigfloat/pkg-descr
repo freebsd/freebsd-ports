@@ -1,4 +1,5 @@
 BigFloat is an extension library for Ruby.  Using BigFloat class, you
 can obtain any number of significant digits in computation.
 
+Author:	Shigeo Kobayashi <shigeo@tinyforest.gr.jp>
 WWW:	http://www.tinyforest.gr.jp/ruby/bigfloat_en.html

@@ -1,6 +1,6 @@
-# New ports collection makefile for:    ruby-postgres
-# Date created:         19 April 1999
-# Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
+# New ports collection makefile for:	ruby-postgres
+# Date created:		19 April 1999
+# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
@@ -23,9 +23,9 @@ CONFIGURE_ARGS+= --with-pgsql-include-dir="${PGDIR}/include" \
 		--with-pgsql-lib-dir="${PGDIR}/lib"
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${PREFIX}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${PREFIX}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 PGDIR?=		${PREFIX}/pgsql
 
@@ -36,9 +36,9 @@ do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/postgres
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${PREFIX}/share/examples/ruby/postgres/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/postgres/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/postgres/

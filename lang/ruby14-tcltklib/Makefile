@@ -1,6 +1,6 @@
-# New ports collection makefile for:    rubytk
-# Date created:         15 March 1999
-# Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
+# New ports collection makefile for:	rubytk
+# Date created:		15 March 1999
+# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
@@ -36,8 +36,8 @@ PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
 BRANCH_NAME=	1.4
 
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCDIR=		${PREFIX}/share/doc/ruby
 EXAMPLESDIR=	${PREFIX}/share/examples/ruby
@@ -62,7 +62,7 @@ TK_LIB=		tk${TK_VERSION}${TCL_JP}
 TCL_DIR=	`echo "${TCL_LIB}" | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
 TK_DIR=		`echo "${TK_LIB}"  | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
 
-RUBY=		${LOCALBASE}/bin/ruby
+RUBY?=		${LOCALBASE}/bin/ruby
 EXTS=		tcltklib tk
 
 do-configure:
@@ -81,14 +81,14 @@ do-install:
 .for dir in ${EXTS}
 	@${ECHO_MSG} "Installing in ${dir}..."
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/sample/* ${EXAMPLESDIR}/${dir}
+.endif
 .endfor
-
-post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}/tcltklib/demo
 	${INSTALL_DATA} ${WRKSRC}/tcltklib/demo/* ${EXAMPLESDIR}/tcltklib/demo
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}/tcltklib
 	${INSTALL_DATA} ${WRKSRC}/tcltklib/*.euc ${DOCDIR}/tcltklib
 .endif

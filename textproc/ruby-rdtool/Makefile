@@ -16,20 +16,27 @@ MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
 		racc:${PORTSDIR}/devel/ruby-racc \
-		${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
-		${LOCALBASE}/lib/ruby/site_ruby/optparse.rb:${PORTSDIR}/devel/ruby-optparse
+		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
+		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
-		${LOCALBASE}/lib/ruby/site_ruby/optparse.rb:${PORTSDIR}/devel/ruby-optparse
+		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
+		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+
+RUBY_SITELIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}
+RUBY_SITEARCHLIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+DOCS_EN=	README.html	doc/rd-draft.rd		doc/rd-draft.html
+DOCS_JA=	README.ja.html	doc/dev-note.rd.ja	doc/rd-draft.rd.ja \
+		doc/dev-note.ja.html doc/rd-draft.ja.html
 
 do-configure:
 	@cd ${WRKSRC}; \
@@ -53,23 +60,24 @@ post-build:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/rmi2html
-	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb \
-		${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/rd/
-	${MKDIR} ${PREFIX}/share/examples/ruby/rd
-	${CP} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/rd/dot.rd2rc \
-		${PREFIX}/share/examples/ruby/rd/
+	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
 	${MKDIR} ${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/utils/rd-mode.el ${EMACSLISPDIR}/
 	${MKDIR} ${XEMACSLISPDIR}
 	${LN} -sf ${EMACSLISPDIR}/rd-mode.el ${XEMACSLISPDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
+	rd2 ${PREFIX}/share/doc/ruby/optparse/ja/optparse.ja.rd \
+		> ${PREFIX}/share/doc/ruby/optparse/ja/optparse.ja.html
+	${MKDIR} ${PREFIX}/share/examples/ruby/rd
+	${CP} ${RUBY_SITELIBDIR}/rd/dot.rd2rc ${PREFIX}/share/examples/ruby/rd/
 	${MKDIR} ${PREFIX}/share/doc/ruby/rd/ja
-	${INSTALL_DATA} ${WRKSRC}/README.html ${PREFIX}/share/doc/ruby/rd/
-	${INSTALL_DATA} ${WRKSRC}/README.ja.html ${PREFIX}/share/doc/ruby/rd/ja/
-	${INSTALL_DATA} ${WRKSRC}/doc/dev-note.ja.html ${PREFIX}/share/doc/ruby/rd/ja/
-	${INSTALL_DATA} ${WRKSRC}/doc/rd-draft.html ${PREFIX}/share/doc/ruby/rd/
-	${INSTALL_DATA} ${WRKSRC}/doc/rd-draft.ja.html ${PREFIX}/share/doc/ruby/rd/ja/
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/rd/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/rd/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>

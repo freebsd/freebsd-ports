@@ -22,14 +22,13 @@ RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 BUILD_DEPENDS+=	rd2:${PORTSDIR}/textproc/ruby-rdtool
 .endif
 
+INSTALL_TARGET=	site-install
+
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
-
-pre-patch:
-#	${CHMOD} u+w ${WRKSRC}/extconf.rb
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 do-configure:
 	@cd ${WRKSRC}; \
@@ -41,9 +40,7 @@ post-build:
 	rd2 iconv.c > iconv.html
 .endif
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/iconv.so \
-		${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/iconv
 .for f in iconv.html rd.css

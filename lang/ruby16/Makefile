@@ -1,6 +1,6 @@
-# New ports collection makefile for:    ruby
-# Date created:         04 September 1997
-# Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
+# New ports collection makefile for:	ruby
+# Date created:		04 September 1997
+# Whom:			Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
 # $FreeBSD$
 #
@@ -24,8 +24,8 @@ CONFIGURE_ARGS=	--enable-shared
 MAN1=		ruby.1
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 BRANCH_NAME=	1.4
 
@@ -45,6 +45,7 @@ post-patch:
 
 post-install:
 	strip ${PREFIX}/bin/ruby
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
 	${MKDIR} ${EXAMPLESDIR}/misc
@@ -53,7 +54,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${EXAMPLESDIR}/curses
 	${MKDIR} ${EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${EXAMPLESDIR}/pty
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${DOCDIR}
 	${MKDIR} ${DOCDIR}/etc

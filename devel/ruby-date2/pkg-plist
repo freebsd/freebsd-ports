@@ -8,16 +8,16 @@ lib/ruby/site_ruby/parsedate3.rb
 lib/ruby/site_ruby/qholiday.rb
 lib/ruby/site_ruby/strftime.rb
 lib/ruby/site_ruby/strptime.rb
+share/examples/ruby/date2/cal.rb
+share/examples/ruby/date2/daylight.rb
+share/examples/ruby/date2/goodfriday.rb
+share/examples/ruby/date2/ja/ncal.rb
+@dirrm share/examples/ruby/date2/ja
+@dirrm share/examples/ruby/date2
 share/doc/ruby/date2/CHANGES.en
 share/doc/ruby/date2/MANUAL.en
 share/doc/ruby/date2/README.en
-share/doc/ruby/date2/examples/cal.rb
-share/doc/ruby/date2/examples/daylight.rb
-share/doc/ruby/date2/examples/goodfriday.rb
-share/doc/ruby/date2/examples/ja/ncal.rb
 share/doc/ruby/date2/ja/MANUAL
 share/doc/ruby/date2/ja/README
-@dirrm share/doc/ruby/date2/examples/ja
-@dirrm share/doc/ruby/date2/examples
 @dirrm share/doc/ruby/date2/ja
 @dirrm share/doc/ruby/date2

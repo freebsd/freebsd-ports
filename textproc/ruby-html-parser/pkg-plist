@@ -1,5 +1,5 @@
-lib/ruby/site_ruby/formatter.rb
-lib/ruby/site_ruby/html-parser.rb
-lib/ruby/site_ruby/sgml-parser.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/formatter.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/html-parser.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/sgml-parser.rb
 share/doc/ruby/html-parser/README.html
 @dirrm share/doc/ruby/html-parser
