@@ -1,0 +1,7 @@
+AsWiki is WikiWikiWeb clone (Wiki Engine) written in Ruby. WikiWikiWeb
+is web base collaboration tool.  AsWiki provide web-site which anyone
+can create and edit page.  It has features easy customize its publish
+html and RCS base version log.
+				-- excerpt from RAA (Ruby Application Archive)
+
+WWW: http://aswiki.sourceforge.net/
