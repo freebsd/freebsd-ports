@@ -1,0 +1,15 @@
+adns is a resolver library for C (and C++) programs. In contrast with
+the existing interfaces, gethostbyname et al and libresolv, it has the
+following features:
+
+* It is reasonably easy to use for simple programs which just want
+  to translate names to addresses, look up MX records, etc.
+* It can be used in an asynchronous, non-blocking, manner. Many
+  queries can be handled simultaneously.
+
+Technical note: adns requires a real nameserver like BIND or
+Dents running on the same system or a nearby one, which must be
+willing to provide `recursive service'. I.e., adns is a `stub
+resolver'.
+
+WWW: http://www.chiark.greenend.org.uk/~ian/adns/
