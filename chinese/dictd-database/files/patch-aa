@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sun Apr  2 00:43:40 2000
++++ Makefile.in	Sun Oct 14 10:52:13 2001
+@@ -75,7 +75,7 @@
+ 		(cd $$subdir && $(MAKE)) || exit 1; \
+ 	done
+ 
+-all:: $(EXES)
++all:: $(EXES) db
+ 
+ db :: rawdata $(DATABASES)

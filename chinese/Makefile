@@ -25,6 +25,7 @@
     SUBDIR += cmexfonts
     SUBDIR += cxterm
     SUBDIR += dia
+    SUBDIR += dictd-database
     SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm

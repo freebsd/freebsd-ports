@@ -1,0 +1,10 @@
+--- dictfmt.c.orig	Sun Apr  2 00:43:40 2000
++++ dictfmt.c	Sun Oct 14 09:58:49 2001
+@@ -30,6 +30,7 @@
+ #include <string.h>
+ #include <time.h>
+ #include <ctype.h>
++#include <unistd.h>
+ 
+ #if HAVE_GETOPT_H
+ #include <getopt.h>

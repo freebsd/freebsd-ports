@@ -1,0 +1,13 @@
+--- configure.orig	Sun Oct 14 10:16:23 2001
++++ configure	Sun Oct 14 10:16:55 2001
+@@ -542,8 +542,8 @@
+ 
+ 
+ 
+-prefix=/usr
+-datadir=/usr/lib
++prefix=/usr/local
++datadir=/usr/local/lib
+ 
+ echo Configuring for dict-misc
+ echo .
