@@ -5,19 +5,23 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/ConfigReader.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Exception.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/AxPoint.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/HtmlDoc.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/LibXSLT.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/PassiveTeX.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/Query.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/SAXMachines.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/Sablot.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XMLNewsNITF.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XMLNewsRDF.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XPathScript.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP/SimpleTaglib.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP/TaglibHelper.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Makefile.PL
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/MediaChooser/WAPCheck.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/Fragment.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/Passthru.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/QueryStringCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/Fragment.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/Passthru.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/QueryStringCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/Filter.pm
@@ -28,7 +32,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/StyleChooser/PathInf
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/StyleChooser/QueryString.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/StyleChooser/UserAgent.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/MimeXML.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/AxKit.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AxKit/CharsetConv/CharsetConv.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AxKit/CharsetConv/CharsetConv.so
@@ -46,7 +49,6 @@ share/examples/AxKit/axkit.org/docs/quick_start.dkb
 share/examples/AxKit/axkit.org/docs/xpathscript/guide.dkb
 share/examples/AxKit/axkit.org/docs/xsp/guide.dkb
 share/examples/AxKit/axkit.org/docs/xsp/index.xml
-share/examples/AxKit/axkit.org/docs/xsp/sqltaglib.dkb
 share/examples/AxKit/axkit.org/examples/cv.css
 share/examples/AxKit/axkit.org/examples/cv.xml
 share/examples/AxKit/axkit.org/examples/cv.xps
@@ -80,7 +82,6 @@ share/examples/AxKit/axkit.org/license.xml
 share/examples/AxKit/axkit.org/mailinglist.xml
 share/examples/AxKit/axkit.org/news.xml
 share/examples/AxKit/axkit.org/sidebar.xml
-share/examples/AxKit/axkit.org/sidebar_new.xml
 share/examples/AxKit/axkit.org/stylesheets/axkit.css
 share/examples/AxKit/axkit.org/stylesheets/axkit_html.css
 share/examples/AxKit/axkit.org/stylesheets/body_print_html.xps
@@ -111,21 +112,21 @@ share/examples/AxKit/index.xml
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/MediaChooser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/StyleChooser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AxKit/CharsetConv
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AxKit
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit
-@dirrm share/examples/AxKit/axkit.org/stylesheets/new
-@dirrm share/examples/AxKit/axkit.org/stylesheets
-@dirrm share/examples/AxKit/axkit.org/img
-@dirrm share/examples/AxKit/axkit.org/examples
-@dirrm share/examples/AxKit/axkit.org/docs/xpathscript
 @dirrm share/examples/AxKit/axkit.org/docs/xsp
 @dirrm share/examples/AxKit/axkit.org/docs/presentations/tpc2001
 @dirrm share/examples/AxKit/axkit.org/docs/presentations
+@dirrm share/examples/AxKit/axkit.org/docs/xpathscript
 @dirrm share/examples/AxKit/axkit.org/docs
+@dirrm share/examples/AxKit/axkit.org/examples
+@dirrm share/examples/AxKit/axkit.org/stylesheets/new
+@dirrm share/examples/AxKit/axkit.org/stylesheets
+@dirrm share/examples/AxKit/axkit.org/img
 @dirrm share/examples/AxKit/axkit.org
 @dirrm share/examples/AxKit

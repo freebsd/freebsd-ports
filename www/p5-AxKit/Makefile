@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	AxKit
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
@@ -34,18 +33,22 @@ SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		\
 		Apache::AxKit::Language.3 \
+		Apache::AxKit::Language::AxPoint.3 \
+		Apache::AxKit::Language::HtmlDoc.3 \
+		Apache::AxKit::Language::SAXMachines.3 \
 		Apache::AxKit::Language::XPathScript.3 \
 		Apache::AxKit::Language::XSP.3 \
+		Apache::AxKit::Language::XSP::SimpleTaglib.3 \
 		Apache::AxKit::Language::XSP::TaglibHelper.3 \
-		Apache::AxKit::Plugins::Fragment.3 \
-		Apache::AxKit::Plugins::Passthru.3 \
+		Apache::AxKit::Plugin::Fragment.3 \
+		Apache::AxKit::Plugin::Passthru.3 \
+		Apache::AxKit::Plugin::QueryStringCache.3 \
 		Apache::AxKit::Provider.3 \
 		Apache::AxKit::StyleChooser::Cookie.3 \
 		Apache::AxKit::StyleChooser::FileSuffix.3 \
 		Apache::AxKit::StyleChooser::PathInfo.3 \
 		Apache::AxKit::StyleChooser::QueryString.3 \
 		Apache::AxKit::StyleChooser::UserAgent.3 \
-		Apache::MimeXML.3 \
 		AxKit.3
 
 PERL_CONFIGURE=	yes
