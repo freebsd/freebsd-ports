@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Jun 18 20:11:39 1999
++++ Makefile	Mon Apr 30 03:17:17 2001
+@@ -13,8 +13,6 @@
+ ## Use maximum optimization. On busy web sites we want gracula to work as
+ ## fast as possible. However, these options may not work with a compiler
+ ## other than gcc. If that is the case, comment them out.
+-CFLAGS+= -O3 -fexpensive-optimizations -frerun-cse-after-loop \
+-	-fomit-frame-pointer
+ ## Comment out the next line if you only want 32-bit counters,
+ ## or if you get linking errors (since it, too, may only work with gcc):
+ CFLAGS+=	-DGCLUSELONGLONG
