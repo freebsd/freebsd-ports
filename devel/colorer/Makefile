@@ -24,9 +24,9 @@ BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
-NEED_JAVAC=	yes
 ALL_TARGET?=	library-linux
 USE_GMAKE=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
