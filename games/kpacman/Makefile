@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	kpacman
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Pacman Clone for KDE
 
+LIB_DEPENDS=	kdegames.2:${PORTSDIR}/games/kdegames3
+
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
