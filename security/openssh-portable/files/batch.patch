@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Nov 12 00:34:23 2001
++++ Makefile.in	Sun Dec  2 07:45:09 2001
+@@ -176,7 +176,7 @@
+ 	autoreconf
+ 	(cd scard && $(MAKE) -f Makefile.in distprep)
+ 
+-install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files host-key
++install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
+ install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
+ 
+ scard-install:

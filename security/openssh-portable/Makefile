@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.0.1p1
+PORTVERSION=	3.0.2p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -36,10 +36,11 @@ CONFIGURE_ARGS+=	--with-pam
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
+.if defined(BATCH)
+EXTRA_PATCHES+=		${FILESDIR}/batch.patch
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.if defined(BATCH)
-	@(cd ${PREFIX} && ${RM} -f ${CLEAN})
-.endif
 
 .include <bsd.port.mk>
