@@ -1,0 +1,24 @@
+--- lib/Xm/ResConvert.c.orig	Fri Mar  3 06:01:08 2000
++++ lib/Xm/ResConvert.c	Mon May 15 02:34:47 2000
+@@ -1037,9 +1037,7 @@
+ 
+ 	strcat(buf, "\n");
+ 
+-#ifdef	LESSTIF_PRODUCTION
+-	XtAppWarning(XtWidgetToApplicationContext(w), buf);
+-#else
++#ifndef	LESSTIF_PRODUCTION
+ 	if (getenv("DEBUG_REDIRECT_XMWARNING"))
+ 	{
+ 	    XdbPrintString(buf);
+@@ -1056,9 +1054,7 @@
+ 	vsprintf(buf + strlen(buf), fmt, arg_list);
+ 	va_end(arg_list);
+ 
+-#ifdef	LESSTIF_PRODUCTION
+-	XtWarning(buf);
+-#else
++#ifndef	LESSTIF_PRODUCTION
+ 	if (getenv("DEBUG_REDIRECT_XMWARNING"))
+ 	{
+ 	    XdbPrintString(buf);
