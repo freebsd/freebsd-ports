@@ -1,25 +1,32 @@
-# New ports collection makefile for:	gnutls
-# Date created:		13 Nov 2002
+# New ports collection makefile for:	gnutls-devel
+# Date created:		2003-07-17
 # Whom:			Sergei Kolobov <sergei@kolobov.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
-	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	ftp://ftp.gnutls.org/pub/gnutls/
-MASTER_SITE_SUBDIR=	alpha/gnutls
+	http://www.mirrors.wiretapped.net/security/network-security/gnutls/devel/ \
+	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/devel/ \
+	ftp://ftp.gnutls.org/pub/gnutls/devel/
+MASTER_SITE_SUBDIR=	alpha/gnutls/devel
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	GNU Transport Layer Security library
+COMMENT=	GNU Transport Layer Security library (development version)
 
-LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.10:${PORTSDIR}/security/libgcrypt \
+		gpg-error.1:${PORTSDIR}/security/libgpg-error \
+		tasn1.2:${PORTSDIR}/security/libtasn1 \
+		opencdk.8:${PORTSDIR}/security/opencdk
 
+CONFLICTS=	gnutls-[0-9]*
+
+USE_ICONV=	yes
+USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -28,18 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-included-lzo
 
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.2)
-LIB_DEPENDS+=		tasn1.2:${PORTSDIR}/security/libtasn1
-.else
-CONFIGURE_ARGS+=	--with-included-libtasn1
-.endif
-
-.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.6)
-LIB_DEPENDS+=		opencdk.6:${PORTSDIR}/security/opencdk
-.else
-CONFIGURE_ARGS+=	--disable-openpgp-authentication
-.endif
-
+MAN1=		certtool.1 gnutls-cli.1 gnutls-cli-debug.1 \
+       		gnutls-serv.1 gnutls-srpcrypt.1
 DOCS=		AUTHORS NEWS README THANKS doc/tex/*.ps
 EXAMPLES=	doc/examples/*.c
 
