@@ -1,0 +1,11 @@
+--- doctype/sgmlnorm.cxx.old	Thu Feb 10 20:45:12 2000
++++ doctype/sgmlnorm.cxx	Thu Feb 10 20:45:23 2000
+@@ -528,7 +528,7 @@
+ #ifndef TAG_GROW_SIZE
+ #define TAG_GROW_SIZE 128
+ #endif
+-  const grow_size = TAG_GROW_SIZE;
++  const int grow_size = TAG_GROW_SIZE;
+ #undef TAG_GROW_SIZE
+ 
+   // You should allocate character pointers (to tags) as you need them.
