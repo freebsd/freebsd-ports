@@ -33,9 +33,7 @@ lib/sasl/libplain.so
 lib/sasl/libplain.so.1
 sbin/sasldblistusers
 sbin/saslpasswd
-sbin/pwcheck_pwnam
-@exec ln %D/sbin/pwcheck_pwnam %D/sbin/pwcheck
-@unexec rm -f %D/sbin/pwcheck
+sbin/pwcheck
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -44,13 +42,13 @@ sbin/pwcheck_pwnam
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Sendmail.README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/draft-leach-digest-sasl-05.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-newman-auth-scram-03.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2095.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2222.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2245.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2831.txt
 %%PORTDOCS%%%%DOCSDIR%%/gssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.html

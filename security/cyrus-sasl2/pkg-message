@@ -1,15 +1,12 @@
-%%PREFIX%%/etc/%%SASLDB%% now needs to be created
-before applications that depend on SASL are used.
 
-	su cyrus
-	%%PREFIX%%/sbin/saslpasswd -c userid
-
-You will also need to start the pwcheck daemon:
+You may need to start the pwcheck daemon for authentication with
+the system password files:
 
 	%%PREFIX%%/etc/rc.d/pwcheck.sh start
 
-Read the documentation in %%DOCSDIR%%
+or you can use sasldb for authentication, to add users use:
+
+	saslpasswd -c username
 
 How to enable SMTP AUTH with system Sendmail 8.11 - Sendmail.README
 
-How to use LDAP or MySQL for passwords - see html/sysadmin.html

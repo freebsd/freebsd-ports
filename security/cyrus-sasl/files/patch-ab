@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Jul 20 21:35:01 2000
-+++ configure.in	Thu Nov 16 09:07:00 2000
+--- configure.in.orig	Tue Nov 27 11:45:28 2001
++++ configure.in	Tue Nov 27 12:49:28 2001
 @@ -66,8 +66,9 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
@@ -12,126 +12,17 @@
  
  AM_DISABLE_STATIC
  
-@@ -232,6 +233,13 @@
+@@ -235,6 +236,13 @@
+   berkeley)
      SASL_DB_BACKEND="db_${dblib}.lo"
      AC_DEFINE(SASL_BERKELEYDB)
-     SASL_DB_LIB="-ldb"
 +    for db3loc in ${prefix} /usr/local /usr
 +    do
 +      if test -d ${db3loc}/include/db3; then
-+	CPPFLAGS="-I${db3loc}/include/db3 $CPPFLAGS"
-+	break
++       CPPFLAGS="-I${db3loc}/include/db3 $CPPFLAGS"
++       break
 +      fi
 +    done
      ;;
    *)
      AC_MSG_WARN([Disabling SASL authentication database support])
-@@ -310,6 +318,88 @@
- fi
- AM_CONDITIONAL(PWCHECK, test "$with_pwcheck" != no)
- 
-+dnl MySQL
-+AC_ARG_WITH(mysql,  [ --with-mysql=PATH        enable authentication from MySQL database [no] ],
-+  with_mysql=$withval,
-+  with_mysql=no)
-+
-+if test -z "$with_mysql"; then
-+  for mysqlloc in lib/mysql lib
-+  do
-+    if test -f ${prefix}/${mysqlloc}/libmysqlclient.a; then
-+      with_mysql="${prefix}"
-+      break
-+    elif test -f /usr/local/${mysqlloc}/libmysqlclient.a; then
-+      with_mysql="/usr/local"
-+      break
-+    elif test -f /usr/${mysqlloc}/libmysqlclient.a; then
-+      with_mysql="/usr"
-+      break
-+    fi
-+  done
-+fi
-+
-+LIB_MYSQL=""
-+case "$with_mysql" in
-+    no) true;;
-+    ""|yes) AC_CHECK_LIB(mysqlclient, mysql_select_db,
-+		AC_DEFINE(HAVE_MYSQL)
-+		LIB_MYSQL="-lmysqlclient",
-+		with_mysql=no);;
-+    *)	if test -d ${with_mysql}/include/mysql; then
-+	  CPPFLAGS="$CPPFLAGS -I${with_mysql}/include/mysql"
-+	else
-+	  CPPFLAGS="$CPPFLAGS -I${with_mysql}/include"
-+	fi
-+	if test -d ${with_mysql}/lib/mysql; then
-+	  LDFLAGS="$LDFLAGS -L${with_mysql}/lib/mysql"
-+	fi
-+	AC_DEFINE(HAVE_MYSQL)
-+	LIB_MYSQL="-lmysqlclient";;
-+esac
-+AC_SUBST(LIB_MYSQL)
-+
-+dnl LDAP
-+AC_ARG_WITH(ldap, [  --with-ldap=PATH         enable authentication from LDAP [no] ],
-+  with_ldap=$withval,
-+  with_ldap=no)
-+
-+if test -z "$with_ldap"; then
-+  for ldaploc in lib/ldap lib
-+  do
-+    if test -f ${prefix}/${ldaploc}/libldap.a; then
-+      with_ldap="${prefix}"
-+      break
-+    elif test -f /usr/local/${ldaploc}/libldap.a; then
-+      with_ldap="/usr/local"
-+      break
-+    elif test -f /usr/${ldaploc}/libldap.a; then
-+      with_ldap="/usr"
-+      break
-+    fi
-+  done
-+fi
-+
-+LIB_LDAP=""
-+case "$with_ldap" in
-+    no) true;;
-+    ""|yes) AC_CHECK_LIB(ldap, ldap_open,
-+                AC_DEFINE(HAVE_LDAP)
-+		LIB_LDAP="-lldap -llber",
-+                with_ldap=no);;
-+    *)  if test -d ${with_ldap}/include/ldap; then
-+          CPPFLAGS="${CPPFLAGS} -I${with_ldap}/include/ldap"
-+        else
-+          CPPFLAGS="${CPPFLAGS} -I${with_ldap}/include"
-+        fi
-+	if test -d ${with_ldap}/lib/ldap; then
-+	  LDFLAGS="$LDFLAGS -L${with_ldap}/lib/ldap"
-+	fi
-+        AC_DEFINE(HAVE_LDAP)
-+        LIB_LDAP="-lldap -llber";;
-+esac
-+AC_SUBST(LIB_LDAP)
-+
- dnl CRAM-MD5
- AC_ARG_ENABLE(cram, [  --enable-cram           enable CRAM-MD5 authentication [yes] ],
-   cram=$enableval,
-@@ -434,11 +524,15 @@
-   fi
- 
-   if test "$with_des" != no; then
-+    case "$host_os" in
-+	freebsd*)
-+	    COM_ERR="-lcom_err"
-+	    ;;
-+    esac
-     AC_CHECK_HEADER(krb.h,
--      AC_CHECK_LIB(krb, krb_mk_priv, COM_ERR="",
--	AC_CHECK_LIB(krb, krb_mk_priv, COM_ERR="-lcom_err",
--                     AC_WARN(No Kerberos V4 found); krb4=no, -ldes -lcom_err),
--        -ldes),
-+      AC_CHECK_LIB(krb, krb_mk_priv,:,
-+		   AC_WARN(No Kerberos V4 found); krb4=no,
-+		   -ldes $COM_ERR),
-       AC_WARN(No Kerberos V4 found); krb4=no)
-   else
-     AC_WARN(No DES library found for Kerberos V4 support)

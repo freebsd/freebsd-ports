@@ -1,51 +1,68 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
 	exit
 fi
-
-SASLDB_NAME=sasldb.db
 
 tempfile=`mktemp -t checklist`
 
 if [ "${BATCH}" ]; then
-	if [ "x${ENABLE_DB3}" = "xYES" ]; then
-		OPTIONS=\"DB3\"
+	if [ "${WITH_DB3}" ]; then
+		OPTIONS="\"DB3\""
+	else
+		OPTIONS="\"NDBM\""
 	fi
-	if [ "x${ENABLE_MYSQL}" = "xYES" ]; then
+	if [ "${WITH_JAVA}" ]; then
+		OPTIONS="${OPTIONS} \"JAVA\""
+	fi
+	if [ "${WITH_MYSQL}" ]; then
 		OPTIONS="${OPTIONS} \"MySQL\""
 	fi
-	if [ "x${ENABLE_LDAP}" = "xYES" ]; then
-		OPTIONS="${OPTIONS} \"OpenLDAP\""
+	if [ "${WITH_LDAP2}" ]; then
+		OPTIONS="${OPTIONS} \"OpenLDAP2\""
+	elif [ "${WITH_LDAP1}" ]; then
+		OPTIONS="${OPTIONS} \"OpenLDAP1\""
 	fi
-	if [ "x${OPTIONS}" != "x" ]; then
+	if [ "${OPTIONS}" != "x" ]; then
 		set ${OPTIONS}
 	fi
 else
-	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so ] ; then
+	if [ "${WITH_DB3}" -o -f ${PREFIX}/lib/libdb3.so ] ; then
 		SET_DB3="ON"
+		SET_NDBM="OFF"
 	else
 		SET_DB3="OFF"
+		SET_NDBM="ON"
 	fi
-	if [ "x${ENABLE_MYSQL}" = "xYES" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
+	if [ "${WITH_JAVA}" ] ; then
+		SET_JAVA="ON"
+	else
+		SET_JAVA="OFF"
+	fi
+	if [ "${WITH_MYSQL}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
 		SET_MYSQL="ON"
 	else
 		SET_MYSQL="OFF"
 	fi
-	if [ "x${ENABLE_LDAP}" = "xYES" -o \
-	     -f ${PREFIX}/lib/libldap.so -a -f ${PREFIX}/lib/liblber.so ] ; then
-		SET_LDAP="ON"
-	else
-		SET_LDAP="OFF"
+
+	#Perfer LDAP2 over LDAP1
+	SET_LDAP1="OFF"
+	SET_LDAP2="OFF"
+	if [ "${WITH_LDAP2}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 ] ; then
+		SET_LDAP2="ON"
+	elif [ "${WITH_LDAP1}" -o -f ${PREFIX}/lib/libldap.so.1 -a -f ${PREFIX}/lib/liblber.so.1 ]; then
+		SET_LDAP1="ON"
 	fi
 
 	/usr/bin/dialog --title "Additional SASL options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
+NDBM		"ndbm DB package" ${SET_NDBM} \
 DB3		"Berkeley DB package, revision 3" ${SET_DB3} \
 MySQL		"MySQL password Authentication" ${SET_MYSQL} \
-OpenLDAP	"OpenLDAP password Authentication" ${SET_LDAP} \
+OpenLDAP1	"OpenLDAP 1.x support" ${SET_LDAP1} \
+OpenLDAP2	"OpenLDAP 2.x support" ${SET_LDAP2} \
 2> $tempfile
 
 	retval=$?
@@ -66,34 +83,83 @@ OpenLDAP	"OpenLDAP password Authentication" ${SET_LDAP} \
 	esac
 fi
 
-${MKDIR} ${WRKDIRPREFIX}${CURDIR}
-exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
+exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 
 echo "PREFIX=	${PREFIX}"
 
 while [ "$1" ]; do
 	case $1 in
+		\"NDBM\")
+			if [ "${DBLIB}" ]; then
+				echo "ndbm and db3 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
+			echo "SASLDB_NAME=	sasldb.db"
+			DBLIB=1
+			;;
 		\"DB3\")
+			if [ "${DBLIB}" ]; then
+				echo "ndbm and db3 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
-			echo "CONFIGURE_ARGS+=--with-dblib=berkeley"
-			SASLDB_NAME=sasldb
+			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley"
+			echo "SASLDB_NAME=	sasldb"
+			DBLIB=1
+			;;
+		\"JAVA\")
+			echo "JAVA is disabled, Ignoring option" > /dev/stderr
+			;;
+		\"DISABLED\")
+			echo "RUN_DEPENDS=	\${LOCALBASE}/\${JAVADIR}/bin/java:\${PORTSDIR}/java/jdk"
+			echo "CONFIGURE_ARGS+=	--with-java \\"
+			echo "			--with-javabase=\${LOCALBASE}/include"
+			echo "CONFIGURE_ENV+=	JAVAC=\"\${LOCALBASE}/\${JAVADIR}/bin/javac\" \\"
+			echo "			JAVAH=\"\${LOCALBASE}/\${JAVADIR}/bin/javah" \\"
+			echo "			JAVADOC=\"\${LOCALBASE}/\${JAVADIR}/bin/javadoc\"
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
-			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}"
+			MSG=1
 			;;
-		\"OpenLDAP\")
+		\"OpenLDAP1\")
+			if [ "$OPENLDAP2" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
-			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
+			OPENLDAP1=1
+			MSG=1
+			;;
+		\"OpenLDAP2\")
+			if [ "$OPENLDAP1" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
+			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
+			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
+			OPENLDAP2=1
+			MSG=1
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
-			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			exit 1
 			;;
 	esac
 	shift
 done
 
-echo "SASLDB_NAME=	${SASLDB_NAME}"
+if [ "x${MSG}" != "x" ]; then
+	echo "LDAP_MYSQL_MSG=	\"See sysadmin.html in the Cyrus-SASL docs directory for informaion on using LDAP or MySQL for authentication.\""
+fi

@@ -15,7 +15,13 @@ SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 # delete sasldb database
 
 delete_sasldb() {
-	[ -f ${SASLDB_NAME} -a ! -s ${SASLDB_NAME} ] && rm ${SASLDB_NAME}
+	if [ -f ${SASLDB_NAME} ] ; then
+		if [ `${PKG_PREFIX}/sbin/sasldblistusers | wc -l` -eq 0 ] ; then
+			rm ${SASLDB_NAME}
+		else
+			echo "WARNING: Users SASL passwords are in ${SASLDB_NAME}, keeping this file"
+		fi
+	fi
 }
 
 # This should really be uninstalled by Sendmail
