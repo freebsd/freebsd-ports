@@ -20,7 +20,6 @@ COMMENT=	Ruby binding for libgda (GNOME-DB Project)
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	libgda2
 USE_RUBY_EXTCONF=	yes
 

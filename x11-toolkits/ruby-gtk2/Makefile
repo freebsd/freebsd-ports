@@ -7,7 +7,6 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -18,12 +17,12 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for GTK+2
 
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/atk.so:${PORTSDIR}/accessibility/ruby-atk \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
@@ -38,8 +37,11 @@ DOCS=		COPYING.LIB ChangeLog README
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${X11BASE}/share|g' \
 		${WRKSRC}/sample/gtk-demo/common.rb
-	@${REINPLACE_CMD} -e 's|/usr/local/share|${X11BASE}/share|g' \
-		${WRKSRC}/sample/testgtk/testgtkrc
+	@${REINPLACE_CMD} -e 's|local/bin/ruby|bin/env ruby|g' \
+		${WRKSRC}/sample/misc/*.rb
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${X11BASE}/share|g ; \
+		s|local/bin/ruby|bin/env ruby|g' \
+			${WRKSRC}/sample/testgtk/testgtk*
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:

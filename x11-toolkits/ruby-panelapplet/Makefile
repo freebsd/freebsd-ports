@@ -17,10 +17,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for libpanel-applet
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2
 
 USE_RUBY=	yes
 USE_GNOME=	gnomepanel
+USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -29,6 +30,14 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/panel-applet
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/lib/|${X11BASE}/libdata/|g ; \
+		s|/usr/libexec/|${X11BASE}/libexec/|g' \
+			${WRKSRC}/sample/README ${WRKSRC}/sample/*.server
+	@${REINPLACE_CMD} -e 's|bin/ruby|bin/env ruby|g' \
+		${WRKSRC}/sample/hello-applet.rb
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)

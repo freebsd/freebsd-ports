@@ -22,7 +22,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -31,12 +30,6 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/gtkglext
 INSTALL_TARGET=	site-install
 
 DOCS=		ChangeLog README
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	"Does not work on FreeBSD 4.x, because of thread issue with ruby-opengl and ruby-gnome2-all"
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -48,4 +41,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

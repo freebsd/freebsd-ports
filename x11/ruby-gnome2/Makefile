@@ -17,12 +17,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A set of Ruby bindings for GNOME2
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	libgnomeui
+USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/Makefile.common"
@@ -31,6 +30,11 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/gnome
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| /usr/local/bin/ruby|/usr/bin/env ruby|g' \
+		${WRKSRC}/sample/test-gnome/*.rb
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-build:
 	@${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS

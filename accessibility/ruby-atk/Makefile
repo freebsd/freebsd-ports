@@ -20,7 +20,6 @@ COMMENT=	Ruby binding for ATK
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	atk
 USE_RUBY_EXTCONF=	yes
 
