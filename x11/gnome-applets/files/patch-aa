@@ -32,7 +32,7 @@
  	   ;;
         # list of supported OS cores that do not use libapm
 -       *-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
-+       i386-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
++       i386-*-freebsd*|amd64-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
 +           if [ -n "${FREEBSD_SYS}" ]; then
 +	       ACPIINC="-I${FREEBSD_SYS}"
 +	   else
