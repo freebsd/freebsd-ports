@@ -3,7 +3,7 @@
 # Date created:         Sun Nov 22 12:08:18 CET 1998
 # Whom:                 Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/01 21:03:18 billf Exp $
 #
 
 DISTNAME=       gtksee-0.2.0
