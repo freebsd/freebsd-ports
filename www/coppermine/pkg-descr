@@ -1,0 +1,16 @@
+Coppermine Photo Gallery is a picture gallery script. Users can upload
+pictures with a web browser (thumbnails are created on the fly), rate
+pictures, add comments and send e-cards. The admins can manage the
+galleries and batch add pictures that have been uploaded on the server
+by FTP.
+
+Images are stored in albums and albums can be grouped by categories. The
+script supports multiple users and each user can possibly have its own
+set of albums.
+
+The script also supports multiple languages and has a theme system. It
+uses PHP, a MySQL database and the GD library (version 1.x or 2.x)
+or ImageMagick to make the thumbnails. An install script makes the
+installation fast and simple.
+
+WWW: http://coppermine.sourceforge.net/
