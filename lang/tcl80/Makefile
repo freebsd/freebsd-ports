@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1998/12/13 08:49:05 asami Exp $
+# $Id: Makefile,v 1.11 1998/12/19 07:25:19 cwt Exp $
 #
 
 DISTNAME=	tcl8.0.4
@@ -11,7 +11,7 @@ PKGNAME=	tcl-8.0.4
 CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
-MAINTAINER=	jkh@freebsd.org
+MAINTAINER=	cwt@freebsd.org
 
 WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes
