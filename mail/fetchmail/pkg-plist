@@ -2,6 +2,7 @@ bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
 share/locale/es/LC_MESSAGES/fetchmail.mo
+share/locale/da/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
 share/locale/pl/LC_MESSAGES/fetchmail.mo
 share/locale/pt_BR/LC_MESSAGES/fetchmail.mo
