@@ -8,7 +8,8 @@
 PORTNAME=	xipmsg
 PORTVERSION=	0.8087
 CATEGORIES=	net
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xipmsg/
+MASTER_SITES=	http://www.bsddiary.net/xipmsg/ \
+		http://hp.vector.co.jp/authors/VA004959/xipmsg/
 DISTNAME=	xipmsg-8087
 
 MAINTAINER=	candy@kgc.co.jp
