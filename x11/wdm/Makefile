@@ -3,10 +3,10 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1998/11/25 05:06:26 jseger Exp $
+# $Id: Makefile,v 1.16 1998/11/25 09:01:25 asami Exp $
 
 DISTNAME=	wdm-1.0
-CATEGORIES=	x11
+CATEGORIES=	x11 windowmaker
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/contrib/srcs/utils/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/contrib/srcs/utils/ \
 		http://www.de.freebsd.org/de/gif/bsd/

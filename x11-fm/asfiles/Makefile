@@ -3,12 +3,12 @@
 # Date created:                17 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.6 1998/11/11 03:03:47 jkoshy Exp $
+# $Id: Makefile,v 1.7 1999/01/02 19:43:26 steve Exp $
 #
 
 DISTNAME=	ASFiles-1.0
 PKGNAME=	asfiles-1.0
-CATEGORIES=	x11-fm
+CATEGORIES=	x11-fm windowmaker
 MASTER_SITES=	ftp://ftp.okbmei.msk.su/pub/os/unix/X11/fileman/
 
 MAINTAINER=	lukin@okbmei.msk.su

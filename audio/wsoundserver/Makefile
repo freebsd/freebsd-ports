@@ -3,11 +3,11 @@
 # Date created:		9 December 1998
 # Whom:			gljohns@bellsouth.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/23 02:53:35 flathill Exp $
 #
 
 DISTNAME=	wmsound-0.9.0
-CATEGORIES=	audio
+CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.frontiernet.net/~southgat/wmsound/download/
 
 MAINTAINER=	gljohns@bellsouth.net

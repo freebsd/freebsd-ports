@@ -3,12 +3,12 @@
 # Date created:		7 December 1998
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/09 05:44:06 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/12/16 04:43:27 flathill Exp $
 #
 
 DISTNAME=	wmcdplay
 PKGNAME=	wmcdplay-1.0b1
-CATEGORIES=	audio
+CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
 EXTRACT_SUFX=	.tgz
 
