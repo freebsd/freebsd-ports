@@ -1,0 +1,30 @@
+--- config.h.orig	Tue Nov 10 03:54:35 1998
++++ config.h	Mon Apr 12 23:31:15 1999
+@@ -7,22 +7,22 @@
+ int mknod (const char *path, int mode, dev_t device);
+ #endif
+ 
+-#if defined (SOL26_CPBK) || (OSF_CPBK) || (AIX_CPBK) || (HPUX_CPBK) || (IRIX_CPBK)
++#if defined (SOL26_CPBK) || (OSF_CPBK) || (AIX_CPBK) || (HPUX_CPBK) || (IRIX_CPBK) || (FBSD_CPBK)
+ #define F_MODE mode_t
+ #else
+ #define F_MOD umode_t
+ #endif
+ 
+-#if defined (SOL26_CPBK) || (HPUX_CPBK) || (IRIX_CPBK)
++#if defined (SOL26_CPBK) || (HPUX_CPBK) || (IRIX_CPBK) || (FBSD_CPBK)
+ char *rindex(const char *string, int s);
+ #endif
+ 
+-#if defined (SOL26_CPBK) || (OSF_CPBK) || (AIX_CPBK) 
+-#include <wctype.h>
++#if defined (SOL26_CPBK) || (OSF_CPBK) || (AIX_CPBK)
++#include <ctype.h>
+ #define isblank(c)      iswctype((c), _ISBLANK)
+ #endif
+ 
+-#ifdef AIX_CPBK
++#if defined (AIX_CPBK) || (FBSD_CPBK)
+ int strcasecmp(const char *s1, const char *s2);
+ #endif
+ 

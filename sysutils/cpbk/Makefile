@@ -1,0 +1,24 @@
+# New ports collection makefile for: cpbk
+# Version required:	2.0
+# Date created:		12 April 1999
+# Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
+#
+# $Id: Makefile,v 1.01 1999/04/12 23:55:35 ozz Exp $
+
+DISTNAME=	cpbk-2.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://pep.netnation.com/cpbk/ \
+		ftp://mocha.mkintraweb.com/pub/linux/cpbk/
+
+MAINTAINER=	ozz@FreeBSD.org.ru
+
+MAN1=		cpbk.1
+MANCOMPRESSED=	yes
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/cpbk ${PREFIX}/bin
+
+post-install:
+	@${INSTALL_MAN} $(WRKSRC)/cpbk.1.gz $(PREFIX)/man/man1
+
+.include <bsd.port.mk>
