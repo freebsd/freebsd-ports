@@ -12,6 +12,3 @@ builder to create the data that Doom will use to render the level. BSP
 is one of several node builders that can do this.
 
 WWW: http://doombsp.sourceforge.net/
-
-- Christian Brueffer
-chris@unixpages.org
