@@ -16,8 +16,7 @@ CATEGORIES+=	net tk80
 CATEGORIES+=	net tk83
 .endif
 MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
-		http://www.linet.gr.jp/~manabe/PPxP/packages/	\
-		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/
+		http://www.linet.gr.jp/~manabe/PPxP/packages/
 
 MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	A new and easy to use PPP software
