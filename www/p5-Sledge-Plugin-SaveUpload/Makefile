@@ -8,7 +8,8 @@
 PORTNAME=	Sledge-Plugin-SaveUpload
 PORTVERSION=	0.01
 CATEGORIES=	www perl5
-MASTER_SITES=	http://downloads.sourceforge.jp/sledge/2431/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	sledge/2431
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	knu@FreeBSD.org

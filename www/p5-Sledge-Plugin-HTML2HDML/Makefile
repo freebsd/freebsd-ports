@@ -8,7 +8,8 @@
 PORTNAME=	Sledge-Plugin-HTML2HDML
 PORTVERSION=	0.01
 CATEGORIES=	www textproc perl5
-MASTER_SITES=	http://downloads.sourceforge.jp/sledge/2451/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	sledge/2451
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	knu@FreeBSD.org

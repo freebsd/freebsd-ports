@@ -8,7 +8,8 @@
 PORTNAME=	Sledge-Plugin-Log
 PORTVERSION=	0.02
 CATEGORIES=	www sysutils perl5
-MASTER_SITES=	http://downloads.sourceforge.jp/sledge/2362/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	sledge/2362
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	knu@FreeBSD.org
