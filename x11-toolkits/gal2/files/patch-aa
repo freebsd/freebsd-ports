@@ -1,23 +1,23 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Sep 26 11:16:25 2001
-+++ configure	Wed Sep 26 11:16:25 2001
-@@ -5075,9 +5075,9 @@
+--- configure.orig	Sun Jan 13 17:23:41 2002
++++ configure	Sun Jan 13 17:24:34 2002
+@@ -4890,9 +4890,9 @@
  save_CFLAGS="$CFLAGS"
  save_LDFLAGS="$LDFLAGS"
  CFLAGS="$CFLAGS $ICONV_CFLAGS"
 -LDFLAGS="$LDFLAGS $ICONV_LIBS -liconv"
 -echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
--echo "configure:5081: checking for iconv in -liconv" >&5
+-echo "configure:4896: checking for iconv in -liconv" >&5
 +LDFLAGS="$LDFLAGS $ICONV_LIBS -lgiconv"
 +echo $ac_n "checking for iconv in -lgiconv""... $ac_c" 1>&6
-+echo "configure:5081: checking for iconv in -lgiconv" >&5
++echo "configure:4896: checking for iconv in -lgiconv" >&5
  if eval "test \"`echo '$''{'ac_cv_libiconv'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -5085,7 +5085,7 @@
- #line 5086 "configure"
+@@ -4900,7 +4900,7 @@
+ #line 4901 "configure"
  #include "confdefs.h"
  
 -#include <iconv.h>
@@ -25,7 +25,7 @@ $FreeBSD$
  
  int main() {
  
-@@ -5108,7 +5108,7 @@
+@@ -4923,7 +4923,7 @@
  
  echo "$ac_t""$ac_cv_libiconv" 1>&6
  if test $ac_cv_libiconv = yes; then
@@ -34,8 +34,8 @@ $FreeBSD$
  	have_iconv=yes
  else
  	CFLAGS="$save_CFLAGS"
-@@ -5234,7 +5234,7 @@
- #line 5235 "configure"
+@@ -5049,7 +5049,7 @@
+ #line 5050 "configure"
  #include "confdefs.h"
  
 -#include <iconv.h>
