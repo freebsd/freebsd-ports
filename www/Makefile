@@ -647,6 +647,7 @@
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += script4rss
+    SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog
     SUBDIR += sitebar

@@ -1,0 +1,43 @@
+.TH SHTTPD 1 
+.SH NAME
+shttpd \- Simple HTTP Daemon
+.SH SYNOPSIS
+.B shttpd
+.I [OPTIONS]
+.br
+.SH "DESCRIPTION"
+.B shttpd
+is a simple web server with CGI support.
+It does not detach from terminal. It stores logs in a standard format.
+.SH OPTIONS
+.TP 13
+.I \-d directory
+document root directory (default .)
+.TP 13
+.I \-p port
+listening port (default 80 for non-SSL, 443 for SSL mode)
+.TP 13
+.I \-h
+display help
+.TP 13
+.I \-l logfile
+log file  (default httpd.log)
+.TP 13
+.I \-i file1[,file2..]
+index file (default index.html,index.cgi,index.php)
+.TP 13
+.I \-c
+CGI file pattern (default .cgi)
+.TP 13
+.I \-P passfile
+global auth passwords file (default none)
+.TP 13
+.I \-u uid
+run-time numeric UID (default none)
+.SH COPYRIGHT
+.B shttpd
+is licensed under the terms of MIT license.
+.SH BUGS
+Please send bug reports to <valenok@gmail.com>
+.SH AUTHOR
+Sergey Lyubka <valenok@gmail.com>
