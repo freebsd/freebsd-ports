@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1997/10/07 14:46:03 itojun Exp $
+# $Id: Makefile,v 1.121 1997/10/23 15:18:55 max Exp $
 #
 
     SUBDIR += archie
@@ -41,6 +41,7 @@
     SUBDIR += netatalk
     SUBDIR += netcat
     SUBDIR += netpipes
+    SUBDIR += nettest
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
