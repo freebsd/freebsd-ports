@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi/
@@ -102,7 +103,7 @@ do-patch:
 	${TAR} -C ${WRKSRC}/tmp -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 	for j in chatzilla inspector messenger pippki venkman; do \
-        	if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
+		if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
 			for i in communicator editor messenger navigator; do \
 				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
 					${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf; \
