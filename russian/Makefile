@@ -34,6 +34,7 @@
     SUBDIR += wmcyrx
     SUBDIR += xcode
     SUBDIR += xcyrBGR
+    SUBDIR += xmms
     SUBDIR += xruskb
     SUBDIR += xxkb
 
