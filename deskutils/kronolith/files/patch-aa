@@ -1,0 +1,15 @@
+--- config/conf.php.dist.orig	Fri Sep 28 23:36:52 2001
++++ config/conf.php.dist	Sun Dec  9 22:46:55 2001
+@@ -29,10 +29,10 @@
+ 
+ // The mstore driver requires a username that is in /etc/mpasswd in
+ // order to access local calendars.
+-$conf['calendar']['params']['username'] = '';
++$conf['calendar']['params']['username'] = 'www';
+ 
+ // This is the password of the user defined above.
+-$conf['calendar']['params']['password'] = '';
++$conf['calendar']['params']['password'] = '%%PASSCAL%%';
+ 
+ 
+ /**

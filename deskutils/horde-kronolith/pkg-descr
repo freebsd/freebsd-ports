@@ -1,0 +1,11 @@
+Kronolith is the Horde calendar application. It is currently in the
+development stages, and makes heavy use of the Horde framework to
+provide integration with other applications.
+
+Right now, Kronolith implements a solid, stand-alone calendar system,
+allowing repeating events, all-day events, custom fields, keywords,
+and managing multiple users through Horde Authentication. The calendar
+API that Kronolith uses is abstracted such that it could work with any
+backend, but right now it uses the MCAL calendar library for a backend.
+
+WWW: http://horde.org/kronolith/
