@@ -4181,6 +4181,7 @@ linux-edonkey-server	ports/net/linux-edonkey-server
 linux-edonkey-tool-list	ports/misc/linux-edonkey-tool-list
 linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
 linux-esound	ports/audio/linux-esound
+linux-expat	ports/textproc/linux-expat
 linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
