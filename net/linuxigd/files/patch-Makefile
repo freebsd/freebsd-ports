@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu May  2 23:53:12 2002
++++ Makefile	Sat Aug  3 22:10:53 2002
+@@ -1,6 +1,6 @@
+ CC=g++
+-INCLUDES= -I/usr/include/upnp 
+-LIBS= -lpthread  /usr/lib/libupnp.so
++INCLUDES= -I$(PREFIX)/include 
++LIBS= $(PTHREAD_LIBS) $(PREFIX)/lib/libupnp.so
+ 
+ 
+ ifeq ($(DEBUG),1)
+@@ -26,7 +26,7 @@
+ 	rm -f *.o $(APPS)
+ 
+ install: upnpd
+-	@install -d /etc/linuxigd
+-	@install etc/* /etc/linuxigd
+-	@install upnpd /usr/bin
++	@install -d $(PREFIX)/etc/linuxigd
++	@$(BSD_INSTALL_DATA) etc/* $(PREFIX)/etc/linuxigd
++	@$(BSD_INSTALL_PROGRAM) upnpd $(PREFIX)/bin
+ 
