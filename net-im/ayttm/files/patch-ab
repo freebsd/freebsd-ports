@@ -1,0 +1,11 @@
+--- configure.old	Wed May 29 19:50:21 2002
++++ configure	Wed May 29 19:50:29 2002
+@@ -9178,7 +9178,7 @@
+ CFLAGS="$CFLAGS -I/usr/local/include -I/opt/include" 
+ 
+ EB_CFLAGS="$CFLAGS -I../"
+-EB_LIBS="$LIBS -L../libproxy -lproxy"
++EB_LIBS="$LIBS -L../libproxy -lproxy -lintl"
+ EB_LDADD="$LDADD"
+ 
+ EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "
