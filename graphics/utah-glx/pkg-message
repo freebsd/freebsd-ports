@@ -1,0 +1,29 @@
+
+Additional Notes:
+-----------------
+
+If you built an SVGA server with 3d hardware acceleration for a nvidia card 
+(RIVA 128, TNT, TNT2, TNT2 Ultra ..) please check that
+
+- you changed the default colour depth to 16 or 15 in your /etc/XF86Config 
+  file (keyword: DefaultColorDepth) plus 
+
+and (this holds for Matrox G200/G400 too) check if
+
+- you added to /etc/XF86Config (outside of any other section) the
+  following 3 lines:
+
+      Section "Module"
+      Load "glx.so"
+      EndSection
+
+- you enabled System V shared memory support in your kernel
+
+
+Things you might want to do:
+
+. Try out ports/x11/xscreensaver (e.g. superquadrics) as an sample OpenGL 
+  application,
+. read the article or 
+. have a look at the docs in X11/share/doc/riva-glx, esp the FAQ or
+. visit http://www.freebsd.org/~3d
