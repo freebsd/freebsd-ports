@@ -8,9 +8,7 @@
 PORTNAME=	asmixer
 PORTVERSION=	0.5
 CATEGORIES=	audio afterstep
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
-		http://www.tigr.net/afterstep/download/asmixer/
-MASTER_SITE_SUBDIR=	apps/asmixer
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 
 MAINTAINER=	mtm@identd.net
 COMMENT=	A mixer control for X, and specifically the AfterStep Window Manager

@@ -8,8 +8,7 @@
 PORTNAME=	asmix
 PORTVERSION=	1.4
 CATEGORIES=	audio afterstep
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
-		http://www.tigr.net/afterstep/download/asmix/
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asmix/
 MASTER_SITE_SUBDIR=	apps/asmix
 
 MAINTAINER=	mtm@identd.net
