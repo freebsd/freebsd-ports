@@ -1,0 +1,12 @@
+--- fping.c.orig	Tue Mar 25 01:24:16 1997
++++ fping.c	Tue Mar 25 01:24:02 1997
+@@ -185,7 +185,9 @@
+ 
+ extern char *optarg;
+ extern int optind,opterr;
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
+ extern char *sys_errlist[];
++#endif
+ 
+ 
+ #ifdef __cplusplus
