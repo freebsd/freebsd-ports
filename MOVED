@@ -430,3 +430,27 @@ x11-toolkits/Motif-dummy||2003-07-31|dummy port is no longer used
 korean/netdic||2003-08-05|not functional and not maintained anymore
 misc/gnomeutils2|deskutils/gnomeutils2|2003-08-06|repo move to a better category
 misc/gucharmap|deskutils/gucharmap|2003-08-06|repo move to a better category
+net/cphone||2003-08-06|port was marked broken for 3 months with no fix submitted
+devel/crystal||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/cvsupit||2003-08-06|port was marked broken for 3 months with no fix submitted
+www/encompass||2003-08-06|port was marked broken for 3 months with no fix submitted
+news/glitter||2003-08-06|port was marked broken for 3 months with no fix submitted
+x11-toolkits/iv||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-both||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-ascii||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-ntt||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/sjxa||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/skk-elisp||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript5||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript55||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/xnetmaj||2003-08-06|port was marked broken for 3 months with no fix submitted
+devel/kelp||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/ftghostscript5||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/ghostscript55httf||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/htexp||2003-08-06|port was marked broken for 3 months with no fix submitted
+textproc/no-ispell||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/opengatekeeper||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/openh323proxy||2003-08-06|port was marked broken for 3 months with no fix submitted
+security/p5-Authen-Krb4||2003-08-06|port was marked broken for 3 months with no fix submitted
+x11-toolkits/p5-GnomeApplet||2003-08-06|port was marked broken for 3 months with no fix submitted
