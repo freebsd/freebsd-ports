@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		atlas.1:${PORTSDIR}/math/atlas
 
 USE_BZIP2=	yes
+USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 
