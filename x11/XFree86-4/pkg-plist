@@ -2702,6 +2702,7 @@ lib/X11/fonts/misc/6x13-ISO8859-7.pcf.gz
 lib/X11/fonts/misc/6x13-ISO8859-8.pcf.gz
 lib/X11/fonts/misc/6x13-ISO8859-9.pcf.gz
 lib/X11/fonts/misc/6x13-KOI8-R.pcf.gz
+lib/X11/fonts/misc/6x13O-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/6x13.pcf.gz
 lib/X11/fonts/misc/6x13B-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/6x13B-ISO8859-13.pcf.gz
@@ -2742,6 +2743,7 @@ lib/X11/fonts/misc/7x13B-ISO8859-5.pcf.gz
 lib/X11/fonts/misc/7x13B-ISO8859-7.pcf.gz
 lib/X11/fonts/misc/7x13B-ISO8859-9.pcf.gz
 lib/X11/fonts/misc/7x13B.pcf.gz
+lib/X11/fonts/misc/7x13O-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/7x14-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/7x13O-ISO8859-13.pcf.gz
 lib/X11/fonts/misc/7x13O-ISO8859-15.pcf.gz
@@ -2964,6 +2966,7 @@ lib/X11/xkb/compat/norepeat
 lib/X11/xkb/compat/pc
 lib/X11/xkb/compat/pc98
 lib/X11/xkb/compat/xtest
+lib/X11/xkb/compiled/README
 lib/X11/xkb/geometry.dir
 lib/X11/xkb/geometry/amiga
 lib/X11/xkb/geometry/ataritt
