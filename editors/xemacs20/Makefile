@@ -11,9 +11,9 @@ CATEGORIES=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
-		ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
+		ftp://ftp.usyd.edu.au/pub/Xemacs/${DISTNAME}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
-		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${DISTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
 
 MAINTAINER=	gj@FreeBSD.org
