@@ -6779,7 +6779,6 @@ qt-bluecurve-theme	ports/x11-toolkits/qt-bluecurve-theme
 qt-designer	ports/devel/qt-designer
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
-qt30		ports/x11-toolkits/qt30
 qt31		ports/x11-toolkits/qt31
 qtella		ports/net/qtella
 qtez		ports/devel/qtez
