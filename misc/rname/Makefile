@@ -8,7 +8,7 @@
 PORTNAME=	rname
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://ringwraith.online.bg/devel/sysutils/rname/
+MASTER_SITES=	http://devel.ringlet.net/sysutils/rname/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Execute a program with a fake name"

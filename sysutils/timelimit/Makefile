@@ -8,7 +8,7 @@
 PORTNAME=	timelimit
 PORTVERSION=	1.0.b3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ringwraith.online.bg/~roam/devel/sys/timelimit/
+MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	roam@FreeBSD.org
