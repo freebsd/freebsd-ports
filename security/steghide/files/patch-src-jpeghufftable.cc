@@ -1,10 +1,11 @@
---- src/jpeghufftable.cc.orig	Thu Sep 26 21:02:04 2002
-+++ src/jpeghufftable.cc	Thu Sep 26 21:22:37 2002
-@@ -22,13 +22,14 @@
+--- src/jpeghufftable.cc.orig	Tue May 14 07:48:06 2002
++++ src/jpeghufftable.cc	Mon Sep 23 18:39:13 2002
+@@ -22,13 +22,15 @@
  #include <limits.h>
  
  #include <iostream>
 +#include <vector>
++#include <string>
  
  #include "error.h"
  #include "binaryio.h"
@@ -16,7 +17,7 @@
  	: JpegSegment (JpegElement::MarkerDHT)
  {
  	tableclass = 0xFF ;
-@@ -36,7 +37,7 @@
+@@ -36,7 +38,7 @@
  	lengthremaining = lr ;
  }
  
@@ -25,7 +26,7 @@
  	: JpegSegment (JpegElement::MarkerDHT)
  {
  	tableclass = 0xFF ;
-@@ -81,7 +82,7 @@
+@@ -81,7 +83,7 @@
  	return tabledestid ;
  }
  
@@ -34,7 +35,7 @@
  {
  	assert (b.size() == 16) ;
  
-@@ -236,7 +237,7 @@
+@@ -236,7 +238,7 @@
  	for (unsigned int l = 1 ; l <= Len_bits ; l++) {
  		io->write8 ((unsigned char) getBits(l)) ;
  	}
