@@ -1,17 +1,28 @@
 # New ports collection makefile for:	gopher
-# Version required:	2.1.3
+# Version required:	2.3
 # Date created:		11 Dec 1994
-# Whom:			ats
+# Whom:			ats (original)
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:04:57 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/17 01:48:15 max Exp $
 #
 
-DISTNAME=	gopher2_1_3
-PKGNAME=	gopher-2.1.3
+DISTNAME=	gopher2_3
+PKGNAME=	gopher-2.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/old-versions/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
 
-USE_GMAKE=	yes
+MAINTAINER=	ports@FreeBSD.org
+
+DATADIR=	$(PREFIX)/gopher-data
+CONFIGURE_ENV=	LIBS='-lcompat -lcrypt'
+CONFIGURE_ARGS=	--enable-datadir=$(DATADIR) --disable-debug --with-x
+GNU_CONFIGURE=	yes
+
+MAN1=	gopher.1 gophfilt.1
+MAN5=	gopherd.conf.5 gopherrc.5
+MAN8=	gopherd.8 gopherindex.8
+
+pre-install:
+	$(MKDIR) $(DATADIR)
 
 .include <bsd.port.mk>
