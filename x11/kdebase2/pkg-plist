@@ -1286,7 +1286,9 @@ share/config/kdm/Xsession
 share/config/kdm/Xsetup
 share/config/kdm/Xstartup
 share/config/kdm/Xwilling
-share/config/kdm/kdmrc
+@unexec if test ! -f %D/share/config/kdm/kdmrc || cmp -s %D/share/config/kdm/kdmrc.dist %D/share/config/kdm/kdmrc; then rm -f %D/share/config/kdm/kdmrc; fi
+share/config/kdm/kdmrc.dist
+@exec if test ! -f %D/share/config/kdm/kdmrc; then rm -f %D/share/config/kdm/kdmrc; cp -p %D/share/config/kdm/kdmrc.dist %D/share/config/kdm/kdmrc; fi
 share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/konsolerc

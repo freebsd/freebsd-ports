@@ -7,6 +7,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -82,5 +83,11 @@ post-configure:
 
 post-install:
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
+.for file in kdmrc
+.if !exists(${PREFIX}/share/config/kdm/${file})
+	@${CP} ${PREFIX}/share/config/kdm/${file}.dist \
+		${PREFIX}/share/config/kdm/${file}
+.endif
+.endfor
 
 .include <bsd.port.post.mk>
