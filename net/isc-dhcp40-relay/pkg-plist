@@ -1,13 +1,13 @@
-@comment $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp40-relay/Attic/pkg-plist,v 1.1 2004-01-17 23:42:51 edwin Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp40-relay/Attic/pkg-plist,v 1.2 2004-03-05 22:03:03 sergei Exp $
 @unexec if cmp -s %D/etc/rc.isc-dhcrelay.conf %D/etc/rc.isc-dhcrelay.conf.sample; then rm -f %D/etc/rc.isc-dhcrelay.conf; fi
 etc/rc.isc-dhcrelay.conf.sample
 @exec [ -f %D/etc/rc.isc-dhcrelay.conf ] || cp %D/etc/rc.isc-dhcrelay.conf.sample %D/etc/rc.isc-dhcrelay.conf
 etc/rc.d/isc-dhcrelay.sh.sample
 @unexec rm -f etc/rc.d/isc-dhcrelay.sh
 sbin/dhcrelay
-%%PORTDOCS%%share/doc/isc-dhcp3-relay/ANONCVS
-%%PORTDOCS%%share/doc/isc-dhcp3-relay/CHANGES
-%%PORTDOCS%%share/doc/isc-dhcp3-relay/COPYRIGHT
-%%PORTDOCS%%share/doc/isc-dhcp3-relay/README
-%%PORTDOCS%%share/doc/isc-dhcp3-relay/RELNOTES
-%%PORTDOCS%%@dirrm share/doc/isc-dhcp3-relay
+%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

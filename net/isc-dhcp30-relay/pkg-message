@@ -1,0 +1,7 @@
+****  To setup dhcrelay, you have to rename %%PREFIX%%/etc/rc.d/isc-\
+      dhcrelay.sh.sample to %%PREFIX%%/etc/rc.d/isc-dhcrelay.sh to
+      enable automatic startup.
+      %%PREFIX%%/etc/rc.isc-dhcrelay.conf may need to be edited to setup
+      the `dhcrelay_servers' as required.  If needed, you may also tune
+      `dhcrelay_options' and `dhcrelay_ifaces', both defaulted to `nothing'.
+      See dhcrelay(8) for details about possible options.
