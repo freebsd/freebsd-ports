@@ -28,30 +28,33 @@ diff -Nursrclib/apr/configure.in srclib/apr/configure.in
  AC_CHECK_FUNCS([getpwnam_r getpwuid_r getgrnam_r getgrgid_r])
  
 diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
---- srclib/apr/poll/unix/poll.c	Sat Apr 10 21:29:52 2004
-+++ srclib/apr/poll/unix/poll.c	Wed Jun 23 16:05:58 2004
-@@ -29,11 +29,77 @@
- #include <alloca.h>
+--- srclib/apr/poll/unix/poll.c Sat Apr 10 21:29:52 2004
++++ srclib/apr/poll/unix/poll.c Tue Jul 13 09:43:36 2004
+@@ -25,8 +25,15 @@
+ #if HAVE_SYS_POLL_H
+ #include <sys/poll.h>
  #endif
- 
+-#if HAVE_ALLOCA_H
+-#include <alloca.h>
++
 +#ifdef HAVE_KQUEUE
 +#include <sys/types.h>
 +#include <sys/event.h>
 +#include <sys/time.h>
 +#endif
-+         
++
 +#ifdef HAVE_EPOLL
 +#include <sys/epoll.h>
-+#endif
-+
+ #endif
+ 
  #ifdef NETWARE
- #define HAS_SOCKETS(dt) (dt == APR_POLL_SOCKET) ? 1 : 0
+@@ -34,6 +41,63 @@
  #define HAS_PIPES(dt) (dt == APR_POLL_FILE) ? 1 : 0
  #endif
  
 +#ifdef HAVE_KQUEUE
 +static apr_int16_t get_kqueue_revent(apr_int16_t event, apr_int16_t flags)
-+ {
++{
 +    apr_int16_t rv = 0;
 +
 +    if (event & EVFILT_READ)
@@ -63,53 +66,60 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
 +
 +    return rv;
 +}
++
 +#endif
-+     
++
 +#ifdef HAVE_EPOLL
 +static apr_int16_t get_epoll_event(apr_int16_t event)
 +{
-+     apr_int16_t rv = 0;
++    apr_int16_t rv = 0;
 +
-+     if (event & APR_POLLIN)
-+         rv |= EPOLLIN;
-+     if (event & APR_POLLPRI)
-+         rv |= EPOLLPRI;
-+     if (event & APR_POLLOUT)
-+         rv |= EPOLLOUT;
-+     if (event & APR_POLLERR)
-+         rv |= EPOLLERR;
-+     if (event & APR_POLLHUP)
-+         rv |= EPOLLHUP;
-+     /* APR_POLLNVAL is not handled by epoll. */
++    if (event & APR_POLLIN)
++        rv |= EPOLLIN;
++    if (event & APR_POLLPRI)
++        rv |= EPOLLPRI;
++    if (event & APR_POLLOUT)
++        rv |= EPOLLOUT;
++    if (event & APR_POLLERR)
++        rv |= EPOLLERR;
++    if (event & APR_POLLHUP)
++        rv |= EPOLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
 +
 +    return rv;
 +}
 +
 +static apr_int16_t get_epoll_revent(apr_int16_t event)
 +{
-+     apr_int16_t rv = 0;
++    apr_int16_t rv = 0;
 +
-+     if (event & EPOLLIN)
-+         rv |= APR_POLLIN;
-+     if (event & EPOLLPRI)
-+         rv |= APR_POLLPRI;
-+     if (event & EPOLLOUT)
-+         rv |= APR_POLLOUT;
-+     if (event & EPOLLERR)
-+         rv |= APR_POLLERR;
-+     if (event & EPOLLHUP)
-+         rv |= APR_POLLHUP;
-+     /* APR_POLLNVAL is not handled by epoll. */
++    if (event & EPOLLIN)
++        rv |= APR_POLLIN;
++    if (event & EPOLLPRI)
++        rv |= APR_POLLPRI;
++    if (event & EPOLLOUT)
++        rv |= APR_POLLOUT;
++    if (event & EPOLLERR)
++        rv |= APR_POLLERR;
++    if (event & EPOLLHUP)
++        rv |= APR_POLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
 +
-+     return rv;
++    return rv;
 +}
 +#endif
 +
  #ifdef HAVE_POLL    /* We can just use poll to do our socket polling. */
  
  static apr_int16_t get_event(apr_int16_t event)
-@@ -288,7 +354,14 @@
+@@ -284,11 +348,19 @@
+ 
+ #endif 
+ 
+-
  struct apr_pollset_t {
++    apr_pool_t *pool;
++
      apr_uint32_t nelts;
      apr_uint32_t nalloc;
 -#ifdef HAVE_POLL
@@ -124,7 +134,14 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
      struct pollfd *pollset;
  #else
      fd_set readset, writeset, exceptset;
-@@ -302,12 +375,21 @@
+@@ -296,18 +368,31 @@
+ #endif
+     apr_pollfd_t *query_set;
+     apr_pollfd_t *result_set;
+-    apr_pool_t *pool;
++
+ #ifdef NETWARE
+     int set_type;
  #endif
  };
  
@@ -132,10 +149,14 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
 +static apr_status_t backend_cleanup(void *p_)
 +{
 +    apr_pollset_t *pollset = (apr_pollset_t *)p_;
-+    return apr_pollset_destroy(pollset);
-+
-+}
++#ifdef HAVE_KQUEUE
++    close(pollset->kqueue_fd);
++#elif defined(HAVE_EPOLL)
++    close(pollset->epoll_fd);
 +#endif
++    return APR_SUCCESS;
++}
++#endif /* HAVE_KQUEUE || HAVE_EPOLL */
 +
  APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
                                               apr_uint32_t size,
@@ -143,15 +164,16 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
                                               apr_uint32_t flags)
  {
 -#if !defined(HAVE_POLL) && defined(FD_SETSIZE)
-+#if !defined(HAVE_KQUEUE) && !defined(HAVE_EPOLL) && !defined(HAVE_POLL) &&  defined(FD_SETSIZE)
++#if !defined(HAVE_KQUEUE) && !defined(HAVE_EPOLL) && !defined(HAVE_POLL) && defined(FD_SETSIZE)
      if (size > FD_SETSIZE) {
          *pollset = NULL;
          return APR_EINVAL;
-@@ -316,7 +398,21 @@
+@@ -316,7 +401,22 @@
      *pollset = apr_palloc(p, sizeof(**pollset));
      (*pollset)->nelts = 0;
      (*pollset)->nalloc = size;
 -#ifdef HAVE_POLL
++    (*pollset)->pool = p;
 +#ifdef HAVE_KQUEUE
 +    (*pollset)->ke_set = (struct kevent*)apr_palloc(p, size * sizeof(struct  kevent));
 +    memset((*pollset)->ke_set, 0, size * sizeof(struct kevent));
@@ -170,19 +192,25 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
      (*pollset)->pollset = apr_palloc(p, size * sizeof(struct pollfd));
  #else
      FD_ZERO(&((*pollset)->readset));
-@@ -335,25 +431,76 @@
+@@ -329,23 +429,31 @@
+ #endif
+     (*pollset)->query_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
+     (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
+-    (*pollset)->pool = p;
++
+     return APR_SUCCESS;
+ }
  
  APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t *pollset)
  {
 -    /* A no-op function for now.  If we later implement /dev/poll
 -     * support, we'll need to close the /dev/poll fd here
 -     */
-+#ifdef HAVE_KQUEUE
-+    close(pollset->kqueue_fd);
-+#elif defined(HAVE_EPOLL)
-+    close(pollset->epoll_fd);
-+#endif
++#if defined(HAVE_KQUEUE) || defined(HAVE_EPOLL)
++    return apr_pool_cleanup_run(pollset->pool, pollset, backend_cleanup);
++#else
      return APR_SUCCESS;
++#endif
  }
  
  APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
@@ -190,18 +218,18 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
  {
 -#ifndef HAVE_POLL
 +#ifdef HAVE_KQUEUE
-+    apr_os_sock_t fd;
+     apr_os_sock_t fd;
 +#elif defined(HAVE_EPOLL)
 +    struct epoll_event ev;
 +    int ret = -1;
 +#else
 +#if !defined(HAVE_POLL)
-     apr_os_sock_t fd;
- #endif
++    apr_os_sock_t fd;
 +#endif
+ #endif
  
      if (pollset->nelts == pollset->nalloc) {
-         return APR_ENOMEM;
+@@ -353,7 +461,49 @@
      }
  
      pollset->query_set[pollset->nelts] = *descriptor;
@@ -252,7 +280,7 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
  
      if (descriptor->desc_type == APR_POLL_SOCKET) {
          pollset->pollset[pollset->nelts].fd = descriptor->desc.s->socketdes;
-@@ -422,11 +569,97 @@
+@@ -422,11 +572,97 @@
                                               const apr_pollfd_t *descriptor)
  {
      apr_uint32_t i;
@@ -262,7 +290,7 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
 +#elif defined(HAVE_EPOLL)
 +    struct epoll_event ev;
 +    int ret = -1;
-+#elif defined(HAVE_POLL)
++#elif !defined(HAVE_POLL)
      apr_os_sock_t fd;
  #endif
  
@@ -352,7 +380,7 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
      for (i = 0; i < pollset->nelts; i++) {
          if (descriptor->desc.s == pollset->query_set[i].desc.s) {
              /* Found an instance of the fd: remove this and any other copies */
-@@ -487,8 +720,119 @@
+@@ -487,8 +723,119 @@
  
      return APR_NOTFOUND;
  }
@@ -374,8 +402,7 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
 +        tv.tv_nsec = (long)apr_time_msec(timeout);
 +        tvptr = &tv;
 +    }
- 
--#ifdef HAVE_POLL
++
 +    rv = kevent(pollset->kqueue_fd, NULL, 0, pollset->ke_set, pollset->nelts,
 +                tvptr);
 +    (*num) = rv;
@@ -416,7 +443,8 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
 +}
 +
 +#elif defined(HAVE_EPOLL)
-+
+ 
+-#ifdef HAVE_POLL
 +APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
 +                                           apr_interval_time_t timeout,
 +                                           apr_int32_t *num,
@@ -473,3 +501,24 @@ diff -Nursrclib/apr/poll/unix/poll.c srclib/apr/poll/unix/poll.c
  APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
                                             apr_interval_time_t timeout,
                                             apr_int32_t *num,
+@@ -517,7 +864,8 @@
+             j++;
+         }
+     }
+-    *descriptors = pollset->result_set;
++    if (descriptors)
++        *descriptors = pollset->result_set;
+     return APR_SUCCESS;
+ }
+ 
+@@ -591,7 +939,8 @@
+         }
+     }
+ 
+-    *descriptors = pollset->result_set;
++    if (descriptors)
++        *descriptors = pollset->result_set;
+     return APR_SUCCESS;
+ }
+ 
+
