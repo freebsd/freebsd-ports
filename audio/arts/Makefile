@@ -8,7 +8,7 @@
 
 PORTNAME=	arts
 PORTVERSION=	1.1.4
-PORTREVISION=	0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://mirrors.isc.org/pub/kde/stable/3.1.4/FreeBSD/patches/ \
