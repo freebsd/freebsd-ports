@@ -1,39 +1,55 @@
 # New ports collection makefile for:	pTeX
-# Version required:	2.1.1
+# Version required:	2.1.4
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1995/11/15 10:16:07 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/22 13:06:38 asami Exp $
 #
 
-DISTNAME=	ptex3.1415.p2.1.1
-PKGNAME=	jp-ptex-2.1.1
+DISTNAME=	ptex3.1415.p2.1.4
+PKGNAME=	jp-ptex-2.1.4
 CATEGORIES+=	japanese print
-MASTER_SITES=	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
+MASTER_SITES=			ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
+ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
 		ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/corresponding-sources/ \
 		ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/coresponding-sources/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ASCII-pTeX-2.1.1/coresponding-sources/
-# ptex-2.1f2.tar.gz, plib-jis.tar.gz,  plib-sj.tar.gz and  plib-euc.tar.gz 
+		ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/corresponding-sources/ 
+# ptex-2.1.4.tar.gz, plib-jis.tar.gz,  plib-sj.tar.gz and  plib-euc.tar.gz 
 # are on */*2.1.1/
 # web-6.1.tar.gz, web2c-6.1.tar.gz, web2c.kpathsea-2.6.help, 
-# xdvik-18f.tar.gz and lib-6.9.tar.gz are on */*2.1.1/coresponding-sources/ 
-DISTFILES=	ptex-2.1f2.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
+# xdvik-18f.tar.gz and lib-6.9.tar.gz are on */*2.1.1/corresponding-sources/ 
+DISTFILES=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		web2c.kpathsea-2.6.help xdvik-18f.tar.gz lib-6.9.tar.gz
-EXTRACT_ONLY=	ptex-2.1f2.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
+EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		xdvik-18f.tar.gz
 
 MAINTAINER=	ohmon@sfc.keio.ac.jp
 
 HAS_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
+CONFIGURE_ARGS=--prefix=${PREFIX}
 WRKSRC=		${WRKDIR}/kpathsea-2.6
 
 pre-fetch:
 .if !defined(KANJI-CODE)
-	@echo "You can set KANJI-CODE value JIS, SJIS or EUC."
-	@echo "Now default value JIS is setted."
+	@echo "You can set KANJI-CODE value to JIS, SJIS or EUC."
+	@echo "Now JIS is used as default."
+.if !defined(BATCH)
+	@echo -n "Is JIS OK? (y/n) ==> "
+	@(read ans; \
+	  case x"$$ans" in \
+	    xy*|xY*) \
+	        return 0; \
+	        ;; \
+	    *) \
+		echo "Ok, please rerun make with preferred KANJI-CODE specification"; \
+		echo " like following example."; \
+		echo "	make KANJI-CODE=EUC"; \
+	        return 1; \
+	        ;; \
+	  esac)
+.endif
+
 KANJI-CODE=	JIS
 .endif
 .if ${KANJI-CODE} == JIS
@@ -57,8 +73,7 @@ EXTRACT_ONLY+=  plib-euc.tar.gz
 post-extract:
 	@mv ${WRKDIR}/web2c-6.1/web2c ${WRKDIR}/xdvik-18f
 	@mv ${WRKDIR}/xdvik-18f ${WRKDIR}/kpathsea-2.6
-	@rm -fr ${WRKDIR}/web2c-6.1
-	@rm -fr ${WRKDIR}/kpathsea-2.6/xdvik
+	@rm -fr ${WRKDIR}/web2c-6.1 ${WRKDIR}/kpathsea-2.6/xdvik
 
 pre-patch:
 	@(cd ${WRKSRC} ; \
@@ -66,13 +81,13 @@ pre-patch:
 
 pre-configure:
 .if ${KANJI-CODE} == JIS
-	@(cd ${WRKDIR}/ptex-2.1f2 ; ./pTeXsetup -jis)
+	@(cd ${WRKDIR}/ptex-2.1.4 ; ./pTeXsetup -jis)
 .endif
 .if ${KANJI-CODE} == SJIS
-	@(cd ${WRKDIR}/ptex-2.1f2 ; ./pTeXsetup -sjis)
+	@(cd ${WRKDIR}/ptex-2.1.4 ; ./pTeXsetup -sjis)
 .endif
 .if ${KANJI-CODE} == EUC
-	@(cd ${WRKDIR}/ptex-2.1f2 ; ./pTeXsetup -euc)
+	@(cd ${WRKDIR}/ptex-2.1.4 ; ./pTeXsetup -euc)
 .endif
 
 post-configure:
@@ -83,6 +98,7 @@ do-build:
 	(cd ${WRKSRC} ; make)
 
 pre-install:
+.if !defined(BATCH)
 	@echo "***********************************************************"
 	@echo "*                      W a r n i n g                      *"
 	@echo "* This port will overwrite the existing tex installation. *"
@@ -99,15 +115,16 @@ pre-install:
 	        return 1; \
 	        ;; \
 	  esac)
-	@(cd /usr/local/lib ; gzip -dc ${DISTDIR}/lib-6.9.tar.gz | tar xf -)
+	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/lib-6.9.tar.gz | tar xf -)
 .if ${KANJI-CODE} == JIS
-	@(cd /usr/local/lib ; gzip -dc ${DISTDIR}/plib-jis.tar.gz | tar xf -)
+	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/plib-jis.tar.gz | tar xf -)
 .endif
 .if ${KANJI-CODE} == SJIS
-	@(cd /usr/local/lib ; gzip -dc ${DISTDIR}/plib-sj.tar.gz | tar xf -)
+	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/plib-sj.tar.gz | tar xf -)
 .endif
 .if ${KANJI-CODE} == EUC
-	@(cd /usr/local/lib ; gzip -dc ${DISTDIR}/plib-euc.tar.gz | tar xf -)
+	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/plib-euc.tar.gz | tar xf -)
+.endif
 .endif
 
 MANPAGE=amslatex.1 amstex.1 bibtex.1 dvitype.1 etex.1 gftodvi.1 \
@@ -118,7 +135,7 @@ MANPAGE=amslatex.1 amstex.1 bibtex.1 dvitype.1 etex.1 gftodvi.1 \
 post-install:
 .if !defined(NOMANCOMPRESS)
 	@for manpage in ${MANPAGE}; do \
-		gzip -9nf /usr/local/man/man1/$$manpage ;\
+		gzip -9nf ${PREFIX}/man/man1/$$manpage ;\
 	done 
 .endif
 
