@@ -1,0 +1,22 @@
+*** imake/iludefs.in.original	Thu Oct  8 15:13:44 1998
+--- imake/iludefs.in	Thu Oct  8 15:13:46 1998
+***************
+*** 91,100 ****
+    IDL_CFE_CPP_DRIVER = @IDL_CPP_COMMAND@
+  #endif /* ADD_IDL_SUPPORT */
+  
+!        /* for debugging support */
+! #ifdef ENABLE_DEBUGGING
+!   CDEBUGFLAGS = -g
+! #endif
+  
+    SECURITYLIBS =
+    SECURITYINCLUDES =
+--- 91,97 ----
+    IDL_CFE_CPP_DRIVER = @IDL_CPP_COMMAND@
+  #endif /* ADD_IDL_SUPPORT */
+  
+!   CDEBUGFLAGS = -g -O -D_THREADSAFE -pthread
+  
+    SECURITYLIBS =
+    SECURITYINCLUDES =

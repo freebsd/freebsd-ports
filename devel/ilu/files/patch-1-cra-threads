@@ -1,0 +1,23 @@
+*** runtime/kernel/threads.c.orig	Thu Oct  8 15:34:30 1998
+--- runtime/kernel/threads.c	Thu Oct  8 15:33:58 1998
+***************
+*** 1151,1158 ****
+  	  err == ETIME
+  #endif
+  #if (defined(ILU_POSIX_THREADS) || defined(ILU_DCE_THREADS))
+! 	  err == ETIME		/* on Solaris 2 */
+! 	  || err == ETIMEDOUT	/* on Linux, AIX */
+  #endif
+  #ifdef ILU_WIN32_THREADS
+  	  err == WAIT_TIMEOUT
+--- 1151,1160 ----
+  	  err == ETIME
+  #endif
+  #if (defined(ILU_POSIX_THREADS) || defined(ILU_DCE_THREADS))
+! #ifndef __FreeBSD__
+! 	  err == ETIME ||	/* on Solaris 2 */
+! #endif
+! 	  err == ETIMEDOUT	/* on Linux, AIX, FreeBSD */
+  #endif
+  #ifdef ILU_WIN32_THREADS
+  	  err == WAIT_TIMEOUT

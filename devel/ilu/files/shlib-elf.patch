@@ -1,0 +1,225 @@
+diff -r -c ./etc/CosNaming/Imakefile /home/cracauer/work/ilu2patch/./etc/CosNaming/Imakefile
+*** ./etc/CosNaming/Imakefile	Thu Sep 25 23:32:29 1997
+--- /home/cracauer/work/ilu2patch/./etc/CosNaming/Imakefile	Tue Oct  7 13:52:22 1997
+***************
+*** 59,66 ****
+--- 59,68 ----
+  /******/
+  
+  LibraryTarget(libCosNaming-c.a, CosNaming-surrogate.o CosNaming-common.o)
++ SLibraryTarget(libCosNaming-c.so.1, CosNaming-surrogate.o CosNaming-common.o)
+  
+  InstallLibrary(libCosNaming-c.a, $(DESTDIR)/lib)
++ InstallSLibrary(libCosNaming-c.so.1, $(DESTDIR)/lib)
+  InstallRO(CosNaming.h, $(DESTDIR)/include)
+  #endif
+  
+diff -r -c ./etc/portmapper/Imakefile /home/cracauer/work/ilu2patch/./etc/portmapper/Imakefile
+*** ./etc/portmapper/Imakefile	Thu Sep 25 23:32:22 1997
+--- /home/cracauer/work/ilu2patch/./etc/portmapper/Imakefile	Tue Oct  7 13:52:00 1997
+***************
+*** 45,49 ****
+--- 45,51 ----
+  portmap.o : SunPortMapper.h portmap.c ${ILUHEADERFILES}
+  
+  LibraryTarget(libsunportmapper.a, SunPortMapper-surrogate.o SunPortMapper-common.o portmap.o)
++ SLibraryTarget(libsunportmapper.so.1, SunPortMapper-surrogate.o SunPortMapper-common.o portmap.o)
+  InstallLibrary(libsunportmapper.a, $(DESTDIR)/lib)
++ InstallSLibrary(libsunportmapper.so.1, $(DESTDIR)/lib)
+  InstallRO(ilusunportmapper.h, $(DESTDIR)/include)
+diff -r -c ./imake/ilu.rules /home/cracauer/work/ilu2patch/./imake/ilu.rules
+*** ./imake/ilu.rules	Thu Sep 25 23:33:55 1997
+--- /home/cracauer/work/ilu2patch/./imake/ilu.rules	Tue Oct  7 16:44:30 1997
+***************
+*** 411,416 ****
+--- 411,422 ----
+  	$(AR) $@ objs						@@\
+  	$(RANLIB) $@
+  
++ #define	SLibraryTarget(library, objs)				@@\
++ all:: library							@@\
++ library: objs							@@\
++ 	$(RM) $@						@@\
++ 	$(LDSHARED) -o $@ objs
++ 
+  /*
+   * This section added for Linux shared libs
+   */
+***************
+*** 473,479 ****
+  #define	ILUCPlusPlusProgramTarget(program, objs, libs, syslibs)	@@\
+  all:: program							@@\
+  								@@\
+! program: objs libs $(ILUCPLUSPLUSLIBS)				@@\
+  	$(RM) $@						@@\
+  	$(CPLUSPLUS_COMMAND) $(CFLAGS) -o $@ objs libs $(ILUCPLUSPLUSLIBS) syslibs $(CPLUSPLUS_LIBRARIES) $(SYSAUX_LIBRARIES) -lm @@\
+  								@@\
+--- 479,485 ----
+  #define	ILUCPlusPlusProgramTarget(program, objs, libs, syslibs)	@@\
+  all:: program							@@\
+  								@@\
+! program: objs libs						@@\
+  	$(RM) $@						@@\
+  	$(CPLUSPLUS_COMMAND) $(CFLAGS) -o $@ objs libs $(ILUCPLUSPLUSLIBS) syslibs $(CPLUSPLUS_LIBRARIES) $(SYSAUX_LIBRARIES) -lm @@\
+  								@@\
+***************
+*** 493,499 ****
+  #define	ILUCProgramTarget(program, objs, libs, syslibs)		@@\
+  all:: program							@@\
+  								@@\
+! program: objs libs $(ILUCLIBS)					@@\
+  	$(RM) $@						@@\
+  	$(CC) $(CFLAGS) -o $@ objs libs $(ILUCLIBS) syslibs $(ANSI_C_LIBRARY) $(SYSAUX_LIBRARIES) $(WORKAROUND_LOCAL_GCC_INSTALLATION_BUG) @@\
+  								@@\
+--- 499,505 ----
+  #define	ILUCProgramTarget(program, objs, libs, syslibs)		@@\
+  all:: program							@@\
+  								@@\
+! program: objs libs						@@\
+  	$(RM) $@						@@\
+  	$(CC) $(CFLAGS) -o $@ objs libs $(ILUCLIBS) syslibs $(ANSI_C_LIBRARY) $(SYSAUX_LIBRARIES) $(WORKAROUND_LOCAL_GCC_INSTALLATION_BUG) @@\
+  								@@\
+***************
+*** 671,676 ****
+--- 677,689 ----
+              RANLIBRULE(dest)
+  #endif /* sgi */
+  
++ #define InstallSLibraries(libs, dest)					@@\
++ install.time:: libs							@@\
++ 	@(case '$(MFLAGS)' in *[i]*) set +e;; esac; \			@@\
++           for i in $?; do \						@@\
++            (set -x; \						@@\
++             $(INSTALL) $(INSTLIBFLAGS) $$i dest/$$i); done)
++ 
+  #define InstallM3Library(lib, dest)		@@\
+  InstallLibraries(lib.a,dest)			@@\
+  InstallFiles(lib.ax,$(INSTLIBFLAGS),dest)
+***************
+*** 749,754 ****
+--- 762,770 ----
+  
+  #define InstallLibrary(file, dest)					@@\
+  InstallLibraries(file,dest)
++ 
++ #define InstallSLibrary(file, dest)					@@\
++ InstallSLibraries(file,dest)
+  
+  #define InstallMultiple(list, flags, dest)				@@\
+  InstallFiles(list,flags,dest)
+diff -r -c ./imake/ilu.tmpl /home/cracauer/work/ilu2patch/./imake/ilu.tmpl
+*** ./imake/ilu.tmpl	Thu Sep 25 23:33:55 1997
+--- /home/cracauer/work/ilu2patch/./imake/ilu.tmpl	Tue Oct  7 14:09:29 1997
+***************
+*** 77,86 ****
+  #else
+  
+  ILUCINCLUDES = -I$(ILUHOME)/include $(SECURITYINCLUDES)
+! ILUCLIBS = $(ILUHOME)/lib/libilu-c.a $(ILUHOME)/lib/libilu.a $(SECURITYLIBS)
+  
+  ILUCPLUSPLUSINCLUDES = -I$(ILUHOME)/include $(SECURITYINCLUDES)
+! ILUCPLUSPLUSLIBS = $(ILUHOME)/lib/libilu-c++.a $(ILUHOME)/lib/libilu.a $(SECURITYLIBS)
+  
+  JAVA_ILU_CLASS_DIR = $(ILUHOME)/lib/ilu.jar
+  
+--- 77,86 ----
+  #else
+  
+  ILUCINCLUDES = -I$(ILUHOME)/include $(SECURITYINCLUDES)
+! ILUCLIBS = -L$(ILUHOME)/lib -lilu-c -lilu $(SECURITYLIBS)
+  
+  ILUCPLUSPLUSINCLUDES = -I$(ILUHOME)/include $(SECURITYINCLUDES)
+! ILUCPLUSPLUSLIBS = $(ILUHOME)/lib/libilu-c++.a -L$(ILUHOME)/lib -lilu $(SECURITYLIBS)
+  
+  JAVA_ILU_CLASS_DIR = $(ILUHOME)/lib/ilu.jar
+  
+diff -r -c ./runtime/c/Imakefile /home/cracauer/work/ilu2patch/./runtime/c/Imakefile
+*** ./runtime/c/Imakefile	Thu Sep 25 23:32:00 1997
+--- /home/cracauer/work/ilu2patch/./runtime/c/Imakefile	Tue Oct  7 13:53:13 1997
+***************
+*** 40,48 ****
+  OBJS = ilu.o orb.o
+   
+  LibraryTarget(libilu-c.a, $(OBJS))
+  
+  InstallLibrary(libilu-c.a, $(DESTDIR)/lib)
+  InstallRO(iluchdrs.h ilucstub.h, $(DESTDIR)/include)
+  
+! all:: libilu-c.a
+  
+--- 40,50 ----
+  OBJS = ilu.o orb.o
+   
+  LibraryTarget(libilu-c.a, $(OBJS))
++ SLibraryTarget(libilu-c.so.1, $(OBJS))
+  
+  InstallLibrary(libilu-c.a, $(DESTDIR)/lib)
++ InstallSLibrary(libilu-c.so.1, $(DESTDIR)/lib)
+  InstallRO(iluchdrs.h ilucstub.h, $(DESTDIR)/include)
+  
+! all:: libilu-c.a libilu-c.so.1
+  
+diff -r -c ./runtime/kernel/Imakefile /home/cracauer/work/ilu2patch/./runtime/kernel/Imakefile
+*** ./runtime/kernel/Imakefile	Thu Sep 25 23:31:04 1997
+--- /home/cracauer/work/ilu2patch/./runtime/kernel/Imakefile	Tue Oct  7 13:53:02 1997
+***************
+*** 242,251 ****
+--- 242,259 ----
+  opaqval.o : $(PVTIFC) ilutypes.h opaqval.c
+  
+  libilu.a : $(MF)
++ libilu.so.1 : $(MF)
+  
+  LibraryTarget(libilu.a, $(OBJS))
+  InstallLibrary(libilu.a, $(DESTDIR)/lib)
++ SLibraryTarget(libilu.so.1, $(OBJS))
++ InstallSLibrary(libilu.so.1, $(DESTDIR)/lib)
+  InstallRO($(PVTIFC), $(DESTDIR)/include)
++ 
++ libilu.so:  $(OBJS)
++ 	$(RM) $@
++ 	ld -Bshareable -o $@  $(OBJS)
++ 
+  
+  CProgramTarget(iluhashm,iluhashm.o,,)
+  CProgramTarget(decoderr,decoderr.o,,)
+diff -r -c ./stubbers/parser/Imakefile /home/cracauer/work/ilu2patch/./stubbers/parser/Imakefile
+*** ./stubbers/parser/Imakefile	Thu Sep 25 23:29:51 1997
+--- /home/cracauer/work/ilu2patch/./stubbers/parser/Imakefile	Tue Oct  7 13:53:31 1997
+***************
+*** 40,45 ****
+--- 40,46 ----
+  #endif
+  
+  LibraryTarget(libilu-parser.a, iluparse.o typeuid.o shs.o pathname.o malloc.o util.o aprintf.o $(IDLOBJS))
++ SLibraryTarget(libilu-parser.so.1, iluparse.o typeuid.o shs.o pathname.o malloc.o util.o aprintf.o $(IDLOBJS))
+  ProgramTarget(islscan, scan.o, libilu-parser.a,)
+  
+  iluconf.h : ../../runtime/kernel/iluconf.h
+***************
+*** 63,68 ****
+--- 64,70 ----
+  
+  InstallProgram(islscan, $(DESTDIR)/bin)
+  InstallRO(libilu-parser.a, $(DESTDIR)/lib)
++ InstallRO(libilu-parser.so.1, $(DESTDIR)/lib)
+  InstallRO(iluptype.h, $(DESTDIR)/include)
+  InstallRO(ilu.isl, $(DESTDIR)/interfaces)
+  InstallRO(iluhttp.isl, $(DESTDIR)/interfaces)
+***************
+*** 85,91 ****
+  	make genregs
+  	-rm -f ../../runtime/kernel/ilutpcod.c ../../runtime/kernel/ilutpcod.h
+  	./genregs "../../runtime/kernel/ilutpcod"
+! 	-rm -f genregs *.o *.a
+  	$(DISTCLEAN)
+  
+  genregs: version.h genregs.o libilu-parser.a
+--- 87,93 ----
+  	make genregs
+  	-rm -f ../../runtime/kernel/ilutpcod.c ../../runtime/kernel/ilutpcod.h
+  	./genregs "../../runtime/kernel/ilutpcod"
+! 	-rm -f genregs *.o *.a *.so *.so.*.*
+  	$(DISTCLEAN)
+  
+  genregs: version.h genregs.o libilu-parser.a
