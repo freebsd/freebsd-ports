@@ -1,0 +1,5 @@
+libgdgeda is a modified version of the gd graphic library,
+with extra changes for use by gschem.
+libgdgeda does not conflict with the regular gd library.
+
+WWW: http://www.geda.seul.org

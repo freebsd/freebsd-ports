@@ -1,0 +1,15 @@
+bin/libgdgeda-config
+include/gdgeda/gd.h
+include/gdgeda/gd_io.h
+include/gdgeda/gdcache.h
+include/gdgeda/gdfontg.h
+include/gdgeda/gdfontl.h
+include/gdgeda/gdfontmb.h
+include/gdgeda/gdfonts.h
+include/gdgeda/gdfontt.h
+include/gdgeda/jisx0208.h
+include/gdgeda/wbmp.h
+lib/libgdgeda.so.4
+lib/libgdgeda.so
+lib/libgdgeda.a
+@dirrm include/gdgeda
