@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.9 1998/06/06 04:42:31 asami Exp $
+# $Id: Makefile,v 1.10 1998/06/10 20:16:08 asami Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -30,10 +30,10 @@ post-patch:
 	@(cd ${WRKSRC}/config/i386/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in \
+	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
 		>freebsd.h ; \
 	${MV} freebsd-elf.h freebsd-elf.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in \
+	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in \
 		>freebsd-elf.h)
 
 pre-install:

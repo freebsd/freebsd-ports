@@ -1,6 +1,6 @@
 --- config/i386/freebsd.h.orig	Sun Oct 19 09:31:05 1997
-+++ config/i386/freebsd.h	Thu May 21 14:10:11 1998
-@@ -35,10 +35,19 @@
++++ config/i386/freebsd.h	Tue Jun 30 13:44:27 1998
+@@ -35,10 +35,24 @@
  #include "i386/perform.h"
  
  #undef CPP_PREDEFINES
@@ -15,6 +15,11 @@
 +#error "CC1PLUS_SPEC needs ``-fsjlj-exceptions'', but is already defined."
 +#endif
 +#define CC1PLUS_SPEC "-fsjlj-exceptions"
++
++/* We also need "-fsjlj-exceptions" for CC1, because exceptions are
++   enabled when building portions of libgcc. */
++#undef CC1_SPEC
++#define CC1_SPEC "-fsjlj-exceptions %(cc1_spec) "
  
  /* Like the default, except no -lg.  */
 -#define LIB_SPEC "%{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}"
@@ -22,7 +27,28 @@
  
  #undef SIZE_TYPE
  #define SIZE_TYPE "unsigned int"
-@@ -215,7 +224,15 @@
+@@ -114,6 +128,7 @@
+ 
+ #define TYPE_ASM_OP	".type"
+ #define SIZE_ASM_OP	".size"
++#define SET_ASM_OP	".set"
+ 
+ /* The following macro defines the format used to output the second
+    operand of the .type assembler directive.  Different svr4 assemblers
+@@ -123,6 +138,12 @@
+ 
+ #define TYPE_OPERAND_FMT	"@%s"
+ 
++#define HANDLE_SYSV_PRAGMA	1
++
++#define ASM_WEAKEN_LABEL(FILE,NAME) \
++  do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
++  fputc ('\n', FILE); } while (0)
++
+ /* Write the extra assembler code needed to declare a function's result.
+    Most svr4 assemblers don't require any special declaration of the
+    result value, but there are exceptions.  */
+@@ -215,7 +236,17 @@
  
  #define ASM_SPEC   " %| %{fpic:-k} %{fPIC:-k}"
  #define LINK_SPEC \
@@ -36,6 +62,8 @@
 +#define STARTFILE_SPEC  \
 +  "%{shared:c++rt0.o%s} \
 +  %{!shared:%{pg:gcrt0.o%s}%{!pg:%{static:scrt0.o%s}%{!static:crt0.o%s}}}"
++
++#define MD_STARTFILE_PREFIX "/usr/lib/aout/"
  
  /* This is defined when gcc is compiled in the BSD-directory-tree, and must
   * make up for the gap to all the stuff done in the GNU-makefiles.
