@@ -15,5 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 
 .include <bsd.port.mk>
