@@ -2001,6 +2001,7 @@ gkermit		ports/comms/gkermit
 gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellm		ports/sysutils/gkrellm
+gkrellm2	ports/sysutils/gkrellm2
 gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
@@ -2009,12 +2010,14 @@ gkrellmearth	ports/astro/gkrellmearth
 gkrellmlaunch	ports/misc/gkrellmlaunch
 gkrellmmailwatch	ports/mail/gkrellmmailwatch
 gkrellmms	ports/audio/gkrellmms
+gkrellmms2	ports/audio/gkrellmms2
 gkrellmoon	ports/astro/gkrellmoon
 gkrellmouse	ports/sysutils/gkrellmouse
 gkrellmqst	ports/net/gkrellmqst
 gkrellmseti	ports/astro/gkrellmseti
 gkrellmss	ports/audio/gkrellmss
 gkrellmvolume	ports/audio/gkrellmvolume
+gkrellmvolume2	ports/audio/gkrellmvolume2
 gkrellmwho	ports/sysutils/gkrellmwho
 gkrellmwireless	ports/net/gkrellmwireless
 gkrellscore	ports/misc/gkrellscore
