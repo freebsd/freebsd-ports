@@ -3,14 +3,14 @@
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.8 1998/10/16 02:55:50 jseger Exp $
+# $Id: Makefile,v 1.9 1999/06/02 21:38:29 chuckr Exp $
 #
 
 DISTNAME=	sp-1.3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	chuckr@FreeBSD.ORG
 
 post-patch:
 	$(CP) $(WRKSRC)/Makefile $(WRKSRC)/Makefile.sed
