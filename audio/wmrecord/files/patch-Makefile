@@ -1,0 +1,54 @@
+*** Makefile.orig	Mon Apr  2 03:42:10 2001
+--- Makefile	Mon Apr  2 03:44:45 2001
+***************
+*** 1,28 ****
+! BINDIR = /usr/local/bin
+! MANDIR = /usr/local/man/man1
+! LIBDIR = -L/usr/X11R6/lib
+! LIBS = -lXpm -lX11 -lXext
+! CFLAGS = -O2 -Wall
+  CC = cc
+  RM = rm -f
+  
+  all:: wmrecord
+  
+  wmrecord: wmrecord.o wmgeneral.o
+! 	$(CC) -o $@ wmrecord.o wmgeneral.o $(LIBDIR) $(LIBS)
+  
+  wmrecord.o: wmrecord.c wmrecord.xpm
+! 	$(CC) -c $(CFLAGS) wmrecord.c
+  
+  wmgeneral.o: wmgeneral/wmgeneral.c
+! 	$(CC) -c $(CFLAGS) wmgeneral/wmgeneral.c
+  
+  clean:
+  	$(RM) *.o wmrecord core
+  
+  tidy:
+  	$(RM) *.o core
+- 
+- install: wmrecord
+- 	install -s -o root -g root -m 0755 wmrecord $(BINDIR)
+- 	install -o root -g root -m 0644 man/wmrecord.1 $(MANDIR)
+--- 1,21 ----
+! LDFLAGS= -L/usr/local/lib -L/usr/X11R6/lib -lXpm -lX11 -lXext
+! CFLAGS+= -Wall -I/usr/local/include -I/usr/X11R6/include
+  CC = cc
+  RM = rm -f
+  
+  all:: wmrecord
+  
+  wmrecord: wmrecord.o wmgeneral.o
+! 	$(CC) $(LDFLAGS) -o $@ wmrecord.o wmgeneral.o 
+  
+  wmrecord.o: wmrecord.c wmrecord.xpm
+! 	$(CC) $(CFLAGS) -c wmrecord.c
+  
+  wmgeneral.o: wmgeneral/wmgeneral.c
+! 	$(CC) $(CFLAGS) -c wmgeneral/wmgeneral.c
+  
+  clean:
+  	$(RM) *.o wmrecord core
+  
+  tidy:
+  	$(RM) *.o core

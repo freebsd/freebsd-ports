@@ -1,0 +1,14 @@
+WMRecord is a general purpose audio recordin utility that is designed to
+work in conjuction with WindowMaker's Dock or AfterStep's Wharf.
+
+It was originally conceived as a tool for recording memos, interviews
+and meetings, and this approach is reflected somewhat in the interface.
+Recordings are made to one of 99 numbered sots or tracks which the user
+may browse through. There is no limit (other than the constraints of the
+file system) to the size of the recordings you make. Recordings are
+automatically saved to disk, but may be erased or recorded over as
+necessary.
+
+WWW: http://www.bruhaha.co.uk/
+
+-- K. Konstantinidis <kkonstan@daemon.gr>
