@@ -22,4 +22,10 @@ USE_XPM=	yes
 WRKSRC= ${WRKDIR}/xboing
 MAN1=		xboing.1
 
+post-install:
+	${CHOWN} root:games ${PREFIX}/bin/xboing
+	${CHMOD} 2755 ${PREFIX}/bin/xboing
+	${CHOWN} root:games ${PREFIX}/lib/X11/xboing/.xboing.scr
+	${CHMOD} 664 ${PREFIX}/lib/X11/xboing/.xboing.scr
+
 .include <bsd.port.mk>

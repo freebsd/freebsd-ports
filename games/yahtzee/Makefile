@@ -20,9 +20,9 @@ WRKSRC=		${WRKDIR}/yahtzee
 # Distribution does not include an install target. So here it is.
 #
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yahtzee ${PREFIX}/bin/
-	${MKDIR} -m 0777 ${PREFIX}/lib/yahtzee/
-	${INSTALL_DATA} -m 0777 /dev/null ${PREFIX}/lib/yahtzee/yahtzee.sco
+	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin/
+	${MKDIR} -m 0755 ${PREFIX}/lib/yahtzee/
+	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${PREFIX}/lib/yahtzee/yahtzee.sco
 
 .include <bsd.port.mk>
 

@@ -21,5 +21,9 @@ MAN1=		xbill.1
 
 post-install:
 	${CP} ${WRKSRC}/README ${PREFIX}/share/xbill
+	${CHOWN} root:games ${PREFIX}/bin/xbill
+	${CHMOD} 2755 ${PREFIX}/bin/xbill
+	${CHOWN} root:games ${PREFIX}/share/xbill/scores
+	${CHMOD} 664 ${PREFIX}/share/xbill/scores
 
 .include <bsd.port.mk>
