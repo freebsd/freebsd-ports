@@ -5,6 +5,7 @@
     SUBDIR += chemtool
     SUBDIR += clhep
     SUBDIR += euler
+    SUBDIR += flounder
     SUBDIR += gdis
     SUBDIR += glens
     SUBDIR += libsvm
