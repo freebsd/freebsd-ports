@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.42
+PORTVERSION=	2.43
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
-MAINTAINER=	andrey@mgul.ac.ru
+MAINTAINER=	andrey@msfu.ru
 COMMENT=	Milter based anti-spam and anti-virus filtering program
 
 BUILD_DEPENDS=	\
