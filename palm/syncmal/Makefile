@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syncmal
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	palm
 MASTER_SITES=	http://people.atl.mediaone.net/jasonday/code/syncmal/
 DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}
