@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -314,7 +314,7 @@ post-install:
 	    >>${TMPPLIST}
 	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@unexec rmdir etc/squid/errors 2>/dev/null || true" \
+	@${ECHO_CMD} "@unexec rmdir %D/etc/squid/errors 2>/dev/null || true" \
 	    >>${TMPPLIST}
 
 changeuser:
