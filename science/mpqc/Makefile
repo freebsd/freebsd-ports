@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	science parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpqc
-DISTFILES=	mpqc-${PORTVERSION}.tar.gz mpqc-val-2.2.0.tar.gz
+DISTFILES=	mpqc-${PORTVERSION}.tar.bz2 mpqc-val-${PORTVERSION}.tar.bz2
 .if !defined(NOPORTDOCS)
-DISTFILES+=	mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
+DISTFILES+=	mpqc-man-${PORTVERSION}.tar.bz2 mpqc-html-${PORTVERSION}.tar.bz2
 .endif
 
 MAINTAINER=	maho@FreeBSD.org
@@ -21,10 +21,8 @@ COMMENT=	The massively parallel quantum computing library and program
 .if defined(WITH_ICC)
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
-USE_BISON=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=259
 
@@ -63,15 +61,11 @@ MPQC_COMMAND=	${PREFIX}/bin/mpqc
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O2 -ffast-math
 CXXFLAGS+=	-O2 -ffast-math
-.if (${MACHINE_ARCH} == "i386")
-CFLAGS+=	-mfancy-math-387
-CXXFLAGS+=	-mfancy-math-387
-.endif # i386
 .endif
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-	@${CP} ${FILESDIR}/FlexLexer.h ${WRKDIR}
+	#${CP} ${FILESDIR}/FlexLexer.h ${WRKDIR}
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
 	@cd ${WRKSRC} ; ${GMAKE} install_devel

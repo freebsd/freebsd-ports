@@ -1,24 +1,4 @@
 MAN3= \
-class.3 \
-compile.3 \
-develop.3 \
-download.3 \
-group.3 \
-keyval.3 \
-molrender.3 \
-mpqc.3 \
-mpqccomp.3 \
-mpqcinp.3 \
-mpqclic.3 \
-mpqcoo.3 \
-mpqcover.3 \
-mpqcpsi.3 \
-mpqcrun.3 \
-mpqcsimp.3 \
-mpqcval.3 \
-mpqcwar.3 \
-overview.3 \
-ref.3 \
 sc_ARMCIMemoryGrp.3 \
 sc_AccResult.3 \
 sc_AccResultInfo.3 \
@@ -36,6 +16,7 @@ sc_Becke88XFunctional.3 \
 sc_BeckeIntegrationWeight.3 \
 sc_BendSimpleCo.3 \
 sc_CLHF.3 \
+sc_CLKS.3 \
 sc_CLSCF.3 \
 sc_CartMolecularCoor.3 \
 sc_CartesianIter.3 \
@@ -74,6 +55,7 @@ sc_GaussianBasisSet.3 \
 sc_GaussianBasisSet_ValueData.3 \
 sc_GaussianShell.3 \
 sc_HSOSHF.3 \
+sc_HSOSKS.3 \
 sc_HSOSSCF.3 \
 sc_HessianUpdate.3 \
 sc_ISphericalTransform.3 \
@@ -264,6 +246,8 @@ sc_TwoBodyDerivIntV3.3 \
 sc_TwoBodyInt.3 \
 sc_TwoBodyIntCints.3 \
 sc_TwoBodyIntV3.3 \
+sc_UHF.3 \
+sc_UKS.3 \
 sc_UnionShape.3 \
 sc_Units.3 \
 sc_UnrestrictedSCF.3 \
@@ -285,10 +269,3 @@ sc_canonical_abcd.3 \
 sc_intMessageGrp.3 \
 sc_mPW91XFunctional.3 \
 sc_scprintf.3 \
-scls.3 \
-scmat.3 \
-scpr.3 \
-srctree.3 \
-state.3 \
-symmetry.3
-
