@@ -1,6 +1,17 @@
---- configure.orig	Wed Apr 24 22:37:56 2002
-+++ configure	Wed Apr 24 22:40:48 2002
-@@ -9299,7 +9299,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Apr 29 13:36:00 2002
++++ configure	Mon Apr 29 13:36:41 2002
+@@ -5723,6 +5723,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9299,7 +9300,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"

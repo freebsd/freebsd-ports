@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomecore
-PORTVERSION=	1.4.0.7
-PORTREVISION=	1
+PORTVERSION=	1.4.0.8
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
@@ -24,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-gtkhtml=${X11BASE} \
 		--disable-gtk-doc
