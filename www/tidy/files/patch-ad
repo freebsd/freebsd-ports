@@ -1,0 +1,18 @@
+--- html.h.orig	Fri Aug  4 19:21:05 2000
++++ html.h	Mon Nov 19 14:36:54 2001
+@@ -380,6 +380,7 @@
+ 
+ void FatalError(char *msg);
+ void FileError(FILE *fp, const char *file);
++int FileExists(const char *file);
+ 
+ Node *GetToken(Lexer *lexer, uint mode);
+ 
+@@ -758,6 +759,7 @@
+ extern Bool Word2000;
+ extern Bool Emacs;  /* sasdjb 01May00 GNU Emacs error output format */
+ extern Bool LiteralAttribs;
++extern Bool PreserveEntities;
+ 
+ /* Parser methods for tags */
+ 
