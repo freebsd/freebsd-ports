@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.macio.risp.pl/gtkgep/files/
 
-MAINTAINER=	linimon@lonesome.com
+MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	A guitar effects processor for GTK
 
 USE_INC_LIBTOOL_VER=	13
