@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
@@ -36,9 +36,10 @@ MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Handler::PHP.3 \
 	Autodia::Handler::Perl.3 \
 	Autodia::Handler::SQL.3 \
+	Autodia::Handler::Torque.3 \
 	Autodia::Handler::dia.3
 
-DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL README
+DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL README TODO
 
 pre-install:
 	@${RM} -f ${WRKSRC}/blib/man3/*.3pm
