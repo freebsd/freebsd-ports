@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	code2html
-PORTVERSION= 	0.8.9a
+PORTVERSION= 	0.8.11
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/
