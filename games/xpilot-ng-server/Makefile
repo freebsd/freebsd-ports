@@ -16,8 +16,6 @@ COMMENT=		An enhanced version of XPilot
 
 LIB_DEPENDS=		expat:${PORTSDIR}/textproc/expat2
 
-BROKEN=			"Checksum mismatch; will be removed after Feb 2"
-
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 
