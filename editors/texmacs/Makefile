@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	0.3.5.8
+PORTVERSION=	1.0
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/
 DISTFILES=	TeXmacs-${PORTVERSION}-src.tar.gz \
@@ -14,16 +14,16 @@ DISTFILES=	TeXmacs-${PORTVERSION}-src.tar.gz \
 
 MAINTAINER=	mainland@apeiron.net
 
-BROKEN=		"Does not fetch"
-
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		latex:${PORTSDIR}/print/latex
-RUN_DEPENDS=	latex:${PORTSDIR}/print/latex
+		tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 
 WRKSRC=	${WRKDIR}/TeXmacs-${PORTVERSION}-src
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 ALL_TARGET=
 
