@@ -14,11 +14,13 @@ share/gnome/omf/gcalctool/gcalctool-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gcalctool.png
 share/locale/am/LC_MESSAGES/gcalctool.mo
+share/locale/az/LC_MESSAGES/gcalctool.mo
 share/locale/be/LC_MESSAGES/gcalctool.mo
 share/locale/ca/LC_MESSAGES/gcalctool.mo
 share/locale/cs/LC_MESSAGES/gcalctool.mo
 share/locale/cy/LC_MESSAGES/gcalctool.mo
 share/locale/de/LC_MESSAGES/gcalctool.mo
+share/locale/el/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/fr/LC_MESSAGES/gcalctool.mo
 share/locale/he/LC_MESSAGES/gcalctool.mo
@@ -37,6 +39,7 @@ share/locale/sr/LC_MESSAGES/gcalctool.mo
 share/locale/sr@Latn/LC_MESSAGES/gcalctool.mo
 share/locale/sv/LC_MESSAGES/gcalctool.mo
 share/locale/uk/LC_MESSAGES/gcalctool.mo
+share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/omf/gcalctool
 @dirrm share/gnome/help/gcalctool/C/figures
