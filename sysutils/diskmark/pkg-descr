@@ -1,0 +1,6 @@
+The program diskmark uses an unused entry in the Master Boot Record
+on PC disks to record version information.  The author uses this
+information to determine if scratch disks should be partitioned at boot
+on a network booting compute cluster.
+
+WWW: http://people.freebsd.org/~brooks/diskmark/
