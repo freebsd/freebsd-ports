@@ -4787,6 +4787,7 @@ libpcd		ports/graphics/libpcd
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdtp		ports/net/libpdtp
+libpixman	ports/graphics/libpixman
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
