@@ -10,7 +10,7 @@ CATEGORIES=	japanese
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
 PATCH_SITES=	http://linuxlovers.yi.org/softarc/
-PATCHFILES=	gqmpeg-0.9.0-jp_title.patch
+PATCHFILES=	gqmpeg-0.13.0-jp_title.patch
 
 .if defined(WITH_SJIS_TAG)
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-*
