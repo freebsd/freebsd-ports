@@ -7,7 +7,8 @@ bin/enconv
 include/enca.h
 lib/libenca.a
 lib/libenca.so
-lib/libenca.so.2
+lib/libenca.so.3
+libdata/pkgconfig/enca.pc
 %%PORTDOCS%%share/doc/enca/libenca/c4.html
 %%PORTDOCS%%share/doc/enca/libenca/index.html
 %%PORTDOCS%%share/doc/enca/libenca/index.sgml
