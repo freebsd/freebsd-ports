@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rendo.dekooi.nl/~janssen/
 
-MAINTAINER=	janssen@rendo.dekooi.nl
+MAINTAINER=	ports@FreeBSD.Org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3rename $(PREFIX)/bin/mp3rename
