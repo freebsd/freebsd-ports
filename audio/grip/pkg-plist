@@ -69,6 +69,7 @@ share/gnome/apps/Multimedia/grip.desktop
 %%PORTDOCS%%share/gnome/help/grip/C/trkedit.png
 %%PORTDOCS%%share/gnome/help/grip/C/volume.png
 %%PORTDOCS%%share/gnome/help/grip/C/x135.html
+share/locale/ca/LC_MESSAGES/grip.mo
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/es/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
@@ -79,10 +80,11 @@ share/locale/zh_CN/LC_MESSAGES/grip.mo
 share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/gripicon.png
-%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images || true
-%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip/C/images || true
-%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip/C || true
-%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip || true
-%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help || true
+%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help/grip/C/images || true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help/grip/C || true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help/grip || true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help || true
 @dirrm share/gnome/apps/Multimedia
 @dirrm share/gnome/apps
+@dirrm share/gnome
