@@ -1,4 +1,4 @@
-# $Id$
+# $Id: tw.conf.freebsd2,v 1.1.1.1 1997/04/01 04:44:00 jdp Exp $
 #
 # tripwire.config
 # Generic version for FreeBSD
@@ -72,13 +72,13 @@
 
 #  First, root's "home"
 =/		L
-/.rhosts	R	# may not exist
-/.profile	R	# may not exist
-/.cshrc		R	# may not exist
-/.login		R	# may not exist
-/.exrc		R	# may not exist
-/.logout	R	# may not exist
-/.forward	R	# may not exist
+/root/.rhosts	R	# may not exist
+/root/.profile	R	# may not exist
+/root/.cshrc		R	# may not exist
+/root/.login		R	# may not exist
+/root/.exrc		R	# may not exist
+/root/.logout	R	# may not exist
+/root/.forward	R	# may not exist
 
 # Unix itself
 /kernel		R
