@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	catdoc
-PORTVERSION=	0.91.5
-PORTREVISION=	0
+PORTVERSION=	0.93.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ice.ru/pub/vitus/
-MASTER_SITE_SUBDIR=	support/catdoc
+MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
+#		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
 MAINTAINER=	brion@queeg.com
 COMMENT=	Convert MS Word/Excel documents to plain ASCII or TeX.  TK viewer included
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAN1=		catdoc.1 xls2csv.1
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
 CFLAGS+=	-DLATIN1=1
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/catdoc.1.in
 
 .include <bsd.port.pre.mk>
 
