@@ -1,0 +1,13 @@
+KLuJe is a LiveJournal client for KDE.
+
+Current features include:
+- Posting with optional subject or mood
+- Posting to multiple journals or communities
+- Editing events in the past
+- Systray icon, with menu of quick links
+- Auto polling for friends' posts, w/animated systray icon alert
+- Integrated spell checking
+- Fast server support (for paid accounts)
+- MD5 password storage/transmis
+
+WWW: http://sourceforge.net/projects/kluje/

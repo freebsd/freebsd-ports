@@ -1,0 +1,13 @@
+bin/kluje
+share/apps/kluje/klujeui.rc
+share/applnk/Internet/kluje.desktop
+share/icons/locolor/32x32/apps/kluje.png
+share/icons/hicolor/32x32/apps/kluje.png
+share/icons/locolor/16x16/apps/kluje.png
+share/icons/hicolor/16x16/apps/kluje.png
+share/icons/hicolor/16x16/apps/kluje_blink.png
+share/doc/HTML/en/kluje/index.docbook
+share/doc/HTML/en/kluje/index.cache.bz2
+share/doc/HTML/en/kluje/common
+@dirrm share/apps/kluje
+@dirrm share/doc/HTML/en/kluje
