@@ -25,6 +25,7 @@ bin/highlight
 %%DATADIR%%/langDefs/awk.lang
 %%DATADIR%%/langDefs/bat.lang
 %%DATADIR%%/langDefs/bb.lang
+%%DATADIR%%/langDefs/bib.lang
 %%DATADIR%%/langDefs/bms.lang
 %%DATADIR%%/langDefs/c.lang
 %%DATADIR%%/langDefs/cb.lang
@@ -34,6 +35,7 @@ bin/highlight
 %%DATADIR%%/langDefs/cs.lang
 %%DATADIR%%/langDefs/css.lang
 %%DATADIR%%/langDefs/e.lang
+%%DATADIR%%/langDefs/erl.lang
 %%DATADIR%%/langDefs/euphoria.lang
 %%DATADIR%%/langDefs/exp.lang
 %%DATADIR%%/langDefs/flx.lang
@@ -41,6 +43,7 @@ bin/highlight
 %%DATADIR%%/langDefs/frink.lang
 %%DATADIR%%/langDefs/haskell.lang
 %%DATADIR%%/langDefs/httpd.lang
+%%DATADIR%%/langDefs/icn.lang
 %%DATADIR%%/langDefs/idl.lang
 %%DATADIR%%/langDefs/ini.lang
 %%DATADIR%%/langDefs/io.lang
@@ -49,6 +52,8 @@ bin/highlight
 %%DATADIR%%/langDefs/js.lang
 %%DATADIR%%/langDefs/jsp.lang
 %%DATADIR%%/langDefs/ldif.lang
+%%DATADIR%%/langDefs/lisp.lang
+%%DATADIR%%/langDefs/lotos.lang
 %%DATADIR%%/langDefs/ls.lang
 %%DATADIR%%/langDefs/lua.lang
 %%DATADIR%%/langDefs/m.lang
@@ -57,11 +62,13 @@ bin/highlight
 %%DATADIR%%/langDefs/ml.lang
 %%DATADIR%%/langDefs/mo.lang
 %%DATADIR%%/langDefs/mod3.lang
+%%DATADIR%%/langDefs/mpl.lang
 %%DATADIR%%/langDefs/ms.lang
 %%DATADIR%%/langDefs/nas.lang
 %%DATADIR%%/langDefs/nice.lang
 %%DATADIR%%/langDefs/nut.lang
 %%DATADIR%%/langDefs/oberon.lang
+%%DATADIR%%/langDefs/objc.lang
 %%DATADIR%%/langDefs/os.lang
 %%DATADIR%%/langDefs/pas.lang
 %%DATADIR%%/langDefs/php.lang
@@ -69,16 +76,19 @@ bin/highlight
 %%DATADIR%%/langDefs/pl.lang
 %%DATADIR%%/langDefs/pl1.lang
 %%DATADIR%%/langDefs/pov.lang
+%%DATADIR%%/langDefs/pro.lang
 %%DATADIR%%/langDefs/progress.lang
+%%DATADIR%%/langDefs/ps.lang
 %%DATADIR%%/langDefs/psl.lang
 %%DATADIR%%/langDefs/py.lang
 %%DATADIR%%/langDefs/rb.lang
 %%DATADIR%%/langDefs/rexx.lang
 %%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/sc.lang
-%%DATADIR%%/langDefs/sml.lang
 %%DATADIR%%/langDefs/sh.lang
 %%DATADIR%%/langDefs/sma.lang
+%%DATADIR%%/langDefs/sml.lang
+%%DATADIR%%/langDefs/spec.lang
 %%DATADIR%%/langDefs/spn.lang
 %%DATADIR%%/langDefs/sql.lang
 %%DATADIR%%/langDefs/sybase.lang
@@ -112,7 +122,6 @@ bin/highlight
 %%DATADIR%%/themes/greyish.style
 %%DATADIR%%/themes/ide-anjuta.style
 %%DATADIR%%/themes/ide-codewarrior.style
-%%DATADIR%%/themes/vim-dark.style
 %%DATADIR%%/themes/ide-devcpp.style
 %%DATADIR%%/themes/ide-jbuilder4.style
 %%DATADIR%%/themes/ide-jcreator2.style
@@ -139,6 +148,7 @@ bin/highlight
 %%DATADIR%%/themes/untypical.style
 %%DATADIR%%/themes/usable.style
 %%DATADIR%%/themes/vampire.style
+%%DATADIR%%/themes/vim-dark.style
 %%DATADIR%%/themes/vim.style
 %%DATADIR%%/themes/website.style
 %%DATADIR%%/themes/website2-blue.style
