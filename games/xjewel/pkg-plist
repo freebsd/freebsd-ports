@@ -8,4 +8,4 @@ lib/xjewel.scores
 @mode 644
 lib/xjewel.font/fonts.dir
 lib/xjewel.font/seven_seg.pcf.Z
-man/man6/xjewel.6
+man/man6/xjewel.6.gz
