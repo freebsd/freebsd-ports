@@ -1442,3 +1442,4 @@ misc/pg|sysutils/heirloom|2005-02-21|abandoned
 science/cdcl-gtk|science/cdcl|2005-02-24|master port depend on gtk now
 science/ruby-dcl-gtk|science/ruby-dcl|2005-02-24|master port depend on gtk now
 www/pear-APC|www/pecl-APC|2005-02-26|software is now pecl
+mail/namg||2005-02-27|obsolete/no longer exists
