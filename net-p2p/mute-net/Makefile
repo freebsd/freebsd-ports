@@ -150,25 +150,25 @@ CONFLICTS+=	mute-net-[0-9]*
 .ifndef(WITHOUT_GUI)
 # we cannot install if slave gui port is installed
 PLIST_SUB+=	GUI=""
+
+CONFLICTS+=	mute-net-gui-*
 .else
 # tag package name properly
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-text
 
 PLIST_SUB+=	GUI="@comment "
-
-CONFLICTS+=	mute-net-text-*
 .endif
 
 # text interface
 .ifndef(WITHOUT_TEXT)
 PLIST_SUB+=	TEXT=""
+
+CONFLICTS+=	mute-net-text-*
 .else
 # tag package name properly
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gui
 
 PLIST_SUB+=	TEXT="@comment "
-
-CONFLICTS+=	mute-net-gui-*
 .endif
 
 .include <bsd.port.post.mk>
