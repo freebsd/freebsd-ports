@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	mod_
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
