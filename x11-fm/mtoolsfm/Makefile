@@ -8,7 +8,7 @@
 PORTNAME=	mtoolsfm
 PORTVERSION= 	1.6
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.core-coutainville.org/mfm/archive/SOURCES/
+MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
 DISTNAME=	MToolsFM-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
