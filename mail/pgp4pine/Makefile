@@ -36,10 +36,6 @@ SCRIPTDIR=	${SAMPLEDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 # Post-patch
 #
 
