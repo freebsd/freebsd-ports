@@ -409,6 +409,7 @@
     SUBDIR += shishi
     SUBDIR += sig2dot
     SUBDIR += skip
+    SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
     SUBDIR += smtpmap

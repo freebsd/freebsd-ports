@@ -1,0 +1,19 @@
+--- Makefile.orig	Thu Oct 21 06:56:02 2004
++++ Makefile	Tue Nov  9 16:35:02 2004
+@@ -148,7 +148,7 @@ sks.8.gz: sks.8
+ 	gzip -f sks.8
+ 
+ sks.8: sks.pod
+-	pod2man -c "SKS OpenPGP Key server" --section 8 -r 0.1 -name sks sks.pod sks.8
++	pod2man -c "SKS OpenPGP Key server" --section 8 -r 0.1 sks.pod > sks.8
+ 
+ sks: $(LIBS) $(ALLOBJS) sks.cmx
+ 	$(OCAMLOPT) -o sks $(OCAMLOPTFLAGS) $(ALLOBJS) sks.cmx
+@@ -294,6 +294,7 @@ NXDIR=numerix-0.19
+ 
+ $(NXDIR)/READ.ME:
+ 	tar xvmfz $(NXDIR)-3.tar.gz
++	patch -p0 < ../sks.numerix.patch
+ 
+ $(NXDIR)/config.status: $(NXDIR)/READ.ME
+ 	cd $(NXDIR) && \

@@ -1,0 +1,30 @@
+--- numerix-0.19/configure	Sat Oct 16 15:47:19 2004
++++ numerix-0.19/configure	Sat Oct 16 15:38:02 2004
+@@ -4337,6 +4337,7 @@
+   echo "$as_me:$LINENO: checking for Ocaml version" >&5
+ echo $ECHO_N "checking for Ocaml version... $ECHO_C" >&6
+   ocaml_version=`config/camlconf $ocamlc version`
++  ocaml_version=${ocaml_version%%.*}
+   echo "$as_me:$LINENO: result: $ocaml_version" >&5
+ echo "${ECHO_T}$ocaml_version" >&6
+   echo "$as_me:$LINENO: checking for Ocaml directory" >&5
+--- numerix-0.19/lib/kernel/string.c	Sat Oct 16 15:47:19 2004
++++ numerix-0.19/lib/kernel/string.c	Sat Oct 16 15:14:17 2004
+@@ -38,7 +38,7 @@
+   longueur l;
+ 
+   /* saute les blancs et le signe */
+-  while isspace(*s) s++;
++  while (isspace(*s)) s++;
+   if ((*s == '+') || (*s == '-')) s++;
+ 
+   /* compte le nombre de chiffres décimaux */
+@@ -83,7 +83,7 @@
+   long i,j,l,n;
+ 
+   /* saute les blancs et le signe */
+-  while isspace(*s) s++;
++  while (isspace(*s)) s++;
+   switch(*s) {
+   case '-' : sa = SIGN_m;
+   case '+' : s++;
