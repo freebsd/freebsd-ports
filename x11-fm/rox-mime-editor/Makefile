@@ -20,7 +20,6 @@ RUN_DEPENDS=		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 			${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
 USE_PYTHON=		yes
-USE_SIZE=		yes
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

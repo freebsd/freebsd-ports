@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 
 .if defined(WITH_MOTIF)
 USE_MOTIF=	yes
