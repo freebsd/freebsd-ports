@@ -41,6 +41,9 @@ upgrades.
   as it will remove the directory on every reboot and applications will re-
   create it with the wrong ownership.
 
+  Users of daily_clean_tmps_enable in /etc/periodic.conf should make sure
+  daily_clean_tmps_ignore contains /tmp/.ICE-unix.
+
 20041227:
   AFFECTS: users of lang/gambas
   AUTHOR: thierry@FreeBSD.org
