@@ -1,6 +1,5 @@
-DVD+RW Tools by Andy Polyakov.  This software allows one to use a DVD
-burner, as well as supporting multisession CD-R/W formats, primarily
-via the "growisofs" utility.
+DVD+RW Tools by Andy Polyakov.  This software allows one to perform DVD
+recording using a DVD burner, primarily via the "growisofs" utility.
 
 growisofs was originally designed as a frontend to mkisofs to facilitate
 appending of data to ISO9660 volumes residing on random-access media such as
