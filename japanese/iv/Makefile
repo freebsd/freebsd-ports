@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.3 1998/05/13 03:33:42 itojun Exp $
+# $Id: Makefile,v 1.4 1998/09/05 00:34:30 max Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
+
+BROKEN_ELF=	yes
 
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
