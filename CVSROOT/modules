@@ -7083,6 +7083,7 @@ tempest_for_eliza	ports/audio/tempest_for_eliza
 templ		ports/devel/templ
 termcap		src/share/termcap
 terminality	ports/devel/terminality
+terminatorx	ports/audio/terminatorx
 test		src/bin/test
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
