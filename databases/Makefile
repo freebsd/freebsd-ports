@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
     SUBDIR += zpygresqlda
+    SUBDIR += adodb
     SUBDIR += cdb
     SUBDIR += db
     SUBDIR += db3
