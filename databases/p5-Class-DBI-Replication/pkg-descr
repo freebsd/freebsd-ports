@@ -1,0 +1,6 @@
+Classs::DBI::Replication extends Class::DBI's persistence for replicated
+databases. 
+
+The idea is very simple. SELECT from slaves, INSERT/UPDATE/DELETE to master. 
+
+WWW: http://search.cpan.org/dist/Class-DBI-Replication/
