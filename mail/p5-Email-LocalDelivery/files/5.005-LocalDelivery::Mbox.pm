@@ -1,5 +1,5 @@
 --- LocalDelivery/Mbox.pm.orig	Fri Nov 14 10:04:24 2003
-+++ LocalDelivery/Mbox.pm	Tue Jun  1 20:03:37 2004
++++ LocalDelivery/Mbox.pm	Tue Jun  1 20:47:05 2004
 @@ -4,7 +4,7 @@
  use Email::Simple;
  use Fcntl ':flock';
@@ -23,13 +23,13 @@
 -        $class->unlock($fh)                   || next;
 -        close $fh                             or next;
 +        open FH, ">> $file"               or next;
-+        $class->getlock(FH)                  || next;
++        $class->getlock(\*FH)                  || next;
 +        seek FH, 0, 2;
 +        print FH "\n" if tell(FH) > 0;
 +        print FH $class->_from_line(\$mail); # Avoid passing $mail where poss.
 +        print FH $class->_escape_from_body(\$mail);
 +        print FH "\n" unless $mail =~ /\n$/;
-+        $class->unlock(FH)                   || next;
++        $class->unlock(\*FH)                   || next;
 +        close FH                             or next;
          push @rv, $file
      }
