@@ -1,6 +1,6 @@
 --- Makefile.orig	Mon Mar  8 08:20:38 1999
-+++ Makefile	Thu Aug 26 14:49:24 1999
-@@ -1,10 +1,9 @@
++++ Makefile	Wed Aug  9 04:48:01 2000
+@@ -1,30 +1,30 @@
 -CC=gcc
  # If you know what your system's byte order is, define XML_BYTE_ORDER:
  # use -DXML_BYTE_ORDER=12 for little-endian byte order;
@@ -8,20 +8,39 @@
  # -DXML_NS adds support for checking of lexical aspects of XML namespaces spec
  # -DXML_MIN_SIZE makes a smaller but slower parser
 -CFLAGS=-O2 -Ixmltok -Ixmlparse -DXML_NS
-+CFLAGS+=-Ixmltok -Ixmlparse -DXML_NS
++CFLAGS+=-Ixmltok -Ixmlparse -DXML_NS -fpic
  # Use one of the next two lines; unixfilemap is better if it works.
  FILEMAP_OBJ=xmlwf/unixfilemap.o
  #FILEMAP_OBJ=xmlwf/readfilemap.o
-@@ -18,7 +17,7 @@
+ OBJS=xmltok/xmltok.o \
+   xmltok/xmlrole.o \
+-  xmlwf/xmlwf.o \
+-  xmlwf/xmlfile.o \
+-  xmlwf/codepage.o \
+   xmlparse/xmlparse.o \
+   xmlparse/hashtable.o \
    $(FILEMAP_OBJ)
++XOBJS=xmlwf/xmlwf.o \
++  xmlwf/xmlfile.o \
++  xmlwf/codepage.o
++
  EXE=
  
 -all: xmlwf/xmlwf$(EXE)
-+all: xmlwf/xmlwf$(EXE) libexpat.a
++all: xmlwf/xmlwf$(EXE) libexpat.a libexpat.so
  
- xmlwf/xmlwf$(EXE): $(OBJS)
- 	$(CC) $(CFLAGS) -o $@ $(OBJS)
-@@ -34,6 +33,10 @@
+-xmlwf/xmlwf$(EXE): $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS)
++xmlwf/xmlwf$(EXE): $(XOBJS) libexpat.a
++	$(CC) $(CFLAGS) -o $@ $(XOBJS) -L. -lexpat
+ 
+ clean:
+-	rm -f $(OBJS) xmlwf/xmlwf$(EXE)
++	rm -f $(OBJS) $(XOBJS) xmlwf/xmlwf$(EXE)
+ 
+ xmltok/nametab.h: gennmtab/gennmtab$(EXE)
+ 	rm -f $@
+@@ -34,6 +34,13 @@
  	$(CC) $(CFLAGS) -o $@ gennmtab/gennmtab.c
  
  xmltok/xmltok.o: xmltok/nametab.h
@@ -29,6 +48,9 @@
 +libexpat.a: $(OBJS)
 +	ar -rc $@ $(OBJS)
 +	ranlib $@
++
++libexpat.so: $(OBJS)
++	$(CC) -shared -o $@ $(OBJS)
  
  .c.o:
  	$(CC) $(CFLAGS) -c -o $@ $<
