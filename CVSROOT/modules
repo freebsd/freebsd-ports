@@ -4206,6 +4206,7 @@ libosip2	ports/net/libosip2
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
+libparsifal	ports/textproc/libparsifal
 libpathan	ports/textproc/libpathan
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
