@@ -1,8 +1,12 @@
 *** webmagick.in.orig	Tue Mar 24 07:45:45 1998
---- webmagick.in	Thu Aug 13 01:26:44 1998
+--- webmagick.in	Thu Sep 24 08:31:07 1998
 ***************
-*** 130,135 ****
---- 130,136 ----
+*** 127,135 ****
+--- 127,137 ----
+      $opt_dircolorlink,
+      $opt_dircolorvlink,
+      $opt_dirfmt,
++     $opt_dirhtmlext,
       $opt_dirindexname,
       $opt_forcecache,
       $opt_forcegif,
@@ -12,7 +16,7 @@
       $opt_frame_name_dirview,
 ***************
 *** 144,150 ****
---- 145,153 ----
+--- 146,154 ----
       $opt_framemarginheight,
       $opt_framemarginwidth,
       $opt_framestyle,
@@ -24,7 +28,7 @@
       $opt_iconpath,
 ***************
 *** 196,201 ****
---- 199,209 ----
+--- 200,210 ----
       $opt_verbose,
       $opt_webmagickrc,	# Per-directory WebMagick rc file name
       $opt_zoomfilter,
@@ -45,7 +49,7 @@
   
   
   # File naming
---- 257,263 ----
+--- 258,264 ----
   # Name of per-directory rc file
   $opt_webmagickrc	= '.webmagickrc';
   # global rc files
@@ -54,8 +58,18 @@
   
   # File naming
 ***************
+*** 258,263 ****
+--- 267,273 ----
+  $opt_pageindexname	= '.index';	# Base name of secondary index files
+  $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
+  					#  dirname   Directory Title
++ $opt_dirhtmlext         = '.html';      # Use .shtml for SSI
+  $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
+  
+  #
+***************
 *** 299,311 ****
---- 307,327 ----
+--- 309,329 ----
   $opt_forcehtml		= 0;	# Force HTML files to be generated (default off)
   $opt_forcemontage	= 0;	# Force montage (default off)
   $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
@@ -78,10 +92,12 @@
   #				
   # ImageMagick Montage settings
 ***************
-*** 642,650 ****
---- 658,668 ----
+*** 641,650 ****
+--- 659,671 ----
+  		'dircolorfore=s'	=> \$opt_dircolorfore,
   		'dircolorlink=s'	=> \$opt_dircolorlink,
   		'dircolorvlink=s'	=> \$opt_dircolorvlink,
++ 		'dirhtmlext=s'          => \$opt_dirhtmlext,
   		'dirindexname=s'	=> \$opt_dirindexname,
 + 		'footer=s'              => \$opt_footer,
   		'forcecache!'		=> \$opt_forcecache,
@@ -93,7 +109,7 @@
   		'framemarginheight=i'	=> \$opt_framemarginheight,
 ***************
 *** 654,659 ****
---- 672,678 ----
+--- 675,681 ----
   		'header=s'		=> \$opt_header,
   		'help!'			=> \$opt_help,
   		'htimage=s'		=> \$opt_htimage,
@@ -103,7 +119,7 @@
   		'indexname=s'		=> \$opt_indexname,
 ***************
 *** 662,667 ****
---- 681,691 ----
+--- 684,694 ----
   		'maptype=s'		=> \$opt_maptype,
   		'maxgif=i'		=> \$opt_maxgif,
   		'pageindexname=s'	=> \$opt_pageindexname,
@@ -124,7 +140,7 @@
           if( $_ ne '.' && get_rc_var('.', 'opt_prune', 0) ) {
               $File::Find::prune=1;
   	    # following funny logic is to avoid warnings about $prune
---- 924,930 ----
+--- 927,933 ----
   sub wanted {
       my($dev,$ino,$mode,$nlink,$uid,$gid);
       ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_);
@@ -133,10 +149,12 @@
               $File::Find::prune=1;
   	    # following funny logic is to avoid warnings about $prune
 ***************
-*** 1386,1397 ****
---- 1410,1423 ----
+*** 1385,1397 ****
+--- 1412,1427 ----
+  	 'dircolorfore'		=> $opt_dircolorfore,
   	 'dircolorlink'		=> $opt_dircolorlink,
   	 'dircolorvlink'	=> $opt_dircolorvlink,
++ 	 'dirhtmlext'           => $opt_dirhtmlext,
   	 'dirindexname'		=> $opt_dirindexname,
 + 	 'footer'               => $opt_footer,
   	 'framemarginwidth'	=> $opt_framemarginwidth,
@@ -151,7 +169,7 @@
   	 'jsdirindex'		=> $fileNames{'jsDirIndex'},
 ***************
 *** 1584,1590 ****
---- 1610,1618 ----
+--- 1614,1622 ----
   		# Save run status (source files and montage options)
   		#
   		writePerlIndexFiles();
@@ -161,6 +179,23 @@
               }
   
   	    # Clear error flag
+***************
+*** 1650,1656 ****
+  sub writeTopIndexes {
+  
+      print( STDERR "Writing Index Files ${opt_indexname} & ",
+!                 "${opt_pageindexname}dir.html ...\n" )
+                  if $opt_debug;
+  
+      #---- Generate the Variables for Format Options ----
+--- 1682,1688 ----
+  sub writeTopIndexes {
+  
+      print( STDERR "Writing Index Files ${opt_indexname} & ",
+! 		"${opt_pageindexname}dir${opt_dirhtmlext} ...\n" )
+                  if $opt_debug;
+  
+      #---- Generate the Variables for Format Options ----
 ***************
 *** 1682,1690 ****
       #
@@ -172,7 +207,7 @@
       }
   
       #
---- 1710,1718 ----
+--- 1714,1722 ----
       #
       my $nexthtml = '';
       if( $haveReadme && $haveImages && $opt_framefmt_frames{$opt_framestyle}<=2 ) {
@@ -191,7 +226,7 @@
           }
       }
   
---- 1757,1763 ----
+--- 1761,1767 ----
   	my $i;
           for( $i=1; $i <= $numPages; ++$i ) {
               $pageindexhtml .= 
@@ -199,6 +234,23 @@
           }
       }
   
+***************
+*** 1761,1767 ****
+      # Pull README into thumbnail frame if it exists, and is
+      # either marked always visible or there are no images.
+      #
+!     $dirframelink = "${opt_pageindexname}dir.html";
+  
+      if( $opt_framefmt_frames{$opt_framestyle} <= 2 ) {
+  	if( $haveReadme && ( $opt_readmevisible || ! $haveImages ) ) {
+--- 1793,1799 ----
+      # Pull README into thumbnail frame if it exists, and is
+      # either marked always visible or there are no images.
+      #
+!     $dirframelink = "${opt_pageindexname}dir${opt_dirhtmlext}";
+  
+      if( $opt_framefmt_frames{$opt_framestyle} <= 2 ) {
+  	if( $haveReadme && ( $opt_readmevisible || ! $haveImages ) ) {
 ***************
 *** 1769,1784 ****
   	    $pageframelink = $opt_readme;
@@ -217,7 +269,7 @@
   	    $imageFrameLink = $fileNames{'htmlBlankPage'};
   	}
       }
---- 1797,1812 ----
+--- 1801,1816 ----
   	    $pageframelink = $opt_readme;
   	} else {
   	    # Point to first image page
@@ -236,7 +288,7 @@
       }
 ***************
 *** 1860,1865 ****
---- 1888,1894 ----
+--- 1892,1898 ----
   
       # ----- Output Top JavaScript Index File (usually "indexjs.html") -------
       #
@@ -245,8 +297,20 @@
   	|| die("$0: Failed to open file $fileNames{'jsDirIndex'} for output\n$@\n");
       print( INDEX "<HTML>\n" );
 ***************
-*** 1873,1878 ****
---- 1902,1908 ----
+*** 1873,1884 ****
+      print( INDEX "</SCRIPT>\n" );
+      print( INDEX "</HTML>\n" );
+      close( INDEX );
+  
+  
+      # ----- Output Frame Directory File (usally ".indexdir.html") ------
+      #
+!     open( INDEX, ">${opt_pageindexname}dir.html")
+! 	|| die("$0: Failed to open file \"${opt_pageindexname}dir.html\"",
+                  " for output\n$@\n");
+      print( INDEX "<HTML>\n<HEAD>\n" );
+      print( INDEX "  <TITLE>${pageTitle}</TITLE>\n" );
+--- 1906,1918 ----
       print( INDEX "</SCRIPT>\n" );
       print( INDEX "</HTML>\n" );
       close( INDEX );
@@ -254,6 +318,12 @@
   
   
       # ----- Output Frame Directory File (usally ".indexdir.html") ------
+      #
+!     open( INDEX, ">${opt_pageindexname}dir${opt_dirhtmlext}")
+! 	|| die("$0: Failed to open file \"${opt_pageindexname}dir${opt_dirhtmlext}\"",
+                  " for output\n$@\n");
+      print( INDEX "<HTML>\n<HEAD>\n" );
+      print( INDEX "  <TITLE>${pageTitle}</TITLE>\n" );
 ***************
 *** 1965,1971 ****
   	my $page;
@@ -263,7 +333,7 @@
   	    } else {
           	$indexbar .= " ${page}\n";
   	    }
---- 1995,2001 ----
+--- 1999,2005 ----
   	my $page;
   	for ( $page = 1; $page <= $numPages; ++$page) {
   	    if ( $page != $pageNumber ) {
@@ -283,7 +353,7 @@
   	# Total HACK!!!
   	if( $opt_framestyle == 1 ) {
   	    print( INDEX "<p><FONT SIZE=-1>Index of files \"$imageNames[$pageNumber - 1][0]\" through",
---- 2035,2044 ----
+--- 2039,2048 ----
       print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
       print( INDEX "  ALINK=\"${opt_coloralink}\">\n\n" );
   
@@ -308,7 +378,7 @@
       # Print Copyright info on non-blank pages.
       if( $numimages > 0 ) {
          print( INDEX "<BR><ADDRESS>\n" );
---- 2064,2117 ----
+--- 2068,2121 ----
   	print( INDEX "<MAP NAME=\"${mapname}\">\n" );
   	my $imageNum;
   	for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -365,7 +435,7 @@
          print( INDEX "<BR><ADDRESS>\n" );
 ***************
 *** 2648,2653 ****
---- 2720,2726 ----
+--- 2724,2730 ----
   	    handleMagickError( __FILE__, __LINE__, "", $status) if "$status";
   	}
   
@@ -393,7 +463,7 @@
   					  quality=>70
   					  );
   		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
---- 2732,2750 ----
+--- 2736,2754 ----
   	handleMagickError( __FILE__, __LINE__, $fileNames{'montageGIF'}, $status) if "$status";
   	last MONTAGE if "$status";
   	undef @$image;
@@ -431,7 +501,7 @@
   	if( $opt_maptype eq 'ncsa' ) {
   	    if ( "${opt_htimage}" ne '' ) {
   		print( IMAGEMAP "rect "
---- 2821,2843 ----
+--- 2825,2847 ----
       # default URL
       if ( "${opt_htimage}" ne '' ) {
   	print( IMAGEMAP "default "
@@ -477,7 +547,7 @@
       }
   
   
---- 3426,3445 ----
+--- 3430,3449 ----
       $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
   
       # Name for current HTML index page
