@@ -12,6 +12,8 @@ MASTERDIR=	${.CURDIR}/../../news/tin
 
 MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 
+BROKEN=		Fails to patch
+
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
 		${.CURDIR}/files/patch-mail.c \
