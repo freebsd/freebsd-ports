@@ -3,7 +3,7 @@
 # Date created:		22 August 1999
 # Whom:			Denis Shaposhnikov <dsh@vlink.ru>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	gtic-1.3b
@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://ftp.cracksoft.kiev.ua/pub/linux/gtic/ \
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dsh@vlink.ru
+
+MAKE_ENV+=	DEFINES="${DEFINES}"
+
+.if defined(WITH_AMIGA4D)
+DEFINES+=	-DAMIGA4D
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/gtic
