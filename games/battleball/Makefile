@@ -8,7 +8,8 @@
 PORTNAME=	battleball
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	http://fundy.linux.tucows.com/files/x11/entertain/
+MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/entertain/ \
+		http://fundy.linux.tucows.com/files/x11/entertain/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	will@FreeBSD.org
