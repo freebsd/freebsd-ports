@@ -1,4 +1,5 @@
 A program to send SMS to cellular phones in Poland (Idea, ERA, Plus).
-Development version, completly rewritten.
+Also supports english O2 SMS gateway.  Development version, completly
+rewritten.
 
 WWW: http://www.ceti.pl/~miki/komputery/sms.html
