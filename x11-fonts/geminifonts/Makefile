@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
