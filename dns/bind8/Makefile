@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	8.2.2.p5
+PORTVERSION=	8.2.2.p7
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.2-P5/
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.2-P7/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.org
