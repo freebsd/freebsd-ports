@@ -1,0 +1,14 @@
+--- lib/sysdep/generic/unix/keyboard.c	Fri Mar  3 11:08:20 2000
++++ lib/sysdep/generic/unix/keyboard.c	Sat Mar  4 15:36:23 2000
+@@ -25,7 +25,11 @@
+ 
+ #ifdef HAVE_NCURSES
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ 
+ #ifdef HAVE_MOUSE
+ #include <limits.h>

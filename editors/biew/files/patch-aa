@@ -1,0 +1,11 @@
+--- lib/sysdep/generic/unix/os_dep.c.orig	Fri Mar  3 11:08:20 2000
++++ lib/sysdep/generic/unix/os_dep.c	Sat Mar  4 14:35:49 2000
+@@ -46,7 +46,7 @@
+ 
+ char * __get_help_name(void)
+ {
+-	return "/usr/lib/biew/biew.hlp";
++	return "/usr/local/share/biew/biew.hlp";
+ }
+ 
+ static void cleanup(int sig)
