@@ -1157,7 +1157,6 @@ de-handbook	doc/de_DE.ISO8859-1/books/handbook
 de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
-de-kde2-i18n	ports/german/kde2-i18n
 de-kde3-i18n	ports/german/kde3-i18n
 de-koffice-i18n	ports/german/koffice-i18n
 de-linux-netscape6	ports/german/linux-netscape6
@@ -1747,7 +1746,6 @@ fr-cups		ports/french/cups
 fr-cups-base	ports/french/cups-base
 fr-cups-lpr	ports/french/cups-lpr
 fr-ispell	ports/french/ispell
-fr-kde2-i18n	ports/french/kde2-i18n
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-linux-netscape6	ports/french/linux-netscape6
@@ -2842,13 +2840,8 @@ ja-kanjipad	ports/japanese/kanjipad
 ja-kappa20	ports/japanese/kappa20
 ja-kbanner	ports/japanese/kbanner
 ja-kcc		ports/japanese/kcc
-ja-kde2		ports/japanese/kde2
-ja-kde2-i18n	ports/japanese/kde2-i18n
 ja-kde3-i18n	ports/japanese/kde3-i18n
 ja-kdeaddons	ports/japanese/kdeaddons
-ja-kdebase2	ports/japanese/kdebase2
-ja-kdelibs2	ports/japanese/kdelibs2
-ja-kdenetwork2	ports/japanese/kdenetwork2
 ja-kdevelop	ports/japanese/kdevelop
 ja-kdrill	ports/japanese/kdrill
 ja-kinput2-canna	ports/japanese/kinput2-canna
@@ -3329,14 +3322,12 @@ kdeartwork3	ports/x11-wm/kdeartwork3
 kdebase3	ports/x11/kdebase3
 kdegames3	ports/games/kdegames3
 kdegraphics3	ports/graphics/kdegraphics3
-kdelibs2	ports/x11/kdelibs2
 kdelibs3	ports/x11/kdelibs3
 kdemultimedia3		ports/audio/kdemultimedia3
 kdenetwork3	ports/net/kdenetwork3
 kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
 kdestroy	src/eBones/kdestroy
-kdesupport2	ports/converters/kdesupport2
 kdetelnet	ports/net/kdetelnet
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
@@ -3485,7 +3476,6 @@ ko-hpscat	ports/korean/hpscat
 ko-htexp	ports/korean/htexp
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
-ko-kde2-i18n	ports/korean/kde2-i18n
 ko-kde3-i18n	ports/korean/kde3-i18n
 ko-linux-netscape47-communicator	ports/korean/linux-netscape47-communicator
 ko-linux-netscape47-navigator	ports/korean/linux-netscape47-navigator
@@ -8775,7 +8765,6 @@ zh-irssi	ports/chinese/irssi
 zh-jis2gb	ports/chinese/jis2gb
 zh-joe		ports/chinese/joe
 zh-kcfonts	ports/chinese/kcfonts
-zh-kde2-i18n	ports/chinese/kde2-i18n
 zh-kde3-i18n-CN	ports/chinese/kde3-i18n-zh_CN
 zh-kde3-i18n-TW	ports/chinese/kde3-i18n-zh_TW
 zh-libtabe	ports/chinese/libtabe
