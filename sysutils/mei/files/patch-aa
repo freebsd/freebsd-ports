@@ -1,6 +1,15 @@
 --- freebsd.mak.orig	Sun Sep 14 22:10:43 1997
 +++ freebsd.mak	Sun Sep 14 22:10:51 1997
 @@ -16,7 +16,7 @@
+ 
+ LN_EN = C
+ LN_SJIS = ja_JP.SJIS
+-LN_EUCJP = ja_JP.EUC
++LN_EUCJP = ja
+ LN_FR = #fr_FR.ISO_8859-1
+ 
+ BINDIR = /usr/local/bin
+@@ -16,7 +16,7 @@
  MANEXT = 1
  RM = rm -f
  CP = cp -f
