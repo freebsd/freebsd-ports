@@ -1,0 +1,10 @@
+lib/librsaref.a
+lib/librsaref.so.2.0
+@exec /sbin/ldconfig -m %B
+include/_md2.h
+include/_md5.h
+include/_des.h
+include/global.h
+include/rsaref.h
+share/doc/rsaref/info.txt
+share/doc/rsaref/rsaref.txt
