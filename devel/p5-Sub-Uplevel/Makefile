@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Sub-Uplevel
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sub
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${DISTNAME}-2${EXTRACT_SUFX}
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
