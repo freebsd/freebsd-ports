@@ -1,3 +1,2 @@
-@cwd /usr/local
 bin/sox
 man/man1/sox.1
