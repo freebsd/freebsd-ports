@@ -16,7 +16,7 @@ MAINTAINER=	trevor@FreeBSD.org
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS Changelog README

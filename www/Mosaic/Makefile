@@ -14,7 +14,7 @@ DISTNAME=	Mosaic-src-2.7b5
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 NO_CDROM=	"http://www.ncsa.uiuc.edu/SDG/Software/Mosaic/License/LicenseInfo.html"
 NO_PACKAGE=	${NO_CDROM}

@@ -19,7 +19,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

@@ -17,7 +17,7 @@ DISTNAME=	mMosaic-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 NO_CDROM=	"academic, research and internal business purposes only, without a fee"
 NO_PACKAGE=	"must cause any work...derived...to be licensed as a whole...under...this License"

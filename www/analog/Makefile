@@ -21,7 +21,7 @@ MAINTAINER=	mharo@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 MAN1=		analog.1
 ALL_TARGET=	analog
