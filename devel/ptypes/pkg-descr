@@ -1,0 +1,14 @@
+PTypes (C++ Portable Types Library) is a simple alternative to the STL that
+includes multithreading and networking. It defines dynamic strings, character
+sets, lists, and other basic data types along with threads, synchronization
+and IP sockets. PTypes also offers message queues as an alternative method of
+thread synchronization. Its main `target audience' is developers of complex
+network daemons, robots or non-visual client/server applications of any kind.
+
+PTypes defines simple and intuitive interfaces. It is portable across many
+modern operating systems (Currently FreeBSD, Linux, SunOS, Mac OS X and
+Windows). All platform-dependent issues are hidden inside. A simple web server
+called wshare is now included in the package to demonstrate the full power of
+PTypes.
+
+WWW: http://ptypes.sourceforge.net/
