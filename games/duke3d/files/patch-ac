@@ -1,12 +1,17 @@
---- source/Makefile.orig	Sat Mar 13 22:51:27 2004
-+++ source/Makefile	Sat Mar 13 22:53:11 2004
-@@ -86,15 +86,14 @@
+---  source/Makefile.orig	Sat May 15 22:08:43 2004
++++  source/Makefile		Sat May 15 22:09:47 2004
+@@ -91,20 +91,14 @@
  	BUILDOBJS += buildengine/a.o
  endif
  
 -CC = gcc
 -CFLAGS = -c -g $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS) -funsigned-char
+-
+-ifeq ($(strip $(macosx)),true)
+-OPTIMIZE = -O3 -mdynamic-no-pic -falign-loops=16
+-else
 -OPTIMIZE = -O2
+-endif
 +#CC = gcc
 +CFLAGS = -c %%CFLAGS%% $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS) -funsigned-char
  
@@ -19,12 +24,3 @@
  
  # !!! FIXME: Do we even need this? It doesn't fly on MacOS X.  --ryan.
  #LDLIBS += -Wl,-E
-@@ -103,7 +102,7 @@
- 
- 
- %.o : %.c
--	$(CC) $(CFLAGS) $(OPTIMIZE) -o $@ $<
-+	$(CC) $(CFLAGS) -o $@ $<
- 
- # Animation playback crashes due to optimization error on MacOS X. --ryan.
- ifeq ($(strip $(macosx)),true)
