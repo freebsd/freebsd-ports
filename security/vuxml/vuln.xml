@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="1ed556e6-734f-11d8-868e-000347dd607f">
+    <topic>mod_python denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_python</name>
+	<range><ge>2.7.0</ge><le>2.7.10</le></range>
+	<range><ge>3.0.0</ge><le>3.0.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation reports that a specific
+	  query string processed by mod_python would cause the
+	  httpd process to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0973</cvename>
+      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
+      <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2004-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b7c7f6c-7102-11d8-873f-0020ed76ef5a">
     <topic>wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive
       may be bypassed</topic>
