@@ -38,6 +38,7 @@
     SUBDIR += synce-kde
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
+    SUBDIR += synce-multisync
     SUBDIR += synce-rra
     SUBDIR += synce-serial
     SUBDIR += synce-trayicon
