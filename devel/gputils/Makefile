@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gputils
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ COMMENT=	GPUTILS is a set of utilities for Microchip PIC microcontrollers
 
 GNU_CONFIGURE=	yes
 
-MAN1=	gpasm.1 gpdasm.1 gputils.1 gpvc.1
+MAN1=	gpasm.1 gpdasm.1 gplib.1 gplink.1 gputils.1 gpvc.1 gpvo.1
 
 post-install:
 .if !defined(NOPORTDOCS)
