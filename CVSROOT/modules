@@ -4162,6 +4162,7 @@ mingw-bin-msvcrt	ports/devel/mingw-bin-msvcrt
 mingw-binutils	ports/devel/mingw-binutils
 mingw-gcc	ports/devel/mingw-gcc
 mingw-opengl-headers	ports/devel/mingw-opengl-headers
+mini_httpd	ports/www/mini_httpd
 minicom		ports/comms/minicom
 minidom		ports/textproc/minidom
 minigzip	src/usr.bin/minigzip
