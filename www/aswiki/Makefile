@@ -7,7 +7,7 @@
 
 PORTNAME=		aswiki
 PORTVERSION=		1.0.2
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		www ruby
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,6 +37,7 @@ post-patch:
 						>> ${WRKSRC}/aswiki.conf
 	${REINPLACE_CMD} -e "s|^# \\$$|\\$$|" -e "s|__DATADIR__|${DATADIR}|" \
 		-e "s|\\A(\?:|\\A(|" ${WRKSRC}/aswiki.conf
+	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 
 do-install:
 	# Ruby libraries
