@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.15
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -16,6 +16,7 @@ COMMENT=	Robust and small WWW server
 VARDIR?=	${DESTDIR}/var
 LOGDIR?=	${VARDIR}/log
 RUNDIR?=	${VARDIR}/run
+TMPDIR?=	${VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
 USE_REINPLACE=	yes
@@ -28,6 +29,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/nginx \
 		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${RUNDIR}/nginx.pid \
+		--http-client-body-temp-path=${TMPDIR}/client_body_temp \
+		--http-proxy-temp-path=${TMPDIR}/proxy_temp \
+		--http-fastcgi-temp-path=${TMPDIR}/fastcgi_temp \
 		--http-log-path=${LOGDIR}/nginx-access.log \
 		--error-log-path=${LOGDIR}/nginx-error.log \
 		--user=${WWWOWN} --group=${WWWGRP}
@@ -73,7 +77,8 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/nginx
+	${MKDIR} ${PREFIX}/etc/nginx ${TMPDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${TMPDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/nginx.sh ${PREFIX}/etc/rc.d
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/conf/koi-win ${PREFIX}/etc/nginx
