@@ -25,7 +25,7 @@ LIB_DEPENDS!=	${LIB_DEPENDS}
 WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/mozilla
 
 do-build:
-	perl -pi -e 's|\\|/|g' ${WRKSRC}/embedding/config/Makefile
+	${PERL} -pi -e 's|\\|/|g' ${WRKSRC}/embedding/config/Makefile
 	cd ${WRKSRC}/embedding/config && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 	(cd ${WRKSRC}/dist/bin && \
