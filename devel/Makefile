@@ -1000,6 +1000,7 @@
     SUBDIR += tkcvs
     SUBDIR += tkp4
     SUBDIR += tkref
+    SUBDIR += tla
     SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += towitoko
