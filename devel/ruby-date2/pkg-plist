@@ -2,7 +2,6 @@
 %%RUBY_SITELIBDIR%%/parsedate.rb
 %%RUBY_SITELIBDIR%%/date/format.rb
 %%RUBY_SITELIBDIR%%/date/holiday.rb
-%%RUBY_SITELIBDIR%%/date/qholiday.rb
 @dirrm %%RUBY_SITELIBDIR%%/date
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/cal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/daylight.rb
