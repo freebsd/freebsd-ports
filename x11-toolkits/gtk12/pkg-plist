@@ -132,6 +132,7 @@ lib/libgtk12.a
 lib/libgtk12.so
 lib/libgtk12.so.2
 share/aclocal/gtk.m4
+share/locale/az/LC_MESSAGES/gtk+.mo
 share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo
 share/locale/da/LC_MESSAGES/gtk+.mo
@@ -160,9 +161,13 @@ share/locale/ro/LC_MESSAGES/gtk+.mo
 share/locale/ru/LC_MESSAGES/gtk+.mo
 share/locale/sk/LC_MESSAGES/gtk+.mo
 share/locale/sl/LC_MESSAGES/gtk+.mo
+share/locale/sp/LC_MESSAGES/gtk+.mo
+share/locale/sr/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
+share/locale/tr/LC_MESSAGES/gtk+.mo
 share/locale/uk/LC_MESSAGES/gtk+.mo
 share/locale/wa/LC_MESSAGES/gtk+.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gtk+.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 share/themes/Default/gtk/gtkrc.az
