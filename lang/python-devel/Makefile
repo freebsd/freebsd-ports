@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.34 1998/06/19 09:00:49 tg Exp $
+# $Id: Makefile,v 1.35 1998/06/25 06:43:26 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -56,7 +56,8 @@ SETUP_LOCAL=	Setup.tk
 # This option is enabled by default.
 #
 WITH_THREADS?=	yes
-.if exists(/usr/lib/libc_r.a) && defined(WITH_THREADS) && ${WITH_THREADS} == yes
+LIBC_R!=	/sbin/ldconfig -r | grep c_r
+.if ${LIBC_R} != "" && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
 CFLAGS+=		-D_THREAD_SAFE
 CONFIGURE_ENV=		LDFLAGS="-pthread ${LDFLAGS}"
