@@ -7184,6 +7184,7 @@ pdbar		ports/palm/pdbar
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdfmap		ports/misc/pdfmap
+pdftk		ports/print/pdftk
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
 pdmenu		ports/misc/pdmenu
