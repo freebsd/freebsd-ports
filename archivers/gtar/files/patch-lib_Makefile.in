@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig
++++ lib/Makefile.in
+@@ -720,7 +720,7 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-exec-local
++install-exec-am:
+ 
+ install-info: install-info-am
+ 
