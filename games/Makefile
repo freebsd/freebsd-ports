@@ -192,6 +192,7 @@
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sl
+    SUBDIR += slashem-tty
     SUBDIR += smacx
     SUBDIR += sokoban
     SUBDIR += sol
