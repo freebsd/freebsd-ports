@@ -7,15 +7,12 @@
 
 # To pre-select options in batch mode, run make like this:
 #
-#  make -DBATCH POSTFIX_OPTIONS="DB3 IPv6TLS"
+#  make -DBATCH POSTFIX_OPTIONS="DB3 PCRE"
 #
-# the options are the same names as in the scripts/configure.postfix file.
-# POSTFIX_OPTIONS can be set in /etc/make.conf also.
-
-# NOTE: PCRE is enabled by default unless you specifically disable it.
+# the options are the same names as in the scripts/configure.postfix file
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.13
+PORTVERSION=	1.1.12
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -28,8 +25,8 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khera@kciLink.com
-COMMENT=	A secure alternative to widely-used Sendmail
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=		An alternative to widely-used Sendmail
 
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
@@ -42,8 +39,8 @@ MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
 	relocated.5 transport.5 virtual.5
 
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
-	master.8 nqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 showq.8 \
-	smtp.8 smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
+	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
+	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
 
 # TLS patch adds to MAN8 but doesn't have .html file, so avoid trying to
 # patch it.
@@ -69,15 +66,6 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-
-.if defined(WITHOUT_PCRE)
-POSTFIX_CCARGS+=	-DNO_PCRE
-.else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
-.endif
-
 
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
@@ -115,7 +103,7 @@ READMEDIR=${PREFIX}/share/doc/postfix
 .endif
 
 do-install:
-	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	cd ${WRKSRC}; sh postfix-install -non-interactive install_root=/ tempdir=/tmp \
 	 config_directory=${PREFIX}/etc/postfix \
 	 daemon_directory=${PREFIX}/libexec/postfix \
 	 command_directory=${PREFIX}/sbin \
