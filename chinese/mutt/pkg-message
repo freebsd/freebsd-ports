@@ -1,0 +1,4 @@
+Please execute the following command if you encounter problem with
+legacy bbs:
+
+echo "set bbsislame=yes" >> ~/.muttrc
