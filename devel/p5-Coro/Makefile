@@ -25,7 +25,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=	"This port requires perl 5.6 or newer"
+IGNORE=	"This port requires perl 5.6 or newer"
 .endif
 
 MAN3=		Coro.3 \
