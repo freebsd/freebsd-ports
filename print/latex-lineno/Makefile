@@ -16,9 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that provides line numbers on paragraphs
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	yes

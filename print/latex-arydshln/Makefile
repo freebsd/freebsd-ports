@@ -16,10 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that draws dash-lines in array/tabular
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		tex:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 PLIST=		${WRKDIR}/pkg-plist

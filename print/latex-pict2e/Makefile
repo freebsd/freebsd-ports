@@ -16,10 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that extends the LaTeX picture environment
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		tex:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}

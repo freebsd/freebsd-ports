@@ -16,28 +16,25 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for the graphical representation of the keys
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 
-TEXMF=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMF}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 
 DOC_FILES=	README
 
-CLASS_FILES+=	key-test.pdf
-CLASS_FILES+=	key-test.tex
-CLASS_FILES+=	keystroke.sty
-CLASS_FILES+=	keystroke_left.eps
-CLASS_FILES+=	keystroke_left.pdf
-CLASS_FILES+=	keystroke_middle.eps
-CLASS_FILES+=	keystroke_middle.pdf
-CLASS_FILES+=	keystroke_right.eps
-CLASS_FILES+=	keystroke_right.pdf
+CLASS_FILES=	key-test.pdf key-test.tex keystroke.sty \
+		keystroke_left.eps keystroke_left.pdf keystroke_middle.eps \
+		keystroke_middle.pdf keystroke_right.eps keystroke_right.pdf
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

@@ -16,46 +16,33 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for drawing timing diagrams
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
-PLIST_SUB+=	MFDIR=${MFDIR} TFMDIR=${TFMDIR} PKDIR=${PKDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR} \
+		MFDIR=${MFDIR} TFMDIR=${TFMDIR} PKDIR=${PKDIR}
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+
+DOC_FILES=	read.me timing.dvi timing.tex prozt1.tex tim0594.upl
+
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
-MFDIR=		${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
-TFMDIR=		${TEXMFLOCAL}/fonts/tfm/${PORTNAME:S/^latex-//}
-PKDIR=		${TEXMFLOCAL}/fonts/pk/${PORTNAME:S/^latex-//}
-
-DOC_FILES=	read.me
-DOC_FILES+=	timing.dvi
-DOC_FILES+=	timing.tex
-DOC_FILES+=	prozt1.tex
-DOC_FILES+=	tim0594.upl
-
 CLASS_FILES=	timing.sty
 
-MF_FILES=	timing.mf
-MF_FILES+=	timing1.mf
-MF_FILES+=	timing1s.mf
-MF_FILES+=	timing2.mf
-MF_FILES+=	timing2s.mf
+MFDIR=		${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
+MF_FILES=	timing.mf timing1.mf timing1s.mf timing2.mf timing2s.mf
 
-PK_FILES=	timing1.pk
-PK_FILES+=	timing1s.pk
-PK_FILES+=	timing2.pk
-PK_FILES+=	timing2s.pk
+PKDIR=		${TEXMFLOCAL}/fonts/pk/${PORTNAME:S/^latex-//}
+PK_FILES=	timing1.pk timing1s.pk timing2.pk timing2s.pk
 
-TFM_FILES=	timing1.tfm
-TFM_FILES+=	timing1s.tfm
-TFM_FILES+=	timing2.tfm
-TFM_FILES+=	timing2s.tfm
+TFMDIR=		${TEXMFLOCAL}/fonts/tfm/${PORTNAME:S/^latex-//}
+TFM_FILES=	timing1.tfm timing1s.tfm timing2.tfm timing2s.tfm
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

@@ -16,15 +16,15 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that reimplements LaTeX indexing macros
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
-
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	YES
+
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
@@ -33,24 +33,13 @@ YES_CMD=	/usr/bin/yes
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	agsmtst.tex
-CLASS_FILES+=	autind.sty
-CLASS_FILES+=	autind.tex
-CLASS_FILES+=	bibref.ist
-CLASS_FILES+=	bibref.sty
-CLASS_FILES+=	index.dtx
-CLASS_FILES+=	index.ins
-CLASS_FILES+=	plaintst.tex
-CLASS_FILES+=	test.bib
-CLASS_FILES+=	xagsm.bst
-CLASS_FILES+=	xplain.bst
+CLASS_FILES=	agsmtst.tex autind.sty autind.tex bibref.ist \
+		bibref.sty index.dtx index.ins plaintst.tex \
+		test.bib xagsm.bst xplain.bst
 
-CLASS_ADD_FILES+=	index.sty
-CLASS_ADD_FILES+=	sample.tex
+CLASS_ADD_FILES=	index.sty sample.tex
 
-DOC_FILES=	README
-DOC_FILES+=	TODO
-DOC_FILES+=	index.pdf
+DOC_FILES=	README TODO index.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
