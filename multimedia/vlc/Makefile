@@ -77,7 +77,7 @@ post-patch:
 CONFIGURE_ENV+=		LIBS="-L/usr/lib -lcipher"
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 PLIST_SUB+=		MMX="@comment "
 .else
 PLIST_SUB+=		MMX=""
