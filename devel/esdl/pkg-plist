@@ -5,7 +5,6 @@ lib/erlang/lib/esdl-%%VERSION%%/c_src/SDLMain.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_audio.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_audio.h
-lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_conv.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_conv.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_driver.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_events.c
@@ -59,6 +58,7 @@ lib/erlang/lib/esdl-%%VERSION%%/include/sdl_keyboard.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_mouse.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_video.hrl
 lib/erlang/lib/esdl-%%VERSION%%/license.terms
+lib/erlang/lib/esdl-%%VERSION%%/priv/sdl_driver.so
 lib/erlang/lib/esdl-%%VERSION%%/src/esdl.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/gl.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/gl_funcs.hrl
@@ -76,7 +76,6 @@ lib/erlang/lib/esdl-%%VERSION%%/src/sdl_util.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_util.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video_funcs.hrl
-lib/erlang/lib/esdl-%%VERSION%%/priv/sdl_driver.so
 lib/erlang/lib/esdl-%%VERSION%%/vsn
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/src
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/priv
