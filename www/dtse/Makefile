@@ -37,7 +37,7 @@ USE_GCC=	3.3
 .endif
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 .include <bsd.port.post.mk>
