@@ -103,6 +103,7 @@
     SUBDIR += linux-j
     SUBDIR += logo
     SUBDIR += lua
+    SUBDIR += lua4
     SUBDIR += m3gdb
     SUBDIR += malbolge
     SUBDIR += mawk
