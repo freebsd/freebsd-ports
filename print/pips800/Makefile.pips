@@ -280,7 +280,7 @@ post-patch:
 .endif
 .if ${PIPS_LEVEL} >= 206 || ${DIST_TYPE} == lpr
 	${REINPLACE_CMD} -e 's,@CUPS_LIBS@,& -lintl,' \
-		-e 's,^INCLUDES =  @GTK_CFLAGS@ $$,&$$(INCLTDL),' \
+		-e 's;^\(INCLUDES = \{1,2\}\)\(@GTK_CFLAGS@ \)$$;\1$$(INCLTDL) \2;' \
 		${WRKSRC}/src/Makefile.in
 .endif
 .endif
