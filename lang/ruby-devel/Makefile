@@ -10,8 +10,7 @@ PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
-DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
-			${RUBY_DISTNAME}-missing${EXTRACT_SUFX}
+DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
 
 PATCH_SITES=	${MASTER_SITE_RUBY}
@@ -88,11 +87,14 @@ INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 			${PREFIX}/bin/h2rb
 
 OBSOLETED_MODULES=	bigfloat \
+			csv \
 			dl \
+			drb \
 			erb \
 			fileutils \
 			optparse \
 			racc-runtime \
+			rexml \
 			sha1 \
 			shell \
 			strscan \
@@ -101,6 +103,7 @@ OBSOLETED_MODULES=	bigfloat \
 			timex \
 			urb \
 			uri \
+			yaml \
 			zlib
 
 post-extract:

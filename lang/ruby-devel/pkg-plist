@@ -45,6 +45,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/st.h
 %%RUBY_ARCHLIBDIR%%/stringio.so
 %%RUBY_ARCHLIBDIR%%/strscan.so
+%%RUBY_ARCHLIBDIR%%/syck.so
 %%RUBY_ARCHLIBDIR%%/syslog.so
 %%RUBY_ARCHLIBDIR%%/util.h
 %%RUBY_ARCHLIBDIR%%/version.h
@@ -60,6 +61,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/complex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/csv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date/format.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date2.rb
@@ -69,6 +71,16 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/struct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/types.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/win32.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/drb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/eq.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/extserv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/extservm.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/gw.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/invokemethod.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/observer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/timeridconv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/unix.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/e2mmap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/erb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/eregex.rb
@@ -119,7 +131,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jacobian.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/linear.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ludcmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mailread.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mathn.rb
@@ -136,16 +147,15 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/smtp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/newton.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/nlsolve.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/observer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open-uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open3.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/time.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/pai.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsearg.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsedate.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ping.rb
@@ -159,6 +169,59 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv-replace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/attlistdecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/attribute.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/cdata.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/child.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/comment.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/doctype.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/document.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/dtd/attlistdecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/dtd/dtd.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/dtd/elementdecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/dtd/entitydecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/dtd/notationdecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/element.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encoding.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift-JIS.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift-JIS_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift_JIS.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UTF-16.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UTF-16_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/entity.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/functions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/instruction.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/light/node.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/namespace.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/node.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/output.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parent.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parseexception.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/baseparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/lightparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/pullparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/sax2parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/streamparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/ultralightparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/parsers/xpathparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/quickpath.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/rexml.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/sax2listener.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/source.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/streamlistener.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/text.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xmldecl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xmltokens.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xpath.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xpath_parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rubyunit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/assert.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/cui/testrunner.rb
@@ -211,11 +274,28 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ldap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/mailto.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/basenode.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/constants.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/dbm.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/emitter.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/encoding.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/error.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/loader.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/rubytypes.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/store.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/stream.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/stringio.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/syck.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/types.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/yamlnode.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/ypath.rb
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/util
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk
@@ -227,6 +307,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit/cui
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/parsers
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/light
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/dtd
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/racc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/optparse
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
@@ -235,6 +320,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/ext
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/cmd
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/drb
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/date
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
