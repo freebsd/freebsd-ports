@@ -1,0 +1,6 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/zlib.so
+share/doc/ruby/zlib/ChangeLog
+share/doc/ruby/zlib/zlib.en.html
+share/doc/ruby/zlib/ja/zlib.ja.html
+@dirrm share/doc/ruby/zlib/ja
+@dirrm share/doc/ruby/zlib

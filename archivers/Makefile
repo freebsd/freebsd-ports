@@ -24,6 +24,7 @@
     SUBDIR += pkzip
     SUBDIR += ppunpack
     SUBDIR += rar
+    SUBDIR += ruby-zlib
     SUBDIR += unace
     SUBDIR += unarj
     SUBDIR += undms

@@ -1,0 +1,4 @@
+This is an extension library to use zlib from Ruby.  Ruby/zlib has
+original .gz file handler of its own.
+
+WWW:	http://www.blue.sky.or.jp/atelier/#ruby-zlib
