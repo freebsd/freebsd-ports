@@ -1,0 +1,18 @@
+--- error.c.orig	Mon Nov 27 05:38:26 2000
++++ error.c	Fri Aug 23 16:56:57 2002
+@@ -112,6 +112,7 @@
+ private_strerror (errnum)
+      int errnum;
+ {
++#ifndef __FreeBSD__
+   /*
+    * qha: modified to get round
+    * error.c:113: conflicting types for `sys_errlist'
+@@ -124,6 +125,7 @@
+ #error "I don't know what style sys_errlist you have"
+ #endif
+   extern int sys_nerr;
++#endif
+ 
+   if (errnum > 0 && errnum <= sys_nerr)
+     return _(sys_errlist[errnum]);
