@@ -62,6 +62,7 @@
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gkrellweather
     SUBDIR += gman
     SUBDIR += gnomepm
     SUBDIR += gnomeuserdocs
