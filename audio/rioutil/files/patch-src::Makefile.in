@@ -1,29 +1,45 @@
---- src/Makefile.in.orig	Fri Dec 14 09:11:53 2001
-+++ src/Makefile.in	Sat Dec 15 01:46:11 2001
-@@ -204,7 +204,7 @@
- INCLUDES =  -I$(top_srcdir)/include -I/usr/local/include
+--- src/Makefile.in.orig	Thu Aug 19 03:13:54 2004
++++ src/Makefile.in	Thu Aug 19 04:14:32 2004
+@@ -98,12 +98,12 @@
+ install_sh = @install_sh@
+ bin_PROGRAMS = rioutil
  
- riofck_SOURCES = fckrio.c
+-INCLUDES = -I$(top_srcdir)/include -I/usr/local/include
++INCLUDES = -I$(top_srcdir)/include
+ 
 -rioutil_SOURCES = main.c getopt.c getopt1.c main.h getopt.h
 +rioutil_SOURCES = main.c main.h
- @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit
- @MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la
- @MACOSX_TRUE@riofck_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit /System/Library/Frameworks/CoreFoundation.framework/Versions/Current/CoreFoundation
-@@ -223,7 +223,7 @@
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
--rioutil_OBJECTS =  main.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT)
-+rioutil_OBJECTS =  main.$(OBJEXT)
- rioutil_LDFLAGS = 
- riofck_OBJECTS =  fckrio.$(OBJEXT)
- @MACOSX_TRUE@riofck_DEPENDENCIES =  \
-@@ -383,7 +383,7 @@
- 	../include/usbdevfs.h ../include/usbdrv.h ../include/rio_usb.h
- getopt.o: getopt.c ../include/config.h
- getopt1.o: getopt1.c ../include/config.h
--main.o: main.c ../include/config.h ../include/rio.h main.h getopt.h
-+main.o: main.c ../include/config.h ../include/rio.h main.h
  
- info-am:
- info: info-am
+ @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit
+-@MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la
++@MACOSX_FALSE@rioutil_LDADD = $(top_srcdir)/librioutil/librioutil.la
+ @MACOSX_TRUE@CFLGS = -traditional-cpp
+ 
+ rioutil_DEPENDENCIES = $(top_srcdir)/librioutil/librioutil.la
+@@ -114,7 +114,7 @@
+ bin_PROGRAMS = rioutil$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+-am_rioutil_OBJECTS = main.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT)
++am_rioutil_OBJECTS = main.$(OBJEXT)
+ rioutil_OBJECTS = $(am_rioutil_OBJECTS)
+ rioutil_LDFLAGS =
+ 
+@@ -125,7 +125,7 @@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
++@AMDEP_TRUE@DEP_FILES = \
+ @AMDEP_TRUE@	./$(DEPDIR)/main.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -187,8 +187,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+ 
+ distclean-depend:
