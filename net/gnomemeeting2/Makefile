@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.96.1
-PORTREVISION=	1
+PORTVERSION=	0.98.0
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.1/sources/
+MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.98.0/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
@@ -30,13 +29,13 @@ CONFIGURE_TARGET=
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=  OSTYPE=${OPSYS} \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
-		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
+		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
-CONFIGURE_ARGS= --with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/include/ptlib \
-		--with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/lib \
+CONFIGURE_ARGS= --with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/include/ptlib \
+		--with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/lib \
 		--with-openh323-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/include \
 		--with-openh323-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/lib \
 		--with-ldap-includes=${LOCALBASE}/include \
