@@ -30,7 +30,5 @@ share/locale/pl/LC_MESSAGES/bonobo-conf.mo
 share/locale/sv/LC_MESSAGES/bonobo-conf.mo
 share/locale/tr/LC_MESSAGES/bonobo-conf.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo-conf.mo
-@dirrm share/gnome/bonobo-conf/html/bonobo-conf
-@dirrm share/gnome/bonobo-conf/html
-@dirrm share/gnome/bonobo-conf
+@dirrm share/doc/bonobo-conf
 @dirrm include/bonobo-conf
