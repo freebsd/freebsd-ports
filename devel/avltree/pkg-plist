@@ -1,0 +1,3 @@
+include/avltree.h
+lib/libavltree.a
+@exec ranlib %D/%F
