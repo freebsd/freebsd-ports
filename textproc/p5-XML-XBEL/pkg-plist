@@ -1,0 +1,17 @@
+%%SITE_PERL%%/XML/XBEL.pm
+%%SITE_PERL%%/XML/XBEL/Alias.pm
+%%SITE_PERL%%/XML/XBEL/Bookmark.pm
+%%SITE_PERL%%/XML/XBEL/Folder.pm
+%%SITE_PERL%%/XML/XBEL/Separator.pm
+%%SITE_PERL%%/XML/XBEL/base.pm
+%%SITE_PERL%%/XML/XBEL/container.pm
+%%SITE_PERL%%/XML/XBEL/item.pm
+%%SITE_PERL%%/XML/XBEL/node.pm
+%%SITE_PERL%%/XML/XBEL/serialize.pm
+%%SITE_PERL%%/XML/XBEL/thingy.pm
+%%SITE_PERL%%/XML/XBEL/url.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XBEL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XBEL
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/XBEL
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
