@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	20020825
+PORTVERSION=	20030223
 CATEGORIES=	cad
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
 		gsymcheck:${PORTSDIR}/cad/geda-symcheck
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
-		geda.16:${PORTSDIR}/cad/libgeda
+		geda.18:${PORTSDIR}/cad/libgeda
 
 NO_BUILD=	yes
 

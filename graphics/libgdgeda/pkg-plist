@@ -7,9 +7,12 @@ include/gdgeda/gdfontl.h
 include/gdgeda/gdfontmb.h
 include/gdgeda/gdfonts.h
 include/gdgeda/gdfontt.h
+include/gdgeda/gdhelpers.h
 include/gdgeda/jisx0208.h
 include/gdgeda/wbmp.h
-lib/libgdgeda.so.4
+lib/libgdgeda.so.5
 lib/libgdgeda.so
+lib/libgdgeda.la
 lib/libgdgeda.a
 @dirrm include/gdgeda
+

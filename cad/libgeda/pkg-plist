@@ -7,7 +7,6 @@ include/libgeda/o_types.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
 include/libgeda/libgeda.h
-@dirrm include/libgeda
 @unexec install-info --delete %D/info/libgedadoc.info %D/info/dir
 info/libgedadoc.info
 info/libgedadoc.info-1
@@ -23,8 +22,11 @@ info/libgedadoc.info-10
 info/libgedadoc.info-11
 info/libgedadoc.info-12
 info/libgedadoc.info-13
+info/libgedadoc.info-14
 @exec install-info %D/info/libgedadoc.info %D/info/dir
-lib/libgeda.so.16
+lib/libgeda.so.18
 lib/libgeda.so
 lib/libgeda.la
 lib/libgeda.a
+@dirrm include/libgeda
+@dirrm include

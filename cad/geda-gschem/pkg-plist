@@ -18,5 +18,16 @@ info/gschemdoc.info-14
 info/gschemdoc.info-15
 info/gschemdoc.info-16
 info/gschemdoc.info-17
+info/gschemdoc.info-18
+info/gschemdoc.info-19
 @exec install-info %D/info/gschemdoc.info %D/info/dir
 share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
+share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
+share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
+share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
+share/locale/ru/LC_MESSAGES/geda-gschem.mo
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/de_DE/LC_MESSAGES
+@dirrm share/locale/nl_NL/LC_MESSAGES
+@dirrm share/locale/ja_JP/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES

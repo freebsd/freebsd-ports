@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gsymcheck
-PORTVERSION=	20020825
+PORTVERSION=	20030223
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020825/ \
-		http://geda.seul.org/devel/20020825/ \
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
+		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
@@ -17,11 +17,11 @@ MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA symbol checking utility
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
+LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
-#USE_AUTOCONF=	yes
+
 AUTOCONF=	autoconf
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
