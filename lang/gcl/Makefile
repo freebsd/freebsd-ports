@@ -15,6 +15,12 @@ MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400011
+BROKEN=		"GCL isn't compatible with the new signals."
+.endif
+
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes
@@ -28,4 +34,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/info/gcl-si.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/gcl-si.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
