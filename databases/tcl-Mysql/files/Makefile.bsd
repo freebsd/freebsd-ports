@@ -1,17 +1,18 @@
+TCL_VERSION?=	tcl8.3
+TCL_NODOT?=	${TCL_VERSION:S/.//}
 LIB	=	TclMySQL
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	0
 
 SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
-CFLAGS +=	-I${PREFIX}/include/tcl8.2
-CFLAGS +=	-I${PREFIX}/include/mysql
-LDADD  +=	-L${PREFIX}/lib -ltcl82
-LDADD  +=	-L${PREFIX}/lib/mysql -lmysqlclient
+CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION} -DUSE_TCL_STUBS
+CXXFLAGS+=	-I${LOCALBASE}/include/mysql
+LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT:S/tcl/tclstub/}
+LDADD  +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 LDADD  +=	-lgcc
-
-all: ${SHLIB_NAME}
+INTERNALLIB=	yeah, don't make the useless static lib
 
 printname:
-	@echo ${SHLIB_NAME}
+	@echo -n ${SHLIB_NAME}
 
 .include <bsd.lib.mk>
