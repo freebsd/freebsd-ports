@@ -1,13 +1,10 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Tue Nov  6 12:02:00 2001
-+++ src/Makefile.in	Tue Nov  6 12:03:19 2001
-@@ -216,7 +216,6 @@
+--- src/Makefile.in.orig	Thu Feb  7 05:56:51 2002
++++ src/Makefile.in	Thu Feb  7 09:53:04 2002
+@@ -230,7 +230,6 @@
  	$(top_builddir)/libmutt/libmutt.a	\
  	$(top_builddir)/libinit_balsa/libinit_balsa.a \
  	-lpspell \
--	-lltdl \
+-	-lltdl	\
+ 	-lgdbm	\
  	$(INTLLIBS) \
  	$(PCRE_LIBS) \
- 	$(PTHREAD_LIB)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell \
 		${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
@@ -32,6 +33,7 @@ CONFIGURE_ARGS=	--enable-threads \
 		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgiconv"
+CONFIGURE_TARGET=   --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		balsa.1
 
