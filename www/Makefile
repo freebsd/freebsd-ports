@@ -536,6 +536,7 @@
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
+    SUBDIR += py-clientform
     SUBDIR += py-fcgi
     SUBDIR += py-mt
     SUBDIR += py-scgi
