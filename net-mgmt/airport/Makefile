@@ -14,7 +14,8 @@ DISTFILES=	configurator_13${EXTRACT_SUFX}
 MAINTAINER=	nsayer@freebsd.org
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc
+		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc \
+		${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	YES
 
@@ -32,7 +33,6 @@ do-install:
 		${MKDIR} ${PREFIX}/share/airport; \
 		${CP} -r ${WRKSRC}/* ${PREFIX}/share/airport; \
 		${SED} -e s,%%PREFIX%%,${PREFIX},g \
-			-e s/%%JDK_VERSION%%/${JDK_VERSION}/ \
 			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
 			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
