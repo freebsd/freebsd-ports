@@ -32,6 +32,5 @@
     SUBDIR += syncal
     SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
-    SUBDIR += xcopilot
 
 .include <bsd.port.subdir.mk>
