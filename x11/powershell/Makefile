@@ -13,10 +13,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 
-ALL_TARGET=	powershell
-
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
+IMLIB_CONFIG?=	${X11BASE}/bin/imlib-config
 USE_AUTOCONF=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include `${IMLIB_CONFIG} --cflags`" \
+		LDFLAGS="-L${LOCALBASE}/lib `${IMLIB_CONFIG} --libs`"
+ALL_TARGET=	powershell
 
 .include <bsd.port.mk>
