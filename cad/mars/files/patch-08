@@ -1,0 +1,22 @@
+--- Makefile.XMotif.orig	Tue Mar 15 16:47:48 1994
++++ Makefile.XMotif	Sun Sep 13 13:46:54 1998
+@@ -5,8 +5,8 @@
+ 
+ # You need to supply directories for libraries and include files
+ #   only if they are not in a standard directory.
+-LIBDIRS = 
+-INCDIRS = 
++LIBDIRS = -L$(X11BASE)/lib
++INCDIRS = -I$(X11BASE)/include
+ #LIBDIRS = -L/usr/imports/lib/X11R5
+ #INCDIRS = -I/usr/imports/include/X11R5 -I/usr/imports/include
+ 
+@@ -45,7 +45,7 @@
+ 
+ mars: $(OBJS) libs
+ 	@ cd sim; make stat $(EXPORT)
+-	$(CC) $(GFLAG) -o mars $(OBJS) sim/stat.o $(MARSLIBS) -lm -lXm -lXt -lX11 
++	$(CC) $(GFLAG) -o mars $(OBJS) sim/stat.o $(MARSLIBS) -lm $(MOTIFLIB) -lXt -lX11 
+ 
+ 
+ install: depend mars
