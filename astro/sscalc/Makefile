@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.icehouse.net/kew/
 MAINTAINER=	kew@icehouse.net
 COMMENT=	A sunrise/sunset time calculator
 
+BROKEN=		"Installs manpage into wrong directory"
+
 pre-fetch:
 .if !defined(LAT)
 	@${ECHO_MSG} "Type \"make LAT=<nnn.nn> LON=<nnn.nn>\" to hardwire your site"
