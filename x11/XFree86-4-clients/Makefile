@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTVERSION=	4.2.0
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X410src-1.tgz X410src-2.tgz
-EXTRACT_ONLY=	X410src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz \
+		X${PORTVERSION:S/.//g}src-2.tgz Wraphelp.c:wrap
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -50,29 +54,22 @@ INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
 InstallXdmConfig?=	DEFAULT
 InstallXinitConfig?=	DEFAULT
 InstallAppDefFiles?=	DEFAULT
-HasXdmAuth?=		DEFAULT
+HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
-
-.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-everything::
-	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
-.else
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X410src-1.tgz
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif	# USA_RESIDENT
-.endif	# HasXdmAuth
 
 post-extract:
 	( cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	   ${DISTDIR}/${DIST_SUBDIR}/X410src-2.tgz \
+	   ${DISTDIR}/${DIST_SUBDIR}/X${PORTVERSION:S/.//g}src-2.tgz \
 	    | ${TAR} -xf - xc/fonts/util )
+
+post-patch:
+	cd ${WRKSRC}/nls; \
+	for i in Compose XI18N_OBJS XLC_LOCALE; do \
+		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
+	done
+
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

@@ -1,34 +1,11 @@
---- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Fri Dec 15 04:47:46 2000
-+++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Fri Jan  5 16:39:23 2001
-@@ -12,6 +12,11 @@
- TEXTOBJ	= text-mode.o
- #endif
- 
-+#if defined(FreeBSDBuildXbin) 
-+INCLUDES = -I../parser
-+#endif
-+
-+
- SRCS	=\
- 	accessx.c\
- 	card-cfg.c\
-@@ -82,7 +87,7 @@
- #if DoLoadableServer
- LOADERLIB      = -L../loader -lxloader -L../dummylib -ldummy
+--- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Tue Jul 10 08:45:24 2001
++++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Mon Jan 21 07:27:55 2002
+@@ -84,7 +84,7 @@
  MODULEDEFINES  = -DUSE_MODULES
--INCLUDES       = -I../common -I../loader -I$(XF86OSSRC) \
-+INCLUDES       = -I../common -I../loader -I$(XF86OSSRC) -I$(XF86OSSRC)/bus \
- 		 -I$(SERVERSRC)/include -I$(XINCLUDESRC)
+ INCLUDES       = -I../common -I../loader -I$(XF86OSSRC) \
+ 		 -I$(SERVERSRC)/include -I$(XINCLUDESRC) \
+-		 -I$(FONTLIBSRC)/include
++		 -I$(FONTLIBSRC)/include -I$(XF86OSSRC)/bus -I../parser
  #if !HasSnprintf
  SNPRINTF_DEFS  = -DNEED_SNPRINTF
-@@ -109,8 +114,10 @@
- 
- NormalProgramTarget($(PROG),$(OBJS),,$(LOCAL_LIBRARIES),)
- InstallProgramWithFlags($(PROG),$(BINDIR),NullParameter)
-+#if !defined(LibHeaders) || LibHeaders
- InstallMultipleFlags($(XBMPICS),$(INCDIR)/X11/bitmaps,$(INSTINCFLAGS))
- InstallMultipleFlags($(XPMPICS),$(INCDIR)/X11/pixmaps,$(INSTINCFLAGS))
-+#endif
- InstallAppDefaults(XF86Cfg)
- 
- CppManTarget(xf86cfg,)
+ #endif

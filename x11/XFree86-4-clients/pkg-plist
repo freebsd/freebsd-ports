@@ -19,6 +19,7 @@ bin/iceauth
 bin/ico
 bin/lbxproxy
 bin/listres
+bin/luit
 bin/makepsres
 bin/mkcfm
 bin/mkfontdir
@@ -37,6 +38,7 @@ bin/sxpm
 bin/texteroids
 bin/twm
 bin/ucs2any.pl
+bin/uxterm
 bin/viewres
 bin/x11perf
 bin/x11perfcomp
@@ -54,7 +56,6 @@ bin/xdpyinfo
 bin/xedit
 bin/xev
 bin/xeyes
-bin/xf86cfg
 bin/xfd
 bin/xfindproxy
 bin/xfontsel
@@ -85,6 +86,7 @@ bin/xmh
 bin/xmodmap
 bin/xon
 bin/xprop
+bin/xrandr
 bin/xrdb
 bin/xrefresh
 bin/xset
@@ -94,6 +96,13 @@ bin/xsetroot
 bin/xsm
 bin/xstdcmap
 bin/xterm
+bin/xtrapchar
+bin/xtrapin
+bin/xtrapinfo
+bin/xtrapout
+bin/xtrapproto
+bin/xtrapreset
+bin/xtrapstats
 bin/xvidtune
 bin/xvinfo
 bin/xwd
@@ -125,13 +134,13 @@ lib/X11/app-defaults/Chooser
 lib/X11/app-defaults/Clock-color
 lib/X11/app-defaults/Editres
 lib/X11/app-defaults/Editres-color
+lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/Viewres
 lib/X11/app-defaults/XCalc
 lib/X11/app-defaults/XCalc-color
 lib/X11/app-defaults/XClipboard
 lib/X11/app-defaults/XClock
 lib/X11/app-defaults/XConsole
-lib/X11/app-defaults/XF86Cfg
 lib/X11/app-defaults/XFontSel
 lib/X11/app-defaults/XLoad
 lib/X11/app-defaults/XLogo
@@ -150,8 +159,6 @@ lib/X11/app-defaults/Xman
 lib/X11/app-defaults/Xmessage
 lib/X11/app-defaults/Xmh
 lib/X11/app-defaults/Xvidtune
-lib/X11/doc/html/manindex1.html
-lib/X11/doc/html/manindex3.html
 lib/X11/etc/xterm.termcap
 lib/X11/etc/xterm.terminfo
 lib/X11/fonts/util/map-ISO8859-1
@@ -200,6 +207,7 @@ lib/X11/xdm/chooser
 lib/X11/xdm/pixmaps/XFree86.xpm
 lib/X11/xdm/pixmaps/XFree86bw.xpm
 lib/X11/xdm/xdm-config
+lib/X11/xedit/lisp/fun.lsp
 lib/X11/xinit/xinitrc
 lib/X11/xkb/compat.dir
 lib/X11/xkb/compat/accessx
@@ -359,7 +367,6 @@ lib/X11/xkb/symbols/jp
 lib/X11/xkb/symbols/keypad
 lib/X11/xkb/symbols/lock
 lib/X11/xkb/symbols/lt
-lib/X11/xkb/symbols/lt_p
 lib/X11/xkb/symbols/lt_std
 lib/X11/xkb/symbols/lv
 lib/X11/xkb/symbols/macintosh/de
@@ -418,3 +425,33 @@ lib/X11/xman.help
 lib/X11/xsm/system.xsm
 @unexec rm -f %D/lib/X11/rstart/commands/x
 @unexec rm -f %D/lib/X11/rstart/commands/x11
+lib/X11/xkb/symbols/al
+lib/X11/xkb/symbols/altwin
+lib/X11/xkb/symbols/ar
+lib/X11/xkb/symbols/ben
+lib/X11/xkb/symbols/compose
+lib/X11/xkb/symbols/czsk
+lib/X11/xkb/symbols/dev
+lib/X11/xkb/symbols/ge_la
+lib/X11/xkb/symbols/ge_ru
+lib/X11/xkb/symbols/guj
+lib/X11/xkb/symbols/gur
+lib/X11/xkb/symbols/ir
+lib/X11/xkb/symbols/iu
+lib/X11/xkb/symbols/la
+lib/X11/xkb/symbols/level3
+lib/X11/xkb/symbols/mm
+lib/X11/xkb/symbols/mt
+lib/X11/xkb/symbols/mt_us
+lib/X11/xkb/symbols/nl
+lib/X11/xkb/symbols/pl2
+lib/X11/xkb/symbols/ru_yawerty
+lib/X11/xkb/symbols/sapmi
+lib/X11/xkb/symbols/se_FI
+lib/X11/xkb/symbols/se_NO
+lib/X11/xkb/symbols/se_SE
+lib/X11/xkb/symbols/tj
+lib/X11/xkb/symbols/tml
+lib/X11/xkb/symbols/tr_f
+lib/X11/xkb/symbols/us_group2
+lib/X11/xkb/symbols/yu

@@ -18,24 +18,3 @@
  # if defined(LargePICTable) && LargePICTable
  #  ifdef LargePositionIndependentCplusplusFlags
    CXXPICFLAGS = LargePositionIndependentCplusplusFlags
-@@ -434,15 +434,19 @@
- # ifdef IncSubdir
- #  ifdef IncSubSubdir
- BuildIncludes($(HEADERS),IncSubdir/IncSubSubdir,../..)
-+#   if !defined(LibHeaders) || LibHeaders
- InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir/IncSubSubdir,$(INSTINCFLAGS))
-+#   endif /* LibHeaders */
- #  else
- BuildIncludes($(HEADERS),IncSubdir,..)
-+#   if !defined(LibHeaders) || LibHeaders
- InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir,$(INSTINCFLAGS))
-+#   endif /* LibHeaders */
- #  endif
- # else
- #  ifndef CplusplusSource
--#   if !defined(LibHeaders) || LibHeaders
- BuildIncludesTop($(HEADERS))
-+#   if !defined(LibHeaders) || LibHeaders
- InstallMultipleFlags($(HEADERS),$(INCDIR),$(INSTINCFLAGS))
- #   endif
- #  endif

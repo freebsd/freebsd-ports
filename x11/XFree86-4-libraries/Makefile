@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTVERSION=	4.2.0
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X410src-1.tgz
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -59,7 +63,7 @@ MAN3=		Xaw.3 Xft.3
 # ----------------------------------------------------------------------------
 # DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
 #
-HasXdmAuth?=		DEFAULT
+HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 BuildPexExt?=		DEFAULT
 BuildXinerama?=		DEFAULT
@@ -78,21 +82,16 @@ PLIST_SUB+=	OSMESA:="@comment "
 PLIST_SUB+=	OSMESA:=""
 .endif
 
-.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-everything::
-	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
-.else
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X410src-1.tgz
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif	# USA_RESIDENT
-.endif	# HasXdmAuth != NO
+post-patch:
+	cd ${WRKSRC}/nls; \
+	for i in Compose XI18N_OBJS XLC_LOCALE; do \
+		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
+	done
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+post-install:
+	@${MKHTMLINDEX} ${X11BASE}/lib/X11/doc/html
 
 .include <bsd.port.post.mk>

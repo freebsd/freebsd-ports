@@ -1,6 +1,6 @@
---- config/cf/Imake.rules.orig	Fri Apr 27 06:27:48 2001
-+++ config/cf/Imake.rules	Mon Jun  4 19:56:42 2001
-@@ -1388,7 +1388,7 @@
+--- config/cf/Imake.rules.orig	Tue Dec 18 05:00:37 2001
++++ config/cf/Imake.rules	Sat Jan 19 22:47:40 2002
+@@ -1399,7 +1399,7 @@
  dest.suffix.html: file.$(MANNEWSUFFIX) RmanCmdDependency		@@\
  	RemoveFiles(dest.suffix.html dest.suffix-html)			@@\
  	RunProgram(RMAN,$(RMANOPTIONS) < file.$(MANNEWSUFFIX) \		@@\
@@ -9,16 +9,16 @@
  									@@\
  install.man:: dest.suffix.html						@@\
  	MakeDir($(DESTDIR)$(DOCHTMLDIR))				@@\
-@@ -1624,7 +1624,7 @@
+@@ -1644,7 +1644,7 @@
  	MakeDir(Concat($(DESTDIR),npath/mdir))				@@\
  	@MakeFlagsToShellFlags(i,set +e); \				@@\
  	if [ -d Concat($(DESTDIR),opath/cdir) ]; then \			@@\
 -	  RELPATH=`echo opath/cdir | \					@@\
 +	  RELPATH=`cd opath/cdir; pwd | \				@@\
- 		sed -e 's:^.::' -e 's:[^/.][^/]*:..:'g`; \		@@\
+ 		sed -e 's:^/::' -e 's:[^/.][^/]*:..:'g -e 's:/\.$$::'`; \ @@\
  	  cd Concat($(DESTDIR),opath/cdir); \				@@\
  	  if [ -d rdir -a ! -h rdir ]; then \ 				@@\
-@@ -1671,7 +1671,7 @@
+@@ -1691,7 +1691,7 @@
  	MakeDir(Concat($(DESTDIR),npath))				@@\
  	@MakeFlagsToShellFlags(i,set +e); \				@@\
  	if [ -d Concat($(DESTDIR),opath) ]; then \			@@\

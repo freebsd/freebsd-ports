@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTVERSION=	4.2.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
-DISTFILES=	X410src-1.tgz
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 PREFIX?=	${X11BASE}
+
+.include <bsd.port.pre.mk>
+
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc/config
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
@@ -116,26 +123,7 @@ ExtendedInputDevices?=	YES
 # InstallXserverSetUID=NO : use Xwrapper.
 # End of XFree86 configrations
 
-.include <bsd.port.pre.mk>
-
-.if ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c)
-pre-everything::
-	@${ECHO_MSG} "You don't have Wraphelp.c: HasXdmAuth disabled."
-HasXdmAuth=	NO
-.else
-pre-everything::
-	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
-.endif	# ! having Wraphelp.c
-.else
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X410src-1.tgz
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif	# USA_RESIDENT
-.endif	# HasXdmAuth
+post-install:
+	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 
 .include <bsd.port.post.mk>

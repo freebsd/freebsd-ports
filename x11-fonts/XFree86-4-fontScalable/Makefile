@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fontScalable
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X410src-2.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -32,9 +32,11 @@ WRKSRC=			${WRKDIR}/xc/fonts
 # BuildSpeedoFonts	YES		build/install Speedo fonts
 # BuildType1Fonts	YES		build/install Type1 fonts
 # BuildCIDFonts		YES		build/install CID fonts
+# BuildTTFonts		YES		build/install TrueType fonts
 BuildSpeedoFonts?=	DEFAULT
 BuildType1Fonts?=	DEFAULT
 BuildCIDFonts?=		DEFAULT
+BuildTTFonts?=		DEFAULT
 
 .if ${BuildSpeedoFonts} == DEFAULT || ${BuildSpeedoFonts} == YES
 PLIST_SUB+=	SPEEDO:=""
@@ -57,6 +59,14 @@ CID:=	-DBuildCIDFonts=YES
 PLIST_SUB+=	CID:="@comment "
 CID:=	-DBuildCIDFonts=NO
 .endif
+.if ${BuildTTFonts} == DEFAULT || ${BuildTTFonts} == YES
+PLIST_SUB+=	TT:=""
+TT:=	-DBuildTTFonts=YES
+.elif ${BuildTTFonts} == NO
+PLIST_SUB+=	TT:="@comment "
+TT:=	-DBuildTTFonts=NO
+.endif
+
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
@@ -67,7 +77,7 @@ do-configure:
 	 ${MAKE} depend)
 	(cd ${WRKSRC} && \
 	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
-		${SPEEDO} ${TYPE1} ${CID} \
+		${SPEEDO} ${TYPE1} ${CID} ${TT} \
 		-DMakeLocalFontDir=YES \
 		-DFreeBSDBuildXscl=YES \
 		-DTOPDIR=.. -DCURDIR=.; \
