@@ -1,0 +1,6 @@
+This module provides a Perl interface to the GNU Aspell library.
+The GNU Aspell library provides access to system spelling libraries,
+including a spell checker. This module is to meet the need of looking
+up many words, one at a time, in a single session.
+
+WWW: http://search.cpan.org/~hank/Text-Aspell/

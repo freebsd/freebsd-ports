@@ -354,6 +354,7 @@
     SUBDIR += p5-Template-Magic
     SUBDIR += p5-Text-Affixes
     SUBDIR += p5-Text-Aligner
+    SUBDIR += p5-Text-Aspell
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
     SUBDIR += p5-Text-BibTeX
