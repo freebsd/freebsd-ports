@@ -527,36 +527,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="14e8f315-600e-11d9-a9e7-0001020eed82">
-    <topic>tiff -- stripoffsets integer overflow vulnerability</topic>
-    <affects>
-      <package>
-	<name>tiff</name>
-	<name>linux-tiff</name>
-	<range><lt>3.7.0</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>In an iDEFENSE Security Advisory infamous41md reports:</p>
-	<blockquote cite="http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities">
-	  <p>Remote exploitation of an integer overflow in libtiff may
-	    allow for the execution of arbitrary code.</p>
-	  <p>The overflow occurs in the parsing of TIFF files set with
-	    the STRIPOFFSETS flag in libtiff/tif_dirread.c. In the
-	    TIFFFetchStripThing() function, the number of strips
-	    (nstrips) is used directly in a CheckMalloc() routine
-	    without sanity checking.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <bid>12075</bid>
-      <url>http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities</url>
-    </references>
-    <dates>
-      <discovery>2004-12-15</discovery>
-      <entry>2005-01-06</entry>
-    </dates>
+    <cancelled superseded="3897a2f8-1d57-11d9-bc4a-000c41e2cdad" />
   </vuln>
 
   <vuln vid="bd9fc2bf-5ffe-11d9-a11a-000a95bc6fae">
@@ -3845,11 +3816,12 @@ http_access deny Gopher</pre>
     <references>
       <certvu>687568</certvu>
       <cvename>CAN-2004-0886</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
-      <modified>2005-01-08</modified>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
