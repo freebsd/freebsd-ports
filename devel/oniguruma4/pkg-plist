@@ -1,15 +1,13 @@
-include/onig/onigposix.h
-include/onig/oniguruma.h
-@dirrm include/onig
+include/onigposix.h
+include/oniguruma.h
 lib/libonig.a
-lib/libonig.so
-lib/libonig.so.0
 %%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/RE
 %%PORTDOCS%%%%DOCSDIR%%/RE.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/encode.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/listcap.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/names.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/posix.c
