@@ -1,0 +1,9 @@
+*****************************************************************************
+You have just installed the apache13-php3 package.
+
+Have a look at the apache13-php3 port if you need additional support for
+databases or SSL.
+
+You can find it at
+ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/apache13-php3.tar
+*****************************************************************************
