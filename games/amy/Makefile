@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amy
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://tgreiner.net/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
