@@ -9,7 +9,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/pkg.typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GdkImlib
-PORTVERSION=	0.7005
+PORTVERSION=	0.7006
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -16,9 +16,13 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_IMLIB=	yes
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+
+MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
+MAN3=		Gtk::Gdk::ImlibImage::reference.3pm
 
 .include <bsd.port.mk>
