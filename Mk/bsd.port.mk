@@ -126,6 +126,9 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
+# USE_AUTOMAKE	- Says that the port uses automake.  Implies USE_AUTOCONF.
+# AUTOMAKE		- Set to path of GNU automake if not in $PATH (default:
+#				  automake).
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
 # AUTOCONF		- Set to path of GNU autoconf if not in $PATH (default:
 #				  autoconf).
@@ -368,7 +371,8 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  configure stage will not do anything if this is not set.
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
-# CONFIGURE_SCRIPT - Name of configure script (defaults: configure).
+# CONFIGURE_WRKSRC - Directory to run configure in (default: ${WRKSRC}).
+# CONFIGURE_SCRIPT - Name of configure script (default: configure).
 # CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
 #				  defined (default: ${MACHINE_ARCH}--freebsd${OSREL}).
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
@@ -514,7 +518,8 @@ MASTERDIR?=	${.CURDIR}
 .if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
 .BEGIN:
 	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${ECHO} "(This port is too old for your bsd.port.mk.)"
+	@${ECHO} "(This port is too old for your bsd.port.mk, please update it to match"
+	@${ECHO} " your bsd.port.mk.)"
 	@${FALSE}
 .endif
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
@@ -600,8 +605,9 @@ PREFIX?=		${LOCALBASE}
 .BEGIN:
 	@${ECHO} "This port requires the OpenSSL library, which is part of"
 	@${ECHO} "the FreeBSD crypto distribution but not installed on your"
-	@${ECHO} "machine. Please see Chapter 6.5 in the handbook for"
-	@${ECHO} "instructions on how to obtain and install the FreeBSD"
+	@${ECHO} "machine. Please see the \"OpenSSL\" section in the handbook"
+	@${ECHO} "(at \"http://www.FreeBSD.org/handbook/openssl.html\", for instance)"
+	@${ECHO} "for instructions on how to obtain and install the FreeBSD"
 	@${ECHO} "OpenSSL distribution."
 	@${FALSE}
 .else
@@ -635,6 +641,10 @@ OPENSSLINC=		${OPENSSLBASE}/include
 MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 				OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
 RESTRICTED=		"Contains cryptography."
+.endif
+
+.if defined(EMACS_PORT_NAME)
+.include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
 .endif
@@ -698,6 +708,10 @@ BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
+.endif
+.if defined(USE_AUTOMAKE)
+USE_AUTOCONF=	yes
+BUILD_DEPENDS+=		automake:${PORTSDIR}/devel/automake
 .endif
 .if defined(USE_AUTOCONF)
 GNU_CONFIGURE=	yes
@@ -789,6 +803,7 @@ DO_NADA?=		/usr/bin/true
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
+AUTOMAKE?=		automake
 AUTOCONF?=		autoconf
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
@@ -875,6 +890,15 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p
+
+.if !target(mtree-file)
+mtree-file:
+.if !defined(NO_MTREE)
+	@${ECHO} ${MTREE_FILE}
+.else
+	@${DO_NADA}
+.endif
+.endif
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
@@ -1202,6 +1226,7 @@ PKGBASE!=	${ECHO} ${PKGNAME} | ${SED} -e 's/-[^-]*$$//'
 .endif
 PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
+CONFIGURE_WRKSRC?=	${WRKSRC}
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
@@ -1566,7 +1591,7 @@ do-fetch:
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
-			if [ -f ${MD5_FILE} -a "x${FORCE_FETCH}" = "x" ]; then \
+			if [ -f ${MD5_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
 				if ! ${GREP} -q "^MD5 (.*$$file)" ${MD5_FILE}; then \
 					${ECHO_MSG} ">> $$file is not in ${MD5_FILE}."; \
 					${ECHO_MSG} ">> Either ${MD5_FILE} is out of date, or"; \
@@ -1701,6 +1726,9 @@ do-patch:
 
 .if !target(do-configure)
 do-configure:
+.if defined(USE_AUTOMAKE)
+	@(cd ${WRKSRC} && ${AUTOMAKE})
+.endif
 .if defined(USE_AUTOCONF)
 	@(cd ${WRKSRC} && ${AUTOCONF})
 .endif
@@ -1709,7 +1737,7 @@ do-configure:
 		  ${SCRIPTDIR}/configure; \
 	fi
 .if defined(HAS_CONFIGURE)
-	@(cd ${WRKSRC} && \
+	@(cd ${CONFIGURE_WRKSRC} && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -1894,9 +1922,6 @@ _PORT_USE: .USE
 		${ECHO_MSG} "You may want to become root and try again to ensure correct permissions."; \
 	fi
 .endif
-	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 .endif
 .if make(real-configure) && defined(USE_LIBTOOL)
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-libtool
@@ -2207,7 +2232,7 @@ fetch-list:
 
 .if !target(makesum)
 makesum:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch FORCE_FETCH=yes
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes
 	@${MKDIR} ${FILESDIR}
 	@if [ -f ${MD5_FILE} ]; then ${RM} -f ${MD5_FILE}; fi
 	@(cd ${DISTDIR}; \
@@ -2261,8 +2286,8 @@ checksum:
 		  done; \
 		  if [ "$$OK" != "true" ]; then \
 			${ECHO_MSG} "Make sure the Makefile and md5 file (${MD5_FILE})"; \
-			${ECHO_MSG} "are up to date.  If you want to override this check, type"; \
-			${ECHO_MSG} "\"make NO_CHECKSUM=yes [other args]\"."; \
+			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
+			${ECHO_MSG} "\"check, type make NO_CHECKSUM=yes [other args]\"."; \
 			exit 1; \
 		  fi) ; \
 	fi
@@ -2298,6 +2323,11 @@ package-noinstall:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
+.endif
+
+.if !target(prefix)
+prefix:
+	@${ECHO} ${PREFIX}
 .endif
 
 ################################################################
@@ -2700,10 +2730,8 @@ generate-plist:
 	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 .endfor
-	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | \
-	 ${SED} -e "/\@exec install-info.*$$/h" \
-		-e "s^^\@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir^g" \
-		-e "t fix" -e "b" -e ":fix" -e "G" >> ${TMPPLIST}
+	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
+	@${ECHO} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
 	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)$$,\1.0,' ${TMPPLIST} > ${TMPPLIST}.tmp
@@ -2775,7 +2803,7 @@ fake-pkg:
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
 		for dep in `${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
-			if [ -d ${PKG_DBDIR}/$$dep ]; then \
+			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
 					${ECHO} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
