@@ -63,7 +63,6 @@
     SUBDIR += linemode
     SUBDIR += links
     SUBDIR += linux-netscape4
-    SUBDIR += linux-netscape46-communicator
     SUBDIR += linux-netscape47-communicator
     SUBDIR += lynx
     SUBDIR += lynx-current
