@@ -17,6 +17,8 @@ COMMENT=	Terminal emulator for the X windowing system
 LIB_DEPENDS=	exo-0.2:${PORTSDIR}/x11/libexo \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 vte
 USE_X_PREFIX=	yes
