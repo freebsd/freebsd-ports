@@ -7,15 +7,14 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5102
+PORTREVISION=	1
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
-DISTNAME=	${PORTNAME}-20050315
+DISTNAME=	${PORTNAME}-20050327
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
