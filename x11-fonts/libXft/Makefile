@@ -7,7 +7,7 @@
 
 PORTNAME=	Xft
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
@@ -16,11 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A client-sided font API for X applications
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
-		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
-
-FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -48,10 +43,5 @@ pre-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Xft.man ${PREFIX}/man/man3/Xft.3
-	@${SED} -e 's|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
-		> ${PKGINSTALL}
-.if !defined(PACKAGE_BUILDING)
-	 @${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 
 .include <bsd.port.post.mk>
