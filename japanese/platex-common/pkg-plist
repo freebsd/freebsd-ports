@@ -894,6 +894,7 @@ share/texmf/fonts/tfm/public/ec/tcvt2074.tfm
 share/texmf/fonts/tfm/public/ec/tcvt2488.tfm
 share/texmf/fonts/tfm/public/ec/tcvt2986.tfm
 share/texmf/fonts/tfm/public/ec/tcvt3583.tfm
+share/texmf/tex/latex/base/00Contents
 share/texmf/tex/latex/base/00readme.txt
 share/texmf/tex/latex/base/Makefile.unx
 share/texmf/tex/latex/base/alltt.dtx
@@ -924,12 +925,15 @@ share/texmf/tex/latex/base/cmextra.ins
 share/texmf/tex/latex/base/cmfonts.fdd
 share/texmf/tex/latex/base/cmfonts.ins
 share/texmf/tex/latex/base/compan.err
+share/texmf/tex/latex/base/cp1250.def
+share/texmf/tex/latex/base/cp1252.def
 share/texmf/tex/latex/base/cp437.def
 share/texmf/tex/latex/base/cp437de.def
 share/texmf/tex/latex/base/cp850.def
 share/texmf/tex/latex/base/cp852.def
 share/texmf/tex/latex/base/cp865.def
 share/texmf/tex/latex/base/cstex.txt
+share/texmf/tex/latex/base/decmulti.def
 share/texmf/tex/latex/base/decustex.txt
 share/texmf/tex/latex/base/directex.txt
 share/texmf/tex/latex/base/doc.dtx
@@ -1022,6 +1026,7 @@ share/texmf/tex/latex/base/ltnews04.tex
 share/texmf/tex/latex/base/ltnews05.tex
 share/texmf/tex/latex/base/ltnews06.tex
 share/texmf/tex/latex/base/ltnews07.tex
+share/texmf/tex/latex/base/ltnews08.tex
 share/texmf/tex/latex/base/ltoutenc.dtx
 share/texmf/tex/latex/base/ltoutenc.ins
 share/texmf/tex/latex/base/ltoutput.dtx
@@ -1080,6 +1085,7 @@ share/texmf/tex/latex/base/ot1cmvtt.fd
 share/texmf/tex/latex/base/ot1enc.def
 share/texmf/tex/latex/base/ot1lcmss.fd
 share/texmf/tex/latex/base/ot1lcmtt.fd
+share/texmf/tex/latex/base/ot4enc.def
 share/texmf/tex/latex/base/oztex.txt
 share/texmf/tex/latex/base/pastex.txt
 share/texmf/tex/latex/base/patches.txt
@@ -1108,6 +1114,7 @@ share/texmf/tex/latex/base/slides.dtx
 share/texmf/tex/latex/base/slides.fdd
 share/texmf/tex/latex/base/slides.ins
 share/texmf/tex/latex/base/slides.sty
+share/texmf/tex/latex/base/slifonts.fdd
 share/texmf/tex/latex/base/small2e.tex
 share/texmf/tex/latex/base/source2e.tex
 share/texmf/tex/latex/base/syntonly.dtx
@@ -1130,6 +1137,7 @@ share/texmf/tex/latex/base/tex2.txt
 share/texmf/tex/latex/base/texpert.txt
 share/texmf/tex/latex/base/texsys.aux
 share/texmf/tex/latex/base/texsys.cfg
+share/texmf/tex/latex/base/textcomp.sty
 share/texmf/tex/latex/base/textures.txt
 share/texmf/tex/latex/base/tracefnt.sty
 share/texmf/tex/latex/base/truetex.txt
@@ -1137,6 +1145,7 @@ share/texmf/tex/latex/base/ts1cmr.fd
 share/texmf/tex/latex/base/ts1cmss.fd
 share/texmf/tex/latex/base/ts1cmtt.fd
 share/texmf/tex/latex/base/ts1cmvtt.fd
+share/texmf/tex/latex/base/ts1enc.def
 share/texmf/tex/latex/base/ucmr.fd
 share/texmf/tex/latex/base/ucmss.fd
 share/texmf/tex/latex/base/ucmtt.fd
