@@ -6,6 +6,38 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040813:
+  AFFECTS: users of kdm (x11/kdebase3)
+  AUTHOR: lofi@freebsd.org
+
+  If you are unable to login to X via kdm after portupgrading to the latest 
+  kdebase port and you're getting these or similar messages on the console
+
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[447]: Can't execute 
+  "/usr/local/share/config/kdm/Xstartup": No such file or directory
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[432]: Cannot execute startup script 
+  "/usr/local/share/config/kdm/Xstartup"
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[448]: Can't execute 
+  "/usr/local/share/config/kdm/Xreset": No such file or directory
+  /kernel: Aug 13 17:12:12 kiste kdm: :0[458]: Can't execute 
+  "/usr/local/share/config/kdm/Xsetup": No such file or directory
+
+  please do the following:
+
+  1.) Copy /usr/local/share/config/kdm/kdmrc away to a safe place, for example 
+  your home directory ( cp /usr/local/share/config/kdm/kdmrc ~/ )
+
+  2.) Run, as root: genkdmconf --no-old
+
+  3.) Put your copy of kdmrc back to /usr/local/share/config/kdm/kdmrc (cp 
+  ~/kdmrc /usr/local/share/config/kdm/ )
+
+  Optional step 4.) Run, as root: genkdmconf (without any options) to update 
+  your kdmrc to the lastest configfile format
+
+  Note for advanced users: Substitute /usr/local with your custom PREFIX if 
+  you're using one.
+
 20040730:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org, mat@FreeBSD.org, marcus@FreeBSD.org
