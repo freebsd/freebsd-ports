@@ -264,6 +264,7 @@ AbiSuite/AbiWord/strings/hu-HU.strings
 AbiSuite/AbiWord/strings/id-ID.strings
 AbiSuite/AbiWord/strings/it-IT.strings
 AbiSuite/AbiWord/strings/lt-LT.strings
+AbiSuite/AbiWord/strings/nb-NO.strings
 AbiSuite/AbiWord/strings/nn-NO.strings
 AbiSuite/AbiWord/strings/no-BOK.strings
 AbiSuite/AbiWord/strings/pl-PL.strings
@@ -292,6 +293,8 @@ AbiSuite/fonts/a010033l.afm
 AbiSuite/fonts/a010033l.pfa
 AbiSuite/fonts/a010035l.afm
 AbiSuite/fonts/a010035l.pfa
+AbiSuite/fonts/adobe-full.u2g
+AbiSuite/fonts/adobe-short.u2g
 AbiSuite/fonts/b018012l.afm
 AbiSuite/fonts/b018012l.pfa
 AbiSuite/fonts/b018015l.afm
@@ -300,6 +303,7 @@ AbiSuite/fonts/b018032l.afm
 AbiSuite/fonts/b018032l.pfa
 AbiSuite/fonts/b018035l.afm
 AbiSuite/fonts/b018035l.pfa
+AbiSuite/fonts/d050000l.u2g
 AbiSuite/fonts/bchb.afm
 AbiSuite/fonts/bchb.pfa
 AbiSuite/fonts/bchbi.afm
@@ -319,6 +323,7 @@ AbiSuite/fonts/c059036l.pfa
 AbiSuite/fonts/d050000l.afm
 AbiSuite/fonts/d050000l.pfa
 AbiSuite/fonts/fonts.dir
+AbiSuite/fonts/fonts.scale
 AbiSuite/fonts/n019003l.afm
 AbiSuite/fonts/n019003l.pfa
 AbiSuite/fonts/n019004l.afm
@@ -361,6 +366,7 @@ AbiSuite/fonts/p052024l.afm
 AbiSuite/fonts/p052024l.pfa
 AbiSuite/fonts/s050000l.afm
 AbiSuite/fonts/s050000l.pfa
+AbiSuite/fonts/s050000l.u2g
 AbiSuite/fonts/z003034l.afm
 AbiSuite/fonts/z003034l.pfa
 AbiSuite/icons/abiword_48.png

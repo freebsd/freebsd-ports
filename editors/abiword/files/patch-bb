@@ -1,0 +1,10 @@
+--- ../../psiconv/psiconv/generate_layout.c.orig	Fri Jan 19 13:17:35 2001
++++ ../../psiconv/psiconv/generate_layout.c	Fri Mar  2 04:17:38 2001
+@@ -78,7 +78,6 @@
+     return res;
+   if ((res = psiconv_write_color(buf,value->color)))
+     return res;
+-  // Unknown byte
+   return psiconv_write_u8(buf,1);
+ }
+ 
