@@ -2,5 +2,6 @@ The Archive::Zip module allows a Perl program to create, manipulate,
 read, and write Zip archive files.
 
 Author: Ned Konz
+WWW: http://search.cpan.org/search?dist=Archive-Zip
 
 --will
