@@ -1442,6 +1442,7 @@ eiffel		ports/lang/eiffel
 eights		ports/games/eights
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
+el-aspell	ports/textproc/el-aspell
 el-ooodict-GR	ports/editors/ooodict-el_GR
 eldav.el	ports/www/eldav.el
 electric	ports/cad/electric
