@@ -1,0 +1,63 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting install script:"
+
+  if [ -z "%%POSTGREYDIR%%" -o \
+       -z "%%USER%%" -o -z "%%GROUP%%" -o \
+       -z "%%UID%%" -o -z "%%GID%%" ]; then
+    echo "ERROR: A required pragma was empty"
+    exit 1
+  fi
+
+  # Create group if required
+  if pw group show "%%GROUP%%" >/dev/null 2>&1; then
+    echo "---> Using existing group \"%%GROUP%%\""
+  else
+    echo "---> Adding group \"%%GROUP%%\" (%%GID%%)"
+    /usr/sbin/pw groupadd %%GROUP%% -g %%GID%% || exit 1
+  fi
+
+  # Create user if required
+  if pw user show "%%USER%%" >/dev/null 2>&1; then
+    echo "---> Using existing user \"%%USER%%\""
+  else
+    echo "---> Adding user \"%%USER%%\" (%%UID%%)"
+    pw useradd "%%USER%%" -u "%%UID%%" -g "%%GROUP%%" -h - \
+      -d "%%POSTGREYDIR%%" -s "/sbin/nologin" -c "Postgrey Owner" || exit 1
+  fi
+
+  # Create home directory if required
+  if [ -d "%%POSTGREYDIR%%" ]; then
+    echo "---> Using existing Postgrey database directory (%%POSTGREYDIR%%)"
+    echo "     (There may be existing active postgrey databases - this installation"
+    echo "     will attempt to preserve them.)"
+  else
+    echo "---> Creating Postgrey database directory (%%POSTGREYDIR%%)"
+    (umask 002 && /bin/mkdir -p "%%POSTGREYDIR%%") || exit 1
+    /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%POSTGREYDIR%%" || exit 1
+    /bin/chmod g+s "%%POSTGREYDIR%%" || exit 1
+  fi
+  ;;
+
+POST-INSTALL)
+  echo "---> Starting post-install script:"
+
+  for i in %%ETCFILES%%; do
+    if [ ! -f "%%PREFIX%%/etc/postfix/postgrey_${i}" ]; then
+	echo "---> Installing new config file %%PREFIX%%/etc/postfix/postgrey_${i}"
+	cp -p	%%PREFIX%%/etc/postfix/dist-postgrey_${i} \
+		%%PREFIX%%/etc/postfix/postgrey_${i}
+    else
+	echo "---> Keeping existing config file %%PREFIX%%/etc/postfix/postgrey_${i}"
+    fi
+  done
+  ;;
+
+esac
