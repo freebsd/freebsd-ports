@@ -1,0 +1,8 @@
+bin/gfontview
+share/gnome/gfontviewrc
+share/gnome/gnome/apps/Utilities/gfontview.desktop
+share/gnome/pixmaps/gfontview.png
+share/locale/de/LC_MESSAGES/gfontview.mo
+share/locale/es/LC_MESSAGES/gfontview.mo
+share/locale/fr/LC_MESSAGES/gfontview.mo
+share/locale/ru/LC_MESSAGES/gfontview.mo
