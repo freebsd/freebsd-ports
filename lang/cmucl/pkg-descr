@@ -8,7 +8,7 @@ via the normal Common Lisp documentation runtime functions (describe
 manual that is currently adopted to 18a. See the homepage for
 pointers, we have GNU info, postscript and initial HTML files.
 
-CMUCL's strength in comparision with other Lisp systems (or dynamic
+CMUCL's strength in comparison with other Lisp systems (or dynamic
 languages in general) is its highly optimizing compiler. If you know
 how to write efficient Common Lisp code, you are free of unwanted
 memory allocation, type checks, indirections to objects. And CMUCL
@@ -17,7 +17,7 @@ informative warning messages about code constructs that prevent
 compilation to efficient code.
 
 Optional packages for graphical user interfaces and other Common Lisp
-applications and librarues are are on
+applications and libraries are are on
 ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/ (FreeBSD-Binaries) and
 ftp://ftp2.cons.org/pub/languages/lisp/cmucl/ports/ *source)
 

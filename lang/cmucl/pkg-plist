@@ -7,6 +7,5 @@ lib/cmucl/lib/load-foreign.csh
 lib/cmucl/lib/config.lisp
 lib/cmucl/lib/config
 lib/cmucl/README.1st
-@dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
