@@ -34,9 +34,15 @@ CFLAGS+=	-O0
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (needs -fPIC)"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
