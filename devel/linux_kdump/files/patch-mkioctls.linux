@@ -1,0 +1,11 @@
+--- mkioctls.linux.orig	Sat Feb 21 15:35:48 2004
++++ mkioctls.linux	Sat Feb 21 15:34:41 2004
+@@ -4,7 +4,7 @@
+ TMP2FILE=/tmp/$$b.c
+ OUTFILE=linux_ioctl.c
+ 
+-CPP="/compat/linux/usr/bin/gcc -E"
++CPP="/compat/linux/usr/bin/gcc -E -D__builtin_va_list=int"
+ 
+ (echo	"#include <sys/ioctl.h>"
+  echo	"#include <sys/soundcard.h>"
