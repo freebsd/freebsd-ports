@@ -1,11 +1,13 @@
 --- Makefile.orig	Wed Sep 25 15:25:40 1996
-+++ Makefile	Mon May 28 16:30:58 2001
-@@ -1,14 +1,9 @@
++++ Makefile	Mon May 28 22:40:49 2001
+@@ -1,14 +1,11 @@
  # you may need to change these for your system
 -CFLAGS	= -g
 -MAKE	= make
 -CC	= cc
 -RM	= /bin/rm
++
++CFLAGS+= -DHEADER=\"${PREFIX}/share/texmf/tex/abc2mtex_header.tex\"
  
  TEX	= userguide music
  ABC	= English Jigs Reels Strspys

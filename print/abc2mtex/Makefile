@@ -18,6 +18,7 @@ RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex
 
 NO_WRKSUBDIR=		yes
 
+TEXMF=		${PREFIX}/share/texmf
 EXAMPLE_FILES=	English.abc Jigs.abc Reels.abc Strspys.abc
 DOC_FILES=	usrguide.ps
 BIN_FILES=	abc2mtex abc2mtex \
@@ -26,10 +27,11 @@ BIN_FILES=	abc2mtex abc2mtex \
 
 do-install:
 	cd ${WRKSRC}; \
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}; \
-	${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/share/doc/${PORTNAME}; \
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/examples; \
-	${INSTALL_DATA} ${EXAMPLE_FILES} ${PREFIX}/share/doc/${PORTNAME}/examples;
+	${MKDIR} ${TEXMF}/doc/${PORTNAME}; \
+	${INSTALL_DATA} ${DOC_FILES} ${TEXMF}/doc/${PORTNAME}; \
+	${MKDIR} ${TEXMF}/doc/${PORTNAME}/examples; \
+	${INSTALL_DATA} ${EXAMPLE_FILES} ${TEXMF}/doc/${PORTNAME}/examples; \
+	${INSTALL_DATA} header.tex ${TEXMF}/tex/abc2mtex_header.tex
 	set -- ${BIN_FILES}; \
 	while [ $$# -gt 0 ] ; do \
 		src=$$1; tgt=$$2; shift; shift; \
