@@ -15,6 +15,7 @@ getpr   - downloads a problem report from GNATS and attempts to extract
           this probably needs to be checked for potential security problems.
 gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
                should be listes in {RUN,LIB}_DEPENDS for this port 
+plist - automate (mostly, at least) pkg-plist generation
 prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
 prdone  - checks in the port, attempting to fill out the commit message using
           information from the problem report and then takes you into edit-pr
