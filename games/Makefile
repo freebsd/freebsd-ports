@@ -180,6 +180,7 @@
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
     SUBDIR += nettoe
+    SUBDIR += newkind
     SUBDIR += newvox
     SUBDIR += nighthawk
     SUBDIR += nil

@@ -1,0 +1,32 @@
+--- makefile.orig	Fri Jul  6 21:29:04 2001
++++ makefile	Tue Oct 23 17:40:09 2001
+@@ -2,25 +2,20 @@
+ # Makefile for Elite - The New Kind.
+ #
+ 
+-CC	=	gcc
+-WRES	=	windres
+-
+-LIBS	=	-s -mwindows -lalleg_s -lkernel32 -lgdi32 -lcomdlg32 -luser32 -lole32 -lddraw -ldxguid -lwinmm -ldsound -ldinput
+-CFLAGS	=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK
++CC	?=	gcc
++LIBS	=	-L/usr/local/lib -lalleg-3.9.34 -lalleg_unsharable
++CFLAGS	+=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK -I/usr/local/include
+ 
+ OBJS	= alg_gfx.o alg_main.o docked.o elite.o\
+ 	intro.o planet.o shipdata.o shipface.o sound.o space.o\
+ 	swat.o threed.o vector.o random.o trade.o options.o \
+-	stars.o missions.o nkres.o pilot.o file.o keyboard.o
++	stars.o missions.o pilot.o file.o keyboard.o
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ newkind.exe: $(OBJS)
+ 	$(CC) -o newkind.exe $(OBJS) $(LIBS)
+-
+-nkres.o: nkres.rc
+-	$(WRES) nkres.rc nkres.o
+ 
+ 
+ alg_gfx.o: alg_gfx.c alg_data.h config.h elite.h planet.h gfx.h

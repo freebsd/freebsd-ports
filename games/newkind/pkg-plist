@@ -1,0 +1,37 @@
+%%PORTDOCS%%share/doc/newkind/readme.txt
+bin/newkind
+share/newkind/beep.wav
+share/newkind/boop.wav
+share/newkind/crash.wav
+share/newkind/data/blake.bmp
+share/newkind/data/danube.mid
+share/newkind/data/ecm.bmp
+share/newkind/data/elitetx3.bmp
+share/newkind/data/greendot.bmp
+share/newkind/data/missgrn.bmp
+share/newkind/data/missred.bmp
+share/newkind/data/missyell.bmp
+share/newkind/data/reddot.bmp
+share/newkind/data/safe.bmp
+share/newkind/data/theme.mid
+share/newkind/data/verd2.pcx
+share/newkind/data/verd4.pcx
+share/newkind/dock.wav
+share/newkind/ecm.wav
+share/newkind/elite.dat
+share/newkind/explode.wav
+share/newkind/gameover.wav
+share/newkind/hitem.wav
+share/newkind/hyper.wav
+share/newkind/incom1.wav
+share/newkind/incom2.wav
+share/newkind/launch.wav
+share/newkind/missile.wav
+share/newkind/newkind.cfg
+share/newkind/newkind.exe
+share/newkind/newscan.cfg
+share/newkind/pulse.wav
+share/newkind/scanner.bmp
+@dirrm share/newkind/data
+@dirrm share/newkind
+%%PORTDOCS%%@dirrm share/doc/newkind
