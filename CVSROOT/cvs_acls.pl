@@ -83,7 +83,6 @@ my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 my $debug = $cfg::DEBUG;
 my $availfile = "$CVSROOT/CVSROOT/avail";
-my $myname = $ENV{"LOGNAME"} || $ENV{"USER"};
 
 my $die = '';
 eval "print STDERR \$die='Unknown parameter $1\n' if !defined \$$1; \$$1=\$';"
@@ -118,9 +117,11 @@ while (<AVAIL>) {
 	# remember it
 	my $universal_off = 1 if ($flag && !$u && !$m);
 
-	# $myname considered "in user list" if actually in list or is NULL
-	my $in_user = (!$u || grep ($_ eq $myname, split(/[\s,]+/,$u)));
-	print "$$ \$myname($myname) in user list: $_\n" if $debug && $in_user;
+	# $cfg::COMMITTER considered "in user list" if actually in list
+	# or is NULL
+	my $in_user = (!$u || grep ($_ eq $cfg::COMMITTER, split(/[\s,]+/,$u)));
+	print "$$ \$cfg::COMMITTER ($cfg::COMMITTER) in user list: $_\n"
+	    if $debug && $in_user;
 
 	# Module matches if it is a NULL module list in the avail line.
 	# If module list is not null, we check every argument combination.
@@ -148,7 +149,8 @@ while (<AVAIL>) {
 }
 close(AVAIL);
 print "$$ ==== \$exit_val = $exit_val\n" if $debug;
-print "**** Access denied: Insufficient Karma ($myname|$repos)\n" if $exit_val;
+print "**** Access denied: Insufficient Karma ($cfg::COMMITTER|$repos)\n"
+    if $exit_val;
 print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
-	if $debug && $universal_off && !$exit_val;
+    if $debug && $universal_off && !$exit_val;
 exit($exit_val);

@@ -354,9 +354,7 @@ sub build_header {
 	my $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
 	chomp $datestr;
 
-	my $login = $ENV{'USER'} || getlogin ||
-	    (getpwuid($<))[0] || sprintf("uid#%d",$<);
-	my $header = sprintf("%-8s    %s", $login, $datestr);
+	my $header = sprintf("%-8s    %s", $cfg::COMMITTER, $datestr);
 
 	my @text;
 	push @text, $header;
