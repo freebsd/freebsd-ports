@@ -27,4 +27,10 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
+.include <bsd.port.post.mk>
