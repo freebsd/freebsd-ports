@@ -26,7 +26,6 @@
     SUBDIR += fxtv
     SUBDIR += g2
     SUBDIR += gd
-    SUBDIR += gd-old
     SUBDIR += geomview
     SUBDIR += gfont
     SUBDIR += gif2png
