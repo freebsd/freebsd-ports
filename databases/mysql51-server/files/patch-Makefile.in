@@ -1,19 +1,20 @@
---- Makefile.in.orig	Thu Jan 23 16:13:43 2003
-+++ Makefile.in	Wed Jan 29 17:11:29 2003
-@@ -195,11 +195,11 @@
+--- Makefile.in.orig	Wed Nov 20 00:06:37 2002
++++ Makefile.in	Wed Nov 20 00:07:31 2002
+@@ -207,12 +207,11 @@
  EXTRA_DIST = INSTALL-SOURCE README \
- 			COPYING COPYING.LIB MIRRORS
+ 			COPYING COPYING.LIB
  
--SUBDIRS = . include @docs_dirs@ @readline_dir@ \
--			@thread_dirs@ @sql_client_dirs@ \
--			@sql_server_dirs@ scripts tests man \
--			@bench_dirs@ support-files os2
+-SUBDIRS = include @docs_dirs@ @readline_dir@ \
+-			@thread_dirs@ pstack @sql_client_dirs@ \
+-			@sql_server_dirs@ @libmysqld_dirs@ scripts man \
+-			tests BUILD os2 \
+-			@bench_dirs@ support-files @fs_dirs@ @tools_dirs@
 -
 +.if defined(CLIENT_ONLY)
-+SUBDIRS = include @readline_dir@ @sql_client_dirs@ tests man
++SUBDIRS = include @sql_client_dirs@ tests man
 +.else
-+SUBDIRS = include @thread_dirs@ @docs_dirs@ @sql_server_dirs@ scripts support-files
++SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts support-files
 +.endif
  
  # Relink after clean
- CLEANFILES = linked_client_sources linked_server_sources linked_libmysql_sources linked_libmysql_r_sources linked_include_sources
+ linked_sources = linked_client_sources linked_server_sources \
