@@ -14,7 +14,3 @@ machine, copy that file to
        %%PREFIX%%/etc/freebsd-update.conf
 
 otherwise, create that file as appropriate.
-
-If you find FreeBSD Update useful, please consider sending a donation to
-the author:
-http://www.daemonology.net/freebsd-update/donating.html
