@@ -1,0 +1,13 @@
+bin/kphone
+%%DATADIR%%/icons/dial.png
+%%DATADIR%%/icons/enter.png
+%%DATADIR%%/icons/hangup.png
+%%DATADIR%%/icons/large-kphone.png
+%%DATADIR%%/icons/lo-kphone.png
+%%DATADIR%%/icons/mini-kphone.png
+%%DATADIR%%/icons/offline.png
+%%DATADIR%%/icons/online.png
+%%DATADIR%%/icons/phonebook.png
+%%DATADIR%%/icons/videocall.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%

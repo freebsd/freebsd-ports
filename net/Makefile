@@ -247,6 +247,7 @@
     SUBDIR += kmldonkey
     SUBDIR += kontact-plugins
     SUBDIR += konverse
+    SUBDIR += kphone
     SUBDIR += kpopup
     SUBDIR += krdesktop
     SUBDIR += l2tpd
