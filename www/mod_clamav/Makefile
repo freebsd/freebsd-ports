@@ -28,8 +28,12 @@ CLAMAV_PORT=	security/clamav
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--libdir=${PREFIX}/lib/apache2
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib \
+		${PTHREAD_LIBS}
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
