@@ -64,6 +64,7 @@
     SUBDIR += cvsupit
     SUBDIR += dante
     SUBDIR += datapipe
+    SUBDIR += dctc
     SUBDIR += ddc
     SUBDIR += ddclient
     SUBDIR += ddup
