@@ -25,7 +25,7 @@
  "    # Note that sourcing csh.login after .cshrc is non-standard.\n"
  "    set -a\n"
 -"    eval `$SHELL -c 'if (-f /etc/csh.login) source /etc/csh.login; if (-f ~/.login) source ~/.login; /bin/sh -c set | egrep -v \"^(BASH_VERSINFO|EUID|PPID|UID|_)=\"'`\n"
-+"    eval `$SHELL -c 'if (-f /etc/csh.login) source /etc/csh.login > /dev/null; if (-f ~/.login) source ~/.login > /dev/null; /bin/sh -c set | egrep -v \"^(BASH_VERSINFO|EUID|PPID|UID|GROUPS|SHELLOPTS|_)=\"'`\n"
++"    eval `$SHELL -c 'if (-f /etc/csh.login) source /etc/csh.login >& /dev/null; if (-f ~/.login) source ~/.login >& /dev/null; /usr/bin/env | egrep -v \"^(TERM|SHLVL)=\"'`\n"
  "    set +a\n"
  "    ;;\n"
  "  *) # Plain sh, ksh, and anything we don't know.\n"
