@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dvorak7min
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	misc
-MASTER_SITES=	http://lightside.eresmas.com/
+MASTER_SITES=	http://www.linalco.com/ragnar/
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	An ncurses-based Dvorak typing tutor
