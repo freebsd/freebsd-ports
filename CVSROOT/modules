@@ -761,6 +761,7 @@ cgihtml		ports/www/cgihtml
 cgiparse	ports/www/cgiparse
 cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
+chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
 cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
