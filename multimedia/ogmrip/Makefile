@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
 
+BROKEN=		crashes due to some buffer overflow issue
+
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 libgnomeui gconf2 libgnome libglade2
 USE_LIBTOOL_VER=15
