@@ -1,0 +1,36 @@
+--- makefile	Sat Jun 12 16:02:17 2004
++++ makefile.new	Sat Jul 24 01:48:21 2004
+@@ -30,7 +30,7 @@
+ # Try to detect mingw... If you want to build the dos and the mingw
+ # version on the same system you should unset djdir before making
+ # the mingw version.
+-ifeq ($(shell uname),Linux)
++ifeq ($(shell uname),FreeBSD)
+ OSTYPE=linux-gnu
+ endif
+ 
+@@ -182,11 +182,11 @@
+ 
+ #	SDL = 1
+ 
+-   prefix = $(DESTDIR)
+-   bindir = $(prefix)/usr/games
+-   sharedir = $(prefix)/usr/share
+-   mandir = $(sharedir)/man/man6
+-   rainedata = $(sharedir)/games/raine
++   prefix = $(PREFIX)
++   bindir = $(prefix)/bin
++   sharedir = $(prefix)/share
++   mandir = $(prefix)/man/man6
++   rainedata = $(sharedir)/raine
+    langdir = $(rainedata)/languages
+    romdir = $(rainedata)/roms
+ 
+@@ -205,6 +205,7 @@
+    AFLAGS = -f elf
+ 
+    INCDIR += ` allegro-config --cflags`
++   INCDIR += -I/usr/X11R6/include
+ 
+    DEFINE = -D__RAINE__ \
+ 	   -DRAINE_UNIX \
