@@ -18,6 +18,7 @@ share/gnome/liferea/pixmaps/online.png
 share/gnome/liferea/pixmaps/read.xpm
 share/gnome/liferea/pixmaps/unavailable.png
 share/gnome/liferea/pixmaps/unread.png
+share/gnome/liferea/pixmaps/updating.png
 share/gnome/liferea/pixmaps/vfolder.png
 share/gnome/pixmaps/liferea.png
 share/locale/bg/LC_MESSAGES/liferea.mo
@@ -30,6 +31,7 @@ share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/ko/LC_MESSAGES/liferea.mo
 share/locale/mk/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
+share/locale/sk/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/pixmaps
 @dirrm share/gnome/liferea/css
