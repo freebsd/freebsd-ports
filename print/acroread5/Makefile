@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	5.0.6
+PORTVERSION=	5.06
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
