@@ -29,7 +29,7 @@
 # installed in this directory. There is no default for this variable built into
 # the source files; it must be set in one of the local configuration files.
 
-BIN_DIRECTORY=/usr/local/bin
+BIN_DIRECTORY=/usr/local/sbin
 
 
 # The info directory: This variable defines where the exim info file will be
