@@ -1,0 +1,22 @@
+--- appl/telnet/telnetd/telnetd.8.orig	Wed Feb 28 14:06:51 2001
++++ appl/telnet/telnetd/telnetd.8	Mon Dec 31 21:16:55 2001
+@@ -43,7 +43,7 @@
+ [\fB\-k\fP] [\fB\-n\fP] [\fB\-r\fP\fIlowpty-highpty\fP] [\fB\-s\fP]
+ [\fB\-S\fP \fItos\fP] [\fB\-U\fP] [\fB\-X\fP \fIauthtype\fP]
+ [\fB\-w\fP [\fBip\fP|\fImaxhostlen\fP[\fB,\fP[\fBno\fP]\fBstriplocal\fP]]]
+-[\fB\-debug\fP [\fIport\fP]]
++[\fB\-debug\fP] [\fB\-L\fP \fIloginpath\fP] [\fIport\fP]
+ .SH DESCRIPTION
+ The
+ .B telnetd
+@@ -221,6 +221,10 @@
+ in response to a
+ .SM DO TIMING-MARK)
+ for kludge linemode support.
++.TP
++\fB\-L\fP \fIloginpath\fP
++Specify pathname to an alternative login program.  Default: /usr/bin/login.
++KRB5_HOME/sbin/login.krb5 may be specified.
+ .TP
+ .B \-l
+ Specifies line mode.  Tries to force clients to use line-at-a-time

@@ -1,0 +1,15 @@
+*** clients/ksu/Makefile.in.ORIG	Sun Aug  2 16:51:18 1998
+--- clients/ksu/Makefile.in	Sun Aug  2 16:53:48 1998
+***************
+*** 3,7 ****
+  mydir=ksu
+  BUILDTOP=$(REL)$(U)$(S)$(U)
+! DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/bin /local/bin"'
+  CFLAGS = $(CCOPTS) $(DEFINES) $(DEFS) $(LOCALINCLUDE)
+  
+--- 3,7 ----
+  mydir=ksu
+  BUILDTOP=$(REL)$(U)$(S)$(U)
+! DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/bin /bin /usr/sbin /sbin"'
+  CFLAGS = $(CCOPTS) $(DEFINES) $(DEFS) $(LOCALINCLUDE)
+  
