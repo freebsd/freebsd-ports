@@ -1,34 +1,101 @@
---- Makefile.tmpl.ORIG	Sat Nov 27 22:21:16 1999
-+++ Makefile.tmpl	Sun Nov 28 15:40:17 1999
-@@ -39,8 +39,8 @@
+--- Makefile.config.orig	Sat Dec 11 11:25:44 1999
++++ Makefile.config	Sat May 20 15:16:47 2000
+@@ -46,8 +46,8 @@
  ###############################################################################
  
  # it might be that you need gmake (in my distribution make is a link to gmake)
--MAKE            = make
--#MAKE            = gmake
-+#MAKE            = make
-+MAKE            = gmake
- #MAKE            = /usr/local/bin/gmake
+-MAKE = make
+-#MAKE = gmake
++#MAKE = make
++MAKE = gmake
+ #MAKE = /usr/local/bin/gmake
  
  
-@@ -60,7 +60,8 @@
- HOSTCFLAGS      =
- #HOSTCFLAGS      = -ansi -pedantic
+@@ -60,8 +60,8 @@
  
--HOSTCPP         = $(HOSTCC) -E
-+HOSTCPP         = $(CXX)
-+#HOSTCPP         = $(HOSTCC) -E
- #HOSTCPP         = cpp
  
- #HOSTLD          = ld
-@@ -188,8 +189,8 @@
+ # various prgs
+-INSTALL         = cp
+-#INSTALL         = install
++#INSTALL         = cp
++INSTALL         = install
+ #INSTALL         = copy
+ 
+ RM              = rm -f
+@@ -83,17 +83,17 @@
+ #TR_HOME = c:/truereality/source
+ 
+ CINCL := $(CINCL) -I$(TR_HOME)
+-CINCL := $(CINCL) -I/usr/local/X11R6/default/include
++#CINCL := $(CINCL) -I/usr/local/X11R6/default/include
+ #CINCL := $(CINCL) -I/usr/local/mesa/default/include
+ #CINCL := $(CINCL) -I/usr/X11/include
+-#CINCL := $(CINCL) -I/usr/X11R6/include
++CINCL := $(CINCL) -I$(X11BASE)/include
+ #CINCL := $(CINCL) -I/usr/openwin/include
+ #CINCL := $(CINCL) -I GG:pcc-amigaos/os-include
+ 
+-LDLIBS := $(LDLIBS) -L/usr/local/X11R6/default/lib
++#LDLIBS := $(LDLIBS) -L/usr/local/X11R6/default/lib
+ #LDLIBS := $(LDLIBS) -L/usr/local/mesa/default/lib
+ #LDLIBS := $(LDLIBS) -L/usr/X11/lib
+-#LDLIBS := $(LDLIBS) -L/usr/X11R6/lib
++LDLIBS := $(LDLIBS) -L$(X11BASE)/lib
+ #LDLIBS := $(LDLIBS) -L/usr/openwin/lib
+ 
+ 
+@@ -148,7 +148,10 @@
+ #CFLAGS := $(CFLAGS) -funroll-loops
+ #CFLAGS := $(CFLAGS) -g3
+ #CFLAGS := $(CFLAGS) -ggdb3
+-CFLAGS := $(CFLAGS) -ansi -pedantic
++#CFLAGS := $(CFLAGS) -ansi -pedantic
++CFLAGS := $(CFLAGS) -g
++CFLAGS := $(CFLAGS) $(CINCL)
++
+ 
+ 
+ # for amiga
+@@ -165,7 +168,7 @@
+ #CFLAGS := $(CFLAGS) -malign-loops=3
+ 
+ # for alpha
+-CFLAGS := $(CFLAGS) -mcpu=ev4
++#CFLAGS := $(CFLAGS) -mcpu=ev4
+ #CFLAGS := $(CFLAGS) -mcpu=ev5
+ #CFLAGS := $(CFLAGS) -mcpu=ev6
+ #CFLAGS := $(CFLAGS) -mcpu=ev7
+@@ -200,9 +203,9 @@
+ #ASM := $(ASM) CPU
+ #ASM := $(ASM) MEMORY
+ 
+-CPU = alpha
++#CPU = alpha
+ #CPU = arm
+-#CPU = i386
++CPU = i386
+ #CPU = m68k
+ #CPU = mips
+ #CPU = ppc
+@@ -228,10 +231,10 @@
  #                                                                             #
  ###############################################################################
  
--ARCH = linux
--#ARCH = bsd
-+#ARCH = linux
-+ARCH = bsd
- #ARCH = sunos
- #ARCH = solaris
- #ARCH = aix
+-#ARCHITECTURE = bsd
++ARCHITECTURE = bsd
+ #ARCHITECTURE = hpux
+ #ARCHITECTURE = irix
+-ARCHITECTURE = linux
++#ARCHITECTURE = linux
+ #ARCHITECTURE = osf
+ #ARCHITECTURE = qnx
+ #ARCHITECTURE = sunos
+@@ -556,7 +559,7 @@
+ #ZLIB           = -DWITH_ZLIB 
+ 
+ # dynamic #
+-#ZLIB_DYN       = -L/usr/local/zlib/1.1.2/lib -lz
++ZLIB_DYN       = -L/usr/local/lib -lz
+ 
+ # static #
+ #ZLIB_STAT      = /usr/local/zlib/1.1.2/lib/libz.a
