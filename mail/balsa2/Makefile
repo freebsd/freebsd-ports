@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.17
-PORTREVISION=	1
+PORTVERSION=	2.0.18
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -19,14 +18,14 @@ LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp
 
-USE_LIBLTDL=	yes
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--disable-more-warnings \
@@ -39,14 +38,19 @@ MAN1=		balsa.1
 
 CONFLICTS=	balsa-*
 
-#.if defined(WITH_GPG)
-#LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
-#CONFIGURE_ARGS+=	--enable-gpgme
-#.endif
+OPTIONS=	GPG "Enable GnuPG support" off \
+		LDAP "Enable LDAP support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GPG)
+LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
+.endif
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
