@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	never@nevermind.kiev.ua
 
 LIB_DEPENDS=	icq0.1:${PORTSDIR}/net/icqlib0 \
-		guile.9:${PORTSDIR}/lang/guile
+		guile.10:${PORTSDIR}/lang/guile
 
 USE_NEWGCC=	yes
 USE_AUTOCONF=	yes

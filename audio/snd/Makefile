@@ -31,7 +31,7 @@ WITHOUT_GTKEXTRA=	yes
 LIB_DEPENDS+=		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 .endif
 .if !defined(WITHOUT_GUILE)
-LIB_DEPENDS+=		guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.10:${PORTSDIR}/lang/guile
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
 .endif

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gnurobots
 
 MAINTAINER=	avh4@usa.net
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 USE_XPM=	yes

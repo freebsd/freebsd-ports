@@ -17,7 +17,7 @@ MAINTAINER=	bruno@tinkerbox.org
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
 		gschem:${PORTSDIR}/cad/gschem \
 		gnetlist:${PORTSDIR}/cad/gnetlist
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		geda.15:${PORTSDIR}/cad/libgeda
 
 NO_BUILD=	yes

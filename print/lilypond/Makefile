@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.3/ \
 MAINTAINER=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
 BROKEN=		"needs bison 1.28 or earlier"
 

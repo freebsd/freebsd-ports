@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020209/ \
 MAINTAINER=	bruno@tinkerbox.org
 
 LIB_DEPENDS=	geda.15:${PORTSDIR}/cad/libgeda \
-		guile.9:${PORTSDIR}/lang/guile
+		guile.10:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 
 USE_LIBTOOL=	yes

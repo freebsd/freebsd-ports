@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		guile.9:${PORTSDIR}/lang/guile
+		guile.10:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

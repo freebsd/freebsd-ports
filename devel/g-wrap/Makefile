@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
 
 USE_LIBTOOL=	yes
