@@ -1,20 +1,18 @@
 # New ports collection makefile for:	xforms
-# Version required:	0.75
-# Date created:		01 October 1995
+# Version required:	0.81
+# Date created:		29 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.3 1995/10/05 12:34:15 asami Exp $
+# $Id: Makefile,v 1.4 1996/05/08 06:11:12 jkh Exp $
 #
 
-DISTNAME=	bxform-075
-PKGNAME=	xforms-0.75
+DISTNAME=	bxform-081
+PKGNAME=	xforms-0.81
 CATEGORIES+=	graphics x11
 MASTER_SITES=	ftp://laue.phys.uwm.edu/pub/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
-
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/xforms
