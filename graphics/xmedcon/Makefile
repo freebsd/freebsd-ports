@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -54,6 +54,12 @@ CONFIGURE_ARGS+=	--disable-intf
 .endif
 .if defined(NODICOM)
 CONFIGURE_ARGS+=	--disable-dicom
+.endif
+.if defined(NOLJPG)
+CONFIGURE_ARGS+=	--disable-ljpg
+PLIST_SUB+=		LJPG="@comment "
+.else
+PLIST_SUB+=		LJPG=""
 .endif
 .if defined(NOPNG)
 CONFIGURE_ARGS+=	--disable-png
