@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	science
 MASTER_SITES=	http://savannah.nongnu.org/download/gchempaint/unstable.pkg/${PORTVERSION}/
 
@@ -18,10 +18,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeprintui libgnomeui
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
