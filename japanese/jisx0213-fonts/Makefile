@@ -7,11 +7,13 @@
 
 PORTNAME=	jisx0213-fonts
 PORTVERSION=	1.03
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://www.mars.sphere.ne.jp/imamura/
+MASTER_SITES=	http://www.mars.sphere.ne.jp/imamura/ \
+		http://gitatsu.hp.infoseek.co.jp/bdf/:yagi
 DISTFILES=	jiskan16-2000-1.bdf.gz jiskan16-2000-2.bdf.gz \
-		K14-1.bdf.gz K14-2.bdf.gz K12-1.bdf.gz K12-2.bdf.gz
+		K14-1.bdf.gz K14-2.bdf.gz K12-1.bdf.gz K12-2.bdf.gz \
+		jiskan24-2000-1.bdf.gz:yagi jiskan24-2000-2.bdf.gz:yagi
 
 MAINTAINER=	yoichi@FreeBSD.org
 
