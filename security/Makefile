@@ -88,6 +88,7 @@
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += labrea
+    SUBDIR += lcrzo
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
