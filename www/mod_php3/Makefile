@@ -7,7 +7,7 @@
 
 PORTNAME?=	mod_php3
 PORTVERSION=	3.0.18
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -102,7 +102,7 @@ post-clean:
 # Has to be kept in sync with the defaults in configure.php
 .ifndef(WITHOUT_MYSQL)
 .ifmake describe
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 .endif
 .endif
 
