@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl
+LIB_DEPENDS=		gsl.6:${PORTSDIR}/math/gsl
 
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
