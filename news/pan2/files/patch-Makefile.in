@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon Apr 21 20:48:52 2003
-+++ Makefile.in	Mon Apr 21 20:49:25 2003
-@@ -128,7 +128,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
+--- Makefile.in.orig	Tue May  6 20:49:53 2003
++++ Makefile.in	Tue May  6 20:50:18 2003
+@@ -117,7 +117,7 @@
+ XML_CFLAGS = @XML_CFLAGS@
+ XML_LIBS = @XML_LIBS@
+ 
 -SUBDIRS = po gmime pan docs tests
 +SUBDIRS = po gmime pan docs
  
