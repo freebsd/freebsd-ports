@@ -20,7 +20,7 @@ _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
 		gnomecanvas oaf gnomemimedata gconf gnomevfs libcapplet \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		gnomecore
+		libpanel
 
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|[(]GNOME_datadir[)]/gnome/|(datadir)/|g ; \
@@ -49,25 +49,21 @@ ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_MAKE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
-esound_PKGNAMESUFFIX=	-esound
 esound_DETECT=		${ESD_CONFIG}
 
 libghttp_LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
-libghttp_PKGNAMESUFFIX=	-libghttp
 libghttp_DETECT=	${LOCALBASE}/etc/ghttpConf.sh
 
 GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
 glib12_LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
-glib12_PKGNAMESUFFIX=	-glib
 glib12_DETECT=		${GLIB_CONFIG}
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 gtk12_LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 gtk12_CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 gtk12_MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
-gtk12_PKGNAMESUFFIX=	-gtk
 gtk12_DETECT=		${GTK_CONFIG}
 gtk12_USE_GNOME_IMPL=	glib12
 
@@ -75,7 +71,6 @@ XML_CONFIG?=		${LOCALBASE}/bin/xml-config
 libxml_LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 libxml_CONFIGURE_ENV=	XML_CONFIG="${XML_CONFIG}"
 libxml_MAKE_ENV=	XML_CONFIG="${XML_CONFIG}"
-libxml_PKGNAMESUFFIX=	-libxml
 libxml_DETECT=		${XML_CONFIG}
 libxml_USE_GNOME_IMPL=	glib12
 
@@ -83,7 +78,6 @@ ORBIT_CONFIG?=		${LOCALBASE}/bin/orbit-config
 orbit_LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 orbit_CONFIGURE_ENV=	ORBIT_CONFIG="${ORBIT_CONFIG}"
 orbit_MAKE_ENV=		ORBIT_CONFIG="${ORBIT_CONFIG}"
-orbit_PKGNAMESUFFIX=	-orbit
 orbit_DETECT=		${ORBIT_CONFIG}
 orbit_USE_GNOME_IMPL=	glib12
 
@@ -91,7 +85,6 @@ GDK_PIXBUF_CONFIG?=	${X11BASE}/bin/gdk-pixbuf-config
 gdkpixbuf_LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 gdkpixbuf_CONFIGURE_ENV=GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
 gdkpixbuf_MAKE_ENV=	GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
-gdkpixbuf_PKGNAMESUFFIX=-gdkpixbuf
 gdkpixbuf_DETECT=	${GDK_PIXBUF_CONFIG}
 gdkpixbuf_USE_GNOME_IMPL=gtk12
 
@@ -99,7 +92,6 @@ IMLIB_CONFIG?=		${X11BASE}/bin/imlib-config
 imlib_LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 imlib_CONFIGURE_ENV=	IMLIB_CONFIG="${IMLIB_CONFIG}"
 imlib_MAKE_ENV=		IMLIB_CONFIG="${IMLIB_CONFIG}"
-imlib_PKGNAMESUFFIX=	-imlib
 imlib_DETECT=		${IMLIB_CONFIG}
 imlib_USE_GNOME_IMPL=	gtk12
 
@@ -107,12 +99,10 @@ GNOME_CONFIG?=		${X11BASE}/bin/gnome-config
 gnomelibs_LIB_DEPENDS=	gnome.5:${PORTSDIR}/x11/gnomelibs
 gnomelibs_CONFIGURE_ENV=GNOME_CONFIG="${GNOME_CONFIG}"
 gnomelibs_MAKE_ENV=	GNOME_CONFIG="${GNOME_CONFIG}"
-gnomelibs_PKGNAMESUFFIX=-gnomelibs
 gnomelibs_DETECT=	${GNOME_CONFIG}
 gnomelibs_USE_GNOME_IMPL=esound gtk12 imlib libxml orbit
 
 gnomecanvas_LIB_DEPENDS=gnomecanvaspixbuf.1:${PORTSDIR}/graphics/gnomecanvas
-gnomecanvas_PKGNAMESUFFIX=-gnomecanvas
 gnomecanvas_DETECT=	${X11BASE}/etc/gnomecanvaspixbufConf.sh
 gnomecanvas_USE_GNOME_IMPL=gnomelibs gdkpixbuf
 
@@ -120,13 +110,11 @@ OAF_CONFIG?=		${X11BASE}/bin/oaf-config
 oaf_LIB_DEPENDS=	oaf.0:${PORTSDIR}/devel/oaf
 oaf_CONFIGURE_ENV=	OAF_CONFIG="${OAF_CONFIG}"
 oaf_MAKE_ENV=		OAF_CONFIG="${OAF_CONFIG}"
-oaf_PKGNAMESUFFIX=	-oaf
 oaf_DETECT=		${OAF_CONFIG}
 oaf_USE_GNOME_IMPL=	glib12 orbit libxml
 
 gnomemimedata_BUILD_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_RUN_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
-gnomemimedata_PKGNAMESUFFIX=-gnomemimedata
 gnomemimedata_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_USE_GNOME_IMPL=gnomehier
 
@@ -134,7 +122,6 @@ GCONF_CONFIG?=		${X11BASE}/bin/gconf-config
 gconf_LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
 gconf_CONFIGURE_ENV=	GCONF_CONFIG="${GCONF_CONFIG}"
 gconf_MAKE_ENV=		GCONF_CONFIG="${GCONF_CONFIG}"
-gconf_PKGNAMESUFFIX=	-gconf
 gconf_DETECT=		${GCONF_CONFIG}
 gconf_USE_GNOME_IMPL=	oaf
 
@@ -142,22 +129,18 @@ GNOME_VFS_CONFIG?=	${X11BASE}/bin/gnome-vfs-config
 gnomevfs_LIB_DEPENDS=	gnomevfs.0:${PORTSDIR}/devel/gnomevfs
 gnomevfs_CONFIGURE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_MAKE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
-gnomevfs_PKGNAMESUFFIX=	-gnomevfs
 gnomevfs_DETECT=	${GNOME_VFS_CONFIG}
 gnomevfs_USE_GNOME_IMPL=gnomemimedata gconf gnomelibs
 
 libcapplet_LIB_DEPENDS=	capplet.5:${PORTSDIR}/x11/libcapplet
-libcapplet_PKGNAMESUFFIX=-libcapplet
 libcapplet_DETECT=	${X11BASE}/etc/cappletConf.sh
 libcapplet_USE_GNOME_IMPL=gnomelibs
 
 gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
-gnomeprint_PKGNAMESUFFIX=-gnomeprint
 gnomeprint_DETECT=	${X11BASE}/etc/printConf.sh
 gnomeprint_USE_GNOME_IMPL=gnomelibs gnomecanvas
 
 bonobo_LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo
-bonobo_PKGNAMESUFFIX=	-bonobo
 bonobo_DETECT=		${X11BASE}/etc/bonoboConf.sh
 bonobo_USE_GNOME_IMPL=	oaf gnomeprint
 
@@ -165,7 +148,6 @@ GDA_CONFIG?=		${X11BASE}/bin/gda-config
 libgda_LIB_DEPENDS=	gda-client.0:${PORTSDIR}/databases/libgda
 libgda_CONFIGURE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
 libgda_MAKE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
-libgda_PKGNAMESUFFIX=	-libgda
 libgda_DETECT=		${GDA_CONFIG}
 libgda_USE_GNOME_IMPL=	gconf bonobo
 
@@ -173,7 +155,6 @@ GNOMEDB_CONFIG?=	${X11BASE}/bin/gnomedb-config
 gnomedb_LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnomedb
 gnomedb_CONFIGURE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
 gnomedb_MAKE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
-gnomedb_PKGNAMESUFFIX=	-gnomedb
 gnomedb_DETECT=		${GNOMEDB_CONFIG}
 gnomedb_USE_GNOME_IMPL=	libgda
 
@@ -181,29 +162,24 @@ LIBGLADE_CONFIG?=	${X11BASE}/bin/libglade-config
 libglade_LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 libglade_CONFIGURE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
 libglade_MAKE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
-libglade_PKGNAMESUFFIX=	-libglade
 libglade_DETECT=	${LIBGLADE_CONFIG}
 libglade_USE_GNOME_IMPL=gnomedb
 
 gal_LIB_DEPENDS=	gal.19:${PORTSDIR}/x11-toolkits/gal
-gal_PKGNAMESUFFIX=	-gal
 gal_DETECT=		${X11BASE}/etc/galConf.sh
 gal_USE_GNOME_IMPL=	libglade
 
 glibwww_LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww
-glibwww_PKGNAMESUFFIX=	-glibwww
 glibwww_DETECT=		${X11BASE}/etc/glibwwwConf.sh
 glibwww_USE_GNOME_IMPL=	gnomelibs
 
 gtkhtml_LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
-gtkhtml_PKGNAMESUFFIX=	-gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
 gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp libcapplet
 
-gnomecore_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/gnomecore
-gnomecore_PKGNAMESUFFIX=-gnome
-gnomecore_DETECT=	${X11BASE}/etc/appletsConf.sh
-gnomecore_USE_GNOME_IMPL=libcapplet libglade
+libpanel_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/gnomecore
+libpanel_DETECT=	${X11BASE}/etc/appletsConf.sh
+libpanel_USE_GNOME_IMPL=gnomelibs
 
 # This section keeps tests for optional software.  These work off four
 # types of of variables.  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
