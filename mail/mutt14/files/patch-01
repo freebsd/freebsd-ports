@@ -1,17 +1,12 @@
---- Makefile.in.orig	Mon Jan 27 18:15:59 1997
-+++ Makefile.in	Wed Jan 29 07:23:40 1997
-@@ -72,10 +72,13 @@
- 	sendlib.c \
- 	url.c
- 
--all: mutt
-+all: mutt docs
- 
+--- Makefile.in.orig	Fri Nov  7 11:34:03 1997
++++ Makefile.in	Sat Nov  8 13:03:32 1997
+@@ -55,6 +55,9 @@
  mutt: $(OBJS) $(REGEX)
  	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
-+
+ 
 +docs:
 +	cd doc && make fbsd
- 
++
  install: mutt
  	$(srcdir)/mkinstalldirs $(bindir)
+ 	-mv -f $(bindir)/mutt $(bindir)/mutt.old
