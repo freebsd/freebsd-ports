@@ -18,8 +18,6 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 CONFLICTS=	opera-*
 RESTRICTED=	"not redistributable; commercial software"
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
-
 .if defined(WITH_XFT2)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs \
 		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
@@ -27,6 +25,8 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XF
 .else
 USE_LINUX=	yes
 .endif
+
+RUN_DEPENDS+=    ${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
