@@ -1,6 +1,15 @@
 diff -druN svgalib-1.4.2.orig/src/mach32.c src/mach32.c
 --- svgalib-1.4.2.orig/src/mach32.c	Fri Aug 25 04:39:39 2000
 +++ src/mach32.c	Fri Aug 25 04:39:57 2000
+@@ -1544,7 +1544,7 @@
+ 		goto writerr;
+ 	    printf("mach32: Notice: new EEPROM file >%s< succesful created.\n",
+ 		   eeprom_fname);
+-	  finish_w_eeprom:
++	  finish_w_eeprom: ;
+ 	}
+ 	/* Change eeprom contents if requested: */
+ 	if (!(eeprom_option & EEPROM_USE_MEMCFG))
 @@ -2415,7 +2415,7 @@
      return ptr;
  }
