@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/
 
@@ -26,6 +26,8 @@ BIN=		dropbear dropbearkey dropbearconvert
 post-configure:
 	@${REINPLACE_CMD} -e "s,/etc/,${PREFIX}/etc/,g" ${WRKSRC}/options.h
 	@${REINPLACE_CMD} -e "s,/usr/bin/X11/,${X11BASE}/,g" ${WRKSRC}/options.h
+	@${REINPLACE_CMD} -e "s,^typedef int socklen_t,//typedef int socklen_t," \
+		${WRKSRC}/includes.h
 
 do-install:
 .for bin in ${BIN}
