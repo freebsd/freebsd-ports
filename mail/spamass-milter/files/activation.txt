@@ -76,7 +76,7 @@ In order to activate spamass-milter, follow these steps:
 	X-Spam-Flag: YES
 
    If things don't work as expected, promptly restore your sendmail.cf
-   from the backup copy then restart sendmail as shown on step 9; you
+   from the backup copy then restart sendmail as shown on step 8; you
    may lose incoming mail otherwise!
 
 
