@@ -1,7 +1,9 @@
 bin/bygfoot
 share/bygfoot/support_files/bygfoot_icon.png
 share/bygfoot/support_files/bygfoot_team_editor_icon.png
+share/bygfoot/support_files/bygfoot-update-gui
 share/bygfoot/support_files/fin_stad.png
+share/bygfoot/support_files/fire_player.png
 share/bygfoot/support_files/flag_br.png
 share/bygfoot/support_files/flag_de.png
 share/bygfoot/support_files/flag_eng.png
@@ -16,12 +18,14 @@ share/bygfoot/support_files/inc_saf.png
 share/bygfoot/support_files/new_week.png
 share/bygfoot/support_files/pay_loan.png
 share/bygfoot/support_files/preview.png
+share/bygfoot/support_files/text_files/bygfoot.conf
 share/bygfoot/support_files/text_files/country_br
 share/bygfoot/support_files/text_files/country_de
 share/bygfoot/support_files/text_files/country_eng
 share/bygfoot/support_files/text_files/country_es
 share/bygfoot/support_files/text_files/country_fr
 share/bygfoot/support_files/text_files/country_it
+share/bygfoot/support_files/text_files/country_mx
 share/bygfoot/support_files/text_files/country_pl
 share/bygfoot/support_files/text_files/country_ro
 share/bygfoot/support_files/text_files/help
