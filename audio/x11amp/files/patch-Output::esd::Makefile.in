@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Output/esd/Makefile.in	2001/11/26 18:04:01	1.1
++++ Output/esd/Makefile.in	2001/11/26 18:04:15
+@@ -94,7 +94,7 @@
+ 
+ lib_LTLIBRARIES = $(esdltlibs)
+ 
+-CFLAGS = @GTK_CFLAGS@ @ESD_CFLAGS@ -D_REENTRANT -I$(top_srcdir)
++CFLAGS += @GTK_CFLAGS@ @ESD_CFLAGS@ -D_REENTRANT -I$(top_srcdir)
+ libdir = $(plugindir)/$(OUTPUT_PLUGIN_DIR)
+ 
+ libesdout_la_LDFLAGS = $(esdldflags)

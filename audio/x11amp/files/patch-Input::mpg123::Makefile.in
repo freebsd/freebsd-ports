@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Input/mpg123/Makefile.in	2001/11/26 17:58:25	1.1
++++ Input/mpg123/Makefile.in	2001/11/26 17:59:16
+@@ -89,7 +89,7 @@
+ 
+ libdir = $(plugindir)/$(INPUT_PLUGIN_DIR)
+ 
+-COMMON_CFLAGS = -I$(top_builddir) -I$(top_srcdir) -O2 -fomit-frame-pointer -funroll-all-loops 			-finline-functions -ffast-math @GTK_CFLAGS@ -D_REENTRANT
++COMMON_CFLAGS = -I$(top_builddir) -I$(top_srcdir) -fomit-frame-pointer -funroll-all-loops 			-finline-functions -ffast-math @GTK_CFLAGS@ -D_REENTRANT
+ 
+ 
+ COMMON_SRC = mpg123.c configure.c fileinfo.c common.c decode_2to1.c decode_4to1.c decode_ntom.c layer1.c layer2.c layer3.c tabinit.c equalizer.c http.c huffman.h mpg123.h  tables.h dxhead.c dxhead.h
+@@ -105,7 +105,7 @@
+ libmpg123_la_SOURCES = $(COMMON_SRC) $(EXTRA_SRC)
+ libmpg123_la_LDFLAGS = -module -avoid-version
+ 
+-CFLAGS = $(COMMON_CFLAGS) $(EXTRA_CFLAGS)
++CFLAGS += $(COMMON_CFLAGS) $(EXTRA_CFLAGS)
+ LIBS = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Input/cdaudio/Makefile.in	2001/11/26 17:58:25	1.1
++++ Input/cdaudio/Makefile.in	2001/11/26 17:59:28
+@@ -97,7 +97,7 @@
+ libdir = $(plugindir)/$(INPUT_PLUGIN_DIR)
+ 
+ libcdaudio_la_LDFLAGS = $(cdaudioldflags)
+-CFLAGS = -O2 -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
++CFLAGS += -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
+ LIBS = 
+ 
+ libcdaudio_la_SOURCES = $(cdaudiosources)
