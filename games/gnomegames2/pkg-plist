@@ -176,12 +176,6 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/gnotski.6.scores ] || rm -f %D/share/gnome/games/gnotski.6.scores
 @unexec [ -s %D/share/gnome/games/gnotski.7.scores ] || rm -f %D/share/gnome/games/gnotski.7.scores
 @unexec [ -s %D/share/gnome/games/gtali.scores ] || rm -f %D/share/gnome/games/gtali.scores
-@unexec [ -s %D/share/gnome/games/iagno.b1.scores ] || rm -f %D/share/gnome/games/iagno.b1.scores
-@unexec [ -s %D/share/gnome/games/iagno.b2.scores ] || rm -f %D/share/gnome/games/iagno.b2.scores
-@unexec [ -s %D/share/gnome/games/iagno.b3.scores ] || rm -f %D/share/gnome/games/iagno.b3.scores
-@unexec [ -s %D/share/gnome/games/iagno.w1.scores ] || rm -f %D/share/gnome/games/iagno.w1.scores
-@unexec [ -s %D/share/gnome/games/iagno.w2.scores ] || rm -f %D/share/gnome/games/iagno.w2.scores
-@unexec [ -s %D/share/gnome/games/iagno.w3.scores ] || rm -f %D/share/gnome/games/iagno.w3.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.bridges.scores ] || rm -f %D/share/gnome/games/mahjongg.bridges.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.cloud.scores ] || rm -f %D/share/gnome/games/mahjongg.cloud.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.confounding.scores ] || rm -f %D/share/gnome/games/mahjongg.confounding.scores
@@ -587,8 +581,8 @@ share/gnome/pixmaps/iagno/shrink.png
 share/gnome/pixmaps/iagno/sunmoon.png
 share/gnome/pixmaps/iagno/woodtrim.png
 share/gnome/pixmaps/mahjongg/default.png
-share/gnome/pixmaps/mahjongg/postmodern.svg
 share/gnome/pixmaps/mahjongg/maya.png
+share/gnome/pixmaps/mahjongg/postmodern.svg
 share/gnome/pixmaps/mahjongg/smooth.png
 share/gnome/pixmaps/same-gnome/blink-sync.png
 share/gnome/pixmaps/same-gnome/glass.png
@@ -596,7 +590,6 @@ share/gnome/pixmaps/same-gnome/marbles.png
 share/gnome/pixmaps/same-gnome/planets.png
 share/gnome/pixmaps/same-gnome/rotate.png
 share/gnome/pixmaps/same-gnome/stones.png
-share/gnome/sol-games/glade/statistics.glade
 share/gnome/sol-games/agnes.scm
 share/gnome/sol-games/auld_lang_syne.scm
 share/gnome/sol-games/bakers_dozen.scm
@@ -621,6 +614,7 @@ share/gnome/sol-games/fortunes.scm
 share/gnome/sol-games/fourteen.scm
 share/gnome/sol-games/freecell.scm
 share/gnome/sol-games/gay_gordons.scm
+share/gnome/sol-games/glade/statistics.glade
 share/gnome/sol-games/glenwood.scm
 share/gnome/sol-games/golf.scm
 share/gnome/sol-games/gypsy.scm
@@ -715,6 +709,7 @@ share/locale/fi/LC_MESSAGES/gnome-games.mo
 share/locale/fr/LC_MESSAGES/gnome-games.mo
 share/locale/ga/LC_MESSAGES/gnome-games.mo
 share/locale/gl/LC_MESSAGES/gnome-games.mo
+share/locale/gu/LC_MESSAGES/gnome-games.mo
 share/locale/he/LC_MESSAGES/gnome-games.mo
 share/locale/hi/LC_MESSAGES/gnome-games.mo
 share/locale/hr/LC_MESSAGES/gnome-games.mo
@@ -840,14 +835,14 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtali
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnotravex
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones/preferences
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2/preferences
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/3
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/1
