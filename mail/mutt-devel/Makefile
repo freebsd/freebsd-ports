@@ -19,9 +19,10 @@
 #
 # The two most important knobs are:
 #
-# In general you can choose between using the SLANG port (which is really
-# recommended and is now the default) and ncurses (WITH_MUTT_NCURSES). If you
-# don't want to use SLANG define WITHOUT_MUTT_SLANG.
+# In general you can choose between using the SLANG port (WITH_MUTT_SLANG)
+# and ncurses (WITH_MUTT_NCURSES) which is the default. Note that you may
+# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your 
+# environment to get slang function properly.
 #
 # If you want to install the mutt documentation in html format define:
 #  WITH_MUTT_HTML
@@ -51,7 +52,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.99
-#PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -103,24 +104,24 @@ PATCH_VERSION=	${PORTVERSION}
 
 .if defined(PACKAGE_BUILDING)
 WITH_MUTT_SSL=		yes
-WITH_MUTT_SLANG=	yes
+WITH_MUTT_NCURSES=	yes
 WITH_MUTT_HTML=		yes
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
 
-.if defined(WITH_MUTT_SLANG)
-USE_SLANG=	yes
-.endif
 .if defined(WITH_MUTT_NCURSES_PORT)
 WITH_MUTT_NCURSES=	yes
 .endif
-.if defined(WITH_MUTT_NCURSES) && !defined(USE_SLANG)
+.if defined(WITH_MUTT_NCURSES)
 USE_NCURSES=	yes
 .endif
-.if !defined(USE_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(USE_NCURSES)
+.if defined(WITH_MUTT_SLANG) && !defined(USE_NCURSES)
 USE_SLANG=	yes
+.endif
+.if !defined(USE_NCURSES) && !defined(WITHOUT_MUTT_NCURSES) && !defined(USE_SLANG)
+USE_NCURSES=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	no
@@ -134,11 +135,11 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 .if defined(NOPORTDOCS)
 SGML_USED=	no
 .endif
-.if defined(USE_SLANG)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.elif defined(USE_NCURSES) && ${OSVERSION} < 400000
+.if defined(USE_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
+.elif defined(USE_SLANG)
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 .if defined(WITH_MUTT_SSL)
 USE_OPENSSL=	yes
@@ -157,10 +158,10 @@ pre-configure::
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(USE_SLANG)
-CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.elif defined(USE_NCURSES) && ${OSVERSION} < 400000
+.if defined(USE_NCURSES) && ${OSVERSION} < 400000
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
+.elif defined(USE_SLANG)
+CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .endif
 .if defined(WITH_MUTT_SSL)
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
