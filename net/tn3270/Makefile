@@ -19,6 +19,17 @@ MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5
 MANCOMPRESSED=	maybe
 
+LIBTELNETDIR?=	/usr/src/lib/libtelnet
+
+post-extract:
+	@if [ ! -d ${LIBTELNETDIR} ]; then \
+		${ECHO} "You need libtelnet sources in"; \
+		${ECHO} "${LIBTELNETDIR}"; \
+		${ECHO} "to build this port."; \
+	exit 1; \
+	fi
+	${CP} -rp ${LIBTELNETDIR} ${WRKSRC}
+
 do-configure:
 	${ECHO} "BINDIR=	${PREFIX}/bin" > ${WRKDIR}/Makefile.inc
 	${ECHO} "MANDIR=	${PREFIX}/man/man" >> ${WRKDIR}/Makefile.inc

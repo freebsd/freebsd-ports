@@ -1,7 +1,15 @@
---- tn3270/Makefile.ORIG	Mon Aug 30 20:49:39 1999
-+++ tn3270/Makefile	Mon Aug 30 21:08:05 1999
-@@ -6,7 +6,7 @@
- LDADD=	-lcurses -ltermcap -ltelnet -lcrypt
+--- tn3270/Makefile	Mon Aug 30 22:22:49 1999
++++ tn3270/Makefile	Tue Mar 27 12:49:06 2001
+@@ -1,12 +1,14 @@
+ #	@(#)Makefile	8.1 (Berkeley) 6/6/93
+ 
++LIBTELNET=${.CURDIR}/../libtelnet/libtelnet.a
++
+ PROG=	tn3270
+ CFLAGS+=-I${.CURDIR} -I.
+ DPADD=	${LIBCURSES} ${LIBTERMCAP} ${LIBTELNET} ${LIBCRYPT}
+-LDADD=	-lcurses -ltermcap -ltelnet -lcrypt
++LDADD=	-lcurses -ltermcap ${LIBTELNET} -lcrypt
  CLEANFILES+= asc_disp.OUT asc_disp.out disp_asc.OUT disp_asc.out TMPfunc.out
  .PATH:	${.CURDIR}/../api ${.CURDIR}/../ascii ${.CURDIR}/../ctlr
 -.PATH:	${.CURDIR}/../general ${.CURDIR}/../sys_curses ${.CURDIR}/../../telnet

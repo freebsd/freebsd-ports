@@ -1,0 +1,10 @@
+--- Makefile	Sun Sep 13 16:20:23 1998
++++ Makefile	Tue Mar 27 12:51:31 2001
+@@ -10,6 +10,7 @@
+ #
+ # XXX this doesn't fix the problem for `make depend' either.
+ SUBDIR=	tools
++SUBDIR+=libtelnet
+ .endif
+ 
+ SUBDIR+=tn3270 mset
