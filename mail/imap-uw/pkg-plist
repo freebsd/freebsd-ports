@@ -1,10 +1,4 @@
 bin/mboxtest
-include/mail.h
-include/rfc822.h
-include/linkage.h
-lib/lib%%SHLIBBASE%%.a
-lib/%%SHLIBNAME%%
-lib/lib%%SHLIBBASE%%.so
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
