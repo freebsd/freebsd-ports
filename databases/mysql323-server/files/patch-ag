@@ -1,6 +1,6 @@
---- configure.orig	Thu Mar 13 19:32:30 2003
-+++ configure	Fri May 23 00:00:20 2003
-@@ -8059,6 +8059,7 @@
+--- configure.orig	Fri Jun  6 10:39:41 2003
++++ configure	Fri Aug 29 13:26:35 2003
+@@ -8070,6 +8070,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8988,7 +8989,7 @@
+@@ -8999,7 +9000,7 @@
    ;;
  esac
  fi
@@ -17,7 +17,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9177,43 +9178,7 @@
+@@ -9188,43 +9189,7 @@
  echo "${ECHO_T}no" >&6
  fi
  
@@ -62,7 +62,7 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -12498,8 +12463,16 @@
+@@ -12509,8 +12474,16 @@
      ;;
    *freebsd*)
      echo "Adding fix for interrupted reads"
@@ -81,7 +81,7 @@
      ;;
    *netbsd*)
      echo "Adding flag -Dunix"
-@@ -13208,7 +13181,6 @@
+@@ -13215,7 +13188,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -89,7 +89,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -13262,7 +13234,6 @@
+@@ -13269,7 +13241,6 @@
  #define HAVE_LIBC_R 1
  _ACEOF
  
@@ -97,7 +97,7 @@
  
  fi
  
-@@ -13706,29 +13677,6 @@
+@@ -13713,29 +13684,6 @@
  fi
  
  
@@ -127,7 +127,7 @@
  
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
-@@ -16081,10 +16029,6 @@
+@@ -16088,10 +16036,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -138,7 +138,16 @@
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
-@@ -19222,14 +19166,6 @@
+@@ -16942,7 +16886,7 @@
+   FILE *file=fopen("conftestval", "w");
+   f = (float) ll;
+   fprintf(file,"%g\n",f);
+-  close(file);
++  fclose(file);
+   exit (0);
+ }
+ _ACEOF
+@@ -19229,14 +19173,6 @@
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
@@ -153,7 +162,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -19313,10 +19249,6 @@
+@@ -19320,10 +19256,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -164,7 +173,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -19399,10 +19331,6 @@
+@@ -19406,10 +19338,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
