@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	zangband
-PORTVERSION=	2.4.0${JP_VERSION}
+PORTVERSION=	2.4.0${JA_VERSION}
 PORTREVISION=	1
 CATEGORIES+=	games
 MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Variant/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ \
-		http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/
-DISTFILES=	zangband-${E_VERSION:S/.//g}-src.zip
-.if defined(JAPANESE)
-DISTFILES+=	zj${E_VERSION:S/.//g}ux-${PATCH_VERSION}.tgz
-.endif
-DIST_SUBDIR=	zangband
-EXTRACT_ONLY=	zangband-${E_VERSION:S/.//g}-src.zip
+		${JA_MASTER_SITE}
+DISTFILES=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip \
+		${JA_DISTFILE}
+DIST_SUBDIR= 	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip
 
 MAINTAINER=	makoto@pinpott.spnet.ne.jp
 
@@ -40,27 +38,24 @@ BINGRP=		games
 BINMODE=	2755
 
 MAKE_ARGS+=	ANGBANDLIB=${PREFIX}/${ANGBANDLIB}
-.if !defined(JAPANESE)
-ANGBANDLIB?=	lib/zangband
-ANGBANDBIN?=	bin/zangband
-.else
-ANGBANDLIB?=	lib/jzangband
-ANGBANDBIN?=	bin/jzangband
-.endif
+ANGBANDLIB?=	lib/${PORTNAME}
+ANGBANDBIN?=	bin/${PORTNAME}
 
-E_VERSION=	${PORTVERSION:S/${JP_VERSION}//}
+E_VERSION=     ${PORTVERSION:S/${JA_VERSION}//}
+
 .if defined(JAPANESE)
-PATCH_VERSION?=	000901
-JP_VERSION=	.j${PATCH_VERSION}
-PLIST_ADD=	${PKGDIR}/PLIST.ja
-MAKE_ARGS+=	JAPANESE_CFLAGS="-DJP -DEUC"
+PATCH_VERSION?=	000922
+JA_VERSION=	.j${PATCH_VERSION}
+JA_DISTFILE=	zj${E_VERSION:S/.//g}ux-${PATCH_VERSION}.tgz
 .endif
 
+.if defined(JAPANESE)
 pre-patch:
-.if defined(JAPANESE)
 	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/zj${E_VERSION:S/.//g}ux-${PATCH_VERSION}.tgz)
 	(cd ${WRKSRC}/src ; ${PATCH} -p1 -l -s < ../zj${E_VERSION:S/.//g}.patch ; ${PATCH} -p1 -l -s < ${FILESDIR}/makefile-adjust.patch)
 .endif
+
+pre-build:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	${CP} ${WRKSRC}/src/makefile.std ${WRKSRC}/src/Makefile
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;s|%%ANGBANDBIN%%|${ANGBANDBIN}|g;s|%%ANGBANDLIB%%|${ANGBANDLIB}|g" ${FILESDIR}/MESSAGE.in > ${PKGMESSAGE}
@@ -89,8 +84,8 @@ do-install:
 
 post-build:
 	@${RM} -f ${PLIST}
-.for i in ${PKGDIR}/PLIST.a ${PLIST_ADD} ${PKGDIR}/PLIST.b
-	@${CAT} ${i} >> ${PLIST}
+.for i in PLIST.a ${JA_PLIST} PLIST.b
+	@${CAT} ${PKGDIR}/${i} >> ${PLIST}
 .endfor
 
 .include <bsd.port.mk>
