@@ -67,6 +67,7 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += coverhunter
+    SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += crip
     SUBDIR += csound
