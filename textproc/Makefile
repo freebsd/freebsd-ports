@@ -168,6 +168,7 @@
     SUBDIR += nicetext
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
+    SUBDIR += nltk
     SUBDIR += no-aspell
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxpo
