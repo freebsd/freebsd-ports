@@ -18,7 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 LIB_DEPENDS=	tds.0:${.CURDIR}/../freetds
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR}
 
-BROKEN=		"This module does not work with Ruby/DBI 0.0.5 yet"
+BROKEN=		"This module is currently outdated and will not work with DBI versions > 0.0.4"
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
