@@ -1,0 +1,130 @@
+--- Makefile.in	Mon Apr 29 05:14:11 2002
++++ Makefile.in	Fri May  3 14:48:08 2002
+@@ -11,7 +11,7 @@
+ CFLAGS=@CFLAGS@ -I.
+ 
+-OBJS= ccache.o mdfour.o hash.o execute.o util.o args.o stats.o \
++OBJS= ccache.o hash.o execute.o util.o args.o stats.o \
+ 	cleanup.o snprintf.o unify.o
+-HEADERS = ccache.h mdfour.h
++HEADERS = ccache.h
+ 
+ all: ccache
+@@ -20,5 +20,5 @@
+ 
+ ccache: $(OBJS) $(HEADERS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS)
++	$(CC) $(CFLAGS) -o $@ $(OBJS) -lmd
+ 
+ ccache.1: ccache.yo
+--- ccache.h	Mon Apr 29 05:14:12 2002
++++ ccache.h	Fri May  3 14:47:05 2002
+@@ -57,5 +57,5 @@
+ typedef unsigned uint32;
+ 
+-#include "mdfour.h"
++#include <md4.h>
+ 
+ void hash_start(void);
+@@ -64,5 +64,5 @@
+ void hash_file(const char *fname);
+ char *hash_result(void);
+-void hash_buffer(const char *s, int len);
++void hash_buffer(const unsigned char *s, unsigned int len);
+ 
+ void cc_log(const char *format, ...);
+--- hash.c	Mon Apr 29 05:14:12 2002
++++ hash.c	Fri May  3 15:18:08 2002
+@@ -21,15 +21,20 @@
+ 
+ #include "ccache.h"
++#include <sys/types.h>
++#include <sys/mman.h>
++#include <sys/stat.h>
+ 
+-static struct mdfour md;
++static MD4_CTX md;
++static off_t	totalN;
+ 
+-void hash_buffer(const char *s, int len)
++void hash_buffer(const unsigned char *s, unsigned int len)
+ {
+-	mdfour_update(&md, (unsigned char *)s, len);
++	totalN += len;
++	MD4Update(&md, s, len);
+ }
+ 
+ void hash_start(void)
+ {
+-	mdfour_begin(&md);
++	MD4Init(&md);
+ }
+ 
+@@ -47,16 +52,27 @@
+ void hash_file(const char *fname)
+ {
+-	char buf[1024];
+-	int fd, n;
++	char *buf;
++	int fd;
++	struct stat stats;
+ 
+ 	fd = open(fname, O_RDONLY);
+ 	if (fd == -1) {
+ 		cc_log("Failed to open %s\n", fname);
+-		fatal("hash_file");
++		fatal(__FUNCTION__);
+ 	}
+-
+-	while ((n = read(fd, buf, sizeof(buf))) > 0) {
+-		hash_buffer(buf, n);
++	if (fstat(fd, &stats) != 0) {
++		cc_log("Failed to fstat the opened %s (descriptor %d)\n",
++			fname, fd);
++		close(fd);
++		fatal(__FUNCTION__);
++	}
++	buf = mmap(NULL, stats.st_size, PROT_READ, MAP_PRIVATE, fd, 0); 
++	if (buf == MAP_FAILED) {
++		cc_log("Failed to mmap %s\n", fname);
++		close(fd);
++		fatal(__FUNCTION__);
+ 	}
++
++	hash_buffer(buf, stats.st_size);
+ 	close(fd);
+ }
+@@ -65,15 +81,9 @@
+ char *hash_result(void)
+ {
+-	unsigned char sum[16];
+ 	static char ret[53];
+-	int i;
+ 
+-	hash_buffer(NULL, 0);
+-	mdfour_result(&md, sum);
++	MD4End(&md, ret);
+ 	
+-	for (i=0;i<16;i++) {
+-		sprintf(&ret[i*2], "%02x", (unsigned)sum[i]);
+-	}
+-	sprintf(&ret[i*2], "-%u", (unsigned)md.totalN);
++	snprintf(ret + 32, sizeof ret - 32, "-%lu", (unsigned long)totalN);
+ 
+ 	return ret;
+--- unify.c	Sun Mar 31 23:00:31 2002
++++ unify.c	Fri May  3 15:53:13 2002
+@@ -105,11 +105,10 @@
+ 			len = 0;
+ 		}
+-		hash_buffer(NULL, 0);
+ 		return;
+ 	}
+ 
+ 	buf[len++] = c;
+-	if (len == 64) {
+-		hash_buffer((char *)buf, len);
++	if (len == sizeof buf) {
++		hash_buffer((char *)buf, sizeof buf);
+ 		len = 0;
+ 	}
