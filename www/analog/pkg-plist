@@ -390,5 +390,5 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/css/jreeves
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/css
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm share/doc/analog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true
