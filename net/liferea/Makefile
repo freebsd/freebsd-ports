@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.4.7d
+PORTVERSION=	0.4.8
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -41,5 +41,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,gtkmozembed,donttrythis,g' \
 		${WRKSRC}/configure
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
