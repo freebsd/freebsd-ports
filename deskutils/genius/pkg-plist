@@ -15,12 +15,9 @@ include/genius/plug_api.h
 include/genius/structs.h
 include/genius/utype.h
 lib/genius/libtestplugin.a
-lib/genius/libtestplugin.la
 lib/genius/libtestplugin.so
 lib/genius/libtestplugin.so.0
 libexec/genius-readline-helper-fifo
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/applications/gnome-genius.desktop
 share/gnome/genius/gel/calculus/differentiation.gel
 share/gnome/genius/gel/calculus/integration.gel
@@ -60,14 +57,14 @@ share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 @dirrm share/gnome/genius/plugins
-@dirrm share/gnome/genius/gel/calculus
-@dirrm share/gnome/genius/gel/combinatorics
-@dirrm share/gnome/genius/gel/equation_solving
-@dirrm share/gnome/genius/gel/functions
-@dirrm share/gnome/genius/gel/linear_algebra
-@dirrm share/gnome/genius/gel/misc
-@dirrm share/gnome/genius/gel/number_theory
 @dirrm share/gnome/genius/gel/statistics
+@dirrm share/gnome/genius/gel/number_theory
+@dirrm share/gnome/genius/gel/misc
+@dirrm share/gnome/genius/gel/linear_algebra
+@dirrm share/gnome/genius/gel/functions
+@dirrm share/gnome/genius/gel/equation_solving
+@dirrm share/gnome/genius/gel/combinatorics
+@dirrm share/gnome/genius/gel/calculus
 @dirrm share/gnome/genius/gel
 @dirrm share/gnome/genius
 @dirrm lib/genius
