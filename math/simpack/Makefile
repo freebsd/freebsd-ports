@@ -13,7 +13,7 @@ DISTFILES=	SimPack3.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+USE_XLIB=	yes
 
 WRKSRC=	${WRKDIR}/simpack
 
