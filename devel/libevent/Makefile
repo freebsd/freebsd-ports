@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	0.7.c
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c$/c/}
@@ -18,15 +18,22 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 MAN3=	event.3
-MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_set.3 \
-	event.3 event_add.3 event.3 event_del.3 event.3 event_pending.3 \
-	event.3 event_loop.3 event.3 event_initalized.3 \
-	event.3 evtimer_set.3 event.3 evtimer_add.3 event.3 evtimer_del.3 \
-	event.3 evtimer_pending.3 event.3 evtimer_initialized.3 \
+MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_loop.3 \
+	event.3 event_loopexit.3 event.3 event_set.3 event.3 event_add.3 \
+	event.3 event_del.3 event.3 event_once.3 event.3 event_pending.3 \
+	event.3 event_initialized.3 event.3 evtimer_set.3 event.3 evtimer_add.3 \
+	event.3 evtimer_del.3 event.3 evtimer_pending.3 event.3 evtimer_initialized.3 \
 	event.3 signal_set.3 event.3 signal_add.3 event.3 signal_del.3 \
-	event.3 signal_pending.3 event.3 signal_initialized.3
+	event.3 signal_pending.3 event.3 bufferevent_new.3 event.3 bufferevent_free.3 \
+	event.3 bufferevent_write.3 event.3 bufferevent_write_buffer.3 \
+	event.3 bufferevent_read.3 event.3 bufferevent_enable.3 \
+	event.3 bufferevent_disable.3 event.3 bufferevent_settimeout.3 \
+	event.3 evbuffer_new.3 event.3 evbuffer_free.3 event.3 evbuffer_add.3 \
+	event.3 evbuffer_add_buffer.3 event.3 evbuffer_add_printf.3 \
+	event.3 evbuffer_drain.3 event.3 evbuffer_write.3 event.3 evbuffer_read.3 \
+	event.3 evbuffer_find.3
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \
 		${WRKSRC}/Makefile.in
 
