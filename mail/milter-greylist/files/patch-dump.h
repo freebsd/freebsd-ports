@@ -1,5 +1,5 @@
---- dump.h.orig	Thu May  6 15:54:01 2004
-+++ dump.h	Tue May 25 22:48:33 2004
+--- dump.h.orig	Tue May 25 11:39:49 2004
++++ dump.h	Tue Jun  8 10:24:13 2004
 @@ -46,7 +46,7 @@
  #include <arpa/inet.h>
  
@@ -8,4 +8,4 @@
 +#define DUMPFILE "/var/db/milter-greylist/greylist.db"
  #endif
  
- #define DATELEN 40
+ #ifndef DUMPFREQ

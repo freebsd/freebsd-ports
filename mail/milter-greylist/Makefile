@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3.8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 EXTRACT_SUFX=	.tgz
