@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.3 1998/03/05 03:29:58 obrien Exp $
+# $Id: Makefile,v 1.4 1998/03/06 05:54:19 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.0
@@ -28,7 +28,7 @@ pre-fetch:
 
 pre-install:
 	@${SED} -e 's:%GNUHOST%:${GNUHOST}:' ${PKGDIR}/PLIST \
-		> ${PLIST
+		> ${PLIST}
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
