@@ -9,7 +9,7 @@ PORTNAME=	pppoa
 PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://prdownloads.sourceforge.net/speedtouch/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xsproject.org/speedtouch/files/ \
 		http://www.alcatel.com/consumer/dsl/ \
     		http://benoit.papillault.free.fr/speedtouch/
