@@ -7,10 +7,10 @@
 
 PORTNAME=	gtk20-apireference
 PORTVERSION=	20021211
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://developer.gnome.org/doc/API/
-DISTFILES=	glib-2.0-docs.tar.gz gtk-2.0-docs.tar.gz gdk-2.0-docs.tar.gz
+DISTFILES=	${MODULES:C/$/-2.0-docs${EXTRACT_SUFX}/}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	API reference for the Gimp Toolkit v2.0 for X11 GUI
@@ -18,29 +18,36 @@ COMMENT=	API reference for the Gimp Toolkit v2.0 for X11 GUI
 NO_BUILD=	yes
 NO_CHECKSUM=	yes		# they're rebuild too often to keep track of
 PLIST=		${WRKDIR}/plist
-PREFIX=		${X11BASE}
+PREFIX=		${X11BASE}	# do not use USE_X_PREFIX, does not depend on X
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""		# do not save backups
+
+MODULES=	glib gobject gdk gdk-pixbuf gtk
 
 post-extract:
-	@${ECHO_MSG} "===> Creating pkg-plist."
-	@cd ${WRKDIR}; \
-	${RM} -f ${PLIST}; \
-	${RM} -f ${PLIST}.tmp; \
-	for dir in gdk glib gtk; do \
-	    ${MV} $${dir}/$${dir}.devhelp $${dir}/$${dir}20.devhelp; \
-	    ${FIND} $${dir} -type f >> ${PLIST}.tmp ; \
-	    ${ECHO} "@dirrm share/doc/$${dir}20" >> ${PLIST}.tmp; \
-	done; \
-	${SED}	-e 's/^gdk/share\/doc\/gdk20/' \
-		-e 's/^gtk/share\/doc\/gtk20/' \
-		-e 's/^glib/share\/doc\/glib20/' < ${PLIST}.tmp > ${PLIST}; \
-	${RM} ${PLIST}.tmp
+	@${ECHO_MSG} "===>  Creating pkg-plist"
+	@${RM} -f ${PLIST}
+.for dir in ${MODULES}
+	@${MV} ${WRKDIR}/${dir}/${dir}.devhelp ${WRKDIR}/${dir}/${dir}20.devhelp
+	@cd ${WRKDIR}; ${FIND} ${dir} -type f >> ${PLIST}
+	@${ECHO} "@dirrm share/doc/${dir}20" >> ${PLIST}
+	@${REINPLACE_CMD} -e 's|^${dir}|share/doc/${dir}20|' ${PLIST}
+.endfor
+
+post-patch:
+.for dir in ${MODULES}
+	@${FIND} ${WRKDIR}/${dir} -name '*.html' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|href="\.\./glib/|href="\.\./glib20/|g ; \
+		 s|href="\.\./gobject/|href="\.\./gobject20/|g ; \
+		 s|href="\.\./gdk/|href="\.\./gdk20/|g ; \
+		 s|href="\.\./gdk-pixbuf/|href="\.\./gdk-pixbuf20/|g ; \
+		 s|href="\.\./gtk/|href="\.\./gtk20/|g'
+.endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/doc/gdk20
-	@${MKDIR} ${PREFIX}/share/doc/gtk20
-	@${MKDIR} ${PREFIX}/share/doc/glib20
-	${CP} -R ${WRKDIR}/gdk/* ${PREFIX}/share/doc/gdk20
-	${CP} -R ${WRKDIR}/glib/* ${PREFIX}/share/doc/glib20
-	${CP} -R ${WRKDIR}/gtk/* ${PREFIX}/share/doc/gtk20
+.for dir in ${MODULES}
+	${MKDIR} ${PREFIX}/share/doc/${dir}20
+	${CP} -R ${WRKDIR}/${dir}/* ${PREFIX}/share/doc/${dir}20
+.endfor
 
 .include <bsd.port.mk>
