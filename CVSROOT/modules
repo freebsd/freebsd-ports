@@ -6917,6 +6917,7 @@ wminet		ports/sysutils/wminet
 wmitime		ports/x11-clocks/wmitime
 wmix		ports/audio/wmix
 wml		ports/www/wml
+wmlj		ports/net/wmlj
 wmlmmon		ports/sysutils/wmlmmon
 wmlpq		ports/print/wmlpq
 wmmail		ports/mail/wmmail
