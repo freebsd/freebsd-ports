@@ -1,0 +1,12 @@
+--- lib/AmphetaDesk/Settings.pm.DIST	Mon Oct 28 12:40:41 2002
++++ lib/AmphetaDesk/Settings.pm	Thu Apr  8 23:29:33 2004
+@@ -105,7 +105,8 @@
+    $SETTINGS{app_contact}                     = "Morbus Iff";
+    $SETTINGS{app_email}                       = "morbus\@disobey.com";
+    $SETTINGS{app_os}                          = $^O;
+-   $SETTINGS{dir_data}                        = catdir($Bin, "data");
++   my $envtmp = $ENV{AM_DIR};
++   $SETTINGS{dir_data}                        = catdir($envtmp, "data");
+    $SETTINGS{dir_docs}                        = catdir($Bin, "docs");
+    $SETTINGS{dir_templates}                   = catdir($Bin, "templates", "default");
+    $SETTINGS{dir_gui}                         = catdir($SETTINGS{dir_templates}, "gui");

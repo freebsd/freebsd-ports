@@ -11,6 +11,7 @@
     SUBDIR += adzap
     SUBDIR += adzap2squirm
     SUBDIR += amaya
+    SUBDIR += amphetadesk
     SUBDIR += amyc
     SUBDIR += analog
     SUBDIR += aolserver

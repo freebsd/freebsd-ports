@@ -1,0 +1,34 @@
+#! /bin/sh
+
+if [ `id -un` = root ]; then
+    echo Running AmphetaDesk as root is not recommended.
+    echo Aborting.
+    exit 1
+fi
+
+export AM_DIR=$HOME/.AmphetaDesk
+
+if [ ! -d $AM_DIR ]; then
+    if [ -e $AM_DIR ]; then
+	echo Cannot make $AM_DIR directory for something is in the way.
+	echo Aborting.
+	exit 1
+    else
+	mkdir $AM_DIR
+	if [ ! -d $AM_DIR ]; then
+	    echo Cannot make $AM_DIR directory.
+	    echo Aborting.
+	    exit 1
+	fi
+    fi
+fi
+
+echo Diagnostic output goes to $AM_DIR/AmphetaDesk.log
+
+cd %%ADESK%%
+
+if [ ! -f ${AM_DIR}/data/lists/services-channels-recent.xml ] ; then
+    find data -depth -print | cpio -pdum ${AM_DIR}
+fi
+
+exec ./AmphetaDesk.pl
