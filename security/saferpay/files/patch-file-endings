@@ -1,0 +1,222 @@
+--- saferpay/xml/xmlElement.h.orig	Mon Sep  9 21:59:36 2002
++++ saferpay/xml/xmlElement.h	Mon Sep  9 22:00:04 2002
+@@ -117,4 +117,5 @@
+ bool xmlSetAttributeEx(xmlElement * pElement, const SxString & strId, const SxString & strValue);
+ 
+ 
+-#endif
++#endif
++
+--- saferpay/xml/xmlParser.h.orig	Mon Sep  9 21:59:41 2002
++++ saferpay/xml/xmlParser.h	Mon Sep  9 22:00:11 2002
+@@ -18,4 +18,5 @@
+ 	void createElement(const SxString & tag, xmlElement ** ppElement);
+ };
+ 
+-#endif
++#endif
++
+--- saferpay/xml/xmlerror.h.orig	Mon Sep  9 21:59:46 2002
++++ saferpay/xml/xmlerror.h	Mon Sep  9 22:00:18 2002
+@@ -5,3 +5,4 @@
+ #define XMLE_FILE_INCOMPLETE		2
+ #define XMLE_INVALID_STRUCTURE		3
+ #define XMLE_TAG_NOT_FOUND			4
++
+--- saferpay/xml/xmlElementEnum.h.orig	Mon Sep  9 21:59:51 2002
++++ saferpay/xml/xmlElementEnum.h	Mon Sep  9 22:00:08 2002
+@@ -85,3 +85,4 @@
+ 
+ 
+ #endif
++
+--- saferpay/xml/xmlcore.h.orig	Mon Sep  9 21:59:55 2002
++++ saferpay/xml/xmlcore.h	Mon Sep  9 22:00:14 2002
+@@ -25,3 +25,4 @@
+ 
+ 
+ #endif // __XMLCORE_H__
++
+--- saferpay/sxfc/sxfctype.h.orig	Mon Sep  9 22:05:18 2002
++++ saferpay/sxfc/sxfctype.h	Mon Sep  9 22:06:10 2002
+@@ -11,3 +11,4 @@
+ typedef unsigned int SX_SIZE_T;
+ 
+ #endif // __SXFCTYPE_H__
++
+--- saferpay/sxfc/sxexcept.h.orig	Mon Sep  9 22:05:14 2002
++++ saferpay/sxfc/sxexcept.h	Mon Sep  9 22:06:04 2002
+@@ -46,4 +46,5 @@
+ };
+ 
+ 
+-#endif // __SXFCEXCEPT_H__
++#endif // __SXFCEXCEPT_H__
++
+--- saferpay/sxfc/sxfcerr.h.orig	Mon Sep  9 22:04:40 2002
++++ saferpay/sxfc/sxfcerr.h	Mon Sep  9 22:06:07 2002
+@@ -6,3 +6,4 @@
+ 
+ #define E_SXFC_OUT_OF_MEMORY		0x80040217L
+ #define E_SXFC_PARAMETER			0x80040218L
++
+--- saferpay/sxfc/sxfctype.h.orig	Mon Sep  9 22:05:18 2002
++++ saferpay/sxfc/sxfctype.h	Mon Sep  9 22:06:10 2002
+@@ -11,3 +11,4 @@
+ typedef unsigned int SX_SIZE_T;
+ 
+ #endif // __SXFCTYPE_H__
++
+--- saferpay/sxfc/sxlist.h.orig	Mon Sep  9 22:05:22 2002
++++ saferpay/sxfc/sxlist.h	Mon Sep  9 22:06:15 2002
+@@ -35,4 +35,5 @@
+ 	SxObject *m_pObj;
+ };
+ 
+-#endif // __SXLIST_H__
++#endif // __SXLIST_H__
++
+--- saferpay/sxfc/sxpair.h.orig	Mon Sep  9 22:04:53 2002
++++ saferpay/sxfc/sxpair.h	Mon Sep  9 22:06:24 2002
+@@ -166,4 +166,5 @@
+ 	SxPtr m_pObj;
+ };
+ 
+-#endif // __SXPAIR_H__
++#endif // __SXPAIR_H__
++
+--- saferpay/sxfc/sxsort.h.orig	Mon Sep  9 22:04:58 2002
++++ saferpay/sxfc/sxsort.h	Mon Sep  9 22:06:31 2002
+@@ -27,4 +27,5 @@
+ };
+ 
+ 
+-#endif // __SXSORT_H__
++#endif // __SXSORT_H__
++
+--- saferpay/sxfc/sxstack.h.orig	Mon Sep  9 22:05:34 2002
++++ saferpay/sxfc/sxstack.h	Mon Sep  9 22:06:34 2002
+@@ -55,4 +55,5 @@
+ };
+ 
+ 
+-#endif // __SXSTACK_H__
++#endif // __SXSTACK_H__
++
+--- saferpay/sxfc/sxstream.h.orig	Mon Sep  9 22:05:03 2002
++++ saferpay/sxfc/sxstream.h	Mon Sep  9 22:06:37 2002
+@@ -103,4 +103,5 @@
+ 	bool m_bad;
+ };
+ 
+-#endif // __SXSTREAM_H__
++#endif // __SXSTREAM_H__
++
+--- saferpay/sxfc/sxstring.h.orig	Mon Sep  9 22:05:38 2002
++++ saferpay/sxfc/sxstring.h	Mon Sep  9 22:06:40 2002
+@@ -333,4 +333,5 @@
+ SxString operator +(const TCHAR*, const SxString&);
+ 
+ 
+-#endif // __SXSTRING_H__
++#endif // __SXSTRING_H__
++
+--- saferpay/sxfc/sxvector.h.orig	Mon Sep  9 22:05:42 2002
++++ saferpay/sxfc/sxvector.h	Mon Sep  9 22:06:47 2002
+@@ -110,4 +110,5 @@
+ 	const SxFindable **m_ppObj;
+ };
+ 
+-#endif // __SXVECTOR_H__
++#endif // __SXVECTOR_H__
++
+--- saferpay/sxfc/sxcontainer.h.orig	Mon Sep  9 22:12:28 2002
++++ saferpay/sxfc/sxcontainer.h	Mon Sep  9 22:12:34 2002
+@@ -75,4 +75,5 @@
+ 	SX_SIZE_T m_capacity;
+ };
+ 
+-#endif // __SXCONTAINER_H__
++#endif // __SXCONTAINER_H__
++
+--- saferpay/sxfc/sxobject.h.orig	Mon Sep  9 22:13:26 2002
++++ saferpay/sxfc/sxobject.h	Mon Sep  9 22:13:32 2002
+@@ -61,4 +61,5 @@
+ 	}
+ };
+ 
+-#endif // __SXOBJECT_H__
++#endif // __SXOBJECT_H__
++
+--- saferpay/idptypes.h.orig	Mon Sep  9 22:14:11 2002
++++ saferpay/idptypes.h	Mon Sep  9 22:14:22 2002
+@@ -87,4 +87,5 @@
+ #endif
+ 
+ 
+-#endif
++#endif
++
+--- saferpay/idpdattr.h.orig	Mon Sep  9 22:15:01 2002
++++ saferpay/idpdattr.h	Mon Sep  9 22:15:07 2002
+@@ -5,4 +5,5 @@
+ 	LPCTSTR Name;
+ };
+ 
+-extern DefaultAttributeName AttributeNames[];
++extern DefaultAttributeName AttributeNames[];
++
+--- saferpay/IcctSign.cpp.orig	Mon Sep  9 22:16:04 2002
++++ saferpay/IcctSign.cpp	Mon Sep  9 22:16:57 2002
+@@ -231,4 +231,5 @@
+ 		printf("ICCT_Verify succeeded!\n");
+ 	}
+ }
+-*/
++*/
++
+--- saferpay/cConfigurationSetup.cpp.orig	Mon Sep  9 22:16:20 2002
++++ saferpay/cConfigurationSetup.cpp	Mon Sep  9 22:17:00 2002
+@@ -176,4 +176,5 @@
+ 	}
+ }
+ 
+-}	// extern "C"
++}	// extern "C"
++
+--- saferpay/cMessageObject.cpp.orig	Mon Sep  9 22:16:35 2002
++++ saferpay/cMessageObject.cpp	Mon Sep  9 22:17:04 2002
+@@ -300,4 +300,5 @@
+ 	return hr;
+ }
+ 
+-}	// extern "C"
++}	// extern "C"
++
+--- saferpay/uuid_time.c.orig	Mon Sep  9 22:19:00 2002
++++ saferpay/uuid_time.c	Mon Sep  9 22:19:24 2002
+@@ -135,4 +135,5 @@
+ 
+          return 0;
+  }
+- #endif
++ #endif
++
+--- saferpay/pack.c.orig	Mon Sep  9 22:19:05 2002
++++ saferpay/pack.c	Mon Sep  9 22:19:27 2002
+@@ -42,4 +42,5 @@
+           out[8] = (unsigned char) tmp;
+ 
+           memcpy(out+10, uu->node, 6);
+-  }
++  }
++
+--- saferpay/unpack.c.orig	Mon Sep  9 22:19:09 2002
++++ saferpay/unpack.c	Mon Sep  9 22:19:31 2002
+@@ -36,4 +36,5 @@
+           uu->clock_seq = tmp;
+ 
+           memcpy(uu->node, ptr, 6);
+-  }
++  }
++
