@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Tue Jul 24 01:47:05 2001
-+++ Makefile.in	Mon Jul 30 16:00:19 2001
-@@ -98,10 +98,10 @@
- XSLT_LIBDIR = @XSLT_LIBDIR@
- XSLT_LIBS = @XSLT_LIBS@
- 
--SUBDIRS =  	libxslt 	libexslt 	xsltproc 	tests 	doc
-+SUBDIRS =  	libxslt 	libexslt 	xsltproc 	doc
+--- Makefile.in.orig	Sat Nov 10 15:52:02 2001
++++ Makefile.in	Tue Nov 13 12:31:22 2001
+@@ -108,11 +108,10 @@
+ 	breakpoint \
+ 	libexslt \
+ 	xsltproc \
+-	tests \
+ 	doc
  
  
 -confexecdir = $(libdir)
