@@ -464,7 +464,7 @@ CONFIGURE_ARGS+=	--disable-libfame \
 			--disable-libfametest
 PLIST_SUB+=	LIBFAME="@comment "
 .else
-LIB_DEPENDS+=	fame-0.9.0:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS+=	fame-0.9.0:${PORTSDIR}/multimedia/libfame
 
 CONFIGURE_ARGS+=	--with-libfame-prefix=${LOCALBASE} \
 			--with-libfame-exec-prefix=${LOCALBASE}

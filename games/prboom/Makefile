@@ -15,7 +15,7 @@ MAINTAINER=	fracture@allusion.net
 COMMENT=	A multiplayer-capable and modified version of ID's classic doom game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/graphics/smpeg \
+		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_net.0:${PORTSDIR}/net/sdl_net
 

@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
-RUN_DEPENDS=	${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
+RUN_DEPENDS=	${X11BASE}/bin/xanim:${PORTSDIR}/multimedia/xanim \
 		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
 		${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/wavplay:${PORTSDIR}/audio/wavplay \
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if defined(WITH_MTV)
-RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/graphics/mtv
+RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/multimedia/mtv
 .endif
 
 .if defined(WITH_GNOME2)

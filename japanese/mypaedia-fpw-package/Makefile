@@ -15,7 +15,7 @@ COMMENT=	A supplement file to use "mypaedia" on lookup
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		timidity:${PORTSDIR}/audio/timidity++ \
-		xanim:${PORTSDIR}/graphics/xanim \
+		xanim:${PORTSDIR}/multimedia/xanim \
 		display:${PORTSDIR}/graphics/ImageMagick
 
 NO_BUILD=	yes

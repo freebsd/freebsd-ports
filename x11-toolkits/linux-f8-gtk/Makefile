@@ -2,7 +2,7 @@
 # Date created:         8 April 2000
 # Whom:                 sada@FreeBSD.org
 # Based on:		emulators/linux_base by marcel@FreeBSD.org
-#			& graphics/xmovie by sanpei@sanpei.org
+#			& multimedia/xmovie by sanpei@sanpei.org
 #
 # $FreeBSD$
 #

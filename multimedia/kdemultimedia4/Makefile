@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
-RUN_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
+RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 

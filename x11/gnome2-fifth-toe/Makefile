@@ -35,7 +35,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		gnomemeeting:${PORTSDIR}/net/gnomemeeting2 \
 		gnome-font-viewer:${PORTSDIR}/x11-fonts/fontilus \
 		seahorse:${PORTSDIR}/security/seahorse \
-		totem:${PORTSDIR}/graphics/totem \
+		totem:${PORTSDIR}/multimedia/totem \
 		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
 		mrproject:${PORTSDIR}/deskutils/mrproject \
 		${X11BASE}/libexec/stickynotes_applet:${PORTSDIR}/misc/stickynotes_applet \
