@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun Oct 12 13:30:43 2003
++++ doc/Makefile.in	Tue Oct 14 23:35:13 2003
+@@ -88,7 +88,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-DOC_MODULE = liblingoteach-$(VERSION)
++DOC_MODULE = liblingoteach
+ HTML_DIR = $(datadir)/doc
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

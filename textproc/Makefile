@@ -142,6 +142,7 @@
     SUBDIR += latte
     SUBDIR += libcroco
     SUBDIR += libebml
+    SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libpathan
     SUBDIR += libtre
