@@ -7,19 +7,25 @@
 
 PORTNAME=		bash
 PORTVERSION=		3.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		shells
-MASTER_SITES=		${MASTER_SITE_GNU} \
-			ftp://ftp.cwru.edu/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	bash
+MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
+			http://cnswww.cns.cwru.edu/~chet/%SUBDIR%/:faq \
+			ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash,faq
+MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
+DIST_SUBDIR=		${PORTNAME}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=		eik@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
+IGNOREFILES=		FAQ
 CONFLICTS=		bash-[0-24-9].*
-LATEST_LINK=		${PKGNAMEPREFIX}bash3${PKGNAMESUFFIX}
 
-USE_REINPLACE=		yes
+.if !defined(WITHOUT_IMPLICITCD)
+EXTRA_PATCHES=		${PATCHDIR}/xpatch-implicitcd
+.endif
 
 MAN1=			bash.1 bashbug.1
 INFO=			bash
@@ -28,10 +34,13 @@ USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=		CHANGES COMPAT NEWS POSIX RBASH
+DISTFILES+=		FAQ:faq
+PORTDOCS=		FAQ CHANGES COMPAT NEWS POSIX RBASH
 .endif
 
-CONFIGURE_ARGS=		--without-bash-malloc
+CONFIGURE_ARGS=		--without-bash-malloc \
+			--disable-rpath \
+			--enable-disabled-builtins
 
 .if defined(WITHOUT_HELP)
 CONFIGURE_ARGS+=	--disable-help-builtin
@@ -69,7 +78,8 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for d in ${PORTDOCS}; do \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ ${DESTDIR}${DOCSDIR}
+	@for d in ${PORTDOCS:NFAQ}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${d} ${DESTDIR}${DOCSDIR}; \
 	done
 .endif

@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Tue Aug 31 00:34:30 2004
++++ doc/Makefile.in	Tue Aug 31 00:36:03 2004
+@@ -161,14 +161,11 @@
+ bashref.dvi: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ 	${SET_TEXINPUTS} $(TEXI2DVI) $(srcdir)/bashref.texi
+ 
+-bashref.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
++bash.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ 	$(MAKEINFO) --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
+ 
+ bashref.html: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ 	$(TEXI2HTML) -menu -monolithic -I $(TEXINPUTDIR) $(srcdir)/bashref.texi
+-
+-bash.info: bashref.info
+-	${SHELL} ${INFOPOST} < $(srcdir)/bashref.info > $@ ; \
+ 
+ bash.txt: bash.1
+ bash.ps: bash.1

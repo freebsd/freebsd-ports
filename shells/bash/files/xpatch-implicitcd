@@ -1,0 +1,99 @@
+#
+# new shopt `implicitcd'
+# http://lists.gnu.org/archive/html/bug-bash/2004-09/msg00024.html
+#
+--- execute_cmd.c.orig	Sun Jul  4 20:12:58 2004
++++ execute_cmd.c	Wed Sep  1 22:28:29 2004
+@@ -190,6 +190,9 @@
+ /* The line number that the currently executing function starts on. */
+ static int function_line_number;
+ 
++/* add an implicit `cd' if the command is the name of a directory */
++int implicitcd = 0;
++
+ /* Set to 1 if fd 0 was the subject of redirection to a subshell.  Global
+    so that reader_loop can set it to zero before executing a command. */
+ int stdin_redir;
+@@ -2909,6 +2912,20 @@
+   this_command_name = words->word->word;
+ 
+   QUIT;
++
++  if (implicitcd && interactive_shell && words->next == NULL && func == 0 && builtin == 0)
++    {
++      struct stat finfo;
++
++      if ((stat (words->word->word, &finfo) == 0) && (S_ISDIR (finfo.st_mode)))
++	{
++	  this_command_name = "cd";
++	  last_shell_builtin = this_shell_builtin;
++	  this_shell_builtin = builtin_address (this_command_name);       
++	  result = (*this_shell_builtin) (words);
++	  goto return_result;
++	}
++    }
+ 
+   /* This command could be a shell builtin or a user-defined function.
+      We have already found special builtins by this time, so we do not
+--- builtins/shopt.def.orig	Wed Sep  1 22:32:59 2004
++++ builtins/shopt.def	Wed Sep  1 22:31:27 2004
+@@ -66,6 +66,7 @@
+ extern int check_window_size;
+ extern int glob_ignore_case;
+ extern int hup_on_exit;
++extern int implicitcd;
+ extern int xpg_echo;
+ extern int gnu_error_format;
+ 
+@@ -145,6 +146,7 @@
+   { "hostcomplete", &perform_hostname_completion, enable_hostname_completion },
+ #endif
+   { "huponexit", &hup_on_exit, (shopt_set_func_t *)NULL },
++  { "implicitcd", &implicitcd, (shopt_set_func_t *)NULL },
+   { "interactive_comments", &interactive_comments, set_shellopts_after_change },
+ #if defined (HISTORY)
+   { "lithist", &literal_history, (shopt_set_func_t *)NULL },
+@@ -252,6 +254,7 @@
+   cdable_vars = mail_warning = 0;
+   no_exit_on_failed_exec = print_shift_error = 0;
+   check_hashed_filenames = cdspelling = expand_aliases = check_window_size = 0;
++  implicitcd = 0;
+ 
+   source_uses_path = promptvars = 1;
+ 
+--- doc/bash.1.orig	Mon Jul 12 17:27:08 2004
++++ doc/bash.1	Wed Sep  1 22:21:44 2004
+@@ -7970,6 +7970,15 @@
+ .B SIGHUP
+ to all jobs when an interactive login shell exits.
+ .TP 8
++.B implicitcd
++If this is set, a directory name typed as a command is treated as a
++request to change to that directory.
++This behavior is inhibited in non-interactive mode or for command
++strings with more than one word.
++Changing directory takes precedence over executing a like-named
++command, but it is done after alias substitutions.
++Tilde and variable expansions work as expected.
++.TP 8
+ .B interactive_comments
+ If set, allow a word beginning with
+ .B #
+--- doc/bashref.texi.orig	Wed Sep  1 22:37:32 2004
++++ doc/bashref.texi	Wed Sep  1 22:30:57 2004
+@@ -3661,6 +3661,15 @@
+ @item huponexit
+ If set, Bash will send @code{SIGHUP} to all jobs when an interactive
+ login shell exits (@pxref{Signals}).
++
++@item implicitcd
++If this is set, a directory name typed as a command is treated as a
++request to change to that directory.
++This behavior is inhibited in non-interactive mode or for command
++strings with more than one word.
++Changing directory takes precedence over executing a like-named
++command, but it is done after alias substitutions.
++Tilde and variable expansions work as expected.
+ 
+ @item interactive_comments
+ Allow a word beginning with @samp{#}
