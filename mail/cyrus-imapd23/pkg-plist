@@ -1,9 +1,17 @@
 bin/cyradm
 bin/imtest
 bin/installsieve
+bin/lmtptest
+bin/mupdatetest
+bin/pop3test
 bin/sieveshell
+bin/sivtest
+bin/smtptest
+cyrus/bin/chk_cyrus
+cyrus/bin/ctl_cyrusdb
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
+cyrus/bin/cvt_cyrusdb
 cyrus/bin/cyrdump
 cyrus/bin/cyrquota
 cyrus/bin/deliver
@@ -15,9 +23,12 @@ cyrus/bin/lmtpd
 cyrus/bin/master
 cyrus/bin/mbpath
 cyrus/bin/mkimap
+cyrus/bin/notifyd
 cyrus/bin/pop3d
 cyrus/bin/reconstruct
+cyrus/bin/squatter
 cyrus/bin/timsieved
+cyrus/bin/tls_prune
 @unexec if cmp -s %D/etc/cyrus.conf %D/etc/cyrus.conf.dist; then rm -f %D/etc/cyrus.conf; fi
 etc/cyrus.conf.dist
 @exec [ -f %B/cyrus.conf ] || cp %B/%f %B/cyrus.conf
@@ -38,38 +49,36 @@ include/cyrus/hash.h
 include/cyrus/imapurl.h
 include/cyrus/imclient.h
 include/cyrus/imparse.h
+include/cyrus/iptostring.h
 include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
 include/cyrus/mkgmtime.h
+include/cyrus/mpool.h
 include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
+include/cyrus/rfc822date.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
 lib/libacap.a
 lib/libcyrus.a
-lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Shell.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::IMSP.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Admin.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::acap.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Admin.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::IMSP.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Shell.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::managesieve.3
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/acap.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
@@ -80,7 +89,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/mana
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus

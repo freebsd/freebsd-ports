@@ -1,0 +1,13 @@
+Index: notifyd/notify_mailto.c
+diff -u notifyd/notify_mailto.c.orig notifyd/notify_mailto.c
+--- notifyd/notify_mailto.c.orig	Tue Mar 19 00:14:17 2002
++++ notifyd/notify_mailto.c	Thu May  2 03:51:15 2002
+@@ -56,7 +56,7 @@
+ #include "rfc822date.h"
+ #include <sieve_interface.h>
+ 
+-#define DEFAULT_SENDMAIL ("/usr/lib/sendmail")
++#define DEFAULT_SENDMAIL ("/usr/sbin/sendmail")
+ #define DEFAULT_POSTMASTER ("postmaster")
+ 
+ #define SENDMAIL (config_getstring("sendmail", DEFAULT_SENDMAIL))
