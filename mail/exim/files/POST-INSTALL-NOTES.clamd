@@ -25,6 +25,7 @@ It is important to follow them in sequence.
 	User clamav
 	AllowSupplementaryGroups
 	ScanArchive
+	ScanMail
 
    You may wish to make other changes as well.
 
