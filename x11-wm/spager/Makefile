@@ -7,6 +7,7 @@
 
 PORTNAME=	spager
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.stanford.edu/~satyakid/
 
@@ -24,8 +25,6 @@ post-extract:
 
 post-patch:
 	${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample.rc
-	${PERL} -pi -e "s|%%GNUHOST%%|${CONFIGURE_TARGET}|g" \
-		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spager ${PREFIX}/bin/
