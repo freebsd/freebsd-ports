@@ -3548,6 +3548,7 @@ irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 irssistats	ports/irc/irssistats
 is-aspell	ports/textproc/is-aspell
+isaac-cfd	ports/science/isaac-cfd
 isakmpd		ports/security/isakmpd
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
