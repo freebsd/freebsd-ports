@@ -57,6 +57,7 @@
     SUBDIR += umfpack
     SUBDIR += vtk
     SUBDIR += wingz
+    SUBDIR += wmcalc
     SUBDIR += xgfe
     SUBDIR += xgraph
     SUBDIR += xldlas
