@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
 		msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
-		freetype.6:${PORTSDIR}/print/freetype2 \
+		freetype.7:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
 .if !defined(WITHOUT_MOZILLA)
