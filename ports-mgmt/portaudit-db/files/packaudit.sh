@@ -104,7 +104,7 @@ cd "$TMPDIR" || exit 1
     }
     {
       if ($4)
-        print $1 FS $2 FS "'"$BASEURL"'" $4 ".html"  FS $4
+        print $1 FS "'"$BASEURL"'" $4 ".html" FS $3 FS $4
       else
         print
     }
