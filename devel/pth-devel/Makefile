@@ -1,12 +1,12 @@
 # New ports collection makefile for:   pth
-# Version required:		1.1b7
+# Version required:		1.2b1
 # Date Created:			17 Aug 1999
 # Whom:				Ralf S. Engelschall
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pth-1.1b7
+DISTNAME=	pth-1.2b1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/ \
 		ftp://ftp.engelschall.com/sw/pth/
@@ -16,10 +16,11 @@ MAINTAINER=	rse@engelschall.com
 NO_LATEST_LINK=	yes
 NO_CDROM=	yes
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \
 		--enable-syscall-soft \
+		--enable-optimize \
 		--enable-batch
 
 MAN1=		pth-config.1 pthread-config.1
