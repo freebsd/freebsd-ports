@@ -7,24 +7,21 @@
 
 PORTNAME=	moefonts-cid
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/moefonts-cid/ \
 		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
 		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
-DISTFILES=	MOEKai-Regular MOESung-Regular ac14.tar.Z
+DISTFILES=	MOEKai-Regular MOESung-Regular
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	keith@FreeBSD.org
 COMMENT=	MOE CIDFonts converted by Adobe
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+		${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
 NO_BUILD=	YES
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && \
-	  ${TAR} xzf ${DISTDIR}/ac14.tar.Z )
 
 do-install:
 	@${INSTALL_DATA} ${DISTDIR}/MOEKai-Regular \
@@ -34,9 +31,6 @@ do-install:
 		${FILESDIR}/MOESung-Regular-ETen-B5-H.gsf \
 		${FILESDIR}/MOESung-Regular-ETen-B5-V.gsf \
 		${PREFIX}/share/ghostscript/fonts
-	@${MKDIR} ${PREFIX}/share/ghostscript/fonts/CMap
-	@${INSTALL_DATA} ${WRKDIR}/ac14/CMap/* \
-		${PREFIX}/share/ghostscript/fonts/CMap
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
