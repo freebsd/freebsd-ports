@@ -15,7 +15,7 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 MAINTAINER=	rzheka@users.sourceforge.net
 COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
 USE_LIBTOOL=	yes
@@ -32,7 +32,7 @@ THEMES_SUBDIRS =	${WRKSRC}/art/qt/Bluecurve
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@if ! (cd ${WRKDIR} && rpm2cpio ${_DISTDIR}/${DISTFILES} | cpio -i redhat-artwork-${PORTVERSION}.tar.gz 2>/dev/null && ${GZIP_CMD} -dc redhat-artwork-${PORTVERSION}.tar.gz | tar -xf - && ${RM} redhat-artwork-${PORTVERSION}.tar.gz);\
+	@if ! (cd ${WRKDIR} && rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | cpio -i redhat-artwork-${PORTVERSION}.tar.gz 2>/dev/null && ${GZIP_CMD} -dc redhat-artwork-${PORTVERSION}.tar.gz | tar -xf - && ${RM} redhat-artwork-${PORTVERSION}.tar.gz);\
 		then \
 			exit 1; \
 		fi

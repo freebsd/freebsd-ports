@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	A backgammon program for X11
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
@@ -28,7 +28,7 @@ PATCH_FILES=	${PORTNAME}-${PORTVERSION}-dirent.patch
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
+	@rpm2cpio.pl ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
 	@tar -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 pre-patch:

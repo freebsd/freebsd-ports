@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Intel's Fortran compiler, set up to produce native FreeBSD objects
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -67,7 +67,7 @@ post-extract:
 #	intel-iidb7-7.2.2-64.i386.rpm \
 #	intel-efc7-7.1-34.ia64.rpm \
 #	intel-eidb7-7.2.2-64.ia64.rpm
-	@cd ${WRKSRC} ; rpm2cpio 2>/dev/null ${i} | \
+	@cd ${WRKSRC} ; rpm2cpio.pl 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
 

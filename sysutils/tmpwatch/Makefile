@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-2.src.rpm
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
@@ -27,7 +27,7 @@ MAN8=		tmpwatch.8
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/rpm2cpio ${DISTDIR}/${DISTFILES} | \
+		${LOCALBASE}/bin/rpm2cpio.pl ${DISTDIR}/${DISTFILES} | \
 		${CPIO} -iud
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${WRKDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS}

@@ -16,7 +16,7 @@ EXTRACT_SUFX=   .rpm
 MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	Slick theme for GTK1 from Ximian
 
-EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}
 USE_GMAKE=	yes
@@ -31,7 +31,7 @@ XIMIAN_DISTVERSION=	6.2
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@if ! (cd ${WRKDIR} && rpm2cpio ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\
+	@if ! (cd ${WRKDIR} && rpm2cpio.pl ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\
 		| cpio -i ximian-artwork-${PORTVERSION}.tar.gz 2>/dev/null \
 		&& ${GZIP_CMD} -dc ximian-artwork-${PORTVERSION}.tar.gz \
 		| tar -xf - && ${RM} ximian-artwork-${PORTVERSION}.tar.gz);\

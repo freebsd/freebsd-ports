@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${RPMFILE}
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
 
-BUILD_DEPENDS=  rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=  rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE}
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 BIN_FILES=	bjcmd  bjfilter  bjprn  lgmon  printui  stsmon
 .endif
 
-EXTRACT_CMD=	rpm2cpio
+EXTRACT_CMD=	rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| cpio -id --quiet
 
