@@ -2840,6 +2840,7 @@ kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kinit		src/eBones/kinit
+kinkatta	ports/net/kinkatta
 kisomandel	ports/graphics/kisomandel
 kld		src/sys/modules
 kld_atapi	src/sys/modules/atapi
