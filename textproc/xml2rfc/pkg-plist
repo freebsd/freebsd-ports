@@ -6,6 +6,7 @@ bin/xml2nroff
 share/doc/xml2rfc/README.html
 share/doc/xml2rfc/README.txt
 share/doc/xml2rfc/README.xml
+share/doc/xml2rfc/dot.xml2rfc.rc
 share/doc/xml2rfc/draft-mrose-writing-rfcs.html
 share/doc/xml2rfc/draft-mrose-writing-rfcs.txt
 share/doc/xml2rfc/rfc2629.dtd

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.13
+PORTVERSION=	1.19
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
@@ -33,5 +33,12 @@ do-install:
 	    rfc2629.dtd rfc2629.html rfc2629.txt rfc2629.xml rfc2629.xslt; \
 	do ${INSTALL_DATA} ${WRKSRC}/$${doc} ${PREFIX}/share/doc/xml2rfc; \
 	done
+	${INSTALL_DATA} ${WRKSRC}/.xml2rfc.rc ${PREFIX}/share/doc/xml2rfc/dot.xml2rfc.rc
+
+post-install:
+	@${ECHO}
+	@${ECHO} Have a look at http://xml.resource.org/ for how to get and
+	@${ECHO} update bibliographic summaries of each RFC and Internet Draft.
+	@${ECHO}
 
 .include <bsd.port.mk>
