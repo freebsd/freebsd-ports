@@ -1199,3 +1199,4 @@ lang/php4-nms|lang/php4|2004-07-19|Useless with the new PHP modular infrastructu
 www/mod_php4-twig|www/mod_php4|2004-07-19|Useless with the new PHP modular infrastructure
 databases/php4-sybase|databases/php4-sybase_ct|2004-07-21|Switch to use the new working library
 databases/php5-sybase|databases/php5-sybase_ct|2004-07-21|Switch to use the new working library
+textproc/cocoon|www/cocoon|2004-07-22|Moved to better category www

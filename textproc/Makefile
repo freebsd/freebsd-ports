@@ -39,7 +39,6 @@
     SUBDIR += cl-ppcre-cmucl
     SUBDIR += cl-ppcre-sbcl
     SUBDIR += coco
-    SUBDIR += cocoon
     SUBDIR += code2html
     SUBDIR += cole
     SUBDIR += cost
