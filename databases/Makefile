@@ -37,7 +37,6 @@
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-hp200lx-db
     SUBDIR += pgaccess
-    SUBDIR += postgresql
     SUBDIR += postgresql7
     SUBDIR += pxtools
     SUBDIR += py-MySQL
