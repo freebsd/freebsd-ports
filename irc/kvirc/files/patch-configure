@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure	2002/09/25 07:23:08	1.1
++++ configure	2002/09/25 07:24:28
+@@ -1004,7 +1004,7 @@
+ fi
+ 
+ 
+-	CXXFLAGS=""
++#	CXXFLAGS=""
+ 
+ 	if test -n "$SS_ADD_DEBUG_SYMBOLS"; then
+ 		echo "$ac_t""yes" 1>&6
+@@ -1027,7 +1027,7 @@
+ 		CXXFLAGS="$CXXFLAGS -O3"
+ 	else
+ 		echo "$ac_t""no" 1>&6
+-		CXXFLAGS="$CXXFLAGS -O2"
++#		CXXFLAGS="$CXXFLAGS -O2"
+ 	fi
+ 
+ 	echo $ac_n "checking if you want to add other library search paths""... $ac_c" 1>&6

@@ -1,0 +1,40 @@
+
+$FreeBSD$
+
+--- po/pt_br.po	2002/09/25 09:40:47	1.1
++++ po/pt_br.po	2002/09/25 09:42:46
+@@ -2203,11 +2203,6 @@
+ msgid "Selection background color"
+ msgstr "Seleção de cor de fundo"
+ 
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_dlggui.cpp:372
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_dlggui.cpp:406
+-msgid "Selection background color"
+-msgstr "Seleção de cor de fundo"
+-
+ msgid "Cursor and control marks color"
+ msgstr "Cor do cursor e dos caracteres de controle"
+ 
+@@ -3108,10 +3103,6 @@
+ "Falha na inicialização do plugin\n"
+ "%s"
+ 
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_dlgoptions.cpp:1724
+-msgid "Name"
+-msgstr "Nome"
+-
+ #: /usr/build/kvirc/cvs/src/kvirc/kvi_dlgoptions.cpp:1725
+ msgid "File mask"
+ msgstr "Máscara do arquivo"
+@@ -5633,11 +5624,6 @@
+ #: /usr/build/kvirc/cvs/src/kvirc/kvi_popupmenu.cpp:531
+ msgid "Unrecognized submenu length"
+ msgstr "tamanho de submenu não reconhecido"
+-
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_popupmenu.cpp:542
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_utoolbar.cpp:538
+-msgid "Something went wrong with the buffer length"
+-msgstr "Algo saiu errado no tamanho do buffer"
+ 
+ #: /usr/build/kvirc/cvs/src/kvirc/kvi_popupmenu.cpp:556
+ msgid "Unrecognized popup item"
