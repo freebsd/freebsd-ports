@@ -22,6 +22,7 @@
     SUBDIR += sredird
     SUBDIR += tkhylafax
     SUBDIR += viewfax
+    SUBDIR += vpb2
     SUBDIR += xcept
     SUBDIR += yaps
     SUBDIR += zmtx-zmrx

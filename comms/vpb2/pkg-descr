@@ -1,0 +1,6 @@
+The Voicetronix API allows one to write applications for the Voicetronix
+4 port analog DSP telephony cards.  These cards are generally available
+from Voictronix in Australia and will soon be made available for sales
+in the United States.  The API provides a single user mode library for
+developing telephony applications under both FreeBSD and
+GNU/Linux.  Several test applications are included.
