@@ -9,6 +9,7 @@
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
+    SUBDIR += eclipse
     SUBDIR += forte
     SUBDIR += gnu-regexp
     SUBDIR += guavac
