@@ -1,0 +1,13 @@
+--- xep/Makefile.aimk.orig	Fri Mar 12 22:31:23 1999
++++ xep/Makefile.aimk	Fri Mar 12 22:35:01 1999
+@@ -24,8 +24,8 @@
+ CFLAGS		=	$(CFLOPTS) -I$(PVMIDIR) -L$(PVMLDIR) $(ARCHCFLAGS)
+ LIBS		=	-l$(PVMLIB) $(ARCHLIB) $(OS2XEPLIBS)
+ XLIBS		=	-lXaw -lXmu -lXext -lXt -lX11
+-XCFLAGS		=	-I/usr/local/X11R5/include -I/usr/local/X11/include \
+-				-L/usr/local/X11R5/lib -L/usr/local/X11/lib
++XCFLAGS		=	-I${X11BASE}/include -I{X11BASE}/X11/include \
++				-L${X11BASE}/lib
+ 
+ HEADERS		=	$(SDIR)/hostc.h $(SDIR)/imp.h $(SDIR)/myalloc.h \
+ 				$(PVMIDIR)/pvm3.h $(PVMDIR)/src/bfunc.h
