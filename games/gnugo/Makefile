@@ -1,23 +1,22 @@
 # New ports collection makefile for:	gnugo
-# Version required:	1.2
+# Version required:	2.4
 # Date created:		29 December 1996
 # Whom:			jseger@scds.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnugo-1.2
+DISTNAME=	gnugo-2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnugo
 
-MAINTAINER=	jseger@freebsd.org
+MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/gnugo
-ALL_TARGET=	gnugo
-MAKE_FLAGS+=	CFLAGS="${CFLAGS}" -f
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gnugo ${PREFIX}/bin
+MAN6=		gnugo.6
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
