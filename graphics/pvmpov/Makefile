@@ -26,7 +26,8 @@ BUILDBASE=	${WRKSRC}/povray31/source/pvm
 PVM_ROOT=	${LOCALBASE}/lib/pvm
 
 pre-configure:
-		@ (cd ${PORTSDIR}/graphics/povray31/work && ${TAR} -c -f - povray31 ) \
+		@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
+			 ${TAR} -c -f - povray31 ) \
 			| (cd ${WRKSRC} && ${TAR} --unlink -x -f -)
 		@ cd ${WRKSRC} && ${PATCH} -p0 -s < pvmpov.patch
 		@ ${PERL} -pi -e "s|%X11BASE%|${X11BASE}| ; s|%LOCALBASE%|${LOCALBASE}|" \
