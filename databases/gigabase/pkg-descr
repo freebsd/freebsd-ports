@@ -19,5 +19,5 @@ crash, you should not worry about it. The only thing you can have to do manually
 is stopping all database application if one of them is crashed leaving database
 blocked.
 
-Author: Konstantin Knizhnik <knizhnik@altavista.net>
-WWW: http://www.ispras.ru/~knizhnik/gigabase.html
+Author: Konstantin Knizhnik <knizhnik@garret.ru>
+WWW: http://www.garret.ru/~knizhnik/gigabase.html
