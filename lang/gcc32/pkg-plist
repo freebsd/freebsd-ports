@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.19 1998/09/26 18:17:13 obrien Exp $
+@comment $Id: PLIST,v 1.20 1998/12/02 09:41:28 obrien Exp $
 bin/g++filt
 bin/g++
 bin/eg++
@@ -217,6 +217,10 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1obj
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1plus
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cpp
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
+@comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtbegin.o
+@comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtbeginS.o
+@comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtend.o
+@comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtendS.o
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/f771
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/README
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/assert.h
