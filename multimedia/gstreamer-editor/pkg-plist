@@ -16,19 +16,15 @@ include/gst-editor-%%VERSION%%/gst/element-browser/element-tree.h
 include/gst-editor-%%VERSION%%/gst/element-ui/gst-element-ui-prop-view.h
 include/gst-editor-%%VERSION%%/gst/element-ui/gst-element-ui.h
 lib/libgstdebugui.a
-lib/libgstdebugui.la
 lib/libgstdebugui.so
 lib/libgstdebugui.so.0
 lib/libgsteditor.a
-lib/libgsteditor.la
 lib/libgsteditor.so
 lib/libgsteditor.so.0
 lib/libgstelementbrowser.a
-lib/libgstelementbrowser.la
 lib/libgstelementbrowser.so
 lib/libgstelementbrowser.so.0
 lib/libgstelementui.a
-lib/libgstelementui.la
 lib/libgstelementui.so
 lib/libgstelementui.so.0
 share/gnome/applications/gst-editor.desktop
@@ -38,8 +34,10 @@ share/gnome/gst-editor/editor.glade2
 share/gnome/gst-editor/editorelement.glade2
 share/gnome/gst-editor/gnome/help/gst-editor/C/gst-editor-manual.xml
 share/gnome/gst-editor/gnome/help/gst-editor/C/legal.xml
+share/gnome/gst-editor/gst-debug-ui.glade2
 share/gnome/gst-editor/gst-editor.png
 share/gnome/omf/gst-editor/gst-editor-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gst-editor/gst-editor-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gst-editor.png
 share/gnome/pixmaps/gst-inspect.png
 share/gnome/pixmaps/gst-launch.png
@@ -55,3 +53,4 @@ share/gnome/pixmaps/gst-launch.png
 @dirrm include/gst-editor-%%VERSION%%/gst/debug-ui
 @dirrm include/gst-editor-%%VERSION%%/gst
 @dirrm include/gst-editor-%%VERSION%%
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gst-editor/gst-editor-manual-C.omf 2>/dev/null || /usr/bin/true
