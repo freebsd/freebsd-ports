@@ -1,5 +1,6 @@
-@unexec rm -f %%LOCALBASE%%/bin/jython
-@unexec rm -f %%LOCALBASE%%/etc/jython.reg
+bin/jython
+bin/jythonc
+etc/jython.reg
 %%JYTHON_DIR%%/ACKNOWLEDGMENTS
 %%JYTHON_DIR%%/Demo/applet/ButtonDemo.py
 %%JYTHON_DIR%%/Demo/applet/ButtonFontDemo.py
@@ -1096,6 +1097,9 @@
 %%JYTHON_DIR%%/org/python/util/ReadlineConsole.java
 %%JYTHON_DIR%%/org/python/util/jython.java
 %%JYTHON_DIR%%/registry
+@exec ln -sf %B/jython %%PREFIX%%/bin/
+@exec ln -sf %B/jythonc %%PREFIX%%/bin/
+@exec ln -sf %B/registry %%PREFIX%%/etc/jython.reg
 @dirrm %%JYTHON_DIR%%/org/python/util
 @dirrm %%JYTHON_DIR%%/org/python/rmi
 @dirrm %%JYTHON_DIR%%/org/python/parser
@@ -1165,4 +1169,4 @@
 @dirrm %%JYTHON_DIR%%/Demo/awt
 @dirrm %%JYTHON_DIR%%/Demo/applet
 @dirrm %%JYTHON_DIR%%/Demo
-@dirrm %%JYTHON_DIR%%
+@unexec rmdir %%JYTHON_DIR%% 2>/dev/null || true
