@@ -1,0 +1,24 @@
+Introduction
+============
+
+  This is a port of brouted. brouted is dynamic routing daemon 
+  acting on source IP address of TCP connections. It's purpose 
+  is to use multiple routing only TCP/IP leased line only with 
+  a single host.
+
+
+How it works
+============
+
+  It checks PCB(Protocol Control Block) and kernel routing ta-
+  ble. If dedicated source IP appears in PCB, brouted checks 
+  whether it's destination IP address exists in kernel routing 
+  table. If it doesn't exists, brouted add new routing entry
+  which routes destination IP to dedicated gateway.
+
+  In similar manner, when the TCP connection drops, correspond-
+  ing routing entry is removed from kernel routing table. 
+
+
+- Jeong Sung Won
+swjeong@kitel.co.kr
