@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
-DISTNAME=       radius-1.1
+DISTNAME=       radius-${PORTVERSION}
 
 MAINTAINER=	lance@merlin.net.ua
 COMMENT=	GNU RADIUS server
