@@ -1,11 +1,10 @@
-bin/createuserstreamingdir
 bin/qtpasswd
 bin/MP3Broadcaster
 bin/PlaylistBroadcaster
 sbin/DarwinStreamingServer
 sbin/streamingadminserver.pl
-libexec/StreamingServerModules/QTSSHomeDirectoryModule
-libexec/StreamingServerModules/QTSSRefMovieModule
+@comment libexec/StreamingServerModules/QTSSHomeDirectoryModule
+@comment libexec/StreamingServerModules/QTSSRefMovieModule
 @exec   mkdir %D/%%DATADIR%%                 2>/dev/null || true
 @exec   mkdir %D/%%DATADIR%%/movies          2>/dev/null || true
 %%DATADIR%%/readme.txt
@@ -153,11 +152,12 @@ etc/streaming/streamingserver.xml-dist
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en
 @dirrm %%DATADIR%%/AdminHtml
-@unexec rmdir %D/%%DATADIR%%/movies          2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%                 2>/dev/null || true
-@dirrm libexec/StreamingServerModules
-@unexec rmdir %D/etc/streaming               2>/dev/null || true
-@unexec rmdir /var/spool/streaming.playlists 2>/dev/null || true
-@exec   mkdir /var/spool/streaming.playlists 2>/dev/null || true
-@unexec rmdir /var/log/streaming             2>/dev/null || true
-@exec   mkdir /var/log/streaming             2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/movies             2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%                    2>/dev/null || true
+@unexec rmdir %D/libexec/StreamingServerModules 2>/dev/null || true
+@exec   mkdir %D/libexec/StreamingServerModules 2>/dev/null || true
+@unexec rmdir %D/etc/streaming                  2>/dev/null || true
+@unexec rmdir /var/spool/streaming.playlists    2>/dev/null || true
+@exec   mkdir /var/spool/streaming.playlists    2>/dev/null || true
+@unexec rmdir /var/log/streaming                2>/dev/null || true
+@exec   mkdir /var/log/streaming                2>/dev/null || true
