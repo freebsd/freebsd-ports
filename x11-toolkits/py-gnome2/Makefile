@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	py-gnome
-PORTVERSION=	1.99.18
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-python/1.99
+MASTER_SITE_SUBDIR=	sources/gnome-python/2.0
 DISTNAME=	gnome-python-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
