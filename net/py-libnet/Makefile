@@ -26,6 +26,12 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (tries to link non-PIC libnet.a into PIC shared library)"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g ; \
@@ -36,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
