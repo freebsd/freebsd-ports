@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pinfo
-PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	misc
-MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
+MASTER_SITES=	http://dione.ids.pl/~pborys/software/pinfo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
@@ -23,6 +22,7 @@ CONFIGURE_ARGS=	--with-readline \
 		--with-localedir=${PREFIX}/share/locale
 
 MAN1=	pinfo.1
+INFO=	pinfo
 
 .include <bsd.port.pre.mk>
 
