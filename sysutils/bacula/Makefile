@@ -188,7 +188,7 @@ post-install:
 	done; \
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p ${DOCSDIR}/html-manual
+	${MKDIR} ${DOCSDIR}/html-manual
 	cd ${WRKSRC}/doc && ${FIND} html-manual | \
 		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
