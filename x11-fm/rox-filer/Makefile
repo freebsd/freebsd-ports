@@ -15,13 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A simple and easy to use graphical file manager
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
+USE_GNOME=	gtk20 pkgconfig libxml2 gnomevfs2
 
 MAN1=		rox.1
 
