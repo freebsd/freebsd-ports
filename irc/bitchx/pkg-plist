@@ -598,6 +598,7 @@ share/bx/help/5_Programming/assign
 share/bx/help/5_Programming/loadtcl
 share/bx/help/5_Programming/saveirc
 share/bx/help/5_Programming/loaddll
+share/bx/help/5_Programming/fec
 share/bx/help/6_Functions/absstrlen
 share/bx/help/6_Functions/addtabkey
 share/bx/help/6_Functions/after
@@ -782,6 +783,13 @@ share/bx/help/6_Functions/write
 share/bx/help/6_Functions/6_Functions
 share/bx/help/6_Functions/writeb
 share/bx/help/6_Functions/menucontrol
+share/bx/help/6_Functions/before
+share/bx/help/6_Functions/chr
+share/bx/help/6_Functions/getopt
+share/bx/help/6_Functions/ifindfirst
+share/bx/help/6_Functions/listarray
+share/bx/help/6_Functions/strchr
+share/bx/help/6_Functions/strrchr
 share/bx/help/7_Docs/About_BitchX
 share/bx/help/7_Docs/Arrays
 share/bx/help/7_Docs/Command_Line
@@ -898,6 +906,10 @@ share/bx/help/8_Scripts/webster
 share/bx/help/8_Scripts/2.8script
 share/bx/help/8_Scripts/window
 share/bx/help/README_FIRST
+share/bx/help/commands
+share/bx/help/findcomm
+share/bx/help/functions
+share/bx/help/out
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
 share/bx/script/bxtcl.tcl
@@ -905,6 +917,7 @@ share/bx/script/file.tcl
 share/bx/script/fserve+vfs.tar.gz
 share/bx/script/menu.bx
 share/bx/script/example-.bitchxrc
+share/bx/script/query.bx
 share/bx/translation/ASCII
 share/bx/translation/CP437
 share/bx/translation/CP850
