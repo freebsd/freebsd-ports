@@ -9,7 +9,7 @@
 PORTNAME=	cave
 PORTVERSION=	1.0b
 CATEGORIES=	misc
-MASTER_SITES=	http://cyclic.sourceforge.net/cave/ \
+MASTER_SITES=	http://arbornet.org/~bjk/cave/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
