@@ -1,9 +1,8 @@
-#!/bin/sh
+#!/usr/bin/perl
+#
 
-cd $WRKSRC || exit 1
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
 
-cp configure.h configure.h.orig
-cp sample.steprc sample.steprc.orig
-sed -e "s:@@PREFIX@@:$PREFIX:g" < configure.h.orig > configure.h
-sed -e "s:@@PREFIX@@:$PREFIX:g" < sample.steprc.orig > sample.steprc
-chmod u+x Installme
+system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $ENV{'WRKSRC'}/sample.steprc $ENV{'WRKSRC'}/configure.h" );
