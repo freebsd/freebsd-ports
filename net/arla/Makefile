@@ -3,18 +3,18 @@
 # Date created:			09 Sep 1998
 # Whom:				Peter Hawkins <thepish@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1997/07/13 18:49:26 max Exp $
+# $Id: Makefile,v 1.1.1.1 1998/09/09 05:51:30 thepish Exp $
 #
 
 DISTNAME=	arla-0.9
-PKGNAME=	arla-0.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
-BUILD_DEPENDS=	/usr/lib/libkafs.a:/usr/src/kerberosIV/lib/libkafs
 
 MAINTAINER=	thepish@freebsd.org
+
+#BUILD_DEPENDS=	/usr/lib/libkafs.a:/usr/src/kerberosIV/lib/libkafs
 
 CONFIGURE_ARGS=	--prefix=$(PREFIX)
 HAS_CONFIGURE=	YES
 
-.include "bsd.port.mk"
+.include <bsd.port.mk>
