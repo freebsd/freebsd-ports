@@ -1,9 +1,9 @@
---- src/ysocket.h.orig	Thu Aug 26 20:45:05 1999
-+++ src/ysocket.h	Thu Aug 26 20:45:58 1999
-@@ -1,6 +1,9 @@
- #ifndef YSOCKET_H_
+--- src/ysocket.h.orig	Tue Nov 23 01:37:11 1999
++++ src/ysocket.h	Wed Nov 24 15:56:28 1999
+@@ -2,6 +2,9 @@
  #define YSOCKET_H_
  
+ #include <sys/types.h>
 +#ifdef __FreeBSD__
 +#include <db.h>
 +#endif
