@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	thttpd
-# Version required:	thttpd-2.11
+# Version required:	thttpd-2.14
 # Date created:		24 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	thttpd-2.13
+DISTNAME=	thttpd-2.14
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
