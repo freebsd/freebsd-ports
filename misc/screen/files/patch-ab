@@ -1,19 +1,32 @@
-*** doc/Makefile.in.bak	Mon Sep  2 01:54:27 1996
---- doc/Makefile.in	Wed Jun 11 06:13:18 1997
+*** doc/Makefile.in.orig	Mon Sep  2 06:54:27 1996
+--- doc/Makefile.in	Mon Jun 16 15:24:12 1997
 ***************
-*** 29,35 ****
+*** 20,26 ****
+  	$(TEXI2DVI) $(srcdir)/screen.texinfo
+  
+  info screen.info: screen.texinfo
+! 	$(MAKEINFO) $(srcdir)/screen.texinfo -o screen.info
+  
+  install: installdirs
+  	$(INSTALL_DATA) $(srcdir)/screen.1 $(mandir)/man1/screen.1
+--- 20,27 ----
+  	$(TEXI2DVI) $(srcdir)/screen.texinfo
+  
+  info screen.info: screen.texinfo
+! 	rm -f ./screen.info*
+! 	$(MAKEINFO) --no-split $(srcdir)/screen.texinfo -o screen.info
+  
+  install: installdirs
+  	$(INSTALL_DATA) $(srcdir)/screen.1 $(mandir)/man1/screen.1
+***************
+*** 28,36 ****
+  	-if test -f screen.info; then d=.; else d=$(srcdir); fi; \
   	if test -f $$d/screen.info; then \
   	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
-  	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
-! 	  install-info --infodir=$(infodir) $$d/screen.info; \
-  	else true; fi; \
+- 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+- 	  install-info --infodir=$(infodir) $$d/screen.info; \
+- 	else true; fi; \
   	fi
   
---- 29,35 ----
-  	if test -f $$d/screen.info; then \
-  	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
-  	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
-! 	  install-info --info-dir=$(infodir) $$d/screen.info; \
-  	else true; fi; \
-  	fi
-  
+  uninstall:
+--- 29,34 ----
