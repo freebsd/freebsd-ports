@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.swift-tools.com/Flash/
 DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 
