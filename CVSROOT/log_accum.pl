@@ -49,6 +49,7 @@ my $SUMMARY_FILE  = "$BASE_FN.summary";
 my $LOGNAMES_FILE = "$BASE_FN.lognames";
 my $SUBJ_FILE     = "$BASE_FN.subj";
 my $TAGS_FILE     = "$BASE_FN.tags";
+my $DIFF_FILE     = "$BASE_FN.diff";
 
 
 ############################################################
@@ -552,6 +553,68 @@ sub format_summaries {
 	return @text;
 }
 
+
+#
+# Make a diff of the changes.
+#
+sub do_diff {
+	my $outfile = shift;
+	my @filenames = @_;		# List of files to check.
+
+	foreach my $file (@filenames) {
+		next unless $file;
+
+		my $diff;
+
+		my ($rev, $rcsfile) = get_revision_number($file);
+
+		#
+		# If this is a binary file, don't try to report a diff;
+		# not only is it meaningless, but it also screws up some
+		# mailers.  We rely on Perl's 'is this binary' algorithm;
+		# it's pretty good.  But not perfect.
+		#
+		if (($file =~ /\.(?:pdf|gif|jpg|tar|tgz|gz)$/i) or (-B $file)) {
+			$diff .= "Index: $file\n";
+			$diff .= "=" x 67 . "\n";
+			$diff .= "\t<<Binary file>>\n";
+		} else {
+			#
+			# Get the differences between this and the previous
+			# revision, being aware that new files always have
+			# revision '1.1' and new branches always end in '.n.1'.
+			#
+			if ($rev =~ /^(.*)\.([0-9]+)$/) {
+				my $prev_rev = previous_revision($rev);
+
+				my @args = ();
+				if ($rev eq '1.1') {
+					$diff .= "Index: $file\n"
+					    . "=" x 68 . "\n";
+					@args = ('-Qn', 'update', '-p',
+					    '-r1.1', $file);
+				} else {
+					@args = ('-Qn', 'diff', '-u',
+					    "-r$prev_rev", "-r$rev", $file);
+				}
+
+				print "Generating diff: $cfg::PROG_CVS " .
+				    "@args" if  $cfg::DEBUG;
+				open(DIFF, "-|") || exec $cfg::PROG_CVS, @args;
+				while(<DIFF>) {
+					$diff .= $_;
+				}
+				close DIFF;
+			}
+		}
+		if (length($diff) > $cfg::MAX_DIFF_SIZE * 1024) {
+			$diff = "File/diff for $file is too large! ";
+			$diff .= "Use cvsweb.\n";
+		}
+		&append_line($outfile, "\n\n$diff");
+	}
+}
+
 #############################################################
 #
 # Main Body
@@ -726,10 +789,14 @@ foreach my $tag ( keys %removed_files ) {
 foreach my $tag ( keys %added_files ) {
 	&change_summary_added("$SUMMARY_FILE.$message_index",
 	    @{ $added_files{$tag} });
+	&do_diff("$DIFF_FILE.$message_index", @{ $added_files{$tag} })
+		if ( $cfg::MAX_DIFF_SIZE > 0 );
 }
 foreach my $tag ( keys %changed_files ) {
 	&change_summary_changed("$SUMMARY_FILE.$message_index",
 	    @{ $changed_files{$tag} });
+	&do_diff("$DIFF_FILE.$message_index", @{ $changed_files{$tag} })
+		if ( $cfg::MAX_DIFF_SIZE > 0 );
 }
 foreach my $tag ( keys %removed_files ) {
 	&change_summary_removed("$SUMMARY_FILE.$message_index",
@@ -787,6 +854,12 @@ for (my $i = 0; ; $i++) {
 	# Add a copy of the message in the relevant log files.
 	#
 	&do_changes_file(@log_msg);
+
+	# Add the diff after writing the log files.
+	if (-e "$DIFF_FILE.$i") {
+		push @log_msg, "  ", map {"  $_"}
+		    read_logfile("$DIFF_FILE.$i");
+	}
 
 	#
 	# Mail out the notification.
