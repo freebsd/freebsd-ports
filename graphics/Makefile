@@ -152,6 +152,7 @@
     SUBDIR += hs-HOpenGL
     SUBDIR += hs-hgl
     SUBDIR += hsetroot
+    SUBDIR += icoconvert
     SUBDIR += icod
     SUBDIR += icontact
     SUBDIR += imageindex
