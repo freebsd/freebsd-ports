@@ -71,6 +71,7 @@
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBIx-SearchBuilder
+    SUBDIR += p5-DBIx-XHTML_Table
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-GDBM
