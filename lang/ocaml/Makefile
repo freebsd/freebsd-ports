@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.06
+PORTVERSION=	3.07
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
-		ftp://ftp.inria.fr/lang/caml-light/${DISTNAME}/ \
+		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME}/
 PKGNAMESUFFIX=	${TKSFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-refman.html${EXTRACT_SUFX}
 
-MAINTAINER=	patrick@watson.org
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-patch2.diffs
+PATCH_DIST_STRIP=-p1
+
+MAINTAINER=	eugos@gmx.net
 COMMENT=	An ML language based on a complete class-based objective system
+
+PLIST_SUB+=	DISTNAME=${DISTNAME}
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment " TK="@comment "
@@ -31,9 +37,9 @@ PLIST_SUB+=	TK="@comment "
 TKSFX=		-notk
 .else
 PLIST_SUB+=	TK=""
-BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3:${PORTSDIR}/lang/tcl83
-BUILD_DEPENDS+=	${LOCALBASE}/include/tk8.3:${PORTSDIR}/x11-toolkits/tk83
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
+		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .endif
 .endif
 
@@ -63,15 +69,15 @@ MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 		MoreLabels.Set.OrderedType.n MoreLabels.Set.S.n \
 		MoreLabels.Set.n MoreLabels.n Nativeint.n Num.n Obj.n Oo.n \
 		Parsing.n Pervasives.LargeFile.n Pervasives.n Printexc.n \
-		Printf.n Queue.n Random.n Scanf.Scanning.n Scanf.n Set.Make.n \
-		Set.OrderedType.n Set.S.n Set.n Sort.n Stack.n \
-		StdLabels.Array.n StdLabels.List.n StdLabels.String.n \
+		Printf.n Queue.n Random.n Random.State.n Scanf.Scanning.n \
+		Scanf.n Set.Make.n Set.OrderedType.n Set.S.n Set.n Sort.n \
+		Stack.n StdLabels.Array.n StdLabels.List.n StdLabels.String.n \
 		StdLabels.n Str.n Stream.n String.n StringLabels.n Sys.n \
 		Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n
 MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.1 camlp4.1 camlp4r.1 camlp4.1 mkcamlp4.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
-		camlp4.1 ocpp.1
+		camlp4.1 ocpp.1 camlp4.1 camlp4sch.1
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-with-pthread
@@ -84,7 +90,7 @@ CONFIGURE_ARGS+=	-x11include ${X11BASE}/include \
 .if defined(WITHOUT_TK)
 CONFIGURE_ARGS+=	-no-tk
 .else
-CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3"
+CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
 .endif
 .endif
 
