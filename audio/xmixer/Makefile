@@ -8,7 +8,8 @@
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.hdk-berlin.de/~rasca/
+# Master site seems to be MIA and no replacement could be found
+MASTER_SITES=	#http://www.hdk-berlin.de/~rasca/
 
 MAINTAINER=	ports@FreeBSD.org
 
