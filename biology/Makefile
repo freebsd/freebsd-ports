@@ -18,6 +18,7 @@
     SUBDIR += platon
     SUBDIR += povchem
     SUBDIR += psi88
+    SUBDIR += py-biopython
     SUBDIR += rasmol
     SUBDIR += seaview
     SUBDIR += sim4
