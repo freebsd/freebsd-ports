@@ -121,6 +121,7 @@
     SUBDIR += ggsd
     SUBDIR += ghtool
     SUBDIR += gicq
+    SUBDIR += gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmqst
     SUBDIR += gnet

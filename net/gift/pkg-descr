@@ -1,0 +1,21 @@
+The FastTrack network (http://www.fasttrack.nu/) is a peer-to-peer
+network for sharing files. It provides search facilities, and has
+a 2 level hierarchical scheme for organizing peers.
+
+Being a peer-to-peer network, there is no central server during
+normal operation. All communication is done between peers.
+
+giFT is the generic interface to FastTrack. It is intended to be
+interoperable with existing clients, and to speak a compatible
+protocol to that of the FastTrack network in order to communicate
+with peers. This program's reason for existing is as a compatible,
+interoperable, open source, Linux-based peer for the network.
+
+Unlike the existing clients, giFT uses a central server only extremely
+rarely. It does not require registrations or logins, and is not
+trying to show users advertisements. The issue of locating network
+peers is discussed later on. In particular, giFT does not contact
+the Morpheus, KaZaA, or Grokster central servers at all. giFT is
+Open Source (See COPYING).
+
+WWW: http://sourceforge.net/projects/gift/

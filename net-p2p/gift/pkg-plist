@@ -1,0 +1,23 @@
+bin/giFT
+bin/giFTget
+include/giFT/giFT.h
+include/giFT/giFTbuffer.h
+include/giFT/giFTcrypt.h
+include/giFT/giFTdescribe.h
+include/giFT/giFTdownload.h
+include/giFT/giFThash.h
+include/giFT/giFTinterval.h
+include/giFT/giFTmd5.h
+include/giFT/giFTpacket.h
+include/giFT/giFTproto.h
+include/giFT/giFTshare.h
+lib/libgiFT.a
+%%PORTDOCS%%share/doc/giFT/AUTHORS
+%%PORTDOCS%%share/doc/giFT/COPYING
+%%PORTDOCS%%share/doc/giFT/ChangeLog
+%%PORTDOCS%%share/doc/giFT/INSTALL
+%%PORTDOCS%%share/doc/giFT/NEWS
+%%PORTDOCS%%share/doc/giFT/README
+%%PORTDOCS%%share/doc/giFT/TODO
+%%PORTDOCS%%@dirrm share/doc/giFT
+@dirrm include/giFT
