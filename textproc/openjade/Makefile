@@ -18,16 +18,12 @@ RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	MKCATALOG=${MKCATALOG}
 
 MKCATALOG=	${PREFIX}/sbin/mkcatalog
-
-pre-install:
-	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/sgml/openjade
@@ -40,7 +36,6 @@ post-install:
 # 'march=-mpentium -Os' produces core dumps with certain input files
 # Therefore, we'd better remove all machine optimizations and any -O
 # other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
-CFLAGS!=	${ECHO} "${CFLAGS}" | ${SED} -E -e 's/-m[0-9a-zA-Z]+(=[0-9a-zA-Z]*)?//g' \
-			-e 's/-O[s2-9]+//g'
+CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
 
 .include <bsd.port.post.mk>
