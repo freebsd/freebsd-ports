@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.2.2.1
+PORTVERSION=	2.2.3.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		stable/sources/gdm
@@ -33,7 +33,7 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/config/gnomerc ${PREFIX}/etc/gdm/
-	${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/config/gnomerc ${PREFIX}/etc/gdm/
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@ bin/gdmconfig
 bin/gdmlogin
 bin/gdmphotosetup
 sbin/gdm-restart
+sbin/gdm-safe-restart
 etc/gdm/Init/Default
 etc/gdm/PostSession/Default
 etc/gdm/PreSession/Default
@@ -56,6 +57,7 @@ share/gnome/help/gdmconfig/C/figures/GDM_auto_login.png
 share/gnome/help/gdmconfig/C/figures/GDM_background.png
 share/gnome/help/gdmconfig/C/figures/GDM_chooser.png
 share/gnome/help/gdmconfig/C/figures/GDM_enviro.png
+share/gnome/help/gdmconfig/C/figures/GDM_expert_misc.png
 share/gnome/help/gdmconfig/C/figures/GDM_face_brow.png
 share/gnome/help/gdmconfig/C/figures/GDM_full.png
 share/gnome/help/gdmconfig/C/figures/GDM_login_appear.png
@@ -85,6 +87,7 @@ share/locale/ga/LC_MESSAGES/gdm.mo
 share/locale/gl/LC_MESSAGES/gdm.mo
 share/locale/hu/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
+share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/ms/LC_MESSAGES/gdm.mo
@@ -101,6 +104,7 @@ share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gdm.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gdm.mo
 @dirrm etc/gdm/Init
 @dirrm etc/gdm/PostSession
 @dirrm etc/gdm/PreSession
