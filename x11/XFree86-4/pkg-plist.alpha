@@ -4543,6 +4543,7 @@ man/man7/Xsecurity.7.gz
 @dirrm lib/X11/xkb/types
 @dirrm lib/X11/xkb
 @dirrm lib/X11
+@dirrm lib/aout
 @dirrm lib/modules/codeconv
 @dirrm lib/modules/dri
 @dirrm lib/modules/drivers
@@ -4599,6 +4600,7 @@ man/man7/Xsecurity.7.gz
 @dirrm man/manl
 @dirrm man/mann
 @dirrm man
+@dirrm share/aclocal
 @dirrm share/doc
 @dirrm share/examples
 @dirrm share
