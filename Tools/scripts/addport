@@ -4,7 +4,7 @@
 # FreeBSD Ports Collection.
 # Created by: Will Andrews <will@FreeBSD.org>
 #             and Michael Haro <mharo@FreeBSD.org>
-# 
+#
 # $Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp $
 # $FreeBSD$
 #
@@ -12,21 +12,24 @@
 # however feel free to submit patches to will@FreeBSD.org.  =)
 #
 
+use Cwd "abs_path";
 use Getopt::Std;
-use vars qw/ $opt_d $opt_h $opt_n $opt_u $opt_t $opt_v /;
 use strict;
 
-getopts('d:h:ntu:v');
+my %opts;
 
-my $dir = $opt_d;
+getopts('d:h:intu:v', \%opts);
+
+my $dir = $opts{'d'};
+print "dir = $dir\n";
 my $h = "freefall.FreeBSD.org";
-$h = $opt_h if ($opt_h ne "");
-my $n = $opt_n;
+$h = $opts{'h'} if ($opts{'h'} ne "");
+my $n = $opts{'n'};
 my $u = $ENV{USER};
-$u = $opt_u if ($opt_u ne "");
-my $more_testing = $opt_t;
-my $vanilla = $opt_v;
-my $portname = $opt_d;
+$u = $opts{'u'} if ($opts{'u'} ne "");
+my $more_testing = $opts{'t'};
+my $vanilla = $opts{'v'};
+my $interactive = $opts{'i'};
 
 my $tmpdir;
 my $pwd;
@@ -42,8 +45,6 @@ my $cp = "cp";
 my $mv = "mv";
 my $rm = "rm";
 
-my $category;
-
 # now check to make sure this isn't running on freefall
 chomp(my $myhost = lc(`hostname`));
 if ($myhost ne lc($h)) {
@@ -55,28 +56,145 @@ if ($myhost ne lc($h)) {
 }
 my $cvs = "cvs -d $repo";
 
-sub usage {
-#addport,v \$Revision: 1.5 $
-print <<EOF;
-authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
-
-SYNOPSIS
-	$0 [-h host] [-u user] [-ntv] -d directory
-
-	Where directory is the root directory containing the new port
-	that you wish to add to the Ports Collection.
-
-OPTIONS
-	-h host		Use a cvshost besides freefall.FreeBSD.org
-	-n		Do not actually commit anything.
-	-u user		Use a different username (default: $u).
-	-t		Do more port testing
-	-v		Plain vanilla "add it" - no testing at all.
-			This option overrides -t.  It is currently
-			necessary in order to use this on freefall.
-
-EOF
+# stuff that always happens when we start
+BEGIN {
+	$tmpdir=`mktemp -d -t ap`;
+	chomp $tmpdir;
+	if ($tmpdir eq "") {
+		errx(1,"making random tmpdir didn't work, aborting.");
+	}
+	$pwd = `pwd`;
+	chomp $pwd;
 }
+
+# stuff that always happens when we exit
+END {
+	# only remove $tmpdir if it points to something in /tmp
+	# this is a silly little security thing
+	if (defined($rm) && defined($tmpdir)) {
+		system("$rm -rf $tmpdir") if ($tmpdir =~ m,/tmp/,);
+	}
+}
+
+# setup the list of commands to run on the new port(s).
+# This only looks nasty because if we tabbed the entries to
+# @commands, it would have whitespace before the command.  :(
+my @commands;
+if (!$vanilla) {
+@commands = split(/\n/, <<EOF);
+$make clean
+$make check-categories
+$portlint
+$make FETCH_BEFORE_ARGS="-btsA" checksum
+EOF
+	if ($more_testing) {
+		push(@commands, "$make distclean");
+		push(@commands, "$make build");
+	}
+}
+
+my @dirs = split(/\,/, $dir);
+my $portname;
+foreach my $thisdir (@dirs) {
+	# do some dir sanity checking first
+	errx(1, "Please specify valid directories to import new ports from.") if $thisdir eq "";
+	errx(1, "$thisdir is either not a directory or does not exist.") if (! -d $thisdir);
+	$thisdir = abs_path($pwd) if $thisdir eq ".";
+	$thisdir = abs_path($thisdir);
+
+	print "Working with port directory $thisdir.\n";
+
+	$portname = `basename $thisdir`;	# avoid problems with dirs containing `/' in cvs
+	chomp $portname;
+	if ($opts{'i'}) {
+		if (prompt("Port directory name will be $portname in CVS Repo.  OK? ")) {
+			do {
+				$portname = query("Preferred name for port directory? ");
+			} while (prompt("Is the new name $portname OK? "));
+		}
+	}
+
+	chdir $thisdir or err(1, "$thisdir");
+
+	# now run the tests on this baby.
+	for (@commands) {
+		system("$_") && errx(1, "'$_' had problems. aborting.");
+	}
+
+	# Get the category name and make it suitable for use with cvs
+	my $category;
+	$_ = `grep CATEGORIES Makefile`;
+	m/\w+\W+([\w-]+)/;
+	$category = $1;
+	chomp $category;
+	if ($opts{'i'}) {
+		if (prompt("Port $portname will be put in category $category.  OK? " )) {
+			do {
+				$category = query("Preferred category for $portname? ");
+			} while (prompt("Is the new category $category OK? "));
+		}
+	}
+	chomp(my $cvs_category = $category);
+	$cvs_category =~ s/-/_/g;
+ 
+ 	print "We're ready to commit.\n";
+	print "Source directory: $thisdir\n";
+	print "Target CVS Repo directory: ports/$category/$portname\n";
+	prompt("Adding port $portname to $category OK? ") && errx(1, "user abort requested");
+	chdir $tmpdir or err(1, "$tmpdir");
+
+	# let's get our hands dirty.
+	if (! -d $category) {
+		system("$cvs co -l ports_$cvs_category") && errx(1, "can't get temporary category directory, aborting.");
+		system("$mv ports_$cvs_category $category");
+	}
+	chdir $category or err(1,"$category");
+	system("$cp -PRp $thisdir .");
+	system("$cvs add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
+	system("$cvs add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
+
+	# figure out where the port name belongs in category Makefile
+	my @ports = &lsports;
+	if (&contains($portname, @ports)) {
+		print "Error: $portname already exists in $category\'s Makefile\n";
+		&goodbye(1);
+	}
+	my $port = "";
+	foreach my $tmp (sort(@ports)) {
+		if ($tmp gt $portname) {
+			$port = $tmp;
+			last;
+		}
+	}
+
+	# now let's insert it
+	my $cmd;
+	if ($port eq "") {
+		# there were no previous SUBDIR += lines, so we're going to
+		# put ourselves after the last comment (we can't be before a
+		# .include <bsd.port.subdir.mk> for example).
+		my $lastcommentnum = &lastcomment;
+		$cmd = "$lastcommentnum\n+\ni\n";
+	} else {
+		# OK, append ourselves after the appopriate name, so things *stay* sorted.
+		$cmd = "/^    SUBDIR += $port/\ni\n";
+	}
+	print "Inserting new port into $category/Makefile...\n";
+	open(ED, "|ed Makefile") || die "Cannot start ed to actually insert module\n";
+	print ED "$cmd    SUBDIR += $portname\n.\nw\nq\n";
+	close(ED);
+
+	# commit the actual port.
+	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
+	system("$cvs ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
+	system("$ssh $perl ~mharo/bin/modulesupdate $portname ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
+}
+
+print <<EOF;
+You're done! The new port $portname has been completely imported in
+the tree. Don't forget to add the creator's name and email address to
+the Contributors' List if they are not already there.
+EOF
 
 sub warnx {
 	my ($msg) = @_;
@@ -102,20 +220,58 @@ sub errx {
 
 sub prompt {
 	my ($msg) = @_;
+	my $reply = query($msg);
+	return 0 if ($reply =~ m/^[Yy]/);
+	return 1 if ($reply =~ m/^[Nn]/);
+}
 
-	print "$msg:\n";
-	while(1) {
-		print "Continue? ";
-		my $reply = <>;
-		return 0 if ($reply =~ m/^[Yy]/);
-		return 1 if ($reply =~ m/^[Nn]/);
-	}
-	
+sub query {
+	my ($msg) = @_;
+
+	print "$msg";
+	my $reply = <>;
+	return $reply;
+}
+
+sub usage {
+#addport,v \$Revision: 1.5 $
+print <<EOF;
+authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
+
+SYNOPSIS
+	$0 [-h host] [-u user] [-intv] -d directory
+
+	Where "directory" contains the comma-delimited list
+	of root directories of new ports that you wish to
+	add to the Ports Collection.  The name of this directory
+	*WILL* matter in regards to the repository!
+
+OPTIONS
+	-h host		Use a cvshost besides freefall.FreeBSD.org
+	-i		Interactive mode; allow more control over
+			where things are placed.
+	-n		Do not actually commit anything.
+	-u user		Use a different username (default: $u).
+	-t		Do more port testing
+	-v		Plain vanilla "add it" - no testing at all.
+			This option overrides -t.  It is currently
+			necessary in order to use this on freefall.
+
+EXAMPLES
+	% addport -n -d greatgame,helpfuldev,shoot
+		Will show what happens but not actually commit ports
+	named "greatgame", "helpfuldev", and "shoot".
+
+	% addport -t -v thisport
+		Will not perform testing (does not matter in which
+	order -t and -v are used) on port "thisport" but just add it.
+
+EOF
 }
 
 sub contains {
     # look if the first parameter is contained in the list following it
-    my($item, @list) = @_;
+    my ($item, @list) = @_;
 
     foreach my $i (@list) {
 	return 1 if $i eq $item;
@@ -139,127 +295,22 @@ sub lsports {
     return @rv;
 }
 
+# this finds the last comment in the Makefile
+sub lastcomment {
+	my $num = 0;
+	my $diff = 0;
 
-# stuff that always happens when we start
-BEGIN {
-	$tmpdir=`mktemp -d -t ap`;
-	chomp $tmpdir;
-	if ($tmpdir eq "") {
-		errx(1,"making random tmpdir didn't work, aborting.");
+	open(F, "Makefile");
+	while(<F>) {
+		chomp;
+		if ($_ =~ m/^#/) {
+			$num += $diff;
+			$num++;
+			$diff = 0;
+		} else {
+			$diff += 1;
+		}
+		next;
 	}
-	$pwd = `pwd`;
-	chomp $pwd;
-	chdir $tmpdir or err(1,"$tmpdir");
+	return $num;
 }
-
-# stuff that always happens when we exit
-END {
-	# only remove $tmpdir if it points to something in /tmp
-	# this is a silly little security thing
-	if (defined($rm) && defined($tmpdir)) {
-		system("$rm -rf $tmpdir") if ($tmpdir =~ m,/tmp/,);
-	}
-}
-
-if ($dir eq "") {
-	warnx("Please specify a directory to import a new port from.");
-	usage();
-	exit 1;
-}
-
-# account for special case
-if ($dir eq ".") {
-	chomp(local $pwd = `pwd`);
-	$dir = `basename $pwd`;
-}
-
-$dir = "$pwd/$dir" if ($dir !~ m,^/,);
-$dir =~ s,/$,,g;
-
-if (! -d "$dir") {
-	errx(1,"$dir is either not a directory or does not exist");
-}
-
-chdir $dir or err(1, "$dir");
-
-if ($more_testing && !$vanilla) {
-my @commands = split(/\n/, <<EOF);
-$make distclean
-$make build
-EOF
-for (@commands) {
-	system("$_") && errx(1, "'$_' had problems. aborting.");
-}
-}
-
-# commands to run before adding port
-if (!$vanilla) {
-my @commands = split(/\n/, <<EOF);
-$make clean
-$make check-categories
-$portlint
-$make FETCH_BEFORE_ARGS="-btsA" checksum
-EOF
-for (@commands) {
-	system("$_") && errx(1, "'$_' had problems. aborting.");
-}
-}
-
-$_ = `grep CATEGORIES Makefile`;
-m/\w+\W+([\w-]+)/;
-$category = $1;
-
-prompt("Adding port to $category.") && errx(1, "user abort requested");
-
-chdir $tmpdir or err(1,"$tmpdir");
-
-my $cvs_category = $category;
-$cvs_category =~ s/-/_/g;
-system("$cvs co -l ports_$cvs_category") && errx(1, "can't get temporary category directory, aborting.");
-system("$mv ports_$cvs_category $category");
-chdir $category or err(1,"$category");
-system("$cp -PRp $dir .");
-
-system("$cvs add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
-system("$cvs add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
-
-my @ports = &lsports;
-
-if (&contains($portname, @ports)) {
-	print "Error: $portname already exists in $category\'s Makefile\n";
-	&goodbye(1);
-}
-
-my $port = "";
-foreach my $tmp (sort(@ports)) {
-    if ($tmp gt $portname) {
-        $port = $tmp;
-        last;
-    }
-}
-
-my $cmd;
-if ($port eq "") {
-    # we are going to append our port
-    $cmd = "\$\na\n";
-} else {
-    # we can insert it
-    $cmd = "/^    SUBDIR += $port/\ni\n";
-}
-
-print "Inserting new port into $category/Makefile...\n";
-open(ED, "|ed Makefile") || die "Cannot start ed\n";
-print ED "$cmd    SUBDIR += $portname\n.\nw\nq\n";
-close(ED);
-
-chdir $tmpdir or err(1,"$tmpdir");
-
-system("$cvs ci") && errx(1, "cvs commit failed, aborting.");
-
-system("$ssh $perl ~mharo/bin/modulesupdate $portname ports/$category/$portname") && errx(1, "adding port to modules or category Makefile failed, aborting.");
-
-print <<EOF;
-You're done! The new port $portname has been completely imported in
-the tree. Don't forget to add the creator's name and email address to
-the Contributors' List if they are not already there.
-EOF
