@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This script will remove the slides entries added to xml catalog.
+# -- Rui Lopes <rui@ruilopes.com>
+
+XMLCATMGR=@XMLCATMGR@
+CATALOG_PORTS_XML=@CATALOG_PORTS_XML@
+PORTNAME=@PORTNAME@
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+${XMLCATMGR} -c "${CATALOG_PORTS_XML}" remove http://docbook.sourceforge.net/release/${PORTNAME}/

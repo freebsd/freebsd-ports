@@ -513,6 +513,7 @@
     SUBDIR += sk-aspell
     SUBDIR += skribe
     SUBDIR += sl-aspell
+    SUBDIR += slides
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight

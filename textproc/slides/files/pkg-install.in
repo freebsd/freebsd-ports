@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# This script will create the slides catalog and will add entries to xml catalog.
+# WARNING: If you change this script, be sure to check pkg-deinstall.in!
+#
+# Based on http://xmlsoft.org/buildDocBookCatalog file.
+#
+# in vi/vim grab VERSIONS string with command:
+# :r!echo -n "VERSIONS='current ";fetch -qo - http://cvs.sf.net/cgi-bin/viewcvs.cgi/docbook/${PORTNAME}/VERSION|sed -nE 's/.*Version (.*) released./\1/gp'|sort|sed -e '1,3d'|paste -sd ' ' -|tr \\n \'
+#
+# -- Rui Lopes <rui@ruilopes.com>
+
+XMLCATMGR=@XMLCATMGR@
+CATALOG_PORTS_XML=@CATALOG_PORTS_XML@
+PORTNAME=@PORTNAME@
+XSL_DIR=${PKG_PREFIX}/@INSTDIR@
+CATALOG_XSL=${XSL_DIR}/catalog
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
+VERSIONS='current 3.3.1 3.2.0 3.1.0 3.0.0 3.0b2 3.0b1 2.1b2 2.1b1 2.0a2 2.0a1'
+
+if [ ! -f ${CATALOG_XSL} ]; then
+    ${XMLCATMGR} -c "${CATALOG_XSL}" create
+fi
+
+for version in ${VERSIONS}
+do
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version/xsl \
+        "file://${XSL_DIR}/xsl"
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version/xsl \
+        "file://${XSL_DIR}/xsl"
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version/schema/dtd \
+        "file://${XSL_DIR}/schema/dtd"
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version/schema/dtd \
+        "file://${XSL_DIR}/schema/dtd"
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version \
+        "file://${XSL_DIR}/schema/dtd"
+    ${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+        http://docbook.sourceforge.net/release/${PORTNAME}/$version \
+        "file://${XSL_DIR}/schema/dtd"
+done
+
+${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateSystem \
+    http://docbook.sourceforge.net/release/${PORTNAME}/ \
+    "file://${CATALOG_XSL}"
+${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateURI \
+    http://docbook.sourceforge.net/release/${PORTNAME}/ \
+    "file://${CATALOG_XSL}"
+
+# echo $(w3m -dump http://cvs.sf.net/cgi-bin/viewcvs.cgi/docbook/slides/VERSION
+# | grep released | cut -d' ' -f2)
