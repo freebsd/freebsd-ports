@@ -1,5 +1,19 @@
 bin/vcdimager
-bin/vcdrip
+bin/vcddebug
+bin/cdxa2mpeg
+bin/vcdxbuild
+bin/vcdxgen
+bin/vcdxrip
+bin/vcdxminfo
 @unexec install-info --delete %D/info/vcdimager.info %D/info/dir
+@unexec install-info --delete %D/info/vcdimager.info-1 %D/info/dir
+@unexec install-info --delete %D/info/vcdimager.info-2 %D/info/dir
+@unexec install-info --delete %D/info/vcdimager.info-3 %D/info/dir
 info/vcdimager.info
+info/vcdimager.info-1
+info/vcdimager.info-2
+info/vcdimager.info-3
 @exec install-info %D/info/vcdimager.info %D/info/dir
+@exec install-info %D/info/vcdimager.info-1 %D/info/dir
+@exec install-info %D/info/vcdimager.info-2 %D/info/dir
+@exec install-info %D/info/vcdimager.info-3 %D/info/dir

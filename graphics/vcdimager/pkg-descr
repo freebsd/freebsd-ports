@@ -1,19 +1,23 @@
-VCDImager is a "little" program which allows direct making of VideoCD
-BIN/CUE CD images from MPEG files, which can be played on standalone
-VCD players or DVD players.  BIN/CUE images can be burned with cdrdao.
+GNU VCDImager is a full-featured mastering suite for
+authoring, disassembling and analyzing Video CD's and Super
+Video CD's. The core functionality consists of directly making Video CD
+BIN/CUE-style CD images from mpeg files.
 
-VCDImager supports the VideoCD 1.1, VideoCD 2.0 audn Super VideoCD 2.0
-standards.
+Features
+- Free software available under the GNU Public License
+- Support for Video CD 1.1 and 2.0 disc formats
+- Support for the Super Video CD 1.0 disc format
+- Full PBC (playback control) support
+- Support for segment play items
+- Automatic padding of MPEG streams on the fly
+- Support for 99-minute (out-of-specification) CD-R media
+- Extraction of Video CD's into files (incl. the PBC information)
+- Use of XML for the description of Video CD's
 
-Also included in the package is the vcdrip-tool, which performs the
-opposite task.
-
-This set actually consists of a backend library and a commandline
-frontend for it.
-
-
+Author: Herbert Valerio Riedel <hvr@gnu.org>
 WWW: http://www.gnu.org/vcdimager/
-     http://www.hvrlab.org/~hvr/vcdimager/
+     http://www.vcdimager.org/
 
-- Harold Gutch
-logix@foobar.franken.de
+
+- arved
+freebsdports@arved.de
