@@ -9,6 +9,7 @@ PORTNAME=	musicbrainz
 PORTVERSION=	1.0.0.pre4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
+DISTNAME=	${PORTNAME}-1.0.0pre4
 
 MAINTAINER=	roman@xpert.com
 
