@@ -1,0 +1,255 @@
+#!/usr/bin/perl -w
+#
+# Copyright (c) 2000 Neil Blakey-Milner
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+use strict;
+
+use Getopt::Std qw( getopts );
+
+my ($initdir, $distname);
+my ($makefile, $wrksrc);
+my ($portname, $portversion);
+my (%cap); # persistent version of the make variables
+my (%tmp); # temporary version of the make variables
+
+chomp($initdir = `pwd`);
+
+getopts('o');
+
+#&usage if $#ARGV != 0;
+
+&initmk;
+&chk_scripts;
+chdir($initdir);
+open(MAKEFILE, ">Makefile.extr");
+&writemk;
+
+exit;
+
+sub nl {
+	print MAKEFILE "\n";
+}
+
+sub writeiffound {
+	my($var) = (@_);
+
+	if ($tmp{"$var"}) {
+		print MAKEFILE "$var=\t". $tmp{$var} . "\n";
+		delete($tmp{$var});
+		return 1;
+	}
+	return 0;
+}
+
+sub appendvar {
+	my ($var, $item) = (@_);
+
+	if ($tmp{$var}) {
+		$tmp{$var} .= "\t\\\n\t\t$item";
+	} else {
+		$tmp{$var} = "$item";
+	}
+}
+
+sub writemk {
+
+	my (@freeform);
+
+	my ($key);
+
+	foreach $key (keys %cap) {
+		$tmp{$key} = $cap{$key};
+	}
+
+	foreach $key (keys %tmp) {
+		if ($tmp{"USE_KDE"}) {
+			appendvar("LIB_DEPENDS",
+				"kdecore.4:\${PORTSDIR}/x11/kdelibs2");
+			delete($tmp{"USE_KDE"});
+		}
+
+		if ($tmp{"USE_GNOME"}) {
+			appendvar("LIB_DEPENDS",
+				"gnome.4:\${PORTSDIR}/x11/gnomelibs");
+			delete($tmp{"USE_GNOME"});
+		}
+
+		if ($tmp{"USE_GTK"}) {
+			appendvar("LIB_DEPENDS",
+				"gtk12.2:\${PORTSDIR}/x11-toolkits/gtk12");
+
+			$tmp{"GTK_CONFIG"} = 
+				"\${X11BASE}/bin/gtk12-config";
+
+			appendvar("CONFIGURE_ENV",
+					"GTK_CONFIG=\"\${GTK_CONFIG}\"");
+
+			delete($tmp{"USE_GTK"});
+		}
+	}
+
+	my ($date);
+	chomp($date = `date +"\%d \%b \%Y"`);
+
+	nl if writeiffound("LIB_DEPENDS");
+
+	nl if (writeiffound("GNU_CONFIGURE") +
+		writeiffound("HAS_CONFIGURE") +
+		writeiffound("CONFIGURE_ARGS") +
+		writeiffound("CONFIGURE_ENV"));
+
+	#second group
+	foreach $key (keys %tmp) {
+		my($tmp) = $tmp{$key};
+		print MAKEFILE "$key=\t$tmp\n";
+	}
+
+	print MAKEFILE @freeform;
+
+	print MAKEFILE "\n.include <bsd.port.mk>\n";	
+	close (MAKEFILE);
+}
+
+sub initmk {
+	chomp($portname = `make -V PORTNAME`);
+	chomp($portversion = `make -V PORTVERSION`);
+	`make extract`;
+}
+
+sub getwrksrc {
+	my (@files);
+	my ($wrkdir);
+	$wrkdir = "work";
+	chdir ($initdir);
+	chdir ($wrkdir);
+
+	if (-d "$portname-$portversion") {
+		$wrksrc = $wrkdir . "$portname-$portversion";
+		chdir ("$portname-$portversion");
+		return;
+	}
+
+	opendir(DIR, ".");
+	@files = grep { ! /^\./ } readdir(DIR);
+	closedir DIR;
+	if ($#files > 1) { # more than one entry in dir
+		$cap{"NO_WRKSUBDIR"} = "YES";
+		$wrksrc = $wrkdir;
+	} else { # just one, so change to directory
+		$cap{"WRKSRC"} = '${WRKDIR}/' . $files[0];
+		$wrksrc = $wrkdir . $files[0];
+		chdir ($files[0]);
+	}
+}
+
+sub getmkfile {
+	if ((! -f "Makefile")) {
+		if (-f "Makefile.in") {
+			$makefile = "Makefile.in";
+		} elsif (-f "makefile") {
+			$cap{"MAKEFILE"} = "makefile";
+			$makefile = "makefile";
+		} elsif (-f "GNUmakefile") {
+			$cap{"MAKEFILE"} = "GNUmakefile";
+			$cap{"USE_GMAKE"} = "YES";
+			$makefile = "GNUmakefile";
+		} else {
+			print STDERR "No Makefile!\n";
+			$cap{"NO_BUILD"} = "YES";
+			$cap{"NO_INSTALL"} = "YES";
+		}
+	} else {
+		$makefile = "Makefile";
+	}
+}
+
+sub gettargets {
+	my($targets);
+	$targets = "";
+	$targets = `make -f $makefile -dg1 -q | grep "^[^.#][-_.a-zA-Z ]*:" | awk "{\$1}"` if defined($makefile);
+	print $targets;
+}
+
+sub getconfinfo {
+	if (-f "configure") { # ooh, but HAS_CONFIGURE or GNU_CONFIGURE?
+		if (`./configure --version` =~ /autoconf/) {
+			$cap{"GNU_CONFIGURE"} = "YES";
+			$cap{"USE_QT"} = "YES" if (`./configure --help | grep -Fe --with-qt`);
+			$cap{"USE_GTK"} = "YES" if (`./configure --help | grep -Fe --with-gtk`);
+			$cap{"USE_GNOME"} = "YES" if (`./configure --help | grep -Fe --with-gnome`);
+			$cap{"USE_KDE"} = "YES" if (`grep -F "checking for KDE" configure`);
+			$cap{"USE_OPENSSL"} = "MUST" if (`grep -F 'configure: error: --with-openssl must be specified' configure`);
+			$cap{"USE_OPENSSL"} = "OPTIONAL" if ( (`grep -F 'configure: error: "OpenSSL not in ' configure`) && !($cap{"USE_OPENSSL"}) );
+		} else {
+			$cap{"HAS_CONFIGURE"} = "YES";
+		}
+	} else { # maybe they expect us to build configure for them?!
+		if (-f "configure.in") {
+			$cap{"USE_AUTOCONF"} = "YES";
+		} elsif (-f "Configure") {
+			$cap{"HAS_CONFIGURE"} = "YES";
+			$cap{"CONFIGURE_SCRIPT"} = "Configure";
+		}
+	}
+
+	if (!$cap{"USE_QT"}) { # haven't seen QT yet, let's try some more
+		if ($cap{"USE_KDE"}) {
+			$cap{"USE_QT"} = "YES";
+		} elsif (-f "automoc") {
+			$cap{"USE_QT"} = "YES";
+		} elsif (-d "moc") {
+			$cap{"USE_QT"} = "YES";
+		} elsif (defined($makefile) && -f $makefile && `grep -F -e -lqt $makefile`) { # more insane.
+			$cap{"USE_QT"} = "YES";
+		}
+	}
+}
+
+sub chk_scripts {
+	&getwrksrc;
+	&getmkfile;
+	#&gettargets;
+
+	&getconfinfo;
+
+	if (-f "ltconfig") {
+		$cap{"USE_LIBTOOL"} = "YES";
+	}
+
+	if (-f "Imakefile") {
+		$cap{"USE_IMAKE"} = "YES";
+	}
+}
+
+sub usage {
+	print STDERR <<"EOF";
+usage: $0 filename
+
+	generates a ports skeleton for port based on filename
+
+EOF
+	exit;
+}
