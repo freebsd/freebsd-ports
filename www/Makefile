@@ -160,6 +160,7 @@
     SUBDIR += mozilla+ipv6
     SUBDIR += mozilla-headers
     SUBDIR += neon
+    SUBDIR += netraider
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
     SUBDIR += netscape3
