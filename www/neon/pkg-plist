@@ -24,7 +24,7 @@ include/neon/ne_xml.h
 lib/libneon.so.24
 lib/libneon.so
 lib/libneon.a
-lib/pkgconfig/neon.pc
+libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/apas01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apas02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apas03.html
@@ -80,5 +80,5 @@ lib/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/using-neon.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/lib/pkgconfig > /dev/null 2>&1 || true
+@unexec rmdir %D/libdata/pkgconfig > /dev/null 2>&1 || true
 @dirrm include/neon

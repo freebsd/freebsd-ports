@@ -7,6 +7,7 @@
 
 PORTNAME=	neon
 PORTVERSION=	0.24.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -21,13 +22,13 @@ INSTALLS_SHLIB=	yes
 USE_OPENSSL=	yes
 .endif
 
+USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl \
 		--enable-xml \
 		--enable-shared \
 		--with-expat \
 		--with-libs=${PREFIX}
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_destroy.3 ne_addr_error.3 \
