@@ -1,0 +1,14 @@
+The GLE Tubing and Extrusion Library is a graphics application
+programming interface (API). The library consists of a number of "C"
+language subroutines for drawing tubing and extrusions. The library is
+distributed in source code form, in a package that includes
+documentation, a VRML proposal, Makefiles, and full source code and
+header files. It uses the OpenGL (TM) programming API to perform the
+actual drawing of the tubing and extrusions.
+
+
+WWW: http://linas.org/gle/
+     http://sourceforge.net/projects/gle/
+
+- David Gilbert
+dgilbert@velocet.ca
