@@ -149,6 +149,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/cidmenu.html
 %%PORTDOCS%%share/doc/pfaedit/cliargs.html
 %%PORTDOCS%%share/doc/pfaedit/contextchain.html
+%%PORTDOCS%%share/doc/pfaedit/contextchain-class.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-classlist.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-coverage.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-cselect.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-format.png
