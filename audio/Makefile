@@ -35,6 +35,7 @@
     SUBDIR += beep
     SUBDIR += bladeenc
     SUBDIR += blop
+    SUBDIR += bmp-faad
     SUBDIR += bmp-wma
     SUBDIR += bonk
     SUBDIR += boodler
