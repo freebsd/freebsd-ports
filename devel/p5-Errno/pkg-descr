@@ -1,0 +1,3 @@
+       Errno defines and conditionally exports all the error
+       constants defined in your system errno.h include file.
+
