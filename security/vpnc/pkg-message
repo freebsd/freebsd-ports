@@ -1,0 +1,7 @@
+If vpnc fails with
+
+    socket(SOCK_RAW): Protocol not supported
+
+check your kernel configuration. The ESP protocol is only
+enabled for FAST_IPSEC (this cannot be configured together with
+IPSEC). See LINT for further details.
