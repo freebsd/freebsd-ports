@@ -1,6 +1,6 @@
 bin/slib48
-lib/scheme48/slibcat
 lib/scheme48/slib.image
+lib/scheme48/slibcat
 share/slib/Bev2slib.scm
 share/slib/Template.scm
 share/slib/alist.scm
@@ -27,6 +27,7 @@ share/slib/dynamic.scm
 share/slib/dynwind.scm
 share/slib/eval.scm
 share/slib/factor.scm
+share/slib/fft.scm
 share/slib/fluidlet.scm
 share/slib/format.scm
 share/slib/formatst.scm
@@ -111,8 +112,7 @@ share/slib/trnscrpt.scm
 share/slib/tsort.scm
 share/slib/tzfile.scm
 share/slib/values.scm
-share/slib/yasyn.scm
 share/slib/withfile.scm
 share/slib/wttest.scm
 share/slib/wttree.scm
-@dirrm share/slib
+share/slib/yasyn.scm
