@@ -1,6 +1,6 @@
 @comment features/ruby18
-%%RUBY_SITEARCHLIBDIR%%/features/ruby18/file.so
-%%RUBY_SITEARCHLIBDIR%%/features/ruby18/io.so
+%%RUBY_SITEARCHLIBDIR%%/features/ruby18/file_ruby18.so
+%%RUBY_SITEARCHLIBDIR%%/features/ruby18/io_ruby18.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/features/ruby18
 @dirrm %%RUBY_SITEARCHLIBDIR%%/features
 %%RUBY_SITELIBDIR%%/features/ruby18.rb
@@ -53,4 +53,5 @@
 %%RUBY_SITELIBDIR%%/fileutils.rb
 %%RUBY_SITELIBDIR%%/pp.rb
 %%RUBY_SITELIBDIR%%/prettyprint.rb
+%%RUBY_SITELIBDIR%%/set.rb
 %%RUBY_SITELIBDIR%%/tsort.rb
