@@ -1,13 +1,13 @@
 # New ports collection makefile for:    tgif-nls
-# Version required:     4.1.8
+# Version required:     4.1.16
 # Date created:         3 May 1999
 # Whom:                 one@netlab.is.tsukuba.ac.jp
 #
-# $Id: Makefile,v 1.3 1999/05/29 04:39:26 steve Exp $
+# $Id: Makefile,v 1.4 1999/06/06 16:32:29 steve Exp $
 #
 
-DISTNAME=	tgif-4.1.15
-PKGNAME=	tgif-nls-4.1.15
+DISTNAME=	tgif-4.1.16
+PKGNAME=	tgif-nls-4.1.16
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
