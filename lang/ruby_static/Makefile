@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby_static
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTREVISION?=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -20,8 +21,9 @@ USE_RUBY=	yes
 USE_AUTOCONF=	yes
 
 # Beware, because gdbm is under GPL, you must treat the whole binary
-# as GPL says.
+# as GPL says if you include gdbm in it.
 EXT_PORTS=	archivers/ruby-zlib \
+		databases/ruby-bdb1 \
 		devel/ruby-strscan
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
@@ -77,10 +79,13 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${_RUBY_PORTDIR} && ${MAKE} -V WRKSRC` ${WRKSRC}
 .for p in ${EXT_PORTS}
+	m="${p:T:S,^ruby-,,}"; \
 	wrksrc=$$(cd ${_PORTSDIR}/${p} && ${MAKE} -V WRKSRC) ; \
-	extdir=$$(find -L $$wrksrc -name extconf.rb); \
+	extdir=$$(${FIND} -L $$wrksrc -name extconf.rb | \
+	${XARGS} ${GREP} -l create_makefile | ${HEAD} -1 ); \
 	extdir=$${extdir%/extconf.rb}; \
-	${CP} -RPp $$extdir ${WRKSRC}/ext/
+	${CP} -RPp $$extdir ${WRKSRC}/ext/$$m; \
+	${TOUCH} ${WRKSRC}/ext/$$m/MANIFEST
 .endfor
 .if defined(STATIC)
 	${ECHO_CMD} "option nodynamic" > ${WRKSRC}/ext/Setup
