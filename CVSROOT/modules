@@ -8491,6 +8491,7 @@ py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
 py-asv		ports/textproc/py-asv
 py-biopython	ports/biology/py-biopython
+py-bison	ports/devel/py-bison
 py-bittornado	ports/net/py-bittornado
 py-bittornado-core	ports/net/py-bittornado-core
 py-bittorrent	ports/net/py-bittorrent
