@@ -1,0 +1,31 @@
+share/mplayer/fonts/iso/README
+share/mplayer/fonts/iso/arial-12-00_a.raw
+share/mplayer/fonts/iso/arial-12-00_b.raw
+share/mplayer/fonts/iso/arial-12.desc
+share/mplayer/fonts/iso/arial-16-00_a.raw
+share/mplayer/fonts/iso/arial-16-00_b.raw
+share/mplayer/fonts/iso/arial-16.desc
+share/mplayer/fonts/iso/arialbd-12-00_a.raw
+share/mplayer/fonts/iso/arialbd-12-00_b.raw
+share/mplayer/fonts/iso/arialbd-12.desc
+share/mplayer/fonts/iso/arialbd-16-00_a.raw
+share/mplayer/fonts/iso/arialbd-16-00_b.raw
+share/mplayer/fonts/iso/arialbd-16.desc
+share/mplayer/fonts/iso/arpi_osd_a.raw
+share/mplayer/fonts/iso/arpi_osd_b.raw
+share/mplayer/fonts/iso/arpi_progress_a.raw
+share/mplayer/fonts/iso/arpi_progress_b.raw
+share/mplayer/fonts/iso/font.desc
+share/mplayer/fonts/cyrillic/bgfont_a.raw
+share/mplayer/fonts/cyrillic/bgfont_b.raw
+share/mplayer/fonts/cyrillic/font.desc
+share/mplayer/fonts/cyrillic/font.desc.koi8-r
+share/mplayer/fonts/cyrillic/test.sub
+share/mplayer/fonts/koi8r/font.desc
+share/mplayer/fonts/koi8r/koi8-r-a.raw
+share/mplayer/fonts/koi8r/koi8-r-b.raw
+@dirrm share/mplayer/fonts/iso
+@dirrm share/mplayer/fonts/cyrillic
+@dirrm share/mplayer/fonts/koi8r
+@dirrm share/mplayer/fonts
+@dirrm share/mplayer

@@ -158,6 +158,7 @@
     SUBDIR += mpeg_stat
     SUBDIR += mpegedit
     SUBDIR += mpgtx
+    SUBDIR += mplayer-fonts
     SUBDIR += mplex
     SUBDIR += mtv
     SUBDIR += netpbm

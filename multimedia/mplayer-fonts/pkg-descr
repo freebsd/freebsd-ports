@@ -1,0 +1,14 @@
+This is the port which contains the superset of
+the fonts for the mplay on screen display and
+the sub title.
+
+In this stage it supports the following charsets:
+
+ISO for dutch, french, german, hungarian, italian
+    and portugese
+
+cyrillic
+
+russian (koi8r)
+
+WWW: http://mplayer.sourceforge.net
