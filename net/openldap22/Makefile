@@ -28,7 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -D_THREAD_SAFE" \
 CONFIGURE_ARGS+=	--enable-ldbm --with-ldbm-api=db2
 .endif
 
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var/run --enable-shared --enable-dns
 

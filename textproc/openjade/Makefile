@@ -15,7 +15,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 

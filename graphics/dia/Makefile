@@ -27,7 +27,6 @@ USE_X_PREFIX=   yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--enable-gnome

@@ -14,6 +14,5 @@ MAINTAINER=	vince@blue-box.net
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

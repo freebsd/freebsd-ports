@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/python1.5/qt.py:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_LIBTOOL=	yes
 USE_QT=		yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/X11/qt
 

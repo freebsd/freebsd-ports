@@ -19,7 +19,6 @@ BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext \
 
 USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include --x-libraries=$(X11BASE)/lib \
 		--datadir=$(PREFIX)/share --with-qt-moc=${X11BASE}/bin/moc2 \

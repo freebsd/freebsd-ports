@@ -29,7 +29,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
 		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
 		LINGUAS="da de es fi fr hr it ja_JP.EUC ko nl no pl pt ru zh_TW.Big5 zh_CN"

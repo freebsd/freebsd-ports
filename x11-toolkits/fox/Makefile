@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
 .if defined(NO_SHM)
 CONFIGURE_ARGS+=--with-shm=no
