@@ -1,5 +1,5 @@
---- ../product/util/makefile.mk.orig	Sun Jun  2 22:47:14 2002
-+++ ../product/util/makefile.mk	Sun Jun  2 23:32:44 2002
+--- ../product/util/makefile.mk.orig	Sat Apr  6 12:01:11 2002
++++ ../product/util/makefile.mk	Mon Jun  3 00:00:57 2002
 @@ -108,12 +108,20 @@
  STLPORTLIBNAME=libstlport_gcc.so
  BINDINGDLL=$(COMNAME)_uno
@@ -35,7 +35,7 @@
  .ELIF "$(OS)"=="NETBSD"
  ###########
  # NETBSD
-@@ -447,6 +448,20 @@
+@@ -438,13 +439,27 @@
  
  #---------------------------------------------------------
  # special targets for linux gcc3 
@@ -56,12 +56,24 @@
  $(DESTDIRDLL)$/libstdc++.so.3.0.1 : $(DLLOUT)$/libstdc++.so.3.0.1 $(DIRLIST)
  	-rm -f $@
  	$(GNUCOPY) -p $(DLLOUT)$/libstdc++.so.3.0.1 $@
-@@ -462,6 +477,8 @@
+ 
+ $(DESTDIRDLL)$/libstdc++.so.3 : $(DESTDIRDLL)$/libstdc++.so.3.0.1 $(DIRLIST)
+ 	-rm -f $@
+-	+ln -s libstdc++.so.3.0.1 $@
++	+ln -fs libstdc++.so.3.0.1 $@
+ 
+ $(DESTDIRDLL)$/libgcc_s.so.1 : $(DLLOUT)$/libgcc_s.so.1 $(DIRLIST)
+ 	-rm -f $@
+@@ -452,7 +467,11 @@
+ 
  $(DESTDIRDLL)$/libgcc_s.so : $(DESTDIRDLL)$/libgcc_s.so.1 $(DIRLIST)
  	-rm -f $@
- 	+ln -fs libgcc_s.so.1 $@
+-	+ln -s libgcc_s.so.1 $@
++	+ln -fs libgcc_s.so.1 $@
++
 +.ENDIF
 +.ENDIF
++
  #-------------------------------------------------------------
  
  $(DESTDIRJAR)$/%.jar : $(BINOUT)$/%.jar $(DIRLIST)
