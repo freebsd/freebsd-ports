@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.47 1999/04/21 05:56:24 nectar Exp $
+# $Id: Makefile,v 1.48 1999/04/21 16:20:05 nectar Exp $
 #
 
 DISTNAME=       py152
@@ -21,7 +21,7 @@ DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
-MAKE_FLAGS=	'OPT=${CFLAGS}'
+CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
@@ -52,7 +52,7 @@ LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if ${LIBC_R} != "" && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
 CFLAGS+=		-D_THREAD_SAFE
-CONFIGURE_ENV=		LDFLAGS="-pthread ${LDFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
 .endif
 
 #
