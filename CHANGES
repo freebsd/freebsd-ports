@@ -11,6 +11,7 @@ in the release notes.
 All ports committers are allowed to commit to this file.
 
 20040610:
+AUTHOR:	portmgr@FreeBSD.org
   The following behavioural or feature changes were committed:
 
   * Support verbose index builds with INDEX_VERBOSE
@@ -36,7 +37,7 @@ All ports committers are allowed to commit to this file.
     Find all ports whose names contain "pear-" but not "html" or "http":
 
       make search name=pear- xname='ht(tp|ml)'
-     
+
     Find ports whose names contain "pear-" and which don't have apache
     listed in build-time dependencies:
 
@@ -110,6 +111,7 @@ All ports committers are allowed to commit to this file.
     build of a BROKEN port.
 
 20040604:
+AUTHOR:	ade@FreeBSD.org
 	Over the past few weeks, we have been testing the next
 	incarnation of ports/Mk/bsd.autotools.mk on the road to bringing
 	at least some semblance of sanity back to this corner of the
@@ -161,6 +163,7 @@ All ports committers are allowed to commit to this file.
 	devel/autoconf*, devel/automake*, devel/libtool*, and devel/libltdl.
 
 20040416:
+AUTHOR:	java@FreeBSD.org
 	There has been a couple of bsd.java.mk tweaks and fixes.
 
 	. Features from Stage 2 has been removed.  A port can no
@@ -185,6 +188,7 @@ All ports committers are allowed to commit to this file.
 	  header of bsd.java.mk.
 
 20040414:
+AUTHOR:	gnome@FreeBSD.org
 	When writing a port that uses GTK+ 2.X, you can now list the dependency
 	with "USE_GNOME=gtk20" which is preferable to LIB_DEPENDS because the
 	GTK+ library version only needs to be changed in bsd.gnome.mk.
@@ -194,6 +198,7 @@ All ports committers are allowed to commit to this file.
 	creating ports that use the GNOME infrastructure.
 
 20040404:
+AUTHOR:	gnome@FreeBSD.org
 	The glib20 and gtk20 ports were updated to 2.4.0.  This new version
 	is completely source and binary compatible with the previous 2.2.x
 	series.  However, certain API calls have been deprecated.  If your
@@ -210,6 +215,7 @@ G_DISABLE_DEPRECATED
 	their code to use current API calls.
 
 20040402:
+AUTHOR:	java@FreeBSD.org
 	There has been a big update to bsd.java.mk.  However, this update
 	is mostly backwards compatible, so it shouldn't affect most java
 	port maintainers.  There is some new functionality and minor
@@ -271,6 +277,7 @@ G_DISABLE_DEPRECATED
 	http://www.esil.univ-mrs.fr/~hquiroz/freebsd/bsd.java.mk-2.0.html
 
 20040316:
+AUTHOR:	gnome@FreeBSD.org
 	The print/freetype2 port has been updated to 2.1.7.  This update
 	changes some of the internal FreeType API.  Applications may need
 	to be patched to support this new API.  If a source files includes
@@ -286,6 +293,7 @@ G_DISABLE_DEPRECATED
 #include <freetype/freetype.h>
 
 20040314:
+AUTHOR:	ade@FreeBSD.org
 	USE_LIBTOOL, USE_AUTOCONF, and USE_AUTOMAKE are now considered
 	deprecated, and will be removed on or around June 1st 2004.
 	All ports should now choose the specific version of the tool,
@@ -298,6 +306,7 @@ G_DISABLE_DEPRECATED
 	USE_AUTOMAKE=yes	USE_AUTOMAKE_VER=14
 
 20040304:
+AUTHOR:	eik@FreeBSD.org
 	New variable MASTER_SITE_SOURCEFORGE_EXTENDED. It has the
 	ten official sourceforge.net download mirrors, whereas
 	MASTER_SITE_SOURCEFORGE only has five. To check if your
@@ -307,6 +316,7 @@ G_DISABLE_DEPRECATED
 	corresponding to the variables above.
 
 20040226:
+AUTHOR:	knu@FreeBSD.org
 	The default version of Ruby is now 1.8 on all platforms
 	including the i386.
 
@@ -319,6 +329,7 @@ G_DISABLE_DEPRECATED
 	multiple versions of ruby.
 
 20040217:
+AUTHOR:	gnome@FreeBSD.org
 	Mozilla will now default to using GTK2, and will only compile
 	against Gtk+-1.2 if explicitly requested.  This is in exact
 	opposite to the old behaviour.
@@ -353,6 +364,7 @@ G_DISABLE_DEPRECATED
 
 
 20040204:
+AUTHOR:	portmgr@FreeBSD.org
 	The bsd.php.mk file has been moved out of the lang/php4 port
 	into the Mk directory.  This will make it much easier to include
 	PHP support in PHP-dependent ports.  Instead of including
@@ -505,6 +517,7 @@ G_DISABLE_DEPRECATED
 	omit SIZE attributes for specific distfiles in the future.
 
 20040129:
+AUTHOR:	erwin@FreeBSD.org
 	SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
 	makesum", the byte sizes of the distfiles will be listed in the
 	distinfo file. Then, if a distfile is replaced on its master site with
@@ -514,6 +527,7 @@ G_DISABLE_DEPRECATED
 	the distfiles before fetching and decide to fetch later.
 
 20040129:
+AUTHOR:	erwin@FreeBSD.org
 	Start of CHANGES file.
 
 FORMAT:
