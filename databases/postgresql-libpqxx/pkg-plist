@@ -1,10 +1,10 @@
+bin/pqxx-config
 include/pqxx/pqxx
 include/pqxx/all.h
 include/pqxx/binarystring
 include/pqxx/binarystring.hxx
 include/pqxx/cachedresult.h
 include/pqxx/compiler.h
-include/pqxx/config.h
 include/pqxx/connection
 include/pqxx/connection.hxx
 include/pqxx/connection.h
@@ -19,6 +19,7 @@ include/pqxx/dbtransaction.h
 include/pqxx/except
 include/pqxx/except.hxx
 include/pqxx/except.h
+include/pqxx/internalconfig.h
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/isolation.h
@@ -30,6 +31,8 @@ include/pqxx/libconfig.h
 include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
 include/pqxx/nontransaction.h
+include/pqxx/pipeline
+include/pqxx/pipeline.hxx
 include/pqxx/result
 include/pqxx/result.hxx
 include/pqxx/result.h
@@ -64,6 +67,7 @@ include/pqxx/util.h
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
-lib/libpqxx.so.0
-lib/pkgconfig/libpqxx.pc
+lib/libpqxx-2.2.3.so
+lib/libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx
+@unexec rmdir %D/lib/libdata/pkgconfig 2>/dev/null || true
