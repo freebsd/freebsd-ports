@@ -1,0 +1,19 @@
+*** configure.in.orig	Sun Aug 31 09:31:23 2003
+--- configure.in	Sun Aug 31 09:31:50 2003
+*************** case "$target_os" in
+*** 39,45 ****
+                     STDCCFLAGS="-DP_LINUX=$OSRELEASE" ;;
+  
+    freebsd* )       OSTYPE=FreeBSD ;
+!                    OSRELEASE=`sysctl -n kern.osreldate` ;
+                     STDCCFLAGS="-DP_FREEBSD=$OSRELEASE" ;;
+  
+    openbsd* )       OSTYPE=OpenBSD ;
+--- 39,45 ----
+                     STDCCFLAGS="-DP_LINUX=$OSRELEASE" ;;
+  
+    freebsd* )       OSTYPE=FreeBSD ;
+! ## use enviroment variable  OSRELEASE=`sysctl -n kern.osreldate` ;
+                     STDCCFLAGS="-DP_FREEBSD=$OSRELEASE" ;;
+  
+    openbsd* )       OSTYPE=OpenBSD ;
