@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.65 1998/07/20 03:39:29 steve Exp $
+# $Id: Makefile,v 1.66 1998/08/17 00:11:27 steve Exp $
 #
 # NOTE:  The fetchmailconf program (an interactive program for
 # writing .fetchmailrc files) requires Python, found in the Ports
@@ -24,6 +24,10 @@ MAN1=		fetchmail.1
 
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS += --with-kerberos=/usr/include
+.endif
+
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libkrb5.a)
+CONFIGURE_ARGS += --with-kerberos5=${KRB5_HOME}
 .endif
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
