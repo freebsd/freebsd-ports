@@ -26,15 +26,12 @@ MAKE_ARGS+=	-j 2
 post-install:
 	${CAT} ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
+	@${MKDIR} ${LOCALBASE}/${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/debian/changelog \
-		${WRKSRC}/debian/copyright ${DOCDIR}
+		${WRKSRC}/debian/copyright ${LOCALBASE}/${DOCDIR}
 
-PLIST_SUB+=	DOC=''
-DOCDIR=	${LOCALBASE}/share/doc/pam-pgsql
-
-.else
-PLIST_SUB+=	DOC='@comment '
+DOCDIR=		share/doc/pam-pgsql
+PLIST_SUB+=	DOCDIR=${DOCDIR}
 .endif
 
 .include <bsd.port.mk>
