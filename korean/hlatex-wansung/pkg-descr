@@ -1,13 +1,12 @@
-HLaTeX
-======
+HLaTeX(Wansung extension)
+=========================
 
-This is a \LaTeX package to use Hangul with \LaTeX.
-With this package, you can run latex on KSC 5601 based Korean LaTeX
-file to produce a professionally looking Korean documents. You can
-typeset all Korean characters defined in KSC 5601, including Korean
-Symbol, Hangul and Hanja.
+HLaTeX-wansung is an extension of HLaTeX, to use old Wansung-style
+font collection.
 
-Currently it can be used with teTeX-0.4.
+To use this package, install one of korean/hlatex-{mf,ps}fonts-wansung
+package. Font format is your choice.
 
 --
-Ports by CHOI Junho <cjh@kr.freebsd.org>
+Ports by CHOI Junho <cjh@FreeBSD.org>
+WWW: ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/hlatex-ko.html

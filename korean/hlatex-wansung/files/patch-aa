@@ -1,0 +1,8 @@
+--- wanfont.sty.orig	Sat Jan 22 08:29:47 2000
++++ wanfont.sty	Sun Jul  2 19:31:07 2000
+@@ -1,3 +1,5 @@
++\def\@psh@n{}
++
+ \newif\if@pshan
+ \DeclareOption{pshan}{\def\@psh@n{p}}
+ \ProcessOptions
