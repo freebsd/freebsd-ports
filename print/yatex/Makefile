@@ -1,9 +1,9 @@
 # New ports collection makefile for: YaTeX
 # Version required:	1.65.6
-# Date created:		18 Feb. 1998
+# Date created:		Oct 9 1998
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/14 00:16:07 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/21 07:09:58 asami Exp $
 #
 
 DISTNAME=	yatex9805062331
@@ -37,7 +37,8 @@ ADDSITESTART=	(setq load-path (append (list \\n\
 		\\t\\"${ELISPDIR}/yatex\\"\\n\
 		\\t) load-path))\\n
 .if defined(MULE)
-EMACSDIR=	${PREFIX}/lib/mule
+EMACSDIR=	${PREFIX}/share/mule
+SITESTARTDIR=	${EMACSDIR}/19.34/site-lisp
 .endif
 .if defined(XEMACS-MULE)
 EMACS=		xemacs
@@ -45,6 +46,7 @@ EMACSDIR=	${PREFIX}/lib/xemacs
 #
 INFODIR=	${EMACSDIR}/info
 ADDSITESTART=
+SITESTARTDIR=
 .endif
 .if defined(MULE) || defined(XEMACS-MULE)
 NEW=		yatex.new
@@ -96,6 +98,7 @@ do-build:
 		 -e 's,%INFONODES%,${INFONODES},g' \
 		 -e 's,%INFONODEEXPS%,${INFONODEEXPS},g' \
 		 -e 's,%DIRSECTION%,${DIRSECTION},g' \
+		 -e 's,%SITESTARTDIR%,${SITESTARTDIR},g' \
 		 -e 's,%ADDSITESTART%,${ADDSITESTART},g' \
 		< ${FILESDIR}/$${file}.tmpl > ${FILESDIR}/$${file}; \
 	done

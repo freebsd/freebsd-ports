@@ -10,6 +10,7 @@ SED=${SED:-%SED%}
 
 infodir=${INFODIR:-%INFODIR%}
 infofiles=${INFOFILES:-%INFOFILES%}
+sitestartdir=${SITESTARTDIR:-%SITESTARTDIR%}
 elispdir=${ELISPDIR:-%ELISPDIR%}
 
 OptionStart=";;; configuration options for ${pkgname}"
@@ -20,12 +21,12 @@ if [ "X$2" = X"DEINSTALL" ]; then
 	for file in `echo  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info --delete ${infodir}/${file} ${infodir}/dir
 	done
-	if  [ "`grep \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
-		${ECHO} "Deleting entry for \"${pkgname}\" from ${elispdir}/site-start.el"
+	if  [ "`grep \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
+		${ECHO} "Deleting entry for \"${pkgname}\" from ${sitestartdir}/site-start.el"
 		${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
-		    ${elispdir}/site-start.el > ${elispdir}/site-start.el.bak
-		${CP} ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
-		${RM} ${elispdir}/site-start.el.bak
+		    ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
+		${CP} ${sitestartdir}/site-start.el.bak ${sitestartdir}/site-start.el
+		${RM} ${sitestartdir}/site-start.el.bak
 	fi
 else
 	exit 0

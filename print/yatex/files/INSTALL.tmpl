@@ -15,14 +15,15 @@ infofiles=${INFOFILES:-%INFOFILES%}
 infonodes=${INFONODES:-%INFONODES%}
 infonodeexps=${INFONODEEXPS:-%INFONODEEXPS%}
 elispdir=${ELISPDIR:-%ELISPDIR%}
+sitestartdir=${SITESTARTDIR:-%SITESTARTDIR%}
 dirsection=${DIRSECTION:-%DIRSECTION%}
 
 OptionStart=";;; configuration options for ${pkgname}"
 OptionEnd=";;; End of configuration options for ${pkgname}"
 
 if [ "X$2" = X"POST-INSTALL" ]; then
-	if [ ! -f ${elispdir}/site-start.el ]; then 
-		 ${TOUCH} ${elispdir}/site-start.el
+	if [ ! -f ${sitestartdir}/site-start.el ]; then 
+		 ${TOUCH} ${sitestartdir}/site-start.el
 	fi
 	count=1
 	# For example, the result of `cut ttt -d : -f 2` is ttt. Why?
@@ -49,16 +50,16 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 		install-info ${infodir}/${file} ${infodir}/dir
 	done
 	if [ X'%ADDSITESTART%' != X ]; then
-	if  [ "`${GREP} \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
+	if  [ "`${GREP} \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
 		${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
-		  ${elispdir}/site-start.el > ${elispdir}/site-start.el.bak
-		${CP} ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
+		  ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
+		${CP} ${sitestartdir}/site-start.el.bak ${sitestartdir}/site-start.el
 	fi
-	${ECHO} "Adding entry for \"${pkgname}\" to ${elispdir}/site-start.el"
-	${ECHO} "${OptionStart}" >> ${elispdir}/site-start.el
+	${ECHO} "Adding entry for \"${pkgname}\" to ${sitestartdir}/site-start.el"
+	${ECHO} "${OptionStart}" >> ${sitestartdir}/site-start.el
 	/usr/bin/printf "%ADDSITESTART%" | \
-	    ${SED} "s/^ //" >> ${elispdir}/site-start.el
-	${ECHO} "${OptionEnd}" >> ${elispdir}/site-start.el
+	    ${SED} "s/^ //" >> ${sitestartdir}/site-start.el
+	${ECHO} "${OptionEnd}" >> ${sitestartdir}/site-start.el
 	fi
 	exit 0
 else
