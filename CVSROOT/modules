@@ -1804,6 +1804,7 @@ gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
 gcompris	ports/games/gcompris
+gcompris2	ports/games/gcompris2
 gconf		ports/devel/gconf
 gconf-editor	ports/sysutils/gconf-editor
 gconf2		ports/devel/gconf2
