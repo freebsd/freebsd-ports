@@ -1,14 +1,13 @@
---- Makefile.orig	Sat Jun  5 00:38:57 2004
-+++ Makefile	Fri Jul  9 15:27:31 2004
+--- Makefile.orig	Mon Nov  1 05:09:14 2004
++++ Makefile	Thu Nov  4 10:59:09 2004
 @@ -1,5 +1,5 @@
--CC=         gcc
+ CC=         gcc
 -MAKE=       make
-+CC=         cc
 +MAKE=       gmake
  INSTALL=    install
- #PREFIX=     /usr/local	# Now defined via configure
  LOCALEPATH= $(PREFIX)/share/locale
-@@ -77,7 +77,6 @@
+ 
+@@ -76,7 +76,6 @@
  		mkdir -p $(PREFIX)/man/man1; \
  	fi
  	$(INSTALL) -m 0644 $(MAN)/snownews.1 $(PREFIX)/man/man1
