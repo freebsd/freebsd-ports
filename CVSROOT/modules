@@ -740,6 +740,7 @@ ccdconfig	src/sbin/ccdconfig
 ccdoc		ports/devel/ccdoc
 cclient		ports/mail/cclient
 ccmath		ports/math/ccmath
+ccmsn		ports/net/ccmsn
 ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
 cd-console	ports/audio/cd-console
