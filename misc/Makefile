@@ -230,6 +230,7 @@
     SUBDIR += lingoteach
     SUBDIR += linux-edonkey-tool-list
     SUBDIR += linux-edonkey-tool-recovermet
+    SUBDIR += linux-opengroupware
     SUBDIR += logsurfer
     SUBDIR += lr
     SUBDIR += lv

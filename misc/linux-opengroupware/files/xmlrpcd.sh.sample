@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# Frank Reppin <frank.reppin@boerde.de>
+
+OGO_USER='ogo'
+OGO_GROUP='skyrix'
+XMLRPCD_BIN='/compat/linux/opt/opengroupware.org/Tools/ix86/linux-gnu/gnu-fd-nil/xmlrpcd'
+OGO_DIR='/compat/linux/opt/opengroupware.org'
+LOG='/var/log/opengroupware/xmlrpcd.log'
+
+
+case $1 in
+start)
+	[ ! -f ${LOG} ] && {
+		echo 'No XMLRPCD logfile present in /var/log/opengroupware - creating one...'
+		touch ${LOG}
+		chmod 600 ${LOG}
+		chown ${OGO_USER}:${OGO_GROUP} ${LOG}
+		echo 'done!'
+	}
+
+	chmod 600 ${LOG}
+	chown ${OGO_USER}:${OGO_GROUP} ${LOG}
+
+	[ -x ${XMLRPCD_BIN} ] && {
+		su -l ${OGO_USER} -c \
+			"./Tools/ix86/linux-gnu/gnu-fd-nil/xmlrpcd >>${LOG} 2>&1 &"
+		echo 'XMLRPCD started.'
+		echo "**** RECEIVED 'start' from STARTSCRIPT at `date` ****" >>${LOG}
+	}
+	;;
+
+stop)
+	killall -9 xmlrpcd >/dev/null 2>&1
+	killall -9 xmlrpcd >/dev/null 2>&1
+	echo 'XMLRPCD stopped.'
+	echo "" >>${LOG}
+	echo "**** RECEIVED 'stop' from STARTSCRIPT at `date` ****" >>${LOG}
+	;;
+
+restart)
+
+	./$0 stop
+	./$0 start
+	;;
+
+status)
+	ps auxwwwww|grep -vi grep|grep -i '/gnu-fd-nil/xmlrpcd'
+	;;
+
+*)
+    echo "usage: `basename $0` {start|stop|restart|status|}" >&2
+    exit 64
+    ;;
+esac

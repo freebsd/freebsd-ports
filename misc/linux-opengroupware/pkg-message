@@ -1,0 +1,19 @@
+===> NOTE!
+
+	You've just installed linux-opengroupware!
+	Thankyou!
+
+	There are some additional steps to
+	do now:
+
+	1)	Make sure that your PostgreSQL Installation
+		listens on TCP Port 5432.
+
+	2)	Install the ogo database scheme for PostgreSQL.
+
+	3)	manually add a line into your httpd.conf
+
+	For a complete and detailed walkthrough refer to
+	the INSTALL.fbsd in:
+
+	/compat/linux/opt/opengroupware.org
