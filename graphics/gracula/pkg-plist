@@ -1,0 +1,5 @@
+bin/gracula
+bin/sec2000
+share/doc/gracula/NNL
+share/doc/gracula/README
+@dirrm share/doc/gracula
