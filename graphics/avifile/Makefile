@@ -88,6 +88,10 @@ packet 'pth' is installed.";\
 	  ${FALSE};\
 	fi
 
+post-patch:
+	@${PERL} -pi -e "s|decore.h|divx/decore.h|; \
+		s|encore2.h|divx/encore.h|" ${WRKSRC}/plugins/libdivx4/*
+
 pre-configure:
 	@${PERL} -pi -e "s|-lqt|-lqt2|g;s|qt-mt|qt2-mt|g;\
 		s|^(PACKAGE=avifile).*|\1|" \
