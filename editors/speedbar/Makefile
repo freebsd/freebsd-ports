@@ -1,0 +1,49 @@
+# New ports collection makefile for:   speedbar
+# Date created:                29 December 2001
+# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	speedbar
+PORTVERSION=	0.13a
+CATEGORIES=	editors elisp
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cedet
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+MAINTAINER=	fuyuki@mj.0038.net
+
+EMACS_PORT_NAME?=	emacs21
+
+USE_GMAKE=	yes
+MAKE_ARGS=	LOADPATH=.
+
+LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar
+
+# We need to recompile these el's because of some incompatible changes
+# in speedbar.
+MUST_BE_RECOMPILED=	gud.el info.el rmail.el vhdl-mode.el
+
+EMACS_ARGS=	 -batch -l speedbar-compile-script -f batch-byte-compile
+
+pre-build:
+.for i in ${MUST_BE_RECOMPILED}
+	${CP} `${FIND} ${PREFIX}/${EMACS_LIBDIR_WITH_VER}/lisp -name ${i}` \
+		${WRKSRC}
+	${PERL} -pi -e 's/speedbar-attached-frame/dframe-attached-frame/' \
+		${WRKSRC}/${i}
+.endfor
+
+post-build:
+	cd ${WRKSRC}; ${EMACS_CMD} ${EMACS_ARGS} ${MUST_BE_RECOMPILED}
+
+do-install:
+	${MKDIR} ${LISPDIR}
+.for i in *.el *.elc *.xpm
+	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/speedbar.info ${PREFIX}/info
+	install-info ${PREFIX}/info/speedbar.info ${PREFIX}/info/dir
+
+.include <bsd.port.mk>

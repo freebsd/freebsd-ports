@@ -1,0 +1,11 @@
+--- speedbar.el.orig	Sat Dec 29 19:10:04 2001
++++ speedbar.el	Sat Dec 29 19:12:09 2001
+@@ -948,6 +948,8 @@
+     (speedbar-reconfigure-keymaps)
+     (speedbar-update-contents)
+     (speedbar-set-timer dframe-update-speed)
++    (if (not window-system)
++	(select-frame speedbar-frame))
+     )
+   (set (make-local-variable 'automatic-hscrolling) nil) ; Emacs 21
+   ;; reset the selection variable

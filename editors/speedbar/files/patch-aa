@@ -1,0 +1,15 @@
+--- speedbar.texi.orig	Mon Dec 10 11:33:16 2001
++++ speedbar.texi	Mon Dec 10 11:53:31 2001
+@@ -26,9 +26,10 @@
+
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * Speedbar: (speedbar).	File/Tag summarizing utility.
+-END-INFO-DIR-ENTRY
++@end direntry
+ @end format
+ @end ifinfo
+
