@@ -21,7 +21,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 USE_GMAKE=	yes
 .if !defined(WITHOUT_X11)
 USE_XPM=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 .endif
 INSTALLS_SHLIB=	yes

@@ -21,7 +21,6 @@ LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
 USE_LIBTOOL=		yes
 USE_AUTOCONF_VER=	253
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gdgeda

@@ -16,7 +16,6 @@ COMMENT=	A Window Maker dockapp that helps with easy use of pppd
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS} -I${X11BASE}/include"

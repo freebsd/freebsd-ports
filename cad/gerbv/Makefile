@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Free Gerber Viewer
 
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

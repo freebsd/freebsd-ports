@@ -15,7 +15,6 @@ MAINTAINER=	chris@unixpages.org
 COMMENT=	Displays a periodic table of the elements
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

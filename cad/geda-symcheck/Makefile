@@ -23,7 +23,6 @@ LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
 USE_LIBTOOL=	yes
 #USE_AUTOCONF=	yes
 AUTOCONF=	autoconf
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

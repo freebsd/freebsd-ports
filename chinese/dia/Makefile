@@ -15,7 +15,6 @@ PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-big5.diff.gz
 MD5_FILE=	${.CURDIR}/distinfo
 
 # For png output
-USE_GNOMENG=	yes
 USE_GNOME+=	gnomelibs
 
 .include "${MASTERDIR}/Makefile"
