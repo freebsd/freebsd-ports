@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gcc30
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
+PORTREVISION=	0
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
 		${MASTER_SITE_SOURCEWARE}

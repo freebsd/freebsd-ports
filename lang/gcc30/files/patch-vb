@@ -1,5 +1,5 @@
---- ../gcc-3.0.1/Makefile.in.orig	Fri Jun  8 12:23:56 2001
-+++ ../gcc-3.0.1/Makefile.in	Sat Sep  1 18:57:21 2001
+--- Makefile.in.orig	Fri Jun  8 12:23:56 2001
++++ Makefile.in	Sat Sep  1 18:57:21 2001
 @@ -143,7 +143,7 @@
  
  MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
