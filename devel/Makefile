@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.161 1999/03/10 16:04:29 jfitz Exp $
+# $Id: Makefile,v 1.162 1999/03/20 05:42:24 taoka Exp $
 #
 
     SUBDIR += ElectricFence
@@ -70,6 +70,7 @@
     SUBDIR += makedepend
     SUBDIR += mico
     SUBDIR += mkmf
+    SUBDIR += mm
     SUBDIR += mprof
     SUBDIR += nana
     SUBDIR += nasm
