@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Aug 20 15:30:33 2001
-+++ Makefile.in	Mon Aug 20 15:30:47 2001
-@@ -105,7 +105,7 @@
+--- Makefile.in.orig	Mon Dec 17 00:21:35 2001
++++ Makefile.in	Mon Dec 17 00:21:46 2001
+@@ -109,7 +109,7 @@
+ cflags_set = @cflags_set@
  cxxflags_set = @cxxflags_set@
- l = @l@
  
 -SUBDIRS = src include po intl data pixmaps
 +SUBDIRS = src include po data pixmaps
+ 
+ EXTRA_DIST = spacechartrc
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h

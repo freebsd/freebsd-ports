@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	spacechart
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	astro
-MASTER_SITES=	http://zipi.fi.upm.es/~e970095/spacechart/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMELIBS=	yes
-CONFIGURE_ARGS=	--without-included-gettext
+CONFIGURE_ARGS=	--without-included-gettext --datadir=${PREFIX}/share
 
 # trick it into using ports installed gettext
 post-patch:

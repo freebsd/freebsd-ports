@@ -1,4 +1,5 @@
 bin/spacechart
+etc/spacechartrc
 share/locale/es/LC_MESSAGES/spacechart.mo
-share/gnome/spacechart/gliese.dat
-@dirrm share/gnome/spacechart
+share/spacechart/gliese.dat
+@dirrm share/spacechart
