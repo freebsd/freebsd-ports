@@ -1,0 +1,7 @@
+bin/openag
+%%PORTDOCS%%share/doc/openag/AUTHORS
+%%PORTDOCS%%share/doc/openag/COPYING
+%%PORTDOCS%%share/doc/openag/ChangeLog
+%%PORTDOCS%%share/doc/openag/INSTALL
+%%PORTDOCS%%share/doc/openag/README
+%%PORTDOCS%%@dirrm share/doc/openag
