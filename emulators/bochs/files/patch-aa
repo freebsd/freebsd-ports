@@ -1,0 +1,27 @@
+*** .bochsrc.orig	Tue Dec 16 20:20:19 1997
+--- .bochsrc	Tue Dec 16 20:20:38 1997
+***************
+*** 14,24 ****
+  #floppya: 1_44=../1.44.yodlowsk
+  #floppya: 1_2=../1.2
+  #floppya: 1_680=../1.680
+! vgaromimage: bios/VGABIOS-elpin-2.00A
+! romimage: bios/BIOS-bochs-971213a
+  #romimage: bios/rombios.bin
+! #log: /dev/null
+! log: ./bochs.out
+  hga_update_interval: 250000
+  keyboard_serial_delay: 200
+  
+--- 14,24 ----
+  #floppya: 1_44=../1.44.yodlowsk
+  #floppya: 1_2=../1.2
+  #floppya: 1_680=../1.680
+! vgaromimage: LOCAL_PREFIX/lib/bochs/bios/VGABIOS-elpin-2.00A
+! romimage: LOCAL_PREFIX/lib/bochs/bios/BIOS-bochs-971213a
+  #romimage: bios/rombios.bin
+! log: /dev/null
+! #log: ./bochs.out
+  hga_update_interval: 250000
+  keyboard_serial_delay: 200
+  
