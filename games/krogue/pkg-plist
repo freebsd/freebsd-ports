@@ -67,6 +67,26 @@ share/doc/HTML/en/krogue/weapon.html
 share/doc/HTML/en/krogue/wear.gif
 share/doc/HTML/en/krogue/wield.gif
 share/doc/HTML/en/krogue/zap.gif
+share/doc/HTML/fr/krogue/arm.gif
+share/doc/HTML/fr/krogue/armor.html
+share/doc/HTML/fr/krogue/exp.gif
+share/doc/HTML/fr/krogue/exp.html
+share/doc/HTML/fr/krogue/food.html
+share/doc/HTML/fr/krogue/general.html
+share/doc/HTML/fr/krogue/hidden.html
+share/doc/HTML/fr/krogue/hp.gif
+share/doc/HTML/fr/krogue/hp.html
+share/doc/HTML/fr/krogue/index.html
+share/doc/HTML/fr/krogue/key.html
+share/doc/HTML/fr/krogue/monster.html
+share/doc/HTML/fr/krogue/moving.html
+share/doc/HTML/fr/krogue/potion.html
+share/doc/HTML/fr/krogue/ring.html
+share/doc/HTML/fr/krogue/scroll.html
+share/doc/HTML/fr/krogue/str.gif
+share/doc/HTML/fr/krogue/str.html
+share/doc/HTML/fr/krogue/wand.html
+share/doc/HTML/fr/krogue/weapon.html
 share/doc/HTML/pl/krogue/arm.gif
 share/doc/HTML/pl/krogue/armor.html
 share/doc/HTML/pl/krogue/exp.gif
@@ -94,9 +114,10 @@ share/icons/mini/kroguesg.xpm
 share/locale/fr/LC_MESSAGES/krogue.mo
 share/locale/pl/LC_MESSAGES/krogue.mo
 share/mimelnk/application/x-krogue.kdelnk
-@dirrm share/apps/krogue/pics
-@dirrm share/apps/krogue/templates
-@dirrm share/apps/krogue/toolbar
-@dirrm share/apps/krogue
-@dirrm share/doc/HTML/en/krogue
 @dirrm share/doc/HTML/pl/krogue
+@dirrm share/doc/HTML/fr/krogue
+@dirrm share/doc/HTML/en/krogue
+@dirrm share/apps/krogue/toolbar
+@dirrm share/apps/krogue/templates
+@dirrm share/apps/krogue/pics
+@dirrm share/apps/krogue

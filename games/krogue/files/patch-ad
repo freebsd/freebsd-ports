@@ -1,5 +1,5 @@
---- krogue/rogue/move.c	Sun Oct 24 13:30:32 1999
-+++ krogue/rogue/move.c.new	Sun Nov 21 23:03:50 1999
+--- krogue/rogue/move.c.orig	Fri May 12 03:08:32 2000
++++ krogue/rogue/move.c	Fri Feb  2 03:12:36 2001
 @@ -15,7 +15,7 @@
  
  short m_moves = 0;
@@ -9,13 +9,13 @@
  
  extern short cur_room, halluc, blind, levitate;
  extern short cur_level, max_level;
-@@ -324,18 +324,18 @@
+@@ -325,18 +325,18 @@
  	boolean fainted = 0;
  
  	if (rogue.moves_left == HUNGRY) {
 -		(void) strcpy(hunger_str, _T("hungry"));
 +		(void) strcpy(hunger_str, msgQuote("hungry"));
- 		message(transl(hunger_str), 0);
+ 		message(transl(hunger_str), 1);
  		print_stats(STAT_HUNGER);
  	}
  	if (rogue.moves_left == WEAK) {
