@@ -29,7 +29,7 @@ KPATHSEA_PARENT=	web2c-7.2
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@( cd ${WRKSRC} ; ${MAKE} newlib )
+	@( cd ${WRKSRC} ; ${MV} lib-dist lib )
 	@${CP} ${FILESDIR}/fontdesc ${WRKSRC}/lib
 
 pre-build:
