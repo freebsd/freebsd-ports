@@ -9,11 +9,13 @@ PORTNAME=	prc-tools-gcc
 PORTVERSION=	2.0
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	prc-tools gcc/releases/gcc-2.95.2 gdb/releases
+		${MASTER_SITE_GCC:S/$/:gcc/} \
+		${MASTER_SITE_SOURCEWARE:S/$/:gdb/}
+MASTER_SITE_SUBDIR=	prc-tools releases/gcc-2.95.2/:gcc gdb/old-releases/:gdb
 DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
-		gdb-4.18.tar.bz2 gcc-core-2.95.2.tar.bz2 gcc-g++-2.95.2.tar.bz2
+		gcc-core-2.95.2.tar.bz2:gcc gcc-g++-2.95.2.tar.bz2:gcc \
+		gdb-4.18.tar.bz2:gdb
 EXTRACT_ONLY=	gdb-4.18.tar.bz2 gcc-core-2.95.2.tar.bz2 gcc-g++-2.95.2.tar.bz2
 
 MAINTAINER=	kuriyama@FreeBSD.org
