@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.222 1999/01/30 02:05:12 billf Exp $
+# $Id: Makefile,v 1.223 1999/02/09 15:37:07 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -169,6 +169,7 @@
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xchat
+    SUBDIR += xferstats
     SUBDIR += xgirc
     SUBDIR += xicq
     SUBDIR += xipmsg
