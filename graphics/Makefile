@@ -28,6 +28,7 @@
     SUBDIR += gd-old
     SUBDIR += geomview
     SUBDIR += gfont
+    SUBDIR += gif2png
     SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += gifsicle
