@@ -7,12 +7,12 @@
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.54
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/my_stuff/gtk/gtk/mdh/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK2-based toolbar, sortof a gnomepanel replacement sortof
+COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
