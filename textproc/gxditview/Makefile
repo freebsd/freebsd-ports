@@ -1,6 +1,6 @@
 # New ports collection makefile for:   gxditview
 # Date created:                24 June 1998
-# Whom:                        Dom Mitchell <dom@myrddin.demon.co.uk>
+# Whom:                        Dom Mitchell <dom@happygiraffe.net>
 #
 # $FreeBSD$
 #
@@ -9,7 +9,7 @@ PORTNAME=	gxditview
 CATEGORIES=	textproc
 DISTFILES=	# none
 
-MAINTAINER=	dom@myrddin.demon.co.uk
+MAINTAINER=	dom@happygiraffe.net
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

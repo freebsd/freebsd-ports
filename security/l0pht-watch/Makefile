@@ -1,6 +1,6 @@
 # New ports collection makefile for:	l0pht-query
 # Date created:		11 Jan 1999
-# Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
+# Whom:			Dom Mitchell <dom@happygiraffe.net>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.atstake.com/research/tools/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dom@myrddin.demon.co.uk
+MAINTAINER=	dom@happygiraffe.net
 
 WRKSRC=		${WRKDIR}/temp-watch
 
