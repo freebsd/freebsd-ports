@@ -48,7 +48,7 @@ my $HEADER	= $cfg::IDHEADER;
 #
 ############################################################
 my $NoId = "
-%s - Needs to contain a line with the keyword \"\$$HEADER\$\".\n";
+%s - \"\$$HEADER\$\" keyword is either missing or corrupt.\n";
 
 # Protect string from substitution by RCS.
 my $NoName = "
@@ -56,9 +56,6 @@ my $NoName = "
 
 #$DelPath = "
 #%s - The old path and version has been deleted from \$$HEADER\$.\n";
-
-my $BadId = "
-%s - The \$$HEADER\$ is mangled.\n";
 
 my $BadName = "
 %s - The pathname '%s'
@@ -136,15 +133,16 @@ sub check_version {
 	return 0 unless -f $filename;
 
 	# Search the file for our rcsid.
-	# NOTE: We stop after finding the first potential match.
 	open FILE, $filename or die "Cannot open $filename, stopped\n";
 	$found_rcsid = 0;
 	$dos_line_brk_found = 0;
 	$line_number = 0;
+	$rcsid_info = "";
 	while (<FILE>) {
 		$line_number++;
-		if ( /^.*(\$$HEADER.*)/ ) {
+		if ( /^.*(\$$HEADER(: ([^\$]* )?)?\$)/) {
 			$rcsid = $1;
+			$rcsid_info = $3 || "";
 			$found_rcsid = 1;
 		} elsif ( $cfg::NO_DOS_LINEBREAKS and /\r/ ) {
 			# Found a DOS linebreak
@@ -154,8 +152,9 @@ sub check_version {
 		}
 	}
 	close FILE;
+	($rname, $version) = split /\s/, $rcsid_info;
 
-	# The file must NOT contain DOS linebreaks
+	# The file must not contain DOS linebreaks.
 	if ($dos_line_brk_found) {
 		print $DOSLineErr;
 		return(1);
@@ -166,14 +165,6 @@ sub check_version {
 		printf($NoId, "$directory/$filename");
 		return(1);
 	}
-
-	# Is the rcsid corrupt?
-	unless ($rcsid =~ /\$$HEADER(: ([^\$]* )?)?\$/) {
-		printf($BadId, "$directory/$filename");
-		return(1);
-	}
-	$rcsid_info = $2 || "";
-	($rname, $version) = split /\s/, $rcsid_info;
 
 	# Ignore version mismatches (MFC spamming etc) on branches.
 	if ($hastag) {
