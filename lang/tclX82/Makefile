@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1997/04/20 13:19:13 wosch Exp $
+# $Id: Makefile,v 1.14 1997/07/17 15:12:50 max Exp $
 #
 
 DISTNAME=	tclX7.5.2
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
 DEPENDS=	${TK_DIR}
 LIB_DEPENDS=	tk41\\.1:${TK_DIR}
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         "checking macro values from Config.mk... configure: error: Config.mk does not set TK_CONFIG to a valid path to tkConfig.sh"
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
