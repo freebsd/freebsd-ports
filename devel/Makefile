@@ -1235,6 +1235,7 @@
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-rbtree
+    SUBDIR += ruby-rjudy
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl

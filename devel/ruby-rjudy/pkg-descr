@@ -1,0 +1,5 @@
+Judy Arrays for Ruby (a.k.a.  RJudy) is an extension module for the Ruby
+programming language that provides an interface to the Judy Arrays
+library.
+
+WWW: http://sourceforge.net/projects/rjudy/
