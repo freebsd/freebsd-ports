@@ -1,0 +1,14 @@
+bin/gnomoku
+share/gnome/apps/Games/gnomoku.desktop
+share/gnome/pixmaps/gnomoku.png
+share/locale/de/LC_MESSAGES/gnomoku.mo
+share/locale/es/LC_MESSAGES/gnomoku.mo
+share/locale/fi/LC_MESSAGES/gnomoku.mo
+share/locale/fr/LC_MESSAGES/gnomoku.mo
+share/locale/hu/LC_MESSAGES/gnomoku.mo
+share/locale/it/LC_MESSAGES/gnomoku.mo
+share/locale/ja/LC_MESSAGES/gnomoku.mo
+share/locale/no/LC_MESSAGES/gnomoku.mo
+share/locale/ru/LC_MESSAGES/gnomoku.mo
+share/locale/uk/LC_MESSAGES/gnomoku.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnomoku.mo

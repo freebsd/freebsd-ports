@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/09/11 13:48:15	1.1
++++ Makefile.in	2001/09/11 13:48:31
+@@ -114,7 +114,7 @@
+ # Main executable
+ gnomoku_SOURCES = ai.cc ai.h 			gnomoku.cc 			mainwin.cc mainwin.h 			opponent.h 			options.cc options.h 			point.cc point.h 			user.cc user.h
+ 
+-gnomoku_LDADD = $(GNOMEMM_LIBS) $(INTLLIBS) -lpthread
++gnomoku_LDADD = $(GNOMEMM_LIBS) $(INTLLIBS)
+ bin_PROGRAMS = gnomoku
+ 
+ # Desktop entry
