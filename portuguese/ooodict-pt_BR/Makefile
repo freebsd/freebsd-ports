@@ -13,7 +13,7 @@ LANGPREFIX=	pt
 LANGSUFFIX=	BR
 LANGDIST+=	pt_BR.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-pt
+RDEP=		${PORTSDIR}/portuguese/openoffice
 
 .include "${MASTERDIR}/Makefile"
 
