@@ -1,0 +1,13 @@
+bin/xsu
+share/gnome/apps/System/xsu.desktop
+%%PORTDOCS%%share/doc/xsu/AUTHORS
+%%PORTDOCS%%share/doc/xsu/CHANGELOG
+%%PORTDOCS%%share/doc/xsu/COPYING
+%%PORTDOCS%%share/doc/xsu/INSTALL
+%%PORTDOCS%%share/doc/xsu/README
+%%PORTDOCS%%share/doc/xsu/xsu_doc.html
+%%PORTDOCS%%share/doc/xsu/xsu_example.jpg
+%%PORTDOCS%%share/doc/xsu/xsu_example2.png
+%%PORTDOCS%%share/doc/xsu/xsu_example3.png
+%%PORTDOCS%%share/doc/xsu/xsu_in_gmenu.jpg
+%%PORTDOCS%%@dirrm share/doc/xsu

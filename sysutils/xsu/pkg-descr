@@ -1,0 +1,9 @@
+xsu Is an interface for the command `su - username -c command` in Gnome.
+When the user executes xsu, he will be prompted for a command, a username 
+and a password. If the username and password are correct xsu will execute 
+the command   as the entered user. So if the username was root, then the 
+command will be executed as root.
+
+WWW: http://xsu.freax.eu.org/
+
+Philip Van Hoof <freax@pandora.be>

@@ -1,0 +1,29 @@
+--- configure.orig	Thu Mar 21 05:45:50 2002
++++ configure	Wed Aug 28 03:20:24 2002
+@@ -20,7 +20,7 @@
+ CPP="cc"
+ gnome_config_prefix=""
+ xsu_location="${prefix}/bin"
+-man_base="${prefix}/share/man"
++man_base="${prefix}/man"
+ doc_path="${prefix}/share/doc"
+ su_pwd_out="Password: "
+ max_su_delay=30000
+@@ -54,7 +54,7 @@
+     -prefix=* | --prefix=*)
+     prefix="$ac_optarg" 
+     xsu_location="${prefix}/bin"
+-    man_base="${prefix}/share/man"
++    man_base="${prefix}/man"
+     doc_path="${prefix}/share/doc";;
+ 
+     -su-pwd-out=* | --su-pwd-out=*)
+@@ -384,7 +384,7 @@
+ 	@echo "- I n s t a l l i n g   D o c u m e n t a t i o n ----------"
+ 	install -d $man_base/man8
+ 	install -d $doc_path/$name
+-	gzip -c9 doc/man/xsu.8 > $man_base/man8/xsu.8.gz
++	\$(INSTALL) -m 644 doc/man/xsu.8 $man_base/man8/xsu.8
+ 	\$(INSTALL) -m 644 \$(DOCFILES) $doc_path/$name/
+ 	@echo "- I n s t a l l a t i o n   c o m p l e t e ----------------"
+ 	@echo "Now read the README file"

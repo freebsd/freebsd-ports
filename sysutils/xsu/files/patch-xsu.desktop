@@ -1,0 +1,10 @@
+--- xsu.desktop.ori	Tue Aug 27 11:19:58 2002
++++ xsu.desktop	Tue Aug 27 11:19:43 2002
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Name=GNOME Xsu
++Comment=A GNOME su interface 
++Exec=xsu --message "Please type the command to run,^the username and password to use."
++Icon=
++Terminal=0
++Type=Application
