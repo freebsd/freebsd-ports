@@ -15,11 +15,11 @@ MAINTAINER=	knu@FreeBSD.org
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 #RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
-MAKE_ARGS=	NOPROFILE=true
+MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	${PERL} -i -pe 's,!!LOCALBASE!!,${LOCALBASE},' ${WRKSRC}/info.c
+	${PERL} -i -pe 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/info.c
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile* ${WRKSRC}/

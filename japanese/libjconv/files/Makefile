@@ -1,13 +1,18 @@
 # $FreeBSD$
 
+PREFIX?=	/usr/local
+LOCALBASE?=	/usr/local
+
+MAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
+
 all:
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.lib
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.prog
+	${MAKE} ${MAKE_ARGS} -f Makefile.lib
+	${MAKE} ${MAKE_ARGS} -f Makefile.prog
 
 install:
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.lib install
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.prog install
+	${MAKE} ${MAKE_ARGS} -f Makefile.lib install
+	${MAKE} ${MAKE_ARGS} -f Makefile.prog install
 
 clean:
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.lib clean
-	${MAKE} LOCALBASE=${LOCALBASE} -f Makefile.prog clean
+	${MAKE} ${MAKE_ARGS} -f Makefile.lib clean
+	${MAKE} ${MAKE_ARGS} -f Makefile.prog clean

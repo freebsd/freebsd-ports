@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
 
 PROG=		jconv
@@ -7,6 +8,6 @@ SRCS=		jconv.c
 CFLAGS+=        -I${LOCALBASE}/include
 LDADD=          -L${.CURDIR} -ljconv
 NOMAN=          YES
-BINDIR=         ${LOCALBASE}/bin
+BINDIR=         ${PREFIX}/bin
 
 .include <bsd.prog.mk>
