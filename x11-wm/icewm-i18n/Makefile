@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm-i18n
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
@@ -15,7 +15,7 @@ DISTNAME=	icewm-${PORTVERSION}
 EXTRACT_SUFX=	.src.tar.gz
 
 PATCH_SITES=	http://www.gnome.gr.jp/~yatt/dist/
-PATCHFILES=	icewm-1.0.3-nls.patch.gz
+PATCHFILES=	icewm-1.0.4-nls.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -24,7 +24,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 
 .if defined(WITH_GNOME)
-LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
 GNU_CONFIGURE=	yes
