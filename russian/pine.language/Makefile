@@ -12,8 +12,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ache@FreeBSD.org
 
-FORBIDDEN=	"Remotely exploitable buffer overflows."
-
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
 NO_WRKSUBDIR=	YES
