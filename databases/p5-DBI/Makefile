@@ -27,6 +27,7 @@ MAN1=		dbiprof.1 \
 		dbiproxy.1
 MAN3=		Bundle::DBI.3 \
 		DBD::Proxy.3 \
+		DBD::Sponge.3 \
 		DBI.3 \
 		DBI::Const::GetInfo::ANSI.3 \
 		DBI::Const::GetInfo::ODBC.3 \
