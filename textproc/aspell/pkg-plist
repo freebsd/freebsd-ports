@@ -13,7 +13,7 @@ include/aspell/language.hh
 lib/libaspell.a
 lib/libaspell.la
 lib/libaspell.so
-lib/libaspell.so.1
+lib/libaspell.so.2
 share/aspell/english.sl
 share/aspell/english.wrd
 share/aspell/ispell
