@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.164 1998/08/24 01:48:07 steve Exp $
+# $Id: Makefile,v 1.165 1998/08/24 01:52:57 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -58,6 +58,7 @@
     SUBDIR += oonsoo
     SUBDIR += pente
     SUBDIR += pp
+    SUBDIR += pysol
     SUBDIR += qcc
     SUBDIR += qstat
     SUBDIR += quakeserver
