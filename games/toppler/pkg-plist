@@ -1,0 +1,15 @@
+bin/toppler
+share/toppler/boing.wav
+share/toppler/bubbles.wav
+share/toppler/hit.wav
+share/toppler/honk.wav
+share/toppler/layer1.tga
+share/toppler/layer2.tga
+share/toppler/layer3.tga
+share/toppler/nebulous.dat
+share/toppler/splash.wav
+share/toppler/swosh.wav
+share/toppler/tap.wav
+share/toppler/tick.wav
+share/toppler/water.wav
+@dirrm share/toppler
