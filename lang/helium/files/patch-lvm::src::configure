@@ -1,0 +1,35 @@
+--- lvm/src/configure.orig	Wed Feb  2 09:10:20 2005
++++ lvm/src/configure	Wed Feb  2 09:10:54 2005
+@@ -608,23 +608,11 @@
+   echo "#define HAS_MEMMOVE" >> s.h
+ fi
+ 
+-if sh ./hasgot vsnprintf; then
+-  echo "vsnprintf() found."
++  echo "vsnprintf() assumed (FreeBSD)."
+   echo "#define HAS_VSNPRINTF" >> s.h
+-else if sh ./hasgot _vsnprintf; then
+-  echo "_vsnprintf() found."
+-  echo "#define HAS__VSNPRINTF" >> s.h
+- fi
+-fi
+ 
+-if sh ./hasgot snprintf; then
+-  echo "snprintf() found."
++  echo "snprintf() assumed (FreeBSD)."
+   echo "#define HAS_SNPRINTF" >> s.h
+-else if sh ./hasgot _snprintf; then
+-  echo "_snprintf() found."
+-  echo "#define HAS__SNPRINTF" >> s.h
+- fi
+-fi
+ 
+ if sh ./hasgot strncpy; then
+   echo "strncpy() found."
+@@ -694,4 +682,4 @@
+ echo "        linker used............... $link"
+ echo "        options for linking....... $cclinkopts"
+ echo
+-echo
+\ No newline at end of file
++echo
