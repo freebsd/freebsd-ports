@@ -135,6 +135,7 @@
     SUBDIR += xemacs-additional-packages
     SUBDIR += xemacs-basic-mule-packages
     SUBDIR += xemacs-comm-packages
+    SUBDIR += xemacs-devel
     SUBDIR += xemacs-games-packages
     SUBDIR += xemacs-libs-packages
     SUBDIR += xemacs-mule-packages
