@@ -6,21 +6,32 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	2.0.19
-CATEGORIES=	mail
+PORTVERSION=	2.1.3
+CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+USE_PYTHON=	yes
 
 NO_BUILD=	yes
 
+post-patch:
+	@${PERL} -pi -e 's!/usr/lib/getmail!${DATADIR}!; \
+		s!`which python`!${PYTHON_CMD}!' ${WRKSRC}/getmail
+
 do-install:
-		${MKDIR} ${PREFIX}/share/getmail
-		${INSTALL_SCRIPT} ${WRKSRC}/getmail ${PREFIX}/bin
-		${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PREFIX}/share/getmail
-		${INSTALL_DATA} ${WRKSRC}/getmailrc-example \
-		${PREFIX}/share/getmail
+	${INSTALL_SCRIPT} ${WRKSRC}/getmail ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
+	@${MKDIR} ${PREFIX}/share/examples/getmail
+	${INSTALL_DATA} ${WRKSRC}/getmailrc-example \
+		${PREFIX}/share/examples/getmail
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in CHANGELOG docs.txt faq.txt getmail.txt
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
