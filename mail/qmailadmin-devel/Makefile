@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.inter7.com/qmailadmin/
 
 MAINTAINER=	roam@FreeBSD.org
 
-FORBIDDEN=	"setuid to vpopmail exploitable: http://security-archive.merton.ox.ac.uk/bugtraq-200208/0117.html"
-
 BUILD_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
