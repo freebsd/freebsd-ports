@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkres
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
