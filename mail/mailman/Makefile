@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
 
-#RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${MAILMANDIR} \
