@@ -27,6 +27,10 @@ MAKEFILE=	GNUmakefile
 # opt = optimized ($OPTF added); debug = debug ($DBGF added); opt is default
 ALL_TARGET=	opt
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%CXXFLAGS%%,${CXXFLAGS},g' \
+	${WRKSRC}/Make/makedefs
+
 post-install:
 	${LN} -sf ${PREFIX}/lib/libProducer.so ${PREFIX}/lib/libProducer.so.0
 .if !defined(NOPORTDOCS)
