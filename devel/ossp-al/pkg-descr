@@ -1,0 +1,10 @@
+OSSP al defines an abstract data type of a data buffer that can assemble,
+move and truncate chunks of data in a stream but avoids actual copying. It
+was built to deal efficiently with communication streams between software
+modules. It especially provides flexible semantical data attribution through
+by-chunk labeling. It also has convenient chunk traversal methods and
+optional OSSP ex based exception handling.
+
+WWW: http://www.ossp.org/pkg/lib/al/
+
+-- AlanE@FreeBSD.org
