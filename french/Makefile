@@ -17,6 +17,7 @@
     SUBDIR += netscape7
     SUBDIR += ooodict-fr_FR
     SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += staroffice52
