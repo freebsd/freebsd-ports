@@ -1,0 +1,363 @@
+#!/bin/sh
+# Program to edit problem reports for GNATS.
+# Copyright (C) 1993, 1994, 1995, 1996, 1998 Free Software Foundation, Inc.
+# Contributed by Jeffrey Osier (jeffrey@cygnus.com).
+# Networking portion written by Alec Peterson (chuckie@panix.com).
+# Local and networked versions combined by Rick Macdonald (rickm@vsl.com)
+#
+# This file is part of GNU GNATS.
+#
+# GNU GNATS is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# GNU GNATS is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GNU GNATS; see the file COPYING.  If not, write to
+# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+
+#
+# This script handles both local and network GNATS editing.
+# Execute with --mode=local or --mode=network
+#
+
+debug_print=false # or echo to get output.
+DATE=`LC_TIME=C date`
+GNATS_ROOT=${GNATS_ROOT:-/usr/local/share/gnats/gnats-db}; export GNATS_ROOT
+LIBEXECDIR=/usr/local/libexec
+GNATS_PORT=1529
+EDIT_USER=anonymous
+EDIT_PASSWD=guest
+locked=
+version=3.112
+mode=local
+
+usage="
+  local Usage:  edit-pr [-V|--version] [-h|--help] PR
+
+network Usage: nedit-pr [-V|--version] [-h|--help] [-d|--directory gnats_db_alias] 
+                        [-H|--host hostname] [-P|--port port_number]
+                        [-v|--user userid]   [-w|--passwd password]  PR
+"
+
+# get current host name
+if [ -z "$HOSTNAME" ]; then
+  if [ -f /bin/hostname ] ; then HOSTNAME=`/bin/hostname`
+  elif [ -f /usr/bin/hostname ] ; then HOSTNAME=`/usr/bin/hostname`
+  # Solaris et al.
+  elif [ -f /usr/ucb/hostname ] ; then HOSTNAME=`/usr/ucb/hostname`
+  # Irix
+  elif [ -f /usr/bsd/hostname ] ; then HOSTNAME=`/usr/bsd/hostname`
+  fi
+fi
+
+# GNATS_HOST defaults to current host if GNATS_SERVER is not set.
+GNATS_HOST="gnats"
+[ -z "$GNATS_HOST" ] && GNATS_HOST="$HOSTNAME"
+
+# Newer config information? (Should the network version get this from gnatsd?)
+[ -f ${GNATS_ROOT}/gnats-adm/config ] && . ${GNATS_ROOT}/gnats-adm/config
+
+# Host-specific; must come after config file.
+MAIL_AGENT="/usr/sbin/sendmail -oi -t"
+
+# check to see if there is a $EDITOR; if not, use vi
+[ -z "$VISUAL" ] &&
+  if [ -z "$EDITOR" ]; then
+    VISUAL=vi
+  else
+    VISUAL="$EDITOR"
+  fi
+
+# Parse command line. For the non-flag argument, assume it's pr PR id.
+
+if [ $# -eq 0 ]; then
+  echo "$usage" ; exit 1
+fi
+
+while [ $# -gt 0 ]; do
+   case "$1" in
+     -V|--version|--ve*)
+       echo "$version"; exit 0
+       ;;
+     -m | --mode)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; mode="$1" ;;
+     -m=* | --mode=*) mode="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -d | --directory)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; GNATS_DB="$1" ;;
+     -d=* | --directory=*) GNATS_DB="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -H | --host)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; GNATS_HOST="$1" ;;
+     -H=* | --host=*) GNATS_HOST="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -P | --port)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; GNATS_PORT="$1" ;;
+     -P=* | --port=*) GNATS_PORT="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -v | --user)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; EDIT_USER="$1" ;;
+     -v=* | --user=*) EDIT_USER="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -w | --passwd)
+       if [ $# -eq 1 ]; then echo "$usage"; exit 1; fi
+       shift ; EDIT_PASSWD="$1" ;;
+     -w=* | --passwd=*) EDIT_PASSWD="`echo $1 | sed 's/^[-a-z]*=//'`" ;;
+
+     -h|--help*)
+       echo "$usage"; exit 0
+       ;;
+     -*)
+       echo "$usage"; exit 1
+       ;;
+
+     *)
+       if [ "`echo $1 | grep /`" != "" ]; then
+         pr=`echo $1 | awk -F"/" '{print $2}' -`
+       else
+         pr=$1
+       fi
+       prs="$prs $pr"
+       ;;
+   esac
+   shift
+done
+
+for pr_id in $prs ; do
+
+# set command here to always pass host and port, and directory if supplied
+if [ "$mode" = "network" ]; then
+    prog="nedit-pr"
+    PR_ADDR="$LIBEXECDIR/gnats/npr-addr --host=$GNATS_HOST --port=$GNATS_PORT --user=$EDIT_USER --passwd=$EDIT_PASSWD"
+    PR_EDIT="$LIBEXECDIR/gnats/npr-edit --host=$GNATS_HOST --port=$GNATS_PORT --user=$EDIT_USER --passwd=$EDIT_PASSWD"
+else
+    prog="edit-pr"
+    PR_ADDR="$LIBEXECDIR/gnats/pr-addr"
+    PR_EDIT="$LIBEXECDIR/gnats/pr-edit"
+fi
+if [ "$GNATS_DB" != "" ]; then
+    PR_ADDR="$PR_ADDR --directory=$GNATS_DB"
+    PR_EDIT="$PR_EDIT --directory=$GNATS_DB"
+fi
+
+# These traps take care of deleting all the /tmp files
+trap 'rm -f $new $new.old $change_msg ; exit 0' 0
+trap 'if [ "$locked" != "" ]; then \
+        $PR_EDIT --unlock $pr_id ; \
+	locked= ; \
+      fi ; \
+      rm -f $new $new.old $change_msg ; exit 1' 1 2 3 13 15
+
+# find a user name
+if [ "$USER" != "" ]; then
+  me=$USER
+else
+  if [ "$LOGNAME" != "" ]; then
+    me=$LOGNAME
+  else
+    echo "$prog: no user name found---set LOGNAME." ; exit 1
+  fi
+fi
+
+if [ -n "$HOSTNAME" ]; then
+  full_me="$me@$HOSTNAME"
+else
+  full_me="$me"
+fi
+
+# new = temp file to use for editing
+new="/tmp/ep$$"
+
+# lock the pr
+$debug_print "Locking $pr_id."
+lock=`$PR_EDIT --lock=$full_me $pr_id 2>&1 > $new`
+locked=t
+
+if [ "$lock" != "" ] ; then
+  echo $lock
+  exit 0
+fi
+
+# here's where we actually call the editor.
+cp $new $new.old
+/usr/bin/perl -pi -e "s|>State:.*|>State:          closed|" $new
+if cmp -s $new.old $new ; then
+  echo "$prog: PR not changed"
+  $PR_EDIT --unlock $pr_id
+  continue
+fi
+
+# error-check output by calling pr-edit --check; if mistakes exist,
+# call $VISUAL or exit
+checking=t
+while [ "$checking" != "" ]; do
+  errors="`$PR_EDIT --check < $new 2>&1`"
+  if [ "$errors" != "" ]; then
+    echo "Hit \`return\` to fix the following errors, or type \'quit\' to quit:"
+    echo "$errors"
+    read fixme
+    case "$fixme" in
+      q* | Q*) 
+        echo "PR $pr_id not updated: changed file is in $new.changed"
+        mv $new $new.changed
+	$PR_EDIT --unlock $pr_id
+        exit 0
+        ;;
+    esac
+    $VISUAL $new
+  else
+    checking=
+  fi
+done
+
+# now that we have a clean new PR:
+#   - check for changes in Responsible or State
+#   - add audit trail
+#   - mail changes to relevant parties
+
+old_state="`sed -n '/^>State:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
+new_state="`sed -n '/^>State:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
+old_resp="`sed -n '/^>Responsible:/{s,^>[-a-zA-Z]*: *,,;s, *(.*,,g;p;q;}' $new.old`"
+new_resp="`sed -n '/^>Responsible:/{s,^>[-a-zA-Z]*: *,,;s, *(.*,,g;p;q;}' $new`"
+old_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
+new_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
+old_class="`sed -n '/^>Class:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
+new_class="`sed -n '/^>Class:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
+full_id="`sed -n '/^>Category:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`/$pr_id"
+
+# If you can read this, you may have a future in sed(1) programming.
+reply_to="`sed -n \
+-e '/^$/{g;s/	/ /g;s/\n/ /g;s/^.*: *//;s/ *(.*) *//;s/.*<//;s/>.*//;p;q;}' \
+-e '/^Reply-To:/h' \
+-e '/^Reply-To:/,/^[^ 	]/{s/^[^ 	].*//;H;}' \
+-e '/^Reply-To:/,$b' \
+-e '/^From:/h' \
+-e '/^From:/,/^[^ 	]/{s/^[^ 	].*//;H;}' \
+$new.old`"
+x_gnats_notify="`sed -n \
+-e '/^$/{g;s/	/ /g;s/\n/ /g;s/^.*: *//;s/ *(.*) *//;s/.*<//;s/>.*//;p;q;}' \
+-e '/^X-GNATS-Notify:/h' \
+-e '/^X-GNATS-Notify:/,/^[^ 	]/{s/^[^ 	].*//;H;}' \
+-e '/^X-GNATS-Notify:/,$b' \
+$new.old`"
+
+change_msg=/tmp/ed_pr_ch$$
+
+# the following could stand to be cleaned up...
+if [ "$old_state" != "$new_state" ]; then
+  state_change=yes
+fi
+if [ "$old_resp" != "$new_resp" ]; then
+  resp_change=yes
+fi
+if [ "$old_class" != "$new_class" ]; then
+  class_change=yes
+fi
+
+if [ ! -z "$state_change" ] || [ ! -z "$resp_change" ] || \
+   [ ! -z "$class_change" ]; then
+  # we've got a change
+  mail_to="$me"
+  if [ ! -z "$state_change" ]; then
+    $debug_print "Doing state change."
+    echo State-Changed-From-To: "$old_state"'->'"$new_state" >> $change_msg
+    echo State-Changed-By: $me >> $change_msg
+    echo State-Changed-When: $DATE >> $change_msg
+    echo "State-Changed-Why: " >> $change_msg
+    if [ -e /tmp/chng.$$ ]; then
+	echo "Re-use last message (y/n)?"
+	read yesno
+	if [ "$yesno" != "y" ]; then
+	    cat /home/gnats/gnats-adm/edit-pr-msg > /tmp/chng.$$
+	fi
+    else
+	cat /home/gnats/gnats-adm/edit-pr-msg > /tmp/chng.$$
+    fi
+    $VISUAL /tmp/chng.$$
+    sed '/^GNATS:/d' /tmp/chng.$$ >> $change_msg
+    to_old=1
+    to_subm=1
+    if [ ! -z "$class_change" ] || [ ! -z "$resp_change" ]; then
+        echo "" >> $change_msg
+        echo "" >> $change_msg
+    fi
+  fi
+  if [ ! -z "$class_change" ]; then
+    $debug_print "Doing class change."
+    echo Class-Changed-From-To: "$old_class"'->'"$new_class" >> $change_msg
+    echo Class-Changed-By: $me >> $change_msg
+    echo Class-Changed-When: $DATE >> $change_msg
+    echo "Class-Changed-Why: " >> $change_msg
+    echo 'Why did the class change? (Ctrl-D to end)'
+    cat >> $change_msg
+    to_old=1
+    to_new=1
+    if [ ! -z "$resp_change" ]; then
+      echo "" >> $change_msg
+      echo "" >> $change_msg
+    fi
+  fi
+  if [ ! -z "$resp_change" ]; then
+    $debug_print "Doing responsible change."
+    echo Responsible-Changed-From-To: "$old_resp"'->'"$new_resp" >> $change_msg
+    echo Responsible-Changed-By: $me >> $change_msg
+    echo Responsible-Changed-When: $DATE >> $change_msg
+    echo "Responsible-Changed-Why: " >> $change_msg
+    echo 'Why did the responsible person change? (Ctrl-D to end)'
+    cat >> $change_msg
+    to_old=1
+    to_new=1
+  fi
+
+  echo "" >> $change_msg
+  echo "http://www.freebsd.org/cgi/query-pr.cgi?pr=$pr_id" >> $change_msg
+
+  if [ -n "$to_subm" ]; then mail_to="${reply_to}, ${mail_to}" ; fi
+  if [ -n "$x_gnats_notify" ]; then mail_to="${x_gnats_notify}, ${mail_to}" ; fi
+  if [ -n "$to_old" ] ; then mail_to="${mail_to}, `$PR_ADDR ${old_resp}`" ; fi
+  if [ -n "$to_new" ] ; then mail_to="${mail_to}, `$PR_ADDR ${new_resp}`" ; fi
+
+  # We have to quote the end of each line in the change_msg, so that sed
+  # won't try to use it as a new command.
+  $debug_print "Quoting lines in $change_msg."
+  sed -e "/^>Unformatted:/i\\
+`sed -e 's/$/ \\\\/g' $change_msg`
+" $new > $new.tmp
+  mv -f $new.tmp $new
+
+  $MAIL_AGENT << __EOF__
+To: $mail_to
+From: $me
+Subject: Re: $full_id: $new_synopsis
+
+`if [ "$old_synopsis" != "$new_synopsis" ]; then
+	echo Old Synopsis: "$old_synopsis"
+	echo New Synopsis: "$new_synopsis"
+else
+	echo Synopsis: "$old_synopsis"
+fi`
+
+`cat $change_msg`
+__EOF__
+fi
+
+echo "$prog: filing PR $full_id back into the database..."
+
+# call PR_EDIT on the new file and clean up
+$PR_EDIT < $new
+$PR_EDIT --unlock $pr_id
+
+done
+
+exit 0
