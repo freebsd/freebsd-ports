@@ -45,7 +45,7 @@
      /*  Append the <CR><LF> */
 -    (void)strcat(message, "\r\n");
 +    len -= strlen(message);
-+    (void)strncat(message, len, "\r\n");
++    (void)strncat(message, "\r\n", len);
          
      /*  Send the message to the client */
      (void)fputs(message,p->output);
