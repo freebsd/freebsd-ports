@@ -1,44 +1,34 @@
-@comment $FreeBSD$
 bin/drweb
-drweb/ChangeLog
-drweb/README
-drweb/README.RUS
-drweb/bases/drw43112.vdb
-drweb/bases/drw43111.vdb
-drweb/bases/drw43110.vdb
-drweb/bases/drw43109.vdb
-drweb/bases/drw43108.vdb
-drweb/bases/drw43107.vdb
-drweb/bases/drw43106.vdb
-drweb/bases/drw43105.vdb
-drweb/bases/drw43104.vdb
-drweb/bases/drw43103.vdb
-drweb/bases/drw43102.vdb
-drweb/bases/drw43101.vdb
+drweb/bases/drw43201.vdb
 drweb/bases/drwebase.vdb
+drweb/doc/ChangeLog
+drweb/doc/FAQ
+drweb/doc/FAQ.rus
 drweb/doc/readme.daemon
 drweb/doc/readme.daemon.rus
-drweb/doc/readme.eicar
+drweb/doc/readme.license
+drweb/doc/readme.license.rus
 drweb/doc/readme.scanner
 drweb/doc/readme.scanner.rus
 drweb/drweb
-@unexec if [ -f %D/drweb/drweb.key ] && cmp -s %D/drweb/drweb.key %D/drweb/drweb.key-distr; then rm -f %D/drweb/drweb.key; fi
-drweb/drweb.key-distr
-@exec if [ ! -f %D/drweb/drweb.key ] ; then cp -p %D/%F %B/drweb.key; fi
 @unexec if [ -f %D/drweb/drweb32.ini ] && cmp -s %D/drweb/drweb32.ini %D/drweb/drweb32.ini-distr; then rm -f %D/drweb/drweb32.ini; fi
 drweb/drweb32.ini-distr
 @exec if [ ! -f %D/drweb/drweb32.ini ] ; then cp -p %D/%F %B/drweb32.ini; fi
 drweb/drwebd
-@unexec if [ -f %D/drweb/drwebd.key ] && cmp -s %D/drweb/drwebd.key %D/drweb/drwebd.key-distr; then rm -f %D/drweb/drwebd.key; fi
-drweb/drwebd.key-distr
-@exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
 drweb/drwebdc
+@unexec if [ -f %D/drweb/email.ini ] && cmp -s %D/drweb/email.ini %D/drweb/email.ini-distr; then rm -f %D/drweb/email.ini; fi
+drweb/email.ini-distr
+@exec if [ ! -f %D/drweb/email.ini ] ; then cp -p %D/%F %B/email.ini; fi
+drweb/getkey.HOWTO
+drweb/getkey.rus.HOWTO
 drweb/lib/drweb32.dll
 drweb/lib/russian.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
-etc/rc.d/00drwebd.sh
+etc/rc.d/00.drwebd.sh
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm drweb/updates
 @dirrm drweb/update
 @dirrm drweb/run

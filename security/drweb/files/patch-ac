@@ -1,6 +1,6 @@
---- usr/local/etc/rc.d/00drwebd.sh.orig	Sat Nov  1 08:03:03 2003
-+++ usr/local/etc/rc.d/00drwebd.sh	Sat Nov  1 08:06:38 2003
-@@ -3,20 +3,20 @@
+--- usr/local/etc/rc.d/00.drwebd.sh.orig	Wed Nov 24 13:50:18 2004
++++ usr/local/etc/rc.d/00.drwebd.sh	Wed Nov 24 13:51:57 2004
+@@ -7,21 +7,21 @@
  case "$1" in
      stop)
  	echo -n "Shutting down Dr. Web daemon..."
@@ -20,9 +20,10 @@
 -	/usr/local/drweb/drwebd
 +	%INSTALL%/drwebd -ini=%INSTALL%/drweb32.ini
      ;;
-     *)
+     start)
  	echo -n "Starting Dr. Web daemon..."
 -	/usr/local/drweb/drwebd
 +	%INSTALL%/drwebd -ini=%INSTALL%/drweb32.ini
- esac
- 
+     ;;
+     *)
+     echo $0: 'start|stop|restart|reload'
