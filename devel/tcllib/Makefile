@@ -38,4 +38,10 @@ MANN=	base64.n calculus.n changelog.n cksum.n cmdline.n \
 
 MANCOMPRESSED=	no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+IGNORE=		"Hangs during build on alpha"
+.endif
+
+.include <bsd.port.post.mk>
