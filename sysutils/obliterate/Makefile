@@ -12,7 +12,4 @@ MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
 
 MAINTAINER=	wes@softweyr.com
 
-MAN8=		obliterate.8
-MANCOMPRESSED=	yes
-
 .include <bsd.port.mk>
