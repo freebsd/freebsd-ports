@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://rdiff-backup.stanford.edu/
+MASTER_SITES=	http://rdiff-backup.stanford.edu/OLD/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gh@ghaering.de
