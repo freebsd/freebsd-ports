@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/24 05:34:29 obrien Exp $
 #
 
 DISTNAME=	ups-3.32
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= utilities
 
 MAINTAINER=     obrien@FreeBSD.org
 
-ALL_TARGET=	ups
+ALL_TARGET=	ups ups
 MAN1=		ups.1
 
 .include <bsd.port.mk>
