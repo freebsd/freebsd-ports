@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Perl extension for collecting information about the machine
 
-LIB_DEPENDS=	statgrab.5:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.6:${PORTSDIR}/devel/libstatgrab
 
 USE_GNOME=	pkgconfig
 

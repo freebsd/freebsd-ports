@@ -19,7 +19,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A set of Python bindings for libstatgrab
 
-LIB_DEPENDS=	statgrab.5:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.6:${PORTSDIR}/devel/libstatgrab
 
 DIST_SUBDIR=	i-scream
 USE_PYTHON=	yes
