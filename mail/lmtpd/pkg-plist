@@ -44,5 +44,7 @@ share/nls/fr_FR.ISO_8859-1/filtercheck.cat
 %%EXAMPLESDIR%%/msg/quotamsg.es.txt
 %%EXAMPLESDIR%%/msg/quotamsg.fr.txt
 %%EXAMPLESDIR%%/msg/quotamsg.it.txt
+%%EXAMPLESDIR%%/msg/virus.en.txt
 %%EXAMPLESDIR%%/msg/virus.fr.txt
 @dirrm %%EXAMPLESDIR%%/msg
+@dirrm %%EXAMPLESDIR%%
