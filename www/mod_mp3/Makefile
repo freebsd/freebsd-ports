@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_mp3
-PORTVERSION=	0.25
+PORTVERSION=	0.31
 CATEGORIES=	www audio
 MASTER_SITES=	http://media.tangent.org/ \
 		ftp://ftp.tangent.org/pub/apache/ \
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
+HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 
 APXS?=		${LOCALBASE}/sbin/apxs
