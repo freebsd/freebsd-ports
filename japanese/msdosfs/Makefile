@@ -25,10 +25,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
 LAST_UPDATED=	20001007
 PATCHDIR=	${MASTERDIR}/patches.4
 .elif ${OSVERSION} >= 500013
-LAST_UPDATED=	20001009
+LAST_UPDATED=	20001022
 PATCHDIR=	${MASTERDIR}/patches.5
 NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
 .else
+LAST_UPDATED=	20001007
 BROKEN=		"It may not work with your FreeBSD version (but I'm not sure)"
 .endif
 

@@ -1,5 +1,5 @@
 --- msdosfs_vnops.c.orig	Mon Apr 10 04:32:37 2000
-+++ msdosfs_vnops.c	Mon Oct  9 23:15:12 2000
++++ msdosfs_vnops.c	Sun Oct 22 23:53:01 2000
 @@ -50,15 +50,13 @@
  
  #include "opt_msdosfs.h"
@@ -105,7 +105,18 @@
  }
  
  static int
-@@ -974,11 +932,6 @@
+@@ -914,9 +872,7 @@
+ }
+ 
+ /*
+- * DOS filesystems don't know what links are. But since we already called
+- * msdosfs_lookup() with create and lockparent, the parent is locked so we
+- * have to free it before we return the error.
++ * DOS filesystems don't know what links are.
+  */
+ static int
+ msdosfs_link(ap)
+@@ -974,11 +930,6 @@
   *
   * On exit:
   *	all denodes should be released
@@ -117,7 +128,7 @@
   */
  static int
  msdosfs_rename(ap)
-@@ -1108,7 +1061,6 @@
+@@ -1108,7 +1059,6 @@
  	VOP_UNLOCK(fvp, 0, p);
  	if (VTODE(fdvp)->de_StartCluster != VTODE(tdvp)->de_StartCluster)
  		newparent = 1;
@@ -125,7 +136,7 @@
  	if (doingdirectory && newparent) {
  		if (error)	/* write access check above */
  			goto bad;
-@@ -1176,7 +1128,8 @@
+@@ -1176,7 +1126,8 @@
  		panic("msdosfs_rename: lost from startdir");
  	if (!newparent)
  		VOP_UNLOCK(tdvp, 0, p);
@@ -135,7 +146,7 @@
  	if (fvp == NULL) {
  		/*
  		 * From name has disappeared.
-@@ -1856,15 +1809,15 @@
+@@ -1856,15 +1807,15 @@
  		error = pcbmap(dep, bp->b_lblkno, &bp->b_blkno, 0, 0);
  		if (error) {
  			bp->b_error = error;
@@ -154,3 +165,12 @@
  		return (0);
  	}
  	/*
+@@ -1889,7 +1840,7 @@
+ 	    "tag VT_MSDOSFS, startcluster %lu, dircluster %lu, diroffset %lu ",
+ 	       dep->de_StartCluster, dep->de_dirclust, dep->de_diroffset);
+ 	printf(" dev %d, %d", major(dep->de_dev), minor(dep->de_dev));
+-	lockmgr_printinfo(&dep->de_lock);
++	lockmgr_printinfo(&ap->a_vp->v_lock);
+ 	printf("\n");
+ 	return (0);
+ }
