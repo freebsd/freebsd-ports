@@ -218,7 +218,7 @@ diff -c --recursive ./plat_freebsd.c ../workman.new/./plat_freebsd.c
   	}
   
   	if (ioctl(d->fd, CDIOCREADSUBCHANNEL, &sc)) {
-! #if defined(__NetBSD__) || defined(__FreeBSD__)
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
   	    /* we need to release the device so the kernel will notice
   	       reloaded media */
   	    (void) close(d->fd);
@@ -252,12 +252,12 @@ diff -c --recursive ./plat_freebsd.c ../workman.new/./plat_freebsd.c
   	if (fstatfs(stbuf.st_rdev, &buf) == 0)
   		return (-3);
   
-! #if defined(__NetBSD__) || defined(__FreeBSD__)
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
   	rval = ioctl(d->fd, CDIOCALLOW);
   	if (rval == 0)
   #endif
   	    rval = ioctl(d->fd, CDIOCEJECT);
-! #if defined(__NetBSD__) || defined(__FreeBSD__)
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
   	if (rval == 0)
   	    rval = ioctl(d->fd, CDIOCPREVENT);
   #endif
@@ -300,7 +300,7 @@ diff -c --recursive ./workman_stubs.c ../workman.new/./workman_stubs.c
   Panel_item	quitbutton;
   char	*getenv(), *WMstrdup();
   
-+ #if defined(__FreeBSD__)
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + /* FreeBSD has a special directory for pidfiles, I guess. */
 + char	*pidfile = "/var/run/workman.pid";
 + #else

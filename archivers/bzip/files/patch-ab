@@ -4,7 +4,7 @@
  #if BZ_UNIX_32
     #include <utime.h>
     #include <unistd.h>
-+#ifndef __FreeBSD__	/* stdlib already included above */
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)	/* stdlib already included above */
     #include <malloc.h>
 +#endif
     #include <sys/stat.h>

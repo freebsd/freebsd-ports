@@ -4,7 +4,7 @@
  #else
  #define strchr		index
  extern char	*strchr();
-+#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
  extern char	*sprintf();
 +#else
 +extern int	sprintf();

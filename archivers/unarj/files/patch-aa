@@ -31,7 +31,7 @@
 ! gettz(stamp)         /* returns the offset from GMT in seconds */
 ! time_t stamp;
   {
-+ #ifdef __FreeBSD__
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + 	return -localtime(&stamp)->tm_gmtoff;
 + #else
   #define NOONOFFSET    43200L
@@ -73,7 +73,7 @@
   #endif
   
   typedef unsigned char  uchar;   /*  8 bits or more */
-+ #ifndef __FreeBSD__
++ #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
   typedef unsigned int   uint;    /* 16 - 32 bits or more */
   typedef unsigned short ushort;  /* 16 bits or more */
 + #endif
