@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Oct 25 15:10:26 2001
-+++ Makefile.in	Thu Oct 25 15:14:53 2001
+--- Makefile.in.orig	Wed Dec 19 12:49:19 2001
++++ Makefile.in	Wed Dec 19 13:21:48 2001
 @@ -192,9 +192,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
@@ -25,19 +25,24 @@ $FreeBSD$
  		install-data-local
  install-data: install-data-recursive
  
-@@ -498,13 +498,13 @@
+@@ -498,16 +498,16 @@
  	@$(NORMAL_INSTALL)
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+-	  find @PACKAGE_DATA_DIR@ -name \*~ -or -name \*.in  -printf \"%f\n\" >/tmp/GCOMPRIS_LIST.txt ; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  find @PACKAGE_DATA_DIR@ -name \*~ -or -name \*.in >/tmp/GCOMPRIS_LIST.txt ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+ 	  rm -f /tmp/GCOMPRIS_LIST.txt ; \
  	fi
  
  dist-hook:
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+-	  find @PACKAGE_DATA_DIR@ -name \*~  -printf \"%f\n\" >/tmp/GCOMPRIS_LIST.txt ; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  find @PACKAGE_DATA_DIR@ -name \*~ >/tmp/GCOMPRIS_LIST.txt ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+ 	  rm -f /tmp/GCOMPRIS_LIST.txt ; \
  	fi
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.

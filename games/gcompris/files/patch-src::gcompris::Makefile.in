@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/gcompris/Makefile.in	2001/12/19 10:53:08	1.1
++++ src/gcompris/Makefile.in	2001/12/19 10:53:29
+@@ -130,7 +130,7 @@
+ cxxflags_set = @cxxflags_set@
+ plugindir = @plugindir@
+ 
+-INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	$(GDK_PIXBUF_CFLAGS)	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = gcompris
