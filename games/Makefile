@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.127 1998/04/27 14:34:29 mph Exp $
+# $Id: Makefile,v 1.128 1998/05/02 18:03:19 mph Exp $
 #
 
+    SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += acm
     SUBDIR += agm
