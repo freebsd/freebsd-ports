@@ -1,0 +1,17 @@
+[ From the Introduction in the manual ]
+
+xmltex implements a non validating parser for documents matching
+the W3C XML Namespaces Recommendation.  The system may just be used
+to parse the file (expanding entity references and normalising
+namespace declarations) in which case it records a trace of the
+parse on the terminal.  Normally however the information from the
+parse is used to trigger TeX typesetting code.  Declarations (in
+TeX syntax) are provided as part of xmltex to associate TeX code
+with the start and end of each XML element, attributes, processing
+instructions, and with unicode character data.
+
+[ From Nik ]
+
+In otherwords, this is a system for formatting XML data using
+formatting instructions written in TeX, rather than DSSSL, or
+XSLT, or other stylesheet language.

@@ -175,6 +175,7 @@
     SUBDIR += xdvi
     SUBDIR += xdvik
     SUBDIR += xmbibtex
+    SUBDIR += xmltex
     SUBDIR += xpp
     SUBDIR += xtem
     SUBDIR += xtexsh
