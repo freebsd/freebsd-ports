@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jan 17 20:33:42 1999
++++ Makefile	Sun Jan 17 20:34:29 1999
+@@ -1,6 +1,6 @@
+ # $Id: Makefile,v 1.10 1999/01/18 04:29:07 asaddi Exp $
+-CFLAGS=		-Wall -g -DDEBUG
+-LDFLAGS=	
++CFLAGS+=	-DNDEBUG
++LDFLAGS+=	-s
+ 
+ # Uncomment the following for non-debug executables
+ #CFLAGS=		-O2 -DNDEBUG
