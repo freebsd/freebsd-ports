@@ -10,7 +10,6 @@ PORTNAME=	qtutils
 PORTVERSION=	0.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.flyn.org/projects/qtutils/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuickTime Utilities
