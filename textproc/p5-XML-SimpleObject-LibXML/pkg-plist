@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject/LibXML/.packlist
+%%SITE_PERL%%/XML/SimpleObject/LibXML.pm
+%%SITE_PERL%%/XML/SimpleObject/ex.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject/LibXML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/SimpleObject 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

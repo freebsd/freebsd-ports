@@ -1,0 +1,6 @@
+This is a short and simple class allowing simple object access to a parsed 
+XML::LibXML tree, with methods for fetching children and attributes in as 
+clean a manner as possible. My apologies for further polluting the XML:: 
+space; this is a small and quick module, with easy and compact usage. 
+
+WWW: http://search.cpan.org/perldoc?XML::SimpleObject::LibXML
