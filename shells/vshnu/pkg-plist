@@ -1,0 +1,4 @@
+bin/vshnu
+lib/perl5/site_perl/%%PERL_VER%%/vshnucfg.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vshnu/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vshnu

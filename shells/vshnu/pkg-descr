@@ -1,0 +1,10 @@
+In the Unix tradition, it works with things already there and fills
+a empty niche. When incorporating it into your Unix environment, you
+keep your command line shell, your editor, your pager, and access to
+all your tools, tricks and know-how. Vshnu can operate as an
+optional supplemental visual mode to your command line shell. You
+switch between command line and visual mode easily as you wish. Your
+interface bandwidth and power for Unix operations is on a higher
+plane and life gets sweeter.
+
+WWW: http://www.cs.indiana.edu/~kinzler/vshnu/
