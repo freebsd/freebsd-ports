@@ -1,0 +1,6 @@
+Plugdaemon acts as a "dumb proxy", forwarding a TCP/IP stream from a port
+on one host to a possibly different port on a separate host. It runs as a
+daemon to reduce latency in setting up a connection, and optionally logs
+every connection via syslog.
+
+WWW: http://www.taronga.com/plugdaemon/

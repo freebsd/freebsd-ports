@@ -511,6 +511,7 @@
     SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += plb
+    SUBDIR += plugdaemon
     SUBDIR += pmf
     SUBDIR += poink
     SUBDIR += poptop
