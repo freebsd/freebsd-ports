@@ -8,7 +8,7 @@
 PORTNAME=		ted
 PORTVERSION=		4.4d
 CATEGORIES=		chinese editors
-MASTER_SITES=		ftp://freebsd.ntu.edu.tw/freebsd/ntu/moon/X/ted/
+MASTER_SITES=		ftp://freebsd.ntu.edu.tw/FreeBSD/ntu/moon/X/ted/
 DISTFILES=		ted4.4d.tgz
 
 MAINTAINER=		vanilla@FreeBSD.org
