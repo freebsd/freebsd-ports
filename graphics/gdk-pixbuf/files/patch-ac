@@ -1,11 +1,15 @@
---- gdk-pixbuf/Makefile.in.orig	Wed Apr 12 21:00:11 2000
-+++ gdk-pixbuf/Makefile.in	Thu Apr 13 11:39:26 2000
-@@ -211,14 +211,14 @@
+--- gdk-pixbuf/Makefile.in.orig	Mon May 22 13:52:31 2000
++++ gdk-pixbuf/Makefile.in	Mon May 22 14:39:30 2000
+@@ -212,16 +212,16 @@
  AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
  
  LDADDS = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+-@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) -lgmodule
+-@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
 -@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule
 -@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
++@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) -lgmodule12
++@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
 +@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule12
 +@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
  @INSIDE_GNOME_LIBS_TRUE@testpixbuf_drawable_LDADD = $(LDADDS)
