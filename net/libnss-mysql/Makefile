@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnss-mysql
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libnss-mysql
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_MYSQL=	yes
 
 .include <bsd.port.pre.mk>
