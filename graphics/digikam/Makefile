@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +19,7 @@ LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
+RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
