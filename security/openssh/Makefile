@@ -117,18 +117,22 @@ post-patch:
 	    ${WRKSRC}/*.[ch]
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/ssh_config -a \
-	      ! -f ${PREFIX}/etc/sshd_config ]; then \
-		cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution; \
-	else \
-		${ECHO_MSG} ">> ${PREFIX}/etc/ssh{,d}_config exists, not being replaced!"; \
-		${ECHO_MSG} ">> If this is left over from another version of SSH, you will"; \
-		${ECHO_MSG} ">> need to update it to work with OpenSSH."; \
-	fi
+.if !exists(${PREFIX}/etc/ssh_host_key)
+	@${ECHO_MSG} ">> Generating a secret host key."
+	${PREFIX}/bin/ssh-keygen -N "" ${PREFIX}/etc/ssh_host_key
+.endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
 	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh
 	@${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && echo -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh
 	@${CHMOD} 0555 ${PREFIX}/etc/rc.d/sshd.sh
+.endif
+.if !exists(${PREFIX}/etc/ssh_config) && !exists(${PREFIX}/etc/sshd_config)
+	@cd ${WRKSRC}; \
+	${MAKE} DESTDIR=${PREFIX} distribution
+.else
+	@${ECHO_MSG} ">> ${PREFIX}/etc/ssh{,d}_config exists, not being replaced!"
+	@${ECHO_MSG} ">> If this is left over from another version of SSH, you will"
+	@${ECHO_MSG} ">> need to update it to work with OpenSSH."
 .endif
 
 .include <bsd.port.mk>
