@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.53
+PORTVERSION=	4.54
 CATEGORIES=	databases www
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
@@ -70,7 +70,7 @@ DRIVERS=adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
 	adodb-sqlite.inc.php adodb-sqlitepo.inc.php adodb-sybase.inc.php \
 	adodb-vfp.inc.php adodb-odbtp.inc.php
 
-LANG=	adodb-bg.inc.php adodb-bgutf8.inc.php \
+LANG=	adodb-ar.inc.php adodb-bg.inc.php adodb-bgutf8.inc.php \
 	adodb-ca.inc.php adodb-cn.inc.php adodb-cz.inc.php \
 	adodb-de.inc.php adodb-en.inc.php adodb-es.inc.php \
 	adodb-fr.inc.php adodb-it.inc.php adodb-nl.inc.php \

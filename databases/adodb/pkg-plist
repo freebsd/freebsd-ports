@@ -71,6 +71,7 @@
 %%ADODB_DIR%%/drivers/adodb-sqlitepo.inc.php
 %%ADODB_DIR%%/drivers/adodb-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-vfp.inc.php
+%%ADODB_DIR%%/lang/adodb-ar.inc.php
 %%ADODB_DIR%%/lang/adodb-bg.inc.php
 %%ADODB_DIR%%/lang/adodb-bgutf8.inc.php
 %%ADODB_DIR%%/lang/adodb-ca.inc.php
