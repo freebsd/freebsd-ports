@@ -48,6 +48,7 @@ lib/X11/icewm/ledclock/slash.xpm
 lib/X11/icewm/ledclock/space.xpm
 lib/X11/icewm/mailbox/mail.xpm
 lib/X11/icewm/mailbox/newmail.xpm
+lib/X11/icewm/mailbox/nomail.xpm
 lib/X11/icewm/mailbox/unreadmail.xpm
 lib/X11/icewm/menu
 lib/X11/icewm/preferences
