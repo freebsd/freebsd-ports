@@ -1,5 +1,16 @@
 --- configure.in.orig	Tue Sep 21 23:16:21 1999
 +++ configure.in	Mon Nov  1 05:26:32 1999
+@@ -66,6 +66,10 @@
+     AC_MSG_CHECKING(for pam directory $PAM_DIR_PATH)
+     if test -d "$PAM_DIR_PATH"; then
+ 	AC_MSG_RESULT(exists)
++    elif test -f "/etc/pam.conf"; then
++	AC_MSG_RESULT(using /etc/pam.conf)
++	PAMDIR=none
++	PAM_DIR_PATH=none
+     else
+ 	AC_MSG_RESULT(does not exist)
+ 	AC_MSG_WARN([this may not be a pam system <<--------------])
 @@ -183,7 +183,7 @@
  
  XLFLAGS="$X_LIBS"
