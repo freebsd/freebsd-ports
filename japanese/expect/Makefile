@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	expect
+DISTNAME=	expect-5.30
 PKGNAME=	ja-expect-5.30
 CATEGORIES=	japanese lang tk80
-MASTER_SITES=	http://expect.nist.gov/
+MASTER_SITES=	ftp://ftp.nist.gov/mel/div826/subject/expect/old/
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
