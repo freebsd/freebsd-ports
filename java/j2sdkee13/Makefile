@@ -23,8 +23,7 @@ RESTRICTED=	"Redistribution is not permitted"
 NO_CDROM=	"Redistribution is not permitted"
 
 J2SDKEEVERSION=	${PORTVERSION}_02
-SUN_BUNDLE_ID?=	9405
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
+DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7917-j2ee_sdk-1.3.1-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .include <bsd.port.pre.mk>
 
