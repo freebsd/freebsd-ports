@@ -6,16 +6,29 @@
 #
 
 PORTNAME=	prcs
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/prcs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jmacd@FreeBSD.org
-
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
+MAINTAINER=	sam@inf.enst.fr
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 MAN1=		prcs.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/emacs)
+PLIST_SUB+=	EMACS=''
+.else
+PLIST_SUB+=	EMACS='@comment '
+.endif
+
+pre-configure:
+.if !exists(${LOCALBASE}/bin/emacs)
+	${PERL} -pi -e "s@^(SUBDIRS = .*) emacs (.*)@\1 \2@" \
+		${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.post.mk>
