@@ -724,6 +724,24 @@ MASTER_SITE_RUBY+= \
 	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
+MASTER_SITE_SAMBA+= \
+	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
+	http://us1.samba.org/samba/ftp/%SUBDIR%/ \
+	http://us4.samba.org/samba/ftp/%SUBDIR%/ \
+	http://us2.samba.org/samba/ftp/%SUBDIR%/ \
+	ftp://ca.samba.org/%SUBDIR%/ \
+	ftp://de.samba.org/samba.org/%SUBDIR%/ \
+	ftp://ftp.k2.net/mirrors/samba/%SUBDIR%/ \
+	ftp://ftp.oss.eznetsols.org/samba/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/infosys/servers/samba/%SUBDIR%/ \
+	ftp://giswitch.sggw.waw.pl/pub/unix/samba/%SUBDIR%/ \
+	ftp://ru.samba.org/pub/samba/%SUBDIR%/ \
+	ftp://tr.samba.org/samba/%SUBDIR%/ \
+	http://sambafr.idealx.org/samba/ftp/%SUBDIR%/ \
+	ftp://ftp.easynet.be/samba/ftp/%SUBDIR%/ \
+	ftp://ftp.linuxforum.net/ftp.samba.org/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
+
 MASTER_SITE_SAVANNAH+= \
 	http://savannah.nongnu.org/download/%SUBDIR%/ \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
