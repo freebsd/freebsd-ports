@@ -1,3 +1,4 @@
 bin/pxinfo
 bin/pxsqldump
 bin/pxcsvdump
+bin/pxxmldump
