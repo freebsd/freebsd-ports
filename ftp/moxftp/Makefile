@@ -5,6 +5,7 @@
 #
 
 DISTNAME=	moxftp-2.2
+EXTRACT_SUFX=	.tar.Z
 HAS_CONFIGURE=	yes
 PREFIX=	/usr/X11R6
 
