@@ -30,7 +30,7 @@ PLIST_SUB+=     PYTHON:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
 .endif
 .include <bsd.port.post.mk>
