@@ -1,7 +1,11 @@
 =======================================
+If it's your initial installation, you should:
 
-You should now point your web browser to the phpGedView folder
-(http://www.yourserver.com/phpGedView/) to automatically begin the online
-configuration process.
+- Go to /usr/local/www/data/phpGedView/ and copy all files ending
+  with -dist to their name without -dist.
+
+- point your web browser to the phpGedView folder
+  (http://www.yourserver.com/phpGedView/) to automatically begin
+  the online configuration process.
 
 =======================================
