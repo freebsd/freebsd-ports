@@ -608,6 +608,12 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Variation::VariantI.3 \
 		bptutorial.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Configure fails"
+.endif
+
 # now install all extra stuff (docs, examples, scripts, models)
 post-install:
 
@@ -626,4 +632,4 @@ post-install:
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
