@@ -1,12 +1,12 @@
 # New ports collection makefile for:	motif
-# Version required:	1.2
+# Version required:	2.1.10
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1998/11/12 23:07:17 billf Exp $
+# $Id: Makefile,v 1.1 1998/12/28 13:00:56 asami Exp $
 #
 
-DISTNAME=	Motif-1.2
+DISTNAME=	Motif-2.1.10
 CATEGORIES=	x11-toolkits
 DISTFILES=	# empty
 
