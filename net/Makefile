@@ -610,6 +610,7 @@
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smbfs
+    SUBDIR += smbldap-tools
     SUBDIR += smm++
     SUBDIR += smokeping
     SUBDIR += sniffit
