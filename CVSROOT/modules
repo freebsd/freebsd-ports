@@ -10839,6 +10839,7 @@ xorg-libraries	ports/x11/xorg-libraries
 xorg-manpages	ports/x11/xorg-manpages
 xorg-printserver	ports/x11-servers/xorg-printserver
 xorg-server	ports/x11-servers/xorg-server
+xorg-vfbserver	ports/x11-servers/xorg-vfbserver
 xosd		ports/misc/xosd
 xosmulti	ports/games/xosmulti
 xosview		ports/sysutils/xosview
