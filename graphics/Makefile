@@ -297,6 +297,7 @@
     SUBDIR += scr2png
     SUBDIR += scrot
     SUBDIR += scwm-icons
+    SUBDIR += sdl_gfx
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
