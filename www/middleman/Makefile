@@ -32,6 +32,9 @@ CONFIGURE_ARGS+=	--enable-debug
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/bin/mman|${PREFIX}/bin/mman|g' \
+		-e 's|/etc/mman/config.xml|${PREFIX}/etc/mman.xml|g' \
+		${WRKSRC}/scripts/mman.init
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
