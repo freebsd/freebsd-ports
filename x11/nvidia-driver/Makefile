@@ -18,6 +18,8 @@ DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
+ONLY_FOR_ARCHS=	i386
+
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
