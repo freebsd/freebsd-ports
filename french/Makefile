@@ -4,6 +4,7 @@
     COMMENT = French support
 
     SUBDIR += abispell-fr-FR
+    SUBDIR += alphabet_sounds_fr
     SUBDIR += aspell
     SUBDIR += aster
     SUBDIR += daCode
