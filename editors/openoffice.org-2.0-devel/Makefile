@@ -8,6 +8,18 @@
 PORTNAME=	staroffice
 PORTVERSION=	5.2
 CATEGORIES=	editors linux
+MASTER_SITES=	ftp://ftp.inf.utfsm.cl/pub/UTFSM/StarOffice_5.2/ \
+		ftp://ftp.snerpa.is/pub/linux/ \
+		ftp://ftp.osb.hu/pub/mirrors/staroffice/linux/ \
+		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
+		ftp://ftp.labyrinth.net.au/.5/kk/linux/star_office/ \
+		ftp://ftp.acs.oakland.edu/files/Linux/StarOffice/office52/ \
+		ftp://ftp.ctio.noao.edu/linux/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/english/ \
+		ftp://ftp.linux.tucows.com/pub/Linuxberg/ \
+		ftp://ftp.jcu.edu.au/pub/StarOffice/ \
+		ftp://ftp.uakom.sk/pub/mirrors/StarOffice/ \
+		ftp://ftp.linux.hr/pub/staroffice/5.2/
 DISTNAME=	so-5_2-ga-bin-linux-en.bin
 DISTFILES=	soa-5_2-ga-bin-linux-en.bin so-5_2-ga-bin-linux-en.bin
 EXTRACT_ONLY=
@@ -46,20 +58,6 @@ pre-fetch:
 	@${ECHO} onto /cdrom and run make again.
 	@${ECHO}
 	@${FALSE}
-.else
-.if !exists(${_DISTDIR}/${DISTNAME})
-	@${ECHO} Please manually download ${DISTFILES}
-	@${ECHO} from http://www.sun.com/staroffice.
-	@${ECHO}
-	@${ECHO} ${ADEBAS} is the database part of Staroffice.
-	@${ECHO}
-	@${ECHO} Put ${DISTFILES} into the directory
-	@${ECHO} ${_DISTDIR} and run make again.
-	@${ECHO} Or, if you have the Sun StarOffice 5.2 CDROM,
-	@${ECHO} please run 'make USE_CDROM=yes'
-	@${ECHO}
-	@${FALSE}
-.endif
 .endif
 
 .if defined(WITH_CDROM)
