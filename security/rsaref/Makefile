@@ -26,7 +26,7 @@ RESTRICTED=	"Contains cryptography"
 
 pre-extract:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	/usr/bin/more -e files/LICENSE.english
+	/usr/bin/more -e ${FILESDIR}/LICENSE.english
 	/usr/bin/dialog --yesno "Do you accept the terms of the RSAREF license agreement and wish to proceed with the build?" 8 40 || ${FALSE}
 .endif
 
