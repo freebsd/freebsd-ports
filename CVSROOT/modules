@@ -370,6 +370,7 @@ arena		ports/www/arena
 ares		ports/dns/ares
 argouml		ports/devel/argouml
 argparse	ports/misc/argparse
+argtable	ports/devel/argtable
 argus		ports/net/argus
 ari-yahoo	ports/net/ari-yahoo
 aria		ports/www/aria
