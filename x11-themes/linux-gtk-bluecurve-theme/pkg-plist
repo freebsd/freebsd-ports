@@ -1,0 +1,7 @@
+usr/lib/gtk/themes/engines/libbluecurve.so
+usr/lib/gtk-2.0/2.2.0/engines/libbluecurve.so
+usr/share/themes/Bluecurve/gtk/gtkrc
+usr/share/themes/Bluecurve/gtk-2.0/gtkrc
+@dirrm usr/share/themes/Bluecurve/gtk
+@dirrm usr/share/themes/Bluecurve/gtk-2.0
+@dirrm usr/share/themes/Bluecurve
