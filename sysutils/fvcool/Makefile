@@ -8,7 +8,8 @@
 PORTNAME=	fvcool
 PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
+MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/fvcool/ \
+		http://www.infracaninophile.co.uk/fvcool/
 DISTNAME=	FVCool${PORTVERSION:S/.//g}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
@@ -27,7 +28,8 @@ SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g'   \
 		-e 's,%%PORTNAME%%,${PORTNAME},g' \
 		-e 's,%%PREFIX%%,${PREFIX},g'
 
-DOC_FILES=	ReadMe ReadMe.jp ReadMe.tech_KT133
+PORTDOCS=	ReadMe ReadMe.jp ReadMe.tech_KT133
+PLIST_FILES=	sbin/fvcool etc/rc.d/fvcool.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CC@|& ${CFLAGS}|; \
@@ -50,7 +52,7 @@ post-install:
 install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
