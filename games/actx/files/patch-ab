@@ -1,0 +1,14 @@
+--- install.actxrc.org	Mon Feb 22 02:40:57 1999
++++ install.actxrc	Mon Feb 22 03:02:49 1999
+@@ -6,9 +6,9 @@
+ 
+ Actx*titleOfMenu: ONE  - for Bright Season -
+ 
+-Actx*xpmDir: /usr/local/lib/ActX
++Actx*xpmDir: %%ACTXDIR%%
+ 
+-!Actx*sndDir: /usr/local/lib/ActX/wav
++!Actx*sndDir: %%ACTXDIR%%/wav
+ 
+ !Actx*sndCom: /usr/local/bin/wavplay -q %s
+ 

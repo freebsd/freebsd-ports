@@ -1,0 +1,54 @@
+--- Imakefile.orig	Mon Feb 22 12:16:46 1999
++++ Imakefile	Mon Feb 22 12:19:16 1999
+@@ -18,23 +18,23 @@
+ XCOMM  (どうも通常にインストールしただけでは /usr/include/neXtaw に
+ XCOMM   ヘッダがインストールされるみたい…→neXtaw-0.5.1)
+ 
+-#define NEXTAW
++XCOMM #define NEXTAW
+ 
+ 
+ XCOMM ------------------ C Compiler -----------------------------
+ 
+-CC = gcc
++XCOMM CC = gcc
+ 
+ 
+ XCOMM -------------- ActX 本体 Install先 Directory ---------------
+ 
+-BINDIR = ${HOME}/bin
++BINDIR = ${PREFIX}/bin
+ XCOMM BINDIR = /usr/local/bin
+ 
+ 
+ XCOMM -------- ActX マスコットデータ Install先 Directory ----------
+ 
+-#define MASCOTDIR ${HOME}/lib/One
++#define MASCOTDIR ${PREFIX}/share/examples/actx
+ XCOMM #define MASCOTDIR /usr/local/lib/ActX
+ 
+ 
+@@ -48,9 +48,10 @@
+ #endif
+ OBJS = actx.o action.o menu.o
+ SRCS =  $(OBJS:.o=.c)
+-EXTRA_LIBRARIES = -lXpm
+-ComplexProgramTarget(actx)
++XPMLIB = -lXpm
+ 
++AllTarget(actx)
++NormalProgramTarget(actx,$(OBJS),$(LOCAL_LIBRARIES),XawClientLibs,$(XPMLIB))
+ 
+ #ifdef USE_I18N
+ DEFINES_I18N = -DI18N
+@@ -117,7 +118,6 @@
+ InstallNamedNonExec(mascots/mayu6.xpm,mayu6.xpm,MASCOTDIR/)
+ InstallNamedNonExec(mascots/mayu7.xpm,mayu7.xpm,MASCOTDIR/)
+ 
+-
+-
+-
+-
++install:: actx
++	MakeDir($(DESTDIR)$(BINDIR))
++	$(INSTALL) -c $(INSTPGMFLAGS) actx $(DESTDIR)$(BINDIR)/actx
