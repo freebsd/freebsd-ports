@@ -22,7 +22,7 @@ USE_GNOME=	glib20
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_MSN)
-LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--msn=1
 pre-configure:
 	@${ECHO_CMD} "MSN support will be enabled."
