@@ -7,25 +7,57 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.6
+PORTVERSION=	4.9.7
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
-COMMENT=	A ncurses based interface for ICQ, Yahoo!, AIM, MSN and IRC
+COMMENT=	A text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-#		fribidi.0:${PORTSDIR}/converters/fribidi
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
-#CONFIGURE_ARGS=	--with-fribidi
+
+.if defined(WITH_FRIBIDI)
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--with-fribidi
+.endif
+
+.if !defined(WITH_MSN)
+CONFIGURE_ARGS+=	--disable-msn
+.endif
+
+.if !defined(WITH_YAHOO)
+CONFIGURE_ARGS+=	--disable-yahoo
+.endif
+
+.if !defined(WITH_AIM)
+CONFIGURE_ARGS+=	--disable-aim
+.endif
+
+.if !defined(WITH_IRC)
+CONFIGURE_ARGS+=	--disable-irc
+.endif
+
+.if !defined(WITH_JABBER)
+CONFIGURE_ARGS+=	--disable-jabber
+.endif
+
+.if !defined(WITH_RSS)
+CONFIGURE_ARGS+=	--disable-rss
+.endif
+
+.if !defined(WITH_LJ)
+CONFIGURE_ARGS+=	--disable-lj
+.endif
 
 MAN1=	centericq.1 cicqconv.1 cicqsync.1
 
