@@ -93,7 +93,7 @@ while [ "$1" ]; do
 			SUB_TLS=""
 			;;
 		\"DB3\")
-			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
+			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
 			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
 			;;

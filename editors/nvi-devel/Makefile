@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	dd
 MAINTAINER=	dd@FreeBSD.org
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 PATCH_WRKSRC=		${WRKDIR}
