@@ -3,12 +3,12 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1995/10/11 08:46:57 jkh Exp $
+# $Id: Makefile,v 1.12 1995/10/11 10:28:59 jkh Exp $
 #
 
 DISTNAME=       tcsh-6.06
 CATEGORIES+=	shells
-MASTER_SITES=	ftp://tesla.ee.cornell.edu/pub/tcsh/
+MASTER_SITES=   ftp://ee.cornell.edu/pub/tcsh/
 
 ALL_TARGET=     all catalogs
 INSTALL_TARGET= install install.man
