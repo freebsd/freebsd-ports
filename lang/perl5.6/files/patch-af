@@ -1,0 +1,11 @@
+--- Configure.ORIG	Fri Aug  7 23:38:53 1998
++++ Configure	Mon Aug 17 12:03:07 1998
+@@ -306,7 +306,7 @@
+ ldflags=''
+ lkflags=''
+ locincpth=''
+-optimize=''
++optimize=${CFLAGS:-''}
+ cf_email=''
+ cf_by=''
+ cf_time=''
