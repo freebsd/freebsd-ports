@@ -74,6 +74,7 @@ share/xfce/backdrops/Satin2.xpm
 share/xfce/backdrops/Satin3.xpm
 share/xfce/backdrops/Sea.xpm
 share/xfce/backdrops/Sky.xpm
+share/xfce/backdrops/Sky2.xpm
 share/xfce/backdrops/Slate.xpm
 share/xfce/backdrops/Soft.xpm
 share/xfce/backdrops/Softblue.xpm
@@ -315,9 +316,11 @@ share/xfce/locale/it/LC_MESSAGES/xfce.mo
 share/xfce/locale/ja/LC_MESSAGES/xfce.mo
 share/xfce/locale/pl/LC_MESSAGES/xfce.mo
 share/xfce/locale/ru/LC_MESSAGES/xfce.mo
+share/xfce/locale/sk/LC_MESSAGES/xfce.mo
 share/xfce/locale/sv/LC_MESSAGES/xfce.mo
 share/xfce/locale/zh/LC_MESSAGES/xfce.mo
 share/xfce/palettes/Alpine
+share/xfce/palettes/Analog
 share/xfce/palettes/Anthracite
 share/xfce/palettes/Bahamas
 share/xfce/palettes/Cheese
@@ -457,6 +460,8 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/pl
 @dirrm share/xfce/locale/ru/LC_MESSAGES
 @dirrm share/xfce/locale/ru
+@dirrm share/xfce/locale/sk/LC_MESSAGES
+@dirrm share/xfce/locale/sk
 @dirrm share/xfce/locale/sv/LC_MESSAGES
 @dirrm share/xfce/locale/sv
 @dirrm share/xfce/locale/zh/LC_MESSAGES
