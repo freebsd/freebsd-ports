@@ -1,0 +1,20 @@
+#!/bin/sh
+
+LOCALDEF=$WRKDIR/.config
+
+rm -f $LOCALDEF
+echo "#define BuildServer YES"			>> $LOCALDEF
+echo "#define BuildServersOnly YES"		>> $LOCALDEF
+echo "#define XprtServer NO"			>> $LOCALDEF
+echo "#define XnestServer YES"			>> $LOCALDEF
+echo "#define XorgServer NO"			>> $LOCALDEF
+echo "#define XVirtualFramebufferServer NO"	>> $LOCALDEF
+echo "#define XF86Server NO"			>> $LOCALDEF
+echo "#define BuildFontServer NO"		>> $LOCALDEF
+echo "#define BuildLBX NO"			>> $LOCALDEF
+echo "#define BuildXF86DRI NO"			>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define UseInstalledLibraries YES"	>> $LOCALDEF
+echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
+
+sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen
