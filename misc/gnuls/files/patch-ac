@@ -1,7 +1,7 @@
-*** src/Makefile.in.orig	Sun Aug 10 17:14:46 1997
---- src/Makefile.in	Sun Aug 10 19:14:33 1997
+*** src/Makefile.in.orig	Thu Feb 18 08:40:27 1999
+--- src/Makefile.in	Thu Feb 18 08:44:15 1999
 ***************
-*** 49,57 ****
+*** 95,103 ****
   EXTRAdir = $(bindir)
   EXTRA_PROGRAMS = df mvdir
   
@@ -11,184 +11,47 @@
   
   libexec_PROGRAMS = @MVDIR_PROG@
   datadir = $(prefix)/@DATADIRNAME@
---- 49,55 ----
+--- 95,101 ----
   EXTRAdir = $(bindir)
   EXTRA_PROGRAMS = df mvdir
   
-! bin_PROGRAMS = dircolors gnuls 
+! bin_PROGRAMS = gnuls dir vdir dircolors
   
   libexec_PROGRAMS = @MVDIR_PROG@
   datadir = $(prefix)/@DATADIRNAME@
 ***************
-*** 247,252 ****
---- 245,253 ----
-  	     $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
-  	  else :; fi; \
-  	done
-+ 	ln -f $(bindir)/gnuls $(bindir)/linuxls
-+ 	ln -f $(bindir)/gnuls $(bindir)/vdir
-+ 	ln -f $(bindir)/gnuls $(bindir)/dir
-  
-  uninstall-binPROGRAMS:
-  	list="$(bin_PROGRAMS)"; for p in $$list; do \
+*** 203,209 ****
+  ls_OBJECTS =  ls$U.o ls-ls$U.o
+  ls_LDADD = $(LDADD)
+  ls_DEPENDENCIES =  ../lib/libfu.a
+! ls_LDFLAGS = 
+  mkdir_SOURCES = mkdir.c
+  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_LDADD = $(LDADD)
+--- 201,207 ----
+  ls_OBJECTS =  ls$U.o ls-ls$U.o
+  ls_LDADD = $(LDADD)
+  ls_DEPENDENCIES =  ../lib/libfu.a
+! ls_LDFLAGS = -o gnuls
+  mkdir_SOURCES = mkdir.c
+  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_LDADD = $(LDADD)
 ***************
-*** 392,398 ****
+*** 412,419 ****
+  	@rm -f vdir
   	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
-  $(ls_OBJECTS): ../config.h
   
 ! ls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+! 	@rm -f ls
   	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
-  $(mkdir_OBJECTS): ../config.h
   
---- 393,399 ----
+  mkdir: $(mkdir_OBJECTS) $(mkdir_DEPENDENCIES)
+--- 410,417 ----
+  	@rm -f vdir
   	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
-  $(ls_OBJECTS): ../config.h
   
 ! gnuls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+! 	@rm -f gnuls
   	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
-  $(mkdir_OBJECTS): ../config.h
   
-*** src/dircolors.c.orig	Sun Jan 26 00:54:17 1997
---- src/dircolors.c	Sat Oct 25 16:00:40 1997
-***************
-*** 72,84 ****
-    "NORMAL", "NORM", "FILE", "DIR", "LNK", "LINK",
-    "SYMLINK", "ORPHAN", "MISSING", "FIFO", "PIPE", "SOCK", "BLK", "BLOCK",
-    "CHR", "CHAR", "EXEC", "LEFT", "LEFTCODE", "RIGHT", "RIGHTCODE", "END",
-!   "ENDCODE", NULL
-  };
-  
-  static const char *const ls_codes[] =
-  {
-    "no", "no", "fi", "di", "ln", "ln", "ln", "or", "mi", "pi", "pi",
-    "so", "bd", "bd", "cd", "cd", "ex", "lc", "lc", "rc", "rc", "ec", "ec"
-  };
-  
-  static struct option const long_options[] =
---- 72,86 ----
-    "NORMAL", "NORM", "FILE", "DIR", "LNK", "LINK",
-    "SYMLINK", "ORPHAN", "MISSING", "FIFO", "PIPE", "SOCK", "BLK", "BLOCK",
-    "CHR", "CHAR", "EXEC", "LEFT", "LEFTCODE", "RIGHT", "RIGHTCODE", "END",
-!   "ENDCODE", "SUID", "SETUID", "SGID", "SETGID", "WRO", "WRITEOTHERS",
-!   "WT", "WROT", "WRITEOTHERSSTICKY", NULL
-  };
-  
-  static const char *const ls_codes[] =
-  {
-    "no", "no", "fi", "di", "ln", "ln", "ln", "or", "mi", "pi", "pi",
-    "so", "bd", "bd", "cd", "cd", "ex", "lc", "lc", "rc", "rc", "ec", "ec"
-+   "su", "su", "sg", "sg", "wo", "wo", "wo", "wt", "wt", "wt", NULL
-  };
-  
-  static struct option const long_options[] =
-*** src/ls.c.orig	Sun Jan 26 00:56:10 1997
---- src/ls.c	Sat Oct 25 16:00:30 1997
-***************
-*** 359,371 ****
-  enum indicator_no
-    {
-      C_LEFT, C_RIGHT, C_END, C_NORM, C_FILE, C_DIR, C_LINK, C_FIFO, C_SOCK,
-!     C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC
-    };
-  
-  static const char *const indicator_name[]=
-    {
-      "lc", "rc", "ec", "no", "fi", "di", "ln", "pi", "so",
-!     "bd", "cd", "mi", "or", "ex", NULL
-    };
-  
-  struct col_ext_type
---- 359,371 ----
-  enum indicator_no
-    {
-      C_LEFT, C_RIGHT, C_END, C_NORM, C_FILE, C_DIR, C_LINK, C_FIFO, C_SOCK,
-!     C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC, C_UID, C_GID, C_WRO, C_WT
-    };
-  
-  static const char *const indicator_name[]=
-    {
-      "lc", "rc", "ec", "no", "fi", "di", "ln", "pi", "so",
-!     "bd", "cd", "mi", "or", "ex", "su", "sg", "wo", "wt", NULL
-    };
-  
-  struct col_ext_type
-***************
-*** 390,396 ****
-      { LEN_STR_PAIR ("01;33") },		/* cd: Char device: bright yellow */
-      { 0, NULL },			/* mi: Missing file: undefined */
-      { 0, NULL },			/* or: Orphanned symlink: undefined */
-!     { LEN_STR_PAIR ("01;32") }		/* ex: Executable: bright green */
-    };
-  
-  /* FIXME: comment  */
---- 390,400 ----
-      { LEN_STR_PAIR ("01;33") },		/* cd: Char device: bright yellow */
-      { 0, NULL },			/* mi: Missing file: undefined */
-      { 0, NULL },			/* or: Orphanned symlink: undefined */
-!     { LEN_STR_PAIR ("01;32") },		/* ex: Executable: bright green */
-!     { LEN_STR_PAIR ("37;41") },         /* su: setuid: white on red */
-!     { LEN_STR_PAIR ("30;43") },         /* sg: setgid: black on yellow */
-!     { LEN_STR_PAIR ("37;44") },         /* wo: writeable-other:white on blue */
-!     { LEN_STR_PAIR ("37;42") },         /* wt: wo w/ sticky: white on green */
-    };
-  
-  /* FIXME: comment  */
-***************
-*** 2407,2413 ****
-    else
-      {
-        if (S_ISDIR (mode))
-! 	type = C_DIR;
-  
-  #ifdef S_ISLNK
-        else if (S_ISLNK (mode))
---- 2411,2424 ----
-    else
-      {
-        if (S_ISDIR (mode))
-!         {
-!           if ((mode && MODE_WT) == MODE_WT)
-!             type = C_WT;
-!           else if ((mode && MODE_WRO) == MODE_WRO)
-!             type = C_WRO;
-!           else
-!             type = C_DIR;
-!         }
-  
-  #ifdef S_ISLNK
-        else if (S_ISLNK (mode))
-***************
-*** 2435,2441 ****
-  	type = C_CHR;
-  #endif
-  
-!       if (type == C_FILE && (mode & S_IXUGO) != 0)
-  	type = C_EXEC;
-  
-        /* Check the file's suffix only if still classified as C_FILE.  */
---- 2446,2458 ----
-  	type = C_CHR;
-  #endif
-  
-!       if ((type == C_FILE) && ((mode & S_ISUID) != 0))
-!         type = C_UID;
-! 
-!       else if ((type == C_FILE) && ((mode & S_ISGID) != 0))
-!         type = C_GID;
-! 
-!       else if (type == C_FILE && (mode & S_IXUGO) != 0)
-  	type = C_EXEC;
-  
-        /* Check the file's suffix only if still classified as C_FILE.  */
-*** src/ls.h.orig	Wed Jun 16 11:24:58 1993
---- src/ls.h	Sat Oct 25 16:00:35 1997
-***************
-*** 7,10 ****
---- 7,13 ----
-  /* This is for the `vdir' program.  */
-  #define LS_LONG_FORMAT 3
-  
-+ #define MODE_WT 01002
-+ #define MODE_WRO 02
-+ 
-  extern int ls_mode;
+  mkdir: $(mkdir_OBJECTS) $(mkdir_DEPENDENCIES)

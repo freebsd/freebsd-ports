@@ -1,0 +1,22 @@
+*** man/dir.1.orig	Sat Feb 20 09:29:26 1999
+--- man/dir.1	Sat Feb 20 09:29:45 1999
+***************
+*** 174,182 ****
+  .B dir
+  is maintained as a Texinfo manual.  If the
+  .B info
+! and
+! .B dir
+! programs are properly installed at your site, the command
+  .IP
+  .B info dir
+  .PP
+--- 174,181 ----
+  .B dir
+  is maintained as a Texinfo manual.  If the
+  .B info
+! program and the full suite of GNU fileutils
+! are properly installed at your site, the command
+  .IP
+  .B info dir
+  .PP

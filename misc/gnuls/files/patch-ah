@@ -1,0 +1,22 @@
+*** man/vdir.1.orig	Sat Feb 20 09:29:29 1999
+--- man/vdir.1	Sat Feb 20 09:30:04 1999
+***************
+*** 174,182 ****
+  .B vdir
+  is maintained as a Texinfo manual.  If the
+  .B info
+! and
+! .B vdir
+! programs are properly installed at your site, the command
+  .IP
+  .B info vdir
+  .PP
+--- 174,181 ----
+  .B vdir
+  is maintained as a Texinfo manual.  If the
+  .B info
+! program and the full suite of GNU fileutils
+! are properly installed at your site, the command
+  .IP
+  .B info vdir
+  .PP
