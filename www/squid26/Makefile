@@ -52,7 +52,7 @@ MAKEFILE=	makefile
 #  - Enable delay pools to limit bandwidth usage
 #CONFIGURE_ARGS+= --enable-delay-pools
 #  - Enable generic memory use tracing
-#CONFIGURE+ARGS+= --enable-mem-gen-trace
+#CONFIGURE_ARGS+= --enable-mem-gen-trace
 #  - Enable logging of the User-Agent header
 #CONFIGURE_ARGS+= --enable-useragent-log
 #  - Disable Web Cache Coordination Protocol
