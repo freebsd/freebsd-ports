@@ -1,60 +1,87 @@
---- Makefile.orig	Sun Dec 29 13:26:39 1996
-+++ Makefile	Thu Sep 14 18:07:32 2000
-@@ -14,10 +14,10 @@
- TCLMAN_DEST = /usr/local/man/man1
- 
- # The full path to tclsh
--TCLSH = /usr/local/bin/tclsh
-+TCLSH = tclsh8.2
- 
- # The full path to wish.
--WISH = /usr/local/bin/wish
-+WISH = wish8.2
- ### DON'T EDIT ANYTHING BELOW THIS LINE ###
- 
- TCLLIB_FILES =  \
-@@ -40,35 +40,36 @@
- TCLPRG_FILE = tkhylafax
- TCLMAN_FILE = tkhylafax
- 
--all: lib install.man tkhylafax
-+all:
-+
-+install: lib install.man tkhylafax.inst
- 	echo 'auto_mkindex $(TCLLIB_DEST) *.tcl *.t' | $(TCLSH);
- 
- $(TCLLIB_DEST):
- 	if [ ! -d $(TCLLIB_DEST) ]; then mkdir -p $(TCLLIB_DEST); fi
--	chmod 775 $(TCLLIB_DEST)
-+	chmod 755 $(TCLLIB_DEST)
- 
- lib: $(TCLLIB_DEST)
- 	@echo "Installing tkhylafax library..." 
- 	-for i in $(TCLLIB_FILES) ; do \
- 	    cp $$i $(TCLLIB_DEST)/$$i ; \
--	    chmod 664 $(TCLLIB_DEST)/$$i ; \
-+	    chmod 644 $(TCLLIB_DEST)/$$i ; \
- 	done
- 	@echo "Done" 
- 
- $(TCLPRG_DEST):
- 	if [ ! -d $(TCLPRG_DEST) ]; then mkdir -p $(TCLPRG_DEST); fi
--	chmod 775 $(TCLPRG_DEST)
-+	chmod 755 $(TCLPRG_DEST)
- 
--tkhylafax: $(TCLPRG_DEST)
-+tkhylafax.inst: $(TCLPRG_DEST)
- 	@echo "Patching tkhylafax..." 
- 	mv tkhylafax tkhylafax.unpatched
- 	sed -e 's|XXX_TKHYLAFAX_XXX|$(TCLLIB_DEST)|g' \
- 	    tkhylafax.unpatched > tkhylafax
- 	@echo "Done" 
- 	@echo "Installing tkhylafax command..." 
--	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/$@
--	chmod 775 $(TCLPRG_DEST)/$@
--	mv tkhylafax.unpatched tkhylafax
-+	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/tkhylafax
-+	chmod 755 $(TCLPRG_DEST)/tkhylafax
- 	@echo "Done" 
- 
- install.man:
+*** Makefile.orig	Sat Mar 14 20:57:48 1998
+--- Makefile	Thu Jan 16 21:12:09 2003
+***************
+*** 5,11 ****
+  
+  ### EDIT THE NEXT LINES ONLY ###
+  
+! PREFIX = /usr/local
+  
+  # The directory where the tkhylafax library will be installed
+  TCLLIB_DEST = $(PREFIX)/lib/tkhylafax-3.2
+--- 5,11 ----
+  
+  ### EDIT THE NEXT LINES ONLY ###
+  
+! #PREFIX = ${PREFIX}
+  
+  # The directory where the tkhylafax library will be installed
+  TCLLIB_DEST = $(PREFIX)/lib/tkhylafax-3.2
+***************
+*** 17,29 ****
+  TCLMAN_DEST = $(PREFIX)/man/man1
+  
+  # The full path to tclsh
+! TCLSH = /usr/bin/tclsh
+  
+  # The full path to wish.
+! WISH = /usr/bin/wish
+  
+  # The full path to your postscript viewer
+! GHOSTVIEW = /usr/X11/bin/gv
+  
+  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
+  
+--- 17,29 ----
+  TCLMAN_DEST = $(PREFIX)/man/man1
+  
+  # The full path to tclsh
+! TCLSH = tclsh8.2
+  
+  # The full path to wish.
+! WISH = wish8.2
+  
+  # The full path to your postscript viewer
+! GHOSTVIEW = ${X11BASE}/bin/gv
+  
+  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
+  
+***************
+*** 52,58 ****
+  
+  all:
+  	$(MAKE) build
+- 	$(MAKE) install
+  
+  build: Makefile
+  	@echo "Patching tkhylafax..."
+--- 52,57 ----
+***************
+*** 66,78 ****
+  
+  $(TCLLIB_DEST):
+  	if [ ! -d $(TCLLIB_DEST) ]; then mkdir -p $(TCLLIB_DEST); fi
+! 	chmod 775 $(TCLLIB_DEST)
+  
+  install.lib: $(TCLLIB_DEST)
+  	@echo "Installing tkhylafax library..." 
+  	-for i in $(TCLLIB_FILES) ; do \
+  	    cp $$i $(TCLLIB_DEST)/$$i ; \
+! 	    chmod 664 $(TCLLIB_DEST)/$$i ; \
+  	done
+  	@echo "Done" 
+  
+--- 65,77 ----
+  
+  $(TCLLIB_DEST):
+  	if [ ! -d $(TCLLIB_DEST) ]; then mkdir -p $(TCLLIB_DEST); fi
+! 	chmod 755 $(TCLLIB_DEST)
+  
+  install.lib: $(TCLLIB_DEST)
+  	@echo "Installing tkhylafax library..."
+  	-for i in $(TCLLIB_FILES) ; do \
+  	    cp $$i $(TCLLIB_DEST)/$$i ; \
+! 	    chmod 644 $(TCLLIB_DEST)/$$i ; \
+  	done
+  	@echo "Done"
+  

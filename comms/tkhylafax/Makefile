@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tkhylafax
-PORTVERSION=	3.0b2
+PORTVERSION=	3.2b
 CATEGORIES=	comms tk82
-MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
+MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
 		gs:${PORTSDIR}/print/ghostscript-gnu \
 		gv:${PORTSDIR}/print/gv
 
-WRKSRC=		${WRKDIR}/tkhylafax-3.0
+WRKSRC=		${WRKDIR}/tkhylafax
 MAN1=		tkhylafax.1
 
 .include <bsd.port.mk>
