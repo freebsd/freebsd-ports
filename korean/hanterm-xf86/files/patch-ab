@@ -1,0 +1,10 @@
+--- main.c.orig	Sat Aug  8 10:37:00 1998
++++ main.c	Sat Aug  8 10:37:04 1998
+@@ -422,7 +422,6 @@
+ #endif
+ 
+ #ifndef WTMP_FILENAME
+-sieroweir
+ #ifdef WTMP_FILE
+ #define WTMP_FILENAME WTMP_FILE
+ #else
