@@ -20,12 +20,12 @@ MAN1=		qpage.1
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/qpage.sh ]; then \
-		${ECHO} "Install ${PREFIX}/etc/rc.d/qpage.sh startup file."; \
+		${ECHO_MSG} "Install ${PREFIX}/etc/rc.d/qpage.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/qpage.sh \
 			${PREFIX}/etc/rc.d/qpage.sh; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/qpage-example.cf ]; then \
-		${ECHO} "Install ${PREFIX}/etc/qpage-example.cf file."; \
+		${ECHO_MSG} "Install ${PREFIX}/etc/qpage-example.cf file."; \
 		${INSTALL_SCRIPT} -m 640 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/example.cf \
 			${PREFIX}/etc/qpage-example.cf; \
 	fi

@@ -102,13 +102,13 @@ do-install:
 #
 # Install all packages.
 	@for R in ${DISTFILES}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Install updates
 	@for R in ${PATCHFILES}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #

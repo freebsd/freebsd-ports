@@ -67,8 +67,8 @@ do-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${HOMARDDIR}
 
 post-install:
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

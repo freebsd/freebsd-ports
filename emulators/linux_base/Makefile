@@ -140,7 +140,7 @@ do-install:
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
 	@for R in ${UPD_SET1} ${DISTFILES} ${UPD_SET2}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@for F in ${BRAND_FILES}; do \
@@ -166,8 +166,8 @@ do-install:
 	@${LN} -sf /var/tmp ${LINUXBASE}/usr/tmp
 
 post-install:
-	@${ECHO} ''
+	@${ECHO_MSG} ''
 	@fmt ${PKGMESSAGE}
-	@${ECHO} ''
+	@${ECHO_MSG} ''
 
 .include <bsd.port.post.mk>
