@@ -12,7 +12,8 @@ PORTNAME=	nmapfe
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 INSTALL_TARGET=	install-nmapfe
 MAN1=		nmapfe.1 xnmap.1
 

@@ -18,7 +18,8 @@ MAINTAINER=	pat@FreeBSD.org
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_XPM=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 MAN1=		gtk-knocker.1
 

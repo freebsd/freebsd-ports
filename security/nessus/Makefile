@@ -27,12 +27,14 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
 USE_LIBTOOL=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif

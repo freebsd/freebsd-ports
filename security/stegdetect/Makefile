@@ -25,7 +25,8 @@ MAN1=		stegdetect.1 stegbreak.1
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment "
 .else
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
