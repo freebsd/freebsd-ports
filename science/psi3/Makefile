@@ -39,6 +39,8 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-libdirs="-L${LOCALBASE}/lib" \
 		--with-libs="-lcompat"
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
@@ -85,4 +87,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/psi3
 	@${TAR} cf - -C ${WRKSRC}/tests .       | ${TAR} xf - -C ${PREFIX}/share/examples/psi3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
