@@ -1,0 +1,14 @@
+--- Makefile.orig	Sun Aug 16 22:34:14 1992
++++ Makefile	Wed Feb  5 00:03:39 1997
+@@ -5,9 +5,9 @@
+ # COVERPAGE -- the absolute path and name of coverpage PS file
+ # 	    -- default is current directory 
+ 
+-CFONT=./
++CFONT=${PREFIX}/share/chinese/gb/
+ 
+-COVERPAGE=./cover.ps
++COVERPAGE=${PREFIX}/share/chinese/cover.ps
+ 
+ CFLAGS	= -DCFONT=\"${CFONT}\" -DCOVERPAGE=\"${COVERPAGE}\"
+      
