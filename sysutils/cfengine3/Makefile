@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gordon@FreeBSD.org
 
-BROKEN=		"Incorrect pkg-plist
-
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .endif
