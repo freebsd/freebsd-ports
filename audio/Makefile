@@ -96,6 +96,7 @@
     SUBDIR += gmixer
     SUBDIR += gnapster
     SUBDIR += gnomeaudio
+    SUBDIR += gnomeaudio2
     SUBDIR += gnomemedia
     SUBDIR += gnomemedia2
     SUBDIR += gnowavcut
