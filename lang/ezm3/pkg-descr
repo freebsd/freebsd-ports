@@ -8,4 +8,6 @@ Modula-3 libraries but dynamically with the system libraries, so that
 programs built with Ezm3 can run on systems which do not have
 Modula-3 installed on them.
 
+WWW: http://www.polstra.com/projects/freeware/ezm3/
+
 John Polstra <jdp@FreeBSD.ORG>
