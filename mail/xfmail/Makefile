@@ -48,9 +48,19 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-esd-sound
 .endif
 
+.if defined(WITH_NAS)
+LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+CONFIGURE_ARGS+=	--with-nas-sound
+.endif
+
 .if defined(WITH_FACES)
 LIB_DEPENDS+=	compface:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--with-faces
+.endif
+
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
+CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 MAN1=		xfmail.1
@@ -60,8 +70,14 @@ pre-everything::
 .ifndef(WITH_ESOUND)
 	@echo "To build with esound support, restart make and define WITH_ESOUND"
 .endif
+.ifndef(WITH_NAS)
+	@echo "To build with Network Audio System support, restart make and define WITH_NAS"
+.endif
 .ifndef(WITH_FACES)
 	@echo "To build with faces support, restart make and define WITH_FACES"
+.endif
+.ifndef(WITH_LDAP)
+	@echo "To build with LDAP support, restart make and define WITH_LDAP"
 .endif
 	@echo
 
