@@ -10868,6 +10868,7 @@ vuxml		ports/security/vuxml
 vx68k		ports/emulators/vx68k
 vxquery		ports/security/vxquery
 vxtools		ports/emulators/vxtools
+vym		ports/deskutils/vym
 w3		ports/www/w3
 w3-4		ports/www/w3-4
 w3c-httpd	ports/www/w3c-httpd
