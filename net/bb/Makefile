@@ -3,13 +3,14 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.27 1998/08/29 11:25:14 andreas Exp $
+# $Id: Makefile,v 1.28 1998/09/19 22:19:47 andreas Exp $
 #
 
 DISTNAME=	bb-1.08a
 CATEGORIES=	net
 MASTER_SITES=	http://maclawran.ca/~sean/bb-dnld/ \
 		http://freefall.freebsd.org/~andreas/download/
+
 MAINTAINER=	andreas@FreeBSD.ORG
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
