@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-12-25
+SNAPDATE=	2001-02-05
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -57,7 +57,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
+		--with-gxx-include-dir=${TARGLIB}/include/g++
+#CONFIGURE_ARGS+=	--program-prefix=e
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .else
@@ -82,7 +83,7 @@ pre-configure:
 	@touch ${SRCDIR}/gcc/configure
 	@touch ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-	${RM} -rf ${SRCDIR}/libjava
+	#${RM} -rf ${SRCDIR}/libjava
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
