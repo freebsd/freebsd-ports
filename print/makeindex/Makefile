@@ -1,8 +1,17 @@
-DISTFILES=	makeindex-3.0.8.tar.Z
-DISTNAME=	makeindex
+# New ports collection makefile for:    makeindex
+# Version required:     3.0.8
+# Date created:         12 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
 
-MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
+DISTNAME=	makeindex
+PKGNAME=	makeindex-3.0.8
 CATEGORIES+=	printing
+MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
+DISTFILES=	makeindex-3.0.8.tar.Z
+
 MAINTAINER=	jmz@FreeBSD.org
 
 build: configure pre-build

@@ -1,9 +1,20 @@
-DISTFILES=	dvips558.tar.gz
+# New ports collection makefile for:    dvips
+# Version required:     5.58
+# Date created:         30 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	dvips
-MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
+PKGNAME=	dvips-5.58
 CATEGORIES+=	printing
-IS_INTERACTIVE=	yes
+MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
+DISTFILES=	dvips558.tar.gz
+
 MAINTAINER=	jmz@FreeBSD.org
+
+IS_INTERACTIVE=	yes
 
 pre-install:
 	@mkdir -p ${PREFIX}/lib/texmf

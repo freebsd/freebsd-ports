@@ -1,4 +1,13 @@
+# New ports collection makefile for:    dvi2xx
+# Version required:     0.51alpha9
+# Date created:         14 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	dvi2xx
+PKGNAME=	dvi2xx-0.51a9
 DISTFILES=	dvi2xx.tar.gz
 CATEGORIES+=	printing
 

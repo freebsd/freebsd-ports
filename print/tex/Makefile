@@ -1,17 +1,23 @@
-PKGNAME=	tex
+# New ports collection makefile for:    tex
+# Version required:     6.1
+# Date created:         29 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
+DISTNAME=	web2c-6.1
+PKGNAME=	tex-6.1
 CATEGORIES+=	printing
-MAINTAINER=	jmz@FreeBSD.org
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
 
+MAINTAINER=	jmz@FreeBSD.org
+
 EXTRACT_ONLY=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
-
-
 WRKDIR=		${.CURDIR}/work
 FTPGET=		${FILESDIR}/ftpget
-
-DISTNAME=	web2c-6.1
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
