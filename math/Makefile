@@ -5,7 +5,6 @@
     SUBDIR += PDL
     SUBDIR += R-a4
     SUBDIR += R-letter
-    SUBDIR += Scilab
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += apc

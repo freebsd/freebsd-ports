@@ -1,8 +1,0 @@
---- ./routines/default/mainsci.f.orig	Mon Jul 20 07:37:23 1998
-+++ ./routines/default/mainsci.f	Mon Jul 20 07:37:23 1998
-@@ -15,4 +15,5 @@
-       nargs = iargc()
-       call fgetarg(0,pname)
-+      call nofpex()
-       i = 0
-  10   continue
