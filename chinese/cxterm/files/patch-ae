@@ -1,0 +1,11 @@
+--- cxterm/ptyx.h.orig	Tue Jan 17 02:57:50 1995
++++ cxterm/ptyx.h	Sun Sep 13 15:08:17 1998
+@@ -115,7 +115,7 @@
+ #ifdef hpux
+ #define	PTYCHAR2	"fedcba9876543210"
+ #else	/* !hpux */
+-#define	PTYCHAR2	"0123456789abcdef"
++#define	PTYCHAR2	"0123456789abcdefghijklmnopqrstuvwxyz"
+ #endif	/* !hpux */
+ #endif	/* !PTYCHAR2 */
+ 
