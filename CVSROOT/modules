@@ -8513,7 +8513,7 @@ py-m2crypto	ports/security/py-m2crypto
 py-mad		ports/audio/py-mad
 py-magick	ports/graphics/py-magick
 py-martel	ports/textproc/py-martel
-py-matplotlib	ports/graphics/py-matplotlib
+py-matplotlib	ports/math/py-matplotlib
 py-mcrypt	ports/security/py-mcrypt
 py-medusa	ports/net/py-medusa
 py-memcached	ports/databases/py-memcached
