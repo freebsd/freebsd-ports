@@ -9,7 +9,6 @@ PORTNAME=	Net-RawIP
 PORTVERSION=	0.1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://quake.skif.net/RawIP/files/ \
 		http://www.ic.al.lg.ua/~ksv/
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
