@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
@@ -39,7 +39,7 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '[^g]iconv.h' | \
-		xargs ${PERL} -pi -e 's|([^g])iconv.h|\1giconv.h|g'
+		xargs ${PERL} -pi -e 's|(["<])iconv.h|\1giconv.h|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
 		xargs ${PERL} -pi -e 's|<db.h>|<db3/db.h>|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l 'wrong DB3' | \
