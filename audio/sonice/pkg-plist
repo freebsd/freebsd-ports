@@ -1,0 +1,3 @@
+bin/sonice
+lib/%%PYTHON_VERSION%%/site-packages/comatoys.py
+lib/%%PYTHON_VERSION%%/site-packages/ogg.py
