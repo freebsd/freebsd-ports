@@ -1,0 +1,15 @@
+samba/bin/smbd
+samba/bin/smbclient
+samba/bin/nmbd
+samba/bin/testparm
+samba/bin/testprns
+samba/bin/smbrun
+man/man1/smbstatus.1.gz
+man/man1/smbclient.1.gz
+man/man1/smbrun.1.gz
+man/man1/testparm.1.gz
+man/man1/testprns.1.gz
+man/man5/smb.conf.5.gz
+man/man7/samba.7.gz
+man/man8/smbd.8.gz
+man/man8/nmbd.8.gz

@@ -1,5 +1,5 @@
-*** Makefile.orig	Fri Mar 24 01:37:51 1995
---- Makefile	Mon Mar 27 15:19:10 1995
+*** Makefile.orig	Sun Apr  9 10:14:25 1995
+--- Makefile	Sun Apr  9 17:57:32 1995
 ***************
 *** 5,16 ****
   
@@ -28,7 +28,7 @@
   LIBDIR = $(BASEDIR)/lib
   VARDIR = $(BASEDIR)/var
 ***************
-*** 217,224 ****
+*** 222,229 ****
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
   # NOTE: You may need to add -DBSD44 if you have password problems
@@ -37,7 +37,7 @@
   
   
   # This is for NeXT. Note that versions of NeXT less than 3.2 
---- 217,224 ----
+--- 222,229 ----
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
   # NOTE: You may need to add -DBSD44 if you have password problems
@@ -47,7 +47,7 @@
   
   # This is for NeXT. Note that versions of NeXT less than 3.2 
 ***************
-*** 440,446 ****
+*** 449,455 ****
   	chmod u=rw,go=r $(MANDIR)/man7/samba.7
   	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
   	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
@@ -55,7 +55,7 @@
   source:
   	tar cfv sources.tar COPYING README THANKS \
                               Makefile announce bugs change-log \
---- 440,455 ----
+--- 449,465 ----
   	chmod u=rw,go=r $(MANDIR)/man7/samba.7
   	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
   	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
@@ -66,6 +66,7 @@
 ! 	@gzip -9f $(MANDIR)/man1/testparm.1
 ! 	@gzip -9f $(MANDIR)/man1/testprns.1
 ! 	@gzip -9f $(MANDIR)/man5/smb.conf.5
+! 	@gzip -9f $(MANDIR)/man7/samba.7
 ! 	@gzip -9f $(MANDIR)/man8/smbd.8
 ! 	@gzip -9f $(MANDIR)/man8/nmbd.8
 ! 
