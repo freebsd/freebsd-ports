@@ -1,6 +1,6 @@
-bin/qpopauth
-@unexec rm -f %D/bin/qapopauth
-@exec ln -sf %D/bin/qpopauth %D/bin/qapopauth
+%%QPOPAUTH%%bin/qpopauth
+%%QPOPAUTH%%@unexec rm -f %D/bin/qapopauth
+%%QPOPAUTH%%@exec ln -sf %D/bin/qpopauth %D/bin/qapopauth
 libexec/qpopper
 %%EPOPPASSD%%libexec/qpoppassd
 @exec mkdir -p %D/etc/qpopper && chown %%POP_USER%%:%%POP_GROUP%% %D/etc/qpopper && chmod %%POP_MODE_DIR%% %D/etc/qpopper
