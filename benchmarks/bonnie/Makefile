@@ -3,12 +3,12 @@
 # Date created:         26 September 1994
 # Whom:                 se
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/19 09:49:09 asami Exp $
+# $Id: Makefile,v 1.2 1995/07/13 01:09:03 asami Exp $
 #
 
 DISTNAME=       Bonnie
 PKGNAME=	bonnie-1.0
-CATEGORIES+=	benchmarking
+CATEGORIES+=	benchmarks
 MASTER_SITES=   ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
 		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
 EXTRACT_SUFX=   .tar.Z
