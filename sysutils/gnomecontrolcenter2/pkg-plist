@@ -40,6 +40,7 @@ share/gnome/application-registry/fontilus.applications
 share/gnome/application-registry/themus.applications
 share/gnome/applications/gnome-font-viewer.desktop
 share/gnome/applications/gnomecc.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/gnome/control-center-2.0/capplets/at-properties.desktop
 share/gnome/control-center-2.0/capplets/background.desktop
@@ -212,3 +213,4 @@ share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/control-center-2.0/icons
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
+@unexec update-desktop-database > /dev/null || /usr/bin/true

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomecontrolcenter2
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/2.8
@@ -40,5 +41,8 @@ GCONF_SCHEMAS=	apps_gnome_settings_daemon_default_editor.schemas \
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[{]prefix[}]/share/pixmaps|{datadir}/pixmaps|g'
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
