@@ -20,6 +20,8 @@ DIST_SUBDIR=	${ARCH}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"FreeBSD-SA-02:28.resolv - buffer overflow in resolver in libc"
+
 ONLY_FOR_ARCHS=	i386
 PORTOBJFORMAT=	aout
 
