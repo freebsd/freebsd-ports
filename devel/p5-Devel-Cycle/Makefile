@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Cycle.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=	"Perl 5.6.1 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
+.endif
+
+.include <bsd.port.post.mk>
