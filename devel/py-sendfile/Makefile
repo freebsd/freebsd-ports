@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendfile
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://tautology.org/software/python-modules/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
