@@ -3,5 +3,6 @@ SRCS=	frink.c output.c token.c tcl.c config.c
 
 BINDIR=	${PREFIX}/bin
 MANDIR=	${PREFIX}/man/man
+NOMAN=	regretfully
 
 .include <bsd.prog.mk>
