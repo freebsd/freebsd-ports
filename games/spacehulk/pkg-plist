@@ -19,6 +19,7 @@ share/spacehulk/levels/campaign3-4.lvl
 share/spacehulk/levels/campaign3-5.lvl
 share/spacehulk/levels/campaign3-6.lvl
 share/spacehulk/levels/level.dtd
+share/spacehulk/levels/savegame.dtd
 share/spacehulk/rulebook.html
 share/spacehulk/sounds/blip_move.wav
 share/spacehulk/sounds/door_close.wav
