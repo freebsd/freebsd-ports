@@ -62,7 +62,6 @@ pre-patch:
 	@${CP} -f  /usr/include/md5.h ${WRKSRC}
 	@${PERL} -pi.bak -e 's|^#!/.*/python|#!${PREFIX}/bin/python|;' ${WRKSRC}/fetchmailconf
 	@${SED} -e "s|@PREFIX@|${PREFIX}|" ${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
-	@${PERL} -pi.bak -e 's|\$$missing_dir/missing|${TRUE}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
