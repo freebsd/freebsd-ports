@@ -1,0 +1,18 @@
+#
+# $FreeBSD$
+#
+# PAM configuration for the "cyrus" service
+# Copy this file to /etc/pam.d/cyrus
+#
+
+# auth
+#auth		required	pam_nologin.so	no_warn
+#auth		sufficient	%%PREFIX%%/lib/pam_ldap.so	nowarn
+#auth		sufficient	pam_opie.so	no_warn no_fake_prompts
+#auth		requisite	pam_opieaccess.so	no_warn
+#auth		required	pam_ssh.so	no_warn try_first_pass
+auth		required	pam_unix.so	no_warn try_first_pass
+
+# account
+#account		sufficient	%%PREFIX%%/lib/pam_ldap.so
+account		required	pam_unix.so

@@ -43,6 +43,7 @@ sbin/saslpasswd
 sbin/pwcheck
 sbin/pwcheck_pam
 sbin/saslauthd1
+%%EXAMPLESDIR%%/cyrus.pam
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/ClientFactory.class
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericClient.class
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericCommon.class
@@ -90,17 +91,18 @@ sbin/saslauthd1
 %%JAVASASL%%@dirrm share/java/classes/sasl/javax
 %%JAVASASL%%@dirrm share/java/classes/sasl/CyrusSasl
 %%JAVASASL%%@dirrm share/java/classes/sasl
+@dirrm %%EXAMPLESDIR%%
 @dirrm lib/sasl
 @cwd /var
 @exec install -d -m 770 -o cyrus -g cyrus %D/pwcheck
-@comment This file gets created by the pwcheck program
+@comment This file is created by the pwcheck program
 @unexec rm -f %D/pwcheck/pwcheck
 @dirrm pwcheck
 @mode ug=rwx,o=
 @exec mkdir -p /var/state/saslauthd1
 @exec chown -R cyrus:cyrus state
 @exec chmod -R o= state
-@comment This file gets created by the state/saslauthd program
+@comment These files are created by the saslauthd program
 @unexec rm -fr /var/state/saslauthd1
 @unexec rmdir /var/state
 @cwd %%PREFIX%%

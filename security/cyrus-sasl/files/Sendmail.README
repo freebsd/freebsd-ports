@@ -7,14 +7,25 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
     SENDMAIL_LDFLAGS+=	-L/usr/local/lib
     SENDMAIL_LDADD+=	-lsasl
 
-    NOTE: Sendmail 8.10 - 8.11 needS -D_FFR_UNSAFE_SASL added
+    NOTE: 1. Sendmail 8.10 - 8.11 needS -D_FFR_UNSAFE_SASL added
           to SENDMAIL_CFLAGS, if you need the GroupReadableSASLFile option
+
+    Starting with Sendmail 8.12, you can also use the security/cyrus-sasl2
+    port.  Then you will not need the SASL V1 port installed.
+
+    SENDMAIL_CFLAGS=-I/usr/local/include -DSASL=2
+    SENDMAIL_LDFLAGS=-L/usr/local/lib
+    SENDMAIL_LDADD=-lsasl2
+
 
 2) Rebuild FreeBSD (make buildworld, ...)
 
-3) Create /usr/local/lib/sasl/Sendmail.conf with the following.
+3) Make sure that the pwcheck_method is correct in Sendmail.conf.
 
-   pwcheck_method: pwcheck
+   Sendmail.conf (${PREFIX}/lib/sasl{,2}/Sendmail.conf) is created by
+   the cyrus-sasl and cyrus-sasl2 ports during installation.  It may have
+   pwcheck_method set to either pwcheck (V1 only) or saslauthd (V1 & V2) by
+   default.  Change this to what is appropriate for your site.
 
 4) Add the following to your sendmail.mc file:
 
@@ -44,7 +55,8 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
 
    PLAIN is required for Netscape Communicator users.  By default Netscape
    Communicator will use SASL Authentication when sendmail is compiled with
-   SASL.
+   SASL and will cause your users to enter their passwords each time they
+   retreive their mail (NS 4.7).
 
    The DONT_BLAME_SENDMAIL option GroupReadableSASL[DB]File is needed when you
    are using cyrus-imapd and sendmail on the same server that requires access
