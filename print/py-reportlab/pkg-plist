@@ -159,6 +159,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils3d.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils3d.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils3d.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.pyo
@@ -393,12 +396,21 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.pyo
@@ -438,6 +450,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.pyo
@@ -483,6 +498,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyo
@@ -581,6 +599,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/pplogo.gif
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/python.gif
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/pythonpoint.xml
+%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/slidebox.py
+%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/slidebox.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/slidebox.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/spectrum.png
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/vertpython.gif
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/pythonpoint.dtd
@@ -607,8 +628,8 @@
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/projection.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.py
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyc
-%%PYTHON_SITELIBDIR%%/sgmlop.so
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyo
+%%PYTHON_SITELIBDIR%%/sgmlop.so
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint
@@ -638,8 +659,3 @@
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/colors
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab
-%%PORTDOCS%%%%DOCSDIR%%/graphguide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/graphics_reference.pdf
-%%PORTDOCS%%%%DOCSDIR%%/reference.pdf
-%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

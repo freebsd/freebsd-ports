@@ -1,23 +1,23 @@
---- rl_config.py.orig	Tue Jul  8 01:39:48 2003
-+++ rl_config.py	Sun Sep 28 02:09:14 2003
-@@ -20,38 +20,22 @@
-                                                     #(for regression testing)
+--- rl_config.py.orig	Wed Jan 21 17:33:01 2004
++++ rl_config.py	Mon Jan 26 11:57:15 2004
+@@ -19,37 +19,22 @@
+ eps_preview_transparent=    None                    #set to white etc
  
  # places to look for T1Font information
--T1SearchPath =  ('c:/Program Files/Adobe/Acrobat 6.0/Resource/Font', #Win32, Acrobat 5
--                 'c:/Program Files/Adobe/Acrobat 5.0/Resource/Font', #Win32, Acrobat 5
+-T1SearchPath =  ('c:/Program Files/Adobe/Acrobat 6.0/Resource/Font', #Win32, Acrobat 6
+-                'c:/Program Files/Adobe/Acrobat 5.0/Resource/Font', #Win32, Acrobat 5
 -                 'c:/Program Files/Adobe/Acrobat 4.0/Resource/Font', #Win32, Acrobat 4
 -                 '%(disk)s/Applications/Python %(sys_version)s/reportlab/fonts', #Mac?
--                 '/usr/lib/Acrobat6/Resource/Font', #Linux, Acrobat 5?
 -                 '/usr/lib/Acrobat5/Resource/Font', #Linux, Acrobat 5?
 -                 '/usr/lib/Acrobat4/Resource/Font', #Linux, Acrobat 4
 -                 '/usr/local/Acrobat6/Resource/Font', #Linux, Acrobat 5?
 -                 '/usr/local/Acrobat5/Resource/Font', #Linux, Acrobat 5?
 -                 '/usr/local/Acrobat4/Resource/Font', #Linux, Acrobat 4
+-                 '%(REPORTLAB_DIR)s/fonts' #special
 +T1SearchPath =  ('/usr/local/Acrobat6/Resource/Font',
 +                 '/usr/local/Acrobat5/Resource/Font',
 +                 '/usr/local/Acrobat4/Resource/Font',
-                  '%(REPORTLAB_DIR)s/fonts' #special
++                  '%(REPORTLAB_DIR)s/fonts' #special
                   )
  
  # places to look for TT Font information
@@ -25,8 +25,9 @@
 -                'c:/winnt/fonts',
 -                'c:/windows/fonts',
 -                '/usr/lib/X11/fonts/TrueType/',
+-                '%(REPORTLAB_DIR)s/fonts' #special
 +TTFSearchPath = ('/usr/X11R6/lib/X11/fonts/TrueType/',
-                 '%(REPORTLAB_DIR)s/fonts' #special
++                '%(REPORTLAB_DIR)s/fonts' #special
                  )
  
  # places to look for CMap files - should ideally merge with above

@@ -1,11 +1,11 @@
---- setup.py.orig	Tue Apr 15 16:52:36 2003
-+++ setup.py	Sun Sep 28 02:10:42 2003
-@@ -18,7 +18,7 @@
+--- setup.py.orig	Thu Jan 22 01:45:46 2004
++++ setup.py	Mon Jan 26 11:59:58 2004
+@@ -17,7 +17,7 @@
+     return r
  
  pjoin = os.path.join
- 
 -package_path = pjoin(package_home(distutils.__dict__), 'reportlab')
 +package_path = os.environ['PACKAGE_PATH']
  
- 
- # why oh why don't most setup scripts have a script handler?
+ def get_version():
+     #determine Version

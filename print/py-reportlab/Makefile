@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reportlab
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	print python
 MASTER_SITES=	http://216.92.220.143/ftp/ \
 		ftp://ftp.reportlab.com/
@@ -21,7 +21,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/reportlab
+WRKSRC=		${WRKDIR}/reportlab-${PORTVERSION:S/./_/}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
 REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab
@@ -31,11 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCSDIR}
-.endif
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
