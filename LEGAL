@@ -211,6 +211,7 @@ robocode-*		ports/games/robocode	Restrictive license. Particularly,
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rp*_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
 rtplib-*		ports/devel/rtplib	Limited use license.
+ruby/ruby_cast_256.zip	ports/security/ruby-cast_256	Crypto; export-controlled
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 scilab-*		ports/math/scilab	Don't sell for profit.
 sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
