@@ -71,6 +71,7 @@
     SUBDIR += qtpcr
     SUBDIR += ruby-serialport
     SUBDIR += ruby-termios
+    SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += scud
     SUBDIR += seyon
