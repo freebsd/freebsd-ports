@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS COPYING INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
@@ -37,9 +38,11 @@ pre-fetch:
 	@${FALSE}
 .endif
 
-post-extract:
+pre-configure:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/noattach.sh \
 		> ${WRKSRC}/noattach.sh
+	${REINPLACE_CMD} -e 's=-pthread=${PTHREAD_LIBS}=' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${PREFIX}/libexec/noattach
