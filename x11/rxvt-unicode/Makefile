@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -123,7 +124,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/locale/fr_FR.UTF-8/LC_TIME:${PORTSDIR}/misc/utf
 
 # compile in support for additional codeset groups
 .if defined(WITH_ENCODING)
-AVAIL_ENC=	jp jp_ext kr cn cn_ext all
+AVAIL_ENC=	jp jp_ext kr zh zh_ext all
 . for ENC in ${AVAIL_ENC}
 .  if (${WITH_ENCODING} == ${ENC})
 _ENC=		${ENC}
@@ -163,8 +164,8 @@ pre-everything::
 	@${ECHO_MSG} '==> Options are: "jp"     common japanese encodings;'
 	@${ECHO_MSG} '                 "jp_ext" rarely used but big japanese encodings;'
 	@${ECHO_MSG} '                 "kr"     korean encodings;'
-	@${ECHO_MSG} '                 "cn"     common chinese encodings;'
-	@${ECHO_MSG} '                 "cn_ext" rarely used but very big chinese encodigs;'
+	@${ECHO_MSG} '                 "zh"     common chinese encodings;'
+	@${ECHO_MSG} '                 "zh_ext" rarely used but very big chinese encodigs;'
 	@${ECHO_MSG} '                 "all"    all of the above;'
 	@${ECHO_MSG} '==> For example, "WITH_ENCODING=kr" for korean encodings.'
 	@${ECHO_MSG}

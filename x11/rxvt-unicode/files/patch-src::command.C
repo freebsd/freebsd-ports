@@ -1,15 +1,26 @@
---- src/command.C.orig	Wed Aug 25 05:45:20 2004
-+++ src/command.C	Wed Aug 25 19:28:03 2004
-@@ -51,6 +51,8 @@
+--- src/command.C.orig	Sun Sep  5 11:25:22 2004
++++ src/command.C	Wed Oct 13 22:55:27 2004
+@@ -51,6 +51,9 @@
  #include "command.h"
  
  #include <wchar.h>
++#include <sys/param.h>
 +#include <sys/types.h>
 +#include <signal.h>
  
  /*----------------------------------------------------------------------*/
  
-@@ -4287,7 +4289,7 @@
+@@ -2697,7 +2700,9 @@
+       if (len == (size_t)-2)
+         {
+           // the mbstate stores incomplete sequences. didn't know this :/
++#if __FreeBSD_version>502110
+           cmdbuf_ptr = cmdbuf_endp;
++#endif
+           break;
+         }
+ 
+@@ -4295,7 +4300,7 @@
      {
        if (v_buflen == 0)
          {
@@ -18,7 +29,7 @@
  
            if ((unsigned int)written == len)
              return;
-@@ -4305,7 +4307,7 @@
+@@ -4313,7 +4318,7 @@
  
    for (;;)
      {
