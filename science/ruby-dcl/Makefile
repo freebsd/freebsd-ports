@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,11 +22,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 .if defined(WITH_GTK)
-PATCHFILES=	ruby-dcl-1.3.0-gtk2-4.patch
-PATCH_SITES=	http://www-mete.kugi.kyoto-u.ac.jp/seiya/dcl/tarball/
-PATCH_DIST_STRIP=	-p1
 PKGNAMESUFFIX=	-gtk
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/imlib2.so:${PORTSDIR}/graphics/ruby-imlib2 \
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl-gtk
 .else
