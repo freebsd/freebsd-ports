@@ -25,7 +25,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		xml2:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
@@ -38,7 +39,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030720
+DIST_VER=	030803
 LIBUNINAMESLIST_VER=	030710
 
 .if !defined(NOPORTDOCS)
