@@ -25,7 +25,7 @@ include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-tab.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-window.h
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
-libdata/pkgconfig/epiphany-1.4.pc
+libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
 %%DOCSDIR%%/EphyNodeDb.html
@@ -48,6 +48,7 @@ libdata/pkgconfig/epiphany-1.4.pc
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
