@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ooodict
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}
+DISTFILES+=	${HYPHDIST}
 
 MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
@@ -19,21 +20,36 @@ EXTRACT_ONLY=
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
 .endif
-.if !defined(LANGDIST)
-LANGDIST+=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
+LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
 		da_DK.zip nl_NL.zip en_CA.zip en_GB.zip \
 		en_US.zip fr_FR.zip de_DE.zip de_CH.zip \
 		hu_HU.zip it_IT.zip pl_PL.zip pt_PT.zip \
 		pt_BR.zip es_ES.zip sk_SK.zip sv_SE.zip \
 		el_GR-enhanced.zip
-.endif
+
+HYPHDIST?=	hyph_cs.zip hyph_da.zip hyph_de_DE.zip \
+		hyph_en.zip hyph_en_CA.zip hyph_en_GB.zip \
+		hyph_en_US.zip hyph_es.zip hyph_fr.zip \
+		hyph_it.zip hyph_nl.zip hyph_pt_BR.zip \
+		hyph_pt_PT.zip hyph_ru.zip hyph_sk.zip \
+		hyph_sl.zip hyph_uk.zip
 
 SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
+.if !defined(INSTALLATION_BASEDIR)
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
+.if defined(RDEP)
+BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
+RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
+.else
+BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
+RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
+.endif
+.endif
+
 DIST_SUBDIR=		openoffice
 DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
 DICT_PATH=		${LOCALBASE}/${DICT_DIR}
@@ -55,14 +71,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-
-.if defined(RDEP)
-BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
-RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
-.else
-BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
-RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
-.endif
 
 EXTRACT_CMD_L?=		unzip
 EXTRACT_BEFORE_ARGS_L?=	-q -o
@@ -130,6 +138,41 @@ post-install:
 			esac \
 		else \
 				${ECHO_MSG} "===>   Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
+				${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
+		fi ; \
+	done
+	@for file in ${HYPHDIST}; do \
+		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||' -e 's|^hyph_||'`; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2 | ${TR} "[:lower:]" "[:upper:]"` ; \
+		if ! ( ${GREP} "HYPH $${LANGUAGE} $${COUNTRY}" \
+		    ${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
+		then  \
+			if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
+				${EXTRACT_BEFORE_ARGS_L} \
+				${_DISTDIR}/$${file} '*.dic' \
+				${EXTRACT_AFTER_ARGS_L}) ; \
+			then \
+				${ECHO} "Extracting of $${file} failed"; \
+				exit 1; \
+			fi ; \
+			${ECHO_MSG} "===>   Register hyphenation dictionary hyph_$${ABRV}"; \
+			${ECHO} "@exec ${ECHO} \"HYPH $${LANGUAGE} $${COUNTRY} hyph_$${ABRV}\" \
+			    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
+			${ECHO_CMD} "HYPH $${LANGUAGE} $${COUNTRY} hyph_$${ABRV}" >> ${DICT_LIST_INST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+			    ${GREP} hyph_$${ABRV}.dic >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${CP} ${DICT_LIST} \
+			    ${DICT_LIST}.hyph_$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
+			${ECHO} "@unexec \
+			    if ! ( ${CAT} ${DICT_LIST}.hyph_$${LANGUAGE}_$${COUNTRY} | \
+				${GREP} -v -e '^HYPH.*hyph_$${ABRV}' > ${DICT_LIST} ) ; then \
+					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
+			    fi" >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${RM} ${DICT_LIST}.hyph_$${LANGUAGE}_$${COUNTRY}" \
+			    >> ${TMPPLIST} ; \
+		else \
+				${ECHO_MSG} "===>   Hyphenation Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
 				${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
 		fi ; \
 	done
