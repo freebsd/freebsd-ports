@@ -7,15 +7,15 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.11.8
-PORTREVISION=	2
-CATEGORIES=	palm comms tk83
+PORTREVISION=	3
+CATEGORIES=	palm comms tk84
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
 
-LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk${TCL_VER:S/.//}:${PORTSDIR}/x11-toolkits/tk${TCL_VER:S/.//}
 
 USE_ICONV=	yes
 USE_GETOPT_LONG=yes
@@ -23,10 +23,11 @@ USE_BZIP2=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
+TCL_VER?=	8.4
 
 CFLAGS+=	-I${LOCALBASE}/include
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} --with-tclinclude=${LOCALBASE}/include/tcl8.3/ --with-tcl=${LOCALBASE}/lib/tcl8.3/ --program-transform-name=
+CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} --with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER}/ --with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}/ --program-transform-name=
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include "${.CURDIR}/manpages.mk"
