@@ -15,6 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 MAN1=	cam.1
+PLIST=	${WRKDIR}/pkg-plist
+
+pre-install:
+	${ECHO_CMD} bin/cam > ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cam ${PREFIX}/bin
