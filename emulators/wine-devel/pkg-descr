@@ -4,11 +4,6 @@ systems on i386 (and compatible) CPUs.
 It is still alpha quality, but is definitely making progress. Most
 applications already work, more or less, including several games.
 
-Note: Versions of Wine after 20040505 fail upon startup on any version
-of FreeBSD.  While still making sure that current versions of Wine build
-on FreeBSD, I will not update this port until the problem (mmap related,
-by the way), has been resolved.
-
 WWW: http://www.winehq.com/
 
 - Gerald Pfeifer
