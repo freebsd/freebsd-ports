@@ -137,7 +137,7 @@ for dir in ${cleandirs}; do
   fi
 done
 
-rm -rf /var/db/pkg/*
+rm -rf ${chroot}/var/db/pkg/*
 
 chroot ${chroot} /sbin/ldconfig -R
 chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
@@ -192,7 +192,7 @@ if [ $noclean = 0 -o $error = 0 ]; then
   done
   chroot ${chroot} /sbin/ldconfig -R
   chroot ${chroot} /sbin/ldconfig -aout -R
-  rm -rf /var/db/pkg/*
+  rm -rf ${chroot}/var/db/pkg/*
   rm ${chroot}/used/${pkgname}
   rmdir ${chroot}/used
 fi
