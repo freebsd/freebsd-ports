@@ -22,18 +22,11 @@ RPM_SET=	libpng-${PORTVERSION}-1.i386.rpm
 
 PLIST_FILES=	\
 		usr/lib/libpng.so.3 \
-		usr/lib/libpng.so.3.1.2.7 \
+		usr/lib/libpng.so.3.${PORTVERSION} \
 		usr/lib/libpng12.so.0 \
-		usr/lib/libpng12.so.0.1.2.7 \
-		usr/share/doc/libpng-1.2.7/CHANGES \
-		usr/share/doc/libpng-1.2.7/LICENSE \
-		usr/share/doc/libpng-1.2.7/README \
-		usr/share/doc/libpng-1.2.7/TODO \
-		usr/share/doc/libpng-1.2.7/example.c \
-		usr/share/doc/libpng-1.2.7/libpng.txt \
+		usr/lib/libpng12.so.0.${PORTVERSION} \
 		usr/share/man/man5/png.5.gz
-PLIST_DIRS=	usr/share/doc/libpng-1.2.7
-DOCSDIR=	${PREFIX}/usr/share/doc/libpng-1.2.27
+DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
