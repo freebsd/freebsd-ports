@@ -192,8 +192,8 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
-	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
-		${WRKSRC}/authlib/configure
+	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/authlib/configure
 	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
 		${WRKSRC}/authlib/installlist.in
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
