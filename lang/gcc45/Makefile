@@ -81,6 +81,7 @@ pre-configure:
 	@touch ${SRCDIR}/gcc/configure
 	@touch ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
+	${RM} -rf ${SRCDIR}/libjava
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
