@@ -804,6 +804,7 @@
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
     SUBDIR += pear-XML_Parser
+    SUBDIR += pear-XML_Serializer
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
