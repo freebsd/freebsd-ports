@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.5";
+my $VERSION	= "2.6";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -78,11 +78,12 @@ my $website   = 0;		# Show website URL
 my $have_index;			# Index has been read
 my %ports;			# Maps ports to their directory.
 my %pkgname;			# Inverse of the above map
+my %portname;			# Port names (including prefix, but no version)
 my %masterport;			# Maps ports to their master ports
 my %reqd;			# Ports that need to be installed
 my %have_dep;			# Dependencies that are already present
 my %installed;			# Installed ports
-my $suppressed;			# Suppress output
+my $capture;			# Capture output
 
 #
 # Shortcut for 'print STDERR'
@@ -148,26 +149,21 @@ sub bsd::warnx($@) {
 }
 
 #
-# Call the specified sub with output suppressed
+# Call the specified sub with $capture set
 #
-sub suppress($@) {
+sub capture($@) {
     my $subr = shift;		# Subroutine to call
     my @args = @_;		# Arguments
 
-    my $oldsuppressed;		# Old suppress flag
+    my $oldcapture;		# Old capture flag
     my $rtn;			# Return value
 
-    if (!$verbose) {
-	$oldsuppressed = $suppressed;
-	$suppressed = 1;
-    }
+    $oldcapture = $capture;
+    $capture = 1;
     $rtn = &{$subr}(@args);
-    if (!$verbose) {
-	$suppressed = $oldsuppressed;
-    }
+    $capture = $oldcapture;
     return $rtn;
 }
-    
 
 #
 # Print an info message
@@ -211,22 +207,27 @@ sub cmd($@) {
     my $pid;			# Child pid
     local *PIPE;		# Pipe
     my $output;			# Output
+    my $rtn;			# Return value
 
     cmdinfo(join(" ", $cmd, @args));
-    if (!defined($pid = open(PIPE, "-|"))) {
-	bsd::err(1, "open()");
+    $pid = ($capture || $verbose) ? open(PIPE, "-|") : fork();
+    if (!defined($pid)) {
+	bsd::err(1, ($capture || $verbose) ? "open()" : "fork()");
     } elsif ($pid == 0) {
 	exec($cmd, @args);
 	die("child: exec(): $!\n");
     }
-    $output = "";
-    while (<PIPE>) {
-	$output .= $_;
-	if (!$suppressed) {
-	    stderr($_);
+    if ($capture || $verbose) {
+	$output = "";
+	while (<PIPE>) {
+	    $output .= $_;
+	    if ($verbose) {
+		stderr($_);
+	    }
 	}
     }
-    if (!close(PIPE)) {
+    $rtn = ($capture || $verbose) ? close(PIPE) : (waitpid($pid, 0) == $pid);
+    if (!$rtn) {
 	if ($? & 0xff) {
 	    bsd::warnx("%s caught signal %d", $cmd, $? & 0x7f);
 	} elsif ($? >> 8) {
@@ -435,6 +436,7 @@ sub add_installed() {
     foreach $port (readdir(DIR)) {
 	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
 	if (!defined($origin = get_origin($port))) {
+	    bsd::warn("$port has no \@origin line\n");
 	    if (!$have_index) {
 		read_index();
 	    }
@@ -500,7 +502,7 @@ sub find_library($) {
 
     my $ldconfig;		# Output from ldconfig(8)
 
-    $ldconfig = suppress(\&cmd, (&PATH_LDCONFIG, "-r"))
+    $ldconfig = capture(\&cmd, (&PATH_LDCONFIG, "-r"))
 	or errx(1, "unable to run ldconfig");
     if ($ldconfig =~ m/^\s*\d+:-l$library => (.*)$/m) {
 	info("The $library library is installed as $1");
@@ -541,12 +543,12 @@ sub find_dependencies($) {
     my %depends;		# Hash of dependencies
     my ($lhs, $rhs);		# Left, right hand side of dependency spec
 
-    $dependvars = suppress(\&make, ($port,
-				    "-VFETCH_DEPENDS",
-				    "-VBUILD_DEPENDS",
-				    "-VRUN_DEPENDS",
-				    "-VLIB_DEPENDS",
-				    "-VDEPENDS"))
+    $dependvars = capture(\&make, ($port,
+				   "-VFETCH_DEPENDS",
+				   "-VBUILD_DEPENDS",
+				   "-VRUN_DEPENDS",
+				   "-VLIB_DEPENDS",
+				   "-VDEPENDS"))
 	or bsd::errx(1, "failed to obtain dependency list");
     %depends = ();
     foreach $item (split(' ', $dependvars)) {
@@ -590,6 +592,7 @@ sub update_ports_tree(@) {
     my %processed;		# Hash of processed ports
     my @additional;		# Additional dependencies
     my $n;			# Pass count
+    my $makev;			# Output from 'make -v'
 
     foreach $port (@ports) {
 	push(@additional, $port);
@@ -650,8 +653,11 @@ sub update_ports_tree(@) {
 	    
 	    # Find the port's package name
 	    if (!exists($pkgname{$port})) {
-		if ($pkgname{$port} = suppress(\&make, ($port, "-VPKGNAME"))) {
-		    chomp($pkgname{$port});
+		$makev = capture(\&make, ($port, "-VPKGNAMEPREFIX",
+					  "-VPORTNAME", "-VPKGNAME"));
+		if ($makev =~ m/^(\S*)\n(\S+)\n(\S+)\n?$/s) {
+		    $portname{$port} = $1.$2;
+		    $pkgname{$port} = $3;
 		} else {
 		    warnx("failed to obtain package name for $port");
 		}
@@ -745,7 +751,7 @@ sub show_port_plist($) {
     my %files;			# Files to list
     my $prefix;			# Prefix
 
-    $prefix = suppress(\&make, ($port, "-VPREFIX"));
+    $prefix = capture(\&make, ($port, "-VPREFIX"));
     chomp($prefix);
     sysopen(FILE, find_port_file($port, "pkg-plist"), O_RDONLY)
 	or bsd::err(1, "can't read packing list for $port");
@@ -760,8 +766,10 @@ sub show_port_plist($) {
 	    $file = "$1/";
 	} elsif (m/^\@comment\s+/) {
 	    # ignore
+	} elsif (m/^\@(un)?exec\s+/) {
+	    # ignore
 	} else {
-	    bsd::warnx("unrecognized plist directive: $_");
+	    bsd::warnx("unrecognized plist directive: %s", $_);
 	}
 	if (defined($file)) {
 	    if ($file !~ m/^\//) {
@@ -778,6 +786,46 @@ sub show_port_plist($) {
 	print("| $_\n");
     }
     print("+---\n");
+}
+
+#
+# Compare two package names to determine which is newer
+# XXX Not used because it is slower than lt/gt, and not really any
+# XXX better (yet).
+#
+sub cmp_version($$) {
+    my $inst = shift;		# Installed package
+    my $port = shift;		# Origin port
+
+    # Shortcut
+    if ($inst eq $pkgname{$port}) {
+	return '=';
+    }
+
+    # Isolate the version number
+    if (substr($inst, 0, length($portname{$port})) ne $portname{$port}) {
+	return '?';
+    }
+
+    # Split it into components
+    my @a = split('.', substr($inst, length($portname{$port})));
+    my @b = split('.', substr($pkgname{$port}, length($portname{$port})));
+
+    # Compare the components one by one
+    while (@a && @b) {
+	($a, $b) = (shift(@a), shift(@b));
+	next if $a eq $b;
+	# XXX too simplistic!
+	return ($a gt $b) ? '>' : '<';
+    }
+
+    # Anything left?
+    if (@a) {
+	return '>';
+    } elsif (@b) {
+	return '<';
+    }
+    return '=';
 }
 
 #
