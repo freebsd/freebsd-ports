@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PREFIX}/bin/ttfm.sh
+
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
+
+if [ ! -x $TTFM ]; then
+    echo "$TTFM not found!"
+    exit 1
+fi
+
+for f in $FONTS; do
+    $TTFM --add ghostscript6 $FONTDIR/$f
+done
+
+for f in $FONTS; do
+    $TTFM --add abiword $FONTDIR/$f
+done

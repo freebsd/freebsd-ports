@@ -4,6 +4,7 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += XFree86-aoutlibs
+    SUBDIR += abiword
     SUBDIR += acroread-chsfont
     SUBDIR += acroread-chtfont
     SUBDIR += arphicttf

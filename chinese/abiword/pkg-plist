@@ -1,0 +1,6 @@
+AbiSuite/fonts/Big5/.already-in-fp
+AbiSuite/fonts/Big5/fonts.dir
+AbiSuite/fonts/GB2312/.already-in-fp
+AbiSuite/fonts/GB2312/fonts.dir
+@dirrm AbiSuite/fonts/Big5
+@dirrm AbiSuite/fonts/GB2312
