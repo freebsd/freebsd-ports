@@ -1,0 +1,110 @@
+*** Makefile.orig	Mon May 12 10:55:59 1997
+--- Makefile	Tue Jan 19 22:27:09 1999
+***************
+*** 6,30 ****
+  
+  .SUFFIXES: .c .o
+  
+! CC	=gcc
+  RM	=rm
+  LN	=ln
+! INSTALL	=install
+  CP	=cp
+  TAR	=tar
+  GZIP	=gzip
+  
+  # Binary directory for make install
+! BINDIR	=/usr/local/bin/X11
+  
+  # Library directories for Linux
+! XLIBDIR	=/usr/X11R6/lib
+  
+  # Include directory for gcc (if you get X11/Xlib.h: file not found)
+! #INCDIR =-I/usr/X11R6/include
+  
+  # Library directories for the Ultrix (probably most Unixes)
+! #XLIBDIR =/usr/lib/X11
+  
+  # Comment out the following line if you do not have the XPM library.
+  XPM     =-DHAS_XPM
+--- 6,30 ----
+  
+  .SUFFIXES: .c .o
+  
+! CC	?=gcc
+  RM	=rm
+  LN	=ln
+! INSTALL	?=install
+  CP	=cp
+  TAR	=tar
+  GZIP	=gzip
+  
+  # Binary directory for make install
+! BINDIR	=$(PREFIX)/libexec
+  
+  # Library directories for Linux
+! XLIBDIR	=$(X11BASE)/lib
+  
+  # Include directory for gcc (if you get X11/Xlib.h: file not found)
+! INCDIR =-I$(X11BASE)/include
+  
+  # Library directories for the Ultrix (probably most Unixes)
+! XLIBDIR =$(X11BASE)/lib
+  
+  # Comment out the following line if you do not have the XPM library.
+  XPM     =-DHAS_XPM
+***************
+*** 34,40 ****
+  	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
+  
+  # Linux CFLAGS (actually generic gcc)
+! CFLAGS=-Wall -O2
+  
+  # Want static binaries?
+  #CFLAGS=-Wall -O2 -static
+--- 34,40 ----
+  	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
+  
+  # Linux CFLAGS (actually generic gcc)
+! CFLAGS+= -O2
+  
+  # Want static binaries?
+  #CFLAGS=-Wall -O2 -static
+***************
+*** 48,54 ****
+  # Most Linux users won't be troubled by this. Actually almost nobody will
+  # be troubled by this. It just might save me a couple of emails...
+  # Just change it to wherever your libX11.a resides.
+! LDFLAGS=-L$(XLIBDIR)
+  
+  all: xbanner freetemp random_effect xb_check 
+  
+--- 48,54 ----
+  # Most Linux users won't be troubled by this. Actually almost nobody will
+  # be troubled by this. It just might save me a couple of emails...
+  # Just change it to wherever your libX11.a resides.
+! LDFLAGS+=-L$(XLIBDIR)
+  
+  all: xbanner freetemp random_effect xb_check 
+  
+***************
+*** 71,79 ****
+  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
+  
+  install: freetemp xbanner xb_check 
+! 	$(INSTALL) --strip --mode "0755" --owner root --group bin freetemp $(BINDIR)/freetemp
+! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xbanner $(BINDIR)/xbanner
+! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xb_check $(BINDIR)/xb_check
+  
+  strip: exe
+  	strip xbanner freetemp xb_check random_effect
+--- 71,79 ----
+  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
+  
+  install: freetemp xbanner xb_check 
+! 	$(INSTALL) -cs -g bin -m "0755" -o root freetemp $(BINDIR)/freetemp
+! 	$(INSTALL) -cs -g bin -m "0755" -o root xbanner $(BINDIR)/xbanner
+! 	$(INSTALL) -cs -g bin -m "0755" -o root xb_check $(BINDIR)/xb_check
+  
+  strip: exe
+  	strip xbanner freetemp xb_check random_effect
