@@ -21,6 +21,10 @@ BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/qt2.so:${RUBY_QT2_PORTDIR}
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/qt2.so:${RUBY_QT2_PORTDIR} \
 		${RUBY_SITEARCHLIBDIR}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		Needs to define FORCE_PKG_REGISTER=yes to get this installed
+.endif
+
 USE_MESA=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
