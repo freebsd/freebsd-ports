@@ -163,9 +163,6 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/wikimacros/txtl.py
 %%PYTHON_SITELIBDIR%%/trac/wikimacros/txtl.pyc
 %%PYTHON_SITELIBDIR%%/trac/wikimacros/txtl.pyo
-share/man/man1/trac-admin.1
-share/man/man1/tracd.1
-share/man/man1/tracdb2env.1
 share/trac/cgi-bin/trac.cgi
 share/trac/htdocs/README
 share/trac/htdocs/asc.png

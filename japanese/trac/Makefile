@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQ
 		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
 		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 
-BROKEN=		Uses incorrect directory for manpages
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+MAN1=		trac-admin.1 tracd.1 tracdb2env.1
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
