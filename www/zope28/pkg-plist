@@ -1,5 +1,6 @@
 %%APACHE_CONFDIR%%/apache.conf.Zope-Changes
 etc/rc.d/zope.sh
+%%ZOPEBASEDIR%%/var/Data.fs
 %%ZOPEBASEDIR%%/var/Data.fs.in
 @exec if [ ! -f %B/Data.fs ]; then cp %B/%f %B/Data.fs; fi
 %%ZOPEBASEDIR%%/Extensions/README.txt
@@ -19,6 +20,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/ZServer/HTTPResponse.pyc
 %%ZOPEBASEDIR%%/ZServer/HTTPServer.py
 %%ZOPEBASEDIR%%/ZServer/HTTPServer.pyc
+%%ZOPEBASEDIR%%/ZServer/ICPServer.py
+%%ZOPEBASEDIR%%/ZServer/ICPServer.pyc
 %%ZOPEBASEDIR%%/ZServer/INSTALL.txt
 %%ZOPEBASEDIR%%/ZServer/PCGIServer.py
 %%ZOPEBASEDIR%%/ZServer/PCGIServer.pyc
@@ -181,6 +184,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/doc/PLATFORMS/AIX.txt
 %%ZOPEBASEDIR%%/doc/PLATFORMS/README.txt
 %%ZOPEBASEDIR%%/doc/SECURITY.txt
+%%ZOPEBASEDIR%%/doc/SETUID.txt
+%%ZOPEBASEDIR%%/doc/SIGNALS.txt
 %%ZOPEBASEDIR%%/doc/UNITTEST.txt
 %%ZOPEBASEDIR%%/doc/WEBSERVER.txt
 %%ZOPEBASEDIR%%/doc/ZODB.txt
@@ -192,6 +197,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/import/Examples.zexp
 %%ZOPEBASEDIR%%/import/README.txt
 %%ZOPEBASEDIR%%/import/ZopeTutorialExamples.zexp
+%%ZOPEBASEDIR%%/inituser
 %%ZOPEBASEDIR%%/inst/binary_install.py
 %%ZOPEBASEDIR%%/inst/binary_install.pyc
 %%ZOPEBASEDIR%%/inst/build_extensions.py
@@ -220,7 +226,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/Components/BTree/intSet.c
 %%ZOPEBASEDIR%%/lib/Components/BTree/intSet.h
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/.cvsignore
-%%ZOPEBASEDIR%%/lib/Components/ExtensionClass/COPYRIGHT.txt
+%%ZOPEBASEDIR%%/lib/Components/ExtensionClass/LICENSE.txt
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/README
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/Setup
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/Xaq.py
@@ -281,34 +287,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/Components/cPickle/copy_reg.pyc
 %%ZOPEBASEDIR%%/lib/Components/cPickle/release.fl
 %%ZOPEBASEDIR%%/lib/Components/cPickle/release.sh
-%%ZOPEBASEDIR%%/lib/Components/zlib/Setup
-%%ZOPEBASEDIR%%/lib/Components/zlib/adler32.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/compress.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/crc32.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/deflate.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/deflate.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/gzio.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/infblock.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/infblock.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/infcodes.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/infcodes.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/inffast.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/inffast.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/inffixed.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/inflate.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/inftrees.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/inftrees.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/infutil.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/infutil.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/maketree.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/trees.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/trees.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/uncompr.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/zconf.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/zlib.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/zlib.h
-%%ZOPEBASEDIR%%/lib/Components/zlib/zutil.c
-%%ZOPEBASEDIR%%/lib/Components/zlib/zutil.h
+%%ZOPEBASEDIR%%/lib/Components/initgroups/initgroups.c
 %%ZOPEBASEDIR%%/lib/python/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/AccessControl/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/AccessControl/AccessControl.txt
@@ -318,9 +297,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/AccessControl/DTML.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/IUserFolder.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/IUserFolder.pyc
-%%ZOPEBASEDIR%%/lib/python/AccessControl/Makefile
-%%ZOPEBASEDIR%%/lib/python/AccessControl/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/AccessControl/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/AccessControl/Owned.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/Owned.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/Permission.py
@@ -354,7 +330,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/AccessControl/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/cAccessControl.c
 %%ZOPEBASEDIR%%/lib/python/AccessControl/cAccessControl.so
-%%ZOPEBASEDIR%%/lib/python/AccessControl/config.c
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/access.dtml
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/acquiredEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/addUser.dtml
@@ -376,7 +351,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/framework.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/regressionSecurity.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/regressionSecurity.pyc
-%%ZOPEBASEDIR%%/lib/python/AccessControl/sedscript
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/mixed_module/__init__.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/mixed_module/submodule/__init__.py
@@ -439,6 +413,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/App/class_init.py
 %%ZOPEBASEDIR%%/lib/python/App/class_init.pyc
+%%ZOPEBASEDIR%%/lib/python/App/dtml/activity.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/addFactory.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/addPermission.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/addProduct.dtml
@@ -487,6 +462,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/www/factory.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/help.jpg
 %%ZOPEBASEDIR%%/lib/python/App/www/installedProduct.gif
+%%ZOPEBASEDIR%%/lib/python/App/www/load_bar.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/logo.jpg
 %%ZOPEBASEDIR%%/lib/python/App/www/ltab.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/permission.gif
@@ -495,6 +471,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/www/properties.jpg
 %%ZOPEBASEDIR%%/lib/python/App/www/rtab.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/sp.gif
+%%ZOPEBASEDIR%%/lib/python/App/www/store_bar.gif
+%%ZOPEBASEDIR%%/lib/python/App/www/transparent_bar.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/undo_icon.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/vManage.gif
 %%ZOPEBASEDIR%%/lib/python/App/www/z_button.jpg
@@ -514,9 +492,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/BTrees/Interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/BTrees/Length.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/Length.pyc
-%%ZOPEBASEDIR%%/lib/python/BTrees/Makefile
-%%ZOPEBASEDIR%%/lib/python/BTrees/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/BTrees/Makefile.pre.in
+%%ZOPEBASEDIR%%/lib/python/BTrees/Maintainer.txt
 %%ZOPEBASEDIR%%/lib/python/BTrees/MergeTemplate.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/OIBTree.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/OIBTree.pyc
@@ -526,8 +502,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/BTrees/SetTemplate.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/Setup
 %%ZOPEBASEDIR%%/lib/python/BTrees/TreeSetTemplate.c
-%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.c
-%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IIBTree.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IIBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IOBTree.c
@@ -538,18 +512,20 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/BTrees/_OOBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/__init__.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/BTrees/config.c
+%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.c
+%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/convert.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/convert.pyc
 %%ZOPEBASEDIR%%/lib/python/BTrees/intkeymacros.h
 %%ZOPEBASEDIR%%/lib/python/BTrees/intvaluemacros.h
 %%ZOPEBASEDIR%%/lib/python/BTrees/objectkeymacros.h
 %%ZOPEBASEDIR%%/lib/python/BTrees/objectvaluemacros.h
-%%ZOPEBASEDIR%%/lib/python/BTrees/sedscript
+%%ZOPEBASEDIR%%/lib/python/BTrees/sorters.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/testBTrees.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/testBTreesUnicode.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/testConflict.py
+%%ZOPEBASEDIR%%/lib/python/BTrees/tests/testSetOps.py
 %%ZOPEBASEDIR%%/lib/python/ComputedAttribute.so
 %%ZOPEBASEDIR%%/lib/python/DateTime/DateTime.html
 %%ZOPEBASEDIR%%/lib/python/DateTime/DateTime.py
@@ -559,6 +535,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/DateTime/Setup
 %%ZOPEBASEDIR%%/lib/python/DateTime/__init__.py
 %%ZOPEBASEDIR%%/lib/python/DateTime/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/DateTime/tests/julian_testdata.txt.gz
 %%ZOPEBASEDIR%%/lib/python/DateTime/tests/testDateTime.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/DT_HTML.py
@@ -592,9 +569,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/DocumentTemplate.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/DocumentTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/Let.stx
-%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/Makefile
-%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/Setup
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/VSEval.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/VSEval.pyc
@@ -602,14 +576,12 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/cDocumentTemplate.c
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/cDocumentTemplate.so
-%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/config.c
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/html_quote.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/html_quote.pyc
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/pDocumentTemplate.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/pDocumentTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/release.fl
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/release.sh
-%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/sedscript
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/sequence/SortEx.py
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/sequence/SortEx.pyc
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/sequence/__init__.py
@@ -622,6 +594,10 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/tests/dealers.dtml
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/tests/dealers.out
 %%ZOPEBASEDIR%%/lib/python/DocumentTemplate/tests/testDTML.py
+%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/tests/testDTMLUnicode.py
+%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/tests/testustr.py
+%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/ustr.py
+%%ZOPEBASEDIR%%/lib/python/DocumentTemplate/ustr.pyc
 %%ZOPEBASEDIR%%/lib/python/ExtensionClass.so
 %%ZOPEBASEDIR%%/lib/python/Globals.py
 %%ZOPEBASEDIR%%/lib/python/Globals.pyc
@@ -670,50 +646,61 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/IOBTree.so
 %%ZOPEBASEDIR%%/lib/python/ImageFile.py
 %%ZOPEBASEDIR%%/lib/python/ImageFile.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/Attr.py
-%%ZOPEBASEDIR%%/lib/python/Interface/Attr.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/Basic.py
-%%ZOPEBASEDIR%%/lib/python/Interface/Basic.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Interface/Attribute.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Attribute.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/Mapping.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/Mapping.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/tests/BaseTestMapping.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Common/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Document.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Document.pyc
 %%ZOPEBASEDIR%%/lib/python/Interface/Exceptions.py
 %%ZOPEBASEDIR%%/lib/python/Interface/Exceptions.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/InterfaceBase.py
-%%ZOPEBASEDIR%%/lib/python/Interface/InterfaceBase.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/IAttribute.py
+%%ZOPEBASEDIR%%/lib/python/Interface/IAttribute.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/IElement.py
+%%ZOPEBASEDIR%%/lib/python/Interface/IElement.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/IInterface.py
+%%ZOPEBASEDIR%%/lib/python/Interface/IInterface.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/IMethod.py
+%%ZOPEBASEDIR%%/lib/python/Interface/IMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/Implements.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Implements.pyc
 %%ZOPEBASEDIR%%/lib/python/Interface/Mapping.py
 %%ZOPEBASEDIR%%/lib/python/Interface/Mapping.pyc
 %%ZOPEBASEDIR%%/lib/python/Interface/Method.py
 %%ZOPEBASEDIR%%/lib/python/Interface/Method.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/Number.py
-%%ZOPEBASEDIR%%/lib/python/Interface/Number.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/README
-%%ZOPEBASEDIR%%/lib/python/Interface/README.txt
-%%ZOPEBASEDIR%%/lib/python/Interface/Standard.py
-%%ZOPEBASEDIR%%/lib/python/Interface/Standard.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/Util.py
-%%ZOPEBASEDIR%%/lib/python/Interface/Util.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/Verify.py
+%%ZOPEBASEDIR%%/lib/python/Interface/Verify.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/_Element.py
+%%ZOPEBASEDIR%%/lib/python/Interface/_Element.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/_Interface.py
+%%ZOPEBASEDIR%%/lib/python/Interface/_Interface.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/_InterfaceClass.py
+%%ZOPEBASEDIR%%/lib/python/Interface/_InterfaceClass.pyc
 %%ZOPEBASEDIR%%/lib/python/Interface/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Interface/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/iclass.py
-%%ZOPEBASEDIR%%/lib/python/Interface/iclass.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/_object.py
+%%ZOPEBASEDIR%%/lib/python/Interface/_object.pyc
 %%ZOPEBASEDIR%%/lib/python/Interface/pprint.py
 %%ZOPEBASEDIR%%/lib/python/Interface/pprint.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/pyfiles
-%%ZOPEBASEDIR%%/lib/python/Interface/release.sh
-%%ZOPEBASEDIR%%/lib/python/Interface/test.py
-%%ZOPEBASEDIR%%/lib/python/Interface/test.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/unitfixtures.py
-%%ZOPEBASEDIR%%/lib/python/Interface/unitfixtures.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/unittests.py
-%%ZOPEBASEDIR%%/lib/python/Interface/unittests.pyc
-%%ZOPEBASEDIR%%/lib/python/Interface/verify.py
-%%ZOPEBASEDIR%%/lib/python/Interface/verify.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/pyskel.py
+%%ZOPEBASEDIR%%/lib/python/Interface/pyskel.pyc
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/IFoo.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/dummy.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/testDocument.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/testImplements.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/testInterface.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/testVerify.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/testVisitImplements.py
+%%ZOPEBASEDIR%%/lib/python/Interface/tests/unitfixtures.py
 %%ZOPEBASEDIR%%/lib/python/LOG.py
 %%ZOPEBASEDIR%%/lib/python/LOG.pyc
 %%ZOPEBASEDIR%%/lib/python/Main.py
 %%ZOPEBASEDIR%%/lib/python/Main.pyc
-%%ZOPEBASEDIR%%/lib/python/Makefile
-%%ZOPEBASEDIR%%/lib/python/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/MethodObject.so
 %%ZOPEBASEDIR%%/lib/python/Missing.so
 %%ZOPEBASEDIR%%/lib/python/MultiMapping.so
@@ -803,6 +790,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testRanges.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.py
 %%ZOPEBASEDIR%%/lib/python/OFS/www/ControlPanel_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Help_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Properties_icon.gif
@@ -857,6 +845,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/Mail-Host_Edit.stx
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/MailHost.py
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/MailHost.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/MailHost/tests/testMailHost.py
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/www/MailHost_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/Draft.py
@@ -898,6 +887,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/DTMLMethod.py
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/DTMLMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Database-Management.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Database-Management_Activity.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Database-Management_Cache-Parameters.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Database-Management_Database.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Database-Management_Flush-Cache.stx
@@ -1026,6 +1016,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/CHANGES.txt
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/Expressions.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/Expressions.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/GlobalTranslationService.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/GlobalTranslationService.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/HISTORY.txt
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/PageTemplate.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/PageTemplate.pyc
@@ -1074,12 +1066,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales.stx
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.py
-%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/framework.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckBatchIteration.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslate.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslateHooked.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckNotExpression.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckNothing.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckPathAlt.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckPathNothing.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckUnicodeInserts.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckWithXMLHeader.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/DTML1.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/DTML3.html
@@ -1091,10 +1085,13 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShop2.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShopLAF.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckBatchIteration.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslate.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslateHooked.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckNotExpression.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckNothing.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckPathAlt.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckPathNothing.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckUnicodeInserts.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckWithXMLHeader.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/DTML1a.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/DTML1b.html
@@ -1118,6 +1115,22 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www/ptAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www/ptEdit.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www/zpt.gif
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/DateIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/DateIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/dtml/addDateIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/dtml/manageDateIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/tests/test_DateIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/DateRangeIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/DateRangeIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/dtml/addDateRangeIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/dtml/manageDateRangeIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/tests/test_DateRangeIndex.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex/FieldIndex.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex/FieldIndex.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex/__init__.py
@@ -1150,38 +1163,23 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Lexicon.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/ISO_8859_1_Splitter.so
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Makefile
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Setup
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/config.c
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/sedscript
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/src/ISO_8859_1_Splitter.c
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/.cvsignore
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/Makefile
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/Setup
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/UnicodeSplitter.so
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/config.c
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/sedscript
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/src/UnicodeSplitter.c
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/tests/testUnicodeSplitter.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/.cvsignore
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Makefile
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Setup
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/ZopeSplitter.so
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/config.c
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/sedscript
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/src/ZopeSplitter.c
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/Splitter/__init__.pyc
@@ -1200,10 +1198,20 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/dtml/manage_vocab.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/dtml/vocab_query.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/help/TextIndex_searchResults.stx
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/randid.py
-%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/randid.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/tests/testSplitter.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/tests/testTextIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/FilteredSet.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/FilteredSet.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/TopicIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/TopicIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/dtml/addTopicIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/dtml/editFilteredSet.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/dtml/manageTopicIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/help/TopicIndex_searchResults.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/tests/testTopicIndex.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/common/PluggableIndex.py
@@ -1320,6 +1328,13 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/www/VirtualHostMonster.gif
 %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/www/VirtualHostMonsterAdd.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/www/manage_edit.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/SiteErrorLog.py
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/SiteErrorLog.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/www/error.gif
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/www/main.pt
+%%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/www/showEntry.pt
 %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/AcceleratedHTTPCacheManager.py
 %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/AcceleratedHTTPCacheManager.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/RAMCacheManager.py
@@ -1351,6 +1366,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/tests/testTemporaryStorage.py
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/www/tempfolder.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/HowTransienceWorks.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/Transience.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/Transience.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/TransienceInterfaces.py
@@ -1370,6 +1386,86 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransientObject.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransientObjectContainer.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/www/datacontainer.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/.cvsignore
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/BaseIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/BaseIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/CosineIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/CosineIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/HTMLSplitter.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/HTMLSplitter.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ILexicon.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ILexicon.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/INBest.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/INBest.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IPipelineElement.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IPipelineElement.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IPipelineElementFactory.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IPipelineElementFactory.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IQueryParseTree.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IQueryParseTree.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IQueryParser.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/IQueryParser.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ISplitter.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ISplitter.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/Lexicon.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/Lexicon.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/NBest.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/NBest.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/OkapiIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/OkapiIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ParseTree.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ParseTree.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/PipelineFactory.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/PipelineFactory.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/QueryParser.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/QueryParser.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/RiceCode.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/RiceCode.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/SetOps.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/SetOps.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/Setup
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/StopDict.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/StopDict.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/WidCode.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/WidCode.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ZCTextIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/ZCTextIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml/addLexicon.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml/addZCTextIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml/manageLexicon.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml/manageZCTextIndex.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml/queryLexicon.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/help/Lexicon_Add.stx
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/help/ZCTextIndex_Add.stx
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/okascore.c
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/okascore.so
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/stopper.c
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/stopper.so
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/.cvsignore
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/hs-tool.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/indexhtml.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/mailtest.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/mhindex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/python.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/queryhtml.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testLexicon.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testNBest.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testPipelineFactory.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testQueryEngine.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testQueryParser.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testSetOps.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testStopper.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/testZCTextIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests/wordstats.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/www/index.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/www/lexicon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/CHANGES.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/Catalog.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/Catalog.py
@@ -1382,6 +1478,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/CatalogBrains.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/CatalogPathAwareness.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/CatalogPathAwareness.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/IZCatalog.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/IZCatalog.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/Lazy.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/Lazy.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/README.txt
@@ -1408,8 +1506,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/catalogView.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/editCatalogerForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/edit_stop_syn.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/manageIndex.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/manageIndex.dtml.bak
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/manageOldindex.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/manage_vocab.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/vocab_manage_main.dtml
@@ -1634,9 +1730,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/Index.pyc
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/Lexicon.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/Lexicon.pyc
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/Makefile
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/PluggableIndex.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/PluggableIndex.pyc
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/README.txt
@@ -1655,17 +1748,13 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/UnTextIndex.pyc
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/__init__.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/config.c
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/randid.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/randid.pyc
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/sedscript
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/__init__.py
-%%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/framework.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/testSplitter.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/testUnKeywordIndex.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/testUnTextIndex.py
 %%ZOPEBASEDIR%%/lib/python/SearchIndex/tests/test_UnIndex.py
-%%ZOPEBASEDIR%%/lib/python/Setup
 %%ZOPEBASEDIR%%/lib/python/Setup15
 %%ZOPEBASEDIR%%/lib/python/Setup20
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/Scripts/Bindings.py
@@ -1723,16 +1812,12 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/ppml.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/ppml.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/.cvsignore
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Makefile
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/README
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Setup
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/_checkversion.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/_checkversion.pyc
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/config.c
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/dcpyexpat.c
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/dcpyexpat.so
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/expat/MPL-1_0.html
@@ -1761,13 +1846,16 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/pyexpat.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/pyexpattest.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/pyexpattest.pyc
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/sedscript
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/xmllib.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/xmllib.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/xyap.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/xyap.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Shared/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Signals/Signals.py
+%%ZOPEBASEDIR%%/lib/python/Signals/Signals.pyc
+%%ZOPEBASEDIR%%/lib/python/Signals/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Signals/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/StructuredText/ClassicDocumentClass.py
 %%ZOPEBASEDIR%%/lib/python/StructuredText/ClassicDocumentClass.pyc
 %%ZOPEBASEDIR%%/lib/python/StructuredText/ClassicStructuredText.py
@@ -1826,6 +1914,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/HTMLParser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/HTMLTALParser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/HTMLTALParser.pyc
+%%ZOPEBASEDIR%%/lib/python/TAL/ITALES.py
+%%ZOPEBASEDIR%%/lib/python/TAL/ITALES.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/README.txt
 %%ZOPEBASEDIR%%/lib/python/TAL/TALDefs.py
 %%ZOPEBASEDIR%%/lib/python/TAL/TALDefs.pyc
@@ -1835,6 +1925,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/TALInterpreter.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/TALParser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/TALParser.pyc
+%%ZOPEBASEDIR%%/lib/python/TAL/TranslationContext.py
+%%ZOPEBASEDIR%%/lib/python/TAL/TranslationContext.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/XMLParser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/XMLParser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/__init__.py
@@ -1907,6 +1999,20 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test17.xml
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test18.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test18.xml
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test19.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test20.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test21.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test22.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test23.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test24.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test25.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test26.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test27.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test28.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test29.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test30.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test31.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test32.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_metal1.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_metal2.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_metal3.html
@@ -1941,6 +2047,20 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test17.xml
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test18.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test18.xml
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test19.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test20.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test21.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test22.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test23.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test24.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test25.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test26.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test27.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test28.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test29.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test30.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test31.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test32.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_metal1.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_metal2.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_metal3.html
@@ -1948,6 +2068,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_files.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmlparser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmltalparser.py
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/test_sourcepos.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_talinterpreter.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_xmlparser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/utils.py
@@ -2020,6 +2141,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZLogger/test_logger.py
 %%ZOPEBASEDIR%%/lib/python/ZLogger/test_logger.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/.cvsignore
+%%ZOPEBASEDIR%%/lib/python/ZODB/ActivityMonitor.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/ActivityMonitor.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/BaseStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/BaseStorage.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/ConflictResolution.py
@@ -2034,15 +2157,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/ExportImport.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/FileStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/FileStorage.pyc
-%%ZOPEBASEDIR%%/lib/python/ZODB/Makefile
-%%ZOPEBASEDIR%%/lib/python/ZODB/Makefile.pre
-%%ZOPEBASEDIR%%/lib/python/ZODB/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/ZODB/MappingStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/MappingStorage.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/Mount.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/Mount.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/POSException.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/POSException.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/PersistentList.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/PersistentList.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/PersistentMapping.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/PersistentMapping.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/Setup
@@ -2065,7 +2187,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPersistence.so
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPickleCache.c
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPickleCache.so
-%%ZOPEBASEDIR%%/lib/python/ZODB/config.c
 %%ZOPEBASEDIR%%/lib/python/ZODB/conversionhack.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/conversionhack.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/coptimizations.c
@@ -2082,7 +2203,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/lock_file.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/referencesf.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/referencesf.pyc
-%%ZOPEBASEDIR%%/lib/python/ZODB/sedscript
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/BasicStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/ConflictResolution.py
@@ -2090,8 +2210,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/HistoryStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/IteratorStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/LocalStorage.py
-%%ZOPEBASEDIR%%/lib/python/ZODB/tests/MinPO.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/MTStorage.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/MinPO.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/PackableStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/PersistentStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/ReadOnlyStorage.py
@@ -2103,10 +2223,13 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/VersionStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/speed.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testActivityMonitor.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testCache.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testDB.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testDemoStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testFileStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testMappingStorage.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testPersistentList.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testPersistentMapping.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testTimeStamp.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testTransaction.py
@@ -2139,6 +2262,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Request.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Response.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Response.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/TaintedString.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/TaintedString.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Test.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Test.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/__init__.py
@@ -2152,6 +2277,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRequest.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Batch.py
@@ -2171,17 +2297,15 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/run.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testBatch.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testIterator.py
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testTree.py
 %%ZOPEBASEDIR%%/lib/python/Zope/ClassFactory.py
 %%ZOPEBASEDIR%%/lib/python/Zope/ClassFactory.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Zope/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/config.c
 %%ZOPEBASEDIR%%/lib/python/dcdb.py
 %%ZOPEBASEDIR%%/lib/python/dcdb.pyc
+%%ZOPEBASEDIR%%/lib/python/initgroups.so
 %%ZOPEBASEDIR%%/lib/python/intSet.so
-%%ZOPEBASEDIR%%/lib/python/sedscript
-%%ZOPEBASEDIR%%/lib/python/tempfile.py
-%%ZOPEBASEDIR%%/lib/python/tempfile.pyc
 %%ZOPEBASEDIR%%/lib/python/ts_regex.py
 %%ZOPEBASEDIR%%/lib/python/ts_regex.pyc
 %%ZOPEBASEDIR%%/lib/python/version.txt
@@ -2215,8 +2339,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/webdav/xmltools.pyc
 %%ZOPEBASEDIR%%/lib/python/xmlrpclib.py
 %%ZOPEBASEDIR%%/lib/python/xmlrpclib.pyc
+%%ZOPEBASEDIR%%/lib/python/zExceptions/ExceptionFormatter.py
+%%ZOPEBASEDIR%%/lib/python/zExceptions/ExceptionFormatter.pyc
+%%ZOPEBASEDIR%%/lib/python/zExceptions/ITracebackSupplement.py
+%%ZOPEBASEDIR%%/lib/python/zExceptions/ITracebackSupplement.pyc
 %%ZOPEBASEDIR%%/lib/python/zExceptions/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zExceptions/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zExceptions/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zExceptions/tests/testExceptionFormatter.py
 %%ZOPEBASEDIR%%/lib/python/zExceptions/unauthorized.py
 %%ZOPEBASEDIR%%/lib/python/zExceptions/unauthorized.pyc
 %%ZOPEBASEDIR%%/lib/python/zLOG/FormatException.py
@@ -2231,11 +2361,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/zdaemon/Daemon.pyc
 %%ZOPEBASEDIR%%/lib/python/zdaemon/Heartbeat.py
 %%ZOPEBASEDIR%%/lib/python/zdaemon/Heartbeat.pyc
+%%ZOPEBASEDIR%%/lib/python/zdaemon/SignalHandler.py
+%%ZOPEBASEDIR%%/lib/python/zdaemon/SignalHandler.pyc
 %%ZOPEBASEDIR%%/lib/python/zdaemon/ZDaemonLogging.py
 %%ZOPEBASEDIR%%/lib/python/zdaemon/ZDaemonLogging.pyc
 %%ZOPEBASEDIR%%/lib/python/zdaemon/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zdaemon/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/zlib.so
+%%ZOPEBASEDIR%%/lib/python/zdaemon/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zdaemon/tests/testDaemon.py
 %%ZOPEBASEDIR%%/pcgi/.cvsignore
 %%ZOPEBASEDIR%%/pcgi/Example/pcgitest
 %%ZOPEBASEDIR%%/pcgi/Example/pcgitime.py
@@ -2273,17 +2406,37 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/pcgi/pcgi.h
 %%ZOPEBASEDIR%%/pcgi/pcgi_publisher.py
 %%ZOPEBASEDIR%%/pcgi/pcgi_publisher.pyc
+%%ZOPEBASEDIR%%/setup.py
+%%ZOPEBASEDIR%%/setup.pyc
 %%ZOPEBASEDIR%%/start
 %%ZOPEBASEDIR%%/stop
+%%ZOPEBASEDIR%%/stupid_clean
 %%ZOPEBASEDIR%%/utilities/ExtensionBuilder.py
 %%ZOPEBASEDIR%%/utilities/ExtensionBuilder.pyc
 %%ZOPEBASEDIR%%/utilities/FS.py
 %%ZOPEBASEDIR%%/utilities/FS.pyc
 %%ZOPEBASEDIR%%/utilities/README.txt
+%%ZOPEBASEDIR%%/utilities/ZODBTools/checkbtrees.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/checkbtrees.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/fsdump.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/fsdump.pyc
 %%ZOPEBASEDIR%%/utilities/ZODBTools/fstest.py
 %%ZOPEBASEDIR%%/utilities/ZODBTools/fstest.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/netspace.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/netspace.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/parsezeolog.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/parsezeolog.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/space.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/space.pyc
 %%ZOPEBASEDIR%%/utilities/ZODBTools/tests/test-checker.fs
 %%ZOPEBASEDIR%%/utilities/ZODBTools/tests/testfstest.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/tests/testzeopack.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeopack.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeopack.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeoreplay.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeoreplay.pyc
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeoup.py
+%%ZOPEBASEDIR%%/utilities/ZODBTools/zeoup.pyc
 %%ZOPEBASEDIR%%/utilities/bbb.py
 %%ZOPEBASEDIR%%/utilities/bbb.pyc
 %%ZOPEBASEDIR%%/utilities/check_catalog.py
@@ -2312,6 +2465,7 @@ etc/rc.d/zope.sh
 @unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.tmp
 @unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.lock
 @unexec rmdir %D/%%ZOPEBASEDIR%%/var 2>/dev/null || true
+@unexec rmdir %D/%%CGIBINDIR%% 2>/dev/null || true
 @dirrm %%ZOPEBASEDIR%%/utilities/ZODBTools/tests
 @dirrm %%ZOPEBASEDIR%%/utilities/ZODBTools
 @dirrm %%ZOPEBASEDIR%%/utilities
@@ -2321,13 +2475,16 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/pcgi/MrCreosote
 @dirrm %%ZOPEBASEDIR%%/pcgi/Example
 @dirrm %%ZOPEBASEDIR%%/pcgi
+@dirrm %%ZOPEBASEDIR%%/lib/python/zdaemon/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zdaemon
 @dirrm %%ZOPEBASEDIR%%/lib/python/zLOG/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zLOG
+@dirrm %%ZOPEBASEDIR%%/lib/python/zExceptions/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zExceptions
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav
+@dirrm %%ZOPEBASEDIR%%/lib/python/build
 @dirrm %%ZOPEBASEDIR%%/lib/python/Zope
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils
@@ -2351,6 +2508,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/StructuredText/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/StructuredText/regressions
 @dirrm %%ZOPEBASEDIR%%/lib/python/StructuredText
+@dirrm %%ZOPEBASEDIR%%/lib/python/Signals
 @dirrm %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/expat/xmltok
 @dirrm %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/expat/xmlparse
 @dirrm %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/expat
@@ -2383,6 +2541,11 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Transience/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Transience/help
@@ -2396,6 +2559,8 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/SiteErrorLog
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/SiteAccess/doc
@@ -2416,6 +2581,10 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/common
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TopicIndex
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/TextIndex/dtml
@@ -2440,6 +2609,12 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/FieldIndex
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateRangeIndex
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes/DateIndex
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PluginIndexes
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output
@@ -2453,6 +2628,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/OFSP/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/OFSP
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
@@ -2470,6 +2646,9 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/OFS/standard
 @dirrm %%ZOPEBASEDIR%%/lib/python/OFS/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/OFS
+@dirrm %%ZOPEBASEDIR%%/lib/python/Interface/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Interface/Common/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Interface/Common
 @dirrm %%ZOPEBASEDIR%%/lib/python/Interface
 @dirrm %%ZOPEBASEDIR%%/lib/python/HelpSys/images
 @dirrm %%ZOPEBASEDIR%%/lib/python/HelpSys/dtml
@@ -2497,7 +2676,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
 @dirrm %%ZOPEBASEDIR%%/lib/python
-@dirrm %%ZOPEBASEDIR%%/lib/Components/zlib
+@dirrm %%ZOPEBASEDIR%%/lib/Components/initgroups
 @dirrm %%ZOPEBASEDIR%%/lib/Components/cPickle
 @dirrm %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/test/output
 @dirrm %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/test
