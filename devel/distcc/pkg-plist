@@ -1,9 +1,9 @@
 bin/distcc
 sbin/distccd
-%%PORTDOCS%%share/doc/distcc/distcc.pdf
-%%PORTDOCS%%share/doc/distcc/distcc.ps
-%%PORTDOCS%%share/doc/distcc/distcc.html
-%%PORTDOCS%%share/doc/distcc/distccd.pdf
-%%PORTDOCS%%share/doc/distcc/distccd.ps
-%%PORTDOCS%%share/doc/distcc/distccd.html
+%%PORTDOCS%%share/doc/distcc/AUTHORS
+%%PORTDOCS%%share/doc/distcc/COPYING
+%%PORTDOCS%%share/doc/distcc/COPYING.FDL
+%%PORTDOCS%%share/doc/distcc/NEWS
+%%PORTDOCS%%share/doc/distcc/OLDNEWS
+%%PORTDOCS%%share/doc/distcc/README
 %%PORTDOCS%%@dirrm share/doc/distcc
