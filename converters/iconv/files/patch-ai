@@ -2,8 +2,8 @@
 $FreeBSD$
 
 --- lib/Makefile.orig	Tue Nov 28 01:33:49 2000
-+++ lib/Makefile	Sun Mar 17 13:12:04 2002
-@@ -1,27 +1,27 @@
++++ lib/Makefile	Mon Jun  3 14:16:50 2002
+@@ -1,27 +1,28 @@
 -LIB =		iconv
 +LIB =		biconv
  SHLIB_MAJOR =	2
@@ -25,8 +25,10 @@ $FreeBSD$
  
  LIBDIR =	${PREFIX}/lib
  
- INCDIR =	${PREFIX}/include
+-INCDIR =	${PREFIX}/include
 -INCS =		iconv.h
++INCSDIR =	${PREFIX}/include
++INCDIR =	${INCSDIR}		# for 4.x bsd.lib.mk
 +INCS =		biconv.h
  
  CFLAGS +=	-DICONV_MODULE_PATH=\"${MODULEDIR}\" \
@@ -37,7 +39,7 @@ $FreeBSD$
  
  ALIASES =	${.CURDIR}/../ccs/charset.aliases \
  		${.CURDIR}/../ces/charset.aliases
-@@ -32,13 +32,19 @@
+@@ -32,13 +33,19 @@
  		cat ${.ALLSRC} | ${.CURDIR}/../iconv_builtin ${BUILTIN_CCS} \
  			${BUILTIN_CES} PIC ${BUILTIN_CES_STATIC} > ${.TARGET}
  
