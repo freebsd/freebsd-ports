@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		dvipdfm
-PORTVERSION=		0.13
+PORTVERSION=		0.13.1b
 CATEGORIES=		print
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
