@@ -3301,6 +3301,7 @@ hu-ooodict-HU	ports/hungarian/ooodict
 hu-openoffice-1.1	ports/hungarian/openoffice-1.1
 huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
+hugin		ports/graphics/hugin
 hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
 hunch		ports/security/hunch
