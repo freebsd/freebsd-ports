@@ -7,9 +7,6 @@ include/yaz/backend.h
 include/yaz/ccl.h
 include/yaz/charneg.h
 include/yaz/comstack.h
-include/yaz/d1_attset.h
-include/yaz/d1_map.h
-include/yaz/data1.h
 include/yaz/diagbib1.h
 include/yaz/ill-core.h
 include/yaz/ill.h
@@ -130,40 +127,6 @@ share/doc/yaz/zoom.scan.html
 share/yaz/ill/ill.tcl
 share/yaz/ill/ill9702.asn
 share/yaz/ill/item-req.asn
-share/yaz/tab/bib1.att
-share/yaz/tab/dan1.att
-share/yaz/tab/danmarc.abs
-share/yaz/tab/danmarc.mar
-share/yaz/tab/explain.abs
-share/yaz/tab/explain.att
-share/yaz/tab/explain.tag
-share/yaz/tab/generic.tag
-share/yaz/tab/gils-a.est
-share/yaz/tab/gils-b.est
-share/yaz/tab/gils-f.est
-share/yaz/tab/gils-g.est
-share/yaz/tab/gils-summary.map
-share/yaz/tab/gils-usmarc.map
-share/yaz/tab/gils-variant.est
-share/yaz/tab/gils.abs
-share/yaz/tab/gils.att
-share/yaz/tab/gils.tag
-share/yaz/tab/meta-b.est
-share/yaz/tab/meta-usmarc.map
-share/yaz/tab/meta.abs
-share/yaz/tab/meta.tag
-share/yaz/tab/summary.abs
-share/yaz/tab/summary.tag
-share/yaz/tab/tagsetg.tag
-share/yaz/tab/tagsetm.tag
-share/yaz/tab/usmarc-b.est
-share/yaz/tab/usmarc.abs
-share/yaz/tab/usmarc.mar
-share/yaz/tab/usmarc.tag
-share/yaz/tab/var1.var
-share/yaz/tab/wais-b.est
-share/yaz/tab/wais-variant.est
-share/yaz/tab/wais.abs
 share/yaz/z39.50/charneg-3.asn
 share/yaz/z39.50/datetime.asn
 share/yaz/z39.50/esadmin.asn
@@ -172,7 +135,6 @@ share/yaz/z39.50/univres.asn
 share/yaz/z39.50/z.tcl
 share/yaz/z39.50/z3950v3.asn
 @dirrm share/yaz/z39.50
-@dirrm share/yaz/tab
 @dirrm share/yaz/ill
 @dirrm share/yaz
 @dirrm share/doc/yaz
