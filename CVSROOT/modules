@@ -3633,6 +3633,7 @@ mew-mule	ports/mail/mew-mule
 mew-xemacs-mule	ports/mail/mew-xemacs-mule
 mew-xemacs21	ports/mail/mew-xemacs21
 mew-xemacs21-mule	ports/mail/mew-xemacs21-mule
+mew2		ports/mail/mew2
 mew2-emacs20	ports/mail/mew2-emacs20
 mew2-xemacs21	ports/mail/mew2-xemacs21
 mew2-xemacs21-mule	ports/mail/mew2-xemacs21-mule
