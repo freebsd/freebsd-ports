@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rats
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.securesw.com/rats/
 
@@ -25,5 +25,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/rats
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rats
 .endif
+MAN1=		rats.1
 
 .include <bsd.port.mk>
