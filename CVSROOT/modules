@@ -4600,6 +4600,7 @@ openldap2	ports/net/openldap2
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
+openoffice-dk	ports/editors/openoffice-dk
 openquicktime	ports/graphics/openquicktime
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
