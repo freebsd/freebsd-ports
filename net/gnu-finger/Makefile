@@ -12,7 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	finger
 DISTNAME=	finger-1.37
 
-MAINTAINER=     sanpei@yy.cs.keio.ac.jp
+MAINTAINER=     sanpei@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET= server
