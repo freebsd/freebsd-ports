@@ -7,6 +7,7 @@
 
 PORTNAME=	dv2jpg
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +17,8 @@ COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 
 LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
 
+USE_GNOME=	gdkpixbuf
 MAKEFILE=	makefile
-USE_GNOME=	glib12 gtk12 gdkpixbuf
-
-DOCS=	README.avilib	README.dv2jpg.html
 
 post-extract:
 	${RM} ${WRKSRC}/avijoin ${WRKSRC}/dv2jpg ${WRKSRC}/*.o
@@ -28,8 +27,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/avijoin ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/dv2jpg ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+	@${MKDIR} ${DOCSDIR}
+.for f in README.avilib	README.dv2jpg.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif

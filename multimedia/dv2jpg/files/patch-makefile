@@ -1,24 +1,36 @@
---- makefile.orig	Sun Jun 24 04:04:47 2001
-+++ makefile	Sun Feb 16 02:39:38 2003
+--- makefile.orig	Sun Jun 24 11:04:47 2001
++++ makefile	Tue May  6 22:16:26 2003
 @@ -1,6 +1,6 @@
  
 -INC=-I/opt/gdk-pixbuf/lib -I/usr/include -I/usr/include/libdv 
 -LIBS=-ljpeg -lm -lgdk_pixbuf /usr/lib/libdv.a
 +INC=`${GDK_PIXBUF_CONFIG} --cflags` -I${PREFIX}/include/libdv 
-+LIBS=-ljpeg -lm `${GDK_PIXBUF_CONFIG} --libs` -ldv
++LIBS=-ljpeg -lm -ldv `${GDK_PIXBUF_CONFIG} --libs` -L${LOCALBASE}/lib
  
  # what type of video do you want?
  VIDEO=NTSC
-@@ -9,10 +9,10 @@
+@@ -9,19 +9,19 @@
  all: dv2jpg avijoin
  	
  dv2jpg: dv2jpg.o avilib.o dvavilib.o
 -	gcc -o dv2jpg dv2jpg.o avilib.o dvavilib.o $(LIBS) `glib-config --libs` `gtk-config --libs`
-+	${CC} -o dv2jpg dv2jpg.o avilib.o dvavilib.o $(LIBS) `${GLIB_CONFIG} --libs` `${GTK_CONFIG} --libs`
++	$(CC) $(CFLAGS) -o dv2jpg dv2jpg.o avilib.o dvavilib.o $(LIBS) $(LDFLAGS)
  
  dv2jpg.o: dv2jpg.c
 -	gcc -g $(INC) `glib-config --cflags` `gtk-config --cflags` -D$(VIDEO) -g -c dv2jpg.c 
-+	${CC} -g $(INC) `${GLIB_CONFIG} --cflags` `${GTK_CONFIG} --cflags` -D$(VIDEO) -g -c dv2jpg.c 
++	$(CC) $(CFLAGS) $(INC) -D$(VIDEO) -c dv2jpg.c 
  
  avilib.o: avilib.c
- 	gcc -g -c avilib.c
+-	gcc -g -c avilib.c
++	$(CC) $(CFLAGS) -c avilib.c
+ 
+ dvavilib.o: dvavilib.c
+-	gcc -g -c dvavilib.c
++	$(CC) $(CFLAGS) -c dvavilib.c
+ 
+ clean: 
+ 	/bin/rm -f *.o dv2jpg core avijoin
+ 
+ avijoin: avijoin.c avilib.o
+-	gcc -g -o avijoin avijoin.c avilib.o
++	$(CC) $(CFLAGS) -o avijoin avijoin.c avilib.o $(LDFLAGS)
