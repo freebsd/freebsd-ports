@@ -13,12 +13,3 @@
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  # Configure for shared libraries, static libraries, or both.  If both are
-@@ -9511,7 +9511,7 @@
- 
- # Optional utilities.
- if test "$db_cv_dump185" = "yes"; then
--	ADDITIONAL_PROGS="db_dump185 $ADDITIONAL_PROGS"
-+	ADDITIONAL_PROGS="db41_dump185 $ADDITIONAL_PROGS"
- fi
- 
- # Checks for system/compiler characteristics.
