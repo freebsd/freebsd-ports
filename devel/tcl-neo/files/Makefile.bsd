@@ -14,11 +14,7 @@ SRCS=		neoXcrypt.c neoPkgInit.c neoXwww.c neoXgeneral.c \
 		neoXcute.c neoXcomma.c neoXkdebug.c neoCbuf.c \
 		neoXlist.c neoXdb.c # neoXldap.c
 
-LIB=		neo82
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	0
-INTERNALLIB=	Yes, don't need the static version
-NOPROFILE=	YES, don't need the profiled version
+SHLIB_NAME=	libneo82.so.1
 
 LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl83 -lm -lmd -ldb2 # -ldap -llber
 
