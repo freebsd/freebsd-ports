@@ -55,11 +55,11 @@ PLIST_SUB+=	LPR=""
 
 .if defined(WITH_LETTER)
 CONFIGURE_ARGS+=--enable-letter
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
+BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 .else
 CONFIGURE_ARGS+=--disable-letter
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-a4
+BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .endif
 
