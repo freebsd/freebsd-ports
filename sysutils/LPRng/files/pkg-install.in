@@ -1,0 +1,119 @@
+#! /bin/sh
+
+prefix=%%PREFIX%%
+sysconfdir=%%SYSCONFDIR%%
+
+case "x$2" in
+
+"xPRE-INSTALL")
+
+	# Preserve original files from being overwritten.
+
+	if [ "x$prefix" = "x/usr" ]; then
+		cd $prefix
+		for i in bin/lp bin/lpq bin/lpr bin/lprm sbin/lpc sbin/lpd \
+			share/man/man1/lp.1.gz share/man/man1/lpq.1.gz \
+			share/man/man1/lpr.1.gz share/man/man1/lprm.1.gz \
+			share/man/man5/printcap.5.gz share/man/man8/lpc.8.gz \
+			share/man/man8/lpd.8.gz ; do
+			cp -p $i $i.orig
+		done
+	fi
+
+	;;
+
+"xPOST-INSTALL")
+
+	cd $sysconfdir
+
+	# Preserve original configuration files from being overwritten.
+	# Restore previously saved configuration if possible.
+
+	if [ "x$sysconfdir" = "x/etc" ]; then
+		for i in lpd.conf lpd.perms printcap; do
+			[ -f $i ] && mv $i $i.orig
+			[ -f $i.saved ] && mv $i.saved $i || cp $i.sample $i
+		done
+	else
+		for i in lpd.conf lpd.perms printcap; do
+			[ -f $i.saved ] && mv $i.saved $i || cp $i.sample $i
+		done
+	fi
+
+	# This is a trick to detect if the user installed a new world at deinstall stage.
+
+	if [ "x$prefix" = "x/usr" ]; then
+		cd $prefix
+		for i in bin/lp bin/lpq bin/lpr bin/lprm sbin/lpc sbin/lpd \
+			share/man/man1/lp.1.gz share/man/man1/lpq.1.gz \
+			share/man/man1/lpr.1.gz share/man/man1/lprm.1.gz \
+			share/man/man5/printcap.5.gz share/man/man8/lpc.8.gz \
+			share/man/man8/lpd.8.gz ; do
+			touch $i.orig
+		done
+	fi
+
+	;;
+
+"xDEINSTALL")
+
+	cd $sysconfdir
+
+	# Remove unchanged files.
+
+	for i in lpd.conf lpd.perms printcap; do
+		cmp -s $i $i.sample && rm -f $i
+	done
+
+	# Remove backup files if installworld overwrited LPRng files.
+
+	if [ "x$prefix" = "x/usr" ]; then
+		cd $prefix
+		for i in bin/lp bin/lpq bin/lpr bin/lprm sbin/lpc sbin/lpd \
+			share/man/man1/lp.1.gz share/man/man1/lpq.1.gz \
+			share/man/man1/lpr.1.gz share/man/man1/lprm.1.gz \
+			share/man/man5/printcap.5.gz share/man/man8/lpc.8.gz \
+			share/man/man8/lpd.8.gz ; do
+			[ $i -nt $i.orig ] && rm $i.orig
+		done
+	fi
+
+	;;
+
+"xPOST-DEINSTALL")
+
+	cd $sysconfdir
+
+	# Save remaining modified files so we can restore them at next install.
+	# Restore original files when LPRng files haven't changed.
+
+	for i in lpd.conf lpd.perms printcap; do
+		if [ "x$sysconfdir" = "x/etc" ]; then
+			if [ -f $i ]; then
+				mv $i $i.saved
+			else
+				[ -f $i.orig ] && mv $i.orig $i
+			fi
+		else
+			[ -f $i ] && mv $i $i.saved
+		fi
+	done
+
+	# Restore backup files.
+
+	if [ "x$prefix" = "x/usr" ]; then
+		cd $prefix
+		for i in bin/lp bin/lpq bin/lpr bin/lprm sbin/lpc sbin/lpd \
+			share/man/man1/lp.1.gz share/man/man1/lpq.1.gz \
+			share/man/man1/lpr.1.gz share/man/man1/lprm.1.gz \
+			share/man/man5/printcap.5.gz share/man/man8/lpc.8.gz \
+			share/man/man8/lpd.8.gz ; do
+			[ -f $i.orig ] && mv $i.orig $i
+		done
+	fi
+
+	;;
+
+esac
+
+exit 0
