@@ -58,13 +58,9 @@ do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
-.if ! exists(${DESTDIR}/${PREFIX}/info/dir)
-pre-install:
-	${INSTALL} -c -o ${INFOOWN} -g ${INFOGRP} -m ${INFOMODE} \
-		${FILESDIR}/dir-tmpl ${DESTDIR}${PREFIX}/info/dir
-.endif
-
 post-install:
+	-${MKDIR} ${DESTDIR}${PREFIX}/info
+	install-info ${DESTDIR}${PREFIX}/info/uucp.info ${DESTDIR}${PREFIX}/info/dir
 	@${CHOWN} uucp:uucp ${PREFIX}/etc/uucp
 	@${CHMOD} 750 ${PREFIX}/etc/uucp
 	@${ECHO_CMD} "updating ${DESTDIR}/etc/services"
