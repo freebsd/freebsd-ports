@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -16,7 +16,11 @@ COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 # mysql authentication
 .if !defined(WITHOUT_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=	--enable-auth-mysql \
+			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
+			--with-mysql-include-dir=${LOCALBASE}/include/mysql
 .endif
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
@@ -31,9 +35,6 @@ CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \
 		--with-mailspool-directory=/var/mail
 
-.if !defined(WITHOUT_MYSQL)
-CONFIGURE_ARGS+=	--enable-auth-mysql --with-mysql-root=${LOCALBASE}
-.endif
 .if defined(WITH_PERLAUTH)
 CONFIGURE_ARGS+=	--enable-auth-perl
 .endif
@@ -47,6 +48,7 @@ CONFIGURE_ARGS+=	--enable-mbox-maildir
 SAMPLE_RCD=	tpop3d.sh.sample
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${SAMPLE_RCD}
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.dist
+USE_OPENSSL=	yes
 
 MAN5=		tpop3d.conf.5
 MAN8=		tpop3d.8
