@@ -17,4 +17,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		nasm.1 ndisasm.1
 
+post-install:
+	${LN} -sf nasm ${PREFIX}/bin/${DISTNAME}
+
 .include <bsd.port.mk>
