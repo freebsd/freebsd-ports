@@ -1,4 +1,5 @@
 bin/scsh
+include/scheme48.h
 lib/scsh/big/array.scm
 lib/scsh/big/big-util.scm
 lib/scsh/big/bigbit.scm
@@ -25,51 +26,6 @@ lib/scsh/cig/cig
 lib/scsh/cig/cig.image
 lib/scsh/cig/libscshvm.a
 lib/scsh/cig/libcig.h
-lib/scsh/doc/COPYING
-lib/scsh/doc/NEWS
-lib/scsh/doc/RELEASE
-lib/scsh/doc/README
-lib/scsh/doc/scsh-manual/awk.tex
-lib/scsh/doc/scsh-manual/changes.tex
-lib/scsh/doc/scsh-manual/decls.tex
-lib/scsh/doc/scsh-manual/front.tex
-lib/scsh/doc/scsh-manual/intro.tex
-lib/scsh/doc/scsh-manual/man.tex
-lib/scsh/doc/scsh-manual/miscprocs.tex
-lib/scsh/doc/scsh-manual/network.tex
-lib/scsh/doc/scsh-manual/procnotation.tex
-lib/scsh/doc/scsh-manual/rdelim.tex
-lib/scsh/doc/scsh-manual/running.tex
-lib/scsh/doc/scsh-manual/strings.tex
-lib/scsh/doc/scsh-manual/syscalls.tex
-lib/scsh/doc/scsh-manual/test.tex
-lib/scsh/doc/scsh-manual/todo.tex
-lib/scsh/doc/scsh-manual/tty.tex
-lib/scsh/doc/scsh-manual/xman.tex
-lib/scsh/doc/big-scheme.txt
-lib/scsh/doc/call-back.txt
-lib/scsh/doc/cheat.txt
-lib/scsh/doc/external.txt
-lib/scsh/doc/hacking.txt
-lib/scsh/doc/install.s48-0.36.txt
-lib/scsh/doc/install.txt
-lib/scsh/doc/no-leaf-env.txt
-lib/scsh/doc/olins-changes.txt
-lib/scsh/doc/package.txt
-lib/scsh/doc/scsh-src-roadmap.txt
-lib/scsh/doc/threads.txt
-lib/scsh/doc/type.txt
-lib/scsh/doc/user-guide.txt
-lib/scsh/doc/code.tex
-lib/scsh/doc/latex-stuff.tex
-lib/scsh/doc/meeting.tex
-lib/scsh/doc/module.tex
-lib/scsh/doc/scsh-paper.tex
-lib/scsh/doc/summary.tex
-lib/scsh/doc/meeting.ps
-lib/scsh/doc/module.ps
-lib/scsh/doc/scsh-manual.ps
-lib/scsh/doc/scsh-paper.ps
 lib/scsh/env/assem.scm
 lib/scsh/env/basic-command.scm
 lib/scsh/env/build.scm
@@ -151,10 +107,10 @@ lib/scsh/scsh/ndbm.scm
 lib/scsh/scsh/network.scm
 lib/scsh/scsh/pty.scm
 lib/scsh/scsh/newports.scm
+lib/scsh/scsh/old-static.scm
 lib/scsh/scsh/oldtop.scm
 lib/scsh/scsh/procobj.scm
 lib/scsh/scsh/rdelim.scm
-lib/scsh/scsh/re.scm
 lib/scsh/scsh/rw.scm
 lib/scsh/scsh/scsh-condition.scm
 lib/scsh/scsh/scsh-interfaces.scm
@@ -166,6 +122,8 @@ lib/scsh/scsh/select.scm
 lib/scsh/scsh/sighandlers.scm
 lib/scsh/scsh/startup.scm
 lib/scsh/scsh/static.scm
+lib/scsh/scsh/static1.scm
+lib/scsh/scsh/static-heap.scm
 lib/scsh/scsh/stringcoll.scm
 lib/scsh/scsh/syntax-helpers.scm
 lib/scsh/scsh/syntax.scm
@@ -221,13 +179,9 @@ lib/scsh/emacs/cmuscheme48.el
 lib/scsh/emacs/cmushell.el
 lib/scsh/emacs/comint.el
 lib/scsh/emacs/jar-hacks.el
-@exec ln -fs %D/lib/scsh/doc %D/share/doc/scsh
-@unexec rm -f %D/share/doc/scsh
 @dirrm lib/scsh/emacs
 @dirrm lib/scsh/big
 @dirrm lib/scsh/cig
-@dirrm lib/scsh/doc/scsh-manual
-@dirrm lib/scsh/doc
 @dirrm lib/scsh/env
 @dirrm lib/scsh/link
 @dirrm lib/scsh/misc
