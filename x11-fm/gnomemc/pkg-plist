@@ -21,9 +21,11 @@ share/gnome/mc/extfs/rpms
 share/gnome/mc/extfs/sfs.ini
 share/gnome/mc/extfs/trpm
 share/gnome/mc/extfs/uar
+share/gnome/mc/extfs/uarj
 share/gnome/mc/extfs/ucpio
 share/gnome/mc/extfs/uha
 share/gnome/mc/extfs/ulha
+share/gnome/mc/extfs/unarj.diff
 share/gnome/mc/extfs/urar
 share/gnome/mc/extfs/uzip
 share/gnome/mc/extfs/uzoo
@@ -56,6 +58,15 @@ share/gnome/pixmaps/mc/gnome-application-postscript.png
 share/gnome/pixmaps/mc/gnome-application-x-c-header.png
 share/gnome/pixmaps/mc/gnome-application-x-c-source.png
 share/gnome/pixmaps/mc/gnome-application-x-cc-source.png
+share/gnome/pixmaps/mc/gnome-audio-basic.png
+share/gnome/pixmaps/mc/gnome-audio-midi.png
+share/gnome/pixmaps/mc/gnome-audio-ulaw.png
+share/gnome/pixmaps/mc/gnome-audio-x-aiff.png
+share/gnome/pixmaps/mc/gnome-audio-x-mod.png
+share/gnome/pixmaps/mc/gnome-audio-x-mp3.png
+share/gnome/pixmaps/mc/gnome-audio-x-pn-realaudio.png
+share/gnome/pixmaps/mc/gnome-audio-x-voc.png
+share/gnome/pixmaps/mc/gnome-audio-x-wav.png
 share/gnome/pixmaps/mc/gnome-audio.png
 share/gnome/pixmaps/mc/gnome-compressed.png
 share/gnome/pixmaps/mc/gnome-core.png
@@ -79,6 +90,7 @@ share/gnome/pixmaps/mc/gnome-image-xbm.png
 share/gnome/pixmaps/mc/gnome-image-xcf.png
 share/gnome/pixmaps/mc/gnome-image-xpm.png
 share/gnome/pixmaps/mc/gnome-image-xwd.png
+share/gnome/pixmaps/mc/gnome-library.png
 share/gnome/pixmaps/mc/gnome-manpage.png
 share/gnome/pixmaps/mc/gnome-objectfile.png
 share/gnome/pixmaps/mc/gnome-pack-deb.png
