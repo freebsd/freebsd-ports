@@ -725,5 +725,6 @@ share/wine/wine.inf
 @dirrm include/wine/msvcrt
 @dirrm include/wine/windows
 @dirrm include/wine
+@unexec rmdir %D/man/man3w 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm share/wine
