@@ -25,6 +25,7 @@
     SUBDIR += junit
     SUBDIR += kaffe
     SUBDIR += linux-jdk
+    SUBDIR += linux-jdk13
     SUBDIR += netrexx
     SUBDIR += openjit
     SUBDIR += perltools

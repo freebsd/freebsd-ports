@@ -1,0 +1,13 @@
+--- jre/bin/.java_wrapper.orig	Tue Dec  5 15:25:11 2000
++++ jre/bin/.java_wrapper	Tue Dec  5 15:25:29 2000
+@@ -31,8 +31,8 @@
+ # Resolve symlinks. See 4152645.
+ while [ -L "$PRG" ]; do
+     ls=`/bin/ls -ld "$PRG"`
+-    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+-    if /usr/bin/expr "$link" : '/' > /dev/null; then
++    link=`/compat/linux/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
++    if /compat/linux/usr/bin/expr "$link" : '/' > /dev/null; then
+ 	PRG="$link"
+     else
+ 	PRG="`/usr/bin/dirname $PRG`/$link"
