@@ -5684,6 +5684,7 @@ ruby-csv	ports/textproc/ruby-csv
 ruby-curl	ports/ftp/ruby-curl
 ruby-cvs	ports/devel/ruby-cvs
 ruby-date2	ports/devel/ruby-date2
+ruby-dbd_interbase	ports/databases/ruby-dbd_interbase
 ruby-dbd_msql	ports/databases/ruby-dbd_msql
 ruby-dbd_mysql	ports/databases/ruby-dbd_mysql
 ruby-dbd_odbc	ports/databases/ruby-dbd_odbc
