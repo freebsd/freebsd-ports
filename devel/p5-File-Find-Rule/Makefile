@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Find-Rule
-PORTVERSION=	0.11
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		findrule.1
-MAN3=		File::Find::Extending.3 File::Find::Rule.3
+MAN3=		File::Find::Rule.3 File::Find::Rule::Extending.3 \
+		File::Find::Rule::Procedural.3
 
 .include <bsd.port.pre.mk>
 
