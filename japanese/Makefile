@@ -61,6 +61,7 @@
     SUBDIR += gicq
     SUBDIR += gn-gnspool
     SUBDIR += gn-mnews
+    SUBDIR += gnomecore
     SUBDIR += gnomeicu
     SUBDIR += gnomelibs
     SUBDIR += gp
