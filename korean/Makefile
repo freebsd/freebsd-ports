@@ -65,7 +65,6 @@
     SUBDIR += openoffice
     SUBDIR += pgp.language
     SUBDIR += pinetreefonts
-    SUBDIR += qt31
     SUBDIR += texinfo
     SUBDIR += uniksc
     SUBDIR += unzip
