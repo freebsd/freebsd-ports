@@ -19,7 +19,6 @@ BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		qtmcop.1:${PORTSDIR}/audio/arts \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		fam.0:${PORTSDIR}/devel/fam \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		cups.2:${PORTSDIR}/print/cups-base \
@@ -49,6 +48,10 @@ MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}" LDCONFIG="${LDCONFIG}"
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/fam)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.endif
 
 pre-fetch: kde-version-check
 .if ${OSVERSION} <= 410002
