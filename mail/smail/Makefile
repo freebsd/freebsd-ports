@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1995/05/05 21:38:16 torstenb Exp $
+# $Id: Makefile,v 1.8 1995/05/05 21:44:54 torstenb Exp $
 #
 
 DISTNAME=	smail-3.1.29.1
@@ -17,6 +17,9 @@ DEPENDS=	${PORTSDIR}/shells/bash
 .endif
 
 MAKE_FLAGS=	"SHELL=/usr/local/bin/bash"
+
+pre-install:
+	mkdir -p ${PREFIX}/lib/smail
 
 post-install:
 	@cp ${WRKSRC}/samples/generic/config ${PREFIX}/lib/smail/config.sample
