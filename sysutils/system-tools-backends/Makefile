@@ -26,12 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-.endif
-
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
