@@ -43,10 +43,10 @@ CONFIGURE_ARGS+=	--enable-socks
 .if defined(WITH_PYTHON)
 USE_PYTHON=    yes
 CONFIGURE_ARGS+=	--enable-python
-PLIST_SUB=	PYTHON=""
+PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB=	PYTHON="@comment "
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_TCL)
@@ -56,10 +56,10 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/tcl8.3" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${LOCALBASE}/lib/tcl8.3"
-PLIST_SUB=	TCL=""
+PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=	--enable-tcl=no
-PLIST_SUB=	TCL="@comment "
+PLIST_SUB+=	TCL="@comment "
 .endif
 
 pre-everything::
