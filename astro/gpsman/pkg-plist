@@ -181,6 +181,7 @@ share/gpsman/gmsrc/isolatin1.tcl
 share/gpsman/gmsrc/know.tcl
 share/gpsman/gmsrc/langdeutsch.tcl
 share/gpsman/gmsrc/langengl.tcl
+share/gpsman/gmsrc/langes.tcl
 share/gpsman/gmsrc/langfr.tcl
 share/gpsman/gmsrc/langid.tcl
 share/gpsman/gmsrc/langit.tcl
@@ -278,13 +279,8 @@ share/gpsman/util/mou2gmn.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_57.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_58.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_59.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_60.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_61.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/boxes.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/eqn1.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/info/WPs.txt
