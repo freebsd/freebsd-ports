@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile,v 1.1 1999/06/26 22:07:15 asami Exp $
 #
 
     SUBDIR += guavac
@@ -9,6 +9,7 @@
     SUBDIR += jdk-tutorial
     SUBDIR += jfc
     SUBDIR += jikes
+    SUBDIR += jlex
     SUBDIR += jsdk
     SUBDIR += kaffe
     SUBDIR += shujit
