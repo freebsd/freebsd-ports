@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
 		ftp://ftp.cdrom.com/pub/japanese/monash/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
-DISTFILES=	sdic-2.1.2.tar.gz edict/edict.gz edict/edict.doc
+DISTFILES=	sdic-2.1.2.tar.gz edict.gz edict.doc
 
 MAINTAINER=    	taoka@FreeBSD.org
 
@@ -25,9 +25,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=mule \
 		--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-dictdir=${PREFIX}/share/dict
+
 post-extract:
-	${CP} -f ${DISTDIR}/edict/edict.gz ${WRKSRC}
-	${CP} -f ${DISTDIR}/edict/edict.doc ${WRKSRC}
+	${CP} -f ${DISTDIR}/edict.gz ${WRKSRC}
+	${CP} -f ${DISTDIR}/edict.doc ${WRKSRC}
 	${GZIP_CMD} -d ${WRKSRC}/edict.gz
 
 do-install:
