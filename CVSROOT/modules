@@ -3960,7 +3960,7 @@ libdsp		ports/devel/libdsp
 libdv		ports/multimedia/libdv
 libdvbpsi	ports/graphics/libdvbpsi
 libdvdcss	ports/multimedia/libdvdcss
-libdvdnav	ports/graphics/libdvdnav
+libdvdnav	ports/multimedia/libdvdnav
 libdvdplay	ports/multimedia/libdvdplay
 libdvdread	ports/multimedia/libdvdread
 libecc		ports/security/libecc
@@ -4167,7 +4167,7 @@ libwpcg		ports/graphics/libwpcg
 libwrap		src/lib/libwrap
 libwww		ports/www/libwww
 libxalloc	ports/devel/libxalloc
-libxine		ports/graphics/libxine
+libxine		ports/multimedia/libxine
 libxklavier	ports/x11/libxklavier
 libxml		ports/textproc/libxml
 libxml++	ports/textproc/libxml++
@@ -9167,7 +9167,7 @@ xicq		ports/net/xicq
 ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
 xincluder	ports/textproc/xincluder
-xine		ports/graphics/xine
+xine		ports/multimedia/xine
 xine_d4d_plugin	ports/graphics/xine_d4d_plugin
 xine_d5d_plugin	ports/graphics/xine_d5d_plugin
 xinetd		ports/security/xinetd

@@ -177,3 +177,6 @@ net/openldap|net/openldap12|2003-02-23|port renamed
 net/openldap2|net/openldap20|2003-02-23|port renamed
 www/caudium|www/caudium10|2003-02-23|port renamed
 mail/imp||2003-02-24|security vulnerability
+graphics/libdvdnav|multimedia/libdvdnav|2003-02-24|new category
+graphics/libxine|multimedia/libxine|2003-02-24|new category
+graphics/xine|multimedia/xine|2003-02-24|new category

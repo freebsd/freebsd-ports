@@ -19,10 +19,12 @@
     SUBDIR += libdivxencore
     SUBDIR += libdv
     SUBDIR += libdvdcss
+    SUBDIR += libdvdnav
     SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
+    SUBDIR += libxine
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
     SUBDIR += linux-divxplayer
@@ -48,6 +50,7 @@
     SUBDIR += vcdpad
     SUBDIR += vcdtools
     SUBDIR += win32-codecs
+    SUBDIR += xine
     SUBDIR += xmms
     SUBDIR += xmms-avi
     SUBDIR += xmps-opendivx-plugin
