@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nsayer@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 USE_XLIB=	yes
 USE_MESA=	yes
 
