@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tkhonyaku
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
-MAINTAINER=	daichi@ongs.net
+MAINTAINER=	daichi@ongs.gr.jp
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
 
