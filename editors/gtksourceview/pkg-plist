@@ -1,0 +1,31 @@
+include/gtksourceview-1.0/gtksourceview/gtksourcebuffer.h
+include/gtksourceview-1.0/gtksourceview/gtksourcelanguage.h
+include/gtksourceview-1.0/gtksourceview/gtksourcelanguagesmanager.h
+include/gtksourceview-1.0/gtksourceview/gtksourcemarker.h
+include/gtksourceview-1.0/gtksourceview/gtksourcestylescheme.h
+include/gtksourceview-1.0/gtksourceview/gtksourcetag.h
+include/gtksourceview-1.0/gtksourceview/gtksourcetagstyle.h
+include/gtksourceview-1.0/gtksourceview/gtksourcetagtable.h
+include/gtksourceview-1.0/gtksourceview/gtksourceview.h
+lib/libgtksourceview-1.0.a
+lib/libgtksourceview-1.0.so
+lib/libgtksourceview-1.0.so.0
+libdata/pkgconfig/gtksourceview-1.0.pc
+share/gnome/gtksourceview-1.0/language-specs/ada.lang
+share/gnome/gtksourceview-1.0/language-specs/c.lang
+share/gnome/gtksourceview-1.0/language-specs/cpp.lang
+share/gnome/gtksourceview-1.0/language-specs/desktop.lang
+share/gnome/gtksourceview-1.0/language-specs/diff.lang
+share/gnome/gtksourceview-1.0/language-specs/html.lang
+share/gnome/gtksourceview-1.0/language-specs/idl.lang
+share/gnome/gtksourceview-1.0/language-specs/java.lang
+share/gnome/gtksourceview-1.0/language-specs/latex.lang
+share/gnome/gtksourceview-1.0/language-specs/perl.lang
+share/gnome/gtksourceview-1.0/language-specs/po.lang
+share/gnome/gtksourceview-1.0/language-specs/python.lang
+share/gnome/gtksourceview-1.0/language-specs/xml.lang
+share/locale/es/LC_MESSAGES/gtksourceview-1.0.mo
+@dirrm share/gnome/gtksourceview-1.0/language-specs
+@dirrm share/gnome/gtksourceview-1.0
+@dirrm include/gtksourceview-1.0/gtksourceview
+@dirrm include/gtksourceview-1.0

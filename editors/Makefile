@@ -60,6 +60,7 @@
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gnuserv-emacs20
+    SUBDIR += gtksourceview
     SUBDIR += gxedit
     SUBDIR += hexcurse
     SUBDIR += hexedit
