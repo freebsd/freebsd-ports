@@ -3,12 +3,13 @@
 # Date created:         March 24 1997
 # Whom:                 Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.8 1998/07/02 10:45:35 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/08/21 18:09:19 brian Exp $
 #
 
 DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
+MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
+		ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
 EXTRACT_SUFX=	.tar.Z
 
