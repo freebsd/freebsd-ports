@@ -1,0 +1,35 @@
+www/postfixadmin/admin/sendmail.php
+www/postfixadmin/admin/.htpasswd
+www/postfixadmin/admin/adminview.php
+www/postfixadmin/admin/delete.php
+www/postfixadmin/admin/domainview.php
+www/postfixadmin/admin/index.php
+www/postfixadmin/admin/newadmin.php
+www/postfixadmin/admin/newdomain.php
+www/postfixadmin/admin/passwd.php
+www/postfixadmin/admin/virtualview.php
+www/postfixadmin/admin/.htaccess
+www/postfixadmin/admin/modify.php
+www/postfixadmin/vacation.php
+www/postfixadmin/stylesheet.css
+www/postfixadmin/sendmail.php
+www/postfixadmin/pwd.php
+www/postfixadmin/passwd.php
+www/postfixadmin/my_lib.php
+www/postfixadmin/modify.php
+www/postfixadmin/main.php
+www/postfixadmin/mailbox.php
+www/postfixadmin/logout.php
+www/postfixadmin/login.php
+www/postfixadmin/index.php
+www/postfixadmin/delete.php
+www/postfixadmin/config.inc.php.sample
+www/postfixadmin/changename.php
+www/postfixadmin/alias.php
+www/postfixadmin/UPGRADE.TXT
+www/postfixadmin/LICENSE.TXT
+www/postfixadmin/INSTALL.TXT
+www/postfixadmin/vcp.php
+www/postfixadmin/CHANGELOG.TXT
+@dirrm www/postfixadmin/admin
+@dirrm www/postfixadmin
