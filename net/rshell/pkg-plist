@@ -1,0 +1,3 @@
+bin/rshell
+man/man1/rshell.1.gz
+share/dot.rshellrc
