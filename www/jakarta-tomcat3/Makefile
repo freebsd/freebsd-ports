@@ -46,7 +46,7 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	lib/tomcat.jar
-WRKDIR?=	${.CURDIR}/work
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 

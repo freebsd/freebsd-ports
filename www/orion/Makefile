@@ -50,7 +50,7 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${WRKSRC}/config/default-web-site.xml \
 		${WRKSRC}/config/rmi.xml
 JAR_FILE=	${APP_SHORTNAME}.jar
-WRKDIR?=	${.CURDIR}/work
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 

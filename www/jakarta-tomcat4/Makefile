@@ -48,7 +48,7 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
-WRKDIR?=	${.CURDIR}/work
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 
