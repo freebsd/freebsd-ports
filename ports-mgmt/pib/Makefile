@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	msmith
 
 MAINTAINER=	msmith@freebsd.org
 
+BROKEN=	"This needs to be updated to work with the newer ports layout"
+
 BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
