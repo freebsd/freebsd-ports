@@ -59,18 +59,13 @@ $MAILBANNER = "";
 # Remember to comment out if using for other purposes.
 #-------------------------------------------------------
 if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
-    $freebsd = 1;
     if ($1 =~ /freefall/i) {
-	$crypto = '';
 	$meister = 'peter@FreeBSD.org';
     } else {
-	$crypto = 1;
 	$meister = 'markm@FreeBSD.org';
 	$MAILBANNER = "FreeBSD International Crypto Repository";
     }
-}
-if ($debug && $freebsd) {
-    $MAILADDRS = $meister;
+    $MAILADDRS = $meister if $debug;
 }
 
 
