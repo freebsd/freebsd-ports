@@ -1,17 +1,24 @@
-*** util/lg/Makefile.in.orig	Mon Jun  3 14:14:33 2002
---- util/lg/Makefile.in	Mon Jun  3 14:14:51 2002
-***************
-*** 1,6 ****
-  PREFIX = @prefix@
-  
-! INSTALL = @INSTALL@
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  UTIL_LG_PROGS = @RD_UTIL_LG_PROGS@
---- 1,6 ----
-  PREFIX = @prefix@
-  
-! INSTALL = @INSTALL_SCRIPT@
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  UTIL_LG_PROGS = @RD_UTIL_LG_PROGS@
+--- util/lg/Makefile.in.orig	Fri Aug  9 23:59:06 2002
++++ util/lg/Makefile.in	Thu Sep 26 10:54:50 2002
+@@ -1,6 +1,6 @@
+ PREFIX = @prefix@
+ 
+-INSTALL = @INSTALL@
++INSTALL = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ UTIL_LG_PROGS = @RD_UTIL_LG_PROGS@
+@@ -13,13 +13,7 @@
+ 	for file in $(UTIL_LG_PROGS) ; do \
+ 	    $(INSTALL) $$file $(PREFIX)/util/lg; \
+ 	done; \
+-	if test -f $(PREFIX)/util/lg/lg.conf ; then \
+-	    echo "WARNING: *** $(PREFIX)/util/lg/lg.conf exists: installing as lg.conf.new."; \
+-	    echo "         *** review lg.conf.new for new/deprecated switches"; \
+ 	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg/lg.conf.new; \
+-	else \
+-	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg; \
+-	fi; \
+ 	for file in *README* *.html; do \
+ 	    $(INSTALL_DATA) $$file $(PREFIX)/util/lg; \
+ 	done
