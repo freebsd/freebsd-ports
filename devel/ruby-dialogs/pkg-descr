@@ -1,0 +1,7 @@
+rubyDialogs is a simple interface to dialog(1).
+
+This software is distributed under the Bluesine public license, which
+is a variant of the BSD license. (See: http://bluesine.com/license/)
+
+Author:	Jeff Clement <jeff@bluesine.com>
+WWW:	http://bluesine.com/archives/software/ruby/rubyDialogs/
