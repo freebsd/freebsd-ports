@@ -105,7 +105,6 @@
     SUBDIR += id3tool
     SUBDIR += id3v2
     SUBDIR += juke
-    SUBDIR += kdemultimedia3
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
