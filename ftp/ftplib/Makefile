@@ -9,8 +9,7 @@
 PORTNAME=	ftplib
 PORTVERSION=	3.1.1
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.nbpfaus.net/~pfau/ftplib/ \
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	http://www.nbpfaus.net/~pfau/ftplib/
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-src
 PATCH_SITES=	http://www.nbpfaus.net/~pfau/ftplib/
