@@ -24,6 +24,6 @@ CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
 MAN3=		Geo::Mirror.3 Geo::IP.3 Geo::IP::Record.3
 
 post-patch:
-	@${PERL} -pii -e 's/^our (.*),(.*);$$/use vars qw$$1$$2;/' ${WRKSRC}/lib/Geo/Mirror.pm
+	@${PERL} -pi -e 's/^our (.*),(.*);$$/use vars qw$$1$$2;/' ${WRKSRC}/lib/Geo/Mirror.pm
 
 .include <bsd.port.mk>
