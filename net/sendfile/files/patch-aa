@@ -1,11 +1,10 @@
---- makeconfig.org	Tue Sep 30 21:54:25 1997
-+++ makeconfig	Tue Sep 30 21:55:50 1997
-@@ -11,15 +11,15 @@
+--- makeconfig.orig	Sat Feb 28 13:21:59 1998
++++ makeconfig	Sun Mar  1 19:45:58 1998
+@@ -11,15 +11,14 @@
  
  # default compiling settings
  CC=gcc
 -CFLAGS=-O2
-+#CFLAGS=-O2
  LDFLAGS=-s
  
  # default installation settings
@@ -21,11 +20,10 @@
  INETDCONF=/etc/inetd.conf
  SERVICES=/etc/services
  
-@@ -33,7 +33,7 @@
- #PGP=/usr/local/bin/pgp
+@@ -35,6 +34,7 @@
  #RECODE=/usr/local/bin/recode
  #METAMAIL=/usr/local/bin/metamail
--#SENDMAIL=/usr/lib/sendmail
+ #SENDMAIL=/usr/lib/sendmail
 +SENDMAIL=/usr/sbin/sendmail
             
  ######################### END OF USER CONFIGURATION ##########################
