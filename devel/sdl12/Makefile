@@ -43,6 +43,8 @@ USE_XLIB=	yes
 .if !defined(WITHOUT_ESOUND)
 USE_GNOMENG=	yes
 USE_GNOME=	esound
+.else
+CONFIGURE_ARGS+=--disable-esd --disable-esdtest
 .endif
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
