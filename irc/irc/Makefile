@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.10.3p5
+PORTVERSION=	2.10.3p6
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
 		ftp://ftp2.nchu.edu.tw/UNIX/IRC/server/ \
@@ -40,7 +40,7 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ircd.sh
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ip6
+CONFIGURE_ARGS+=	--enable-ip6
 .endif
 
 pre-build:
