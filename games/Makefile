@@ -59,6 +59,7 @@
     SUBDIR += crimson
     SUBDIR += crossfire-client
     SUBDIR += crossfire-server
+    SUBDIR += crossword
     SUBDIR += cryptoslam
     SUBDIR += cursive
     SUBDIR += deal

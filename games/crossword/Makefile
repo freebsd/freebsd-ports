@@ -1,0 +1,27 @@
+# ex:ts=8
+# Ports collection makefile for:	crossword
+# Date created:			Aug 11, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	crossword
+PORTVERSION=	0.8.1
+CATEGORIES=	games
+MASTER_SITES=	http://www.ldc.usb.ve/~96-28234/
+
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/Crossword
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
+
+do-install:
+.for file in crossword crossword_heur crw2tex
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
+
+.include <bsd.port.mk>
