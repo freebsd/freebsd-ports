@@ -1,0 +1,31 @@
+diff -ur src/kernel/qfont.cpp src/kernel/qfont.cpp
+--- src/kernel/qfont.cpp	Wed Oct  4 13:48:48 2000
++++ src/kernel/qfont.cpp	Mon Oct  9 11:53:48 2000
+@@ -200,6 +200,8 @@
+    <li> \c QFont::KOI8U - KOI8-U, Cyrillic/Ukrainian, defined in
+        <a href="ftp://ftp.nordu.net/rfc/rfc2319.txt">RFC 2319.</a>
+    <li> \c QFont::AnyCharSet - whatever is handiest.
++  <li> \c QFont::CP_1251, Microsoft Cyrillic encoding
++  <li> \c QFont::PT_154, Paratype Asian Cyrillic encoding
+   <li> \c QFont::Set_Ja, Japanese
+   <li> \c QFont::Set_Ko, Korean
+   <li> \c QFont::Set_Th_TH
+@@ -1016,11 +1018,16 @@
+         result = "iso8859-15";
+         break;
+     case QFont::KOI8R:
+-        result = "KOI8-R";
++        result = "koi8-r";
+         break;
+     case QFont::KOI8U:
+-        result = "KOI8-U";
++        result = "koi8-u";
+         break;
++    case QFont::CP_1251:
++        result = "cp1251";
++        break;
++    case QFont::PT_154:
++        result = "pt154";
+     case QFont::Set_Ja:
+         result = "Set_Ja";
+         break;
