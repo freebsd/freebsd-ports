@@ -6,4 +6,4 @@ bin/vile-manfilt
 bin/vile-c-filt
 @mode 444
 lib/vile.hlp
-man/man1/xvile.1
+man/man1/xvile.1.gz
