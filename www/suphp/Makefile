@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-checkgid
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/apache2/apr.h)
-BROKEN=                "Doesn't work with Apache 2"
+BROKEN=			"Doesn't work with Apache 2"
 .endif
 
 show-options:
@@ -57,6 +57,9 @@ show-options:
 
 pre-everything::
 	@${MAKE} show-options
+
+post-extract:
+	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .if !defined(NOPORTDOCS)
