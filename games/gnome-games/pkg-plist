@@ -1,54 +1,78 @@
 bin/GnomeScott
 bin/freecell
 bin/gnobots
+bin/gnobots2
 bin/gnome-stones
+bin/gnometris
 bin/gnomine
-bin/gnothello
 bin/gnotravex
 bin/gturing
 bin/gyahtzee
+bin/iagno
 bin/mahjongg
+bin/metatris
 bin/same-gnome
 bin/sol
-etc/sound/events/gnothello.soundlist
+etc/sound/events/gnobots2.soundlist
+etc/sound/events/iagno.soundlist
 include/gdkcardimage/gdk-card-image.h
 lib/libgdkcardimage.a
 lib/libgdkcardimage.la
 lib/libgdkcardimage.so
-lib/libgdkcardimage.so.0.99
+lib/libgdkcardimage.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/apps/Games/freecell.desktop
 share/gnome/apps/Games/gnobots.desktop
+share/gnome/apps/Games/gnobots2.desktop
 share/gnome/apps/Games/gnome-stones.desktop
+share/gnome/apps/Games/gnometris.desktop
 share/gnome/apps/Games/gnomine.desktop
-share/gnome/apps/Games/gnothello.desktop
 share/gnome/apps/Games/gnotravex.desktop
 share/gnome/apps/Games/gyahtzee.desktop
+share/gnome/apps/Games/iagno.desktop
 share/gnome/apps/Games/mahjongg.desktop
+share/gnome/apps/Games/metatris.desktop
 share/gnome/apps/Games/same-gnome.desktop
 share/gnome/apps/Games/sol.desktop
 share/gnome/games/gnobots.safe.scores
 share/gnome/games/gnobots.unsafe.scores
+share/gnome/games/gnobots2.classic_robots-safe.scores
+share/gnome/games/gnobots2.classic_robots.scores
+share/gnome/games/gnobots2.nightmare-safe.scores
+share/gnome/games/gnobots2.nightmare.scores
+share/gnome/games/gnobots2.robots2-safe.scores
+share/gnome/games/gnobots2.robots2.scores
+share/gnome/games/gnobots2.robots2_easy-safe.scores
+share/gnome/games/gnobots2.robots2_easy.scores
+share/gnome/games/gnobots2.robots_with_safe_teleport-safe.scores
+share/gnome/games/gnobots2.robots_with_safe_teleport.scores
 share/gnome/games/gnome-stones.scores
+share/gnome/games/gnometris.scores
 share/gnome/games/gnomine.Biiiig.scores
 share/gnome/games/gnomine.Custom.scores
 share/gnome/games/gnomine.Medium.scores
 share/gnome/games/gnomine.Tiny.scores
-share/gnome/games/gnothello.b1.scores
-share/gnome/games/gnothello.b2.scores
-share/gnome/games/gnothello.b3.scores
-share/gnome/games/gnothello.w1.scores
-share/gnome/games/gnothello.w2.scores
-share/gnome/games/gnothello.w3.scores
 share/gnome/games/gnotravex.2x2.scores
 share/gnome/games/gnotravex.3x3.scores
 share/gnome/games/gnotravex.4x4.scores
 share/gnome/games/gnotravex.5x5.scores
 share/gnome/games/gnotravex.6x6.scores
 share/gnome/games/gyahtzee.scores
+share/gnome/games/iagno.b1.scores
+share/gnome/games/iagno.b2.scores
+share/gnome/games/iagno.b3.scores
+share/gnome/games/iagno.w1.scores
+share/gnome/games/iagno.w2.scores
+share/gnome/games/iagno.w3.scores
 share/gnome/games/mahjongg.scores
+share/gnome/games/metatris.scores
 share/gnome/games/same-gnome.scores
+share/gnome/gnobots2/classic_robots.cfg
+share/gnome/gnobots2/nightmare.cfg
+share/gnome/gnobots2/robots2.cfg
+share/gnome/gnobots2/robots2_easy.cfg
+share/gnome/gnobots2/robots_with_safe_teleport.cfg
 share/gnome/gnome-stones/default.caves
 share/gnome/gnome-stones/gnomekoban.caves
 share/gnome/gnome-stones/tutorial.caves
@@ -60,8 +84,120 @@ share/gnome/gnome-stones/objects/libgnomekoban.a
 share/gnome/gnome-stones/objects/libgnomekoban.la
 share/gnome/gnome-stones/objects/libgnomekoban.so
 share/gnome/gnome-stones/objects/libgnomekoban.so.0
+share/gnome/help/aisleriot/C/beleaguered-castle.html
+share/gnome/help/aisleriot/C/camelot-goal.gif
+share/gnome/help/aisleriot/C/camelot.html
+share/gnome/help/aisleriot/C/canfield.html
+share/gnome/help/aisleriot/C/clock-rules.gif
+share/gnome/help/aisleriot/C/clock.html
+share/gnome/help/aisleriot/C/docbook.css
+share/gnome/help/aisleriot/C/doublets.html
+share/gnome/help/aisleriot/C/eagle-wing.html
+share/gnome/help/aisleriot/C/fortunes.html
+share/gnome/help/aisleriot/C/glossary.html
+share/gnome/help/aisleriot/C/gpl.html
+share/gnome/help/aisleriot/C/index.html
+share/gnome/help/aisleriot/C/intro.html
+share/gnome/help/aisleriot/C/klondike.html
+share/gnome/help/aisleriot/C/neighbor.html
+share/gnome/help/aisleriot/C/odessa.html
+share/gnome/help/aisleriot/C/osmosis.html
+share/gnome/help/aisleriot/C/pileon.html
+share/gnome/help/aisleriot/C/spider.html
+share/gnome/help/aisleriot/C/topic.dat
+share/gnome/help/aisleriot/C/yukon.html
 share/gnome/help/gnobots/C/index.html
 share/gnome/help/gnobots/C/topic.dat
+share/gnome/help/gnobots/es/index.html
+share/gnome/help/gnobots/es/topic.dat
+share/gnome/help/gnobots2/C/index.html
+share/gnome/help/gnobots2/C/topic.dat
+share/gnome/help/gnobots2/es/index.html
+share/gnome/help/gnobots2/es/topic.dat
+share/gnome/help/samegnome/C/authors.html
+share/gnome/help/samegnome/C/book1.html
+share/gnome/help/samegnome/C/bugs.html
+share/gnome/help/samegnome/C/c11.html
+share/gnome/help/samegnome/C/docbook.css
+share/gnome/help/samegnome/C/index.html
+share/gnome/help/samegnome/C/ln9.html
+share/gnome/help/samegnome/C/newthemes.html
+share/gnome/help/samegnome/C/topic.dat
+share/gnome/metatris/default-theme/metatris-bg.png
+share/gnome/metatris/default-theme/metatris-piece-00-01.png
+share/gnome/metatris/default-theme/metatris-piece-00-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-00.png
+share/gnome/metatris/default-theme/metatris-piece-02-01.png
+share/gnome/metatris/default-theme/metatris-piece-02-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-02.png
+share/gnome/metatris/default-theme/metatris-piece-08-01.png
+share/gnome/metatris/default-theme/metatris-piece-08-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-08.png
+share/gnome/metatris/default-theme/metatris-piece-0a-01.png
+share/gnome/metatris/default-theme/metatris-piece-0a-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-0a.png
+share/gnome/metatris/default-theme/metatris-piece-0e-01.png
+share/gnome/metatris/default-theme/metatris-piece-0e-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-0e.png
+share/gnome/metatris/default-theme/metatris-piece-20-01.png
+share/gnome/metatris/default-theme/metatris-piece-20-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-20.png
+share/gnome/metatris/default-theme/metatris-piece-22-01.png
+share/gnome/metatris/default-theme/metatris-piece-22-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-22.png
+share/gnome/metatris/default-theme/metatris-piece-28-01.png
+share/gnome/metatris/default-theme/metatris-piece-28-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-28.png
+share/gnome/metatris/default-theme/metatris-piece-2a-01.png
+share/gnome/metatris/default-theme/metatris-piece-2a-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-2a.png
+share/gnome/metatris/default-theme/metatris-piece-38-01.png
+share/gnome/metatris/default-theme/metatris-piece-38-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-38.png
+share/gnome/metatris/default-theme/metatris-piece-3e-01.png
+share/gnome/metatris/default-theme/metatris-piece-3e-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-3e.png
+share/gnome/metatris/default-theme/metatris-piece-80-01.png
+share/gnome/metatris/default-theme/metatris-piece-80-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-80.png
+share/gnome/metatris/default-theme/metatris-piece-82-01.png
+share/gnome/metatris/default-theme/metatris-piece-82-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-82.png
+share/gnome/metatris/default-theme/metatris-piece-83-01.png
+share/gnome/metatris/default-theme/metatris-piece-83-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-83.png
+share/gnome/metatris/default-theme/metatris-piece-88-01.png
+share/gnome/metatris/default-theme/metatris-piece-88-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-88.png
+share/gnome/metatris/default-theme/metatris-piece-8a-01.png
+share/gnome/metatris/default-theme/metatris-piece-8a-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-8a.png
+share/gnome/metatris/default-theme/metatris-piece-8f-01.png
+share/gnome/metatris/default-theme/metatris-piece-8f-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-8f.png
+share/gnome/metatris/default-theme/metatris-piece-a0-01.png
+share/gnome/metatris/default-theme/metatris-piece-a0-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-a0.png
+share/gnome/metatris/default-theme/metatris-piece-a2-01.png
+share/gnome/metatris/default-theme/metatris-piece-a2-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-a2.png
+share/gnome/metatris/default-theme/metatris-piece-a8-01.png
+share/gnome/metatris/default-theme/metatris-piece-a8-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-a8.png
+share/gnome/metatris/default-theme/metatris-piece-e0-01.png
+share/gnome/metatris/default-theme/metatris-piece-e0-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-e0.png
+share/gnome/metatris/default-theme/metatris-piece-e3-01.png
+share/gnome/metatris/default-theme/metatris-piece-e3-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-e3.png
+share/gnome/metatris/default-theme/metatris-piece-f8-01.png
+share/gnome/metatris/default-theme/metatris-piece-f8-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-f8.png
+share/gnome/metatris/default-theme/metatris-piece-ff-01.png
+share/gnome/metatris/default-theme/metatris-piece-ff-yellow.png
+share/gnome/metatris/default-theme/metatris-piece-ff.png
+share/gnome/metatris/default-theme/metatris.png
+share/gnome/metatris/default-theme/metatris.theme
 share/gnome/pixmaps/cards/backs/beige.png
 share/gnome/pixmaps/cards/backs/face.png
 share/gnome/pixmaps/cards/backs/grey.png
@@ -91,6 +227,15 @@ share/gnome/pixmaps/gnobots/mice.png
 share/gnome/pixmaps/gnobots/robots.png
 share/gnome/pixmaps/gnobots/windows.png
 share/gnome/pixmaps/gnobots/yahoo.png
+share/gnome/pixmaps/gnobots2/aieee.png
+share/gnome/pixmaps/gnobots2/cows.png
+share/gnome/pixmaps/gnobots2/eggs.png
+share/gnome/pixmaps/gnobots2/gnomes.png
+share/gnome/pixmaps/gnobots2/mice.png
+share/gnome/pixmaps/gnobots2/robots.png
+share/gnome/pixmaps/gnobots2/splat.png
+share/gnome/pixmaps/gnobots2/windows.png
+share/gnome/pixmaps/gnobots2/yahoo.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png
@@ -105,13 +250,14 @@ share/gnome/pixmaps/gnome-stones/frame.png
 share/gnome/pixmaps/gnome-stones/gnome.png
 share/gnome/pixmaps/gnome-stones/title.png
 share/gnome/pixmaps/gnome-stones/wall.png
-share/gnome/pixmaps/gnothello/blend.png
-share/gnome/pixmaps/gnothello/classic.png
-share/gnome/pixmaps/gnothello/flipblend.png
-share/gnome/pixmaps/gnothello/metal.png
-share/gnome/pixmaps/gnothello/metal2.png
-share/gnome/pixmaps/gnothello/shrink.png
-share/gnome/pixmaps/gnothello/woodtrim.png
+share/gnome/pixmaps/gnometris/5blocks.png
+share/gnome/pixmaps/iagno/blend.png
+share/gnome/pixmaps/iagno/classic.png
+share/gnome/pixmaps/iagno/flipblend.png
+share/gnome/pixmaps/iagno/metal.png
+share/gnome/pixmaps/iagno/metal2.png
+share/gnome/pixmaps/iagno/shrink.png
+share/gnome/pixmaps/iagno/woodtrim.png
 share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/seta.png
@@ -122,10 +268,13 @@ share/gnome/pixmaps/same-gnome/rotate.png
 share/gnome/pixmaps/same-gnome/stones.png
 share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-gnobots.png
+share/gnome/pixmaps/gnome-gnobots2.png
+share/gnome/pixmaps/gnome-gtetris.png
 share/gnome/pixmaps/gnome-gyahtzee.png
 share/gnome/pixmaps/gnome-mahjongg.png
+share/gnome/pixmaps/gnome-metatris.png
 share/gnome/pixmaps/gnome-stones.png
-share/gnome/pixmaps/gnothello.png
+share/gnome/pixmaps/iagno.png
 share/gnome/sol-games/beleaguered_castle.scm
 share/gnome/sol-games/camelot.scm
 share/gnome/sol-games/canfield.scm
@@ -142,6 +291,12 @@ share/gnome/sol-games/pileon.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
 share/gnome/sol-games/yukon.scm
+share/gnome/sounds/gnobots2/bad.wav
+share/gnome/sounds/gnobots2/die.wav
+share/gnome/sounds/gnobots2/splat.wav
+share/gnome/sounds/gnobots2/teleport.wav
+share/gnome/sounds/gnobots2/victory.wav
+share/gnome/sounds/gnobots2/yahoo.wav
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
 share/locale/de/LC_MESSAGES/gnome-games.mo
@@ -155,9 +310,21 @@ share/locale/ko/LC_MESSAGES/gnome-games.mo
 share/locale/no/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
+share/locale/ru/LC_MESSAGES/gnome-games.mo
 @dirrm include/gdkcardimage
+@dirrm share/gnome/help/aisleriot/C
+@dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/help/gnobots/C
+@dirrm share/gnome/help/gnobots/es
 @dirrm share/gnome/help/gnobots
+@dirrm share/gnome/help/gnobots2/C
+@dirrm share/gnome/help/gnobots2/es
+@dirrm share/gnome/help/gnobots2
+@dirrm share/gnome/help/samegnome/C
+@dirrm share/gnome/help/samegnome
+@dirrm share/gnome/gnobots2
+@dirrm share/gnome/metatris/default-theme
+@dirrm share/gnome/metatris
 @dirrm share/gnome/pixmaps/cards/backs
 @dirrm share/gnome/pixmaps/cards/honors
 @dirrm share/gnome/pixmaps/cards/jokers
@@ -166,11 +333,14 @@ share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/cards/suits
 @dirrm share/gnome/pixmaps/cards
 @dirrm share/gnome/pixmaps/gnobots
+@dirrm share/gnome/pixmaps/gnobots2
 @dirrm share/gnome/pixmaps/gnome-stones
-@dirrm share/gnome/pixmaps/gnothello
+@dirrm share/gnome/pixmaps/gnometris
 @dirrm share/gnome/pixmaps/gnotravex
+@dirrm share/gnome/pixmaps/iagno
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/same-gnome
 @dirrm share/gnome/sol-games
+@dirrm share/gnome/sounds/gnobots2
 @dirrm share/gnome/gnome-stones/objects
 @dirrm share/gnome/gnome-stones
