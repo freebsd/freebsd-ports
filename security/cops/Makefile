@@ -8,7 +8,7 @@
 PORTNAME=	cops
 PORTVERSION=	1.04
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/
+MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/cops/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/cops_104
