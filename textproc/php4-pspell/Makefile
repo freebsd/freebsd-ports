@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
-
 CATEGORIES=	textproc
 
 MASTERDIR=	${.CURDIR}/../../lang/php4
