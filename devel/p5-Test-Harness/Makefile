@@ -16,6 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
 MAN1=		prove.1
 MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
