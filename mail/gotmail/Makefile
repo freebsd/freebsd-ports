@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://ssl.usu.edu/paul/gotmail/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
