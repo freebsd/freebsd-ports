@@ -1,0 +1,11 @@
+--- Config.h.orig	Wed Jan 13 19:28:43 1999
++++ Config.h	Wed May  5 14:05:01 1999
+@@ -86,7 +86,7 @@
+ // middle-button menu
+ #define CONFIG_COMMAND_MENU       ".wmx"
+ // only used if COMMAND_MENU is not found; ignored if invalid directory:
+-#define CONFIG_SYSTEM_COMMAND_MENU	"/usr/local/lib/wmx/menu"
++#define CONFIG_SYSTEM_COMMAND_MENU	"%%PREFIX%%/lib/wmx/menu"
+ 
+ // Focus possibilities.
+ // 
