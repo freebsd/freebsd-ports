@@ -71,6 +71,8 @@ SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
 
 .if !defined(WITHOUT_TLS)
 SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
+.else
+SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 .endif
 
 .if !defined(WITHOUT_PERL)
