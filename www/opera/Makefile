@@ -21,6 +21,7 @@ MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${
 		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
 		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
 		ftp://files.downloadthat.com/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/&,} \
 		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
