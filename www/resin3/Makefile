@@ -6,17 +6,17 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.9
+PORTVERSION=		3.0.11
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
 MAINTAINER=		jb.quenot@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
-USE_JAVA=		1.2+
+USE_JAVA=		yes
+JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
-USE_GMAKE=		yes
-USE_PERL5_RUN=		yes
+USE_PYTHON=		yes
 USE_REINPLACE=		yes
 
 # Customizable settings
@@ -33,11 +33,11 @@ LATEST_LINK=		${APP_NAME}
 APP_HOME?=		${PREFIX}/${APP_NAME}
 WITH_APACHE?=		NO
 WITH_APACHE2?=		NO
-PID_FILE?=		/var/run/${APP_NAME}.pid
+PID_FILE?=		${APP_HOME}/${APP_NAME}.pid
+LOG_FILE?=		${APP_HOME}/${APP_NAME}.log
 
 # Other settings
 APXS?=			${LOCALBASE}/sbin/apxs
-MOD_DIR?=		`${APXS} -q LIBEXECDIR`
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 PKGMESSAGE=		${WRKDIR}/pkg-message
@@ -51,9 +51,9 @@ REPLACE_FILES=		${FILESDIR}/pkg-install \
 			${FILESDIR}/install.sh \
 			${FILESDIR}/pkg-message.in \
 			${WRKSRC}/conf/resin.conf \
-			${WRKSRC}/bin/wrapper.pl.in \
+			${FILESDIR}/resinctl \
 			${FILESDIR}/resin.sh.in
-COPYDIRS=		lib webapps
+COPYDIRS=		lib libexec webapps
 
 .include <bsd.port.pre.mk>
 
@@ -88,14 +88,6 @@ PLIST_SUB+=		APACHE="@comment "
 PLIST_SUB+=		APP_NAME=${APP_NAME}
 PLIST_SUB+=		APXS=${APXS}
 
-.if ((defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)) \
-|| (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES)))
-LIBEXECDIR!=		${APXS} -q LIBEXECDIR
-SYSCONFDIR!=		${APXS} -q SYSCONFDIR
-CONFIGURE_ARGS+=	--with-apache-libexec=${LIBEXECDIR}
-CONFIGURE_ARGS+=	--with-apache-conf=${SYSCONFDIR}
-.endif
-
 SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%APP_NAME%%|${APP_NAME}|g" \
 			-e "s|%%APXS%%|${APXS}|g" \
@@ -104,7 +96,9 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%GROUP%%|${GROUP}|g" \
 			-e "s|%%GID%%|${GID}|g" \
 			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
-			-e "s|%%PERL%%|${PERL}|g" \
+			-e "s|%%JAVA%%|${JAVA}|g" \
+			-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
+			-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g" \
 			-e "s|%%PID_FILE%%|${PID_FILE}|g" \
 			-e "s|%%PORT%%|${PORT}|g" \
 			-e "s|%%PORTNAME%%|${PORTNAME}|g" \
@@ -116,39 +110,38 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 
 post-patch:
 .for FILE in ${REINPLACE_FILES}
-			@${REINPLACE_CMD} ${SUBSTITUTIONS} ${FILE}
+	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${FILE}
 .endfor
 .for FILE in ${REPLACE_FILES}
-			@${SED} ${SUBSTITUTIONS} ${FILE} > ${WRKDIR}/`basename ${FILE}`
+	@${SED} ${SUBSTITUTIONS} ${FILE} > ${WRKDIR}/`basename ${FILE}`
 .endfor
-			@fmt -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${FMT} -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES) || \
 defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
-			@${ECHO_CMD} >> ${PKGMESSAGE}
-			@${ECHO_CMD} The Resin Apache module mod_caucho has been activated \
-			    in the Apache configuration file, where you should also \
-			    add a line to specify the location of the Resin configuration \
-			    server, for example: | fmt -w 80 >> ${PKGMESSAGE}
-			@${ECHO_CMD} >> ${PKGMESSAGE}
-			@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+	@${ECHO_CMD} The Resin Apache module mod_caucho has been activated \
+	    in the Apache configuration file, where you should also \
+	    add a line to specify the location of the Resin configuration \
+	    server, for example: | ${FMT} -w 80 >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+	@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
-			@${ECHO_CMD} "    ResinConfigServer localhost 6802" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "    ResinConfigServer localhost 6802" >> ${PKGMESSAGE}
 .endif
 .if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 			@${ECHO_CMD} "    CauchoConfigFile ${PREFIX}/etc/${APP_NAME}/resin.xml" >> ${PKGMESSAGE}
 .endif
 			@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
-			@${MV} ${WRKDIR}/wrapper.pl.in ${WRKSRC}/bin/wrapper.pl.in
 
 # Resin does not handle installation, so proceed now
 post-install:
-			@${SH} ${WRKDIR}/install.sh
-			@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-			@${ECHO_CMD}
-			@${ECHO_CMD} "********************************************************************************"
-			@${CAT} ${PKGMESSAGE}
-			@${ECHO_CMD} "********************************************************************************"
-			@${ECHO_CMD}
+	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_CMD}
+	@${ECHO_CMD} "********************************************************************************"
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "********************************************************************************"
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

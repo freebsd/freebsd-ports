@@ -1,4 +1,6 @@
 #! /bin/sh
+#
+# $FreeBSD$
 
 set -e
 
@@ -33,7 +35,7 @@ install %%WRKDIR%%/resin.sh.in %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh
 chmod 755 %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh
 echo Installed %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh
 
-install %%WRKSRC%%/bin/wrapper.pl %%PREFIX%%/sbin/%%APP_NAME%%ctl
+install %%WRKDIR%%/resinctl %%PREFIX%%/sbin/%%APP_NAME%%ctl
 echo Installed %%PREFIX%%/sbin/%%APP_NAME%%ctl
 
 test -d %%APP_HOME%% || mkdir %%APP_HOME%%
@@ -50,4 +52,4 @@ list()
 ( cd %%WRKSRC%% && find %%COPYDIRS%% -type d -empty -delete )
 
 echo Installing in %%APP_HOME%%
-list | xargs tar -C %%WRKSRC%% -cf- | tar -C %%APP_HOME%% -xpf-
+list | ( cd %%WRKSRC%% && cpio -pdm -L -R $RUNASUSER:$GROUP %%APP_HOME%% )
