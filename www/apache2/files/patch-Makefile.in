@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Aug 26 15:01:18 2004
-+++ Makefile.in	Fri Dec 17 17:00:02 2004
+--- Makefile.in.orig	Wed Nov 24 20:31:09 2004
++++ Makefile.in	Sat Feb  5 12:04:56 2005
 @@ -31,15 +31,21 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
@@ -60,7 +60,7 @@
  
  install-build:
  	@echo Installing build system files 
-@@ -108,45 +111,41 @@
+@@ -108,44 +111,40 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -70,16 +70,17 @@
 -	    echo Installing HTML documents ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir) ; \
 -	    test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
--	    cd $(DESTDIR)$(htdocsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	    cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
+-
 +.if !defined(NO_WWWDATA)
 +	@echo Installing HTML documents
 +	@test -d $(DESTDIR)$(htdocsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir)-dist
 +	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)-dist)
 +	@test -e $(DESTDIR)$(htdocsdir) || ln -sf $(DESTDIR)$(htdocsdir)-dist $(DESTDIR)$(htdocsdir)
-+	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir)-dist && find . -name "CVS" -print | xargs rm -rf
++	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir)-dist && find -name "CVS" -print | xargs rm -rf
 +.endif
- 
++  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
 -           echo "[PRESERVING EXISTING ERROR SUBDIR: $(DESTDIR)$(errordir)]"; \
@@ -87,8 +88,9 @@
 -	    echo Installing error documents ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(errordir) ; \
 -	    cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir) ; \
--	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
+-
 +.if !defined(NO_ERROR)
 +	@echo Installing error documents
 +	@test -d $(DESTDIR)$(errordir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(errordir)-dist
@@ -96,7 +98,7 @@
 +	-@test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(errordir) || ln -sf $(DESTDIR)$(errordir)-dist $(DESTDIR)$(errordir)
 +.endif
- 
++  
  install-icons:
 -	-@if [ -d $(DESTDIR)$(iconsdir) ]; then \
 -           echo "[PRESERVING EXISTING ICONS SUBDIR: $(DESTDIR)$(iconsdir)]"; \
@@ -104,8 +106,9 @@
 -	    echo Installing icons ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir) ; \
 -	    cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir) ; \
--	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
+-
 +.if !defined(NO_ICONS)
 +	@echo Installing icons
 +	@test -d $(DESTDIR)$(iconsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir)-dist
@@ -113,7 +116,7 @@
 +	-@test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(iconsdir) || ln -sf $(DESTDIR)$(iconsdir)-dist $(DESTDIR)$(iconsdir)
 +.endif 
- 
++  
  install-cgi:
 -	-@if [ -d $(DESTDIR)$(cgidir) ];then \
 -	    echo "[PRESERVING EXISTING CGI SUBDIR: $(DESTDIR)$(cgidir)]"; \
@@ -121,9 +124,8 @@
 -	   echo Installing CGIs ; \
 -	   $(MKINSTALLDIRS) $(DESTDIR)$(cgidir) ; \
 -	   cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir) ; \
--	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
--
 +.if !defined(NO_CGI)
 +	@echo Installing CGIs
 +	@test -d $(DESTDIR)$(cgidir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir)-dist
@@ -131,21 +133,17 @@
 +	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(cgidir) || ln -sf $(DESTDIR)$(cgidir)-dist $(DESTDIR)$(cgidir)
 +.endif
-+ 
+ 
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
- 	@test -d $(DESTDIR)$(runtimedir) || $(MKINSTALLDIRS) $(DESTDIR)$(runtimedir)
-@@ -188,11 +187,13 @@
- 	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
- 	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
- 	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
--	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
+@@ -191,8 +190,11 @@
+ 	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
 +.if !defined(NOPORTDOCS)
-+	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
++	 @test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@(cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir))
- 	@(cd $(DESTDIR)$(manualdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null ) || true
+ 	@(cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null ) || true
 +.endif
  
  install-suexec:
