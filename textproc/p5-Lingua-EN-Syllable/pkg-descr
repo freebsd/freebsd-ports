@@ -1,0 +1,6 @@
+Lingua::EN::Syllable::syllable() estimates the number of syllables
+in the word passed to it.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Syllable
+
+Seamus Venasse <svenasse@polaris.ca>
