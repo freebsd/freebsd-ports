@@ -8,7 +8,8 @@
 PORTNAME=	commons-dbcp
 PORTVERSION=	1.1
 CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/commons/dbcp/source/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/dbcp/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DIST_SUBDIR=	jakarta
@@ -19,10 +20,10 @@ COMMENT=	The DBCP Component
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${JAVAJARDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
 ANT_TARGET=	build-jar
@@ -34,13 +35,15 @@ JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
 DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
 
 post-patch:
 	@${CP} ${WRKSRC}/LICENSE.txt ${WRKSRC}/../LICENSE
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
+		${SETENV} JAVA_HOME=${JAVA_HOME} ANT_INCLUDE_SHARED_JARS=YES \
+			${ANT} ${ANT_TARGET}
 
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
