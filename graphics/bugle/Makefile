@@ -19,6 +19,7 @@ MAN3=		bugle.3
 
 USE_GCC=	3.4
 USE_GL=		yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
