@@ -28,7 +28,7 @@ required_files=%%PREFIX%%/etc/freshclam.conf
 # set defaults
 
 clamav_freshclam_enable=${clamav_freshclam_enable:-"NO"}
-clamav_freshclam_flags=${clamav_freshclam_flags:-"--daemon-notify=%%PREFIX%%/etc/clamav.conf"}
+clamav_freshclam_flags=${clamav_freshclam_flags:-"--pid=/var/run/clamav/freshclam.pid --daemon-notify=%%PREFIX%%/etc/clamav.conf"}
 
 load_rc_config $name
 
