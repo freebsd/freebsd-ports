@@ -1,0 +1,52 @@
+bin/m6811-elf-size
+bin/m6811-elf-objdump
+bin/m6811-elf-ar
+bin/m6811-elf-strings
+bin/m6811-elf-ranlib
+bin/m6811-elf-c++filt
+bin/m6811-elf-objcopy
+bin/m6811-elf-addr2line
+bin/m6811-elf-nm
+bin/m6811-elf-strip
+bin/m6811-elf-as
+bin/m6811-elf-gasp
+bin/m6811-elf-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+info/dir
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+m6811-elf/bin/nm
+m6811-elf/bin/strip
+m6811-elf/bin/ar
+m6811-elf/bin/ranlib
+m6811-elf/bin/as
+m6811-elf/bin/ld
+m6811-elf/lib/ldscripts/m68hc11elf.x
+m6811-elf/lib/ldscripts/m68hc11elf.xbn
+m6811-elf/lib/ldscripts/m68hc11elf.xn
+m6811-elf/lib/ldscripts/m68hc11elf.xr
+m6811-elf/lib/ldscripts/m68hc11elf.xu
+m6811-elf/lib/ldscripts/m68hc11elfb.x
+m6811-elf/lib/ldscripts/m68hc11elfb.xbn
+m6811-elf/lib/ldscripts/m68hc11elfb.xn
+m6811-elf/lib/ldscripts/m68hc11elfb.xr
+m6811-elf/lib/ldscripts/m68hc11elfb.xu
+m6811-elf/lib/ldscripts/m68hc12elf.x
+m6811-elf/lib/ldscripts/m68hc12elf.xbn
+m6811-elf/lib/ldscripts/m68hc12elf.xn
+m6811-elf/lib/ldscripts/m68hc12elf.xr
+m6811-elf/lib/ldscripts/m68hc12elf.xu
+m6811-elf/lib/ldscripts/m68hc12elfb.x
+m6811-elf/lib/ldscripts/m68hc12elfb.xbn
+m6811-elf/lib/ldscripts/m68hc12elfb.xn
+m6811-elf/lib/ldscripts/m68hc12elfb.xr
+m6811-elf/lib/ldscripts/m68hc12elfb.xu
+@dirrm m6811-elf/lib/ldscripts
+@dirrm m6811-elf/lib
+@dirrm m6811-elf/bin
+@dirrm m6811-elf
