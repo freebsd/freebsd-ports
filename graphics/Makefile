@@ -206,6 +206,7 @@
     SUBDIR += vcdgear
     SUBDIR += vcg
     SUBDIR += vid
+    SUBDIR += view3ds
     SUBDIR += whirlgif
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
