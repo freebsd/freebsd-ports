@@ -1,5 +1,5 @@
---- lib/device.c.orig	Sat Jan 24 01:52:56 2004
-+++ lib/device.c	Sun Jan 25 00:07:02 2004
+--- lib/device.c.orig	Sat Jan 17 18:57:57 2004
++++ lib/device.c	Sat Jan 31 06:32:24 2004
 @@ -78,6 +78,12 @@
  # include <sys/ioctl.h>		/* ioctl */
  # include <sys/disklabel.h>
@@ -13,7 +13,26 @@
  #endif /* __FreeBSD__ || __NetBSD__ || __OpenBSD__ */
  
  #ifdef HAVE_OPENDISK
-@@ -123,6 +129,7 @@
+@@ -94,8 +100,16 @@
+ {
+   int fd;
+ 
+-  fd = open (map[drive], O_RDONLY);
+-  assert (fd >= 0);
++#if defined(__FreeBSD__)
++  if(geom->flags == -1)
++  {
++#endif
++      fd = open (map[drive], O_RDONLY);
++      assert (fd >= 0);
++#if defined(__FreeBSD__)
++  } else
++      fd = geom->flags;
++#endif
+ 
+ #if defined(__linux__)
+   /* Linux */
+@@ -123,6 +137,7 @@
    /* FreeBSD, NetBSD or OpenBSD */
    {
      struct disklabel hdg;
@@ -21,10 +40,11 @@
      if (ioctl (fd, DIOCGDINFO, &hdg))
        goto fail;
      
-@@ -131,6 +138,38 @@
+@@ -131,7 +146,40 @@
      geom->sectors = hdg.d_nsectors;
      geom->total_sectors = hdg.d_secperunit;
  
+-    close (fd);
 +#else
 +    u_int    u, secsize;
 +    off_t    mediasize;
@@ -57,10 +77,24 @@
 +    geom->sectors = hdg.d_nsectors;
 +    geom->total_sectors = hdg.d_secperunit;
 +#endif
-     close (fd);
++    if(geom->flags == -1)
++	close (fd);
      return;
    }
-@@ -233,7 +272,7 @@
+   
+@@ -203,7 +251,11 @@
+   sprintf (name, "/dev/fd%d", unit);
+ #elif defined(__FreeBSD__)
+   /* FreeBSD */
++#if __FreeBSD__ >= 4
++  sprintf (name, "/dev/fd%d", unit);
++#else
+   sprintf (name, "/dev/rfd%d", unit);
++#endif
+ #elif defined(__NetBSD__)
+   /* NetBSD */
+   /* opendisk() doesn't work for floppies.  */
+@@ -233,7 +285,7 @@
  #elif defined(__FreeBSD__)
    /* FreeBSD */
  # if __FreeBSD__ >= 4
@@ -69,7 +103,7 @@
  # else /* __FreeBSD__ <= 3 */
    sprintf (name, "/dev/rwd%d", unit);
  # endif /* __FreeBSD__ <= 3 */
-@@ -274,7 +313,11 @@
+@@ -274,7 +326,11 @@
    sprintf (name, "/dev/sd%d", unit);
  #elif defined(__FreeBSD__)
    /* FreeBSD */
