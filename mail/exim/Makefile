@@ -49,8 +49,11 @@ USE_XLIB=	yes
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_PERL5=	yes
 USE_REINPLACE=	yes
+
+.if !defined(WITHOUT_PERL)
+USE_PERL5=	yes
+.endif
 
 .if !defined(EXIMON_ONLY)
 MAN8=		exim.8
