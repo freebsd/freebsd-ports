@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vertex
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
