@@ -89,6 +89,84 @@ share/siag/common/bitmaps/viewmode.xpm
 share/siag/common/bitmaps/xedplus.xpm
 share/siag/common/bitmaps/xfiler.xpm
 share/siag/common/bitmaps/xterm16.xpm
+share/siag/common/bitmaps/addressbook.xpm
+share/siag/common/bitmaps/composer.xpm
+share/siag/common/bitmaps/ctab.xpm
+share/siag/common/bitmaps/gnome/handlebg.xpm
+share/siag/common/bitmaps/gnome/hfull.xpm
+share/siag/common/bitmaps/gnome/preview.xpm
+share/siag/common/bitmaps/hfull.xpm
+share/siag/common/bitmaps/kde/handlebg.xpm
+share/siag/common/bitmaps/kde2/back.xpm
+share/siag/common/bitmaps/kde2/bold.xpm
+share/siag/common/bitmaps/kde2/borders.xpm
+share/siag/common/bitmaps/kde2/cancel.xpm
+share/siag/common/bitmaps/kde2/copy.xpm
+share/siag/common/bitmaps/kde2/cut.xpm
+share/siag/common/bitmaps/kde2/editor.xpm
+share/siag/common/bitmaps/kde2/fld_new.xpm
+share/siag/common/bitmaps/kde2/fld_open.xpm
+share/siag/common/bitmaps/kde2/fld_up.xpm
+share/siag/common/bitmaps/kde2/forward.xpm
+share/siag/common/bitmaps/kde2/grid.xpm
+share/siag/common/bitmaps/kde2/handlebg.xpm
+share/siag/common/bitmaps/kde2/hcenter.xpm
+share/siag/common/bitmaps/kde2/hfull.xpm
+share/siag/common/bitmaps/kde2/hleft.xpm
+share/siag/common/bitmaps/kde2/home.xpm
+share/siag/common/bitmaps/kde2/hright.xpm
+share/siag/common/bitmaps/kde2/info.xpm
+share/siag/common/bitmaps/kde2/italic.xpm
+share/siag/common/bitmaps/kde2/larger.xpm
+share/siag/common/bitmaps/kde2/lline.xpm
+share/siag/common/bitmaps/kde2/new.xpm
+share/siag/common/bitmaps/kde2/none.xpm
+share/siag/common/bitmaps/kde2/paste.xpm
+share/siag/common/bitmaps/kde2/preview.xpm
+share/siag/common/bitmaps/kde2/printer.xpm
+share/siag/common/bitmaps/kde2/quit.xpm
+share/siag/common/bitmaps/kde2/redo.xpm
+share/siag/common/bitmaps/kde2/reload.xpm
+share/siag/common/bitmaps/kde2/rline.xpm
+share/siag/common/bitmaps/kde2/save.xpm
+share/siag/common/bitmaps/kde2/saveas.xpm
+share/siag/common/bitmaps/kde2/security.xpm
+share/siag/common/bitmaps/kde2/sigma.xpm
+share/siag/common/bitmaps/kde2/smaller.xpm
+share/siag/common/bitmaps/kde2/spell.xpm
+share/siag/common/bitmaps/kde2/stop.xpm
+share/siag/common/bitmaps/kde2/uchar.xpm
+share/siag/common/bitmaps/kde2/uline.xpm
+share/siag/common/bitmaps/kde2/undo.xpm
+share/siag/common/bitmaps/ltab.xpm
+share/siag/common/bitmaps/mail.xpm
+share/siag/common/bitmaps/ms/bold.xpm
+share/siag/common/bitmaps/ms/copy.xpm
+share/siag/common/bitmaps/ms/cut.xpm
+share/siag/common/bitmaps/ms/fld_open.xpm
+share/siag/common/bitmaps/ms/handlebg.xpm
+share/siag/common/bitmaps/ms/hcenter.xpm
+share/siag/common/bitmaps/ms/hfull.xpm
+share/siag/common/bitmaps/ms/hleft.xpm
+share/siag/common/bitmaps/ms/hright.xpm
+share/siag/common/bitmaps/ms/italic.xpm
+share/siag/common/bitmaps/ms/new.xpm
+share/siag/common/bitmaps/ms/paste.xpm
+share/siag/common/bitmaps/ms/plotter.xpm
+share/siag/common/bitmaps/ms/printer.xpm
+share/siag/common/bitmaps/ms/redo.xpm
+share/siag/common/bitmaps/ms/save.xpm
+share/siag/common/bitmaps/ms/saveas.xpm
+share/siag/common/bitmaps/ms/sigma.xpm
+share/siag/common/bitmaps/ms/sortaz.xpm
+share/siag/common/bitmaps/ms/sortza.xpm
+share/siag/common/bitmaps/ms/undo.xpm
+share/siag/common/bitmaps/navigator.xpm
+share/siag/common/bitmaps/news.xpm
+share/siag/common/bitmaps/rtab.xpm
+share/siag/common/bitmaps/security.xpm
+share/siag/common/bitmaps/strike.xpm
+share/siag/common/bitmaps/table.xpm
 share/siag/common/bitmaps/gnome/back.xpm
 share/siag/common/bitmaps/gnome/bold.xpm
 share/siag/common/bitmaps/gnome/cancel.xpm
@@ -141,8 +219,66 @@ share/siag/common/bitmaps/kde/saveas.xpm
 share/siag/common/bitmaps/kde/search.xpm
 share/siag/common/bitmaps/kde/smaller.xpm
 share/siag/common/bitmaps/kde/stop.xpm
+share/siag/common/fonts/agd.afm
+share/siag/common/fonts/agdo.afm
+share/siag/common/fonts/agw.afm
+share/siag/common/fonts/agwo.afm
+share/siag/common/fonts/bchb.afm
+share/siag/common/fonts/bchb.pfb
+share/siag/common/fonts/bchbi.afm
+share/siag/common/fonts/bchbi.pfb
+share/siag/common/fonts/bchr.afm
+share/siag/common/fonts/bchr.pfb
+share/siag/common/fonts/bchri.afm
+share/siag/common/fonts/bchri.pfb
+share/siag/common/fonts/bkd.afm
+share/siag/common/fonts/bkdi.afm
+share/siag/common/fonts/bkl.afm
+share/siag/common/fonts/bkli.afm
+share/siag/common/fonts/cob.afm
+share/siag/common/fonts/cobo.afm
+share/siag/common/fonts/com.afm
+share/siag/common/fonts/coo.afm
+share/siag/common/fonts/hv.afm
+share/siag/common/fonts/hvb.afm
+share/siag/common/fonts/hvbo.afm
+share/siag/common/fonts/hvn.afm
+share/siag/common/fonts/hvnb.afm
+share/siag/common/fonts/hvnbo.afm
+share/siag/common/fonts/hvno.afm
+share/siag/common/fonts/hvo.afm
+share/siag/common/fonts/ncb.afm
+share/siag/common/fonts/ncbi.afm
+share/siag/common/fonts/nci.afm
+share/siag/common/fonts/ncr.afm
+share/siag/common/fonts/pob.afm
+share/siag/common/fonts/pobi.afm
+share/siag/common/fonts/poi.afm
+share/siag/common/fonts/por.afm
+share/siag/common/fonts/sy.afm
+share/siag/common/fonts/tib.afm
+share/siag/common/fonts/tibi.afm
+share/siag/common/fonts/tii.afm
+share/siag/common/fonts/tir.afm
+share/siag/common/fonts/tnrl2___.afm
+share/siag/common/fonts/tnrl2___.pfb
+share/siag/common/fonts/tnrl2b__.afm
+share/siag/common/fonts/tnrl2b__.pfb
+share/siag/common/fonts/tnrl2bi_.afm
+share/siag/common/fonts/tnrl2bi_.pfb
+share/siag/common/fonts/tnrl2i__.afm
+share/siag/common/fonts/tnrl2i__.pfb
+share/siag/common/fonts/uhvb8a.afm
+share/siag/common/fonts/uhvbo8a.afm
+share/siag/common/fonts/uhvr8a.afm
+share/siag/common/fonts/uhvro8a.afm
+share/siag/common/fonts/utmb8a.afm
+share/siag/common/fonts/utmbi8a.afm
+share/siag/common/fonts/utmr8a.afm
+share/siag/common/fonts/utmri8a.afm
+share/siag/common/fonts/zcmi.afm
+share/siag/common/fonts/zd.afm
 share/siag/common/any2xpm
-share/siag/common/readpfa
 share/siag/common/common.scm
 share/siag/common/position.scm
 share/siag/common/tools.scm
@@ -150,6 +286,9 @@ share/siag/common/t1lib.config
 share/siag/common/FontDataBase
 share/siag/common/IsoLatin1.enc
 share/siag/common/IsoLatin2.enc
+share/siag/common/dictionary.hu
+share/siag/common/dictionary.it
+share/siag/common/dictionary.pt_BR
 share/siag/common/dictionary.sv
 share/siag/common/dictionary.es
 share/siag/common/dictionary.de
@@ -158,14 +297,21 @@ share/siag/common/dictionary.no
 share/siag/common/dictionary.hr
 share/siag/common/dictionary.da
 share/siag/common/dictionary.pl
+share/siag/common/themes/theme.classic
+share/siag/common/themes/theme.gnome
+share/siag/common/themes/theme.kde
+share/siag/common/themes/theme.kde2
+share/siag/common/themes/theme.ms
 share/siag/xcommon/StringDefs.scm
 share/siag/xcommon/form.scm
 share/siag/siag/123.scm
+share/siag/siag/ccmath.scm
 share/siag/siag/data.scm
 share/siag/siag/external.load
 share/siag/siag/external.save
 share/siag/siag/filemgr.scm
 share/siag/siag/find.scm
+share/siag/siag/functions.scm
 share/siag/siag/keytable.scm
 share/siag/siag/mailto.scm
 share/siag/siag/menu.scm
@@ -178,6 +324,7 @@ share/siag/siag/splot.scm
 share/siag/siag/styles.scm
 share/siag/siag/usermgr.scm
 share/siag/siag/toolbar.scm
+share/siag/siag/trans.scm
 share/siag/pw/external.load
 share/siag/pw/external.save
 share/siag/pw/menu.scm
@@ -193,18 +340,17 @@ share/siag/plugins/plugin.scm
 share/siag/xfiler/FilesMagic
 share/siag/xfiler/Filesrc
 share/siag/xfiler/makeicons
-libexec/siag/plugins/dummy
-libexec/siag/plugins/image
-libexec/siag/plugins/hello
-libexec/siag/plugins/plot
-libexec/siag/plugins/text
-libexec/siag/plugins/form
-libexec/siag/plugins/clipart
+lib/siag/plugins/dummy
+lib/siag/plugins/image
+lib/siag/plugins/hello
+lib/siag/plugins/plot
+lib/siag/plugins/text
+lib/siag/plugins/form
+lib/siag/plugins/clipart
 share/doc/siag/siod/siod.html
 share/doc/siag/common/COPYING.LIB
 share/doc/siag/common/Copyright
 share/doc/siag/common/credits.html
-share/doc/siag/common/embedding.html
 share/doc/siag/common/form.html
 share/doc/siag/common/interpreters.html
 share/doc/siag/common/office.html
@@ -239,12 +385,18 @@ share/doc/siag/common/bitmaps/uchar.gif
 share/doc/siag/common/bitmaps/uline.gif
 share/doc/siag/common/bitmaps/vbottom.gif
 share/doc/siag/common/bitmaps/vtop.gif
-share/doc/siag/xcommon/TODO
 share/doc/siag/xcommon/filesel.html
 share/doc/siag/xcommon/form.scm
-share/doc/siag/siag/BUGS
+share/doc/siag/common/fonts.html
+share/doc/siag/siag/excel.html
+share/doc/siag/siag/siag-functions.html
+share/doc/siag/siag/examples/allfunctions.siag
+share/doc/siag/siag/examples/complex.siag
+share/doc/siag/siag/examples/database.siag
+share/doc/siag/siag/examples/gmp.siag
+share/doc/siag/siag/examples/portfolj.siag
+share/doc/siag/gsiag/README
 share/doc/siag/siag/README
-share/doc/siag/siag/TODO
 share/doc/siag/siag/c-expr.html
 share/doc/siag/siag/commands.html
 share/doc/siag/siag/concepts.html
@@ -296,8 +448,6 @@ share/doc/siag/siag/examples/surface2.siag
 share/doc/siag/siag/examples/tables.wk1
 share/doc/siag/siag/examples/tcltest.siag
 share/doc/siag/siag/data.scm
-share/doc/siag/pw/BUGS
-share/doc/siag/pw/TODO
 share/doc/siag/pw/commands.html
 share/doc/siag/pw/concepts.html
 share/doc/siag/pw/fileformats.html
@@ -333,8 +483,6 @@ share/doc/siag/pw/examples/styles.pw
 share/doc/siag/pw/examples/styles2.pw
 share/doc/siag/pw/examples/svenska.pw
 share/doc/siag/pw/examples/svenska.rtf
-share/doc/siag/egon/BUGS
-share/doc/siag/egon/TODO
 share/doc/siag/egon/commands.html
 share/doc/siag/egon/concepts.html
 share/doc/siag/egon/egon.gif
@@ -355,12 +503,9 @@ share/doc/siag/egon/examples/rondo.egon
 share/doc/siag/plugins/README
 share/doc/siag/xedplus/xedplus.html
 share/doc/siag/xedplus/README
-share/doc/siag/xedplus/TODO
 share/doc/siag/xfiler/xfiler.html
 share/doc/siag/xfiler/README
-share/doc/siag/xfiler/TODO
 share/doc/siag/gvu/README
-share/doc/siag/gvu/TODO
 share/doc/siag/gvu/gs.interface
 share/doc/siag/gvu/comments.doc
 share/doc/siag/gvu/gvu.html
@@ -370,9 +515,13 @@ share/doc/siag/FILES
 share/doc/siag/NLS
 share/doc/siag/COPYING
 share/doc/siag/README
-@dirrm share/siag/common/bitmaps/kde
 @dirrm share/siag/common/bitmaps/gnome
+@dirrm share/siag/common/bitmaps/kde
+@dirrm share/siag/common/bitmaps/kde2
+@dirrm share/siag/common/bitmaps/ms
 @dirrm share/siag/common/bitmaps
+@dirrm share/siag/common/fonts
+@dirrm share/siag/common/themes
 @dirrm share/siag/common
 @dirrm share/siag/xcommon
 @dirrm share/siag/siag
@@ -382,12 +531,13 @@ share/doc/siag/README
 @dirrm share/siag/siod
 @dirrm share/siag/xfiler
 @dirrm share/siag
-@dirrm libexec/siag/plugins
-@dirrm libexec/siag
+@dirrm lib/siag/plugins
+@dirrm lib/siag
 @dirrm share/doc/siag/common/bitmaps
 @dirrm share/doc/siag/common
 @dirrm share/doc/siag/egon/examples
 @dirrm share/doc/siag/egon
+@dirrm share/doc/siag/gsiag
 @dirrm share/doc/siag/pw/examples
 @dirrm share/doc/siag/pw
 @dirrm share/doc/siag/siag/examples

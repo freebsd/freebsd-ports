@@ -1,10 +1,3 @@
---- xpw/window.c	Wed Mar 29 17:20:52 2000
-+++ xpw/window.c	Thu Apr 20 09:00:18 2000
-@@ -1386,3 +1386,3 @@
-                 if (!fork()) {
--                        execlp("pw", "Pw", filename, (char *)0);
-+                        execlp(X11BASE"/bin/pw", "Pw", filename, (char *)0);
-                         exit(1);
 --- pw/pw.scm	Fri Apr 14 17:05:47 2000
 +++ pw/pw.scm	Thu Apr 20 08:50:02 2000
 @@ -139,3 +139,3 @@
@@ -16,8 +9,8 @@
 +++ plugins/plugin.scm	Thu Apr 20 08:51:31 2000
 @@ -16,3 +16,3 @@
  (plugin-register "Pathetic Writer" "pw"
--	"pw -plugin -geometry 400x300+4000+4000 %s")
-+	(string-append datadir "/../../bin/pw -plugin -geometry 400x300+4000+4000 %s")
+-	"pw -plugin -geometry 300x150+4000+4000 %s")
++	(string-append datadir "/../../bin/pw -plugin -geometry 300x150+4000+4000 %s")
  (plugin-register "Egon Animator" "egon"
 --- common/tools.scm	Thu Apr  6 08:53:09 2000
 +++ common/tools.scm	Thu Apr 20 09:14:13 2000

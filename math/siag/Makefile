@@ -6,48 +6,42 @@
 #
 
 PORTNAME=	siag
-PORTVERSION=	3.3.8
+PORTVERSION=	3.4.10
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.siag.nu/pub/siag/ \
-		ftp://ftp.edu.stockholm.se/pub/siag/ \
-		ftp://ftp.icm.edu.pl/site/siag/
+MASTER_SITES=	http://siag.nu/pub/siag/ \
+		ftp://ftp.siag.nu/pub/siag/ \
+		${MASTER_SITE_SUNSITE} \
+		ftp://ftp.edu.stockholm.se/pub/siag/
 
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
+		sdb:${PORTSDIR}/databases/libsdb \
 		Magick:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		mswordview:${PORTSDIR}/textproc/mswordview \
+		wvHtml:${PORTSDIR}/textproc/wv \
+		gv:${PORTSDIR}/print/gv \
 		catdoc:${PORTSDIR}/textproc/catdoc
 
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libccm.a:${PORTSDIR}/math/ccmath
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm \
+		t1:${PORTSDIR}/devel/t1lib \
+		tcl83:${PORTSDIR}/lang/tcl83
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tcl=tcl83 --with-xawm="-L${X11BASE} -lXaw3d" \
+		--with-ndbm=gdbm \
+		--without-gmp --with-sqlite --with-ccmath --with-t1lib
+CPPFLAGS+=	-DGDBM -I${LOCALBASE}/include -DX11BASE='\"${X11BASE}\"' \
+		-I${LOCALBASE}/include/tcl8.3
+CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
+		LDFLAGS=-L${LOCALBASE}/lib \
+		CPPFLAGS="${CPPFLAGS}"
 MAKE_ARGS=	"-j 2"
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DX11BASE='\"${X11BASE}\"'
-
-.if defined(GUILE)
+.if defined(WITH_GUILE) || defined(GUILE)
 LIB_DEPENDS+=	guile.9:${PORTSDIR}/lang/guile
 .endif
-
-.if !defined(NOGDBM)
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
-CPPFLAGS+=	-DGDBM
-.endif
-
-.if !defined(NOT1)
-LIB_DEPENDS+=	t1:${PORTSDIR}/devel/t1lib
-.endif
-
-.if !defined(NOTCL)
-# Feel free to try other versions of TCL here:
-LIB_DEPENDS+=	tcl83:${PORTSDIR}/lang/tcl83
-CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.3
-CONFIGURE_ARGS+=--with-tcl=tcl83
-.endif
-
-CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
-			LDFLAGS=-L${LOCALBASE}/lib \
-			CPPFLAGS="${CPPFLAGS}"
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -68,14 +62,10 @@ post-install:
 
 post-patch:
 	# Fixing makefiles to put docs in ${LOCALBASE}/share/doc/siag
-	for m in `find ${WRKSRC} -name Makefile.in |\
-			xargs ${GREP} -l doc\\/siag`; do \
-		${MV} $$m $$m.orig; \
-		${SED} s@doc/siag@share/doc/siag@ < $$m.orig > $$m; \
-	done
-	# Fixing configure to look for Xaw3d instead of XawM
-	${MV} ${WRKSRC}/configure ${WRKSRC}/configure.XawM
-	${SED} s/XawM/Xaw3d/g < ${WRKSRC}/configure.XawM > ${WRKSRC}/configure
-	${CHMOD} +x ${WRKSRC}/configure
+	${PERL} -pi -e 's@doc/siag@share/doc/siag@' \
+		`find ${WRKSRC} -name Makefile.in | \
+			xargs ${GREP} -l doc\\/siag`
+	# Fixing Makefile.in to remove hardcoded references to Xawm
+	${PERL} -pi -e 's/ XawM//g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
