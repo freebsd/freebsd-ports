@@ -1,0 +1,20 @@
+@name x3270-3.0.1-bin
+@cwd /usr/X11R6
+@mode 555
+bin/x3270
+@mode 444
+lib/X11/app-defaults/X3270
+lib/X11/fonts/misc/3270.pcf.Z
+lib/X11/fonts/misc/3270b.pcf.Z
+lib/X11/fonts/misc/3270-12.pcf.Z
+lib/X11/fonts/misc/3270-12b.pcf.Z
+lib/X11/fonts/misc/3270a.pcf.Z
+lib/X11/fonts/misc/3270ab.pcf.Z
+lib/X11/fonts/misc/3270d.pcf.Z
+@exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/misc /usr/X11R6/lib/X11/fonts/misc/fonts.dir
+@exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/misc
+@exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/misc
+@exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/misc/fonts.dir
+man/man1/x3270.1.gz
+man/man1/x3270-script.1.gz
+man/man1/ibm_hosts.1.gz
