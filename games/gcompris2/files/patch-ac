@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Dec 19 12:49:19 2001
-+++ Makefile.in	Wed Dec 19 13:21:48 2001
-@@ -192,9 +192,9 @@
+--- Makefile.in.orig	Thu Apr 18 14:49:06 2002
++++ Makefile.in	Thu Apr 18 14:51:49 2002
+@@ -212,9 +212,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -16,7 +16,7 @@ $FreeBSD$
  
  mostlyclean-hdr:
  
-@@ -426,7 +426,7 @@
+@@ -446,7 +446,7 @@
  install-exec-am:
  install-exec: install-exec-recursive
  
@@ -25,24 +25,19 @@ $FreeBSD$
  		install-data-local
  install-data: install-data-recursive
  
-@@ -498,16 +498,16 @@
+@@ -519,13 +519,13 @@
  	@$(NORMAL_INSTALL)
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
--	  find @PACKAGE_DATA_DIR@ -name \*~ -or -name \*.in  -printf \"%f\n\" >/tmp/GCOMPRIS_LIST.txt ; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  find @PACKAGE_DATA_DIR@ -name \*~ -or -name \*.in >/tmp/GCOMPRIS_LIST.txt ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
- 	  rm -f /tmp/GCOMPRIS_LIST.txt ; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "*.in" --exclude "*~" --exclude CVS --exclude .xvpics * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*.in" --exclude "*~" --exclude CVS --exclude .xvpics -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
--	  find @PACKAGE_DATA_DIR@ -name \*~  -printf \"%f\n\" >/tmp/GCOMPRIS_LIST.txt ; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  find @PACKAGE_DATA_DIR@ -name \*~ >/tmp/GCOMPRIS_LIST.txt ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics --exclude-from  /tmp/GCOMPRIS_LIST.txt -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
- 	  rm -f /tmp/GCOMPRIS_LIST.txt ; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
+ clean-local:

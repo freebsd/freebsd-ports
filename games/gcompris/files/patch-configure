@@ -1,17 +1,27 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Oct 25 16:02:31 2001
-+++ configure	Thu Oct 25 16:03:10 2001
-@@ -6711,6 +6711,7 @@
-   
- 		
- 		GNOME_XML_LIB=`$GNOME_CONFIG --libs xml2`
-+		CPPFLAGS="$CPPFLAGS `$GNOME_CONFIG --cflags xml2`"
- 	
- else
-   echo "$ac_t""no" 1>&6
-@@ -8315,7 +8316,7 @@
+--- configure.orig	Thu Apr 18 14:54:09 2002
++++ configure	Thu Apr 18 14:56:30 2002
+@@ -7272,7 +7272,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ 
+ int 
+ main()
+@@ -7383,7 +7383,7 @@
+ #line 7384 "configure"
+ #include "confdefs.h"
+ 
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ #include <stdio.h>
+ 
+ int main() {
+@@ -8915,7 +8915,7 @@
  fi
  
  
@@ -20,7 +30,7 @@ $FreeBSD$
  	   fi
  	
  else
-@@ -8611,14 +8612,14 @@
+@@ -9211,14 +9211,14 @@
  PACKAGE_SOUNDS_DIR="sounds"
  
  cat >> confdefs.h <<EOF
