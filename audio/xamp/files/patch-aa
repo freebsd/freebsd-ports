@@ -12,3 +12,52 @@
  #include <sys/time.h>
  #include <sys/resource.h>
  #include <errno.h>
+@@ -84,11 +84,11 @@
+ 	splash->show();
+ 	
+ 	// init mixer
+-#ifdef OS_Linux
++#if defined(OS_Linux) || defined(OS_BSD)
+ 	if ((mixer = open("/dev/mixer", O_RDWR)) < 0)
+ 	    die("Error opening /dev/mixer, exiting\n");
+ 	ioctl(mixer, SOUND_MIXER_READ_PCM, &v);
+-#endif OS_Linux
++#endif
+ 	
+ 	/* where mine resource file is located */
+ 	char home[500];
+@@ -262,7 +262,7 @@
+ 
+ QtAMP::~QtAMP()
+ {
+-#ifdef OS_Linux
++#if defined(OS_Linux) || defined(OS_BSD)
+ 	close(mixer);
+ #endif
+ 	real_quit();
+@@ -348,7 +348,7 @@
+ 	sprintf(volum,"Volume: %d",vr);
+ 	playLabel->setText( volum );
+ 	//	printf("%d %d\n",tvr,tv);
+-#ifdef OS_Linux
++#if defined(OS_Linux) || defined(OS_BSD)
+ 	int x = (tv*256 + tvl);
+ 	ioctl(mixer, SOUND_MIXER_WRITE_PCM, &x);
+ #endif
+@@ -884,14 +884,14 @@
+ {
+ 	if (mute == 1)
+ 	  {
+-#ifdef OS_Linux
++#if defined(OS_Linux) || defined(OS_BSD)
+ 		  int x = (tv*256 + tvl);
+ 		  ioctl(mixer, SOUND_MIXER_WRITE_PCM, &x);
+ #endif
+ 	  }
+ 	if (mute == 0)
+ 	  {
+-#ifdef OS_Linux
++#if defined(OS_Linux) || defined(OS_BSD)
+ 		  int x = (7*256 + 7);
+ 		  ioctl(mixer, SOUND_MIXER_WRITE_PCM, &x);
+ #endif
