@@ -5370,6 +5370,7 @@ p5-Crypt-TripleDES	ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
 p5-Crypt-Twofish2	ports/security/p5-Crypt-Twofish2
 p5-Crypt-UnixCrypt	ports/security/p5-Crypt-UnixCrypt
+p5-Cstools	ports/converters/p5-Cstools
 p5-Curses	ports/devel/p5-Curses
 p5-Curses-Application	ports/devel/p5-Curses-Application
 p5-Curses-Forms	ports/devel/p5-Curses-Forms
