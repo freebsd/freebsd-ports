@@ -8,12 +8,12 @@
 PORTNAME=	mpz
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	math python
-MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python bindings to the GNU Multiple Precision library
 
 LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
@@ -22,6 +22,7 @@ DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
+MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}

@@ -9,12 +9,12 @@ PORTNAME=	expat
 PORTVERSION=	${PYTHON_PORTVERSION}
 PORTREVISION=	2
 CATEGORIES=	textproc python
-MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to the Expat XML parser
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
@@ -23,6 +23,7 @@ DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
+MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
