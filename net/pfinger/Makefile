@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.xelia.ch/pub/unix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable, secure and portable finger daemon
 
+CONFLICTS=	gnu-finger-1.*
+
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

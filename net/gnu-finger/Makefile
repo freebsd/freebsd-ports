@@ -17,6 +17,8 @@ COMMENT=	GNU version of finger
 
 .include <bsd.port.pre.mk>
 
+CONFLICTS=	pfinger-0.*
+
 .if ${OSVERSION} >= 500000
 BROKEN=		does not compile on 5.x
 .endif
