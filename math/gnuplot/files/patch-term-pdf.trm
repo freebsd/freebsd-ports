@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- term/pdf.trm.orig	Fri Jun 25 10:15:46 2004
++++ term/pdf.trm	Fri Jun 25 10:16:01 2004
+@@ -343,7 +343,7 @@
+ 	myPDF = PDF_new();
+ 
+     /*open new PDF file */ 
+-    if (PDF_open_fp(myPDF, gpoutfile) == -1)
++    if (PDF_open_file(myPDF, gpoutfile) == -1)
+ 	int_error(NO_CARET, "Error:cannot open PDF file .\n");
+ 
+ #ifdef PDF_DONT_COMPRESS
