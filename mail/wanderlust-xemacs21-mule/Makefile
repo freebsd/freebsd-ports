@@ -14,8 +14,9 @@ EMACS_NAME=		xemacs
 EMACS_PORT=		xemacs-mule
 EMACS_VER=		21.1.6
 MULE_VER=		21.1.6
-EMACS_LIBDIR=		lib/xemacs-21.1.6
-EMACS_VER_LIBDIR=	lib/xemacs-21.1.6
+EMACS_LIBDIR=		lib/xemacs
+EMACS_VER_LIBDIR=	lib/xemacs
+EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/${EMACS_NAME}-packages
 
 HAVE_COMMON_PORT=	yes
 
