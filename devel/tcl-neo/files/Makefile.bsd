@@ -20,6 +20,6 @@ SHLIB_NAME=	libneo82.so.1
 
 LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl${TCL_DVER} -lm -lmd -ldb2 # -ldap -llber
 
-SHLIBDIR=	${PREFIX}/lib
+LIBDIR=		${PREFIX}/lib
 
 .include <bsd.lib.mk>
