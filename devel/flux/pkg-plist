@@ -19,6 +19,7 @@ include/flux/url.h
 include/flux/xml.h
 lib/libflux.a
 lib/libflux.so.0
+lib/libflux.so
 share/flux/AUTHORS
 share/flux/NEWS
 share/flux/README
