@@ -19,7 +19,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		gimpprint.2:${PORTSDIR}/print/gimp-print \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -63,6 +62,12 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON:="@comment "
 .endif
 
+.if defined(WITHOUT_PRINT)
+CONFIGURE_ARGS+=	--disable-print
+.else
+LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
+.endif
+
 .if exists(${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)
 RUN_DEPENDS+=	gnome-panel:${PORTSDIR}/x11/gnomepanel
 CONFIGURE_ARGS+=	--with-gnome-datadir=${X11BASE}/share/gnome
@@ -79,7 +84,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gimp-devel has the following tunable option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "		WITH_PYTHON=yes	Turns on Python-Fu support"
+	@${ECHO_MSG} "		WITH_PYTHON=yes		Turns on Python-Fu support"
+	@${ECHO_MSG} "		WITHOUT_PRINT=yes	Turns off GIMP printing"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
