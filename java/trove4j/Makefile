@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	trove4j
-PORTVERSION=	0.1.8
+PORTVERSION=	1.0.2
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trove4j
@@ -20,14 +20,13 @@ NO_BUILD=	YES
 PORT_JARFILE=		trove.jar
 JAVA_WRKLIBDIR=		${WRKSRC}/lib
 JAVA_WRKDOCSDIR=	${WRKSRC}/javadocs
-JAVA_LIBDIR=		${PREFIX}/share/java/classes
 
 INSTALL_JAR=		${INSTALL_DATA}
 
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR file..."
-	@${MKDIR} ${JAVA_LIBDIR}
-	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}
+	@${MKDIR} ${JAVAJARDIR}
+	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVAJARDIR}
 	@${ECHO_CMD} " [DONE]"
 
 .if !defined(NOPORTDOCS)
@@ -43,6 +42,6 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVA_LIBDIR}/${PORT_JARFILE}"
+	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${PORT_JARFILE}"
 
 .include <bsd.port.mk>
