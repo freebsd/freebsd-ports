@@ -1,9 +1,12 @@
+bin/Alisp
 bin/alisp
 bin/alisp_install
 bin/iai
 bin/iai-1
 bin/iai_color
 bin/iai_pfmt
+share/alisp/LICENSE
+share/alisp/alisp.image
 share/alisp/black.rc
 share/alisp/blue.rc
 share/alisp/default.rc
@@ -33,11 +36,13 @@ share/alisp/lib/copy.l
 share/alisp/lib/count.l
 share/alisp/lib/decr.l
 share/alisp/lib/denominator.l
+share/alisp/lib/depth.l
 share/alisp/lib/difference.l
 share/alisp/lib/digits.l
 share/alisp/lib/divide.l
 share/alisp/lib/equal.l
 share/alisp/lib/equalize.l
+share/alisp/lib/evenp.l
 share/alisp/lib/every.l
 share/alisp/lib/expt.l
 share/alisp/lib/fac.l
@@ -45,6 +50,7 @@ share/alisp/lib/filter.l
 share/alisp/lib/gcd.l
 share/alisp/lib/greaterp.l
 share/alisp/lib/headp.l
+share/alisp/lib/hyper.l
 share/alisp/lib/id.l
 share/alisp/lib/idifference.l
 share/alisp/lib/idivide.l
@@ -102,6 +108,7 @@ share/alisp/lib/nth.l
 share/alisp/lib/numberp.l
 share/alisp/lib/numerator.l
 share/alisp/lib/o.l
+share/alisp/lib/oddp.l
 share/alisp/lib/onep.l
 share/alisp/lib/orderedp.l
 share/alisp/lib/pair.l
