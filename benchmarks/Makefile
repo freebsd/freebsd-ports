@@ -17,6 +17,7 @@
     SUBDIR += pybench
     SUBDIR += rawio
     SUBDIR += siege
+    SUBDIR += stream
     SUBDIR += tcpblast
     SUBDIR += tmetric
     SUBDIR += ubench
