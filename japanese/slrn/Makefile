@@ -3,7 +3,7 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id: Makefile,v 1.6 1999/05/01 03:33:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slrn0.9.5.4

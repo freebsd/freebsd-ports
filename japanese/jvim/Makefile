@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/03/06 13:03:36 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10

@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 KONFONT=	14dot

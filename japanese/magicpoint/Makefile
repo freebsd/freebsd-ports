@@ -3,7 +3,7 @@
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.8 1999/06/17 08:33:55 itojun Exp $
+# $FreeBSD$
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint

@@ -3,7 +3,7 @@
 # Date created:		29 Dec 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1999/06/24 20:10:55 sada Exp $
+# $FreeBSD$
 #
 
 MAINTAINER=	sada@FreeBSD.ORG

@@ -3,7 +3,7 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.3 1998/09/15 11:13:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xinvest-2.5.1

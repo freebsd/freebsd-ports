@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.33 1999/06/16 16:12:50 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ghostscript-5.10

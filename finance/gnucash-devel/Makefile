@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.5 1998/12/25 20:10:50 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xacc-1.0.18

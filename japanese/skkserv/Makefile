@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/08/17 19:08:35 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	skk9.6

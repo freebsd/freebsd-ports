@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/12/02 05:09:14 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-onew-wnn6-2.2.10

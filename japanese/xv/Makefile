@@ -3,7 +3,7 @@
 # Date created:		07 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA (shige@kuis.kyoto-u.ac.jp)
 #
-# $Id: Makefile,v 1.2 1998/12/01 03:06:24 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-xv-3.10a

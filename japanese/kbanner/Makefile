@@ -3,7 +3,7 @@
 # Date created:		Fri Feb 26 15:07:10 PST 1999
 # Whom:			sumikawa
 #
-# $Id: Makefile,v 1.2 1999/02/18 05:39:57 sumikawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kbanner-2.1

@@ -3,7 +3,7 @@
 # Date created:		2 March 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.5 1998/02/13 09:27:46 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	oleo-1.6

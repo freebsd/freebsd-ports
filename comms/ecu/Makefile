@@ -3,7 +3,7 @@
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1997/07/02 03:47:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ecu-4.08

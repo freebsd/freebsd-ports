@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1996
 # Whom:			SAITO Itsuro <saito@miv.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	a2ps.pl-1.44

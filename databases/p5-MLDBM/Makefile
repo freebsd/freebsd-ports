@@ -3,7 +3,7 @@
 # Date created:                         December 3 1997
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.7 1998/09/15 21:31:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       MLDBM-2.00

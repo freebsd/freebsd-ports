@@ -3,7 +3,7 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:13:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tk8.0.4

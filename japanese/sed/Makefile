@@ -3,7 +3,7 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.6 1998/04/30 18:40:04 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sed-1.18

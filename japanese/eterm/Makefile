@@ -3,7 +3,7 @@
 # Date created:        11th December 1998
 # Whom:                MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id: Makefile,v 1.5 1999/05/09 16:35:44 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Eterm-0.8.9

@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.21 1999/04/14 00:02:46 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnats-3.110

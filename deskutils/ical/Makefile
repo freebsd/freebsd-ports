@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.20 1998/08/07 23:56:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ical-2.2

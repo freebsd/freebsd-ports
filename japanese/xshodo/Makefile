@@ -3,7 +3,7 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/05/08 21:58:42 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xshodo2.0

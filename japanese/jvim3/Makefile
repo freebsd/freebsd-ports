@@ -3,7 +3,7 @@
 # Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1999/03/06 13:03:36 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vim

@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1998
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
-# $Id: Makefile,v 1.8 1999/04/17 19:43:23 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	postgresql-6.4.2

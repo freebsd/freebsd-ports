@@ -3,7 +3,7 @@
 # Date created:		02 Aug 1997
 # Whom:			joes@seaport.net
 #
-# $Id: Makefile,v 1.7 1998/10/27 03:45:02 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qpage-3.2

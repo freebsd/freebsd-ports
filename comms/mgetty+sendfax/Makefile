@@ -3,7 +3,7 @@
 # Date created:         20 April 1998
 # Whom:                 rkw
 #
-# $Id: Makefile,v 1.26 1998/12/01 09:08:21 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mgetty1.1.20-Jan17

@@ -3,7 +3,7 @@
 # Date created:		11 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/08/24 00:42:25 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	japaneseAFM

@@ -3,7 +3,7 @@
 # Date created: 8 MAY 1999
 # Whom: Shuichi Tanaka
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/11 01:46:30 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkicq-0.60

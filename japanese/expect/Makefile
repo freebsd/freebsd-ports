@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.12 1998/10/10 04:08:54 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	expect-5.28

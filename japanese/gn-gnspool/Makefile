@@ -3,7 +3,7 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.9 1999/02/05 22:45:54 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gn-1.40

@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/06/22 23:55:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dvipsk-5.78a

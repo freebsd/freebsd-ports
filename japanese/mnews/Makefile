@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1999/02/05 22:45:56 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mnews121

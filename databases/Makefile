@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1999/06/22 10:05:57 asami Exp $
+# $FreeBSD$
 #
     SUBDIR += cdb
     SUBDIR += db

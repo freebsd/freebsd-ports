@@ -3,7 +3,7 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.9 1998/08/31 15:37:35 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	grep-2.0

@@ -3,7 +3,7 @@
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/10/30 10:33:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chimera-1.70p0

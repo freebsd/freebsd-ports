@@ -3,7 +3,7 @@
 # Date created:        20 January 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/12 16:50:53 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	newosaka

@@ -3,7 +3,7 @@
 # Date created:		21 October 1998
 # Whom:			kuriyama
 #
-# $Id: Makefile,v 1.3 1998/10/27 14:31:25 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chasen-sys1.51-dic1.5

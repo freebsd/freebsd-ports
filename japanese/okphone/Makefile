@@ -3,7 +3,7 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1998/08/31 16:09:19 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	okphone-1.2

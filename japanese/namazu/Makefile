@@ -3,7 +3,7 @@
 # Date created:		17 March 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/31 11:52:07 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	namazu-1.3.0.8

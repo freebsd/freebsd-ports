@@ -3,7 +3,7 @@
 # Date created:		Sun Jun  8 11:51:21 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1998/08/07 23:56:12 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkhylafax-3.0b2

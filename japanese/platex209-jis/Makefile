@@ -3,7 +3,7 @@
 # Date created:		01 Jan 1998
 # Whom:			Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	platex209

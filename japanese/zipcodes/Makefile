@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1999/01/09 14:54:59 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ken_all

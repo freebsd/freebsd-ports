@@ -3,7 +3,7 @@
 # Date created:		25 January 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/26 15:09:11 kuriyama Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-xemacs-wnn4-20.4

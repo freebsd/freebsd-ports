@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.6 1999/07/15 21:53:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emacs-canna-${DLCANNA_VER}

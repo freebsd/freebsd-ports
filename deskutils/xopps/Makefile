@@ -3,7 +3,7 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.6 1998/10/12 12:47:37 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xopps.1.13

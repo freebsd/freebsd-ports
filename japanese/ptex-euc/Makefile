@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.7 1998/12/02 05:57:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ptex218

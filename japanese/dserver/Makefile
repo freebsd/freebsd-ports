@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1997/09/14 21:34:32 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dserver2.2betapl2

@@ -3,7 +3,7 @@
 # Date created:        17 January 1999
 # Whom:                Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 04:16:21 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xrolo.v2p6

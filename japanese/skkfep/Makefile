@@ -3,7 +3,7 @@
 # Date created:		22 Jul 1998
 # Whom:			Yusuke Nawano <azuki@azkey.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       skkfep0.85

@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.5 1999/07/25 12:17:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dl-wnn-0.3.6

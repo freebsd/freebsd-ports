@@ -3,7 +3,7 @@
 # Date created:				19 Aug 1998
 # Whom:					ichiro@ichiro.org
 #
-# $Id: Makefile,v 1.6 1999/05/11 01:18:45 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gd1.3

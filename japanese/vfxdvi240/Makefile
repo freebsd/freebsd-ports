@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1 1998/11/20 04:14:48 asami Exp $
+# $FreeBSD$
 #
 
 RESOLUTION=	240

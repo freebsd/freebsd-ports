@@ -3,7 +3,7 @@
 # Date created:		13 August 1997
 # Whom:			hosokawa
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/16 05:14:06 itojun Exp $
+# $FreeBSD$
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters

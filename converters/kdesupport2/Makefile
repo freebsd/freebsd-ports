@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1999/05/10 22:59:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kdesupport-1.1.1

@@ -3,7 +3,7 @@
 # Date created:				1 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:41:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	genius-0.4.2

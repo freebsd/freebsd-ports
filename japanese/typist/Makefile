@@ -3,7 +3,7 @@
 # Date created:			26 May 1997
 # Whom:				Satoshi TAOKA
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:36:12 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	typist2.0

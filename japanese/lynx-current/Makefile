@@ -3,7 +3,7 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/05/23 11:57:18 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lynx2.8.2pre.5

@@ -3,7 +3,7 @@
 # Date created:		6 January 1999
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/07/06 23:09:10 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcsh-6.08.05.add2

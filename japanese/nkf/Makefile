@@ -3,7 +3,7 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1997/09/14 21:35:26 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nkf-1.62

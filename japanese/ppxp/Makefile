@@ -3,7 +3,7 @@
 # Date created:         01 Jan 1999
 # Whom:                 sada@FreeBSD.ORG
 #
-# $Id$
+# $FreeBSD$
 #
 
 PKGNAME=	ja-${DISTNAME}

@@ -3,7 +3,7 @@
 # Date created:		29 Sep 1997
 # Whom:			mi@aldan.ziplink.net
 #
-# $Id: Makefile,v 1.3 1998/09/27 03:44:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmdiary-3.0.1

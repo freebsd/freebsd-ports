@@ -3,7 +3,7 @@
 # Date created:		20 August 1999
 # Whom:			Shigeyuki Fukushima <shige@FreeBSD.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	eblook-1.2

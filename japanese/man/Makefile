@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.16 1999/04/26 12:44:52 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jp-man-1.1g

@@ -3,7 +3,7 @@
 # Date created:		4 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/04 20:58:32 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jls-0.1

@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/09/21 22:33:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       elvis-1.8

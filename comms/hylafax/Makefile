@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.25 1999/05/09 16:27:52 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hylafax-v4.0pl2

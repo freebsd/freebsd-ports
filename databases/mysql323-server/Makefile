@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.61 1999/08/20 03:35:12 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mysql-3.22.24

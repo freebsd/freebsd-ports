@@ -3,7 +3,7 @@
 # Date created:         14 April 1999
 # Whom:                 OKAZAKI Tetsurou
 #
-# $Id: Makefile,v 1.3 1999/08/10 18:59:45 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emacs-20.3-man-jp

@@ -3,7 +3,7 @@
 # Date created:		3 October 1994
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.10 1998/11/08 16:32:07 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Seyon-2.14b

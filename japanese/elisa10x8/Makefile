@@ -3,7 +3,7 @@
 # Date created:		26 Sep 1997
 # Whom: Dai ISHIJIMA & ELISA Font Project <ishijima@tri.pref.osaka.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/24 14:42:58 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ja-elisa8-1.0

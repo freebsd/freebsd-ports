@@ -3,7 +3,7 @@
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.6 1999/04/06 12:23:58 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gicq-0.33

@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.24 1999/06/24 20:10:39 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}

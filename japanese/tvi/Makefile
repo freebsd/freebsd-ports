@@ -3,7 +3,7 @@
 # Date created:		3 Jan 1999
 # Whom:			SUGIMURA Takashi <sugimura@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/22 00:26:50 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tvi-0.9.2

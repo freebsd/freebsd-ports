@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/08/24 01:04:42 steve Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-gp-2.5p2

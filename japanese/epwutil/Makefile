@@ -3,7 +3,7 @@
 # Date created:		22 January 1999
 # Whom:			Kazutoki TAKAMUNE <takamune@avrl.mei.co.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	epwutil-1.0

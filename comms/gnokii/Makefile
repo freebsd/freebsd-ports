@@ -3,7 +3,7 @@
 # Date created:         15 March 1999
 # Whom:                 staffanu
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       gnokii-0.2.3

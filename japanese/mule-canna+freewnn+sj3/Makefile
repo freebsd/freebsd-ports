@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/12/01 03:06:08 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-mule-canna+sj3+wnn4-2.3

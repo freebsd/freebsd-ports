@@ -3,7 +3,7 @@
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/02/12 17:16:23 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jee-1.0

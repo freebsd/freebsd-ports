@@ -3,7 +3,7 @@
 # Date created:		11 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1998/12/01 01:05:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Wnn6-SDK-sources

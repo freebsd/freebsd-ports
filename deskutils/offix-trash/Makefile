@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:17:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Trash-2.4

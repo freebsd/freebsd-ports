@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/26 15:06:06 kuriyama Exp $
+# $FreeBSD$
 #
 
 PKGNAME?=	ja-xemacs-canna-20.4

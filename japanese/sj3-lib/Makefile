@@ -3,7 +3,7 @@
 # Date created:		18 Aug 1998
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/11/28 05:08:27 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sj3-2.0.1.20

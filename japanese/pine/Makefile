@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.16 1999/06/08 05:37:44 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pine3.95

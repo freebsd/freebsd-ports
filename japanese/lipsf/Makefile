@@ -3,7 +3,7 @@
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/09/14 21:34:53 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lipsf113

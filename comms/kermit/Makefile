@@ -3,7 +3,7 @@
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.16 1997/07/10 15:50:51 pst Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cku192src

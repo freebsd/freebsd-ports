@@ -3,7 +3,7 @@
 # Date created:				17 April 1999
 # Whom:					G. Adam Stanislav
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/20 20:27:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	i18ntools-1.0

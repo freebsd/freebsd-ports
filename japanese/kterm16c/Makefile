@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.17 1998/12/23 01:47:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kterm-6.2.0

@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.20 1999/01/06 05:00:25 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kon2-0.3

@@ -3,7 +3,7 @@
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/11/15 12:21:55 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	diclookup-mule-2.3.3

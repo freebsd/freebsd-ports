@@ -3,7 +3,7 @@
 # Date created:		04 Mar 1997
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.10 1998/11/15 12:21:55 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	skk9.6

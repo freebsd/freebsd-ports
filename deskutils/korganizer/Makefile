@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.12 1999/04/21 03:21:14 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	korganizer-1.1

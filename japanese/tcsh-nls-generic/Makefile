@@ -3,7 +3,7 @@
 # Date created:		19 August 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/07/06 23:09:03 sada Exp $
+# $FreeBSD$
 #
 
 .if !defined(NLSSRC)

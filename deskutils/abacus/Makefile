@@ -3,7 +3,7 @@
 # Date created:				18 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/09/25 10:07:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	abacus

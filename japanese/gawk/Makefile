@@ -3,7 +3,7 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.12 1998/04/30 18:40:05 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gawk-2.15.6

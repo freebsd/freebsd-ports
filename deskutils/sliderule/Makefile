@@ -3,7 +3,7 @@
 # Date created:         4 Aug 1997
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:17:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sliderule

@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/06/27 09:24:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pl19980901j

@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 1999/01/21 06:32:50 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdvi-17

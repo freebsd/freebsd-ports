@@ -3,7 +3,7 @@
 # Date created:		Wed Dec 11 15:16:19 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1998/10/22 02:30:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	typhoon-1.10.3

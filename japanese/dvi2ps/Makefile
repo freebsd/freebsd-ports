@@ -3,7 +3,7 @@
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/10/07 06:11:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dvi2ps-2.0j

@@ -3,7 +3,7 @@
 # Date created:			Tue Sep  2 15:46:09 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1999/06/08 22:15:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmysql-1.9

@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.17 1998/11/14 09:43:05 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       uudeview-0.5.13

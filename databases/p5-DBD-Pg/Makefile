@@ -3,7 +3,7 @@
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1999/03/10 15:56:04 jfitz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	DBD-Pg-0.91

@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.11 1999/03/09 09:18:36 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	iv-3.1

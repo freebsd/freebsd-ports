@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1999/06/24 20:10:47 sada Exp $
+# $FreeBSD$
 #
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator

@@ -3,7 +3,7 @@
 # Date created:		11 November 1998
 # Whom:			Toshihiko Kodama <kodama@ayame.mfd.cs.fujitsu.co.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	less-332

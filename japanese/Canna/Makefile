@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.25 1999/01/15 12:05:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Canna32p2

@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/06/05 19:55:22 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ja-netscape-3.04

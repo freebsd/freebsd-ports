@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:17:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmaddressbook-1.5.3

@@ -3,7 +3,7 @@
 # Date created:		14 Jan 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/03/01 09:38:12 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	paledit-0.91

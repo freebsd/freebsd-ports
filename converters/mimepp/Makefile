@@ -3,7 +3,7 @@
 # Date created:				3 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		mimepp-1.0

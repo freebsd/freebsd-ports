@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/12 15:36:39 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	plain2-2.54

@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.17 1999/05/09 17:08:33 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perl5.005_03

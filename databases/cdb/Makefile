@@ -3,7 +3,7 @@
 # Date created:				18th July 1998
 # Whom:					Gary Palmer <gpalmer@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1999/03/12 15:16:58 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cdb-0.55

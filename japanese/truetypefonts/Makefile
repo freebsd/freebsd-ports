@@ -3,7 +3,7 @@
 # Date created:		16 November 1998
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/19 08:47:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ja-truetypefonts-1998.10.20

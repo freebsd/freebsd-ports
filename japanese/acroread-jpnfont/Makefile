@@ -3,7 +3,7 @@
 # Date created:		99/06/16
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/17 09:29:37 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jpnfont

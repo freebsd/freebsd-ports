@@ -3,7 +3,7 @@
 # Date created:         Nov 5, 1996
 # Whom:                 IMAMURA Tomoaki (yu@pastel.club.or.jp)
 #
-# $Id: Makefile,v 1.7 1998/04/05 04:46:55 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hex203

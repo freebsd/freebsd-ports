@@ -3,7 +3,7 @@
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
-# $Id: Makefile,v 1.8 1999/06/16 17:05:11 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdvik-22.05b

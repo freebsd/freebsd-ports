@@ -3,7 +3,7 @@
 # Date created:         25 Dec 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	dvi2dvi-1.0

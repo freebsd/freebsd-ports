@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 1999/06/22 23:42:27 sada Exp $
+# $FreeBSD$
 #
 
     SUBDIR += abacus
