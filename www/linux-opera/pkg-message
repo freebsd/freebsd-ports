@@ -1,8 +1,13 @@
 ##
-Changelogs for 7.23 Final: http://www.opera.com/linux/changelogs/723/
+Changelog for 7.50 Final: http://www.opera.com/linux/changelogs/750/
 
-If you are upgrade from version 6 final, 7 development or 7.11, it might be a
-good idea to backup your personal "~/.opera" directory and remove it. This can
-be done from the command line using "cp -Rp ~/.opera ~/.opera-mybackup" and
-"rm -rf ~/.opera".
+The name of the the binary, data directory, personal "~/.opera" directory,
+etc., have been renamed from "opera" to "linux-opera." This means that
+www/linux-opera and www/opera no longer conflict, and can be installed and
+can run at the same time. Bookmarks and mail can be preserved by copying
+~/.opera/mail and ~/.opera/opera6.adr into ~/.linux-opera. Configurations for
+toolbars, options, etc., have changed from previous versions, and are not
+recommend to transferred from the old configuration. The mail format will be
+converted to the new format automatically when the new linux-opera is run for
+the first time.
 ##

@@ -6,37 +6,27 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.23.20031119
+PORTVERSION=	7.50.20040511
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/linux/723/final/en/i386/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/723/final/en/i386/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/723/final/en/i386/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/linux/723/final/en/i386/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/linux/723/final/en/i386/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/linux/723/final/en/i386/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/723/final/en/i386/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/723/final/en/i386/static/ \
-		ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/750/final/en/i386/static/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/750/final/en/i386/static/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/750/final/en/i386/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/750/final/en/i386/static/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/linux/750/final/en/i386/static/ \
+		http://mirrors.pmmf.hu/mirror/opera/linux/750/final/en/i386/static/ \
+		ftp://ftp.task.gda.pl/pub/opera/linux/750/final/en/i386/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/linux/750/final/en/i386/static/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/750/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2003/-2003/}.1-static-qt.i386-en
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2004/-2004/}.1-static-qt.i386-en
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-CONFLICTS=	opera-*
 RESTRICTED=	"not redistributable; commercial software"
 
-.if defined(WITH_XFT2)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs \
-		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
-.else
-USE_LINUX=	yes
-.endif
-
-RUN_DEPENDS+=    ${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
-
 USE_BZIP2=	yes
+WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -44,52 +34,55 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
+DATADIR=	${PREFIX}/share/${UNIQUENAME}
+DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
+
 .include <bsd.port.pre.mk>
 
-.if exists(/etc/X11/applnk)
-PLIST_SUB+=	APPLNK:=""
+.if exists(${LINUXBASE}/lib/libc-2.3.2.so) || defined(WITH_LINUX8)
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
+		${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell \
+		${LINUXBASE}/usr/X11R6/lib/libXm.so.2.1:${PORTSDIR}/x11-toolkits/linux-openmotif
+WITH_LINUX8=	yes
 .else
-PLIST_SUB+=	APPLNK:="@comment "
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2.1:${PORTSDIR}/x11-toolkits/linux-openmotif
+USE_LINUX=	yes
 .endif
 
-.if exists(${X11BASE}/share/gnome)
+.if ${HAVE_GNOME:Mgnomehier}!=""
 PLIST_SUB+=	GNOME:=""
 .else
 PLIST_SUB+=	GNOME:="@comment "
 .endif
 
-.if exists(${LOCALBASE}/share/applnk/Internet)
+.if exists(${LOCALBASE}/bin/kde-config)
 PLIST_SUB+=	KDE:=""
 .else
 PLIST_SUB+=	KDE:="@comment "
 .endif
 
-.if exists(${LOCALBASE}/share/applnk/Networking)
-PLIST_SUB+=	KDE2:=""
-.else
-PLIST_SUB+=	KDE2:="@comment "
-.endif
-
-.if exists(${X11BASE}/share/gnome/apps)
-PLIST_SUB+=	GNOMELNK:=""
-.else
-PLIST_SUB+=	GNOMELNK:="@comment "
-.endif
-
 pre-everything::
-.if !defined(WITH_XFT2)
+.if !defined(WITH_LINUX8)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
-	@${ECHO_MSG} "WITH_XFT2=yes for use Xft2 (requires linux_base-8) with nicer anti-aliased fonts."
+	@${ECHO_MSG} "WITH_LINUX8=yes to use Xft2 and enable spell checker (requires linux_base-8)."
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
-			${WRKSRC}/install.sh
+			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
+			${WRKSRC}/ini/spellcheck.ini ${WRKSRC}/config/opera6rc
 
 do-install:
-	(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
+	@(cd ${WRKSRC} && ./install.sh \
+			--prefix=${PREFIX} \
+			--docdir=${DOCSDIR} \
+			--sharedir=${DATADIR} \
+			--exec_prefix=${DATADIR}/bin \
+			--plugindir=${DATADIR}/plugins)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
