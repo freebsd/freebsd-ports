@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	mdodd@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
