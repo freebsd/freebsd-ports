@@ -1,20 +1,27 @@
 bin/lyx
+bin/noweb2lyx
 bin/reLyX
+share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
 share/locale/hu/LC_MESSAGES/lyx.mo
+share/locale/it/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/no/LC_MESSAGES/lyx.mo
+share/locale/pl/LC_MESSAGES/lyx.mo
+share/locale/pt/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
+share/locale/wa/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/ChangeLog.jis
 share/lyx/README.jis
+share/lyx/bind/broadway.bind
 share/lyx/bind/cua.bind
 share/lyx/bind/de_menus.bind
 share/lyx/bind/emacs.bind
@@ -23,6 +30,7 @@ share/lyx/bind/hollywood.bind
 share/lyx/bind/hu_menus.bind
 share/lyx/bind/math.bind
 share/lyx/bind/menus.bind
+share/lyx/bind/pt_menus.bind
 share/lyx/bind/sv_menus.bind
 share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
@@ -30,6 +38,7 @@ share/lyx/clipart/platypus.eps
 share/lyx/configure
 share/lyx/doc/BUGS.lyx
 share/lyx/doc/Customization.lyx
+share/lyx/doc/DocStyle.lyx
 share/lyx/doc/Extended.lyx
 share/lyx/doc/Intro.lyx
 share/lyx/doc/LaTeXConfig.lyx
@@ -37,18 +46,30 @@ share/lyx/doc/LaTeXConfig.lyx.in
 share/lyx/doc/Reference.lyx
 share/lyx/doc/Tutorial.lyx
 share/lyx/doc/UserGuide.lyx
+share/lyx/doc/cs_Tutorial.lyx
 share/lyx/doc/de_BUGS.lyx
 share/lyx/doc/de_Customization.lyx
 share/lyx/doc/de_Extended.lyx
 share/lyx/doc/de_Intro.lyx
 share/lyx/doc/de_Tutorial.lyx
+share/lyx/doc/de_UserGuide.lyx
+share/lyx/doc/es_Intro.lyx
+share/lyx/doc/es_Tutorial.lyx
+share/lyx/doc/es_splash.lyx
 share/lyx/doc/escher-lsd.eps
+share/lyx/doc/fr_Intro.lyx
+share/lyx/doc/fr_Tutorial.lyx
 share/lyx/doc/mobius.eps
+share/lyx/doc/pl_Intro.lyx
+share/lyx/doc/pl_Tutorial.lyx
 share/lyx/doc/platypus.eps
+share/lyx/doc/pt_Intro.lyx
+share/lyx/doc/sl_Intro.lyx
 share/lyx/doc/sv_Intro.lyx
 share/lyx/doc/sv_Tutorial.lyx
 share/lyx/examples/Foils.lyx
 share/lyx/examples/ItemizeBullets.lyx
+share/lyx/examples/Literate.lyx
 share/lyx/examples/MathLabeling.lyx
 share/lyx/examples/Math_macros.lyx
 share/lyx/examples/Minipage.lyx
@@ -59,10 +80,24 @@ share/lyx/examples/amsart-test.lyx
 share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/beispiel_gelyxt.lyx
 share/lyx/examples/beispiel_roh.lyx
+share/lyx/examples/de_splash.lyx
+share/lyx/examples/ejemplo_con_lyx.lyx
+share/lyx/examples/ejemplo_sin_lyx.lyx
+share/lyx/examples/es_splash.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
+share/lyx/examples/exemple_brut.lyx
+share/lyx/examples/exemple_lyxifie.lyx
+share/lyx/examples/fr_splash.lyx
 share/lyx/examples/landslide.lyx
+share/lyx/examples/noweb2lyx.lyx
+share/lyx/examples/pl_splash.lyx
+share/lyx/examples/primer_lyxan.lyx
+share/lyx/examples/primer_surov.lyx
+share/lyx/examples/pt_splash.lyx
 share/lyx/examples/scriptone.lyx
+share/lyx/examples/sl_splash.lyx
+share/lyx/examples/splash.lyx
 share/lyx/images/amssymb.xbm
 share/lyx/images/amssymb.xpm
 share/lyx/images/psnfss1.xbm
@@ -114,20 +149,27 @@ share/lyx/layouts/amsdefs.inc
 share/lyx/layouts/amsmaths-plain.inc
 share/lyx/layouts/amsmaths-seq.inc
 share/lyx/layouts/amsmaths.inc
+share/lyx/layouts/apa.layout
 share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
+share/lyx/layouts/broadway.layout
 share/lyx/layouts/dinbrief.layout
+share/lyx/layouts/egs.layout
 share/lyx/layouts/ejour2.layout
 share/lyx/layouts/foils.layout
 share/lyx/layouts/hollywood.layout
+share/lyx/layouts/iletter.layout
 share/lyx/layouts/jarticle.layout
 share/lyx/layouts/jbook.layout
 share/lyx/layouts/jlinuxdoc.layout
 share/lyx/layouts/jreport.layout
-share/lyx/layouts/iletter.layout
 share/lyx/layouts/latex8.layout
 share/lyx/layouts/letter.layout
 share/lyx/layouts/linuxdoc.layout
+share/lyx/layouts/literate-article.layout
+share/lyx/layouts/literate-book.layout
+share/lyx/layouts/literate-report.layout
+share/lyx/layouts/literate-scrap.inc
 share/lyx/layouts/lyxmacros.inc
 share/lyx/layouts/manpage.layout
 share/lyx/layouts/obsolete.inc
@@ -160,6 +202,7 @@ share/lyx/reLyX/LastLyX.pm
 share/lyx/reLyX/MakePreamble.pm
 share/lyx/reLyX/README
 share/lyx/reLyX/ReadCommands.pm
+share/lyx/reLyX/RelyxFigure.pm
 share/lyx/reLyX/RelyxTable.pm
 share/lyx/reLyX/Text/TeX.pm
 share/lyx/reLyX/Verbatim.pm
@@ -175,20 +218,54 @@ share/lyx/templates/letter.lyx
 share/lyx/templates/linuxdoctemplate.lyx
 share/lyx/templates/revtex.lyx
 share/lyx/templates/slides.lyx
+share/lyx/tex/broadway.cls
 share/lyx/tex/ejour2.cls
 share/lyx/tex/hollywood.cls
 share/lyx/tex/iletter.cls
 share/lyx/tex/revtex.cls
 share/lyx/textclass.lst
-@dirrm share/lyx/bind
-@dirrm share/lyx/clipart
-@dirrm share/lyx/doc
-@dirrm share/lyx/examples
-@dirrm share/lyx/images
-@dirrm share/lyx/kbd
-@dirrm share/lyx/layouts
+@dirrm share/lyx/tex
+@dirrm share/lyx/templates
 @dirrm share/lyx/reLyX/Text
 @dirrm share/lyx/reLyX
-@dirrm share/lyx/templates
-@dirrm share/lyx/tex
-@dirrm share/lyx
+@dirrm share/lyx/layouts
+@dirrm share/lyx/kbd
+@dirrm share/lyx/images
+@dirrm share/lyx/examples
+@dirrm share/lyx/doc
+@dirrm share/lyx/clipart
+@dirrm share/lyx/bind
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/wa
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
