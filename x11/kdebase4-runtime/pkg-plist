@@ -38,6 +38,7 @@ bin/klines.kss
 bin/klissie.kss
 bin/klock
 bin/kmenuedit
+bin/kmorph3d.kss
 bin/kpanel
 bin/kpolygon.kss
 bin/kpyro.kss
@@ -46,6 +47,7 @@ bin/krock.kss
 bin/krootwm
 bin/kscience.kss
 bin/kslip.kss
+bin/kspace.kss
 bin/kstartondesk
 bin/kswarm.kss
 bin/kvt
@@ -1416,57 +1418,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/mimelnk/audio
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_UK/LC_MESSAGES
-@dirrm share/locale/en_UK
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm share/icons/mini
 @dirrm share/icons
 @dirrm share/doc/HTML/no/kcontrol/kcmsyssound
@@ -1496,12 +1447,9 @@ share/wallpapers/wood1.jpg
 @dirrm share/doc/HTML/en/kcontrol/kcminfo
 @dirrm share/doc/HTML/en/kcontrol/kcmbell
 @dirrm share/doc/HTML/en/kcontrol
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kcontrol/kcmsyssound
 @dirrm share/doc/HTML/de/kcontrol
 @dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
-@dirrm share/config
 @dirrm share/apps/kwm/pics
 @dirrm share/apps/kwm
 @dirrm share/apps/kscreensaver
@@ -1539,7 +1487,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/apps/kappfinder/apps/Development
 @dirrm share/apps/kappfinder/apps
 @dirrm share/apps/kappfinder
-@dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/System
 @dirrm share/applnk/Settings/Windows

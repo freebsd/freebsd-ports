@@ -1,0 +1,19 @@
+*** kvt/Makefile.in.orig	Sun Sep 13 12:49:42 1998
+--- kvt/Makefile.in	Sun Sep 13 12:50:42 1998
+***************
+*** 148,154 ****
+  xdmconfigsubdir = @xdmconfigsubdir@
+  
+  INCLUDES= $(all_includes)
+! LDADD	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCURSES) $(KDE_RPATH) $(LIBSOCKET)
+  DISTCLEANFILES = main.moc
+  
+  bin_PROGRAMS = kvt
+--- 148,154 ----
+  xdmconfigsubdir = @xdmconfigsubdir@
+  
+  INCLUDES= $(all_includes)
+! LDADD	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBUTIL) $(LIBCURSES) $(KDE_RPATH) $(LIBSOCKET)
+  DISTCLEANFILES = main.moc
+  
+  bin_PROGRAMS = kvt
