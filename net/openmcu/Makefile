@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	openmcu
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openmcu_1.0.10
+DISTNAME=	openmcu_1.0.12
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -31,5 +31,7 @@ MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/openmcu ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/doc/openh323/openmcu
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${PREFIX}/share/doc/openh323/openmcu
 
 .include <bsd.port.mk>

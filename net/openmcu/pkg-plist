@@ -1,1 +1,4 @@
 bin/openmcu
+share/doc/openh323/openmcu/ReadMe.txt
+@unexec rmdir %D/share/doc/openh323/openmcu 2>/dev/null || true
+
