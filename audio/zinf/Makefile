@@ -7,39 +7,54 @@
 
 PORTNAME=	freeamp
 PORTVERSION=	2.1.0
-PORTREVISION=	1
-CATEGORIES=	audio gnome
+PORTREVISION=	2
+CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
-		id3:${PORTSDIR}/audio/id3lib \
+		ORBit.2:${PORTSDIR}/devel/ORBit \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		ttf.4:${PORTSDIR}/print/freetype
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_GNOMECTRL=	yes
+WANT_ESOUND=	yes
+USE_GTK=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF	=yes
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+USE_AUTOCONF=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_M_IX86"
+CFLAGS+=	"-D_M_IX86"
 .elif ${ARCH} == "alpha"
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_M_ALPHA"
+CFLAGS+=	"-D_M_ALPHA"
+.endif
+
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+PLIST_SUB+=	ESOUND=""
+.else
+CONFIGURE_ARGS+=	--disable-esd
+PLIST_SUB+=	ESOUND="@comment "
+.endif
+
+.if defined(WITH_LIBARTS)
+LIB_DEPENDS=	libartsc.0:${PORTSDIR}/x11/kdelibs2
+PLIST_SUB+=	LIBARTS=""
+.else
+CONFIGURE_ARGS+=	--disable-arts
+PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 post-install:
-	if [ ! -d ... ]; then \
-		${MKDIR} ${LOCALBASE}/etc/sdr/plugins; \
-	fi;\
+	@${MKDIR} ${PREFIX}/etc/sdr/plugins
 	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.freeamp \
-		${LOCALBASE}/etc/sdr/plugins/
+		${PREFIX}/etc/sdr/plugins
 
 .include <bsd.port.post.mk>
