@@ -1910,6 +1910,7 @@ gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
 gnome		ports/x11/gnome
 gnome--		ports/x11-toolkits/gnome--
+gnome-commander	ports/x11-fm/gnome-commander
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-vnc	ports/net/gnome-vnc
