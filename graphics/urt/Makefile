@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/
 DISTNAME=	urt
 DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
-PATCH_SITES=	ftp://ptolemy.berkeley.edu/pub/misc/urt/
+PATCH_SITES=	http://www.funet.fi/pub/graphics/packages/urt/rel2/
 PATCHFILES=	urt-3.1b-3.1b1.patch
 PATCH_DIST_STRIP=-p1
 
