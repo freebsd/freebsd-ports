@@ -1,5 +1,24 @@
 %%RUBY_SITEARCHLIBDIR%%/gtk2.so
 %%RUBY_SITELIBDIR%%/gtk2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/alphatest.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/appwindow.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/button_box.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/colorsel.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/common.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/dialog.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/drawingarea.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/editable_cells.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/floppybuddy.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gtk-logo-rgb.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/images.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/item_factory.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/list_store.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/main.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/menus.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/panes.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/sizegroup.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/textview.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/tree_store.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/buttonbox.rb
@@ -31,6 +50,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtkplug.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtksocket.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/test.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/threads.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/to_drawable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/toolbar.rb
@@ -100,6 +120,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/wmhints.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testgtk
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/misc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/gtk-demo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
