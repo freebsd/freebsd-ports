@@ -3,7 +3,7 @@
 # Date created:				17 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/17 17:41:17 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/07 23:56:48 asami Exp $
 #
 
 DISTNAME=	xwatch-0.1.0
@@ -14,6 +14,7 @@ MAINTAINER=	mph@freebsd.org
 
 LIB_DEPENDS=	gtk\\.1:${PORTSDIR}/x11-toolkits/gtk
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
