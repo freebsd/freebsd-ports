@@ -1,13 +1,9 @@
 bin/ksteak
-lib/libksteakplugin.so.0
-lib/libksteakplugin.so
 lib/libksteakplugin.la
-share/doc/HTML/en/ksteak/index.docbook
-share/doc/HTML/en/ksteak/index.cache.bz2
-share/doc/HTML/en/ksteak/common
-share/doc/HTML/de/ksteak/index.docbook
-share/doc/HTML/de/ksteak/index.cache.bz2
-share/doc/HTML/de/ksteak/common
+lib/libksteakplugin.so
+lib/libksteakplugin.so.0
+share/applnk/Utilities/ksteak.desktop
+share/apps/khtml/kpartplugins/ksteakplugin.rc
 share/apps/ksteak/ksteakui.rc
 share/apps/ksteak/pics/and.png
 share/apps/ksteak/pics/case.png
@@ -18,20 +14,18 @@ share/apps/ksteak/pics/key_enter.png
 share/apps/ksteak/pics/ksteak-dock-watch.png
 share/apps/ksteak/pics/ksteak-dock.png
 share/apps/ksteak/pics/or.png
-share/apps/khtml/kpartplugins/ksteakplugin.rc
+share/doc/HTML/de/ksteak/common
+share/doc/HTML/de/ksteak/index.cache.bz2
+share/doc/HTML/de/ksteak/index.docbook
+share/doc/HTML/en/ksteak/common
+share/doc/HTML/en/ksteak/index.cache.bz2
+share/doc/HTML/en/ksteak/index.docbook
 share/icons/hicolor/16x16/apps/ksteak.png
 share/icons/hicolor/16x16/apps/ksteakplugin.png
-share/icons/hicolor/22x22/apps/ksteak.png
 share/icons/hicolor/22x22/apps/ksteakplugin.png
 share/icons/hicolor/32x32/apps/ksteak.png
 share/icons/hicolor/32x32/apps/ksteakplugin.png
-share/icons/locolor/16x16/apps/ksteak.png
 share/icons/locolor/16x16/apps/ksteakplugin.png
-share/icons/locolor/22x22/apps/ksteak.png
-share/icons/locolor/32x32/apps/ksteak.png
-share/applnk/Applications/ksteak.desktop
 share/locale/de/LC_MESSAGES/ksteak.mo
-@dirrm share/doc/HTML/en/ksteak
-@dirrm share/doc/HTML/de/ksteak
 @dirrm share/apps/ksteak/pics
 @dirrm share/apps/ksteak
