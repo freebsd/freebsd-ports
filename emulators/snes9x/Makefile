@@ -1,15 +1,15 @@
 # New ports collection makefile for:    snes9x
-# Version required:	0.23
-# Date created:         1 June 1997
+# Version required:	1.05
+# Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/02 14:56:42 jseger Exp $
 #
 
-DISTNAME=	snes9x_linux0.23
-PKGNAME=	snes9x-0.23
+DISTNAME=	s9x.linux.105.i386
+PKGNAME=	snes9x-1.05
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.euro.net/pub/misc/Snes9X/
+MASTER_SITES=	http://www.snes9x.com/zips/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
@@ -22,7 +22,7 @@ USE_X11=	yes
 
 STRIP=
 BINOWN=		root
-BINMODE=	4755
+BINMODE=	755
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
