@@ -21,11 +21,7 @@ USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
-.elif ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
-.endif
+USE_IMAKE=	yes
 
 MAN1=		rasmol.1
 
