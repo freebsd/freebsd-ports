@@ -38,6 +38,7 @@
     SUBDIR += gnome2wmaker
     SUBDIR += golem
     SUBDIR += gwm
+    SUBDIR += hackedbox
     SUBDIR += icemc
     SUBDIR += icepref
     SUBDIR += icewm
