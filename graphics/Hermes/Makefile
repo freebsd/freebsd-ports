@@ -9,7 +9,8 @@ PORTNAME=	Hermes
 PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.clanlib.org/download/files/
+MASTER_SITES=	http://www.clanlib.org/download/files/ \
+		http://distro.ibiblio.org/pub/linux/distributions/sorcerer/sources/Hermes/1.3.3/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
