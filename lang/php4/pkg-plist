@@ -160,6 +160,10 @@ include/php/regex/regex_extra.h
 include/php/regex/utils.h
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
+lib/php/build/config.guess
+lib/php/build/config.sub
+lib/php/build/libtool.m4
+lib/php/build/ltmain.sh
 lib/php/build/mkdep.awk
 lib/php/build/phpize.m4
 lib/php/build/scan_makefile_in.awk

@@ -12,8 +12,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PHP implementation of the XML-RPC protocol
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 

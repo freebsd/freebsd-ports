@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.10
-PORTREVISION?=	2
+PORTVERSION=	4.3.11
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -113,8 +113,8 @@ CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 .if defined(WITH_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
-                --with-openssl-dir=${OPENSSLBASE}
-LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
+		--with-openssl-dir=${OPENSSLBASE}
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 .endif
 
 .if defined(WITH_APACHE)

@@ -133,6 +133,12 @@ USE_ICONV=	yes
 LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
+
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
+USE_OPENSSL=	yes
+.endif
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -438,19 +444,6 @@ CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if defined(WITH_JIS)
 CONFIGURE_ARGS+=--enable-gd-jis-conv
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "imap"
-.	if !exists(${LOCALBASE}/lib/libc-client4.so)
-.		if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--with-imap-ssl=${LOCALBASE}
-.		endif
-.	else
-WITH_IMAP_SSL!=	/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
-.		if !empty(WITH_IMAP_SSL)
-CONFIGURE_ARGS+=--with-imap-ssl=${LOCALBASE}
-.		endif
 .	endif
 .endif
 
