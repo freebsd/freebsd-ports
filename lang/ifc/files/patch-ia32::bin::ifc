@@ -1,0 +1,74 @@
+--- ia32/bin/ifc.orig	Sat Apr  5 20:48:18 2003
++++ ia32/bin/ifc	Sat Apr  5 20:53:32 2003
+@@ -1,34 +1,61 @@
+ #!/bin/sh
+ 
++PREFIX=@@PREFIX@@
++export PREFIX;
++
+ if [ -z INTEL_LICENSE_FILE ]
+ then
+-INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
++INTEL_LICENSE_FILE=${PREFIX}/intel/licenses;
+ else
+-INTEL_LICENSE_FILE=$INTEL_LICENSE_FILE:<INSTALLDIR>/licenses;
++INTEL_LICENSE_FILE=$INTEL_LICENSE_FILE:${PREFIX}/intel/licenses;
+ fi
+ export INTEL_LICENSE_FILE;
+ 
+ if [ -z LD_LIBRARY_PATH ]
+ then 
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib;
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib;
+ else
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib:$LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib:$LD_LIBRARY_PATH
+ fi
+ export LD_LIBRARY_PATH;
+ 
+ if [ -z PATH ]
+ then
+- PATH=<INSTALLDIR>/compiler70/ia32/bin;
++ PATH=${PREFIX}/intel/compiler70/ia32/bin;
+ else
+- PATH=<INSTALLDIR>/compiler70/ia32/bin:$PATH;
++ PATH=${PREFIX}/intel/compiler70/ia32/bin:$PATH;
+ fi
+ export PATH;
+ 
+-export -n IA32ROOT; unset IA32ROOT;
+-
+ if [ $# != 0 ]
+ then
+- exec -a "<INSTALLDIR>/compiler70/ia32/bin/ifc" <INSTALLDIR>/compiler70/ia32/bin/ifcbin "$@";
++ i=0
++ argc=$#
++ while [ $i -lt $argc ] ; do
++  val1=$1
++  shift
++  val2=${val1#"-openmp"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  val2=${val1#"-par"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  if [ "${val1}" = "-Kpic" ] || [ "${val1}" = "-KPIC" ] || \
++   [ "${val1}" = "-fpic" ] || [ "${val1}" = "-fPIC" ] ; then
++   set -- "$@" "-Qoption,ld,-PIC"
++  fi
++  if [ "${val1}" = "-mt" ] ; then
++   unset val1
++   set -- "$@" "-Qoption,ld,-MT"
++  fi
++  set -- "$@" "$val1"
++  i=$(($i+1))
++ done
++ exec ${PREFIX}/intel/compiler70/ia32/bin/ifcbin "$@";
+ else
+- exec -a "<INSTALLDIR>/compiler70/ia32/bin/ifc" <INSTALLDIR>/compiler70/ia32/bin/ifcbin;
++ exec ${PREFIX}/intel/compiler70/ia32/bin/ifcbin;
+ fi

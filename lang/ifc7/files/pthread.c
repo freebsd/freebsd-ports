@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002 Marius Strobl
+ * Copyright (c) 2003  The FreeBSD Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,30 +23,14 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/cxa_atexit.c,v 1.2 2003-04-28 22:17:47 maho Exp $
+ * $FreeBSD$
  */
 
-#include <stdlib.h>
+void pthread_exit(void *value_ptr) __attribute__ ((weak));
+void pthread_exit(void *value_ptr) {}
 
-/*
- * The __cxa_atexit() function and friends are needed for full (IA64) C++ ABI
- * compatibility but FreeBSD doesn't have implemented them, yet. In addition
- * to the classic atexit() it is not only used to register functions to be
- * called at program exit but also to call them (C++ destructors in that case)
- * when a shared object is unloaded. For the later to work the dynamic linker
- * assigns a unique dynamic shared object handle to every shared object while
- * a handle of NULL represents a main program. When __cxa_finalize() is called
- * with a specific (non-NULL) handle as an argument all functions registered
- * via __cxa_atexit() and having the same handle are called.
- * The best we can do here to emulate that behaviour until FreeBSD supports
- * this is to register the functions via atexit(). While this certainly is a
- * bad hack it seems to work, even the current dynamic linker is assigning
- * the handles. I didn't see a function getting registered with an argument
- * so far.
- */
-int
-__cxa_atexit(void (*fn)(), void *arg, void *handle)
+int pthread_equal(void) __attribute__ ((weak));
+int pthread_equal(void)
 {
-
-	return (handle ? atexit(fn) : 0);
+   return 1;
 }

@@ -1,12 +1,3 @@
-This is Intels Fortran compiler, it is set up to produce
-native FreeBSD objects, supporting development of
-performance-oriented applications for Pentium processors,
-including the Pentium 4 processor.
+This is Intels Fortran compiler, it is set up to produce native FreeBSD objects.
 
-You can obtain 30-day Free Evaluation Software(Includes Support) 
-or, Non-Commercial Unsupported lisence.
-Newer version of ifc can obtain at https://premier.intel.com/,
-and another registration is required.
-
-WWW: http://www.intel.com/software/products/compilers/f60l/
-     https://premier.intel.com/
+WWW: http://www.intel.com/software/products/compilers/flin
