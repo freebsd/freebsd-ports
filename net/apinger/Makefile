@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	apinger
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/ 
+MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	An IP device monitoring tool
@@ -17,12 +17,12 @@ COMMENT=	An IP device monitoring tool
 GNU_CONFIGURE=	yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${PREFIX}/etc/apinger.conf.sample
 .if !defined(BATCH)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "###############################################################################"
-	@${ECHO_CMD} "# Please edit ${PREFIX}/etc/apinger.conf to your needs.                       #"
-	@${ECHO_CMD} "###############################################################################"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "###############################################################################"
+	@${ECHO_MSG} "# Please edit ${PREFIX}/etc/apinger.conf to your needs.                       #"
+	@${ECHO_MSG} "###############################################################################"
 .endif
 
 .if !defined(NOPORTDOCS)
