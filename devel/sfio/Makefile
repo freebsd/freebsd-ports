@@ -9,39 +9,7 @@
 PORTNAME=	sfio
 PORTVERSION=	1999
 CATEGORIES=	devel
-#real master site is http://www.research.att.com/sw/tools/sfio/
-MASTER_SITES=	\
-	ftp://ftp.netbsd.org/pub${SUB} \
-	ftp://ftp.netbsd.org/pub${SUB2} \
-	ftp://gatekeeper.dec.com/pub/BSD${SUB} \
-	ftp://gatekeeper.dec.com/pub/BSD${SUB2} \
-	ftp://ftp.planix.com/pub${SUB} \
-	ftp://ftp.planix.com/pub${SUB2} \
-	ftp://ftp.plig.net/pub${SUB} \
-	ftp://ftp.plig.net/pub${SUB2} \
-	ftp://ftp.csua.berkeley.edu/pub/.1/ports/distfiles/ \
-	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/ \
-	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/LOCAL_PORTS/ \
-	ftp://ftp.tuwien.ac.at/zaux024/opsys${SUB} \
-	ftp://ftp.tuwien.ac.at/zaux024/opsys${SUB2} \
-	ftp://sunsite.cnlab-switch.ch/mirror${SUB} \
-	ftp://ftp.unina.it/pub/Unix${SUB} \
-	ftp://ftp.unina.it/pub/Unix${SUB2} \
-	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub${SUB} \
-	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub${SUB2} \
-	ftp://ftp.dti.ad.jp/pub${SUB} \
-	ftp://ftp.dti.ad.jp/pub${SUB2} \
-	ftp://ftp.jaist.ac.jp/.arc07${SUB} \
-	ftp://ftp.jaist.ac.jp/.arc07${SUB2} \
-	ftp://ftp.tokyonet.ad.jp${SUB} \
-	ftp://ftp.sra.co.jp/pub/os${SUB} \
-	ftp://ftp.sra.co.jp/pub/os${SUB2} \
-	ftp://ftp.u-aizu.ac.jp/pub/os${SUB} \
-	ftp://ftp.u-aizu.ac.jp/pub/os${SUB2} \
-	ftp://ftp.nectec.or.th/pub/bsd-distributions${SUB}
-SUB=	/NetBSD/packages/distfiles/
-SUB2=	${SUB}LOCAL_PORTS/
-
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.src.unix.cpio
 
