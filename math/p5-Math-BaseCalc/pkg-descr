@@ -1,0 +1,7 @@
+This module facilitates the conversion of numbers between various number
+bases. You may define your own digit sets, or use any of several
+predefined digit sets.
+
+WWW: http://search.cpan.org/search?dist=Math-BaseCalc
+
+Seamus Venasse <svenasse@polaris.ca>
