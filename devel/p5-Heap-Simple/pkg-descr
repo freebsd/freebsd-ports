@@ -18,7 +18,7 @@ the elements around and make changes to them while they are in the heap as
 long as you don't change the key.
 
 WWW: http://search.cpan.org/dist/Heap-Simple/
-Author: Ton Hospel <Heap::Simple@home.lunix>
+Author: Ton Hospel <cpan@ton.iguana.be>
 
 - Aaron Dalton
 aaron@daltons.ca
