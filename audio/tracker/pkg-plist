@@ -2,4 +2,6 @@
 bin/tracker
 bin/randomize
 bin/analyzer
+bin/splitmod
+etc/compression_methods
 man/man1/tracker.1
