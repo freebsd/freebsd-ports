@@ -1122,6 +1122,7 @@
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-Pager
+    SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Var_Dump
