@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	imlib
-PKGNAMESUFFIX=	-imlib
+PKGNAMESUFFIX?=	-imlib
 .else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
