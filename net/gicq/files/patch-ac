@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon Sep  6 23:36:43 1999
-+++ Makefile.in	Mon Sep  6 23:37:18 1999
+--- Makefile.in.orig	Fri Sep 20 17:11:23 2002
++++ Makefile.in	Fri Sep 20 17:11:57 2002
 @@ -116,8 +116,10 @@
  
  SUBDIRS = macros intl po pixmaps src doc
-
+ 
 +.ifdef HAVE_GNOME
  sysdir   = $(datadir)/apps/Applications
  sys_DATA = gicq.desktop
