@@ -107,7 +107,6 @@ Maaate		ports/audio/Maaate
 MathPlanner	ports/editors/MathPlanner
 Mesa3		ports/graphics/Mesa3
 Mosaic		ports/www/Mosaic
-Motif-dummy	ports/x11-toolkits/Motif-dummy
 MuSE		ports/audio/muse
 NeTraMet	ports/net/NeTraMet
 ORBacus		ports/devel/ORBacus
