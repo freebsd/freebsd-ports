@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.49 1997/12/24 18:46:11 imp Exp $
+# $Id: Makefile,v 1.50 1998/01/20 23:50:03 imp Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -75,11 +75,11 @@ fetch-depends:
 	@echo
 	@echo You must set variable USA_RESIDENT to YES if you are a USA
 	@echo resident or NO otherwise.
-	@echo If you are a USA resident you have to get the RSAREF2
-	@echo library \(RSA Inc. holds a patent on RSA and public key
-	@echo cypto in general - using RSA implementations other than
-	@echo RSAREF will violate the US patent law\)
-	@echo and extract it to ${WRKSRC}.
+	@echo If you are a USA resident then this port must also fetch
+	@echo the RSAREF2 library from sources abroad \(RSA Inc. holds a
+	@echo patent on RSA and public key crypto in general in the United
+	@echo States so using RSA implementations other than RSAREF there
+	@echo may violate US patent law\).
 	@false
 .endif
 
