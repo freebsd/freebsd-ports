@@ -102,6 +102,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/next.png
 %%PORTDOCS%%share/doc/MHonArc/prev.png
 %%PORTDOCS%%share/doc/MHonArc/quickstart.html
+%%PORTDOCS%%share/doc/MHonArc/rcfileexs/blog.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/date.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/def-mime.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/frames.mrc.html
