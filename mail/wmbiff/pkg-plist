@@ -1,0 +1,3 @@
+bin/wmbiff
+share/examples/wmbiff/sample.wmbiffrc
+@dirrm share/examples/wmbiff
