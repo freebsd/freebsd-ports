@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	uf-view
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 
 MAINTAINER=	mcgee@wam.umd.edu
 COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
-
-BROKEN=		"Does not compile"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
