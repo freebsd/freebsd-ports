@@ -5080,6 +5080,7 @@ play		ports/audio/play
 playmidi	ports/audio/playmidi
 plib		ports/x11-toolkits/plib
 plor		ports/news/plor
+ploticus	ports/math/ploticus
 plotmtv		ports/graphics/plotmtv
 plotutils	ports/graphics/plotutils
 plp		ports/comms/plp
