@@ -30,10 +30,6 @@ INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Linker error"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g' ${WRKSRC}/configure
 
