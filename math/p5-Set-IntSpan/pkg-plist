@@ -1,3 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/Set/IntSpan.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/IntSpan/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/IntSpan
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set
