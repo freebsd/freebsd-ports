@@ -1,11 +1,11 @@
---- snort.c.orig	Fri Jun 28 10:22:59 2002
-+++ snort.c	Sat Jul 13 11:13:16 2002
-@@ -1694,7 +1694,7 @@
-     difftime.tv_sec = endtime.tv_sec - starttime.tv_sec;
-     difftime.tv_usec = endtime.tv_usec - starttime.tv_usec;
- 
--    printf("Run time for packet processing was %u.%u seconds\n", 
-+    printf("Run time for packet processing was %lu.%lu seconds\n", 
-             difftime.tv_sec, difftime.tv_usec);
- 
-     CleanExit(SIGQUIT);
+--- src/snort.c.orig	Sun Oct  6 02:14:32 2002
++++ src/snort.c	Sun Oct  6 02:14:18 2002
+@@ -2193,7 +2193,7 @@
+     struct stat st;
+     int found;
+     int i;
+-    char *conf_files[]={"/etc/snort.conf", "./snort.conf", NULL};
++    char *conf_files[]={"%%PREFIX%%/etc/snort.conf", "./snort.conf", NULL};
+     char *fname = NULL;
+     char *home_dir;
+     char *tmp;

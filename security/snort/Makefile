@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.8.7
+PORTVERSION=	1.9.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -43,6 +43,10 @@ LDFLAGS+=	-lssl -lcrypto
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
 
 pre-configure:
 	@${ECHO} ""
@@ -50,14 +54,35 @@ pre-configure:
 	@${ECHO} "to get additional support."
 	@${ECHO} ""
 
+DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
+	CREDITS README.SNMP README.xml README.FLEXRESP RULES.todo FAQ \
+	SnortUsersManual.pdf README.PLUGINS USAGE
+
 post-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/CREDITS ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/RULES.SAMPLE ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/USAGE ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.rules ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/classification.config ${PREFIX}/etc/classification.config-sample
-	${INSTALL_DATA} ${WRKSRC}/snort.conf ${PREFIX}/etc/snort.conf-sample
-	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}; \
+	${INSTALL_DATA} ${WRKSRC}/etc/classification.config ${DATADIR}/classification.config-sample; \
+	if [ ! -f ${DATADIR}/classification.config ]; then \
+	    ${CP} ${DATADIR}/classification.config-sample \
+		${DATADIR}/classification.config; \
+	fi; \
+	${INSTALL_DATA} ${WRKSRC}/etc/reference.config \
+		${DATADIR}/reference.config-sample; \
+	if [ ! -f ${DATADIR}/reference.config ]; then \
+	    ${CP} ${DATADIR}/reference.config-sample \
+		${DATADIR}/reference.config; \
+	fi; \
+	${INSTALL_DATA} ${WRKSRC}/etc/snort.conf \
+		${PREFIX}/etc/snort.conf-sample; \
+	if [ ! -f ${PREFIX}/etc/snort.conf ]; then \
+	    ${CP} ${PREFIX}/etc/snort.conf-sample \
+		${PREFIX}/etc/snort.conf; \
+	fi
 
 .include <bsd.port.mk>
