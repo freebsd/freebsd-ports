@@ -1,0 +1,9 @@
+Bnetd is a program that will eventually emulate a Blizzard Entertainment's
+Battle.net(r) server. It started on the linux platform, but has since been
+reported to work on *BSD, Solaris, AIX and HP-UX. It should compile and run
+on any standards-based *nix.
+
+Bnetd on WWW : http://www.bnetd.org/
+
+Ying-Chieh Liao
+ijliao@csie.nctu.edu.tw

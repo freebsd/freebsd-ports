@@ -1,0 +1,5 @@
+bin/bnclient
+bin/bnpass
+sbin/bnetd
+etc/rc.d/bnetd.sh
+@unexec rm -rf %D/bnetd 2>/dev/null || true
