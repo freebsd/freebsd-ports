@@ -11641,6 +11641,7 @@ zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
 zope-i18nlayer	ports/www/zope-i18nlayer
 zope-mindmapbbs	ports/www/zope-mindmapbbs
+zope-mysqluserfolder	ports/www/zope-mysqluserfolder
 zope-parsedxml	ports/www/zope-parsedxml
 zope-placelesstranslationservice	ports/www/zope-placelesstranslationservice
 zope-plonelanguagetool	ports/www/zope-plonelanguagetool
