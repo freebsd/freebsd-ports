@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	2.8
+PORTVERSION=	3.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyro
@@ -22,8 +22,9 @@ USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-ro
 EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
 
-post-extract:
-	@${FIND} ${WRKSRC}/examples -name '*.pyc' -exec ${RM} -f {} \;
+post-patch:
+	${ECHO} -e 'install-scripts=${PREFIX}/bin\n' \
+		'\n[install-options]\nunattended=1' >> ${WRKSRC}/setup.cfg
 
 .if !defined(NOPORTDOCS)
 post-install:
