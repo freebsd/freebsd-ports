@@ -57,7 +57,6 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/drivers/icons/mail2.gif
 %%PORTDOCS%%share/doc/ntp/drivers/oncore-shmem.html
 %%PORTDOCS%%share/doc/ntp/extern.html
-%%PORTDOCS%%share/doc/ntp/genkeys.html
 %%PORTDOCS%%share/doc/ntp/hints.html
 %%PORTDOCS%%share/doc/ntp/hints/a-ux
 %%PORTDOCS%%share/doc/ntp/hints/aix
@@ -99,6 +98,7 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/measure.html
 %%PORTDOCS%%share/doc/ntp/miscopt.html
 %%PORTDOCS%%share/doc/ntp/monopt.html
+%%PORTDOCS%%share/doc/ntp/msyslog.html
 %%PORTDOCS%%share/doc/ntp/mx4200data.html
 %%PORTDOCS%%share/doc/ntp/notes.html
 %%PORTDOCS%%share/doc/ntp/ntpd.html
@@ -112,7 +112,6 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/parsenew.html
 %%PORTDOCS%%share/doc/ntp/patches.html
 %%PORTDOCS%%share/doc/ntp/pic/9400n.jpg
-%%PORTDOCS%%share/doc/ntp/pic/alautun4b.gif
 %%PORTDOCS%%share/doc/ntp/pic/alice11.gif
 %%PORTDOCS%%share/doc/ntp/pic/alice13.gif
 %%PORTDOCS%%share/doc/ntp/pic/alice23.gif
@@ -128,13 +127,12 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/pic/beaver.gif
 %%PORTDOCS%%share/doc/ntp/pic/boom3.gif
 %%PORTDOCS%%share/doc/ntp/pic/boom3a.gif
-%%PORTDOCS%%share/doc/ntp/pic/boom4.gif
 %%PORTDOCS%%share/doc/ntp/pic/bustardfly.gif
-%%PORTDOCS%%share/doc/ntp/pic/butterfly.gif
 %%PORTDOCS%%share/doc/ntp/pic/c51.jpg
 %%PORTDOCS%%share/doc/ntp/pic/driver29.gif
 %%PORTDOCS%%share/doc/ntp/pic/driver43_1.gif
 %%PORTDOCS%%share/doc/ntp/pic/driver43_2.jpg
+%%PORTDOCS%%share/doc/ntp/pic/dogsnake.gif
 %%PORTDOCS%%share/doc/ntp/pic/fg6021.gif
 %%PORTDOCS%%share/doc/ntp/pic/fg6039.jpg
 %%PORTDOCS%%share/doc/ntp/pic/gadget.jpg
@@ -161,7 +159,6 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/pic/radio2.jpg
 %%PORTDOCS%%share/doc/ntp/pic/sheepb.jpg
 %%PORTDOCS%%share/doc/ntp/pic/stack1a.jpg
-%%PORTDOCS%%share/doc/ntp/pic/sunrise1.jpg
 %%PORTDOCS%%share/doc/ntp/pic/tonea.gif
 %%PORTDOCS%%share/doc/ntp/pic/wingdorothy.gif
 %%PORTDOCS%%share/doc/ntp/porting.html
@@ -172,9 +169,9 @@ bin/ntp-keygen
 %%PORTDOCS%%share/doc/ntp/refclock.html
 %%PORTDOCS%%share/doc/ntp/release.html
 %%PORTDOCS%%share/doc/ntp/scripts/footer.txt
-%%PORTDOCS%%share/doc/ntp/scripts/header.txt
 %%PORTDOCS%%share/doc/ntp/scripts/links10.txt
 %%PORTDOCS%%share/doc/ntp/scripts/links11.txt
+%%PORTDOCS%%share/doc/ntp/scripts/links12.txt
 %%PORTDOCS%%share/doc/ntp/scripts/links7.txt
 %%PORTDOCS%%share/doc/ntp/scripts/links8.txt
 %%PORTDOCS%%share/doc/ntp/scripts/links9.txt
