@@ -352,6 +352,7 @@
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
     SUBDIR += sylpheed-gtk2
+    SUBDIR += sympa
     SUBDIR += teapop
     SUBDIR += tkrat2
     SUBDIR += tlb
