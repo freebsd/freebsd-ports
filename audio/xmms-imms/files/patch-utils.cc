@@ -1,18 +1,9 @@
---- imms.cc.orig	Wed Feb 11 17:47:21 2004
-+++ imms.cc	Wed Feb 11 18:03:41 2004
-@@ -1,7 +1,6 @@
- #include <time.h>
- #include <ctype.h>
- #include <math.h>
--#include <stdlib.h>     // for (s)random
+--- utils.cc.orig	Sat Aug 14 11:03:14 2004
++++ utils.cc	Sat Aug 14 11:05:54 2004
+@@ -3,23 +3,6 @@
  
- #include <iostream>
- #include <iomanip>
-@@ -43,23 +42,6 @@
- //////////////////////////////////////////////
+ #include "utils.h"
  
- string last_song;
--
 -// Random
 -int imms_random(int max)
 -{
@@ -29,6 +20,7 @@
 -    double cof = rand_num / (RAND_MAX + 1.0);
 -    return (int)(max * cof);
 -}
- 
- // Imms
- Imms::Imms() 
+-
+ time_t usec_diff(struct timeval &tv1, struct timeval &tv2)
+ {
+     return (tv2.tv_sec - tv1.tv_sec) * 1000000
