@@ -1,5 +1,5 @@
 --- Makefile.shared.orig	Sat Mar 27 03:17:07 2004
-+++ Makefile.shared	Thu Apr  1 11:37:18 2004
++++ Makefile.shared	Fri May 14 06:48:16 2004
 @@ -4,7 +4,7 @@
  # Makefile for Ayam (shared version)
  
@@ -96,21 +96,23 @@
  
  # Aqsis
 -AQSISDIR = /usr/local/aqsis
+-AQSISINCDIR = $(AQSISDIR)/include
+-AQSISLIBDIR = $(AQSISDIR)/lib
 +AQSISDIR = ${LOCALBASE}
- AQSISINCDIR = $(AQSISDIR)/include
- AQSISLIBDIR = $(AQSISDIR)/lib
++AQSISINCDIR = $(AQSISDIR)/include/aqsis
++AQSISLIBDIR = $(AQSISDIR)/lib/aqsis
  # if you do not use Aqsis libslxargs as libslcargs replacement:
 -AQSISOBJS = 
 +#AQSISOBJS = 
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
 -#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISDIR)/lib/libaqsis.so $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -llog4cpp
++AQSISOBJS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -llog4cpp
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
  #AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
 -AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
-+AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L ${LOCALBASE}/lib -llog4cpp ${PTHREAD_LIBS}
++AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -llog4cpp ${PTHREAD_LIBS}
  
  
  # BMRT
@@ -138,12 +140,14 @@
  
  # linker flags to produce shared modules:
  # Linux, Solaris, IRIX:
-@@ -223,7 +228,7 @@
+@@ -222,8 +227,8 @@
+ RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
- AYSLXINCDIR = $(AQSISDIR)/include
+-AYSLXINCDIR = $(AQSISDIR)/include
 -AYSLXLIBS = $(AQSISDIR)/lib/rcdummy.o $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L/usr/local/lib -llog4cpp
-+AYSLXLIBS = $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib -llog4cpp
++AYSLXINCDIR = ${AQSISINCDIR}
++AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib -llog4cpp
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc
