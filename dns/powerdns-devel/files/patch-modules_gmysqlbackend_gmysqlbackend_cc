@@ -1,6 +1,6 @@
---- modules/gmysqlbackend/gmysqlbackend.cc.orig	Tue Dec 17 10:56:43 2002
-+++ modules/gmysqlbackend/gmysqlbackend.cc	Tue Dec 17 11:01:33 2002
-@@ -20,13 +20,14 @@
+--- modules/gmysqlbackend/gmysqlbackend.cc.orig	Thu Feb 27 13:49:37 2003
++++ modules/gmysqlbackend/gmysqlbackend.cc	Sun May 11 08:49:16 2003
+@@ -20,14 +20,14 @@
  
  gMySQLBackend::gMySQLBackend(const string &mode, const string &suffix)  : GSQLBackend(mode,suffix)
  {
@@ -13,6 +13,7 @@
    try {
 -    setDB(new SMySQL(getArg("dbname"),
 -		  getArg("host"),
+-		  getArg("port"),
 -		  getArg("socket"),
 -		  getArg("user"),
 -		  getArg("password")));

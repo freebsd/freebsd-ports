@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -99,7 +99,7 @@ post-patch:
 		${WRKSRC}/pdns/Makefile.in
 .endif
 
-.if ${OSVERSION} >= 500043 && ${MACHINE_ARCH} == "i386"
+.if defined(POWERDNS_WITH_RECURSOR)
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
 .else
