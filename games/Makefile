@@ -190,6 +190,7 @@
     SUBDIR += nil
     SUBDIR += nonsense
     SUBDIR += omega
+    SUBDIR += twitch
     SUBDIR += uox3
     SUBDIR += wmeyes
     SUBDIR += wmminichess
