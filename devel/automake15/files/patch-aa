@@ -1,5 +1,5 @@
---- automake.texi.orig	Fri Sep 19 06:13:10 1997
-+++ automake.texi	Fri Sep 19 06:17:06 1997
+--- automake.texi.orig	Sat Apr  4 04:04:07 1998
++++ automake.texi	Mon May  4 10:41:52 1998
 @@ -1,6 +1,7 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header
@@ -18,8 +18,8 @@
  
  @dircategory Individual utilities
  @direntry
--* aclocal: (automake)Invoking aclocal           Generating aclocal.m4
-+* Aclocal: (automake)Invoking aclocal           Generating aclocal.m4
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
++* Aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
  @end direntry
  
  @ifinfo
