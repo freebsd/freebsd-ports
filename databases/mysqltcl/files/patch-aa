@@ -1,0 +1,9 @@
+--- mysqltcl.c.orig	Mon Jul  6 11:35:17 1998
++++ mysqltcl.c	Wed Sep  1 01:27:44 1999
+@@ -743,5 +743,5 @@
+    */
+   if (strlen (MysqlHandlePrefix) == MYSQL_HPREFIX_LEN)
+-    return TCL_OK;
++    return Tcl_PkgProvide(interp, "mysql", "1.53");
+   else
+     {

@@ -1,0 +1,12 @@
+From the package man-page:
+
+       MySQLTcl  is a collection of Tcl commands and a Tcl global
+       array that provide access to one or  more  mysql  database
+       servers.
+
+       MySQLTcl  is  nothing  more  than  a  patched version of a
+       patched  version  of  Hakan  Soderstrom's  patch  of   Tom
+       Poindexter's  Sybtcl.  Most of the documentention has been
+       left as it was when I started to work with this  interface
+       (a  patch  of  msqltcl-1.50).  However,  I  have  tried to
+       replace appropriate occurrences of msql by MySQL.
