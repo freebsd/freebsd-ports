@@ -1,5 +1,7 @@
 **********************************************************************
 **********************************************************************
+NOTE FOR PACKAGE USERS ONLY:
+============================
 This package does not create the spool directory, due to limitations in
 the packaging mechanism, or my knowledge of it.
 
@@ -9,6 +11,8 @@ Once the package is installed, please do the following (as root):
 	mkdir -p cups/tmp
 	chown -R root:daemon cups
 
+NOTE FOR *ALL* USERS OF CUPS:
+=============================
 There's another problem: in the installed configuration, the "Print Test
 Page" function in the web interface does not work. This is due to a bug in
 the URL constructed for it.
