@@ -75,7 +75,7 @@
 +	 <bookmark _name="FreeBSD Diary" icon_name="i-web" uri="http://www.freebsddiary.org"/>
 +	 <bookmark _name="FreeBSD Forums" icon_name="i-web" uri="http://www.freebsdforums.org"/>
 +	 <bookmark _name="FreeBSD GNOME Project" icon_name="i-web" uri="http://www.freebsd.org/gnome"/>
-+	 <bookmark _name="FreeBSD Handbook" icon_name="i-web" uri="http://www.freebsd.org/handbook/index.html"/>
++	 <bookmark _name="FreeBSD Handbook" icon_name="i-web" uri="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/index.html"/>
 +	 <bookmark _name="FreeBSD Security Information" icon_name="i-web" uri="http://www.freebsd.org/security/security.html"/>
 +         <bookmark _name="Freshports" icon_name="i-web" uri="http://www.freshports.org"/>
 +	 <bookmark _name="Google's BSD Search Engine" icon_name="i-web" uri="http://www.google.com/bsd"/>
