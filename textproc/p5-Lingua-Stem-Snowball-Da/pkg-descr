@@ -1,0 +1,4 @@
+Lingua::Stem::Snowball::Da is a perl port of the danish
+stemmer at http://snowball.sourceforge.net.
+
+WWW: http://search.cpan.org/~cine/Lingua-Stem-Snowball-Da-1.01/Da.pm
