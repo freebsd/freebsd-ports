@@ -32,6 +32,8 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Packages needed for doing development in Linux mode
 
+BROKEN=			Missing dependency
+
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
