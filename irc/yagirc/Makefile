@@ -1,27 +1,29 @@
 # New ports collection makefile for:   	yagirc
-# Version required:			0.65.7
+# Version required:			0.66.1
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.13 1999/01/14 17:08:22 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/03/15 18:30:05 nectar Exp $
 #
 
-DISTNAME=	yagirc-0.65.7
+DISTNAME=	yagirc-0.66.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.elpaso.net/~spoon/yagirc/
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
-		Imlib.3:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib \
+		Xpm.4:${PORTSDIR}/graphics/xpm \
 		esd.1:${PORTSDIR}/audio/esound
 
-BROKEN=		build
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gnome --disable-gtktest
-CONFIGURE_ENV=	PTHREAD_LIB="-lc_r"
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--disable-gnome --disable-pthread
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

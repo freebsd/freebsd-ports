@@ -1,0 +1,45 @@
+--- src/gui_channels.c.orig	Fri Oct 23 00:56:58 1998
++++ src/gui_channels.c	Sun May 23 03:01:28 1999
+@@ -240,8 +240,9 @@
+       gethostname(hostname, 127);
+       sprintf(pid, "%d", getpid());
+       
+-      channel_drag_types[0].target = 
+-	g_copy_strings("application/x-yagirc-channel-", hostname, pid, NULL);
++      channel_drag_types[0].target = g_malloc ( strlen (hostname) + strlen (pid) + 29 );
++      sprintf(channel_drag_types[0].target, "%s%s%s",
++	      "application/x-yagirc-channel-", hostname, pid, NULL);
+     }
+ 
+   /* create widget */
+--- src/gui_list.c.orig	Sun May 23 03:12:18 1999
++++ src/gui_list.c	Sun May 23 03:12:30 1999
+@@ -278,8 +278,6 @@
+    gtk_signal_connect(GTK_OBJECT(clist), "unselect_row", GTK_SIGNAL_FUNC(list_callback), "unselect");
+    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(clist), TRUE, TRUE, 0);
+    gtk_clist_set_selection_mode(clist, GTK_SELECTION_SINGLE);
+-   gtk_clist_set_policy(clist, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+-   gtk_clist_set_border(clist, GTK_SHADOW_OUT);
+    gtk_clist_set_column_title(clist, 0, "Channel");
+    gtk_clist_set_column_title(clist, 1, "Users");
+    gtk_clist_set_column_title(clist, 2, "Topic");
+--- src/gui_setup_alias.c.orig	Sun May 23 03:12:54 1999
++++ src/gui_setup_alias.c	Sun May 23 03:13:09 1999
+@@ -239,7 +239,6 @@
+ 
+     /* alias list */
+     gtk_clist_set_column_width (GTK_CLIST (alias_list), 0, 100);
+-    gtk_clist_set_policy(GTK_CLIST(alias_list), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+     //gtk_list_set_selection_mode (GTK_LIST(alias_list), GTK_SELECTION_MULTIPLE);
+     gtk_clist_set_selection_mode (GTK_CLIST(alias_list), GTK_SELECTION_BROWSE);
+     gtk_signal_connect (GTK_OBJECT (alias_list), "select_row",
+--- src/gui_urllist.c.orig	Sun May 23 03:13:42 1999
++++ src/gui_urllist.c	Sun May 23 03:13:54 1999
+@@ -160,7 +160,6 @@
+ 
+   /* configure the list box */
+   gtk_clist_set_selection_mode(GTK_CLIST(urlwin->list), GTK_SELECTION_BROWSE);
+-  gtk_clist_set_policy(GTK_CLIST(urlwin->list), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+   gtk_clist_column_titles_passive(GTK_CLIST(urlwin->list));
+   gtk_clist_set_column_width(GTK_CLIST(urlwin->list), 0, 140);
+   gtk_clist_set_column_width(GTK_CLIST(urlwin->list), 1, 60);
