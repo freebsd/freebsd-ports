@@ -524,8 +524,6 @@ lib/libxview.a
 lib/libxview.sa.3
 lib/libxview.so
 lib/libxview.so.3.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/.text_extras_menu
 lib/.textswrc
 lib/.ttyswrc

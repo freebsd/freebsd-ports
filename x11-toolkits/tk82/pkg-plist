@@ -31,8 +31,6 @@ lib/libtk%%SHORT_TK_VER%%.a
 lib/libtk%%SHORT_TK_VER%%.so
 lib/libtk%%SHORT_TK_VER%%.so.1
 lib/libtkstub%%SHORT_TK_VER%%.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tk%%TK_VER%%/bgerror.tcl
 lib/tk%%TK_VER%%/button.tcl
 lib/tk%%TK_VER%%/clrpick.tcl

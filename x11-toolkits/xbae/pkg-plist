@@ -2,8 +2,6 @@ lib/libXbae-4.7.a
 lib/libXbae.a
 lib/libXbae.so
 lib/libXbae.so.7.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT==%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/Xbae-4.7/Caption.h
 include/Xbae-4.7/CaptionP.h
 include/Xbae-4.7/Input.h

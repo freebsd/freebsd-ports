@@ -25,6 +25,7 @@ FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0.4 -E --quiet
 WRKSRC=		${WRKDIR}/tk8.0.4/unix
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --enable-xpm --enable-step --enable-dnd \
 		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include"
@@ -41,7 +42,6 @@ post-install:
 		${PREFIX}/share/doc/tkstep
 .endif
 	${LN} -sf ${PREFIX}/lib/libtkstep80.so.1  ${PREFIX}/lib/libtkstep80.so
-	${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

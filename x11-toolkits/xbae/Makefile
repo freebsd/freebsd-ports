@@ -17,8 +17,10 @@ DISTNAME=	Xbae-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
-REQUIRES_MOTIF= YES
-USE_IMAKE=	YES
+REQUIRES_MOTIF= yes
+USE_IMAKE=	yes
+INSTALL_SHLIBS=	yes
+
 MAN3=		XbaeCaption.3 XbaeMatrix.3
 
 .include <bsd.port.pre.mk>
@@ -29,6 +31,5 @@ post-install:
 .endif
 	${RM} -rf ${PREFIX}/include/Xbae
 	${LN} -sf Xbae-4.7 ${PREFIX}/include/Xbae
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

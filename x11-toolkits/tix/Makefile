@@ -18,6 +18,7 @@ MAINTAINER=	jmz@FreeBSD.org
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tcl="${PREFIX}/include/tcl8.2" \
@@ -54,7 +55,6 @@ post-install:
 	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.2 ${PREFIX}/bin/tixwish
 	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
 	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
 	${INSTALL_DATA} ${WRKSRC}/../../${dir}/*.h ${PREFIX}/include/tix/${dir}

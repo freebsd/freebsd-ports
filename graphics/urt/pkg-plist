@@ -76,8 +76,6 @@ include/rle_raw.h
 lib/librle.a
 lib/librle.so
 lib/librle.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @comment if compressed RLE.5 doesn't work.
 man/man5/RLE.5
 man/man5/rle.5

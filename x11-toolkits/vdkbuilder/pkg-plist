@@ -132,8 +132,6 @@ lib/libvdkdclock.a
 lib/libvdkdclock.la
 lib/libvdkdclock.so
 lib/libvdkdclock.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/vdkb/lang/de.lan
 share/vdkb/lang/en.lan
 share/vdkb/lang/it.lan

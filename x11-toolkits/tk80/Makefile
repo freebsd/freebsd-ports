@@ -17,6 +17,7 @@ LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 
 NO_LATEST_LINK=	yes
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/tk8.0.5/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
@@ -51,7 +52,6 @@ pre-build:
 
 post-install:
 	${LN} -sf ${TK_LIB_FILE} ${PREFIX}/lib/${TK_LIB}
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

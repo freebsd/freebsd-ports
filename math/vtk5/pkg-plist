@@ -56,5 +56,3 @@ lib/vtk/python/vtkTkImageWindowWidget
 lib/vtk/python/vtkTkRenderWidget
 @dirrm lib/vtk/python
 @dirrm lib/vtk
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -17,5 +17,6 @@ LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 
 .include <bsd.port.mk>

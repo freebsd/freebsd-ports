@@ -457,8 +457,6 @@ man/mann/tkwait.n.gz
 man/mann/toplevel.n.gz
 man/mann/winfo.n.gz
 man/mann/wm.n.gz
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/tk8.0/demos/images
 @dirrm lib/tk8.0/demos
 @dirrm lib/tk8.0/images

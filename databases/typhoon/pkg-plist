@@ -7,7 +7,5 @@ include/typhoon.h
 lib/libtyphoon.a
 lib/libtyphoon.so
 lib/libtyphoon.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/typhoon/manual.asc
 @dirrm share/typhoon

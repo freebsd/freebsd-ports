@@ -17,6 +17,7 @@ DISTNAME=	xview3.2p1-X11R6
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
+INSTALL_SHLIBS=	yes
 IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 XMKMF=		${SETENV} IMAKEINCLUDE=${IMAKEINCLUDE} xmkmf -a
@@ -28,6 +29,5 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@(cd $(WRKSRC); $(MAKE) -k 'SUBDIRS=doc' install)
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

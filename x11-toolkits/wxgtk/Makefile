@@ -24,6 +24,7 @@ MAINTAINER=	nectar@FreeBSD.ORG
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	yes
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
@@ -31,8 +32,5 @@ USE_NEWGCC=	yes
 WRKSRC=		${WRKDIR}/wxGTK
 
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
-
-post-install:
-	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

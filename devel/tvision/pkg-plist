@@ -26,6 +26,4 @@ include/tvision/views.h
 lib/libtvision.a
 lib/libtvision.so
 lib/libtvision.so.0.7
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/tvision

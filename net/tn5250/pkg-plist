@@ -24,8 +24,6 @@ include/tn5250/wtd.h
 lib/lib5250.a
 lib/lib5250.so
 lib/lib5250.so.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/aclocal/tn5250.m4
 share/tn5250/XTerm
 share/tn5250/dialogrc

@@ -72,5 +72,3 @@ lib/libnn.so.1
 lib/libnn.so
 lib/libnn.la
 lib/libnn.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

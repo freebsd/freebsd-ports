@@ -17,6 +17,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.3

@@ -359,5 +359,3 @@ share/wx/gs_afm/TimesRo.afm
 @dirrm share/wx/afm
 @dirrm share/wx/gs_afm
 @dirrm share/wx
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
