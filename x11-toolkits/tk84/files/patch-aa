@@ -1,5 +1,5 @@
 --- configure.orig	Wed Mar  6 09:51:50 2002
-+++ configure	Sun Mar 17 14:49:04 2002
++++ configure	Thu May  9 10:43:59 2002
 @@ -2482,22 +2482,23 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
@@ -36,3 +36,20 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
+@@ -4733,7 +4735,7 @@
+ if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+     TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
+-    MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) \${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
++    MAKE_LIB="\${SHLIB_LD} \${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) \${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
+     RANLIB=":"
+ 
+     TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
+@@ -5046,6 +5048,7 @@
+ s%@STLIB_LD@%$STLIB_LD%g
+ s%@SHLIB_LD@%$SHLIB_LD%g
+ s%@SHLIB_LD_LIBS@%$SHLIB_LD_LIBS%g
++s%@TCL_SHLIB_LD_EXTRAS@%$TCL_SHLIB_LD_EXTRAS%g
+ s%@SHLIB_SUFFIX@%$SHLIB_SUFFIX%g
+ s%@SHLIB_VERSION@%$SHLIB_VERSION%g
+ s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g

@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -21,12 +22,14 @@ USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk82.so.1
+TK_VER=		8.2
+SHORT_TK_VER=	82
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER}
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
+MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
+PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
-
-PLIST_SUB=	TK_VER=8.2 SHORT_TK_VER=82
 
 MANCOMPRESSED=	no
 
@@ -299,6 +302,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .include <bsd.port.pre.mk>
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
