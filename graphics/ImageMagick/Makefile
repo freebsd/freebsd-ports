@@ -43,8 +43,11 @@ USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --without-modules \
-		--with-threads --without-magick-plus-plus \
+		--without-magick-plus-plus \
 		--with-perl=${PERL5} --without-xml
+.if defined(PERL_THREADED) && ${PERL_THREADED} == "true"
+CONFIGURE_ARGS+= --with-threads
+.endif
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_16BIT_PIXEL)
