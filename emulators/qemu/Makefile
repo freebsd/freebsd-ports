@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.5.5.s.20040530
+PORTVERSION=	0.5.5.s.20040604
 CATEGORIES=	emulators
 MASTER_SITES=	http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2004-05-30_23-40
+DISTNAME=	${PORTNAME}-snapshot-2004-06-04_23-40
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
 
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETOPT_LONG=	yes
 USE_SDL=	sdl
 USE_GCC=	3.3
 USE_PERL5=	yes
