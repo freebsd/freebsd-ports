@@ -1,0 +1,38 @@
+--- src/Makefile.in.orig	Wed Oct  6 13:50:11 2004
++++ src/Makefile.in	Mon Mar  7 23:35:28 2005
+@@ -51,13 +51,13 @@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_renattach_OBJECTS = renattach.$(OBJEXT) settings.$(OBJEXT) \
+-	utility.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT)
++	utility.$(OBJEXT)
+ renattach_OBJECTS = $(am_renattach_OBJECTS)
+ renattach_LDADD = $(LDADD)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
++@AMDEP_TRUE@DEP_FILES = \
+ @AMDEP_TRUE@	./$(DEPDIR)/renattach.Po ./$(DEPDIR)/settings.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/utility.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -143,8 +143,8 @@
+ target_alias = @target_alias@
+ AM_CFLAGS = -pedantic -Wall -DCONF_DIR=\"$(sysconfdir)\"
+ dist_man_MANS = renattach.1
+-renattach_SOURCES = renattach.c settings.c utility.c getopt.c getopt1.c \
+-	renattach.h strings-en.h utility.h getopt.h
++renattach_SOURCES = renattach.c settings.c utility.c \
++	renattach.h strings-en.h utility.h
+ 
+ all: all-am
+ 
+@@ -212,8 +212,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/renattach.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/settings.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utility.Po@am__quote@
