@@ -1,0 +1,27 @@
+#!/bin/sh
+if [ -z $2 ]; then
+  exit 0
+fi
+if [ $2 != "POST-DEINSTALL" ]; then
+  echo "!!! This script is for post-deinstallation only."; \
+  exit 0
+fi
+echo "==> Post-deinstallation cleanup:"
+if [ -d /etc/xbone ]; then
+  /usr/bin/dialog --yesno "/etc/xbone found. Do you want to DELETE it?\
+                           Warning: <YES> would DELETE ALL XBONE CONFIG/STATE\
+			   files and ALL CERTIFICATES." 8 50 && 
+  rm -rf /etc/xbone || echo "    - /etc/xbone is not deleted."
+fi
+/usr/bin/dialog --yesno "Do you want to DELETE all remaining XBone files\
+  under /usr/local/xbone, /usr/local/www & /usr/local/etc/apache?" 8 50 &&
+for f in /usr/local/xbone /usr/local/www /usr/local/etc/apache; do
+  if [ -d $f ]; then
+    rm -rf $f
+  fi
+  if [ -d "$f-OLD" ]; then
+    mv -f $f-OLD $f
+  fi
+done ||
+echo "Check /usr/local/[xbone|www|etc/apache] for possible remaining files."
+
