@@ -4,3 +4,5 @@ share/themes/Step/gtk/gtkrc
 share/themes/engines/libstep.so
 @dirrm share/themes/Step/gtk
 @dirrm share/themes/Step
+@unexec rmdir %D/share/themes/engines 2>/dev/null || true
+@unexec rmdir %D/share/themes 2>/dev/null || true
