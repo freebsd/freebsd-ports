@@ -233,6 +233,7 @@ aftp		ports/emulators/aftp
 agbrowser	ports/audio/agbrowser
 agenda-headers	ports/devel/agenda-headers
 agenda-libs	ports/devel/agenda-libs
+agenda-static-libs	ports/devel/agenda-static-libs
 aggregate	ports/net/aggregate
 agm		ports/games/agm
 agrep		ports/textproc/agrep
