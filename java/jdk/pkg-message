@@ -1,0 +1,50 @@
+Copyright and License Information
+
+JAVA(tm) web development products are owned and
+licensed exclusively by Sun Microsystems, Inc.  Copyright (C) 1992-96
+Sun Microsystems, Inc.  All rights reserved.
+Java and all Java-based names and logos, including the Coffee
+Cup and Duke, are trademarks of Sun Microsystems, Inc. and
+refer to Sun's Java Technologies.  Products bearing authorized "JAVA-
+Compatible" Logo are based upon Sun's JAVA
+and technology, and are compatible with the API's for such
+technology.
+
+Sun grants to you ("Licensee") a non-exclusive, non-transferable
+license to use the Java binary code version (hereafter,
+"Binary Software") without fee.  Licensee may distribute the Binary
+Software to third parties provided that the copyright notice and this
+statement appear on all copies.  Licensee agrees that the copyright
+notice and this statement will appear on all copies of the software,
+packaging, and documentation or portions thereof.
+
+In the event Licensee creates additional classes or otherwise extends
+the Applet Application Programming Interface (AAPI), licensee will
+publish the specifications for such extensions to the AAPI for use by
+third party developers of Java-based software, in connection with
+licensee's commercial distribution of the Binary Software.
+
+RESTRICTED RIGHTS: Use, duplication or disclosure by the government
+is subject to the restrictions as set forth in subparagraph (c) (1) (ii)
+of the Rights in Technical Data and Computer Software Clause as DFARS
+252.227-7013 and FAR 52.227-19.
+
+SUN MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF
+THE BINARY SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, OR NON-INFRINGEMENT. SUN SHALL NOT BE LIABLE FOR
+ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
+DISTRIBUTING THE BINARY SOFTWARE OR ITS DERIVATIVES.
+
+By downloading, using or copying this Binary Software, Licensee agrees
+to abide by the intellectual property laws, and all other applicable
+laws of the U.S., and the terms of this License.  Ownership of the
+software shall remain solely in Sun Microsystems, Inc.
+
+Sun shall have the right to terminate this license immediately by
+written notice upon Licensee's breach of, or non-compliance with, any
+of its terms.  Licensee shall be liable for any infringement or damages
+resulting from Licensee's failure to abide by the terms of this License.
+
+The JDK 1.0.2 binary release is based in part on the work of the
+Independent JPEG Group.
