@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.43 1996/10/27 10:16:05 max Exp $
+# $Id: LEGAL,v 1.44 1996/10/29 02:27:53 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -24,6 +24,7 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 fwtk-*			ports/security/fwtk	No redistribution allowed
 glimpse-*		ports/misc/glimpse	Don't sell for profit
+giftool-*		ports/graphics/giftool	Don't redistribute for profit
 irc-2.8.21.tar.gz	ports/net/irc		Restrictive copyright
 						in irc2.8.21/ircd/res.c
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
