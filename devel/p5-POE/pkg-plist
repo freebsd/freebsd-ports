@@ -21,8 +21,8 @@
 %%SITE_PERL%%/POE/Loop.pm
 %%SITE_PERL%%/POE/Loop/Event.pm
 %%SITE_PERL%%/POE/Loop/Gtk.pm
+%%SITE_PERL%%/POE/Loop/IO_Poll.pm
 %%SITE_PERL%%/POE/Loop/PerlSignals.pm
-%%SITE_PERL%%/POE/Loop/Poll.pm
 %%SITE_PERL%%/POE/Loop/Select.pm
 %%SITE_PERL%%/POE/Loop/Tk.pm
 %%SITE_PERL%%/POE/Loop/TkActiveState.pm
@@ -83,8 +83,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/signals.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/tcp_watermarks.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/thrash.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tk.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/watermarks.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/wheels.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
