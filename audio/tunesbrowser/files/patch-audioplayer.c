@@ -1,8 +1,18 @@
---- audioplayer.c.orig	Thu Apr 29 11:31:57 2004
-+++ audioplayer.c	Wed Jul 28 06:38:45 2004
-@@ -62,8 +62,10 @@
+--- audioplayer.c.orig	Mon Dec 20 03:03:55 2004
++++ audioplayer.c	Wed Feb  2 21:42:19 2005
+@@ -106,7 +106,8 @@
  
- static void cb_iterate(GstBin *bin, gpointer data)
+ static void async_cmd_cb_gst_setup_clock(__UNUSED__ void *data)
+ {
+-    GstClock *clock = gst_bin_get_clock(GST_BIN(pipeline_thread));
++    GstClock *clock;
++    clock = gst_bin_get_clock(GST_BIN(pipeline_thread));
+     songstarted = gst_clock_get_time(clock) / GST_SECOND;
+ }
+ 
+@@ -157,8 +158,10 @@
+ 
+ static void cb_iterate(GstBin *bin, __UNUSED__ gpointer data)
  {
 -    GstClock *clock = gst_bin_get_clock(bin);
 -    int seconds = gst_clock_get_time(clock) / GST_SECOND;
@@ -12,29 +22,4 @@
 +    seconds = gst_clock_get_time(clock) / GST_SECOND; 
  
      seconds = seconds - songstarted;
- 
-@@ -80,8 +82,10 @@
-     gst_init(0, NULL);
- 
-     pipeline_thread = gst_thread_new ("pipeline");
-+#if 0
-     gst_bin_set_post_iterate_function(GST_BIN(pipeline_thread),
-                                       cb_iterate, NULL);
-+#endif
-     pipesrc = gst_element_factory_make ("fdsrc", "pipe_source");
-     if (!pipesrc)
-     {
-@@ -136,11 +140,12 @@
- 
- void audioplayer_playpipe(int fd)
- {
-+    GstClock *clock;
-     playing = 1;
-     audioplayer_loadpipe(fd);
- 
-     gst_element_set_state (GST_ELEMENT (pipeline_thread), GST_STATE_PLAYING);
--    GstClock *clock = gst_bin_get_clock(GST_BIN(pipeline_thread));
-+    clock = gst_bin_get_clock(GST_BIN(pipeline_thread));
-     songstarted = gst_clock_get_time(clock) / GST_SECOND;
- }
  
