@@ -8,6 +8,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://rsync.samba.org/pub/%SUBDIR%/ \
@@ -40,6 +41,10 @@ CONFIGURE_ARGS+=	--with-included-popt
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
+.endif
+
+.if !defined(WITHOUT_TIMELIMIT)
+EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 .endif
 
 .include <bsd.port.pre.mk>
