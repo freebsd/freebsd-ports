@@ -5,14 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       wmwave
-PORTVERSION=    0.4
-CATEGORIES=     net
-MASTER_SITES=   http://www.schuermann.org/~dockapps/dist/
+PORTNAME=	wmwave
+PORTVERSION=	0.4
+PORTREVISION=	1
+CATEGORIES=	net
+MASTER_SITES=	http://www.schuermann.org/~dockapps/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     bms@spc.org
+MAINTAINER=	bms@spc.org
 
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -1,5 +1,5 @@
---- wmwave.c.orig	Fri Aug 20 09:44:21 1999
-+++ wmwave.c	Wed Mar 27 03:31:16 2002
+--- wmwave.c.orig	Fri Aug 20 14:44:21 1999
++++ wmwave.c	Tue May 21 11:05:44 2002
 @@ -1,38 +1,21 @@
  /*
 + * $Id$
@@ -52,7 +52,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <time.h>
-@@ -45,313 +28,393 @@
+@@ -45,313 +28,394 @@
  #include <limits.h>
  #include <errno.h>
  #include <signal.h>
@@ -406,6 +406,7 @@
 +		DrawGreenBar(0.0, 4, 55);
 +		break;
 +	};
++	close(s);
 +}
 +
 +void
