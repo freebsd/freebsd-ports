@@ -13,13 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jonny@jonny.eng.br
 
-HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	Config
-
 MAN1=		skill.1
 MLINKS=		skill.1 snice.1
-
-pre-configure:
-	@${CHMOD} a+x ${WRKSRC}/Config
 
 .include <bsd.port.mk>
