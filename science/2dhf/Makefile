@@ -17,6 +17,10 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Numerical Hartree-Fock Program for Diatomic Molecules
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+.if defined(USE_INTEL)
+BUILD_DEPENDS+=  ${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
+BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+.endif
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
@@ -25,6 +29,18 @@ FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .if (${MACHINE_ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387
 .endif # i386
+.endif
+
+BLAS=		-lf77blas -latlas
+.if defined(USE_INTEL)
+FC=		${LOCALBASE}/intel_fc_80/bin/ifort
+CC=		${LOCALBASE}/intel_cc_80/bin/icc
+FFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
+FFLAGS_ADD=	-w -132
+CFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
+BLAS+=		-lg2c -lm
+.else
+FFLAGS_ADD=	-w -ffixed-line-length-none
 .endif
 
 pre-everything::
@@ -41,9 +57,11 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%FC%%,${FC},g ; \
 	s,%%FFLAGS%%,${FFLAGS},g ; \
+	s,%%FFLAGS_ADD%%,${FFLAGS_ADD},g ; \
 	s,%%CC%%,${CC},g ; \
 	s,%%CFLAGS%%,${CFLAGS},g ; \
-	s,%%LOCALBASE%%,${LOCALBASE},g' \
+	s,%%LOCALBASE%%,${LOCALBASE},g ;\
+	s,%%BLAS%%,${BLAS},g' \
 	 ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 	 ${WRKSRC}/bin/xhf

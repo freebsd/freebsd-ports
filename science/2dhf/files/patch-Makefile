@@ -24,8 +24,8 @@
 +#	-fstrength-reduce -funroll-loops
 +#	FFLAGS = -O1 -malign-double 
 +#       FFLAGS = -g -C 
-+	FFLAGS_ADD =  -w -ffixed-line-length-none
-+	FLIB = -L%%LOCALBASE%%/lib -lf77blas -latlas
++	FFLAGS_ADD =  %%FFLAGS_ADD%%
++	FLIB = -L%%LOCALBASE%%/lib %%BLAS%%
 +	BLAS = yes
 +
 +	CC = %%CC%%
