@@ -135,6 +135,7 @@
     SUBDIR += snobol
     SUBDIR += squeak2
     SUBDIR += sr
+    SUBDIR += stackless_python
     SUBDIR += starlogo
     SUBDIR += swi-pl
     SUBDIR += sxm
