@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 CATEGORIES=	japanese
 

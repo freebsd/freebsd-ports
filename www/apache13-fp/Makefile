@@ -146,9 +146,9 @@ post-patch:
 
 post-configure:
 .if defined(SUEXEC)
-	${CP} ${PKGDIR}/PLIST ${PLIST}
+	${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .else
-	${CAT} ${PKGDIR}/PLIST | ${GREP} -v sbin/suexec > ${PLIST}
+	${CAT} ${PKGDIR}/pkg-plist | ${GREP} -v sbin/suexec > ${PLIST}
 .endif
 
 IMAGES=		apache_pb.gif fplogo.gif powerlogo.gif
@@ -174,6 +174,6 @@ post-install:
 	@${INSTALL_FILE} ${WRKSRC}/${FPINSTALL} ${PREFIX}/${FPINSTALL}-dist
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}-dist
 	@${INSTALL_FILE} ${WRKSRC}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

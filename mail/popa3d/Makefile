@@ -28,9 +28,9 @@ do-install:
 .endif
 
 pre-install:
-	@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@ ${CAT} ${PKGDIR}/MESSAGE
+	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

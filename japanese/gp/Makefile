@@ -10,6 +10,6 @@ CATEGORIES=	japanese
 LANGUAGE=	Japanese
 
 MASTERDIR=	${.CURDIR}/../../print/gp
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

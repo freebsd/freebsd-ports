@@ -43,6 +43,6 @@ post-install:
 .endif
 	@${MKDIR} ${PREFIX}/share/examples/gn-gnspool
 	@${CP} ${FILESDIR}/_gnrc ${PREFIX}/share/examples/gn-gnspool
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -31,6 +31,6 @@ MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 post-install:
 	@${MKDIR} ${PREFIX}/icons
 	${INSTALL_DATA} ${WRKDIR}/*.xpm ${PREFIX}/icons
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

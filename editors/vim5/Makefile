@@ -73,7 +73,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
-	@${SED} -e '/gvi/d' ${PKGDIR}/PLIST > ${WRKDIR}/PLIST.nogui
+	@${SED} -e '/gvi/d' ${PKGDIR}/pkg-plist > ${WRKDIR}/PLIST.nogui
 
 post-install:
 .if !defined(LITE)

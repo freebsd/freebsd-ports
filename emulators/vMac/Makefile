@@ -38,6 +38,6 @@ post-install:
 	    ${PREFIX}/share/doc/vMac
 	${INSTALL_DATA} ${WRKSRC}/README.rom \
 	    ${PREFIX}/share/doc/vMac
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} -e s:/usr/local:${PREFIX}:
+	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}:
 
 .include <bsd.port.mk>

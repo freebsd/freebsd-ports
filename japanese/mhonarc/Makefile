@@ -39,6 +39,6 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/mhonarc.rc.sample ${PREFIX}/share/examples/MHonArc/
 
 post-install:
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -63,6 +63,6 @@ USE_GNOME=	yes
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gimp.setfont ${PREFIX}/bin
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

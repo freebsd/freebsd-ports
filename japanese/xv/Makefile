@@ -10,7 +10,7 @@ CATEGORIES=	japanese
 MAINTAINER=	shige@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../graphics/xv
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 MAKE_ENV=	LOCALE_EXTENSION=-DTV_L10N
 

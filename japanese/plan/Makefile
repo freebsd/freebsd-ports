@@ -22,4 +22,4 @@ PLIST=		${WRKDIR}/PLIST
 
 pre-install:
 	${ECHO}	"share/doc/plan/plan_calSJ.ps" > ${PLIST}
-	${CAT}	${PKGDIR}/PLIST >> ${PLIST}
+	${CAT}	${PKGDIR}/pkg-plist >> ${PLIST}

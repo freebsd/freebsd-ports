@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/flexbackup.README ${PREFIX}/share/doc/flexbackup
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} -e 's:%%PREFIX%%:${PREFIX}:g'
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:%%PREFIX%%:${PREFIX}:g'
 
 .include <bsd.port.mk>

@@ -215,9 +215,9 @@ pre-fetch:
 .endif
 pre-install:
 .if !defined(NOPROFILE)
-	@${CAT} ${PKGDIR}/PLIST > ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
 .else
-	@${SED} -e /_p.a/d ${PKGDIR}/PLIST > ${PLIST}
+	@${SED} -e /_p.a/d ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 do-install:

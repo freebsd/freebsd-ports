@@ -86,6 +86,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Fontmap.diff ${CPS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${CPS_DIR}
 	${LN} -s fonts.dir ${CPS_DIR}/fonts.scale
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

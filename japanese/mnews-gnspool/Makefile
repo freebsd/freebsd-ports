@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gnspool
 RUN_DEPENDS=	gnspool:${PORTSDIR}/japanese/gn-gnspool
 
 MASTERDIR=	${.CURDIR}/../mnews
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 GNSPOOL=	1
 

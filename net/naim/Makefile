@@ -28,7 +28,7 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${PREFIX}/share/doc/naim/
 .endif
 	@ ${ECHO} "************************************************************"
-	@ ${CAT} ${PKGDIR}/MESSAGE
+	@ ${CAT} ${PKGMESSAGE}
 	@ ${ECHO} "************************************************************"
 
 .include <bsd.port.mk>

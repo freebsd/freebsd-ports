@@ -47,6 +47,6 @@ do-install:
 		${SH} ${SCRIPTDIR}/pgp.config.l10n.sh \
 			${PGPLIB} ${PGP_LANG} ${PGP_CHARSET}
 	-pgp > /dev/null  2>&1  # update .idx file
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

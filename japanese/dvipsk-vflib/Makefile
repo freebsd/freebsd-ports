@@ -88,6 +88,6 @@ post-install:
 	done
 	@${LN} -fs ${DVIPSDIR}/contrib ${PREFIX}/share/doc/dvips/contrib
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

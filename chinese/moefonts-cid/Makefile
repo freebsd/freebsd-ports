@@ -38,6 +38,6 @@ do-install:
 		${PREFIX}/share/ghostscript/fonts/CMap
 	@${INSTALL_DATA} ${WRKDIR}/ag13/CMap/* \
 		${PREFIX}/share/ghostscript/fonts/CMap
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -74,7 +74,7 @@ pre-configure:
 	${SED} -e "s:__FreeBSD__[0-9=]*:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
-	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
+	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/pkg-plist >${PLIST}
 .endif
 
 pre-install:

@@ -129,7 +129,7 @@ pre-install:
 	@ ${SETENV} INSTALL_DIR=${INSTALL_DIR} \
 	     	    PGSQL_UID=${PGSQL_UID} PGSQL_GID=${PGSQL_GID} \
 		    PKG_PREFIX=${PREFIX} \
-			${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+			${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 post-install:
 	@ if [ ! -f ${PREFIX}/${INSTALL_DIR}/.profile ]; then \
 		${ECHO} "PATH=${PATH}:${PREFIX}/${INSTALL_DIR}/bin" \

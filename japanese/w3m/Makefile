@@ -8,7 +8,7 @@
 CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist.ja
 
 JAPANESE=	Yes

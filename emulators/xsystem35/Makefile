@@ -52,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
 	@(cd ${WRKSRC}/../contrib; \
 		${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/xsystem35)
-	@${SED} -e s,PREFIX,${PREFIX}, ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
+	@${SED} -e s,PREFIX,${PREFIX}, ${PKGDIR}/pkg-message > ${WRKSRC}/MESSAGE
 	@${CAT} ${WRKSRC}/MESSAGE
 
 .include <bsd.port.post.mk>

@@ -131,7 +131,7 @@ do-build:
 
 pre-install:
 	@${ECHO_MSG} "Checking for conflicting shared libraries"
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${ECHO_MSG} "Installing shared libraries"

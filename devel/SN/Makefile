@@ -24,6 +24,6 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/SN451
 
 post-install:
-		@${CAT} ${PKGDIR}/MESSAGE
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

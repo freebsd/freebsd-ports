@@ -37,7 +37,7 @@ do-install:
 .endfor
 
 post-install:
-	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGDIR}/MESSAGE
+	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.mk>

@@ -78,7 +78,7 @@ do-install:
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${DJGPPDOC}/install ${DOCDIR}/
 	${INSTALL_DATA} ${DJGPPDOC}/readme ${DOCDIR}/
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/README.FreeBSD
+	${INSTALL_DATA} ${DESCR} ${DOCDIR}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>

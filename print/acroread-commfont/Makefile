@@ -42,9 +42,9 @@ RUN_DEPENDS=	acroread4:${PORTSDIR}/print/acroread4
 .else
 ###### For slave ports ##############################
 ## Use a local directory of the slave port!!
-COMMENT=	${.CURDIR}/pkg/COMMENT
-DESCR=		${.CURDIR}/pkg/DESCR
-PLIST=		${.CURDIR}/pkg/PLIST
+COMMENT=	${.CURDIR}/pkg-comment
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 ##
 RUN_DEPENDS=	${PREFIX}/Acrobat4/Resource/CMap/H:${PORTSDIR}/print/acroread-commfont
@@ -74,6 +74,6 @@ do-install:
 	@${TAR} xf ${TAR_FILE} -C ${PREFIX}/Acrobat4/Resource
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

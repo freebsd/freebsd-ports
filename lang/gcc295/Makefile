@@ -64,7 +64,7 @@ pre-configure:
 		>${WRKSRC}/gcc/config/freebsd.h )
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
-	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
+	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/pkg-plist >${PLIST}
 .endif
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.

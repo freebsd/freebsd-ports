@@ -65,6 +65,6 @@ post-install:
 
 	@${ECHO} "Done!"
 
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -45,6 +45,6 @@ post-install:
 .endfor
 	@${MKDIR} ${PREFIX}/share/examples/amanda
 	${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/share/examples/amanda
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

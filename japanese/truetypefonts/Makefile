@@ -37,6 +37,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/watanabe-mincho.ttf ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${FONTDIR}/fonts.dir.truetype
 	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${FONTDIR}/fonts.alias.truetype
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

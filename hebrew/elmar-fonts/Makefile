@@ -23,6 +23,6 @@ do-install:
 	${TAR} -C ${PREFIX}/lib/X11/fonts/hebrew -xZpf \
 		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

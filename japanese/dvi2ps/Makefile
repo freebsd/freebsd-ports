@@ -40,6 +40,6 @@ post-install:
 	${INSTALL_SCRIPT} tools/psstrip ${PREFIX}/bin ;\
 	${INSTALL_SCRIPT} tools/MakePK ${PREFIX}/bin ;\
 	)
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>

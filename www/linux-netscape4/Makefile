@@ -39,6 +39,6 @@ do-install:
 	${CHOWN} -R ${BINOWN}.${BINGRP} ${NDIR}
 
 post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>

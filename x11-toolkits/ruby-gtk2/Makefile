@@ -32,7 +32,7 @@ USE_IMLIB=	yes
 .else
 PLIST=		${WRKDIR}/PLIST
 pre-install:
-	@${SED} -e '/gdkimlib/d' ${PKGDIR}/PLIST > ${PLIST}
+	@${SED} -e '/gdkimlib/d' ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 post-configure:

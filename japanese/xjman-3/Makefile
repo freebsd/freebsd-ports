@@ -60,6 +60,6 @@ post-install:
 .for i in COPYRIGHT COPYRIGHT.XJDP
 	@${INSTALL_DATA} ${FILESDIR}/$i ${PREFIX}/share/doc/xjman/
 .endfor
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

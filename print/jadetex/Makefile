@@ -31,6 +31,6 @@ do-install:
 
 post-install:
 	${PREFIX}/bin/mktexlsr
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -24,6 +24,6 @@ PLIST_SUB=	MGV_VERSION=3.1.5
 MAN1=		mgv.1
 
 post-install:
-		@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

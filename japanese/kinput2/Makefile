@@ -72,8 +72,8 @@ do-configure:
 
 post-install:
 # For FreeWnn or Wnn6
-	@if [ -e ${PKGDIR}/MESSAGE ]; then \
-		${CAT} ${PKGDIR}/MESSAGE; \
+	@if [ -e ${PKGMESSAGE} ]; then \
+		${CAT} ${PKGMESSAGE}; \
 	fi
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ CATEGORIES=	korean
 PKGNAMESUFFIX=	-freewnn
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 KFREEWNN=	yes
 

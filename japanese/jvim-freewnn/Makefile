@@ -9,6 +9,6 @@ PKGNAMESUFFIX=	-freewnn
 FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../jvim
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

@@ -31,6 +31,6 @@ MAN4=		atalk.4
 MAN8=		afpd.8 atalkd.8 papd.8 psf.8
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

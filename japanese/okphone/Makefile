@@ -26,6 +26,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/okphone
 .endfor
 .endif
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

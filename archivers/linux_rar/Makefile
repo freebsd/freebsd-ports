@@ -49,7 +49,7 @@ do-install:
 .if defined(WITH_UNRAR)
 	@${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
 	brandelf -t Linux ${PREFIX}/bin/unrar
-	@${ECHO} bin/unrar >> ${WRKSRC}/PLIST
+	@${ECHO} bin/unrar >> ${PLIST}
 .endif
 .for i in ${RARDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/rar
@@ -59,12 +59,12 @@ do-install:
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
 
-	@${CP} ${PKGDIR}/PLIST ${WRKSRC}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .if !defined(NOMANCOMPRESS)
 	@${GZIP_CMD} ${PREFIX}/man/cat1/rar.1
-	@${ECHO} man/cat1/rar.1.gz >> ${WRKSRC}/PLIST
+	@${ECHO} man/cat1/rar.1.gz >> ${PLIST}
 .else
-	@${ECHO} man/cat1/rar.1 >> ${WRKSRC}/PLIST
+	@${ECHO} man/cat1/rar.1 >> ${PLIST}
 .endif
 
 post-install:

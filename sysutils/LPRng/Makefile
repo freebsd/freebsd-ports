@@ -36,7 +36,6 @@ MANCOMPRESSED=	yes
 post-install:
 	${INSTALL} -d -g bin -o bin -m 0555 ${PREFIX}/share/doc/LPRng
 	${INSTALL} -c -g bin -o bin -m 0444 ${WRKSRC}/HOWTO/* ${PREFIX}/share/doc/LPRng
-	@${CAT} ${PKGDIR}/MESSAGE | \
-		${SED} -e "s|@@PREFIX@@|${PREFIX}|g"
+	@${CAT} ${PKGMESSAGE} | ${SED} -e "s|@@PREFIX@@|${PREFIX}|g"
 
 .include <bsd.port.mk>

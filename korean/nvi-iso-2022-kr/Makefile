@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-iso2022kr
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 .include "${MASTERDIR}/Makefile"
 

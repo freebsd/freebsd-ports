@@ -48,6 +48,6 @@ do-install:
 		${CHMOD} 1777 save user \
 		)
 	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 /dev/null ${PREFIX}/lib/X11/angband/apex/scores.raw
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

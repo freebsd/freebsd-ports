@@ -56,7 +56,7 @@ do-install:
 		${INSTALL_DATA} ${FILESDIR}/nls_C ${XLIB}/nls/C; \
 	fi
 	${MAKE} pre-package
-	${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${MAKE} post-package
 
 pre-package:

@@ -67,7 +67,7 @@ do-install:
 	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/compat/linux/tmp/sv001.tmp:/compat/linux/tmp:/tmp
 	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/compat/linux/lib
 	@/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
 
 	@${INSTALL_DATA} ${WRKDIR}/applicat.rdb ${PREFIX}/Office51/bin

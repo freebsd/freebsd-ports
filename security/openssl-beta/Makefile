@@ -86,6 +86,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/openssl
 	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${PREFIX}/share/doc/openssl
 .endif
-	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGDIR}/MESSAGE
+	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

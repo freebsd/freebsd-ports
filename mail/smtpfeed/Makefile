@@ -54,7 +54,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; \
 	done
 .endif
-	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
 
 install-sendmail:
 	(cd ${WRKSRC_SENDMAIL}; sh makesendmail install)

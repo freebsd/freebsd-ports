@@ -101,7 +101,7 @@ do-install:
 .if exists(${LINUXBASE}/${PREFIX})
 	@${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/office52/program/setup ]; then \
 		${ECHO} ; \

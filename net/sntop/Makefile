@@ -21,6 +21,6 @@ MANCOMPRESSED=	yes
 
 post-install:
 	@strip ${PREFIX}/bin/sntop
-	@cat ${PKGDIR}/MESSAGE
+	@cat ${PKGMESSAGE}
 
 .include <bsd.port.mk>

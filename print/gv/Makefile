@@ -24,6 +24,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}; ${MAKE} install.doc)
 .endif
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

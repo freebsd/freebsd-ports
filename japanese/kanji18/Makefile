@@ -58,7 +58,7 @@ do-build:
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.pcf.gz ${PREFIX}/lib/X11/fonts/local/

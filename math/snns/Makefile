@@ -29,6 +29,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/default.cfg ${PREFIX}/snns
 	${INSTALL_DATA} ${WRKSRC}/help.hdoc ${PREFIX}/snns
 	${INSTALL_SCRIPT} ${WRKSRC}/snns ${PREFIX}/bin
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

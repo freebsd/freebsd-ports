@@ -23,8 +23,7 @@ PORTOBJFORMAT=	aout
 USE_X_PREFIX=	yes
 
 pre-configure:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} \
-		${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/aout

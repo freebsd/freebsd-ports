@@ -110,7 +110,7 @@ setupel-install:
 
 manifest-install:
 	@${RM} -f ${WRKDIR}/${MANIFEST}
-	@${CAT} ${PKGDIR}/PLIST | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
+	@${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
 		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
 		${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/

@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	knu@FreeBSD.org
 
 FILESDIR=	${.CURDIR}/files
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 USE_RUBY=	yes
 

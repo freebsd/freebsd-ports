@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 .if !make(package)
-	@${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.mk>

@@ -30,6 +30,6 @@ do-install:
 	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

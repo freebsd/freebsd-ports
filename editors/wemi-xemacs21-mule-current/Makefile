@@ -30,8 +30,8 @@ BUILD_INFO_BY_EMACS=	YES
 # texinfo packages
 BUILD_DEPENDS+= ${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
 
-# use pkg/* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
 
 # package info manifest
 MANIFEST=	MANIFEST.semi

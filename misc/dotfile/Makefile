@@ -32,7 +32,7 @@ post-configure:
 .if !defined(DISPLAY)
 PLIST=		${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/PLIST | ${SED} -e '/fvwm.\/bytecompile/d' > ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist | ${SED} -e '/fvwm.\/bytecompile/d' > ${PLIST}
 .endif
 
 post-install:

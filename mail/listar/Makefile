@@ -23,7 +23,7 @@ pre-patch:
 
 pre-install:
 
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@ ${MKDIR} ${PREFIX}/listar
 	@ ${CP} -R ${WRKDIR}/${DISTNAME}/* ${PREFIX}/listar
 	@ ${RM} -R ${PREFIX}/listar/src/

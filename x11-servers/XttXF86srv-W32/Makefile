@@ -18,6 +18,6 @@ ONLY_FOR_ARCHS=	i386
 SERVER=		XF86_W32
 
 MASTERDIR=	${.CURDIR}/../XttXF86srv-common
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include	"${MASTERDIR}/Makefile"

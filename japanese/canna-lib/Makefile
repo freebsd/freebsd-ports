@@ -60,6 +60,6 @@ post-install:
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\
 	fi
-	${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

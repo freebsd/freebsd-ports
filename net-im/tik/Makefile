@@ -66,7 +66,7 @@ DOCFILES=	CHANGES CONTRIBUTORS COPYING LICENSE README-LANG	   \
 # The packing list starts with just bin/tik.  As we install things,
 # build onto the list.
 do-install:
-	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .for d in ${SRCDIRS}
 	@${MKDIR} ${PREFIX}/${d}
 	@${ECHO} @dirrm ${d} >> ${PLIST}.dirrm

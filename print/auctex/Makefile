@@ -50,6 +50,6 @@ post-install:
 	cd ${WRKSRC} &&  ${SETENV} ${MAKE_ENV} ${MAKE} install-info >/dev/null
 	install-info --entry='* AUC-Tex mode: (auctex).	Emacs mode for editing TeX and LaTeX files.' --section='TeX' ${PREFIX}/info/auctex ${PREFIX}/info/dir
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} 's¦/usr/local¦${PREFIX}¦g'
+	@${CAT} ${PKGMESSAGE} | ${SED} 's¦/usr/local¦${PREFIX}¦g'
 
 .include <bsd.port.post.mk>

@@ -11,7 +11,7 @@ PORTVERSION=	${CODA_VERSION}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 MASTERDIR=	${.CURDIR}/../coda5_server
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 CODA_SUITE=	client
 

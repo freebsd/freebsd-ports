@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../ruby-racc
 
 PKGNAMESUFFIX=	-runtime
 
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 RUNTIME=	yes	
 

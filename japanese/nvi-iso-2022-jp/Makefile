@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-iso2022jp
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 

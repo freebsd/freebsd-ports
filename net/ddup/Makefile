@@ -45,6 +45,6 @@ do-install:
 
 post-install:
 	strip ${PREFIX}/sbin/ddup
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

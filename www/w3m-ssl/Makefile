@@ -8,8 +8,8 @@
 PKGNAMESUFFIX=	-ssl
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
-PKGDIR=        ${.CURDIR}/pkg
-PLIST=         ${MASTERDIR}/pkg/PLIST
+PKGDIR=        ${.CURDIR}
+PLIST=         ${MASTERDIR}/pkg-plist
 
 USE_OPENSSL=	YES
 

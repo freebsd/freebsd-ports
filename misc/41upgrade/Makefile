@@ -26,7 +26,7 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 DATE!=		cat /var/db/port.mkversion
 
 do-install:
-	${SED} -e "s/%%VERSION%%/${DATE}/" ${PKGDIR}/INSTALL \
+	${SED} -e "s/%%VERSION%%/${DATE}/" ${PKGDIR}/pkg-install \
 		> ${PKGINSTALL}
 
 deinstall:

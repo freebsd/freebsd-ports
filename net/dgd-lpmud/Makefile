@@ -22,15 +22,15 @@ RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
+PKG_ARGS=	-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} \
 		-p ${PREFIX}/dgd
-#		-r ${PKGDIR}/REQ
+#		-r ${PKGREQ}
 
 do-build:
 	@cd ${WRKDIR}/mud/bin; make
 
 do-install:
-	@tar -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PKGDIR}/PLIST` \
+	@tar -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PLIST}` \
 		| tar -C ${PREFIX}/dgd -xpf -
 
 .include <bsd.port.mk>

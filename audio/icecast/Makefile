@@ -30,6 +30,6 @@ do-install:
 .endfor
 	${MKDIR} ${PREFIX}/share/doc/icecast/
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/icecast/
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
 
 .include <bsd.port.mk>

@@ -41,7 +41,7 @@ do-install:
 		(cd /usr/local/man/cat8  && tar --unlink -xpf -)
 
 post-install:
-	@sed -e "s,ROOTDIR,${PREFIX}," < ${PKGDIR}/MESSAGE
+	@sed -e "s,ROOTDIR,${PREFIX}," < ${PKGMESSAGE}
 	@cd / && rm -f nsr && ln -s ${PREFIX}/nsr
 
 pre-deinstall:

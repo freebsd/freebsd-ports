@@ -45,6 +45,6 @@ post-install:
 	@ ${ECHO} "===>   Stripping Binary "
 	@ strip ${PREFIX}/bin/xsw
 
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

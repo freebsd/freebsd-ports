@@ -25,8 +25,8 @@ PLIST_SUB=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 ALL_TARGET=	package
 INSTALL_TARGET=	install-package
 
-# use pkg/* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
 
 # package info manifest
 MANIFEST=	MANIFEST.apel

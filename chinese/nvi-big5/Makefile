@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
 MAINTAINER=	itojun@itojun.org
 
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n
 
 .include "${MASTERDIR}/Makefile"

@@ -40,7 +40,7 @@ post-install:
 		${PREFIX}/lib/X11/fonts/vietnamese ; \
 	)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/vnterm \
 		&& ${CHMOD} a+rx ${PREFIX}/share/doc/vnterm

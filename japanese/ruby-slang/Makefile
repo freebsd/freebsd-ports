@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	knu@FreeBSD.org
 
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 WITH_JAPANESE=	yes
 

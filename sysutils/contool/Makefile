@@ -25,6 +25,6 @@ pre-install:
 	@${MKDIR} ${PREFIX}/lib/help
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -50,6 +50,6 @@ post-install:
 	@ strip ${PREFIX}/bin/perlin
 	@ strip ${PREFIX}/bin/test-poly-opts
 
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MAINTAINER=	ports@freebsddiary.org
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

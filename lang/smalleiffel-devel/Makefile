@@ -52,9 +52,9 @@ do-install:
 	    ${ECHO} ${SEDIR}/lib_number/ >> ${SEDIR}/sys/loadpath.UNIX; \
 	    ${ECHO} ${SEDIR}/lib_show/ >> ${SEDIR}/sys/loadpath.UNIX; \
 	    ${ECHO} ${SEDIR}/lib_se/ >> ${SEDIR}/sys/loadpath.UNIX)
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/MESSAGE \
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-message \
 		> ${PKGMESSAGE}
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/INSTALL \
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-install \
 		> ${PKGINSTALL}
 	@${CAT} ${PKGMESSAGE}
 

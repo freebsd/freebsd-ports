@@ -28,6 +28,6 @@ do-install:
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/bacon/
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/bacon/INSTALL
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -42,7 +42,7 @@ PLIST=		${WRKDIR}/PLIST.nodocs
 pre-install:
 	${RM} -f ${PLIST}
 	${GREP} -E -v '^(@dirrm )?(share/examples/)|(share/doc/)'       \
-		${PKGDIR}/PLIST > ${PLIST}
+		${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 .include <bsd.port.mk>

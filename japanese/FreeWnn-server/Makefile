@@ -8,6 +8,6 @@
 PKGNAMESUFFIX=	-server
 
 MASTERDIR=	${.CURDIR}/../FreeWnn-lib
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

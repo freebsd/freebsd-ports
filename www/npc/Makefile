@@ -27,6 +27,6 @@ do-install:
 	${MKDIR} ${INDEX_DIR}
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

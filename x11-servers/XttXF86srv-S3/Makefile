@@ -16,6 +16,6 @@ RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
 SERVER=		XF86_S3
 
 MASTERDIR=	${.CURDIR}/../XttXF86srv-common
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include	"${MASTERDIR}/Makefile"

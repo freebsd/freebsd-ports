@@ -70,7 +70,7 @@ post-patch:
 PLIST=		${WRKDIR}/PLIST
 
 do-configure:
-	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 	@${ECHO} "@cwd /usr" >> ${PLIST}
 	@${ECHO} "lib/pam_ssh.so" >> ${PLIST}
 .endif

@@ -33,6 +33,6 @@ post-install:
 		${INSTALL_SCRIPT} ${FILESDIR}/sj3.sh.in ${STARTUP_SCRIPT};	\
 	fi
 	${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

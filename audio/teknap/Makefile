@@ -63,7 +63,7 @@ post-install:
 	${TAR} --directory ${PREFIX}/share/TekNap/help -xf -
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/TekNap
 	@${ECHO}
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
+	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
 	@${ECHO}
 .endif
 

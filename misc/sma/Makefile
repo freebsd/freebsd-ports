@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/sma ${PREFIX}/bin
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

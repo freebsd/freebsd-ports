@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 

@@ -44,7 +44,7 @@ post-build:
 	(cd ${WRKSRC}/send-pr; ${MAKE} info)
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)

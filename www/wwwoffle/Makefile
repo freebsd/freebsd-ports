@@ -45,7 +45,7 @@ do-configure:
 	@find ${WRKSRC} -type f | \
 	  xargs perl -pi -e 's@/var/spool/wwwoffle@${SPOOL}/wwwoffle@g'
 	@${SED} 's@/var/spool/wwwoffle@${SPOOL}/wwwoffle@g' \
-	  ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+	  ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 .endif
 
 post-install:

@@ -55,7 +55,7 @@ pre-install:
 	@${ECHO} @dirrm share/apps/kxicq/skins/${skin} >> ${PLIST}.dirrm
 .endfor
 	@${CAT} ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm
-	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 .endif
 
 post-install:

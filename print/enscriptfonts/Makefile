@@ -26,7 +26,7 @@ do-install:
 	@${CP} -p ${WRKDIR}/* ${PREFIX}/share/enscript/xenscript
 
 post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 	@sleep 2;
 	@${ECHO_MSG} "";
 	@${ECHO_MSG} "";

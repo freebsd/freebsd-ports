@@ -25,6 +25,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README \
 	    ${PREFIX}/share/doc/TrickyIRC
 	@strip ${PREFIX}/bin/trickyirc
-	@${CAT} ${PKGDIR}/MESSAGE | ${SED} -e s:/usr/local:${PREFIX}:
+	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}:
 
 .include <bsd.port.mk>
