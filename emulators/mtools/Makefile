@@ -3,16 +3,18 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.24 1998/07/03 14:47:31 jmz Exp $
+# $Id: Makefile,v 1.25 1999/01/28 19:46:16 obrien Exp $
 #
 
 DISTNAME=	mtools-3.9.1
 PKGNAME=	mtools-3.9.1.3110
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
+MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
+		http://mtools.linux.lu/
 
 PATCHFILES=	mtools-3.9.1-3110.diff.gz
-PATCH_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
+PATCH_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
+		http://mtools.linux.lu/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
