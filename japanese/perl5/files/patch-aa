@@ -1,34 +1,28 @@
---- Configure.orig	Fri Jul  4 16:55:52 1997
-+++ Configure	Fri Jul  4 16:56:50 1997
-@@ -91,11 +91,11 @@
- *)	CDPATH='' ;;
- esac
+--- Configure.orig	Mon Sep  7 18:49:05 1998
++++ Configure	Mon Sep  7 18:56:33 1998
+@@ -306,7 +306,7 @@
+ ldflags=''
+ lkflags=''
+ locincpth=''
+-optimize=''
++optimize=${CFLAGS:-''}
+ cf_email=''
+ cf_by=''
+ cf_time=''
+@@ -818,7 +818,9 @@
  
--: Sanity checks
--if test ! -t 0; then
--	echo "Say 'sh $me', not 'sh <$me'"
--	exit 1
--fi
-+: Sanity checks Disabled for FreeBSD port building - MarkM - May 1997
-+: if test ! -t 0; : then
-+:	echo "Say 'sh $me', not 'sh <$me'"
-+:	exit 1
-+: fi
- 
- : Test and see if we are running under ksh, either blatantly or in disguise.
- if (PATH=.; alias -x) >/dev/null 2>&1; then
-@@ -732,7 +732,7 @@
- inclwanted=''
-
+ i_whoami=''
  : change the next line if compiling for Xenix/286 on Xenix/386
 -xlibpth='/usr/lib/386 /lib/386'
-+xlibpth='/usr/lib/aout /usr/lib/386 /lib/386'
-
++xlibpth="/usr/lib/386 /lib/386"
++: change the next line if compiling for FreeBSD 3.0
++xlibpth="/usr/lib/aout $xlibpath"
+ 
  : Possible local library directories to search.
  loclibpth="/usr/local/lib /opt/local/lib /usr/gnu/lib"
-@@ -756,7 +756,7 @@
- : List of libraries we want.
- libswanted='sfio net socket inet nsl nm ndbm gdbm dbm db malloc dl'
+@@ -862,7 +864,7 @@
+ : If anyone needs -lnet, put it in a hint file.
+ libswanted='sfio socket inet nsl nm ndbm gdbm dbm db malloc dl'
  libswanted="$libswanted dld ld sun m c cposix posix ndir dir crypt"
 -libswanted="$libswanted ucb bsd BSD PW x"
 +libswanted="xpg4 $libswanted ucb bsd BSD PW x"
