@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gnomekiss
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
 DISTNAME=	gnomekiss-${PORTVERSION}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
+
+RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
