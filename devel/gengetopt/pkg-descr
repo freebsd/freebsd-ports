@@ -1,0 +1,13 @@
+This program generate a C function that uses getopt_long function to parse
+the command line options, validate them and fill a struct.
+
+Thus your program can now handle options such as:
+
+myprog --input foo.c -o foo.o --no-tabs -i 100 *.class
+
+And both long options (those that start with --) and short options (start
+with - and consist of only one character) can be handled. For standards
+about short and long options you may want to take a look at the GNU Coding
+Standards.
+
+WWW: http://www.gnu.org/software/gengetopt/gengetopt.html
