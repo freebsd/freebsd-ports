@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Jun 13 19:39:30 2001
-+++ configure	Wed Aug  1 19:33:18 2001
-@@ -10018,6 +10018,12 @@
+--- configure.orig	Tue Sep 25 18:36:39 2001
++++ configure	Wed Oct 24 10:00:12 2001
+@@ -9924,6 +9924,12 @@
  	  linux*)
  	    G_MODULE_LDFLAGS='-rdynamic'
  	    ;;
@@ -16,7 +16,7 @@ $FreeBSD$
  	esac
  	LIBS_orig="$LIBS"
  	LDFLAGS_orig="$LDFLAGS"
-@@ -10488,8 +10494,8 @@
+@@ -10472,8 +10478,8 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -27,7 +27,7 @@ $FreeBSD$
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
-@@ -10569,13 +10575,13 @@
+@@ -10553,13 +10559,13 @@
             	fi	
  		;;
               *)
@@ -44,22 +44,22 @@ $FreeBSD$
  			fi
  			if test x"$have_threads" = xposix; then
  				defattr=0
-@@ -11114,6 +11120,7 @@
-   if test "$cross_compiling" = yes; then
+@@ -11058,6 +11064,7 @@
+ 		if test "$cross_compiling" = yes; then
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
 +#  LIBS="-lgiconv  $LIBS"
    cat > conftest.$ac_ext <<EOF
- #line 11119 "configure"
+ #line 11063 "configure"
  #include "confdefs.h"
-@@ -11481,14 +11488,14 @@
+@@ -11516,14 +11523,14 @@
     #
     # Check for libiconv
     #
 -   echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:11486: checking for libiconv_open in -liconv" >&5
+-echo "configure:11521: checking for libiconv_open in -liconv" >&5
 +   echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:11486: checking for libiconv_open in -lgiconv" >&5
++echo "configure:11521: checking for libiconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -68,9 +68,9 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 11494 "configure"
+ #line 11529 "configure"
  #include "confdefs.h"
-@@ -11528,7 +11535,7 @@
+@@ -11563,7 +11570,7 @@
  fi
  
  if test "x$with_libiconv" = "xyes" ; then
