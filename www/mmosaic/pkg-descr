@@ -1,0 +1,16 @@
+This is a Web browser based partly on NCSA Mosaic.  It supports
+multiple windows, tables, PNG and JPEG images, and frames.
+ 
+In this port, IPv6 does not work, nor do X resources.
+
+Its components are licensed variously.  It may be used internally
+in a business, but may not be sold.  Once compiled, the program
+must not be distributed, because conflicts among the licenses.
+Its source cannot be distributed if it is needed for a product
+being sold by the person doing the distributing.  See
+http://perso.enst.fr/~dauphin/mMosaic/copyrights/index.html .
+
+WWW:  http://www.enst.fr/~dauphin/mMosaic/
+
+Trevor Johnson
+trevor@jpj.net
