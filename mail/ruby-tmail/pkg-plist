@@ -1,4 +1,4 @@
-%%RUBY_SITEARCHLIBDIR%%/tmail/mails.so
+%%RUBY_SITEARCHLIBDIR%%/tmail/cmails.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/tmail
 %%RUBY_SITELIBDIR%%/tmail/encode.rb
 %%RUBY_SITELIBDIR%%/tmail/field.rb
