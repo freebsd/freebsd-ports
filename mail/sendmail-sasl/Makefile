@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PKGNAMESUFFIX?=	-sasl
+CATEGORIES=	mail ipv6
 
 MAINTAINER=	dinoex@FreeBSD.org
 
