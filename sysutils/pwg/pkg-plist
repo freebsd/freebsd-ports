@@ -1,0 +1,24 @@
+bin/pwg
+share/applnk/Applications/pwg.desktop
+share/apps/pwg/pics/pwg-back1.png
+share/apps/pwg/pics/pwg-back2.png
+share/apps/pwg/pics/pwg-back3.png
+share/apps/pwg/pics/pwg-back4.png
+share/apps/pwg/pics/pwg-back5.png
+share/apps/pwg/pics/pwg-back6.png
+share/icons/hicolor/16x16/apps/pwg.png
+share/icons/hicolor/32x32/apps/pwg.png
+share/icons/locolor/16x16/apps/pwg.png
+share/icons/locolor/32x32/apps/pwg.png
+@dirrm share/apps/pwg/pics
+@dirrm share/apps/pwg
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
