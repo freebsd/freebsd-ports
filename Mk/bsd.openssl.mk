@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.18 2004-11-01 14:35:52 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.19 2004-11-23 06:16:27 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -51,7 +51,7 @@ WITH_OPENSSL_PORT=yes
 	exists(/usr/include/openssl/opensslv.h)
 #	Security: version in base must be 0.9.7d or have fixes
 #	http://www.freebsd.org/cgi/cvsweb.cgi/src/crypto/openssl/crypto/opensslv.h
-OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_TEXT/ { print $$4; exit }' \
+OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_TEXT/ { sub(/-fips/, ""); print $$4; exit }' \
 		/usr/include/openssl/opensslv.h
 # check for safe versions in the base
 .if ${OPENSSLVER} != "0.9.7a-p1" && ${OPENSSLVER} != "0.9.7c-p1" && ${OPENSSLVER} != "0.9.7d" && ${OPENSSLVER} != "0.9.7e"
