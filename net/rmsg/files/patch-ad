@@ -1,0 +1,49 @@
+*** server.c.orig	Sat Jun 26 23:23:23 1993
+--- server.c	Mon Oct  9 14:23:17 1995
+***************
+*** 99,118 ****
+       }
+  
+       if (! strcmp (basename (progname), "rmsgd")) {
+            if (fork()) _exit(0);  /* make myself a daemon */
+! #ifdef BSD
+            fd = open("/dev/tty", O_RDWR);  /* disconnect from control tty */
+            if (fd >= 0) {
+                 (void) ioctl(fd, TIOCNOTTY, (char *)0);
+                 (void) close(fd);	/* close this, don't need any more*/
+            }
+! #else
+            (void) setpgrp ();
+  #endif
+       }
+  
+       else {
+!           (void) fprintf (stderr, "Starting from inetd not yet supported, rename me ase rmsgd and start\nfrom /etc/rc\n");
+       }
+  
+       if (argc > 1)
+--- 99,122 ----
+       }
+  
+       if (! strcmp (basename (progname), "rmsgd")) {
++ #if (defined(BSD) && (BSD >= 199306))
++ 	(void)daemon(0,0);
++ #else
+            if (fork()) _exit(0);  /* make myself a daemon */
+! #   ifdef BSD
+            fd = open("/dev/tty", O_RDWR);  /* disconnect from control tty */
+            if (fd >= 0) {
+                 (void) ioctl(fd, TIOCNOTTY, (char *)0);
+                 (void) close(fd);	/* close this, don't need any more*/
+            }
+! #   else
+            (void) setpgrp ();
++ #   endif
+  #endif
+       }
+  
+       else {
+!           (void) fprintf (stderr, "Starting from inetd not yet supported, rename me ase rmsgd and start\nfrom /etc/rc.local\n");
+       }
+  
+       if (argc > 1)

@@ -1,0 +1,36 @@
+*** rmsg.h.orig	Mon Oct  9 13:17:57 1995
+--- rmsg.h	Mon Oct  9 13:31:18 1995
+***************
+*** 11,16 ****
+--- 11,20 ----
+   * Last modified: Sat Aug 20 16:43:03 1988
+   */
+  
++ #ifdef _HAVE_PARAM_H
++ #include <sys/param.h>
++ #endif
++ 
+  #if defined(USG5) || defined(SVR4)
+  # define index strchr
+  # define rindex strrchr
+***************
+*** 46,54 ****
+--- 50,67 ----
+  #define PATHLEN 1024
+  #define LINELEN 1024
+  
++ 
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <paths.h>
++ #include <utmp.h>
++ #define UTMP _PATH_UTMP
++ #define UTMP_TTY_SIZE	UT_LINESIZE
++ #define UTMP_NAME_SIZE	UT_NAMESIZE
++ #else
+  #define UTMP "/etc/utmp"
+  #define UTMP_TTY_SIZE 8
+  #define UTMP_NAME_SIZE 8
++ #endif
+  
+  struct command {
+       char *token;               /* Command name, e.g. msglast */

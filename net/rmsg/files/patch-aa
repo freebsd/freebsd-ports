@@ -1,0 +1,52 @@
+*** Makefile.orig	Mon Oct  9 13:12:47 1995
+--- Makefile	Mon Oct  9 13:17:04 1995
+***************
+*** 3,25 ****
+  # -DBSD if on a BSD system, -DHPUX and -DUSG5 if on hp-ux
+  # -DBSD and -DSUNOS for SUNOS.
+  # -DNOBODY=100  numeric id for nobody user if setuid to user fails
+! # (shouldn't happen)
+  #CFLAGS = -O -DBITNET -DNOBODY=100
+  #CFLAGS = -O -DBSD -DBITNET -DNOBODY=65534 -DSUNOS
+! CFLAGS = -O2 -DSVR4 -DNOBODY=32
+  OBJS = xdr.o parser.o misc.o
+  SRC = xdr.c parser.c misc.c
+! CC = gcc
+! LIBS = -lrpcsvc -lsocket -lnsl
+  BIN = rmsg rmsgd
+  
+  # These are for make install
+! DAEMONDIR = /usr/local/etc
+! BINDIR = /usr/local/bin
+  
+! MAN1 = /usr/local/man/man1
+  # place for rmsg.1
+! MAN8 = /usr/local/man/man8
+  # place for rmsgd.8
+  
+  all: $(BIN)
+--- 3,26 ----
+  # -DBSD if on a BSD system, -DHPUX and -DUSG5 if on hp-ux
+  # -DBSD and -DSUNOS for SUNOS.
+  # -DNOBODY=100  numeric id for nobody user if setuid to user fails
+! # (shouldn't hap
+  #CFLAGS = -O -DBITNET -DNOBODY=100
+  #CFLAGS = -O -DBSD -DBITNET -DNOBODY=65534 -DSUNOS
+! #CFLAGS = -O2 -DSVR4 -DNOBODY=32
+! CFLAGS+= -D_HAVE_PARAM_H
+  OBJS = xdr.o parser.o misc.o
+  SRC = xdr.c parser.c misc.c
+! #CC = gcc
+! LIBS = -lrpcsvc # -lsocket -lnsl
+  BIN = rmsg rmsgd
+  
+  # These are for make install
+! DAEMONDIR = ${PREFIX}/sbin
+! BINDIR = ${PREFIX}/bin
+  
+! MAN1 = ${PREFIX}/man/man1
+  # place for rmsg.1
+! MAN8 = ${PREFIX}/man/man8
+  # place for rmsgd.8
+  
+  all: $(BIN)

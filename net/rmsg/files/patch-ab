@@ -1,0 +1,46 @@
+*** parser.c.orig	Sat Jun 26 23:04:41 1993
+--- parser.c	Mon Oct  9 14:20:54 1995
+***************
+*** 89,94 ****
+--- 89,95 ----
+  char *user;
+  {
+       struct passwd *pwd;
++      uid_t  nobody;
+       static char line[LINE_LEN];
+       static char config[PATHLEN];
+  
+***************
+*** 107,119 ****
+       a->next = 0;
+       cur_ali = aliases = a;
+  
+       if (!(pwd = getpwnam(user)))
+            return(ERR_UNK_USER);
+  
+       if (root) {
+            (void) setgid (pwd->pw_gid);
+            if (setuid (pwd->pw_uid) == -1)
+! 	       (void) setuid(NOBODY);
+       }
+  
+       (void) strcpy (home, pwd->pw_dir);
+--- 108,125 ----
+       a->next = 0;
+       cur_ali = aliases = a;
+  
++      if (!(pwd = getpwnam("nobody")))
++ 	  exit(67);
++ 
++      nobody = pwd->pw_uid;
++ 
+       if (!(pwd = getpwnam(user)))
+            return(ERR_UNK_USER);
+  
+       if (root) {
+            (void) setgid (pwd->pw_gid);
+            if (setuid (pwd->pw_uid) == -1)
+! 	       (void) setuid(nobody);
+       }
+  
+       (void) strcpy (home, pwd->pw_dir);
