@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	understand_c
-PORTVERSION=	1.4.118
+PORTVERSION=	1.4.119
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/%SUBDIR%/
