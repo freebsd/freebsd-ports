@@ -57,7 +57,7 @@ do-install:
 post-install:
 .if ${ARCH} == "i386"
 	@${PERL} -pi -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat4/bin/acroread
-	@strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
+	@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 .elif ${ARCH} == "alpha"
 	@${PERL} -pi -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat4/bin/acroread
