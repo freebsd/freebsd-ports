@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1996/11/03 08:44:18 obrien Exp $
+# $Id: Makefile,v 1.91 1996/11/07 11:38:34 asami Exp $
 #
 
     SUBDIR += amanda
@@ -22,7 +22,6 @@
     SUBDIR += less
     SUBDIR += linuxls
     SUBDIR += logsurfer
-    SUBDIR += lsof
     SUBDIR += mc
     SUBDIR += mmv
     SUBDIR += mshell
