@@ -1,0 +1,20 @@
+LinkChecker can check HTML documents for broken links.
+
+Features :
+     * recursive checking
+     * multithreaded
+     * output can be colored or normal text, HTML, SQL, CSV or a sitemap
+       graph in XML or GML format.
+     * additionally reports download time for HTML pages
+     * HTTP/1.1 and 1.0, HTTPS, FTP, mailto:, news:, nntp:, Gopher,
+       Telnet and local file links are supported
+       Javascript links are currently ignored
+     * restrict link checking with regular expression filters for URLs
+     * proxy support
+     * give username/password for HTTP and FTP authorization
+     * robots.txt exclusion protocol support
+     * i18n support
+     * command line interface
+     * (Fast)CGI web interface
+
+WWW: http://linkchecker.sourceforge.net/
