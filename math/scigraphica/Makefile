@@ -16,10 +16,10 @@ DISTNAME=	sg-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
+BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkextra.14:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml.5:${PORTSDIR}/textproc/libxml
-RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
+RUN_DEPENDS=	${PYNUMERIC}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -29,6 +29,14 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == "python2.1"
+PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric
+.else
+PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric17
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -36,4 +44,4 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
