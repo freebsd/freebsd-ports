@@ -7,24 +7,24 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION= 	1.2.4
+PORTVERSION= 	1.2.5
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
-		ftp://ftp.uib.no/pub/mutt/  \
-		ftp://pgp.rasip.fer.hr/pub/mutt/international/  \
-		ftp://ftp.gbnet.net/pub/mutt-international/  \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
+MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
+		ftp://ftp.uib.no/pub/mutt/ \
+		ftp://pgp.rasip.fer.hr/pub/mutt/international/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
+		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
-		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/  \
+		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
 DISTNAME=	${PKGNAME}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
-		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
-		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
-		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
+PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
+		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/ \
+		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/ \
+		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1
@@ -56,7 +56,7 @@ DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
+CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps
 .if defined(WITH_LOCALES_FIX)
@@ -107,8 +107,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
-	@cd ${WRKSRC}/contrib ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc \
-		${PREFIX}/share/doc/mutt
 .endif
 
 .include <bsd.port.mk>
