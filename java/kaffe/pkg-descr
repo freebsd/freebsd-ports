@@ -4,12 +4,8 @@
 *******************
 
 This is Kaffe, a virtual machine design to execute Java bytecode.
-This machine can be configured in two modes.  In one mode it operates as
-a pure bytecode interpreter (not unlike Javasoft's machine); in the second
-mode if performs "just-in-time" code conversion from the abstract code to
-the host machine's native code.  This will ultimately allow execution of
-Java code at the same speed as standard compiled code but while maintaining
-the advantages and flexibility of code independence.
+Kaffe comes with an own implementation of the Java standard classes,
+including the Awt classes.
 
 Running Kaffe
 =============
@@ -17,7 +13,8 @@ Before running Kaffe it is necessary to configure the environment.
 This requires the setting of CLASSPATH, KAFFEHOME and LD_LIBRARY_PATH.
 For the standard installation these would be defined as follows:
 
- CLASSPATH=.:/usr/local/share/kaffe/classes.zip
+ CLASSPATH=.:/usr/local/share/kaffe/Klasses.jar:\
+     /usr/local/share/kaffe/pizza.jar
  KAFFEHOME=/usr/local/share/kaffe
  LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
 

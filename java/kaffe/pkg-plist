@@ -1,5 +1,7 @@
-bin/kaffe
+bin/Kaffe
 bin/kaffeh
+bin/pizza
+bin/pizzadoc
 bin/appletviewer
 bin/jar
 bin/javac
@@ -12,52 +14,37 @@ bin/report-kaffe-bug
 bin/rmic
 bin/rmiregistry
 bin/serialver
+bin/install-jar
+bin/kaffe
+include/kaffe/jmalloc.h
+include/kaffe/jsyscall.h
 include/kaffe/jtypes.h
 include/kaffe/native.h
-include/kaffe/StubPreamble.h
 include/kaffe/Arrays.h
 include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
 include/kaffe/java_lang_Throwable.h
 include/kaffe/java_lang_Thread.h
 include/kaffe/java_lang_ThreadGroup.h
-lib/libnative.so.0.92
+lib/libnative.so.1.00
 lib/libnative.so
-lib/libnet.so.0.92
+lib/libnet.so.1.00
 lib/libnet.so
-lib/libagent.so.0.92
-lib/libagent.so
-lib/libzip.so.0.92
+lib/libmath.so.1.00
+lib/libmath.so
+lib/libmanagement.so.1.00
+lib/libmanagement.so
+lib/libzip.so.1.00
 lib/libzip.so
-lib/libkaffevm.so.0.92
+lib/libawt.so.1.00
+lib/libawt.so
+lib/libkaffevm.so.1.00
 lib/libkaffevm.so
-man/man1/kaffe.1.gz
-share/kaffe/lib/security/java.security
-share/kaffe/lib/appletviewer.properties
-share/kaffe/lib/awt.properties
-share/kaffe/lib/content-types.properties
-share/kaffe/lib/font.properties
-share/kaffe/lib/rmic.properties
-share/kaffe/lib/serialver.properties
-share/kaffe/lib/font.properties.cs
-share/kaffe/lib/font.properties.el
-share/kaffe/lib/font.properties.hu
-share/kaffe/lib/font.properties.ja
-share/kaffe/lib/font.properties.ko
-share/kaffe/lib/font.properties.lt
-share/kaffe/lib/font.properties.lv
-share/kaffe/lib/font.properties.pl
-share/kaffe/lib/font.properties.ru
-share/kaffe/lib/font.properties.tr
-share/kaffe/lib/font.properties.zh
-share/kaffe/lib/font.properties.zh_TW
-share/kaffe/lib/psfont.properties.ja
-share/kaffe/classes.zip
 share/kaffe/ENVIRONMENT
+share/kaffe/Klasses.jar
 share/kaffe/license.terms
+share/kaffe/pizza.jar
+man/man1/kaffe.1.gz
 @exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/kaffe
-@dirrm share/kaffe/lib/security
-@dirrm share/kaffe/lib
 @dirrm share/kaffe

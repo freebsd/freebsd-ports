@@ -1,30 +1,26 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.9.2
+# Version required:     1.0.b1
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.30 1997/12/08 09:37:16 obrien Exp $
+# $Id: Makefile,v 1.31 1998/06/28 23:41:11 steve Exp $
 #
 
-DISTNAME=	kaffe-0.9.2
+DISTNAME=	kaffe-1.0.b1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/kaffe/ \
-		ftp://ftp.kaffe.org/pub/kaffe/ \
-		http://www.webcity.co.jp/info/andoh/java/kaffe/
+MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}.tgz kaffe-0.9.2-package-javasoft.com.tgz \
+DISTFILES=	${DISTNAME}.tar.gz
 
-MAINTAINER=	xaa@stack.nl
+MAINTAINER=	xaa@xaa.iae.nl
 
-RESTRICTED=	'No redistribution of the Java(tm) Development Kit'
-NO_PACKAGE=	${RESTRICTED}
+LIB_DEPENDS=	jpeg\\.9\\.0:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1
 
 post-install:
-	${MKDIR} ${PREFIX}/share/kaffe
-	${INSTALL_DATA} ${WRKSRC}/ENVIRONMENT ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
-	${LDCONFIG} -m ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKSRC}/ENVIRONMENT ${PREFIX}/share/kaffe
+	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
 
 .include <bsd.port.mk>
