@@ -7,9 +7,10 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-DISTNAME=	xpdf-chinese-traditional
+DISTFILES=	xpdf-chinese-simplified.tar.gz xpdf-chinese-traditional.tar.gz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
@@ -18,12 +19,19 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-INSTALL_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
+WRKSRC=		${WRKDIR}
+SIMP_FILES=	Adobe-GB1.cidToUnicode EUC-CN.unicodeMap GBK.unicodeMap \
+		ISO-2022-CN.unicodeMap README
+TRAD_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
 		Big5ascii.unicodeMap README
 do-install:
+	${MKDIR} ${PREFIX}/share/xpdf/chinese-simplified
+.for i in ${SIMP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/xpdf-chinese-simplified/${i} ${PREFIX}/share/xpdf/chinese-simplified
+.endfor
 	${MKDIR} ${PREFIX}/share/xpdf/chinese-traditional
-.for i in ${INSTALL_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/xpdf/chinese-traditional
+.for i in ${TRAD_FILES}
+	${INSTALL_DATA} ${WRKSRC}/xpdf-chinese-traditional/${i} ${PREFIX}/share/xpdf/chinese-traditional
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/dot.xpdfrc ${PREFIX}/share/xpdf/chinese-traditional
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
