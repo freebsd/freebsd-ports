@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,12 +44,8 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-release [\$$][(]VERSION[)]|-avoid-version|g'
+		's|-release [$$][(]VERSION[)]|-avoid-version|g'
 	@${REINPLACE_CMD} -e \
-		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/examples/modules/gdbm.c
-
-pre-build:
-	@cd ${WRKSRC}/snprintfv && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/examples/modules/gdbm.c
 
 .include <bsd.port.mk>
