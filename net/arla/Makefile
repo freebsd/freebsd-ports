@@ -23,6 +23,10 @@ BROKEN=		requires kernel source
 .endif
 
 GNU_CONFIGURE=	yes
-MAN3=		cmd.3
+MAN1=		rxdebug.1 tokens.1 unlog.1 aklog.1 klog.1 fs.1 kalog.1 pts.1 \
+		udebug.1
+MAN3=		cmd.3 log_log.3
+MAN5=		CellServDB.5 DynRootDB.5 ThisCell.5 SuidCells.5
+MAN8=		mount_xfs.8 umount_xfs.8 arlad.8 arla-cli.8 vos.8 bos.8
 
 .include <bsd.port.mk>
