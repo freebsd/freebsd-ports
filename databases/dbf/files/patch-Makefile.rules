@@ -1,18 +1,21 @@
---- ../Makefile.rules	Thu May  8 14:53:12 2003
-+++ ../Makefile.rules	Tue Aug 19 15:22:20 2003
-@@ -4,4 +4,3 @@
+--- ../Makefile.rules.orig	Tue Nov 11 16:43:04 2003
++++ ../Makefile.rules	Tue Nov 11 16:43:24 2003
+@@ -2,15 +2,15 @@
+ # Version 0.8
+ 
  # Compiler flags
 -CC = /usr/bin/gcc
 -CFLAGS = -Wall
++#CC = /usr/bin/gcc
 +CFLAGS += -Wall
  
-@@ -12,3 +11,3 @@
- VERSION = 0.6
--PREFIX = /usr/local/bin
-+PREFIX := ${PREFIX}/bin
+ # Settings
+ LOG = make.log
+ DIRS = src
+ BIN = dbf
+ VERSION = 0.8
+-PREFIX = /usr/local
++#PREFIX = /usr/local
  
-@@ -19,4 +18 @@
- RED = \033[1;31m
--
--.c.o:
--	$(CC) $(CFLAGS) -c $<
+ # Compiler settings - do not change
+ # erased dbfversion.o
