@@ -9502,6 +9502,7 @@ website		ports/textproc/website
 webstats	ports/www/webstats
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
+weechat		ports/irc/weechat
 weedns_sc	ports/dns/weedns_sc
 weewm		ports/x11-wm/weewm
 wesnoth		ports/games/wesnoth
