@@ -1,0 +1,39 @@
+--- Makefile.orig	Mon Nov 19 01:12:29 2001
++++ Makefile	Tue Nov 20 15:00:49 2001
+@@ -1,10 +1,10 @@
+ # $Id: Makefile,v 1.51 2001/11/18 17:12:29 bw Exp $
+ 
+ # Linux
+-CC = gcc
+-CFLAGS = -pipe -O2 -Wall #-pedantic #-g #-p
+-LDFLAGS = #-g #-static -p
+-LIBS = -lcrypt -lz #-lc_p
++#CC = gcc
++#CFLAGS = -pipe -O2 -Wall #-pedantic #-g #-p
++#LDFLAGS = #-g #-static -p
++#LIBS = -lcrypt -lz #-lc_p
+ 
+ # Solaris
+ #LIBS = -lnsl -lsocket -lz -lcrypt
+@@ -23,8 +23,8 @@
+ 
+ # FreeBSD
+ #CC = gcc
+-#CFLAGS = -pipe -O2 -Wall -I/usr/local/include
+-#LIBS = -L/usr/local/lib -lintl -lcrypt -lz
++CFLAGS += -I%%LOCALBASE%%/include
++LIBS = -L%%LOCALBASE%%/lib -lintl -lcrypt -lz
+ 
+ # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to
+ # analyze log formats with short list/chain/branch/interface names like
+@@ -82,8 +82,8 @@
+ install-i18n:
+ 	cd po; make
+ 	$(INSTALL_DATA) po/de.mo /usr/share/locale/de/LC_MESSAGES/fwlogwatch.mo
+-	$(INSTALL_DATA) po/pt_BR.mo /usr/share/locale/pt/LC_MESSAGES/fwlogwatch.mo
+-	$(INSTALL_DATA) po/zh.mo /usr/share/locale/zh/LC_MESSAGES/fwlogwatch.mo
++	$(INSTALL_DATA) po/pt_BR.mo /usr/share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
++	$(INSTALL_DATA) po/zh.mo /usr/share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
+ 
+ uninstall:
+ 	@rm -f /usr/local/sbin/fwlogwatch \

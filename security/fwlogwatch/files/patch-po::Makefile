@@ -1,0 +1,10 @@
+--- po/Makefile.orig	Tue Nov 20 14:51:50 2001
++++ po/Makefile	Tue Nov 20 14:53:23 2001
+@@ -3,6 +3,7 @@
+ all:	
+ 	msgfmt -v -o de.mo de.po
+ 	msgfmt -v -o pt_BR.mo pt_BR.po
++	mv zh.po tmp ; cat tmp | autob5 > zh.po
+ 	msgfmt -v -o zh.mo zh.po
+ 
+ strings:	

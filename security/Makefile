@@ -46,6 +46,7 @@
     SUBDIR += fressh
     SUBDIR += fuzz
     SUBDIR += fwbuilder
+    SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += geheimnis
