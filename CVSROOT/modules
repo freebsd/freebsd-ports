@@ -1194,6 +1194,7 @@ eazel-themes	ports/x11-toolkits/eazel-themes
 ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 ebuttons	ports/x11/ebuttons
+ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
 ecg2png		ports/graphics/ecg2png
