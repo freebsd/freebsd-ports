@@ -1,0 +1,23 @@
+%%SITE_PERL%%/Cache.pm
+%%SITE_PERL%%/Cache/Entry.pm
+%%SITE_PERL%%/Cache/File.pm
+%%SITE_PERL%%/Cache/File/Entry.pm
+%%SITE_PERL%%/Cache/File/Handle.pm
+%%SITE_PERL%%/Cache/File/Heap.pm
+%%SITE_PERL%%/Cache/IOString.pm
+%%SITE_PERL%%/Cache/Memory.pm
+%%SITE_PERL%%/Cache/Memory/Entry.pm
+%%SITE_PERL%%/Cache/Memory/HeapElem.pm
+%%SITE_PERL%%/Cache/Null.pm
+%%SITE_PERL%%/Cache/Null/Entry.pm
+%%SITE_PERL%%/Cache/RemovalStrategy.pm
+%%SITE_PERL%%/Cache/RemovalStrategy/FIFO.pm
+%%SITE_PERL%%/Cache/RemovalStrategy/LRU.pm
+%%SITE_PERL%%/Cache/Tester.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Cache/RemovalStrategy 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Cache/Memory 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Cache/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Cache/Null 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Cache 2>/dev/null || true
