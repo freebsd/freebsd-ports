@@ -16,6 +16,8 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 BROKEN=		"Does not fetch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

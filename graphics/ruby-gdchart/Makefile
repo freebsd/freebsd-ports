@@ -17,6 +17,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension to use the GDCHART library
 
 BROKEN=		Does not compile
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 

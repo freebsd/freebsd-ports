@@ -15,6 +15,8 @@ MAINTAINER=	seggers@semyam.dinoco.de
 COMMENT=	The small opening book (about 600 KByte) for crafty
 
 BROKEN=		"Does not fetch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty

@@ -15,6 +15,8 @@ MAINTAINER=	max@FreeBSD.org
 COMMENT=	Mail arrival notification service package
 
 FORBIDDEN=	Locally exploitable buffer overflow in set-user-ID executable
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${FORBIDDEN}
 
 USE_IMAKE=		yes
 USE_X_PREFIX=		no

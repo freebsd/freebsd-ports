@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${WORDNET_DIR}/adj.exc:${PORTSDIR}/textproc/wordnet \
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 BROKEN=		"Segfault during build"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 WORDNET_DIR=	${LOCALBASE}/share/WordNet-2.0
 

@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
 BROKEN=		"Size mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

@@ -20,6 +20,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-BROKEN=	"Does not build with gtk+-2.4"
+BROKEN=		"Does not build with gtk+-2.4"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 .include <bsd.port.mk>

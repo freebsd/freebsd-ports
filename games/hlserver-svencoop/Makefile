@@ -17,5 +17,7 @@ HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 IGNORE=	Upcoming release will support Unix platform but current one\
 	does not
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

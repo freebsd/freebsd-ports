@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI based Bible program for X11
 
 BROKEN=		"Does not fetch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12

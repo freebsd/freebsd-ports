@@ -94,6 +94,8 @@ SET3=		postgresql-libs-7.2.3-5.80.i386.rpm \
 		krb5-libs-1.2.5-15.i386.rpm
 
 BROKEN=		http://bugzilla.opengroupware.org/bugzilla/show_bug.cgi?id=354
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 NGOBJWEB_ADAPTOR= opengroupware.org-mod_ngobjweb-200310102348.tar.gz
 PATCHDIR?=	${MASTERDIR}/files
 USE_LINUX=	yes

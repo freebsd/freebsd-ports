@@ -16,6 +16,7 @@ COMMENT=	A Login Anomaly Detector
 RUN_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 
 IGNORE=		is missing runtime dependencies; see ports/62516
+EXPIRATION_DATE=2004-08-20
 DEPRECATED=	${IGNORE}
 
 post-install:

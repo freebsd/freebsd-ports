@@ -20,6 +20,8 @@ MAINTAINER=	taoka@FreeBSD.org
 COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)

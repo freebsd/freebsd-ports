@@ -17,6 +17,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Pirates, Vikings & Knights full server package for Linux
 
 IGNORE=		Current version is no longer available anywhere
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES:S/${EXTRACT_ONLY}//} \

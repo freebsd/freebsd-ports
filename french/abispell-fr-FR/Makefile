@@ -18,7 +18,9 @@ COMMENT=	French (France) ispell dictionary for AbiWord
 
 BUILD_DEPENDS=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2
 
-IGNORE=	"Does not work with AbiWord-2.0"
+IGNORE=		Does not work with AbiWord-2.0
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 PREFIX=         ${X11BASE}
 NO_BUILD=       yes

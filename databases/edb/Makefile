@@ -16,6 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
 BROKEN=		checksum mismatch
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
+
 USE_LIBTOOL_VER=	13
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

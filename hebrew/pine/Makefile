@@ -15,6 +15,8 @@ MAINTAINER?=	nadav@cs.technion.ac.il
 COMMENT?=	PINE(tm) -- a Program for Internet News & Email
 
 FORBIDDEN=	Pine versions less than 4.58 contain serious vulnerabilities.
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${FORBIDDEN}
 
 MAN1=		pine.1 pico.1 pilot.1
 

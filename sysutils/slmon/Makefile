@@ -30,7 +30,9 @@ PLIST_FILES=	bin/slmon
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lncurses
 
-IGNORE=	"Needs update for libgtop2"
+IGNORE=		Needs update for libgtop2
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 .include <bsd.port.pre.mk>
 
