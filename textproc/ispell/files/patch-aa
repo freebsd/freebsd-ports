@@ -1,14 +1,17 @@
-*** config.X.bak	Mon Jan 23 21:28:24 1995
---- config.X	Tue Dec 16 18:49:29 1997
-***************
-*** 107,115 ****
-  
-  #include <sys/param.h>
-  #include <sys/types.h>
-- #ifndef USG
-- #include <sys/dir.h>
-- #endif /* USG */
-  
-  /*
-  ** Things that normally go in a Makefile.  Define these just like you
---- 107,112 ----
+--- config.X.orig	Wed Jul 25 23:51:45 2001
++++ config.X	Thu Mar 25 19:54:53 2004
+@@ -168,9 +168,11 @@
+ 
+ #include <sys/param.h>
+ #include <sys/types.h>
+-#ifndef USG
+-#include <sys/dir.h>
+-#endif /* USG */
++
++/* Support MAXNAMLEN greater than 14 on FreeBSD; this is not in
++ * sys/param.h for obvious reasons.
++ */
++#include <dirent.h>
+ 
+ /*
+ ** Things that normally go in a Makefile.  Define these just like you
