@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.8 1994/10/20 01:57:59 jkh Exp $
+# $Id: Makefile,v 1.9 1994/10/23 02:36:55 torstenb Exp $
 #
-SUBDIR= chimera dgd gn irc pcnfsd pmf sup tcpblast wais yale-tftpd \
-	archie ircII pidentd wu-ftpd
+SUBDIR= archie cern_httpd chimera dgd gn irc ircII pcnfsd pidentd \
+	pmf sup tcpblast wais wu-ftpd yale-tftpd
 
 .include <bsd.port.subdir.mk>
