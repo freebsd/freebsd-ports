@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libosip
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
@@ -19,6 +18,8 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
+
+MAN1=	osip.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
