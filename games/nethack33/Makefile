@@ -7,49 +7,62 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nethack
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-NO_LATEST_LINK=	yes
+LATEST_LINK=	nethack33
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}" LDFLAGS="${LDFLAGS}"
+PLIST_SUB=	HACKNAME="${HACKNAME}" \
+		HACKEXT="${HACKEXT}"
 
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+MAN6=		dgn_comp${HACKEXT}.6 dlb${HACKEXT}.6 lev_comp${HACKEXT}.6 \
+		${HACKNAME}.6 recover${HACKEXT}.6
 
-.if defined(WITH_GNOME_GRAPHICS)
+HACKEXT?=       33
+HACKNAME?=      ${PORTNAME}${HACKEXT}
+HACKDIR?=       share/${HACKNAME}
+HACKLINK=       nethack
+
+DATADIR=        ${PREFIX}/${HACKDIR}
+DOCSDIR=        ${PREFIX}/share/doc/${HACKNAME}
+PKGDEINSTALL=   ${WRKDIR}/pkg-deinstall
+
+.if !defined(PKGNAMESUFFIX)
+USE_XPM=	yes
+GRAPHICS=	X11_GRAPHICS
+.else
+.if ${PKGNAMESUFFIX} == "-gnome"
 CATEGORIES=	games gnome
-PKGNAMESUFFIX=	-gnome
 USE_GETOPT_LONG=yes
 USE_GNOME=	yes
 GRAPHICS=	GNOME_GRAPHICS
-.elif defined(WITH_QT_GRAPHICS)
-PKGNAMESUFFIX=	-qt
+.elif ${PKGNAMESUFFIX} == "-nox11"
+GRAPHICS=	# none
+.elif ${PKGNAMESUFFIX} == "-qt"
 USE_QT_VER=	2
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" \
 		MOC="${MOC}" LIBQT="-l${QTNAME}"
 GRAPHICS=	QT_GRAPHICS
-.elif defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-.else
-USE_XPM=	yes
-GRAPHICS=	X11_GRAPHICS
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_QT_GRAPHICS) && ${OSVERSION} >= 500113
-BROKEN=		"Does not build"
+.if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
+PLIST_SUB+=	HACKLINK=""
+.else
+PLIST_SUB+=	HACKLINK="@comment "
 .endif
 
 pre-everything::
@@ -80,9 +93,28 @@ post-patch:
 		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 
 pre-configure:
+.for f in include/config.h sys/unix/Makefile.top sys/unix/Makefile.doc
+	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
+		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
+		-e 's|%%HACKEXT%%|${HACKEXT}|g' \
+		${WRKSRC}/${f}
+.endfor
+.for f in dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
+		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
+		-e 's|%%HACKEXT%%|${HACKEXT}|g' \
+		${WRKSRC}/doc/${f}
+.endfor
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
+pre-install:
+	@${CAT} ${FILESDIR}/pkg-deinstall.in | ${SED} \
+		-e 's|%%HACKDIR%%|${HACKDIR}|g' > ${PKGDEINSTALL}
+
 post-install:
+.if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
+	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${PREFIX}/bin/${HACKLINK}
+.endif
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
