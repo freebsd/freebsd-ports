@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	middleman
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
@@ -18,6 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN8=		mman.8
 
@@ -37,9 +40,6 @@ MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
 	s|/etc/mman/config.xml|${PREFIX}/etc/mman.xml|g' \
