@@ -4,7 +4,7 @@
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>,
 #			based on Hidekazu Kuroki's work of 2.0.43.
 #
-# $Id: Makefile,v 1.5 1997/03/03 11:31:40 asami Exp $
+# $Id: Makefile,v 1.6 1997/03/03 11:33:07 asami Exp $
 #
 
 DISTNAME=	fvwm-2.0.45
@@ -47,7 +47,6 @@ post-build:
 
 post-install:
 	@(cd ${SWDESKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-.endif
 	@${MKDIR} ${PREFIX}/lib/X11/${FVWMNAME}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
 		${PREFIX}/lib/X11/${FVWMNAME}/pixmaps
