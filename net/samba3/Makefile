@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.4
-PORTREVISION?=		3
+PORTVERSION=		3.0.5
+PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -252,7 +252,7 @@ WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
 # Based on patch from miraclelinux.com.
 # http://www.miraclelinux.com/english/technet/samba30/index.html
 PATCH_SITES=	http://dist.bsdlab.org/
-PATCHFILES=	samba-${PORTVERSION}-i18n-20040521.bz2
+PATCHFILES=	samba-3.0.4-i18n-20040521.bz2
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		I18N=""
 .else
