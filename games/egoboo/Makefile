@@ -6,6 +6,7 @@
 
 PORTNAME=	egoboo
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -21,6 +22,9 @@ USE_MESA=	yes
 USE_GMAKE=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
+
+pre-patch:
+	@find ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-patch:
 	@cd ${WRKSRC}/code && ${GMAKE} clean
