@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nntpcache
-# Version required:	1.0.5
+# Version required:	1.0.6
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.3 1997/02/17 01:47:57 obrien Exp $
+# $Id: Makefile,v 1.4 1997/03/07 00:24:57 asami Exp $
 #
 
-DISTNAME=	nntpcache-1.0.5
+DISTNAME=	nntpcache-1.0.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
 		ftp://ftp.ntnu.no/pub/unix/news/ \
