@@ -1,5 +1,5 @@
---- ripit.pl.orig	Fri Apr 21 12:11:23 2000
-+++ ripit.pl	Fri Apr 21 12:16:20 2000
+--- ripit.pl.orig	Fri Jun  2 23:17:16 2000
++++ ripit.pl	Fri Jun  2 23:18:58 2000
 @@ -26,12 +26,12 @@
  # User configurable variables
  #
@@ -9,39 +9,11 @@
 +$cddev 		= "/dev/rcd0c";		# CD Audio device
 +$outputdir 	= "/home/mp3/";		# Where the MP3s should go
  $bitrate	= 160;			# Bitrate for MP3s
- $encoder	= 1; 			# 0 - Bladeenc, 1 - Lame
+-$encoder	= 1; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
++$encoder	= 2; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
  $encopt		= "";			# options for mp3 encoder
--$cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav
-+$cdripper	= 2;			# 0 - cdparanoia, 1 - cdda2wav, 2 - tosha
+-$cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav,
++$cdripper	= 2;			# 0 - cdparanoia, 1 - cdda2wav,
+ 					# 2 - tosha, 3 - cdd
  $cdopt		= "";			# options for cdaudio ripper
  
- $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
-@@ -340,12 +340,18 @@
-          die "cdparanoia failed on $tracklist[$_ - 1]";
-       }
-     }
--    else {
-+    elsif ($cdripper == 1) {
-       if (system("cdda2wav -D $cddev -Q -H $cdopt -t $riptrackno \"$riptrackname.rip\"")) {
-          &printflush(RIPLOG,"cdda2wav failed on $tracklist[$_ - 1]\n");
-          die "cdda2wav failed on $tracklist[$_ - 1]";
-       }
-     }
-+    else {
-+      if (system("tosha -d $cddev -f wav -t $riptrackno -o \"$riptrackname.rip\"")) {
-+         &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
-+         die "tosha failed on $tracklist[$_ - 1]";
-+      }
-+    } 
- 
-     # Rename rip file to a wav for encoder
-     rename "$riptrackname.rip","$riptrackname.wav";
-@@ -380,7 +386,7 @@
-     print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
-     &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
- 
--    # Keep looping until the file appears, ie wait for cdparanoia
-+    # Keep looping until the file appears, ie wait for cdripper
-     # timeout after 30 minutes
-     $x=0;
-     while( ! -r "$riptrackname.wav" ){ 
