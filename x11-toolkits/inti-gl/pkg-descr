@@ -1,0 +1,7 @@
+Inti-GL is an Inti binding for GtkGLExt, the Open-GL extension to GTK+.
+
+The GtkGLExt library provides the GDK objects which support OpenGL
+rendering in GTK. The GtkGLExt library provides the GtkWidget API add-ons
+to make GTK+ widgets OpenGL-capable.
+
+WWW: http://inti.sourceforge.net/
