@@ -22,14 +22,14 @@
     LIB_FLAGS  = -O  -gnatgp -gnata
     STRIP      = -s
 -   JAR        = jar c0f
-+   JAR        = $(LOCALBASE)/jdk1.2.2/bin/jar c0f
++   JAR        = $(JAVA_HOME)/bin/jar c0f
  else
     C_FLAGS    = -O
     TOOL_FLAGS = -g -O -gnatgpa
     LIB_FLAGS  = -g -O -gnatgpa
     STRIP      =
 -   JAR        = jar c0f
-+   JAR        = $(LOCALBASE)/jdk1.2.2/bin/jar c0f
++   JAR        = $(JAVA_HOME)/bin/jar c0f
  endif
  
  #################################
@@ -45,7 +45,7 @@
  # JGNAT compiler to build the Ada part of the JGNAT library
  
 -JAVAC = javac -deprecation -classpath $(LIB)$(JDK11_LIB)
-+JAVAC = $(LOCALBASE)/jdk1.2.2/bin/javac -deprecation -classpath $(LIB)$(JDK11_LIB)
++JAVAC = $(JAVA_HOME)/bin/javac -deprecation -classpath $(LIB)$(JDK11_LIB)
  # The Java compiler to build the Java part of the JGNAT library
  
  ###########################################
