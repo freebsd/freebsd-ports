@@ -8656,6 +8656,7 @@ tank		ports/games/tank
 tardy		ports/archivers/tardy
 tas		ports/net/tas
 task		ports/sysutils/task
+taucs		ports/math/taucs
 tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
 tcb		ports/misc/tcb
