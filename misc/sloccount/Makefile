@@ -7,18 +7,26 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
 MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
+INSTALL_TARGET=	install_programs install_man
 
-MANCOMPRESSED=	yes
-MAN1=	sloccount.1
+MAN1=		sloccount.1
 
-pre-install:
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+post-install:
+.for file in lexcount1 c_count java_count
+	@strip ${PREFIX}/bin/${file}
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog README TODO sloccount.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
