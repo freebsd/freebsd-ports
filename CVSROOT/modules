@@ -918,6 +918,7 @@ chpp		ports/textproc/chpp
 chromium	ports/games/chromium
 chrootuid	ports/security/chrootuid
 chtml		ports/www/chtml
+cicquin		ports/net/cicquin
 cider		ports/cad/cider
 cidr		ports/net-mgmt/cidr
 cil		ports/devel/cil
