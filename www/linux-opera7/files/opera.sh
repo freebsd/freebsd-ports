@@ -1,3 +1,3 @@
 #!/bin/sh
-export OPERADIR=%%PREFIX%%/share/opera
+export OPERA_DIR=%%PREFIX%%/share/opera
 exec %%PREFIX%%/bin/opera-bin "$@"
