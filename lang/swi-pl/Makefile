@@ -3,7 +3,7 @@
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.25 1996/08/10 00:12:11 butsch@computi.erols.com Exp $              
+# $Id: Makefile,v 1.1.1.1 1996/10/25 10:18:23 max Exp $              
 #
 
 DISTNAME=	pl-2.7.14
@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386-freebsd
 STRIP=
 MAKE_FLAGS+=	CIFLAGS=-DRTLD_LAZY -f
-NO_CDROM= 	"No commercial use."
 
 # Below is for broken configure script that comes with the original
 # distribution.  This, and patches/patch-00 will be removed as soon as
