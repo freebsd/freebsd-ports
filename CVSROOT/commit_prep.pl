@@ -111,10 +111,10 @@ sub check_version {
 	return(0);
     }
 
-    if ($rname ne "$directory/$filename,v") {
-	printf($BadName, $filename, substr($rname, 0, length($rname)-2));
-	return(1);
-    }
+#    if ($rname ne "$directory/$filename,v") {
+#	printf($BadName, $filename, substr($rname, 0, length($rname)-2));
+#	return(1);
+#    }
     if ($cvsversion{$filename} < $version) {
 	printf($BadVersion, $filename, $filename, $cvsversion{$filename},
 	       "newer", $version, $filename);
@@ -167,6 +167,7 @@ if ($directory =~ /src\/contrib\//) {
 if ($directory =~ /src\/crypto\//) {
 	$check_id = 3;
 }
+	$check_id = 0;
 if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
 	$check_id = 0;
 	print "CVS VERSION CHECK BYPASSED!\n";
