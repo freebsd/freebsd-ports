@@ -125,6 +125,7 @@
     SUBDIR += smunge
     SUBDIR += solidpop3d
     SUBDIR += sonicmail
+    SUBDIR += spambnc
     SUBDIR += spruce
     SUBDIR += sqwebmail
     SUBDIR += stuphead

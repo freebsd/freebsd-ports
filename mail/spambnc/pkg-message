@@ -1,0 +1,6 @@
+
+The spambounce procmail rules have been installed in /usr/local/share/spambnc/.
+Please read the section entitled "Configuring the Spam Bouncer" in the file
+/usr/local/share/doc/spambnc/documentation.html for information on how to set
+up your mailbox.
+

@@ -1,0 +1,11 @@
+share/spambnc/freemail
+share/spambnc/legitlists
+share/spambnc/notify
+share/spambnc/procmail.rc
+share/spambnc/sb-new.rc
+share/spambnc/sb-old.rc
+share/spambnc/sb.rc
+share/spambnc/spam
+share/doc/spambnc/documentation.html
+@dirrm share/spambnc
+@dirrm share/doc/spambnc

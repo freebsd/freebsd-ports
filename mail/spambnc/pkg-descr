@@ -1,0 +1,13 @@
+The Spam Bouncer is a set of procmail recipes, or instructions, which
+search the headers and text of your incoming email to see if it meets
+one or more of several categories (known addresses, rogue ISPs, bulk
+mail software etc etc).
+
+The Spam Bouncer sorts suspected spam into two categories -- mail from
+known spam sources which is definitely spam, and other mail which is
+probably spam, but might also be legitimate. It then tags this email
+with appropriate headers giving the spam classification, and responds
+according to the parameters you have set.
+
+- George Reid
+greid@ukug.uk.freebsd.org
