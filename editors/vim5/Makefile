@@ -9,13 +9,7 @@
 PORTNAME?=	vim
 PORTVERSION=	5.8.8
 CATEGORIES?=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://relay.nuxi.com/pub/vim/unreleased/unix/ \
-		ftp://ftp.vim.org/pub/vim/unix/  \
-		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
+MASTER_SITES=	${MASTER_SITE_VIM}
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]+$//g}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
