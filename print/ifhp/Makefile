@@ -5,35 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=ifhp
-PORTVERSION=3.5.6
+PORTNAME=	ifhp
+PORTVERSION=	3.5.7
 CATEGORIES=	    print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
-	ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
-	ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
-	ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
-	ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
+		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
+		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
+		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
+		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
 MASTER_SITE_SUBDIR=  LPRng/ifhp
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=papowell@astart.com
 
-# RUN_DEPENDS=
 
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+
+CONFIGURE_ARGS= \
+	--with-ldopts="-L${LOCALBASE}/lib" \
+	--with-ccopts="-I${LOCALBASE}/include"
 .if defined(PREFIX)
   CONFIGURE_ARGS+=  --prefix="${PREFIX}"
 .endif
 .if defined(SYSCONFDIR)
   CONFIGURE_ARGS+=  --sysconfdir="${SYSCONFDIR}"
 .endif
-
-HAS_CONFIGURE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-
-CONFIGURE_ARGS+= \
-	--with-ldopts="-L${LOCALBASE}/lib" \
-	--with-ccopts="-I${LOCALBASE}/include"
 
 MAN8=ifhp.8 textps.8
 
@@ -48,7 +45,6 @@ pre-everything::
 		${ECHO_MSG} "See the hier(7) man page for details of the FreeBSD file system"; \
 		${ECHO_MSG} "layout.  Configure is not equipped to determine the location of"; \
 		${ECHO_MSG} 'man pages and defaults to $${PREFIX}/man, which is incorrect for FreeBSD.'; \
-		exit 1; \
 	fi
 	@${ECHO_MSG} "Configuring with '${CONFIGURE_ARGS}'"
 
@@ -60,6 +56,6 @@ post-install:
 		do ${INSTALL_DATA} ${WRKSRC}/HOWTO/$$i ${DOCSDIR}; done
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e "s!DOCSDIR!${DOCSDIR}/!" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
