@@ -1,0 +1,21 @@
+This port is for International Fonts excluding what distributed with X
+Window Systems.
+
+This contains free X11 fonts for all characters that Emacs and XEmacs
+can handle. They are classified into several categories.
+
+European -- European normal size fonts (suitable with the other fonts)
+European-BIG -- European big fonts
+Asian -- Asian (non-CJK) fonts
+Chinese  -- Chinese normal size fonts excluding what distributed with X
+Chinese.BIG -- Chinese big fonts
+Japanese -- Japanese normal size fonts excluding what distributed with X
+Japanese.BIG -- Japanese big fonts
+Ethiopic -- Ethiopic fonts
+Misc -- fonts for the other regions/scripts
+TrueType -- Truetype fonts
+Type1 -- Postscript Type1 fonts
+
+If you want to use TrueType fonts on X, you should run X-TT or xfsft.
+Then you had better use mkttfdir in perlftlib or ttmkfdir to create
+fonts.dir or fonts.scale.

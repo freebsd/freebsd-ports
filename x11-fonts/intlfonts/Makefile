@@ -1,0 +1,85 @@
+# New ports collection makefile for:	intlfonts
+# Version required:	1.2
+# Date created:		99/10/26
+# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	intlfonts-1.2
+CATEGORIES=	x11-fonts
+MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/
+
+MAINTAINER=	taoka@FreeBSD.org
+
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86 \
+		type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
+
+USE_X_PREFIX=	yes
+PLIST_SUB=	FONTSDIR=${FONTSDIR} T1_FONTSDIR=${T1_FONTSDIR} \
+		TT_FONTSDIR=${TT_FONTSDIR} DOCDIR=${DOCDIR}
+
+NORMAL_FONTS=	Asian		\
+		Chinese		\
+		Ethiopic	\
+		European	\
+		Japanese	\
+		Misc
+BIG_FONTS=	Chinese.BIG	\
+		European.BIG	\
+		Japanese.BIG
+SCALABLE_FONTS=	TrueType \
+		Type1
+FONTSDIR=	lib/X11/fonts/local
+T1_FONTSDIR=	lib/X11/fonts/Type1
+TT_FONTSDIR=	lib/X11/fonts/TrueType
+PKGINSTALL=     ${WRKDIR}/INSTALL
+PKGDEINSTALL=   ${WRKDIR}/DEINSTALL
+DOCDIR=		share/doc/${DISTNAME}
+
+do-build:
+	cd ${WRKSRC}; \
+	for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \
+		for bdf in $$dir/*.bdf ; do \
+			${ECHO} $$bdf; \
+			pcf_gz=`${ECHO} $$bdf | ${SED} 's/.bdf$$/.pcf.gz/'`; \
+			${CAT} $$bdf | bdftopcf | ${GZIP_CMD} \
+				> $$pcf_gz; \
+		done \
+	done
+	for file in INSTALL DEINSTALL; do \
+		${SED} -e 's,%%FONTSDIR%%,${FONTSDIR},g' \
+			-e 's,%%T1_FONTSDIR%%,${T1_FONTSDIR},g' \
+			-e 's,%%TT_FONTSDIR%%,${TT_FONTSDIR},g' \
+			-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+			< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+	done
+
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+
+do-install:
+	(cd ${WRKSRC}; \
+	  ${MKDIR} ${PREFIX}/${FONTSDIR}; \
+	  for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \
+	  	${INSTALL_DATA} $$dir/*.pcf.gz ${PREFIX}/${FONTSDIR} ; \
+	  done; \
+	  ${MKDIR} ${PREFIX}/${T1_FONTSDIR}; \
+	  ${INSTALL_DATA} Type1/*.* ${PREFIX}/${T1_FONTSDIR} ; \
+	  ${MKDIR} ${PREFIX}/${TT_FONTSDIR}; \
+	  ${INSTALL_DATA} TrueType/*.ttf ${PREFIX}/${TT_FONTSDIR} ; \
+	)
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/Emacs.ap ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/${DOCDIR}
+.endif
+
+.include <bsd.port.mk>
