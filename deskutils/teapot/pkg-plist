@@ -1,0 +1,16 @@
+bin/teapot
+man/man1/teapot.1.gz
+share/doc/teapot/README.html
+share/doc/teapot/teapot.doc
+share/doc/teapot/teapot.html
+share/doc/teapot/teapot.ps
+share/examples/teapot/asqrt
+share/examples/teapot/asqrt.README
+share/examples/teapot/counter
+share/examples/teapot/counter.README
+share/examples/teapot/life
+share/examples/teapot/life.README
+share/examples/teapot/sqrt
+share/examples/teapot/sqrt.README
+@dirrm share/doc/teapot
+@dirrm share/examples/teapot

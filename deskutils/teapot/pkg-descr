@@ -1,0 +1,22 @@
+This is release 0.9 beta of teapot (Table Editor And Planner, Or:
+Teapot), a new spread sheet program for UNIX.
+
+The current release has the following features:
+
+o  curses based user interface with easy to understand menues
+o  portable sheet file format uses XDR or ASCII format
+o  tbl, LaTeX, HTML, CSV or formatted text files can be generated and
+   simple SC and WK1 sheets can be imported
+o  typed expression evaluator with the types int, float, string, error,
+   pointer to cell and empty
+o  iterative expressions
+o  powerful cell addressing
+o  three-dimensional sheets
+o  new expression evaluator functions can be added very easy
+o  English, Dutch or German builtin messages or X/OPEN message catalogues
+o  a user guide, available as troff -mm, PostScript and ASCII
+o  It is still a small and simple program!
+
+The following URLs tell you a little more about it:
+
+http://cantor.informatik.rwth-aachen.de/~michael/projects/teapot-en.html
