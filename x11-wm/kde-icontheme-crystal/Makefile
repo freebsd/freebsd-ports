@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	kde-icontheme-crystal
-PORTVERSION=	3.7b
+PORTVERSION=	0.8
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.everaldo.com/crystal/
-DISTNAME=	crystal_beta
+MASTER_SITES=	http://crystalicons.planetfurry.com/
+DISTNAME=	crystal_icons
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -22,7 +23,7 @@ post-extract:
 
 do-install:
 		@${MKDIR} ${PREFIX}/share/icons
-		@${CP} -r ${WRKSRC}/Crystal ${PREFIX}/share/icons/
-		@${CHMOD} -R a=rX,u+w ${PREFIX}/share/icons/Crystal
+		@${CP} -r ${WRKSRC}/crystal ${PREFIX}/share/icons/
+		@${CHMOD} -R a=rX,u+w ${PREFIX}/share/icons/crystal
 
 .include <bsd.port.mk>
