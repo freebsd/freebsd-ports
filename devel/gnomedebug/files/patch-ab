@@ -1,7 +1,0 @@
---- src/lib/Makefile.in.orig	Tue Aug 29 16:53:35 2000
-+++ src/lib/Makefile.in	Fri Sep  1 12:56:08 2000
-@@ -128,3 +128,3 @@
- 
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datatdir)/locals"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS) 	-DGDF_GLADEDIR=\""$(datadir)/gnome-debug/glade"\" $(LIBGLADE_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS) 	-DGDF_GLADEDIR=\""$(datadir)/gnome-debug/glade"\" $(LIBGLADE_CFLAGS)
- 
