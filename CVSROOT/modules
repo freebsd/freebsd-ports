@@ -1894,6 +1894,7 @@ gswitchit_applet ports/x11/gswitchit_applet
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
+gthumb		ports/graphics/gthumb
 gtic		ports/net/gtic
 gtimer		ports/deskutils/gtimer
 gtk+licq	ports/net/gtk+licq
