@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec ispell -d russian $*
+exec ispell -d russian "$@"
