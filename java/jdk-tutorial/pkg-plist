@@ -229,6 +229,12 @@ jdk%%VERSION%%/docs/books/tutorial/books/2e/cdinfo.html
 jdk%%VERSION%%/docs/books/tutorial/books/2e/errata.html
 jdk%%VERSION%%/docs/books/tutorial/books/2e/reference.html
 jdk%%VERSION%%/docs/books/tutorial/books/2e/toc.html
+jdk%%VERSION%%/docs/books/tutorial/books/3e/bookTOC.pdf
+jdk%%VERSION%%/docs/books/tutorial/books/3e/cdinfo.html
+jdk%%VERSION%%/docs/books/tutorial/books/3e/errata.html
+jdk%%VERSION%%/docs/books/tutorial/books/3e/exercises/packages.html
+jdk%%VERSION%%/docs/books/tutorial/books/3e/index.html
+jdk%%VERSION%%/docs/books/tutorial/books/3e/toc.html
 jdk%%VERSION%%/docs/books/tutorial/books/continued/cdinfo.html
 jdk%%VERSION%%/docs/books/tutorial/books/continued/errata.html
 jdk%%VERSION%%/docs/books/tutorial/books/continued/index.html
@@ -286,19 +292,24 @@ jdk%%VERSION%%/docs/books/tutorial/essential/attributes/example/Echo.java
 jdk%%VERSION%%/docs/books/tutorial/essential/attributes/index.html
 jdk%%VERSION%%/docs/books/tutorial/essential/attributes/properties.html
 jdk%%VERSION%%/docs/books/tutorial/essential/end.html
+jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/catch.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/catchOrDeclare.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/creating.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/dealing.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/declaring.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/definition.html
+jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/Cat.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/InputFile.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/InputFileDeclared.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/InputFileTest.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/ListOfNumbers.java
+jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/ListOfNumbers2.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/ListOfNumbersDeclared.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/ListOfNumbersTest.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/ListOfNumbersWOHandler.java
+jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/infile.txt
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1/testing
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example/InputFile.java
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example/InputFileDeclared.java
@@ -320,10 +331,17 @@ jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/throwable.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/throwing.html
 jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/try.html
 jdk%%VERSION%%/docs/books/tutorial/essential/index.html
+jdk%%VERSION%%/docs/books/tutorial/essential/io/QandE/FileReader.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/QandE/FileWriter.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/essential/io/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/essential/io/catstreams.html
 jdk%%VERSION%%/docs/books/tutorial/essential/io/dataIO.html
 jdk%%VERSION%%/docs/books/tutorial/essential/io/datasinks.html
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/Adler32.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/Card3.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CardReader.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CardWriter.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CheckedDITest.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CheckedDataInput.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CheckedDataOutput.java
@@ -334,13 +352,18 @@ jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CheckedRAFTest.jav
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/Checksum.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/Concatenate.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/Copy.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CountReader.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CountWriter.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/CounterDemo.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/DataIOTest.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/DataIOTest2.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/ListOfFiles.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/ReverseThread.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/RhymingWords.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/SortThread.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/card.out
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/farrago.txt
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/outagain.txt
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1/words.txt
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/Adler32.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/CheckedDITest.java
@@ -358,6 +381,7 @@ jdk%%VERSION%%/docs/books/tutorial/essential/io/example/ListOfFiles.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/ReverseThread.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/RhymingWords.java
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/SortThread.java
+jdk%%VERSION%%/docs/books/tutorial/essential/io/example/datafile
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/farrago.txt
 jdk%%VERSION%%/docs/books/tutorial/essential/io/example/words.txt
 jdk%%VERSION%%/docs/books/tutorial/essential/io/filestreams.html
@@ -410,6 +434,8 @@ jdk%%VERSION%%/docs/books/tutorial/essential/threads/DiningPhilosophers.atag
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/DiningPhilosophers.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/FairRaceApplet.atag
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/FairRaceApplet.html
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/UnfairRaceApplet.atag
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/UnfairRaceApplet.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/clock.html
@@ -452,6 +478,10 @@ jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot1/TwoThreadsTes
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot1/bothspoonsduke.gif
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot1/hungryduke.gif
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot1/rightspoonduke.gif
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot3/AnnoyingBeep.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot3/Reminder.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot3/ReminderBeep.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot3/SkippingBeep.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-swing/Chopstick.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-swing/DiningPhilosophers.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-swing/Philosopher.java
@@ -490,8 +520,8 @@ jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/QSortAlgorithm.clas
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/QSortAlgorithm.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceApplet.class
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceApplet.java
-jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceTest.java
-jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceTest2.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceDemo.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/RaceDemo2.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/Reentrant.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/ReentrantTest.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/Runner.class
@@ -503,7 +533,7 @@ jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/SortAlgorithm.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/SortItem.class
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/SortItem.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/ThreeThreadsTest.java
-jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/TwoThreadsTest.java
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/TwoThreadsDemo.java
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/bothspoonsduke.gif
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/hungryduke.gif
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/example/rightspoonduke.gif
@@ -518,6 +548,7 @@ jdk%%VERSION%%/docs/books/tutorial/essential/threads/simple.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/summary.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/synchronization.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/threadgroup.html
+jdk%%VERSION%%/docs/books/tutorial/essential/threads/timer.html
 jdk%%VERSION%%/docs/books/tutorial/essential/threads/waitAndNotify.html
 jdk%%VERSION%%/docs/books/tutorial/ext/TOC.html
 jdk%%VERSION%%/docs/books/tutorial/ext/basics/download.html
@@ -654,35 +685,58 @@ jdk%%VERSION%%/docs/books/tutorial/figures/essential/FairRaceApplet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/essential/UnfairRaceApplet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/ext/exta.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/ext/extb1.gif
-jdk%%VERSION%%/docs/books/tutorial/figures/getStarted.zip
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/1flow.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/2comp.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/3play.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/4dukewav.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/5world.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Apple Applet Runner 1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/AppleAppletRunner1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Finder 1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Finder1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Finder3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Hello-50.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/JBindery1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/Jbindicon-mac.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/SimpleText1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/applet-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/applet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/applet_unix.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/arrow.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/butlersm.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/cd.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/check.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/classfile-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/dos.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/dosclass.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/dosresult.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/explorea.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/extrastep.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/firstls.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/folder-mac.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/g1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/g2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/g3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/g35.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/g4.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/getStartedIcon.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/gs5.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/helloWorld.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/javaIcon.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/javac-mac.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/javac1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/javac2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/javacicon-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/notequal.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/output-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/prompt.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/result.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/saveas-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/saveas.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/secondls.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/typeA.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/typea2.gif
-jdk%%VERSION%%/docs/books/tutorial/figures/gsImg.zip
+jdk%%VERSION%%/docs/books/tutorial/figures/getStarted/viewericon-mac.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/i18n/conversion.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/i18n/i18n-2.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/i18n/i18n-3.gif
@@ -697,10 +751,10 @@ jdk%%VERSION%%/docs/books/tutorial/figures/information/oop.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/information/smallbabies.jpeg
 jdk%%VERSION%%/docs/books/tutorial/figures/information/walking.man.sign.jpg
 jdk%%VERSION%%/docs/books/tutorial/figures/information/whatsnew-bang.gif
-jdk%%VERSION%%/docs/books/tutorial/figures/jImg.zip
 jdk%%VERSION%%/docs/books/tutorial/figures/jar/jar1.gif
-jdk%%VERSION%%/docs/books/tutorial/figures/java.zip
+jdk%%VERSION%%/docs/books/tutorial/figures/java/10array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/10point.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/11array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/11rect.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/12point2.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/13parts.gif
@@ -711,6 +765,7 @@ jdk%%VERSION%%/docs/books/tutorial/figures/java/17push.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/18method.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/19object.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/1ad.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/1array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/20object.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/21graphic.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/22interf.gif
@@ -720,22 +775,53 @@ jdk%%VERSION%%/docs/books/tutorial/figures/java/25rectan.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/26packag.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/27helper.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/28classes.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/2array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/2class.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/2pointObj.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/3array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/3brake.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/3pointObj.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/3srcindex.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/4caffein.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/4char.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/4message.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/5messagb.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/6class.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/7brake.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/8bike.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/9array.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/9parts.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/ClickMe.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con17.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con18.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con19.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con20.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con21.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con22.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con23.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con24.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con25.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con27.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con28.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/con29.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/construction.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/errors.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/i18n-2.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/i18n-3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/interpack1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/interpack2.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/methodcall.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/n30.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/n31.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/n32.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/n33.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/number.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/opex.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/origin.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/package1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/package2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/package3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/java/package4.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/java/scope.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/javabeans/2contexts.jpg
 jdk%%VERSION%%/docs/books/tutorial/figures/javabeans/3beans.jpg
@@ -825,6 +911,10 @@ jdk%%VERSION%%/docs/books/tutorial/figures/together/controlpanel.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/together/legend.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/together/multicasting.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/together/player.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/QandE/sApp1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/QandE/sApp2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/QandE/sApp3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/QandE/test1.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/10jtextcomp.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/10model.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/1layers.gif
@@ -1018,6 +1108,10 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbaglayout.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagnofill.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagnoweightx.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridlayout.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/sApp1.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/sApp2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/sApp3.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/test1.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/misc/APIPanelForColumnHeader.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/misc/ActionDemo-2.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/misc/ActionDemo.gif
@@ -1091,10 +1185,19 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/HelloSwingApplet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/SwingApplication.gif
 jdk%%VERSION%%/docs/books/tutorial/forms/sendusmail.html
 jdk%%VERSION%%/docs/books/tutorial/forms/survey.html
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/FirstClass.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/SecondClass.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/Useless.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/FirstClass.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/HelloWorldApp2.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/README
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/SecondClass.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/Useless.java
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/TOC.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/_compiling.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/_loading.html
-jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/anatomy.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/example/Hello.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/example/HelloWorld.java
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/import.html
@@ -1104,7 +1207,6 @@ jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/running.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/subclass.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/_compiling.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/_interpreting.html
-jdk%%VERSION%%/docs/books/tutorial/getStarted/application/anatomy.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/classdef.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/comments.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/example/HelloWorldApp.java
@@ -1112,6 +1214,7 @@ jdk%%VERSION%%/docs/books/tutorial/getStarted/application/index.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/main.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/application/objects.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/cupojava/index.html
+jdk%%VERSION%%/docs/books/tutorial/getStarted/cupojava/mac.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/cupojava/unix.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/cupojava/win32.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/end.html
@@ -1259,6 +1362,7 @@ jdk%%VERSION%%/docs/books/tutorial/images/background.gif
 jdk%%VERSION%%/docs/books/tutorial/images/backgroundsm.gif
 jdk%%VERSION%%/docs/books/tutorial/images/blueline.gif
 jdk%%VERSION%%/docs/books/tutorial/images/bluelinesm.gif
+jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/3ebook.jpg
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/almanac99.jpg
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/continued.gif
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/first-edition.gif
@@ -1268,6 +1372,7 @@ jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/native.gif
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/second-edition.gif
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/supplement.gif
 jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/swing.gif
+jdk%%VERSION%%/docs/books/tutorial/images/bookcovers/third-edition.jpg
 jdk%%VERSION%%/docs/books/tutorial/images/coreIcon.gif
 jdk%%VERSION%%/docs/books/tutorial/images/coreTrail.gif
 jdk%%VERSION%%/docs/books/tutorial/images/diamonds/aqua.gif
@@ -1347,22 +1452,30 @@ jdk%%VERSION%%/docs/books/tutorial/jar/sign/intro.html
 jdk%%VERSION%%/docs/books/tutorial/jar/sign/signing.html
 jdk%%VERSION%%/docs/books/tutorial/jar/sign/verify.html
 jdk%%VERSION%%/docs/books/tutorial/java/TOC.html
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/AClass.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/AdapterSpot.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/AnonymousSpot.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Earth.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/One/Alpha.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/One/DeltaOne.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Planet.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Point.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Rectangle.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Spot.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Stack.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Two/AlphaTwo.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Two/DeltaTwo.java
+jdk%%VERSION%%/docs/books/tutorial/java/classes/index.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/ClickMeApplets.html
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/_ex_concepts.html
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/_ex_concepts_answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE/ClickMeGreen.java
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE/ClickMePurple.java
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE/Spot.java
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/class.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMe.class
+jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMe.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMe.java
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeDrag.class
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeDrag.java
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeErase.class
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeErase.java
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeGreen.class
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeGreen.java
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMePurple.class
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMePurple.java
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeScribble.class
-jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/ClickMeScribble.java
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/Spot.class
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1/Spot.java
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/index.html
@@ -1371,10 +1484,28 @@ jdk%%VERSION%%/docs/books/tutorial/java/concepts/interface.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/message.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/object.html
 jdk%%VERSION%%/docs/books/tutorial/java/concepts/practical.html
-jdk%%VERSION%%/docs/books/tutorial/java/data/_ex_arrays.html
-jdk%%VERSION%%/docs/books/tutorial/java/data/_ex_numbers.html
-jdk%%VERSION%%/docs/books/tutorial/java/data/_ex_objects.html
-jdk%%VERSION%%/docs/books/tutorial/java/data/_ex_strings.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/Adder.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/Anagram.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/ComputeInitials.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/ComputeResult.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/FPAdder.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/MinVariablesDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/NumberHolder.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/NumberHolderDisplay.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/Point.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/Rectangle.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/SomethingIsRight.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/SomethingIsWrong.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/ThisHappens.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/WhatHappens.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/arrays-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/arrays-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/characters-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/characters-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/numbers-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/numbers-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/objects-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/data/QandE/objects-questions.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/accessors.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/andback.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/arraybasics.html
@@ -1407,6 +1538,7 @@ jdk%%VERSION%%/docs/books/tutorial/java/data/example/ReverseString.java
 jdk%%VERSION%%/docs/books/tutorial/java/data/example/ReverseStringTest.java
 jdk%%VERSION%%/docs/books/tutorial/java/data/example/SimplePoint.java
 jdk%%VERSION%%/docs/books/tutorial/java/data/example/SimpleRectangle.java
+jdk%%VERSION%%/docs/books/tutorial/java/data/example/ValueOfDemo.java
 jdk%%VERSION%%/docs/books/tutorial/java/data/garbagecollection.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/index.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/modifying.html
@@ -1427,6 +1559,55 @@ jdk%%VERSION%%/docs/books/tutorial/java/data/usingobject.html
 jdk%%VERSION%%/docs/books/tutorial/java/data/whytwo.html
 jdk%%VERSION%%/docs/books/tutorial/java/end.html
 jdk%%VERSION%%/docs/books/tutorial/java/index.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/IteratorDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/TimeClient.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/interfaces-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/interfaces-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/mygame.zip
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/packages-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/packages-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/question/Client.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/question/Server.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/question/Utilities.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/createinterface.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/createpkgs.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example-1dot1/AlarmClock.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example-1dot1/GUIClock.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example-1dot1/GUIClock.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example-1dot1/Sleeper.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/AlarmClock.class
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/AlarmClock.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/AlarmThread.class
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/AlarmThread.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/GUIClock.class
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/GUIClock.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/Sleeper.class
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/example/Sleeper.java
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/index.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/interfaceAsType.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/interfaceDef.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/interfaces.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/managingfiles.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/nogrow.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/packages.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/summary-interface.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/summary-package.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/usepkgs.html
+jdk%%VERSION%%/docs/books/tutorial/java/interpack/usinginterface.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/Class1.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/Class2.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/InnerClassDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/InnerClassDemo2.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/InnerClassDemo3.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/Problem.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/ProblemSolved.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/creating-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/creating-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/final.txt
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/inherit-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/inherit-questions.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/nested-answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE/nested-questions.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/abstract.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/accesscontrol.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/arguments.html
@@ -1435,69 +1616,67 @@ jdk%%VERSION%%/docs/books/tutorial/java/javaOO/classdecl.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/classes.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/classvars.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/constructors.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/createinterface.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/createpkgs.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AdapterSpot$MyMouseAdapter.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AdapterSpot.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AdapterSpot.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AdapterSpot.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AlarmClock.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AnonymousSpot$1.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AnonymousSpot.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AnonymousSpot.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/AnonymousSpot.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/GUIClock.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/GUIClock.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Point.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Rectangle.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/SimplePoint.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/SimpleRectangle.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Sleeper.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Spot.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Spot.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Spot.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1/Stack.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AClass.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AdapterSpot.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AlarmClock.class
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AlarmClock.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AlarmThread.class
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AlarmThread.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/AnonymousSpot.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/GUIClock.class
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/GUIClock.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Card.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Deck.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/DisplayDeck.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Earth.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/One/Alpha.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/One/DeltaOne.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Planet.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Point.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Rectangle.java
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Sleeper.class
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Sleeper.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Spot.class
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Spot.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Stack.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Two/AlphaTwo.java
+jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Two/DeltaTwo.java
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/final.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/index.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/innerclasses.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/interfaceAsType.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/interfaceDef.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/interfaces.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/managingfiles.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/methodbody.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/methoddecl.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/methods.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/nested.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/nogrow.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/objectclass.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/override.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/packages.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/subclass.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/subclasses.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/usepkgs.html
-jdk%%VERSION%%/docs/books/tutorial/java/javaOO/usinginterface.html
 jdk%%VERSION%%/docs/books/tutorial/java/javaOO/variables.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_flow.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_flow_answers.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_operators.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_operators_answers.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_variables.html
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_ex_variables_answers.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/Bits.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/CurrencyExchange.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/FloatTest.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/MinVariablesDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/NestedIf.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/NewDoWhileDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/NewWhileDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/OperatorEx.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/answers_expressions.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/answers_flow.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/answers_operators.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/answers_variables.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/questions_expressions.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/questions_flow.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/questions_operators.html
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE/questions_variables.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_keywords.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/_runSort.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/arithmetic.html
@@ -1506,8 +1685,8 @@ jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/bitwise.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/branch.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/datatypes.html
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example-1dot1/MaxVariablesDemo.java
-jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example-1dot1/MinVariablesDemo.java
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example/ArithmeticDemo.java
+jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example/BasicsDemo.java
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example/BitwiseDemo.java
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example/BreakDemo.java
 jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example/BreakWithLabelDemo.java
@@ -1577,6 +1756,7 @@ jdk%%VERSION%%/docs/books/tutorial/javabeans/whatis/beanDefinition.html
 jdk%%VERSION%%/docs/books/tutorial/javabeans/whatis/index.html
 jdk%%VERSION%%/docs/books/tutorial/javabeans/writingbean/index.html
 jdk%%VERSION%%/docs/books/tutorial/jdbc/TOC.html
+jdk%%VERSION%%/docs/books/tutorial/jdbc/basics/_retrievingTable.html
 jdk%%VERSION%%/docs/books/tutorial/jdbc/basics/applet.html
 jdk%%VERSION%%/docs/books/tutorial/jdbc/basics/complete.html
 jdk%%VERSION%%/docs/books/tutorial/jdbc/basics/connecting.html
@@ -1992,7 +2172,6 @@ jdk%%VERSION%%/docs/books/tutorial/servlets/client-state/index.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/client-state/session-tracking.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/communication/attributes.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/communication/index.html
-jdk%%VERSION%%/docs/books/tutorial/servlets/communication/other-servlets.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/communication/request-dispatcher.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/end.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot0/BookDetailServlet.java
@@ -2021,6 +2200,21 @@ jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/cart/Shoppin
 jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/database/BookDBFrontEnd.java
 jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/database/BookDetails.java
 jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/database/BookStoreDB.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/servlets.properties
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/BannerServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/BookDetailServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/BookStoreServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/CashierServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/CatalogServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/Currency.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/ReceiptServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/ShowCartServlet.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/bookstore.html
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/cart/ShoppingCart.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/cart/ShoppingCartItem.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/database/BookDB.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/database/BookDetails.java
+jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/web.xml
 jdk%%VERSION%%/docs/books/tutorial/servlets/index.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/lifecycle/destroy.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/lifecycle/index.html
@@ -2033,7 +2227,8 @@ jdk%%VERSION%%/docs/books/tutorial/servlets/overview/simple.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/index.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/properties.html
 jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/server-start.html
-jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/srun-start.html
+jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/tomcat-start.html
+jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner/webappdd.html
 jdk%%VERSION%%/docs/books/tutorial/sound/SoundApplet.atag
 jdk%%VERSION%%/docs/books/tutorial/sound/SoundApplet.html
 jdk%%VERSION%%/docs/books/tutorial/sound/TOC.html
@@ -2156,6 +2351,12 @@ jdk%%VERSION%%/docs/books/tutorial/ui/overview/components.html
 jdk%%VERSION%%/docs/books/tutorial/ui/overview/drawing.html
 jdk%%VERSION%%/docs/books/tutorial/ui/overview/events.html
 jdk%%VERSION%%/docs/books/tutorial/ui/overview/index.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/SwingApp1.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/SwingApp2.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/SwingApp3.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/Test1.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/answers.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE/questions.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/TOC.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/TextDemo.atag
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/TextDemo.html
@@ -2543,6 +2744,23 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/index.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/none.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/problems.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/using.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/CelsiusConverter.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/CelsiusConverter2.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/HelloWorldSwing.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/LunarPhases.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/SwingApplication.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/VoteDialog.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/convert.gif
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image0.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image1.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image2.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image3.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image4.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image5.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image6.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image7.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image8.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/index.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/misc/IconDemoApplet.atag
 jdk%%VERSION%%/docs/books/tutorial/uiswing/misc/IconDemoApplet.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/misc/access.html
@@ -2704,6 +2922,9 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/misc/example-swing/images
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/misc/example-swing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/misc
+@dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images
+@dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3
+@dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/mini
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing/images
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout
@@ -2721,6 +2942,7 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/components/example-swing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/components/example-1dot3
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/components
+@dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/ui/overview
 @dirrm jdk%%VERSION%%/docs/books/tutorial/ui/layout/example
@@ -2741,6 +2963,9 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/servletrunner
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/overview
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/lifecycle
+@dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/database
+@dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat/cart
+@dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/tomcat
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/database
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1/cart
 @dirrm jdk%%VERSION%%/docs/books/tutorial/servlets/example-1dot2/jsdk2dot1
@@ -2839,15 +3064,30 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/tables
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/nutsandbolts
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/Two
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example/One
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/javaOO
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/interpack/example-1dot1
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/interpack/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE/question
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/interpack/QandE
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/interpack
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/data/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/data/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/data/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/data
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/concepts/example-1dot1
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/concepts/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java/concepts
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/classes/example/Two
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/classes/example/One
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/classes/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/java/classes
 @dirrm jdk%%VERSION%%/docs/books/tutorial/java
 @dirrm jdk%%VERSION%%/docs/books/tutorial/jar/sign
 @dirrm jdk%%VERSION%%/docs/books/tutorial/jar/basics
@@ -2883,16 +3123,20 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted/application
 @dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted/applet/example
 @dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted/applet
+@dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1
+@dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/getStarted
 @dirrm jdk%%VERSION%%/docs/books/tutorial/forms
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/painting
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/overview
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/misc
+@dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/events
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/converting
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components
+@dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/uiswing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/together
 @dirrm jdk%%VERSION%%/docs/books/tutorial/figures/sound
@@ -2920,8 +3164,10 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/ext
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-swing/images
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-swing
+@dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot3
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/threads
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/system/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/system/example
@@ -2929,9 +3175,11 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/strings
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/io/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/io/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/essential/io/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/io
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/essential/exceptions/QandE
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/exceptions
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/attributes/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/essential/attributes/example
@@ -2951,6 +3199,8 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/collections
 @dirrm jdk%%VERSION%%/docs/books/tutorial/books/swing
 @dirrm jdk%%VERSION%%/docs/books/tutorial/books/continued
+@dirrm jdk%%VERSION%%/docs/books/tutorial/books/3e/exercises
+@dirrm jdk%%VERSION%%/docs/books/tutorial/books/3e
 @dirrm jdk%%VERSION%%/docs/books/tutorial/books/2e
 @dirrm jdk%%VERSION%%/docs/books/tutorial/books/1e/missingfiles
 @dirrm jdk%%VERSION%%/docs/books/tutorial/books/1e
