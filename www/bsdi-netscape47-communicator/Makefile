@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.19 1998/04/12 09:07:48 markm Exp $
+# $Id: Makefile,v 1.20 1998/08/18 01:42:41 ache Exp $
 #
 
 DISTNAME=       netscape-communicator-4.06
@@ -13,6 +13,8 @@ DISTFILES=      communicator-pro-v406-export.x86-unknown-freebsd.tar.gz
 AUTOADMIN=      autoadmin-v406.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+BROKEN=		awaiting upgrade to 4.5
 
 WRKSRC=         ${WRKDIR}/communicator-v406.x86-unknown-freebsd
 NO_BUILD=       Yes
