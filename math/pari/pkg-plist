@@ -22,7 +22,7 @@
 ./include/pari/paridecl.h
 ./bin/gp-2.0
 ./bin/gp
-@exec /bin/mkdir %D/lib/pari %D/include/pari
+@exec /bin/mkdir -p %D/lib/pari %D/include/pari %D/lib/pari/data
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @unexec /bin/rmdir %D/lib/pari/data 

@@ -1,0 +1,21 @@
+--- config/Makefile.SH.orig	Sun Apr  4 08:01:45 1999
++++ config/Makefile.SH	Sun Apr  4 08:04:28 1999
+@@ -373,13 +373,13 @@
+ 
+ if test -n "$emacs"; then
+   cat >> $file << EOT
+-$pari_elc: $emx/pari.el
+-	@echo "Byte-Compiling pari.el..."
+-	-cd $emx; $emacs -batch -l compile
++#$pari_elc: $emx/pari.el
++#	@echo "Byte-Compiling pari.el..."
++#	-cd $emx; $emacs -batch -l compile
+ 
+-$install_emacs_files: $pari_elc
++$install_emacs_files: #$pari_elc
+ 	-mkdir -p \$(MISCDIR)
+-	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
++#	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/pari.el        \$(MISCDIR)
+ # otherwise Warning from emacs (file not writeable)
+ 	\$(INSTALL) -m 666  $emx/pari.menu      \$(MISCDIR)
