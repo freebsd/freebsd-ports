@@ -1,11 +1,11 @@
---- Makefile.Linux.Mesa.orig	Sun Feb  2 18:59:42 1997
-+++ Makefile.Linux.Mesa	Sun Nov 16 19:16:50 2003
+--- Makefile.Linux.Mesa.orig	Sun Feb  2 12:59:42 1997
++++ Makefile.Linux.Mesa	Sat Dec  4 08:56:39 2004
 @@ -3,23 +3,23 @@
  
  .SUFFIXES: .cc .o
  
 -ARCH = -DLINUX -DMESA #-DSOUND
-+ARCH = -DLINUX -DPREFIX=\"$(PREFIX)\" #-DUSING_MESA -DSOUND
++TARCH = -DLINUX -DPREFIX=\"$(PREFIX)\" #-DUSING_MESA -DSOUND
  
  MESA = Mesa
  
@@ -14,7 +14,7 @@
  
 -CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
 -	-pedantic -funroll-loops -mieee-fp
-+CFLAGS += $(INCLUDE) $(ARCH) -DSOUND -Wall -pipe ${PTHREAD_CFLAGS} \
++CFLAGS += $(INCLUDE) $(TARCH) -DSOUND -Wall -pipe ${PTHREAD_CFLAGS} \
 +	-pedantic -funroll-loops
  
 -LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
