@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+echo "********************************************************"
+echo "*                      W a r n i n g                   *"
+echo "* Read /usr/local/share/vi/README.* for controlling    *"
+echo "* multilingual functionalities.                        *"
+echo "********************************************************"

@@ -1,0 +1,33 @@
+# New ports collection makefile for:	nvi-1.79 + multilingual patch(none)
+# Version required:	1.79
+# Date created:		6 Mar 1997
+# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
+#
+# $Id$
+#
+
+DISTNAME=	nvi-1.79
+PKGNAME=	nvi-m17n-1.79-970306
+CATEGORIES=	japanese editors
+MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/4bsd/\
+		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+PATCHFILES=	nvi-1.79.m17n-970306.diff.gz
+PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+
+MAINTAINER=	itojun@itojun.org
+
+#LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/build
+GNU_CONFIGURE=	yes
+PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
+CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/usr/local/etc/vi.exrc\"'
+CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
+
+post-install:
+	@${CP} ${WRKSRC}/../docs.m17n/README.english \
+		${PREFIX}/share/vi/
+	@${CP} ${WRKSRC}/../docs.m17n/README.japanese \
+		${PREFIX}/share/vi/
+
+.include <bsd.port.mk>
