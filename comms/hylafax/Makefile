@@ -67,9 +67,12 @@ post-extract:
 	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
 
 post-patch:
-	${REINPLACE_CMD} -E \
+	${REINPLACE_CMD} \
 		-e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		${WRKSRC}/util/faxrcvd.sh.in
 
 pre-install:
 PLIST_SUB=	SPOOL="`${GREP} SPOOL ${WRKSRC}/defs | ${CUT} -c10-`"
