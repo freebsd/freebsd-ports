@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1997/11/24 13:09:10 ache Exp $
+# $Id: Makefile,v 1.17 1998/01/23 00:43:43 jseger Exp $
 #
 
 DISTNAME=	unzip532
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/unzip-5.32
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     freebsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
