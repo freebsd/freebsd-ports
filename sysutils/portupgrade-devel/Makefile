@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20020128
+PORTVERSION=	20020204
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/sysutils/pkg_tarup
 
+USE_BZIP2=	yes
 USE_RUBY=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
@@ -48,8 +49,6 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 post-install:
-	# Remove old database
-	${RM} -f /var/db/pkg/pkgdb.byfile.db
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
