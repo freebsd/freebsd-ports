@@ -9,7 +9,6 @@ etc/horde/httpd.conf.horde
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/PERFORMANCE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -353,6 +352,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/lib/Horde/Tree.php
 %%HORDEDIR%%/lib/Horde/Tree/html.php
 %%HORDEDIR%%/lib/Horde/Tree/javascript.php
+%%HORDEDIR%%/lib/Horde/Tree/select.php
 %%HORDEDIR%%/lib/Horde/UI/Language.php
 %%HORDEDIR%%/lib/Horde/UI/Pager.php
 %%HORDEDIR%%/lib/Horde/UI/Table.php
@@ -573,6 +573,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/scripts/temp-cleanup.cron
 %%HORDEDIR%%/scripts/themes_check.php
 %%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.mysql.sql
+%%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.pgsql.sql
 %%HORDEDIR%%/services/cacheview.php
 %%HORDEDIR%%/services/download/index.php
 %%HORDEDIR%%/services/editor/htmlarea/dialog.js
@@ -1308,6 +1309,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/lucblue/info.php
 %%HORDEDIR%%/themes/lucblue/screen.css
 %%HORDEDIR%%/themes/mobile/screen.css
+%%HORDEDIR%%/themes/moz14.css
 %%HORDEDIR%%/themes/mozilla/graphics/header.png
 %%HORDEDIR%%/themes/mozilla/graphics/menu-active.png
 %%HORDEDIR%%/themes/mozilla/graphics/menu.png
@@ -1319,6 +1321,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/print/screen.css
 %%HORDEDIR%%/themes/purple/info.php
 %%HORDEDIR%%/themes/purple/screen.css
+%%HORDEDIR%%/themes/safari.css
 %%HORDEDIR%%/themes/screen.css
 %%HORDEDIR%%/themes/simplex/graphics/background.png
 %%HORDEDIR%%/themes/simplex/info.php
@@ -1569,6 +1572,7 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/Horde/Block
 @dirrm %%HORDEDIR%%/lib/Horde/Auth
 @dirrm %%HORDEDIR%%/lib/Horde
+@dirrm %%HORDEDIR%%/lib/File/tests
 @dirrm %%HORDEDIR%%/lib/File/PDF/fonts
 @dirrm %%HORDEDIR%%/lib/File/PDF
 @dirrm %%HORDEDIR%%/lib/File
