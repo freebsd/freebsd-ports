@@ -100,6 +100,7 @@
     SUBDIR += gqmpeg
     SUBDIR += grep
     SUBDIR += groff
+    SUBDIR += gskk
     SUBDIR += gtkicq
     SUBDIR += gxditview
     SUBDIR += hex
