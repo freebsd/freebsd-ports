@@ -251,7 +251,7 @@ while [ "$1" ]; do
 			;;
 		\"XML\")
 			if [ -z "$XML" ]; then
-				echo "LIB_DEPENDS+=	expat.3:\${PORTSDIR}/textproc/expat2"
+				echo "LIB_DEPENDS+=	expat.4:\${PORTSDIR}/textproc/expat2"
 				echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 				XML=1
 			fi
