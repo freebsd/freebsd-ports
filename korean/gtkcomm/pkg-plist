@@ -4,6 +4,7 @@ share/gtkcomm/capture/DEFAULT_CAPTURE_DIR
 share/gtkcomm/chatrc
 share/gtkcomm/down/DEFAULT_DOWNLOAD_DIR
 share/gtkcomm/gtkcommrc
+share/gtkcomm/gtkrc
 share/gtkcomm/iselrc
 share/gtkcomm/pixmap/bg.xpm
 share/gtkcomm/pixmap/tb_close.xpm
