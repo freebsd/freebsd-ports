@@ -20,6 +20,7 @@ LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 USE_AUTOHEADER=		yes
 USE_AUTOMAKE_VER=	15
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 AUTOMAKE_ARGS=		--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -29,6 +30,7 @@ MAN8=	newscache.8 newscacheclean.8 updatenews.8
 INFO=	NewsCache
 
 post-patch:
+	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure.in
 	cd ${WRKSRC}; ${ACLOCAL}
 
 .include <bsd.port.mk>
