@@ -218,6 +218,7 @@
     SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += trojka
+    SUBDIR += tux-aqfh
     SUBDIR += tuxkart
     SUBDIR += tuxracer
     SUBDIR += tvp
