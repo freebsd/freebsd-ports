@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.4 1994/08/28 10:49:45 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1994/09/11 12:54:09 jkh Exp $
 #
-SUBDIR=	ghostscript
+SUBDIR=	ghostscript psutils
 
 .include <bsd.port.subdir.mk>
