@@ -14,6 +14,7 @@
     SUBDIR += caml-light
     SUBDIR += ccscript
     SUBDIR += cel
+    SUBDIR += chicken
     SUBDIR += cim
     SUBDIR += cli
     SUBDIR += clips
