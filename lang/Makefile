@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.133 1999/05/20 21:53:31 obrien Exp $
+# $Id: Makefile,v 1.134 1999/06/02 10:25:07 tg Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -43,6 +43,7 @@
     SUBDIR += jdk
     SUBDIR += jdk-doc
     SUBDIR += jdk-tutorial
+    SUBDIR += jfc
     SUBDIR += jikes
     SUBDIR += kaffe
     SUBDIR += lcc
