@@ -1,14 +1,23 @@
---- Makefile.orig	Sun Oct 31 09:07:29 1999
-+++ Makefile	Fri Dec 24 16:37:46 1999
-@@ -5,6 +5,8 @@
+--- Makefile.orig	Sun Oct 31 07:07:29 1999
++++ Makefile	Thu Jan 20 09:14:40 2000
+@@ -5,13 +5,15 @@
  # Thanks to rbulling@obscure.org for cleaning this Makefile up..
  #
  
 +SYSTYPE=freebsd
 +
  # Generic compiler
-  CC = cc
+- CC = cc
++ CC ?= cc
  # GNU..
+ # CC = gcc 
+ 
+ # Normal systems flags
+-CFLAGS = -O
++CFLAGS ?= -O
+ # Braindead HPUX compiler flags
+ #CFLAGS = -O -Aa
+ 
 @@ -35,19 +37,7 @@
  # Debug mode for logtail
  # CFLAGS = -g -DDEBUG
