@@ -5,7 +5,7 @@
  
  libstats.so: stats.o
 -	$(CC) $(CFLAGS) -shared -o $@ $< -ltdb @LIB_PCRE@
-+	$(CC) $(CFLAGS) -shared -o $@ $< ${LDFLAGS} -ltdb @LIB_PCRE@
++	$(CC) $(CFLAGS) -shared -o $@ $< @LIBS@ -ltdb @LIB_PCRE@
  
  libsocket.so: @SOCKET_OBJS@
  	$(CC) $(CFLAGS) -shared -o $@ @SOCKET_OBJS@ @SSL_LIB@

@@ -14,7 +14,7 @@
  
  printstats: printstats.o
 -	$(CC) -ltdb -o $@ $<
-+	$(CC) ${LDFLAGS} -ltdb -o $@ $<
++	$(CC) ${LIBS} -ltdb -o $@ $<
  
  %.o: %.c
  	$(CC) $(CFLAGS) -c $<
