@@ -2,5 +2,5 @@ bin/postgresql_autodoc
 share/postgresql_autodoc/dia.tmpl
 share/postgresql_autodoc/dot.tmpl
 share/postgresql_autodoc/html.tmpl
-share/postgresql_autodoc/sgml.tmpl
+share/postgresql_autodoc/xml.tmpl
 @dirrm share/postgresql_autodoc
