@@ -1,13 +1,14 @@
 bin/kbarcode
 share/applnk/Applications/kbarcode.desktop
-share/icons/locolor/32x32/apps/kbarcode.png
 share/icons/locolor/16x16/apps/kbarcode.png
-share/apps/kbarcode/labeldefinitions.sql
-share/apps/kbarcode/exampledata.sql
+share/icons/locolor/32x32/apps/kbarcode.png
 share/apps/kbarcode/barcodes.html
-share/doc/HTML/en/kbarcode/index.docbook
-share/doc/HTML/en/kbarcode/index.cache.bz2
+share/apps/kbarcode/exampledata.sql
+share/apps/kbarcode/labeldefinitions.sql
+share/apps/kbarcode/logo.png
 share/doc/HTML/en/kbarcode/common
+share/doc/HTML/en/kbarcode/index.cache.bz2
+share/doc/HTML/en/kbarcode/index.docbook
 @dirrm share/doc/HTML/en/kbarcode
 @dirrm share/apps/kbarcode
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
