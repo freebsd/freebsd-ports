@@ -82,5 +82,8 @@ include/cflowd/snmp++/timetick.h
 include/cflowd/snmp++/userdefined.h
 include/cflowd/snmp++/usertimeout.h
 include/cflowd/snmp++/vb.h
+@unexec /bin/rm -f /usr/local/lib/cflowd/libCfd.so
+@unexec /bin/rm -f /usr/local/lib/cflowd/libsnmp++.so
 @unexec /usr/bin/env /sbin/ldconfig -R
+@dirrm /usr/local/lib/cflowd
 @exec /usr/bin/env /sbin/ldconfig -m %B

@@ -7,6 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2-1-b1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
