@@ -9063,6 +9063,7 @@ wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 wzip		ports/archivers/wzip
 x-files		ports/x11-fm/x-files
+x11-chameleon	ports/x11/chameleon
 x11amp		ports/audio/x11amp
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
