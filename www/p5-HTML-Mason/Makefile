@@ -25,6 +25,6 @@ MAN3=		Bundle::HTML::Mason.3 HTML::Mason.3 HTML::Mason::Admin.3 \
 		HTML::Mason::Component.3 HTML::Mason::Components.3 \
 		HTML::Mason::Devel.3 HTML::Mason::Interp.3 \
 		HTML::Mason::MethodMaker.3 HTML::Mason::Parser.3 \
-		HTML::Mason::Request.3
+		HTML::Mason::Request.3 HTML:Mason::Tests.3
 
 .include <bsd.port.mk>
