@@ -1,0 +1,5 @@
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%%%DOCDIR%%/INSTALL
+%%PORTDOCS%%%%DOCDIR%%/changelog
+%%PORTDOCS%%@dirrm %%DOCDIR%%
+lib/pam_pwdfile.so

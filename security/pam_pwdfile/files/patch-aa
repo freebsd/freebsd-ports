@@ -1,0 +1,10 @@
+--- pam_pwdfile.c.orig	Fri Aug 31 10:00:10 2001
++++ pam_pwdfile.c	Thu Aug 30 23:35:58 2001
+@@ -42,7 +42,6 @@
+  * OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#include <features.h>
+ #include <syslog.h>
+ #include <stdarg.h>
+ #include <stdio.h>
