@@ -1762,6 +1762,7 @@ gn		ports/www/gn
 gnapster	ports/audio/gnapster
 gnarr		ports/games/gnarr
 gnat		ports/lang/gnat
+gnat-doc-html	ports/lang/gnat-doc-html
 gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnet		ports/net/gnet
