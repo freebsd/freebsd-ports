@@ -1,5 +1,5 @@
 tacacs+ is program that allow authorization and authentication via net on
-remote access servers. Authnticate users, authorize commands and log 
+remote access servers. Authenticate users, authorize commands and log 
 accounting information.
 
 tac+ia is improved tacacs server based on tac_plus package.
