@@ -1,5 +1,5 @@
-*** Count-config.orig	Fri May  3 06:20:27 1996
---- Count-config	Fri Sep  6 18:05:28 1996
+*** Count-config.orig	Mon Nov 24 04:49:51 1997
+--- Count-config	Sat Nov 29 18:50:53 1997
 ***************
 *** 20,26 ****
   trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
@@ -18,37 +18,37 @@
   if [ ! -f "./VERSION" ] 
   then
 ***************
-*** 36,48 ****
+*** 37,49 ****
   Version=`cat ./VERSION`
   Basedir="wwwcount$Version"
-  ConfigH="config.h"
+  ConfigH="src/config.h"
 ! BaseDir="/usr/local/etc/Counter"
-  ConfigDir="conf"
+  ConfigDir="$BaseDir/conf"
   ConfFile="count.cfg"
-  DigitDir="digits"
-  DataDir="data"
-! LogDir="Log"
+! DigitDir="$BaseDir/digits"
+  DataDir="$BaseDir/data"
+! LogDir="$BaseDir/logs"
 ! LogFile="Count$Version.log"
   RgbFile="./wcount/rgb.txt"
-  #allow_f_cr=0
-  #strict_mode=0
---- 36,49 ----
+  
+  #
+--- 37,50 ----
   Version=`cat ./VERSION`
   Basedir="wwwcount$Version"
-  ConfigH="config.h"
+  ConfigH="src/config.h"
 ! BaseDir="${PREFIX}/etc/Counter"
 ! LibDir="${PREFIX}/lib/Counter"
-  ConfigDir="conf"
+  ConfigDir="$BaseDir/conf"
   ConfFile="count.cfg"
-  DigitDir="digits"
-  DataDir="data"
+! DigitDir="$LibDir/digits"
+  DataDir="$BaseDir/data"
 ! LogDir="/var/log"
 ! LogFile="Counter.log"
   RgbFile="./wcount/rgb.txt"
-  #allow_f_cr=0
-  #strict_mode=0
+  
+  #
 ***************
-*** 114,120 ****
+*** 117,123 ****
   
   if [ .$answer = . ]
   then
@@ -56,7 +56,7 @@
   fi
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
---- 115,121 ----
+--- 118,124 ----
   
   if [ .$answer = . ]
   then
@@ -65,49 +65,19 @@
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
 ***************
-*** 245,251 ****
-      You need to enter the directory of the Log file.
-  
-  EOB
-! echo $n "*Log directory [$BaseDir/$LogDir]:$c "
-  read newpath
-  if [ .$newpath != . ]
+*** 183,191 ****
   then
---- 246,252 ----
-      You need to enter the directory of the Log file.
+      BaseDir=$newpath
+      ConfigDir=$BaseDir/conf
+-     DigitDir=$BaseDir/digits
+      DataDir=$BaseDir/data
+-     LogDir=$BaseDir/logs
+  fi
   
-  EOB
-! echo $n "*Log directory [$LogDir]:$c "
-  read newpath
-  if [ .$newpath != . ]
-  then
+  #
+--- 184,190 ----
 ***************
-*** 289,299 ****
-  echo "++++++++++++++++++++++++++++++"
-      echo "CgiBinDir=$CgiBinDir"
-      echo "BaseDir= $BaseDir"
-!     echo "DigitDir= $BaseDir/$DigitDir"
-      echo "ConfDir = $BaseDir/$ConfigDir"
-      echo "ConfFile= $ConfFile"
-      echo "DataDir= $BaseDir/$DataDir"
-!     echo "LogDir= $BaseDir/$LogDir"
-      echo "LogFile= $LogFile"
-  echo "++++++++++++++++++++++++++++++"
-  
---- 290,300 ----
-  echo "++++++++++++++++++++++++++++++"
-      echo "CgiBinDir=$CgiBinDir"
-      echo "BaseDir= $BaseDir"
-!     echo "DigitDir= $LibDir/$DigitDir"
-      echo "ConfDir = $BaseDir/$ConfigDir"
-      echo "ConfFile= $ConfFile"
-      echo "DataDir= $BaseDir/$DataDir"
-!     echo "LogDir= $LogDir"
-      echo "LogFile= $LogFile"
-  echo "++++++++++++++++++++++++++++++"
-  
-***************
-*** 302,308 ****
+*** 374,380 ****
   
   if [ .$answer = . ]
   then
@@ -115,7 +85,7 @@
   fi
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
---- 303,309 ----
+--- 373,379 ----
   
   if [ .$answer = . ]
   then
@@ -124,69 +94,43 @@
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
 ***************
-*** 338,345 ****
-  echo "#define ConfigDir \"$BaseDir/$ConfigDir\"" >> $ConfigH
-  echo "#define ConfigFile \"$ConfFile\"" >> $ConfigH
-  echo "#define DataDir \"$BaseDir/$DataDir\"" >> $ConfigH
-! echo "#define DigitDir \"$BaseDir/$DigitDir\"" >> $ConfigH
-! echo "#define LogDir \"$BaseDir/$LogDir\"" >> $ConfigH
-  echo "#define LogFile \"$LogFile\"" >> $ConfigH
-  
-  cat<<EOX>>$ConfigH
---- 339,346 ----
-  echo "#define ConfigDir \"$BaseDir/$ConfigDir\"" >> $ConfigH
-  echo "#define ConfigFile \"$ConfFile\"" >> $ConfigH
-  echo "#define DataDir \"$BaseDir/$DataDir\"" >> $ConfigH
-! echo "#define DigitDir \"$LibDir/$DigitDir\"" >> $ConfigH
-! echo "#define LogDir \"$LogDir\"" >> $ConfigH
-  echo "#define LogFile \"$LogFile\"" >> $ConfigH
-  
-  cat<<EOX>>$ConfigH
-***************
-*** 381,387 ****
-  * so RGB names can be looked up, but yet not allow users to make constant
-  * use of this very ineffiecient lookup.
-  *****************************************************************************/
-! #define RgbMappingDict        "$BaseDir/rgb.txt"
+*** 517,523 ****
+  ** so RGB names can be looked up, but yet not allow users to make constant
+  ** use of this very ineffiecient lookup.
+  */
+! #define RGB_MAPPING_DICT            "$BaseDir/rgb.txt"
   EOX
   
-  #if [ $allow_f_cr -eq 1 ]
---- 382,388 ----
-  * so RGB names can be looked up, but yet not allow users to make constant
-  * use of this very ineffiecient lookup.
-  *****************************************************************************/
-! #define RgbMappingDict        "$LibDir/rgb.txt"
+  cat<<EOXXX>>$ConfigH
+--- 516,522 ----
+  ** so RGB names can be looked up, but yet not allow users to make constant
+  ** use of this very ineffiecient lookup.
+  */
+! #define RGB_MAPPING_DICT            "$LibDir/rgb.txt"
   EOX
   
-  #if [ $allow_f_cr -eq 1 ]
+  cat<<EOXXX>>$ConfigH
 ***************
-*** 413,427 ****
-  ##
-  echo "creating variables template file $Tmpl for the install program.."
-  echo "BASE_DIR=\"$BaseDir\"" > $Tmpl
-  echo "CGIBIN_DIR=\"$CgiBinDir\"" >> $Tmpl
-  echo "CONFIG_FILE=\"$ConfFile\"" >> $Tmpl
-  echo "CONFIG_DIR=\"$BaseDir/$ConfigDir\"" >> $Tmpl
-! echo "DIGIT_DIR=\"$BaseDir/$DigitDir\"" >> $Tmpl
-  echo "DATA_DIR=\"$BaseDir/$DataDir\"" >> $Tmpl
-! echo "LOG_DIR=\"$BaseDir/$LogDir\"" >> $Tmpl
-  echo "LOG_FILE=\"$LogFile\"" >> $Tmpl
-  echo "RGB_FILE=\"$RgbFile\"" >> $Tmpl
-! echo "RGB_DIR=\"$BaseDir\"" >> $Tmpl
-  ##
-  # create template for install program --ends
-  ##
---- 414,429 ----
+*** 535,540 ****
+--- 534,540 ----
   ##
   echo "creating variables template file $Tmpl for the install program.."
   echo "BASE_DIR=\"$BaseDir\"" > $Tmpl
 + echo "LIB_DIR=\"$LibDir\"" >> $Tmpl
   echo "CGIBIN_DIR=\"$CgiBinDir\"" >> $Tmpl
   echo "CONFIG_FILE=\"$ConfFile\"" >> $Tmpl
-  echo "CONFIG_DIR=\"$BaseDir/$ConfigDir\"" >> $Tmpl
-! echo "DIGIT_DIR=\"$LibDir/$DigitDir\"" >> $Tmpl
-  echo "DATA_DIR=\"$BaseDir/$DataDir\"" >> $Tmpl
-! echo "LOG_DIR=\"$LogDir\"" >> $Tmpl
+  echo "CONFIG_DIR=\"$ConfigDir\"" >> $Tmpl
+***************
+*** 543,549 ****
+  echo "LOG_DIR=\"$LogDir\"" >> $Tmpl
+  echo "LOG_FILE=\"$LogFile\"" >> $Tmpl
+  echo "RGB_FILE=\"$RgbFile\"" >> $Tmpl
+! echo "RGB_DIR=\"$BaseDir\"" >> $Tmpl
+  ##
+  # create template for install program --ends
+  ##
+--- 543,549 ----
+  echo "LOG_DIR=\"$LogDir\"" >> $Tmpl
   echo "LOG_FILE=\"$LogFile\"" >> $Tmpl
   echo "RGB_FILE=\"$RgbFile\"" >> $Tmpl
 ! echo "RGB_DIR=\"$LibDir\"" >> $Tmpl
