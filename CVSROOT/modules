@@ -2073,6 +2073,7 @@ gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-devel	ports/devel/gnome-devel
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
+gnome-jabber	ports/net/gnome-jabber
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-mud	ports/net/gnome-mud
