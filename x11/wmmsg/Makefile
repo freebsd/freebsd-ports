@@ -35,4 +35,11 @@ post-patch:
 		${WRKSRC}/src/wmmsg/wmmsg.c
 	@${REINPLACE_CMD} -e 's| man\/wmmsg_notify\.1||g' ${WRKSRC}/Makefile.in
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${ECHO_MSG} "===>   Installing wmmsgrc.dist to ${DOCSDIR}"
+	@${INSTALL_DATA} ${WRKSRC}/wmmsgrc ${DOCSDIR}/wmmsgrc.dist
+.endif
+
 .include <bsd.port.mk>
