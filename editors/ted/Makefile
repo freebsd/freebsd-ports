@@ -11,12 +11,13 @@ CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	j.e.drews@att.net
 COMMENT=	X11 based RTF editor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/Ted
@@ -33,7 +34,7 @@ MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
 ALL_TARGET=	compile.shared
 
 AFMDIR=		${PREFIX}/share/Ted/afm
-INDDIR= 	${PREFIX}/share/Ted/ind
+INDDIR=		${PREFIX}/share/Ted/ind
 INFODIR=	${PREFIX}/share/doc/Ted
 
 post-extract:
@@ -41,8 +42,7 @@ post-extract:
 
 post-patch:
 	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/apps|${LOCALBASE}|g ; \
-		 s|gtk-config|${GTK_CONFIG:T}|g'
+		's|/usr/apps|${LOCALBASE}|g ; '
 	${REINPLACE_CMD} \
 		's|DEF_PKGDIR|DEF_DOCUMENT_DIR|g' ${WRKSRC}/Ted/makefile.in
 
