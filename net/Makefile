@@ -92,6 +92,7 @@
     SUBDIR += libicq
     SUBDIR += libnet
     SUBDIR += libnids
+    SUBDIR += libsmi
     SUBDIR += libsocket++
     SUBDIR += libunp
     SUBDIR += libunpipc
