@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Apr 15 14:13:06 2002
-+++ Makefile.in	Mon Apr 15 14:15:49 2002
-@@ -10,10 +10,11 @@
+--- Makefile.in.orig	Sat May 11 12:07:44 2002
++++ Makefile.in	Sat May 11 13:11:51 2002
+@@ -10,15 +10,16 @@
  CFLAGS		= @CFLAGS@
  #CFLAGS		= -ggdb -pipe -Wall
  LDFLAGS		= @LDFLAGS@
@@ -13,6 +13,26 @@
  INCS		= @LNETINC@ @REDBLACKINC@ @PCAPINC@
  LIBRARIES	= tree cache cidr
  
+ # tcpreplay objects
+-ROBJ             = cache.o
++ROBJ             = cache.o cidr.o
+ 
+ # tcpprep objects
+ POBJ             = cache.o tree.o cidr.o
+@@ -40,11 +41,11 @@
+ 
+ tcpreplay: $(PCAPDEP) $(LNETDEP) tcpreplay.c
+ 	rm -f tcpreplay
+-	$(CC) $(CFLAGS) $(DEFS) $(INCS) -o $@ tcpreplay.c $(LDFLAGS) $(LIBS) $(ROBJ)
++	$(CC) $(CFLAGS) $(DEFS) $(INCS) -o $@ tcpreplay.c $(ROBJ) $(LDFLAGS) $(LIBS)
+ 
+ tcpprep: $(PCAPDEP) tcpprep.c
+ 	rm -f tcpprep
+-	$(CC) $(CFLAGS) $(DEFS) $(INCS) -o $@ tcpprep.c $(LDFLAGS) $(LIBS) $(POBJ)
++	$(CC) $(CFLAGS) $(DEFS) $(INCS) -o $@ tcpprep.c $(POBJ) $(LDFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -f *~ *.o *core $(PROGRAMS)
 @@ -53,12 +54,10 @@
  	rm -f Makefile config.h config.status config.cache config.log
  
