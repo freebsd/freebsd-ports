@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.10
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -16,24 +16,31 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext \
-		ntlm.0:${PORTSDIR}/security/libntlm \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		idn.12:${PORTSDIR}/devel/libidn \
 		gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		idn.12:${PORTSDIR}/devel/libidn
+		ntlm.0:${PORTSDIR}/security/libntlm \
 
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib"
-
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-gssapi --disable-kerberos_v5
 INSTALLS_SHLIB=	yes
 
 INFO=	gsasl
-MAN1=	gsasl.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
 
 post-install:
-	@(cd ${WRKSRC}/doc/man ; \
-		${LS} *.3 | ${SED} 's,^,man/man3/,' >> ${TMPPLIST})
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include "Makefile.man"
+.include <bsd.port.post.mk>
