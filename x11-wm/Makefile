@@ -26,6 +26,7 @@
     SUBDIR += e16utils
     SUBDIR += ede
     SUBDIR += enlightenment
+    SUBDIR += enlightenment-docs
     SUBDIR += epiwm
     SUBDIR += epplets
     SUBDIR += evilwm
