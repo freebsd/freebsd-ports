@@ -8380,6 +8380,7 @@ pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdbar		ports/palm/pdbar
 pdbc		ports/palm/pdbc
+pdfjam		ports/print/pdfjam
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdfmap		ports/misc/pdfmap
