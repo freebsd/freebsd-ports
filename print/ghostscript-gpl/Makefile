@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/11 06:20:46 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.0
@@ -55,8 +55,10 @@ do-configure:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/bin ${PREFIX}/man/man1
-	(cd ${PREFIX}/share/ghostscript ; tar -xzf ${DISTDIR}/${GS_FONTS_STD})
-	(cd ${PREFIX}/share/ghostscript ; tar -xzf ${DISTDIR}/${GS_FONTS_OTHER})
+	(cd ${PREFIX}/share/ghostscript ; \
+			tar -xzf ${DISTDIR}/${GS_FONTS_STD})
+	(cd ${PREFIX}/share/ghostscript/fonts ; \
+			tar -xzf ${DISTDIR}/${GS_FONTS_OTHER})
 
 post-install:
 	strip ${PREFIX}/bin/gs
