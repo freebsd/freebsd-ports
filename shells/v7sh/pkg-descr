@@ -1,0 +1,23 @@
+The original Steve R. Bourne shell from the 7th edition Unix including
+System III, 4.3BSD-Reno, Ultrix 3.1 and ``home made'' fixes and enhancements :
+
+* `--' end of options added (sysIII). `set +x' and such added (sysIII).
+  `/etc/bsh_profile' (sysIII) and `$HOME/.bsh_profile' (unsw) are
+  sourced at login time if they exist.  Initially, only the `.profile'
+  located in the current directory was sourced at login time if it
+  exists.  They have been `bsh_' prefixed to avoid conflicts w/ the
+  standards `profiles' which can contains unsupported expressions
+  such as shell functions.  negation (! or ^) in `[]' added (sysIII).
+  `${x:-x}' and similar expressions added (sysIII).  '<<-' (aka strip
+  leading tab in here document) added (sysIII).  `#' comments are
+  allowed in shell scripts (sysIII/reno), but not on the command line
+  (reno) !  `break N' and `continue N' fixed (sysIII/ultrix).  `if...
+  then... [elif... [else...]] fi' fixed (reno).  `test' (sysIII) and
+  `ulimit' (ultrix) builtins added.
+* ANSI-fication to permit an almost warning free compilation (home made).
+  `union trenod' taken from 4.3BSD-Reno.  better signal handling and
+  error recovery (sysIII/reno).  better restricted shell (sysIII) and
+  IFS protection (reno).
+* functions aren't supported and command line input is not 8 bit clean.
+
+WWW: http://minnie.tuhs.org/UnixTree/V7/

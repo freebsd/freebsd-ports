@@ -24,6 +24,7 @@
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += tcshrc
+    SUBDIR += v7sh
     SUBDIR += vshnu
     SUBDIR += wapsh
     SUBDIR += zsh
