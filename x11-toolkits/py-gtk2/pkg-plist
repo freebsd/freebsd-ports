@@ -25,16 +25,26 @@ include/pygtk-2.0/pygtk/pygtk.h
 libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/doc/py-gtk/MAPPING
 %%PORTDOCS%%share/doc/py-gtk/THREADS
+%%PORTDOCS%%share/examples/py-gtk/Makefile
+%%PORTDOCS%%share/examples/py-gtk/Makefile.am
+%%PORTDOCS%%share/examples/py-gtk/Makefile.in
+%%PORTDOCS%%share/examples/py-gtk/Makefile.in.bak
 %%PORTDOCS%%share/examples/py-gtk/atk/atk-demo.py
 %%PORTDOCS%%share/examples/py-gtk/glade/README
+%%PORTDOCS%%share/examples/py-gtk/glade/autoconnect.py
 %%PORTDOCS%%share/examples/py-gtk/glade/glade-demo.py
 %%PORTDOCS%%share/examples/py-gtk/glade/test.glade
+%%PORTDOCS%%share/examples/py-gtk/glade/test2.glade
 %%PORTDOCS%%share/examples/py-gtk/gobject/properties.py
 %%PORTDOCS%%share/examples/py-gtk/gobject/signal.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/filechooser.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/uimanager.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/widget.py
 %%PORTDOCS%%share/examples/py-gtk/ide/README
 %%PORTDOCS%%share/examples/py-gtk/ide/break.xpm
 %%PORTDOCS%%share/examples/py-gtk/ide/browse.py
 %%PORTDOCS%%share/examples/py-gtk/ide/continue.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/dialogs.py
 %%PORTDOCS%%share/examples/py-gtk/ide/edit.py
 %%PORTDOCS%%share/examples/py-gtk/ide/edit.xpm
 %%PORTDOCS%%share/examples/py-gtk/ide/gtkcons.py
@@ -59,22 +69,57 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/neil/question.xpm
 %%PORTDOCS%%share/examples/py-gtk/pango/utf8-demo.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/buttonbox.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/buttonbox.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/changedisplay.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/colorsel.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/colorsel.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dialogs.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dialogs.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dnd.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dnd.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dndpixmap.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dndpixmap.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/editable_cells.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/itemfactory.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/editable_cells.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/entry_completion.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/expander.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/hypertext.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/alphatest.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/apple-red.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/background.jpg
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/floppybuddy.gif
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-applets.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-calendar.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-foot.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gimp.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gmush.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gsame.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnu-keys.png
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gtk-logo-rgb.gif
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/itemfactory.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/list_store.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/list_store.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/menu.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/menu.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/panes.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/panes.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/pixbufs.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/sizegroup.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/sizegroup.pyc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/stock_browser.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/toolbar.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/stock_browser.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/textview.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/toolbar.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/tree_store.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/treemodel.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/gtk-logo-rgb.gif
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/treemodel.pyc
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/ui_manager.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo.py
 %%PORTDOCS%%share/examples/py-gtk/simple/README
 %%PORTDOCS%%share/examples/py-gtk/simple/dnd.py
@@ -134,11 +179,13 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%@dirrm share/pygtk/2.0
 %%PORTDOCS%%@dirrm share/pygtk
 %%PORTDOCS%%@dirrm share/examples/py-gtk/simple
+%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos/images
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pango
 %%PORTDOCS%%@dirrm share/examples/py-gtk/neil
 %%PORTDOCS%%@dirrm share/examples/py-gtk/ide
+%%PORTDOCS%%@dirrm share/examples/py-gtk/gtk
 %%PORTDOCS%%@dirrm share/examples/py-gtk/gobject
 %%PORTDOCS%%@dirrm share/examples/py-gtk/glade
 %%PORTDOCS%%@dirrm share/examples/py-gtk/atk
