@@ -41,8 +41,7 @@
  
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.25
-PORTREVISION=	3
+PORTVERSION=	1.3.26
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -201,7 +200,6 @@ pre-configure::
 
 .if !defined(NOPORTDOCS)
 post-build:
-	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
