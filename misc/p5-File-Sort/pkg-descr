@@ -1,0 +1,9 @@
+This is File::Sort 1.00, for sorting files similarly to sort(1).  Written
+primarily for MacPerl users who do not have sort(1) and because of memory
+limitations cannot sort files in memory, but works on all perls, and can
+be useful for portable sorting of large files, or for any system that
+doesn't have a sort(1) and is virtual-memory-deprived (including Windows).
+
+WWW: http://search.cpan.org/search?dist=File-Sort
+
+Seamus Venasse <svenasse@polaris.ca>

@@ -153,6 +153,7 @@
     SUBDIR += p5-Data-Buffer
     SUBDIR += p5-DataCash
     SUBDIR += p5-File-CounterFile
+    SUBDIR += p5-File-Sort
     SUBDIR += p5-Finance-Quote
     SUBDIR += p5-Geo-Weather
     SUBDIR += p5-I18N-Charset
