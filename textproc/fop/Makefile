@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
-BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 NO_BUILD=	yes
 
