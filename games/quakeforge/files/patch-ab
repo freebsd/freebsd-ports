@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- configure.in.orig	Sun Feb 27 13:26:03 2000
-+++ configure.in	Wed Jan 24 23:42:29 2001
++++ configure.in	Wed Apr 17 17:43:43 2002
 @@ -210,7 +210,7 @@
     fi
     save_CPPFLAGS="$CPPFLAGS"
@@ -21,3 +21,12 @@ $FreeBSD$
  fi
  if test "x$HAS_SDL" != xyes; then
     SDL_CFLAGS="" SDL_LIBS=""
+@@ -343,7 +343,7 @@
+ 
+ dnl Make sure -lSDL works
+ if test "x$HAS_SDL" = xyes; then
+-   AC_CHECK_LIB(SDL, SDL_Init, SDL_LIBS="$SDL_LIBS -lSDL"
++   AC_CHECK_LIB(SDL-1.1, SDL_Init, SDL_LIBS="$SDL_LIBS"
+      HAS_SDL=yes, HAS_SDL=no, [$SDL_LIBS])
+ fi
+ if test "x$HAS_SDL" != xyes; then
