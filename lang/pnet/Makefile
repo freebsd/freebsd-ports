@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pnet
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
