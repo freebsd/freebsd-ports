@@ -1,6 +1,10 @@
 bin/openbabel
+bin/openobfit
+bin/openobgrep
+bin/openobrotate
 include/openbabel/aromatic.h
 include/openbabel/atomtyp.h
+include/openbabel/babelconfig.h
 include/openbabel/base.h
 include/openbabel/binary.h
 include/openbabel/bitvec.h
@@ -8,6 +12,7 @@ include/openbabel/bondtyp.h
 include/openbabel/bondtyper.h
 include/openbabel/chains.h
 include/openbabel/chiral.h
+include/openbabel/crk.h
 include/openbabel/data.h
 include/openbabel/element.h
 include/openbabel/extable.h
@@ -34,20 +39,20 @@ include/openbabel/rotor.h
 include/openbabel/smi.h
 include/openbabel/typer.h
 include/openbabel/types.h
-lib/libopenbabel.la
+lib/libopenbabel.a
 lib/libopenbabel.so
 lib/libopenbabel.so.0
 libdata/pkgconfig/openbabel.pc
-share/openbabel/aromatic.txt
-share/openbabel/atomtyp.txt
-share/openbabel/bondtyp.txt
-share/openbabel/element.txt
-share/openbabel/extable.txt
-share/openbabel/isotope.txt
-share/openbabel/isotope-small.txt
-share/openbabel/phmodel.txt
-share/openbabel/resdata.txt
-share/openbabel/types.txt
+%%DATADIR%%/aromatic.txt
+%%DATADIR%%/atomtyp.txt
+%%DATADIR%%/bondtyp.txt
+%%DATADIR%%/element.txt
+%%DATADIR%%/extable.txt
+%%DATADIR%%/isotope-small.txt
+%%DATADIR%%/isotope.txt
+%%DATADIR%%/phmodel.txt
+%%DATADIR%%/resdata.txt
+%%DATADIR%%/types.txt
+@dirrm %%DATADIR%%
 @dirrm include/openbabel/math
 @dirrm include/openbabel
-@dirrm share/openbabel
