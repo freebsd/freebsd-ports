@@ -10,7 +10,7 @@ DISTNAME=       portlint-2.1
 CATEGORIES=	devel
 DISTFILES=	#empty
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 NO_BUILD=	yes
 NO_CHECKSUM=	yes
