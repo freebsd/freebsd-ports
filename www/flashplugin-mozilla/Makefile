@@ -19,10 +19,6 @@ COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 
-BROKEN=		"Broken pkg-plist"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-22
-
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
