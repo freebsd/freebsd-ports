@@ -1,0 +1,10 @@
+This class provides application developers with an abstraction class
+a level away from DBI, that allows them to write an application
+that works on multiple database platforms. The idea isn't to take
+away the responsibility for coding different SQL on different
+platforms, but to simply provide a platform that uses the right
+class at the right time for whatever DB is currently in use.
+
+WWW: http://search.cpan.org/search?dist=DBIx-AnyDBD
+
+Seamus Venasse <svenasse@polaris.ca>
