@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jargon
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/jargon/
 
