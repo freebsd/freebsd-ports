@@ -1,0 +1,39 @@
+# New ports collection makefile for:	prom-wl
+# Version required:     1.0.2
+# Date created:		28 Aug 1999
+# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=       prom-wl-1.0.2
+CATEGORIES=	mail elisp
+MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
+
+MAINTAINER=     kiri@pis.toba-cmt.ac.jp
+
+# This port requires Wanderlust. But we can't decide which Wanderlust to depends,
+# there is NO RUN_DEPNDS mail/wanderlust-*.
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+
+NO_BUILD=	yes
+
+ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
+
+do-install:
+	@${MKDIR} ${ELISPDIR} ${PREFIX}/share/doc/prom-wl \
+		${PREFIX}/share/examples/prom-wl
+	@cd ${WRKSRC}; \
+	${INSTALL_DATA} prom-wl.el ${ELISPDIR}; \
+	${INSTALL_DATA} ChangeLog prom-wl-usage.jis ${PREFIX}/share/doc/prom-wl
+	@cd ${FILESDIR}; \
+	${INSTALL_SCRIPT} byte-compile ${PREFIX}/share/doc/prom-wl; \
+	${INSTALL_DATA} dot.emacs dot.procmailrc ${PREFIX}/share/examples/prom-wl
+# For xemacs package install configuration
+	@${MKDIR} ${SITEPKGDIR}/lisp/prom-wl ${SITEPKGDIR}/pkginfo
+	@${LN} -sf ${ELISPDIR}/prom-wl.el ${SITEPKGDIR}/lisp/prom-wl/prom-wl.el
+	@${ECHO} 'pkginfo/MANIFEST.prom-wl' > ${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
+	@${ECHO} 'lisp/prom-wl/prom-wl.el' >> ${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
+
+.include <bsd.port.mk>
