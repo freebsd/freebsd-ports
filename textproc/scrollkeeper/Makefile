@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scrollkeeper
-PORTVERSION=	0.3.11
-PORTREVISION=	8
+PORTVERSION=	0.3.12
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -17,8 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Open Document Cataloging Project
 
-LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
-		intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
@@ -39,7 +37,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnomehier
+USE_GNOME=	gnomehack gnomehier gnometarget libxslt
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf

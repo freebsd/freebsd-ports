@@ -1,0 +1,12 @@
+--- libs/Makefile.in.orig	Wed Apr 23 00:46:23 2003
++++ libs/Makefile.in	Wed Apr 23 00:46:54 2003
+@@ -144,7 +144,8 @@
+         $(XML_CFLAGS) \
+ 	$(XSLT_CFLAGS) \
+ 	$(HOST_TYPE) \
+-	-DSCROLLKEEPER_STATEDIR=\""$(localstatedir)"\"
++	-DSCROLLKEEPER_STATEDIR=\""$(localstatedir)"\" \
++	-DSK_XML_CATALOGS=\""%%LOCALBASE%%/share/sk/catalog %%LOCALBASE%%/share/sk/docbook/catalog"\"
+ 
+ 
+ libscrollkeeper_la_SOURCES = \
