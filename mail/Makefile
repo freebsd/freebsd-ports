@@ -67,7 +67,6 @@
     SUBDIR += p5-Mail-Tools
     SUBDIR += pathalias
     SUBDIR += pgpsendmail
-    SUBDIR += pine3
     SUBDIR += pine4
     SUBDIR += pine4-ssl
     SUBDIR += popa3d
