@@ -7,13 +7,13 @@
 
 PORTNAME=	jikes
 PORTVERSION=	1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/
 
 MAINTAINER=	archie@freebsd.org
 
-LIB_DEPENDS=	icuuc.a:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	${LOCALBASE}/lib/libicuuc.a:${PORTSDIR}/devel/icu
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		CPPFLAGS="-D_THREAD_SAFE -I${PREFIX}/include" \
