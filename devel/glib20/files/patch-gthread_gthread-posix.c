@@ -1,5 +1,5 @@
---- gthread/gthread-posix.c.orig	Mon Nov  4 15:09:47 2002
-+++ gthread/gthread-posix.c	Tue Jul 27 09:44:54 2004
+--- gthread/gthread-posix.c.orig	Tue Sep  7 17:57:53 2004
++++ gthread/gthread-posix.c	Tue Sep  7 17:58:30 2004
 @@ -116,6 +116,7 @@
  #endif /* POSIX_MIN_PRIORITY && POSIX_MAX_PRIORITY */
  
@@ -18,6 +18,15 @@
  #endif /* _SC_THREAD_STACK_MIN */
  #ifdef HAVE_PRIORITIES
  # ifdef G_THREADS_IMPL_POSIX
+@@ -176,7 +178,7 @@
+   result = pthread_mutex_trylock ((pthread_mutex_t *) mutex);
+ 
+ #ifdef G_THREADS_IMPL_POSIX
+-  if (result == EBUSY)
++  if ((result == EBUSY) || (result == EDEADLK))
+     return FALSE;
+ #else /* G_THREADS_IMPL_DCE */
+   if (result == 0)
 @@ -307,8 +309,12 @@
    if (stack_size)
      {
