@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.9.25
+PORTVERSION=	2.9.29
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
