@@ -10,9 +10,9 @@ PORTNAME=	tinc
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://tinc.nl.linux.org/packages/ \
+MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
-		http://the.wiretapped.net/security/network-security/tinc/
+		http://www.mirrors.wiretapped.net/security/network-security/tinc/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A Virtual Private Network (VPN) daemon
