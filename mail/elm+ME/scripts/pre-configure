@@ -10,6 +10,11 @@ d_shared_rev=${SO_REV:-$(awk '/SHAREDTAG:/{print $2}' ${WRKSRC}/hdrs/patchlevel.
 
 [ -d  ${WRKSRC}/shlib ] || mkdir ${WRKSRC}/shlib
 
+case ${CFLAGS} in
+*-g*)	DEBUG="-DDEBUG" ;;
+*)	DEBUG= ;;
+esac
+
 cat > ${WRKSRC}/config.sh << EOF
 #!/bin/sh
 # config.sh
@@ -22,6 +27,7 @@ bin='${PREFIX}/bin'
 contains='grep'
 cppstdin='/usr/bin/cpp'
 cppminus=''
+diff='/usr/bin/diff'
 d_getopt='define'
 d_memcpy='define'
 d_symlink='define'
@@ -64,8 +70,11 @@ mv
 rm
 sed
 sleep
+sort
+diff
 touch
 tr
+uniq
 cut
 '
 expr='/bin/expr'
@@ -294,7 +303,7 @@ manroffopts=''
 suffix=''
 packer=''
 optimize='${CFLAGS}'
-ccflags='-D_LIBICONV_VERSION=200'
+ccflags='${DEBUG}'
 cppflags=''
 ldflags='-s'
 cc='cc'
@@ -339,7 +348,7 @@ iconv_ok='define'
 iconv_dir='${LOCALBASE}'
 iconv_include_dir='${LOCALBASE}/include'
 iconv_lib_dir='${LOCALBASE}/lib'
-iconv_link='iconv'
+iconv_link='giconv'
 EOF
 
 mv ${WRKSRC}/shared_libs/tls/README.ME+ \
