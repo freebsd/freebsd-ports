@@ -14,7 +14,7 @@
      static int drums[] = DEFAULT_DRUMCHANNELS;
      static int is_first = 1;
 -#if defined(__FreeBSD__)
-+#if defined(__FreeBSD__) && !defined(alpha)
++#if defined(__FreeBSD__) && !defined(__alpha__)
      fp_except_t fpexp;
  
      fpexp = fpgetmask();
