@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	print editors
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
 DIST_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
 		%%PREFIX%%/lib/scribus/plugins
