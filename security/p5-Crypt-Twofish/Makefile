@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+
+RESTRICTED=	"Crypto; export-controlled"
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Twofish.3
