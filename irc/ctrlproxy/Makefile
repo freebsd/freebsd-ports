@@ -10,12 +10,10 @@ PORTNAME=	ctrlproxy
 PORTVERSION=	2.6.1
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://jelmer.vernstok.nl/ctrlproxy/
+MASTER_SITES=	http://jelmer.vernstok.nl/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible IRC proxy
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		pcre.0:${PORTSDIR}/devel/pcre \
