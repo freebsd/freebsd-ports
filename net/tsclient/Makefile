@@ -6,26 +6,41 @@
 #
 
 PORTNAME=	tsclient
-PORTVERSION=	0.124
-PORTREVISION=	1
+PORTVERSION=	0.132
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
 MAINTAINER=	einekoai@chello.nl
-COMMENT=	A GNOME 2 frontend for rdesktop
+COMMENT=	A GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
+
+.ifdef (WITH_TIGHTVNC)
+RUN_DEPENDS+=	tightvnc:${PORTSDIR}/net/tightvnc
+.endif
+
+.ifdef (WITH_XNEST)
+RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/XFree86-4-NestServer
+.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+MAN1=		tsclient.1
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   set WITH_TIGHTVNC for vncviewer support"
+	@${ECHO_MSG} "   set WITH_XNEST for X via Xnest support (experimental)"
+	@${ECHO_MSG} ""
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/gnome/pixmaps/tsclient/tsclient.png \
