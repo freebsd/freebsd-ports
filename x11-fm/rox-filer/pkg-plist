@@ -10,6 +10,8 @@ apps/ROX-Filer/Help/Manual.html
 apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/README-es
 apps/ROX-Filer/Help/TODO
+apps/ROX-Filer/Help/ld-id2842228.html
+apps/ROX-Filer/Help/ld-id2846545.html
 apps/ROX-Filer/Messages/README
 apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Messages/de.gmo
@@ -25,14 +27,10 @@ apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
 apps/ROX-Filer/images/application.png
 apps/ROX-Filer/images/dirs.png
-apps/ROX-Filer/images/error.png
-apps/ROX-Filer/images/help.png
 apps/ROX-Filer/images/iconified.png
 apps/ROX-Filer/images/mount.png
 apps/ROX-Filer/images/mounted.png
-apps/ROX-Filer/images/multiple.png
 apps/ROX-Filer/images/symlink.png
-apps/ROX-Filer/images/unknown.png
 apps/ROX-Filer/style.css
 bin/rox
 share/Choices/MIME-icons/application.png
