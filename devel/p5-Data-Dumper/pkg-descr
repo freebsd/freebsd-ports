@@ -1,12 +1,9 @@
-Converts a data structure into a sequence of perl statements sufficient for
-recreating the original via eval. This module is very similar in concept to
-Data::Dumper and Data::Dump, with the major differences being that this module
-is designed to output to a stream instead of constructing its output in memory,
-and that the traversal over the data structure is effectively breadth first
-versus the depth first traversal done by the others.
+Given a list of scalars or reference variables, writes out their contents in
+perl syntax. The references can also be objects. The contents of each variable
+is output in a single Perl statement. Handles self-referential structures
+correctly.
 
-In fact the data structure is scanned twice, first in breadth first mode to
-perform structural analysis, and then in depth first mode to actually produce
-the output, but obeying the depth relationships of the first pass.
+The return value can be evaled to get back an identical copy of the original
+reference structure.
 
-WWW: http://search.cpan.org/dist/Data-Dump-Streamer/
+WWW: http://search.cpan.org/dist/Data-Dumper/
