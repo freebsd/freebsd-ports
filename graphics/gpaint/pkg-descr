@@ -1,0 +1,17 @@
+This is gpaint, a small-scale painting program for GNOME, the GNU Desktop. 
+Gpaint does not attempt to compete with GIMP.  Think of GIMP is like Photoshop as
+gpaint is like Windows Paint.
+
+Gpaint is still work in progress and many features are still being developed. 
+However, gpaint is useable already for small image markups.
+
+A large part of gpaint is derived from xpaint 2.4.9, authored by David Koblas
+and later Torsten Martinsen.  Gpaint also uses the gtkscrolframe widget (taking
+from eog 0.5) by Federco Mena-Quintero.
+
+Future plans include the implementation of missing features, printing support,
+and turning gpaint into a Bonobo component for simple image editing tasks.
+
+For bugs or general comments please send mail to Andy Tai, atai@atai.org
+
+WWW: http://gpaint.sourceforge.net/
