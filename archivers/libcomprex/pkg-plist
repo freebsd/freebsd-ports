@@ -10,9 +10,10 @@ lib/comprex/file/bzip2.so
 lib/comprex/file/zlib.so
 lib/comprex/scheme/curl.a
 lib/libcomprex.a
+lib/libcomprex.so
 lib/libcomprex.so.0
 share/aclocal/comprex.m4
-@dirrm include/libcomprex
-@dirrm lib/comprex/file
 @dirrm lib/comprex/scheme
+@dirrm lib/comprex/file
 @dirrm lib/comprex
+@dirrm include/libcomprex
