@@ -1,0 +1,11 @@
+--- scgcheck/Makefile.orig	Mon Mar 19 00:19:43 2001
++++ scgcheck/Makefile	Sun Jul 29 10:46:48 2001
+@@ -13,7 +13,7 @@
+ 
+ HFILES=		scgcheck.h 
+ #LIBS=		-lschily $(LIB_SOCKET)
+-LIBS=		-lrscg -lscg -lschily $(LIB_SOCKET)
++LIBS=		-lrscg -lscg -lschily $(SCSILIB) $(LIB_SOCKET)
+ XMK_FILE=	Makefile.man
+ 
+ ###########################################################################

@@ -1,19 +1,25 @@
-Cdrecord allows you to create CD's on a CD-Recorder.
+This package contains the following software:
 
-Cdrecord has been implemented with a Philips CDD 521.
-Cdrecord now is maintained with the following drives:
+-	cdda2wav (an digital CD audio extraction program)
 
-        COMPRO/Matsushita/Panasonic CW-7502
-        Philips CDD-2000
-        TEAC CD-R55S
-        Yamaha CDR-400
+-	cdrecord (a CD recording program)
 
-It should run also on:
+-	mkisofs (an ISO-9660 filesystem image creator)
 
-        All SCSI-3/mmc compliant drives
-        All ATAPI/mmc compliant drives
+-	mkhybrid (an ISO-9660/HFS filesystem image creator)
 
-This version also includes cdda2wav, a CD-DA
-ripping program that includes customisable jitter correction.
+-	several diagnostic programs for ISO-9660
+
+	-	devdup dump a device or file in hex
+
+	-	isodump dump a device or file based on ISO-9660
+
+	-	isoinfo analyze or list an IDO-9660 image
+
+	-	isovrfy verify an ISO-9660 image
+
+-	readcd (a stripped down version of scgskeleton)
+	may be used to read data CD's, to write to DVD-RAM
+	and to copy Solaris boot CD's
 
 WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
