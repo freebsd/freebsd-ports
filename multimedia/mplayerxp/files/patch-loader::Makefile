@@ -1,0 +1,11 @@
+--- loader/Makefile.orig	Sun Nov 24 20:00:35 2002
++++ loader/Makefile	Sun Nov 24 20:00:44 2002
+@@ -54,7 +54,7 @@
+ ifeq ($(TARGET_ARCH_X86),yes)
+ $(LIBNAME): $(LIB_OBJECTS) stubs.s
+ 	$(CC) -c ./stubs.s -o stubs.o
+-	$(LD) --shared -soname $@ -o $@ $(LIB_OBJECTS) stubs.o -lc -lm -lpthread
++	$(LD) --shared -soname $@ -o $@ $(LIB_OBJECTS) stubs.o -lc -lm
+ endif
+ 
+ dep:

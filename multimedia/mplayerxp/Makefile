@@ -1,283 +1,273 @@
-# New ports collection makefile for:	mplayer
+# New ports collection makefile for:	mplayerxp
 # Date created:		10 August 2001
 # Whom:			Thomas E. Zander
 #			with lots of help from Vladimir Kushnir
 # $FreeBSD$
 #
 
-PORTNAME=	mplayer
-PORTVERSION=	0.90.0.10
-PORTREVISION=	1
-CATEGORIES=	graphics
-MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
-		http://www.mplayerhq.hu/MPlayer/releases/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/ \
-		http://ftp.lug.udel.edu/MPlayer/releases/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
-		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90pre10
+PORTNAME=	mplayerxp
+PORTVERSION=	0.1.9
+CATEGORIES=	multimedia audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	riggs@rrr.de
+MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		mp3lame.0:${PORTSDIR}/audio/lame \
+		png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_XLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
-		--with-extraincdir=${LOCALBASE}/include \
-		--disable-vidix
-
 USE_GNOMENG=	yes
-WANT_GNOME=	yes
-MAN1=		mplayer.1
-MLINKS=		mplayer.1 mencoder.1
-MANCOMPRESSED=	no
+USE_GNOME=	gtk12
+USE_XLIB=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+HAS_CONFIGURE=	yes
 
-CONFFILES=	codecs.conf example.conf input.conf
-DOCFILES=       bugreports.html cd-dvd.html codecs-in.html \
-		codecs.html documentation.html faq.html skin-en.html \
-		encoding.html formats.html sound.html \
-		users_against_developers.html \
-		video.html
+MAN1=	mplayerxp.1
+
+SDL_CONFIG?=	"${LOCALBASE}/bin/sdl11-config"
+WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
+
+# dirs to create before installation
+DIRS_TO_CREATE= etc/mplayerxp \
+		lib/mplayerxp/codecs \
+		lib/mplayerxp/wine
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libdvdcss.so.2)
-WITH_DVD=	yes
+# add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
+CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
+		--with-extraincdir=${LOCALBASE}/include \
+		--with-x11incdir=${X11BASE}/include \
+		--with-x11libdir=${X11BASE}/lib \
+		--cc=${CC} \
+		--prefix=${PREFIX} \
+		--confdir=${PREFIX}/etc/${PORTNAME} \
+		--datadir=${LOCALBASE}/share/mplayer \
+		--disable-cdparanoia \
+		--disable-fbdev \
+		--disable-lirc \
+		--disable-rtc \
+		--disable-tv-v4l
+# insure CC,LD safeness
+MAKE_ARGS+=	CC="${CC}" LD="${LD}"
+
+##
+## Feature detection
+##
+
+# KDE aRts
+.if exists(${LOCALBASE}/lib/libartsc.so)
+WITH_ARTS=yes
+.endif
+# xine libdvdnav
+.if exists(${LOCALBASE}/lib/libdvdnav.so)
+WITH_DVD=yes
+WITH_LIBDVDNAV=yes
+.endif
+# ogle's libdvdread (dvd support)
+.if exists(${LOCALBASE}/lib/libdvdread.a)
+WITH_DVD=yes
+.endif
+# sdl
+.if exists(${LOCALBASE}/lib/libSDL-1.1.a)
+WITH_SDL=yes
+.endif
+# sdl_image
+.if exists(${LOCALBASE}/lib/libSDL_image.a)
+WITH_SDL_IMAGE=yes
+.endif
+# xvid
+.if exists(${LOCALBASE}/lib/libxvidcore.so)
+WITH_XVID=yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libvga.so.1)
-WITH_SVGALIB=	yes
-.endif
+##
+## Feature activation and Library Dependencies
+##
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.4)
-WITH_SDL=	yes
-.endif
+# libdvdnav does not currently work
+.undef WITH_LIBDVDNAV
+WITHOUT_LIBDVDNAV=yes
 
-.if exists(${LOCALBASE}/lib/libvorbis.so.2)
-WITH_VORBIS=	yes
+# compilation optimizations
+.ifdef(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
+# 3dnow optimizations
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=	--enable-3dnow --enable-3dnowex
+.endif
+# sse optimizations
+.if !defined(WITHOUT_SSE) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=	--enable-sse --enable-sse2
+.endif
+# KDE aRts
+.ifdef(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.endif
+# dvd support
+.ifdef(WITH_DVD)
+LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 
-.if exists(${LOCALBASE}/lib/libjpeg.so.9)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
 .endif
+# xine libdvdnav
+.if defined(WITH_LIBDVDNAV) && !defined(WITHOUT_LIBDVDNAV)
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
 
-.if exists(${X11BASE}/bin/xanim)
-WITH_XANIM=	yes
+CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
 .endif
-
-.if exists(${LOCALBASE}/lib/RealPlayer8/realplay)
-WITH_REALPLAYER=	yes
-.endif
-
-.if exists(${LOCALBASE}/live/liveMedia/libliveMedia.a)
-WITH_LIVEMEDIA=	yes
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
-.endif
-
-.if ${HAVE_GNOME:Mgtk12}!=""
-WITH_GUI=	yes
-PLIST_SUB+=	GMPLAYER=""
-.else
-PLIST_SUB+=	GMPLAYER="@comment "
-.endif
-
-.if defined(WITH_GUI)
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
-CONFIGURE_ARGS+=	--enable-gui
-.endif
-
-.if defined(WITH_DVD)
-.if !defined(WITH_LIBDVDREAD)
-LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss
-.else
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
-.endif
-.endif
-
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-.endif
-
-.if defined(WITH_SDL)
+# sdl
+.ifdef(WITH_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
-.endif
 
-.if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
-.endif
-
-.if defined(WITH_REALPLAYER)
-CONFIGURE_ARGS+=	--enable-real \
-			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
-RUN_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
-BUILD_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
-.endif
-
-.if defined(WITH_LIVEMEDIA)
-CONFIGURE_ARGS+=	--enable-live \
-			--with-livelibdir=${LOCALBASE}/live
-RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-.endif
-
-.if defined(WITH_FREETYPE)
-CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
-			--enable-freetype
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+CONFIGURE_ARGS+=	--enable-sdl
+CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 .else
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
+CONFIGURE_ARGS+=	--disable-sdl
 .endif
+# sdl_image
+.ifdef(WITH_SDL_IMAGE)
+LIB_DEPENDS+=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
-.if defined(WITH_XANIM)
-BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
-
-CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
+CONFIGURE_ARGS+=	--enable-sdl-image
 .else
-CONFIGURE_ARGS+=--disable-xanim
+CONFIGURE_ARGS+=	--disable-sdl-image
 .endif
+# xvid
+.ifdef(WITH_XVID)
+LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/graphics/xvid
 
-# "enable" build for other archs
-.if ${ARCH} == "i386"
-.if !defined(WITHOUT_RUNTIME_CPUDETECTION)
-CONFIGURE_ARGS+=--enable-runtime-cpudetection
-.else #WITHOUT_RUNTIME_CPUDETECTION
-.if defined(WITHOUT_MMX)
-CONFIGURE_ARGS+=--disable-mmx
+CONFIGURE_ARGS+=	--enable-xvid \
+			--with-xvidcore=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-xvid
 .endif
-.if defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
-CONFIGURE_ARGS+=--disable-3dnow
+# termcap key support
+# mplayerxp does not clean up after itself yet
+.ifdef(WITH_TERMCAP)
+CONFIGURE_ARGS+=	--enable-termcap
+.else
+CONFIGURE_ARGS+=	--disable-termcap
 .endif
-.if defined(WITHOUT_DSP) || defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
-CONFIGURE_ARGS+=--disable-3dnowex
-.endif
-.if defined(WITHOUT_SSE)
-CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
-.endif
-.endif #WITHOUT_RUNTIME_CPUDETECTION
-.if !defined(WITH_SVGALIB)
-CONFIGURE_ARGS+=--disable-svga
-.endif
-.if !defined(WITH_SDL)
-CONFIGURE_ARGS+=--disable-sdl
-.endif
-.if !defined(WITH_VORBIS)
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
+# win32 binary dll codecs
 .if !defined(WITHOUT_WIN32_CODECS)
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
-
-CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
-.endif # ARCH == i386
 
 pre-everything::
-.if defined(WITH_GUI)
-	@${ECHO_MSG} "You can download official skin collections from"
-	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
-.endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
-.if !defined(WITH_GUI) && ${HAVE_GNOME:Mgtk12}==""
-	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
-.endif
-.if !defined(WITH_DVD)
-	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
-.endif
-.if defined(WITH_DVD) && !defined(WITH_LIBDVDREAD)
-	@${ECHO_MSG} "You can replace mplayer internal DVD routines with libdvdread"
-	@${ECHO_MSG} "support by defining WITH_LIBDVDREAD."
-.endif
-.if !defined(WITH_SVGALIB)
-	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
-.endif
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} "You can enable SDL support by defining WITH_SDL."
-.endif
-.if !defined(WITH_VORBIS)
-	@${ECHO_MSG} "You can enable VORBIS sound support by defining WITH_VORBIS."
-.endif
-.if !defined(WITH_XANIM)
-	@${ECHO_MSG} "You can enable XAnim DLL support by defining WITH_XANIM."
-.endif
-.if !defined(WITH_LIVEMEDIA)
-	@${ECHO_MSG} "You can enable liveMedia support by defining WITH_LIVEMEDIA."
-.endif
-.if !defined(WITH_FREETYPE)
-	@${ECHO_MSG} "You can enable truetype font support by defining WITH_FREETYPE."
-	@${ECHO_MSG} "    But use with caution. mplayer won't use the standard fonts anymore."
-.endif
-.if ${ARCH} == "i386"
-.if !defined(WITHOUT_WIN32_CODECS)
-	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
-	@${ECHO_MSG} "for Win32 codecs by defining WITHOUT_WIN32_CODECS"
-.if !defined(WITH_REALPLAYER)
-	@${ECHO_MSG} \
-		"You can enable RealPlayer DLL support by defining WITH_REALPLAYER."
-.endif
-.endif
-.if defined(WITHOUT_RUNTIME_CPUDETECTION)
-.if !defined(WITHOUT_SSE)
-	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
-	@${ECHO_MSG} "config in order to enable kernel support for SSE/MMX2."
-.endif
-.if !defined(WITHOUT_MMX)
-	@${ECHO_MSG} "You can disable use of MMX routines by defining WITHOUT_MMX."
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable additional compilation optimizations'
+	@${ECHO_MSG} '		by defining WITH_OPTIMIZED_CFLAGS.'
 .endif
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable use of 3DNow! optimized routines by defining WITHOUT_3DNOW."
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can disable 3DNow! optimized routines by defining WITHOUT_3DNOW.'
 .endif
-.if !defined(WITHOUT_3DNOW) && !defined(WITHOUT_DSP) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable support for Athlon DSP extensions by defining WITHOUT_DSP."
+.if !defined(WITHOUT_SSE) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can disable SSE optimized routines by defining WITHOUT_SSE.'
 .endif
-	@${ECHO_MSG} "Note: The cpu features are autodetected, so there is probably no need"
-	@${ECHO_MSG} "to manually disable them."
-.else
-	@${ECHO_MSG} "You can disable runtime cpu detection features by defining WITHOUT_RUNTIME_CPUDETECTION"
+.ifndef(WITH_ARTS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable KDE ARTS support by defining WITH_ARTS.'
 .endif
-.endif # ARCH == i386
+.ifndef(WITH_DVD)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable DVD support by defining WITH_DVD.'
+.endif
+.ifndef(WITH_LIBDVDNAV)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable LIBDVDNAV support by defining WITH_LIBDVDNAV.'
+.endif
+.ifndef(WITH_SDL)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable SDL support by defining WITH_SDL.'
+.endif
+.ifndef(WITH_SDL_IMAGE)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable SDL_image support by defining WITH_SDL_IMAGE.'
+.endif
+.ifndef(WITH_TERMCAP)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable termcap key database support by defining WITH_TERMCAP.'
+.endif
+.ifndef(WITH_XVID)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable XVID support by defining WITH_XVID.'
+.endif
+.ifndef(WITHOUT_WIN32_CODECS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can disable support for Win32 codecs by defining WITHOUT_WIN32_CODECS'
+.endif
+	@${ECHO_MSG} '===>'
 
-pre-configure:
-.if defined(WITH_LIBDVDREAD)
-	@${RM} -Rf ${WRKSRC}/libmpdvdkit2/
+post-patch:
+# fix detection of libdvdnav
+.ifdef(WITH_LIBDVDNAV)
+	@${REINPLACE_CMD} -E -e  \
+		's|(-I\$$_dvdnavdir)|\1/include/dvdnav|; \
+		s|(-L\$$_dvdnavdir)/.libs|\1/lib|; \
+		s|(-ldvdnav)|\1 ${PTHREAD_LIBS}|' \
+		${WRKSRC}/mplayerxp/configure
 .endif
-
-post-install:
-	@${MKDIR} ${DATADIR}
-	@${CHMOD} 755 ${DATADIR}
-.for conf in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}
+# linux/ioctl.h -> sys/ioctl.h
+.for file in mplayerxp/libdha/kernelhelper/dhahelper.h \
+	mplayerxp/vidix/drivers/radeon_vid.c
+	@${REINPLACE_CMD} -e 's|linux/ioctl.h|sys/ioctl.h|' \
+		${WRKSRC}/${file}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CHMOD} 755 ${DOCSDIR}
-.for doc in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/${doc} ${DOCSDIR}
+# correct SDL prefix installation
+# -lpthread -> ${PHREAD_LIBS}
+# win32 codec location
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -x -n 10 ${REINPLACE_CMD} -E -e \
+		's|SDL/|SDL11/|; \
+		s|-lpthread|${PTHREAD_LIBS}|; \
+		s|/usr/local/lib/win32|${WIN32_CODEC_PREFIX}|'
+# win32 codec location
+	@${REINPLACE_CMD} -E -e \
+		's|WIN32_PATH|"${WIN32_CODEC_PREFIX}"|' \
+		${WRKSRC}/loader/win32.c
+# FreeBSD's install utility does not support -D flag
+	@${FIND} ${WRKSRC} -name Makefile | \
+		${XARGS} -x -n 10 ${REINPLACE_CMD} -E -e \
+		's,(\$$\(INSTALL\)|install)(.*)-D,${INSTALL}\2,'
+# PTHREAD_{CFLAGS,LIBS}
+# location of xine libdvdnav header files
+	@${REINPLACE_CMD} -E -e  \
+		's|-pthread|${PTHREAD_LIBS}|; \
+		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/mplayerxp/configure
+# FreeBSD does not have -ldl
+	@${REINPLACE_CMD} -e 's|-ldl||' \
+		${WRKSRC}/mplayerxp/vidix/Makefile
+# ffmpeg currently is not compatible with mplayerxp
+.for file in ad_ffmp3.c vd_ffmpeg.c
+	@${REINPLACE_CMD} -e 's|libavcodec.so|libNOTavcodec.so|' \
+		${WRKSRC}/mplayerxp/libmpcodecs/${file}
 .endfor
-.endif
-.if defined(WITH_GUI)
-	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
-.endif
-	@${CAT} ${.CURDIR}/pkg-message
+# native libdivxdecore is not compatible with mplayerxp
+.for file in vd_divx4.c vd_xvid.c
+	@${REINPLACE_CMD} -e 's|libdivxdecore|libNOTdivxdecore|' \
+		${WRKSRC}/mplayerxp/libmpcodecs/${file}
+.endfor
 
-install-user:
-	@${PERL} ${FILESDIR}/install-user
+pre-install:
+# create dirs before installation since the port uses a install
+# utility option not available in FreeBSD
+.for dir in ${DIRS_TO_CREATE}
+	@${MKDIR} ${PREFIX}/${dir}
+.endfor
 
 .include <bsd.port.post.mk>
