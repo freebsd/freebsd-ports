@@ -18,6 +18,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderPM.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderPS.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderPS.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderPS.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderSVG.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderSVG.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderSVG.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderbase.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderbase.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/graphics/renderbase.pyo
@@ -123,6 +126,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfmetrics.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/ttfonts.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/ttfonts.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/ttfonts.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.pyo
