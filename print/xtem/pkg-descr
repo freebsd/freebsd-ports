@@ -1,26 +1,24 @@
-       The manpage says: "(...)
+xtem - TeX menu for the X Window System
 
-       xtem - TeX menu for the X Window System
+xtem is an X11 program that makes it easy to use TeX (incl.
+editing, previewing, printer selection, printing, spell checking
+etc.) with a minimum of unix knowledge and no knowledge of the
+specific installation.
 
-       xtem  is  an  X11  program  that  makes it easy to use TeX
-       (incl. editing, previewing, printer  selection,	printing,
-       spell checking etc.)  with a minimum of unix knowledge and
-       no knowledge of the specific installation.
+Syntax help to the LaTeX commands (including complete examples)
+are presented during editing.
 
-       Syntax help to  the  LaTeX  commands  (including  complete
-       examples) are presented during editing.
+xtem runs on workstations (and X-terminals) running the X Window
+System and Tcl/Tk/TclX.
 
-       xtem  runs on workstations (and X-terminals) running the X
-       Window System and Tcl/Tk/TclX.
+The user may easily select and save his preferences (such as
+editor, previewer etc.).
 
-       The user may easily select and save his preferences  (such
-       as editor, previewer etc.).
+Buttons, help texts, etc. can be set to the user's preferred
+language. At the moment the following languages are already
+available: English and German (Others can be added "easily" by
+editing the helpfiles accordingly).
 
-       (...)"
+Peter Cornelius <pc@akk.uni-karlsruhe.de>
 
-       Buttons,  help texts, etc.  can be set to the  user's pre-
-       ferred  language.  At the  moment the  following languages
-       are already available:  English and German  (Others can be
-       added "easily" by editing the helpfiles accordingly).
-
-                        Peter Cornelius <pc@akk.uni-karlsruhe.de>
+WWW: http://ftp.iwd.uni-bremen.de/xtem/xtem_texmenu.html
