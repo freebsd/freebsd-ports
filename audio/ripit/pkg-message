@@ -1,0 +1,7 @@
+ripit can use a number of different programs to do the actual track
+extraction and audio encoding. For ripit to be useful you need to
+have at least one extract program and one encoder program installed.
+However, since the choices are many and the users' needs and wants
+are varied, none of these are automatically installed as part of
+the ripit install. Remember to make sure you install the extractor(s)
+and encoder(s) you want.
