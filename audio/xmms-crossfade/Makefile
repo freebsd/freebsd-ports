@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmms-crossfade
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.netcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
+MASTER_SITES=	http://www.mynetcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 		ftp://ftp.falsehope.com/pub/xmms-crossfade/
 
 MAINTAINER=	pat@FreeBSD.org
