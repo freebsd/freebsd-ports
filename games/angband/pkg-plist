@@ -1,0 +1,43 @@
+bin/angband
+lib/X11/angband/apex/scores.raw
+lib/X11/angband/help/attack.txt
+lib/X11/angband/help/birth.txt
+lib/X11/angband/help/command.txt
+lib/X11/angband/help/dungeon.txt
+lib/X11/angband/help/general.txt
+lib/X11/angband/help/help.hlp
+lib/X11/angband/help/option.txt
+lib/X11/angband/help/version.txt
+lib/X11/angband/edit/a_info.txt
+lib/X11/angband/edit/e_info.txt
+lib/X11/angband/edit/f_info.txt
+lib/X11/angband/edit/k_info.txt
+lib/X11/angband/edit/r_info.txt
+lib/X11/angband/edit/v_info.txt
+lib/X11/angband/user/font-ami.prf
+lib/X11/angband/user/font-ibm.prf
+lib/X11/angband/user/font-win.prf
+lib/X11/angband/user/graf-ami.prf
+lib/X11/angband/user/graf-win.prf
+lib/X11/angband/user/pref-acn.prf
+lib/X11/angband/user/pref-emx.prf
+lib/X11/angband/user/pref-ibm.prf
+lib/X11/angband/user/pref-lsl.prf
+lib/X11/angband/user/pref-mac.prf
+lib/X11/angband/user/pref-win.prf
+lib/X11/angband/user/pref-x11.prf
+lib/X11/angband/user/pref-xaw.prf
+lib/X11/angband/user/pref.prf
+lib/X11/angband/file/dead.txt
+lib/X11/angband/file/news.txt
+@exec mkdir -p %D/lib/X11/angband/bone
+@exec mkdir -p %D/lib/X11/angband/data
+@exec mkdir -p %D/lib/X11/angband/info
+@exec mkdir -p %D/lib/X11/angband/save
+@exec mkdir -p %D/lib/X11/angband/xtra
+@dirrm lib/X11/angband/bone
+@dirrm lib/X11/angband/data
+@dirrm lib/X11/angband/info
+@dirrm lib/X11/angband/save
+@dirrm lib/X11/angband/xtra
+
