@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive height field generation and manipulation program
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext \
 		png.5:${PORTSDIR}/graphics/png \
@@ -31,7 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|Bison |Bison|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|Bison |Bison|; \
+		s|-ltrio  $$LIBS|-ltrio -lm $$LIBS|" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|" ${WRKSRC}/src/xmlsupport.c
 
 .include <bsd.port.mk>
