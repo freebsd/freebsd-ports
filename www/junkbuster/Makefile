@@ -28,8 +28,17 @@ ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 MAN1=		junkbuster.1
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= 500000 )
+GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
+.else
+GNUREGEXP=	's:gnu_regex.h:gnuregex.h:'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s:`/usr/bin/printf '\r'`::" ${WRKSRC}/*
+	@${REINPLACE_CMD} -e ${GNUREGEXP} ${WRKSRC}/*.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster
@@ -50,4 +59,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

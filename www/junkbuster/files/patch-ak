@@ -1,13 +1,6 @@
-diff -ruN /usr/ports/www/ijb/work/ijb20/socks4.c ./socks4.c
---- /usr/ports/www/ijb/work/ijb20/socks4.c	Mon Feb 28 02:35:10 2000
-+++ ./socks4.c	Mon Feb 28 02:31:06 2000
-@@ -19,11 +19,13 @@
- #endif
- 
- #ifdef REGEX
--#include <gnu_regex.h>
-+#include <gnuregex.h>
- #endif
+--- socks4.c.orig	Fri Aug  4 08:39:21 2000
++++ socks4.c	Thu Apr 29 15:59:20 2004
+@@ -28,6 +28,8 @@
  
  #include "jcc.h"
  
@@ -16,7 +9,7 @@ diff -ruN /usr/ports/www/ijb/work/ijb20/socks4.c ./socks4.c
  #define SOCKS_REQUEST_GRANTED		90
  #define SOCKS_REQUEST_REJECT		91
  #define SOCKS_REQUEST_IDENT_FAILED	92
-@@ -56,7 +58,7 @@
+@@ -60,7 +62,7 @@
  	unsigned char sbuf[BUFSIZ];
  	struct socks_op    *c = (struct socks_op    *)cbuf;
  	struct socks_reply *s = (struct socks_reply *)sbuf;
