@@ -125,7 +125,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%GUI%%@dirrm share/pixmaps/BitTorrent/logo
+%%GUI%%@dirrm share/pixmaps/BitTorrent
+%%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
