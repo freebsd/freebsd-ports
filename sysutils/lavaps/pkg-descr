@@ -1,4 +1,4 @@
-DESCRIPTION
+From the README:
     Lavaps is an interactive process-tracking program like ``top'',
     but with a much different attitude. Rather than presenting lots of
     specific info in digital form, it tries to present certain important
@@ -17,4 +17,5 @@ DESCRIPTION
     (This program dedicated to the memory of M.W.--I hope you would have
     thought it a good hack.)
 
-WWW: http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
+Author:  John Heidemann <johnh@isi.edu>
+WWW:     http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
