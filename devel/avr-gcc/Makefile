@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	2.95.2
+PORTVERSION=	20010320
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 PKGNAMEPREFIX=	avr-
 DISTNAME=	gcc-core-${PORTVERSION}
-
-PATCH_SITES=	http://home.overta.ru/users/denisc/gcc/
-PATCHFILES=	${DISTNAME}-avr-patch-1.1.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	joerg@freebsd.org
 
@@ -34,10 +30,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
-CONFIGURE_ENV=	CFLAGS="-O -pipe"
 
 MAKE_FLAGS=	LANGUAGES="c"
 
-MAN1=		cccp.1 avr-gcc.1
+MAN1=		cpp.1 avr-gcc.1 gcov.1
 
 .include <bsd.port.mk>
