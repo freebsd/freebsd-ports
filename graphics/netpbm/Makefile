@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	9.4
+PORTVERSION=	9.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +19,10 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	merge
 INSTALL_TARGET=	install-merge install-dev
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 

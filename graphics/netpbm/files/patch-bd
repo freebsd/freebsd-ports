@@ -1,5 +1,5 @@
---- pbm/Makefile.orig	Fri Jun  2 02:17:51 2000
-+++ pbm/Makefile	Sat Jun  3 00:00:00 2000
+--- pbm/Makefile.orig	Thu Jun 29 01:06:06 2000
++++ pbm/Makefile	Sat Jul  1 12:00:00 2000
 @@ -4,13 +4,12 @@
  include $(SRCDIR)/Makefile.config
  
@@ -11,7 +11,7 @@
  LIBROOT = pbm
  LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
--MIN = 3
+-MIN = 5
 +SOVER = 1
  
  LIBLIBS = 

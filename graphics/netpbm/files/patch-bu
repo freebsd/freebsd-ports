@@ -1,0 +1,43 @@
+--- pnm/pnmcut.c.orig	Fri Jun 30 07:59:22 2000
++++ pnm/pnmcut.c	Sat Jul  1 12:00:00 2000
+@@ -12,6 +12,7 @@
+ 
+ #include <limits.h>
+ #include "pnm.h"
++#include "shhopt.h"
+ 
+ #define UNSPEC INT_MAX
+     /* UNSPEC is the value we use for an argument that is not specified
+@@ -58,6 +59,15 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "left",       OPT_INT,    &cmdline_p->left,           0);
+     OPTENTRY(0,   "right",      OPT_INT,    &cmdline_p->right,          0);
+@@ -66,6 +76,7 @@
+     OPTENTRY(0,   "width",      OPT_INT,    &cmdline_p->width,          0);
+     OPTENTRY(0,   "height",     OPT_INT,    &cmdline_p->height,         0);
+     OPTENTRY(0,   "verbose",    OPT_FLAG,   &cmdline_p->verbose,        0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->left = UNSPEC;
+@@ -80,7 +91,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = TRUE;  /* We may have parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (cmdline_p->width < 0)

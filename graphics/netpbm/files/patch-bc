@@ -1,5 +1,5 @@
---- Makefile.config.orig	Mon Jun  5 08:08:43 2000
-+++ Makefile.config	Sat Jun 10 00:00:00 2000
+--- Makefile.config.orig	Fri Jun 23 02:48:03 2000
++++ Makefile.config	Sat Jul  1 12:00:00 2000
 @@ -39,7 +39,7 @@
  #Tru64:
  #CC =		cc
@@ -9,7 +9,7 @@
  
  # The linker.
  LD = $(CC)
-@@ -53,7 +53,7 @@
+@@ -66,7 +66,7 @@
  # calls compress or pack.  Mantocat, included with Netpbm, is used on
  # systems which use man pages in the "cat" format.
  
@@ -17,28 +17,33 @@
 +MANCP =	${BSD_INSTALL_MAN}
  #MANCP = $(SRCDIR)/mantocat
  
- # MAKE is set automatically by Make to what was used to invoke Make.
-@@ -73,7 +73,7 @@
- 
- # C compiler options
- 
+ AR= ar
+@@ -79,7 +79,7 @@
+ # -ansi and -Werror should work too, but are not included
+ # by default because there's no point in daring the build to fail.
+ # -pedantic isn't a problem because it causes at worst a warning.
 -CFLAGS = -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
 +CFLAGS += $(CDEBUG)
  # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
  #Tru64:
  #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
-@@ -123,7 +123,7 @@
+@@ -132,7 +132,7 @@
  # independent code, so you need -fpic or fPIC here.  (The rule is: if 
  # -fpic works, use it.  If it bombs, go to fPIC).
  
 -CFLAGS_SHLIB = 
-+CFLAGS_SHLIB = -fPIC -DPIC
++CFLAGS_SHLIB = -fpic -DPIC
  # Solaris, SunOS, and NetBSD:
  #CFLAGS_SHLIB = -fpic
  #CFLAGS_SHLIB = -fPIC
-@@ -142,8 +142,8 @@
- TIFFHDR_DIR = $(SRCDIR)/libtiff
- TIFFLIB_DIR = $(SRCDIR)/libtiff
+@@ -148,11 +148,11 @@
+ # but otherwise will not.
+ 
+ # Use the Tiff library included with Netpbm:
+-TIFFHDR_DIR = $(SRCDIR)/libtiff
+-TIFFLIB_DIR = $(SRCDIR)/libtiff
++#TIFFHDR_DIR = $(SRCDIR)/libtiff
++#TIFFLIB_DIR = $(SRCDIR)/libtiff
  #NetBSD:
 -#TIFFHDR_DIR = $(LOCALBASE)/include
 -#TIFFLIB_DIR = $(LOCALBASE)/lib
@@ -47,7 +52,7 @@
  # OSF, Tru64:
  #TIFFHDR_DIR = /usr/local1/DEC/include
  #TIFFLIB_DIR = /usr/local1/DEC/lib
-@@ -164,11 +164,11 @@
+@@ -173,11 +173,11 @@
  # at least JPEGLIB_DIR here, or the tiff converters will not build at
  # all.
  
@@ -63,7 +68,7 @@
  # OSF, Tru64:
  #JPEGLIB_DIR = /usr/local1/DEC/lib
  #JPEGHDR_DIR = /usr/local1/DEC/include
-@@ -186,11 +186,11 @@
+@@ -195,11 +195,11 @@
  # here.  If you do not have the PNG library, and still want to
  # successully build everything else, put NONE for these.
  
@@ -79,7 +84,7 @@
  # OSF/Tru64:
  #PNGLIB_DIR = /usr/local1/DEC/lib
  #PNGHDR_DIR = /usr/local1/DEC/include
-@@ -204,8 +204,10 @@
+@@ -213,8 +213,10 @@
  
  # And the Utah Raster Toolkit (aka URT aka RLE) library:
  

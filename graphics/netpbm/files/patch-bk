@@ -1,6 +1,6 @@
---- pbm/libpbm1.c.orig	Sat May  6 16:33:57 2000
-+++ pbm/libpbm1.c	Mon May  8 00:00:00 2000
-@@ -14,7 +14,6 @@
+--- pbm/libpbm1.c.orig	Tue Jun 20 04:24:00 2000
++++ pbm/libpbm1.c	Sat Jul  1 12:00:00 2000
+@@ -18,7 +18,6 @@
  #include "version.h"
  #include "../compile.h"
  #include "libpbm.h"
@@ -8,7 +8,7 @@
  
  #if __STDC__
  #include <stdarg.h>
-@@ -141,17 +140,6 @@
+@@ -145,27 +144,6 @@
          }
      return 1;
      }
@@ -21,6 +21,16 @@
 -                   optStruct opt[], int allowNegNum) {
 -
 -    optParseOptions(argc, argv, opt, allowNegNum);
+-
+-}
+-
+-
+-
+-void 
+-pm_optParseOptions2(int * const argc_p, char *argv[],
+-                    const optStruct2 opt, const unsigned long flags) {
+-
+-    optParseOptions2(argc_p, argv, opt, flags);
 -
 -}
  

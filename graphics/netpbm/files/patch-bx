@@ -1,0 +1,43 @@
+--- pnm/pstopnm.c.orig	Sat Jul  1 03:19:11 2000
++++ pnm/pstopnm.c	Sat Jul  1 12:00:00 2000
+@@ -16,6 +16,7 @@
+ #include <sys/wait.h>   /* For popen() exit codes */
+ #include <sys/stat.h>
+ #include "pnm.h"
++#include "shhopt.h"
+ 
+ enum orientation {PORTRAIT, LANDSCAPE, UNSPECIFIED};
+ struct box {
+@@ -69,6 +70,15 @@
+     int portrait_opt, landscape_opt;
+     float llx, lly, urx, ury;
+     
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "forceplain", OPT_FLAG,   &cmdline_p->forceplain,     0);
+     OPTENTRY(0,   "llx",        OPT_FLOAT,  &llx,                       0);
+@@ -89,6 +99,7 @@
+     OPTENTRY(0,   "portrait",   OPT_FLAG,   &portrait_opt,              0);
+     OPTENTRY(0,   "landscape",  OPT_FLAG,   &landscape_opt,             0);
+     OPTENTRY(0,   "stdout",     OPT_FLAG,   &cmdline_p->goto_stdout,    0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->forceplain = FALSE;
+@@ -106,7 +117,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0)

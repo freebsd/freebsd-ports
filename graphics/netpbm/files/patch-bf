@@ -1,33 +1,42 @@
---- pnm/Makefile.orig	Sat May 27 04:14:52 2000
-+++ pnm/Makefile	Sat Jun  3 00:00:00 2000
+--- pnm/Makefile.orig	Thu Jun 29 02:23:53 2000
++++ pnm/Makefile	Sat Jul  1 12:00:00 2000
 @@ -3,8 +3,7 @@
  
  LIBROOT = pnm
  LIBPNM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
--MIN = 3
+-MIN = 5
 +SOVER = 1
  
  PPMDIR = $(SRCDIR)/ppm
  LIBPPM = libppm.$(NETPBMLIBSUFFIX)
-@@ -61,14 +60,14 @@
- 		pnmsmooth pnmtile pnmtoddif pnmtofits \
+@@ -56,19 +55,20 @@
+ 
+ PORTBINARIES = fitstopnm gemtopnm giftopnm \
+ 		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
+-		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhisteq \
++		pnmdepth pnmenlarge pnmflip pnmhisteq \
+ 		pnmhistmap pnminterp pnminvert pnmpad pnmpaste \
+-		pnmsmooth pnmsplit pnmtile pnmtoddif pnmtofits \
++		pnmsmooth pnmtile pnmtoddif pnmtofits \
  		pnmtoplainpnm pnmtops pnmtorast \
- 		pnmtosgi pnmtosir pnmtoxwd \
+-		pnmtosgi pnmtosir pnmtoxwd pstopnm \
 -		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
++		pnmtosgi pnmtosir pnmtoxwd \
 +		rasttopnm sgitopnm sirtopnm zeisstopnm
  MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
++SHHOPTBINARIES = pnmcut pnmfile pnmsplit pstopnm xwdtopnm
  
  # We don't include programs that have special library dependencies in the
  # merge scheme, because we don't want those dependencies to prevent us
  # from building all the other programs.
  
 -NOMERGEBINARIES = 
-+NOMERGEBINARIES = xwdtopnm
++NOMERGEBINARIES = $(SHHOPTBINARIES)
  ifneq ($(PNGHDR_DIR),NONE)
    ifneq ($(PNGLIB_DIR),NONE)
      NOMERGEBINARIES += pnmtopng pngtopnm
-@@ -105,6 +104,8 @@
+@@ -105,6 +105,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
@@ -36,7 +45,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -116,10 +117,12 @@
+@@ -116,10 +118,12 @@
  
  .PHONY: all
  all:      $(BINARIES)
@@ -45,13 +54,13 @@
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
 -	$(MAKE) -C jbig all
 +
-+xwdtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
 +	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
 +	  $(LIBSHHOPT) $(CDEBUG)
  
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
-@@ -130,18 +133,18 @@
+@@ -130,18 +134,18 @@
  endif
  
  # The Tiff library references math functions.
@@ -75,7 +84,7 @@
  
  ifeq ($(URTLIB_DIR),$(URTDIR))
  # We're using the internal URT library, so make sure it's built
-@@ -178,22 +181,20 @@
+@@ -178,22 +182,20 @@
  # backward compatibility: program used to be gemtopbm
  	rm -f $(INSTALLBINARIES)/gemtopbm
  	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm
