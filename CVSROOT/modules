@@ -501,6 +501,7 @@ bakery		ports/x11-toolkits/bakery
 balance		ports/net/balance
 balsa		ports/mail/balsa
 balsa2		ports/mail/balsa2
+bandwidthd	ports/net/bandwidthd
 barcode		ports/graphics/barcode
 barrage		ports/games/barrage
 barry		ports/sysutils/barry
