@@ -32,6 +32,7 @@
     SUBDIR += eblook
     SUBDIR += ebw3
     SUBDIR += edict
+    SUBDIR += edict-fpw
     SUBDIR += edict-sdic
     SUBDIR += ee
     SUBDIR += elisa10x8
