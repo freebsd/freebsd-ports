@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 15 12:52:57 2001
-+++ Makefile	Sat Dec 15 12:55:02 2001
+--- Makefile.orig	Thu Feb 22 19:03:43 2001
++++ Makefile	Sun Dec 16 05:57:07 2001
 @@ -3,22 +3,30 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
@@ -21,7 +21,7 @@
  #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
  #CFLAGS=-O -DHAVE_LIBXPM -DHAVE_LIBPNG -DHAVE_LIBJPEG \
- #	-DHAVE_LIBFREETYPE -DHAVE_LIBTTF
+ #	-DHAVE_LIBFREETYPE -DHAVE_LIBTTF 
  
 +.if defined(WITH_X11)
 +CFLAGS+=-DHAVE_XPM 
