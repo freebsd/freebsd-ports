@@ -1,5 +1,5 @@
---- wireless/wireless-applet.c.orig	Sun Feb 16 00:12:42 2003
-+++ wireless/wireless-applet.c	Sun Feb 16 18:19:34 2003
+--- wireless/wireless-applet.c.orig	Sun Jan 26 12:40:10 2003
++++ wireless/wireless-applet.c	Mon Feb 17 00:37:30 2003
 @@ -30,12 +30,24 @@
  #include <math.h>
  #include <dirent.h>
@@ -64,7 +64,7 @@
  
  	if (percent < 0) {
  		applet->state = BUSTED_LINK;
-@@ -387,22 +409,107 @@
+@@ -387,22 +409,113 @@
  	applet->show_dialogs = show;
  }
  
@@ -107,13 +107,17 @@
 +{
 +    	struct an_req areq;
 +	struct an_ltv_status *sts;
++#ifdef AN_RID_RSSI_MAP
 +	struct an_ltv_rssi_map an_rssimap;
++#endif
 +	long int signal_strength;
 +	int rssimap_valid = 0;
 +
++#ifdef AN_RID_RSSI_MAP
 +	an_rssimap.an_len = sizeof(an_rssimap);
 +	an_rssimap.an_type = AN_RID_RSSI_MAP;
 +	rssimap_valid = an_getval(applet, device, (struct an_req*)&an_rssimap);
++#endif
 +
 +	areq.an_len = sizeof(areq);
 +	areq.an_type = AN_RID_STATUS;
@@ -121,10 +125,12 @@
 +	(void)an_getval(applet, device, &areq);
 +
 +	sts = (struct an_ltv_status *)&areq;
++#ifdef AN_RID_RSSI_MAP
 +	if (rssimap_valid)
 +	    signal_strength = (long int)(an_rssimap.an_entries[
 +		    sts->an_normalized_strength].an_rss_pct);
 +	else
++#endif
 +	    signal_strength = (long int)(sts->an_normalized_strength);
 +	
 +	memcpy(level, &signal_strength, sizeof(level));
@@ -174,7 +180,7 @@
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -435,6 +542,7 @@
+@@ -435,6 +548,7 @@
  				wireless_applet_update_state (applet, device, link, level, noise);
  			}
  		}
@@ -182,7 +188,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -446,15 +554,21 @@
+@@ -446,15 +560,21 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -204,7 +210,7 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -517,6 +631,7 @@
+@@ -517,6 +637,7 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -212,7 +218,7 @@
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -525,6 +640,7 @@
+@@ -525,6 +646,7 @@
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -220,7 +226,7 @@
  }
  
  static void
-@@ -766,7 +882,9 @@
+@@ -766,7 +888,9 @@
  		applet->prefs = NULL;
  	}
  
