@@ -1,0 +1,102 @@
+Local/Apps/ProjectCenter.app/ProjectCenter
+Local/Apps/ProjectCenter.app/Resources/FileIcon_.c.tiff
+Local/Apps/ProjectCenter.app/Resources/FileIcon_.h.tiff
+Local/Apps/ProjectCenter.app/Resources/FileIcon_.m.tiff
+Local/Apps/ProjectCenter.app/Resources/FileIcon_rtf.tiff
+Local/Apps/ProjectCenter.app/Resources/Info-gnustep.plist
+Local/Apps/ProjectCenter.app/Resources/Info-project.plist
+Local/Apps/ProjectCenter.app/Resources/ProjectCenter.app.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCenter.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_add.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_build.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_clean.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_cvs.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_documentation.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_files.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_find.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_prefs.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_run.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_settings.tiff
+Local/Apps/ProjectCenter.app/Resources/ProjectCentre_uml.tiff
+Local/Apps/ProjectCenter.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/ProjectCenter
+Local/Apps/ProjectCenter.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/library_paths.openapp
+Local/Headers/ProjectCenter/FileCreator.h
+Local/Headers/ProjectCenter/PCBrowserController.h
+Local/Headers/ProjectCenter/PCBundleLoader.h
+Local/Headers/ProjectCenter/PCDataSource.h
+Local/Headers/ProjectCenter/PCEditorView.h
+Local/Headers/ProjectCenter/PCFileManager.h
+Local/Headers/ProjectCenter/PCProject.h
+Local/Headers/ProjectCenter/PCProjectBuilder.h
+Local/Headers/ProjectCenter/PCProjectManager.h
+Local/Headers/ProjectCenter/PCServer.h
+Local/Headers/ProjectCenter/PreferenceController.h
+Local/Headers/ProjectCenter/ProjectBuilder.h
+Local/Headers/ProjectCenter/ProjectCenter.h
+Local/Headers/ProjectCenter/ProjectDebugger.h
+Local/Headers/ProjectCenter/ProjectEditor.h
+Local/Headers/ProjectCenter/ProjectType.h
+Local/Headers/ProjectCenter/Server.h
+Local/Libraries/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/libProjectCenter.so
+Local/Libraries/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/libProjectCenter.so.0.1.0
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/AppController.h
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/AppController.m
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-gnustep.plist
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-project.plist
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/Info.plist
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/PC.proj
+Local/Library/ProjectCenter/PCAppProj.bundle/Resources/main.m
+Local/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/PCAppProj
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/Info-gnustep.plist
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/Info.plist
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cfile.template
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cheader.template
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/class.template
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/header.template
+Local/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/PCBaseFileTypes
+Local/Library/ProjectCenter/PCLibProj.bundle/Resources/Info-gnustep.plist
+Local/Library/ProjectCenter/PCLibProj.bundle/Resources/Info.plist
+Local/Library/ProjectCenter/PCLibProj.bundle/Resources/LibProject.gmodel
+Local/Library/ProjectCenter/PCLibProj.bundle/Resources/PC.proj
+Local/Library/ProjectCenter/PCLibProj.bundle/Resources/Version
+Local/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/PCLibProj
+Local/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-gnustep.plist
+Local/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-project.plist
+Local/Library/ProjectCenter/PCToolProj.bundle/Resources/Info.plist
+Local/Library/ProjectCenter/PCToolProj.bundle/Resources/PC.proj
+Local/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
+Local/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/PCToolProj
+@dirrm Local/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/ProjectCenter/PCToolProj.bundle/Resources
+@dirrm Local/Library/ProjectCenter/PCToolProj.bundle
+@dirrm Local/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/ProjectCenter/PCLibProj.bundle/Resources
+@dirrm Local/Library/ProjectCenter/PCLibProj.bundle
+@dirrm Local/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources
+@dirrm Local/Library/ProjectCenter/PCBaseFileTypes.bundle
+@dirrm Local/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/ProjectCenter/PCAppProj.bundle/Resources
+@dirrm Local/Library/ProjectCenter/PCAppProj.bundle
+@dirrm Local/Library/ProjectCenter
+@dirrm Local/Libraries/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Libraries/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Libraries/%%GNU_ARCH%%
+@dirrm Local/Headers/ProjectCenter
+@dirrm Local/Apps/ProjectCenter.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Apps/ProjectCenter.app/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Apps/ProjectCenter.app/%%GNU_ARCH%%
+@dirrm Local/Apps/ProjectCenter.app/Resources
+@dirrm Local/Apps/ProjectCenter.app
+@unexec rmdir %D/Local/Library 2>/dev/null || true
+@unexec rmdir %D/Local/Libraries 2>/dev/null || true
+@unexec rmdir %D/Local/Headers 2>/dev/null || true
+@unexec rmdir %D/Local/Apps 2>/dev/null || true

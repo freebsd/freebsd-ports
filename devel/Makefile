@@ -258,6 +258,7 @@
     SUBDIR += powerpc-rtems-gdb
     SUBDIR += powerpc-rtems-objc
     SUBDIR += prcs
+    SUBDIR += projectcenter.app
     SUBDIR += pth
     SUBDIR += pth-devel
     SUBDIR += py-coro
