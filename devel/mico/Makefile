@@ -37,7 +37,7 @@ MICO_SERVICE=		"@comment "
 CONFIGURE_ENV+=		CXXFLAGS=${CPPFLAGS}
 
 .if defined(WITH_X11)
-USE_XLIBS=		yes
+USE_XLIB=		yes
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
