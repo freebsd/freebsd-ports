@@ -59,8 +59,10 @@ bin/ttree
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Align.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Procedural.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/URL.pm
@@ -146,8 +148,11 @@ share/tt2/docs/html/Modules/Template/Plugin/GD/Text.html
 share/tt2/docs/html/Modules/Template/Plugin/GD/Text/Align.html
 share/tt2/docs/html/Modules/Template/Plugin/GD/Text/Wrap.html
 share/tt2/docs/html/Modules/Template/Plugin/HTML.html
+share/tt2/docs/html/Modules/Template/Plugin/Image.html
 share/tt2/docs/html/Modules/Template/Plugin/Iterator.html
+share/tt2/docs/html/Modules/Template/Plugin/Math.html
 share/tt2/docs/html/Modules/Template/Plugin/Pod.html
+share/tt2/docs/html/Modules/Template/Plugin/Procedural.html
 share/tt2/docs/html/Modules/Template/Plugin/String.html
 share/tt2/docs/html/Modules/Template/Plugin/Table.html
 share/tt2/docs/html/Modules/Template/Plugin/URL.html
@@ -249,8 +254,11 @@ share/tt2/docs/src/Modules/Template/Plugin/GD/Text.html
 share/tt2/docs/src/Modules/Template/Plugin/GD/Text/Align.html
 share/tt2/docs/src/Modules/Template/Plugin/GD/Text/Wrap.html
 share/tt2/docs/src/Modules/Template/Plugin/HTML.html
+share/tt2/docs/src/Modules/Template/Plugin/Image.html
 share/tt2/docs/src/Modules/Template/Plugin/Iterator.html
+share/tt2/docs/src/Modules/Template/Plugin/Math.html
 share/tt2/docs/src/Modules/Template/Plugin/Pod.html
+share/tt2/docs/src/Modules/Template/Plugin/Procedural.html
 share/tt2/docs/src/Modules/Template/Plugin/String.html
 share/tt2/docs/src/Modules/Template/Plugin/Table.html
 share/tt2/docs/src/Modules/Template/Plugin/URL.html
@@ -1364,48 +1372,93 @@ share/tt2/templates/splash/tabset
 share/tt2/templates/splash/text
 share/tt2/templates/splash/ttdotorg
 share/tt2/templates/splash/ttpower
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/XS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tools
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Library
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Namespace
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template
-@dirrm share/tt2/docs/html/Tools
-@dirrm share/tt2/docs/html/Tutorial
-@dirrm share/tt2/docs/html/Library
-@dirrm share/tt2/docs/html/Manual
-@dirrm share/tt2/docs/html/Release
-@dirrm share/tt2/docs/html/FAQ
-@dirrm share/tt2/docs/html/Modules/Template/Stash
-@dirrm share/tt2/docs/html/Modules/Template/Plugin/XML
-@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Text
-@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Graph
-@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD
-@dirrm share/tt2/docs/html/Modules/Template/Plugin
-@dirrm share/tt2/docs/html/Modules/Template/Namespace
-@dirrm share/tt2/docs/html/Modules/Template
-@dirrm share/tt2/docs/html/Modules
-@dirrm share/tt2/docs/html
-@dirrm share/tt2/docs/lib/docset
-@dirrm share/tt2/docs/lib
+@dirrm share/tt2/templates/splash
+@dirrm share/tt2/templates/ps
+@dirrm share/tt2/templates/pod/html
+@dirrm share/tt2/templates/pod
+@dirrm share/tt2/templates/html
+@dirrm share/tt2/templates
+@dirrm share/tt2/images/splash/white
+@dirrm share/tt2/images/splash/sky
+@dirrm share/tt2/images/splash/scarlet
+@dirrm share/tt2/images/splash/rose
+@dirrm share/tt2/images/splash/red75
+@dirrm share/tt2/images/splash/red50
+@dirrm share/tt2/images/splash/red25
+@dirrm share/tt2/images/splash/red
+@dirrm share/tt2/images/splash/purple
+@dirrm share/tt2/images/splash/orange
+@dirrm share/tt2/images/splash/navy
+@dirrm share/tt2/images/splash/mint
+@dirrm share/tt2/images/splash/mauve
+@dirrm share/tt2/images/splash/marine
+@dirrm share/tt2/images/splash/lilac
+@dirrm share/tt2/images/splash/leaf
+@dirrm share/tt2/images/splash/grey75
+@dirrm share/tt2/images/splash/grey50
+@dirrm share/tt2/images/splash/grey25
+@dirrm share/tt2/images/splash/green75
+@dirrm share/tt2/images/splash/green50
+@dirrm share/tt2/images/splash/green25
+@dirrm share/tt2/images/splash/green
+@dirrm share/tt2/images/splash/bud
+@dirrm share/tt2/images/splash/blue75
+@dirrm share/tt2/images/splash/blue50
+@dirrm share/tt2/images/splash/blue25
+@dirrm share/tt2/images/splash/blue
+@dirrm share/tt2/images/splash/blood
+@dirrm share/tt2/images/splash/black
+@dirrm share/tt2/images/splash/aqua
+@dirrm share/tt2/images/splash
+@dirrm share/tt2/images
+@dirrm share/tt2/examples/src/splash
+@dirrm share/tt2/examples/src/ps
+@dirrm share/tt2/examples/src/html
+@dirrm share/tt2/examples/src
+@dirrm share/tt2/examples/lib/splash/about
+@dirrm share/tt2/examples/lib/splash
+@dirrm share/tt2/examples/lib/examples/splash/text
+@dirrm share/tt2/examples/lib/examples/splash/tabset
+@dirrm share/tt2/examples/lib/examples/splash/tabsbox
+@dirrm share/tt2/examples/lib/examples/splash/tabbox
+@dirrm share/tt2/examples/lib/examples/splash/tab
+@dirrm share/tt2/examples/lib/examples/splash/pulldown
+@dirrm share/tt2/examples/lib/examples/splash/panel
+@dirrm share/tt2/examples/lib/examples/splash/menubar
+@dirrm share/tt2/examples/lib/examples/splash/menu
+@dirrm share/tt2/examples/lib/examples/splash/icon
+@dirrm share/tt2/examples/lib/examples/splash/hair
+@dirrm share/tt2/examples/lib/examples/splash/frame
+@dirrm share/tt2/examples/lib/examples/splash/dropbox
+@dirrm share/tt2/examples/lib/examples/splash/config
+@dirrm share/tt2/examples/lib/examples/splash/button
+@dirrm share/tt2/examples/lib/examples/splash/box
+@dirrm share/tt2/examples/lib/examples/splash/bar
+@dirrm share/tt2/examples/lib/examples/splash
+@dirrm share/tt2/examples/lib/examples/ps/marks
+@dirrm share/tt2/examples/lib/examples/ps
+@dirrm share/tt2/examples/lib/examples/html/tables
+@dirrm share/tt2/examples/lib/examples/html/rgb
+@dirrm share/tt2/examples/lib/examples/html/menus
+@dirrm share/tt2/examples/lib/examples/html/lists
+@dirrm share/tt2/examples/lib/examples/html/links
+@dirrm share/tt2/examples/lib/examples/html/headers
+@dirrm share/tt2/examples/lib/examples/html/bars
+@dirrm share/tt2/examples/lib/examples/html
+@dirrm share/tt2/examples/lib/examples
+@dirrm share/tt2/examples/lib/example
+@dirrm share/tt2/examples/lib
+@dirrm share/tt2/examples/html/splash
+@dirrm share/tt2/examples/html/ps
+@dirrm share/tt2/examples/html/html
+@dirrm share/tt2/examples/html
+@dirrm share/tt2/examples
 @dirrm share/tt2/docs/style/splash
 @dirrm share/tt2/docs/style/plain
 @dirrm share/tt2/docs/style
-@dirrm share/tt2/docs/src/Tools
 @dirrm share/tt2/docs/src/Tutorial
-@dirrm share/tt2/docs/src/Library
-@dirrm share/tt2/docs/src/Manual
+@dirrm share/tt2/docs/src/Tools
 @dirrm share/tt2/docs/src/Release
-@dirrm share/tt2/docs/src/FAQ
 @dirrm share/tt2/docs/src/Modules/Template/Stash
 @dirrm share/tt2/docs/src/Modules/Template/Plugin/XML
 @dirrm share/tt2/docs/src/Modules/Template/Plugin/GD/Text
@@ -1415,87 +1468,42 @@ share/tt2/templates/splash/ttpower
 @dirrm share/tt2/docs/src/Modules/Template/Namespace
 @dirrm share/tt2/docs/src/Modules/Template
 @dirrm share/tt2/docs/src/Modules
+@dirrm share/tt2/docs/src/Manual
+@dirrm share/tt2/docs/src/Library
+@dirrm share/tt2/docs/src/FAQ
 @dirrm share/tt2/docs/src
+@dirrm share/tt2/docs/lib/docset
+@dirrm share/tt2/docs/lib
+@dirrm share/tt2/docs/html/Tutorial
+@dirrm share/tt2/docs/html/Tools
+@dirrm share/tt2/docs/html/Release
+@dirrm share/tt2/docs/html/Modules/Template/Stash
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/XML
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Text
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Graph
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD
+@dirrm share/tt2/docs/html/Modules/Template/Plugin
+@dirrm share/tt2/docs/html/Modules/Template/Namespace
+@dirrm share/tt2/docs/html/Modules/Template
+@dirrm share/tt2/docs/html/Modules
+@dirrm share/tt2/docs/html/Manual
+@dirrm share/tt2/docs/html/Library
+@dirrm share/tt2/docs/html/FAQ
+@dirrm share/tt2/docs/html
 @dirrm share/tt2/docs
-@dirrm share/tt2/examples/html/splash
-@dirrm share/tt2/examples/html/ps
-@dirrm share/tt2/examples/html/html
-@dirrm share/tt2/examples/html
-@dirrm share/tt2/examples/lib/examples/ps/marks
-@dirrm share/tt2/examples/lib/examples/ps
-@dirrm share/tt2/examples/lib/examples/html/lists
-@dirrm share/tt2/examples/lib/examples/html/headers
-@dirrm share/tt2/examples/lib/examples/html/tables
-@dirrm share/tt2/examples/lib/examples/html/links
-@dirrm share/tt2/examples/lib/examples/html/bars
-@dirrm share/tt2/examples/lib/examples/html/rgb
-@dirrm share/tt2/examples/lib/examples/html/menus
-@dirrm share/tt2/examples/lib/examples/html
-@dirrm share/tt2/examples/lib/examples/splash/pulldown
-@dirrm share/tt2/examples/lib/examples/splash/button
-@dirrm share/tt2/examples/lib/examples/splash/menubar
-@dirrm share/tt2/examples/lib/examples/splash/box
-@dirrm share/tt2/examples/lib/examples/splash/config
-@dirrm share/tt2/examples/lib/examples/splash/tab
-@dirrm share/tt2/examples/lib/examples/splash/dropbox
-@dirrm share/tt2/examples/lib/examples/splash/tabsbox
-@dirrm share/tt2/examples/lib/examples/splash/bar
-@dirrm share/tt2/examples/lib/examples/splash/tabset
-@dirrm share/tt2/examples/lib/examples/splash/text
-@dirrm share/tt2/examples/lib/examples/splash/hair
-@dirrm share/tt2/examples/lib/examples/splash/tabbox
-@dirrm share/tt2/examples/lib/examples/splash/frame
-@dirrm share/tt2/examples/lib/examples/splash/menu
-@dirrm share/tt2/examples/lib/examples/splash/icon
-@dirrm share/tt2/examples/lib/examples/splash/panel
-@dirrm share/tt2/examples/lib/examples/splash
-@dirrm share/tt2/examples/lib/examples
-@dirrm share/tt2/examples/lib/splash/about
-@dirrm share/tt2/examples/lib/splash
-@dirrm share/tt2/examples/lib/example
-@dirrm share/tt2/examples/lib
-@dirrm share/tt2/examples/src/splash
-@dirrm share/tt2/examples/src/ps
-@dirrm share/tt2/examples/src/html
-@dirrm share/tt2/examples/src
-@dirrm share/tt2/examples
-@dirrm share/tt2/images/splash/black
-@dirrm share/tt2/images/splash/green50
-@dirrm share/tt2/images/splash/red50
-@dirrm share/tt2/images/splash/green
-@dirrm share/tt2/images/splash/mauve
-@dirrm share/tt2/images/splash/blue
-@dirrm share/tt2/images/splash/marine
-@dirrm share/tt2/images/splash/green75
-@dirrm share/tt2/images/splash/red75
-@dirrm share/tt2/images/splash/grey25
-@dirrm share/tt2/images/splash/purple
-@dirrm share/tt2/images/splash/leaf
-@dirrm share/tt2/images/splash/blue50
-@dirrm share/tt2/images/splash/lilac
-@dirrm share/tt2/images/splash/bud
-@dirrm share/tt2/images/splash/scarlet
-@dirrm share/tt2/images/splash/blue75
-@dirrm share/tt2/images/splash/red25
-@dirrm share/tt2/images/splash/green25
-@dirrm share/tt2/images/splash/orange
-@dirrm share/tt2/images/splash/white
-@dirrm share/tt2/images/splash/mint
-@dirrm share/tt2/images/splash/red
-@dirrm share/tt2/images/splash/grey50
-@dirrm share/tt2/images/splash/rose
-@dirrm share/tt2/images/splash/navy
-@dirrm share/tt2/images/splash/aqua
-@dirrm share/tt2/images/splash/sky
-@dirrm share/tt2/images/splash/blue25
-@dirrm share/tt2/images/splash/grey75
-@dirrm share/tt2/images/splash/blood
-@dirrm share/tt2/images/splash
-@dirrm share/tt2/images
-@dirrm share/tt2/templates/ps
-@dirrm share/tt2/templates/pod/html
-@dirrm share/tt2/templates/pod
-@dirrm share/tt2/templates/html
-@dirrm share/tt2/templates/splash
-@dirrm share/tt2/templates
 @dirrm share/tt2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/XS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tools
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Namespace
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Library
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template
