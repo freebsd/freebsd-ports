@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -42,7 +41,7 @@ CFLAGS+=	-g
 
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500800
-BROKEN=	"Subversion's Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
+IGNORE=	"Subversion's Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
 .endif
 SWIG_BINDINGS+=		perl
 USE_PERL5=		yes
