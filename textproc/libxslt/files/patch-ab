@@ -1,0 +1,8 @@
+--- libxslt/xsltconfig.h.in.orig	Mon Mar 26 20:55:08 2001
++++ libxslt/xsltconfig.h.in	Thu Apr 19 22:20:46 2001
+@@ -23,3 +23,5 @@
+ #ifdef __GNUC__
++#ifndef __FreeBSD__
+ #include <ansidecl.h>
++#endif
+ #ifndef ATTRIBUTE_UNUSED
