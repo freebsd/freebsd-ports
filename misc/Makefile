@@ -91,6 +91,7 @@
     SUBDIR += pdmenu
     SUBDIR += pinfo
     SUBDIR += proxyper
+    SUBDIR += py-distutils
     SUBDIR += qclock
     SUBDIR += qhacc
     SUBDIR += quotes
