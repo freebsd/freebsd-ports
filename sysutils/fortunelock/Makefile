@@ -8,7 +8,7 @@
 PORTNAME=	fortunelock
 PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://capsi.cx/src/fortunelock/
+MASTER_SITES=	http://cx.capsi.com/src/fortunelock/
 
 MAINTAINER=	dannyboy@FreeBSD.org
 
