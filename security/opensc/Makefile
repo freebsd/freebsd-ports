@@ -84,10 +84,4 @@ CONFIGURE_ARGS+=	--without-docbook
 CONFIGURE_ARGS+=	--with-openct=${LOCALBASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
-BROKEN=		"Does not compile on !i386 and !sparc64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
