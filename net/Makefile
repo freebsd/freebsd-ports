@@ -34,6 +34,7 @@
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
     SUBDIR += cvsupd-bin
+    SUBDIR += dante
     SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += dgd
