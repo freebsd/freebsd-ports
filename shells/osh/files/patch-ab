@@ -1,0 +1,28 @@
+--- osh.c.orig	Fri Dec 29 15:38:16 2000
++++ osh.c	Fri Dec 29 15:38:32 2000
+@@ -494,9 +494,9 @@
+ 	if (input != stdin)
+ 		fclose(input);
+ #endif
+-	sigset(SIGINT, SIG_DFL);
+-	sigset(SIGQUIT, SIG_DFL);
+-	sigset(SIGTERM, SIG_DFL);
++	signal(SIGINT, SIG_DFL);
++	signal(SIGQUIT, SIG_DFL);
++	signal(SIGTERM, SIG_DFL);
+ 	if (flags & FL_ASYNC)
+ 		setpgid(0, 0);
+ 	/* try current directory first */
+@@ -779,9 +779,9 @@
+ 		if (isatty(0)) {
+ 			interactive = 1;
+ 			setpgid(0, 0);
+-			sigset(SIGINT, SIG_IGN);
+-			sigset(SIGQUIT, SIG_IGN);
+-			sigset(SIGTERM, SIG_IGN);
++			signal(SIGINT, SIG_IGN);
++			signal(SIGQUIT, SIG_IGN);
++			signal(SIGTERM, SIG_IGN);
+ 		}
+ 	} else {
+ 		fclose(stdin);	/* the external goto command needs this */
