@@ -1,5 +1,5 @@
---- CertDruidP30Dialog.cc.orig	Wed Jun 11 07:28:35 2003
-+++ CertDruidP30Dialog.cc	Wed Jun 11 07:30:23 2003
+--- src/gui/CertDruidP30Dialog.cc.orig	Wed Jun 11 07:28:35 2003
++++ src/gui/CertDruidP30Dialog.cc	Wed Jun 11 07:30:23 2003
 @@ -25,8 +25,9 @@
  */
  
