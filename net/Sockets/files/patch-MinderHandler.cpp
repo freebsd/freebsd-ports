@@ -1,5 +1,5 @@
---- MinderHandler.cpp.orig	Sun Jan 16 02:22:51 2005
-+++ MinderHandler.cpp	Sun Jan 16 02:26:52 2005
+--- MinderHandler.cpp.orig	Sun Apr  3 18:42:07 2005
++++ MinderHandler.cpp	Sun Apr  3 18:43:09 2005
 @@ -20,6 +20,10 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.

@@ -17,6 +17,8 @@ include/Sockets/MinionSocket.h
 include/Sockets/NullCrypt.h
 include/Sockets/Parse.h
 include/Sockets/PoolSocket.h
+include/Sockets/ResolvServer.h
+include/Sockets/ResolvSocket.h
 include/Sockets/SSLSocket.h
 include/Sockets/Socket.h
 include/Sockets/SocketHandler.h
