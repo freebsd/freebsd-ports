@@ -20,8 +20,14 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e "s,-lpthread,${PTHREAD_LIBS},g" \
 	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.if ${ARCH} == "ia64"
+BROKEN=	"Does not compile on ia64"
+.endif
+
+.include <bsd.port.post.mk>
