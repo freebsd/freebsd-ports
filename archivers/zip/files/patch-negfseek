@@ -1,0 +1,59 @@
+--- zipfile.c.orig	Sun Nov  7 13:30:11 1999
++++ zipfile.c	Fri May 31 13:58:36 2002
+@@ -14,6 +14,10 @@
+ #include "zip.h"
+ #include "revision.h"
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++
+ #ifdef VMS
+ #  include <rms.h>
+ #  include <starlet.h>
+@@ -628,6 +632,18 @@
+ 
+ #endif /* !UTIL */
+ 
++#ifdef __FreeBSD__
++#if __FreeBSD_version < 500028
++local off_t fsize(FILE *f) {
++    struct stat s;
++
++    if (f == NULL) return 0;
++    if (fstat(fileno(f), &s) < 0) return 0;
++    return s.st_size;
++}
++#endif
++#endif
++
+ /*
+  * scanzipf_reg starts searching for the End Signature at the end of the file
+  * The End Signature points to the Central Directory Signature which points
+@@ -667,7 +683,13 @@
+     t[1] = '\0';
+     t[2] = '\0';
+     t[3] = '\0';
+-    if (fseek(f, -4096L, SEEK_END) == 0) {
++    if (
++#ifdef __FreeBSD__
++#if __FreeBSD_version < 500028
++	fsize(f) >= 4096L &&
++#endif
++#endif
++	fseek(f, -4096L, SEEK_END) == 0) {
+       zipbeg = (ulg) (ftell(f) + 4096L);
+       while (!found && zipbeg >= 4096) {
+         zipbeg -= 4096L;
+@@ -678,6 +700,11 @@
+  * XXX error check ??
+  */
+         fread(buf, 1, 4096, f);
++#ifdef __FreeBSD__
++#if __FreeBSD_version < 500028
++	if (ftell(f) >= 8192L)
++#endif
++#endif
+         fseek(f, -8192L, SEEK_CUR);
+         t = &buf[4095];
+ /*
