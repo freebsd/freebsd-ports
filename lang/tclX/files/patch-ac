@@ -16,15 +16,13 @@
 +	    ${TK_SHLIB_LD_LIBS} ${TCLX_BUILD_LIB_SPEC}
 +	ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
  
-@@ -199,7 +200,7 @@
- buildhelp:
- 	rm -rf ${HELP_DIR} help help.tmp
- 	mkdir ${HELP_DIR}
+@@ -199,5 +200,5 @@
+ 	mkdir -p ${HELP_DIR}
 -	${BLDMANHELP} ${TK_SRC_DIR}/doc ${TCLX_TOOLS_SRC_DIR}/tkmanpages \
 +	${BLDMANHELP} ${TCLX_TOOLS_SRC_DIR}/tkmanpages \
  	    ${HELP_DIR} Tk.brf
+ 	${INSTCOPY} ${HELP_DIR} ${INSTALL_ROOT}${TKX_INST_RUNTIME}/help
  
- #------------------------------------------------------------------------------
 @@ -227,9 +228,11 @@
  	    ${INSTCOPY} ${TKX_STLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TKX_INST_LIB}/${TKX_STLIB_NAME}; \

@@ -1,0 +1,7 @@
+--- runtcl.in	Tue Jul  6 22:47:14 1999
++++ runtcl.in	Fri Feb  7 16:45:41 2003
+@@ -3,3 +3,3 @@
+ 
+-TCL_LIBRARY="@TCL_LIBRARY_DIR@"
++TCL_LIBRARY="@TCL_LIB_DIR@"
+ TCLX_LIBRARY="@TCLX_RUNTIME_DIR@"

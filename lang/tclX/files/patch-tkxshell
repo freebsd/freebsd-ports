@@ -5,12 +5,3 @@
  extern void		TkpDisplayWarning _ANSI_ARGS_((char *msg,
  			    char *title));
 +#endif
-@@ -407,7 +407,7 @@
-     Tk_MainLoop();
--    Tcl_DeleteInterp(interp);
- #ifdef TKX_SHELL
-     TclX_ShellExit(interp, 0);
- #else
-+    Tcl_DeleteInterp(interp);
-     Tcl_Exit(0);
- #endif

@@ -1,0 +1,197 @@
+--- ../tcl/generic/tclXbsearch.c	Wed Mar 31 01:37:43 1999
++++ ../tcl/generic/tclXbsearch.c	Fri Jan 10 15:53:14 2003
+@@ -45,3 +45,3 @@ TclProcKeyCompare _ANSI_ARGS_((binSearch
+ static int
+-ReadAndCompare _ANSI_ARGS_((off_t          fileOffset,
++ReadAndCompare _ANSI_ARGS_((int            fileOffset,
+                             binSearchCB_t *searchCBPtr));
+@@ -164,3 +164,3 @@ static int
+ ReadAndCompare (fileOffset, searchCBPtr)
+-    off_t          fileOffset;
++    int            fileOffset;
+     binSearchCB_t *searchCBPtr;
+@@ -254,3 +254,4 @@ BinSearch (searchCBPtr)
+ {
+-    off_t middle, high, low;
++    int   middle;
++    off_t high, low;
+ 
+--- ../tcl/generic/tclXdup.c	Wed Mar 31 01:37:43 1999
++++ ../tcl/generic/tclXdup.c	Fri Jan 10 16:27:00 2003
+@@ -202,5 +202,5 @@
+ {
+     Tcl_Channel newChannel;
+-    int bindFnum, fnum;
++    int fnum;
+     char *srcChannelId, *targetChannelId;
+ 
+@@ -214,24 +214,14 @@
+      * a dup.
+      */
+-    if (objv [1]->typePtr == Tcl_GetObjType ("int")) {
+-        bindFnum = TRUE;
+-    } else {
+-        srcChannelId = Tcl_GetStringFromObj (objv [1], NULL);
+-        if (ISDIGIT (srcChannelId [0])) {
+-            if (Tcl_ConvertToType (interp, objv [1],
+-                                   Tcl_GetObjType ("int")) != TCL_OK)
+-                goto badFnum;
+-            bindFnum = TRUE;
+-        } else {
+-            bindFnum = FALSE;
+-        }
+-    }
+-    if (bindFnum) {
+-        if (objc != 2)
+-            goto bind2ndArg;
+-        if (Tcl_GetIntFromObj (interp, objv [1], &fnum) != TCL_OK)
+-            return TCL_ERROR;
++    if (Tcl_GetIntFromObj(interp, objv [1], &fnum) == TCL_OK) {
++	if (objc != 2) {
++	    TclX_AppendObjResult (interp, "the second argument, "
++		"targetChannelId, is not allowed when binding a "
++		"file number to a Tcl channel", NULL);
++	    return TCL_ERROR;
++	}
+         newChannel = TclXOSBindOpenFile (interp,  fnum);
+     } else {
++        srcChannelId = Tcl_GetStringFromObj (objv [1], NULL);
+         if (objc > 2) {
+             targetChannelId = Tcl_GetStringFromObj (objv [2], NULL);
+@@ -250,18 +240,4 @@
+                       Tcl_GetChannelName (newChannel), -1);
+     return TCL_OK;
+-
+-  badFnum:
+-    Tcl_ResetResult (interp);
+-    TclX_AppendObjResult (interp, "invalid integer file number \"",
+-                          Tcl_GetStringFromObj (objv [1], NULL),
+-                          "\", expected unsigned integer or Tcl file id",
+-                          (char *) NULL);
+-    return TCL_ERROR;
+-
+-  bind2ndArg:
+-    TclX_AppendObjResult (interp, "the second argument, targetChannelId, ",
+-                          "is not allow when binding a file number to ",
+-                          "a Tcl channel", (char *) NULL);
+-    return TCL_ERROR;
+ }
+ 
+--- ../tcl/generic/tclXhandles.c	Wed Mar 31 01:37:44 1999
++++ ../tcl/generic/tclXhandles.c	Fri Jan 10 17:09:53 2003
+@@ -160,3 +160,3 @@
+     int      numNewEntries;
+-    int      newSize;
++    size_t   newSize;
+     
+@@ -170,3 +170,3 @@
+     memcpy (tblHdrPtr->bodyPtr, oldbodyPtr, 
+-            (tblHdrPtr->tableSize * tblHdrPtr->entrySize));
++            (size_t)(tblHdrPtr->tableSize * tblHdrPtr->entrySize));
+     LinkInNewEntries (tblHdrPtr, tblHdrPtr->tableSize, numNewEntries);
+@@ -234,3 +234,3 @@
+     if ((strncmp (tblHdrPtr->handleBase, (char *) handle, 
+-             tblHdrPtr->baseLength) != 0) ||
++             (size_t)tblHdrPtr->baseLength) != 0) ||
+              !TclX_StrToUnsigned (&handle [tblHdrPtr->baseLength], 10, 
+@@ -269,3 +269,3 @@
+     if ((strncmp (tblHdrPtr->handleBase, (char *) handle, 
+-                  tblHdrPtr->baseLength) != 0) ||
++                  (size_t)tblHdrPtr->baseLength) != 0) ||
+         !TclX_StrToUnsigned (&handle [tblHdrPtr->baseLength], 10, 
+@@ -332,3 +332,3 @@
+     tblHdrPtr->bodyPtr =
+-        (ubyte_pt) ckalloc (initEntries * tblHdrPtr->entrySize);
++        (ubyte_pt) ckalloc ((size_t)initEntries * tblHdrPtr->entrySize);
+     LinkInNewEntries (tblHdrPtr, 0, initEntries);
+--- ../tcl/generic/tclXkeylist.c	Wed Mar 31 01:37:45 1999
++++ ../tcl/generic/tclXkeylist.c	Fri Jan 10 17:50:40 2003
+@@ -376,3 +376,4 @@
+     char *keySeparPtr;
+-    int keyLen, findIdx;
++    int   findIdx;
++    size_t keyLen;
+ 
+@@ -605,4 +606,3 @@
+         entryObjv [0] = 
+-            Tcl_NewStringObj (keylIntPtr->entries [idx].key,
+-                              strlen (keylIntPtr->entries [idx].key));
++            Tcl_NewStringObj (keylIntPtr->entries [idx].key, -1);
+         entryObjv [1] = keylIntPtr->entries [idx].valuePtr;
+@@ -613,3 +613,3 @@
+     listStr = Tcl_GetStringFromObj (tmpListObj, &strLen);
+-    keylPtr->bytes = ckbinstrdup (listStr, strLen);
++    keylPtr->bytes = ckbinstrdup (listStr, (size_t)strLen);
+     keylPtr->length = strLen;
+@@ -745,4 +745,4 @@
+         keylIntPtr->entries [findIdx].key =
+-            (char *) ckalloc (keyLen + 1);
+-        strncpy (keylIntPtr->entries [findIdx].key, key, keyLen);
++            (char *) ckalloc ((size_t)(keyLen + 1));
++        strncpy (keylIntPtr->entries [findIdx].key, key, (size_t)keyLen);
+         keylIntPtr->entries [findIdx].key [keyLen] = '\0';
+@@ -784,4 +784,4 @@
+         keylIntPtr->entries [findIdx].key =
+-            (char *) ckalloc (keyLen + 1);
+-        strncpy (keylIntPtr->entries [findIdx].key, key, keyLen);
++            (char *) ckalloc ((size_t)(keyLen + 1));
++        strncpy (keylIntPtr->entries [findIdx].key, key, (size_t)keyLen);
+         keylIntPtr->entries [findIdx].key [keyLen] = '\0';
+--- ../tcl/generic/tclXlib.c	Wed Oct 24 18:57:02 2001
++++ ../tcl/generic/tclXlib.c	Fri Jan 10 18:01:02 2003
+@@ -70,3 +70,3 @@
+                           off_t        offset,
+-                          off_t        length));
++                          int          length));
+ 
+@@ -89,3 +89,3 @@
+                                   off_t      *offsetPtr,
+-                                  unsigned   *lengthPtr));
++                                  int        *lengthPtr));
+ 
+@@ -161,3 +161,3 @@
+     off_t        offset;
+-    off_t        length;
++    int          length;
+ {
+@@ -193,3 +193,4 @@
+ 
+-    if (Tcl_Seek (channel, offset, SEEK_SET) < 0)
++    /* XXX casting to int is wrong below, but that's what Tcl_Seek wants */
++    if (Tcl_Seek (channel, (int)offset, SEEK_SET) < 0)
+         goto posixError;
+@@ -386,3 +387,3 @@
+     off_t       *offsetPtr;
+-    unsigned   *lengthPtr;
++    int         *lengthPtr;
+ {
+@@ -414,3 +415,4 @@
+         goto invalidEntry;
+-    if (TclX_GetUnsignedFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK)
++    if (Tcl_GetIntFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK
++	|| *lengthPtr < 0)
+         goto invalidEntry;
+@@ -886,3 +888,3 @@
+     off_t     offset;
+-    unsigned  length;
++    int       length;
+     int       result;
+--- ../tcl/generic/tclXlist.c	Sat May 19 12:39:44 2001
++++ ../tcl/generic/tclXlist.c	Fri Jan 10 18:04:21 2003
+@@ -469,3 +469,3 @@
+             match = (valueLen == patternLen) &&
+-                (memcmp (valueStr, patternStr, valueLen) == 0);
++                (memcmp (valueStr, patternStr, (size_t) patternLen) == 0);
+             break;
+@@ -544,3 +544,3 @@
+         if ((elementLen == checkLen) &&
+-            (memcmp (elementStr, checkStr, elementLen) == 0))
++            (memcmp (elementStr, checkStr, (size_t)elementLen) == 0))
+             break;
+--- ../tcl/generic/tclXmath.c	Wed Mar 31 01:37:45 1999
++++ ../tcl/generic/tclXmath.c	Fri Jan 10 18:05:54 2003
+@@ -308,3 +308,3 @@ TclX_RandomObjCmd (dummy, interp, objc, 
+     } else {
+-        int seed;
++        unsigned int seed;
+ 
