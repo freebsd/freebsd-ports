@@ -263,6 +263,7 @@ aim		ports/net/aim
 airoflash	ports/misc/airoflash
 airport		ports/net/airport
 aish		ports/converters/aish
+akpop3d		ports/mail/akpop3d
 ald		ports/devel/ald
 aleph		ports/lang/aleph
 alephone	ports/games/alephone
@@ -4614,6 +4615,7 @@ openam		ports/net/openam
 openbabel	ports/science/openbabel
 openbox		ports/x11-wm/openbox
 opencdk		ports/security/opencdk
+opencyc		ports/misc/opencyc
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
