@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.14 1995/04/09 06:11:12 asami Exp $
+# $Id: Makefile,v 1.15 1995/04/10 08:06:03 jkh Exp $
 #
 
 DISTNAME=	mule-2.2.2
@@ -34,12 +34,7 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
 STRIP=
 
-PREBUILD_COOKIE=	${.CURDIR}/work/.prebuild_done
-
-pre-build:	${PREBUILD_COOKIE}
-
-${PREBUILD_COOKIE}:
+pre-build:
 	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
-	@${TOUCH} ${TOUCH_FLAGS} ${PREBUILD_COOKIE}
 
 .include <bsd.port.mk>
