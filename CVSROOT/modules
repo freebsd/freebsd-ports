@@ -4566,6 +4566,7 @@ oops		ports/www/oops
 op		ports/security/op
 open-motif	ports/x11-toolkits/open-motif
 open-motif-devel	ports/x11-toolkits/open-motif-devel
+openag		ports/audio/openag
 openal		ports/audio/openal
 openam		ports/net/openam
 openbox		ports/x11-wm/openbox
