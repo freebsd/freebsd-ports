@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libassa
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +15,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An C++ networking library and application framework
 
-USE_GNOME=	gnomehack
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ARGS=	--disable-html-docs
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not build"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s: doc : :g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
