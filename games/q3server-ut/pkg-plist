@@ -1,15 +1,17 @@
-%%PORTDOCS%%%%Q3DIR%%Urban Terror Manual.URL
-%%PORTDOCS%%%%Q3DIR%%description.txt
+%%Q3DIR%%inet_server.cfg
+%%Q3DIR%%lan_server.cfg
+%%PORTDOCS%%%%Q3DIR%%manual.pdf
 %%Q3DIR%%mapcycle.txt
+%%Q3DIR%%mappacks_mapcycle.txt
 %%Q3DIR%%pak0.pk3
 %%Q3DIR%%pak1.pk3
 %%Q3DIR%%pak2.pk3
 %%Q3DIR%%pak3.pk3
 %%Q3DIR%%pak4.pk3
 %%Q3DIR%%pak5.pk3
+%%Q3DIR%%pak6.pk3
+%%Q3DIR%%punkbuster.cfg
 %%PORTDOCS%%%%Q3DIR%%q3ut2.ico
 %%PORTDOCS%%%%Q3DIR%%readme.txt
-%%PORTDOCS%%%%Q3DIR%%readme25.txt
-%%Q3DIR%%server.cfg
-%%PORTDOCS%%%%Q3DIR%%urbanterror.net.URL
+%%Q3DIR%%sampleConfig.cfg
 @dirrm %%Q3DIR%%
