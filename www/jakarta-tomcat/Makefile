@@ -65,7 +65,7 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${ECHO_CMD} -n ">> Removing all .bat and .orig files..."
+	@${ECHO_CMD} -n ">> Removing unneeded files..."
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
 	@${ECHO_CMD} " [ DONE ]"
 
