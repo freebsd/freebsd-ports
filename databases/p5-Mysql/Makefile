@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/12/07 05:34:35 steve Exp $
+# $Id: Makefile,v 1.13 1998/12/26 21:28:59 asami Exp $
 #
 
 DISTNAME=	Msql-Mysql-modules-1.2003
@@ -17,8 +17,6 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321 \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/DBI.pm:${PORTSDIR}/databases/p5-DBI
-
-BROKEN_ELF=	depends on mysql-3.21.33
 
 CONFIGURE_ENV=	PREFIX=${PREFIX} MYSQL_HOME=${PREFIX} IN_MYSQL_DISTRIBUTION=1
 USE_PERL5=	YES
