@@ -2,9 +2,14 @@ bin/dvdauthor
 bin/dvddirgen
 bin/mpeg2desc
 bin/spumux
-man/man1/spumux.1
 %%PORTDOCS%%share/doc/dvdauthor/README
 %%PORTDOCS%%share/doc/dvdauthor/README.FreeBSD
+%%PORTDOCS%%share/doc/dvdauthor/dvdauthor.html
+%%PORTDOCS%%share/doc/dvdauthor/ex-title.html
+%%PORTDOCS%%share/doc/dvdauthor/examples.html
+%%PORTDOCS%%share/doc/dvdauthor/index.html
 %%PORTDOCS%%share/doc/dvdauthor/iso639.txt
+%%PORTDOCS%%share/doc/dvdauthor/manpages.html
 %%PORTDOCS%%share/doc/dvdauthor/menu.txt
+%%PORTDOCS%%share/doc/dvdauthor/spumux.html
 %%PORTDOCS%%@dirrm share/doc/dvdauthor
