@@ -800,7 +800,7 @@ clip		ports/databases/clip
 clips		ports/lang/clips
 clisp		ports/lang/clisp
 cln		ports/math/cln
-clo++		ports/textproc/clo++
+clo++		ports/devel/clo++
 clockspeed	ports/sysutils/clockspeed
 clog		ports/net/clog
 clri		src/sbin/clri
