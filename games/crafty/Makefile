@@ -1,12 +1,12 @@
 # New ports collection makefile for:	crafty
-# Version required:			16.10
+# Version required:			16.11
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.13 1999/06/18 19:50:58 mph Exp $
+# $Id: Makefile,v 1.14 1999/06/19 18:00:05 cpiazza Exp $
 #
 
-DISTNAME=	crafty-16.10
+DISTNAME=	crafty-16.11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
@@ -14,13 +14,13 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/common/ \
 		ftp://ftp.jpunix.com/pub/hyatt/v16/
-DISTFILES=	crafty-16.10.tar.gz crafty.doc crafty.faq read.me start.zip
+DISTFILES=	crafty-16.11.tar.gz crafty.doc crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
 ALL_TARGET=	crafty
 DIST_SUBDIR=	crafty
-EXTRACT_ONLY=	crafty-16.10.tar.gz
+EXTRACT_ONLY=	crafty-16.11.tar.gz
 IGNOREFILES=	crafty.doc crafty.faq read.me
 
 MAN6=		crafty.6
