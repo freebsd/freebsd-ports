@@ -10088,6 +10088,7 @@ tinyldap	ports/net/tinyldap
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
+tinyxml		ports/textproc/tinyxml
 tipa		ports/print/tipa
 tipograf	ports/print/tipograf
 tirc		ports/irc/tirc
