@@ -1,4 +1,4 @@
-The KASKADE 3.1 software package solves linear scalar elliptic and
+The KASKADE software package solves linear scalar elliptic and 
 parabolic problems in 1, 2, 3 space dimensions with adaptive finite
 element methods.
 
@@ -20,3 +20,5 @@ eLib at the Konrad-Zuse-Zentrum in Berlin.
    in the subdirectories
 
    /pub/kaskade/3.x  and   /pub/kaskade/Manuals/3.x
+
+WWW: http://www.zib.de/SciSoft/kaskade/

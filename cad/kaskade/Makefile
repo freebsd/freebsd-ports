@@ -27,11 +27,11 @@ MAKEFILE=	makefile
 ALL_TARGET=	k6
 
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/k6 $(PREFIX)/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/k6 ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/kaskade
+	@${MKDIR} ${PREFIX}/share/examples/kaskade
 	${INSTALL_DATA} ${WRKSRC}/*.cmd ${PREFIX}/share/examples/kaskade
 	${INSTALL_DATA} ${WRKSRC}/*.geo ${PREFIX}/share/examples/kaskade
 	${INSTALL_DATA} ${WRKSRC}/*.mat ${PREFIX}/share/examples/kaskade
