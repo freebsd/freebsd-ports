@@ -7,7 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
@@ -171,6 +171,7 @@ PLIST_SUB+=		NROFF:="@comment "
 .endif
 
 .if defined(WITH_OPENWRITER) || defined(PACKAGE_BUILDING)
+USE_GNOME+=		libgsf
 CONFIGURE_ARGS+=	--enable-OpenWriter
 PLIST_SUB+=		OPENWRITER:=""
 .else
