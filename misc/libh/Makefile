@@ -28,7 +28,7 @@ DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
 # arbitrary date for now.
-CVS_DATE=	Thu Mar 10 13:00:00 GMT 2001
+CVS_DATE=	Sat Mar 10 13:00:00 GMT 2001
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	:pserver:anonymous@usw4.freebsd.org:/home/libh/cvs
 DIRNAME=	${PORTNAME}-${PORTVERSION}
@@ -73,7 +73,7 @@ do-fetch:
 				${ECHO_MSG} ">> *** Please hit enter here for the password."; \
 				${CVS_CMD} -d $${CVS_SITE} login < /dev/null; \
 			fi ; \
-			if ${CVS_CMD} -d $${CVS_SITE} co ${DISTNAME}; then \
+			if ${CVS_CMD} -d $${CVS_SITE} co -D '${CVS_DATE}' ${DISTNAME}; then \
 				if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
 					${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 				fi; \
