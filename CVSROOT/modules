@@ -803,7 +803,7 @@ bubblemon2	ports/sysutils/bubblemon2
 buddy		ports/science/buddy
 buffer		ports/misc/buffer
 buffy		ports/x11-themes/buffy
-bugbuddy2	ports/devel/bugbuddy2
+bugbuddy	ports/devel/bugbuddy
 bugle		ports/graphics/bugle
 bugs		ports/security/bugs
 bugseeker	ports/java/bugseeker
