@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.72 1996/03/20 07:54:21 asami Exp $
+# $Id: Makefile,v 1.73 1996/04/09 04:01:08 asami Exp $
 #
 
     SUBDIR += amanda
@@ -22,6 +22,7 @@ RESTRICTED += mmv               # restrictive copyright
     SUBDIR += mshell
     SUBDIR += recode
     SUBDIR += rman
+    SUBDIR += sattrack
     SUBDIR += screen
     SUBDIR += team
     SUBDIR += tkinfo
