@@ -32,6 +32,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4d94fa0-6e38-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- possible cache-poisoning via malformed HTTP
+      responses</topic>
+    <affects>
+      <package>
+        <name>squid</name>
+        <range><lt>2.5.7_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The squid patches page notes:</p>
+        <blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing">
+          <p>This patch makes Squid considerably stricter while
+            parsing the HTTP protocol.</p>
+          <ol>
+            <li>A Content-length header should only appear once in a
+              valid request or response. Multiple Content-length
+              headers, in conjunction with specially crafted requests,
+              may allow Squid's cache to be poisioned with bad content
+              in certain situations.</li>
+            <li>CR characters is only allowed as part of the CR NL
+              line terminator, not alone. This to ensure that all
+              involved agrees on the structure of HTTP headers.</li>
+            <li>Rejects requests/responses that have whitespace in an
+              HTTP header name.</li>
+          </ol>
+        </blockquote>
+        <p>To enable these strict parsing rules, update to at least
+          squid-2.5.7_9 and specify <code>relaxed_header_parser
+          off</code> in squid.conf.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing</url>
+    </references>
+    <dates>
+      <discovery>2005-01-24</discovery>
+      <entry>2005-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="97c3a452-6e36-11d9-8324-000a95bc6fae">
     <topic>bugzilla -- cross-site scripting vulnerability</topic>
     <affects>
