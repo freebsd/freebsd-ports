@@ -1,0 +1,23 @@
+--- Makefile.orig	Sat Mar  6 01:22:22 2004
++++ Makefile	Sat Mar  6 01:24:19 2004
+@@ -1,15 +1,9 @@
+ # $Id: Makefile,v 1.4 2004/02/22 12:26:25 ofredj Exp $ # 
+ 
+-PREFIX=/usr/local
+-CC=gcc
+-LD=/usr/bin/ld
+-#DEBUG=-ggdb
+-CARGS=-O2 -pipe -ansi -Wall -pedantic 
+-COPTS= -ffast-math -ffloat-store -funroll-all-loops -funroll-loops
+-IFLAGS=-I/usr/local/include `xml2-config --cflags` 
+-LDFLAGS=-L/usr/local/lib/ -lpcre -lrrd `xml2-config --libs`
+-CFLAGS=${CARGS} ${IFLAGS} ${COPTS}
++IFLAGS=`xml2-config --cflags`
++LDFLAGS+=`xml2-config --libs` -lpcre -lrrd -lgnugetopt
++CFLAGS+=${CPPFLAGS} ${IFLAGS}
+ 
+ SRCS= getopt.c date.c file.c common.c xmlparser.c pcre.c rrd.c main.c syslog.c ims.c exim.c clf.c alerts.c smtpclient.c
+ OBJS= getopt.o date.o file.o common.o xmlparser.o pcre.o rrd.o main.o syslog.o ims.o exim.o clf.o alerts.o smtpclient.o
+ 
+ CGISRCS= cgi_xmlparser.c cgi.c rrdgraph.c
+ CGIOBJS= file.o common.o cgi_xmlparser.o cgi.o rrdgraph.o

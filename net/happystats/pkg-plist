@@ -1,0 +1,16 @@
+
+@comment $FreeBSD$
+bin/happystats
+www/cgi-bin/happystats.cgi
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/happystats.conf
+%%EXAMPLESDIR%%/happystats.courrier.xml
+%%EXAMPLESDIR%%/happystats.exim.natif.xml
+%%EXAMPLESDIR%%/happystats.exim.syslog.xml
+%%EXAMPLESDIR%%/happystats.ims.xml
+%%EXAMPLESDIR%%/happystats.postfix.xml
+%%EXAMPLESDIR%%/happystats.sendmail.xml
+@dirrm %%EXAMPLESDIR%%
