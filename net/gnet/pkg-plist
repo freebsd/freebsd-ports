@@ -9,15 +9,18 @@ include/gnet/md5.h
 include/gnet/pack.h
 include/gnet/server.h
 include/gnet/sha.h
+include/gnet/socks.h
 include/gnet/tcp.h
 include/gnet/udp.h
+include/gnet/unix.h
 include/gnet/url.h
 lib/libgnet.a
+lib/libgnet.la
 lib/libgnet.so
-lib/libgnet.so.0
+lib/libgnet.so.1
+libdata/pkgconfig/gnet.pc
 share/aclocal/gnet.m4
 share/doc/libgnet1.1-dev/html/book1.html
-share/doc/libgnet1.1-dev/html/dnstest.html
 share/doc/libgnet1.1-dev/html/gnet-conn.html
 share/doc/libgnet1.1-dev/html/gnet-developers-tips.html
 share/doc/libgnet1.1-dev/html/gnet-developers.html
@@ -31,18 +34,18 @@ share/doc/libgnet1.1-dev/html/gnet-overview.html
 share/doc/libgnet1.1-dev/html/gnet-pack.html
 share/doc/libgnet1.1-dev/html/gnet-server.html
 share/doc/libgnet1.1-dev/html/gnet-sha.html
+share/doc/libgnet1.1-dev/html/gnet-socks.html
 share/doc/libgnet1.1-dev/html/gnet-tcp.html
 share/doc/libgnet1.1-dev/html/gnet-udp.html
+share/doc/libgnet1.1-dev/html/gnet-unix.html
 share/doc/libgnet1.1-dev/html/gnet-url.html
 share/doc/libgnet1.1-dev/html/hfetch.html
-share/doc/libgnet1.1-dev/html/hostinfo.html
 share/doc/libgnet1.1-dev/html/index.html
 share/doc/libgnet1.1-dev/html/index.sgml
-share/doc/libgnet1.1-dev/html/jmtransfer.html
 share/doc/libgnet1.1-dev/html/libgnet-reference.html
-share/doc/libgnet1.1-dev/html/ljoust.html
 share/doc/libgnet1.1-dev/html/sdr.html
 share/doc/libgnet1.1-dev/html/tests.html
-@dirrm include/gnet
 @dirrm share/doc/libgnet1.1-dev/html
 @dirrm share/doc/libgnet1.1-dev
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@dirrm include/gnet
