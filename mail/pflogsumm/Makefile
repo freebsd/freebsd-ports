@@ -19,6 +19,10 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Ca
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+PLIST_FILES=	bin/pflogsumm
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README ToDo pflogsumm-faq.txt
+.endif
 
 MAN1=		pflogsumm.1
 
@@ -28,7 +32,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README ToDo pflogsumm-faq.txt
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
