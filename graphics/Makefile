@@ -96,7 +96,6 @@
     SUBDIR += jslice
     SUBDIR += juno-2
     SUBDIR += kdc2tiff
-    SUBDIR += kdegraphics11
     SUBDIR += kdegraphics2
     SUBDIR += killustrator
     SUBDIR += kplot3d

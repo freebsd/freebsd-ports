@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \

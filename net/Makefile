@@ -119,7 +119,6 @@
     SUBDIR += isic
     SUBDIR += jabber
     SUBDIR += jwhois
-    SUBDIR += kdenetwork11
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
     SUBDIR += kicq

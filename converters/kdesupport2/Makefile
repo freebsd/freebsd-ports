@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kdesupport
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	converters kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

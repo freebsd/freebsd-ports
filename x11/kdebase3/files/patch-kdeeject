@@ -1,9 +1,9 @@
---- kdesktop/kdeeject.orig	Fri Dec  1 15:25:26 2000
-+++ kdesktop/kdeeject	Fri Dec  1 15:25:33 2000
-@@ -8,7 +8,8 @@
- # kmessage, to show a message box in case of error.
- #
- if [ $# = 1 -a "$1" != "--help" ]; then
+--- kdesktop/kdeeject	Wed Dec 13 13:25:02 2000
++++ kdesktop/kdeeject.new	Fri Feb 23 02:59:54 2001
+@@ -11,7 +11,8 @@
+   # TODO: On bsd, it should be 'cdcontrol -f $1 eject'
+   # Checking for stuff in the PATH is ugly with sh though.
+   # I guess this is the reason for making this a kde app...
 -  if eject $1; then
 +  dev=`echo $1 | sed -E -e 's#/dev/##' -e 's/([0-9])./\1/'`
 +  if cdcontrol -f $dev eject; then
