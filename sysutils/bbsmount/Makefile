@@ -19,30 +19,20 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with FreeBSD >= 5.x"
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-	${WRKSRC}/configure
+USE_GCC=	2.95
+PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Installing documentation"
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL} ${WRKSRC}/data/README.bbsmount ${DOCSDIR}
-
-.for a in README BUGS NEWS AUTHORS ChangeLog
-	@${INSTALL} ${WRKSRC}/${a} ${DOCSDIR}
-.endfor
-
+	${INSTALL} ${WRKSRC}/data/README.bbsmount ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL} ${PORTDOCS} ${DOCSDIR}
+.endif
 	if [ ! -e ${PREFIX}/share/bbtools/bbsmount.bb ]; then \
 		${CP} -p ${WRKSRC}/data/bbsmount.bb \
 		${PREFIX}/share/bbtools/bbsmount.bb; \
 	fi
 	@${INSTALL} ${WRKSRC}/data/bbsmount.bb ${PREFIX}/share/bbtools/bbsmount.bb-sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

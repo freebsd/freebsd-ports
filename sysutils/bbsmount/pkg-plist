@@ -5,24 +5,17 @@ share/bbtools/bbsmount.bb-sample
 share/bbtools/bbsmount.nobb
 share/bbtools/bbsmount.style
 share/bbtools/README.bbsmount
-share/bbsmount/examples/bbsmount.bb.ex
-share/bbsmount/images/notfound.xpm
-share/bbsmount/images/mountedcd.xpm
-share/bbsmount/images/mounteddisk.xpm
-share/bbsmount/images/mounted.xpm
-share/bbsmount/images/mountedzip.xpm
-share/bbsmount/images/unmountedcd.xpm
-share/bbsmount/images/unmounteddisk.xpm
-share/bbsmount/images/unmounted.xpm
-share/bbsmount/images/unmountedzip.xpm
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.bbsmount
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/examples/bbsmount.bb.ex
+%%DATADIR%%/images/notfound.xpm
+%%DATADIR%%/images/mountedcd.xpm
+%%DATADIR%%/images/mounteddisk.xpm
+%%DATADIR%%/images/mounted.xpm
+%%DATADIR%%/images/mountedzip.xpm
+%%DATADIR%%/images/unmountedcd.xpm
+%%DATADIR%%/images/unmounteddisk.xpm
+%%DATADIR%%/images/unmounted.xpm
+%%DATADIR%%/images/unmountedzip.xpm
 @unexec rmdir %D/share/bbtools 2>/dev/null || true
-@unexec rmdir %D/share/bbsmount/examples 2>/dev/null || true
-@unexec rmdir %D/share/bbsmount/images 2>/dev/null || true
-@unexec rmdir %D/share/bbsmount 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/examples 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/images 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
