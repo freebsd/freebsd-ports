@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/gdbmmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/gdbm.so
