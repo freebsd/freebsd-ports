@@ -121,7 +121,7 @@ post-install:
 	${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST}
 	${RM} ${TMPPLIST}.new
 .endif
-	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR} > ${PREFIX}/share/doc/krb5/README.FreeBSD
+	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${CHMOD} 444 ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"
 	@${ECHO} "This port of MIT Kerberos 5 includes remote login     "
