@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Tie/DB_FileLock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DB_FileLock/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Tie
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DB_FileLock
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie
