@@ -1,0 +1,17 @@
+Xamp is a version of amp with graphical interface provided by
+qt toolkit. It comes with the amp-0.7.6 as the core player, as
+well as two album management tools: Playlist Editor and ID3 Tag
+Editor, and is able to change the background on the fly.
+
+Although it's not as nifty as x11amp is, hopefully it takes less
+CPU time and doesn't require OSS sound driver to run.
+
+The program pretty much speaks for itself. You may consult the
+man page or the document in the "About Xamp" panel for more
+detail.
+
+Have fun!
+
+
+- Joe
+jslu@dns.ntu.edu.tw
