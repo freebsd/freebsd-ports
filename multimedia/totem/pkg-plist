@@ -40,37 +40,12 @@ etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf/%
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-nsv/%gconf.xml
-etc/gconf/schemas/totem.schemas
 etc/gconf/schemas/totem-video-thumbnail.schemas
+etc/gconf/schemas/totem.schemas
 libdata/bonobo/servers/Totem_properties.server
 libexec/totem-properties-page
 share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
-share/gnome/mime-info/totem.keys
-share/gnome/pixmaps/media-player-48.png
-share/gnome/pixmaps/vanity.png
-share/gnome/totem/filmholes.png
-share/gnome/totem/media-player-48.png
-share/gnome/totem/stock_media_next.png
-share/gnome/totem/stock_media_previous.png
-share/gnome/totem/stock_media_pause.png
-share/gnome/totem/stock_media_play.png
-share/gnome/totem/stock-tool-brightness-contrast-22.png
-share/gnome/totem/playlist-16.png
-share/gnome/totem/playlist-24.png
-share/gnome/totem/playlist-playing.png
-share/gnome/totem/rhythmbox-volume-max.png
-share/gnome/totem/rhythmbox-volume-zero.png
-share/gnome/totem/totem.glade
-share/gnome/totem/totem-download.glade
-share/gnome/totem/totem_logo.png
-share/gnome/totem/playlist.glade
-share/gnome/totem/properties.glade
-share/gnome/totem/uri.glade
-share/gnome/totem/vanity.glade
-share/gnome/totem/vanity.png
-share/gnome/help/totem/C/totem.xml
-share/gnome/help/totem/C/legal.xml
 share/gnome/help/totem/C/figures/totem_next_button.png
 share/gnome/help/totem/C/figures/totem_pause_button.png
 share/gnome/help/totem/C/figures/totem_play_button.png
@@ -79,12 +54,40 @@ share/gnome/help/totem/C/figures/totem_show_playlist_button.png
 share/gnome/help/totem/C/figures/totem_start_window.png
 share/gnome/help/totem/C/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/C/figures/totem_volume_mute_button.png
+share/gnome/help/totem/C/legal.xml
+share/gnome/help/totem/C/totem.xml
+share/gnome/mime-info/totem.keys
 share/gnome/omf/totem/totem-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/totem/totem-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/totem/totem-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/totem/totem-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/media-player-48.png
+share/gnome/pixmaps/vanity.png
+share/gnome/totem/filmholes.png
+share/gnome/totem/media-player-48.png
+share/gnome/totem/playlist-16.png
+share/gnome/totem/playlist-24.png
+share/gnome/totem/playlist-playing.png
+share/gnome/totem/playlist.glade
+share/gnome/totem/properties.glade
+share/gnome/totem/rhythmbox-volume-max.png
+share/gnome/totem/rhythmbox-volume-zero.png
+share/gnome/totem/screenshot.glade
+share/gnome/totem/stock-tool-brightness-contrast-22.png
+share/gnome/totem/stock_media_next.png
+share/gnome/totem/stock_media_pause.png
+share/gnome/totem/stock_media_play.png
+share/gnome/totem/stock_media_previous.png
+share/gnome/totem/totem.glade
+share/gnome/totem/totem_logo.png
+share/gnome/totem/uri.glade
+share/gnome/totem/vanity.glade
+share/gnome/totem/vanity.png
 share/locale/am/LC_MESSAGES/totem.mo
+share/locale/ar/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
-share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
+share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/bn/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
 share/locale/cs/LC_MESSAGES/totem.mo
@@ -92,18 +95,23 @@ share/locale/cy/LC_MESSAGES/totem.mo
 share/locale/da/LC_MESSAGES/totem.mo
 share/locale/de/LC_MESSAGES/totem.mo
 share/locale/el/LC_MESSAGES/totem.mo
+share/locale/en_CA/LC_MESSAGES/totem.mo
 share/locale/en_GB/LC_MESSAGES/totem.mo
 share/locale/es/LC_MESSAGES/totem.mo
 share/locale/et/LC_MESSAGES/totem.mo
+share/locale/eu/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
+share/locale/hu/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
+share/locale/lt/LC_MESSAGES/totem.mo
 share/locale/lv/LC_MESSAGES/totem.mo
+share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
@@ -119,6 +127,7 @@ share/locale/sv/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/uk/LC_MESSAGES/totem.mo
 share/locale/vi/LC_MESSAGES/totem.mo
+share/locale/wa/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/help/totem/C/figures
@@ -166,4 +175,5 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@ogg
 @dirrm etc/gconf/gconf.xml.defaults/apps/totem
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-C.omf 2>/dev/null || /usr/bin/true
