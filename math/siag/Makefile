@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.7 1998/09/21 01:35:32 steve Exp $
+# $Id: Makefile,v 1.8 1998/09/26 04:41:35 itojun Exp $
 #
 
 DISTNAME=	siag-2.80
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	ports@freebsd.org
+
+BROKEN=		build
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
