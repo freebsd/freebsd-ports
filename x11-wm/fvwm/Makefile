@@ -11,12 +11,13 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The fvwm window manager
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+# must overwrite the default from bsd.port.mk
 XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all
 MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
