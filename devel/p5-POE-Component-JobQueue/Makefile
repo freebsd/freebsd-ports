@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	POE-Component-JobQueue
-PORTVERSION=	0.51
+PORTVERSION=	0.53
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://poe.perl.org/poedown/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
-COMMENT=	POE component for processing large numbers of tasks with finite numbers of workers
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	POE component to manage queues and worker pools
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Component::JobQueue.3
 
 .include <bsd.port.mk>
