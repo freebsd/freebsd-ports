@@ -1,0 +1,17 @@
+This module provides a single command for generating random password
+that is close enough to a real word that it is easy to remember.  It
+does this by using the frequency of letter combinations in a language
+(the frequency table is generated during installation although multiple
+tables can be generated and used for different languages).
+
+This module should not be used for high security applications (such as
+user accounts) since it returns passwords that are not mixed case, have
+no punctuation and no letters. This word can be used as a basis for a
+more secure password.
+
+The language of the password depends on the language used to construct
+the frequency table.
+
+WWW: http://search.cpan.org/search?dist=Crypt-PassGen
+
+-Anton
