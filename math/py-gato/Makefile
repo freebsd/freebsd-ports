@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Gato-${PORTVERSION:U:C|\.([^.]*)$|\1|}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python-based toolbox to visualise algorithms on graphs
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

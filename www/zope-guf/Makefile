@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION:S|.|-|g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A roll-your-own user folder product for Zope
 
 DEPRECATED=	"no longer being developed: use SimpleUserFolder or exUserFolder instead"

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	python-${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module to parse or write delimeter-separated (e.g. CSV) files
 
 .if defined(WITH_GUI)

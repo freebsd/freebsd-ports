@@ -13,7 +13,7 @@ MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed source code management / revision control system
 
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ DISTFILES=	PageTemplates-${PORTVERSION}.tar.gz \
 		TAL-${PORTVERSION}.tar.gz \
 		ZTUtils-${ZTUVERSION}.tar.gz
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zope Page Templates separate design and logic in Zope applications
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Grouch-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for describing and enforcing a Python object schema
 
 USE_PYTHON=	yes

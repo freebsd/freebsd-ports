@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mysql-python
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL Database Adapter for the Zope web application framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb

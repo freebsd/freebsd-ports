@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyexif
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyexif-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to extract EXIF metadata from JPEG and TIFF image files
 
 USE_PYTHON=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
 RUN_DEPENDS=	coalesce:${PORTSDIR}/biology/coalesce \
