@@ -73,15 +73,15 @@ do-install:
 	@${CP} /compat/linux/etc/ld.so.conf ${WRKDIR}/tmp/ld.so.conf.temp
 	@${ECHO} "${WRKDIR}/tmp" >> ${WRKDIR}/tmp/ld.so.conf.temp
 	@PATH=${PATH}:${WRKDIR}/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WRKDIR}/tmp:/usr/lib:/lib:/usr/compat/linux/lib
-	@/usr/compat/linux/sbin/ldconfig -f ${WRKDIR}/tmp/ld.so.conf.temp
+	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WRKDIR}/tmp:/usr/lib:/lib:/compat/linux/lib
+	@/compat/linux/sbin/ldconfig -f ${WRKDIR}/tmp/ld.so.conf.temp
 	@${CAT} ${PKGDIR}/MESSAGE
 	@-TEMP=${WRKDIR}/tmp ${WRKDIR}/so51inst/office51/setup /net
 	@ ${ECHO}
 	@ ${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.1a wurde erfolgreich
 	@ ${ECHO} auf Ihrem System installiert.
 	@ ${ECHO}
-	@/usr/compat/linux/sbin/ldconfig
+	@/compat/linux/sbin/ldconfig
 .endif
 
 post-install:
