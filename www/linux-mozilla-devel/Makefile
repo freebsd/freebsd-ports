@@ -12,16 +12,6 @@ CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi/
 PKGNAMEPREFIX=	linux-
-DISTFILES=	browser.xpi \
-		chatzilla.xpi \
-		deflenus.xpi \
-		langenus.xpi \
-		mail.xpi \
-		psm.xpi \
-		regus.xpi \
-		talkback.xpi \
-		venkman.xpi \
-		xpcom.xpi
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
@@ -44,6 +34,62 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 STARTUP_CMD=	linux-mozilla
 
+.if !defined(BATCH)
+IS_INTERACTIVE=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+	${MKDIR} ${WRKSRC}
+.if !defined(BATCH)
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+.endif
+DISTFILES=	browser.xpi \
+		chatzilla.xpi \
+		deflenus.xpi \
+		langenus.xpi \
+		mail.xpi \
+		psm.xpi \
+		regus.xpi \
+		talkback.xpi \
+		venkman.xpi \
+		xpcom.xpi
+.if exists(${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf)
+DISTFILES!= ${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
+.endif
+
+checksum:
+.if !defined(REAL_EXTRACT)
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
+.endif
+	@if [ ! -f ${MD5_FILE} ]; then \
+		${ECHO_MSG} ">> No MD5 checksum file."; \
+	else \
+		(cd ${DISTDIR}; OK="true"; \
+		  for file in ${_CKSUMFILES}; do \
+			if [ -r $$file ]; then \
+				CKSUM=`${MD5} < $$file`; \
+				CKSUM2=`${GREP} "^MD5 ($$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				if [ "$$CKSUM2" = "" ]; then \
+					${ECHO_MSG} ">> No checksum recorded for $$file."; \
+					OK="false"; \
+				elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
+					${ECHO_MSG} ">> Checksum OK for $$file."; \
+			else \
+					${ECHO_MSG} ">> Checksum mismatch for $$file."; \
+					OK="false"; \
+				fi; \
+			fi; \
+		  done; \
+		  if [ "$$OK" != "true" ]; then \
+			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
+			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
+			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
+			exit 1; \
+		  fi) ; \
+	fi
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
@@ -51,7 +97,20 @@ do-extract:
 .endfor
 
 do-patch:
+	${MKDIR} ${WRKSRC}/tmp
+	${TAR} -C ${WRKSRC}/tmp -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
+	for j in chatzilla messenger pippki; do \
+        	if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
+			for i in communicator editor messenger navigator; do \
+				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
+					${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf; \
+				${CP} ${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf \
+					${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf; \
+			done; \
+			${RM} -f ${WRKSRC}/bin/chrome/overlayinfo/$$j/content/overlays.rdf; \
+		fi; \
+	done;
 
 do-configure:
 #	- kldload linux
@@ -94,4 +153,4 @@ post-install:
 	- ${PREFIX}/lib/linux-mozilla/linkfarm
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
