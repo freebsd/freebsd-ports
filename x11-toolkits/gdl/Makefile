@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	gdl
-PORTVERSION=	0.1.0
-CATEGORIES?=	x11-toolkits gnome
+PORTVERSION=	0.4.0
+CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 
-MAINTAINER?=	gnome@FreeBSD.org
-COMMENT=	A components intended to be shared between GNOME development tools
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Components intended to be shared between GNOME development tools
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack bonobo gnomevfs
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
