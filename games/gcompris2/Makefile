@@ -28,4 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=		gcompris
 
+CONFLICTS=	gcompris-*
+
 .include <bsd.port.mk>
