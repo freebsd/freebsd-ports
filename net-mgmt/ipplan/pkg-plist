@@ -1,0 +1,313 @@
+%%IPPLANDIR%%/CHANGELOG
+%%IPPLANDIR%%/CONTRIBUTORS
+%%IPPLANDIR%%/DNS-USAGE
+%%IPPLANDIR%%/INSTALL
+%%IPPLANDIR%%/INSTALL-IIS+MSSQL
+%%IPPLANDIR%%/INSTALL-ORACLE9i
+%%IPPLANDIR%%/INSTALL-POSTGRESQL
+%%IPPLANDIR%%/INSTALL-WINDOWS
+%%IPPLANDIR%%/INTERNALS
+%%IPPLANDIR%%/IPplan.jpg
+%%IPPLANDIR%%/LICENSE
+%%IPPLANDIR%%/README
+%%IPPLANDIR%%/README.html
+%%IPPLANDIR%%/README.sgml
+%%IPPLANDIR%%/TODO
+%%IPPLANDIR%%/TRANSLATIONS
+%%IPPLANDIR%%/UPGRADE
+%%IPPLANDIR%%/admin/addboundstogroup.php
+%%IPPLANDIR%%/admin/addusertogroup.php
+%%IPPLANDIR%%/admin/admin.php
+%%IPPLANDIR%%/admin/changepassword.php
+%%IPPLANDIR%%/admin/changesettings.php
+%%IPPLANDIR%%/admin/creategroup.php
+%%IPPLANDIR%%/admin/createuser.php
+%%IPPLANDIR%%/admin/deleteaccess.php
+%%IPPLANDIR%%/admin/deletebounds.php
+%%IPPLANDIR%%/admin/displayaccessform.php
+%%IPPLANDIR%%/admin/displayauditlog.php
+%%IPPLANDIR%%/admin/displayboundsform.php
+%%IPPLANDIR%%/admin/exportbase.php
+%%IPPLANDIR%%/admin/exportbaseform.php
+%%IPPLANDIR%%/admin/exportip.php
+%%IPPLANDIR%%/admin/exportipform.php
+%%IPPLANDIR%%/admin/importbase.php
+%%IPPLANDIR%%/admin/importbaseform.php
+%%IPPLANDIR%%/admin/importip.php
+%%IPPLANDIR%%/admin/importipform.php
+%%IPPLANDIR%%/admin/install.php
+%%IPPLANDIR%%/admin/modifygroup.php
+%%IPPLANDIR%%/admin/schemacreate.php
+%%IPPLANDIR%%/adodb/adodb-csvlib.inc.php
+%%IPPLANDIR%%/adodb/adodb-datadict.inc.php
+%%IPPLANDIR%%/adodb/adodb-error.inc.php
+%%IPPLANDIR%%/adodb/adodb-errorhandler.inc.php
+%%IPPLANDIR%%/adodb/adodb-errorpear.inc.php
+%%IPPLANDIR%%/adodb/adodb-exceptions.inc.php
+%%IPPLANDIR%%/adodb/adodb-iterator.inc.php
+%%IPPLANDIR%%/adodb/adodb-lib.inc.php
+%%IPPLANDIR%%/adodb/adodb-pager.inc.php
+%%IPPLANDIR%%/adodb/adodb-pear.inc.php
+%%IPPLANDIR%%/adodb/adodb-perf.inc.php
+%%IPPLANDIR%%/adodb/adodb-perf.inc.php.#.LENS-03-09-05
+%%IPPLANDIR%%/adodb/adodb-php4.inc.php
+%%IPPLANDIR%%/adodb/adodb-time.inc.php
+%%IPPLANDIR%%/adodb/adodb-time.zip
+%%IPPLANDIR%%/adodb/adodb-xmlschema.inc.php
+%%IPPLANDIR%%/adodb/adodb.inc.php
+%%IPPLANDIR%%/adodb/contrib/toxmlrpc.inc.php
+%%IPPLANDIR%%/adodb/cute_icons_for_site/adodb.gif
+%%IPPLANDIR%%/adodb/cute_icons_for_site/adodb2.gif
+%%IPPLANDIR%%/adodb/datadict/datadict-access.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-db2.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-firebird.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-generic.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-ibase.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-informix.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-mssql.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-mysql.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-oci8.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-postgres.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-sapdb.inc.php
+%%IPPLANDIR%%/adodb/datadict/datadict-sybase.inc.php
+%%IPPLANDIR%%/adodb/docs/docs-adodb.htm
+%%IPPLANDIR%%/adodb/docs/docs-datadict.htm
+%%IPPLANDIR%%/adodb/docs/docs-oracle.htm
+%%IPPLANDIR%%/adodb/docs/docs-perf.htm
+%%IPPLANDIR%%/adodb/docs/docs-session.htm
+%%IPPLANDIR%%/adodb/docs/old-changelog.htm
+%%IPPLANDIR%%/adodb/docs/readme.htm
+%%IPPLANDIR%%/adodb/docs/tips_portable_sql.htm
+%%IPPLANDIR%%/adodb/docs/tute.htm
+%%IPPLANDIR%%/adodb/drivers/adodb-access.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ado.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ado5.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ado_access.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ado_mssql.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-borland_ibase.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-csv.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-db2.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-fbsql.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-firebird.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ibase.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-informix.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-informix72.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-ldap.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-mssql.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-mssqlpo.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-mysql.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-mysqli.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-mysqlt.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-netezza.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-oci8.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-oci805.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-oci8po.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-odbc.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-odbc_mssql.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-odbc_oracle.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-odbtp.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-odbtp_unicode.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-oracle.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-pdo.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-postgres.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-postgres64.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-postgres7.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-proxy.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-sapdb.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-sqlanywhere.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-sqlite.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-sqlite.inc.php.bak
+%%IPPLANDIR%%/adodb/drivers/adodb-sqlitepo.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-sybase.inc.php
+%%IPPLANDIR%%/adodb/drivers/adodb-vfp.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-ar.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-bg.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-bgutf8.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-ca.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-cn.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-cz.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-de.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-en.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-es.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-fr.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-hu.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-it.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-nl.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-pl.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-pt-br.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-ro.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-ru1251.inc.php
+%%IPPLANDIR%%/adodb/lang/adodb-sv.inc.php
+%%IPPLANDIR%%/adodb/license.txt
+%%IPPLANDIR%%/adodb/pear/Auth/Container/ADOdb.php
+%%IPPLANDIR%%/adodb/pear/readme.Auth.txt
+%%IPPLANDIR%%/adodb/perf/perf-db2.inc.php
+%%IPPLANDIR%%/adodb/perf/perf-informix.inc.php
+%%IPPLANDIR%%/adodb/perf/perf-mssql.inc.php
+%%IPPLANDIR%%/adodb/perf/perf-mysql.inc.php
+%%IPPLANDIR%%/adodb/perf/perf-oci8.inc.php
+%%IPPLANDIR%%/adodb/perf/perf-postgres.inc.php
+%%IPPLANDIR%%/adodb/pivottable.inc.php
+%%IPPLANDIR%%/adodb/readme.txt
+%%IPPLANDIR%%/adodb/rsfilter.inc.php
+%%IPPLANDIR%%/adodb/server.php
+%%IPPLANDIR%%/adodb/session/adodb-compress-bzip2.php
+%%IPPLANDIR%%/adodb/session/adodb-compress-gzip.php
+%%IPPLANDIR%%/adodb/session/adodb-cryptsession.php
+%%IPPLANDIR%%/adodb/session/adodb-encrypt-mcrypt.php
+%%IPPLANDIR%%/adodb/session/adodb-encrypt-md5.php
+%%IPPLANDIR%%/adodb/session/adodb-encrypt-secret.php
+%%IPPLANDIR%%/adodb/session/adodb-sess.txt
+%%IPPLANDIR%%/adodb/session/adodb-session-clob.php
+%%IPPLANDIR%%/adodb/session/adodb-session.php
+%%IPPLANDIR%%/adodb/session/adodb-sessions.mysql.sql
+%%IPPLANDIR%%/adodb/session/adodb-sessions.oracle.clob.sql
+%%IPPLANDIR%%/adodb/session/adodb-sessions.oracle.sql
+%%IPPLANDIR%%/adodb/session/crypt.inc.php
+%%IPPLANDIR%%/adodb/session/old/adodb-cryptsession.php
+%%IPPLANDIR%%/adodb/session/old/adodb-session-clob.php
+%%IPPLANDIR%%/adodb/session/old/adodb-session.php
+%%IPPLANDIR%%/adodb/session/old/crypt.inc.php
+%%IPPLANDIR%%/adodb/tests/benchmark.php
+%%IPPLANDIR%%/adodb/tests/client.php
+%%IPPLANDIR%%/adodb/tests/pdo.php
+%%IPPLANDIR%%/adodb/tests/test-datadict.php
+%%IPPLANDIR%%/adodb/tests/test-perf.php
+%%IPPLANDIR%%/adodb/tests/test-pgblob.php
+%%IPPLANDIR%%/adodb/tests/test-php5.php
+%%IPPLANDIR%%/adodb/tests/test-xmlschema.php
+%%IPPLANDIR%%/adodb/tests/test.php
+%%IPPLANDIR%%/adodb/tests/test2.php
+%%IPPLANDIR%%/adodb/tests/test3.php
+%%IPPLANDIR%%/adodb/tests/test4.php
+%%IPPLANDIR%%/adodb/tests/test5.php
+%%IPPLANDIR%%/adodb/tests/test_rs_array.php
+%%IPPLANDIR%%/adodb/tests/testcache.php
+%%IPPLANDIR%%/adodb/tests/testdatabases.inc.php
+%%IPPLANDIR%%/adodb/tests/testgenid.php
+%%IPPLANDIR%%/adodb/tests/testmssql.php
+%%IPPLANDIR%%/adodb/tests/testoci8.php
+%%IPPLANDIR%%/adodb/tests/testoci8cursor.php
+%%IPPLANDIR%%/adodb/tests/testpaging.php
+%%IPPLANDIR%%/adodb/tests/testpear.php
+%%IPPLANDIR%%/adodb/tests/testsessions.php
+%%IPPLANDIR%%/adodb/tests/time.php
+%%IPPLANDIR%%/adodb/tests/tmssql.php
+%%IPPLANDIR%%/adodb/tests/xmlschema.xml
+%%IPPLANDIR%%/adodb/toexport.inc.php
+%%IPPLANDIR%%/adodb/tohtml.inc.php
+%%IPPLANDIR%%/adodb/xmlschema.dtd
+%%IPPLANDIR%%/adodb/xsl/convert-0.1-0.2.xsl
+%%IPPLANDIR%%/adodb/xsl/convert-0.2-0.1.xsl
+%%IPPLANDIR%%/adodb/xsl/remove-0.2.xsl
+%%IPPLANDIR%%/auth.php
+%%IPPLANDIR%%/class.dbflib.php
+%%IPPLANDIR%%/class.templib.php
+%%IPPLANDIR%%/config.php
+%%IPPLANDIR%%/contrib/bind9_zone.xsl
+%%IPPLANDIR%%/contrib/dumproute.sh
+%%IPPLANDIR%%/contrib/dumproute.txt
+%%IPPLANDIR%%/index.php
+%%IPPLANDIR%%/ipplanlib.php
+%%IPPLANDIR%%/layout/class.layout
+%%IPPLANDIR%%/layout/layoutman.html
+%%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/fr/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/fr/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/messages.po
+%%IPPLANDIR%%/schema.php
+%%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
+%%IPPLANDIR%%/templates/swip_reassign-simple-new3.0.xsl
+%%IPPLANDIR%%/templates/swip_reassign-simple-remove3.0.xsl
+%%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
+%%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
+%%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
+%%IPPLANDIR%%/user/createarea.php
+%%IPPLANDIR%%/user/createrange.php
+%%IPPLANDIR%%/user/createsubnet.php
+%%IPPLANDIR%%/user/createsubnetform.php
+%%IPPLANDIR%%/user/deletearea.php
+%%IPPLANDIR%%/user/deletecustomer.php
+%%IPPLANDIR%%/user/deleterange.php
+%%IPPLANDIR%%/user/displaybase.php
+%%IPPLANDIR%%/user/displaybaseform.php
+%%IPPLANDIR%%/user/displaycustomerform.php
+%%IPPLANDIR%%/user/displayoverlap.php
+%%IPPLANDIR%%/user/displayoverlapform.php
+%%IPPLANDIR%%/user/displayrouter.php
+%%IPPLANDIR%%/user/displayrouterform.php
+%%IPPLANDIR%%/user/displaysubnet.php
+%%IPPLANDIR%%/user/displayswip.php
+%%IPPLANDIR%%/user/displayswipform.php
+%%IPPLANDIR%%/user/dns.php
+%%IPPLANDIR%%/user/emailswip.php
+%%IPPLANDIR%%/user/findfree.php
+%%IPPLANDIR%%/user/findfreeform.php
+%%IPPLANDIR%%/user/iptemplate.xml
+%%IPPLANDIR%%/user/iptemplate.xml.sample
+%%IPPLANDIR%%/user/logout.php
+%%IPPLANDIR%%/user/modifyarearange.php
+%%IPPLANDIR%%/user/modifyarearangeform.php
+%%IPPLANDIR%%/user/modifybase.php
+%%IPPLANDIR%%/user/modifybaseform.php
+%%IPPLANDIR%%/user/modifycustomer.php
+%%IPPLANDIR%%/user/modifydns.php
+%%IPPLANDIR%%/user/modifydnsform.php
+%%IPPLANDIR%%/user/modifydnsrecord.php
+%%IPPLANDIR%%/user/modifydnsrecordform.php
+%%IPPLANDIR%%/user/modifyipform.php
+%%IPPLANDIR%%/user/modifyipformmul.php
+%%IPPLANDIR%%/user/modifysubnet.php
+%%IPPLANDIR%%/user/modifyzone.php
+%%IPPLANDIR%%/user/modifyzoneform.php
+%%IPPLANDIR%%/user/ping.php
+%%IPPLANDIR%%/user/searchall.php
+%%IPPLANDIR%%/user/searchallform.php
+%%IPPLANDIR%%/user/swiplib.php
+%%IPPLANDIR%%/user/traceroute.php
+%%IPPLANDIR%%/user/whois.php
+%%IPPLANDIR%%/user/whoisclass.php
+%%IPPLANDIR%%/xmllib.php
+@dirrm %%IPPLANDIR%%/admin
+@dirrm %%IPPLANDIR%%/adodb/contrib
+@dirrm %%IPPLANDIR%%/adodb/cute_icons_for_site
+@dirrm %%IPPLANDIR%%/adodb/datadict
+@dirrm %%IPPLANDIR%%/adodb/docs
+@dirrm %%IPPLANDIR%%/adodb/drivers
+@dirrm %%IPPLANDIR%%/adodb/lang
+@dirrm %%IPPLANDIR%%/adodb/pear/Auth/Container
+@dirrm %%IPPLANDIR%%/adodb/pear/Auth
+@dirrm %%IPPLANDIR%%/adodb/pear
+@dirrm %%IPPLANDIR%%/adodb/perf
+@dirrm %%IPPLANDIR%%/adodb/session/old
+@dirrm %%IPPLANDIR%%/adodb/session
+@dirrm %%IPPLANDIR%%/adodb/tests
+@dirrm %%IPPLANDIR%%/adodb/xsl
+@dirrm %%IPPLANDIR%%/adodb
+@dirrm %%IPPLANDIR%%/contrib
+@dirrm %%IPPLANDIR%%/layout
+@dirrm %%IPPLANDIR%%/locale/de/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/de
+@dirrm %%IPPLANDIR%%/locale/es/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/es
+@dirrm %%IPPLANDIR%%/locale/fr/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/fr
+@dirrm %%IPPLANDIR%%/locale/it/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/it
+@dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/no
+@dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/pt
+@dirrm %%IPPLANDIR%%/locale
+@dirrm %%IPPLANDIR%%/templates
+@dirrm %%IPPLANDIR%%/user
+@dirrm %%IPPLANDIR%%

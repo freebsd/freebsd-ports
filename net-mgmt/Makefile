@@ -60,6 +60,7 @@
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipfm
+    SUBDIR += ipplan
     SUBDIR += ipv6calc
     SUBDIR += irrtoolset
     SUBDIR += isic
