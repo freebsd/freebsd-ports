@@ -1,0 +1,241 @@
+--- webalizer.c.a-urasim	Wed Apr 17 07:11:31 2002
++++ webalizer.c	Tue Dec 23 23:26:23 2003
+@@ -39,6 +39,7 @@
+ #include <sys/utsname.h>
+ #include <sys/times.h>
+ #include <zlib.h>
++#include <iconv.h>
+ 
+ /* ensure getopt */
+ #ifdef HAVE_GETOPT_H
+@@ -224,6 +225,8 @@
+ char    *f_cp=f_buf+GZ_BUFSIZE;               /* pointer into the buffer  */
+ int     f_end;                                /* count to end of buffer   */ 
+ 
++iconv_t cd_from_sjis, cd_from_utf8;
++
+ /*********************************************/
+ /* MAIN - start here                         */
+ /*********************************************/
+@@ -526,6 +529,9 @@
+ 
+    start_time = times(&mytms);
+ 
++   cd_from_sjis = iconv_open("EUC-JP", "Shift_JIS");
++   cd_from_utf8 = iconv_open("EUC-JP", "UTF-8");
++
+    /*********************************************/
+    /* MAIN PROCESS LOOP - read through log file */
+    /*********************************************/
+@@ -1345,6 +1351,9 @@
+       if (dns_db) close_cache();
+ #endif
+ 
++      iconv_close(cd_from_sjis);
++      iconv_close(cd_from_utf8);
++
+       /* Whew, all done! Exit with completion status (0) */
+       exit(0);
+    }
+@@ -1773,6 +1782,23 @@
+ 
+    if (!str) return NULL;                       /* make sure strings valid */
+ 
++   while(*cp1){  /* for apache log's escape code. */
++     if(*cp1 == '\\' && *(cp1+1) == 'x' &&
++	isxdigit(*(cp1+2)) && isxdigit(*(cp1+3))){
++       *cp2 = from_hex(*(cp1+2))*16 + from_hex(*(cp1+3));
++       if ((*cp2<32)||(*cp2==127)) *cp2='_';
++       cp1+=4; cp2++;
++
++     }
++     else if(*cp1 == '\\' && *(cp1+1) == '\\'){
++       *cp2++='\\';
++       cp1+=2;
++     }
++     else *cp2++ = *cp1++;
++   }
++   *cp2=*cp1;
++
++   cp1=cp2=str;
+    while (*cp1)
+    {
+       if (*cp1=='%')                            /* Found an escape?        */
+@@ -1783,7 +1809,7 @@
+             if (*cp1) *cp2=from_hex(*cp1++)*16; /* convert hex to an ascii */
+             if (*cp1) *cp2+=from_hex(*cp1);     /* (hopefully) character   */
+             if ((*cp2<32)||(*cp2==127)) *cp2='_'; /* make '_' if its bad   */
+-            if (*cp1) cp2++; cp1++;
++            if (*cp1){ cp2++; cp1++;} /* bug? */
+          }
+          else *cp2++='%';
+       }
+@@ -1793,6 +1819,116 @@
+    return str;                                  /* return the string       */
+ }
+ 
++int score_eucj(unsigned char *str)
++{
++  int stat=0;
++  int score=0;
++  int bad=0;
++  if(str==NULL) return -1;
++
++  for(; *str!=0;str++){
++    switch(stat){
++    case 0:
++      if(*str>= 0x20 && *str <= 0x7e) score++; //ASCII
++      else if(*str >= 0xa1 && *str <= 0xfe) stat=1; //KANJI(1)
++      else if(*str == 0x8f); // HOJYO KANJI 
++      else if(*str == 0x8e) stat=2; // KANA
++      else if(*str < 0x20); //CTRL
++      else bad=1;
++      break;
++    case 1:
++      if(*str >= 0xa1 && *str <= 0xfe) score += 2; //KANJI(2)
++      else bad=1;
++      stat=0;
++      break;
++    case 2:
++      if(*str >= 0xa1 && *str <= 0xdf); //hankaku <- 0
++      else  bad=1;
++      stat=0;
++      break;
++    }
++  }
++  if(bad != 0) score = -1;
++  return score;
++}
++
++int score_sjis(unsigned char *str)
++{
++  int stat=0;
++  int score=0;
++  int bad=0;
++  if(str==NULL) return -1;
++
++  for(; *str != 0; str++){
++    switch(stat){
++    case 0:
++      if(*str>= 0x20 && *str <= 0x7e) score++;//ASCII
++      else if((*str >= 0x81 && *str <= 0x9f) ||
++	      (*str >= 0xe0 && *str <= 0xfc)) stat=1; //SJIS(1)
++      else if(*str >= 0xa1 && *str <= 0xdf); // KANA
++      else if(*str < 0x20); // CTRL
++      else bad=1;
++      break;
++    case 1:
++      if((*str >= 0x40 && *str <= 0x7e) ||
++	 (*str >= 0x80 && *str <= 0xfc)) score += 2; //SJIS(2)
++      else bad=1;
++      stat=0;
++      break;
++    }
++  }
++  if(bad != 0) score = -1;
++  return score;
++}
++
++int score_utf8(unsigned char *str)
++{
++  int stat=0;
++  int score=0;
++  int bad=0;
++  if(str==NULL) return -1;
++
++  for(; *str != 0; str++){
++    switch(stat){
++    case 0:
++      if(*str>= 0x20 && *str <= 0x7e) score++; //ASCII
++      else if(*str >= 0xc0 && *str <= 0xdf) stat=1; //greek etc.
++      else if(*str >= 0xe0 && *str <= 0xef) stat=2; //KANJI etc.
++      else if(*str >= 0xf0 && *str <= 0xf7) stat=4; 
++      else if(*str < 0x20); //CTRL
++      else bad=1;
++      break;
++    case 1:
++      if(*str >= 0x80 && *str <= 0xbf) score++;
++      else bad=1;
++      stat=0;
++      break;
++    case 2:
++      if(*str >= 0x80 && *str <= 0xbf) stat=3; //KANJI(2)
++      else {bad=1; stat=0;}
++      break;
++    case 3:
++      if(*str >= 0x80 && *str <= 0xbf) score+=3; //KANJI(3)
++      else bad=1;
++      stat=0;
++      break;
++    case 4:
++    case 5:
++      if(*str >= 0x80 && *str <= 0xbf) stat++;
++      else {bad=1; stat=0;}
++      break;
++    case 6:
++      if(*str >= 0x80 && *str <= 0xbf) score+=4;
++      else bad=1;
++      stat=0;
++      break;
++    }
++  }
++  if(bad != 0) score = -1;
++  return score;
++}
++
++
+ /*********************************************/
+ /* SRCH_STRING - get search strings from ref */
+ /*********************************************/
+@@ -1804,6 +1940,10 @@
+    char srch[80]="";
+    unsigned char *cp1, *cp2, *cps;
+    int  sp_flg=0;
++   int sjis, eucj, utf8;
++   char tmpbuf2[BUFSIZE];
++   size_t inlen, outlen;
++   unsigned char *cp3;
+ 
+    /* Check if search engine referrer or return  */
+    if ( (cps=isinglist(search_list,log_rec.refer))==NULL) return; 
+@@ -1839,9 +1978,39 @@
+    cp1=cp2+strlen(cp2)-1;
+    while (cp1!=cp2) if (isspace(*cp1)) *cp1--='\0'; else break;
+ 
++   utf8=score_utf8(cp2);
++   sjis=score_sjis(cp2);
++   eucj=score_eucj(cp2);
++   if(utf8 >= sjis && utf8 >= eucj){
++     iconv(cd_from_utf8, NULL, 0, NULL, 0);
++     cp3 = cp2;
++     inlen = strlen(cp2)+1;
++     cp1 = tmpbuf2;
++     outlen = sizeof(tmpbuf2);
++     if(iconv(cd_from_utf8, (char **)&cp3, &inlen, (char**)&cp1, &outlen) >= 0 &&
++	inlen == 0){
++       cp2 = tmpbuf2;
++     }
++   }
++   else if(sjis > utf8 && sjis > eucj){
++     iconv(cd_from_sjis, NULL, 0, NULL, 0);
++     cp3 = cp2;
++     inlen = strlen(cp2)+1;
++     cp1 = tmpbuf2;
++     outlen = sizeof(tmpbuf2);
++     if(iconv(cd_from_sjis, (char **)&cp3, &inlen, (char**)&cp1, &outlen) >= 0 &&
++	inlen == 0){
++       cp2 = tmpbuf2;
++     }
++   }
++
+    /* strip invalid chars */
+    cp1=cp2;
+-   while (*cp1!=0) { if ((*cp1<32)||(*cp1==127)) *cp1='_'; cp1++; }
++   while (*cp1!=0) {
++     if ((*cp1<32)||(*cp1==127)) *cp1='_';
++     *cp1=tolower(*cp1);
++     cp1++;
++   }
+ 
+    if (put_snode(cp2,(u_long)1,sr_htab))
+    {

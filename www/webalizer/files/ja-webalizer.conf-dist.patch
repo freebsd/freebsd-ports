@@ -1,0 +1,67 @@
+--- sample.conf.orig	Fri Sep 29 12:51:42 2000
++++ sample.conf	Thu Oct 14 11:48:21 2004
+@@ -107,9 +107,12 @@
+ 
+ PageType	htm*
+ PageType	cgi
++#PageType	shtml
+ #PageType	phtml
+ #PageType	php3
++#PageType	php
+ #PageType	pl
++#PageType	rb
+ 
+ # UseHTTPS should be used if the analysis is being run on a
+ # secure server, and links to urls should use 'https://' instead
+@@ -153,6 +156,7 @@
+ # is 80 characters, so use multiple lines if needed.
+ 
+ #HTMLHead <META NAME="author" CONTENT="The Webalizer">
++HTMLHead <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-euc-jp">
+ 
+ # HTMLBody defined the HTML code to be inserted, starting with the
+ # <BODY> tag.  If not specified, the default is shown below.  If
+@@ -393,6 +397,9 @@
+ HideURL		*.png
+ HideURL		*.PNG
+ HideURL		*.ra
++HideURL		*.css
++HideURL		*.CSS
++HideURL		*.ico
+ 
+ # Hiding agents is kind of futile
+ #HideAgent	RealPlayer
+@@ -412,6 +419,11 @@
+ #GroupReferrer	excite.com/     Excite
+ #GroupReferrer	infoseek.com/   InfoSeek
+ #GroupReferrer	webcrawler.com/ WebCrawler
++#GroupReferrer	yahoo.co.jp/	Yahoo!Japan
++#GroupReferrer	google.co.jp/	GoogleJapan
++#GroupReferrer	infoseek.co.jp/	InfoSeekJapan
++#GroupReferrer	goo.ne.jp/	Goo
++#GroupReferrer	msn.co.jp/	MSNJapan
+ 
+ #GroupUser      root            Admin users
+ #GroupUser      admin           Admin users
+@@ -530,6 +542,21 @@
+ SearchEngine	mamma.com	query=
+ SearchEngine	alltheweb.com	query=
+ SearchEngine	northernlight.com  qr=
++
++SearchEngine	yahoo.co.jp	p=
++SearchEngine	google.co.jp	q=
++SearchEngine	infoseek.co.jp	qt=
++SearchEngine	msn.co.jp	q=
++# ocn
++SearchEngine	goo.ne.jp	MT=
++SearchEngine	biglobe.ne.jp	q=
++SearchEngine	nifty.com	Text=
++# so-net odn
++SearchEngine	excite.co.jp	search=
++SearchEngine	livedoor.com	q=
++SearchEngine	jp.aol.com	query=
++#SearchEngine	.google.	q=
++#SearchEngine	bulkfeeds.net	q=
+ 
+ # The Dump* keywords allow the dumping of Sites, URL's, Referrers
+ # User Agents, Usernames and Search strings to seperate tab delimited
