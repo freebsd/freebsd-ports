@@ -621,6 +621,7 @@
     SUBDIR += xtradius
     SUBDIR += xwhois
     SUBDIR += yaz
+    SUBDIR += yaz++
     SUBDIR += ymessenger
     SUBDIR += ysm
     SUBDIR += ytalk
