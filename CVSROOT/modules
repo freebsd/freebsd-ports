@@ -9757,6 +9757,7 @@ wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
 wmpiki		ports/net/wmpiki
 wmpinboard	ports/deskutils/wmpinboard
+wmping		ports/net/wmping
 wmpop3		ports/mail/wmpop3
 wmproxyper	ports/misc/wmproxyper
 wmpuzzle	ports/games/wmpuzzle
