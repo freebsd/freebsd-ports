@@ -12,7 +12,7 @@ CATEGORIES=	www
 # vtel.rgv.net is a temp mirror, nvu.com is SLOW
 MASTER_SITES=	http://vtel.rgv.net/~ahze/ \
 		http://cvs.nvu.com/download/
-DISTNAME=	${PKGNAME}-sources
+DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
