@@ -1,0 +1,39 @@
+*** dbxout.c.orig	Thu Oct 23 15:03:03 1997
+--- dbxout.c		Thu Mar 23 14:58:21 2000
+***************
+*** 960,965 ****
+--- 960,993 ----
+    else
+      fprintf (asmfile, ";-1;");
+  }
++ #ifdef GPC
++ void
++ dbxout_set_type_status (type, defined)
++     tree type;
++     int defined;
++ {
++  if (TYPE_SYMTAB_ADDRESS (type) == 0)
++    {
++      /* Type has no dbx number assigned.  Assign next available number.  */
++      TYPE_SYMTAB_ADDRESS (type) = next_type_number++;
++ 
++      /* Make sure type vector is long enough to record about this type.  */
++ 
++      if (next_type_number == typevec_len)
++      {
++        typevec =
++          (struct typeinfo *) xrealloc (typevec,
++                                        typevec_len * 2 * sizeof typevec[0]);
++        bzero ((char *) (typevec + typevec_len),
++               typevec_len * sizeof typevec[0]);
++        typevec_len *= 2;
++      }
++    }
++  typevec[ TYPE_SYMTAB_ADDRESS (type) ].status =
++    defined ? TYPE_DEFINED : TYPE_UNSEEN;
++ }
++ #endif /* GPC */
++ 
+  
+  /* Output a reference to a type.  If the type has not yet been
+     described in the dbx output, output its definition now.

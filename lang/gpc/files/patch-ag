@@ -1,0 +1,171 @@
+*** fold-const.c.orig	Sat Feb 28 22:58:15 1998
+--- fold-const.c	Thu Mar 23 15:32:50 2000
+***************
+*** 1225,1232 ****
+--- 1225,1236 ----
+      }
+  
+    TREE_OVERFLOW (t)
++ #ifdef GPC
++     = ((notrunc ? overflow : force_fit_type (t, overflow))
++ #else /* not GPC */
+      = ((notrunc ? (!uns || forsize) && overflow
+  	: force_fit_type (t, (!uns || forsize) && overflow) && ! no_overflow)
++ #endif /* not GPC */
+         | TREE_OVERFLOW (arg1)
+         | TREE_OVERFLOW (arg2));
+    /* If we're doing a size calculation, unsigned arithmetic does overflow.
+***************
+*** 4489,4494 ****
+--- 4493,4510 ----
+        goto associate;
+  
+      case BIT_IOR_EXPR:
++ #ifdef GPC
++       if (TREE_CODE (type) == SET_TYPE)
++       {
++         /* S + [] == S */
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++           return arg0;
++ 
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++           return arg1;
++         goto associate;
++       }
++ #endif /* GPC */
+      bit_ior:
+        {
+        register enum tree_code code0, code1;
+***************
+*** 4550,4555 ****
+--- 4566,4583 ----
+        }
+  
+      case BIT_XOR_EXPR:
++ #ifdef GPC
++       if (TREE_CODE (type) == SET_TYPE)
++       {
++         /* S >< [] == S */
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++           return arg0;
++ 
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++           return arg1;
++         goto associate;
++       }
++ #endif /* GPC */
+        if (integer_zerop (arg1))
+  	return non_lvalue (convert (type, arg0));
+        if (integer_all_onesp (arg1))
+***************
+*** 4557,4562 ****
+--- 4585,4602 ----
+        goto associate;
+  
+      case BIT_AND_EXPR:
++ #ifdef GPC
++       if (TREE_CODE (type) == SET_TYPE)
++       {
++         /* S * [] == [] */
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++           return arg1;
++ 
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++           return arg0;
++         goto associate;
++       }
++ #endif /* GPC */
+      bit_and:
+        if (integer_all_onesp (arg1))
+  	return non_lvalue (convert (type, arg0));
+***************
+*** 4587,4592 ****
+--- 4627,4644 ----
+        goto associate;
+  
+      case BIT_ANDTC_EXPR:
++ #ifdef GPC
++       if (TREE_CODE (type) == SET_TYPE)
++       {
++         /* S - [] == S; [] - S == [] */
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++           return arg0;
++ 
++         if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++           return arg0;
++         goto associate;
++       }
++ #endif /* GPC */
+        if (integer_all_onesp (arg0))
+  	return non_lvalue (convert (type, arg1));
+        if (integer_zerop (arg0))
+***************
+*** 4998,5003 ****
+--- 5050,5093 ----
+      case GT_EXPR:
+      case LE_EXPR:
+      case GE_EXPR:
++ #ifdef GPC
++       if (TREE_CODE (TREE_TYPE (arg0)) == SET_TYPE)
++       {
++         switch (code)
++             {
++             case EQ_EXPR:
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE
++                   && TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++                 return convert (type, integer_one_node);
++               break;
++             case NE_EXPR:
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE
++                   && TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++                 return convert (type, integer_zero_node);
++               break;
++             case LE_EXPR:
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++                 return convert (type, integer_one_node);
++               break;
++             case GE_EXPR:
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++                 return convert (type, integer_one_node);
++               break;
++             case GT_EXPR:
++               /* Optimized from: "not (arg0 <= arg1)" */
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++                 return convert (type, integer_zero_node);
++               break;
++             case LT_EXPR:
++               /* Optimized from: "not (arg0 >= arg1)" */
++               if (TREE_CODE (TREE_TYPE (TREE_TYPE (arg1))) == VOID_TYPE)
++                 return convert (type, integer_zero_node);
++               break;
++             default:
++               abort ();
++           }
++       }
++ #endif /* GPC */
+        /* If one arg is a constant integer, put it last.  */
+        if (TREE_CODE (arg0) == INTEGER_CST
+  	  && TREE_CODE (arg1) != INTEGER_CST)
+***************
+*** 5782,5787 ****
+--- 5872,5891 ----
+  	return pedantic_non_lvalue (convert (type, TREE_OPERAND (arg0, 0)));
+  
+        return t;
++ 
++ #ifdef GPC
++     case CARD_EXPR:
++       if (TREE_CODE (TREE_TYPE (arg0)) == SET_TYPE
++         && TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++       return convert (type, integer_zero_node);
++       return t;
++ 
++     case IN_EXPR:
++       if (TREE_CODE (TREE_TYPE (arg0)) == SET_TYPE
++         && TREE_CODE (TREE_TYPE (TREE_TYPE (arg0))) == VOID_TYPE)
++       return convert (type, integer_zero_node);
++       return t;
++ #endif /* GPC */
+  
+      case COMPOUND_EXPR:
+        /* When pedantic, a compound expression can be neither an lvalue

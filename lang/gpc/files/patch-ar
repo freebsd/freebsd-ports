@@ -1,0 +1,19 @@
+*** p/rts/file.c.orig	Sat Jan 16 04:07:00 1999
+--- p/rts/file.c	Thu Mar 23 18:58:07 2000
+***************
+*** 1568,1574 ****
+  #ifdef HAVE_STATVFS
+  #include <sys/statvfs.h>
+  #elif defined(HAVE_STATFS)
+! #include <sys/vfs.h>
+  #endif
+  
+  void
+--- 1568,1574 ----
+  #ifdef HAVE_STATVFS
+  #include <sys/statvfs.h>
+  #elif defined(HAVE_STATFS)
+! #include <sys/mount.h>
+  #endif
+  
+  void

@@ -1,0 +1,166 @@
+*** Makefile.in.orig	Tue Mar  3 03:54:31 1998
+--- Makefile.in		Thu Mar 23 14:52:24 2000
+***************
+*** 369,375 ****
+  
+  # List of things which should already be built whenever we try to use xgcc
+  # to compile anything (without linking).
+! GCC_PASSES=xgcc cc1 cpp $(EXTRA_PASSES)
+  
+  # List of things which should already be built whenever we try to use xgcc
+  # to link anything.
+--- 369,375 ----
+  
+  # List of things which should already be built whenever we try to use xgcc
+  # to compile anything (without linking).
+! GCC_PASSES=xgcc$(exeext) cc1$(exeext) cpp$(exeext) $(EXTRA_PASSES)
+  
+  # List of things which should already be built whenever we try to use xgcc
+  # to link anything.
+***************
+*** 729,746 ****
+  all.cross: native gcc-cross specs stmp-headers $(LIBGCC) $(STMP_FIXPROTO) \
+  	$(LIBGCC1_TEST) $(EXTRA_PARTS) lang.all.cross
+  # This is what to compile if making gcc with a cross-compiler.
+! all.build: native xgcc $(EXTRA_PARTS) lang.all.build
+  # This is what must be made before installing GCC and converting libraries.
+! start.encap: native xgcc specs $(LIBGCC1) xlimits.h lang.start.encap
+  # These can't be made until after GCC can run.
+  rest.encap: stmp-headers $(LIBGCC) $(STMP_FIXPROTO) $(EXTRA_PARTS) lang.rest.encap
+  # This is what is made with the host's compiler
+  # whether making a cross compiler or not.
+! native: config.status auto-config.h cpp $(LANGUAGES) \
+  	$(EXTRA_PASSES) $(EXTRA_PROGRAMS) $(USE_COLLECT2)
+  
+  # Define the names for selecting languages in LANGUAGES.
+! C c: cc1
+  PROTO: proto
+  
+  # Tell GNU make these are phony targets.
+--- 729,746 ----
+  all.cross: native gcc-cross specs stmp-headers $(LIBGCC) $(STMP_FIXPROTO) \
+  	$(LIBGCC1_TEST) $(EXTRA_PARTS) lang.all.cross
+  # This is what to compile if making gcc with a cross-compiler.
+! all.build: native xgcc$(exeext) $(EXTRA_PARTS) lang.all.build
+  # This is what must be made before installing GCC and converting libraries.
+! start.encap: native xgcc$(exeext) specs $(LIBGCC1) xlimits.h lang.start.encap
+  # These can't be made until after GCC can run.
+  rest.encap: stmp-headers $(LIBGCC) $(STMP_FIXPROTO) $(EXTRA_PARTS) lang.rest.encap
+  # This is what is made with the host's compiler
+  # whether making a cross compiler or not.
+! native: config.status auto-config.h cpp$(exeext) $(LANGUAGES) \
+  	$(EXTRA_PASSES) $(EXTRA_PROGRAMS) $(USE_COLLECT2)
+  
+  # Define the names for selecting languages in LANGUAGES.
+! C c: cc1$(exeext)
+  PROTO: proto
+  
+  # Tell GNU make these are phony targets.
+***************
+*** 756,762 ****
+  	@echo "Testing libgcc1.  Ignore linker warning messages."
+  	$(GCC_FOR_TARGET) $(GCC_CFLAGS) libgcc1-test.o -o libgcc1-test \
+  	  -nostartfiles -nostdlib `$(GCC_FOR_TARGET) --print-libgcc-file-name`
+! libgcc1-test.o: libgcc1-test.c native xgcc
+  	$(GCC_FOR_TARGET) $(GCC_CFLAGS) $(ALL_CPPFLAGS) -c $(srcdir)/libgcc1-test.c
+  
+  # Recompile all the language-independent object files.
+--- 756,762 ----
+  	@echo "Testing libgcc1.  Ignore linker warning messages."
+  	$(GCC_FOR_TARGET) $(GCC_CFLAGS) libgcc1-test.o -o libgcc1-test \
+  	  -nostartfiles -nostdlib `$(GCC_FOR_TARGET) --print-libgcc-file-name`
+! libgcc1-test.o: libgcc1-test.c native xgcc$(exeext)
+  	$(GCC_FOR_TARGET) $(GCC_CFLAGS) $(ALL_CPPFLAGS) -c $(srcdir)/libgcc1-test.c
+  
+  # Recompile all the language-independent object files.
+***************
+*** 771,793 ****
+  # We call this executable `xgcc' rather than `gcc'
+  # to avoid confusion if the current directory is in the path
+  # and CC is `gcc'.  It is renamed to `gcc' when it is installed.
+! xgcc: gcc.o version.o choose-temp.o pexecute.o prefix.o version.o \
+     $(LIBDEPS) $(EXTRA_GCC_OBJS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ gcc.o prefix.o version.o \
+  	  choose-temp.o pexecute.o $(EXTRA_GCC_OBJS) $(LIBS)
+  
+  # Dump a specs file to make -B./ read these specs over installed ones.
+! specs: xgcc
+  	$(GCC_FOR_TARGET) -dumpspecs > tmp-specs
+  	mv tmp-specs specs
+  
+  # We do want to create an executable named `xgcc', so we can use it to
+  # compile libgcc2.a.
+  # Also create gcc-cross, so that install-common will install properly.
+! gcc-cross: xgcc
+  	cp xgcc$(exeext) gcc-cross$(exeext)
+  
+! cc1: $(P) $(C_OBJS) $(OBJS) $(BC_OBJS) $(LIBDEPS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ $(C_OBJS) $(OBJS) $(BC_OBJS) $(LIBS)
+  
+  # Copy float.h from its source.
+--- 771,793 ----
+  # We call this executable `xgcc' rather than `gcc'
+  # to avoid confusion if the current directory is in the path
+  # and CC is `gcc'.  It is renamed to `gcc' when it is installed.
+! xgcc$(exeext): gcc.o version.o choose-temp.o pexecute.o prefix.o version.o \
+     $(LIBDEPS) $(EXTRA_GCC_OBJS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ gcc.o prefix.o version.o \
+  	  choose-temp.o pexecute.o $(EXTRA_GCC_OBJS) $(LIBS)
+  
+  # Dump a specs file to make -B./ read these specs over installed ones.
+! specs: xgcc$(exeext)
+  	$(GCC_FOR_TARGET) -dumpspecs > tmp-specs
+  	mv tmp-specs specs
+  
+  # We do want to create an executable named `xgcc', so we can use it to
+  # compile libgcc2.a.
+  # Also create gcc-cross, so that install-common will install properly.
+! gcc-cross: xgcc$(exeext)
+  	cp xgcc$(exeext) gcc-cross$(exeext)
+  
+! cc1$(exeext): $(P) $(C_OBJS) $(OBJS) $(BC_OBJS) $(LIBDEPS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ $(C_OBJS) $(OBJS) $(BC_OBJS) $(LIBS)
+  
+  # Copy float.h from its source.
+***************
+*** 1739,1749 ****
+  # Remake cpp and protoize.
+  
+  # Making the preprocessor
+! cpp: $(CCCP)
+  	-rm -f cpp$(exeext)
+  	ln $(CCCP)$(exeext) cpp$(exeext) > /dev/null 2>&1 \
+  	 || cp $(CCCP)$(exeext) cpp$(exeext)
+! cccp: cccp.o cexp.o version.o prefix.o $(LIBDEPS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ cccp.o cexp.o prefix.o \
+  	  version.o $(LIBS)
+  cexp.o: $(srcdir)/cexp.c $(CONFIG_H)
+--- 1739,1749 ----
+  # Remake cpp and protoize.
+  
+  # Making the preprocessor
+! cpp$(exeext): $(CCCP)$(exeext)
+  	-rm -f cpp$(exeext)
+  	ln $(CCCP)$(exeext) cpp$(exeext) > /dev/null 2>&1 \
+  	 || cp $(CCCP)$(exeext) cpp$(exeext)
+! cccp$(exeext): cccp.o cexp.o version.o prefix.o $(LIBDEPS)
+  	$(CC) $(ALL_CFLAGS) $(LDFLAGS) -o $@ cccp.o cexp.o prefix.o \
+  	  version.o $(LIBS)
+  cexp.o: $(srcdir)/cexp.c $(CONFIG_H)
+***************
+*** 2248,2254 ****
+  
+  # Install the driver program as $(target_alias)-gcc
+  # and also as either gcc (if native) or $(tooldir)/bin/gcc.
+! install-driver: xgcc
+  	-if [ -f gcc-cross$(exeext) ] ; then \
+  	  rm -f $(bindir)/$(GCC_CROSS_NAME)$(exeext); \
+  	  $(INSTALL_PROGRAM) gcc-cross$(exeext) $(bindir)/$(GCC_CROSS_NAME)$(exeext); \
+--- 2248,2254 ----
+  
+  # Install the driver program as $(target_alias)-gcc
+  # and also as either gcc (if native) or $(tooldir)/bin/gcc.
+! install-driver: xgcc$(exeext)
+  	-if [ -f gcc-cross$(exeext) ] ; then \
+  	  rm -f $(bindir)/$(GCC_CROSS_NAME)$(exeext); \
+  	  $(INSTALL_PROGRAM) gcc-cross$(exeext) $(bindir)/$(GCC_CROSS_NAME)$(exeext); \

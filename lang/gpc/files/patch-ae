@@ -1,0 +1,12 @@
+*** demangle.h.orig	Wed Jul 30 22:02:03 1997
+--- demangle.h		Thu Mar 23 16:13:01 2000
+***************
+*** 22,28 ****
+  
+  #ifdef IN_GCC
+  #include "gansidecl.h"
+- #define PARAMS(ARGS) PROTO(ARGS)
+  #else /* ! IN_GCC */
+  #include <ansidecl.h>
+  #endif /* IN_GCC */
+--- 22,27 ----

@@ -1,0 +1,233 @@
+*** stor-layout.c.orig	Sat Nov  8 16:12:07 1997
+--- stor-layout.c	Thu Mar 23 15:48:05 2000
+***************
+*** 65,70 ****
+--- 65,79 ----
+  
+  int immediate_size_expand;
+  
++ #ifdef GPC
++ 
++ /* Nonzero means that the size of a type may vary
++     within one function context.  */
++ 
++ int size_volatile = 0;
++ 
++ #endif /* GPC */
++ 
+  tree
+  get_pending_sizes ()
+  {
+***************
+*** 102,109 ****
+        || global_bindings_p () < 0 || contains_placeholder_p (size))
+      return size;
+  
+!   size = save_expr (size);
+! 
+    if (global_bindings_p ())
+      {
+        if (TREE_CONSTANT (size))
+--- 111,123 ----
+        || global_bindings_p () < 0 || contains_placeholder_p (size))
+      return size;
+  
+! #ifdef GPC
+!   if (! size_volatile)
+!     size = save_expr (size);
+! #else /* not GPC */
+!     size = save_expr (size);
+! #endif /* not GPC */
+!     
+    if (global_bindings_p ())
+      {
+        if (TREE_CONSTANT (size))
+***************
+*** 119,125 ****
+--- 133,143 ----
+         Also, we would like to pass const0_rtx here, but don't have it.  */
+      expand_expr (size, expand_expr (integer_zero_node, NULL_PTR, VOIDmode, 0),
+  		 VOIDmode, 0);
++ #ifdef GPC
++   else if (! size_volatile)
++ #else /* not GPC */
+    else
++ #endif /* not GPC */
+      pending_sizes = tree_cons (NULL_TREE, size, pending_sizes);
+  
+    return size;
+***************
+*** 953,958 ****
+--- 971,1117 ----
+  	}
+        break;
+  
++ #ifdef GPC
++      /* Unfortunately the code for SET_TYPE in standard gcc 2.6.3 will
++       not work for pascal sets. The problem is that the code aligns
++       the set so that it always starts from the first bit of the
++       aligned set. (i.e it shifts bit 0 to the firt bit of the
++       aligned first word of the set). This is ok, if the set low
++       bound is zero (as in powersets) or any multiple of
++       "set_alignment". But this is not always the case in Pascal.
++ 
++       It causes problems when using set types with set constructors
++       in an expression, possibly the expression having ranges whose
++       both bounds are variable.
++ 
++       The method used in GPC is to adjust the sets so that the bits
++       are never shifted to the beginning of the aligned entity (in
++       gpc, it is a word), but rather more room is allocated in
++       front and behind of the actual set, so that both bounds are aligned
++       and then the size used by the set is counted.
++ 
++       The code below works as the original code for the special
++       cases when set low bound is 0 or a multiple of alignement,
++       but it also works for GPC.
++ 
++       Also, the code in the case when the bounds are variable
++       should work, and the algorithm is the same as in the
++       constant case, but the calculation is done in tree nodes
++       (so it can be folded wherever possible).
++ 
++       In this case, the original code called abort().  */
++ 
++ #ifndef SET_WORD_SIZE
++ #define SET_WORD_SIZE BITS_PER_WORD
++ #endif
++ 
++    case SET_TYPE:
++      if (TREE_CODE (TYPE_MAX_VALUE (TYPE_DOMAIN (type))) == INTEGER_CST
++        && TREE_CODE (TYPE_MIN_VALUE (TYPE_DOMAIN (type))) == INTEGER_CST)
++      {
++        int alignment = set_alignment ? set_alignment : SET_WORD_SIZE;
++        int aligned_size_in_bits;
++        int low_bound, high_bound;
++ 
++        int l_index = TREE_INT_CST_LOW (TYPE_MIN_VALUE (TYPE_DOMAIN (type)));
++        int h_index = TREE_INT_CST_LOW (TYPE_MAX_VALUE (TYPE_DOMAIN (type)));
++ 
++        if (l_index == 0 && h_index == -1)
++          {
++            /* Special empty set node */
++            TYPE_SIZE (type) = size_zero_node;
++            TYPE_MODE (type) = VOIDmode;
++            TYPE_ALIGN (type) = 1;
++            break;
++          }
++ 
++        /* Calculate an aligned low bound from the set low bound */
++        low_bound = l_index - (l_index % alignment);
++ 
++        /* Calculate an aligned high bound from the set high bound */
++        high_bound = (alignment-1) + (alignment * (h_index / alignment));
++ 
++        /* This is the aligned size (both low and high aligned) */
++        aligned_size_in_bits = high_bound - low_bound + 1;
++ 
++        if (aligned_size_in_bits > alignment)
++          TYPE_MODE (type) = BLKmode;
++        else
++          TYPE_MODE (type) = mode_for_size (alignment, MODE_INT, 1);
++ 
++        TYPE_SIZE (type)      = size_int (aligned_size_in_bits);
++        TYPE_ALIGN (type)     = alignment;
++        TYPE_PRECISION (type) = h_index - l_index + 1;
++      }
++      else
++      {
++        tree domain = TYPE_DOMAIN (type);
++        int alignment = set_alignment ? set_alignment : SET_WORD_SIZE;
++        tree align = build_int_2 (alignment, 0);
++ 
++        /* @@@@@ Negative bounds do not work here.
++ 
++             @@@ Although this should work, variable bound sets are
++                 not supported in setop.c.  */
++ 
++        extern tree build_binary_op (enum tree_code, tree, tree, int);
++ 
++        /* low_bound = low_index - (low_index % align); */
++        tree low_bound =
++          build_binary_op (MINUS_EXPR,
++                           convert (integer_type_node,
++                                    TYPE_MIN_VALUE (domain)),
++                           build_binary_op (TRUNC_MOD_EXPR,
++                                            convert (integer_type_node,
++                                                     TYPE_MIN_VALUE (domain)),
++                                            align,
++                                            0),
++                           0);
++ 
++        /* Upper bit number.  Avoid overflow.  */
++        /* upper_bound = (align-1) + (align * (high_index / align)); */
++        tree high_bound =
++          build_binary_op
++            (PLUS_EXPR,
++             build_int_2 (alignment - 1, 0),
++             build_binary_op (MULT_EXPR,
++                              align,
++                              build_binary_op (TRUNC_DIV_EXPR,
++                                               convert (integer_type_node,
++                                                        TYPE_MAX_VALUE (domain)),
++                                               align,
++                                               0),
++                              0),
++             0);
++ 
++        /* Allocated TYPE_SIZE in bits, including possible aligning */
++        /* set_size_in_bits = high_bound - low_bound + 1; */
++        TYPE_SIZE (type) =
++          build_binary_op (PLUS_EXPR,
++                           integer_one_node,
++                           build_binary_op (MINUS_EXPR,
++                                            high_bound,
++                                            low_bound,
++                                            0),
++                           0);
++ 
++        TYPE_ALIGN (type) = alignment;
++ 
++        /* Find out if the set fits in word_mode. If not, use BLKmode.
++           @@@ But it requires knowing the size, which is variable
++           in this case ...  */
++ 
++        if (TYPE_SIZE (type)
++            && TREE_CODE (TYPE_SIZE (type)) == INTEGER_CST
++            && TREE_INT_CST_LOW (TYPE_SIZE (type)) <= alignment)
++          TYPE_MODE (type) = mode_for_size (alignment, MODE_INT, 1);
++        else
++          TYPE_MODE (type) = BLKmode;
++      }
++      break;
++ #else /* not GPC */
++ 
++ 
+      case SET_TYPE:  /* Used by Chill and Pascal. */
+        if (TREE_CODE (TYPE_MAX_VALUE (TYPE_DOMAIN (type))) != INTEGER_CST
+  	  || TREE_CODE (TYPE_MIN_VALUE (TYPE_DOMAIN (type))) != INTEGER_CST)
+***************
+*** 977,982 ****
+--- 1136,1142 ----
+  	  TYPE_PRECISION (type) = size_in_bits;
+  	}
+        break;
++ #endif /* not GPC */
+  
+      case FILE_TYPE:
+        /* The size may vary in different languages, so the language front end
+***************
+*** 1152,1157 ****
+--- 1312,1323 ----
+  		      >> (HOST_BITS_PER_WIDE_INT
+  			  - (precision - HOST_BITS_PER_WIDE_INT)))
+  		   : 0);
++ #ifdef GPC
++   /* Not only for Pascal, but other languages don't seem to care
++      about this.  */
++   TREE_UNSIGNED (TYPE_MIN_VALUE (type)) = 1;
++   TREE_UNSIGNED (TYPE_MAX_VALUE (type)) = 1;
++ #endif /* GPC */
+    TREE_TYPE (TYPE_MIN_VALUE (type)) = type;
+    TREE_TYPE (TYPE_MAX_VALUE (type)) = type;
+  

@@ -1,0 +1,10 @@
+GNU Pascal is part of the GNU compiler family, GNU CC or GCC.
+It combines a Pascal front-end with the proven GNU C back-end
+for code generation and optimization.  Unlike utilities such
+as p2c, this is a true compiler, not just a converter.
+			
+The current release 2.0 implements Standard Pascal (ISO 7185,
+level 1), a large subset of Extended Pascal (ISO 10206), and
+Borland Pascal.
+
+WWW: http://agnes.dida.physik.uni-essen.de/~gnu-pascal/

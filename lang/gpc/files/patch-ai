@@ -1,0 +1,135 @@
+*** gansidecl.h.orig	Sat Feb 14 18:31:43 1998
+--- gansidecl.h		Thu Mar 23 16:07:55 2000
+***************
+*** 22,107 ****
+     in binutils and gdb releases.
+     ??? Over time the two should be merged into one.  */
+  
+! #ifndef	ANSIDECL_H
+! #define	ANSIDECL_H
+  
+! /* Add prototype support.  */
+! #ifndef PROTO
+! #if defined (USE_PROTOTYPES) ? USE_PROTOTYPES : defined (__STDC__)
+! #define PROTO(ARGS) ARGS
+! #else
+! #define PROTO(ARGS) ()
+! #endif
+! #endif
+  
+! #ifndef VPROTO
+! #ifdef __STDC__
+! #define PVPROTO(ARGS)		ARGS
+! #define VPROTO(ARGS)            ARGS
+! #define VA_START(va_list,var)  va_start(va_list,var)
+! #else
+! #define PVPROTO(ARGS)		()
+! #define VPROTO(ARGS)            (va_alist) va_dcl
+! #define VA_START(va_list,var)  va_start(va_list)
+! #endif
+  #endif
+  
+- /* Define a generic NULL if one hasn't already been defined.  */
+  
+! #ifndef NULL
+! #define NULL 0
+! #endif
+! 
+! #ifndef GENERIC_PTR
+! #if defined (USE_PROTOTYPES) ? USE_PROTOTYPES : defined (__STDC__)
+! #define GENERIC_PTR void *
+! #else
+! #define GENERIC_PTR char *
+! #endif
+! #endif
+  
+  #ifndef NULL_PTR
+! #define NULL_PTR ((GENERIC_PTR) 0)
+! #endif
+! 
+! #ifdef __STDC__
+! 
+! #define	PTR void *
+! 
+! #else
+! 
+! #define	PTR char *
+! #ifndef const
+! #define const
+! #endif
+! 
+! #endif /* ! __STDC__ */
+! 
+! /* We don't have autoconf for libgcc2.c since it's a target, so don't
+!    define these functions, which aren't used there anyway.  */
+! 
+! #ifndef IN_LIBGCC2
+! 
+! #ifndef HAVE_BCOPY
+! #define bcopy(src,dst,len) memcpy ((dst),(src),(len))
+! #endif
+! 
+! #ifndef HAVE_BZERO
+! #define bzero(dst,len) memset ((dst),0,(len))
+! #endif
+! 
+! #ifndef HAVE_BCMP
+! #define bcmp(left,right,len) memcmp ((left),(right),(len))
+! #endif
+! 
+! #ifndef HAVE_RINDEX
+! #define rindex strrchr
+! #endif
+! 
+! #ifndef HAVE_INDEX
+! #define index strchr
+  #endif
+  
+! #endif /* IN_LIBGCC2 */
+  
+- #endif /* ANSIDECL_H */
+--- 22,65 ----
+     in binutils and gdb releases.
+     ??? Over time the two should be merged into one.  */
+  
+! #ifndef       __GANSIDECL_H__
+! #define       __GANSIDECL_H__
+  
+! #include "ansidecl.h"
+  
+! /* Undef ansidecl.h's "obsolete" version. */
+! #undef PROTO
+! /* These macros are deprecated, use ansidecl.h's PARAMS style instead. */
+! #define PROTO(ARGS) PARAMS(ARGS)
+! #define VPROTO(ARGS) VPARAMS(ARGS)
+! #define PVPROTO(ARGS) PARAMS(ARGS)
+! 
+! #if __GNUC__ < 2 || (__GNUC__ == 2 && __GNUC_MINOR__ < 7)
+! # define __attribute__(x)
+  #endif
+  
+  
+! #ifndef ATTRIBUTE_UNUSED
+! #define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
+! #endif /* ATTRIBUTE_UNUSED */
+! 
+! #ifndef ATTRIBUTE_NORETURN
+! #define ATTRIBUTE_NORETURN __attribute__ ((__noreturn__))
+! #endif /* ATTRIBUTE_NORETURN */
+! 
+! #ifndef ATTRIBUTE_PRINTF
+! #define ATTRIBUTE_PRINTF(m, n) __attribute__ ((format (__printf__, m, n)))
+! #define ATTRIBUTE_PRINTF_1 ATTRIBUTE_PRINTF(1, 2)
+! #define ATTRIBUTE_PRINTF_2 ATTRIBUTE_PRINTF(2, 3)
+! #define ATTRIBUTE_PRINTF_3 ATTRIBUTE_PRINTF(3, 4)
+! #define ATTRIBUTE_PRINTF_4 ATTRIBUTE_PRINTF(4, 5)
+! #define ATTRIBUTE_PRINTF_5 ATTRIBUTE_PRINTF(5, 6)
+! #endif /* ATTRIBUTE_PRINTF */
+! #define GENERIC_PTR PTR
+  
+  #ifndef NULL_PTR
+! #define NULL_PTR ((PTR) 0)
+  #endif
+  
+! #endif /* __GANSIDECL_H__ */
+  

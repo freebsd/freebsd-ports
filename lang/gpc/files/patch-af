@@ -1,0 +1,299 @@
+*** expr.c.orig	Wed Mar  4 04:32:19 1998
+--- expr.c	Thu Mar 23 15:23:42 2000
+***************
+*** 3931,3938 ****
+--- 3931,3947 ----
+  	}
+      }
+    /* set constructor assignments */
++ #ifdef GPC
+    else if (TREE_CODE (type) == SET_TYPE)
+      {
++ 	void store_set_constructor ();
++ 	store_set_constructor (exp, target);
++     }
++   else if (0 && TREE_CODE (type) == SET_TYPE) /* @@@@ Chill SET_TYPE */
++ #else /* not GPC */
++   else if (TREE_CODE (type) == SET_TYPE)
++ #endif /* not GPC */
++     {
+        tree elt = CONSTRUCTOR_ELTS (exp);
+        rtx xtarget = XEXP (target, 0);
+        int set_word_size = TYPE_ALIGN (type);
+***************
+*** 5453,5458 ****
+--- 5462,5481 ----
+  	 store directly into the target unless the type is large enough
+  	 that memcpy will be used.  If we are making an initializer and
+  	 all operands are constant, put it in memory as well.  */
++ #ifdef GPC
++       else if (TREE_CODE (TREE_TYPE (exp)) != SET_TYPE
++              &&
++              ((TREE_STATIC (exp)
++               && ((mode == BLKmode
++                    && ! (target != 0 && safe_from_p (target, exp, 1)))
++                   || TREE_ADDRESSABLE (exp)
++                   || (TREE_CODE (TYPE_SIZE (type)) == INTEGER_CST
++                       && (move_by_pieces_ninsns
++                           (TREE_INT_CST_LOW (TYPE_SIZE (type)),
++                            TYPE_ALIGN (type))
++                           > MOVE_RATIO))))
++              || (modifier == EXPAND_INITIALIZER && TREE_CONSTANT (exp))))
++ #else /* not GPC */
+        else if ((TREE_STATIC (exp)
+  		&& ((mode == BLKmode
+  		     && ! (target != 0 && safe_from_p (target, exp, 1)))
+***************
+*** 5464,5469 ****
+--- 5487,5493 ----
+  			    > MOVE_RATIO)
+  			&& ! mostly_zeros_p (exp))))
+  	       || (modifier == EXPAND_INITIALIZER && TREE_CONSTANT (exp)))
++ #endif /* not GPC */
+  	{
+  	  rtx constructor = output_constant_def (exp);
+  	  if (modifier != EXPAND_CONST_ADDRESS
+***************
+*** 5908,5913 ****
+--- 5932,5946 ----
+        abort ();
+  
+      case IN_EXPR:
++ #ifdef GPC
++       {
++       /* @@@ Fix & move this.  */
++       rtx expand_set_in ();
++ 
++       preexpand_calls (exp);
++       return expand_set_in (exp, target);
++       }
++ #else /* not GPC */
+        {
+  	/* Pascal set IN expression.
+  
+***************
+*** 6015,6020 ****
+--- 6048,6063 ----
+  	emit_label (op0);
+  	return target;
+        }
++ #endif /* not GPC */
++ 
++ #ifdef GPC
++     case CARD_EXPR:  /* Count number of elements in a set.  */
++       preexpand_calls (exp);
++       {
++       rtx expand_set_card ();
++       return expand_set_card (TREE_OPERAND (exp, 0), target);
++       }
++ #endif /* GPC */
+  
+      case WITH_CLEANUP_EXPR:
+        if (RTL_EXPR_RTL (exp) == 0)
+***************
+*** 6469,6474 ****
+--- 6512,6561 ----
+        return expand_divmod (1, code, mode, op0, op1, target, unsignedp);
+  
+      case FIX_ROUND_EXPR:
++ #ifdef GPC
++      {
++        /* ISO Pascal round(x):
++           if x >= 0.0 then trunc (x+0.5) else trunc (x-0.5);
++ 
++           Pascal round is none of the four IEEE rounding modes:
++           nearest, minus infinity, plus infinity or chop
++ 
++           So it is implemented with code.  */
++ 
++        rtx label_positive = gen_label_rtx ();
++        rtx label_done     = gen_label_rtx ();
++        rtx half;
++        enum machine_mode fmode;
++ 
++        if (target == NULL_RTX)
++          target = gen_reg_rtx (mode);
++ 
++        op0  = expand_expr (TREE_OPERAND (exp, 0), NULL_RTX, VOIDmode, 0);
++        fmode = GET_MODE (op0);
++ 
++        half = immed_real_const_1 (REAL_VALUE_ATOF ("0.5", fmode), fmode);
++ 
++        emit_cmp_insn (op0, CONST0_RTX (fmode), GE, 0, fmode, 0, 0);
++        emit_jump_insn (gen_bge (label_positive));
++ 
++        expand_fix (target, expand_binop (fmode, sub_optab, op0, half,
++                                          NULL_RTX, 0, OPTAB_DIRECT),
++                    0);
++        emit_queue ();
++        emit_jump_insn (gen_jump (label_done));
++        emit_barrier ();
++        emit_queue ();
++ 
++        emit_label (label_positive);
++        expand_fix (target, expand_binop (fmode, add_optab, op0, half,
++                                          NULL_RTX, 0, OPTAB_DIRECT),
++                    0);
++        emit_queue ();
++        emit_label (label_done);
++ 
++        return target;
++      }
++ #endif /* GPC */
+      case FIX_FLOOR_EXPR:
+      case FIX_CEIL_EXPR:
+        abort ();			/* Not used for C.  */
+***************
+*** 6504,6512 ****
+--- 6591,6612 ----
+        op0 = expand_expr (TREE_OPERAND (exp, 0), subtarget, VOIDmode, 0);
+  
+        /* Handle complex values specially.  */
++ #ifdef GPC
++       /* It is the mode of the operand, not the mode of the return
++        value that is tested here. ABS(complex) does not return
++        complex type.  */
++       {
++       enum machine_mode op0_mode =
++         TYPE_MODE (TREE_TYPE (TREE_OPERAND (exp, 0)));
++       if (GET_MODE_CLASS (op0_mode) == MODE_COMPLEX_INT
++           || GET_MODE_CLASS (op0_mode) == MODE_COMPLEX_FLOAT)
++         return expand_complex_abs (op0_mode, op0, target, unsignedp);
++       }
++ #else /* not GPC */
+        if (GET_MODE_CLASS (mode) == MODE_COMPLEX_INT
+  	  || GET_MODE_CLASS (mode) == MODE_COMPLEX_FLOAT)
+  	return expand_complex_abs (mode, op0, target, unsignedp);
++ #endif /* not GPC */
+  
+        /* Unsigned abs is simply the operand.  Testing here means we don't
+  	 risk generating incorrect code below.  */
+***************
+*** 6629,6634 ****
+--- 6729,6739 ----
+        this_optab = xor_optab;
+        goto binop;
+  
++ #ifdef GPC
++     case BIT_ANDTC_EXPR:
++       goto binop;
++ #endif /* GPC */
++ 
+      case LSHIFT_EXPR:
+      case RSHIFT_EXPR:
+      case LROTATE_EXPR:
+***************
+*** 6649,6654 ****
+--- 6754,6767 ----
+      case EQ_EXPR:
+      case NE_EXPR:
+        preexpand_calls (exp);
++ #ifdef GPC
++       if (TREE_CODE (TREE_TYPE (TREE_OPERAND (exp, 0))) == SET_TYPE
++         || TREE_CODE (TREE_TYPE (TREE_OPERAND (exp, 1))) == SET_TYPE)
++       {
++         rtx expand_set_comparison ();
++         return expand_set_comparison (exp, target);
++       }
++ #endif /* GPC */
+        temp = do_store_flag (exp, target, tmode != VOIDmode ? tmode : mode, 0);
+        if (temp != 0)
+  	return temp;
+***************
+*** 7136,7141 ****
+--- 7249,7273 ----
+  		  && TYPE_READONLY (TREE_TYPE (TREE_OPERAND (lhs, 0)))))
+  	  preexpand_calls (exp);
+  
++ #ifdef GPC
++       if (TREE_CODE (type) == SET_TYPE
++           && TREE_CODE (TREE_TYPE (TREE_TYPE (rhs))) == VOID_TYPE)
++         {
++           /* Assigning an empty set.  */
++ 
++           int size = int_size_in_bytes (type);
++ 
++           /* Only constant bounds in standard pascal.  */
++           if (size == -1)
++             abort ();
++ 
++           target = expand_expr (lhs, target, VOIDmode, 0);
++           clear_storage (target, expr_size (exp),
++                          TYPE_ALIGN (type) / BITS_PER_UNIT);
++           return ignore ? const0_rtx : target;
++         }
++ #endif /* GPC */
++ 
+  	/* Check for |= or &= of a bitfield of size one into another bitfield
+  	   of size 1.  In this case, (unless we need the result of the
+  	   assignment) we can do this more efficiently with a
+***************
+*** 7415,7420 ****
+--- 7547,7560 ----
+       from the optab already placed in `this_optab'.  */
+   binop:
+    preexpand_calls (exp);
++ #ifdef GPC
++   if (TREE_CODE (TREE_TYPE (TREE_OPERAND (exp, 0))) == SET_TYPE
++       || TREE_CODE (TREE_TYPE (TREE_OPERAND (exp, 1))) == SET_TYPE)
++     {
++       rtx expand_set_binop ();
++       return expand_set_binop (exp, target);
++     }
++ #endif /* GPC */
+    if (! safe_from_p (subtarget, TREE_OPERAND (exp, 1), 1))
+      subtarget = 0;
+    op0 = expand_expr (TREE_OPERAND (exp, 0), subtarget, VOIDmode, 0);
+***************
+*** 10888,10901 ****
+--- 11028,11077 ----
+       register tree exp;
+       enum rtx_code signed_code, unsigned_code;
+  {
++ #ifdef GPC
++   register rtx op0;
++   register rtx op1;
++ #else /* not GPC */
+    register rtx op0
+      = expand_expr (TREE_OPERAND (exp, 0), NULL_RTX, VOIDmode, 0);
+    register rtx op1
+      = expand_expr (TREE_OPERAND (exp, 1), NULL_RTX, VOIDmode, 0);
++ #endif /* not GPC */
+    register tree type = TREE_TYPE (TREE_OPERAND (exp, 0));
+    register enum machine_mode mode = TYPE_MODE (type);
+    int unsignedp = TREE_UNSIGNED (type);
+    enum rtx_code code = unsignedp ? unsigned_code : signed_code;
++ 
++ #ifdef GPC
++   if (TREE_CODE (type) == SET_TYPE
++       || TREE_CODE (TREE_TYPE (TREE_OPERAND (exp, 1))) == SET_TYPE)
++     {
++ 
++       /* Generate code to compare two set operands.
++ 
++          First generate code that compares the words in the set.
++          The two sets are not necessarily same size in memory,
++          so block compare does not work here.
++          (If op0 is a constructor [ 'A' ] and op1 is a
++          set with elements [ chr('0') .. chr (255) ],
++          then op0 takes one word and op1 takes 8 words in
++          a 32 bit machine.)
++ 
++          The (boolean) result is then compared to const1_rtx with the
++          mode of the set comparison result to set the CC0 as the caller
++          wants.  */
++ 
++       op0  = expand_expr (exp, NULL_RTX, VOIDmode, 0);
++       mode = GET_MODE (op0);
++       code = EQ;
++       op1  = const1_rtx;
++     }
++   else
++     {
++       op0 = expand_expr (TREE_OPERAND (exp, 0), NULL_RTX, VOIDmode, 0);
++       op1 = expand_expr (TREE_OPERAND (exp, 1), NULL_RTX, VOIDmode, 0);
++     }
++ #endif /* GPC */
+  
+  #ifdef HAVE_canonicalize_funcptr_for_compare
+    /* If function pointers need to be "canonicalized" before they can
