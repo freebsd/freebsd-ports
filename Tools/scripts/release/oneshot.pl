@@ -7,6 +7,7 @@ use File::Path;
 
 my $debug	= 1;
 my $fake	= 0;
+my $pkg_ext     = "tbz";
 
 my %discs;
 my %distfiles;
@@ -37,25 +38,25 @@ sub copyPkg($$) {
     my $text = $pkg->{INDEX};
 
   # Copy over the package.
-    debugPrint("copying $disc/packages/All/$name.tgz");
+    debugPrint("copying $disc/packages/All/$name.$pkg_ext");
     mkpath("$disc/packages/All");
     if ($fake) {
-        system("touch $disc/packages/All/$name.tgz");
+        system("touch $disc/packages/All/$name.$pkg_ext");
     } else {
-        system("cp -f $pkgDir/All/$name.tgz $disc/packages/All");
+        system("cp -f $pkgDir/All/$name.$pkg_ext $disc/packages/All");
     }
 
   # Create symlinks in each category.
     foreach $cat (@{$pkg->{cats}}) {
-        debugPrint("creating $disc/packages/$cat/$name.tgz");
+        debugPrint("creating $disc/packages/$cat/$name.$pkg_ext");
         mkpath("$disc/packages/$cat");
-        symlink("../All/$name.tgz", "$disc/packages/$cat/$name.tgz");
+        symlink("../All/$name.$pkg_ext", "$disc/packages/$cat/$name.$pkg_ext");
     }
 
   # If required created the Latest symlink.
     mkpath("$disc/packages/Latest");
     if ($pkg->{latest}) {
-        symlink("../All/$name.tgz", "$disc/packages/Latest/$base.tgz");
+        symlink("../All/$name.$pkg_ext", "$disc/packages/Latest/$base.$pkg_ext");
     }
 
   # Add the package to INDEX.
@@ -166,8 +167,8 @@ sub doPackages() {
 
 sub isLatest($$) {
     my ($name, $base) = @_;
-    my $link = "$pkgDir/Latest/$base.tgz";
-    my $pkg = "$pkgDir/All/$name.tgz";
+    my $link = "$pkgDir/Latest/$base.$pkg_ext";
+    my $pkg = "$pkgDir/All/$name.$pkg_ext";
 
     return 0 if ! -l $link;
 
@@ -332,7 +333,7 @@ sub readIndex() {
           'latest'	=> isLatest($name, $base),
           'name'	=> $name,
           'rdeps'	=> [split(/\s+/, $f[8])],
-          'size'	=> (stat("$pkgDir/All/$name.tgz"))[7],
+          'size'	=> (stat("$pkgDir/All/$name.$pkg_ext"))[7],
         };
 
       # debugPrint("adding " . $pkg->{name});
