@@ -39,15 +39,6 @@ INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
 
-APR_CONF_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" ${CONFIGURE_ENV} \
-		CONFIG_SHELL=/bin/sh
-
-APR_UTIL_CONF_ENV=	\
-		CC="${CC}" CFLAGS="${CFLAGS}" ${CONFIGURE_ENV} \
-		CONFIG_SHELL=/bin/sh \
-		CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
-
 APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 			--with-expat=${PREFIX} \
 			--with-iconv=${PREFIX}
@@ -133,10 +124,18 @@ pre-configure:
 		--with-apr=../apr-${PORTVERSION}
 
 do-configure:
+	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
+		| ${XARGS} -n 1 ${DIRNAME}); \
+	for _D in $${CONFIG_GUESS_DIRS}; do \
+		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${CHMOD} a+rx $${_D}/config.guess; \
+	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${CHMOD} a+rx $${_D}/config.sub; \
+	done
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
-		${SETENV} ${APR_CONF_ENV} ./configure ${CONFIGURE_ARGS}
+		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
-		${SETENV} ${APR_UTIL_CONF_ENV} \
+		${SETENV} ${SCRIPTS_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
 do-build:
