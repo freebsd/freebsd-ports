@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.41
+PORTVERSION=	1.9.42
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
-		ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
 			./:DEFAULT \
@@ -54,7 +53,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		for i in ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
-			 INSTALL NEWS README \
+			 INSTALL NEWS README ChangeLog.old \
 			 README-FQDN README-FQDN.html README-daemontools \
 			 README.FIRST TODO leafnode.cron.daily ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/$$i ${DOCSDIR} ; \
