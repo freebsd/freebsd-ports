@@ -25,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
 .if defined(WITH_TLS)
-LIB_DEPENDS+=	gnutls.7:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls \
 		ggz.1:${PORTSDIR}/games/libggz
 CFLAGS+=	-DUSE_TLS
 LDFLAGS+=	-lggz -lgnutls -L${LOCALBASE}/lib
