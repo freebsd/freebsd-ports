@@ -6,11 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	libPropList-0.8.3
-PKGNAME=	libproplist-0.8.3
+DISTNAME=	libPropList-0.9.1
+PKGNAME=	libproplist-0.9.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libPropList
+MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
+MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=    gljohns@bellsouth.net
 
