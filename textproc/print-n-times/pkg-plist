@@ -1,2 +1,3 @@
 share/xsl/string/print-n-times.xsl
 @unexec rmdir %D/share/xsl/string 2>/dev/null || true
+@unexec rmdir %D/share/xsl 2>/dev/null || true

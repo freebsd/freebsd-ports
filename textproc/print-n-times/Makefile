@@ -5,6 +5,7 @@
 
 PORTNAME=	print-n-times
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://aaronland.info/xsl/string/print-n-times/
 
