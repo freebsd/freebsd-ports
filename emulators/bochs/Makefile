@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:   bochs
 # Version required:    990219a
 # Date created:        16 December 1997
@@ -25,6 +26,12 @@ WRKSRC=		${WRKDIR}/bochs-${DATE}a
 
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
+
+pre-configure:
+	@${PERL} -pi.fbsd \
+		-e 's|^vgaromimage:\sbios/|vgaromimage: ${PREFIX}/bios/| ;' \
+		-e 's|^romimage:\sfile=bios/|romimage: file=${PREFIX}/bios/|' \
+		${WRKSRC}/.bochsrc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin
