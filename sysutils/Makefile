@@ -118,6 +118,7 @@
     SUBDIR += ganglia-webfrontend
     SUBDIR += gcombust
     SUBDIR += gconf-editor
+    SUBDIR += gdesklets-sysinfo
     SUBDIR += gfslicer
     SUBDIR += gkleds2
     SUBDIR += gkrellflynn
