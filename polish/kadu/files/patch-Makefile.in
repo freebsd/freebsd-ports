@@ -1,0 +1,46 @@
+--- kadu/Makefile.in	Sun Jan 11 16:28:21 2004
++++ kadu/Makefile.in	Tue Feb 10 00:02:07 2004
+@@ -545,33 +545,16 @@
+ 	$(QT_MOC_DIR)/moc -o $@ $<
+ 
+ install-data-local:
+-	@if test -w "/usr/share"; then \
+-		$(mkinstalldirs) "$(DESTDIR)/usr/share/applnk/Internet/"; \
+-		echo "[Desktop Entry]" > "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "Type=Application" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "Exec=$(bindir)/kadu" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "Icon=kadu.png" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "MiniIcon=kadu-16.png" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "Terminal=0" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "Name=Kadu" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		$(mkinstalldirs) "$(DESTDIR)/usr/share/pixmaps/"; \
+-		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"; \
+-		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu.png"; \
+-		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-16.png"; \
+-		echo ""; \
+-		echo "Icons installed to $(DESTDIR)/usr/share/pixmaps"; \
+-		echo "Link(kadu.desktop) installed to $(DESTDIR)/usr/share/applnk/Internet"; \
+-		echo ""; \
+-	else \
+-		echo "";\
+-		echo "         *******************************************************************"; \
+-		echo "         *                                                                 *"; \
+-		echo "         *          You don't have permission to write /usr/share          *"; \
+-		echo "         *          Icons and link(kadu.desktop) won't be installed        *"; \
+-		echo "         *                                                                 *"; \
+-		echo "         *******************************************************************"; \
+-		echo $(DESTDIR)"";\
+-	fi;
++		echo "[Desktop Entry]" > "$(srcdir)/kadu.desktop"
++		echo "Type=Application" >> "$(srcdir)/kadu.desktop"
++		echo "Exec=$(bindir)/kadu" >> "$(srcdir)/kadu.desktop"
++		echo "Icon=kadu.png" >> "$(srcdir)/kadu.desktop"
++		echo "MiniIcon=kadu-16.png" >> "$(srcdir)/kadu.desktop"
++		echo "Terminal=0" >> "$(srcdir)/kadu.desktop"
++		echo "Name=Kadu" >> "$(srcdir)/kadu.desktop"
++		$(INSTALL_DATA) -d hi48-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"
++		$(INSTALL_DATA) -d hi32-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"
++		$(INSTALL_DATA) -d hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
+ uninstall-local:
+ 	rm -f "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"
+ 	rm -f "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"

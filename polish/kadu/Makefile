@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.4
-PORTREVISION=		2
+PORTVERSION=		0.3.7
 PORTEPOCH=		1
 CATEGORIES=		polish net
-MASTER_SITES=		http://kadu.net/releases/
+MASTER_SITES=		http://cyberfirma.home.pl/kadu/download/stable/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jacek@combit.com.pl
@@ -18,17 +17,46 @@ COMMENT=		QT Gadu-Gadu client
 
 LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg:install
 
+USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu \
 			--program-transform-name=''\
 			--mandir=${PREFIX}/man
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 USE_QT_VER=		3
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
-MAN1=			kadu.1
-MANLANG=		pl
-MANCOMPRESSED=		no
+WANT_GNOME=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomehier}!=""
+PLIST_SUB+=	GNOME:=""
+.else
+PLIST_SUB+=	GNOME:="@comment "
+.endif
+.if exists(${LOCALBASE}/lib/libkdecore.so)
+PLIST_SUB+=	KDE:=""
+.else
+PLIST_SUB+=	KDE:="@comment "
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "  **************************************************************"
+	@${ECHO_MSG} "  * This version of kadu requires polish/ekg-1.4.20040208,1 or *"
+	@${ECHO_MSG} "  * higher, so upgrade it first if necessary.                  *"
+	@${ECHO_MSG} "  **************************************************************"
+	@${ECHO_MSG}
+
+post-install:
+.if ${HAVE_GNOME:Mgnomehier}!=""
+	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${X11BASE}/share/gnome/apps/Internet
+.endif
+.if exists(${LOCALBASE}/lib/libkdecore.so)
+	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${LOCALBASE}/share/applnk/Internet
+.endif
+
+.include <bsd.port.post.mk>
