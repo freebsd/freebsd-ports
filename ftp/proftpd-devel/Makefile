@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.2rc3
+PORTVERSION=	1.2.2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
@@ -48,6 +48,13 @@ MODULES:=${MODULES}:mod_sql:mod_sql_mysql
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib/mysql
+.endif
+
+.if defined(WITH_POSTGRES)
+MODULES:=${MODULES}:mod_sql:mod_sql_postgres
+LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7
+INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include/pgsql
+LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .endif
 
 .if !empty(MODULES)
