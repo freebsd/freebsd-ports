@@ -1,17 +1,19 @@
---- team.c.dist	Sat Jul  1 08:33:24 1995
-+++ team.c	Sun Mar 15 12:37:16 1998
-@@ -58,8 +58,8 @@
+--- team.c.orig	Sat Jul  1 17:33:24 1995
++++ team.c	Mon Sep  1 16:13:15 2003
+@@ -58,8 +58,10 @@
    upstream to it, which has much the same effect.
  */
  
 -#define TeamLVOLSZ	(1L<<10)
 -#define TeamHVOLSZ	((long unsigned) 3 * ((long unsigned) 1 << 30))
-+#define TeamLVOLSZ	(off_t unsigned)(1L<<10)
-+#define TeamHVOLSZ	((off_t unsigned) 3 * ((off_t unsigned) 1 << 62))
++#define UOFF_T uint64_t
++
++#define TeamLVOLSZ	(UOFF_T)(1L<<10)
++#define TeamHVOLSZ	((UOFF_T) 3 * ((UOFF_T) 1 << 62))
  
  #define TeamLBUFSZ	(64)		/* Low buffer size		*/
  #define TeamDBUFSZ	(60*512)	/* Default buffer size		*/
-@@ -84,11 +84,23 @@
+@@ -84,11 +86,23 @@
  #include <sys/file.h>
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -35,7 +37,7 @@
  #if (PCG)
  # include "Extend.h"
  # include "Here.h"
-@@ -160,6 +172,7 @@
+@@ -160,6 +174,7 @@
  
  local bool		verbose = false;
  local bool		report = true;
@@ -43,41 +45,41 @@
  
  extern int		errno;
  local time_t		origin;
-@@ -190,7 +203,7 @@
+@@ -190,7 +205,7 @@
  {
    int 	    fd;
    short	    status;
 -  long unsigned   size;
-+  off_t unsigned   size;
++  UOFF_T   size;
  };
  
  local Fd		FdIn,FdOut;
-@@ -199,7 +212,7 @@
+@@ -199,7 +214,7 @@
  (
    fast Fd		  *fd
  _ int			  ffd
 -_ long unsigned		  size
-+_ off_t unsigned	  size
++_ UOFF_T		  size
  )
  {
    fd->status = (ffd >= 0) ? FdOPEN :   FdCLOSED;
-@@ -252,12 +265,12 @@
+@@ -252,12 +267,12 @@
    to->fd	= from->fd;
  }
  
 -local long unsigned	FdRetry on((fd,which,done,space)) is
-+local off_t unsigned	FdRetry on((fd,which,done,space)) is
++local UOFF_T	FdRetry on((fd,which,done,space)) is
  (
    fast Fd		  *fd
  _ char			  *which
 -_ long unsigned		  done
 -_ long unsigned		  space
-+_ off_t	unsigned	  done
-+_ off_t	unsigned	  space
++_ UOFF_T		  done
++_ UOFF_T		  space
  )
  {
    int			  tty;
-@@ -286,16 +299,21 @@
+@@ -286,16 +301,21 @@
    do
    {
  #if (defined i386 || defined sun)
@@ -101,87 +103,89 @@
  
      read(tty,reply,sizeof reply);
    }
-@@ -320,7 +338,7 @@
+@@ -320,7 +340,7 @@
  local unsigned		FdCanDo on((remaining,available)) is
  (
    fast address		  remaining
 -_ fast long unsigned	  available
-+_ fast off_t unsigned	  available
++_ fast UOFF_T		  available
  )
  {
    return (remaining < available)
-@@ -332,10 +350,10 @@
+@@ -332,10 +352,10 @@
    fast Fd		  *fd
  _ pointer		  buffer
  _ fast address		  todo
 -_ long unsigned		  done
-+_ off_t unsigned	  done
++_ UOFF_T		  done
  )
  {
 -  fast long unsigned	  space;
-+  fast off_t unsigned	  space;
++  fast UOFF_T		  space;
    fast int		  bytesRead;
    fast address		  justDone;
  
-@@ -373,10 +391,10 @@
+@@ -373,10 +393,10 @@
    fast Fd		  *fd
  _ pointer		  buffer
  _ fast address		  todo
 -_ long unsigned		  done
-+_ off_t unsigned	  done
++_ UOFF_T		  done
  )
  {
 -  fast long unsigned	  space;
-+  fast off_t unsigned	  space;
++  fast UOFF_T		  space;
    fast int		  bytesWritten;
    fast address		  justDone;
  
-@@ -453,7 +471,7 @@
+@@ -453,7 +473,7 @@
  {
    Token			  token;
    short			  status;
 -  long unsigned		  done;
-+  off_t unsigned	  done;
++  UOFF_T		  done;
  };
  
  local bool		StreamSend on((fd,token,status,done)) is
-@@ -461,7 +479,7 @@
+@@ -461,7 +481,7 @@
    fast Fd		  *fd
  _ Token 		  token
  _ short 		  status
 -_ long unsigned		  done
-+_ off_t unsigned	  done
++_ UOFF_T		  done
  )
  {
    fast int		  n;
-@@ -483,7 +501,7 @@
+@@ -483,7 +503,7 @@
    fast Fd		  *fd
  _ Token 		  *tokenp
  _ short 		  *statusp
 -_ long unsigned		  *donep
-+_ off_t unsigned	  *donep
++_ UOFF_T		  *donep
  )
  {
    fast int		  n;
-@@ -536,7 +554,7 @@
+@@ -536,7 +556,7 @@
  #define GuyRECEIVE(guy,tokenp,statusp,donep) \
    StreamReceive(&guy->upStream,tokenp,statusp,donep)
  
 -local bool		GuyStop of((Guy *,char *,long unsigned));
-+local bool		GuyStop of((Guy *,char *,off_t unsigned));
++local bool		GuyStop of((Guy *,char *,UOFF_T));
  
  local bool		GuyStart on((guy,bufsize)) is
  (
-@@ -547,7 +565,7 @@
+@@ -547,8 +567,8 @@
    fast char		  *buffer;
    Token 		  token;
    short 		  status;
 -  long unsigned		  done;
-+  off_t unsigned	  done;
-   bool		  received;
+-  bool		  received;
++  UOFF_T		  done;
++  bool			  received;
    static int 		  bytesRead,bytesWritten;
  
-@@ -577,7 +595,7 @@
+   Mesg(("GuyStart guy %#o bufsize %u\n",guy,bufsize));
+@@ -577,7 +597,7 @@
      done += bytesRead;
  
      if (verbose)
@@ -190,7 +194,7 @@
  
      if (!GuySEND(guy,TokenREAD,FdIn.status,done))
        GuyStop(guy,"guy cannot send READ",done);
-@@ -595,7 +613,7 @@
+@@ -595,7 +615,7 @@
      done += bytesWritten;
  
      if (verbose)
@@ -199,27 +203,27 @@
  
      if (!GuySEND(guy,TokenWRITE,FdOut.status,done))
        GuyStop(guy,"guy cannot send WRITE",done);
-@@ -619,7 +637,7 @@
+@@ -619,7 +639,7 @@
  (
    fast Guy		  *guy
  _ char			  *errormsg
 -_ long unsigned		  done
-+_ off_t unsigned	  done
++_ UOFF_T		  done
  )
  {
    Mesg(("GuyStop guy %#o\n",guy));
-@@ -627,8 +645,8 @@
+@@ -627,8 +647,8 @@
    if (done)
    {
      if (report)
 -      mesg("%lu kilobytes, %lu seconds\r\n",
 -	  done>>10,(long unsigned) (time((time_t *) 0)-origin));
 +      mesg("%qu kilobytes, %lu seconds\r\n",
-+	  done>>10,(off_t unsigned) (time((time_t *) 0)-origin));
++	  done>>10,(UOFF_T) (time((time_t *) 0)-origin));
      else if (verbose)
        mesg("\n");
    }
-@@ -637,7 +655,7 @@
+@@ -637,7 +657,7 @@
    {
      mesg("team: guy pid %u: %s\n",guy->pid,errormsg);
      call GuySEND(guy,TokenABORT,FdERROR,0L);
@@ -228,18 +232,18 @@
      /*NOTREACHED*/
    }
  
-@@ -697,8 +715,8 @@
+@@ -697,8 +717,8 @@
  (
    fast Team		  *team
  _ address		  bufsize
 -_ long unsigned		  isize
 -_ long unsigned		  osize
-+_ off_t unsigned		  isize
-+_ off_t unsigned		  osize
++_ UOFF_T		  isize
++_ UOFF_T		  osize
  )
  {
    /*
-@@ -797,6 +815,9 @@
+@@ -797,6 +817,9 @@
      {
        pid = getpid();
  
@@ -249,7 +253,7 @@
        if (!FdClose(&last_downstream))
  	perror("cannot close inherited first link");
  
-@@ -816,13 +837,13 @@
+@@ -816,13 +839,13 @@
      }
    }
  
@@ -265,7 +269,7 @@
    {
      perror("cannot send first WRITE token");
      return false;
-@@ -864,6 +885,14 @@
+@@ -864,6 +887,14 @@
  
      --team->active;
  
@@ -280,7 +284,7 @@
      if (status != 0   && team->active != 0)
        return false;
    }
-@@ -914,8 +943,8 @@
+@@ -914,8 +945,8 @@
  syntax: team [-[vr]] [-iI[bkm] [-oO[bkm] [N[bkm] [P]]\n\
    copies standard input to output\n\
    -v gives ongoing report, -r final report\n\
@@ -291,18 +295,18 @@
    N is buffer size (default %luk)\n\
    P is number of processes (default %u)\n\
    (postfix b means *512, k means *1KB, m means *1MB)\n\
-@@ -927,19 +956,19 @@
+@@ -927,19 +958,19 @@
    /*NOTREACHED*/
  }
  
 -local long unsigned	atos on((s)) is
-+local off_t unsigned	atos on((s)) is
++local UOFF_T	atos on((s)) is
  (
    fast char		  *s
  )
  {
 -  fast unsigned long	  l;
-+  fast off_t unsigned	  l;
++  fast UOFF_T		  l;
  
    for (
      s, l = 0L;
@@ -310,22 +314,22 @@
      s++
    )
 -    l = l*10L + (long unsigned) (*s-'0');
-+    l = l*10L + (off_t unsigned) (*s-'0');
++    l = l*10L + (UOFF_T) (*s-'0');
  
    if (*s == 'b') l *= (1L<<9);
    if (*s == 'k') l *= (1L<<10);
-@@ -958,8 +987,8 @@
+@@ -958,8 +989,8 @@
    short unsigned	  teamsize;
  
    address		  bufsize;
 -  long unsigned		  isize;
 -  long unsigned		  osize;
-+  off_t unsigned	  isize;
-+  off_t unsigned	  osize;
++  UOFF_T		  isize;
++  UOFF_T		  osize;
    int			  opt;
  
    teamsize = TeamDTEAMSZ;
-@@ -975,7 +1004,7 @@
+@@ -975,7 +1006,7 @@
        isize = atos(optarg);
        if (isize < TeamLVOLSZ || isize > TeamHVOLSZ)
        {
@@ -334,7 +338,7 @@
  	usage();
        }
    
-@@ -983,7 +1012,7 @@
+@@ -983,7 +1014,7 @@
        osize = atos(optarg);
        if (osize < TeamLVOLSZ || osize > TeamHVOLSZ)
        {
@@ -343,7 +347,7 @@
  	usage();
        }
  
-@@ -1032,6 +1061,11 @@
+@@ -1032,6 +1063,11 @@
  
    origin = time((time_t *) 0);
  
@@ -355,7 +359,7 @@
    if (!TeamStart(&team,bufsize,isize,osize))
    {
      mesg("team: cannot start the team\n");
-@@ -1052,6 +1086,12 @@
+@@ -1052,6 +1088,12 @@
    if (!TeamClose(&team))
    {
      mesg("team: cannot close the team\n");
