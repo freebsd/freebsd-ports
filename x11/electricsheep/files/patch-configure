@@ -1,0 +1,10 @@
+--- mpeg2dec/configure.orig	Thu Jun 12 21:31:41 2003
++++ mpeg2dec/configure	Thu Jun 12 21:32:01 2003
+@@ -7842,6 +7842,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='${SHELL} /usr/local/bin/libtool'
