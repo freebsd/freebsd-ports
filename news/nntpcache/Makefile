@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nntpcache-2.3.2
+DISTNAME=	nntpcache-2.4.0b2
 CATEGORIES=	news
 MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
-		ftp://ftp.ntnu.no/pub/unix/news/ \
+		ftp://ftp.ntnu.no/pub/unix/news/nntpcache/ \
 		ftp://ftp.nethelp.no/pub/unix/news/ \
 		ftp://suburbia.net/pub/nntpcache/
 
