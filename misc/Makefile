@@ -138,6 +138,7 @@
     SUBDIR += scriptkit
     SUBDIR += seizedesktop
     SUBDIR += sh-utils
+    SUBDIR += shc
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += smssend
