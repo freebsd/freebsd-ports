@@ -1,0 +1,3 @@
+This is 9libs, a package of Plan 9 compatibility libraries derived from
+the X11 version of Rob Pike's editor, sam. 
+This release differs from the Bell Labs release.
