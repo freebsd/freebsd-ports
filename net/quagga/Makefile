@@ -29,7 +29,7 @@ AUTOMAKE_ARGS= -a -i
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
-CONFIGURE_ARGS+=--includedir=/usr/local/include/quagga
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/quagga
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 pre-fetch:
