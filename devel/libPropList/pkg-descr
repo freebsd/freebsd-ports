@@ -1,0 +1,9 @@
+This library is necessary for property settings for some gnome applications.
+
+The purpose of PL is to closely mimick the behaviour of the property
+lists used in GNUstep/OPENSTEP (there formed with the NSString,
+NSData, NSArray and NSDictionary classes) and to be compatible with
+it. PL enables programs that use configuration or preference files to
+make these compatible with GNUstep/OPENSTEP's user defaults handling
+mechanism, without needing to use Objective-C or GNUstep/OPENSTEP
+themselves.
