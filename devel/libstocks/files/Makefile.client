@@ -1,0 +1,12 @@
+PROG=	libstocks_client
+SRCS=	client.c
+NOMAN=	1
+PREFIX?=/usr/local
+BINDIR=	${PREFIX}/bin
+
+CFLAGS+=-I../lib
+LDADD+=	-L../lib -lstocks
+
+build:	all
+
+.include <bsd.prog.mk>

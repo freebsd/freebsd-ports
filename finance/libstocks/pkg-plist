@@ -1,0 +1,7 @@
+bin/libstocks_client
+include/stocks.h
+lib/libstocks.a
+lib/libstocks.so
+lib/libstocks.so.0.5
+%%PORTDOCS%%share/doc/libstocks/README
+%%PORTDOCS%%@dirrm share/doc/libstocks
