@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.17 1998/12/10 17:24:32 vanilla Exp $
+# $Id: Makefile,v 1.18 1999/04/16 08:52:24 mharo Exp $
 #
 
 DISTNAME=	nn-6.5.3
@@ -24,9 +24,11 @@ pre-patch:
 pre-build:
 	@${CP} ${FILESDIR}/s-freebsd.h ${WRKSRC}/conf
 
+post-build:
+	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+
 pre-install:
 	${MKDIR} ${PREFIX}/news
-	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
 	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
 
 post-install:
