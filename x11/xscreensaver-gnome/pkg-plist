@@ -1,0 +1,11 @@
+bin/screensaver-properties-capplet
+bin/xscreensaver-gnome
+share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
+share/gnome/control-center/Desktop/screensaver-properties.desktop
+share/gnome/pixmaps/screensaver-cmndln.xpm
+share/gnome/pixmaps/screensaver-colorselector.xpm
+share/gnome/pixmaps/screensaver-diagnostic.xpm
+share/gnome/pixmaps/screensaver-locking.xpm
+share/gnome/pixmaps/screensaver-power.xpm
+share/gnome/pixmaps/screensaver-snap.xpm
+share/gnome/pixmaps/xscreensaver.xpm
