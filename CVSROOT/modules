@@ -6569,6 +6569,7 @@ snortsnarf	ports/security/snortsnarf
 snowflake	ports/misc/snowflake
 snowstar	ports/audio/snowstar
 sntop		ports/net/sntop
+socat		ports/net/socat
 socket		ports/sysutils/socket
 socks5		ports/net/socks5
 sockstat	src/usr.bin/sockstat
