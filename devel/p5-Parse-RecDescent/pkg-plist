@@ -1,6 +1,13 @@
 %%SITE_PERL%%/Parse/RecDescent.pm
 %%SITE_PERL%%/Parse/RecDescent.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ-PRD-proc.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ-yacc-proc.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ_maze.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ_tree.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true

@@ -22,4 +22,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Parse::RecDescent.3
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/tutorial
+	${INSTALL_DATA} ${WRKSRC}/tutorial/* ${DOCSDIR}/tutorial
+.endif
+
 .include <bsd.port.mk>
