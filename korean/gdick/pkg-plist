@@ -1,5 +1,5 @@
 bin/gdick
-%%GNOMEONLY%%bin/gdick_applet
+bin/gdick_applet
 %%PYTHON_SITELIBDIR%%/gdick/DictResult.py
 %%PYTHON_SITELIBDIR%%/gdick/DictResult.pyc
 %%PYTHON_SITELIBDIR%%/gdick/DictResult.pyo
@@ -22,5 +22,5 @@ share/gdick/gdick.glade
 share/gdick/gdick.png
 share/gdick/gdick_icon.png
 @dirrm share/gdick
-%%GNOMEONLY%%@cwd %%X11BASE%%
-%%GNOMEONLY%%libdata/bonobo/servers/GNOME_GDick.server
+@cwd %%X11BASE%%
+libdata/bonobo/servers/GNOME_GDick.server
