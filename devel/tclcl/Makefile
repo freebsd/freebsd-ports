@@ -23,10 +23,6 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
