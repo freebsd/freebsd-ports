@@ -388,4 +388,24 @@ www/linux-opera7|www/linux-opera|2003-07-09|move to www/linux-opera
 www/xswallow||2003-07-12|port is obsolete
 net/gnut||2003-07-12|security vulnerability, and no active development
 www/mod_log_mysql|www/mod_log_sql|2003-07-12|renamed by author in new version
+x11/gnomecore||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gdm||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnomeapplets||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/linux-xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnome||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnome-fifth-toe||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+editors/gedit||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+devel/libgtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11-fm/nautilus||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+devel/bugbuddy||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+games/gnomegames||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+misc/gnomeutils||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+misc/gnomeuserdocs||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+graphics/eog||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+print/ggv||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 

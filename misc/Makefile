@@ -109,9 +109,7 @@
     SUBDIR += gnomemimedata
     SUBDIR += gnomepm
     SUBDIR += gnomesword
-    SUBDIR += gnomeuserdocs
     SUBDIR += gnomeuserdocs2
-    SUBDIR += gnomeutils
     SUBDIR += gnomeutils2
     SUBDIR += gnuls
     SUBDIR += gnustep-examples

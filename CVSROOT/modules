@@ -655,7 +655,6 @@ bubblemon	ports/sysutils/bubblemon
 bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
 buffer		ports/misc/buffer
 buffy		ports/x11-toolkits/buffy
-bugbuddy	ports/devel/bugbuddy
 bugbuddy2	ports/devel/bugbuddy2
 bugs		ports/security/bugs
 bugseeker	ports/java/bugseeker
@@ -1421,7 +1420,6 @@ entity		ports/devel/entity
 entropy		ports/math/entropy
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
-eog		ports/graphics/eog
 eog2		ports/graphics/eog2
 eperl		ports/lang/eperl
 ephem		ports/astro/ephem
@@ -1873,7 +1871,6 @@ gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
 gdkxft		ports/x11/gdkxft
 gdl		ports/x11-toolkits/gdl
-gdm		ports/x11/gdm
 gdm2		ports/x11/gdm2
 gdome2		ports/textproc/gdome2
 gdrdao		ports/audio/gdrdao
@@ -1882,7 +1879,6 @@ geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
-gedit		ports/editors/gedit
 gedit2		ports/editors/gedit2
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
@@ -1921,7 +1917,6 @@ gforth		ports/lang/gforth
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggsd		ports/net/ggsd
-ggv		ports/print/ggv
 ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
 ghc6		ports/lang/ghc6
@@ -2070,11 +2065,9 @@ gnofin		ports/deskutils/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
-gnome		ports/x11/gnome
 gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-devel	ports/devel/gnome-devel
-gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome-jabber	ports/net/gnome-jabber
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
@@ -2089,10 +2082,8 @@ gnome2		ports/x11/gnome2
 gnome2-devel	ports/devel/gnome2-devel
 gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome2wmaker	ports/x11-wm/gnome2wmaker
-gnomeapplets	ports/x11/gnomeapplets
 gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
-gnomeaudio	ports/audio/gnomeaudio
 gnomeaudio2	ports/audio/gnomeaudio2
 gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
@@ -2102,13 +2093,11 @@ gnomechess	ports/games/gnomechess
 gnomecommon	ports/devel/gnomecommon
 gnomecontrolcenter	ports/sysutils/gnomecontrolcenter
 gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
-gnomecore	ports/x11/gnomecore
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
 gnomedebug	ports/devel/gnomedebug
 gnomedesktop	ports/x11/gnomedesktop
 gnomefind	ports/sysutils/gnomefind
-gnomegames	ports/games/gnomegames
 gnomegames2	ports/games/gnomegames2
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
@@ -2117,7 +2106,6 @@ gnomeicu2	ports/net/gnomeicu2
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemag	ports/x11/gnomemag
-gnomemedia	ports/audio/gnomemedia
 gnomemedia2	ports/audio/gnomemedia2
 gnomemeeting	ports/net/gnomemeeting
 gnomemeeting2	ports/net/gnomemeeting2
@@ -2140,9 +2128,7 @@ gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
-gnomeuserdocs	ports/misc/gnomeuserdocs
 gnomeuserdocs2	ports/misc/gnomeuserdocs2
-gnomeutils	ports/misc/gnomeutils
 gnomeutils2	ports/misc/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
 gnomevfs-extras	ports/devel/gnomevfs-extras
@@ -2366,7 +2352,6 @@ gtl		ports/misc/gtl
 gtm		ports/ftp/gtm
 gtoaster	ports/sysutils/gtoaster
 gtoolkit	ports/x11-toolkits/gtoolkit
-gtop		ports/sysutils/gtop
 gtranslator	ports/devel/gtranslator
 gts		ports/graphics/gts
 gturing		ports/games/gturing
@@ -3754,7 +3739,6 @@ libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
-libgtop		ports/devel/libgtop
 libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
@@ -3976,7 +3960,6 @@ linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vsound	ports/audio/linux-vsound
 linux-winetools	ports/emulators/linux-winetools
-linux-xalf	ports/x11/linux-xalf
 linux-xmovie		ports/multimedia/linux-xmovie
 linux_base	ports/emulators/linux_base
 linux_base-6	ports/emulators/linux_base-6
@@ -4544,7 +4527,6 @@ nasm		ports/devel/nasm
 nast		ports/net/nast
 nat		ports/net/nat
 naturalmath	ports/math/naturalmath
-nautilus	ports/x11-fm/nautilus
 nautilus-media	ports/multimedia/nautilus-media
 nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
@@ -7219,7 +7201,6 @@ sash		ports/shells/sash
 satellite	ports/net/satellite
 sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
-sawfish		ports/x11-wm/sawfish
 sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
 sb16config	ports/sysutils/sb16config
@@ -8432,7 +8413,6 @@ x86info		ports/sysutils/x86info
 xabacus		ports/games/xabacus
 xalan-j		ports/java/xalan-j
 xalarm		ports/x11-clocks/xalarm
-xalf		ports/x11/xalf
 xanim		ports/multimedia/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm

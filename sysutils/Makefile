@@ -121,7 +121,6 @@
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
     SUBDIR += gtoaster
-    SUBDIR += gtop
     SUBDIR += gupsc
     SUBDIR += hammerhead
     SUBDIR += healthd

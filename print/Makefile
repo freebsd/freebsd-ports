@@ -60,7 +60,6 @@
     SUBDIR += freetype2
     SUBDIR += ft2demos
     SUBDIR += gfontview
-    SUBDIR += ggv
     SUBDIR += ggv2
     SUBDIR += ghostscript-afpl
     SUBDIR += ghostscript-afpl-nox11

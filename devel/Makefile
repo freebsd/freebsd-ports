@@ -73,7 +73,6 @@
     SUBDIR += bonobo-activation
     SUBDIR += bonobo-conf
     SUBDIR += boost
-    SUBDIR += bugbuddy
     SUBDIR += bugbuddy2
     SUBDIR += bugzilla
     SUBDIR += buildtool
