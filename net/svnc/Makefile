@@ -8,11 +8,11 @@
 PORTNAME=	svnc
 PORTVERSION=	0.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.uk.research.att.com/vnc/dist/:att
-MASTER_SITE_SUBDIR=	trevor
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
-		vnc-3.3.3r1_unixsrc.tgz:att
+MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:svnc/} \
+		${MASTER_SITE_NETBSD:S/$/:vnc/}:vnc
+MASTER_SITE_SUBDIR=	./:vnc trevor/:svnc
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:svnc \
+		vnc-3.3.3r1_unixsrc.tgz:vnc
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	VNC viewer for SVGAlib
