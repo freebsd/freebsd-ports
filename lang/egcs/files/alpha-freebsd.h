@@ -23,10 +23,6 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
    for FreeBSD/alpha by Hidetoshi Shimokawa <simokawa@FreeBSD.ORG> */
 
 
-/* Get generic FreeBSD definitions.  */
-#include <freebsd.h>
-
-
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
 #define OBJECT_FORMAT_ELF
