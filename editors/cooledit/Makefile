@@ -6,43 +6,37 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.17.5
-PORTREVISION=	1
+PORTVERSION=	3.17.7
 CATEGORIES=	editors
-MASTER_SITES=	http://cooledit.sourceforge.net/ \
-		${MASTER_SITE_SUNSITE} \
-		http://www.netins.net/showcase/Comput-IT/cooledit/src/
-MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
+MASTER_SITES=	http://cooledit.sourceforge.net/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-USE_XLIB=	yes
 USE_XPM=	yes
+USE_PYTHON=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-libs='-lcrypt -lreadline -lvga -lintl' \
+		--disable-mail-author
+INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--with-libs='-lcrypt -lreadline -lvga' \
-		--disable-mail-author --without-included-gettext
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN1=		cooledit.1 smalledit.1 coolman.1 coolicon.1
-
-pre-install:
-	@${ECHO_MSG} "Installing in ${PREFIX}/bin"
-	@if [ ! -f ${PREFIX}/etc/coolicon.config ]; then \
-		${INSTALL_SCRIPT} ${WRKSRC}/pixmap/coolicon.config \
-		    ${PREFIX}/etc ; \
-	fi
-	${INSTALL_SCRIPT} ${WRKSRC}/pixmap/coolicon.config \
-		${PREFIX}/etc/coolicon.config.dist
+MAN1=		cooledit.1 coolicon.1 coolman.1 smalledit.1
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/pixmap/coolicon.config \
+		${PREFIX}/etc/coolicon.config.dist
+.if !exists(${PREFIX}/etc/coolicon.config)
+	${INSTALL_DATA} ${WRKSRC}/pixmap/coolicon.config \
+		${PREFIX}/etc/coolicon.config
+.endif
 	@${LN} -sf ${PREFIX}/share/cooledit/global.py \
 		${PREFIX}/share/coolicon/global.py
 

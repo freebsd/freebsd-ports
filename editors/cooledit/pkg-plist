@@ -15,14 +15,13 @@ etc/coolicon.config.dist
 lib/libCw.a
 lib/libCw.so
 lib/libCw.so.1
-share/cooledit/Xmlrpclib.py
 share/cooledit/c_utils.py
 share/cooledit/global.py
 share/cooledit/sh_utils.py
-share/cooledit/zope_utils.py
 share/cooledit/syntax/ada95.syntax
 share/cooledit/syntax/bapc.syntax
 share/cooledit/syntax/c.syntax
+share/cooledit/syntax/css.syntax
 share/cooledit/syntax/changelog.syntax
 share/cooledit/syntax/diff.syntax
 share/cooledit/syntax/fortran.syntax
@@ -44,14 +43,17 @@ share/cooledit/syntax/php.syntax
 share/cooledit/syntax/prolog.syntax
 share/cooledit/syntax/python.syntax
 share/cooledit/syntax/sh.syntax
+share/cooledit/syntax/sql.syntax
 share/cooledit/syntax/smalltalk.syntax
 share/cooledit/syntax/swig.syntax
 share/cooledit/syntax/texinfo.syntax
 share/cooledit/syntax/unknown.syntax
+share/cooledit/syntax/xml.syntax
 share/coolicon/browse.xpm
 share/coolicon/cdrom_eject.xpm
 share/coolicon/cdrom_view.xpm
 share/coolicon/cooledit.xpm
+share/coolicon/coolicon.config
 share/coolicon/dynamite.xpm
 share/coolicon/e.data
 share/coolicon/global.py
@@ -84,6 +86,6 @@ share/locale/pt/LC_MESSAGES/cooledit.mo
 share/locale/ru/LC_MESSAGES/cooledit.mo
 share/locale/sl/LC_MESSAGES/cooledit.mo
 share/locale/sv/LC_MESSAGES/cooledit.mo
+@dirrm share/coolicon
 @dirrm share/cooledit/syntax
 @dirrm share/cooledit
-@dirrm share/coolicon

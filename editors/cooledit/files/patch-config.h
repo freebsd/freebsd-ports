@@ -1,11 +1,11 @@
---- config.h.in.old	Thu Aug 23 19:43:12 2001
-+++ config.h.in	Thu Aug 23 19:43:44 2001
-@@ -420,7 +420,7 @@
- #undef HAVE_UNISTD_H
+--- config.h.in.orig	Sat Aug  3 20:04:12 2002
++++ config.h.in	Thu May  1 00:37:22 2003
+@@ -330,7 +330,7 @@
+ #undef HAVE_VPRINTF
  
- /* Define if you have the <wchar.h> header file.  */
+ /* Define to 1 if you have the <wchar.h> header file. */
 -#undef HAVE_WCHAR_H
 +/* #undef HAVE_WCHAR_H */
  
- /* Define if you have the i library (-li).  */
- #undef HAVE_LIBI
+ /* 0 */
+ #undef HAVE_XPOINTER
