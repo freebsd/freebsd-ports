@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	3.3.1
-PORTREVISION=	16
+PORTVERSION=	3.3.2
+PORTREVISION=	0
 CATEGORIES=	www java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
-		http://www.metaverse.nl/~ernst/ \
+MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-3/v${PORTVERSION}/bin/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 
