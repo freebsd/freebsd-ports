@@ -7,7 +7,7 @@
 
 PORTNAME=	martel
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc biology python
 MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
@@ -19,9 +19,9 @@ MAINTAINER=	johann@egenetics.com
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.0
+PYTHON_VERSION=	python2.1
 
-MARTEL_DIR=	${PYTHON_SITELIBDIR}/Martel
+MARTEL_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Martel
 MARTEL_EGDIR=	${PREFIX}/share/examples/martel
 MARTEL_DOCDIR=	${PREFIX}/share/doc/martel
 
