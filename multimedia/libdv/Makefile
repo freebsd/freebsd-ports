@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libdv
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.101
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,16 +21,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-USE_SIZE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${X11BASE}/libdata/pkgconfig
 INSTALLS_SHLIB=	yes
 
-MAN1=	encodedv.1 playdv.1
+MAN1=	dubdv.1 dvconnect.1 encodedv.1 playdv.1
 
-DOC_FILES=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
+PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
 
 .include <bsd.port.pre.mk>
@@ -79,9 +77,9 @@ post-patch:
 		${WRKSRC}/libdv.pc.in
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif

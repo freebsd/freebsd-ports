@@ -1,3 +1,4 @@
+bin/dubdv
 bin/dvconnect
 bin/encodedv
 bin/playdv
@@ -6,17 +7,7 @@ include/libdv/dv1394.h
 include/libdv/dv_types.h
 lib/libdv.a
 lib/libdv.so
-lib/libdv.so.3
+lib/libdv.so.4
 libdata/pkgconfig/libdv.pc
-%%PORTDOCS%%share/doc/libdv/AUTHORS
-%%PORTDOCS%%share/doc/libdv/COPYING
-%%PORTDOCS%%share/doc/libdv/COPYRIGHT
-%%PORTDOCS%%share/doc/libdv/ChangeLog
-%%PORTDOCS%%share/doc/libdv/NEWS
-%%PORTDOCS%%share/doc/libdv/README
-%%PORTDOCS%%share/doc/libdv/README.dvconnect
-%%PORTDOCS%%share/doc/libdv/README.encoder
-%%PORTDOCS%%share/doc/libdv/TODO
-%%PORTDOCS%%@dirrm share/doc/libdv
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/libdv
