@@ -1,6 +1,13 @@
 --- ../lib/vntype/Makefile.orig	Tue Aug 10 18:26:33 1993
-+++ ../lib/vntype/Makefile	Sun Nov 24 20:09:15 1996
-@@ -18,7 +18,7 @@
++++ ../lib/vntype/Makefile	Fri Dec  6 11:48:38 1996
+@@ -12,13 +12,13 @@
+ SRTI	= vntype.I toupper.I tolower.I
+ SRTS	= vntype.srt toupper.srt tolower.srt
+ LIB	= $(VNLIBDIR)/libvntype.a
+-RANLIB	= echo
++RANLIB	= ranlib
+ 
+ INC	= -I$(VNINCDIR)
  #FLAGS	= -DNOANSI_C
  CFLAGS	= $(FLAGS) $(INC)
  CC	= cc
