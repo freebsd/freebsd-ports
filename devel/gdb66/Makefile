@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2004-04-13
+SNAPDATE=	2004-05-04
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
@@ -44,13 +44,13 @@ PLIST_SUB+=	NO_NATIVE_GDB="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$/ [FreeBSD]/' ${WRKSRC}/gdb/version.in
-
-do-patch: post-patch
-	@${ECHO} 'FreeBSD-specific patches disabled for now, until upgraded.'
 	@${REINPLACE_CMD} -e 's/^READLINE/#READLINE/' \
 		-e 's/^readline/#readline/' \
 		${WRKSRC}/gdb/Makefile.in
-	echo 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
+	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
+
+do-patch: post-patch
+	@${ECHO} 'FreeBSD-specific patches disabled for now, until upgraded.'
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect readline sim tcl texinfo
