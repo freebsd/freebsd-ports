@@ -1,4 +1,5 @@
 bin/koncd
+share/apps/koncd/pics/startlogo.png
 share/doc/HTML/en/koncd/images/audiocd.jpg
 share/doc/HTML/en/koncd/images/copycd.jpg
 share/doc/HTML/en/koncd/images/imagetype.jpg
@@ -33,6 +34,8 @@ share/icons/locolor/16x16/apps/koncd.png
 share/icons/locolor/32x32/apps/koncd.png
 share/icons/hicolor/32x32/apps/koncd.png
 share/icons/hicolor/16x16/apps/koncd.png
+@dirrm share/apps/koncd/pics
+@dirrm share/apps/koncd
 @dirrm share/doc/HTML/en/koncd/images
 @dirrm share/doc/HTML/en/koncd
 @dirrm share/doc/HTML/de/koncd/images
