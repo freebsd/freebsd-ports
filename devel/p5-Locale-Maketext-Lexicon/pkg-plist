@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Extract.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Run.pm
