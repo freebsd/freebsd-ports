@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	boris@brooknet.com.au
 COMMENT=	A translator library for raster geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_REINPLACE	=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libz=internal \
 		--with-png=internal \
@@ -31,5 +28,12 @@ CONFIGURE_ARGS=	--with-libz=internal \
 		--with-python
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
+
+MAN1=		gdaladdo.1 gdalinfo.1 gdaltindex.1 gdalwarp.1 \
+		gdal-config.1 gdal_translate.1 ogrinfo.1 \
+		ogrtindex.1 ogr2ogr.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|6LIBZ|6|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
