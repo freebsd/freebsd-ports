@@ -1,38 +1,20 @@
---- dw_filter.c.orig	Mon Jul 30 05:12:02 2001
-+++ dw_filter.c	Sun Sep 16 15:32:15 2001
-@@ -239,7 +239,7 @@
-     {   
-         priv->from = strdup( "<>" );       
+--- dw_filter.c.orig	Thu Sep 27 01:00:46 2001
++++ dw_filter.c	Wed Oct  3 06:25:53 2001
+@@ -606,7 +606,7 @@
+         }
+         else
+         {
+-            wprintLib( "block proccessing from <>" );
++	    wprintLib( "block processing from <>" );
+             free_private_data( priv );
+             if( set_private_data( context, NULL ) != MI_SUCCESS )
+             {
+@@ -621,7 +621,7 @@
+         wprintLib( "%s(%d) - no memory for private data", __FILE__, __LINE__ );
+         FAIL_EXIT( context, priv );
      }
--    syslog( LOG_MAIL | LOG_INFO, "Start proccessing from %s", priv->from );
-+    syslog( LOG_MAIL | LOG_INFO, "Start processing from %s", priv->from );
+-    wprintLib( "start proccessing from %s", priv->from );
++    wprintLib( "start processing from %s", priv->from );
      priv->fname_tmp = strdup( ShareTemplate );
      if( !priv->fname_tmp )
      {
-@@ -549,7 +549,7 @@
-             syslog( LOG_MAIL | LOG_DEBUG, "can not replace message" );
-             FAIL_EXIT( context, priv );
-         }
--        if( bSenderNotify && priv->from && (strlen(priv->from) > 0) )
-+	if( bSenderNotify && priv->from && *(priv->from) && strcmp(priv->from, "<>") != 0)
-         {
-             if( smfi_addrcpt( context, priv->from ) != MI_SUCCESS )
-             {
-@@ -585,7 +585,7 @@
-         syslog( LOG_MAIL | LOG_ERR, "daemon return error (%s) - possible problem with daemon", getDaemonCode( status ) );
-         FAIL_EXIT( context, priv );
-     } /* else - normal message */
--    syslog( LOG_MAIL | LOG_INFO, "Complite proccessing message from %s", priv->from );
-+    syslog( LOG_MAIL | LOG_INFO, "Complete processing message from %s", priv->from );
-     free_private_data( priv );
-     if( set_private_data( context, NULL ) != MI_SUCCESS )
-     {
-@@ -643,7 +643,7 @@
-     priv = get_private_data( context );
-     if( priv )
-     {
--        syslog( LOG_MAIL | LOG_INFO, "Abort proccessing message from %s", priv->from );
-+	syslog( LOG_MAIL | LOG_INFO, "Abort processing message from %s", priv->from );
-         free_private_data( priv );
-         if( set_private_data( context, NULL ) != MI_SUCCESS )
-         {
