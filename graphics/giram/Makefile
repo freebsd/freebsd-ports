@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	giram
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.giram.org/pub/
 DISTNAME=	Giram-${PORTVERSION}
