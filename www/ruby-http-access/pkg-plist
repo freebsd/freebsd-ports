@@ -1,5 +1,6 @@
 %%RUBY_SITELIBDIR%%/http-access2.rb
 %%RUBY_SITELIBDIR%%/http-access2/http.rb
 @dirrm %%RUBY_SITELIBDIR%%/http-access2
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/http-access/thread.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/http-access/wcat.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/http-access
