@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1998/04/19 21:35:46 mph Exp $
+# $Id: Makefile,v 1.121 1998/04/24 01:55:11 mph Exp $
 #
 
     SUBDIR += acm
@@ -88,6 +88,7 @@
     SUBDIR += xneko
     SUBDIR += xnibbles
     SUBDIR += xonix
+    SUBDIR += xothello
     SUBDIR += xpacman
     SUBDIR += xpat2
     SUBDIR += xpilot
