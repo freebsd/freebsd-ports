@@ -35,5 +35,4 @@ MAN1=		fxtv.1
 pre-install:
 	${CP} ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
 
-
 .include <bsd.port.mk>
