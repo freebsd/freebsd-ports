@@ -1,0 +1,11 @@
+--- examples/makefile.orig	Thu Oct 17 22:15:08 1996
++++ examples/makefile	Sun Oct  3 21:38:26 2004
+@@ -19,7 +19,7 @@
+ $(MPI_LIB) $(FC_LIB) $(SYS_LIB) -lm
+ LINCLUDE  = $(SOURCEH)
+ 
+-bsrunexamples:
++bsrunexamples: $(EXAMPLES_1)
+ 	-@echo ">>>>>> Running examples in example directory <<<<<<"
+ 	-@$(MPIRUN) -np 4 grid0.$(PETSC_ARCH) 2 2 1 10 10 10
+ 	-@$(MPIRUN) -np 4 grid1.$(PETSC_ARCH) 2 2 1 10 10 10

@@ -1,0 +1,35 @@
+--- ./bmake/freebsd/freebsd.site.orig	Thu Feb 15 22:53:34 1996
++++ ./bmake/freebsd/freebsd.site	Sun Oct  3 20:40:47 2004
+@@ -15,24 +15,24 @@
+ # Location of BLAS and LAPACK.  These libraries are available via Netlib,
+ # or see $(BS_DIR)/readme for information on retrieving a subset.
+ #
+-BLAS_LIB       = /home/bsmith/lapack/blas_freebsd.a $(FC_LIB)
+-LAPACK_LIB     = /home/bsmith/lapack/lapack_freebsd.a
++BLAS_LIB       = -lf77blas -lcblas -latlas -lg2c -lm
++LAPACK_LIB     = -L$(LOCALBASE)/lib -lalapack
+ #
+ # Location of X-windows software
+ #
+-X11_INCLUDE    =
++X11_INCLUDE    = -I$(X11BASE)/include
+ X11_LIB        = -lX11
+ #
+ # Location of MPI (Message Passing Interface) software
+ #
+-MPI_LIB        = /usr/local/mpi/lib/freebsd/ch_p4/libmpi.a
+-MPI_INCLUDE    = -I/usr/local/mpi/include 
+-MPIRUN         = /usr/local/mpi/bin/mpirun
++MPI_LIB        = $(LOCALBASE)/mpich/lib/libmpich.a
++MPI_INCLUDE    = -I$(LOCALBASE)/mpich/include
++MPIRUN         = $(LOCALBASE)/mpich/bin/mpirun
+ #
+ # Location of BlockSolve95
+ #
+-BS_INCLUDE     = 
+-BS_LIB         = 
++BS_INCLUDE     = $(PETSC_INCLUDE)
++BS_LIB         = $(BS_DIR)/lib/lib$(BOPT)/$(PETSC_ARCH)/libBS95.a
+ #
+ # PCONF - indicates which external packages are available at your site
+ #
