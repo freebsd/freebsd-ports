@@ -1,5 +1,5 @@
 --- Configure.orig	Sat Feb 10 04:41:40 1996
-+++ Configure	Sun Sep 27 18:49:59 1998
++++ Configure	Sat Jan  9 18:33:14 1999
 @@ -159,9 +159,12 @@
  PROG = netris
  HEADERS = netris.h
@@ -20,7 +20,7 @@
 +
 +install:
 +	install -c -o bin -g bin -s -m 755 $(PROG) $(DESTDIR)
-+	install -c -o bin -g bin -s -m 755 sr $(DESTDIR)
++	install -c -o bin -g bin -s -m 755 sr $(DESTDIR)/sample-robot
  
  ##### DO NOT EDIT OR DELETE THIS LINE, it's needed by make depend #####
  END
