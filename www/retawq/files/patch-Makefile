@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Nov 28 23:24:02 2001
++++ Makefile	Mon Dec 31 02:39:44 2001
+@@ -16,11 +16,11 @@
+ CONFIG_CED = 1
+ 
+ # i18n (internationalization)
+-CONFIG_I18N = 0
+-CONFIG_I18N_PATH = \"/usr/share/locale\"
++CONFIG_I18N = 1
++CONFIG_I18N_PATH = \"%%LOCALBASE%%/share/locale\"
+ 
+ # path for "make install"; don't forget the trailing "/"!
+-INSTALL_BINPREFIX = /usr/bin/
++INSTALL_BINPREFIX = %%PREFIX%%/bin/
+ 
+ # put your favourite C compiler here; mine is "gcc" ;-)
+ CC = gcc
+@@ -128,7 +128,7 @@
+ 	@echo "#define CONFIG_DEBUG $(CONFIG_DEBUG)" >> .config
+ 
+ retawq: $(OBJS)
+-	$(CC) $(OBJS) $(LCLT) $(LCLC) -o retawq
++	$(CC) $(OBJS) $(LCLT) $(LCLC) -o retawq ${LDFLAGS}
+ 
+ stripsyms:
+ 	-strip --strip-unneeded retawq

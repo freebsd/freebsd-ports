@@ -291,6 +291,7 @@
     SUBDIR += quanta
     SUBDIR += quixote
     SUBDIR += reportmagic
+    SUBDIR += retawq
     SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += ruby-http-access

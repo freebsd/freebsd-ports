@@ -1,0 +1,8 @@
+retawq is an interactive, multi-threaded network client ("web browser") for
+text terminals on computers with Unix-like operating systems (Linux, BSD,
+Solaris, ...). It is fast, small, nicely configurable, and comfortable;
+e.g. the low-level communications are performed in a non-blocking way, and
+you can keep open as many "virtual windows" as you want and work
+simultaneously in two of them in a split-screen mode.
+
+WWW: http://retawq.sourceforge.net/
