@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-1.2.9-1
 MAINTAINER=	ports@FreeBSD.org
 
 # make absolutely sure we have the user/group added!
-BUILD_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint
+BUILD_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint \
+		automake:${PORTSDIR}/devel/automake
 RUN_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint
 .if defined(WANT_QSTAT)
 BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
