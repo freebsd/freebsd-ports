@@ -1,0 +1,53 @@
+*** conf/httpd.conf-dist.orig	Thu May  7 01:12:39 1998
+--- conf/httpd.conf-dist	Fri Jun  5 19:34:17 1998
+***************
+*** 50,56 ****
+  #  don't use Group #-1 on these systems!
+  
+  User nobody
+! Group #-1
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+--- 50,56 ----
+  #  don't use Group #-1 on these systems!
+  
+  User nobody
+! Group nogroup
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+***************
+*** 94,100 ****
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
+  
+! CustomLog logs/access_log common
+  
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
+--- 94,100 ----
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
+  
+! #CustomLog logs/access_log common
+  
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
+***************
+*** 105,111 ****
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
+  
+! #CustomLog logs/access_log combined
+  
+  # PidFile: The file the server should log its pid to
+  PidFile logs/httpd.pid
+--- 105,111 ----
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
+  
+! CustomLog logs/access_log combined
+  
+  # PidFile: The file the server should log its pid to
+  PidFile logs/httpd.pid
