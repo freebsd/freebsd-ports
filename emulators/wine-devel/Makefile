@@ -15,6 +15,10 @@ DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
 MAINTAINER=	pfeifer@dbai.tuwien.ac.at
 
+# This port has not been upgraded to 2001.10.04 because that snapshots does
+# not work as well as the previous ones -- it builds, but then hangs while
+# running several applicatinos.  (This has already been fixed in Wine CVS.)
+
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-opengl
