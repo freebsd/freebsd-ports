@@ -138,6 +138,7 @@
     SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cxref
+    SUBDIR += darcs
     SUBDIR += darts
     SUBDIR += ddd
     SUBDIR += decompyle
