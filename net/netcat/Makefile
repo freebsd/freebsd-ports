@@ -8,7 +8,7 @@
 
 PORTNAME=	netcat
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/netutils/netcat/  \
 		ftp://ftp.cuhk.edu.hk/pub/packages/security/purdue/netutils/netcat/  \
@@ -28,9 +28,11 @@ ALL_TARGET=	freebsd
 
 PLIST_FILES=	bin/nc
 PORTDOCS=	README
+MAN1=		nc.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/nc.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
