@@ -9,11 +9,18 @@ cd ${FONTDIR}
 echo "Updating fonts.dir & fonts.alias. This may take a while..."
 # Update fonts.dir
 touch fonts.dir
-sed -e '/-moe-/d' -e '/-twmoe-/d' fonts.dir > fonts.dir.tmp
+sed -e '/ -moe-/d' -e '/ -twmoe-/d' fonts.dir > fonts.dir.tmp
 # Add 12 new fonts
 numfonts=$(echo $(cat fonts.dir.tmp |wc -l) - 1 + 12 |bc)
-echo ${numfonts} > fonts.dir
-sed -e 1d fonts.dir.tmp >> fonts.dir
+if [ ${numfonts} -le 12 ]; then # fonts.dir.tmp is empty
+  echo 12 > fonts.dir
+else
+  echo ${numfonts} > fonts.dir
+  sed -e 1d fonts.dir.tmp >> fonts.dir
+fi
+rm -f fonts.dir.tmp
+
+# Write font information to fonts.dir
 for FAMILY in kai lishu sung
 do
   echo moe_${FAMILY}.ttf -twmoe-${FAMILY}-medium-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
@@ -21,7 +28,6 @@ do
   echo ai=0.3:moe_${FAMILY}.ttf -twmoe-${FAMILY}-medium-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
   echo ab=y:ai=0.3:moe_${FAMILY}.ttf -twmoe-${FAMILY}-bold-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
 done
-rm -f fonts.dir.tmp
 
 # Update fonts.alias, font size ranges from 8 to 128.
 SIZE=8
