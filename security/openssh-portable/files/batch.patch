@@ -1,15 +1,14 @@
---- Makefile.in.orig	Tue Feb 26 20:24:22 2002
-+++ Makefile.in	Fri Mar  8 22:02:48 2002
-@@ -183,7 +183,7 @@
- 	autoreconf
+--- Makefile.in.orig	Wed Jun 26 01:45:42 2002
++++ Makefile.in	Thu Jul  4 20:23:43 2002
+@@ -199,6 +199,7 @@
  	(cd scard && $(MAKE) -f Makefile.in distprep)
  
--install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files host-key
-+install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
+ install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files host-key check-user
++install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files check-user
  install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
  
- scard-install:
-@@ -222,37 +222,6 @@
+ check-user:
+@@ -251,37 +252,6 @@
  	ln -s ssh$(EXEEXT) $(DESTDIR)$(bindir)/slogin
  	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
  	ln -s ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1

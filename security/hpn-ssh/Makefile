@@ -7,12 +7,12 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.4p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
-PKGNAMESUFFIX=	-portable
+PKGNAMESUFFIX?=	-portable
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -29,6 +29,7 @@ PRECIOUS=	ssh_config sshd_config \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
 		ssh_host_dsa_key ssh_host_dsa_key.pub
 ETCOLD=		${PREFIX}/etc
+ADDME+=		auth2-pam-freebsd.c
 
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
@@ -71,7 +72,13 @@ CONFIGURE_ARGS+=	--with-privsep-path=${EMPTYDIR}
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
+post-extract:
+.for i in ${ADDME}
+	@${CP} ${FILESDIR}/${i} ${WRKSRC}/
+.endfor
+
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
+PKGNAMESUFFIX=	-gssapi
 GSSAPI_PATCH=	${PORTNAME}-${PORTVERSION}-gssapi-20020627.diff
 GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
 MASTER_SITES+=	${GSSAPI_SITE}

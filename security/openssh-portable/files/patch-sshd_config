@@ -1,6 +1,14 @@
 --- sshd_config.orig	Fri Jun 21 03:11:36 2002
-+++ sshd_config	Fri Jun 28 06:55:46 2002
-@@ -58,6 +58,7 @@
++++ sshd_config	Wed Jul  3 06:20:47 2002
+@@ -34,6 +34,7 @@
+ 
+ #LoginGraceTime 600
+ #PermitRootLogin yes
++PermitRootLogin no
+ #StrictModes yes
+ 
+ #RSAAuthentication yes
+@@ -58,6 +59,7 @@
  
  # Change to no to disable s/key passwords
  #ChallengeResponseAuthentication yes
