@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.268 1999/06/09 00:32:16 steve Exp $
+# $Id: Makefile,v 1.269 1999/06/09 01:59:05 steve Exp $
 #
 
     SUBDIR += IglooFTP
@@ -206,6 +206,7 @@
     SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += xwhois
+    SUBDIR += yafc
     SUBDIR += yagirc
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
