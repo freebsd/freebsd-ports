@@ -1,0 +1,112 @@
+--- doc/MANUAL.orig	Wed Jan 28 11:48:04 2004
++++ doc/MANUAL	Mon Mar  1 01:08:06 2004
+@@ -3,39 +3,39 @@
+ 
+ To start, stop, restart AntiVir Milter:
+ 
+-	# /usr/sbin/rcavmilter [start|stop|status|restart]
++	# %%PREFIX%%/etc/rc.d/antivir-milter.sh [start|stop|status|restart]
+ 
+ When executed successfully, a message from AntiVir Milter with
+ the scan engine version and VDF version is present in the log file
+-/var/log/mail, /var/log/maillog or /var/log/mail.log
++/var/log/maillog
+ 
+ 
+ 2. Copying the license file 
+ ---------------------------
+ 
+ If you have a license file for commercial or privat user,
+-copy the license file *.key to the folder /usr/lib/AntiVir and 
+-set the access rights of user and group to default uucp:
+-
+-	# cp hbedv.key /usr/lib/AntiVir/
+-	# chown uucp:uucp /usr/lib/AntiVir/avmgate.key
++copy the license file *.key to the folder %%PREFIX%%/AntiVir and 
++set the access rights of user root and group smmsp:
+ 
++	# cp hbedv.key %%PREFIX%%/AntiVir/
++	# chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
++	# chmod 440 %%PREFIX%%/AntiVir/hbedv.key
+ 
+ 3. Configuring AntiVir Milter
+ -----------------------------
+ 
+-AntiVir Milter provides the configuration file /etc/avmilter.conf:
++AntiVir Milter provides the configuration file %%PREFIX%%/etc/avmilter.conf:
+ The following directives are available:
+ 
+-# User                            uucp
+-# Group                           uucp
++# User                            smmsp
++# Group                           smmsp
+ # Postmaster                      postmaster
+ # MyHostName                      localhost
+ # SpoolDir                        /var/spool/avmilter
+-# AntiVirDir                      /usr/lib/AntiVir
++# AntiVirDir                      %%PREFIX%%/AntiVir
+ # TemporaryDir                    /var/tmp
+ # MinFreeBlocks                   100
+-# ForwardTo                       /usr/lib/sendmail -oem -oi
++# ForwardTo                       /usr/sbin/sendmail -oem -oi
+ # MaxNestingLevel                 20
+ # MaxAttachments                  100
+ # BlockSuspiciousMime             NO
+@@ -43,7 +43,7 @@
+ # VirusAlertToRcpt                NO
+ # VirusAlertToSender              NO
+ # VirusAlertToPostmaster          YES
+-# VirusAlertsUser                 AntiVir
++# VirusAlertsUser                 MAILER-DAEMON
+ # RejectVirusMail                 NO
+ # ScanInArchive                   YES
+ # ArchiveMaxSize		  0
+@@ -64,21 +64,21 @@
+ # LogFile			  NO
+ # MaxRecipientsPerMessage	  100
+ 
+-For a detailed description see /etc/avmilter.conf.
++For a detailed description see %%PREFIX%%/etc/avmilter.conf.
+ 
+ 
+ 4. Configuring automatic update
+ -------------------------------
+ 
+ Add the following line for a daily update at e.g. 0:25 a.m.:
+-25 0 * * * root /usr/lib/AntiVir/antivir --update -q
++25 0 * * * root %%PREFIX%%/sbin/antivirupdater -q
+ 
+ When using a proxy server, enter name server name and connection
+ in the file antivir.conf.
+ 
+-The file /etc/antivir.conf contains settable parameters effecting
+-the automatic virus protection updates. The following directives 
+-are provided:
++The file %%PREFIX%%/etc/antivir.conf contains settable parameters
++effecting the automatic virus protection updates. The following
++directives are provided:
+ 
+ # EmailTo            root@localhost
+ # LogTo              /var/log/antivir.log
+@@ -88,10 +88,10 @@
+ # HTTPProxyPassword  password
+ # SyslogFacility     user
+ # SyslogPriority     notice
+-# GnuPGBinary
++# GnuPGBinary        %%PREFIX%%/bin/gpg
+ # GnuPGOptions
+ 
+-For a detailled description see /etc/avmilter.conf.
++For a detailled description see %%PREFIX%%/etc/avmilter.conf.
+ 
+ 
+ 5. Notification Templates
+@@ -101,7 +101,7 @@
+ have the possibility to define your own text in virus and
+ pathological notification mails.
+ 
+-The directory /usr/lib/AntiVir/templates contains the 
++The directory %%PREFIX%%/AntiVir/templates contains the 
+ following files:
+ 
+ 	patho-administrator
