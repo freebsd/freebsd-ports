@@ -8,7 +8,7 @@
 PORTNAME=	date2
 PORTVERSION=	2.4.3
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.kt.rim.or.jp/~tadf/
+MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
