@@ -1,0 +1,90 @@
+--- unix/unix.c.orig	Tue Jan 22 01:54:42 2002
++++ unix/unix.c	Mon Jul 28 18:36:17 2003
+@@ -421,7 +421,8 @@
+  */
+ {
+     char pathcomp[FILNAMSIZ];      /* path-component buffer */
+-    char *pp, *cp=(char *)NULL;    /* character pointers */
++    char *pp, *cp=(char *)NULL,    /* character pointers */
++         *dp=(char *)NULL;
+     char *lastsemi=(char *)NULL;   /* pointer to last semi-colon in pathcomp */
+ #ifdef ACORN_FTYPE_NFS
+     char *lastcomma=(char *)NULL;  /* pointer to last comma in pathcomp */
+@@ -429,6 +430,7 @@
+ #endif
+     int quote = FALSE;             /* flags */
+     int killed_ddot = FALSE;       /* is set when skipping "../" pathcomp */
++    int snarf_ddot = FALSE;	   /* Is set while scanning for "../" */
+     int error = MPN_OK;
+     register unsigned workch;      /* hold the character being tested */
+ 
+@@ -467,6 +469,9 @@
+     while ((workch = (uch)*cp++) != 0) {
+ 
+         if (quote) {                 /* if character quoted, */
++	    if ((pp == pathcomp) && (workch == '.'))
++		/* Oh no you don't... */
++		goto ddot_hack;
+             *pp++ = (char)workch;    /*  include it literally */
+             quote = FALSE;
+         } else
+@@ -481,15 +486,44 @@
+                 break;
+ 
+             case '.':
+-                if (pp == pathcomp) {   /* nothing appended yet... */
++                if (pp == pathcomp) {
++ddot_hack:
++		    /* nothing appended yet... */
+                     if (*cp == '/') {   /* don't bother appending "./" to */
+                         ++cp;           /*  the path: skip behind the '/' */
+                         break;
+-                    } else if (!uO.ddotflag && *cp == '.' && cp[1] == '/') {
+-                        /* "../" dir traversal detected */
+-                        cp += 2;        /*  skip over behind the '/' */
+-                        killed_ddot = TRUE; /*  set "show message" flag */
+-                        break;
++                    } else if (!uO.ddotflag) {
++
++			/*
++			 * SECURITY: Skip past control characters if the user
++			 * didn't OK use of absolute pathnames. lhh - this is
++			 * a very quick, ugly, inefficient fix.
++			 */
++			dp = cp;
++			do {
++			    workch = (uch)(*dp);
++			    if (workch == '/' && snarf_ddot) {
++                                /* "../" dir traversal detected */
++                                cp = dp + 1;      /* skip past the '/' */
++                                killed_ddot = TRUE; /* set "show msg" flag */
++                                break;
++                            } else if (workch == '.' && !snarf_ddot) {
++				snarf_ddot = TRUE;
++                	    } else if (isprint(workch) ||
++				       ((workch > 127) && (workch <= 255))) {
++				/*
++				 * Since we found a printable, non-ctrl char,
++				 * we can stop looking for '../', the amount
++				 * in ../!
++				 */
++			        break;
++			    }
++
++			    dp++;
++                        } while (*dp != 0);
++
++			if (killed_ddot)
++			    break;
+                     }
+                 }
+                 *pp++ = '.';
+@@ -519,7 +553,7 @@
+ 
+             default:
+                 /* allow European characters in filenames: */
+-                if (isprint(workch) || (128 <= workch && workch <= 254))
++		if (isprint(workch) || (128 <= workch && workch <= 255))
+                     *pp++ = (char)workch;
+             } /* end switch */
+ 
