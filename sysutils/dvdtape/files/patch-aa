@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Nov 10 00:01:10 1999
++++ Makefile	Tue Apr  3 19:25:13 2001
+@@ -1,8 +1,10 @@
+-prefix=/usr
+-BINDIR=${prefix}/bin
+-MANDIR=${prefix}/man
+-
+-CFLAGS=-O2 -D_FILE_OFFSET_BITS=64 -Wall
++BINDIR=	${PREFIX}/bin
++MANDIR=	${PREFIX}/man
++CC	?=gcc
++CFLAGS=	-O2 -D_FILE_OFFSET_BITS=64 -Wall -I${LOCALBASE}/include
++LD	=${CC}
++LDFLAGS=-L${LOCALBASE}/lib
++LIBS=	-lgnugetopt
+ 
+ PROGRAM=dvdtape
+ OBJECTS=dvdtape.o isosize.o
+@@ -10,6 +12,7 @@
+ all: $(PROGRAM)
+ 
+ $(PROGRAM): $(OBJECTS)
++	$(LD) $(LDFLAGS) -o ${PROGRAM} $(OBJECTS) $(LIBS)
+ 
+ install: all
+ 	install $(PROGRAM) $(BINDIR)

@@ -1,0 +1,10 @@
+--- isosize.c.orig	Wed Nov 10 00:11:39 1999
++++ isosize.c	Tue Apr  3 19:10:32 2001
+@@ -1,6 +1,6 @@
+ #define _POSIX_SOURCE 1		/* fileno is POSIX, not ANSI */
+ #include <stdio.h>
+-#include <termio.h>
++#include <termios.h>
+ #include <signal.h>
+ #include <unistd.h>
+ 
