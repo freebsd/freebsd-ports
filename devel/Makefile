@@ -890,6 +890,7 @@
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gettext
     SUBDIR += ruby-glib2
+    SUBDIR += ruby-gnomevfs
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-inline
     SUBDIR += ruby-intl
