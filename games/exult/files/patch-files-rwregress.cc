@@ -1,10 +1,12 @@
---- files/rwregress.cc.orig	Tue Feb  5 06:01:24 2002
-+++ files/rwregress.cc	Sat Aug 16 17:30:00 2003
-@@ -6,6 +6,7 @@
+--- files/rwregress.cc.orig	Tue Jun 24 21:20:55 2003
++++ files/rwregress.cc	Wed Mar 31 13:39:13 2004
+@@ -5,7 +5,9 @@
+ 
  #include <iostream>
- #include "utils.h"
  #include <strstream>
-+#include <cassert>
++#if defined(__GNUC__) && __GNUC__ >= 3
+ #include <cassert>
++#endif
+ #include "utils.h"
  
  using std::cout;
- using std::endl;
