@@ -19,6 +19,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
 QMAIL_DIR?=	/var/qmail
 
+DISABLE_SIZE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
