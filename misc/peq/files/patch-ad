@@ -1,0 +1,11 @@
+*** lib_path.h.orig	Fri Apr  2 16:23:25 1999
+--- lib_path.h	Fri Apr  2 16:23:18 1999
+***************
+*** 1,3 ****
+  /* Created automatically by config */
+! char lib_path[100]={"/usr/share/games/peq.lib"};
+  
+--- 1,3 ----
+  /* Created automatically by config */
+! char lib_path[100]={PREFIX "/share/peq/peq.lib"};
+  
