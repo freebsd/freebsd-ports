@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.vim.org/pub/vim/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
 DISTNAME=	vim-5.7
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
@@ -47,7 +47,7 @@ MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 .if !defined(LITE)
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
-MAKE_FLAGS:=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
 .if defined(HAVE_GTK)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
