@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	barry
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 		http://freebsd.so14k.com/barry/
@@ -17,17 +16,11 @@ COMMENT=	A nice KDE frontend to the ports system
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-MAKE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}" PREFIX="${PREFIX}"
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
 pre-build:
 	${REINPLACE_CMD} "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} .depend)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
 
 pre-install:
 	${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
