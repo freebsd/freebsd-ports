@@ -30,7 +30,7 @@ MAN3=		Bundle::PerlPoint.3 \
 
 .if !defined(NOPORTDOCS)
 post-patch:
-	@cd ${WRKSRC}; ${MV} pp2html_styles images doc ; ${LN} -s doc/pp2html_styles ; ${LN} -s doc/images
+	@cd ${WRKSRC}; ${CP} -R pp2html_styles images doc
 	@${PERL} -pi -e 's!../(images|pp2html_styles)!$$1!g' ${WRKSRC}/doc/*.cfg
 
 post-build:
@@ -41,4 +41,10 @@ post-install:
 	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
+.include <bsd.port.post.mk>
