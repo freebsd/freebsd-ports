@@ -1,0 +1,14 @@
+--- Xmysql_cb.c.orig	Tue Sep  2 16:08:23 1997
++++ Xmysql_cb.c	Tue Sep  2 16:09:08 1997
+@@ -1,5 +1,11 @@
+ #include <string.h>
++
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
++
+ #include "forms.h"
+ #include "Xmysql.h"
+ #include "XmysqlDB.h"
