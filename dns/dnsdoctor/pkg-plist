@@ -1,0 +1,175 @@
+@comment $FreeBSD$
+bin/dnsdoctor
+etc/dnsdoctor-dist/afnic.profile
+etc/dnsdoctor-dist/de.profile
+etc/dnsdoctor-dist/default.profile
+etc/dnsdoctor-dist/dnsdoctor.conf
+etc/dnsdoctor-dist/reverse.profile
+etc/dnsdoctor-dist/rootservers
+@dirrm etc/dnsdoctor-dist
+%%DNSDOCTOR_CGI%%libexec/dnsdoctor/cgi-bin/diagnose.cgi
+%%DNSDOCTOR_CGI%%@dirrm libexec/dnsdoctor/cgi-bin
+libexec/dnsdoctor/dnsdoctor/cache.rb
+libexec/dnsdoctor/dnsdoctor/cachemanager.rb
+libexec/dnsdoctor/dnsdoctor/config.rb
+libexec/dnsdoctor/dnsdoctor/console.rb
+libexec/dnsdoctor/dnsdoctor/data/catalog.xml
+libexec/dnsdoctor/dnsdoctor/data/config.dtd
+libexec/dnsdoctor/dnsdoctor/data/dnsdoctor.dtd
+libexec/dnsdoctor/dnsdoctor/data/logo.png
+libexec/dnsdoctor/dnsdoctor/data/msgcat.dtd
+libexec/dnsdoctor/dnsdoctor/data/xpm.rb
+libexec/dnsdoctor/dnsdoctor/dbg.rb
+libexec/dnsdoctor/dnsdoctor/ext/array.rb
+libexec/dnsdoctor/dnsdoctor/ext/file.rb
+libexec/dnsdoctor/dnsdoctor/ext/gtk.rb
+libexec/dnsdoctor/dnsdoctor/ext/myxml.rb
+libexec/dnsdoctor/dnsdoctor/framework.rb
+libexec/dnsdoctor/dnsdoctor/input/cgi.rb
+libexec/dnsdoctor/dnsdoctor/input/cli.rb
+libexec/dnsdoctor/dnsdoctor/input/gtk.rb
+libexec/dnsdoctor/dnsdoctor/input/inetd.rb
+libexec/dnsdoctor/dnsdoctor/instructions.rb
+libexec/dnsdoctor/dnsdoctor/locale.rb
+libexec/dnsdoctor/dnsdoctor/mail.rb
+libexec/dnsdoctor/dnsdoctor/msgcat.rb
+libexec/dnsdoctor/dnsdoctor/param.rb
+libexec/dnsdoctor/dnsdoctor/publisher.rb
+libexec/dnsdoctor/dnsdoctor/publisher/gtk.rb
+libexec/dnsdoctor/dnsdoctor/publisher/html.rb
+libexec/dnsdoctor/dnsdoctor/publisher/text.rb
+libexec/dnsdoctor/dnsdoctor/publisher/xml.rb
+libexec/dnsdoctor/dnsdoctor/report.rb
+libexec/dnsdoctor/dnsdoctor/report/byhost.rb
+libexec/dnsdoctor/dnsdoctor/report/byseverity.rb
+libexec/dnsdoctor/dnsdoctor/testmanager.rb
+libexec/dnsdoctor/dnsdoctor/zc.rb
+libexec/dnsdoctor/dnsdoctor/zonecheck.rb
+libexec/dnsdoctor/lib/address.rb
+libexec/dnsdoctor/lib/address/common.rb
+libexec/dnsdoctor/lib/address/ipv4.rb
+libexec/dnsdoctor/lib/address/ipv6.rb
+libexec/dnsdoctor/lib/nresolv.rb
+libexec/dnsdoctor/lib/nresolv/compatibility.rb
+libexec/dnsdoctor/lib/nresolv/config.rb
+libexec/dnsdoctor/lib/nresolv/constants.rb
+libexec/dnsdoctor/lib/nresolv/dbg.rb
+libexec/dnsdoctor/lib/nresolv/dig_output.rb
+libexec/dnsdoctor/lib/nresolv/dns.rb
+libexec/dnsdoctor/lib/nresolv/dns_message.rb
+libexec/dnsdoctor/lib/nresolv/dns_name.rb
+libexec/dnsdoctor/lib/nresolv/dns_resource.rb
+libexec/dnsdoctor/lib/nresolv/host.rb
+libexec/dnsdoctor/lib/nresolv/resolver.rb
+libexec/dnsdoctor/lib/nresolv/transport.rb
+libexec/dnsdoctor/lib/nresolv/wire.rb
+libexec/dnsdoctor/lib/textfmt.rb
+libexec/dnsdoctor/lib/whois.rb
+libexec/dnsdoctor/locale/cgi.en
+libexec/dnsdoctor/locale/cgi.fr
+libexec/dnsdoctor/locale/cli.en
+libexec/dnsdoctor/locale/cli.fr
+libexec/dnsdoctor/locale/dnsdoctor.en
+libexec/dnsdoctor/locale/dnsdoctor.fr
+libexec/dnsdoctor/locale/gtk.en
+libexec/dnsdoctor/locale/gtk.fr
+libexec/dnsdoctor/locale/inetd.en
+libexec/dnsdoctor/locale/inetd.fr
+libexec/dnsdoctor/locale/test/axfr.en
+libexec/dnsdoctor/locale/test/axfr.fr
+libexec/dnsdoctor/locale/test/connectivity.en
+libexec/dnsdoctor/locale/test/connectivity.fr
+libexec/dnsdoctor/locale/test/generic.en
+libexec/dnsdoctor/locale/test/generic.fr
+libexec/dnsdoctor/locale/test/interop.en
+libexec/dnsdoctor/locale/test/interop.fr
+libexec/dnsdoctor/locale/test/loopback.en
+libexec/dnsdoctor/locale/test/loopback.fr
+libexec/dnsdoctor/locale/test/mail.en
+libexec/dnsdoctor/locale/test/mail.fr
+libexec/dnsdoctor/locale/test/misc.en
+libexec/dnsdoctor/locale/test/misc.fr
+libexec/dnsdoctor/locale/test/mx.en
+libexec/dnsdoctor/locale/test/mx.fr
+libexec/dnsdoctor/locale/test/nameserver.en
+libexec/dnsdoctor/locale/test/nameserver.fr
+libexec/dnsdoctor/locale/test/ns.en
+libexec/dnsdoctor/locale/test/ns.fr
+libexec/dnsdoctor/locale/test/rootserver.en
+libexec/dnsdoctor/locale/test/rootserver.fr
+libexec/dnsdoctor/locale/test/soa.en
+libexec/dnsdoctor/locale/test/soa.fr
+libexec/dnsdoctor/test/axfr.rb
+libexec/dnsdoctor/test/connectivity.rb
+libexec/dnsdoctor/test/generic.rb
+libexec/dnsdoctor/test/interop.rb
+libexec/dnsdoctor/test/loopback.rb
+libexec/dnsdoctor/test/mail.rb
+libexec/dnsdoctor/test/misc.rb
+libexec/dnsdoctor/test/mx.rb
+libexec/dnsdoctor/test/nameserver.rb
+libexec/dnsdoctor/test/ns.rb
+libexec/dnsdoctor/test/rootserver.rb
+libexec/dnsdoctor/test/soa.rb
+@dirrm libexec/dnsdoctor/lib/address
+@dirrm libexec/dnsdoctor/lib/nresolv
+@dirrm libexec/dnsdoctor/lib
+@dirrm libexec/dnsdoctor/locale/test
+@dirrm libexec/dnsdoctor/locale
+@dirrm libexec/dnsdoctor/test
+@dirrm libexec/dnsdoctor/dnsdoctor/data
+@dirrm libexec/dnsdoctor/dnsdoctor/ext
+@dirrm libexec/dnsdoctor/dnsdoctor/input
+@dirrm libexec/dnsdoctor/dnsdoctor/publisher
+@dirrm libexec/dnsdoctor/dnsdoctor/report
+@dirrm libexec/dnsdoctor/dnsdoctor
+@dirrm libexec/dnsdoctor
+%%PORTDOCS%%%%DOCSDIR%%/180px-InputCLI.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-InputGTK.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-InputHTML.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-OutputProgressHTML.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-OutputProgressText.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-OutputResultHTML.png
+%%PORTDOCS%%%%DOCSDIR%%/180px-OutputResultText.png
+%%PORTDOCS%%%%DOCSDIR%%/Developer_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/Favicon.ico.html
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/Installation.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Robots.txt.html
+%%PORTDOCS%%%%DOCSDIR%%/Tests_description.html
+%%PORTDOCS%%%%DOCSDIR%%/User_guide.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DNSDOCTOR_CGI%%www/dnsdoctor/dnsdoctor.conf
+%%DNSDOCTOR_CGI%%www/dnsdoctor/dnsdoctor.conf.in
+%%DNSDOCTOR_CGI%%www/dnsdoctor/html/form.html.en
+%%DNSDOCTOR_CGI%%www/dnsdoctor/html/form.html.fr
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/details.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/element.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/fatal.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/gear.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/info.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/light.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/logo.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/logo_l.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/loupe.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/notepad.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/ok.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/primary.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/ref.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/secondary.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/warning.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/zc-fav.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/img/zone.png
+%%DNSDOCTOR_CGI%%www/dnsdoctor/js/formvalidation.js
+%%DNSDOCTOR_CGI%%www/dnsdoctor/js/popupmenu.js
+%%DNSDOCTOR_CGI%%www/dnsdoctor/js/progress.js
+%%DNSDOCTOR_CGI%%www/dnsdoctor/style/default.css
+%%DNSDOCTOR_CGI%%www/dnsdoctor/style/dnsdoctor.css
+%%DNSDOCTOR_CGI%%@dirrm www/dnsdoctor/html
+%%DNSDOCTOR_CGI%%@dirrm www/dnsdoctor/img
+%%DNSDOCTOR_CGI%%@dirrm www/dnsdoctor/js
+%%DNSDOCTOR_CGI%%@dirrm www/dnsdoctor/style
+%%DNSDOCTOR_CGI%%@dirrm www/dnsdoctor

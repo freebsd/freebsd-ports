@@ -1,0 +1,16 @@
+DNSdoctor is intended to help solving misconfigurations or inconsistencies 
+of DNS zone files. 
+Features
+
+    * Powerful configuration file 
+    * Does not depend on policies
+    * Fine grained test selection (by test, by categories, by zones)
+    * Full IPv6 support (connectivity and AAAA records)
+    * Supports several input/output interfaces such as CLI, GUI, CGI
+    * Dedicated mode for use inside shell scripts
+    * Batch mode available (ideal when dealing with several domains)
+    * Multi-threaded application in order to cut down checking time
+    * Extensible: new tests, new interfaces, new reports, ...
+    * Exception and cache mechanisms to simplify test writting
+
+WWW: http://www.dnsdoctor.org/
