@@ -15,8 +15,10 @@ MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 
 MAINTAINER=	kargl@troutmask.apl.washington.edu
 
-MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
+BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
+MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
+USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
