@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: ports/www/netscape7/scripts/configure,v 1.3 2002/05/23 13:00:10 tre
-vor Exp $
+# $FreeBSD$
 
 echo ${WRKSRC}/components.conf
 if [ -f ${WRKSRC}/components.conf ]; then
