@@ -12,7 +12,6 @@ MASTER_SITE_SUBDIR=	gawk
 
 MAINTAINER=	ports@FreeBSD.org
 
-MANUAL_PACKAGE_BUILD=	confuses zsh
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--program-prefix=g \
 			--enable-bitops \
