@@ -36,8 +36,7 @@ CONFIGURE_ARGS+=	--enable-capplet
 .else
 CONFIGURE_ARGS+=	--disable-capplet
 .endif
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include\
-			-I${LOCALBASE}/include/giflib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
