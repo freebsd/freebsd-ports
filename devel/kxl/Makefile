@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kxl
-PORTVERSION=	0.5.6
+PORTVERSION=	1.1.5
 CATEGORIES=	games
 MASTER_SITES=	http://www2.mwnet.or.jp/~fc3srx7/download/
 DISTNAME=	KXL-${PORTVERSION}
