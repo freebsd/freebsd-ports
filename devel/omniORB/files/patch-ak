@@ -1,0 +1,11 @@
+--- tool/omniidl/cxx/idlutil.cc.orig	Fri Aug 18 16:09:06 2000
++++ tool/omniidl/cxx/idlutil.cc	Mon Sep 11 17:44:48 2000
+@@ -148,7 +148,7 @@
+ IdlIntLiteral
+ idl_strtoul(const char* text, int base)
+ {
+-  return strtoull(text, 0, base);
++  return strtouq(text, 0, base);
+ }
+ 
+ #  endif
