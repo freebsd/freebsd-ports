@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="74a9541d-5d6c-11d8-80e3-0020ed76ef5a">
+    <topic>clamav remote denial-of-service</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.65_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>clamav will exit when a programming
+	  assertion is not met.  A malformed uuencoded message can
+	  trigger this assertion, allowing an attacker to trivially
+	  crash clamd or other components of clamav.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/62586</url>
+      <url>http://www.securityfocus.com/archive/1/353186</url>
+    </references>
+    <dates>
+      <discovery>2004/02/09</discovery>
+      <entry>2004/02/12</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="3837f462-5d6b-11d8-80e3-0020ed76ef5a">
     <topic>Buffer overflows in XFree86 servers</topic>
