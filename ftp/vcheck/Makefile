@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	vcheck
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	ftp
 MASTER_SITES= 	http://www.tu-ilmenau.de/~gomar/stuff/vcheck/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	svenasse@polaris.ca
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
