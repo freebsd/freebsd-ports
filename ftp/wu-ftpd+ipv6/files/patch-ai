@@ -1,0 +1,73 @@
+*** config.h	Fri Apr  1 11:03:59 1994
+--- config.h	Sat Oct  7 10:09:48 1995
+***************
+*** 30,35 ****
+--- 30,43 ----
+  #define LOG_FAILED
+  
+  /*
++  * log login attempts that fail because of class connection
++  * limits.  Busy servers may want to prevent this logging
++  * since it can fill up the log file and put a high load on
++  * syslog.
++  */
++ #define LOG_TOOMANY
++ 
++ /*
+   * allow use of private file.  (for site group and site gpass)
+   */
+  
+*** src/access.c	Sat Oct  7 07:52:31 1995
+--- src/access.c	Sat Oct  7 10:10:04 1995
+***************
+*** 803,810 ****
+--- 803,812 ----
+          acl_join(class);
+          return (1);
+      } else {
++ #ifdef LOG_TOOMANY
+          syslog(LOG_NOTICE, "ACCESS DENIED (user limit %d; class %s) TO %s [%s]",
+                 limit, class, remotehost, remoteaddr);
++ #endif
+          pr_mesg(msgcode, msgfile);
+          return (-1);
+      }
+*** src/ftpd.c	Sat Oct  7 07:52:30 1995
+--- src/ftpd.c	Fri Oct  6 23:48:59 1995
+***************
+*** 1435,1441 ****
+      if (dout == NULL)
+          goto done;
+  #ifdef HAVE_ST_BLKSIZE
+!     send_data(fin, dout, st.st_blksize);
+  #else
+      send_data(fin, dout, BUFSIZ);
+  #endif
+--- 1435,1441 ----
+      if (dout == NULL)
+          goto done;
+  #ifdef HAVE_ST_BLKSIZE
+!     send_data(fin, dout, st.st_blksize*2);
+  #else
+      send_data(fin, dout, BUFSIZ);
+  #endif
+***************
+*** 1718,1723 ****
+--- 1718,1734 ----
+      on = IPTOS_THROUGHPUT;
+      if (setsockopt(s, IPPROTO_IP, IP_TOS, (char *) &on, sizeof(int)) < 0)
+            syslog(LOG_WARNING, "setsockopt (IP_TOS): %m");
++ #endif
++ #ifdef TCP_NOPUSH
++ 	/*
++ 	 * Turn off push flag to keep sender TCP from sending short packets
++ 	 * at the boundaries of each write().  Should probably do a SO_SNDBUF
++ 	 * to set the send buffer size as well, but that may not be desirable
++ 	 * in heavy-load situations.
++ 	 */
++ 	on = 1;
++ 	if (setsockopt(s, IPPROTO_TCP, TCP_NOPUSH, (char *)&on, sizeof on) < 0)
++ 		syslog(LOG_WARNING, "setsockopt (TCP_NOPUSH): %m");
+  #endif
+  
+      return (fdopen(s, mode));
