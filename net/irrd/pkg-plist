@@ -6,3 +6,4 @@ sbin/irrdcacher
 sbin/ripe2rpsl
 sbin/update_source
 etc/irrd.conf.sample
+etc/rc.d/irrd.sh
