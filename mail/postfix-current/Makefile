@@ -15,8 +15,8 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.14-20030812
-PORTEPOCH=	1
+PORTVERSION=	2.0.14.20030812
+PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -25,7 +25,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
-DISTNAME=	postfix-${PORTVERSION}
+DISTNAME=	postfix-${PORTVERSION:S/.200/-200/}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khera@kciLink.com

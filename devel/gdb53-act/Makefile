@@ -5,8 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=    5.3-act
+PORTVERSION=    5.3
+PORTEPOCH=	1
 CATEGORIES=	devel
+PKGNAMESUFFIX=	-act
 
 MAINTAINER=	john@johnrshannon.com
 COMMENT=	GDB 5.3 modified by ACT for Ada programming language
@@ -55,7 +57,6 @@ do-fetch:
 			fi; \
 		fi; \
 	fi;
-
 
 do-extract:
 	${MKDIR} ${WRKSRC}
