@@ -15,6 +15,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += ccmath
+    SUBDIR += clarence
     SUBDIR += cln
     SUBDIR += concorde
     SUBDIR += cxsc
