@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,10 +55,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
 .endfor
 	${MKDIR} ${PERL_SITELIBDIR}
-	cd ${WRKSRC}/lib && ${FIND} . | \
+	cd ${WRKSRC}/lib && ${FIND} . ! -empty | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PERL_SITELIBDIR}
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/templates && ${FIND} . | \
+	cd ${WRKSRC}/templates && ${FIND} . ! -empty | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/mime.types ${CONFDIR}
