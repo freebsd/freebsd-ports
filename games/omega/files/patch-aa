@@ -1,0 +1,49 @@
+--- Makefile.orig	Fri Jan  1 20:00:06 1999
++++ Makefile	Mon Jul  5 19:51:50 1999
+@@ -1,14 +1,14 @@
+ # These two definitions are used if you 'make install'
+ # the value of LIBDIR should be the same as OMEGALIB in defs.h
+-BINDIR = /home/sdossey/omega/
+-LIBDIR = /home/sdossey/omega/lib/
++BINDIR = ${PREFIX}/bin
++LIBDIR = ${PREFIX}/share/omega
+ 
+ # One of these should be uncommented, as appropriate, unless your compiler
+ # does it for you.  You can test this by simply trying to 'make' omega -
+ # it will fail if none of them are defined.  If you do uncomment
+ # one, make sure you comment out the other definition of CFLAGS lower down
+ 
+-CFLAGS = -DBSD -ggdb
++CFLAGS+= -DBSD -DOMEGALIB=\"${LIBDIR}/\"
+ #CFLAGS = -DSYSV -O
+ # I also had to define -cckr (K&R style C) for system V
+ #CFLAGS = -DMSDOS -O
+@@ -17,14 +17,14 @@
+ # CPP should contain the command to run the C preprocessor.
+ #CPP = cc -E
+ #CPP = /lib/cpp
+-CPP = gcc -E
++CPP = ${CC} -E
+ 
+ # If you have gcc and don't intend to hack around with the game,
+ # I recommend setting CC to gcc and using -O (as the CFLAGS).
+ 
+ #CFLAGS = -O
+ #LDFLAGS = -s
+-CC = gcc
++#CC = gcc
+ 
+ # comment out one of the following two, after establishing whether your
+ # machine uses termcap (most BSD machines) or terminfo (System-V)
+@@ -48,7 +48,10 @@
+ omega: $(OBJ)
+ 	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o omega
+ 
+-install: omega $(BINDIR) $(LIBDIR)
++install: omega
++	mkdir -p $(BINDIR)
++	mkdir -p $(LIBDIR)
++	chown games:games omega
+ 	cp omega $(BINDIR)
+ 	chmod 4711 $(BINDIR)/omega
+ 	- cp lib/* $(LIBDIR)
