@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tclX
-PORTVERSION=	8.2.0
-PORTREVISION=	2
+PORTVERSION=	8.3
 CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/TclX/
-DISTNAME=	tclX8.2.0
+MASTER_SITES=	ftp://tcl.activestate.com/pub/tcl/tclx/
+DISTNAME=	tclx${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 
@@ -28,9 +27,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared \
+		--with-help=Help \
 		--with-tcl="${LOCALBASE}/lib/tcl${TCL_VER}" \
 		--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
-PLIST_SUB=	TCLX_LONG_VER=8.2 TCLX_SHORT_VER=82
+PLIST_SUB=	TCLX_LONG_VER=8.3 TCLX_SHORT_VER=83
 
 .ifdef WITHOUT_X11
 CONFIGURE_ARGS+=--enable-tk=NO
@@ -53,11 +53,11 @@ MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 MANN=	Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n memory.n
 
-post-build:
-	cd ${WRKSRC}/../tcl/unix && ${MAKE} buildhelp
-.ifndef WITHOUT_X11
-	cd ${WRKSRC}/../tk/unix && ${MAKE} buildhelp
-.endif
+#post-build:
+#	cd ${WRKSRC}/../tcl/unix && ${MAKE} buildhelp
+#.ifndef WITHOUT_X11
+#	cd ${WRKSRC}/../tk/unix && ${MAKE} buildhelp
+#.endif
 
 
 .include <bsd.port.pre.mk>

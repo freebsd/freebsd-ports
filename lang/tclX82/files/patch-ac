@@ -25,9 +25,6 @@
  	    ${HELP_DIR} Tk.brf
  
  #------------------------------------------------------------------------------
-@@ -215 +215 @@
--install-misc: buildhelp
-+install-misc:
 @@ -227,9 +228,11 @@
  	    ${INSTCOPY} ${TKX_STLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TKX_INST_LIB}/${TKX_STLIB_NAME}; \

@@ -5,8 +5,8 @@
  # Programs and options used by build
  #
 -CC           = @CC@
--CFLAGS       = @CFLAGS@ @TCL_EXTRA_CFLAGS@
-+CFLAGS      += @TCL_EXTRA_CFLAGS@
+-CFLAGS       = @CFLAGS@ @TCL_CFLAGS_WARNING@ @TCL_EXTRA_CFLAGS@
++CFLAGS      += @TCL_CFLAGS_WARNING@ @TCL_EXTRA_CFLAGS@
  SYSCFLAGS    = @SYSCFLAGS@
  RANLIB       = @RANLIB@
  AR           = ar

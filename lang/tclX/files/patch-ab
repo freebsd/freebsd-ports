@@ -37,11 +37,6 @@
  	    ${HELP_DIR} Tcl.brf
  	${RUNTCL} -c "buildhelp ${HELP_DIR} TclX.brf ${TCLX_DOC_DIR}/TclX.n"
  
-@@ -322,3 +323,3 @@
- 
--install-misc: buildhelp
-+install-misc:
- 	${INSTCOPY} ${TCLX_GENERIC_DIR}/tclExtend.h \
 @@ -338,9 +339,11 @@
  	    ${INSTCOPY} ${TCLX_STLIB_NAME} ${INSTALL_ROOT}${TCLX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TCLX_INST_LIB}/${TCLX_STLIB_NAME}; \
