@@ -1,0 +1,34 @@
+libexec/apache/mod_auth_external.so
+@exec %D/sbin/apxs -e -A -n auth_external %D/%F
+@unexec %D/sbin/apxs -e -A -n auth_external %D/%F
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/pwauth.c
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/config.h
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/README
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/INSTALL
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/Makefile
+%%PORTDOCS%%share/doc/mod_auth_external/examples/pwauth/FORM_AUTH
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/CHANGES
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/md5-radius.c
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/md5-radius.h
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/mod-radfuncs.c
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/mod-radius.h
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/mod_auth_external_radius.c
+%%PORTDOCS%%share/doc/mod_auth_external/examples/radius/README
+%%PORTDOCS%%share/doc/mod_auth_external/examples/sybase/mod_auth_external_sybase.c
+%%PORTDOCS%%share/doc/mod_auth_external/examples/sybase/README
+%%PORTDOCS%%share/doc/mod_auth_external/examples/test/test.pipe
+%%PORTDOCS%%share/doc/mod_auth_external/examples/test/test.env
+%%PORTDOCS%%share/doc/mod_auth_external/examples/test/testgroup.env
+%%PORTDOCS%%share/doc/mod_auth_external/examples/test/testgroup.pipe
+%%PORTDOCS%%share/doc/mod_auth_external/examples/test/README
+%%PORTDOCS%%share/doc/mod_auth_external/AUTHENTICATORS
+%%PORTDOCS%%share/doc/mod_auth_external/CHANGES
+%%PORTDOCS%%share/doc/mod_auth_external/INSTALL
+%%PORTDOCS%%share/doc/mod_auth_external/README
+%%PORTDOCS%%share/doc/mod_auth_external/TODO
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/pwauth
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/radius
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/sybase
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples/test
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external/examples
+%%PORTDOCS%%@dirrm share/doc/mod_auth_external
