@@ -22,6 +22,8 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui libzvt
 
 MAN1=		gnomesu.1
 
+CONFLICTS=	libgnomesu-*
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 .endif
