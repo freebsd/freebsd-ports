@@ -2,4 +2,5 @@ bin/mpt
 %%PORTDOCS%%share/doc/mpt/AUTHORS
 %%PORTDOCS%%share/doc/mpt/COPYING
 %%PORTDOCS%%share/doc/mpt/README
+%%PORTDOCS%%share/doc/mpt/config.txt
 %%PORTDOCS%%@dirrm share/doc/mpt
