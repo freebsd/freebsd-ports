@@ -1,0 +1,4 @@
+lib/gtk/themes/engines/libindustrial.so
+share/themes/Industrial/gtk/gtkrc
+@dirrm share/themes/Industrial/gtk
+@dirrm share/themes/Industrial
