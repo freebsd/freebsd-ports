@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Params/CallbackRequest.pm
+%%SITE_PERL%%/Params/Callback.pm
+%%SITE_PERL%%/Params/CallbackRequest/Exceptions.pm
+@dirrm %%SITE_PERL%%/Params/CallbackRequest
+@unexec rmdir %D/%%SITE_PERL%%/Params 2>/dev/null || true

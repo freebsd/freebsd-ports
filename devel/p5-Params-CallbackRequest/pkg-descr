@@ -1,0 +1,9 @@
+The idea behind this module is to provide a sort of plugin architecture for
+Perl templating systems. Callbacks are executed by the contents of a request
+to the Perl templating server, before the templating system itself executes.
+This approach allows you to carry out logical processing of data submitted
+from a form, to affect the contents of the request parameters before they're
+passed to the templating system for processing, and even to redirect or abort
+the request before the templating system handles it.
+
+WWW: http://search.cpan.org/dist/Params-CallbackRequest/
