@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------
+
+If you wish to use ghostview to view or print the Postscript output
+from PMW, then you need to create symlinks for the font files:
+
+    ln -s %%PREFIX%%/share/pmw/psfonts/* %%LOCALBASE%%/share/ghostscript/fonts/
+
+and also add the following line to
+%%LOCALBASE%%/share/ghostscript/x.xx/lib/Fontmap.GS
+
+    /PMW-Music		(PMW-Music.pfa) ;
+
+---------------------------------------------------------------------------

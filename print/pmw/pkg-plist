@@ -1,0 +1,46 @@
+bin/pmw
+share/pmw/MIDIperc
+share/pmw/MIDIvoices
+share/pmw/PSheader
+share/pmw/fontmetrics/AvantGarde-Book.afm
+share/pmw/fontmetrics/AvantGarde-BookOblique.afm
+share/pmw/fontmetrics/AvantGarde-Demi.afm
+share/pmw/fontmetrics/AvantGarde-DemiOblique.afm
+share/pmw/fontmetrics/Bookman-Demi.afm
+share/pmw/fontmetrics/Bookman-DemiItalic.afm
+share/pmw/fontmetrics/Bookman-Light.afm
+share/pmw/fontmetrics/Bookman-LightItalic.afm
+share/pmw/fontmetrics/Courier-Bold.afm
+share/pmw/fontmetrics/Courier-BoldOblique.afm
+share/pmw/fontmetrics/Courier-Oblique.afm
+share/pmw/fontmetrics/Courier.afm
+share/pmw/fontmetrics/Helvetica-Bold.afm
+share/pmw/fontmetrics/Helvetica-BoldOblique.afm
+share/pmw/fontmetrics/Helvetica-Oblique.afm
+share/pmw/fontmetrics/Helvetica.afm
+share/pmw/fontmetrics/NewCenturySchlbk-Bold.afm
+share/pmw/fontmetrics/NewCenturySchlbk-BoldItalic.afm
+share/pmw/fontmetrics/NewCenturySchlbk-Italic.afm
+share/pmw/fontmetrics/NewCenturySchlbk-Roman.afm
+share/pmw/fontmetrics/PMW-Alpha.afm
+share/pmw/fontmetrics/PMW-Music.afm
+share/pmw/fontmetrics/Palatino-Bold.afm
+share/pmw/fontmetrics/Palatino-BoldItalic.afm
+share/pmw/fontmetrics/Palatino-Italic.afm
+share/pmw/fontmetrics/Palatino-Roman.afm
+share/pmw/fontmetrics/Symbol.afm
+share/pmw/fontmetrics/Times-Bold.afm
+share/pmw/fontmetrics/Times-BoldItalic.afm
+share/pmw/fontmetrics/Times-Italic.afm
+share/pmw/fontmetrics/Times-Roman.afm
+share/pmw/fontmetrics/Utopia-Bold.afm
+share/pmw/fontmetrics/Utopia-BoldItalic.afm
+share/pmw/fontmetrics/Utopia-Italic.afm
+share/pmw/fontmetrics/Utopia-Regular.afm
+share/pmw/fontmetrics/ZapfChancery-MediumItalic.afm
+share/pmw/fontmetrics/ZapfDingbats.afm
+share/pmw/psfonts/PMW-Music.pfa
+share/pmw/psfonts/PMW-Alpha
+@dirrm share/pmw/fontmetrics
+@dirrm share/pmw/psfonts
+@dirrm share/pmw
