@@ -1,12 +1,12 @@
 # New ports collection makefile for:   netustad
-# Date created:                 9 January 2005
+# Date created:                 9 February 2005
 # Whom:                         Ozkan KIRIK <ozkan@enderunix.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	netustad
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
