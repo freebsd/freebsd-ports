@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lukin@okbmei.msk.su
 
 USE_XLIB=	yes
+INSTALLS_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
 
@@ -23,6 +24,5 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/libdnd
 	${INSTALL_MAN} ${WRKDIR}/DND/DNDdoc/* ${PREFIX}/share/doc/libdnd
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

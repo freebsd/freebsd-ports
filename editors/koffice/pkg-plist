@@ -746,5 +746,3 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kchart
 @dirrm share/applnk/Applications/KOffice
 @dirrm share/applnk/Applications
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

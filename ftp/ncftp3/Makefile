@@ -15,6 +15,7 @@ DISTNAME=	ncftp-${PORTVERSION}-src
 MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses
 MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
@@ -41,7 +42,6 @@ do-install:
 	@cd ${PREFIX}/lib && ${LN} -sf ${LIBSTRN} libStrn.so
 	@${INSTALL_DATA} ${WRKSRC}/libncftp/libncftp.so.2 ${PREFIX}/lib/${LIBNCFTP}
 	@cd ${PREFIX}/lib && ${LN} -sf ${LIBNCFTP} libncftp.so
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 ${PREFIX}/man/man1/ncftp3.1
 	@cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} \
 		ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \

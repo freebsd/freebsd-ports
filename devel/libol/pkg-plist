@@ -32,6 +32,4 @@ include/libol/xalloc.h
 lib/libol.a
 lib/libol.so
 lib/libol.so.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/libol

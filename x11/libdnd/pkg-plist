@@ -6,8 +6,6 @@ lib/libDnd.so
 lib/libDnd.so.1
 lib/libDnd++.so
 lib/libDnd++.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libdnd/DND.dvi
 share/doc/libdnd/DNDa4.ps
 share/doc/libdnd/DNDletter.ps

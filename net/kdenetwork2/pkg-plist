@@ -626,5 +626,3 @@ share/icons/locolor/32x32/apps/kppp.png
 @dirrm share/apps/kmail
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

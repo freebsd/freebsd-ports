@@ -1874,5 +1874,3 @@ share/wallpapers/kdm_bg.jpg
 @dirrm share/applnk/Games
 @dirrm share/applnk/Control
 @dirrm share/applnk/Applications
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

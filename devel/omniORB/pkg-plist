@@ -52,8 +52,6 @@ lib/libomnithread.so.2.1
 lib/libtcpwrapGK.a
 lib/libtcpwrapGK.so
 lib/libtcpwrapGK.so.1.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/omniORB/README.unix
 share/doc/omniORB/README.FreeBSD
 share/doc/omniORB/ReleaseNote_omniORB_280

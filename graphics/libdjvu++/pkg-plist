@@ -9,8 +9,6 @@ bin/bzz
 lib/libdjvu++.a
 lib/libdjvu++.so
 lib/libdjvu++.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/doc/djvu/ATTLicense.h.html
 share/doc/djvu/ATTLicense.html
 share/doc/djvu/ATTSourceCodeAgreement.html

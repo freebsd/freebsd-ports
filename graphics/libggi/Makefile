@@ -16,6 +16,7 @@ LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gii=${PREFIX}
 
@@ -48,8 +49,5 @@ MAN3=		ggiAddFlags.3ggi ggiCheckGraphMode.3ggi ggiCheckMode.3ggi \
 		ggiResourceRelease.3ggi ggiResourceMustAcquire.3ggi
 MAN6=		cube3d.6
 MAN7=		libggi.7ggi
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

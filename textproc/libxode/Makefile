@@ -13,5 +13,6 @@ MASTER_SITES=	http://download.jabber.org/dists/1.0/
 MAINTAINER=	lukin@okbmei.msk.su
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 .include <bsd.port.mk>

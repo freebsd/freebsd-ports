@@ -15,6 +15,8 @@ DISTNAME=	libutf-8-1.0
 
 MAINTAINER=	adam@whizkidtech.net
 
+INSTALLS_SHLIBS=	yes
+
 MAN3=		libutf-8.3 fgetu8.3 fputu8.3 sgetu8.3 sputu8.3
 
 do-install:
@@ -26,8 +28,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/fputu8.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/sgetu8.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/sputu8.3 ${PREFIX}/man/man3
-
-post-install:
-	${SETENV} OBFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

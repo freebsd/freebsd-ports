@@ -1,4 +1,2 @@
 lib/libcache.so.%%VERSION%%
 lib/libcache.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldcomfing -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

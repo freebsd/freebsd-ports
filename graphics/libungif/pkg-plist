@@ -31,8 +31,6 @@ include/gif_lib.h
 lib/libungif.a
 lib/libungif.so
 lib/libungif.so.5
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libungif/GifFileType.png
 share/doc/libungif/UNCOMPRESSED_GIF
 share/doc/libungif/gif2bgi.html

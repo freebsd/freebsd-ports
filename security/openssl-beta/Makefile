@@ -94,7 +94,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/$i.so.${SHLIBVER} ${PREFIX}/lib
 	@${LN} -sf $i.so.${SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/openssl

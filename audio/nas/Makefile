@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
+INSTALLS_SHLIBS=	yes
 ALL_TARGET=	World
 # no need to "xmkmf -a" and create the Makefiles twice -- see above
 XMKMF=		xmkmf
@@ -74,7 +75,6 @@ post-patch:
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -3,5 +3,3 @@ lib/libmhash.so.1
 lib/libmhash.so
 lib/libmhash.a
 include/mhash.h
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

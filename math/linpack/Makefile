@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
 
+INSTALLS_SHLIBS=	yes
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
@@ -52,8 +53,5 @@ do-extract:
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -14,6 +14,8 @@ DISTNAME=	libxpg4-3.3
 
 MAINTAINER=	sada@FreeBSD.ORG
 
+INSTALLS_SHLIBS=	yes
+
 MAKE_ENV+=	OBJFORMAT=aout SHLIB_MAJOR=2 SHLIB_MINOR=0
 PORTOBJFORMAT=	aout
 
@@ -28,9 +30,6 @@ pre-build:
 
 pre-install:
 	${MKDIR} ${LIBDIR}
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${LIBDIR}
 
 extract-from-freebsd: # only for port maintainer.
 .if exists(/usr/src/lib)

@@ -16,13 +16,11 @@ MAINTAINER=	jim@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes
+INSTALLS_SHLIBS=	yes
 
 post-patch:
 	@${CP} ${WRKSRC}/Config ${WRKSRC}/Config.orig;
 	@${SED} -e 's^/usr/local/^${PREFIX}/^g' \
 		${WRKSRC}/Config.orig > ${WRKSRC}/Config
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

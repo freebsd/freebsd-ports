@@ -58,8 +58,6 @@ lib/kaffe/security/java.security
 lib/libkaffevm-1.0.5.so
 lib/libkaffevm.la
 lib/libkaffevm.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/Kaffe
 share/kaffe/BUILD_ENVIRONMENT
 share/kaffe/Klasses.jar

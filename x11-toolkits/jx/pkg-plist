@@ -1312,5 +1312,3 @@ share/jx/jx_run_script.xpm
 @dirrm include/ace
 bin/jfdesign
 bin/jxlayout
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

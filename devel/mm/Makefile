@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 
 MAINTAINER=	rse@engelschall.com
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mm-config.1
@@ -23,8 +24,5 @@ post-build:
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

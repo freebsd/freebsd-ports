@@ -4,5 +4,3 @@ include/otcl.h
 lib/libotcl.a
 lib/libotcl.so
 lib/libotcl.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

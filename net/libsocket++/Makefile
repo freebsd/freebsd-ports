@@ -18,13 +18,13 @@ DISTNAME=	socket++-1.10
 MAINTAINER=	narvi@haldjas.folklore.ee
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
 NOPROFILE=	true
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libsocket++
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/libsocket++

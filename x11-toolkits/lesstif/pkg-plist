@@ -324,8 +324,6 @@ lib/libMrm.a
 lib/libMrm.so
 lib/libMrm.so.1
 lib/libMrm.la
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/X11/app-defaults/Mwm
 lib/X11/config/Imake.tmpl
 lib/X11/config/Motif.rules

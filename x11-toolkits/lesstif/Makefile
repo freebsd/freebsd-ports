@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
 		--enable-production --disable-debug --disable-build-Xbae
@@ -95,7 +96,6 @@ post-install:
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.a ${PREFIX}/lib/libMrm.a
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.la ${PREFIX}/lib/libMrm.la
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

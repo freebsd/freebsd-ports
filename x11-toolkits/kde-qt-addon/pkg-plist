@@ -5,5 +5,3 @@ include/qcanvas.h
 include/qdom.h
 include/qpolygonscanner.h
 include/qxml.h
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

@@ -19,6 +19,7 @@ MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+INSTALLS_SHLIBS=	yes
 USE_NEWGCC=	yes
 
 .if defined(QT2)
@@ -55,7 +56,6 @@ post-install:
 	${LN} -sf ${PREFIX}/lib/libmicoqt${MICOVER}.so.1 ${PREFIX}/lib/libmicoqt.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicotcl${MICOVER}.so.1 ${PREFIX}/lib/libmicotcl.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicox${MICOVER}.so.1 ${PREFIX}/lib/libmicox.${MICOVER}.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@strip ${PREFIX}/bin/containmentd
 	@strip ${PREFIX}/bin/eventd
 	@strip ${PREFIX}/bin/idl

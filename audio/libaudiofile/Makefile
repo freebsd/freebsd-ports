@@ -15,6 +15,7 @@ DISTNAME=	audiofile-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 MAKE_ARGS=	"-E CFLAGS"
 

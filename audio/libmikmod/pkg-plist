@@ -7,5 +7,3 @@ lib/libmikmod.so.2
 info/mikmod.info
 @exec install-info %D/info/mikmod.info %D/info/dir
 share/aclocal/libmikmod.m4
-@unexec /sbin/ldconfig -R
-@exec /sbin/ldconfig -m %B

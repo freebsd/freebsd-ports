@@ -14,12 +14,13 @@ DISTNAME=	malloc-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
+INSTALLS_SHLIBS=	yes
+
 .include <bsd.port.pre.mk>
 
 MANUAL_PACKAGE_BUILD=	installs malloc.h
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@cd ${PREFIX}/include ; ${LN} -sf malloc.h libmalloc.h
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libmalloc

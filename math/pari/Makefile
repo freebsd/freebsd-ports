@@ -15,7 +15,8 @@ MAINTAINER=     yoshiaki@kt.rim.or.jp
 
 ONLY_FOR_ARCHS=	i386
 
-HAS_CONFIGURE = Yes
+INSTALLS_SHLIBS=	yes
+HAS_CONFIGURE = yes
 CONFIGURE_SCRIPT = Configure
 CONFIGURE_ARGS = --prefix=${PREFIX}
 CFLAGS=
@@ -30,8 +31,5 @@ HAVE_EMACS!=	which emacs || echo nope
 .if ${HAVE_EMACS} != "nope"
 PLIST=		${PKGDIR}/PLIST.emacs
 .endif
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

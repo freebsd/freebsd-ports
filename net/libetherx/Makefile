@@ -17,6 +17,7 @@ LIB_DEPENDS=	jabber.1:${PORTSDIR}/net/libjabber \
 		adns.0:${PORTSDIR}/net/adns
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN1=		etherx-config.1
 

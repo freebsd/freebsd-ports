@@ -42,8 +42,6 @@ lib/libmimelib.la
 lib/libmimelib.so.3
 @exec ln -sf libQwSpriteField.so.7 %D/lib/libQwSpriteField.so
 @exec ln -sf libmimelib.so.3 %D/lib/libmimelib.so
-@exec /sbin/ldconfig -m %B
 @dirrm include/mimelib
 @unexec rm -f %D/lib/libQwSpriteField.so
 @unexec rm -f %D/lib/libmimelib.so
-@unexec /sbin/ldconfig -R

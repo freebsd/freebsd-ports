@@ -13,6 +13,7 @@ MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 MAINTAINER=	zach@pabst.bendnet.com
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

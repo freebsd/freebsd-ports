@@ -14,6 +14,7 @@ DISTFILES=	${PORTNAME}-3.5-beta3.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.5-beta3/src
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
 
@@ -31,6 +32,5 @@ post-install:
 	${LN} -sf libnetcdf.so.1 ${PREFIX}/lib/libnetcdf.so
 	${INSTALL_DATA} ${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1
 	${LN} -sf libnetcdf_c++.so.1 ${PREFIX}/lib/libnetcdf_c++.so
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

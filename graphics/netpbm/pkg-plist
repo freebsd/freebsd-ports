@@ -223,5 +223,3 @@ lib/libpnm.so.1
 lib/libppm.a
 lib/libppm.so
 lib/libppm.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

@@ -17,6 +17,7 @@ MAINTAINER=	saper@system.pl
 #USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 MIBDIR=		${PREFIX}/share/smi/mibs
 CONFIGURE_ARGS+=--with-data-dir=${PREFIX}/share/smi \

@@ -20,8 +20,6 @@ include/gnome-xml/xpath.h
 lib/libxml.a
 lib/libxml.so
 lib/libxml.so.5
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome-xml/DOM.gif
 share/gnome-xml/book1.html
 share/gnome-xml/gnome-xml-debugxml.html

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.djvu.com/open/
 
 MAINTAINER=	mi@aldan.algebra.com
 
+INSTALLS_SHLIBS=	yes
 IS_INTERACTIVE=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
@@ -30,7 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${lib} ${PREFIX}/lib
 .endfor
 	${LN} -sf libdjvu++.so.2 ${PREFIX}/lib/libdjvu++.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/djvu
 	${INSTALL_DATA} ${WRKSRC}/@Doc/* ${PREFIX}/share/doc/djvu

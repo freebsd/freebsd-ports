@@ -2,5 +2,3 @@ include/libicq.h
 lib/libicq.a
 lib/libicq.so
 lib/libicq.so.0.3
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

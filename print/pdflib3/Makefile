@@ -18,6 +18,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 FETCH_BEFORE_ARGS=	-b
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL} \
 		--with-tiff=${PREFIX} \
@@ -27,7 +28,6 @@ CONFIGURE_ARGS=	--with-perl5=${PERL} \
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pdflib/libpdf.so.2 ${PREFIX}/lib
 	${LN} -s libpdf.so.2 ${PREFIX}/lib/libpdf.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/pdflib/pdflib.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pdflib

@@ -35,6 +35,4 @@ lib/libxfwmf.so.1
 lib/libxgd.a
 lib/libxgd.so
 lib/libxgd.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/xgd

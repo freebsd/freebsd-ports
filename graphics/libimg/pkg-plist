@@ -2,6 +2,4 @@ lib/Img1.2/pkgIndex.tcl
 lib/Img1.2/libimg82.so.1
 lib/libimg.so.1
 lib/libimg.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/Img1.2

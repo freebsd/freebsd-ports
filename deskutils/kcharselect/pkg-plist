@@ -581,5 +581,3 @@ share/toolbar/filedel.xpm
 @dirrm share/apps/kab
 @dirrm share/apps/ark/toolbar
 @dirrm share/apps/ark
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
