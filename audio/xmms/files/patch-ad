@@ -1,5 +1,5 @@
 --- configure.orig	Mon Jun 19 16:19:25 2000
-+++ configure	Tue Jun 20 11:35:37 2000
++++ configure	Wed Jun 21 10:34:30 2000
 @@ -3290,14 +3290,14 @@
  
  fi
@@ -27,7 +27,29 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -5475,7 +5475,7 @@
+@@ -3927,7 +3927,9 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-
++if [ x"${HAVE_ESD_OVERRIDE}" != x"" ]; then
++  have_esd=no
++fi
+ 
+ if test "x$have_esd" = xyes; then
+   HAVE_ESD_TRUE=
+@@ -4208,7 +4210,9 @@
+   
+   rm -f conf.mikmodtest
+ 
+-
++if [ x"${HAVE_MIKMOD_OVERRIDE}" != x"" ]; then
++  have_mikmod=no
++fi
+ 
+ if test "x$have_mikmod" = xyes; then
+   HAVE_MIKMOD_TRUE=
+@@ -5475,7 +5479,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -36,7 +58,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7113,14 +7113,14 @@
+@@ -7113,14 +7117,14 @@
  
  if test -n "$GCC"
  then
