@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
 			  -I${LOCALBASE}/include" \
 		SPOOLER="/usr/bin/lpr" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -36,7 +36,7 @@ post-patch:
 			${WRKSRC}/configure
 	@${PERL} -pi -e 's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
-		 s|/usr/include/freetype|${LOCALBASE}/include/freetype|g' \
+		 s|-I/usr/include/freetype||g' \
 			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
