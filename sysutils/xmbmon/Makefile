@@ -28,6 +28,12 @@ PLIST_SUB=	X11_ONLY=""
 
 MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}'
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
+.endif
+
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Definable build options"
@@ -41,4 +47,4 @@ post-install:
 	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-doc)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
