@@ -27,6 +27,6 @@ do-extract:
 	cd ${FILESDIR} && pax -r -w * ${WRKSRC}
 
 pre-install:
-	${ECHO} bin/digest > ${PLIST}
+	${ECHO_CMD} bin/digest > ${PLIST}
 
 .include <bsd.port.mk>

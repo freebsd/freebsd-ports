@@ -26,7 +26,7 @@ BROKEN=		CAM
 pre-build:
 	@cd ${WRKSRC}; ${MV} Makefile Makefile~; \
 		${SED} -e s:/usr/local:${PREFIX}:g -e s/CFL/CXXFL/ <Makefile~ >Makefile;\
-		${ECHO} all: cd-write >> Makefile
+		${ECHO_CMD} all: cd-write >> Makefile
 	@cd ${WRKSRC}/c++tk; ${MV} Makefile Makefile~; \
 		${SED} -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile
 

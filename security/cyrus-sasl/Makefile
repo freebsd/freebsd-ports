@@ -129,8 +129,8 @@ post-patch:
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .ifdef LDAP_MYSQL_MSG
-	@${ECHO} ${LDAP_MYSQL_MSG} | /usr/bin/fmt -w 67 >> ${PKGMESSAGE}
-	@${ECHO} >> ${PKGMESSAGE}
+	@${ECHO_CMD} ${LDAP_MYSQL_MSG} | /usr/bin/fmt -w 67 >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
 .endif
 
 pre-configure:

@@ -32,9 +32,9 @@ RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 post-patch: real-post-patch
 
 do-configure:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${CC} -s -L${LOCALBASE}/lib > ${WRKSRC}/conf-ld
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} ${CC} -s -L${LOCALBASE}/lib > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 
 post-install: real-post-install
 

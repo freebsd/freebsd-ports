@@ -17,7 +17,7 @@ NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 SRCPREFIX?=	/usr/src
 PKGMESSAGE=	${WRKDIR}/.MESSAGE
-ENCODINGS=	cd ${WRKSRC}/templates && ${ECHO} [^C]* | \
+ENCODINGS=	cd ${WRKSRC}/templates && ${ECHO_CMD} [^C]* | \
 			${SED} 's|\.txt|,|g'
 FMT=		/usr/bin/fmt
 FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
@@ -39,7 +39,7 @@ pre-fetch:
 
 pre-install:
 	@ENCODINGS=`${ENCODINGS}` && \
-		ENCODINGS=`${ECHO} $${ENCODINGS} | ${SED} 's|,$$||'` && \
+		ENCODINGS=`${ECHO_CMD} $${ENCODINGS} | ${SED} 's|,$$||'` && \
 		${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%ENCODINGS%%|$${ENCODINGS}|" \
 			${PKGDIR}/pkg-message | ${FMT} > ${PKGMESSAGE}
 	${MKDIR} ${PREFIX}/lib/cd9660_unicode

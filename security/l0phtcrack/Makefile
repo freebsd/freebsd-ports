@@ -29,12 +29,12 @@ do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -DMPU8086 *.c -o lc_CLI
 
 pre-install:
-	${ECHO} bin/lc_CLI > ${PLIST}
+	${ECHO_CMD} bin/lc_CLI > ${PLIST}
 .if !defined(NOPORTDOCS)
 	for i in `find ${WRKDIR} -name '*txt'`; \
-		do ${ECHO} ${DOCDIR}/`${BASENAME} $${i}` >> ${PLIST}; \
+		do ${ECHO_CMD} ${DOCDIR}/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

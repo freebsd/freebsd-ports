@@ -73,7 +73,7 @@ post-install:
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
-	  ${ECHO} ${PREFIX}/bin/zsh) > /etc/shells
+	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>

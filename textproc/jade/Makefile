@@ -49,7 +49,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/sgml/jade
 	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
 	@if [ ! -f ${PREFIX}/share/sgml/catalog ]; then \
-		${ECHO} "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"" > ${PREFIX}/share/sgml/catalog; \
+		${ECHO_CMD} "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"" > ${PREFIX}/share/sgml/catalog; \
 	else \
 		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|${PREFIX}/share/sgml/jade/catalog|;print "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"\n" if eof;' ${PREFIX}/share/sgml/catalog; \
 	fi

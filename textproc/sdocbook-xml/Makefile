@@ -32,7 +32,7 @@ do-install:
 			*.dtd *.mod *.css *.xml ${DTDDIR}; \
 		${INSTALL_DATA} ent/* ${ENTDIR}
 	if [ ! -f ${INSTDIR}/catalog ]; then \
-		${ECHO} "CATALOG \"sdocbook/catalog\"" > ${INSTDIR}/catalog; \
+		${ECHO_CMD} "CATALOG \"sdocbook/catalog\"" > ${INSTDIR}/catalog; \
 	else \
 		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|sdocbook/catalog|;print "CATALOG \"sdocbook/catalog\"\n" if eof;' ${INSTDIR}/catalog; \
 	fi

@@ -95,11 +95,11 @@ pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.des >> ${PLIST}
 .endif
 .if !exists(/usr/include/ifaddrs.h)
-	@${ECHO} include/ifaddrs.h >> ${PLIST}
+	@${ECHO_CMD} include/ifaddrs.h >> ${PLIST}
 .endif
 .if defined(WITH_CRACKLIB)
 	${INSTALL_PROGRAM} ${WRKSRC}/kpasswdd-cracklib.so ${PREFIX}/lib/
-	@${ECHO} lib/kpasswdd-cracklib.so >> ${PLIST}
+	@${ECHO_CMD} lib/kpasswdd-cracklib.so >> ${PLIST}
 .endif
 
 .include "Makefile.man"

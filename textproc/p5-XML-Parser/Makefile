@@ -40,12 +40,12 @@ post-patch:
 .if defined(XMLPARSER_EUCJP)
 	@cd ${WRKSRC}/Parser/Encodings; \
 		${CONV_ENC} euc-jp ${XMLPARSER_EUCJP}.enc > euc-jp.enc
-	@${ECHO} Parser/Encodings/euc-jp.enc >> ${WRKSRC}/MANIFEST
+	@${ECHO_CMD} Parser/Encodings/euc-jp.enc >> ${WRKSRC}/MANIFEST
 .endif
 .if defined(XMLPARSER_SJIS)
 	@cd ${WRKSRC}/Parser/Encodings; \
 		${CONV_ENC} shift_jis ${XMLPARSER_SJIS}.enc > shift_jis.enc
-	@${ECHO} Parser/Encodings/Shift_JIS.enc >> ${WRKSRC}/MANIFEST
+	@${ECHO_CMD} Parser/Encodings/Shift_JIS.enc >> ${WRKSRC}/MANIFEST
 .endif
 
 post-configure:

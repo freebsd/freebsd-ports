@@ -39,7 +39,7 @@ post-install:
 	@${ECHO} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
-	  ${ECHO} ${PREFIX}/bin/ksh93) >/etc/shells
+	  ${ECHO_CMD} ${PREFIX}/bin/ksh93) >/etc/shells
 	@${RM} -f /etc/shells.bak
 
 .include <bsd.port.mk>

@@ -27,14 +27,14 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/outguess
 
 pre-install:
-	${ECHO} bin/extract > ${PLIST}
-	${ECHO} bin/outguess >> ${PLIST}
-#	${ECHO} bin/histogram >> ${PLIST}
+	${ECHO_CMD} bin/extract > ${PLIST}
+	${ECHO_CMD} bin/outguess >> ${PLIST}
+#	${ECHO_CMD} bin/histogram >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

@@ -161,9 +161,9 @@ post-patch:
 
 
 post-configure:
-	@${ECHO} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
+	@${ECHO_CMD} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 .if defined(MASKBITS)
-	@${ECHO} "#define MASKBITS ${MASKBITS}" >> ${WRKSRC}/local.h
+	@${ECHO_CMD} "#define MASKBITS ${MASKBITS}" >> ${WRKSRC}/local.h
 .endif
 
 post-build:
@@ -257,6 +257,6 @@ post-install:
 .else
 	@${CAT} ${MASTERDIR}/pkg-plist.am >> ${TMPPLIST}
 .endif
-	@${ECHO} "@dirrm share/ispell" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/ispell" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

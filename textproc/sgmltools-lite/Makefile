@@ -30,6 +30,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/etc/sgml
 
 post-install:
-	${ECHO} "3.0.0" > ${LOCALBASE}/share/sgml/misc/sgmltools/VERSION
+	${ECHO_CMD} "3.0.0" > ${LOCALBASE}/share/sgml/misc/sgmltools/VERSION
 
 .include <bsd.port.mk>
