@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.gentoo.com/di/
 MAINTAINER=	bll@gentoo.com
 COMMENT=	Disk Information Utility
 
-MAN1=		di.1
+USE_GETTEXT=	yes
 
-.include <bsd.port.pre.mk>
+MAN1=		di.1
 
 do-configure:
 	(cd ${WRKSRC}; \
@@ -51,4 +51,4 @@ do-install:
         $(RM) -f $$j.mo; \
 	done)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
