@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	aee
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.6
 CATEGORIES=	editors
-MASTER_SITES=	http://www.users.uswest.net/~hmahon/sources/ \
-		http://awwm.linuxberg.com/files/console/network/ \
-		http://powerlinux.linuxberg.com/files/console/network/
+MASTER_SITES=	http://mahon.cwx.net/sources/
 
 MAINTAINER=	kbyanc@posi.net
 
