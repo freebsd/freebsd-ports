@@ -417,7 +417,6 @@ share/vim/%%VIM_VER%%/tutor/tutor
 share/vim/%%VIM_VER%%/vimrc_example.vim
 @exec mkdir share/vim/%%VIM_VER%%/lang
 @dirrm share/vim/%%VIM_VER%%/doc
-@dirrm share/vim/%%VIM_VER%%/ftplugin
 @dirrm share/vim/%%VIM_VER%%/ftplugin/c
 @dirrm share/vim/%%VIM_VER%%/ftplugin/cpp
 @dirrm share/vim/%%VIM_VER%%/ftplugin/fortran
