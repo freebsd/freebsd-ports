@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.12 1995/12/07 08:11:57 tg Exp $
+# $Id: Makefile,v 1.13 1995/12/09 01:30:20 asami Exp $
 #
 
 DISTNAME=	tkman-1.7.5
@@ -20,6 +20,8 @@ RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman
 NO_PACKAGE=	yes
 
 post-install:
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/tkman.1
+.endif
 
 .include <bsd.port.mk>
