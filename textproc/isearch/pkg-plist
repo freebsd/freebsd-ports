@@ -4,4 +4,5 @@ bin/Iutil
 share/doc/Isearch/QuickStart.html
 share/doc/Isearch/IsearchFeatures.html
 share/doc/Isearch/IsearchTutorial.html
-
+share/doc/Isearch/Isearch-cgi-tutorial.html
+@dirrm share/doc/Isearch
