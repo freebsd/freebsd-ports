@@ -1,22 +1,59 @@
 bin/sim
-bin/simctrl
+lib/libsimapi.la
+lib/libsimapi.so
+lib/libsimapi.so.0
+lib/libsimui.la
+lib/libsimui.so
+lib/libsimui.so.0
 lib/menu/sim-kde.menu
 share/applnk/Internet/sim.desktop
+share/apps/sim/COPYING
+share/apps/sim/pict/connect.mng
 share/apps/sim/pict/splash.png
+share/apps/sim/plugins/__homedir.so
+share/apps/sim/plugins/__migrate.so
+share/apps/sim/plugins/_core.so
+share/apps/sim/plugins/about.so
+share/apps/sim/plugins/autoaway.so
+share/apps/sim/plugins/background.so
+share/apps/sim/plugins/dock.so
+share/apps/sim/plugins/filter.so
+share/apps/sim/plugins/floaty.so
+share/apps/sim/plugins/forward.so
+share/apps/sim/plugins/icons.so
+share/apps/sim/plugins/icq.so
+share/apps/sim/plugins/jabber.so
+share/apps/sim/plugins/logger.so
+%%SSL%%share/apps/sim/plugins/msn.so
+share/apps/sim/plugins/navigate.so
+share/apps/sim/plugins/netmonitor.so
+%%KDE%%share/apps/sim/plugins/ontop.so
+share/apps/sim/plugins/osd.so
+share/apps/sim/plugins/proxy.so
+share/apps/sim/plugins/shortcuts.so
+share/apps/sim/plugins/sound.so
+share/apps/sim/plugins/splash.so
+%%KDE%%share/apps/sim/plugins/transparent.so
+share/apps/sim/plugins/update.so
 share/apps/sim/sounds/alert.wav
 share/apps/sim/sounds/auth.wav
-share/apps/sim/sounds/chat.wav
+share/apps/sim/sounds/contacts.wav
+share/apps/sim/sounds/error.wav
 share/apps/sim/sounds/file.wav
 share/apps/sim/sounds/filedone.wav
+share/apps/sim/sounds/mailpager.wav
 share/apps/sim/sounds/message.wav
+share/apps/sim/sounds/msgsent.wav
 share/apps/sim/sounds/sms.wav
 share/apps/sim/sounds/startup.wav
 share/apps/sim/sounds/url.wav
+share/apps/sim/sounds/web.wav
 share/icons/hicolor/16x16/apps/sim.png
 share/icons/hicolor/32x32/apps/sim.png
 share/icons/locolor/16x16/apps/sim.png
 share/icons/locolor/32x32/apps/sim.png
 share/locale/bg/LC_MESSAGES/sim.mo
+share/locale/ca/LC_MESSAGES/sim.mo
 share/locale/cs/LC_MESSAGES/sim.mo
 share/locale/de/LC_MESSAGES/sim.mo
 share/locale/es/LC_MESSAGES/sim.mo
@@ -25,8 +62,10 @@ share/locale/he/LC_MESSAGES/sim.mo
 share/locale/it/LC_MESSAGES/sim.mo
 share/locale/nl/LC_MESSAGES/sim.mo
 share/locale/pl/LC_MESSAGES/sim.mo
+share/locale/pt_BR/LC_MESSAGES/sim.mo
 share/locale/ru/LC_MESSAGES/sim.mo
 share/locale/sk/LC_MESSAGES/sim.mo
+share/locale/sw/LC_MESSAGES/sim.mo
 share/locale/tr/LC_MESSAGES/sim.mo
 share/locale/uk/LC_MESSAGES/sim.mo
 share/locale/zh_TW/LC_MESSAGES/sim.mo
@@ -36,10 +75,14 @@ share/locale/zh_TW/LC_MESSAGES/sim.mo
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/sw/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sw 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
@@ -56,6 +99,8 @@ share/locale/zh_TW/LC_MESSAGES/sim.mo
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/bg 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
@@ -71,10 +116,10 @@ share/locale/zh_TW/LC_MESSAGES/sim.mo
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/apps/sim/sounds
+@dirrm share/apps/sim/plugins
 @dirrm share/apps/sim/pict
-@dirrm share/apps/sim/icons
 @dirrm share/apps/sim
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
-@dirrm lib/menu
+@unexec rmdir %D/lib/menu 2>/dev/null || true

@@ -5,39 +5,55 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
 DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 
 MAINTAINER=	brueffer@phoenix-systems.de
-COMMENT=	ICQ client which supports Version 8 of the ICQ protocol (ICQ 2001)
+COMMENT=	Plugin-based instant messenger
 
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
+PLIST_SUB+=	SSL=""
 .else
 CONFIGURE_ARGS+=--disable-openssl
+PLIST_SUB+=	SSL="@comment "
 .endif
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_KDE)
-CONFIGURE_ARGS+=	--disable-kde --enable-mt
+CONFIGURE_ARGS+=--disable-kde --enable-mt
+PLIST_SUB+=	KDE="@comment "
 .else
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
+PLIST_SUB+=	KDE=""
 .endif
+
+pre-everything::
+.if !defined(WITHOUT_SSL)
+	@${ECHO_MSG} "You can disable SSL support by defining WITHOUT_SSL."
+.endif
+.if !defined(WITHOUT_KDE)
+	@${ECHO_MSG} "You can disable KDE support by defining WITHOUT_KDE."
+.endif
+
+post-extract:
+	@${TOUCH} ${WRKSRC}/plugins/splash/Makefile.in
 
 post-patch:
-.if defined(WITHOUT_KDE)
-	${REINPLACE_CMD} -e "s,qtlib=\"qt\",qtlib=\"qt-mt -pthread\"," \
-		${WRKSRC}/configure
-.endif
-	${REINPLACE_CMD} -e 's/-O2//g' ${CONFIGURE_WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
+		${CONFIGURE_WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
