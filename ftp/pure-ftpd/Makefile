@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -23,12 +23,20 @@ MASTER_SITE_SUBDIR=	pureftpd
 MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
-.if defined(WITH_LDAP)
+.if defined(WITH_LDAP) && !defined(WITH_LDAP21)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap20
+.elif defined(WITH_LDAP21) && !defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
+.elif defined(WITH_LDAP21) && defined(WITH_LDAP)
+BROKEN=		"You may only specify WITH_LDAP xor WITH_LDAP21, but not both together"
 .endif
 
-.if defined(WITH_MYSQL)
+.if defined(WITH_MYSQL) && !defined(WITH_MYSQL4)
 LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+.elif defined(WITH_MYSQL4) && !defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+.elif defined(WITH_MYSQL4) && defined(WITH_MYSQL)
+BROKEN=		"You may only specify WITH_MYSQL xor WITH_MYSQL4, but not both together"
 .endif
 
 .if defined(WITH_PGSQL)
@@ -36,23 +44,24 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-everything \
 			--with-paranoidmsg \
 			--with-virtualchroot \
-			--sysconfdir=/etc
+			--sysconfdir=${PREFIX}/etc
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 .endif
 
 # ldap support requested?
-.if defined(WITH_LDAP)
+.if defined(WITH_LDAP) || defined(WITH_LDAP21)
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 # mysql support requested?
-.if defined(WITH_MYSQL)
+.if defined(WITH_MYSQL) || defined(WITH_MYSQL4)
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
@@ -99,8 +108,10 @@ CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
 pre-fetch:
 	@${ECHO_CMD} "You can use the following additional options:"
-	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories"
-	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL databases"
+	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories (openldap-2.0)"
+	@${ECHO_CMD} "WITH_LDAP21=1         - Support for users in LDAP directories (openldap-2.1)"
+	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL 3.23 databases"
+	@${ECHO_CMD} "WITH_MYSQL4=1         - Support for users in MySQL 4 databases"
 	@${ECHO_CMD} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
 	@${ECHO_CMD} "WITH_PRIVSEP=1        - Enable privilege separation"
 	@${ECHO_CMD} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
@@ -109,6 +120,9 @@ pre-fetch:
 	@${ECHO_CMD} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
 	@${ECHO_CMD} "  and czech."
 	@${ECHO_CMD} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g' ${WRKSRC}/configuration-file/pure-config.pl.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
@@ -123,6 +137,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pure-ftpd
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd)
 .endif
+	${INSTALL_SCRIPT} ${FILESDIR}/pure-ftpd.sh.sample ${PREFIX}/etc/rc.d/
 .if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
