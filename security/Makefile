@@ -185,6 +185,7 @@
     SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += py-amkCrypto
+    SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
