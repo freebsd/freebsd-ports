@@ -52,7 +52,11 @@ rm -f $MOZDIR/component.reg
 
 LD_LIBRARY_PATH=$MOZDIR MOZILLA_FIVE_HOME=$MOZDIR $MOZDIR/regxpcom || true
 LD_LIBRARY_PATH=$MOZDIR MOZILLA_FIVE_HOME=$MOZDIR $MOZDIR/regchrome || true
-touch $MOZDIR/chrome/user-skins.rdf $MOZDIR/chrome/user-locales.rdf
+
+if [ -d "$MOZDIR/searchplugins" ]; then
+	chmod -R u+w "$MOZDIR/searchplugins"
+fi
+#touch $MOZDIR/chrome/user-skins.rdf $MOZDIR/chrome/user-locales.rdf
 
 [ "x$2" = "xPOST-INSTALL" ] || rm $MOZDIR/chrome/installed-chrome.txt.bak
 
