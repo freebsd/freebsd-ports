@@ -1,0 +1,16 @@
+--- lib/Makefile.orig	Fri Dec  7 15:34:54 2001
++++ lib/Makefile	Fri Jan 18 15:48:02 2002
+@@ -3,10 +3,11 @@
+ LIB=poputil
+ SRCS=  funcs.c lockfile.c mailbox.c mbox_maildir.c mbox_mailidx.c mbox_mbf.c
+ INCS=poputil.h
+-CFLAGS   = -g -Wall -O -pipe -fPIC -shared -DUSE_SSL
++CFLAGS+=	-Wall -DUSE_SSL
+ SHLIB_MAJOR=    1
+ SHLIB_MINOR=    0
+-DESTDIR=/usr/local/
++DESTDIR=	${PREFIX}/
++PREFIX?=	/usr/local
+ LIBDIR=lib
+ INCDIR=include
+ 

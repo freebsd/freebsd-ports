@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	popd
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
@@ -15,10 +14,10 @@ MAINTAINER=	ianf@za.uu.net
 
 MAN8=   popd.8
 
-do-build:
-	cd ${WRKSRC}; make -DNOMANCOMPRESS
+INSTALLS_SHLIB=	yes
+NOMANCOMPRESS=	yes
 
-do-install:
-	cd ${WRKSRC}; make -DNOMANCOMPRESS BINDIR=${PREFIX}/libexec MANDIR=${PREFIX}/man/man install
+post-extract:
+	${MV} ${WRKSRC}/src/popd.8 ${WRKSRC}/src/popd.mdoc
 
 .include <bsd.port.mk>
