@@ -1,5 +1,5 @@
-*** Imakefile.orig	Sat Mar  1 00:48:57 1997
---- Imakefile	Sun May 25 19:40:53 1997
+*** Imakefile.orig	Fri Feb 28 09:48:57 1997
+--- Imakefile	Fri Dec 24 12:47:19 1999
 ***************
 *** 6,63 ****
   
@@ -119,3 +119,33 @@
   /*									   */
   /* ----------------------------------------------------------------------- */
   
+***************
+*** 95,101 ****
+  install.score::
+  	@if [ -d $(SCOREDIR) ]; then chmod 755 $(SCOREDIR); \
+          else $(MKDIRHIER) $(SCOREDIR); chmod 755 $(SCOREDIR); fi
+! 	$(INSTALL) -c -m 600 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
+  	@echo "install score . done"
+  
+  install.pixmap::
+--- 95,101 ----
+  install.score::
+  	@if [ -d $(SCOREDIR) ]; then chmod 755 $(SCOREDIR); \
+          else $(MKDIRHIER) $(SCOREDIR); chmod 755 $(SCOREDIR); fi
+! 	$(INSTALL) -c -g games -m 660 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
+  	@echo "install score . done"
+  
+  install.pixmap::
+***************
+*** 109,113 ****
+  install.bin::
+  	@if [ -d $(BINDIR) ]; then set +x; \
+          else (set -x; $(MKDIRHIER) $(BINDIR)); fi
+! 	$(INSTALL) -c -m 4755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
+  	@echo "install bin . done"
+--- 109,113 ----
+  install.bin::
+  	@if [ -d $(BINDIR) ]; then set +x; \
+          else (set -x; $(MKDIRHIER) $(BINDIR)); fi
+! 	$(INSTALL) -c -g games -m 2755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
+  	@echo "install bin . done"
