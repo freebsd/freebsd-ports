@@ -16,9 +16,9 @@ COMMENT?=	A pager/text-based WWW browser
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=			0.4
-M17N_VERSION=			20030224
-M17N_BASE_W3M_VERSION=		0.4
+W3M_VERSION=			0.4.1
+M17N_VERSION=			20030308
+M17N_BASE_W3M_VERSION=		0.4.1
 
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -102,10 +102,20 @@ PKGMESSAGE=	${NONEXISTENT}
 
 pre-everything::
 .if defined(M17N)
-	@${ECHO_MSG} "====>"
-	@${ECHO_MSG} "====> To enable Japanese message and migemo support, define JAPANESE"
-	@${ECHO_MSG} "====> To enable inline image support, define INLINE_IMAGE"
-	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> You can enable some features by defining following variables."
+	@${ECHO_MSG} "===>"
+.if defined(JAPANESE)
+	@${ECHO_MSG} "===> JAPANESE     (Japanese messages and migemo support, enabled)"
+.else
+	@${ECHO_MSG} "===> JAPANESE     (Japanese messages and migemo support)"
+.endif
+.if defined(INLINE_IMAGE)
+	@${ECHO_MSG} "===> INLINE_IMAGE (inline image support, enabled)"
+.else
+	@${ECHO_MSG} "===> INLINE_IMAGE (inline image support)"
+.endif
+	@${ECHO_MSG} "===>"
 .endif
 
 pre-extract:
