@@ -144,6 +144,8 @@ share/doc/aolserver/install.html
 share/doc/aolserver/license.txt
 share/doc/aolserver/tcl-changes.txt
 share/doc/aolserver/tuning.html
+@exec mkdir -p %D/aolserver/servers/server1/modules/nslog
+@exec mkdir -p %D/aolserver/log
 @dirrm aolserver/bin
 @dirrm aolserver/log
 @dirrm aolserver/modules/tcl/nsperm
@@ -159,8 +161,8 @@ share/doc/aolserver/tuning.html
 @dirrm aolserver/lib/tcl8.3/tcltest1.0
 @dirrm aolserver/lib/tcl8.3
 @dirrm aolserver/lib
-@dirrm aolserver/servers/server1/modules/nsperm
 @dirrm aolserver/servers/server1/modules/nslog
+@dirrm aolserver/servers/server1/modules/nsperm
 @dirrm aolserver/servers/server1/modules
 @dirrm aolserver/servers/server1/pages
 @dirrm aolserver/servers/server1

@@ -1,0 +1,24 @@
+--- tcl8.3.2/unix/tclUnixPipe.c	Thu Aug 17 17:46:15 2000
++++ tcl8.3.2/unix/tclUnixPipe.c.new	Fri Feb 15 12:30:19 2002
+@@ -950,12 +950,16 @@
+      * nonblocking, the read will never block.
+      */
+ 
+-    bytesRead = read(GetFd(psPtr->inFile), buf, (size_t) toRead);
+-    if (bytesRead > -1) {
+-        return bytesRead;
++    while (1) {
++        bytesRead = read(GetFd(psPtr->inFile), buf, (size_t) toRead);
++        if (bytesRead > -1) {
++           return bytesRead;
++        }
++        if ( errno != EINTR ) {
++           *errorCodePtr = errno;
++           return -1;
++        }
+     }
+-    *errorCodePtr = errno;
+-    return -1;
+ }
+ 
+ /*
