@@ -9,7 +9,7 @@ PORTNAME=	stars
 PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/ \
-		http://www.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/
+		http://public.www.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/
 DISTFILES=	stars-1.0-ss-11.00.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
