@@ -208,6 +208,7 @@
     SUBDIR += tinycobol
     SUBDIR += treecc
     SUBDIR += wamcc
+    SUBDIR += wxbasic
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap
