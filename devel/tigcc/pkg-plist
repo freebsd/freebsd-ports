@@ -1575,7 +1575,6 @@ tigcc/doc/html/ide_saving.html
 tigcc/doc/html/ide_special.html
 tigcc/doc/html/ide_startasm.html
 tigcc/doc/html/ide_startc.html
-tigcc/doc/html/ide_thanks.html
 tigcc/doc/html/index.html
 tigcc/doc/html/info.gif
 tigcc/doc/html/info.html
@@ -1592,9 +1591,7 @@ tigcc/doc/html/intr_AUTO_INT.html
 tigcc/doc/html/intr_AUTO_INT_COUNT.html
 tigcc/doc/html/intr_DEFINE_INT_HANDLER.html
 tigcc/doc/html/intr_DUMMY_HANDLER.html
-tigcc/doc/html/intr_DisableAutoInt3.html
 tigcc/doc/html/intr_DisablePRG.html
-tigcc/doc/html/intr_EnableAutoInt3.html
 tigcc/doc/html/intr_EnablePRG.html
 tigcc/doc/html/intr_ExecuteHandler.html
 tigcc/doc/html/intr_FIRST_AUTO_INT.html
@@ -1602,7 +1599,6 @@ tigcc/doc/html/intr_FIRST_TRAP.html
 tigcc/doc/html/intr_GetIntVec.html
 tigcc/doc/html/intr_INT_HANDLER.html
 tigcc/doc/html/intr_IntVecs.html
-tigcc/doc/html/intr_IsAutoInt3Enabled.html
 tigcc/doc/html/intr_IsPRGEnabled.html
 tigcc/doc/html/intr_LAST_AUTO_INT.html
 tigcc/doc/html/intr_LAST_TRAP.html
@@ -3040,6 +3036,7 @@ tigcc/doc/tigcc/AUTHORS
 tigcc/doc/tigcc/COPYING
 tigcc/doc/tigcc/ChangeLog
 tigcc/doc/tigcc/README
+tigcc/doc/tigcclib
 tigcc/doc/tools/history.txt
 tigcc/doc/tools/linux_readme.txt
 tigcc/doc/tools/readme.txt
@@ -3246,7 +3243,6 @@ tigcc/lib/tigcc.a
 @dirrm tigcc/examples
 @dirrm tigcc/doc/tprbuilder
 @dirrm tigcc/doc/tools
-@dirrm tigcc/doc/tigcclib
 @dirrm tigcc/doc/tigcc
 @dirrm tigcc/doc/patcher
 @dirrm tigcc/doc/parser
