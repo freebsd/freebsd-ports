@@ -157,6 +157,7 @@
     SUBDIR += pg
     SUBDIR += pinfo
     SUBDIR += pkg_tarup
+    SUBDIR += pl-sms
     SUBDIR += porteasy
     SUBDIR += projectionlib
     SUBDIR += proxyper

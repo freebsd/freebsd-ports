@@ -1,0 +1,12 @@
+bin/sms
+bin/smsaddr
+%%PORTDOCS%%share/doc/pl-sms/contrib/mimecut
+%%PORTDOCS%%share/doc/pl-sms/contrib/procmailrc
+%%PORTDOCS%%share/doc/pl-sms/contrib/sms-conf
+%%PORTDOCS%%share/doc/pl-sms/contrib/sms.cgi
+%%PORTDOCS%%share/doc/pl-sms/contrib/sms.html
+%%PORTDOCS%%share/doc/pl-sms/README
+%%PORTDOCS%%share/doc/pl-sms/README.first
+%%PORTDOCS%%share/doc/pl-sms/README.smsrc
+%%PORTDOCS%%@dirrm share/doc/pl-sms/contrib
+%%PORTDOCS%%@dirrm share/doc/pl-sms/
