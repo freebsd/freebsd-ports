@@ -1,0 +1,17 @@
+  "DocBook: The Definitive Guide"
+    by Norman Walsh and Leonard Muellner
+    with contributions from Bob Stayton
+    ISBN: 156592-580-7
+
+This book is a gentle yet thorough introduction to the DocBook DTD (which is
+used by, amongst others, the FreeBSD Documentation Project).  A dead-tree
+edition of the book is published by O'Reilly & Associates, Inc., but the text
+is freely licensed under the GNU FDL.
+
+Note that the current edition, which documents DocBook v4.1.2, is considered
+to be a work in progress and may contain inconsistencies.
+
+Author: <nwalsh@nwalsh.com>
+WWW:    http://www.docbook.org/
+
+-- Johann Visagie <wjv@FreeBSD.org>
