@@ -13,6 +13,7 @@
     SUBDIR += fltk
     SUBDIR += fltk-xunicode
     SUBDIR += fox
+    SUBDIR += gal
     SUBDIR += gnome--
     SUBDIR += gnome-look
     SUBDIR += gob

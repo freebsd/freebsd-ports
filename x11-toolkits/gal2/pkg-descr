@@ -1,0 +1,11 @@
+GAL is a collection of widgets and utility routines that were taken
+from Evolution and Gnumeric.
+  
+The upcoming version of Evolution and Gnumeric will both require
+GAL, as the code has been moved to this new module.
+  
+The API is not frozen and might change at any time.  Larger class
+renaming might happen at any point without notice.  Use this library
+at your own risk.
+
+WWW: http://www.gnome.org/
