@@ -7,6 +7,7 @@ bin/addtosmbpass
 bin/convert_smbpasswd
 bin/testparm
 bin/testprns
+bin/make_nftable
 bin/make_smbpasswd
 bin/make_smbcodepage
 bin/make_unicodemap
@@ -110,6 +111,21 @@ etc/codepages/unicode_map.ISO8859-2
 etc/codepages/unicode_map.ISO8859-5
 etc/codepages/unicode_map.ISO8859-7
 etc/codepages/unicode_map.KOI8-R
+etc/codepages/nftable.437
+etc/codepages/nftable.737
+etc/codepages/nftable.850
+etc/codepages/nftable.852
+etc/codepages/nftable.861
+etc/codepages/nftable.866
+etc/codepages/nftable.932
+etc/codepages/nftable.936
+etc/codepages/nftable.949
+etc/codepages/nftable.950
+etc/codepages/nftable.ISO8859-1
+etc/codepages/nftable.ISO8859-2
+etc/codepages/nftable.ISO8859-5
+etc/codepages/nftable.ISO8859-7
+etc/codepages/nftable.KOI8-R
 @dirrm etc/codepages
 share/doc/samba/COPYING
 share/doc/samba/Manifest
