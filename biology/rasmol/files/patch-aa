@@ -6,7 +6,7 @@
  #   e.g. /usr/local/lib/rasmol/rasmol.hlp
 -RASMOLDIR = $(USRLIBDIR)/rasmol/
 +#RASMOLDIR = $(USRLIBDIR)/rasmol/
-+RASMOLDIR = /usr/X11R6/lib/X11/rasmol/
++RASMOLDIR = $(X11BASE)/lib/X11/rasmol/
  
  
  
