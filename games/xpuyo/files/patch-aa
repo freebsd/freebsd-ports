@@ -1,0 +1,11 @@
+--- Imakefile.orig	Fri Sep  8 14:04:39 1995
++++ Imakefile	Wed Nov  1 10:34:03 2000
+@@ -16,7 +16,7 @@
+ LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) -lm
+         DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB) 
+ 
+-ComplexProgramTarget(xpuyo)
++ComplexProgramTargetNoMan(xpuyo)
+ InstallAppDefaults(Xpuyo)
+ 
+ /* InstallMultipleFlags(ScoreFile,ScoreDir,$(SCOREFLAGS)) */
