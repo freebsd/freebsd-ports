@@ -1,0 +1,10 @@
+@cd /usr/local
+@mode 755
+@owner bin
+@group bin
+bin/gm4
+@mode 644
+info/m4.info
+info/m4.info-1
+info/m4.info-2
+info/m4.info-3
