@@ -1,13 +1,16 @@
---- gtkscintilla.c	2000/12/14 10:27:02	1.1
-+++ gtkscintilla.c	2000/12/14 10:27:31
-@@ -22,8 +22,8 @@
+
+$FreeBSD$
+
+--- gtkscintilla.c.orig	Mon Mar 26 11:40:47 2001
++++ gtkscintilla.c	Tue Apr 17 14:33:01 2001
+@@ -21,8 +21,8 @@
  
  /*#include "scintilla/include/Platform.h"*/
  #define PLAT_GTK 1
 -#include "scintilla/include/ScintillaWidget.h"
 -#include "scintilla/include/Scintilla.h"
-+#include <ScintillaWidget.h>
 +#include <Scintilla.h>
++#include <ScintillaWidget.h>
  
  static void gtk_scintilla_class_init(GtkScintillaClass *klass);
  static void gtk_scintilla_init(GtkScintilla *sci);
