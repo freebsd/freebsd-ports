@@ -23,4 +23,10 @@ USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Internal compiler error on alpha 4.x"
+.endif
+
+.include <bsd.port.post.mk>
