@@ -2,3 +2,7 @@ MD5 (exmh-2.0.2/exmh-2.0.2.tar.Z) = 2e4d0e7aa57570c9c68c7383a201bd08
 MD5 (exmh-2.0.2/seditpost.patch) = a3181a3878bb5705762b4f4954ea6c51
 MD5 (exmh-2.0.2/inc.patch) = 075c71257a13c90d7e77ee46afa7b55b
 MD5 (exmh-2.0.2/next.patch) = 9286b98e2967654cf864f0a889bbe8d7
+MD5 (exmh-2.0.2/uri.patch) = 4957606b4c81a28c17df0ad7a72662e5
+MD5 (exmh-2.0.2/extrasInit.patch) = 4b564e5398a404fb467cba53355e8f0b
+MD5 (exmh-2.0.2/folder.patch) = 62255d71c19026a15a3d53c1c72ed03a
+MD5 (exmh-2.0.2/seditExtras.patch) = 1b2c50f9e81444df0e81b0473005ae52

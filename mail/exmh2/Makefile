@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.27 1998/03/20 09:28:05 markm Exp $
+# $Id: Makefile,v 1.28 1998/07/03 23:07:01 steve Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -11,18 +11,21 @@ CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
-PATCH_SITES=	http://sunscript.sun.com/exmh/patches/2.0.1/
+PATCH_SITES=	http://www.beedub.com/exmh/patches/2.0.2/ \
+		http://www.beedub.com/exmh/patches/2.0.1/
 #PATCHFILES=	utils.patch folderNew.patch extrasInit.patch exec.patch \
 #		app-defaults.patch pgpMisc.patch seditMime.patch mime.patch \
 #		bindings.patch html_bindings.patch find.patch mh.patch \
 #		pgp.patch
 
 # User contributed and "new features".  Some not useable as-is.
-PATCHFILES+=	seditpost.patch inc.patch next.patch
+PATCHFILES+=	seditpost.patch inc.patch next.patch \
+		uri.patch extrasInit.patch folder.patch seditExtras.patch
 # XXX pgpExec.patch has got confused paths	(supplied as patch-as)
 # XXX newsgroups.patch is relative to a different directory (patch-at)
 # XXX MDN.patch doesn't apply			(patch-au)
 # XXX post.from.patch doesn't apply		(patch-av)
+# XXX date.patch doesn't apply (spammed whitespace) (patch-ax)
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS= -d ${WRKSRC}/lib -E ${PATCH_DIST_STRIP}

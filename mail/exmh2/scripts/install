@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: install,v 1.1.1.1 1996/10/10 15:00:53 peter Exp $
+# $Id: install,v 1.2 1996/12/31 21:27:03 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -23,7 +23,7 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}
 fi
 
-LIBFILES='lib/*.tcl lib/*.bitmap lib/help.* lib/tclIndex lib/app-defaults* lib/*.mask lib/*.exp lib/mime.types lib/*.au'
+LIBFILES='lib/*.tcl lib/*.bitmap lib/help.* lib/tclIndex lib/app-defaults lib/app-defaults-* lib/*.mask lib/*.exp lib/mime.types lib/*.au lib/PgpDecryptExpect'
 
 echo "install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}"
 install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}
