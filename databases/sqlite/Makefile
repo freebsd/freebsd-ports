@@ -12,10 +12,9 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	2.8.13
-PORTREVISION=	1
+PORTVERSION=	2.8.14
 CATEGORIES=	databases
-MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
+MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gh@ghaering.de
@@ -40,14 +39,14 @@ WITH_TCL=	YES
 .endif
 
 .if defined(WITH_TCL)
-LIB_DEPENDS=	tcl${TCL_SHORT_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
+LIB_DEPENDS+=	tcl${TCL_SHORT_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
 PLIST_SUB+=	WITH_TCL=""
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
+BUILD_DEPENDS+=	tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
 MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
 .endif
@@ -57,6 +56,7 @@ USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	YES
 USE_REINPLACE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	all
 #.if defined(WITH_TCL)
 #ALL_TARGET+=	libtclsqlite.la
@@ -72,9 +72,6 @@ DOCFILES=	arch.html arch.png c_interface.html changes.html \
 		lemon.html mingw.html nulls.html omitted.html \
 		opcode.html quickstart.html report1.txt speed.html \
 		sqlite.html tclsqlite.html vdbe.html
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
