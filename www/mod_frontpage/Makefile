@@ -24,6 +24,10 @@ FPSETPERM=	${FP_DIR}/set_default_perms.sh
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build"
+.endif
+
 PKGMESSAGE=	pkg-message
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
