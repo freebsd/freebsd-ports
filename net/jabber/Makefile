@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.3.1
 CATEGORIES=	net
-MASTER_SITES=	http://jabberd.jabberstudio.org/1.4/dist/
+MASTER_SITES=	http://devel.amessage.info/jabberd14/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
+		expat.5:${PORTSDIR}/textproc/expat2
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl
 .if defined(WITH_IPV6)
@@ -35,6 +38,9 @@ post-patch:
 	${ECHO} "${INSTALL_DATA}" > ${WRKSRC}/.install_data-freebsd
 	${ECHO} "${INSTALL_SCRIPT}" > ${WRKSRC}/.install_script-freebsd
 	${ECHO} "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
+
+post-configure:
+	${REINPLACE_CMD} -e "s#-I\. -I\.\. #-I\. -I\.\. -I${LOCALBASE}/include #" -e "s#-L/usr/lib#-L/usr/lib -L${LOCALBASE}/lib#" ${WRKSRC}/platform-settings
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
