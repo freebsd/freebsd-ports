@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 1998/03/12 16:07:26 itojun Exp $
+# $Id: Makefile,v 1.109 1998/03/21 04:48:51 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -6,6 +6,7 @@
     SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
     SUBDIR += a2ps
+    SUBDIR += bookview
     SUBDIR += camltk41
     SUBDIR += cdrom2
     SUBDIR += chimera
@@ -68,6 +69,7 @@
     SUBDIR += mule-sj3+wnn6
     SUBDIR += mule-wnn4
     SUBDIR += mule-wnn6
+    SUBDIR += ndtpd
     SUBDIR += nethack
     SUBDIR += netscape4
     SUBDIR += newosaka
