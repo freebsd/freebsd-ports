@@ -1,56 +1,62 @@
+@comment files/links
 bin/dcop_kate
-bin/noatunsynaescope.bin
-bin/noatuntippecanoe.bin
-bin/noatuntyler.bin
 bin/testor
-lib/kde2/libbabelfishplugin.la
-lib/kde2/libbabelfishplugin.so
-lib/kde2/libdirfilterplugin.la
-lib/kde2/libdirfilterplugin.so
-lib/kde2/libdomtreeviewerplugin.la
-lib/kde2/libdomtreeviewerplugin.so
-lib/kde2/libkatehtmltoolsplugin.la
-lib/kde2/libkatehtmltoolsplugin.so
-lib/kde2/libkateinsertcommandplugin.la
-lib/kde2/libkateinsertcommandplugin.so
-lib/kde2/libkateopenheaderplugin.la
-lib/kde2/libkateopenheaderplugin.so
-lib/kde2/libkateprojectmanagerplugin.la
-lib/kde2/libkateprojectmanagerplugin.so
-lib/kde2/libkatetextfilterplugin.la
-lib/kde2/libkatetextfilterplugin.so
-lib/kde2/libkhtmlsettingsplugin.la
-lib/kde2/libkhtmlsettingsplugin.so
-lib/kde2/libkimgallery.la
-lib/kde2/libkimgallery.so
-lib/kde2/libuachangerplugin.la
-lib/kde2/libuachangerplugin.so
-lib/kde2/libvalidatorsplugin.la
-lib/kde2/libvalidatorsplugin.so
-lib/kde2/libwebarchiverplugin.la
-lib/kde2/libwebarchiverplugin.so
-lib/kde2/webarchivethumbnail.la
-lib/kde2/webarchivethumbnail.so
-lib/libkolourpicker.la
-lib/libkolourpicker.so
-lib/libkolourpicker.so.1
-lib/libktimemon.la
-lib/libktimemon.so
-lib/libktimemon.so.1
-lib/libnoatunblurscope.la
-lib/libnoatunblurscope.so
-lib/libnoatunluckytag.la
-lib/libnoatunluckytag.so
-lib/libnoatunmadness.la
-lib/libnoatunmadness.so
-lib/libnoatunsynaescope.la
-lib/libnoatunsynaescope.so
-lib/libnoatuntippecanoe.la
-lib/libnoatuntippecanoe.so
-lib/libnoatuntyler.la
-lib/libnoatuntyler.so
-lib/libnoatunwakeup.la
-lib/libnoatunwakeup.so
+lib/kde3/katehtmltoolsplugin.la
+lib/kde3/katehtmltoolsplugin.so
+lib/kde3/kateinsertcommandplugin.la
+lib/kde3/kateinsertcommandplugin.so
+lib/kde3/kateopenheaderplugin.la
+lib/kde3/kateopenheaderplugin.so
+lib/kde3/kateprojectmanagerplugin.la
+lib/kde3/kateprojectmanagerplugin.so
+lib/kde3/katetextfilterplugin.la
+lib/kde3/katetextfilterplugin.so
+lib/kde3/katexmltoolsplugin.la
+lib/kde3/katexmltoolsplugin.so
+lib/kde3/kolourpicker_panelapplet.la
+lib/kde3/kolourpicker_panelapplet.so
+lib/kde3/konqsidebar_mediaplayer.la
+lib/kde3/konqsidebar_mediaplayer.so
+lib/kde3/ktimemon_panelapplet.la
+lib/kde3/ktimemon_panelapplet.so
+lib/kde3/ktimemon_panelapplet.so.1
+lib/kde3/libbabelfishplugin.la
+lib/kde3/libbabelfishplugin.so
+lib/kde3/libdirfilterplugin.la
+lib/kde3/libdirfilterplugin.so
+lib/kde3/libdomtreeviewerplugin.la
+lib/kde3/libdomtreeviewerplugin.so
+lib/kde3/libkcm_kuick.la
+lib/kde3/libkcm_kuick.so
+lib/kde3/libkhtmlsettingsplugin.la
+lib/kde3/libkhtmlsettingsplugin.so
+lib/kde3/libkimgallery.la
+lib/kde3/libkimgallery.so
+lib/kde3/libkuickplugin.la
+lib/kde3/libkuickplugin.so
+lib/kde3/libuachangerplugin.la
+lib/kde3/libuachangerplugin.so
+lib/kde3/libvalidatorsplugin.la
+lib/kde3/libvalidatorsplugin.so
+lib/kde3/libwebarchiverplugin.la
+lib/kde3/libwebarchiverplugin.so
+lib/kde3/noatunalsaplayer.la
+lib/kde3/noatunalsaplayer.so
+lib/kde3/noatuncharlatan.la
+lib/kde3/noatuncharlatan.so
+lib/kde3/noatunluckytag.la
+lib/kde3/noatunluckytag.so
+lib/kde3/noatunmadness.la
+lib/kde3/noatunmadness.so
+lib/kde3/noatunpitchablespeed.la
+lib/kde3/noatunpitchablespeed.so
+lib/kde3/noatunwakeup.la
+lib/kde3/noatunwakeup.so
+lib/kde3/noatunwavecapture.la
+lib/kde3/noatunwavecapture.so
+lib/kde3/webarchivethumbnail.la
+lib/kde3/webarchivethumbnail.so
+share/applnk/Settings/FileBrowsing/kcmkuick.desktop
 share/apps/kate/plugins/katehtmltools.desktop
 share/apps/kate/plugins/katehtmltools/ui.rc
 share/apps/kate/plugins/kateinsertcommand.desktop
@@ -61,6 +67,17 @@ share/apps/kate/plugins/kateprojectmanager.desktop
 share/apps/kate/plugins/kateprojectmanager/ui.rc
 share/apps/kate/plugins/katetextfilter.desktop
 share/apps/kate/plugins/katetextfilter/ui.rc
+share/apps/kate/plugins/katexmltools.desktop
+share/apps/kate/plugins/katexmltools/ui.rc
+share/apps/katexmltools/html4-loose.dtd.xml
+share/apps/katexmltools/html4-strict.dtd.xml
+share/apps/katexmltools/kde-docbook.dtd.xml
+share/apps/katexmltools/simplify_dtd.xsl
+share/apps/katexmltools/testcases.xml
+share/apps/katexmltools/xhtml1-frameset.dtd.xml
+share/apps/katexmltools/xhtml1-strict.dtd.xml
+share/apps/katexmltools/xhtml1-transitional.dtd.xml
+share/apps/katexmltools/xslt-1.0.dtd.xml
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
 share/apps/khtml/kpartplugins/plugin_babelfish.rc
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.rc
@@ -73,6 +90,7 @@ share/apps/knewsticker/scripts/Generic.Newsticker.Error
 share/apps/knewsticker/scripts/Readme.ErrorHandling
 share/apps/knewsticker/scripts/Readme.newsrss
 share/apps/knewsticker/scripts/Readme.stock
+share/apps/knewsticker/scripts/bbc.pl
 share/apps/knewsticker/scripts/fyensget.py
 share/apps/knewsticker/scripts/newsrss.pl
 share/apps/knewsticker/scripts/stock.pl
@@ -80,14 +98,15 @@ share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
 share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
 share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
-share/apps/noatun/blurscope.plugin
+share/apps/konqsidebartng/add/mplayer_add.desktop
+share/apps/konqsidebartng/entries/mplayer.desktop
+share/apps/noatun/alsaplayerui.plugin
+share/apps/noatun/charlatanui.plugin
 share/apps/noatun/luckytag.plugin
 share/apps/noatun/madness.plugin
-share/apps/noatun/synaescope.plugin
-share/apps/noatun/tippecanoe.plugin
-share/apps/noatun/tyler.plugin
-share/apps/noatun/tylerstates
+share/apps/noatun/pitchablespeed.plugin
 share/apps/noatun/wakeup.plugin
+share/apps/noatun/wavecapture.plugin
 share/doc/HTML/en/kate-plugins/common
 share/doc/HTML/en/kate-plugins/helloworld.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
@@ -97,11 +116,26 @@ share/doc/HTML/en/kate-plugins/insertcommand.docbook
 share/doc/HTML/en/kate-plugins/openheader.docbook
 share/doc/HTML/en/kate-plugins/projectmanager.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
+share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/doc/HTML/en/kicker-applets/common
 share/doc/HTML/en/kicker-applets/index.cache.bz2
 share/doc/HTML/en/kicker-applets/index.docbook
 share/doc/HTML/en/kicker-applets/kolourpicker.docbook
 share/doc/HTML/en/kicker-applets/ktimemon.docbook
+share/doc/HTML/en/konq-plugins/archiver.docbook
+share/doc/HTML/en/konq-plugins/babel.docbook
+share/doc/HTML/en/konq-plugins/common
+share/doc/HTML/en/konq-plugins/dirfilter.docbook
+share/doc/HTML/en/konq-plugins/domtree.docbook
+share/doc/HTML/en/konq-plugins/hi16-action-babelfish.png
+share/doc/HTML/en/konq-plugins/imgallery.docbook
+share/doc/HTML/en/konq-plugins/index.cache.bz2
+share/doc/HTML/en/konq-plugins/index.docbook
+share/doc/HTML/en/konq-plugins/kuick.docbook
+share/doc/HTML/en/konq-plugins/mediaplayer.docbook
+share/doc/HTML/en/konq-plugins/settings.docbook
+share/doc/HTML/en/konq-plugins/uachanger.docbook
+share/doc/HTML/en/konq-plugins/validators.docbook
 share/icons/hicolor/16x16/actions/babelfish.png
 share/icons/hicolor/16x16/actions/cssvalidator.png
 share/icons/hicolor/16x16/actions/domtreeviewer.png
@@ -109,6 +143,7 @@ share/icons/hicolor/16x16/actions/htmlvalidator.png
 share/icons/hicolor/16x16/actions/imagegallery.png
 share/icons/hicolor/16x16/actions/validators.png
 share/icons/hicolor/16x16/actions/webarchiver.png
+share/icons/hicolor/16x16/apps/konqsidebar_mediaplayer.png
 share/icons/hicolor/22x22/actions/babelfish.png
 share/icons/hicolor/22x22/actions/cssvalidator.png
 share/icons/hicolor/22x22/actions/domtreeviewer.png
@@ -116,18 +151,60 @@ share/icons/hicolor/22x22/actions/htmlvalidator.png
 share/icons/hicolor/22x22/actions/imagegallery.png
 share/icons/hicolor/22x22/actions/validators.png
 share/icons/hicolor/22x22/actions/webarchiver.png
+share/icons/hicolor/22x22/apps/konqsidebar_mediaplayer.png
+share/icons/hicolor/32x32/apps/konqsidebar_mediaplayer.png
+share/icons/hicolor/48x48/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/16x16/apps/ktimemon.png
+share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-webarchive.desktop
+share/services/kuickplugin.desktop
 share/services/webarchivethumbnail.desktop
+@comment directories
+@dirrm share/mimelnk/application
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/apps/noatun
+@dirrm share/apps/konqsidebartng/entries
+@dirrm share/apps/konqsidebartng/add
+@dirrm share/apps/konqsidebartng
+@dirrm share/apps/konqlistview/kpartplugins
+@dirrm share/apps/konqlistview
+@dirrm share/apps/konqiconview/kpartplugins
+@dirrm share/apps/konqiconview
 @dirrm share/apps/knewsticker/scripts
 @dirrm share/apps/knewsticker
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/khtml/kpartplugins
+@dirrm share/apps/khtml
+@dirrm share/apps/katexmltools
+@dirrm share/apps/kate/plugins/katexmltools
 @dirrm share/apps/kate/plugins/katetextfilter
 @dirrm share/apps/kate/plugins/kateprojectmanager
 @dirrm share/apps/kate/plugins/kateopenheader
 @dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins
+@dirrm share/apps/kate
+@dirrm share/applnk/Settings/FileBrowsing
+@dirrm share/applnk/Settings
