@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -20,6 +20,7 @@ COMMENT=	Thomas Esser's distribution of TeX & friends
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
+CONFLICTS=	ja-ptex-*
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11BITS=""
