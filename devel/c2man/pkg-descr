@@ -1,0 +1,9 @@
+c2man is an automatic documentation tool that extracts comments
+from C source code to generate functional interface
+documentation in the same format as sections 2 & 3 of the Unix
+Programmer's Manual. It requires minimal effort from the
+programmer by looking for comments in the usual places near the
+objects they document, rather than imposing a rigid
+function-comment syntax or requiring that the programmer learn
+and use a typesetting language. Acceptable documentation can
+often be generated from existing code with no modifications.
