@@ -26,6 +26,12 @@ INSTALL_TARGET=	site-install
 
 DOCS=		ChangeLog README doc/PRECISION doc/TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to link against shared library)"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
@@ -34,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
