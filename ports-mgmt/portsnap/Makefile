@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portsnap
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
@@ -25,7 +24,8 @@ RUN_DEPENDS+=	sha1:${PORTSDIR}/sysutils/freebsd-sha1
 
 MAN5=		portsnap.conf.5
 MAN8=		portsnap.8
-PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap
+PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap		\
+		portsnap/.package.this.directory
 PLIST_DIRS=	portsnap
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -44,6 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/portsnap.conf		\
 		${PREFIX}/etc/portsnap.conf.sample
 	${MKDIR} ${PREFIX}/portsnap
+	${TOUCH} ${PREFIX}/portsnap/.package.this.directory
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
