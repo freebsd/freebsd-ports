@@ -6136,6 +6136,7 @@ p5-Unicode-Map8	ports/converters/p5-Unicode-Map8
 p5-Unicode-MapUTF8	ports/converters/p5-Unicode-MapUTF8
 p5-Unicode-String	ports/converters/p5-Unicode-String
 p5-Unix-ConfigFile	ports/sysutils/p5-Unix-ConfigFile
+p5-Unix-Processors	ports/sysutils/p5-Unix-Processors
 p5-Unix-Syslog	ports/sysutils/p5-Unix-Syslog
 p5-User		ports/sysutils/p5-User
 p5-VCG		ports/graphics/p5-VCG
