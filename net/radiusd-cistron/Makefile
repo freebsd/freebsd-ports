@@ -3,7 +3,7 @@
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id: Makefile,v 1.2 1999/01/18 03:10:23 steve Exp $
+# $Id: Makefile,v 1.3 1999/04/29 20:27:17 peter Exp $
 #
 
 DISTNAME=	radiusd-cistron-1.5.4.3-beta16
@@ -31,6 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/raddb/clients ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.ascend ${PREFIX}/etc/raddb
+	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.cisco ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.compat ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.livingston ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.tunnel ${PREFIX}/etc/raddb
@@ -48,6 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ChangeLog ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/INSTALL.OLD ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/radiusd-cistron
+	${INSTALL_DATA} ${WRKSRC}/doc/README.Y2K ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.cisco ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.pam ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.proxy ${PREFIX}/share/doc/radiusd-cistron
