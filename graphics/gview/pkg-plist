@@ -1,9 +1,10 @@
 bin/gview
 share/doc/gview/AUTHORS
 share/doc/gview/BUGS
-share/doc/gview/COPYING
 share/doc/gview/ChangeLog
 share/doc/gview/NEWS
 share/doc/gview/README
 share/doc/gview/TODO
+share/locale/fr/LC_MESSAGES/gview.mo
+share/locale/ko/LC_MESSAGES/gview.mo
 @dirrm share/doc/gview

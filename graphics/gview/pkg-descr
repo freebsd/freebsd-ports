@@ -2,3 +2,5 @@ gView is a modern image viewer for X Window System. It is based on GTK
 and Imlib and supports most common image formats, JPEG, GIF, TIFF, BMP,
 PPM, XPM, PNG and whatever other image formats your Imlib is configured
 to support.
+
+WWW: http://netpedia.net/hosting/gview/

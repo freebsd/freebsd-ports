@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	gview
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	graphics
-MASTER_SITES=	http://gview.netpedia.net/ \
+MASTER_SITES=	http://netpedia.net/hosting/gview/ \
 		http://homepages.petech.ac.za/~bruces/ \
-		ftp://ftp.petech.ac.za/pub/viewers/ \
-		http://www.geocities.com/ResearchTriangle/Facility/1468/sg/
+		ftp://ftp.petech.ac.za/pub/viewers/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -28,9 +26,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/gview
-.for file in AUTHORS BUGS COPYING ChangeLog NEWS README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gview
+	@${MKDIR} ${PREFIX}/share/doc/gview
+.for file in AUTHORS BUGS ChangeLog NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gview
 .endfor
 .endif
 
