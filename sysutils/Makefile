@@ -30,6 +30,7 @@
     SUBDIR += gtar
     SUBDIR += gtop
     SUBDIR += idled
+    SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon
     SUBDIR += lsof
