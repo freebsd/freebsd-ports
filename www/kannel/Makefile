@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
