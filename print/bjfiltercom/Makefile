@@ -52,10 +52,16 @@ DOC_DIR=	${PREFIX}/share/doc/bjfiltercom-${PORTVERSION}
 HTML_DIR=	${DOC_DIR}/html
 DOC_DISTFILES=	readme.tar.gz instruction.tar.gz faq.tar.gz
 DBPATH=		/var/lib/rpm
-RPMFLAGS=	--ignoreos --root /compat/linux --dbpath ${DBPATH} \
+
+# For "rpm -U"
+RPMFLAGS=	--noscripts \
+		--ignoreos --root /compat/linux --dbpath ${DBPATH} \
 		--nodeps --replacepkgs --replacefiles -vv
+# For "rpm -e"
+RM_RPMFLAGS=	--noscripts --root /compat/linux --dbpath ${DBPATH} \
+		--nodeps
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION} RM_RPMFLAGS="${RM_RPMFLAGS}"
 
 do-build:
 	${SED}	-e 's,%%PRTYPE%%,${PRTYPE},' \
@@ -66,7 +72,6 @@ do-install:
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 .for i in ${BIN_FILES}
-	${RM} -f /compat/linux/usr/bin/$i
 	${MV} /compat/linux/usr/local/bin/$i ${PREFIX}/bin
 .endfor
 .if defined(SLAVE_PORT)
