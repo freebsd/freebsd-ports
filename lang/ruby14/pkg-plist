@@ -29,7 +29,6 @@ lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/socket.so
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/st.h
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/util.h
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/version.h
-lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/y.tab.h
 lib/ruby/%%RUBY_VER%%/English.rb
 lib/ruby/%%RUBY_VER%%/Env.rb
 lib/ruby/%%RUBY_VER%%/base64.rb
@@ -79,6 +78,7 @@ lib/ruby/%%RUBY_VER%%/thwait.rb
 lib/ruby/%%RUBY_VER%%/timeout.rb
 lib/ruby/%%RUBY_VER%%/tracer.rb
 lib/ruby/%%RUBY_VER%%/weakref.rb
+lib/ruby/%%RUBY_VER%%/cgi/session.rb
 lib/ruby/%%RUBY_VER%%/net/pop.rb
 lib/ruby/%%RUBY_VER%%/net/session.rb
 lib/ruby/%%RUBY_VER%%/net/smtp.rb
@@ -86,6 +86,7 @@ lib/ruby/%%RUBY_VER%%/net/smtp.rb
 @dirrm lib/ruby/%%RUBY_VER%%/site_ruby/%%RUBY_ARCH%%
 @dirrm lib/ruby/%%RUBY_VER%%/site_ruby
 @dirrm lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%
+@dirrm lib/ruby/%%RUBY_VER%%/cgi
 @dirrm lib/ruby/%%RUBY_VER%%/net
 @dirrm lib/ruby/%%RUBY_VER%%
 @dirrm lib/ruby
@@ -147,7 +148,6 @@ share/examples/ruby/pi.rb
 share/examples/ruby/rcs.awk
 share/examples/ruby/rcs.dat
 share/examples/ruby/rcs.rb
-share/examples/ruby/rd2html.rb
 share/examples/ruby/regx.rb
 share/examples/ruby/rename.rb
 share/examples/ruby/sieve.rb
