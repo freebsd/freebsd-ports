@@ -1,0 +1,3 @@
+Try J by running "jconsole" then typing: jhelp 'netscape'
+(if netscape is your browser)
+For more information see "man jconsole".

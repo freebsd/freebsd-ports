@@ -82,6 +82,7 @@
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += librep
+    SUBDIR += linux-j
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += m3gdb
