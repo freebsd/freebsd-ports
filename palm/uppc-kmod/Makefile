@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	USB device driver for Windows CE handhelds
 
+BROKEN=		Unfetchable
+
 MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes

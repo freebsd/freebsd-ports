@@ -19,6 +19,8 @@ LIB_DEPENDS=	qscintilla.5:${PORTSDIR}/x11-toolkits/qscintilla
 BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
