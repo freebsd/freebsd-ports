@@ -117,7 +117,7 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #				default: setup.py
 
 _PYTHON_PORTBRANCH=		2.4
-_PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 # preferred first
+_PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 2.5 # preferred first
 
 .if defined(USE_ZOPE)
 PYTHON_VERSION=		python2.3
@@ -207,8 +207,15 @@ PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 # Propagate the chosen python version to submakes.
 .MAKEFLAGS:	PYTHON_VERSION=python${_PYTHON_VERSION}
 
+# Python-2.5
+.if ${PYTHON_VERSION} == "python2.5"
+PYTHON_PORTVERSION?=2.5.a0.20050129
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+PYTHON_REL=			250
+PYTHON_SUFFIX=		25
+
 # Python-2.4
-.if ${PYTHON_VERSION} == "python2.4"
+.elif ${PYTHON_VERSION} == "python2.4"
 PYTHON_PORTVERSION?=2.4
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			240
@@ -250,21 +257,22 @@ check-makevars::
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python2.1"
 	@${ECHO} "  python2.2"
-	@${ECHO} "  python2.3 (default)"
-	@${ECHO} "  python2.4"
+	@${ECHO} "  python2.3"
+	@${ECHO} "  python2.4 (default)"
+	@${ECHO} "  python2.5"
 	@${FALSE}
 .endif
 
-PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
-.if defined(PYTHON_REL) && ${PYTHON_REL} == 240
-PYTHON_MASTER_SITE_SUBDIR=	ftp/python/2.4
-PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION:S/2.4./2.4/}.tgz
-PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION:S/2.4./2.4/}
+.if defined(PYTHON_REL) && ${PYTHON_REL} == 250
+PYTHON_MASTER_SITES=		${MASTER_SITE_LOCAL}
+PYTHON_MASTER_SITE_SUBDIR=	perky
+PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
 .else
+PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
 PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
 PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
+.endif	# defined(PYTHON_REL) && ${PYTHON_REL} == 250
 PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION}
-.endif	# defined(PYTHON_REL) && ${PYTHON_REL} == 240
 
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}

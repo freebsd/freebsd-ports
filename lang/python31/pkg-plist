@@ -495,6 +495,27 @@ lib/%%PYTHON_VERSION%%/distutils/spawn.pyo
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.py
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.pyc
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.py
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/support.py
+lib/%%PYTHON_VERSION%%/distutils/tests/support.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/support.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyo
 lib/%%PYTHON_VERSION%%/distutils/text_file.py
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyc
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyo
@@ -630,6 +651,7 @@ lib/%%PYTHON_VERSION%%/email/test/data/msg_39.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_40.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_41.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_42.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_43.txt
 lib/%%PYTHON_VERSION%%/email/test/test_email.py
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
@@ -1337,15 +1359,24 @@ lib/%%PYTHON_VERSION%%/lib-old/poly.pyo
 lib/%%PYTHON_VERSION%%/lib-old/rand.py
 lib/%%PYTHON_VERSION%%/lib-old/rand.pyc
 lib/%%PYTHON_VERSION%%/lib-old/rand.pyo
+lib/%%PYTHON_VERSION%%/lib-old/statcache.py
+lib/%%PYTHON_VERSION%%/lib-old/statcache.pyc
+lib/%%PYTHON_VERSION%%/lib-old/statcache.pyo
 lib/%%PYTHON_VERSION%%/lib-old/tb.py
 lib/%%PYTHON_VERSION%%/lib-old/tb.pyc
 lib/%%PYTHON_VERSION%%/lib-old/tb.pyo
+lib/%%PYTHON_VERSION%%/lib-old/tzparse.py
+lib/%%PYTHON_VERSION%%/lib-old/tzparse.pyc
+lib/%%PYTHON_VERSION%%/lib-old/tzparse.pyo
 lib/%%PYTHON_VERSION%%/lib-old/util.py
 lib/%%PYTHON_VERSION%%/lib-old/util.pyc
 lib/%%PYTHON_VERSION%%/lib-old/util.pyo
 lib/%%PYTHON_VERSION%%/lib-old/whatsound.py
 lib/%%PYTHON_VERSION%%/lib-old/whatsound.pyc
 lib/%%PYTHON_VERSION%%/lib-old/whatsound.pyo
+lib/%%PYTHON_VERSION%%/lib-old/whrandom.py
+lib/%%PYTHON_VERSION%%/lib-old/whrandom.pyc
+lib/%%PYTHON_VERSION%%/lib-old/whrandom.pyo
 lib/%%PYTHON_VERSION%%/lib-old/zmod.py
 lib/%%PYTHON_VERSION%%/lib-old/zmod.pyc
 lib/%%PYTHON_VERSION%%/lib-old/zmod.pyo
@@ -1528,7 +1559,6 @@ lib/%%PYTHON_VERSION%%/posixpath.pyo
 lib/%%PYTHON_VERSION%%/pprint.py
 lib/%%PYTHON_VERSION%%/pprint.pyc
 lib/%%PYTHON_VERSION%%/pprint.pyo
-lib/%%PYTHON_VERSION%%/profile.doc
 lib/%%PYTHON_VERSION%%/profile.py
 lib/%%PYTHON_VERSION%%/profile.pyc
 lib/%%PYTHON_VERSION%%/profile.pyo
@@ -1629,9 +1659,6 @@ lib/%%PYTHON_VERSION%%/sre_parse.pyo
 lib/%%PYTHON_VERSION%%/stat.py
 lib/%%PYTHON_VERSION%%/stat.pyc
 lib/%%PYTHON_VERSION%%/stat.pyo
-lib/%%PYTHON_VERSION%%/statcache.py
-lib/%%PYTHON_VERSION%%/statcache.pyc
-lib/%%PYTHON_VERSION%%/statcache.pyo
 lib/%%PYTHON_VERSION%%/statvfs.py
 lib/%%PYTHON_VERSION%%/statvfs.pyc
 lib/%%PYTHON_VERSION%%/statvfs.pyo
@@ -1729,6 +1756,12 @@ lib/%%PYTHON_VERSION%%/test/double_const.py
 lib/%%PYTHON_VERSION%%/test/double_const.pyc
 lib/%%PYTHON_VERSION%%/test/double_const.pyo
 lib/%%PYTHON_VERSION%%/test/greyrgb.uue
+lib/%%PYTHON_VERSION%%/test/inspect_fodder.py
+lib/%%PYTHON_VERSION%%/test/inspect_fodder.pyc
+lib/%%PYTHON_VERSION%%/test/inspect_fodder.pyo
+lib/%%PYTHON_VERSION%%/test/inspect_fodder2.py
+lib/%%PYTHON_VERSION%%/test/inspect_fodder2.pyc
+lib/%%PYTHON_VERSION%%/test/inspect_fodder2.pyo
 lib/%%PYTHON_VERSION%%/test/list_tests.py
 lib/%%PYTHON_VERSION%%/test/list_tests.pyc
 lib/%%PYTHON_VERSION%%/test/list_tests.pyo
@@ -2062,6 +2095,7 @@ lib/%%PYTHON_VERSION%%/test/test_doctest2.py
 lib/%%PYTHON_VERSION%%/test/test_doctest2.pyc
 lib/%%PYTHON_VERSION%%/test/test_doctest2.pyo
 lib/%%PYTHON_VERSION%%/test/test_doctest2.txt
+lib/%%PYTHON_VERSION%%/test/test_doctest3.txt
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.py
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.pyc
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.pyo
@@ -2751,9 +2785,6 @@ lib/%%PYTHON_VERSION%%/tty.pyo
 lib/%%PYTHON_VERSION%%/types.py
 lib/%%PYTHON_VERSION%%/types.pyc
 lib/%%PYTHON_VERSION%%/types.pyo
-lib/%%PYTHON_VERSION%%/tzparse.py
-lib/%%PYTHON_VERSION%%/tzparse.pyc
-lib/%%PYTHON_VERSION%%/tzparse.pyo
 lib/%%PYTHON_VERSION%%/unittest.py
 lib/%%PYTHON_VERSION%%/unittest.pyc
 lib/%%PYTHON_VERSION%%/unittest.pyo
@@ -2787,9 +2818,6 @@ lib/%%PYTHON_VERSION%%/webbrowser.pyo
 lib/%%PYTHON_VERSION%%/whichdb.py
 lib/%%PYTHON_VERSION%%/whichdb.pyc
 lib/%%PYTHON_VERSION%%/whichdb.pyo
-lib/%%PYTHON_VERSION%%/whrandom.py
-lib/%%PYTHON_VERSION%%/whrandom.pyc
-lib/%%PYTHON_VERSION%%/whrandom.pyo
 lib/%%PYTHON_VERSION%%/xdrlib.py
 lib/%%PYTHON_VERSION%%/xdrlib.pyc
 lib/%%PYTHON_VERSION%%/xdrlib.pyo
@@ -3157,6 +3185,7 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/freeze/parsesetup.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/freeze/win32.html
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/freeze/winmakemakefile.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/i18n/makelocalealias.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/i18n/msgfmt.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/i18n/pygettext.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/EXAMPLE.py
@@ -3188,6 +3217,14 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/genmodule.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/modulator.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/varsubst.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/README.txt
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msi.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msilib.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msisupport.c
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msisupport.mak
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/schema.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/sequence.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/uisample.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ChipViewer.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ColorDB.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/DetailsViewer.py
@@ -3292,6 +3329,7 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/scripts
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche/X
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche
+%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/msi
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator/Templates
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/i18n
@@ -3354,6 +3392,7 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 @dirrm lib/%%PYTHON_VERSION%%/email/test/data
 @dirrm lib/%%PYTHON_VERSION%%/email/test
 @dirrm lib/%%PYTHON_VERSION%%/email
+@dirrm lib/%%PYTHON_VERSION%%/distutils/tests
 @dirrm lib/%%PYTHON_VERSION%%/distutils/command
 @dirrm lib/%%PYTHON_VERSION%%/distutils
 @dirrm lib/%%PYTHON_VERSION%%/curses

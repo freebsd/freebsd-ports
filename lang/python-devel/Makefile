@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.5.a0.000000
+PORTVERSION=	2.5.a0.20050129
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -13,8 +13,6 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
-
-IGNORE=		is not available yet
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
@@ -29,7 +27,7 @@ MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
-PYTHON_VERSION=	python2.4
+PYTHON_VERSION=	python2.5
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
@@ -108,11 +106,11 @@ PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 
 post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.4
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.5
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.4
+		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.5
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.4.py
+		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.5.py
 
 pre-patch:
 	${REINPLACE_CMD} -e \
@@ -172,8 +170,8 @@ post-install:
 		${PREFIX}/bin
 
 	@# additional files installing by ports
-	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
-		${WRKDIR}/smtpd2.4.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.5 ${WRKDIR}/idle2.5 \
+		${WRKDIR}/smtpd2.5.py ${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
