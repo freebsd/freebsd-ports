@@ -3,7 +3,7 @@
 # Date created: 		22 October 1998
 # Whom: 			Antti Kaipila <anttik@iki.fi>
 #
-# $Id: Makefile,v 1.4 1999/03/17 12:55:31 kris Exp $
+# $Id: Makefile,v 1.5 1999/04/13 13:09:54 kris Exp $
 #
 
 DISTNAME=	wxftp-0.4.4.src
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.4.4/ \
 
 MAINTAINER=	kris@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
 USE_GMAKE=	yes
