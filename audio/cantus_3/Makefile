@@ -21,10 +21,8 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libglade2
+USE_GNOME=	gnomehack gnomeprefix libglade2
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>

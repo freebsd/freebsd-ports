@@ -16,7 +16,8 @@ share/locale/de/LC_MESSAGES/cantus_3.mo
 share/locale/es/LC_MESSAGES/cantus_3.mo
 share/locale/fr/LC_MESSAGES/cantus_3.mo
 share/locale/pl/LC_MESSAGES/cantus_3.mo
-@dirrm lib/cantus_3/
 @dirrm share/gnome/help/cantus_3/C/figures
 @dirrm share/gnome/help/cantus_3/C
 @dirrm share/gnome/help/cantus_3/
+@dirrm share/doc/cantus_3
+@dirrm lib/cantus_3/
