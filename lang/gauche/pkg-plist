@@ -1,34 +1,19 @@
 bin/gosh
 bin/gauche-config
-lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.la
 lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.so
-lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.la
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
 lib/gauche/%%VERSION%%/%%TARGET%%/gosh
-lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.la
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.a
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so.0
-lib/gauche/%%VERSION%%/%%TARGET%%/libnet.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libnet.so
-lib/gauche/%%VERSION%%/%%TARGET%%/md5.la
 lib/gauche/%%VERSION%%/%%TARGET%%/md5.so
-lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.la
 lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.so
-lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.la
 lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.so
-lib/gauche/%%VERSION%%/%%TARGET%%/sha1.la
 lib/gauche/%%VERSION%%/%%TARGET%%/sha1.so
-lib/gauche/%%VERSION%%/%%TARGET%%/syslog.la
 lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
-lib/gauche/%%VERSION%%/%%TARGET%%/termios.la
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
-lib/gauche/%%VERSION%%/%%TARGET%%/threads.la
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
 lib/gauche/%%VERSION%%/include/gauche.h
 lib/gauche/%%VERSION%%/include/gauche/arch.h
@@ -47,6 +32,7 @@ lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
 lib/gauche/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche/%%VERSION%%/include/gc.h
+lib/gauche/%%VERSION%%/include/gc_config_macros.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 @dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/site/%%VERSION%%
@@ -56,10 +42,9 @@ lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 @dirrm lib/gauche/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
-lib/libgauche.a
-lib/libgauche.la
 lib/libgauche.so
 lib/libgauche.so.0
+lib/libgauche.so.0.0.0
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
@@ -178,6 +163,12 @@ share/gauche/%%VERSION%%/lib/srfi-31.scm
 share/gauche/%%VERSION%%/lib/srfi-37.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
+share/gauche/%%VERSION%%/lib/sxml/ssax.scm
+share/gauche/%%VERSION%%/lib/sxml/sxpath.scm
+share/gauche/%%VERSION%%/lib/sxml/tools.scm
+share/gauche/%%VERSION%%/lib/sxml/tree-trans.scm
+share/gauche/%%VERSION%%/lib/sxml/to-html.scm
+share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
 share/gauche/%%VERSION%%/lib/text/diff.scm
 share/gauche/%%VERSION%%/lib/text/gettext.scm
@@ -204,6 +195,7 @@ share/gauche/%%VERSION%%/lib/www/cgi.scm
 @dirrm share/gauche/%%VERSION%%/lib/srfi-14
 @dirrm share/gauche/%%VERSION%%/lib/srfi-13
 @dirrm share/gauche/%%VERSION%%/lib/srfi-1
+@dirrm share/gauche/%%VERSION%%/lib/sxml
 @dirrm share/gauche/%%VERSION%%/lib/rfc
 @dirrm share/gauche/%%VERSION%%/lib/math
 @dirrm share/gauche/%%VERSION%%/lib/gauche/vm
