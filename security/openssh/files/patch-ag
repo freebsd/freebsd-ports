@@ -1,5 +1,5 @@
---- ssh/Makefile.orig	Sat Apr 14 18:33:20 2001
-+++ ssh/Makefile	Sat May 26 14:54:24 2001
+--- ssh/Makefile.orig	Tue Sep 11 00:44:47 2001
++++ ssh/Makefile	Wed Oct  3 13:54:47 2001
 @@ -7,8 +7,8 @@
  
  BINMODE?=4555
@@ -11,11 +11,16 @@
  LINKS=	${BINDIR}/ssh ${BINDIR}/slogin
  MLINKS=	ssh.1 slogin.1
  
-@@ -16,10 +16,11 @@
+@@ -16,6 +16,7 @@
  	sshconnect.c sshconnect1.c sshconnect2.c
  
  .include <bsd.own.mk> # for AFS
 +.include "../Makefile.inc"
+ 
+ .if (${KERBEROS5:L} == "yes")
+ CFLAGS+= -DKRB5 -I${DESTDIR}/usr/include/kerberosV
+@@ -24,8 +25,8 @@
+ .endif # KERBEROS5
  
  .if (${KERBEROS:L} == "yes")
 -CFLAGS+= -DKRB4 -I${DESTDIR}/usr/include/kerberosIV
@@ -25,12 +30,11 @@
  DPADD+=	 ${LIBKRB}
  .if (${AFS:L} == "yes")
  CFLAGS+= -DAFS
-@@ -29,6 +30,7 @@
- .endif # KERBEROS
+@@ -36,5 +37,5 @@
  
  .include <bsd.prog.mk>
-+.include "../Makefile.inc"
  
 -LDADD+=	-lcrypto -lz
-+LDADD+=	${CRYPTOLIBS} -lz
- DPADD+=	${LIBCRYPTO} ${LIBZ}
+-DPADD+=	${LIBCRYPTO} ${LIBZ}
++LDADD+= ${CRYPTOLIBS} -lcrypt -lutil -lz
++DPADD+= ${LIBCRYPTO} ${LIBUTIL} ${LIBZ}

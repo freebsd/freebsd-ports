@@ -1,12 +1,13 @@
---- sshconnect.c-	Tue Feb 15 22:00:22 2000
-+++ sshconnect.c	Tue Feb 15 22:00:27 2000
-@@ -1080,9 +1080,11 @@
- 	case AF_INET:
- 		local = (ntohl(((struct sockaddr_in *)hostaddr)->sin_addr.s_addr) >> 24) == IN_LOOPBACKNET;
+--- sshconnect.c.orig	Wed Jul 25 16:35:18 2001
++++ sshconnect.c	Wed Oct  3 12:42:20 2001
+@@ -567,10 +567,12 @@
+ 		local = (ntohl(((struct sockaddr_in *)hostaddr)->
+ 		   sin_addr.s_addr) >> 24) == IN_LOOPBACKNET;
  		break;
 +#ifdef INET6
  	case AF_INET6:
- 		local = IN6_IS_ADDR_LOOPBACK(&(((struct sockaddr_in6 *)hostaddr)->sin6_addr));
+ 		local = IN6_IS_ADDR_LOOPBACK(
+ 		    &(((struct sockaddr_in6 *)hostaddr)->sin6_addr));
  		break;
 +#endif
  	default:

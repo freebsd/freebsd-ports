@@ -1,6 +1,6 @@
---- Makefile.inc.orig	Fri Feb 11 23:56:29 2000
-+++ Makefile.inc	Fri Feb 11 23:57:56 2000
-@@ -2,10 +2,14 @@
+--- Makefile.inc.orig	Sun Jul 29 16:00:07 2001
++++ Makefile.inc	Wed Oct  3 13:49:31 2001
+@@ -17,10 +17,16 @@
  
  .include <bsd.obj.mk>
  
@@ -10,12 +10,14 @@
 -.else
 +AFS?=		no
 +KERBEROS?=	no
++KERBEROS5?=	no
 +PAM?=		no
 +SKEY?=		no
 +TCP_WRAPPERS?=	yes
-+.if !defined(MAKEFILE_INC_FIRST_PASS)
-+MAKEFILE_INC_FIRST_PASS=	0
++
 +CFLAGS+=	-I${OPENSSLINC} ${INET6FLAGS}
++
++.if !defined(IGNORE_LIBSSH)
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
  .endif

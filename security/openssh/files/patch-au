@@ -1,6 +1,6 @@
---- session.c.orig	Tue Apr 17 21:34:25 2001
-+++ session.c	Mon Jun 25 07:51:19 2001
-@@ -58,6 +58,12 @@
+--- session.c.orig	Sun Sep 16 16:46:54 2001
++++ session.c	Wed Oct  3 12:50:00 2001
+@@ -57,6 +57,12 @@
  #include "canohost.h"
  #include "session.h"
  
@@ -13,7 +13,7 @@
  /* types */
  
  #define TTYSZ 64
-@@ -461,6 +467,13 @@
+@@ -392,6 +398,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -27,10 +27,11 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -566,6 +579,13 @@
+@@ -497,6 +510,14 @@
+ 
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
- 
++
 +		/*
 +		 * Using login and executing a specific "command" are mutually
 +		 * exclusive, so turn off use_login if there's a command.
@@ -41,7 +42,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -639,6 +659,11 @@
+@@ -591,6 +612,11 @@
  	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -53,7 +54,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -679,6 +704,21 @@
+@@ -631,6 +657,21 @@
  			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
  
@@ -75,7 +76,7 @@
  	do_motd();
  }
  
-@@ -914,6 +954,10 @@
+@@ -857,6 +898,10 @@
  	env[0] = NULL;
  
  	if (!options.use_login) {
@@ -86,7 +87,7 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -921,6 +965,12 @@
+@@ -864,6 +909,12 @@
  #ifdef HAVE_LOGIN_CAP
  		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
@@ -99,7 +100,7 @@
  #else
  		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
  #endif
-@@ -932,8 +982,13 @@
+@@ -875,8 +926,13 @@
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
  	}
@@ -113,7 +114,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	while (custom_environment) {
-@@ -1027,7 +1082,7 @@
+@@ -968,7 +1024,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -122,7 +123,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -1051,6 +1106,28 @@
+@@ -1004,6 +1060,28 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
@@ -150,4 +151,4 @@
 +#endif /* __FreeBSD__ */
  		/* ignore _PATH_SSH_USER_RC for subsystems */
  		if (!s->is_subsystem && (stat(_PATH_SSH_USER_RC, &st) >= 0)) {
- 			if (debug_flag)
+ 			snprintf(cmd, sizeof cmd, "%s -c '%s %s'",
