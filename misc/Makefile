@@ -61,6 +61,7 @@
     SUBDIR += dirtree
     SUBDIR += display
     SUBDIR += dnetc
+    SUBDIR += documancer
     SUBDIR += dog
     SUBDIR += dotfile
     SUBDIR += dvorak7min

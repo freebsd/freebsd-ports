@@ -1,0 +1,61 @@
+--- Makefile.in.orig	Sat Jan 31 03:56:14 2004
++++ Makefile.in	Mon Feb  2 15:41:16 2004
+@@ -57,34 +57,37 @@
+ 	$(INSTALL_DIR) $(DESTDIR)$(bindir)
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/data
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/gui
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/gui
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/helpers
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/helpers/man2html
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/helpers/info2html
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/providers
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/providers/html
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/providers/info
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/providers/man
+-	$(INSTALL_DIR) $(DESTDIR)$(pkglibdir)/providers/pythondoc
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/providers
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/providers/html
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/providers/info
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/providers/man
++	$(INSTALL_DIR) $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/providers/pythondoc
+ 
+ 	# Install man2html:
+ 	$(INSTALL_PROG) src/helpers/man2html/man2html $(DESTDIR)$(pkglibdir)/helpers/man2html
+ 	$(INSTALL_PROG) $(srcdir)/src/helpers/man2html/man2html.cgi $(DESTDIR)$(pkglibdir)/helpers/man2html
+-	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/{index.html,man2html.css} $(DESTDIR)$(pkglibdir)/helpers/man2html
++	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/index.html $(DESTDIR)$(pkglibdir)/helpers/man2html
++	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/man2html.css $(DESTDIR)$(pkglibdir)/helpers/man2html
+ 
+ 	# Install man2info:
+-	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/{info2html,infocat} $(DESTDIR)$(pkglibdir)/helpers/info2html
++	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/info2html $(DESTDIR)$(pkglibdir)/helpers/info2html
++	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/infocat $(DESTDIR)$(pkglibdir)/helpers/info2html
+ 	$(INSTALL_DATA) $(srcdir)/src/helpers/info2html/info2html.conf $(DESTDIR)$(pkglibdir)/helpers/info2html
+ 
+ 	# Install the app:
+-	(cd $(srcdir)/src ; for i in `find -name '*.py'` ; do $(INSTALL_DATA) $$i $(DESTDIR)$(pkglibdir)/`dirname $$i` ; done)
++	(cd $(srcdir)/src ; for i in `find * -name '*.py'` ; do $(INSTALL_DATA) $$i $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/`dirname $$i` ; done)
+ 
+ 	# Rewrite python location in documancer.py:
+-	sed -e 's,#!/usr/bin/env python,#!/usr/bin/env $(PYTHON),g' \
+-		$(srcdir)/src/documancer.py >$(DESTDIR)$(pkglibdir)/documancer.py
++#	sed -e 's,#!/usr/bin/env python,#!/usr/bin/env $(PYTHON),g' \
++#		$(srcdir)/src/documancer.py >$(DESTDIR)$(pkglibdir)/documancer.py
++	$(INSTALL_DATA) $(srcdir)/src/documancer.py $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer
+ 
+ 	
+-	chmod +x $(DESTDIR)$(pkglibdir)/documancer.py
++	chmod +x $(DESTDIR)$(PYTHON_SITELIBDIR)/documancer/documancer.py
+ 
+ 	# Install data files:
+ 	$(INSTALL_DATA) $(srcdir)/COPYING $(srcdir)/NEWS $(DESTDIR)$(pkglibdir)/data
+@@ -92,7 +95,7 @@
+ 	
+ 
+ 	# Install symlink into bindir:
+-	ln -sf $(pkglibdir)/documancer.py $(DESTDIR)$(bindir)/documancer
++	ln -sf $(PYTHON_SITELIBDIR)/documancer/documancer.py $(DESTDIR)$(bindir)/documancer
+ 
+ 
+ dist: all

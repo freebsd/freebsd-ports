@@ -1,0 +1,12 @@
+Documancer is programmer's documentation reader for Unix and Windows which has
+very fast fulltext searching. It has several advantages over using web browser
+or specialized format-specific viewers (such as info):
+    * unified access to all documentation formats
+    * the GUI is better suited for documentation reading that generic web
+      browser
+    * documancer can create fulltext index for the docs and enables the user
+      to quickly search it
+    * bookmarks and indexes are manual-specific, which reduces false matches
+      and chaos in bookmarks
+
+WWW: http://documancer.sourceforge.net/
