@@ -37,7 +37,10 @@
 %%SITE_PERL%%/Net/DNS/RR/TXT.pm
 %%SITE_PERL%%/Net/DNS/RR/X25.pm
 %%SITE_PERL%%/Net/DNS/Resolver.pm
+%%SITE_PERL%%/Net/DNS/Resolver/Base.pm
 %%SITE_PERL%%/Net/DNS/Resolver/Recurse.pm
+%%SITE_PERL%%/Net/DNS/Resolver/UNIX.pm
+%%SITE_PERL%%/Net/DNS/Resolver/Win32.pm
 %%SITE_PERL%%/Net/DNS/Select.pm
 %%SITE_PERL%%/Net/DNS/Update.pm
 %%PORTDOCS%%%%DOCSDIR%%/Changes
