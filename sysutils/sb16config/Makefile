@@ -16,6 +16,8 @@ MAINTAINER=	fjoe@freebsd.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
 NO_WRKSUBDIR=	yes
+MAN8=		sb16config.8
+MANCOMPRESSED=	yes
 
 post-extract:
 .for _i in ${DISTFILES}
