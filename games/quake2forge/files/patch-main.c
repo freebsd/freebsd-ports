@@ -22,3 +22,21 @@
  #endif
  
  #include "qcommon.h"
+@@ -518,7 +527,7 @@
+     ret = fread(ptr, size, nitems, fp);
+     err = errno;
+     if (ret != nitems) {
+-	printf("verify_fread(...,%d,%d,...): return value: %d\n", size, nitems, ret);
++	printf("verify_fread(...,%zu,%zu,...): return value: %zu\n", size, nitems, ret);
+ 	if (ret == 0 && ferror(fp)) {
+ 	    printf("   error: %s\n", strerror(err));
+ 	    printf("   fileno=%d\n", fileno(fp));
+@@ -536,7 +545,7 @@
+     ret = fwrite(ptr, size, nitems, fp);
+     err = errno;
+     if (ret != nitems) {
+-	printf("verify_fwrite(...,%d,%d,...) = %d\n", size, nitems, ret);
++	printf("verify_fwrite(...,%zu,%zu,...) = %zu\n", size, nitems, ret);
+ 	if (ret == 0 && ferror(fp)) {
+ 	    printf("   error: %s\n", strerror(err));
+ 	    printf("   fileno=%d\n", fileno(fp));
