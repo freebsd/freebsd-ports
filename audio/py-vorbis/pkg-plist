@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbismodule.so
+lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbis.so
