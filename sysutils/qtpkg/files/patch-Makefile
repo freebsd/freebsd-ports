@@ -11,14 +11,14 @@ $FreeBSD$
 -CXXFLAGS =	-pipe -Wall -W -O2 -DNO_DEBUG
 -INCPATH	=	-I/usr/local/include -I/usr/X11R6/include/qt2
 +CFLAGS	+=	-pipe -Wall -W -DNO_DEBUG
-+CXXFLAGS +=	-pipe -Wall -W -DNO_DEBUG
-+INCPATH	=	-I$(LOCALBASE)/include -I$(X11BASE)/include/qt2
++CXXFLAGS +=	${CFLAGS}
++INCPATH	=	-I$(LOCALBASE)/include -I$(X11BASE)/include/
  LINK	=	c++
 -LIBS	=	$(SUBLIBS) -L/usr/local/lib -L/usr/X11R6/lib -lqt2 -lXext -lX11 -lm
 -MOC	=	/usr/X11R6/bin/moc2
 -UIC	=	/usr/X11R6/bin/uic
-+LIBS	=	$(SUBLIBS) -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lqt2 -lXext -lX11 -lm -pthread
-+MOC	=	$(X11BASE)/bin/moc2
++LIBS	+=	$(SUBLIBS) -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lXext -lX11 -lm
++MOC	=	$(X11BASE)/bin/moc
 +UIC	=	$(X11BASE)/bin/uic
  
  TAR	=	tar -cf

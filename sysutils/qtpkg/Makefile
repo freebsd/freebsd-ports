@@ -7,14 +7,16 @@
 
 PORTNAME=	qtpkg
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gauss.cord.edu/homepages/twschulz/demo/
 DISTNAME=	qtpkg
 
-MAINTAINER=	twschulz@gloria.cord.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt based package removal tool
+MAKE_ENV=	LIBS="-lqt-mt ${PTHREAD_LIBS}" CFLAGS="${PTHREAD_CFLAGS}"
 
-USE_QT_VER=	2
+USE_QT_VER=	3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtpkg ${PREFIX}/sbin
