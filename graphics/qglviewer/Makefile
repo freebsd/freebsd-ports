@@ -8,6 +8,7 @@
 
 PORTNAME=	qglviewer
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qglviewer.de/
 
