@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jabley@automagic.org
+MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	A tool to create RFCs and related documents from XML, as per RFC2629
 
 RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
@@ -27,14 +27,19 @@ do-install:
 	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2txt
 	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2html
 	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2nroff
-	${MKDIR} ${PREFIX}/share/doc/xml2rfc
-	for doc in README.html README.txt README.xml \
+.if !defined (NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib
+.for doc in README.html README.txt README.xml \
 	    draft-mrose-writing-rfcs.html draft-mrose-writing-rfcs.txt \
 	    rfc2629.dtd rfc2629.html rfc2629.rnc rfc2629.txt rfc2629.xml \
-	    rfc2629.xsd; \
-	do ${INSTALL_DATA} ${WRKSRC}/$${doc} ${PREFIX}/share/doc/xml2rfc; \
-	done
-	${INSTALL_DATA} ${WRKSRC}/.xml2rfc.rc ${PREFIX}/share/doc/xml2rfc/dot.xml2rfc.rc
+	    rfc2629.xsd
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.for doc in concat.pl fast-sync.sh new-draft.xml template.xml xml2rfcpp.pl
+	${INSTALL_DATA} ${WRKSRC}/contrib/${doc} ${DOCSDIR}/contrib
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/.xml2rfc.rc ${DOCSDIR}/dot.xml2rfc.rc
+.endif
 
 post-install:
 	@${ECHO}
