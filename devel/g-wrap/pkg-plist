@@ -1,20 +1,18 @@
-bin/g-scan
-bin/g-wrap
 bin/g-wrap-config
-include/g-wrap.h
-@unexec install-info --delete %D/info/g-wrap.info %D/info/dir
+include/g-wrap-runtime-guile.h
 info/g-wrap.info
-@exec install-info %D/info/g-wrap.info %D/info/dir
-lib/libgwrapguile.a
-lib/libgwrapguile.so
-lib/libgwrapguile.so.0
-libexec/g-wrap-guile
+lib/libg-wrap-runtime-guile.a
+lib/libg-wrap-runtime-guile.so
+lib/libg-wrap-runtime-guile.so.2
 share/aclocal/g-wrap.m4
-share/guile/site/g-wrap.scm
-share/guile/site/g-wrap/g-translate.scm
-share/guile/site/g-wrap/guile-types.scm
-share/guile/site/g-wrap/output-file.scm
-share/guile/site/g-wrap/pointer.scm
-share/guile/site/g-wrap/sorting.scm
-@dirrm share/guile/site/g-wrap
-@dirrm share/guile/site
+share/guile/g-wrap.scm
+share/guile/g-wrap/g-translate.scm
+share/guile/g-wrap/guile-types.scm
+share/guile/g-wrap/output-file.scm
+share/guile/g-wrap/sorting.scm
+share/guile/g-wrapped/gw-runtime-spec.scm
+share/guile/g-wrapped/libgw-runtime.a
+share/guile/g-wrapped/libgw-runtime.so
+share/guile/g-wrapped/libgw-runtime.so.0
+@dirrm share/guile/g-wrapped
+@dirrm share/guile/g-wrap
