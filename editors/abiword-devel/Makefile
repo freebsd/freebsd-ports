@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	1.99.3
+PORTVERSION=	1.99.5
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -26,8 +26,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
+WRKSRC=		${WRKDIR}/abi
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
 USE_AUTOMAKE_VER=14
@@ -84,6 +85,7 @@ pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh && ${TRUE}
 	@${FIND} ${WRKSRC} -name GNUmakefile.in | xargs ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
+		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g; \
 		 s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}
 
 post-install:
