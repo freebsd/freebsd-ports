@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040721:
+  AFFECTS: users of FreeBSD-current, users of xorg
+  AUTHOR: anholt@FreeBSD.org
+
+  The XFREE86_VERSION variable is deprecated and has been replaced by the
+  X_WINDOW_SYSTEM variable. X_WINDOW_SYSTEM may be set to xorg, xfree86-4, or
+  xfree86-3.  X_WINDOW_SYSTEM defaults to xorg on FreeBSD-current.  If you are
+  switching to xorg, you should follow this set of commands to cleanly upgrade:
+
+  pkg_delete -f /var/db/pkg/imake-4* /var/db/pkg/XFree86-*
+  cd /usr/ports/x11/xorg && make install
+  pkgdb -F
+
+  Users of -stable or older -current can switch to X.Org by setting
+  X_WINDOW_SYSTEM=xorg in make.conf and following the same process.
+
 20040719:
   AFFECTS: users of PHP
   AUTHOR: ale@FreeBSD.org
