@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zenity
 
     SUBDIR += 9term
     SUBDIR += XFree86
