@@ -19,7 +19,7 @@ prefix=%%PREFIX%%
 # DO NOT CHANGE THE DEFAULT VALUES HERE 
 
 saslauthd1_enable=${saslauthd1_enable:-"%%ENABLE_SASLAUTHD%%"}
-saslauthd1_flags=${saslauthd1_flags:-"-a pam}
+saslauthd1_flags=${saslauthd1_flags:-"-a pam"}
 
 . %%RC_SUBR%%
 
