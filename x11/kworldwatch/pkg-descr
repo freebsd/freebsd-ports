@@ -1,0 +1,11 @@
+KWorldWatch
+===========
+
+
+This simple tool shows a revolving world map, indicating the time in each
+part of the world.
+
+You can set little flags to mark points of interest.
+
+As newest gimmick, KWorldWatch is able to display the distribution of 
+daylight around the world.
