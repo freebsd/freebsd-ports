@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	insub
-PORTVERSION=	7.0
+PORTVERSION=	8.0
 PORTREVISION?=	0
 CATEGORIES?=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
