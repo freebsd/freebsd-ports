@@ -64,7 +64,6 @@
     SUBDIR += gn-mnews
     SUBDIR += gnome
     SUBDIR += gnomecore
-    SUBDIR += gnomeicu
     SUBDIR += gnomelibs
     SUBDIR += gnumeric
     SUBDIR += gp
