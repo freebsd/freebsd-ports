@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	korean gnome x11
 MASTER_SITES=	http://download.kldp.net/nabi/
 
