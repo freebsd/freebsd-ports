@@ -916,20 +916,20 @@ share/bx/help/findcomm
 share/bx/help/functions
 share/bx/help/out
 %%PLUGINS:%%share/bx/plugins/BitchX.hints
-%%PLUGINS:%%share/bx/plugins/acro.so 
-%%PLUGINS:%%share/bx/plugins/amp.so 
-%%PLUGINS:%%share/bx/plugins/autobot.so 
-%%PLUGINS:%%share/bx/plugins/blowfish.so 
-%%PLUGINS:%%share/bx/plugins/encrypt.so 
-%%PLUGINS:%%share/bx/plugins/fserv.so 
-%%PLUGINS:%%share/bx/plugins/hint.so 
-%%PLUGINS:%%share/bx/plugins/nap.so 
-%%PLUGINS:%%share/bx/plugins/pkga.so 
-%%PLUGINS:%%share/bx/plugins/possum.so 
-%%PLUGINS:%%share/bx/plugins/qmail.so 
-%%PLUGINS:%%share/bx/plugins/scan.so 
-%%PLUGINS:%%share/bx/plugins/wavplay.so 
-%%PLUGINS:%%share/bx/plugins/qbx.so 
+%%PLUGINS:%%share/bx/plugins/acro.so
+%%PLUGINS:%%share/bx/plugins/amp.so
+%%PLUGINS:%%share/bx/plugins/autobot.so
+%%PLUGINS:%%share/bx/plugins/blowfish.so
+%%PLUGINS:%%share/bx/plugins/encrypt.so
+%%PLUGINS:%%share/bx/plugins/fserv.so
+%%PLUGINS:%%share/bx/plugins/hint.so
+%%PLUGINS:%%share/bx/plugins/nap.so
+%%PLUGINS:%%share/bx/plugins/pkga.so
+%%PLUGINS:%%share/bx/plugins/possum.so
+%%PLUGINS:%%share/bx/plugins/qmail.so
+%%PLUGINS:%%share/bx/plugins/scan.so
+%%PLUGINS:%%share/bx/plugins/wavplay.so
+%%PLUGINS:%%share/bx/plugins/qbx.so
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
 share/bx/script/bxtcl.tcl
@@ -976,7 +976,7 @@ share/doc/bitchx/bxfaq.html
 @dirrm share/doc/bitchx
 @dirrm share/bx/translation
 @dirrm share/bx/script
-%%PLUGINS:%%@dirrm share/bx/plugins 
+%%PLUGINS:%%@dirrm share/bx/plugins
 @dirrm share/bx/help/8_Scripts
 @dirrm share/bx/help/7_Docs
 @dirrm share/bx/help/6_Functions
