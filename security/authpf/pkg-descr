@@ -1,0 +1,7 @@
+This is an authentification shell that can change pf filterrules according
+to the authentificated user. You will need a working installation of pf 
+and sshd as interconnect. For more information see http://www.OpenBSD.org/
+
+WWW: http://pf4freebsd.love2party.net/
+
+-Max <reports@pf4freebsd.love2party.net>

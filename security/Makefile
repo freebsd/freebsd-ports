@@ -15,6 +15,7 @@
     SUBDIR += arirang
     SUBDIR += audit
     SUBDIR += authforce
+    SUBDIR += authpf
     SUBDIR += avcheck
     SUBDIR += avmailgate
     SUBDIR += bcwipe
