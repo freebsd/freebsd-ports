@@ -1,6 +1,7 @@
 bin/gcompris
 bin/gcompris_edit
 include/libgcompris-1.0/libgcompris/about.h
+include/libgcompris-1.0/libgcompris/anim.h
 include/libgcompris-1.0/libgcompris/assetml.h
 include/libgcompris-1.0/libgcompris/bonus.h
 include/libgcompris-1.0/libgcompris/cursor.h
@@ -60,8 +61,16 @@ libdata/pkgconfig/libgcompris-1.0.pc
 share/gcompris/python/algorithm.py
 share/gcompris/python/anim.py
 share/gcompris/python/ballcatch.py
+share/gcompris/python/connect4.py
+share/gcompris/python/connect4p/__init__.py
+share/gcompris/python/connect4p/board.py
+share/gcompris/python/connect4p/human.py
+share/gcompris/python/connect4p/minmax.py
+share/gcompris/python/connect4p/player.py
+share/gcompris/python/connect4p/rules.py
 share/gcompris/python/followline.py
 share/gcompris/python/gcompris/__init__.py
+share/gcompris/python/gcompris/anim/__init__.py
 share/gcompris/python/gcompris/bonus/__init__.py
 share/gcompris/python/gcompris/score/__init__.py
 share/gcompris/python/gcompris/skin/__init__.py
@@ -110,6 +119,7 @@ share/gnome/assetml/gcompris_misc_fr.assetml
 share/gnome/assetml/gcompris_misc_it.assetml
 share/gnome/assetml/gcompris_misc_pt.assetml
 share/gnome/assetml/gcompris_misc_ru.assetml
+share/gnome/gcompris/boards/#searace1player.xml#
 share/gnome/gcompris/boards/DOCUMENTATIONS
 share/gnome/gcompris/boards/README
 share/gnome/gcompris/boards/advanced_colors.xml
@@ -161,8 +171,6 @@ share/gnome/gcompris/boards/algebramenu.xml
 share/gnome/gcompris/boards/algorithm.xml
 share/gnome/gcompris/boards/anim.xml
 share/gnome/gcompris/boards/anim/animation.js
-share/gnome/gcompris/boards/anim/camera.png
-share/gnome/gcompris/boards/anim/minibutton.png
 share/gnome/gcompris/boards/babymatch.xml
 share/gnome/gcompris/boards/babymatch/bell.png
 share/gnome/gcompris/boards/babymatch/board1_0.xml
@@ -321,6 +329,7 @@ share/gnome/gcompris/boards/chronos.xml
 share/gnome/gcompris/boards/chronos/bg.jpg
 share/gnome/gcompris/boards/chronos/board1_0.xml
 share/gnome/gcompris/boards/chronos/board1_1.xml
+share/gnome/gcompris/boards/chronos/board1_2.xml
 share/gnome/gcompris/boards/chronos/board2_0.xml
 share/gnome/gcompris/boards/chronos/board3_0.xml
 share/gnome/gcompris/boards/chronos/board3_1.xml
@@ -345,6 +354,10 @@ share/gnome/gcompris/boards/chronos/images/chronos-tuxtree2.png
 share/gnome/gcompris/boards/chronos/images/chronos-tuxtree3.png
 share/gnome/gcompris/boards/chronos/images/chronos-tuxtree4.png
 share/gnome/gcompris/boards/chronos/images/fardier.png
+share/gnome/gcompris/boards/chronos/images/garden1.png
+share/gnome/gcompris/boards/chronos/images/garden2.png
+share/gnome/gcompris/boards/chronos/images/garden3.png
+share/gnome/gcompris/boards/chronos/images/garden4.png
 share/gnome/gcompris/boards/chronos/images/helico_cornu.png
 share/gnome/gcompris/boards/chronos/images/lancia1923.png
 share/gnome/gcompris/boards/chronos/images/lindbergh.png
@@ -370,7 +383,17 @@ share/gnome/gcompris/boards/colors/colors_bg.jpg
 share/gnome/gcompris/boards/colors/colors_highlight.png
 share/gnome/gcompris/boards/colors_group.xml
 share/gnome/gcompris/boards/computer.xml
+share/gnome/gcompris/boards/connect4.xml
+share/gnome/gcompris/boards/connect4/back.png
+share/gnome/gcompris/boards/connect4/grid.png
+share/gnome/gcompris/boards/connect4/prof.png
+share/gnome/gcompris/boards/connect4/sablier.gif
+share/gnome/gcompris/boards/connect4/sablier.txt
+share/gnome/gcompris/boards/connect4/selector.png
+share/gnome/gcompris/boards/connect4/stone_1.png
+share/gnome/gcompris/boards/connect4/stone_2.png
 share/gnome/gcompris/boards/dataset/mrpatate.xml
+share/gnome/gcompris/boards/dataset/user_pictures.xml
 share/gnome/gcompris/boards/doubleentry.xml
 share/gnome/gcompris/boards/doubleentry/board1_0.xml
 share/gnome/gcompris/boards/doubleentry/board2_0.xml
@@ -401,8 +424,11 @@ share/gnome/gcompris/boards/doubleentry/d-entry_pomme_2.png
 share/gnome/gcompris/boards/doubleentry/d-entry_pomme_3.png
 share/gnome/gcompris/boards/doubleentry/doubleentry-bg.png
 share/gnome/gcompris/boards/draw.xml
-share/gnome/gcompris/boards/draw/color-selector.jpg
-share/gnome/gcompris/boards/draw/draw-bg.jpg
+share/gnome/gcompris/boards/draw/camera.png
+share/gnome/gcompris/boards/draw/color-selector.png
+share/gnome/gcompris/boards/draw/counter.png
+share/gnome/gcompris/boards/draw/down.png
+share/gnome/gcompris/boards/draw/little-tool-selector.png
 share/gnome/gcompris/boards/draw/tool-camera.png
 share/gnome/gcompris/boards/draw/tool-camera_on.png
 share/gnome/gcompris/boards/draw/tool-circle.png
@@ -439,11 +465,12 @@ share/gnome/gcompris/boards/draw/tool-rotation-cw_on.png
 share/gnome/gcompris/boards/draw/tool-save.png
 share/gnome/gcompris/boards/draw/tool-select.png
 share/gnome/gcompris/boards/draw/tool-select_on.png
-share/gnome/gcompris/boards/draw/tool-selector.jpg
+share/gnome/gcompris/boards/draw/tool-selector.png
 share/gnome/gcompris/boards/draw/tool-text.png
 share/gnome/gcompris/boards/draw/tool-text_on.png
 share/gnome/gcompris/boards/draw/tool-up.png
 share/gnome/gcompris/boards/draw/tool-up_on.png
+share/gnome/gcompris/boards/draw/up.png
 share/gnome/gcompris/boards/enumerate.xml
 share/gnome/gcompris/boards/erase.xml
 share/gnome/gcompris/boards/experience.xml
@@ -720,6 +747,7 @@ share/gnome/gcompris/boards/gcompris/timers/clock6.png
 share/gnome/gcompris/boards/gcompris/timers/clock7.png
 share/gnome/gcompris/boards/gcompris/timers/clock8.png
 share/gnome/gcompris/boards/gcompris/timers/clock9.png
+share/gnome/gcompris/boards/gcompris/timers/sablier.gif
 share/gnome/gcompris/boards/gcompris/timers/sablier1.png
 share/gnome/gcompris/boards/gcompris/timers/sablier10.png
 share/gnome/gcompris/boards/gcompris/timers/sablier2.png
@@ -928,12 +956,26 @@ share/gnome/gcompris/boards/maze3D.xml
 share/gnome/gcompris/boards/mazeInvisible.xml
 share/gnome/gcompris/boards/mazeMenu.xml
 share/gnome/gcompris/boards/melody.xml
-share/gnome/gcompris/boards/melody/background.jpg
-share/gnome/gcompris/boards/melody/cursor.png
-share/gnome/gcompris/boards/melody/son1.png
-share/gnome/gcompris/boards/melody/son2.png
-share/gnome/gcompris/boards/melody/son3.png
-share/gnome/gcompris/boards/melody/son4.png
+share/gnome/gcompris/boards/melody/guitar/background.jpg
+share/gnome/gcompris/boards/melody/guitar/background.png
+share/gnome/gcompris/boards/melody/guitar/cursor.png
+share/gnome/gcompris/boards/melody/guitar/son1.png
+share/gnome/gcompris/boards/melody/guitar/son2.png
+share/gnome/gcompris/boards/melody/guitar/son3.png
+share/gnome/gcompris/boards/melody/guitar/son4.png
+share/gnome/gcompris/boards/melody/switch.png
+share/gnome/gcompris/boards/melody/tachos/background.jpg
+share/gnome/gcompris/boards/melody/tachos/cursor.png
+share/gnome/gcompris/boards/melody/tachos/son1.png
+share/gnome/gcompris/boards/melody/tachos/son2.png
+share/gnome/gcompris/boards/melody/tachos/son3.png
+share/gnome/gcompris/boards/melody/tachos/son4.png
+share/gnome/gcompris/boards/melody/xylofon/background.png
+share/gnome/gcompris/boards/melody/xylofon/cursor.png
+share/gnome/gcompris/boards/melody/xylofon/son1.png
+share/gnome/gcompris/boards/melody/xylofon/son2.png
+share/gnome/gcompris/boards/melody/xylofon/son3.png
+share/gnome/gcompris/boards/melody/xylofon/son4.png
 share/gnome/gcompris/boards/memory.xml
 share/gnome/gcompris/boards/menu.xml
 share/gnome/gcompris/boards/missing_letter.xml
@@ -2045,11 +2087,21 @@ share/gnome/gcompris/boards/sounds/it/misc/quit.ogg
 share/gnome/gcompris/boards/sounds/it/misc/super.ogg
 share/gnome/gcompris/boards/sounds/it/misc/welcome.ogg
 share/gnome/gcompris/boards/sounds/level.ogg
-share/gnome/gcompris/boards/sounds/melody/melody.ogg
-share/gnome/gcompris/boards/sounds/melody/son1.ogg
-share/gnome/gcompris/boards/sounds/melody/son2.ogg
-share/gnome/gcompris/boards/sounds/melody/son3.ogg
-share/gnome/gcompris/boards/sounds/melody/son4.ogg
+share/gnome/gcompris/boards/sounds/melody/guitar/melody.ogg
+share/gnome/gcompris/boards/sounds/melody/guitar/son1.ogg
+share/gnome/gcompris/boards/sounds/melody/guitar/son2.ogg
+share/gnome/gcompris/boards/sounds/melody/guitar/son3.ogg
+share/gnome/gcompris/boards/sounds/melody/guitar/son4.ogg
+share/gnome/gcompris/boards/sounds/melody/tachos/melody.ogg
+share/gnome/gcompris/boards/sounds/melody/tachos/son1.ogg
+share/gnome/gcompris/boards/sounds/melody/tachos/son2.ogg
+share/gnome/gcompris/boards/sounds/melody/tachos/son3.ogg
+share/gnome/gcompris/boards/sounds/melody/tachos/son4.ogg
+share/gnome/gcompris/boards/sounds/melody/xylofon/melody.ogg
+share/gnome/gcompris/boards/sounds/melody/xylofon/son1.ogg
+share/gnome/gcompris/boards/sounds/melody/xylofon/son2.ogg
+share/gnome/gcompris/boards/sounds/melody/xylofon/son3.ogg
+share/gnome/gcompris/boards/sounds/melody/xylofon/son4.ogg
 share/gnome/gcompris/boards/sounds/pt/alphabet/0.ogg
 share/gnome/gcompris/boards/sounds/pt/alphabet/1.ogg
 share/gnome/gcompris/boards/sounds/pt/alphabet/10.ogg
@@ -2403,6 +2455,9 @@ share/gnome/gcompris/boards/watercycle/badwater.png
 share/gnome/gcompris/boards/watercycle/badwater_off.png
 share/gnome/gcompris/boards/watercycle/cleanwater.png
 share/gnome/gcompris/boards/watercycle/cleanwater_off.png
+share/gnome/gcompris/boards/watercycle/fishingboat.gif
+share/gnome/gcompris/boards/watercycle/fishingboat.png
+share/gnome/gcompris/boards/watercycle/fishingboat_tux.png
 share/gnome/gcompris/boards/watercycle/pumpwater.png
 share/gnome/gcompris/boards/watercycle/pumpwater_off.png
 share/gnome/gcompris/boards/watercycle/rain.png
@@ -2414,7 +2469,7 @@ share/gnome/gcompris/boards/watercycle/shower_on.png
 share/gnome/gcompris/boards/watercycle/showerwater.png
 share/gnome/gcompris/boards/watercycle/snow.png
 share/gnome/gcompris/boards/watercycle/sun.png
-share/gnome/gcompris/boards/watercycle/tuxboat.png
+share/gnome/gcompris/boards/watercycle/tuxboat.txt
 share/gnome/gcompris/boards/watercycle/vapor.png
 share/gnome/gcompris/boards/watercycle/watercleaning.png
 share/gnome/gcompris/boards/watercycle/waterpump.png
@@ -2519,6 +2574,7 @@ share/locale/pt/LC_MESSAGES/gcompris.mo
 share/locale/pt_BR/LC_MESSAGES/gcompris.mo
 share/locale/ro/LC_MESSAGES/gcompris.mo
 share/locale/ru/LC_MESSAGES/gcompris.mo
+share/locale/rw/LC_MESSAGES/gcompris.mo
 share/locale/sk/LC_MESSAGES/gcompris.mo
 share/locale/sl/LC_MESSAGES/gcompris.mo
 share/locale/sq/LC_MESSAGES/gcompris.mo
@@ -2546,6 +2602,9 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/sounds/pt/colors
 @dirrm share/gnome/gcompris/boards/sounds/pt/alphabet
 @dirrm share/gnome/gcompris/boards/sounds/pt
+@dirrm share/gnome/gcompris/boards/sounds/melody/xylofon
+@dirrm share/gnome/gcompris/boards/sounds/melody/tachos
+@dirrm share/gnome/gcompris/boards/sounds/melody/guitar
 @dirrm share/gnome/gcompris/boards/sounds/melody
 @dirrm share/gnome/gcompris/boards/sounds/it/misc
 @dirrm share/gnome/gcompris/boards/sounds/it/geography
@@ -2605,6 +2664,9 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/money/euro
 @dirrm share/gnome/gcompris/boards/money
 @dirrm share/gnome/gcompris/boards/missing_letter
+@dirrm share/gnome/gcompris/boards/melody/xylofon
+@dirrm share/gnome/gcompris/boards/melody/tachos
+@dirrm share/gnome/gcompris/boards/melody/guitar
 @dirrm share/gnome/gcompris/boards/melody
 @dirrm share/gnome/gcompris/boards/leftright
 @dirrm share/gnome/gcompris/boards/images
@@ -2631,6 +2693,7 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/draw
 @dirrm share/gnome/gcompris/boards/doubleentry
 @dirrm share/gnome/gcompris/boards/dataset
+@dirrm share/gnome/gcompris/boards/connect4
 @dirrm share/gnome/gcompris/boards/colors
 @dirrm share/gnome/gcompris/boards/clockgame
 @dirrm share/gnome/gcompris/boards/chronos/space
@@ -2655,7 +2718,9 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gcompris/python/gcompris/skin
 @dirrm share/gcompris/python/gcompris/score
 @dirrm share/gcompris/python/gcompris/bonus
+@dirrm share/gcompris/python/gcompris/anim
 @dirrm share/gcompris/python/gcompris
+@dirrm share/gcompris/python/connect4p
 @dirrm share/gcompris/python
 @dirrm share/gcompris
 @dirrm lib/gcompris
