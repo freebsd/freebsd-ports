@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_j2se1.3
 
 MAINTAINER=	lioux@FreeBSD.org
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.3
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
@@ -27,6 +27,7 @@ JAR_MANIFEST=	${FILESDIR}/manifest
 
 DOC_FILES=      COPYING License-RI.html License-W3C.html changelog.txt \
 		contributors.txt readme-Furi.txt readme-developers.txt \
+		GPL.txt \
 		readme.txt
 JAR_FILES=	crimson.jar jaxp.jar phex.jar xalan.jar
 
