@@ -7,7 +7,7 @@
 
 PORTNAME=	nano
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/
 
@@ -29,10 +29,4 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=		"memory allocation bug"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
