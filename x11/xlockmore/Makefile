@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlockmore
-# Version required:     4.04
+# Version required:     4.05
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.20 1997/07/30 08:02:42 tg Exp $
+# $Id: Makefile,v 1.21 1997/09/22 07:14:06 tg Exp $
 #
 
-DISTNAME=       xlockmore-4.04
+DISTNAME=       xlockmore-4.05
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -21,10 +21,5 @@ CONFIGURE_ARGS+= --without-gl --without-motif --without-sx --without-mesagl \
 		--without-nas
 USE_X11=	yes
 MAN1=		xlock.1
-
-do-install:
-	@(cd ${WRKSRC}/modes; make install)
-	@chown root:bin ${PREFIX}/bin/xlock
-	@chmod 4751 ${PREFIX}/bin/xlock
 
 .include <bsd.port.mk>
