@@ -7,7 +7,7 @@
 %%WINBIND%%# PROVIDE: winbindd
 # REQUIRE: NETWORKING SERVERS named %%CUPS%%
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable samba:
