@@ -32,7 +32,6 @@ MAN8=	\
 	courierldapaliasd.8 \
 	courierperlfilter.8 \
 	courierpop3d.8 \
-	courieruucp.8 \
 	deliverquota.8 \
 	dupfilter.8 \
 	esmtpd.8 \
@@ -65,8 +64,13 @@ MLINKS=	dot-forward.1 dotforward.1 \
 	authlib.7 authvchkpw.7 \
 	courierfilter.8 filterctl.8 \
 	courierpop3d.8 courierpop3login.8 \
-	courieruucp.8 makeuucpneighbors.8 \
 	esmtpd.8 esmtpd-msa.8 \
 	makesmtpaccess.8 makesmtpaccess-msa.8 \
 	makeuserdb.8 pw2userdb.8 \
 	makeuserdb.8 vchkpw2userdb.8
+
+.if !defined(NOUUCP)
+MAN8+=	courieruucp.8
+MLINKS+=courieruucp.8 makeuucpneighbors.8
+.endif
+

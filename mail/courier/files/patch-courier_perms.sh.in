@@ -1,18 +1,17 @@
 --- courier/perms.sh.in.orig	Fri Dec  7 08:37:35 2001
-+++ courier/perms.sh.in	Wed Dec 19 22:04:44 2001
-@@ -10,9 +10,9 @@
++++ courier/perms.sh.in	Mon Jan 21 18:46:38 2002
+@@ -10,9 +10,7 @@
  exec_prefix="@exec_prefix@"
  
  PERMS="
 -.			755
-+.			755	x	root	wheel
- 
+-
 -@localstatedir@		755	x	bin	bin
 +@localstatedir@		755	x	root	wheel
  @localstatedir@/tmp	770
  @localstatedir@/msgs	750
  @localstatedir@/msgq	750
-@@ -41,120 +41,131 @@
+@@ -41,120 +39,125 @@
  @sysconfdir@/rfcerr2046.txt	444	config
  @sysconfdir@/rfcerr2047.txt	444	config
  
@@ -21,7 +20,6 @@
 -@libexecdir@/courier	755	x	bin	bin
 -@libexecdir@/courier/modules	755	x	bin	bin
 -@libexecdir@/courier/modules/modules.ctl	444	x	bin	bin
-+@libexecdir@				755	x	root	wheel
 +@libexecdir@/authlib			755	x	root	wheel
 +@libexecdir@/courier			755	x	root	wheel
 +@libexecdir@/courier/modules		755	x	root	wheel
@@ -32,7 +30,6 @@
 +@libexecdir@/courier/modules/local/courierdeliver 555 x	root	wheel
 +@libexecdir@/courier/modules/local/courierlocal 555 x	root	wheel
 +@libexecdir@/courier/modules/modules.ctl 444	x	root	wheel
-+@libexecdir@/courier/modules/uucp	755	x	root	wheel
  @libexecdir@/courier/submitmkdir	4550
 -@libexecdir@/courier/courierd	550
 -@libexecdir@/courier/courierpop3d	555
@@ -64,7 +61,6 @@
 +@libexecdir@/filters/dupfilter		555	x	root	wheel
 +@libexecdir@/filters/perlfilter		555	x	root	wheel
 +
-+@sbindir@			755	x	root	wheel
 +@sbindir@/courier		555	x	root	wheel
 +@sbindir@/showconfig		555	x	root	wheel
  @sbindir@/showmodules		550
@@ -84,7 +80,6 @@
 +@datadir@/imapd-ssl		555	x	root	wheel
  
 -@bindir@			755	x	bin	bin
-+@bindir@			755	x	root	wheel
  @bindir@/cancelmsg		6555
 -@bindir@/courier-config		555
 -@bindir@/mailq			2555
@@ -180,7 +175,6 @@
 +@bindir@/mimegpg		555	x	root	wheel
 +@bindir@/couriermlm		555	x	root	wheel
 +@bindir@/dotforward		555	x	root	wheel
-+@bindir@/preline		555	x	root	wheel
 +
 +@datadir@/makedat		555	x	root	wheel
 +@bindir@/makedat		555	x	root	wheel
@@ -205,7 +199,6 @@
 +@datadir@/vchkpw2userdb		555	x	root	wheel
 +@sbindir@/vchkpw2userdb		555	x	root	wheel
 +
-+@datadir@			755	x	root	wheel
 +@datadir@/courierctl.start	555	x	root	wheel
 +
 +@datadir@/mkimapdcert		555	x	root	wheel
@@ -250,7 +243,7 @@
  "
  
  echo "$PERMS" | while read FILE MODE SPECIAL USER GROUP
-@@ -198,7 +209,7 @@
+@@ -198,7 +201,7 @@
  
  if test "$couriertls" != ""
  then
@@ -259,7 +252,7 @@
  fi
  
  if test "@HAVE_LDAP@" != 0
-@@ -207,23 +218,23 @@
+@@ -207,23 +210,23 @@
  	echo @sbindir@/courierldapaliasd 700 @mailuser@ @mailgroup@
  fi
  
@@ -287,7 +280,7 @@
  done
  
  . ../authlib/authdaemonrc
-@@ -240,16 +251,16 @@
+@@ -240,16 +243,16 @@
  
  . ../authlib/authpwdprogs
  
@@ -305,5 +298,5 @@
  	test "$f" = "dummy" && continue
  	echo "@authchangepwdir@/$f 555 @mailuser@ @mailgroup@"
 -	echo "@datadir@/$f 555 @mailuser@ @mailgroup@"
-+	echo "@datadir@/$f 555 root wheel
++	echo "@datadir@/$f 555 root wheel"
  done
