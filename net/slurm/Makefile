@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	slurm
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.raisdorf.net/files/code/ \
 		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/ \
