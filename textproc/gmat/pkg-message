@@ -1,0 +1,5 @@
+To use the programs in this package, add the path
+/usr/local/share/gmat/bin to your PATH environment variable.
+
+There is currently no documentation for this package.  The best you
+can do at the moment is to look at work/gmat-<foo>/README.
