@@ -4,218 +4,271 @@
 %%PYTHON_SITELIBDIR%%/wxGlade/about.py
 %%PYTHON_SITELIBDIR%%/wxGlade/application.py
 %%PYTHON_SITELIBDIR%%/wxGlade/clipboard.py
-%%PYTHON_SITELIBDIR%%/wxGlade/codegen/cpp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/codegen/py_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/codegen/pl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/codegen/xrc_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/codegen/cpp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/color_dialog.py
 %%PYTHON_SITELIBDIR%%/wxGlade/common.py
 %%PYTHON_SITELIBDIR%%/wxGlade/config.py
 %%PYTHON_SITELIBDIR%%/wxGlade/credits.txt
-%%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/edit_sizers.py
+%%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/perl_sizers_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/sizers_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/edit_sizers.py
+%%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/edit_widget.py
 %%PYTHON_SITELIBDIR%%/wxGlade/edit_windows.py
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/equity.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/err_dialog.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/notebook.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/ppp_connection.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/picture.gif
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/font_dialog.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/preferences.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/split.wxg
+%%PYTHON_SITELIBDIR%%/wxGlade/examples/color_dialog.wxg
 %%PYTHON_SITELIBDIR%%/wxGlade/font_dialog.py
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/application.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/bitmap_button.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/button.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/checkbox.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/choice.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/combo_box.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/custom.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/dialog.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/frame.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gauge.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/grid.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/grid_sizer.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/about.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/copy.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/cut.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/exit.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/generate.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/new.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/open.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/tutorial.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/save.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/paste.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/prefs.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/remove.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/save.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/save_as.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/tutorial.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/icon.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/list_box.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/menubar.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/copy.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/generate.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/remove.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/new.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/copy.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/about.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/open.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk/exit.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/cut.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/exit.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/generate.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/new.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/open.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/tutorial.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/save.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/paste.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/prefs.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/remove.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/save.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/save_as.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/tutorial.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/notebook.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/panel.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/radio_box.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/radio_button.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/sizer.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/slider.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/spacer.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/spin_ctrl.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/splitter_window.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_bitmap.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_line.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_text.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/statusbar.xpm
-%%PYTHON_SITELIBDIR%%/wxGlade/icons/text_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/generate.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/remove.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/new.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/copy.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/open.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/msw/exit.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/frame.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/application.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/toggle_button.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/toolbar.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/custom.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/gauge.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/tree_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/splitter_window.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/bitmap_button.xpm
 %%PYTHON_SITELIBDIR%%/wxGlade/icons/wxglade_small.png
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/grid.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_line.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_bitmap.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/radio_button.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/panel.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/icon.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/choice.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/list_box.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/dialog.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/slider.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/notebook.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/combo_box.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/button.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/menubar.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/statusbar.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/sizer.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/checkbox.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/radio_box.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/static_text.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/list_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/spin_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/spacer.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/grid_sizer.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/text_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxGlade/icons/wxglade.ico
 %%PYTHON_SITELIBDIR%%/wxGlade/license.txt
 %%PYTHON_SITELIBDIR%%/wxGlade/main.py
 %%PYTHON_SITELIBDIR%%/wxGlade/misc.py
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/color_dialog.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/equity.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/err_dialog.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/font_dialog.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/notebook.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/picture.gif
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/ppp_connection.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/preferences.wxg
-%%PYTHON_SITELIBDIR%%/wxGlade/samples/split.wxg
 %%PYTHON_SITELIBDIR%%/wxGlade/tree.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widget_properties.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/ChoicesCodeHandler.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/ChoicesProperty.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/MenuTree.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/bitmap_button.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/button.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/checkbox.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/choice.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/combo_box.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/custom_widget.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/dialog.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/frame.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/gauge.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid/grid.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box/combo_box.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/ChoicesCodeHandler.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box/list_box.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/notebook.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/panel.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box/radio_box.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/radio_button.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/slider.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/spacer.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/bitmap_button.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/notebook.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge/gauge.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/frame.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/panel.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/widgets.txt
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/ChoicesProperty.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/checkbox.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/MenuTree.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/menubar/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/menubar/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/menubar/menubar.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/menubar/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/choice.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/button.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/button/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/splitter_window.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/dialog.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl/spin_ctrl.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window/splitter_window.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/radio_button.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar/toolbar.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar/tool.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap/__init__.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap/static_bitmap.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/tree_ctrl/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/tree_ctrl/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/tree_ctrl/tree_ctrl.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/tree_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/custom_widget.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/text_ctrl.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/static_line.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text/static_text.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/__init__.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/codegen.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl/text_ctrl.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_ctrl/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_ctrl/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_ctrl/list_ctrl.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/slider.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/spacer.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/codegen.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button/codegen.py
 %%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button/toggle_button.py
-%%PYTHON_SITELIBDIR%%/wxGlade/widgets/widgets.txt
-%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button/__init__.py
 %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/canvas.py
-%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/intl.py
-%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/license/lgpl.txt
 %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/license/wxwindowslib.txt
-%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pycolourbox.py
-%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pycolourchooser.py
+%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/license/lgpl.txt
 %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pycolourslider.py
+%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pycolourchooser.py
+%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pycolourbox.py
 %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/pypalette.py
+%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/__init__.py
+%%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/intl.py
 %%PYTHON_SITELIBDIR%%/wxGlade/wxglade.py
 %%PYTHON_SITELIBDIR%%/wxGlade/xml_parse.py
 %%PYTHON_SITELIBDIR%%/wxGlade/xrc2wxg.py
-%%PORTDOCS%%%%DOCSDIR%%/img/box_sizer_button.gif
-%%PORTDOCS%%%%DOCSDIR%%/img/button_button.gif
-%%PORTDOCS%%%%DOCSDIR%%/img/custom_widget.gif
-%%PORTDOCS%%%%DOCSDIR%%/img/frame_button.gif
-%%PORTDOCS%%%%DOCSDIR%%/img/notebook_button.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/sizer_slot.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/spacer_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/custom_widget.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/notebook_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/button_button.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/text_ctrl_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/frame_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/box_sizer_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/tech_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/license
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/examples
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/grid
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_box
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_box
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/notebook
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/gauge
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/frame
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/combo_box
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/panel
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/checkbox
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/menubar
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/choice
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/button
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/bitmap_button
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/splitter_window
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spin_ctrl
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/radio_button
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_bitmap
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/tree_ctrl
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/custom_widget
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/text_ctrl
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_line
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/static_text
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/list_ctrl
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/slider
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/spacer
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets/toggle_button
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/samples
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons/msw
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/icons
-@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/edit_sizers
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser/license
+@dirrm %%PYTHON_SITELIBDIR%%/wxGlade/wxPyColourChooser
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade/codegen
 @dirrm %%PYTHON_SITELIBDIR%%/wxGlade
