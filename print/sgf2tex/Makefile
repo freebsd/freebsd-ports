@@ -8,7 +8,7 @@
 PORTNAME=	sgf2tex
 PORTVERSION=	3.3
 CATEGORIES=	print
-MASTER_SITES=	ftp://match.stanford.edu/pub/
+MASTER_SITES=	http://sporadic.stanford.edu/bump/
 
 MAINTAINER=	spcoltri@omcl.org
 
