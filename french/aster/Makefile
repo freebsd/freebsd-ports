@@ -39,7 +39,7 @@ PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER} \
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5 \
 		${opt_med}:${PORTSDIR}/french/med \
-		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIA}
+		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot \
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/cad/metis-edf
 
@@ -110,15 +110,20 @@ SHIA=		zsh
 .elif defined(WITH_BASH)
 SHIA=		bash
 .elif defined(WITH_KSH)
-SHIA=		ksh
+SHIA=		ksh93
 .elif exists(${LOCALBASE}/bin/zsh)
 SHIA=		zsh
 .elif exists(${LOCALBASE}/bin/bash)
 SHIA=		bash
-.elif exists(${LOCALBASE}/bin/ksh)
-SHIA=		ksh
+.elif exists(${LOCALBASE}/bin/ksh93)
+SHIA=		ksh93
 .else
 SHIA=		zsh
+.endif
+.if ${SHIA} == "bash"
+SHIADEP=	bash2
+.else
+SHIADEP=	${SHIA}
 .endif
 
 vaster=		STA${PORTVERSION}
