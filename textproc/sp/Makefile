@@ -3,7 +3,7 @@
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.5 1997/09/07 00:20:02 jfieber Exp $
+# $Id: Makefile,v 1.6 1997/10/14 01:23:32 jfieber Exp $
 #
 
 DISTNAME=	sp-1.2.1
@@ -11,6 +11,8 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
 MAINTAINER=	jfieber@FreeBSD.ORG
+
+BROKEN_ELF=	libstdc++.so
 
 # The shared libsp only works on post 2.1.x systems.
 # shared C++ libraries appear to be broken on post 2.2.1 system too...
