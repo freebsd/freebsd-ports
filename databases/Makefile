@@ -155,6 +155,7 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite
     SUBDIR += py-SQLDict
+    SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
     SUBDIR += py-gdbm
