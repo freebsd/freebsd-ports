@@ -4653,6 +4653,7 @@ p-interp	ports/emulators/p-interp
 p0f		ports/net/p0f
 p2c		ports/lang/p2c
 p4.el		ports/devel/p4.el
+p4api		ports/devel/p4api
 p4db		ports/devel/p4db
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
 p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
