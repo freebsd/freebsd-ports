@@ -1,4 +1,10 @@
+bin/Man
+bin/Tag
+bin/mktags
+bin/wgoto
 bin/wily
+bin/win
+bin/wreplace
 share/doc/wily/index.html
 share/doc/wily/intro.html
 share/doc/wily/download.html

@@ -8,16 +8,24 @@
 PORTNAME=	wily
 PORTVERSION=	0.13.41
 CATEGORIES=	editors plan9
-MASTER_SITES=	ftp://ftp.northsea.com/pub/plan9_unix/wily/src/ \
-		ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
+MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
+		ftp://ftp.math.tau.ac.il/pub/laden/wily/src/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	gagnon__s@videotron.ca
+
+RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc
 
 USE_XLIB=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+MAN1=		wgoto.1 win.1 wreplace.1 Tag.1 mktags.1 Man.1
+
+# Run the configure script in the tools directory.
+post-configure:
+	${RM} ${WRKSRC}/tools/win/config.cache
+	cd ${WRKSRC}/tools/win; ./configure
 
 WILYDOCDIR=	${PREFIX}/share/doc/wily
 WILYTUTEDIR=	${WILYDOCDIR}/tute
@@ -40,5 +48,6 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/Doc/$${f} ${WILYDOCDIR}/$${f}; \
 	done
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

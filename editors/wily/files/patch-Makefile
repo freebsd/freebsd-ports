@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Sun Jan 19 08:44:47 2003
++++ Makefile.in	Sun Jan 19 08:49:06 2003
+@@ -2,9 +2,9 @@
+ srcdir=@srcdir@
+ VPATH=@srcdir@
+ 
+-SUBDIRS=libXg libframe libmsg wily
++SUBDIRS=libXg libframe libmsg wily tools/win
+ 
+-all:	wily/wily
++all:	wily/wily win
+ 
+ wily/wily: libXg/libXg.a libframe/libframe.a libmsg/libmsg.a
+ 	cd wily; $(MAKE) $(MFLAGS)
+@@ -14,9 +14,11 @@
+ 	cd libframe; $(MAKE) $(MFLAGS) all
+ libmsg/libmsg.a:
+ 	cd libmsg; $(MAKE) $(MFLAGS) all
+-
++win:
++	cd tools/win; $(MAKE) $(MFLAGS)
+ install:	all
+ 	cd wily; $(MAKE) $(MFLAGS) install
++	cd tools/win; $(MAKE) $(MFLAGS) install
+ clean:
+ 	for i in $(SUBDIRS); do \
+ 		(cd $$i; $(MAKE) $(MFLAGS) $@); \

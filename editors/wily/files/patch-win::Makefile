@@ -1,0 +1,22 @@
+--- tools/win/Makefile.in.orig	Sun Jan 19 09:03:49 2003
++++ tools/win/Makefile.in	Sun Jan 19 09:05:36 2003
+@@ -3,6 +3,7 @@
+ srcdir			= @srcdir@
+ VPATH			= @srcdir@
+ 
++wilydir			= ../../
+ prefix			= @prefix@
+ exec_prefix		= @exec_prefix@
+ bindir			= $(exec_prefix)/bin
+@@ -12,9 +13,9 @@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+ CC				= @CC@
+-CFLAGS			= @CFLAGS@ -I.. -I$(srcdir)/../include -I$(srcdir)/../sam/include
++CFLAGS			= @CFLAGS@ -I$(wilydir) -I$(wilydir)/include
+ DEFS			= @DEFS@
+-LIBS			= @LIBS@ ../libmsg/libmsg.a  ../sam/libXg/libXg.a
++LIBS			= $(wilydir)/libmsg/libmsg.a  $(wilydir)/libXg/libXg.a
+ LDFLAGS			= @LDFLAGS@
+ 
+ RC				= @RC@
