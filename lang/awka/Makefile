@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	awka
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	lang
 MASTER_SITES=	http://awka.sourceforge.net/
 
