@@ -18,6 +18,7 @@ MAINTAINER=	drs@rucus.ru.ac.za
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
 NO_PACKAGE=	Violates djb\'s license
+USE_REINPLACE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
@@ -38,14 +39,8 @@ QMAIL_DIR?=     /var/qmail
 NO_MTREE=	yes
 
 post-patch:
-	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
-	@perl -pi.bak -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKSRC}/conf-qmail
-	@echo '${PREFIX}' > ${WRKSRC}/conf-home
-
-#do-build:
-#	@cd ${WRKSRC} && make ${ALL_TARGET}
-#
-#do-install:
-#	@cd ${WRKSRC} && make ${INSTALL_TARGET}
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
+	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
