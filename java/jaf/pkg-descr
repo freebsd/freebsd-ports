@@ -1,0 +1,11 @@
+With the JavaBeansTM Activation Framework standard extension, developers
+who use JavaTM technology can take advantage of standard services to
+determine the type of an arbitrary piece of data, encapsulate access to
+it, discover the operations available on it, and to instantiate the
+appropriate bean to perform said operation(s). For example, if a browser
+obtained a JPEG image, this framework would enable the browser to identify
+that stream of data as an JPEG image, and from that type, the browser
+could locate and instantiate an object that could manipulate, or view that
+image.
+
+WWW: http://java.sun.com/beans/glasgow/jaf.html
