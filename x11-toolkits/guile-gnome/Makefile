@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		guile.9:${PORTSDIR}/lang/guile \
-		guiledlopenhelper.0:${PORTSDIR}/x11-toolkits/guile-gtk \
+		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk \
 		glade.4:${PORTSDIR}/devel/libglade
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
