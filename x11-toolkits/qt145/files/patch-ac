@@ -1,0 +1,20 @@
+--- Makefile	Fri Feb 26 12:02:39 1999
++++ Makefile.new	Mon May 29 00:59:55 2000
+@@ -4,7 +4,7 @@
+ # Read PORTING for instructions how to port Qt to a new platform.
+ 
+ 
+-all: moc src tutorial examples
++all: moc src
+ 	@echo
+ 	@echo "The Qt library is now built in ./lib"
+ 	@echo "The Qt examples are built in the directories in ./examples"
+@@ -32,8 +32,6 @@
+ 
+ depend:
+ 	cd src; $(MAKE) depend
+-	cd tutorial; $(MAKE) depend
+-	cd examples; $(MAKE) depend
+ 
+ config: variables
+ 	-rm variables
