@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=development/CVSup/ezm3
-DISTFILES=	${BOOTSTRAP} \
+DISTFILES=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2 \
 		ezm3-${PORTVERSION}-src.tar.bz2
 
 MAINTAINER=	jdp@FreeBSD.org
@@ -44,17 +44,14 @@ BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 TARGET=		FBSD_ALPHA
 WORDSIZE=	64
 ENDIANESS=	le
-BOOTSTRAP=	ezm3-${PORTVERSION}a-${TARGET}-boot.tar.bz2
 .elif ${ARCH} == "i386"
 TARGET=		FreeBSD4
 WORDSIZE=	32
 ENDIANESS=	le
-BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .elif ${ARCH} == "sparc64"
 TARGET=		FBSD_SPARC64
 WORDSIZE=	64
 ENDIANESS=	be
-BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 
 post-patch:
