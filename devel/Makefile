@@ -1088,6 +1088,7 @@
     SUBDIR += pear-PEAR
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
+    SUBDIR += pear-PHP_Compat
     SUBDIR += pear-Pager
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
