@@ -1,6 +1,7 @@
 include/sablot.h
 include/shandler.h
+include/sdom.h
 bin/sabcmd
-lib/libsablot.so.52
+lib/libsablot.so.60
 lib/libsablot.so
 lib/libsablot.a
