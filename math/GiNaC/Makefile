@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -19,6 +18,7 @@ COMMENT=	A C++ library for symbolic mathematical calculations
 LIB_DEPENDS=	cln.3:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
+USE_GCC=	3.3
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -36,14 +36,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"
-.endif
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
-CFLAGS+=	-O0
 .endif
 
 post-extract:
