@@ -6,7 +6,6 @@ bin/btmaketorrent.py
 bin/btreannounce.py
 bin/btrename.py
 bin/btshowmetainfo.py
-bin/bttest.py
 bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyc
@@ -113,12 +112,12 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.pyo

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/
@@ -75,7 +74,6 @@ EXTRA_PATCHES+= \
 		${FILESDIR}/extra-psyco-patch-btreannouce.py \
 		${FILESDIR}/extra-psyco-patch-btrename.py \
 		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
-		${FILESDIR}/extra-psyco-patch-bttest.py \
 		${FILESDIR}/extra-psyco-patch-bttrack.py
 
 PLIST_FILES+=	\
