@@ -1,0 +1,17 @@
+Calcoo is a scientific calculator designed to provide maximum
+usability.  The features that make Calcoo better than (at least some)
+other calculator programs are:
+
+* Bitmapped button labels and display digits to improve readability.
+* No double-function buttons.
+* Undo/redo buttons.
+* Copy/pase interaction with X clipboard.
+* Both RPN (reverse Polish notation) and "standard" modes are available.
+* Tick marks to separate thousands.                                  
+
+Below are the features that Calcoo lacks (but which are useless anyway):
+
+* Statistical mode.
+* HEX mode.
+
+WWW: http://calcoo.sourceforge.net/
