@@ -19,6 +19,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier4.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier5.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier6.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/channel.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/channel_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/charcoal.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/chop.rb.html
@@ -83,6 +84,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier5.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier6.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier6.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel_threshold.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel_threshold.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/charcoal.jpg
@@ -216,6 +219,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/model.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/notimplemented.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/rmagick.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/roses.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/small.tif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/smile.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/implode.jpg
@@ -332,7 +336,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/swirl.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_antialias.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_antialias.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_antialias.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texture_fill_to_border.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texture_fill_to_border.rb

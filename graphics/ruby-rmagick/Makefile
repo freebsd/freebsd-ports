@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rmagic
-PORTVERSION=	0.9.3
+PORTNAME=	rmagick
+PORTVERSION=	0.9.5
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://home.nc.rr.com/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,20 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
+USE_REINPLACE=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		RUBY="${RUBY}"
+
 DOCS=		ChangeLog README.txt
+
+post-patch:
+	${REINPLACE_CMD} 's:/RMagick:/doc/${RUBY_NAME}/${RUBY_MODNAME}&:' ${WRKSRC}/post-install.rb
+
+pre-configure:
+	cd ${CONFIGURE_WRKSRC}; \
+	${SETENV} ${CONFIGURE_ENV} ./configure --prefix="${PREFIX}"
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -29,9 +42,6 @@ post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-	cd ${WRKSRC}; ${RUBY} makedoc.rb \
-		--data-dir ${RUBY_MODDOCDIR} \
-		--im-doc-dir ${LOCALBASE}/share/doc/ImageMagick
 .endif
 
 .include <bsd.port.mk>
