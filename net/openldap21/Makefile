@@ -91,5 +91,6 @@ post-install:
 	strip ${PREFIX}/${f}
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
