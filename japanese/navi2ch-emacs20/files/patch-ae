@@ -1,0 +1,12 @@
+--- navi2ch-util.el.orig	Wed Nov 21 23:47:00 2001
++++ navi2ch-util.el	Tue Nov 27 11:19:39 2001
+@@ -303,7 +303,8 @@
+ 	(again nil))
+     (catch 'exit
+       (while t
+-	(let ((c (read-event prompt)))
++	(message prompt)
++	(let ((c (read-char)))
+ 	  (cond ((memq c '(?q ?Q))
+ 		 (message (concat prompt "q"))
+ 		 (throw 'exit (or quit-symbol nil)))
