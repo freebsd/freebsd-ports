@@ -348,6 +348,7 @@
 %%T%%/demo/sound/README.txt
 %%T%%/demo/sound/JavaSound.jar
 %%T%%/demo/sound/JavaSound.html
+%%T%%/demo/rmi-iiop/javalogo52x88.gif
 %%T%%/demo/rmi-iiop/idl/idl.html
 %%T%%/demo/rmi-iiop/idl/helloidl.html
 %%T%%/demo/rmi-iiop/idl/RemoteHelloServer.java

@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	4 # SR4
+PORTREVISION=	5 # SR5
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -33,7 +33,7 @@ LINUX_SH?=	${LINUXBASE}/bin/sh
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
-DOWNLOAD_URL=	http://www6.software.ibm.com/dl/lxdk/lxdk-h?S_PKG=ia32ww&S_TACT=&S_CMP=
+DOWNLOAD_URL=	https://www6.software.ibm.com/dl/lxdk/lxdk-i?S_TACT=&S_CMP=&S_PKG=ia32ww&x=50&y=13
 
 .if defined(WITH_JAPANESE_FONTS)
 PLIST_SUB+=	JAPANESE=""
