@@ -4,8 +4,6 @@ bin/ant
 %%T%%/lib/README
 %%T%%/lib/xercesImpl.jar
 %%T%%/lib/xml-apis.jar
-%%T%%/lib/jaxp.jar
-%%T%%/lib/crimson.jar
 %%T%%/LICENSE
 %%T%%/README
 %%T%%/WHATSNEW
