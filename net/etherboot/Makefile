@@ -14,7 +14,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://etherboot.sourceforge.net/
 CATEGORIES=	net
 
-MAINTAINER=	ambrisko@whistle.com
+MAINTAINER=	ambrisko@ambrisko.com
 
 NO_PACKAGE=	lots of configuration necessary
 USE_GMAKE=1
