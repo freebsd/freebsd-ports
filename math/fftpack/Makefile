@@ -23,7 +23,7 @@ EXTRACT_AFTER_ARGS=	# empty
 .include <bsd.port.pre.mk>
 
 post-extract:
-	${GUNZIP} $(WRKSRC)/*.f.gz
+	${GUNZIP_CMD} $(WRKSRC)/*.f.gz
 
 pre-build:
 	${RM} $(WRKSRC)/.depend
