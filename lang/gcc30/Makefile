@@ -34,6 +34,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile"
+USE_REINPLACE=	yes
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -77,6 +78,10 @@ pre-configure:
 	@${TOUCH} ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
+.if ${OSVERSION} >= 500113
+	@${REINPLACE_CMD} -e 's/elf_i386/elf_i386_fbsd/g' \
+	    ${SRCDIR}/gcc/config/i386/freebsd.h
+.endif
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
