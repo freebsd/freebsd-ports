@@ -12,14 +12,13 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freetantrum
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for acoustic fingerprinting of music from Freetantrum (TM)
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
