@@ -1,7 +1,9 @@
+
 $FreeBSD$
---- configure.orig	Mon Jun 18 18:05:25 2001
-+++ configure	Tue Jul 17 12:38:04 2001
-@@ -1510,7 +1510,7 @@ if test -z "$GCC"; then
+
+--- configure.orig	Mon Aug 13 13:39:05 2001
++++ configure	Tue Aug 14 17:40:12 2001
+@@ -1510,7 +1510,7 @@
                  PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
          *)
                  DEBUG="-g"
@@ -10,7 +12,7 @@ $FreeBSD$
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -1525,9 +1525,9 @@ else
+@@ -1525,9 +1525,9 @@
                  CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
                  PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
          *)

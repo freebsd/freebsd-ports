@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vorbis
-PORTVERSION=	1.0.r1
+PORTVERSION=	1.0.r2
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	# empty
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	naddy@mips.inka.de
 
-LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao \
+LIB_DEPENDS=	ao.2:${PORTSDIR}/audio/libao \
 		ogg.2:${PORTSDIR}/audio/libogg \
 		vorbis.0:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools

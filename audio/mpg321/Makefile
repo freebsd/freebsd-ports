@@ -16,6 +16,8 @@ MAINTAINER=	naddy@mips.inka.de
 LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmad.a:${PORTSDIR}/audio/mad
 
+BROKEN=		"not yet updated for libao.so.2"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

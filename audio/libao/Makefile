@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/rc1/unix/
+MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
 
 MAINTAINER=	naddy@mips.inka.de
 
@@ -22,6 +22,8 @@ MAKE_ENV=	DOC=""
 .else
 MAKE_ENV=	DOC=doc
 .endif
+
+MAN5=		libao.conf.5
 
 .include <bsd.port.pre.mk>
 

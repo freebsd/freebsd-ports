@@ -1,12 +1,14 @@
+
 $FreeBSD$
---- doc/Makefile.in.orig	Wed Mar 21 16:29:06 2001
-+++ doc/Makefile.in	Wed Mar 21 16:29:15 2001
-@@ -87,7 +87,7 @@ plugindir = @plugindir@
+
+--- doc/Makefile.in.orig	Mon Aug 13 13:39:39 2001
++++ doc/Makefile.in	Tue Aug 14 17:39:32 2001
+@@ -88,7 +88,7 @@
  
  AUTOMAKE_OPTIONS = foreign
  
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
  
- doc_DATA = API USAGE DRIVERS WANTED
+ doc_DATA = *.html ao_example.c style.css
  

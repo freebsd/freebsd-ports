@@ -1,23 +1,14 @@
+
 $FreeBSD$
---- ogg123/Makefile.in.orig	Mon Jun 18 18:18:19 2001
-+++ ogg123/Makefile.in	Tue Jul 17 03:23:27 2001
-@@ -28,6 +28,7 @@ sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
- libdir = @libdir@
- infodir = @infodir@
-+mandir = @mandir@
- includedir = @includedir@
- oldincludedir = /usr/include
+
+--- ogg123/Makefile.in.orig	Tue Aug 14 19:42:20 2001
++++ ogg123/Makefile.in	Tue Aug 14 19:42:31 2001
+@@ -323,7 +323,7 @@
+ install-exec-am: install-binPROGRAMS
+ install-exec: install-exec-am
  
-@@ -83,9 +84,8 @@ VORBIS_LIBS = @VORBIS_LIBS@
- AUTOMAKE_OPTIONS = foreign
+-install-data-am: install-man install-docDATA
++install-data-am: install-man
+ install-data: install-data-am
  
- bin_PROGRAMS = ogg123
--docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
--doc_DATA = ogg123rc-example
--mandir = $(datadir)/man
-+docdir = $(datadir)/examples/$(PACKAGE)
-+doc_DATA = ogg123rc
- man_MANS = ogg123.1
- 
- INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @AO_CFLAGS@
+ install-am: all-am

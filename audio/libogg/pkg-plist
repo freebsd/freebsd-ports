@@ -8,10 +8,6 @@ lib/libogg.so.2
 share/aclocal/ogg.m4
 %%PORTDOCS%%share/doc/libogg/framing.html
 %%PORTDOCS%%share/doc/libogg/index.html
-%%PORTDOCS%%share/doc/libogg/oggstream.html
-%%PORTDOCS%%share/doc/libogg/stream.png
-%%PORTDOCS%%share/doc/libogg/white-ogg.png
-%%PORTDOCS%%share/doc/libogg/white-xifish.png
 %%PORTDOCS%%share/doc/libogg/ogg/bitpacking.html
 %%PORTDOCS%%share/doc/libogg/ogg/datastructures.html
 %%PORTDOCS%%share/doc/libogg/ogg/decoding.html
@@ -70,6 +66,10 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%share/doc/libogg/ogg/style.css
 %%PORTDOCS%%share/doc/libogg/ogg/vorbis_comment.html
 %%PORTDOCS%%share/doc/libogg/ogg/vorbis_info.html
+%%PORTDOCS%%share/doc/libogg/oggstream.html
+%%PORTDOCS%%share/doc/libogg/stream.png
+%%PORTDOCS%%share/doc/libogg/white-ogg.png
+%%PORTDOCS%%share/doc/libogg/white-xifish.png
 @dirrm include/ogg
 %%PORTDOCS%%@dirrm share/doc/libogg/ogg
 %%PORTDOCS%%@dirrm share/doc/libogg
