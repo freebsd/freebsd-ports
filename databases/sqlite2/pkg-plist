@@ -2,6 +2,7 @@ bin/sqlite
 bin/gdbmdump
 bin/gdbmstat
 lib/libsqlite.a
+lib/libsqlite_p.a
 lib/libsqlite.so
 lib/libsqlite.so.1.0
 lib/sqlite/pkgIndex.tcl
