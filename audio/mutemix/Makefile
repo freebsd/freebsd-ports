@@ -14,8 +14,9 @@ EXTRACT_SUFX=	.py
 MAINTAINER=	trevor@FreeBSD.org
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
-		${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+USE_PYTHON=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}
