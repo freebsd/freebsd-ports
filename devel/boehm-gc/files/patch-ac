@@ -1,5 +1,5 @@
---- gc_priv.h.orig	Mon Mar 22 11:44:53 1999
-+++ gc_priv.h	Tue Jul 20 02:31:51 1999
+--- include/private/gc_priv.h.orig	Mon Mar 22 11:44:53 1999
++++ include/private/gc_priv.h	Tue Jul 20 02:31:51 1999
 @@ -50,8 +50,13 @@
  # endif
  

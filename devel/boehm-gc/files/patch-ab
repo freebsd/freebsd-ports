@@ -1,17 +1,15 @@
---- gc.man.orig	Mon Feb 12 14:34:12 1996
-+++ gc.man	Mon Apr  6 03:23:32 1998
-@@ -9,7 +9,9 @@
+--- doc/gc.man.orig	Mon Oct  8 10:23:01 2001
++++ doc/gc.man	Mon Oct  8 10:28:31 2001
+@@ -9,7 +9,7 @@
  ... malloc(...) ...
  .br
  .sp
 -cc ... gc.a
 +cc ... -lgc
-+.sp
-+cc ... -lleak
  .LP
  .SH DESCRIPTION
  .I GC_malloc
-@@ -67,6 +69,48 @@
+@@ -67,6 +67,48 @@
  This may temporarily write protect pages in the heap.  See the README file for more information on how this interacts with system calls that write to the heap.
  .LP
  Other facilities not discussed here include limited facilities to support incremental collection on machines without appropriate VM support, provisions for providing more explicit object layout information to the garbage collector, more direct support for ``weak'' pointers, support for ``abortable'' garbage collections during idle time, etc.
@@ -24,10 +22,10 @@
 +.I gc_cpp.h
 +will probably be found in
 +.I /usr/local/include,
-+and the libraries in
++and the library in
 +.I /usr/local/lib.
 +.LP
-+These libraries have been compiled as drop-in replacements
++This library has been compiled as drop-in replacements
 +for malloc and free (which is to say, all malloc
 +calls will allocate garbage-collectable data).
 +There is no need to include "gc.h" in your C files unless you want
@@ -51,7 +49,7 @@
 +for the package than this man page;
 +look there for more information.
 +.LP
-+Both libraries are compiled without (explicit) support
++This library is compiled without (explicit) support
 +for the experimental
 +.I gc
 +extension of
