@@ -5894,6 +5894,7 @@ ruby-tmail	ports/mail/ruby-tmail
 ruby-tmpl	ports/www/ruby-tmpl
 ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
+ruby-webrick	ports/www/ruby-webrick
 ruby-webunit	ports/www/ruby-webunit
 ruby-xmlparser	ports/textproc/ruby-xmlparser
 ruby-xmlrpc	ports/net/ruby-xmlrpc
