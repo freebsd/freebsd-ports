@@ -1,0 +1,2 @@
+PerlIO::via::dynamic is used for creating dynamic PerlIO layers.
+It is useful when the behavior or the layer depends on variables.
