@@ -28,15 +28,16 @@
 .\"	$FreeBSD$
 .\"
 .Dd September 19, 2000
-.Dt PORTLINT 8
+.Dt PORTEASY 8
+.Os
 .Sh NAME
 .Nm porteasy
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm porteasy
 .Op Fl abcefhikluVv
-.Op Fl d Ar dir
 .Op Fl D Ar date
+.Op Fl d Ar dir
 .Op Fl p Ar dir
 .Op Fl r Ar dir
 .Op Fl t Ar tag
@@ -58,7 +59,7 @@ Clean the selected ports.
 Specify a date to use for CVS operations.
 .It Fl d Ar dir
 Specify the package database directory (normally
-.Pa /var/db/pkg ).
+.Pa /var/db/pkg ) .
 .It Fl e
 Deselect ports that are already installed.
 .It Fl f
@@ -73,7 +74,7 @@ Build packages for the selected ports.
 List the selected ports.
 .It Fl p Ar dir
 Specify the ports directory (normally 
-.Pa /usr/ports ).
+.Pa /usr/ports ) .
 .It Fl r Ar dir
 Specify the CVS root directory.
 .It Fl t Ar tag
@@ -87,15 +88,16 @@ version number and exit.
 .It Fl v
 Verbose mode: show more information about what is being done.
 .El
-.Sh SEQUENCE
+.Ss Sequence of operation
 This section describes the operations performed by
 .Nm
 and the order in which they are performed.
-.Ss Update index
+.Bl -tag -width indent
+.It Update index
 If the
 .Fl u
 option was specified, the index file is updated from CVS.
-.Ss Select ports
+.It Select ports
 The ports listed on the command line are looked up in the index, using
 simple heuristics to identify incompletely named ports.
 If a certain match is not found,
@@ -115,12 +117,12 @@ those that are are deselected.
 Selected ports that were specified on the command line are marked as
 explicitly selected, while dependencies are marked as implicitly
 selected.
-.Ss List selected ports
+.It List selected ports
 If the
 .Fl l
 option was specified, all selected ports are listed.
 Explicitly selected ports are indicated with a star.
-.Ss Update ports tree
+.It Update ports tree
 If the
 .Fl u
 option and at least one of the
@@ -130,7 +132,7 @@ option and at least one of the
 or
 .Fl k
 options was specified, all selected ports are updated from CVS.
-.Ss Describe selected ports
+.It Describe selected ports
 If the
 .Fl i
 option was specified,
@@ -142,17 +144,20 @@ If no ports were specified,
 instead prints a list of all installed ports, with unknown ports (i.e.
 ports that are not in the index file, or are out of date) indicated
 with a question mark.
-.Ss Clean the tree
+.It Clean the tree
 If the
 .Fl c
 option was specified,
 .Nm
-runs the `clean' target on every selected port.
+runs the
+.Sq clean
+target on every selected port.
 If no ports were selected,
 .Nm
-runs the `clean' target on every known port that is present in the
-tree.
-.Ss Fetch ports
+runs the
+.Sq clean
+target on every known port that is present in the tree.
+.It Fetch ports
 If at least one of the
 .Fl b ,
 .Fl f
@@ -160,33 +165,42 @@ or
 .Fl k
 options was specified,
 .Nm
-runs the `fetch' target on every selected port.
-.Ss Install ports
+runs the
+.Sq fetch
+target on every selected port.
+.It Install ports
 If one or both of the
 .Fl f
 or
 .Fl k
 options were specified,
 .Nm
-runs the `install' target on every explicitly selected port.
+runs the
+.Sq install
+target on every explicitly selected port.
 Dependencies are handled by the ports system.
-.Ss Fetch ports
+.It Fetch ports
 If the
 .Fl k
 option was specified,
 .Nm
-runs the `package' target on every explicitly selected port.
+runs the
+.Sq package
+target on every explicitly selected port.
 Dependencies are handled by the ports system.
-.Ss Clean the tree (again)
+.It Clean the tree (again)
 If one or both of the
 .Fl f
 or
 .Fl k
 options were specified,
 .Nm
-finally runs the `clean' target on every selected port once it's
-installed and (optionally) the package has been built.
-.Sh NOTES
+finally runs the
+.Sq clean
+target on every selected port once it is
+installed and (optionally) its package has been built.
+.El
+.Sh IMPLEMENTATION NOTES
 There may be a significant difference between what ports are selected
 (and listed if the
 .Fl l
@@ -216,6 +230,3 @@ was written by
 Several people contributed their comments and suggestions, most
 notably
 .An Eivind Eklund Aq eivind@FreeBSD.org .
-.Sh BUGS
-.Nm
-does not read your mind.
