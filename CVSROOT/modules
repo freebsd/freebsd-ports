@@ -284,6 +284,7 @@ analog		ports/www/analog
 and		ports/sysutils/and
 angband		ports/games/angband
 angst		ports/net/angst
+animabob	ports/graphics/animabob
 anjuta		ports/devel/anjuta
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
