@@ -22,10 +22,6 @@ share/texmf/metafont/xgreg24.mf
 share/texmf/metafont/xgreg25.mf
 share/texmf/metafont/xgreg29.mf
 share/texmf/metafont/xgreggen.mf
-share/texmf/metafont/xhsld16.mf
-share/texmf/metafont/xhsld20.mf
-share/texmf/metafont/xhslu16.mf
-share/texmf/metafont/xhslu20.mf
 share/texmf/metafont/xsld11.mf
 share/texmf/metafont/xsld11d.mf
 share/texmf/metafont/xsld13.mf
@@ -38,7 +34,11 @@ share/texmf/metafont/xsld24.mf
 share/texmf/metafont/xsld24d.mf
 share/texmf/metafont/xsld29.mf
 share/texmf/metafont/xsld29d.mf
+share/texmf/metafont/xsldd20.mf
+share/texmf/metafont/xsldu20.mf
 share/texmf/metafont/xslgen.mf
+share/texmf/metafont/xslgend.mf
+share/texmf/metafont/xslgenu.mf
 share/texmf/metafont/xslhd.mf
 share/texmf/metafont/xslhd11.mf
 share/texmf/metafont/xslhd11d.mf
@@ -80,6 +80,8 @@ share/texmf/metafont/xslu24.mf
 share/texmf/metafont/xslu24d.mf
 share/texmf/metafont/xslu29.mf
 share/texmf/metafont/xslu29d.mf
+share/texmf/metafont/xslud20.mf
+share/texmf/metafont/xslup20.mf
 share/texmf/metafont/xslz.mf
 share/texmf/metafont/xslz20.mf
 share/texmf/metafont/xslz20d.mf
@@ -126,10 +128,6 @@ share/texmf/fonts/tfm/xgreg16.tfm
 share/texmf/fonts/tfm/xgreg20.tfm
 share/texmf/fonts/tfm/xgreg24.tfm
 share/texmf/fonts/tfm/xgreg29.tfm
-share/texmf/fonts/tfm/xhsld16.tfm
-share/texmf/fonts/tfm/xhsld20.tfm
-share/texmf/fonts/tfm/xhslu16.tfm
-share/texmf/fonts/tfm/xhslu20.tfm
 share/texmf/fonts/tfm/xsld11.tfm
 share/texmf/fonts/tfm/xsld11d.tfm
 share/texmf/fonts/tfm/xsld13.tfm
@@ -142,6 +140,8 @@ share/texmf/fonts/tfm/xsld24.tfm
 share/texmf/fonts/tfm/xsld24d.tfm
 share/texmf/fonts/tfm/xsld29.tfm
 share/texmf/fonts/tfm/xsld29d.tfm
+share/texmf/fonts/tfm/xsldd20.tfm
+share/texmf/fonts/tfm/xsldu20.tfm
 share/texmf/fonts/tfm/xslhd11.tfm
 share/texmf/fonts/tfm/xslhd11d.tfm
 share/texmf/fonts/tfm/xslhd13.tfm
@@ -162,6 +162,7 @@ share/texmf/fonts/tfm/xslhu16.tfm
 share/texmf/fonts/tfm/xslhu16d.tfm
 share/texmf/fonts/tfm/xslhu20.tfm
 share/texmf/fonts/tfm/xslhu20d.tfm
+share/texmf/fonts/tfm/xslhu20m.tfm
 share/texmf/fonts/tfm/xslhu24.tfm
 share/texmf/fonts/tfm/xslhu24d.tfm
 share/texmf/fonts/tfm/xslhu29.tfm
@@ -180,6 +181,8 @@ share/texmf/fonts/tfm/xslu24.tfm
 share/texmf/fonts/tfm/xslu24d.tfm
 share/texmf/fonts/tfm/xslu29.tfm
 share/texmf/fonts/tfm/xslu29d.tfm
+share/texmf/fonts/tfm/xslud20.tfm
+share/texmf/fonts/tfm/xslup20.tfm
 share/texmf/fonts/tfm/xslz20.tfm
 share/texmf/fonts/tfm/xslz20d.tfm
 share/texmf/fonts/tfm/xtie20.tfm
