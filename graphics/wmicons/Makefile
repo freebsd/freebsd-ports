@@ -8,7 +8,7 @@
 PORTNAME=	wmicons
 PORTVERSION=	1.0
 CATEGORIES=	graphics windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|sobomax/wmicons|} \
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/wmicons|} \
 		${MASTER_SITE_WINDOWMAKER} \
 		${MASTER_SITE_PORTS_JP} \
 		http://nether.tky.hut.fi/iconstore/ \
@@ -17,15 +17,14 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|sobomax/wmicons|} \
 		http://www.lab06.ee.u-tokai.ac.jp/~7jeem005/WindowMaker/Archives/
 MASTER_SITE_SUBDIR=	. contrib/icons beta/srcs
 DISTFILES=	${EXTRACT_ONLY} isiconpack4.tgz
-
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-COMMENT=	Icons mainly for use in Window Maker
-
 EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \
 		japanese-step-icons1.1.tar.gz \
 		KTermIcons-1.0.tar.gz \
 		WindowMaker-extra-0.1.tar.gz
+
+MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Icons mainly for use in Window Maker
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
