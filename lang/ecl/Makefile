@@ -30,6 +30,7 @@ INFO=		ecl ecldev
 
 USE_BZIP2=	YES
 USE_GMAKE=	YES
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	YES
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--with-tcp --enable-threads --with-clos-streams --enable-local-gmp --with-cmuformat
