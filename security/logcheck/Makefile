@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 pre-configure:
-	${REINPLACE_CMD} -e "s@/usr/local/etc/tmp@${PREFIX}/var/tmp@g; \
+	${REINPLACE_CMD} -e "s@/usr/local/etc/tmp@/tmp@g; \
 		s@/usr/local@${PREFIX}@" ${WRKSRC}/Makefile \
 		${WRKSRC}/systems/freebsd/logcheck.sh
 	${REINPLACE_CMD} -e "s@/bin/mkdir@${MKDIR}@g" ${WRKSRC}/Makefile
