@@ -1,31 +1,31 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/DocumentLocator.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Intro.pod
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserDetails.ini
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DTDDecls.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DebugHandler.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DocType.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/EncodingDetect.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/NoUnicodeExt.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Productions.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/UnicodeExt.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/Stream.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/String.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/URI.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/UnicodeExt.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/XMLDecl.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/placeholder.pl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/.packlist
+%%SITE_PERL%%/XML/SAX.pm
+%%SITE_PERL%%/XML/SAX/Base.pm
+%%SITE_PERL%%/XML/SAX/DocumentLocator.pm
+%%SITE_PERL%%/XML/SAX/Exception.pm
+%%SITE_PERL%%/XML/SAX/Intro.pod
+%%SITE_PERL%%/XML/SAX/ParserDetails.ini
+%%SITE_PERL%%/XML/SAX/ParserFactory.pm
+%%SITE_PERL%%/XML/SAX/PurePerl.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/DTDDecls.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/DebugHandler.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/DocType.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/EncodingDetect.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Exception.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/NoUnicodeExt.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Productions.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/UnicodeExt.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader/Stream.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader/String.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader/URI.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/Reader/UnicodeExt.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/XMLDecl.pm
+%%SITE_PERL%%/XML/SAX/placeholder.pl
+@dirrm %%SITE_PERL%%/XML/SAX/PurePerl/Reader
+@unexec rmdir %D/%%SITE_PERL%%/XML/SAX/PurePerl 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
