@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm_snmp
-PORTVERSION=	0.9
+PORTVERSION=	0.14
 CATEGORIES=	net
 MASTER_SITES=	http://triq.net/gkrellm/
 
