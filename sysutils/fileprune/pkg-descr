@@ -1,4 +1,4 @@
-Prune will delete files from the specified set targeting a given
+Fileprune will delete files from the specified set targeting a given
 distribution of the files within time as well as size, number, and
 age constraints.  Its main purpose is to keep a set of daily-created
 backup files in manageable size, while still providing reasonable
@@ -19,6 +19,6 @@ days there should be (at least) one retained file (unless constraints
 and options override this setting).
 
 
-WWW: http://www.spinellis.gr/sw/unix/prune
+WWW: http://www.spinellis.gr/sw/unix/fileprune
 
 - Diomidis Spinellis dds@aueb.gr
