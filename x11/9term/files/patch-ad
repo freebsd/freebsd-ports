@@ -1,0 +1,67 @@
+--- 9term/Makefile.orig	Sun Mar 13 22:50:54 1994
++++ 9term/Makefile	Sun Sep 27 22:36:53 1998
+@@ -11,27 +11,31 @@
+ #	Define RISCOS for Mips RISC/os
+ #	Define BSDPTYS for BSD-style pty support
+ #	Define POSIXPTYS for POSIX ptys
+-OS=-DSOLARIS
+ 
+-# where we'll install it
+-BINDIR=/usr/pgrad/matty/bin/$(cputype)
++OS= -D_LIBXG_EXTENSION -DSUNOS
++
++SAMPATH=../../../sam/work
++
++BINDIR=.			# where we'll install it
+ 
+ HEADERFILE=9term.h
+ TARGET=9term
+-INCLUDES=-I. -I../include -I/usr/openwin/include
+-CFLAGS=-g $(OS) $(INCLUDES) -fno-builtin -D_LIBXG_EXTENSION
+-LDFLAGS=-g -R/usr/openwin/lib -L/usr/openwin/lib -R/usr/ucblib -L/usr/ucblib
++INCLUDES=-I. -I../libtext -I$(SAMPATH)/include -I/usr/X11R6/include
++CFLAGS= -O2 $(OS) $(INCLUDES)
++LDFLAGS=
+ CC=gcc
+ 
+ # change this if your X11 libraries are in different places
+ # or if you need extra libraries to load with X11 applications
+-LIBS=../libtext/libtext.a ../libframe/libframe.a ../libXg/libXg.a
+-XLIBS=-lXt -lX11
+-
++LIBS=../libtext/libtext.a $(SAMPATH)/libframe/libframe.a $(SAMPATH)/libXg/libXg.a
++XLIBS= -L/usr/X11R6/lib -lXt -lX11
++.if $(PORTOBJFORMAT) == "elf"
++XLIBS+=-Wl,-rpath,$(X11BASE)/lib
++.endif
+ OBJECTS=9term.o command.o display.o pty.o
+ 
+ $(TARGET): $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS) $(XLIBS) -lm -lucb
++	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS) $(XLIBS) -lm
+ 
+ wloc: wloc.o
+ 	$(CC) $(LDFLAGS) -o wloc wloc.o $(LIBS) $(XLIBS) -lm
+@@ -39,21 +43,17 @@
+ label: wloc
+ 	ln wloc label
+ 
+-unicode: unicode.o
+-	$(CC) $(LDFLAGS) -o unicode unicode.o $(LIBS) $(XLIBS) -lm
+-
+ install: $(TARGET) wloc label
+ 	cp $(TARGET) $(BINDIR)
+ 	chown root $(BINDIR)/$(TARGET)
+ 	chmod 04755 $(BINDIR)/$(TARGET)
+ 	mv wloc $(BINDIR)
+ 	mv label $(BINDIR)
+-	mv unicode $(BINDIR)
+ 
+ clean:
+ 	rm -f *.o core
+ 
+ nuke: clean
+-	rm -f $(TARGET) wloc label unicode
++	rm -f $(TARGET) wloc label
+ 
+ $(OBJECTS): 9term.h
