@@ -60,6 +60,7 @@
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
     SUBDIR += novawm
+    SUBDIR += obconf
     SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += oroborus
