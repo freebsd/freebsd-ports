@@ -18,6 +18,8 @@ EXTRACT_ONLY=
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Demo of Myth II: Soulblighter
 
+BROKEN=		"does not unpack correctly"
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
