@@ -1,4 +1,5 @@
 %%PORTDOCS%%www/phpnuke/ADDONS-MODULES
+%%PORTDOCS%%www/phpnuke/BLOCKS
 %%PORTDOCS%%www/phpnuke/BUGS
 %%PORTDOCS%%www/phpnuke/CHANGES
 %%PORTDOCS%%www/phpnuke/README
@@ -14,6 +15,7 @@ www/phpnuke/html/admin/case/case.ephemerids.php
 www/phpnuke/html/admin/case/case.filemanager.php
 www/phpnuke/html/admin/case/case.links.php
 www/phpnuke/html/admin/case/case.messages.php
+www/phpnuke/html/admin/case/case.modules.php
 www/phpnuke/html/admin/case/case.polls.php
 www/phpnuke/html/admin/case/case.referers.php
 www/phpnuke/html/admin/case/case.reviews.php
@@ -33,6 +35,7 @@ www/phpnuke/html/admin/links/links.ephemerids.php
 www/phpnuke/html/admin/links/links.faq.php
 www/phpnuke/html/admin/links/links.filemanager.php
 www/phpnuke/html/admin/links/links.messages.php
+www/phpnuke/html/admin/links/links.modules.php
 www/phpnuke/html/admin/links/links.onlygod.php
 www/phpnuke/html/admin/links/links.reviews.php
 www/phpnuke/html/admin/links/links.sections.php
@@ -51,6 +54,7 @@ www/phpnuke/html/admin/modules/filemanager.php
 www/phpnuke/html/admin/modules/index.html
 www/phpnuke/html/admin/modules/links.php
 www/phpnuke/html/admin/modules/messages.php
+www/phpnuke/html/admin/modules/modules.php
 www/phpnuke/html/admin/modules/polls.php
 www/phpnuke/html/admin/modules/referers.php
 www/phpnuke/html/admin/modules/reviews.php
@@ -66,16 +70,17 @@ www/phpnuke/html/backend.php
 www/phpnuke/html/banners.php
 www/phpnuke/html/bb_smilies.php
 www/phpnuke/html/bbcode_ref.php
+www/phpnuke/html/blocks/block-Ephemerids.php
 www/phpnuke/html/blocks/block-Sample_Block.php
 www/phpnuke/html/blocks/block-Top10_Downloads.php
 www/phpnuke/html/blocks/block-Top10_Links.php
+www/phpnuke/html/blocks/block-Total_Hits.php
 www/phpnuke/html/blocks/index.html
 www/phpnuke/html/blocks/readme.txt
 www/phpnuke/html/categories.php
 www/phpnuke/html/comments.php
 www/phpnuke/html/config.php
 www/phpnuke/html/counter.php
-www/phpnuke/html/download.php
 www/phpnuke/html/footer.php
 www/phpnuke/html/friend.php
 www/phpnuke/html/functions.php
@@ -107,6 +112,7 @@ www/phpnuke/html/images/admin/index.html
 www/phpnuke/html/images/admin/lego.tif
 www/phpnuke/html/images/admin/links.gif
 www/phpnuke/html/images/admin/messages.gif
+www/phpnuke/html/images/admin/modules.gif
 www/phpnuke/html/images/admin/newpoll.gif
 www/phpnuke/html/images/admin/postnew.gif
 www/phpnuke/html/images/admin/preferences.gif
@@ -377,6 +383,7 @@ www/phpnuke/html/images/green_dot.gif
 www/phpnuke/html/images/html401.gif
 www/phpnuke/html/images/index.html
 www/phpnuke/html/images/language/flag-arabic.png
+www/phpnuke/html/images/language/flag-brazilian.png
 www/phpnuke/html/images/language/flag-bulgarian.png
 www/phpnuke/html/images/language/flag-catala.png
 www/phpnuke/html/images/language/flag-chinese.png
@@ -406,6 +413,7 @@ www/phpnuke/html/images/language/flag-spanish.png
 www/phpnuke/html/images/language/flag-swedish.png
 www/phpnuke/html/images/language/flag-thai.png
 www/phpnuke/html/images/language/flag-turkish.png
+www/phpnuke/html/images/language/flag-ukrainian.png
 www/phpnuke/html/images/links/editicon.gif
 www/phpnuke/html/images/links/new-english.gif
 www/phpnuke/html/images/links/newblue.gif
@@ -527,9 +535,11 @@ www/phpnuke/html/images/up.gif
 www/phpnuke/html/includes/index.html
 www/phpnuke/html/includes/javascript.php
 www/phpnuke/html/includes/meta.php
+www/phpnuke/html/includes/sql_layer.php
 www/phpnuke/html/index.php
 www/phpnuke/html/language/index.html
 www/phpnuke/html/language/lang-arabic.php
+www/phpnuke/html/language/lang-brazilian.php
 www/phpnuke/html/language/lang-chinese.php
 www/phpnuke/html/language/lang-czech.php
 www/phpnuke/html/language/lang-danish.php
@@ -548,7 +558,7 @@ www/phpnuke/html/language/lang-russian.php
 www/phpnuke/html/language/lang-spanish.php
 www/phpnuke/html/language/lang-swedish.php
 www/phpnuke/html/language/lang-thai.php
-www/phpnuke/html/links.php
+www/phpnuke/html/language/lang-ukrainian.php
 www/phpnuke/html/mainfile.php
 www/phpnuke/html/manual/admin.html
 www/phpnuke/html/manual/adminblock.html
@@ -574,12 +584,16 @@ www/phpnuke/html/manual/topics.html
 www/phpnuke/html/manual/users.html
 www/phpnuke/html/manual/weblinks.html
 www/phpnuke/html/modules.php
+www/phpnuke/html/modules/Addon_Sample/f2.php
+www/phpnuke/html/modules/Addon_Sample/index.php
 www/phpnuke/html/modules/AvantGo/index.php
+www/phpnuke/html/modules/Downloads/d_config.php
+www/phpnuke/html/modules/Downloads/index.php
 www/phpnuke/html/modules/FAQ/index.php
 www/phpnuke/html/modules/Feedback/index.php
 www/phpnuke/html/modules/Members_List/index.php
-www/phpnuke/html/modules/NS-Addon_Sample/f2.php
-www/phpnuke/html/modules/NS-Addon_Sample/index.php
+www/phpnuke/html/modules/Web_Links/index.php
+www/phpnuke/html/modules/Web_Links/l_config.php
 www/phpnuke/html/modules/index.html
 www/phpnuke/html/modules/readme.txt
 www/phpnuke/html/pollBooth.php
@@ -634,6 +648,10 @@ www/phpnuke/html/themes/Kaput/index.html
 www/phpnuke/html/themes/Kaput/style/index.html
 www/phpnuke/html/themes/Kaput/style/style.css
 www/phpnuke/html/themes/Kaput/theme.php
+www/phpnuke/html/themes/NukeNews/blocks.html
+www/phpnuke/html/themes/NukeNews/center_right.html
+www/phpnuke/html/themes/NukeNews/footer.html
+www/phpnuke/html/themes/NukeNews/header.html
 www/phpnuke/html/themes/NukeNews/images/corner-bottom-left.gif
 www/phpnuke/html/themes/NukeNews/images/corner-bottom-right.gif
 www/phpnuke/html/themes/NukeNews/images/corner-top-left.gif
@@ -644,9 +662,12 @@ www/phpnuke/html/themes/NukeNews/images/logo.gif
 www/phpnuke/html/themes/NukeNews/images/mainbar.gif
 www/phpnuke/html/themes/NukeNews/images/pixel.gif
 www/phpnuke/html/themes/NukeNews/images/rightbar.gif
-www/phpnuke/html/themes/NukeNews/index.html
+www/phpnuke/html/themes/NukeNews/left_center.html
+www/phpnuke/html/themes/NukeNews/story_home.html
+www/phpnuke/html/themes/NukeNews/story_page.html
 www/phpnuke/html/themes/NukeNews/style/index.html
 www/phpnuke/html/themes/NukeNews/style/style.css
+www/phpnuke/html/themes/NukeNews/tables.php
 www/phpnuke/html/themes/NukeNews/theme.php
 www/phpnuke/html/themes/Slash/images/660000.gif
 www/phpnuke/html/themes/Slash/images/cl.gif
@@ -702,6 +723,17 @@ www/phpnuke/html/themes/Traditional/index.html
 www/phpnuke/html/themes/Traditional/style/index.html
 www/phpnuke/html/themes/Traditional/style/style.css
 www/phpnuke/html/themes/Traditional/theme.php
+www/phpnuke/html/themes/deviantNuke/images/index.html
+www/phpnuke/html/themes/deviantNuke/images/leftbar.gif
+www/phpnuke/html/themes/deviantNuke/images/logo.gif
+www/phpnuke/html/themes/deviantNuke/images/mainbar.gif
+www/phpnuke/html/themes/deviantNuke/images/pixel.gif
+www/phpnuke/html/themes/deviantNuke/images/rightbar.gif
+www/phpnuke/html/themes/deviantNuke/images/search-button.gif
+www/phpnuke/html/themes/deviantNuke/index.html
+www/phpnuke/html/themes/deviantNuke/style/index.html
+www/phpnuke/html/themes/deviantNuke/style/style.css
+www/phpnuke/html/themes/deviantNuke/theme.php
 www/phpnuke/html/themes/index.html
 www/phpnuke/html/top.php
 www/phpnuke/html/topics.php
@@ -716,12 +748,16 @@ www/phpnuke/html/upgrades/upgrade43-44.php
 www/phpnuke/html/upgrades/upgrade44-50.php
 www/phpnuke/html/upgrades/upgrade50-51.php
 www/phpnuke/html/upgrades/upgrade51-52.php
+www/phpnuke/html/upgrades/upgrade52-53.php
 www/phpnuke/html/user.php
 www/phpnuke/html/viewpmsg.php
 www/phpnuke/html/voteinclude.php
 www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/sql
 @dirrm www/phpnuke/html/upgrades
+@dirrm www/phpnuke/html/themes/deviantNuke/style
+@dirrm www/phpnuke/html/themes/deviantNuke/images
+@dirrm www/phpnuke/html/themes/deviantNuke
 @dirrm www/phpnuke/html/themes/Traditional/style
 @dirrm www/phpnuke/html/themes/Traditional/images
 @dirrm www/phpnuke/html/themes/Traditional
@@ -741,11 +777,13 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/themes/ExtraLite/images
 @dirrm www/phpnuke/html/themes/ExtraLite
 @dirrm www/phpnuke/html/themes
-@dirrm www/phpnuke/html/modules/NS-Addon_Sample
+@dirrm www/phpnuke/html/modules/Web_Links
 @dirrm www/phpnuke/html/modules/Members_List
 @dirrm www/phpnuke/html/modules/Feedback
 @dirrm www/phpnuke/html/modules/FAQ
+@dirrm www/phpnuke/html/modules/Downloads
 @dirrm www/phpnuke/html/modules/AvantGo
+@dirrm www/phpnuke/html/modules/Addon_Sample
 @dirrm www/phpnuke/html/modules
 @dirrm www/phpnuke/html/manual
 @dirrm www/phpnuke/html/language
