@@ -28,6 +28,7 @@ INFO=		clint
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
 USE_GCC=	3.3
 .endif
 
