@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	1.2.2
+PORTVERSION=	2.0.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/src/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+		freetype.6:${PORTSDIR}/print/freetype2
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
@@ -22,7 +24,8 @@ USE_GMAKE=	yes
 USE_FREETYPE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+			  -I${LOCALBASE}/include"
 
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
