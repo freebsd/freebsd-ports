@@ -63,6 +63,5 @@ lib/ghc-%%GHC_VERSION%%/HSTclHaskell_cbits.o
 @dirrm %%EXAMPLESDIR%%/images
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec ghc-pkg -r TclHaskell
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

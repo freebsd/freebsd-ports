@@ -10,10 +10,15 @@ PORTREVISION=	2
 CATEGORIES=	devel haskell tcl83
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/TclHaskell/
 PKGNAMEPREFIX=	hs-
+PKGNAMESUFFIX=	-${GHCDEP}
 DISTNAME=	TclHaskell1_2
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tcl/Tk binding for Haskell
+
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
+RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
 .if defined(WITH_GHC5)
 GHC=		ghc-5.04.3
@@ -22,17 +27,12 @@ GHCDEP=		ghc5
 GHC=		ghc-6.2.1
 GHCDEP=		ghc
 .endif
-PKGNAMESUFFIX=	-${GHCDEP}
-
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
-RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
 WRKSRC=		${WRKDIR}/TclHaskell1.2/src
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
 
-GHC_VERSION=	`${LOCALBASE}/bin/${GHC} --numeric-version`
+GHC_VERSION=	${GHC:S/^ghc-//} # `${LOCALBASE}/bin/${GHC} --numeric-version`
 GHC_LIB=	${LOCALBASE}/lib/${GHC}
 PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -61,6 +61,5 @@ post-install:
 .endif
 	@${SED} -e s,GHC_VERSION,${GHC_VERSION}, <${MASTERDIR}/pkg-install.in >${PKGINSTALL}
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} dummy POST-INSTALL
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>

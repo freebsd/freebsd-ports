@@ -10,20 +10,20 @@ lib/alex-%%PORTVERSION%%/AlexWrapper-posn
 lib/alex-%%PORTVERSION%%/AlexWrapper-monad
 lib/alex-%%PORTVERSION%%/AlexWrapper-gscan
 @dirrm lib/alex-%%PORTVERSION%%
-%%PORTDOCS%%share/doc/alex/alex.ps
-%%PORTDOCS%%@dirrm share/doc/alex
-share/examples/alex/Makefile
-share/examples/alex/Tokens.x
-share/examples/alex/Tokens_gscan.x
-share/examples/alex/Tokens_posn.x
-share/examples/alex/examples.x
-share/examples/alex/haskell.x
-share/examples/alex/lit.x
-share/examples/alex/pp.x
-share/examples/alex/state.x
-share/examples/alex/tiny.y
-share/examples/alex/tkns.hs
-share/examples/alex/words.x
-share/examples/alex/words_monad.x
-share/examples/alex/words_posn.x
-@dirrm share/examples/alex
+%%PORTDOCS%%%%DOCSDIR%%/alex.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/Tokens.x
+%%EXAMPLESDIR%%/Tokens_gscan.x
+%%EXAMPLESDIR%%/Tokens_posn.x
+%%EXAMPLESDIR%%/examples.x
+%%EXAMPLESDIR%%/haskell.x
+%%EXAMPLESDIR%%/lit.x
+%%EXAMPLESDIR%%/pp.x
+%%EXAMPLESDIR%%/state.x
+%%EXAMPLESDIR%%/tiny.y
+%%EXAMPLESDIR%%/tkns.hs
+%%EXAMPLESDIR%%/words.x
+%%EXAMPLESDIR%%/words_monad.x
+%%EXAMPLESDIR%%/words_posn.x
+@dirrm %%EXAMPLESDIR%%
