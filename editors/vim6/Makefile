@@ -41,7 +41,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g} --forward --quiet
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
-MAN1=		eview.1 evin.1 gvimdiff.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
+MAN1=		eview.1 evim.1 gvimdiff.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1
 
 .include <bsd.port.pre.mk>
