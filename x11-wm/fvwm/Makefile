@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.21 1996/11/18 10:36:54 asami Exp $
+# $Id: Makefile,v 1.22 1997/10/28 21:59:55 gj Exp $
 #
 
 DISTNAME=	fvwm-1.24r
@@ -15,6 +15,7 @@ MAINTAINER=	me@FreeBSD.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
+NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all

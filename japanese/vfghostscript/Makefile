@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1997/09/14 21:36:13 max Exp $
+# $Id: Makefile,v 1.10 1997/12/08 09:05:48 max Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -24,6 +24,7 @@ MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
+NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/gs262
 EXTRACT_ONLY=	ghostscript-2.6.2.tar.gz
 MAN1=		gs.1
