@@ -7,6 +7,7 @@
 
 PORTNAME=	swarm
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 
@@ -18,6 +19,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 .if defined(WITH_HDF5)
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/graphics/hdf5
+BROKEN=		undefined references in hdf5, please deinstall hdf5 package \
+		before continue
 .endif
 
 .if defined(WITH_JAVA)
@@ -50,11 +53,6 @@ pre-everything::
 .if !defined(WITH_JAVA)
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> To enable java support , please define WITH_JAVA"
-	@${ECHO_MSG} "===>"
-.endif
-.if !defined(WITH_HDF5)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> To enable HDF5 support, please define WITH_HDF5"
 	@${ECHO_MSG} "===>"
 .endif
 
