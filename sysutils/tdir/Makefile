@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	tdir
-PORTVERSION=	1.58
+PORTVERSION=	1.62
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
 MAINTAINER=	tundra@tundraware.com
 
-RUN_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
-
-MAN1=		tdir.1
+USE_PYTHON=	yes
 MANCOMPRESSED=	yes
+MAN1=		tdir.1
 
 .include	<bsd.port.mk>
