@@ -1,0 +1,32 @@
+*** Makefile~	Thu Sep 14 09:17:08 1995
+--- Makefile	Thu Sep 14 09:58:57 1995
+***************
+*** 0 ****
+--- 1,15 ----
++ 
++ 
++ FILES= IAFA-PACKAGE install.freebsd run3 bin introduction sharewar.txt doc \
++        library eiffels.20 readme.1st source examples register.txt
++ 
++ all: ecc
++ 
++ ecc: ecc.sh
++ 	sed 's:@PREFIX@:${PREFIX}:' ecc.sh >$@
++ 	chmod +x $@
++ 
++ install:
++ 	-mkdir ${PREFIX}/eiffel
++ 	pax -rw ${FILES} ${PREFIX}/eiffel
++ 	cp ecc ${PREFIX}/bin
+*** ecc.sh~	Thu Sep 14 09:17:39 1995
+--- ecc.sh	Thu Sep 14 09:21:23 1995
+***************
+*** 0 ****
+--- 1,7 ----
++ #!/bin/sh
++ PATH=$PATH:@PREFIX@/eiffel/bin
++ EIFFEL_S=@PREFIX@/eiffel
++ 
++ export EIFFEL_S PATH
++ 
++ exec @PREFIX@/eiffel/bin/ecc $*
