@@ -7,27 +7,29 @@
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.darkops.net/bbrun/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Run box for Blackbox
 
-USE_GETOPT_LONG=yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+PORTDOCS=	README
+PLIST_FILES=	bin/bbrun
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${PREFIX}/bin
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

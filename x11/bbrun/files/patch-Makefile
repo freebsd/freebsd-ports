@@ -1,13 +1,16 @@
---- Makefile.orig	Wed Jun  2 23:54:33 2004
-+++ Makefile	Wed Jun  2 23:55:08 2004
-@@ -1,5 +1,4 @@
+--- Makefile.orig	Wed Feb 11 13:57:17 2004
++++ Makefile	Wed Aug 11 03:14:43 2004
+@@ -1,7 +1,6 @@
 -CC     = gcc
 -LIBDIR = -L/usr/lib -L/usr/X11R6/lib
-+LIBDIR = -L${LOCALBASE}/lib -L${X11BASE}/lib
 -LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
+-CFLAGS = `pkg-config --cflags gtk+-2.0`
++LIBDIR = -L${LOCALBASE}/lib -L${X11BASE}/lib
 +LIBS   = -lXpm `pkg-config --libs gtk+-2.0` ${LDFLAGS}
- CFLAGS = `pkg-config --cflags gtk+-2.0`
++CFLAGS += `pkg-config --cflags gtk+-2.0`
  
+ OBJS   = bbrun.o \
+          ../wmgeneral/wmgeneral.o \
 @@ -11,7 +10,7 @@
  all: bbrun
  
