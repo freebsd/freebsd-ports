@@ -1,34 +1,34 @@
 bin/lynx
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-share/lynx_doc/CHANGES
-share/lynx_doc/COPYHEADER
-share/lynx_doc/COPYING
-share/lynx_doc/PROBLEMS
-share/lynx_doc/README
-share/lynx_doc/samples/blue-background.lss
-share/lynx_doc/samples/cernrules.txt
-share/lynx_doc/samples/installdirs.html
-share/lynx_doc/samples/jumpsUnix.html
-share/lynx_doc/samples/jumpsVMS.html
-share/lynx_doc/samples/lynx-keymaps
-share/lynx_doc/samples/lynx.com
-share/lynx_doc/samples/lynx.lss
-share/lynx_doc/samples/mailcap
-share/lynx_doc/samples/mild-colors.lss
-share/lynx_doc/samples/mime.types
-share/lynx_doc/test/ALT88592.html
-share/lynx_doc/test/ISO_LATIN1_test.html
-share/lynx_doc/test/README.txt
-share/lynx_doc/test/TestComment.html
-share/lynx_doc/test/c1.html
-share/lynx_doc/test/iso8859-1.html
-share/lynx_doc/test/iso88592.html
-share/lynx_doc/test/raw8bit.html
-share/lynx_doc/test/sgml.html
-share/lynx_doc/test/spaces.html
-share/lynx_doc/test/tabtest.html
-share/lynx_doc/test/unicode.html
+share/doc/lynx/CHANGES
+share/doc/lynx/COPYHEADER
+share/doc/lynx/COPYING
+share/doc/lynx/PROBLEMS
+share/doc/lynx/README
+share/doc/lynx/samples/blue-background.lss
+share/doc/lynx/samples/cernrules.txt
+share/doc/lynx/samples/installdirs.html
+share/doc/lynx/samples/jumpsUnix.html
+share/doc/lynx/samples/jumpsVMS.html
+share/doc/lynx/samples/lynx-keymaps
+share/doc/lynx/samples/lynx.com
+share/doc/lynx/samples/lynx.lss
+share/doc/lynx/samples/mailcap
+share/doc/lynx/samples/mild-colors.lss
+share/doc/lynx/samples/mime.types
+share/doc/lynx/test/ALT88592.html
+share/doc/lynx/test/ISO_LATIN1_test.html
+share/doc/lynx/test/README.txt
+share/doc/lynx/test/TestComment.html
+share/doc/lynx/test/c1.html
+share/doc/lynx/test/iso8859-1.html
+share/doc/lynx/test/iso88592.html
+share/doc/lynx/test/raw8bit.html
+share/doc/lynx/test/sgml.html
+share/doc/lynx/test/spaces.html
+share/doc/lynx/test/tabtest.html
+share/doc/lynx/test/unicode.html
 share/lynx_help/COPYHEADER
 share/lynx_help/COPYING
 share/lynx_help/Lynx_users_guide.html
@@ -55,8 +55,8 @@ share/lynx_help/keystrokes/xterm_help.html
 share/lynx_help/lynx-dev.html
 share/lynx_help/lynx_help_main.html
 share/lynx_help/lynx_url_support.html
-@dirrm share/lynx_doc/samples
-@dirrm share/lynx_doc/test
-@dirrm share/lynx_doc
+@dirrm share/doc/lynx/samples
+@dirrm share/doc/lynx/test
+@dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help

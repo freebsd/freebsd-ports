@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.99 1999/05/25 20:14:40 ache Exp $
+# $Id: Makefile,v 1.100 1999/08/02 03:06:58 ache Exp $
 #
 
 DISTNAME=       lynx2.8.3dev.5
@@ -25,7 +25,7 @@ INSTALL_TARGET= install-full
 MAN1=		lynx.1
 
 L_LIB=          ${PREFIX}/etc
-L_DOC=          ${PREFIX}/share/lynx_doc
+L_DOC=          ${PREFIX}/share/doc/lynx
 L_HELP=         ${PREFIX}/share/lynx_help
 
 post-install:
