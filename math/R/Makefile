@@ -66,9 +66,15 @@ PAPERSIZE?=	letter
 
 MAN1=	R.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 test check: build
 	@(cd ${WRKSRC}; ${MAKE} check)
 check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
