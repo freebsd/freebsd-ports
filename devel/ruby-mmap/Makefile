@@ -26,7 +26,6 @@ INSTALL_TARGET=	site-install
 
 DOCS=		Changes		README.en	mmap.html	mmap.rd	\
 		docs/doc
-EXAMPLES=	b.rb
 
 post-build:
 .if !defined(NOPORTDOCS)
@@ -36,10 +35,6 @@ post-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
-.endfor
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
