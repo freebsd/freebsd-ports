@@ -1,5 +1,5 @@
 # New ports collection makefile for:	cnslock
-# Date created:				10 May 2003
+# Date created:				10 Apr 2003
 # Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
 # $FreeBSD$
@@ -9,13 +9,14 @@ PORTNAME=	cnslock
 PORTVERSION=	1.02
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.dockapps.com/download.php/id/181/ \
-		ftp://ftp.nsu.ru/tmp/
+		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A visual indicator of the states of the three "lock" buttons
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
