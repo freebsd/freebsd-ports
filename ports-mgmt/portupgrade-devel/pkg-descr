@@ -6,11 +6,11 @@ dependency chains up and down to upgrade packages recursively.
 
 This package also includes the following utilities:
 portinstall:	Helps you install new ports in a handy way.
-portcvsweb:	Instantly browses a history via CVSweb.
+portcvsweb:	Instantly browses change history via CVSweb.
 portversion:	Replaces pkg_version(1), runs much faster and is
 		cooperative with portupgrade(1).
-portsclean:	Cleans ports workdir's, unreferenced distfiles and
-		old and orphan shared libraries.
+portsclean:	Cleans ports workdir's, unreferenced distfiles,
+		old and orphan shared libraries, and stale packages.
 portsdb:	Creates binary database from the ports INDEX.
 ports_glob:	Expands ports globs.
 pkg_deinstall:	Wraps pkg_delete(1) and provides extra features.
