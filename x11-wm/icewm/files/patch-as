@@ -1,0 +1,20 @@
+--- src/wmtaskbar.h.orig	Wed Feb 20 20:18:07 2002
++++ src/wmtaskbar.h	Wed Feb 20 20:18:28 2002
+@@ -15,7 +15,7 @@
+ #define ADD2 5
+ 
+ class ObjectBar;
+-#if (defined(linux)||defined(HAVE_KSTAT_H))
++#if (defined(linux)||defined(HAVE_KSTAT_H)) || defined(__FreeBSD__)
+ class CPUStatus;
+ #endif
+ #ifdef HAVE_NET_STATUS
+@@ -90,7 +90,7 @@
+     MailBoxStatus **fMailBoxStatus;
+ #endif
+ #ifdef CONFIG_APPLET_CPU_STATUS
+-#if (defined(linux)||defined(HAVE_KSTAT_H))
++#if (defined(linux)||defined(HAVE_KSTAT_H)) || defined(__FreeBSD__)
+     CPUStatus *fCPUStatus;
+ #endif
+ #endif

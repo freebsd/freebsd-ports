@@ -1,6 +1,6 @@
---- src/Makefile.orig	Fri Apr 27 09:32:22 2001
-+++ src/Makefile	Tue May  1 06:19:51 2001
-@@ -17,9 +17,9 @@
+--- src/Makefile.orig	Tue Oct  9 23:54:03 2001
++++ src/Makefile	Wed Feb 20 19:54:01 2002
+@@ -18,9 +18,9 @@
  	-DHOSTOS='"$(shell uname -s || echo unknown)"' \
  	-DHOSTCPU='"$(shell uname -m || echo unknown)"' \
  	-DEXEEXT='"$(EXEEXT)"' \
@@ -13,3 +13,12 @@
          $(SYS_CFLAGS) $(SYS_INCDIRS)
  LFLAGS = $(SYS_LIBDIRS) 
  LIBS = $(SYS_LIBS)
+@@ -37,7 +37,7 @@
+ 	genpref.o
+ 
+ icewm_LIBS = \
+-	$(CORE_LIBS) $(IMAGE_LIBS) $(GNOME_LIBS)
++	$(CORE_LIBS) $(IMAGE_LIBS) $(GNOME_LIBS) -lkvm
+ icewm_OBJS = \
+         ymsgbox.o ydialog.o yurl.o \
+         wmsession.o wmwinlist.o wmtaskbar.o wmwinmenu.o \

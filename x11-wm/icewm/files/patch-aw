@@ -1,0 +1,12 @@
+--- src/wmapp.cc.orig	Wed Feb 20 20:16:15 2002
++++ src/wmapp.cc	Wed Feb 20 20:16:48 2002
+@@ -1308,6 +1308,9 @@
+ }
+ 
+ int main(int argc, char **argv) {
++#ifdef __FreeBSD__
++    setegid( getgid() );
++#endif
+     YLocale locale;
+ 
+ #ifndef NO_CONFIGURE
