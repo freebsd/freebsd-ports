@@ -1,33 +1,11 @@
---- configure.orig	Sun Jun  3 09:40:33 2001
-+++ configure	Sun Jun  3 09:42:36 2001
-@@ -2056,8 +2056,8 @@
- fi
+--- configure.orig	Tue Nov 27 02:48:10 2001
++++ configure	Tue Nov 27 02:48:38 2001
+@@ -2057,7 +2057,7 @@
  
  
--# Extract the first word of "glib-config", so it can be a program name with args.
+ # Extract the first word of "glib-config", so it can be a program name with args.
 -set dummy glib-config; ac_word=$2
-+# Extract the first word of "glib12-config", so it can be a program name with args.
 +set dummy glib12-config; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
  echo "configure:2063: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_prog_PROG_GLIB_CONFIG'+set}'`\" = set"; then
-@@ -2071,7 +2071,7 @@
-   for ac_dir in $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
--      ac_cv_prog_PROG_GLIB_CONFIG="glib-config"
-+      ac_cv_prog_PROG_GLIB_CONFIG="%%GLIB_CONFIG%%"
-       break
-     fi
-   done
-@@ -2086,8 +2086,8 @@
- fi
- 
- if test -n "$PROG_GLIB_CONFIG" ; then
--  GLIB_INCLUDES="`glib-config --cflags`"
--  GLIB_LIBS="liboop-glib.la `glib-config --libs`"
-+  GLIB_INCLUDES="`%%GLIB_CONFIG%% --cflags`"
-+  GLIB_LIBS="liboop-glib.la `%%GLIB_CONFIG%% --libs`"
-   cat >> confdefs.h <<\EOF
- #define HAVE_GLIB 1
- EOF
