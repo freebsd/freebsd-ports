@@ -17,6 +17,8 @@ COMMENT=	An object-based web application platform
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_xmlplus/sax/expatreader.py:${PORTSDIR}/textproc/py-xml
 
+BROKEN=		Broken dependency
+
 USE_PYTHON=	2.3
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
