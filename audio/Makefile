@@ -160,6 +160,7 @@
     SUBDIR += replay
     SUBDIR += rio
     SUBDIR += rio500
+    SUBDIR += rioutil
     SUBDIR += ripenc
     SUBDIR += ripit
     SUBDIR += rosegarden
