@@ -1,0 +1,11 @@
+--- tcserver-freebsd_x86.sh.orig	Tue Jun 20 11:18:24 2000
++++ tcserver-freebsd_x86.sh	Tue Jun 20 11:39:56 2000
+@@ -174,7 +174,7 @@
+ dirdone=0
+ while [ $dirdone -eq 0 ]; do
+ 	echon "Enter directory in which TeraCAST will be unpacked [.] "
+-	read extractdir
++	extractdir=.   
+ 	if [ -z "$extractdir" ]; then
+ 		extractdir=.
+ 	fi
