@@ -17,6 +17,8 @@ COMMENT=	An implementation of a language dedicated to the finite element method
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
 BUILD_DEPENDS=	${LOCALBASE}/include/ARPACK++:${PORTSDIR}/math/arpack++
 
+RESTRICTED=	No resale or commercial use
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 
