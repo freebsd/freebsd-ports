@@ -517,6 +517,7 @@
     SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += pixilate
+    SUBDIR += platero
     SUBDIR += plb
     SUBDIR += pmacct
     SUBDIR += pmf
