@@ -51,6 +51,7 @@ share/locale/pl/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
 share/locale/sv/LC_MESSAGES/gnome-pim.mo
 share/locale/ru/LC_MESSAGES/gnome-pim.mo
+share/locale/uk/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-pim.mo
 @dirrm share/gnome/help/gnomecard/C
