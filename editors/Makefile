@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1999/03/29 11:40:48 obrien Exp $
+# $Id: Makefile,v 1.71 1999/04/14 06:00:04 mharo Exp $
 #
 
     SUBDIR += apel-emacs
@@ -13,6 +13,7 @@
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
+    SUBDIR += gnotepad+
     SUBDIR += flim-emacs20
     SUBDIR += flim-emacs20-current
     SUBDIR += gxedit
@@ -38,6 +39,7 @@
     SUBDIR += staroffice
     SUBDIR += sted
     SUBDIR += textedit
+    SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += uemacs
     SUBDIR += uzap
