@@ -1,0 +1,121 @@
+diff -ru clusterit-2.0/common/common.c clusterit-2.0-new/common/common.c
+--- common/common.c	Sat Apr  5 17:01:50 2003
++++ common/common.c	Sat Apr  5 16:56:15 2003
+@@ -316,24 +316,6 @@
+ 
+ #endif /* CLUSTERS */
+ 
+-/* return a string, followed by n - strlen spaces */
+-
+-char *
+-alignstring(string, n)
+-	char *string;
+-	size_t n;
+-{
+-	size_t i;
+-	char *newstring;
+-
+-	newstring = strdup(string);
+-	for (i=1; i <= n - strlen(string); i++)
+-		newstring = strcat(newstring, " ");
+-
+-	return(newstring);
+-}
+-
+-
+ /* 
+  * Simple error handling routine, needs severe work.
+  * Its almost totally useless.
+diff -ru clusterit-2.0/common/common.h clusterit-2.0-new/common/common.h
+--- common/common.h	Tue Aug 14 04:21:39 2001
++++ common/common.h	Sat Apr  5 16:56:32 2003
+@@ -78,7 +78,6 @@
+ typedef struct group_data group_t;
+ 
+ void bailout __P((int));
+-char *alignstring __P((char *, size_t));
+ #ifndef __NetBSD__
+ char * strsep(char **stringp, const char *delim);
+ #endif
+diff -ru clusterit-2.0/dsh/dsh.c clusterit-2.0-new/dsh/dsh.c
+--- dsh/dsh.c	Tue Aug 14 04:21:38 2001
++++ dsh/dsh.c	Sat Apr  5 16:58:38 2003
+@@ -399,8 +399,8 @@
+ 					bailout(__LINE__);
+ 				while ((cd = fgets(pipebuf, sizeof(pipebuf), fd))) {
+ 					if (cd != NULL)
+-						(void)printf("%s: %s",
+-							alignstring(nodeptr->name, maxnodelen), cd);
++						(void)printf("%*s: %s",
++							-maxnodelen, nodeptr->name, cd);
+ 				}
+ 				fclose(fd);
+ 				fd = fdopen(nodeptr->err.fds[0], "r"); /* stderr */
+@@ -408,8 +408,8 @@
+ 					bailout(__LINE__);
+ 				while ((cd = fgets(pipebuf, sizeof(pipebuf), fd))) {
+ 					if (errorflag && cd != NULL)
+-						(void)printf("%s: %s",
+-							alignstring(nodeptr->name, maxnodelen), cd);
++						(void)printf("%*s: %s",
++							-maxnodelen, nodeptr->name, cd);
+ 				}
+ 				fclose(fd);
+ 				(void)wait(&status);
+diff -ru clusterit-2.0/dsh/run.c clusterit-2.0-new/dsh/run.c
+--- dsh/run.c	Tue Aug 14 04:21:38 2001
++++ dsh/run.c	Sat Apr  5 16:59:35 2003
+@@ -326,13 +326,12 @@
+ 			bailout(__LINE__);
+ 		fd = fdopen(nodeptr->out.fds[0], "r"); /* stdout */
+ 		while ((p = fgets(buf, sizeof(buf), fd)))
+-			(void)printf("%s: %s", alignstring(nodeptr->name, maxnodelen), p);
++			(void)printf("%*s: %s", -maxnodelen, nodeptr->name, p);
+ 		fclose(fd);
+ 		fd = fdopen(nodeptr->err.fds[0], "r"); /* stderr */
+ 		while ((p = fgets(buf, sizeof(buf), fd)))
+ 			if (errorflag)
+-				(void)printf("%s: %s",
+-					alignstring(nodeptr->name, maxnodelen), p);
++				(void)printf("%*s: %s", -maxnodelen, nodeptr->name, p);
+ 		fclose(fd);
+ 		(void)wait(&status);
+ 		if (piping) {
+diff -ru clusterit-2.0/dvt/dvt.c clusterit-2.0-new/dvt/dvt.c
+--- dvt/dvt.c	Tue Aug 14 04:21:37 2001
++++ dvt/dvt.c	Sat Apr  5 17:00:07 2003
+@@ -610,8 +610,8 @@
+ 						bailout(__LINE__);
+ 					while ((cd = fgets(pipebuf, sizeof(pipebuf), fd))) {
+ 						if (errorflag && cd != NULL)
+-							(void)printf("ERROR %s: %s",
+-								alignstring(nodeptr->name, maxnodelen), cd);
++							(void)printf("ERROR %*s: %s",
++								-maxnodelen, nodeptr->name, cd);
+ 					}
+ 					fclose(fd);
+ 					(void)waitpid(nodeptr->childpid, &status, 0);
+diff -ru clusterit-2.0/pcp/pcp.c clusterit-2.0-new/pcp/pcp.c
+--- pcp/pcp.c	Tue Aug 14 04:21:34 2001
++++ pcp/pcp.c	Sat Apr  5 16:58:00 2003
+@@ -383,16 +383,16 @@
+ 				bailout(__LINE__);
+ 			while ((cd = fgets(pipebuf, sizeof(pipebuf), fd)))
+ 				if (cd != NULL && !quiet)
+-					(void)printf("%s: %s",
+-						alignstring(nodeptr->name, maxnodelen), cd);
++					(void)printf("%*s: %s",
++						-maxnodelen, nodeptr->name, cd);
+ 			fclose(fd);
+ 			fd = fdopen(nodeptr->err.fds[0], "r"); /* stderr */
+ 			if (fd == NULL)
+ 				bailout(__LINE__);
+ 			while ((cd = fgets(pipebuf, sizeof(pipebuf), fd)))
+ 				if (cd != NULL && !quiet)
+-					(void)printf("%s: %s",
+-						alignstring(nodeptr->name, maxnodelen), cd);
++					(void)printf("%*s: %s",
++						-maxnodelen, nodeptr->name, cd);
+ 			fclose(fd);
+ 			(void)wait(&status);
+ 			nodeptr = nodeptr->next;

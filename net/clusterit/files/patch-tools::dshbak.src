@@ -1,0 +1,24 @@
+--- tools/dshbak.src	Sat Apr  5 15:54:14 2003
++++ tools/dshbak.src	Sat Apr  5 15:52:53 2003
+@@ -1,7 +1,10 @@
+ #!@@@AWK@@@ -f
+ # $Id: dshbak.src,v 1.2 1999/05/05 09:20:45 garbled Exp $
+ # dshbak  *must have nawk or compatible*
+-BEGIN { LASTNODE="null" }
++BEGIN {
++  LASTNODE="null"
++  FS=":"
++}
+ {
+ 	if ($1 != LASTNODE) {
+ 		LASTNODE = $1
+@@ -9,8 +12,7 @@
+ 		gsub(/./,"-",FOO)
+ 		printf("-----%s\nNode %s\n-----%s\n", FOO, $1, FOO)
+ 	}
+-	sub(/:/,"!@#$!")
+-	sub(/^.*!@#$! /,"")
++	sub(/^[^:]*: /,"")
+ 	print $0
+ }
+ 	
