@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1995/07/15 23:45:37 torstenb Exp $
+# $Id: Makefile,v 1.64 1995/07/17 01:08:59 torstenb Exp $
 #
 
     SUBDIR += amanda
@@ -15,5 +15,7 @@ RESTRICTED += mmv               # restrictive copyright
     SUBDIR += recode
     SUBDIR += rman
     SUBDIR += screen
+    SUBDIR += tkinfo
+    SUBDIR += tkman
 
 .include <bsd.port.subdir.mk>
