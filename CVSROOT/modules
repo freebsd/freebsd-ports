@@ -6630,6 +6630,7 @@ rkinitd		src/eBones/libexec/rkinitd
 rkive		ports/news/rkive
 rlogin		src/usr.bin/rlogin
 rlogind		src/libexec/rlogind
+rlogview	ports/sysutils/rlogview
 rlpr		ports/print/rlpr
 rlwrap		ports/devel/rlwrap
 rlytest		ports/mail/rlytest
