@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssh
-PORTVERSION=	1.2.28 # Note, 1.2.30 is under a more restrictive license
+PORTVERSION=	1.2.29 # Note, 1.2.30 is under a more restrictive license
 PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/old/ \
