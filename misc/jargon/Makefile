@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	jargon
-PORTVERSION=	4.2.3
+PORTVERSION=	4.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/
 
-MAINTAINER=	s.moeding@ndh.net
+MAINTAINER=	sf@FreeBSD.org
 
 NO_BUILD=	YES
 
 FILES=		alternates.html awards.html download.html index.html \
-		jargbook.html jarghist.html jargon.html jargtxt.html \
-		mirroring.html mirrorlist.html quoting.html search.html \
-		submissions.html
+		jargbook.html jarghist.html jargon.html jargoogle.html \
+		jargtxt.html mirroring.html mirrorlist.html quoting.html \
+		related.html search.html submissions.html
 
 post-patch:
-	/usr/bin/perl -pi -e 's,/home/httpd/html,${PREFIX}/www/data,' ${WRKSRC}/jargon-search
+	${PERL} -pi -e 's,/home/httpd/html,${PREFIX}/www/data,' ${WRKSRC}/jargon-search
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/jargon-search ${PREFIX}/www/cgi-bin
