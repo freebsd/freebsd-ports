@@ -1,0 +1,54 @@
+--- ircd/res.c-	Fri Jan 21 20:57:31 2000
++++ ircd/res.c	Fri Jan 21 21:04:03 2000
+@@ -588,8 +588,7 @@
+ 	hp = (struct hent *)&(rptr->he);
+ 	adr = &hp->h_addr;
+ #ifdef INET6
+-	while (adr->s6_laddr[0] | adr->s6_laddr[1] | adr->s6_laddr[2] |
+-	       adr->s6_laddr[3])
++	while (!IN6_IS_ADDR_UNSPECIFIED(adr))
+ #else
+ 	while (adr->s_addr)
+ #endif
+@@ -667,9 +666,9 @@
+ 			if (type == T_AAAA)
+ 				bcopy(cp, (char *)&dr, dlen);
+ 			else {
+-				dr.s6_laddr[0]=dr.s6_laddr[1]=0;
+-				dr.s6_laddr[2]=htonl(0xffff);
+-				bcopy(cp, &dr.s6_laddr[3], INADDRSZ);
++				memset(&dr, 0, sizeof(dr));
++				dr.s6_addr[10] = dr.s6_addr[11] = 0xff;
++				bcopy(cp, &dr.s6_addr[12], INADDRSZ);
+ 			}
+ 			bcopy(dr.s6_addr, adr->s6_addr, IN6ADDRSZ);
+ #else
+@@ -1052,12 +1051,10 @@
+ 
+ #ifdef	DEBUG
+ #ifdef INET6
+-	Debug((DEBUG_INFO,"add_to_cache:added %s[%08x%08x%08x%08x] cache %#x.",
+-	       ocp->he.h_name,
+-	       ((struct in6_addr *)ocp->he.h_addr_list)->s6_laddr[0],
+-	       ((struct in6_addr *)ocp->he.h_addr_list)->s6_laddr[1],
+-	       ((struct in6_addr *)ocp->he.h_addr_list)->s6_laddr[2],
+-	       ((struct in6_addr *)ocp->he.h_addr_list)->s6_laddr[3], ocp));
++	inet_ntop(AF_INET6, ((struct in6_addr *)ocp->he.h_addr_list),
++	    mydummy, sizeof(mydummy));
++	Debug((DEBUG_INFO,"add_to_cache:added %s[%s] cache %#x.",
++	       ocp->he.h_name, mydummy, ocp);
+ #else
+ 	Debug((DEBUG_INFO, "add_to_cache:added %s[%08x] cache %#x.",
+ 		ocp->he.h_name, ocp->he.h_addr_list[0], ocp));
+@@ -1275,9 +1272,8 @@
+ #ifdef DEBUG
+ #ifdef INET6
+ 	Debug((DEBUG_DNS,
+-	       "find_cache_number:find %s[%08x%08x%08x%08x]: hashv = %d",
+-	       inet_ntop(AF_INET6, numb,mydummy,MYDUMMY_SIZE), ip->s6_laddr[0],
+-	       ip->s6_laddr[1], ip->s6_laddr[2], ip->s6_laddr[3], hashv));
++	       "find_cache_number:find %s: hashv = %d",
++	       inet_ntop(AF_INET6, numb, mydummy,MYDUMMY_SIZE), hashv));
+ #else
+ 	Debug((DEBUG_DNS,"find_cache_number:find %s[%08x]: hashv = %d",
+ 		inetntoa(numb), ntohl(ip->s_addr), hashv));

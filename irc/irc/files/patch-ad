@@ -1,0 +1,11 @@
+--- support/configure-	Thu Jan 13 02:56:11 2000
++++ support/configure	Thu Jan 13 02:56:32 2000
+@@ -4108,8 +4108,6 @@
+ 
+     case $irc_cv_v6type in
+ 	kame)
+-		LIBS="-L/usr/local/v6/lib -linet6 $LIBS"
+-		CFLAGS="$CFLAGS -I/usr/local/v6/include"
+ 		;;
+ 	linux)
+ 		LIBS="-L/usr/inet6/lib -linet6 $LIBS"

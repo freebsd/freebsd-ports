@@ -1,10 +1,11 @@
 bin/irc
-lib/ircd/users
-lib/ircd/opers
-lib/ircd/rejects
-lib/ircd/ircd.m4
-lib/ircd/example.conf
-sbin/ircd
+etc/rc.d/ircd.sh
+etc/ircd/iauth.conf
+etc/ircd/ircd.m4
+etc/ircd/example.conf
 sbin/chkconf
+sbin/ircd
 sbin/iauth
 sbin/ircd-mkpasswd
+sbin/ircdwatch
+@dirrm etc/ircd
