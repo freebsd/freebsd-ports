@@ -1,0 +1,13 @@
+--- panel-plugin/Makefile.in.orig	Fri Aug  1 12:37:32 2003
++++ panel-plugin/Makefile.in	Fri Aug  1 12:38:09 2003
+@@ -209,8 +209,8 @@
+ 	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f"; \
+-	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f; \
++	    echo " $(LIBTOOL) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f"; \
++	    $(LIBTOOL) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f; \
+ 	  else :; fi; \
+ 	done
+ 
