@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	kimwitu++
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://site.informatik.hu-berlin.de/kimwitu++/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
