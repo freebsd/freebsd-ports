@@ -48,7 +48,7 @@ post-extract:
 # workaround target (please delete after emacs-20.7-man-jp is released).
 pre-patch:
 	@(cd ${WRKSRC} && \
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-texinfmt.el.patch ; \
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-texinfmt.el.patch ; \
 	)
 
 post-patch:
