@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	wfa
-PORTVERSION=	3.0a
-MASTER_SITES=	ftp://fileplanet.ngi.it/fileplanet2/captured/weaponsfactory/quake3/ \
+PORTVERSION=	3.0b
+MASTER_SITES=	ftp://mirror1.planetice.net/pub/wfa/ \
+		ftp://mirror2.planetice.net/pub/wfa/ \
+		http://www.webplusdesign.com/downloads/ \
 		ftp://ftp.planet-multiplayer.de/pub/gamesmania/pm/q3a/win32/mods/weapon_factory/
-DISTFILES=	WFA-fSetup-v30.zip \
-		WFA-v30a-patch.zip
+DISTFILES=	WFA-fSetup-v30b.zip \
+		WFA-f30bMaps.zip
 
 EXTRACT_BEFORE_ARGS=	-o -qq
 
