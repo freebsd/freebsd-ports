@@ -4,6 +4,7 @@ share/doc/cvsweb/INSTALL
 share/doc/cvsweb/README
 share/doc/cvsweb/README.knu
 share/doc/cvsweb/TODO
+share/doc/cvsweb/TODO.knu
 @dirrm share/doc/cvsweb
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif

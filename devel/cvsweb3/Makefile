@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsweb
 PORTVERSION=	${REV_ZELLER}.${REV_KNU}
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
@@ -31,8 +32,13 @@ CVSROOT=	/home/cvs
 TITLE?=		My CVS Repository
 
 # Specify these directories in relative paths to ${PREFIX}.
+.if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
 ICONSDIR?=	share/apache/icons
+.else
+CGIDIR?=	www/cgi-bin
+ICONSDIR?=	www/icons
+.endif
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
@@ -54,7 +60,7 @@ do-install:
 	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cvsweb
-	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.knu TODO ${PREFIX}/share/doc/cvsweb/
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.knu TODO TODO.knu ${PREFIX}/share/doc/cvsweb/
 .endif
 
 post-install:
