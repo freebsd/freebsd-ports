@@ -1,8 +1,6 @@
---- sysdeps/freebsd/procmap.c.orig	Fri May 28 02:56:48 1999
-+++ sysdeps/freebsd/procmap.c	Sun Jan  2 16:24:43 2000
-@@ -33,7 +33,11 @@
- #include <sys/proc.h>
- #include <sys/resource.h>
+--- sysdeps/freebsd/procmap.c.orig	Thu May 27 13:56:48 1999
++++ sysdeps/freebsd/procmap.c	Wed Dec  6 21:51:47 2000
+@@ -35,3 +35,7 @@
  #include <vm/vm_object.h>
 +#if (__FreeBSD_version >= 400011)
 +#include <vm/vm.h>
@@ -10,8 +8,18 @@
  #include <vm/vm_prot.h>
 +#endif
  #include <vm/vm_map.h>
+@@ -94,3 +98,2 @@
+ 	struct inode inode;
+-	struct mount mount;
+ #endif
+@@ -253,7 +256,2 @@
+ 			glibtop_error_io_r (server, "kvm_read (inode)");
+-
+-		if (kvm_read (server->machine.kd,
+-			      (unsigned long) vnode.v_mount,
+-			      &mount, sizeof (mount)) != sizeof (mount))
+-			glibtop_error_io_r (server, "kvm_read (mount)");
  
- #include <sys/vnode.h>
 --- sysdeps/freebsd/sem_limits.c.orig	Sun Jan  2 16:32:20 2000
 +++ sysdeps/freebsd/sem_limits.c	Sun Jan  2 16:35:00 2000
 @@ -46,7 +46,7 @@
