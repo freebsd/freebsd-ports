@@ -99,7 +99,7 @@ Please select what additional KDE modules you would like to install.\n\n" \
 	## two files to get the delta and set that as shell variables.
 
 	if [ -s $tempselection ]; then
-		${CAT} $tempselection | ${SED} -E -e 's/[[:space:]]+/ /g' \
+		${CAT} $tempselection | ${SED} -E -e 's/KDEACCESS./KDEACCESSIBILITY/g' -e 's/[[:space:]]+/ /g' \
 		-e 's/"//g' | ${TR} '[:space:]' '\n' > $tempprocessed
 		set `/usr/bin/comm -23 $tempallmodules $tempprocessed`
 	fi
