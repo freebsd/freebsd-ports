@@ -16,8 +16,6 @@ COMMENT=	SSL/TLS plugin for Qt
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-BROKEN=		Incomplete pkg-plist
-
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -28,6 +26,7 @@ CONFIGURE_ARGS=	--qtdir=${X11BASE}
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
+PLIST_DIRS=	lib/plugins/crypto
 PLIST_FILES=	lib/plugins/crypto/libqca-tls.so
 
 .include <bsd.port.mk>
