@@ -9,7 +9,7 @@ PORTNAME=	avida
 PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
+MASTER_SITES=	http://dllab.caltech.edu/avida/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
