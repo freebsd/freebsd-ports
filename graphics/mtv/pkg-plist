@@ -1,0 +1,9 @@
+bin/mtv
+bin/mtvp
+share/mtv/LICENSE
+share/mtv/README
+share/mtv/README-Fullscreen
+share/mtv/README-mtv-redhat
+share/mtv/release-notes.html
+@unexec rm -f /compat/linux/usr/X11R6/lib/libforms.so.0.88
+@dirrm share/mtv

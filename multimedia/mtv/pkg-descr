@@ -1,0 +1,8 @@
+MpegTV Player (mtv) is a realtime software MPEG-1 Video+Audio Player
+and VCD Player. It supports full-screen mode, can play from file,
+pipe, network URL, or Video CD.
+
+Note that mtv is NOT free software. Please read the license information
+at http://www.mpegtv.com/player-license.txt before using.
+ 
+WWW: http://www.mpegtv.com/
