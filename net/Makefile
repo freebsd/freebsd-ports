@@ -31,6 +31,7 @@
     SUBDIR += bpft
     SUBDIR += brouted
     SUBDIR += cap
+    SUBDIR += cdpd
     SUBDIR += centericq
     SUBDIR += cflowd
     SUBDIR += choparp
