@@ -65,9 +65,11 @@ share/mysql/italian/errmsg.sys
 share/mysql/italian/errmsg.txt
 share/mysql/japanese/errmsg.sys
 share/mysql/japanese/errmsg.txt
+share/mysql/korean/errmsg.sys
+share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.16a-gamma.spec
+share/mysql/mysql-3.22.19b.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
