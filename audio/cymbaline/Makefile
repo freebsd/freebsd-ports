@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	0.9r
-PORTREVISION=	2
+PORTVERSION=	1.2b
+PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 
@@ -19,16 +19,21 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		aumix:${PORTSDIR}/audio/aumix
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cymbaline.py ${PREFIX}/bin/cymbaline
-.for file in ID3.py cycolors.py mp3.py
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
-.endfor
+USE_PYDISTUTILS=	yes
 
 .if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+PLIST_FILES=	bin/cymbaline
+
 post-install:
+	@${MV} -f ${PREFIX}/bin/cymbaline.py ${PREFIX}/bin/cymbaline
+	@${FIND} ${PYTHON_SITELIBDIR}/cypack ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/cypack -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
