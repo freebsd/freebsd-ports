@@ -1,0 +1,18 @@
+lib/libblacs.a
+lib/libblacsc.a
+lib/libblacsf77.a
+share/BLACS/TESTING/xCbtest_MPI-FreeBSD
+share/BLACS/TESTING/xFbtest_MPI-FreeBSD
+share/BLACS/TESTING/bsbr.dat
+share/BLACS/TESTING/bt.dat
+share/BLACS/TESTING/comb.dat
+share/BLACS/TESTING/sdrv.dat
+@dirrm share/BLACS/TESTING
+@dirrm share/BLACS
+%%PORTDOCS%%share/doc/blacs/blacs_install.ps.gz
+%%PORTDOCS%%share/doc/blacs/f77blacsqref.ps.gz
+%%PORTDOCS%%share/doc/blacs/mpi_prop.ps.gz
+%%PORTDOCS%%share/doc/blacs/cblacsqref.ps.gz
+%%PORTDOCS%%share/doc/blacs/lawn94.ps.gz
+%%PORTDOCS%%share/doc/blacs/mpiblacs_issues.ps.gz
+%%PORTDOCS%%@dirrm share/doc/blacs
