@@ -1,6 +1,8 @@
 FranTk (pronounced "frantic") is a library for building GUIs in Haskell. Its
 high level, provides good support for developing complex dynamic systems, and
-is built on top of Tcl-Tk.
+is built on top of Tcl-Tk. 
+ 
+FranTk works with ghc and hugs98.
 
 WWW: http://haskell.cs.yale.edu/FranTk/
 
