@@ -4,7 +4,7 @@
  
  ifeq ($(OS_ARCH),FreeBSD)
  ifdef IS_COMPONENT
-+ifeq (,$(filter i386,$(OS_TEST)))
++ifneq (,$(filter alpha,$(OS_TEST)))
 +EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic -lc
 +else
  EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
