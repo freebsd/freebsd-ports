@@ -24,8 +24,7 @@
 # WITHOUT_LIBID3TAG=yes
 
 PORTNAME=	vlc
-PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -35,7 +34,7 @@ COMMENT=	An X11 video streaming client/server solution
 LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		mad.2:${PORTSDIR}/audio/libmad \
-		avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
+		avcodec.0:${PORTSDIR}/${FFMPEG_PORT} \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
@@ -55,9 +54,9 @@ USE_GCC=	3.2
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS=-L${LOCALBASE}/lib WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
+CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-mad=${LOCALBASE} \
@@ -66,12 +65,18 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--enable-ffmpeg \
 		--with-ffmpeg=${LOCALBASE} \
 		--disable-libcdio \
+		--disable-skins2 \
 		--program-prefix="" \
 		--without-libintl-prefix \
 		--without-libiconv-prefix
 
 MAN1=		vlc.1 \
 		vlc-config.1
+
+FFMPEG_PORT?=	multimedia/ffmpeg
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	${CPPFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -208,6 +213,8 @@ PLIST_FILES+=	lib/vlc/liblivedotcom.a
 LIB_DEPENDS+=	speex.2:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 PLIST_FILES+=	lib/vlc/codec/libspeex_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-speex
 .endif
 
 .if defined(WITH_SVGALIB) && !defined(WITHOUT_SVGALIB)
@@ -236,16 +243,18 @@ CONFIGURE_ENV+=	LIBS="-L/usr/lib -lcipher"
 .endif
 
 .if ${ARCH} == "i386"
-PLIST_SUB+=	MMX=""
-.else
-PLIST_SUB+=	MMX="@comment "
+PLIST_FILES+=	lib/vlc/libi420_rgb_mmx.a lib/vlc/libi420_ymga_mmx.a \
+		lib/vlc/libi420_yuy2_mmx.a lib/vlc/libi422_yuy2_mmx.a \
+		lib/vlc/libmemcpy3dn.a lib/vlc/libmemcpymmx.a \
+		lib/vlc/libmemcpymmxext.a
 .endif
 
 .if ${OSVERSION} >= 502010
 BROKEN=		"conflicts with new threads architecture"
 .endif
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
+# libstdc++.a(eh_terminate.o): gp-relative relocation against dynamic symbol __cxxabiv1::__terminate_handler
+BROKEN=		"gp-relative relocation against dynamic symbol"
 .endif
 
 pre-everything::
@@ -256,7 +265,9 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/-lpthread-broken/' \
-		-e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
+		-e 's/-lc_r/${PTHREAD_LIBS}/' \
+		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
