@@ -8,15 +8,20 @@
 #
 
 DISTNAME=	ispell-3.1
-PKGNAME=	ispell-3.1.20
+PKGNAME=	ispell-3.1.20c
 CATEGORIES=	textproc elisp
-MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
-DISTFILES=	ispell-3.1.20.tar.gz
+MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
+		ftp://kdstevens.com/pub/stevens/
+DISTFILES=	ispell-3.1.20.tar.gz ${ISPELL_ELISP}
 
-PATCH_SITES=    ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-PATCHFILES=     ispell-html-mode.patch
+PATCH_SITES=    ftp://ftp.kiarchive.ru/pub/unix/text/ispell/ \
+		ftp://kdstevens.com/pub/stevens/
+PATCHFILES=     ispell-html-mode.patch texpatch-3.1.20c.gz
 
 MAINTAINER=	jmz@FreeBSD.org
+
+EXTRACT_ONLY=	ispell-3.1.20.tar.gz
+ISPELL_ELISP=	ispell.el-3.2.gz
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 MAN1=		ispell.1 sq.1
@@ -36,6 +41,7 @@ MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 munchlist.1\
 EXTRA_DICT=	francais-IREQ-1.4.tar.gz
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
 DISTFILES+=	${EXTRA_DICT}
+EXTRACT_ONLY+=	${EXTRA_DICT}
 .endif
 
 pre-extract:
@@ -45,6 +51,9 @@ pre-extract:
 	@${ECHO_MSG} '* typing "make british" following a "make clean"     *'
 	@${ECHO_MSG} '******************************************************'
 .endif
+
+post-extract:
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${ISPELL_ELISP} > ${WRKSRC}/ispell.el
 
 pre-configure:
 .if defined(EXTRA_DICT)
