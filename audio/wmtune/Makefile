@@ -8,11 +8,11 @@
 PORTNAME=	wmtune
 PORTVERSION=	1.0
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/ \
-		http://www.rostock.zgdv.de/~runge/radio/ \
-		http://www.soren.org/linux/wmtune/dl/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${WMTUNE_DIFF}
+MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/:diff \
+		http://www.rostock.igd.fhg.de/private/runge/radio/:wmtune \
+		http://www.soren.org/linux/wmtune/dl/:wmtune
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wmtune \
+		${WMTUNE_DIFF}:diff
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jedgar@FreeBSD.org
