@@ -67,7 +67,6 @@ do-extract:
 .for i in ${DISTFILES}
 	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 	${CHMOD} -R o-w ${WRKSRC}
-	${CHOWN} -R 0:0 ${WRKSRC}
 .endfor
 
 do-configure:
@@ -107,6 +106,7 @@ pre-install:
 do-install:
 	${MKDIR} ${FULL_INSTALL_DIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${FULL_INSTALL_DIR}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${FULL_INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${FULL_INSTALL_DIR}/
 
