@@ -1,0 +1,23 @@
+diff -u -r1.2 libjc.h
+--- jc-1.0.1/libjc/libjc.h	28 Feb 2004 04:20:48 -0000	1.2
++++ jc-1.0.1/libjc/libjc.h	10 Mar 2004 19:29:19 -0000
+@@ -33,7 +33,6 @@
+ #include <pwd.h>
+ #include <elf.h>
+ 
+-#include <ltdl.h>
+ #include <zlib.h>
+ 
+ #include <openssl/md5.h>
+diff -u -r1.3 structures.h
+--- jc-1.0.1/libjc/structures.h	23 Feb 2004 19:46:35 -0000	1.3
++++ jc-1.0.1/libjc/structures.h	10 Mar 2004 19:29:19 -0000
+@@ -466,7 +466,7 @@
+  */
+ struct _jc_native_lib {
+ 	char				*name;
+-	lt_dlhandle			handle;
++	void				*handle;
+ 	STAILQ_ENTRY(_jc_native_lib)	link;
+ };
+ 
