@@ -3,10 +3,10 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.48 1999/04/14 00:02:57 scrappy Exp $
+# $Id: Makefile,v 1.49 1999/04/18 10:47:03 dirk Exp $
 #
 
-DISTNAME=	mysql-3.22.21
+DISTNAME=	mysql-3.22.22
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
@@ -20,8 +20,8 @@ Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2
 
 MAN1=		mysql.1
 
-USE_PERL5=	YES
-GNU_CONFIGURE=	YES
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-perl \
 		--without-debug \
