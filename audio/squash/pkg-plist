@@ -1,0 +1,15 @@
+bin/collect_info.rb
+bin/edit_tag.rb
+bin/export_music.rb
+bin/import_music.rb
+bin/joystick.rb
+bin/squash
+bin/uncollect_info.rb
+etc/squash.conf
+%%RUBY_SITELIBDIR%%/musicdb_lib.rb
+%%DOCSDIR%%/FEATURES
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LOCKS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/USERS_GUIDE
+@dirrm %%DOCSDIR%%

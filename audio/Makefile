@@ -302,6 +302,7 @@
     SUBDIR += spiralsynthmodular
     SUBDIR += splay
     SUBDIR += splaytk
+    SUBDIR += squash
     SUBDIR += streamripper
     SUBDIR += streamtuner
     SUBDIR += streamtuner-live365
