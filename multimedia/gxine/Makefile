@@ -7,6 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -26,7 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MANLANG=	"" de
 MAN1=		gxine.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/browser-plugin//' ${WRKSRC}/Makefile.in
+post-install:
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	@${LN} -sf ${PREFIX}/lib/gxine/gxineplugin.so ${PREFIX}/lib/browser_plugins
 
 .include <bsd.port.mk>
