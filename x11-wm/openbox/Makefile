@@ -17,10 +17,6 @@ COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
-BROKEN=		"Does not install"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-16
-
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/openbox
 DOCS=		ABOUT-NLS AUTHORS CHANGELOG COPYING README TODO
@@ -79,7 +75,7 @@ pre-install:
 	${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
 	${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
 .endfor
-.for ii in gnome/wm-properties gnome
+.for ii in gnome/wm-properties gnome locale/ja/LC_MESSAGES
 	${ECHO_CMD} "@unexec rmdir %D/share/${ii} 2>/dev/null || true" \
 		>> ${PLIST}
 .endfor
@@ -94,10 +90,11 @@ pre-install:
 .endfor
 
 do-install:
+	${MKDIR} ${DATADIR} ${PREFIX}/share/gnome/wm-properties \
+		${PREFIX}/etc/openbox/xdg/openbox ${PREFIX}/include/openbox \
+		${PREFIX}/share/locale/ja/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/ja.mo \
 		${PREFIX}/share/locale/ja/LC_MESSAGES/openbox.mo
-	${MKDIR} ${DATADIR} ${PREFIX}/share/gnome/wm-properties \
-		${PREFIX}/etc/openbox/xdg/openbox ${PREFIX}/include/openbox
 .for ii in parser/parse render/theme render/render version
 	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox/
 .endfor
