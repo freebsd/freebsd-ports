@@ -11,4 +11,4 @@ data, and your program can selectively manipulate the data according to
 the relationships it cares about, not having to know about other connections
 represented in the data set.
 
-WWW: http://www.e4graph.com/e4graph/index.html
+WWW: http://e4graph.sourceforge.net/
