@@ -1,5 +1,5 @@
---- Makefile.inc.orig	Wed Feb  9 01:00:11 2000
-+++ Makefile.inc	Wed Feb  9 01:08:09 2000
+--- Makefile.inc.orig	Fri Feb 11 23:56:29 2000
++++ Makefile.inc	Fri Feb 11 23:57:56 2000
 @@ -2,10 +2,14 @@
  
  .include <bsd.obj.mk>
@@ -15,7 +15,7 @@
 +TCP_WRAPPERS?=	yes
 +.if !defined(MAKEFILE_INC_FIRST_PASS)
 +MAKEFILE_INC_FIRST_PASS=	0
-+CFLAGS+=	-I${PREFIX}/include ${INET6FLAGS}
++CFLAGS+=	-I${OPENSSLINC} ${INET6FLAGS}
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
  .endif
