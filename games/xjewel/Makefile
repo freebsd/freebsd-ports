@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1996/11/18 11:25:34 asami Exp $
+# $Id: Makefile,v 1.10 1997/01/03 09:37:17 obrien Exp $
 #
 
 DISTNAME=	xjewel-1.6
@@ -19,7 +19,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/xjewel.font
 	@${MKDIR} ${PREFIX}/man/man6
-	@(cd ${WRKSRC}/bitmaps/; ${INSTALL_DATA} seven_seg.pcf.Z fonts.dir \
+	@(cd ${WRKSRC}/bitmaps/; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
 		${PREFIX}/lib/xjewel.font)
 
 post-install:
