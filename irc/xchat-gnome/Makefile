@@ -30,7 +30,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-nls --disable-python
+CONFIGURE_ARGS=		--disable-python
 
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=	--enable-socks
