@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-btdownload
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.17
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnome2
+USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
 GNU_CONFIGURE=	yes
 
 MAN1=		gnome-btdownload.1
@@ -31,9 +31,12 @@ DOCS=		AUTHORS COPYING ChangeLog README
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/src/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' \
+		${WRKSRC}/share/desktop/gnome-btdownload.desktop
 
-.ifndef (NOPORTDOCS)
 post-install:
+	@${X11BASE}/bin/update-desktop-database
+.ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
