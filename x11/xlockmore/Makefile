@@ -16,6 +16,7 @@ MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-allow-root
 
 .if ${XFREE86_VERSION} >= 4
 post-configure:
-	${PERL} -pi -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
+	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 .endif
 
 .include <bsd.port.post.mk>
