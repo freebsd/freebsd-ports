@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.2.b
+PORTVERSION=		2.2.4
 PORTREVISION=		${OPENLDAP_PORTVERSION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -24,9 +24,8 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
 			http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
-MASTER_SITE_SUBDIR=	openldap-test
+MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
-DISTNAME=		${PORTNAME}-${PORTVERSION:S/.b/beta/}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		eik@FreeBSD.org
@@ -57,7 +56,7 @@ OPENLDAP_PORTVERSION=	0
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.2:${PORTSDIR}/net/openldap22-client
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-client
 CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].*
 .endif
 
@@ -122,9 +121,12 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-null \
 			--enable-monitor
 
-WITH_BDB_VER?=		41
+WITH_BDB_VER?=		42
 
-.if ${WITH_BDB_VER} == 41
+.if ${WITH_BDB_VER} == 42
+LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS+=	--enable-bdb
+.elif ${WITH_BDB_VER} == 41
 LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--enable-bdb
 .elif ${WITH_BDB_VER} == 4
@@ -134,9 +136,13 @@ CONFIGURE_ARGS+=	--disable-bdb
 LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
 CONFIGURE_ARGS+=	--disable-bdb
 .else
-.error WITH_BDB_VER must be 3, 4 or 41
+.error WITH_BDB_VER must be 3, 4, 41 or 42
 .endif
+.if ${WITH_BDB_VER} == 42
+LIBS+=			-ldb-4.2
+.else
 LIBS+=			-ldb${WITH_BDB_VER}
+.endif
 CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
 
 .if defined(WITH_SHELL)
@@ -223,7 +229,7 @@ pre-everything::
 .if defined(CLIENT_ONLY)
 	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 support"
 .else
-	@${ECHO} "WITH_BDB_VER          select BerkeleyDB version (default 4.1)"
+	@${ECHO} "WITH_BDB_VER          select BerkeleyDB version (default 42)"
 	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 password verification"
 	@${ECHO} "WITH_PERL             with Perl backend"
 	@${ECHO} "WITH_SHELL            with Shell backend"
@@ -237,7 +243,7 @@ pre-everything::
 	@${ECHO}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/slapd\.,${LDAP_RUN_DIR}/slapd.,g' \
+	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
 		${WRKSRC}/servers/slapd/slapd.conf
 
 pre-configure:

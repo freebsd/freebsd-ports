@@ -8,7 +8,7 @@ This package includes the following major components:
  * LDAP tools - A collection of command line LDAP utilities
  * documentation - man pages for all components
 
-This release is meant for testing purposes only, it is not for general use.
+This is the latest release of OpenLDAP Software for general use.
 
 WWW: http://www.OpenLDAP.org/
 
