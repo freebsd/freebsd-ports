@@ -1,0 +1,11 @@
+--- src/keymap.c	Thu Aug  3 13:26:37 2000
++++ src/keymap.c	Sat Apr 14 00:12:27 2001
+@@ -916,6 +916,8 @@
+ 		snprintf(buff, sizeof(buf) - 1, "%s/.tin/keymap.%s", ptr2, map);
+ 		if (strfpath (buff, buf, sizeof(buf), &CURR_GROUP))
+ 			fp = fopen (buf, "r");
++		if (ptr)
++			*ptr = '.';
+ 	}
+ 	if (!fp) {
+ 		snprintf(buff, sizeof(buf) - 1, "%s/.tin/keymap", ptr2);
