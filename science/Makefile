@@ -7,6 +7,7 @@
     SUBDIR += abinit
     SUBDIR += at
     SUBDIR += bblimage
+    SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdcl-gtk
     SUBDIR += chemtool

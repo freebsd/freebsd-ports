@@ -1,0 +1,12 @@
+include/bdd.h
+include/bvec.h
+include/fdd.h
+lib/libbdd.a
+lib/libbdd.so
+lib/libbdd.so.0
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/bddnotes.ps
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/buddy.ps
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/tech.txt
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
