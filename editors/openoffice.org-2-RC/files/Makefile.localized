@@ -77,6 +77,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "hi-IN"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "hu"
 CATEGORIES=     hungarian
 LANG_PKGNAME=	${LOCALIZED_LANG}
@@ -103,6 +107,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "lt"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ms"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################

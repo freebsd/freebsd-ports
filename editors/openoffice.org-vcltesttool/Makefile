@@ -11,28 +11,27 @@ CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:mozprj \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.7b/src/&,}:mozsrc
-DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}source/:mozsrc
+DISTFILES+=	OOo_${RELEASE_NR}.m${MILESTONE}_src.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${RELEASE_NR}.m${MILESTONE}_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050211
+SNAPDATE=	20050217
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
-MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
-MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
+MOZILLA_PROJECT=	cws_srx645_mozooo.20050212.tar.gz
+MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
+MOZILLA_VERSION=	1.7.5
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_PROJECT}:mozprj ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
 .endif
 
-USE_PERL5=	yes
-#USE_BISON=	yes #this bison should be later than bison1.875a
-USE_REINPLACE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
@@ -49,7 +48,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		78
+MILESTONE=		79
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -97,14 +96,14 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/OOo_${RELEASE_NR}.m${MILESTONE}_src
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
-NUMOFPROCESSES?=	8
+NUMOFPROCESSES?=	1
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
 
@@ -135,19 +134,20 @@ post-extract:
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
 .if !defined(WITHOUT_MOZILLA)
-	@cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
-	@${MKDIR} ${WRKSRC}/moz/download
+	@cd ${WRKSRC} ; ${RM} -rf moz ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
-	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#%%NUMOFPROCESSES%%#${NUMOFPROCESSES}#g' ${WRKSRC}/config_office/makefile.rc
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-#DEFAULT_TO_ENGLISH_FOR_PACKING=yes, see #iz 35659, 34269 and 36708
 .if !defined(WITHOUT_MOZILLA)
-	@cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
+	@cd ${WRKSRC}/moz ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; deliver.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
+#DEFAULT_TO_ENGLISH_FOR_PACKING=yes, see #iz 35659, 34269 and 36708
+	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake'
 
 do-install:
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.sw > ${WRKDIR}/INSTALLFILES
