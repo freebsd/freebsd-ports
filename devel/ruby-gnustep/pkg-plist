@@ -63,12 +63,12 @@
 %%RUBY_SITELIBDIR%%/rigs/NSWindow.rb
 %%RUBY_SITEARCHLIBDIR%%/librigs.so
 @dirrm %%RUBY_SITELIBDIR%%/rigs
-GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.2.1
-GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0
-GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
-@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%% 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%% 2> /dev/null || true
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%librigs.so.0.2.1
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%librigs.so.0
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%librigs.so
+%%GNUSTEP_STABLE%%@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu 2> /dev/null || true
+%%GNUSTEP_STABLE%%@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%% 2> /dev/null || true
+%%GNUSTEP_STABLE%%@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%% 2> /dev/null || true
 @unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries 2> /dev/null || true
 @unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Headers 2> /dev/null || true
 @unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%% 2> /dev/null || true
