@@ -29,7 +29,7 @@ MAN1=		mailq.1 newaliases.1 vacation.1
 MAN5=		aliases.5
 MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8
-LDAP_PORT?=	net/openldap20-client
+LDAP_PORT?=	net/openldap21-client
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
