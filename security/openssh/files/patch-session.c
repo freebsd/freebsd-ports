@@ -1,5 +1,5 @@
---- session.c.orig	Thu Oct 17 05:36:12 2002
-+++ session.c	Thu Oct 17 05:46:14 2002
+--- session.c.orig	Mon Mar 31 16:16:15 2003
++++ session.c	Mon Mar 31 16:18:09 2003
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -14,7 +14,7 @@
  /* func */
  
  Session *session_new(void);
-@@ -419,6 +426,9 @@
+@@ -421,6 +428,9 @@
  do_exec_no_pty(Session *s, const char *command)
  {
  	pid_t pid;
@@ -24,7 +24,7 @@
  
  #ifdef USE_PIPES
  	int pin[2], pout[2], perr[2];
-@@ -437,6 +447,20 @@
+@@ -439,6 +449,20 @@
  	if (s == NULL)
  		fatal("do_exec_no_pty: no session");
  
@@ -45,7 +45,7 @@
  	session_proctitle(s);
  
  	/* Fork the child. */
-@@ -447,6 +471,13 @@
+@@ -449,6 +473,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -59,7 +59,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -641,6 +672,18 @@
+@@ -643,6 +674,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -78,7 +78,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -663,10 +706,97 @@
+@@ -665,10 +708,97 @@
  		    options.verify_reverse_mapping),
  		    (struct sockaddr *)&from, fromlen);
  
@@ -177,7 +177,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -677,7 +807,30 @@
+@@ -679,7 +809,30 @@
  			    s->hostname);
  	}
  
@@ -209,7 +209,7 @@
  }
  
  /*
-@@ -693,9 +846,9 @@
+@@ -695,9 +848,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -221,7 +221,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -722,10 +875,10 @@
+@@ -724,10 +877,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -234,7 +234,7 @@
  	return 0;
  }
  
-@@ -816,12 +969,39 @@
+@@ -818,12 +971,39 @@
  	fclose(f);
  }
  
@@ -266,7 +266,7 @@
  {
  	char buf[256];
  	u_int i, envsize;
- 	char **env;
+ 	char **env, *laddr;
 +#ifdef HAVE_LOGIN_CAP
 +	extern char **environ;
 +	char **senv, **var;
@@ -274,7 +274,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -829,6 +1009,11 @@
+@@ -831,6 +1011,11 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -286,7 +286,7 @@
  	if (!options.use_login) {
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
-@@ -849,9 +1034,21 @@
+@@ -851,9 +1036,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -310,7 +310,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -900,6 +1097,10 @@
+@@ -903,6 +1100,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -321,7 +321,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -1018,7 +1219,7 @@
+@@ -1025,7 +1226,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -330,7 +330,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1058,6 +1259,36 @@
+@@ -1065,6 +1266,36 @@
  	exit(1);
  }
  
@@ -367,7 +367,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1136,7 +1367,7 @@
+@@ -1148,7 +1379,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -376,7 +376,7 @@
  		close(i);
  
  	/*
-@@ -1166,6 +1397,31 @@
+@@ -1178,6 +1409,31 @@
  			exit(1);
  #endif
  	}
