@@ -1,0 +1,111 @@
+--- ./gnome-terminal/gnome-terminal.c.jpterm	Sun Jul 16 20:02:36 2000
++++ ./gnome-terminal/gnome-terminal.c	Sun Oct 29 18:54:51 2000
+@@ -47,7 +47,7 @@
+ 
+ char **env;
+ 
+-#define DEFAULT_FONT "-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1"
++#define DEFAULT_FONT "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*"
+ #define EXTRA 6
+ 
+ /* is there pixmap compiled into zvt */
+@@ -93,6 +93,7 @@
+ 	int scroll_out       :1;       		/* Scroll on output? */
+ 	int swap_keys        :1;       		/* Swap DEL/Backspace? */
+ 	int login_by_default :1;                /* do --login as default */
++ 	int use_im           :1;		/* Open XInput Method */         
+ #ifdef ZVT_BACKGROUND_SCROLL
+ 	int scroll_background:1; 		/* background will scroll */
+ #endif
+@@ -145,6 +146,7 @@
+ 	GtkWidget *swapkeys_checkbox;
+ 	GtkWidget *login_by_default_checkbox;
+ 	GtkWidget *use_bold_checkbox;
++ 	GtkWidget *use_im_checkbox;
+ 	GtkWidget *wordclass_entry;
+ 	GtkWidget *pixmap_checkbox;
+ 	GtkWidget *pixmap_file_entry;
+@@ -296,7 +298,7 @@
+ 	char *s;
+ 	GdkFont *font;
+ 
+-	font = gdk_font_load (font_name);
++	font = gdk_fontset_load (font_name);
+ 	if (font) {
+ #ifdef ZVT_TERM_EMBOLDEN_SUPPORT
+ 		if (zvt_term_get_capabilities(term) & ZVT_TERM_EMBOLDEN_SUPPORT &&
+@@ -515,6 +517,7 @@
+ 
+ 	cfg->login_by_default  = gnome_config_get_bool ("login_by_default=0");
+ 	cfg->use_bold          = gnome_config_get_bool ("use_bold=true");
++	cfg->use_im            = gnome_config_get_bool ("use_im=true");
+ 
+ #ifdef ZVT_BACKGROUND_SCROLL
+ 	cfg->scroll_background = gnome_config_get_bool ("scroll_background=0");
+@@ -579,6 +582,7 @@
+ 	newcfg->bell           = GTK_TOGGLE_BUTTON (prefs->bell_checkbox)->active;
+ 	newcfg->blink          = GTK_TOGGLE_BUTTON (prefs->blink_checkbox)->active;
+ 	newcfg->swap_keys      = GTK_TOGGLE_BUTTON (prefs->swapkeys_checkbox)->active;
++ 	newcfg->use_im         = GTK_TOGGLE_BUTTON (prefs->use_im_checkbox)->active;
+ 	newcfg->menubar_hidden = GTK_TOGGLE_BUTTON (prefs->menubar_checkbox)->active;
+ 	newcfg->scroll_out     = GTK_TOGGLE_BUTTON (prefs->scroll_out_checkbox)->active;
+ 	newcfg->scroll_key     = GTK_TOGGLE_BUTTON (prefs->scroll_kbd_checkbox)->active;
+@@ -669,6 +673,7 @@
+ 	zvt_term_set_scroll_on_output (term, cfg->scroll_out);
+ 	zvt_term_set_scrollback (term, cfg->scrollback);
+ 	zvt_term_set_del_key_swap (term, cfg->swap_keys);
++ 	zvt_term_set_open_im (term, cfg->use_im);
+ 
+ 	if (zvt_pixmap_support && cfg->background_pixmap) {
+ 		int flags;
+@@ -996,7 +1001,8 @@
+ 	BELL_ROW        = 4,
+ 	SWAPKEYS_ROW    = 5,
+ 	LOGIN_ROW       = 5,
+-	WORDCLASS_ROW	= 6,
++	USE_IM_ROW      = 6,
++	WORDCLASS_ROW	= 7,
+ 	BACKGROUND_ROW	= 1,
+ 	PIXMAP_FILE_ROW	= 2,
+ 	SHADED_ROW      = 4,
+@@ -1033,6 +1039,7 @@
+ 	gnome_config_set_bool   ("swap_del_and_backspace", cfg->swap_keys);
+ 	gnome_config_set_bool   ("login_by_default", cfg->login_by_default);
+ 	gnome_config_set_bool   ("use_bold", cfg->use_bold);
++	gnome_config_set_bool   ("use_im", cfg->use_im);
+ 	gnome_config_set_int    ("scrollbacklines", cfg->scrollback);
+ 	gnome_config_set_int    ("color_set", cfg->color_set);
+ 	if (cfg->color_type>=4)
+@@ -1243,6 +1250,15 @@
+ 	gtk_table_attach (GTK_TABLE (table), prefs->login_by_default_checkbox,
+ 			  2, 3, LOGIN_ROW, LOGIN_ROW+1, GTK_FILL, 0, 0, 0);
+ 
++	/* Use XInput Method */
++	prefs->use_im_checkbox = gtk_check_button_new_with_label (_("Open IM(input method)"));
++	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->use_im_checkbox),
++				     cfg->use_im ? 1 : 0);
++	gtk_signal_connect (GTK_OBJECT (prefs->use_im_checkbox), "toggled",
++			    GTK_SIGNAL_FUNC (prop_changed), prefs);
++	gtk_table_attach (GTK_TABLE (table), prefs->use_im_checkbox,
++			  2, 3, USE_IM_ROW, USE_IM_ROW+1, GTK_FILL, 0, GNOME_PAD, GNOME_PAD);
++
+ 	/* Word selection class */
+ 	l = aligned_label (_("Select-by-word characters"));
+ 	gtk_table_attach (GTK_TABLE (table), l,
+@@ -1556,7 +1572,7 @@
+ 	GdkEvent *event;
+ 	gint32 time;
+ 	
+-	string_atom = gdk_atom_intern ("STRING", FALSE);
++	string_atom = gdk_atom_intern ("COMPOUND_TEXT", FALSE);
+ 	if (string_atom == GDK_NONE)
+ 		return;
+ 
+@@ -2233,6 +2249,7 @@
+ 	}
+ 
+ 	set_color_scheme (term, cfg);
++ 	zvt_term_set_open_im (term, cfg->use_im);
+ 
+ 	XSync(GDK_DISPLAY(), False);
+ 
