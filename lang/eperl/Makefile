@@ -1,12 +1,12 @@
 # New ports collection makefile for:	eperl
-# Version required:	2.2.5
-# Date created:		Wed Sep  3 12:31:36 MET DST 1997
+# Version required:	2.2.6
+# Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.13 1997/09/01 14:11:02 rse Exp $
+# $Id: Makefile,v 1.14 1997/09/03 10:31:41 rse Exp $
 #
 
-DISTNAME=	eperl-2.2.5
+DISTNAME=	eperl-2.2.6
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.engelschall.com/sw/eperl/distrib/ \
@@ -19,7 +19,7 @@ MAINTAINER=	rse@engelschall.com
 # INSTALL_ALSO_AS_SSSL
 #	install ePerl also as a Server-Side
 #	Scripting Language (SSSL) for Apache
-INSTALL_ALSO_AS_SSSL=	no
+#INSTALL_ALSO_AS_SSSL=	yes
 
 .if defined(INSTALL_ALSO_AS_SSSL)
 RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
