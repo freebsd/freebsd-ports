@@ -4,6 +4,7 @@ bin/razor-client
 bin/razor-report
 bin/razor-revoke
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm.orig
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client/Config.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client/Core.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client/Engine.pm
@@ -21,8 +22,17 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc/enBase64.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Signature/Ephemeral.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Syslog.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Syslog/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Syslog
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Signature
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Client
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2
