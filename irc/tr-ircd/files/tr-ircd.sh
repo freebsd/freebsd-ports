@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+case "$1" in
+start)
+	[ -x ${PREFIX}/bin/ircd ] && ${PREFIX}/bin/ircd > /dev/null && echo -n ' tr-ircd'
+	;;
+stop)
+	[ -r /var/run/ircd.pid ] && kill `cat /var/run/ircd.pid` && rm /var/run/ircd.pid && echo -n ' tr-ircd' 
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0
