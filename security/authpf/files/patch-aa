@@ -1,0 +1,27 @@
+*** ./authpf/Makefile				Thu Apr 17 04:17:07 2003
+--- ./authpf/Makefile				Fri May  9 17:07:32 2003
+***************
+*** 3,15 ****
+  PROG=	authpf
+  MAN=	authpf.8
+  BINOWN= root
+! BINGRP= wheel
+  BINMODE= 6555
+! .if defined(PREFIX) && !empty(PREFIX)
+! BINDIR= ${PREFIX}/libexec
+! .else
+! BINDIR= /usr/libexec
+! .endif
+  SRCS=	authpf.c parse.y pfctl_parser.c pf_print_state.c pfctl_altq.c
+  SRCS+=	pfctl_radix.c
+  #CFLAGS+= -I${.CURDIR}/../../sbin/pfctl -Wall -Werror
+--- 3,11 ----
+  PROG=	authpf
+  MAN=	authpf.8
+  BINOWN= root
+! BINGRP= authpf
+  BINMODE= 6555
+! BINDIR= ${PREFIX}/sbin
+  SRCS=	authpf.c parse.y pfctl_parser.c pf_print_state.c pfctl_altq.c
+  SRCS+=	pfctl_radix.c
+  #CFLAGS+= -I${.CURDIR}/../../sbin/pfctl -Wall -Werror

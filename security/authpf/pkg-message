@@ -1,0 +1,11 @@
+===========================================================================
+Please note that authpf requires suid bit! Take a look at the man page NOW
+authpf(8) and create the following files according to your needs:
+
+	%%PREFIX%%/etc/authpf/authpf.conf
+	%%PREFIX%%/etc/authpf/authpf.allow
+	%%PREFIX%%/etc/authpf/authpf.rules
+	%%PREFIX%%/etc/authpf/authpf.message
+	%%PREFIX%%/etc/authpf/authpf.problem
+
+===========================================================================
