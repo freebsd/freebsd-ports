@@ -12,9 +12,13 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clefevre@citeweb.net
 
 GNU_CONFIGURE=	yes
+
+USE_GMAKE=	yes
+# PREFIX isn't honored. force it w/ prefix.
+MAKE_ARGS=	prefix="${PREFIX}"
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/stow ${PREFIX}/bin
