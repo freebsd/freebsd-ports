@@ -17,6 +17,7 @@
     SUBDIR += geda-symcheck
     SUBDIR += geda-utils
     SUBDIR += gerbv
+    SUBDIR += gmsh
     SUBDIR += gnetlist
     SUBDIR += gnucap
     SUBDIR += gschem

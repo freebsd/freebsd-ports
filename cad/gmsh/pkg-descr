@@ -1,0 +1,14 @@
+Gmsh is an automatic 3D finite element mesh generator (primarily 
+Delaunay) with build-in CAD and post-processing facilities. Its primal 
+design goal is to provide a simple meshing tool for academic test cases 
+with parametric input and up to date visualization capabilities. One of 
+its strengths is the ability to respect a characteristic length field for 
+the generation of adapted meshes on lines, surfaces and volumes, and to 
+mix these meshes with simple structured grids. 
+
+Gmsh is built around four modules: geometry, mesh, solver and 
+post-processing. The specification of any input to these modules is done 
+either interactively using the graphical user interface or in ASCII text 
+files using Gmsh's own scripting language.
+
+WWW:  http://www.geuz.org/gmsh/
