@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%DATADIR%%/%%DISTNAME%%
+@unexec rmdir %D/%%DATADIR%% || true
