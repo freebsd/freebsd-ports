@@ -7721,6 +7721,7 @@ p5-PDFLib	ports/print/p5-PDFLib
 p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
 p5-PHP-Session	ports/www/p5-PHP-Session
+p5-PLP		ports/www/p5-PLP
 p5-POE		ports/devel/p5-POE
 p5-POE-API-Hooks	ports/devel/p5-POE-API-Hooks
 p5-POE-API-Peek	ports/devel/p5-POE-API-Peek
