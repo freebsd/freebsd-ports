@@ -12,7 +12,6 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pwlib_min_1.14.tar.gz
 
@@ -20,6 +19,7 @@ MAINTAINER=	roger@freebsd.org
 
 WRKSRC=         ${WRKDIR}/openh323
 
+USE_BISON
 USE_GMAKE=      yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
