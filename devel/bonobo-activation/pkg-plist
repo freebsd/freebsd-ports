@@ -18,6 +18,7 @@ include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-server-info.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-shlib.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-version.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation.h
+lib/libbonobo-activation.a
 lib/libbonobo-activation.so
 lib/libbonobo-activation.so.4
 libdata/bonobo/servers/Bonobo_CosNaming_NamingContext.server
