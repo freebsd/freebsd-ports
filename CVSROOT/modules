@@ -3220,6 +3220,7 @@ hmap		ports/security/hmap
 hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
 hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
+hohlin		ports/games/hohlin
 holyshout	ports/audio/holyshout
 honeyd		ports/net/honeyd
 hope		ports/lang/hope
