@@ -2,6 +2,8 @@ bin/glunarclock
 etc/CORBA/servers/glunarclock.gnorba
 share/gnome/applets/Clocks/glunarclock.desktop
 share/gnome/pixmaps/glunarclock-logo.png
-share/gnome/pixmaps/glunarclock/cartoonmoon_13frames.png
+share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/gnome/pixmaps/glunarclock/moon_60frames.png
+share/locale/de/LC_MESSAGES/glunarclock.mo
+share/locale/fr/LC_MESSAGES/glunarclock.mo
 @dirrm share/gnome/pixmaps/glunarclock
