@@ -17,7 +17,6 @@ bin/ewmconf
 bin/eworkpanel
 bin/glob
 bin/startede
-share/ede/.ede/desktop/Internet.desktop
 share/ede/.ede/desktop/Terminal.desktop
 share/ede/.ede/ede.conf
 share/ede/.ede/efltk.conf
