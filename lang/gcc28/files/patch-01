@@ -1,5 +1,5 @@
---- config/i386/freebsd.h.orig	Sun Oct 19 09:31:05 1997
-+++ config/i386/freebsd.h	Tue Aug 11 14:28:56 1998
+--- config/i386/freebsd-aout.h.orig	Sun Oct 19 09:31:05 1997
++++ config/i386/freebsd-aout.h	Tue Aug 11 14:28:56 1998
 @@ -35,10 +35,21 @@
  #include "i386/perform.h"
  
