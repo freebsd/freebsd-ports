@@ -1,3 +1,4 @@
+bin/rhtv-config
 include/rhtvision/cl/dir.h
 include/rhtvision/cl/dirent.h
 include/rhtvision/cl/fnmatch.h
@@ -83,6 +84,7 @@ include/rhtvision/tv/menuview.h
 include/rhtvision/tv/mnoselct.h
 include/rhtvision/tv/msgbox.h
 include/rhtvision/tv/no_mss.h
+include/rhtvision/tv/nointl.h
 include/rhtvision/tv/nscoll.h
 include/rhtvision/tv/nssorcol.h
 include/rhtvision/tv/object.h
@@ -93,6 +95,7 @@ include/rhtvision/tv/osclipboard.h
 include/rhtvision/tv/otstream.h
 include/rhtvision/tv/palette.h
 include/rhtvision/tv/parmtext.h
+include/rhtvision/tv/parttree.h
 include/rhtvision/tv/point.h
 include/rhtvision/tv/preadobj.h
 include/rhtvision/tv/program.h
@@ -111,6 +114,7 @@ include/rhtvision/tv/searchrc.h
 include/rhtvision/tv/sitem.h
 include/rhtvision/tv/sortcoll.h
 include/rhtvision/tv/sortlibo.h
+include/rhtvision/tv/ssc_streams.h
 include/rhtvision/tv/statsdef.h
 include/rhtvision/tv/statsitm.h
 include/rhtvision/tv/statslin.h

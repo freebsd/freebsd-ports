@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhtvision
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11_ONLY=""
+CFLAGS+=	-I${X11BASE}/include
 .else
 PLIST_SUB+=	X11_ONLY="@comment "
 
@@ -34,10 +35,11 @@ pre-configure:
 .endif
 
 post-patch:
-.for f in config.pl confignt.pl conflib.pl linux/compress \
-	linuxso/makemak.in linuxso/makemak.pl Makefile.in
+.for f in config.pl confignt.pl conflib.pl linux/compress Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' \
-		-e 's/\(soname.*\)intver/\1extver/g' \
+		-e 's,/usr/local,${LOCALBASE},g' \
+		-e 's,/usr/X11R6,${X11BASE},g' \
+		-e 's,\(soname.*\)Version,\1VersionMajor,g' \
 		-e 's/\tmake/\t\\$$(MAKE)/g' \
 		-e 's/	make/	$$(MAKE)/g' \
 		${WRKSRC}/${f}
