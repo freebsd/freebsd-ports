@@ -1,0 +1,40 @@
+--- audioIO_Linux.c.orig	Sat Oct 24 22:22:41 1998
++++ audioIO_Linux.c	Wed Oct 28 01:27:43 1998
+@@ -26,7 +26,7 @@
+ 
+ /* optimal fragment size */
+ 
+-#ifndef OS_FreeBSD
++#ifndef OS_BSD
+ int AUSIZ = 0;
+ #endif
+ 
+@@ -44,7 +44,7 @@
+ void
+ audioOpen(int frequency, int stereo, int volume)
+ {
+-	#ifdef OS_FreeBSD
++	#ifdef OS_BSD
+ 	int temp;
+ 	#endif
+ 	int supportedMixers, play_format=AFMT_S16_LE;
+@@ -83,7 +83,7 @@
+ 	if (volume != -1)
+ 		audioSetVolume(volume);
+ 
+-#ifdef OS_FreeBSD
++#ifdef OS_BSD
+ 	temp = AUSIZ;
+ 	if (ioctl(audio_fd, SNDCTL_DSP_GETBLKSIZE, &temp) == -1)
+ #else
+--- buffer.c.orig	Wed Oct 28 01:26:57 1998
++++ buffer.c	Wed Oct 28 01:27:05 1998
+@@ -31,7 +31,7 @@
+ #include "audio.h"
+ 
+ #ifndef OS_SunOS
+-#ifndef OS_FreeBSD
++#ifndef OS_BSD
+ extern int AUSIZ;
+ #endif
+ #endif

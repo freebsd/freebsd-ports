@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Oct 28 00:22:43 1998
++++ Makefile.in	Wed Oct 28 00:23:24 1998
+@@ -3,7 +3,7 @@
+ #DEBUG = -DDEBUG
+ 
+ # Make sure the path is correct!
+-GTK-CONFIG = "gtk-config"
++GTK-CONFIG = "gtk11-config"
+ 
+ # ---- @OS_TYPE@/@ARCH_TYPE@ ----
+ 
