@@ -9,14 +9,11 @@ PORTNAME=	libjtree
 PORTVERSION=	1.1.7
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
-		ftp://ftp.uniovi.es/pub/unix/mail/
+MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	JTree_source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An additional library for the JX widget library
-
-BROKEN=		Unfetchable
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
 BUILD_DEPENDS=	makemake:${JXPORT}
