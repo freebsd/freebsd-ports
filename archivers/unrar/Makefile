@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	ache
 MAINTAINER=	ache@FreeBSD.org
 
 NO_WRKSUBDIR=	Yes
+NO_LATEST_LINK= yes
 
 do-build:
 	cd ${WRKSRC} && \
