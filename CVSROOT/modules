@@ -2015,6 +2015,7 @@ gensig		ports/mail/gensig
 gentoo		ports/x11-fm/gentoo
 geomview	ports/graphics/geomview
 geotrace	ports/net/geotrace
+geramik		ports/x11-toolkits/geramik
 gerbv		ports/cad/gerbv
 getNAME		src/libexec/getNAME
 geta		ports/net/geta
