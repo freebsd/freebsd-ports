@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -28,6 +28,7 @@ do-install:
 		${MKDIR} ${PREFIX}/$${dir}; \
 		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
 	done
+	${TOUCH} -f ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 	@${CHMOD} +x ${PREFIX}/etc/gdm/Sessions/.keep_me
 
 .include <bsd.port.mk>
