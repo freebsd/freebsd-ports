@@ -1,22 +1,5 @@
 *** pine/init.c.orig	Tue Jan 26 21:57:56 1999
 --- pine/init.c	Tue Feb  9 22:14:08 1999
-***************
-*** 326,332 ****
-  
-  /*----------------------------------------------------------------------
-  These are the variables that control a number of pine functions.  They
-! come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
-  be set by the user while in Pine.  Eventually all the local ones should
-  be so and maybe the global ones too.
-  
---- 326,332 ----
-  
-  /*----------------------------------------------------------------------
-  These are the variables that control a number of pine functions.  They
-! come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
-  be set by the user while in Pine.  Eventually all the local ones should
-  be so and maybe the global ones too.
-
 *** pico/edef.h.orig	Thu Apr 23 02:53:44 1998
 --- pico/edef.h	Tue Feb  9 22:14:08 1999
 ***************
