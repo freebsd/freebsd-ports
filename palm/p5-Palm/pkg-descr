@@ -9,7 +9,7 @@ applications (Address, Datebook, Mail, Memo, ToDo).
 	These modules were written to support ColdSync, a Palm
 synchronization tool for Unix. See details at
 
-WWW: http://www.ooblick.com/software/coldsync/
+WWW: http://www.coldsync.org/
 
 - Andrew Arensburger
 arensb@ooblick.com
