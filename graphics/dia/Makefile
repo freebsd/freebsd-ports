@@ -7,18 +7,19 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.88.1
+PORTREVISION=	1
 CATEGORIES+=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMELIBS=	yes
-WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
@@ -27,13 +28,18 @@ MAN1=		dia.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
+.if exists(${X11BASE}/bin/panel) || defined(WITH_GNOME)
 USE_GNOME=	yes
-CONFIGURE_ARGS=	--enable-gnome
-PLIST_SUB+=	DIAHELP="help/dia"
+PKGNAMESUFFIX=	-gnome
+CONFIGURE_ARGS=	--enable-gnome \
+		--enable-gnome-print
+PLIST_SUB+=	DIAHELP="help/dia" \
+		GNOME:=""
+MAKE_ENV=	HAVE_GNOME="yes"
 .else
 CONFIGURE_ARGS=	--disable-gnome
-PLIST_SUB+=	DIAHELP="dia/help"
+PLIST_SUB+=	DIAHELP="dia/help" \
+		GNOME:="@comment "
 .endif
 
 pre-patch:
