@@ -9,7 +9,10 @@
 DISTNAME=	ScrollZ-1.8i5-FreeBSD-3.2
 PKGNAME=	scrollz-1.8i5
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.scrollz.net/ScrollZ/
+MASTER_SITES=	ftp://ftp.scrollz.net/pub/ScrollZ/ \
+		ftp://scrollz.unixpower.com/ScrollZ/ \
+		http://white.hole.org/Bins/ \
+		ftp://ftp.enlighte.nu/pub/ScrollZ/Bins/
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	andrews@technologist.com
