@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug  2 15:26:53 1999
++++ configure	Thu Oct 21 01:08:47 1999
+@@ -2706,7 +2706,7 @@
+ 
+ _CUT_HERE_
+ 
+-#if ((defined(hp300) && !defined(__hpux)) || defined(sun) || (defined(ultrix) && defined(mips)) || defined(_SEQUENT_) || defined(sgi) || defined(SVR4) || defined(sony_news) || !(defined(__osf__) && defined(__alpha)) || defined(_IBMR2) || defined(_AUX_SOURCE) || defined(AUX) || defined(m88k))
++#if ((defined(hp300) && !defined(__hpux)) || defined(sun) || (defined(ultrix) && defined(mips)) || defined(_SEQUENT_) || defined(sgi) || defined(SVR4) || defined(sony_news) || defined(_IBMR2) || defined(_AUX_SOURCE) || defined(AUX) || defined(m88k))
+ loadtype=long
+ # if defined(apollo) || defined(_IBMR2) || defined(_AUX_SOURCE) || defined(AUX)
+ loadscale=65536
