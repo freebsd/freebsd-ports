@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Expect
-PORTVERSION=	1.07
+PORTVERSION=	1.11
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Expect
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}.pm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,7 +21,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
-MAN3=		Expect.3 Expect_intro.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Expect.3 \
+		Expect_FAQ.3 \
+		Expect_intro.3
 
 .include <bsd.port.mk>
