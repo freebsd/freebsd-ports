@@ -1,5 +1,21 @@
---- mail/app/mozilla.in.orig	Thu Nov 11 23:14:17 2004
-+++ mail/app/mozilla.in	Thu Nov 11 23:15:43 2004
+--- mail/app/mozilla.in.orig	Sat Jul 24 19:58:06 2004
++++ mail/app/mozilla.in	Mon Dec 27 18:40:04 2004
+@@ -167,12 +167,12 @@
+ done #others arg
+ 
+ #???: needs check if othersopt begin with -* ?
+-if [ `expr "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
++if [ `expr -- "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
+ 	# Last argument seems to be a local file/directory
+ 	# Check, if it is absolutely specified (ie. /home/foo/file vs. ./file)
+ 	# If it is just "relatively" (./file) specified, make it absolutely
+-	[ `expr "${_optLast}" : '/.*'` -eq 0 ] && _optLast="file://`pwd`/${_optLast}"
+-elif [ `expr "${_optLast}" : '.*:/.*'` -gt 0 -o -n "${_optOthers}" ]; then #???? like before...
++	[ `expr -- "${_optLast}" : '/.*'` -eq 0 ] && _optLast="file://`pwd`/${_optLast}"
++elif [ `expr -- "${_optLast}" : '.*:/.*'` -gt 0 -o -n "${_optOthers}" ]; then #???? like before...
+ 	_NEW_WINDOW=1
+ fi
+ ################################################################ Parse Arguments
 @@ -218,12 +218,31 @@
        script_args="$script_args -d $2"
        shift 2

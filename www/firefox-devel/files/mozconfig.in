@@ -9,6 +9,9 @@ ac_add_options --disable-tests
 ac_add_options --disable-mailnews
 ac_add_options --disable-composer
 ac_add_options --enable-default-toolkit=gtk2
+# See the following URL for approval email for using official branding
+# http://people.freebsd.org/~ahze/firefox_thunderbird-approved.txt
+ac_add_options --enable-official-branding
 ######################################################################
 # FBSD specific
 export CPPFLAGS="@CPPFLAGS@"
