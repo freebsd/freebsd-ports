@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Netmask
-PORTVERSION=	1.9009
+PORTVERSION=	1.9011
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -22,9 +22,9 @@ MAN3=		Net::Netmask.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500503
-# make PREFIX-clean under perl 5.005_03
 post-configure:
 	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
+	${PERL} -pi -e '$$_="" if /use warnings/;' ${WRKSRC}/Netmask.pm
 .endif
 
 .include <bsd.port.post.mk>
