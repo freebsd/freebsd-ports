@@ -1,0 +1,11 @@
+bin/jdresolve
+bin/rhost
+%%PORTDOCS%%share/doc/jdresolve/AUTHORS
+%%PORTDOCS%%share/doc/jdresolve/BUGS
+%%PORTDOCS%%share/doc/jdresolve/CHANGELOG
+%%PORTDOCS%%share/doc/jdresolve/COPYING
+%%PORTDOCS%%share/doc/jdresolve/CREDITS
+%%PORTDOCS%%share/doc/jdresolve/INSTALL
+%%PORTDOCS%%share/doc/jdresolve/README
+%%PORTDOCS%%share/doc/jdresolve/TODO
+%%PORTDOCS%%@dirrm share/doc/jdresolve
