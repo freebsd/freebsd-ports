@@ -7,7 +7,7 @@
 
 PORTNAME=	knowledgekit
 PORTVERSION=	1.6.7
-CATEGORIES=	www
+CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/Bill/Products/KnowledgeKit/
 DISTNAME=	KnowledgeKit-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
