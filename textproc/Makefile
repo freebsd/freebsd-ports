@@ -345,6 +345,7 @@
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rexml
     SUBDIR += ruby-rss
+    SUBDIR += ruby-rss.alt
     SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
     SUBDIR += ruby-spreadsheet-excel
