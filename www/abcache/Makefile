@@ -14,31 +14,28 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A tool to cache applications written in PHP
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	aclocal.m4
-
 WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}
 
-CONFIGURE_ARGS+=--enable-bware_cache=shared \
-		--with-php-config=${LOCALBASE}/bin/php-config
+USE_PHPIZE=	yes
+WITH_PHP_MOD=	yes
 
-post-extract:
-	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
+CONFIGURE_ARGS+=--enable-bware_cache=shared
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+
+post-build:
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/20010901
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/bware_cache.so \
-		${PREFIX}/lib/php/20010901
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 
 post-install:
-	@${SED} "s!%%LOCALBASE%%!${LOCALBASE}!g;s!%%PREFIX%%!${PREFIX}!g" \
-		${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
