@@ -4475,6 +4475,7 @@ p5-Event	ports/devel/p5-Event
 p5-Exception-Class	ports/devel/p5-Exception-Class
 p5-Expect	ports/lang/p5-Expect
 p5-F77		ports/lang/p5-F77
+p5-FAQ-OMatic	ports/www/p5-FAQ-OMatic
 p5-FastCGI	ports/www/p5-FastCGI
 p5-File-BasicFlock	ports/devel/p5-File-BasicFlock
 p5-File-Binary	ports/devel/p5-File-Binary
