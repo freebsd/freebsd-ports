@@ -5,7 +5,7 @@
  class __CPPNAME__`'_Class; 
  }
 -namespace Gtk { __NAMESPACE__::__CPPNAME__ *wrap (__CNAME__ *o); }
-+namespace Gtk { template<> struct Wrap<__CNAME__> { typedef __CPPNAME__ CppType; }; }
++namespace Gtk { template<> struct Wrap<__CNAME__> { typedef __NAMESPACE__::__CPPNAME__ CppType; }; }
  dnl
  dnl
  GTKMM_SECTION(PRIVATE)
