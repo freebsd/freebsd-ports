@@ -9,12 +9,6 @@ include/stringprep_kerberos5.h
 include/stringprep_nameprep.h
 include/stringprep_plain.h
 include/stringprep_xmpp.h
-@unexec install-info --delete %D/info/libidn.info %D/info/dir
-info/libidn.info
-info/libidn.info-1
-info/libidn.info-2
-info/libidn.info-3
-@exec install-info %D/info/libidn.info %D/info/dir
 lib/libidn.a
 lib/libidn.so
 lib/libidn.so.10
