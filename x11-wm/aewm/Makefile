@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	aewm
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-ALL_TARGET=	aewm
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
 		aesession \
@@ -22,7 +21,7 @@ XAWCLIENTS=	set-gnome-pda \
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog README TODO DESIGN LICENSE
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${X11BASE}"
-MAN1=		aewm.1
+MAN1=		aewm.1 aeclients.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -31,16 +30,19 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i'' -E
 
 .include <bsd.port.pre.mk>
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgtk20}!=""
+USE_GNOME+=    gtk20
+PKGNAMESUFFIX= -gtk
+.elseif ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=    gtk12
+PKGNAMESUFFIX= -gtk
 .endif
 
 do-patch:
 	${REINPLACE_CMD} 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
-		${WRKSRC}/aewm.h
+		${WRKSRC}/src/aewm.h
 	${REINPLACE_CMD} 's:\+make:\+gmake:g' ${WRKSRC}/Makefile
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
 	${REINPLACE_CMD} 's:gtk-config:${GTK_CONFIG}:g' \
 		${WRKSRC}/clients/Makefile
 	${REINPLACE_CMD} 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
@@ -48,7 +50,7 @@ do-patch:
 .endif
 
 post-build:
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
 	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
 		${GTKCLIENTS} ${XAWCLIENTS}
 .else
@@ -61,7 +63,7 @@ pre-install:
 .for i in aewm aemenu aepanel ${XAWCLIENTS}
 	${ECHO_CMD} bin/${i} >> ${PLIST}
 .endfor
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
 .for i in ${GTKCLIENTS}
 	${ECHO_CMD} bin/${i} >> ${PLIST}
 .endfor
@@ -80,11 +82,11 @@ pre-install:
 
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/aewm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/aewm ${PREFIX}/bin
 .for i in ${XAWCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
 .for i in ${GTKCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
@@ -95,11 +97,13 @@ do-install:
 		${LN} -s aepanel-xaw aepanel
 .endif
 	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/aewmrc.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/aewmrc.sample ${PREFIX}/etc/aewmrc
+	${INSTALL_DATA} ${WRKSRC}/src/aewmrc.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/aewmrc.sample ${PREFIX}/etc/aewmrc
 	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample \
 		${PREFIX}/etc/clientsrc
-	${INSTALL_MAN} ${WRKSRC}/aewm.1x ${MANPREFIX}/man/man1/aewm.1
+	${INSTALL_MAN} ${WRKSRC}/src/aewm.1x ${MANPREFIX}/man/man1/aewm.1
+	${INSTALL_MAN} ${WRKSRC}/clients/aeclients.1x \
+		${MANPREFIX}/man/man1/aeclients.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for i in ${DOCS}
