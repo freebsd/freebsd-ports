@@ -30,8 +30,6 @@ BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 		${PERLBASE}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
 		${PERLBASE}/MD5.pm:${PORTSDIR}/security/p5-MD5
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

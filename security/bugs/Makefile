@@ -24,7 +24,6 @@ USE_GMAKE=		yes
 # Cryptography = be extra careful...
 NO_CDROM=	may contain export-restricted material
 NO_PACKAGE=	may contain export-restricted material
-RESTRICTED=	Cryptography
 
 post-configure:
 	(cd ${WRKSRC}; ${MAKE} bsd)

@@ -45,7 +45,6 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-RESTRICTED=		"Crypto; export-controlled"
 # Set USA_RESIDENT appropriately in /etc/make.conf if you like
 
 INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \

@@ -17,7 +17,6 @@ COMMENT=	Clean room implementation of the Java Cryptograph Extension (JCE) API
 
 USE_JAVA=	1.1+
 
-RESTRICTED=	"Crypto; export-controlled"
 NO_BUILD=	yes
 JDKVERSION=	1.1
 

@@ -21,7 +21,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	kris@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/source
-RESTRICTED=	"Contains cryptography"
 
 INSTALLS_SHLIB=	yes
 

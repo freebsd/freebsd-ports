@@ -22,8 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-RESTRICTED=	"Contains DES cryptography."
-
 INSTALL_HDRS=	base64.h config_win32.h config_unix.h crypt_random.h \
 		debug.h hmac.h mbus.h md5.h memory.h net_udp.h qfDES.h \
 		rtp.h uclconf.h util.h version.h

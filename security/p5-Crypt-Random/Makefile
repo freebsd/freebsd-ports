@@ -19,8 +19,6 @@ PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERLBASE}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

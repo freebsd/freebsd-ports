@@ -16,7 +16,6 @@ LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/nte
 
-RESTRICTED=	"Contains DES encryption"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 

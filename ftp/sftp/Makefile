@@ -19,8 +19,6 @@ MAINTAINER=	cy@FreeBSD.org
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 .endif
 
-RESTRICTED=	"Calls external cryptographic routines."
-
 GNU_CONFIGURE=	yes
 
 MAN1=		secftp.1

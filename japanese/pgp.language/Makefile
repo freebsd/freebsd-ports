@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}i-japanese
 MAINTAINER=	hikura@kaisei.org
 COMMENT=	Japanese language module for PGP
 
-RESTRICTED=	"Crypto"
-
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 USE_ZIP=	YES

@@ -106,7 +106,6 @@ post-install:
 .if defined(PDFENCRYPT)
 MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
 DISTFILES+=	pdf_sec.ps
-RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
 .endif
 
 .include <bsd.port.mk>
