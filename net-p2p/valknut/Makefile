@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libdc=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
