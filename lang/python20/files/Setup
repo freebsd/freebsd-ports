@@ -29,7 +29,7 @@
 #
 # Finally, if a line has the literal form
 #
-# *noconfig*
+# *shared*
 #
 # (that is including the '*' and '*' !) then the following modules will
 # not be included in the config.c file, nor in the list of objects to be
@@ -38,17 +38,13 @@
 # shared libraries will still be added to the Makefile, and their
 # names will be collected in the Make variable SHAREDMODS.  This is
 # used to build modules as shared libraries.  (They must be installed
-# using "make sharedinstall".)
+# using "make sharedinstall".)  (For compatibility, *noconfig* has the
+# same effect as *shared*.)
 
 # NOTE: As a standard policy, as many modules as can be supported by a
 # platform should be present.  The distribution comes with all modules
 # enabled that are supported by most platforms and don't require you
 # to ftp sources from elsewhere.
-
-
-# -------> Uncomment this line if you are running AIX    <----------
-# -------> and if you are building with shared libraries <----------
-#LINKCC= makexp_aix python.exp "" $(MYLIBS) $(ADDOBJS) ; $(CC)
 
 
 # Some special rules to define PYTHONPATH.
@@ -57,23 +53,27 @@
 
 # Directories where library files get installed.
 # DESTLIB is for Python modules; MACHDESTLIB for shared libraries.
-DESTLIB=$(prefix)/share/python1.4
+DESTLIB=$(LIBDEST)
 MACHDESTLIB=$(BINLIBDEST)
+
+# NOTE: all the paths are now relative to the prefix that is computed
+# at run time!
 
 # Standard path -- don't edit.
 # No leading colon since this is the first entry
-DESTPATH=:$(DESTLIB)
+# Empty since this is now just the runtime prefix.
+DESTPATH=
 
 # Site specific path insertions -- should begin with : if non-empty
-SITEPATH=:$(DESTLIB)/NumPy
+SITEPATH=:NumPy
 
 # Standard enabled (tests are always available)
-TESTPATH=:$(DESTLIB)/test
+TESTPATH=:test
 
 # Path for machine- or system-dependent modules (and shared libraries)
-MACHDEPPATH=:$(DESTLIB)/$(MACHDEP):$(MACHDESTLIB)/sharedmodules
+MACHDEPPATH=:plat-$(MACHDEP)
 
-COREPYTHONPATH=.$(SITEPATH)$(DESTPATH)$(TESTPATH)$(MACHDEPPATH)$(STDWINPATH)$(TKPATH)
+COREPYTHONPATH=$(DESTPATH)$(SITEPATH)$(TESTPATH)$(MACHDEPPATH)$(STDWINPATH)$(TKPATH)
 PYTHONPATH=$(COREPYTHONPATH)
 
 
@@ -83,6 +83,9 @@ PYTHONPATH=$(COREPYTHONPATH)
 
 # Some modules that are normally always on:
 
+regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
+reop reopmodule.c		# Additional RE support (for re1.py)
+pcre pcremodule.c pypcre.c	# Regular expressions, Perl style (for re.py)
 posix posixmodule.c		# posix (UNIX) system calls
 signal signalmodule.c		# signal(2)
 
@@ -90,8 +93,7 @@ signal signalmodule.c		# signal(2)
 
 #gl glmodule.c -lgl -lX11	# Graphics Library -- SGI only
 
-# Thread module -- works on selected systems only, e.g. SGI IRIX and
-# on SunOS 5.x (SOLARIS) only.
+# Thread module -- use only if Python has thread support for your OS.
 # Note that you must have configured (and built!) Python with the
 # --with-thread option passed to the configure script for this to work:
 
@@ -104,16 +106,28 @@ signal signalmodule.c		# signal(2)
 #*shared*
 
 
+# GNU readline.  Unlike previous Python incarnations, GNU readline is
+# now incorporated in an optional module, configured in the Setup file
+# instead of by a configure script switch.  You may have to insert a
+# -L option pointing to the directory where libreadline.* lives,
+# and you may have to change -ltermcap to -ltermlib or perhaps remove
+# it, depending on your system -- see the GNU readline instructions.
+# It's okay for this to be a shared library, too.
+
+readline readline.c -lreadline -ltermcap
+
+
 # Modules that should always be present (non UNIX dependent):
 
 array arraymodule.c	# array objects
 cmath cmathmodule.c	# complex math library functions
 math mathmodule.c -lm	# math library functions, e.g. sin()
-regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
 strop stropmodule.c	# fast string operations implemented in C
 struct structmodule.c	# binary structure packing/unpacking
 time timemodule.c	# time operations and variables
 operator operator.c	# operator.add() and similar goodies
+
+#_locale _localemodule.c  # access to ISO C locale support
 
 
 # Modules with some UNIX dependencies -- on by default:
@@ -136,10 +150,11 @@ errno errnomodule.c	# posix (UNIX) errno values
 dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 nis nismodule.c 	# Sun yellow pages -- not everywhere
 termios termios.c	# Steen Lumholt's termios module
-#_xdr xdrmodule.c # -lnsl # Helper for xdrlib.py
+resource resource.c	# Jeremy Hylton's rlimit interface
 
 
-# Multimedia modules -- on by default.
+# Multimedia modules -- off by default.
+# These don't work for 64-bit platforms!!!
 # These represent audio samples or images as strings:
 
 audioop audioop.c	# Operations on audio samples
@@ -177,10 +192,9 @@ md5 md5module.c md5c.c
 # The mpz module interfaces to the GNU Multiple Precision library.
 # You need to ftp the GNU MP library.  
 # The GMP variable must point to the GMP source directory.
-# This was originally written and tested against GMP 1.2.  I have
-# compiled it against GMP 1.3.2 (the latest I believe) and it seems to
-# work OK, but I haven't tested it thoroughly (lacking knowledge about
-# it).
+# This was originally written and tested against GMP 1.2 and 1.3.2.
+# It has been modified by Rob Hooft to work with 2.0.2 as well, but I
+# haven't tested it recently.
 
 # A compatible MP library unencombered by the GPL also exists.  It was
 # posted to comp.sources.misc in volume 40 and is widely available from
@@ -188,7 +202,7 @@ md5 md5module.c md5c.c
 # ftp://gatekeeper.dec.com/.b/usenet/comp.sources.misc/volume40/fgmp/part01.Z
 
 #GMP=/ufs/guido/src/gmp
-#mpz mpzmodule.c -I$(GMP) $(GMP)/libgmp.a
+#mpz mpzmodule.c -lgmp
 
 
 # SGI IRIX specific modules -- off by default.
@@ -231,26 +245,51 @@ md5 md5module.c md5c.c
 
 # George Neville-Neil's timing module:
 
-#timing timingmodule.c
+timing timingmodule.c
 
 
 # The _tkinter module.
 #
-# See the section "The Tk interface" in ../README for more info.
-#
-# Enable the TKPATH line and choose the most applicable _tkinter line.
-# You may have to change /usr/local to wherever Tcl/Tk are installed.
-# Change the -l arguments to use Tcl 7.4 and Tk 4.0!
+# The TKPATH variable is always enabled, to save you the effort.
+TKPATH=:lib-tk
 
-# *** ALWAYS enable this line:
-#TKPATH=:$(DESTLIB)/tkinter
+# The command for _tkinter is long and site specific.  Please
+# uncomment and/or edit those parts as indicated.  If you don't have a
+# specific extension (e.g. Tix or BLT), leave the corresponding line
+# commented out.  (Leave the trailing backslashes in!  If you
+# experience strange errors, you may want to join all uncommented
+# lines and remove the backslashes -- the backslash interpretation is
+# done by the shell's "read" command and it may not be implemented on
+# every system.
 
-# *** Enable *one* of the following lines:
-# For Solaris:
-#_tkinter _tkinter.c -I/usr/openwin/include -I/usr/local/include -L/usr/openwin/lib -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
-# For generic system (may have to add -I/-L options to find X11):
-#_tkinter _tkinter.c -I/usr/local/include -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
-#_tkinter _tkinter.c -I${PREFIX}/include/tk8.0 -I${PREFIX}/include/tcl8.0 -I${X11BASE}/include -L${PREFIX}/lib -L${X11BASE}/lib -ltk80 -ltcl80 -lX11
+# *** Always uncomment this (leave the leading underscore in!):
+# _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
+# *** Uncommend and edit to reflect where your X11 header files are:
+#	-I/usr/X11R6/include \
+# *** Or uncomment this for Solaris:
+#	-I/usr/openwin/include \
+# *** Uncomment and edit to reflect where your Tcl/Tk headers are:
+#	-I/usr/local/include \
+# *** Uncomment and edit for Tix extension only:
+#	-DWITH_TIX -ltix4.1.8.0 \
+# *** Uncomment and edit for BLT extension only:
+#	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
+# *** Uncomment and edit for PIL (TkImaging) extension only:
+#	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
+# *** Uncomment and edit for Mesa (what's Mesa?):
+#	-lGL -lGLU -lMesatk -lMesaaux \
+# *** Uncomment and edit for TOGL extension only:
+#	-DWITH_TOGL togl.c \
+# *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
+#	-L/usr/local/lib \
+# *** Uncomment and edit to reflect your Tcl/Tk versions:
+#	-ltk8.0 -ltcl8.0 \
+# *** Uncomment and edit to reflect where your X11 libraries are:
+#	-L/usr/X11R6/lib \
+# *** Or uncomment this for Solaris:
+#	-L/usr/openwin/lib \
+# *** Always uncomment this; X11 libraries to link with:
+#	-lX11 -lXext -lXmu
 
 
 # Lance Ellinghaus's modules:
@@ -310,6 +349,32 @@ binascii binascii.c
 
 # Fred Drake's interface to the Python parser.
 #parser parsermodule.c
+
+# Digital Creations' cStringIO and cPickle
+cStringIO cStringIO.c
+cPickle cPickle.c
+
+
+# Lee Busby's SIGFPE modules.
+# The library to link fpectl with is platform specific.
+# Choose *one* of the options below for fpectl:
+
+# For SGI IRIX (tested on 5.3):
+#fpectl fpectlmodule.c -lfpe
+
+# For Solaris with SunPro compiler (tested on Solaris 2.5 with SunPro C 4.2):
+# (Without the compiler you don't have -lsunmath.)
+#fpectl fpectlmodule.c -R/opt/SUNWspro/lib -lsunmath -lm
+
+# For other systems: see instructions in fpectlmodule.c.
+fpectl fpectlmodule.c
+
+# Test module for fpectl.  No extra libraries needed.
+fpetest fpetestmodule.c
+
+# Andrew Kuchling's zlib module.
+# This require zlib 1.0.4 (or later).  See http://quest.jpl.nasa.gov/zlib/
+zlib zlibmodule.c -lz
 
 
 # Example -- included for reference only:
