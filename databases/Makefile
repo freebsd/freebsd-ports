@@ -42,6 +42,7 @@
     SUBDIR += gqlplus
     SUBDIR += grass
     SUBDIR += gtksql
+    SUBDIR += hk_classes
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
     SUBDIR += jdbc-oracle816

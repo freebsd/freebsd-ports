@@ -1,0 +1,10 @@
+hk_classes is C++ library which allows rapid development of database 
+applications with all features a modern database application should 
+have like forms an reports. 
+
+hk_classes is database and GUI independent. 
+In combination with hk_kdeclasses it supports the rapid development 
+of database applications for KDE. 
+
+Author: Horst Knorr <hk_classes@knorrnet.de>
+WWW:	http://hk-classes.sourceforge.net/
