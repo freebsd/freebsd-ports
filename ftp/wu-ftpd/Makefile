@@ -3,13 +3,13 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.20 1999/02/10 12:48:04 ache Exp $
+# $Id: Makefile,v 1.21 1999/02/10 20:14:53 asami Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
-DISTNAME=       wu-ftpd-2.4.2-beta-18-vr13
-PKGNAME=        wu-ftpd-2.4.2b18vr13
+DISTNAME=       wu-ftpd-2.4.2-beta-18-vr14
+PKGNAME=        wu-ftpd-2.4.2b18vr14
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/
 
