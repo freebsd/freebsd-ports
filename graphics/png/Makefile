@@ -9,15 +9,15 @@
 # png version number) when updating this port.  Thank you.
 
 PORTNAME=	png
-PORTVERSION=    1.0.6
+PORTVERSION=    1.0.7
 CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/
+MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	lib${PORTNAME}
 DISTNAME=       lib${PKGNAME}
 
 PATCH_SITES=    ftp://ftp.libpng.org/pub/png/src/
-PATCHFILES=     libpng-1.0.6-patch-a.txt.gz \
-		libpng-1.0.6-patch-b.txt.gz \
-		libpng-1.0.6-patch-c.txt.gz
+#PATCHFILES=
 
 MAINTAINER=     ache@FreeBSD.org
 
