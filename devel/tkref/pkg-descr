@@ -1,0 +1,11 @@
+               TkRef - a GUI QuickRef for Tcl/Tk and related
+	
+This script is written all in Tcl/Tk and should be compatible with versions
+Tcl7.5, Tk4.1 and forward, although Tcl8.0 extensions may not be documented
+within.
+
+Read the script for the contained copyright license before running it.
+It's rather GNU-ish, but is NOT GNU-Copyleft.
+
+Single-script compendium/quick-ref for Tcl, Tk, Tix, Tnm commands and
+flagging of SafeTcl and Widget commands.
