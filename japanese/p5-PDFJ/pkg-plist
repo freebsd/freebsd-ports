@@ -2,7 +2,9 @@
 %%SITE_PERL%%/PDFJ/E2U.pm
 %%SITE_PERL%%/PDFJ/Object.pm
 %%SITE_PERL%%/PDFJ/S2U.pm
+%%SITE_PERL%%/PDFJ/Shape.pm
 %%SITE_PERL%%/PDFJ/TTF.pm
+%%SITE_PERL%%/PDFJ/Type1.pm
 %%SITE_PERL%%/PDFJ/U2C.pm
 %%SITE_PERL%%/PDFJ/Unicode.pm
 %%SITE_PERL%%/XPDFJ.pm
