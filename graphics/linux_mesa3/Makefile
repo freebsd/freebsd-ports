@@ -20,7 +20,7 @@ MAINTAINER=		mastake@msel.t.u-tokyo.ac.jp
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
 BUILD_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
 
 USE_BZIP2=		yes
 ONLY_FOR_ARCHS=		i386
