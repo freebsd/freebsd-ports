@@ -1,0 +1,6 @@
+mod_auth_useragent allows you to forbid clients based on their 
+User-Agent by placing a single line in your Apache httpd.conf. Be aware 
+that this is by no means a security measure as it is trivial to change 
+your User-Agent in most browsers.
+
+WWW: http://tangent.org/index.pl?lastnode_id=478&node_id=423

@@ -215,6 +215,7 @@
     SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pwcheck
     SUBDIR += mod_auth_remote
+    SUBDIR += mod_auth_useragent
     SUBDIR += mod_authenticache
     SUBDIR += mod_backhand
     SUBDIR += mod_bandwidth
