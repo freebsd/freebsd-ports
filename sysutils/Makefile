@@ -179,6 +179,7 @@
     SUBDIR += gnomesystemtools
     SUBDIR += gpart
     SUBDIR += gpkgdep
+    SUBDIR += gpte
     SUBDIR += graft
     SUBDIR += growspd
     SUBDIR += grub
