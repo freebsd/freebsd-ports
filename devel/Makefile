@@ -202,8 +202,8 @@
     SUBDIR += gnomevfs2
     SUBDIR += gnustep
     SUBDIR += gnustep-make
-    SUBDIR += gpasm
     SUBDIR += gperf
+    SUBDIR += gputils
     SUBDIR += gtgt
     SUBDIR += gtranslator
     SUBDIR += gvd
