@@ -1,0 +1,1313 @@
+bin/eric3-unittest
+bin/eric3-helpviewer
+bin/eric3
+%%PYTHON_SITELIBDIR%%/sitecustomize.py
+%%PYTHON_SITELIBDIR%%/eric3/sitecustomize.pyc
+%%PYTHON_SITELIBDIR%%/eric3/sitecustomize.py
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/workspace.png
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/tabview.png
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/listspace.png
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/eric.png
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/eric-icon.xpm
+%%PYTHON_SITELIBDIR%%/eric3/eric3_ru.qm
+%%PYTHON_SITELIBDIR%%/eric3/eric3_de.qm
+%%PYTHON_SITELIBDIR%%/eric3/eric3.pyc
+%%PYTHON_SITELIBDIR%%/eric3/eric3.py
+%%PYTHON_SITELIBDIR%%/eric3/eric3-unittest.pyc
+%%PYTHON_SITELIBDIR%%/eric3/eric3-unittest.py
+%%PYTHON_SITELIBDIR%%/eric3/eric3-helpviewer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/eric3-helpviewer.py
+%%PYTHON_SITELIBDIR%%/eric3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/Wizards.e3w
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/WizardIFace.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/WizardIFace.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/WizardHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/WizardHandler.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/Wizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/Wizard.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizardForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizardForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizardDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizardDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard/MessageBoxWizard.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizardForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizardForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizardDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizardDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard/InputDialogWizard.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizardForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizardForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizardDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizardDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard/FontDialogWizard.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizardForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizardForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizardDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizardDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard/FileDialogWizard.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizardForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizardForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizardDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizardDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizard.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard/ColorDialogWizard.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Workspace.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Workspace.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/ViewManager.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/ViewManager.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Tabview.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Tabview.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Listspace.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Listspace.py
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Config.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ViewManager/Config.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/subversion.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/subversion.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagBranchListForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagBranchListForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagBranchListDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagBranchListDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SwitchForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SwitchForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SwitchDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SwitchDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SvnForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SvnForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SvnDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/SvnDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/StatusForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/StatusForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/StatusDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/StatusDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropSetForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropSetForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropSetDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropSetDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropListForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropListForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropListDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/PropListDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/MergeForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/MergeForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/MergeDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/MergeDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/LogForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/LogForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/LogDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/LogDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/DiffDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/DiffDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CopyForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CopyForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CopyDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CopyDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommitForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommitForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommitDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommitDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommandForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommandForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommandDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/CommandDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/AuthForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/AuthForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/AuthDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/AuthDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/cvs.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/cvs.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/TagForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/TagForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/TagDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/TagDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/SwitchForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/SwitchForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/SwitchDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/SwitchDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/StatusDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/StatusDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/MergeForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/MergeForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/MergeDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/MergeDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/LogForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/LogForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/LogDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/LogDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/HistoryForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/HistoryForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/HistoryDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/HistoryDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/DiffDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/DiffDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CvsForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CvsForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CvsDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CvsDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommitForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommitForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommitDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommitDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommandForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommandForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommandDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage/CommandDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/VersionControl.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/VersionControl.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/OptionsForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/OptionsForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/OptionsDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/OptionsDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/NewProjectForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/NewProjectForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/NewProjectDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/NewProjectDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LogoutForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LogoutForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LogoutDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LogoutDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LoginForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LoginForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LoginDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/LoginDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/Config.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/Config.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/CommandOptionsForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/CommandOptionsForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/CommandOptionsDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/CommandOptionsDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/pyclbr.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/pyclbr.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/UserInterface.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/UserInterface.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/ToolConfigurationForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/ToolConfigurationForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/ToolConfigurationDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/ToolConfigurationDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/Shell.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/Shell.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/SBVviewer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/SBVviewer.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyProfileForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyProfileForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyProfileDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyProfileDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyCoverageForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyCoverageForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyCoverageDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/PyCoverageDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/LogWidget.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/LogWidget.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/LogView.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/LogView.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/Info.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/Info.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/FindFileForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/FindFileForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/FindFileDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/FindFileDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/EmailForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/EmailForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/EmailDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/EmailDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetricsForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetricsForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetricsDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetricsDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetrics.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/CodeMetrics.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/Browser.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/Browser.py
+%%PYTHON_SITELIBDIR%%/eric3/Tools/gen_python_api.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Tools/gen_python_api.py
+%%PYTHON_SITELIBDIR%%/eric3/Tools/gen_pyqt_api.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Tools/gen_pyqt_api.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/transformer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/transformer/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/transformer/WordRewriter.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/transformer/WordRewriter.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/utils.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/utils.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/rename.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/rename.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/inlineVariable.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/inlineVariable.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/extractVariable.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/extractVariable.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/extractMethod.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/extractMethod.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/relationships.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/relationships.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getTypeOf.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getTypeOf.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getReferencesToModule.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getReferencesToModule.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getAllRelatedClasses.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/getAllRelatedClasses.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/findReferences.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/findReferences.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/findDefinition.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/findDefinition.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/common.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/common.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/visitor.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/visitor.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/utils.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/utils.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/undo.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/undo.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/save.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/save.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/parserutils.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/parserutils.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/newstuff.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/newstuff.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/load.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/load.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/fastparserast.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/fastparserast.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/fastparser.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/fastparser.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/extended_ast.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/extended_ast.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/constants.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/constants.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/logging.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/logging.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/log.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/log.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/bikefacade.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/bikefacade.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/ThirdParty/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/ScriptManager.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/ScriptManager.py
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/LoadScriptForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/LoadScriptForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/LoadScriptDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Scripting/LoadScriptDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/Refactoring.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/Refactoring.py
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/MatchesForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/MatchesForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/MatchesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Refactoring/MatchesDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/ZoomForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/ZoomForm.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/ZoomDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/ZoomDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/SearchReplaceForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/SearchReplaceForm.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/SearchReplaceDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/SearchReplaceDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Printer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Printer.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerSQL.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerSQL.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerPython.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerPython.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJavaScript.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJavaScript.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJava.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJava.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerIDL.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerIDL.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerHTML.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerHTML.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerCSharp.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerCSharp.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerCPP.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerCPP.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Lexer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Lexer.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/GotoForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/GotoForm.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/GotoDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/GotoDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/EditorIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/EditorIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Editor.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/Editor.py
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/UnittestForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/UnittestForm.py
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/UnittestDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/PyUnit/UnittestDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/SessionHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/SessionHandler.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/PropertiesForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/PropertiesForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/PropertiesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/PropertiesDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectHandler.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectBrowser.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/ProjectBrowser.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/Project.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/Project.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddLanguageForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddLanguageForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddLanguageDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddLanguageDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFoundFilesForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFoundFilesForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFoundFilesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFoundFilesDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFileForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFileForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFileDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddFileDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddDirectoryForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddDirectoryForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddDirectoryDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Project/AddDirectoryDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutsForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutsForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutsDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutsDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/ShortcutDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesLexer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesLexer.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Preferences/PreferencesDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/LICENSE.GPL
+%%PYTHON_SITELIBDIR%%/eric3/Icons/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Icons/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Icons/ToolIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Icons/ToolIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/Icons/Icons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Icons/Icons.py
+%%PYTHON_SITELIBDIR%%/eric3/Icons/FileIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Icons/FileIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/SearchForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/SearchForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/SearchDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/SearchDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpWindow.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpWindow.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpBrowser.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/HelpBrowser.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/BookmarkForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/BookmarkForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/BookmarkDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Helpviewer/BookmarkDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/rhallo.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/rhallo.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/modpython_dbg.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/modpython_dbg.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/modpython.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/modpython.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/hallo.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/hallo.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/startup.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/startup.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/fileheader.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/fileheader.py
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/copyright.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting/copyright.py
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocExecForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocExecForm.py
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocExecDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocExecDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocConfigForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocConfigForm.py
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocConfigDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DocumentationTools/HappydocConfigDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/mod_python.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/qtunittest.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/helpviewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/eric3.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/eric3-unittest.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/eric3-helpviewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardIFace/WizardIFace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardIFace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardHandler/WizardHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/Wizard/Wizards.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/Wizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardForm/MessageBoxWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardDialog/MessageBoxWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizard/MessageBoxWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardForm/InputDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardDialog/InputDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizard/InputDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardForm/FontDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardDialog/FontDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizard/FontDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardForm/FileDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardDialog/FileDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizard/FileDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardForm/ColorDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardDialog/ColorDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizard/ColorDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizard.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Workspace/Workspace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Workspace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/ViewManager/ViewManager.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/ViewManager.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Tabview/Tabview.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Tabview/TabWidget.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Tabview.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Listspace/WidgetStack.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Listspace/Listspace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Listspace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Config.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/subversion/Subversion.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/subversion.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagForm/TagForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagDialog/SvnTagDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListForm/TagBranchListForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListDialog/SvnTagBranchListDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchForm/SwitchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchDialog/SvnSwitchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnForm/SvnForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnDialog/SvnDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusForm/StatusForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusDialog/SvnStatusDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetForm/PropSetForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetDialog/SvnPropSetDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListForm/PropListForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListDialog/SvnPropListDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeForm/MergeForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeDialog/SvnMergeDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogForm/LogForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogDialog/SvnLogDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/DiffDialog/SvnDiffDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/DiffDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyForm/CopyForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyDialog/SvnCopyDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitForm/CommitForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitDialog/SvnCommitDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandForm/CommandForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandDialog/SvnCommandDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthForm/svnAuthForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthDialog/AuthDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/cvs/Cvs.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/cvs.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagForm/TagForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagDialog/CvsTagDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchForm/SwitchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchDialog/CvsSwitchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/StatusDialog/CvsStatusDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/StatusDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeForm/MergeForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeDialog/CvsMergeDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogForm/LogForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogDialog/CvsLogDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryForm/HistoryForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryDialog/CvsHistoryDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/DiffDialog/CvsDiffDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/DiffDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsForm/CvsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsDialog/CvsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitForm/CommitForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitDialog/CvsCommitDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandForm/CommandForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandDialog/CvsCommandDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/VersionControl/VersionControl.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/VersionControl.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsForm/vcsOptionsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsDialog/vcsOptionsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectForm/vcsNewProjectOptionsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectDialog/vcsNewProjectOptionsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutForm/vcsLogoutForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutDialog/vcsLogoutDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginForm/vcsLoginForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginDialog/vcsLoginDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/Config.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsForm/vcsCommandOptionsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsDialog/vcsCommandOptionsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/pyclbr/Function.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/pyclbr/Class.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/pyclbr.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/eric3dbgstub_threads.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/eric3dbgstub_noqt.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/eric3dbgstub.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/UserInterface/UserInterface.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/UserInterface/Redirector.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/UserInterface.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationForm/ToolConfigurationForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationDialog/ToolConfigurationDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Shell/Shell.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Shell.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/SBVviewer/SBVviewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/SBVviewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileForm/PyProfileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileDialog/PyProfileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileDialog/ProfileListViewItem.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageForm/PyCoverageForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageDialog/PyCoverageDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogWidget/LogWidget.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogWidget.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogView/LogViewWidget.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogView/LogViewViewport.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogView/LogView.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogView.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Info.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileForm/FindFileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileDialog/FindFileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailForm/EmailForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailDialog/EmailDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsForm/CodeMetricsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsDialog/CodeMetricsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetrics/Token.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetrics/SourceStat.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetrics/Parser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetrics.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserSysPath.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserNode.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserMethod.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserFile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserDirectory.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/BrowserClass.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser/Browser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/ScriptManager.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/ScriptError.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/ScriptAction.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/NoSuchScriptError.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/ExecutionError.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager/CompilationError.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptForm/LoadScriptForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptDialog/LoadScriptDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/Refactoring/SilentLogger.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/Refactoring/Refactoring.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/Refactoring.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesForm/MatchesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesDialog/MatchesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/README.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/README-scripting.txt.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomForm/ZoomForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomDialog/ZoomDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceForm/SearchReplaceForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceDialog/SearchReplaceDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Printer/Printer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Printer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerSQL/LexerSQL.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerSQL.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerPython/LexerPython.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerPython.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJavaScript/LexerJavaScript.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJavaScript.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJava/LexerJava.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJava.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerIDL/LexerIDL.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerIDL.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerHTML/LexerHTML.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerHTML.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCSharp/LexerCSharp.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCSharp.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCPP/LexerCPP.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCPP.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Lexer/Lexer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Lexer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoForm/GotoForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoDialog/GotoDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/EditorIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Editor/Editor.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Editor.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestForm/UnittestForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestDialog/UnittestDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestDialog/QtTestResult.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/SessionHandler/SessionHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/SessionHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesForm/PropertiesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesDialog/PropertiesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectHandler/ProjectHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectTranslationsBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectSourcesBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectOthersBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectInterfacesBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectFormsBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectBrowserSimpleDir.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectBrowserDirectory.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/ProjectBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser/PBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/Project/Project.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/Project.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageForm/AddLanguageForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageDialog/AddLanguageDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesForm/AddFoundFilesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesDialog/AddFoundFilesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileForm/AddFileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileDialog/AddFileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryForm/AddDirForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryDialog/AddDirectoryDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/__init__/Prefs.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsForm/ShortcutsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsDialog/ShortcutsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutForm/ShortcutForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutDialog/ShortcutDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesLexer/PreferencesLexer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesLexer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesForm/PreferencesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesDialog/PreferencesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/LICENSE.GPL.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/ToolIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/Icons/IconProvider.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/Icons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/FileIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchForm/SearchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchDialog/SearchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpWindow/HelpWindow.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpWindow.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpBrowser/HelpBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpBrowser.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkForm/BookmarkForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkDialog/BookmarkDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/__init__/DocumentationTools.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecForm/HappydocExecForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecDialog/HappydocExecDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigForm/HappydocConfigForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigDialog/HappydocConfigDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/eric3dbgstub.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesViewer/VariablesViewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesViewer/ClassNode.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesViewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterForm/VariablesFilterForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterDialog/VariablesFilterDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailForm/VariableDetailForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailDialog/VariableDetailDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartForm/StartForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartDialog/StartDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyProfile/PyProfile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyProfile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyCoverage/coverage.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyCoverage.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/FlexCompleter/Completer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/FlexCompleter.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterForm/ExceptionsFilterForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterDialog/ExceptionsFilterDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionLogger/ExceptionLogger.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionLogger.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointForm/EditBreakpointForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointDialog/EditBreakpointDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugUI/DebugUI.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugUI.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugThread/DebugThread.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugThread.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugServer/DebugServer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugServer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugProtocol.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugIcons.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientThreads/DebugClientThreads.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientThreads.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientNoQt/DebugClientNoQt.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientNoQt.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientBase/DebugClientBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientBase/DCTestResult.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClient/DebugClient.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClient.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugBase/DebugBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DCTestResult/DCTestResult.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DCTestResult.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/Config.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointForm/BreakpointForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointDialog/BreakpointDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIOBase/AsyncIOBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIOBase.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIO/AsyncIO.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIO.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncFile/AsyncFile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncFile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/index.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyForm/TabnannyForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyDialog/TabnannyDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/Tabnanny/Whitespace.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/Tabnanny/NannyNag.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/Tabnanny.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerForm/SyntaxCheckerForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerDialog/SyntaxCheckerDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/wizard.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/widget.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/tabdialog.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/dialogbuttonsright.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/dialogbuttonsbottom.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/dialog.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates/configurationdialog.tmpl
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/eric3dbgstub.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/eric3dbgstub.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesViewer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesViewer.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesFilterForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesFilterForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesFilterDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariablesFilterDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariableDetailForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariableDetailForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariableDetailDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/VariableDetailDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/StartForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/StartForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/StartDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/StartDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/PyProfile.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/PyProfile.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/PyCoverage.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/PyCoverage.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/FlexCompleter.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/FlexCompleter.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionsFilterForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionsFilterForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionsFilterDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionsFilterDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionLogger.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/ExceptionLogger.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditBreakpointForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditBreakpointForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditBreakpointDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditBreakpointDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugUI.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugUI.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugThread.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugThread.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugServer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugServer.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugProtocol.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugProtocol.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugIcons.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugIcons.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientThreads.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientThreads.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientNoQt.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientNoQt.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientBase.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientBase.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClient.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClient.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugBase.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugBase.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DCTestResult.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DCTestResult.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/Config.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/Config.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIOBase.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIOBase.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIO.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIO.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncFile.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncFile.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/TabnannyForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/TabnannyForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/TabnannyDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/TabnannyDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/Tabnanny.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/Tabnanny.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerDialog.py
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/pixmaps
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards/MessageBoxWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards/InputDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards/FontDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards/FileDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards/ColorDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Wizards
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ViewManager
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Utilities
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/UI
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Tools
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/transformer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/refactor
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/query
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike/parsing
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm/bike
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty/brm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/ThirdParty
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Scripting
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Refactoring
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/QScintilla
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/PyUnit
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Project
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Preferences
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Icons
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Helpviewer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Examples
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/DocumentationTools
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardIFace
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/WizardHandler
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/Wizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizardDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard/MessageBoxWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/MessageBoxWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizardDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard/InputDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/InputDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizardDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard/FontDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FontDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizardDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard/FileDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/FileDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizardDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard/ColorDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards/ColorDialogWizard
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Wizards
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Workspace
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/ViewManager
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Tabview
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager/Listspace
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/ViewManager
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/subversion
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/TagBranchListDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SwitchDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/SvnDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/StatusDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropSetDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/PropListDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/MergeDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/LogDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/DiffDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CopyDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommitDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/CommandDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage/AuthDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/subversionPackage
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/cvs
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/TagDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/SwitchDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/StatusDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/MergeDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/LogDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/HistoryDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/DiffDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CvsDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommitDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage/CommandDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/cvsPackage
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/VersionControl
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/OptionsDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/NewProjectDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LogoutDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/LoginDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS/CommandOptionsDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/VCS
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities/pyclbr
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Utilities
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/UserInterface
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/ToolConfigurationDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Shell
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/SBVviewer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyProfileDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/PyCoverageDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogWidget
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/LogView
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/FindFileDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/EmailDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetricsDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/CodeMetrics
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI/Browser
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/UI
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/ScriptManager
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting/LoadScriptDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Scripting
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/Refactoring
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring/MatchesDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Refactoring
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/ZoomDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/SearchReplaceDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Printer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerSQL
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerPython
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJavaScript
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerJava
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerIDL
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerHTML
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCSharp
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/LexerCPP
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Lexer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/GotoDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla/Editor
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/QScintilla
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit/UnittestDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/PyUnit
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/SessionHandler
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/PropertiesDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectHandler
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/ProjectBrowser
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/Project
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddLanguageDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFoundFilesDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddFileDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project/AddDirectoryDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Project
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/__init__
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutsDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/ShortcutDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesLexer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences/PreferencesDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Preferences
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons/Icons
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Icons
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/SearchDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpWindow
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/HelpBrowser
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer/BookmarkDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Helpviewer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/__init__
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocExecDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools/HappydocConfigDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/DocumentationTools
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesViewer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariablesFilterDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/VariableDetailDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/StartDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyProfile
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/PyCoverage
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/FlexCompleter
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionsFilterDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/ExceptionLogger
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/EditBreakpointDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugUI
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugThread
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugServer
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientThreads
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientNoQt
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClientBase
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugClient
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DebugBase
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/DCTestResult
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/BreakpointDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIOBase
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncIO
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger/AsyncFile
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Debugger
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/TabnannyDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/Tabnanny
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerForm
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks/SyntaxCheckerDialog
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3/Checks
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Debugger
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Checks
+@dirrm %%PYTHON_SITELIBDIR%%/eric3

@@ -207,6 +207,7 @@
     SUBDIR += elib-emacs20
     SUBDIR += entity
     SUBDIR += epydoc
+    SUBDIR += eric
     SUBDIR += erlslang
     SUBDIR += error
     SUBDIR += esdl
