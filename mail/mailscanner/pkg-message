@@ -31,6 +31,10 @@
 	to update your virus-wrappers, autoupdates, reports and
 	languages.conf
 
+	The english languages.conf is updated automatically. For all
+	other versions use the update_languages_conf tool found
+	in the work directory of this port.
+
 	Sophos users: Please take a look at the Sophos install
 	script %%PREFIX%%/share/doc/MailScanner/Sophos.install.freebsd
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.35.11
+PORTVERSION=	4.36.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -208,6 +208,18 @@ do-install:
 	else \
 	   ${ECHO} "Changes in MailScanner.conf found. Please look at \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION}" ; \
+	fi
+	# Upgrading langauages.conf... Please wait... ATTENTION: English version only!
+	@${WRKSRC}/bin/upgrade_languages_conf \
+		${DATADIR}/reports/en/languages.conf \
+		${DATADIR}/reports/en/languages.conf.sample > \
+		${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} \
+		2> /dev/null
+	@if diff -b -B -q ${DATADIR}/reports/en/languages.conf \
+		${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ; \
+	  then  ${ECHO} "No changes in languages.conf found" ; \
+		${RM} ${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ; \
+	  else  ${CP} ${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ${DATADIR}/reports/en/languages.conf ; \
 	fi
 .endif
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' pkg-message > ${PKGMESSAGE}
