@@ -90,4 +90,10 @@ post-install:
 		(cd ${DEMODIR}; tar xf -)
 .endif
 
+.if ${ARCH} == i386
+PLIST_SUB+=	X86_ONLY=""
+.else
+PLIST_SUB+=	X86_ONLY="@comment "
+.endif
+
 .include <bsd.port.post.mk>
