@@ -91,6 +91,7 @@
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += klone
+    SUBDIR += lafontaine
     SUBDIR += librep
     SUBDIR += libutils
     SUBDIR += linux-j
