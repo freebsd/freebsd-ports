@@ -1,14 +1,14 @@
 # New ports collection makefile for:	p5-libwww
 # http://www.sn.no/libwww-perl/
-# Version required:                     5.20
+# Version required:                     5.32
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.14 1998/01/24 23:15:13 ache Exp $
+# $Id: Makefile,v 1.15 1998/03/03 22:09:24 ache Exp $
 #
 
-DISTNAME=       libwww-perl-5.20
-PKGNAME=        p5-libwww-5.20
+DISTNAME=       libwww-perl-5.32
+PKGNAME=        p5-libwww-5.32
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
@@ -26,21 +26,7 @@ MAN1=           lwp-download.1 \
 		lwp-request.1 \
 		lwp-rget.1
 MAN3=           Bundle::LWP.3 \
-		File::CounterFile.3 \
 		File::Listing.3 \
-		Font::AFM.3 \
-		HTML::AsSubs.3 \
-		HTML::Element.3 \
-		HTML::Entities.3 \
-		HTML::Filter.3 \
-		HTML::FormatPS.3 \
-		HTML::FormatText.3 \
-		HTML::Formatter.3 \
-		HTML::HeadParser.3 \
-		HTML::LinkExtor.3 \
-		HTML::Parse.3 \
-		HTML::Parser.3 \
-		HTML::TreeBuilder.3 \
 		HTTP::Cookies.3 \
 		HTTP::Daemon.3 \
 		HTTP::Date.3 \
