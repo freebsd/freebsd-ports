@@ -1,7 +1,6 @@
 include/libshbuf/shbuf.h
 include/libshbuf/shbuferr.h
-@dirrm include/libshbuf
 lib/libshbuf.a
-lib/libshbuf.la
 lib/libshbuf.so
 lib/libshbuf.so.1
+@dirrm include/libshbuf
