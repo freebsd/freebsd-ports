@@ -43,8 +43,8 @@ DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-db --localstatedir=/var/spool \
-			--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
+CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool \
+		--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
 .if ( ${OSVERSION} < 440000 )
 post-patch:
