@@ -1,11 +1,11 @@
---- Makefile.ssl.orig	Wed Dec 23 09:20:52 1998
-+++ Makefile.ssl	Sun Jan  3 20:03:00 1999
-@@ -174,7 +174,7 @@
+--- Makefile.ssl.orig	Mon Mar 22 18:18:18 1999
++++ Makefile.ssl	Wed Mar 24 17:25:25 1999
+@@ -149,7 +149,7 @@
  ONEDIRS=out tmp
  EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep
  WDIRS=  windows
 -LIBS=   libcrypto.a libssl.a 
-+LIBS=	libcrypto.a libssl.a libRSAglue.a
++LIBS=   libcrypto.a libssl.a libRSAglue.a
  
  GENERAL=        Makefile
  BASENAME=       openssl
