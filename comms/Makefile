@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.25 1997/06/08 11:24:45 andreas Exp $
+# $Id: Makefile,v 1.26 1997/10/13 04:41:06 max Exp $
 #
 
     SUBDIR += bpl+
+    SUBDIR += conserver
     SUBDIR += ecu
     SUBDIR += hylafax
     SUBDIR += kermit
