@@ -27,12 +27,14 @@ RUN_DEPENDS+=	${MODS_DIR}/mod_auth_external.so:${PORTSDIR}/www/mod_auth_external
 		${MODS_DIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${MODS_DIR}/mod_cvs.so:${PORTSDIR}/www/mod_cvs \
 		${MODS_DIR}/mod_roaming.so:${PORTSDIR}/www/mod_roaming
+		${MODS_DIR}/mod_layout.so:${PORTSDIR}/www/mod_layout
 PKGNAMESUFFIX+=	-lite
 .else
 MAKE_ENV+=	NO_PORTS=YES
 PLIST_SUB+=	PORTS=""
 CONFLICTS=	mod_auth_external-2.* mod_bandwidth-2.* mod_put-1.* \
-		mod_ticket-1.* mod_fastcgi-2.* mod_cvs-0.* mod_roaming-1.*
+		mod_ticket-1.* mod_fastcgi-2.* mod_cvs-0.* mod_roaming-1.* \
+		mod_layout-3.*
 .endif
 
 .if exists(${APXS})
