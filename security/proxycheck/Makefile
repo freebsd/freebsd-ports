@@ -7,20 +7,13 @@
 
 PORTNAME=	proxycheck
 PORTVERSION=	0.45
+PORTREVISION=	1
 CATEGORIES=	security
+MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
+		http://www.it.ca/~paul/src/
 
 MAINTAINER=	paul+ports@it.ca
 COMMENT=	Check for open proxy servers
-
-MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/:0 \
-		http://www.it.ca/~paul/src/:0
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:0
-.if !defined(NOPORTDOCS)
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-MASTER_SITES+=	http://www.corpit.ru/mjt/:1 \
-		http://www.it.ca/~paul/src/:1
-DISTFILES+=	proxycheck.html:1
-.endif
 
 MAN1=		proxycheck.1
 
@@ -30,7 +23,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-		@${INSTALL_DATA} ${DISTDIR}/proxycheck.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
