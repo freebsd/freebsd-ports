@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oftpd
-PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTVERSION=	0.3.7
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
@@ -15,36 +14,30 @@ MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A threaded, anonymous only FTP server designed for security
 
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-
-DOCFILES=	README AUTHORS ChangeLog NEWS TODO BUGS
-
-CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=	LIBS="-pthread"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		oftpd.8
+PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS
+PLIST_FILES=	sbin/oftpd
 
 post-patch:
+	${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if defined(MAX_NUM_CLIENTS)
-	${REINPLACE_CMD} -e "s@MAX_NUM_CLIENTS 300@MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}@" ${WRKSRC}/src/oftpd.h
+	${REINPLACE_CMD} -e 's|MAX_NUM_CLIENTS 300|MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}|g' ${WRKSRC}/src/oftpd.h
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/sbin/oftpd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 ${PREFIX}/share/doc/oftpd
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/oftpd
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${MANPREFIX}/man/man8
-	@${ECHO_MSG} "================================================================================"
-	@${ECHO_MSG} "oftpd only runs standalone, not from inetd."
-	@${ECHO_MSG} "Create a README file in the root anonymous FTP dir to have it displayed to"
-	@${ECHO_MSG} "users upon login."
-	@${ECHO_MSG} "================================================================================"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

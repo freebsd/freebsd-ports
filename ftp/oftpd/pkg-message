@@ -1,0 +1,5 @@
+================================================================================
+oftpd only runs standalone, not from inetd.
+Create a README file in the root anonymous FTP dir to have it displayed to
+users upon login.
+================================================================================
