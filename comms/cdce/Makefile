@@ -7,6 +7,7 @@
 
 PORTNAME=	cdce
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gank.org/freebsd/cdce/
 
