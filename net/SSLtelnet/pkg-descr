@@ -1,6 +1,6 @@
 This program suports both certification and cryptogoraphic with using SSL.
 
-If you do not have certification (/usr/local/openssl/certs/telnet.pem) provided
+If you do not have certification (/etc/ssl/certs/telnet.pem) provided
 by CA, this port make dummy certification. Of cource it is useless to certify
 but you can use SSL telnet/telnetd in encryption only mode with it.
 

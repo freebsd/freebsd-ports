@@ -15,9 +15,15 @@ MAINTAINER=		issei@jp.FreeBSD.org
 
 USE_OPENSSL=		YES
 
+PLIST_SUB+=		OPENSSLDIR="${OPENSSLDIR}"
+
 .if !defined(BATCH)
 INSTALL_TARGET=		install certificate
 .endif
+
+# Make sure that whole directory tree exists.
+pre-install:
+	${MKDIR} ${OPENSSLDIR}/certs
 
 post-install:
 	strip $(PREFIX)/bin/telnet

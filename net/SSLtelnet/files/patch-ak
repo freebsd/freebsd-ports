@@ -8,4 +8,3 @@
 +      rsa=RSA_generate_key(512,RSA_F4,NULL,NULL);
        if (ssl_debug_flag)
  	  BIO_printf(bio_err,"Generation of temp (512 bit) RSA key done\r\n");
-    

@@ -62,4 +62,3 @@
 +	ln -s telnetd.pem `openssl x509 -noout -hash < telnetd.pem`.0 ;\
 +	chmod 600 $(OPENSSLDIR)/certs/telnetd.pem; \
  	)
- 
