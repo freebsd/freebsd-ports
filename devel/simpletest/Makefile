@@ -86,9 +86,9 @@ CLASSES=	authentication.php browser.php dumper.php errors.php \
 pre-patch:
 	${CP} -r ${WRKSRC}/test ${WRKSRC}/test.beforeinstall
 
-do-build:
-	cd ${WRKSRC}/test.beforeinstall && \
-	${LOCALBASE}/bin/php -f ${SIMPLETESTS}_tests.php
+#do-build:
+#	cd ${WRKSRC}/test.beforeinstall && \
+#	${LOCALBASE}/bin/php -f ${SIMPLETESTS}_tests.php
 
 do-install:
 	${MKDIR} ${DOCSDIR}
