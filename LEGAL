@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.25 1995/12/20 10:50:08 asami Exp $
+# $Id: LEGAL,v 1.26 1996/01/15 10:15:00 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -36,3 +36,4 @@ msql-1.0.5.tar.gz	ports/databases/msql	Restrictive copyright
 ssh-*			ports/security/ssh	Crypto; export-controlled
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 glimpse-*		ports/misc/glimpse	Don't sell for profit
+SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
