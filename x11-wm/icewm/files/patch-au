@@ -1,0 +1,44 @@
+--- src/acpustatus.h.orig	Wed Feb 20 20:11:52 2002
++++ src/acpustatus.h	Wed Feb 20 20:14:16 2002
+@@ -1,19 +1,29 @@
+ #ifndef __CPUSTATUS_H
+ #define __CPUSTATUS_H
+ 
+-#if (defined(linux) || defined(HAVE_KSTAT_H))
++#if (defined(linux) || defined(HAVE_KSTAT_H)) || defined (__FreeBSD__)
+ 
+ #ifdef HAVE_KSTAT_H
+ #include <kstat.h>
+ #include <sys/sysinfo.h>
+ #endif /* have_kstat_h */
+ 
++#ifdef __FreeBSD__
++#include <kvm.h>
++#include <nlist.h>
++#endif
+ 
+ #define IWM_USER   (0)
+ #define IWM_NICE   (1)
+ #define IWM_SYS    (2)
++#ifdef __FreeBSD__
++#define IWM_INTR   (3)
++#define IWM_IDLE   (4)
++#define IWM_STATES (5)
++#else
+ #define IWM_IDLE   (3)
+ #define IWM_STATES (4)
++#endif
+ 
+ #include "ywindow.h"
+ #include "ytimer.h"
+@@ -38,6 +48,10 @@
+     long last_cpu[IWM_STATES];
+     YColor *color[IWM_STATES];
+     YTimer *fUpdateTimer;
++#ifdef __FreeBSD__
++    struct nlist namelist[2];
++    kvm_t *kd;
++#endif
+ };
+ 
+ #endif

@@ -1,0 +1,196 @@
+--- src/acpustatus.cc.orig	Wed Feb 20 19:55:04 2002
++++ src/acpustatus.cc	Wed Feb 20 20:19:20 2002
+@@ -26,7 +26,15 @@
+ 
+ #include "intl.h"
+ 
+-#if (defined(linux) || defined(HAVE_KSTAT_H))
++#if (defined(linux) || defined(HAVE_KSTAT_H) || defined(__FreeBSD__))
++
++#ifdef __FreeBSD__
++#include <fcntl.h>
++#include <kvm.h>
++#include <nlist.h>
++#include <sys/dkstat.h>
++#include <devstat.h>
++#endif
+ 
+ #define UPDATE_INTERVAL 500
+ 
+@@ -49,13 +57,42 @@
+     color[IWM_SYS]  = new YColor(clrCpuSys);
+     color[IWM_IDLE] = *clrCpuIdle
+     		    ? new YColor(clrCpuIdle) : NULL;
+-
++#ifdef __FreeBSD__
++    color[IWM_INTR] = new YColor(clrCpuIntr);
++    for (unsigned int i = 0; i < taskBarCPUSamples; i++) {
++        cpu[i][IWM_USER] = cpu[i][IWM_NICE] =
++        cpu[i][IWM_SYS] = cpu[i][IWM_INTR] = 0;
++        cpu[i][IWM_IDLE] = 1;
++    }
++    setSize(taskBarCPUSamples, 20);
++    last_cpu[IWM_USER] = last_cpu[IWM_NICE] = last_cpu[IWM_SYS] =
++    last_cpu[IWM_IDLE] = last_cpu[IWM_INTR] = 0;
++    if( setegid( 2 ) == 0 ) {
++       char errbuf[_POSIX2_LINE_MAX];
++       kd = kvm_openfiles( NULL, NULL, NULL, O_RDONLY, errbuf );
++       setegid( getgid() );
++       if( kd == NULL )
++           fprintf( stderr, "kvm_openfiles: %s\n", errbuf );
++       else {
++           memset( namelist, 0, sizeof(namelist) );
++           namelist[0].n_name = (char*)("_cp_time");
++           if( kvm_nlist( kd, namelist ) != 0 ) {
++               kvm_close( kd );
++               kd = NULL;
++           }
++       }
++    } else {
++       fprintf( stderr, "can't setegid(2), I'm not a setgid exec ?\n" );
++       kd = NULL;
++    }
++#else
+     for (int i(0); i < taskBarCPUSamples; i++) {
+         cpu[i][IWM_USER] = cpu[i][IWM_NICE] = cpu[i][IWM_SYS] = 0;
+         cpu[i][IWM_IDLE] = 1;
+     }
+     setSize(taskBarCPUSamples, 20);
+     last_cpu[IWM_USER] = last_cpu[IWM_NICE] = last_cpu[IWM_SYS] = last_cpu[IWM_IDLE] = 0;
++#endif
+     getStatus();
+     updateStatus();
+     updateToolTip();
+@@ -70,6 +107,13 @@
+     delete color[IWM_NICE]; color[IWM_NICE] = 0;
+     delete color[IWM_SYS];  color[IWM_SYS]  = 0;
+     delete color[IWM_IDLE]; color[IWM_IDLE] = 0;
++#ifdef __FreeBSD__
++    delete color[IWM_INTR]; color[IWM_INTR] = 0;
++    if( kd != NULL ) {
++       kvm_close( kd );
++       kd = NULL;
++    }
++#endif
+ }
+ 
+ void CPUStatus::paint(Graphics &g, int /*x*/, int /*y*/, unsigned int /*width*/, unsigned int /*height*/) {
+@@ -80,13 +124,34 @@
+         int nice = cpu[i][IWM_NICE];
+         int sys = cpu[i][IWM_SYS];
+         int idle = cpu[i][IWM_IDLE];
++#ifdef __FreeBSD__
++        int intr = cpu[i][IWM_INTR];
++        int total = user + sys + intr + nice + idle;
++	int totald = total;
++#else
+         int total = user + sys + nice + idle;
++#endif
+ 
+         int y = height() - 1;
+ 
+         if (total > 0) {
++#ifdef __FreeBSD__
++           if (intr) {
++               totald -= intr;
++                n = (h * totald) / total; // check rounding
++                if (n >= y) n = y;
++                g.setColor(color[IWM_INTR]);
++                g.drawLine(i, y, i, n);
++                y = n - 1;
++            }
++#endif
+             if (sys) {
++#ifdef __FreeBSD__
++                totald -= nice;
++                n = (h * totald)/ total;
++#else
+                 n = (h * (total - sys)) / total; // check rounding
++#endif
+                 if (n >= y) n = y;
+                 g.setColor(color[IWM_SYS]);
+                 g.drawLine(i, y, i, n);
+@@ -102,7 +167,12 @@
+             }
+ 
+             if (user) {
++#ifdef __FreeBSD__
++                totald -= user;
++                n = (h * totald)/ total;
++#else
+                 n = (h * (total - sys - nice - user))/ total;
++#endif
+                 if (n >= y) n = y;
+                 g.setColor(color[IWM_USER]);
+                 g.drawLine(i, y, i, n);
+@@ -152,6 +222,14 @@
+     sprintf(load, _("CPU Load: %3.2f %3.2f %3.2f, %d processes."),
+             l1, l5, l15, sys.procs);
+     setToolTip(load);
++#elif defined(__FreeBSD__)
++    char load[31]; // enough for "CPU Load: 999.99 999.99 999.99\0"
++    double loadavg[3];
++    if( kd != NULL && kvm_getloadavg( kd, loadavg, 3 ) != 3 )
++       return;
++    snprintf(load, sizeof(load), "CPU Load: %3.2f %3.2f %3.2f",
++            loadavg[0], loadavg[1], loadavg[2]);
++    setToolTip(load);
+ #endif
+ }
+ 
+@@ -169,13 +247,43 @@
+         cpu[i - 1][IWM_NICE] = cpu[i][IWM_NICE];
+         cpu[i - 1][IWM_SYS]  = cpu[i][IWM_SYS];
+         cpu[i - 1][IWM_IDLE] = cpu[i][IWM_IDLE];
++#ifdef __FreeBSD__
++        cpu[i - 1][IWM_INTR] = cpu[i][IWM_INTR];
++#endif
+     }
+     getStatus(),
+     repaint();
+ }
+ 
+ void CPUStatus::getStatus() {
+-#ifdef linux
++#ifdef __FreeBSD__
++    
++    cpu[taskBarCPUSamples-1][IWM_USER] = 0;
++    cpu[taskBarCPUSamples-1][IWM_NICE] = 0;
++    cpu[taskBarCPUSamples-1][IWM_SYS] = 0;
++    cpu[taskBarCPUSamples-1][IWM_INTR] = 0;
++    cpu[taskBarCPUSamples-1][IWM_IDLE] = 0;
++
++    if( kd == NULL ) return;
++
++    long cp_time[CPUSTATES];
++    int c = sizeof( cp_time );
++    if (kvm_read(kd, namelist[0].n_value, &cp_time, c) != c)
++       return;
++
++    long cur[IWM_STATES];
++    cur[IWM_USER] = cp_time[CP_USER];
++    cur[IWM_NICE] = cp_time[CP_NICE];
++    cur[IWM_SYS] = cp_time[CP_SYS];
++    cur[IWM_INTR] = cp_time[CP_INTR];
++    cur[IWM_IDLE] = cp_time[CP_IDLE];
++
++    for (int i = 0; i < IWM_STATES; i++) {
++        cpu[taskBarCPUSamples-1][i] = cur[i] - last_cpu[i];
++       last_cpu[i] = cur[i];
++    }
++
++#elif defined(linux)
+     char *p, buf[128];
+     long cur[IWM_STATES];
+     int len, fd = open("/proc/stat", O_RDONLY);
+@@ -209,8 +317,8 @@
+             cpu[taskBarCPUSamples-1][IWM_USER], cpu[taskBarCPUSamples-1][IWM_NICE],
+             cpu[taskBarCPUSamples-1][IWM_SYS],  cpu[taskBarCPUSamples-1][IDLE]);
+ #endif
+-#endif /* linux */
+-#ifdef HAVE_KSTAT_H
++
++#elif defined(HAVE_KSTAT_H)
+ #ifdef HAVE_OLD_KSTAT
+ #define ui32 ul
+ #endif

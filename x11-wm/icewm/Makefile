@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -56,5 +57,7 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/icewm
 .endif
+	${CHOWN} root.kmem ${PREFIX}/bin/icewm
+	${CHMOD} 2555 ${PREFIX}/bin/icewm
 
 .include <bsd.port.post.mk>
