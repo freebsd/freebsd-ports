@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=     dinoex@freebsd.org
 
+BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 #USE_GMAKE=     yes
 GNU_CONFIGURE=	YES
