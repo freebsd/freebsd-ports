@@ -448,6 +448,7 @@ astyle		ports/devel/astyle
 aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
 at-spi		ports/x11-toolkits/at-spi
+ataidle		ports/sysutils/ataidle
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
 atitd		ports/games/atitd
