@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.12 1996/11/11 08:11:50 max Exp $
+# $Id: Makefile,v 1.13 1997/02/09 00:40:35 max Exp $
 #
 
 DISTNAME=	platex2e
@@ -62,6 +62,8 @@ DISTFILES+=	pl9702j.tar.gz pl9702s.tar.gz pl9702e.tar.gz
 EXTRACT_ONLY=	${PLIB_FILE}
 
 do-install:
+	@${RM} -f ${PREFIX}/lib/texmf/tex/latex2e/base/*
+	@${RM} -f ${PREFIX}/lib/texmf/tex/platex2e/base/*
 	@tar -C ${PREFIX}/lib/texmf/fonts/public -zx \
 	  -f ${DISTDIR}/${DIST_SUBDIR}/ecfonts-1.0.tar.gz
 	@tar -C ${PREFIX}/lib/texmf/tex/latex2e -zx \
