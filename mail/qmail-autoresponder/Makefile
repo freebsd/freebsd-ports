@@ -16,9 +16,7 @@ MASTER_SITES=	http://untroubled.org/qmail-autoresponder/
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Rate-limited autoresponder for qmail
 
-BUILD_DEPENDS=	${BGLIBS_ROOT}/include/iobuf/iobuf.h:${PORTSDIR}/devel/bglibs
-
-BGLIBS_ROOT?=	${LOCALBASE}
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-iobuf.a:${PORTSDIR}/devel/bglibs
 
 PROGS=		qmail-autoresponder
 MAN1=		qmail-autoresponder.1
@@ -35,8 +33,8 @@ PLIST_SUB+=	MYSQL="@comment "
 ALL_TARGET=	${PROGS}
 
 pre-build:
-	${ECHO_CMD} "${BGLIBS_ROOT}/include"	> ${WRKSRC}/conf-bgincs
-	${ECHO_CMD} "${BGLIBS_ROOT}/lib"	> ${WRKSRC}/conf-bglibs
+	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
+	${ECHO_CMD} "${LOCALBASE}/lib"		> ${WRKSRC}/conf-bglibs
 	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
