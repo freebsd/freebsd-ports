@@ -4223,6 +4223,7 @@ mhc-emacs20	ports/deskutils/mhc-emacs20
 mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
+mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
 midimountain	ports/audio/midimountain
