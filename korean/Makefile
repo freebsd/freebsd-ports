@@ -51,6 +51,7 @@
     SUBDIR += linux_locale
     SUBDIR += mizifont
     SUBDIR += mkisofs
+    SUBDIR += mozilla-klp
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
     SUBDIR += netscape3
