@@ -651,6 +651,7 @@
     SUBDIR += p5-Locale-Maketext-Fuzzy
     SUBDIR += p5-Locale-Maketext-Gettext
     SUBDIR += p5-Locale-Maketext-Lexicon
+    SUBDIR += p5-Locale-Maketext-Simple
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
     SUBDIR += p5-LockFile-Simple
