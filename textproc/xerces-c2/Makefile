@@ -104,6 +104,10 @@ SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 pre-everything::
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${ECHO} ''
