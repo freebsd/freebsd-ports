@@ -3768,6 +3768,7 @@ mawk		ports/lang/mawk
 mayavi		ports/science/mayavi
 mboxgrep	ports/mail/mboxgrep
 mbr		src/sys/boot/i386/mbr
+mbrowse		ports/net/mbrowse
 mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
 mcal		ports/deskutils/mcal
