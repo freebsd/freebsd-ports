@@ -7,6 +7,7 @@
 
 PORTNAME=	pks
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES+=	http://www.mit.edu/people/marc/pks/ \
 		ftp://ftp.neonramp.com/pub/pksd/

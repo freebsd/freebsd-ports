@@ -1,0 +1,15 @@
+===================================================================
+RCS file: globals.h,v
+retrieving revision 1.15
+diff -u -r1.15 globals.h
+--- globals.h	1999/07/20 05:02:45	1.15
++++ globals.h	2001/09/02 03:43:32
+@@ -13,7 +13,7 @@
+    "42.17.2+magicfeature", or "42.17.3+joe".  Don't remove any
+    existing modifiers. */
+ 
+-#define PKS_VERSION "0.9.4+patch2"
++#define PKS_VERSION "0.9.4+patch2+JHpatch1"
+ 
+ #ifdef DEBUG
+ extern int debug;

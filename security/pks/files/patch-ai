@@ -1,0 +1,20 @@
+===================================================================
+RCS file: pksd.conf.5,v
+retrieving revision 1.7
+diff -u -r1.7 pksd.conf.5
+--- pksd.conf.5	1999/05/17 05:20:20	1.7
++++ pksd.conf.5	2001/09/02 04:19:53
+@@ -42,6 +42,13 @@
+ .BR 0 ,
+ then HTTP connections are not accepted on any port.
+ .TP
++.B www_readonly
++This controls key updates/submissions via HTTP.  If it is
++.BR 0 ,
++then keys may be submitted via HTTP.  The DEFAULT is
++.BR 1,
++which DOES NOT allow key updates/submissions via HTTP.
++.TP
+ .B socket_name
+ This is the name of the unix domain socket on which
+ .B pksd(8)

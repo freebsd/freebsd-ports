@@ -1,0 +1,18 @@
+===================================================================
+RCS file: pksdctl.c,v
+retrieving revision 1.11
+diff -u -r1.11 pksdctl.c
+--- pksdctl.c	1999/05/17 05:20:20	1.11
++++ pksdctl.c	2001/09/02 04:20:57
+@@ -20,6 +20,11 @@
+ void usage(char *argv0)
+ {
+    fprintf(stderr, "usage: %s socket string\n", argv0);
++   fprintf(stderr, "usage:  %s <pksd socket> <command> [arg]\n", argv0);
++   fprintf(stderr, "  commands:  mail <msg>\n");
++   fprintf(stderr, "             disable <userid>\n");
++   fprintf(stderr, "             shutdown\n");
++
+    exit(1);
+ }
+ 
