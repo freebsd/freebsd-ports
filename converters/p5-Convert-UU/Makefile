@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Convert-UU
-# Version required:			0.01
+# Version required:			0.04
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1996/12/11 10:18:38 asami Exp $
+#   $Id: Makefile,v 1.6 1997/04/20 13:52:43 wosch Exp $
 #
 
-DISTNAME=	Convert-UU-0.01
-PKGNAME=	p5-Convert-UU-0.1
+DISTNAME=	Convert-UU-0.04
+PKGNAME=	p5-Convert-UU-0.04
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert

@@ -9,7 +9,6 @@ lib/perl5/site_perl/Net/Telnet.pm
 lib/perl5/site_perl/Net/Netrc.pm
 lib/perl5/site_perl/Net/SMTP.pm
 lib/perl5/site_perl/Net/Cmd.pm
-lib/perl5/site_perl/Net/Config.pm
 lib/perl5/site_perl/Net/PH.pm
 lib/perl5/man/man3/Net::Time.3.gz
 lib/perl5/man/man3/Net::DummyInetd.3.gz
@@ -24,5 +23,3 @@ lib/perl5/man/man3/Net::Telnet.3.gz
 lib/perl5/man/man3/Net::Cmd.3.gz
 lib/perl5/man/man3/Net::PH.3.gz
 lib/perl5/site_perl/i386-freebsd/auto/Net/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Net
-@dirrm lib/perl5/site_perl/Net

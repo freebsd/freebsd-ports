@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-libwww
-# Version required:			5.07
+# Version required:			5.08
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/04/09 12:00:41 jfitz Exp $
+#   $Id: Makefile,v 1.7 1997/04/20 13:53:23 wosch Exp $
 #
 
-DISTNAME=	libwww-perl-5.07
-PKGNAME=	p5-libwww-5.07
+DISTNAME=	libwww-perl-5.08
+PKGNAME=	p5-libwww-5.08
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
@@ -18,8 +18,6 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/MD5.pm:${PORTSDIR}/security/p5-MD5 \
 		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
-
-IS_INTERACTIVE=	YES
 
 MAN1=		lwp-mirror.1 lwp-request.1 lwp-rget.1 lwp-download.1
 MAN3=		File::CounterFile.3 File::Listing.3 Font::AFM.3 \
