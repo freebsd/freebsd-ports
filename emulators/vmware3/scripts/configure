@@ -10,8 +10,9 @@ title="VMware network options"
 get_network_settings() {
     result=`/usr/bin/dialog --title "$title" --clear --inputbox \
 "\n"\
-"What will be the IP address of your host on your private network?:"\
-    10 40 $host_ip \
+"What will be the IP address of your host\n"\
+"on your private network?:"\
+    10 50 $host_ip \
     2>&1 >/dev/tty `
 
     case $? in
@@ -28,8 +29,9 @@ get_network_settings() {
 
     result=`/usr/bin/dialog --title "$title" --clear --inputbox \
 "\n"\
-"What will be the netmask of your private network?:"\
-    10 40 $netmask \
+"What will be the netmask of your private\n"\
+"network?:"\
+    10 50 $netmask \
     2>&1 >/dev/tty `
 
     case $? in
@@ -55,13 +57,13 @@ do_network() {
 "Are the following options correct?\n\n"\
 "IP address: $host_ip\n"\
 "Netmask:    $netmask\n"\
-	10 40
+	10 50
 	[ $? -eq 0 ] && return 0
 
 	/usr/bin/dialog --title "Confirmation" --clear --yesno \
 "\n"\
 "Do you want to edit network options again?\n"\
-	10 40
+	10 50
 	[ $? -eq 0 ] && continue
 
 	/usr/bin/dialog --title "Confirmation" --clear --yesno \
@@ -88,7 +90,7 @@ if [ _$BATCH = _ ]; then
 "The following options will be used.\n\n"\
 "IP address: $host_ip\n"\
 "Netmask:    $netmask\n"\
-	10 40
+	10 50
     fi
 else #BATCH
     [ -f ${WRKDIR}/Makefile.inc.net ] && exit
