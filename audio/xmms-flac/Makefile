@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		FLAC.5:${PORTSDIR}/audio/flac
 
 USE_X_PREFIX=	yes
