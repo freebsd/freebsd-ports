@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.52.0
+# Version required:	0.53.0
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.48 1999/03/22 02:44:55 steve Exp $
+# $Id: Makefile,v 1.49 1999/04/16 05:22:48 taoka Exp $
 
-DISTNAME=	WindowMaker-0.52.0
-PKGNAME=	windowmaker-0.52.0
+DISTNAME=	WindowMaker-0.53.0
+PKGNAME=	windowmaker-0.53.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
@@ -22,6 +22,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		PropList.1:${PORTSDIR}/devel/libPropList
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} LIBS=-L${LOCALBASE}/lib \
@@ -35,20 +36,17 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-DATAFILES=	WindowMaker-data.tar.gz \
-		WindowMaker-extra-0.1.tar.gz
+DATAFILES=	WindowMaker-extra-0.1.tar.bz2
 
 post-patch:
-	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
+	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c \
+		${WRKSRC}/WindowMaker/Defaults/*
 
 post-configure:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
 		./configure --prefix=${PREFIX}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/WindowMaker/Pixmaps/
-	${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
-		${PREFIX}/share/WindowMaker/Pixmaps/
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
 		${MAKE} ${MAKE_ARGS} install
 
