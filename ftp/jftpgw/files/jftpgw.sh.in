@@ -11,7 +11,7 @@ start)
 	if [ -x $PROGRAM ] && [ -r $CFGFILE ]
 	then
 		$PROGRAM
-		echo -n "jftpgw "
+		echo -n " jftpgw"
 	fi
 	;;
 
