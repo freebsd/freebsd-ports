@@ -1,6 +1,6 @@
 # New ports collection makefile for:	x3270
 # Version required:	3.0.3.4
-# Date created:		18 December 1994
+# Date created:		31 January 1995
 # Whom:			janek
 #
 
