@@ -1,0 +1,240 @@
+
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	.
+#	./files
+#	./files/patch-ab
+#	./files/patch-ac
+#	./files/patch-ad
+#	./files/Makefile.bsd
+#	./Makefile
+#	./distinfo
+#	./pkg-descr
+#	./pkg-plist
+#	./pkg-comment
+#
+echo c - .
+mkdir -p . > /dev/null 2>&1
+echo c - ./files
+mkdir -p ./files > /dev/null 2>&1
+echo x - ./files/patch-ab
+sed 's/^X//' >./files/patch-ab << 'END-of-./files/patch-ab'
+X--- basics/a_file.cpp	Sat Dec 23 17:10:00 2000
+X+++ basics/a_file.cpp	Thu Jan 18 11:37:44 2001
+X@@ -29,4 +29,4 @@
+X #  include <sys/types.h>
+X+#  include <sys/uio.h>
+X #  include <sys/stat.h>
+X-#  include <sys/statfs.h>
+X #  include <sys/ioctl.h>
+X--- basics/filename.cpp	Sat Dec 23 17:10:00 2000
+X+++ basics/filename.cpp	Thu Jan 18 11:33:35 2001
+X@@ -39,3 +39,4 @@
+X #  include <sys/stat.h>
+X-#  include <sys/statfs.h>
+X+#  include <sys/param.h>
+X+#  include <sys/mount.h>
+X #  include <stdio.h>
+X@@ -424,5 +425,4 @@
+X   struct statfs buf;
+X-  int errNum=0, fstyp;
+X+  int errNum=0;
+X   /* Get file system stats */
+X-  fstyp=0;
+X-  errNum = statfs ( ".", &buf, sizeof( struct statfs ), fstyp);
+X+  errNum = statfs ( ".", &buf);
+END-of-./files/patch-ab
+echo x - ./files/patch-ac
+sed 's/^X//' >./files/patch-ac << 'END-of-./files/patch-ac'
+X--- basics/a_file.h	Sat Dec 23 17:10:00 2000
+X+++ basics/a_file.h	Thu Jan 18 11:41:58 2001
+X@@ -46,12 +46,10 @@
+X //  Global Functions
+X //  ________________
+X 
+X-#ifdef _WINDOWS
+X uint16          shortswap(uint16);  // Swap for Big/Little Endian
+X uint32          longswap(uint32);   // Swap for Big/Little Endian
+X #  define int32swap   longswap
+X #  define int16swap   shortswap
+X-#endif
+X 
+X //  Classes Declarations
+X //  --------------------
+X@@ -310,7 +308,6 @@
+X 
+X #ifdef DEFINE_INT32_FUNCTIONS
+X 
+X-#ifdef _WINDOWS
+X inline uint32   longswap( uint32 x )
+X {
+X   uint32 a, b;
+X@@ -318,7 +315,6 @@
+X   b = x & 0x0000ffff;
+X   return ( ((uint32)shortswap((uint16)b) << 16) | (uint32)shortswap((uint16)a) );
+X }
+X-#endif
+X 
+X inline Boolean Fichier::Ecriture(int32 ceLong)
+X {
+X@@ -376,7 +372,6 @@
+X 
+X 
+X // Added by GDN
+X-#ifdef _WINDOWS
+X inline uint16   shortswap( uint16 x )
+X {
+X   uint16 a, b;
+X@@ -384,7 +379,6 @@
+X   b = x & 0x00ff;
+X   return ( (b << 8) | a );
+X }
+X-#endif
+X 
+X inline Boolean Fichier::Ecriture(short ceShort)
+X {
+X@@ -487,9 +481,9 @@
+X inline Boolean Fichier::EcritureTableau(short *array, int32 nshort)
+X {
+X   Boolean ret;
+X-
+X+  int32 i;
+X #ifndef __bigEndian
+X-  for (int32 i = 0; i < nshort; i++)
+X+  for (i = 0; i < nshort; i++)
+X     array[i] = shortswap (array[i]);
+X #endif
+X 
+X@@ -509,8 +503,9 @@
+X inline Boolean Fichier::EcritureTableau( int32 *array, int32 t)
+X {
+X   Boolean ret;
+X+  int32 i;
+X #ifndef __bigEndian
+X-  for (int32 i = 0; i < t; i++)
+X+  for (i = 0; i < t; i++)
+X     array[i] = int32swap (array[i]);
+X #endif
+X 
+END-of-./files/patch-ac
+echo x - ./files/patch-ad
+sed 's/^X//' >./files/patch-ad << 'END-of-./files/patch-ad'
+X--- ole/gen_guid.cpp	Sat Dec 23 17:12:09 2000
+X+++ ole/gen_guid.cpp	Thu Jan 18 11:46:44 2001
+X@@ -55,2 +55,4 @@
+X } timespec;
+X+#else
+X+# include <sys/time.h>
+X #endif
+END-of-./files/patch-ad
+echo x - ./files/Makefile.bsd
+sed 's/^X//' >./files/Makefile.bsd << 'END-of-./files/Makefile.bsd'
+XLIB	=	fpx
+XINCS	=	fpxlib.h
+XSHLIB_MAJOR=	1
+XSHLIB_MINOR=	2
+X
+XLIBDIR	=	${LOCALBASE}/lib
+XINCDIR	=	${LOCALBASE}/include
+X
+XNOPROFILE=	Don't want it
+X
+XCPPS	!=	find ${.CURDIR} -name \*.cpp -print
+X# Some of the .cxx files are #include-ed into others, so can't use `find' here:
+XOLESS	:=	ascii.cxx cdocfile.cxx chinst.cxx dffuncs.cxx dfiter.cxx \
+X		dfstream difat.cxx dir.cxx dirp.cxx docfile.cxx entry.cxx \
+X		expdf.cxx expiter expst.cxx fat.cxx funcs.cxx header.cxx \
+X		iter.cxx mem.cxx msf msfiter.cxx mstream.cxx page.cxx \
+X		refilb.cxx rexpdf.cxx sstream.cxx storage.cxx time.cxx \
+X		vect.cxx wchar.c
+XJPGS	!=	find ${.CURDIR}/jpeg -name \*.c
+X
+XCPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
+X
+XSRCS	=	${CPPS:T}
+X
+XCXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
+XCXXFLAGS+=	-fno-rtti -fno-exceptions
+XLDADD	+=	-L${LOCALBASE}/lib -ljpeg
+X
+X.PATH: ${CPPS:H}
+X
+X.for d in oless/h jpeg ole basics ri_image oless fpx
+XCXXFLAGS+=	-I${.CURDIR}/$d
+X.endfor
+X
+X.include <bsd.lib.mk>
+END-of-./files/Makefile.bsd
+echo x - ./Makefile
+sed 's/^X//' >./Makefile << 'END-of-./Makefile'
+X# New ports collection makefile for:	fpx
+X# Date created:		Jan 10 2001
+X# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
+X#
+X# $FreeBSD$
+X#
+X
+XPORTNAME=	fpx
+XPORTVERSION=	1.2.0
+XCATEGORIES=	graphics
+XMASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/%SUBDIR%/ \
+X	ftp://ftp.u-aizu.ac.jp/pub/graphics/image/%SUBDIR%/ \
+X	ftp://ftp.fifi.org/pub/%SUBDIR%/ \
+X	ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
+X	ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/%SUBDIR%/ \
+X	ftp://ftp.oce.nl/pub/Internet/audio+video/%SUBDIR%/
+XMASTER_SITE_SUBDIR=	ImageMagick/delegates
+X
+XMAINTAINER=	mi@aldan.algebra.com
+X
+XLIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+X
+XWRKSRC=	${WRKDIR}/lib${DISTNAME}
+X
+Xpost-patch:
+X	# Replacing references to <malloc.h> with <stdlib.h>
+X	# Ignore the /dev/stderr warning below. (What a hack!)
+X	${PERL} -pi -e 's/<malloc.h>/<stdlib.h>/' \
+X		`find ${WRKSRC} -type f | xargs ${GREP} -l '<malloc.h>'` /dev/stderr
+X
+XINSTALLS_SHLIB=	yes
+XMAKEFILE=	${FILESDIR}/Makefile.bsd
+XMAKE_ARGS=	-j 2
+X
+X.include <bsd.port.mk>
+END-of-./Makefile
+echo x - ./distinfo
+sed 's/^X//' >./distinfo << 'END-of-./distinfo'
+XMD5 (fpx-1.2.0.tar.gz) = 9e431764692083f4b11e999b257bf42a
+END-of-./distinfo
+echo x - ./pkg-descr
+sed 's/^X//' >./pkg-descr << 'END-of-./pkg-descr'
+XThis  package   is  the  Flashpix   OpenSource  Toolkit  and   is  based
+Xon  source   code  obtained   from  the   Digital  Imaging   Group  Inc.
+X(http://www.digitalimaging.org/).
+X
+XSee  the  file  AUTHORS  for  the  origin  of  this  package,  the  file
+XCOPYING for  usage limitations, the  file INSTALL for  Unix installation
+Xinstructions,  and  the  file  README.gcc   for  GNU  make  based  build
+Xinstructions.
+X
+XWWW: http://www.digitalimaging.org/
+END-of-./pkg-descr
+echo x - ./pkg-plist
+sed 's/^X//' >./pkg-plist << 'END-of-./pkg-plist'
+Xlib/libfpx.so.1.2
+Xlib/libfpx.so
+Xlib/libfpx.a
+Xinclude/fpxlib.h
+END-of-./pkg-plist
+echo x - ./pkg-comment
+sed 's/^X//' >./pkg-comment << 'END-of-./pkg-comment'
+XLibrary routines for working with Flashpix images
+END-of-./pkg-comment
+exit
+

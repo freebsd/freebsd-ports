@@ -106,6 +106,7 @@
     SUBDIR += libdivxdecore
     SUBDIR += libdjvu++
     SUBDIR += libflash
+    SUBDIR += libfpx
     SUBDIR += libggi
     SUBDIR += libgrass5
     SUBDIR += libimg
