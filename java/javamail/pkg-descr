@@ -1,0 +1,8 @@
+The JavaMailTM API provides a set of abstract classes that model a mail
+system. The API provides a platform independent and protocol independent
+framework to build Java technology-based mail and messaging applications.
+The JavaMail API is implemented as a Java platform standard extension. Sun
+provides this royalty-free reference implementation, in binary form, that
+developers will be able to use and ship.
+
+WWW: http://www.javasoft.com/products/javamail/index.html
