@@ -4,6 +4,7 @@ include/cdk/button.h
 include/cdk/buttonbox.h
 include/cdk/calendar.h
 include/cdk/cdk.h
+include/cdk/cdk_compat.h
 include/cdk/cdk_config.h
 include/cdk/cdk_objs.h
 include/cdk/cdk_params.h
@@ -13,9 +14,11 @@ include/cdk/cdkscreen.h
 include/cdk/curdefs.h
 include/cdk/dialog.h
 include/cdk/draw.h
+include/cdk/dscale.h
 include/cdk/entry.h
 include/cdk/fscale.h
 include/cdk/fselect.h
+include/cdk/fslider.h
 include/cdk/graph.h
 include/cdk/histogram.h
 include/cdk/itemlist.h
@@ -32,6 +35,8 @@ include/cdk/slider.h
 include/cdk/swindow.h
 include/cdk/template.h
 include/cdk/traverse.h
+include/cdk/uscale.h
+include/cdk/uslider.h
 include/cdk/viewer.h
 lib/libcdk.a
 lib/libcdk.so
@@ -189,8 +194,6 @@ lib/libcdk.so.4
 %%EXAMPLESDIR%%/examples/traverse_ex.c
 %%EXAMPLESDIR%%/examples/viewer_ex
 %%EXAMPLESDIR%%/examples/viewer_ex.c
-%%EXAMPLESDIR%%/examples/vinstall
-%%EXAMPLESDIR%%/examples/vinstall.c
 @dirrm %%EXAMPLESDIR%%/examples
 @dirrm %%EXAMPLESDIR%%/demos
 @dirrm %%EXAMPLESDIR%%/cli/utils
