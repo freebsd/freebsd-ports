@@ -1,4 +1,4 @@
 @cwd /usr/local
 bin/screen
-bin/screen-3.5.17
+bin/screen-3.5.18
 man/man1/screen.1
