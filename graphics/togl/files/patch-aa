@@ -27,9 +27,9 @@ $FreeBSD$
 -# Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
 -INCLUDES = -I/usr/local/include -I/usr/include/tcl
 +# Where to find tc.hl, tk.h, OpenGL/Mesa headers, etc:
-+INCLUDES = -I${LOCALBASE}/include/tcl8.3 \
-+           -I${LOCALBASE}/include/tk8.3 \
-+           -I${LOCALBASE}/include/tk8.3/generic \
++INCLUDES = -I${LOCALBASE}/include/tcl8.4 \
++           -I${LOCALBASE}/include/tk8.4 \
++           -I${LOCALBASE}/include/tk8.4/generic \
 +           -I${X11BASE}/include
  
  # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
@@ -39,7 +39,7 @@ $FreeBSD$
  
  # Libraries to link with (-ldl for Linux only?):
 -LIBS = -ltk -ltcl -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
-+LIBS = -ltk83 -ltcl83 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm $(PTHREAD_LIBS)
++LIBS = -ltk84 -ltcl84 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm $(PTHREAD_LIBS)
  
  TK_FLAGS =
  
