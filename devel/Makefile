@@ -1077,6 +1077,7 @@
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += simgear
+    SUBDIR += simpleparse
     SUBDIR += simulavr
     SUBDIR += skalibs
     SUBDIR += smv
