@@ -40,7 +40,7 @@ ALL_TARGET=	spamilter dnsblchk mxlookup iflookup
 PLIST_FILES+=	bin/ipfwmtad
 .endif
 .if ${OSVERSION} > 501000
-BROKEN=		resource starvation in threads
+IGNORE=		is unusable because of resource starvation in threads
 .endif
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
