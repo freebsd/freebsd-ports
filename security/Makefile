@@ -35,6 +35,7 @@
     SUBDIR += crank
     SUBDIR += cryptopp
     SUBDIR += cyrus-sasl
+    SUBDIR += cyrus-sasl2
     SUBDIR += ddos_scan
     SUBDIR += didentd
     SUBDIR += digest

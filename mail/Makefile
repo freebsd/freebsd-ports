@@ -26,6 +26,7 @@
     SUBDIR += cvsmail
     SUBDIR += cyrus
     SUBDIR += cyrus-imapd
+    SUBDIR += cyrus-imapd2
     SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += dkimap4
