@@ -59,6 +59,7 @@
     SUBDIR += gone
     SUBDIR += gplbp
     SUBDIR += grdb
+    SUBDIR += grub
     SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gtl
