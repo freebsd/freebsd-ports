@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,10 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
-USE_GNOME=	imlib
+USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-imagelib=imlib --enable-utmp
+CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1

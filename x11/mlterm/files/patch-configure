@@ -1,0 +1,25 @@
+--- configure.orig	Fri Jun 20 10:53:15 2003
++++ configure	Fri Jun 20 11:00:52 2003
+@@ -9103,11 +9103,6 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
+ 
+-  case "$ac_given_INSTALL" in
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
+-
+   echo creating "$ac_file"
+   rm -f "$ac_file"
+   configure_input="Generated automatically from `echo $ac_file_in|sed 's%.*/%%'` by configure."
+@@ -9469,10 +9464,6 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
