@@ -84,7 +84,7 @@ post-extract:
 	  ${TAR} --unlink -xzf ${DISTDIR}/epag-3.09.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.2.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.4.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/eplaser-2.0.2-550.tgz ; \
 	)
 
@@ -104,7 +104,7 @@ post-patch:
 	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
 	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
-	  ${CP} gdevrpdl-1.2/gdevrpdl.c gdevrpdl-1.2/gdevrpdl.mak ${WRKSRC}; \
+	  ${CP} gdevrpdl-1.4/gdevrpdl.c gdevrpdl-1.4/gdevrpdl.mak ${WRKSRC}; \
 	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak eplaser/gdevesmv.c eplaser/gdevesmv.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
@@ -158,7 +158,7 @@ post-install:
 	  ${CP} ${PRINTER}/gdevmjc-0.8/MJ700V2C.FAQ ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevalps-0.2/README.gdevalps ${DOC_DIR}/README.gdevalps ; \
 	  ${CP} ${PRINTER}/gdevmd2k-0.2a/README.jis ${DOC_DIR}/gdevmd2k.jis ; \
-	  ${CP} ${PRINTER}/gdevrpdl-1.2/gdevrpdl.doc ${DOC_DIR} ; \
+	  ${CP} ${PRINTER}/gdevrpdl-1.4/gdevrpdl.doc ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/gdevdmpr.sj ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/dmp_init.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/dmp_site.ps ${GSINST_DIR} ; \
