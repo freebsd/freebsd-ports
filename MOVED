@@ -462,3 +462,25 @@ lang/ruby_r-devel|lang/ruby18_r|2003-08-07|renamed
 lang/ruby_static|lang/ruby16_static|2003-08-07|renamed
 lang/ruby_static-devel|lang/ruby18_static|2003-08-07|renamed
 x11-wm/metacity-setup||2003-08-07|distfiles have disappeared and functionality exists in x11-wm/metacity
+biology/p5-bioperl-devel|biology/p5-bioperl|2003-08-07|port was marked broken for 3 months with no fix submitted
+cad/pisces||2003-08-07|port was marked broken for 3 months with no fix submitted
+cad/sis||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/dia||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/mozilla-tclp||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/uds||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/py-htmlkit||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/sdcc||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/ptl||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/silc-toolkit||2003-08-07|port was marked broken for 3 months with no fix submitted
+lang/pnet||2003-08-07|port was marked broken for 3 months with no fix submitted
+lang/wxbasic||2003-08-07|port was marked broken for 3 months with no fix submitted
+math/siag||2003-08-07|port was marked broken for 3 months with no fix submitted
+net/samba-tng||2003-08-07|port was marked broken for 3 months with no fix submitted
+net/qtella||2003-08-07|port was marked broken for 3 months with no fix submitted
+print/xpp||2003-08-07|port was marked broken for 3 months with no fix submitted
+www/slash||2003-08-07|port was marked broken for 3 months with no fix submitted
+www/viewml||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11/wscan||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11-wm/scwm||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/cce||2003-08-07|port contains a security vulnerability and is no longer developed
