@@ -7,7 +7,7 @@
 
 PORTNAME=	libXrender
 PORTVERSION=	0.8.3
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11 x11-toolkits
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 DISTNAME=	xrender-${PORTVERSION}
 

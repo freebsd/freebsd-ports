@@ -7,7 +7,7 @@
 
 PORTNAME=	Finance-Currency-Convert
 PORTVERSION=	1.03
-CATEGORIES=	misc perl5 finance
+CATEGORIES=	finance misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
 PKGNAMEPREFIX=	p5-

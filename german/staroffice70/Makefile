@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	7.0
-CATEGORIES=	editors linux
+CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.sun.co.uk/pub/patches/:patch \
 		ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
 		ftp://ftp.math.ohio-state.edu/private/sun/.../:patch \

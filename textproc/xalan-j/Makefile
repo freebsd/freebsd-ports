@@ -7,7 +7,7 @@
 
 PORTNAME=	xalan-j
 PORTVERSION=	2.5.1
-CATEGORIES=	java textproc
+CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	0.4
-CATEGORIES=	german finance
+CATEGORIES=	finance german
 MASTER_SITES=	http://ktoblzcheck.sourceforge.net/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
