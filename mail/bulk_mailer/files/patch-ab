@@ -1,6 +1,6 @@
---- bulk_mailer.c.ORIG	Thu Jan 29 22:32:58 1998
-+++ bulk_mailer.c	Thu Jan 29 23:05:35 1998
-@@ -91,6 +91,8 @@
+--- bulk_mailer.c.ORIG	Tue Apr 14 19:38:46 1998
++++ bulk_mailer.c	Fri Aug 14 22:02:19 1998
+@@ -91,11 +91,16 @@
  #include <sysexits.h>
  #include <errno.h>
  #include <time.h>
@@ -9,7 +9,15 @@
  #ifdef HAVE_STRING_H
  #include <string.h>
  #endif
-@@ -271,6 +273,7 @@
+ #include "patchlevel.h"
+ 
++#define COMMAND_BUF_SIZE (32*1024)
++#define DATEBUF_SIZE (100)
++
+ #ifndef PIPECOMMAND
+ #define PIPECOMMAND "/usr/lib/sendmail -bs %s"
+ #endif
+@@ -271,6 +276,7 @@
   * memory, appending a NUL to the copy.
   */
  
@@ -17,7 +25,7 @@
  static char *
  strndup (str, len)
  char *str;
-@@ -282,6 +285,7 @@
+@@ -282,6 +288,7 @@
      result[len] = '\0';
      return result;
  }
@@ -25,7 +33,7 @@
  
  /*
   * sort by case-folded reversed domain
-@@ -312,15 +316,15 @@
+@@ -312,15 +319,15 @@
  {
      char *at;
      char *ptr;
@@ -44,7 +52,40 @@
  	
  	num_addr_slots += 1000;
  	if (address_list == NULL)
-@@ -916,7 +920,7 @@
+@@ -544,12 +551,12 @@
+ open_envelope ()
+ {
+     FILE *fp;
+-    char command_buf[32*1024];
++    char command_buf[COMMAND_BUF_SIZE];
+ 
+     if (debug_flag)
+ 	fp = stderr;
+     else {
+-	sprintf (command_buf, PIPECOMMAND, sendmail_flags);
++	snprintf (command_buf, COMMAND_BUF_SIZE, PIPECOMMAND, sendmail_flags);
+ 
+ 	if ((fp = popen (command_buf, "w")) == NULL) {
+ 	    fprintf (stderr, "can't open pipe to sendmail: %s\n",
+@@ -867,7 +874,7 @@
+ {
+     struct tm gmt;
+     struct tm *lt;
+-    static char datebuf[100];
++    static char datebuf[DATEBUF_SIZE];
+     int gmtoff;
+     char sign;
+     static char *months[] = {
+@@ -900,7 +907,7 @@
+ 	sign = '-';
+ 	gmtoff = -gmtoff;
+     }
+-    sprintf (datebuf, "%s, %d %s %04d %02d:%02d:%02d %c%02d%02d",
++    snprintf (datebuf, DATEBUF_SIZE, "%s, %d %s %04d %02d:%02d:%02d %c%02d%02d",
+ 	     wdays[lt->tm_wday], lt->tm_mday, months[lt->tm_mon], lt->tm_year + 1900,
+ 	     lt->tm_hour, lt->tm_min, lt->tm_sec,
+ 	     sign,
+@@ -925,7 +932,7 @@
  copy_message (out, in)
  FILE *out, *in;
  {
@@ -53,7 +94,7 @@
      char linebuf[32*1024];
      int has_valid_approved_hdr = 0;
      int has_resent_to_hdr = 0;
-@@ -1105,14 +1109,14 @@
+@@ -1114,14 +1121,14 @@
       */
      lines = 0;
      while (fgets (linebuf, sizeof (linebuf), in) != NULL) {
@@ -70,7 +111,7 @@
  	    saw_command = 1;
  	++lines;
  	fputs (linebuf, out);
-@@ -1210,13 +1214,13 @@
+@@ -1222,13 +1229,13 @@
  int argc;
  char *argv[];
  {
@@ -87,7 +128,7 @@
  
      while (argc > 1 && (*argv[1] == '-' || *argv[1] == '+')) {
  	if (strcmp (argv[1], "-comment") == 0 && argc > 2) {
-@@ -1377,4 +1381,5 @@
+@@ -1396,4 +1403,5 @@
  	
  	exit (EX_OK);
      }
