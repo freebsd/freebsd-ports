@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to GNOME's librsvg
 
 LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
