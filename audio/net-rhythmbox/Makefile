@@ -14,8 +14,6 @@ MASTER_SITES=	http://web.verbum.org/net-rhythmbox/
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
-BROKEN=		Does not configure
-
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
 		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		FLAC.5:${PORTSDIR}/audio/flac \
@@ -34,8 +32,8 @@ CONFIGURE_ARGS=	--disable-lirc
 .if exists(${LOCALBASE}/lib/libxosd.so)
 WITH_XOSD=	yes
 .endif
-.if exists(${LOCALBASE}/lib/libogg.so)
-WITH_OGG=  yes
+.if exists(${LOCALBASE}/lib/libvorbis.so)
+WITH_VORBIS=  yes
 .endif
 
 .ifdef (WITH_XOSD)
@@ -43,10 +41,10 @@ LIB_DEPENDS+=   xosd.4:${PORTSDIR}/misc/xosd
 .else
 CONFIGURE_ARGS+=    --disable-xosd
 .endif
-.ifdef (WITH_OGG)
-LIB_DEPENDS+=   ogg.4:${PORTSDIR}/audio/libogg
+.ifdef (WITH_VORBIS)
+LIB_DEPENDS+=   vorbis.2:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+=    --disable-oggtest
+CONFIGURE_ARGS+=    --disable-vorbistest
 .endif
 
 pre-everything::
@@ -55,9 +53,9 @@ pre-everything::
 	@${ECHO_CMD} "define WITH_XOSD to enable On-Screen-Display support"
 	@${ECHO_CMD}
 .endif
-.if !defined(WITH_OGG)
+.if !defined(WITH_VORBIS)
 	@${ECHO_CMD}
-	@${ECHO_CMD} "define WITH_OGG to enable Ogg support"
+	@${ECHO_CMD} "define WITH_VORBIS to enable Vorbis support"
 	@${ECHO_CMD}
 .endif
 
