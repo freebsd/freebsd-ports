@@ -132,6 +132,7 @@
     SUBDIR += hpn-ssh
     SUBDIR += hunch
     SUBDIR += hydra
+    SUBDIR += idea
     SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += ifd-devkit
