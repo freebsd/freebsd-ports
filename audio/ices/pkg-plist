@@ -1,2 +1,4 @@
 bin/ices
-bin/run_ices
+%%PORTDOCS%%%%DOCSDIR%%/ices-live.xml
+%%PORTDOCS%%%%DOCSDIR%%/ices-playlist.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,53 +6,27 @@
 #
 
 PORTNAME=	icecast2
-PORTVERSION=	20021112
+PORTVERSION=	2.0.a.2.20030811
+PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://tigress.com/lofi/\
 		http://lofi.dyndns.org/
-DISTNAME=	icecast-devel-${PORTVERSION}
+DISTNAME=	icecast-2.0-alpha-2-20030811
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3/ogg-vorbis audio server
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		ogg.4:${PORTSDIR}/audio/libogg \
 		shout.3:${PORTSDIR}/audio/libshout2 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		xslt.1:${PORTSDIR}/textproc/libxslt
 
-AUTOMAKE_ARGS=	--add-missing
-AUTOMAKE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-oggtest --disable-vorbistest --disable-shouttest
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
-USE_BZIP2=	yes
 
-WRKSRC=		${WRKDIR}/icecast
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|' ${WRKSRC}/conf/Makefile \
-						${WRKSRC}/doc/Makefile \
-						${WRKSRC}/src/avl/Makefile \
-						${WRKSRC}/src/log/Makefile \
-						${WRKSRC}/src/net/Makefile \
-						${WRKSRC}/src/httpp/Makefile \
-						${WRKSRC}/src/thread/Makefile \
-						${WRKSRC}/src/timing/Makefile \
-						${WRKSRC}/src/Makefile \
-						${WRKSRC}/web/Makefile \
-						${WRKSRC}/win32/res/Makefile \
-						${WRKSRC}/win32/Makefile \
-						${WRKSRC}/Makefile
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/conf/icecast.xml ${DOCSDIR}
-.endif
+WRKSRC=		${WRKDIR}/icecast-2.0-alpha-2
 
 .include <bsd.port.mk>

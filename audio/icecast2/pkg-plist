@@ -1,3 +1,20 @@
 bin/icecast
-%%PORTDOCS%%share/doc/icecast2/icecast.xml
-%%PORTDOCS%%@dirrm share/doc/icecast2
+etc/icecast.xml.sample
+share/doc/icecast/AUTHORS
+share/doc/icecast/COPYING
+share/doc/icecast/NEWS
+share/doc/icecast/README
+share/doc/icecast/TODO
+share/icecast/admin/listclients.xsl
+share/icecast/admin/listmounts.xsl
+share/icecast/admin/moveclients.xsl
+share/icecast/admin/response.xsl
+share/icecast/admin/stats.xsl
+share/icecast/doc/icecast.xml.dist
+share/icecast/web/status.xsl
+share/icecast/web/status2.xsl
+@dirrm share/icecast/web
+@dirrm share/icecast/doc
+@dirrm share/icecast/admin
+@dirrm share/icecast
+@dirrm share/doc/icecast
