@@ -1,3 +1,6 @@
+bin/w3c
+bin/webbot
+bin/www
 include/w3c-libwww/HTAABrow.h
 include/w3c-libwww/HTAAUtil.h
 include/w3c-libwww/HTANSI.h
@@ -63,7 +66,6 @@ include/w3c-libwww/HTMerge.h
 include/w3c-libwww/HTMethod.h
 include/w3c-libwww/HTMulpar.h
 include/w3c-libwww/HTMulti.h
-include/w3c-libwww/HTMux.h
 include/w3c-libwww/HTMuxCh.h
 include/w3c-libwww/HTMuxHeader.h
 include/w3c-libwww/HTMuxTx.h
@@ -87,6 +89,8 @@ include/w3c-libwww/HTResMan.h
 include/w3c-libwww/HTResponse.h
 include/w3c-libwww/HTRules.h
 include/w3c-libwww/HTSChunk.h
+include/w3c-libwww/HTSQL.h
+include/w3c-libwww/HTSQLLog.h
 include/w3c-libwww/HTSocket.h
 include/w3c-libwww/HTStream.h
 include/w3c-libwww/HTString.h
@@ -116,6 +120,7 @@ include/w3c-libwww/HTWriter.h
 include/w3c-libwww/HTXParse.h
 include/w3c-libwww/HTZip.h
 include/w3c-libwww/HText.h
+include/w3c-libwww/HTextImp.h
 include/w3c-libwww/SGML.h
 include/w3c-libwww/WWWApp.h
 include/w3c-libwww/WWWCache.h
@@ -131,16 +136,20 @@ include/w3c-libwww/WWWLib.h
 include/w3c-libwww/WWWMIME.h
 include/w3c-libwww/WWWMux.h
 include/w3c-libwww/WWWNews.h
+include/w3c-libwww/WWWSQL.h
 include/w3c-libwww/WWWStream.h
 include/w3c-libwww/WWWTelnt.h
 include/w3c-libwww/WWWTrans.h
 include/w3c-libwww/WWWUtil.h
 include/w3c-libwww/WWWWAIS.h
 include/w3c-libwww/WWWZip.h
-include/w3c-libwww/config.h
-include/w3c-libwww/sysdep.h
+include/w3c-libwww/wwwconf.h
+include/w3c-libwww/wwwsys.h
+lib/libpics.a
 lib/libwww.a
-lib/libwww.so.5.2
+lib/libwww.la
+lib/libwww.so
+lib/libwww.so.5.3
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 share/doc/libwww/User/Applications.html
@@ -380,7 +389,6 @@ share/doc/libwww/src/HTMerge.html
 share/doc/libwww/src/HTMethod.html
 share/doc/libwww/src/HTMulpar.html
 share/doc/libwww/src/HTMulti.html
-share/doc/libwww/src/HTMux.html
 share/doc/libwww/src/HTMuxCh.html
 share/doc/libwww/src/HTMuxHeader.html
 share/doc/libwww/src/HTMuxTx.html
@@ -404,6 +412,8 @@ share/doc/libwww/src/HTResMan.html
 share/doc/libwww/src/HTResponse.html
 share/doc/libwww/src/HTRules.html
 share/doc/libwww/src/HTSChunk.html
+share/doc/libwww/src/HTSQL.html
+share/doc/libwww/src/HTSQLLog.html
 share/doc/libwww/src/HTSocket.html
 share/doc/libwww/src/HTStream.html
 share/doc/libwww/src/HTString.html
@@ -433,6 +443,7 @@ share/doc/libwww/src/HTWriter.html
 share/doc/libwww/src/HTXParse.html
 share/doc/libwww/src/HTZip.html
 share/doc/libwww/src/HText.html
+share/doc/libwww/src/HTextImp.html
 share/doc/libwww/src/SGML.html
 share/doc/libwww/src/WWWApp.html
 share/doc/libwww/src/WWWCache.html
@@ -448,13 +459,37 @@ share/doc/libwww/src/WWWLib.html
 share/doc/libwww/src/WWWMIME.html
 share/doc/libwww/src/WWWMux.html
 share/doc/libwww/src/WWWNews.html
+share/doc/libwww/src/WWWSQL.html
 share/doc/libwww/src/WWWStream.html
 share/doc/libwww/src/WWWTelnt.html
 share/doc/libwww/src/WWWTrans.html
 share/doc/libwww/src/WWWUtil.html
 share/doc/libwww/src/WWWWAIS.html
 share/doc/libwww/src/WWWZip.html
-share/doc/libwww/src/sysdep.html
+share/doc/libwww/src/wwwsys.html
+share/w3c-libwww/back.xbm
+share/w3c-libwww/binary.xbm
+share/w3c-libwww/binhex.xbm
+share/w3c-libwww/blank.xbm
+share/w3c-libwww/compressed.xbm
+share/w3c-libwww/directory.xbm
+share/w3c-libwww/doc.xbm
+share/w3c-libwww/dummy.xbm
+share/w3c-libwww/ftp.xbm
+share/w3c-libwww/gzip.xbm
+share/w3c-libwww/image.xbm
+share/w3c-libwww/index.xbm
+share/w3c-libwww/index2.xbm
+share/w3c-libwww/movie.xbm
+share/w3c-libwww/sound.xbm
+share/w3c-libwww/tar.xbm
+share/w3c-libwww/telnet.xbm
+share/w3c-libwww/text.xbm
+share/w3c-libwww/unknown.doc.xbm
+share/w3c-libwww/unknown.old.xbm
+share/w3c-libwww/unknown.xbm
+share/w3c-libwww/uu.xbm
+@dirrm share/w3c-libwww
 @dirrm share/doc/libwww/src
 @dirrm share/doc/libwww/User/Using
 @dirrm share/doc/libwww/User/Style
