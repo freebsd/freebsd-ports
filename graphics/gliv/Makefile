@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.0b6
+PORTVERSION=	1.0b7
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
-DISTNAME=	GLiv-1.0beta6
+DISTNAME=	GLiv-1.0beta7
 
 MAINTAINER=	ishmael27@home.com
 
