@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.neci.nj.nec.com/homepages/kelsey/ \
 		ftp://ftp.nj.nec.com/pub/kelsey/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= 	nectar@FreeBSD.org
+MAINTAINER=	nectar@FreeBSD.org
 
 FORBIDDEN=	emails love notes to authors on install
 

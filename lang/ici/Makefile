@@ -18,14 +18,14 @@ MAKEFILE=	Makefile.bsd
 MAN1=		ici.1
 MANCOMPRESSED=	yes
 
-ICIHDRS= alloc.h array.h buf.h catch.h conf-bsd.h exec.h file.h float.h \
+ICIHDRS=	alloc.h array.h buf.h catch.h conf-bsd.h exec.h file.h float.h \
 	forall.h func.h fwd.h int.h mark.h mem.h null.h object.h op.h \
 	parse.h pc.h primes.h ptr.h re.h set.h skt.h src.h str.h struct.h \
 	trace.h win.h wrap.h
 
-ICIPCREHDRS= pcre/internal.h pcre/pcre.h
+ICIPCREHDRS=	pcre/internal.h pcre/pcre.h
 
-ICIDOCS= doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
+ICIDOCS=	doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} libici.a

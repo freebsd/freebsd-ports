@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME= 	gnat-glade
-PORTVERSION= 	3.13p
+PORTNAME=	gnat-glade
+PORTVERSION=	3.13p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
 DISTNAME=	glade-${PORTVERSION}-src

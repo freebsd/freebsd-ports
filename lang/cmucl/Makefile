@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	cracauer
 DISTNAME=	cmucl-18b.x86.freebsd22
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= 	cracauer@cons.org
+MAINTAINER=	cracauer@cons.org
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
