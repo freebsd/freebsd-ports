@@ -1,0 +1,13 @@
+bin/aoi
+%%PORTDOCS%%share/doc/aoi/HISTORY
+%%PORTDOCS%%share/doc/aoi/LICENSE
+%%PORTDOCS%%share/doc/aoi/README
+share/java/jar/aoi/ArtOfIllusion.jar
+share/java/jar/aoi/Plugins/OSSpecific.jar
+share/java/jar/aoi/Plugins/Renderers.jar
+share/java/jar/aoi/Plugins/Tools.jar
+share/java/jar/aoi/Plugins/Translators.jar
+@dirrm share/java/jar/aoi/Plugins
+@dirrm share/java/jar/aoi
+@unexec rmdir %D/share/java/jar 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/aoi

@@ -10,6 +10,7 @@
     SUBDIR += Mesa3
     SUBDIR += aalib
     SUBDIR += acidwarp
+    SUBDIR += aoi
     SUBDIR += autotrace
     SUBDIR += aview
     SUBDIR += avifile
