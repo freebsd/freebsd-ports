@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mtr-0.39
+DISTNAME=	mtr-0.41
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
