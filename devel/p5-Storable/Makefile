@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	Storable
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
 PERL_CONFIGURE=	yes
+
+MAN3=          Storable.3
+MANPREFIX=     ${PREFIX}/lib/perl5/${PERL_VERSION}
+
+pre-patch:
+	@${PERL} -pi -e '$$_="" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
