@@ -165,6 +165,7 @@
     SUBDIR += procmap
     SUBDIR += pslist
     SUBDIR += psmisc
+    SUBDIR += pstack
     SUBDIR += pstree
     SUBDIR += pwgen
     SUBDIR += pyfind
