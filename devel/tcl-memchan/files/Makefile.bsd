@@ -17,6 +17,7 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
 
 LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
 
+INTERNALLIB	= don't build the useless static version
 NOPROFILE	= don't care for profiling
 
 all: ${SHLIB_NAME} pkgIndex.tcl test
