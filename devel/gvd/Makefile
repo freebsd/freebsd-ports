@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=		sam@inf.enst.fr
 
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat
-LIB_DEPENDS=		gtkada-1.2.10:${PORTSDIR}/x11-toolkits/gtkada
+LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CC=adagcc
