@@ -1,14 +1,19 @@
---- configure.orig	Tue May 30 15:29:15 1995
-+++ configure	Mon Jun 16 14:18:42 1997
-@@ -221,8 +221,10 @@
- CONTRIBDIR	= $CONTRIBDIR
- CONTRIBFLAGS	= $CONTRIBFLAGS
- CPP		= $CPP
-+FC		= f77
-+FFLAGS		= $CCOPTS -Dfreebsd
- DESTBIN		= $DEST/bin
--DESTLIB		= $DEST/lib/felt
-+DESTLIB		= $DEST/share/felt
- DESTMAN		= $DEST/man
- INSTALL		= sh \$(TOPDIR)/etc/install.sh -c
- LDOPTS		=
+*** configure.orig	Fri May 12 00:33:57 2000
+--- configure	Fri May 12 00:39:34 2000
+***************
+*** 222,228 ****
+  CONTRIBFLAGS	= $CONTRIBFLAGS
+  CPP		= $CPP
+  DESTBIN		= $DEST/bin
+! DESTLIB		= $DEST/lib/felt
+  DESTMAN		= $DEST/man
+  INSTALL		= sh \$(TOPDIR)/etc/install.sh -c
+  LDOPTS		=
+--- 222,228 ----
+  CONTRIBFLAGS	= $CONTRIBFLAGS
+  CPP		= $CPP
+  DESTBIN		= $DEST/bin
+! DESTLIB		= $DEST/share/felt
+  DESTMAN		= $DEST/man
+  INSTALL		= sh \$(TOPDIR)/etc/install.sh -c
+  LDOPTS		=
