@@ -15,28 +15,24 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	jeremy@external.org
 COMMENT=	An IP Subnet Calculator
 
-BUILD_DEPENDS=	${PORTSDIR}/sysutils/prips/work/prips/prips.o:${PORTSDIR}/sysutils/prips:build
+BUILD_DEPENDS=	${WRKDIRPREFIX}${PORTSDIR}/sysutils/prips/work/prips/prips.o:${PORTSDIR}/sysutils/prips:build
 
 WRKSRC=		${WRKDIR}/ipsc/src
 
 WANT_GNOME=	yes
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/ipsc
 
 .if defined(HAVE_GNOME)
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 ALL_TARGET=	all
+PLIST_FILES+=	bin/gipsc
 .else
 ALL_TARGET=	ipsc
 .endif
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 post-extract:
-	@${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../prips/work/prips \
+	@${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/sysutils/prips/work/prips \
 		${WRKDIR}/prips
 
 do-install:
@@ -45,4 +41,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gipsc ${PREFIX}/bin
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
