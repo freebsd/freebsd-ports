@@ -23,6 +23,9 @@ CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+= --enable-kerberos4
 .endif
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+CONFIGURE_ARGS+= --enable-kerberos5
+.endif
 USE_X_PREFIX=	yes
 MAN1=		xlock.1
 
