@@ -7,6 +7,7 @@
 
 PORTNAME=	beacon
 PORTVERSION=	0.9.06
+PORTREVISION=	1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/Releases/
 
