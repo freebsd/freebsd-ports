@@ -1,0 +1,22 @@
+  DejaGnu is a framework for testing other programs. Its purpose is to
+provide a single front end for all tests.  Beyond this, DejaGnu offers
+several advantages for testing:
+
+        - The flexibility and consistency of the DejaGnu framework
+          make it easy to write tests for any program.
+
+        - DejaGnu provides a layer of abstraction which makes all
+          tests (if correctly written) portable to any host or target
+          where a program must be tested.  For instance, a test for
+          GDB can run (from any Unix based host) on any target
+          architecture supported by DejaGnu. Currently DejaGnu runs
+          tests on several single board computers, whose operating
+          software ranges from just a boot monitor to a full-fledged,
+          Unix-like realtime OS.
+
+        - DejaGnu is written in expect, which in turn uses Tcl
+          (Tool command language).  The framework comprises two parts:
+          the testing framework and the testsuites themselves. Tests
+          are usually written in expect using Tcl.
+
+  Bugs can be reported to bug-dejagnu@prep.ai.mit.edu.

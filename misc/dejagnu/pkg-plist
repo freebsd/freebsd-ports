@@ -1,0 +1,16 @@
+bin/runtest
+lib/dejagnu/runtest.exp
+lib/dejagnu/config.guess
+lib/dejagnu/bug.exp
+lib/dejagnu/debugger.exp
+lib/dejagnu/dg.exp
+lib/dejagnu/framework.exp
+lib/dejagnu/libgloss.exp
+lib/dejagnu/remote.exp
+lib/dejagnu/target.exp
+lib/dejagnu/udi.exp
+lib/dejagnu/util-defs.exp
+lib/dejagnu/utils.exp
+lib/dejagnu/vrtx.exp
+lib/dejagnu/vxworks.exp
+man/man1/runtest.1.gz
