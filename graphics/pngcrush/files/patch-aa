@@ -1,0 +1,17 @@
+--- Makefile.gcc.orig	Tue Dec 28 10:24:59 1999
++++ Makefile.gcc	Sat Mar 25 08:21:53 2000
+@@ -10,10 +10,10 @@
+ 
+ # macros --------------------------------------------------------------------
+ 
+-CC = gcc
+-LD = gcc
+-RM = rm -f
+-CFLAGS = -O -Wall
++CC?= gcc
++LD = $(CC)
++RM?= rm -f
++#CFLAGS = -O -Wall
+ # [note that -Wall is a gcc-specific compilation flag ("all warnings on")]
+ LDFLAGS =
+ O = .o
