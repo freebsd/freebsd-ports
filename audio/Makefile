@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1999/04/21 23:29:47 fenner Exp $
+# $Id: Makefile,v 1.85 1999/04/27 13:44:40 taoka Exp $
 #
 
     SUBDIR += amp
@@ -22,7 +22,9 @@
     SUBDIR += kdemultimedia
     SUBDIR += kdemultimedia11
     SUBDIR += kmikmod
+    SUBDIR += kmp3
     SUBDIR += kmpg
+    SUBDIR += juke
     SUBDIR += lamer
     SUBDIR += libaudiofile
     SUBDIR += linux-realplayer
@@ -42,6 +44,7 @@
     SUBDIR += replay
     SUBDIR += rio
     SUBDIR += ripenc
+    SUBDIR += ripit
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
