@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.29 1997/02/06 07:53:04 asami Exp $
+# $Id: Makefile,v 1.30 1997/06/09 12:45:23 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3/source/ \
 		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3/source/ \
 		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.3/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3/source/
-DISTFILES=	X33src-1.tgz X32src-2.tgz
+DISTFILES=	X33src-1.tgz X33src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
