@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.rkeene.org/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif

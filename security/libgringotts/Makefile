@@ -13,7 +13,7 @@ MASTER_SITES=	http://devel.pluto.linux.it/projects/libGringotts/current/ \
 
 MAINTAINER=	anders@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
+LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
 USE_BZIP2=	yes
