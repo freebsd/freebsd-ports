@@ -1,4 +1,4 @@
-# -*- mode: Fundamental; tab-width: 4; -*-
+# -*- mode: Makefile; tab-width: 4; -*-
 # ex: ts=4
 #
 # $FreeBSD$
@@ -150,7 +150,8 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 	@${ECHO} "  python1.5"
 	@${ECHO} "  python1.6"
 	@${ECHO} "  python2.0"
-	@${ECHO} "  python2.1 (default)."
+	@${ECHO} "  python2.1"
+	@${ECHO} "  python2.2 (default)."
 	@${FALSE}
 .endif
 
