@@ -38,6 +38,10 @@ THREADS_SUFFIX=		-threads
 CONFIGURE_ARGS+=	--enable-threads
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TCL84_MAN)
+
 MAN1=	tclsh.1
 
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
@@ -589,7 +593,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n SafeBase.n
 
-.include <bsd.port.pre.mk>
+.endif
 
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
 post-patch:
@@ -601,6 +605,10 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tclConfig.sh
+.if defined(WITHOUT_TCL84_MAN)
+	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 .if exists(${PKGINSTALL})

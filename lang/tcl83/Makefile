@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -30,6 +30,10 @@ TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 USE_REINPLACE=	YES
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL83_MAN)
 
 MAN1=	tclsh.1
 
@@ -421,11 +425,15 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	safe.n Safe\Base.n \
 	tcltest.n Tcltest.n
 
-.include <bsd.port.pre.mk>
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tclConfig.sh
+.if !defined(WITH_TCL83_MAN)
+	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 .if exists(${PKGINSTALL})

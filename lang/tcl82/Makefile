@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang tcl82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -28,6 +28,10 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 USE_REINPLACE=	YES
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL82_MAN)
 
 MAN1=	tclsh.1
 
@@ -369,7 +373,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n Safe\Base.n
 
-.include <bsd.port.pre.mk>
+.endif
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
@@ -378,6 +382,10 @@ post-extract:
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tclConfig.sh
+.if !defined(WITH_TCL82_MAN)
+	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 .if exists(${PKGINSTALL})
