@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	kwebget
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kpage.de/download/
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erich@tacni.net
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=	3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFIGURE_TARGET=	# empty
+CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${PERL} -pi -e 's#lqt#lqt2#g' ${WRKSRC}/configure ${WRKSRC}/kwebget/Makefile.in
