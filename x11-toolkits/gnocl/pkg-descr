@@ -1,0 +1,12 @@
+gnocl is a GTK+ and Gnome extension for the programming language
+Tcl. It provides easy to use commands to build quickly GTK+ and
+Gnome compliant user interfaces including the Gnome canvas widget
+and drag and drop support.
+
+gnocl can be compiled in three flavors:
+
+* GTK only
+* GTK and the Gnome canvas widget
+* GTK, the Gnome canvas widget and Gnome UI libs.
+
+WWW: http://www.dr-baum.net/gnocl/index.html
