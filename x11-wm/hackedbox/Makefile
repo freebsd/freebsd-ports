@@ -28,6 +28,12 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 do-patch:
 	${REINPLACE_CMD} -e \
 		"s:/usr/local/share/hackedbox:${PREFIX}/share/hackedbox:g" \
@@ -91,4 +97,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
