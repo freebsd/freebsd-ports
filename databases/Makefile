@@ -30,6 +30,7 @@
     SUBDIR += firebird-devel
     SUBDIR += fireprofile
     SUBDIR += freetds
+    SUBDIR += freetds-msdblib
     SUBDIR += gadfly
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
