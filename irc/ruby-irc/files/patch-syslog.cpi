@@ -1,8 +1,0 @@
---- cpi/syslog.cpi.orig	Tue Jun 13 00:52:00 2000
-+++ cpi/syslog.cpi	Fri Jan 19 16:20:28 2001
-@@ -13 +13 @@
--agent = IRC::PassiveAgent::new("syslog")
-+agent = IRC::PassiveAgent::new("Syslog")
-@@ -27 +27 @@
--      buf = log.timestamp.strftime("%m月%d日%H時%M分")
-+      buf = log.timestamp.strftime("%m/%d %H:%M")

@@ -1,3 +1,4 @@
 Ruby/IRC is an IRC client framework for Ruby.
 
-Author:	Hiroshi IGARASHI <igarashi@ueda.info.waseda.ac.jp>
+Author:	Hiroshi IGARASHI <igarashi@ueda.info.waseda.ac.jp>,
+	Akinori MUSHA <knu@ruby-lang.org>
