@@ -1,6 +1,7 @@
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
+bin/ert
 bin/fixmswrd.pl
 bin/font2c
 bin/gs
@@ -12,6 +13,7 @@ bin/gslp
 bin/gsnd
 bin/hpijs
 bin/lprsetup.sh
+bin/pcl3opts
 bin/pdf2dsc
 bin/pdf2ps
 bin/pdfopt
@@ -24,25 +26,47 @@ bin/ps2epsi
 bin/ps2pdf
 bin/ps2pdf12
 bin/ps2pdf13
+bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
 bin/pv.sh
 bin/sysvlp.sh
 bin/unix-lpr.sh
 bin/wftopfa
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/alps/README.gdevalps
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/bj10v/gdev10v.jis
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/dmprt/gdevdmpr.sj
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/ChangeLog
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/ert.txt
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gdevepag.txt
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gsepagif.sh
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/psprint
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-651.euc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gimp-print/README
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpijs/gs_hpijs.png
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/md2k/README.jis
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.mjc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.mje
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.noz
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/cpem.doc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/npdl/gdevnpdl.jis
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/gs-pcl3.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/how-to-report.txt
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/pcl3opts.html
 share/ghostscript/%%GS_VERSION%%/doc/Bug-info.htm
 share/ghostscript/%%GS_VERSION%%/doc/C-style.htm
+share/ghostscript/%%GS_VERSION%%/doc/CJK.htm
+share/ghostscript/%%GS_VERSION%%/doc/CJKTTCID.htm
 share/ghostscript/%%GS_VERSION%%/doc/COPYING
 share/ghostscript/%%GS_VERSION%%/doc/Changes.htm
 share/ghostscript/%%GS_VERSION%%/doc/Commprod.htm
 share/ghostscript/%%GS_VERSION%%/doc/Copying.htm
-share/ghostscript/%%GS_VERSION%%/doc/Current.htm
 share/ghostscript/%%GS_VERSION%%/doc/DLL.htm
 share/ghostscript/%%GS_VERSION%%/doc/Devices.htm
 share/ghostscript/%%GS_VERSION%%/doc/Drivers.htm
@@ -78,8 +102,17 @@ share/ghostscript/%%GS_VERSION%%/doc/Unix-lpr.htm
 share/ghostscript/%%GS_VERSION%%/doc/Use.htm
 share/ghostscript/%%GS_VERSION%%/doc/Xfonts.htm
 share/ghostscript/%%GS_VERSION%%/examples/alphabet.ps
-share/ghostscript/%%GS_VERSION%%/examples/cheq.ps
 share/ghostscript/%%GS_VERSION%%/examples/chess.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/all_ac1.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/all_ag1.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/all_aj1.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/all_aj2.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/all_ak1.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/gscjk_ac.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/gscjk_ag.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/gscjk_aj.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/gscjk_ak.ps
+share/ghostscript/%%GS_VERSION%%/examples/cjk/iso2022.ps
 share/ghostscript/%%GS_VERSION%%/examples/colorcir.ps
 share/ghostscript/%%GS_VERSION%%/examples/doretree.ps
 share/ghostscript/%%GS_VERSION%%/examples/escher.ps
@@ -90,17 +123,19 @@ share/ghostscript/%%GS_VERSION%%/examples/snowflak.ps
 share/ghostscript/%%GS_VERSION%%/examples/tiger.ps
 share/ghostscript/%%GS_VERSION%%/examples/vasarely.ps
 share/ghostscript/%%GS_VERSION%%/examples/waterfal.ps
-share/ghostscript/%%GS_VERSION%%/gimp-print/README
 share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
 share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
-share/ghostscript/%%GS_VERSION%%/hpijs/append_db.sh
-share/ghostscript/%%GS_VERSION%%/hpijs/gs_hpijs.png
-share/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
-share/ghostscript/%%GS_VERSION%%/hpijs/printerdb_append
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.ARP
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.Bae
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.CJK
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.Koc
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.Ore
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.Sol
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap.GS
 share/ghostscript/%%GS_VERSION%%/lib/acctest.ps
@@ -138,9 +173,12 @@ share/ghostscript/%%GS_VERSION%%/lib/cdj690.upp
 share/ghostscript/%%GS_VERSION%%/lib/cdj690ec.upp
 share/ghostscript/%%GS_VERSION%%/lib/cid2code.ps
 share/ghostscript/%%GS_VERSION%%/lib/decrypt.ps
+share/ghostscript/%%GS_VERSION%%/lib/dmp_init.ps
+share/ghostscript/%%GS_VERSION%%/lib/dmp_site.ps
 share/ghostscript/%%GS_VERSION%%/lib/dnj750c.upp
 share/ghostscript/%%GS_VERSION%%/lib/dnj750m.upp
 share/ghostscript/%%GS_VERSION%%/lib/docie.ps
+share/ghostscript/%%GS_VERSION%%/lib/escp_24.src
 share/ghostscript/%%GS_VERSION%%/lib/errpage.ps
 share/ghostscript/%%GS_VERSION%%/lib/font2c.ps
 share/ghostscript/%%GS_VERSION%%/lib/font2pcl.ps
@@ -486,14 +524,24 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/%%GS_VERSION%%/pcl3
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
-@dirrm share/ghostscript/%%GS_VERSION%%/hpijs
 @dirrm share/ghostscript/%%GS_VERSION%%/hpdj
-@dirrm share/ghostscript/%%GS_VERSION%%/gimp-print
+@dirrm share/ghostscript/%%GS_VERSION%%/examples/cjk
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%
 @dirrm share/ghostscript
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/npdl
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpijs
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gimp-print
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/epag
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/dmprt
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/bj10v
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/alps
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%
 %%PORTDOCS%%@dirrm share/doc/ghostscript

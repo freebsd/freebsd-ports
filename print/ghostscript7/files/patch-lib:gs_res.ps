@@ -1,0 +1,13 @@
+--- lib/gs_res.ps.orig	Mon Jul 16 01:09:41 2001
++++ lib/gs_res.ps	Fri Feb  8 07:12:09 2002
+@@ -248,8 +248,8 @@
+   /pssystemparams 10 dict readonly def
+ } if
+ pssystemparams begin
+-  /FontResourceDir (/Resource/Font/) readonly .forcedef	% pssys'params is r-o
+-  /GenericResourceDir (/Resource/) readonly .forcedef	% pssys'params is r-o
++  /FontResourceDir (%%DATADIR%%/Resource/Font/) readonly .forcedef	% pssys'params is r-o
++  /GenericResourceDir (%%DATADIR%%/Resource/) readonly .forcedef	% pssys'params is r-o
+   /GenericResourcePathSep (/) readonly .forcedef	% pssys'params is r-o
+ end
+ end
