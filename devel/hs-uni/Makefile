@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	gtchask@mm.st
 COMMENT=	A tool integration framework for Haskell, including Htk
 
+BROKEN=		"Does not compile with ghc 6.4 (specifically, ghc-pkg)"
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
