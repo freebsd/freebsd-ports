@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	psi
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	net
-MASTER_SITES=	http://psi.affinix.com/files/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
 
@@ -29,9 +30,9 @@ pre-build:
 	cd ${BUILD_WRKSRC}; qmake -spec ${X11BASE}/mkspecs/freebsd-g++ psi.pro
 
 do-install:
-	${MKDIR} ${PREFIX}/share/psi
-	cd ${INSTALL_WRKSRC}; \
-		${CP} -r image iconsets sound README COPYING ${PREFIX}/share/psi
-	${CP} ${BUILD_WRKSRC}/psi ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	@cd ${INSTALL_WRKSRC}; \
+		${CP} -r image iconsets sound certs README COPYING ${DATADIR}
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/psi ${PREFIX}/bin
 
 .include <bsd.port.mk>
