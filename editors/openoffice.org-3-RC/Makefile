@@ -19,7 +19,7 @@ EXTRACT_ONLY=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-BROKEN=         "Bison 1.875a or newer is required, and doesn't work atm"
+#BROKEN=         "Bison 1.875a or newer is required, and doesn't work atm"
 
 SNAPDATE=	20041122
 NO_LATEST_LINK=	yes
@@ -27,7 +27,7 @@ USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
 MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
+DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
 .endif
 
