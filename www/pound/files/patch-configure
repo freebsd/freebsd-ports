@@ -1,12 +1,13 @@
---- configure.orig	Thu Apr 24 15:45:26 2003
-+++ configure	Tue Apr 29 02:58:39 2003
-@@ -1850,7 +1850,8 @@
- if test $ac_cv_lib_pthread_pthread_create = yes; then
-   LIBS="-lpthread ${LIBS}"
- else
--  CPPFLAGS="${CPPFLAGS} -pthread -DNEED_STACK"; LDFLAGS="${LDFLAGS} -pthread"
-+   CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -DNEED_STACK"
-+   LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
- fi
+--- configure.orig	Fri Apr 30 22:18:25 2004
++++ configure	Fri Apr 30 22:19:13 2004
+@@ -2348,8 +2348,8 @@
  
- echo "$as_me:1856: checking for socket in -lsocket" >&5
+ case $target_os in
+ *BSD*|*bsd*)
+-    CPPFLAGS="${CPPFLAGS} -pthread -DNEED_STACK -D_REENTRANT -D_THREAD_SAFE"
+-    LDFLAGS="${LDFLAGS} -pthread"
++    CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -DNEED_STACK -D_REENTRANT -D_THREAD_SAFE"
++    LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+     ;;
+ *)
+     CPPFLAGS="${CPPFLAGS} -D_REENTRANT"
