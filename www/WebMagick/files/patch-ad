@@ -1,0 +1,135 @@
+Index: webmagick.js
+===================================================================
+RCS file: /cvsroot/webmagick/WebMagick/webmagick.js,v
+retrieving revision 1.46
+retrieving revision 1.49
+diff -u -r1.46 -r1.49
+--- webmagick.js	25 Sep 2002 01:00:21 -0000	1.46
++++ webmagick.js	26 May 2004 23:28:44 -0000	1.49
+@@ -1,5 +1,5 @@
+ //
+-// $Id: webmagick.js,v 1.46 2002/09/25 01:00:21 clindell Exp $
++// $Id: webmagick.js,v 1.49 2004/05/26 23:28:44 ache Exp $
+ //
+ // JavaScript routines to display a set of images
+ // Part of the WebMagick package
+@@ -227,12 +227,9 @@
+     var showReadme = 0;
+   }
+ 
+-  // frame border definition
+-  var frameBorderSize =
+-    ' FRAMEBORDER=' + htmlOpts["frameborder"] + ' BORDER=' + htmlOpts["framebordersize"];
+   // margin width definition
+   var marginBorderSize =
+-    ' MARGINWIDTH=' + htmlOpts["framemarginwidth"] + ' MARGINHEIGHT=' + htmlOpts["framemarginheight"];
++    ' MARGINWIDTH=' + htmlOpts["framemarginwidth"] + ' MARGINHEIGHT=' + htmlOpts["framemarginheight"] + ' FRAMEBORDER=' + htmlOpts["frameborder"];
+ 
+   // Javascript URLs to generate frame source
+   var srcDirectory	= ' SRC="javascript:parent.emptyHTML();"';
+@@ -271,17 +268,17 @@
+     // |             |
+     //  -------------
+     result +=
+-      '<FRAMESET COLS="132,*"' + frameBorderSize + '>\n' +
++      '<FRAMESET COLS="132,*"' + '>\n' +
+       ' <FRAME' + srcDirectory + nameDirView + marginBorderSize + '>\n' +
+-      ' <FRAMESET ROWS="50,*,0"' + frameBorderSize + '>\n' +
+-      '  <FRAME' + srcNavView + nameNavView + ' MARGINHEIGHT="0" ' + 'SCROLLING="no" NORESIZE ' + '>\n';
++      ' <FRAMESET ROWS="50,*,0"' + '>\n' +
++      '  <FRAME' + srcNavView + nameNavView + marginBorderSize + ' SCROLLING="no" NORESIZE ' + '>\n';
+     if( showReadme == 1 ) {
+       result += '  <FRAME' + srcReadMe + nameImageView + marginBorderSize + '>\n';
+     } else {
+       result += '  <FRAME' + srcThumbnails + nameImageView + marginBorderSize + '>\n';
+     }
+     result +=
+-      '  <FRAME' + srcHidden + nameHidden + ' SCROLLING="no" NORESIZE >\n' +
++      '  <FRAME' + srcHidden + nameHidden + marginBorderSize + ' SCROLLING="no" NORESIZE >\n' +
+       ' </FRAMESET>\n' +
+       '</FRAMESET>\n';
+ 
+@@ -299,12 +296,12 @@
+     // |  |          |
+     //  -------------
+     result +=
+-      '<FRAMESET COLS="145,*,0"' + frameBorderSize + '>\n' +
+-      ' <FRAMESET ROWS="20%,*"' + frameBorderSize + '>\n' +
++      '<FRAMESET COLS="145,*,0"' + '>\n' +
++      ' <FRAMESET ROWS="20%,*"' + '>\n' +
+       '  <FRAME ' + srcDirectory + nameDirView + marginBorderSize + '>\n' +
+       '  <FRAME ' + srcThumbnails + nameThumbView + marginBorderSize + '>\n' +
+       ' </FRAMESET>\n' +
+-      ' <FRAMESET ROWS="50,*"' + frameBorderSize +  '>\n' +
++      ' <FRAMESET ROWS="50,*"' + '>\n' +
+       '  <FRAME' + srcNavView + nameNavView + marginBorderSize + ' SCROLLING="no" NORESIZE ' + '>\n';
+     if( showReadme == 1 ) {
+       result += '  <FRAME' + srcReadMe + nameImageView + marginBorderSize + '>\n';
+@@ -313,7 +310,7 @@
+     }
+     result +=
+       ' </FRAMESET>\n' +
+-      ' <FRAME' + srcHidden + nameHidden + ' SCROLLING="no" NORESIZE >\n' +
++      ' <FRAME' + srcHidden + nameHidden + marginBorderSize + ' SCROLLING="no" NORESIZE >\n' +
+       '</FRAMESET>\n';
+   } else if ( style == 3 ) {
+     // Four frame screen with directories listed in left frame,
+@@ -328,11 +325,11 @@
+     // |             |
+     //  -------------
+     result +=
+-      '<FRAMESET ROWS="190,50,*"' + frameBorderSize + '>\n' +
+-      ' <FRAMESET COLS="132,*,0"' + frameBorderSize + '>\n' +
++      '<FRAMESET ROWS="190,50,*"' + '>\n' +
++      ' <FRAMESET COLS="132,*,0"' + '>\n' +
+       '  <FRAME ' + srcDirectory + nameDirView + marginBorderSize + '>\n' +
+       '  <FRAME ' + srcThumbnails + nameThumbView + marginBorderSize + '>\n' +
+-      '  <FRAME ' + srcHidden + nameHidden + ' SCROLLING="no" NORESIZE >\n' +
++      '  <FRAME ' + srcHidden + nameHidden + marginBorderSize + ' SCROLLING="no" NORESIZE >\n' +
+       ' </FRAMESET>\n' +
+       ' <FRAME' + srcNavView + nameNavView + marginBorderSize + ' SCROLLING="no" NORESIZE ' + '>\n';
+     if( showReadme == 1 ) {
+@@ -356,12 +353,12 @@
+     // |             |
+     //  -------------
+    result +=
+-     '<FRAMESET ROWS="172,50,*"' + frameBorderSize + '>\n' +
++     '<FRAMESET ROWS="172,50,*"' + '>\n' +
+      ' <FRAME ' + srcThumbnails + nameThumbView + marginBorderSize + '>\n' +
+-     ' <FRAMESET COLS="132,*,0"' + frameBorderSize + '>\n' +
++     ' <FRAMESET COLS="132,*,0"' + '>\n' +
+      '  <FRAME ' + srcDirectory + nameDirView + marginBorderSize + '>\n' +
+      '  <FRAME ' + srcNavView + nameNavView + marginBorderSize + ' SCROLLING="no" NORESIZE ' + '>\n' +
+-     '  <FRAME ' + srcHidden + nameHidden + ' SCROLLING="no" NORESIZE >\n' +
++     '  <FRAME ' + srcHidden + nameHidden + marginBorderSize + ' SCROLLING="no" NORESIZE >\n' +
+      ' </FRAMESET>\n';
+     if( showReadme == 1 ) {
+       result += ' <FRAME ' + srcReadMe    + nameImageView + marginBorderSize + '>\n';
+@@ -1048,9 +1045,9 @@
+     result +=
+       '<BR><HR>\n' +
+       htmlOpts["msg_produced_by"] + ' ' +
+-      '<NOBR><A HREF="http://webmagick.sourceforge.net/" target="_top">WebMagick</A> ' +
+-      htmlOpts["version"] + '</NOBR>, <NOBR>' + htmlOpts["msg_copyright"] + '&copy;</NOBR>\n';
+-    //      htmlOpts["version"] + '</NOBR>, <NOBR>' + htmlOpts["msg_copyright"] + '&copy;</NOBR> <NOBR>Bob Friesenhahn</NOBR>\n';
++      '<A HREF="http://webmagick.sourceforge.net/" target="_top">WebMagick</A> ' +
++      htmlOpts["version"] + ', ' + htmlOpts["msg_copyright"] + '&copy;\n';
++    //      htmlOpts["version"] + ', ' + htmlOpts["msg_copyright"] + '&copy; Bob Friesenhahn\n';
+   }
+   result += '</FONT>\n</ADDRESS>\n';
+ 
+@@ -1234,12 +1231,12 @@
+ 	dirTitle = dirNames[dirNum];
+       }
+       result +=
+-	'<NOBR><A HREF="javascript:parent.webmagick.changeDirectory(\'' + escapeJs(dirNames[dirNum]) + '\');"\n' +
++	'<A HREF="javascript:parent.webmagick.changeDirectory(\'' + escapeJs(dirNames[dirNum]) + '\');"\n' +
+ 	'  onMouseOver="status=\'change to directory: ' + escapeJs(dirTitle) + '\'; return true;"\n' +
+ 	'  onMouseOut="status=\'\';"\n';
+       result += '>';
+       result += dirTitle;
+-      result += '</A></NOBR><BR>\n';
++      result += '</A><BR>\n';
+     }
+   }
+   
