@@ -1,5 +1,5 @@
---- makefile.orig	Sun Aug 30 06:13:32 1998
-+++ makefile	Sun Aug 30 07:58:37 1998
+--- makefile.orig	Sat Apr 17 08:22:40 1999
++++ makefile	Wed Sep  8 06:01:21 1999
 @@ -3,6 +3,11 @@
  #translation software written by the National Federation of the Blind
  #compile under the Unix operating system.
@@ -16,20 +16,20 @@
  LIBS= -ltermcap
  
  #Compiler and linking flags are as follows:
--CFLAGS=-O
-+CFLAGS+=-O -dUNIX_PATH=${UNIX_PATH}
+-CFLAGS="-O"
++CFLAGS+=-O -DUNIX_PATH=\\\"${UNIX_PATH}\\\"
  CC=gcc
  LDFLAGS=-Bdynamic
  
-@@ -22,6 +27,7 @@
- 	@echo "ultrix"
- 	@echo "aix"
- 	@echo "linux"
-+	@echo "freebsd"
+@@ -21,6 +26,7 @@
+ 	@echo "make ultrix"
+ 	@echo "make aix"
+ 	@echo "make linux"
++	@echo "make freebsd"
  all: nfbtrans
  
- #Lint can wait a while
-@@ -31,6 +37,9 @@
+ nfbtrans: $(OBJFILES)
+@@ -28,6 +34,9 @@
  
  ultrix:
  	$(MAKE) CFLAGS=-O
@@ -38,4 +38,4 @@
 +	${MAKE} all CFLAGS="${CFLAGS} -Dfreebsd"
  
  linux:
- 	$(MAKE) CFLAGS=-O
+ 	$(MAKE) all CFLAGS="-O -Dlinux"
