@@ -8504,6 +8504,7 @@ phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
+phprojekt	ports/deskutils/phprojekt
 phptags		ports/devel/phptags
 phpua-bf	ports/games/phpua-bf
 phpua-cod	ports/games/phpua-cod
