@@ -16,7 +16,8 @@ MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
 BROKEN=		"Checksum mismatch"
-DEPRECATED=	"This port will be removed on April 16 if still broken at that time."
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-16
 
 RESTRICTED=	"Commercial software"
 

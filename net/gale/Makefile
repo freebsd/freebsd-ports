@@ -32,7 +32,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 BROKEN=		"Broken pkg-plist"
-DEPRECATED=     "Will be removed after April 7 if still broken"
+DEPRECATED=     ${BROKEN}
+EXPIRATION_DATE=2004-04-07
 
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl
