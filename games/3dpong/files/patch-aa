@@ -1,0 +1,25 @@
+--- makefile.orig	Mon Jan 26 17:18:05 1998
++++ makefile	Sun Apr 26 23:48:06 1998
+@@ -11,11 +11,11 @@
+ 
+ # Makefile user-definable variables
+ 
+-CC=gcc
++CC+=$(CFLAGS) -I$(X11BASE)/include -DPREFIX=\"${PREFIX}\"
+ MATHLIB=-lm
+ 
+ # adjust according to target
+-XLIB=-lX11
++XLIB=-L$(X11BASE)/lib -lX11
+ 
+ # uncomment for sunos/solaris
+ #XLIB=-L/usr/openwin/lib -lX11
+@@ -43,7 +43,7 @@
+ # Application:
+ 
+ 3dpong:	$(OBJECTS)
+-	$(CC)	$(OBJECTS) $(XLIB) $(MATHLIB) -o 3dpong
++	$(CC) $(CFLAGS) $(OBJECTS) $(XLIB) $(MATHLIB) -o 3dpong
+ 	chmod 755 3dpong
+ 	strip 3dpong
+ 

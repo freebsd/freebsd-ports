@@ -1,0 +1,7 @@
+bin/3dpong
+share/3dpong/hit.au
+share/3dpong/score.au
+share/3dpong/wall.au
+share/doc/3dpong/README.txt
+@dirrm share/3dpong
+@dirrm share/doc/3dpong
