@@ -1,29 +1,22 @@
---- configure.in.orig	Sun May 17 01:16:39 1998
-+++ configure.in	Sun May 17 16:04:23 1998
-@@ -117,13 +117,13 @@
- 
- dnl Test for libtiff
-   if test -z "$LIBTIFF_LIB"; then
--    AC_CHECK_LIB(tiff, TIFFReadScanline,
-+    AC_CHECK_LIB(tiff34, TIFFReadScanline,
-       AC_CHECK_HEADER(tiffio.h,
--	TIFF='tiff'; LIBTIFF_LIB='-ltiff',
-+	TIFF='tiff'; LIBTIFF_LIB='-ltiff34',
- 	AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF header files not found) ***)),
--      AC_CHECK_LIB(tiff, TIFFWriteScanline,
-+      AC_CHECK_LIB(tiff34, TIFFWriteScanline,
- 	AC_CHECK_HEADER(tiffio.h,
--          TIFF='tiff'; LIBTIFF_LIB='-ltiff -ljpeg -lz',
-+          TIFF='tiff'; LIBTIFF_LIB='-ltiff34 -ljpeg -lz',
- 	  AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF header files not found) ***)),
- 	AC_CHECK_LIB(tiff34, TIFFFlushData,
- 	  AC_CHECK_HEADER(tiffio.h,
+--- configure.in.orig	Wed May 27 23:32:15 1998
++++ configure.in	Wed May 27 23:32:30 1998
 @@ -306,7 +306,7 @@
  LIBS="$gimp_save_LIBS"
  
  gimpdatadir=$datadir/gimp
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
-++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+ 
+ brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
+ gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
+--- configure.orig	Wed May 27 23:32:17 1998
++++ configure	Wed May 27 23:32:38 1998
+@@ -4146,7 +4146,7 @@
+ LIBS="$gimp_save_LIBS"
+ 
+ gimpdatadir=$datadir/gimp
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
  gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`

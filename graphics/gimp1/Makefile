@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.31 1998/05/19 03:09:09 jdp Exp $
+# $Id: Makefile,v 1.32 1998/05/21 21:28:51 mph Exp $
 #
 
 MAJOR=	0
@@ -26,11 +26,11 @@ MAINTAINER=	erich@FreeBSD.org
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	aa\\.1\\.:${PORTSDIR}/graphics/aalib
 LIB_DEPENDS+=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	gtk\\.1\\.2:${PORTSDIR}/x11/gtk
+LIB_DEPENDS+=	gtk\\.1\\.3:${PORTSDIR}/x11/gtk
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
 LIB_DEPENDS+=	png\\.2\\.:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
-LIB_DEPENDS+=	xdelta\\.0\\.18:${PORTSDIR}/misc/xdelta
+#LIB_DEPENDS+=	xdelta\\.0\\.18:${PORTSDIR}/misc/xdelta
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
@@ -40,7 +40,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/tiff34" \
 		LIBS=-L${LOCALBASE}/lib INSTALL_SCRIPT='$${INSTALL} -m 755'
 
-MAN1=		gimp.1
+MAN1=		gimp.1 gimptool.1
+MAN3=		gpc.3
 
 DATASTUFF=  brushes palettes gradients patterns
 
