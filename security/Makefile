@@ -197,6 +197,7 @@
     SUBDIR += ruby-pam
     SUBDIR += ruby-tcpwrap
     SUBDIR += saferpay
+    SUBDIR += safesh
     SUBDIR += saint
     SUBDIR += scanssh
     SUBDIR += seahorse
