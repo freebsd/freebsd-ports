@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
 
-MAINTAINER=	xaa+ports@madison-gurkha.com
+MAINTAINER=	xaa+ports@timewasters.nl
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
