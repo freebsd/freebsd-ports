@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.3.2
+PORTVERSION=	5.5.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ryan@sasknow.com
+
 COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
 
 USE_BZIP2=	yes

@@ -1,6 +1,6 @@
 bin/biew
-share/biew/biew.hlp
 share/biew/assembly.skn
+share/biew/biew.hlp
 share/biew/golded.skn
 share/biew/insight.skn
 share/biew/standard.skn
