@@ -7,6 +7,7 @@
 
 PORTNAME=	forte
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/forte/ffj/buy.html
 DISTNAME=	forte_ce_3
@@ -15,10 +16,10 @@ EXTRACT_ONLY=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/jdk13
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-jdk13
+RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-jdk13
 
-JDK13DIR?=	${LOCALBASE}/jdk1.3.1
+JDK13DIR?=	${LOCALBASE}/linux-jdk1.3.1
 JAVAVM=		${JDK13DIR}/bin/java
 
 RESTRICTED=     "Restrictive license"
