@@ -8,6 +8,7 @@
 
 PORTNAME=	splitvt
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 
