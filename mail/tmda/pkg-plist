@@ -7,6 +7,52 @@ bin/tmda-ofmipd
 bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Charset.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Charset.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Encoders.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Encoders.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Errors.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Errors.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Generator.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Generator.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Header.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Header.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Iterators.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Iterators.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEAudio.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEAudio.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEBase.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEBase.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEImage.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEImage.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEMessage.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEMessage.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEMultipart.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEMultipart.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMENonMultipart.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMENonMultipart.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEText.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/MIMEText.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Message.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Message.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Parser.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Parser.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Utils.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/Utils.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/__init__.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/__init__.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_compat21.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_compat21.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_compat22.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_compat22.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_parseaddr.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/_parseaddr.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/base64MIME.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/base64MIME.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.py
+%%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/AutoResponse.py
+%%PYTHON_SITELIBDIR%%/TMDA/AutoResponse.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/Cookie.py
 %%PYTHON_SITELIBDIR%%/TMDA/Cookie.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/Defaults.py
@@ -45,16 +91,19 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/contrib/sample.tmdarc
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.el
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
+%%PORTDOCS%%share/doc/tmda/contrib/def2html
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-filter.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-pre.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-server.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config-vars.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config.html
 %%PORTDOCS%%share/doc/tmda/htdocs/download.html
 %%PORTDOCS%%share/doc/tmda/htdocs/features.html
 %%PORTDOCS%%share/doc/tmda/htdocs/filter-sources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/history.html
+%%PORTDOCS%%share/doc/tmda/htdocs/howto-template.html
 %%PORTDOCS%%share/doc/tmda/htdocs/howtos.html
 %%PORTDOCS%%share/doc/tmda/htdocs/index.html
 %%PORTDOCS%%share/doc/tmda/htdocs/install.html
@@ -72,4 +121,6 @@ share/tmda/confirm_request.txt
 %%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
 %%PORTDOCS%%@dirrm share/doc/tmda
+@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email
+@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA
