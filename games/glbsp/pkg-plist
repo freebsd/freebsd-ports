@@ -1,0 +1,5 @@
+bin/glbsp
+%%GUI_VERSION%%bin/glBSPX
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/USAGE.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

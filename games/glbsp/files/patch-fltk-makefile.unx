@@ -1,0 +1,24 @@
+--- fltk/makefile.unx.orig	Thu Jan 22 12:32:28 2004
++++ fltk/makefile.unx	Thu Jan 22 12:35:18 2004
+@@ -8,14 +8,14 @@
+ 
+ PROGNAME=glBSPX
+ 
+-FLTK_CFLAGS=-I/usr/local/lib
+-FLTK_LIBS=-lfltk_images -lfltk -lX11 -lXext -lpng -ljpeg
++FLTK_CFLAGS=`%%FLTK_CONFIG%% --cflags`
++FLTK_LIBS=`%%FLTK_CONFIG%% --ldflags` -lfltk_images
+ 
+-CC=gcc
+-CXX=g++
+-CFLAGS=-O2 -Wall -DGLBSP_GUI -DUNIX -DINLINE_G=inline $(FLTK_CFLAGS)
+-CXXFLAGS=$(CFLAGS)
+-LDFLAGS=-L/usr/X11R6/lib
++CC?=gcc
++CXX?=g++
++CFLAGS+=-O2 -Wall -DGLBSP_GUI -DUNIX -DINLINE_G=inline $(FLTK_CFLAGS)
++CXXFLAGS+=$(CFLAGS)
++LDFLAGS=-L${X11BASE}/lib
+ LIBS=-lm $(FLTK_LIBS)
+ 
+ OBJS=$(SYSDIR)/main.o     \
