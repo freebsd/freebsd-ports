@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.4.1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1.5
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
 DISTNAME=	gnome-libs-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
 
@@ -20,6 +20,7 @@ LIB_DEPENDS+=	xml.5:${PORTSDIR}/textproc/libxml \
 		ORBit.2:${PORTSDIR}/devel/ORBit
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
