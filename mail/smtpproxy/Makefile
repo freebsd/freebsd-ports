@@ -20,19 +20,15 @@ DISABLE_SIZE=	yes
 MAN1=		smtp.proxy.1
 PLIST_FILES=	libexec/smtp.proxy
 PORTDOCS=	README rfc821.txt
-CFLAGS+=	-DVERSION=\'\"${PORTVERSION}\"\'
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CC =,CC ?=,; /^CFLAGS/d ;\
-		s,/usr/local,${PREFIX}, ' \
-		${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e 's,<wait.h>,<sys/wait.h>,' ${WRKSRC}/acp.c
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 

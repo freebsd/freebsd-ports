@@ -1,0 +1,23 @@
+--- makefile.orig	Sat Jun 26 08:51:01 2004
++++ makefile	Sat Jun 26 08:52:52 2004
+@@ -1,6 +1,6 @@
+ 
+-CC =		gcc
+-CFLAGS =	-ggdb -Wall -DVERSION='"$(VERSION)"'
++CC ?=		gcc
++CFLAGS +=	-DVERSION='"$(VERSION)"'
+ 
+ VERSION =	1.3.3
+ TAR =		smtpproxy-$(VERSION)
+@@ -18,9 +18,8 @@
+ 
+ install:	all
+ 	strip $(TARGETS)
+-	cp smtp.proxy /usr/local/sbin/smtp.proxy
+-	cp $(TARGETS) /usr/local/sbin
+-	cp *.1 /usr/local/man/man1
++	${BSD_INSTALL_PROGRAM} $(TARGETS) ${PREFIX}/libexec/smtp.proxy
++	${BSD_INSTALL_MAN} *.1 ${PREFIX}/man/man1
+ 
+ 
+ smtp.proxy:	$(SMTPPROXY)
