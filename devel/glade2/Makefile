@@ -7,6 +7,7 @@
 
 PORTNAME=	glade2
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.1
@@ -16,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomedb-2.1:${PORTSDIR}/databases/libgnomedb \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
