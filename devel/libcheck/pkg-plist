@@ -1,16 +1,16 @@
 include/check.h
 lib/libcheck.a
 share/aclocal/check.m4
-share/doc/check-0.8.4/COPYING
-share/doc/check-0.8.4/ChangeLog
-share/doc/check-0.8.4/ChangeLogOld
-share/doc/check-0.8.4/NEWS
-share/doc/check-0.8.4/README
-share/doc/check-0.8.4/examples/Makefile.am.money
-share/doc/check-0.8.4/examples/check_money.c
-share/doc/check-0.8.4/examples/configure.in.money
-share/doc/check-0.8.4/examples/money.c
-share/doc/check-0.8.4/examples/money.h
-share/doc/check-0.8.4/tutorial.lyx
-@dirrm share/doc/check-0.8.4/examples
-@dirrm share/doc/check-0.8.4
+share/doc/check-%%CHECK_VERSION%%/COPYING
+share/doc/check-%%CHECK_VERSION%%/ChangeLog
+share/doc/check-%%CHECK_VERSION%%/ChangeLogOld
+share/doc/check-%%CHECK_VERSION%%/NEWS
+share/doc/check-%%CHECK_VERSION%%/README
+share/doc/check-%%CHECK_VERSION%%/examples/Makefile.am.money
+share/doc/check-%%CHECK_VERSION%%/examples/check_money.c
+share/doc/check-%%CHECK_VERSION%%/examples/configure.in.money
+share/doc/check-%%CHECK_VERSION%%/examples/money.c
+share/doc/check-%%CHECK_VERSION%%/examples/money.h
+share/doc/check-%%CHECK_VERSION%%/tutorial.sgml
+@dirrm share/doc/check-%%CHECK_VERSION%%/examples
+@dirrm share/doc/check-%%CHECK_VERSION%%

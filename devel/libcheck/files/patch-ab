@@ -1,0 +1,11 @@
+--- src/check_pack.c.orig	Sun Nov 14 22:55:22 2004
++++ src/check_pack.c	Sun Nov 14 22:55:39 2004
+@@ -24,7 +24,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <unistd.h>
+-#include <stdint.h>
++/* #include <stdint.h> */
+ 
+ #include "check.h"
+ #include "check_error.h"

@@ -1,0 +1,11 @@
+--- src/check.h.in.orig	Sun Nov 14 23:01:22 2004
++++ src/check.h.in	Sun Nov 14 23:01:36 2004
+@@ -168,7 +168,7 @@
+ /* Fail the test case if expr is true */
+ #define fail_if(expr, ...)\
+         _fail_unless(!(expr), __FILE__, __LINE__,\
+-        "Failure '"#expr"' occured", ## __VA_ARGS__, NULL)
++        "Failure '"#expr"' occured" , ## __VA_ARGS__, NULL)
+ 
+ /* Always fail */
+ #define fail(...) _fail_unless(0, __FILE__, __LINE__, "Failed" , ## __VA_ARGS__, NULL)
