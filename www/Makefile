@@ -152,6 +152,7 @@
     SUBDIR += squidtimes
     SUBDIR += squirm
     SUBDIR += ssserver
+    SUBDIR += surfaw
     SUBDIR += swish-e
     SUBDIR += tclhttpd
     SUBDIR += thttpd
