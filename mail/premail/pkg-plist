@@ -3,3 +3,4 @@ share/doc/premail/doc-0.46.txt
 share/doc/premail/doc-0.46.html
 share/doc/premail/preferences
 @exec echo "Check /usr/local/share/doc/premail for further instructions"
+@dirrm share/doc/premail

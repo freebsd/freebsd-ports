@@ -31,3 +31,5 @@ lib/metamail/fonts/heb8x13B.pcf
 lib/metamail/fonts/fonts.dir
 lib/metamail/fonts/fonts.alias
 etc/mailcap
+@dirrm lib/metamail/fonts
+@dirrm lib/metamail

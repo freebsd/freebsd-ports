@@ -31,5 +31,6 @@ bin/face_update
 bin/faces.sendmail
 share/faces/machine.tab
 share/faces/people.tab
+@dirrm share/faces
 @cwd /usr/X11R6
 lib/X11/app-defaults/Faces
