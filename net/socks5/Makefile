@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.5 1996/07/23 16:13:54 pst Exp $
+# $Id: Makefile,v 1.6 1996/08/14 16:02:42 jdp Exp $
 #
 
 PKGNAME=	socks5-0.16.6
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
 MAINTAINER=	ambrisko@ambrisko.roble.com
 
 NO_CDROM=	NEC has a funky license for this software
+RESTRICTED=	no commercial use
 NO_PACKAGE=	put an extra slug in to make sure he's dead
 
 # here are some extra configure args you may wish to use
