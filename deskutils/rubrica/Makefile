@@ -11,7 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c1$/cr1/}
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	An addressbook for the gnome2 desktop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.c1$/cr1/}
