@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	0.8.11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
