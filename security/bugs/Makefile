@@ -6,12 +6,14 @@
 #
 
 PORTNAME=		bugs
-PORTVERSION=		3.3.2
+PORTVERSION=		4.0.1
 CATEGORIES=		security
-MASTER_SITES=		http://www.bcrypt.com/crypto/
+MASTER_SITES=		http://www.bcrypt.com/english/download/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		stephane.legrand@bigfoot.com
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 # No Manual page
 
@@ -26,6 +28,9 @@ post-configure:
 	${SED} -e 's:^INSTALL_PATH = "/usr/local/bugs-.*":INSTALL_PATH = "${PREFIX}/${DISTNAME}":' \
 		-e 's/^install: instchoice all/install: instchoice/' \
 		< ${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
+
+post-build:
+	${CP} ${WRKSRC}/lib/unix/*.a ${WRKSRC}/lib/
 
 pre-install:
 	(cd ${WRKSRC}; ${MAKE} test)
