@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the D-BUS messaging system
 
+BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	dbus-1.0:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
