@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jul  5 17:30:26 1998
-+++ Makefile	Tue Jul  4 21:59:11 2000
+--- Makefile.old	Mon Aug 26 10:37:17 2002
++++ Makefile	Mon Aug 26 10:39:35 2002
 @@ -13,9 +13,8 @@
  # Where are shhmsg, shhopt, xalloc, shhcards, Xpm and X11?
  
@@ -9,10 +9,10 @@
 -LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11
 +INCDIR		= -I${LOCALBASE}/include -I${X11BASE}/include
 +LIBDIR		= -L${LOCALBASE}/lib -L${X11BASE}/lib
+ EXTRA_LIBS	= -lSM -lICE
  
  # Irix at Ifi
- ifeq ($(HOSTTYPE),sgi)
-@@ -53,18 +52,18 @@
+@@ -54,18 +53,18 @@
  endif
  
  # DEC Alpha at USIT
@@ -33,13 +33,13 @@
 -INSTLIBDIR	= /var/local/lib/games
 -INSTBINDIR	= /usr/local/games
 -INSTMANDIR	= /usr/local/man/man6
-+INSTLIBDIR	= ${PREFIX}/share/sol
-+INSTBINDIR	= ${PREFIX}/bin
++INSTLIBDIR	= ${PREFIX}/lib/games
++INSTBINDIR	= ${PREFIX}/games
 +INSTMANDIR	= ${PREFIX}/man/man6
  #INSTLIBDIR	= /hom/sverrehu/lib
  #INSTBINDIR	= /hom/sverrehu/bin/$$HOSTTYPE
  #INSTMANDIR	= /hom/sverrehu/man/man6
-@@ -84,11 +83,11 @@
+@@ -85,11 +84,11 @@
  
  ###########################################################################
  
