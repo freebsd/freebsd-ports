@@ -47,5 +47,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/fpm
 .endfor
 .endif
+	@${ECHO} "========================================================================="
+	@${ECHO} "Make sure you set up a few IRQ's for random generation with rndcontrol before"
+	@${ECHO} "expecting password generation to work well."
+	@${ECHO} "========================================================================="
 
 .include <bsd.port.mk>
