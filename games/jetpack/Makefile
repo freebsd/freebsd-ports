@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1995/05/02 11:30:04 asami Exp $
+# $Id: Makefile,v 1.15 1996/11/18 11:24:42 asami Exp $
 #
 
 DISTNAME=	jetpack
@@ -18,9 +18,9 @@ USE_IMAKE=	yes
 MAKE_FLAGS=	PREFIX=${PREFIX} -f
 
 post-install:
-	@chown games ${PREFIX}/bin/jetpack
+	@/usr/sbin/chown games ${PREFIX}/bin/jetpack
 	@chmod u+s ${PREFIX}/bin/jetpack
-	@chown games ${PREFIX}/lib/X11/jetpack
+	@/usr/sbin/chown games ${PREFIX}/lib/X11/jetpack
 	@chmod go+r ${PREFIX}/lib/X11/jetpack/jetpack.lev000
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1996/11/18 10:23:21 asami Exp $
+# $Id: Makefile,v 1.10 1996/12/23 02:29:13 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -26,8 +26,8 @@ post-install:
 	@cd ${WRKSRC}/doc; chmod 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/nethack
-	cp ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+	${MKDIR} ${PREFIX}/share/doc/nethack
+	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
 .endif
 
 .include <bsd.port.mk>

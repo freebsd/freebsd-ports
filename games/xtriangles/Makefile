@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/16 12:38:30 asami Exp $
 #
 
 DISTNAME=	xtriangles
@@ -18,7 +18,7 @@ USE_IMAKE=	yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xtriangles
-	@chown bin.bin ${PREFIX}/bin/xtriangles
+	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xtriangles
 	@${INSTALL_DATA} ${WRKSRC}/Triangles.ad \
 		${PREFIX}/lib/X11/app-defaults/Triangles
 

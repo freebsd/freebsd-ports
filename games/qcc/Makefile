@@ -3,7 +3,7 @@
 # Date created:					October 25th 1996
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/27 05:18:54 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:24:52 asami Exp $
 #
 
 DISTNAME=	qcc
@@ -18,7 +18,7 @@ MAKEFILE=	makefile
 
 do-install:	
 		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
-		@ ${MKDIR} -p ${PREFIX}/share/qcc/v101qc
+		@ ${MKDIR} ${PREFIX}/share/qcc/v101qc
 		${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcc
 		${INSTALL_DATA} ${WRKSRC}/v101qc/* ${PREFIX}/share/qcc/v101qc
 

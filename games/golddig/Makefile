@@ -3,7 +3,7 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:24:32 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/18 13:58:43 asami Exp $
 #
 
 DISTNAME=	golddig2
@@ -22,8 +22,8 @@ pre-patch:
 	  done; mv golddig2/* .)
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib/golddig
-	@mkdir -p ${PREFIX}/man/man6
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/golddig
+	@${MKDIR} ${PREFIX}/man/man6
 
 .include <bsd.port.mk>

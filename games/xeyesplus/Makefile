@@ -3,7 +3,7 @@
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/10/10 05:19:29 max Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:25:30 asami Exp $
 #
 
 DISTNAME=		xeyes+2.01
@@ -20,6 +20,6 @@ NO_INSTALL_MANPAGES=	yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xeyes+
-	@chown bin.bin ${PREFIX}/bin/xeyes+
+	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xeyes+
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:24:25 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/03 08:49:05 obrien Exp $
 #
 
 DISTNAME=	crossfire-0.92.8
@@ -60,9 +60,9 @@ post-install:
 	${CP} -r ${WRKDIR}/crossfire-0.92.8-doc/* ${CFDIR}/doc
 	touch ${PREFIX}/crossfire/lib/bookarch
 	chmod 664 ${PREFIX}/crossfire/lib/bookarch
-	chown -R games.games ${CFDIR}
+	/usr/sbin/chown -R games.games ${CFDIR}
 	chmod 0664 ${PREFIX}/crossfire/lib/highscore
-	chown games.games ${PREFIX}/bin/crossfire
+	/usr/sbin/chown games.games ${PREFIX}/bin/crossfire
 	chmod 6555 ${PREFIX}/bin/crossfire
 	@echo ""
 	@echo "======================================================"

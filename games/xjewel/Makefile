@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/05/02 11:42:00 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/18 11:25:34 asami Exp $
 #
 
 DISTNAME=	xjewel-1.6
@@ -16,10 +16,10 @@ MAINTAINER=	jmz@FreeBSD.org
 USE_IMAKE=	yes
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib/xjewel.font
-	@mkdir -p ${PREFIX}/man/man6
-	@(cd ${WRKSRC}/bitmaps/; install -c seven_seg.pcf.Z fonts.dir \
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/xjewel.font
+	@${MKDIR} ${PREFIX}/man/man6
+	@(cd ${WRKSRC}/bitmaps/; ${INSTALL_DATA} seven_seg.pcf.Z fonts.dir \
 		${PREFIX}/lib/xjewel.font)
 
 post-install:
