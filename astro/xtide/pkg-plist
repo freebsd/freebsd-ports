@@ -1,0 +1,4 @@
+bin/xtide
+lib/xtide/harmonics
+man/man1/xtide.1.gz
+@dirrm lib/xtide
