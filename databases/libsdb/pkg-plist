@@ -4,6 +4,5 @@ bin/sdbd
 bin/sdbd_client
 include/sdb.h
 lib/libsdb.a
-lib/libsdb.la
 lib/libsdb.so
 lib/libsdb.so.5

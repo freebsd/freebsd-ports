@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	libsdb
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
+PORTCOMMENT=	Simple database library
 CATEGORIES=	databases
 MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/
@@ -16,6 +17,7 @@ DISTNAME=	sdb-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3
