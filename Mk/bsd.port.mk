@@ -143,7 +143,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  because it cannot be manually fetched, etc).  Error
 #				  logs will not appear on bento, so this should be
 #				  used sparingly.
-# BROKEN_ELF	- Port doesn't build on ELF machines.
 # BROKEN		- Port is believed to be broken.  Package builds will
 #				  still be attempted on the bento package cluster to
 #				  test this assumption.
@@ -336,7 +335,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_X_PREFIX	- Says that the port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- Says that the port uses the X libraries.
 #
-# USE_DGS		- Says that the port uses the dgs X11 libraries.
 # USE_FREETYPE	- Says that the port uses the freetype print libraries.
 # USE_MESA		- Says that the port uses the Mesa libraries.
 # USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
@@ -367,11 +365,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for more details.
 #				  Default: not set.
 #
-# USE_KDEBASE_VER	- Set to either 2 or 3 to use the KDE windowing system.
-#					  (Only 3 is currently supported).  Implies inclusion
+# USE_KDEBASE_VER	- Set to 3 to use the KDE windowing system.
+#					  Implies inclusion
 #					  of bsd.kde.mk.  Default: not set.
-# USE_KDELIBS_VER	- Set to either 2 or 3 to use the KDE libraries.
-#					  (Only 3 is currently supported).  Implies inclusion
+# USE_KDELIBS_VER	- Set to 3 to use the KDE libraries.
+#					  Implies inclusion
 #					  of bsd.kde.mk.  Default: not set.
 # USE_QT_VER		- Set to either 2 or 3 to use the QT libraries.
 #					  (Only 3 is currently supported).  Implies inclusion
@@ -526,6 +524,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  NOMANCOMPRESS.  The default is "yes" if USE_IMAKE
 #				  is set and NO_INSTALL_MANPAGES is not set, and
 #				  "no" otherwise.
+#
+# Set the following to specify all .info files your port installs.
+#
+# INFO			- A list of .info files (omitting the trailing ".info");
+#				  only one entry per document!
 #
 # Default targets and their behaviors:
 #
@@ -1383,9 +1386,6 @@ BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
-.if defined(USE_DGS)
-LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
-.endif
 .if defined(USE_MESA)
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
@@ -1396,7 +1396,7 @@ PKG_IGNORE_DEPENDS?=	'^XFree86-3\.'
 BUILD_DEPENDS+=			${X11BASE}/lib/X11/config/date.def:${PORTSDIR}/devel/imake-4
 RUN_DEPENDS+=			mkhtmlindex:${PORTSDIR}/devel/imake-4
 .endif
-.if defined(USE_XPM) || defined(USE_DGS)
+.if defined(USE_XPM)
 USE_XLIB=				yes
 .endif
 .if defined(USE_MESA)
@@ -2430,17 +2430,6 @@ IGNORE=	"is not an interactive port"
 IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
-.elif defined(NO_WRKDIR)
-IGNORE=	"defines NO_WRKDIR, which is obsoleted.  If you are defining NO_WRKDIR and NO_EXTRACT, try changing it to NO_WRKSUBDIR=yes and EXTRACT_ONLY= \(the right side intentionally left empty\)"
-.elif defined(NO_EXTRACT)
-IGNORE=	"defines NO_EXTRACT, which is obsoleted.  Try changing it to EXTRACT_ONLY= \(the right side intentionally left empty\)"
-.elif defined(NO_CONFIGURE)
-IGNORE=	"defines NO_CONFIGURE, which is obsoleted"
-.elif defined(NO_PATCH)
-IGNORE=	"defines NO_PATCH, which is obsoleted"
-.elif defined(BROKEN_ELF) && (${PORTOBJFORMAT} == "elf") && \
-	  !defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	"is broken for ELF: ${BROKEN_ELF}"
 .elif defined(BROKEN)
 .if defined(PARALLEL_PACKAGE_BUILD)
 # try building even if marked BROKEN
@@ -3227,7 +3216,7 @@ _INSTALL_SEQ=	install-message check-categories check-conflicts \
 			    run-depends lib-depends pre-install pre-install-script \
 				generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
-				pre-su-install-script do-install post-install \
+				pre-su-install-script do-install add-plist-info post-install \
 				post-install-script compress-man run-ldconfig fake-pkg \
 				security-check
 _PACKAGE_DEP=	install
@@ -4276,6 +4265,16 @@ generate-plist:
 
 ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
+
+add-plist-info:
+# Process GNU INFO files at package install/deinstall time
+.for i in ${INFO}
+	@${ECHO_CMD} "@unexec install-info --delete %D/info/$i.info %D/info/dir" \
+		>> ${TMPPLIST}
+	@${LS} ${PREFIX}/info/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec install-info %D/info/$i.info %D/info/dir" \
+		>> ${TMPPLIST}
+.endfor
 
 # Compress (or uncompress) and symlink manpages.
 .if !target(compress-man)
