@@ -3,4 +3,4 @@
 # $FreeBSD$
 
 cd @PREFIX@/lib/mozilla
-exec ./mozilla $*
+exec ./mozilla "$@"
