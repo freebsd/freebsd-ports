@@ -1,5 +1,5 @@
---- dissipate2/siputil.cpp.orig	Sun Oct 17 15:37:31 2004
-+++ dissipate2/siputil.cpp	Sun Oct 17 15:37:15 2004
+--- dissipate2/siputil.cpp.orig	Tue Dec  7 09:59:37 2004
++++ dissipate2/siputil.cpp	Tue Dec 21 21:05:35 2004
 @@ -5,6 +5,9 @@
  #include <sys/time.h>
  #include <sys/errno.h>
@@ -99,39 +99,11 @@
  	if ( if_count == 1 ) {
  		strncpy( if_name[j], netconf.ifc_req[0].ifr_name, 20 );
  		strncpy( if_addr[j], inet_ntoa(((struct sockaddr_in*)(&netconf.ifc_req[0].ifr_addr))->sin_addr), 20 );
-@@ -120,13 +158,15 @@
+@@ -120,6 +158,7 @@
  			}
  		}
  	}
 +#endif /* not FreeBSD or NetBSD */
-+
  	if( j == 1 ) {
  		dissipate_our_fqdn = strdup( if_addr[0] );
  	} else {
- 		default_ifName = getdefaultdev();
--		if( default_ifName != NULL) {
-+		/*if( default_ifName != NULL) {*/
- 			for( i = 0; i < j; i++ ) {
--				if( strcmp( if_name[i], default_ifName ) == 0 ) {
-+				if( default_ifName != NULL && strcmp( if_name[i], default_ifName ) == 0 ) {
- 					QMessageBox mb( "KPhone",
- 						"KPhone found more than one interface.\n"
- 						"Do you want to use the default interface:\n\n" +
-@@ -147,7 +187,7 @@
- 				}
- 			}
- 			for( i = 0; i < j; i++ ) {
--				if( strcmp( if_name[i], default_ifName ) != 0 ) {
-+				if(default_ifName == NULL || strcmp( if_name[i], default_ifName ) != 0 ) {
- 					if( i == j-1 ) {
- 						QMessageBox mb( "KPhone",
- 							"Do you want to use " + QString(if_name[i]) + "  (IP:\"" + QString(if_addr[i]) + "\")",
-@@ -181,7 +221,7 @@
- 					}
- 				}
- 			}
--		}
-+		/*}*/
- 	}
- }
- 
