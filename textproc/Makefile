@@ -14,6 +14,7 @@
     SUBDIR += british-ispell
     SUBDIR += c2html
     SUBDIR += ca-aspell
+    SUBDIR += carthage
     SUBDIR += catdoc
     SUBDIR += cbedic
     SUBDIR += cdif
