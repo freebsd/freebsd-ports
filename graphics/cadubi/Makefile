@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
