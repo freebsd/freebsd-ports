@@ -13,6 +13,7 @@ bin/tcmodinfo
 bin/tcmplex
 bin/tcprobe
 bin/tcscan
+bin/tcxmlcheck
 bin/transcode
 %%WITH_LIBA52%%lib/transcode/a52_decore.so
 lib/transcode/af6_decore.so
@@ -29,6 +30,7 @@ lib/transcode/export_lame.so
 lib/transcode/export_sampeg.so
 %%WITH_LIBDV%%lib/transcode/export_dv.so
 %%WITH_LIBDV%%lib/transcode/export_dvraw.so
+%%WITH_LZO%%lib/transcode/export_lzo.so
 %%WITH_FAME%%lib/transcode/export_fame.so
 %%WITH_IMAGEMAGICK%%lib/transcode/export_im.so
 lib/transcode/export_mjpeg.so
@@ -53,11 +55,13 @@ lib/transcode/filter_32drop.so
 lib/transcode/filter_aclip.so
 lib/transcode/filter_astat.so
 lib/transcode/filter_clone.so
+lib/transcode/filter_cpaudio.so
 lib/transcode/filter_cshift.so
 lib/transcode/filter_cut.so
 lib/transcode/filter_decimate.so
 lib/transcode/filter_dilyuvmmx.so
 lib/transcode/filter_divxkey.so
+lib/transcode/filter_doublefps.so
 lib/transcode/filter_dnr.so
 lib/transcode/filter_extsub.so
 lib/transcode/filter_extsub2.so
@@ -66,6 +70,7 @@ lib/transcode/filter_invert.so
 lib/transcode/filter_ivtc.so
 %%WITH_IMAGEMAGICK%%lib/transcode/filter_logo.so
 %%WITH_IMAGEMAGICK%%lib/transcode/filter_logoaway.so
+lib/transcode/filter_lowpass.so
 lib/transcode/filter_mask.so
 lib/transcode/filter_normalize.so
 lib/transcode/filter_null.so
@@ -75,7 +80,7 @@ lib/transcode/filter_resample.so
 lib/transcode/filter_skip.so
 lib/transcode/filter_smartdeinter.so
 lib/transcode/filter_smooth.so
-lib/transcode/filter_subtitler.so
+%%WITH_SUBRIP%%lib/transcode/filter_subtitler.so
 lib/transcode/filter_tc_audio.so
 lib/transcode/filter_tc_video.so
 lib/transcode/filter_test.so
@@ -97,6 +102,7 @@ lib/transcode/import_dvd.so
 %%WITH_IMAGEMAGICK%%lib/transcode/import_imlist.so
 lib/transcode/import_ffmpeg.so
 lib/transcode/import_lav.so
+%%WITH_LZO%%lib/transcode/import_lzo.so
 lib/transcode/import_mpeg2.so
 %%WITH_LAME%%lib/transcode/import_mp3.so
 lib/transcode/import_mplayer.so
@@ -113,15 +119,16 @@ lib/transcode/import_vob.so
 lib/transcode/import_xvid.so
 lib/transcode/import_yuv.so
 lib/transcode/import_yuv4mpeg.so
-lib/transcode/libioaux.so.0
 %%WITH_XVID%%lib/transcode/libxvidcore.so
 lib/transcode/xvid.cfg
-lib/transcode/libioaux.so
+share/doc/transcode/README.Inverse.Telecine.txt
 share/doc/transcode/README.cluster
 share/doc/transcode/README.rip
 share/doc/transcode/README.sync
 share/doc/transcode/README.vcd
+share/doc/transcode/OPTIMIZERS
 share/doc/transcode/clone.txt
+share/doc/transcode/export_ffmpeg.txt
 share/doc/transcode/export_mpeg.txt
 share/doc/transcode/export-API.txt
 share/doc/transcode/filter_dnr.txt
@@ -129,6 +136,7 @@ share/doc/transcode/filter_logo.txt
 share/doc/transcode/filter_logoaway.txt
 share/doc/transcode/filter_yuvdenoise.txt
 share/doc/transcode/filter-socket.txt
+share/doc/transcode/filter_text.txt
 share/doc/transcode/filter-API.txt
 share/doc/transcode/html/about.html
 share/doc/transcode/html/anim.html

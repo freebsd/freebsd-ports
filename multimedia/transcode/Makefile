@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.20030325
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
@@ -25,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnugetopt" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+CONFIGURE_ARGS=	--program-transform-name=""
 USE_REINPLACE=	yes
 
 MAN1=	avifix.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
@@ -91,6 +91,10 @@ WITH_OGG=	yes
 
 .if exists(${LOCALBASE}/include/mjpegtools/yuv4mpeg.h)
 WITH_MJPEG=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/liblzo.so)
+WITH_LZO=	yes
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
@@ -205,6 +209,13 @@ PLIST_SUB+=	WITH_MJPEG=""
 PLIST_SUB+=	WITH_MJPEG="@comment "
 .endif
 
+.if defined(WITH_LZO)
+LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
+PLIST_SUB+=	WITH_LZO=""
+.else
+PLIST_SUB+=	WITH_LZO="@comment "
+.endif
+
 .if defined(WITH_SUBRIP)
 PLIST_SUB+=	WITH_SUBRIP=""
 .else
@@ -279,6 +290,10 @@ pre-everything::
 .if !defined(WITH_OGG)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable libogg support by defining WITH_OGG."
+.endif
+.if !defined(WITH_LZO)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable liblzo support by defining WITH_LZO."
 .endif
 .if !defined(WITH_MJPEG)
 	@${ECHO_MSG}
