@@ -1,0 +1,11 @@
+--- src/main/Makefile.in.orig	Thu Feb  5 01:35:39 2004
++++ src/main/Makefile.in	Thu Feb  5 01:36:38 2004
+@@ -223,7 +223,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ @INTLLIBS@
+ LIBS = @LIBS@
+ libgimpprint_la_DEPENDENCIES = 
+ libgimpprint_la_OBJECTS =  print-lexmark.lo print-canon.lo \
