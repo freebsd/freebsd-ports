@@ -4,11 +4,10 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.37 1999/02/28 03:37:18 obrien Exp $
+# $Id: Makefile,v 1.38 1999/03/09 13:08:47 obrien Exp $
 #
 
-DISTNAME=	lsof_4.42A.freebsd
-PKGNAME=	lsof-4.41.1
+DISTNAME=	lsof_4.42_W
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -56,7 +55,7 @@ post-extract:
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man8/lsof.8
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${PREFIX}/man/man8/lsof.8
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
