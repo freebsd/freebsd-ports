@@ -1,0 +1,11 @@
+This add-on module allows the apache web server to use a MySQL database for user and/or group authentication.
+For large user lists this can offer a significate speed up over apache's standard flat file format.
+
+There is a different version of mod_auth_mysql in the ports tree with different configuration. Unfortunatly
+this version has a bug if used on a system which has more than one authentification databases. You may have
+to look which version fits your requirements.
+
+WWW: ftp://ftp.kcilink.com/pub
+
+Martin Blapp
+mbr@freebsd.org

@@ -150,6 +150,7 @@
     SUBDIR += mod_auth_external
     SUBDIR += mod_auth_kerb
     SUBDIR += mod_auth_mysql
+    SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_auth_pwcheck

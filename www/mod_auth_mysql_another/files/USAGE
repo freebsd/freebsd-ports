@@ -1,0 +1,126 @@
+/*
+ * http_auth_msql: authentication
+ * Rob McCool & Brian Behlendorf.
+ * Adapted to Shambhala by rst.
+ * converted to use MySQL by Vivek Khera <khera@kciLink.com>
+ * FreeBSD port by Martin Blapp, <mb@imp.ch>
+ */
+
+
+Module definition information - the part between the -START and -END
+lines below is used by Configure. This could be stored in a separate
+instead.
+
+MODULE-DEFINITION-START
+Name: mysql_auth_module
+ConfigStart
+	MYSQL_LIB="-L/usr/local/lib/mysql -lmysqlclient -lm"
+	if [ "X$MYSQL_LIB" != "X" ]; then
+	LIBS="$LIBS $MYSQL_LIB"
+	echo " + using $MYSQL_LIB for MySQL support"
+	fi
+ConfigEnd
+MODULE-DEFINITION-END
+
+Tracks user/passwords/group in MySQL database.  A suitable table
+might be:
+
+CREATE TABLE user_info (
+	user_name CHAR(30) NOT NULL,
+	user_passwd CHAR(64) NOT NULL,
+	user_group CHAR(10),
+	[ any other fields if needed ]
+	PRIMARY KEY (user)
+)
+
+The password field needs to match to size of the encrypted
+password. It depends if you use MD5, DES or BLOWFISH encyrpted
+passwords. For DES passwords, CHAR(20) is enough.
+
+User_name must be a unique, non-empty field.  Its length is however
+long you want it to be.
+
+Any other fields in the named table will be ignored.  The actual
+field names are configurable using the parameters listed below.
+The defaults are "user_name" and "user_passwd" respectively, for
+the user ID and the password, and "user_group" for the group which
+is optional.  If you like to store passwords in clear text, set
+AuthMySQLCryptedPasswords to Off.  I think this is a bad idea, but
+people have requested it.
+
+Usage in per-directory access conf file:
+
+AuthName MySQL Testing
+AuthType Basic
+AuthGroupFile /dev/null
+AuthMySQLHost localhost
+AuthMySQLDB test
+AuthMySQLUserTable user_info
+require valid-user
+
+The following parameters are optional in the config file.  The defaults
+values are shown here.
+
+AuthMySQLUser <no default -- NULL>
+AuthMySQLPassword <no default -- NULL>
+AuthMySQLNameField user_name
+AuthMySQLPasswordField user_passwd
+AuthMySQLCryptedPasswords On
+AuthMySQLKeepAlive Off
+AuthMySQLAuthoritative On
+AuthMySQLNoPasswd Off
+AuthMySQLGroupField <no default>
+AuthMySQLGroupTable <defaults to value of AuthMySQLUserTable>
+
+The Host of "localhost" means use the MySQL socket instead of a TCP
+connection to the database.  DB is the database name on the server,
+and UserTable is the actual table name within that database.
+
+If AuthMySQLAuthoritative is Off, then iff the user is not found in
+the database, let other auth modules try to find the user.  Default
+is On.
+
+If AuthMySQLKeepAlive is "On", then the server instance will keep
+the MySQL server connection open.  In this case, the first time the
+connection is made, it will use the current set of Host, User, and
+Password settings.  Subsequent changes to these will not affect
+this server, so they should all be the same in every htaccess file.
+If you need to access multiple MySQL servers for this authorization
+scheme from the same web server, then keep this setting "Off" --
+this will open a new connection to the server every time it needs
+one.  The values of the DB and various tables and fields are always
+used from the current htaccess file settings.
+
+If AuthMySQLNoPasswd is "On", then any password the user enters will
+be accepted as long as the user exists in the database.  Setting this
+also overrides the setting for AuthMySQLPasswordField to be the same
+as AuthMySQLNameField (so that the SQL statements still work when there
+is no password at all in the database, and to remain backward-compatible
+with the default values for these fields.)
+
+For groups, we use the same AuthMySQLNameField as above for the
+user ID, and AuthMySQLGroupField to specify the group name.  There
+is no default for this parameter.  Leaving it undefined means
+groups are not implemented using MySQL tables.  AuthMySQLGroupTable
+specifies the table to use to get the group info.  It defaults to
+the value of AuthMySQLUserTable.  If you are not using groups, you
+do not need a "user_group" field in your database, obviously.
+
+A user can be a member of multiple groups, but in this case the
+user id field *cannot* be PRIMARY KEY.  You need to have multiple
+rows with the same user ID, one per group to which that ID belongs.
+In this case, you MUST put the GroupTable on a separate table from
+the user table.  This is to help prevent the user table from having
+inconsistent passwords in it.  If each user is only in one group,
+then the group field can be in the same table as the password
+field.  A group-only table might look like this:
+
+CREATE TABLE user_group (
+	user_name char(50) DEFAULT '' NOT NULL,
+	user_group char(20) DEFAULT '' NOT NULL,
+	create_date int,
+	expire_date int,
+	PRIMARY KEY (user_name,user_group)
+;
+
+note that you still need a user table which has the passwords in it.
