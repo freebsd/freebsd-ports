@@ -46,6 +46,8 @@ CONFLICTS=	apache+ipv6-* \
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/apache
+
 .include <bsd.port.pre.mk>
 
 VERSION_APACHE=	1.3.28
@@ -56,8 +58,8 @@ VERSION_RA=	30.18
 # some defaults
 #
 
-DATADIR=${PREFIX}/www
-DOCUMENT_ROOT=${DATADIR}/data
+DATADIR?=${PREFIX}/www
+DOCUMENT_ROOT?=${DATADIR}/data
 DEFAULT_PATH?=/bin:/usr/bin:${PREFIX}/bin
 
 #
@@ -72,7 +74,7 @@ APACHE_SUEXEC_USERDIR?=public_html
 SUEXEC_CONF=\
 	 --enable-suexec \
 	 --suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-	 --suexec-caller=www \
+s	 --suexec-caller=www \
 	 --suexec-uidmin=1000 \
 	 --suexec-gidmin=1000 \
 	 --suexec-logfile=${APACHE_SUEXEC_LOG} \

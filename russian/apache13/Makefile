@@ -36,11 +36,21 @@ APACHE_VERSION=	1.3.28
 GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};${CAT} ${WRKSRC}/RA-1.3rusPL${RA_VERSION}.patch'
 
 #
+# Set proper docsdir
+#
+DOCSDIR=	${PREFIX}/share/doc/apache
+
+#
+# Include pre-make
+#
+.include <bsd.port.pre.mk>
+
+#
 # some defaults
 #
 
-DATADIR=${PREFIX}/www
-DOCUMENT_ROOT=${DATADIR}/data
+DATADIR?=${PREFIX}/www
+DOCUMENT_ROOT?=${DATADIR}/data
 DEFAULT_PATH?=/bin:/usr/bin:${PREFIX}/bin
 
 #
@@ -177,4 +187,4 @@ post-install:
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
