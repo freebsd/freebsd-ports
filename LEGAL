@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.109 1998/06/12 06:26:13 dburr Exp $
+# $Id: LEGAL,v 1.110 1998/06/30 13:20:25 ghelmer Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -106,6 +106,8 @@ tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
+vice-*			ports/emulators/vice	ROMs are copyrighted by
+						Commodore Business Machines
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
