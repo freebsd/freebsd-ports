@@ -1,3 +1,3 @@
 SUBDIR=	jove emacs
 
-.include <bsd.subdir.mk>
+.include <bsd.port.subdir.mk>

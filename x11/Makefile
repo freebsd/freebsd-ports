@@ -1,3 +1,3 @@
 SUBDIR=	tk
 
-.include <bsd.subdir.mk>
+.include <bsd.port.subdir.mk>
