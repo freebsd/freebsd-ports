@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jul 24 19:02:08 2000
-+++ Makefile.in	Mon Jul 24 19:02:52 2000
-@@ -178,9 +178,9 @@
+--- Makefile.in.orig	Wed Dec  6 09:49:28 2000
++++ Makefile.in	Wed Dec  6 10:29:11 2000
+@@ -177,9 +177,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -13,3 +13,17 @@
  
  mostlyclean-hdr:
  
+@@ -487,11 +487,11 @@
+ 	@$(NORMAL_INSTALL)
+ 	if test -d pixmaps; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
+-	  cd pixmaps ; tar cf -  --exclude CVS * | ( cd $(DESTDIR)$(pixmapdir) ; tar xf -) ; cd .. ; \
++	  cd pixmaps ; tar --exclude CVS -cf -  * | ( cd $(DESTDIR)$(pixmapdir) ; tar xf -) ; cd .. ; \
+ 	fi
+ 	if test -d data; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(leveldatadir); \
+-	  cd data ; tar cf -  --exclude CVS * | ( cd $(DESTDIR)$(leveldatadir) ; tar xf -) ; cd .. ; \
++	  cd data ; tar --exclude CVS -cf -  * | ( cd $(DESTDIR)$(leveldatadir) ; tar xf -) ; cd .. ; \
+ 	fi
+ 
+ dist-hook:
