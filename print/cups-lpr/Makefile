@@ -17,11 +17,20 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
+USE_REINPLACE=	yes
+
+MANLANG=	"" fr
+
+post-patch:
+	@${REINPLACE_CMD} -e '/SILENT/d' \
+		${WRKSRC}/Makedefs.in
+	@${REINPLACE_CMD} -e '/LN/d' \
+		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
+
 post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
 
-MANLANG=	"" fr
 
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>

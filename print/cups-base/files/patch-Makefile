@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Dec 17 13:56:25 2002
-+++ Makefile	Wed Jan 22 06:18:57 2003
+--- Makefile.orig	Fri Mar  7 01:36:00 2003
++++ Makefile	Wed Jun 11 01:03:08 2003
 @@ -28,8 +28,8 @@
  # Directories to make...
  #
@@ -11,3 +11,12 @@
  
  #
  # Make all targets...
+@@ -72,8 +72,6 @@
+ 		echo Installing in $$dir... ;\
+ 		(cd $$dir; $(MAKE) $(MFLAGS) install) || exit 1;\
+ 	done
+-	echo Installing in conf...
+-	(cd conf; $(MAKE) $(MFLAGS) install)
+ 	echo Installing in data...
+ 	(cd data; $(MAKE) $(MFLAGS) install)
+ 	echo Installing in doc...
