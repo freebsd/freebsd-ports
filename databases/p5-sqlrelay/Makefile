@@ -52,6 +52,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build"
+.endif
+
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
