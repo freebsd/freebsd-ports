@@ -18,9 +18,9 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/giflib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -1,12 +1,11 @@
 bin/build-guile-gtk
+bin/guile-gtk
 bin/guile-gtk-1.2
 include/guile-gtk.h
 lib/libguiledlopenhelper.a
-lib/libguiledlopenhelper.la
 lib/libguiledlopenhelper.so
 lib/libguiledlopenhelper.so.0
 lib/libguilegtk-1.2.a
-lib/libguilegtk-1.2.la
 lib/libguilegtk-1.2.so
 lib/libguilegtk-1.2.so.0
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
