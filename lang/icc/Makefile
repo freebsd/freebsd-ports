@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.0.082
+PORTVERSION=	7.0.083
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pu_${PORTVERSION}
@@ -60,12 +60,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.0-82.i386.rpm
-#	intel-ildb7-7.0-164.i386.rpm \
-#	intel-isubh7-7.0-82.i386.rpm \
-#	intel-ecc7-7.0-82.ia64.rpm \
-#	intel-eldb7-7.0-164.ia64.rpm \
-#	intel-esubh7-7.0-82.ia64.rpm
+	intel-icc7-7.0-83.i386.rpm
+#	intel-ildb7-7.0-166.i386.rpm \
+#	intel-isubh7-7.0-83.i386.rpm \
+#	intel-ecc7-7.0-83.ia64.rpm \
+#	intel-eldb7-7.0-166.ia64.rpm \
+#	intel-esubh7-7.0-83.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		cpio -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
