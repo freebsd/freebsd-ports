@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session-SharedMem
-PORTVERSION=	0.41
+PORTVERSION=	0.5
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache::Session extension that store session in shared memory
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
+BUILD_DEPENDS=	${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \
+		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Session::Store::SharedMem.3 \
 		Apache::Session::SharedMem.3
 
