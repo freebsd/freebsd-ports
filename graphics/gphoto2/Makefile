@@ -3,7 +3,7 @@
 # Date created:		26 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:22:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gphoto-0.3.2

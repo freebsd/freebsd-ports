@@ -3,7 +3,7 @@
 # Date created:        25 Sept 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.5 1999/07/15 01:41:32 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	muh2.04

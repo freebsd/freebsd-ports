@@ -3,7 +3,7 @@
 # Date created:		14 August 1999
 # Whom:			Dominik Rothert <dr@domix.de>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/22 22:07:25 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tirc-1.2

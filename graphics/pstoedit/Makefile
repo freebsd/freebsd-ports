@@ -3,7 +3,7 @@
 # Date created:		03 July 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/04/19 18:00:07 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pstoedit_3_11

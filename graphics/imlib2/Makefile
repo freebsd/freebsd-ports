@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.50 1999/05/29 04:01:42 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	imlib-1.9.4

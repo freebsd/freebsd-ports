@@ -3,7 +3,7 @@
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
 # Whom:				domi@saargate.de
 #
-# $Id: Makefile,v 1.6 1999/07/27 11:08:58 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsane-0.31

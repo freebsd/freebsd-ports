@@ -3,7 +3,7 @@
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/20 06:19:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qvplay-0.92

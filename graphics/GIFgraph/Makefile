@@ -3,7 +3,7 @@
 # Date created:				Nov 9, 1998
 # Whom:					laskavy@gambit.msk.su
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/12 15:09:17 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GIFgraph-1.10

@@ -3,7 +3,7 @@
 # Date created:		10 May 1998
 # Whom:			nordwick@xcf.berkeley.edu
 #
-# $Id: Makefile,v 1.3 1999/06/28 02:21:45 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	java_cup_v10g

@@ -3,7 +3,7 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.39 1999/06/28 02:21:35 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zircon-1.18.223

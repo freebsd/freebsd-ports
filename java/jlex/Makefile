@@ -3,7 +3,7 @@
 # Date created:		1 June 1999
 # Whom:			jake@checker.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Main

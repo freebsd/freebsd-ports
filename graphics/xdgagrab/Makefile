@@ -3,7 +3,7 @@
 # Date created:		99/01/18
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	xdgagrab-0.3

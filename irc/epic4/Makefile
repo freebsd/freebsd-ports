@@ -3,7 +3,7 @@
 # Date created:		11 November 1998
 # Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
-# $Id: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	epic-4.pre2.003

@@ -3,7 +3,7 @@
 # Date created:         23 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1998/10/05 03:13:38 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgrasp.1.7d

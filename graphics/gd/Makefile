@@ -3,7 +3,7 @@
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.9 1999/08/01 17:25:07 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gd-1.6.2

@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.41 1999/04/10 01:41:01 archie Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kaffe-1.0.b4

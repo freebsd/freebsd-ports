@@ -3,7 +3,7 @@
 # Date created:		29 April 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.3 1999/05/19 13:12:27 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tiff

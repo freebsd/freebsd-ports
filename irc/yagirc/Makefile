@@ -3,7 +3,7 @@
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.15 1999/05/29 04:42:25 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yagirc-0.66.1

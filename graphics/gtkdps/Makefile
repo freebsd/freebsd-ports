@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/01/22 21:47:37 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkDPS-0.2.16

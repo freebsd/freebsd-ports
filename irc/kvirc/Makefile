@@ -3,7 +3,7 @@
 # Date created:		Mon Feb 15 02:53:29 CET 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id: Makefile,v 1.2 1999/04/13 23:11:07 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kvirc-0.9.0

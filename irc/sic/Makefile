@@ -3,7 +3,7 @@
 # Date created:		04 Apr 1998
 # Whom:			sec@42.org
 #
-# $Id: Makefile,v 1.3 1998/12/16 00:12:46 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sic-0.18a

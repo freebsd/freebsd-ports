@@ -3,7 +3,7 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/05 06:00:08 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	giftrans

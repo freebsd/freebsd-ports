@@ -3,7 +3,7 @@
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.26 1998/10/05 03:13:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfig.3.2.2

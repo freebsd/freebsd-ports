@@ -3,7 +3,7 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/06/04 07:34:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	giftool-1.0

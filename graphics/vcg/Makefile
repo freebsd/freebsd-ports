@@ -3,7 +3,7 @@
 # Date created: 19 February 1995
 # Whom: hsu
 #
-# $Id: Makefile,v 1.7 1998/08/05 09:31:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vcg.1.30

@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1997/09/11 09:51:58 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dc3play-980321

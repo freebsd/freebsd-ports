@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.7 1999/05/29 09:43:06 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hobbes-icons-xpm3

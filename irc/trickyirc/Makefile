@@ -3,7 +3,7 @@
 # Date created:			 	Jun 20th 1999
 # Whom:					troll
 #
-# $Id: Makefile,v 1.3 1999/07/08 05:43:48 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	TrickyIRC-1.1.0

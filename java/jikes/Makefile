@@ -3,7 +3,7 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.11 1999/06/28 02:22:18 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jikes-0.47

@@ -3,7 +3,7 @@
 # Date created:	 	19 February 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/08/02 11:42:13 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ezbounce-0.99.2

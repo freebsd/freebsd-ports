@@ -3,7 +3,7 @@
 # Date created:        07 April 1998
 # Whom:                Yukihiro Nakai <nacai@iname.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:08:40 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scwm-icons-0.8

@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.23 1999/02/18 09:25:29 thepish Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xpm-3.4k

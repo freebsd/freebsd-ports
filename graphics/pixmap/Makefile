@@ -3,7 +3,7 @@
 # Date created:		19 February 1995
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.10 1998/09/17 00:32:41 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pixmap2.6

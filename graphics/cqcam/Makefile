@@ -3,7 +3,7 @@
 # Date created:		29 Oct 1997
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.8 1998/11/29 13:47:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cqcam-0.45a

@@ -3,7 +3,7 @@
 # Date created:		Sun Nov 22 12:08:18 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.13 1999/05/29 03:55:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtksee-0.3.0

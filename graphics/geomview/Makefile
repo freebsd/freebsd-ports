@@ -3,7 +3,7 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.16 1999/06/08 22:14:18 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	geomview-1.6.1
 CATEGORIES=	graphics tk80

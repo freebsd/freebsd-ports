@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1999/05/03 22:28:48 se Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kdegraphics-1.1.1

@@ -3,7 +3,7 @@
 # Date created:		25 September 1998
 # Whom:			Anton Berezin <tobez@plab.ku.dk>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Cgraph2.04

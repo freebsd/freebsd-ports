@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.32 1999/01/23 07:05:35 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xv-3.10a

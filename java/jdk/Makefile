@@ -3,7 +3,7 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FreeBSD.org>
 #
-# $Id: Makefile,v 1.23 1999/06/28 02:21:57 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jdk-${JDK_VERSION}

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 1999/08/14 03:35:15 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += bitchx

@@ -3,7 +3,7 @@
 # Date created:			09-Sep-1997
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.7 1998/11/25 20:17:00 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gfont-1.0.2

@@ -3,7 +3,7 @@
 # Date created:				30 May 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/10 23:53:16 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gracula-3.0

@@ -3,7 +3,7 @@
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.8 1999/08/22 18:58:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jdk118-doc

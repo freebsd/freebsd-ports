@@ -3,7 +3,7 @@
 # Date created:		23 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.9 1999/03/15 18:30:04 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fnlib-0.4

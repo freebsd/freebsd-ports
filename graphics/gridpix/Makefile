@@ -3,7 +3,7 @@
 # Date created:		19 July 1999
 # Whom:			asami
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	GridPix-2.0

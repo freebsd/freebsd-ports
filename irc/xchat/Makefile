@@ -3,7 +3,7 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.22 1999/08/16 06:43:15 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xchat-1.1.8

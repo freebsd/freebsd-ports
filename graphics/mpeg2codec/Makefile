@@ -3,7 +3,7 @@
 # Date created:		November 25, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:31:12 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpeg2codec-1.2

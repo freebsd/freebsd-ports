@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.16 1999/08/22 18:58:39 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	guavac-1.2

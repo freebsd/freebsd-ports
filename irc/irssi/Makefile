@@ -3,7 +3,7 @@
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/08/14 07:11:55 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	irssi-0.7.13-2

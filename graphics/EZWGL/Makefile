@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.14 1999/01/02 19:51:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	EZWGL-1.40c

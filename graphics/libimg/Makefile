@@ -3,7 +3,7 @@
 # Date Created:		20 February 1999
 # Whom:			Glenn Johnson
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	img1.1.4

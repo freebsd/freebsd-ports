@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.4 1999/06/29 23:14:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tya13v2

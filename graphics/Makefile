@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.134 1999/06/22 23:42:16 sada Exp $
+# $FreeBSD$
 #
 
     SUBDIR += 4va

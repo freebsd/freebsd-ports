@@ -3,7 +3,7 @@
 # Date created:	16 July 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1998/12/29 18:22:57 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	g2-0.40

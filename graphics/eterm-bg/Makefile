@@ -3,7 +3,7 @@
 # Date created:        99/06/12
 # Whom:                Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	eterm-bg-1999.1.21

@@ -3,7 +3,7 @@
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.14 1999/05/30 03:39:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ee-0.3.9

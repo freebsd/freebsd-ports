@@ -3,7 +3,7 @@
 # Date created:				24 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:35:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xwpick-2.20

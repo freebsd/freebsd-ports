@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 21:52:06 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1997/03/25 08:58:33 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpeg_stat-2.2b-src

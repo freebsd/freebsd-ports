@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1996/11/18 09:54:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmfract_1.4

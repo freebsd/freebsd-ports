@@ -3,7 +3,7 @@
 # Date created:		Tue Nov 17 13:51:11 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.2 1999/01/08 14:18:42 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkfig-0.6.0

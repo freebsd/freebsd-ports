@@ -3,7 +3,7 @@
 # Date created:         3 May 1999
 # Whom:                 one@netlab.is.tsukuba.ac.jp
 #
-# $Id: Makefile,v 1.4 1999/06/06 16:32:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tgif-4.1.16

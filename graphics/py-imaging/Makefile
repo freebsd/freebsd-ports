@@ -3,7 +3,7 @@
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/05/06 10:12:36 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Imaging-1.0

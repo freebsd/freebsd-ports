@@ -3,7 +3,7 @@
 # Date created:         30 Jan 1999
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.17 1999/06/19 19:36:47 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tgif-4.1.16

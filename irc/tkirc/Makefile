@@ -3,7 +3,7 @@
 # Date created:         Jan 15 1998
 # Whom:                 brianfeldman@hotmail.com
 #
-# $Id: Makefile,v 1.8 1999/06/28 05:47:42 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkirc1.202

@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.algebra.com>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.17 1999/05/10 19:57:10 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tiff-v3.4beta037

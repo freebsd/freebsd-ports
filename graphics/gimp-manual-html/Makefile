@@ -3,7 +3,7 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.9 1999/02/03 11:11:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GimpUserManual-1.0.0

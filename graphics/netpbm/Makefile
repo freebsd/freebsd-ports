@@ -3,7 +3,7 @@
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.16 1999/01/07 11:12:28 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netpbm

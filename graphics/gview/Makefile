@@ -3,7 +3,7 @@
 # Date created:				30 April 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/06/02 05:09:26 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gview-0.1.9

@@ -3,7 +3,7 @@
 # Date Created:		22 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/06/20 07:21:30 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libwmf-0.1.14

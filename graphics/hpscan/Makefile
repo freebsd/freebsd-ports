@@ -3,7 +3,7 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.15 1998/10/05 18:27:26 nate Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scanner

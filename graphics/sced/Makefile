@@ -3,7 +3,7 @@
 # Date created:         27  Dec 1996
 # Whom:                 proff@iq.org
 #
-# $Id: Makefile,v 1.4 1998/12/28 21:44:40 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       sced-1.02

@@ -3,7 +3,7 @@
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/18 04:21:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ppm2fli_b1.92

@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.4 1999/06/22 17:19:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	povray31
