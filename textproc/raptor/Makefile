@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -15,13 +15,17 @@ MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2 \
-		xmlparse:${PORTSDIR}/www/libwww \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		expat.2:${PORTSDIR}/textproc/expat2 \
+		xmlparse.1:${PORTSDIR}/www/libwww
 
 LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt `${LIBWWW_CONFIG} --libs`"
+
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
+LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt `${LIBWWW_CONFIG} --libs`
 
 .include <bsd.port.mk>
