@@ -1,0 +1,11 @@
+--- configure.orig	Sun Oct 22 09:26:22 2000
++++ configure	Sun Oct 22 09:26:41 2000
+@@ -1323,7 +1323,7 @@
+ 
+ GNAPSTER_INCLUDES=""
+ GNAPSTER_LDADD=""
+-CFLAGS="-g"
++#CFLAGS="-g"
+ 
+ 
+ if test "$gnome" = yes; then

@@ -12,15 +12,21 @@ MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif
+.if defined(HAVE_GNOME)
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk_pixbuf
+.endif
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
-USE_XPM=	yes
+USE_IMLIB=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+.if !defined(HAVE_GNOME)
+CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
