@@ -1,21 +1,18 @@
+bin/cpphs
+bin/greencard-nhc98
 bin/harch
-bin/nhc98
+bin/hi
 bin/hmake
 bin/hmake-config
-bin/hi
 bin/hood
-bin/greencard-nhc98
-bin/tprofprel
 bin/hp2graph
+bin/nhc98
+bin/tprofprel
 include/nhc98/Array.hi
 include/nhc98/CPUTime.hi
 include/nhc98/Char.hi
 include/nhc98/Complex.hi
-include/nhc98/DPrelude.hi
-include/nhc98/DbgIface.hi
-include/nhc98/DbgStub.hi
 include/nhc98/Directory.hi
-include/nhc98/Haskell.hi
 include/nhc98/HatBuiltin.hi
 include/nhc98/HsFFI.h
 include/nhc98/IO.hi
@@ -24,6 +21,17 @@ include/nhc98/List.hi
 include/nhc98/Locale.hi
 include/nhc98/Maybe.hi
 include/nhc98/Monad.hi
+include/nhc98/NHC/BinArray.hi
+include/nhc98/NHC/Binary.hi
+include/nhc98/NHC/Bit.hi
+include/nhc98/NHC/FFI.hi
+include/nhc98/NHC/GreenCard.gc
+include/nhc98/NHC/GreenCard.hi
+include/nhc98/NHC/IOExtras.hi
+include/nhc98/NHC/Internal.hi
+include/nhc98/NHC/Observe.hi
+include/nhc98/NHC/PackedString.hi
+include/nhc98/NHC/Prelude.hi
 include/nhc98/NonStdEval.hi
 include/nhc98/NonStdGetPID.hi
 include/nhc98/NonStdProfile.hi
@@ -45,7 +53,6 @@ include/nhc98/codemacros.h
 include/nhc98/flt.h
 include/nhc98/greencard.h
 include/nhc98/haskell2c.h
-include/nhc98/localmalloc.h
 include/nhc98/macros_o.h
 include/nhc98/mk.h
 include/nhc98/mkByHand.h
@@ -57,83 +64,11 @@ include/nhc98/node.h
 include/nhc98/runtime.h
 include/nhc98/stableptr.h
 include/nhc98/twopass.h
-include/nhc98/NHC/BinArray.hi
-include/nhc98/NHC/Binary.hi
-include/nhc98/NHC/Bit.hi
-include/nhc98/NHC/FFI.hi
-include/nhc98/NHC/GreenCard.gc
-include/nhc98/NHC/GreenCard.hi
-include/nhc98/NHC/IOExtras.hi
-include/nhc98/NHC/Internal.hi
-include/nhc98/NHC/Observe.hi
-include/nhc98/NHC/PackedString.hi
-include/nhc98/NHC/Prelude.hi
-include/nhc98/base/Control/Arrow.hi
-include/nhc98/base/Control/Monad/Fix.hi
-include/nhc98/base/Control/Monad/Trans.hi
-include/nhc98/base/Control/Monad.hi
-include/nhc98/base/Data/Array.hi
-include/nhc98/base/Data/Bits.hi
-include/nhc98/base/Data/Bool.hi
-include/nhc98/base/Data/Char.hi
-include/nhc98/base/Data/Complex.hi
-include/nhc98/base/Data/Dynamic.hi
-include/nhc98/base/Data/Either.hi
-include/nhc98/base/Data/FiniteMap.hi
-include/nhc98/base/Data/IORef.hi
-include/nhc98/base/Data/Int.hi
-include/nhc98/base/Data/Ix.hi
-include/nhc98/base/Data/List.hi
-include/nhc98/base/Data/Maybe.hi
-include/nhc98/base/Data/PackedString.hi
-include/nhc98/base/Data/Ratio.hi
-include/nhc98/base/Data/Set.hi
-include/nhc98/base/Data/Tuple.hi
-include/nhc98/base/Data/Word.hi
-include/nhc98/base/Debug/Trace.hi
-include/nhc98/base/Foreign/C/Error.hi
-include/nhc98/base/Foreign/C/String.hi
-include/nhc98/base/Foreign/C/Types.hi
-include/nhc98/base/Foreign/C/TypesISO.hi
-include/nhc98/base/Foreign/C.hi
-include/nhc98/base/Foreign/ForeignPtr.hi
-include/nhc98/base/Foreign/Marshal/Alloc.hi
-include/nhc98/base/Foreign/Marshal/Array.hi
-include/nhc98/base/Foreign/Marshal/Error.hi
-include/nhc98/base/Foreign/Marshal/Pool.hi
-include/nhc98/base/Foreign/Marshal/Utils.hi
-include/nhc98/base/Foreign/Marshal.hi
-include/nhc98/base/Foreign/Ptr.hi
-include/nhc98/base/Foreign/StablePtr.hi
-include/nhc98/base/Foreign/Storable.hi
-include/nhc98/base/Foreign.hi
-include/nhc98/base/System/Cmd.hi
-include/nhc98/base/System/Console/GetOpt.hi
-include/nhc98/base/System/Directory.hi
-include/nhc98/base/System/Environment.hi
-include/nhc98/base/System/Exit.hi
-include/nhc98/base/System/IO/Error.hi
-include/nhc98/base/System/IO/Unsafe.hi
-include/nhc98/base/System/IO.hi
-include/nhc98/base/System/Info.hi
-include/nhc98/base/System/Locale.hi
-include/nhc98/base/System/Mem.hi
-include/nhc98/base/System/Random.hi
-include/nhc98/base/Text/Html/BlockTable.hi
-include/nhc98/base/Text/Html.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Char.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Combinator.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Error.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Expr.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Perm.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Pos.hi
-include/nhc98/base/Text/ParserCombinators/Parsec/Prim.hi
-include/nhc98/base/Text/ParserCombinators/Parsec.hi
-include/nhc98/base/Text/PrettyPrint/HughesPJ.hi
-include/nhc98/base/Text/PrettyPrint.hi
-include/nhc98/base/Text/Read.hi
-include/nhc98/base/Text/Show/Functions.hi
-include/nhc98/base/Text/Show.hi
+lib/hmake/ix86-FreeBSD/HInteractive
+lib/hmake/ix86-FreeBSD/MkConfig
+lib/hmake/ix86-FreeBSD/MkProg
+lib/hmake/ix86-FreeBSD/Older
+lib/hmake/ix86-FreeBSD/hmakerc
 lib/nhc98/hood.jar
 lib/nhc98/ix86-FreeBSD/Array.z.a
 lib/nhc98/ix86-FreeBSD/BinArray.z.a
@@ -144,12 +79,10 @@ lib/nhc98/ix86-FreeBSD/CString.z.a
 lib/nhc98/ix86-FreeBSD/Char.z.a
 lib/nhc98/ix86-FreeBSD/Complex.z.a
 lib/nhc98/ix86-FreeBSD/DErrNo.z.a
-lib/nhc98/ix86-FreeBSD/DbgIface.z.a
 lib/nhc98/ix86-FreeBSD/Directory.z.a
 lib/nhc98/ix86-FreeBSD/Driver.z.a
 lib/nhc98/ix86-FreeBSD/FFI.z.a
 lib/nhc98/ix86-FreeBSD/GreenCard.z.a
-lib/nhc98/ix86-FreeBSD/Haskell.z.a
 lib/nhc98/ix86-FreeBSD/IO.z.a
 lib/nhc98/ix86-FreeBSD/IOExtras.z.a
 lib/nhc98/ix86-FreeBSD/Ix.z.a
@@ -178,10 +111,32 @@ lib/nhc98/ix86-FreeBSD/Time.z.a
 lib/nhc98/ix86-FreeBSD/UnboxedArray.z.a
 lib/nhc98/ix86-FreeBSD/Warning.z.a
 lib/nhc98/ix86-FreeBSD/config
+lib/nhc98/ix86-FreeBSD/cpphs
 lib/nhc98/ix86-FreeBSD/greencard-nhc98
 lib/nhc98/ix86-FreeBSD/hmake-PRAGMA
 lib/nhc98/ix86-FreeBSD/hp2graph
+lib/nhc98/ix86-FreeBSD/hsc2hs
+lib/nhc98/ix86-FreeBSD/libHSCabal.a
+lib/nhc98/ix86-FreeBSD/libHSCabal.p.a
+lib/nhc98/ix86-FreeBSD/libHSCabal.z.a
+lib/nhc98/ix86-FreeBSD/libHSHUnit.a
+lib/nhc98/ix86-FreeBSD/libHSHUnit.p.a
+lib/nhc98/ix86-FreeBSD/libHSHUnit.z.a
+lib/nhc98/ix86-FreeBSD/libHSHaXml.a
+lib/nhc98/ix86-FreeBSD/libHSHaXml.p.a
+lib/nhc98/ix86-FreeBSD/libHSHaXml.z.a
+lib/nhc98/ix86-FreeBSD/libHSQuickCheck.a
+lib/nhc98/ix86-FreeBSD/libHSQuickCheck.p.a
+lib/nhc98/ix86-FreeBSD/libHSQuickCheck.z.a
 lib/nhc98/ix86-FreeBSD/libHSbase.a
+lib/nhc98/ix86-FreeBSD/libHSbase.p.a
+lib/nhc98/ix86-FreeBSD/libHSbase.z.a
+lib/nhc98/ix86-FreeBSD/libHShaskell-src.a
+lib/nhc98/ix86-FreeBSD/libHShaskell-src.p.a
+lib/nhc98/ix86-FreeBSD/libHShaskell-src.z.a
+lib/nhc98/ix86-FreeBSD/libHSparsec.a
+lib/nhc98/ix86-FreeBSD/libHSparsec.p.a
+lib/nhc98/ix86-FreeBSD/libHSparsec.z.a
 lib/nhc98/ix86-FreeBSD/main.o
 lib/nhc98/ix86-FreeBSD/main.p.o
 lib/nhc98/ix86-FreeBSD/main.z.o
@@ -196,48 +151,9 @@ lib/nhc98/ix86-FreeBSD/nhc98heap
 lib/nhc98/ix86-FreeBSD/tprofprel1.z.o
 lib/nhc98/ix86-FreeBSD/tprofprel2.z.o
 lib/nhc98/ix86-FreeBSD/tprofprel3.z.o
-lib/hmake/ix86-FreeBSD/HInteractive
-lib/hmake/ix86-FreeBSD/MkConfig
-lib/hmake/ix86-FreeBSD/MkProg
-lib/hmake/ix86-FreeBSD/Older
-lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%%%DOCSDIR%%/98.html
 %%PORTDOCS%%%%DOCSDIR%%/CcallingHaskell.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
-%%PORTDOCS%%%%DOCSDIR%%/compiler-options.html
-%%PORTDOCS%%%%DOCSDIR%%/config.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib.html
-%%PORTDOCS%%%%DOCSDIR%%/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/cvs.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/errmsgs.html
-%%PORTDOCS%%%%DOCSDIR%%/extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/ffi.html
-%%PORTDOCS%%%%DOCSDIR%%/fig1.gif
-%%PORTDOCS%%%%DOCSDIR%%/fig2.html
-%%PORTDOCS%%%%DOCSDIR%%/fig3.html
-%%PORTDOCS%%%%DOCSDIR%%/fig4.html
-%%PORTDOCS%%%%DOCSDIR%%/greencard-york.html
-%%PORTDOCS%%%%DOCSDIR%%/greencard.html
-%%PORTDOCS%%%%DOCSDIR%%/heapprof.html
-%%PORTDOCS%%%%DOCSDIR%%/history.html
-%%PORTDOCS%%%%DOCSDIR%%/history98.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/libraries.html
-%%PORTDOCS%%%%DOCSDIR%%/limits.html
-%%PORTDOCS%%%%DOCSDIR%%/limits.html.inst
-%%PORTDOCS%%%%DOCSDIR%%/maillist.html
-%%PORTDOCS%%%%DOCSDIR%%/new_tiny.gif
-%%PORTDOCS%%%%DOCSDIR%%/nhc13.gif
-%%PORTDOCS%%%%DOCSDIR%%/nhc98.gif
-%%PORTDOCS%%%%DOCSDIR%%/runtime-options.html
-%%PORTDOCS%%%%DOCSDIR%%/status.html
-%%PORTDOCS%%%%DOCSDIR%%/todo.html
-%%PORTDOCS%%%%DOCSDIR%%/tprof.html
-%%PORTDOCS%%%%DOCSDIR%%/tracer.html
-%%PORTDOCS%%%%DOCSDIR%%/windows.html
-%%PORTDOCS%%%%DOCSDIR%%/york-release.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs/Nhc13Test1.hs
 %%PORTDOCS%%%%DOCSDIR%%/bugs/Nhc13Test10.hs
 %%PORTDOCS%%%%DOCSDIR%%/bugs/Nhc13Test13.hs
@@ -267,7 +183,25 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%%%DOCSDIR%%/bugs/nhc98test21.hs
 %%PORTDOCS%%%%DOCSDIR%%/bugs/nhc98test22.hs
 %%PORTDOCS%%%%DOCSDIR%%/bugs/nhc98test23.hs
+%%PORTDOCS%%%%DOCSDIR%%/compiler-options.html
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/cvs.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/errmsgs.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/ZooQuiz.hs
+%%PORTDOCS%%%%DOCSDIR%%/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/ffi.html
+%%PORTDOCS%%%%DOCSDIR%%/fig1.gif
+%%PORTDOCS%%%%DOCSDIR%%/fig2.html
+%%PORTDOCS%%%%DOCSDIR%%/fig3.html
+%%PORTDOCS%%%%DOCSDIR%%/fig4.html
+%%PORTDOCS%%%%DOCSDIR%%/greencard-york.html
+%%PORTDOCS%%%%DOCSDIR%%/greencard.html
+%%PORTDOCS%%%%DOCSDIR%%/heapprof.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/history98.html
 %%PORTDOCS%%%%DOCSDIR%%/hmake/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/hmake/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/hmake/hi-commands.html
@@ -277,10 +211,16 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%%%DOCSDIR%%/hmake/interactive.html
 %%PORTDOCS%%%%DOCSDIR%%/hmake/lineedit.html
 %%PORTDOCS%%%%DOCSDIR%%/implementation-notes/build-system
+%%PORTDOCS%%%%DOCSDIR%%/implementation-notes/bytecode
+%%PORTDOCS%%%%DOCSDIR%%/implementation-notes/gc
 %%PORTDOCS%%%%DOCSDIR%%/implementation-notes/index.html
 %%PORTDOCS%%%%DOCSDIR%%/implementation-notes/intro
+%%PORTDOCS%%%%DOCSDIR%%/implementation-notes/memorylayout
 %%PORTDOCS%%%%DOCSDIR%%/implementation-notes/phases
 %%PORTDOCS%%%%DOCSDIR%%/implementation-notes/space-efficient
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/libraries.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/BinArray.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/Binary.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/Bit.html
@@ -290,32 +230,77 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%%%DOCSDIR%%/libs/PackedString.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/Time.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/limits.html
+%%PORTDOCS%%%%DOCSDIR%%/limits.html.inst
+%%PORTDOCS%%%%DOCSDIR%%/maillist.html
+%%PORTDOCS%%%%DOCSDIR%%/new_tiny.gif
+%%PORTDOCS%%%%DOCSDIR%%/nhc13.gif
+%%PORTDOCS%%%%DOCSDIR%%/nhc98.gif
+%%PORTDOCS%%%%DOCSDIR%%/oldlicence.html
+%%PORTDOCS%%%%DOCSDIR%%/papers.html
+%%PORTDOCS%%%%DOCSDIR%%/runtime-options.html
+%%PORTDOCS%%%%DOCSDIR%%/status.html
+%%PORTDOCS%%%%DOCSDIR%%/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/tprof.html
+%%PORTDOCS%%%%DOCSDIR%%/tracer.html
+%%PORTDOCS%%%%DOCSDIR%%/windows.html
+%%PORTDOCS%%%%DOCSDIR%%/york-release.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/bugs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/hmake
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/implementation-notes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/nhc98/base/Control/Monad
-@dirrm include/nhc98/base/Control
-@dirrm include/nhc98/base/Data
-@dirrm include/nhc98/base/Debug
-@dirrm include/nhc98/base/Foreign/C
-@dirrm include/nhc98/base/Foreign/Marshal
-@dirrm include/nhc98/base/Foreign
-@dirrm include/nhc98/base/System/Console
-@dirrm include/nhc98/base/System/IO
-@dirrm include/nhc98/base/System
-@dirrm include/nhc98/base/Text/Html
-@dirrm include/nhc98/base/Text/ParserCombinators/Parsec
-@dirrm include/nhc98/base/Text/ParserCombinators
-@dirrm include/nhc98/base/Text/PrettyPrint
-@dirrm include/nhc98/base/Text/Show
-@dirrm include/nhc98/base/Text
-@dirrm include/nhc98/base
-@dirrm include/nhc98/NHC
-@dirrm include/nhc98
-@dirrm lib/hmake/ix86-FreeBSD
-@dirrm lib/hmake
 @dirrm lib/nhc98/ix86-FreeBSD
 @dirrm lib/nhc98
+@dirrm lib/hmake/ix86-FreeBSD
+@dirrm lib/hmake
+@dirrm include/nhc98/packages/parsec/Text/ParserCombinators/Parsec
+@dirrm include/nhc98/packages/parsec/Text/ParserCombinators
+@dirrm include/nhc98/packages/parsec/Text
+@dirrm include/nhc98/packages/parsec
+@dirrm include/nhc98/packages/haskell-src/Language/Haskell
+@dirrm include/nhc98/packages/haskell-src/Language
+@dirrm include/nhc98/packages/haskell-src
+@dirrm include/nhc98/packages/base/Text/Show
+@dirrm include/nhc98/packages/base/Text/Regex
+@dirrm include/nhc98/packages/base/Text/PrettyPrint
+@dirrm include/nhc98/packages/base/Text/ParserCombinators
+@dirrm include/nhc98/packages/base/Text/Html
+@dirrm include/nhc98/packages/base/Text
+@dirrm include/nhc98/packages/base/System/IO
+@dirrm include/nhc98/packages/base/System/Directory
+@dirrm include/nhc98/packages/base/System/Console
+@dirrm include/nhc98/packages/base/System
+@dirrm include/nhc98/packages/base/NHC
+@dirrm include/nhc98/packages/base/Foreign/Marshal
+@dirrm include/nhc98/packages/base/Foreign/C
+@dirrm include/nhc98/packages/base/Foreign
+@dirrm include/nhc98/packages/base/Debug
+@dirrm include/nhc98/packages/base/Data
+@dirrm include/nhc98/packages/base/Control/Monad
+@dirrm include/nhc98/packages/base/Control
+@dirrm include/nhc98/packages/base
+@dirrm include/nhc98/packages/QuickCheck/Test/QuickCheck
+@dirrm include/nhc98/packages/QuickCheck/Test
+@dirrm include/nhc98/packages/QuickCheck/Debug/QuickCheck
+@dirrm include/nhc98/packages/QuickCheck/Debug
+@dirrm include/nhc98/packages/QuickCheck
+@dirrm include/nhc98/packages/HaXml/Text/XML/HaXml/Xtract
+@dirrm include/nhc98/packages/HaXml/Text/XML/HaXml/Html
+@dirrm include/nhc98/packages/HaXml/Text/XML/HaXml
+@dirrm include/nhc98/packages/HaXml/Text/XML
+@dirrm include/nhc98/packages/HaXml/Text/ParserCombinators
+@dirrm include/nhc98/packages/HaXml/Text
+@dirrm include/nhc98/packages/HaXml
+@dirrm include/nhc98/packages/HUnit/Test/HUnit
+@dirrm include/nhc98/packages/HUnit/Test
+@dirrm include/nhc98/packages/HUnit
+@dirrm include/nhc98/packages/Cabal/Distribution/Simple
+@dirrm include/nhc98/packages/Cabal/Distribution/PreProcess
+@dirrm include/nhc98/packages/Cabal/Distribution/Compat
+@dirrm include/nhc98/packages/Cabal/Distribution
+@dirrm include/nhc98/packages/Cabal
+@dirrm include/nhc98/packages
+@dirrm include/nhc98/NHC
+@dirrm include/nhc98
