@@ -42,5 +42,3 @@ share/locale/br/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/br/LC_MESSAGES/thesaurus_tool.mo
 share/locale/br/LC_MESSAGES/xsltexportfilter.mo
 share/locale/br/LC_MESSAGES/xsltimportfilter.mo
-@dirrm share/locale/br/LC_MESSAGES
-@dirrm share/locale/br

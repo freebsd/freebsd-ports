@@ -931,7 +931,6 @@ share/locale/hu/LC_MESSAGES/webarchiver.mo
 share/locale/hu/charset
 share/locale/hu/entry.desktop
 share/locale/hu/flag.png
-@dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/doc/HTML/hu/kxconfig
 @dirrm share/doc/HTML/hu/kworldclock
 @dirrm share/doc/HTML/hu/kweather
