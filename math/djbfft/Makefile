@@ -25,7 +25,7 @@ post-patch:
 	@${PERL} -pi -e 's|("include)|\1/${PORTNAME}|' ${WRKSRC}/hier.c
 
 do-configure:
-	@${ECHO_CMD} '${CC} ${CFLAGS}' > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} '${CC} ${CFLAGS} -fPIC' > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} '${CC}' > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 .ifdef(WITH_OPT_PENTIUM)
