@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-
-.if defined(NOPORTDOCS)
-NODOCS=	"@comment "
-.endif
-
-PLIST_SUB=	NOPORTDOCS=${NODOCS}
 
 .if !defined(NOPORTDOCS)
 post-install:
