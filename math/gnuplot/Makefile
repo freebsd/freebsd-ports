@@ -25,6 +25,11 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-gd=${LOCALBASE}/lib \
 		--with-gnu-readline --with-lasergnu --with-png
 
+post-install:
+	${MKDIR} ${PREFIX}/share/doc/gnuplot
+	(cd ${WRKSRC}/demo;for EXAMPLES in ${WRKSRC}/demo/*; do ${INSTALL_DATA} $${EXAMPLES} ${PREFIX}/share/doc/gnuplot;done)
+	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/gnuplot
+
 MAN1=		gnuplot.1 lasergnu.1
 
 .include <bsd.port.mk>
