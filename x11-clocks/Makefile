@@ -26,6 +26,7 @@
     SUBDIR += wmfishtime
     SUBDIR += wmitime
     SUBDIR += wmtime
+    SUBDIR += wmtimer
     SUBDIR += wmtz
     SUBDIR += xalarm
     SUBDIR += xdaliclock

@@ -1,0 +1,8 @@
+Wmtimer is a dockable alarm clock for WindowMaker which can be run
+in alarm, countdown timer, or chronograph mode. In alarm or timer
+mode, you can either execute a command or sound the system bell
+when the time is reached. Wmtimer is configurable through the
+command line or the GTK GUI.
+
+WWW: http://home.dwave.net/~jking/wmtimer/
+Author: Josh <jking@dwave.net>
