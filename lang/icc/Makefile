@@ -45,7 +45,7 @@ IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}c60l
 
 .if exists(${LINUXBASE}/boot/kernel.h) || \
 	exists(${PREFIX}/intel/compiler60/bin/ifc)
-BROKEN=	Can not coexist with linux_devtools or ifc
+BROKEN=	Cannot coexist with linux_devtools or ifc
 .endif
 
 post-extract:
@@ -114,7 +114,8 @@ do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/cxa_atexit.c ${FILESDIR}/cxa_finalize.c \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
-.if ${OSVERSION} < 500042
+.if ( ${OSVERSION} < 470101 ) || \
+	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .else
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
