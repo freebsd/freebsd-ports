@@ -7,6 +7,14 @@
 %%SITE_PERL%%/DateTime/Format/Builder/Parser/Strptime.pm
 %%SITE_PERL%%/DateTime/Format/Builder/Parser/generic.pm
 %%SITE_PERL%%/DateTime/Format/Builder/Tutorial.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/Apache.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Fall.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ICal.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/MySQL.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Simple.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tivoli.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/W3CDTF.pm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/DateTime/Format/Builder/Parser
 @dirrm %%SITE_PERL%%/DateTime/Format/Builder
 @unexec rmdir %D/%%SITE_PERL%%/DateTime/Format 2>/dev/null || true
