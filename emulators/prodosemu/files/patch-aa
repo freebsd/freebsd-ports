@@ -1,0 +1,71 @@
+diff -rc prodosemu-v0.1/Makefile prodosemu/Makefile
+*** Makefile	Tue Jan  9 15:00:03 1996
+--- Makefile	Tue Feb 18 09:40:38 1997
+***************
+*** 1,12 ****
+  #
+! #Makefile for ProDOS Emulator v0.1
+! #
+  
+  all : prodos
+  
+  # Linux doesn't seem to like Randy Frank's beep code,
+  # if you're compiling on something else, you could try not defining NOBEEP
+! OPT = -O2 -DNOBEEP
+  
+  # Necessary libraries
+  LIB = -lcurses -ltermcap
+--- 1,28 ----
+  #
+! # Makefile for ProDOS Emulator v0.1
+! # FreeBSD modifications by Joel Sutton 18th Feb, 1997
+! 
+! # Paths to various places
+! PREFIX?=	/usr/local
+! BINDIR=	${PREFIX}/bin
+! LIBDIR=	${PREFIX}/lib
+! MANDIR=	${PREFIX}/man
+! ROMDIR=		${LIBDIR}/apple2
+! ROM=		prodos-2e.rom
+! 
+! # Certain programs
+! INSTALL=	install -c
+! INSTALL_BIN=	${INSTALL} -s -o bin -g bin
+! INSTALL_DATA=	${INSTALL} -m 664
+! INSTALL_MAN=	${INSTALL} -m 444
+! CP?=		/bin/cp
+! MKDIR?=		-/bin/mkdir
+  
+  all : prodos
+  
+  # Linux doesn't seem to like Randy Frank's beep code,
+  # if you're compiling on something else, you could try not defining NOBEEP
+! OPT = -O2 -DNOBEEP -DROMFILE=\"${ROMDIR}/${ROM}\"
+  
+  # Necessary libraries
+  LIB = -lcurses -ltermcap
+***************
+*** 30,35 ****
+  prodos  : $(OBJ)
+  	cc $(OPT) -o prodos $(OBJ) $(LIB)
+  
+  # Clean up
+  clean:
+! 	rm *.o *~
+--- 46,61 ----
+  prodos  : $(OBJ)
+  	cc $(OPT) -o prodos $(OBJ) $(LIB)
+  
++ # Install the program
++ install: all
++ 	${MKDIR} ${BINDIR}
++ 	${MKDIR} ${LIBDIR}
++ 	${MKDIR} ${ROMDIR}
++ 
++ 	${INSTALL_BIN} prodos ${BINDIR}/
++ 	${CP} apple.rom ${ROM}
++ 	${INSTALL_DATA} ${ROM} ${ROMDIR}/
++ 
+  # Clean up
+  clean:
+! 	rm *.o 

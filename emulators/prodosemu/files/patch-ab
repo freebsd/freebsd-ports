@@ -1,0 +1,21 @@
+diff -rc prodosemu-v0.1/apple.h prodosemu/apple.h
+*** apple.h	Tue Jan  9 15:00:03 1996
+--- apple.h	Tue Feb 18 07:02:04 1997
+***************
+*** 18,25 ****
+  #endif
+  
+  #ifndef CBREAK
+! /*#include <sgtty.h>*/
+! #include <bsd/sgtty.h>
+  #endif
+  
+  #ifndef TIOCGETP
+--- 18,24 ----
+  #endif
+  
+  #ifndef CBREAK
+! #include <sgtty.h>
+  #endif
+  
+  #ifndef TIOCGETP
