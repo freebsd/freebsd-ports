@@ -353,3 +353,4 @@ libexec/fvwm/2.2.4/FvwmWharf
 @dirrm lib/X11/fvwm2
 @dirrm libexec/fvwm/2.2.4
 @dirrm libexec/fvwm
+@dirrm icons
