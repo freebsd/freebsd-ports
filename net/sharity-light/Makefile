@@ -1,0 +1,38 @@
+# New ports collection makefile for:	rumba
+# Version required:	0.4
+# Date created:		14 June 1997
+# Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
+#
+# $Id$
+#
+
+DISTNAME=	rumba.0.4.s
+PKGNAME=	rumba-0.4
+CATEGORIES=	net
+MASTER_SITES=	ftp://hal.kph.tuwien.ac.at/pub/NeXT/tools/rumba/ \
+		ftp://next-ftp.peak.org/pub/next/apps/utils/networks/
+EXTRACT_SUFX=	.gnutar.gz
+
+MAINTAINER=	dima@tejblum.dnttm.rssi.ru
+
+USE_GMAKE=	yes
+MAKE_ENV=	PWD=${WRKSRC}
+MAN8=		smbmount.8
+
+post-extract:
+	@${MKDIR} work/unrumba
+	@${CP} files/unrumba.c ${WRKDIR}/unrumba
+	@${CP} files/Makefile.unrumba ${WRKDIR}/unrumba/Makefile
+
+post-build:
+	cd ${WRKDIR}/unrumba && make
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/rumba ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKDIR}/unrumba/unrumba ${PREFIX}/sbin
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.rumba
+.endif
+	${INSTALL_MAN} ${WRKSRC}/smbmount.8 ${PREFIX}/man/man8
+
+.include <bsd.port.mk>
