@@ -1,0 +1,15 @@
+%%RUBY_SITEARCHLIBDIR%%/rubysdl.so
+%%RUBY_SITELIBDIR%%/rubysdl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/alpha.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cdrom.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/font.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/movesp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playwave.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/rotate.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sgetest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl
