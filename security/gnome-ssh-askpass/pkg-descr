@@ -1,0 +1,4 @@
+Gnome-ssh-askpass is a part of the OpenSSH contrib files.
+
+Use from your .xsession or equivalent:
+	export SSH_ASKPASS=/usr/X11R6/bin/gnome-ssh-askpass2 ; ssh-add
