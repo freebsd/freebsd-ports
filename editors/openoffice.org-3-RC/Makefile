@@ -41,7 +41,7 @@ PASTE?=	/usr/bin/paste
 BUILD_NR=		645
 RELEASE_NR=		1.1
 FRELEASE_NR=		1.1.0
-INSTALLATION_BASEDIR=	OpenOffice.org-${FRELEASE_NR}
+INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
