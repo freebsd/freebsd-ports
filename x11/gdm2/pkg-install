@@ -9,6 +9,7 @@ POST-INSTALL)
 	PW=/usr/sbin/pw
 	CHMOD=/bin/chmod
 	CHOWN=/usr/sbin/chown
+	MKDIR=/bin/mkdir
 
 	if ${PW} group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
@@ -35,6 +36,8 @@ POST-INSTALL)
 	fi
 	${CHOWN} -R root:${GROUP} ${PKG_PREFIX}/share/gnome/gdm
 	${CHMOD} 1770 ${PKG_PREFIX}/share/gnome/gdm
+
+	${MKDIR} -p ${PKG_PREFIX}/etc/dm/Sessions
 	exit 0
 	;;
 esac
