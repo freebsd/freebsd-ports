@@ -3,7 +3,7 @@
 # Date created:		10 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1995/10/02 08:11:03 asami Exp $
+# $Id: Makefile,v 1.3 1996/03/07 01:52:45 asami Exp $
 #
 
 DISTNAME=	xcolors
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.x.org/pub/R6untarred/contrib/programs/
 # change because of compression options on the ftp server.
 
 MAINTAINER=	asami@FreeBSD.ORG
-
-FETCH_DEPENDS=	ncftp2:${PORTSDIR}/net/ncftp2
 
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
