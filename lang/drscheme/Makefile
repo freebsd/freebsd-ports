@@ -7,6 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	206p1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -22,28 +23,26 @@ COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 DIST_SUBDIR=	drscheme/${PORTVERSION}
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=${PLTHOME} --enable-shared
 WRKSRC=		${WRKDIR}/plt/src
-ALL_TARGET=	all install
 USE_XLIB=	yes
+USE_GMAKE=	yes
 
 PLTHOME=	${PREFIX}/drscheme
-DRS_D=		bin install collects teachpack include lib
-DRS_B=		drscheme mred mzc mzscheme
-MAN1=		drscheme.1 mred.1 mzscheme.1
+DRS_B=		drscheme mred mzc mzscheme tex2page help-desk
+MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386
 
-do-install:
-	${MKDIR} ${PLTHOME}
-	cd ${WRKDIR}/plt && ${TAR} -cf - --exclude '/CVS/*' ${DRS_D} | tar -C ${PLTHOME} -xf -
-	cd ${PLTHOME} && ${PLTHOME}/install
+post-install:
+	cd ${PLTHOME} && bin/setup-plt
 .for f in ${DRS_B}
 	${LN} -s ${PLTHOME}/bin/$f ${PREFIX}/bin/$f
 .endfor
 .for f in ${MAN1}
-	${INSTALL_MAN} ${WRKDIR}/plt/man/man1/$f ${PREFIX}/man/man1
+	${INSTALL_MAN} ${PLTHOME}/man/man1/$f ${PREFIX}/man/man1/
 .endfor
 
 .include <bsd.port.post.mk>
