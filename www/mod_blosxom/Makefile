@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-blosxom
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
 USE_APACHE=	yes

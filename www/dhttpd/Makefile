@@ -12,7 +12,7 @@ MASTER_SITES=	http://uts.cc.utexas.edu/~foxx/dhttpd/	\
 		http://ccca.nctu.edu.tw/~gslin/Software/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal secure webserver. Fast and efficient, no cgi-bin support
 
 USE_REINPLACE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 		http://www.ibiblio.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	system/mail/pop
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A virtual POP3 server
 
 USE_REINPLACE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to limit the number of simultaneous connexions
 
 USE_APACHE=	YES

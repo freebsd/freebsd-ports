@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses-based split window log monitoring program
 
 GNU_CONFIGURE=	yes

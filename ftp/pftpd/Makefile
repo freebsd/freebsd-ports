@@ -10,7 +10,7 @@ PORTVERSION=	0.42
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
