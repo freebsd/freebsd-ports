@@ -24,7 +24,7 @@ MAN3=		XML::Normalize::LibXML.3 XML::XUpdate::LibXML.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
-	@${PERL} -pi.b -e 's/xupdate/NAME/ if $$.==56' ${WRKSRC}/xupdate
-	@${PERL} -pi.b -e 's/my // if $$.==237' ${WRKSRC}/lib/XML/XUpdate/LibXML.pm
+	@${PERL} -pi -e 's/xupdate/NAME/ if $$.==56' ${WRKSRC}/xupdate
+	@${PERL} -pi -e 's/my // if $$.==237' ${WRKSRC}/lib/XML/XUpdate/LibXML.pm
 
 .include <bsd.port.mk>
