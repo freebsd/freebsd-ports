@@ -16,21 +16,52 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=		Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
+COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
+OPTIONS=	IPV6 "enable IPv6 support" on \
+		LIBPAM "enable PAM authentication for vtysh" off \
+		OSPFNSSA "turn on undergoing NSSA feature" off \
+		SNMP "enable SNMP support" off \
+		TCPZEBRA "enable TCP/IP socket connection" off \
+		BGPD "enable BGPD" on \
+		OSPF6D "enable OSPF6D" on \
+		OSPFD "enable OSPFD" on \
+		RIPD "enable RIPD" on \
+		RIPNGD "enable RIPNGD" on \
+		VTYSH "enable VTYSH" on
+
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 INFO=		zebra
+
+.include <bsd.port.pre.mk>
 
 .if defined (WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 WITHOUT_OSPF6D=	yes
 WITHOUT_RIPNGD=	yes
+.endif
+
+.if defined (WITH_LIBPAM)
+CONFIGURE_ARGS+=--with-libpam
+.endif
+
+.if defined (WITH_OSPFNSSA)
+CONFIGURE_ARGS+=--enable-nssa
+.endif
+
+.if defined (WITH_SNMP)
+CONFIGURE_ARGS+=--enable-snmp
+LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4:install
+.endif
+
+.if defined (WITH_TCPZEBRA)
+CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
 .if !defined(WITHOUT_BGPD)
@@ -76,18 +107,6 @@ CONFIGURE_ARGS+=--enable-vtysh
 PLIST_SUB+=	VTYSH="@comment "
 .endif
 
-.if !defined(BATCH)
-pre-configure:
-	@${RM} -f ${WRKDIR}/Makefile.inc
-
-post-clean:
-	@${RM} -f ${WRKDIR}/Makefile.inc
-
-.if exists(${WRKDIR}/Makefile.inc)
-.include "${WRKDIR}/Makefile.inc"
-.endif
-.endif
-
 post-install:
 	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; ${MAKE} zebra.info install )
 	@${ECHO} "===>     installing zebra startup file..."
@@ -102,4 +121,4 @@ post-install:
 	@${ECHO} "router_flags=\"start\""
 	@${ECHO} "done."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
