@@ -3702,6 +3702,7 @@ jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
 jmirror		ports/ftp/jmirror
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
+jmf		ports/java/jmf
 jmp		ports/java/jmp
 jode		ports/java/jode
 joe		ports/editors/joe
