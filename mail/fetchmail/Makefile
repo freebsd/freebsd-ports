@@ -10,7 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.2
+PORTVERSION=	6.2.4
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
