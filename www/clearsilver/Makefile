@@ -66,6 +66,10 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 BROKEN=		"Does not compile on amd64 (missing -fPIC from shared libraries)"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 post-patch:
 	@# Exclude lemon.c, it gives some errors and its not used at all.
 	@${MV} ${WRKSRC}/cs/lemon.c ${WRKSRC}/cs/lemon.c.not_used
