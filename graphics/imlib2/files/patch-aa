@@ -1,16 +1,7 @@
---- configure.orig	Tue Oct 19 07:52:34 1999
-+++ configure	Mon Apr  3 08:26:32 2000
-@@ -1826,7 +1826,7 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL="/usr/local/bin/libtool"
- 
- # Redirect the config.log output again, so that the ltconfig log is not
- # clobbered by the next message.
-@@ -2367,8 +2367,8 @@
- echo "configure:2368: checking whether to build gmodulized imlib" >&5
+--- configure.orig	Sat May 20 14:50:50 2000
++++ configure	Sun Jul 16 09:56:12 2000
+@@ -2034,8 +2034,8 @@
+ if test "x$GDK_IMLIB" != x; then
    oLIBS="$LIBS"
    oCFLAGS="$CFLAGS"
 -  LIBS="$LIBS `glib-config --libs gmodule`"
@@ -20,16 +11,16 @@
    if test "$cross_compiling" = yes; then
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
-@@ -2389,7 +2389,7 @@
+@@ -2056,7 +2056,7 @@
  EOF
- if { (eval echo configure:2391: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ if { (eval echo configure:2058: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
 -  dynworks=true
 +  dynworks=false
  else
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
-@@ -2418,8 +2418,8 @@
+@@ -2085,8 +2085,8 @@
  #define USE_GMODULE 1
  EOF
  
@@ -40,7 +31,7 @@
     
     
     echo "$ac_t""yes" 1>&6
-@@ -4536,7 +4536,7 @@
+@@ -4205,7 +4205,7 @@
    echo "$ac_t""$jpeg_ok" 1>&6
    if test "$jpeg_ok" = yes; then 
      JPEGLIBS="-ljpeg"
