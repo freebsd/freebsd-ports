@@ -1,5 +1,14 @@
 --- Bonnie.c.orig	Wed Aug 28 09:23:49 1996
-+++ Bonnie.c	Fri Jun 28 23:40:56 2002
++++ Bonnie.c	Tue Aug 27 09:12:19 2002
+@@ -49,7 +49,7 @@
+ #define Seeks (4000)
+ #define UpdateSeek (10)
+ #define SeekProcCount (3)
+-#define Chunk (16384)
++#define Chunk (8192)
+ 
+ /* labels for the tests, used as an array index */
+ typedef enum
 @@ -179,7 +179,7 @@
      if (bufindex == Chunk / IntSize)
        bufindex = 0;
