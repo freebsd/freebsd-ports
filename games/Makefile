@@ -552,6 +552,7 @@
     SUBDIR += xgalaga
     SUBDIR += xgame
     SUBDIR += xgammon
+    SUBDIR += xglk
     SUBDIR += xgolgo
     SUBDIR += xgospel
     SUBDIR += xhexagons
