@@ -1,0 +1,42 @@
+*** configure	Sun Jul 23 09:11:27 1995
+--- configure	Tue Aug  1 21:51:42 1995
+***************
+*** 430,446 ****
+  	       confdir=${confdir-'$(prefix)/etc/zephyr'}
+  	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
+  	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
+! 	       SUPPORT_LIBS="et ss"
+! 	       ET_LDFLAGS='-L$(BUILDTOP)/lib/et'
+! 	       ETDEP='$(BUILDTOP)/lib/et/libcom_err.a'
+! 	       SS_LDFLAGS='-L$(BUILDTOP)/lib/ss'
+! 	       SSDEP='$(BUILDTOP)/lib/ss/libss.a'
+! 	       COMPILE_ET='$(BUILDTOP)/lib/et/compile_et'
+! 	       MK_CMDS='$(BUILDTOP)/lib/ss/mk_cmds'
+  	       INITPROGS=true
+! 	       if test ! -d h/ss; then mkdir h/ss; fi
+! 	       cp ${srcdir}/lib/et/com_err.h h
+! 	       cp ${srcdir}/lib/ss/*.h h/ss
+  fi
+  
+  
+--- 430,449 ----
+  	       confdir=${confdir-'$(prefix)/etc/zephyr'}
+  	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
+  	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
+! #	       SUPPORT_LIBS="et ss"
+! #	       ET_LDFLAGS='-L$(BUILDTOP)/lib/et'
+! #	       ETDEP='$(BUILDTOP)/lib/et/libcom_err.a'
+! #	       SS_LDFLAGS='-L$(BUILDTOP)/lib/ss'
+! #	       SSDEP='$(BUILDTOP)/lib/ss/libss.a'
+! #	       COMPILE_ET='$(BUILDTOP)/lib/et/compile_et'
+! #	       MK_CMDS='$(BUILDTOP)/lib/ss/mk_cmds'
+  	       INITPROGS=true
+! #	       if test ! -d h/ss; then mkdir h/ss; fi
+! #	       cp ${srcdir}/lib/et/com_err.h h
+! #	       cp ${srcdir}/lib/ss/*.h h/ss
+! 	       CPPFLAGS="${CPPFLAGS} -I/usr/include/kerberosIV"
+! 	       COMPILE_ET=compile_et
+! 	       MK_CMDS=mk_cmds
+  fi
+  
+  
