@@ -1,5 +1,5 @@
 bin/irc
-bin/irc-4.4X
+bin/irc-4.4Z
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -347,6 +347,7 @@ share/irc/help/set/help_pager
 share/irc/help/set/help_path
 share/irc/help/set/help_prompt
 share/irc/help/set/help_window
+share/irc/help/set/hide_channel_keys
 share/irc/help/set/hide_private_channels
 share/irc/help/set/highlight_char
 share/irc/help/set/history
@@ -472,6 +473,7 @@ share/irc/help/window/move
 share/irc/help/window/name
 share/irc/help/window/new
 share/irc/help/window/next
+share/irc/help/window/nostatus
 share/irc/help/window/notify
 share/irc/help/window/notify_level
 share/irc/help/window/number
