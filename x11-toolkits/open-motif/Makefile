@@ -21,7 +21,7 @@ PATCHFILES=	patch1 patch2 patch3 patch4 patch5
 PATCH_DIST_STRIP=	-p1
 
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@FreeBSD.org
 
 DIST_SUBDIR=	openmotif
 WRKSRC=		${WRKDIR}/motif
