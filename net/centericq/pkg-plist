@@ -6,14 +6,6 @@ bin/cicqsync
 %%DATADIR%%/online.wav
 %%DATADIR%%/sms.wav
 %%DATADIR%%/url.wav
-%%DATADIR%%/contrib/spanish/ChangeLog
-%%DATADIR%%/contrib/spanish/COPYING
-%%DATADIR%%/contrib/spanish/INSTALL
-%%DATADIR%%/contrib/spanish/FAQ
-%%DATADIR%%/contrib/spanish/README
-@dirrm %%DATADIR%%/contrib/spanish
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
 share/locale/bg/LC_MESSAGES/centericq.mo
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
@@ -30,6 +22,3 @@ share/locale/ru/LC_MESSAGES/centericq.mo
 share/locale/sv/LC_MESSAGES/centericq.mo
 share/locale/uk/LC_MESSAGES/centericq.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.9
+PORTVERSION=	4.9.10
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
@@ -25,6 +25,13 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
+
+.if defined(WITH_MULTIBYTE)
+CONFIGURE_ARGS+=	--enable-locales-fix
+.else
+pre-patch:
+	@${ECHO_CMD} "Type \"make WITH_MULTIBYTE=yes\" if you want multibyte support."
+.endif
 
 .if defined(WITH_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
@@ -75,6 +82,7 @@ CONFIGURE_ARGS+=	--disable-lj
 
 MAN1=	cicqconv.1 cicqsync.1
 
+PORTDOCS=	FAQ README
 post-patch:
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
 	@(cd ${WRKSRC} ; \
@@ -85,7 +93,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
