@@ -196,6 +196,7 @@
     SUBDIR += utah-glx
     SUBDIR += vcdgear
     SUBDIR += vcg
+    SUBDIR += vid
     SUBDIR += whirlgif
     SUBDIR += wmgrabimage
     SUBDIR += wmicons

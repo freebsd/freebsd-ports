@@ -1,0 +1,19 @@
+vid is a Image Capture program for USB cameras using the
+Omnivision OV511 chipset.
+
+
+These include the
+
+  Creative Labs WebCam 3 
+  D-Link DSB-C300 
+  Puretek PT-6007 
+  Alpha Vision Koala-Cam 
+  Lifeview RoboCam 
+  AverMedia InterCam Elite 
+  MediaForte MV300 
+
+The program was written by Peter Housel <housel@acm.org) and
+is heavily based on the Linux OV511 driver from http://alpha.dyndns.org/ov511/
+
+
+WWW: http://members.home.com/housel/
