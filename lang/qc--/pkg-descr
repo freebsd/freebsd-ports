@@ -1,0 +1,12 @@
+C-- is intended as a "portable assembly language" that can replace C as a
+target language used by compiler writers. The goal of the Quick C-- project is
+to test those ideas in an implementation. Quick C-- is intended to be a simple,
+nonoptimizing compiler that supports the run-time interface. Our primary goal
+is to to validate our design experimentally. A secondary, but still significant
+goal is to provide a vehicle for experimenting with new techniques for building
+retargetable compilers. We want the compiler to be
+   1. Easy to retarget to the platform of choice
+   2. Easy to specialize, say for a new calling convention
+   3. Fast
+
+WWW: http://www.cminusminus.org/qc--.html

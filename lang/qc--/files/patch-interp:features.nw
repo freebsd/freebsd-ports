@@ -1,0 +1,13 @@
+--- interp/features.nw.orig	Fri Sep  6 04:01:44 2002
++++ interp/features.nw	Mon Nov 10 16:46:33 2003
+@@ -119,8 +119,8 @@
+ #ifndef _FLOAT_FEATURES_H
+ #define _FLOAT_FEATURES_H
+  
+-#include <fenv.h>
+-#pragma STDC FENV_ACCESS ON
++/* #include <fenv.h> */
++/* #pragma STDC FENV_ACCESS ON */
+ 
+ #endif /* _FLOAT_FEATURES_H */
+ @

@@ -1,0 +1,11 @@
+--- interp/mkfile.orig	Mon Nov 10 13:39:30 2003
++++ interp/mkfile	Mon Nov 10 13:39:39 2003
+@@ -359,7 +359,7 @@
+ 	$NOTANGLE -R$target $prereq > $target
+ 
+ inspect.clua:D: inspect.lua
+-	sed -e 's/\\/\\\\/g' \
++	gsed -e 's/\\/\\\\/g' \
+ 	  -e 's/"/\\"/g'   \
+ 	  -e 'i \'         \
+ 	  -e '\"\\'        \

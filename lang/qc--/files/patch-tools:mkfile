@@ -1,0 +1,21 @@
+--- tools/mkfile.orig	Tue Dec  2 14:15:05 2003
++++ tools/mkfile	Tue Dec  2 14:15:52 2003
+@@ -47,13 +47,13 @@
+ 	cp newer          $BINDIR  
+ 
+ install:V: all
+-	install        -D    ocamlerror     $install_bin/ocamlerror
+-	install -m 644 -D    ocamlerror.1   $install_man1/ocamlerror.1
+-	install        -D    nofake         $install_bin/nofake
+-	install -m 644 -D    nofake.1       $install_man1/nofake.1
++	install            ocamlerror     $install_bin/ocamlerror
++	install -m 644     ocamlerror.1   $install_man1/ocamlerror.1
++	install            nofake         $install_bin/nofake
++	install -m 644     nofake.1       $install_man1/nofake.1
+ 
+ install.opt:V: install all
+-	install        -D -s ocamlerror.opt $install_bin/ocamlerror.opt
++	install         -s ocamlerror.opt $install_bin/ocamlerror.opt
+ 
+ dvi:V:          $INC
+ html:V:         $HTML

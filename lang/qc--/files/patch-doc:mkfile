@@ -1,0 +1,15 @@
+--- doc/mkfile.orig	Tue Dec  2 14:14:04 2003
++++ doc/mkfile	Tue Dec  2 14:14:45 2003
+@@ -31,9 +31,9 @@
+ update.opt:V:   update
+ 
+ install:V: man
+-	install -m 644 -D qc--.1          $install_man1/qc--.1
+-	install -m 644 -D qc--internals.1 $install_man1/qc--internals.1
+-	install -m 644 -D qc--interp.1    $install_man1/qc--interp.1
++	install -m 644 qc--.1          $install_man1/qc--.1
++	install -m 644 qc--internals.1 $install_man1/qc--internals.1
++	install -m 644 qc--interp.1    $install_man1/qc--interp.1
+ 
+ install.opt:V: install
+ 
