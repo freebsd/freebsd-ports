@@ -17,7 +17,7 @@ PATCH_SITES=	http://ojnk.sourceforge.net/stuff/ \
 PATCHFILES=	iplog-2.1.0-2.diff
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	dr@domix.de
+MAINTAINER=	ust@cert.siemens.de
 
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
