@@ -15,10 +15,8 @@ MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Ncurses client for the musicpd
 
-LIB_DEPENDS=	glib-2.0.400:${PORTSDIR}/devel/glib20
-
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	glib20
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
