@@ -2463,6 +2463,7 @@ gnucash		ports/finance/gnucash
 gnucash-docs	ports/finance/gnucash-docs
 gnuchess	ports/games/gnuchess
 gnugadu		ports/polish/gnugadu
+gnugadu2	ports/polish/gnugadu2
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
 gnuls		ports/misc/gnuls
