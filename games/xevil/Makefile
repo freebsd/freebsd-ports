@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xevil
-PORTVERSION=	2.02
+PORTVERSION=	2.02.r2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xevil.com/download/stable/
-DISTNAME=	xevilsrc${PORTVERSION}
+DISTNAME=	xevilsrc${PORTVERSION:S/.r/r/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast-action, networked, anti-social, kill-everything game
@@ -20,10 +20,6 @@ USE_XPM=	yes
 ALL_TARGET=	freebsd
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 # I'm not sure if this should be here
 .if (${MACHINE} == "alpha")
