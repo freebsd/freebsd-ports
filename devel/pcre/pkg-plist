@@ -1,5 +1,5 @@
 bin/pcre-config
-bin/pgrep
+bin/pcregrep
 include/pcre.h
 include/pcreposix.h
 lib/libpcre.a
