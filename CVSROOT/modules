@@ -960,6 +960,7 @@ crystal		ports/devel/crystal
 cs-aspell	ports/textproc/cs-aspell
 cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 cscope		ports/devel/cscope
+cscout		ports/devel/cscout
 csound		ports/audio/csound
 csound-manual	ports/audio/csound-manual
 css-mode.el	ports/www/css-mode.el
