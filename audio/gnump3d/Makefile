@@ -27,6 +27,13 @@ MAN1=		gnump3d.1 gnump3d-top.1 gnump3d.conf.1
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 PERL_SITELIBDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
+	it's outdated. Install lang/perl5 and issue 'use.perl port'"
+.endif
+
 post-patch:
 .for file in bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf man/gnump3d.conf.1
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
@@ -57,4 +64,4 @@ do-install:
 .endif
 	${MKDIR} /var/log/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
