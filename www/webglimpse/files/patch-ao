@@ -1,0 +1,62 @@
+--- dist/wgfilter-index.orig	Tue Jun 16 02:16:17 1998
++++ dist/wgfilter-index	Mon Nov  2 22:11:17 1998
+@@ -1,26 +1,59 @@
+ Deny \.gif$
+ Deny \.jpeg$
+ Deny \.mpeg$
++Deny \.mpg$
++Deny \.tif$
++Deny \.tiff$
++Deny \.xbm$
++Deny \.png$
++Deny \.jpe$
+ Deny \.jpg$
++Deny \.mp3$
++Deny \.m3u$
++Deny \.ra$
++Deny \.rv$
++Deny \.rm$
++Deny \.ram$
++Deny \.rpm$
++Deny \.rmm$
+ Deny \.au$
++Deny \.aiff$
++Deny \.aif$
++Deny \.snd$
++Deny \.mid$
++Deny \.midi$
+ Deny \.wav$
+ Deny \.pdf$
+ Deny \.mov$
++Deny \.avi$
+ Deny \.gz$
+ Deny \.Z$
++Deny \.tar$
+ Deny \.tgz$
+ Deny \.zip$
++Deny \.lha$
++Deny \.lzh$
++Deny \.doc$
++Deny \.eps$
+ Deny \.ps$
++Deny \.js$
++Deny \.map$
++Deny \.css$
++Deny \.cgi$
+ Deny \.exe$
++Deny \.wrl$
++Deny \.vrml$
+ Deny (^|/)wgindex\.html$
+ Deny \.wg
+ Deny \.glimpse_
+ Deny (^|/)indexing-in-progress$
+ Deny (^|/)wgreindex$
++Deny (^|/).sitecache$
+ Deny (^|/)archive.cfg$
+ Deny (^|/)\.nh\.
+ Deny \?
+ Deny ~$
+ Deny (^|/)_vti
+ Deny (^|/)\.htpasswd$
++Deny (^|/)\.htaccess$
+ Deny (^|/)\.htgroup$

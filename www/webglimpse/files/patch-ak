@@ -1,0 +1,131 @@
+--- cgi-bin/webglimpse.orig	Mon Jul 27 22:59:49 1998
++++ cgi-bin/webglimpse	Mon Nov  2 15:06:45 1998
+@@ -39,6 +39,9 @@
+ # **** **** **** ****    CONFIGURABLE VARIABLES     **** **** **** ****
+ # We need some of these to find our libraries, so wrap them in a BEGIN block
+ 
++use POSIX qw(locale_h);
++use locale;
++
+ BEGIN{
+ 
+ $WEBGLIMPSE_HOME = "/usr/local/webglimpse";
+@@ -117,14 +120,21 @@
+ # Added optional module to support result caching
+ $QS_cache = '';
+ 
++$charset = '';
++$put_header = 0;
++
+ # **** **** **** **** Done settings **** **** **** ****
+ 
+-BEGIN {
++sub http_header {
++
++return if ($put_header);
++$put_header = 1;
++
+ # make the output as we can
+ $| = 1;
+ 
+ # might as well start the message now	
+-print "Content-type: text/html\n\n";
++print "Content-type: text/html$charset\n\n";
+ 
+ print "<!-- TESTING -->\n";
+ 
+@@ -216,10 +226,20 @@
+ $nhhops = 0;
+ $traverse_type = 0;
+ $urlpath = '';
++$vhost = '';
++$usemaxmem = '';
++$locale = '';
+ @urllist = ();
+ 
+ ($title, $urlpath, $traverse_type, $explicit_only, $numhops,
+- $nhhops, $local_limit, $remote_limit, $addboxes, @urllist) = ReadConfig($indexdir);
++ $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($indexdir);
++
++$ENV{LANG}=$locale if ($locale ne '');
++setlocale(LC_CTYPE, "");
++
++$charset = "; charset=$charset" if ($charset ne '');
++
++&http_header;
+ 
+ # Ensure that Glimpse is available on this machine
+ -x $GLIMPSE_LOC || &err_noglimpse($GLIMPSE_LOC) ;
+@@ -667,7 +687,7 @@
+ sub err_noneighborhood {
+ 
+ 	local($_) = @_;
+-
++	&http_header;
+ 	# neighborhood does not exist
+ 	print <<EOM;
+ <hr>
+@@ -683,6 +703,7 @@
+ 
+ ##########################################################################
+ sub err_noquery {
++   &http_header;
+    #	The script was called without a query. 
+    #	Provide an ISINDEX type response for browsers
+    #	without form support.
+@@ -732,6 +753,7 @@
+ ##########################################################################
+ sub err_noglimpse {
+ local($_) = @_;
++   &http_header;
+    #
+    # Glimpse was not found
+    # Report a useful message
+@@ -756,6 +778,7 @@
+ ##########################################################################
+ sub err_badglimpse {
+    my(@glines) = @_;
++   &http_header;
+    #
+    # Glimpse had an error
+    # Report a useful message
+@@ -786,6 +809,7 @@
+ ##########################################################################
+ sub err_noindex {
+ 	local ($indexdir) = @_;
++	&http_header;
+ # Glimpse index was not found
+ # Give recommendations for indexing
+ 	print "<TITLE>Glimpse Index not found</TITLE>\n";
+@@ -801,6 +825,7 @@
+ }
+ ##########################################################################
+ sub err_insecurepath {
++	&http_header;
+ # Path user requested contains ".." characters
+ 	print "<TITLE>Path not accepted</TITLE>\n";
+ 	print "</HEAD>\n";
+@@ -814,6 +839,7 @@
+ 
+ ##########################################################################
+ sub err_conf {
++	&http_header;
+ # Glimpse archive Configuration File was not found
+ 	print "<TITLE>Glimpse Archive Configuration File not found</TITLE>\n";
+ 	print "</HEAD>\n";
+@@ -827,6 +853,7 @@
+ 
+ ##########################################################################
+ sub err_badquery {
++	&http_header;
+ 	print "<TITLE>Query is too broad</TITLE>\n";
+ 	print "</HEAD>\n";
+ 	print "<BODY>\n";
+@@ -840,6 +867,7 @@
+ 
+ ##########################################################################
+ sub err_locked {
++	&http_header;
+ 	print "<TITLE>Indexing in progress</TITLE>\n";
+ 	print "</HEAD>\n";
+ 	print "<BODY>\n";

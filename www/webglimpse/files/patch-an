@@ -1,0 +1,28 @@
+--- dist/wgindex.html.bak	Mon Jul 27 22:56:52 1998
++++ dist/wgindex.html	Mon Nov  2 16:05:33 1998
+@@ -27,18 +27,18 @@
+ <INPUT TYPE=submit VALUE=Submit>
+ <br>
+ 
+-<INPUT NAME=case TYPE=checkbox>Case&#160;sensitive
+-<!-- SPACES -->&#160;&#160;&#160;
+-<INPUT NAME=whole TYPE=checkbox>Partial&#160;match
+-<!-- SPACES -->&#160;&#160;&#160;
+-<INPUT NAME=lines TYPE=checkbox>Jump&#160;to&#160;line
+-<!-- SPACES -->&#160;&#160;&#160;
++<INPUT NAME=case TYPE=checkbox>Case&nbsp;sensitive
++<!-- SPACES -->&nbsp;&nbsp;&nbsp;
++<INPUT NAME=whole TYPE=checkbox>Partial&nbsp;match
++<!-- SPACES -->&nbsp;&nbsp;&nbsp;
++<INPUT NAME=lines TYPE=checkbox>Jump&nbsp;to&nbsp;line
++<!-- SPACES -->&nbsp;&nbsp;&nbsp;
+ <SELECT NAME=errors align=right>
+ <OPTION>0
+ <OPTION>1
+ <OPTION>2
+ </SELECT>
+-misspellings&#160;allowed
++misspellings&nbsp;allowed
+ <br>
+ </center>
+ Return only files modified within the last <INPUT NAME=age size=5>

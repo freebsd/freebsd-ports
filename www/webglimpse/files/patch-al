@@ -1,0 +1,80 @@
+--- confarc.orig	Mon Jul 27 21:30:54 1998
++++ confarc	Mon Nov  2 18:56:11 1998
+@@ -75,6 +75,8 @@
+         elsif (/^-l/)           { $nu_list  = &get_option("-list");    }
+ 	elsif (/^-T/)		{ $nu_title = &get_option("-Title"); }
+ 	elsif (/^-b/)		{ $nu_addboxes = 1; }
++	elsif (/^-L/)           { $nu_locale = &get_option("-Locale"); }
++	elsif (/^-C/)           { $nu_charset = &get_option("-Charset"); }
+         elsif (/^-[\?hH]/)      { &usage; }
+         else                    { &usage("unknown argument: $_");  }
+ }
+@@ -142,6 +144,8 @@
+ $addboxes = 0;
+ $usemaxmem = 0;
+ $vhost = "";
++$locale = '';
++$charset = '';
+ @urllist = ();
+ 
+ # pre-set localscope
+@@ -219,7 +223,7 @@
+    	print "\nFound archive.  Reading in previous settings for update.\n";
+ 
+    	($title, $urlpath, $traverse_type, $explicit_only, $numhops,
+-    	   $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, @urllist) = ReadConfig($indexdir);
++	   $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($indexdir);
+ }
+ 
+ # If we had a virtual host on the command line, revert to that.
+@@ -423,6 +427,23 @@
+ 	}
+ }
+ 
++if ($nu_locale) {
++	$locale = $nu_locale;
++} elsif (! $nu_quiet) {
++	$oldlocale=$locale;
++
++	$locale = &prompt("System locale (press return to leave it as is or * to cancel old one)\n",$oldlocale);
++	$locale = '' if ($locale eq "*");
++}
++
++if ($nu_charset) {
++	$charset = $nu_charset;
++} elsif (! $nu_quiet) {
++	$oldcharset=$charset;
++
++	$charset = &prompt("Charset for CGI (press return to leave it as is or * to cancel old one)\n",$oldcharset);
++	$charset = '' if ($charset eq "*");
++}
+ 
+ # generate the comment
+ if ($found_archive) {
+@@ -452,6 +473,8 @@
+ # vhost Hostname	= name of virtual host to use for this index
+ # usemaxmem 0		= 0 to NOT use maximum available memory
+ #			= 1 to use maximum memory to speed up indexing
++# locale LOCALE         = system locale or empty
++# charset CHARSET       = character set for CGI output or empty
+ # urllist Url1,Url2,..	= List of starting URL's or Directories to index
+ #	";
+ }
+@@ -473,7 +496,7 @@
+ # save the configuration
+ if(&SaveConfig($indexdir, $topcomment,
+ 		$title,$url,$traverse_type,$explicit_only,$numhops,$nhhops,
+-		$local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, @urllist) == 0){
++		$local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) == 0){
+ 	print "Error saving configuration to file!\n";
+ 	exit 3;
+ }
+@@ -483,7 +506,7 @@
+ &copy_files($indexdir);
+ 
+ # construct the cron file
+-if (system("$MAKECRON $indexdir $usemaxmem") < 0) {
++if (system("$MAKECRON $indexdir $usemaxmem $locale") < 0) {
+ 	print "ERROR: Unable to create cronfile $mycronfile\n";
+ 	exit 6;
+ }
