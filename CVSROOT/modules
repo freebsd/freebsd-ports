@@ -1055,6 +1055,7 @@ de-webalizer2	ports/german/webalizer2
 deadfs		src/sys/fs/deadfs
 deal		ports/games/deal
 deco		ports/misc/deco
+decompyle	ports/devel/decompyle
 decss		ports/www/decss
 dedit		ports/editors/dedit
 deepforest	ports/archivers/deepforest
