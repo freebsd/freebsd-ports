@@ -10,7 +10,7 @@ PORTVERSION=	0.99.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
-MAINTAINER=	shipley@dis.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
