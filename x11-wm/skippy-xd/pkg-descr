@@ -1,0 +1,12 @@
+Skippy-XD is a version of Skippy that uses Xserver's XDamage, XComposite and 
+XFixes extensions to provide you with 'live' versions of the windows.
+
+Skippy-XD is best described as a full-screen task-switcher for X11. It tries to 
+provide an alternative when taskbars or regular task-switchers aren't the most
+efficient way of switching tasks (like when you have a lot of applications open)
+When activated (currently only through a hotkey), it will arrange and scale 
+snapshots of all windows on the current desktop and it'll let you pick a 
+window using a mouse or a keyboard. Yes, this is also what expocity and Apple's
+Expose.
+
+WWW:	http://thegraveyard.org/skippy.php

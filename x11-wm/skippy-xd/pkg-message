@@ -1,0 +1,14 @@
+*******************************************************************************
+A sample configuration file, skippy-xd.rc-default, has been installed in 
+%%DATADIR%%. To edit the default confiuration of skippy please 
+'cp %%DATADIR%%/skippy-xd.rc-default ~/.skippy-xd.rc'
+
+You will also need to manually enable the X Composite Extension from Xorg
+by adding the following to your xorg.conf file which is normally found
+in /etc/X11/xorg.conf.
+
+ Section "Extensions"
+     Option "Composite" "Enable"
+ EndSection
+
+*******************************************************************************

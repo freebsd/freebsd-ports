@@ -87,6 +87,7 @@
     SUBDIR += sawfish2
     SUBDIR += selectwm
     SUBDIR += skippy
+    SUBDIR += skippy-xd
     SUBDIR += swm
     SUBDIR += tpager
     SUBDIR += treewm
