@@ -8,8 +8,10 @@
 PORTNAME=	opale
 PORTVERSION=	0.5
 CATEGORIES=	finance kde
-MASTER_SITES=	http://orzel.freehackers.org/download/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://orzel.freehackers.org/download/ \
 		ftp://ftp.freehackers.org/pub/opale/
+MASTER_SITE_SUBDIR=	lioux
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A very simple personal bank account manager for KDE and KOffice
@@ -21,7 +23,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 INSTALLS_SHLIB= yes
 
 CONFIGURE_ARGS=	--with-koffice-includes=${LOCALBASE}/include \
