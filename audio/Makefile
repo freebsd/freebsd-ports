@@ -275,6 +275,7 @@
     SUBDIR += p5-MusicBrainz-TRM
     SUBDIR += p5-Net-DAAP-Client
     SUBDIR += p5-Net-DAAP-DMAP
+    SUBDIR += p5-Ogg-Vorbis-Header
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
