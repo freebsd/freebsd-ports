@@ -6,26 +6,35 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	0.7
+PORTVERSION=	0.9.1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kvs@pil.dk
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
-		${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/${PERL_ARCH}/Image/Imlib2.pm:${PORTSDIR}/graphics/p5-Image-Imlib2 \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+.if defined(WITH_APACHE2)
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
+DEPENDS_ARGS+=	WITH_MODPERL2=yes
+.else
+# XXX - probe for static mod_perl using `httpd -l | grep perl`
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.endif
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Gallery.3
@@ -41,9 +50,6 @@ ICONS=		application-doc.png application-mp3.png application-ogg.png \
 		video-asf.png video-avi.png c.png \
 		video-mov.png video-mpeg.png video-mpg.png video-wmv.png \
 		video-asf.png agfolder.png
-
-post-configure:
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -61,7 +67,7 @@ post-install:
 		${PREFIX}/share/Apache-Gallery/css/
 .endif
 .if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
+	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.pre.mk>
