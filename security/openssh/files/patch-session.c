@@ -1,5 +1,5 @@
---- session.c.orig	Wed Jun 26 17:32:54 2002
-+++ session.c	Wed Jun 26 18:05:16 2002
+--- session.c.orig	Sun Jun 30 21:19:19 2002
++++ session.c	Sun Jun 30 21:24:47 2002
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -297,9 +297,12 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -827,16 +1019,33 @@
+@@ -826,17 +1018,22 @@
+ 	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
++	if (getenv("TZ"))
++		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
  	if (!options.use_login) {
 +#ifdef HAVE_LOGIN_CAP
 +		char *var;
@@ -311,22 +314,8 @@
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
  #ifdef HAVE_LOGIN_CAP
 -		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
-+		senv = environ;
-+		environ = xmalloc(sizeof(char *));
-+		*environ = NULL;
-+		(void) setusercontext(lc, pw, pw->pw_uid,
-+		    LOGIN_SETENV|LOGIN_SETPATH);
-+		copy_environment(environ, &env, &envsize);
-+		xfree(environ);
-+		environ = senv;
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
 -#else
-+		var= login_getcapstr(lc, "lang", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "LANG", var);
-+		var= login_getcapstr(lc, "charset", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "MM_CHARSET", var);
-+		var= login_getcapstr(lc, "timezone", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "TZ", var);
 +#else /* !HAVE_LOGIN_CAP */
  		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
 -#endif
@@ -334,7 +323,29 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -889,6 +1098,10 @@
+@@ -844,9 +1041,19 @@
+ 
+ 		/* Normal systems set SHELL by default. */
+ 		child_set_env(&env, &envsize, "SHELL", shell);
++#ifdef HAVE_LOGIN_CAP
++		senv = environ;
++		environ = xmalloc(sizeof(char *));
++		*environ = NULL;
++		if (setusercontext(lc, pw, pw->pw_uid,
++			LOGIN_SETENV|LOGIN_SETPATH) < 0) {
++			perror("unable to set user context enviroment");
++		}
++		copy_environment(environ, &env, &envsize);
++		xfree(environ);
++		environ = senv;
++#endif /* HAVE_LOGIN_CAP */
+ 	}
+-	if (getenv("TZ"))
+-		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
+ 
+ 	/* Set custom environment options from RSA authentication. */
+ 	if (!options.use_login) {
+@@ -889,6 +1096,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -345,7 +356,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -1005,7 +1218,7 @@
+@@ -1005,7 +1216,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -354,7 +365,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1045,6 +1258,36 @@
+@@ -1045,6 +1256,36 @@
  	exit(1);
  }
  
@@ -391,7 +402,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1123,7 +1366,7 @@
+@@ -1123,7 +1364,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -400,7 +411,7 @@
  		close(i);
  
  	/*
-@@ -1153,6 +1396,31 @@
+@@ -1153,6 +1394,31 @@
  			exit(1);
  #endif
  	}

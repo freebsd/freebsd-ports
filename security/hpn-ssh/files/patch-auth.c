@@ -4,7 +4,7 @@
  	}
  #endif /* WITH_AIXAUTHENTICATE */
  
-+#ifdef __FreeBSD__  
++#ifdef TEST__FreeBSD__
 +	/* Fail if the account's expiration time has passed. */
 +	if (pw->pw_expire != 0) {
 +		struct timeval tv;
