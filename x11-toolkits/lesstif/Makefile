@@ -57,19 +57,19 @@ MAN5 =	VirtualBindings.5 mwmrc.5
 .if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD)
 IS_INTERACTIVE=	yes
 pre-extract:
-	@${ECHO} "***********************************************************"
-	@${ECHO} "*                      W a r n i n g                      *"
-	@${ECHO} "*    This port will overwrite your Motif installation.    *"
-	@${ECHO} "***********************************************************"
-	@${ECHO} -n "Is this ok? (y/n) ==> "
+	@${ECHO_CMD} "***********************************************************"
+	@${ECHO_CMD} "*                      W a r n i n g                      *"
+	@${ECHO_CMD} "*    This port will overwrite your Motif installation.    *"
+	@${ECHO_CMD} "***********************************************************"
+	@${ECHO_CMD} -n "Is this ok? (y/n) ==> "
 	@(read ans; \
 	  case x"$$ans" in \
 	    xy*|xY*) \
 		return 0; \
 		;; \
 	    *) \
-		${ECHO} "Okay, I won't install it then...."; \
-		${ECHO} "(Don't worry about the following \"*** Error code 1's)"; \
+		${ECHO_CMD} "Okay, I won't install it then...."; \
+		${ECHO_CMD} "(Don't worry about the following \"*** Error code 1's)"; \
 		return 1; \
 		;; \
 	esac)

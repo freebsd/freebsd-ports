@@ -32,11 +32,11 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share -
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
-	@${ECHO}
-	@${ECHO} "PAPERSIZE incorrect value: ${PAPERSIZE}."
-	@${ECHO}
-	@${ECHO} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
-	@${ECHO} "letterdj allows a slightly larger margins for DeskJets."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
+	@${ECHO_CMD} "letterdj allows a slightly larger margins for DeskJets."
 	@${FALSE}
 .endif
 
