@@ -56,7 +56,7 @@
 +
 +CC= gcc
 +OPTIMIZER= -g
-+CFLAGS=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I$(ROOT)/usr/include
++CFLAGS=  $(OPTIMIZER) -fPIC $(PLUGIN_DEFINES) -I. -I$(ROOT)/usr/include
 +
 +SRC= ../Source/UnixShell.c ../Source/stubs.c 
 +OBJ= UnixShell.o stubs.o
