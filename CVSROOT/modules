@@ -2383,7 +2383,7 @@ gturing		ports/games/gturing
 gtypist		ports/games/gtypist
 guavac		ports/java/guavac
 gubby		ports/mail/gubby
-gucharmap	ports/misc/gucharmap
+gucharmap	ports/deskutils/gucharmap
 guile		ports/lang/guile
 guile-gnome	ports/x11-toolkits/guile-gnome
 guile-gobject	ports/x11-toolkits/guile-gobject
