@@ -8,7 +8,7 @@
 PORTNAME=		xmailwatcher
 PORTVERSION=		1.6
 CATEGORIES=		mail
-MASTER_SITES=		ftp://ftp.dcs.ed.ac.uk/pub/X11/
+MASTER_SITES=		http://www.dcs.ed.ac.uk/home/gdmr/X11/
 DISTNAME=		xmailwatcher
 
 MAINTAINER=		harry_newton@telinco.co.uk
