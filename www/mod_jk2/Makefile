@@ -29,6 +29,10 @@ WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk2-${PORTVERSION}-src/jk/native2
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Fails to link on sparc64"
+.endif
+
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes
 .endif
