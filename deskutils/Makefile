@@ -2,6 +2,7 @@
 #
 
     SUBDIR += abacus
+    SUBDIR += aspostit
     SUBDIR += bulb
     SUBDIR += cal
     SUBDIR += cbb
