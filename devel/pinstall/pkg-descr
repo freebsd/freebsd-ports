@@ -1,0 +1,5 @@
+This is a simple Perl script that installs files from a source
+directory to a destination directory according to a packing list,
+assuming the layout of the source and destination directories are
+similar. It is very useful for installing ports that do not have their
+own install targets.
