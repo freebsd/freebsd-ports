@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Fri Feb 18 16:37:54 2005
++++ Makefile.in	Fri Feb 18 16:38:08 2005
+@@ -317,11 +317,9 @@
+ 	@echo "Installing the CDK man pages in $(MAN_DIR) ..."
+ 	@for i in $(AUTO_MAN); do \
+ 	   $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(MAN_DIR) $(srcdir) $$i; \
+-	   $(SHELL) $(srcdir)/manlinks.sh installing $(srcdir) $(MAN_DIR) $$i;  \
+ 	done
+ 	@for i in $(CDKMAN); do \
+ 	   $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(MAN_DIR) $(srcdir) man/$$i; \
+-	   $(SHELL) $(srcdir)/manlinks.sh installing $(srcdir) $(MAN_DIR) $(srcdir)/man/$$i;  \
+ 	done
+ 
+ uninstall \
