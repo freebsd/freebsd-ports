@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>imlib</name>
-	<range><lt>1.9.15</lt></range>
+	<range><lt>1.9.15_1</lt></range>
       </package>
       <package>
 	<name>imlib2</name>
