@@ -1,11 +1,11 @@
---- configure.orig	Sun Nov 28 19:14:30 2004
-+++ configure	Sun Nov 28 19:15:34 2004
-@@ -20691,13 +20691,13 @@
+--- configure.orig	Thu Mar 17 10:45:20 2005
++++ configure	Sat Mar 19 11:55:47 2005
+@@ -20895,13 +20895,13 @@
  
  fi
  
--LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -D_POSIX_C_SOURCE=200112L -I\$(top_srcdir)"
-+LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -I\$(top_srcdir)"
+-LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -D_POSIX_C_SOURCE=200112L -I\$(top_srcdir) -O2"
++LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -I\$(top_srcdir) -O2"
  
  
  LIBOIL_LIBS="\$(top_builddir)/liboil/liboil-$LIBOIL_MAJORMINOR.la"
@@ -15,4 +15,4 @@
 +pkgconfigdir="\$(prefix)/libdata/pkgconfig"
  
  
-                                                                                                                         ac_config_files="$ac_config_files Makefile liboil/Makefile liboil/copy/Makefile liboil/dct/Makefile liboil/md5/Makefile liboil/jpeg/Makefile liboil/simdpack/Makefile testsuite/Makefile examples/Makefile examples/jpeg/Makefile examples/md5/Makefile liboil.pc"
+ #CFLAGS=`echo "$CFLAGS" | sed -e 's/-O[0-9*]//g'`

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liboil
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.schleef.org/liboil/download/
 
