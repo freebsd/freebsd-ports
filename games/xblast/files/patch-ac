@@ -1,0 +1,17 @@
+--- xblast.c.orig	Wed Jul  7 12:53:41 2004
++++ xblast.c	Thu Dec 30 12:42:51 2004
+@@ -84,12 +84,12 @@
+   XBPlayerHost   hostType;
+   XBBool         autoCentral;
+   XBBool   nsound;
++
+   autoCentral = XBFalse;
+   nsound = XBFalse;
+ #ifndef WMS
+-  int i;
+   if(argc>1){
+-    i=1;
++    int i=1;
+     while(i<argc){
+       if(0==strcmp("-central",argv[i])) {
+       
