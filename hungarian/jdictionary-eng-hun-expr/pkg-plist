@@ -1,0 +1,2 @@
+share/java/classes/jdictionary/Plugins/SmartEngHunExp-1_4.jar
+@unexec rmdir %D/share/java/classes/jdictionary/Plugins || true
