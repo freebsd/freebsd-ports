@@ -8,7 +8,7 @@
 PORTNAME=	civ2demo
 PORTVERSION=	1.0
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.linuxgames.com/loki/demos/civctp/
+MASTER_SITES=	ftp://download.linuxlords.com/pub/demos/civctp/
 DISTNAME=	civctp-demo-10251999
 EXTRACT_ONLY=
 
