@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.137 1997/06/03 22:53:51 asami Exp $
+# $Id: Makefile,v 1.138 1997/06/04 00:39:27 asami Exp $
 #
 
     SUBDIR += FWF
@@ -18,6 +18,7 @@
     SUBDIR += etlfonts
     SUBDIR += emiclock
     SUBDIR += emu
+    SUBDIR += fbsd-icons
     SUBDIR += filerunner
     SUBDIR += freefonts
     SUBDIR += fvwm
