@@ -286,8 +286,6 @@
     SUBDIR += mozilla-devel-gtk2
     SUBDIR += mozilla-firebird
     SUBDIR += mozilla-gtk2
-    SUBDIR += mozilla-headers
-    SUBDIR += mozilla-headers-devel
     SUBDIR += mplayer-plugin
     SUBDIR += nd
     SUBDIR += neon
