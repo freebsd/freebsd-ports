@@ -31,20 +31,20 @@
  libORBit_la_LIBADD = $(GLIB_LIBS) -lm
  
  BUILT_SOURCES =  	interface_repository.h 	interface_repository-common.c 	interface_repository-stubs.c
---- src/services/name/Makefile.in.orig	Mon Feb 15 13:00:03 1999
-+++ src/services/name/Makefile.in	Thu Feb 18 22:40:23 1999
-@@ -104,7 +104,7 @@
- libORBitservicesinclude_HEADERS =  	CosNaming.h								CosNaming_impl.h							CosNaming.idl								LName.pidl
+--- src/services/name/Makefile.in.orig	Tue Jul 25 17:34:11 2000
++++ src/services/name/Makefile.in	Tue Aug  1 21:27:41 2000
+@@ -118,7 +118,7 @@
  
  
--libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitCosNaming_la_LDFLAGS =  	-version-info 2:0:0
+ libORBitCosNaming_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++	-version-info 2:0:0
  
  
- INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
---- libIDL/Makefile.in.orig	Mon Feb 21 12:32:32 2000
-+++ libIDL/Makefile.in	Tue Feb 22 18:19:14 2000
-@@ -90,7 +90,7 @@
+ INCLUDES = -I. -I$(top_builddir)/src -I$(top_builddir)/src/ORBitutil -I$(top_srcdir)/src @GLIB_CFLAGS@
+--- libIDL/Makefile.in.orig	Tue Jul 25 17:34:00 2000
++++ libIDL/Makefile.in	Tue Aug  1 21:29:05 2000
+@@ -88,7 +88,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
@@ -53,16 +53,17 @@
  OBJDUMP = @OBJDUMP@
  PACKAGE = @PACKAGE@
  RANLIB = @RANLIB@
-@@ -120,7 +120,7 @@
+@@ -130,8 +130,7 @@
+ libIDL_la_SOURCES = parser.c parser.h lexer.c \
+ 			  ns.c util.c util.h rename.h
  
- libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
- 
--libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
+-libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
+-			  -release $(LT_RELEASE)
 +libIDL_la_LDFLAGS = -version-info 2:0:0
  
  
  m4datadir = $(datadir)/aclocal
-@@ -129,7 +129,7 @@
+@@ -140,7 +139,7 @@
  tstidl_SOURCES = tstidl.c
  tstidl_LDADD = libIDL.la
  
@@ -71,7 +72,7 @@
  confexec_DATA = libIDLConf.sh
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -580,7 +580,7 @@
+@@ -596,7 +595,7 @@
  		uninstall-info uninstall-confexecDATA \
  		uninstall-m4dataDATA uninstall-pkgincludeHEADERS
  uninstall: uninstall-am
