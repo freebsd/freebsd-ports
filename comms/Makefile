@@ -4,6 +4,7 @@
     SUBDIR += acfax
     SUBDIR += asmodem
     SUBDIR += bayonne
+    SUBDIR += bforce-kst
     SUBDIR += birda
     SUBDIR += bpl+
     SUBDIR += comserv
