@@ -28,6 +28,9 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 .endif
 
+PLIST=		${WRKDIR}/pkg-plist
+PKGINSTALL=	${WRKDIR}/pkg-install
+
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.4.2
@@ -100,8 +103,6 @@ MAKE_ENV+=	NO_PLUGIN="YES" \
 		NO_JAVAWS="YES"
 .endif
 ALL_TARGET=	all
-PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
 
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
@@ -111,16 +112,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/disable-ipv6.patch
 .endif
 
 .if defined(MINIMAL)
-PLIST_SUB+=	MINIMAL:="@comment "
 PKGNAMESUFFIX=	-minimal
-.else
-PLIST_SUB+=	MINIMAL:=""
-.endif
-
-.if defined(WITH_DEBUG)
-PLIST_SUB+=	DEBUG:=""
-.else
-PLIST_SUB+=	DEBUG:="@comment "
 .endif
 
 PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
@@ -299,12 +291,18 @@ pre-install:
 .endif
 
 do-install:
+	${RM} -f ${PLIST}
+	${TOUCH} ${PLIST}
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	${FIND} -s ${JDKIMAGEDIR} -not -type d | \
+	  ${SED} -ne 's#${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
 .if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
+	  ${SED} -ne 's#${JDKIMAGEDIR_G}#jdk${JDK_VERSION}#p' >> ${PLIST}
 .endif
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 		${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
@@ -312,6 +310,10 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 		${PREFIX}/jdk${JDK_VERSION}/jre/javaws/cacerts
 .endif
+	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
+	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${PLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${PLIST}
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${PLIST}
 
 post-install:
 .if !defined(MINIMAL)
