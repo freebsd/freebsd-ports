@@ -91,6 +91,8 @@ post-extract:
 	@${RM} -Rf ${WRKSRC}/lib/${dir}
 .endfor
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
@@ -136,8 +138,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${files} ${DOCSDIR}/${files:C|^[^/]+/||}
 .endfor
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
