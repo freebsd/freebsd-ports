@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz
+DIST_SUBDIR=	amaya
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-DIST_SUBDIR=	amaya
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_MOTIF=	yes
@@ -45,7 +45,7 @@ DISTFILES+=	${DICT:S/$/.tgz/g}
 .endif
 .endif
 
-pre-fetch:
+pre-everything::
 .if ${DICT} == "none"
 	@${ECHO_MSG} Several spellchecking dictionaries are available.  To use
 	@${ECHO_MSG} one of them, define DICT to be the appropriate language.
@@ -53,6 +53,9 @@ pre-fetch:
 
 post-extract:
 	${MKDIR} ${WRKSRC}
+
+post-patch:
+	${PERL} -pi.dist -e 's|\"1.0\\.|\"1\\.|g' ${WRKSRC}/../configure
 
 post-configure:
 	${CP} ${WRKSRC}/Options.orig ${WRKSRC}/Options
