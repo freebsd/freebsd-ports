@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/12/17 05:08:34 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/17 05:31:12 asami Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -28,5 +28,6 @@ pre-configure:
 
 pre-install:
 	@${MKDIR} ${LOCALBASE}/share/sounds
+	@${MKDIR} ${X11BASE}/include/X11/pixmaps
 
 .include <bsd.port.mk>
