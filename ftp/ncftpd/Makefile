@@ -16,6 +16,8 @@ COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=		"Does not fetch"
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 LICENSE=	shareware
