@@ -1,0 +1,16 @@
+bin/c2s
+bin/jabberd
+bin/resolver
+bin/router
+bin/s2s
+bin/sm
+etc/jabberd/c2s.xml.dist
+etc/jabberd/jabberd.cfg.dist
+etc/jabberd/resolver.xml.dist
+etc/jabberd/router-users.xml.dist
+etc/jabberd/router.xml.dist
+etc/jabberd/s2s.xml.dist
+etc/jabberd/sm.xml.dist
+etc/jabberd/templates/roster.xml.dist
+@dirrm etc/jabberd/templates
+@dirrm etc/jabberd
