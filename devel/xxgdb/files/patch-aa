@@ -9,30 +9,6 @@
  #ifndef MAXPATHLEN
  #define MAXPATHLEN 1024
  #endif
---- ./regex.c.org	Wed Nov 16 17:05:28 1994
-+++ ./regex.c	Tue May  2 21:57:09 1995
-@@ -114,7 +114,9 @@
-  * Date :	 July 27, 1990
-  */
- 
-+#if !defined(__FreeBSD__)
- #include <malloc.h>
-+#endif
- #include <string.h>
- #include <stdio.h>
- #include <stdlib.h>
---- ./source.c.org	Fri Dec  2 17:37:15 1994
-+++ ./source.c	Tue May  2 21:57:49 1995
-@@ -74,7 +74,9 @@
-  *    LoadFile():	Search for a file and open it for display.
-  */
- 
-+#if !defined(__FreeBSD__)
- #include <malloc.h>
-+#endif
- #include <stdlib.h>
- 
- #include <X11/Xos.h>
 --- ./calldbx.c.org	Mon Dec  5 17:21:36 1994
 +++ ./calldbx.c	Tue May  2 22:06:38 1995
 @@ -137,13 +137,17 @@
