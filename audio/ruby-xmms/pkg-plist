@@ -3,6 +3,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmms/xmms_test.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmms
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmms/AUTHORS
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmms/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmms/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmms/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmms/doc/classes/Xmms.html

@@ -7,6 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		AUTHORS ChangeLog README TODO doc
+DOCS=		AUTHORS COPYING ChangeLog README TODO doc
 
 post-install:
 .if !defined(NOPORTDOCS)
