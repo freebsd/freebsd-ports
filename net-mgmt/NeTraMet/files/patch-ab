@@ -1,0 +1,10 @@
+--- ./src/bgp/integrat/readbgp.c.orig	Fri Aug 23 12:46:49 2002
++++ ./src/bgp/integrat/readbgp.c	Fri Aug 23 12:47:36 2002
+@@ -115,7 +115,6 @@
+ #ifdef __unix__
+ #define min(a,b)    (((a) < (b)) ? (a) : (b))
+ #define _sys_errlist sys_errlist
+-int sys_nerr;
+ #if !defined(ALPHA) && !defined(IRIX)
+ extern const char *const sys_errlist[];
+ #endif

@@ -1,0 +1,10 @@
+--- ./src/bgp/types/types.h.orig	Fri Aug 23 12:48:29 2002
++++ ./src/bgp/types/types.h	Fri Aug 23 12:48:35 2002
+@@ -392,7 +392,6 @@
+  * under UNIX
+  */
+ #define _sys_errlist    sys_errlist
+-extern int sys_nerr;
+ #if !defined(ALPHA) && !defined(IRIX)
+ extern const char *const sys_errlist[];
+ #endif
