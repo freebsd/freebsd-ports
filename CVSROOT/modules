@@ -7353,6 +7353,7 @@ sail		src/games/sail
 saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
+sam2p		ports/graphics/sam2p
 samba		ports/net/samba
 samba-devel	ports/net/samba-devel
 samba-tng	ports/net/samba-tng
