@@ -19,6 +19,7 @@ MAINTAINER=	cpiazza@FreeBSD.org
 BROKEN=	'Only an ELF binary is distributed'
 .endif
 
+ONLY_FOR_ARCHS=	i386
 NO_BUILD=	true
 WRKSRC=		${WRKDIR}
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/vcdgear
