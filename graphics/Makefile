@@ -251,6 +251,7 @@
     SUBDIR += linux_glx
     SUBDIR += linux_mesa3
     SUBDIR += lodju
+    SUBDIR += lphoto
     SUBDIR += mapserver
     SUBDIR += maverik
     SUBDIR += megapov
