@@ -8,13 +8,11 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 
 MAINTAINER=	ijliao@FreeBSD.org
-
-RUN_DEPENDS=	${LOCALBASE}/lib/dict/wn.index:${PORTSDIR}/net/dictd-database
 
 MAN1=		dictzip.1
 MAN8=		dictd.8
