@@ -3958,6 +3958,7 @@ jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
 jc		ports/java/jc
 jcalendar	ports/java/jcalendar
+jcckit		ports/java/jcckit
 jce-aba		ports/java/jce-aba
 jclassinfo	ports/devel/jclassinfo
 jcommon		ports/java/jcommon
