@@ -24,6 +24,7 @@
     SUBDIR += bjfilter850ug
     SUBDIR += bjfilter860
     SUBDIR += bjfilter870
+    SUBDIR += bjfilters600
     SUBDIR += bookview
     SUBDIR += cannadic
     SUBDIR += canuum
