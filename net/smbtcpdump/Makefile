@@ -4,7 +4,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.2 1998/10/14 01:22:00 jseger Exp $
+# $Id: Makefile,v 1.3 1998/11/11 05:37:30 asami Exp $
 #
 
 DISTNAME=	tcpdump-3.2.1
@@ -19,10 +19,6 @@ PATCHFILES=	tcpdump-3.2.1-smb-diffs.gz
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         T_GID undeclared
-.endif
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	depend tcpdump
