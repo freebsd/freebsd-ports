@@ -1,9 +1,11 @@
 bin/mirror
+bin/do_unlinks
+bin/pkgs_to_mmin
 bin/mirrormaster
+lib/mirror/lchat.pl
+lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
 lib/mirror/lsparse.pl
-lib/mirror/dateconv.pl
 lib/mirror/mirror.defaults.sample
-lib/mirror/do_unlinks
-man/man1/mirror.1.gz
-man/man1/mirrormaster.1.gz
+man/man1/mirror.1
+man/man1/mirrormaster.1
