@@ -1,5 +1,4 @@
 bin/eog
-bin/eog-image-viewer
 etc/gconf/gconf.xml.defaults/apps/eog/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/view/%gconf.xml
@@ -10,6 +9,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/window/%gconf.xml
 etc/gconf/schemas/eog.schemas
 libdata/bonobo/servers/GNOME_EOG.server
+libexec/eog-image-viewer
 share/gnome/applications/eog.desktop
 share/gnome/gnome-2.0/ui/eog-image-view-ctrl-ui.xml
 share/gnome/gnome-2.0/ui/eog-image-view-ui.xml
@@ -26,6 +26,7 @@ share/gnome/pixmaps/eog/right-down.png
 share/gnome/pixmaps/gnome-eog.png
 share/locale/ar/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
+share/locale/bg/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
@@ -53,6 +54,7 @@ share/locale/ro/LC_MESSAGES/eog.mo
 share/locale/ru/LC_MESSAGES/eog.mo
 share/locale/sk/LC_MESSAGES/eog.mo
 share/locale/sl/LC_MESSAGES/eog.mo
+share/locale/sq/LC_MESSAGES/eog.mo
 share/locale/sv/LC_MESSAGES/eog.mo
 share/locale/ta/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
@@ -61,16 +63,5 @@ share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
-@dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/C/figures
-@dirrm share/gnome/help/eog/C
-@dirrm share/gnome/help/eog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/full_screen
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog
