@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src
@@ -21,7 +21,8 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-java=no \
+CONFIGURE_ARGS=	--disable-cxx \
+		--with-java=no \
 		--with-py=no \
 		--with-tcl=no
 
