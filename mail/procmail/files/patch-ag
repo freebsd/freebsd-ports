@@ -1,0 +1,11 @@
+--- src/manconf.c.bak	Thu Apr 22 09:07:10 1999
++++ src/manconf.c	Wed Aug 16 05:05:37 2000
+@@ -136,7 +136,7 @@
+   ps("FW_content","\"|IFS=' '&&p=@BINDIR@/procmail&&test -f $p&&exec $p -Yf-||\
+ exit 75 \2fB#\2fP\2fIYOUR_USERNAME\2fP\"");
+ #else
+-  ps("FW_content","\"|exec @BINDIR@/procmail\"");
++  ps("FW_content","|@BINDIR@/procmail");
+ #endif
+ #else
+   ps("DOT_FORWARD",".maildelivery");
