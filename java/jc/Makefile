@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp.gnu.org/gnu/classpath/:CLASSPATH
 MASTER_SITE_SUBDIR=jcvm/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		classpath-${CLASSPATHVERSION}${EXTRACT_SUFX}:CLASSPATH
+DIST_SUBDIR=	jcvm
 
 MAINTAINER=	archie@freebsd.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC
@@ -46,10 +47,10 @@ JCDIR=		${PORTNAME}-${PORTVERSION}
 CLASSPATHDIR=	classpath-${CLASSPATHVERSION}
 
 # Classpath version
-CLASSPATHVERSION=0.07
+CLASSPATHVERSION=0.09
 
 # Jikes version expected
-JIKESVERSION=	1.19
+JIKESVERSION=	1.21
 
 # Configure args
 CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes
