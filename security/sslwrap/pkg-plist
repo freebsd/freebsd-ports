@@ -1,0 +1,4 @@
+bin/sslwrap
+share/doc/sslwrap/README
+share/doc/sslwrap/docs.html
+@dirrm share/doc/sslwrap
