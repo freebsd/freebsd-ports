@@ -8,7 +8,7 @@
 PORTNAME=	gdict
 PORTVERSION=	0.7
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.psilord.com/code/gdict/old/
+MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
 
