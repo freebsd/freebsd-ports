@@ -1,0 +1,2 @@
+You can add the adodb path (default: ${ADODB_DIR}) to the "include_path=" 
+directive in your php.ini
