@@ -350,6 +350,7 @@
     SUBDIR += nbtscan
     SUBDIR += nc
     SUBDIR += nc6
+    SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += net-http
