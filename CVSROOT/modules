@@ -1331,6 +1331,7 @@ echolot		ports/net/echolot
 echoping	ports/net/echoping
 eclipse		ports/java/eclipse
 eclipse-examples	ports/java/eclipse-examples
+eclipse-gef	ports/java/eclipse-gef
 ecore		ports/x11/ecore
 ecu		ports/comms/ecu
 edb		ports/databases/edb
