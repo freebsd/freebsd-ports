@@ -2,9 +2,6 @@
 bin/recode
 include/recode.h
 include/recodext.h
-@unexec install-info --delete %D/info/recode.info %D/info/dir
-info/recode.info
-@exec install-info %D/info/recode.info %D/info/dir
 lib/librecode.a
 lib/librecode.so
 lib/librecode.so.3
