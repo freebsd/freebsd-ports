@@ -21,6 +21,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR=${X11BASE}
 MAKE_ENV=	QTDIR=${X11BASE}
 
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ xenomorph.pro
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xenomorph ${PREFIX}/bin
 
