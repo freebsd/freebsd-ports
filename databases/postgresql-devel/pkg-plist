@@ -306,6 +306,7 @@ include/postgresql/server/utils/datum.h
 include/postgresql/server/utils/dynahash.h
 include/postgresql/server/utils/dynamic_loader.h
 include/postgresql/server/utils/elog.h
+include/postgresql/server/utils/errcodes.h
 include/postgresql/server/utils/fmgroids.h
 include/postgresql/server/utils/fmgrtab.h
 include/postgresql/server/utils/formatting.h
@@ -453,13 +454,17 @@ share/postgresql/post-install-notes
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
 @unexec rmdir %D/pgsql 2>/dev/null || true
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/libpq.mo
@@ -481,6 +486,7 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/libpq.mo
