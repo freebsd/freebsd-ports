@@ -140,6 +140,7 @@
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-vsound
+    SUBDIR += liteamp
     SUBDIR += lopster
     SUBDIR += lplayer
     SUBDIR += mad
