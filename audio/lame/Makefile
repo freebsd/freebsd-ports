@@ -26,6 +26,8 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 
+NO_PACKAGE=	"patent issues, see http://www.mp3licensing.com/"
+
 MAN1=		lame.1
 
 DOC_FILES=	API LICENSE PRESETS.draft README TODO USAGE
