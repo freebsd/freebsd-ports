@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.24.3
-PORTREVISION=	2
+PORTVERSION=	0.24.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
-
-FORBIDDEN=	http://vuxml.freebsd.org/84237895-8f39-11d8-8b29-0020ed76ef5a.html
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
