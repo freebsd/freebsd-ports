@@ -263,6 +263,7 @@
     SUBDIR += pth
     SUBDIR += pth-devel
     SUBDIR += py-coro
+    SUBDIR += py-functional
     SUBDIR += py-htmlkit
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue

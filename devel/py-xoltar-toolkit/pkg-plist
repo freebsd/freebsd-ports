@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/functional.py
+lib/%%PYTHON_VERSION%%/site-packages/functional.pyc
+lib/%%PYTHON_VERSION%%/site-packages/functional.pyo

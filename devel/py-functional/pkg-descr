@@ -1,0 +1,14 @@
+A Python module which provides support for a functional style of Python
+programming.
+
+It includes support for closures, curried functions, lazy expressions,
+lazy tuples (functional programming languages call these lazy lists, but
+since lists are mutable in Python, tuples are closer in meaning), and
+lazy equivalents for map, filter, reduce, and zip. Also includes some
+higher-order functions for composing functions and such.
+
+To use, just
+
+   import functional
+
+WWW: http://sourceforge.net/projects/xoltar-toolkit/
