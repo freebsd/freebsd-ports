@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Storable
-PORTVERSION=	0.6.11
+PORTVERSION=	0.7.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jfitz@FreeBSD.org
 
 USE_PERL5=	yes
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Storable.3
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
