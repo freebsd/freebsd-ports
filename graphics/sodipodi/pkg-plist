@@ -1,4 +1,8 @@
 bin/sodipodi
+lib/sodipodi/extensions/SpSVG.pm
+lib/sodipodi/extensions/ill2svg.pl
+lib/sodipodi/extensions/roundhole
+lib/sodipodi/extensions/svg_dropshadow
 share/gnome/applications/sodipodi.desktop
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/about.svg
@@ -68,6 +72,7 @@ share/gnome/sodipodi/edit_paste.xpm
 share/gnome/sodipodi/edit_redo.xpm
 share/gnome/sodipodi/edit_undo.xpm
 share/gnome/sodipodi/ellipse.xpm
+share/gnome/sodipodi/extensions/roundhole.xpm
 share/gnome/sodipodi/file_export.xpm
 share/gnome/sodipodi/file_import.xpm
 share/gnome/sodipodi/file_new.xpm
@@ -201,4 +206,7 @@ share/locale/sv/LC_MESSAGES/sodipodi.mo
 share/locale/tr/LC_MESSAGES/sodipodi.mo
 share/locale/uk/LC_MESSAGES/sodipodi.mo
 share/locale/zh_CN/LC_MESSAGES/sodipodi.mo
+@dirrm share/gnome/sodipodi/extensions
 @dirrm share/gnome/sodipodi
+@dirrm lib/sodipodi/extensions
+@dirrm lib/sodipodi
