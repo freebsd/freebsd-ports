@@ -1,5 +1,5 @@
---- configure.Dist	Sun May  5 23:02:07 2002
-+++ configure	Sun Nov  3 00:06:12 2002
+--- configure.orig	Sun Dec 22 15:00:38 2002
++++ configure	Sun Jan 26 01:15:05 2003
 @@ -958,23 +958,6 @@
  
  
@@ -116,26 +116,29 @@
  pgpverify=true
  for ac_prog in gpgv
  do
-@@ -3933,31 +3838,6 @@
+@@ -3932,35 +3837,6 @@
+ fi
  LIBS=$inn_save_LIBS
  
- 
+-
 -if test x"$DO_PERL" = xDO ; then
 -    echo $ac_n "checking for Perl linkage""... $ac_c" 1>&6
 -echo "configure:3939: checking for Perl linkage" >&5
 -    inn_perl_core_path=`$_PATH_PERL -MConfig -e 'print $Config{archlibexp}'`
 -    inn_perl_core_flags=`$_PATH_PERL -MExtUtils::Embed -e ccopts`
 -    inn_perl_core_libs=`$_PATH_PERL -MExtUtils::Embed -e ldopts 2>&1 | tail -1`
+-    inn_perl_core_libs=" $inn_perl_core_libs "
 -    for i in $LIBS ; do
--        inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed "s/ $i//"`
+-        inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed "s/ $i / /"`
 -    done
 -    case $host in
 -    *-linux*)
--        inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed 's/ -lgdbm//'`
+-        inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed 's/ -lgdbm / /'`
 -        ;;
 -    esac
--    inn_perl_core_flags=`echo "$inn_perl_core_flags" | sed 's/^  *//'`
 -    inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed 's/^  *//'`
+-    inn_perl_core_libs=`echo "$inn_perl_core_libs" | sed 's/  *$//'`
+-    inn_perl_core_flags=`echo "$inn_perl_core_flags" | sed 's/^  *//'`
 -    PERL_INC="$inn_perl_core_flags"
 -    PERL_LIB="$inn_perl_core_libs"
 -    echo "$ac_t""$inn_perl_core_path" 1>&6
@@ -145,10 +148,11 @@
 -fi
 -
 -
- 
+-
  if test x"$DO_PYTHON" = xdefine ; then
      echo $ac_n "checking for Python linkage""... $ac_c" 1>&6
-@@ -7469,7 +7349,6 @@
+ echo "configure:3967: checking for Python linkage" >&5
+@@ -7481,7 +7357,6 @@
  s%@CTAGS@%$CTAGS%g
  s%@_PATH_AWK@%$_PATH_AWK%g
  s%@_PATH_EGREP@%$_PATH_EGREP%g
@@ -156,7 +160,7 @@
  s%@_PATH_SH@%$_PATH_SH%g
  s%@_PATH_SED@%$_PATH_SED%g
  s%@_PATH_SORT@%$_PATH_SORT%g
-@@ -7486,8 +7365,6 @@
+@@ -7498,8 +7373,6 @@
  s%@THREADLIB@%$THREADLIB%g
  s%@THREADFLAGS@%$THREADFLAGS%g
  s%@DBM_LIB@%$DBM_LIB%g
@@ -165,7 +169,7 @@
  s%@PYTHON_LIB@%$PYTHON_LIB%g
  s%@PYTHON_INC@%$PYTHON_INC%g
  s%@GETCONF@%$GETCONF%g
-@@ -7753,28 +7630,4 @@
+@@ -7765,28 +7638,4 @@
        problems.
  EOF
      fi
