@@ -21,7 +21,7 @@ CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 300003
-FORBIDDEN= perl is in system
+FORBIDDEN=	perl is in system
 .endif
 
 MAN1=	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME= 	schemetoc
-PORTVERSION= 	93.3.15
+PORTNAME=	schemetoc
+PORTVERSION=	93.3.15
 CATEGORIES=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
 DISTNAME=	15mar93
