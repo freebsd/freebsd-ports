@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erwn
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	www editors
 MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
@@ -17,8 +16,8 @@ COMMENT=	Simple (at the moment) html editor based on GTK+
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libxml2 libgtkhtml
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomehack gnomeprefix gnometarget libgtkhtml gtksourceview
+GNU_CONFIGURE=	yes
 
 MAN1=	erwin.1
 
