@@ -21,9 +21,6 @@ COMMENT=	Java Development Kit 1.3
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
-.if !defined(NATIVE_BOOTSTRAP)
-BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
-.endif
 .if !defined(WITHOUT_PLUGIN)
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
@@ -48,12 +45,6 @@ WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
 JDK_PATCHSET_VERSION=	8
-
-.if defined(NATIVE_BOOTSTRAP)
-JDK13DIR?=	${LOCALBASE}/jdk${JDK_VERSION}
-.else
-JDK13DIR?=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
-.endif
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
@@ -118,6 +109,15 @@ PLIST_SUB+=    HOTSPOT:="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if !defined(JDK13DIR)
+.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+JDK13DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
+.else
+JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
+.endif
+.endif
+
 .if defined(WITH_HOTSPOT) && ${OSVERSION} < 500039
 USE_GCC=	3.2
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
@@ -181,16 +181,7 @@ pre-everything:
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${MKDIR} j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
-		${MKDIR} j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
-		${MKDIR} j2sdk1.3.1/src/bsd/doc/man && \
-		${MKDIR} hotspot1.3.1/build/bsd && \
-		${MKDIR} hotspot1.3.1/build/bsd/makefiles && \
-		${MKDIR} hotspot1.3.1/build/bsd/package && \
-		${MKDIR} hotspot1.3.1/src/os/bsd/launcher && \
-		${MKDIR} hotspot1.3.1/src/os/bsd/vm && \
-		${MKDIR} hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
-			${PATCH} < ${WRKDIR}/jdk131.patches
+		${PATCH} -p0 < ${WRKDIR}/jdk131.patches
 
 post-patch:
 .if defined(WITH_HOTSPOT)
@@ -202,7 +193,8 @@ post-patch:
 .endif
 .endif
 
-.if !defined(NATIVE_BOOTSTRAP)
+.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+# Some checks for bootstrapping with a Linux JDK
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
