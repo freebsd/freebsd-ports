@@ -13,6 +13,7 @@ squirrelmail/config/ri_once.pl
 squirrelmail/configure
 squirrelmail/data/default_pref
 squirrelmail/data/index.php
+squirrelmail/data/.htaccess
 squirrelmail/doc/README.russian_apache
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.0.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.1.txt
