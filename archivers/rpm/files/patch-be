@@ -1,0 +1,11 @@
+--- build/Makefile.am.orig	Wed Jun 14 21:34:28 2000
++++ build/Makefile.am	Wed Oct  4 05:02:45 2000
+@@ -2,7 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.4 foreign
+ 
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/lib -I$(top_srcdir)/popt \
++INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/lib \
+ 	@INCPATH@
+ 
+ pkgincdir = $(pkgincludedir)

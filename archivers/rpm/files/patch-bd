@@ -1,0 +1,26 @@
+--- Makefile.am.orig	Thu Sep 14 02:36:40 2000
++++ Makefile.am	Wed Oct  4 06:08:38 2000
+@@ -11,19 +11,19 @@
+ 	rpm.magic rpmpopt rpm.spec installplatform
+ 
+ # XXX TODO: python perl
+-SUBDIRS = intl po popt lib build misc tools scripts tests doc .
++SUBDIRS = intl po lib build misc tools scripts tests .
+ 
+-INCLUDES = -I$(top_srcdir)/build -I$(top_srcdir)/lib -I$(top_srcdir)/popt \
++INCLUDES = -I$(top_srcdir)/build -I$(top_srcdir)/lib \
+ 	@INCPATH@
+ 
+-myldflags= -L$(top_builddir)/build -L$(top_builddir)/lib -L$(top_builddir)/popt
++myldflags= -L$(top_builddir)/build -L$(top_builddir)/lib
+ 
+ # XXX libtool can/should generate dependent libs.
+ # XXX solaris2.6 cannot use *.la with --all-static (downrev binutils/egcs?)
+ myldadd= \
+ 	$(top_builddir)/build/.libs/librpmbuild.a \
+ 	$(top_builddir)/lib/.libs/librpm.a \
+-	$(top_builddir)/popt/.libs/libpopt.a \
++	-lpopt \
+ 	@INTLLIBS@ @LIBMISC@
+ 
+ LDFLAGS = @LDFLAGS_STATIC@ $(myldflags)

@@ -1,0 +1,24 @@
+--- tools/Makefile.am.orig	Wed Jun 14 21:34:51 2000
++++ tools/Makefile.am	Wed Oct  4 05:34:26 2000
+@@ -3,18 +3,18 @@
+ AUTOMAKE_OPTIONS = 1.4 foreign
+ 
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/build \
+-	-I$(top_srcdir)/lib -I$(top_srcdir)/popt \
++	-I$(top_srcdir)/lib \
+ 	@INCPATH@ -I$(top_srcdir)/misc
+ 
+ EXTRA_DIST =	fstrcmp.c message.c str-list.c rpmchecksig.c
+ 
+ EXTRA_PROGRAMS = rpmgettext rpmputtext rpminject
+ 
+-myldflags= -L$(top_builddir)/build -L$(top_builddir)/lib -L$(top_builddir)/popt
++myldflags= -L$(top_builddir)/build -L$(top_builddir)/lib
+ # XXX should libtool generate dependent libs?
+ myldadd= $(top_builddir)/build/librpmbuild.la \
+ 	$(top_builddir)/lib/librpm.la \
+-	$(top_builddir)/popt/libpopt.la \
++	-lpopt \
+ 	@INTLLIBS@ @LIBMISC@
+ 
+ LDFLAGS = $(myldflags)
