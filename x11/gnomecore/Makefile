@@ -3,7 +3,7 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1998/11/17 17:37:01 vanilla Exp $
+# $Id: Makefile,v 1.8 1999/01/01 06:20:55 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-0.99.1
@@ -18,6 +18,8 @@ LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
 		gtop.0:${PORTSDIR}/devel/libgtop \
 		esd.0:${PORTSDIR}/audio/esound \
 		ghttp.0:${PORTSDIR}/www/libghttp
+
+BROKEN=	'gnome-core-0.99.2 is the currently available'
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
