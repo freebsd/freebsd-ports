@@ -1,0 +1,11 @@
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf-sc.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf-sc.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimp.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimp.elc
+@dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf
+%%PORTDOCDIR%%/ChangeLog
+%%PORTDOCDIR%%/README
+%%PORTDOCDIR%%/README.ja
+@dirrm %%PORTDOCDIR%%
