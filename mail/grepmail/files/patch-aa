@@ -1,11 +1,11 @@
---- grepmail.orig	Mon Sep  2 15:41:00 2002
-+++ grepmail	Tue Oct  8 16:28:44 2002
-@@ -1,6 +1,6 @@
--#!/usr/bin/perl -w
-+#!_PERL_ -w
- 
--eval 'exec /usr/bin/perl -w -S $0 ${1+"$@"}'
-+eval 'exec _PERL -w -S $0 ${1+"$@"}'
-     if 0; # not running under some shell
- 
- # grepmail
+--- grepmail.orig	Thu Oct 10 12:11:23 2002
++++ grepmail	Fri Feb  7 20:16:41 2003
+@@ -366,7 +366,7 @@
+ if ($opts{'E'})
+ {
+   # Have to do -Y before -h because the former implies the latter
+-  for my $option qw(e M S Y)
++  for my $option (qw(e M S Y))
+   {
+     if ($opts{$option})
+     {
