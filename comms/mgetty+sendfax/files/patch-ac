@@ -1,5 +1,5 @@
---- voice/Makefile.orig	Thu Sep 10 05:06:12 1998
-+++ voice/Makefile	Tue Dec  1 01:39:38 1998
+--- voice/Makefile.orig	Sun Dec 23 16:08:13 2001
++++ voice/Makefile	Sat Jan 19 02:32:10 2002
 @@ -13,6 +13,8 @@
  LN=ln
  MV=mv
@@ -9,7 +9,7 @@
  
  MGETTYLIB=../../getdisk.o ../../goodies.o ../../io.o \
  	../../locks.o ../../tio.o ../../modem.o \
-@@ -82,19 +84,19 @@
+@@ -83,11 +85,11 @@
  	@echo "  Installing the voice extensions"
  	@echo "  -------------------------------"
  	@echo ""
@@ -24,16 +24,3 @@
  	done
  	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
  	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)
--	cd $(MAN1DIR); \
--	for i in $(PVFTOOLS); \
--	do \
--	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
--	done
-+#	cd $(MAN1DIR); \
-+#	for i in $(PVFTOOLS); \
-+#	do \
-+#	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
-+#	done
- #	[ -d $(VOICE_DIR) ] || mkdir $(VOICE_DIR)
- #	[ -d $(VOICE_DIR)/incoming ] || mkdir $(VOICE_DIR)/incoming
- #	chown 0 $(VOICE_DIR)/incoming
