@@ -8301,6 +8301,7 @@ qgo		ports/games/qgo
 qhacc		ports/finance/qhacc
 qhull		ports/math/qhull
 qico		ports/comms/qico
+qicosi		ports/comms/qicosi
 qident		ports/security/qident
 qinx		ports/x11-wm/qinx
 qiv		ports/graphics/qiv
