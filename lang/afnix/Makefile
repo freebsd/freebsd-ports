@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	aleph
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.aleph-lang.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
