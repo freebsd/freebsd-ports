@@ -8,7 +8,7 @@
 PORTNAME=	dap
 PORTVERSION=	2.1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/
+MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/downloads/
 EXTRACT_SUFX=.tgz
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
