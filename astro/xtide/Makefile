@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	astro
 MASTER_SITES=	ftp://bel-marduk.unh.edu/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.txt.gz
@@ -19,24 +19,28 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 IGNOREFILES=	harmonics.txt.gz
 
-USE_XPM=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN1=	xtide.1 tide.1
-MANCOMPRESSED=	no
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/harmonics.txt.gz > ${WRKSRC}/harmonics
 
 post-patch:
-	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/TideContext.cc
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/TideContext.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tide ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/xtide.1 ${PREFIX}/man/man1/xtide.1
-	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/tide.1 ${PREFIX}/man/man1/tide.1
-	@${MKDIR} ${PREFIX}/share/xtide
-	${INSTALL_DATA} ${WRKSRC}/harmonics ${PREFIX}/share/xtide
+	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/xtide.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/tide.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/harmonics ${DATADIR}
 
 .include <bsd.port.mk>
