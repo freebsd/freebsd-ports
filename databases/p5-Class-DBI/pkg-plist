@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Class/DBI/Column.pm
 %%SITE_PERL%%/Class/DBI/Iterator.pm
 %%SITE_PERL%%/Class/DBI/Query.pm
+%%SITE_PERL%%/Class/DBI/Relationship.pm
+%%SITE_PERL%%/Class/DBI/Relationship/HasA.pm
+%%SITE_PERL%%/Class/DBI/Relationship/HasMany.pm
+%%SITE_PERL%%/Class/DBI/Relationship/MightHave.pm
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI/Relationship 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
