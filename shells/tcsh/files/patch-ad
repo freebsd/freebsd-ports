@@ -1,0 +1,16 @@
+--- host.defs.orig	Mon Jun 21 20:11:51 1999
++++ host.defs	Mon Jun 21 20:14:16 1999
+@@ -494,10 +494,12 @@
+ 
+ newdef	: defined(__FreeBSD__) 
+ comment	: FreeBSD
++vendor	: defined(__alpha)				: "digital"
+ vendor	: defined(M_intel)				: "intel"
+ hosttype:						: "FreeBSD"
+ ostype	:						: "FreeBSD"
+-machtype:						: "i386"
++machtype: defined(__alpha)				: "alpha"
++machtype: defined(M_i386)				: "i386"
+ enddef	:
+ 
+ 
