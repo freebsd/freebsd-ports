@@ -1,0 +1,8 @@
+Sitescooper automatically retrieves the stories from several news
+web sites, trims off extraneous HTML, and converts them into formats
+you can read on your Palm computing device for later reading
+on-the-move. It maintains a cache, and will avoid stories you've
+already read. Sitescooper can support any format with a text converter
+including: HTML, iSilo and Doc format.
+
+WWW: http://www.sitescooper.org/
