@@ -1,0 +1,4 @@
+bin/ciscoconfd
+bin/ciscoconfr
+@dirrm share/cisco/RCS
+@dirrm share/cisco
