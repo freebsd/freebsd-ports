@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 
 MAINTAINER=	jkoshy@freebsd.org
 
-ONLY_FOR_ARCHS=	i836
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		mpg123.1
 
