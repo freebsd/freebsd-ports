@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -17,11 +16,13 @@ COMMENT=	An Open Source PBX and telephony toolkit
 
 ONLY_FOR_ARCHS=	i386
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
+BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
 		${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
-		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+		${NONEXISTENT}:${PORTSDIR}/net/openh323:build \
+		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex
-RUN_DEPENDS=    ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
+RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
+		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
@@ -35,14 +36,6 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 
-.include <bsd.port.pre.mk>
+MAN8=		asterisk.8
 
-.if defined(WITH_ZAPTEL) || exists(${LOCALBASE}/include/zaptel.h)
-BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
-PLIST_SUB=	ZAPTEL=""
-.else
-PLIST_SUB=	ZAPTEL="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

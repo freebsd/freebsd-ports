@@ -1,13 +1,14 @@
 
 $FreeBSD$
 
---- channels/chan_h323.c.orig	Tue Jan 13 11:24:26 2004
-+++ channels/chan_h323.c	Fri Jan 30 01:47:34 2004
-@@ -54,6 +54,7 @@
- #include <fcntl.h>
- #include <netdb.h>
+--- channels/chan_h323.c	2004/10/10 13:00:17	1.1
++++ channels/chan_h323.c	2004/10/10 13:00:39
+@@ -26,7 +26,7 @@
+  * Version Info: $Id: patch-channels::chan_h323.c,v 1.3.2.3 2004/10/14 14:30:13 sobomax Exp $
+  */
+ 
+-
++#include <sys/types.h>
+ #include <sys/socket.h>
  #include <sys/signal.h>
-+#include <netinet/in_systm.h>
- #include <netinet/ip.h>
- 
- 
+ #include <sys/param.h>

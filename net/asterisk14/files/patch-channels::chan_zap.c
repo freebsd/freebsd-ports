@@ -1,14 +1,15 @@
 
 $FreeBSD$
 
---- channels/chan_zap.c	2004/04/29 21:36:51	1.1
-+++ channels/chan_zap.c	2004/04/29 21:37:17
-@@ -45,7 +45,7 @@
+--- channels/chan_zap.c
++++ channels/chan_zap.c
+@@ -42,7 +42,9 @@
+ #include <sys/signal.h>
+ #include <errno.h>
+ #include <stdlib.h>
++#ifndef __FreeBSD__
  #include <stdint.h>
++#endif
  #include <unistd.h>
  #include <sys/ioctl.h>
--#include <linux/zaptel.h>
-+#include <zaptel.h>
- #include <math.h>
- #include <tonezone.h>
- #include <ctype.h>
+ #ifdef __linux__
