@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.65 1999/02/11 11:13:47 ache Exp $
+# $Id: Makefile,v 1.66 1999/03/02 12:02:57 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-19990216
@@ -12,16 +12,14 @@ CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 		ftp://ftp.nuxi.com/pub/tin/pre-v1.4/
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.org
 
 LIB_DEPENDS=    uu.1:${PORTSDIR}/converters/uulib
 
-USE_BZIP2=	yes
-
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 # Curses support too buggy to activate
 #                 --enable-curses \
