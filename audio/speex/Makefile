@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.2
-PORTEPOCH=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
