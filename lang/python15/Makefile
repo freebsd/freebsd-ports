@@ -11,8 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
-DISTNAME=	py152
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
 
@@ -90,22 +89,21 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PREFIX}/lib/python1.5/${platform}
+	${MKDIR} ${PYTHON_LIBDIR}/${platform}
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
-		${PREFIX}/lib/python1.5/${platform}/
+		${PYTHON_LIBDIR}/${platform}
 .endfor
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
 
 post-install:
 	strip ${PREFIX}/bin/python
-	@${MKDIR} ${PREFIX}/share/doc/python
+	@${MKDIR} ${PREFIX}/share/doc/${PYTHON_VERSION}
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
-	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
+	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/${PYTHON_VERSION}
+	@${MKDIR} ${PYTHON_SITELIBDIR}
 .if !defined(WITHOUT_TOOLS)
-	@cd ${WRKSRC}; tar cf - Tools | \
-		(cd ${PREFIX}/lib/python1.5; tar xf -)
+	@cd ${WRKSRC}; tar cf - Tools | (cd ${PYTHON_LIBDIR}; tar xf -)
 .endif
 
 .include <bsd.port.post.mk>
