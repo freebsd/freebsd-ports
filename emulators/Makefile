@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1997/11/13 12:34:54 tg Exp $
+# $Id: Makefile,v 1.20 1997/11/14 13:54:52 tg Exp $
 #
 
     SUBDIR += aftp
@@ -27,6 +27,7 @@
     SUBDIR += vmsbackup
     SUBDIR += wine
     SUBDIR += x48
+    SUBDIR += xcopilot
     SUBDIR += xgs
     SUBDIR += xzx
 
