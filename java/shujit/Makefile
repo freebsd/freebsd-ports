@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shujit
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
