@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dt
-PORTVERSION=	14.33
+PORTVERSION=	14.39
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bit-net.com/~rmiller/ftp/dt/
 DISTNAME=	dt-source
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
 USE_REINPLACE=	yes
