@@ -1,6 +1,6 @@
 diff -uNr hanemacs-19.34-old/Makefile.in Makefile.in
---- hanemacs-19.34-old/Makefile.in	Tue Oct 29 13:19:31 1996
-+++ Makefile.in	Fri Mar 13 08:39:14 1998
+--- Makefile.in.orig	Tue Oct 29 07:19:31 1996
++++ Makefile.in	Sun Jan 17 13:53:01 1999
 @@ -184,7 +184,7 @@
  # Subdirectories to make recursively.  `lisp' is not included
  # because the compiled lisp files are part of the distribution
@@ -25,7 +25,17 @@ diff -uNr hanemacs-19.34-old/Makefile.in Makefile.in
  
  ### Install the files that are machine-independent.
  ### Most of them come straight from the distribution;
-@@ -369,14 +369,8 @@
+@@ -355,8 +355,7 @@
+ 	if [ `(cd ./etc; /bin/pwd)` != `(cd ${docdir}; /bin/pwd)` ]; \
+ 	then \
+ 	   echo "Copying etc/DOC-* to ${docdir} ..." ; \
+-	   (cd ./etc; tar -cf - DOC*)|(cd ${docdir}; umask 0; tar -xvf - ); \
+-	   (cd $(docdir); chmod a+r DOC*; rm DOC) \
++	   (cd $(docdir); rm DOC-${version}*; mv DOC DOC-${version}; chmod a+r DOC*) \
+ 	else true; fi
+ 	if [ -r ./lisp ] \
+ 	   && [ x`(cd ./lisp; /bin/pwd)` != x`(cd ${lispdir}; /bin/pwd)` ] \
+@@ -369,14 +368,8 @@
  	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
  	then \
  	  (cd ${infodir};  \
@@ -41,7 +51,7 @@ diff -uNr hanemacs-19.34-old/Makefile.in Makefile.in
  	     (cd $${thisdir}; \
  	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f; \
  	      chmod a+r ${infodir}/$$f); \
-@@ -421,15 +415,15 @@
+@@ -421,15 +414,15 @@
  	      * ) rm -rf $${dir} ;;			\
  	    esac ;					\
  	    case $${dir} in				\
