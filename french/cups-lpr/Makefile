@@ -8,7 +8,6 @@
 PORTNAME=	cups-lpr
 PORTVERSION=	${CUPS_PORTVER}
 CATEGORIES=	french print
-PKGNAMESUFFIX=	-fr
 
 MAINTAINER=	jah4007@cs.rit.edu
 
