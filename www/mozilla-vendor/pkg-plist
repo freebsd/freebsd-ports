@@ -13,6 +13,8 @@ lib/netscape/java/classes/jae40.jar
 lib/netscape/java/classes/java40.jar
 lib/netscape/java/classes/jio40.jar
 lib/netscape/java/classes/jsd10.jar
+lib/netscape/java/classes/ldap10.jar
+lib/netscape/java/classes/scd10.jar
 lib/netscape/nethelp/Back_dep.gif
 lib/netscape/nethelp/Topic.js
 lib/netscape/nethelp/System.js
