@@ -54,5 +54,5 @@ share/gnome/applications/gnome-blog.desktop
 share/gnome/gnome-2.0/ui/GNOME_BlogApplet.xml
 share/gnome/pixmaps/gnome-blog.png
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
-@unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@unexec rmdir %%PYTHON_LIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
