@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1998/12/13 19:09:45 sada Exp $
+# $Id: Makefile,v 1.11 1998/12/26 21:51:06 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -14,7 +14,8 @@ DISTFILES=	${JAPANIZE_KIT} ${PORTKIT}
 
 MAINTAINER=	sada@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape4-${BROWSER} \
+# ?= for ports that include this Makefile
+RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape4-${BROWSER} \
 		${FONT_DEPEND}
 
 MAN1=		ja-netscape.1
