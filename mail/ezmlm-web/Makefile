@@ -7,41 +7,53 @@
 
 PORTNAME=	ezmlm-web
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://rucus.ru.ac.za/pub/mail/ezmlm/
 
 MAINTAINER=	guy-ezmlm@rucus.ru.ac.za
 COMMENT=	CGI script that lets you manage ezmlm-idx mailing lists through the web
 
-BUILD_DEPENDS=	${LOCALBASE}/${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm
-RUN_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
+		${SITE_PERL}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm \
+		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 # Change these to suit your setup. You can do this via the environment
 # CGI_BIN is the location relative to ${PREFIX} of your webservers' cgi-bin
 # EZMLM_DIR is the base relative to ${PREFIX} in which ezmlm was installed
 #
 CGI_BIN?=	www/cgi-bin.default
-EZMLM_DIR?=
 
 USE_PERL5=	YES
-PLIST_SUB=	CGI_BIN=${CGI_BIN:S/$/\//:S/^\///} EZMLM_DIR=${EZMLM_DIR:S/$/\//:S/^\///}
+USE_REINPLACE=	YES
+PLIST_SUB=	CGI_BIN=${CGI_BIN}
+
+EXAMPLES=	htaccess.sample webusers.sample index.c
+DOCS=		CHANGES README TODO UPGRADING
 
 do-build:
-	@cd ${WRKSRC}; ${MAKE} index; ${MV} index ezmlm-web
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ezmlm-web index.c
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/etc/ezmlm|${PREFIX}/etc/ezmlm|' \
+		-e 's|/usr/local|${PREFIX}|g' -e 's|prefex|prefix|g' \
+		${WRKSRC}/ezmlm-web.cgi ${WRKSRC}/ezmlmwebrc ${WRKSRC}/index.c
 
 do-install:
-	${MKDIR} ${PREFIX}/${CGI_BIN} ${PREFIX}/${EZMLM_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/ezmlm-web.cgi ${PREFIX}/${EZMLM_DIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/ezmlmwebrc ${PREFIX}/${EZMLM_DIR}/etc/ezmlm/ezmlmwebrc.sample
+	${MKDIR} ${PREFIX}/${CGI_BIN} ${PREFIX}/etc/ezmlm
+	${INSTALL_SCRIPT} ${WRKSRC}/ezmlm-web.cgi ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/ezmlmwebrc ${PREFIX}/etc/ezmlm/ezmlmwebrc.sample
 	${INSTALL_PROGRAM} -o alias -g qmail -m 4755 ${WRKSRC}/ezmlm-web ${PREFIX}/${CGI_BIN}
-	${MKDIR} ${PREFIX}/share/ezmlm-web
-.for file in CHANGES README index.c htaccess.sample webusers.sample
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/ezmlm-web
+	${MKDIR} ${EXAMPLESDIR}
+.for file in ${EXAMPLES}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${EXAMPLESDIR}
 .endfor
-
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 post-install:
 	@${SED} 's!%%PREFIX%%!${PREFIX}!g; s!%%EZMLM_DIR%%!${PREFIX}${EZMLM_DIR:S/^\///}!g' ${PKGMESSAGE}
 	@${ECHO}

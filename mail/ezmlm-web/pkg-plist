@@ -1,9 +1,12 @@
-share/ezmlm-web/CHANGES
-share/ezmlm-web/README
-share/ezmlm-web/index.c
-share/ezmlm-web/htaccess.sample
-share/ezmlm-web/webusers.sample
-@dirrm share/ezmlm-web
-%%EZMLM_DIR%%bin/ezmlm-web.cgi
-%%EZMLM_DIR%%etc/ezmlm/ezmlmwebrc.sample
-%%CGI_BIN%%ezmlm-web
+bin/ezmlm-web.cgi
+%%CGI_BIN%%/ezmlm-web
+etc/ezmlm/ezmlmwebrc.sample
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+share/examples/ezmlm-web/htaccess.sample
+share/examples/ezmlm-web/index.c
+share/examples/ezmlm-web/webusers.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/examples/ezmlm-web
