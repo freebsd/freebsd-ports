@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Fri Feb  7 09:29:39 2003
++++ Makefile.in	Fri Feb  7 09:31:26 2003
+@@ -43,7 +43,11 @@
+ # FreeBSD on x86...
+ #
+ ifeq ($(TARGET),freebsd86)
++ifeq ($(ARCH), alpha)
++CFLAGS		+=
++else
+ CFLAGS		+= -m486
++endif
+ CPPFLAGS	+= -I/usr/src/linux/include -DLONG_PRINT_REQUEST_SENSE=1
+ LIBS		+= -lcam
+ endif
