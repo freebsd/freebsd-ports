@@ -1,34 +1,38 @@
 # New ports collection makefile for:	webjob
 # Date created:		20 August 2002
-# Whom:			Klayton Monroe <klm@ir.exodus.net>
+# Whom:			Klayton Monroe <klm@uidzero.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	webjob
-PORTVERSION=	1.2.3
-CATEGORIES=	sysutils security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		webjob
+PORTVERSION=		1.3.0
+CATEGORIES=		security sysutils
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webjob
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	klm@ir.exodus.net
-COMMENT=	Download and execute a program over HTTP/HTTPS
+MAINTAINER=		klm@uidzero.org
+COMMENT=		Download and execute a program over HTTP/HTTPS
 
-MAN1=		webjob.1
-
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=		YES
 
 .if defined(WITHOUT_SSL)
-CONFIGURE_ARGS=	--without-ssl
+CONFIGURE_ARGS+=	--without-ssl
 .else
-USE_OPENSSL=	YES
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
+USE_OPENSSL=		YES
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-pre-build:
-	@${MV} ${WRKSRC}/etc/webjob.cfg ${WRKSRC}/etc/webjob.cfg.sample
-	@${MV} ${WRKSRC}/etc/Makefile ${WRKSRC}/etc/Makefile.orig
-	@${SED} 's/webjob.cfg/webjob.cfg.sample/g' ${WRKSRC}/etc/Makefile.orig > ${WRKSRC}/etc/Makefile
+.if defined(NO_STATIC)
+CFLAGS+=
+.else
+CFLAGS+=       		-static
+.endif
+
+MAN1=			webjob.1
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/webjob
 
 .include <bsd.port.mk>
