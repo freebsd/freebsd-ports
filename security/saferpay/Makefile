@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}
 
 post-patch:
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKDIR}/saferpay/Makefile
+.if exists(/usr/include/openssl/engine.h)
+CFLAGS+=	-DHAVE_SSLENGINE_H
+.endif
 
 .if !defined(WITH_P5_API)
 pre-build:
