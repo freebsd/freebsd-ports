@@ -7,14 +7,13 @@
 
 CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../editors/joe
-
 PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/joe/
 PATCHFILES=	zh-joe-2.8_3-patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+MASTERDIR=	${.CURDIR}/../../editors/joe
 MD5_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"
