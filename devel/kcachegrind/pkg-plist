@@ -1,0 +1,34 @@
+bin/dprof2calltree
+bin/hotshot2calltree
+bin/kcachegrind
+bin/op2calltree
+bin/pprof2calltree
+share/applnk/Development/kcachegrind.desktop
+share/apps/kcachegrind/icons/hicolor/16x16/actions/fromrec.png
+share/apps/kcachegrind/icons/hicolor/16x16/actions/percent.png
+share/apps/kcachegrind/icons/hicolor/16x16/actions/recrec.png
+share/apps/kcachegrind/icons/hicolor/16x16/actions/torec.png
+share/apps/kcachegrind/icons/hicolor/22x22/actions/percent.png
+share/apps/kcachegrind/icons/hicolor/32x32/actions/percent.png
+share/apps/kcachegrind/kcachegrindui.rc
+share/apps/kcachegrind/tips
+share/doc/HTML/en/kcachegrind/index.docbook
+share/doc/HTML/en/kcachegrind/index.cache.bz2
+share/icons/hicolor/32x32/apps/kcachegrind.png
+share/icons/hicolor/48x48/apps/kcachegrind.png
+share/icons/locolor/16x16/apps/kcachegrind.png
+share/icons/locolor/32x32/apps/kcachegrind.png
+share/locale/de/LC_MESSAGES/kcachegrind.mo
+share/locale/fr/LC_MESSAGES/kcachegrind.mo
+share/locale/it/LC_MESSAGES/kcachegrind.mo
+share/mimelnk/application/x-kcachegrind.desktop
+@dirrm share/apps/kcachegrind/icons/hicolor/32x32/actions
+@dirrm share/apps/kcachegrind/icons/hicolor/32x32
+@dirrm share/apps/kcachegrind/icons/hicolor/22x22/actions
+@dirrm share/apps/kcachegrind/icons/hicolor/22x22
+@dirrm share/apps/kcachegrind/icons/hicolor/16x16/actions
+@dirrm share/apps/kcachegrind/icons/hicolor/16x16
+@dirrm share/apps/kcachegrind/icons/hicolor
+@dirrm share/apps/kcachegrind/icons
+@dirrm share/apps/kcachegrind
+@dirrm share/doc/HTML/en/kcachegrind

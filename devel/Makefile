@@ -356,6 +356,7 @@
     SUBDIR += jrtplib
     SUBDIR += jude_take
     SUBDIR += kaptain
+    SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdesdk3
     SUBDIR += kdevelop
