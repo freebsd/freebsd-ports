@@ -36,6 +36,8 @@ lib/wine/documentation/psdrv.reg
 lib/wine/documentation/ttfserver
 lib/wine/documentation/README.debugger
 lib/wine/documentation/README.regapi
+lib/wine/libadvapi32.so
+lib/wine/libadvapi32.so.1
 lib/wine/libavifil32.so
 lib/wine/libavifil32.so.1
 lib/wine/libavifile.so
@@ -100,7 +102,6 @@ lib/wine/libmpr.so.1
 lib/wine/libmsacm.drv.so
 lib/wine/libmsacm.drv.so.1
 lib/wine/libmsacm.so
-lib/wine/libmsacm.so.1
 lib/wine/libmsacm32.so
 lib/wine/libmsacm32.so.1
 lib/wine/libmsnet32.so
@@ -144,7 +145,6 @@ lib/wine/libserialui.so.1
 lib/wine/libsetupapi.so
 lib/wine/libsetupapi.so.1
 lib/wine/libsetupx.so
-lib/wine/libsetupx.so.1
 lib/wine/libshell.so
 lib/wine/libshell32.so
 lib/wine/libshell32.so.1
@@ -153,10 +153,8 @@ lib/wine/libshfolder.so.1
 lib/wine/libshlwapi.so
 lib/wine/libshlwapi.so.1
 lib/wine/libsound.so
-lib/wine/libsound.so.1
 lib/wine/libstorage.so
 lib/wine/libstress.so
-lib/wine/libstress.so.1
 lib/wine/libsystem.so
 lib/wine/libtapi32.so
 lib/wine/libtapi32.so.1
@@ -177,10 +175,8 @@ lib/wine/libw32skrnl.so.1
 lib/wine/libw32sys.so
 lib/wine/libwin32s16.so
 lib/wine/libwin87em.so
-lib/wine/libwin87em.so.1
 lib/wine/libwinaspi.so
 lib/wine/libwindebug.so
-lib/wine/libwindebug.so.1
 lib/wine/libwine.so.1
 lib/wine/libwineoss.drv.so
 lib/wine/libwineoss.drv.so.1
@@ -188,7 +184,6 @@ lib/wine/libwineps.so
 lib/wine/libwineps.so.1
 lib/wine/libwineps16.so
 lib/wine/libwing.so
-lib/wine/libwing.so.1
 lib/wine/libwininet.so
 lib/wine/libwininet.so.1
 lib/wine/libwinmm.so
@@ -196,6 +191,9 @@ lib/wine/libwinmm.so.1
 lib/wine/libwinsock.so
 lib/wine/libws2_32.so
 lib/wine/libws2_32.so.1
+lib/wine/libwine.so
+lib/wine/libwine_unicode.so
+lib/wine/libwine_unicode.so.1
 lib/wine/libwinspool.drv.so
 lib/wine/libwinspool.drv.so.1
 lib/wine/libwnaspi32.so
@@ -207,7 +205,6 @@ lib/wine/libwsock32.so
 lib/wine/libwsock32.so.1
 lib/wine/libx11drv.so
 lib/wine/libx11drv.so.1
-lib/wine/libwine.so
 @dirrm include/wine
 @dirrm lib/wine/reg
 @dirrm lib/wine/documentation
