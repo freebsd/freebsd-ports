@@ -7,7 +7,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://frantica.lly.org/~rcw/abcde/
 DISTNAME= 	abcde_2.0.3.orig
@@ -15,7 +15,7 @@ DISTNAME= 	abcde_2.0.3.orig
 MAINTAINER=	mchopra@engmail.uwaterloo.ca
 
 RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
-		dagrab:${PORTSDIR}/audio/dagrab \
+		cdparanoia:${PORTSDIR}/audio/cdparanoia \
 		id3v2:${PORTSDIR}/audio/id3v2 \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
@@ -26,10 +26,22 @@ MAN1=		abcde.1 cddb-tool.1
 .if defined(WITH_CDDA2WAV)
 RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 .else
+CDDA2WAV_MSG=	"Define WITH_CDDA2WAV to enable support for cdda2wav."
+.endif
+
+.if defined(WITH_DAGRAB)
+RUN_DEPENDS+=   dagrab:${PORTSDIR}/audio/dagrab
+.else
+DAGRAB_MSG=	"Define WITH_DAGRAB to enable support for dagrab."
+.endif
+
 pre-fetch:
+.if defined(DAGRAB_MSG)
+	@${ECHO_MSG} ${DAGRAB_MSG}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build option:"
-	@${ECHO_MSG} "WITH_CDDA2WAV=yes           enable support for cdda2wav"
+.endif
+.if defined(CDDA2WAV_MSG)
+	@${ECHO_MSG} ${CDDA2WAV_MSG}
 	@${ECHO_MSG} ""
 .endif
 

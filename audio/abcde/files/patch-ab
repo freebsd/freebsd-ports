@@ -1,14 +1,5 @@
---- abcde.conf.orig	Tue Oct 29 13:00:04 2002
-+++ abcde.conf	Tue Oct 29 13:04:22 2002
-@@ -27,7 +27,7 @@
- 
- # CD reader program to use - currently recognized options are 'cdparanoia'
- # and 'cdda2wav'.
--#CDROMREADERSYNTAX=cdparanoia
-+CDROMREADERSYNTAX=dagrab
- 
- # Specify 'nice'ness of the encoder and of the CD reader.
- # This is a relative 'nice'ness (that is, if the parent process is at a
+--- abcde.conf.orig	Sun Jan 20 21:35:31 2002
++++ abcde.conf	Thu Jan  9 23:45:53 2003
 @@ -51,7 +51,7 @@
  #ID3V2=id3v2
  #CDPARANOIA=cdparanoia
