@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1996/09/14 01:00:40 ache Exp $
+# $Id: Makefile,v 1.22 1996/10/10 19:32:14 ache Exp $
 #
 
     SUBDIR += CGI
@@ -21,7 +21,7 @@
     SUBDIR += mapedit
     SUBDIR += netscape2
     SUBDIR += netscape3
-    SUBDIR += netscape3.01
+    SUBDIR += netscape301
     SUBDIR += slang-lynx
     SUBDIR += squid
     SUBDIR += tkHTML
