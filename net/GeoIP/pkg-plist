@@ -9,7 +9,7 @@ include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 lib/libGeoIP.so
-lib/libGeoIP.so.2
+lib/libGeoIP.so.3
 lib/libGeoIPBitReader.a
 lib/libGeoIPBitReader.la
 lib/libGeoIPBitReader.so
