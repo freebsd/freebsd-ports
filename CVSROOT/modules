@@ -2517,6 +2517,7 @@ gtkextra	ports/x11-toolkits/gtkextra
 gtkextra--	ports/x11-toolkits/gtkextra--
 gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
+gtkgep		ports/audio/gtkgep
 gtkglarea	ports/x11-toolkits/gtkglarea
 gtkglarea--	ports/x11-toolkits/gtkglarea--
 gtkglarea2	ports/x11-toolkits/gtkglarea2
