@@ -146,6 +146,7 @@ post-patch:
 	#${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	${FIND} ${PATCH_WRKSRC} -type f -empty -exec ${RM} {} \;
 	${CP} ${FILESDIR}/winbind_nss_bsd.c ${WRKSRC}/nsswitch/
+	${CHMOD} a+x ${WRKSRC}/../examples/VFS/configure
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
