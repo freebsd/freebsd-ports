@@ -1,10 +1,21 @@
-FreeBSD port collection management.  Insures your ports are only built with
-the most up to date sources. Great for users of KDE or GNOME who are always
-concerned over the way their underlying ports are built. **New option** 
-leaf port report: Shows ports with no other ports depending on them, these are
-ports that may be safely deinstalled.
+FreeBSD port collection management.  Update your ports easily. Great
+for users of KDE or GNOME who need to be concerned about how
+dependency ports are built.  
 
-WWW: http://portmanager.sourceforge.net/
+**New options**
+
+1)  Leaf port report: Shows ports with no other ports depending on
+them, these are ports that may be safely deinstalled.
+
+2)  Remove leaf ports safley: Interactivly delete leaf ports.
+
+portmanager-questions archive may be found at:
+http://www.mail-archive.com/portmanager-questions%40sunsite.dk/
+
+to subscribe just send an empty message to:
+portmanager-questions-subscribe@sunsite.dk
+
+WWW: http://portmanager.sunsite.dk/
 
 Michael C. Shultz
 reso3w83@verizon.net	
