@@ -1,0 +1,25 @@
+bin/pychecker
+lib/python2.0/site-packages/pychecker/Config.py
+lib/python2.0/site-packages/pychecker/Config.pyc
+lib/python2.0/site-packages/pychecker/Config.pyo
+lib/python2.0/site-packages/pychecker/OP.py
+lib/python2.0/site-packages/pychecker/OP.pyc
+lib/python2.0/site-packages/pychecker/OP.pyo
+lib/python2.0/site-packages/pychecker/checker.py
+lib/python2.0/site-packages/pychecker/checker.pyc
+lib/python2.0/site-packages/pychecker/checker.pyo
+lib/python2.0/site-packages/pychecker/printer.py
+lib/python2.0/site-packages/pychecker/printer.pyc
+lib/python2.0/site-packages/pychecker/printer.pyo
+lib/python2.0/site-packages/pychecker/warn.py
+lib/python2.0/site-packages/pychecker/warn.pyc
+lib/python2.0/site-packages/pychecker/warn.pyo
+share/doc/pychecker/CHANGELOG
+share/doc/pychecker/COPYRIGHT
+share/doc/pychecker/KNOWN_BUGS
+share/doc/pychecker/MAINTAINERS
+share/doc/pychecker/README
+share/doc/pychecker/TODO
+share/doc/pychecker/VERSION
+@dirrm share/doc/pychecker
+@dirrm lib/python2.0/site-packages/pychecker
