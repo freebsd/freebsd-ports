@@ -1,0 +1,22 @@
+--- inptstrm.c.orig	Wed May 31 22:04:11 1995
++++ inptstrm.c	Fri Feb 11 09:52:17 2000
+@@ -310,7 +310,9 @@
+     fclose (info_file);
+     output_info_video (video_info);
+ 
++#if 0
+     ask_continue ();
++#endif
+ }
+ 
+ /*************************************************************************
+@@ -565,7 +567,9 @@
+     close_bit_stream_r (&audio_bs);
+     fclose (info_file);
+     output_info_audio (audio_info);
++#if 0
+     ask_continue ();
++#endif
+ 
+ }
+ 
