@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
@@ -68,7 +68,11 @@ WITH_PGSQL=	yes
 .else
 PLIST_SUB+=	PGM='@comment '
 .endif
+.if defined(SMSD_WITH_GLIB2)
+USE_GNOME+=	glib20
+.else
 USE_GNOME+=	glib12
+.endif
 .endif
 
 .if defined(WITHOUT_X11)
@@ -90,6 +94,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-fetch:
+.if !defined(WITH_SMSD)
 	@${ECHO}
 	@${ECHO} "If you plan using the smsd daemon for automatically receiving,"
 	@${ECHO} "managing and sending SMSes define WITH_SMSD=yes."
@@ -98,6 +103,13 @@ pre-fetch:
 	@${ECHO} "will be automatically compiled in. Normal file systems support is"
 	@${ECHO} "always compiled in."
 	@${ECHO}
+.endif
+.if !defined(SMSD_WITH_GLIB2)
+	@${ECHO}
+	@${ECHO} "smsd defaults to using glib1, if you'd rather link with glib2
+	@${ECHO} "define SMSD_WITH_GLIB2=yes"
+	@${ECHO}
+.endif
 
 post-patch:
 .for f in ${FIXPREFIX}
@@ -113,6 +125,9 @@ post-patch:
 .if ${OSVERSION} <= 500027
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|<stdint.h>|<inttypes.h>|'
+.endif
+.if defined(SMSD_WITH_GLIB2)
+	@cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/smsd-Makefile-WITH_GLIB.diff
 .endif
 
 post-build:

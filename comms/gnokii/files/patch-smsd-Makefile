@@ -1,5 +1,5 @@
---- smsd/Makefile.orig	Fri Feb 13 18:58:38 2004
-+++ smsd/Makefile	Fri Feb 13 19:02:30 2004
+--- smsd/Makefile.orig	Wed Oct 20 17:24:58 2004
++++ smsd/Makefile	Wed Oct 20 17:25:10 2004
 @@ -26,9 +26,9 @@
  LDLIBS += $(PTHREAD_LIBS) \
  	  $(shell $(GLIBLDLIBS))
@@ -7,8 +7,8 @@
 -LDLIBS += -rdynamic $(TOPDIR)/common/libgnokii.la -ldl
 +# LDLIBS += -rdynamic $(TOPDIR)/common/libgnokii.la -ldl
  # Some systems, eg. FreeBSD don't have libdl. Use this:
--# LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
-+LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
+-# LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -pthread -L../getopt -lgetopt
++LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -pthread
  
- ifdef XPM_LIBS
- 	LDLIBS +=$(XPM_LIBS)
+ OBJS = 	smsd.lo \
+ 	lowlevel.lo
