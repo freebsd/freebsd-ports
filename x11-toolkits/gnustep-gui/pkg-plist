@@ -544,17 +544,9 @@ System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj/Localizable.strin
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
-%%NODEVEL%%System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Info.plist
-%%NODEVEL%%@exec ln -sf ../Resources %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
-%%NODEVEL%%@unexec rm -f %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
-%%NODEVEL%%System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info.plist
 System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RTFConverter
-%%NODEVEL%%System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
-%%NODEVEL%%@exec ln -sf ../Resources %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
-%%NODEVEL%%@unexec rm -f %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
-%%NODEVEL%%System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
 System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
@@ -609,13 +601,11 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/libgmodel.bundle/Resources
-%%NODEVEL%%@dirrm System/Library/Bundles/libgmodel.bundle/Contents
 @dirrm System/Library/Bundles/libgmodel.bundle
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
-%%NODEVEL%%@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
 @dirrm System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj
