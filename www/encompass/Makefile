@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	www gnome
-MASTER_SITES=	http://encompass.sourceforge.net/ \
+MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/ \
+		http://encompass.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	neon.18:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon \
+		elysium.0:${PORTSDIR}/misc/libelysium
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
