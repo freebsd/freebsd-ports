@@ -2,6 +2,7 @@ bin/cattach
 bin/cdetach
 bin/cmkdir
 bin/cpasswd
+bin/cfssh
 etc/rc.d/cfsd.sh
 sbin/ccat
 sbin/cfsd
