@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       portlint-2.1.1
+DISTNAME=       portlint-2.1.2
 CATEGORIES=	devel
 DISTFILES=	#empty
 

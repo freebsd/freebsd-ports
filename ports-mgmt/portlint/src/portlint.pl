@@ -227,9 +227,14 @@ sub checkdescr {
 			"characters.");
 	}
 	if ($tmp =~ /[\033\200-\377]/) {
-		&perror("WARN: pkg/DESCR includes iso-8859-1, or ".
-			"other local characters.  $file should be".
+		&perror("WARN: $file includes iso-8859-1, or ".
+			"other local characters.  $file should be ".
 			"plain ascii file.");
+	}
+	if ($file =~ m/COMMENT/) {
+		if (($tmp !~ /^[A-Z].*$/) || ($tmp =~ m/\.$/)) {
+			&perror("WARN: pkg/COMMENT should begin with a capital, and end without a period");
+		}
 	}
 	close(IN);
 }
@@ -244,6 +249,10 @@ sub checkplist {
 	local($infobeforeremove, $infoafterinstall) = (0, 0);
 	local($infooverwrite) = (0);
 	local($rcsidseen) = (0);
+
+	local(@exec_info) = ();
+	local(@unexec_info) = ();
+	local(@infofile) = ();
 
 	open(IN, "< $portdir/$file") || return 0;
 	while (<IN>) {
@@ -264,12 +273,16 @@ sub checkplist {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
 			} elsif ($_ =~ /^\@unexec[ \t]+rmdir/) {
+				if ($_ !~ /true$/) {
 				&perror("WARN: use \"\@dirrm\" ".
 					"instead of \"\@unexec rmdir\".");
-			} elsif ($_ =~ /^\@exec[ \t]+install-info/) {
+				}
+			} elsif ($_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
-			} elsif ($_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete/) {
+				push(@exec_info, $1);
+			} elsif ($_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				$inforemoveseen = $.;
+				push(@unexec_info, $1);
 			} elsif ($_ =~ /^\@(exec|unexec)/) {
 				if ($ldconfigwithtrue
 				 && /ldconfig/
@@ -300,6 +313,7 @@ sub checkplist {
 			$infoseen = $.;
 			$infoafterinstall++ if ($infoinstallseen);
 			$infobeforeremove++ if (!$inforemoveseen);
+			push(@infofile, $_);
 		}
 
 		if ($_ =~ /^info\/dir$/) {
@@ -346,6 +360,20 @@ sub checkplist {
 		}
 	}
 
+# check that every infofile has an exec install-info and unexec install-info
+	$exec_install = join(/ /, @exec_info);
+	$exec_install .= ' ';
+	$unexec_install = join(/ /, @unexec_info);
+	$unexec_install .= ' ';
+	foreach $if (@infofile) {
+		if ($exec_install !~ m/\%D\/$if/) {
+			&perror("FATAL: you need an '\@exec install-info \%D/$if \%D/info/dir' line in your PLIST");
+		}
+		if ($unexec_install !~ m/\%D\/$if/) {
+			&perror("FATAL: you need an '\@unexec install-info --delete \%D/$if \%D/info/dir' line in your PLIST");
+		}
+	}
+
 	if ($rcsidinplist && !$rcsidseen) {
 		&perror("FATAL: RCS tag \"\$$rcsidstr\$\" must be present ".
 			"in $file as \@comment.")
@@ -360,7 +388,7 @@ sub checkplist {
 			&perror("FATAL: install-info must be used to ".
 				"add/delete entries into \"info/dir\".");
 		}
-		&perror("FATAL: \"\@exec install-info\" must be placed ".
+		&perror("FATAL: \"\@exec install-info \%D/...  \%D/info/dir\" must be placed ".
 			"after all the info files.");
 	} elsif ($infoafterinstall) {
 		&perror("FATAL: move \"\@exec install-info\" line to make ".
@@ -368,7 +396,7 @@ sub checkplist {
 			"(currently on line $infoinstallseen in $file)");
 	}
 	if (!$inforemoveseen) {
-		&perror("FATAL: \"\@unexec install-info --delete\" must ".
+		&perror("FATAL: \"\@unexec install-info --delete \%D/... \%D/info/dir\" must ".
 			"be placed before any of the info files listed.");
 	} elsif ($infobeforeremove) {
 		&perror("FATAL: move \"\@exec install-info --delete\" ".
@@ -688,7 +716,7 @@ EOF
 			"not by \"$1\".");
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
-	if ($tmp !~ /\nCATEGORIES(?=)/) {
+	if ($tmp !~ /\nCATEGORIES[+?]?=/) {
 		&perror("FATAL: CATEGORIES has to be there.");
 	}
 	if ($tmp =~ /\nCATEGORIES([^?+]=)/) {
@@ -729,6 +757,11 @@ EOF
 				if ($i =~ m#://[^/]*:/#) {
 					&perror("FATAL: URL \"$i\" contains ".
 						"extra \":\".");
+				}
+				if ($i =~ m#www.freebsd.org/~.+/#i) {
+					&perror("WARN: URL \"$i\" ".
+						"www.FreeBSD.org should be ".
+						"people.FreeBSD.org");
 				}
 				unless (&is_predefined($i)) {
 					print "OK: URL \"$i\" ok.\n"
@@ -786,6 +819,8 @@ EOF
 		 || $k =~ /^[0-9]*[A-Za-z]?[0-9]*(\.[0-9]*[A-Za-z]?[0-9]*)*$/) {
 			print "OK: trailing part of PKGNAME\"-$k\" ".
 				"looks fine.\n" if ($verbose);
+		} elsif ($k =~ /\$\{.+\}$/) {
+			&perror("WARN: using variable, \"$k\", as verison number");
 		} else {
 			&perror("FATAL: version number part of PKGNAME".
 				(($pkgname eq '')
@@ -1000,6 +1035,7 @@ EOF
 				# check port dir existence
 				$k = $m{'dir'};
 				$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
+				$k =~ s/\$[\({]PORTSDIR[\)}]/$ENV{'PORTSDIR'}/;
 				if (! -d $k) {
 					&perror("WARN: no port directory $k ".
 						"found, even though it is ".
