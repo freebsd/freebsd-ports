@@ -35,7 +35,8 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-USE_GCC=2.95
+USE_GCC=	2.95
+NOT_FOR_ARCHS=	amd64 sparc64 ia64
 .endif
 
 .if !defined(WITH_SCENES)
