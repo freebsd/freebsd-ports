@@ -1,4 +1,3 @@
-bin/gvlc
 bin/vlc
 bin/vlc-config
 include/vlc/aout.h
@@ -103,13 +102,11 @@ lib/vlc/demux/libreal_plugin.so
 lib/vlc/demux/libsgimb_plugin.so
 lib/vlc/demux/libts_plugin.so
 lib/vlc/demux/libwav_plugin.so
-lib/vlc/gui/libgtk_plugin.so
 lib/vlc/libffmpeg.a
 lib/vlc/libstream_out_transcode.a
 lib/vlc/misc/libdummy_plugin.so
 lib/vlc/misc/libexport_plugin.so
 lib/vlc/misc/libfreetype_plugin.so
-lib/vlc/misc/libgtk_main_plugin.so
 lib/vlc/misc/libipv4_plugin.so
 lib/vlc/misc/libipv6_plugin.so
 lib/vlc/misc/liblogger_plugin.so
