@@ -15,6 +15,7 @@
     SUBDIR += cyr-rfx
     SUBDIR += etlfonts
     SUBDIR += fontconfig
+    SUBDIR += fontilus
     SUBDIR += freefonts
     SUBDIR += geminifonts
     SUBDIR += getbdf
