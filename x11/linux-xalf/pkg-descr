@@ -1,0 +1,10 @@
+lf is a small utility to provide feedback when starting X11 applications.
+Feedback can be given via four different indicators: an invisible window
+(to be used in conjunction with a task pager like GNOMEs tasklist_applet or
+KDEs Taskbar), an generic splashscreen, an hourglass attached to the mouse
+cursor or an animated star.
+
+This is the Linux version need for launching Linux applications from the
+GNOME panel.
+
+WWW: http://www.lysator.liu.se/~astrand/projects/xalf/
