@@ -1,5 +1,5 @@
 bin/ninja
-bin/wserv
+bin/ninjawserv
 share/ninja/translation/ASCII
 share/ninja/translation/CP437
 share/ninja/translation/CP850
