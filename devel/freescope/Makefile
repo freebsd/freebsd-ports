@@ -20,19 +20,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	2.95
 
 MAN1=		freescope.1
 PLIST_FILES=	bin/freescope
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS=.*$$|CXXFLAGS="\$$CXXFLAGS"|g ; \
 		 s|bindir="/usr/local/bin"||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
