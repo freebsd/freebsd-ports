@@ -248,7 +248,6 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/FMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/MMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.gambas/MMATH
-%%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.lock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/CBullet.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/DeepSpace/CObject.class
@@ -353,7 +352,6 @@ lib/gambas/lib.gb.xml.libxml.xslt.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/CLSPARAMS
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/F
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/FCONFIG
-%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.lock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/ClsParams.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/F.class
