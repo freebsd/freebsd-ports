@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
@@ -16,17 +16,15 @@ MAINTAINER=	jmcoopr@webmail.bmi.net
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-# require-all-recipients (implied by enable-all) is required for Balsa-1.2.x
+# require-all-recipients (implied by enable-all) is required for Balsa-1.3.x
 CONFIGURE_ARGS=	--enable-all
-pre-build:
-	@${CP} ${WRKSRC}/libltdl/libtool ${WRKSRC}/libtool
 
 post-install:
 .ifndef(NOPORTDOCS)

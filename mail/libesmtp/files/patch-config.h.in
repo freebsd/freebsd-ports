@@ -1,0 +1,10 @@
+--- config.h.in	Wed Jan  2 08:45:10 2002
++++ config.h.in.new	Thu Jan  3 07:06:23 2002
+@@ -163,6 +163,7 @@
+ /* strerror_r works! */
+ #undef HAVE_WORKING_STRERROR_R
+ 
++#include <stdlib.h>
+ 
+ #ifndef HAVE_STRCASECMP
+ int strcasecmp (const char *a, const char *b);
