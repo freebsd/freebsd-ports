@@ -23,6 +23,7 @@ EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
+
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
 CNEWS_PORT?=	news/cnews
 PKGNAMESUFFIX?=	-cnews
@@ -40,10 +41,8 @@ MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SUCK_WITHOUT_SSL) && !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+USE_OPENSSL=	yes
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
@@ -75,4 +74,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,7 +19,13 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with SSL/TLS functionality
 
 LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
+PATCH_DEPENDS=	${BUILD_DEPENDS}
 
+VERSION_APACHE=	1.3.28
+VERSION_MODSSL=	2.8.15
+USE_OPENSSL=	yes
+HAS_CONFIGURE=	yes
+USE_PERL5_BUILD=	yes
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
@@ -35,9 +41,6 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
 
 .include <bsd.port.pre.mk>
-
-VERSION_APACHE=	1.3.28
-VERSION_MODSSL=	2.8.15
 
 DATADIR=	${PREFIX}/www
 DOCUMENT_ROOT=	${DATADIR}/data
@@ -76,8 +79,6 @@ SUEXEC_MAN=
 
 .endif  # !SUEXEC
 
-USE_PERL5=	yes
-HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--server-uid=www \
 		--server-gid=www \
@@ -117,8 +118,6 @@ OPTIM+=		-DBUFFERED_LOGS
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == yes
 CFLAGS+=	-O3
 .endif
-
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \

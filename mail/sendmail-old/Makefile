@@ -72,6 +72,9 @@ SITE+=	${FILESDIR}/site.config.m4.ldap
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
+.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
+USE_OPENSSL=	yes
+.endif
 
 # install directly if no mailwrapper support
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -172,7 +175,6 @@ mailer.conf:
 .include <bsd.port.pre.mk>
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .if ! defined(WITH_OPENSSL_BASE)
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif

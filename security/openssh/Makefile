@@ -20,11 +20,15 @@ PATCHFILES=	openbsd28_${PORTVERSION}.patch
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
+USE_OPENSSL=	yes
+WRKSRC=		${WRKDIR}/ssh
+
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
 MAN5=		ssh_config.5 sshd_config.5
 MAN8=		sshd.8 sftp-server.8 ssh-keysign.8
 MANCOMPRESSED=	yes
+
 MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
@@ -41,41 +45,45 @@ PAM=no
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
-
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 MAKE_ENV+=	LDFLAGS=${LDFLAGS}
+
 .if ${OSVERSION} < 400014
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
 ADDME+=		netdb.h
 .else
 MAKE_ENV+=	INET6FLAGS=-DINET6
 .endif
+
 .if !exists(/usr/include/tcpd.h)
 MAKE_ENV+=	TCP_WRAPPERS=no
 .endif
+
 .if defined(AFS) && ${AFS} == YES
 MAKE_ENV+=	AFS=yes
 .endif
+
 .if defined(KERBEROS) && ${KERBEROS} == YES
 MAKE_ENV+=	KERBEROS=yes
 .endif
+
 .if exists(/usr/include/security/pam_modules.h)
 PAM?=		yes
 .else
 PAM=		no
 .endif
 MAKE_ENV+=	PAM=${PAM}
+
 .if defined(SKEY) && ${SKEY} == YES
 MAKE_ENV+=	SKEY=yes
 .endif
+
 EMPTYDIR=	${PREFIX}/empty
 ETCOLD=		${PREFIX}/etc
 ETCSSH=		${PREFIX}/etc/ssh
 PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
-WRKSRC=		${WRKDIR}/ssh
 
 post-extract:
 	@${CP} ${FILESDIR}/sshd.sh ${WRKSRC}/

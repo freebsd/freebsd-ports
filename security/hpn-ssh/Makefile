@@ -20,6 +20,7 @@ MLINKS=	ssh.1 slogin.1
 MAN5=	ssh_config.5 sshd_config.5
 MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 
+USE_OPENSSL=	yes
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		LDFLAGS=${LDFLAGS}
@@ -139,7 +140,6 @@ test:
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 .if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
