@@ -13,11 +13,15 @@ MASTER_SITES=	http://www.cse.iitk.ac.in/users/dbera/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
-		-I${LOCALBASE}/include ${PTHREAD_CFLAGS:S/"//g}
-LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS:S/"//g}
+		${PTHREAD_CFLAGS:S/"//g}
+LDFLAGS+=	${PTHREAD_LIBS:S/"//g}
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CFLAGS+=	-I${LOCALBASE}/include 
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt 
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o mget *.c ${LDFLAGS}
