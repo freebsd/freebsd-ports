@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Nov  7 02:21:56 2000
++++ Makefile	Tue Nov  7 02:22:50 2000
+@@ -1,6 +1,6 @@
+ INCLUDES = -Iinclude
+ 
+-CFLAGS = $(INCLUDES) -Wall -g -DVERSION="\"Litestream 1.0 beta 1 revision 3\""
++CFLAGS += $(INCLUDES) -DVERSION="\"Litestream 1.0 beta 1 revision 3\""
+ 
+ LDFLAGS = # -lnsl -lsocket
+ 

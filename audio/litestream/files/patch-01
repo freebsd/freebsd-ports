@@ -1,0 +1,40 @@
+--- restream.c.orig	Tue Feb 22 02:25:29 2000
++++ restream.c	Sat Nov  4 17:18:57 2000
+@@ -334,7 +334,7 @@
+ 				free(privdata);
+ 				return;
+ 			}
+-			privdata->state = STR_SNDANNOUNCE;
++			privdata->state = STR_STREAMING;
+ 
+ 			strservers[nstrservers++] = server;
+ 
+@@ -342,7 +342,7 @@
+ 			if (nstrservers > stats.peak_servers)
+ 				stats.peak_servers = nstrservers;
+ 
+-			stream_sched_post_write(_sched, server->s, g_announce, sizeof(g_announce));
++			stream_sched_post_read(_sched, server->s, privdata->rbuf, sizeof(privdata->rbuf));
+ 			break;
+ 		case STR_SNDANNOUNCE:
+ 			privdata->state = STR_STREAMING;
+--- stream.c.orig	Tue Feb 22 06:24:58 2000
++++ stream.c	Sat Nov  4 17:18:32 2000
+@@ -329,7 +329,7 @@
+ 				free(privdata);
+ 				return;
+ 			}
+-			privdata->state = STR_SNDANNOUNCE;
++			privdata->state = STR_STREAMING;
+ 
+ 			strservers[nstrservers++] = server;
+ 
+@@ -337,7 +337,7 @@
+ 			if (nstrservers > stats.peak_servers)
+ 				stats.peak_servers = nstrservers;
+ 
+-			stream_sched_post_write(_sched, server->s, g_announce, sizeof(g_announce));
++			stream_sched_post_read(_sched, server->s, privdata->rbuf, sizeof(privdata->rbuf));
+ 			break;
+ 		case STR_SNDANNOUNCE:
+ 			privdata->state = STR_STREAMING;
