@@ -26,6 +26,7 @@
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
     SUBDIR += grace
+    SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hexcalc

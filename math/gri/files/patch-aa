@@ -1,0 +1,33 @@
+*** Makefile.in.orig	Sun May  7 11:44:07 2000
+--- Makefile.in	Sat Sep 23 12:10:29 2000
+***************
+*** 154,167 ****
+  install: all
+  	echo "Installing into '$(prefix)' directory"
+  	cat startup.msg | sed -e s,VSN,${VERSION}, > tmp
+  	$(INSTALL_DATA) tmp $(prefix)/share/gri/startup.msg
+  	rm -f tmp
+  	$(INSTALL_PROGRAM)      gri             $(prefix)/bin/gri
+  	$(INSTALL_DATA)         gri.cmd         $(prefix)/share/gri/gri.cmd
+  	$(INSTALL_DATA)         license.txt     $(prefix)/share/gri/license.txt
+! 	$(INSTALL_PROGRAM)      gri_merge       $(prefix)/bin/gri_merge
+! 	$(INSTALL_PROGRAM)      gri_unpage      $(prefix)/bin/gri_unpage
+! 	cd doc; prefix=$(prefix) make html-install
+  
+  all: force
+  	make gri
+--- 154,167 ----
+  install: all
+  	echo "Installing into '$(prefix)' directory"
+  	cat startup.msg | sed -e s,VSN,${VERSION}, > tmp
++ 	-@mkdir $(prefix)/share/gri
+  	$(INSTALL_DATA) tmp $(prefix)/share/gri/startup.msg
+  	rm -f tmp
+  	$(INSTALL_PROGRAM)      gri             $(prefix)/bin/gri
+  	$(INSTALL_DATA)         gri.cmd         $(prefix)/share/gri/gri.cmd
+  	$(INSTALL_DATA)         license.txt     $(prefix)/share/gri/license.txt
+! 	$(INSTALL_DATA)      gri_merge       $(prefix)/bin/gri_merge
+! 	$(INSTALL_DATA)      gri_unpage      $(prefix)/bin/gri_unpage
+  
+  all: force
+  	make gri
