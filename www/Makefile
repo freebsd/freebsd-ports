@@ -100,6 +100,7 @@
     SUBDIR += mod_php4
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
+    SUBDIR += mod_zap
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += mozilla-embedded
