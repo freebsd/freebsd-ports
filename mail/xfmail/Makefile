@@ -16,17 +16,23 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 MAINTAINER=	mikeh@FreeBSD.org
 
 BROKEN=		"Must manually install ports/devel/autoconf"
+BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_AUTOMAKE_VER=	15
+USE_AUTOCONF=	yes
 USE_BZIP2=	yes
 USE_GLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+
+AUTOCONF=	autoconf
+AUTOHEADER=	autoheader
+ACLOCAL=	aclocal
 
 # XXX: Disable patching for libtool until we can generate the files
 LIBTOOLFILES=
