@@ -4044,6 +4044,7 @@ mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
 midimountain	ports/audio/midimountain
+middleman	ports/www/middleman
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
