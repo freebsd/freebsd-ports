@@ -24,6 +24,7 @@
     SUBDIR += freefem
     SUBDIR += fudgit
     SUBDIR += geg
+    SUBDIR += gexpr
     SUBDIR += glove
     SUBDIR += glpk
     SUBDIR += gnumeric
