@@ -3,7 +3,7 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/28 15:19:16 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1995/01/24 16:43:32 ache Exp $
 #
 DISTNAME=       ha0999
 EXTRACT_SUFX=   .tgz
@@ -16,5 +16,6 @@ USE_GMAKE=      YES
 
 install:
 	cd ${WRKSRC}; ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin
+	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
 .include <bsd.port.mk>
