@@ -1397,7 +1397,7 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/base
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep
 @dirrm %%SYSTEMLIBRARY%%/Headers/Foundation
-%%GNUSTEP_DEVEL%%@dirrm System/Library//Documentation/man/man8
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man8
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man1
 %%GNUSTEP_DEVEL%%@dirrm System/Library/DTDs
 @dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
