@@ -8276,7 +8276,6 @@ umatrix		ports/math/umatrix
 umbrello	ports/devel/umbrello
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
-uml		ports/devel/uml
 umount		src/sbin/umount
 ump		ports/www/ump
 unace		ports/archivers/unace
