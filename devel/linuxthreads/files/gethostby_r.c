@@ -1,5 +1,6 @@
 #include "pthread.h"
 #include <netdb.h>
+#include <osreldate.h>
 #include <string.h>
 
 #ifdef __sparc__
@@ -105,7 +106,7 @@ convert (struct hostent *host, struct hostent *result,
   return 0;
 }
 
-#if __FreeBSD__ < 5 || __FreeBSD__version >= 501101
+#if __FreeBSD__ < 5 || __FreeBSD_version >= 501101
 struct hostent *
 gethostbyaddr_r (const char *addr, int length, int type,
        struct hostent *result, char *buffer, int buflen,
