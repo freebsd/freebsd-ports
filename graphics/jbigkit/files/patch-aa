@@ -38,6 +38,6 @@
 +	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1 ${PREFIX}/lib
 +	(cd ${PREFIX}/lib; ln -sf libjbig.so.1 libjbig.so)
 +.else
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.0 ${PREFIX}/lib
-+	(cd ${PREFIX}/lib; ln -sf libjbig.so.1.0 libjbig.so)
++	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.1 ${PREFIX}/lib
++	(cd ${PREFIX}/lib; ln -sf libjbig.so.1.1 libjbig.so)
 +.endif
