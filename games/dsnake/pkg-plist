@@ -1,0 +1,18 @@
+bin/dsnake
+%%DATADIR%%/config.dat
+%%DATADIR%%/data/fonts.dat
+%%DATADIR%%/data/logos.dat
+%%DATADIR%%/data/sfx.dat
+%%DATADIR%%/data/sprites.dat
+%%DATADIR%%/data/sprites2.dat
+%%DATADIR%%/data/textures.dat
+%%DATADIR%%/dsnake
+%%DATADIR%%/hiscores.dat
+%%DATADIR%%/midi/fall.mid
+%%DATADIR%%/midi/partille.mid
+%%DATADIR%%/midi/The_Jayomon_Beat.mid
+%%DATADIR%%/ReadMe.txt
+%%DATADIR%%/stats.dat
+@dirrm %%DATADIR%%/midi
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
