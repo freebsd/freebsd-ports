@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -32,6 +32,10 @@ MAN3=		Finance::Quote.3 \
 		Finance::Quote::Yahoo::Australia.3 \
 		Finance::Quote::Yahoo::Base.3 \
 		Finance::Quote::Yahoo::Europe.3\
-		Finance::Quote::Yahoo::USA.3
+		Finance::Quote::Yahoo::USA.3 \
+		Finance::Quote::AEX.3 \
+		Finance::Quote::Cdnfundlibrary.3 \
+		Finance::Quote::Fool.3 \
+		Finance::Quote::Tdwaterhouse.3
 
 .include <bsd.port.mk>
