@@ -28,9 +28,10 @@ share/locale/pt_BR/LC_MESSAGES/pan.mo
 share/locale/ru/LC_MESSAGES/pan.mo
 share/locale/sk/LC_MESSAGES/pan.mo
 share/locale/sl/LC_MESSAGES/pan.mo
-share/locale/sp/LC_MESSAGES/pan.mo
 share/locale/sr/LC_MESSAGES/pan.mo
+share/locale/sr@Latn/LC_MESSAGES/pan.mo
 share/locale/sv/LC_MESSAGES/pan.mo
 share/locale/tr/LC_MESSAGES/pan.mo
 share/locale/uk/LC_MESSAGES/pan.mo
+share/locale/vi/LC_MESSAGES/pan.mo
 share/locale/zh_CN/LC_MESSAGES/pan.mo
