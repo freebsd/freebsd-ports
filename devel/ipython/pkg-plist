@@ -98,6 +98,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/genutils.py
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyc
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyo
+%%PYTHON_SITELIBDIR%%/IPython/hooks.py
+%%PYTHON_SITELIBDIR%%/IPython/hooks.pyc
+%%PYTHON_SITELIBDIR%%/IPython/hooks.pyo
 %%PYTHON_SITELIBDIR%%/IPython/iplib.py
 %%PYTHON_SITELIBDIR%%/IPython/iplib.pyc
 %%PYTHON_SITELIBDIR%%/IPython/iplib.pyo
