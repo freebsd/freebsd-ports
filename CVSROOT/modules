@@ -1338,7 +1338,7 @@ dgd		ports/net/dgd
 dgd-lpmud	ports/net/dgd-lpmud
 dgd-net		ports/net/dgd-net
 dgen-sdl	ports/emulators/dgen-sdl
-dgpsip		ports/astro/dgpsip/
+dgpsip		ports/astro/dgpsip
 dgs		ports/x11/dgs
 dhcp-agent	ports/net/dhcp-agent
 dhcpconf	ports/net-mgmt/dhcpconf
@@ -1408,7 +1408,7 @@ dmalloc		ports/devel/dmalloc
 dmidecode	ports/sysutils/dmidecode
 dmjava		ports/games/dmjava
 dna-qc		ports/biology/dna-qc
-dnetc		ports/misc/dnetc/
+dnetc		ports/misc/dnetc
 dnews		ports/news/dnews
 dnrd		ports/dns/dnrd
 dns_balance	ports/dns/dns_balance
@@ -2187,7 +2187,6 @@ gcipher		ports/security/gcipher
 gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
-gcompris	ports/games/gcompris
 gcompris2	ports/games/gcompris2
 gconf		ports/devel/gconf
 gconf-editor	ports/sysutils/gconf-editor
@@ -4770,6 +4769,7 @@ linux_base-6	ports/emulators/linux_base-6
 linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
+linux_devtools	ports/devel/linux_devtools
 linux_devtools-6	ports/devel/linux_devtools-6
 linux_devtools-7	ports/devel/linux_devtools-7
 linux_dri	ports/graphics/linux_dri
@@ -5829,6 +5829,7 @@ openoffice-1.1-se	ports/editors/openoffice-1.1-se
 openoffice-1.1-sk	ports/editors/openoffice-1.1-sk
 openoffice-1.1-sl_SI    ports/editors/openoffice-1.1-sl_SI
 openoffice-1.1-tr	ports/editors/openoffice-1.1-tr
+openoffice-2.0-devel	ports/editors/openoffice-2.0-devel
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
@@ -6997,8 +6998,8 @@ p5-Test-Pod	ports/devel/p5-Test-Pod
 p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
-p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Aligner		ports/textproc/p5-Text-Aligner
+p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
@@ -7037,8 +7038,8 @@ p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-Shellwords	ports/textproc/p5-Text-Shellwords
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
-p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-Table		ports/textproc/p5-Text-Table
+p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
@@ -7681,6 +7682,7 @@ ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
 ports_misc	ports/misc
+ports_mk	ports/devel/mk
 ports_multimedia	ports/multimedia
 ports_net	ports/net
 ports_net_mgmt	ports/net-mgmt
@@ -8910,6 +8912,7 @@ senso		ports/games/senso
 sentinel	ports/mail/sentinel
 seq2		ports/misc/seq2
 seqio		ports/biology/seqio
+ser		ports/net/ser
 serialmail	ports/mail/serialmail
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
