@@ -63,7 +63,7 @@
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef __FreeBSD__
 +#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-+	char *newcommand;
++	char *newcommand = NULL;
 +	struct timeval tv;
 +	time_t warntime = DEFAULT_WARN;
 +#endif /* __FreeBSD__ */
