@@ -1,45 +1,18 @@
-*** configure	Thu Feb 20 05:55:30 2003
---- /tmp/w/configure	Tue Feb 25 14:47:53 2003
-***************
-*** 5602,5606 ****
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-! #include <netinet/in.h
-  
-  int
---- 5602,5607 ----
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-! #include <sys/types.h>
-! #include <netinet/in.h>
-  
-  int
-***************
-*** 5638,5642 ****
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-! #include <netinet/in.h
-  
-  int
---- 5639,5644 ----
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-! #include <sys/types.h>
-! #include <netinet/in.h>
-  
-  int
-***************
-*** 6490,6493 ****
---- 6492,6496 ----
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-+ #include <sys/types.h>
-  #include <netinet/in.h>
-  
-***************
-*** 6749,6752 ****
---- 6752,6756 ----
-  cat >>conftest.$ac_ext <<_ACEOF
-  /* end confdefs.h.  */
-+ #include <sys/types.h>
-  #include <sys/socket.h>
+--- configure.orig	Fri Nov  7 03:24:18 2003
++++ configure	Fri Jan  2 19:08:31 2004
+@@ -6501,6 +6501,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <netinet/in.h>
+ 
+ #include <$ac_header>
+@@ -6760,6 +6761,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <sys/socket.h>
+ 
+ int
