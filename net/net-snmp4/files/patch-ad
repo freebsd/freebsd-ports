@@ -1,6 +1,15 @@
---- agent/mibgroup/mibII/interfaces.c~	Tue Mar 16 08:46:12 1999
-+++ agent/mibgroup/mibII/interfaces.c	Sat Apr  3 13:49:28 1999
-@@ -1745,10 +1745,18 @@
+--- agent/mibgroup/mibII/interfaces.c.orig	Fri Dec  1 14:17:21 2000
++++ agent/mibgroup/mibII/interfaces.c	Thu Jan 18 00:04:42 2001
+@@ -129,7 +129,7 @@
+ #if HAVE_SYS_SYSCTL_H
+ #include <sys/sysctl.h>
+ 
+-#ifdef freebsd3
++#if defined(freebsd3) || defined(freebsd4) || defined(freebsd5)
+ #    define USE_SYSCTL_IFLIST
+ #else
+ # if defined(CTL_NET) && !defined(freebsd2)
+@@ -1842,10 +1842,18 @@
  			physaddrbuf = 0;
  		}
  		ifm = (struct if_msghdr *)rtm;
@@ -19,7 +28,7 @@
  			int is_alias = 0;
  			ifam = (struct ifa_msghdr *)rtm;
  			ilen -= sizeof(*ifam);
-@@ -1771,6 +1779,7 @@
+@@ -1868,6 +1876,7 @@
  				}
  				sa = (struct sockaddr *)cp;
  			}
@@ -27,3 +36,12 @@
  			rtm = (struct rt_msghdr *)cp;
  		}
  	}
+@@ -1982,7 +1991,7 @@
+ 		if (ifmd.ifmd_data.ifi_lastchange.tv_sec == 0 &&
+ 		    ifmd.ifmd_data.ifi_lastchange.tv_usec == 0) {
+ 			long_return = 0;
+-		else if (ifmd.ifmd_data.ifi_lastchange.tv_sec < starttime.tv_sec)
++		} else if (ifmd.ifmd_data.ifi_lastchange.tv_sec < starttime.tv_sec) {
+ 		    long_return = 0;
+ 		} else {
+ 		    long_return = (u_long)
