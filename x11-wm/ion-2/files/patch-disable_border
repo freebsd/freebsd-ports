@@ -1,0 +1,162 @@
+# This patch was originally sent to the ION mailing list by:
+# Christian Mauduit <ufoot@ufoot.org>
+
+diff -r -u doc.orig/functions.txt doc/functions.txt
+--- doc.orig/functions.txt	Fri Feb  8 22:23:17 2002
++++ doc/functions.txt	Fri Mar  8 23:57:46 2002
+@@ -59,6 +59,13 @@
+ 			enabled
+ 
+ 
++Border control
++--------------
++
++disable_border		Disables the border and the bar
++enable_border           Enables the border and the bar
++
++
+ Close and destroy
+ -----------------
+ 
+diff -r -u src.orig/draw.c src/draw.c
+--- src.orig/draw.c	Fri Feb  8 22:23:17 2002
++++ src/draw.c	Fri Mar  8 23:53:34 2002
+@@ -136,6 +136,13 @@
+ 	DrawInfo _dinfo, *dinfo=&_dinfo;
+ 	WGRData *grdata=GRDATA_OF(frame);
+ 	
++	if(complete)
++		XClearWindow(wglobal.dpy, FRAME_WIN(frame));
++
++	/* if the border is not active, we draw nothing here */
++	if (frame->flags & WFRAME_NO_BORDER)
++		return;
++
+ 	dinfo->win=FRAME_WIN(frame);
+ 	dinfo->grdata=grdata;
+ 	dinfo->gc=grdata->gc;
+@@ -143,15 +150,12 @@
+ 	dinfo->geom.w+=FRAME_W(frame);
+ 	dinfo->geom.h+=FRAME_H(frame);
+ 	dinfo->border=&(grdata->frame_border);
+-	
++
+ 	if(IS_ACTIVE_FRAME(frame))
+ 		dinfo->colors=&(grdata->act_frame_colors);
+ 	else
+ 		dinfo->colors=&(grdata->frame_colors);
+ 	
+-	if(complete)
+-		XClearWindow(wglobal.dpy, FRAME_WIN(frame));
+-
+ /*#if 1*/
+ 	draw_box(dinfo, FALSE);
+ /*#else
+@@ -191,6 +195,10 @@
+ 	WGRData *grdata=&(scr->grdata);
+ 	WRectangle bg;
+ 	
++	/* if the border is not active, we draw nothing here */
++	if (frame->flags & WFRAME_NO_BORDER)
++		return;
++
+ 	frame_bar_geom(frame, &bg);
+ 	
+ 	dinfo->win=FRAME_WIN(frame);
+diff -r -u src.orig/frame.c src/frame.c
+--- src.orig/frame.c	Fri Feb  8 22:23:17 2002
++++ src/frame.c	Fri Mar  8 23:53:37 2002
+@@ -41,15 +41,28 @@
+ #define BAR_W(FRAME, GRDATA) ((FRAME)->win.geom.w+(GRDATA)->bar_off.w)
+ #define BAR_H(FRAME, GRDATA) ((GRDATA)->bar_h)
+ 
+-#define FRAME_TO_CLIENT_W(W, GRDATA) ((W)+(GRDATA)->client_off.w)
+-#define FRAME_TO_CLIENT_H(H, GRDATA) ((H)+(GRDATA)->client_off.h)
+-#define CLIENT_TO_FRAME_W(W, GRDATA) ((W)-(GRDATA)->client_off.w)
+-#define CLIENT_TO_FRAME_H(H, GRDATA) ((H)-(GRDATA)->client_off.h)
+-
+-#define CLIENT_X(FRAME, GRDATA) ((GRDATA)->client_off.x)
+-#define CLIENT_Y(FRAME, GRDATA) ((GRDATA)->client_off.y)
+-#define CLIENT_W(FRAME, GRDATA) FRAME_TO_CLIENT_W(FRAME_W(FRAME), GRDATA)
+-#define CLIENT_H(FRAME, GRDATA) FRAME_TO_CLIENT_H(FRAME_H(FRAME), GRDATA)
++#define FRAME_TO_CLIENT_W(W, FRAME, GRDATA) \
++	(((FRAME)->flags & WFRAME_NO_BORDER) ? \
++	(W) : (W)+(GRDATA)->client_off.w)
++#define FRAME_TO_CLIENT_H(H, FRAME, GRDATA) \
++	(((FRAME)->flags & WFRAME_NO_BORDER) ? \
++	 (H) : (H)+(GRDATA)->client_off.h)
++#define CLIENT_TO_FRAME_W(W, FRAME, GRDATA) \
++	(((FRAME)->flags & WFRAME_NO_BORDER) ? \
++	 (W) : (W)-(GRDATA)->client_off.w)
++#define CLIENT_TO_FRAME_H(H, FRAME, GRDATA) \
++	(((FRAME)->flags & WFRAME_NO_BORDER) ? \
++	 (H) : (H)-(GRDATA)->client_off.h)
++
++#define CLIENT_X(FRAME, GRDATA) \
++	((FRAME)->flags & WFRAME_NO_BORDER ? \
++	 0 : (GRDATA)->client_off.x)
++#define CLIENT_Y(FRAME, GRDATA) \
++	((FRAME)->flags & WFRAME_NO_BORDER ? \
++	 0 : (GRDATA)->client_off.y)
++
++#define CLIENT_W(FRAME, GRDATA) FRAME_TO_CLIENT_W(FRAME_W(FRAME), FRAME, GRDATA)
++#define CLIENT_H(FRAME, GRDATA) FRAME_TO_CLIENT_H(FRAME_H(FRAME), FRAME, GRDATA)
+ 
+ 
+ WThingFuntab frame_funtab={deinit_frame, frame_remove_child};
+@@ -658,6 +671,22 @@
+ 	geom->y=CLIENT_Y(frame, grdata);
+ 	geom->w=CLIENT_W(frame, grdata);
+ 	geom->h=CLIENT_H(frame, grdata);
++}
++
++void enable_border(WFrame *frame)
++{
++	frame->flags = frame->flags & (~WFRAME_NO_BORDER); 
++
++	frame_fit_clients(frame);
++	draw_frame(frame,TRUE);
++}
++
++void disable_border(WFrame *frame)
++{
++	frame->flags = frame->flags | WFRAME_NO_BORDER; 
++
++	frame_fit_clients(frame);
++	draw_frame(frame,TRUE);
+ }
+ 
+ 
+diff -r -u src.orig/frame.h src/frame.h
+--- src.orig/frame.h	Fri Feb  8 22:23:17 2002
++++ src/frame.h	Fri Mar  8 23:05:54 2002
+@@ -23,6 +23,7 @@
+ #define WFRAME_SHADE		0x0004
+ #define WFRAME_NO_BAR		0x0008
+ #define WFRAME_MAX_BOTH		(WFRAME_MAX_VERT|WFRAME_MAX_HORIZ)
++#define WFRAME_NO_BORDER        0x0010
+ 
+ #define FRAME_SHORTCUT_W	23
+ 
+@@ -96,5 +97,8 @@
+ extern void split_top(WWorkspace *ws, char *str);
+ 
+ extern WFrame *find_frame_of(Window win);
++
++extern void enable_border(WFrame *frame);
++extern void disable_border(WFrame *frame);
+ 
+ #endif /* INCLUDED_FRAME_H */
+diff -r -u src.orig/function.c src/function.c
+--- src.orig/function.c	Fri Feb  8 22:23:17 2002
++++ src/function.c	Fri Mar  8 23:05:54 2002
+@@ -90,6 +90,9 @@
+ 	FN(d, 	generic, WFrame,	"set_widthq",		set_widthq),
+ 	FN(d, 	generic, WFrame,	"set_heightq",		set_heightq),
+ 
++	FN_VOID(generic, WFrame,        "enable_border",        enable_border),
++	FN_VOID(generic, WFrame,        "disable_border",       disable_border),
++
+ 	FN(s,	generic, WWorkspace,"split_top",   		split_top),
+ 	
+ 	/* client */
