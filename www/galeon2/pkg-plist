@@ -66,8 +66,11 @@ share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
 share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks.glade
+share/gnome/galeon/bug.png
+share/gnome/galeon/debian.png
 share/gnome/galeon/default-bookmarks.xbel
 share/gnome/galeon/fetch_favicon.xpm
+share/gnome/galeon/fonts.png
 share/gnome/galeon/freshmeat.png
 share/gnome/galeon/galeon-bookmark-alias-mark.png
 share/gnome/galeon/galeon-bookmark.png
@@ -81,6 +84,7 @@ share/gnome/galeon/galeon-separator.png
 share/gnome/galeon/galeon-viewsource.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
+share/gnome/galeon/general.png
 share/gnome/galeon/gnu.png
 share/gnome/galeon/google.png
 share/gnome/galeon/google_groups.png
@@ -88,6 +92,7 @@ share/gnome/galeon/google_images.png
 share/gnome/galeon/imdb_movies.png
 share/gnome/galeon/logo.png
 share/gnome/galeon/myportal.css
+share/gnome/galeon/network.png
 share/gnome/galeon/new_alias.xpm
 share/gnome/galeon/new_alias_small.xpm
 share/gnome/galeon/new_folder.xpm
@@ -160,6 +165,8 @@ share/gnome/galeon/spinners/pipeon/013.png
 share/gnome/galeon/spinners/pipeon/014.png
 share/gnome/galeon/spinners/pipeon/rest.png
 share/gnome/galeon/stocks.png
+share/gnome/galeon/stop.png
+share/gnome/galeon/tabs.png
 share/gnome/galeon/toc.css
 share/gnome/galeon/toolbar-editor.glade
 share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
