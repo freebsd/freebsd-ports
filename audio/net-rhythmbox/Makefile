@@ -9,7 +9,7 @@ PORTNAME=	net-rhythmbox
 PORTVERSION=	0.4.8
 PORTREVISION=	2
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://web.verbum.org/net-rhythmbox/
+MASTER_SITES=	http://download.raisdorf.net/files/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Audio player for the Gnome 2 desktop environment
