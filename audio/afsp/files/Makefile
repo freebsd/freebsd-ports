@@ -36,14 +36,16 @@ SUBHEADERS =	include/libtsp/AFdataio.h \
 		include/libtsp/nucleus.h \
 		include/libtsp/sysOS.h
 MAN3FILES =	man/libtsp/AF/AFclose.3tsp \
-		man/libtsp/AF/AFopenRead.3tsp \
-		man/libtsp/AF/AFopenWrite.3tsp \
-		man/libtsp/AF/AFreadData.3tsp \
+		man/libtsp/AF/AFdReadData.3tsp \
+		man/libtsp/AF/AFdWriteData.3tsp \
+		man/libtsp/AF/AFfReadData.3tsp \
+		man/libtsp/AF/AFfWriteData.3tsp \
+		man/libtsp/AF/AFopnRead.3tsp \
+		man/libtsp/AF/AFopnWrite.3tsp \
 		man/libtsp/AF/AFsetFileType.3tsp \
 		man/libtsp/AF/AFsetHinfo.3tsp \
 		man/libtsp/AF/AFsetNHpar.3tsp \
-		man/libtsp/AF/AFsetSpeaker.3tsp \
-		man/libtsp/AF/AFwriteData.3tsp
+		man/libtsp/AF/AFsetSpeaker.3tsp
 MAN1FILES =	man/audio/AFsp.1audio \
 		man/audio/CompAudio.1audio \
 		man/audio/CopyAudio.1audio \
@@ -65,14 +67,16 @@ HTMLFILES1 =	html/audio/AFsp.html \
 		html/audio/LPsyn.html \
 		html/audio/ResampAudio.html
 HTMLFILES3 =	html/libtsp/AF/AFclose.html \
-		html/libtsp/AF/AFopenRead.html \
-		html/libtsp/AF/AFopenWrite.html \
-		html/libtsp/AF/AFreadData.html \
+		html/libtsp/AF/AFdReadData.html \
+		html/libtsp/AF/AFdWriteData.html \
+		html/libtsp/AF/AFfReadData.html \
+		html/libtsp/AF/AFfWriteData.html \
+		html/libtsp/AF/AFopnRead.html \
+		html/libtsp/AF/AFopnWrite.html \
 		html/libtsp/AF/AFsetFileType.html \
 		html/libtsp/AF/AFsetHinfo.html \
 		html/libtsp/AF/AFsetNHpar.html \
-		html/libtsp/AF/AFsetSpeaker.html \
-		html/libtsp/AF/AFwriteData.html
+		html/libtsp/AF/AFsetSpeaker.html
 FILTERFILES =	filters/STL_BPF5k_FIR_16k.cof \
 		filters/STL_BPF_FIR_16k.cof \
 		filters/STL_G712_IIR_16k.cof \

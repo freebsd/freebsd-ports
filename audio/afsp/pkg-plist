@@ -65,14 +65,16 @@ share/doc/afsp/audio/LPanal.html
 share/doc/afsp/audio/LPsyn.html
 share/doc/afsp/audio/ResampAudio.html
 share/doc/afsp/libtsp/AF/AFclose.html
-share/doc/afsp/libtsp/AF/AFopenRead.html
-share/doc/afsp/libtsp/AF/AFopenWrite.html
-share/doc/afsp/libtsp/AF/AFreadData.html
+share/doc/afsp/libtsp/AF/AFdReadData.html
+share/doc/afsp/libtsp/AF/AFdWriteData.html
+share/doc/afsp/libtsp/AF/AFfReadData.html
+share/doc/afsp/libtsp/AF/AFfWriteData.html
+share/doc/afsp/libtsp/AF/AFopnRead.html
+share/doc/afsp/libtsp/AF/AFopnWrite.html
 share/doc/afsp/libtsp/AF/AFsetFileType.html
 share/doc/afsp/libtsp/AF/AFsetHinfo.html
 share/doc/afsp/libtsp/AF/AFsetNHpar.html
 share/doc/afsp/libtsp/AF/AFsetSpeaker.html
-share/doc/afsp/libtsp/AF/AFwriteData.html
 @dirrm include/libtsp
 @dirrm share/doc/afsp/audio
 @dirrm share/doc/afsp/libtsp/AF

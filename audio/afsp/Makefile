@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	afsp
-PORTVERSION=	6.7b
+PORTVERSION=	7.0a
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
-DISTNAME=	AFsp-v6r7b
+DISTNAME=	AFsp-v7r0a
 
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	Audio file conversion utilities and library
@@ -19,9 +19,9 @@ USE_GMAKE=	yes
 MAN1=	AFsp.1audio CompAudio.1audio CopyAudio.1audio FiltAudio.1audio \
 	GenNoise.1audio GenTone.1audio InfoAudio.1audio LPanal.1audio \
 	LPsyn.1audio ResampAudio.1audio
-MAN3=	AFclose.3tsp AFopenRead.3tsp AFopenWrite.3tsp AFreadData.3tsp \
-	AFsetFileType.3tsp AFsetHinfo.3tsp AFsetNHpar.3tsp \
-	AFwriteData.3tsp AFsetSpeaker.3tsp
+MAN3=	AFclose.3tsp AFdReadData.3tsp AFdWriteData.3tsp AFfReadData.3tsp \
+	AFfWriteData.3tsp AFopnRead.3tsp AFopnWrite.3tsp AFsetFileType.3tsp \
+	AFsetHinfo.3tsp AFsetNHpar.3tsp AFsetSpeaker.3tsp
 
 MAKE_ARGS=	COPTS="${CFLAGS}"
 
