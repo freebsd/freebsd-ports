@@ -9,7 +9,7 @@
 DISTNAME=       bash-2.03
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU} \
-		ftp://slc2.ins.cwru.edu/pub/dist/
+		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	bash
 .if !defined(NOPORTDOCS)
 DISTFILES=      bash-2.03.tar.gz bash-doc-2.03.tar.gz
