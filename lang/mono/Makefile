@@ -36,7 +36,7 @@ ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-signbit
-.elsif ${OSVERSION} < 502113
+.elif ${OSVERSION} < 502113
 IGNORE=	"Does not work on 5.X before 502113"
 .endif
 
