@@ -4623,6 +4623,7 @@ mlclock		ports/x11-clocks/mlclock
 mld6query	src/usr.sbin/mld6query
 mldonkey	ports/net/mldonkey
 mldonkey-gui	ports/net/mldonkey-gui
+mldonkey-perlreactor	ports/net/mldonkey-perlreactor
 mldonkey-src	ports/net/mldonkey-src
 mldonkey-urlslave	ports/net/mldonkey-urlslave
 mlterm		ports/x11/mlterm
