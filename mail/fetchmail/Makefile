@@ -11,7 +11,7 @@
 # does not need Python, so there is no RUN_DEPENDS for Python in
 # this Makefile.
 
-DISTNAME=       fetchmail-5.2.8
+DISTNAME=       fetchmail-5.3.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -27,6 +27,9 @@ MLINKS=		fetchmail.1 fetchmailconf.1
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-inet6
+.if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
+CONFIGURE_ARGS+=--with-ssl=/usr
+.endif
 .endif
 
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)

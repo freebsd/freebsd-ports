@@ -1,5 +1,6 @@
---- configure.orig	Sun Jan 16 10:07:09 2000
-+++ configure	Sun Jan 30 21:03:36 2000
+diff -ruN ../fetchmail-5.3.0.OLD/configure ./configure
+--- ../fetchmail-5.3.0.OLD/configure	Wed Feb 16 11:27:00 2000
++++ ./configure	Wed Feb 23 23:42:25 2000
 @@ -1595,7 +1595,7 @@
  if test `uname` = "FreeBSD" 
  then
