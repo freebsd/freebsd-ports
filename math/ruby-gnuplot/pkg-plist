@@ -1,11 +1,6 @@
-%%RUBY_SITELIBDIR%%/gplot/ContourPlot.rb
 %%RUBY_SITELIBDIR%%/gplot/Gnuplot.rb
-%%RUBY_SITELIBDIR%%/gplot/Plot.rb
-%%RUBY_SITELIBDIR%%/gplot/PlotItem.rb
-%%RUBY_SITELIBDIR%%/gplot/Writer.rb
 @dirrm %%RUBY_SITELIBDIR%%/gplot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
