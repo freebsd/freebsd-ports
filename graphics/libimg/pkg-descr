@@ -1,0 +1,7 @@
+This is an image format handler for Tk. It handles the following image
+formats:
+
+bmp, gif, png, jpeg, tiff, xpm, xbm, and postscript.
+
+Using this library with Tcl/Tk applications allows one to work with
+photos and images in the application.
