@@ -1,0 +1,4 @@
+--------------------------------------------------------------------------------
+Usage: squidtimes [proxyhost] < access.log > squidtimes.html
+(also writes 6 gifs in the current directory)
+--------------------------------------------------------------------------------
