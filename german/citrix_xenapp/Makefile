@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	6.20.974
+PORTVERSION=	6.20.986
 CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	linuxx86
