@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	reverse
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pyreverse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +16,17 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of tools for reverse engineering Python code
 
-BROKEN=		"Checksum mismatch"
-
 BUILD_DEPENDS=	${PYXML}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse ! -type d | \
+		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse -type d | ${SORT} -r | \
+		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/%%PYTHSON_SITELIBDIR%%/logilab 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
