@@ -9,9 +9,9 @@
 DISTNAME=	qcad_source
 PKGNAME=	qcad-1.3.3
 CATEGORIES=	cad
-MASTER_SITES=	http://www2.active.ch/~ribbon/
+MASTER_SITES=	http://www.ultraviolet.org/qcad/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrews@technologist.com
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
