@@ -9,7 +9,7 @@ PORTNAME=	varconf
 PORTVERSION=	0.6.2
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/libs/varconf/ \
+MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/varconf/ \
 		http://purple.worldforge.org/wf/downloads/libs/varconf/
 
 MAINTAINER=	oliver@FreeBSD.org
