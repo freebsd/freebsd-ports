@@ -18,4 +18,4 @@ Note: Files are installed into following locations:
 		getzones instappl isrv iwpr lwpr papstatus tlw
 	/usr/local/etc/cap:		Sample configuration files.
 	/usr/local/lib/cap:		More sample configuration files.
-	/usr/local/share/doc/cap:	Relivant documentation.
+	/usr/local/share/doc/cap:	Relevant documentation.
