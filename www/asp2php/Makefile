@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.5
+PORTVERSION=	0.76.10
 CATEGORIES=	www
 MASTER_SITES=	http://65.108.58.129/asp2php/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
 
