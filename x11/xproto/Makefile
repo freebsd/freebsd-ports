@@ -1,0 +1,24 @@
+# New ports collection makefile for:   xproto
+# Date Created:			29 Oct, 2003
+# Whom:				Eric Anholt <anholt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xproto
+PORTVERSION=	6.6.p2
+CATEGORIES=	x11
+MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	X11 protocol headers
+
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-6.6
+
+.include <bsd.port.mk>

@@ -175,6 +175,7 @@
     SUBDIR += xnee
     SUBDIR += xnodecor
     SUBDIR += xprompt
+    SUBDIR += xproto
     SUBDIR += xrootconsole
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
