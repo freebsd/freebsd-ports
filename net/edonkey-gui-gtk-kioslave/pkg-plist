@@ -1,3 +1,3 @@
-lib/%%KDEDIR_VERSION%%/kio_ed2kslave.la
-lib/%%KDEDIR_VERSION%%/kio_ed2kslave.so
+lib/kde3/kio_ed2kslave.la
+lib/kde3/kio_ed2kslave.so
 share/services/ed2kslave.protocol
