@@ -10,7 +10,7 @@ PORTVERSION=	3.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
-MAINTAINER=	rmallory@csusb.edu
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
