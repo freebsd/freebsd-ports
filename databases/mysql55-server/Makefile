@@ -34,6 +34,7 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
+# MySQL-Server part
 .if !defined(CLIENT_ONLY)
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 
@@ -117,13 +118,7 @@ post-install:
 	${PREFIX}/bin/mysql_install_db
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "if [ -x ${PREFIX}/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "then" >> ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "	${PREFIX}/bin/safe_mysqld --user=mysql > /dev/null & && ${ECHO} -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${ECHO} "fi" >> ${PREFIX}/etc/rc.d/mysql-server.sh
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 
 .if !defined(NOPORTDOCS)
@@ -137,6 +132,8 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
+
+# MySQL-Client part
 .else
 MAN1=		mysql.1
 
@@ -145,7 +142,7 @@ MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
 
 post-install:
 	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql-client.sh
-	@${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql-client.sh
+	@${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-client.sh
 
