@@ -1,5 +1,6 @@
-# $Id: Makefile,v 1.14 1997/04/02 12:43:58 scrappy Exp $
+# $Id: Makefile,v 1.15 1997/04/10 19:21:29 scrappy Exp $
 #
+    SUBDIR += db
     SUBDIR += exodus
     SUBDIR += gdbm
     SUBDIR += gnats
