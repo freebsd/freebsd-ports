@@ -32,6 +32,7 @@
 
 # Convenient aliases
 world		-a .
+www_english	-a www/en www/Makefile.inc www/share
 
 # CVSROOT support
 CVSROOT		CVSROOT
