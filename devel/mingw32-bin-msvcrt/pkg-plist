@@ -163,6 +163,7 @@ mingw32/include/mciavi.h
 mingw32/include/mcx.h
 mingw32/include/mem.h
 mingw32/include/memory.h
+mingw32/include/mgmtapi.h
 mingw32/include/mmsystem.h
 mingw32/include/mshtml.h
 mingw32/include/mswsock.h
@@ -171,6 +172,7 @@ mingw32/include/nddeapi.h
 mingw32/include/nspapi.h
 mingw32/include/ntdef.h
 mingw32/include/ntdll.h
+mingw32/include/ntldap.h
 mingw32/include/ntsecapi.h
 mingw32/include/ntsecpkg.h
 mingw32/include/oaidl.h
@@ -190,6 +192,7 @@ mingw32/include/oledlg.h
 mingw32/include/oleidl.h
 mingw32/include/pbt.h
 mingw32/include/poppack.h
+mingw32/include/powrprof.h
 mingw32/include/process.h
 mingw32/include/profil.h
 mingw32/include/profile.h
@@ -219,8 +222,10 @@ mingw32/include/rpcproxy.h
 mingw32/include/schannel.h
 mingw32/include/schnlsp.h
 mingw32/include/scrnsave.h
+mingw32/include/search.h
 mingw32/include/secext.h
 mingw32/include/security.h
+mingw32/include/servprov.h
 mingw32/include/setjmp.h
 mingw32/include/setupapi.h
 mingw32/include/share.h
@@ -229,6 +234,7 @@ mingw32/include/shlguid.h
 mingw32/include/shlobj.h
 mingw32/include/shlwapi.h
 mingw32/include/signal.h
+mingw32/include/snmp.h
 mingw32/include/sql.h
 mingw32/include/sqlext.h
 mingw32/include/sqltypes.h
@@ -262,10 +268,13 @@ mingw32/include/userenv.h
 mingw32/include/utime.h
 mingw32/include/values.h
 mingw32/include/varargs.h
+mingw32/include/vfw.h
 mingw32/include/w32api.h
 mingw32/include/wchar.h
 mingw32/include/wctype.h
+mingw32/include/winable.h
 mingw32/include/winbase.h
+mingw32/include/winber.h
 mingw32/include/wincon.h
 mingw32/include/wincrypt.h
 mingw32/include/windef.h
@@ -275,12 +284,14 @@ mingw32/include/winerror.h
 mingw32/include/wingdi.h
 mingw32/include/wininet.h
 mingw32/include/winioctl.h
+mingw32/include/winldap.h
 mingw32/include/winnetwk.h
 mingw32/include/winnls.h
 mingw32/include/winnt.h
 mingw32/include/winperf.h
 mingw32/include/winreg.h
 mingw32/include/winresrc.h
+mingw32/include/winsnmp.h
 mingw32/include/winsock.h
 mingw32/include/winsock2.h
 mingw32/include/winspool.h
@@ -336,6 +347,7 @@ mingw32/lib/libgmon.a
 mingw32/lib/libhal.a
 mingw32/lib/libhid.a
 mingw32/lib/libhidparse.a
+mingw32/lib/libigmpagnt.a
 mingw32/lib/libimagehlp.a
 mingw32/lib/libimm32.a
 mingw32/lib/libiphlpapi.a
@@ -356,6 +368,10 @@ mingw32/lib/libmpr.a
 mingw32/lib/libmsacm32.a
 mingw32/lib/libmsimg32.a
 mingw32/lib/libmsvcp60.a
+mingw32/lib/libmsvcr70.a
+mingw32/lib/libmsvcr70d.a
+mingw32/lib/libmsvcr71.a
+mingw32/lib/libmsvcr71d.a
 mingw32/lib/libmsvcrt.a
 mingw32/lib/libmsvcrtd.a
 mingw32/lib/libmswsock.a
@@ -367,6 +383,7 @@ mingw32/lib/libntoskrnl.a
 mingw32/lib/libodbc32.a
 mingw32/lib/libodbccp32.a
 mingw32/lib/libole32.a
+mingw32/lib/liboleacc.a
 mingw32/lib/liboleaut32.a
 mingw32/lib/libolecli32.a
 mingw32/lib/liboledlg.a
@@ -375,6 +392,7 @@ mingw32/lib/libolesvr32.a
 mingw32/lib/libopengl32.a
 mingw32/lib/libpenwin32.a
 mingw32/lib/libpkpd32.a
+mingw32/lib/libpowrprof.a
 mingw32/lib/libpsapi.a
 mingw32/lib/librapi.a
 mingw32/lib/librasapi32.a
@@ -390,6 +408,7 @@ mingw32/lib/libsetupapi.a
 mingw32/lib/libshell32.a
 mingw32/lib/libshfolder.a
 mingw32/lib/libshlwapi.a
+mingw32/lib/libsnmpapi.a
 mingw32/lib/libsvrapi.a
 mingw32/lib/libtapi32.a
 mingw32/lib/libtdi.a
@@ -411,8 +430,10 @@ mingw32/lib/libwininet.a
 mingw32/lib/libwinmm.a
 mingw32/lib/libwinspool.a
 mingw32/lib/libwinstrm.a
+mingw32/lib/libwldap32.a
 mingw32/lib/libwow32.a
 mingw32/lib/libws2_32.a
+mingw32/lib/libwsnmp32.a
 mingw32/lib/libwsock32.a
 mingw32/lib/libwst.a
 mingw32/lib/txtmode.o
