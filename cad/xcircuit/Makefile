@@ -10,6 +10,7 @@ PORTVERSION=	2.3.3.b9
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
