@@ -28,7 +28,7 @@ COMMENT=	GNU Compiler Collection 3.1
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
 
-NOT_FOR_ARCHS=	amd64 ia64
+ONLY_FOR_ARCHS=	i386 sparc64
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc31
 

@@ -18,7 +18,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	GNU Compiler Collection
 
-NOT_FOR_ARCHS=	amd64 sparc64 ia64
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 
 LATEST_LINK=	gcc295
