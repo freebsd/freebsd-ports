@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	3.6
-PORTREVISION=	2
+PORTVERSION=	3.7
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
-PATCH_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/bin/
-PATCHFILES=	${PORTNAME}${PORTVERSION}-freebsd
-
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+
+USE_XLIB=	yes
 
 RESTRICTED=	"free for academic, non profit usage;"
 NO_CDROM=	"Do not re-distribute source and executable."
-NO_PACKAGE=	"Though the source codes is accessible, the author is hoping for distribution in an original binary form."
+NO_PACKAGE=	"Though the source codes are accessible, the author is hoping for distribution in an original form."
 MAKEFILE=	${WRKSRC}/makefile
 
 .include <bsd.port.pre.mk>
@@ -29,36 +27,12 @@ MAKEFILE=	${WRKSRC}/makefile
 post-configure:
 	@${ECHO_MSG} "********************"
 	@${ECHO_MSG} "**  If you want to use a larger MOLDEN,"
-	@${ECHO_MSG} "**  edit change_parameter, change_parameter.sh"
-	@${ECHO_MSG} "**  or utils/*, and run them before building it."
+	@${ECHO_MSG} "**  edit change_parameter.sh and run it,"
+	@${ECHO_MSG} "**  before \'make build\'."
 	@${ECHO_MSG} "********************"
-
-pre-build:
-.if defined(ORIGINALBINARY)
-	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  using original binary"
-	@${ECHO_MSG} "********************"
-.elif defined(MYBINARY)
-	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  re-build your own MOLDEN"
-	@${ECHO_MSG} "********************"
-.else
-	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  set ORIGINALBINARY=yes or MYBINARY=yes"
-	@${ECHO_MSG} "********************"
-	@exit 1
-.endif
 
 do-build:
-.if defined(ORIGINALBINARY)
-	${CP}  ${DISTDIR}/${PORTNAME}${PORTVERSION}-freebsd ${WRKSRC}/molden
-.elif defined(MYBINARY)
 	(cd ${WRKSRC} && ${MAKE})
-.else
-	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  set ORIGINALBINARY=yes or MYBINARY=yes"
-	@${ECHO_MSG} "********************"
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/molden ${PREFIX}/bin/
