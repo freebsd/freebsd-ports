@@ -1,8 +1,7 @@
-# $Id: Makefile,v 1.12 1995/03/29 19:29:57 ats Exp $
+# $Id: Makefile,v 1.13 1995/04/10 08:08:18 jkh Exp $
 #
 # broken: uemacs, mastersite never reachable in three weeks
-# broken: mule, its patches don't apply properly.  And it should
-# probably be in ports/japanese anyway! :-)
-SUBDIR=	axe emacs jove vile xemacs xvile
+# mule should probably be in ports/japanese.
+SUBDIR=	axe emacs jove vile mule xemacs xvile
 
 .include <bsd.port.subdir.mk>
