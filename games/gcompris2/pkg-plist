@@ -2,6 +2,7 @@ bin/gcompris
 info/gcompris.info
 lib/gcompris/libalgebra.so
 lib/gcompris/libalgebra_guesscount.so
+lib/gcompris/libcanal_lock.so
 lib/gcompris/libclick_on_letter.so
 lib/gcompris/libclickgame.so
 lib/gcompris/libclockgame.so
@@ -19,6 +20,7 @@ lib/gcompris/libparatrooper.so
 lib/gcompris/libplanegame.so
 lib/gcompris/librailroad.so
 lib/gcompris/libreading.so
+lib/gcompris/libreversecount.so
 lib/gcompris/libshapegame.so
 lib/gcompris/libsmallnumbers.so
 lib/gcompris/libtarget.so
@@ -124,6 +126,7 @@ share/gnome/gcompris/boards/boardicons/algebramenu.png
 share/gnome/gcompris/boards/boardicons/babymatch.png
 share/gnome/gcompris/boards/boardicons/babyshapes.png
 share/gnome/gcompris/boards/boardicons/book.png
+share/gnome/gcompris/boards/boardicons/canal_lock.png
 share/gnome/gcompris/boards/boardicons/click_on_letter.png
 share/gnome/gcompris/boards/boardicons/clickgame.png
 share/gnome/gcompris/boards/boardicons/clockgame.png
@@ -135,6 +138,7 @@ share/gnome/gcompris/boards/boardicons/draw.png
 share/gnome/gcompris/boards/boardicons/erase.png
 share/gnome/gcompris/boards/boardicons/fun.png
 share/gnome/gcompris/boards/boardicons/gletters.png
+share/gnome/gcompris/boards/boardicons/globe.png
 share/gnome/gcompris/boards/boardicons/helicogame.png
 share/gnome/gcompris/boards/boardicons/imageid.png
 share/gnome/gcompris/boards/boardicons/imagename.png
@@ -154,12 +158,16 @@ share/gnome/gcompris/boards/boardicons/planegame.png
 share/gnome/gcompris/boards/boardicons/railroad.png
 share/gnome/gcompris/boards/boardicons/reading.png
 share/gnome/gcompris/boards/boardicons/readingh.png
+share/gnome/gcompris/boards/boardicons/reversecount.png
 share/gnome/gcompris/boards/boardicons/scalesicon.png
 share/gnome/gcompris/boards/boardicons/shapegame.png
 share/gnome/gcompris/boards/boardicons/smallnumbers.png
 share/gnome/gcompris/boards/boardicons/target.png
 share/gnome/gcompris/boards/boardicons/tuxpara.png
 share/gnome/gcompris/boards/boardicons/wordsgame.png
+share/gnome/gcompris/boards/canal_lock.xml
+share/gnome/gcompris/boards/canal_lock.xml.in
+share/gnome/gcompris/boards/canal_lock/canal_lock_bg.png
 share/gnome/gcompris/boards/click_on_letter.xml
 share/gnome/gcompris/boards/click_on_letter.xml.in
 share/gnome/gcompris/boards/clickgame.xml
@@ -173,12 +181,14 @@ share/gnome/gcompris/boards/colors/colors_bg.jpg
 share/gnome/gcompris/boards/colors/colors_highlight.png
 share/gnome/gcompris/boards/computer.xml
 share/gnome/gcompris/boards/computer.xml.in
+share/gnome/gcompris/boards/dataset/mrpatate.xml
 share/gnome/gcompris/boards/doubleentry.xml
 share/gnome/gcompris/boards/doubleentry.xml.in
 share/gnome/gcompris/boards/doubleentry/Makefile
 share/gnome/gcompris/boards/doubleentry/Makefile.am
 share/gnome/gcompris/boards/doubleentry/board1_0.xml
 share/gnome/gcompris/boards/doubleentry/board2_0.xml
+share/gnome/gcompris/boards/doubleentry/board3_0.xml
 share/gnome/gcompris/boards/doubleentry/boardicon.png
 share/gnome/gcompris/boards/doubleentry/circle-blue-1.png
 share/gnome/gcompris/boards/doubleentry/circle-blue-2.png
@@ -223,6 +233,8 @@ share/gnome/gcompris/boards/draw/tool-filledrectangle.png
 share/gnome/gcompris/boards/draw/tool-filledrectangle_on.png
 share/gnome/gcompris/boards/draw/tool-grid.png
 share/gnome/gcompris/boards/draw/tool-grid_on.png
+share/gnome/gcompris/boards/draw/tool-image.png
+share/gnome/gcompris/boards/draw/tool-image_on.png
 share/gnome/gcompris/boards/draw/tool-line.png
 share/gnome/gcompris/boards/draw/tool-line_on.png
 share/gnome/gcompris/boards/draw/tool-move-off.png
@@ -419,6 +431,7 @@ share/gnome/gcompris/boards/gcompris/gcompris-shapebg.jpg
 share/gnome/gcompris/boards/gcompris/gcompris-shapelabel.jpg
 share/gnome/gcompris/boards/gcompris/gcomprislogo.png
 share/gnome/gcompris/boards/gcompris/help_bg.png
+share/gnome/gcompris/boards/gcompris/images_selector_bg.png
 share/gnome/gcompris/boards/gcompris/letters/*.png
 share/gnome/gcompris/boards/gcompris/letters/+.png
 share/gnome/gcompris/boards/gcompris/letters/-.png
@@ -536,6 +549,7 @@ share/gnome/gcompris/boards/gcompris/misc/tree.png
 share/gnome/gcompris/boards/gcompris/misc/truck.png
 share/gnome/gcompris/boards/gcompris/misc/tux.png
 share/gnome/gcompris/boards/gcompris/misc/tuxballoon.png
+share/gnome/gcompris/boards/gcompris/misc/tuxboat.png
 share/gnome/gcompris/boards/gcompris/misc/tuxhelico.png
 share/gnome/gcompris/boards/gcompris/misc/tuxloco.png
 share/gnome/gcompris/boards/gcompris/misc/tuxplane.png
@@ -570,6 +584,40 @@ share/gnome/gcompris/boards/gcompris/timers/sablier6.png
 share/gnome/gcompris/boards/gcompris/timers/sablier7.png
 share/gnome/gcompris/boards/gcompris/timers/sablier8.png
 share/gnome/gcompris/boards/gcompris/timers/sablier9.png
+share/gnome/gcompris/boards/geography.xml
+share/gnome/gcompris/boards/geography.xml.in
+share/gnome/gcompris/boards/geography/Makefile
+share/gnome/gcompris/boards/geography/Makefile.am
+share/gnome/gcompris/boards/geography/board1_0.xml
+share/gnome/gcompris/boards/geography/board2_0.xml
+share/gnome/gcompris/boards/geography/northamerica/alaska.png
+share/gnome/gcompris/boards/geography/northamerica/bahamas.png
+share/gnome/gcompris/boards/geography/northamerica/canada.png
+share/gnome/gcompris/boards/geography/northamerica/cuba.png
+share/gnome/gcompris/boards/geography/northamerica/dominican_republic.png
+share/gnome/gcompris/boards/geography/northamerica/greenland.png
+share/gnome/gcompris/boards/geography/northamerica/haiti.png
+share/gnome/gcompris/boards/geography/northamerica/iceland.png
+share/gnome/gcompris/boards/geography/northamerica/jamaica.png
+share/gnome/gcompris/boards/geography/northamerica/mexico.png
+share/gnome/gcompris/boards/geography/northamerica/north_america.png
+share/gnome/gcompris/boards/geography/northamerica/usa-complete.png
+share/gnome/gcompris/boards/geography/northamerica/usa.png
+share/gnome/gcompris/boards/geography/southamerica/argentina.png
+share/gnome/gcompris/boards/geography/southamerica/bolivia.png
+share/gnome/gcompris/boards/geography/southamerica/brazil.png
+share/gnome/gcompris/boards/geography/southamerica/chile.png
+share/gnome/gcompris/boards/geography/southamerica/colombia.png
+share/gnome/gcompris/boards/geography/southamerica/ecuador.png
+share/gnome/gcompris/boards/geography/southamerica/french_guiana.png
+share/gnome/gcompris/boards/geography/southamerica/guyana.png
+share/gnome/gcompris/boards/geography/southamerica/panama.png
+share/gnome/gcompris/boards/geography/southamerica/paraguay.png
+share/gnome/gcompris/boards/geography/southamerica/peru.png
+share/gnome/gcompris/boards/geography/southamerica/south_america.png
+share/gnome/gcompris/boards/geography/southamerica/suriname.png
+share/gnome/gcompris/boards/geography/southamerica/uruguay.png
+share/gnome/gcompris/boards/geography/southamerica/venezuela.png
 share/gnome/gcompris/boards/gletters.xml
 share/gnome/gcompris/boards/gletters.xml.in
 share/gnome/gcompris/boards/imageid.xml
@@ -629,6 +677,40 @@ share/gnome/gcompris/boards/missing_letter/Makefile
 share/gnome/gcompris/boards/missing_letter/Makefile.am
 share/gnome/gcompris/boards/missing_letter/board1.xml
 share/gnome/gcompris/boards/missing_letter/missingletter-bg.jpg
+share/gnome/gcompris/boards/mrpatate/README
+share/gnome/gcompris/boards/mrpatate/barbe1.png
+share/gnome/gcompris/boards/mrpatate/barbe12.png
+share/gnome/gcompris/boards/mrpatate/body.png
+share/gnome/gcompris/boards/mrpatate/bouc1.png
+share/gnome/gcompris/boards/mrpatate/bouche1.png
+share/gnome/gcompris/boards/mrpatate/bouche2.png
+share/gnome/gcompris/boards/mrpatate/bouche3.png
+share/gnome/gcompris/boards/mrpatate/bouche4.png
+share/gnome/gcompris/boards/mrpatate/bouche9.png
+share/gnome/gcompris/boards/mrpatate/cheveux1.png
+share/gnome/gcompris/boards/mrpatate/cheveux2.png
+share/gnome/gcompris/boards/mrpatate/cheveux3.png
+share/gnome/gcompris/boards/mrpatate/cheveux4.png
+share/gnome/gcompris/boards/mrpatate/cheveux5.png
+share/gnome/gcompris/boards/mrpatate/cil1.png
+share/gnome/gcompris/boards/mrpatate/ear_jewell.png
+share/gnome/gcompris/boards/mrpatate/eyeball.png
+share/gnome/gcompris/boards/mrpatate/hat.png
+share/gnome/gcompris/boards/mrpatate/larme.png
+share/gnome/gcompris/boards/mrpatate/lunette1.png
+share/gnome/gcompris/boards/mrpatate/lunette1_sun.png
+share/gnome/gcompris/boards/mrpatate/lunette_girl.png
+share/gnome/gcompris/boards/mrpatate/lunette_girl_sun.png
+share/gnome/gcompris/boards/mrpatate/mousta1.png
+share/gnome/gcompris/boards/mrpatate/mrpatate_icon.png
+share/gnome/gcompris/boards/mrpatate/nez1.png
+share/gnome/gcompris/boards/mrpatate/noeye.png
+share/gnome/gcompris/boards/mrpatate/oeuil1.png
+share/gnome/gcompris/boards/mrpatate/oeuil2.png
+share/gnome/gcompris/boards/mrpatate/oeuil3.png
+share/gnome/gcompris/boards/mrpatate/oeuil4.png
+share/gnome/gcompris/boards/mrpatate/sherif.png
+share/gnome/gcompris/boards/mrpatate/watch.png
 share/gnome/gcompris/boards/music/intro.ogg
 share/gnome/gcompris/boards/paintings.xml
 share/gnome/gcompris/boards/paintings.xml.in
@@ -726,6 +808,9 @@ share/gnome/gcompris/boards/readingh.xml
 share/gnome/gcompris/boards/readingh.xml.in
 share/gnome/gcompris/boards/readingv.xml
 share/gnome/gcompris/boards/readingv.xml.in
+share/gnome/gcompris/boards/reversecount.xml
+share/gnome/gcompris/boards/reversecount.xml.in
+share/gnome/gcompris/boards/reversecount/iceblock.png
 share/gnome/gcompris/boards/scales/Makefile
 share/gnome/gcompris/boards/scales/Makefile.am
 share/gnome/gcompris/boards/scales/README
@@ -932,6 +1017,39 @@ share/gnome/gcompris/boards/sounds/fr/e.ogg
 share/gnome/gcompris/boards/sounds/fr/equal.ogg
 share/gnome/gcompris/boards/sounds/fr/f.ogg
 share/gnome/gcompris/boards/sounds/fr/g.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/COPYRIGHT
+share/gnome/gcompris/boards/sounds/fr/geography/alaska.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/argentina.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/bahamas.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/bolivia.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/brazil.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/canada.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/chile.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/colombia.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/costa_rica.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/cuba.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/dominican_republic.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/ecuador.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/french_guiana.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/greenland.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/guatemala.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/guyana.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/haïti.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/haiti.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/honduras.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/iceland.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/jamaïca.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/jamaica.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/mexico.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/nicaragua.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/panama.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/paraguay.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/peru.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/salvador.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/suriname.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/uruguay.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/usa.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/venezuela.ogg
 share/gnome/gcompris/boards/sounds/fr/good.ogg
 share/gnome/gcompris/boards/sounds/fr/great.ogg
 share/gnome/gcompris/boards/sounds/fr/green.ogg
@@ -1031,12 +1149,14 @@ share/locale/sv/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/sounds
 @dirrm share/gnome/gcompris/boards/wordsgame
 @dirrm share/gnome/gcompris/boards/target
+@dirrm share/gnome/gcompris/boards/sounds/fr/geography
 @dirrm share/gnome/gcompris/boards/sounds/fr
 @dirrm share/gnome/gcompris/boards/sounds/es
 @dirrm share/gnome/gcompris/boards/sounds/en
 @dirrm share/gnome/gcompris/boards/sounds/de
 @dirrm share/gnome/gcompris/boards/sounds
 @dirrm share/gnome/gcompris/boards/scales
+@dirrm share/gnome/gcompris/boards/reversecount
 @dirrm share/gnome/gcompris/boards/reading
 @dirrm share/gnome/gcompris/boards/railroad
 @dirrm share/gnome/gcompris/boards/paintings/level6
@@ -1048,10 +1168,14 @@ share/locale/sv/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/paintings/kandinky.comp8
 @dirrm share/gnome/gcompris/boards/paintings
 @dirrm share/gnome/gcompris/boards/music
+@dirrm share/gnome/gcompris/boards/mrpatate
 @dirrm share/gnome/gcompris/boards/missing_letter
 @dirrm share/gnome/gcompris/boards/leftright
 @dirrm share/gnome/gcompris/boards/imagename
 @dirrm share/gnome/gcompris/boards/imageid
+@dirrm share/gnome/gcompris/boards/geography/southamerica
+@dirrm share/gnome/gcompris/boards/geography/northamerica
+@dirrm share/gnome/gcompris/boards/geography
 @dirrm share/gnome/gcompris/boards/gcompris/timers
 @dirrm share/gnome/gcompris/boards/gcompris/misc
 @dirrm share/gnome/gcompris/boards/gcompris/letters
@@ -1064,8 +1188,10 @@ share/locale/sv/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/fishes
 @dirrm share/gnome/gcompris/boards/draw
 @dirrm share/gnome/gcompris/boards/doubleentry
+@dirrm share/gnome/gcompris/boards/dataset
 @dirrm share/gnome/gcompris/boards/colors
 @dirrm share/gnome/gcompris/boards/clockgame
+@dirrm share/gnome/gcompris/boards/canal_lock
 @dirrm share/gnome/gcompris/boards/boardicons
 @dirrm share/gnome/gcompris/boards/babyshapes
 @dirrm share/gnome/gcompris/boards/babymatch
