@@ -1,4 +1,10 @@
 #!/bin/sh
+#
+# Script run on the clients, to set them up in preparation for building
+# packages.  This includes setting up parts of the /var/portbuild
+# directory hierarchy, the portbuild script and the bindist.tar file
+# for populating the build chroots.
+
 nocopy=0
 if [ "x$1" = "x-nocopy" ]; then
   nocopy=1
@@ -27,9 +33,14 @@ killall make fetch >/dev/null 2>&1
 mkdir -p $2/scripts $2/$3/tarballs $2/$3/chroot
 
 scp -p $1:$2/scripts/portbuild $2/scripts
+scp -p $1:$2/portbuild.conf $2
+
+scp -p $1:$2/$3/UNAME_TARGET $2/$3/tarballs/
 
 if [ "$nocopy" = 0 ]; then
-  md5=$(/sbin/md5 $2/$3/tarballs/bindist.tar | awk '{print $4}')
+  if [ -f $2/$3/tarballs/bindist.tar ]; then
+    md5=$(/sbin/md5 $2/$3/tarballs/bindist.tar | awk '{print $4}')
+  fi
   if [ "$md5" = "$4" ]; then
     echo "not copying bindist to $(hostname -s) since it is already up to date"
   else
