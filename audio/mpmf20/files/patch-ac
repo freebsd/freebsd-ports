@@ -1,12 +1,19 @@
---- makefile.orig	Mon Apr 12 06:49:40 1999
-+++ makefile	Mon Sep 27 10:48:08 1999
-@@ -9,8 +9,7 @@
+--- makefile.orig	Mon Apr 12 08:49:40 1999
++++ makefile	Fri Feb 18 10:56:04 2000
+@@ -6,11 +6,14 @@
+ #
+ ###############################################################################
+ 
++.if ${MACHINE_ARCH} == "alpha"
++LDADD=	-lio
++.endif
++
  all: 		mpmf20
  
  mpmf20:		app.cpp mpmf20.cpp
 -		g++ -O1 -o mpmf20 app.cpp mpmf20.cpp
 -		chmod +s mpmf20
-+		${CXX} ${CXXFLAGS} -o mpmf20 app.cpp mpmf20.cpp
++		${CXX} ${CXXFLAGS} -o mpmf20 app.cpp mpmf20.cpp ${LDADD}
  
  clean:
  		rm -f mpmf20
