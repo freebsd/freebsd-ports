@@ -31,7 +31,7 @@
 -$RSYNC=~s/\\/\\\\/g;
 -$RSYNC=~s/\'/\\\'/g;
 +$PREFIX=@ARGV[0];
-+$RSYNC=$PREFIX . "/rsync";
++$RSYNC=$PREFIX . "/bin/rsync";
 +print "Path to rsync [$RSYNC]";
  open IN,'Config.in' or die "Cannot read Config.in: $!\n";
  open OUT,'>Config.pm' or die "Cannot write Config.pm: $!\n";
