@@ -711,6 +711,7 @@
     SUBDIR += urchin5
     SUBDIR += usermanager
     SUBDIR += visitors
+    SUBDIR += vtiger
     SUBDIR += w3
     SUBDIR += w3-4
     SUBDIR += w3c-httpd
