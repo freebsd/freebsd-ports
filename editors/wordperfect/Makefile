@@ -49,7 +49,7 @@ pre-install:
 	${ECHO} "   This installation of WordPerfect will expire in 90 days," ; \
 	${ECHO} "   unless you retrieve a free registration key from" ; \
 	${ECHO} "" ; \
-	${ECHO} "         https://livewire.corel.com/wp8LinuxReg/" ; \
+	${ECHO} "       http://venus.corel.com/nasapps/wp8linuxreg/register.html" ; \
 	${ECHO} "" ; \
 	${ECHO} "   to register your copy TODAY. Do this now!" ; \
 	${ECHO} "" ; \
