@@ -14,19 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy game for GNOME
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "*.[ch]" -type f | xargs ${REINPLACE_CMD} -e \
 		's|LIST_NEXT|TEG_LIST_NEXT|g'
 
