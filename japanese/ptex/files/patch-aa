@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Aug 27 16:07:43 1997
++++ Makefile.in	Sun Oct  5 00:05:12 1997
+@@ -225,7 +225,7 @@
+ 	$(SHELL) $(top_srcdir)/mkdirchain \
+ 		$(texpooldir) $(web2cdir) $(fontnamedir)
+ 	$(INSTALL_DATA) ptex.pool $(texpooldir)/ptex.pool
+-	$(SHELL) $(thisdir)/mkconf $(web2cdir)
++#	$(SHELL) $(thisdir)/mkconf $(web2cdir)
+ # tcx files are a bad idea
+ #	cd $(srcdir)/share && for f in *.tcx; do \
+ #	  $(INSTALL_DATA) $$f $(web2cdir)/$$f; done
