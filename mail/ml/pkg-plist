@@ -3,7 +3,6 @@ lib/X11/app-defaults/ML
 lib/X11/ml/CheckConnection.ppp
 lib/X11/ml/CheckConnection.ppp.orig
 lib/X11/ml/ML.ad
-lib/X11/ml/ML.ad.ORIG
 lib/X11/ml/ML.ad.bak
 lib/X11/ml/ML.ad.orig
 lib/X11/ml/action.help
