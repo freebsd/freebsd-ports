@@ -1,9 +1,16 @@
-nntpcache (very efficiently) executes on the localhost pretending to be
-an NNRP news reading server. In fact, what it does is pass certain NNTP
-commands through to real (remote and possibly local) news-servers based
-on various pattern matching rules. nntpcache then takes the output from
-those servers and caches & indexes it in funky ways (much specific case
-magic goes into this).  The next time such information is asked for, or
-other information which can be logically inferred from the previously
-collated information, it is sent directly from the cache, without
-consulting the remote servers.
+NNTPCache is Squid for news (plus lots more).
+
+NNTPCache (very efficiently, using shared memory, COW, mmaps, etc)
+executes on the localhost pretending to be an NNRP news reading
+server. In fact, what it does is pass certain NNTP commands through
+to real (remote and possibly local) news-servers based on various
+pattern matching rules. nntpcache then takes the output from those
+servers and caches & indexes it in funky ways (much specific case
+magic goes into this).  The next time such information is asked
+for, or other information which can be logically inferred from the
+previously collated information, it is sent directly from the cache,
+without consulting the remote servers. NNTPCache can transparently
+merge multiple servers, (permiting local newsgroups with remote
+NNTP feeds), filter articles, xovers, and headers based on weighted
+regular expressions, and has built in NoCem/PGP (anti-spam) support
+(see www.nntpcache.org/www.nocem.org for details).
