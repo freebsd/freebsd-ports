@@ -12,6 +12,7 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += antipolix
+    SUBDIR += atomix
     SUBDIR += awele
     SUBDIR += baduki
     SUBDIR += battalion
