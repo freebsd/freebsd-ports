@@ -1,5 +1,5 @@
---- pbmplus.h.orig	Tue Jun 20 04:24:29 2000
-+++ pbmplus.h	Sat Jul  1 12:00:00 2000
+--- pbmplus.h.orig	Mon May 14 13:53:10 2001
++++ pbmplus.h	Tue May 15 00:00:00 2001
 @@ -18,6 +18,9 @@
  #include <stdio.h>
  #include <errno.h>
@@ -19,52 +19,25 @@
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -51,7 +54,7 @@
- #define RGB_DB1 "PBMplus_Dir:RGB.TXT"
+@@ -52,9 +55,9 @@
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
+ #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else
 -#define RGB_DB1 "/usr/lib/X11/rgb.txt"
+-#define RGB_DB2 "/usr/openwin/lib/rgb.txt"
+-#define RGB_DB3 "/usr/X11R6/lib/X11/rgb.txt"
 +#define RGB_DB1 "%%X11BASE%%/lib/X11/rgb.txt"
- #define RGB_DB2 "/usr/openwin/lib/rgb.txt"
++#define RGB_DB2 "%%X11BASE%%/lib/X11/rgb.txt"
++#define RGB_DB3 "%%X11BASE%%/lib/X11/rgb.txt"
  #endif
  
-@@ -298,39 +301,6 @@
-          const unsigned int need_raster_size,
-          enum pm_check_code * const retval_p);
- 
--
--/* By making this <> instead of "", we avoid making shhopt.h a dependency
--   of every program in the package when we do make dep.
--*/
+ /* CONFIGURE: This is the name of an environment variable that tells
+@@ -339,7 +342,7 @@
+ /* By making this <> instead of "", we avoid making shhopt.h a dependency
+    of every program in the package when we do make dep.
+ */
 -#include <shhopt.h>
--
--void pm_optParseOptions(int *argc, char *argv[],
--                        optStruct opt[], int allowNegNum);
--void pm_optParseOptions2(int * const argc, char *argv[],
--                        const optStruct2 opt, const unsigned long flags);
--/* Use pm_optParseOptions instead of optParseOptions in order to use the
--   shared Netpbm libraries
--*/
--
--/* You can use OPTENTRY to assign a value to a dynamically or automatically
--   allocated optStruct structure with minimal typing and easy readability.
--
--   Here is an example:
--
--       unsigned int option_def_index = 0;
--       optStruct *option_def = malloc(100*sizeof(optStruct));
--       OPTENTRY('h', "help",     OPT_FLAG, &help_flag, 0);
--       OPTENTRY(0,   "alphaout", OPT_STRING, &alpha_filename, 0);
--*/       
--
--#define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
--    option_def[option_def_index].shortName = (shortvalue); \
--    option_def[option_def_index].longName = (longvalue); \
--    option_def[option_def_index].type = (typevalue); \
--    option_def[option_def_index].arg = (outputvalue); \
--    option_def[option_def_index].flags = (flagvalue); \
--    option_def[++option_def_index].type = OPT_END; \
--    }
++#include <pbmshhopt.h>
  
- /* Compatibility stuff */
- 
+ /* Use pm_optParseOptions instead of optParseOptions in order to use the
+    shared Netpbm libraries

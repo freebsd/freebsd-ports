@@ -1,56 +1,10 @@
 --- pgm/Makefile.orig	Thu Jan 18 12:39:28 2001
-+++ pgm/Makefile	Tue Mar 27 00:00:00 2001
-@@ -15,18 +15,27 @@
- NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
- LIBLIBS = $(PBMDIR)/$(LIBPBM)
- 
-+SOVER = 1
-+
- PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
- 		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
- 		pgmnoise pgmnorm pgmoil pgmramp pgmslice pgmtofs pgmtolispm \
- 		pgmtopbm psidtopgm spottopgm sbigtopgm
--MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm pgmkernel
--BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
-+MATHBINARIES =	pgmcrater pgmedge pgmtexture pgmkernel
-+
-+NOMERGEBINARIES =	rawtopgm
-+
-+MERGEBINARIES =	$(PORTBINARIES) $(MATHBINARIES)
-+
-+BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES)
- 
- OBJECTS = $(patsubst %, %.o, $(BINARIES))
--MERGEBINARIES = $(BINARIES)
-+
++++ pgm/Makefile	Tue May 15 00:00:00 2001
+@@ -27,6 +27,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
-@@ -39,7 +48,11 @@
- .PHONY: all
- all:		$(BINARIES)
- .PHONY: merge
--merge: $(MERGENAME)
-+merge:	$(MERGENAME) $(NOMERGEBINARIES)
-+
-+rawtopgm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
-+	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
-+	  -lm $(LIBSHHOPT) $(CDEBUG)
- 
- # LIBRARIES
- 
-@@ -61,6 +74,9 @@
- HEADERLINKS = pbmplus.h pbm.h libpbm.h
- 
- include $(SRCDIR)/Makefile.common
-+
-+$(BUILDDIR)/shhopt/libshhopt.a:
-+	cd ../shhopt; $(MAKE) libshhopt.a
- 
- .PHONY: clean
- clean: clean.common
