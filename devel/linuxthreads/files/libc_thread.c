@@ -102,6 +102,12 @@ void _spinlock (int * spinlock)
 	__pthread_acquire(spinlock);
 }
 
+
+void _spinunlock(int *spinlock)
+{
+	*spinlock = 0;
+}
+
 void * lock_create (void *context)
 {
 	pthread_rwlock_t *lock;
