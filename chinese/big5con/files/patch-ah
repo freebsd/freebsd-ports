@@ -1,21 +1,3 @@
---- lib/coding.c.orig	Sun Apr  2 18:56:03 2000
-+++ lib/coding.c	Sun Apr  2 18:56:36 2000
-@@ -140,13 +140,13 @@
- 
-     i = 0;
-     while (fSRegs[i].registry) {
--	if (!strcasecmp(fSRegs[i].registry, reg))
-+	if (!strncasecmp(fSRegs[i].registry, reg, strlen(reg)))
- 	    return(i|CHR_SFLD);
- 	i ++;
-     }
-     i = 0;
-     while (fDRegs[i].registry) {
--	if (!strcasecmp(fDRegs[i].registry, reg))
-+	if (!strncasecmp(fDRegs[i].registry, reg, strlen(reg)))
- 	    return(i|CHR_DFLD);
- 	i ++;
-     }
 --- lib/font.c.orig	Sun Apr  2 18:56:50 2000
 +++ lib/font.c	Sun Apr  2 18:57:54 2000
 @@ -35,6 +35,7 @@
