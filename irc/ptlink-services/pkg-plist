@@ -11,8 +11,7 @@ data/languages/tr
 etc/ptlink/create_tables.sql
 etc/ptlink/domain.def
 etc/ptlink/services.conf.sample
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm data/logs
 @dirrm data/languages
 @dirrm data
+@unexec rmdir %D/etc/ptlink 2> /dev/null || true
