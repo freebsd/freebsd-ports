@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.14
+PORTVERSION=	1.15.1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ COMMENT=	GNU version of the traditional tar archiver
 INFO=		tar
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
@@ -38,5 +39,8 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+test: build
+	@cd ${WRKSRC} && make check
 
 .include <bsd.port.mk>
