@@ -11,4 +11,6 @@ include/nessus/nessusudp.h
 include/nessus/ntcompat.h
 sbin/nessusd
 @unexec rmdir %D/var/nessus 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
+@unexec rmdir %D/lib/nessus 2>/dev/null || true
 @unexec rmdir %D/etc/nessus 2>/dev/null || true
