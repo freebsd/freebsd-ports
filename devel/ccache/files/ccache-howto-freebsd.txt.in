@@ -51,3 +51,6 @@ in %%PREFIX%%/%%CCLINKDIR%%
 !!! WARNING !!!
 Please make sure you have the compiler installed before you do this or your
 build will fail because it will not be able to find the compiler.
+
+Any time you change CC/CXX you need to reinstall devel/libtool15 or you 
+will run in to problems.
