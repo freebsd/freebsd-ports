@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://www.voxilla.org/pub/vpb/
 MAINTAINER=	dyfet@gnu.org
 COMMENT=	User mode API for Voicetronix 4 port analog DSP telephony cards
 
+BROKEN=		"Installs file into /etc"
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
