@@ -1,0 +1,9 @@
+UMP is a UNIX Midi plug-in for Netscape Navigator (and mozilla). It
+enables you to play MIDI files in the browser via TiMidity++, a
+software MIDI player.
+
+WWW:	http://www.geocities.com/SiliconValley/Lab/2826/
+ 	http://www.goice.co.jp/member/mo/timidity/doc/ump-inst.html
+
+Author:	Lawrence Hoff <lawrencehoff@yahoo.com>
+	Masanao Izumo <mo@goice.co.jp>
