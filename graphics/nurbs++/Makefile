@@ -15,4 +15,8 @@ MAINTAINER= 	ports@FreeBSD.org
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/nurbs/nurbs.cc ${WRKSRC}/nurbs/nurbsS.cc
+
 .include <bsd.port.mk>
