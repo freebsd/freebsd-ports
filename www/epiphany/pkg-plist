@@ -3,26 +3,23 @@ bin/epiphany-bin
 etc/gconf/gconf.xml.defaults/apps/epiphany/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/directories/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/downloader/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/filtering/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/find/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/history/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/interface/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/network/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/epiphany/rendering/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/epiphany/security/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/downloader/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/filterin/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/filtering/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/find/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/history/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/interface/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/network/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/rendering/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/security/%gconf.xml
 etc/gconf/schemas/epiphany.schemas
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/bonobo/servers/GNOME_Epiphany_NautilusView.server
@@ -64,6 +61,7 @@ share/gnome/pixmaps/epiphany-bookmarks.png
 share/gnome/pixmaps/epiphany.png
 share/locale/am/LC_MESSAGES/epiphany-2.0.mo
 share/locale/ca/LC_MESSAGES/epiphany-2.0.mo
+share/locale/cs/LC_MESSAGES/epiphany-2.0.mo
 share/locale/da/LC_MESSAGES/epiphany-2.0.mo
 share/locale/de/LC_MESSAGES/epiphany-2.0.mo
 share/locale/el/LC_MESSAGES/epiphany-2.0.mo
@@ -79,6 +77,8 @@ share/locale/pl/LC_MESSAGES/epiphany-2.0.mo
 share/locale/pt/LC_MESSAGES/epiphany-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany-2.0.mo
 share/locale/ru/LC_MESSAGES/epiphany-2.0.mo
+share/locale/sr/LC_MESSAGES/epiphany-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/epiphany-2.0.mo
 share/locale/sv/LC_MESSAGES/epiphany-2.0.mo
 share/locale/tr/LC_MESSAGES/epiphany-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany-2.0.mo
@@ -90,26 +90,23 @@ share/locale/zh_TW/LC_MESSAGES/epiphany-2.0.mo
 @dirrm share/gnome/epiphany/glade
 @dirrm share/gnome/epiphany/art
 @dirrm share/gnome/epiphany
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/security
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/rendering
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/print
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/network
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/interface
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/history
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/find
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/filtering
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/filterin
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/downloader
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany
+@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/security
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/rendering
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/print
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/network
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/interface
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/history
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/general
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/find
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/filtering
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/downloader
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/directories
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany
