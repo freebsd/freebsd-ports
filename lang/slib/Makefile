@@ -24,6 +24,7 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
+	${RM} -f ${LOCALBASE}/share/guile/slib
 	${LN} -sf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
 	${LOCALBASE}/bin/guile -c \
 		"(use-modules (ice-9 slib)) (require 'new-catalog)"
