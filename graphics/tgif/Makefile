@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.42
+PORTVERSION=	4.1.43
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \
@@ -20,6 +20,7 @@ COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 MAN1=		tgif.1
 TGIFDOC=	${PREFIX}/share/doc/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
@@ -30,6 +31,9 @@ post-extract:
 		${RM} -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
 		${CP} ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
 		      ${WRKDIR}/${DISTNAME}/Tgif.tmpl
+post-patch:
+		@${REINPLACE_CMD} -e 's|.TH tgif n|.TH tgif 1L|' \
+			${WRKSRC}/tgif.man
 post-install:
 		${MKDIR} ${TGIFDOC}
 		(cd ${WRKSRC} ;\
