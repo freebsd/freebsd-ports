@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	gnomba
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.2
 CATEGORIES=	net gnome
-MASTER_SITES=	http://gnomba.darkcorner.net/tars/ \
-		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnomba
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMELIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		gnomba.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

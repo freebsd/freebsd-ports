@@ -4,8 +4,7 @@ with smb.  The workgroups, machines and share are shown in a tree-view.
 For each machine you can then view the list of shares, and mount, unmount
 or browse them. 
 
-WWW:  http://gnomba.darkcorner.net/
-
+WWW:  http://gnomba.sourceforge.net/
 
 Dmitry Sivachenko,
 dima@Chg.RU
