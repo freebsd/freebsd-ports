@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
@@ -17,10 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
-		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
+		msgfmt-new:${PORTS}/devel/gettext-devel
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-BROKEN=		"b0rken with Mozilla-0.9.1"
+#BROKEN=		"b0rken with Mozilla-0.9.1"
 
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
@@ -34,9 +35,12 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -D_REENTRANT ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+
+MAN1=		galeon.1
 
 post-extract:
 .if !defined(WITH_FULL_MOZILLA)
@@ -49,11 +53,14 @@ post-extract:
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|-liconv|-lgiconv|g ; s|iconv\.h|giconv.h|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|iconv\.h|giconv.h|g'
 
 post-configure:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
