@@ -49,7 +49,7 @@
     SUBDIR += cfengine2
     SUBDIR += checkservice
     SUBDIR += chgrep
-    SUBDIR += clean_
+    SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
     SUBDIR += cmdwatch
