@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/
 
 MAINTAINER=	j.kossen@home.nl
 
+BROKEN=		"Does not build"
+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 MAN1=		cplay.1

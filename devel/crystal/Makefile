@@ -13,6 +13,8 @@ DISTNAME=	cs94_002
 
 MAINTAINER=	mkm@ieee.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
