@@ -1,0 +1,32 @@
+include/xunicode/gb2ucs.h
+include/xunicode/jis2ucs.h
+include/xunicode/ksc2ucs.h
+include/xunicode/xuarray.h
+include/xunicode/xucodec.h
+include/xunicode/xucstring.h
+include/xunicode/xudict.h
+include/xunicode/xueuccncodec.h
+include/xunicode/xueucjpcodec.h
+include/xunicode/xueuckrcodec.h
+include/xunicode/xufont.h
+include/xunicode/xufontmgr.h
+include/xunicode/xufontname.h
+include/xunicode/xufontset.h
+include/xunicode/xufontstruct.h
+include/xunicode/xugbcodec.h
+include/xunicode/xuic.h
+include/xunicode/xujiscodec.h
+include/xunicode/xuksccodec.h
+include/xunicode/xulat1codec.h
+include/xunicode/xulib.h
+include/xunicode/xuobject.h
+include/xunicode/xuptrdict.h
+include/xunicode/xustrarray.h
+include/xunicode/xustrdict.h
+include/xunicode/xustring.h
+include/xunicode/xuwindow.h
+@dirrm include/xunicode
+lib/libxunicode.a
+share/doc/xunicode/ja/README.utf8
+@dirrm share/doc/xunicode/ja
+@dirrm share/doc/xunicode
