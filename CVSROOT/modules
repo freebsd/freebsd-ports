@@ -3709,6 +3709,7 @@ ml		ports/mail/ml
 mlan		ports/comms/mlan
 mlclock		ports/x11-clocks/mlclock
 mld6query	src/usr.sbin/mld6query
+mlterm		ports/x11/mlterm
 mlvwm		ports/x11-wm/mlvwm
 mlx		src/sys/dev/mlx
 mlxcontrol	src/usr.sbin/mlxcontrol
