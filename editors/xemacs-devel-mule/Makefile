@@ -44,27 +44,27 @@ USE_XPM=	yes
 .endif
 
 XEMACS_REL=	21.5
-XEMACS_VER=	${XEMACS_REL}-b19
-XEMACS_ARCH=	${CONFIGURE_TARGET}
+XEMACS_VER=	${XEMACS_REL}-b20
+XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOCONF_VER=213
-CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
+USE_AUTOCONF_VER=259
+CONFIGURE_TARGET=--build=${XEMACS_ARCH}
 
-CONFIGURE_ARGS=	--with-mule \
+CONFIGURE_ARGS=	--enable-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
-		--site-libraries='${SITE_LIBRARIES}' \
-		--site-includes='${SITE_INCLUDES}' \
-		--with-sound=native \
+		--with-site-libraries='${SITE_LIBRARIES}' \
+		--with-site-includes='${SITE_INCLUDES}' \
+		--enable-sound=native \
 		--with-site-lisp \
 		--with-pop \
 		--with-xfs \
 		--with-ldap=no \
-		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
-		--with-clash-detection \
-		--with-database=berkdb \
+		--with-infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
+		--enable-clash-detection \
+		--enable-database=berkdb \
 		${WITH_XIM} \
 		${WITH_MENUBARS} ${WITH_SCROLLBARS} \
 		${WITH_DIALOGS} ${WITH_WIDGETS}
@@ -82,11 +82,16 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 .endif
 
 .if !defined(DEBUG)
-CONFIGURE_ARGS+=--debug=no --error-checking=none
+CONFIGURE_ARGS+=--enable-debug=no --enable-error-checking=no
 .endif
 
 .if defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
+WITH_XIM=
+WITH_MENUBARS=	--enable-menubars=gtk
+WITH_SCROLLBARS=--enable-scrollbars=gtk
+WITH_DIALOGS=	--enable-dialogs=gtk
+WITH_WIDGETS=	--enable-widgets=gtk
 USE_GNOME+=	gtk12
 .endif
 
@@ -98,7 +103,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 # Undump and malloc do not behave on amd64 and sparc64
 .if (${ARCH} == "amd64") || (${ARCH} == "sparc64")
-CONFIGURE_ARGS+=--with-system-malloc --pdump
+CONFIGURE_ARGS+=--with-system-malloc --enable-pdump
 .endif
 
 pre-fetch:
@@ -106,7 +111,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
 	@${ECHO_MSG} "do not want to use X11."
-CONFIGURE_ARGS+=	--without-x11
+CONFIGURE_ARGS+=	--with-x11=no
 .else
 .if !defined(WITH_GTK)
 	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WITH_GTK and recompile."
@@ -124,23 +129,23 @@ USE_MOTIF=	yes
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
-WITH_DIALOGS=	--with-dialogs=athena
+WITH_DIALOGS?=	--enable-dialogs=athena
 .else
-WITH_DIALOGS=	--with-dialogs=motif
+WITH_DIALOGS?=	--enable-dialogs=motif
 .endif
 
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=--with-offix=no
 .endif
-WITH_MENUBARS?=	--with-menubars=lucid
-WITH_SCROLLBARS?=--with-scrollbars=motif
-WITH_WIDGETS?=	--with-widgets=motif
+WITH_MENUBARS?=	--enable-menubars=lucid
+WITH_SCROLLBARS?=--enable-scrollbars=motif
+WITH_WIDGETS?=	--enable-widgets=motif
 .endif
 WITH_XIM?=	--with-xim=xlib
-WITH_MENUBARS?=	--with-menubars=athena
-WITH_SCROLLBARS?=--with-scrollbars=athena
-WITH_DIALOGS?=	--with-dialogs=athena
-WITH_WIDGETS?=	--with-widgets=athena
+WITH_MENUBARS?=	--enable-menubars=athena
+WITH_SCROLLBARS?=--enable-scrollbars=athena
+WITH_DIALOGS?=	--enable-dialogs=athena
+WITH_WIDGETS?=	--enable-widgets=athena
 
 .if defined(WITH_XAW3D)
 CONFIGURE_ARGS+=--with-athena=3d
