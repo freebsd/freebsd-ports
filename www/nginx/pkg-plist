@@ -18,4 +18,7 @@ etc/nginx/nginx.conf-dist
 %%STOP_BEFORE_REMOVE%%@unexec %D/etc/rc.d/nginx.sh stop || true
 sbin/nginx
 etc/rc.d/nginx.sh
+@exec [ -d %%TMPDIR%% ] || mkdir -p %%TMPDIR%%
+@exec chown %%WWWOWN%%:%%WWWGRP%% %%TMPDIR%%
+@unexec rm -fr %%TMPDIR%%
 %%START_AFTER_INSTALL%%@exec %D/etc/rc.d/nginx.sh start
