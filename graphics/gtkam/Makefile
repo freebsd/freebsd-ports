@@ -28,12 +28,12 @@ MAN1=		gtkam.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libgimp-1.3.so)
+.if exists(${X11BASE}/lib/libgimp-2.0.so)
 WITH_GIMP=	yes
 .endif
 
 .if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp-1.3:${PORTSDIR}/graphics/gimp-devel
+LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-devel
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS+=	--without-gimp
@@ -59,7 +59,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \
+		 s|gimpui-1.3|gimpui-2.0|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|images/gtkam|gtkam/images|g'
 
