@@ -3,14 +3,14 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.8 1998/10/12 18:36:24 jseger Exp $
+# $Id: Makefile,v 1.9 1998/10/20 01:34:15 steve Exp $
 #
 
 DISTNAME=	dlmalloc
-PKGNAME=	dlmalloc-2.6.4
+PKGNAME=	dlmalloc-2.6.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
-DISTFILES=	malloc-2.6.4.c
+DISTFILES=	malloc-2.6.5.c
 
 MAINTAINER=	roberto@FreeBSD.ORG
 
