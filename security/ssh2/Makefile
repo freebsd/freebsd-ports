@@ -40,7 +40,7 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://mirror.pa.msu.edu/ssh/
 DISTNAME=	ssh-${PORTVERSION}
 
-MAINTAINER=	marius@alchemy.franken.de
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Secure shell client and server for V.2 SSH protocol
 
 .if !defined(WITHOUT_X11)

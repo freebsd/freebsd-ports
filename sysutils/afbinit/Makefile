@@ -17,7 +17,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=		${PORTNAME}_${PORTVERSION}-1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		marius@alchemy.franken.de
+MAINTAINER=		marius@FreeBSD.org
 COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
 ONLY_FOR_ARCHS=		sparc64
