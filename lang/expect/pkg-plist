@@ -24,9 +24,9 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect5.31/pkgIndex.tcl
-lib/expect5.31/libexpect531.a
-lib/libexpect531.a
-lib/libexpect531.so
-lib/libexpect531.so.1
-@dirrm lib/expect5.31
+lib/expect5.32/pkgIndex.tcl
+lib/expect5.32/libexpect532.a
+lib/libexpect532.a
+lib/libexpect532.so
+lib/libexpect532.so.1
+@dirrm lib/expect5.32
