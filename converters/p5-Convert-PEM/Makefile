@@ -16,16 +16,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Read/write access to ASN.1-encoded PEM files with optional encryption
 
-PERLBASE=	${SITE_PERL}
-BUILD_DEPENDS=	${PERLBASE}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${PERLBASE}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
-		${PERLBASE}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${PERLBASE}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
+		${SITE_PERL}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Convert::PEM.3 Convert::PEM::CBC.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Convert::PEM.3 Convert::PEM::CBC.3 Convert::PEM::ErrorHandler.3
 
 .include <bsd.port.mk>
