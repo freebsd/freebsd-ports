@@ -7583,6 +7583,7 @@ reportmagic	ports/www/reportmagic
 resid		ports/audio/resid
 resin2		ports/www/resin2
 resin3		ports/www/resin3
+resourceext	ports/x11/resourceext
 resume		ports/textproc/resume
 retawq		ports/www/retawq
 rexima		ports/audio/rexima
