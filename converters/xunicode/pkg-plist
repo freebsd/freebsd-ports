@@ -1,9 +1,0 @@
-include/xunicode/big5.h
-include/xunicode/gb2312.h
-include/xunicode/iso8859.h
-include/xunicode/jis0208.h
-include/xunicode/koi8r.h
-include/xunicode/ksc5601.h
-include/xunicode/xunicode.c
-include/xunicode/xunicode.h
-@dirrm include/xunicode
