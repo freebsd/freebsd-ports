@@ -22,7 +22,7 @@ CONFIGURE_ARGS+=	\
 			--enable-transparency --enable-background-image \
 			--enable-fading --enable-utmp --enable-wtmp
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--with-png
