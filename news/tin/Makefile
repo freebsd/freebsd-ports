@@ -4,11 +4,10 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.44 1997/09/29 21:33:56 ache Exp $
+# $Id: Makefile,v 1.45 1997/10/11 23:08:09 ache Exp $
 #
 
-DISTNAME=       tin1.3-unoff-BETA-970930
-PKGNAME=        tin-1.3.970930
+DISTNAME=       tinpre-1.4-971102
 CATEGORIES=	news
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
@@ -17,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ache@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/${DISTNAME:S/1.3-unoff-BETA//}
+WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
