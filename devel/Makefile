@@ -653,6 +653,7 @@
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-GTop
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
