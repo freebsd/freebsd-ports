@@ -41,7 +41,6 @@ cos-*			ports/java/cos		Special conditions apply for
 						commercial use.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
 cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
-cscope			ports/devel/cscope	Redistribution license from Lucent Technologies required
 crack-5.0		ports/security/crack	Crypto; export-controlled
 cs-0.3			ports/devel/cs		License required for
 						redistribution on CDROM.
@@ -92,6 +91,7 @@ john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
 jdk*-doc		ports/lang/jdk-doc	under license and export control
 jdk-tutorial-*		ports/lang/jdk-tutorial	This software is under license and export control.
+JRE-*			ports/lang/jre		Put copyright on packaging!
 kaffe-*			ports/lang/kaffe	Restrictive copyright
 librc4-*		ports/security/librc4	Crypto; export-controlled
 lsh*			ports/security/lsh	Crypto; export-controlled
