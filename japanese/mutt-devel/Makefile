@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja${JP_VERSION}${EXTRACT_SUFX} \
-		manual_ja-${PRE_VERSION}i-1${EXTRACT_SUFX}
+		manual_ja-${PRE_VERSION}i-2${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
 PRE_VERSION=	1.2
-VERSION=	1.3.11
+VERSION=	1.3.13
 JP_VERSION=	0
 
 DIST_SUBDIR=	mutt
