@@ -13,7 +13,7 @@ MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
 		freebsd-jdk122-patches-${JDK_BETALEVEL}.tar.gz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
