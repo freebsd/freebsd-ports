@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ezfm
-# Version required:			0.1
+# Version required:			0.4
 # Date created:				27 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/10/15 10:53:27 jseger Exp $
+# $Id: Makefile,v 1.5 1998/10/20 01:25:55 steve Exp $
 #
 
-DISTNAME=	EZFM-0.1-src
-PKGNAME=	ezfm-0.1
+DISTNAME=	EZFM-0.4-src
+PKGNAME=	ezfm-0.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL
 
-WRKSRC=		${WRKDIR}/EZFM-0.1
+WRKSRC=		${WRKDIR}/EZFM-0.4
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
@@ -32,6 +32,8 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/ezfm/ezfmIcons
 	@ cd ${WRKSRC}/ezfmIcons; tar -cf - . | (cd ${PREFIX}/share/ezfm/ezfmIcons; tar -xf - )
 	@ ${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/ezfm
 	@ ${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/ezfm
