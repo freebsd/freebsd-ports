@@ -67,4 +67,6 @@
 %%EMACS_PACKAGESDIR%%/lisp/apel/richtext.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/static.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/static.elc
+%%EMACS_PACKAGESDIR%%/lisp/apel/timezone.el
+%%EMACS_PACKAGESDIR%%/lisp/apel/timezone.elc
 @dirrm %%EMACS_PACKAGESDIR%%/lisp/apel
