@@ -17,4 +17,10 @@ MAN8=		lmtp2nntp.8
 PLIST_FILES=	sbin/lmtp2nntp
 HAS_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha and amd64"
+.endif
+
+.include <bsd.port.post.mk>
