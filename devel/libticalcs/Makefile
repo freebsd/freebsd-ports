@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
 		tifiles.5:${PORTSDIR}/devel/libtifiles \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
