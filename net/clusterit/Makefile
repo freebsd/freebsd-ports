@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.garbled.net/download/ \
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_XLIB=	yes
-
 MAN1=		barrier.1 barrierd.1 dsh.1 jsh.1 jsd.1 \
 		clustersed.1 run.1 seq.1 dshbak.1 pcp.1 pdf.1 prm.1
 
@@ -28,6 +26,9 @@ USE_XLIB=	yes
 
 post-patch:
 	@find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#g'
+.for file in command.c rvt.c screen.c
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/rvt/${file}
+.endfor
 .if defined(WITHOUT_X11)
 	@${PERL} -pi -e 's#rvt dvt##g' ${WRKSRC}/Makefile
 .endif
