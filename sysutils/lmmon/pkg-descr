@@ -1,4 +1,4 @@
-lmmon v0.50
+lmmon
 
 This program displays information gathered from LM78/79 chipsets
 onboard many motherboard.  Displayed values include fan speeds,
