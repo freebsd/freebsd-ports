@@ -1,0 +1,10 @@
+--- ./object/util.h.orig	Fri Aug 18 17:28:56 2000
++++ ./object/util.h	Sat Jan 26 02:16:25 2002
+@@ -57,7 +57,6 @@
+ void   Fromhexstr(char * , char *);
+ void   Tohexstr(char *input, char *output);
+ void   Hexall(char *input, char *output);
+-char   *strcasestr(char *inputline, char *match);
+ char   *skip_whitespace(char *);
+ 
+ /* 

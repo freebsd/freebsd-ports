@@ -1,0 +1,31 @@
+--- ./object/util.c.orig	Tue Dec 19 17:19:20 2000
++++ ./object/util.c	Sat Jan 26 02:16:51 2002
+@@ -584,28 +584,6 @@
+ 
+ 
+ /*
+- * String insensitive strstr
+- */
+-
+-char *
+-strcasestr(char *inputline, char *match)
+-{
+-     int matchlen=0;
+-     int i, inlen;
+-
+-     matchlen = strlen(match);
+-     inlen = strlen(inputline);
+-
+-     for(i=0; i<inlen; i++) {
+-	  if (strncasecmp(inputline+i, match, matchlen)==0)
+-	       return(inputline+i);
+-     }
+-
+-     return(NULL);
+-}
+-
+-
+-/*
+  * Iterate over a string, return a pointer to the next character
+  * that isn't whitespace.
+  */
