@@ -8,7 +8,7 @@
 PORTNAME=	twinlib
 PORTVERSION=	0.2.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://rio.xdev.org/twinlib/
+MASTER_SITES=	http://nroard.free.fr/twinlib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
