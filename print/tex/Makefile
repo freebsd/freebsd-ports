@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1995/04/17 20:31:35 asami Exp $
+# $Id: Makefile,v 1.16 1995/04/21 00:21:27 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -43,6 +43,9 @@ modes.mf:
 	@${FTPGET} ${CTAN} /tex-archive/fonts/modes modes.mf ${DISTDIR}/$@
 tex_base.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros plain/base.tar.gz ${DISTDIR}/$@
+
+pre-fetch:
+	@chmod +x ${FTPGET}
 
 do-build: 
 	@(cd ${WRKSRC}/web2c; make triptrap)
