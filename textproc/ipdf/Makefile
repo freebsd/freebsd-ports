@@ -14,7 +14,7 @@ MASTER_SITES=	http://hoopajoo.net/static/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates indexed pdf documents from text files
 
-LIB_DEPENDS=	pdf.5:${PORTSDIR}/print/pdflib \
+LIB_DEPENDS=	pdf.6:${PORTSDIR}/print/pdflib \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

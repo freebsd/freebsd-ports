@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--without-png
 .endif
 
 .if !defined(WITHOUT_PDF)
-LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-pdf
