@@ -1,0 +1,64 @@
+--- digikam/digikam/digikamfirstrun.cpp.orig	Wed Jan  5 10:40:08 2005
++++ digikam/digikam/digikamfirstrun.cpp	Wed Jan  5 10:40:39 2005
+@@ -20,15 +20,6 @@
+  * 
+  * ============================================================ */
+ 
+-// C Ansi includes.
+- 
+-extern "C"
+-{
+-#include <sys/types.h>
+-#include <sys/stat.h>
+-#include <unistd.h>
+-}
+-
+ // C++ Includes.
+  
+ #include <iostream>
+@@ -65,6 +56,15 @@
+ #include "firstrunUI.h"
+ 
+ #include <iostream>
++// C Ansi includes.
++ 
++extern "C"
++{
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <unistd.h>
++}
++
+ using namespace std;
+ 
+ DigikamFirstRun::DigikamFirstRun( KConfig* config,
+--- digikam/utilities/imageeditor/imlibinterface.cpp.orig	Wed Jan  5 10:45:12 2005
++++ digikam/utilities/imageeditor/imlibinterface.cpp	Wed Jan  5 10:45:29 2005
+@@ -22,13 +22,6 @@
+ 
+ #define PI 3.14159265
+  
+-// Lib Tiff includes.
+-
+-extern "C" 
+-{
+-#include <tiffio.h>
+-}
+- 
+ // C++ includes.
+ 
+ #include <cmath>
+@@ -59,6 +52,13 @@
+ #include "albumsettings.h"
+ #include "imlibinterface.h"
+ 
++// Lib Tiff includes.
++
++extern "C" 
++{
++#include <tiffio.h>
++}
++ 
+ namespace Digikam
+ {
+ 
