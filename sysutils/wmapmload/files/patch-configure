@@ -1,0 +1,11 @@
+--- configure.orig	Sat Sep 21 02:14:44 2002
++++ configure	Sat Sep 21 02:14:52 2002
+@@ -4051,8 +4051,6 @@
+   OS=freebsd
+   ignore_wired=yes
+   ignore_cached=yes
+-  LIBS="$LIBS -lkvm"
+-  SETGID_FLAGS="-g kmem -m 2755 -o root"
+   ;;
+ openbsd*)
+   OS=openbsd
