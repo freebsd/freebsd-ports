@@ -230,6 +230,7 @@
     SUBDIR += koffice-i18n-ven
     SUBDIR += koffice-i18n-xh
     SUBDIR += koffice-i18n-zu
+    SUBDIR += konq-plugins
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += kwordquiz
