@@ -10,9 +10,9 @@ usr/X11R6/lib/libglut.so.%%GLUT_MAJOR_VER%%.%%GLUT_MINOR_VER%%.0
 usr/X11R6/lib/libglut.so.%%GLUT_MAJOR_VER%%
 usr/X11R6/lib/libglut.so
 usr/X11R6/lib/libglut.la
-usr/X11R6/lib/libMesaGL.so.%%GL_MAJOR_VER%%
+usr/X11R6/lib/libMesaGL.so.%%LIBMESA_MAJOR_VER%%
 usr/X11R6/lib/libMesaGL.so
-usr/X11R6/lib/libMesaGLU.so.%%GL_MAJOR_VER%%
+usr/X11R6/lib/libMesaGLU.so.%%LIBMESA_MAJOR_VER%%
 usr/X11R6/lib/libMesaGLU.so
 etc/mesa.conf
 usr/X11R6/include/GL/gl.h
