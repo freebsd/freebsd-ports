@@ -8,9 +8,8 @@
 PORTNAME=	xmysqladmin
 PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.mysql.com/Downloads/Contrib/ \
-		http://www.mysql.net/Downloads/Contrib/ \
-		ftp://ftp.wipol.uni-bonn.de/pub/mirror/MySQL/Contrib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mirrors/mysql/Downloads/Contrib
 
 MAINTAINER=	dirk@FreeBSD.org
 
