@@ -1,0 +1,7 @@
+  Net::Jabber is a convenient tool to use for any perl scripts
+  that would like to utilize the Jabber Instant Messaging 
+  protocol.  While not a client in and of itself, it provides 
+  all of the necessary back-end functions to make a CGI client 
+  or command-line perl client feasible and easy to use.  
+  Net::Jabber is a wrapper around the rest of the official
+  Net::Jabber::xxxxxx packages.  
