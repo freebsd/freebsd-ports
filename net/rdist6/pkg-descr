@@ -1,5 +1,6 @@
-			  Rdist Version 6.1
-			     May 2, 1994
+
+			 Rdist Version 6.1.2
+			  February 15, 1996
 
 			    Michael Cooper
 		    University Computing Services
@@ -17,6 +18,10 @@ This version of rdist is not directly compatible with rdist
 distributed with 4.3BSD and subsequent vendor releases, but does
 indirectly provide full backward compatibility.
 
+The current official version of rdist is available via anonymous ftp
+on usc.edu under /pub/rdist.  The current version is always
+retrievable as file "/pub/rdist/rdist.tar.gz".
+
 			   CHANGES/FEATURES
 
 This version of rdist does not need to be setuid "root" at all.  Rdist
@@ -33,27 +38,17 @@ completely configure and compile itself for a number of platforms.
 Users don't need to worry about modifying any files to compile on a
 supported platform.
 
+See the ChangeLog file for the real details.  The end of that file
+contains the major new features compared to rdist classic.
+
 A paper titled "Overhauling Rdist for the '90s" from USENIX LISA VI
 is available for anonymous ftp on usc.edu as "/pub/rdist/overhaul.ps.gz".
 
 			      PLATFORMS
 
-This version of rdist has been ported to most major and a number of
-not so major platforms.  The list below is only a partial list.
-The complete list of supported platforms can be found by looking
-at all the config/os-*.h files.
-
-	MACHINE TYPE	OPERATING SYSTEM
-	---------------	----------------------------------
-	DEC MIPS	Ultrix 4.2
-	DG AviiON	DG/UX 5.4.x
-	HP 9000/300	HP/UX 7.05 (HP cc)
-	HP 9000/400	HP/UX 7.05 (HP cc)
-	HP 9000/700	HP/UX 8.07 (HP cc, GCC 2.3.1)
-	IBM RS6000	AIX 3.2
-	NeXTStep	Mach 3.1
-	Sun-3		SunOS 4.1.1
-	Sun-4/SPARC	SunOS 4.1.3, SunOS 5.3 (Solaris 2.3)
+This version of rdist has been ported to most major, and a number of
+not so major, platforms.  The complete list of supported platforms can
+be found by looking at all the config/os-*.h files.
 
 
 			    COMPATIBILITY
@@ -77,8 +72,8 @@ running the old rdist, then it must run the old rdist program
 (/usr/old/rdist or /usr/ucb/oldrdist).
 
 [[ for FreeBSD; /usr/bin/rdist is the "old" rdist, and /usr/local/bin/
-[[ is the location of the "new" rdist and rdistd.
-
+[[ is the location of the "new" rdist6 and rdistd.
+ 
 The definition _PATH_OLDRDIST in "config/config.h" controls the
 location of the old rdist.  If this is not defined, or the defined
 program does not exist at runtime, then rdist will print an error when

@@ -1,25 +1,40 @@
-*** Makefile.local.orig	Fri Feb 18 08:43:55 1994
---- Makefile.local	Mon Aug 21 02:38:50 1995
+*** Makefile.local.dist	Tue Feb  6 02:50:27 1996
+--- Makefile.local	Fri May 17 16:45:19 1996
 ***************
-*** 9,16 ****
+*** 8,14 ****
+  # BIN_DIR variable, you would uncomment the following line
   # or add your own line.
   #
 ! #BIN_DIR	= /usr/bin
   
   #
-! # Add any local definetions you want pass to the compiler to DEFS_LOCAL
-  # below.  This includes those items found in "config/config.h".
-  #
---- 9,20 ----
+  # Add any local definitions you want pass to the compiler to DEFS_LOCAL
+--- 8,16 ----
+  # BIN_DIR variable, you would uncomment the following line
   # or add your own line.
   #
-! BIN_DIR	=	/usr/local/bin
-! OPT =		-O -s
-! MAN_1_DIR =	/usr/local/man/man1
-! MAN_8_DIR =	/usr/local/man/man8
-! CLIENT =	rdist6
+! BIN_DIR       =       /usr/local/bin
+! OPT =         -O -s
+! CLIENT =      rdist6
   
   #
-! # Add any local definitions you want pass to the compiler to DEFS_LOCAL
-  # below.  This includes those items found in "config/config.h".
+  # Add any local definitions you want pass to the compiler to DEFS_LOCAL
+***************
+*** 45,52 ****
   #
+  # Site specific Man Page configuration.
+  #
+! #MAN_1_DIR	= /usr/local/man/man1
+! #MAN_8_DIR	= /usr/local/man/man8
+! #MAN_OWNER	= bin
+! #MAN_GROUP	= bin
+  #MAN_MODE	= 644
+--- 47,54 ----
+  #
+  # Site specific Man Page configuration.
+  #
+! MAN_1_DIR	= /usr/local/man/man1
+! MAN_8_DIR	= /usr/local/man/man8
+! MAN_OWNER	= bin
+! MAN_GROUP	= bin
+  #MAN_MODE	= 644

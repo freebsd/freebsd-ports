@@ -1,0 +1,9 @@
+*** config/os-freebsd2.h.dist	Fri Feb 16 02:53:50 1996
+--- config/os-freebsd2.h	Fri May 17 16:40:31 1996
+***************
+*** 157,159 ****
+--- 157,160 ----
+   * that which appears in "include/paths.h".
+   */
+  #define _PATH_REMSH	"/usr/bin/rsh"			/**/
++ #define _PATH_OLDRDIST	"/usr/bin/rdist"	/* Enable compat */
