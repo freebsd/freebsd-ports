@@ -31,6 +31,7 @@ USE_MESA=	yes
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"Redistribution not allowed"
+NO_PACKAGE=	"Not packagable."
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
