@@ -1591,7 +1591,6 @@ find		src/usr.bin/find
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
 finder		ports/x11/finder
-findlib		ports/devel/findlib
 findutils	ports/misc/findutils
 fine		ports/editors/fine
 finger		src/usr.bin/finger
@@ -4633,6 +4632,7 @@ objprelink	ports/devel/objprelink
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
+ocaml-findlib	ports/devel/ocaml-findlib
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave
