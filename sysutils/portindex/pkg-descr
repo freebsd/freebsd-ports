@@ -19,3 +19,5 @@ Features
 3. Unlike portsdb output database is in valid btree format
 
 This package also contains FreeBSD port of 'package history'.
+
+WWW: http://home.tiscali.cz/~cz210552/bsdportsutils.html
