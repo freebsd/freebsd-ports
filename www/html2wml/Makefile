@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	html2wml
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@FreeBSD.org
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
@@ -29,5 +29,23 @@ do-build:
 
 checkconfig:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} default
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/html2wml/t/samples
+.for D in ARTISTIC COPYING INSTALL NEWS NOTES README TODO ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/$D ${PREFIX}/share/doc/html2wml
+.endfor
+.for D in html pdf pod txt
+	${INSTALL_DATA} ${WRKSRC}/doc/readme.$D ${PREFIX}/share/doc/html2wml
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/t/form.html \
+		${PREFIX}/share/doc/html2wml/t
+.for D in inc_para.wml inc_prev.wml include.html links.html mix1.html \
+	mix2.html struct.html xtreme.html
+	${INSTALL_DATA} ${WRKSRC}/t/samples/$D \
+		${PREFIX}/share/doc/html2wml/t/samples
+.endfor
+.endif
 
 .include <bsd.port.mk>
