@@ -32,6 +32,12 @@ DOCS=	apache2mrtg.html index.shtml mailto.js mod_watch.html style.css
 DOCS_HTMLIMAGES=	apache-header-476-62.png mrpixel.gif mrtg-bar.png \
 			sun-logo.jpg wave1.jpg
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${PERL} -pi -e "s@^APXS.*@@" ${WRKSRC}/Makefile
 
@@ -54,4 +60,4 @@ do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
