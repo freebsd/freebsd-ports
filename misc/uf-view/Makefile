@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 MAINTAINER=	mcgee@wam.umd.edu
 COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
 
+BROKEN=		"Does not compile"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop
