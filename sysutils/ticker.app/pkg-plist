@@ -1,0 +1,4 @@
+bin/ticker.app
+%%PORTDOCS%%share/doc/ticker.app/ChangeLog
+%%PORTDOCS%%share/doc/ticker.app/README
+@dirrm share/doc/ticker.app

@@ -160,6 +160,7 @@
     SUBDIR += syslog-ng
     SUBDIR += tcplist
     SUBDIR += tdir
+    SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += truncate
     SUBDIR += tua
