@@ -32,6 +32,7 @@ share/doc/py-curl/tests/test_stringio.py
 share/doc/py-curl/tests/test_xmlrpc.py
 share/doc/py-curl/tests/util.py
 share/examples/py-curl/basicfirst.py
+share/examples/py-curl/file_upload.py
 share/examples/py-curl/linksys.py
 share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
