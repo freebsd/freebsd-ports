@@ -1,0 +1,20 @@
+--- milter-sender.c.bak	Wed Oct 15 19:03:42 2003
++++ milter-sender.c	Tue Oct 21 21:13:24 2003
+@@ -15,6 +15,8 @@
+  *	)dnl
+  */
+ 
++#include "milter-sender.h"
++
+ #undef NDEBUG
+ 
+ #ifndef RUN_AS_USER
+@@ -157,8 +159,6 @@
+ /***********************************************************************
+  *** No configuration below this point.
+  ***********************************************************************/
+-
+-#include "milter-sender.h"
+ 
+ /* Re-assert this macro just in case. May cause a compiler warning. */
+ #define _REENTRANT	1
