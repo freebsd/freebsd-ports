@@ -14,6 +14,8 @@ DISTNAME=	logsentry-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
+BROKEN=		"Changes permissions on /tmp to mode 0700"
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/MESSAGE
