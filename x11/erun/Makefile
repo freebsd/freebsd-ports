@@ -19,6 +19,15 @@ LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GNOME=	imlib
+
+CPPFLAGS=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${X11BASE}/lib -lepplet ${PTHREAD_LIBS}
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \
+		${PORTNAME}.c ${LDFLAGS}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.epplet ${PREFIX}/bin
 
 .include <bsd.port.mk>
