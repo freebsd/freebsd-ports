@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Net/Amazon/Request/ASIN.pm
 %%SITE_PERL%%/Net/Amazon/Request/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Request/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Request/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Request/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Request/Manufacturer.pm
 %%SITE_PERL%%/Net/Amazon/Request/Power.pm
@@ -24,6 +25,7 @@
 %%SITE_PERL%%/Net/Amazon/Response/ASIN.pm
 %%SITE_PERL%%/Net/Amazon/Response/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Response/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Response/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Response/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Response/Manufacturer.pm
 %%SITE_PERL%%/Net/Amazon/Response/Power.pm
