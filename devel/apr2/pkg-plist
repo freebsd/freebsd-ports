@@ -63,6 +63,7 @@ include/apr-0/apr_xml.h
 include/apr-0/apu.h
 include/apr-0/apu_compat.h
 include/apr-0/apu_version.h
+include/apr-0/apu_want.h
 lib/apr.exp
 lib/aprutil.exp
 lib/libapr-0.a

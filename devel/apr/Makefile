@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	apr
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.apache.org/dist/apr/
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
-MAINTAINER=	rodrigc@attbi.com
+MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
 
 LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
@@ -53,11 +53,11 @@ do-configure:
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
 do-build:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
 
 .include <bsd.port.mk>
