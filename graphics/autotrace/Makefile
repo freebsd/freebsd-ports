@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	autotrace
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
@@ -29,9 +28,15 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 USE_XLIB=	yes
 
-pre-install:
-	@(cd ${WRKSRC} ; perl -p -i.bak -e s/\\@OBJEXT\\@/o/ Makefile)	
+MAN1=		autotrace.1
+
+pre-patch:
+	@${PERL} -pi.orig -e \
+		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
