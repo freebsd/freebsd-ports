@@ -751,7 +751,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>gpdf</name>
 	<name>cups-base</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.1.22.0</lt></range>
       </package>
       <package>
 	<name>xpdf</name>
