@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.29 1999/07/24 02:26:21 cpiazza Exp $
+# $Id: Makefile,v 1.30 1999/07/24 15:33:04 steve Exp $
 #
 
 DISTNAME=	mozilla-source-M8
@@ -20,9 +20,9 @@ LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400004
-BUILD_DEPENDS+=	eg++:${PORTSDIR}/lang/egcs
-CC=		egcc
-CXX=		eg++
+BUILD_DEPENDS+=	g++295:${PORTSDIR}/lang/egcs
+CC=		gcc295
+CXX=		g++295
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config

@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.21 1999/06/04 13:29:21 ejc Exp $
+# $Id: Makefile,v 1.22 1999/07/12 07:18:36 asami Exp $
 #
 
 DISTNAME=	OB-3.1.3
@@ -20,13 +20,13 @@ LIBSTDC=	/usr/lib/libstdc++.a
 CONFIGURE_ENV=	CXX=c++ CXXFLAGS="-O -pipe"
 .else
 .if ${PORTOBJFORMAT} == "elf"
-LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsdelf${OSREL}/egcs-2.91.62/libstdc++.a
+LIBSTDC=	${PREFIX}/lib/gcc-lib/${ARCH}-portbld-freebsd${OSREL}/2.95/libstdc++.a
 .else
-LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/egcs-2.91.62/libstdc++.a
+LIBSTDC=	${PREFIX}/lib/gcc-lib/${ARCH}-portbld-freebsdaout${OSREL}/2.95/libstdc++.a
 .endif
 
-BUILD_DEPENDS=  eg++:${PORTSDIR}/lang/egcs
-CONFIGURE_ENV=	CXX=eg++ CXXFLAGS="-O -pipe"
+BUILD_DEPENDS=  g++295:${PORTSDIR}/lang/egcs
+CONFIGURE_ENV=	CXX=g++295 CXXFLAGS="-O -pipe"
 .endif
 
 USE_XLIB=	yes
