@@ -6,6 +6,7 @@
     SUBDIR += antiword
     SUBDIR += ascii2pdf
     SUBDIR += aspell
+    SUBDIR += bibtex2html
     SUBDIR += br-ispell
     SUBDIR += british-ispell
     SUBDIR += c2html

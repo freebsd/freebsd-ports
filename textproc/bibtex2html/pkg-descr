@@ -1,0 +1,16 @@
+bibtex2html is a collection of tools for translating from BibTeX to HTML.
+They allow to produce, from a set of bibliography files in BibTeX format,
+a bibliography in HTML format. Here are some features:
+
+ o Handle any BibTeX style (even those producing multiple bibliographies);
+ o Use additional fields like abstract, url, ps, etc. to insert web links;
+ o Crossrefs are also replaced by links;
+ o Sort by dates or authors, in increasing or decreasing order;
+ o Read simple macros in TeX or LaTeX files;
+ o Show syntax errors in BibTeX files;
+ o Extract from one or several BibTeX files the set of entries satisfying a
+   given criterion.
+
+WWW: http://www.lri.fr/~filliatr/bibtex2html/
+
+Gerald Pfeifer <pfeifer@dbai.tuwien.ac.at>
