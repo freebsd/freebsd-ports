@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -36,7 +37,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 
 .if defined(ENABLE_SUIDPERL)
-CONFIGURE_ARGS+=	-Dd_dosuid=true
+CONFIGURE_ARGS+=	-Dd_dosuid=define
 PLIST_SUB+=		ENABLE_SUIDPERL=""
 .else
 CONFIGURE_ARGS+=	-Ud_dosuid
