@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
+STRIP=
 .endif
 
 pre-configure:
