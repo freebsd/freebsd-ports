@@ -18,10 +18,8 @@ DISTFILES=	${PORTNAME}-sound-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	mva121@gmx.net
 
-BUILD_DEPENDS=	gtk-query-immodules-2.0:${PORTSDIR}/x11-toolkits/gtk20:install \
-		xml2-config:${PORTSDIR}/textproc/libxml2:install
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2:install \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20:install
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 .if defined(WITH_SOUND)
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
