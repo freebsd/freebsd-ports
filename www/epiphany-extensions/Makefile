@@ -66,6 +66,12 @@ CONFIGURE_ARGS+=	--enable-opensp=yes
 CONFIGURE_ARGS+=	--disable-opensp
 .endif
 
+.if ${OSVERSION} < 500000
+.if ${MOZILLA}=="mozilla-devel"
+USE_GCC=	3.4
+.endif
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " By default epiphany-extensions builds with www/mozilla support, but you can"
