@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache+ipv6
-PORTVERSION=	1.3.26
-PORTREVISION=	1
+PORTVERSION=	1.3.27
 CATEGORIES=	www ipv6
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -27,7 +26,7 @@ MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	http://motoyuki.bsdclub.org/data/IPv6/
-PATCHFILES=	apache-1.3.26-v6-20020620.diff.gz
+PATCHFILES=	apache-1.3.27-v6-20021004.diff.gz
 
 MAINTAINER=	sumikawa@FreeBSD.org
 

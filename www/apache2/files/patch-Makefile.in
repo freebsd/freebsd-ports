@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jul 26 00:47:12 2002
-+++ Makefile.in	Sat Aug 10 09:38:48 2002
+--- Makefile.in.orig	Mon Sep 30 08:34:40 2002
++++ Makefile.in	Thu Oct  3 21:05:42 2002
 @@ -36,10 +36,13 @@
  	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
  	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
@@ -24,7 +24,7 @@
  	    				if test $$j != "^EOL^"; then \
  	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
  	    				fi; \
-@@ -106,44 +112,32 @@
+@@ -106,45 +112,33 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -34,7 +34,7 @@
 -	    echo Installing HTML documents ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir) ; \
 -	    test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
--	    cd $(DESTDIR)$(htdocsdir) && find . -name "CVS" -print | xargs rm -rf ; \
+-	    cd $(DESTDIR)$(htdocsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
 +	@echo Installing HTML documents
 +	@test -d $(DESTDIR)$(htdocsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir)-dist
@@ -49,7 +49,7 @@
 -	    echo Installing error documents ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(errordir) ; \
 -	    cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir) ; \
--	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name "CVS" -print | xargs rm -rf ; \
+-	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
 +	@echo Installing error documents
 +	@test -d $(DESTDIR)$(errordir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(errordir)-dist
@@ -64,14 +64,15 @@
 -	    echo Installing icons ; \
 -	    $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir) ; \
 -	    cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir) ; \
--	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name "CVS" -print | xargs rm -rf ; \
+-	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
+-
 +	@echo Installing icons
 +	@test -d $(DESTDIR)$(iconsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir)-dist
 +	cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir)-dist
 +	-@test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(iconsdir) || ln -sf $(DESTDIR)$(iconsdir)-dist $(DESTDIR)$(iconsdir)
- 
++ 
  install-cgi:
 -	-@if [ -d $(DESTDIR)$(cgidir) ];then \
 -	    echo "[PRESERVING EXISTING CGI SUBDIR: $(DESTDIR)$(cgidir)]"; \
@@ -79,16 +80,18 @@
 -	   echo Installing CGIs ; \
 -	   $(MKINSTALLDIRS) $(DESTDIR)$(cgidir) ; \
 -	   cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir) ; \
--	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name "CVS" -print | xargs rm -rf ; \
+-	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
+-
 +	@echo Installing CGIs
 +	@test -d $(DESTDIR)$(cgidir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir)-dist
 +	cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir)-dist
 +	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(cgidir) || ln -sf $(DESTDIR)$(cgidir)-dist $(DESTDIR)$(cgidir)
- 
++ 
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
+ 	@test -d $(DESTDIR)$(runtimedir) || $(MKINSTALLDIRS) $(DESTDIR)$(runtimedir)
 @@ -185,11 +179,13 @@
  	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
@@ -99,7 +102,7 @@
 +.if !defined(NOPORTDOCS)
 +	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@(cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir))
- 	@(cd $(DESTDIR)$(manualdir) && find . -name "CVS" -print | xargs rm -rf)
+ 	@(cd $(DESTDIR)$(manualdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null ) || true
 +.endif
  
  install-suexec:

@@ -40,7 +40,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@freebsd.org
 
-APACHE_VERSION=		1.3.26
+FORBIDDEN=	"Security vulnerability; new version does not yet exist"
+
+APACHE_VERSION=		1.3.27
 APACHE_SSL_VERSION=	1.48
 
 USE_OPENSSL=	YES

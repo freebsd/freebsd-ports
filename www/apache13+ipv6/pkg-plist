@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.15 2002-06-28 09:51:31 sumikawa Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.16 2002-10-05 09:18:44 kris Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -177,6 +177,7 @@ share/doc/apache/howto/cgi.html.html
 share/doc/apache/howto/cgi.html.ja.jis
 share/doc/apache/howto/footer.html
 share/doc/apache/howto/header.html
+share/doc/apache/howto/htaccess.html
 share/doc/apache/howto/ssi.html.en
 share/doc/apache/howto/ssi.html.html
 share/doc/apache/howto/ssi.html.ja.jis
@@ -261,11 +262,13 @@ share/doc/apache/mod/mod_access.html.ja.jis
 share/doc/apache/mod/mod_actions.html.en
 share/doc/apache/mod/mod_actions.html.html
 share/doc/apache/mod/mod_actions.html.ja.jis
-share/doc/apache/mod/mod_alias.html
+share/doc/apache/mod/mod_alias.html.en
+share/doc/apache/mod/mod_alias.html.ja.jis
 share/doc/apache/mod/mod_asis.html.en
 share/doc/apache/mod/mod_asis.html.html
 share/doc/apache/mod/mod_asis.html.ja.jis
-share/doc/apache/mod/mod_auth.html
+share/doc/apache/mod/mod_auth.html.en
+share/doc/apache/mod/mod_auth.html.ja.jis
 share/doc/apache/mod/mod_auth_anon.html
 share/doc/apache/mod/mod_auth_db.html
 share/doc/apache/mod/mod_auth_dbm.html

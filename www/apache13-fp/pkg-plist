@@ -172,6 +172,7 @@ share/doc/apache/manual/howto/cgi.html.html
 share/doc/apache/manual/howto/cgi.html.ja.jis
 share/doc/apache/manual/howto/footer.html
 share/doc/apache/manual/howto/header.html
+share/doc/apache/manual/howto/htaccess.html
 share/doc/apache/manual/howto/ssi.html.en
 share/doc/apache/manual/howto/ssi.html.html
 share/doc/apache/manual/howto/ssi.html.ja.jis
@@ -259,11 +260,13 @@ share/doc/apache/manual/mod/mod_access.html.ja.jis
 share/doc/apache/manual/mod/mod_actions.html.en
 share/doc/apache/manual/mod/mod_actions.html.html
 share/doc/apache/manual/mod/mod_actions.html.ja.jis
-share/doc/apache/manual/mod/mod_alias.html
+share/doc/apache/manual/mod/mod_alias.html.en
+share/doc/apache/manual/mod/mod_alias.html.ja.jis
 share/doc/apache/manual/mod/mod_asis.html.en
 share/doc/apache/manual/mod/mod_asis.html.html
 share/doc/apache/manual/mod/mod_asis.html.ja.jis
-share/doc/apache/manual/mod/mod_auth.html
+share/doc/apache/manual/mod/mod_auth.html.en
+share/doc/apache/manual/mod/mod_auth.html.ja.jis
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
 share/doc/apache/manual/mod/mod_auth_dbm.html
@@ -637,6 +640,7 @@ www/icons/world2.png
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
+@dirrm share/doc/apache/manual/frontpage
 @dirrm share/doc/apache/manual/howto
 @dirrm share/doc/apache/manual/images
 @dirrm share/doc/apache/manual/misc
