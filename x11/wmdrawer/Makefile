@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wmdrawer
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTVERSION=	0.10.4.1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
 		http://www.daemon.li/downloads/:pixmap
