@@ -23,8 +23,8 @@ CONFIGURE_ARGS=	--enable-inews=${PREFIX}/news/lib/inews \
 MAN1=		uudeview.1 uuenview.1
 
 post-install:
-	@/usr/bin/strip ${PREFIX}/bin/uudeview
-	@/usr/bin/strip ${PREFIX}/bin/uuenview
+	@${STRIP_CMD} ${PREFIX}/bin/uudeview
+	@${STRIP_CMD} ${PREFIX}/bin/uuenview
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
