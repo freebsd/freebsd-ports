@@ -6,19 +6,16 @@ info/automake.info
 @exec install-info %D/info/automake.info %D/info/dir
 share/aclocal/ccstdc.m4
 share/aclocal/cond.m4
-share/aclocal/cygwin.m4
 share/aclocal/dmalloc.m4
 share/aclocal/error.m4
-share/aclocal/exeext.m4
 share/aclocal/header.m4
 share/aclocal/init.m4
-share/aclocal/install.m4
 share/aclocal/lex.m4
 share/aclocal/lispdir.m4
 share/aclocal/maintainer.m4
-share/aclocal/mingw.m4
 share/aclocal/missing.m4
 share/aclocal/mktime.m4
+share/aclocal/multi.m4
 share/aclocal/obstack.m4
 share/aclocal/protos.m4
 share/aclocal/ptrdiff.m4
@@ -67,6 +64,7 @@ share/automake/mans.am
 share/automake/mdate-sh
 share/automake/missing
 share/automake/mkinstalldirs
+share/automake/multilib.am
 share/automake/program.am
 share/automake/progs-clean.am
 share/automake/progs.am
