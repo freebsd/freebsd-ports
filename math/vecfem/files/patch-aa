@@ -1,0 +1,41 @@
+*** vemtool/vemfc.orig	Thu Nov  9 21:23:30 2000
+--- vemtool/vemfc	Thu Jan 18 14:57:21 2001
+***************
+*** 1,4 ****
+! #!/bin/ksh
+  DATE="10/08/1998"
+  MYCOMMAND=$_
+  #**************************************************************************
+--- 1,4 ----
+! #!/bin/sh
+  DATE="10/08/1998"
+  MYCOMMAND=$_
+  #**************************************************************************
+***************
+*** 74,79 ****
+--- 74,81 ----
+  #
+  case $ARCH in
+  
++   FreeBSD) F77="f77 -O";;
++   FreeBSD_MPI) F77="/usr/local/mpich/bin/mpif77";;
+    LINUX) F77="g77 -O";;
+    LINUX_PG) F77="pgf77 -O -Munroll -Mnoframe -tp px -Minfo -Mvect=assoc,cachesize:128000 -Mcache_align";;
+    LINUX_MPI) F77="mpif77 -O";;  
+***************
+*** 114,120 ****
+  #     set the paths of inlcude files and libraries:
+  #
+  case $ARCH in
+!  SunOS | SOLARIS | IRIX6N32 | IRIX6N64 | AP1000 | DECALPHA | LINUX | LINUX_MPI | SOLARISF90)
+        IFLAGS="-I"$VECFEM_ROOT"/include/"$VECFEM_ARCH ;
+        LFLAGS="-L"$VECFEM_ROOT"/"$VECFEM_ARCH ;;
+   IRIX5 )
+--- 116,122 ----
+  #     set the paths of inlcude files and libraries:
+  #
+  case $ARCH in
+!  FreeBSD | FreeBSD_MPI | SunOS | SOLARIS | IRIX6N32 | IRIX6N64 | AP1000 | DECALPHA | LINUX | LINUX_MPI | SOLARISF90)
+        IFLAGS="-I"$VECFEM_ROOT"/include/"$VECFEM_ARCH ;
+        LFLAGS="-L"$VECFEM_ROOT"/"$VECFEM_ARCH ;;
+   IRIX5 )
