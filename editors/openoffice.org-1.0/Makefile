@@ -9,12 +9,15 @@ PORTNAME=	openoffice
 PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES+=	editors
-MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
-		http://sf1.mirror.openoffice.org/miscellaneous/helpcontent/
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
+MASTER_SITES+=	http://sf1.mirror.openoffice.org/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
+		http://sf1.mirror.openoffice.org/miscellaneous/helpcontent/:help
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
+		gpc231.tar.Z:gpc
 .if defined(L10NHELP)
-DISTFILES+=	${L10NHELP}
+DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
 SORT?=	/usr/bin/sort

@@ -13,6 +13,6 @@ LANG_CONFIGURE_ARG=	JAPN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 MASTER_SITES+=	ftp://ftp.kddlabs.co.jp/office/openoffice/ \
-		ftp://ftp.sfc.wide.ad.jp/pub/OpenOffice/
+		ftp://ftp.sfc.wide.ad.jp/pub/OpenOffice/:help
 L10NHELP=	helpcontent
 .include "${MASTERDIR}/Makefile"
