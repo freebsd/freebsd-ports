@@ -39,3 +39,8 @@ share/proguard/examples/library.pro
 share/proguard/examples/midlets.pro
 share/proguard/examples/proguard.pro
 share/proguard/examples/servlets.pro
+@dirrm share/proguard/lib
+@dirrm share/proguard/docs/manual/retrace
+@dirrm share/proguard/docs/manual
+@dirrm share/proguard/docs
+@dirrm share/proguard/examples
