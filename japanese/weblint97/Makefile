@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/06/06 03:45:15 itojun Exp $
+# $Id: Makefile,v 1.4 1998/08/23 16:20:06 kuriyama Exp $
 #
 
 DISTNAME=	weblint-97-0.12
@@ -20,7 +20,7 @@ RUN_DEPENDS=   ${PREFIX}/lib/perl/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 WRKSRC=         ${WRKDIR}/weblint-97
 MANLANG=	ja
 MAN1=		jweblint.1
-MAKE_ENV+=      PERLLIBDIR="${PERLLIBDIR}"
+MAKE_ENV=       PERLLIBDIR="${PERLLIBDIR}"
 ALL_TARGET=	euc-jp
 INSTALL_TARGET=	jinstall
 
