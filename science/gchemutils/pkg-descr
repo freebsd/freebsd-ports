@@ -1,0 +1,5 @@
+Gnome Chemistry Utils provide C++ classes and Gtk+-2 widgets related
+to chemistry. They will be used in future versions of Gnome Crystal
+and GChemPaint.
+
+WWW: http://www.nongnu.org/gchemutils/
