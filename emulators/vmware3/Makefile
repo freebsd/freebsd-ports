@@ -119,7 +119,11 @@ post-patch:
 	cat ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500104
-	cat ${FILESDIR}/devfs.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	cat ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
+.if ${OSVERSION} >= 500109
+	cat ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	cat ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 
 setoptions:
