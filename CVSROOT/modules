@@ -961,6 +961,7 @@ csound-manual	ports/audio/csound-manual
 css-mode.el	ports/www/css-mode.el
 cssc		ports/devel/cssc
 cstream		ports/misc/cstream
+csv2latex	ports/textproc/csv2latex
 ct		ports/net/ct
 cthumb		ports/graphics/cthumb
 ctrace		ports/net/ctrace
