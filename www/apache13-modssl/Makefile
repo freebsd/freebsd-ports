@@ -41,26 +41,28 @@ VERSION_MODSSL=	2.8.14
 
 DATADIR=	${PREFIX}/www
 DOCUMENT_ROOT=	${DATADIR}/data
-DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
+APACHE_SUEXEC_CALLER?=www
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
+APACHE_SUEXEC_UIDMIN?=1000
+APACHE_SUEXEC_GIDMIN?=1000
+APACHE_SUEXEC_SAFE_PATH?=/bin:/usr/bin:${PREFIX}/bin
 
-SUEXEC_CONF=\
-		--enable-suexec \
+SUEXEC_CONF=	--enable-suexec \
+		--suexec-caller=${APACHE_SUEXEC_CALLER} \
 		--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-		--suexec-caller=www \
-		--suexec-uidmin=1000 \
-		--suexec-gidmin=1000 \
-		--suexec-logfile=/var/log/httpd-suexec.log \
+		--suexec-logfile=${APACHE_SUEXEC_LOG} \
 		--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
-		--suexec-safepath=${DEFAULT_PATH}
+		--suexec-uidmin=${APACHE_SUEXEC_UIDMIN} \
+		--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
+		--suexec-safepath=${APACHE_SUEXEC_SAFE_PATH}
 
 .if defined(APACHE_SUEXEC_UMASK)
-SUEXEC_CONF+=\
-		--suexec-umask=${APACHE_SUEXEC_UMASK}
+SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
 .endif
 
 PLIST_SUB+=	SUB_SUEXEC=""
@@ -91,15 +93,29 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-module=define \
 		${SUEXEC_CONF}
 
-OPTIM=		-DHARD_SERVER_LIMIT=512 \
+.if defined(APACHE_HARD_SERVER_LIMIT)
+HARD_SERVER_LIMIT=-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
+.else
+HARD_SERVER_LIMIT=-DHARD_SERVER_LIMIT=512
+.endif
+
+OPTIM=		${HARD_SERVER_LIMIT} \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
-.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
-OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
-CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
-		-fexpensive-optimizations -ffast-math
+.if defined(APACHE_FD_SETSIZE)
+OPTIM+=		-DFD_SETSIZE=${APACHE_FD_SETSIZE}
+.else
+OPTIM+=		-DFD_SETSIZE=1024
+.endif
+
+.if defined(APACHE_BUFFERED_LOGS) && ${APACHE_BUFFERED_LOGS} == yes
+OPTIM+=		-DBUFFERED_LOGS
+.endif
+
+.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == yes
+CFLAGS+=	-O3
 .endif
 
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
@@ -119,6 +135,45 @@ MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 TYPE=	test
 CRT=
 KEY=
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "  WITH_APACHE_SUEXEC=yes	enable the suEXEC feature"
+	@${ECHO} "				[default is no]"
+	@${ECHO} "  APACHE_SUEXEC_CALLER=user	set the suEXEC username of the allowed caller"
+	@${ECHO} "				[default is www]"
+	@${ECHO} "  APACHE_SUEXEC_DOCROOT=dir	set the suEXEC root directory"
+	@${ECHO} "				[default is ${DOCUMENT_ROOT}]"
+	@${ECHO} "  APACHE_SUEXEC_LOG=file	set the suEXEC logfile"
+	@${ECHO} "				[default is /var/log/httpd-suexec.log]"
+	@${ECHO} "  APACHE_SUEXEC_USERDIR=dir	set the suEXEC user subdirectory"
+	@${ECHO} "				[default is public_html]"
+	@${ECHO} "  APACHE_SUEXEC_UIDMIN=uid	set the suEXEC minimal allowed UID"
+	@${ECHO} "				[default is 1000]"
+	@${ECHO} "  APACHE_SUEXEC_GIDMIN=gid	set the suEXEC minimal allowed GID"
+	@${ECHO} "				[default is 1000]"
+	@${ECHO} "  APACHE_SUEXEC_SAFE_PATH=path	set the suEXEC safe PATH"
+	@${ECHO} "				[default is /bin:/usr/bin:${PREFIX}/bin]"
+	@${ECHO} "  APACHE_SUEXEC_UMASK=umask	set the umask for the suEXEC'd script"
+	@${ECHO} "				[default is inherited from the Apache process]"
+	@${ECHO} ""
+	@${ECHO} "  APACHE_HARD_SERVER_LIMIT=nr	Maximum number of Apache processes."
+	@${ECHO} "				[default is 512]"
+	@${ECHO} "  APACHE_FD_SETSIZE=nr		Maximum number of descriptors."
+	@${ECHO} "				[default is 1024]"
+	@${ECHO} ""
+	@${ECHO} "  APACHE_BUFFERED_LOGS=yes	Log entries are buffered before writing."
+	@${ECHO} "				Writes may not be atomic, entries from multiple"
+	@${ECHO} "				children could become mixed together and your"
+	@${ECHO} "				web stats may be inaccurate."
+	@${ECHO} "				[default is no]"
+	@${ECHO} "  APACHE_PERF_TUNING=yes	CFLAGS optimization."
+	@${ECHO} "				This setting may produce broken code and thus"
+	@${ECHO} "				is not recommended for production servers."
+	@${ECHO} "				[default is no]"
+	@${ECHO} ""
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
