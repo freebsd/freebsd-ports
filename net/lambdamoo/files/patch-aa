@@ -1,0 +1,11 @@
+--- config.h.in.orig	Sun Jul  4 16:45:44 1999
++++ config.h.in	Sun Jul  4 16:45:54 1999
+@@ -163,7 +163,7 @@
+  * system provides the named functions.
+  */
+ 
+-#undef HAVE_CRYPT
++/* #undef HAVE_CRYPT */
+ #undef HAVE_MATHERR
+ #undef HAVE_MKFIFO
+ #undef HAVE_REMOVE
