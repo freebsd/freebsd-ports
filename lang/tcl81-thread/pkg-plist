@@ -1,0 +1,113 @@
+bin/tclsh8.1_r
+include/tcl8.1/generic/regcustom.h
+include/tcl8.1/generic/regerrs.h
+include/tcl8.1/generic/regex.h
+include/tcl8.1/generic/regguts.h
+include/tcl8.1/generic/tcl.h
+include/tcl8.1/generic/tclCompile.h
+include/tcl8.1/generic/tclInitScript.h
+include/tcl8.1/generic/tclInt.h
+include/tcl8.1/generic/tclMath.h
+include/tcl8.1/generic/tclPort.h
+include/tcl8.1/generic/tclRegexp.h
+include/tcl8.1/unix/tclUnixPort.h
+lib/libtcl81_r.a
+lib/libtcl81_r.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/tcl8.1/auto.tcl
+lib/tcl8.1/encoding/ascii.enc
+lib/tcl8.1/encoding/big5.enc
+lib/tcl8.1/encoding/cp1250.enc
+lib/tcl8.1/encoding/cp1251.enc
+lib/tcl8.1/encoding/cp1252.enc
+lib/tcl8.1/encoding/cp1253.enc
+lib/tcl8.1/encoding/cp1254.enc
+lib/tcl8.1/encoding/cp1255.enc
+lib/tcl8.1/encoding/cp1256.enc
+lib/tcl8.1/encoding/cp1257.enc
+lib/tcl8.1/encoding/cp1258.enc
+lib/tcl8.1/encoding/cp437.enc
+lib/tcl8.1/encoding/cp737.enc
+lib/tcl8.1/encoding/cp775.enc
+lib/tcl8.1/encoding/cp850.enc
+lib/tcl8.1/encoding/cp852.enc
+lib/tcl8.1/encoding/cp855.enc
+lib/tcl8.1/encoding/cp857.enc
+lib/tcl8.1/encoding/cp860.enc
+lib/tcl8.1/encoding/cp861.enc
+lib/tcl8.1/encoding/cp862.enc
+lib/tcl8.1/encoding/cp863.enc
+lib/tcl8.1/encoding/cp864.enc
+lib/tcl8.1/encoding/cp865.enc
+lib/tcl8.1/encoding/cp866.enc
+lib/tcl8.1/encoding/cp869.enc
+lib/tcl8.1/encoding/cp874.enc
+lib/tcl8.1/encoding/cp932.enc
+lib/tcl8.1/encoding/cp936.enc
+lib/tcl8.1/encoding/cp949.enc
+lib/tcl8.1/encoding/cp950.enc
+lib/tcl8.1/encoding/dingbats.enc
+lib/tcl8.1/encoding/euc-jp.enc
+lib/tcl8.1/encoding/euc-kr.enc
+lib/tcl8.1/encoding/gb12345.enc
+lib/tcl8.1/encoding/gb1988.enc
+lib/tcl8.1/encoding/gb2312.enc
+lib/tcl8.1/encoding/iso2022-jp.enc
+lib/tcl8.1/encoding/iso2022-kr.enc
+lib/tcl8.1/encoding/iso2022.enc
+lib/tcl8.1/encoding/iso8859-1.enc
+lib/tcl8.1/encoding/iso8859-2.enc
+lib/tcl8.1/encoding/iso8859-3.enc
+lib/tcl8.1/encoding/iso8859-4.enc
+lib/tcl8.1/encoding/iso8859-5.enc
+lib/tcl8.1/encoding/iso8859-6.enc
+lib/tcl8.1/encoding/iso8859-7.enc
+lib/tcl8.1/encoding/iso8859-8.enc
+lib/tcl8.1/encoding/iso8859-9.enc
+lib/tcl8.1/encoding/jis0201.enc
+lib/tcl8.1/encoding/jis0208.enc
+lib/tcl8.1/encoding/jis0212.enc
+lib/tcl8.1/encoding/ksc5601.enc
+lib/tcl8.1/encoding/macCentEuro.enc
+lib/tcl8.1/encoding/macCroatian.enc
+lib/tcl8.1/encoding/macCyrillic.enc
+lib/tcl8.1/encoding/macDingbats.enc
+lib/tcl8.1/encoding/macGreek.enc
+lib/tcl8.1/encoding/macIceland.enc
+lib/tcl8.1/encoding/macJapan.enc
+lib/tcl8.1/encoding/macRoman.enc
+lib/tcl8.1/encoding/macRomania.enc
+lib/tcl8.1/encoding/macThai.enc
+lib/tcl8.1/encoding/macTurkish.enc
+lib/tcl8.1/encoding/macUkraine.enc
+lib/tcl8.1/encoding/shiftjis.enc
+lib/tcl8.1/encoding/symbol.enc
+lib/tcl8.1/history.tcl
+lib/tcl8.1/http1.0/http.tcl
+lib/tcl8.1/http1.0/pkgIndex.tcl
+lib/tcl8.1/http2.0/http.tcl
+lib/tcl8.1/http2.0/pkgIndex.tcl
+lib/tcl8.1/init.tcl
+lib/tcl8.1/ldAix
+lib/tcl8.1/ldAout.tcl
+lib/tcl8.1/msgcat1.0/msgcat.tcl
+lib/tcl8.1/msgcat1.0/pkgIndex.tcl
+lib/tcl8.1/opt0.4/optparse.tcl
+lib/tcl8.1/opt0.4/pkgIndex.tcl
+lib/tcl8.1/package.tcl
+lib/tcl8.1/parray.tcl
+lib/tcl8.1/safe.tcl
+lib/tcl8.1/tclAppInit.c
+lib/tcl8.1/tclConfig.sh
+lib/tcl8.1/tclIndex
+lib/tcl8.1/word.tcl
+@dirrm lib/tcl8.1/opt0.4
+@dirrm lib/tcl8.1/msgcat1.0
+@dirrm lib/tcl8.1/http2.0
+@dirrm lib/tcl8.1/http1.0
+@dirrm lib/tcl8.1/encoding
+@dirrm lib/tcl8.1
+@dirrm include/tcl8.1/unix
+@dirrm include/tcl8.1/generic
+@dirrm include/tcl8.1
