@@ -5,7 +5,7 @@ bin/ftps
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/ChangeLog
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/cert/cert-nopass.sh
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/cert/cert-pass.sh
-%%PORTDOCS%%share/doc/bsdftpd-ssl-client/cert/dummy.sh
+%%PORTDOCS%%share/doc/bsdftpd-ssl-client/cert/cert-dummy.sh
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/cert/xCA.sh
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/docs/README
 %%PORTDOCS%%share/doc/bsdftpd-ssl-client/docs/cert-basics.txt

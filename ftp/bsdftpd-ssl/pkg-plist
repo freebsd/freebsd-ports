@@ -1,21 +1,21 @@
 bin/ftps
 libexec/ftpd
-%%PORTDOCS%%share/doc/bsdftpd-ssl/COPYRIGHT
-%%PORTDOCS%%share/doc/bsdftpd-ssl/README
-%%PORTDOCS%%share/doc/bsdftpd-ssl/INSTALL
-%%PORTDOCS%%share/doc/bsdftpd-ssl/ChangeLog
-%%PORTDOCS%%share/doc/bsdftpd-ssl/cert/cert-nopass.sh
-%%PORTDOCS%%share/doc/bsdftpd-ssl/cert/cert-pass.sh
-%%PORTDOCS%%share/doc/bsdftpd-ssl/cert/dummy.sh
-%%PORTDOCS%%share/doc/bsdftpd-ssl/cert/xCA.sh
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/README
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/cert-basics.txt
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/cert-howto.txt
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/ciphers.txt
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/licenses
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/standards.txt
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/verify.txt
-%%PORTDOCS%%share/doc/bsdftpd-ssl/docs/x509_auth.txt
-%%PORTDOCS%%@dirrm share/doc/bsdftpd-ssl/cert
-%%PORTDOCS%%@dirrm share/doc/bsdftpd-ssl/docs
-%%PORTDOCS%%@dirrm share/doc/bsdftpd-ssl
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/cert/cert-nopass.sh
+%%PORTDOCS%%%%DOCSDIR%%/cert/cert-pass.sh
+%%PORTDOCS%%%%DOCSDIR%%/cert/cert-dummy.sh
+%%PORTDOCS%%%%DOCSDIR%%/cert/xCA.sh
+%%PORTDOCS%%%%DOCSDIR%%/docs/README
+%%PORTDOCS%%%%DOCSDIR%%/docs/cert-basics.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/cert-howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/ciphers.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/licenses
+%%PORTDOCS%%%%DOCSDIR%%/docs/standards.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/verify.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/x509_auth.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cert
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	bsdftpd-ssl
-PORTVERSION=	0.6.3
+PORTVERSION=	1.0.0
 CATEGORIES=	ftp
-MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/0.6/src/
-DISTNAME=	bsdftpd-6.0-ssl-${PORTVERSION}
+MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.0/src/
+DISTNAME=	bsdftpd-ssl-${PORTVERSION}
 
 MAINTAINER=	skynick@mail.sc.ru
 
 # Client only part
 .if defined(CLIENT_ONLY)
 PKGNAMESUFFIX=	-client
-COMMENT=	FTP command-line client utility with TLS/SSL support
+COMMENT=	FTP command-line client utility with the TLS/SSL support
 DESCR=		${FILESDIR}/pkg-descr.client
 PLIST=		${FILESDIR}/pkg-plist.client
 .endif
@@ -24,7 +24,8 @@ PLIST=		${FILESDIR}/pkg-plist.client
 MAN1=	ftps.1
 # Server part
 .if !defined(CLIENT_ONLY)
-COMMENT=	FTP server with TLS/SSL support
+COMMENT=	Secure FTP server with the TLS/SSL support
+MAN5=	ftpchroot.5
 MAN8=	ftpd.8
 MLINKS=	ftpd.8 ftpd-ssl.8
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
@@ -63,6 +64,7 @@ do-install:
 # Server part
 .if !defined(CLIENT_ONLY)
 	${INSTALL_PROGRAM} ${WRKSRC}/ftpd/ftpd ${PREFIX}/libexec/ftpd
+	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpchroot.5.gz ${MANDIR}5/ftpchroot.5.gz
 	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpd.8.gz ${MANDIR}8/ftpd.8.gz
 .endif
 
@@ -87,7 +89,7 @@ post-install:
 	${MKDIR} ${DOCDIR}/cert
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/cert-nopass.sh ${DOCDIR}/cert/cert-nopass.sh
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/cert-pass.sh ${DOCDIR}/cert/cert-pass.sh
-	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/dummy.sh ${DOCDIR}/cert/dummy.sh
+	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/cert-dummy.sh ${DOCDIR}/cert/cert-dummy.sh
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/xCA.sh ${DOCDIR}/cert/xCA.sh
 .endif
 .if !defined(CLIENT_ONLY)
