@@ -396,6 +396,7 @@
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-ORBit
     SUBDIR += p5-POE
+    SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-PV
     SUBDIR += p5-Params-Validate
