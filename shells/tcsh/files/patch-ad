@@ -1,5 +1,31 @@
 *** glob.c.orig	Sun May 14 00:49:21 1995
---- glob.c	Tue Aug 13 01:42:43 1996
+--- glob.c	Thu Oct 31 18:04:28 1996
+***************
+*** 139,144 ****
+--- 139,161 ----
+  #define	M_SET		META('[')
+  #define	ismeta(c)	(((c)&M_META) != 0)
+  
++ int collate_range_cmp (c1, c2)
++ 	int c1, c2;
++ {
++ 	static char s1[2], s2[2];
++ 	int ret;
++ 
++ 	c1 &= UCHAR_MAX;
++ 	c2 &= UCHAR_MAX;
++ 	if (c1 == c2)
++ 		return (0);
++ 	s1[0] = c1;
++ 	s2[0] = c2;
++ 	if ((ret = strcoll(s1, s2)) != 0)
++ 		return (ret);
++ 	return (c1 - c2);
++ }
++ 
+  /*
+   * Need to dodge two kernel bugs:
+   * opendir("") != opendir(".")
 ***************
 *** 646,652 ****
   		++pat;
@@ -9,7 +35,7 @@
   			ok = 1;
   		    pat += 2;
   		}
---- 646,654 ----
+--- 663,671 ----
   		++pat;
   	    while (((c = *pat++) & M_MASK) != M_END) {
   		if ((*pat & M_MASK) == M_RNG) {
@@ -20,7 +46,17 @@
   		    pat += 2;
   		}
 *** sh.glob.c.orig	Sun May 14 00:49:17 1995
---- sh.glob.c	Tue Aug 13 01:41:34 1996
+--- sh.glob.c	Thu Oct 31 18:04:28 1996
+***************
+*** 85,90 ****
+--- 85,91 ----
+  static	void	  pword		__P((int));
+  static	void	  psave		__P((int));
+  static	void	  backeval	__P((Char *, bool));
++ extern  int       collate_range_cmp __P((int, int));
+  
+  static Char *
+  globtilde(nv, s)
 ***************
 *** 1038,1045 ****
   		if (match)
@@ -31,7 +67,7 @@
   		    pattern++;
   		}
   		else 
---- 1038,1046 ----
+--- 1039,1047 ----
   		if (match)
   		    continue;
   		if (rangec == '-' && *(pattern-2) != '[' && *pattern  != ']') {
