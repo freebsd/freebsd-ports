@@ -20,10 +20,6 @@ fi
 
 rm -f $FONTDIR/$PKGNAME
 
-if [ "X$WANT_CJK" != "X" ]; then
-    # There's no CJK module now.
-fi
-
 if [ "X$WANT_GS" != "X" ]; then
     for f in $FONTS; do
         $TTFM --add gscjk $FONTDIR/$f
