@@ -16,7 +16,9 @@ MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	"Fast, teachable, learning spam detector"
 
 LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
+.if !defined(WITHOUT_GSL)
 LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
+.endif
 .if !defined(WITHOUT_BASH)
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 .endif
@@ -29,6 +31,9 @@ USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
+.if defined(WITHOUT_GSL)
+CONFIGURE_ARGS+=	--with-included-gsl
+.endif
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db42" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb-4.2"
 CONFIGURE_ENV+=	PERL="${PERL}"
@@ -53,13 +58,21 @@ post-patch:
 PORTDOCS=	*
 .endif
 
-.if !defined(WITHOUT_BASH)
 pre-everything::
-	@${ECHO_CMD} "----------------------------------------------------------------------------"
+	@${ECHO_CMD} ""
+.if !defined(WITHOUT_BASH)
 	@${ECHO_CMD} "To install without bash dependency, you can use: make -DWITHOUT_BASH install"
 	@${ECHO_CMD} "Note that installing without bash dependency will mean that some of the"
 	@${ECHO_CMD} "${DOCSDIR}/contrib scripts will not be installed."
-	@${ECHO_CMD} "----------------------------------------------------------------------------"
+	@${ECHO_CMD} ""
+.endif
+.if !defined(WITHOUT_GSL)
+	@${ECHO_CMD} "To have bogofilter link against its shipped GSL 1.4 statically,"
+	@${ECHO_CMD} "you can use: make -DWITHOUT_GSL && make -DWITHOUT_GSL install"
+.if !defined(WITHOUT_BASH)
+	@${ECHO_CMD} "or: make -DWITHOUT_GSL && make -DWITHOUT_GSL -DWITHOUT_BASH install"
+.endif
+	@${ECHO_CMD} ""
 .endif
 
 post-build::
