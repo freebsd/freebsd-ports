@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION= 	3.4.0
+PORTVERSION= 	3.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.xfce.org/archive/
 
@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \
+		--sysconfdir=${PREFIX}/etc \
 		--with-xpm=${X11BASE}
 
 MAN1=	xfbd.1 xfce.1 xfclock.1 xfgnome.1 xfhelp.1 xflock.1 xfmouse.1 \
