@@ -204,6 +204,7 @@
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xcolorsel
+    SUBDIR += xcurs
     SUBDIR += xcut
     SUBDIR += xdialog
     SUBDIR += xdtm

@@ -1,0 +1,5 @@
+XCurs is a program for editing XCursor formatted XFree86/X.Org mouse cursors.
+This type of format became available as a result of Keith Packard's work on
+XFree86 v4.3.
+
+WWW: http://varg.dyndns.org/psi/pub/code/xcurs/
