@@ -1,0 +1,34 @@
+*** src/radiusd.c.orig	Thu Jul  4 12:26:45 1996
+--- src/radiusd.c	Thu Jul  4 12:27:13 1996
+***************
+*** 477,482 ****
+--- 477,495 ----
+  	sigaction (SIGIOT, &action, NULL); /* Perhaps also known as SIGABRT ! */
+  	sigaction (SIGFPE, &action, NULL);
+  
++ 	/* the max number of open files should never be used as an argument
++          * for select(). On systems that support more than 256 open files
++          * select() is not able to handle that many fd's.
++          * In this case the max. number of fd's for select should not be
++          * set to the maximum number of descriptors.
++          * Since I'm too lazy to correct the code I set dtablesize to
++          * FD_SETSIZE. This is the only portable way to use select() on
++          * all descriptors. See also "Advanced Programming in the Unix
++          * Environment" (from W. Richard Stevens) and the BSD 4.4 manpage for
++          * select(2).
++          */
++ 	dtablesize = FD_SETSIZE;
++ #ifdef BOGUS_CODE
+  #ifdef	_SC_OPEN_MAX
+  	if ((dtablesize = sysconf (_SC_OPEN_MAX)) == -1)
+  	{
+***************
+*** 486,491 ****
+--- 499,505 ----
+  #else	/* Assume BSD */
+  	dtablesize = getdtablesize ();
+  #endif	/* _SC_OPEN_MAX */
++ #endif /* BOGUS_CODE */
+  
+  	for (j = dtablesize; j >= 3; j--)
+  	{
