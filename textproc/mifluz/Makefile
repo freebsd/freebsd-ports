@@ -22,6 +22,9 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--without-unac
 INSTALLS_SHLIB= yes
 
+USE_BISON=	yes
+USE_GCC=	2.95
+
 MAN1=	htdb_dump.1 htdb_stat.1 htdb_load.1 mifluzdump.1 mifluzload.1 \
 	mifluzsearch.1 mifluzdict.1
 MAN3=	WordContext.3 WordList.3 WordDict.3 WordListOne.3 WordKey.3 \
