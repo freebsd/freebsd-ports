@@ -1,0 +1,8 @@
+cvs2cl.pl: CVS-log-message-to-ChangeLog conversion script
+
+This Perl script does what you think it does: It produces a GNU-style
+ChangeLog for CVS-controlled sources, by running "cvs log" and parsing
+the output. Duplicate log messages get unified in the Right Way.
+
+Author:	Karl Fogel <kfogel@red-bean.com>
+WWW:	http://www.red-bean.com/~kfogel/cvs2cl.shtml
