@@ -21,10 +21,4 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	SHELL=${SH} PREFIX=${PREFIX} MAKE=${GMAKE} PCFLAGS="${CFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BROKEN=		"obsolete compiler"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
