@@ -20,13 +20,16 @@ LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+USE_REINPLACE=	yes
 
 MAN1=	dirtree.1
 
-.include <bsd.port.pre.mk>
+post-patch:
+.for f in src/CppDir.hh src/CppDir.cpp
+	${REINPLACE_CMD} -e 's,^class ostream;$$,#include <ostream.h>,g' \
+		-e 's,ostream\([^.]\),std::ostream\1,g' ${WRKSRC}/${f}
+.endfor
+	${REINPLACE_CMD} -e 's,const.*PATH_MAX =\(.*\);,#define\
+		PATH_MAX \1,g' ${WRKSRC}/src/xgetcwd.cpp
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
