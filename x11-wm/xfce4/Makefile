@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xfce
-# Version required:	3.2.5
+# Version required:	3.3.1
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xfce-3.2.5
+DISTNAME=	xfce-3.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.xfce.org/archive/
 
@@ -15,7 +15,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-RUN_DEPENDS=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS=	${LOCALBASE}/bin/esdplay:${PORTSDIR}/audio/esound
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

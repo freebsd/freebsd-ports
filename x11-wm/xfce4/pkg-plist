@@ -37,6 +37,7 @@ share/xfce/backdrops/Cocoa.xpm
 share/xfce/backdrops/Compute.xpm
 share/xfce/backdrops/Concrete.xpm
 share/xfce/backdrops/Darkblue2.xpm
+share/xfce/backdrops/Default.xpm
 share/xfce/backdrops/Desert2.xpm
 share/xfce/backdrops/Dry.xpm
 share/xfce/backdrops/Eyes.xpm
@@ -313,6 +314,7 @@ share/xfce/locale/et/LC_MESSAGES/xfce.mo
 share/xfce/locale/fi/LC_MESSAGES/xfce.mo
 share/xfce/locale/fr/LC_MESSAGES/xfce.mo
 share/xfce/locale/gl/LC_MESSAGES/xfce.mo
+share/xfce/locale/hu/LC_MESSAGES/xfce.mo
 share/xfce/locale/it/LC_MESSAGES/xfce.mo
 share/xfce/locale/ja/LC_MESSAGES/xfce.mo
 share/xfce/locale/pl/LC_MESSAGES/xfce.mo
@@ -328,6 +330,7 @@ share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Clinky
 share/xfce/palettes/Craters
+share/xfce/palettes/Default
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
 share/xfce/palettes/Fall
@@ -349,8 +352,10 @@ share/xfce/palettes/Prairie
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
 share/xfce/palettes/Sand
+share/xfce/palettes/Silver
 share/xfce/palettes/Spring
 share/xfce/palettes/Stellar
+share/xfce/palettes/Stripe
 share/xfce/palettes/Sunny
 share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
@@ -437,6 +442,8 @@ share/xfce/textures/metal.xpm
 share/xfce/textures/military.xpm
 share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
+share/xfce/textures/silver.xpm
+share/xfce/textures/stripe.xpm
 share/xfce/xfdefs.py
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/help
@@ -457,6 +464,8 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/fr
 @dirrm share/xfce/locale/gl/LC_MESSAGES
 @dirrm share/xfce/locale/gl
+@dirrm share/xfce/locale/hu/LC_MESSAGES
+@dirrm share/xfce/locale/hu
 @dirrm share/xfce/locale/it/LC_MESSAGES
 @dirrm share/xfce/locale/it
 @dirrm share/xfce/locale/ja/LC_MESSAGES
