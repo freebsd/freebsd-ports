@@ -23,11 +23,10 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.72
+DISTVERSION=	0.73
 
 OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
@@ -108,6 +107,8 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf
