@@ -9,14 +9,12 @@ sbin/watchquagga
 sbin/zebra
 bin/vtysh
 lib/libospf.a
-lib/libospf.la
 lib/libospf.so
 lib/libospf.so.0
 %%OSPFAPI_LIBA%%
 %%OSPFAPI_LIBSO%%
 %%OSPFAPI_LIBSO0%%
 lib/libzebra.a
-lib/libzebra.la
 lib/libzebra.so
 lib/libzebra.so.0
 include/quagga/buffer.h
