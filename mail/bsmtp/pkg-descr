@@ -3,5 +3,3 @@ and outgoing.  Batch SMTP can be used to batch and compress mail
 messages for UUCP links, which is faster and doesn't suffer from
 the address limitations of rmail.  Bsmtp's version of batch SMTP
 is fully compatible with smail.
-
-WWW: http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/

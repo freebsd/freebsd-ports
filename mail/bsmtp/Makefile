@@ -8,7 +8,8 @@ PORTNAME=	bsmtp
 PORTVERSION=	1.02
 PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	naddy
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
