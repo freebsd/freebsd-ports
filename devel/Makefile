@@ -695,6 +695,7 @@
     SUBDIR += sh-rtems-objc
     SUBDIR += shapelib
     SUBDIR += shmap
+    SUBDIR += showgrammar
     SUBDIR += shtool
     SUBDIR += silc-toolkit
     SUBDIR += sip
