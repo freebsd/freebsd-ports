@@ -7,29 +7,42 @@
 
 PORTNAME=	arphicttf
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
-DISTNAME=	${PKGNAME}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	keith@FreeBSD.org
 
-LIB_DEPENDS=	font.1:${PORTSDIR}/x11-servers/XttXF86srv-common
+RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
-USE_X_PREFIX=	yes
+CJK?=		NO
+GS6?=		NO
+XTT?=		YES
 
-NO_BUILD=	yes
+NO_BUILD=	YES
 SHAREMODE=	644
 WRKSRC=		${WRKDIR}/arphic
-FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
+USE_XLIB=	YES
+FONTDIR=	${PREFIX}/share/fonts/TrueType
+XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
+INSTALL_ENV=	PKG_PREFIX=${PREFIX} CJK=${CJK} GS6=${GS6} XTT=${XTT} \
+		XFREE86_VERSION=${XFREE86_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${CJK} != "NO"
+RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
+.endif
+.if ${GS6} != "NO"
+RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/CJK/CMap/B5pc-H:${PORTSDIR}/chinese/ghostscript6
+.endif
+.if ${XFREE86_VERSION} == 3 && ${XTT} != "NO"
+RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
+.endif
+
 do-install:
 .if !exists(${FONTDIR})
-	@${ECHO} "========================================================="
-	@${ECHO} "Please add ${FONTDIR} to your font path"
-	@${ECHO} "in /etc/XF86Config."
-	@${ECHO} "========================================================="
 	@${MKDIR} ${FONTDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/font/bkai00mp.ttf ${FONTDIR}
@@ -40,6 +53,6 @@ do-install:
 	@${MKDIR} ${FONTDIR}/arphic
 	@${CP} -fr ${WRKSRC}/license ${FONTDIR}/arphic
 	@${CP} -f ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${FONTDIR}/arphic
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
