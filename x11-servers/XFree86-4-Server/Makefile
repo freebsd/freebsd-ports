@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,7 +25,7 @@ EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
-CONFLICTS=	xorg-server-*
+CONFLICTS=	xorg-server-[0-9]*
 
 # Override default from XFree86-4-libraries/Makefile.inc
 PATCHDIR=		${MASTERDIR}/files

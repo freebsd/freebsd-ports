@@ -1,0 +1,62 @@
+Index: programs/Xserver/hw/xfree86/doc/Japanese/README98
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/hw/xfree86/doc/Japanese/README98,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -u -r1.4 -r1.5
+--- programs/Xserver/hw/xfree86/doc/Japanese/README98	20 Jun 2000 20:07:58 -0000	1.4
++++ programs/Xserver/hw/xfree86/doc/Japanese/README98	8 Jun 2004 01:28:56 -0000	1.5
+@@ -1,6 +1,6 @@
+   XFree86 PC98 Dependent Information
+   The XFree86 Project Inc. and X98 CORE TEAM 著
+-  2000 年 6 月 20 日
++  2004 年 6 月  6 日
+ 
+   このドキュメントでは、PC98 固有の事項について解説します。PC/AT 互換機
+   と共通の事項については、共通のドキュメントを参照して下さい。
+@@ -11,7 +11,7 @@
+   イル名: XFree86) されており、従来のボード / チップセット毎のサーバもな
+   くなりました。また、各ドライバはすべて SVGA ベースで、XF86_S3 ベースの
+   ドライバはありません。現在のところ、PC98 で動作しているのは、mga、
+-  apm、glint、trident ドライバのみです。Millennium、Mystique、
++  apm、glint、trident、cirrus ドライバのみです。Millennium、Mystique、
+   VoodooRUSH、Permedia2、TGUI968x(いずれも PCI) のボードをお持ちの方以外
+   は、3.3 ベース (ex. 3.3.6) の環境を御利用下さい。現状 4.0 では EGC や
+   PEGC すら利用できません。開発メンバが非常に少なくなっているので、開発
+@@ -43,6 +43,7 @@
+     ------------- ----------------------------------------------- -------
+     NEC           MGA Millennium/Mystique                         XFree86
+     NEC           Trident TGUI968x(X-Mate,ValueStar 等)           XFree86
++    NEC           Cirrus Logic CLGD755x (Aile 等)                 XFree86
+ 
+   3.  共通事項
+ 
+@@ -274,6 +275,28 @@
+   README.trident は現時点 (4.0) では 3.3.6 用の内容であり、これに記載さ
+   れている Option の多くは使用できないので注意して下さい。
+ 
++  4.5.  cirrus ドライバ
++
++  NEC の内蔵アクセラレータ (Cirrus Logic CLGD755x) で動作するドライバです。
++
++  4.5.1.  XF86Config の設定
++
++  XF86Config.98 内に記されたオプションを指定できます。
++  通常は特に何も指定する必要無い筈です。
++
++  4.5.2.  報告されている問題
++
++  o ログに MMIO および I2C に関連したエラー ("(EE)" で示される) が
++    出ますが、これは実際には警告レベルで動作には関係ないようです。
++
++  4.5.3.  その他
++
++  o  まだ十分なテストが行われていないので動作レポートをお願いします。
++
++  4.5.4.  関連
++
++  XFree86 man page, cirrus man page
++
+   5.  各 OS 毎の注意事項
+ 
+   5.1.  FreeBSD(98) での注意事項
