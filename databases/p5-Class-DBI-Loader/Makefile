@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Loader
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -26,6 +26,15 @@ MAN3=		Class::DBI::Loader.3 \
 		Class::DBI::Loader::Pg.3 \
 		Class::DBI::Loader::SQLite.3 \
 		Class::DBI::Loader::mysql.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
