@@ -6,6 +6,7 @@ lib/MailScanner-MRTG/MSMRTG/Data.pm
 lib/MailScanner-MRTG/MSMRTG/Debug.pm
 lib/MailScanner-MRTG/MSMRTG/Scale.pm
 lib/MailScanner-MRTG/MSMRTG/State.pm
+lib/MailScanner-MRTG/MSMRTG/Log.pm
 sbin/mailscanner-mrtg
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
