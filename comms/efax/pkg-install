@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+/bin/mkdir -p /var/spool/fax/incoming
+/usr/sbin/chown uucp:dialer /var/spool/fax/incoming
+/bin/mkdir -p /var/spool/fax/outgoing
+/usr/sbin/chown uucp:dialer /var/spool/fax/outgoing
+/usr/bin/touch /var/spool/fax/outgoing/lock
+/usr/sbin/chown uucp:dialer /var/spool/fax/outgoing/lock
+/bin/echo "Copy \${PREFIX}/etc/efax.rc.sample(.ja) to \${PREFIX}/etc/efax.rc"
+/bin/echo "and edit. At least you should modify DEV=, FROM=, and NAME="

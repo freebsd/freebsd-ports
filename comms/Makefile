@@ -10,6 +10,7 @@
     SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += ecu
+    SUBDIR += efax
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gnokii
