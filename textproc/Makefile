@@ -502,6 +502,7 @@
     SUBDIR += whitespace.el
     SUBDIR += word2x
     SUBDIR += wordnet
+    SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
     SUBDIR += xalan-c
