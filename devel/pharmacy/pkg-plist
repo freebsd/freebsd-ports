@@ -1,0 +1,21 @@
+bin/pharmacy
+info/dir
+share/locale/fr/LC_MESSAGES/pharmacy.mo
+share/locale/ko/LC_MESSAGES/pharmacy.mo
+share/locale/de/LC_MESSAGES/pharmacy.mo
+share/gnome/apps/Applications/pharmacy.desktop
+share/gnome/help/pharmacy/C/topic.dat
+share/gnome/help/pharmacy/C/index.html
+share/gnome/help/pharmacy/C/docbook.css
+share/gnome/help/pharmacy/C/apx1.html
+share/gnome/help/pharmacy/C/checkout.html
+share/gnome/help/pharmacy/C/console.html
+share/gnome/help/pharmacy/C/licence.html
+share/gnome/help/pharmacy/C/pharmacy.html
+share/gnome/help/pharmacy/C/update.html
+share/gnome/help/pharmacy/C/using.html
+share/gnome/help/pharmacy/C/web.html
+share/pixmaps/pharmacy.png
+@dirrm share/gnome/help/pharmacy/C
+@dirrm share/gnome/help/pharmacy
+@dirrm share/pixmaps
