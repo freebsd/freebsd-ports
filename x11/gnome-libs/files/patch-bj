@@ -1,0 +1,20 @@
+--- libgnomeui/gnome-about.c.orig	Mon Oct 25 13:34:06 1999
++++ libgnomeui/gnome-about.c	Mon Oct 25 13:58:13 1999
+@@ -1,6 +1,6 @@
+ /* GNOME GUI Library
+  * Copyright (C) 1998 Cesar Miquel <miquel@df.uba.ar>
+- * Based in gnome-about, copyright (C) 1998 Horacio J. Peña
++ * Based in gnome-about, copyright (C) 1998 Horacio J. Pe$Bqa(B
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Library General Public
+@@ -414,6 +414,9 @@
+ 	/* FIXME: dirty hack, but it solves i18n problem without rewriting the
+ 	   drawing code..  */
+ 	style = gtk_style_ref (widget->style);
++
++	/* For true i18n */
++	gtk_widget_ensure_style(widget);
+ 
+ 	gtk_widget_set_name (widget, "Title");
+ 	gai->font_title = gdk_font_ref (widget->style->font);
