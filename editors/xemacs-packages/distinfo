@@ -25,5 +25,5 @@ MD5 (xemacs/time-1.11-pkg.tar.gz) = 93ca34fe3275dc3ef5b8fd4c6824551d
 MD5 (xemacs/vc-1.28-pkg.tar.gz) = aab5d4e8030489a6ba35e078b7fba75d
 MD5 (xemacs/viper-1.26-pkg.tar.gz) = c5ef12e8a3bf2cc752a66040971ea391
 MD5 (xemacs/w3-1.20-pkg.tar.gz) = d2887a223788fec1deb43ba7489cf603
-MD5 (xemacs/xemacs-base-1.51-pkg.tar.gz) = 15c1069d5def27c861e7e45ab54dc6b9
-MD5 (xemacs/xemacs-devel-1.31-pkg.tar.gz) = 3c15f7db1c1ec6634f06e21655a86801
+MD5 (xemacs/xemacs-base-1.55-pkg.tar.gz) = 611942669d8bda6b562bde3c6b2e92ab
+MD5 (xemacs/xemacs-devel-1.37-pkg.tar.gz) = b26331c073e8be4586d030aaceba2c33
