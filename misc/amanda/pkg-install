@@ -1,0 +1,38 @@
+#! /bin/sh
+
+if [ "X$2" != "XPOST-INSTALL" ]; then
+    exit 0
+fi
+
+echo -n "Adding necessary groups and modifying permissions on "
+echo "${PKG_PREFIX}/libexec/amanda dir" 
+
+group=amanda
+
+if pw groupshow "${group}" 2>/dev/null; then
+    echo "You already have a group \"${group}\", so I will use it."
+else
+    echo "You need a group \"${group}\"."
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+        read -p "Would you like me to create it? [Y] " ans
+    fi
+    if [ x$ans = x ]; then
+        ans=y
+    fi
+    case "$ans" in
+    [Yy]*)
+        pw groupadd ${group} -h - || exit
+        echo "Done."
+	;;
+    *)
+        echo "Please create it, and try again."
+	exit 1
+	;;
+    esac
+fi
+
+echo "Modifying permissions on ${PKG_PREFIX}/libexec/amanda"
+/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda
+/bin/chmod 510 ${PKG_PREFIX}/libexec/amanda
+/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda/*
+/bin/chmod 4550 ${PKG_PREFIX}/libexec/amanda/*
