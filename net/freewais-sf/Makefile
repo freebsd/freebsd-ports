@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1997/12/24 01:21:15 alex Exp $
+# $Id: Makefile,v 1.5 1998/02/20 18:39:56 steve Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.1.2
@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://ftp.wsct.wsc.com/pub/freeWAIS-sf/freeWAIS-sf-2.1/
 
 MAINTAINER=	giffunip@asme.org
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= < ${FILESDIR}/configure.ans
 MAN1=	catalog.1 dictionary.1 inverted_file.1 makedb.1 mkfmt.1 waisindex.1 \

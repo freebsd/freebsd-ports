@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.20 1998/11/17 04:12:10 asami Exp $
+# $Id: Makefile,v 1.21 1998/11/17 11:05:15 markm Exp $
 #
 
 DISTNAME=	exim-2.053
@@ -16,6 +16,7 @@ DISTFILES=	exim-testing-2.053.tar.gz exim-texinfo-2.00.tar.gz
 
 MAINTAINER=	axl@iafrica.com
 
+USE_XLIB=	YES
 USE_PERL5=	YES
 
 do-configure:

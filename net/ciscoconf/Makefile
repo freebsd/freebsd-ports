@@ -3,7 +3,7 @@
 # Date created: 			11 September 1998
 # Whom: 				jabley@clear.co.nz
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/11/18 22:15:06 billf Exp $
 #
 
 DISTNAME=	ciscoconf-1.0beta1
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.patho.gen.nz/pub/users/jabley/ \
 
 MAINTAINER=	jabley@clear.co.nz
 
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/x11/XFree86
 ALL_TARGET=	depend all
 MAN8=		ciscoconfd.8 ciscoconfr.8
 

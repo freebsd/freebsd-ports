@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.3 1998/09/27 20:13:13 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/14 09:43:25 asami Exp $
 #
 
 DISTNAME=	simpack-3.0
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.cis.ufl.edu/pub/simdigest/tools/
 DISTFILES=	SimPack3.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
+
+BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
 WRKSRC=	${WRKDIR}/simpack
 

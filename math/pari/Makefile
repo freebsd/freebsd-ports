@@ -3,7 +3,7 @@
 # Date created:		6 June 1997
 # Whom:			Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/13 02:07:20 jseger Exp $
+# $Id: Makefile,v 1.3 1998/10/14 01:32:24 jseger Exp $
 #
 
 DISTNAME=	pari-1.39.03
@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://megrez.math.u-bordeaux.fr/pub/pari/unix/ \
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		gp.1
 
