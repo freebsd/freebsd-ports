@@ -16,20 +16,18 @@ MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
-BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
-.endif
+USE_OPENSSL=	RSA
 
 GNU_CONFIGURE=	yes
 MAN8=		stunnel.8
 
 cert:
 	@(cd ${WRKSRC}; make cert)
+
+post-patch:
+	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure > ${WRKSRC}/configure~
+	${MV} ${WRKSRC}/configure~ ${WRKSRC}/configure
+	${CHMOD} a+x ${WRKSRC}/configure
 
 post-build:
 	@${ECHO} ""
