@@ -4,7 +4,7 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.18 1999/08/19 03:09:20 green Exp $
+# $Id: Makefile,v 1.19 1999/08/20 10:21:06 asami Exp $
 #
 
 DISTNAME=	ddd-3.1.6
@@ -26,10 +26,14 @@ USE_GMAKE=	yes
 REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
 
+.if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
 LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/\/libXm\.a//g' | awk '{print $$1}'
 .else
 LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/-L//g' | awk '{print $$1}'
+.endif
+.else
+LIBXMDIR=	${X11BASE}
 .endif
 
 post-configure:
