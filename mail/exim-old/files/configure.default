@@ -294,6 +294,7 @@ userforward:
   file_transport = address_file
   pipe_transport = address_pipe
   reply_transport = address_reply
+  match_directory = !^/nonexistent
 
 
 # This director matches local user mailboxes.
