@@ -6,6 +6,7 @@
 
 PORTNAME=	dmalloc
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dmalloc
@@ -14,13 +15,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jeremy@external.org
 COMMENT=	Portable debug memory allocation library
 
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-threads --enable-shlib
+CFLAGS+=	-fPIC
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	all heavy
 INSTALL_TARGET=	install
+
+INFO=	dmalloc
+
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=installdocs installinfo
 .endif
