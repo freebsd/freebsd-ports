@@ -8,7 +8,8 @@
 PORTNAME=	python
 PORTVERSION=	2.0
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.pythonlabs.com/products/python2.0/downloads/
+MASTER_SITES=	http://www.python.org/ftp/python/2.0/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/2.0/
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
