@@ -982,13 +982,13 @@ use_amver=			${WANT_AUTOMAKE_VER:L}
 .if ${use_amver} == ${cur_amver}
 ACLOCAL_DIR=		${LOCALBASE}/share/aclocal
 AUTOMAKE_DIR=		${LOCALBASE}/share/automake
-BUILD_DEPENDS+=		automake:${PORTSDIR}/devel/automake
+BUILD_DEPENDS+=		${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 WANT_AUTOCONF_VER?=	${cur_acver}
 .elif ${use_amver} == ${old_amver} || ${use_amver} == ${dev_amver}
 ACLOCAL_DIR=	${LOCALBASE}/share/aclocal${use_amver}
 AUTOMAKE_DIR=	${LOCALBASE}/share/automake${use_amver}
-BUILD_DEPENDS+=	automake${use_amver}:${PORTSDIR}/devel/automake${use_amver}
 ampath=			${LOCALBASE}/libexec/automake${use_amver}:
+BUILD_DEPENDS+=	${ampath:S/://}/automake:${PORTSDIR}/devel/automake${use_amver}
 .if ${use_amver} == ${old_amver}
 AUTOMAKE_ARGS+=	-i
 WANT_AUTOCONF_VER?=${old_acver}
@@ -1013,11 +1013,11 @@ GNU_CONFIGURE?=		yes
 use_acver=			${WANT_AUTOCONF_VER:L}
 .if ${use_acver} == ${cur_acver}
 AUTOCONF_DIR=		${LOCALBASE}/share/autoconf
-BUILD_DEPENDS+=		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
 .elif ${use_acver} == ${old_acver} || ${use_acver} == ${dev_acver}
 AUTOCONF_DIR=	${LOCALBASE}/share/autoconf${use_acver}
-BUILD_DEPENDS+=	autoconf${use_acver}:${PORTSDIR}/devel/autoconf${use_acver}
 acpath=			${LOCALBASE}/libexec/autoconf${use_acver}
+BUILD_DEPENDS+=	${acpath}/autoconf:${PORTSDIR}/devel/autoconf${use_acver}
 .else # bad autoconf version
 BROKEN="unknown AUTOCONF version: ${USE_AUTOCONF_VER}"
 .endif # ${use_acver} == ${cur_acver}
