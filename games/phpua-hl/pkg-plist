@@ -1,0 +1,60 @@
+%%PHPUA%%/images/templates/default/plugin_hl/bomb.png
+%%PHPUA%%/images/templates/default/plugin_hl/bomb_planted.png
+%%PHPUA%%/images/templates/default/plugin_hl/dispenser.png
+%%PHPUA%%/images/templates/default/plugin_hl/flag_blue.gif
+%%PHPUA%%/images/templates/default/plugin_hl/flag_gray.gif
+%%PHPUA%%/images/templates/default/plugin_hl/flag_green.gif
+%%PHPUA%%/images/templates/default/plugin_hl/flag_red.gif
+%%PHPUA%%/images/templates/default/plugin_hl/flag_yellow.gif
+%%PHPUA%%/images/templates/default/plugin_hl/icon_blue.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_command.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_dead.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_green.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_hive.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_hostage.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_red.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_resource_alien.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_resource_marine.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_vip.png
+%%PHPUA%%/images/templates/default/plugin_hl/icon_yellow.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry1_0.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry1_1.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry1_2.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry1_3.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry2_0.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry2_1.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry2_2.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry2_3.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry3_0.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry3_1.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry3_2.png
+%%PHPUA%%/images/templates/default/plugin_hl/sentry3_3.png
+%%PHPUA%%/images/templates/default/plugin_hl/teleporter0.png
+%%PHPUA%%/images/templates/default/plugin_hl/teleporter1.png
+%%PHPUA%%/images/templates/default/plugin_hl/teleporter2.png
+%%PHPUA%%/images/templates/default/plugin_hl/teleporter3.png
+%%PHPUA%%/images/templates/default/plugin_hl/unavailable.jpg
+%%PHPUA%%/images/templates/wap/plugin_hl/unavailable.jpg
+%%PHPUA%%/plugins/plugin_hl/plugin_hl.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mm.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mode_info.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mode_rules.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mode_watch.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mode_watch_mm.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_mode_watch_query.inc
+%%PHPUA%%/plugins/plugin_hl/plugin_hl_query.inc
+%%PHPUA%%/templates/default/plugin_hl/info.tpl
+%%PHPUA%%/templates/default/plugin_hl/rules.tpl
+%%PHPUA%%/templates/default/plugin_hl/watch_mm.js
+%%PHPUA%%/templates/default/plugin_hl/watch_mm.tpl
+%%PHPUA%%/templates/default/plugin_hl/watch_query.js
+%%PHPUA%%/templates/default/plugin_hl/watch_query.tpl
+%%PHPUA%%/templates/default/plugin_hl/x.js
+%%PHPUA%%/templates/javascript/plugin_hl/info.tpl
+%%PHPUA%%/templates/wap/plugin_hl/info.tpl
+@dirrm %%PHPUA%%/templates/wap/plugin_hl
+@dirrm %%PHPUA%%/templates/javascript/plugin_hl
+@dirrm %%PHPUA%%/templates/default/plugin_hl
+@dirrm %%PHPUA%%/plugins/plugin_hl
+@dirrm %%PHPUA%%/images/templates/wap/plugin_hl
+@dirrm %%PHPUA%%/images/templates/default/plugin_hl
