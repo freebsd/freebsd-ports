@@ -13,7 +13,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
 		${.CURDIR}/files/patch-src::fe-text::textbuffer-view.c \
 		${.CURDIR}/files/patch-src::fe-text::utf8.h
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org

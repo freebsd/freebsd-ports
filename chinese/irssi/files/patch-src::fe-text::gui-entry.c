@@ -1,5 +1,5 @@
 --- src/fe-text/gui-entry.c.orig	Tue Oct 15 02:45:08 2002
-+++ src/fe-text/gui-entry.c	Sat Nov 23 17:28:31 2002
++++ src/fe-text/gui-entry.c	Sun Dec 29 19:18:05 2002
 @@ -68,6 +68,27 @@
          g_free(entry);
  }
@@ -64,8 +64,20 @@
  {
          unichar chr;
  	int i, len;
-@@ -343,11 +366,18 @@
+@@ -341,13 +364,30 @@
+ 	return buf;
+ }
  
++void gui_entry_erase_to(GUI_ENTRY_REC *entry, int pos, int update_cutbuffer)
++{
++  int newpos, size = 0;
++  
++  g_return_if_fail(entry != NULL);
++  for(newpos = gui_entry_get_pos(entry); newpos > pos; size ++)
++    newpos = _fix_big5_pos(entry->text, newpos - 1, -1);
++  gui_entry_erase(entry, size, update_cutbuffer);
++}
++
  void gui_entry_erase(GUI_ENTRY_REC *entry, int size, int update_cutbuffer)
  {
 +	int newpos;
@@ -76,14 +88,14 @@
  		return;
  
 +	/* recount the erase size with big5 charsets */
-+	for (newpos = entry->pos; newpos >= 0 && size > 0; size--)
++	for (newpos = entry->pos; newpos > 0 && size > 0; size--)
 +		newpos = _fix_big5_pos(entry->text, newpos-1, -1);
 +	size = entry->pos - newpos;
 +
  	if (update_cutbuffer) {
  		/* put erased text to cutbuffer */
  		if (entry->cutbuffer == NULL || entry->cutbuffer_len < size) {
-@@ -471,10 +501,24 @@
+@@ -471,10 +511,24 @@
  
  void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
  {
