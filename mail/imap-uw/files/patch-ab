@@ -34,10 +34,10 @@
  # Build it!
  
 -build:	clean once $(ARCHIVE)
-+build:	clean once $(SHLIBNAME)
++build:	clean once $(ARCHIVE) $(SHLIBNAME)
  
 -all:	$(ARCHIVE)
-+all:	$(SHLIBNAME)
++all:	$(ARCHIVE) $(SHLIBNAME)
  
  $(ARCHIVE): $(BINARIES)
  	sh -c '$(RM) $(ARCHIVE) || true'
