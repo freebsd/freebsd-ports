@@ -1,0 +1,20 @@
+--- src/SendFaxDialog.h~    Sun Mar 15 02:11:19 1998
++++ src/SendFaxDialog.h     Sun Feb  6 21:33:15 2000
+@@ -23,11 +23,11 @@
+   SendFaxDialog ( LyXView* view, QWidget * parent=0, const char * name=0, 
+                                         WFlags f=0 );
+ 
+-  setFilename( QString _filename ) { filename = _filename; }
+-  setSendCmd( QString _sendcmd ) { sendcmd = _sendcmd; }
+-  setPhone( QString _phone ) { faxnoED->setText( _phone ); }
+-  setName( QString _name ) { destnameED->setText( _name ); }
+-  setCompany( QString _name ) { companyED->setText( _name ); }
++  void setFilename( QString _filename ) { filename = _filename; }
++  void setSendCmd( QString _sendcmd ) { sendcmd = _sendcmd; }
++  void setPhone( QString _phone ) { faxnoED->setText( _phone ); }
++  void setName( QString _name ) { destnameED->setText( _name ); }
++  void setCompany( QString _name ) { companyED->setText( _name ); }
+ 
+ private slots:
+   void okClicked();
+
