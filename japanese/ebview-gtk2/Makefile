@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/GTK_DISABLE_DEPRECATED/d' ${WRKSRC}/src/defs.h
 
 post-install:
 .if !defined(NOPORTDOCS)
