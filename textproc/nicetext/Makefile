@@ -25,6 +25,12 @@ PROGRAMS=	bitcp dct2mstr expgram genmodel gramtest impkimmo impmsc \
 		impwbstr listword nicetext nttpd printint rinfo scramble \
 		sortdct txt2dct
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|gcc|$${CC}|g ; \
@@ -53,4 +59,4 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREMODE} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
