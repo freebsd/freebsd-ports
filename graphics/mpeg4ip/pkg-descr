@@ -1,0 +1,16 @@
+[ edited excerpt from developer's README ]
+
+The MPEG4IP project provides a standards-based system for encoding,
+streaming, and playing MPEG-4 encoded audio and video. To achieve
+this we've integrated a number of existing open source packages,
+and also created some original code to fill in the gaps.
+
+Please note this project is intended for developers who are interested
+in MPEG-4 audio and video, and Internet streaming. It is not intended
+for end-users. Please read all the legal information in the file
+"COPYING"!
+
+There is also a project web site at http://www.mpeg4ip.net/ that
+has some general information on MPEG4IP.
+
+WWW: http://mpeg4ip.sourceforge.net/
