@@ -1,0 +1,7 @@
+include/libmms/bswap.h
+include/libmms/mms.h
+lib/libmms.a
+lib/libmms.so
+lib/libmms.so.0
+libdata/pkgconfig/libmms.pc
+@dirrm include/libmms
