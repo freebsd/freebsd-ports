@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.22
+PORTVERSION=	1.33
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+USE_GNOME=	lthack
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=		chicken-config.1 chicken.1 csc.1 csi.1
+MAN1=		chicken-config.1 chicken-setup.1 chicken.1 csc.1 csi.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
