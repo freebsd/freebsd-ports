@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	css-mode-elisp
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	www elisp
-MASTER_SITES=	http://www.stud.ifi.uio.no/~lmariusg/download/
+MASTER_SITES=	http://www.garshol.priv.no/download/software/css-mode/
 DISTNAME=	css-mode.el
 
 MAINTAINER=	shige@FreeBSD.org
 
 EXTRACT_SUFX=	# empty
-DISTFILES=	${DISTNAME} css-mode-doc.html
+DISTFILES=	${DISTNAME} doco.html
 DIST_SUBDIR=	css-mode
 
 EXTRACT_ONLY=	# empty
@@ -42,7 +42,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${CSSMODE_DOCDIR}
-	@${INSTALL_DATA} ${_DISTDIR}/css-mode-doc.html ${PREFIX}/${CSSMODE_DOCDIR}/
+	@${INSTALL_DATA} ${_DISTDIR}/doco.html ${PREFIX}/${CSSMODE_DOCDIR}/css-mode-doc.html
 .endif
 
 .include <bsd.port.mk>
