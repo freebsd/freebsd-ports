@@ -4,6 +4,7 @@ share/jpgraph/jpgraph_canvas.php
 share/jpgraph/jpgraph_canvtools.php
 share/jpgraph/jpgraph_error.php
 share/jpgraph/jpgraph_gantt.php
+share/jpgraph/jpgraph_gradient.php
 share/jpgraph/jpgraph_line.php
 share/jpgraph/jpgraph_log.php
 share/jpgraph/jpgraph_pie.php
@@ -11,8 +12,10 @@ share/jpgraph/jpgraph_pie3d.php
 share/jpgraph/jpgraph_radar.php
 share/jpgraph/jpgraph_regstat.php
 share/jpgraph/jpgraph_scatter.php
+share/jpgraph/jpgraph_stock.php
 @dirrm share/jpgraph
 %%PORTDOCS%%%%EXAMPLESDIR%%/alphabarex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/alphabarex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex02.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex03.php
@@ -22,6 +25,7 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex3.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex3.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/bar2scalesex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex3.php
@@ -39,6 +43,7 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barintex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barline_csimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barline_csimex1.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/barlinealphaex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barlinefreq_csimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barlinefreqex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barscalecallbackex1.php
@@ -50,6 +55,9 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex5.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex6.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/blueblack400x300grad.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/boxstockex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/boxstockex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/boxstockcsimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/canvas_jpgarchex.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/canvasbezierex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/canvasex01.php
@@ -65,6 +73,7 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/centerlinebarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dbschemaex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/dupyaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/example0.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.2.php
@@ -133,6 +142,7 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/example9.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/exampleex9.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/fieldscatterex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/filledgridex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledline01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex01.1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex01.php
@@ -146,6 +156,8 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttconstrainex0.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttconstrainex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttconstrainex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/ganttcsimex01.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/ganttcsimex02.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex00.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex02.php
@@ -169,11 +181,14 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex30.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex_slice.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttsimpleex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/gradbkgex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/groupbarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/horizbarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/horizbarex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/horizbarex3.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/horizbarex4.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/imgmarkercsimex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/imgmarkerex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/impulsex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/impulsex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/impulsex3.php
@@ -239,6 +254,7 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotex3.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotex5.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/saab_95.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/scatter_csimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/scatter_csimex1.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/scatterex1.php
@@ -270,7 +286,10 @@ share/jpgraph/jpgraph_scatter.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/staticbandbarex6.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/staticbandbarex7.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/staticlinebarex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/stship.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/tabtitleex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/testsuit.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/text-example1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/text-example2.php
