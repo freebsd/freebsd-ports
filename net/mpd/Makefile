@@ -20,7 +20,8 @@ MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
-USE_OPENSSL	=yes
+USE_OPENSSL=	yes
+USE_RC_SUBR=    yes
 MAKE_ENV=	COPTS="${COPTS} -I${OPENSSLINC}" LDADD="${LDADD} -L${OPENSSLLIB}"
 
 .include <bsd.port.pre.mk>
@@ -31,6 +32,9 @@ pre-build:
 	@${ECHO}
 
 post-install:
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh.sample
+	@${SED} -e "s=%%RC_SUBR%%=${RC_SUBR}=" \
+		-e "s=%%PREFIX%%=${PREFIX}=" \
+		< ${FILESDIR}/mpd.sh > ${WRKSRC}/mpd.sh
+	@${INSTALL_SCRIPT} ${WRKSRC}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh
 
 .include <bsd.port.post.mk>

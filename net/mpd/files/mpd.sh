@@ -1,37 +1,29 @@
 #!/bin/sh
+#
 # $FreeBSD$
+#
+# PROVIDE: mpd
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable mpd:
+#
+# mpd_enable="YES"
+#
 
-DAEMON=/usr/local/sbin/mpd
-PIDFILE=/var/run/mpd.pid
+mpd_flags="-b"
+mpd_enable="NO"
 
-case "$1" in
-start)
-	if [ -f "${DAEMON}" -a -x "${DAEMON}" ]; then
-		if [ -f "${PIDFILE}" ]; then
-			echo ' mpd PID file found - not starting'
-		else
-			"${DAEMON}" -b -p "${PIDFILE}"
-			echo -n ' mpd'
-		fi
-	else
-		echo ' "${DAEMON}" executable not found - mpd not starting'
-	fi
-	;;
-stop)
-	if [ -f "${PIDFILE}" ]; then
-		read -r pid junk < "${PIDFILE}"
-		kill ${pid}
-	else
-		echo ' mpd PID file not found - not killing'
-	fi
-	;;
-restart)
-	$0 stop
-	sleep 2
-	$0 start
-	;;
-*)
-	echo "usage: ${0##*/} {start|stop|restart}" >&2
-	;;
-esac
+. %%RC_SUBR%%
 
+name=mpd
+rcvar=`set_rcvar`
+
+prefix=%%PREFIX%%
+procname=${prefix}/sbin/mpd
+pidfile=/var/run/mpd.pid
+required_files="${prefix}/etc/mpd/mpd.conf ${prefix}/etc/mpd/mpd.links"
+command="${prefix}/sbin/mpd"
+
+load_rc_config ${name}
+run_rc_command "$1"
