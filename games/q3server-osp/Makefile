@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	osp
-PORTVERSION=	1.01
-MASTER_SITES=	http://www.orangesmoothie.org/downloads/ \
-		http://aoh-www.hhhr.ision.net/files/osp/
+PORTVERSION=	1.03a
+MASTER_SITES=	http://files.l33tgames.com/files/q3/mods/osp/ \
+		http://www.flatlands.ch/filebase/mods/left/
 DISTNAME=	osp-Quake3-${PORTVERSION}_full
 
 COMMENT=	Quake III Arena Mod: OSP Tourney DM/CA/CTF for Linux
