@@ -8,11 +8,12 @@
 
 PORTNAME=	tcplist
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=	obrien@NUXI.com
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 
