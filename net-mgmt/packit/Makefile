@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	packit
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 MAN8=		packit.8
+PLIST_FILES=	sbin/packit
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
