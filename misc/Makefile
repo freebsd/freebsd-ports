@@ -114,6 +114,7 @@
     SUBDIR += py-distutils
     SUBDIR += qclock
     SUBDIR += qhacc
+    SUBDIR += qlas
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += rfc
