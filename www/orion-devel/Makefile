@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -30,6 +30,7 @@ APP_TITLE=	Orion Server
 APP_SHORTNAME=	${PORTNAME}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
+CONTROL_SCRIPT_MANPAGE_TITLE=	${CONTROL_SCRIPT_NAME:U}
 STARTUP_ORDER=	020
 STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
@@ -44,8 +45,8 @@ AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
-		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
+		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
+		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/config/default-web-site.xml \
 		${WRKSRC}/config/rmi.xml
 JAR_FILE=	${APP_SHORTNAME}.jar
@@ -53,26 +54,9 @@ WRKDIR?=	${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 
-pre-install:
-	@${ECHO_CMD} "Installation settings:"
-	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
-	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
-	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
-	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
-	@${ECHO_CMD} "   Using Jikes:              ${WITH_JIKES}"
-	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
-	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
-	@${ECHO_CMD} "   RMI port:                 ${RMI_PORT}"
-	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
-	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
-	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
-	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
-
-do-install:
-	@${ECHO_CMD} -n ">> Removing all .bat and .orig files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
+post-patch:
+	@${ECHO_CMD} -n ">> Removing unneeded files..."
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
@@ -82,6 +66,7 @@ do-install:
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
 	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
+	-e "/%%CONTROL_SCRIPT_MANPAGE_TITLE%%/s//${CONTROL_SCRIPT_MANPAGE_TITLE}/g" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
 	-e "/%%GROUP%%/s//${GROUP}/g" \
 	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
@@ -103,6 +88,24 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
+pre-install:
+	@${ECHO_CMD} "Installation settings:"
+	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
+	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
+	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
+	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
+	@${ECHO_CMD} "   Using Jikes:              ${WITH_JIKES}"
+	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
+	@${ECHO_CMD} "   RMI port:                 ${RMI_PORT}"
+	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
+	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
+	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
+	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
+	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+
+do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
 	@${MKDIR} ${APP_HOME}
 	@${MKDIR} ${APP_HOME}/application-deployments
@@ -132,13 +135,13 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CP} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
 	@${CHMOD} 0544 ${STARTUP_SCRIPT}
 	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing man pages..."
-	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
 	@${ECHO_CMD} " [ DONE ]"
 .endif
 
