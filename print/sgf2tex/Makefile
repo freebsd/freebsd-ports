@@ -16,6 +16,8 @@ COMMENT=	Convert a Go game record in SGF format into TeX and provide fonts to ma
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 
+BROKEN=		Incomplete pkg-plist
+
 MAN1=		sgf2tex.1 sgfsplit.1
 
 .include <bsd.port.mk>
