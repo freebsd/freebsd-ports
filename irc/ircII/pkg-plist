@@ -307,7 +307,6 @@ lib/irc/help/load/killpath
 lib/irc/help/load/kpstat
 lib/irc/help/load/list
 lib/irc/help/load/load
-lib/irc/help/load/local
 lib/irc/help/load/lynx_ircrc
 lib/irc/help/load/meta1
 lib/irc/help/load/meta2
