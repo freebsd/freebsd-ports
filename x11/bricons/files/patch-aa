@@ -28,22 +28,22 @@
   /**/# Here's what to change to customize the installation...
   /**/# Where do you want this stuff (if the defaults aren't okay)?
   
-! BINDIR = /usr/X11R6/bin
-! LIBDIR = /usr/X11R6/lib
-! MANDIR = /usr/X11R6/man/man1
+! XCOMM BINDIR = /home/cur/bri/bin/mbins/${M}bin
+! XCOMM LIBDIR = /home/cur/bri/lib
+! XCOMM MANDIR = /home/cur/bri/Man
   
   /**/# Where is the Xpm header and library files
   /**/# This program needs the Xpm libraries written by Arnaud Le Hors.
   /**/# it can be obtained by anonymous ftp to: export.lcs.mit.edu
   /**/# and from many other sites.
   
-! XPM_DIR =               /usr/X11R6/include/X11
+! XPM_DIR =               $(INCROOT)/X11
   XPM_INCLUDE_DIR =       $(XPM_DIR)
-! XPM_LIB_DIR =           /usr/X11R6/lib
+! XPM_LIB_DIR =           $(LIBDIR)
   
   /**/# This is -g for debugging or -O for optimization (or nothing).
   
-! CDEBUGFLAGS = -O2
+! XCOMM CDEBUGFLAGS = -g
   
   /**/# Nothing to change below here
   
