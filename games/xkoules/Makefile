@@ -3,7 +3,7 @@
 # Date created:				11 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/25 00:43:54 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/21 11:51:10 flathill Exp $
 #
 
 DISTNAME=	koules1.4-src
@@ -14,6 +14,10 @@ MASTER_SITES=	http://www.paru.cas.cz/~hubicka/koules/packages/ \
 
 MAINTAINER=	andy@icc.surw.chel.su
 
+.if ${MACHINE_ARCH} == "alpha"
+PLIST=		${PKGDIR}/PLIST.alpha
+.endif
+
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/koules1.4
 MAN6=		xkoules.6
@@ -22,7 +26,9 @@ MANCOMPRESSED=	no
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xkoules ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/xkoules
+.if ${MACHINE_ARCH} == "i386"
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/koules.sndsrv.freebsd ${PREFIX}/share/xkoules
+.endif
 	@ ${INSTALL_DATA} ${WRKSRC}/sounds/*.raw ${PREFIX}/share/xkoules
 	@ ${INSTALL_MAN} ${WRKSRC}/xkoules.6 ${PREFIX}/man/man6
 
