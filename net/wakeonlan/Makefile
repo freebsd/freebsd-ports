@@ -17,7 +17,7 @@ PERL_CONFIGURE=	yes
 MAN1=           wakeonlan.1
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/examples/lab001.wol ${PREFIX}/share/examples/${PORTNAME}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/lab001.wol ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
