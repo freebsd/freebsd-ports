@@ -1,0 +1,31 @@
+--- gmenu/Makefile.in.orig	Tue May 23 04:25:39 2000
++++ gmenu/Makefile.in	Fri May 26 15:25:26 2000
+@@ -139,7 +139,7 @@
+ gnomelocaledir = @gnomelocaledir@
+ l = @l@
+ 
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = gmenu
+@@ -152,7 +152,7 @@
+ 
+ EXTRA_DIST = gmenu.desktop top.xpm unknown.xpm
+ 
+-sysdir = $(datadir)/gnome/apps/Settings
++sysdir = $(datadir)/apps/Settings
+ sys_DATA = gmenu.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+--- gmenu/main.c.orig	Wed May 10 01:36:16 2000
++++ gmenu/main.c	Fri May 26 15:09:49 2000
+@@ -276,7 +276,7 @@
+ 	gnome_init ("GNOME menu editor", VERSION, argc, argv);
+ 	gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gmenu.png");
+ 
+-	system_apps_dir = gnome_datadir_file("gnome/apps");
++	system_apps_dir = gnome_datadir_file("apps");
+ 	system_applets_dir = gnome_datadir_file("applets");
+ 	system_pixmap_dir = gnome_datadir_file("pixmaps");
+ 	if (!system_apps_dir || !system_pixmap_dir || !system_applets_dir)

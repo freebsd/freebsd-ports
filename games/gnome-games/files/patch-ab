@@ -123,6 +123,13 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
+--- gnobots2/help/da/Makefile.in.orig	Sun May 21 23:51:03 2000
++++ gnobots2/help/da/Makefile.in	Tue May 30 17:11:59 2000
+@@ -131,3 +131,3 @@
+ 
+-gnobots2_helpdir = $(datadir)/gnome/help/gnobots2/da
++gnobots2_helpdir = $(datadir)/help/gnobots2/da
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 --- gnobots2/help/es/Makefile.in.orig	Sun Sep 26 13:29:04 1999
 +++ gnobots2/help/es/Makefile.in	Mon Sep 27 09:34:44 1999
 @@ -128,7 +128,7 @@
@@ -198,15 +205,16 @@
  libgnomekoban_la_LIBADD = 
  libgnomekoban_la_OBJECTS =  gnomekoban.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
---- gnometris/Makefile.in.orig	Sun Sep 26 13:29:31 1999
-+++ gnometris/Makefile.in	Mon Sep 27 09:36:59 1999
-@@ -127,9 +127,9 @@
+--- gnometris/Makefile.in.orig	Sun May 21 23:51:13 2000
++++ gnometris/Makefile.in	Tue May 30 16:14:41 2000
+@@ -127,10 +127,10 @@
  
  SUBDIRS = pix
  scoredir = $(localstatedir)/games
 -Gamesdir = $(datadir)/gnome/apps/Games
 +Gamesdir = $(datadir)/apps/Games
  
+ CPPFLAGS = -pedantic -Wall
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	$(GNOME_INCLUDEDIR)
  
@@ -222,7 +230,7 @@
 +Gamesdir = $(datadir)/apps/Games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = gnomine
@@ -240,6 +248,20 @@
  
  
  bin_PROGRAMS = gnotravex
+--- gnotski/Makefile.in.orig	Sun May 21 23:51:10 2000
++++ gnotski/Makefile.in	Tue May 30 16:46:09 2000
+@@ -128,9 +128,9 @@
+ 
+ scoredir = $(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/gnotski
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ 
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = gnotski
 --- gtali/Makefile.in.orig	Sun Sep 26 13:28:57 1999
 +++ gtali/Makefile.in	Mon Sep 27 09:44:54 1999
 @@ -125,12 +125,12 @@
@@ -268,6 +290,13 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
+--- gtali/help/da/Makefile.in.orig	Sun May 21 23:50:59 2000
++++ gtali/help/da/Makefile.in	Tue May 30 17:12:32 2000
+@@ -131,3 +131,3 @@
+ 
+-gtali_helpdir = $(datadir)/gnome/help/gtali/da
++gtali_helpdir = $(datadir)/help/gtali/da
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 --- gturing/Makefile.in.orig	Sun Sep 26 13:28:54 1999
 +++ gturing/Makefile.in	Mon Sep 27 09:37:08 1999
 @@ -125,12 +125,12 @@
@@ -312,6 +341,13 @@
  
  
  bin_PROGRAMS = iagno
+--- iagno/help/C/Makefile.in.orig	Sun May 21 23:51:06 2000
++++ iagno/help/C/Makefile.in	Tue May 30 17:13:41 2000
+@@ -128,3 +128,3 @@
+ 
+-iagno_helpdir = $(datadir)/gnome/help/iagno/C
++iagno_helpdir = $(datadir)/help/iagno/C
+ 
 --- mahjongg/Makefile.in.orig	Sun Sep 26 13:28:53 1999
 +++ mahjongg/Makefile.in	Mon Sep 27 09:46:10 1999
 @@ -128,10 +128,10 @@
@@ -353,6 +389,13 @@
 +same_gnome_helpdir = $(datadir)/help/samegnome/C
  
  same_gnome_help_DATA =  	index.html			topic.dat
+
+--- same-gnome/help/ru/Makefile.in.orig	Sun May 21 23:50:51 2000
++++ same-gnome/help/ru/Makefile.in	Tue May 30 17:13:02 2000
+@@ -128,3 +128,3 @@
+ 
+-same_gnome_helpdir = $(datadir)/gnome/help/samegnome/ru
++same_gnome_helpdir = $(datadir)/help/samegnome/ru
  
 --- scottfree/Makefile.in.orig	Sun Sep 26 13:28:52 1999
 +++ scottfree/Makefile.in	Mon Sep 27 09:52:29 1999
@@ -365,9 +408,18 @@
  
  
  bin_PROGRAMS = GnomeScott
---- xbill/Makefile.in.orig	Sun Sep 26 13:29:33 1999
-+++ xbill/Makefile.in	Mon Sep 27 09:53:11 1999
-@@ -143,7 +143,7 @@
+--- xbill/Makefile.in.orig	Sun May 21 23:51:14 2000
++++ xbill/Makefile.in	Tue May 30 16:30:13 2000
+@@ -131,7 +131,7 @@
+ # This is where the high score file goes ...
+ scoredir = $(localstatedir)/games
+ 
+-INCLUDES = $(GNOME_INCLUDEDIR) -DGNOMELOCALDIR=\""$(datadir)/local"\"
++INCLUDES = $(GNOME_INCLUDEDIR) -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
+ bin_PROGRAMS = gnome-xbill
+ 
+ gnome_xbill_SOURCES = Bucket.cc Bucket.h Cable.cc Cable.h Computer.cc                       Computer.h Game.cc Game.h Horde.cc Horde.h Library.cc                       Library.h MCursor.cc MCursor.h Monster.cc Monster.h                       Network.cc Network.h Picture.cc Picture.h Spark.cc                       Spark.h Strings.h UI.cc UI.h objects.h x11-gtk.cc x11.h
+@@ -144,7 +144,7 @@
  pixmapdir = $(datadir)/pixmaps
  pixmap_DATA = xbill.png
  

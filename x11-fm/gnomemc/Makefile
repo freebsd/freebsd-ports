@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomemc
-PORTVERSION= 	4.5.48
+PORTVERSION= 	4.5.50
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
@@ -14,8 +14,7 @@ DISTNAME=	mc-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 

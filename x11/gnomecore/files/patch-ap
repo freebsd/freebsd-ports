@@ -1,0 +1,23 @@
+--- gsm/Makefile.in.orig	Tue May 23 04:24:59 2000
++++ gsm/Makefile.in	Fri May 26 15:28:56 2000
+@@ -141,9 +141,9 @@
+ 
+ SUBDIRS = help
+ 
+-defaultdir = $(datadir)/gnome
++defaultdir = $(datadir)
+ 
+-INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(datadir)/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\""
++INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\""
+ 
+ 
+ LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
+@@ -169,7 +169,7 @@
+ 
+ default_DATA = default.session default.wm
+ 
+-desktopdir = $(datadir)/gnome/apps/Settings/Session/
++desktopdir = $(datadir)/apps/Settings/Session/
+ desktop_DATA = save-session.desktop session.desktop
+ 
+ man_MANS = gnome-wm.1 save-session.1 default.session.5 gnome-session.1

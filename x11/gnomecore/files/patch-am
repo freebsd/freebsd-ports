@@ -1,86 +1,69 @@
---- gnome-terminal/gnome-terminal.c.orig	Thu Nov 11 18:05:12 1999
-+++ gnome-terminal/gnome-terminal.c	Thu Jan 20 17:00:49 2000
-@@ -480,6 +480,7 @@
- 		cfg->color_type = PALETTE_CUSTOM;
+--- gnome-terminal/gnome-terminal.c.orig	Fri May 19 23:38:07 2000
++++ gnome-terminal/gnome-terminal.c	Fri May 26 15:15:38 2000
+@@ -507,7 +507,7 @@
  	else
  		cfg->color_type = PALETTE_LINUX;
-+	cfg->keyboard_secured = gnome_config_get_bool ("keyboard_secured=0");
- 	cfg->bell      = gnome_config_get_bool ("bell_silenced=0");
- 	cfg->blink     = gnome_config_get_bool ("blinking=0");
- 	cfg->swap_keys = gnome_config_get_bool ("swap_del_and_backspace=0");
-@@ -507,7 +508,8 @@
- 	cfg->termname = NULL;
- 	cfg->terminal_id = 0;
- 
--	cfg->update_records = ZVT_TERM_DO_UTMP_LOG|ZVT_TERM_DO_WTMP_LOG;
-+	cfg->update_records = ZVT_TERM_DO_UTMP_LOG | ZVT_TERM_DO_WTMP_LOG
-+	   | ZVT_TERM_DO_LASTLOG;
- 
- 	if (strcasecmp (fore_color, back_color) == 0)
- 		/* don't let them set identical foreground and background colors */
-@@ -994,6 +996,7 @@
- 	gnome_config_set_string ("scrollpos",
+ 	
+-	cfg->keyboard_secured  = FALSE;
++	cfg->keyboard_secured  = gnome_config_get_bool ("keyboard_secured=0");
+ 	
+ 	cfg->bell              = gnome_config_get_bool ("bell_silenced=0");
+ 	cfg->blink             = gnome_config_get_bool ("blinking=0");
+@@ -1028,6 +1028,7 @@
  				 cfg->scrollbar_position == SCROLLBAR_LEFT ? "left" :
  				 cfg->scrollbar_position == SCROLLBAR_RIGHT ? "right" : "hidden");
+ 
 +	gnome_config_set_bool	("keyboard_secured", cfg->keyboard_secured);
  	gnome_config_set_bool   ("bell_silenced", cfg->bell);
  	gnome_config_set_bool   ("blinking", cfg->blink);
  	gnome_config_set_bool   ("swap_del_and_backspace", cfg->swap_keys);
-@@ -2260,6 +2263,8 @@
- 			cfg->update_records |= ZVT_TERM_DO_UTMP_LOG;
- 		if (gnome_config_get_bool ("do_wtmp=true"))
- 			cfg->update_records |= ZVT_TERM_DO_WTMP_LOG;
-+		if (gnome_config_get_bool ("do_lastlog=true"))
-+			cfg->update_records |= ZVT_TERM_DO_LASTLOG;
- 
- 		termid = gnome_config_get_int("terminal_id=-1");
- 		if (termid!=-1)
-@@ -2367,6 +2372,7 @@
- 		gnome_config_set_string("window_title", cfg->window_title?cfg->window_title:"Terminal");
- 		gnome_config_set_bool("do_utmp", (cfg->update_records & ZVT_TERM_DO_UTMP_LOG) != 0);
- 		gnome_config_set_bool("do_wtmp", (cfg->update_records & ZVT_TERM_DO_WTMP_LOG) != 0);
-+		gnome_config_set_bool("do_lastlog", (cfg->update_records & ZVT_TERM_DO_LASTLOG) != 0);
- 
- 		gnome_config_pop_prefix ();
- 		g_free (prefix);
-@@ -2417,8 +2423,10 @@
+@@ -2544,12 +2545,12 @@
  	DONOUTMP_KEY = -10,
  	DOWTMP_KEY   = -11,
  	DONOWTMP_KEY = -12,
 -        TITLE_KEY    = -13,
--	TERM_KEY     = -14
-+	DOLASTLOG_KEY   = -13,
-+	DONOLASTLOG_KEY = -14,
-+        TITLE_KEY    = -15,
-+	TERM_KEY     = -16
+-	TERM_KEY     = -14,
+-	START_FACTORY_KEY= -15,
+-	USE_FACTORY_KEY  = -16,
+-	DOLASTLOG_KEY   = -17,
+-	DONOLASTLOG_KEY = -18,
++        DOLASTLOG_KEY    = -13,
++	DONOLASTLOG_KEY     = -14,
++	TITLE_KEY    = -15,
++	TERM_KEY     = -16,
++	START_FACTORY_KEY= -17,
++	USE_FACTORY_KEY  = -18
  };
  
  static struct poptOption cb_options [] = {
-@@ -2462,6 +2470,12 @@
+--- gnome-terminal/Makefile.in.orig	Tue May 23 04:25:29 2000
++++ gnome-terminal/Makefile.in	Fri May 26 15:46:43 2000
+@@ -143,7 +143,7 @@
  
- 	{ "nowtmp", '\0', POPT_ARG_NONE, NULL, DONOWTMP_KEY,
- 	  N_("Do not update wtmp entry"), N_("NOWTMP") },
-+
-+	{ "lastlog", '\0', POPT_ARG_NONE, NULL, DOLASTLOG_KEY,
-+	  N_("Update lastlog entry"), N_("LASTLOG") },
-+
-+	{ "nolastlog", '\0', POPT_ARG_NONE, NULL, DONOLASTLOG_KEY,
-+	  N_("Do not update lastlog entry"), N_("NOLASTLOG") },
- 	
- 	{ "title", 't', POPT_ARG_STRING, NULL, TITLE_KEY,
-           N_("Set the window title"), N_("TITLE") },
-@@ -2538,6 +2552,14 @@
- 	case DONOWTMP_KEY:
- 		cfg->update_records_and &= ~ZVT_TERM_DO_WTMP_LOG;
- 		cfg->update_records_xor &= ~ZVT_TERM_DO_WTMP_LOG;
-+		break;
-+	case DOLASTLOG_KEY:
-+		cfg->update_records_and &= ~ZVT_TERM_DO_LASTLOG;
-+		cfg->update_records_xor |= ZVT_TERM_DO_LASTLOG;
-+		break;
-+	case DONOLASTLOG_KEY:
-+		cfg->update_records_and &= ~ZVT_TERM_DO_LASTLOG;
-+		cfg->update_records_xor &= ~ZVT_TERM_DO_LASTLOG;
- 		break;
- 	case TITLE_KEY:
- 	        cfg->window_title = g_strdup(arg);
+ SUBDIRS = C de da es it no
+ 
+-INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(datadir)/locale\""
++INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
+ 
+ 
+ LDADD =  	$(GNOME_LIBDIR)						$(GNORBA_LIBS)						$(ORB_LIBS)						$(GNOMEUI_LIBS)						$(ZVT_LIBS)						$(INTLLIBS)
+@@ -167,7 +167,7 @@
+ gnorbadir = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = gnome-terminal.gnorba
+ 
+-utildir = $(datadir)/gnome/apps/System
++utildir = $(datadir)/apps/System
+ util_DATA = gnome-terminal.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+--- gnome-terminal/de/Makefile.in.orig	Tue May 23 04:25:31 2000
++++ gnome-terminal/de/Makefile.in	Fri May 26 15:53:04 2000
+@@ -139,7 +139,7 @@
+ gnomelocaledir = @gnomelocaledir@
+ l = @l@
+ 
+-gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/de
++gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/de
+ 
+ gnome_terminal_help_DATA =  	index.html			topic.dat
+ 

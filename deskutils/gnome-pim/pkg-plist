@@ -1,7 +1,7 @@
 bin/gnomecal
 bin/gnomecard
+etc/CORBA/servers/gnomecal.gnorba
 etc/CORBA/servers/gnomecard.gnorba
-lib/libversit.a
 share/gnome/apps/Applications/gncal.desktop
 share/gnome/apps/Applications/gnomecard.desktop
 share/gnome/help/gnomecal/C/gnomecal.html
@@ -19,43 +19,43 @@ share/gnome/help/gnomecal/C/gcal.html
 share/gnome/help/gnomecal/C/ln20.html
 share/gnome/help/gnomecal/C/tech.html.html
 share/gnome/help/gnomecal/C/docbook.css
-share/gnome/help/gnomecard/C/description.html
-share/gnome/help/gnomecard/C/dialogs.html
-share/gnome/help/gnomecard/C/display.html
-share/gnome/help/gnomecard/C/docbook.css
-share/gnome/help/gnomecard/C/index.html
-share/gnome/help/gnomecard/C/ln9.html
-share/gnome/help/gnomecard/C/menubar.html
-share/gnome/help/gnomecard/C/recordview.html
-share/gnome/help/gnomecard/C/toolbar.html
-share/gnome/help/gnomecard/C/topic.dat
+share/gnome/idl/GnomeCal.idl
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
-share/gnome/pixmaps/gnome-card.xpm
+share/gnome/pixmaps/gnome-calendar-conduit.png
+share/gnome/pixmaps/gnome-gnomecard.png
+share/locale/ca/LC_MESSAGES/gnome-pim.mo
 share/locale/cs/LC_MESSAGES/gnome-pim.mo
+share/locale/cy/LC_MESSAGES/gnome-pim.mo
 share/locale/da/LC_MESSAGES/gnome-pim.mo
 share/locale/de/LC_MESSAGES/gnome-pim.mo
 share/locale/el/LC_MESSAGES/gnome-pim.mo
 share/locale/en_GB/LC_MESSAGES/gnome-pim.mo
 share/locale/es/LC_MESSAGES/gnome-pim.mo
+share/locale/et/LC_MESSAGES/gnome-pim.mo
 share/locale/fi/LC_MESSAGES/gnome-pim.mo
 share/locale/fr/LC_MESSAGES/gnome-pim.mo
 share/locale/ga/LC_MESSAGES/gnome-pim.mo
+share/locale/gd/LC_MESSAGES/gnome-pim.mo
+share/locale/gl/LC_MESSAGES/gnome-pim.mo
+share/locale/gv/LC_MESSAGES/gnome-pim.mo
 share/locale/hu/LC_MESSAGES/gnome-pim.mo
 share/locale/it/LC_MESSAGES/gnome-pim.mo
 share/locale/ja/LC_MESSAGES/gnome-pim.mo
 share/locale/ko/LC_MESSAGES/gnome-pim.mo
+share/locale/kw/LC_MESSAGES/gnome-pim.mo
+share/locale/lt/LC_MESSAGES/gnome-pim.mo
 share/locale/nl/LC_MESSAGES/gnome-pim.mo
 share/locale/no/LC_MESSAGES/gnome-pim.mo
 share/locale/pl/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-pim.mo
 share/locale/sv/LC_MESSAGES/gnome-pim.mo
 share/locale/ru/LC_MESSAGES/gnome-pim.mo
 share/locale/uk/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-pim.mo
-@dirrm share/gnome/help/gnomecard/C
-@dirrm share/gnome/help/gnomecard
 @dirrm share/gnome/help/gnomecal/C/images
 @dirrm share/gnome/help/gnomecal/C
 @dirrm share/gnome/help/gnomecal

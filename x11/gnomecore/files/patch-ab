@@ -1,25 +1,26 @@
---- help-browser/gnome-help-browser.c.orig	Tue Dec 29 05:19:41 1998
-+++ help-browser/gnome-help-browser.c	Tue Dec 29 05:20:50 1998
-@@ -72,13 +72,10 @@
+--- help-browser/gnome-help-browser.c.orig	Sat May 13 12:16:14 2000
++++ help-browser/gnome-help-browser.c	Fri May 26 14:31:15 2000
+@@ -81,14 +81,10 @@
  void destroy_server(HelpWindow win);
  
  /* MANPATH should probably come from somewhere */
--#define DEFAULT_MANPATH "/usr/man:/usr/local/man:/usr/X11R6/man"
--#define DEFAULT_INFOPATH "/usr/info:/usr/local/info"
-+#define DEFAULT_MANPATH "/usr/share/man:/usr/local/man:/usr/X11R6/man"
-+#define DEFAULT_INFOPATH "/usr/share/info:/usr/local/info:/usr/X11R6/info"
+-#define DEFAULT_MANPATH   GNOME_PREFIX "/man:/usr/man:/usr/share/man:/usr/local/man:/usr/X11R6/man"
+-#define DEFAULT_INFOPATH  GNOME_PREFIX "/info:/usr/info:/usr/share/info:/usr/local/info"
++#define DEFAULT_MANPATH   "/usr/share/man:/usr/local/man:/usr/X11R6/man"
++#define DEFAULT_INFOPATH  "/usr/share/info:/usr/local/info:/usr/X11R6/info"
  /* GHELPPATH probably needs some automatic additions inside toc */
--#define DEFAULT_GHELPPATH GNOMEHELPPATH ":/opt/gnome/share/gnome/help:" \
+-#define DEFAULT_GHELPPATH GNOME_PREFIX "/share/gnome/help:" \
+-                          "/opt/gnome/share/gnome/help:" \
 -                          "/usr/local/share/gnome/help:" \
 -			  "/usr/local/gnome/share/gnome/help:" \
--			  "/usr/share/gnome/help:" 
-+#define DEFAULT_GHELPPATH GNOMEHELPPATH
+-			  "/usr/share/gnome/help" 
++#define DEFAULT_GHELPPATH GNOME_PREFIX "/share/gnome/help"
  #define DEFAULT_MEMCACHESIZE "1000000"
  #define DEFAULT_HISTORYLENGTH "1000"
  #define HELP_BROWSER_RC_DIR ".gnome-help-browser"
---- help-browser/toc.c.orig	Tue Dec 29 05:20:55 1998
-+++ help-browser/toc.c	Tue Dec 29 05:21:48 1998
-@@ -19,14 +19,13 @@
+--- help-browser/toc.c.orig	Thu May  4 06:54:33 2000
++++ help-browser/toc.c	Fri May 26 14:32:55 2000
+@@ -20,14 +20,13 @@
  static int hideTocInt(GtkWidget *window);
  
  struct _toc_config toc_config[] = {
@@ -33,9 +34,225 @@
 -    { "/usr/local/gnome/share/gnome/help", TOC_GHELP_TYPE },
 -    { "/usr/share/gnome/help",             TOC_GHELP_TYPE },
 +    { "/usr/share/info",             TOC_INFO_TYPE  },
-+    { "/usr/local/info",             TOC_INFO_TYPE  },
-+    { "/usr/X11R6/info",             TOC_INFO_TYPE  },
-+    { "/usr/X11R6/share/gnome/help",             TOC_GHELP_TYPE },
++    { "/usr/local/info",	     TOC_INFO_TYPE  },
++    { "/usr/X11R6/info",	     TOC_INFO_TYPE  },
++    { "/usr/X11R6/share/gnome/help", TOC_GHELP_TYPE },
      { NULL, 0 }
  };
  
+--- help-browser/Makefile.in.orig	Tue May 23 04:25:07 2000
++++ help-browser/Makefile.in	Fri May 26 16:15:53 2000
+@@ -143,7 +143,7 @@
+ 
+ @HELP_USE_GTKHTML_TRUE@htmlcflags = -DHELP_USE_GTKHTML
+ 
+-INCLUDES =  	-I$(includedir)							-I$(top_srcdir)/intl -I$(top_builddir)/intl			$(GNOME_INCLUDEDIR)						-DGNOME_PREFIX=\""$(prefix)\"" 		-DGNOMELOCALEDIR=\""$(datadir)/locale\""		$(htmlcflags)
++INCLUDES =  	-I$(includedir)							-I$(top_srcdir)/intl -I$(top_builddir)/intl			$(GNOME_INCLUDEDIR)						-DGNOME_PREFIX=\""$(prefix)\"" 		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""		$(htmlcflags)
+ 
+ @HELP_USE_GTKHTML_TRUE@htmllibs = $(GNOME_XML_LIB) @PIXBUF_LIBS@ 	$(GTK_HTML_PREFIX)/lib/libgtkhtml.a		$(GNOME_PRINT_PREFIX)/lib/libgnomeprint.a
+ @HELP_USE_GTKHTML_FALSE@htmllibs = $(GTKXMHTML_LIBS)
+@@ -186,7 +186,7 @@
+ gnorbadir = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = help-browser.gnorba
+ 
+-sysdir = $(datadir)/gnome/apps
++sysdir = $(datadir)/apps
+ sys_DATA = gnome-help.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+@@ -558,7 +558,7 @@
+ help-caller.o gnome-help-browser.o: help-browser.h
+ 
+ install-exec-local:
+-	$(INSTALL_PROGRAM) $(top_srcdir)/help-browser/gnome-download \
++	$(INSTALL_SCRIPT) $(top_srcdir)/help-browser/gnome-download \
+ 		$(top_srcdir)/help-browser/gnome-convert $(DESTDIR)$(bindir)/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+--- help-browser/help/C/Makefile.in.orig	Tue May 23 04:25:10 2000
++++ help-browser/help/C/Makefile.in	Fri May 26 15:36:46 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html gnome-logo-large.png sample-help.html sample-topic.dat
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/C
++help_browser_helpdir = $(datadir)/help/help-browser/C
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/ca/Makefile.in.orig	Tue May 23 04:25:11 2000
++++ help-browser/help/ca/Makefile.in	Fri May 26 15:36:57 2000
+@@ -143,7 +143,7 @@
+ 
+ EXTRA_DIST = default-page.html
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/ca
++help_browser_helpdir = $(datadir)/help/help-browser/ca
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/da/Makefile.in.orig	Tue May 23 04:25:12 2000
++++ help-browser/help/da/Makefile.in	Fri May 26 15:37:09 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/da
++help_browser_helpdir = $(datadir)/help/help-browser/da
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/el/Makefile.in.orig	Tue May 23 04:25:13 2000
++++ help-browser/help/el/Makefile.in	Fri May 26 15:37:16 2000
+@@ -143,7 +143,7 @@
+ 
+ EXTRA_DIST = default-page.html
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/el
++help_browser_helpdir = $(datadir)/help/help-browser/el
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/es/Makefile.in.orig	Tue May 23 04:25:14 2000
++++ help-browser/help/es/Makefile.in	Fri May 26 15:37:46 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/es
++help_browser_helpdir = $(datadir)/help/help-browser/es
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/et/Makefile.in.orig	Tue May 23 04:25:15 2000
++++ help-browser/help/et/Makefile.in	Fri May 26 15:37:53 2000
+@@ -143,7 +143,7 @@
+ 
+ EXTRA_DIST = default-page.html
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/et
++help_browser_helpdir = $(datadir)/help/help-browser/et
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/eu/Makefile.in.orig	Tue May 23 04:25:16 2000
++++ help-browser/help/eu/Makefile.in	Fri May 26 15:38:00 2000
+@@ -143,7 +143,7 @@
+ 
+ EXTRA_DIST = default-page.html
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/eu
++help_browser_helpdir = $(datadir)/help/help-browser/eu
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/fr/Makefile.in.orig	Tue May 23 04:25:17 2000
++++ help-browser/help/fr/Makefile.in	Fri May 26 15:38:09 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/fr
++help_browser_helpdir = $(datadir)/help/help-browser/fr
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/gl/Makefile.in.orig	Tue May 23 04:25:18 2000
++++ help-browser/help/gl/Makefile.in	Fri May 26 15:38:16 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/gl
++help_browser_helpdir = $(datadir)/help/help-browser/gl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/hu/Makefile.in.orig	Tue May 23 04:25:18 2000
++++ help-browser/help/hu/Makefile.in	Fri May 26 15:38:25 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html sample-help.html sample-topic.dat
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/hu
++help_browser_helpdir = $(datadir)/help/help-browser/hu
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/it/Makefile.in.orig	Tue May 23 04:25:19 2000
++++ help-browser/help/it/Makefile.in	Fri May 26 15:38:37 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/it
++help_browser_helpdir = $(datadir)/help/help-browser/it
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/ja/Makefile.in.orig	Tue May 23 04:25:20 2000
++++ help-browser/help/ja/Makefile.in	Fri May 26 15:38:47 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html sample-help.html sample-topic.dat
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/ja
++help_browser_helpdir = $(datadir)/help/help-browser/ja
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/ko/Makefile.in.orig	Tue May 23 04:25:21 2000
++++ help-browser/help/ko/Makefile.in	Fri May 26 15:38:54 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/ko
++help_browser_helpdir = $(datadir)/help/help-browser/ko
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/lt/Makefile.in.orig	Tue May 23 04:25:22 2000
++++ help-browser/help/lt/Makefile.in	Fri May 26 15:39:03 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/lt
++help_browser_helpdir = $(datadir)/help/help-browser/lt
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/no/Makefile.in.orig	Tue May 23 04:25:24 2000
++++ help-browser/help/no/Makefile.in	Fri May 26 15:39:12 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/no
++help_browser_helpdir = $(datadir)/help/help-browser/no
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/uk/Makefile.in.orig	Tue May 23 04:25:25 2000
++++ help-browser/help/uk/Makefile.in	Fri May 26 15:39:19 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/uk
++help_browser_helpdir = $(datadir)/help/help-browser/uk
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/wa/Makefile.in.orig	Tue May 23 04:25:26 2000
++++ help-browser/help/wa/Makefile.in	Fri May 26 15:39:27 2000
+@@ -142,7 +142,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/wa
++help_browser_helpdir = $(datadir)/help/help-browser/wa
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 

@@ -63,6 +63,8 @@ include/libart_lgpl/art_vpath.h
 include/libart_lgpl/art_vpath_bpath.h
 include/libart_lgpl/art_vpath_dash.h
 include/libart_lgpl/art_vpath_svp.h
+include/libart_lgpl/libart-features.h
+include/libart_lgpl/libart.h
 include/libgnome/gnome-config.h
 include/libgnome/gnome-defs.h
 include/libgnome/gnome-dentry.h
@@ -175,28 +177,28 @@ include/zvt/vtx.h
 include/zvt/zvtterm.h
 lib/libart_lgpl.a
 lib/libart_lgpl.so
-lib/libart_lgpl.so.3
+lib/libart_lgpl.so.4
 lib/libgnome.a
 lib/libgnome.so
-lib/libgnome.so.3
+lib/libgnome.so.4
 lib/libgnomesupport.a
 lib/libgnomesupport.so
-lib/libgnomesupport.so.3
+lib/libgnomesupport.so.4
 lib/libgnomeui.a
 lib/libgnomeui.so
-lib/libgnomeui.so.3
+lib/libgnomeui.so.4
 lib/libgnorba.a
 lib/libgnorba.so
-lib/libgnorba.so.3
+lib/libgnorba.so.4
 lib/libgnorbagtk.a
 lib/libgnorbagtk.so
-lib/libgnorbagtk.so.3
+lib/libgnorbagtk.so.4
 lib/libgtkxmhtml.a
 lib/libgtkxmhtml.so
-lib/libgtkxmhtml.so.3
+lib/libgtkxmhtml.so.4
 lib/libzvt.a
 lib/libzvt.so
-lib/libzvt.so.3
+lib/libzvt.so.4
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/libart.m4
