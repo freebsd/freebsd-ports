@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	bricolage
 MAINTAINER=	ports@rbt.ca
 COMMENT=	A full-featured, open-source content-management and publishing system
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13-modperl \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -38,19 +37,21 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13-modperl \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq-static \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/MasonX/Interp/WithCallbacks.pm:${PORTSDIR}/www/p5-MasonX-Interp-WithCallbacks \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect
-RUN_DEPENDS=	${BUILD_DEPENDS}
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${BUILD_DEPENDS}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 
 # Used to determine which versions we can upgrade from
-PREVIOUS_VERSIONS=	1.8.0 1.8.1
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 ${PORTVERSION}
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
