@@ -4,7 +4,12 @@ etc/CORBA/servers/GnomeICU.gnorba
 etc/sound/events/GnomeICU.soundlist
 share/gnome/applets/Network/GnomeICU.desktop
 share/gnome/apps/Internet/GnomeICU.desktop
+share/gnome/gnomeicu/glade/addcontact.glade
+share/gnome/gnomeicu/glade/auth.glade
+share/gnome/gnomeicu/glade/history.glade
 share/gnome/gnomeicu/glade/main.glade
+share/gnome/gnomeicu/glade/message.glade
+share/gnome/gnomeicu/glade/user_info.glade
 share/gnome/gnomeicu/icons/Default/gnomeicu-animation.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-away.png
