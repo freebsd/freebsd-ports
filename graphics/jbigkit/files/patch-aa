@@ -1,0 +1,21 @@
+--- Makefile.orig	Tue Jan  9 16:26:33 1996
++++ Makefile	Tue Dec  3 18:33:09 1996
+@@ -30,3 +30,18 @@
+ distribution: clean
+ 	rm -f libjbig/libjbig.a
+ 	(cd ..; tar -c -v --exclude RCS -f jbigkit.tar jbigkit)
++
++install:
++	mkdir -p ${PREFIX}/bin
++	install -c -s -m 755 -o bin -g bin pbmtools/jbgtopbm ${PREFIX}/bin
++	install -c -s -m 755 -o bin -g bin pbmtools/pbmtojbg ${PREFIX}/bin
++	mkdir -p ${PREFIX}/man/man1
++	install -c -m 644 -o bin -g bin pbmtools/pbmtojbg.1 ${PREFIX}/man/man1
++	install -c -m 644 -o bin -g bin pbmtools/jbgtopbm.1 ${PREFIX}/man/man1
++	mkdir -p ${PREFIX}/man/man5
++	install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
++	mkdir -p ${PREFIX}/include
++	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
++	mkdir -p ${PREFIX}/lib
++	install -c -m 644 -o bin -g bin libjbig/libjbig.a ${PREFIX}/lib
++	install -c -m 644 -o bin -g bin libjbig/libjbig.so.0.9 ${PREFIX}/lib
