@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple(r) object representation of an XML::LibXML DOM object
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/XML/SimpleObject/LibXML.pm:${PORTSDIR}/textproc/p5-XML-SimpleObject
+		${SITE_PERL}/XML/SimpleObject.pm:${PORTSDIR}/textproc/p5-XML-SimpleObject
 
 PERL_CONFIGURE=	YES
 
