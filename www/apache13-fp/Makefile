@@ -3,23 +3,19 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id$
+# $Id: Makefile,v 1.3 1998/11/10 01:55:55 steve Exp $
 #
 
 DISTNAME=       apache_1.3.3
 PKGNAME=        apache_fp-1.3.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
-		ftp://ftp.microsoft.com/products/frontpage/
+		ftp://ftp.microsoft.com/products/frontpage/ \
+		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/
 
 PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.3/ \
 		http://www.apache.org/dist/patches/apply_to_1.3.3/
-
-PATCHFILES=	core_404_log_bug.txt proxy_segv.txt
-
-# This file will not apply, fails on hunk 2 for main/http_protocol.c
-#PATCHFILES+=	server_error_filename.txt
-
+PATCHFILES=	core_404_log_bug.txt proxy_segv.txt server_error_filename.txt
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else
@@ -105,6 +101,9 @@ post-extract:
 	@${ECHO} "===>  Extracting FrontPage install scripts"
 	@cd ${WRKSRC} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${FPINSTALL} ${CHANGESERVER}
+
+pre-patch:
+	@${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/http_protocol.patch
 
 post-install:
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh.tmpl file."
