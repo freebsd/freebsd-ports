@@ -17,11 +17,7 @@ COMMENT?=	A webmail system which accesses mail over IMAP
 
 CONFLICTS?=	ja-squirrelmail-1.*
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
+WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
 
@@ -41,6 +37,9 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 .if !defined(MASTERDIR)
 MASTERDIR=	${.CURDIR}
 .endif 
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
@@ -106,4 +105,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
