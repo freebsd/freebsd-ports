@@ -1,0 +1,20 @@
+This library provides routines that return:
+    (1)  Beta random deviates
+    (2)  Chi-square random deviates
+    (3)  Exponential random deviates
+    (4)  F random deviates
+    (5)  Gamma random deviates
+    (6)  Multivariate normal random deviates (mean and covariance
+         matrix specified)
+    (7)  Noncentral chi-square random deviates
+    (8)  Noncentral F random deviates
+    (9)  Univariate normal random deviates
+    (10) Random permutations of an integer array
+    (11) Real uniform random deviates between specif
+    (12) Binomial random deviates
+    (13) Negative Binomial random deviates
+    (14) Multinomial random deviates
+    (15) Poisson random deviates
+    (16) Integer uniform deviates between specified limits
+    (17) Seeds for the random number generator calculated from a
+         character string
