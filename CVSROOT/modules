@@ -8151,6 +8151,7 @@ sleuth		ports/dns/sleuth
 sleuthkit	ports/sysutils/sleuthkit
 slffea		ports/cad/slffea
 slib		ports/lang/slib
+slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slideshow	ports/multimedia/slideshow
 slingshot	ports/x11-toolkits/slingshot
