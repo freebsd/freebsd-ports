@@ -192,7 +192,7 @@ POST-INSTALL)
       echo 'esac' >> ${startup_script};
       echo 'exit 0' >> ${startup_script};
       chmod 755 ${startup_script}
-      chown bin.bin ${startup_script}
+      chown bin:bin ${startup_script}
     fi
     ;;
 esac
