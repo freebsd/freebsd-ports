@@ -1,0 +1,9 @@
+************************************************************
+You'll need to configure
+	/usr/local/etc/nntpcache/nntpcache.access
+	/usr/local/etc/nntpcache/nntpcache.config
+	/usr/local/etc/nntpcache/nntpcache.servers
+from distributed samples, and create
+	/usr/local/etc/rc.d/nntpcached.sh
+to activate nntpcache.
+************************************************************
