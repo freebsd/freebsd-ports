@@ -4,15 +4,15 @@
 #
 # $FreeBSD$
 #
+# port's source files are in src dir in portball
 
 PORTNAME=	tcpblast
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks net
-DISTFILES=	# empty
+DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 
-NO_CHECKSUM=	"port's source files are part of this portball"
 WRKSRC=		${WRKDIR}/src
 
 do-extract:
