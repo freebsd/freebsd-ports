@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.4.h
+PORTVERSION=	0.4.i
 CATEGORIES=	editors
 MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.h/h/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.i/i/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -24,8 +24,5 @@ MAN1=		manedit.1
 pre-patch:
 	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
 		xargs ${PERL} -pi -e 's|malloc\.h|stdlib.h|g'
-
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/manwrap.sh ${PREFIX}/bin/manwrap
 
 .include <bsd.port.mk>

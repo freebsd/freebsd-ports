@@ -1,64 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.orig	Fri Feb  9 02:18:25 2001
-+++ Makefile	Fri Feb  9 15:41:52 2001
-@@ -18,7 +18,7 @@
- #   You may modify any value as needed. Change only the ones you are
- #   absolutly sure that requires modification.
+--- Makefile	2001/03/20 16:46:26	1.1
++++ Makefile	2001/03/20 16:46:37
+@@ -52,7 +52,7 @@
  #
--PREFIX = /usr
-+PREFIX ?= /usr
+ GTK_CONFIG ?= gtk-config
+ GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
+-CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
++CFLAGS += $(GTK_CFLAGS) -Wall \
+           -DPREFIX=\"$(PREFIX)\" \
+           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
  
- 
- # ########################################################################
-@@ -49,7 +49,9 @@
- #				to debug the program.
- #
- #CFLAGS = `gtk-config --cflags` -g -efence -Wall
--CFLAGS = `gtk-config --cflags` -O2 -Wall
-+GTK_CFLAGS !=  $(GTK_CONFIG) --cflags
-+CFLAGS += $(GTK_CFLAGS) -Wall -DPREFIX=\"$(PREFIX)\" \
-+	  -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
- 
- CPPFLAGS = -D__cplusplus -Dc_plusplus
- 
-@@ -65,7 +67,7 @@
- #   to the LIB line depending on what you have set in the CFLAGS line
- #   farther above.
- #
--LIB = `gtk-config --libs`
-+LIB != $(GTK_CONFIG) --libs
- 
- # Library Directories:
- #
-@@ -95,9 +97,10 @@
- #
- include Makefile.srclist
- 
--CC  = gcc
--CPP = g++
-+CC  ?= gcc
-+CPP = $(CXX)
- BIN = manedit
-+SED ?= sed
- OBJ_C = $(SRC_C:.c=.o)
- OBJ_CPP = $(SRC_CPP:.cpp=.o)
- .c.o:
-@@ -112,7 +115,7 @@
- $(BIN): $(OBJ_C) $(OBJ_CPP)
- 	$(CC) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIB) $(LIB_DIR)
- 
--all: $(BIN)
-+all: $(BIN) $(BIN).1.out
- 
- 
- # ########################################################################
-@@ -129,5 +132,7 @@
- clean:
- 	rm -f a.out core *.o
- 
-+$(BIN).1.out: $(BIN).1
-+	$(SED) 's|%%PREFIX%%|$(PREFIX)|g' $(BIN).1 > $(BIN).1.out
- 
- # ########################################################################

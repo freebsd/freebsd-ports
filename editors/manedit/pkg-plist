@@ -1,4 +1,5 @@
 bin/manedit
+bin/manview
 bin/manwrap
 share/manedit/help/manpage_writing_procedures
 share/manedit/help/manpage_xml_referance
