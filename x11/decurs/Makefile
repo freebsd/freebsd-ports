@@ -9,7 +9,7 @@ PORTNAME=	decurs
 PORTVERSION=	0.50.1
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.hut.fi/~pvsavola/files/
+MASTER_SITES=	http://varg.dyndns.org/psi/files/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
