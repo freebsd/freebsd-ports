@@ -1,0 +1,11 @@
+LaBrea  is  a  small  Linux-based  application  that  puts  unused  IP
+addresses on your network to  use,  creating a "tarpit" which can stop
+or slow down scans of your  address space, eg, CodeRed.
+It is licensed under the GPL.
+
+For more information, visit:
+
+WWW: http://www.hackbusters.net
+
+- Nick
+nick@rogness.net
