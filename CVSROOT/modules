@@ -4040,6 +4040,7 @@ latex-beamer	ports/print/latex-beamer
 latex-biblist	ports/print/latex-biblist
 latex-bibtopic	ports/print/latex-bibtopic
 latex-bibunits	ports/print/latex-bibunits
+latex-booktabs	ports/print/latex-booktabs
 latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
 latex-feynmf	ports/print/latex-feynmf
