@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://www.hensa.ac.uk/mirrors/povray/%SUBDIR%/ \
 		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	Official/Unix
+MASTER_SITE_SUBDIR=	Old-Versions/Official-3.1g/Unix
 DISTNAME=	povray31
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
