@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.27.01
+PORTVERSION=	0.28
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.2701
 
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	A Client interface to LDAP servers
@@ -24,29 +23,31 @@ BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-AS
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Net::LDAP::Control::VLVResponse.3 \
-		Net::LDAP::Entry.3 \
-		Net::LDAP::Control::Sort.3 \
-		Net::LDAP::Util.3 \
-		Bundle::Net::LDAP.3 \
-		Net::LDAP::Search.3 \
-		Net::LDAP::Security.3 \
-		Net::LDAP::Control::SortResult.3 \
-		Net::LDAP::LDIF.3 \
-		Net::LDAP::Schema.3 \
-		Net::LDAP::Filter.3 \
-		Net::LDAP::Examples.3 \
-		Net::LDAP::Control::VLV.3 \
-		Net::LDAPS.3 \
-		Net::LDAP::FAQ.3 \
+MAN3=		Bundle::Net::LDAP.3 \
+		Net::LDAP.3 \
+		Net::LDAP::Constant.3 \
 		Net::LDAP::Control.3 \
 		Net::LDAP::Control::Paged.3 \
-		Net::LDAP.3 \
+		Net::LDAP::Control::ProxyAuth.3 \
+		Net::LDAP::Control::Sort.3 \
+		Net::LDAP::Control::SortResult.3 \
+		Net::LDAP::Control::VLV.3 \
 		Net::LDAP::DSML.3 \
+		Net::LDAP::Entry.3 \
+		Net::LDAP::Examples.3 \
+		Net::LDAP::Extra.3 \
+		Net::LDAP::FAQ.3 \
+		Net::LDAP::Filter.3 \
+		Net::LDAP::LDIF.3 \
 		Net::LDAP::Message.3 \
-		Net::LDAP::Constant.3 \
+		Net::LDAP::RFC.3 \
 		Net::LDAP::Reference.3 \
-		Net::LDAP::RFC.3
+		Net::LDAP::RootDSE.3 \
+		Net::LDAP::Schema.3 \
+		Net::LDAP::Search.3 \
+		Net::LDAP::Security.3 \
+		Net::LDAP::Util.3 \
+		Net::LDAPI.3 \
+		Net::LDAPS.3
 
 .include <bsd.port.mk>

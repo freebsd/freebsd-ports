@@ -1,1 +1,6 @@
-A Client interface to LDAP servers
+Net::LDAP is a collection of modules that implements a LDAP services API
+for Perl programs. The module may be used to search directories or perform
+maintenance functions such as add, deleting or modify entries in an LDAP
+directory.
+
+WWW: http://perl-ldap.sourceforge.net/
