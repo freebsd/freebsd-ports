@@ -16,7 +16,7 @@ DISTNAME=	pyx12-${PORTVERSION:S/.b/b/}
 MAINTAINER=	john@zoner.org
 COMMENT=	Validate HIPAA X12 documents
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
