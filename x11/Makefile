@@ -23,6 +23,7 @@
     SUBDIR += buttonbox
     SUBDIR += chameleon
     SUBDIR += cnslock
+    SUBDIR += compositeext
     SUBDIR += damageext
     SUBDIR += decurs
     SUBDIR += deskmenu
