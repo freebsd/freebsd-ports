@@ -6992,6 +6992,7 @@ wormcontrol	src/usr.sbin/wormcontrol
 worms		src/games/worms
 wrapper		ports/x11/wrapper
 write		src/usr.bin/write
+wscan		ports/x11/wscan
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
 wterm		ports/x11/wterm
