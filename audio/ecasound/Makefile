@@ -55,7 +55,8 @@ PLIST_SUB+=	WITH_PYECASOUND="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in-optimizations
 .endif
 
-MAN1=		ecasound-iam.1 ecasound.1 ecatools.1
+MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
+		ecafixdc.1 ecanormalize.1 ecaplay.1 ecasignalview.1
 MAN5=		ecasoundrc.5
 
 pre-everything::
