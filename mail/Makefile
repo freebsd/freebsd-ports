@@ -142,6 +142,7 @@
     SUBDIR += mavbiff
     SUBDIR += mb2md
     SUBDIR += mboxgrep
+    SUBDIR += mboxstats
     SUBDIR += mbx2mbox
     SUBDIR += mess822
     SUBDIR += messagewall

@@ -1,0 +1,18 @@
+mboxstats creates several top-10 lists from a file containing message 
+in mbox-format.  List of top10 lists:
+
+o Top writes 
+o Top receivers 
+o Top subjects 
+o Top cc'ers 
+o Top top-level-domain 
+o Top timezones 
+o Top organisations 
+o Top useragents (mailprograms) 
+o Top month/day-of-month/day-of-week/hour 
+o Average number of lines per message 
+o All kinds of per-user statistics 
+
+And much more! 
+
+WWW: http://vanheusden.com/mboxstats/
