@@ -1,0 +1,11 @@
+--- nil/configuration.cpp	2000/09/28 15:45:28	1.1
++++ nil/configuration.cpp	2000/09/28 15:46:09
+@@ -159,7 +159,7 @@
+ 		"default.lump\tgfx/ripped\tgfx/original",
+ #else
+ 		"The filename of either the .lump file or the directory where data can be found (default is: ~/nil/gfx/ripped and ~/nil/gfx/original)",
+-		"default.lump\t~/nil/gfx/ripped\t~/nil/gfx/original",
++		"default.lump\t%%PREFIX%%/share/nil/gfx/ripped\t%%PREFIX%%/share/nil/gfx/original",
+ #endif
+ 		0,0,false,
+ 		true

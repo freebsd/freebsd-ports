@@ -164,6 +164,7 @@
     SUBDIR += tksol
     SUBDIR += trojka
     SUBDIR += tvp
+    SUBDIR += nil
     SUBDIR += omega
     SUBDIR += uox3
     SUBDIR += wmeyes
