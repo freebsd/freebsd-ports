@@ -1,0 +1,56 @@
+Index: ChangeLog
+===================================================================
+RCS file: /var/apscvs/APSCVS/src/apsfilter/ChangeLog,v
+retrieving revision 1.274.2.32
+retrieving revision 1.274.2.33
+diff -u -u -r1.274.2.32 -r1.274.2.33
+--- ChangeLog	27 Oct 2002 22:24:58 -0000	1.274.2.32
++++ ChangeLog	3 Nov 2002 22:54:36 -0000	1.274.2.33
+@@ -1,4 +1,11 @@
+-# $ApsCVS: src/apsfilter/ChangeLog,v 1.274.2.32 2002/10/27 22:24:58 andreas Exp $
++# $ApsCVS: src/apsfilter/ChangeLog,v 1.274.2.33 2002/11/03 22:54:36 andreas Exp $
++
++So  3 Nov 2002 23:47:31 CET     Andreas Klemm <andreas@apsfilter.org>
++
++	* Martin.Kraemer@Fujitsu-Siemens.com
++	  set umask in SETUP to make it possible to install apsfilter
++	  under root environments, that are very restrictive concerning
++	  umask settings.
+ 
+ So 27 Okt 2002 23:24:10 CET	Andreas Klemm <andreas@apsfilter.org>
+ 
+@@ -1756,7 +1763,7 @@
+ 
+ 	* build up new apsfilter CVS repository on srv1.cosmo-project.de
+ 	* moved apsfilter sources to new CVS repository
+-	* Changed CVS header from $Id$ to $ApsCVS: src/apsfilter/ChangeLog,v 1.274.2.32 2002/10/27 22:24:58 andreas Exp $
++	* Changed CVS header from $Id$ to $ApsCVS: src/apsfilter/ChangeLog,v 1.274.2.33 2002/11/03 22:54:36 andreas Exp $
+ 
+ So   9 Apr 2000 21:06:38 CEST	Andreas Klemm <andreas@klemm.gtn.com>
+ 
+Index: SETUP.in
+===================================================================
+RCS file: /var/apscvs/APSCVS/src/apsfilter/SETUP.in,v
+retrieving revision 1.123.2.15
+retrieving revision 1.123.2.16
+diff -u -u -r1.123.2.15 -r1.123.2.16
+--- SETUP.in	27 Oct 2002 22:05:19 -0000	1.123.2.15
++++ SETUP.in	3 Nov 2002 22:54:37 -0000	1.123.2.16
+@@ -2,7 +2,7 @@
+ # -*- sh -*-
+ 
+ #
+-# $ApsCVS: src/apsfilter/SETUP.in,v 1.123.2.15 2002/10/27 22:05:19 andreas Exp $
++# $ApsCVS: src/apsfilter/SETUP.in,v 1.123.2.16 2002/11/03 22:54:37 andreas Exp $
+ #
+ # apsfilter setup tool
+ #
+@@ -14,6 +14,8 @@
+ # exit status 0 on successfull printer installation
+ # exit status 1 indicates failures or if the user simply quit the program
+ #
++
++umask 022
+ 
+ PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin:/bin"
+ : ${TMPDIR:=/tmp} ${AWK:=@awk@}
