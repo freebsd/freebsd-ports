@@ -8,6 +8,7 @@
 
 PORTNAME=	hpoj
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
@@ -82,7 +83,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/ptal,${PREFIX}/etc/ptal,'  ${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/scripts/ptal-init.in
-	@${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/scripts/ptal-init.in
+	@${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/scripts/ptal-init.in ${WRKSRC}/scripts/ptal-cups.in
 .for f in lib/ptal lib/sane lib/hpojip
 	@${REINPLACE_CMD} -e 's,CFLAGS=-O,CFLAGS+= @CFLAGS@,' ${WRKSRC}/${f}/Makefile.in
 .endfor
@@ -95,7 +96,7 @@ post-install:
 .ifndef(WITHOUT_X11)
 	@${INSTALL_PROGRAM} ${WRKSRC}/apps/xojpanel/xojpanel ${X11BASE}/bin
 .endif
-	@${MV} ${PREFIX}/etc/rc.d/ptal-init.sh ${PREFIX}/etc/rc.d/ptal-init.sh.sample
+	@${MV} ${PREFIX}/etc/rc.d/ptal-init.sh ${PREFIX}/etc/rc.d/020.ptal-init.sh.sample
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message
 
 .include <bsd.port.post.mk>
