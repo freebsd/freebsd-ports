@@ -52,7 +52,6 @@ share/doc/pccts/README
 share/doc/pccts/RIGHTS
 share/doc/pccts/history.txt
 share/doc/pccts/history.ps
-share/doc/pccts/old_README
 share/examples/pccts/makefile
 share/examples/pccts/1/makefile
 share/examples/pccts/1/test.g
