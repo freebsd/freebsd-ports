@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://sys.estpak.ee/pub/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

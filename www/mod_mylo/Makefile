@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
