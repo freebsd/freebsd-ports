@@ -1,0 +1,11 @@
+--- CANNA-CONFIG.orig	Wed Mar  3 04:11:40 1999
++++ CANNA-CONFIG	Tue Mar 16 15:38:55 1999
+@@ -17,6 +17,8 @@
+ 	     (setq canna-includes (substring arg (match-end 0))))
+ 	    ((string-match "^--with-canna-libraries=" arg)
+ 	     (setq canna-libraries (substring arg (match-end 0))))
++	    ((string-match "^--with-emacs-srcdir=" arg)
++	     (setq srcdir (substring arg (match-end 0))))
+ 	    )
+       (setq command-line-args-left (cdr command-line-args-left))
+       )
