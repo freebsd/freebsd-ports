@@ -1,216 +1,5 @@
-diff -ubwr ./grabber-meteor.cc /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber-meteor.cc
---- ./grabber-meteor.cc	Fri May 29 17:06:00 1998
-+++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber-meteor.cc	Mon Apr 13 20:47:54 1998
-@@ -59,6 +59,7 @@
- #include "bsd-endian.h"
- 
- #include <machine/ioctl_meteor.h>
-+#include <machine/ioctl_bt848.h>
- 
- /*XXX*/
- #define NTSC_WIDTH 320
-@@ -92,6 +93,7 @@
- 	u_int baseheight_;	/* Width of frame to be captured */
- 	u_int decimate_;	/* division of base sizes */
- 	volatile u_int* pyuv_;	/* pointer to yuv data */
-+	int tuner_ ;		/* tuner device... */
- };
- 
- class Meteor422Grabber : public MeteorGrabber {
-@@ -131,24 +133,16 @@
- 
- MeteorScanner::MeteorScanner(const int n)
- {
--	char*	devname_template  = "/dev/meteor%d";
--	char*	nickname_template = "Matrox Meteor %d";
--	char*	devname_template1  = "/dev/bktr%d";
--	char*	nickname_template1 = "BrookTree848 %d";
--
--
-+    static char *d[] = { "/dev/bktr%d", "/dev/meteor%d", NULL };
-+    char *nickname_template = "meteor-%d";
- 
- 	for(int i = 0; i < n; i++) {
--		char	*devname  = new char[strlen(devname_template)  + 3];
-+	for (int j = 0 ; d[j] != NULL ; j++) {
-+	    char *devname  = new char[strlen(d[j]) + 3];
- 		char	*nickname = new char[strlen(nickname_template) + 3];
--		char	*devname1  = new char[strlen(devname_template1)  + 3];
--		char	*nickname1 = new char[strlen(nickname_template1) + 3];
- 
-+	    sprintf(devname, d[j], i);
- 		sprintf(nickname, nickname_template, i + 1);
--		sprintf(devname, devname_template, i);
--
--		sprintf(nickname1, nickname_template1, i + 1);
--		sprintf(devname1, devname_template1, i);
- 		if(access(devname, R_OK) == 0) {
- 			int fd = open(devname, O_RDONLY);
- 			if(fd < 0) {
-@@ -161,29 +155,17 @@
- 			delete nickname;
- 			delete devname;
- 		}
--
--		if(access(devname1, R_OK) == 0) {
--			int fd = open(devname1, O_RDONLY);
--			if(fd < 0) {
--				new MeteorDevice(nickname1, devname1, 0);
--			} else {
--				(void)close(fd);
--				new MeteorDevice(nickname1, devname1, 1);
- 			}
--		} else {
--			delete nickname1;
--			delete devname1;
- 		}
- 	}
- 
--}
--
- MeteorDevice::MeteorDevice(const char* nickname, const char *devname, int free):
- 					InputDevice(nickname), name_(devname)
- {
- 	if(free)
- 		attributes_ = "\
- format {422 411} \
-+type {pal ntsc secam auto} \
- size {large normal small cif} \
- port {RCA Port-1 Port-2 Port-3 S-Video RGB}";
- 	else
-@@ -208,6 +190,7 @@
- 
- MeteorGrabber::MeteorGrabber(const char* name)
- {
-+	tuner_ = open("/dev/tuner", O_RDONLY);
- 	dev_ = open(name, O_RDONLY);
- 	if (dev_ == -1) {
- 		status_ = -1;
-@@ -230,6 +213,8 @@
- 	if (dev_ != -1) {
- 		close(dev_);
- 	}
-+	if (tuner_ != -1)
-+		close(tuner_);
- }
- 
- void MeteorGrabber::set_size_meteor(int w, int h)
-@@ -245,23 +230,14 @@
- 	 * means do so.
- 	 */
- 	unsigned short status;
--	ioctl(dev_, METEORSTATUS, &status);
--	if(status & METEOR_STATUS_HCLK) {
--		/* No source, assume ntsc */
-+	// ioctl(dev_, METEORSTATUS, &status);
-+	if ( video_format_ == METEOR_FMT_NTSC ) {
- 		if(geom.rows <= NTSC_HEIGHT && geom.columns <= NTSC_WIDTH)
- 			geom.oformat |= METEOR_GEO_EVEN_ONLY;
- 	} else {
--		/* is it pal or ntsc? */
--		if(status & METEOR_STATUS_FIDT) {
--						/* 60 hz */
--			if(geom.rows<=NTSC_HEIGHT && geom.columns<=NTSC_WIDTH)
--				geom.oformat |= METEOR_GEO_EVEN_ONLY;
--		} else {			/* 50 hz */
- 			if(geom.rows<=PAL_HEIGHT && geom.columns<=PAL_WIDTH)
- 				geom.oformat |= METEOR_GEO_EVEN_ONLY;
- 		}
--	}
--
- 	if(ioctl(dev_, METEORSETGEO, &geom) < 0) 
- 		perror("vic: METERSETGEO: ");
- }
-@@ -326,7 +302,7 @@
- void MeteorGrabber::fps(int f)
- {
- 	u_short met_fps = (u_short)f;
--	(void)ioctl(dev_, METEORSFPS, &met_fps);
-+	// (void)ioctl(dev_, METEORSFPS, &met_fps);
- 
- 	Grabber::fps(f);
- }
-@@ -367,6 +343,28 @@
- 			}
- 			return (TCL_OK);	
- 		}
-+		if (strcmp(argv[1], "freeze") == 0) {
-+			int cmd = METEOR_CAP_CONTINOUS ;
-+			if ( atoi(argv[2]) != 0 )
-+			    cmd = METEOR_CAP_STOP_CONT;
-+			ioctl(dev_, METEORCAPTUR, (char*)&cmd);
-+			return (TCL_OK);
-+		}
-+		if (strcmp(argv[1], "chan") == 0) {
-+			int p = port_;
-+			int c = atoi(argv[2]);
-+			if (c > 0 && c < 199)
-+			    p = METEOR_INPUT_DEV1 ;
-+			else
-+			    p = METEOR_INPUT_DEV0 ;
-+			if (p != port_) {
-+				port_ = p;
-+				ioctl(dev_, METEORSINPUT, &port_);
-+			}
-+			if (p == METEOR_INPUT_DEV1)
-+			    ioctl(dev_, TVTUNER_SETCHNL, &c);
-+			return (TCL_OK);	
-+		}
- 		if (strcmp(argv[1], "format") == 0 ||
- 			   strcmp(argv[1], "type") == 0) {
- 			if (strcmp(argv[2], "auto") == 0)
-@@ -437,7 +435,7 @@
- 		if (strcmp(argv[1], "brightness") == 0) {
- 			u_char val;
- 			ioctl(dev_, METEORGBRIG, &val);
--			tcl.resultf("%d", (int)val);
-+			tcl.resultf("%d", (unsigned int)val);
- 			return (TCL_OK);
- 		}
- 		if (strcmp(argv[1], "contrast") == 0) {
-@@ -507,10 +505,10 @@
- 		return 0;
- 
- 	int istride = inw_ * 2;
--	suppress((u_char*)pyuv_, istride);
--	saveblks((u_char*)pyuv_, istride);
-+	suppress((u_char*)pyuv_, istride); // compute which ones to send
-+	saveblks((u_char*)pyuv_, istride); // save copied blocks
- 	u_int32_t ts = media_ts();
--	YuvFrame f(ts, frame_, crvec_, outw_, outh_);
-+	YuvFrame f(ts, frame_, crvec_, outw_, outh_); // new obj.
- 	return (target_->consume(&f));
- }
- 
-@@ -724,6 +722,7 @@
- 	u_char* chm = lum + off;
- 	off >>= 2;
- 
-+int to_send = 0 ;
- 	crv += vstart_ * blkw_ + hstart_;
- 	lum += vstart_ * outw_ * 16 + hstart_ * 16;
- 	chm += vstart_ * (outw_ >> 1) * 8 + hstart_ * 8;
-@@ -734,9 +733,10 @@
- 		const u_char* nin = in;
- 		for (int x = hstart_; x < hstop_; ++x) {
- 			int s = *crv++;
--			if ((s & CR_SEND) != 0)
-+			if ((s & CR_SEND) != 0) {
- 				saveblk(in, lum, chm, chm + off, outw_, is);
--
-+				to_send++ ;
-+			}
- 			in += 32;
- 			lum += 16;
- 			chm += 8;
-@@ -746,4 +746,5 @@
- 		chm += 7 * (outw_ >> 1) + skip * 8;
- 		in = nin + 16 * is;
- 	}
-+	// fprintf(stderr, "this time send %d\n", to_send);
- }
 diff -ubwr ./grabber.cc /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.cc
---- ./grabber.cc	Tue Feb  6 00:02:00 1996
+--- grabber.cc	Tue Feb  6 00:02:00 1996
 +++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.cc	Fri Apr 10 15:36:42 1998
 @@ -69,6 +69,7 @@
  	  hstart_(0), hstop_(0),
@@ -231,31 +20,8 @@ diff -ubwr ./grabber.cc /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/
  		if (strcmp(argv[1], "fps") == 0) {
  			/*XXX assume value in range */
  			fps(atoi(argv[2]));
-@@ -194,11 +199,14 @@
-  * favoring the more restrictive metric.  If we're more than
-  * 200ms behind (e.g., the cpu is saturated or we've been
-  * suspended), give up and reset the frame clock.
-+ * The argument passed is the number of bytes transmitted.
-  */
- double Grabber::tick(int n)
- {
-+	// how much it took to send the data (microseconds)
- 	double frametime = 8e6 * double(n) / double(bps_);
- 	if (frametime < frametime_) {
-+		// took less than one frame...
- 		if (frametime * 2. < frametime_)
- 			delta_ += (frametime - delta_) * .25;
- 		else
-@@ -207,6 +215,7 @@
- 	} else
- 		delta_ = frametime;
- 
-+	// when to get next frame (not earlier than now!
- 	frameclock_ += frametime;
- 	double now = gettimeofday();
- 	double delta = frameclock_ - now;
 diff -ubwr ./grabber.h /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.h
---- ./grabber.h	Tue Feb  6 00:02:00 1996
+--- grabber.h	Tue Feb  6 00:02:00 1996
 +++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.h	Fri Apr 10 15:37:28 1998
 @@ -87,6 +87,7 @@
  	int vstop_;
@@ -290,29 +56,8 @@ diff -ubwr ./grabber.h /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/g
  				center = 1; \
  			} \
 diff -ubwr ./ui-ctrlmenu.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-ctrlmenu.tcl
---- ./ui-ctrlmenu.tcl	Thu Jun 27 01:27:48 1996
+--- ui-ctrlmenu.tcl	Thu Jun 27 01:27:48 1996
 +++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-ctrlmenu.tcl	Fri Apr 10 16:39:04 1998
-@@ -124,6 +124,7 @@
- 	catch "wm resizable $w false false"
- 
- 	frame $w.session
-+	# luigi - move next 2 lines to ui-main
- 	frame $w.cb
- 	build.xmit $w.cb
- 	frame $w.encoder
-@@ -139,9 +140,12 @@
- 		-relief raised -anchor c \
- 		-command "toggle_window $w" -font [mediumfont]
- 
-+	# luigi $w.cb goes into main menu
- 	pack $w.cb $w.encoder $w.decoder $w.session -padx 6 -fill x
-+	# pack $w.encoder $w.decoder $w.session -padx 6 -fill x
- 	pack $w.dismiss -anchor c -pady 4
- 
-+	# luigi - move next 3 lines to ui-main (must check something)
- 	if [have_transmit_permission] {
- 		selectInitialDevice
- 	}
 @@ -390,11 +394,15 @@
  		-relief raised -command transmit \
  		-anchor w -variable transmitButtonState -font $f \
@@ -370,15 +115,6 @@ diff -ubwr ./ui-ctrlmenu.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-l
  
  	insert_grabber_panel [$device nickname]
  
-@@ -765,7 +780,7 @@
- 		-value secam -variable inputType -font $f
- 
- 	global inputType typeButton
--	set inputType auto
-+	set inputType pal ; # auto
- 	set typeButton $w
- }
- 
 @@ -774,7 +789,8 @@
  	build.encoder_options $w.options
  	build.device $w.device
@@ -400,7 +136,7 @@ diff -ubwr ./ui-ctrlmenu.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-l
  	setFillRate
  	update
 diff -ubwr ./ui-grabber.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-grabber.tcl
---- ./ui-grabber.tcl	Fri Jun 21 04:39:35 1996
+--- ui-grabber.tcl	Fri Jun 21 04:39:35 1996
 +++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-grabber.tcl	Fri Apr 10 13:54:42 1998
 @@ -39,65 +39,93 @@
  # called foo-1, foo-2, etc. and you'll only need build.foo
@@ -672,7 +408,7 @@ diff -ubwr ./ui-grabber.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-lu
 +
 +### end of file ###
 diff -ubwr ./ui-resource.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-resource.tcl
---- ./ui-resource.tcl	Wed Apr  3 02:33:56 1996
+--- ui-resource.tcl	Wed Apr  3 02:33:56 1996
 +++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-resource.tcl	Fri Apr 10 21:11:56 1998
 @@ -140,7 +140,7 @@
  	option add Vic.useHardwareDecode false startupFile
@@ -683,24 +419,3 @@ diff -ubwr ./ui-resource.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-l
  	option add Vic.siteDropTime "300" startupFile
  
  	#
-diff -ubwr ./ui-util.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-util.tcl
---- ./ui-util.tcl	Tue Feb  6 00:02:20 1996
-+++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-util.tcl	Fri Apr 10 20:49:56 1998
-@@ -64,7 +64,7 @@
- 	global created$w
- 	if { ! [info exists created$w] } {
- 		set created$w 1
--		wm transient $w .
-+		# wm transient $w .
- 		update idletasks
- 		set x [winfo rootx .]
- 		set y [winfo rooty .]
-@@ -103,7 +103,7 @@
- 	}
- 	set title [resource iconPrefix]$title
- 	wm withdraw $w
--	wm transient $w .
-+	# wm transient $w .
- 	wm title $w $title
- 	wm iconname $w $title
- 	bind $w <Enter> "focus $w"

@@ -1,5 +1,5 @@
---- grabber-meteor.cc.orig	Sat May 18 11:44:54 1996
-+++ grabber-meteor.cc	Thu Dec 18 18:35:09 1997
+--- grabber-meteor.cc.orig	Fri Jun 26 11:25:55 1998
++++ grabber-meteor.cc	Fri Jun 26 11:18:53 1998
 @@ -43,7 +43,6 @@
   *	
   */
@@ -8,7 +8,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -51,14 +50,13 @@
+@@ -51,16 +50,16 @@
  #include <sys/types.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
@@ -24,8 +24,11 @@
 +#include "bsd-endian.h"
  
  #include <machine/ioctl_meteor.h>
++#include <machine/ioctl_bt848.h>
  
-@@ -72,62 +70,85 @@
+ /*XXX*/
+ #define NTSC_WIDTH 320
+@@ -72,62 +71,78 @@
  
  
  class MeteorGrabber : public Grabber {
@@ -63,6 +66,7 @@
 -	struct meteor_counts cnts_;	/* pointer to counters */
 -	double	start_time_;
 -#endif
++	int tuner_ ;		/* tuner device... */
  };
  
 -static const int	f_411 = 0;	/* coder_format_s */
@@ -108,50 +112,43 @@
  
  MeteorScanner::MeteorScanner(const int n)
  {
- 	char*	devname_template  = "/dev/meteor%d";
- 	char*	nickname_template = "Matrox Meteor %d";
-+	char*	devname_template1  = "/dev/bktr%d";
-+	char*	nickname_template1 = "BrookTree848 %d";
-+
-+
+-	char*	devname_template  = "/dev/meteor%d";
+-	char*	nickname_template = "Matrox Meteor %d";
++    static char *d[] = { "/dev/bktr%d", "/dev/meteor%d", NULL };
++    char *nickname_template = "meteor-%d";
  
  	for(int i = 0; i < n; i++) {
- 		char	*devname  = new char[strlen(devname_template)  + 3];
+-		char	*devname  = new char[strlen(devname_template)  + 3];
++	for (int j = 0 ; d[j] != NULL ; j++) {
++	    char *devname  = new char[strlen(d[j]) + 3];
  		char	*nickname = new char[strlen(nickname_template) + 3];
-+		char	*devname1  = new char[strlen(devname_template1)  + 3];
-+		char	*nickname1 = new char[strlen(nickname_template1) + 3];
  
++	    sprintf(devname, d[j], i);
  		sprintf(nickname, nickname_template, i + 1);
- 		sprintf(devname, devname_template, i);
-+
-+		sprintf(nickname1, nickname_template1, i + 1);
-+		sprintf(devname1, devname_template1, i);
+-		sprintf(devname, devname_template, i);
  		if(access(devname, R_OK) == 0) {
  			int fd = open(devname, O_RDONLY);
  			if(fd < 0) {
-@@ -140,7 +161,21 @@
+@@ -140,8 +155,9 @@
  			delete nickname;
  			delete devname;
  		}
-+
-+		if(access(devname1, R_OK) == 0) {
-+			int fd = open(devname1, O_RDONLY);
-+			if(fd < 0) {
-+				new MeteorDevice(nickname1, devname1, 0);
-+			} else {
-+				(void)close(fd);
-+				new MeteorDevice(nickname1, devname1, 1);
 +			}
-+		} else {
-+			delete nickname1;
-+			delete devname1;
 +		}
  	}
-+
- }
+-}
  
  MeteorDevice::MeteorDevice(const char* nickname, const char *devname, int free):
-@@ -160,7 +195,10 @@
+ 					InputDevice(nickname), name_(devname)
+@@ -149,6 +165,7 @@
+ 	if(free)
+ 		attributes_ = "\
+ format {422 411} \
++type {pal ntsc secam auto} \
+ size {large normal small cif} \
+ port {RCA Port-1 Port-2 Port-3 S-Video RGB}";
+ 	else
+@@ -160,7 +177,10 @@
  	Tcl& tcl = Tcl::instance();
  	if ((argc == 3) && (strcmp(argv[1], "open") == 0)) {
  		TclObject* o = 0;
@@ -163,7 +160,7 @@
  		if (o != 0)
  			tcl.result(o->name());
  		return (TCL_OK);
-@@ -168,19 +206,8 @@
+@@ -168,19 +188,15 @@
  	return (InputDevice::command(argc, argv));
  }
  
@@ -181,11 +178,22 @@
 -		abort();
 -	}
 -
++	int devnum;
++	if (sscanf(name, "/dev/bktr%d", &devnum) == 1) {
++		char *tunerdev  = new char[strlen(name) + 3];
++		sprintf(tunerdev, "/dev/tuner%d", devnum);
++		tuner_ = open(tunerdev, O_RDONLY);
++	} else
++		tuner_ = -1;
  	dev_ = open(name, O_RDONLY);
  	if (dev_ == -1) {
  		status_ = -1;
-@@ -205,27 +232,27 @@
+@@ -203,52 +219,33 @@
+ 	if (dev_ != -1) {
+ 		close(dev_);
  	}
++	if (tuner_ != -1)
++		close(tuner_);
  }
  
 -void MeteorGrabber::setsize()
@@ -206,22 +214,24 @@
  	 * means do so.
  	 */
  	unsigned short status;
- 	ioctl(dev_, METEORSTATUS, &status);
+-	ioctl(dev_, METEORSTATUS, &status);
 -	if(status & METEOR_STATUS_HCLK) {	/* do we have a source? */
 -						/* No source, assume ntsc*/
-+	if(status & METEOR_STATUS_HCLK) {
-+		/* No source, assume ntsc */
++	// ioctl(dev_, METEORSTATUS, &status);
++	if ( video_format_ == METEOR_FMT_NTSC ) {
  		if(geom.rows <= NTSC_HEIGHT && geom.columns <= NTSC_WIDTH)
  			geom.oformat |= METEOR_GEO_EVEN_ONLY;
  	} else {
 -		if(status & METEOR_STATUS_FIDT) { /* is it pal or ntsc? */
-+		/* is it pal or ntsc? */
-+		if(status & METEOR_STATUS_FIDT) {
- 						/* 60 hz */
- 			if(geom.rows<=NTSC_HEIGHT && geom.columns<=NTSC_WIDTH)
+-						/* 60 hz */
+-			if(geom.rows<=NTSC_HEIGHT && geom.columns<=NTSC_WIDTH)
+-				geom.oformat |= METEOR_GEO_EVEN_ONLY;
+-		} else {			/* 50 hz */
+ 			if(geom.rows<=PAL_HEIGHT && geom.columns<=PAL_WIDTH)
  				geom.oformat |= METEOR_GEO_EVEN_ONLY;
-@@ -237,18 +264,6 @@
- 
+ 		}
+-	}
+-
  	if(ioctl(dev_, METEORSETGEO, &geom) < 0) 
  		perror("vic: METERSETGEO: ");
 -
@@ -239,7 +249,7 @@
  }
  
  void MeteorGrabber::format()
-@@ -285,11 +300,6 @@
+@@ -285,11 +282,6 @@
  		baseheight_ = PAL_HEIGHT * 2;
  		basewidth_ = PAL_WIDTH * 2;
  	}
@@ -251,7 +261,7 @@
  	setsize();
  }
  
-@@ -299,15 +309,6 @@
+@@ -299,15 +291,6 @@
  	format();
  	int cmd = METEOR_CAP_SINGLE;
  	ioctl(dev_, METEORCAPTUR, (char*)&cmd);
@@ -267,7 +277,7 @@
  
  	cmd = METEOR_CAP_CONTINOUS;
  	ioctl(dev_, METEORCAPTUR, (char*)&cmd);
-@@ -319,19 +320,6 @@
+@@ -319,19 +302,6 @@
  
  	int cmd = METEOR_CAP_STOP_CONT;
  	ioctl(dev_, METEORCAPTUR, (char*)&cmd);
@@ -287,7 +297,7 @@
  	Grabber::stop();
  }
  
-@@ -345,15 +333,15 @@
+@@ -345,15 +315,15 @@
  
  int MeteorGrabber::command(int argc, const char*const* argv)
  {
@@ -305,7 +315,7 @@
  				decimate_ = dec;
  				if(running_) {
  					stop();
-@@ -362,7 +350,8 @@
+@@ -362,7 +332,8 @@
  				}
  			}
  			return (TCL_OK);	
@@ -315,17 +325,39 @@
  			int p = port_;
                          if(!strcmp(argv[2], "RCA")) p = METEOR_INPUT_DEV0;
                          if(!strcmp(argv[2], "Port-1")) p = METEOR_INPUT_DEV1;
-@@ -377,7 +366,8 @@
+@@ -377,7 +348,30 @@
  				ioctl(dev_, METEORSINPUT, &port_);
  			}
  			return (TCL_OK);	
 -		} else if (strcmp(argv[1], "format") == 0 ||
 +		}
++		if (strcmp(argv[1], "freeze") == 0) {
++			int cmd = METEOR_CAP_CONTINOUS ;
++			if ( atoi(argv[2]) != 0 )
++			    cmd = METEOR_CAP_STOP_CONT;
++			ioctl(dev_, METEORCAPTUR, (char*)&cmd);
++			return (TCL_OK);
++		}
++		if (strcmp(argv[1], "chan") == 0) {
++			int p = port_;
++			int c = atoi(argv[2]);
++			if (c > 0 && c < 199)
++			    p = METEOR_INPUT_DEV1 ;
++			else
++			    p = METEOR_INPUT_DEV0 ;
++			if (p != port_) {
++				port_ = p;
++				ioctl(dev_, METEORSINPUT, &port_);
++			}
++			if (p == METEOR_INPUT_DEV1)
++			    ioctl(tuner_, TVTUNER_SETCHNL, &c);
++			return (TCL_OK);	
++		}
 +		if (strcmp(argv[1], "format") == 0 ||
  			   strcmp(argv[1], "type") == 0) {
  			if (strcmp(argv[2], "auto") == 0)
  				video_format_ = METEOR_FMT_AUTOMODE;
-@@ -390,14 +380,35 @@
+@@ -390,14 +384,35 @@
  			if (running_)
  				format();
  			return (TCL_OK);	
@@ -365,14 +397,14 @@
  			switch (video_format_) {
  
  			case METEOR_FMT_AUTOMODE:
-@@ -423,54 +434,316 @@
+@@ -423,54 +438,316 @@
  			return (TCL_OK);
  			
  		}
 +		if (strcmp(argv[1], "brightness") == 0) {
 +			u_char val;
 +			ioctl(dev_, METEORGBRIG, &val);
-+			tcl.resultf("%d", (int)val);
++			tcl.resultf("%d", (unsigned int)val);
 +			return (TCL_OK);
 +		}
 +		if (strcmp(argv[1], "contrast") == 0) {
