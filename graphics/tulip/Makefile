@@ -37,6 +37,12 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
 LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 		-ljpeg -L${QT_PREFIX}/lib -lcompat ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC from shared library objects)"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
@@ -50,4 +56,4 @@ post-patch:
 		 s|-release @TULIP_VERSION@|| ; \
 		 s|LDFLAGS = -module|LDFLAGS = @LDFLAGS@ -module|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
