@@ -1,14 +1,6 @@
---- diff/diff.c.orig	Sun Feb 22 04:47:45 2004
-+++ diff/diff.c	Sun Feb 22 04:56:06 2004
-@@ -19,6 +19,7 @@
-    Richard Stallman, Len Tower, and Paul Eggert.  */
- 
- #define GDIFF_MAIN
-+#include "config.h"
- #include "diff.h"
- #include <signal.h>
- #include "getopt1.h"
-@@ -29,9 +30,6 @@
+--- diff/diff.c.orig	Sun Jan  4 06:31:52 2004
++++ diff/diff.c	Sun Feb 22 05:33:08 2004
+@@ -29,9 +29,6 @@
  #endif
  
  #ifdef HAVE_UNISTD_H
