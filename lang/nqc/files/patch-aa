@@ -1,36 +1,32 @@
---- Makefile.orig	Sun Apr 15 17:56:31 2001
-+++ Makefile	Thu May  3 22:43:42 2001
-@@ -28,14 +28,14 @@
+--- Makefile.orig	Sun Mar 24 14:34:39 2002
++++ Makefile	Fri Jun  7 11:11:05 2002
+@@ -28,20 +28,20 @@
  #
  # Pick your C++ compiler. 
  #
 -CC=g++
 +CC?=g++
- #CC=gcc
+ # CC=gcc
  
  #
  # Pick your YACC processor
  #
 -YACC = bison -y
 -# YACC = yacc
-+#YACC = bison -y
-+YACC = yacc
++# YACC = bison -y
++YACC ?= yacc
  
  #
  # Define the FLEX processor
-@@ -45,30 +45,30 @@
+ #    note - lex will not work
+ #
+-FLEX = flex
++FLEX ?= flex
  
  # Link in any necessary C++ libraries
  #
--# LIBS = -lstdc++
-+LIBS = -lstdc++
+@@ -50,19 +50,20 @@
  
- #
- # Use this to define the default device driver name
- # for serial port connections.
- #
--DEFAULT_SERIAL_NAME = "/dev/ttyS0"
-+DEFAULT_SERIAL_NAME = "/dev/cuaa0"
  
  # installation information
 -BINDIR=/usr/local/bin
@@ -42,7 +38,6 @@
  
  
  # other commands
--LD=$(CC)
 -CP=cp -f
 -MKDIR=mkdir
 -MV=mv -f
@@ -52,23 +47,28 @@
 +MV?=mv -f
 +RM?=rm -f
  
- IFLAGS=-Iplatform -Ircxlib -Inqc -Icompiler
- WFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes
--CFLAGS = -O6 -pipe $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
-+CFLAGS += $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
+ # CFLAGS
+-CFLAGS = -pipe -Iplatform -Ircxlib -Inqc -Icompiler -Wall -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS += -Iplatform -Ircxlib -Inqc -Icompiler
  
- OBJ = $(NQCOBJ) $(COBJ) $(RCXOBJ) $(POBJ)
+ USBOBJ = rcxlib/RCX_USBTowerPipe_none.o
  
-@@ -111,10 +111,10 @@
- 	$(MKDIR) bin
+@@ -78,9 +79,6 @@
+ ifeq ($TARGET),solaris)
+   # Solaris
+   CFLAGS += -DSOLARIS
+-else
+-  # default - works for Linux
+-  CFLAGS += -O6
+ endif
+ endif
  
- bin/nqc : compiler/parse.cpp $(OBJ)
--	$(LD) -o $@ $(OBJ) $(LIBS)
-+	$(CC) -o $@ $(OBJ) $(LIBS)
- 
- bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp
--	$(LD) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
-+	$(CC) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
- 
+@@ -89,7 +87,7 @@
+ # wants to redefine the default serial name
  #
- # clean up stuff
+ ifndef DEFAULT_SERIAL_NAME
+-  DEFAULT_SERIAL_NAME = "/dev/ttyS0"
++  DEFAULT_SERIAL_NAME = "/dev/cuaa0"
+ endif
+ CFLAGS += -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
+ 
