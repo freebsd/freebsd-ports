@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	xdiskusage
-PORTVERSION=	1.46
-PORTREVISION=	2
+PORTVERSION=	1.47
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
-IGNORE=		only works with 'du' output, e.g. du | xdiskusage -
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${IGNORE}
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
