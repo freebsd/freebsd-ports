@@ -8,3 +8,5 @@ running "cpansign -v" (or just "cpansign") before issuing
 
 For module authors, you'd want to add the SIGNATURE file to
 your MANIFEST, then type "cpansign -s" before making a distribution.
+
+WWW: http://search.cpan.org/dist/Module-Signature/
