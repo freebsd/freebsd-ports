@@ -21,6 +21,7 @@ PostgreSQL	"PHP:    PostgreSQL database support" OFF \
 mSQL		"PHP:    mSQL database support" OFF \
 dBase		"PHP:    dBase database support" OFF \
 OpenLDAP	"PHP:    OpenLDAP support" OFF \
+XML		"PHP:    XML support" OFF \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -104,6 +105,12 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap"
 			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
+			;;
+		\"XML\")
+			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
+			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmlparse.h:\${PORTSDIR}/textproc/expat"
+			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmltok.h:\${PORTSDIR}/textproc/expat"
+			echo "PHP_CONF_ARGS+=	--with-xml=\${PREFIX}"
 			;;
 		\"modssl\")
 			cat << EOF
