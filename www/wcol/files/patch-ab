@@ -1,5 +1,5 @@
 --- wcol.conf-dist.orig	Sat Sep 20 21:55:05 1997
-+++ wcol.conf-dist	Mon Jul 13 03:48:00 1998
++++ wcol.conf-dist	Sun Sep  5 00:55:45 1999
 @@ -46,7 +46,7 @@
  #
  #
@@ -41,7 +41,7 @@
  #
  
 -LogFile     /var/tmp/wcol.log
-+LogFile     /var/log/wcol.log
++#LogFile     /var/log/wcol.log
  
  StateFile   /var/tmp/wcol.state
 -PidFile     /var/tmp/wcol.pid
@@ -49,21 +49,33 @@
  
  
  
-@@ -388,7 +388,7 @@
+@@ -381,14 +381,17 @@
+ # <num> is indicated number of handlers by integer. If it is not specified
+ # wcol wake all handlers in MAX_HANDLER (It is defined in Makefile).
+ #
++# In the case of FreeBSD packages/ports:
++#	MAX_HANDLER is 2 in this wcol binary.
++#
+ #           NumHandler <= MaxHandler <= MAX_HANDLER
+ #
+ # example:
+-#       NumHandler  4
++#       NumHandler  2
  #
  
- NumHandler      4
+-NumHandler      4
 -MaxHandler      8
-+MaxHandler      4
++NumHandler      2
++MaxHandler      2
  
  
  NumPrompter     1
-@@ -417,7 +417,7 @@
+@@ -417,7 +420,7 @@
  #       CacheDir    /var/tmp/www-pool
  #
  
 -CacheDir    /var/tmp/pool
-+CacheDir    /var/spool/wcol
++CacheDir    @@DEFAULT_POOLDIR@@
  
  
  #

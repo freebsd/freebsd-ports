@@ -12,8 +12,7 @@ wcol/pool_walk
 wcol/log_report
 wcol/log_transition
 etc/wcol.conf.sample
-etc/rc.d/wcol.sh.sample
+etc/rc.d/wcol.sh
 @exec mkdir -p /var/spool/wcol
-@exec touch /var/log/wcol.log
 @unexec rm -rf /var/spool/wcol
 @dirrm wcol
