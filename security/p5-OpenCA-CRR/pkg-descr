@@ -1,0 +1,7 @@
+This class handles CRR (Certificate Revoking Request) objects.  Them can
+be signed or not depending on the implementation.
+
+WWW: http://search.cpan.org/dist/OpenCA-CRR/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

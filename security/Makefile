@@ -265,6 +265,7 @@
     SUBDIR += p5-Module-Signature
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-Nmap-Scanner
+    SUBDIR += p5-OpenCA-CRR
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-SHA
