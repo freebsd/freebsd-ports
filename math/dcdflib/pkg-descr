@@ -1,0 +1,16 @@
+This  library  contains routines  to compute  cumulative  distribution
+functions, inverses, and    parameters  of the  distribution  for  the
+following set of statistical distributions:
+
+    (1) Beta
+    (2) Binomial
+    (3) Chi-square
+    (4) Noncentral Chi-square
+    (5) F
+    (6) Noncentral F
+    (7) Gamma
+    (8) Negative Binomial
+    (9) Normal
+    (10) Poisson
+    (11) Student's t
+    (12) Noncentral t
