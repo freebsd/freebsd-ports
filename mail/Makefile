@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.26 1996/09/29 17:03:58 max Exp $
+# $Id: Makefile,v 1.27 1996/10/10 15:06:54 peter Exp $
 #
 
     SUBDIR += elm
     SUBDIR += exim
     SUBDIR += exmh
+    SUBDIR += fetchmail
     SUBDIR += mailagent
     SUBDIR += majordomo
     SUBDIR += metamail
