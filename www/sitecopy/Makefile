@@ -1,25 +1,19 @@
 # New ports collection makefile for:	sitecopy
-# Version required:	0.3.2
+# Version required:	0.4.0
 # Date created:		15 January 1999
 # Whom:			nik
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/16 00:25:54 nik Exp $
+# $Id: Makefile,v 1.2 1999/01/18 06:24:32 asami Exp $
 #
 
-DISTNAME=	sitecopy-0.3.2
+DISTNAME=	sitecopy-0.4.0
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
-DISTFILES=	sitecopy-0.3.0.tar.gz
-
-PATCH_SITES=	http://www.lyra.org/sitecopy/
-PATCHFILES=	sitecopy-0.3.0-0.3.2.patch.gz
-PATCH_DIST_STRIP=
+DISTFILES=	sitecopy-0.4.0.tar.gz
 
 MAINTAINER=     nik@FreeBSD.ORG
 
 USE_GMAKE=	yes
-DIST_SUBDIR=	sitecopy
-WRKSRC=		${WRKDIR}/sitecopy-0.3.0
 FETCH_BEFORE_ARGS=	-b
 
 MAN1=		sitecopy.1
