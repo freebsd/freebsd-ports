@@ -28,6 +28,7 @@ FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+CONFLICTS=		linux_base-*
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
