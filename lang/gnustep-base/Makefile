@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
@@ -16,9 +17,8 @@ MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 
 BREAKS_IF_PEDANTIC=	yes
 
@@ -26,6 +26,10 @@ BREAKS_IF_PEDANTIC=	yes
 
 .if ${OSVERSION} < 300000
 BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
+.endif
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 .endif
 
 PREFIX=		${LOCALBASE}/GNUstep
