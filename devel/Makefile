@@ -299,6 +299,7 @@
     SUBDIR += ngpt
     SUBDIR += noweb
     SUBDIR += oaf
+    SUBDIR += objprelink
     SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += orbitcpp
