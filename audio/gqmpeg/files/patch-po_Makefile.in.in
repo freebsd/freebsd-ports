@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/Makefile.in.in.orig	Wed Jul 24 16:24:35 2002
++++ po/Makefile.in.in	Wed Jul 24 16:25:07 2002
+@@ -21,7 +21,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+-localedir = $(datadir)/locale
++localedir = $(prefix)/share/locale
+ gettextsrcdir = $(datadir)/gettext/po
+ 
+ INSTALL = @INSTALL@

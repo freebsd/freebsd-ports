@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Nov  9 14:42:36 2001
++++ configure.in	Sun Nov 11 22:13:39 2001
+@@ -83,7 +83,7 @@
+ dnl CHECK_GNOME
+   AC_PATH_PROG(GNOME_CONFIG,gnome-config,no)
+   AM_CONDITIONAL(HAVE_GNOME, test $GNOME_CONFIG != no)
+-  if test "$GNOME_CONFIG" = no; then
++  if test "$GNOME_CONFIG" = no -o "$USE_GNOME" != yes; then
+     AC_MSG_RESULT(GNOME icon and menu entry will NOT be installed)
+   else
+     AC_MSG_RESULT(will install a GNOME icon and menu entry)
