@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.264 1999/06/28 01:46:17 billf Exp $
+# $Id: Makefile,v 1.265 1999/06/28 23:05:59 cpiazza Exp $
 #
 
     SUBDIR += 9term
@@ -17,6 +17,7 @@
     SUBDIR += gnome
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
+    SUBDIR += gyroscope
     SUBDIR += kb2mb2
     SUBDIR += kde11
     SUBDIR += kde11-i18n
