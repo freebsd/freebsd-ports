@@ -16,8 +16,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
-		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !exists(/usr/bin/bzip2)

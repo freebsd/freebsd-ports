@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR=	gnomeicu
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes
-BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet \
-		msgfmt:${PORTSDIR}/devel/gettext
 .if defined(WITH_DANTE)
 LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
 SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \

@@ -15,7 +15,6 @@ DISTNAME=	gnome-games-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes

@@ -15,7 +15,6 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 
 USE_BZIP2=	yes
