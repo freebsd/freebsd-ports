@@ -4,6 +4,7 @@ bin/btlist
 include/libbt/benc.h
 include/libbt/bitset.h
 include/libbt/bterror.h
+include/libbt/btmessage.h
 include/libbt/bts.h
 include/libbt/context.h
 include/libbt/peer.h
