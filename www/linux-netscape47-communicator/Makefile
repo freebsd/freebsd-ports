@@ -15,7 +15,8 @@ DISTFILES=	${BROWSER}-v472-export.x86-unknown-linuxglibc2.0.tar.gz
 
 MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base \
+		netscape:${PORTSDIR}/www/netscape-wrapper
 
 ONLY_FOR_ARCHS=	i386
 

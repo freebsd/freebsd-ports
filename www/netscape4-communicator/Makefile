@@ -13,6 +13,8 @@ DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER?=	sada@FreeBSD.org
 
+RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
+
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 .if !defined(INFILE_HEAD)
@@ -95,7 +97,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape \
 		${BINDIR}/${BROWSER_ARC}-${BROWSER_VER}
 	${LN} -sf ${BROWSER_ARC}-${BROWSER_VER} ${BINDIR}/${BROWSER_ARC}-4
-	${LN} -sf ${BROWSER_ARC}-4 ${BINDIR}/netscape
+	${LN} -sf ${BROWSER_ARC}-4 ${BINDIR}/netscape.run
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 		${INSTALL_DATA} ${MAILCAP} ${NDIR}; \
 	fi
