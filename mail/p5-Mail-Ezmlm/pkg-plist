@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Ezmlm.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Ezmlm/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Ezmlm
