@@ -37,12 +37,12 @@ share/zsh/site-functions/_portupgrade
 share/zsh/site-functions/_portversion
 @unexec rmdir %D/share/zsh/site-functions 2>/dev/null || true
 @unexec rmdir %D/share/zsh 2>/dev/null || true
-%%PORTDOCS%%share/examples/portupgrade/bash/complete.sample
-%%PORTDOCS%%@dirrm share/examples/portupgrade/bash
-%%PORTDOCS%%share/examples/portupgrade/tcsh/complete.sample
-%%PORTDOCS%%@dirrm share/examples/portupgrade/tcsh
-%%PORTDOCS%%@dirrm share/examples/portupgrade
-%%PORTDOCS%%share/doc/portupgrade/ChangeLog
-%%PORTDOCS%%share/doc/portupgrade/README
-%%PORTDOCS%%@dirrm share/doc/portupgrade
+%%PORTDOCS%%share/examples/pkgtools/bash/complete.sample
+%%PORTDOCS%%@dirrm share/examples/pkgtools/bash
+%%PORTDOCS%%share/examples/pkgtools/tcsh/complete.sample
+%%PORTDOCS%%@dirrm share/examples/pkgtools/tcsh
+%%PORTDOCS%%@dirrm share/examples/pkgtools
+%%PORTDOCS%%share/doc/pkgtools/ChangeLog
+%%PORTDOCS%%share/doc/pkgtools/README
+%%PORTDOCS%%@dirrm share/doc/pkgtools
 @exec rm -f /var/db/pkg/pkgdb.byfile.db
