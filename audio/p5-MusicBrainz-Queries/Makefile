@@ -7,6 +7,7 @@
 
 PORTNAME=	MusicBrainz-Queries
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
@@ -16,15 +17,13 @@ MAINTAINER=	knu@freebsd.org
 COMMENT=	A Perl module that provides the musicbrainz query constants
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${LIBMUSICBRAINZ_PORTDIR}:patch
-LIB_DEPENDS=	musicbrainz.2:${LIBMUSICBRAINZ_PORTDIR}
+LIB_DEPENDS=	musicbrainz.3:${LIBMUSICBRAINZ_PORTDIR}
 
 LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
 
 PERL_CONFIGURE=	yes
 
 MAN3=		MusicBrainz::Queries.3
-
-BROKEN=		"Broken dependencies"
 
 .include <bsd.port.pre.mk>
 
