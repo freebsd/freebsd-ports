@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	txt2regex
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	misc
 MASTER_SITES=	http://txt2regex.sourceforge.net/
 EXTRACT_SUFX=	.tgz
