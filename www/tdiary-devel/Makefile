@@ -19,6 +19,8 @@ MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=		yes
+CONFLICTS?=		ja-tdiary-1.*
+PKGMESSAGE=		${WRKDIR}/pkg-message
 USE_RUBY=		yes
 .if  !defined(WITHOUT_RUBY_FEATURES)
 USE_RUBY_FEATURES=	fileutils

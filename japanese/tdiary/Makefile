@@ -10,6 +10,7 @@ CATEGORIES=	japanese www ruby
 MAINTAINER=	jfkimura@yahoo.co.jp
 
 TDIARY_LANG=	tdiary.conf-ja
+CONFLICTS=	tdiary-1.*
 MASTERDIR?=	${.CURDIR}/../../www/tdiary
 
 .include "${MASTERDIR}/Makefile"
