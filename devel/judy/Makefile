@@ -75,7 +75,7 @@ post-install:
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-32-bit
-.elif ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.elif ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64" || ${ARCH} == "alpha"
 CONFIGURE_ARGS+=	--enable-64-bit
 .endif
 
