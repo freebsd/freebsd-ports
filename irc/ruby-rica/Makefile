@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rica
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	irc ruby
-MASTER_SITES=	http://www.koka-in.org/%7Ezophos/lib/
+MASTER_SITES=	http://www.koka-in.org/%7Ezophos/lib/rica/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -21,11 +21,14 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MODULES=	rica.rb rica_utils.rb
 DOCS=		classes_and_methods.txt	event.txt
 EXAMPLES=	ricaco.rb	ricatest.rb
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/rica.rb ${RUBY_SITELIBDIR}/
+.for f in ${MODULES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 .for f in ${EXAMPLES}

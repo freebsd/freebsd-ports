@@ -1,4 +1,5 @@
 %%RUBY_SITELIBDIR%%/rica.rb
+%%RUBY_SITELIBDIR%%/rica_utils.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/ricaco.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/ricatest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rica
