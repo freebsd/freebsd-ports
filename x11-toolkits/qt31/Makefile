@@ -37,7 +37,7 @@ CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
 
 .if !defined(NOPORTDOCS)
 .if (${PORTNAME} == "qt")
-.include "${.CURDIR}/files/manpages"
+.include "files/manpages"
 .endif
 .endif
 
