@@ -1,0 +1,48 @@
+--- src/ps/pfb2pfa.cc.orig	Fri Oct 31 20:57:37 2003
++++ src/ps/pfb2pfa.cc	Sun Nov  2 11:47:20 2003
+@@ -4,8 +4,8 @@
+ #include "encode.h"
+ 
+ void PS::pfb2pfa(std::istream &in, std::ostream &out) {
+-  in.exceptions(std::ios_base::eofbit); // throw exception on eof
+-  try {
++//  in.exceptions(std::ios_base::eofbit); // throw exception on eof
++//  try {
+     while(in) { // parse header
+       if (in.peek() != 128)
+ 	throw std::runtime_error("bad magic number for segment");
+@@ -40,9 +40,9 @@
+ 	filter.end();
+       }
+     }
+-  } catch (std::ios_base::failure) {
+-    throw std::runtime_error("unexpected end of file");
+-  }
++//  } catch (std::ios::failure) {
++//    throw std::runtime_error("unexpected end of file");
++//  }
+ }
+ 
+ #ifdef PFB2PFA_STANDALONE
+--- src/util/filesys.h.orig	Fri Oct 31 20:47:03 2003
++++ src/util/filesys.h	Fri Oct 31 20:52:19 2003
+@@ -4,7 +4,7 @@
+ // Copyright (C) 2002, 2003, Fredrik Arnerup & Rasmus Kaj, See COPYING
+ ///
+ #include <string>
+-#include <ios>			// mode for access
++#include <iostream>			// mode for access
+ 
+ // Check if the specified file exists
+ bool exists(const std::string& filename);
+--- src/pptout/docview.cc.orig	Sun Nov  2 11:56:40 2003
++++ src/pptout/docview.cc	Sun Nov  2 12:04:37 2003
+@@ -467,7 +467,7 @@
+ 
+ void Document_View::on_clipboard_clear() {
+   // not really necessary
+-  clip.clear(); 
++  clip.resize(0); 
+ }
+ 
+ void Document_View::cut() {
