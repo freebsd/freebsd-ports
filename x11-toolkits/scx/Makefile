@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/packages/scx/
 
-MAINTAINER=	bkhl@elektrubadur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI library for scsh and Scheme 48
 
 RUN_DEPENDS=	${LOCALBASE}/lib/scsh/scsh-install-pkg:${PORTSDIR}/devel/scsh-install-lib
