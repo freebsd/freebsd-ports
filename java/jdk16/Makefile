@@ -7,45 +7,71 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
-SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
+SCSL_SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
+SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
-DISTFILES=	${SRCFILE} ${PATCHSETFILE}
+DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	phantom@FreeBSD.org
-COMMENT=	Java Development Kit 1.4.1
+COMMENT=	Java Development Kit 1.4.2
 
+# XXX: (native bootstrap, no plugin/javaws, x11)
+EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
-.if !defined(NATIVE_BOOTSTRAP)
-BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
-.endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
 WRKSRC=		${WRKDIR}/control/make
 
-JDK_VERSION=	1.4.1
-JDK_PATCHSET_VERSION=	4
+JDK_VERSION=	1.4.2
+JDK_PATCHSET_VERSION=	5
 
-SUN_LINUX_JDK_VERSION=	1.4.2
+.if !defined(WITH_LINUX_BOOTSTRAP)
+NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
+			${LOCALBASE}/jdk1.4.1
+.endif
 
-.if defined(NATIVE_BOOTSTRAP)
-JDK14DIR?=	${LOCALBASE}/jdk${JDK_VERSION}
-.else
-JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_02 \
+			${LOCALBASE}/linux-sun-jdk1.4.2_01 \
+			${LOCALBASE}/linux-sun-jdk1.4.2 \
+			${LOCALBASE}/linux-sun-jdk1.4.1
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_LINUX_BOOTSTRAP)
+.for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
+.  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
+JDK14DIR=	${CJDK}
+.  endif
+.endfor
+.endif
+
+.if !defined(JDK14DIR)
+_NEED_BOOTSRAP_JDK=	YES
+.for CJDK in ${LINUX_BOOTSTRAP_JDKS}
+.  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
+JDK14DIR=	${CJDK}
+WITH_LINUX_BOOTSTRAP=	YES
+.undef NEED_BOOTSTRAP_JDK
+.  endif
+.endfor
+.endif
+
+.if defined(_NEED_BOOTSTRAP_JDK)
+BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 .endif
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
 USE_ZIP=	YES
 USE_REINPLACE=	YES
-EXTRACT_ONLY=	${SRCFILE}
+EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	YES
@@ -54,8 +80,7 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		SYS_CFLAGS="${CFLAGS}" \
-		JAVAWS_OPTIONAL="YES" \
-		NO_DOCS="YES" \
+		DEV_ONLY="YES" \
 		LANG="C" \
 		JAVA_HOME="" \
 		CLASSPATH="" \
@@ -70,25 +95,15 @@ JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
 SORT?=		/usr/bin/sort
 CPIO?=		/usr/bin/cpio
 
-.if defined(NODEBUG)
-PLIST_SUB+=	DEBUG:="@comment "
-PKGNAMESUFFIX=	-nodebug
-.else
+.if defined(WITH_DEBUG)
 PLIST_SUB+=	DEBUG:=""
+PKGNAMESUFFIX=	-debug
+.else
+PLIST_SUB+=	DEBUG:="@comment "
 .endif
 
-PTHREAD_FILES=	hotspot/build/bsd/makefiles/gcc.make \
-	hotspot/build/bsd/makefiles/vm.make \
-	j2se/make/common/Defs.gmk \
-	j2se/make/common/Defs-bsd.gmk \
-	j2se/make/common/Program.gmk \
-	j2se/make/java/hpi/native/Makefile \
-	j2se/ext/plugin/build/solaris/GNUmakefile
-
-.include <bsd.port.pre.mk>
-
 # Check for JDK sources
-.if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${SCSL_SRCFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
@@ -97,7 +112,19 @@ with a web browser and follow the \"Download\" link for the\n\
 \"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
 accepting the Sun Community Source License, select \"J2SESDK\" and\n\
-download the source file, ${SRCFILE}.  Please place this file in\n\
+download the source file, ${SCSL_SRCFILE}.  Please place this file in\n\
+${DISTDIR}.\n
+.endif
+.if !exists(${DISTDIR}/${SCSL_BINFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+Because of licensing restrictions, you must fetch the source distribution\n\
+manually.  Please access http://www.sun.com/software/java2/download.html\n\
+with a web browser and follow the \"Download\" link for the\n\
+\"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
+but you can create an account on this page.  After registration and\n\
+accepting the Sun Community Source License, select \"J2SESDK\" and\n\
+download the source file, ${SCSL_BINFILE}.  Please place this file in\n\
 ${DISTDIR}.\n
 .endif
 
@@ -112,7 +139,7 @@ http://www.eyesbeyond.com/freebsddom/java/jdk14.html.\n\
 Please place the patchset in ${DISTDIR}.\n
 .endif
 
-# JDK 1.4.1 require recent version of FreeBSD due to recent libc_r updates.
+# JDK 1.4.2 require recent version of FreeBSD due to recent libc_r updates.
 # Make check for reqiuired primities as early as possible
 
 TESTPROG=testos
@@ -134,7 +161,7 @@ check-os:
 	/usr/bin/printf "\n\
 You must have a version of FreeBSD later than 4.7-STABLE\n\
 February 2003 or 5-CURRENT February 2003 to compile and\n\
-use JDK 1.4.1.\n\n" ; \
+use JDK 1.4.2.\n\n" ; \
 	exit 1 ; \
 	fi
 	@${WRKDIR}/${TESTPROG} 2>/dev/null
@@ -144,14 +171,16 @@ pre-fetch:	check-os
 	@${ECHO_MSG}
 	@${ECHO_MSG} "NOTICES:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have at least"
-	@${ECHO_MSG} "2.5Gb of free disk space in build area!"
+	@${ECHO_MSG} "To build JDK 1.4.2 port, you should have at least"
+	@${ECHO_MSG} "1.7Gb of free disk space in build area!"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have linux emulation"
+.if defined(WITH_LINUX_BOOTSTRAP)
+	@${ECHO_MSG} "To build JDK 1.4.2 port, you should have linux emulation"
 	@${ECHO_MSG} "enabled in the kernel and linux procfs (linprocfs) filesystem"
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
-	@${ECHO_MSG} "NOTE: Please use \`make -DNODEBUG' if you don't want to"
+.endif
+	@${ECHO_MSG} "NOTE: Please use \`make -DWITH_DEBUG' if you want to"
 	@${ECHO_MSG} "install libraries and binaries with debugging support."
 	@${ECHO_MSG}
 
@@ -161,12 +190,7 @@ pre-patch:
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk14.patches
 
-post-patch:
-	@for file in ${PTHREAD_FILES}; do \
-		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g; s:-lc_r:${PTHREAD_LIBS}:g" ${WRKDIR}/$${file}; \
-	done
-
-.if !defined(NATIVE_BOOTSTRAP)
+.if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
@@ -189,7 +213,7 @@ pre-build:
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You have to have LINPROCFS mounted before" ; \
-		${ECHO_MSG} "starting to build of native JDK 1.4.1." ; \
+		${ECHO_MSG} "starting to build of native JDK 1.4.2." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "You may do it by following set of commands:" ; \
 		${ECHO_MSG} "" ; \
@@ -208,14 +232,17 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-build:
-	@# XXX make sure that SwingSet2/resources does not exists
+	@# make sure that SwingSet2/resources does not exists
 	@${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
 	@${RM} -rf ${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources
+	@# XXX don't install japanese manpages
+	@${RM} -rf ${JDKIMAGEDIR}/man/ja
+	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
 
-.if !defined(NODEBUG)
+.if !defined(WITH_DEBUG)
 pre-install:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Please use \`make -DNODEBUG' if you don't want to install libraries and binaries"
+	@${ECHO_MSG} "Please use \`make -DWITH_DEBUG' if you want to install libraries and binaries"
 	@${ECHO_MSG} "with debugging support."
 	@${ECHO_MSG}
 .endif
@@ -224,7 +251,7 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
-.if !defined(NODEBUG)
+.if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif

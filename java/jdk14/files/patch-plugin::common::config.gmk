@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/common/config.gmk.orig	Wed Nov 12 16:53:30 2003
++++ ../../deploy/make/plugin/common/config.gmk	Wed Nov 12 16:53:43 2003
+@@ -57,7 +57,7 @@
+ 
+   # include search paths
+   # XXXBSD: these should be defined in other place
+-  CPPFLAGS1 += -I/usr/X11R6/include -I/usr/local/include
++  CPPFLAGS1 += -I/usr/X11R6/include -I${LOCALBASE}/include
+ 
+   ifeq ($(TRUE_PLATFORM), FreeSBD)
+     ifeq ($(FREEBSD_4STABLE), true)

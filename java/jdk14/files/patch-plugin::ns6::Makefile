@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/ns6/Makefile.orig	Wed Nov 12 16:54:05 2003
++++ ../../deploy/make/plugin/ns6/Makefile	Wed Nov 12 16:54:22 2003
+@@ -37,7 +37,7 @@
+ # XXXBSD: direct /usr/local/include/nspr path is used!!!
+ #EXTRA_CPPFLAGS = -I$(MOZILLA_HEADERS_PATH)/mozilla_headers_ns610 -I$(MOZILLA_HEADERS_PATH)/mozilla_headers_ns610/nspr -DRAPTOR_API -DNEW_STREAMING_API
+ 
+-EXTRA_CPPFLAGS = -I$(MOZILLA_HEADERS_PATH)/mozilla_headers_ns610 -I/usr/local/include/nspr -DRAPTOR_API -DNEW_STREAMING_API
++EXTRA_CPPFLAGS = -I$(MOZILLA_HEADERS_PATH)/mozilla_headers_ns610 -I${LOCALBASE}/include/nspr -DRAPTOR_API -DNEW_STREAMING_API
+ 
+ vpath %.c $(SRCDIR):$(SRCDIR)/../common:
+ vpath %.cpp $(SRCDIR):$(SRCDIR)/../common:$(SHARED_DIR2)/jcomponent

@@ -24,7 +24,7 @@
  * SUCH DAMAGE.
  *
  * Test pthreads primitives for required functionality in order to run
- * native FreeBSD JDK1.4.1 port.
+ * native FreeBSD JDK1.4.2 port.
  *
  * Returns:
  *    0 - test passed
