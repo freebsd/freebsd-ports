@@ -9,8 +9,8 @@ PORTNAME=	mwavem-fbsd
 PORTVERSION=	1.2
 PORTREVISION=	0
 CATEGORIES=	comms
-MASTER_SITES=	http://www.escape.com/~simonw/ \
-		http://home.pacbell.net/simonw2/src/
+MASTER_SITES=	ftp://www-126.ibm.com/pub/acpmodem/ \
+		http://www.escape.com/~simonw/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oberman@es.net
@@ -69,7 +69,7 @@ pre-fetch:
 	${ECHO} "* this port requires that the full FreeBSD sources be present  *"; \
 	${ECHO} "* on the system.                                               *"; \
 	${ECHO} "*                                                              *"; \
-	${ECHO} "* If you prefer not oading the full sources, you make install  *"; \
+	${ECHO} "* If you prefer not loading the full sources, you make install *"; \
 	${ECHO} "* the linuxthreads package from /stand/sysinstall.             *"; \
 	${ECHO} "****************************************************************"; \
 	${SLEEP} 10; fi;
