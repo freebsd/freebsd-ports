@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
+CONFLICTS=	leafnode-1.9.*
+
 USE_REINPLACE=	yes
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
