@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-no-nas-sound -sm -remote \
 		-docdir ${QT_PREFIX}/share/doc/qt \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-.if !defined(NO_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+= -debug
 .endif
 .if defined(WITH_OPENGL)
