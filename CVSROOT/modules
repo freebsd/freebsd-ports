@@ -370,7 +370,6 @@ asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
 asc		ports/games/asc
 ascd		ports/audio/ascd
-ascend-radius	ports/net/ascend-radius
 ascii2pdf	ports/textproc/ascii2pdf
 asclock		ports/x11-clocks/asclock
 asclock-gtk	ports/x11-clocks/asclock-gtk
