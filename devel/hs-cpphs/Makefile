@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpphs
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.york.ac.uk/fp/cpphs/
 PKGNAMEPREFIX=	hs-
@@ -15,6 +15,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A simplified re-implementation of cpp in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 PLIST_FILES=	bin/cpphs
 
