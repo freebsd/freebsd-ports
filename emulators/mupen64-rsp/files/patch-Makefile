@@ -1,0 +1,21 @@
+--- Makefile.orig	Sat Jul  3 18:52:25 2004
++++ Makefile	Wed Aug 11 10:53:40 2004
+@@ -1,11 +1,11 @@
+-CC = gcc
+-CFLAGS = -DUSE_GTK `gtk-config --cflags` -O3 -mcpu=athlon \
+-         -ffast-math -funroll-loops -fomit-frame-pointer
++#CC = gcc
++#CFLAGS = -DUSE_GTK `gtk-config --cflags` -O3 -mcpu=athlon \
++#         -ffast-math -funroll-loops -fomit-frame-pointer
+ #CFLAGS = -DUSE_GTK `gtk-config --cflags` -g -fPIC
+-CXX = g++
+-CXXFLAGS = $(CFLAGS)
+-LD = g++
+-LDFLAGS =
++#CXX = g++
++#CXXFLAGS = $(CFLAGS)
++#LD = g++
++#LDFLAGS =
+ 
+ TARGET = mupen64_hle_rsp_azimer.so
+ OBJECTS = main.o disasm.o jpeg.o ucode1.o ucode2.o ucode3.o ucode3mp3.o

@@ -1,0 +1,15 @@
+RSP plugin for Mupen64
+-
+Mupen64 is a highly portable Nintendo 64 emulator. It has been developed 
+on/for Linux originally but has already been ported successfully to other 
+operating systems. The program can easily be ported to all operating systems 
+supported by the SDL library.
+
+In its current state, the emulator is highly compatible and uses a plugin 
+system. With the correct plugins ("correct" can be computer dependent), it 
+can achieve nearly perfect graphics and sound in many games.
+
+WWW: http://mupen64.emulation64.com/
+
+- Travis Poppe
+tlp@liquidx.org
