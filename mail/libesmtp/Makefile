@@ -6,6 +6,7 @@
 
 PORTNAME=	libesmtp
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.theochem.kth.se/~pawsa/balsa/ \
