@@ -1,9 +1,9 @@
 # New ports collection makefile for: fftw
-# Version required:	2.1.1
+# Version required:	2.1.2
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.2 1999/04/03 00:56:02 steve Exp $
+# $Id: Makefile,v 1.3 1999/06/06 20:01:48 mph Exp $
 #
 
 DISTNAME=	fftw-2.1.2
