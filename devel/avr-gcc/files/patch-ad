@@ -1,12 +1,0 @@
---- gcc/cp/Make-lang.in.orig	Tue Jun  4 09:09:54 2002
-+++ gcc/cp/Make-lang.in	Mon Jun 17 23:16:10 2002
-@@ -50,7 +50,8 @@
- DEMANGLER_CROSS_NAME = `echo c++filt|sed '$(program_transform_cross_name)'`
- 
- # The name to use for the demangler program.
--DEMANGLER_PROG = c++filt$(exeext)
-+#DEMANGLER_PROG = c++filt$(exeext)
-+DEMANGLER_PROG =
- 
- #
- # Define the names for selecting c++ in LANGUAGES.
