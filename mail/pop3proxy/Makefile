@@ -29,13 +29,13 @@ RC_SCRIPTS_SUB= PREFIX=${PREFIX} \
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pop3proxyd.conf > ${WRKSRC}/pop3proxyd.conf ;
-	@if [ ! -f ${PREFIX}/etc/pop3proxyd.conf ]; then \
-		@${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf ; \
+	if [ ! -f ${PREFIX}/etc/pop3proxyd.conf ]; then \
+		${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf ; \
 	fi
-	@${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf.${SAMPLE_EXT} ;
+	${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf.${SAMPLE_EXT} ;
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pop3proxyd.sh > ${WRKSRC}/pop3proxyd.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/pop3proxyd.sh ${PREFIX}/etc/rc.d/pop3proxyd.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/pop3proxyd.sh ${PREFIX}/etc/rc.d/pop3proxyd.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
