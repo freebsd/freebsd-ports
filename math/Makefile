@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1998/12/19 14:23:43 jseger Exp $
+# $Id: Makefile,v 1.55 1998/12/24 06:47:44 steve Exp $
 #
 
     SUBDIR += R-a4
@@ -9,6 +9,7 @@
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
+    SUBDIR += dcdflib
     SUBDIR += eispack
     SUBDIR += eval
     SUBDIR += femlab
