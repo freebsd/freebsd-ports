@@ -6,30 +6,40 @@
 #
 
 PORTNAME=	epwutil
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/epwutil/
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/epwutil/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
-NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.unx
 MANLANG=	ja
 
 EPWPROGS=	bookinfo catdump squeeze
 EPWDOCS=	epwutil.doc
-EPWDOCDIR=	${PREFIX}/share/doc/epwutil
+EPWDOCDIR=	share/doc/epwutil
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${EPWPROGS} ${PREFIX}/bin
 .for file in ${EPWPROGS}
 	cd ${WRKSRC};\
+	${INSTALL_PROGRAM} ${file} ${PREFIX}/bin;\
 	${INSTALL_MAN} ${file}.man ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
 .if !defined(NOMANCOMPRESS)
 	${GZIP_CMD} ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
 .endif
 .endfor
-	@${MKDIR} ${EPWDOCDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${EPWDOCS} ${EPWDOCDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/${EPWDOCDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${EPWDOCS} ${PREFIX}/${EPWDOCDIR}
+.endif
+
+post-install:
+.for file in ${EPWPROGS}
+	${ECHO} man/${MANLANG}/cat1/${file}.1${MANEXT} >> ${TMPPLIST}
+.endfor
+.if !defined(NOPORTDOCS)
+	${ECHO} ${EPWDOCDIR}/${EPWDOCS} >> ${TMPPLIST}
+	${ECHO} "@dirrm ${EPWDOCDIR}" >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
