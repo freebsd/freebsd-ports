@@ -39,6 +39,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ctl.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
