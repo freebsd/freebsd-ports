@@ -1,18 +1,11 @@
-bin/testcms
-include/lcms/icc34.h
-include/lcms/lcms.h
+include/icc34.h
+include/lcms.h
 lib/liblcms.a
 lib/liblcms.so
-lib/liblcms.so.1
-%%DOC%%share/doc/lcms/README.simple
-%%DOC%%share/doc/lcms/filter.c
-%%DOC%%share/doc/lcms/jpgemb.c
-%%DOC%%share/doc/lcms/lcmsapi.txt
-%%DOC%%share/doc/lcms/neutral.c
-%%DOC%%share/doc/lcms/pngchrm.c
-%%DOC%%share/doc/lcms/simple.c
-%%DOC%%share/doc/lcms/tiffemb.c
-%%DOC%%share/doc/lcms/tutorial.txt
-%%DOC%%share/doc/lcms/wtpt.c
-%%DOC%%@dirrm share/doc/lcms
-@dirrm include/lcms
+lib/liblcms.so.1.7
+%%PORTDOCS%%share/doc/lcms/LCMSAPI.TXT
+%%PORTDOCS%%share/doc/lcms/TUTORIAL.TXT
+%%PORTDOCS%%share/doc/lcms/neutral.c
+%%PORTDOCS%%share/doc/lcms/tifficc.c
+%%PORTDOCS%%share/doc/lcms/wtpt.c
+%%PORTDOCS%%@dirrm share/doc/lcms

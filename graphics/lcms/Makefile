@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.abaforum.es/martim/
+MASTER_SITES=	http://www.littlecms.com/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
-.ifndef NOPORTDOCS
-PLIST_SUB=	DOC=""
-.else
-PLIST_SUB=	DOC="@comment "
-.endif
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ARGS+=	-j2
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .ifndef NOPORTDOCS
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/lcms
-	${CP} -rp ${WRKSRC}/doc/* ${PREFIX}/share/doc/lcms/
+	${CP} -rp ${WRKSRC}/../doc/* ${WRKSRC}/../samples/tifficc.c \
+		${WRKSRC}/../samples/wtpt.c ${WRKSRC}/../samples/neutral.c \
+		${PREFIX}/share/doc/lcms/
 .endif
+
+post-build test:
+	cd ${WRKSRC}/../testbed && \
+		${SETENV} CFLAGS="${CFLAGS} -I../src" make -E CFLAGS test
 
 .include <bsd.port.mk>
