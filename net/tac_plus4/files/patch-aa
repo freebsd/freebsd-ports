@@ -1,0 +1,43 @@
+--- Makefile.orig	Sat Jul 29 00:49:20 1995
++++ Makefile	Thu Oct 14 22:12:44 1999
+@@ -22,9 +22,9 @@
+ # OSLIBS=-lsocket -lnsl
+ 
+ # For FreeBSD
+-# OS=-DFREEBSD
++OS=-DFREEBSD
+ # You may also need to add
+-# OSLIBS=-lcrypt
++OSLIBS=-lcrypt
+ 
+ # For LINUX
+ # OS=-DLINUX
+@@ -40,23 +40,23 @@
+ # FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
+ 
+ # Definitions for SKEY functionality
+-# DEFINES = -DSKEY
+-# LIBS = ../crimelab/skey/src/libskey.a
++DEFINES = -DSKEY
++LIBS = -lskey -lmd
+ # INCLUDES = -I../crimelab/skey/src
+ 
+-DEBUG = -g
++#DEBUG = -g
+ 
+ # On startup, tac_plus creates the file /etc/tac_plus.pid (if
+ # possible), containing its process id. Uncomment and modify the
+ # following line to change this filename
+ 
+-# PIDFILE = -DTAC_PLUS_PIDFILE=\"/var/run/tac_plus.pid\" 
++PIDFILE = -DTAC_PLUS_PIDFILE=\"/var/run/tac_plus.pid\" 
+ 
+ #
+ # End of customisable section of Makefile
+ #
+ 
+-CFLAGS = $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE)
++CFLAGS += $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE)
+ 
+ SRCS =	acct.c authen.c author.c choose_authen.c config.c do_acct.c \
+ 	do_author.c dump.c encrypt.c expire.c md5.c \
