@@ -4,21 +4,10 @@ share/gnapster/themes/cypress.theme
 share/gnapster/themes/default.theme
 share/gnapster/themes/faded.theme
 share/gnapster/pixmaps/gnapster.png
-share/locale/ca/LC_MESSAGES/gnapster.mo
-share/locale/da/LC_MESSAGES/gnapster.mo
-share/locale/de/LC_MESSAGES/gnapster.mo
-share/locale/el/LC_MESSAGES/gnapster.mo
-share/locale/es/LC_MESSAGES/gnapster.mo
-share/locale/fr/LC_MESSAGES/gnapster.mo
-share/locale/gl/LC_MESSAGES/gnapster.mo
-share/locale/hu/LC_MESSAGES/gnapster.mo
-share/locale/it/LC_MESSAGES/gnapster.mo
-share/locale/no/LC_MESSAGES/gnapster.mo
-share/locale/pl/LC_MESSAGES/gnapster.mo
-share/locale/pt/LC_MESSAGES/gnapster.mo
-share/locale/ru/LC_MESSAGES/gnapster.mo
-share/locale/sv/LC_MESSAGES/gnapster.mo
-share/locale/tr/LC_MESSAGES/gnapster.mo
+share/gnapster/pixmaps/speedgray.xpm
+share/gnapster/pixmaps/speedgreen.xpm
+share/gnapster/pixmaps/speedred.xpm
+share/gnapster/pixmaps/speedyellow.xpm
 @dirrm share/gnapster/themes
 @dirrm share/gnapster/pixmaps
 @dirrm share/gnapster
