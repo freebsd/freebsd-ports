@@ -1,0 +1,25 @@
+--- xfstt.1x.orig	Tue Jul 13 05:07:15 1999
++++ xfstt.1x	Sat Nov 18 16:08:20 2000
+@@ -3,7 +3,7 @@
+ xfstt \- X11 font server for *ttf fonts
+ .SH SYNOPSIS
+ .B xfstt
+-[--port n] [--dir dirname] [--unstrap]
++[--port n] [--notcp] [--dir dirname] [--unstrap]
+ [--multi] [--once] [--user username]
+ [[--gslist] --sync]
+ [--res resolution] [--encoding list]
+@@ -43,9 +43,12 @@
+ Change the port number for xfstt's font services.
+ This version of Xfstt defaults to --port 7101.
+ .TP
++.I "\-\-notcp"
++Don't open TCP socket, use unix domain only.
++.TP
+ .I "\-\-dir name"
+ Change xfstt's font directory.
+-The default is --dir /usr/share/fonts/truetype.
++The default is --dir /usr/X11R6/lib/X11/fonts/TrueType.
+ .TP
+ .I "\-\-res value"
+ Force the resolution for underspecified fonts to value (typically 96 or 120).

@@ -1,6 +1,11 @@
+etc/rc.d/xfstt.sh
 bin/xfstt
-share/doc/xfstt/FAQ
-share/doc/xfstt/CHANGES
-share/doc/xfstt/INSTALL
-share/doc/xfstt/THANKS.txt
-@dirrm share/doc/xfstt
+%%NOPORTDOCS%%share/doc/xfstt/FAQ
+%%NOPORTDOCS%%share/doc/xfstt/CHANGES
+%%NOPORTDOCS%%share/doc/xfstt/INSTALL
+%%NOPORTDOCS%%share/doc/xfstt/THANKS.txt
+%%NOPORTDOCS%%@dirrm share/doc/xfstt
+@exec mkdir -p %D/lib/X11/fonts/TrueType
+@unexec rm -f %D/lib/X11/fonts/TrueType/ttname.dir
+@unexec rm -f %D/lib/X11/fonts/TrueType/ttinfo.dir
+@unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true
