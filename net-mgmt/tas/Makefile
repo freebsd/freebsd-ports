@@ -8,7 +8,7 @@
 PORTNAME=	tas
 PORTVERSION=	1.2.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/tas/
+MASTER_SITES=	http://www.chelcom.ru/~anton/projects/tas/
 DISTNAME=	tas-${PORTVERSION}
 
 MAINTAINER=	anton@chelcom.ru
