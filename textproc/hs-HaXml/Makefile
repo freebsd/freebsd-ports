@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 PORTREVISION=	0
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
@@ -21,18 +21,18 @@ BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .else
 WITH_GHC=	yes
-BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake
 .endif
 .if defined(WITH_GHC)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 .endif
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	#empty
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX}/bin
 
 .if !defined(WITHOUT_NHC98) && !defined(WITH_GHC)
 CONFIGURE_ARGS+=	--buildwith=nhc98
@@ -66,6 +66,9 @@ pre-everything::
 .endif
 	@${ECHO_CMD} ""
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/bin/false,/usr/bin/false,' ${WRKSRC}/configure
+
 post-install:
 .if defined(WITH_GHC)
 	@${INSTALL_DATA} ${WRKSRC}/obj/ghc/pkg.conf \
@@ -75,6 +78,7 @@ post-install:
 		Canonicalise DtdToHaskell MkOneOf Validate Xtract ${PREFIX}/bin)
 .if !defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/docs/CVS
+	@${RM} -rf ${WRKSRC}/docs/HaXml/CVS
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})
 .endif
