@@ -1,5 +1,5 @@
---- src/mysql/Makefile.orig	Fri Mar 23 03:50:33 2001
-+++ src/mysql/Makefile	Fri Mar 30 14:13:30 2001
+--- src/mysql/Makefile.orig	Thu May  3 12:20:10 2001
++++ src/mysql/Makefile	Thu May  3 12:24:04 2001
 @@ -7,17 +7,17 @@
  
  ####### Compiler, tools and options
@@ -13,11 +13,11 @@
 +CXX	?=	g++
 +CFLAGS	?=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
 +CXXFLAGS?=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
-+INCPATH	=	-I../../pics -I../../include -I${LOCALBASE}/include/mysql -I$(QTDIR)/include -I${X11BASE}/include/qt2
++INCPATH	=	-I../../pics -I../../include -I${LOCALBASE}/include/mysql -I${X11BASE}/include/qt2
  LINK	=	g++
- LFLAGS	=	-shared -Wl,-soname,libmysqlnavigator.so.1
+ LFLAGS	=	-shared -Wl,-soname,libmysqlui.so.1
 -LIBS	=	-L$(QTDIR)/lib -L/usr/X11R6/lib -lmysqlclient -lqt -lXext -lX11 -lm
-+LIBS	=	-L$(LOCALBASE)/lib/mysql -L${X11BASE}/lib -lmysqlclient -lqt2 -lXext -lX11 -lm
++LIBS	=	-L${LOCALBASE}/lib/mysql -L${X11BASE}/lib -lmysqlclient -lqt2 -lXext -lX11 -lm
  AR	=	ar cqs
  RANLIB	=	
 -MOC	=	$(QTDIR)/bin/moc
@@ -25,34 +25,42 @@
  
  TAR	=	tar -cf
  GZIP	=	gzip -9f
-@@ -215,12 +215,10 @@
- 		../../include/moc_xport.o \
- 		../../include/moc_querylistview.o
+@@ -225,12 +225,10 @@
+ 		../../include/moc_popupcombobox.o \
+ 		../../include/moc_field.o
  DIST	=	
--TARGET	=	libmysqlnavigator.so.1.0.0
-+TARGET	=	libmysqlnavigator.so.1
-+TARGETD	=	libmysqlnavigator.so.1
- TARGETA	=	libmysqlnavigator.a
--TARGETD	=	libmysqlnavigator.so.1.0.0
- TARGET0	=	libmysqlnavigator.so
--TARGET1	=	libmysqlnavigator.so.1
--TARGET2	=	libmysqlnavigator.so.1.0
+-TARGET	=	libmysqlui.so.1.0.0
++TARGET	=	libmysqlui.so.1
+ TARGETA	=	../../lib/libmysqlui.a
+-TARGETD	=	libmysqlui.so.1.0.0
++TARGETD	=	libmysqlui.so.1
+ TARGET0	=	libmysqlui.so
+-TARGET1	=	libmysqlui.so.1
+-TARGET2	=	libmysqlui.so.1.0
  
  ####### Implicit rules
  
-@@ -246,13 +244,10 @@
- all: $(TARGET)
+@@ -253,19 +251,15 @@
  
- $(TARGET): $(OBJECTS) $(OBJMOC) 
+ ####### Build rules
+ 
+-all: ../../lib/libmysqlui.so.1.0.0
++all: ../../lib/libmysqlui.so.1
+ 
+-../../lib/libmysqlui.so.1.0.0: $(OBJECTS) $(OBJMOC) 
 -	-rm -f $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2)
++../../lib/libmysqlui.so.1: $(OBJECTS) $(OBJMOC) 
 +	-rm -f $(TARGET) $(TARGET0)
  	$(LINK) $(LFLAGS) -o $(TARGETD) $(OBJECTS) $(OBJMOC) $(LIBS)
  	-ln -s $(TARGET) $(TARGET0)
 -	-ln -s $(TARGET) $(TARGET1)
 -	-ln -s $(TARGET) $(TARGET2)
--	-cp -df libmysqlnavigator* ../../lib
--	-rm -rf libmysqlnavigator*
-+	-cp libmysqlnavigator* ../../lib
+ 	-rm -f ../../lib/$(TARGET)
+ 	-rm -f ../../lib/$(TARGET0)
+-	-rm -f ../../lib/$(TARGET1)
+-	-rm -f ../../lib/$(TARGET2)
+-	-mv $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2) ../../lib/
++	-mv $(TARGET) $(TARGET0) ../../lib/
  
  staticlib: $(TARGETA)
  
