@@ -1444,3 +1444,4 @@ mail/namg||2005-02-27|obsolete/no longer exists
 games/scorched3d-devel|games/scorched3d|2005-03-04|move to non-devel directory
 net/lmd||2005-03-04|Project dead and disappeared
 net/loadd||2005-03-04|Project dead and disappeared
+games/QNetChess|games/qnetchess|2005-03-09|port name lowercased
