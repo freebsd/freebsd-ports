@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.06
+PORTVERSION=	7.07
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
 		ftp://tug.org/vm/ \
