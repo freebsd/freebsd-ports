@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTVERSION=	1.9.6
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
 		http://sylpheed.good-day.net/sylpheed/v1.9/:source \
