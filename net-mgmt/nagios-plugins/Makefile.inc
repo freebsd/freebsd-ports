@@ -1,7 +1,0 @@
-PLIST_SUB+=	SUB_QSTAT="@comment "
-PLIST_SUB+=	SUB_FPING="@comment "
-PLIST_SUB+=	SUB_SNMP="@comment "
-PLIST_SUB+=	SUB_RADIUS="@comment "
-PLIST_SUB+=	SUB_MYSQL="@comment "
-PLIST_SUB+=	SUB_PGSQL="@comment "
-PLIST_SUB+=	SUB_LDAP="@comment "
