@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -71,6 +71,7 @@ FILES=		Extensions/CodeCoverage/Renderer/HTML.php \
 		Tests/TornDown5.php Tests/WasRun.php TextUI/ResultPrinter.php \
 		TextUI/TestRunner.php Util/Filter.php Util/Printer.php \
 		Util/Skeleton.php
+SCRIPTFILES=	phpunit
 
 .include <bsd.port.pre.mk>
 
