@@ -261,6 +261,7 @@
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += rskkserv
+    SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man

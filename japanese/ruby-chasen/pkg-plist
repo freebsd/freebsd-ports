@@ -1,0 +1,8 @@
+%%RUBY_SITEARCHLIBDIR%%/chasen.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/chasen/ja/chasenc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/chasen/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/chasen/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/chasen
+%%PORTDOCS%%%%RUBY_DOCDIR%%/chasen/ja/chasen.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/chasen/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/chasen
