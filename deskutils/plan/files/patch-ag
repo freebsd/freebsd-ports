@@ -1,19 +1,11 @@
-*** src/sublist.c.orig	Sun Apr 14 16:38:13 1996
---- src/sublist.c	Sun Apr 14 16:38:34 1996
-***************
-*** 23,29 ****
-  #define regcmp re_comp
-  #define regex re_exec
-  #endif
-! #ifdef linux
-  #define regcmp regcomp
-  #define regex regexec
-  #endif
---- 23,29 ----
-  #define regcmp re_comp
-  #define regex re_exec
-  #endif
-! #if defined(linux) || defined(freebsd)
-  #define regcmp regcomp
-  #define regex regexec
-  #endif
+--- sublist.c.orig	Sat Oct 19 06:00:32 1996
++++ sublist.c	Sat Jan 31 10:55:57 1998
+@@ -23,7 +23,7 @@
+ #define regcmp re_comp
+ #define regex re_exec
+ #endif
+-#ifdef linux
++#if defined(linux) || defined(POSIX_REGEX)
+ #define regcmp regcomp
+ #define regex regexec
+ #endif
