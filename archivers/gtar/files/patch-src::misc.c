@@ -1,9 +1,23 @@
 
 $FreeBSD$
 
---- src/misc.c	2002/06/01 21:08:46	1.1
-+++ src/misc.c	2002/06/01 21:09:16
-@@ -549,10 +549,8 @@
+--- src/misc.c.orig	Mon Aug 27 01:14:26 2001
++++ src/misc.c	Wed Oct  2 19:10:55 2002
+@@ -214,6 +214,13 @@
+ 	    return 0;
+ 	}
+       while (! ISSLASH (*p));
++
++      do
++	{
++	  if (! *p++)
++	    return 0;
++	}
++      while ( ISSLASH (*p));
+     }
+ }
+ 
+@@ -549,10 +556,8 @@
  chmod_error_details (char const *name, mode_t mode)
  {
    int e = errno;
