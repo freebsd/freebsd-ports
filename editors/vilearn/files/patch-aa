@@ -1,0 +1,26 @@
+--- Makefile.orig	Fri Dec 12 09:08:12 1997
++++ Makefile	Fri Dec 12 09:17:12 1997
+@@ -4,12 +4,12 @@
+ 
+ # BINDIR is where the vilearn shell script will live. It should be in the
+ # path of new users.
+-BINDIR=	/usr/local/bin
++BINDIR=	${PREFIX}/bin
+ 
+ # MANDIR is the man area where vilearn's man page will be installed. It
+ # should be somewhere that the default man command will search.
+ 
+-MANDIR=	/usr/local/man
++MANDIR=	${PREFIX}/man
+ 
+ # SEC is the section of the manual that vilearn's man page will be
+ # installed in.
+@@ -18,7 +18,7 @@
+ 
+ # TUTORIALS is the directory where the master copies of the tutorials
+ # will live.
+-TUTORIALS=	/usr/local/lib/vilearn
++TUTORIALS=	${PREFIX}/share/vilearn
+ 
+ # Shouldn't have to edit below here.
+ 
