@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.38
-PORTREVISION=	4
+PORTVERSION=	0.7.41
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +22,7 @@ USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 LIBTOOLFILES=	acinclude.m4
@@ -65,26 +64,8 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
-# fix compile with gcc-3.4.x
-.if ${OSVERSION} >= 502126
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-include::aviplay.h \
-		${FILESDIR}/extra-patch-include::avm_map.h \
-		${FILESDIR}/extra-patch-include::avm_stl.h \
-		${FILESDIR}/extra-patch-lib::aviread::AsfNetworkInputStream.cpp \
-		${FILESDIR}/extra-patch-lib::common::image.cpp \
-		${FILESDIR}/extra-patch-plugins::libvorbis::libvorbis.cpp \
-		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::dsputil_mmx.c \
-		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::motion_est_mmx.c \
-		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::simple_idct_mmx.c \
-		${FILESDIR}/extra-patch-ffmpeg::libavcodec::liba52::resample_mmx.c \
-		${FILESDIR}/extra-patch-plugins::libmp3lame_audioenc::lame3.70::quantize-pvt.c
-.endif
-
-WITHOUT_XVID=yes	# Does not support xvid 1.0.x
-
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
-WITHOUT_XVID=yes
 BROKEN=		"Does not compile on !i386"
 .endif
 
@@ -112,8 +93,9 @@ PLIST_SUB+=	AC3_PASS="@comment "
 .if !defined(WITHOUT_A52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 
+# --enable-ffmpeg-a52bin breaks build
 CONFIGURE_ARGS+=	--enable-a52 \
-			--enable-ffmpeg-a52bin \
+			--enable-ffmpeg-a52 \
 			--with-a52-prefix=${LOCALBASE}
 PLIST_SUB+=	A52=""
 .else
@@ -175,7 +157,6 @@ PLIST_SUB+=	VORBIS="@comment "
 # xvid
 .if !defined(WITHOUT_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE}
 PLIST_SUB+=	XVID=""
 .else
@@ -298,6 +279,14 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^subdirs[[:space:]]*=.*libmad.*$$||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# int_fast16/32_t are not in 4.x
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|int_fast16_t|int16_t|g; \
+		s|int_fast32_t|int32_t|g' \
+		${WRKSRC}/ffmpeg/libavcodec/jfdctfst.c \
+		${WRKSRC}/ffmpeg/libavcodec/jfdctint.c \
+		${WRKSRC}/ffmpeg/libavcodec/ffv1.c
+.endif
 
 post-configure:
 	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
