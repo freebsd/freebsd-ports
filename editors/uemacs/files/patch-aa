@@ -65,7 +65,7 @@ diff -crN --exclude=*freebsd* ue312.orig/src/bind.c ue312/src/bind.c
   	path = getenv("DPATH");
   #else
 ! 	strcat(patha, getenv("PATH"));
-!         strcat(patha, "/usr/local/lib/uemacs");
+!         strcat(patha, ":/usr/local/lib/uemacs");
   #endif
   #endif
 +         path = &patha[0];
