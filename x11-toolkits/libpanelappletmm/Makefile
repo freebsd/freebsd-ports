@@ -6,26 +6,33 @@
 #
 
 PORTNAME=	libpanelappletmm
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkmm
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
-COMMENT=	C++ binding for the panel applet API
+COMMENT=	C++ wrapper for libpanelapplet library
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
-		gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
-		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+                gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
+		gnomemm-2.6.1:${PORTSDIR}/x11/libgnomemm26
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.3
 USE_GNOME=	gnomehack gnomepanel
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
+
+PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
