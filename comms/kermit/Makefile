@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	kermit
+PORTNAME=	kermit
 PORTVERSION=	7.0.196
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
