@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Oct 28 16:50:34 1999
++++ src/Makefile.in	Thu Oct 28 16:50:37 1999
+@@ -130,7 +130,7 @@
+ LEX= @LEX@
+ LEXLIB = @LEXLIB@
+ 
+-LDFLAGS= @LDFLAGS@
++LDFLAGS= @LDFLAGS@ -pthread
+ LIBS= @LIBS@
+ 
+ DEFS= @DEFS@
