@@ -7,6 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	2.8010.462
+PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
 		http://http.distributed.net/pub/dcti/%SUBDIR%/
