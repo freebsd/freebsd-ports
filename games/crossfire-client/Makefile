@@ -38,9 +38,9 @@ DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 
 EXTRACT_ONLY=	${CF_SOURCES} ${CF_DOC}
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-RUN_DEPENDS=    rplay:${PORTSDIR}/audio/rplay \
-		perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 USE_IMAKE=	yes
 PREFIX=		/usr/local		# don't use /usr/X11R6
