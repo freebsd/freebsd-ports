@@ -25,7 +25,7 @@
   		    cp = &buffer[7];
                       while (*cp && (*cp == ' ' || *cp == '\t')) cp++;
 ! 		    l = strlen(cp);
-! 		    if(l < DIG_SIZE || l > 70/*rfc1939*/) /* To account for the empty UIDL string */
+! 		    if(l < DIG_SIZE || l > 70/*rfc1939*/+1) /* To account for the empty UIDL string */
                       {
                           uidl_found--; /*roll over as though it hasn't seen anything*/
                           continue;
