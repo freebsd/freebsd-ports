@@ -4,9 +4,9 @@ etc/sound/events/email.soundlist
 share/gnome/apps/Internet/balsa.desktop
 share/gnome/help/balsa/C/authours.html
 share/gnome/help/balsa/C/common-tasks.html
+share/gnome/help/balsa/C/folder-config.html
 share/gnome/help/balsa/C/getting-started.html
 share/gnome/help/balsa/C/glossary.html
-share/gnome/help/balsa/C/folder-config.html
 share/gnome/help/balsa/C/images/address-book-ldap.png
 share/gnome/help/balsa/C/images/address-book-modify.png
 share/gnome/help/balsa/C/images/address-book-start.png
@@ -25,6 +25,7 @@ share/gnome/help/balsa/C/images/spell-check.png
 share/gnome/help/balsa/C/index.html
 share/gnome/help/balsa/C/its-not-working.html
 share/gnome/help/balsa/C/ln7.html
+share/gnome/help/balsa/C/mbox-formats.html
 share/gnome/help/balsa/C/stylesheet-images/caution.gif
 share/gnome/help/balsa/C/stylesheet-images/home.gif
 share/gnome/help/balsa/C/stylesheet-images/important.gif
@@ -92,7 +93,7 @@ share/locale/sv/LC_MESSAGES/balsa.mo
 share/locale/tr/LC_MESSAGES/balsa.mo
 share/locale/uk/LC_MESSAGES/balsa.mo
 share/locale/wa/LC_MESSAGES/balsa.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/balsa.mo
+share/locale/zh_CN/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/pixmaps/balsa
 @dirrm share/gnome/help/balsa/C/stylesheet-images
