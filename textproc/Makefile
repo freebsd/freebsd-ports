@@ -576,6 +576,7 @@
     SUBDIR += xmlindent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
+    SUBDIR += xmlpull
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xp

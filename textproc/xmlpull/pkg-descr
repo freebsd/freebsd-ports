@@ -1,0 +1,18 @@
+Common API for XML Pull Parsing (XmlPull) is an effort to define a simple and
+elegant pull parsing API that will provide a standardized way to do pull XML
+parsing from J2ME to J2EE.
+
+It is a minimalist API: very easy to implement standalone or on top of existing
+parser. The API allows both fast high level iteration (using next() method) and
+low level tokenizing (using nextToken() token) and is designed for easy
+building on top of it SAX, XML pull parsers that uses iterators with event
+objects, or even DOM implementations. To support J2ME and real small
+implementation parsing of DOCDECL is optional (but DOCDECL can be reported if
+requested).
+
+The aim is to provide a similar but orthogonal pull parsing basis to widely
+successful push parsing SAX API. The XmlPull API is in public domain in hope
+that it will be embraced by Java developers (conformance tests are under LGPL
+license to minimize risk of incompatible implementations).
+
+WWW:	http://www.xmlpull.org
