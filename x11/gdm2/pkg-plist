@@ -1,4 +1,5 @@
 bin/gdm
+bin/gdm-binary
 bin/gdmXnestchooser
 bin/gdmchooser
 bin/gdmflexiserver
@@ -33,6 +34,8 @@ share/gnome/gdm/themes/happygnome/gnome-logo.png
 share/gnome/gdm/themes/happygnome/happygnome.xml
 share/gnome/gdm/themes/happygnome/options.png
 share/gnome/gdm/themes/happygnome/screenshot.png
+share/gnome/gdm/themes/happygnome/session.png
+share/gnome/gdm/themes/happygnome/system.png
 share/gnome/gdm/themes/circles/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/circles/background.svg
 share/gnome/gdm/themes/circles/circles.xml
@@ -46,6 +49,7 @@ share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
 share/locale/ar/LC_MESSAGES/gdm-2.4.mo
 share/locale/az/LC_MESSAGES/gdm-2.4.mo
+share/locale/bg/LC_MESSAGES/gdm-2.4.mo
 share/locale/ca/LC_MESSAGES/gdm-2.4.mo
 share/locale/cs/LC_MESSAGES/gdm-2.4.mo
 share/locale/da/LC_MESSAGES/gdm-2.4.mo
