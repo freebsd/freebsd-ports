@@ -8,7 +8,7 @@
 PORTNAME=	dict
 PORTVERSION=	1.2
 CATEGORIES=	german
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 DISTNAME=	dict-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

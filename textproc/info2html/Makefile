@@ -8,7 +8,7 @@
 PORTNAME=	info2html
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Translate GNU info files into HTML pages
