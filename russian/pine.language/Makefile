@@ -2,15 +2,15 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1996/11/18 11:39:02 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/03 15:31:21 ache Exp $
 #
 
 PKGNAME=        ru-pine-3.95
 CATEGORIES=     russian mail
 
-RUN_DEPENDS+=   pine:${PORTSDIR}/mail/pine
-
 MAINTAINER=     ache@FreeBSD.org
+
+RUN_DEPENDS=    pine:${PORTSDIR}/mail/pine
 
 NO_EXTRACT=     YES
 NO_WRKDIR=      YES
