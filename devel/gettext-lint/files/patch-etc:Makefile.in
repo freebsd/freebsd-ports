@@ -1,0 +1,10 @@
+--- etc/Makefile.in.orig	Tue Feb  3 14:25:14 2004
++++ etc/Makefile.in	Tue Feb  3 14:25:26 2004
+@@ -224,7 +224,6 @@
+ 
+ 
+ install-data-local:
+-	@$(NORMAL-INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
+         $(INSTALL_DATA) report.xsl $(DESTDIR)$(pkgdatadir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

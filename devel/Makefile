@@ -250,6 +250,7 @@
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
+    SUBDIR += gettext-lint
     SUBDIR += gettext-old
     SUBDIR += getxml
     SUBDIR += gindent

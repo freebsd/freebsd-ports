@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Mon Feb  2 04:29:01 2004
++++ src/Makefile.in	Tue Feb  3 14:26:57 2004
+@@ -259,9 +259,8 @@
+ 
+ 
+ install-data-local:
+-	@$(NORMAL-INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
+-        $(INSTALL_DATA) *.py $(DESTDIR)$(pkgdatadir)
++	$(mkinstalldirs) $(DESTDIR)$(PYTHON_SITELIBDIR)/gettext-lint; \
++        $(INSTALL_DATA) *.py $(DESTDIR)$(PYTHON_SITELIBDIR)/gettext-lint
+ 
+ pychecker:
+ 	@for i in *.py; do pychecker -Q $$i; done

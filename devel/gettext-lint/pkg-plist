@@ -1,0 +1,21 @@
+bin/POFileChecker
+bin/POFileConsistency
+bin/POFileConsistencyShell
+bin/POFileEquiv
+bin/POFileReplace
+bin/POFileSpell
+bin/POFileStatus
+bin/POTFileChecker
+%%PYTHON_SITELIBDIR%%/gettext-lint/Config.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/File.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/FileStatus.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/Module.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/POFile.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/POFileStatus.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/POStatus.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/POTFile.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/Status.py
+%%PYTHON_SITELIBDIR%%/gettext-lint/capitalization.py
+@dirrm %%PYTHON_SITELIBDIR%%/gettext-lint
+%%DATADIR%%/report.xsl 
+@dirrm %%DATADIR%%
