@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS=	${INCGD} -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
-		CFLAGS="${CFLAGS} ${INCGD}" \
+		CFLAGS="${CPPFLAGS} ${CFLAGS} ${INCGD}" \
 		LIBS="-L${LOCALBASE}/lib ${LIBGD}"
 CONFIGURE_ARGS=	--with-command-user=nagios \
 		--with-command-grp=www \
