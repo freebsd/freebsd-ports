@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ettercap
-PORTVERSION=	0.5.0
-CATEGORIES=     net
-MASTER_SITES=   http://ettercap.sourceforge.net/download/
+PORTNAME=	ettercap
+PORTVERSION=	0.5.2
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@FreeBSD.org
 

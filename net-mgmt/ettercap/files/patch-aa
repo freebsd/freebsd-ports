@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jun 11 12:08:19 2001
-+++ Makefile.in	Mon Jun 11 12:12:00 2001
+--- Makefile.in.orig	Tue Jul 10 01:28:52 2001
++++ Makefile.in	Tue Jul 10 01:28:26 2001
 @@ -17,7 +17,7 @@
  BINDIR   = @bindir@
  MANDIR   = @mandir@
@@ -9,10 +9,10 @@
  DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
  
  DEBUG    = @DEBUG@
-@@ -52,12 +52,13 @@
- 	$(INSTALL) -m 644 ./share/* $(DESTDIR)$(SHAREDIR)
+@@ -53,12 +53,13 @@
  	$(INSTALL) -m 644 ./etter.conf $(DESTDIR)$(SHAREDIR)
- 	$(INSTALL) -m 644 ./grell_ssl.crt $(DESTDIR)$(SHAREDIR)
+ 	$(INSTALL) -m 644 ./etter.filter $(DESTDIR)$(SHAREDIR)
+ 	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(SHAREDIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 ./docs/*/* $(DESTDIR)$(DOCDIR)
@@ -26,7 +26,7 @@
  
  plug-ins:
  	cd plugins && make && cd ..
-@@ -111,4 +112,4 @@
+@@ -112,4 +113,4 @@
  
  targz: distro
  	mv $(PROG)-$(VERSION).tar.gz $(PROG)-$(VERSION)-@SERIAL@.tar.gz
