@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=6
+CFLAGS+=	-DRL_NO_COMPAT
 
 .include <bsd.port.pre.mk>
 
@@ -45,9 +46,13 @@ post-patch:
 
 do-patch: post-patch
 	@${ECHO} 'FreeBSD-specific patches disabled for now, until upgraded.'
+	@${REINPLACE_CMD} -e 's/^READLINE/#READLINE/' \
+		-e 's/^readline/#readline/' \
+		${WRKSRC}/gdb/Makefile.in
+	echo 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 
 pre-configure:
-	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
+	cd ${WRKSRC} ; ${RM} -rf dejagnu expect readline sim tcl texinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
