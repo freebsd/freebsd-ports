@@ -1,4 +1,4 @@
-%%BATTER%%bin/battstat-applet-2
+%%BATTERY%%bin/battstat-applet-2
 bin/cdplayer_applet2
 bin/charpick_applet2
 bin/drivemount_applet2
@@ -11,8 +11,8 @@ bin/mini_commander_applet
 bin/mixer_applet2
 bin/modemlights_applet2
 bin/multiload-applet-2
-%%BATTER%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/%gconf.xml
-%%BATTER%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs/%gconf.xml
+%%BATTERY%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/%gconf.xml
+%%BATTERY%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/charpick/%gconf.xml
