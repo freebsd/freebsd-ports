@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.1.RC1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
@@ -20,19 +20,18 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	contrib/rc/${PORTVERSION}rc
-DISTFILES+=	OOo_${PORTVERSION}rc_source.tar.bz2 gpc231.tar.Z:gpc \
+MASTER_SITE_SUBDIR=	contrib/rc/1.1.1rc
+DISTFILES+=	OOo_1.1.1rc_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
+EXTRACT_ONLY=	OOo_1.1.1rc_source.tar.bz2
 
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
-
-IGNORE=	"Work In Progress"
 
 USE_GNOME=	orbit gtk12
 
@@ -84,8 +83,6 @@ BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
 CC=	gcc32
 CXX=	g++32
-
-EXTRACT_ONLY=	OOo_${PORTVERSION}rc_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
@@ -460,7 +457,7 @@ do-build:
 .endif
 
 pre-install:
-	@${MKDIR} -p ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
+	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
