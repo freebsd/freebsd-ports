@@ -21,30 +21,24 @@ MAN6=		omega.6
 PORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 		docs/readme3 docs/readme4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin/omega-game
 	@${CHOWN} root:games ${PREFIX}/bin/omega-game
 	@${CHMOD} 2711 ${PREFIX}/bin/omega-game
 	${INSTALL_MAN} ${WRKSRC}/docs/omega.6 ${PREFIX}/man/man6
-	@${MKDIR} ${PREFIX}/share/omega
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/omega
-	@${RM} ${PREFIX}/share/omega/license.old
-	@${CHMOD} 0460 ${PREFIX}/share/omega/omega.hi
-	@${CHMOD} 0460 ${PREFIX}/share/omega/omega.log
-	${CP} ${PREFIX}/share/omega/omega.hi ${PREFIX}/share/omega/omegahi.bak
-	@${CHMOD} 0460 ${PREFIX}/share/omega/omegahi.bak
-	@${CHOWN} -R root:games ${PREFIX}/share/omega
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}
+	@${RM} ${DATADIR}/license.old
+	@${CHMOD} 0460 ${DATADIR}/omega.hi
+	@${CHMOD} 0460 ${DATADIR}/omega.log
+	${CP} ${DATADIR}/omega.hi ${DATADIR}/omegahi.bak
+	@${CHMOD} 0460 ${DATADIR}/omegahi.bak
+	@${CHOWN} -R root:games ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/omega
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/omega
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
