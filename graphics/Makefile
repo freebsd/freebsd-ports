@@ -222,6 +222,7 @@
     SUBDIR += linplasma
     SUBDIR += linux-ac3d
     SUBDIR += linux-bmrt
+    SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
     SUBDIR += linux-png
