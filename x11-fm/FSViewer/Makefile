@@ -15,6 +15,8 @@ DISTNAME=	FSViewer.app-${PORTVERSION}
 MAINTAINER=	Fritz.Heinrichmeyer@fernuni-hagen.de
 COMMENT=	X11 file manager using WINGS library. Dockable in WindowMaker
 
+BROKEN=		"Does not build with new version of windowmaker"
+
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 GNU_CONFIGURE=	yes

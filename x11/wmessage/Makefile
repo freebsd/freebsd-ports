@@ -14,6 +14,8 @@ MASTER_SITES=	http://tucows.mirror.ish.de/linux/files/x11/xwin/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A WINGs based message viewer similar to xmessage
 
+BROKEN=		"Does not build with new version of windowmaker"
+
 BUILD_DEPENDS=	get-wraster-flags:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
