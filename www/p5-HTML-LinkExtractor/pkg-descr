@@ -1,0 +1,5 @@
+HTML::LinkExtractor is used for extracting links from HTML. It is very
+similar to HTML::LinkExtor, except that besides getting the URL,
+you also get the link-text.
+
+WWW: http://search.cpan.org/dist/HTML-LinkExtractor/
