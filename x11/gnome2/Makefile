@@ -36,7 +36,7 @@ RUN_DEPENDS=	${X11BASE}/share/themes/Metal/ICON.png:${PORTSDIR}/x11-toolkits/gtk
 		bug-buddy:${PORTSDIR}/devel/bugbuddy \
 		glade:${PORTSDIR}/devel/glade \
 		${LOCALBASE}/lib/python1.5/site-packages/_appletmodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
-		${X11BASE}/share/gnome/help/users-guide/aboutug.html:${PORTSDIR}/misc/gnomeusersguide \
+		${X11BASE}/share/gnome/help/users-guide/C/aboutug.html:${PORTSDIR}/misc/gnomeusersguide \
 		gcalc:${PORTSDIR}/misc/gnomeutils \
 		gnomecard:${PORTSDIR}/deskutils/gnomepim \
 		${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
