@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvanessa_socket
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/vanessa/%SUBDIR%/ \
@@ -28,6 +28,5 @@ INSTALLS_SHLIB=	YES
 USE_LIBTOOL=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/vanessa_socket-${PORTVERSION}
 
 .include <bsd.port.mk>
