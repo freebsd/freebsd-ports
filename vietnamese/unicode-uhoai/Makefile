@@ -14,8 +14,6 @@ DISTNAME=	uhoaiw21
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN=		"Missing dependencies"
-
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
