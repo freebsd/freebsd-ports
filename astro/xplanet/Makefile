@@ -16,12 +16,24 @@ COMMENT=	Draw pictures of the earth textured by an image
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	#
 CONFIGURE_ARGS=	--with-map-extension=jpg
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 
 PLIST_FILES=	bin/xplanet
+
+OPTIONS=	FREETYPE "Enable Freetype support" on \
+		PANGO "Enable PANGO support" on \
+		GIF "Enable GIF support" on \
+		JPEG "Enable JPEG support" on \
+		PNG "Enable PNG support" on \
+		PNM "Enable PNM support" on \
+		TIFF "Enable TIFF support" on
+
 MAN1=	xplanet.1
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FREETYPE)
 CONFIGURE_ARGS+=	--with-freetype
@@ -82,4 +94,4 @@ post-install:
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
