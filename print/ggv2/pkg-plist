@@ -1,5 +1,4 @@
 bin/ggv
-bin/ggv-postscript-viewer
 etc/gconf/gconf.xml.defaults/apps/ggv/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/ggv/control/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/ggv/coordinates/%gconf.xml
@@ -14,6 +13,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/ggv/layout/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/ggv/printing/%gconf.xml
 etc/gconf/schemas/ggv.schemas
 libdata/bonobo/servers/GNOME_GGV.server
+libexec/ggv-postscript-viewer
 share/gnome/applications/ggv.desktop
 share/gnome/gnome-2.0/ui/ggv-control-ui.xml
 share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
@@ -25,6 +25,7 @@ share/gnome/help/ggv/C/topic.dat
 share/gnome/idl/Ggv.idl
 share/gnome/omf/ggv/ggv-C.omf
 share/gnome/pixmaps/ggv/clearall.xpm
+share/gnome/pixmaps/ggv/fitwidth.png
 share/gnome/pixmaps/ggv/ggv-splash.png
 share/gnome/pixmaps/ggv/toggleall.xpm
 share/gnome/pixmaps/ggv/toggleeven.xpm
