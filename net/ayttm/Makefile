@@ -7,7 +7,7 @@
 
 PORTNAME=	everybuddy
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
@@ -21,8 +21,9 @@ USE_GTK=	yes
 WANT_ESOUND=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 USE_BISON=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -laudiofile"
 CONFIGURE_ARGS=	--disable-arts
