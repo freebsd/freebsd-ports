@@ -1,44 +1,44 @@
---- Makefile.in.orig	Mon Oct 22 21:46:29 2001
-+++ Makefile.in	Tue Jan 22 19:02:30 2002
-@@ -32,7 +32,7 @@
+--- Makefile.in.orig	Wed Jan 23 16:10:16 2002
++++ Makefile.in	Fri Feb 22 03:32:58 2002
+@@ -32,7 +32,9 @@
  	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
 -		$(INSTALL_DATA) $$i $(sysconfdir); \
 +		test -f $(sysconfdir)/$$i || $(INSTALL_DATA) $$i $(sysconfdir); \
++		cp -f $$i $$i.default; \
++		$(INSTALL_DATA) $$i.default $(sysconfdir); \
  	done; \
  	for i in *-std* ssl.conf; do \
  		[ -f $$i ] || continue; \
-@@ -51,7 +51,7 @@
- 					< $$i; \
- 				for j in $(DSO_MODULES) "^EOL^"; do \
+@@ -54,7 +56,7 @@
+ 						echo "<IfDefine SSL>"; \
+ 					fi; \
  					if test $$j != "^EOL^"; then \
 -						echo "LoadModule $${j}_module modules/mod_$${j}.so"; \
 +						echo "LoadModule $${j}_module ${libexecdir:S|^${prefix}/||}/mod_$${j}.so"; \
  					fi; \
- 				done; \
- 				sed -e '1,/@@LoadModule@@/d' \
-@@ -93,11 +93,14 @@
+ 					if test "x$$j" = "xssl"; then \
+ 						echo "</IfDefine>"; \
+@@ -106,11 +108,14 @@
  
  install-htdocs:
  	@echo Installing HTML documents
 -	@test -d $(htdocsdir) || $(MKINSTALLDIRS) $(htdocsdir)
 -	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(htdocsdir))
--	@test -d $(prefix)/manual || $(MKINSTALLDIRS) $(prefix)/manual
--	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(prefix)/manual)
--	@(cd $(htdocsdir) && find . -name "CVS" -print | xargs rm -rf {} \;)
 +	@test -d $(htdocsdir).default || $(MKINSTALLDIRS) $(htdocsdir).default
 +	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(htdocsdir).default)
 +	@test -e $(htdocsdir) || ln -sf $(htdocsdir).default $(htdocsdir)
 +.if !defined(NOPORTDOCS)
-+	@test -d $(manualdir) || $(MKINSTALLDIRS) $(manualdir)
-+	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(manualdir))
+ 	@test -d $(manualdir) || $(MKINSTALLDIRS) $(manualdir)
+ 	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(manualdir))
+-	@(cd $(htdocsdir) && find . -name "CVS" -print | xargs rm -rf {} \;)
 +.endif
 +	@(cd $(htdocsdir).default && find . -name "CVS" -print | xargs rm -rf {} \;)
  
  install-error:
  	@echo Installing error documents
-@@ -113,9 +116,10 @@
+@@ -126,9 +131,10 @@
  
  install-cgi:
  	@echo Installing CGIs
