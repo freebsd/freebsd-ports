@@ -148,6 +148,7 @@ do-install:
 	${GMAKE} -C src/include ${INSTALL_TARGET} ;\
 	${GMAKE} -C src/interfaces ${INSTALL_TARGET} ;\
 	${GMAKE} -C doc ${INSTALL_TARGET}
+.else
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
