@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.web2ldap.de/download/ \
 
 MAINTAINER=	oddbjorn@tricknology.org
 
-BROKEN=		"Incorrect plist"
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
 
 NO_BUILD=	yes
@@ -30,7 +28,7 @@ do-install:
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/mime.types.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/compile.py.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/web2ldap.py.orig
-	@${LOCALBASE}/bin/python ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/compile.py
+	@(cd ${WRKSRC} && ${LOCALBASE}/bin/python ./sbin/compile.py)
 	@${CP} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ ${PREFIX}/${PORTNAME}
 	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
 
