@@ -10,9 +10,7 @@ PORTVERSION=	7.2.9.1
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
-		http://aquatique.rusunix.org/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		http://aquatique.rusunix.org/
 DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	aquatique@rusunix.org
