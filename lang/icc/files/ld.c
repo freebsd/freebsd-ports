@@ -184,7 +184,9 @@ main(int argc, char *argv[], char *envp[])
 
 	for (i = 0; i < argc; i++) {
 	 	if (ARGCMP(i, "-CPLUSPLUS") || ARGCMP(i, "-MT") ||
-		    ARGCMP(i, "-PIC"))
+		    ARGCMP(i, "-PIC") ||
+		    (ARGCMP(i, "-m") && i<argc-1 && ARGCMP(i+1, "elf_i386")) ||
+		    (ARGCMP(i, "elf_i386") && i != 0 && ARGCMP(i-1, "-m")))
 			continue;
 
 		/* prepend "-melf_i386" to the commandline */
