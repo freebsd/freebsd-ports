@@ -7,24 +7,24 @@
 #
 
 PORTNAME=	planets
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.10
 CATEGORIES=	astro
-MASTER_SITES=	http://planets.homedns.org/dist/${PORTVERSION}/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://planets.homedns.org/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An orbital simulator
-
-BROKEN=		"Does not compile"
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 
+MAN1=	planets.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/planets.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in KEYBINDINGS.txt getting_started.html
