@@ -1,0 +1,10 @@
+--- lib/krb5/rd_cred.c.orig	Tue Apr 17 16:03:58 2001
++++ lib/krb5/rd_cred.c	Tue Apr 17 16:05:16 2001
+@@ -50,6 +50,7 @@
+     krb5_crypto crypto;
+     int i;
+ 
++    *ret_creds = NULL;
+     ret = decode_KRB_CRED(in_data->data, in_data->length, 
+ 			  &cred, &len);
+     if(ret)
