@@ -1,6 +1,0 @@
-LCLint is a tool for statically checking C programs.  With minimal
-effort, LCLint can be used as a better lint.  If additional effort is
-invested adding annotations to programs, LCLint can perform stronger
-checks than can be done by any standard lint.
-
-WWW: http://lclint.cs.virginia.edu/

@@ -226,7 +226,6 @@
     SUBDIR += korelib
     SUBDIR += kpp
     SUBDIR += ktranslator
-    SUBDIR += lclint
     SUBDIR += lemon
     SUBDIR += leoarg
     SUBDIR += libIDL
@@ -640,6 +639,7 @@
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
     SUBDIR += spirit
+    SUBDIR += splint
     SUBDIR += st
     SUBDIR += stlport
     SUBDIR += str

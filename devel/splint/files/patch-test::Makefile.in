@@ -1,0 +1,13 @@
+--- test/Makefile.in.orig	Mon Feb 11 14:27:16 2002
++++ test/Makefile.in	Thu Mar  7 18:28:01 2002
+@@ -897,8 +897,8 @@
+ 	mostlyclean-generic uninstall uninstall-am uninstall-info-am
+ 
+ 
+-unexport LARCH_PATH
+-unexport LCLIMPORTDIR
++#unexport LARCH_PATH
++#unexport LCLIMPORTDIR
+ 
+ .PHONY: all check
+ all check: fulltest
