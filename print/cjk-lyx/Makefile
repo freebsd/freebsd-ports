@@ -6,47 +6,59 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.3.4.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
+MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/
 PKGNAMEPREFIX=	cjk-
-DISTNAME=	CJK-LyX-${PORTVERSION}-src
+DISTNAME=	CJK-LyX-qt-${PORTVERSION:R}-${PORTVERSION:E}.src
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+		latex:${PORTSDIR}/print/teTeX \
+		makepsres:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
-WRKSRC=		${WRKDIR}/CJK-LyX-${PORTVERSION}
+WRKSRC=		${WRKDIR}/CJK-LyX-qt-${PORTVERSION:R}
 
-USE_GETTEXT=	yes
-USE_XPM=	yes
-USE_REINPLACE=	yes
+CONFLICTS=	lyx-*
+
+USE_QT_VER=	3
+USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
+USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	15
-CONFIGURE_ENV=	CPPFLAGS="-DI18N"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-frontend=qt \
+		--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 reLyX.1
 
+CFLAGS+=	-DI18N
+
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
+
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
-			--with-pspell-include="${LOCALBASE}/include" 
+			--with-pspell-include="${LOCALBASE}/include"
 .endif
 
 .if defined(WITH_ISPELL)
-RUN_DEPENDS+=   ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 .endif
 
 pre-everything::
@@ -64,13 +76,4 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-post-patch:
-.for file in src/Makefile.am src/frontends/Makefile.am
-	@${REINPLACE_CMD} -e 's|LIBS +=|LDFLAGS = @LDFLAGS@|g' ${WRKSRC}/${file}
-.endfor
-.for file in configure.in lib/reLyX/configure.in
-	@${REINPLACE_CMD} -e 's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
-		 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g' ${WRKSRC}/${file}
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

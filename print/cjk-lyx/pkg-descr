@@ -1,16 +1,10 @@
-CJK-LyX
-=======
+LyX is a document processor interfaced with LaTeX, which gives both the
+ease-of-use of a wordprocessor, and the flexibility and power of
+LaTeX.
 
-CJK-LyX is a multibyte version of LyX, the text processing document 
-processor, or simply a new and advanced kind of word processors. 
-More specifically, CJK-LyX is the patched version of LyX for Chinese,
-Japanese and Korean language users.
+Quasi-WYSIWYG interface, many LaTeX styles and layouts automatically
+generated. Speeds up learning LaTeX and makes complicated layouts
+easy and intuitive. New features include spell-checking, international
+character support, WYSIWYG graphics, tables, and equations.
 
-CJK-LyX is based on the earlier patch against lyx-1.0.3 by Masahiko 
-Kawakami <kawakami@din.or.jp> and critical contributions from 
-Chideok Hwang <hwang@mizi.co.kr>, who is also the author of the 
-Korean input method Ami. 
-
---
-CHOI Junho <cjh@FreeBSD.org>
-WWW: http://cellular.phys.pusan.ac.kr/cjk.html
+WWW: http://www.lyx.org/
