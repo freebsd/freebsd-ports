@@ -22,6 +22,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	roddie@krweb.net
 COMMENT=	Tag editor for MP3 and OGG files
 
+BROKEN=		"Creates /gnome in root directory"
+
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac
