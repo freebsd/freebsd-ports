@@ -19,7 +19,7 @@ COMMENT=	A dungeon exploration game
 USE_REINPLACE=	yes
 
 MAN6=		moria.6
-WRKSRC=         ${WRKDIR}/umoria
+WRKSRC=		${WRKDIR}/umoria
 ALL_TARGET=	moria
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}" CHOWN="${CHOWN}" \
 	CHGRP="${CHGRP}" CHMOD="${CHMOD}" TOUCH="${TOUCH}"
