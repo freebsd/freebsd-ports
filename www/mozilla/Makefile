@@ -1,55 +1,42 @@
-# New ports collection makefile for:	netscape (full communicator version)
-# Version required:     4.05
-# Date created:         24 Feb 1997
-# Whom:                 ache
+# New ports collection makefile for:	mozilla
+# Version required:	0.0
+# Date created:		31 Mar 1998
+# Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.16 1998/03/16 15:05:03 markm Exp $
+# $Id: Makefile,v 1.4 1998/03/11 00:01:05 eivind Exp $
 #
 
-DISTNAME=       netscape-communicator-4.05
+DISTNAME=	unix
+PKGNAME=	mozilla-1998-03-31
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.05/development/english/unix/freebsd/professional_edition/
-DISTFILES=      communicator-v405-export.x86-unknown-freebsd.tar.gz
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/mozilla/1998-03-31/ \
+		ftp://ftp.bitcon.no/pub/www/mozilla/mozilla/1998-03-31/ \
+		ftp://ftp.mozilla.org/pub/mozilla/1998-03-31/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/communicator-v405.x86-unknown-freebsd
-NO_BUILD=       Yes
+WRKSRC=		${WRKDIR}/ns
+USE_GMAKE=	yes
+NO_INSTALL_MANPAGES=yes
+DIST_SUBDIR=	mozilla
+MAKE_ENV=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1 \
+	LD_LIBRARY_PATH=${LOCALBASE}/lib
+REQUIRES_MOTIF=	yes
 
-NDIR=           ${PREFIX}/lib/netscape
-BINDIR=		${PREFIX}/bin
-
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
-		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.2.1-unix.tar.gz
-RESTRICTED=     "Contains strong cryptography"
-.endif
-
-.if !defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-pre-extract:
-		@${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
-		@${ECHO} "and defining USA_RESIDENT to NO"
-.endif
+OSNAME=	`uname -s`
+OSVER=	`uname -r | ${SED} 's/-.*//'`
+OBJDIR=	${WRKSRC}/dist/${OSNAME}${OSVER}_DBG.OBJ
 
 do-install:
-	cd ${WRKSRC} && yes "" | \
-	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.05.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.05
-	ln -sf communicator-4.05 ${BINDIR}/communicator-4
-	ln -sf communicator-4 ${BINDIR}/netscape
-	if [ ! -f ${NDIR}/mailcap ] ; then \
-	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
+	@${MKDIR} ${PREFIX}/lib/mozilla/bin
+	@tar -cf - --dereference -C ${OBJDIR}/bin bsdecho mozilla-export \
+		nsinstall vreg | tar -xf - -C ${PREFIX}/lib/mozilla/bin
+	@chmod 755 ${PREFIX}/lib/mozilla/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
+	@if [ ! -f ${PREFIX}/lib/mozilla/mailcap ] ; then \
+		${INSTALL_DATA} ${FILESDIR}/mailcap ${PREFIX}/lib/mozilla ; \
 	fi
-	rm -rf ${NDIR}/movemail-src
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKSRC}/Fortify-1.2.1-unix && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.05.bin
-.endif
-	chown -R bin.bin ${NDIR}
-
-post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@strip ${PREFIX}/lib/mozilla/bin/mozilla-export
+	@chown -R bin.bin ${PREFIX}/lib/mozilla
 
 .include <bsd.port.mk>
