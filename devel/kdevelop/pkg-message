@@ -9,7 +9,7 @@
   - devel/kdbg
   - devel/kdelibdocs
   - devel/ktranslator
-  - graphics/kdegraphics11
+  - graphics/kdegraphics2
   - textproc/glimpse
   - print/a2ps-*
   - print/enscript-*

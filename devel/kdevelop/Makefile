@@ -6,41 +6,40 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	1.3
-PORTREVISION=	1
-CATEGORIES=	devel
+PORTVERSION=	1.4
+CATEGORIES=	devel kde
 MASTER_SITES=	ftp://ftp.e-technik.fh-muenchen.de/pub/unix/ide/KDevelop/ \
 		ftp://ftp.chg.ru/pub/X11/kdevelop/ \
 		ftp://gd.tuwien.ac.at/hci/KDevelop/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
 		kdbg:${PORTSDIR}/devel/kdbg \
 		${LOCALBASE}/share/doc/HTML/en/kdelibs/kdecore/index.html:${PORTSDIR}/devel/kdelibdocs \
 		ktranslator:${PORTSDIR}/devel/ktranslator \
-		kiconedit:${PORTSDIR}/graphics/kdegraphics11 \
+		kiconedit:${PORTSDIR}/graphics/kdegraphics2 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
 		a2ps:${PORTSDIR}/print/a2ps43-letter
 .endif
 
 USE_BZIP2=	yes
-USE_QT=		yes
+USE_QT2=	yes
+MOC?=		${X11BASE}/bin/moc2
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}"
-CONFIGURE_ARGS=	--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
-		--with-qt-includes=${X11BASE}/include/X11/qt \
-		--with-extra-includes=${LOCALBASE}/include \
+USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-libraries=${X11BASE}/lib \
+		--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-extra-libs=${LOCALBASE}/lib
-MAKE_ARGS=	SOMAJOR="${SOMAJOR}"
-PLIST_SUB=	LIBVER="${SOMAJOR}"
-
-SOMAJOR=	1
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
+		MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
 
 pre-everything:
 .if !defined(WITH_OPTIONAL_DEPENDS)
