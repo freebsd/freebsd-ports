@@ -76,6 +76,7 @@
     SUBDIR += festlex-poslex
     SUBDIR += festogi-spanish
     SUBDIR += festvox-abc
+    SUBDIR += festvox-aec
     SUBDIR += festvox-don
     SUBDIR += festvox-el11
     SUBDIR += festvox-hvs
