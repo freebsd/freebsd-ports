@@ -703,3 +703,4 @@ security/pgp5||2003-11-08|Software is outdated
 x11-toolkits/wxgtk-devel|x11-toolkits/wxgtk|2003-11-10|renamed
 net/lmule||2003-11-10|project has been abadoned in favor of net/xmule
 net/kxicq-devel||2003-11-13|unmaintained, better KDE ICQ clients available
+editors/ghex|editors/ghex2|2003-11-15|ghex2 holds the latest stable version
