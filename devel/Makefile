@@ -19,6 +19,7 @@
     SUBDIR += agenda-snow-libs
     SUBDIR += agenda-static-libs
     SUBDIR += ald
+    SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += anjuta
     SUBDIR += apr
