@@ -85,8 +85,8 @@ share/alisp/src/queens.l
 share/alisp/src/quicksort.l
 share/alisp/src/unlabel.l
 share/alisp/src/xeval.l
-share/doc/alisp/alisp.sd
-share/doc/alisp/helpfile
+%%DOCSDIR%%/alisp.sd
+%%DOCSDIR%%/helpfile
 @dirrm share/alisp/lib
 @dirrm share/alisp/src
 @dirrm share/alisp
