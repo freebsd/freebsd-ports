@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkdiff
-# Version required:	1.0.1
+# Version required:	1.0.2
 # Date created:		17 November 1999
 # Whom:			Maxim Sobolev
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkdiff-1.0.1
+DISTNAME=	gtkdiff-1.0.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/gtkdiff/
 
@@ -22,5 +22,7 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+
+MAN1=		gtkdiff.1
 
 .include <bsd.port.mk>
