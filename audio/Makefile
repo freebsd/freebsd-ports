@@ -185,6 +185,7 @@
     SUBDIR += mp3info
     SUBDIR += mp3mover
     SUBDIR += mp3rename
+    SUBDIR += mp3riot
     SUBDIR += mp3splt
     SUBDIR += mp3stat
     SUBDIR += mp3wrap
