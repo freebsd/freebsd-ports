@@ -63,6 +63,7 @@
     SUBDIR += uudeview
     SUBDIR += uudx
     SUBDIR += uulib
+    SUBDIR += vda2fbd
     SUBDIR += xdeview
     SUBDIR += xunicode
 
