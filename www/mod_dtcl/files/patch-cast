@@ -1,15 +1,36 @@
---- mod_dtcl.c	Tue May  1 11:56:01 2001
-+++ mod_dtcl.c	Fri Jun  1 20:29:10 2001
-@@ -735,3 +735,3 @@
-     /* take results and create tcl variables from them */
--#if USE_ONLY_VAR_COMMAND == 1
-+#if USE_ONLY_VAR_COMMAND == 0
-     if (req->parms)
-@@ -792 +792,6 @@
--		chan = Tcl_MakeFileChannel((ClientData *)fileno(upload->fp), TCL_READABLE);
-+		union {
-+			ClientData handle;
-+			int fd;
-+		} handle;
-+		handle.fd = fileno(upload->fp);
+--- tcl_commands.c	Fri Jun 29 12:38:00 2001
++++ tcl_commands.c	Tue Aug  7 22:55:11 2001
+@@ -676,7 +676,14 @@
+ 	{
++	    union {
++		ClientData handle;
++		int fd;
++	    } handle;
++	    FILE *f;
+ 	    Tcl_Channel chan;
+ 	    char *method = Tcl_GetString(objv[3]);
++	    f = ApacheUpload_FILE(upload);
++	    handle.fd = f ? fileno(f) : -1;
+ 	    if (!strcmp(method, "channel"))
+ 	    {
+-		if (ApacheUpload_FILE(upload) != NULL)
++		if (handle.fd != -1)
+ 		{
+@@ -684,4 +690,3 @@
+ 		    char *channelname = NULL;
+-		    chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-			ApacheUpload_FILE(upload)), TCL_READABLE);
++		    chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
+ 		    Tcl_RegisterChannel(interp, chan);
+@@ -709,4 +714,3 @@
+ 
+-		chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-		    ApacheUpload_FILE(upload)), TCL_READABLE);
 +		chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
+ 		Tcl_SetChannelOption(interp, chan, "-translation", "binary");
+@@ -736,4 +740,3 @@
+ 		    bytes = Tcl_Alloc(ApacheUpload_size(upload));
+-		    chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-			ApacheUpload_FILE(upload)), TCL_READABLE);
++		    chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
+ 		    Tcl_SetChannelOption(interp, chan, "-translation", "binary");
