@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_SSL)
-LIB_DEPENDS+=	gnutls.7:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-ssl=gnutls
 .else
 CONFIGURE_ARGS+=--enable-ssl=no
