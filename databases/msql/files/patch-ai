@@ -1,6 +1,6 @@
---- src/msql/msqld.c.orig	Mon Jan 13 10:16:03 1997
-+++ src/msql/msqld.c	Sun Jan 19 14:12:08 1997
-@@ -506,7 +506,7 @@
+--- src/msql/msqld.c.orig	Sat Feb  1 07:46:40 1997
++++ src/msql/msqld.c	Tue Feb  4 17:32:18 1997
+@@ -508,7 +508,7 @@
  
  	if (*confFile == 0)
  	{
