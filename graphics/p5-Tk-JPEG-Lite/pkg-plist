@@ -1,0 +1,8 @@
+bin/tkjpeg
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG/Lite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG 2>/dev/null || true
