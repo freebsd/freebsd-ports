@@ -3,12 +3,12 @@
 # Date created:		25 Feb 1998
 # Whom: Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id: Makefile,v 1.2 1998/05/15 04:59:15 chuckr Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:17 asami Exp $
 #
 
 DISTNAME=	knj10-1.00
 PKGNAME=	ja-naga10-1.0
-CATEGORIES=	japanese x11
+CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://gondow-www.cs.titech.ac.jp/~snagao/fonts/
 
 MAINTAINER=	usagi@clave.gr.jp

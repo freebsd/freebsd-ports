@@ -3,12 +3,12 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.15 1997/03/04 06:16:02 asami Exp $
+# $Id: Makefile,v 1.16 1997/12/25 22:29:52 asami Exp $
 #
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0
-CATEGORIES=	x11
+CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
 
 MAINTAINER=	ports@FreeBSD.ORG

@@ -3,11 +3,11 @@
 # Date created:		June 20, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.4 1998/03/12 23:09:54 jfieber Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:31:50 asami Exp $
 #
 
 DISTNAME=	xmbdfed-2.7
-CATEGORIES=	x11
+CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
 MAINTAINER=	jfieber@FreeBSD.ORG

@@ -3,11 +3,11 @@
 # Date created:         Thu Mar 26 04:50:00 PST 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/16 02:08:03 dburr Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:48 asami Exp $
 #
 
 DISTNAME=	sharefonts-0.10
-CATEGORIES=	x11
+CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	dburr@FreeBSD.ORG

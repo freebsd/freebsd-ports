@@ -3,12 +3,12 @@
 # Date created:		30 Sep 1997
 # Whom: Kawaguti Ginga <ginga@amalthea.phys.s.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/04/24 05:37:15 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:19 asami Exp $
 #
 
 DISTNAME=	Kappa20-0.2
 PKGNAME=	ja-kappa20-0.2
-CATEGORIES=	japanese x11
+CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/X11/fonts/ \
 		ftp://ftp.win.or.jp/pub/doc-sources/fj.sources/1997/aug/
 
