@@ -183,7 +183,7 @@ do-install:
 #
 # Install yp.conf as a hint to NIS users
 #
-	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${LINUXBASE}/etc
+	${INSTALL_DATA} ${FILESDIR}/yp.conf ${LINUXBASE}/etc
 #
 # Finish
 #

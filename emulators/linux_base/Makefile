@@ -183,7 +183,7 @@ do-install:
 # mtab in etc, albeit an empty one. This is needed in a couple of
 # cases. Most notably staroffice6.
 #
-	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${LINUXBASE}/etc
+	${INSTALL_DATA} ${FILESDIR}/yp.conf ${LINUXBASE}/etc
 	${TOUCH} ${LINUXBASE}/etc/mtab
 #
 # Finish
