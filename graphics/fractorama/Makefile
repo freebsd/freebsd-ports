@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fractorama
-PORTVERSION=	1.5.1E
+PORTVERSION=	1.5.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://fractorama.com/
 DISTNAME=	${PORTNAME}
