@@ -22,7 +22,7 @@ The default installation directory for Zope Products has changed from
 %%ZOPEBASEDIR%%/lib/python/Products 
 to %%ZOPEBASEDIR%%/Products. 
 
-You migth have to add the following lines to your zope.conf 
+You might have to add the following lines to your zope.conf 
 products %%ZOPEBASEDIR%%/Products
 products $INSTANCE/Products
 
