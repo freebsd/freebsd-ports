@@ -44,7 +44,7 @@
 -#ifdef USBHID_NEW
 +#ifdef __FreeBSD__
 +# if (__FreeBSD_version >= 470000)
-+#  if (__FreeBSD_version <= 500111)
++#  if ((__FreeBSD_version <= 500111) && (__FreeBSD_version >= 480000))
 +	len = hid_report_size(rd, r->rid, repinfo[repind].kind);
 +#  else
 +	len = hid_report_size(rd, repinfo[repind].kind, r->rid);
