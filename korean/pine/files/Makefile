@@ -1,7 +1,14 @@
+.if ${PORTOBJFORMAT} == "elf"
+SHLIB=	libpico.so.1
+.else
+SHLIB=	libpico.so.1.3
+.endif
+
 all:
 	./build bsf
 install:
-	install -c -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
+	install -c -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} pico/${SHLIB} ${PREFIX}/lib
+	ln -sf ${SHLIB} ${PREFIX}/lib/libpico.so
 	/sbin/ldconfig -m ${PREFIX}/lib
 	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} bin/pico ${PREFIX}/bin/pico
 	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} bin/pilot ${PREFIX}/bin/pilot
