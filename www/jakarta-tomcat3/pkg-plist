@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/tomcat3ctl
 etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/logs/stdout.log
@@ -123,9 +124,6 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/ant/tomcat-ant.jar
 %%T%%/LICENSE
 %%T%%/KEYS
-man/man1/tomcat3ctl.1
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%T%%/logs
 @dirrm %%T%%/doc/images
 @dirrm %%T%%/doc/appdev/sample/etc
