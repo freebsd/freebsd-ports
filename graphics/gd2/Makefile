@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       gd
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
