@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	ucd-snmp
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.1
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
 
-PATCH_SITES=	http://ucd-snmp.ucdavis.edu/patches/
-PATCHFILES=	012.patch
-PATCH_DIST_STRIP=	-p0 -d ${WRKSRC}/agent
-
 MAINTAINER=	billf@FreeBSD.org
 
 CONFIGURE_ARGS=	--enable-shared
-
 GNU_CONFIGURE=	YES
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
 IS_INTERACTIVE= yes
 .endif
+USE_GMAKE=	YES
 #CFLAGS=		-g
 
 MAN1=		snmpbulkwalk.1 snmpd.1 snmpdelta.1 snmpget.1 snmpgetnext.1 \
@@ -43,9 +39,6 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 343"
-.endif
 .if ${OSVERSION} >= 400000
 CONFIGURE_ARGS+=	--with-out-mib-modules="ucd-snmp/vmstat_freebsd2 ucd-snmp/memory_freebsd2"
 .endif
@@ -63,7 +56,7 @@ post-install:
 	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
 	@( cd ${PREFIX}/lib && ${LN} -f libsnmp.so.${SHLIB_VERSION} libsnmp.so )
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
-	@for F in ${WRKSRC}/etc/* ; do \
+	@for F in ${WRKSRC}/EXAMPLE.conf  ${WRKSRC}/agent/mibgroup/examples/ucdDemoPublic.conf; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
 	@if [ ! -f ${STARTUP_FILE} ]; then \
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \

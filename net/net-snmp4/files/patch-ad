@@ -4,7 +4,7 @@
  			physaddrbuf = 0;
  		}
  		ifm = (struct if_msghdr *)rtm;
-+#if defined(freebsd3) || defined(freebsd4)
++#if defined(freebsd3) || defined(freebsd4) || defined(freebsd5)
 +		if (physaddrs != 0) physaddrs[naddrs] = (void*)(ifm + 1);
 +		naddrs++;
 +#endif
@@ -12,7 +12,7 @@
  		cp += ifm->ifm_msglen;
  		rtm = (struct rt_msghdr *)cp;
  		while (ilen > 0 && rtm->rtm_type == RTM_NEWADDR) {
-+#if defined(freebsd3) || defined(freebsd4)
++#if defined(freebsd3) || defined(freebsd4) || defined(freebsd5)
 +			ilen -= rtm->rtm_msglen;
 +			cp += rtm->rtm_msglen;
 +#else
