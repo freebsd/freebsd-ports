@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
+# $Id: Makefile,v 1.56 1997/11/26 08:50:29 tg Exp $
 #
 
     SUBDIR += ImageMagick
     SUBDIR += Mesa
+    SUBDIR += aalib
     SUBDIR += aero
     SUBDIR += camediaplay
     SUBDIR += dc3play
