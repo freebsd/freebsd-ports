@@ -1279,6 +1279,7 @@ dhcping		ports/net/dhcping
 dhid		ports/net/dhid
 dhisd		ports/net/dhisd
 dhttpd		ports/www/dhttpd
+di		ports/sysutils/di
 dia		ports/graphics/dia
 dia2code	ports/devel/dia2code
 diablo		ports/news/diablo
