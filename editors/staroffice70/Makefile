@@ -64,9 +64,9 @@ do-install:
 	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
 	@${ECHO} "${WRKDIR}/tmp" >> ${TMPDIR}/ld.so.conf.tmp
 	@${ECHO} "/usr/X11R6/lib" >> ${TMPDIR}/ld.so.conf.tmp
-	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
-	@/usr/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
+	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/compat/linux/tmp/sv001.tmp:/compat/linux/tmp:/tmp
+	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/compat/linux/lib
+	@/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
 	@${CAT} ${PKGDIR}/MESSAGE
 	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
 
