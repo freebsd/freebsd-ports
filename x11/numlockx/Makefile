@@ -11,7 +11,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
-	http://dforce.sh.cvut.cz/~seli/en/numlockx/
+		http://ktown.kde.org/~seli/numlockx/
 
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
