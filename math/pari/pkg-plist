@@ -1,27 +1,33 @@
 bin/gp
 bin/gp-2.0
+bin/gphelp
 include/pari/genpari.h
-include/pari/pari.h
-include/pari/paricast.h
 include/pari/paricfg.h
+include/pari/pariinl.h
+include/pari/pari.h
+include/pari/paritype.h
+include/pari/paricast.h
 include/pari/paricom.h
-include/pari/paridecl.h
 include/pari/parierr.h
 include/pari/parigen.h
-include/pari/pariinl.h
-include/pari/pariport.h
 include/pari/paristio.h
 include/pari/parisys.h
-include/pari/paritype.h
+include/pari/pariport.h
+include/pari/paridecl.h
 lib/libpari.so
 lib/libpari.so.2
-lib/libpari.so.2.0.16
+lib/libpari.so.2.0.18
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /bin/mkdir -p %D/lib/pari/data
+lib/pari/pari.el
+lib/pari/pariemacs.txt
+lib/pari/with-syntax.el
+lib/pari/pari-translator.el
+lib/pari/translations
+lib/pari/Makefile
 lib/pari/paricfg.tex
 lib/pari/parimacro.tex
-lib/pari/translations
 lib/pari/usersch1.tex
 lib/pari/usersch2.tex
 lib/pari/usersch3.tex
