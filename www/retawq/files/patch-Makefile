@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Nov 28 23:24:02 2001
-+++ Makefile	Mon Dec 31 02:39:44 2001
+--- Makefile.orig	Sat Jan 26 18:10:22 2002
++++ Makefile	Sat Jan 26 18:11:38 2002
 @@ -16,11 +16,11 @@
  CONFIG_CED = 1
  
@@ -13,14 +13,14 @@
 -INSTALL_BINPREFIX = /usr/bin/
 +INSTALL_BINPREFIX = %%PREFIX%%/bin/
  
- # put your favourite C compiler here; mine is "gcc" ;-)
+ # put your favourite C compiler here; mine is "gcc"
  CC = gcc
-@@ -128,7 +128,7 @@
- 	@echo "#define CONFIG_DEBUG $(CONFIG_DEBUG)" >> .config
+@@ -145,7 +145,7 @@
+ 	@echo "#define HAVE_MMAP 1" >> .config
  
  retawq: $(OBJS)
--	$(CC) $(OBJS) $(LCLT) $(LCLC) -o retawq
-+	$(CC) $(OBJS) $(LCLT) $(LCLC) -o retawq ${LDFLAGS}
+-	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq
++	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq ${LDFLAGS}
  
  stripsyms:
  	-strip --strip-unneeded retawq
