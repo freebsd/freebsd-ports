@@ -21,6 +21,7 @@ COMMENT=	A Virtual Private Network (VPN) daemon
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,6 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN5=	tinc.conf.5
 MAN8=	tincd.8
+
+pre-configure:
+	${REINPLACE_CMD} \
+	    's/OpenSSL_add_all_algorithms/OpenSSL_add_all_ciphers/' \
+	    ${WRKSRC}/configure
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/tinc.info*
