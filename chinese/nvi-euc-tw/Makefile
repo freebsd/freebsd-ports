@@ -3,7 +3,7 @@
 # Date created:		5 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.5 1997/08/21 16:55:25 itojun Exp $
+# $Id: Makefile,v 1.6 1997/09/22 17:48:41 max Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -12,9 +12,10 @@ PATCHDIR=	${.CURDIR}/../../editors/nvi/patches
 PKGDIR=		${.CURDIR}/../../editors/nvi/pkg
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
+PKGNAME=	zh-nvi-euctw-1.79.19970820
+
 .include <${.CURDIR}/../../editors/nvi/Makefile>
 
-PKGNAME=	zh-nvi-euctw-1.79-970820
 CATEGORIES=	chinese editors
 
 MAINTAINER=	itojun@itojun.org
