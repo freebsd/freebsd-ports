@@ -2,31 +2,12 @@ The package is linked dynamic so that you will get the right crypt
 library.  If you are serious about performance, you may want to recompile
 it by yourself (the port will link static by default).
 
--Satoshi (Nov 14, 1995)
-
-REMINDER: to use ftpaccess(5) you need to specify -a in command line,
-it is changed from previous versions.
-
--Ache
----
-WASHINGTON UNIVERSITY FTP SERVER, RELEASE 2.4
 wu-ftpd is a replacement ftp server for Un*x systems.  Besides
 supporting the ftp protocol defined in RFC 959, it adds the following
-features:
-    o  logging of transfers
-    o  logging of commands
-    o  on the fly compression and archiving
-    o  classification of users on type and location
-    o  per class limits
-    o  per directory upload permissions
-    o  restricted guest accounts
-    o  system wide and per directory messages.
-    o  directory alias
-    o  cdpath
-    o  filename filter
-
-
-CONFIGURATION NOTES
+features: logging of transfers, logging of commands, on the fly compression
+and archiving, classification of users on type and location, per class limits,
+per directory upload permissions, restricted guest accounts, system wide
+and per directory messages, directory alias, cdpath, filename filter.
 
 The configuration files are located in /usr/local/etc  This package includes
 a basic working configuration.  The config files are:
@@ -37,4 +18,3 @@ a basic working configuration.  The config files are:
 
 You will also need to change /etc/inetd.conf to point to the new server 
 located at /usr/local/libexec/ftpd
-
