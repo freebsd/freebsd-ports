@@ -55,10 +55,6 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
-post-patch:
-	${RUBY} -i.orig -pe 'gsub(/abs_db_driver/, "abs_db_dir")' ${WRKSRC}/lib/pkgdb.rb
-	${RUBY} -i.orig -pe '$$. == 85 and sub(/_freebsd_pkgtools_which_files/, "_freebsd_pkgtools_ports")' ${WRKSRC}/misc/zsh/_pkgtools
-
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
