@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	audio perl5
-MASTER_SITES=	http://www.blinkenlights.ch/gnupod/
-DISTNAME=	${PORTNAME}-tools-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gnupod
 
 MAINTAINER=	david@dyn-ns.net
 COMMENT=	A set of Perl scripts for using an Apple iPod
@@ -25,7 +25,8 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-tools
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 .ifndef(NOPORTDOCS)
 post-install:
