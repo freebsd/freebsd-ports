@@ -8,7 +8,9 @@
 PORTNAME=	blimitd
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/blimitd/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/blimitd/ \
+		ftp://ftp.megamirror.com/pub/ugh/blimitd/ \
+		http://ftp.megamirror.com/pub/ugh/blimitd/
 
 MAINTAINER=	andrew@ugh.net.au
 
