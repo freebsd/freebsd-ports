@@ -15,13 +15,15 @@ DISTNAME=	alisp${PORTVERSION}
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A tail-recursive interpreter for purely symbolic LISP
 
-BUILD_DEPENDS=  tx:${PORTSDIR}/lang/t3x \
+BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x \
 		${LOCALBASE}/t3x/r8/tide:${PORTSDIR}/devel/tide
 
 MAN7=		alisp.7
 MANCOMPRESSED=	no
 
-MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8
+MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8 \
+		BINOWN=${BINOWN} \
+		BINGRP=${BINGRP}
 
 USE_REINPLACE=	yes
 
