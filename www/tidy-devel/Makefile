@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	030302
+PORTVERSION=	030319
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -38,10 +38,12 @@ DESCR=		${.CURDIR}/pkg-descr
 
 BIN2STRIP=	tidy tab2space
 
-#MAN1=		tidy.1
+.if !defined(WITH_SHLIB)
+MAN1=		tidy.1
+.endif
 
 .if !defined(NOPORTDOCS)
-DOCVER=		030216
+DOCVER=		030319
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}:docs
 DOCFILES=	Overview.html faq.html grid.gif pending.html	\
 		quickref.html release-notes.html tidy.css tidy.gif
