@@ -8,7 +8,7 @@
 
 DISTNAME=	libicq-0.33
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/                        \
+MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/ \
 		http://www.nectar.com/distfiles/
 
 MAINTAINER=	flathill@FreeBSD.org
