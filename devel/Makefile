@@ -290,6 +290,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cdk
+    SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom
