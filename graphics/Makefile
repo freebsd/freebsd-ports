@@ -373,6 +373,7 @@
     SUBDIR += xmms-infinity
     SUBDIR += xmms-iris
     SUBDIR += xmms-jess
+    SUBDIR += xmms-paranormal
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains

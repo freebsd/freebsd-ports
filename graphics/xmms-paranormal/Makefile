@@ -1,0 +1,36 @@
+# New ports collection makefile for:	xmms-paranormal
+# Date created:				25 Apr 2002
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms-paranormal
+PORTVERSION=	0.2.0
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	paranormal
+DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
+
+MAINTAINER=	dyeske@yahoo.com
+
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
+		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml" SDL_CONFIG="${SDL_CONFIG}"
+
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_GLIB=	yes
+USE_GTK=	yes
+USE_GMAKE=	yes
+USE_MESA=	yes
+USE_X_PREFIX=	yes
+
+pre-build:
+	@${PERL} -pi -e 's|SDL/|SDL11/|g;' ${WRKSRC}/xmms.c
+
+.include <bsd.port.mk>
