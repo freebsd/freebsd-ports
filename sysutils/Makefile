@@ -5,6 +5,7 @@
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += Tee
+    SUBDIR += aaccli
     SUBDIR += abck
     SUBDIR += acidlaunch
     SUBDIR += adtool
