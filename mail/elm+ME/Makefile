@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elm+ME
-PORTVERSION=	2.4.95${PATCHLEVEL}
+PORTVERSION=	2.4.96${PATCHLEVEL}
 PORTREVISION=	1
 CATEGORIES=	mail
 DISTNAME=	${PORTNAME:S/+ME//}-${PORTVERSION:R}ME+${PORTVERSION:E:S|${PATCHLEVEL}||}
@@ -26,8 +26,9 @@ MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 # 		ftp://ftp.rge.com/pub/mail/elm/elm-2.4ME+/ \
 # 		ftp://ftp.uni-trier.de/pub/unix/network/mail/elm-me+/
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME:S/+/+PL/}a.patch.gz
-PATCHLEVEL=	a
+PATCHFILES=	${DISTNAME:S/+/+PL/}a.patch.gz \
+		${DISTNAME:S/+/+PL/}b.patch.gz
+PATCHLEVEL=	b
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cyrille.lefevre@laposte.net
@@ -52,8 +53,11 @@ SCRIPTS_ENV=	CFLAGS="${CFLAGS}" ${PLIST_SUB} PREFIX="${PREFIX}" \
 		LOCALBASE="${LOCALBASE}" MAN1PREFIX="${MAN1PREFIX}"
 CONFIGURE_ARGS=	-S -P ${PREFIX}
 
-MAKE_ARGS=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
+MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
 ALL_TARGET=	all documentation
+
+# hack! don't know why but it's needed.
+MAKEFILE=	Makefile
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_SUBDIR%%
@@ -78,12 +82,19 @@ MSECS=		1
 RCD_SUBDIR=	etc/rc.d
 LIB_SUBDIR=	lib/elm
 SHLIB_SUBDIR=	libexec/elm
-DOC_SUBDIR=	share/doc/elm
+DOC_SUBDIR=	share/doc/elm+ME
+
+RCD_DIR=	${PREFIX}/${RCD_SUBDIR}
+LIB_DIR=	${PREFIX}/${LIB_SUBDIR}
 
 RCD_FILE=	00elm.sh
 MIME_TYPES=	elm.mimetypes
+MIME_CSETS=	elm.mimecharsets
+TERM_INFO=	elm.terminalinfo
+ELM_RC=		elm.rc
 DOC_FILES=	README.ME+ \
 		shared_libs/iconv/README.ICONV \
+		shared_libs/smtp/README.SMTP \
 		shared_libs/tls/README.TLS \
 		doc/Alias.fmtd doc/Config.fmtd doc/Cover.fmtd \
 		doc/Form.fmtd doc/Ref.fmtd doc/Users.fmtd
@@ -108,34 +119,76 @@ patch-setgid:
 patch-nls-files:
 	@${PERL} -pi.fbsd -e 's,/usr/local,${PREFIX},' ${WRKSRC}/nls/LANGS
 
+# Pre-install
+#
+
+pre-install: backup-mime-charsets backup-terminal-info
+
+backup-mime-charsets:
+.if exists(${LIB_DIR}/${MIME_CSETS})
+	@${MV} ${LIB_DIR}/${MIME_CSETS} ${LIB_DIR}/${MIME_CSETS}.orig
+.endif
+
+backup-terminal-info:
+.if exists(${LIB_DIR}/${TERM_INFO})
+	@${MV} ${LIB_DIR}/${TERM_INFO} ${LIB_DIR}/${TERM_INFO}.orig
+.endif
+
 # Post-install
 #
 
 post-install: install-startup-files install-nls-files \
-	      install-doc-files install-mime-types install-global-rc-file \
+	      install-doc-files install-mime-types \
+	      install-mime-charsets restore-mime-charsets \
+	      install-terminal-info restore-terminal-info \
+	      install-global-rc-file \
 	      remove-catman-files remove-catman-links
 
 install-startup-files:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${RCD_FILE} ${PREFIX}/${RCD_SUBDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${RCD_FILE} ${RCD_DIR}
 
 install-nls-files:
 	@cd ${WRKSRC}/nls; ${MAKE} install
 
 install-doc-files:
 .if !defined(NOPORTSDOC)
-	@${MKDIR} ${PREFIX}/${DOC_SUBDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${DOC_SUBDIR}
-	@${GZIP_CMD} ${PREFIX}/${DOC_SUBDIR}/${file:T}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${GZIP_CMD} ${DOCSDIR}/${file:T}
 .endfor
 .endif
 
 install-mime-types:
-	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} \
-		${PREFIX}/${LIB_SUBDIR}/${MIME_TYPES}-dist
-.if !exists(${PREFIX}/${LIB_SUBDIR}/${MIME_TYPES})
-	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} \
-		${PREFIX}/${LIB_SUBDIR}
+	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${LIB_DIR}/${MIME_TYPES}-dist
+.if !exists(${LIB_DIR}/${MIME_TYPES})
+	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${LIB_DIR}
+.endif
+
+install-mime-charsets:
+	@${INSTALL_DATA} ${LIB_DIR}/${MIME_CSETS} ${LIB_DIR}/${MIME_CSETS}-dist
+# was
+# 	@${LIB_DIR}/elmcharset -G \
+# 		-I ${WRKSRC}/ConfTool/killsets \
+# 		-S ${WRKSRC}/charset/MAPPING/ISO8859 \
+# 		-w ${LIB_DIR}/${MIME_CSETS}-dist \
+# 		${WRKSRC}/bin/${MIME_CSETS}
+
+restore-mime-charsets:
+.if exists(${LIB_DIR}/${MIME_CSETS}.orig)
+	@${MV} ${LIB_DIR}/${MIME_CSETS}.orig ${LIB_DIR}/${MIME_CSETS}
+.endif
+
+install-terminal-info:
+	@${INSTALL_DATA} ${LIB_DIR}/${TERM_INFO} ${LIB_DIR}/${TERM_INFO}-dist
+# was
+# 	@${LIB_DIR}/elmterminal -G \
+# 		-w ${LIB_DIR}/${TERM_INFO}-dist \
+# 		${WRKSRC}/bin/${TERM_INFO}
+
+restore-terminal-info:
+.if exists(${LIB_DIR}/${TERM_INFO}.orig)
+	@${MV} ${LIB_DIR}/${TERM_INFO}.orig ${LIB_DIR}/${TERM_INFO}
 .endif
 
 # at installation time, elm already has merged changes to the global
@@ -143,14 +196,12 @@ install-mime-types:
 # backup the original rc file, then to generate the -dist rc file
 # and to restore the backuped rc file. this allow us, at deinstallation
 # time, to not delete an existing customized rc file.
+# same assertion about elm.mimecharsets and elm.terminalinfo.
 install-global-rc-file:
-	@${MV} ${PREFIX}/${LIB_SUBDIR}/elm.rc \
-		${PREFIX}/${LIB_SUBDIR}/elm.rc.orig
-	@${PREFIX}/${LIB_SUBDIR}/elmrc-write -G -I
-	@${MV} ${PREFIX}/${LIB_SUBDIR}/elm.rc \
-		${PREFIX}/${LIB_SUBDIR}/elm.rc-dist
-	@${MV} ${PREFIX}/${LIB_SUBDIR}/elm.rc.orig \
-		${PREFIX}/${LIB_SUBDIR}/elm.rc
+	@${MV} ${LIB_DIR}/${ELM_RC} ${LIB_DIR}/${ELM_RC}.orig
+	@${LIB_DIR}/elmrc-write -G -I
+	@${MV} ${LIB_DIR}/${ELM_RC} ${LIB_DIR}/${ELM_RC}-dist
+	@${MV} ${LIB_DIR}/${ELM_RC}.orig ${LIB_DIR}/${ELM_RC}
 
 remove-catman-files:
 .for sect in ${MSECS}
@@ -176,12 +227,11 @@ FETCH_CMD_INTERIOR=	${FETCH_CMD:M*fetch*}
 # only enable the hack if FETCH_CMD is fetch
 .if !empty(FETCH_CMD_INTERIOR)
 
-# lip6 dislike $USER@localhost...
+# some ftp servers dislike $USER@localhost...
 FETCH_ENV=	FTP_PASSWORD=${FTP_PASSWORD}
 
 IFCONFIG?=	ifconfig
 
-# well, this is a hack to make fetch happy on lip6, ugh!
 HOSTIPADDR=	${IFCONFIG} | ${AWK} '/inet /{print $$2; exit}'
 FTP_PASSWORD?=	${USER}@`${HOSTIPADDR}`
 .endif
