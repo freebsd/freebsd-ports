@@ -851,6 +851,7 @@ cl-meta		ports/textproc/cl-meta
 cl-meta-cmucl	ports/textproc/cl-meta-cmucl
 cl-meta-sbcl	ports/textproc/cl-meta-sbcl
 cl-port		ports/devel/cl-port
+cl-port-cmucl	ports/devel/cl-port-cmucl
 cl-port-sbcl	ports/devel/cl-port-sbcl
 cl-ppcre	ports/textproc/cl-ppcre
 cl-split-sequence	ports/devel/cl-split-sequence
