@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --with-ssl
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
-MAN1=		scrollz.1
 
 PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
 
@@ -32,7 +31,7 @@ pre-build:
 .if !defined(BATCH)
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -o SZdist \
 		SZdist.c)
-	@(cd $(WRKSRC); ./SZdist)
+	@(cd ${WRKSRC}; ./SZdist)
 .endif
 
 .include <bsd.port.mk>
