@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	ccaudio
-PORTVERSION=	0.2.4
+PORTVERSION=	1.0.6
 CATEGORIES=	audio
-# Mastersite is broken regarding anonymous FTP, mirror is unreachable.
-# I have informed the webmaster regarding this, hope to get an answer
-# soon - edwin@freebsd.org 20021226
-MASTER_SITES=	ftp://www.voxilla.org/pub/ccaudio/ \
-		ftp://ftp.teklab.com/voxilla/pub/ccaudio/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	ccaudio
 
-MAINTAINER=	dyfet@gnu.org
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"C++ class framework for manipulating audio files"
+
+BUILD_DEPENDS=	ccgnu2-config:${PORTSDIR}/devel/commoncpp
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -22,10 +22,14 @@ USE_AUTOCONF=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+
+MAN3=		Audio.3cc AudioCodec.3cc AudioCopy.3cc AudioFile.3cc \
+		AudioRegisterCodec.3cc AudioSample.3cc AudioTone.3cc \
+		CDAudio.3cc
 
 post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | \
-		xargs ${REINPLACE_CMD} -e 's|-release \@LT_RELEASE\@||g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|-release \@LT_RELEASE\@||g'
 
 .include <bsd.port.mk>
