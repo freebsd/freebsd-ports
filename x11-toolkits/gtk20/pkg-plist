@@ -278,7 +278,6 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%/loaders
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%/immodules
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%
-@dirrm lib/gtk-2.0/modules
 @dirrm lib/gtk-2.0
 @dirrm include/gtk-2.0/gtk
 @dirrm include/gtk-2.0/gdk-pixbuf-xlib
