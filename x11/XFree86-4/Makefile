@@ -1,27 +1,21 @@
 # New ports collection makefile for:    XFree86
-# Version required:     3.3.3
+# Version required:     3.3.4
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.53 1999/03/08 07:28:35 asami Exp $
+# $Id: Makefile,v 1.54 1999/03/19 22:35:25 asami Exp $
 #
 
 DISTNAME=	xc
-PKGNAME= 	XFree86-3.3.3.1
+PKGNAME= 	XFree86-3.3.4
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.3/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3/source/
-DISTFILES=	X333src-1.tgz X333src-2.tgz
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.4/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.3.4/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.4/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.4/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.4/source/
+DISTFILES=	X334src-1.tgz X334src-2.tgz
 
-PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3.1/fixes/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3.1/fixes/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.3.1/fixes/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X11/XFree86/3.3.3.1/fixes/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3.1/fixes/
-PATCHFILES=	3.3.3-3.3.3.1.diff.gz
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
@@ -50,7 +44,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X333src-1.tgz X333src-2.tgz
+EXTRACT_ONLY=	X334src-1.tgz X334src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
