@@ -324,6 +324,7 @@
     SUBDIR += x11amp
     SUBDIR += xcd
     SUBDIR += xcdplayer
+    SUBDIR += xfce4-mixer
     SUBDIR += xhippo
     SUBDIR += ximp3
     SUBDIR += xmcd
