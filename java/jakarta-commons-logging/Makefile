@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	commons-logging
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
+MASTER_SITES=	http://apache.cs.uu.nl/dist/jakarta/commons/logging/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
-COMMENT=	Generic Java library for validation of constraints
+COMMENT=	Generic logging wrapper library
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
 		${LOCALBASE}/share/java/classes/jakarta-log4j.jar:${PORTSDIR}/java/jakarta-log4j
 
 USE_JAVA=	1.2+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/logging
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
