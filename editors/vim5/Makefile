@@ -25,7 +25,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES+=	5.7.0${p}
 .endfor
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER?=	obrien@FreeBSD.org
 
 SLAVEDIRS=	editors/vim-lite
 
