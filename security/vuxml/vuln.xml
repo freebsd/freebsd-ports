@@ -765,12 +765,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1035</cvename>
       <bid>11630</bid>
       <mlist msgid="1099851138.3716.3.camel@hurina">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109995749510773</mlist>
     </references>
     <dates>
       <discovery>2004-11-17</discovery>
       <entry>2005-01-02</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
