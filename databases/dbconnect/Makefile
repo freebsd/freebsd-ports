@@ -50,7 +50,7 @@ PLIST_SUB+=	UNIXODBC="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|g ; \
-		 s|@CFLAGS@|${CXXFLAGS}|g ; \
+		 s|@CFLAGS@|${CXXFLAGS} -fPIC|g ; \
 		 s|gcc|${CXX}|g ; \
 		 s|cp -f \.|${INSTALL_DATA} .|g' ${WRKSRC}/Makefile.in
 
