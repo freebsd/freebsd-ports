@@ -3,11 +3,11 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1996/10/19 09:11:07 andreas Exp $
+# $Id: Makefile,v 1.8 1996/11/01 19:17:48 markm Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://freefall.FreeBSD.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	andreas@klemm.gtn.com

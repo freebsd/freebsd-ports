@@ -3,12 +3,12 @@
 # Date created:         23 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.5 1995/04/21 00:20:43 jmz Exp $
+# $Id: Makefile,v 1.6 1995/11/22 13:17:53 asami Exp $
 #
 
 DISTNAME=	afm
 PKGNAME=	afm-1.0
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=   -tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:		27 August 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.9 1996/11/01 19:21:53 markm Exp $
+# $Id: Makefile,v 1.10 1996/11/13 08:05:29 tg Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
 PKGNAME=	teTeX-0.4
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	${TETEX_SITE}/distrib/sources/
 DISTFILES=	teTeX-src-0.4pl3.tar.gz teTeX-lib-0.4pl3.tar.gz
 

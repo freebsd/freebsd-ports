@@ -3,13 +3,13 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/09/23 20:23:56 jmz Exp $
+# $Id: Makefile,v 1.8 1995/11/22 13:18:28 asami Exp $
 #
 
 DISTNAME=	texinfo
 PKGNAME=	texinfo-2.124
 DISTFILES=	texinfo.tex lcircle10.tfm
-CATEGORIES+=	print
+CATEGORIES=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
 		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/
@@ -36,17 +36,17 @@ pre-fetch:
 	 fi
 
 pre-configure:
-	@cp ${DISTDIR}/texinfo.tex ${DISTDIR}/lcircle10.tfm ${WRKDIR}
+	@${CP} ${DISTDIR}/texinfo.tex ${DISTDIR}/lcircle10.tfm ${WRKDIR}
 	@chmod +w ${WRKDIR}/*
 
 do-build: 
 	@(cd ${WRKDIR}; initex '&tex texinfo @dump')
 
 do-install: 
-	@/usr/bin/install -c -m 644 ${WRKDIR}/texinfo.fmt \
+	@${INSTALL_DATA} ${WRKDIR}/texinfo.fmt \
 				${PREFIX}/lib/texmf/ini/
 	@if [ ! -f ${PREFIX}/lib/texmf/fonts/tfm/lcircle10.tfm ]; then \
-	  /usr/bin/install -c -m 644 ${WRKDIR}/lcircle10.tfm \
+	  ${INSTALL_DATA} ${WRKDIR}/lcircle10.tfm \
 				${PREFIX}/lib/texmf/fonts/tfm/;\
 	 fi
 	@(cd ${PREFIX}/bin/; rm -f texinfo; ln -s virtex texinfo)

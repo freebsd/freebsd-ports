@@ -3,13 +3,13 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/11/22 13:17:59 asami Exp $
+# $Id: Makefile,v 1.10 1996/07/04 21:59:26 gpalmer Exp $
 #
 
 DISTNAME=	dvi2xx
 PKGNAME=	dvi2xx-0.51a9
 DISTFILES=	dvi2xx.tar.gz
-CATEGORIES+=	print
+CATEGORIES=	print
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
@@ -38,7 +38,7 @@ do-fetch:
 
 
 pre-install:
-	@mkdir -p ${PREFIX}/lib/dvi2xx
+	@${MKDIR} ${PREFIX}/lib/dvi2xx
 	@(cd ${WRKSRC}; install -m 755 -c MakeTeXPK ${PREFIX}/bin)
 	@(cd ${WRKSRC}; install -c -m 644 2up.sty  graybox.sty lj3-filter \
 	  printcap.sample sample2.tex testpage.tex ${PREFIX}/lib/dvi2xx/)

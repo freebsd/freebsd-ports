@@ -3,21 +3,20 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1996/04/02 20:33:42 jmz Exp $
+# $Id: Makefile,v 1.7 1996/05/27 08:47:50 asami Exp $
 #
 
 DISTNAME=	a2ps
 PKGNAME=	a2ps-${PAPERSIZE}-4.3
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
 DISTFILES=	a2ps.V4.3.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
-
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
-
+NO_WRKSUBDIR=	yes
+MAN1=		a2ps.1
 
 letter::
 	${MAKE} PAPERSIZE=letter
@@ -66,14 +65,11 @@ pre-fetch:
 .endif
 
 pre-install:
-	@mkdir -p  ${PREFIX}/bin
-	@mkdir -p  ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/man/man1
 	@(cd ${WRKSRC}; make install.man)
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-	 gzip -nf ${PREFIX}/man/man1/a2ps.1
-.endif
 	strip ${PREFIX}/bin/a2ps
 
 .include <bsd.port.mk>

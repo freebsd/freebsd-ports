@@ -3,12 +3,12 @@
 # Date created:         25 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.2 1995/11/22 13:18:25 asami Exp $
+# $Id: Makefile,v 1.3 1996/03/06 08:20:17 asami Exp $
 #
 
 DISTNAME=	rtf2LaTeX.1.5
 PKGNAME=	rtf2latex-1.5
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dante.de/pub/tex/support/rtf2latex/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
