@@ -11,10 +11,10 @@ apps/ROX-Filer/Messages/README
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/it.gmo
 apps/ROX-Filer/Messages/nl.gmo
+apps/ROX-Filer/Messages/pl.gmo
 apps/ROX-Filer/pixmaps/application.xpm
 apps/ROX-Filer/pixmaps/close.xpm
 apps/ROX-Filer/pixmaps/error.xpm
-apps/ROX-Filer/pixmaps/file.xpm
 apps/ROX-Filer/pixmaps/help.xpm
 apps/ROX-Filer/pixmaps/home.xpm
 apps/ROX-Filer/pixmaps/large.xpm
