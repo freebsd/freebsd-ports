@@ -1,4 +1,5 @@
 Cervisia is a rather simplistic KDE-based CVS development
-tool. More to come.
+tool.  It is part of the KDE Development Kit, which is used
+by KDE developers to ease development of applications.
 
-WWW: http://pauli.uni-muenster.de/~gehrmab/cervisia.html
+WWW: http://cervisia.sourceforge.net/
