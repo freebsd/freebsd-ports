@@ -138,6 +138,7 @@
     SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libtasn1
+    SUBDIR += libwhisker
     SUBDIR += liedentd
     SUBDIR += logcheck
     SUBDIR += lsh
