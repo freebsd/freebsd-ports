@@ -1,0 +1,11 @@
+--- tkdiff.orig	Thu Sep  9 00:49:48 1999
++++ tkdiff	Sun Nov 21 17:35:44 1999
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ #-*-tcl-*-
+ # the next line restarts using wish \
+-exec wish "$0" -- ${1+"$@"}
++exec wish8.2 "$0" -- ${1+"$@"}
+ 
+ # $Id: tkdiff.tcl ac_extras_dpoole/9 1999/08/03 19:40:51 dpoole $
+ 

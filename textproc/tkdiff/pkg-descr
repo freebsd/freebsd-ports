@@ -1,0 +1,5 @@
+tkdiff is a fronted for unix's diff based on Tcl/Tk.
+
+WWW: http://www.ede.com/free/tkdiff/
+
+-- Kevin Lo <kevlo@FreeBSD.org>

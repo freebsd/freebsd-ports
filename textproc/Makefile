@@ -60,6 +60,7 @@
     SUBDIR += sp
     SUBDIR += texi2html
     SUBDIR += textutils
+    SUBDIR += tkdiff
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += unroff
