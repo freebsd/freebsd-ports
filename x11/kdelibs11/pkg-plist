@@ -32,9 +32,12 @@ include/kcombo.h
 include/kconfig.h
 include/kconfigbase.h
 include/kconfigdata.h
+include/kcontainer.h
 include/kcontrol.h
 include/kdatepik.h
 include/kdatetbl.h
+include/kdbtn.h
+include/kde.pot
 include/kdebug.h
 include/kdir.h
 include/kdirlistbox.h
@@ -44,6 +47,7 @@ include/kfiledialog.h
 include/kfileinfo.h
 include/kfileinfocontents.h
 include/kfilepreview.h
+include/kfilesimpleview.h
 include/kfm.h
 include/kfmclient_ipc.h
 include/kfmipc.h
@@ -53,6 +57,7 @@ include/kiconloaderdialog.h
 include/kintegerline.h
 include/kkeyconf.h
 include/kkeydata.h
+include/kled.h
 include/kledlamp.h
 include/klined.h
 include/klocale.h
@@ -60,7 +65,9 @@ include/kmenubar.h
 include/kmisc.h
 include/kmsgbox.h
 include/knewpanner.h
+include/knotebook.h
 include/kpanner.h
+include/kpixmap.h
 include/kpopmenu.h
 include/kpreview.h
 include/kprocctrl.h
@@ -78,13 +85,16 @@ include/kspinbox.h
 include/kstatusbar.h
 include/kstdaccel.h
 include/kstring.h
+include/ktabbar.h
 include/ktabctl.h
 include/ktablistbox.h
 include/ktmainwindow.h
 include/ktoolbar.h
+include/ktoolboxmgr.h
 include/ktopwidget.h
 include/ktreelist.h
 include/kurl.h
+include/kwizard.h
 include/kwm.h
 include/kwmmapp.h
 include/mediatool.h
@@ -92,17 +102,21 @@ include/xview.h
 lib/libjscript.la
 lib/libjscript.so.0.90
 lib/libkdecore.la
-lib/libkdecore.so.0.91
+lib/libkdecore.so.1.0
 lib/libkdeui.la
-lib/libkdeui.so.0.91
+lib/libkdeui.so.1.0
 lib/libkfile.la
-lib/libkfile.so.0.90
+lib/libkfile.so.1.0
 lib/libkfm.la
-lib/libkfm.so.0.90
+lib/libkfm.so.1.0
 lib/libkhtmlw.la
-lib/libkhtmlw.so.0.91
+lib/libkhtmlw.so.1.0
 lib/libmediatool.la
-lib/libmediatool.so.0.91
+lib/libmediatool.so.1.0
+share/apps/kde/pics/arrow_down.xbm
+share/apps/kde/pics/arrow_left.xbm
+share/apps/kde/pics/arrow_right.xbm
+share/apps/kde/pics/arrow_up.xbm
 share/apps/kde/pics/error.xpm
 share/apps/kde/pics/exclamation.xpm
 share/apps/kde/pics/info.xpm
@@ -111,6 +125,21 @@ share/apps/kde/pics/stopsign.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
 share/config/charsets
 share/doc/HTML/en/kdelibs/kdebug.html
+share/doc/HTML/en/kfiledialog/back.gif
+share/doc/HTML/en/kfiledialog/bottom.gif
+share/doc/HTML/en/kfiledialog/exec.gif
+share/doc/HTML/en/kfiledialog/flag.gif
+share/doc/HTML/en/kfiledialog/forward.gif
+share/doc/HTML/en/kfiledialog/home.gif
+share/doc/HTML/en/kfiledialog/idea.gif
+share/doc/HTML/en/kfiledialog/index.html
+share/doc/HTML/en/kfiledialog/reload.gif
+share/doc/HTML/en/kfiledialog/toolbar-h.gif
+share/doc/HTML/en/kfiledialog/toolbar.gif
+share/doc/HTML/en/kfiledialog/up.gif
+share/doc/HTML/en/kfiledialog/viewmag.gif
+@exec ln -sf en %D/share/doc/HTML/default
+@unexec rm -f %D/share/doc/HTML/default
 share/locale/ca/LC_MESSAGES/kde.mo
 share/locale/cs/LC_MESSAGES/kde.mo
 share/locale/cs/charset
@@ -119,7 +148,9 @@ share/locale/da/charset
 share/locale/de/LC_MESSAGES/kde.mo
 share/locale/de/charset
 share/locale/el/LC_MESSAGES/kde.mo
+share/locale/en_UK/LC_MESSAGES/kde.mo
 share/locale/es/LC_MESSAGES/kde.mo
+share/locale/es/charset
 share/locale/fi/LC_MESSAGES/kde.mo
 share/locale/fi/charset
 share/locale/fr/LC_MESSAGES/kde.mo
@@ -128,25 +159,75 @@ share/locale/hr/LC_MESSAGES/kde.mo
 share/locale/hu/LC_MESSAGES/kde.mo
 share/locale/hu/charset
 share/locale/it/LC_MESSAGES/kde.mo
+share/locale/mk/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
 share/locale/no/LC_MESSAGES/kde.mo
 share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/pl/charset
 share/locale/pt/LC_MESSAGES/kde.mo
 share/locale/pt/charset
+share/locale/pt_BR/LC_MESSAGES/kde.mo
 share/locale/ro/LC_MESSAGES/kde.mo
 share/locale/ro/charset
 share/locale/ru/LC_MESSAGES/kde.mo
 share/locale/ru/charset
 share/locale/sk/LC_MESSAGES/kde.mo
+share/locale/sk/charset
+share/locale/sl/LC_MESSAGES/kde.mo
 share/locale/sv/LC_MESSAGES/kde.mo
-share/locale/zh/LC_MESSAGES/kde.mo
+share/locale/sv/charset
+share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
+share/toolbar/back.xpm
+share/toolbar/bottom.xpm
 share/toolbar/configure.xpm
+share/toolbar/contents.xpm
+share/toolbar/down.xpm
+share/toolbar/editcopy.xpm
+share/toolbar/editcut.xpm
+share/toolbar/editpaste.xpm
+share/toolbar/exclamation.xpm
+share/toolbar/exit.xpm
+share/toolbar/filefloppy.xpm
+share/toolbar/filemail.xpm
+share/toolbar/filenew.xpm
+share/toolbar/filenew2.xpm
+share/toolbar/fileopen.xpm
+share/toolbar/fileprint.xpm
+share/toolbar/finish.xpm
+share/toolbar/flag.xpm
+share/toolbar/forward.xpm
+share/toolbar/help.xpm
+share/toolbar/home.xpm
+share/toolbar/idea.xpm
+share/toolbar/lock.xpm
+share/toolbar/next.xpm
+share/toolbar/openbook.xpm
+share/toolbar/page.xpm
+share/toolbar/paintbucket.xpm
+share/toolbar/prev.xpm
+share/toolbar/reload.xpm
+share/toolbar/rightjust.xpm
+share/toolbar/send.xpm
+share/toolbar/start.xpm
+share/toolbar/stop.xpm
+share/toolbar/tick.xpm
+share/toolbar/top.xpm
+share/toolbar/up.xpm
+share/toolbar/viewmag+.xpm
+share/toolbar/viewmag-.xpm
+share/toolbar/viewmag.xpm
+share/toolbar/viewzoom.xpm
 @exec /sbin/ldconfig -m %B
 @dirrm share/toolbar
-@dirrm share/locale/zh/LC_MESSAGES
-@dirrm share/locale/zh
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
 @dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
 @dirrm share/locale/sk/LC_MESSAGES
 @dirrm share/locale/sk
 @dirrm share/locale/ru/LC_MESSAGES
@@ -154,21 +235,33 @@ share/toolbar/configure.xpm
 @dirrm share/locale/ro/LC_MESSAGES
 @dirrm share/locale/ro
 @dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
 @dirrm share/locale/pt
 @dirrm share/locale/pl/LC_MESSAGES
 @dirrm share/locale/pl
 @dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
 @dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/mk/LC_MESSAGES
+@dirrm share/locale/mk
 @dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
 @dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
 @dirrm share/locale/fi/LC_MESSAGES
 @dirrm share/locale/fi
 @dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/en_UK/LC_MESSAGES
+@dirrm share/locale/en_UK
 @dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
 @dirrm share/locale/de/LC_MESSAGES
 @dirrm share/locale/de
 @dirrm share/locale/da/LC_MESSAGES
@@ -178,9 +271,14 @@ share/toolbar/configure.xpm
 @dirrm share/locale/ca/LC_MESSAGES
 @dirrm share/locale/ca
 @dirrm share/locale
+@dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
+@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/khtmlw/pics
+@dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
+@dirrm share/apps/kde
+@dirrm share/apps
 @unexec /sbin/ldconfig -R
