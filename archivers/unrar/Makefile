@@ -4,7 +4,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1999/04/17 15:36:16 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       unrar-2.50

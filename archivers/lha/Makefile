@@ -3,7 +3,7 @@
 # Date created:         26 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1998/04/05 04:46:15 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       lha-114d

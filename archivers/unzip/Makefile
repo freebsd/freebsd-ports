@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.23 1999/03/12 15:28:43 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       unzip540

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1999/04/30 04:41:53 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += arc

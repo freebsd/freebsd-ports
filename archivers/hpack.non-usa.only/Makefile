@@ -3,7 +3,7 @@
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/12/08 01:44:30 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       hpack79src

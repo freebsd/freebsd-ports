@@ -3,7 +3,7 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1997/07/21 00:48:34 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ha0999

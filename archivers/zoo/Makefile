@@ -3,7 +3,7 @@
 # Date created:         18 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1997/07/21 00:48:48 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       zoo-2.10pl1

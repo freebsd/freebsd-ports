@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/08/13 01:29:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Compress-Zlib-1.01

@@ -4,7 +4,7 @@
 # Date created:		30 April 1999
 # Whom:			FUJISHIMA Satsuki <k5@respo.or.jp>
 #
-# $Id: Makefile,v 1.4 1999/07/21 14:55:25 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rarlnx25

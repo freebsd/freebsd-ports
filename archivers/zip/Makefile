@@ -3,7 +3,7 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1999/03/12 15:28:44 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       zip22

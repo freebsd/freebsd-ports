@@ -4,7 +4,7 @@
 # Date created:         23 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	unacepub
