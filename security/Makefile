@@ -132,6 +132,7 @@
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
+    SUBDIR += p5-Tie-EncryptedHash
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
