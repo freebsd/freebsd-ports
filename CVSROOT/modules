@@ -2274,7 +2274,6 @@ gkx86info	ports/misc/gkx86info
 gl-117		ports/games/gl-117
 glabels		ports/deskutils/glabels
 glacier		ports/mail/glacier
-glade		ports/devel/glade
 glade2		ports/devel/glade2
 glademm		ports/devel/glademm
 glame		ports/audio/glame
@@ -2673,7 +2672,6 @@ gubby		ports/mail/gubby
 gucharmap	ports/deskutils/gucharmap
 guile		ports/lang/guile
 guile-gnome	ports/x11-toolkits/guile-gnome
-guile-gobject	ports/x11-toolkits/guile-gobject
 guile-gtk	ports/x11-toolkits/guile-gtk
 guile-www	ports/www/guile-www
 guilib		ports/graphics/guilib
