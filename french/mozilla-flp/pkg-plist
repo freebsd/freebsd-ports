@@ -1,0 +1,20 @@
+%%MOZDIR%%/chrome/FR.jar
+%%MOZDIR%%/chrome/fr-FR.jar
+%%MOZDIR%%/chrome/fr-unix.jar
+%%MOZDIR%%/components/myspell/fr-FR.aff
+%%MOZDIR%%/components/myspell/fr-FR.dic
+%%MOZDIR%%/defaults/isp/FR/movemail.rdf
+%%MOZDIR%%/defaults/messenger/FR/mailViews.dat
+%%MOZDIR%%/defaults/profile/FR/bookmarks.html
+%%MOZDIR%%/defaults/profile/FR/chrome/userChrome-example.css
+%%MOZDIR%%/defaults/profile/FR/chrome/userContent-example.css
+%%MOZDIR%%/defaults/profile/FR/localstore.rdf
+%%MOZDIR%%/defaults/profile/FR/mimeTypes.rdf
+%%MOZDIR%%/defaults/profile/FR/panels.rdf
+%%MOZDIR%%/defaults/profile/FR/search.rdf
+%%MOZDIR%%/searchplugins/googlefr.gif
+%%MOZDIR%%/searchplugins/googlefr.src
+@dirrm %%MOZDIR%%/defaults/profile/FR/chrome
+@dirrm %%MOZDIR%%/defaults/profile/FR
+@dirrm %%MOZDIR%%/defaults/messenger/FR
+@dirrm %%MOZDIR%%/defaults/isp/FR
