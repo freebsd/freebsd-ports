@@ -1,15 +1,16 @@
 # New ports collection makefile for:	ftpfind
-# Version required:	0.99
+# Version required:	0.996
 # Date created:		Feb 21 1998
-# Whom:			Tomokazu ISHII <wub@green.an.egg.or.jp>
+# Whom:			Tomokazu ISHII <t-ishii@tryplanet.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/16 22:30:18 jseger Exp $
+# $Id: Makefile,v 1.2 1998/06/04 20:28:04 steve Exp $
 #
 
-DISTNAME=	ftpfind-0.99
+DISTNAME=	ftpfind-0.996
 CATEGORIES=	net
-MASTER_SITES=	http://www1.odn.ne.jp/ishii/techniques/programs/ftpfind/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/ \
+		http://www.tryplanet.com/t-ishii/programs/ftpfind/
 
-MAINTAINER=	wub@green.an.egg.or.jp
+MAINTAINER=	t-ishii@tryplanet.com
 
 .include <bsd.port.mk>
