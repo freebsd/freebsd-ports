@@ -7,7 +7,7 @@
 
 PORTNAME=	Net_FTP
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp pear
 
 MAINTAINER=	antonio@php.net
@@ -18,9 +18,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	ftp
 
-FILES=		Net/FTP.php Net/FTP/Observer.php
+CATEGORY=	Net
+FILES=		FTP.php FTP/Observer.php
 EXAMPLES=	extensions.ini index.php observer.php
 _EXAMPLESDIR=	example
+
+post-extract:
+	@${MV} ${WRKSRC}/Net/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
