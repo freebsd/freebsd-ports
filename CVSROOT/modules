@@ -3205,6 +3205,7 @@ lib		src/lib
 lib3ds		ports/graphics/lib3ds
 libF77		src/lib/libF77
 libI77		src/lib/libI77
+libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
 libU77		ports/devel/libU77
 lib_csu		src/lib/csu
