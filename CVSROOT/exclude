@@ -2,3 +2,4 @@
 # $FreeBSD$
 ^src/sys/boot/common/help.common
 ^src/contrib/.*/FREEBSD-Xlist
+^src/share/examples/diskless/.*
