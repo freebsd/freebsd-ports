@@ -16,6 +16,8 @@ COMMENT=	A collection of Python modules for bioinformatics
 
 CONFLICTS=	py*-martel-*
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
