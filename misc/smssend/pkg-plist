@@ -7,11 +7,14 @@ share/smssend/billiger.sms
 share/smssend/bol.sms
 share/smssend/bol_rus.sms
 share/smssend/boltblue.sms
+share/smssend/caltanet.sms
+share/smssend/coolsmsdk.sms
 share/smssend/e-merge.sms
 share/smssend/eurobate.sms
 share/smssend/eurotel.sms
 share/smssend/everyday.sms
 share/smssend/exoset.sms
+share/smssend/extel-gsm.sms
 share/smssend/fajront.sms
 share/smssend/fido.sms
 share/smssend/free-sms.sms
@@ -22,9 +25,11 @@ share/smssend/halebop.sms
 share/smssend/handypack.sms
 share/smssend/hooya.sms
 share/smssend/hotsms.sms
-share/smssend/iol.sms
+share/smssend/inet.sms
 share/smssend/info2you.sms
 share/smssend/ingyensms.sms
+share/smssend/inwind.sms
+share/smssend/iol.sms
 share/smssend/kiwee-inter.sms
 share/smssend/kiwee-pseudo.sms
 share/smssend/kiwee.sms
@@ -42,6 +47,8 @@ share/smssend/mts.sms
 share/smssend/mybegin.sms
 share/smssend/navegalia.sms
 share/smssend/nwgsm.sms
+share/smssend/onelv.sms
+share/smssend/orf.sms
 share/smssend/oskar.sms
 share/smssend/paegas.sms
 share/smssend/passagen.sms
@@ -55,12 +62,14 @@ share/smssend/smshuis.sms
 share/smssend/smspress.sms
 share/smssend/starhub.sms
 share/smssend/suomi24.sms
+share/smssend/surfeu.sms
 share/smssend/time.sms
 share/smssend/totalise.sms
 share/smssend/unimobile.sms
 share/smssend/vlf.sms
 share/smssend/w777.sms
 share/smssend/w777f.sms
+share/smssend/yab.sms
 @unexec rmdir man/fr/man1 2>/dev/null || true
 @unexec rmdir man/fr 2>/dev/null || true
 @dirrm share/smssend
