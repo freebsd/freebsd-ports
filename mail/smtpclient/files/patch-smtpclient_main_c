@@ -1,0 +1,31 @@
+--- smtpclient_main.c.orig	Wed Aug  1 15:25:22 2001
++++ smtpclient_main.c	Wed Aug  1 15:33:07 2001
+@@ -86,7 +86,7 @@ void log(char *str, ...)
+     char buf[1024];
+ 
+     va_start(ap, str);
+-    vsprintf(buf, str, ap);
++    vsnprintf(buf, 1024, str, ap);
+     if (usesyslog)
+         syslog(LOG_ERR, "SMTPclient: %s", buf);
+     else
+@@ -395,16 +395,16 @@ int main(int argc, char **argv)
+         log("%s: unknown host\n", my_name);
+         exit(1);
+     }
+-    strcpy(my_name, hp->h_name);
++    strlcpy(my_name, hp->h_name, sizeof(my_name));
+ 
+     /*
+      *  Determine from address.
+      */
+     if (from_addr == NULL) {
+         if ((pwd = getpwuid(getuid())) == 0) {
+-            sprintf(buf, "userid-%d@%s", getuid(), my_name);
++            snprintf(buf, (sizeof(buf) - 1), "userid-%d@%s", getuid(), my_name);
+         } else {
+-            sprintf(buf, "%s@%s", pwd->pw_name, my_name);
++            snprintf(buf, (sizeof(buf) - 1), "%s@%s", pwd->pw_name, my_name);
+         }
+         from_addr = strdup(buf);
+     }

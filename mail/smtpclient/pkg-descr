@@ -1,0 +1,8 @@
+SMTPclient -- simple SMTP client
+
+This program is a minimal SMTP client that takes an email
+message body and passes it on to a SMTP server (default is the
+MTA on the local host). Since it is completely self-supporting,
+it is especially suitable for use in restricted environments.
+
+WWW: http://www.engelschall.com/sw/smtpclient/
