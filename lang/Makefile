@@ -35,6 +35,7 @@
     SUBDIR += expect
     SUBDIR += f2c
     SUBDIR += f77
+    SUBDIR += fbbi
     SUBDIR += ferite
     SUBDIR += fesi
     SUBDIR += forth
