@@ -23,7 +23,7 @@
 
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
-^src/contrib/openssh/
+^src/crypto/openssh/
 ^src/etc/minfree
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
