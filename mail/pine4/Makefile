@@ -3,7 +3,7 @@
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.31 1999/04/08 19:05:46 billf Exp $
+# $Id: Makefile,v 1.32 1999/04/21 00:39:34 scrappy Exp $
 #
 
 DISTNAME=       pine4.10
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 MAINTAINER=	pine@freebsd.ady.ro
 
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
-
-NO_LATEST_LINK= yes
 
 MAN1= 		pine.1 pico.1 pilot.1
 
