@@ -1,10 +1,11 @@
 @comment $FreeBSD$
 bin/john
-bin/xtract
 bin/unshadow
+bin/xtract
 share/john/all.chr
 share/john/alpha.chr
 share/john/digits.chr
+share/john/lanman.chr
 share/john/john.ini
 share/john/password.lst
 share/doc/john/CONFIG
