@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	wwwoffle
-PORTVERSION=	2.7a
-PORTREVISION=	1
+PORTVERSION=	2.7b
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/www/servers
+MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sumikawa@FreeBSD.org

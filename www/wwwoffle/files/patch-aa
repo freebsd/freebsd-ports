@@ -1,7 +1,7 @@
---- src/Makefile.in.orig	Sat Mar  2 21:04:46 2002
-+++ src/Makefile.in	Mon Apr  1 17:32:07 2002
-@@ -131,7 +131,7 @@
- 	     refresh.o messages.o parse.o spool.o \
+--- src/Makefile.in.orig	Mon Apr 22 02:01:32 2002
++++ src/Makefile.in	Mon Apr 22 20:50:31 2002
+@@ -132,7 +132,7 @@
+ 	     parse.o spool.o \
  	     document.o html.o xml.o vrml.o javaclass.o \
  	     configrdwr.o configmisc.o configdata.o configfunc.o \
 -	     errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
@@ -9,8 +9,8 @@
  
  wwwoffle : $(WWWOFFLE_OBJ)
  	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
-@@ -145,7 +145,7 @@
- 	      connect.o control.o controledit.o search.o index.o messages.o monitor.o \
+@@ -147,7 +147,7 @@
+               messages.o local.o cgi.o \
                parse.o purge.o refresh.o spool.o \
  	      configrdwr.o configmisc.o configdata.o configfunc.o configedit.o \
 -	      errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
@@ -18,37 +18,37 @@
  
  wwwoffled : $(WWWOFFLED_OBJ)
  	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
-@@ -157,7 +157,7 @@
- 	           spool.o \
- 		   messages.o parse.o \
+@@ -160,7 +160,7 @@
+ 		   messages.o local.o cgi.o \
+ 	           parse.o \
  	           configrdwr.o configmisc.o configdata.o configfunc.o \
 -	           errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
 +	           errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
  
  wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
  	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
-@@ -168,7 +168,7 @@
- 	    http.o ftp.o finger.o ssl.o \
- 	    messages.o parse.o \
+@@ -172,7 +172,7 @@
+ 	    messages.o local.o cgi.o \
+ 	    parse.o \
  	    configrdwr.o configmisc.o configdata.o configfunc.o \
 -	    errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
 +	    errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
  
  convert-cache : $(CONVERT_OBJ)
  	$(LINK) $(CONVERT_OBJ) -o $@ $(LIBRARY)
-@@ -179,7 +179,7 @@
- 	       http.o ftp.o finger.o ssl.o \
- 	       messages.o parse.o \
+@@ -184,7 +184,7 @@
+ 	       messages.o local.o cgi.o \
+ 	       parse.o \
  	       configrdwr.o configmisc.o configdata.o configfunc.o \
 -	       errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
 +	       errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
  
  uncompress-cache : $(UNCOMPRESS_OBJ)
  	$(LINK) $(UNCOMPRESS_OBJ) -o $@ $(LIBRARY)
-@@ -239,7 +239,6 @@
- proto.o            : proto.c                       misc.h                             proto.h
- sockets.o          : sockets.c                            errors.h          sockets.h \
+@@ -253,7 +253,6 @@
+ sockets.o          : sockets.c          autoconfig.h                   errors.h          sockets.h \
                       sockets4.c sockets6.c
+ 
 -md5.o              : md5.c                                                                                                      md5.h
  
  ######## SOURCE FILES ########
