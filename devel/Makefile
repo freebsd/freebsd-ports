@@ -220,6 +220,7 @@
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
+    SUBDIR += tcllib
     SUBDIR += tclreadline
     SUBDIR += tcltls
     SUBDIR += templ

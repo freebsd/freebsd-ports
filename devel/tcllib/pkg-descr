@@ -1,0 +1,21 @@
+Tcllib is a collection of utility modules for Tcl. These modules provide
+a wide variety  of functionality, from implementations  of standard data
+structures to implementations of common networking protocols. The intent
+is to collect commonly used function  into a single library, which users
+can rely on to be available and stable.
+
+The latest version of tcllib, 0.4, includes the following modules: 
+	base64	base64 encoder and decoder
+	cmdline	command line argument processor similar to opt
+	fileutil
+		Tcl implementations of some standard Unix utilities
+	html	HTML generation procedures. This uses ncgi.
+	math	common math functions like min, max, and others
+	mime	MIME encoder and decoder
+	ncgi	new CGI processing module
+	pop3	POP3 protocol implementation
+	profiler
+		function level Tcl source code profiler
+	struct	Tcl implementations of common data structures
+
+WWW: http://dev.scriptics.com/software/tcllib/
