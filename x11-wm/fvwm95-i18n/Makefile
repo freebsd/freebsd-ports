@@ -1,9 +1,9 @@
 # New ports collection makefile for:	fvwm95-2
 # Version required:	2.0.43a
-# Date created:
+# Date created:		23 Nov 1998
 # Whom:			Yoshishige Arai <ryo2@on.rim.or.jp>
 #
-# $Id: Makefile,v 1.22 1998/11/22 14:54:10 sada Exp $
+# $Id$
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/ \
 		ftp://ftp.terraware.net/pub/Mirrors/FVWM95/ \
 		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \
-		http://www.rr.iij4u/~sada/distfiles/ \
+		http://www.jp.freebsd.org/~ryo2/archives/ \
 		http://www.freebsd.org/~sada/distfiles/
 DISTFILES=	${EXTRACT_ONLY} fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz
 
@@ -27,10 +27,10 @@ MAINTAINER=	ryo2@on.rim.or.jp
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 
-EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981122.tgz
+EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981123.tgz
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --x-includes=${X11BASE}/include \
+CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include \
 		--mandir=${MANPREFIX}/man \
 		--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
@@ -79,5 +79,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm95/ja_JP.EUC
 	@${INSTALL_DATA} ${KITDIR}/system.fvwm95rc.jp \
 		${PREFIX}/lib/X11/fvwm95/ja_JP.EUC/system.fvwm95rc
+	@${INSTALL_SCRIPT} ${KITDIR}/fvwm95.find ${PREFIX}/bin
 
 .include <bsd.port.mk>
