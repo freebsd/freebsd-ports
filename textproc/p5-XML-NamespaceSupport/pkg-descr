@@ -1,5 +1,8 @@
 This module offers a simple to process namespaced XML names (unames)
-from within any application that may need them. It also helps maintain
+from within any application that may need them.  It also helps maintain
 a prefix to namespace URI map, and provides a number of basic checks.
 
 WWW: http://search.cpan.org/search?dist=XML-NamespaceSupport
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
