@@ -2,6 +2,11 @@ PGPLOT_LIB = -L/usr/local/lib -lpgplot
 CPGPLOT_LIB = -L/usr/local/lib  -lcpgplot
 LIBS= -L/usr/X11R6/lib -lX11 -lm
 
+OSVERSION!=	/sbin/sysctl -n kern.osreldate
+.if ${OSVERSION} > 400004
+FFLAGS+=	-fno-backslash
+.endif
+
 all: cpgdemo pgdemo1 pgdemo2 pgdemo3 pgdemo4 pgdemo5 pgdemo6 pgdemo7 pgdemo8 \
 	pgdemo9 pgdemo10 pgdemo11 pgdemo12 pgdemo13 pgdemo14
 		
