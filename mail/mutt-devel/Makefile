@@ -21,7 +21,7 @@
 #
 # In general you can choose between using the SLANG port (WITH_MUTT_SLANG)
 # and ncurses (WITH_MUTT_NCURSES) which is the default. Note that you may
-# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your 
+# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your
 # environment to get slang function properly.
 #
 # If you want to install the mutt documentation in html format define:
@@ -49,6 +49,9 @@
 #
 # If you want to enable the pgp_outlook_compat function for use with pgp define:
 #  WITH_MUTT_PGP_OUTLOOK_PATCH
+#
+# If you want to disable a outlook_compat function for use with smime define:
+#  WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT
 #
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
@@ -160,6 +163,10 @@ WITH_MUTT_PGP_OUTLOOK_PATCH=	yes
 .if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-outlook
+.endif
+.if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
+pre-configure::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-no-outlook
 .endif
 
 .if defined(WITH_MUTT_LOCALES_FIX)
