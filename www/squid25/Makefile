@@ -7,23 +7,18 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/squid-2/STABLE/ \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
-DISTNAME=	squid-2.4.STABLE1
+DISTNAME=	squid-2.4.STABLE2
 EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
-PATCHFILES=	squid-2.4.stable1-wrong_sign_on_timestamp_check.patch \
-		squid-2.4.stable1-high_cpu_with_peers.patch \
-		squid-2.4.stable1-force_valid_blksize.patch \
-		squid-2.4.stable1-kill_parent_on_child_sigkill.patch \
-		squid-2.4.stable1-htcp_assertion_fix.patch \
-		squid-2.4.stable1-diskd_fixed_path.patch
+PATCHFILES=	
 
 MAINTAINER=	adrian@freebsd.org
 
@@ -117,7 +112,9 @@ post-install:
 	fi
 .endfor
 	${MKDIR} ${PREFIX}/squid/logs
+	${CHOWN} nobody:nogroup ${PREFIX}/squid/logs
 	${MKDIR} ${PREFIX}/squid/cache
+	${CHOWN} nobody:nogroup ${PREFIX}/squid/cache
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
