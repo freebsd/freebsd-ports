@@ -1,0 +1,19 @@
+--- ../unix/configure.orig	Fri Mar 17 17:57:30 2000
++++ ../unix/configure	Sat Jul 29 16:00:40 2000
+@@ -652,7 +652,6 @@
+ if test x"${ac_cv_c_tclconfig}" = x ; then
+ 	TCL_BIN_DIR="# no Tcl configs found"
+ 	echo "configure: warning: Can't find Tcl configuration definitions" 1>&2
+-	exit 0
+ else
+ 	TCL_BIN_DIR=${ac_cv_c_tclconfig}
+ 	echo "$ac_t""found $TCL_BIN_DIR/tclConfig.sh" 1>&6
+@@ -2308,7 +2308,7 @@
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
++$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
