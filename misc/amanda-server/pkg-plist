@@ -2,6 +2,10 @@ lib/libamserver-2.4.4.so
 lib/libamserver.so
 lib/libamserver.la
 lib/libamserver.a
+lib/libamtape-2.4.4.so
+lib/libamtape.so
+lib/libamtape.la
+lib/libamtape.a
 %%PLOT%%libexec/amanda/amcat.awk
 libexec/amanda/amcleanupdisk
 libexec/amanda/amindexd
