@@ -3,20 +3,22 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/22 20:28:11 jfieber Exp $
 #
 
-DISTNAME=	jade-0.8
+DISTNAME=	jade0_8
+PKGNAME=	jade-0.8
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
-DISTFILES=	jade0_8.zip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -U -qq
-
-NO_WRKSUBDIR=
+NO_WRKSUBDIR=	yes
 
 # Unfortunately, jade needs a more modern C++ compiler than
 # comes with FreeBSD 2.1.x.
@@ -24,7 +26,6 @@ NO_WRKSUBDIR=
 BROKEN=		yes
 .endif
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 post-install:
 	/sbin/ldconfig -m ${PREFIX}/lib
