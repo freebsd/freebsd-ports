@@ -822,6 +822,7 @@ chimera2	ports/www/chimera2
 ching		src/games/ching
 chio		src/bin/chio
 chipmunk	ports/cad/chipmunk
+chk4mail	ports/mail/chk4mail
 chkey		src/usr.bin/chkey
 chkgrp		src/usr.sbin/chkgrp
 chkrootkit	ports/security/chkrootkit
