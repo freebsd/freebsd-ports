@@ -17,7 +17,7 @@ MAINTAINER=	johann@egenetics.com
 USE_PYTHON=	yes
 
 BUILD_DEPENDS=	${PYDISTUTILS} \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/numpy
+		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)

@@ -14,9 +14,9 @@ DISTNAME=	Gnuplot-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/numpy
+		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
 
 USE_PYTHON=	yes
 SETUP_CMD=	cd ${WRKSRC}; ${PYTHON_CMD} setup.py
