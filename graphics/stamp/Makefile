@@ -3,7 +3,7 @@
 # Date created:	11 August 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:45:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/29 18:22:57 billf Exp $
 #
 
 DISTNAME=	stamp
@@ -12,6 +12,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.telepath.com/booger/
 
 MAINTAINER=	billf@FreeBSD.org
+
+BROKEN=		"distfile is gone, new distfile requires getopt solution"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
