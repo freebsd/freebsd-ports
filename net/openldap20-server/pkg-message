@@ -1,7 +1,28 @@
 ************************************************************
-If you are upgrading an older (1.85) database, be sure to
-convert the *.dbb files, e.g:
 
-	mv file.dbb file.old
-	db_dump185 file.old | db_load file.dbb
+The OpenLDAP server package has been successfully installed.
+
+In order to run the LDAP server, you need to edit
+  %%PREFIX%%/etc/openldap/slapd.conf
+to suit your needs and add the next lines to /etc/rc.conf:
+  slapd_enable="YES"
+  slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+
+Then add a link to %%PREFIX%%/etc/rc.d/slapd.sh.sample:
+  ln -s %%PREFIX%%/etc/rc.d/slapd.sh.sample %%PREFIX%%/etc/rc.d/slapd.sh
+and start the server with
+  %%PREFIX%%/etc/rc.d/slapd.sh start
+or reboot.
+
+NOTE: There is no real reason to run slapd as root. Add
+  '-u ldap -g ldap'
+to slapd_args, create a user "ldap" with
+  pw add group ldap -g 389
+  pw add user ldap -u 389 -g 389 -d /nonexistent \
+    -c "OpenLDAP Server" -s /sbin/nologin -p "*"
+and do
+  chown -R ldap:ldap %%LDAP_RUN_DIR%% \
+    %%LOCALSTATEDIR%%/openldap-ldbm %%PREFIX%%/etc/openldap/slapd.conf
+and your server runs with a non-privileged user id.
+
 ************************************************************

@@ -6,6 +6,6 @@ if [ X"$2" != X"POST-INSTALL" ]; then
     exit 0;
 fi
 
-%%SERVER%%mkdir -p "%%LDAP_RUN_DIR%%"
-%%SERVER%%mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-data"
-%%SERVER%%mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-slurp"
+mkdir -p "%%LDAP_RUN_DIR%%"
+mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-data"
+mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-slurp"

@@ -1,348 +1,244 @@
-# New ports collection makefile for:    OpenLDAP 2.1
-# Date created:		5 Dec 2002
-# Whom:			Christian Kratzer <ck@cksoft.de>
-#
-# This port allows separation of the openldap client and servers
-# using following options
-#
-# default	builds openldap21-PORTVERSION
-# CLIENT_ONLY 	builds openldap21-client-PORTVERSION (clients and libs)
-# WITH_SASL	build with cyrus SASL2 support
+# New ports collection makefile for:	openldap21-server
+# Date created:				10 Jul 2003
+# Whom:					Oliver Eikemeier
 #
 # $FreeBSD$
 #
 
-PORTNAME=	openldap
-PORTVERSION=	2.1.22
-CATEGORIES=	net databases
-MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
-		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
-		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/\
-		ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/		\
-		ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/		\
-		ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/	\
-		ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/	\
-		ftp://ftp.si.uniovi.es/mirror/OpenLDAP/%SUBDIR%/	\
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/	\
-		ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
-MASTER_SITE_SUBDIR=	openldap-release
+PORTNAME=		openldap
+PORTVERSION=		${OPENLDAP_VERSION}
+PORTREVISION=		${OPENLDAP_PORTVERSION}
+CATEGORIES=		net databases
+MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
+			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
+			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
+			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
+			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
+			ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
+			ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
+			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
+			http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
+MASTER_SITE_SUBDIR=	openldap-test
+PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	ck@cksoft.de
-COMMENT=	Open source LDAP client and server software
+MAINTAINER=		eikemeier@fillmore-labs.com
+COMMENT?=		Open source LDAP server implementation
 
-LIB_DEPENDS+=	db41:${PORTSDIR}/databases/db41
+OPENLDAP_VERSION=	2.1.22
 
-CXXFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS}	\
-		-I${LOCALBASE}/include		\
-		-I${LOCALBASE}/include/db41
+LATEST_LINK=		${PKGNAMEPREFIX}openldap21${PKGNAMESUFFIX}
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-*
 
-CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} 	\
-		-I${LOCALBASE}/include		\
-		-I${LOCALBASE}/include/db41
-
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USE_OPENSSL=	yes
-HAS_CONFIGURE=	yes
-
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"	\
-		CPPFLAGS="${CPPFLAGS}"	\
-		LDFLAGS="${LDFLAGS}"
-
-CONFIGURE_ARGS+=--prefix=${PREFIX} 	\
-		--enable-bdb		\
-		--enable-crypt
-
-.if defined(WITH_SASL)
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=			\
-	--with-cyrus-sasl		\
-	--enable-spasswd
-.else
-CONFIGURE_ARGS+=			\
-	--without-cyrus-sasl
-.endif
-
-# ------------------------------------------------------------------------------
-# common configure
-#
-CONFIGURE_ARGS+=			\
-	--with-tls              	\
-	--localstatedir=/var/db
-
-# Include tcp-wrapper support
-.if exists(/usr/include/tcpd.h)
-CONFIGURE_ARGS+=	--enable-wrappers
-.endif
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
+WANT_OPENLDAP_VER?=	21
+.if ${WANT_OPENLDAP_VER} != 21
+BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 .if defined(CLIENT_ONLY)
-# ------------------------------------------------------------------------------
-# libraries and client applications only
-#
-INSTALLS_SHLIB=	yes
-PKGNAMESUFFIX=	-client
-COMMENT=	Open source LDAP client software
-CONFIGURE_ARGS+=			\
-	--disable-slapd			\
-	--disable-slurpd		\
-	--enable-shared			\
-	--enable-static
-
+OPENLDAP_PORTVERSION=	0
+OPENLDAP_PKGNAMESUFFIX?=-client
+OPENLDAP_PKGFILESUFX?=	.client
 .else
-# ------------------------------------------------------------------------------
-#
-# full package
-#
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=			\
-	--with-threads          	\
-	--enable-slapd			\
-	--enable-slurpd         	\
-	--enable-ldbm			\
-	--enable-ldap          		\
-	--enable-shell			\
-	--enable-shared			\
-	--enable-static
+OPENLDAP_PORTVERSION=	0
+OPENLDAP_PKGNAMESUFFIX?=-server
+OPENLDAP_PKGFILESUFX?=
 
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 
-# ------------------------------------------------------------------------------
-# PLIST subs and MAN?/MLINKS
-#
-MAN1+=	ldapcompare.1
-MAN1+=	ldapdelete.1
-MAN1+=	ldapmodify.1
-MLINKS+=	ldapmodify.1 ldapadd.1
-MAN1+=	ldapmodrdn.1
-MAN1+=	ldappasswd.1
-MAN1+=	ldapsearch.1
-MAN1+=	ldapwhoami.1
-MAN3+=	lber-decode.3
-MLINKS+=	lber-decode.3 ber_get_next.3
-MLINKS+=	lber-decode.3 ber_skip_tag.3
-MLINKS+=	lber-decode.3 ber_peek_tag.3
-MLINKS+=	lber-decode.3 ber_scanf.3
-MLINKS+=	lber-decode.3 ber_get_int.3
-MLINKS+=	lber-decode.3 ber_get_enum.3
-MLINKS+=	lber-decode.3 ber_get_stringb.3
-MLINKS+=	lber-decode.3 ber_get_stringa.3
-MLINKS+=	lber-decode.3 ber_get_stringal.3
-MLINKS+=	lber-decode.3 ber_get_stringbv.3
-MLINKS+=	lber-decode.3 ber_get_null.3
-MLINKS+=	lber-decode.3 ber_get_boolean.3
-MLINKS+=	lber-decode.3 ber_get_bitstring.3
-MLINKS+=	lber-decode.3 ber_first_element.3
-MLINKS+=	lber-decode.3 ber_next_element.3
-MAN3+=	lber-encode.3
-MLINKS+=	lber-encode.3 ber_alloc_t.3
-MLINKS+=	lber-encode.3 ber_flush.3
-MLINKS+=	lber-encode.3 ber_printf.3
-MLINKS+=	lber-encode.3 ber_put_int.3
-MLINKS+=	lber-encode.3 ber_put_enum.3
-MLINKS+=	lber-encode.3 ber_put_ostring.3
-MLINKS+=	lber-encode.3 ber_put_string.3
-MLINKS+=	lber-encode.3 ber_put_null.3
-MLINKS+=	lber-encode.3 ber_put_boolean.3
-MLINKS+=	lber-encode.3 ber_put_bitstring.3
-MLINKS+=	lber-encode.3 ber_start_seq.3
-MLINKS+=	lber-encode.3 ber_start_set.3
-MLINKS+=	lber-encode.3 ber_put_seq.3
-MLINKS+=	lber-encode.3 ber_put_set.3
-MAN3+=	lber-memory.3
-MLINKS+=	lber-memory.3 ber_memalloc.3
-MLINKS+=	lber-memory.3 ber_memcalloc.3
-MLINKS+=	lber-memory.3 ber_memrealloc.3
-MLINKS+=	lber-memory.3 ber_memfree.3
-MLINKS+=	lber-memory.3 ber_memvfree.3
-MAN3+=	lber-types.3
-MLINKS+=	lber-types.3 ber_int_t.3
-MLINKS+=	lber-types.3 ber_uint_t.3
-MLINKS+=	lber-types.3 ber_len_t.3
-MLINKS+=	lber-types.3 ber_slen_t.3
-MLINKS+=	lber-types.3 ber_tag_t.3
-MAN3+=	ldap.3
-MAN3+=	ldap_abandon.3
-MLINKS+=	ldap_abandon.3 ldap_abandon_ext.3
-MAN3+=	ldap_add.3
-MLINKS+=	ldap_add.3 ldap_add_s.3
-MLINKS+=	ldap_add.3 ldap_add_ext.3
-MLINKS+=	ldap_add.3 ldap_add_ext_s.3
-MAN3+=	ldap_bind.3
-MLINKS+=	ldap_bind.3 ldap_bind_s.3
-MLINKS+=	ldap_bind.3 ldap_simple_bind.3
-MLINKS+=	ldap_bind.3 ldap_simple_bind_s.3
-MLINKS+=	ldap_bind.3 ldap_kerberos_bind_s.3
-MLINKS+=	ldap_bind.3 ldap_kerberos_bind1.3
-MLINKS+=	ldap_bind.3 ldap_kerberos_bind1_s.3
-MLINKS+=	ldap_bind.3 ldap_kerberos_bind2.3
-MLINKS+=	ldap_bind.3 ldap_kerberos_bind2_s.3
-MLINKS+=	ldap_bind.3 ldap_sasl_bind.3
-MLINKS+=	ldap_bind.3 ldap_sasl_bind_s.3
-MLINKS+=	ldap_bind.3 ldap_sasl_interactive_bind_s.3
-MLINKS+=	ldap_bind.3 ldap_unbind.3
-MLINKS+=	ldap_bind.3 ldap_unbind_s.3
-MLINKS+=	ldap_bind.3 ldap_unbind_ext.3
-MLINKS+=	ldap_bind.3 ldap_unbind_ext_s.3
-MLINKS+=	ldap_bind.3 ldap_set_rebind_proc.3
-MAN3+=	ldap_compare.3
-MLINKS+=	ldap_compare.3 ldap_compare_s.3
-MLINKS+=	ldap_compare.3 ldap_compare_ext.3
-MLINKS+=	ldap_compare.3 ldap_compare_ext_s.3
-MAN3+=	ldap_delete.3
-MLINKS+=	ldap_delete.3 ldap_delete_s.3
-MLINKS+=	ldap_delete.3 ldap_delete_ext.3
-MLINKS+=	ldap_delete.3 ldap_delete_ext_s.3
-MAN3+=	ldap_error.3
-MLINKS+=	ldap_error.3 ldap_perror.3
-MLINKS+=	ldap_error.3 ld_errno.3
-MLINKS+=	ldap_error.3 ldap_result2error.3
-MLINKS+=	ldap_error.3 ldap_errlist.3
-MLINKS+=	ldap_error.3 ldap_err2string.3
-MAN3+=	ldap_first_attribute.3
-MLINKS+=	ldap_first_attribute.3 ldap_next_attribute.3
-MAN3+=	ldap_first_entry.3
-MLINKS+=	ldap_first_entry.3 ldap_next_entry.3
-MLINKS+=	ldap_first_entry.3 ldap_count_entries.3
-MAN3+=	ldap_first_message.3
-MLINKS+=	ldap_first_message.3 ldap_next_message.3
-MLINKS+=	ldap_first_message.3 ldap_count_messages.3
-MAN3+=	ldap_first_reference.3
-MLINKS+=	ldap_first_reference.3 ldap_next_reference.3
-MLINKS+=	ldap_first_reference.3 ldap_count_references.3
-MAN3+=	ldap_get_dn.3
-MLINKS+=	ldap_get_dn.3 ldap_explode_dn.3
-MLINKS+=	ldap_get_dn.3 ldap_explode_rdn.3
-MLINKS+=	ldap_get_dn.3 ldap_dn2ufn.3
-MLINKS+=	ldap_get_dn.3 ldap_str2dn.3
-MLINKS+=	ldap_get_dn.3 ldap_dn2str.3
-MLINKS+=	ldap_get_dn.3 ldap_dn2dcedn.3
-MLINKS+=	ldap_get_dn.3 ldap_dcedn2dn.3
-MLINKS+=	ldap_get_dn.3 ldap_dn2ad_canonical.3
-MAN3+=	ldap_get_values.3
-MLINKS+=	ldap_get_values.3 ldap_get_values_len.3
-MLINKS+=	ldap_get_values.3 ldap_count_values.3
-MLINKS+=	ldap_get_values.3 ldap_count_values_len.3
-MLINKS+=	ldap_get_values.3 ldap_value_free.3
-MLINKS+=	ldap_get_values.3 ldap_value_free_len.3
-MAN3+=	ldap_modify.3
-MLINKS+=	ldap_modify.3 ldap_modify_s.3
-MLINKS+=	ldap_modify.3 ldap_modify_ext.3
-MLINKS+=	ldap_modify.3 ldap_modify_ext_s.3
-MLINKS+=	ldap_modify.3 ldap_mods_free.3
-MAN3+=	ldap_open.3
-MLINKS+=	ldap_open.3 ldap_init.3
-MAN3+=	ldap_modrdn.3
-MLINKS+=	ldap_modrdn.3 ldap_modrdn_s.3
-MLINKS+=	ldap_modrdn.3 ldap_modrdn2.3
-MLINKS+=	ldap_modrdn.3 ldap_modrdn2_s.3
-MAN3+=	ldap_parse_reference.3
-MAN3+=	ldap_parse_result.3
-MLINKS+=	ldap_parse_result.3 ldap_parse_sasl_bind_result.3
-MLINKS+=	ldap_parse_result.3 ldap_parse_extended_result.3
-MAN3+=	ldap_result.3
-MLINKS+=	ldap_result.3 ldap_msgfree.3
-MLINKS+=	ldap_result.3 ldap_msgtype.3
-MLINKS+=	ldap_result.3 ldap_msgid.3
-MAN3+=	ldap_schema.3
-MLINKS+=	ldap_schema.3 ldap_str2syntax.3
-MLINKS+=	ldap_schema.3 ldap_syntax2str.3
-MLINKS+=	ldap_schema.3 ldap_syntax2name.3
-MLINKS+=	ldap_schema.3 ldap_syntax_free.3
-MLINKS+=	ldap_schema.3 ldap_str2matchingrule.3
-MLINKS+=	ldap_schema.3 ldap_matchingrule2str.3
-MLINKS+=	ldap_schema.3 ldap_matchingrule2name.3
-MLINKS+=	ldap_schema.3 ldap_matchingrule_free.3
-MLINKS+=	ldap_schema.3 ldap_str2attributetype.3
-MLINKS+=	ldap_schema.3 ldap_attributetype2str.3
-MLINKS+=	ldap_schema.3 ldap_attributetype2name.3
-MLINKS+=	ldap_schema.3 ldap_attributetype_free.3
-MLINKS+=	ldap_schema.3 ldap_str2objectclass.3
-MLINKS+=	ldap_schema.3 ldap_objectclass2str.3
-MLINKS+=	ldap_schema.3 ldap_objectclass2name.3
-MLINKS+=	ldap_schema.3 ldap_objectclass_free.3
-MLINKS+=	ldap_schema.3 ldap_scherr2str.3
-MAN3+=	ldap_search.3
-MLINKS+=	ldap_search.3 ldap_search_s.3
-MLINKS+=	ldap_search.3 ldap_search_st.3
-MLINKS+=	ldap_search.3 ldap_search_ext.3
-MLINKS+=	ldap_search.3 ldap_search_ext_s.3
-MAN3+=	ldap_sort.3
-MLINKS+=	ldap_sort.3 ldap_sort_entries.3
-MLINKS+=	ldap_sort.3 ldap_sort_values.3
-MLINKS+=	ldap_sort.3 ldap_sort_strcasecmp.3
-MAN3+=	ldap_url.3
-MLINKS+=	ldap_url.3 ldap_is_ldap_url.3
-MLINKS+=	ldap_url.3 ldap_url_parse.3
-MLINKS+=	ldap_url.3 ldap_free_urldesc.3
-.if !defined(CLIENT_ONLY)
-PLIST_SUB+=	NO_SERVERS=
-MAN5+=	ldap.conf.5
-MAN5+=	ldif.5
-MAN5+=	slapd-bdb.5
-MAN5+=	slapd-dnssrv.5
-MAN5+=	slapd-ldap.5
-MAN5+=	slapd-ldbm.5
-MAN5+=	slapd-meta.5
-MAN5+=	slapd-null.5
-MAN5+=	slapd-passwd.5
-MAN5+=	slapd-perl.5
-MAN5+=	slapd-shell.5
-MAN5+=	slapd-sql.5
-MAN5+=	slapd-tcl.5
-MAN5+=	slapd.access.5
-MAN5+=	slapd.conf.5
-MAN5+=	slapd.replog.5
-MAN8+=	slapadd.8
-MAN8+=	slapcat.8
-MAN8+=	slapd.8
-MAN8+=	slapindex.8
-MAN8+=	slappasswd.8
-MAN8+=	slurpd.8
+USE_OPENSSL=		yes
+USE_REINPLACE=		yes
+USE_LIBTOOL_VER=	14
+
+DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
+PLIST=			${WRKDIR}/pkg-plist
+PKGINSTALL=		${WRKDIR}/pkg-install
+PKGMESSAGE=		${WRKDIR}/pkg-message
+
+LOCALSTATEDIR?=		${DESTDIR}/var/db
+LDAP_RUN_DIR?=		${DESTDIR}/var/run/openldap
+
+PLIST_SUB+=		LOCALSTATEDIR=${LOCALSTATEDIR} \
+			LDAP_RUN_DIR=${LDAP_RUN_DIR}
+
+SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
+			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
+			-e 's,%%LOCALSTATEDIR%%,${LOCALSTATEDIR},g'
+
+CONFIGURE_ARGS=		--with-threads \
+			--with-tls=openssl \
+			--enable-dynamic
+
+.if defined(WITH_SASL)
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
-PLIST_SUB+=	NO_SERVERS="@comment "
+CONFIGURE_ARGS+=	--without-cyrus-sasl
 .endif
+
+.if defined(CLIENT_ONLY)
+# client specific configuration
+
+CONFIGURE_ARGS+=	--disable-slapd
+
+INSTALLS_SHLIB=	yes
+
+.else
+# server specific configuration
+
+EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
+
+CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
+			--enable-ldbm \
+			--with-ldbm-api=berkeley \
+			--enable-lmpasswd \
+			--enable-ldap \
+			--enable-meta \
+			--enable-rewrite \
+			--enable-null \
+			--enable-monitor
+
+WITH_BDB_VER?=		41
+
+.if ${WITH_BDB_VER} == 41
+LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=	--enable-bdb
+.elif ${WITH_BDB_VER} == 4
+LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--disable-bdb
+.elif ${WITH_BDB_VER} == 3
+LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=	--disable-bdb
+.else
+.error WITH_BDB_VER must be 3, 4 or 41
+.endif
+LIBS+=			-ldb${WITH_BDB_VER}
+CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
+
+.if defined(WITH_SHELL)
+CONFIGURE_ARGS+=	--enable-shell
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5=	yes
+CONFIGURE_ARGS+=	--enable-perl
+.endif
+
+.if defined(WITH_SASL)
+CONFIGURE_ARGS+=	--enable-spasswd
+.endif
+
+.if defined(WITH_ODBC)
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=	--enable-sql
+.endif
+
+# Include tcp-wrapper support
+.if !defined(WITHOUT_TCP_WRAPPERS) && exists(/usr/include/tcpd.h)
+CONFIGURE_ARGS+=	--enable-wrappers
+.endif
+
+# end of client/server specific configuration
+.endif
+
+# math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
+CPPFLAGS+=		-D_REENTRANT ${PTHREAD_CFLAGS} \
+			-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}" \
+			LIBS="${LIBS}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(CLIENT_ONLY)
+.include "${FILESDIR}/manpages"
+.endif
+
+pre-everything::
+	@${ECHO} "============================================================="
+	@${ECHO}
+	@${ECHO} "You can build ${PKGNAME} with the following options:"
+	@${ECHO}
+.if defined(CLIENT_ONLY)
+	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 support"
+.else
+	@${ECHO} "WITH_BDB_VER          select BerkeleyDB version (default 4.1)"
+	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 password verification"
+	@${ECHO} "WITH_PERL             with Perl backend"
+	@${ECHO} "WITH_SHELL            with Shell backend"
+	@${ECHO} "WITH_ODBC             with SQL backend"
+	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
+.endif
+	@${ECHO}
+	@${ECHO} "============================================================="
+	@${ECHO}
 
 post-patch:
-	@${CP} ${WRKSRC}/servers/slapd/slapd.conf \
-		${WRKSRC}/servers/slapd/slapd.conf.Dist
-	@${SED} -e '/^pidfile/s#%LOCALSTATEDIR%#/var/run/ldap#' \
-		-e '/^argsfile/s#%LOCALSTATEDIR%#/var/run/ldap#' \
-		${WRKSRC}/servers/slapd/slapd.conf.Dist > \
+	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/slapd\.,${LDAP_RUN_DIR}/slapd.,g' \
 		${WRKSRC}/servers/slapd/slapd.conf
 
+pre-configure:
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
+		${WRKSRC}/configure
+
 post-build:
+.for script in slapd.sh slurpd.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script} >${WRKDIR}/${script}
+.endfor
+.for text in pkg-install pkg-message
+	@if [ -f ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
+		${SED} ${SED_SCRIPT} ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} \
+		>${WRKDIR}/${text}; \
+	fi
+.endfor
+
 .if !defined(CLIENT_ONLY)
-	@${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slapd.sh >${WRKDIR}/slapd.sh
-	@${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slurpd.sh >${WRKDIR}/slurpd.sh
+test: build
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 .endif
 
-do-install:
-.if !defined(CLIENT_ONLY)
-	@cd ${WRKSRC} && ${MAKE} install
-	@${STRIP_CMD} ${PREFIX}/libexec/slapd
-	@${STRIP_CMD} ${PREFIX}/libexec/slurpd
-.else
-	@cd ${WRKSRC}/include && ${MAKE} install
-	@cd ${WRKSRC}/clients && ${MAKE} install
-	@cd ${WRKSRC}/libraries && ${MAKE} install
-.for i in 1 3
-	@cd ${WRKSRC}/doc/man/man$i && ${MAKE} install
-.endfor
+pre-install:
+	@${CP} ${MASTERDIR}/pkg-plist${OPENLDAP_PKGFILESUFX} ${PLIST}
+.if defined(CLIENT_ONLY)
+.if !defined(NOPORTDOCS)
+	@for dir in rfc drafts; do \
+		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
+			| ${SED} -e "s,^${WRKSRC}/doc/,%%DOCSDIR%%/," \
+			>>${PLIST}; \
+		${ECHO_CMD} "@dirrm %%DOCSDIR%%/$${dir}" >>${PLIST}; \
+	done
+	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
+.endif
 .endif
 
 post-install:
-.if !defined(CLIENT_ONLY)
-	@${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
-	@${INSTALL_SCRIPT} ${WRKDIR}/slurpd.sh ${PREFIX}/etc/rc.d/slurpd.sh.sample
+.if defined(CLIENT_ONLY)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@for dir in rfc drafts; do \
+		${MKDIR} ${DOCSDIR}/$${dir}; \
+		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
+			-exec ${INSTALL_DATA} {} ${DOCSDIR}/$${dir} \; ; \
+	done
 .endif
+.else
+.for script in slapd.sh slurpd.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script} ${PREFIX}/etc/rc.d/${script}
+.endfor
+	@${MKDIR} ${LDAP_RUN_DIR}
+.endif
+	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/../openldap20-server/bsd.openldap.mk"
 .include <bsd.port.post.mk>
