@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.7.1
+PORTVERSION=	5.7.2
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
@@ -25,7 +25,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKDIRS=	characters data lib outputsheets plugins system
 WRKDOCSDIR=	${WRKSRC}/docs
 WRKSCRIPT=	${WRKSRC}/pcgen.bsd.sh
-PLIST_FILES+=	${DATADIR:S,^${PREFIX}/,,}/filepaths.ini
+PLIST_FILES+=	${DATADIR:S,^${PREFIX}/,,}/filepaths.ini bin/pcgen.sh
 PLIST_DIRS+=	${DATADIR:S,^${PREFIX}/,,}
 
 .if !defined(NOPORTDOCS)
