@@ -99,8 +99,6 @@ share/irc/help/dcc/list
 share/irc/help/dcc/raw
 share/irc/help/dcc/rename
 share/irc/help/dcc/send
-share/irc/help/dcc/talk
-share/irc/help/dcc/tmsg
 share/irc/help/deop
 share/irc/help/describe
 share/irc/help/die
@@ -337,6 +335,7 @@ share/irc/help/set/ctcp_reply_backlog_seconds
 share/irc/help/set/ctcp_reply_flood_size
 share/irc/help/set/ctcp_reply_ignore_seconds
 share/irc/help/set/dcc_block_size
+share/irc/help/set/dcchost
 share/irc/help/set/debug
 share/irc/help/set/decrypt_program
 share/irc/help/set/display
@@ -530,6 +529,7 @@ share/irc/script/english
 share/irc/script/events
 share/irc/script/extensions
 share/irc/script/finger
+share/irc/script/fkeys
 share/irc/script/flood
 share/irc/script/fnet
 share/irc/script/functions
