@@ -1,0 +1,17 @@
+--- ./Wnn/uum/jhlp.c.org	Thu Aug 18 18:32:12 1994
++++ ./Wnn/uum/jhlp.c	Tue Mar 26 00:34:49 1996
+@@ -1636,7 +1636,14 @@
+ char *b, *pty;
+ int no;
+ {
++#ifdef __FreeBSD__
++    if (no & 0x1f > 9)
++	sprintf(b, "%s%1c%1c", pty, 'p' + (no >> 5), 'a' + (no & 0x1f));
++    else
++	sprintf(b, "%s%1c%1c", pty, 'p' + (no >> 5), '0' + (no & 0x1f));
++#else
+     sprintf(b, "%s%1c%1x", pty, 'p' + (no >> 4), no & 0x0f);
++#endif
+ }
+ #endif /* !sgi */
+ 
