@@ -35,7 +35,4 @@ MAN1=		gtk12-config.1
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/themes/engines
-
 .include <bsd.port.mk>
