@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crawl
-PORTVERSION=	0.1
+PORTVERSION=	0.1b
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
