@@ -141,9 +141,9 @@ pre-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."; \
-		${SED}	-e 's;PREFIX;${PREFIX};' \
-			-e 's;PERL5;${PERL};' \
-			-e 's;FP_VER;${FP_VER};' \
+		${SED}	-e 's;%%PREFIX%%;${PREFIX};' \
+			-e 's;%%PERL5%%;${PERL};' \
+			-e 's;%%FP_VER%%;${FP_VER};' \
 		< ${FILESDIR}/apache.sh.tmpl > ${PREFIX}/etc/rc.d/apache.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
