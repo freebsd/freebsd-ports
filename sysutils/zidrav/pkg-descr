@@ -1,0 +1,8 @@
+ZIDRAV is a file corruption detection and repair program. It's designed 
+to provide a way to fix file damage without having to redownload the 
+entire (potentially large) file over a (potentially slow) connection.
+
+WWW: http://sourceforge.net/projects/zidrav/
+
+- Cosmin Stroe
+cstroe1@uic.edu
