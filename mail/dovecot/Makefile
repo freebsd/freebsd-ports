@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.97
+PORTVERSION=	0.98.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shadow --enable-ipv6 \
 		--localstatedir=/var/dovecot
@@ -23,12 +24,12 @@ PLIST_SUB+=	DOCS="@comment "
 .endif
 
 pre-build:
-	@${SED} 's,%%PREFIX%%,${PREFIX},' < ${WRKSRC}/dovecot-example.conf \
-		> ${WRKSRC}/dovecot-example.conf.new
-	@${MV} ${WRKSRC}/dovecot-example.conf.new ${WRKSRC}/dovecot-example.conf
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/dovecot-example.conf
 
 pre-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${MKDIR} /var/dovecot
@@ -36,8 +37,9 @@ post-install:
 	@${MKDIR} /var/dovecot/login
 	@${CHOWN} imapd:imapd /var/dovecot
 	@if [ ! -f ${PREFIX}/etc/rc.d/dovecot-imapd.sh ]; then \
-		${ECHO} "Install ${PREFIX}/etc/rc.d/dovecot-imapd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot-imapd.sh ${PREFIX}/etc/rc.d/dovecot-imapd.sh; \
+		${ECHO} "Installing dovecot-imapd.sh startup file.";
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot-imapd.sh \
+			${PREFIX}/etc/rc.d/dovecot-imapd.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dovecot
