@@ -7,6 +7,7 @@
 
 PORTNAME=	swatch
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	swatch
@@ -21,9 +22,19 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_56} \
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLMAN1DIR=${PREFIX}/man/man1
+USE_RC_SUBR=	yes
 
 MAN1=	swatch.1
 MAN3=	Swatch::Actions.3 Swatch::Throttle.3
+
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+post-patch:
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/swatch.sh > ${WRKSRC}/swatch.sh
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/swatch.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.pre.mk>
 
