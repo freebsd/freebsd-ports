@@ -1,5 +1,5 @@
-*** configure.in.orig	Sun Sep  5 05:36:22 1999
---- configure.in	Sun Sep  5 05:41:07 1999
+*** configure.in.orig	Thu Sep  9 12:06:13 1999
+--- configure.in	Thu Sep  9 12:06:16 1999
 ***************
 *** 107,124 ****
   	
@@ -32,3 +32,56 @@
   	else
   		dnl ---Check to see if $withval is a source directory
   		if test -f $withval/src/slang.h; then
+***************
+*** 279,319 ****
+  	fi
+  	AC_DEFINE_UNQUOTED(MAILPATH, "$mutt_cv_mailpath")
+  
+! 	AC_CACHE_CHECK(if $mutt_cv_mailpath is world writable, mutt_cv_worldwrite, [AC_TRY_RUN([#include <sys/types.h>
+! #include <sys/stat.h>
+! 
+! int main (int argc, char **argv)
+! {
+! 	struct stat s;
+! 
+! 	stat ("$mutt_cv_mailpath", &s);
+! 	if (s.st_mode & S_IWOTH) exit (0);
+! 	exit (1);
+! }], mutt_cv_worldwrite=yes, mutt_cv_worldwrite=no, mutt_cv_worldwrite=no)])
+! 
+  	mutt_cv_setgid=no
+- 	if test $mutt_cv_worldwrite = yes; then
+- 		AC_DEFINE(USE_DOTLOCK)
+- 	else
+- 
+- 		AC_CACHE_CHECK(if $mutt_cv_mailpath is group writable, mutt_cv_groupwrite, [AC_TRY_RUN([#include <sys/types.h>
+- #include <sys/stat.h>
+- 
+- int main (int argc, char **argv)
+- {
+- 	struct stat s;
+- 
+- 	stat ("$mutt_cv_mailpath", &s);
+- 	if (s.st_mode & S_IWGRP) exit (0);
+- 	exit (1);
+- }], mutt_cv_groupwrite=yes, mutt_cv_groupwrite=no, mutt_cv_groupwrite=no)])
+- 
+- 		if test $mutt_cv_groupwrite = yes; then
+- 			AC_DEFINE(USE_DOTLOCK)
+- 			AC_DEFINE(USE_SETGID)
+- 			mutt_cv_setgid=yes
+- 		fi
+- 	fi
+  fi
+  
+  if test "x$mutt_cv_setgid" = "xyes" || test "x$mutt_cv_fchdir" = "xno"
+--- 272,280 ----
+  	fi
+  	AC_DEFINE_UNQUOTED(MAILPATH, "$mutt_cv_mailpath")
+  
+! 	mutt_cv_worldwrite=no
+! 	mutt_cv_groupwrite=no
+  	mutt_cv_setgid=no
+  fi
+  
+  if test "x$mutt_cv_setgid" = "xyes" || test "x$mutt_cv_fchdir" = "xno"
