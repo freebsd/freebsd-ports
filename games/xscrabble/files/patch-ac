@@ -1,0 +1,13 @@
+--- Xc/Imakefile.orig	Fri Nov 10 18:53:09 1995
++++ Xc/Imakefile	Sun Jul 27 10:23:24 1997
+@@ -22,10 +22,8 @@
+ #endif
+ 
+ NormalLibraryTarget(Xc,$(OBJS))
+-InstallLibrary(Xc,$(USRLIBDIR))
+ 
+ BuildIncludes($(HEADERS),Xc,..)
+-InstallMultiple($(HEADERS),$(INCDIR)/Xc)
+ 
+ #clean::
+ #	$(RM) -r $(TOP)/X11
