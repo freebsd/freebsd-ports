@@ -8,7 +8,7 @@
 PORTNAME=	diskusage
 PORTVERSION=	1.01
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://freebsd.radioslot.com/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.maske.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.Org
 
