@@ -6,7 +6,6 @@ include/botan/base.h
 include/botan/base64.h
 include/botan/bigint.h
 include/botan/blowfish.h
-include/botan/botan
 include/botan/botan.h
 include/botan/buf_filt.h
 include/botan/cast128.h
