@@ -1,19 +1,18 @@
 # New ports collection makefile for:   qt
-# Version required:	1.1
+# Version required:	1.2
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.8 1996/12/11 10:18:45 asami Exp $
+# $Id: Makefile,v 1.9 1996/12/17 07:11:51 tg Exp $
 #
 
-DISTNAME=	qt-1.1
+DISTNAME=	qt-1.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	searle@longacre.demon.co.uk
 
 USE_GMAKE=	yes
-WRKSRC=		$(WRKDIR)/$(DISTNAME)/arch/freebsd-gcc-shared
 USE_X11=	yes
 
 MAN1=		moc.1
@@ -43,12 +42,12 @@ MAN3=		qaccel.3qt qapplication.3qt qarray.3qt qbitarray.3qt \
 		qpushbutton.3qt qqueue.3qt qradiobutton.3qt \
 		qrangecontrol.3qt qrect.3qt qregexp.3qt qregion.3qt \
 		qresizeevent.3qt qscrollbar.3qt qsenderobject.3qt \
-		qshared.3qt qsignal.3qt qsize.3qt qsocketnotifier.3qt \
-		qstack.3qt qstrilist.3qt qstring.3qt qstrlist.3qt \
-		qtableview.3qt qtextstream.3qt qtime.3qt qtimer.3qt \
-		qtimerevent.3qt qtsmanip.3qt qwidget.3qt qwindow.3qt \
-		qwmatrix.3qt QAccel.3qt QApplication.3qt QArray.3qt \
-		QBitArray.3qt QBitmap.3qt QBitVal.3qt QBrush.3qt \
+		qshared.3qt qsignal.3qt qsize.3qt qslider.3qt \
+		qsocketnotifier.3qt qstack.3qt qstrilist.3qt qstring.3qt \
+		qstrlist.3qt qtableview.3qt qtextstream.3qt qtime.3qt \
+		qtimer.3qt qtimerevent.3qt qtsmanip.3qt qwidget.3qt \
+		qwindow.3qt qwmatrix.3qt QAccel.3qt QApplication.3qt \
+		QArray.3qt QBitArray.3qt QBitmap.3qt QBitVal.3qt QBrush.3qt \
 		QBuffer.3qt QButton.3qt QButtonGroup.3qt \
 		QByteArray.3qt QCheckBox.3qt QClipboard.3qt \
 		QCloseEvent.3qt QCollection.3qt QColor.3qt \
@@ -73,25 +72,25 @@ MAN3=		qaccel.3qt qapplication.3qt qarray.3qt qbitarray.3qt \
 		QPushButton.3qt QQueue.3qt QRadioButton.3qt \
 		QRangeControl.3qt QRect.3qt QRegExp.3qt QRegion.3qt \
 		QResizeEvent.3qt QScrollBar.3qt QSenderObject.3qt \
-		QShared.3qt QSignal.3qt QSize.3qt QSocketNotifier.3qt \
-		QStack.3qt QStrIList.3qt QString.3qt QStrList.3qt \
-		QTableView.3qt QTextStream.3qt QTime.3qt QTimer.3qt \
-		QTimerEvent.3qt QTSManip.3qt QWidget.3qt QWindow.3qt \
-		QWMatrix.3qt
+		QShared.3qt QSignal.3qt QSize.3qt QSlider.3qt \
+		QSocketNotifier.3qt QStack.3qt QStrIList.3qt QString.3qt \
+		QStrList.3qt QTableView.3qt QTextStream.3qt QTime.3qt \
+		QTimer.3qt QTimerEvent.3qt QTSManip.3qt QWidget.3qt \
+		QWindow.3qt QWMatrix.3qt
 
-post-extract:
-	cd $(WRKDIR)/$(DISTNAME)/arch; $(GMAKE) freebsd
+post-configure:
+	cd ${WRKSRC} && make freebsd-gcc-shared
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.1/bin/moc $(X11BASE)/bin
-	${INSTALL_DATA} $(WRKDIR)/qt-1.1/lib/libqt.so.1.1 $(X11BASE)/lib
+	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.2/bin/moc $(X11BASE)/bin
+	${INSTALL_DATA} $(WRKDIR)/qt-1.2/lib/libqt.so.1.2 $(X11BASE)/lib
 	/sbin/ldconfig -m $(PREFIX)/lib
 	mkdir -p $(PREFIX)/include/X11/qt
-	${INSTALL_DATA} $(WRKDIR)/qt-1.1/include/* $(PREFIX)/include/X11/qt
-	${INSTALL_MAN} $(WRKDIR)/qt-1.1/man/man1/* $(PREFIX)/man/man1
-	${INSTALL_MAN} $(WRKDIR)/qt-1.1/man/man3/* $(PREFIX)/man/man3
+	${INSTALL_DATA} $(WRKDIR)/qt-1.2/include/* $(PREFIX)/include/X11/qt
+	${INSTALL_MAN} $(WRKDIR)/qt-1.2/man/man1/* $(PREFIX)/man/man1
+	${INSTALL_MAN} $(WRKDIR)/qt-1.2/man/man3/* $(PREFIX)/man/man3
 	mkdir -p ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-1.1/README ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-1.1/README.QT ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.2/README ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.2/README.QT ${PREFIX}/share/doc/qt
 
 .include <bsd.port.mk>
