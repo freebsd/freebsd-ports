@@ -264,7 +264,7 @@ CONFIGURE_ARGS+=	--enable-domainquotas
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
-BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
