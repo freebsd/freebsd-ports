@@ -3,7 +3,7 @@
 # Date created:			09-Sep-1997
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.4 1998/01/03 09:26:46 rse Exp $
+# $Id: Makefile,v 1.5 1998/11/15 20:47:32 jseger Exp $
 #
 
 DISTNAME=	gfont-1.0.2
@@ -13,11 +13,16 @@ MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
 		ftp://ftp.hyperreal.org/software/engelschall/gfont/
 
 MAINTAINER=	rse@engelschall.com
-BROKEN=		yes
 
 RUN_DEPENDS=	mf:${PORTSDIR}/print/teTeX \
 		gftopk:${PORTSDIR}/print/teTeX \
 		gsftopk:${PORTSDIR}/print/teTeX
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 300003
+BROKEN=		perl5
+.endif
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
