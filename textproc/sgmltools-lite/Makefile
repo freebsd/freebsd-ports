@@ -26,6 +26,9 @@ CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
 
+pre-install:
+	${MKDIR} ${PREFIX}/etc/sgml
+
 post-install:
 	${ECHO} "3.0.0" > ${LOCALBASE}/share/sgml/misc/sgmltools/VERSION
 
