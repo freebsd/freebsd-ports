@@ -1,5 +1,5 @@
 --- Makefile.tmpl.orig	Tue Jan 11 13:47:41 2000
-+++ Makefile.tmpl	Thu Feb 24 20:58:51 2000
++++ Makefile.tmpl	Thu Mar  2 23:00:19 2000
 @@ -123,6 +123,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
@@ -68,7 +68,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -452,25 +469,31 @@
+@@ -452,26 +469,30 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -108,12 +108,12 @@
 +			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
 +			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
  		done; \
-+	if [ ! -d $(root)$(cgidir) ]; then \
-+		$(CP) -rp $(root)$(cgidir).default $(root)$(cgidir); \
- 	fi
+-	fi
++#	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -504,28 +527,33 @@
+ 	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
+@@ -504,42 +525,47 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
@@ -143,11 +143,37 @@
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \
  		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}.default"; \
  		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}.default; \
- 		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
-+		    if [ .$${target_conf} != .httpd.conf ] ; then \
- 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
- 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
-+		    fi; \
- 		else \
- 			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${target_conf}]"; \
- 		fi; \
+-		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
+-		else \
+-			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${target_conf}]"; \
+-		fi; \
+ 	done
++#		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
++#			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
++#			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
++#		else \
++#			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${target_conf}]"; \
++#		fi; \
++#	done
+ 	-@for conf in mime.types magic; do \
+ 		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default"; \
+ 		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default; \
+-		if [ ! -f "$(root)$(sysconfdir)/$${conf}" ]; then \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}"; \
+-			$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}; \
+-		else \
+-			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${conf}]"; \
+-		fi; \
+ 	done
++#		if [ ! -f "$(root)$(sysconfdir)/$${conf}" ]; then \
++#			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}"; \
++#			$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}; \
++#		else \
++#			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${conf}]"; \
++#		fi; \
++#	done
+ 	@echo "<=== [config]"
+ 
+ 
