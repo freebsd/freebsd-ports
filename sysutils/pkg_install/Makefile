@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	marcus
 MAINTAINER=		portmgr@freebsd.org
 COMMENT=		FreeBSD 5.x version of the package tools for older system releases
 
-USE_BZIP2=		yes
 MANCOMPRESSED=		yes
 
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
@@ -46,5 +45,14 @@ pre-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%MANPREFIX%%,${MANPREFIX},g' \
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
+
+deinstall:
+	@if ${PKG_INFO} -e ${PKGNAME}; then \
+		${PKG_DELETE} -f ${PKGNAME}; \
+	else \
+		${ECHO_MSG} "===> ${PKGNAME} not installed; skipping"; \
+	fi
+.endif
+	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 
 .include <bsd.port.post.mk>
