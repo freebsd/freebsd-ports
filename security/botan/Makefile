@@ -8,6 +8,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opencl
@@ -30,5 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${RM} -f ${WRKSRC}/src/pipe_io.cpp.orig
+
+post-install:
+	@${RM} -f ${PREFIX}/include/botan/botan
 
 .include <bsd.port.mk>
