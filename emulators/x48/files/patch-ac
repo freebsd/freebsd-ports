@@ -1,5 +1,5 @@
 --- src/Imakefile.orig	Thu Jun 17 00:32:19 1999
-+++ src/Imakefile	Tue Aug 15 22:07:30 2000
++++ src/Imakefile	Sat Oct 14 13:22:30 2000
 @@ -60,7 +60,7 @@
        LDOPTIONS = LDOPTIONS_DEF
  #endif
@@ -21,7 +21,7 @@
  
  depend:: version.c X48.ad.h
  
-@@ -102,16 +102,15 @@
+@@ -102,16 +102,20 @@
  	RemoveTargetProgram($@)                                         @@\
  	$(CC) -o $@ $(LDOPTIONS) $(OBJS4) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
                                                                          @@\
@@ -35,10 +35,15 @@
 -ComplexProgramTarget_2($(BIN)/dump2rom,,)
 -ComplexProgramTarget_3($(BIN)/checkrom,,)
 -ComplexProgramTarget_4($(BIN)/mkcard,,)
-+ComplexProgramTarget_1(x48, $(X48LIBS),)
-+ComplexProgramTarget_2(dump2rom,,)
-+ComplexProgramTarget_3(checkrom,,)
-+ComplexProgramTarget_4(mkcard,,)
++NormalProgramTarget(x48, $(OBJS1),, $(X48LIBS),)
++NormalProgramTarget(dump2rom, $(OBJS2),,,)
++NormalProgramTarget(checkrom, $(OBJS3),,,)
++NormalProgramTarget(mkcard, $(OBJS4),,,)
++
++InstallProgram(x48, $(BINDIR))
++InstallProgram(dump2rom, $(BINDIR))
++InstallProgram(checkrom, $(BINDIR))
++InstallProgram(mkcard, $(BINDIR))
  
  InstallAppDefaults(X48)
  
