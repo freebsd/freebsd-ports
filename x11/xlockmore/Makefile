@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/11/09 00:00:00 smace Exp $
+# $Id: Makefile,v 1.0 1994/11/09 00:00:00 smace Exp $
 #
 
 DISTNAME=       xlockmore-3.11
