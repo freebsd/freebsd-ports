@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.09.05
+PORTVERSION=	2003.09.19
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -60,6 +60,7 @@ liveMedia=		\
 		liveMedia/include/AC3AudioRTPSink.hh \
 		liveMedia/include/AC3AudioRTPSource.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
+		liveMedia/include/AMRAudioFileServerMediaSubsession.hh \
 		liveMedia/include/AMRAudioFileSource.hh \
 		liveMedia/include/AMRAudioRTPSink.hh \
 		liveMedia/include/AudioInputDevice.hh \
@@ -69,6 +70,7 @@ liveMedia=		\
 		liveMedia/include/ByteStreamMultiFileSource.hh \
 		liveMedia/include/DeviceSource.hh \
 		liveMedia/include/FileSink.hh \
+		liveMedia/include/FileServerMediaSubsession.hh \
 		liveMedia/include/FramedFileSource.hh \
 		liveMedia/include/FramedFilter.hh \
 		liveMedia/include/FramedSource.hh \
@@ -102,6 +104,7 @@ liveMedia=		\
 		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
 		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
+		liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh \\
 		liveMedia/include/MPEG4VideoStreamFramer.hh \
 		liveMedia/include/MPEGVideoStreamFramer.hh \
 		liveMedia/include/Media.hh \
@@ -110,7 +113,7 @@ liveMedia=		\
 		liveMedia/include/MediaSource.hh \
 		liveMedia/include/MultiFramedRTPSink.hh \
 		liveMedia/include/MultiFramedRTPSource.hh \
-		liveMedia/include/PassiveServerMediaSession.hh \
+		liveMedia/include/PassiveServerMediaSubsession.hh \
 		liveMedia/include/PrioritizedRTPStreamSelector.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
 		liveMedia/include/QuickTimeFileSink.hh \
