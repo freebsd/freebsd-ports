@@ -6,6 +6,7 @@
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += acm
+    SUBDIR += acorn-media
     SUBDIR += actx
     SUBDIR += adom
     SUBDIR += affenspiel
