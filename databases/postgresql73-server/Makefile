@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.4
-PORTREVISION=	1
+PORTVERSION?=	7.3.5
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -20,6 +19,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
+USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
@@ -69,9 +69,11 @@ CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 PKGMSG=		""
+CONFLICTS=	postgresql-7*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
+CONFLICTS=	postgresql-7*client
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+= install-all-headers
 MAKEFILE=	GNUmakefile
@@ -142,7 +144,7 @@ pre-everything::
 	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
 	@${ECHO} "	WITHOUT_SERVER		Don't install the server,"
-	@${ECHO} "                              only install binaries, headers and libs"
+	@${ECHO} "				only install binaries, headers and libs"
 	@${ECHO} "				for PostgreSQL clients"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
