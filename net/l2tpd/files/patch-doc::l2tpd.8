@@ -8,13 +8,13 @@ $FreeBSD$
  .B -c <config file>
  Tells l2tpd to use an alternate config file.  Default is
 -/etc/l2tpd/l2tpd.conf
-+%%PREFIX%%/etc/l2tpd/l2tpd.conf
++%%PREFIX%%/etc/l2tp/l2tpd.conf
  
  .TP 
  .B -s <secret file>
  Tells l2tpd to use an alternate "secrets" file.  Default is
 -/etc/l2tpd/l2tp-secrets
-+%%PREFIX%%/etc/l2tpd/l2tp-secrets
++%%PREFIX%%/etc/l2tp/l2tp-secrets
  
  .TP 
  .B -p <pid file>
@@ -23,7 +23,7 @@ $FreeBSD$
  .SH "FILES"
  
 -\fB\fR/etc/l2tp/l2tpd.conf \fB\fR/etc/l2tp/l2tp\-secrets 
-+\fB\fR%%PREFIX%%/etc/l2tpd/l2tpd.conf \fB\fR%%PREFIX%%/etc/l2tpd/l2tp\-secrets 
++\fB\fR%%PREFIX%%/etc/l2tp/l2tpd.conf \fB\fR%%PREFIX%%/etc/l2tp/l2tp\-secrets 
  \fB\fR/var/run/l2tp\-control
  .SH "BUGS"
  
