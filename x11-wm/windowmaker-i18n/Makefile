@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker with i18n extention
-# Version required:	0.52.0
+# Version required:	0.53.0
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.55 1999/03/19 22:43:09 asami Exp $
+# $Id: Makefile,v 1.56 1999/04/08 09:18:10 flathill Exp $
 
-DISTNAME=	WindowMaker-0.52.0
-PKGNAME=	windowmaker-i18n-0.52.0
+DISTNAME=	WindowMaker-0.53.0
+PKGNAME=	windowmaker-i18n-0.53.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		ftp://muse.brain.riken.go.jp/pub/ja.po/
@@ -25,6 +25,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -39,7 +40,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-JA_CATALOGFILE=	# japanese catalog file enhancemt is not available now
+JA_CATALOGFILE=	WindowMaker-0.53.0ja1
 
 .if defined(JA_CATALOGFILE) && ${JA_CATALOGFILE} != ""
 DISTFILES+=	${JA_CATALOGFILE}${EXTRACT_SUFX}
