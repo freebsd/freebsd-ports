@@ -1,1 +1,43 @@
+bin/ici-2.1.1
 bin/ici
+include/ici/pcre/internal.h
+include/ici/pcre/pcre.h
+include/ici/alloc.h
+include/ici/array.h
+include/ici/buf.h
+include/ici/catch.h
+include/ici/conf-bsd.h
+include/ici/exec.h
+include/ici/file.h
+include/ici/float.h
+include/ici/forall.h
+include/ici/func.h
+include/ici/fwd.h
+include/ici/int.h
+include/ici/mark.h
+include/ici/mem.h
+include/ici/null.h
+include/ici/object.h
+include/ici/op.h
+include/ici/parse.h
+include/ici/pc.h
+include/ici/primes.h
+include/ici/ptr.h
+include/ici/re.h
+include/ici/set.h
+include/ici/skt.h
+include/ici/src.h
+include/ici/str.h
+include/ici/struct.h
+include/ici/trace.h
+include/ici/win.h
+include/ici/wrap.h
+lib/ici/ici_init.ici
+lib/libici.a
+share/doc/ici/ici-a4.ps
+share/doc/ici/ici-ltr.ps
+share/doc/ici/ici.txt
+@dirrm include/ici/pcre
+@dirrm include/ici
+@dirrm lib/ici
+@dirrm share/doc/ici

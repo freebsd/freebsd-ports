@@ -1,5 +1,16 @@
-This is Tim Long's ICI language interpreter. ICI is a dynamic interpretive
-language with control flow structures and expression syntax derived from C.
-ICI offers useful inbuilt data types, automatic memory management (garbage
-collection), error handling and other handy features. ICI is in the public
-domain, there is no copyright on it.
+ICI is a C-like, high level language originally developed by Tim
+Long and placed into the public domain. ICI marries C's expression
+syntax, control structures and overall feel, with a dynamic, garbage
+collected, object-based, data model.
+
+ICI is typically used as a scripting-like language in the fashion
+of Perl, Python, TCL and other such languages.  ICI can be called
+from C and the language itself can be extended allowing applications
+to provide domain specific functions, types and operators for use
+in their ICI programs. Embedding in an application also allows the
+application to make use of ICI's efficient object system which
+provides many useful facilities.
+
+ICI is in the public domain, there is no copyright on it.
+
+URL:	http://www.zeta.org.au/~atrn/ici/
