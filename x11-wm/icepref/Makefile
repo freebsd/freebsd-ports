@@ -8,7 +8,7 @@
 PORTNAME=	icepref
 PORTVERSION=	1.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://209.132.18.205/downloads/portfiles/
+MASTER_SITES=	ftp://ftp:ftp@ftp.mxlab.com/x/wm/
 
 MAINTAINER=	ports@FreeBSD.Org
 
