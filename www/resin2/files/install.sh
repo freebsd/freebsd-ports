@@ -36,13 +36,13 @@ echo Created installation directory %%APP_HOME%%
 
 list()
 {
-    for dir in doc lib xsl ; do
+    for dir in %%COPYDIRS%% ; do
         ( cd %%WRKSRC%% ; find $dir )
     done
 }
 
 # Remove all empty dirs
-( cd %%WRKSRC%% ; find doc -type d -empty -delete )
+( cd %%WRKSRC%% && find %%COPYDIRS%% -type d -empty -delete )
 
 echo Installing in %%APP_HOME%%
 list | xargs tar -C %%WRKSRC%% -cf- | tar -C %%APP_HOME%% -xpf-
