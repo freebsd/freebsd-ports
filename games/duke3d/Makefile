@@ -72,10 +72,8 @@ post-install:
 .for file in ${DOC_FILES1}
 	${INSTALL_MAN} ${WRKSRC}/source/buildengine/${file} ${DOCSDIR}
 .endfor
-
-	${REINPLACE_CMD}-e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/README.bsd > \
-	${DOCSDIR}/README.bsd
-
+	${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/README.bsd > \
+		${DOCSDIR}/README.bsd
 .endif
 	@${CAT} ${PKGMESSAGE}
 
