@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev'
+PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
