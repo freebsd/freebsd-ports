@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	beav
-PORTVERSION=	1.40.17
+PORTVERSION=	1.40.18
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	${PORTNAME}_${PORTVERSION:R}.orig
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Editor And Viewer, a full featured binary file editor
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S/.//}
 
 USE_REINPLACE=	yes
 ALL_TARGET=	beav
@@ -25,7 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=-DUNIX -DBSD -DNOPROTO#|g ; \
 		 s|^CC=|CC?=|g ; \
 		 s|^(|\$$(|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/doc/beav|${DOCSDIR}|g' ${WRKSRC}/beav.1
+	@${REINPLACE_CMD} -e 's|/usr/share/doc/beav|${DOCSDIR}|g ; \
+		s|beav140.txt.gz|beav.txt|' ${WRKSRC}/beav.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beav ${PREFIX}/bin/beav
