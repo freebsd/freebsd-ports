@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	aspell
 DISTFILES=	aspell-0.50.5.tar.gz	# needed for slave ports / options
 EXTRACT_ONLY=	aspell-0.50.5.tar.gz
 
-MAINTAINER?=	thierry@pompo.net
+MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
 
 .if !exists(/usr/bin/bzip2)
@@ -24,9 +24,11 @@ BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
-		--enable-doc-dir=${DOCSDIR}
+CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
+		--enable-doc-dir=${DOCSDIR}	\
+		--enable-static
 USE_GMAKE=	yes
+USE_REINPLACE=	yes	# To be removed after commit of PR ports/63944
 
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
@@ -185,6 +187,10 @@ post-extract:
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}
 . endif
 .endfor
+
+post-patch:	# To be removed after commit of PR ports/63944
+	${REINPLACE_CMD} -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .for DICO in ${DICTS}
