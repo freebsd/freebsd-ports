@@ -1,0 +1,11 @@
+--- lib/cdialect.h.orig	Sun Oct 10 17:41:50 1999
++++ lib/cdialect.h	Sun Oct 10 17:42:14 1999
+@@ -135,7 +135,7 @@
+ 
+ 
+ #ifndef HAS_STRDUP
+-extern char * strdup _((char *s));
++extern char * strdup _((const char *s));
+ #endif /* not HAS_STRDUP */
+ #endif /* not C_DIALECT */
+ 

@@ -22,9 +22,11 @@ bin/waisretrieve
 bin/waissearch
 bin/waisserver
 bin/ws
+include/freeWAIS-sf/wais.h
 lib/freeWAIS-sf/emacs/lisp/wais.el
 lib/freeWAIS-sf/libwais.a
 share/doc/SF/fwsf.ps
+@dirrm include/freeWAIS-sf
 @dirrm lib/freeWAIS-sf/emacs/lisp
 @dirrm lib/freeWAIS-sf/emacs
 @dirrm lib/freeWAIS-sf
