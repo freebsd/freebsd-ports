@@ -45,15 +45,12 @@ CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${GCCNAME}/configure
 
+PATCH_WRKSRC=		${WRKDIR}
+PATCH_STRIP=		-p
+
 MAKE_FLAGS=	LANGUAGES="c c++"
 
 MAN1=		${LCLTARGET}-gcc.1 cccp.1 ${LCLTARGET}-g++.1
-
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=   -d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=   -d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
