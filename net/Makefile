@@ -384,6 +384,7 @@
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
+    SUBDIR += thcrut
     SUBDIR += tik
     SUBDIR += tintin++
     SUBDIR += tintin++-devel

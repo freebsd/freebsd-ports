@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/18 20:30:43 dugsong Exp $
+bin/thcrut
+share/thcrut/manuf
+@dirrm share/thcrut

@@ -1,0 +1,11 @@
+RUT (pronouced as 'root') mean 'aRe yoU There'.
+
+It was developed to brute force its way into wvlan (IEEE 802.11b)
+access points which use mac authentification.
+
+It offers a wide range of _local_ network discovery features like arp
+lookup on all hosts on a network with vendor-string, spoofed DHCP
+request, RARP, BOOTP, ICMP-ping and address mask request and some
+other features.
+
+WWW: http://www.thehackerschoice.com/
