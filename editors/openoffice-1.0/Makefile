@@ -52,9 +52,9 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 .include <bsd.port.pre.mk>
 
 pre-fetch:
-.if ${OSVERSION} > 500034 || ${OSVERSION} < 500034
+.if ${OSVERSION} > 500000
 	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO} OS-VERSION ${OSVERSION} too high
 	@${ECHO}
 	@${ECHO} Openoffice is currently broken on CURRENT and does
 	@${ECHO} not yet work with GCC 3.1
@@ -64,12 +64,13 @@ pre-fetch:
 	@${ECHO}
 	@${FALSE}
 .endif
-.if ${OSVERSION} < 450002
+.if ${OSVERSION} < 450005
 	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO} OS-VERSION ${OSVERSION} too low
 	@${ECHO}
 	@${ECHO} Openoffice need some important libc_r and
-	@${ECHO} gcc fixes to build. Please upgrade.
+	@${ECHO} gcc fixes to build. Please upgrade to 4.6
+	@${ECHO} PRE-RELEASE or RELEASE.
 	@${FALSE}
 .endif
 .if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3" && ${GCC_VERSION}!="2.95.4"
@@ -94,8 +95,8 @@ pre-extract:
 	@${ECHO} settings and add this to your KERNEL
 	@${ECHO} configuration if necessary:
 	@${ECHO}
-	@${ECHO} options	MAXDSIZ="(1024*1024*1024)"
-	@${ECHO} options	MAXSSIZ="(256*1024*1024)"
+	@${ECHO} options	MAXDSIZ=\"\(1024*1024*1024\)\"
+	@${ECHO} options	MAXSSIZ=\"\(256*1024*1024\)\"
 	@${ECHO}
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
