@@ -129,8 +129,8 @@ CONFIGURE_ARGS+=--without-server
 MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
 
 post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/mysql-client.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-client.sh
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/00mysql-client.sh
+	@${CHMOD} 750 ${PREFIX}/etc/rc.d/00mysql-client.sh
 
 .endif
 
