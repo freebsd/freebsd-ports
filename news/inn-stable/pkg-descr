@@ -2,3 +2,12 @@ InterNetNews is a complete Usenet system.  The cornerstone of the package
 is innd, an NNTP server that multiplexes all I/O. Newsreading is handled
 by a separate server, nnrpd, that is spawned for each client.  Both innd
 and nnrpd have some slight variances from the NNTP protocol.
+
+This is the new version 2.x, maintained by the ISC
+
+Installation is relatively complex but nicely explained in the
+file INSTALL, see the inn2 sources under the work directory.
+
+More infos:
+
+	http://www.isc.org/
