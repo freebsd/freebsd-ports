@@ -825,6 +825,7 @@ cave		ports/misc/cave
 cbb		ports/finance/cbb
 cbedic		ports/textproc/cbedic
 cbrowser	ports/devel/cbrowser
+cbview		ports/graphics/cbview
 cc65		ports/devel/cc65
 ccache		ports/devel/ccache
 ccaudio		ports/audio/ccaudio
