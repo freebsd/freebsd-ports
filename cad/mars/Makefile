@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/25 01:07:50 obrien Exp $
 #
 
 DISTNAME=	MaRS-2.1
@@ -15,7 +15,9 @@ MASTER_SITES=	${DISTSITE}
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 NO_WRKSUBDIR=	yes
-.if defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
+.if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
+MAKEFILE=       Makefile.XMotif
+.elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
 MAKEFILE=	Makefile.NoX
 .else
 MAKEFILE=	Makefile.SimpleX
