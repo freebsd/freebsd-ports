@@ -1,56 +1,31 @@
-DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz
+DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
+		latex_tools.tar.gz
 DISTNAME=	latex
 
-FTPGET=		${WRKDIR}/ftpget
-TEXDIR=		${.CURDIR}
+FTPGET=		${FILESDIR}/ftpget
 
-#other equivalent sites: ftp.shsu.edu dtp.dante.de
+#other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
 
 
-pre-fetch:
-	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
-	@mkdir -p ${WRKDIR}
-	@${SCRIPTDIR}/ftpget magic ${WRKDIR}
-
-fetch: pre-fetch ${DISTFILES}
-
-fetch-file:
-	@echo ">> ${file_out} doesn't seem to exist on this system."; 
-	@echo ">> Attempting to fetch it from a master site."; 
-	@${FTPGET} ${CTAN} ${ftp_dir} ${file_in} ${file_out}
-	@if [ ! -f ${file_out} ]; then \
-		echo ">> Couldn't fetch it - please try to retreive this";\
-		echo ">> port manually into ${DISTDIR} and try again."; \
-		exit 1; \
-	 else \
-		echo ">> ${file_out} Fetched!" ; \
-	 fi;
-	
 latex_base.tar.gz:
-	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
-	        ftp_dir=/tex-archive/macros file_in=latex/base.tar.gz file_out=$@; \
-	fi;)
+	@${FTPGET} ${CTAN} /tex-archive/macros latex/base.tar.gz ${DISTDIR}/$@
 latex_mf.tar.gz:
-	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
- 		ftp_dir=/tex-archive/fonts file_in=latex/mf.tar.gz file_out=$@; \
-	 fi;)
+	@${FTPGET} ${CTAN} /tex-archive/fonts latex/mf.tar.gz ${DISTDIR}/$@
 latex_tfm.tar.gz:
-	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
- 		ftp_dir=/tex-archive/fonts file_in=latex/tfm.tar.gz file_out=$@; \
-	 fi;)
+	@${FTPGET} ${CTAN} /tex-archive/fonts latex/tfm.tar.gz ${DISTDIR}/$@
+latex_tools.tar.gz:
+	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
 
 
-CONFIGURE_COOKIE=	${.CURDIR}/.configure_done
-
-build: configure
+build:
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKSRC}/base; initex unpack.ins)
 	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
 		initex latex.ltx)
+	@(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
+		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
+		 ln -s /usr/local/bin/virtex latex; ./latex tools.ins)
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
@@ -64,6 +39,9 @@ install:
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
 	@mkdir -p ${PREFIX}/lib/texmf/makeindx;
 	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/makeindx)
-	
+	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
+
+.include "Makefile.inc"
 
 .include <bsd.port.mk>
