@@ -1,0 +1,8 @@
+[From README:]
+WMLongRun is a program to monitor for LongRun. It displays the
+current LongRun(tm) settings and status: the frequency, the LongRun(tm)
+flags (performance or economy), and the performance level (expressed
+as a percentile).
+
+WWW: http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml#wmlongrun
+Author: Seiichi SATO <ssato@sh.rim.or.jp>

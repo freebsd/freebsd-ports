@@ -201,6 +201,7 @@
     SUBDIR += wmhm
     SUBDIR += wminet
     SUBDIR += wmlmmon
+    SUBDIR += wmlongrun
     SUBDIR += wmmemmon
     SUBDIR += wmmon
     SUBDIR += wmmount
