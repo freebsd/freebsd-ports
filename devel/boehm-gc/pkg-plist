@@ -26,6 +26,9 @@ include/leak_detector.h
 lib/libgc.a
 lib/libgc.so
 lib/libgc.so.1
+lib/libgccpp.a
+lib/libgccpp.so
+lib/libgccpp.so.1
 share/doc/gc/README
 share/doc/gc/README.DGUX386
 share/doc/gc/README.Mac
