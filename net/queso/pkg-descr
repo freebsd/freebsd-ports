@@ -19,3 +19,5 @@ QueSO sends:
         6 SYN+XXX+YYY   * XXX & YYY are unused TCP flags
 
 All packets have a random seq_num and a 0x0 ack_num.
+
+WWW: http://www.apostols.org/projectz/queso/

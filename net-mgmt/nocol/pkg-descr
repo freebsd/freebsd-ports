@@ -5,7 +5,7 @@ nameservers, ethernet load, port reachability, host performance, SNMP traps,
 modem line usage, appletalk & novell routes/services, BGP peers, syslog
 files, etc. The software is extensible and new monitors can be added easily.
 
-HomePage: http://www.netplex-tech.com/software/nocol/
+WWW: http://www.netplex-tech.com/software/nocol/
 
 -- 
 brad hendrickse

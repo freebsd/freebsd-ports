@@ -2,8 +2,7 @@ tacacs+ services network requests for authentication
 and authorization, verifies identities, grants or denies
 authorizations, and logs accounting records. 
 
-Details are described at:
-http://www.cisco.com/warp/public/146/187.html
+WWW: http://www.cisco.com/warp/public/146/187.html
 
 -- Igor
 igor@zynaps.ru
