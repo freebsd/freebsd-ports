@@ -198,7 +198,7 @@ post-install:
 	for na in fd; do \
 .else
 	for na in sd dir; do \
-.fi
+.endif
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
