@@ -1,4 +1,4 @@
 bin/mp3info
-share/doc/mp3info/ChangeLog
-share/doc/mp3info/README
-@dirrm share/doc/mp3info
+%%PORTDOCS%%share/doc/mp3info/ChangeLog
+%%PORTDOCS%%share/doc/mp3info/README
+%%PORTDOCS%%@dirrm share/doc/mp3info
