@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://maclawran.ca/~sean/bb-dnld/ \
 		http://freefall.freebsd.org/~andreas/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
