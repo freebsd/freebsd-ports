@@ -1,5 +1,5 @@
---- doc/sendmail/configure.orig	Wed Feb  5 19:04:53 2003
-+++ doc/sendmail/configure	Tue Feb 18 07:10:13 2003
+--- doc/sendmail/configure.orig	Tue Feb 18 18:03:06 2003
++++ doc/sendmail/configure	Sat Jun  7 13:29:29 2003
 @@ -34,18 +34,6 @@
  FILTER_CFG_NOSTD="-- ERROR ---"
  FILTER_TIMEOUT="-- ERROR ---"
@@ -19,7 +19,7 @@
  # Test echo properties
  
  (echo "12345\c" ; echo " ") > echotmp
-@@ -124,7 +112,7 @@
+@@ -124,14 +112,14 @@
  # Read transport
  
  POS=`$GREP -i PidFile $DAEMON_INI | $GREP -v ";"`
@@ -27,7 +27,17 @@
 +if [ "x" = "x" ] ; then
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
-     POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
+-    POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
+-    if [ $POS -eq 0 ] ; then
++    POS=`$GREP -i "Socket[^a-z]" $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /\// ) }'`
++    if [ $POS -ne 0 ] ; then
+         echo " but defined UNIX sockets"
+         DAEMON_MODE="local"
+-        DAEMON_SOCKET=`$GREP -i SocketFile $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, match( $0, /\/./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
++	DAEMON_SOCKET=`$GREP -i "Socket[^a-z]" $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, match( $0, /\/./ ) ); gsub( /["[:blank:]]|[[:blank:]]+[0-7]+$/, "", str ); print str; }'`
+         DAEMON_IP=""
+         DAEMON_PORT=""
+         DAEMON_PID=""
 @@ -297,8 +285,13 @@
              echo "Edit one of configuration files and try again."
              exit 1
