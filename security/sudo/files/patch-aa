@@ -1,17 +1,3 @@
---- configure.orig	Mon Nov  8 15:59:48 1999
-+++ configure	Thu Dec 16 22:54:41 1999
-@@ -681,8 +681,8 @@
- 
- test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
- test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
--test "$sbindir" = '${exec_prefix}/sbin' && sbindir='$(exec_prefix)/sbin'
--test "$sysconfdir" = '${prefix}/etc' && sysconfdir='/etc'
-+test "$sbindir" = '${exec_prefix}/sbin' || sbindir='$(exec_prefix)/sbin'
-+#test "$sysconfdir" = '${prefix}/etc' || sysconfdir='/etc'
- 
- 
- # Check whether --with-otp-only or --without-otp-only was given.
-@@ -7737,7 +7737,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
