@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -98,9 +98,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+		${WRKSRC}/nsprpub/configure \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
@@ -108,15 +109,13 @@ post-patch:
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
 
-link-bins:
+post-install:
 	${RM} -f ${PREFIX}/bin/thunderbird
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird \
 		${PREFIX}/bin/thunderbird
 	${RM} -f ${PREFIX}/bin/thunderbird-config
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/thunderbird-config
-
-cleanup-install:
 	${RM} -fr ${LOCAL_PREFIX}/share/idl
 	${RM} -fr ${LOCAL_PREFIX}/include
 
@@ -139,16 +138,4 @@ cons-plist:
 	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
 		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
-.PHONY: link-bins cleanup-install cons-plist
-
 .include <bsd.port.post.mk>
-
-# <alane>
-# Under normal circumstances, you should not put anything after
-# the above line. However, this is the only way I can state the
-# dependency without trashing the actual code of the generate-plist
-# target. This is a limitation of the make(1) program itself.
-# </alane>
-generate-plist: link-bins cleanup-install
-
-#EOF

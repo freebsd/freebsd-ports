@@ -1,6 +1,6 @@
---- config/preprocessor.pl.orig	Wed Aug 13 05:46:33 2003
-+++ config/preprocessor.pl	Thu Sep  4 00:42:12 2003
-@@ -71,16 +71,40 @@
+--- config/preprocessor.pl.orig	Fri Oct 24 18:17:32 2003
++++ config/preprocessor.pl	Sun Dec  7 15:17:57 2003
+@@ -76,16 +76,40 @@
  ########################################################################
  
  package main;
@@ -45,12 +45,12 @@
      }
      local $stack->{'variables'}->{'DIRECTORY'} = $directory;
      local $stack->{'variables'}->{'FILE'} = $filename;
-@@ -374,7 +398,7 @@
+@@ -395,7 +419,7 @@
      my $stack = shift;
      return if $stack->disabled;
      die "argument expected\n" unless @_;
--    main::include($stack, File::Spec->catpath(File::Spec::Unix->splitpath(@_)));
-+    main::include($stack, File::Spec->catfile(dirname(@_), basename(@_)));
- }
- 
- sub filter {
+-    my $filename = File::Spec->catpath(File::Spec::Unix->splitpath(@_));
++    my $filename = File::Spec->catpath(dirname(@_), basename(@_));
+     if ($stack->{'dependencies'}) {
+         $stack->visit($filename);
+     } else {
