@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	nuvola
-PORTVERSION=	0.2.5
-MASTER_SITES=	http://www.icon-king.com/distro/
-DISTNAME=	${PORTNAME}-${PORTVERSION}dave
+PORTVERSION=	1.0
+MASTER_SITES=	http://www.icon-king.com/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta
+EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE Nuvola iconset, SVG evolution of SKY
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
-
-BROKEN=		"Unfetchable"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
