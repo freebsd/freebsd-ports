@@ -1,19 +1,19 @@
 # New ports collection makefile for:	irssi
-# Version required:		0.7.13
+# Version required:		0.7.14
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	irssi-0.7.13-2
-PKGNAME=	irssi-0.7.13
+DISTNAME=	irssi-0.7.14
 CATEGORIES=	irc
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		PropList.1:${PORTSDIR}/devel/libPropList
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
@@ -25,7 +25,8 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pthreads --without-socks --without-textui
+CONFIGURE_ARGS=	--without-pthreads --without-socks --without-textui \
+		--with-proplist=${LOCALBASE}
 
 .if defined(USE_GNOME)
 CONFIGURE_ARGS+= --with-gnome
@@ -40,11 +41,5 @@ CONFIGURE_ARGS+= --without-gnome
 
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
-
-post-install:
-	@${ECHO} "===>   Installing example irssi.conf to ${PREFIX}/share/examples/irssi"
-	@${ECHO} "===>   You will find a ~/.irssi.conf after running irssi for the first time."
-	@${MKDIR} ${PREFIX}/share/examples/irssi && ${CHMOD} a+rx ${PREFIX}/share/examples/irssi
-	@${INSTALL_DATA} ${WRKSRC}/irssi.conf ${PREFIX}/share/examples/irssi
 
 .include <bsd.port.mk>
