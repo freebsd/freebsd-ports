@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${WORDNET_DIR}/adj.exc:${PORTSDIR}/textproc/wordnet \
 		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
+BROKEN=		"Segfault during build"
+
 WORDNET_DIR=	${LOCALBASE}/share/WordNet-2.0
 
 USE_BZIP2=	yes
