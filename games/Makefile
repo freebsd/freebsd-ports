@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.106 1998/02/19 12:06:55 eivind Exp $
+# $Id: Makefile,v 1.107 1998/02/20 05:48:04 steve Exp $
 #
 
     SUBDIR += acm
@@ -51,6 +51,7 @@
     SUBDIR += xbloody
     SUBDIR += xboard
     SUBDIR += xboing
+    SUBDIR += xbomb
     SUBDIR += xchomp
     SUBDIR += xcubes
     SUBDIR += xdeblock
