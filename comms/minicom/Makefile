@@ -17,6 +17,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
+FORBIDDEN=	"Local exploit yielding setuid uucp"
+
 MAINTAINER=	obrien@FreeBSD.org
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
