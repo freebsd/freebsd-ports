@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ngrep-lib
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
