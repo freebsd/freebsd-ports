@@ -2,7 +2,7 @@
 #
 # Called in place of mkmodules to take care of files mkmodules doesn't know.
 #
-# $Id: updateCVSROOT,v 1.1 1995/11/27 06:26:29 peter Exp $
+# $Id: updateCVSROOT,v 1.2 1995/11/27 06:33:28 peter Exp peter $
 
 PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH
@@ -23,4 +23,4 @@ done
 #  echo "please check to see what needs to be updated..."
 #}
 
-#exec mkmodules $1
+exec mkmodules $1
