@@ -342,6 +342,7 @@
     SUBDIR += p5-Text-TabularDisplay
     SUBDIR += p5-Text-Template
     SUBDIR += p5-Text-Tmpl
+    SUBDIR += p5-Text-VimColor
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Time-Human
