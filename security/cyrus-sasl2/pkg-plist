@@ -83,10 +83,10 @@ sbin/saslpasswd2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl2
 @mode ug=rwx,o=
-@exec mkdir -p state/saslauthd
+@exec mkdir -p /var/state/saslauthd
 @exec chown -R cyrus:cyrus state
 @exec chmod -R o= state
 @comment This file gets created by the state/saslauthd program
 @unexec rm -fr /var/state/saslauthd
-@dirrm state
+@unexec rmdir /var/state
 @cwd %%PREFIX%%

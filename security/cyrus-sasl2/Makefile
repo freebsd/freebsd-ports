@@ -135,13 +135,16 @@ post-install:
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/state/saslauthd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	(cd ${WRKSRC}/doc ; \
-	for file in `make -V EXTRA_DIST` ; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${file} ${DOCSDIR} ; \
-	done)
+.for file in ${DOC2}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
+.for file in ${HTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
+.endfor
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
