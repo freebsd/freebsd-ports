@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	never@nevermind.kiev.ua
 
 LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
 		mimelib.3:${PORTSDIR}/converters/kdesupport2 \
