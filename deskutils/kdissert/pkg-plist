@@ -1,4 +1,6 @@
 bin/kdissert
+lib/libkdissasciidoc.la
+lib/libkdissasciidoc.so
 lib/libkdisshtmldoc.la
 lib/libkdisshtmldoc.so
 lib/libkdisspdflatexarticle.la
@@ -9,6 +11,7 @@ share/applications/kde/kdissert.desktop
 share/applnk/Utilities/kdissert.desktop
 share/apps/kdissert/kdissertui.rc
 share/apps/kdissert/pics/nopix.png
+share/apps/kdissert/templatedata/kdissasciidoc.tar.gz
 share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexarticle.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexbook.tar.gz
@@ -17,6 +20,7 @@ share/config.kcfg/kdissert.kcfg
 share/doc/HTML/en/kdissert/common
 share/doc/HTML/en/kdissert/index.cache.bz2
 share/doc/HTML/en/kdissert/index.docbook
+share/doc/HTML/en/kdissert/screenshot.png
 share/icons/crystalsvg/128x128/actions/kdissert_sort.png
 share/icons/crystalsvg/16x16/actions/kdissert_link.png
 share/icons/crystalsvg/16x16/actions/kdissert_point.png
@@ -35,6 +39,7 @@ share/icons/hicolor/64x64/apps/kdissert.png
 share/locale/de/LC_MESSAGES/kdissert.mo
 share/locale/fr/LC_MESSAGES/kdissert.mo
 share/locale/nl/LC_MESSAGES/kdissert.mo
+share/mimelnk/application/x-kdissert.desktop
 @dirrm share/apps/kdissert/templatedata
 @dirrm share/apps/kdissert/pics
 @dirrm share/apps/kdissert
