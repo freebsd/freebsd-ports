@@ -1,8 +1,7 @@
 bin/kcdmain
 bin/kcdscr
-share/doc/kcd/ChangeLog
-share/doc/kcd/README
 share/examples/kcd/kcd.csh.init
 share/examples/kcd/kcd.sh.init
+%%PORTDOCS%%share/doc/kcd/README
+%%PORTDOCS%%@dirrm share/doc/kcd
 @dirrm share/examples/kcd
-@dirrm share/doc/kcd
