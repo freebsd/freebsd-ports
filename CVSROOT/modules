@@ -10594,6 +10594,7 @@ zope-placelesstranslationservice	ports/www/zope-placelesstranslationservice
 zope-proxyindex	ports/www/zope-proxyindex
 zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
+zope-ttwtype	ports/www/zope-ttwtype
 zope-xmlwidgets	ports/www/zope-xmlwidgets
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
