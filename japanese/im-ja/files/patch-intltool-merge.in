@@ -1,0 +1,13 @@
+Index: intltool-merge.in
+diff -u intltool-merge.in.orig intltool-merge.in
+--- intltool-merge.in.orig	Sun Mar 21 07:05:57 2004
++++ intltool-merge.in	Tue Apr 13 02:35:42 2004
+@@ -976,7 +976,7 @@
+     if ($MULTIPLE_OUTPUT) {
+         for my $lang (sort keys %po_files_by_lang) {
+ 	    if ( ! -e $lang ) {
+-	        mkdir $lang or die "Cannot create subdirectory $lang: $!\n";
++	        mkdir $lang, 0777 or die "Cannot create subdirectory $lang: $!\n";
+             }
+             open OUTPUT, ">$lang/$OUTFILE" or die "Cannot open $lang/$OUTFILE: $!\n";
+             my $tree = readXml($FILE);
