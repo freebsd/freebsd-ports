@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,7 +25,8 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/bin/peps:${PORTSDIR}/graphics/peps \
 		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm \
-		${PREFIX}/bin/links:${PORTSDIR}/www/links
+		${PREFIX}/bin/links:${PORTSDIR}/www/links \
+		${PREFIX}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 
 .if defined(WITH_OPENJADE) || ${MACHINE_ARCH} == "alpha"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
