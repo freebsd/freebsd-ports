@@ -2,8 +2,8 @@ include/gtkgl/gdkgl.h
 include/gtkgl/gtkglarea.h
 lib/libgtkgl.a
 lib/libgtkgl.so
-lib/libgtkgl.so.4
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+lib/libgtkgl.so.5
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/aclocal/gtkgl.m4
 @dirrm include/gtkgl
