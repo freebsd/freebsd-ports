@@ -12,6 +12,7 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -22,7 +23,7 @@ CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 MAN6=		gtkballs.6x
 
 post-patch:
-	@${PERL} -pi -e 's|^install-data-local|#install-data-local|g' \
+	@${REINPLACE_CMD} -e 's|^install-data-local|#install-data-local|g' \
 		${WRKSRC}/Makefile.in
 
 post-install:

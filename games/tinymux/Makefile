@@ -17,6 +17,7 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/src
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -25,7 +26,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/gdbm.h
 
 post-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/udb_ochunk.c
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/udb_ochunk.c
 
 #
 # Distribution does not include an install target.  So here it is.

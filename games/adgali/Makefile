@@ -23,6 +23,7 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
+USE_REINPLACE=	yes
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -35,7 +36,7 @@ CONFIGURE_ARGS=	--enable-compile-type=optim
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-O3 ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3 ||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

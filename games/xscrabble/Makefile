@@ -15,11 +15,12 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=		yes
 USE_IMAKE=		yes
 USE_XPM=		yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/XScrabble.ad
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/XScrabble.ad
 
 .include <bsd.port.mk>

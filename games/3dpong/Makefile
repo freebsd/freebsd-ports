@@ -13,10 +13,11 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/3dpong/
 MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's.\tchmod .\t${CHMOD} .g' \
+	@${REINPLACE_CMD} -e 's.	chmod .	${CHMOD} .g' \
 		${WRKSRC}/makefile
 
 do-install:
