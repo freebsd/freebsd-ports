@@ -1,38 +1,19 @@
-
-$FreeBSD$
-
---- lib/Makefile.in	2001/05/29 08:54:24	1.1
-+++ lib/Makefile.in	2001/05/29 08:59:30
-@@ -116,11 +116,11 @@
- noinst_HEADERS = c-ctype.h error.h fstrcmp.h getline.h getopt.h hash.h lbrkprop.h linebreak.h mbswidth.h obstack.h printf-parse.h printf.h system.h pathmax.h
- 
+--- lib/Makefile.in.orig	Tue Mar 12 13:04:16 2002
++++ lib/Makefile.in	Fri Mar 15 17:41:01 2002
+@@ -240,3 +240,3 @@
  
 -DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
 +DEFS = -DLIBDIR=\"$(prefix)/libdata\" @DEFS@
- INCLUDES = -I. -I$(srcdir) -I.. -I../intl
+ INCLUDES = -I. -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl
+@@ -246,4 +246,4 @@
  
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
 -charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
 +charset_alias = $(DESTDIR)$(prefix)/libdata/charset.alias
 +charset_tmp = $(DESTDIR)$(prefix)/libdata/charset.tmp
  
- SUFFIXES = .sed .sin
- 
-@@ -349,7 +349,7 @@
- mostlyclean distclean maintainer-clean
- 
- 
--# The following is needed in order to install a simple file in $(libdir)
-+# The following is needed in order to install a simple file in $(prefix)/libdata
- # which is shared with other installed packages. We use a list of referencing
- # packages so that "make uninstall" will remove the file if and only if it
- # is not used by another installed package.
-@@ -358,7 +358,7 @@
- 
- all-local: charset.alias ref-add.sed ref-del.sed
+@@ -524,3 +524,3 @@
  install-exec-local: all-local
 -	$(mkinstalldirs) $(DESTDIR)$(libdir)
 +	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata
  	if test -f $(charset_alias); then \
- 	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
- 	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \

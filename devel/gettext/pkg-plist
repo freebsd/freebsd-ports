@@ -1,19 +1,39 @@
 bin/gettext
 bin/gettextize
+bin/msgattrib
+bin/msgcat
 bin/msgcmp
 bin/msgcomm
+bin/msgconv
+bin/msgen
+bin/msgexec
+bin/msgfilter
 bin/msgfmt
+bin/msggrep
+bin/msginit
 bin/msgmerge
 bin/msgunfmt
+bin/msguniq
 bin/ngettext
 bin/xgettext
 include/libintl.h
 @unexec install-info --delete %D/info/gettext.info %D/info/dir
 info/gettext.info
 @exec install-info %D/info/gettext.info %D/info/dir
+lib/libgettextlib-0.11.1.so
+lib/libgettextlib.a
+lib/libgettextlib.so
+lib/libgettextsrc-0.11.1.so
+lib/libgettextsrc.a
+lib/libgettextsrc.so
 lib/libintl.a
 lib/libintl.so
-lib/libintl.so.1
+lib/libintl.so.2
+libdata/charset.alias
+libdata/gettext/hostname
+libdata/gettext/project-id
+libdata/gettext/urlget
+libdata/gettext/user-email
 @comment libdata/charset.alias
 share/aclocal/codeset.m4
 share/aclocal/gettext.m4
@@ -21,9 +41,13 @@ share/aclocal/glibc21.m4
 share/aclocal/iconv.m4
 share/aclocal/isc-posix.m4
 share/aclocal/lcmessage.m4
+share/aclocal/lib-ld.m4
+share/aclocal/lib-link.m4
+share/aclocal/lib-prefix.m4
 share/aclocal/progtest.m4
 share/doc/gettext/bind_textdomain_codeset.3.html
 share/doc/gettext/bindtextdomain.3.html
+share/doc/gettext/gettext.1.html
 share/doc/gettext/gettext.3.html
 share/doc/gettext/gettext_1.html
 share/doc/gettext/gettext_10.html
@@ -31,7 +55,15 @@ share/doc/gettext/gettext_11.html
 share/doc/gettext/gettext_12.html
 share/doc/gettext/gettext_13.html
 share/doc/gettext/gettext_14.html
+share/doc/gettext/gettext_15.html
+share/doc/gettext/gettext_16.html
+share/doc/gettext/gettext_17.html
+share/doc/gettext/gettext_18.html
+share/doc/gettext/gettext_19.html
 share/doc/gettext/gettext_2.html
+share/doc/gettext/gettext_20.html
+share/doc/gettext/gettext_21.html
+share/doc/gettext/gettext_22.html
 share/doc/gettext/gettext_3.html
 share/doc/gettext/gettext_4.html
 share/doc/gettext/gettext_5.html
@@ -41,11 +73,29 @@ share/doc/gettext/gettext_8.html
 share/doc/gettext/gettext_9.html
 share/doc/gettext/gettext_foot.html
 share/doc/gettext/gettext_toc.html
+share/doc/gettext/msgattrib.1.html
+share/doc/gettext/msgcat.1.html
+share/doc/gettext/msgcmp.1.html
+share/doc/gettext/msgcomm.1.html
+share/doc/gettext/msgconv.1.html
+share/doc/gettext/msgen.1.html
+share/doc/gettext/msgexec.1.html
+share/doc/gettext/msgfilter.1.html
+share/doc/gettext/msgfmt.1.html
+share/doc/gettext/msggrep.1.html
+share/doc/gettext/msginit.1.html
+share/doc/gettext/msgmerge.1.html
+share/doc/gettext/msgunfmt.1.html
+share/doc/gettext/msguniq.1.html
+share/doc/gettext/ngettext.1.html
 share/doc/gettext/ngettext.3.html
 share/doc/gettext/textdomain.3.html
+share/doc/gettext/xgettext.1.html
 share/emacs/site-lisp/po-mode.el
 share/gettext/ABOUT-NLS
-share/gettext/intl/COPYING.LIB-2
+share/gettext/config.rpath
+share/gettext/gettext.h
+share/gettext/intl/COPYING.LIB-2.0
 share/gettext/intl/COPYING.LIB-2.1
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
@@ -57,28 +107,58 @@ share/gettext/intl/dcigettext.c
 share/gettext/intl/dcngettext.c
 share/gettext/intl/dgettext.c
 share/gettext/intl/dngettext.c
+share/gettext/intl/eval-plural.h
 share/gettext/intl/explodename.c
 share/gettext/intl/finddomain.c
 share/gettext/intl/gettext.c
-share/gettext/intl/gettext.h
 share/gettext/intl/gettextP.h
+share/gettext/intl/gmo.h
 share/gettext/intl/hash-string.h
 share/gettext/intl/intl-compat.c
 share/gettext/intl/l10nflist.c
-share/gettext/intl/libgettext.h
 share/gettext/intl/libgnuintl.h
 share/gettext/intl/loadinfo.h
 share/gettext/intl/loadmsgcat.c
 share/gettext/intl/localcharset.c
 share/gettext/intl/locale.alias
 share/gettext/intl/localealias.c
+share/gettext/intl/localename.c
 share/gettext/intl/ngettext.c
+share/gettext/intl/os2compat.c
+share/gettext/intl/os2compat.h
+share/gettext/intl/osdep.c
+share/gettext/intl/plural-exp.c
+share/gettext/intl/plural-exp.h
 share/gettext/intl/plural.c
 share/gettext/intl/plural.y
 share/gettext/intl/ref-add.sin
 share/gettext/intl/ref-del.sin
 share/gettext/intl/textdomain.c
+share/gettext/msgunfmt.tcl
 share/gettext/po/Makefile.in.in
+share/gettext/po/Makevars
+share/gettext/po/Rules-quot
+share/gettext/po/boldquot.sed
+share/gettext/po/en@boldquot.header
+share/gettext/po/en@quot.header
+share/gettext/po/insert-header.sin
+share/gettext/po/quot.sed
+share/gettext/po/remove-potcdate.sin
+share/gettext/projects/GNOME/team-address
+share/gettext/projects/GNOME/teams.html
+share/gettext/projects/GNOME/teams.url
+share/gettext/projects/GNOME/trigger
+share/gettext/projects/KDE/team-address
+share/gettext/projects/KDE/teams.html
+share/gettext/projects/KDE/teams.url
+share/gettext/projects/KDE/trigger
+share/gettext/projects/TP/team-address
+share/gettext/projects/TP/teams.html
+share/gettext/projects/TP/teams.url
+share/gettext/projects/TP/trigger
+share/gettext/projects/index
+share/gettext/projects/team-address
+share/locale/ca/LC_MESSAGES/gettext.mo
 share/locale/cs/LC_MESSAGES/gettext.mo
 share/locale/da/LC_MESSAGES/gettext.mo
 share/locale/de/LC_MESSAGES/gettext.mo
@@ -101,14 +181,20 @@ share/locale/pl/LC_MESSAGES/gettext.mo
 share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/pt_BR/LC_MESSAGES/gettext.mo
 share/locale/ru/LC_MESSAGES/gettext.mo
+share/locale/sk/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 share/locale/tr/LC_MESSAGES/gettext.mo
 share/locale/zh/LC_MESSAGES/gettext.mo
+@dirrm share/gettext/projects/TP
+@dirrm share/gettext/projects/KDE
+@dirrm share/gettext/projects/GNOME
+@dirrm share/gettext/projects
 @dirrm share/gettext/po
 @dirrm share/gettext/intl
 @dirrm share/gettext
 @dirrm share/doc/gettext
+@dirrm libdata/gettext
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
