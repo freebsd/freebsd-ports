@@ -1,0 +1,6 @@
+lib/perl5/man/man3/DBD::Pg.3.gz
+lib/perl5/site_perl/DBD/Pg.pm
+lib/perl5/site_perl/i386-freebsd/auto/DBD/Pg/Pg.bs
+lib/perl5/site_perl/i386-freebsd/auto/DBD/Pg/Pg.so
+lib/perl5/site_perl/i386-freebsd/auto/DBD/Pg/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/DBD/Pg
