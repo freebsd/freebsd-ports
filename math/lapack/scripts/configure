@@ -1,12 +1,22 @@
+if [ ${OSVERSION} -lt 400012 ]; then
+    LIBG2C=f2c
+else
+    LIBG2C=g2c
+fi
+
 cd $WRKSRC/BLAS/SRC || exit 1
 
 mv Makefile Makefile.old
 
-cat >Makefile <<'END'
+cat >Makefile <<END
 LIB=	blas
 SHLIB_MAJOR=	2
 SHLIB_MINOR=	0
 
+LDADD=	-l${LIBG2C}
+
+END
+cat >>Makefile <<'END'
 SBLAS1=	isamax.f sasum.f saxpy.f scopy.f sdot.f snrm2.f \
 	srot.f srotg.f sscal.f sswap.f
 CBLAS1 = scasum.f scnrm2.f icamax.f caxpy.f ccopy.f \
@@ -49,11 +59,15 @@ END
 cd $WRKSRC/SRC || exit 1
 mv Makefile Makefile.old
 
-cat >Makefile <<'END'
+cat >Makefile <<END
 LIB=	lapack
 SHLIB_MAJOR=	3
 SHLIB_MINOR=	0
- 
+
+LDADD=	-l${LIBG2C}
+
+END
+cat >>Makefile <<'END'
 ALLAUX = ilaenv.f ieeeck.f lsame.f lsamen.f xerbla.f etime_.c
 
 SCLAUX = \

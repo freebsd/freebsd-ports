@@ -206,6 +206,8 @@ MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ENV+=	OSVERSION=${OSVERSION}
+
 pre-fetch:
 	@${ECHO} "You can override FC and FFLAGS on the command line."
 .if !defined(ENABLE_TESTING) || ${ENABLE_TESTING} != "YES"
