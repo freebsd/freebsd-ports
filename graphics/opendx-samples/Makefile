@@ -14,5 +14,6 @@ MASTER_SITES=	http://opendx.npaci.edu/source/
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SHELL=/bin/sh
 
 .include <bsd.port.mk>
