@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.49 1998/09/22 21:59:45 smace Exp $
+# $Id: Makefile,v 1.50 1998/09/22 22:48:42 asami Exp $
 
 DISTNAME=	mutt-0.93.2i
 PKGNAME=	mutt-0.93.2
@@ -52,6 +52,11 @@ MAN1=		mutt.1
 
 post-patch:
 	@touch ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.txt
+.if !defined(NOPORTDOCS)
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-doc-ref
+	@printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
+		ed -s ${WRKSRC}/doc/mutt.man
+.endif
 
 pre-configure:
 	@${MKDIR} ${PREFIX}/share/misc
