@@ -6,6 +6,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Boulder/Medline.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/NCBI.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/WU.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Labbase.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/LocusLink.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Unigene.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Stream.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder/Store.pm
