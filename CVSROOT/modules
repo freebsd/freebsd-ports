@@ -5567,6 +5567,7 @@ mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
 milter-greylist	ports/mail/milter-greylist
+milter-greylist-devel	ports/mail/milter-greylist-devel
 milter-regex	ports/mail/milter-regex
 milter-skem	ports/mail/milter-skem
 milter-spamc	ports/mail/milter-spamc
