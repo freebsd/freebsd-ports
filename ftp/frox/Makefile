@@ -47,32 +47,27 @@ CONFIGURE_ARGS+=	--enable-ipfilter
 .if defined(WITH_VIRUS_SCAN)
 CONFIGURE_ARGS+=	--enable-virus-scan
 .endif
-.if !defined(WITHOUT_HTTP_CACHE)
+.if defined(WITH_HTTP_CACHE)
 CONFIGURE_ARGS+=	--enable-http-cache
 .endif
-.if !defined(WITHOUT_LOCAL_CACHE)
+.if defined(WITH_LOCAL_CACHE)
 CONFIGURE_ARGS+=	--enable-local-cache
 .endif
-.if !defined(WITHOUT_CCP)
+.if defined(WITH_CCP)
 CONFIGURE_ARGS+=	--enable-ccp
 .endif
-.if defined(RUN_AS_ROOT)
+.if defined(WITH_ROOT_RUN)
 CONFIGURE_ARGS+=	--enable-run-as-root
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can use the following build options:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	WITH_IPFILTER=yes	use ipfilter instead of ipfw;"
-	@${ECHO_MSG} "	WITH_VIRUS_SCAN=yes	enable to run external virus scaner on each"
-	@${ECHO_MSG} "				download (experimental);"
-	@${ECHO_MSG} "	WITHOUT_HTTP_CACHE=yes	disable use of external cache;"
-	@${ECHO_MSG} "	WITHOUT_LOCAL_CACHE=yes	disable use of local cache;"
-	@${ECHO_MSG} "	WITHOUT_CCP=yes		disable ftp-proxy style command control programs;"
-	@${ECHO_MSG} "	RUN_AS_ROOT=yes		allow frox running as root for using"
-	@${ECHO_MSG} "				port number <1024 (not recomended)."
-	@${ECHO_MSG} ""
+.include <bsd.port.pre.mk>
+
+OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
+		VIRUS_SCAN "Run external virus scaner on each download" off \
+		HTTP_CACHE "Enable use of external cache" on \
+		LOCAL_CACHE "Enable use of local cache" off \
+		CCP "Ftp-proxy style command control programs" on \
+		ROOT_RUN "Allow frox running as root (not recomended)" off
 
 pre-patch:
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message >${PKGMESSAGE}
@@ -96,4 +91,4 @@ post-install:
 	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/frox.sh ${RC_DIR}/frox${RC_SUFX}; \
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
