@@ -31,12 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libmp4v2.a) || defined(WITH_MPEG4) || defined(WITH_MPEG4IP)
-LIB_DEPENDS+=	mp4.0:${PORTSDIR}/multimedia/mpeg4ip
-.endif
-
 pre-patch: build-depends
 
 post-patch:
@@ -46,4 +40,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
 		${WRKSRC}/aclocal.m4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
