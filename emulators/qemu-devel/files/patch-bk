@@ -1,10 +1,4 @@
 Index: qemu/slirp/bootp.c
-===================================================================
-RCS file: /cvsroot/qemu/qemu/slirp/bootp.c,v
-retrieving revision 1.3
-diff -u -r1.3 bootp.c
---- slirp/bootp.c	4 Jun 2004 15:30:48 -0000	1.3
-+++ slirp/bootp.c	5 Jun 2004 19:34:22 -0000
 @@ -29,11 +29,12 @@
  
  #define START_ADDR 15
@@ -104,13 +98,14 @@ diff -u -r1.3 bootp.c
 +    dhcp_decode(bp->bp_vend, DHCP_OPT_LEN, &dhcp_msg_type,&reqaddr);
 +    dprintf("bootp packet op=%d msgtype=%d reqaddr=%x\n", bp->bp_op, dhcp_msg_type,ntohl(reqaddr.sin_addr.s_addr));
      
-     if (dhcp_msg_type != DHCPDISCOVER && 
-         dhcp_msg_type != DHCPREQUEST)
-@@ -149,19 +182,18 @@
+     if (dhcp_msg_type == 0)
+         dhcp_msg_type = DHCPREQUEST; /* Force reply for old BOOTP clients */
+@@ -152,21 +185,18 @@
      m->m_data += sizeof(struct udpiphdr);
      memset(rbp, 0, sizeof(struct bootp_t));
  
 -    if (dhcp_msg_type == DHCPDISCOVER) {
+-    new_addr:
 -        bc = get_new_addr(&daddr.sin_addr);
 -        if (!bc) {
 -            dprintf("no address left\n");
@@ -120,8 +115,9 @@ diff -u -r1.3 bootp.c
 -    } else {
 -        bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
 -        if (!bc) {
--            dprintf("no address assigned\n");
--            return;
+-            /* if never assigned, behaves as if it was already
+-               assigned (windows fix because it remembers its address) */
+-            goto new_addr;
 -        }
 +    bc=NULL;
 +    daddr.sin_addr.s_addr=htonl(0L);
@@ -138,7 +134,15 @@ diff -u -r1.3 bootp.c
      }
      dprintf("offered addr=%08x\n", ntohl(daddr.sin_addr.s_addr));
  
-@@ -182,18 +214,21 @@
+@@ -181,25 +211,27 @@
+     rbp->bp_hlen = 6;
+     memcpy(rbp->bp_hwaddr, bp->bp_hwaddr, 6);
+ 
+-    rbp->bp_yiaddr = daddr.sin_addr; /* Client IP address */
+-    rbp->bp_siaddr = saddr.sin_addr; /* Server IP address */
++    rbp->bp_yiaddr = daddr.sin_addr; /* IP address */
+ 
+     q = rbp->bp_vend;
      memcpy(q, rfc1533_cookie, 4);
      q += 4;
  
