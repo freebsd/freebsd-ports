@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r9c0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
