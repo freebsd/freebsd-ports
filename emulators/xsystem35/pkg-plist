@@ -1,0 +1,23 @@
+bin/xsystem35
+share/doc/ja/xsystem35/BUGS
+share/doc/ja/xsystem35/FAQ
+share/doc/ja/xsystem35/GRFMT.TXT
+share/doc/ja/xsystem35/INSTALL
+share/doc/ja/xsystem35/README
+share/doc/ja/xsystem35/THANKS
+share/examples/xsystem35/README.TXT
+share/examples/xsystem35/atlach.inf
+share/examples/xsystem35/diabo.inf
+share/examples/xsystem35/instgame
+share/examples/xsystem35/katsumi.inf
+share/examples/xsystem35/kichiku.inf
+share/examples/xsystem35/miko.inf
+share/examples/xsystem35/ningen.inf
+share/examples/xsystem35/oudou.inf
+share/examples/xsystem35/panyo.inf
+share/examples/xsystem35/rance4.inf
+share/examples/xsystem35/toushin2.inf
+share/examples/xsystem35/zero.inf
+lib/X11/app-defaults/XSystem35
+@dirrm share/doc/ja/xsystem35
+@dirrm share/examples/xsystem35

@@ -1,0 +1,12 @@
+-----
+You should use X-tt Server for comfortable play.
+
+If you use over 16bpp mode, you should add following line
+to your kernel configuration file and rebuild kernel.
+	options	SHMMAXPGS=4096
+
+If you have CD-ROM drive, please make symbolic link
+from /dev/cdrom to actual CD-ROM device name.
+For example, type
+	# ln -s /dev/cdrom /dev/cd0c
+-----
