@@ -10,7 +10,7 @@ PORTVERSION=	5.4.0
 PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
-DISTNAME=	w3c-${PKGNAME}
+DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
