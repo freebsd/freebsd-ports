@@ -1,4 +1,4 @@
-%%HLDSDIR%%wizwars/TITLES.TXT
+%%PORTDOCS%%%%HLDSDIR%%wizwars/TITLES.TXT
 %%HLDSDIR%%wizwars/autoexec.cfg
 %%HLDSDIR%%wizwars/buffer.dat
 %%HLDSDIR%%wizwars/cached.wad
@@ -272,39 +272,39 @@
 %%HLDSDIR%%wizwars/sprites/muzzleflash2.spr
 %%HLDSDIR%%wizwars/sprites/muzzleflash3.spr
 %%HLDSDIR%%wizwars/sprites/tornado.spr
-%%HLDSDIR%%wizwars/sprites/weapon_balllightningspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_beanstalkspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_bearbite.txt
-%%HLDSDIR%%wizwars/sprites/weapon_bearclaw.txt
-%%HLDSDIR%%wizwars/sprites/weapon_birdspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_cometspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_deathrayspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_doublemagicmisslespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_fireballspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_flamelickspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_forcespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_giantplantspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_icepokespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_levitationspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_lightningboltspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_lightningcloudspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_magicmisslespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_meteorspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_mindmisslespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_rollingstonespell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_skeletonspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_skullspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_spiritwizspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_spotboltspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_staff.txt
-%%HLDSDIR%%wizwars/sprites/weapon_thornblastspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_tornadospell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_whirlwindspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_whiterayspell.txt
-%%HLDSDIR%%wizwars/sprites/weapon_wombatspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_balllightningspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_beanstalkspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_bearbite.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_bearclaw.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_birdspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_cometspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_deathrayspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_doublemagicmisslespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_fireballspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_flamelickspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_forcespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_giantplantspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_icepokespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_levitationspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_lightningboltspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_lightningcloudspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_magicmisslespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_meteorspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_mindmisslespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_rollingstonespell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_skeletonspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_skullspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_spiritwizspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_spotboltspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_staff.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_thornblastspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_tornadospell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_whirlwindspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_whiterayspell.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_wombatspell.txt
 %%HLDSDIR%%wizwars/sprites/yuck.spr
 %%HLDSDIR%%wizwars/user.scr
-%%HLDSDIR%%wizwars/wizwars.ico
+%%PORTDOCS%%%%HLDSDIR%%wizwars/wizwars.ico
 %%HLDSDIR%%wizwars/wwwad.wad
 @dirrm %%HLDSDIR%%wizwars/sprites
 @dirrm %%HLDSDIR%%wizwars/sound/wombat
@@ -337,4 +337,6 @@
 @dirrm %%HLDSDIR%%wizwars/events
 @dirrm %%HLDSDIR%%wizwars/dlls
 @dirrm %%HLDSDIR%%wizwars/cl_dlls
-@dirrm %%HLDSDIR%%wizwars
+@unexec rmdir %D/%%HLDSDIR%%wizwars/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%wizwars/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%wizwars 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%wizwars`` to remove any configuration files and logs left." | fmt
