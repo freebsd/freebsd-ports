@@ -79,6 +79,8 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_QPOPAUTH_SETUID=yes  does not install qpopauth setuid to pop user"
 	@${ECHO_MSG} "WITH_SAMPLE_POPUSERS_FILE=yes	builds a default (otherwise,"
 	@${ECHO_MSG} "				use an empty file) reject file"
+	@${ECHO_MSG} "WITH_SHY_ENABLED=yes      enables shy mode, don't present"
+	@${ECHO_MSG} "                          qpopper version number in POP3 session"
 	@${ECHO_MSG} "WITH_STANDALONE_MODE=yes  builds qpopper to be run without inetd"
 	@${ECHO_MSG} "WITHOUT_U_OPTION=yes      forbids daemon command line option"
 	@${ECHO_MSG} "                 -u which allows, after a user authenticates,"
@@ -130,6 +132,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c \
 EPOPPASSD=	""
 .else
 EPOPPASSD=	"@comment "
+.endif
+
+# If WITH_SHY_ENABLED variable present,  qpopper does not present
+# its version number within the POP3 session
+.if defined(WITH_SHY_ENABLED)
+CONFIGURE_ARGS+=	--enable-shy
 .endif
 
 # If WITH STANDALONE_MODE variable present qpopper is built so it runs
