@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.gentleware.org/
+MASTER_SITES=	ftp://ftp.gentleware.org/ \
+		http://download.gentleware.org/ \
+		ftp://download.gentleware.biz/ \
+		http://download.gentleware.biz/ \
+		ftp://ftp.beine-computer.de/pub/distfiles/
 DISTNAME=	${PORTNAME}${EDI}-${PORTVERSION}
 
 MAINTAINER=	tux@pinguru.net
@@ -16,7 +20,7 @@ COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.3+
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"Redistribution is not permitted"
@@ -31,12 +35,20 @@ EDI=	${edition}
 .if !defined(EDI)
 EDI=	CE
 .endif
-PKGLIST=	pkg-plist.${EDI}
-.if (${EDI} != PE)
-POSEIDON_PATCH=	${PORTNAME}${EDI}.sh.patch
-.endif
 
-PLIST:=		${WRKSRC}/PLIST
+DATAFILES=	LICENSE.txt lib
+.if defined(POSEIDON_PE)
+DATAFILES+=	LICENSE-concurrent.txt
+.endif
+.if !defined(POSEIDON_SE) && !defined(POSEIDON_PE)
+DATAFILES+=	license-keys.txt
+.endif
+PLIST_FILES=	bin/poseidon %%DATADIR%%/bin/poseidon.sh
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+PLIST_FILES+=	%%DATADIR%%/docs %%DATADIR%%/examples
+.endif
 
 pre-fetch:
 	@${ECHO_MSG}
@@ -49,37 +61,40 @@ pre-fetch:
 	@${ECHO_MSG}
 
 post-patch:
-.if(defined(POSEIDON_PATCH))
-	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/${POSEIDON_PATCH}
-.endif
 	@${REINPLACE_CMD} -e "s,%%JAVA_HOME%%,${JAVA_HOME}," ${WRKSRC}/bin/poseidon.sh
 
-pre-install:
-	@${CAT} ${PKGLIST} ${PKGDIR}/pkg-plist > ${PLIST}
-
 do-install:
-	@${MKDIR} ${DATADIR}/bin
-	@${MKDIR} ${DATADIR}/lib
-.if(defined(POSEIDON_PE))
-	@${MKDIR} ${DATADIR}/lib/templates
-.endif
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/poseidon.sh ${DATADIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${DATADIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DATADIR}
-.if(defined(POSEIDON_PE))
-	${INSTALL_DATA} ${WRKSRC}/LICENSE-concurrent.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/templates/* ${DATADIR}/lib/templates
-	${INSTALL_DATA} ${WRKSRC}/lib/templates.zip ${DATADIR}/lib
-.endif
-.if(!defined(POSEIDON_SE) && !defined(POSEIDON_PE))
-	${INSTALL_DATA} ${WRKSRC}/license-keys.txt ${DATADIR}
-.endif
+	${MKDIR} ${DATADIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/poseidon.sh ${DATADIR}/bin/
+	${LN} -s ${DATADIR}/bin/poseidon.sh ${PREFIX}/bin/poseidon
+	cd ${WRKSRC}/ \
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 .if !defined(NOPORTDOCS)
-	${CP} -r ${WRKSRC}/docs ${DATADIR}
-	${CP} -r ${WRKSRC}/examples ${DATADIR}
+	${MKDIR} ${DOCSDIR}
+	${LN} -s ${DOCSDIR} ${DATADIR}/docs
+	cd ${WRKSRC}/docs/ \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	${MKDIR} ${EXAMPLESDIR}
+	${LN} -s ${EXAMPLESDIR} ${DATADIR}/examples
+	cd ${WRKSRC}/examples/ \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 .endif
 
 post-install:
-	${LN} -s ${DATADIR}/bin/poseidon.sh ${LOCALBASE}/bin/poseidon
+	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d \
+	  | ${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d \
+	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}/bin" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${FIND} -s ${WRKSRC}/examples -not -type d \
+	  | ${SED} -ne 's,^${WRKSRC}/examples,${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC}/examples -type d \
+	  | ${SED} -ne 's,^${WRKSRC}/examples,@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>

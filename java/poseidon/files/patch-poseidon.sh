@@ -1,23 +1,24 @@
---- bin/poseidon.sh.orig	Wed Mar 10 12:58:56 2004
-+++ bin/poseidon.sh	Fri Apr  9 00:12:53 2004
-@@ -1,4 +1,7 @@
+$FreeBSD$
+
+--- bin/poseidon.sh.orig	Fri Sep 24 11:55:20 2004
++++ bin/poseidon.sh	Mon Nov 22 00:58:46 2004
+@@ -1,4 +1,9 @@
 -#!/bin/bash
 +#!/bin/sh
 +
-+JAVA_HOME=%%JAVA_HOME%%
-+POSEIDONPE_HOME=$HOME/.poseidon
++JAVA_HOME="/usr/local/jdk1.4.2"
++POSEIDONCE_HOME="$HOME/.poseidon"
++POSEIDONSE_HOME="$HOME/.poseidon"
++POSEIDONPE_HOME="$HOME/.poseidon"
  
- RealPath() {
- 	cmd=`basename $0`
-@@ -10,9 +13,9 @@
- 
-         	cd `dirname $link`
- 	done
--								        
-+
- 	echo `pwd -P`/$cmd
--}										
-+}
- 
- if [ -z "$JAVA_HOME" ] ; then
-     echo "Could not find a JDK."
+ resolvePath() {
+ 	cmd=`basename "${1}"`
+@@ -29,7 +34,7 @@
+ cmd=`resolvePath "$0"`
+ echo "Absolute path: $cmd"
+ instdir=`dirname "$cmd"`
+-if [[ ! (-z "$1")]] ; then
++if [ -n "$1" ] ; then
+     project=`resolvePath "$1"`
+     echo "Project to load: $project"
+     loglevel=$2

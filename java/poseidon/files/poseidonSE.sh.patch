@@ -1,9 +1,0 @@
---- bin/poseidon.sh.orig	Sun Jul 11 19:47:49 2004
-+++ bin/poseidon.sh	Sun Jul 11 19:47:56 2004
-@@ -41,5 +41,5 @@
- 
- export CLASSPATH
- 
--"$JAVACMD" -Xms64m -Xmx160m -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.PE="$POSEIDONPE_HOME" com.gentleware.poseidon.Poseidon $project
-+"$JAVACMD" -Xms64m -Xmx160m -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.SE="$POSEIDONPE_HOME" com.gentleware.poseidon.Poseidon $project
- 
