@@ -18,13 +18,13 @@ lib/libbonobomm-2.0/proc/m4/corbamethod.m4
 lib/libbonobomm-2.0/include/libbonobommconfig.h
 lib/libbonobomm_generated_skels-1.3.a
 lib/libbonobomm_generated_skels-1.3.so
-lib/libbonobomm_generated_skels-1.3.so.7
+lib/libbonobomm_generated_skels-1.3.so.8
 lib/libbonobomm_generated_stubs-1.3.a
 lib/libbonobomm_generated_stubs-1.3.so
-lib/libbonobomm_generated_stubs-1.3.so.7
+lib/libbonobomm_generated_stubs-1.3.so.8
 lib/libbonobomm_servers-1.3.a
 lib/libbonobomm_servers-1.3.so
-lib/libbonobomm_servers-1.3.so.7
+lib/libbonobomm_servers-1.3.so.8
 libdata/pkgconfig/libbonobomm-2.0.pc
 @dirrm lib/libbonobomm-2.0/include
 @dirrm lib/libbonobomm-2.0/proc/m4
