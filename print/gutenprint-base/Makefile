@@ -33,13 +33,14 @@ INFO=	gimpprint
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if defined(WITHOUT_CUPS)
-PLIST_SUB+=	CUPS="@comment "
-.else
+.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX}
 PLIST_SUB+=	CUPS=""
+.else
+PLIST_SUB+=	CUPS="@comment "
+CONFIGURE_ARGS+=	--without-cups
 .endif
 
 .if defined(WITHOUT_IJS)
