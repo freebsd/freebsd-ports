@@ -1,11 +1,28 @@
---- ispell-da-1.4.22/Makefile.orig	Tue Jan  2 10:47:45 2001
-+++ ispell-da-1.4.22/Makefile	Wed Jan 10 09:10:51 2001
-@@ -7,7 +7,7 @@
- 	install -o root -g root -m 0644 dansk.aff $(installdir)
+--- ispell-da-1.4.43/Makefile.orig	Mon Sep 20 09:30:48 2004
++++ ispell-da-1.4.43/Makefile	Wed Oct 20 22:08:19 2004
+@@ -9,13 +9,13 @@
+ lang = da
+ version = 1.4.43
  
- dansk.hash: dansk.aff words-da.ispell
--	buildhash words-da.ispell dansk.aff dansk.hash
-+	${BUILDHASH} words-da.ispell dansk.aff dansk.hash
+-installdir=`ispell -vv | grep LIBDIR | cut -d'"' -f2`
++installdir=`${ISPELL} -vv | grep LIBDIR | cut -d'"' -f2`
+ 
+ all: maskbits $(sprog).hash
+ 
+ maskbits:
+-	@test "`ispell -vv | grep MASKBITS`" != ""              || ( echo Ispell should be compiled with MASKBITS set to at least 64. ; exit -2 )
+-	@test `ispell -vv | grep MASKBITS | cut -d= -f2` -ge 64 || ( echo Ispell should be compiled with MASKBITS set to at least 64. ; exit -3 )
++	@test "`${ISPELL} -vv | grep MASKBITS`" != ""              || ( echo Ispell should be compiled with MASKBITS set to at least 64. ; exit -2 )
++	@test `${ISPELL} -vv | grep MASKBITS | cut -d= -f2` -ge 64 || ( echo Ispell should be compiled with MASKBITS set to at least 64. ; exit -3 )
+ 
+ install: maskbits $(sprog).hash $(sprog).aff
+ 	install -o root -g root -m 0644 $(sprog).hash $(installdir)
+@@ -26,7 +26,7 @@
+ 	ln -fs $(installdir)/$(sprog).aff  $(installdir)/$(sprog_en_lower_case).aff
+ 
+ $(sprog).hash: maskbits $(sprog).aff words-$(sprogkode).ispell
+-	buildhash words-$(sprogkode).ispell $(sprog).aff $(sprog).hash
++	${BUILDHASH} words-$(sprogkode).ispell $(sprog).aff $(sprog).hash
  
  clean:
- 	rm -f words-da.ispell.stat dansk.hash words-da.ispell.cnt *~
+ 	rm -f words-$(sprogkode).ispell.stat $(sprog).hash words-$(sprogkode).ispell.cnt *~

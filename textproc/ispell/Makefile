@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -36,6 +36,7 @@ BUILDHASH=	${WRKSRC}/buildhash
 UNSQ?=		${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/bin/unsq.pl
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
+ISPELL=		${WRKSRC}/ispell
 
 .if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL)) && !defined(ISPELL_BG)
 pre-everything::
@@ -116,7 +117,7 @@ EXTRA_DICT+=	${NLDISTFILE}
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
-DADISTFILE=	ispell-da-1.4.22.tar.gz
+DADISTFILE=	ispell-da-1.4.43.tar.gz
 MASTER_SITES+=	http://da.speling.org/filer/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asmodai
@@ -270,7 +271,7 @@ post-build:
 .endif
 .if defined(ISPELL_DA)
 	@cd ${WRKDIR}/${DADISTFILE:S=.tar.gz==} && \
-		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
+		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} ISPELL=${ISPELL} all
 .endif
 .if defined(ISPELL_AF)
 	@cd ${WRKDIR}/${AFDISTFILE:S=.tar.gz==} && \
