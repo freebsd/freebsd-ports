@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+cp radius.h radius.h.old
+sed -e "s:@@PREFIX@@:$PREFIX:g" < radius.h.old > radius.h

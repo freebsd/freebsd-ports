@@ -1,0 +1,96 @@
+--- users.c.orig	Thu Sep 19 20:04:29 1996
++++ users.c	Mon Sep 23 21:44:51 1996
+@@ -30,6 +30,10 @@
+ static char sccsid[] =
+ "@(#)users.c	1.12 Copyright 1992 Livingston Enterprises Inc";
+ 
++#if defined(_HAVE_PARAM_H)
++#include	<sys/param.h>
++#endif
++
+ #include	<sys/types.h>
+ #include	<sys/socket.h>
+ #include	<sys/time.h>
+@@ -48,18 +52,30 @@
+ #	if defined(SOLARIS)
+ #		include	</usr/ucbinclude/dbm.h>
+ #	else
++#	if defined(USE_NDBM)
++#		include <ndbm.h>
++#	else
+ #		include	<dbm.h>
++#	endif
+ #	endif	/* SOLARIS */
+ #endif /* DBM_MODE */
+ 
+ #include	"radius.h"
+ #include	"protos.h"
+ 
++#if (defined(BSD) && (BSD>=199306))
++#include	<fcntl.h>
++#endif
++
+ extern char		*progname;
+ extern int		debug_flag;
+ extern char		*radius_dir;
+ extern char		*radius_users;
+ 
++#if (defined(DBM_MODE) && defined(USE_NDBM))
++DBM			*dbp;
++#endif
++
+ static int parse_record P__((char *name, char *linep,
+ 	VALUE_PAIR **check_first, VALUE_PAIR **reply_first));
+ extern int user_read P__((FILE **userfd, char *name, char *content));
+@@ -97,7 +113,15 @@
+ {
+ #if defined(DBM_MODE)
+ 	(void)userfd;
++#if defined(USE_NDBM)
++	if(!(dbp=dbm_open(infoname, O_RDONLY, NULL))) {
++		return(-1);
++	} else {
++		return(0);
++	}
++#else
+ 	return dbminit(infoname);
++#endif
+ #else
+ 	*userfd = fopen(infoname, "r");
+ 	return *userfd == (FILE *)NULL;
+@@ -120,7 +144,11 @@
+ {
+ #if defined(DBM_MODE)
+ 	(void)userfd;
++#if defined(USE_NDBM)
++	dbm_close(dbp);
++#else
+ 	dbmclose();
++#endif
+ #else
+ 	fclose(userfd);
+ #endif
+@@ -210,7 +238,11 @@
+ #ifdef DBM_MODE
+ 	named.dptr = name;
+ 	named.dsize = strlen(name)+1;
++#if defined(USE_NDBM)
++	contentd = dbm_fetch(dbp,named);
++#else
+ 	contentd = fetch(named);
++#endif
+ 	if(contentd.dsize != 0) {	/* name found */
+ 		*user_data = contentd.dptr;
+ 		userinfo_close(userfd);
+@@ -219,7 +251,11 @@
+ 
+ 	named.dptr = "DEFAULT";
+ 	named.dsize = sizeof("DEFAULT");
++#if defined(USE_NDBM)
++	contentd = dbm_fetch(dbp,named);
++#else
+ 	contentd = fetch(named);
++#endif
+ 	if(contentd.dsize != 0) {	/* DEFAULT found */
+ 		*user_data = contentd.dptr;
+ 		userinfo_close(userfd);

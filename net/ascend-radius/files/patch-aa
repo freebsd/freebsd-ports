@@ -1,0 +1,45 @@
+--- Makefile.orig	Thu Sep 19 20:20:38 1996
++++ Makefile	Mon Sep 23 21:37:19 1996
+@@ -108,8 +108,8 @@
+ # Pick your compiler
+ #
+ #CC=	gcc -ansi -Wall	# set the GCC compiler to ANSI mode and picky
+-CC=	gcc -ansi	# set the GCC compiler to ANSI mode
+-#CC=	gcc		# set the GCC compiler for BSDI and friends
++#CC=	gcc -ansi	# set the GCC compiler to ANSI mode
++CC=	gcc		# set the GCC compiler for BSDI and friends
+ #CC=	cc -Xc -v -fd	# set the SUN compiler to full-whine ANSI mode
+ #CC=	cc -Xc -v	# set the SUN compiler to partial-whine ANSI mode
+ #CC=	cc -Xc		# set the SUN compiler to ANSI mode
+@@ -129,13 +129,15 @@
+ #	use this for BSDI
+ #CFLAGS= -O -DNOSHADOW -DBSDI -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
+ #	use this for SunOS
+-CFLAGS= -O -DNOSHADOW -DOSUN -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
++#CFLAGS= -O -DNOSHADOW -DOSUN -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
+ #	use this for Solaris 2.1 - 2.4
+ #CFLAGS= -O -Dsys5 -DSOLARIS -D_SVID_GETTOD -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
+ #	use this for Solaris 2.5
+ #CFLAGS= -O -Dsys5 -DSOLARIS -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
+ #	use this for Linux
+ #CFLAGS= -O -Dsys5 -DNOSHADOW -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
++#	use this for FreeBSD
++CFLAGS= -O -DNOSHADOW -D_HAVE_PARAM_H -DUSE_NDBM -DBINARY_FILTERS -DASCEND_SECRET -DASCEND_LOGOUT $(AUTH_SERVERS)
+ 
+ # Pick any load options and the load libraries.  The AUTH_LIBS
+ # are selected above
+@@ -145,11 +147,12 @@
+ # See above for the things you may need to add here
+ #
+ #LIBS= $(AUTH_LIBS)			# use this for Linux, BSDI and friends
+-LIBS= -lnsl $(AUTH_LIBS)		# use this for SunOS
++LIBS= $(AUTH_LIBS) -lcrypt		# use this for FreeBSD
++#LIBS= -lnsl $(AUTH_LIBS)		# use this for SunOS
+ #LIBS= -lnsl -lsocket $(AUTH_LIBS)	# use this for Solaris 2.x
+ 
+ #       use this for SunOs. Linux, BSDI
+-DBMLIBS= -ldbm
++DBMLIBS=
+ #       use this for Solaris
+ #DBMLIBS=
+ 

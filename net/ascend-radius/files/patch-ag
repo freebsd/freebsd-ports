@@ -1,0 +1,103 @@
+--- builddbm.c.orig	Wed May 22 20:30:36 1996
++++ builddbm.c	Mon Sep 23 21:48:02 1996
+@@ -30,6 +30,10 @@
+ static char sccsid[] =
+ "@(#)builddbm.c	1.4 Copyright 1992 Livingston Enterprises Inc";
+ 
++#if defined(_HAVE_PARAM_H)
++#include	<sys/param.h>
++#endif
++
+ #if defined(SOLARIS)
+ #       include <sys/uio.h>
+ #       include <unistd.h>
+@@ -37,7 +41,11 @@
+ #       include <fcntl.h>
+ #       include </usr/ucbinclude/dbm.h>
+ #else
++#if defined(USE_NDBM)
++#	include <ndbm.h>
++#else
+ #       include <dbm.h>
++#endif
+ #endif  /* SOLARIS */
+ 
+ #include	<sys/types.h>
+@@ -59,8 +67,13 @@
+ char		*progname;
+ char		*radius_dir;
+ char		*radius_users;
++#if defined(USE_NDBM)
++char		dbfile[256];
++DBM		*dbp;
++#else
+ char		pagfile[256];
+ char		dirfile[256];
++#endif
+ char		dbmname[256];
+ FILE		*userfd;
+ FILE		*errf;
+@@ -124,6 +137,20 @@
+ 		}
+ 	}
+ 
++#if defined(USE_NDBM)
++	sprintf(dbfile, "%s/%s.db", radius_dir, radius_users);
++	if((fd = open(dbfile, O_WRONLY | O_CREAT | O_TRUNC, 0600)) < 0) {
++		fprintf(errf, "%s: Couldn't open %s for writing\n",
++			progname, dbfile);
++		exit(-1);
++	}
++	close(fd);
++	sprintf(dbmname, "%s/%s", radius_dir, radius_users);
++	if(!(dbp=dbm_open(dbmname, O_RDWR | O_CREAT | O_TRUNC, 0600))) {
++		fprintf(errf, "%s: Couldn't dbm_open(%s)\n",
++			progname, dbmname);
++	}
++#else
+ 	sprintf(pagfile, "%s/%s.pag", radius_dir, radius_users);
+ 	if((fd = open(pagfile, O_WRONLY | O_CREAT | O_TRUNC, 0600)) < 0) {
+ 		fprintf(errf, "%s: Couldn't open %s for writing\n",
+@@ -143,7 +170,7 @@
+ 		fprintf(errf, "%s: Couldn't dbminit(%s)\n", progname, dbmname);
+ 		exit(-1);
+ 	}
+-
++#endif
+ 	userfd = (FILE *)NULL;
+ 	curParseLine = 0;
+ 	while(user_read(&userfd, name, content) == 0) {
+@@ -153,7 +180,11 @@
+ 		}
+ 		named.dptr = name;
+ 		named.dsize = strlen(name)+1;
++#if defined(USE_NDBM)
++		contentd = dbm_fetch(dbp,named);
++#else
+ 		contentd = fetch(named);
++#endif
+ 		if(contentd.dsize != 0) {	/* name found */
+ 			warn("Skipping duplicate record\n\tfor user '%s'", name);
+ 			continue;
+@@ -162,13 +193,21 @@
+ 		named.dsize = strlen(name)+1;
+ 		contentd.dptr = content;
+ 		contentd.dsize = strlen(content)+1;
++#if defined(USE_NDBM)
++		if(dbm_store(dbp, named, contentd, DBM_INSERT) < 0) {
++#else
+ 		if(store(named, contentd) != 0) {
++#endif
+ 			fprintf(errf, "%s: Couldn't store datum for %s\n",
+ 				progname, name);
+ 			exit(-1);
+ 		}
+ 	}
++#if defined(USE_NDBM)
++	dbm_close(dbp);
++#else
+ 	dbmclose();
++#endif
+ 	exit(0);
+ }
+ 
