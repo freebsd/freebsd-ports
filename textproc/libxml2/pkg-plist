@@ -5,6 +5,7 @@ include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
 include/libxml2/libxml/HTMLtree.h
 include/libxml2/libxml/SAX.h
+include/libxml2/libxml/catalog.h
 include/libxml2/libxml/debugXML.h
 include/libxml2/libxml/encoding.h
 include/libxml2/libxml/entities.h
@@ -36,7 +37,9 @@ share/doc/libxml2/html/FAQ.html
 share/doc/libxml2/html/book1.html
 share/doc/libxml2/html/encoding.html
 share/doc/libxml2/html/index.sgml
+share/doc/libxml2/html/libxml-catalog.html
 share/doc/libxml2/html/libxml-debugxml.html
+share/doc/libxml2/html/libxml-docbparser.html
 share/doc/libxml2/html/libxml-encoding.html
 share/doc/libxml2/html/libxml-entities.html
 share/doc/libxml2/html/libxml-htmlparser.html
@@ -52,6 +55,7 @@ share/doc/libxml2/html/libxml-tree.html
 share/doc/libxml2/html/libxml-uri.html
 share/doc/libxml2/html/libxml-valid.html
 share/doc/libxml2/html/libxml-xinclude.html
+share/doc/libxml2/html/libxml-xmlerror.html
 share/doc/libxml2/html/libxml-xmlio.html
 share/doc/libxml2/html/libxml-xmlmemory.html
 share/doc/libxml2/html/libxml-xpath.html
