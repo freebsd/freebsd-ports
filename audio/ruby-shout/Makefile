@@ -19,14 +19,18 @@ COMMENT=	A Ruby binding to the libshout library
 
 LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2
 
-BROKEN=		Does not compile
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
 DOCS=		README	doc
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 500000
+BROKEN=		Does not compile
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -38,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
