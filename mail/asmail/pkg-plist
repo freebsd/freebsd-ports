@@ -1,6 +1,4 @@
 bin/asmail
-man/man1/asmail.1.gz
-share/doc/asmail/sample.asmailrc
 include/X11/pixmaps/e-no.xpm
 include/X11/pixmaps/e0.xpm
 include/X11/pixmaps/e1.xpm
@@ -33,4 +31,5 @@ include/X11/pixmaps/nomail.xpm
 include/X11/pixmaps/nomail_s.xpm
 include/X11/pixmaps/oldmail.xpm
 include/X11/pixmaps/oldmail_s.xpm
+share/doc/asmail/sample.asmailrc
 @dirrm share/doc/asmail
