@@ -31,4 +31,6 @@ share/doc/yatex/yatexgen.doc
 share/doc/yatex/yatexj.tex
 share/doc/yatex/yatexref.eng
 @dirrm share/mule/site-lisp/yatex
+@unexec rmdir %D/share/mule/site-lisp 2>/dev/null || true
+@unexec rmdir %D/share/mule 2>/dev/null || true
 @dirrm share/doc/yatex
