@@ -18,13 +18,13 @@ COMMENT=	Yet Another X* Implementation for OCaml
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ulex \
-		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/camomile
+		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
+		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/ocaml-camomile
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ulex \
-		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/camomile
+		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
+		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/ocaml-camomile
 
 OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 USE_GMAKE=	yes
