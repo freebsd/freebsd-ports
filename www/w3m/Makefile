@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	w3m
-PORTVERSION=	0.1.11.p
+PORTVERSION=	${W3M_VERSION}.p.${W3M_PATCHLEVEL}
 CATEGORIES+=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
+		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/dev/ \
 		ftp://ftp.firedrake.org/w3m/dev/ \
+		ftp://ftp.umlauf.de/pub/w3m/dev/ \
 		http://www.instinct.org/w3m/dev/ \
 		http://grilli.net/mirrors/w3m/download/dev/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
+DISTNAME=	${PORTNAME}-${W3M_VERSION}-pre
+
+PATCH_SITES=	http://www4.ocn.ne.jp/~okabek/
+PATCHFILES=	${PORTNAME}-${W3M_VERSION}-pre-kokb${W3M_PATCHLEVEL}.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
+W3M_VERSION=	0.1.11
+W3M_PATCHLEVEL=	17
+
 MAN1=		w3m.1
 MANLANG=	""
-CFLAGS=		-pipe
+CFLAGS+=	-pipe
 
-TARGET=		${WRKSRC}/config.h
+CONFIG_H=	${WRKSRC}/config.h
 DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func STORY.html keymap.default \
 		keymap.lynx menu.default menu.submenu
@@ -55,8 +64,8 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .endif
 
 post-configure:
-	@${CP} ${TARGET} ${TARGET}.in
-	@${SED} ${SED_CMD} < ${TARGET}.in > ${TARGET}
+	@${CP} ${CONFIG_H} ${CONFIG_H}.in
+	@${SED} ${SED_CMD} < ${CONFIG_H}.in > ${CONFIG_H}
 	@${SED} -e "s,@PERL@,${PERL},g" \
 		-e "s,@CYGWIN@,0,g" \
 		< ${WRKSRC}/scripts/dirlist.in > ${WRKSRC}/scripts/dirlist.cgi
