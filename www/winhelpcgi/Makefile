@@ -11,7 +11,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://www.herdsoft.com/ftp/
 DISTNAME=	${PORTNAME}_1.0rc3-1
 
-MAINTAINER=	endx7@users.sf.net
+MAINTAINER=	robin.schoonover@gmail.google.com
 COMMENT=	A winhelp converter cgi program
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
