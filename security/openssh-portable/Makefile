@@ -74,12 +74,6 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PKGNAMESUFFIX=	-gssapi
-GSSAPI_PATCH=	${PORTNAME}-3.6.1p2-gssapi-20030430.diff
-GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
-MASTER_SITES+=	${GSSAPI_SITE}
-DISTFILES=	${EXTRACT_ONLY} ${GSSAPI_PATCH}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-EXTRA_PATCHES+=		${FILESDIR}/servconf.c.patch
 BUILD_DEPENDS+=		autoreconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
