@@ -1,15 +1,18 @@
---- libart_lgpl/Makefile.in.orig	Wed Apr 28 02:57:51 1999
-+++ libart_lgpl/Makefile.in	Fri Apr 30 00:19:41 1999
-@@ -94,7 +94,7 @@
- libart_lgpl_la_SOURCES =  	art_affine.c 	art_alphagamma.c 	art_bpath.c 	art_gray_svp.c 	art_misc.c 	art_pixbuf.c 	art_rect.c 	art_rect_svp.c 	art_rect_uta.c 	art_rgb.c 	art_rgb_affine.c 	art_rgb_affine_private.c 	art_rgb_affine_private.h 	art_rgb_bitmap_affine.c 	art_rgb_pixbuf_affine.c 	art_rgb_rgba_affine.c 	art_rgb_svp.c 	art_svp.c 	art_svp_ops.c 	art_svp_render_aa.c 	art_svp_vpath.c 	art_svp_vpath_stroke.c 	art_svp_wind.c 	art_svp_wind.h 	art_uta.c 	art_uta_ops.c 	art_uta_rect.c 	art_uta_vpath.c 	art_uta_svp.c 	art_vpath.c 	art_vpath_bpath.c 	art_vpath_svp.c
+
+$FreeBSD$
+
+--- libart_lgpl/Makefile.in.orig	Wed Aug 22 16:07:43 2001
++++ libart_lgpl/Makefile.in	Wed Aug 22 16:11:07 2001
+@@ -100,7 +100,7 @@
+ libart_lgpl_la_SOURCES =  	art_affine.c 	art_alphagamma.c 	art_bpath.c 	art_gray_svp.c 	art_misc.c 	art_pixbuf.c 	art_rect.c 	art_rect_svp.c 	art_rect_uta.c 	art_rgb.c 	art_rgb_affine.c 	art_rgb_affine_private.c 	art_rgb_affine_private.h 	art_rgb_bitmap_affine.c 	art_rgb_pixbuf_affine.c 	art_rgb_rgba_affine.c 	art_rgb_svp.c 	art_svp.c 	art_svp_ops.c 	art_svp_point.c 	art_svp_render_aa.c 	art_svp_vpath.c 	art_svp_vpath_stroke.c 	art_svp_wind.c 	art_uta.c 	art_uta_ops.c 	art_uta_rect.c 	art_uta_vpath.c 	art_uta_svp.c 	art_vpath.c 	art_vpath_bpath.c 	art_vpath_dash.c 	art_vpath_svp.c		libart-features.c
  
  
 -libart_lgpl_la_LDFLAGS = -version-info @LIBART_VERSION_INFO@
 +libart_lgpl_la_LDFLAGS = -version-info 5:0:0
+ libart_lgpl_la_LIBADD = -lm
  
  libart_lgplincdir = $(includedir)/libart_lgpl
- libart_lgplinc_HEADERS =  	art_affine.h 	art_alphagamma.h 	art_bpath.h 	art_filterlevel.h 	art_gray_svp.h 	art_misc.h 	art_pathcode.h 	art_pixbuf.h 	art_point.h 	art_rect.h 	art_rect_svp.h 	art_rect_uta.h 	art_rgb.h 	art_rgb_affine.h 	art_rgb_bitmap_affine.h 	art_rgb_pixbuf_affine.h 	art_rgb_rgba_affine.h 	art_rgb_svp.h 	art_svp.h 	art_svp_ops.h 	art_svp_render_aa.h 	art_svp_vpath.h 	art_svp_vpath_stroke.h 	art_uta.h 	art_uta_ops.h 	art_uta_rect.h 	art_uta_vpath.h 	art_uta_svp.h 	art_vpath.h 	art_vpath_bpath.h 	art_vpath_svp.h
-@@ -115,10 +115,10 @@
+@@ -122,10 +122,10 @@
  testuta_DEPENDENCIES = $(DEPS)
  testuta_LDADD = $(LDADDS) -lm
  
@@ -22,12 +25,12 @@
  confexec_DATA = libartConf.sh
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/../mkinstalldirs
-@@ -569,7 +569,7 @@
+@@ -656,7 +656,7 @@
  		uninstall-confexecDATA uninstall-m4dataDATA \
  		uninstall-libart_lgplincHEADERS
- uninstall: uninstall-am
+ uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
  		$(HEADERS) config.h
- all-redirect: all-am
+ all-redirect: all-recursive-am
  install-strip:
