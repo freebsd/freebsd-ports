@@ -7,6 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.3
+PORTREVISION?=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -31,10 +32,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		ORBit-2.0:${PORTSDIR}/devel/ORBit2
+USE_GNOME=	gtk20 libidl
 .else
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 orbit
 .endif
 
@@ -75,6 +74,10 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--enable-crypto			\
 		--disable-debug			\
+		--disable-gtktest		\
+		--disable-freetypetest		\
+		--disable-installer		\
+		--disable-glibtest		\
 		--enable-double-buffer		\
 		--enable-mathml			\
 		--disable-md			\
@@ -153,11 +156,13 @@ CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
 .if !defined(WITHOUT_OPTIMIZE) && ${ARCH} != "alpha"
-CFLAGS+=	-O2
+CFLAGS+=		-O2
+CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 .if ${ARCH} == "alpha"
 CFLAGS+=	-O0
+CONFIGURE_ARGS+=	--disable-optimize
 BROKEN=	"core dumps on alpha during post-build"
 .endif
 
