@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -15,6 +15,9 @@ MAINTAINER=	chris@shagged.org
 # mysql authentication
 .if !defined(WITHOUT_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.endif
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 .endif
 
 # perl authentication
@@ -32,6 +35,9 @@ CONFIGURE_ARGS+=	--enable-auth-mysql --with-mysql-root=${LOCALBASE}
 .endif
 .if defined(WITH_PERLAUTH)
 CONFIGURE_ARGS+=	--enable-auth-perl
+.endif
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 .endif
 .if !defined(WITHOUT_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
