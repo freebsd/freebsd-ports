@@ -33,7 +33,6 @@ RUN_DEPENDS=	${X11BASE}/lib/aout/zh-XFree86-aoutlibs-3.3.6:${PORTSDIR}/chinese/X
 		${LOCALBASE}/etc/dot.pinerc.sample:${PORTSDIR}/chinese/pine4 \
 		pydict:${PORTSDIR}/chinese/pyDict \
 		rxvt:${PORTSDIR}/chinese/rxvt-big5 \
-		aterm:${PORTSDIR}/chinese/aterm \
 		zh-telnet:${PORTSDIR}/chinese/telnet \
 		tin:${PORTSDIR}/chinese/tin \
 		tintin++:${PORTSDIR}/chinese/tintin++ \
