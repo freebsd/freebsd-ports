@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.2
-PORTREVISION=   1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://regexps.srparish.net/src/${PORTNAME}/ \
@@ -25,6 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
+PATCH_WRKSRC=	${ORIGWRKSRC}
 WRKSRC=		${ORIGWRKSRC}/=build
 
 pre-patch:
