@@ -15,6 +15,8 @@ DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin.
 
+BROKEN=		Does not fetch
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

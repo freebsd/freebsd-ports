@@ -12,7 +12,9 @@ MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
 MAINTAINER=	mainland@apeiron.net
-COMMENT=	A free WYSIWYG scientific text editor
+COMMENT=	"A free WYSIWYG scientific text editor."
+
+BROKEN=		"Does not fetch"
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		tex:${PORTSDIR}/print/teTeX
