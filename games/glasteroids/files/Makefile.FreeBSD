@@ -10,10 +10,11 @@ PROG  = Glasteroids
 
 LIBS = -lglut -lGLU -lGL -lXmu -lX11 -lXext -lm -lXi ${PTHREAD_LIBS}
 
-INCDIR = -I/usr/X11R6/include
-LIBDIR = -L/usr/X11R6/lib
+INCDIR = -I${X11BASE}/include
+LIBDIR = -L${X11BASE}/lib
 
 PREFIX ?= /usr/X11R6
+X11BASE ?= /usr/X11R6
 
 .SUFFIXES: .cxx .o
 

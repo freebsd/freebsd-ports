@@ -7,7 +7,7 @@
 
 PORTNAME=	glasteroids
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 DISTNAME=	Glasteriods
@@ -15,32 +15,28 @@ DISTNAME=	Glasteriods
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Asteroids game for X Window System
 
-MAKEFILE=	Makefile.FreeBSD
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/Glasteroids
 
 USE_X_PREFIX=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-USE_MESA=	yes
-
-pre-build:
-	@ ${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
+USE_GL=		yes
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKEFILE=	${FILESDIR}/Makefile.FreeBSD
 
 do-install:
-	@ ${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/Glasteroids ${PREFIX}/bin/glasteroids
-	@ ${MKDIR} ${PREFIX}/share/glasteroids
-	@ ${INSTALL_DATA} ${WRKSRC}/gameText.txf ${PREFIX}/share/glasteroids
-	@ cd ${WRKSRC}; tar -cf - scores.txt textures | \
-		( cd ${PREFIX}/share/glasteroids; tar -xf - )
-	@ ${CHMOD} a+rx ${PREFIX}/share/glasteroids/textures
-	@ ${CHMOD} g+rw,a-x ${PREFIX}/share/glasteroids/scores.txt
-	@ ${CHOWN} root:games ${PREFIX}/share/glasteroids/scores.txt
-
-post-install:
+	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/Glasteroids ${PREFIX}/bin/glasteroids
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gameText.txf ${DATADIR}
+	${TAR} -C ${WRKSRC} -cf - scores.txt textures | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+	@${CHMOD} a+rx ${DATADIR}/textures
+	@${CHMOD} g+rw,a-x ${DATADIR}/scores.txt
+	@${CHOWN} root:games ${DATADIR}/scores.txt
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/glasteroids
-	@ ${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/glasteroids
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/glasteroids
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

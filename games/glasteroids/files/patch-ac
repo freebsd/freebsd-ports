@@ -3,7 +3,7 @@
 @@ -1,5 +1,8 @@
  #include <stdlib.h>
  #include <time.h>
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && (defined(__i386__) || defined(__amd64__))
 +#include <floatingpoint.h>
 +#endif
  #include "Bobcat.h"
@@ -13,7 +13,7 @@
  {
      BCworld *world;
      
-+#if defined(__FreeBSD__) && !defined(__alpha__)
++#if defined(__FreeBSD__) && (defined(__i386__) || defined(__amd64__))
 +    fpsetmask(0);
 +#endif
      world = BCgetWorld ( );
