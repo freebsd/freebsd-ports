@@ -2,9 +2,16 @@ bin/limewire
 %%JAR_DIR%%/LimeWire.jar
 %%JAR_DIR%%/MessagesBundle.properties
 %%JAR_DIR%%/MessagesBundles.jar
+%%JAR_DIR%%/ProgressTabs.jar
 %%JAR_DIR%%/collections.jar
+%%JAR_DIR%%/commons-httpclient.jar
+%%JAR_DIR%%/commons-logging.jar
+%%JAR_DIR%%/hashes
+%%JAR_DIR%%/i18n.jar
+%%JAR_DIR%%/icu4j.jar
 %%JAR_DIR%%/jl011.jar
 %%JAR_DIR%%/logicrypto.jar
+%%JAR_DIR%%/mp3sp14.jar
 %%JAR_DIR%%/themes.jar
 %%JAR_DIR%%/update.ver
 %%JAR_DIR%%/xerces.jar
