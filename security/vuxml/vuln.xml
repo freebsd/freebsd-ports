@@ -263,6 +263,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
         <url>http://www.phpbb.com/phpBB/viewtopic.php?t=267563</url>
+	<bid>12678</bid>
     </references>
     <dates>
       <discovery>2005-02-27</discovery>
