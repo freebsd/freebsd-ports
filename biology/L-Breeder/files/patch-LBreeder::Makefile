@@ -1,0 +1,14 @@
+--- LBreeder/Makefile.orig	Wed Jul 31 13:58:18 2002
++++ LBreeder/Makefile	Wed Jul 31 13:58:30 2002
+@@ -14,10 +14,7 @@
+ 	export SHOW_DEBUGGING_MESSAGES; $(MAKE) all
+ 
+ L-Breeder    : $(objects)
+-	g++ -lwx_gtk -ldl -lpthread -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk \
+--rdynamic -lgmodule -lgthread -lglib -lpthread -lXext -lX11 /usr/lib/libGL.a \
+-/usr/lib/libGLU.so /usr/lib/libm.a \
+--lwx_gtk_gl $(objects) -o L-Breeder
++	g++ `${GTK_CONFIG} gthread --libs` -lwx_gtk -lGL -lGLU -lwx_gtk_gl $(objects) -o L-Breeder
+ 
+ StaticApp : $(objects)
+ 	g++ /usr/lib/libwx_gtk-2.1.so -ldl -lpthread -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk \

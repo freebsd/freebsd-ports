@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += L-Breeder
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
