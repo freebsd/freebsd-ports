@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	1.34
+PORTVERSION=	1.36
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cs.uu.nl/people/henkp/mirmon/src/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
