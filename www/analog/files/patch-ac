@@ -1,20 +1,12 @@
-*** analog.cfg.orig	Wed Apr  8 17:38:41 1998
---- analog.cfg	Wed Apr  8 22:57:45 1998
-***************
-*** 6,12 ****
-  #
-  #
-  # REQINCLUDE pages
-! LOGFILE logfile.log
-  HOSTNAME "[my organisation]"
-  LINKINCLUDE pages
-  UNCOMPRESS *.gz,*.Z "gzip -cd"
---- 6,13 ----
-  #
-  #
-  # REQINCLUDE pages
-! LOGFORMAT COMBINED
-! LOGFILE /var/log/httpd-access.log
-  HOSTNAME "[my organisation]"
-  LINKINCLUDE pages
-  UNCOMPRESS *.gz,*.Z "gzip -cd"
+--- analog.cfg.orig	Wed Nov 25 22:49:33 1998
++++ analog.cfg	Tue Jan 19 21:24:09 1999
+@@ -8,7 +8,8 @@
+ # REQINCLUDE pages
+ #
+ # If you have a LOGFORMAT command it must go here, above the LOGFILE command.
+-LOGFILE logfile.log
++LOGFORMAT COMBINED
++LOGFILE /var/log/httpd-access.log
+ HOSTNAME "[my organisation]"
+ LINKINCLUDE pages
+ UNCOMPRESS *.gz,*.Z "gzip -cd"
