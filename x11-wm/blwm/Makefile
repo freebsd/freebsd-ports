@@ -58,6 +58,7 @@ pre-install:
 .for ii in conf images themes
 	${ECHO_CMD} @dirrm lib/blwm/${ii} >> ${PLIST}
 .endfor
+	${ECHO_CMD} @dirrm lib/blwm >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/blwm ${PREFIX}/bin
