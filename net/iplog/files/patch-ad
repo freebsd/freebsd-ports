@@ -5,7 +5,7 @@
  */
  
 -#define CONFFILE	"/etc/iplog.conf"
-+#define CONFFILE	"/usr/local/etc/iplog.conf"
++#define CONFFILE	"%%PREFIX%%/etc/iplog.conf"
  
  /*
  ** Making these smaller will probably do bad things.

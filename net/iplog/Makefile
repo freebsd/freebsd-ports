@@ -6,41 +6,39 @@
 #
 
 PORTNAME=	iplog
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.karlsbakk.net/pub/ojnk/iplog/
+		http://misc.ojnk.net/~odin/stuff/
 MASTER_SITE_SUBDIR=	ojnk
-
-PATCH_SITES=	http://ojnk.sourceforge.net/stuff/ \
-		ftp://ftp.karlsbakk.net/pub/ojnk/iplog/
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ust@cert.siemens.de
 
-GNU_CONFIGURE=	yes
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 MAN5=	iplog.conf.5
 MAN8=	iplog.8
 
 .include <bsd.port.pre.mk>
+post-patch:
+.for file in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+.endfor
 
 post-install:
-	@strip ${PREFIX}/sbin/iplog
+	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc
 .if !exists(${PREFIX}/etc/iplog.conf)
-	@${CP} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc/iplog.conf
+	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc/iplog.conf
 .else
-	@echo
-	@echo "============================================================================"
-	@echo "Hint:	iplog changed its configuration file from ${PREFIX}/etc/iplog.rules"
-	@echo "	to ${PREFIX}/etc/iplog.conf"
-	@echo
-	@echo "See ${PREFIX}/etc/example-iplog.conf for an example"
-	@echo "============================================================================"
-	@echo
+	@${ECHO_MSG}
+	@${ECHO_MSG} "============================================================================"
+	@${ECHO_MSG} "Hint:	iplog changed its configuration file from ${PREFIX}/etc/iplog.rules"
+	@${ECHO_MSG} "	to ${PREFIX}/etc/iplog.conf"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "See ${PREFIX}/etc/example-iplog.conf for an example"
+	@${ECHO_MSG} "============================================================================"
+	@${ECHO_MSG}
 .endif
-	@${CP} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc/example-iplog.conf
 
 .include <bsd.port.post.mk>
