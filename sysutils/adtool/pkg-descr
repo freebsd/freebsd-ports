@@ -1,0 +1,5 @@
+adtool is a unix command line utility for Active Directory administration. 
+Features include user and group creation, deletion, modification, password 
+setting and directory query and search capabilities. 
+
+WWW: http://adtool.sourceforge.net/
