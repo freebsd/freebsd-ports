@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES!=    /usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	009 013 019
+BADPATCHES=	009 013 015 019
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N6.2.${p}}
 .endfor
