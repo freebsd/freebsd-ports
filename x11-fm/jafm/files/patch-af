@@ -1,0 +1,11 @@
+--- sfm.hh.orig	Sat Feb 26 19:36:10 2000
++++ sfm.hh	Sat Feb 26 19:48:53 2000
+@@ -59,7 +59,7 @@
+ 
+   void slot_refresh () ;
+ 
+-  void dragPointAt (const QPoint &p, const QList<DeskIcon> & =0) ;
++  void dragPointAt (const QPoint &p, const QList<DeskIcon> &) ;
+   void dragDropRelease (const QPoint &, const QList<DeskIcon> &) ;
+ 
+ } ;

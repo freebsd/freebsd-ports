@@ -1,0 +1,8 @@
+This is not Just Another File Manager!  jafm supports drag and drop
+amongst itself and onto the desktop.  Right now it uses qt, but the 
+author is now in the process of converting it to gtk.
+
+WWW: http://www-personal.usyd.edu.au/~rlittlew/jafm/
+
+Brett Taylor
+brett@peloton.physics.montana.edu
