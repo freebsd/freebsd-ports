@@ -1,8 +1,21 @@
-WARNING: This software can have a negative impact on the system's
-stability, in particular while doing heavy duty work such as encoding
-music the system can freeze under certain conditions!
+===> How to enable the %%PORTNAME%% package
 
-Don't use this software in production or mission-critical environments!
+    If you want to invoke %%PORTNAME%% automatically on system startup,
+    add the following line to /etc/rc.conf:
 
-Also note that this software is supposed to be used with AMD Athlon (XP) an
-AMD Duron processors only!
+        fvcool_enable="YES"
+
+    See %%PREFIX%%/etc/rc.d/%%PORTNAME%%.sh for more details.
+
+===> WARNING
+
+    This software can have a negative impact on system stability. In
+    particular while doing heavy duty work such as encoding music,
+    under certain conditions the system can freeze.
+
+    Don't use this software in production or mission-critical
+    environments!
+
+    Also note that this software is supposed to be used with AMD
+    Athlon (XP) an AMD Duron processors only.
+

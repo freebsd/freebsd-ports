@@ -1,5 +1,6 @@
 sbin/fvcool
-%%PORTDOCS%%%%DOCSDIR%%/00README.txt
-%%PORTDOCS%%%%DOCSDIR%%/00READMEj.txt
-%%PORTDOCS%%%%DOCSDIR%%/00READMEkt133.txt
+etc/rc.d/fvcool.sh
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.jp
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.tech_KT133
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
