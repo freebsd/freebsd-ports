@@ -1,5 +1,14 @@
 --- programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c.orig	Sun Jul 26 01:56:34 1998
-+++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c	Fri Jan  5 09:48:25 2001
++++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c	Mon Apr  8 14:32:01 2002
+@@ -29,7 +29,7 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+-#include <machine/joystick.h>
++#include <sys/joystick.h>
+ #include <fcntl.h>
+ 
+ #ifdef XFree86LOADER
 @@ -56,6 +56,7 @@
    int   changed = 0;
    int   timeinmicros;
