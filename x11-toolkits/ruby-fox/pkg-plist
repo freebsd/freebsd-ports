@@ -12,6 +12,8 @@
 %%RUBY_SITELIBDIR%%/fox/iterators.rb
 %%RUBY_SITELIBDIR%%/fox/keys.rb
 %%RUBY_SITELIBDIR%%/fox/missingdep.rb
+%%RUBY_SITELIBDIR%%/fox/pseudokeyboard.rb
+%%RUBY_SITELIBDIR%%/fox/pseudomouse.rb
 %%RUBY_SITELIBDIR%%/fox/responder.rb
 %%RUBY_SITELIBDIR%%/fox/responder2.rb
 %%RUBY_SITELIBDIR%%/fox/scintilla.rb
@@ -45,7 +47,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/iRAA.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/iconlist.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/iconlist2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/AngryGuyInBunnySuit.ico
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/FatBot.ico
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/FlippedySwitch.ico
