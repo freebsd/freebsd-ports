@@ -9,7 +9,7 @@ PORTNAME=	icu
 PORTVERSION=	3.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
-EXTRACT_SUFX=	-d02.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
