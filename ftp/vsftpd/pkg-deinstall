@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=vsftpd
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+        echo "To delete FTP user permanently, use 'pw userdel ${USER}'"
+        echo "Don't do this if you're using FreeBSD's anonymous FTP server"
+fi
+
+exit 0

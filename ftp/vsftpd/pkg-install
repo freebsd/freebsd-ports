@@ -21,6 +21,7 @@ foreach $group (@groups) {
 		if ($result) {
 			die "Failed to add group $group as gid $gids{$group}\n";
 		}
+		print "Added group $group for vsftpd\n";
 	}
 }
 
@@ -33,6 +34,7 @@ foreach $user (keys %users) {
 		if ($result) {
 			die "Failed to add user $user as uid $uids{$user}\n";
 		}
+		print "Added user $user for vsftpd\n";
 	}
 }
 
