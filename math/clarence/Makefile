@@ -7,16 +7,14 @@
 #
 
 PORTNAME=	clarence
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmer's calculator
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
-
+USE_GNOME=	pygtk2
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
