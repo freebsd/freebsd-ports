@@ -8,7 +8,9 @@
 PORTNAME=	omi
 PORTVERSION=	a9
 CATEGORIES=	ftp
-MASTER_SITES=	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
+MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
+		http://atreides.freenix.no/~anders/
+#	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
 DISTNAME=	omi-alpha-9
 
 MAINTAINER=	ache@FreeBSD.org
