@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85d76f02-5380-11d9-a9e7-0001020eed82">
+    <topic>mplayer -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.5_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDEFENSE and the MPlayer Team has found multiple
+	  vulnerabilities in MPlayer:</p>
+	<ul>
+	  <li>Potential heap overflow in Real RTSP streaming code</li>
+	  <li>Potential stack overflow in MMST streaming code</li>
+	  <li>Multiple buffer overflows in BMP demuxer</li>
+	  <li>Potential heap overflow in pnm streaming code</li>
+	  <li>Potential buffer overflow in mp3lib</li>
+	</ul>
+	<p>These vulnerabilities could allow a remote attacker to
+	  execute arbitrary code as the user running MPlayer.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://mplayerhq.hu/homepage/design7/news.html#mplayer10pre5try2</url>
+      <mlist msgid="IDSERV04yz5b6KZmcK80000000c@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322526210300</mlist>
+      <mlist msgid="IDSERV04FVjCRGryWtI0000000f@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322829807443</mlist>
+      <mlist msgid="IDSERV046beUzmRf6Ci00000012@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110323022605345</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-10</discovery>
+      <entry>2004-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bb7677d-52f3-11d9-a9e7-0001020eed82">
     <topic>krb5 -- heap buffer overflow vulnerability in libkadm5srv</topic>
     <affects>
