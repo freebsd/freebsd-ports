@@ -1,14 +1,41 @@
---- Makefile.orig	Thu Jan 19 23:33:04 1995
-+++ Makefile	Tue Sep 21 17:44:46 1999
-@@ -4,7 +4,10 @@
- INSTALL= install
- MV= mv
- CHMOD= chmod
--CFLAGS= -g
-+CFLAGS+= -g
+--- Makefile.orig	Sat Aug 26 18:29:55 2000
++++ Makefile	Sat Aug 26 18:31:42 2000
+@@ -1,8 +1,14 @@
+ PIC= -fPIC
+-CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
+-LIBS= -lpthread
++#CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
++CFLAGS+= -g $(PIC)
 +.if ${MACHINE_ARCH} == "i386"
 +CFLAGS+= -DPAGE_PROTECTION_VIOLATED_SIGNAL=SIGBUS
 +.endif
- LIB_INSTALL_DIR= /usr/lib
- MAN_INSTALL_DIR= /usr/man/man3
++#CFLAGS+= -pthread
++#	for FreeBSD comment out the below as this is not how we do pthreads.
++#LIB_PTHREADS= -lpthread -lc
+ 
+-prefix=/usr
++prefix=$(PREFIX)
+ BIN_INSTALL_DIR= $(prefix)/bin
+ LIB_INSTALL_DIR= $(prefix)/lib
+ MAN_INSTALL_DIR= $(prefix)/man/man3
+@@ -54,16 +60,16 @@
+ 	$(AR) crv libefence.a $(OBJECTS)
+ 
+ libefence.so.0.0: $(OBJECTS)
+-	gcc -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
+-		$(OBJECTS) -lpthread -lc 
++	$(CC) $(CFLAGS) -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
++		$(OBJECTS) $(LIB_PTHREADS)
+ 
+ tstheap: libefence.a tstheap.o
+ 	- rm -f tstheap
+-	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIBS)
++	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIB_PTHREADS)
+ 
+ eftest: libefence.a eftest.o
+ 	- rm -f eftest
+-	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIBS)
++	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIB_PTHREADS)
+ 
+ $(OBJECTS) tstheap.o eftest.o: efence.h
  
