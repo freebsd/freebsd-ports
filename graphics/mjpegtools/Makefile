@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	aviplay.6:${PORTSDIR}/graphics/avifile \
+LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GLIB=	yes
