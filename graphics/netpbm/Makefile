@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/convert
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/netpbm
 USE_IMAKE=	yes
