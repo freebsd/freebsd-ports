@@ -7,6 +7,3 @@ The SAX generator supports both SAX1 and SAX2 handlers. There are two
 SAX interfaces available: basic ContentHandler and optional ErrorHandler.
 
 WWW: http://search.cpan.org/dist/XML-Directory/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
