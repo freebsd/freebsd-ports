@@ -1,0 +1,9 @@
+This is the ircd designed for use on freenode.net, based on the hybrid
+ircd used by efnet.
+
+This port/package is configured for use on a small network or
+standalone, and the escape code filter is disabled.  To use it on a
+large and/or Western language only network, please re-configure
+config.h and rebuild.
+
+WWW:	http://freenode.net/dancer_ircd.shtml

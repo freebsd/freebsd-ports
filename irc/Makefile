@@ -5,6 +5,7 @@
     SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
+    SUBDIR += dancer-ircd
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
