@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dungeoncrawl
-PORTVERSION=	4.0.0.b24
+PORTVERSION=	4.0.0.b26
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
 DISTNAME=	dc${PORTVERSION:S/.//g}-src
