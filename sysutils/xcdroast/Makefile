@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
-MAINTAINER=	lehmann@ans-netz.de
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \

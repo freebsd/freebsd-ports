@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=	lehmann@ans-netz.de
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	Ident server that supports user-defined ident strings
 
 USE_GMAKE=	yes

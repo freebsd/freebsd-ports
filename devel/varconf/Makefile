@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://victor.worldforge.org/%SUBDIR%/ \
 		ftp://ftp.fr.gnome.org/%SUBDIR%/
 MASTER_SITE_SUBDIR= pub/worldforge/libs/varconf
 
-MAINTAINER=	lehmann@ans-netz.de
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	A Configuration System for the STAGE Server
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
