@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040129
-PORTREVISION=	1
+PORTVERSION=	20040210
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -24,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-#OPTIONS=	MILTER "Compile the milter interface" off
+OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -100,12 +99,6 @@ post-patch:
 		-e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|clamav.conf|&.default|' \
-		-e 's|freshclam.conf|&.default|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-		${CONFIGURE_WRKSRC}/etc/Makefile.in
-
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
 		> ${BUILD_WRKSRC}/etc/clamav.conf.default
@@ -129,14 +122,19 @@ post-install:
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
 		${CP} ${BUILD_WRKSRC}/etc/clamav.conf.default \
 			${PREFIX}/etc/clamav.conf
+	@[ -f ${PREFIX}/etc/clamav.conf.default ] || \
+		${CP} ${BUILD_WRKSRC}/etc/clamav.conf.default \
+			${PREFIX}/etc/clamav.conf.default
 	@[ -f ${PREFIX}/etc/freshclam.conf ] || \
 		${CP} ${BUILD_WRKSRC}/etc/freshclam.conf.default \
 			${PREFIX}/etc/freshclam.conf
+	@[ -f ${PREFIX}/etc/freshclam.conf.default ] || \
+		${CP} ${BUILD_WRKSRC}/etc/freshclam.conf.default \
+			${PREFIX}/etc/freshclam.conf.default
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
 		${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${INSTALL_SCRIPT} ${WRKDIR}/freshclam.sh ${RC_DIR}/freshclam${RC_SUFX}
-	@${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 .if defined(WITH_MILTER)
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
 		${RC_DIR}/clamav-milter${RC_SUFX}

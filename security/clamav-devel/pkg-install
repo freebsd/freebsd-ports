@@ -43,9 +43,4 @@ mkdir -p "${CLAMLOG}"
 chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMLOG}"
 fi
 
-if [ "$2" = "POST-INSTALL" ]; then
-	echo "===> Updating virus definitions..."
-	freshclam
-fi
-
 exit 0
