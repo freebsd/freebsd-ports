@@ -1,12 +1,10 @@
 This is the unstable version of the Mozilla suite (Web browser,
-HTML editor, mail user agent, news reader, and address book)
-pre-compiled for Linux.  The Linux version is necessary for running
-plugins which are only available as Linux binaries.
+HTML editor, mail user agent, news reader, and IRC client) pre-compiled
+for Linux.  Instead of using this port, another way to run plugins
+which are only available as Linux binaries is to install the
+linuxpluginwrapper port.
 
-The Chatzilla IRC client is not installed by this port, due to a
-security bug.
-
-This port is compatible with the www/linuxflashplugin port and with
-the Flash and Java plugins from the www/netscape7 port.
+If you find a Java plugin which works with this port, please tell
+the maintainer.
 
 WWW:  http://mozilla.org/
