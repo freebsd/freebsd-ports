@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.20 1998/10/01 16:47:26 kuriyama Exp $
+# $Id: Makefile,v 1.21 1998/12/08 02:31:05 flathill Exp $
 #
 
 DISTNAME=	jpman-3.0
@@ -19,7 +19,7 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/man
 PLIST=		${WRKDIR}/PLIST
 
-MANSECS=	1 5 8
+MANSECS=	1 5 6 7 8
 JAMANDIR?=	/usr/opt/doc/ja/man
 
 do-extract:
