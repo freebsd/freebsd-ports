@@ -209,6 +209,7 @@
     SUBDIR += p5-Crypt-Blowfish_PP
     SUBDIR += p5-Crypt-CAST5_PP
     SUBDIR += p5-Crypt-CBC
+    SUBDIR += p5-Crypt-CBCeasy
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-Cracklib
     SUBDIR += p5-Crypt-Cryptix
