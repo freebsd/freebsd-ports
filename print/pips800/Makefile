@@ -229,7 +229,7 @@ do-install:
 	fi
 .endfor
 .endif
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/readme${PRTYPE} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/${LIB_README:T} ${PREFIX}/share/doc/${BASE_NAME}
