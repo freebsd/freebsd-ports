@@ -30,9 +30,6 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Encrypter.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Encrypter.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Encrypter.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/EndgameDownloader.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/EndgameDownloader.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/EndgameDownloader.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyo
@@ -93,12 +90,11 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/BUILD.windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
-%%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true

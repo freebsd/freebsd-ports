@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.2.1.b
+PORTVERSION=	3.3
 CATEGORIES=	net python
 MASTER_SITES=	http://bitconjurer.org/BitTorrent/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A peer-to-peer tool for distributing files written in Python
@@ -19,8 +19,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 
-DOC_FILES=	FAQ.txt INSTALL.unix.txt LICENSE.txt README.txt \
-		credits.txt todo.txt
+DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+		README.txt credits.txt
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
