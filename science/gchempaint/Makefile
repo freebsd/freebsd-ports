@@ -10,7 +10,7 @@ CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	2D chemical structures editor for GNOME 2
 
 LIB_DEPENDS=	gcu.2:${PORTSDIR}/science/gchemutils

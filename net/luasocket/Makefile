@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.tecgraf.puc-rio.br/~diego/luasocket/
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	IPv4 Sockets support for the Lua language
 
 BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua4

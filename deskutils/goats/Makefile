@@ -9,7 +9,7 @@ PORTVERSION=	2.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.menudo.freeserve.co.uk/
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Yellow post-it note applet for GNOME 2
 
 USE_X_PREFIX=	yes

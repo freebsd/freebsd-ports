@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	linunace22
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Extract, view & test ACE 2 archives
 
 ONLY_FOR_ARCHS=	i386
