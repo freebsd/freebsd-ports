@@ -1,51 +1,24 @@
-Yamsweeper is a game to clear the field filled with bombs (mines).
-
-On the left top corner of the main window,
-the number of mines left is displayed.
-You can mark hidden mines underneath the panels, then
-the number is decreased.
-The number can be minus, but that means you have over-marked.
-
-On the right top corner, the time passed is displayed.
-The time counts up to 999 seconds.
-
-On center top, there's the symbol of yamsweeper.
-You can start a new game by clicking this symbol.
-
-A panel is opened with the left mouse button.
-If panels not opened are around the panel, and
-if they don't have mines underneith and around them,
-panels are also opened.
-This can be happened like chain reaction.
-But be carefull; the game is over when you open a mine.
-
-If the panel opened has mines around,
-you will see a number varies from 1 to 8, which means
-the number of mines.
-For example, `1' tells you one of the panels around
-has a mine. `2' says that two mines are hidden next to.
-
-You can mark suspicious panels by the right button.
-The right button changes the state of the panel, as:
-
-        Normal -> "Bomb" -> "?" -> Back to Normal -> ...
-
-Once you mark a panel (as "Bomb" or "?"), it cannot be opened.
-You have to click the panel until it becomes to Normal state.
-
-The middle button is assigned a special functionality.
-You can use the middle button to open the unmarked panels around,
-under a certain condition.
-
-1. The panel you clicked is opened.
-
-2. The panel is not null, a number is displayed.
-
-3. the number of marked panels is equal to the number displayed on 
+Yamsweeper is a game to clear the field filled with bombs (mines).  On the left
+top corner of the main window, the number of mines left is displayed.  You can
+mark hidden mines underneath the panels, then the number is decreased.  The
+number can be minus, but that means you have over-marked.  On the right top
+corner, the time passed is displayed.  The time counts up to 999 seconds.  On
+center top, there's the symbol of yamsweeper.  You can start a new game by
+clicking the symbol.  A panel is opened with the left mouse button.  If unopened
+panels are around the panel, and if they don't have mines underneath and around
+them, panels are also opened.  This can happen like a chain reaction.  Be
+careful; the game is over when you open a mine.  If the panel opened has mines
+around, you will see a number varies from 1 to 8, which means the number of
+mines.  For example, `1' tells you one of the panels around has a mine. `2' says
+that two mines are hidden next to.  You can mark suspicious panels by the right
+button, which toggles the state of the panel between "Bomb" or "?" (in which it
+cannot be opened) and Normal.  The middle button is assigned a special
+functionality.  You can use the middle button to open the unmarked panels
+around, under certain conditions:
+-  the panel you clicked is opened
+-  the panel is not null, a number is displayed
+-  the number of marked panels is equal to the number displayed on the
    clicked panel.
-
 Click the middle button on a opened panel.
-
--------------------------------------------------------------------
 
 This port was created by Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>.

@@ -1,33 +1,20 @@
+xpbiff:  fancy biff program under X11 environment, supporting Japanese MIME
+extensions
 
-			<< xpbiff >>
-
-	   Fancy biff program under X11 environment. 
-
-*** Support MIME Japanese extension ***
-
-	   This ports collection support Japanese strings in From,
-	Subject field.  Please set enviroment variable LANG to 
-	ja_JP.EUC.
-
+	This port supports Japanese strings in the From and Subject fields.
+Please set the LANG enviroment variable to ja_JP.EUC by doing:
 		setenv LANG ja_JP.EUC
+	There is experimental support for Sun audio.  This port also supports
+XPM bitmap files.
 
-*** Support xpm file for bit map ***
-
-	   This ports collection support xpm file for bit map.
-
-*** SUN_AUDIO is Experimental Supported ***
-
-*** Known Problem ***
-
+known problem:
 	(1) HANKAKU-KANA
 	   Xpbiff dumps core, because code conversion routines jis2euc()
 	assumes "the conversion does not makes the string longer".   But
 	when converting so-called 'hankaku-kana', this assumption breaks.
-
 Thank you.
 
-*** Acknowledgements to this ports file ***
-	Special thanks to:
+Acknowledgements for this port:
 		Makoto MATSUSHITA <matusita@ics.es.osaka-u.ac.jp>
 		Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 		Nozomu MATSUI <nozomu@yy.cs.keio.ac.jp>

@@ -1,2 +1,2 @@
-This module is a simple creator of XML data from DBI datasources. It allows you to
-easily extract data from a database, and manipulate later using XML::Parser.
+This module is a simple creator of XML data from DBI datasources. It allows you
+to easily extract data from a database, and manipulate later using XML::Parser.

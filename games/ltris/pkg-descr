@@ -1,8 +1,7 @@
-LTris is just another tetris clone but imho a good one. So if you like tetris,
-download and play it!
+LTris is just another clone of Tetris but IMHO a good one, so if you like
+Tetris, download and play it!
 
 Features: 
-
      Tetris clone using SDL 
      Sound 
      Menu 
@@ -17,10 +16,9 @@ Features:
      Two player mode 
      Two game modes 
 
-Two game modes? Yes. The first one called "normal" is the mode everbody knows
-well. You play as long as you can while the blocks are getting faster. The
-second one called "advanced" has got some additional features. First there is
-a new figure in each new level and second later on there are suddenly appearing
-tiles and rows.
+Two game modes?  Yes.  The "normal" mode is the one everbody knows well.  You
+play as long as you can while the blocks are getting faster.  The second one
+called "advanced" has some additional features.  First there is a new figure in
+each new level and second later on there are suddenly appearing tiles and rows.
 
 WWW: http://lgames.sourceforge.net/index.php?project=LTris

@@ -1,40 +1,24 @@
-The MD5 module allows you to use the RSA Data Security
-Inc. MD5 Message Digest algorithm from within Perl
-programs.
-
-A new MD5 context object is created with the new
-operation.  Multiple simultaneous digest contexts can be
-maintained, if desired.  The context is updated with the
-add operation which adds the strings contained in the LIST
-parameter. Note, however, that add('foo', 'bar'),
-add('foo') followed by add('bar') and add('foobar') should
-all give the same result.                        
-
-The final message digest value is returned by the digest
-operation as a 16-byte binary string. This operation
-delivers the result of add operations since the last new
-or reset operation. Note that the digest operation is
-effectively a destructive, read-once operation. Once it
-has been performed, the context must be reset before being
-used to calculate another digest value.
-
-Several convenience functions are also provided. The
-addfile operation takes an open file-handle and reads it
-until end-of file in 1024 byte blocks adding the contents
-to the context. The file-handle can either be specified by
-name or passed as a type-glob reference, as shown in the
-examples below. The hexdigest operation calls digest and
-returns the result as a printable string of hexdecimal
-digits. This is exactly the same operation as performed by
-the unpack operation in the examples below.
-
-The hash operation can act as either a static member
-function (ie you invoke it on the MD5 class as in the
-synopsis above) or as a normal virtual function. In both        
-cases it performs the complete MD5 cycle (reset, add,
-digest) on the supplied scalar value. This is convenient
-for handling small quantities of data. When invoked on the
-class a temporary context is created. When invoked through
-an already created context object, this context is used.
-The latter form is slightly more efficient. The hexhash
-operation is analogous to hexdigest.       
+	The MD5 module allows you to use the RSA Data Security Inc. MD5 Message
+Digest algorithm from within Perl programs.
+	A new MD5 context object is created with the new operation.  Multiple
+simultaneous digest contexts can be maintained, if desired.  The context is
+updated with the add operation which adds the strings contained in the LIST
+parameter. Note, however, that add('foo', 'bar'), add('foo') followed by
+add('bar') and add('foobar') should all give the same result.
+	The final message digest value is returned by the digest operation as a
+16-byte binary string. This operation delivers the result of add operations
+since the last new or reset operation.  Note that the digest operation is
+effectively a destructive, read-once operation. Once it has been performed, the
+context must be reset before being used to calculate another digest value.
+	Several convenience functions are also provided. The addfile operation
+takes an open file-handle and reads it until end-of file in 1024 byte blocks
+adding the contents to the context. The file-handle can either be specified by
+name or passed as a type-glob reference. The hexdigest operation calls digest
+and returns the result as a printable string of hexdecimal digits.
+	The hash operation can act as either a static member function (you
+invoke it on the MD5 class) or as a normal virtual function. In both cases it
+performs the complete MD5 cycle (reset, add, digest) on the supplied scalar
+value. This is convenient for handling small quantities of data. When invoked on
+the class a temporary context is created. When invoked through an already
+created context object, this context is used.  The latter form is slightly more
+efficient. The hexhash operation is analogous to hexdigest.

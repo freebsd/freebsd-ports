@@ -1,9 +1,5 @@
+Ghostview is an X11 interface for ghostscript 2.4 and later.  It features:
 
-    Ghostview -- An X11 user interface for ghostscript.
-
-Ghostview is full function user interface for ghostscript 2.4 and later.
-
-Brief list of features:
   - Ghostview parses any known version of Adobe's Document Structuring
     Conventions.
   - Page size is automatically determined from the Document Structuring
@@ -24,5 +20,5 @@ Brief list of features:
   - Can popup zoom windows at printer resolution
     (1 display dot = 1 printer dot).
 
-    The Ghostview distribution includes a Ghostview Widget that people
-    are encouraged to use in other programs.
+The Ghostview distribution includes a Ghostview Widget that people are
+encouraged to use in other programs.

@@ -1,49 +1,24 @@
-rmsg contains a messaging system which can be used to send
-write-like messages to logged-on users.  The system can cross machine
-boundaries, so if another machine has the rmsgd program running, you can
-send messages to users on it.
-
-The system also allows bitnet virtual machine-like 'virtual users'
-to whom any user can send messages and they can answer the messages.
-The rmsgd server makes this possible by allowing a command 'exec' in a users
-.msgconf file, and whenever the user receives a message this command is
-executed and the message is piped to it.
-
-It is also possible to log incoming and outgoing messages and resend previous
-sent message.  You can specify a file to which the last (or every) incoming
-message will be stored.
-
-Using the programs:
--------------------
-
-Rmsgd:
-
-Rmsgd is the server program for the system.  It should be started by root,
-but for now it works even if started by ordinary users, even though
-some capabilities are disabled for security reasons (that is, exec and 
-logging of incoming messages, since that would be done by the user-id
-who started rmsgd and not the receiver).
-
-At any time, there should be only one rmsgd running.  It doesn't do any harm
-to have several rmsgds other than the newly-started servers unmap the
-previous and thus the previous servers are unusable.
-
-The server should be named 'rmsgd' to have it start as a daemon.
-
-
-Rmsg:
-
-Rmsg is the client end of the system.  Rmsg is used by ordinary users
-to send messages.  For example, rmsg foo@bar hello there !  ^D would
-send a message 'hello there !' to user foo at machine bar.  By
-default, rmsg stores the last outgoing message in the user's home
-directory in the file .msgout.  Then msg -r user@machine can be used
-to resend the message.  Message is normally read from standard input
-until EOF.
-
-Configuration:
---------------
-
-The messages system has many options which the user can set by making
-a file '.msgconf' in her home directory and placing various command in it.
+	The rmsg messaging system can be used to send write(1)-like messages to
+logged-on users.  The system can cross machine boundaries:  if another machine
+has rmsgd running, you can send messages to users on it.
+	The system allows bitnet virtual machine-like 'virtual users' to whom
+any user can send messages and they can answer the messages.  The rmsgd server
+makes this possible by allowing a command 'exec' in a user's .msgconf file, and
+whenever the user receives a message this command is executed and the message is
+piped to it.
+	It is possible to log incoming and outgoing messages.  You can specify a
+file to which the last (or every) incoming message will be stored.
+	Rmsgd is the server daemon for the system.  It should be started by
+root, but for now it works even if started by ordinary users, even though some
+capabilities are disabled for security reasons (that is, exec and logging of
+incoming messages, since that would be done by the user-id who started rmsgd and
+not the receiver).
+	The server should be named 'rmsgd' to have it start as a daemon.  Rmsg
+is the client end of the system.  Rmsg is used by ordinary users to send
+messages.  For example, rmsg foo@bar hello there !  ^D would send a message
+'hello there !' to user foo at machine bar.  By default, rmsg stores the last
+outgoing message in the user's home directory in the file .msgout.  Then msg -r
+user@machine can be used to resend the message.  Messages are normally read from
+standard input until EOF.
+	There are many options which can be set in a user's ~/.msgconf' file.
 Read the manual page for rmsg for more information.

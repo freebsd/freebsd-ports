@@ -1,42 +1,15 @@
-GIFTool , a tool for GIF89a trasnparent option  and interlace mode.
+GIFTool is a tool for GIF89a transparent option and interlace mode.  For
+instance 'giftool -B -i *.gif' converts all images to interlaced GIF files.
 
-Usage: giftool [options] [file]
-       giftool (-p|-c|-B) [options] [files...]
-	-B	Batch Mode, read and write the same filename
-	-i	Set GIF Interlace mode ON
-	+i	Set GIF Interlace mode OFF
-	-p	Print information about file(s)
-	-c	Print comment information
-	+c	Add comments to file(s)
-	-C	Strip comment from file(s)
-	-o file	Send output to 'file'
-	-rgb name	Use 'name' as the transparent pixel
-	-rgb ##,##,##	Use rgb-value as the transparent pixel
-	-###	Used pixel index as transparent (1 == first colormap entry)
+GIFTool is shareware.  Use the -info option to read the licensing information.
 
-For instance you could say 'giftool -B -i *.gif' to convert all your images
-to interlaced GIF files in one easy step.
-
-giftool version 1.0 is Copyright 1994 Home Pages, Inc and is shareware.
-Please, use the -info option to read the licensing information.
-
-PORT BUILD OPTION
-=================
-
-There are two useful options are suggested and available for this port of
-giftool. You can specify it following "make clean".
-
+Two options are recommended.  You can specify them after "make clean".
 make RETVALUE=yes
------------
-Giftool does not return value from main(), so it is impossible to use this
-tools in programs like make(1) or pipes.
-This option is suggested by Sergei Chechetkin <csl@whale.sunbay.crimea.ua>.
-
+	This option, suggested by Sergei Chechetkin
+	<csl@whale.sunbay.crimea.ua>, causes GIFTool to provide a return value
+	so may be used in pipes or with programs like make(1).
 make MALLOCSIZE=yes
----------------
-Giftool 1.0 or some earlier version cause segmentation fault about some
-images. Something about pre-read seems to be bad, so make malloc size 
-bigger to improve that.
-This option is suggested by Hidetoshi Shimokawa <simokawa@sat.t.u-tokyo.ac.jp>.
-
-You can specify all options such as 'make RETVALUE=yes MALLOCSIZE=yes'.
+	This option, suggested by Hidetoshi Shimokawa
+	<simokawa@sat.t.u-tokyo.ac.jp>, increases the size of a malloc, to avoid
+	a segmentation fault when pre-reading some images.
+You can specify both options such as 'make RETVALUE=yes MALLOCSIZE=yes'.

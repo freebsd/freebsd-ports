@@ -1,33 +1,21 @@
-This set of scripts addresses the need to get a non-postscript printer 
-working quickly, so that documentation files and manual pages can be 
-printed.  The scripts work for printers using or compatible with PCL 
-(Hewlett-Packard's Printer Command Language).  A few printers (the 
-Cannon Bubblejet, for example) use neither PCL nor postscript.
-
-Some relatively simple scripts for printing a document (qp and qp.awk) 
-are provided, as well as qpm for printing manual pages.  Basically these 
-short scripts convert unix line endings to ones PCL printers understand 
-and select a font to use.
-
-Two more complex awk scripts--pcl.awk and pagin.awk--understand PCL 
-printer codes when encountered in a file, and thus it is possible, 
-when using these scripts, to change fonts, apply bold, underline, or 
-italic to a word or group of words, do footnotes, preserve a table, 
-and number pages in a default font.  The scripts automatically adjust 
-for the font and size of type both horizontally (knowing how many 
-letters to print on a line) and vertically (line spacing).  Using 
-pagin.awk it is also possible to double space, for example.
-
-Files with printer codes are provided to make it easier to put printer 
-codes into documents.  It is awkward neverthless, but it does what it 
-does in something like 32k of space instead of the multi-megabyte files 
-of more elaborate programs, such as the excellent apsfilter, which 
-enables the printer to emulate postscript.  As WordPerfect becomes more 
-available for Unix platforms and maintains its interoperability with 
-Windows versions, it should become better and easier to use, as should 
-other components of its office suit and that of others. 
-
-	In the mean time pclprint is free, takes little space, and does 
-a reasonably good job for many tasks.
+	These scripts address the need to get a non-postscript printer working
+quickly so documentation files and manual pages can be printed.  The scripts
+work for printers using or compatible with PCL (Hewlett-Packard's Printer
+Command Language).  A few printers (the Canon Bubblejet, for example) use
+neither PCL nor postscript.
+	Simple scripts for printing a document (qp and qp.awk) are provided, as
+well as qpm for printing manual pages.  These scripts convert unix line endings
+to ones PCL printers understand and select a font to use.
+	Two more complex awk scripts--pcl.awk and pagin.awk--understand PCL
+printer codes when encountered in a file, and thus it is possible, when using
+these scripts, to change fonts, apply bold, underline, or italic to a word or
+group of words, do footnotes, preserve a table, and number pages in a default
+font.  The scripts adjust for the font and size of type horizontally (how many
+letters to print on a line) and vertically (line spacing).  Using pagin.awk it
+is also possible to double space, for example.
+	Files with printer codes are provided to make it easier to put printer 
+codes into documents.  It is still awkward, but it needs only about 32k of
+space instead of the multi-megabyte files of more elaborate programs, such as
+the excellent apsfilter, which enables the printer to emulate postscript.
 
 -- Annelise Anderson <andrsn@andrsn.Stanford.EDU>

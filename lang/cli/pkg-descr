@@ -1,18 +1,15 @@
-The Common Language Infrastructure (CLI) is the ECMA standard that describes
-the core of the .NET Framework world. The Shared Source CLI is a a working
-implementation of the ECMA CLI and the ECMA C# language specification.
-
-This implementation is released under a shared source initiative. Please see
-the accompanying license.
-
-The Shared Source CLI goes beyond the printed specification of the ECMA
-standards, providing a working implementation for CLI developers to explore
-and understand. It will be of interest to academics and researchers wishing to
-teach and explore modern programming language concepts, and to .NET developers
-interested in how the technology works. 
+	The Common Language Infrastructure (CLI) is the ECMA standard that
+describes the core of the .NET Framework world. The Shared Source CLI is a a
+working implementation of the ECMA CLI and the ECMA C# language specification.
+	This implementation is released under a shared source initiative. Please
+see the accompanying license.
+	The Shared Source CLI goes beyond the printed specification of the ECMA
+standards, providing a working implementation for CLI developers to explore and
+understand. It will be of interest to academics and researchers wishing to teach
+and explore modern programming language concepts, and to .NET developers
+interested in how the technology works.
 
 Features:
-
 o An implementation of the runtime for the Common Language Infrastructure
   (ECMA-335);
 o Compilers that work with the Shared Source CLI for C# (ECMA-334) and JScript;
@@ -24,5 +21,4 @@ o The Platform Adaptation Layer (PAL) used to port the Shared Source CLI from
 o Build environment tools (nmake, build, and others);
 o Documentation for the implementation;
 o Test suites used to verify the implementation.
-
 WWW: http://msdn.microsoft.com/net/sscli/

@@ -2,35 +2,21 @@ Evilfinder shows you whether things are evil.  By default, the port will
 install a wrapper called "evilfinder," but you can define WITH_WRAPPER
 to build the web-oriented default binary only.
 
-
    **** THE PROOF THAT The FreeBSD Project IS EVIL ****
-
    T  H  E   F  R  E  E  B  S  D   P  R  O  J  E  C  T
   20  8  5   6 18  5  5  2 19  4  16 18 15 10  5  3 20     - as numbers
    2  8  5   6  9  5  5  2  1  4   7  9  6  1  5  3  2     - digits added
   \___________/ \________/ \__________/ \_________/ \_/
    3             3          3            6           2     - digits added
 
-Thus, "The FreeBSD Project" is 33362.
-
-   Add 1947, the year Aleister Crowley paid a longer visit to hell - the
-   result is 35309.
-
-   Turn the number backwards, and add 1945 - the year Mussolini was
-   executed for the first time. The number is now 92298.
-
-   Add 9981 to it - this is the year "Scrabble" was invented to promote
-   violence and anger, written backwards - you will get 102279.
-
-   Subtract 23, the symbol of death. The result will be 102256.
-
-   Divide the number by 83 - this is the symbol of slavery, backwards. It
-   gives 1232.
-
-   This number, read as octal, gives 666 - the number of the Beast.
-
-   This is truly evil. QED. 
-
+Thus, "The FreeBSD Project" is 33362.  Add 1947, the year Aleister Crowley paid
+a longer visit to Hell.  The result is 35309.  Turn the number backwards, and
+add 1945 - the year Mussolini was executed for the first time. The number is now
+92298.  Add 9981 to it - this is the year "Scrabble" was invented to promote
+violence and anger, written backwards - you will get 102279.  Subtract 23, the
+symbol of death. The result will be 102256.  Divide the number by 83 - this is
+the symbol of slavery, backwards. It gives 1232.  This number, read as octal,
+gives 666 - the number of the Beast.  This is truly evil. QED.
 
 WWW: http://lcamtuf.coredump.cx/evilfinder/ef.shtml
 -Adam Weinberger <adamw@FreeBSD.org>
