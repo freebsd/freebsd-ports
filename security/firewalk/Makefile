@@ -31,11 +31,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/firewalk.8 ${MANPREFIX}/man/man8/
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
-.		for i in README BUGS TODO CHANGES LICENSE
-			${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
-			${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-			${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.		endfor
+		${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .	endif
 
 .include <bsd.port.mk>
