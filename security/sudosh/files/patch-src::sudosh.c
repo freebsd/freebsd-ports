@@ -1,6 +1,16 @@
 --- src/sudosh.c.orig	Tue Oct 26 18:01:24 2004
-+++ src/sudosh.c	Fri Oct 29 11:26:34 2004
-@@ -75,6 +75,12 @@
++++ src/sudosh.c	Sat Nov 13 19:31:14 2004
+@@ -24,6 +24,9 @@
+ #include <unistd.h>
+ #include <signal.h>
+ #include <pwd.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
+ 
+ #include "config.h"
+ 
+@@ -75,6 +78,12 @@
  #define SIGCHLD	SIGCLD
  #endif
  
@@ -13,7 +23,7 @@
  static struct termios termorig;
  static struct winsize winorig;
  
-@@ -99,6 +105,9 @@
+@@ -99,6 +108,9 @@
  static void rawmode (int);
  static int findms (struct pst *);
  void mysyslog (int, const char *, ...);
@@ -23,7 +33,7 @@
  
  int
  main (int argc, char *argv[], char *environ[])
-@@ -255,8 +264,9 @@
+@@ -255,8 +267,9 @@
    mysyslog (LOG_INFO, start_msg);
    mysyslog (LOG_INFO, "to view this session type: sudosh-replay %s-%i",
  	    user, now);
@@ -34,7 +44,7 @@
  
    if (findms (&pspair) < 0)
      {
-@@ -269,6 +279,9 @@
+@@ -269,6 +282,9 @@
      case 0:
        close (pspair.mfd);
        prepchild (&pspair);
@@ -44,7 +54,7 @@
      case -1:
        perror ("fork failed");
        bye (1);
-@@ -276,6 +289,9 @@
+@@ -276,6 +292,9 @@
        close (pspair.sfd);
      }
  
@@ -54,7 +64,7 @@
    setuid (getuid ());
  
    memset (&sa, 0, sizeof sa);
-@@ -377,15 +393,30 @@
+@@ -377,15 +396,32 @@
      {
        if ((p->mfd = open ("/dev/ptc", O_RDWR)) == -1)
  	{
@@ -78,8 +88,10 @@
  	}
      }
  
++#if !defined(__FreeBSD_version) || (defined(__FreeBSD_version) && __FreeBSD_version >= 500000)
    (void) unlockpt (p->mfd);
    (void) grantpt (p->mfd);
++#endif
  
 +#ifndef __FreeBSD__
    sname = (char *) ptsname (p->mfd);
@@ -87,7 +99,7 @@
  
    if ((p->sfd = open (sname, O_RDWR)) == -1)
      {
-@@ -456,11 +487,53 @@
+@@ -456,11 +492,53 @@
    abort ();
  }
  
@@ -141,7 +153,7 @@
  #ifdef TCGETS
    if (ioctl (ttyfd, TCGETS, &termorig) == -1)
      {
-@@ -484,6 +557,7 @@
+@@ -484,6 +562,7 @@
  #ifdef TCSETS
    (void) ioctl (ttyfd, TCSETS, &termnew);
  #endif
@@ -149,7 +161,7 @@
  }
  
  static void
-@@ -491,6 +565,9 @@
+@@ -491,6 +570,9 @@
  {
  #ifdef TCSETS
    (void) ioctl (0, TCSETS, &termorig);
