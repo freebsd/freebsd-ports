@@ -17,8 +17,6 @@
 unset rcNG
 name="netustad"
 command=%%PREFIX%%/sbin/netustad
-extra_commands=reload
-reload_cmd="killall -HUP ${name}"
 stop_cmd="killall ${name}"
 
 if [ -f /etc/rc.subr ]; then

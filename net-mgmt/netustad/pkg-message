@@ -1,7 +1,9 @@
-*************************************************
-* You must run this program as root		*
-* Program path       : %%PREFIX%%/sbin/netustad *
-* Your AdminUser     : admin			*
-* Your AdminPassword : admin		       	*
-* Don't forget to change your password!		*
-*************************************************
+*****************************************************************
+* You must run this program as root				*
+* Program path       : %%PREFIX%%/sbin/netustad			*
+* Your AdminUser     : admin					*
+* Your AdminPassword : admin					*
+* Config file path   : %%PREFIX%%/etc/netustad/netustad.conf	*
+* Check lc_all variable in config file.				*
+* Don't forget to change your password!				*
+*****************************************************************
