@@ -1,5 +1,5 @@
---- wireless/wireless-applet.c.orig	Mon Aug 16 04:45:55 2004
-+++ wireless/wireless-applet.c	Mon Sep 20 17:17:27 2004
+--- wireless/wireless-applet.c.orig	Sat Oct 30 09:46:28 2004
++++ wireless/wireless-applet.c	Mon Dec  6 21:24:29 2004
 @@ -30,12 +30,25 @@
  #include <math.h>
  #include <dirent.h>
@@ -322,20 +322,21 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -362,10 +588,12 @@
+@@ -364,10 +590,12 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
+-	applet->file = fopen ("/proc/net/wireless", "rt");
 +#ifndef __FreeBSD__
- 	applet->file = fopen ("/proc/net/wireless", "rt");
++	applet->file1 = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
- 		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
+ 		show_error_dialog (applet, _("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
 +#endif
  }
  
  static void
-@@ -668,8 +896,10 @@
+@@ -670,8 +898,10 @@
  		applet->prefs = NULL;
  	}
  

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.8.1.1
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.8
@@ -61,5 +60,9 @@ pre-everything::
 	@${ECHO_MSG} "*****************************************************"
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g' \
+		${WRKSRC}/gswitchit/Makefile.in
 
 .include <bsd.port.post.mk>
