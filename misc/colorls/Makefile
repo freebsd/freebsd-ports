@@ -3,16 +3,21 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.2 1995/03/24 11:11:12 asami Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:50:06 jkh Exp $
 #
+
 DISTNAME=	colorls
+PKGNAME=	colorls-2.0.5
+CATEGORIES+=	utilities
+# MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/bin/
 DISTFILES=	ls.tar.gz
+
+MAINTAINER=	asami@FreeBSD.ORG
+
+WRKSRC=		${WRKDIR}/ls
+
 FTP_SITE=	ftp.freebsd.org
 FTP_DIR=	/pub/FreeBSD/FreeBSD-current/src/bin/
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/bin/
-CATEGORIES+=	utilities
-MAINTAINER=	asami@FreeBSD.ORG
-WRKSRC=		${WRKDIR}/ls
 
 .if !defined(MASTER_SITE_OVERRIDE)
 fetch: pre-fetch
