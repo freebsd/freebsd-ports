@@ -7,10 +7,14 @@
 %%SITE_PERL%%/Regexp/Common/URI/gopher.pm
 %%SITE_PERL%%/Regexp/Common/URI/ftp.pm
 %%SITE_PERL%%/Regexp/Common/URI/tv.pm
+%%SITE_PERL%%/Regexp/Common/URI/pop.pm
+%%SITE_PERL%%/Regexp/Common/URI/prospero.pm
+%%SITE_PERL%%/Regexp/Common/URI/wais.pm
 %%SITE_PERL%%/Regexp/Common/URI/RFC2806.pm
 %%SITE_PERL%%/Regexp/Common/URI/telnet.pm
 %%SITE_PERL%%/Regexp/Common/URI/RFC1808.pm
 %%SITE_PERL%%/Regexp/Common/URI/RFC1738.pm
+%%SITE_PERL%%/Regexp/Common/URI/RFC2384.pm
 %%SITE_PERL%%/Regexp/Common/URI/RFC2396.pm
 %%SITE_PERL%%/Regexp/Common/URI/news.pm
 %%SITE_PERL%%/Regexp/Common/lingua.pm
