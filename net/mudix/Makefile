@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 CATEGORIES=	net
 MASTER_SITES=	http://dwizardry.dhs.org/mudix/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scorpio@drkshdw.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# none
