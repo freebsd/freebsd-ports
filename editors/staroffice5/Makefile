@@ -19,6 +19,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 
