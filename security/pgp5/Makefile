@@ -4,10 +4,13 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1995/09/25 19:21:31 ache Exp $
+# $Id: Makefile,v 1.9 1995/09/28 14:57:12 ache Exp $
 #
 
 CATEGORIES+=	security
+
+# Pick an initial default, else it doesn't get set in the INDEX.
+DISTNAME=	pgp262s
 
 MAINTAINER=	ache@FreeBSD.ORG
 WRKSRC=         ${WRKDIR}/src
