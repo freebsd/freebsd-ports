@@ -1,0 +1,11 @@
+include/jbig.h
+bin/pbmtojbg
+bin/jbgtopbm
+man/man1/jbgtopbm.1.gz
+man/man1/pbmtojbg.1.gz
+man/man5/pbm.5.gz
+lib/libjbig.a
+@exec ranlib %D/%F
+lib/libjbig.so.0.9
+@exec ldconfig -m %B
+share/doc/jbig/jbig.doc
