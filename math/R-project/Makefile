@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
 		http://cran.at.r-project.org/src/base/ \
-		http://cran.ch.r-project.or/src/base/ \
+		http://cran.ch.r-project.org/src/base/ \
 		http://cran.dk.r-project.org/src/base/ \
 		http://cran.hu.r-project.org/src/base/ \
 		http://cran.uk.r-project.org/src/base/ \
@@ -39,7 +39,7 @@ PAPERSIZE?=	letter
 	@${FALSE}
 .endif
 
-ALL_TARGET=	all help html
+#ALL_TARGET=	all help html
 
 MAN1=	R.1
 
