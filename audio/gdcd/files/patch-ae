@@ -1,11 +1,13 @@
---- configure.in.orig	Sat Jan  8 14:40:07 2000
-+++ configure.in	Wed Jun 28 05:28:19 2000
-@@ -16,20 +16,12 @@
+--- configure.in.orig	Sat Jan  8 03:39:45 2000
++++ configure.in	Thu Nov 29 20:04:10 2001
+@@ -15,21 +15,14 @@
+ AC_PROG_INSTALL
  AC_PROG_MAKE_SET
  AC_CANONICAL_HOST
- 
--AC_CHECK_LIB(pthread, pthread_create, PTHREAD_LIBS="-lpthread", AC_MSG_ERROR(Couldn't locate a POSIX threads library))
 -
+-AC_CHECK_LIB(pthread, pthread_create, PTHREAD_LIBS="-lpthread", AC_MSG_ERROR(Couldn't locate a POSIX threads library))
++AM_PATH_GDK_PIXBUF
+ 
  CDAUDIO_LIBS="-lcdaudio"
  
  AM_PATH_GLIB(1.2.0,,,)
@@ -24,16 +26,16 @@
  
  AC_PATH_PROG(LIBART_CONFIG,libart-config,no)
  if test x$LIBART_CONFIG != xno; then
-@@ -60,14 +52,14 @@
+@@ -59,15 +52,9 @@
+ AC_SUBST(GNOME_LIBS)
  AC_SUBST(GNOME_CFLAGS)
  
- AC_CHECK_LIB(gdk_pixbuf, gdk_pixbuf_new_from_file, GDKPIXBUF_LIBS="-lgdk_pixbuf";IMLIB_LIBS="", GDKPIXBUF_LIBS="",$GTK_LIBS $GNOME_LIBS $LIBART_LIBS)
+-AC_CHECK_LIB(gdk_pixbuf, gdk_pixbuf_new_from_file, GDKPIXBUF_LIBS="-lgdk_pixbuf";IMLIB_LIBS="", GDKPIXBUF_LIBS="",$GTK_LIBS $GNOME_LIBS $LIBART_LIBS)
 -if test "$GDKPIXBUF_LIBS" == ""; then
-+if test "$GDKPIXBUF_LIBS" = ""; then
- 	AC_CHECK_LIB(gdk_imlib, gdk_imlib_load_image, IMLIB_LIBS="-lgdk_imlib"; AC_DEFINE(IMLIB_IMAGING), AC_MSG_ERROR(Couldn't locate GdkPixbuf or Imlib), $GTK_LIBS)
- fi
- 
- AC_SUBST(GDKPIXBUF_LIBS)
+-	AC_CHECK_LIB(gdk_imlib, gdk_imlib_load_image, IMLIB_LIBS="-lgdk_imlib"; AC_DEFINE(IMLIB_IMAGING), AC_MSG_ERROR(Couldn't locate GdkPixbuf or Imlib), $GTK_LIBS)
+-fi
+-
+-AC_SUBST(GDKPIXBUF_LIBS)
  AC_SUBST(IMLIB_LIBS)
  
 -IMAGE_PATH='${prefix}/share/gdcd'
