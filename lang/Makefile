@@ -182,8 +182,6 @@
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rscheme
-    SUBDIR += ruby
-    SUBDIR += ruby-devel
     SUBDIR += ruby-js
     SUBDIR += ruby-lua
     SUBDIR += ruby-man
@@ -195,11 +193,13 @@
     SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
+    SUBDIR += ruby16
     SUBDIR += ruby16-shim-ruby18
-    SUBDIR += ruby_r
-    SUBDIR += ruby_r-devel
-    SUBDIR += ruby_static
-    SUBDIR += ruby_static-devel
+    SUBDIR += ruby16_r
+    SUBDIR += ruby16_static
+    SUBDIR += ruby18
+    SUBDIR += ruby18_r
+    SUBDIR += ruby18_static
     SUBDIR += sbcl
     SUBDIR += scheme48
     SUBDIR += schemetoc

@@ -454,3 +454,9 @@ net/opengatekeeper||2003-08-06|port was marked broken for 3 months with no fix s
 net/openh323proxy||2003-08-06|port was marked broken for 3 months with no fix submitted
 security/p5-Authen-Krb4||2003-08-06|port was marked broken for 3 months with no fix submitted
 x11-toolkits/p5-GnomeApplet||2003-08-06|port was marked broken for 3 months with no fix submitted
+lang/ruby|lang/ruby16|2003-08-07|renamed
+lang/ruby-devel|lang/ruby18|2003-08-07|renamed
+lang/ruby_r|lang/ruby16_r|2003-08-07|renamed
+lang/ruby_r-devel|lang/ruby18_r|2003-08-07|renamed
+lang/ruby_static|lang/ruby16_static|2003-08-07|renamed
+lang/ruby_static-devel|lang/ruby18_static|2003-08-07|renamed
