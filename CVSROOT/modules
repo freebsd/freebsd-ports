@@ -6963,6 +6963,7 @@ sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
+scalapack	ports/math/scalapack
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
 scdp		ports/net/scdp
