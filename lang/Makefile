@@ -86,6 +86,7 @@
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
+    SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += otcl
     SUBDIR += p2c
