@@ -1,0 +1,9 @@
+The Coroner's Toolkit (TCT) is a collection of tools designed to
+assist in a forensic examination of a computer. It is primarily
+designed for Unix systems, but it can some small amount of data
+collection & analysis from non-Unix disks/media.
+
+WWW: http://www.fish.com/tct/
+
+- Francisco Gomez -
+francisco@gomezmarin.com
