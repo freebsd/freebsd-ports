@@ -56,9 +56,12 @@ PLIST=			${WRKDIR}/PLIST
 .else
 PLISTORIG=		${PKGDIR}/PLIST.perl
 PLIST=			${WRKDIR}/PLIST.perl
+.endif
+
+.if !defined(WITH_PERL)
 pre-fetch:
-	@${ECHO} -n "If you want to compile without perl support "
-	@${ECHO} "'make -DWITHOUT_PERL' instead"
+	@${ECHO} -n "If you want to compile with perl support use"
+	@${ECHO} "'make -DWITH_PERL' instead"
 .endif
 
 .if defined(WITH_GNOME) || (exists(${X11BASE}/bin/gnome-config) \
