@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1999/01/07 12:05:26 asami Exp $
+# $Id: Makefile,v 1.111 1999/01/07 12:12:40 asami Exp $
 #
 
     SUBDIR += 4va
@@ -62,6 +62,7 @@
     SUBDIR += mplex
     SUBDIR += netpbm
     SUBDIR += netshow
+    SUBDIR += opengl-man
     SUBDIR += p5-GD
     SUBDIR += p5-GIFgraph
     SUBDIR += p5-Image-Size
