@@ -1,23 +1,22 @@
 # New ports collection makefile for: gif2png
-# Version required:     0.6
+# Version required:    	1.1.1 
 # Date created:         30 Aug 1999
 # Whom:                 saper@system.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=       gif2png-0.6
+DISTNAME=       gif2png-1.1.1
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://swrinde.nde.swri.edu/pub/png/applications/
+MASTER_SITES=   http://www.tuxedo.org/~esr/gif2png/
 
 MAINTAINER=     saper@system.pl
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
-USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/gif2png
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gif2png ${PREFIX}/bin
+MAN1=		gif2png.1 web2png.1
 
 .include <bsd.port.mk>
