@@ -4091,6 +4091,7 @@ libSM		ports/x11/libSM
 libU77		ports/devel/libU77
 libX11		ports/x11/libX11
 libXau		ports/x11/libXau
+libXaw		ports/x11-toolkits/libXaw
 libXcomposite	ports/x11/libXcomposite
 libXcursor	ports/x11/libXcursor
 libXdamage	ports/x11/libXdamage
