@@ -1,0 +1,13 @@
+IMPORTANT - READ CAREFULLY: You may not use these fonts if you do not agree to
+the terms of the Microsoft End-User License Agreement ("EULA").  You will find  
+the EULA at ${X11BASE}/lib/X11/fonts/webfonts/LICENSE. 
+
+If you read and agreed to the EULA, you can start using the fonts.  To be able
+to use them, you must add ${X11BASE}/lib/X11/fonts/webfonts to the X font path
+by either:
+
+xset +fp ${X11BASE}/lib/X11/fonts/webfonts
+xset fp rehash
+
+or by adding it to your X server configuration file.  If you're using XFree86,
+check XF86Config(5) for detailed instructions.
