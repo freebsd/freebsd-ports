@@ -5826,6 +5826,7 @@ p5-ReadLine-Perl	ports/devel/p5-ReadLine-Perl
 p5-Regexp-Common	ports/textproc/p5-Regexp-Common
 p5-Religion	ports/devel/p5-Religion
 p5-ResourcePool	ports/devel/p5-ResourcePool
+p5-ResourcePool-Resource-Net-LDAP	ports/net/p5-ResourcePool-Resource-Net-LDAP
 p5-Resources	ports/devel/p5-Resources
 p5-Roman	ports/math/p5-Roman
 p5-SDL		ports/devel/p5-SDL
