@@ -83,6 +83,7 @@
     SUBDIR += drm
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
+    SUBDIR += easysok
     SUBDIR += eboard
     SUBDIR += editss
     SUBDIR += eights
