@@ -51,7 +51,6 @@ USE_KDELIBS_VER=3
 .else
 
 # kdebase 2.x common stuff -- DEFAULT
-LIB_DEPENDS+=	konq.4:${PORTSDIR}/x11/kdebase2
 USE_KDELIBS_VER=2
 
 .endif
@@ -70,8 +69,9 @@ PREFIX=			${KDE_PREFIX}
 
 .else
 
+BROKEN=			"KDE2 is gone. This port needs to be updated or deleted!"
+
 # kdelibs 2.x common stuff -- DEFAULT
-LIB_DEPENDS+=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 USE_QT_VER=		2
 
 .endif
