@@ -1,0 +1,93 @@
+# New ports collection makefile for:   wapsh
+# Date created:        13 January 2001
+# Whom:                George Reid <greid@ukug.uk.freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=       	wapsh
+PORTVERSION=		1.0
+CATEGORIES=     	shells
+MASTER_SITES=   	http://www.exolution.de/wapsh/
+DISTNAME=		${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=		greid@ukug.uk.freebsd.org
+
+#RUN_DEPENDS=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
+#			${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
+
+WRKSRC=			${WRKDIR}/${DISTNAME:S/_/-/}
+
+USERGUIDEDOCS=		Image10.jpg Image11.jpg Image12.jpg Image13.jpg \
+			Image14.jpg Image15.jpg Image16.jpg Image17.jpg \
+			Image18.jpg Image19.jpg Image20.jpg Image21.jpg \
+			Image22.jpg Image23.jpg Image24.jpg Image25.gif \
+			Image26.jpg Image27.jpg Image28.jpg Image29.jpg \
+			Image30.jpg Image31.jpg Image32.jpg Image33.jpg \
+			Image34.jpg Image35.jpg Image36.jpg Image37.jpg \
+			Image38.jpg Image39.jpg Image4.gif Image40.jpg \
+			Image41.jpg Image42.jpg Image43.jpg Image44.jpg \
+			Image45.jpg Image46.jpg Image47.jpg Image48.jpg \
+			Image49.jpg Image5.gif Image50.gif Image51.jpg \
+			Image52.jpg Image53.gif Image54.jpg Image55.jpg \
+			Image56.jpg Image6.jpg Image7.jpg Image8.jpg \
+			Image9.jpg index.html
+
+HTDOCS=			command.php command_html.inc command_wml.inc \
+			common.inc common_html.inc common_wml.inc \
+			controls_wml.php displayfuncs.inc getloginhosts.inc \
+			history_edit_wml.php history_html.php history_wml.php \
+			login_html.php login_wml.php scroll_wml.php \
+			shortcuts_wml.php
+
+post-patch:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > foo && \
+		${MV} foo ${WRKSRC}/htshd/htshd.c
+
+do-build:
+	(cd ${WRKSRC}/htshd && ${CC} ${CFLAGS} -o htshd htshd.c -lcrypt \
+		-lutil -DUSE_DEV_RANDOM=1)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/htshd/htshd ${PREFIX}/sbin
+
+	${MKDIR} ${PREFIX}/etc/wapsh
+.for C in htsh_profile htshd.conf loginhosts
+	${INSTALL_DATA} ${WRKSRC}/sample/$C ${PREFIX}/etc/wapsh
+.endfor
+
+	${MKDIR} ${PREFIX}/share/wapsh/htdocs
+.for H in ${HTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/htdocs/$H ${PREFIX}/share/wapsh/htdocs
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/wapsh/admin_guide
+	${MKDIR} ${PREFIX}/share/doc/wapsh/implementation_notes
+	${MKDIR} ${PREFIX}/share/doc/wapsh/user_guide
+.for B in Image1.jpg Image2.jpg Image3.jpg index.html qpl.html
+	${INSTALL_DATA} ${WRKSRC}/docs/html/$B ${PREFIX}/share/doc/wapsh
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/docs/html/admin_guide/index.html \
+		${PREFIX}/share/doc/wapsh/admin_guide
+.for I in index.html image57.gif
+	${INSTALL_DATA} ${WRKSRC}/docs/html/implementation_notes/$I \
+		${PREFIX}/share/doc/wapsh/implementation_notes
+.endfor
+.for U in ${USERGUIDEDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/user_guide/$U \
+		${PREFIX}/share/doc/wapsh/user_guide
+.endfor
+.endif #if !defined(NOPORTDOCS)
+
+post-install:
+	@${ECHO} "updating /etc/services"
+	@${CP} /etc/services /etc/services.bak
+	@(${GREP} -v ^htsh /etc/services.bak; ${ECHO} "htsh		3001/tcp    # htsh/wapsh server") > /etc/services
+	@if [ ! -f ${PREFIX}/etc/rc.d/htshd.sh ]; then \
+		${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/htshd.sh startup file."; \
+		${INSTALL_SCRIPT} ${FILESDIR}/htshd.sh ${PREFIX}/etc/rc.d/htshd.sh; \
+	fi
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+
+.include <bsd.port.mk>

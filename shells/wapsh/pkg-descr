@@ -1,0 +1,17 @@
+htsh/wapsh is a system implemented by exolution GmbH which allows
+users to login to a Unix shell on a remote host using a web browser
+or WAP phone (in the latter incarnation, htsh is also called wapsh).
+
+The following phones and emulators have been successfully tested with
+htsh:
+  * Nokia 6210
+  * Nokia 7110
+  * Siemens C35 and S35
+  * Nokia WAP Toolkit 2.0 "Blueprint" phone emulator
+  * UP.Simulator 4.0 from Phone.com
+
+We welcome feedback (at wapsh@exolution.de) from users about their
+experiences using other phone types.
+
+- George Reid
+greid@ukug.uk.freebsd.org
