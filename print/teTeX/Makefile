@@ -40,7 +40,8 @@ CONFIGURE_ARGS=	--disable-multiplatform \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include
 CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x11 --without-oxdvik --without-xdvik
+CONFIGURE_ARGS+=	--without-x11 --without-oxdvik --without-xdvik \
+			--with-mfw=no
 .endif
 MAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allneeded.1 \
 		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
