@@ -7935,6 +7935,7 @@ py-magick	ports/graphics/py-magick
 py-martel	ports/textproc/py-martel
 py-mcrypt	ports/security/py-mcrypt
 py-medusa	ports/net/py-medusa
+py-memcached	ports/databases/py-memcached
 py-metar	ports/astro/py-metar
 py-mhash	ports/security/py-mhash
 py-milter	ports/mail/py-milter
