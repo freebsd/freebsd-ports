@@ -1,0 +1,11 @@
+--- Makefile.in--	Thu Mar 28 15:21:12 2002
++++ Makefile.in	Thu Mar 28 15:21:20 2002
+@@ -13,7 +13,7 @@
+ 
+ # command to update TeX' kpathsea database
+ MKTEXLSR = @MKTEXLSR@
+-UPDATETEX = $(MKTEXLSR) /usr/share/texmf /var/spool/texmf $(BASETEXDIR) > /dev/null
++UPDATETEX = $(MKTEXLSR) > /dev/null
+ 
+ # Version
+ MAJORVN=1
