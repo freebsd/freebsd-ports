@@ -67,6 +67,19 @@ ${_PATCH_COOKIE}: ${PATCHLIST}
 do-install:
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
-		| tar -C /usr/local -xpf -
+		| tar -C ${PREFIX} -xpf -
+
+.if !defined(NO_INSTALL)
+package:
+	@${MAKE} ${.MAKEFLAGS} NO_INSTALL= package
+.endif
+
+.if !defined(DO_PACKAGE)
+do-package:
+	@echo ".include \"${.CURDIR}/Makefile\"" >${WRKDIR}/Makefile
+	@cd ${WRKDIR}; \
+${MAKE} ${.MAKEFLAGS} WRKDIR=${WRKDIR} PKGDIR=${PKGDIR} DO_PACKAGE= do-package
+	@rm -f ${WRKDIR}/Makefile
+.endif
 
 .include <bsd.port.mk>
