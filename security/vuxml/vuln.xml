@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="045944a0-6bca-11d9-aaa6-000a95bc6fae">
+    <topic>sudo -- environmental variable CDPATH is not cleared</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.6.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A sudo bug report says:</p>
+	<blockquote cite="http://www.sudo.ws/bugs/show_bug.cgi?id=155">
+	  <p>sudo doesn't unset the CDPATH variable, which leads to
+	    possible security problems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.sudo.ws/bugs/show_bug.cgi?id=155</url>
+      <mlist>http://www.sudo.ws/pipermail/sudo-announce/2004-November/000044.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-18</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e480ccb2-6bc8-11d9-8dbe-000a95bc6fae">
     <topic>fcron -- multiple vulnerabilities</topic>
     <affects>
