@@ -5,7 +5,7 @@
  EXTRA_DIST = sigc++config.h.in
  
 -includedir = $(libdir)/sigc++/include
-+includedir = $(prefix)/include/sigc++
++includedir = $(prefix)/include
  include_HEADERS = sigc++config.h 
  mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
  CONFIG_HEADER = sigc++config.h
