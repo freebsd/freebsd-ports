@@ -1,12 +1,16 @@
---- bin/ant.orig	Thu Oct 11 15:57:19 2001
-+++ bin/ant	Sat Apr 13 13:12:06 2002
-@@ -1,9 +1,16 @@
- #! /bin/sh
+--- bin/ant.orig	Tue May 21 17:57:59 2002
++++ bin/ant	Tue May 21 17:58:50 2002
+@@ -3,6 +3,9 @@
+ #   Copyright (c) 2001-2002 The Apache Software Foundation.  All rights
+ #   reserved.
  
 +DEFAULT_JAVACMD=%%JAVA%%
 +DEFAULT_JAVA_HOME=%%JAVA_HOME%%
 +
- if [ -f $HOME/.antrc ] ; then 
+ # load system-wide ant configuration
+ if [ -f "/etc/ant.conf" ] ; then 
+   . /etc/ant.conf
+@@ -21,6 +24,10 @@
    . $HOME/.antrc
  fi
  
@@ -17,8 +21,8 @@
  # OS specific support.  $var _must_ be set to either true or false.
  cygwin=false;
  darwin=false;
-@@ -59,7 +66,7 @@
-       JAVACMD=$JAVA_HOME/bin/java
+@@ -88,7 +95,7 @@
+       JAVACMD="$JAVA_HOME/bin/java"
      fi
    else
 -    JAVACMD=java
