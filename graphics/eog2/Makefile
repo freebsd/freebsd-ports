@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eog2
-PORTVERSION=	0.117.0
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DISTNAME=	eog-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

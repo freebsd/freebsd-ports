@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 11 17:44:27 2002
-+++ configure	Tue Jun 11 17:46:59 2002
-@@ -7480,6 +7480,7 @@
+--- configure.orig	Sat Jun 15 02:24:38 2002
++++ configure	Sat Jun 15 02:27:06 2002
+@@ -7481,6 +7481,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11770,14 +11771,14 @@
+@@ -11829,14 +11830,14 @@
  
  LIBNAUTILUS_LIBS="`$PKG_CONFIG --libs $LIBNAUTILUS_MODULES`"
  
@@ -25,7 +25,7 @@
  
  COMPONENT_MODULES="eel-2.0 libbonoboui-2.0 gnome-vfs-module-2.0"
  COMPONENT_CFLAGS="`$PKG_CONFIG --cflags $COMPONENT_MODULES`"
-@@ -12469,9 +12470,9 @@
+@@ -12546,9 +12547,9 @@
  s,@ORBIT_CONFIG@,$ORBIT_CONFIG,;t t
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@ORBIT_CFLAGS@,$ORBIT_CFLAGS,;t t
@@ -37,7 +37,7 @@
  s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
  s,@ALLOCA@,$ALLOCA,;t t
  s,@USE_NLS@,$USE_NLS,;t t
-@@ -12522,22 +12523,22 @@
+@@ -12599,24 +12600,24 @@
  s,@HAVE_JW_FALSE@,$HAVE_JW_FALSE,;t t
  s,@HAVE_JW@,$HAVE_JW,;t t
  s,@MEDUSA_CFLAGS@,$MEDUSA_CFLAGS,;t t
@@ -60,6 +60,8 @@
 -s,@MUSIC_COMPONENT_LIBS@,$MUSIC_COMPONENT_LIBS,;t t
 +s~@MUSIC_COMPONENT_LIBS@~$MUSIC_COMPONENT_LIBS~;t t
  s,@DISABLE_DEPRECATED_CFLAGS@,$DISABLE_DEPRECATED_CFLAGS,;t t
+ s,@ENABLE_HARDWARE_VIEW_TRUE@,$ENABLE_HARDWARE_VIEW_TRUE,;t t
+ s,@ENABLE_HARDWARE_VIEW_FALSE@,$ENABLE_HARDWARE_VIEW_FALSE,;t t
  s,@CAPPLET_CFLAGS@,$CAPPLET_CFLAGS,;t t
 -s,@CAPPLET_LIBS@,$CAPPLET_LIBS,;t t
 +s~@CAPPLET_LIBS@~$CAPPLET_LIBS~;t t

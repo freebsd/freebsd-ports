@@ -54,6 +54,7 @@ lib/libeel-2.so.2
 libdata/pkgconfig/eel-2.0.pc
 share/locale/ar/LC_MESSAGES/eel-2.0.mo
 share/locale/az/LC_MESSAGES/eel-2.0.mo
+share/locale/bg/LC_MESSAGES/eel-2.0.mo
 share/locale/ca/LC_MESSAGES/eel-2.0.mo
 share/locale/cs/LC_MESSAGES/eel-2.0.mo
 share/locale/da/LC_MESSAGES/eel-2.0.mo

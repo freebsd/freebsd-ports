@@ -24,6 +24,7 @@ share/gnome/pixmaps/eog/orient-horizontal.png
 share/gnome/pixmaps/eog/orient-vertical.png
 share/gnome/pixmaps/eog/right-down.png
 share/gnome/pixmaps/gnome-eog.png
+share/locale/ar/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
@@ -56,6 +57,8 @@ share/locale/sv/LC_MESSAGES/eog.mo
 share/locale/ta/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
+share/locale/vi/LC_MESSAGES/eog.mo
+share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/pixmaps/eog

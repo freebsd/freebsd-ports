@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libzvt
-PORTVERSION=	1.117.0
+PORTVERSION=	1.99999.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

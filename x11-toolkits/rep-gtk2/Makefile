@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	rep-gtk2
-PORTVERSION=	2002.05.24
+PORTVERSION=	2002.06.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DISTNAME=	rep-gtk-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	gnome2
 

@@ -128,6 +128,7 @@ share/gnome/pixmaps/document-icons/gnome-text-x-haskell.png
 share/gnome/pixmaps/document-icons/gnome-text-x-install.png
 share/gnome/pixmaps/document-icons/gnome-text-x-java.png
 share/gnome/pixmaps/document-icons/gnome-text-x-literate-haskell.png
+share/gnome/pixmaps/document-icons/gnome-text-x-lyx.png
 share/gnome/pixmaps/document-icons/gnome-text-x-makefile.png
 share/gnome/pixmaps/document-icons/gnome-text-x-patch.png
 share/gnome/pixmaps/document-icons/gnome-text-x-perl.png
@@ -146,9 +147,11 @@ share/gnome/pixmaps/document-icons/gnome-video-x-msvideo.png
 share/gnome/pixmaps/document-icons/gnome-x-font-afm.png
 share/gnome/pixmaps/document-icons/gnome-x-troff-man.png
 share/gnome/pixmaps/document-icons/i-blockdev.png
+share/gnome/pixmaps/document-icons/i-cdrom-audio.png
 share/gnome/pixmaps/document-icons/i-cdrom.png
 share/gnome/pixmaps/document-icons/i-chardev.png
 share/gnome/pixmaps/document-icons/i-core.png
+share/gnome/pixmaps/document-icons/i-dvd.png
 share/gnome/pixmaps/document-icons/i-executable.png
 share/gnome/pixmaps/document-icons/i-fifo.png
 share/gnome/pixmaps/document-icons/i-floppy.png
@@ -159,6 +162,14 @@ share/gnome/pixmaps/document-icons/i-music-24.png
 share/gnome/pixmaps/document-icons/i-music-36.png
 share/gnome/pixmaps/document-icons/i-music.png
 share/gnome/pixmaps/document-icons/i-nfs.png
+share/gnome/pixmaps/document-icons/i-printer.png
+share/gnome/pixmaps/document-icons/i-regular-72.png
+share/gnome/pixmaps/document-icons/i-regular-96.png
+share/gnome/pixmaps/document-icons/i-regular.png
+share/gnome/pixmaps/document-icons/i-regular.xml
+share/gnome/pixmaps/document-icons/i-sock.png
+share/gnome/pixmaps/document-icons/i-spreadsheet.png
+share/gnome/pixmaps/document-icons/i-zipdisk.png
 share/locale/az/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ca/LC_MESSAGES/gnome-mime-data.mo
 share/locale/da/LC_MESSAGES/gnome-mime-data.mo
@@ -176,6 +187,7 @@ share/locale/it/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ja/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ko/LC_MESSAGES/gnome-mime-data.mo
 share/locale/lt/LC_MESSAGES/gnome-mime-data.mo
+share/locale/mk/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ms/LC_MESSAGES/gnome-mime-data.mo
 share/locale/nl/LC_MESSAGES/gnome-mime-data.mo
 share/locale/nn/LC_MESSAGES/gnome-mime-data.mo

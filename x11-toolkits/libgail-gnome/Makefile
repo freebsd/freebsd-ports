@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	libgail-gnome
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		spi.0:${PORTSDIR}/x11-toolkits/at-spi
+		spi.1:${PORTSDIR}/x11-toolkits/at-spi
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -7,16 +7,17 @@
 
 PORTNAME=	libgtkhtml
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
 		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
-		gailutil.15:${PORTSDIR}/x11-toolkits/gail
+		gailutil.16:${PORTSDIR}/x11-toolkits/gail
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
