@@ -6,49 +6,55 @@
 #
 # based on japanese/netscape4-*
 
-PORTNAME=	netscape-${BROWSER}
+PORTNAME=	netscape-${BROWSER_ARC}
 PORTVERSION=	${BROWSER_VERSION}
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/netscape-ko/ \
 		http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko/
 DISTFILES=	${KOREAN_KIT}.tar.gz
 
-MAINTAINER?=	cjh@kr.freebsd.org
+MAINTAINER?=	cjh@FreeBSD.org
 
 # ?= for ports that include this Makefile
-RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape4-${BROWSER}
+RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf \
 		${X11BASE}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont
 
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/INSTALL
-PLIST=		${.CURDIR}/pkg/PLIST
-PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG}
+PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG} \
+		BROWSER=${BROWSER_ARC} VER=${BROWSER_VER}
 WRKSRC=		${WRKDIR}/${KOREAN_KIT}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-FILESDIR?=	${.CURDIR}/files
 
 # should be changed by versions
 BROWSER?=       communicator
-BROWSER_BIN?=   ${BROWSER}-${BROWSER_VERSION}.bin
-BROWSER_CMD?=   ko-${BROWSER}-4
+BROWSER_ARC?=	${BROWSER}
+BROWSER_BIN?=   ${BROWSER_ARC}-${BROWSER_VERSION}.bin
+BROWSER_CMD?=   ko-${BROWSER_ARC}-${BROWSER_VER}
+BROWSER_VER?=	4
 BROWSER_VERSION?= 4.08
-NETHELP?=	nethelp-v403
+
+# for old version(<4.5), font name substitution required.
+# newer version use baekmuk-gulim should not be affected.
 PREVFONTNAME=	kodig
 NEWFONTNAME=	gulim
+
 KOREAN_KIT?=	netscape-v408.generic-generic-generic-19990612
+
+NETHELP?=	nethelp-v403
+START_SCRIPT?=	${MASTERDIR}/files/start.sh.in
 
 LANG=		ko_KR.EUC
 MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 			-e "s;@PREFIX@;${PREFIX};g" \
 			-e "s;@NDIR@;${NDIR};g" \
 			-e "s;@RDIR@;${NDIR};g" \
-			-e "s;@BROWSER@;${BROWSER};g" \
+			-e "s;@BROWSER@;${BROWSER_ARC}-${BROWSER_VERSION};g" \
 			-e "s;@BROWSER_BIN@;${BROWSER_BIN};g" \
 			-e "s;@LANG@;${LANG};g" \
 			-e "s;-${PREVFONTNAME}-;-${NEWFONTNAME}-;g"
-TAR=		/usr/bin/tar
 
 .if ${BROWSER_VERSION} == 4.08
 DIST_SUBDIR=    korean-netscape
@@ -57,7 +63,7 @@ DIST_SUBDIR=    korean-netscape
 .SILENT:
 
 do-configure:
-	${MAKESCRIPT} ${FILESDIR}/start.sh.in >${WRKDIR}/start.sh
+	${MAKESCRIPT} ${START_SCRIPT} >${WRKDIR}/start.sh
 	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ko >${WRKSRC}/Netscape
 	${MAKESCRIPT} ${FILESDIR}/INSTALL >${PKGINSTALL}
 	# make navigator resource
@@ -73,7 +79,7 @@ do-configure:
 
 
 do-install:
-	${INSTALL_DATA} ${FILESDIR}/preferences.js ${NDIR}
+	${INSTALL_DATA} ${MASTERDIR}/files/preferences.js ${NDIR}
 	${MKDIR} ${NDIR}/locale
 	${LN} -sf /usr/share/locale/en_US.ISO_8859-1 ${NDIR}/locale/${LANG}
 	${MKDIR} ${NDIR}/${LANG}
@@ -84,12 +90,10 @@ do-install:
 .for f in about splash
 	${INSTALL_DATA} ${WRKDIR}/$f ${NDIR}/${LANG}/
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/ko-${BROWSER}
-	${LN} -sf ko-${BROWSER} ${PREFIX}/bin/netscape
+	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/${BROWSER_CMD}
+	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape.run
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/${NETHELP}.nif \
 		${EXTRACT_AFTER_ARGS} -C ${NDIR}/${LANG}
-	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/${BROWSER_CMD}
-	${TAR} -C ${NDIR}/${LANG} -x -z -v -f ${WRKSRC}/${NETHELP}.nif
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \
