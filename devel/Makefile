@@ -1120,6 +1120,7 @@
     SUBDIR += pear-PEAR
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
+    SUBDIR += pear-PHP_Beautifier
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-Pager
     SUBDIR += pear-Structures_DataGrid
