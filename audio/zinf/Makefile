@@ -7,7 +7,7 @@
 
 PORTNAME=	freeamp
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
@@ -53,7 +53,7 @@ PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis

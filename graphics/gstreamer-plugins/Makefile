@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -446,7 +447,7 @@ CONFIGURE_ARGS+=	--disable-vorbis \
 			--disable-vorbistest
 PLIST_SUB+=	VORBIS="@comment "
 .else
-LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
 PLIST_SUB+=	VORBIS=""
 .endif

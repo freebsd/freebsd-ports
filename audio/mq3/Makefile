@@ -7,13 +7,14 @@
 
 PORTNAME=	mq3
 PORTVERSION=	8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mq3.org/source/
 
 MAINTAINER=	erich@tacni.net
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		vorbis.1:${PORTSDIR}/audio/libvorbis \
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		qthreads.0:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

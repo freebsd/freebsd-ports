@@ -8,7 +8,7 @@
 
 PORTNAME=	muse
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://freesoftware.fsf.org/download/muse/ \
 		http://muse.dyne.org/releases/
@@ -17,7 +17,7 @@ DISTNAME=	MuSE-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		vorbis.1:${PORTSDIR}/audio/libvorbis \
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes

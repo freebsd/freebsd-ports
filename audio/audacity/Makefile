@@ -6,6 +6,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +35,7 @@ CONFIGURE_ARGS+=	--with-arts-soundserver=yes
 
 .if !defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--with-vorbis
-LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
 pre-everything:
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS.MSG."

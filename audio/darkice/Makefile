@@ -8,6 +8,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame-devel \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lame-prefix=${LOCALBASE} \

@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.11.20020711
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://avifile.sourceforge.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--without-sdl
 
 # libvorbis; thus, libogg
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE} \
 			--with-ogg-prefix=${LOCALBASE}
