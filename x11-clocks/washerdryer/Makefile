@@ -8,7 +8,7 @@
 PORTNAME=	washerdryer
 PORTVERSION=	1.1
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://ieng9.ucsd.edu/~m1foley/
+MASTER_SITES=	http://lucille.dhs.org/
 DISTNAME=	washerDryer-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
