@@ -3,10 +3,10 @@
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.13 1998/11/15 15:29:18 ache Exp $
+# $Id: Makefile,v 1.14 1999/02/03 10:47:30 asami Exp $
 #
 
-DISTNAME=       w3mir-1.0.5
+DISTNAME=       w3mir-1.0.6
 CATEGORIES=     www perl5
 MASTER_SITES=   http://www.math.uio.no/~janl/w3mir/
 
