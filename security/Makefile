@@ -64,6 +64,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
+    SUBDIR += geheimnis
     SUBDIR += gnupg
     SUBDIR += gnupg-idea
     SUBDIR += gpa
