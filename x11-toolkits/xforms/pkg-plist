@@ -1,6 +1,6 @@
 bin/fdesign
 lib/libxforms.a
-lib/libxforms.so.0.81
+lib/libxforms.so.0.86
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libxforms.a
 include/X11/forms.h
@@ -12,6 +12,7 @@ lib/X11/xforms/boxtype
 lib/X11/xforms/browserall
 lib/X11/xforms/browserop
 lib/X11/xforms/buttonall
+lib/X11/xforms/butttypes
 lib/X11/xforms/canvas
 lib/X11/xforms/chartall
 lib/X11/xforms/chartstrip
@@ -29,16 +30,20 @@ lib/X11/xforms/demo27
 lib/X11/xforms/demo33
 lib/X11/xforms/fbrowse
 lib/X11/xforms/fbrowse1
+lib/X11/xforms/fdial
 lib/X11/xforms/flclock
 lib/X11/xforms/fonts
 lib/X11/xforms/free1
 lib/X11/xforms/freedraw
 lib/X11/xforms/freedraw_leak
 lib/X11/xforms/goodies
+lib/X11/xforms/group
 lib/X11/xforms/iconify
+lib/X11/xforms/inputall
 lib/X11/xforms/invslider
 lib/X11/xforms/lalign
 lib/X11/xforms/ldial
+lib/X11/xforms/ll
 lib/X11/xforms/longlabel
 lib/X11/xforms/menu
 lib/X11/xforms/minput
@@ -63,6 +68,7 @@ lib/X11/xforms/sliderall
 lib/X11/xforms/strsize
 lib/X11/xforms/symbols
 lib/X11/xforms/timer
+lib/X11/xforms/timerprec
 lib/X11/xforms/touchbutton
 lib/X11/xforms/wwwl
 lib/X11/xforms/xyplotactive
