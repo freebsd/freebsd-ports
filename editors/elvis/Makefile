@@ -1,19 +1,19 @@
 # New ports collection makefile for:	elvis
-# Version required:	2.1.3
+# Version required:	2.1.4
 # Date created:		1999-09-01
 # Whom:			Christian Weisgerber <naddy@unix-ag.uni-kl.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	elvis-2.1_3
-PKGNAME=	elvis-2.1.3
+DISTNAME=	elvis-2.1_4
+PKGNAME=	elvis-2.1.4
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/	\
-		ftp://ftp.false.com/pub/elvis/	\
+MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
+		ftp://ftp.false.com/pub/elvis/ \
 		ftp://ftp.fh-wedel.de/pub/elvis/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/elvis
@@ -28,6 +28,9 @@ USE_XLIB=	yes
 pre-fetch:
 	@${ECHO_MSG} "To build this port without X11, define \"NO_X11\"."
 .endif
+
+pre-configure:
+	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/configure
 
 do-install:
 .for file in elvis elvtags ref
