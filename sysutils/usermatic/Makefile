@@ -8,7 +8,7 @@
 PORTNAME=	usermatic
 PORTVERSION=	0.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://btmdxm.mat.uni-bayreuth.de/~johannes/usermatic/\
+MASTER_SITES=	http://btw23.de/johannes/usermatic/\
 		http://home.arcor.de/fehlner/inhalt/download/\
 		http://home.arcor.de/teambushido/
 
