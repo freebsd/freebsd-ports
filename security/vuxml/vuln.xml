@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a5422fd-7e1a-11d9-a9e7-0001020eed82">
+    <topic>powerdns -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><lt>2.9.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS is vulnerable to a temporary denial-of-service
+	  vulnerability that can be triggered using a random stream of
+	  bytes.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12446</bid>
+      <url>http://ds9a.nl/cgi-bin/cvstrac/pdns/tktview?tn=21</url>
+      <url>http://doc.powerdns.com/changelog.html#CHANGELOG-2-9-17</url>
+    </references>
+    <dates>
+      <discovery>2004-09-18</discovery>
+      <entry>2005-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e3c860d-7dae-11d9-a9e7-0001020eed82">
     <topic>emacs -- movemail format string vulnerability</topic>
     <affects>
