@@ -16,8 +16,6 @@ MAINTAINER=	fjoe@freebsd.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
 NO_WRKSUBDIR=	yes
-NO_PACKAGE=	"Depends on kernel"
-ONLY_FOR_ARCHS=	i386
 
 post-extract:
 .for _i in ${DISTFILES}
