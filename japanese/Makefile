@@ -201,6 +201,10 @@
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
+    SUBDIR += pips760
+    SUBDIR += pips770
+    SUBDIR += pips800
+    SUBDIR += pips820_3300
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-common
