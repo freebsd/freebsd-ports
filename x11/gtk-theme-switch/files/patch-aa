@@ -1,25 +1,33 @@
---- Makefile.orig	Wed Aug 30 09:35:43 2000
-+++ Makefile	Thu Sep 14 09:54:48 2000
-@@ -1,7 +1,7 @@
--GCC = gcc
+
+$FreeBSD$
+
+--- Makefile.orig	Fri Apr 13 17:57:24 2001
++++ Makefile	Tue Apr 17 09:31:20 2001
+@@ -1,7 +1,8 @@
+-GCC = cc
 -PREFIX=/usr/local
--CFLAGS = -I/usr/lib/glib/include -I/usr/X11R6/include
--LIBS = -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXi -lXext -lX11 -lm
+-CFLAGS = -O2 -Wall $(shell gtk-config --cflags)
+-LIBS = $(shell gtk-config --libs)
 +GCC = ${CC}
 +PREFIX?=/usr/local
-+CFLAGS += `${GTK_CONFIG} --cflags`
-+LIBS = `${GTK_CONFIG} --libs`
- VERSION = 0.4
- all : gthemeswitch
++GTK_CONFIG?=gtk-config
++CFLAGS += -Wall $(shell $(GTK_CONFIG) --cflags)
++LIBS = $(shell $(GTK_CONFIG) --libs)
+ VERSION = 1.0.1
+ all: switch
  
-@@ -12,8 +12,8 @@
- 	-rm gthemeswitch *~
+@@ -12,11 +13,10 @@
+ 	-rm -f switch *~
+ 	
  install: all
-        
--	install -c gthemeswitch ${PREFIX}/bin
+-	strip switch
+ 	mkdir -p ${PREFIX}/bin
+-	mkdir -p ${PREFIX}/man
 -	install -c switch ${PREFIX}/bin
-+	${BSD_INSTALL_PROGRAM} gthemeswitch ${PREFIX}/bin
-+	${BSD_INSTALL_SCRIPT} switch ${PREFIX}/bin
+-	install -c switch.1 ${PREFIX}/man
++	mkdir -p ${PREFIX}/man/man1
++	$(BSD_INSTALL_PROGRAM) switch ${PREFIX}/bin
++	$(BSD_INSTALL_MAN) switch.1 ${PREFIX}/man/man1
  
  dist: clean
  	rm -rf /tmp/gtk-theme-switch-$(VERSION)
