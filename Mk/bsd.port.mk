@@ -438,7 +438,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
 #				  (default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
-#				  PREFIX=${PREFIX}" if PERL_CONFIGURE is set, empty otherwise).
+#				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
+#				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
+#				  empty otherwise).
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
 #				  ${HAS_CONFIGURE} is set.
 # CONFIGURE_LOG - The name of configure log file (default: config.log).
@@ -515,7 +517,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # are for debugging purposes.  Don't set them in your Makefile.
 #
 # ECHO_MSG		- Used to print all the '===>' style prompts - override this
-#				  to turn them off (default: ${ECHO}).
+#				  to turn them off (default: ${ECHO_CMD}).
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
@@ -533,7 +535,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 
 .if defined(_PREMKINCLUDED)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: You cannot include bsd.port[.pre].mk twice"
+	@${ECHO_CMD} "${PKGNAME}: You cannot include bsd.port[.pre].mk twice"
 	@${FALSE}
 .endif
 
@@ -594,7 +596,7 @@ XARGS?=		/usr/bin/xargs
 ECHO_CMD?=	echo				# Shell builtin
 
 # Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG?=		${ECHO}
+ECHO_MSG?=		${ECHO_CMD}
 
 # Get the architecture
 .if !defined(ARCH)
@@ -655,9 +657,9 @@ MASTERDIR?=	${.CURDIR}
 
 .if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${ECHO} "(This port is too old for your bsd.port.mk, please update it to match"
-	@${ECHO} " your bsd.port.mk.)"
+	@${ECHO_CMD} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+	@${ECHO_CMD} "(This port is too old for your bsd.port.mk, please update it to match"
+	@${ECHO_CMD} " your bsd.port.mk.)"
 	@${FALSE}
 .endif
 
@@ -701,7 +703,7 @@ TEMPLATES?=		${PORTSDIR}/Templates
 	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
 	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
 pre-everything::
-	@${ECHO} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
+	@${ECHO_CMD} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
 	@${FALSE}
 .endif
 PATCHDIR?=		${MASTERDIR}/files
@@ -734,12 +736,12 @@ PREFIX?=		${LOCALBASE}
 .if ${OSVERSION} >= 400014
 .if !exists(/usr/lib/libcrypto.so)
 .BEGIN:
-	@${ECHO} "This port requires the OpenSSL library, which is part of"
-	@${ECHO} "the FreeBSD crypto distribution but not installed on your"
-	@${ECHO} "machine. Please see the \"OpenSSL\" section in the handbook"
-	@${ECHO} "(at \"http://www.FreeBSD.org/handbook/openssl.html\", for instance)"
-	@${ECHO} "for instructions on how to obtain and install the FreeBSD"
-	@${ECHO} "OpenSSL distribution."
+	@${ECHO_CMD} "This port requires the OpenSSL library, which is part of"
+	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
+	@${ECHO_CMD} "machine. Please see the \"OpenSSL\" section in the handbook"
+	@${ECHO_CMD} "(at \"http://www.FreeBSD.org/handbook/openssl.html\", for instance)"
+	@${ECHO_CMD} "for instructions on how to obtain and install the FreeBSD"
+	@${ECHO_CMD} "OpenSSL distribution."
 	@${FALSE}
 .else
 OPENSSLBASE=	/usr
@@ -811,7 +813,7 @@ XFREE86_VERSION?=	3
 
 .if defined(_POSTMKINCLUDED)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: You cannot include bsd.port[.post].mk twice"
+	@${ECHO_CMD} "${PKGNAME}: You cannot include bsd.port[.post].mk twice"
 	@${FALSE}
 .endif
 
@@ -846,7 +848,7 @@ PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
 	${MANCOMPRESSED} != maybe
 .BEGIN:
-	@${ECHO} "${PKGNAME}: Value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
+	@${ECHO_CMD} "${PKGNAME}: Value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
 	@${FALSE}
 .endif
 .endif
@@ -1007,7 +1009,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 # 3.0-current after perl5 import
 .if !exists(/usr/bin/perl${PERL_VERSION}) && defined(USE_PERL5)
 pre-everything::
-	@${ECHO} "Error: you don't have the right version of perl in /usr/bin."
+	@${ECHO_CMD} "Error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
 .endif
 PERL5=			/usr/bin/perl${PERL_VERSION}
@@ -1038,6 +1040,10 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+
+.if defined(USE_PYTHON) || defined(PYTHON_VERSION)
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
 .include "${PORTSDIR}/../Makefile.inc"
@@ -1164,7 +1170,11 @@ MTREE_FILE=	/etc/mtree/BSD.x11.dist
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 .else
+.if ${PREFIX} == /usr
+MTREE_FILE=	/etc/mtree/BSD.usr.dist
+.else
 MTREE_FILE=	/etc/mtree/BSD.local.dist
+.endif
 .endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
@@ -1280,9 +1290,9 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if ${_group}==all || ${_group}==ALL || ${_group}==default
 .			BEGIN:
-				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO} "in group definitions."
-				@${ECHO} "Please fix your MASTER_SITES"
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO_CMD} "in group definitions."
+				@${ECHO_CMD} "Please fix your MASTER_SITES"
 				@${FALSE}
 .			endif
 _MASTER_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
@@ -1297,9 +1307,9 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if ${_group}==all || ${_group}==ALL || ${_group}==default
 .			BEGIN:
-				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO} "in group definitions."
-				@${ECHO} "Please fix your MASTER_SITES"
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO_CMD} "in group definitions."
+				@${ECHO_CMD} "Please fix your MASTER_SITES"
 				@${FALSE}
 .			endif
 _PATCH_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
@@ -1319,9 +1329,9 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if ${_group}==all || ${_group}==ALL || ${_group}==default
 .			BEGIN:
-				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO} "in group definitions."
-				@${ECHO} "Please fix your MASTER_SITE_SUBDIR"
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO_CMD} "in group definitions."
+				@${ECHO_CMD} "Please fix your MASTER_SITE_SUBDIR"
 				@${FALSE}
 .			endif
 .			if defined(_MASTER_SITES_${_group})
@@ -1340,9 +1350,9 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if ${_group}==all || ${_group}==ALL || ${_group}==default
 .			BEGIN:
-				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO} "in group definitions."
-				@${ECHO} "Please fix your PATCH_SITE_SUBDIR"
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO_CMD} "in group definitions."
+				@${ECHO_CMD} "Please fix your PATCH_SITE_SUBDIR"
 				@${FALSE}
 .			endif
 .			if defined(_PATCH_SITES_${_group})
@@ -1595,12 +1605,12 @@ MAINTAINER?=	ports@FreeBSD.org
 
 .if !target(maintainer)
 maintainer:
-	@${ECHO} ${MAINTAINER}
+	@${ECHO_CMD} ${MAINTAINER}
 .endif
 
 .if !defined(CATEGORIES)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: CATEGORIES is mandatory."
+	@${ECHO_CMD} "${PKGNAME}: CATEGORIES is mandatory."
 	@${FALSE}
 .else
 VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
@@ -1616,10 +1626,10 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm zope
 check-categories:
 .for cat in ${CATEGORIES}
-	@if ${ECHO} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
+	@if ${ECHO_CMD} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
 		${TRUE}; \
 	else \
-		${ECHO} "${PKGNAME}: category ${cat} not in list of valid categories."; \
+		${ECHO_CMD} "${PKGNAME}: category ${cat} not in list of valid categories."; \
 		${FALSE}; \
 	fi
 .endfor
@@ -1640,7 +1650,8 @@ LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 .if defined(PERL_CONFIGURE)
-CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
+CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
+			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
 USE_PERL5=			yes
 .undef HAS_CONFIGURE
@@ -1666,7 +1677,11 @@ SCRIPTS_ENV+=	CURDIR=${MASTERDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
+.if ${PREFIX} == /usr
+MANPREFIX?=	/usr/share
+.else
 MANPREFIX?=	${PREFIX}
+.endif
 
 .for sect in 1 2 3 4 5 6 7 8 9
 MAN${sect}PREFIX?=	${MANPREFIX}
@@ -1681,7 +1696,7 @@ MANEXT=	.gz
 .endif
 
 .if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
-__pmlinks!=	${ECHO} '${MLINKS:S/	/ /}' | ${AWK} \
+__pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
  '{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
 		if ($$i ~ /^-$$/ && i != 1 && i % 2 != 0) \
@@ -1694,7 +1709,7 @@ __pmlinks!=	${ECHO} '${MLINKS:S/	/ /}' | ${AWK} \
   }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1.gzg' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
 .BEGIN:
-	@${ECHO} "${PKGNAME}: Unable to parse MLINKS."
+	@${ECHO_CMD} "${PKGNAME}: Unable to parse MLINKS."
 	@${FALSE}
 .endif
 _MLINKS=	${_MLINKS_PREPEND}
@@ -1726,7 +1741,7 @@ _MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
 .endfor
 
 .if defined(_MLINKS) && make(generate-plist)
-_TMLINKS!=	${ECHO} ${_MLINKS} | ${AWK} '{for (i=2; i<=NF; i+=2) print $$i}'
+_TMLINKS!=	${ECHO_CMD} ${_MLINKS} | ${AWK} '{for (i=2; i<=NF; i+=2) print $$i}'
 .else
 _TMLINKS=
 .endif
@@ -1755,8 +1770,8 @@ XFREE86_HTML_MAN?=	no
 
 .if defined(INSTALLS_SHLIB)
 LDCONFIG_DIRS?=	%%PREFIX%%/lib
-LDCONFIG_PLIST!=	${ECHO} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
+LDCONFIG_PLIST!=	${ECHO_CMD} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
+LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 .endif
 
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
@@ -1827,7 +1842,7 @@ __ARCH_OK?=     1
 .endif
 .endfor
 .if defined(MLINKS)
-	@${ECHO} ${MLINKS} | ${AWK} \
+	@${ECHO_CMD} ${MLINKS} | ${AWK} \
 	'{ for (i=1; i<=NF; i++) { \
 		if (i % 2 == 0) { printf "lib/X11/doc/html/%s.html\n", $$i } \
 	} }' >> ${TMPPLIST}
@@ -1886,26 +1901,15 @@ IGNORECMD=	${DO_NADA}
 .else
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
 .endif
-fetch:
+
+.for target in fetch checksum extract patch configure all build install reinstall package
+${target}:
 	@${IGNORECMD}
-checksum:
-	@${IGNORECMD}
-extract:
-	@${IGNORECMD}
-patch:
-	@${IGNORECMD}
-configure:
-	@${IGNORECMD}
-all:
-	@${IGNORECMD}
-build:
-	@${IGNORECMD}
-install:
-	@${IGNORECMD}
-reinstall:
-	@${IGNORECMD}
-package:
-	@${IGNORECMD}
+.if defined(INSTALLS_DEPENDS)
+	@${FALSE}
+.endif
+.endfor
+
 .endif
 
 .endif
@@ -2212,9 +2216,9 @@ do-patch:
 						if ${PATCH} ${PATCH_ARGS} < $$i ; then \
 							PATCHES_APPLIED="$$PATCHES_APPLIED $$i" ; \
 						else \
-							${ECHO_MSG} `${ECHO} ">> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
+							${ECHO_MSG} `${ECHO_CMD} ">> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
 							if [ x"$$PATCHES_APPLIED" != x"" ]; then \
-								${ECHO_MSG} `${ECHO} ">> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
+								${ECHO_MSG} `${ECHO_CMD} ">> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
 							fi; \
 							${FALSE} ; \
 						fi; \
@@ -2250,10 +2254,13 @@ do-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
-			${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
-			${CAT} ${CONFIGURE_LOG}; \
-			${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
-			${FALSE}; \
+			 ${ECHO_CMD} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+			(${ECHO_CMD} "      Please report the problem to ${MAINTAINER} [maintainer] and"; \
+			 ${ECHO_CMD} "      attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including"; \
+			 ${ECHO_CMD} "      the output of the failure of your make command. Also, it might"; \
+			 ${ECHO_CMD} "      be a good idea to provide an overview of all packages installed"; \
+			 ${ECHO_CMD} "      on your system (e.g. an \`ls ${PKG_DBDIR}\`).") | /usr/bin/fmt 79 79 ; \
+			 ${FALSE}; \
 		fi)
 .endif
 .if defined(PERL_CONFIGURE)
@@ -2334,7 +2341,7 @@ package-links: delete-package-links
 				exit 1; \
 			fi; \
 		fi; \
-		${LN} -sf `${ECHO} $$cat | ${SED} -e 'sa[^/]*a..ag'`/${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
+		${LN} -sf `${ECHO_CMD} $$cat | ${SED} -e 'sa[^/]*a..ag'`/${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
 	done
 .if !defined(NO_LATEST_LINK)
 	@if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
@@ -2365,16 +2372,16 @@ delete-package: delete-package-links
 .if !target(delete-package-links-list)
 delete-package-links-list:
 	@for cat in ${CATEGORIES}; do \
-		${ECHO} ${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
+		${ECHO_CMD} ${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
 	done
 .if !defined(NO_LATEST_LINK)
-	@${ECHO} ${RM} -f ${PKGLATESTFILE}
+	@${ECHO_CMD} ${RM} -f ${PKGLATESTFILE}
 .endif
 .endif
 
 .if !target(delete-package-list)
 delete-package-list: delete-package-links-list
-	@${ECHO} "[ -f ${PKGFILE} ] && (${ECHO} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
+	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
 # Utility targets follow
@@ -2383,12 +2390,12 @@ delete-package-list: delete-package-links-list
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		${ECHO} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
-		${ECHO} "      If so, you may wish to \`\`make deinstall'' and install"; \
-		${ECHO} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		${ECHO} "      If you really wish to overwrite the old port of ${PKGNAME}"; \
-		${ECHO} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-		${ECHO} "      in your environment or the \"make install\" command line."; \
+		${ECHO_CMD} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+		${ECHO_CMD} "      If so, you may wish to \`\`make deinstall'' and install"; \
+		${ECHO_CMD} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
+		${ECHO_CMD} "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		${ECHO_CMD} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+		${ECHO_CMD} "      in your environment or the \"make install\" command line."; \
 		exit 1; \
 	fi
 .else
@@ -2419,8 +2426,8 @@ install-mtree:
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
-			${ECHO} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			${ECHO} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
+			${ECHO_CMD} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
+			${ECHO_CMD} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
 			exit 1; \
 		else \
 			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
@@ -2619,8 +2626,8 @@ ${stage}-${name}-script:
 patch-libtool:
 .if defined(USE_LIBTOOL)
 	@(if ${LIBTOOL} --version | grep -vq "1\.3\.4-freebsd-ports"; then \
-		(${ECHO} "Your libtool installation is out of date. Please remove"; \
-		 ${ECHO} "and reinstall ${PORTSDIR}/devel/libtool."; \
+		(${ECHO_CMD} "Your libtool installation is out of date. Please remove"; \
+		 ${ECHO_CMD} "and reinstall ${PORTSDIR}/devel/libtool."; \
 		 exit 1); \
 	  fi; \
 	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
@@ -2628,7 +2635,7 @@ patch-libtool:
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
 		${SED} -e "s^\$$ac_aux_dir/ltconfig^$${LIBTOOLDIR}/ltconfig^g" \
-			-e "s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
+			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
 			$$file.tmp > $$file; \
 	 done);
 .else
@@ -2732,18 +2739,18 @@ delete-distfiles:
 
 .if !target(delete-distfiles-list)
 delete-distfiles-list:
-	@${ECHO} "# ${PKGNAME}"
+	@${ECHO_CMD} "# ${PKGNAME}"
 	@if [ "X${RESTRICTED_FILES}" != "X" ]; then \
 		for file in ${RESTRICTED_FILES}; do \
-			${ECHO} "[ -f ${_DISTDIR}/$$file ] && (${ECHO} deleting ${_DISTDIR}/$$file; ${RM} -f ${_DISTDIR}/$$file)"; \
+			${ECHO_CMD} "[ -f ${_DISTDIR}/$$file ] && (${ECHO_CMD} deleting ${_DISTDIR}/$$file; ${RM} -f ${_DISTDIR}/$$file)"; \
 			dir=$${file%/*}; \
 			if [ "$${dir}" != "$${file}" ]; then \
-				${ECHO} "(cd ${_DISTDIR} && ${RMDIR} -p $${dir} 2>/dev/null)"; \
+				${ECHO_CMD} "(cd ${_DISTDIR} && ${RMDIR} -p $${dir} 2>/dev/null)"; \
 			fi; \
 		done; \
 	fi
 .if defined(DIST_SUBDIR)
-	@${ECHO} "${RMDIR} ${_DISTDIR} 2>/dev/null || ${TRUE}"
+	@${ECHO_CMD} "${RMDIR} ${_DISTDIR} 2>/dev/null || ${TRUE}"
 .endif
 .endif
 
@@ -2778,9 +2785,9 @@ fetch-list:
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
 				esac; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
+				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO} "echo $${file} not fetched" ; \
+			${ECHO_CMD} "echo $${file} not fetched" ; \
 		fi \
 	done)
 .if defined(PATCHFILES)
@@ -2810,9 +2817,9 @@ fetch-list:
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
 				esac; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
+				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO} "echo $${file} not fetched" ; \
+			${ECHO_CMD} "echo $${file} not fetched" ; \
 		fi \
 	 done)
 .endif
@@ -2829,7 +2836,7 @@ makesum:
 		${MD5} $$file >> ${MD5_FILE}; \
 	 done)
 	@for file in ${_IGNOREFILES}; do \
-		${ECHO} "MD5 ($$file) = IGNORE" >> ${MD5_FILE}; \
+		${ECHO_CMD} "MD5 ($$file) = IGNORE" >> ${MD5_FILE}; \
 	done
 .endif
 # this line goes after the ${MD5} above
@@ -2888,7 +2895,7 @@ checksum: fetch
 
 .if !target(package-name)
 package-name:
-	@${ECHO} ${PKGNAME}
+	@${ECHO_CMD} ${PKGNAME}
 .endif
 
 # Build a package but don't check the package cookie
@@ -2930,11 +2937,11 @@ ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${${deptype}_DEPENDS}; do \
-		prog=`${ECHO} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
+		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
+			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target="${DEPENDS_TARGET}"; \
 			depends_args="${DEPENDS_ARGS}"; \
@@ -2971,7 +2978,7 @@ ${deptype:L}-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} $$target $$depends_args) ; \
+				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -2986,11 +2993,11 @@ lib-depends:
 .if defined(LIB_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`${ECHO} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
+		lib=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
+			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target="${DEPENDS_TARGET}"; \
 			depends_args="${DEPENDS_ARGS}"; \
@@ -3012,7 +3019,7 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$lib.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} $$target $$depends_args) ; \
+				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 				if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
 					${TRUE}; \
@@ -3033,8 +3040,8 @@ misc-depends:
 .if !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
+			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target="${DEPENDS_TARGET}"; \
 			depends_args="${DEPENDS_ARGS}"; \
@@ -3062,12 +3069,12 @@ all-depends-list:
 
 ALL-DEPENDS-LIST= \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+	for dir in $$(${ECHO_CMD} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
-			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
+			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" all-depends-list); \
-				for d in $$child; do ${ECHO} $$d; done; \
-				${ECHO} $$dir; \
+				for d in $$child; do ${ECHO_CMD} $$d; done; \
+				${ECHO_CMD} $$dir; \
 				checked="$$dir $$child $$checked"; \
 			fi; \
 		else \
@@ -3118,9 +3125,9 @@ build-depends-list:
 	@${BUILD-DEPENDS-LIST}
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
+	for dir in $$(${ECHO_CMD} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
 		if [ -d $$dir ]; then \
-			${ECHO} $$dir; \
+			${ECHO_CMD} $$dir; \
 		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
@@ -3130,9 +3137,9 @@ run-depends-list:
 	@${RUN-DEPENDS-LIST}
 
 RUN-DEPENDS-LIST= \
-	for dir in $$(${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
 		if [ -d $$dir ]; then \
-			${ECHO} $$dir; \
+			${ECHO_CMD} $$dir; \
 		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
@@ -3146,19 +3153,19 @@ package-depends-list:
 
 PACKAGE-DEPENDS-LIST= \
 	if [ "${CHILD_DEPENDS}" ]; then \
-		${ECHO} "${PKGNAME}	${.CURDIR}"; \
+		${ECHO_CMD} "${PKGNAME}	${.CURDIR}"; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
-			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
+			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
 				set -- $$childout; \
 				childname=""; childdir=""; \
 				while [ $$\# != 0 ]; do \
 					childname="$$childname $$1"; \
 					childdir="$$childdir $$2"; \
-					${ECHO} "$$1	$$2"; \
+					${ECHO_CMD} "$$1	$$2"; \
 					shift 2; \
 				done; \
 				checked="$$dir $$childdir $$checked"; \
@@ -3186,7 +3193,7 @@ package-depends:
 
 .if !target(describe)
 describe:
-	@${ECHO} "`perl -e ' \
+	@${ECHO_CMD} "`perl -e ' \
 		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}; \
 		if (open(COMMENT, q{${COMMENT}})) { \
 			$$_ = <COMMENT>; \
@@ -3241,7 +3248,7 @@ www-site:
 .if exists(${DESCR})
 	@${GREP} '^WWW:[ 	]' ${DESCR} | ${AWK} '{print $$2}' | ${HEAD} -1
 .else
-	@${ECHO}
+	@${ECHO_CMD}
 .endif
 
 .if !target(readmes)
@@ -3257,14 +3264,14 @@ readme:
 ${.CURDIR}/README.html:
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
 	@${CAT} ${TEMPLATES}/README.port | \
-		${SED} -e 's%%PORT%%'`${ECHO} ${.CURDIR} | ${SED} -e 's.*/\([^/]*/[^/]*\)$$\1'`'g' \
+		${SED} -e 's%%PORT%%'`${ECHO_CMD} ${.CURDIR} | ${SED} -e 's.*/\([^/]*/[^/]*\)$$\1'`'g' \
 			-e 's%%PKG%%${PKGNAME}g' \
 			-e '/%%COMMENT%%/r${COMMENT}' \
 			-e '/%%COMMENT%%/d' \
-			-e 's%%DESCR%%'"`${ECHO} ${DESCR} | ${SED} -e 's${.CURDIR}/'`"'' \
+			-e 's%%DESCR%%'"`${ECHO_CMD} ${DESCR} | ${SED} -e 's${.CURDIR}/'`"'' \
 			-e 's%%BUILD_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
 			-e 's%%RUN_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
-			-e 's%%TOP%%'"`${ECHO} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
+			-e 's%%TOP%%'"`${ECHO_CMD} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
 		>> $@
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
@@ -3273,18 +3280,18 @@ ${.CURDIR}/README.html:
 pretty-print-build-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$8;}'`
-	@${ECHO} '" to build.'
+	@${ECHO_CMD} -n 'This port requires package(s) "'
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$8;}'`
+	@${ECHO_CMD} '" to build.'
 .endif
 .endif
 
 .if !target(pretty-print-run-depends-list)
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$9;}'`
-	@${ECHO} '" to run.'
+	@${ECHO_CMD} -n 'This port requires package(s) "'
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$9;}'`
+	@${ECHO_CMD} '" to run.'
 .endif
 .endif
 
@@ -3295,23 +3302,23 @@ pretty-print-run-depends-list:
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `dirname ${TMPPLIST}`
-	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO} "** Missing package files for ${PKGNAME}."; exit 1; fi
+	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing package files for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
 	@for man in ${__MANPAGES}; do \
-		${ECHO} $${man} >> ${TMPPLIST}; \
+		${ECHO_CMD} $${man} >> ${TMPPLIST}; \
 	done
 .for _PREFIX in ${PREFIX}
 .if ${_TMLINKS:M${_PREFIX}*}x != x
 	@for i in ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,}; do \
-		${ECHO} "$$i" >> ${TMPPLIST}; \
+		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
 .endif
 .if ${_TMLINKS:N${_PREFIX}*}x != x
-	@${ECHO} @cwd / >> ${TMPPLIST}
+	@${ECHO_CMD} @cwd / >> ${TMPPLIST}
 	@for i in ${_TMLINKS:N${_PREFIX}*:S,^/,,}; do \
-		${ECHO} "$$i" >> ${TMPPLIST}; \
+		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
-	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 .if ${XFREE86_HTML_MAN} == "yes"
 .for mansect in 1 2 3 4 5 6 7 8 9 L N
@@ -3319,17 +3326,17 @@ generate-plist:
 	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
 .endfor
 .endfor
-	@${ECHO} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
-	@${ECHO} "@exec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
 .endif
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
 .if !defined(NO_MTREE)
-	@${ECHO} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
 .endif
 .if defined(INSTALLS_SHLIB)
-	@${ECHO} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
-	@${ECHO} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
 .endif
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
@@ -3360,7 +3367,7 @@ compress-man:
 	while :; do \
 		[ $$# -eq 0 ] && break || ${TRUE}; \
 		${RM} -f $${2%.gz}; ${RM} -f $$2.gz; \
-		${LN} -fs `${ECHO} $$1 $$2 | ${AWK} '{ \
+		${LN} -fs `${ECHO_CMD} $$1 $$2 | ${AWK} '{ \
 					z=split($$1, a, /\//); x=split($$2, b, /\//); \
 					while (a[i] == b[i]) i++; \
 					for (q=i; q<x; q++) printf "../"; \
@@ -3410,7 +3417,7 @@ fake-pkg:
 			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
-					${ECHO} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
+					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
 			fi; \
 		done; \
