@@ -7,16 +7,10 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	print editors
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://scribus.planetmirror.com/ \
-		http://www.scribus.org.uk/downloads/${PORTVERSION}/ \
-		http://docs.scribus.net/releases/${PORTVERSION}/ \
-		http://web2.altmuehlnet.de/fschmid/ \
-		http://ahnews.music.salford.ac.uk/scribus/downloads/ \
-		http://mirrors.ntua.gr/Scribus/
-MASTER_SITE_SUBDIR=	apps/office
+MASTER_SITES=	http://www.scribus.org.uk/downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
@@ -30,16 +24,22 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-USE_GNOME=	libartlgpl2 gnometarget
+USE_GNOME=	gnometarget libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
-		%%PREFIX%%/lib/scribus/plugins
+USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
+MAN1=		scribus.1
+MANLANG=	"" pl
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CXXFLAGS+=	-fpermissive
+.endif
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -54,5 +54,7 @@ post-patch:
 		 s|-O2||g ; \
 		 s|2\.3|${PYTHON_VERSION:S/^python//}|g ; \
 		 s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/share/man|/man|g' ${WRKSRC}/scribus/manpages/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
