@@ -1,0 +1,31 @@
+--- Source-Tree/loaddaemon/all-systems/loaddaemon.c.orig	Thu Aug  2 01:18:37 2001
++++ Source-Tree/loaddaemon/all-systems/loaddaemon.c	Fri Aug  3 16:59:53 2001
+@@ -539,6 +539,20 @@
+ }
+ #endif  /* HPUX */
+ #if   IS_DECOSF | IS_BSD
++#if BSD4_4
++static
++void calcloadavg(double load[3])
++{
++    double avenrun[3];
++    int i;
++    if (getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]))) {
++        printf("getloadavg goofed\n");
++    }
++    for (i = 0; i < 3; i++) {
++        load[i] = avenrun[i];
++    }
++}
++#else
+ struct  nlist nl[] = {
+ #define unixpath "/vmunix"
+         { "_avenrun" },
+@@ -570,6 +584,7 @@
+     for (i = 0; i < 3; i++)
+         load[i] = ((double) avenrun[i]) / (double) 1024.;
+ }
++#endif	 /* BSD4_4 */
+ #endif   /* DECOSF or Sun (BSD43) */
+ 
+ #if IS_SOLARIS
