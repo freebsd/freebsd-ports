@@ -1,9 +1,8 @@
 The Jabber transport (jserver) is a daemon for Jabber clients to connect
 and communicate with. It only handles native Jabber protocol.
 
-After editing $PREFIX/etc/jserver.xml, the server can be started:
-
-jserver &
+After editing $PREFIX/etc/jserver.xml, the server can be started by
+rc.d script.
 
 Complete information about configuration can be found in the Jabber Server
 mini-HOWTO at http://docs.jabber.org/.
