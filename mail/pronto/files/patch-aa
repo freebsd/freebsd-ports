@@ -1,0 +1,14 @@
+--- Makefile	Mon Jan  8 13:26:26 2001
++++ ../pronto-2.2.3/Makefile	Thu Mar 15 06:37:45 2001
+@@ -16,9 +16,9 @@
+ 
+ CPANBUILD = ~/.cpan/build
+ 
+-CVSROOT=':pserver:anonymous@cvs.muhri.net:/home/cvsroot'
++#CVSROOT=':pserver:anonymous@cvs.muhri.net:/home/cvsroot'
+ 
+-export CVSROOT
++#export CVSROOT
+ 
+ all: 
+ 

@@ -129,6 +129,7 @@
     SUBDIR += procmail
     SUBDIR += prom-mew
     SUBDIR += prom-wl
+    SUBDIR += pronto
     SUBDIR += pygmy
     SUBDIR += qmail
     SUBDIR += qmail-contrib
