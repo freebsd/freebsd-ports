@@ -26,6 +26,13 @@ MAN1 =		sr.1 srl.1 srm.1 srprof.1 srtex.1 srlatex.1 srgrind.1 \
 MAN3 =		sranimator.3 srgetopt.3 srwin.3
 MAN5 =		srmap.5 srtrace.5
 
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	X11="@comment "
+.else
+PLIST_SUB+=	X11=""
+USE_XLIB=	yes
+.endif
+
 .include	<bsd.port.pre.mk>
 
 pre-install:
