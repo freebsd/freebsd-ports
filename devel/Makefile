@@ -597,6 +597,7 @@
     SUBDIR += p5-Class-ObjectTemplate-DB
     SUBDIR += p5-Class-ParmList
     SUBDIR += p5-Class-ReturnValue
+    SUBDIR += p5-Class-Roles
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tangram
     SUBDIR += p5-Class-Tom
