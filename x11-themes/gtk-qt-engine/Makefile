@@ -7,19 +7,20 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.freedesktop.org/Software/gtk-qt/
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 
+LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gtk20
-USE_KDELIBS_VER=3
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 
