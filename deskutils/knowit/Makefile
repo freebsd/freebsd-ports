@@ -24,10 +24,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 BINDIR=		${PREFIX}/bin
+BINNAME=	${CONFIGURE_TARGET}-${PORTNAME}
+PLIST_SUB=	BINNAME=${BINNAME}
 
 post-install:
-	cd ${BINDIR}; rm -f ${PORTNAME}; \
-		ln -sf ${CONFIGURE_TARGET}-${PORTNAME} ${PORTNAME}
+	cd ${BINDIR}; ${RM} -f ${PORTNAME}; \
+		${LN} -sf ${BINNAME} ${PORTNAME}
 
 .include <bsd.port.mk>
 #EOF

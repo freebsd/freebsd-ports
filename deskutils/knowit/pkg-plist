@@ -1,5 +1,5 @@
 bin/knowit
-bin/i386-portbld-freebsd4.7-knowit
+bin/%%BINNAME%%
 bin/knowit
 share/applnk/Applications/knowit.desktop
 share/apps/knowit/tips
