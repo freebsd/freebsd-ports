@@ -9,7 +9,7 @@ PORTNAME=		xmltex
 PORTVERSION=		0.8
 CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_TEX_CTAN} \
-			http://www.hcu.ox.ac.uk/TEI/Software/passivetex/:xmltex
+			http://www.tei-c.org.uk/Software/passivetex/:xmltex
 MASTER_SITE_SUBDIR=	macros/xmltex/base
 DISTFILES=		englishutf16.xml englishutf8.xml iso-8859-1.xmt \
 			iso-8859-2.xmt koi8-r.xmt langtest.tex langtest.xml \
