@@ -230,6 +230,7 @@
     SUBDIR += php5-pgsql
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase
+    SUBDIR += php5-sybase_ct
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
