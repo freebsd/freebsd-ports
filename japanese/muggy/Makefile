@@ -6,6 +6,9 @@
 #
 
 LANGUAGE=	Japanese
+
+CATEGORIES=	japanese
+
 MASTERDIR=	${.CURDIR}/../../editors/muggy
 
 .include	"${MASTERDIR}/Makefile"
