@@ -20,6 +20,14 @@ PLIST_SUB+=	DIRNAME="${PORT_SHAREDIR}"
 # default installation directory
 PORT_SHAREDIR?=	${DISTNAME}
 
+.ifndef(WITHOUT_RESTRICTIONS)
+RESTRICTED?=    It may contain iconic, visual, graphical or other\
+		elements that may not be distributed without the\
+		consent of either the trademark or the patent holder
+
+NO_PACKAGE?=	${RESTRICTED}
+.endif
+
 post-patch:
 # correctly inherits crystal per default
 	@${REINPLACE_CMD} -E \
