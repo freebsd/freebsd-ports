@@ -38,13 +38,13 @@ include/libgimp/parasiteP.h
 include/libgimp/parasiteio.h
 lib/libgck.a
 lib/libgck.so
-lib/libgck.so.11
+lib/libgck.so.14
 lib/libgimp.a
 lib/libgimp.so
-lib/libgimp.so.11
+lib/libgimp.so.14
 lib/libgimpui.a
 lib/libgimpui.so
-lib/libgimpui.so.11
+lib/libgimpui.so.14
 lib/libgpc.a
 lib/libmegawidget.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
@@ -76,6 +76,7 @@ libexec/gimp/1.1/plug-ins/bz2
 libexec/gimp/1.1/plug-ins/c_astretch
 libexec/gimp/1.1/plug-ins/checkerboard
 libexec/gimp/1.1/plug-ins/colorify
+libexec/gimp/1.1/plug-ins/colortoalpha
 libexec/gimp/1.1/plug-ins/color_enhance
 libexec/gimp/1.1/plug-ins/compose
 libexec/gimp/1.1/plug-ins/convmatrix
@@ -101,7 +102,9 @@ libexec/gimp/1.1/plug-ins/flame
 libexec/gimp/1.1/plug-ins/flarefx
 libexec/gimp/1.1/plug-ins/fp
 libexec/gimp/1.1/plug-ins/fractaltrace
+libexec/gimp/1.1/plug-ins/gap_decode_mpeg
 libexec/gimp/1.1/plug-ins/gap_filter
+libexec/gimp/1.1/plug-ins/gap_frontends
 libexec/gimp/1.1/plug-ins/gap_plugins
 libexec/gimp/1.1/plug-ins/gauss_iir
 libexec/gimp/1.1/plug-ins/gauss_rle
@@ -124,6 +127,7 @@ libexec/gimp/1.1/plug-ins/gtm
 libexec/gimp/1.1/plug-ins/guillotine
 libexec/gimp/1.1/plug-ins/gz
 libexec/gimp/1.1/plug-ins/header
+libexec/gimp/1.1/plug-ins/helpbrowser
 libexec/gimp/1.1/plug-ins/hot
 libexec/gimp/1.1/plug-ins/hrz
 libexec/gimp/1.1/plug-ins/ifscompose
@@ -166,7 +170,6 @@ libexec/gimp/1.1/plug-ins/randomize
 libexec/gimp/1.1/plug-ins/rcm
 libexec/gimp/1.1/plug-ins/ripple
 libexec/gimp/1.1/plug-ins/rotate
-libexec/gimp/1.1/plug-ins/rotators
 libexec/gimp/1.1/plug-ins/sample_colorize
 libexec/gimp/1.1/plug-ins/scatter_hsv
 libexec/gimp/1.1/plug-ins/screenshot
@@ -836,6 +839,7 @@ share/gimp/help/C/file/quit.html
 share/gimp/help/C/file/revert.html
 share/gimp/help/C/contents.html
 share/gimp/help/C/index.html
+share/gimp/help/C/modes.html
 share/gimp/help/C/welcome.html
 share/gimp/help/images/eek.png
 share/gimp/help/images/wilber.png
@@ -1042,6 +1046,7 @@ share/gimp/tips/gimp_tips.it.txt
 share/gimp/tips/gimp_conseils.fr.txt
 share/gimp/tips/gimp_tips.ru.txt
 share/gimp/tips/gimp_tips.ko.txt
+share/gimp/tips/gimp_tips.pl.txt
 share/gimp/unitrc
 share/gimp/user_install
 share/locale/de/LC_MESSAGES/gimp.mo
