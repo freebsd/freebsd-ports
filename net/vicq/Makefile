@@ -12,8 +12,6 @@ MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/ICQ2000.pm:${PORTSDIR}/net/p5-Net-ICQ2000
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
