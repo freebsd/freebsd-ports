@@ -34,11 +34,11 @@ INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/kde
-	${CP} -R ${WRKSRC}/examples/ ${RUBY_EXAMPLESDIR}/kde/
-	${MKDIR} ${RUBY_DOCDIR}/kde/ja
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/kde/
-	${INSTALL_DATA} ${WRKSRC}/README.jp.txt ${RUBY_DOCDIR}/kde/ja/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/README.jp.txt ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
 .include <bsd.port.mk>
