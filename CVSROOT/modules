@@ -8592,6 +8592,7 @@ xeyesplus	ports/games/xeyesplus
 xface.el	ports/graphics/xface.el
 xfce		ports/x11-wm/xfce
 xfce4		ports/x11-wm/xfce4
+xfce4-desktop	ports/x11-wm/xfce4-desktop
 xfce4-wm	ports/x11-wm/xfce4-wm
 xfed		ports/x11-fonts/xfed
 xfedor		ports/x11/xfedor
