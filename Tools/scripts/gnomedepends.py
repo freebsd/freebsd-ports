@@ -68,7 +68,7 @@ newgnomeports = []
 regobj = re.compile('^@dirrm (?P<dirname>\S+).*$')
 for portdir in gnomeports:
 	try:
-		lines = readfile(os.path.join(portdir, 'pkg/PLIST'))
+		lines = readfile(os.path.join(portdir, 'pkg-plist'))
 		lines = filter(lines, regobj)
 		if len(lines) > 0:
 			newgnomeports.append([portdir, lines])
@@ -78,7 +78,7 @@ gnomeports = newgnomeports
 newgnomeports = []
 
 try:
-	currplist = readfile('pkg/PLIST')
+	currplist = readfile('pkg-plist')
 except IOError, errmsg:
 	print errmsg
 	sys.exit(1)
@@ -118,7 +118,7 @@ if len(depends) == 0:
 	sys.stdout.writelines(['No dependencies found (maybe it is not a GNOME port).\n'])
 	sys.exit(0)
 
-sys.stdout.writelines(['According to the contents of PLIST the port depends on the following GNOME\n', 'port(s):\n\n'])
+sys.stdout.writelines(['According to the contents of pkg-plist the port depends on the following GNOME\n', 'port(s):\n\n'])
 for depend in depends:
 	sys.stdout.writelines([depend[0], ', for directories:\n'])
 	for dir in depend[1]:
