@@ -154,7 +154,7 @@ cat <<'END'
 
  If you do not have a copy of this file, even if you answer YES to this
  question, support will not be enabled.  If you wish to change this later,
- the option controling this is contined the file xc/config/cf/xf86site.def.
+ the option controling this is contained the file xc/config/cf/xf86site.def.
 
 END
 yesno "Do you want to enable XDM-AUTHORIZATION-1 support? [YES] "
