@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rasmol
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/
-DISTNAME=	RasMol_2.7.1
+DISTNAME=	RasMol_2.7.2
 
-MAINTAINER=	frankch@waru.life.nthu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/RasMol_2.7.1/src/
+WRKSRC=		$(WRKDIR)/RasMol_2.7.2/src/
 USE_IMAKE=	yes
 
 MAN1=		rasmol.1
