@@ -436,5 +436,6 @@
     SUBDIR += zangband
     SUBDIR += zipcodes
     SUBDIR += zope-ejsplitter
+    SUBDIR += zope-jamailhost
 
 .include <bsd.port.subdir.mk>
