@@ -35,4 +35,18 @@ USE_GMAKE=	yes
 
 INSTALLS_SHLIB= yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Broken pkg-plist on alpha 4.x"
+.endif
+
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Configure fails on amd64 and ia64"
+.endif
+
+.include <bsd.port.post.mk>
