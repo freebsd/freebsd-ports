@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	lincvs
-PORTVERSION=	0.2.3
+PORTVERSION=	0.4.90
 CATEGORIES=	devel kde
-MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://lincvs.sunsite.dk/download/${PORTNAME}-${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_QT_VER=	2
-WRKSRC=		${WRKDIR}/LinCVS-0.2.3
-
-do-configure:
-	@${PERL} -pi.orig -e 's|__X11BASE__|${X11BASE}|' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/LinCVS ${PREFIX}/bin/lincvs
 
 .include <bsd.port.mk>

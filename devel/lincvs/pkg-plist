@@ -1,1 +1,14 @@
-bin/lincvs
+bin/LinCVS
+bin/set-ssh-commit-env.sh
+bin/set-ssh-env.sh
+bin/start-openssh-agent.sh
+bin/start-ssh-agent.sh
+share/lincvs/AUTHORS
+share/lincvs/COPYING
+share/lincvs/ChangeLog
+share/lincvs/INSTALL
+share/lincvs/README
+share/lincvs/SSH.txt
+share/lincvs/THANKS
+share/lincvs/VERSION
+@dirrm share/lincvs
