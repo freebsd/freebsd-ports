@@ -1,9 +1,9 @@
---- makefile.in.orig	Thu Aug 26 15:31:19 1999
-+++ makefile.in	Wed Sep  8 19:04:00 1999
-@@ -361,22 +361,19 @@
+--- makefile.in.orig	Sat Apr  1 04:33:40 2000
++++ makefile.in	Sun Apr 16 06:57:08 2000
+@@ -379,22 +379,19 @@
  		fi ; \
  		)'
- 	-rm -f $(HELPDIR)/help_files.sed
+ 	@-rm -f $(HELPDIR)/help_files.sed
 -	@echo Updating $(libdir)/lynx.cfg
 -	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
 -		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
@@ -27,10 +27,10 @@
  	-rm -f $(LIBDIR)/lynx.tmp
 +	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
  
- LYHelp.h : LYHelp.hin
- 	@echo Constructing sed-script
-@@ -407,8 +404,7 @@
- 	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
+ LYHelp.h : help_files.sed LYHelp.hin
+ 	@echo Creating $@
+@@ -416,8 +413,7 @@
+ 	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
 -	-mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg

@@ -1,4 +1,5 @@
 # New ports collection makefile for:    lynx
+# http://lynx.isc.org/current/
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
@@ -6,9 +7,9 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION= 	2.8.3dev.20
+PORTVERSION=    2.8.3pre.5
 CATEGORIES=	www
-MASTER_SITES=   http://sol.slcc.edu/lynx/current/
+MASTER_SITES=   http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
