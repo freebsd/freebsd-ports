@@ -11,7 +11,7 @@ bin/offline
 bin/restart
 bin/update
 etc/rc.d/interchange.sh.sample
-interchange/_session_storable
+@unexec [ -f %D/interchange/_session_storable ] && rm -f %D/interchange/_session_storable
 interchange/_uid
 interchange/auto/Interchange/.packlist
 @dirrm interchange/auto/Interchange

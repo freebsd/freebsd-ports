@@ -27,7 +27,6 @@ RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statemen
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-PERL_VERSION=	5.8.2
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
 MAN1=		configdump.1 config_prog.1 expire.1 localize.1 \
@@ -48,8 +47,6 @@ MAKE_ARGS+=	NOCPANINSTALL=1 \
 
 CONFIGURE_ARGS+=	force=1
 
-BROKEN=         "Does not install (refuses to accept the new userid it asks you to create)"
-
 .if defined(PACKAGE_BUILDING)
 IGNORE="needs a tty at the configure stage"
 .endif
@@ -58,9 +55,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s:You are now ready to cd to \$$realdir:You are now ready to cd to ${PREFIX}:g" ${WRKSRC}/Makefile.PL
 
 pre-configure:
-.if !defined(USE_THIS_PERL)
-	@[ ! "${PERL_VER}" \< "5.8" ] || ( ${ECHO_CMD} -e "You use perl ${PERL_VER}, interchange should be used with 5.8 or better,\njust install the newer perl from ports and run 'use.perl port', this will\nmake the new perl the default perl. If you already have some perl modules\ninstalled for your old perl, you have to reinstall them for the new perl.\n\nIf you absolutely want to try to run interchange with perl ${PERL_VER},\nyou have to add '-DUSE_THIS_PERL' as an option for 'make'.\n" ; exit 1 )
-.endif
 .if !defined(CHECK_FOR_IC_USER)
 	@${ECHO_CMD} -e "This port needs a specific user account ('interch') at configure time.\n\nIf it is ok for you to add a new user at configure time of this port\nadd '-DCHECK_FOR_IC_USER' as an option for 'make'.\n"
 	@exit 1
