@@ -7,7 +7,7 @@
 
 PORTNAME=		fam
 PORTVERSION=		2.6.9
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		devel
 MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
 PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
@@ -22,7 +22,7 @@ CFLAGS+=		-Wno-deprecated
 
 USE_AUTOMAKE_VER=15
 USE_AUTOCONF_VER=253
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -36,8 +36,8 @@ pre-configure:
 	@${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
 	@${RM} -f ${WRKSRC}/Makefile.am.orig
-	${RM} -fv ${WRKSRC}/fam/mntent*
-	${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
+	@${RM} -f ${WRKSRC}/fam/mntent*
+	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
