@@ -1,0 +1,139 @@
+bin/trophy
+share/trophy/resources.scr
+share/trophy/resources/cars/dust.tga
+share/trophy/resources/cars/flash2/surface.tga
+share/trophy/resources/cars/flash2/surface3d.tga
+share/trophy/resources/cars/jeep/surface.tga
+share/trophy/resources/cars/jeep/surface3d.tga
+share/trophy/resources/cars/vw/surface.tga
+share/trophy/resources/cars/vw/surface3d.tga
+share/trophy/resources/cars/z3/surface.tga
+share/trophy/resources/cars/z3/surface3d.tga
+share/trophy/resources/fonts/lcd_13_green.tga
+share/trophy/resources/fonts/normal_11_white.tga
+share/trophy/resources/fonts/normal_14_white.tga
+share/trophy/resources/fonts/normal_22_gray.tga
+share/trophy/resources/fonts/normal_22_white.tga
+share/trophy/resources/fonts/normal_8_white.tga
+share/trophy/resources/goody/bullets.tga
+share/trophy/resources/goody/fogbomb.tga
+share/trophy/resources/goody/life.tga
+share/trophy/resources/goody/money.tga
+share/trophy/resources/goody/turbo.tga
+share/trophy/resources/gui/arrow_b.tga
+share/trophy/resources/gui/arrow_l.tga
+share/trophy/resources/gui/arrow_r.tga
+share/trophy/resources/gui/arrow_t.tga
+share/trophy/resources/gui/border1.tga
+share/trophy/resources/gui/border2.tga
+share/trophy/resources/gui/border3.tga
+share/trophy/resources/gui/border4.tga
+share/trophy/resources/gui/button.tga
+share/trophy/resources/gui/edge1.tga
+share/trophy/resources/gui/edge2.tga
+share/trophy/resources/gui/edge3.tga
+share/trophy/resources/gui/edge4.tga
+share/trophy/resources/gui/loading.tga
+share/trophy/resources/gui/progressbar.tga
+share/trophy/resources/menu/bar.tga
+share/trophy/resources/menu/bg.tga
+share/trophy/resources/menu/cursorani.tga
+share/trophy/resources/misc/carfire.tga
+share/trophy/resources/misc/caution.tga
+share/trophy/resources/misc/checkflag.tga
+share/trophy/resources/misc/cross.tga
+share/trophy/resources/misc/dust.tga
+share/trophy/resources/misc/fog.tga
+share/trophy/resources/misc/gunfire.tga
+share/trophy/resources/misc/hitpoint.tga
+share/trophy/resources/misc/info.tga
+share/trophy/resources/misc/light.tga
+share/trophy/resources/misc/verticalbar.tga
+share/trophy/resources/panel/button.tga
+share/trophy/resources/panel/death.tga
+share/trophy/resources/panel/infoview.tga
+share/trophy/resources/panel/label.tga
+share/trophy/resources/panel/life.tga
+share/trophy/resources/panel/speed.tga
+share/trophy/resources/panel/turbo.tga
+share/trophy/resources/panel/turbolabel.tga
+share/trophy/resources/sounds/background01.wav
+share/trophy/resources/sounds/carhorn.wav
+share/trophy/resources/sounds/crash.wav
+share/trophy/resources/sounds/dog.wav
+share/trophy/resources/sounds/engine.wav
+share/trophy/resources/sounds/fire.wav
+share/trophy/resources/sounds/fogbomb.wav
+share/trophy/resources/sounds/goody.wav
+share/trophy/resources/sounds/goody_bullets.wav
+share/trophy/resources/sounds/goody_fogbomb.wav
+share/trophy/resources/sounds/goody_life.wav
+share/trophy/resources/sounds/goody_money.wav
+share/trophy/resources/sounds/goody_turbo.wav
+share/trophy/resources/sounds/light.wav
+share/trophy/resources/sounds/menu.wav
+share/trophy/resources/sounds/selector.wav
+share/trophy/resources/sounds/shoot.wav
+share/trophy/resources/sounds/shot.wav
+share/trophy/resources/sounds/slide.wav
+share/trophy/resources/tracks/Downtown/bridge.tga
+share/trophy/resources/tracks/Downtown/config.tck
+share/trophy/resources/tracks/Downtown/fmap.tga
+share/trophy/resources/tracks/Downtown/thumb.tga
+share/trophy/resources/tracks/Downtown/vmap.tga
+share/trophy/resources/tracks/Loops/bridge.tga
+share/trophy/resources/tracks/Loops/config.tck
+share/trophy/resources/tracks/Loops/fmap.tga
+share/trophy/resources/tracks/Loops/thumb.tga
+share/trophy/resources/tracks/Loops/vmap.tga
+share/trophy/resources/tracks/Moon/bridge.tga
+share/trophy/resources/tracks/Moon/config.tck
+share/trophy/resources/tracks/Moon/fmap.tga
+share/trophy/resources/tracks/Moon/thumb.tga
+share/trophy/resources/tracks/Moon/vmap.tga
+share/trophy/resources/tracks/Rally/config.tck
+share/trophy/resources/tracks/Rally/fmap.tga
+share/trophy/resources/tracks/Rally/thumb.tga
+share/trophy/resources/tracks/Rally/vmap.tga
+share/trophy/resources/tracks/Snake/bridge.tga
+share/trophy/resources/tracks/Snake/config.tck
+share/trophy/resources/tracks/Snake/fmap.tga
+share/trophy/resources/tracks/Snake/thumb.tga
+share/trophy/resources/tracks/Snake/vmap.tga
+share/trophy/resources/tracks/Zigzag/bridge.tga
+share/trophy/resources/tracks/Zigzag/config.tck
+share/trophy/resources/tracks/Zigzag/fmap.tga
+share/trophy/resources/tracks/Zigzag/thumb.tga
+share/trophy/resources/tracks/Zigzag/vmap.tga
+share/trophy/resources/tracks/Zurich/config.tck
+share/trophy/resources/tracks/Zurich/fmap.tga
+share/trophy/resources/tracks/Zurich/thumb.tga
+share/trophy/resources/tracks/Zurich/vmap.tga
+@dirrm share/trophy/resources/cars/flash2
+@dirrm share/trophy/resources/cars/jeep
+@dirrm share/trophy/resources/cars/vw
+@dirrm share/trophy/resources/cars/z3
+@dirrm share/trophy/resources/cars
+@dirrm share/trophy/resources/fonts
+@dirrm share/trophy/resources/goody
+@dirrm share/trophy/resources/gui
+@dirrm share/trophy/resources/menu
+@dirrm share/trophy/resources/misc
+@dirrm share/trophy/resources/panel
+@dirrm share/trophy/resources/sounds
+@dirrm share/trophy/resources/tracks/Downtown
+@dirrm share/trophy/resources/tracks/Loops
+@dirrm share/trophy/resources/tracks/Moon
+@dirrm share/trophy/resources/tracks/Rally
+@dirrm share/trophy/resources/tracks/Snake
+@dirrm share/trophy/resources/tracks/Zigzag
+@dirrm share/trophy/resources/tracks/Zurich
+@dirrm share/trophy/resources/tracks
+@dirrm share/trophy/resources
+@dirrm share/trophy
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.old
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

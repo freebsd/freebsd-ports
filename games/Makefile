@@ -409,6 +409,7 @@
     SUBDIR += tractorgen
     SUBDIR += traindirector
     SUBDIR += trojka
+    SUBDIR += trophy
     SUBDIR += tt
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
