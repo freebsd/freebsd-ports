@@ -598,6 +598,7 @@
 share/xsl/docbook/VERSION
 share/xsl/docbook/common/ChangeLog
 share/xsl/docbook/common/af.xml
+share/xsl/docbook/common/ar.xml
 share/xsl/docbook/common/bg.xml
 share/xsl/docbook/common/ca.xml
 share/xsl/docbook/common/common.xsl
@@ -745,6 +746,7 @@ share/xsl/docbook/fo/ChangeLog
 share/xsl/docbook/fo/admon.xsl
 share/xsl/docbook/fo/autoidx.xsl
 share/xsl/docbook/fo/autotoc.xsl
+share/xsl/docbook/fo/axf.xsl
 share/xsl/docbook/fo/biblio.xsl
 share/xsl/docbook/fo/block.xsl
 share/xsl/docbook/fo/callout.xsl
