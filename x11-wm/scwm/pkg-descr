@@ -11,4 +11,3 @@ scheme configurable window manager
   patches/patch-af
   ${WORKDIR}/utilities/emacs
   ${WORKDIR}/configure --help
-  
