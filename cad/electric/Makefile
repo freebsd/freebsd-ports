@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	electric
-PORTVERSION=	6.0.8
+PORTVERSION=	7.0.0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,12 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^(...)\./\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sophisticated electrical CAD system
 
-USE_REINPLACE=	yes
-USE_SIZE=	yes
-USE_XLIB=	yes
 USE_MOTIF=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-with-x
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib/|${DATADIR}/lib/|; \
@@ -33,5 +30,8 @@ post-patch:
 		s|@PTHREAD_LIBS@|${PTHREAD_LIBS:S/"//g}|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}/|' ${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/electric
 
 .include <bsd.port.mk>
