@@ -8,7 +8,8 @@
 PORTNAME=	koi8rPS
 PORTVERSION=	1.0
 CATEGORIES=	russian print
-MASTER_SITES=	ftp://ftp.ziplink.net/users/kot/CyrPS/ \
+MASTER_SITES=	ftp://ftp.redcom.ru/pub/X/psfonts/ \
+		ftp://ftp.ziplink.net/users/kot/CyrPS/ \
 		ftp://ftp.kapella.gpi.ru/pub/cyrillic/psfonts/
 DISTFILES=	gs-type1_koi8_fonts.tgz gs-type1_koi8_afm.tgz \
 		XFree86-Type1_fonts.dir.scale.gz
