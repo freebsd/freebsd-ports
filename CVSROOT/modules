@@ -8293,6 +8293,7 @@ py-wmgeneral	ports/x11-toolkits/py-wmgeneral
 py-wordnet	ports/textproc/py-wordnet
 py-wsdllib	ports/devel/py-wsdllib
 py-wxPython	ports/x11-toolkits/py-wxPython
+py-xdg		ports/devel/py-xdg
 py-xlib		ports/x11-toolkits/py-xlib
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
