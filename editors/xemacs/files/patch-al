@@ -1,0 +1,11 @@
+--- src/lstream.c.orig	Sat Jun 29 18:17:20 2002
++++ src/lstream.c	Sat Jun 29 18:14:06 2002
+@@ -181,7 +181,7 @@
+     }
+ }
+ 
+-inline static size_t
++/*inline*/ static size_t
+ aligned_sizeof_lstream (size_t lstream_type_specific_size)
+ {
+   return ALIGN_SIZE (offsetof (Lstream, data) + lstream_type_specific_size,
