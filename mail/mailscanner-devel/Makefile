@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	mailscanner
-PORTVERSION=	4.24.5
+PORTVERSION=	4.25.14
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
-DISTNAME=	MailScanner-4.24-5
+DISTNAME=	MailScanner-4.25-14
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Powerful virus/spam scanning framework for Sendmail/Exim
@@ -22,9 +23,13 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF
+	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+
+CONFLICTS=	MailScanner-devel-*
 
 USE_PERL5=	yes
 
@@ -65,7 +70,7 @@ do-build:
 		's,/opt/MailScanner/lib,'${PREFIX}'/libexec/MailScanner,g; \
 		s,/bin/false,/usr/bin/false,;' ${WRKSRC}/etc/virus.scanners.conf
 	${PERL} -pi -e \
-		's,/bin/bash,'${PREFIX}'/bash,g; \
+		's,/bin/bash,'${LOCALBASE}'/bin/bash,g; \
 		s,/opt/MailScanner/etc,'${PREFIX}'/etc/MailScanner,g;' \
 		${WRKSRC}/bin/update_virus_scanners
 	${PERL} -pi -e \

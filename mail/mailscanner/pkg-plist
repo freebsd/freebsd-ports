@@ -49,12 +49,14 @@ libexec/MailScanner/bitdefender-wrapper.sample
 libexec/MailScanner/clamav-autoupdate.sample
 libexec/MailScanner/clamav-wrapper.sample
 libexec/MailScanner/command-wrapper.sample
+libexec/MailScanner/drweb-wrapper.sample
 libexec/MailScanner/etrust-autoupdate.sample
 libexec/MailScanner/etrust-wrapper.sample
 libexec/MailScanner/f-prot-autoupdate.sample
 libexec/MailScanner/f-prot-wrapper.sample
 libexec/MailScanner/f-secure-autoupdate.sample
 libexec/MailScanner/f-secure-wrapper.sample
+libexec/MailScanner/inoculan-autoupdate.sample
 libexec/MailScanner/inoculan-wrapper.sample
 libexec/MailScanner/inoculate-wrapper.sample
 libexec/MailScanner/kaspersky-autoupdate.sample
@@ -64,6 +66,8 @@ libexec/MailScanner/mcafee-autoupdate.sample
 libexec/MailScanner/mcafee-wrapper.sample
 libexec/MailScanner/nod32-autoupdate.sample
 libexec/MailScanner/nod32-wrapper.sample
+libexec/MailScanner/norman-autoupdate.sample
+libexec/MailScanner/norman-wrapper.sample
 libexec/MailScanner/panda-wrapper.sample
 libexec/MailScanner/rav-autoupdate.sample
 libexec/MailScanner/rav-wrapper.sample
@@ -391,6 +395,7 @@ libexec/MailScanner/update_virus_scanners
 %%DOCSDIR%%/images/thumb_JulianField4.jpg
 %%DOCSDIR%%/images/thumb_JulianField5.jpg
 %%DOCSDIR%%/index.html
+%%DOCSDIR%%/install/ClamAVModule.shtml
 %%DOCSDIR%%/install/OS-virus-scan-web.htm
 %%DOCSDIR%%/install/README.trend
 %%DOCSDIR%%/install/SAVI.shtml
@@ -418,6 +423,7 @@ libexec/MailScanner/update_virus_scanners
 %%DOCSDIR%%/install/perl.shtml
 %%DOCSDIR%%/install/postfix.shtml
 %%DOCSDIR%%/install/sendmail.shtml
+%%DOCSDIR%%/install/solaris9.txt
 %%DOCSDIR%%/install/sophos.shtml
 %%DOCSDIR%%/install/spamassassin.shtml
 %%DOCSDIR%%/install/tnef.shtml
@@ -446,10 +452,9 @@ libexec/MailScanner/update_virus_scanners
 %%DOCSDIR%%/support.html
 %%DOCSDIR%%/transtec.logo.gif
 %%DOCSDIR%%/users.shtml
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%DOCSDIR%%/man
 @dirrm %%DOCSDIR%%/install/mcp
+@dirrm %%DOCSDIR%%/install/tcp
 @dirrm %%DOCSDIR%%/install
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
