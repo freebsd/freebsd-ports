@@ -46,10 +46,10 @@ USE_GTK=	yes
 CONFIGURE_ARGS+=	--enable-gui
 .endif
 
-#.if defined(WITH_DVD)
-#LIB_DEPENDS+=	dvdcss.0:${PORTSDIR}/graphics/libdvdcss \
-#		dvdread.2:${PORTSDIR}/graphics/libdvdread
-#.endif
+.if defined(WITH_DVD)
+LIB_DEPENDS+=	dvdcss.0:${PORTSDIR}/graphics/libdvdcss \
+		dvdread.2:${PORTSDIR}/graphics/libdvdread
+.endif
 
 .if defined(WITH_ESOUND) || defined(HAVE_ESOUND)
 USE_ESOUND=	yes
@@ -104,9 +104,9 @@ pre-everything::
 .if !defined(WITH_GUI)
 	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
 .endif
-#.if !defined(WITH_DVD)
-#	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
-#.endif
+.if !defined(WITH_DVD)
+	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
+.endif
 .if !(defined(WITH_ESOUND) || defined(HAVE_ESOUND))
 	@${ECHO_MSG} "You can enable ESOUND sound support by defining WITH_ESOUND."
 .endif
