@@ -3,12 +3,12 @@
 # Date created:		Sun Nov 22 12:08:18 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.12 1999/05/04 12:17:48 dirk Exp $
+# $Id: Makefile,v 1.13 1999/05/29 03:55:49 steve Exp $
 #
 
 DISTNAME=	gtksee-0.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.zg169.net/~hotaru/gtksee/ \
+MASTER_SITES=	http://sunsite.cqi.com.cn/~hotaru/gtksee/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.ORG
