@@ -1,9 +1,10 @@
 ************************************************************
 Quick Setup:
-  Take the following step all as root.
+  Take the following steps all as root.
     1) Install one of the esecanna-module ports
     2) Edit `${PREFIX}/etc/esecannarc'
-    3) Run `${PREFIX}/etc/rc.d/esecanna.sh'
+    3) Stop and disable cannaserver if you have it running
+    4) Run `${PREFIX}/etc/rc.d/esecanna.sh'
 
   Each user may want to configure the behavior by editing
 `~/.esecannarc', copied after `${PREFIX}/etc/esecannarc'.
