@@ -1,0 +1,5 @@
+lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/mysql.so
+share/doc/ruby/mysql/ja/README.jp
+share/doc/ruby/mysql/README
+@dirrm share/doc/ruby/mysql/ja
+@dirrm share/doc/ruby/mysql

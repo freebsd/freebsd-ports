@@ -262,6 +262,7 @@
     SUBDIR += rinfo
     SUBDIR += robodoc
     SUBDIR += rpc2
+    SUBDIR += ruby-optparse
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += rvm
