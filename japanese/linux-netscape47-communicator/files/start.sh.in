@@ -1,0 +1,18 @@
+#!/bin/sh
+if [ ! -d $HOME/.netscape ]; then
+	mkdir -m 700 $HOME/.netscape
+	cp @RDIR@/preferences.js $HOME/.netscape
+	chmod 644 $HOME/.netscape/preferences.js
+fi
+export LANG=ja_JP.EUC
+export LC_ALL=${LANG}
+export LC_CTYPE=${LANG}
+export MOZILLA_HOME=@NDIR@
+export CLASSPATH=.:${MOZILLA_HOME}
+export NS_NETHELP_PATH=${MOZILLA_HOME}/${LANG}
+export XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
+export XAPPLRESDIR=@RDIR@
+export TIMID_DIR=/usr/local/lib/timidity
+export XCMSDB=/dev/null
+ulimit -c 0
+exec ${MOZILLA_HOME}/@BROWSER_BIN@ "$@"
