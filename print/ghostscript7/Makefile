@@ -48,14 +48,14 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1
 
 .if defined(A4)
-MAKE_ENV=	A4="${A4}"
+MAKE_ENV+=	A4="${A4}"
 .endif
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
+MAKE_ENV+=	WITHOUT_X11="${WITHOUT_X11}"
 .endif
 
 GS_SOURCES=	${DISTNAME}${EXTRACT_SUFX}
@@ -118,12 +118,6 @@ CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS+=	-D_LITTLE_ENDIAN
-.endif
-
 .SILENT:
 
 pre-everything::
@@ -145,27 +139,27 @@ post-extract:
 #
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_DRV} ..."
-	${TAR} -C ${WRKSRC}/src -xzf ${_DISTDIR}/${HP8XX_DRV}
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_DRV}
 # for HPDJ driver
 	${ECHO_MSG} ">>>   extracting ${HPDJ_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPDJ_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRC}
 	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
 # for PCL3 driver
 	${ECHO_MSG} ">>>   extracting ${PCL3_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${PCL3_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRC}
 	${LN} -sf ${PCL3_NAME} ${WRKSRC}/pcl3
 	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
 		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
 # for HP DeskJet 970 driver
 	${ECHO_MSG} ">>>   extracting ${HP970_DRV} ..."
-	${CP} ${_DISTDIR}/${HP970_DRV} ${WRKSRC}/src
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HP970_DRV} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
 # for gimp-print
 	${ECHO_MSG} ">>>   extracting ${GPRINT_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${GPRINT_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRC}
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPIJS_SRC}
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRC}
 	${LN} -sf ${HPIJS_NAME} ${WRKSRC}/hpijs
 
 post-patch:
@@ -212,7 +206,7 @@ pre-configure:
 
 do-configure:
 	${ECHO_MSG} ">>> in do-configure ..."
-.if defined(BATCH)
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.batch
 .else
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
@@ -232,10 +226,10 @@ post-build:
 pre-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
-	${MKDIR} ${PREFIX}/share/ghostscript
+	${MKDIR} ${DATADIR}
 	${ECHO_MSG} ">>>   extracting ghostscript fonts..."
-	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_STD}
-	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_OTHER}
+	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
+	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
@@ -247,12 +241,12 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/${i} ${PREFIX}/man/man1
 .endfor
 	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
-	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/hpdj
+	${MKDIR} ${DATADIR}/${PORTVERSION}/hpdj
 	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
 .for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
 	margins-Letter.ps margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/hpdj
+		${DATADIR}/${PORTVERSION}/hpdj
 .endfor
 # for PCL3 driver
 	${ECHO_MSG} ">>> installing ${PCL3} manpages ..."
@@ -261,7 +255,7 @@ post-install:
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
 	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
-	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/pcl3
+	${MKDIR} ${DATADIR}/${PORTVERSION}/pcl3
 	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
@@ -269,7 +263,7 @@ post-install:
 	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
 	ps/margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/pcl3
+		${DATADIR}/${PORTVERSION}/pcl3
 .endfor
 # for gimp-print driver
 	${ECHO_MSG} ">>>   installing ${GPRINT_DESC} escputil in bindir ..."
@@ -280,32 +274,32 @@ post-install:
 		${PREFIX}/man/man1
 .endfor
 	${ECHO_MSG} ">>>   creating ${GPRINT_DESC} destdir ..."
-	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/gimp-print
+	${MKDIR} ${DATADIR}/${PORTVERSION}/gimp-print
 	${ECHO_MSG} ">>>   installing files in gimp-print destdir ..."
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/Ghost/${i} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/gimp-print
+		${DATADIR}/${PORTVERSION}/gimp-print
 .endfor
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   installing ${HPIJS} server in libexecdir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/libexec
 	${ECHO_MSG} ">>>   creating ${HPIJS} destdir ..."
-	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/hpijs
+	${MKDIR} ${DATADIR}/${PORTVERSION}/hpijs
 	${ECHO_MSG} ">>>   installing files in ${HPIJS} destdir ..."
 .for i in hpijs_readme.html
 	${INSTALL_DATA} ${WRKSRC}/${HPIJS}/${i} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/hpijs
+		${DATADIR}/${PORTVERSION}/hpijs
 .endfor
 # contributed UPP driver
 	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 .for i in ${CONTRIB_UPP}
 	${INSTALL_DATA} ${FILESDIR}/${i} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
+		${DATADIR}/${PORTVERSION}/lib
 .endfor
 # for reading encrypted PDFs
 	${ECHO_MSG} ">>> installing support for encrypted PDF files ..."
-	${INSTALL_DATA} ${_DISTDIR}/${DECRYPT_PDF} \
-		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DECRYPT_PDF} \
+		${DATADIR}/${PORTVERSION}/lib
 #
 # now NOPORTDOCS dependend stuff
 #
@@ -314,22 +308,22 @@ post-install:
 # install hpdj docu, not necessary for runtime
 # note: old hpdj driver has its files in ${WRKSRC}/src
 	${ECHO_MSG} ">>>   creating ${HPDJ} docu destdir ..."
-	${MKDIR} ${PREFIX}/share/doc/ghostscript/${PORTVERSION}/hpdj
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/hpdj
 	${ECHO_MSG} ">>>   installing files in ${HPDJ} docu destdir ..."
 .for i in NEWS hpdj.html
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${PREFIX}/share/doc/ghostscript/${PORTVERSION}/hpdj
+		${DOCSDIR}/${PORTVERSION}/hpdj
 .endfor
 # install pcl3 docu, not necessary for runtime
 # note: new pcl3 driver has a subdir of its own
 	${ECHO_MSG} ">>>   creating ${PCL3} docu destdir ..."
-	${MKDIR} ${PREFIX}/share/doc/ghostscript/${PORTVERSION}/pcl3
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/pcl3
 	${ECHO_MSG} ">>>   installing files in ${PCL3} docu destdir ..."
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${PREFIX}/share/doc/ghostscript/${PORTVERSION}/pcl3
+		${DOCSDIR}/${PORTVERSION}/pcl3
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
