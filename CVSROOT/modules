@@ -2997,6 +2997,7 @@ jedit		ports/editors/jedit
 jesred		ports/www/jesred
 jetpack		ports/games/jetpack
 jetty		ports/www/jetty
+jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
 jfc		ports/java/jfc
 jftpgw		ports/ftp/jftpgw
