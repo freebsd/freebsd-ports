@@ -1,0 +1,11 @@
+--- SndUnix.c.orig	Mon Oct 13 00:19:55 2003
++++ SndUnix.c	Mon Oct 13 00:20:18 2003
+@@ -73,7 +73,7 @@
+ 
+ #else /* SUN_AUDIO */
+    
+-#ifdef LINUX
++#if defined(LINUX) || defined(__FreeBSD__)
+ #include <sys/soundcard.h>
+ #else
+ #include <machine/soundcard.h>
