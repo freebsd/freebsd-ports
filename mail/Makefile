@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1999/05/03 02:59:36 steve Exp $
+# $Id: Makefile,v 1.91 1999/05/09 17:32:14 steve Exp $
 #
 
     SUBDIR += adcomplain
@@ -72,6 +72,7 @@
     SUBDIR += smail
     SUBDIR += smtpd
     SUBDIR += smtpfeed
+    SUBDIR += spruce
     SUBDIR += tkrat
     SUBDIR += wmmail
     SUBDIR += wmpop3
