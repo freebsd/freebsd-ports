@@ -1,64 +1,17 @@
 --- configure.orig	Fri Jun 14 18:53:14 2002
 +++ configure	Wed Jul 17 17:09:18 2002
-@@ -3924,27 +3924,27 @@
- if test "${ac_cv_path_WGET_PATH+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
--  case $WGET_PATH in
--  [\\/]* | ?:[\\/]*)
-+#  case $WGET_PATH in
-+#  [\\/]* | ?:[\\/]*)
-   ac_cv_path_WGET_PATH="$WGET_PATH" # Let the user override the test with a path.
--  ;;
--  *)
--  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
--for as_dir in $PATH
--do
--  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
--  for ac_exec_ext in '' $ac_executable_extensions; do
--  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
--    ac_cv_path_WGET_PATH="$as_dir/$ac_word$ac_exec_ext"
--    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
--    break 2
--  fi
--done
--done
-+#  ;;
-+#  *)
-+#  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-+#for as_dir in $PATH
-+#do
-+#  IFS=$as_save_IFS
-+#  test -z "$as_dir" && as_dir=.
-+#  for ac_exec_ext in '' $ac_executable_extensions; do
-+#  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-+#    ac_cv_path_WGET_PATH="$as_dir/$ac_word$ac_exec_ext"
-+#    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
-+#    break 2
-+#  fi
-+#done
-+#done
- 
--  ;;
--esac
-+#  ;;
-+#esac
- fi
- WGET_PATH=$ac_cv_path_WGET_PATH
- 
-@@ -6676,8 +6676,8 @@
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+@@ -27504,8 +27504,8 @@
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_pthread_create" = no; then
--  for ac_lib in pthread; do
+-  for ac_lib in c_r pthread; do
 -    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-+#  for ac_lib in pthread; do
++#  for ac_lib in c_r pthread; do
 +    LIBS="%%PTHREAD_LIBS%%  $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -6713,7 +6713,7 @@
+ _ACEOF
+@@ -27550,7 +27550,7 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -67,54 +20,83 @@
  break
  else
    echo "$as_me: failed program was:" >&5
-@@ -6721,7 +6721,7 @@
- 
+@@ -27559,7 +27559,7 @@
  fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
 -  done
 +#  done
  fi
  LIBS=$ac_func_search_save_LIBS
  fi
-@@ -9720,14 +9720,14 @@
+@@ -27699,10 +27699,10 @@
+ fi
+ 
+    elif test "$OS" != "MACOSX" -a "$OS" != "WINDOWS"; then
+-      echo "$as_me:$LINENO: checking whether $CC accepts -pthread" >&5
+-echo $ECHO_N "checking whether $CC accepts -pthread... $ECHO_C" >&6
++      echo "$as_me:$LINENO: checking whether $CC accepts %%PTHREAD_LIBS%%" >&5
++echo $ECHO_N "checking whether $CC accepts %%PTHREAD_LIBS%%... $ECHO_C" >&6
+       LDFLAGS_store="$LDFLAGS"
+-      LDFLAGS="$LDFLAGS -pthread"
++      LDFLAGS="$LDFLAGS %%PTHREAD_LIBS%%"
+       cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -30441,14 +30441,14 @@
        ;;
-    no)  echo "$as_me:$LINENO: result: no." >&5
- echo "${ECHO_T}no." >&6
--      E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
-+#      E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
-       ac_cv_ec_debug=no
+    no)  echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-      DEBUG_FLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
++      DEBUG_FLAGS="-Wall"
+       ac_ec_debug=no
        ;;
  esac
  else
-   echo "$as_me:$LINENO: result: no. disabled by default." >&5
- echo "${ECHO_T}no. disabled by default." >&6
--   E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
-+#   E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
-    ac_cv_ec_debug=no
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-   DEBUG_FLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
++   DEBUG_FLAGS="-Wall"
+    ac_ec_debug=no
  
  fi;
-@@ -10149,6 +10149,8 @@
-    if test $ac_cv_ec_ssh = "yes"; then
-       CYGWINLIB="$CYGWINLIB cygcrypto.dll cygssl.dll"
-       echo "Dissector_ssh" >> ./src/ec_add.def
-+   else
-+      PLUGINS_SOURCES=`echo $PLUGINS_SOURCES | sed 's/.\/plugins\/H03_hydra1\/H03_hydra1.c//g'`
-    fi
+@@ -30935,7 +30935,7 @@
+ 
+    OLDLDFLAGS="${LDFLAGS}"
+    OLDLIBS="${LIBS}"
+-   LDFLAGS="$PCAPLIB"
++   LDFLAGS="$LDFLAGS $PCAPLIB"
+    LIBS="$LIBS"
+ 
+ echo "$as_me:$LINENO: checking for pcap_datalink_val_to_description in -lpcap" >&5
+@@ -31271,6 +31271,16 @@
  
  
-@@ -10302,9 +10304,15 @@
- if test "$ac_cv_ec_plugin" = "yes"; then
  
-    PLUGINS=`ls ./plugins | grep -v Make | grep -v CVS | awk ' { printf "%s ", $1 } '`
-+   if test $ac_cv_ec_ssh = "no"; then
-+      PLUGINS=`echo $PLUGINS | sed 's/H03_hydra1//g'`
-+   fi
++if false; then
++  HAVE_PCRE_TRUE=
++  HAVE_PCRE_FALSE='#'
++else
++  HAVE_PCRE_TRUE='#'
++  HAVE_PCRE_FALSE=
++fi
++
++
++
  
+ ac_ec_pcre=no
  
-    makeplug=`ls ./plugins | grep -v Make | grep -v CVS | awk '{ printf("plugins/%s/Makefile ", $1) }'`
-+   if test $ac_cv_ec_ssh = "no"; then
-+      makeplug=`echo $makeplug | sed 's/plugins\/H03_hydra1\/Makefile//g'`
-+   fi
-    makeplug="plugins/Makefile $makeplug"
-    MAKEPLUG="1"
- else
+@@ -32817,6 +32827,13 @@
+   { { echo "$as_me:$LINENO: error: conditional \"OPENSSL\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&5
+ echo "$as_me: error: conditional \"OPENSSL\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${HAVE_PCRE_TRUE}" && test -z "${HAVE_PCRE_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"HAVE_PCRE\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"HAVE_PCRE\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&2;}
+    { (exit 1); exit 1; }; }
+ fi
