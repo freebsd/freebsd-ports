@@ -3,6 +3,7 @@
 # Set some variables
 VERSION=%%PORTVERSION%%
 APP_HOME=%%APP_HOME%%
+USER_NAME=%%USER_NAME%%
 STDOUT_LOG=%%STDOUT_LOG%%
 STDERR_LOG=%%STDERR_LOG%%
 JAR_FILE=${APP_HOME}/lib/webserver.jar
@@ -21,6 +22,13 @@ if [ -f ${JAVA_HOME}/lib/tools.jar ] ; then
 	CLASSPATH=${CLASSPATH}:${JAVA_HOME}/lib/tools.jar
 fi
 
+# Check if we're being run as a shell script or as an rc script
+if [ ${MYSELF} = "%%RC_SCRIPT_NAME%%" ]; then
+	AS_RC_SCRIPT=yes
+else
+	AS_RC_SCRIPT=no
+fi
+
 # Check if the JAVA_HOME directory is defined, otherwise set it to the
 # fallback default
 if [ "${JAVA_HOME}a" = "a" ]; then
@@ -28,119 +36,64 @@ if [ "${JAVA_HOME}a" = "a" ]; then
 fi
 JAVA_CMD=${JAVA_HOME}/bin/java
 
-
-##############################################################################
-# Function that shows an error message
-#
-# This function is called by the 'checks' function
-#
-# Parameters:
-#     1: The message to be displayed.
-
-error() {
-	echo -n "%%APP_SHORTNAME%%: ERROR: "
-	echo $1
-}
-
-
-##############################################################################
-# Function that performs all checks necessary for starting or stopping the
-# application.
-#
-# This function is called by the 'start' and 'stop' functions
-#
-# This function expects no parameters
-
-checks() {
+# Function that starts the application
+start() {
 	# Make sure the application directory does exist
 	if [ ! -d ${APP_HOME} ]; then
-		error "Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
 		exit 2
 	fi
 
 	# Make sure the application JAR file exists
 	if [ ! -r ${JAR_FILE} ]; then
-		error "Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
 		exit 3
 	fi
 
 	# Make sure the Java VM can be found
 	if [ ! -x ${JAVA_CMD} ]; then
-		error "Unable to find Java VM at ${JAVA_HOME}."
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find Java VM at ${JAVA_HOME}."
 		exit 4
 	fi
+
+	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+		echo -n " %%APP_SHORTNAME%%"
+	fi
+	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -Dtomcat.home=${APP_HOME} org.apache.tomcat.startup.Tomcat) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}"
 }
 
-
-##############################################################################
-# Functions that calls the application with the specified parameter
-#
-# Parameters:
-#    1: The argument to pass to the application (optional)
-
-app() {
-	(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -Dtomcat.home=${APP_HOME} org.apache.tomcat.startup.Tomcat $1) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}
-}
-
-
-##############################################################################
-# Function that starts the application
-#
-# This function is called from the main function
-#
-# This function expects no parameters
-
-start() {
-	# Perform the checks
-	checks
-
-	# Stop the application
-	app
-}
-
-
-##############################################################################
 # Function that stops the application
-#
-# This function is called from the main function
-#
-# This function expects no parameters
-
 stop() {
-	# Perform the checks
-	checks
-
-	# Stop the application
-	app -stop
+	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+		echo -n " %%APP_SHORTNAME%%"
+	fi
+	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -Dtomcat.home=${APP_HOME} org.apache.tomcat.startup.Tomcat -stop) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}"
 }
 
-
-##############################################################################
-# Main function. This function calls the 'start' and 'stop' functions.
-#
-# Parameters:
-#    1: The argument to this shell script
-
-main() {
-	case "$1" in
-		start)
-			start
-			;;
-		stop)
-			stop
-			;;
-		restart)
-			stop
-			start
-			;;
-		*)
-			echo "Usage: ${MYSELF} { start | stop | restart }"
-			exit 64
-			;;
-	esac
-}
-
-
-# Call the main function and exit
-main $1
-exit 0
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		;;
+	*)
+		echo ""
+		echo "Usage: ${MYSELF} { start | stop | restart }"
+		echo ""
+		exit 64
+		;;
+esac
