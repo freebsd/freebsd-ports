@@ -1,0 +1,23 @@
+--- lib/vty.c.orig	Sun Aug 18 15:49:50 2002
++++ lib/vty.c	Thu Nov 20 22:17:46 2003
+@@ -1138,13 +1138,16 @@
+       break;
+     case SE: 
+       {
+-	char *buffer = (char *)vty->sb_buffer->head->data;
+-	int length = vty->sb_buffer->length;
++	char *buffer;
++	int length;
+ 
+-	if (buffer == NULL)
++	if (!vty->iac_sb_in_progress)
+ 	  return 0;
+ 
+-	if (!vty->iac_sb_in_progress)
++	buffer = (char *)vty->sb_buffer->head->data;
++	length = vty->sb_buffer->length;
++
++	if (buffer == NULL)
+ 	  return 0;
+ 
+ 	if (buffer[0] == '\0')
