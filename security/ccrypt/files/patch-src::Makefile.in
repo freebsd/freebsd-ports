@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Jan 30 14:15:42 2002
++++ src/Makefile.in	Sun Sep 15 09:26:45 2002
+@@ -76,7 +76,7 @@
+ VERSION = @VERSION@
+ lispdir = @lispdir@
+ 
+-CFLAGS = -O3
++CFLAGS = @CFLAGS@
+ 
+ bin_PROGRAMS = ccrypt
+ noinst_PROGRAMS = maketables

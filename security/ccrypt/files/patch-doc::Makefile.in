@@ -1,11 +1,20 @@
---- doc/Makefile.in.orig	Thu Feb  7 09:08:51 2002
-+++ doc/Makefile.in	Thu Feb  7 09:09:31 2002
-@@ -75,7 +75,7 @@
+--- doc/Makefile.in.orig	Wed Jan 30 14:15:42 2002
++++ doc/Makefile.in	Sun Sep 15 09:24:14 2002
+@@ -195,7 +195,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
  
- EXTRA_DIST = ccrypt.1.in man2html.sed cypfaq01.txt
+-install-data-am: install-man install-htmlDATA
++install-data-am: install-man # install-htmlDATA
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-data: install-data-am
+@@ -210,7 +210,7 @@
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(htmldir)
++	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 # $(DESTDIR)$(htmldir)
  
--htmldir = $(prefix)/doc/ccrypt
-+htmldir = $(prefix)/share/doc/ccrypt
  
- DISTCLEANFILES = ccrypt.ps ccrypt.html
- 
+ mostlyclean-generic:

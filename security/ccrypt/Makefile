@@ -8,6 +8,7 @@
 
 PORTNAME=	ccrypt
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/download/
@@ -15,11 +16,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=	ccrypt.1
@@ -28,6 +29,12 @@ MLINKS=	ccrypt.1 ccencrypt.1 \
 	ccrypt.1 ccat.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,gtar,tar,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gtar|tar|g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS) 
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
