@@ -37,7 +37,7 @@ post-build:
 #
 BINDIR=	${PREFIX}/bin
 LIBDIR=	${PREFIX}/lib/X11/STonX
-FNTDIR= ${PREFIX}/lib/X11/fonts/misc
+FNTDIR=	${PREFIX}/lib/X11/fonts/misc
 
 DATA=	tos.img cartridge.img Keysyms Keysyms.G atari/FLOPPY-4MB \
 	atari/bench1.pas atari/bench1.prg atari/final.tos
