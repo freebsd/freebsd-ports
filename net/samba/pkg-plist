@@ -4,9 +4,13 @@ samba/bin/nmbd
 samba/bin/testparm
 samba/bin/testprns
 samba/bin/smbrun
+samba/bin/smbstatus
+samba/bin/smbpasswd
+samba/bin/smbtar
 man/man1/smbstatus.1.gz
 man/man1/smbclient.1.gz
 man/man1/smbrun.1.gz
+man/man1/smbtar.1.gz
 man/man1/testparm.1.gz
 man/man1/testprns.1.gz
 man/man5/smb.conf.5.gz
