@@ -12,20 +12,18 @@
 # APR_UTIL_WITHOUT_BERKELEY_DB:	unconditionally disable the use of db4
 # (the database bindings are detected and recorded automatically if these
 # switches are not set)
+# APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
 
 PORTNAME=	apr
-PORTVERSION=	0.9.4
-PORTREVISION=	9
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-#MASTER_SITES=	http://www.apache.org/dist/apr/
-#DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama
-DISTFILES=	apr-APR_0_9_BRANCH_20040113112838.tar.gz apr-util-APU_0_9_BRANCH_20040113112849.tar.gz
+MASTER_SITES=	http://www.apache.org/dist/apr/
+DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
 MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
 
+BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
@@ -34,6 +32,8 @@ USE_AUTOCONF_VER=	259
 WANT_LIBTOOL_VER=	15
 USE_PERL5=		yes
 USE_GMAKE=		yes
+USE_PYTHON=		yes
+PYTHON_NO_DEPENDS=	yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
@@ -74,6 +74,17 @@ APR_UTIL_CONF_ARGS+=	--with-berkeley-db=${PREFIX}
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
 .else
 PKGNAMESUFFIX=	-db4
+.endif
+.endif
+
+.if defined(APR_UTIL_WITH_LDAP)
+USE_OPENLDAP=	yes
+APR_UTIL_CONF_ARGS+=	--with-ldap-include=${PREFIX}/include \
+	--with-ldap-lib=${PREFIX}/lib --with-ldap=ldap
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
+.else
+PKGNAMESUFFIX=	-ldap
 .endif
 .endif
 
