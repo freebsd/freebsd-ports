@@ -1,12 +1,12 @@
 # ports collection makefile for:	Berkeley DB
-# Version required:			v2.2.6
-# Date created:				12 Jun 1997
+# Version required:			v2.3.12
+# Date created:				11 Nov 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.2 1997/09/05 20:22:04 jfitz Exp $
+# $Id: Makefile,v 1.3 1997/10/03 14:13:23 jfitz Exp $
 #
 
-DISTNAME=	db-2.3.11
+DISTNAME=	db-2.3.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/db/packages/
 
