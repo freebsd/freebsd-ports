@@ -1,0 +1,9 @@
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAM authentication support is now compiled in by default; you may need to add
+the following lines to /etc/pam.conf:
+
+imap	auth	required	pam_unix.so			try_first_pass
+imap	account	required	pam_unix.so			try_first_pass
+pop	auth	required	pam_unix.so			try_first_pass
+pop	account	required	pam_unix.so			try_first_pass
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

@@ -1,0 +1,9 @@
+include/c-client/mail.h
+include/c-client/rfc822.h
+include/c-client/linkage.h
+include/c-client/misc.h
+include/c-client/smtp.h
+lib/libc-client4.a
+lib/libc-client4.so.7
+lib/libc-client4.so
+@dirrm include/c-client
