@@ -8,7 +8,7 @@
 PORTNAME=	xwatch
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://hem.passagen.se/osk/
+MASTER_SITES=	http://www.student.lu.se/~nbi98oli/src/obsolete/
 
 MAINTAINER=	mph@freebsd.org
 
