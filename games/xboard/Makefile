@@ -3,7 +3,7 @@
 # Date created:         5 Jan 1997
 # Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.11 1997/05/20 08:43:38 asami Exp $
+# $Id: Makefile,v 1.12 1997/08/08 09:01:04 tg Exp $
 #
 
 DISTNAME=       xboard-3.6.2
@@ -11,6 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	xaa@stack.nl
+
+RUN_DEPENDS=	gnuchessx:${PORTSDIR}/games/gnuchess
 
 GNU_CONFIGURE=  yes
 STRIP=
