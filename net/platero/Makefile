@@ -7,17 +7,21 @@
 PORTNAME=		platero
 PORTVERSION=		1.0
 CATEGORIES=		net kde
-MASTER_SITES=		http://savannah.nongnu.org/download/platero/unstable.pkg/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=		http://www.unixpages.org/distfiles/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-beta1
 
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		GUI to the P2P meta network client mldonkey for KDE
 
-USE_KDELIBS_VER=	3
+USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
