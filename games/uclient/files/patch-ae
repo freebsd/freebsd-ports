@@ -1,0 +1,13 @@
+--- modules/console.h.orig	Wed Mar 28 01:59:27 2001
++++ modules/console.h	Wed Mar 28 01:59:17 2001
+@@ -30,10 +30,8 @@
+ 
+ #include <uta/multilineedit.h>
+ 
+-#ifdef __WIN32__
+ #undef stdout
+ #undef stderr
+-#endif
+ 
+ ///
+ class LogWindow : public Screen

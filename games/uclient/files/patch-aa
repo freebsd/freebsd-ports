@@ -1,0 +1,29 @@
+--- toolbox/ftos.cc.orig	Wed Mar 28 02:14:23 2001
++++ toolbox/ftos.cc	Wed Mar 28 02:19:29 2001
+@@ -169,6 +169,10 @@
+ // ecvt (double val, size_t ndigit, int *decpt, int *sign);
+ // }
+ 
++#ifdef __FreeBSD__
++#include <stdio.h>
++#endif
++
+ #include "ftos.h"
+ #include "dtags.h"
+ 
+@@ -288,7 +292,14 @@
+     // Get number's string rep, sign, and exponent
+     int sign = 0;
+     int decimal=0;
+-    register char *p = ecvt(val, count, &decimal, &sign);
++
++#ifdef __FreeBSD__
++    register char *p;
++    asprintf(&p, "%.0f", val);
++#else
++     register char *p = ecvt(val, count, &decimal, &sign);
++#endif
++//    register char *p = ecvt(val, count, &decimal, &sign);
+ 
+     D2TAG("*** string rep is", p);
+     D2TAG("*** decimal is", itos(decimal));

@@ -1,0 +1,6 @@
+--- build_media_index.sh.orig	Thu Mar 29 18:54:55 2001
++++ build_media_index.sh	Thu Mar 29 18:55:52 2001
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-find ./media/ -follow -name "*.png" -type f -fprintf ./media.ind "%f %h/%f\n"
++find ./media/ -follow -name "*.png" -type f |sed 's/\(.*\/\([^\/]*\)\)/\2 \1/' >media.ind

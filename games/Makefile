@@ -196,6 +196,7 @@
     SUBDIR += nonsense
     SUBDIR += omega
     SUBDIR += twitch
+    SUBDIR += uclient
     SUBDIR += uox3
     SUBDIR += wmeyes
     SUBDIR += wmminichess

@@ -1,0 +1,11 @@
+--- macros/autogen.sh.orig	Thu Mar 29 18:53:41 2001
++++ macros/autogen.sh   Thu Mar 29 18:54:03 2001
+@@ -135,7 +135,7 @@
+   fi
+ done
+
+-conf_flags="--enable-compile-warnings --enable-debug --enable-maintainer-mode --prefix=/opt/forge" 
++conf_flags="--enable-compile-warnings --enable-debug --enable-maintainer-mode --prefix=/usr/local --exec-prefix=/usr/local" 
+ 
+ if test x$NOCONFIGURE = x; then
+ #  echo Running $srcdir/libltdl/configure $conf_flags --enable-ltdl-install "$@" ...

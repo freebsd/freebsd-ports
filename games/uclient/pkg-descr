@@ -1,0 +1,4 @@
+UClient is a 2D isometric WorldForge game client,
+that uses libuta, SDL, and libAtlas-C++.
+
+WWW: http://www.worldforge.org/website/clients/uclient/
