@@ -58,6 +58,11 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 AUTHREG+=	ldap
 .endif
 
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=--with-pam
+AUTHREG+=	pam
+.endif
+
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 
 pre-everything::
@@ -67,6 +72,7 @@ pre-everything::
 	@${ECHO} "WITH_BDB		use Berkeley DB for storage and authentication"
 	@${ECHO} "WITH_MYSQL		use MySQL for storage and authentication"
 	@${ECHO} "WITH_LDAP		use LDAP for authentication"
+	@${ECHO} "WITH_PAM		use PAM for authentication"
 	@${ECHO}
 
 pre-install:
