@@ -4,4 +4,3 @@ share/xml/tei/xlite/catalog
 @exec %%MKCATALOG%% -q -c %%CATALOG%% install tei/xlite
 @dirrm share/xml/tei/xlite
 @unexec rmdir %D/share/xml/tei 2>/dev/null || true
-@unexec rmdir %D/share/xml 2>/dev/null || true
