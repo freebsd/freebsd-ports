@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${PREFIX}/lib/python2.1/site-packages
+	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${PYTHON_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5 ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/genTest.py ${EXAMPLESDIR}
