@@ -13,7 +13,7 @@ MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.96/ \
 			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
 DISTFILES=		${VMD_DIST} ${TACHYON_DIST} ${STRIDE_DIST}
 
-MAINTAINER=		stephen@math.missouri.edu
+MAINTAINER=		ssw@neo.redjade.org
 COMMENT=		A molecular visualization program
 
 BUILD_DEPENDS=		${PYNUMERIC}
