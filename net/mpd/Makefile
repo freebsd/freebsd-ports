@@ -3,12 +3,12 @@
 # Date created:				16 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1997/10/25 15:55:01 brian Exp $
+# $Id: Makefile,v 1.6 1998/01/11 18:02:33 steve Exp $
 #
 
 DISTNAME=		mpd-1.0b4
 CATEGORIES=		net
-MASTER_SITES=		ftp://ftp.whistle.com/pub/archie/mpd
+MASTER_SITES=		ftp://ftp.whistle.com/pub/archie/mpd/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
