@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Hermes
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://hermes.terminal.at/files/
+MASTER_SITES=	http://hermes.terminal.at/files/ \
+		http://dark.x.dtu.dk/~mbn/clanlib/download/
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -19,10 +20,9 @@ post-install:
 	@ ${LN} -sf libHermes.so.1 ${PREFIX}/lib/libHermes.so
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/Hermes
-.for file in AUTHORS CHANGES COPYING README TODO TODO.conversion
+.for file in AUTHORS ChangeLog COPYING FAQ README TODO TODO.conversion
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/Hermes
 .endfor
-	@ ${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${PREFIX}/share/doc/Hermes
 	@ ${MKDIR} ${PREFIX}/share/doc/Hermes/API
 .for file in api-1.htm api-2.htm api-3.htm api-4.htm api.htm api.ps api.txt
 	@ ${INSTALL_DATA} ${WRKSRC}/docs/api/${file} ${PREFIX}/share/doc/Hermes/API
