@@ -18,9 +18,18 @@ COMMENT=	A "meta-port" to install PHP extensions
 
 NO_BUILD=	# none
 
-USE_PHP=	yes
 DEFAULT_PHP_VER=4
 BROKEN_WITH_PHP=5
+
+WITH_CTYPE=	yes
+WITH_MYSQL=	yes
+WITH_OVERLOAD=	yes
+WITH_PCRE=	yes
+WITH_POSIX=	yes
+WITH_SESSION=	yes
+WITH_TOKENIZER=	yes
+WITH_XML=	yes
+WITH_ZLIB=	yes
 
 OPTIONS=	BCMATH          "bc style precision math functions" off \
 		BZ2             "bzip2 library support" off \
@@ -106,11 +115,11 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
 
 SEL_OPTIONS=	yes
 .for opt in ${ALL_OPTIONS}
-.	if defined(WITH_${opt})
+.	if defined(WITH_${opt}) && !defined(WITHOUT_${opt})
 SEL_OPTIONS+=	${opt:L}
 .	endif
 .endfor
-USE_PHP+=	${SEL_OPTIONS}
+USE_PHP=	${SEL_OPTIONS}
 
 do-build:
 	@${DO_NADA}
