@@ -113,6 +113,7 @@
     SUBDIR += wanderlust-emacs20
     SUBDIR += wanderlust-mule
     SUBDIR += wanderlust-xemacs20
+    SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wmbiff
     SUBDIR += wmmail
     SUBDIR += wmpop3
