@@ -10,11 +10,25 @@ share/gnome/grhino-%%VERSION%%/pattern/diag4.bin
 share/gnome/grhino-%%VERSION%%/pattern/diag5.bin
 share/gnome/grhino-%%VERSION%%/pattern/corner5x2.bin
 share/gnome/grhino-%%VERSION%%/book/book.bin
+share/gnome/grhino-%%VERSION%%/theme/small/black.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/bottom.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/empty.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/hint_black.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/hint_white.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/left.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/right.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/top.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/white.xpm
 share/gnome/help/grhino/C/topic.dat
 share/gnome/help/grhino/C/preferences-0.html
 share/gnome/help/grhino/C/preferences-1.html
+share/gnome/help/grhino/C/preferences-2.html
+share/gnome/help/grhino/C/grhino-C.omf
+share/gnome/help/grhino/C/grhino.xml
 @dirrm share/gnome/help/grhino/C
 @dirrm share/gnome/help/grhino
+@dirrm share/gnome/grhino-%%VERSION%%/theme/small
+@dirrm share/gnome/grhino-%%VERSION%%/theme
 @dirrm share/gnome/grhino-%%VERSION%%/book
 @dirrm share/gnome/grhino-%%VERSION%%/pattern
 @dirrm share/gnome/grhino-%%VERSION%%
