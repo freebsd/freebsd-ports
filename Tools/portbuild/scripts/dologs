@@ -1,8 +1,9 @@
 #!/bin/sh
 
 pb=/var/portbuild
+arch=$1
 
-. ${pb}/portbuild.conf
+. ${pb}/${arch}/portbuild.conf
 
 home=${pb}/errorlogs
 scripts=${pb}/scripts
@@ -11,20 +12,21 @@ lock=$home/lock
 
 if [ -f $lock ]; then exit; fi
 
-touch $lock
+echo ${arch} > $lock
 
 for ver in latest full; do
   for num in 4 4-exp 5; do
-    cd $home/$num-$ver && ${scripts}/processlogs
+    cd $home/$arch-$num-$ver && ${scripts}/processlogs ${arch}
+    cd ${pb}/${arch}/${num} && ${scripts}/processfail ${arch} ${num}
   done
   for num in 4 4-exp 5; do
-    cd $home/$num-$ver-logs && ${scripts}/processlogs2
+    cd $home/$arch-$num-$ver-logs && ${scripts}/processlogs2
   done
-  for num in 4-exp 5; do
-    cd $home && ${scripts}/comparelogs $num-$ver 4-$ver
-    cd $home && ${scripts}/comparelogs 4-$ver $num-$ver
-  done
-  cd $home && ${scripts}/bothlogs [45]-$ver
+#  for num in 4-exp 5; do
+#    cd $home && ${scripts}/comparelogs ${arch} $num-$ver 4-$ver
+#    cd $home && ${scripts}/comparelogs ${arch} 4-$ver $num-$ver
+#  done
+  cd $home && ${scripts}/bothlogs ${arch} [45]-$ver
 done
 
 rm -f $lock
