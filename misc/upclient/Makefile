@@ -81,7 +81,7 @@ install-script:
 		${PREFIX}/sbin
 
 install-locale:
-	@cd ${WRKSRC}/src; ${GMAKE} install-locales
+	@cd ${WRKSRC}/src; ${MAKE} install-locales
 
 # Post-install
 #
