@@ -1,0 +1,14 @@
+Hungarian Spell Checher utility with Hungarian dictionary
+and affix files.  It has several advantages over ispell.
+It has better affix rules than hu-ispell. 
+
+Magyar helyesírás ellenõrzõ hunspell. Elõnyök az ispell-hez képest:
+- Több karakter változással járó tipikus hibákra javítási javaslat.
+- Helyes összetett szónak látszó szavak tiltása.
+- 6-3-as szabály
+- mozgószabály
+- összetételi szabályok
+- többszörös képzõk helyes használata
+- ékezetesítési javaslatok
+
+WWW: http://magyarispell.sourceforge.net/

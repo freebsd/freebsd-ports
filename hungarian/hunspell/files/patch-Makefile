@@ -1,0 +1,41 @@
+--- Makefile.orig	Wed Dec 17 18:50:49 2003
++++ Makefile	Thu May 20 15:04:38 2004
+@@ -1,29 +1,29 @@
+ #------ beállítások --  configuration -------------------
+ # szótárak -- dictionaries (hu_HU.aff, hu_HU.dic)
+-MYSPELL_DIR?=/usr/share/myspell
++MYSPELL_DIR?=${PREFIX}/share/myspell
+ # Hunmorph szótárak -- hu_HU.morph, extended hu_HU.aff, hu_HU.dic
+-HUNMORPH_DIR?=/usr/share/hunmorph
++HUNMORPH_DIR?=${PREFIX}/share/hunmorph
+ # Magyar üzenetek -- Hungarian messages
+-LOCALE_DIR?=/usr/share/locale
++LOCALE_DIR?=${PREFIX}/share/locale
+ # Kézikönyvoldalak -- Manual pages
+-MAN_DIR?=/usr/share/man
++MAN_DIR?=${PREFIX}/share/man
+ # Magyar kézikönyvoldalak -- Hungarian manual pages
+-MAN_HU_DIR?=/usr/share/man/hu
++MAN_HU_DIR?=${PREFIX}/share/man/hu
+ # Futtatható program helye -- Directory for executables
+-BIN_DIR?=/usr/bin
++BIN_DIR?=${PREFIX}/bin
+ #--------------------------------------------------------
+ 
+-CC=g++
++CC=$(CXX)
+ #CC=/opt/SUNWspro/bin/CC
+ 
+-CXXFLAGS=-O2 -Wall -ansi -pedantic -I.
++CXXFLAGS+= -Wall -ansi -pedantic -I. -I${LOCALBASE}/include
+ 
+ # for debug only
+ #CXXFLAGS=-g -O0 -Wall -ansi -pedantic -I.
+ #CXXFLAGS=-g -O0 -Wall -ansi -pedantic -I. -g
+ #CXXFLAGS=-O2 +w2 -I.
+ 
+-LDFLAGS=-L. -lmyspell
++LDFLAGS=-L. -lmyspell -L$(LOCALBASE)/lib -lintl -lstdc++
+ 
+ LIBS=libmyspell.a
+ 
