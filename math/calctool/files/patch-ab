@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat May 29 11:35:43 1993
-+++ Makefile	Wed Dec 11 21:32:54 1996
++++ Makefile	Sun Aug 16 10:37:31 1998
 @@ -116,8 +116,8 @@
  #  library files are not in a standard place, then the following
  #  two lines should be uncommented, and set appropriately.
@@ -38,11 +38,13 @@
  
  CC		= cc
  
-@@ -233,7 +234,6 @@
+@@ -233,8 +234,7 @@
  			ld -o libcalctool.so.1.1 -assert pure-text $?
  
  install:
 -		install -c -m 644 $(LIBNAME) $(LIBDIR)
- 		install -s -m 751 calctool $(BINDIR)
+-		install -s -m 751 calctool $(BINDIR)
++		install -c -s -m 751 calctool $(BINDIR)
  		install -c -m 644 calctool.help $(LIBDIR)
  		install -c -m 644 calctool.ps $(LIBDIR)
+ 		install -c -m 644 calctool.1 $(MANDIR)/calctool.$(MANSECT)
