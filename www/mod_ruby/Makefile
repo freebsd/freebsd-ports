@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -29,7 +28,6 @@ CONFIGURE_ARGS=	--apxs="${APXS}" \
 
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
-EXAMPLES_EN=	ruby/*
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} Makefile.RB ${CONFIGURE_ARGS}
@@ -37,11 +35,8 @@ do-configure:
 do-install:
 	${APXS} -i -n ruby ${WRKSRC}/mod_ruby.so
 	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${PREFIX}/etc/apache/
+	${CP} -R ${WRKSRC}/ruby/* ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-.for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
