@@ -130,6 +130,7 @@
     SUBDIR += mimekit
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
+    SUBDIR += mnews-im
     SUBDIR += mtools
     SUBDIR += muggy
     SUBDIR += mule-canna
