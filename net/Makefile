@@ -139,6 +139,7 @@
     SUBDIR += icqnix
     SUBDIR += ip-tun
     SUBDIR += ipcad
+    SUBDIR += ipcalc
     SUBDIR += ipcheck
     SUBDIR += ipfm
     SUBDIR += iplog
