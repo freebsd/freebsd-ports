@@ -12,7 +12,7 @@ CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk8.0.5jp1.6a.patch.gz
+PATCHFILES=	tk8.0.5jp1.7.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -30,6 +30,7 @@ USE_AUTOCONF=	yes
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
 	--enable-xlibHack --enable-onTheSpot
+RANLIB=		ranlib
 
 .include <bsd.port.pre.mk>
 
@@ -54,6 +55,7 @@ post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtk80jp.so.1.5 ${PREFIX}/lib/libtk80jp.so
+	${RANLIB} ${PREFIX}/lib/libtk80jp.so
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
 
