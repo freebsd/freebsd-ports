@@ -1,0 +1,27 @@
+--- make/makefile.unx.orig	Thu Jan 22 14:15:30 2004
++++ make/makefile.unx	Thu Jan 22 14:17:05 2004
+@@ -46,20 +46,20 @@
+ # --- Compiler optimizations ---#
+ 
+ ifdef DEBUGMODE
+-	CFLAGS = -g -W -Wall -Wno-unused
++	CFLAGS += -g -W -Wall -Wno-unused
+ 	CFLAGS += -DDEBUGMODE=$(DEBUGMODE)
+ 	ifdef LOGLEVEL
+ 		CFLAGS += -DLOGLEVEL=$(LOGLEVEL)
+ 	endif
+ else
+-	CFLAGS = -O2 -Wall -ffast-math -fomit-frame-pointer
++	CFLAGS += -O2 -Wall -ffast-math -fomit-frame-pointer
+ 	SHARED = @SHARED@
+ endif
+ 
+ ifdef DEBUGALLEG
+-	LDLIBS = -l$(LIB_NAME) `allegro-config --libs debug` $(LIBS)
++	LDLIBS = -l$(LIB_NAME) `%%ALLEGRO_CONFIG%% --libs debug` $(LIBS)
+ else
+-	LDLIBS = -l$(LIB_NAME) `allegro-config --libs` $(LIBS)
++	LDLIBS = -l$(LIB_NAME) `%%ALLEGRO_CONFIG%% --libs` $(LIBS)
+ endif
+ 
+ ifdef MESABUILD

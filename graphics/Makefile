@@ -13,6 +13,7 @@
     SUBDIR += aalib
     SUBDIR += acidwarp
     SUBDIR += ale
+    SUBDIR += allegrogl
     SUBDIR += animabob
     SUBDIR += aoi
     SUBDIR += aqsis

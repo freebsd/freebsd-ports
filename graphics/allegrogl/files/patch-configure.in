@@ -1,0 +1,57 @@
+--- configure.in.orig	Sat Sep  6 21:26:48 2003
++++ configure.in	Thu Jan 22 14:58:15 2004
+@@ -50,7 +50,7 @@
+ 
+ dnl Check for pthread support, which GL libs may require (e.g. FreeBSD)
+ AC_CHECK_HEADER(pthread.h, , dontcare=y)
+-AC_CHECK_LIB(pthread, pthread_create, LIBS="-lpthread $LIBS")
++AC_CHECK_LIB(pthread, pthread_create, LIBS="%%PTHREAD_LIBS%% $LIBS")
+ 
+ 
+ dnl Build Mesa generic driver
+@@ -96,14 +96,15 @@
+ 	fi
+ 
+ 
++dnl We don't need this check in FreeBSD
+ dnl Check if the dynamic loading library (libdl.so) is available
+-	AH_TEMPLATE([ALLEGROGL_HAVE_DYNAMIC_LINK], [Define if dynamic linking is supported.])
+-	AC_CHECK_HEADER(dlfcn.h,
+-		AC_CHECK_LIB(dl, dlsym, 
+-			LIBS="-ldl $LIBS"
++dnl	AH_TEMPLATE([ALLEGROGL_HAVE_DYNAMIC_LINK], [Define if dynamic linking is supported.])
++dnl	AC_CHECK_HEADER(dlfcn.h,
++dnl		AC_CHECK_LIB(dl, dlsym, 
++dnl			LIBS="-ldl $LIBS"
+ 			AC_DEFINE(ALLEGROGL_HAVE_DYNAMIC_LINK)
+-		)
+-	)
++dnl		)
++dnl	)
+ fi
+ 
+ 
+@@ -155,14 +156,14 @@
+ dnl the Mesa generic driver and the (hopefully) accelerated one
+ if test -f makefile; then
+ 	echo '# Remove older build'
+-	make veryclean
++	%%GMAKE%% veryclean
+ 	agl_make_depend="yes";
+ fi
+ 
+ 
+ dnl If dependencies are not built yet then do it !
+ if (test ! -f make/makefile.dep); then
+-	echo '# Execute "make depend".' > make/makefile.dep
++	echo '# Execute "%%GMAKE%% depend".' > make/makefile.dep
+ 	agl_make_depend="yes";
+ fi
+ 
+@@ -173,5 +174,5 @@
+ 
+ dnl Run "make depend" if necessary
+ if test -n "$agl_make_depend"; then
+-	make depend
++	%%GMAKE%% depend
+ fi

@@ -1,0 +1,43 @@
+include/alleggl.h
+include/alleggl_config.h
+include/allegrogl/gl_ext.h
+include/allegrogl/gl_header_detect.h
+include/allegrogl/GLext/gl_ext_api.h
+include/allegrogl/GLext/gl_ext_defs.h
+include/allegrogl/GLext/gl_ext_list.h
+include/allegrogl/GLext/glx_ext_api.h
+include/allegrogl/GLext/glx_ext_defs.h
+include/allegrogl/GLext/glx_ext_list.h
+include/allegrogl/GLext/wgl_ext_api.h
+include/allegrogl/GLext/wgl_ext_defs.h
+include/allegrogl/GLext/wgl_ext_list.h
+@dirrm include/allegrogl/GLext
+@dirrm include/allegrogl
+lib/libagl.a
+%%EXAMPLESDIR%%/demofont.dat
+%%EXAMPLESDIR%%/dialog.c
+%%EXAMPLESDIR%%/dumbtest.c
+%%EXAMPLESDIR%%/exalleg.c
+%%EXAMPLESDIR%%/exalpfnt.c
+%%EXAMPLESDIR%%/excamera.c
+%%EXAMPLESDIR%%/exext.c
+%%EXAMPLESDIR%%/exgui.c
+%%EXAMPLESDIR%%/exmasked.c
+%%EXAMPLESDIR%%/extext.c
+%%EXAMPLESDIR%%/extextur.c
+%%EXAMPLESDIR%%/lucidia.dat
+%%EXAMPLESDIR%%/makefile
+%%EXAMPLESDIR%%/mysha.pcx
+%%EXAMPLESDIR%%/running.dat
+%%EXAMPLESDIR%%/running.h
+%%EXAMPLESDIR%%/test.c
+%%EXAMPLESDIR%%/tex.c
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/bugs.txt
+%%PORTDOCS%%%%DOCSDIR%%/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/todo.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
