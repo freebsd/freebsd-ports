@@ -40,6 +40,12 @@ CONFIGURE_ARGS=	--with-threads
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -delete
 
@@ -53,4 +59,4 @@ do-install:
 	@(cd ${WRKSRC}/data && ${FIND} . -type f |\
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

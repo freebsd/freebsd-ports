@@ -21,6 +21,12 @@ PLIST_FILES=	bin/arena
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/WWW
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-build:
 	cd ${WRKSRC}/Library/freebsd; ${MAKE}
 	cd ${WRKSRC}/Arena/freebsd; \
@@ -33,4 +39,4 @@ do-install:
 	cd ${WRKSRC}/Arena/freebsd; \
 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} -s arena ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
