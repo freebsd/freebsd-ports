@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Nov 12 00:34:23 2001
-+++ Makefile.in	Sun Dec  2 07:45:09 2001
++++ Makefile.in	Sun Dec  2 08:01:27 2001
 @@ -176,7 +176,7 @@
  	autoreconf
  	(cd scard && $(MAKE) -f Makefile.in distprep)
@@ -9,3 +9,41 @@
  install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
  
  scard-install:
+@@ -213,37 +213,6 @@
+ 	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
+ 	ln -s ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
+ 	#@FILEPRIV@ -f dev,filesys,driver $(DESTDIR)$(bindir)/ssh $(DESTDIR)$(bindir)/slogin
+-	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+-		$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
+-	fi
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/ssh_config ]; then \
+-		$(INSTALL) -m 644 ssh_config.out $(DESTDIR)$(sysconfdir)/ssh_config; \
+-	else \
+-		echo "$(DESTDIR)$(sysconfdir)/ssh_config already exists, install will not overwrite"; \
+-	fi
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/sshd_config ]; then \
+-		$(INSTALL) -m 644 sshd_config.out $(DESTDIR)$(sysconfdir)/sshd_config; \
+-	else \
+-		echo "$(DESTDIR)$(sysconfdir)/sshd_config already exists, install will not overwrite"; \
+-	fi
+-	if [ -f ssh_prng_cmds -a ! -z "$(INSTALL_SSH_PRNG_CMDS)" ]; then \
+-		$(PERL) $(srcdir)/fixprogs ssh_prng_cmds $(ENT); \
+-		if [ ! -f $(DESTDIR)$(sysconfdir)/ssh_prng_cmds ] ; then \
+-			$(INSTALL) -m 644 ssh_prng_cmds.out $(DESTDIR)$(sysconfdir)/ssh_prng_cmds; \
+-		else \
+-			echo "$(DESTDIR)$(sysconfdir)/ssh_prng_cmds already exists, install will not overwrite"; \
+-		fi ; \
+-	fi
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/moduli ]; then \
+-		if [ -f $(DESTDIR)$(sysconfdir)/primes ]; then \
+-			echo "moving $(DESTDIR)$(sysconfdir)/primes to $(DESTDIR)$(sysconfdir)/moduli"; \
+-			mv "$(DESTDIR)$(sysconfdir)/primes" "$(DESTDIR)$(sysconfdir)/moduli"; \
+-		else \
+-			$(INSTALL) -m 644 moduli.out $(DESTDIR)$(sysconfdir)/moduli; \
+-		fi ; \
+-	else \
+-		echo "$(DESTDIR)$(sysconfdir)/moduli already exists, install will not overwrite"; \
+-	fi
+ 
+ host-key: ssh-keygen$(EXEEXT)
+ 	if [ -z "$(DESTDIR)" ] ; then \
