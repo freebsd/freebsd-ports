@@ -1,0 +1,33 @@
+diff -NPru README.FreeBSD.orig README.FreeBSD
+--- README.FreeBSD.orig	Thu Jan  1 01:00:00 1970
++++ README.FreeBSD	Sun Jan 23 00:03:20 2000
+@@ -0,0 +1,29 @@
++This is a port of SASH to FreeBSD 4.0. Here are the differences to
++the original version:
++
++* The Makefile was rewritten to make use of standard BSD makefiles.
++  This helps integrating SASH into binaries built with crunchgen.
++
++* This port contains only a subset of 'mount -t type' commands. The
++  types that are supported are:
++
++	ufs,msdos,ext2fs,cd9660
++
++  (the naming follows standard mount(8) command in FreeBSD).
++
++  However, the only supported options for mounting are either read/write
++  (default, except for cd9660), read-only, or updating the mount
++  (NOTE: the original code uses '-m', but I changed it to '-u'
++  to be consistent with standard FreeBSD mount(8) ).
++
++  Also, the built-in mount command doesn't even attempt to autoload
++  requested vfs KLD, if it's not present in the kernel. In such
++  case, the mount operation will fail.
++
++* The code has been modularized (in similar way it was done for ELKS
++  version), so you can easier select which parts you want to include.
++  See the Makefile for the options.
++
++Andrzej Bialecki
++<abial@FreeBSD.org>
++Stockholm, 22.01.2000

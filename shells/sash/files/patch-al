@@ -1,0 +1,138 @@
+diff -NPru cmds.c.orig cmds.c
+--- cmds.c.orig	Thu Jun  3 23:42:39 1999
++++ cmds.c	Sun Jan 23 00:35:15 2000
+@@ -6,17 +6,22 @@
+  * Most simple built-in commands are here.
+  */
+ 
+-#include "sash.h"
+-
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
+ #include <sys/mount.h>
+ #include <signal.h>
+ #include <pwd.h>
+ #include <grp.h>
+ #include <utime.h>
+ #include <errno.h>
++#ifdef linux
+ #include <linux/fs.h>
++#endif
++
++#include "sash.h"
+ 
+ 
+ void
+@@ -501,19 +506,34 @@
+ 	}
+ }
+ 
++#ifdef __FreeBSD__
++#include <ufs/ufs/ufsmount.h>
++#include <isofs/cd9660/cd9660_mount.h>
++#include <msdosfs/msdosfsmount.h>
++#endif
+ 
+ void
+ do_mount(int argc, const char ** argv)
+ {
+-	const char *	str;
+-	const char *	type;
+-	int		flags;
++	const char *		str;
++	const char *		type;
++#ifdef __FreeBSD__
++	u_long			flags=0;
++	struct ufs_args		ufs;
++	struct msdosfs_args	msdos;
++	struct iso_args		iso;
++	void			*args;
++#else
++	int			flags=MS_MGC_VAL;
++#endif
+ 
+ 	argc--;
+ 	argv++;
++#ifdef linux
+ 	type = "ext2";
+-	flags = MS_MGC_VAL;
+-
++#else
++	type = "ufs";
++#endif
+ 	while ((argc > 0) && (**argv == '-'))
+ 	{
+ 		argc--;
+@@ -533,6 +553,7 @@
+ 				argc--;
+ 				break;
+ 
++#ifdef linux
+ 			case 'r':
+ 				flags |= MS_RDONLY;
+ 				break;
+@@ -540,6 +561,16 @@
+ 			case 'm':
+ 				flags |= MS_REMOUNT;
+ 				break;
++#endif
++#ifdef __FreeBSD__
++			case 'r':
++				flags |= MNT_RDONLY;
++				break;
++
++			case 'u':
++				flags |= MNT_UPDATE;
++				break;
++#endif
+ 
+ 			default:
+ 				fprintf(stderr, "Unknown option\n");
+@@ -555,15 +586,44 @@
+ 		return;
+ 	}
+ 
++#ifdef linux
+ 	if (mount(argv[0], argv[1], type, flags, 0) < 0)
+ 		perror("mount failed");
++#endif
++#ifdef __FreeBSD__
++	/* Select type of struct args */
++	if(strcmp(type,"ufs")==0) {
++		ufs.fspec=argv[0];
++		args=&ufs;
++	} else if(strcmp(type,"msdos")==0) {
++		msdos.fspec=argv[0];
++		args=&msdos;
++	} else if(strcmp(type,"ext2fs")==0) {
++		ufs.fspec=argv[0];
++		args=&ufs;
++	} else if(strcmp(type,"cd9660")==0) {
++		iso.fspec=argv[0];
++		flags|=MNT_RDONLY;
++		args=&iso;
++	} else {
++		fprintf(stderr,"Unsupported FS type %s\n",type);
++		return;
++	}
++	if(mount(type,argv[1],flags,args)!=0) {
++		perror("mount failed");
++	}
++#endif
+ }
+ 
+ 
+ void
+ do_umount(int argc, const char ** argv)
+ {
++#ifdef __FreeBSD__
++	if (unmount(argv[1],0) < 0)
++#else
+ 	if (umount(argv[1]) < 0)
++#endif
+ 		perror(argv[1]);
+ }
+ 

@@ -1,0 +1,13 @@
+diff -NPru sash.h.orig sash.h
+--- sash.h.orig	Sat Sep 25 06:03:51 1999
++++ sash.h	Sat Jan 22 19:38:16 2000
+@@ -16,7 +16,9 @@
+ #include <fcntl.h>
+ #include <string.h>
+ #include <memory.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <time.h>
+ #include <ctype.h>
+ 

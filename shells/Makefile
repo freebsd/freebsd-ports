@@ -10,6 +10,7 @@
     SUBDIR += pdksh
     SUBDIR += perlsh
     SUBDIR += rc
+    SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += zsh

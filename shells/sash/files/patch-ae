@@ -1,0 +1,20 @@
+diff -NPru cmd_ed.c.orig cmd_ed.c
+--- cmd_ed.c.orig	Mon Apr 19 16:57:32 1999
++++ cmd_ed.c	Sat Jan 22 23:46:01 2000
+@@ -6,6 +6,8 @@
+  * The "ed" built-in command (much simplified)
+  */
+ 
++#ifdef HAVE_ED
++
+ #include "sash.h"
+ 
+ #define	USERSIZE	1024	/* max line length typed in by user */
+@@ -1432,5 +1434,7 @@
+ 
+ 	return TRUE;
+ }
++
++#endif /* HAVE_ED */
+ 
+ /* END CODE */

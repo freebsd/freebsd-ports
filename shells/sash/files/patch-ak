@@ -1,0 +1,20 @@
+diff -NPru cmd_tar.c.orig cmd_tar.c
+--- cmd_tar.c.orig	Sun Apr 18 14:33:59 1999
++++ cmd_tar.c	Sat Jan 22 23:48:24 2000
+@@ -7,6 +7,8 @@
+  * This allows creation, extraction, and listing of tar files.
+  */
+ 
++#ifdef HAVE_TAR
++
+ #include "sash.h"
+ 
+ #include <sys/types.h>
+@@ -1229,5 +1231,7 @@
+ 
+ 	return FALSE;
+ }
++
++#endif /* HAVE_TAR */
+ 
+ /* END CODE */

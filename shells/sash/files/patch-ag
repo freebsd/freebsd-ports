@@ -1,0 +1,20 @@
+diff -NPru cmd_find.c.orig cmd_find.c
+--- cmd_find.c.orig	Tue Apr 20 00:48:45 1999
++++ cmd_find.c	Sat Jan 22 23:47:12 2000
+@@ -6,6 +6,8 @@
+  * The "find" built-in command.
+  */
+ 
++#ifdef HAVE_FIND
++
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <dirent.h>
+@@ -370,5 +372,7 @@
+ 	 */
+ 	return TRUE;
+ }
++
++#endif /* HAVE_FIND */
+ 
+ /* END CODE */
