@@ -5,6 +5,7 @@ share/mod_log_sql/LICENSE
 share/mod_log_sql/CHANGELOG
 share/mod_log_sql/create_tables.sql
 share/mod_log_sql/make_combined_log.pl
+%%PORTDOCS%%share/doc/mod_log_sql/FreeBSD-readme.txt
 %%PORTDOCS%%share/doc/mod_log_sql/documentation.ps
 %%PORTDOCS%%share/doc/mod_log_sql/documentation.txt
 %%PORTDOCS%%share/doc/mod_log_sql/HTML/contents.png
