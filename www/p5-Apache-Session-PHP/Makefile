@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session-PHP
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -16,13 +16,11 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Glue Apache::Session with PHP::Session
 
 BUILD_DEPENDS=	${SITE_PERL}/PHP/Session.pm:${PORTSDIR}/www/p5-PHP-Session \
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Session::PHP.3 Apache::Session::Serialize::PHP.3 Apache::Session::Store::PHP.3
-
 
 .include <bsd.port.mk>
