@@ -57,7 +57,7 @@ pre-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
