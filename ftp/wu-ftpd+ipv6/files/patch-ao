@@ -1,0 +1,17 @@
+--- build.dist	Sun Oct 17 09:31:38 1999
++++ build	Wed Oct 20 20:40:00 1999
+@@ -114,10 +114,10 @@
+ 
+ done
+ 
+-rm -f config.h
+-ln -s config.h.noac config.h
+-rm -f src/pathnames.h
+-ln -s pathnames.h.noac src/pathnames.h
++#rm -f config.h
++#ln -s config.h.noac config.h
++#rm -f src/pathnames.h
++#ln -s pathnames.h.noac src/pathnames.h
+ 
+ echo 'make args are : '$makeargs''
+ echo 'make opts are : '$makeopts''

@@ -1,40 +1,40 @@
-*** src/pathnames.h.bak	Mon Jan 20 06:21:45 1997
---- src/pathnames.h	Thu Jan 30 15:42:24 1997
+*** src/pathnames.h.orig	Wed Oct 20 20:27:34 1999
+--- src/pathnames.h	Wed Oct 20 20:30:19 1999
 ***************
-*** 45,54 ****
-  #define _PATH_CVT       "/etc/ftpd/ftpconversions"
-  #define _PATH_PRIVATE   "/etc/ftpd/ftpgroups"
+*** 104,113 ****
+  #define _PATH_FTPSERVERS "/opt/ftpd/lib/ftpservers"
+  #endif
   #else
-! #define _PATH_FTPUSERS  "/usr/local/lib/ftpd/ftpusers"
-! #define _PATH_FTPACCESS "/usr/local/lib/ftpd/ftpaccess"
-! #define _PATH_CVT       "/usr/local/lib/ftpd/ftpconversions"
-! #define _PATH_PRIVATE   "/usr/local/lib/ftpd/ftpgroups"
+! #define _PATH_FTPUSERS   "/usr/local/lib/ftpd/ftpusers"
+! #define _PATH_FTPACCESS  "/usr/local/lib/ftpd/ftpaccess"
+! #define _PATH_CVT        "/usr/local/lib/ftpd/ftpconversions"
+! #define _PATH_PRIVATE    "/usr/local/lib/ftpd/ftpgroups"
+  #ifdef VIRTUAL
+  #define _PATH_FTPSERVERS "/usr/local/lib/ftpd/ftpservers"
   #endif
+--- 104,113 ----
+  #define _PATH_FTPSERVERS "/opt/ftpd/lib/ftpservers"
   #endif
-  
---- 45,54 ----
-  #define _PATH_CVT       "/etc/ftpd/ftpconversions"
-  #define _PATH_PRIVATE   "/etc/ftpd/ftpgroups"
   #else
-! #define _PATH_FTPUSERS  "!!PREFIX!!/etc/ftpusers"
-! #define _PATH_FTPACCESS "!!PREFIX!!/etc/ftpaccess"
-! #define _PATH_CVT       "!!PREFIX!!/etc/ftpconversions"
-! #define _PATH_PRIVATE   "!!PREFIX!!/etc/ftpgroups"
+! #define _PATH_FTPUSERS   "!!PREFIX!!/lib/ftpd/ftpusers"
+! #define _PATH_FTPACCESS  "!!PREFIX!!/lib/ftpd/ftpaccess"
+! #define _PATH_CVT        "!!PREFIX!!/lib/ftpd/ftpconversions"
+! #define _PATH_PRIVATE    "!!PREFIX!!/lib/ftpd/ftpgroups"
+  #ifdef VIRTUAL
+  #define _PATH_FTPSERVERS "/usr/local/lib/ftpd/ftpservers"
   #endif
-  #endif
-  
 ***************
-*** 109,115 ****
-  #ifdef USE_ETC_FTPD
-  #define _PATH_FTPHOSTS  "/etc/ftpd/ftphosts"
+*** 203,209 ****
+  #ifdef USE_OPT_FTPD
+  #define _PATH_FTPHOSTS  "/opt/ftpd/lib/ftphosts"
   #else
 ! #define _PATH_FTPHOSTS  "/usr/local/lib/ftpd/ftphosts"
   #endif
   #endif
   #endif
---- 109,115 ----
-  #ifdef USE_ETC_FTPD
-  #define _PATH_FTPHOSTS  "/etc/ftpd/ftphosts"
+--- 203,209 ----
+  #ifdef USE_OPT_FTPD
+  #define _PATH_FTPHOSTS  "/opt/ftpd/lib/ftphosts"
   #else
 ! #define _PATH_FTPHOSTS  "!!PREFIX!!/etc/ftphosts"
   #endif

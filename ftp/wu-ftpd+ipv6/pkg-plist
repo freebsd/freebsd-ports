@@ -1,6 +1,8 @@
 bin/ftpcount
+bin/ftprestart
 bin/ftpshut
 bin/ftpwho
+bin/privatepw
 etc/ftpaccess.example
 etc/ftpconversions.example
 etc/ftpgroups.example

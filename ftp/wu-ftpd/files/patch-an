@@ -1,7 +1,7 @@
---- src/makefiles/common.bak	Thu Jan 28 20:04:59 1999
-+++ src/makefiles/common	Wed Feb 10 11:57:18 1999
-@@ -15,7 +15,11 @@
- 	${CC} ${LFLAGS} -o $@ ftpshut.o vers.o
+--- src/makefiles/common.orig	Sun Oct  3 21:51:35 1999
++++ src/makefiles/common	Wed Oct 20 20:35:25 1999
+@@ -48,7 +48,11 @@
+ 	${CC} ${LFLAGS} -o $@ ${UTIL_OBJS} ftprestart.o rdservers.o ${XLIBS}
  
  ftpd: ${OBJS} ${XOBJS} ../support/libsupport.a
 +.if defined(PACKAGE_BUILDING)
@@ -10,5 +10,5 @@
 +	${CC} -static ${LFLAGS} -o $@ ${OBJS} ${XOBJS} ${XLIBS}
 +.endif
  
- ckconfig: ckconfig.o
- 	${CC} ${LFLAGS} -o $@ ckconfig.o
+ ckconfig: ${UTIL_OBJS} ckconfig.o rdservers.o 
+ 	${CC} ${LFLAGS} -o $@ ${UTIL_OBJS} ckconfig.o rdservers.o ${XLIBS}
