@@ -629,7 +629,8 @@ sub checkpatch {
 	}
 	if ($committer && $whole =~ /\$([A-Za-z0-9]+)[:\$]/) {
 		&perror("WARN: $file includes possible RCS tag \"\$$1\$\". ".
-			"use binary mode (-ko) on commit/import.");
+			"use binary mode (-ko) on commit/import.") unless
+			$1 eq $rcsidstr;
 	}
 
 	close(IN);
@@ -1525,6 +1526,11 @@ LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	if ($tmp =~ /\n(fetch|extract|patch|configure|build|install):/) {
 		&perror("FATAL: direct redefinition of make target \"$1\" ".
 			"discouraged. redefine \"do-$1\" instead.");
+	}
+
+	# check for incorrect use of the pre-everything target.
+	if ($tmp =~ /\npre-everything:[^:]/) {
+		&perror("FATAL: use pre-everything:: instead of pre-everything:");
 	}
 
 	1;
