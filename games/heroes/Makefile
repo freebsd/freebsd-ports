@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heroes
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt -pthread -lsmpeg -lgcc_r"
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt -pthread -lsmpeg -lgcc_r" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN6=		heroes.6
