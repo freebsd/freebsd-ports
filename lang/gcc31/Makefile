@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-06-17
+SNAPDATE=	2002-07-01
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -33,18 +33,11 @@ LATEST_LINK=	gcc31
 
 USE_BZIP2=	yes
 
-.if defined(NETWINDER_SS)
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-EXTRACT_CMD=		rpm2cpio
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|cpio -idum
-EXTRACT_ONLY=
-.endif
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 # do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
 USE_GCC=	X
+NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
@@ -67,7 +60,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
-#CONFIGURE_ARGS+=	--program-prefix=e
+#CONFIGURE_ARGS+=	--program-suffix=31
 CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -81,10 +74,10 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
-#		gcj31.1 gcjh31.1 gij.1 \
-#		jcf-dump31.1 jv-scan31.1 jv-convert.1
-#MAN7=		fsf-funding.7 gfdl.7 gpl.7
+MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
+		gcj31.1 gcjh31.1 gij.1 \
+		jcf-dump31.1 jv-scan31.1 jv-convert.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
@@ -125,15 +118,15 @@ post-install:
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}31
-	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
-		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
 		${PREFIX}/man/man1/${file}31.1 )
 .endfor
 .for file in g77
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
-	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
-		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}-31.1
+	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+		${PREFIX}/man/man1/${file}-31.1 )
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
@@ -144,9 +137,16 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
+# I am sick and tired of this .info shit, makeinfo --no-split isn't working
+	@cd ${PREFIX}/info ; ${RM} -f cpp.* cppinternals.* g77.* gcc.* gccint.* gcj.*
 #.for info in cpp cppinternals g77 gcc gcj
 #	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 #.endfor
+# I am sick and tired of the anonyance that man pages can only be generated if
+# perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} && ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
