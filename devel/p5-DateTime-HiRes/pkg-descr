@@ -1,0 +1,4 @@
+This module enables you to generate DateTime objects that represent the current
+time with sub-second resolution.
+
+WWW: http://datetime.perl.org/
