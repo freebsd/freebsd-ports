@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.18
-PORTREVISION?=	1
+PORTVERSION=	4.0.20
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
 		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.0/ \
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
 		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.0/ \
 		http://www.mysql.cz/Downloads/MySQL-4.0/ \
 		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.0/ \
-		http://mysql.oms-net.nl/Downloads/MySQL-4.0/ \
+		http://mysql.proserve.nl/Downloads/MySQL-4.0/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.0/
 PKGNAMESUFFIX?=	-server
 
@@ -128,6 +128,8 @@ pre-fetch:
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
+	@${ECHO} "				(try it if you use libpthread)."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
@@ -140,6 +142,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/libmysqld/lib_sql.cc ${WRKSRC}/sql/mysqld.cc
+.endif
 
 post-build:
 	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
@@ -188,6 +193,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests scripts man|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
+.endif
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
