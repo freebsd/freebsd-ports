@@ -8,7 +8,7 @@
 PORTNAME=	l0pht-watch
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.l0pht.com/advisories/
+MASTER_SITES=	http://www.atstake.com/research/tools/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dom@myrddin.demon.co.uk
