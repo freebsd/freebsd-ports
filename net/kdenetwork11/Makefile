@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 PORTREVISION=	2
 CATEGORIES=	net news kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 
 PATCH_SITES=	http://www.kde.gr.jp/~toyohiro/ \
 		http://www.kde.gr.jp/~imura/ko/

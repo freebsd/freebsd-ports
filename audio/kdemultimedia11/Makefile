@@ -9,7 +9,7 @@ PORTNAME=	kdemultimedia
 PORTVERSION=	1.1.2
 CATEGORIES=	audio kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 
