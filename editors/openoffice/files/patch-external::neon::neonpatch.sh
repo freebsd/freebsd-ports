@@ -1,11 +1,14 @@
---- ../external/neon/neonpatch.sh.orig	Mon Apr 15 15:22:48 2002
-+++ ../external/neon/neonpatch.sh	Mon Apr 15 15:22:54 2002
-@@ -121,7 +121,7 @@
+--- ../external/neon/neonpatch.sh.orig	Tue May 29 17:40:10 2001
++++ ../external/neon/neonpatch.sh	Thu Aug  8 22:43:04 2002
+@@ -119,10 +119,7 @@
+ # apply the patches
+ #
  
-   for PNAME in `cat flist.pat`
-   do
+-  for PNAME in `cat flist.pat`
+-  do
 -      patch -i pat/$PNAME.pat rtufiles/$PNAME
-+      patch < pat/$PNAME.pat rtufiles/$PNAME
-   done
+-  done
++  patch < md5.c.pat rtufiles/md5.c
  
  #
+ # copy the SD files into rtufiles directory
