@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.1
-#PORTREVISION=	1
+PORTVERSION=	1.2.1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www2.starcat.ne.jp/~unha/jlp/
-MASTER_SITE_SUBDIR=	jlpmoz
+MASTER_SITES=	http://www2.starcat.ne.jp/~unha/jlp/
+#MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-kv0.8
+DISTNAME=	${PORTNAME}1.2-jajppack-kv0.4
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	yatt@luna2.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
