@@ -1,0 +1,73 @@
+bin/gmail
+etc/sound/events/gmail.soundlist
+share/gnome/help/gmail/C/topic.dat
+share/gnome/help/gmail/C/gmail/gmail-images/appearancetab.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/compose.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/identitytab.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/mailserverstab.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/mailsetupproperties.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/mysqltab.jpg
+share/gnome/help/gmail/C/gmail/gmail-images/vfolderproperties.jpg
+share/gnome/help/gmail/C/gmail/addressbook.html
+share/gnome/help/gmail/C/gmail/advanced.html
+share/gnome/help/gmail/C/gmail/authors.html
+share/gnome/help/gmail/C/gmail/caching.html
+share/gnome/help/gmail/C/gmail/features.html
+share/gnome/help/gmail/C/gmail/feedback.html
+share/gnome/help/gmail/C/gmail/fields.html
+share/gnome/help/gmail/C/gmail/forwardingemail.html
+share/gnome/help/gmail/C/gmail/how.html
+share/gnome/help/gmail/C/gmail/index.html
+share/gnome/help/gmail/C/gmail/introduction.html
+share/gnome/help/gmail/C/gmail/ln15.html
+share/gnome/help/gmail/C/gmail/managingvfolders.html
+share/gnome/help/gmail/C/gmail/prefs-0.html
+share/gnome/help/gmail/C/gmail/prefs-1.html
+share/gnome/help/gmail/C/gmail/prefs-2.html
+share/gnome/help/gmail/C/gmail/prefs-3.html
+share/gnome/help/gmail/C/gmail/tricks.html
+share/gnome/help/gmail/C/gmail/replyingtoemail.html
+share/gnome/help/gmail/C/gmail/sendingemail.html
+share/gnome/help/gmail/C/gmail/tuning.html
+share/gnome/help/gmail/C/gmail/using.html
+share/gnome/help/gmail/C/gmail/vfolder.html
+share/gnome/help/gmail/C/gmail/works.html
+share/gnome/help/gmail/C/gmail/docbook.css
+share/gnome/help/gmail/C/faq/stylesheet-images/caution.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/home.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/important.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/next.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/note.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/prev.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/tip.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/toc-blank.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/toc-minus.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/toc-plus.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/up.gif
+share/gnome/help/gmail/C/faq/stylesheet-images/warning.gif
+share/gnome/help/gmail/C/faq/index.html
+share/gnome/help/gmail/C/faq/docbook.css
+share/gnome/apps/Internet/gmail.desktop
+share/pixmaps/gmail_icon.png
+share/gmail/0.7.0/glade/message.glade
+share/gmail/0.7.0/glade/compose.glade
+share/gmail/0.7.0/glade/vfolder_properties.glade
+share/gmail/0.7.0/glade/preferences.glade
+share/gmail/0.7.0/glade/search.glade
+@dirrm etc/sound/events
+@dirrm etc/sound
+@dirrm share/gnome/help/gmail/C/gmail/gmail-images
+@dirrm share/gnome/help/gmail/C/gmail/stylesheet-images
+@dirrm share/gnome/help/gmail/C/gmail
+@dirrm share/gnome/help/gmail/C/faq/stylesheet-images
+@dirrm share/gnome/help/gmail/C/faq
+@dirrm share/gnome/help/gmail/C
+@dirrm share/gnome/help/gmail
+@dirrm share/gnome/help
+@dirrm share/gnome/apps/Internet
+@dirrm share/gnome/apps
+@dirrm share/gnome
+@dirrm share/pixmaps
+@dirrm share/gmail/0.7.0/glade
+@dirrm share/gmail/0.7.0
+@dirrm share/gmail

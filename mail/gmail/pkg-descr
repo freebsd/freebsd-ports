@@ -1,0 +1,9 @@
+Gmail is a gnome email client, using a Mysql database for email storage.
+It is fast, light and functional. Suitable for very high volumes of email.
+
+Mail is retreived through POP.
+
+Wayne Schuller <k_wayne@linuxpower.org>
+WWW: http://gmail.linuxpower.org
+
+[ Port maintained by S. Kruit <baskruit@bsltwr.dnsalias.org> ]
