@@ -47,7 +47,7 @@ case $1 in
 			fi
 		done
 		for i in ${seti_wrksuff}; do
-			su -m ${seti_user} -c "\
+			su -fm ${seti_user} -c "\
 				(cd ${seti_wrkdir}/${i} && \
 				 exec ${PREFIX}/${seti_bindir}/${seti_command} \
 				 ${seti_std_args} \
@@ -75,7 +75,7 @@ case $1 in
 		fi
 		# No need to register if we've already done so
 		if [ "X${seti_dontlogin}" != "Xyes" ]; then
-			su -m ${seti_user} -c "\
+			su -fm ${seti_user} -c "\
 				cd ${seti_wrkdir} && \
 				exec ${PREFIX}/${seti_bindir}/${seti_command} \
 				${seti_reg_args}"
