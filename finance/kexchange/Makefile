@@ -8,15 +8,21 @@
 PORTNAME=	kexchange
 PORTVERSION=	0.3.2
 CATEGORIES=	finance kde
-MASTER_SITES=	http://ftp.kde.com/Financial_Investment/Currency_Tools/KExchange/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	KDE currency converter
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+USE_REINPLACE=		yes
 
-.include <bsd.port.mk>
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
