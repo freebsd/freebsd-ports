@@ -1,0 +1,21 @@
+--- ltmain.sh.orig	Fri Mar 20 17:00:29 1998
++++ ltmain.sh	Sat Dec 12 09:13:28 1998
+@@ -967,6 +967,18 @@
+         versuffix="$current.$revision"
+         ;;
+ 
++      freebsd-aout)
++        version_vars="$version_vars major versuffix"
++        major="$current"
++        versuffix="$current.$revision";
++        ;;
++
++      freebsd-elf)
++        version_vars="$version_vars major versuffix"
++        major="$current"
++        versuffix="$current";
++        ;;
++
+       *)
+         $echo "$modename: unknown library version type \`$version_type'" 1>&2
+         echo "Fatal configuration error.  See the $PACKAGE docs for more information." 1>&2
