@@ -12,8 +12,6 @@ export CXXFLAGS="%%CXXFLAGS%%"
 
 ac_add_options	--prefix=%%PREFIX%%
 ac_add_options  --disable-svg
-ac_add_options  --without-system-mng
-ac_add_options  --without-system-png
 ac_add_options  --disable-ldap
 ac_add_options  --disable-mailnews
 ac_add_options  --disable-installer
