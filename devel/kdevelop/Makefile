@@ -33,6 +33,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt/html
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
@@ -44,5 +45,8 @@ pre-everything::
 	@${ECHO_MSG} "to automatically build the suggested programs to compliment kdevelop."
 	@${ECHO_MSG}
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
