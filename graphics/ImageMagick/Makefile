@@ -148,6 +148,7 @@ CONFIGURE_ARGS+=	--without-lcms
 .if defined(WITH_IMAGEMAGICK_TTF)
 BUILD_DEPENDS+=		freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+NEED_GS=                yes
 .else
 CONFIGURE_ARGS+=	--without-ttf
 .endif
@@ -178,13 +179,7 @@ CONFIGURE_ARGS+=	--without-dps
 # PDF (Adobe Portable Document Format) support
 .if defined(WITH_IMAGEMAGICK_PDF)
 CONFIGURE_ARGS+=	--with-gslib
-.if defined(WITHOUT_X11)
-BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-.else
-BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
-RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
-.endif
+NEED_GS=                yes
 .else
 CONFIGURE_ARGS+=	--without-gslib
 .endif
@@ -203,6 +198,16 @@ CONFIGURE_ARGS+=	--with-mpeg2
 LIB_DEPENDS+=		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 .else
 CONFIGURE_ARGS+=	--without-mpeg2
+.endif
+.endif
+
+.if defined(NEED_GS)
+.if defined(WITHOUT_X11)
+BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+.else
+BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
 .endif
 .endif
 
