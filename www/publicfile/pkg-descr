@@ -1,0 +1,22 @@
+publicfile supplies files to the public through HTTP and FTP.
+
+Security features: 
+       publicfile chroot()s to the public file area and sheds root privileges. 
+       publicfile never attempts to modify the public file area.
+       publicfile never runs any other programs.
+
+HTTP features: 
+       publicfile supports virtual hosts through the Host field. 
+       publicfile supports virtual hosts through absolute URLs. 
+       publicfile supports HTTP/1.1 persistent connections. 
+       publicfile supports HTTP/1.1 chunked responses. 
+       publicfile supports user-controlled content types. 
+       publicfile supports exact-prefix If-Modified-Since. 
+
+FTP features: 
+       publicfile has built-in LIST and NLST commands.
+       publicfile provides EPLF LIST responses.
+       publicfile supports restarted transfers. 
+       publicfile supports pipelining. 
+
+WWW: http://cr.yp.to/publicfile.html
