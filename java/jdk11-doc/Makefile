@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/jdk${JDK_VERSION:C/_.*\$//g}/docs
 JDK_VERSION=	1.1.8_003
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-DOWNLOAD_URL=	http://java.sun.com/jdk/${JDK_MAJOR_VER}/docs.html
 
 NO_BUILD=	yes
 PORTDOCS=	api guide images index.html relnotes tooldocs
