@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.1.0.20000207
+PORTVERSION=	1.2.0.20010514
 CATEGORIES=	lang tk80
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
@@ -17,11 +17,11 @@ DISTFILES+=	${MOZART_DOCS}
 
 MAINTAINER=	mathiasp@virtual-earth.de
 
-BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs21
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-MOZART_DOCS=	mozart-1.1.0.20000207-doc.tar.gz
+MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz
 
 SCRIPTS_ENV=	LN=${LN} PERL=${PERL}
 ALL_TARGET=
@@ -52,12 +52,24 @@ pre-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${TAR} --unlink -xzpf ${DISTDIR}/${MOZART_DOCS} \
+	@${TAR} --unlink -xzpf ${DISTDIR}/${MOZART_DOCS} \
 		-C ${PREFIX}/lib/oz
-	${RM} -rf ${PREFIX}/lib/oz/doc
-	${MV} ${PREFIX}/lib/oz/mozart/doc ${PREFIX}/lib/oz
-	${RM} -rf ${PREFIX}/lib/oz/mozart
+	@${RM} -rf ${PREFIX}/lib/oz/doc
+	@${MV} ${PREFIX}/lib/oz/mozart/doc ${PREFIX}/lib/oz
+	@${RM} -rf ${PREFIX}/lib/oz/mozart
 .endif
+	@cd ${PREFIX} ; find lib/oz -type f -o -type l | sort \
+		> ${WRKDIR}/PLIST.lib-oz
+	@cd ${PREFIX} ; find lib/oz -type d | sort -r \
+	    	| ${SED} -e 's/^/@dirrm /g' \
+		>> ${WRKDIR}/PLIST.lib-oz
+	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	@${ECHO} "/Insert PLIST.lib-oz"		>> ${WRKDIR}/ex.script
+	@${ECHO} "d"				>> ${WRKDIR}/ex.script
+	@${ECHO} "r ${WRKDIR}/PLIST.lib-oz"	>> ${WRKDIR}/ex.script
+	@${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-oz
+	@cd ${WRKDIR} ; ex < ex.script
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
