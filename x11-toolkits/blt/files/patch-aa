@@ -9,18 +9,17 @@
      else
  	prefix=$PREFIX
      fi
-@@ -2192,9 +2192,8 @@
-     TCLLIBDIR="__Edit_${saveFile}__"
-     echo "$ac_t""no" 1>&6
- fi
--if test "$TCLLIBDIR" != "/usr/lib" ; then
--    TCLLIBSW="-L$TCLLIBDIR -ltcl${TCL_VERSION}"
--fi
-+
-+TCLLIBSW=$TCL_LIB_SPEC
- 
- 
- 
+@@ -2165,8 +2165,8 @@
+ 	blt_path_tcl_lib="$dir/itcl"
+ 	break
+     fi
+-    libnames=`echo $dir/libtcl*`
+-    if test "$libnames" != "$dir/libtcl*" ; then
++    libnames=`echo $dir/libtcl75*`
++    if test "$libnames" != "$dir/libtcl75*" ; then
+ 	blt_path_tcl_lib=$dir
+ 	break
+     fi
 @@ -2312,10 +2311,7 @@
      echo "$ac_t""no" 1>&6
  fi
