@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.16 1998/04/02 18:04:46 andreas Exp $
+# $Id: Makefile,v 1.17 1998/04/02 20:43:45 andreas Exp $
 #
 
 DISTNAME=	ucd-snmp-3.3.1
@@ -14,7 +14,7 @@ MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/ \
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 .if defined(BATCH)
 CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where
 .else
