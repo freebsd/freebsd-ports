@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsadmin
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cooptel.qc.ca/~limitln/
 
