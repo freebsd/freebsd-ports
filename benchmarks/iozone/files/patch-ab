@@ -1,0 +1,22 @@
+--- makefile.orig	Tue Aug  3 11:25:05 1999
++++ makefile	Sat Aug  7 20:04:01 1999
+@@ -195,7 +195,7 @@
+ #
+ 
+ freebsd: iozone_freebsd.o libbif.o
+-	cc -O -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
++	cc ${CFLAGS} -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
+ 		iozone_freebsd.o libbif.o -o iozone
+ #
+ #
+@@ -411,8 +411,8 @@
+ 	@echo ""
+ 	@echo "Build Iozone for FreeBSD"
+ 	@echo ""
+-	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
++	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
+ 		-DSHARED_MEM iozone.c -o iozone_freebsd.o
+-	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
++	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
+ 		-DSHARED_MEM libbif.c -o libbif.o
+ 
