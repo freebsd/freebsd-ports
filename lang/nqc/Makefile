@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	2.2.r2
+PORTVERSION=	2.3.r1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.enteract.com/~dbaum/nqc/release/
 
