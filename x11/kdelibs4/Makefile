@@ -47,8 +47,10 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET= # empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
-		--enable-mt
+		--enable-mt \
+		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
