@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	0.4.99.6
-PORTREVISION=	1
+PORTVERSION=	0.4.99.7
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
 
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio satellite tracking and prediction
+
+LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib:install
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomecanvas gal
