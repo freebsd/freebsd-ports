@@ -78,7 +78,7 @@ LIB_DEPENDS+=	wx_baseu-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-devel
 LIB_DEPENDS+=	wx_base-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-devel
 .endif
 
-post-patch:
+pre-configure:
 	@${FIND} ${WRKSRC}/contrib -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e "s,@CXXFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cxxflags`," \
 		-e "s,@CFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cflags`," \
