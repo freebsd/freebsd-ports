@@ -1,0 +1,10 @@
+--- misc/desktops/Makefile.in.orig	Sat Nov 24 06:09:08 2001
++++ misc/desktops/Makefile.in	Sat Nov 24 06:13:05 2001
+@@ -205,7 +205,6 @@
+ 
+ install-data-am: install-dataDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-data: install-data-am
+ 
+ install-am: all-am
