@@ -13,7 +13,7 @@ MASTER_SITES=	http://okle.sourceforge.net/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A KDE frontend to the Ogle DVD player
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.9:${PORTSDIR}/multimedia/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.10:${PORTSDIR}/multimedia/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_AUTOCONF_VER=	253
