@@ -9,7 +9,7 @@ PORTNAME=	cantus
 PORTVERSION=	1.07
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://sam.homeunix.com/software.manicsadness.com-step4/releases/cantus/
+MASTER_SITES=	http://web222.mis02.de/releases/cantus/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	old@old.com.ua
