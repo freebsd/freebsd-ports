@@ -105,6 +105,7 @@
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-asdf-cmucl
     SUBDIR += cl-asdf-sbcl
+    SUBDIR += cl-port
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint
