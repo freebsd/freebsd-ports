@@ -57,5 +57,7 @@ post-install:
 		strip ${PREFIX}/sbin/${file}; \
 	fi
 .endfor
+	${INSTALL_SCRIPT} ${FILESDIR}/isc-dhcpd.sh.sample  \
+		${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
