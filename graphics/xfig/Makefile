@@ -3,7 +3,7 @@
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.12 1995/10/03 21:58:31 ache Exp $
+# $Id: Makefile,v 1.13 1996/11/18 09:53:53 asami Exp $
 #
 
 DISTNAME=	xfig.3.1.4
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 MAINTAINER=	asami@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg
+		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
