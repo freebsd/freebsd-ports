@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/code2000.html
+%%FONTSDIR%%/code2000.ttf
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+@dirrm %%FONTSDIR%%
+%%PKG_OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
+%%PKG_OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%

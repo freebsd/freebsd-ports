@@ -1,0 +1,23 @@
+IMPORTANT - READ CAREFULLY: Code2000 is *NOT* free software!
+It is offered as a shareware demo. If you like it and use it after a
+reasonable evaluation period, you are obliged to register the
+font by sending $5 (Five U.S. Dollars, or equivalent in any currency)
+to the author. See %%FONTSDIR%%/Code2000.html.
+You can start using the font by following these instructions:
+
+--- XFree86 4.x.x (using the freetype module)
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of XF86Config:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of XF86Config:
+
+	FontPath "%%FONTSDIR%%/"
+
+--- XFree86 3.x.x (using Xfstt)
+
+Add the following line to the "Files" section of XF86Config:
+
+	FontPath   "unix/:7101"

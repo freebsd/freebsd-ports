@@ -13,6 +13,7 @@
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
+    SUBDIR += code2000
     SUBDIR += cyr-rfx
     SUBDIR += etlfonts
     SUBDIR += fontconfig
