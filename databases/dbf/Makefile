@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbf
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.3.1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.berlios.de/dbf/ \
 		${MASTER_SITE_SOURCEFORGE}
