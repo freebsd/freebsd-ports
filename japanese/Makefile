@@ -167,6 +167,7 @@
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
     SUBDIR += mnews-im
+    SUBDIR += monafonts
     SUBDIR += mozilla-jlp
     SUBDIR += msdosfs
     SUBDIR += mtools
