@@ -42,3 +42,7 @@ echo "$choice" \
 	| sed -e "s/$/.xpi/g" \
 	| perl -pi -e "s/ /\n/g" \
 	> ${WRKSRC}/components.conf
+
+echo "* Your choices are saved.  You must run the \"make\" command again to"
+echo "* complete the build.  Ignore the \"Error code 1\" below."
+exit 1
