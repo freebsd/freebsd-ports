@@ -1,5 +1,5 @@
---- .bochsrc.orig	Tue Sep  7 11:15:14 1999
-+++ .bochsrc	Sat Sep 18 20:24:15 1999
+--- .bochsrc.orig	Mon Oct  4 08:31:35 1999
++++ .bochsrc	Tue Oct  5 18:57:29 1999
 @@ -3,7 +3,7 @@
  megs: 16
  #megs: 8
@@ -9,16 +9,16 @@
  
  # You many now use double quotes around pathnames, in case
  # your pathname includes spaces.
-@@ -60,7 +60,7 @@
- #romimage: file=bios/rombios.bin, address=0xf0000
+@@ -64,7 +64,7 @@
  #romimage: file=../cbios961203
  #romimage: file=../r980820.rom, address=0xe0000
--romimage: file=bios/BIOS-bochs-990907a, address=0xf0000
-+romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990907a, address=0xf0000
+ #romimage: file=bios/BIOS-bochs-990907a, address=0xf0000
+-romimage: file=bios/BIOS-bochs-990925a, address=0xf0000
++romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990925a, address=0xf0000
  
- #romimage: file=bios/BIOS-bochs-990218a, address=0xf0000
- #romimage: file=../dttest.bin, address=0xf0000
-@@ -69,8 +69,8 @@
+ #romimage: file=/home/kpl/floating_point/bios/rombios.bin, address=0xf0000
+ 
+@@ -75,8 +75,8 @@
  #vgaromimage: ../vgacbios961111
  #romimage: ../cbios961203
  
