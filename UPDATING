@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050309:
+  AFFECTS: users of mail/maildrop
+  AUTHOR: sergei@FreeBSD.org
+
+  maildrop has been recently upgraded to 1.8.0. This version 
+  has the following changes:
+
+  - Maildir quota is now enabled by default.
+    The following options were deleted:
+    - WITH_MAILDIRQUOTA
+    - WITH_TRASHQUOTA
+  - New option WITH_AUTHLIB is added, which provides optional support for
+    Courier Auth Library (mail/courier-authlib port).
+  - Userdb authentication, LDAP and MySQL support are provided through
+    courier-authlib now, thus the following options
+    - WITH_USERDB
+    - WITH_LDAP
+    - WITH_MYSQL
+    have been superceded by WITH_AUTHLIB.
+
 20050306:
   AFFECTS: users of math/ploticus
   AUTHOR: linimon@FreeBSD.org
