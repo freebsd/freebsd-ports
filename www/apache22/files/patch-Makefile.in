@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Sat Apr  6 04:36:06 2002
-+++ Makefile.in	Sun Apr  7 08:26:45 2002
-@@ -33,12 +33,15 @@
++++ Makefile.in	Thu Apr 18 09:22:29 2002
+@@ -33,23 +33,28 @@
  	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
@@ -17,7 +17,20 @@
  		( \
  			n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
  			if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
-@@ -57,7 +60,7 @@
+ 				sed -e 's#@@ServerRoot@@#$(prefix)#g' \
+ 					-e 's#@@Port@@#$(PORT)#g' \
++					-e 's#@@DESTDIR@@#$(DESTDIR)#g' \
+ 					-e '/@@LoadModule@@/d' \
+ 					< $$i; \
+ 			else \
+ 				sed -n -e '/@@LoadModule@@/q' \
+ 					-e 's#@@ServerRoot@@#$(prefix)#g' \
+ 					-e 's#@@Port@@#$(PORT)#g' \
++					-e 's#@@DESTDIR@@#$(DESTDIR)#g' \
+ 					-e 'p' \
+ 					< $$i; \
+ 				for j in $(DSO_MODULES) "^EOL^"; do \
+@@ -57,7 +62,7 @@
  						echo "<IfDefine SSL>"; \
  					fi; \
  					if test $$j != "^EOL^"; then \
@@ -26,7 +39,7 @@
  					fi; \
  					if test "x$$j" = "xssl"; then \
  						echo "</IfDefine>"; \
-@@ -106,11 +109,14 @@
+@@ -106,11 +111,14 @@
  
  install-htdocs:
  	@echo Installing HTML documents
@@ -44,7 +57,7 @@
  
  install-error:
  	@echo Installing error documents
-@@ -126,9 +132,10 @@
+@@ -126,9 +134,10 @@
  
  install-cgi:
  	@echo Installing CGIs

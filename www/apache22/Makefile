@@ -41,7 +41,9 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 SHARED_MODULES= all cgid charset_lite ext_filter case_filter case_filter_in \
 		deflate bucketeer
-RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g'
+RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g' -e 's,@@DESTDIR@@,${DESTDIR},g'
+MAKE_ENV+=	DESTDIR=${DESTDIR}
+PLIST_SUB+=	DESTDIR=${DESTDIR}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=YES
@@ -68,7 +70,7 @@ CONFIGURE_ARGS+= --enable-suexec \
 		--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
 		--with-suexec-docroot="${PREFIX}/www/data" \
 		--with-suexec-safepath="${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
-		--with-suexec-logfile="/var/log/httpd-suexec.log"
+		--with-suexec-logfile="${DESTDIR}/var/log/httpd-suexec.log"
 PLIST_SUB+=	SUEXEC=""
 .else
 PLIST_SUB+=	SUEXEC="@comment "
@@ -112,6 +114,7 @@ post-patch:
 	 ); done
 	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
+	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 .if ${OSVERSION} >= 500032
 .for ltfile in srclib/pcre/ltmain.sh srclib/apr/build/ltmain.sh \
 		srclib/apr-util/xml/expat/conftools/ltmain.sh
@@ -128,5 +131,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
+	[ -d ${DESTDIR}/var/log ] || ${MKDIR} ${DESTDIR}/var/log
+	[ -d ${DESTDIR}/var/run ] || ${MKDIR} ${DESTDIR}/var/run
 
 .include <bsd.port.post.mk>
