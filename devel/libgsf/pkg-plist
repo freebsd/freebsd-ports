@@ -9,13 +9,16 @@ include/libgsf-1/gsf/gsf-infile-msole.h
 include/libgsf-1/gsf/gsf-infile-msvba.h
 include/libgsf-1/gsf/gsf-infile-zip.h
 include/libgsf-1/gsf/gsf-infile.h
+include/libgsf-1/gsf/gsf-input-bzip.h
 include/libgsf-1/gsf/gsf-input-gzip.h
+include/libgsf-1/gsf/gsf-input-iochannel.h
 include/libgsf-1/gsf/gsf-input-memory.h
 include/libgsf-1/gsf/gsf-input-stdio.h
 include/libgsf-1/gsf/gsf-input-textline.h
 include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
 include/libgsf-1/gsf/gsf-msole-utils.h
+include/libgsf-1/gsf/gsf-output-bzip.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
 include/libgsf-1/gsf/gsf-outfile-zip.h
 include/libgsf-1/gsf/gsf-outfile.h
@@ -30,10 +33,10 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.so
-lib/libgsf-1.so.8
+lib/libgsf-1.so.9
 lib/libgsf-gnome-1.a
 lib/libgsf-gnome-1.so
-lib/libgsf-gnome-1.so.8
+lib/libgsf-gnome-1.so.9
 libdata/pkgconfig/libgsf-1.pc
 libdata/pkgconfig/libgsf-gnome-1.pc
 share/doc/gsf/gsf-gsf-impl-utils.html
@@ -56,18 +59,20 @@ share/doc/gsf/gsf-gsfinfile.html
 share/doc/gsf/gsf-gsfinput.html
 share/doc/gsf/gsf-gsfoutput.html
 share/doc/gsf/gsf.html
-share/doc/gsf/i1823.html
+share/doc/gsf/home.png
+share/doc/gsf/i1785.html
 share/doc/gsf/index.html
 share/doc/gsf/index.sgml
-share/doc/gsf/r1117.html
-share/doc/gsf/r1200.html
-share/doc/gsf/r1320.html
-share/doc/gsf/r1384.html
+share/doc/gsf/left.png
+share/doc/gsf/r1079.html
+share/doc/gsf/r1162.html
+share/doc/gsf/r1282.html
+share/doc/gsf/r1346.html
+share/doc/gsf/r1376.html
 share/doc/gsf/r14.html
-share/doc/gsf/r1414.html
-share/doc/gsf/r1580.html
-share/doc/gsf/r1622.html
-share/doc/gsf/r1737.html
+share/doc/gsf/r1542.html
+share/doc/gsf/r1584.html
+share/doc/gsf/r1699.html
 share/doc/gsf/r175.html
 share/doc/gsf/r299.html
 share/doc/gsf/r329.html
@@ -78,6 +83,8 @@ share/doc/gsf/r743.html
 share/doc/gsf/r858.html
 share/doc/gsf/r876.html
 share/doc/gsf/r962.html
+share/doc/gsf/right.png
+share/doc/gsf/up.png
 @dirrm share/doc/gsf
 @dirrm include/libgsf-1/gsf-gnome
 @dirrm include/libgsf-1/gsf
