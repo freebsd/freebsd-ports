@@ -1,0 +1,3 @@
+bin/braa
+%%PORTDOCS%%share/doc/braa/README
+@dirrm share/doc/braa
