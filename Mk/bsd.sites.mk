@@ -860,3 +860,9 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.task.gda.pl/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.physics.uvt.ro/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
+
+MASTER_SITE_GNUSTEP+= \
+	http://python.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
+	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
+	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/ 
+
