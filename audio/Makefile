@@ -110,6 +110,7 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-esound
+    SUBDIR += linux-libaudiofile
     SUBDIR += linux-realplayer
     SUBDIR += linux-vsound
     SUBDIR += litestream
