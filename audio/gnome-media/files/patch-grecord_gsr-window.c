@@ -1,5 +1,5 @@
---- grecord/gsr-window.c.orig	Fri Dec 24 15:16:11 2004
-+++ grecord/gsr-window.c	Fri Dec 24 15:16:13 2004
+--- grecord/src/gsr-window.c.orig	Fri Dec 24 15:16:11 2004
++++ grecord/src/gsr-window.c	Fri Dec 24 15:16:13 2004
 @@ -29,7 +29,7 @@
  #include <unistd.h>
  
