@@ -65,6 +65,7 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
 	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
+	${CHMOD} -R o-w ${WRKSRC}
 .endfor
 
 do-configure:
@@ -108,7 +109,6 @@ do-install:
 	${MKDIR} ${INSTALL_DIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${INSTALL_DIR}
-	${CHMOD} -R a-w ${INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-mozilla/
 
