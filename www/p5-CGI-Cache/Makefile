@@ -27,7 +27,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Sp
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL?=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Cache.3
