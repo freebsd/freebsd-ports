@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grdb
-PORTVERSION= 	0.2.3
+PORTVERSION= 	0.2.4
 CATEGORIES=	misc gnome
 MASTER_SITES=   http://bucket.pp.ualr.edu/~bit/download/
 
