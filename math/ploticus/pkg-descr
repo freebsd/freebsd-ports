@@ -1,0 +1,20 @@
+Ploticus is script-driven, which makes it suitable for automated, unattended
+uses, or for applications that will be run again and again. Ploticus might be
+your choice for stylistic reasons or just because it suits the problem or
+application. In general, ploticus is good at making graphs like you would see
+in newspapers and news magazines, business publications, journals for medical
+and social sciences, and so on.
+
+You can also use Ploticus in combination with standard desktop tools, e.g.
+generate data displays using ploticus then import SVG or PNG into PowerPoint,
+Word, etc.)
+
+Ploticus is not a function or mathematical plotting package like gnuplot, nor
+would it be a good choice for applications where mathematical formulas or
+scientific notations are to be rendered as an integral part of the data
+display. Ploticus is also not intended as a "marketing" graphics package. Its
+goal is to display data crisply without extra decoration and distracting
+"dingbats" that cloud the picture. Thus there is little support for 3-D
+effects, gradient backgrounds, and so on.
+
+WWW: http://ploticus.sourceforge.net/
