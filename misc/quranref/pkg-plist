@@ -1,0 +1,12 @@
+bin/quranref
+lib/quranref/qur.rtv
+lib/quranref/xxxxqurrtv.BMP
+lib/quranref/xxxxqurrtv.IND
+lib/quranref/xxxxqurrtv.IS
+lib/quranref/xxxxqurrtv.LIM
+lib/quranref/xxxxqurrtv.OFS
+lib/quranref/xxxxqurrtv.UNT
+share/doc/quranref/README
+share/doc/quranref/README.2000
+@dirrm lib/quranref
+@dirrm share/doc/quranref

@@ -1,0 +1,16 @@
+Quranref offers simple tools for word and passage-based access to M. H.
+Shakir's translation of the Holy Qur'an. With Quranref, you can perform
+most of the more basic, low-level functions commercial browsing packages
+offer (and perhaps a few not found in some of the commercial Qur'an study
+packages).  You can, for example,
+
+        -  retrieve any passage by section:verse number
+        -  move forward or backward relative to the retrieved passage
+        -  search the entire Qur'an for words and/or word-patterns
+        -  search for word co-occurrences (or the absence thereof)
+        -  save passages and/or passage-lists for use with an editor
+
+Although this program is hardly the product of any major research effort,
+it should prove sophisticated enough for casual use.  Its main fault right
+now is that it relies on a scanned text which is positively rife with
+errors. 
