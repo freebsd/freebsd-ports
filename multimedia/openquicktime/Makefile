@@ -23,17 +23,12 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 INSTALL_SHLIBS=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	DEBUG "Turn on debugging" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .ifndef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=no
@@ -44,7 +39,15 @@ BROKEN=		"Does not build on sparc64"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/xCC/xc/" ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e 's|xCC|xc|' \
+		-e 's|-O2||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${OSVERSION} >= 502126
+	@${REINPLACE_CMD} \
+		-e 's|-fpic||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
