@@ -1,0 +1,11 @@
+--- nh2ps.c.orig	Sat Jul 15 02:11:13 2000
++++ nh2ps.c	Sat Jul 15 02:11:41 2000
+@@ -339,7 +339,7 @@
+ #include "psfontmap.c"
+ 
+ /* default postscript(OCF) font is CID-Keyed Fonts sample */
+-#define HFONT_PS_DEFAULT            "Munhwa-Regular-KSC-EUC-H"
++#define HFONT_PS_DEFAULT            "Gulim-Medium-KSC-EUC-H"
+ #define HFONT_PS_WIDE_RATIO         1.2             /* only heuristic */
+ 
+ #endif /* HFONT */
