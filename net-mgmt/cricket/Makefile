@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cricket
-PORTVERSION=	1.0.4.p2
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance, extremely flexible monitoring system
@@ -36,8 +36,6 @@ do-install:
 	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
-	@${MV} ${PREFIX}/cricket/cricket-${PORTVERSION}/doc/new-devives.html \
-		${PREFIX}/cricket/cricket-${PORTVERSION}/doc/new-devices.html
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM} -f
 	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
