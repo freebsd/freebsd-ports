@@ -22,6 +22,7 @@ USE_XLIB=	yes
 USE_GL=		yes
 USE_LINUX=	yes
 INSTALLS_SHLIB=	yes
+NO_PACKAGE=	yes	# distfiles must be downloaded manually, wierd legal issues etc etc etc.
 
 SSAMDIR=	${PREFIX}/ssam
 SERIOUS_MHZ?=	1000
