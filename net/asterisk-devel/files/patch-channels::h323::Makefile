@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- channels/h323/Makefile.orig	Tue Aug 31 16:32:11 2004
-+++ channels/h323/Makefile	Sun Oct 10 15:25:42 2004
+--- channels/h323/Makefile.orig
++++ channels/h323/Makefile
 @@ -53,7 +53,7 @@
  LIBS+=-lpthread
  endif
@@ -12,27 +12,28 @@ $FreeBSD$
  endif
  CFLAGS += -D_REENTRANT -D_GNU_SOURCE
  CFLAGS += -DP_HAS_SEMAPHORES -DP_SSL -DP_PTHREADS
-@@ -74,19 +74,19 @@
-  
+@@ -77,20 +77,20 @@
+ 	ar cr libchanh323.a ast_h323.o
  
  ast_h323.o:	ast_h323.cpp
 -	$(CXX) -g -c -fno-rtti -o $@ $(CFLAGS) $<
 +	$(CXX) $(CXXFLAGS) -c -fno-rtti -o $@ $(CFLAGS) $<
  
- libchanh323.a:	ast_h323.o
- 	ar cr libchanh323.a ast_h323.o
+ ifneq ($(wildcard .depend),)
+ include .depend
+ endif
  
  chan_h323.so:	
 -	$(CXX)  -g -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_linux_x86_r -L$(OPENH323DIR)/lib -lh323_linux_x86_r -L/usr/lib $(CHANH323LIB)
-+	$(CXX)  $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r -L/usr/lib $(CHANH323LIB)
++	$(CXX) $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r $(CHANH323LIB)
  
  chan_h323_d.so:	chan_h323.o ast_h323.o
 -	$(CXX)     -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_linux_x86_d -L$(OPENH323DIR)/lib -lh323_linux_x86_d -L/usr/lib $(CHANH323LIB)
-+	$(CXX)  $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_d -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_d -L/usr/lib $(CHANH323LIB)
++	$(CXX) $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r $(CHANH323LIB)
  
  chan_h323_s.so:	chan_h323.o ast_h323.o
 -	$(CXX)  -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_linux_x86_r_s -L$(OPENH323DIR)/lib -lh323_linux_x86_r_s -L/usr/lib $(CHANH323LIB)
-+	$(CXX)  $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L/usr/lib $(CHANH323LIB)
++	$(CXX) $(CXXFLAGS) -shared -Xlinker -x -o chan_h323.so chan_h323.o ast_h323.o -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r $(CHANH323LIB)
  clean:
- 	rm -f *.o *.so core.* libchanh323.a
+ 	rm -f *.o *.so core.* libchanh323.a .depend
  
