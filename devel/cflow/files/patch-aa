@@ -1,0 +1,115 @@
+*** Makefile.orig	Mon Mar  6 09:00:20 1995
+--- Makefile	Fri Sep 29 04:08:35 1995
+***************
+*** 5,23 ****
+  endif
+  
+  # use cp backup option if you have gnu cp
+! CP=cp
+! CP=cp -b
+  
+  # where you want to install
+  ifndef PREFIX
+! PREFIX=$(HOME)
+  endif
+  
+  # which shell do we use for the cflow to script?
+  # I know it works on bash on unix, it also should work with
+  # msh on ms-dog
+  ifndef CFLOW_SHELL
+! CFLOW_SHELL=/bin/bash
+  endif
+  
+  # actual location of prcc
+--- 5,24 ----
+  endif
+  
+  # use cp backup option if you have gnu cp
+! #CP=cp
+! #CP=cp -b
+! INSTALL_CMD=	install -c -o bin -g bin
+  
+  # where you want to install
+  ifndef PREFIX
+! PREFIX=/usr/local
+  endif
+  
+  # which shell do we use for the cflow to script?
+  # I know it works on bash on unix, it also should work with
+  # msh on ms-dog
+  ifndef CFLOW_SHELL
+! CFLOW_SHELL=$(PREFIX)/bin/bash
+  endif
+  
+  # actual location of prcc
+***************
+*** 39,50 ****
+  LOADLIBES=-L$(HOME)/lib -ldmalloc
+  endif
+  
+! DEBUG=-g
+  OPT=-O
+! CFLAGS=-Wall $(DEBUG) $(OPT) $(DEFS)
+  
+  # set this to where to install
+  BINDIR=$(PREFIX)/bin
+  
+  SRCS=cflow.sh prcc.c prcg.c
+  
+--- 40,52 ----
+  LOADLIBES=-L$(HOME)/lib -ldmalloc
+  endif
+  
+! #DEBUG=-g
+  OPT=-O
+! CFLAGS=$(DEBUG) $(OPT) $(DEFS)
+  
+  # set this to where to install
+  BINDIR=$(PREFIX)/bin
++ MANDIR=$(PREFIX)/man/man1
+  
+  SRCS=cflow.sh prcc.c prcg.c
+  
+***************
+*** 64,80 ****
+  prototypes: 	$(PROTOTYPES)
+  
+  
+! install:	install-cflow  install-bins
+  
+  install-bins: $(BINDIR)/prcc $(BINDIR)/prcg
+  
+  install-cflow:	$(BINDIR)/cflow
+  
+  $(BINDIR)/prcc $(BINDIR)/prcg: $(BINDIR)/%:	%
+! 	$(CP) $^ $@
+  
+  $(BINDIR)/cflow:	cflow
+! 	$(CP) $^ $@
+  
+  cflow:	cflow.sh
+  	sed -e "s;@CFLOW_SHELL@;$(CFLOW_SHELL);g" \
+--- 66,88 ----
+  prototypes: 	$(PROTOTYPES)
+  
+  
+! install:	install-cflow  install-bins install-man
+  
+  install-bins: $(BINDIR)/prcc $(BINDIR)/prcg
+  
+  install-cflow:	$(BINDIR)/cflow
+  
++ install-man:	$(MANDIR)/cflow.1.gz
++ 
+  $(BINDIR)/prcc $(BINDIR)/prcg: $(BINDIR)/%:	%
+! 	$(INSTALL_CMD) $^ $@
+  
+  $(BINDIR)/cflow:	cflow
+! 	$(INSTALL_CMD) -m0755 $^ $@
+! 
+! $(MANDIR)/cflow.1.gz:	cflow.1
+! 	$(INSTALL_CMD) -m 0644 $^ $(MANDIR)
+! 	gzip --best $(MANDIR)/cflow.1
+  
+  cflow:	cflow.sh
+  	sed -e "s;@CFLOW_SHELL@;$(CFLOW_SHELL);g" \
