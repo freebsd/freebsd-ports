@@ -55,6 +55,12 @@ CONFIGURE_ARGS+=--enable-jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+CONFIGURE_ARGS+=--enable-ldap
+.else
+CONFIGURE_ARGS+=--disable-ldap
+.endif
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--enable-ssl
@@ -72,9 +78,14 @@ pre-everything::
 	@${ECHO} "      WITH_JCONV=yes    Enable Japanese charset conversion"
 	@${ECHO} "                        library libjconv."
 	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
+	@${ECHO} "      WITH_LDAP=yes     Enable LDAP support."
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL=yes   Disable OpenSSL support."
 	@${ECHO} ""
+
+post-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+		s|-lresolv||g' ${WRKSRC}/configure
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
