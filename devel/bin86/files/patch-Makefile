@@ -1,0 +1,14 @@
+--- Makefile.orig	Sat Sep 14 14:35:43 2002
++++ Makefile	Sat Sep 14 14:36:04 2002
+@@ -1,9 +1,9 @@
+ 
+-CFLAGS=-O2 -D_POSIX_SOURCE
++CFLAGS+=-D_POSIX_SOURCE
+ LDFLAGS=
+ DIRS=ld as
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ LIBDIR=$(PREFIX)/lib
+ MANDIR=$(PREFIX)/man/man1
