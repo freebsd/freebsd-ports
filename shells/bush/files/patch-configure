@@ -1,0 +1,13 @@
+--- configure.orig	Sat Jan  8 04:24:43 2005
++++ configure	Tue Jan 25 21:06:21 2005
+@@ -174,8 +174,8 @@
+ else
+       echo "no"
+       echo
+-      echo "ADAVOX requires /dev/dsp.  Create a /dev/dsp symlink to your real audio device"
+-      exit 1
++      echo "ADAVOX requires /dev/dsp."
++      echo "Note that you should enable /dev/dsp on the machine on which you will install this package."
+ fi
+ 
+ echo "ADAVOX library is configured"
