@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cvs+ipv6
-PORTVERSION=	1.11.1p1
+PORTVERSION=	1.11.2
 CATEGORIES=	devel ipv6
-MASTER_SITES=	http://ftp.cvshome.org/cvs-1.11.1/
+MASTER_SITES=	http://ftp.cvshome.org/cvs-1.11.2/
 DISTNAME=	cvs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	cvs-1.11.1p1-v6-20011105a.diff.gz
+PATCHFILES=	cvs-1.11.2-v6-20020709.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -30,5 +30,11 @@ CVS_VER?=	v1_11_1p1
 
 post-patch:
 	@${CP} ${FILESDIR}/missing ${WRKSRC}
+
+replace:
+.for f in cvs cvsbug
+	${MV} /usr/bin/${f} /usr/bin/${f}.orig
+	${CP} -p ${PREFIX}/bin/${f} /usr/bin/
+.endfor
 
 .include <bsd.port.mk>

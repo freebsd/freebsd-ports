@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sat Apr 28 05:02:25 2001
-+++ src/Makefile.in	Mon Nov  5 15:11:40 2001
-@@ -145,6 +145,7 @@
+--- src/Makefile.in.orig	Fri Apr 19 00:55:55 2002
++++ src/Makefile.in	Sun Aug 25 05:44:36 2002
+@@ -139,6 +139,7 @@
  	no_diff.c \
  	parseinfo.c \
  	patch.c \
@@ -8,7 +8,7 @@
  	rcs.c \
  	rcscmds.c \
  	recurse.c \
-@@ -223,6 +224,7 @@
+@@ -216,6 +217,7 @@
  	main.$(OBJEXT) mkmodules.$(OBJEXT) modules.$(OBJEXT) \
  	myndbm.$(OBJEXT) no_diff.$(OBJEXT) parseinfo.$(OBJEXT) \
  	patch.$(OBJEXT) rcs.$(OBJEXT) rcscmds.$(OBJEXT) \
@@ -16,29 +16,22 @@
  	recurse.$(OBJEXT) release.$(OBJEXT) remove.$(OBJEXT) \
  	repos.$(OBJEXT) root.$(OBJEXT) run.$(OBJEXT) scramble.$(OBJEXT) \
  	server.$(OBJEXT) status.$(OBJEXT) subr.$(OBJEXT) tag.$(OBJEXT) \
-@@ -244,7 +246,7 @@
- DEFS = @DEFS@
+@@ -231,7 +233,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir) -I.
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ -lmd
- DIST_SOURCES = $(cvs_SOURCES)
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/add.Po $(DEPDIR)/admin.Po \
-@@ -264,7 +266,7 @@
+ @AMDEP_TRUE@	$(DEPDIR)/annotate.Po $(DEPDIR)/buffer.Po \
+@@ -250,7 +252,8 @@
  @AMDEP_TRUE@	$(DEPDIR)/main.Po $(DEPDIR)/mkmodules.Po \
  @AMDEP_TRUE@	$(DEPDIR)/modules.Po $(DEPDIR)/myndbm.Po \
  @AMDEP_TRUE@	$(DEPDIR)/no_diff.Po $(DEPDIR)/parseinfo.Po \
 -@AMDEP_TRUE@	$(DEPDIR)/patch.Po $(DEPDIR)/rcs.Po \
 +@AMDEP_TRUE@	$(DEPDIR)/patch.Po $(DEPDIR)/prepend_args.Po $(DEPDIR)/rcs.Po \
++@AMDEP_TRUE@	$(DEPDIR)/prepend_args.Po \
  @AMDEP_TRUE@	$(DEPDIR)/rcscmds.Po $(DEPDIR)/recurse.Po \
  @AMDEP_TRUE@	$(DEPDIR)/release.Po $(DEPDIR)/remove.Po \
  @AMDEP_TRUE@	$(DEPDIR)/repos.Po $(DEPDIR)/root.Po \
-@@ -441,6 +443,7 @@
- @_am_include@ @_am_quote@$(DEPDIR)/no_diff.Po@_am_quote@
- @_am_include@ @_am_quote@$(DEPDIR)/parseinfo.Po@_am_quote@
- @_am_include@ @_am_quote@$(DEPDIR)/patch.Po@_am_quote@
-+@_am_include@ @_am_quote@$(DEPDIR)/prepend_args.Po@_am_quote@
- @_am_include@ @_am_quote@$(DEPDIR)/rcs.Po@_am_quote@
- @_am_include@ @_am_quote@$(DEPDIR)/rcscmds.Po@_am_quote@
- @_am_include@ @_am_quote@$(DEPDIR)/recurse.Po@_am_quote@
