@@ -22,6 +22,10 @@ MAINTAINER=	anholt@freebsd.org
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES
 
+.ifdef USE_IMAKE
+.error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000

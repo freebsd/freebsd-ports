@@ -22,4 +22,8 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 
+.ifdef USE_LIBTOOL
+.error You have `USE_LIBTOOL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.mk>

@@ -53,6 +53,10 @@ MAKE_ARGS=	-e
 MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 		INCLUDE_GL=${INCLUDE_GL}
 
+.ifdef USE_MESA
+.error You have `USE_MESA' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 

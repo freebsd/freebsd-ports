@@ -25,6 +25,10 @@ EXTRACT_ONLY=   ${PORTNAME}550.tar.gz
 MAKE_ENV=       LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK -DUSE_SMITH_CODE"
 .endif
 
+.ifdef USE_UNZIP
+.error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

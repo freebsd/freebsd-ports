@@ -44,6 +44,10 @@ PLIST=		${PKGDIR}/pkg-plist.pc98
 PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
+.ifdef USE_XLIB
+.error You have `USE_XLIB' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
 pre-fetch:
 	@${ECHO}

@@ -79,6 +79,10 @@ MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
 		jcf-dump31.1 jv-scan31.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
+.ifdef USE_GCC
+.error You have `USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 

@@ -15,6 +15,10 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+.ifdef USE_OPENSSL
+.error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"

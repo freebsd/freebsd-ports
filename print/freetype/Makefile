@@ -24,6 +24,10 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
+.ifdef USE_FREETYPE
+.error You have `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 # Older versions of freetype installed include files in ${PREFIX}/include
 # this is a compatibility hack for now
 

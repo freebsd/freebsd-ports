@@ -63,6 +63,10 @@ UPDATES=		glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
 				glibc-2.2.4-29.${MACHINE_ARCH}.rpm \
 				zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
 
+.ifdef USE_LINUX
+.error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if (${MACHINE_ARCH} == "i386")
