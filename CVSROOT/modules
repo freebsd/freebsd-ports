@@ -7597,6 +7597,7 @@ sntop		ports/net/sntop
 socat		ports/net/socat
 socket		ports/sysutils/socket
 socketbind	ports/net/socketbind
+socketpipe	ports/net/socketpipe
 socklog		ports/sysutils/socklog
 socks5		ports/net/socks5
 sodipodi	ports/graphics/sodipodi
