@@ -29,10 +29,10 @@ MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 	FvwmConsoleC.pl.1
 
 post-install:
-	@${MKDIR} ${PREFIX}/icons
 	@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKDIR}/*.xpm ${PREFIX}/icons
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
+		${PREFIX}/lib/X11/fvwm2/pixmaps
 
 .include <bsd.port.mk>
