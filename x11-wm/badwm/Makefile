@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		BadWM-${PORTVERSION}
 
 MAINTAINER=		trevor@FreeBSD.org
-COMMENT=		Window manager based on eviwm
+COMMENT=		Window manager based on evilwm
 
 DOCDIR=			share/doc/${PORTNAME}
 DOCS=		AUTHORS COPYING ChangeLog INSTALL LICENSE README THANKS TODO
