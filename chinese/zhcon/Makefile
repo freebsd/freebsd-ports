@@ -7,12 +7,12 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.14f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/ \
 		ftp://ftp.gnuchina.org/pub/linux/chinese/inputmethod/console/zhcon/BSDPort/ \
 		http://www.cis.nctu.edu.tw/~gis89501/zhcon/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} zhb5-ime-0.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} zhb5-ime-1.tgz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
@@ -42,7 +42,6 @@ post-patch:
 	@${PERL} -pi -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,' ${WRKSRC}/${PORTNAME}/*.cpp
 .endif
 .if defined(WITH_BIG5)
-	@${PATCH} ${PATCH_DIST_ARGS:S/${WRKSRC}/${WRKDIR}\/zh-big5-ime/} < ${PATCHDIR}/extrapatch-aa
 .for file in zhcon-0.14-big5-bar.diff.gz zhcon-0.14-big5-dirty-ime.diff.gz
 	@${GZCAT} ${WRKDIR}/zh-big5-ime/${file} | ${PATCH} ${PATCH_DIST_ARGS:S/p0/p1/}
 .endfor
