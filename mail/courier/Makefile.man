@@ -4,7 +4,7 @@ MAN1=	\
 	couriertcpd.1 \
 	couriertls.1 \
 	dot-forward.1 \
-	dotlock.1 \
+	lockmail.1 \
 	mailbot.1 \
 	maildirmake.1 \
 	maildrop.1 \
@@ -19,6 +19,7 @@ MAN1=	\
 	testmxlookup.1
 MAN5=	\
 	dot-courier.5 \
+	maildir.5 \
 	maildropex.5 \
 	maildropfilter.5 \
 	maildropgdbm.5

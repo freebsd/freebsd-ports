@@ -1,0 +1,21 @@
+--- courier/configure.in.orig	Sun Mar 16 17:35:34 2003
++++ courier/configure.in	Sat Aug  9 16:36:22 2003
+@@ -465,12 +465,12 @@
+ 
+ # Automake stupidity
+ 
+-if test "$testmode" = "0"
+-then
+-	INSTALL_PROGRAM='${INSTALL} -m 700'
+-	INSTALL_SCRIPT='${INSTALL} -m 700'
+-	INSTALL_DATA='${INSTALL} -m 600'
+-fi
++#if test "$testmode" = "0"
++#then
++#	INSTALL_PROGRAM='${INSTALL} -m 700'
++#	INSTALL_SCRIPT='${INSTALL} -m 700'
++#	INSTALL_DATA='${INSTALL} -m 600'
++#fi
+ 
+ AC_LANG_CPLUSPLUS
+ AC_CACHE_CHECK([if the C++ compiler needs -fhandle-exceptions],

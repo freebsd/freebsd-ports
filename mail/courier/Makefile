@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.39.3
+PORTVERSION=	0.42.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
-
-BROKEN=		"Changes ownership/permission of manpages, broken pkg-plist"
 
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
@@ -50,14 +48,15 @@ CACHEDIR=	/var/spool/webmail
 CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/apache/mime.types:${LOCALBASE}/etc/apache2/mime.types
 
+USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
-USE_AUTOMAKE_VER=14
-USE_AUTOCONF_VER=213
+USE_AUTOMAKE_VER=15
+CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-syslog=1 --enable-use-flock \
 		--with-mailuser=${MAILOWN} \
@@ -77,8 +76,6 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--with-calendardir=${CALENDIR} \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--enable-workarounds-for-imap-client-bugs
-
-PATH:=${PATH}:${SCRIPTDIR}
 
 # Respect the make.conf(5) NOUUCP setting
 WITH_TRANSPORT=	local esmtp dsn
@@ -147,15 +144,12 @@ pre-configure:
 # patch around a bug in autoconf where the INSTALL macro does
 # not get set properly in directories more than one level deep
 post-build:
-	@${PERL} -pi -e 's:^INSTALL = \.\./:INSTALL = ${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP}:;' \
-		`${GREP} -rl '^INSTALL = \.\./' ${WRKSRC}/* | ${GREP} '/Makefile$$'`
-	@${PERL} -pi -e 's:^TAR = gtar$$:TAR = ${TAR}:g;' \
-		`${GREP} -rl '^TAR = gtar$$' ${WRKSRC}/* | ${GREP} '/Makefile$$'`
 	@${PERL} -pi -e 's:^(auth)\s+(required).*:$$1\t\t$$2\tpam_unix.so\ttry_first_pass:g; \
 			s:^(account)\s+(required).*:$$1 \t$$2\tpam_unix.so:g; \
 			s:^(session)\s+(required).*:$$1 \t$$2\tpam_permit.so:g;' \
 		${WRKSRC}/*/*.authpam* \
 		${WRKSRC}/*/*/*.authpam*
+	@${PERL} -pi -e 's:^transform = .*freebsd.*:transform = s,x,x:;' ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile ${WRKSRC}/*/*/Makefile
 	@${LN} ${WRKSRC}/gpglib/README.html	${WRKSRC}/gpglib/README.gpglib.html
 	@${LN} ${WRKSRC}/imap/FAQ		${WRKSRC}/imap/FAQ.imap
 	@${LN} ${WRKSRC}/imap/FAQ.html		${WRKSRC}/imap/FAQ.imap.html
