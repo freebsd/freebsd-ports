@@ -27,6 +27,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	housel@acm.org
 COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
+BROKEN=		Does not compile
+
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_PERL5=	yes
