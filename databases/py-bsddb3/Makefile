@@ -16,12 +16,33 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
 .if defined(WITH_DB3)
+WITH_BDB_VER?=	3
+.elif defined(WITH_DB4)
+WITH_BDB_VER?=	4
+.else
+WITH_BDB_VER?=	41
+.endif
+
+.if defined(WITH_BDB_VER)
+.if ${WITH_BDB_VER} == 3
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 DBVERSION=	db3
-PKGNAMESUFFIX=	-db3
-.else
+DBHEADER=	db3
+.elif ${WITH_BDB_VER} == 4
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 DBVERSION=	db4
+DBHEADER=	db4
+.elif ${WITH_BDB_VER} == 41
+LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+DBVERSION=	db41
+DBHEADER=	db41
+.elif ${WITH_BDB_VER} == 42
+LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
+DBVERSION=	db-4.2
+DBHEADER=	db42
+.else
+BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
+.endif
 .endif
 
 USE_PYTHON=	yes
