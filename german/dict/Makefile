@@ -3,7 +3,7 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1997/08/16 10:14:36 wosch Exp $
+# $Id: Makefile,v 1.4 1997/12/28 12:17:46 wosch Exp $
 #
 
 DISTNAME=       dict-1.1
@@ -21,6 +21,6 @@ dict=		ger-eng.txt
 
 post-extract: ${dict}
 ${dict}:
-	${GZIP_CMD} -d < ${DISTDIR}/${dict}.gz > ${WRKSRC}/${.TARGET}
+	${GZCAT} < ${DISTDIR}/${dict}.gz > ${WRKSRC}/${.TARGET}
 
 .include <bsd.port.mk>
