@@ -1,0 +1,13 @@
+From the OpenQuicktime site, http://www.openquicktime.org:
+
+"OpenQuicktime aims to be a portable library for handling Apple's
+QuickTime(TM) popular media files on Unix-like environments. It is
+aim is to provide encoding, authoring and editing support as well
+as video playback."
+
+OpenQuicktime is currently able to decode as well as encode video
+and audio streams.  The Video::OpenQuicktime library currently
+only supports extracting diagnostic information from Quicktime files,
+such as video dimensions, codecs used, and play length.
+
+WWW: http://search.cpan.org/dist/Video-OpenQuicktime
