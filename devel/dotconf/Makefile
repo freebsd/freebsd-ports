@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A simple, powerful configuration-file parser
 
 USE_REINPLACE=	yes
