@@ -1,5 +1,5 @@
 # $Id$
 #
-SUBDIR=	jove emacs
+SUBDIR=	pkg_install
 
 .include <bsd.port.subdir.mk>
