@@ -1,1 +1,1 @@
-This module supports getaddrinfo() and getnameinfo().
+Perl module to support getaddrinfo() and getnameinfo()
