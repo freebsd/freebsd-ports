@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Feb  1 05:13:59 2004
++++ src/Makefile.in	Fri Feb 20 22:36:34 2004
+@@ -83,7 +83,7 @@
+ install_sh = @install_sh@
+ bin_PROGRAMS = rlwrap
+ rlwrap_SOURCES = main.c signals.c utils.c readline.c pty.c completion.c term.c ptytty.c
+-CFLAGS = -DDATADIR=\"@datadir@\" -g
++CFLAGS = @CFLAGS@ -DDATADIR=\"@datadir@\"
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

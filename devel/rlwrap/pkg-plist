@@ -1,4 +1,4 @@
 bin/rlwrap
-etc/rlwrap/ftp
-etc/rlwrap/testclient
-@dirrm etc/rlwrap
+%%DATADIR%%/ftp
+%%DATADIR%%/testclient
+@dirrm %%DATADIR%%

@@ -7,24 +7,23 @@
 #
 
 PORTNAME=	rlwrap
-PORTVERSION=	0.15
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Readline wrapper
+
+USE_GETOPT_LONG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=	rlwrap.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500018
 IGNORE=		"Requires readline 4.2 or newer, only available in recent versions of FreeBSD 5.x"
 .endif
-
-USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
-MAN1=	rlwrap.1
 
 .include <bsd.port.post.mk>
