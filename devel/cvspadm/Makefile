@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvspadm
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hackfoo.net/projs/
 
@@ -23,10 +23,10 @@ post-patch:
 
 do-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cvspadm
+	@${MKDIR} ${DOCSDIR}
 	@${POD2TEXT} ${WRKSRC}/cvspadm > ${WRKSRC}/cvspadm.README
 	${INSTALL_DATA} ${WRKSRC}/cvspadm.README \
-		${PREFIX}/share/doc/cvspadm/README
+		${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/cvspadm ${PREFIX}/bin
 

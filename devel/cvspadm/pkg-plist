@@ -1,3 +1,3 @@
 bin/cvspadm
-%%PORTDOCS%%share/doc/cvspadm/README
+%%PORTDOCS%%share/doc/cvspadm/cvspadm.README
 %%PORTDOCS%%@dirrm share/doc/cvspadm
