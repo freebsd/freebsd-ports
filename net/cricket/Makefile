@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cricket
-PORTVERSION=	1.0.4.p1
+PORTVERSION=	1.0.4.p2
 CATEGORIES=	net
-MASTER_SITES=	http://cricket.sourceforge.net/download/beta/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,6 +37,8 @@ do-install:
 	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
+	@${MV} ${PREFIX}/cricket/cricket-${PORTVERSION}/doc/new-devives.html \
+		${PREFIX}/cricket/cricket-${PORTVERSION}/doc/new-devices.html
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM} -f
 	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
@@ -52,7 +55,7 @@ do-install:
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/cricket-conf.pl.sample \
-		>${PREFIX}/etc/cricket-conf.pl.dist 
+		>${PREFIX}/etc/cricket-conf.pl.dist
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
 		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
