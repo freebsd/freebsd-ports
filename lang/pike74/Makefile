@@ -34,6 +34,7 @@ CONFIGURE_ARGS?= \
 	--without-jpeg
 .endif
 CONFIGURE_ARGS+= --without-debug --with-poll --with-oob --with-max-fds=10000 --without-GTK
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 pre-fetch:
 .if !defined(BATCH)
