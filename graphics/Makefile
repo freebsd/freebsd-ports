@@ -44,7 +44,6 @@
     SUBDIR += dtv
     SUBDIR += duhdraw
     SUBDIR += dumpmpeg
-    SUBDIR += dvdrip
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes
