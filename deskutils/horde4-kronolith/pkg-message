@@ -3,8 +3,8 @@ Kronolith has been installed in %%KRONOLITHDIR%% with your blank
 configuration files.
 
 Horde and IMP must be configured; if not, see:
-- %%PORTSDIR%%/www/horde-devel/pkg-message
-- %%PORTSDIR%%/mail/imp-devel/pkg-message
+- %%PORTSDIR%%/www/horde2/pkg-message
+- %%PORTSDIR%%/mail/imp3/pkg-message
 
 libmcal must be configured with the driver mstore for the user www:
 

@@ -13,8 +13,9 @@ MASTER_SITES=	http://pompo.net/horde/kronolith/
 
 MAINTAINER=	thierry@pompo.net
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp-devel
+RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
+IS_INTERACTIVE=	'need to build mod_php4 with mcrypt option set.'
 NO_BUILD=	yes
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL

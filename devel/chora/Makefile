@@ -23,14 +23,14 @@ MAINTAINER=	thierry@pompo.net
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde-devel
+RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 .if !defined(WITHOUT_ENSCRIPT)
 .if defined(A4)
-RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-a4
+RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-a4
 .elif defined(DJ)
-RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letterdj
+RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letterdj
 .else
-RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letter
 .endif
 .endif
 

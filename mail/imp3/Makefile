@@ -1,4 +1,4 @@
-# Ports collection makefile for:  imp-devel
+# Ports collection makefile for:  imp3
 # Date created:			  Mon Oct 08, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
@@ -10,7 +10,6 @@ PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	thierry@pompo.net
 
@@ -71,7 +70,7 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2 \
 		lber.2:${PORTSDIR}/net/openldap2
 .endif
 .endif
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde${PKGNAMESUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 .else
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/turba/index.php:${PORTSDIR}/mail/turba
 .endif
@@ -119,6 +118,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .endif
 .endif
 
+IS_INTERACTIVE=	'need to build mod_php4 with mcrypt option set.'
 NO_BUILD=	yes
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php filter.txt header.txt html.php menu.php \

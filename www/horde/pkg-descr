@@ -1,3 +1,6 @@
+Note: this port is mostly for sites running PHP3.
+      For a new installation, please consider the port www/horde2.
+
 Horde is both a piece of software and a project.
 
 The Horde Project comprises a set of Web-based productivity, messaging,
@@ -12,5 +15,3 @@ in Horde's components, and mostly IMP, the well-known webmail (see the
 port mail/imp).
 
 WWW: http://www.horde.org/
-
-- Thierry Thomas <thierry@thomas.as>.

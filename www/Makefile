@@ -94,7 +94,7 @@
     SUBDIR += gtkhtml
     SUBDIR += harvest
     SUBDIR += horde
-    SUBDIR += horde-devel
+    SUBDIR += horde2
     SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2wml

@@ -77,7 +77,7 @@ pre-everything::
 pre-install:
 	@if [ -f ${HORDEDIR}/index.php ]; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Please deinstall the port www/horde-devel." ; \
+		${ECHO_MSG} "Please deinstall the port www/horde2." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	 fi

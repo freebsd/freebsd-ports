@@ -3,7 +3,7 @@ IMP has been installed in %%IMPDIR%% with your blank
 configuration files.
 
 Horde must be configured and the tables created; if not, see
-%%PORTSDIR%%/www/horde-devel/pkg-message.
+%%PORTSDIR%%/www/horde2/pkg-message.
 
 Then, you will have to tune the configuration files located in
 %%CONFDIR%%/, specially the files conf.php and
