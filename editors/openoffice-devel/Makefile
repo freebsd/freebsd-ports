@@ -8,7 +8,8 @@
 PORTNAME=	openoffice
 PORTVERSION=	644
 CATEGORIES+=	editors
-MASTER_SITES+=	http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
+MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
+		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/developer/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,developer/%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -566,5 +567,14 @@ package-rename:
 	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz2 \
 	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz2
 .endif
+
+update:
+	@${MAKE} fetch
+	@${MAKE} extract
+	@cd ${WRKSRC}/.. && for dir in *; do \
+	    if [ -d $$dir ]; then \
+		cd $$dir; cvs update -d; cd ..; \
+	    fi \
+	done
 
 .include <bsd.port.post.mk>

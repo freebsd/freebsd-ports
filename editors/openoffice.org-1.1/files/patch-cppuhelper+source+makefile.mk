@@ -5,10 +5,10 @@
  SHL1VERSIONMAP=gcc3_linux_intel.map
  .ELIF "$(OS)$(CPU)$(COMNAME)"=="FREEBSDIgcc2"
 -#SHL1VERSIONMAP=gcc2_freebsd_intel.map
-+SHL1VERSIONMAP=gcc2_freebsd_intel.map
++SHL1VERSIONMAP=gcc2_linux_intel.map
  .ELIF "$(OS)$(CPU)$(COMNAME)"=="FREEBSDIgcc3"
 -#SHL1VERSIONMAP=gcc3_freebsd_intel.map
-+SHL1VERSIONMAP=gcc3_freebsd_intel.map
++SHL1VERSIONMAP=gcc3_linux_intel.map
  .ENDIF
  
  # --- Targets ------------------------------------------------------
