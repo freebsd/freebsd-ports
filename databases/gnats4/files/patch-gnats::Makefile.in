@@ -1,5 +1,5 @@
 --- gnats/Makefile.in.orig	Sun Jul 27 01:23:17 2003
-+++ gnats/Makefile.in	Mon Sep 22 05:41:57 2003
++++ gnats/Makefile.in	Thu Sep 25 02:30:32 2003
 @@ -91,7 +91,7 @@
  
  INSTALL = $(srcdir)/../install-sh -c
@@ -9,7 +9,15 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  SUB_INSTALL = `echo $(INSTALL) | sed 's,^\([^/]\),../\1,'`
-@@ -163,7 +163,7 @@
+@@ -107,6 +107,7 @@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ statedir = @datadir@
++sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ 
+ program_transform_name =
+@@ -163,7 +164,7 @@
  	check-db delete-pr dbconfig gnats-databases gnats-pwconv $(EXTRA_STUFF)
  
  all-tools: libgnats.a query-pr pr-age pr-edit edit-pr file-pr getclose \
@@ -18,18 +26,30 @@
  
  libgnats.a: $(LIBOBJS)
  	-rm -f tmplibgnats.a libgnats.a
-@@ -371,7 +371,9 @@
+@@ -363,15 +364,17 @@
+ install-tools-arch-dep: install-tools-bin
+ 
+ install-tools-arch-indep: all-tools
+-	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
++	$(SHELL) $(srcdir)/../mkinstalldirs $(sharedstatedir)
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(sysconfdir)/gnats/defaults
+ 	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
+-	  echo "chown $(GNATS_USER) $(datadir)/gnats" ; \
+-	  chown $(GNATS_USER) $(datadir)/gnats ; \
++	  echo "chown $(GNATS_USER) $(sharedstatedir)" ; \
++	  chown $(GNATS_USER) $(sharedstatedir) ; \
          else \
- 	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
- 	fi
--	$(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el
+-	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
++	  echo "*** Warning: Must chown $(GNATS_USER) $(sharedstatedir)" ; \
++	fi
 +	@if [ x"$(lispdir)" != x ]; then \
 +	  $(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el ; \
-+	fi
+ 	fi
+-	$(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el
  	for i in categories submitters responsible gnatsd.user_access addresses states classes dbconfig ; do \
  	    if [ -f "$$i" ] ; then \
  		$(INSTALL_DATA) $$i $(sysconfdir)/gnats/defaults/$$i ; \
-@@ -386,7 +388,7 @@
+@@ -386,7 +389,7 @@
  	$(INSTALL_SCRIPT) edit-pr $(bindir)/edit-pr
  	$(INSTALL_SCRIPT) $(srcdir)/diff-prs $(libexecdir)/gnats/diff-prs
  	$(INSTALL_SCRIPT) mail-agent $(libexecdir)/gnats/mail-agent
@@ -38,7 +58,7 @@
  	$(INSTALL_PROGRAM) pr-age $(libexecdir)/gnats/pr-age
  	$(INSTALL_PROGRAM) pr-edit $(libexecdir)/gnats/pr-edit
  	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
-@@ -404,29 +406,29 @@
+@@ -404,29 +407,29 @@
  install-gnats-arch-dep: install-gnats-bin $(EXTRA_INSTALL)
  
  install-gnats-arch-indep: all-gnats install-tools-arch-indep
