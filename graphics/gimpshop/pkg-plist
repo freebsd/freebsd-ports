@@ -389,6 +389,8 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimp/libgimp-gimpmenu.html
 %%DOCSDIR%%/libgimp/libgimp-gimpmessage.html
 %%DOCSDIR%%/libgimp/libgimp-gimppalette.html
+%%DOCSDIR%%/libgimp/libgimp-gimppalettes.html
+%%DOCSDIR%%/libgimp/libgimp-gimppaths.html
 %%DOCSDIR%%/libgimp/libgimp-gimppatternmenu.html
 %%DOCSDIR%%/libgimp/libgimp-gimppatterns.html
 %%DOCSDIR%%/libgimp/libgimp-gimppatternselect.html
