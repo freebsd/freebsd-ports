@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.50 1998/11/24 01:21:49 asami Exp $
+# $Id: Makefile,v 1.51 1999/01/11 19:07:14 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -11,15 +11,15 @@ PKGNAME= 	XFree86-3.3.3.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
-		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.3.3/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.3/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3/source/
 DISTFILES=	X333src-1.tgz X333src-2.tgz
 
 PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3.1/fixes/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3.1/fixes/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.3.1/fixes/ \
-		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.3.3.1/fixes/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.3.1/fixes/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X11/XFree86/3.3.3.1/fixes/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3.1/fixes/
 PATCHFILES=	3.3.3-3.3.3.1.diff.gz
 
