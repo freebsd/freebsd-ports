@@ -1,0 +1,19 @@
+*** configure.orig	Fri Oct  6 21:16:53 1995
+--- configure	Fri Oct  6 21:17:16 1995
+***************
+*** 3621,3627 ****
+  EOF
+  cat >> $CONFIG_STATUS <<EOF
+  
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1"}
+  EOF
+  cat >> $CONFIG_STATUS <<\EOF
+  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+--- 3621,3627 ----
+  EOF
+  cat >> $CONFIG_STATUS <<EOF
+  
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl"}
+  EOF
+  cat >> $CONFIG_STATUS <<\EOF
+  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

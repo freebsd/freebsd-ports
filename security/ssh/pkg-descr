@@ -1,0 +1,96 @@
+Secure Shell is a program to log into another computer over a network,
+to execute commands in a remote machine, and to move files from one
+machine to another.  It provides strong authentication and secure
+communications over insecure channels.  It is inteded as a replacement
+for rlogin, rsh, and rcp.
+
+FEATURES
+
+ o  Complete replacement for rlogin, rsh, and rcp.
+
+ o  Strong authentication.  Closes several security holes (e.g., IP,
+    routing, and DNS spoofing).  New authentication methods: .rhosts
+    together with RSA based host authentication, and pure RSA
+    authentication.
+
+ o  Improved privacy.  All communications are automatically and
+    transparently encrypted.  RSA is used for key exchange, and a
+    conventional cipher (normally IDEA, DES, or triple-DES) for
+    encrypting the session.  Encryption is started before
+    authentication, and no passwords or other information is
+    transmitted in the clear.  Encryption is also used to protect
+    against spoofed packets.
+
+ o  Secure X11 sessions.  The program automatically sets DISPLAY on
+    the server machine, and forwards any X11 connections over the
+    secure channel.  Fake Xauthority information is automatically
+    generated and forwarded to the remote machine; the local client
+    automatically examines incoming X11 connections and replaces the
+    fake authorization data with the real data (never telling the 
+    remote machine the real information).
+
+ o  Arbitrary TCP/IP ports can be redirected through the encrypted channel
+    in both directions (e.g., for e-cash transactions).
+
+ o  No retraining needed for normal users; everything happens
+    automatically, and old .rhosts files will work with strong
+    authentication if administration installs host key files.
+
+ o  Never trusts the network.  Minimal trust on the remote side of
+    the connection.  Minimal trust on domain name servers.  Pure RSA
+    authentication never trusts anything but the private key.
+
+ o  Client RSA-authenticates the server machine in the beginning of
+    every connection to prevent trojan horses (by routing or DNS
+    spoofing) and man-in-the-middle attacks, and the server
+    RSA-authenticates the client machine before accepting .rhosts or
+    /etc/hosts.equiv authentication (to prevent DNS, routing, or
+    IP-spoofing).
+
+ o  Host authentication key distribution can be centrally by the
+    administration, automatically when the first connection is made
+    to a machine (the key obtained on the first connection will be
+    recorded and used for authentication in the future), or manually
+    by each user for his/her own use.  The central and per-user host
+    key repositories are both used and complement each other.  Host
+    keys can be generated centrally or automatically when the software
+    is installed.  Host authentication keys are typically 1024 bits.
+
+ o  Any user can create any number of user authentication RSA keys for
+    his/her own use.  Each user has a file which lists the RSA public
+    keys for which proof of possession of the corresponding private
+    key is accepted as authentication.  User authentication keys are
+    typically 1024 bits.
+
+ o  The server program has its own server RSA key which is
+    automatically regenerated every hour.  This key is never saved in
+    any file.  Exchanged session keys are encrypted using both the
+    server key and the server host key.  The purpose of the separate
+    server key is to make it impossible to decipher a captured session by
+    breaking into the server machine at a later time; one hour from
+    the connection even the server machine cannot decipher the session
+    key.  The key regeneration interval is configurable.  The server
+    key is normally 768 bits.
+
+ o  An authentication agent, running in the user's laptop or local
+    workstation, can be used to hold the user's RSA authentication
+    keys.  Ssh automatically forwards the connection to the
+    authentication agent over any connections, and there is no need to
+    store the RSA authentication keys on any machine in the network
+    (except the user's own local machine).  The authentication
+    protocols never reveal the keys; they can only be used to verify
+    that the user's agent has a certain key.  Eventually the agent
+    could rely on a smart card to perform all authentication
+    computations.
+
+ o  The software can be installed and used (with restricted
+    functionality) even without root privileges.
+
+ o  The client is customizable in system-wide and per-user
+    configuration files.  Most aspects of the client's operation can
+    be configured.  Different options can be specified on a per-host basis.
+
+ o  Automatically executes conventional rsh (after displaying a
+    warning) if the server machine is not running sshd.
+
+

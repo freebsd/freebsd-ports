@@ -1,0 +1,19 @@
+*** make-ssh-known-hosts.pl.in.orig	Fri Oct  6 21:12:34 1995
+--- make-ssh-known-hosts.pl.in	Fri Oct  6 21:14:28 1995
+***************
+*** 74,80 ****
+  $sshdisablepasswordoption="-o 'PasswordAuthentication no'";
+  $defserver = '';
+  $bell='\a';
+! $public_key = '/etc/ssh_host_key.pub';
+  if (!defined($ENV{'HOME'})) {
+      ($junk, $junk, $junk, $junk, $junk, $junk, $junk, $dir, $junk) =
+  	getpwuid($<);
+--- 74,80 ----
+  $sshdisablepasswordoption="-o 'PasswordAuthentication no'";
+  $defserver = '';
+  $bell='\a';
+! $public_key = '@ETCDIR@/ssh_host_key.pub';
+  if (!defined($ENV{'HOME'})) {
+      ($junk, $junk, $junk, $junk, $junk, $junk, $junk, $dir, $junk) =
+  	getpwuid($<);
