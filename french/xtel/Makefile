@@ -15,8 +15,6 @@ MAINTAINER=	thierry@thomas.as
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-.include <bsd.port.pre.mk>
-
 # Remark: Xtel can serve a network, and emulate TVR and I-Minitel, but this is
 # the first release of this port, and these functionnalities have not (yet)
 # been implemented.
@@ -25,6 +23,8 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 
 MAN1=	xtel.1 xteld.1
+
+.include <bsd.port.pre.mk>
 
 .if defined(LANG)
 LANGUE!=${ECHO} ${LANG} | ${CUT} -c 1-2
