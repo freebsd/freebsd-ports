@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -45,7 +45,7 @@ JPLIB+=			-ljd -lcrypt
 #
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
-INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
+INPUT_METHOD!=	${ECHO} ${INPUT_METHOD} | ${SED} -e 's/^/-/' -e 's/ /+/g'
 .endif
 #
 # For ONEW library
