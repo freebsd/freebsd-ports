@@ -7,6 +7,7 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=    3.1.19
+PORTREVISION=   1
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/
 
@@ -23,6 +24,8 @@ CONFIGURE_ARGS= --enable-phrase \
 		--enable-freebsd-pthreads \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
+
+RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=    yes
@@ -69,7 +72,7 @@ pre-install:
 post-install:
 	cd ${WRKSRC} && ${TAR} --create --file - --exclude CVS create | (cd ${PREFIX}/share/mnogosearch && ${TAR} xf -)
 	${CHMOD} 700 /var/mnogosearch/cache
-	${CHOWN} -R nobody:nogroup /var/mnogosearch/
+	${CHOWN} -R www:www /var/mnogosearch/
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/mnogosearch
 	${INSTALL_DATA} ${FILESDIR}/spelld.sh-dist ${PREFIX}/etc/rc.d/
 	@${ECHO}
