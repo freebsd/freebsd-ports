@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.0.5
+PORTREVISION=	1
 CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tcl8.0.5
@@ -30,7 +31,9 @@ TCL_LIB=	libtcl80.so
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_TCL80_MAN)
 .include "${FILESDIR}/manpages"
+.endif
 
 MANCOMPRESSED=	yes
 
