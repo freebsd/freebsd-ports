@@ -1,0 +1,3 @@
+%%PYTHON_SITELIBDIR%%/gdmodule.so
+%%PORTDOCS%%%%EXAMPLE_DIR%%/gddemo.py
+%%PORTDOCS%%@dirrm %%EXAMPLE_DIR%%

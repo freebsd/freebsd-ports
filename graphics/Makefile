@@ -240,6 +240,7 @@
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pvmpov
+    SUBDIR += py-gd
     SUBDIR += py-gdchart
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
