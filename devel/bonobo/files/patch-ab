@@ -9,17 +9,20 @@
  confexec_DATA = bonoboConf.sh
  
  EXTRA_DIST = bonoboConf.sh.in bonobo.spec.in
---- components/application-x-gnomine/Makefile.in.orig	Tue Feb 22 00:06:53 2000
-+++ components/application-x-gnomine/Makefile.in	Tue Feb 22 11:41:56 2000
-@@ -133,7 +133,7 @@
+--- components/application-x-gnomine/Makefile.in.orig	Sun Mar 26 10:16:13 2000
++++ components/application-x-gnomine/Makefile.in	Fri Apr 21 10:18:21 2000
+@@ -133,9 +133,9 @@
  l = @l@
  
  scoredir = $(localstatedir)/games
 -Gamesdir = $(datadir)/gnome/apps/Games
 +Gamesdir = $(datadir)/apps/Games
  
- INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-I$(top_srcdir)/bonobo				-I$(top_builddir)/bonobo			-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
+-INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-I$(top_srcdir)/bonobo				-I$(top_builddir)/bonobo			-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
++INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-I$(top_srcdir)/bonobo				-I$(top_builddir)/bonobo			-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
+ 
+ #bin_PROGRAMS = gnomine bonobo-application-x-mines
 @@ -163,12 +163,14 @@
  EXTRA_DIST = flag.xpm mine.xpm face-cool.xpm face-sad.xpm 	face-smile.xpm face-win.xpm face-worried.xpm 	gnomine.desktop README AUTHORS $(gnorba_DATA)
  
@@ -134,3 +137,36 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/../mkinstalldirs
  CONFIG_HEADER = config.h
+--- bonobo/Makefile.in.orig	Sun Mar 26 10:16:10 2000
++++ bonobo/Makefile.in	Fri Apr 21 10:08:50 2000
+@@ -140,7 +140,7 @@
+ @OAF_TRUE@OBJECT_DIRECTORY_IMPL = bonobo-object-directory-oaf.c
+ @OAF_FALSE@OBJECT_DIRECTORY_IMPL = bonobo-object-directory-goad.c
+ 
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)
+ 
+ 
+ gnome_libs =  	$(GNOME_LIBDIR)		        $(GNOMEUI_LIBS)			$(OBJECT_DIRECTORY_LIBS) 	$(INTLLIBS)
+--- gshell/Makefile.in.orig	Sun Mar 26 10:16:20 2000
++++ gshell/Makefile.in	Fri Apr 21 10:19:33 2000
+@@ -132,7 +132,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES =  	-I$(top_srcdir) -I$(top_srcdir)/bonobo 	-I$(top_builddir) 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	        -I$(includedir)					        $(GNOME_INCLUDEDIR)				        $(GTK_CFLAGS)
++INCLUDES =  	-I$(top_srcdir) -I$(top_srcdir)/bonobo 	-I$(top_builddir) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	        -I$(includedir)					        $(GNOME_INCLUDEDIR)				        $(GTK_CFLAGS)
+ 
+ @OAF_TRUE@bin_PROGRAMS = 
+ @OAF_FALSE@bin_PROGRAMS = gshell
+--- tests/Makefile.in.orig	Sun Mar 26 10:16:23 2000
++++ tests/Makefile.in	Fri Apr 21 10:20:48 2000
+@@ -134,7 +134,7 @@
+ @OAF_TRUE@bin_PROGRAMS = 
+ @OAF_FALSE@bin_PROGRAMS = test-properties-server test-properties-client
+ 
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+ 
+ 
+ test_properties_server_SOURCES =  	test-properties-server.c

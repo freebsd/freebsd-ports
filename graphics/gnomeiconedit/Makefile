@@ -14,7 +14,7 @@ DISTNAME=	gnome-iconedit-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
