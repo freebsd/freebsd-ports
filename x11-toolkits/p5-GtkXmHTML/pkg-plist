@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GXHTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GtkXmHTMLDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/PerlGtkXmHTMLInt.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Types.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GXHTypes.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLDefs.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLTypemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/PerlGtkXmHTMLInt.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/pkg.typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.bs
