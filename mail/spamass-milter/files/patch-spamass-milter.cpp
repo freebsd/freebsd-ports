@@ -1,9 +1,9 @@
---- spamass-milter.cpp.orig	Fri Aug 16 12:42:23 2002
-+++ spamass-milter.cpp	Fri Aug 16 12:44:00 2002
-@@ -83,6 +83,10 @@
+--- spamass-milter.cpp.orig	Thu Jun 26 18:10:44 2003
++++ spamass-milter.cpp	Wed Jul  2 14:12:25 2003
+@@ -102,6 +102,10 @@
+ #include <csignal>
  #include <string>
  #include <iostream>
- #include <fstream>
 +using std::string;
 +using std::cout;
 +using std::cerr;
