@@ -1,5 +1,4 @@
 sbin/ipfm
-man/man5/ipfm.conf.5
-man/man8/ipfm.8
 etc/ipfm.conf
+@exec mkdir -p /var/log/ipfm
 @unexec rm -rf /var/log/ipfm
