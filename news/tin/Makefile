@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.10
-PORTREVISION=	1
+PORTVERSION=    1.5.11
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
@@ -36,7 +35,8 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--enable-break-long-lines \
 		--with-pgp=${PREFIX}/bin/pgp \
 		--with-ispell=${PREFIX}/bin/ispell \
-		--with-metamail=${PREFIX}/bin/metamail
+		--with-metamail=${PREFIX}/bin/metamail \
+		--with-mime-default-charset=US-ASCII
 CONFIGURE_ENV=  CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
 		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
@@ -63,8 +63,6 @@ post-configure:
 		${ECHO_CMD} "#define HAVE_STRCASESTR 1" \
 			>> ${WRKSRC}/include/autoconf.h; \
 	fi
-	${ECHO_CMD} "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
-	${ECHO_CMD} "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
 
 post-build:
 	cd ${WRKSRC}/po; ${GMAKE}
