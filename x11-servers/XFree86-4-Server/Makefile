@@ -7,6 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.0.2
@@ -24,13 +25,17 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-SCRIPTS_ENV=		HasXdmAuth=${HasXdmAuth} \
+SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
+			HasXdmAuth=${HasXdmAuth} \
 			HasSecureRPC=${HasSecureRPC} \
 			HasPam=${HasPam} \
-			ExtendedInputDevices=${ExtendedInputDevices}
+			ExtendedInputDevices=${ExtendedInputDevices} \
+			BuildXF86DRI=${BuildXF86DRI} \
+			BuildXF86DRM=${BuildXF86DRM} \
+			HaveMatroxHal=${HaveMatroxHal}
 MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
 ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET= 	FreeBSDPortsInstall  FreeBSDPortsInstall.man
+INSTALL_TARGET=		FreeBSDPortsInstall  FreeBSDPortsInstall.man
 MAN1=			SuperProbe.1 \
 			XFree86.1 \
 			Xserver.1 \
@@ -62,7 +67,9 @@ MAN4=			mga.4 \
 			vga.4 \
 			keyboard.4 \
 			mouse.4
-MAN5= 			XF86Config.5
+MAN5=			XF86Config.5
+
+.include <bsd.port.pre.mk>
 
 # XFree86 User Config:
 # ---
@@ -76,35 +83,24 @@ HasXdmAuth?=		DEFAULT
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
-.if !exists(/sys) && !exists(/usr/src/sys)
+.if (exists(/sys) || exists(/usr/src/sys)) && ${OSVERSION} < 500013
+BuildXF86DRI=		YES
+BuildXF86DRM=		YES
+PLIST_SUB+=		DRI=""
+PKGMESSAGE=		${.CURDIR}/pkg-message-drm
+.else
 BuildXF86DRI=		NO
-PLIST_SUB+=	DRI="@comment "
-.else
-PLIST_SUB+=	DRI=""
-.endif
-
-.if ${ExtendedInputDevices} == DEFAULT || ${ExtendedInputDevices} == YES
-PLIST_SUB+=	XIE:=""
-MAN4+=		citron.4 \
-		dynapro.4 \
-		elographics.4 \
-		microtouch.4 \
-		mutouch.4 \
-		wacom.4 \
-		void.4
-.else
-PLIST_SUB+=	XIE:="@comment "
-.endif
-
-.if defined(BuildXF86DRI) && ${BuildXF86DRI} == NO
-pre-fetch:
+BuildXF86DRM=		NO
+PLIST_SUB+=		DRI="@comment "
+.if ${OSVERSION} < 500013
+pre-fetch::
 	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
+.else
+pre-fetch::
+	@${ECHO_MSG} "DRI would not build: incompatible with SMPng."
+.endif
 .endif
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-
-.include <bsd.port.pre.mk>
 .if ${ARCH} == i386
 PLIST_SUB+=	I386:=""
 MAN4+=		apm.4 \
@@ -126,7 +122,51 @@ MAN4+=		apm.4 \
 PLIST_SUB+=	I386:="@comment "
 .endif
 
+.if ${ExtendedInputDevices} == DEFAULT || ${ExtendedInputDevices} == YES
+PLIST_SUB+=	XIE:=""
+MAN4+=		citron.4 \
+		dynapro.4 \
+		elographics.4 \
+		microtouch.4 \
+		mutouch.4 \
+		wacom.4 \
+		void.4
+.else
+PLIST_SUB+=	XIE:="@comment "
+.endif
+
+.if !defined(WITH_MATROX_GXX_DRIVER)
+HaveMatroxHal=		NO
+PLIST_SUB+=		MATROX="@comment "
+pre-fetch::
+	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official Matrox drivers for"
+	@${ECHO_MSG} "the G200, G400 and G450 graphic adapters."
+.else
+HaveMatroxHal=		YES
+MGA_DRIVER_VERSION=	1_2_0beta
+MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}/
+DISTFILES+=		mga-${MGA_DRIVER_VERSION}.tgz
+EXTRACT_ONLY=		X402src-1.tgz
+PLIST_SUB+=		MATROX=""
+post-patch::
+	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
+		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga.old
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}.tgz \
+		-C ${WRKSRC}/programs/Xserver/hw/xfree86/drivers
+.endif	# !WITH_MATROX_GXX_DRIVER
+
+do-configure:
+	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+.if ${BuildXF86DRM} == "YES"
+pre-install:
+	${MKDIR} ${PREFIX}/lib/X11/kernel
+.endif
+
 post-install:
 	strip ${PREFIX}/bin/XFree86
+.if ${BuildXF86DRM} == "YES"
+	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>

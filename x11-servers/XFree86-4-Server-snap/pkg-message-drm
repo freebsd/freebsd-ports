@@ -1,0 +1,11 @@
+To use the Direct Rendering Infrastructure, you need to do the following:
+
+- Enable agp support in your kernel, or load the agp kernel module at
+  boot time. You can do this by editing /boot/loader.conf(5)
+- Load the appropriate kernel module from /usr/X11R6/lib/X11/kernel at
+  boot time:
+	- tdfx.ko	for 3Dfx cards
+	- mga.ko	for Matrox G200/G400/G450
+- Add the following lines to the "Module" section of your XF86Config:
+	Load "glx"
+	Load "dri"

@@ -43,6 +43,10 @@ lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
 lib/X11/etc/xterm.termcap
 lib/X11/etc/xterm.terminfo
+%%DRI%%lib/X11/kernel/drm.ko
+%%DRI%%lib/X11/kernel/gamma.ko
+%%DRI%%lib/X11/kernel/mga.ko
+%%DRI%%lib/X11/kernel/tdfx.ko
 lib/X11/xserver/SecurityPolicy
 lib/modules/codeconv/libARABIC.a
 lib/modules/codeconv/libARMSCII8.a
@@ -92,6 +96,7 @@ lib/modules/drivers/glint_drv.o
 %%I386:%%lib/modules/drivers/i740_drv.o
 %%I386:%%lib/modules/drivers/i810_drv.o
 lib/modules/drivers/mga_drv.o
+%%MATROX%%lib/modules/drivers/mga_hal_drv.o
 %%I386:%%lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
 %%I386:%%lib/modules/drivers/r128_drv.o

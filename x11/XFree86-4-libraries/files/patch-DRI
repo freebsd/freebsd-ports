@@ -1,0 +1,101 @@
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/mga/mga_drv.c~	Sat Jun 17 02:03:32 2000
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/mga/mga_drv.c	Fri Mar 30 02:50:04 2001
+@@ -41,7 +41,7 @@
+ #define MGA_NAME	 "mga"
+ #define MGA_DESC	 "Matrox g200/g400"
+ #define MGA_DATE	 "19991213"
+-#define MGA_MAJOR	 1
++#define MGA_MAJOR	 2
+ #define MGA_MINOR	 0
+ #define MGA_PATCHLEVEL	 0
+ 
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drmP.h.orig	Sat Jun 17 02:03:28 2000
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drmP.h	Tue Apr 10 02:56:17 2001
+@@ -49,11 +49,11 @@
+ #include <sys/sysctl.h>
+ #include <sys/select.h>
+ #include <sys/bus.h>
+-#if __FreeBSD_version >= 500005
++#if __FreeBSD_version > 410000
+ #include <sys/taskqueue.h>
+ #endif
+ 
+-#if __FreeBSD_version >= 500006
++#if __FreeBSD_version > 410000
+ #define DRM_AGP
+ #endif
+ 
+@@ -128,7 +128,7 @@
+  * Fake out the module macros for versions of FreeBSD where they don't
+  * exist.
+  */
+-#if __FreeBSD_version < 500002
++#if __FreeBSD_version < 420000
+ 
+ #define MODULE_VERSION(a,b)		struct __hack
+ #define MODULE_DEPEND(a,b,c,d,e)	struct __hack
+@@ -517,7 +517,7 @@
+ 	int		  last_checked;	/* Last context checked for DMA	   */
+ 	int		  last_context;	/* Last current context		   */
+ 	int		  last_switch;	/* Time at last context switch  */
+-#if __FreeBSD_version >= 500005
++#if __FreeBSD_version >= 420000
+ 	struct task	  task;
+ #endif
+ 	struct timespec	  ctx_start;
+@@ -548,6 +548,8 @@
+ 	void		  *dev_private;
+ } drm_device_t;
+ 
++#undef SYSCTL_HANDLER_ARGS
++#define SYSCTL_HANDLER_ARGS (struct sysctl_oid *oidp, void *arg1, int arg2, struct sysctl_req *req)
+ 
+ 				/* Internal function definitions */
+ 
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/Makefile.bsd~	Sat Jun 17 02:03:28 2000
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/Makefile.bsd	Fri Mar 30 15:02:30 2001
+@@ -2,3 +2,3 @@
+ 
+-SUBDIR = drm tdfx gamma
++SUBDIR = drm tdfx gamma mga
+ 
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drm/Makefile.orig	Wed Apr 11 11:15:17 2001
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drm/Makefile	Wed Apr 11 11:18:01 2001
+@@ -6,6 +6,7 @@
+ 	  agpsupport.c ctxbitmap.c
+ SRCS   += device_if.h bus_if.h pci_if.h
+ CFLAGS += ${DEBUG_FLAGS} -I..
++KMODDIR	= ${X11BASE}/lib/X11/kernel
+ 
+ @:
+ 	ln -sf /sys @
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/tdfx/Makefile.orig	Wed Apr 11 11:20:15 2001
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/tdfx/Makefile	Wed Apr 11 11:20:31 2001
+@@ -5,6 +5,7 @@
+ SRCS   += device_if.h bus_if.h pci_if.h
+ CFLAGS += ${DEBUG_FLAGS} -I..
+ KMODDEPS = drm
++KMODDIR = ${X11BASE}/lib/X11/kernel
+ 
+ @:
+ 	ln -sf /sys @
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/gamma/Makefile.orig	Wed Apr 11 11:17:21 2001
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/gamma/Makefile	Wed Apr 11 11:20:01 2001
+@@ -5,6 +5,7 @@
+ SRCS   += device_if.h bus_if.h pci_if.h
+ CFLAGS += ${DEBUG_FLAGS} -I..
+ KMODDEPS = drm
++KMODDIR = ${X11BASE}/lib/X11/kernel
+ 
+ @:
+ 	ln -sf /sys @
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/mga/Makefile.orig	Wed Apr 11 11:20:10 2001
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/mga/Makefile	Wed Apr 11 11:20:22 2001
+@@ -6,6 +6,7 @@
+ CFLAGS += ${DEBUG_FLAGS} -I..
+ KERN    = /usr/src/sys
+ KMODDEPS = drm
++KMODDIR = ${X11BASE}/lib/X11/kernel
+ 
+ @:
+ 	ln -sf /sys @

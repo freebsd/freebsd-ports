@@ -36,9 +36,6 @@ configure () {
     if [ X$HasPam != XDEFAULT -a X$HasPam != X ]; then
 	echo "#define HasPam $HasPam" >> $LOCALDEF
     fi
-    if [ ! -d /sys -a ! -d /usr/src/sys ]; then
-	echo "#define BuildXF86DRI NO" >> $LOCALDEF
-    fi
     if [ X$ExtendedInputDevices = XDEFAULT -o X$ExtendedInputDevices = XYES ]; then
 	echo "#define XInputDrivers mouse digitaledge dynapro elo2300 \
 				elographics magellan \
@@ -48,6 +45,11 @@ configure () {
     else
 	echo "#define XInputDrivers mouse" >> $LOCALDEF	
     fi
+    echo "#define BuildXF86DRI ${BuildXF86DRI}" >> $LOCALDEF
+    echo "#define BuildXF86DRM ${BuildXF86DRM}" >> $LOCALDEF
+
+    # Matrox driver support
+    echo "#define HaveMatroxHal $HaveMatroxHal" >> $LOCALDEF
 
     # disable some configs: there are not used this ports
     for i in \
