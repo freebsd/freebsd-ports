@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	crw
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	graphics
-MASTER_SITES=   http://apollo.backplane.com/FreeBSDPorts/
-#MASTER_SITE_SUBDIR=	cp
+MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	dillon@FreeBSD.ORG
 
