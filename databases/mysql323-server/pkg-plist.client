@@ -1,6 +1,8 @@
 bin/mysql
+bin/mysql_config
 bin/mysqladmin
 bin/mysqlbinlog
+bin/mysqlbug
 bin/mysqlcheck
 bin/mysqldump
 bin/mysqlimport

@@ -1,0 +1,9 @@
+bin/msql2mysql
+bin/mysql_convert_table_format
+bin/mysql_find_rows
+bin/mysql_setpermission
+bin/mysql_zap
+bin/mysqlaccess
+bin/mysqld_multi
+bin/mysqldumpslow
+bin/mysqlhotcopy

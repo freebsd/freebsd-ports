@@ -1,0 +1,32 @@
+--- scripts/Makefile.in.orig	Thu Sep 11 13:49:32 2003
++++ scripts/Makefile.in	Sun Feb 29 12:11:38 2004
+@@ -187,19 +187,7 @@
+ thread_dirs = @thread_dirs@
+ uname_prog = @uname_prog@
+ 
+-bin_SCRIPTS = @server_scripts@ \
+-			msql2mysql \
+-			mysql_config \
+-			mysql_fix_privilege_tables \
+-			mysql_setpermission \
+-			mysql_zap \
+-			mysqlaccess \
+-			mysqlbug \
+-			mysql_convert_table_format \
+-			mysql_find_rows \
+-			mysqlhotcopy \
+-			mysqldumpslow \
+-			mysqld_multi
++bin_SCRIPTS =
+ 
+ 
+ EXTRA_SCRIPTS = make_binary_distribution.sh \
+@@ -353,7 +341,7 @@
+ uninstall: uninstall-am
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-am
+ install-strip:
