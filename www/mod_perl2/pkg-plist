@@ -1,5 +1,9 @@
 bin/mp2bug
 bin/mp2doc
+include/apache2/modperl_apr_perlio.h
+include/apache2/modperl_xs_util.h
+include/apache2/modperl_xs_typedefs.h
+include/apache2/modperl_xs_sv_convert.h
 include/apache2/modules/perl/mod_perl.h
 include/apache2/modules/perl/modperl_apache_compat.h
 include/apache2/modules/perl/modperl_apache_includes.h
