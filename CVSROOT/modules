@@ -4305,6 +4305,7 @@ p5-CGI-XMLApplication	ports/www/p5-CGI-XMLApplication
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
+p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net/p5-Cflow
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
