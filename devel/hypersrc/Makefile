@@ -19,7 +19,8 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BISON=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomelibs
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	GNUmakefile
