@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
 
 USE_LIBTOOL_VER=13
