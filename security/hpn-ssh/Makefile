@@ -10,7 +10,7 @@ PORTVERSION=	3.8p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
-PKGNAMESUFFIX?=	-portable
+PKGNAMESUFFIX?=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
@@ -32,6 +32,7 @@ PRECIOUS=	ssh_config sshd_config \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
 		ssh_host_dsa_key ssh_host_dsa_key.pub
 ETCOLD=		${PREFIX}/etc
+PORTABLE_SUFFIX=	-portable
 
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-PKGNAMESUFFIX=	-gssapi
+PORTABLE_SUFFIX=
+GSSAPI_SUFFIX=	-gssapi
 CONFLICTS+=	openssh-portable-*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
 .else
@@ -63,7 +65,7 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
-PKGNAMESUFFIX=	-overwrite-base
+BASE_SUFFIX=	-overwrite-base
 PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --localstatedir=/var
@@ -87,7 +89,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH}
 CONFIGURE_ARGS+=	--with-privsep-path=${EMPTYDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldes||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 
 post-configure:
 	${SED} -e 's:__PREFIX__:${PREFIX}:g' \

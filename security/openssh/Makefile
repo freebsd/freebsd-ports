@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp1.se.openbsd.org/pub/OpenBSD/OpenSSH/
+PKGNAMESUFFIX?=	${SKEY_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -78,6 +79,7 @@ PAM=		no
 MAKE_ENV+=	PAM=${PAM}
 
 .if defined(SKEY) && ${SKEY} == YES
+SKEY_SUFFIX=	-skey
 MAKE_ENV+=	SKEY=yes
 .endif
 
