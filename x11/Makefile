@@ -81,6 +81,7 @@
     SUBDIR += libXfont
     SUBDIR += libXres
     SUBDIR += libXtrans
+    SUBDIR += libXv
     SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome
