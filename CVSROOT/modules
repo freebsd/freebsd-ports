@@ -295,6 +295,7 @@ amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
 amiwm		ports/x11-wm/amiwm
 amp		ports/audio/amp
+amphetadesk	ports/www/amphetadesk
 amphetamine	ports/games/amphetamine
 ample		ports/audio/ample
 amsn		ports/net/amsn
