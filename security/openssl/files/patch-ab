@@ -1,6 +1,15 @@
---- util/mk1mf.pl.ORG	Sat Aug 10 15:52:08 1996
-+++ util/mk1mf.pl	Sat Aug 10 15:52:30 1996
-@@ -154,7 +154,7 @@
+--- util/mk1mf.pl.orig	Thu Dec  5 08:25:31 1996
++++ util/mk1mf.pl	Wed Dec 11 22:37:57 1996
+@@ -6,7 +6,7 @@
+ # funny stuff
+ #
+ 
+-$INSTALLTOP="/usr/local/ssl";
++$INSTALLTOP="/usr/local";
+ 
+ $infile="MINFO";
+ 
+@@ -156,7 +156,7 @@
  
  if ($ranlib ne "")
  	{
@@ -9,3 +18,35 @@
  	}
  
  if ($msdos)
+@@ -244,6 +244,7 @@
+ TEST_D=\$(OUT_D)
+ LIB_D=\$(OUT_D)
+ INC_D=\$(OUT_D)
++APPL_D=apps
+ 
+ # INCL_D - local library directory
+ # OBJ_D  - temp object file directory
+@@ -281,14 +282,17 @@
+ exe: \$(T_EXE) \$(BIN_D)$o\$(E_EXE)$exep
+ 
+ install:
+-	\$(MKDIR) \$(INSTALLTOP)
+-	\$(MKDIR) \$(INSTALLTOP)${o}bin
+-	\$(MKDIR) \$(INSTALLTOP)${o}include
+-	\$(MKDIR) \$(INSTALLTOP)${o}lib
++	-\$(MKDIR) \$(INSTALLTOP)
++	-\$(MKDIR) \$(INSTALLTOP)${o}bin
++	-\$(MKDIR) \$(INSTALLTOP)${o}etc
++	-\$(MKDIR) \$(INSTALLTOP)${o}include
++	-\$(MKDIR) \$(INSTALLTOP)${o}lib
+ 	\$(CP) \$(INC_D)${o}*.h \$(INSTALLTOP)${o}include
++	\$(CP) \$(APPL_D)${o}ssleay.cnf \$(INSTALLTOP)${o}etc
+ 	\$(CP) \$(BIN_D)$o\$(E_EXE)$exep \$(INSTALLTOP)${o}bin
+-	\$(CP) \$(LIB_D)$o\$(O_SSL) \$(INSTALLTOP)${o}lib
+-	\$(CP) \$(LIB_D)$o\$(O_CRYPTO) \$(INSTALLTOP)${o}lib
++	\$(CP) \$(O_SSL) \$(INSTALLTOP)${o}lib
++	\$(CP) \$(O_CRYPTO) \$(INSTALLTOP)${o}lib
++	\$(CP) \$(O_RSAGLUE) \$(INSTALLTOP)${o}lib
+ 
+ clean:
+ 	\$(RM) \$(TMP_D)$o*.*

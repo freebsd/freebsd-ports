@@ -15,9 +15,10 @@ libcrypto.a:
 	Diffie-Hellman key-exchange/key generation.  There is no limit
 		on the number of bits.
 	X509 encoding/decoding into/from binary ASN1 and a
-		PEM based ascii-binary encoding which supports encryption with
-		a private key.
-        (The DES routines, while a part if this source distribution
-        are not included in the compiled package, as they are part
-        of the base FreeBSD secure/ distribution)
-        (MD2 and MD5 are also not compiled as FreeBSD has its own).
+		PEM based ascii-binary encoding which supports encryption
+		with a private key.
+
+As this is a FreeBSD port, it has been tailored to FreeBSD.  It
+uses the DES, MD2 and MD5 from FreeBSD 2.2+. Earlier versions of
+freebsd have a DES library that is missing bits, and SSLeay will
+not compile properly. The answer is to get the latest secure/ dist.

@@ -1,5 +1,5 @@
 bin/ssleay
-etc/ssleay.conf
+etc/ssleay.cnf
 include/asn1.h
 include/txt_db.h
 include/stack.h
@@ -12,7 +12,6 @@ include/rand.h
 include/pkcs7.h
 include/pem.h
 include/objects.h
-include/meth.h
 include/md5.h
 include/md2.h
 include/lhash.h
@@ -21,8 +20,8 @@ include/err.h
 include/envelope.h
 include/dsa.h
 include/dh.h
-include/cryptoall.h
 include/crypto.h
+include/cryptall.h
 include/conf.h
 include/buffer.h
 include/bn.h
@@ -34,15 +33,15 @@ lib/libcrypto.a
 @exec ranlib %D/%F
 lib/libRSAglue.a
 @exec ranlib %D/%F
+share/doc/SSLeay/a_verify.doc
 share/doc/SSLeay/apps.doc
 share/doc/SSLeay/asn1.doc
 share/doc/SSLeay/bio.doc
 share/doc/SSLeay/bn.doc
-share/doc/SSLeay/bss_file.doc
-share/doc/SSLeay/bss_mem.doc
 share/doc/SSLeay/ca.1
 share/doc/SSLeay/callback.doc
 share/doc/SSLeay/cipher.doc
+share/doc/SSLeay/cipher.m
 share/doc/SSLeay/conf.doc
 share/doc/SSLeay/des.doc
 share/doc/SSLeay/digest.doc
