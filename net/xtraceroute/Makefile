@@ -7,7 +7,7 @@
 
 PORTNAME=	xtraceroute
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
@@ -33,6 +33,9 @@ MAKE_ENV+=	OLD_PO_FILE_INPUT=1
 DATAFILES=	ndg_files.tar.gz
 
 MAN1=		xtraceroute.1
+
+post-patch:
+	@${TOUCH} ${WRKSRC}/po/*
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/hosts.cache ${PREFIX}/share/xtraceroute

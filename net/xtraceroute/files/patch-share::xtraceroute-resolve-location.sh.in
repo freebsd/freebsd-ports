@@ -1,0 +1,11 @@
+--- share/xtraceroute-resolve-location.sh.in.orig	Fri May  7 15:01:36 2004
++++ share/xtraceroute-resolve-location.sh.in	Fri May  7 15:01:57 2004
+@@ -34,7 +34,7 @@
+ BIND)
+ 	FIRST=yes
+ 	#while target contains a dot.
+-	while [ `echo $TARGET | cut -s -f1- -d.` ] || [ $FIRST = yes ]
++	while [ -n "$TARGET" ] && [ `echo $TARGET | cut -s -f1- -d.` ] || [ $FIRST = yes ]
+ 	do
+ 		FIRST=no
+ 		#echo $TARGET
