@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.6.1.6
+PORTVERSION=	2.6.1.11
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
@@ -14,7 +14,7 @@ DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24:install \
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
 
 CONFLICTS=	dansguardian-devel

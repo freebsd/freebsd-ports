@@ -1,6 +1,6 @@
---- autoconf/bsdv.in.orig	Mon Jul  7 12:04:33 2003
-+++ autoconf/bsdv.in	Mon Jul  7 12:07:11 2003
-@@ -1,16 +1,26 @@
+--- autoconf/bsdv.in.orig	Wed Jan  7 11:28:16 2004
++++ autoconf/bsdv.in	Wed Jan  7 11:28:24 2004
+@@ -1,16 +1,32 @@
  #!/bin/sh
  #
 -# BSD startup script for dansguardian
@@ -15,9 +15,9 @@
 +#              banned phrases, MIME types, filename
  #              extensions and PICS labling.
  # processname: dansguardian
-
+ 
 -
--# See how we were called.
+ # See how we were called.
 -
  case "$1" in
  start)
@@ -29,9 +29,14 @@
 +	rm -f /tmp/.dguardianipc
 +	echo -n " dansguardian"
 +	;;
++restart)
++	/usr/local/sbin/dansguardian -r
++	;;
++graceful)
++	/usr/local/sbin/dansguardian -g
++	;;
 +*)
-+	echo "Usage: $0 {start|stop|restart}"
++	echo "Usage: $0 {start|stop|restart|graceful}"
 +	;;
 +esac
 +exit 0
-+

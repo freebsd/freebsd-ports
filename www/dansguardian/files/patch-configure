@@ -1,5 +1,5 @@
---- configure.orig	Mon Jul  7 12:09:35 2003
-+++ configure	Mon Jul  7 12:10:25 2003
+--- configure.orig	Wed Jan  7 11:29:38 2004
++++ configure	Wed Jan  7 11:54:02 2004
 @@ -2540,7 +2540,7 @@
  $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
  $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
@@ -46,6 +46,42 @@
  echo "" >>logrotation
  
  case `uname -s` in
+@@ -3098,7 +3077,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+-	        echo "dansguardian.sh stop > /dev/null" >>logrotation
++	        echo "start-dg.sh stop > /dev/null" >>logrotation
+ 	        echo "" >>logrotation
+ 	;;
+ 	NetBSD*)
+@@ -3114,7 +3093,7 @@
+ 	Linux*)
+ 	      $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+               echo "dansguardian stop > /dev/null" >>logrotation
+-              echo "" >>logrotation	
++              echo "" >>logrotation
+ 	;;
+ esac
+ 
+@@ -3148,7 +3127,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+-	        echo "dansguardian.sh start > /dev/null" >>logrotation
++	        echo "start-dg.sh start > /dev/null" >>logrotation
+ 	        echo "" >>logrotation
+ 	;;
+ 	NetBSD*)
+@@ -3164,7 +3143,7 @@
+ 	Linux*)
+ 	      $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+               echo "dansguardian start > /dev/null" >>logrotation
+-              echo "" >>logrotation	
++              echo "" >>logrotation
+ 	;;
+ esac
+ 
 @@ -3176,7 +3155,7 @@
  fi
  
@@ -55,3 +91,48 @@
  echo "  rotate 4" >>logrotate.dansguardian
  echo "  weekly" >>logrotate.dansguardian
  echo "  sharedscripts" >>logrotate.dansguardian
+@@ -3192,7 +3171,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+-	        echo "dansguardian.sh stop > /dev/null" >>logrotate.dansguardian
++	        echo "start-dg.sh stop > /dev/null" >>logrotate.dansguardian
+ 	;;
+ 	NetBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+@@ -3201,7 +3180,7 @@
+ 	Darwin*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+ 	        echo "dansguardian.sh stop > /dev/null" >>logrotate.dansguardian
+-	;;	
++	;;
+ 	Linux*)
+               echo "    killall dansguardian > /dev/null" >>logrotate.dansguardian
+               echo "    sleep 5" >>logrotate.dansguardian
+@@ -3223,7 +3202,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+-	        echo "dansguardian.sh start > /dev/null" >>logrotate.dansguardian
++	        echo "start-dg.sh start > /dev/null" >>logrotate.dansguardian
+ 	;;
+ 	NetBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+@@ -3232,7 +3211,7 @@
+ 	Darwin*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+ 	        echo "dansguardian.sh start > /dev/null" >>logrotate.dansguardian
+-	;;	
++	;;
+ 	Linux*)
+ 	      $extendedecho "    $prefixdir$bindir\c" >>logrotate.dansguardian
+               echo "dansguardian > /dev/null" >>logrotate.dansguardian
+@@ -3241,7 +3220,7 @@
+ echo "  endscript" >>logrotate.dansguardian
+ echo "}" >>logrotate.dansguardian
+ 
+-# END DansGuardian 
++# END DansGuardian
+ 
+ trap 'rm -fr conftest* confdefs* core core.* *.core $ac_clean_files; exit 1' 1 2 15
+ 
