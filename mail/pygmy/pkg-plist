@@ -83,6 +83,9 @@ share/pygmy/pygmy
 share/pygmy/pygmymailbox.py
 share/pygmy/pygmymailbox.pyc
 share/pygmy/pygmymailbox.pyo
+share/pygmy/pygmymimetools.py
+share/pygmy/pygmymimetools.pyc
+share/pygmy/pygmymimetools.pyo
 share/pygmy/pygmymultifile.py
 share/pygmy/pygmymultifile.pyc
 share/pygmy/pygmymultifile.pyo
