@@ -40,6 +40,7 @@
     SUBDIR += librc4
     SUBDIR += librsaintl
     SUBDIR += logcheck
+    SUBDIR += lsh
     SUBDIR += lxnb
     SUBDIR += mhash
     SUBDIR += nbaudit
