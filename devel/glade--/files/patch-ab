@@ -5,7 +5,7 @@
  static void call_gtkmm_config()
  {  char buf[80];
 -   FILE *f=popen("gtk-config --version","r");
-+   FILE *f=popen("/usr/X11R6/bin/gtk12-config --version","r");
++   FILE *f=popen("%%GTK_CONFIG%% --version","r");
     if (f)
     {  if (fgets(buf,sizeof(buf),f))
        {  for (unsigned char *s=(unsigned char*)buf;*s;s++)
@@ -14,7 +14,7 @@
           if (parse_version(buf,v))
              Configuration.gtk_version=v;
 -         else cerr << "gtk-config --version: strange result '" << buf << "'\n";
-+         else cerr << "/usr/X11R6/bin/gtk12-config --version: strange result '" << buf << "'\n";
++         else cerr << "%%GTK_CONFIG%% --version: strange result '" << buf << "'\n";
        }
        pclose(f);
     }
