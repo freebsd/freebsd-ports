@@ -10,7 +10,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 
-MAINTAINER=	eric@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded

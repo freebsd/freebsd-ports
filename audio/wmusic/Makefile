@@ -10,7 +10,7 @@ PORTVERSION=	1.4.10
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
 
-MAINTAINER=	eric@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
