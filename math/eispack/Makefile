@@ -1,7 +1,7 @@
-# New ports collection makefile for:    eispack
-# Version required:     ?
-# Date created:         31 October 1994
-# Whom:                 ljo
+# New ports collection makefile for:	eispack
+# Version required:	?
+# Date created:		31 October 1994
+# Whom:			ljo
 #
 # $FreeBSD$
 #
@@ -9,19 +9,15 @@
 DISTNAME=	eispack
 PKGNAME=	eispack-1.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
-		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/ \
-		ftp://elib.zib-berlin.de/pub/netlib/eispack/
+MASTER_SITES=	ftp://ftp.netlib.org/eispack/ \
+		ftp://netlib.bell-labs.com/netlib/eispack/ \
+		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/
 
-DIST_SUBDIR=	${DISTNAME}
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
-EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
-EXTRACT_SUFX=	.gz
-EXTRACT_BEFORE_ARGS=	${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
-
+DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
@@ -39,11 +35,17 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 .include <bsd.port.pre.mk>
 
+do-extract:
+	@${MKDIR} ${WRKDIR}
+.for file in ${SRCS}
+	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
+.endfor
+
 pre-build:
-	${CP} Makefile.lib ${WRKDIR}/Makefile
+	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libeispack.so.1.0 ${PREFIX}/lib/libeispack.so
 .endif
