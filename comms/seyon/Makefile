@@ -6,11 +6,11 @@
 # $$
 #
 
-DISTNAME=	Seyon-2.14c
-DISTFILES=	Seyon-2.14c-tar.gz
+DISTNAME=	Seyon-2.14b
+DISTFILES=	Seyon-2.14b-tar.Z
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/X11/xapps/comm/
+MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 
 
 .include <bsd.port.mk>
