@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.118 1998/12/19 23:53:03 jseger Exp $
+# $Id: Makefile,v 1.119 1998/12/23 04:34:10 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -19,6 +19,7 @@
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += eperl
+    SUBDIR += erlang
     SUBDIR += expect
     SUBDIR += forth
     SUBDIR += g77
