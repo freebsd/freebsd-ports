@@ -1,0 +1,29 @@
+lib/perl5/site_perl/%%PERL_VER%%/Parse/RecDescent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/RecDescent.pod
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_OOparsetree.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_bad.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_cpp.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_decomment.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_derived.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_errors.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_implicit.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_leftassoc.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_lexer.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_logic.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_matchrule.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_mccoy.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_methods.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_parsetree.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_piecewise.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_recipe.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_selfmod.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_simple.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_template.pl
+lib/perl5/site_perl/%%PERL_VER%%/Parse/demo_whoson.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/Balanced.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Balanced.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/RecDescent/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Parse
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/RecDescent
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse
