@@ -45,3 +45,5 @@ libtool>=1.5<1.5.2|http://www.securityfocus.com/archive/1/352333|symlink vulnera
 gnats<=3.113.1_9|http://www.securityfocus.com/archive/1/326337|Local privilege elevation
 XFree86-Server>=4.1.0<4.3.0_14|http://www.xfree86.org/security/|Font file buffer overflows
 XFree86-Server>=4.3.99<4.3.99.15_2|http://www.xfree86.org/security/|Font file buffer overflows
+mutt<1.4.2|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0078|Remote exploitable buffer overflow
+mailman<2.1.4|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0965|Cross-site scripting (XSS) vulnerability
