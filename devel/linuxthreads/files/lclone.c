@@ -38,10 +38,11 @@
 #include <errno.h>
 #include <clone.h>
 
-#pragma weak clone=__clone
+int clone (int (*__fn) (void *), void *__child_stack,
+	   int __flags, void *__arg) __attribute__ ((weak, alias("__clone")));
 
-extern int __clone __P ((int (*__fn) (void *), void *__child_stack,
-			 int __flags, void *__arg))
+extern int __clone (int (*__fn) (void *), void *__child_stack,
+			 int __flags, void *__arg)
 {
 	int bsd_flags;
 	int exit_signal;

@@ -61,12 +61,14 @@
 #define __libc_current_sigrtmax current_sigrtmax
 #define __libc_allocate_rtsig allocate_rtsig
 #define __getpagesize getpagesize
-#define __sched_param sched_param
-#define __sched_get_priority_min sched_get_priority_min
-#define __sched_get_priority_max sched_get_priority_max
-#define __sched_setscheduler sched_setscheduler
-#define __sched_getscheduler sched_getscheduler
-#define __sched_getparam sched_getparam
+int __sched_setparam(pid_t, const struct sched_param *);
+int __sched_getparam(pid_t, struct sched_param *);
+int __sched_setscheduler(pid_t, int, const struct sched_param *);
+int __sched_getscheduler(pid_t);
+int __sched_yield(void);
+int __sched_get_priority_max(int);
+int __sched_get_priority_min(int);
+int __sched_rr_get_interval(pid_t, struct timespec *);
 #define __gettimeofday _gettimeofday
 #define __jmp_buf jmp_buf
 #define _h_errno h_errno
