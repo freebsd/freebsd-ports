@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
-CONFIGURE_ARGS+=	--with-krb4
+CONFIGURE_ARGS+=	--with-krb4-include=/usr/include --with-krb4-lib=/usr/lib
 .elif !defined(KRB5_KRB4_COMPAT)
 CONFIGURE_ARGS+=	--without-krb4
 .endif
