@@ -1,5 +1,6 @@
+----------------------------------------------------------
 *** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
---- src/ftpd.c	Sat Dec 17 23:48:25 1994
+--- src/ftpd.c	Fri Jan 13 01:26:40 1995
 ***************
 *** 139,146 ****
    *freopen(const char *, const char *, FILE *);
@@ -68,8 +69,8 @@
       /* Delay before reading passwd after first failed attempt to slow down
        * passwd-guessing programs. */
 ***************
-*** 1007,1013 ****
---- 1027,1038 ----
+*** 1007,1014 ****
+--- 1027,1039 ----
   #ifdef KERBEROS
           xpasswd = crypt16(passwd, salt);
   #else
@@ -78,10 +79,25 @@
 + 	pwok = 0;
 + #else
           xpasswd = crypt(passwd, salt);
-+ #endif
   #endif
++ #endif
   
   #ifdef ULTRIX_AUTH
+          if ((numfails = ultrix_check_pass(passwd, xpasswd)) < 0) {
+***************
+*** 1422,1428 ****
+--- 1447,1457 ----
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
++ #if (defined(BSD) && (BSD >= 199306))
++         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
++ #else
+          sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
++ #endif
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
 diff -c -r src/realpath.c.orig src/realpath.c
 *** src/realpath.c.orig	Fri Apr  1 21:03:45 1994
 --- src/realpath.c	Tue Oct 18 17:48:34 1994
