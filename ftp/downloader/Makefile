@@ -35,7 +35,8 @@ DOCSDIR=	${PREFIX}/share/doc/d4x
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$OPTFLAGS||g ; \
 		 s|OS_CXXFLAGS="-pthread"|OS_CXXFLAGS="${PTHREAD_CFLAGS}"|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		 s|-pthread|${PTHREAD_LIBS}|g ; \
+		 s|#define GTK_DISABLE_DEPRECATED||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
 		 s| share||g' ${WRKSRC}/Makefile.in
 
