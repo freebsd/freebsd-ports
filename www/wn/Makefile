@@ -8,11 +8,10 @@
 PORTNAME=	wn
 PORTVERSION= 	1.18.6
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
+MASTER_SITES=	${MASTER_SITE_LOCAL}	# ftp://ftp.acns.nwu.edu/pub/wn/
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	adam@veda.is
-
-BROKEN='single MASTER_SITE and /pub/wn/ does not exist on ftp.acns.nwu.edu anymore'
 
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"
