@@ -10,6 +10,7 @@ include/uclmmbase/memory.h
 include/uclmmbase/net_udp.h
 include/uclmmbase/qfDES.h
 include/uclmmbase/rtp.h
+include/uclmmbase/uclconf.h
 include/uclmmbase/util.h
 include/uclmmbase/version.h
 lib/libuclmmbase.a
