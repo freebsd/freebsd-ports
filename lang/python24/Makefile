@@ -188,4 +188,26 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
+PORTUPGRADE?=	${LOCALBASE}/sbin/portupgrade
+PKG_WHICH?=	${LOCALBASE}/sbin/pkg_which
+upgrade-site-packages:
+	@if [ -x ${PORTUPGRADE} ]; then \
+		for ver in 2.1 2.2 2.3; do \
+			if [ -d ${PREFIX}/lib/python$$ver ]; then \
+				UPD=`${FIND} ${PREFIX}/lib/python$$ver \
+						-type f -print0 | \
+					${XARGS} -0 ${PKG_WHICH} | \
+					${GREP} -Fv '?' | \
+					${GREP} -v '^python-2' | \
+					${SORT} -u`; \
+				if [ "$$UPD" ]; then \
+					${PORTUPGRADE} -f $$UPD; \
+				fi; \
+			fi; \
+		done; \
+	 else \
+		${ECHO_MSG} "Please install sysutils/portupgrade."; \
+		${FALSE}; \
+	 fi
+
 .include <bsd.port.post.mk>
