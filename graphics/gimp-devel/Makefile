@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.2.p1
+DISTVERSION=	2.2-pre2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,.p1,-pre1,}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program
@@ -36,8 +35,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2 libgtkhtml
+USE_LIBTOOL_VER=15
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -51,10 +50,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAN1=		gimp-2.2.1 gimptool-2.0.1 gimp-remote-2.2.1
-MAN5=		gimprc-2.2.5
-MLINKS=		gimp-2.2.1 gimp.1 gimp-remote-2.2.1 gimp-remote.1 \
-		gimprc-2.2.5 gimprc.5
+MAN1=	gimp.1 gimp-2.2.1 gimp-remote.1 gimp-remote-2.2.1 gimptool-2.0.1
+MAN5=	gimprc.5 gimprc-2.2.5
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
