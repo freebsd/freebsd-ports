@@ -96,6 +96,7 @@
     SUBDIR += dnswalk
     SUBDIR += doc
     SUBDIR += domtools
+    SUBDIR += driftnet
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += edonkey-core
