@@ -28,7 +28,7 @@
     SUBDIR += asr-utils
     SUBDIR += ataidle
     SUBDIR += autopsy
-    SUBDIR += bacula
+    SUBDIR += bacula-server
     SUBDIR += bacula-client
     SUBDIR += barry
     SUBDIR += battfink
