@@ -21,9 +21,9 @@ MAINTAINER=	trevor@jpj.net
 
 RESTRICTED=	no-commercial-use
 
-RUN_DEPENDS=	festival:../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:../festlex-poslex \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:../festlex-ogi
+RUN_DEPENDS=	festival:${.CURDIR}/../festival \
+		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi
 
 WRKSRC=		${WRKDIR}/festival
 

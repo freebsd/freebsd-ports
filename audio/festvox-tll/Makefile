@@ -18,8 +18,8 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@jpj.net
 
-RUN_DEPENDS=	festival:../festival \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:../festlex-ogi
+RUN_DEPENDS=	festival:${.CURDIR}/../festival \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi
 
 RESTRICTED=	no-commercial-use
 
