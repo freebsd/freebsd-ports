@@ -1909,7 +1909,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Jon Orton reports a memory leak in Apache 2's mod_ssl.
+        <p>Joe Orton reports a memory leak in Apache 2's mod_ssl.
           A remote attacker may issue HTTP requests on an HTTPS
           port, causing an error.  Due to a bug in processing this
           condition, memory associated with the connection is
@@ -1929,7 +1929,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-20</discovery>
       <entry>2004-03-08</entry>
-      <modified>2004-03-29</modified>
+      <modified>2004-05-19</modified>
     </dates>
   </vuln>
 
