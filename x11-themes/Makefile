@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-noia-warm
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
