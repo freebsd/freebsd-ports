@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030803
+PORTVERSION=	20030805
 CATEGORIES=	security
-MASTER_SITES=	http://clamav.elektrapro.com/snapshot/ \
-		http://clamav.essentkabel.com/snapshot/ \
-		http://clamav.ozforces.com/ \
-		http://clamav.rulez.pl/snapshot/
+MASTER_SITES=	http://members.chello.nl/e.prochowski/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
