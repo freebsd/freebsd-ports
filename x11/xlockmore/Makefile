@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlockmore
-# Version required:     4.08.2
+# Version required:     4.09
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.30 1998/03/16 10:04:04 tg Exp $
+# $Id: Makefile,v 1.31 1998/03/20 14:50:09 markm Exp $
 #
 
-DISTNAME=       xlockmore-4.08.2
+DISTNAME=       xlockmore-4.09
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
