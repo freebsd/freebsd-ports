@@ -18,7 +18,7 @@ DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	X11 ${PKGNAMESUFFIX}-dot kanji font
 
-EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
 		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
 

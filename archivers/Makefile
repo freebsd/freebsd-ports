@@ -15,7 +15,6 @@
     SUBDIR += fastjar
     SUBDIR += fileroller
     SUBDIR += freeze
-    SUBDIR += gshar+gunshar
     SUBDIR += gtar
     SUBDIR += gzip
     SUBDIR += ha
@@ -58,6 +57,7 @@
     SUBDIR += ruby-zip
     SUBDIR += rvm
     SUBDIR += sectar
+    SUBDIR += sharutils
     SUBDIR += squsq
     SUBDIR += star
     SUBDIR += stuffit

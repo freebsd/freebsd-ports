@@ -2677,7 +2677,6 @@ gsculpt		ports/graphics/gsculpt
 gsed		ports/textproc/gsed
 gsfonts		ports/print/gsfonts
 gsfv		ports/security/gsfv
-gshar+gunshar	ports/archivers/gshar+gunshar
 gshisen		ports/games/gshisen
 gsi		ports/audio/gsi
 gsk		ports/net/gsk
@@ -8714,6 +8713,7 @@ shapelib	ports/devel/shapelib
 shared-mime-info	ports/misc/shared-mime-info
 sharefonts	ports/x11-fonts/sharefonts
 sharity-light	ports/net/sharity-light
+sharutils	ports/archivers/sharutils
 shc		ports/misc/shc
 shftool		ports/converters/shftool
 shishi		ports/security/shishi
