@@ -1,4 +1,6 @@
 @exec mv %D/bin/mozilla %D/bin/mozilla.orig
+@exec mv %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js.orig
+@exec mv %D/lib/mozilla/chrome/toolkit/content/global/strres.js %D/lib/mozilla/chrome/toolkit/content/global/strres.js.orig
 @exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-packages.rdf %D/lib/mozilla/chrome/all-packages.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-skins.rdf %D/lib/mozilla/chrome/all-skins.rdf.orig
@@ -14,6 +16,8 @@ lib/mozilla/chrome/JP.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/all-packages.rdf
 lib/mozilla/chrome/all-skins.rdf
+lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js
+lib/mozilla/chrome/toolkit/content/global/strres.js
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/ja-JP.jar
 lib/mozilla/chrome/ja-mac.jar
@@ -86,12 +90,15 @@ lib/mozilla/searchplugins/linux_JFJM.png
 lib/mozilla/searchplugins/linux_JFJM.src
 lib/mozilla/searchplugins/rakuten_auction.png
 lib/mozilla/searchplugins/rakuten_auction.src
+lib/mozilla/searchplugins/search.rdf
 lib/mozilla/searchplugins/w3c.png
 lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
 @unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/all-packages.rdf.orig %D/lib/mozilla/chrome/all-packages.rdf
 @unexec mv %D/lib/mozilla/chrome/all-skins.rdf.orig %D/lib/mozilla/chrome/all-skins.rdf
+@unexec mv %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js.orig %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js
+@unexec mv %D/lib/mozilla/chrome/toolkit/content/global/strres.js.orig %D/lib/mozilla/chrome/toolkit/content/global/strres.js
 @unexec mv %D/lib/mozilla/chrome/user-locales.rdf.orig %D/lib/mozilla/chrome/user-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/user-skins.rdf.orig %D/lib/mozilla/chrome/user-skins.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
