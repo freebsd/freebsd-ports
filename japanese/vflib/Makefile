@@ -13,11 +13,11 @@ DISTNAME=	VFlib2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		watanabe-vf.tar.Z
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 
-VFLIB_VERSION=	2.25.1
+VFLIB_VERSION=	2.25.2
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 GNU_CONFIGURE=	yes
@@ -26,7 +26,7 @@ USE_XLIB=	yes
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-freetype \
-		--with-freetype-includedir=${PREFIX}/include \
+		--with-freetype-includedir=${PREFIX}/include/freetype \
 		--with-freetype-libdir=${PREFIX}/lib
 
 pre-install:
