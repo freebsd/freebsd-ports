@@ -1,0 +1,22 @@
+This is Aladdin Ghostscript 4.03, the non-GPL version that comes
+with a licence different from the GPL. Read the file PUBLIC in the
+work/gs4.xx directory for details !
+
+Ghostscript is the well-known PostScript interpreter which is
+available for all common and most esoteric platforms and supports
+many different printers and some displays.
+
+The official ghostscript Web page:
+	http://www.cs.wisc.edu/~ghost/index.html
+
+Thomas Merz has written a Ghostscript manual which is available in
+PDF from this site (456k) and also from Thomas Merz's site in Germany.
+
+	http://www.cs.wisc.edu/~ghost/merz.html
+
+On the german site the manual is also available in German language.
+
+	http://www.muc.de/~tm/free/free.html
+
+This port is based on print/ghostscript4 and some code for vector font library
+and some Japanese printer drivers are added.
