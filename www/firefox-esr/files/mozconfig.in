@@ -42,7 +42,7 @@ ac_add_options --disable-pedantic
 ac_add_options --disable-profilesharing
 ac_add_options --disable-installer
 ac_add_options --enable-image-decoders=png,gif,jpeg,bmp
-ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector,venkman
+ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector,venkman,gnomevfs
 ######################################################################
 # conditional from port Makefile
 #if test -n "$WITH_REORDER"; then
@@ -68,4 +68,7 @@ if test -z "$WITHOUT_XFT"; then
 else
     ac_add_options --disable-xft
 fi # test -z "$WITHOUT_XFT"
+if test -z "$WITH_SMB"; then
+    ac_add_options --disable-gnomevfs
+fi # test -z "$WITH_SMB"
 ######################################################################

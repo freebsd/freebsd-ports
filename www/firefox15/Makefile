@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -43,6 +43,9 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+		mozilla-nspr mozilla-nss mozilla-plugin
+
 JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
@@ -53,7 +56,8 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 		HEADERS "Install headers and IDL files" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
-		XFT "Enable support for anti-aliased fonts" on
+		XFT "Enable support for anti-aliased fonts" on \
+		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
@@ -78,6 +82,11 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif # !defined(WITHOUT_XFT)
+
+.if defined(WITH_SMB)
+USE_GNOME+=	gnomevfs2
+CONFIGURE_ENV+=	WITH_SMB=yes
+.endif # defined(WITH_SMB)
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
@@ -127,6 +136,10 @@ post-patch:
 	${MV} ${WRKSRC}/${ii}/all.js ${WRKSRC}/${ii}/all.js.bak
 	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
+.endfor
+.for ii in ${PKGCONFIG_FILES}
+	@${PERL} -pi -e 's|mozilla-|firefox-|g' \
+		${WRKSRC}/build/unix/${ii}.pc.in
 .endfor
 
 pre-configure:
