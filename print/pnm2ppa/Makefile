@@ -3,7 +3,7 @@
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
-# $Id: Makefile,v 1.4 1999/05/10 02:39:19 smace Exp $
+# $Id: Makefile,v 1.5 1999/08/23 04:23:52 mharo Exp $
 #
 
 DISTNAME=	ppa-0.8.6
@@ -38,8 +38,8 @@ pre-configure:
 .endif
 
 do-install:
-	sed s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/ppafilter.SH > ${WRKSRC}/ppafilter
-	sed s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/asciippafilter.SH > ${WRKSRC}/asciippafilter
+	${SED} s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/ppafilter.SH > ${WRKSRC}/ppafilter
+	${SED} s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/asciippafilter.SH > ${WRKSRC}/asciippafilter
 	cd ${WRKSRC} && \
 		(${INSTALL_PROGRAM} pbm2ppa pbmtpg \
 			${PREFIX}/bin; \

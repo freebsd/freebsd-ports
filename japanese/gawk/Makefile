@@ -39,7 +39,7 @@ pre-fetch:
 		done; \
 	    done; \
 	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
-		sed -e '1,/-----8</d' -e '/-----8</,/-----8</d' | uudecode; \
+		${SED} -e '1,/-----8</d' -e '/-----8</,/-----8</d' | uudecode; \
 	    rm -f ${DISTPATCHES};\
 	 fi)
 .endif

@@ -4,7 +4,7 @@
 # Date created:                         2 Nov 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.7 1999/06/05 19:58:45 mharo Exp $
+# $Id: Makefile,v 1.8 1999/08/22 23:33:34 mharo Exp $
 #
 
 DISTNAME=       webglimpse-1.6.src
@@ -25,7 +25,7 @@ NO_BUILD=       YES
 pre-configure:
 .for i in wginstall wginstall.pl
 	cd ${WRKSRC}; ${CP} $i $i.tmp; \
-		sed s=%PERL%=${PERL}= < $i.tmp > $i
+		${SED} s=%PERL%=${PERL}= < $i.tmp > $i
 .endfor
 
 do-install:

@@ -52,7 +52,7 @@ do-install:
 	@${ECHO_MSG} "Installing files in \"${PREFIX}\""
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
+	    ${SED} -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
 		-e "/^share/d" ${PLIST}.real | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${temp_prefix}/man/man1; \
@@ -100,9 +100,9 @@ do-install:
 	    ${LN} -f m3build m3build-${major}
 	@${ECHO_MSG} "Fixing file permissions"
 	@cd ${PREFIX}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
+	    ${SED} -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
+	    ${SED} -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs ${CHMOD} go=u-w; \
 	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755

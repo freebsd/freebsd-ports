@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1996/11/22 11:11:38 asami Exp $
+# $Id: Makefile,v 1.11 1997/02/18 16:57:16 jmz Exp $
 #
 
 DISTNAME=	makeindex-3.0.8
@@ -25,7 +25,7 @@ do-install:
 	@(cd ${WRKSRC}/src-3.0/regexp; make)
 	@(cd ${WRKSRC}/src-3.0; make install)
 	@(cd ${WRKSRC}/doc; \
-	  sed -e s:/usr/local/lib/tex/macros/:${PREFIX}/share/texmf/makeindx/: \
+	  ${SED} -e s:/usr/local/lib/tex/macros/:${PREFIX}/share/texmf/makeindx/: \
 	      <makeindex.l >makeindex.1; \
 	  ${INSTALL_DATA} makeindex.1 ${PREFIX}/man/man1/)
 

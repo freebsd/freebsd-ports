@@ -3,7 +3,7 @@
 # Date created:				8 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/16 16:47:36 billf Exp $
+# $Id: Makefile,v 1.2 1999/08/01 02:35:05 steve Exp $
 #
 
 DISTNAME=	SS1.0.1
@@ -25,6 +25,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/../qts_proxy.conf ${PREFIX}/etc/
 
 post-install:
-	@ ${CAT} ${PKGMESSAGE} | sed -e 's,@PREFIX@,${PREFIX},g'
+	@ ${CAT} ${PKGMESSAGE} | ${SED} -e 's,@PREFIX@,${PREFIX},g'
 
 .include <bsd.port.mk>

@@ -34,7 +34,7 @@ pre-fetch:
 		done; \
 	    done; \
 	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
-		sed '/^END -----/,/^BEGIN ----/d' | uudecode; \
+		${SED} '/^END -----/,/^BEGIN ----/d' | uudecode; \
 	    rm -f ${DISTPATCHES};\
 	 fi)
 

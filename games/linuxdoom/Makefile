@@ -27,7 +27,7 @@ post-patch:
 	@(cd ${WRKSRC}/musserver; make clean)
 
 pre-install:
-	@sed 's,@PREFIX@,${PREFIX},' ${PKGDIR}/INSTALL.in > ${PKGINSTALL}
+	@${SED} 's,@PREFIX@,${PREFIX},' ${PKGDIR}/INSTALL.in > ${PKGINSTALL}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

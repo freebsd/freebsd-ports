@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.9 1999/06/09 00:13:13 steve Exp $
+# $Id: Makefile,v 1.10 1999/08/22 23:33:11 mharo Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.2.11
@@ -25,7 +25,7 @@ MAN1=	catalog.1 dictionary.1 inverted_file.1 makedb.1 mkfmt.1 waisindex.1 \
 MAN3=	ftw.3 scandir.3
 
 pre-configure:
-	sed "s,PREFIX,${PREFIX},g" \
+	${SED} "s,PREFIX,${PREFIX},g" \
 	${FILESDIR}/configure.ans.skel > ${WRKDIR}/configure.ans
 	${MKDIR} ${PREFIX}
 	${MKDIR} ${PREFIX}/bin

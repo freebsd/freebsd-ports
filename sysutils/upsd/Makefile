@@ -3,7 +3,7 @@
 # Date created:         11 Jul 1996
 # Whom:                 alexis
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/25 16:46:22 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/03 23:40:20 steve Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/upsd-2.0
 
 pre-build:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
-	@sed -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
+	@${SED} -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/upsd.conf ] ; then \
