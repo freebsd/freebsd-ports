@@ -17,6 +17,7 @@ COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+LATEST_LINK=	tei-p4
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
