@@ -25,6 +25,7 @@ CONFIGURE_ARGS= \
 		--with-lpd_conf_path=/etc/lpd.conf \
 		--with-lpd_perms_path=/etc/lpd.perms \
 		--with-printcap_path=/etc/printcap
+USE_GMAKE=	yes
 
 MAN1=		cancel.1 lp.1 lpbanner.1 lpf.1 \
 		lpq.1 lpr.1 lpraccnt.1 lprm.1 lpstat.1 monitor.1 \
