@@ -1,11 +1,11 @@
-This software provides support for the Tag Image File Format (TIFF), a
-widely used format for storing image data.
+This software provides support for the Tag Image File Format (TIFF),
+a widely used format for storing image data.
 
 Included in this software distribution is a library, libtiff, for
-reading and writing TIFF, a small collection of tools for doing simple
-manipulations of TIFF images on UNIX systems, and documentation on the
-library and tools. A small assortment of TIFF-related software for
-UNIX that has been contributed by others is also included.
+reading and writing TIFF, a small collection of tools for doing
+simple manipulations of TIFF images on UNIX systems, and documentation
+on the library and tools. A small assortment of TIFF-related software
+for UNIX that has been contributed by others is also included.
 
 The library is capable of dealing with images that are written to
 follow the 5.0 or 6.0 TIFF spec.  There is also considerable support
@@ -13,12 +13,8 @@ for some of the more esoteric portions of the 6.0 TIFF spec.
 
 SGI has also added html-documentation in addition to man-pages.
 
-  TIFF web site: http://www-mipl.jpl.nasa.gov/~ndr/tiff
-Master FTP site: ftp://ftp.sgi.com/graphics/tiff
+	  TIFF web site: http://www-mipl.jpl.nasa.gov/~ndr/tiff
+	Master FTP site: ftp://ftp.sgi.com/graphics/tiff
 
-
-NOTE: Since it is suspected that there's incompatibility between
-libtiff 3.4 and previous releases, we install this kit as follows.
-	/usr/local/include/tiff34/tiff.h
-	/usr/local/include/tiff34/tiffio.h
-	/usr/local/lib/libtiff34.a
+Unless NOPORTDOCS is defined, the html documentations is also
+installed locally in /usr/local/share/doc/tiff.
