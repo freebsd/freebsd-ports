@@ -1,28 +1,28 @@
-# New ports collection makefile for:  yahtzee 
+# New ports collection makefile for:	yahtzee 
 # Date created:		Friday 4th July, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
-# FreeBSD Version:	2.2.1-RELEASE
 #
 # $FreeBSD$
 #
 
-PORTNAME=		yahtzee
-PORTVERSION=		1.0
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+PORTNAME=	yahtzee
+PORTVERSION=	1.0
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
-DISTFILES=		yahtzee-src.tar.Z
+DISTNAME=	${PORTNAME}-src
+EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/yahtzee
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # Distribution does not include an install target. So here it is.
 #
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin/
-	${MKDIR} -m 0755 ${PREFIX}/lib/yahtzee/
-	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${PREFIX}/lib/yahtzee/yahtzee.sco
+	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin
+	${MKDIR} -m 0755 ${PREFIX}/share/yahtzee
+	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${PREFIX}/share/yahtzee/yahtzee.sco
 
 .include <bsd.port.mk>
-
