@@ -42,6 +42,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += jacal
     SUBDIR += javanns
     SUBDIR += kseg
     SUBDIR += lapack

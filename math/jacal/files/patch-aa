@@ -1,0 +1,56 @@
+diff -udr ../jacal.ORIG/Makefile ./Makefile
+--- ../jacal.ORIG/Makefile	Thu Feb 21 00:46:31 2002
++++ ./Makefile	Sat Mar 16 13:11:15 2002
+@@ -24,7 +24,7 @@
+ RELEASE = 1
+ 
+ rpm_prefix=/usr/src/redhat/
+-prefix = /usr/local/
++prefix = %%PREFIX%%/
+ exec_prefix = $(prefix)
+ # directory where `make install' will put executable.
+ bindir = $(exec_prefix)bin/
+diff -udr ../jacal.ORIG/jacal.info ./jacal.info
+--- ../jacal.ORIG/jacal.info	Thu Feb 21 00:47:50 2002
++++ ./jacal.info	Sat Mar 16 13:11:28 2002
+@@ -213,9 +213,9 @@
+ This may involve setting up that implementation's initialization file or      |
+ LOADing a `.init' file from the `slib' directory.  Then type:                 |
+                                                                               |
+-     (slib:load "/usr/local/lib/jacal/math")                                  |
++     (slib:load "%%PREFIX%%/lib/jacal/math")                                  |
+                                                                               |
+-where `/usr/local/lib/jacal/' is a path to the JACAL directory.  JACAL        |
++where `%%PREFIX%%/lib/jacal/' is a path to the JACAL directory.  JACAL        |
+ should then print:                                                            |
+                                                                               |
+      JACAL version 1b2, Copyright 1989-1999, 2002 Aubrey Jaffer               |
+diff -udr ../jacal.ORIG/jacal.sh ./jacal.sh
+--- ../jacal.ORIG/jacal.sh	Fri Feb 15 04:19:32 2002
++++ ./jacal.sh	Sat Mar 16 13:13:18 2002
+@@ -62,6 +62,8 @@
+      if [ -z "${SCHEME_LIBRARY_PATH}" ]; then
+        if [ -d /usr/local/lib/slib/ ]; then
+ 	  export SCHEME_LIBRARY_PATH=/usr/local/lib/slib/
++       elif [ -d %%PREFIX%%/lib/slib/ ]; then
++	  export SCHEME_LIBRARY_PATH=%%PREFIX%%/lib/slib/
+        elif [ -d /usr/share/slib/ ]; then
+ 	  export SCHEME_LIBRARY_PATH=/usr/share/slib/
+        fi
+diff -udr ../jacal.ORIG/jacal.texi ./jacal.texi
+--- ../jacal.ORIG/jacal.texi	Mon Feb 18 05:37:53 2002
++++ ./jacal.texi	Sat Mar 16 13:12:04 2002
+@@ -344,11 +344,11 @@
+ LOADing a @samp{.init} file from the @file{slib} directory.  Then type:
+ 
+ @example
+-(slib:load "/usr/local/lib/jacal/math")
++(slib:load "%%PREFIX%%/lib/jacal/math")
+ @end example
+ 
+ @noindent
+-where @file{/usr/local/lib/jacal/} is a path to the JACAL directory.
++where @file{%%PREFIX%%/lib/jacal/} is a path to the JACAL directory.
+ JACAL should then print:
+ 
+ @example

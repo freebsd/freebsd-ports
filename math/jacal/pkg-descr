@@ -1,0 +1,9 @@
+JACAL is an interactive symbolic mathematics program.  JACAL can
+manipulate and simplify equations, scalars, vectors, and matrices of
+single and multiple valued algebraic expressions containing numbers,
+variables, radicals, and algebraic differential, and holonomic
+functions.
+
+JACAL is written in Scheme.
+
+WWW: http://swissnet.ai.mit.edu/~jaffer/JACAL.html
