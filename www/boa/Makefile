@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.12
+PORTVERSION=	0.94.13
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
@@ -15,12 +15,13 @@ MAINTAINER=	sysadmin@alexdupre.com
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN8=		boa.8
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/defines.h \
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/defines.h \
 		${WRKSRC}/../boa.conf
 
 post-build:
