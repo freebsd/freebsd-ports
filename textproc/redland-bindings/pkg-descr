@@ -1,10 +1,9 @@
 Redland is a library that provides a high-level interface for RDF
-allowing
-the model to be stored, queried and manipulated. This package provides
-a
-number of bindings for various languages for the Redland library.
+allowing the model to be stored, queried and manipulated. This
+package provides a number of bindings for various languages for
+the Redland library.
 
-WWW: http://www.redland.opensource.ac.uk/bindings/
+WWW: http://librdf.org/bindings/
 
 - Russell Cloran
 russell@rucus.ru.ac.za

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	0.9.18.1
+PORTVERSION=	1.0.0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://librdf.org/dist/source/ \
-		http://librdf.org/dist/source/old/
+MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	russell@rucus.ru.ac.za
 COMMENT=	Language bindings for the Redland package
@@ -37,6 +36,7 @@ PLIST_SUB+=	WITH_JAVA="@comment "
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=	WITH_PERL=""
+MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}
 MAN3=	RDF::Redland.3 \
 	RDF::Redland::Iterator.3 \
 	RDF::Redland::Model.3 \
@@ -97,7 +97,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "**********************************************"
 	@${ECHO_MSG} "The following make variables can be set to"
-	@${ECHO_MSG} "enable various languages"
+	@${ECHO_MSG} "enable bindings for various languages"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WITH_JAVA   - Java bindings"
 	@${ECHO_MSG} "WITH_PERL   - Perl module"
@@ -107,17 +107,5 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TCL    - TCL bindings"
 	@${ECHO_MSG} "**********************************************"
 	@${ECHO_MSG} ""
-
-post-configure::
-	@${TOUCH} ${WRKSRC}/java/core_wrap.c
-	@${TOUCH} ${WRKSRC}/java/org/librdf/redland/core.java
-	@${TOUCH} ${WRKSRC}/java/org/librdf/redland/core.java.in
-	@${TOUCH} ${WRKSRC}/perl/CORE_wrap.c
-	@${TOUCH} ${WRKSRC}/perl/lib/RDF/Redland/CORE.pm
-	@${TOUCH} ${WRKSRC}/perl/lib/RDF/Redland/CORE.pm
-	@${TOUCH} ${WRKSRC}/php/redland_wrap.c
-	@${TOUCH} ${WRKSRC}/python/Redland_wrap.c
-	@${TOUCH} ${WRKSRC}/ruby/redland_wrap.c
-	@${TOUCH} ${WRKSRC}/tcl/Redland_wrap.c
 
 .include <bsd.port.mk>
