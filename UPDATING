@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041111:
+  AFFECTS: users of java
+  AUTHOR: glewis@FreeBSD.org
+
+  javavmwrapper has been rewritten.  It now creates symbolic links for
+  all executables of the Java VMs that have been registered with it.
+  These symbolic links may impact which version of Java you are using,
+  depending on your PATH, which may need to be adjusted.
+
+  For example, if your path is:
+
+	${LOCALBASE}/bin:${LOCALBASE}/jdk1.4.2/bin
+
+  then previously "java" would resolve to ${LOCALBASE}/jdk1.4.2/bin/java.
+  With the new javavmwrapper it will resolve to ${LOCALBASE}/bin/java.
+  Depending upon the Java VMs that are registered and various environment
+  variables, it may or may not be ${LOCALBASE}/jdk1.4.2/bin/java that is
+  run by javavmwrapper via the symbolic link ${LOCALBASE}/bin/java.
+
 20041107:
   AFFECTS: users of x11/kdebase3
   AUTHOR: kde@freebsd.org
