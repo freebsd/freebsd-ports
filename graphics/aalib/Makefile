@@ -7,6 +7,7 @@
 
 PORTNAME=	aalib
 PORTVERSION=	1.4.r5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aa-project
@@ -18,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-.if defined(WITH_X11)
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
 		--x-libraries="${X11BASE}/lib"
