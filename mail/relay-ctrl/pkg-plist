@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+bin/relay-ctrl-age
+bin/relay-ctrl-allow
+bin/relay-ctrl-chdir
+bin/relay-ctrl-check
+bin/relay-ctrl-send
+bin/relay-ctrl-udp
+etc/relay-ctrl/RELAY_CTRL_DIR
+etc/relay-ctrl/RELAY_CTRL_EXPIRY
+@unexec rmdir %D/etc/relay-ctrl  2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCEMENT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/packet.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
