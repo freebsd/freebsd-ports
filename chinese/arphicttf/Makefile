@@ -9,7 +9,7 @@ PORTNAME=	arphicttf
 PORTVERSION=	2.11
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
-DISTNAME=	${PKGNAME}
+DISTNAME=	zh-${PKGNAME}
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
