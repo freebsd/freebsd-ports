@@ -10,6 +10,10 @@ PORTVERSION=		2.20
 CATEGORIES=		print
 MASTER_SITES=		http://www.tug.org/applications/jadetex/
 
+PATCH_SITES=		http://indev.insu.com/openjade/
+PATCHFILES=		jadetex-2.20.patch
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=		kelly@ad1440.net
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
