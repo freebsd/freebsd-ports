@@ -213,6 +213,7 @@
     SUBDIR += p5-Business-ISSN
     SUBDIR += p5-Business-OnlinePayment
     SUBDIR += p5-Business-OnlinePayment-2CheckOut
+    SUBDIR += p5-Business-OnlinePayment-AuthorizeNet
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-WorldPay-Junior
