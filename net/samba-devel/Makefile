@@ -1,9 +1,9 @@
 # New ports collection makefile for:	samba
-# Version required:			2.0.3
+# Version required:			2.0.5a
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.38 1999/07/12 08:44:04 hosokawa Exp $
+# $Id: Makefile,v 1.39 1999/07/23 06:41:41 hosokawa Exp $
 #
 
 DISTNAME=	samba-2.0.5a
