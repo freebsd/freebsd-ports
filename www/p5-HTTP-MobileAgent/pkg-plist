@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/Display.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/DoCoMo.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/DoCoMoDisplayMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/EZweb.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/JPhone.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/NonMobile.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/Request.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent
