@@ -6,17 +6,29 @@
 #
 
 PORTNAME=	aide
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	security
-MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
-		ftp://ftp.cs.tut.fi/pub/src/gnu/
+MASTER_SITE_SOURCEFORGE+= http://unc.dl.sourceforge.net/%SUBDIR%/ \
+		http://umn.dl.sourceforge.net/%SUBDIR%/ \
+		http://twtelecom.dl.sourceforge.net/%SUBDIR%/ \
+		http://aleron.dl.sourceforge.net/%SUBDIR%/ \
+		http://easynews.dl.sourceforge.net/%SUBDIR%/ \
+		http://switch.dl.sourceforge.net/%SUBDIR%/ \
+		http://cesnet.dl.sourceforge.net/%SUBDIR%/ \
+		http://flow.dl.sourceforge.net/%SUBDIR%/ \
+		http://keihanna.dl.sourceforge.net/%SUBDIR%/ \
+		http://heanet.dl.sourceforge.net/%SUBDIR%/ 
+MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.cs.tut.fi/~rammer/ \
+
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A replacement and extension for Tripwire
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
+USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \

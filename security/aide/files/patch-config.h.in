@@ -1,0 +1,11 @@
+--- config.h.in.orig	Fri Nov 28 07:14:07 2003
++++ config.h.in	Sat Jan  3 20:28:39 2004
+@@ -56,7 +56,7 @@
+ #define AIDE_STAT_TYPE stat
+ #define AIDE_INO_TYPE ino_t
+ #define AIDE_OFF_TYPE off_t
+-#define AIDE_BLKCNT_TYPE blkcnt_t
++#define AIDE_BLKCNT_TYPE int32_t
+ 
+ /* Defines for READDIR64 */
+ #define AIDE_READDIR_FUNC readdir
