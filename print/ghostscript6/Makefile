@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/04/19 18:34:50 andreas Exp $
+# $Id: Makefile,v 1.21 1998/06/04 20:11:37 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -84,9 +84,9 @@ post-install:
 	strip ${PREFIX}/bin/gs
 	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
 		${PREFIX}/share/ghostscript/5.10
-	${INSTALL_DATA} ${DISTDIR}/license.hp8 \
+	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
 		${PREFIX}/share/ghostscript/5.10/doc
-	${INSTALL_DATA} ${DISTDIR}/readme.hp8 \
+	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
 		${PREFIX}/share/ghostscript/5.10/doc
 
 .include <bsd.port.mk>
