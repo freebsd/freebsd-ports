@@ -188,7 +188,7 @@ pre-everything::
 	@${ECHO_MSG} "				the necessary information is not available."
 	@${ECHO_MSG} "WITHOUT_PERL=yes		Install the perl modules along with the rest"
 	@${ECHO_MSG} "				of the net-snmp toolkit."
-	@${ECHO_MSG} "WITHOUT_IPV6=yes		Generate IPv6 ready version."
+	@${ECHO_MSG} "WITHOUT_IPV6=yes		Disable IPv6."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "DEFAULT_SNMP_VERSION=\"3\"	Default version of SNMP to use."
 	@${ECHO_MSG} "NET_SNMP_SYS_CONTACT=\"${NET_SNMP_SYS_CONTACT}\""
