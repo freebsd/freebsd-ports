@@ -7622,6 +7622,7 @@ plp		ports/comms/plp
 plplot		ports/math/plplot
 plucker		ports/palm/plucker
 plugger		ports/www/plugger
+plugger-plugins-hubbe	ports/www/plugger-plugins-hubbe
 plwm		ports/x11-wm/plwm
 ply		ports/devel/ply
 pm-lib		ports/mail/pm-lib
