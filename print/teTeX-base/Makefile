@@ -3,12 +3,12 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.29 1999/07/06 07:10:01 tg Exp $
+# $Id: Makefile,v 1.30 1999/07/07 16:31:41 obrien Exp $
 #
 
 DISTNAME=	teTeX-1.0.5
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_CTAN} \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/
 MASTER_SITE_SUBDIR=     systems/unix/teTeX/1.0/distrib/sources/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
