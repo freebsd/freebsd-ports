@@ -1,25 +1,64 @@
 bin/gthumb
+etc/gconf/gconf.xml.defaults/apps/gthumb/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/browser/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/page/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/thumbnail/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/slideshow/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/viewer/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/page/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/thumbnail/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/slideshow/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/viewer/%gconf.xml
+etc/gconf/schemas/gthumb.schemas
 libdata/bonobo/servers/GNOME_GThumb_CatalogView.server
 libdata/bonobo/servers/GNOME_GThumb_Viewer.server
 libexec/gthumb-catalog-view
 libexec/gthumb-image-viewer
 share/gnome/application-registry/gthumb.applications
 share/gnome/applications/gthumb.desktop
+share/gnome/gnome-2.0/ui/GNOME_GThumb_CatalogView.xml
 share/gnome/gnome-2.0/ui/GNOME_GThumb_Viewer.xml
 share/gnome/gnome-2.0/ui/gthumb-ui.xml
-share/gnome/gthumb/glade/gthumb.glade2
-share/gnome/gthumb/glade/gthumb_comments.glade2
-share/gnome/gthumb/glade/gthumb_png_exporter.glade2
-share/gnome/gthumb/glade/gthumb_print.glade2
-share/gnome/gthumb/glade/gthumb_search.glade2
-share/gnome/gthumb/glade/gthumb_tools.glade2
+share/gnome/gthumb/glade/gthumb.glade
+share/gnome/gthumb/glade/gthumb_comments.glade
+share/gnome/gthumb/glade/gthumb_convert.glade
+share/gnome/gthumb/glade/gthumb_edit.glade
+share/gnome/gthumb/glade/gthumb_png_exporter.glade
+share/gnome/gthumb/glade/gthumb_preferences.glade
+share/gnome/gthumb/glade/gthumb_print.glade
+share/gnome/gthumb/glade/gthumb_search.glade
+share/gnome/gthumb/glade/gthumb_tools.glade
+share/gnome/gthumb/icons/black-white.png
 share/gnome/gthumb/icons/flip.png
 share/gnome/gthumb/icons/flip.xpm
 share/gnome/gthumb/icons/mirror.png
 share/gnome/gthumb/icons/mirror.xpm
 share/gnome/gthumb/icons/rotate.png
 share/gnome/gthumb/icons/rotate.xpm
-share/gnome/gthumb/icons/black-white.png
 share/gnome/help/gthumb/C/figures/comment.png
 share/gnome/help/gthumb/C/figures/dlg-comment.png
 share/gnome/help/gthumb/C/figures/find-images.png
@@ -32,21 +71,61 @@ share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
 share/gnome/omf/gthumb/gthumb-C.omf
 share/gnome/pixmaps/gthumb.png
-share/gnome/gnome-2.0/ui/GNOME_GThumb_CatalogView.xml
-share/locale/de/LC_MESSAGES/gthumb-2.0.mo
-share/locale/es/LC_MESSAGES/gthumb-2.0.mo
-share/locale/fr/LC_MESSAGES/gthumb-2.0.mo
-share/locale/it/LC_MESSAGES/gthumb-2.0.mo
-share/locale/ja/LC_MESSAGES/gthumb-2.0.mo
-share/locale/ko/LC_MESSAGES/gthumb-2.0.mo
-share/locale/nl/LC_MESSAGES/gthumb-2.0.mo
-share/locale/pt_BR/LC_MESSAGES/gthumb-2.0.mo
-share/locale/ru/LC_MESSAGES/gthumb-2.0.mo
-share/locale/sv/LC_MESSAGES/gthumb-2.0.mo
-@dirrm share/gnome/omf/gthumb
+share/locale/am/LC_MESSAGES/gthumb.mo
+share/locale/cs/LC_MESSAGES/gthumb.mo
+share/locale/da/LC_MESSAGES/gthumb.mo
+share/locale/de/LC_MESSAGES/gthumb.mo
+share/locale/es/LC_MESSAGES/gthumb.mo
+share/locale/fr/LC_MESSAGES/gthumb.mo
+share/locale/it/LC_MESSAGES/gthumb.mo
+share/locale/ja/LC_MESSAGES/gthumb.mo
+share/locale/ko/LC_MESSAGES/gthumb.mo
+share/locale/lv/LC_MESSAGES/gthumb.mo
+share/locale/ms/LC_MESSAGES/gthumb.mo
+share/locale/nl/LC_MESSAGES/gthumb.mo
+share/locale/no/LC_MESSAGES/gthumb.mo
+share/locale/pt_BR/LC_MESSAGES/gthumb.mo
+share/locale/ru/LC_MESSAGES/gthumb.mo
+share/locale/sv/LC_MESSAGES/gthumb.mo
+share/locale/zh_TW/LC_MESSAGES/gthumb.mo
+@dirrm share/gnome/pixmaps
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
 @dirrm share/gnome/gthumb/icons
 @dirrm share/gnome/gthumb/glade
 @dirrm share/gnome/gthumb
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/viewer
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/slideshow
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/thumbnail
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/page
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/viewer
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/slideshow
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/thumbnail
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/page
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/browser
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb
