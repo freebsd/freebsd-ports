@@ -4965,6 +4965,7 @@ open-motif-devel	ports/x11-toolkits/open-motif-devel
 openag		ports/audio/openag
 openal		ports/audio/openal
 openam		ports/net/openam
+openbabel	ports/science/openbabel
 openbox		ports/x11-wm/openbox
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
