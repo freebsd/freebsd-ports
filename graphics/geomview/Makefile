@@ -3,10 +3,10 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.12 1998/12/07 20:46:38 billf Exp $
+# $Id: Makefile,v 1.13 1999/01/07 08:19:38 simokawa Exp $
 
 DISTNAME=	geomview-1.6.1
-CATEGORIES=	graphics tk42
+CATEGORIES=	graphics tk80
 MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
 		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/
 DISTFILES=	geomview-1.6.1-src.tar.gz
@@ -15,7 +15,7 @@ MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-		tk42.1:${PORTSDIR}/x11-toolkits/tk42
+		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 # depends on xforms
 ONLY_FOR_ARCHS=	i386
@@ -57,7 +57,9 @@ DOC_FILES=	OOGL.m.doc geomview.tex geomview_toc.html geomview_1.html \
 EXAMPLE_FILES=	example1.c example2.c example3.c example4.tcl
 MAN_FILES=	geomview.5 oogl.5
 SHARE_DIRS=	data maple mathematica
-LIBEXEC_DIRS=	modules bin
+SHARE_MODS=	tcl
+LIBEXEC_DIRS=	bin
+LIBEXEC_MODS=	x11
 
 CHOWN?=		/usr/sbin/chown
 
@@ -85,11 +87,23 @@ post-install:
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/share/geomview
 	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/${i}
 .endfor
+.for i in ${SHARE_MODS}
+	${RM} -rf ${PREFIX}/share/geomview/modules/${i}
+	${MKDIR} ${PREFIX}/share/geomview/modules/${i}
+	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/share/geomview/modules
+	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/modules/${i}
+.endfor
 .for i in ${LIBEXEC_DIRS}
 	${RM} -rf ${PREFIX}/libexec/geomview/${i}
 	${MKDIR} ${PREFIX}/libexec/geomview/${i}
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/libexec/geomview/
 	${CHOWN} -R ${BINOWN}.${BINGRP} ${PREFIX}/libexec/geomview/${i}
+.endfor
+.for i in ${LIBEXEC_MODS}
+	${RM} -rf ${PREFIX}/libexec/geomview/modules/${i}
+	${MKDIR} ${PREFIX}/libexec/geomview/modules/${i}
+	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/libexec/geomview/modules
+	${CHOWN} -R ${BINOWN}.${BINGRP} ${PREFIX}/libexec/geomview/modules/${i}
 .endfor
 
 .include <bsd.port.mk>

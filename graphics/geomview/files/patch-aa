@@ -20,7 +20,7 @@
 -SYSMOTIFLIBS = -L${SYSXLIBDIR} -lXm
 +SYSXLIBDIR = ${X11BASE}/lib
 +SYSMOTIFLIBS = ${MOTIFLIB}
- SYSXLIBS = -L${SYSXLIBDIR} -lXt -lXext -lX11
+ SYSXLIBS = -L${SYSXLIBDIR} -lXt -lXext -lXmu -lX11
  
  # If you have the FORMS library, uncomment these lines and edit:
  #  set FORMSLIBS to the list of all libs needed
@@ -36,21 +36,32 @@
  # indicate cc options to find tk-related libraries and include-files.
 -# TKLIBS = -L/usr/local/lib -ltk -ltcl -L${SYSXLIBDIR} -lX11
 -# TKINC = -I/u/share/include
-+TKLIBS = -L${LOCALBASE}/lib -ltk42 -ltcl76 -L${SYSXLIBDIR} -lX11
-+TKINC = -I${LOCALBASE}/include/tcl7.6 -I${LOCALBASE}/include/tk4.2
++TKLIBS = -L${LOCALBASE}/lib -ltk80 -ltcl80 -L${SYSXLIBDIR} -lX11
++TKINC = -I${LOCALBASE}/include/tcl8.0 -I${LOCALBASE}/include/tk8.0
  
  
  # Choose or adapt one of the following sets of definitions.
-@@ -43,6 +45,9 @@
+@@ -43,9 +45,11 @@
  # MGLIBS =
  
  # for OpenGL using Mesa libraries:
--MGTYPE = -DMGOPENGL
--MGLIBS = -lMesaGL -lMesaGLU
--MGINC = # -IMesa-include-file directory
 +#
 +# Mesa is available from /usr/ports/graphics/Mesa.
-+#MGTYPE = -DMGOPENGL
-+# The port auto-builds both types.
+ MGTYPE = -DMGOPENGL
+-MGLIBS = -lMesaGL -lMesaGLU
+-MGINC = # -IMesa-include-file directory
 +MGLIBS = -L${X11BASE}/lib -lMesaGL -lMesaGLU
 +MGINC = -I${X11BASE}/include/Mesa
+ 
+ # If the above stuff sets MGTYPE = -DMGOPENGL, and MGINC = whatever's needed
+ # for Open GL compilation, then you can also use MGMESAOPTS and/or MGC3DOPTS
+@@ -66,6 +70,6 @@
+ # you can still do the following.  Define MGX11OPTS to get a separate
+ # gvx.X11 geomview executable which uses our own software renderer.
+ # It's typically faster than the Mesa renderer, but less capable.
+-# MGX11OPTS =	MGTYPE="-DMGX11" \
+-#		MGLIBS= \
+-#		MGINC=
++MGX11OPTS =	MGTYPE="-DMGX11" \
++		MGLIBS= \
++		MGINC=
