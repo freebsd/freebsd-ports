@@ -1,29 +1,11 @@
---- src/Makefile.in.orig	Tue Jun 11 10:25:52 2002
-+++ src/Makefile.in	Tue Nov 26 01:37:47 2002
-@@ -81,7 +81,7 @@
- LIB = @LIB@
- LIBICONV = @LIBICONV@
- LIBINTL = @LIBINTL@
--LIBS = @LIBS@
-+LIBS = -lintl -lcurses @LIBS@ -I/usr/lib
- LN_S = @LN_S@
- LTLIB = @LTLIB@
- LTLIBICONV = @LTLIBICONV@
-@@ -117,7 +117,7 @@
- PROGRAMS =  $(bin_PROGRAMS)
- 
- 
--DEFS = @DEFS@ -I. -I$(srcdir) -I..
-+DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I/usr/include
- CPPFLAGS = @CPPFLAGS@
- zhcon_OBJECTS =  basefont.o big52gbdecoder.o big5decoder.o configfile.o \
- console.o gb2big5decoder.o gbdecoder.o gbkdecoder.o graphdev.o \
-@@ -395,7 +395,7 @@
+--- src/Makefile.in.orig	Thu Apr 17 19:29:48 2003
++++ src/Makefile.in	Wed Apr 30 21:10:39 2003
+@@ -478,7 +478,7 @@
  
  install-data-local:
  	$(mkinstalldirs) $(DESTDIR)/etc
 -	$(INSTALL_DATA) $(srcdir)/zhcon.conf $(DESTDIR)/etc/zhcon.conf
 +	$(INSTALL_DATA) $(srcdir)/zhcon.conf $(PREFIX)/etc/zhcon.conf
- 	$(INSTALL_DATA) $(srcdir)/zhcon.conf $(PREFIX)/etc/zhcon.conf.sample
  
  uninstall-local:
+ 	-rm -f $(DESTDIR)/etc/zhcon.conf

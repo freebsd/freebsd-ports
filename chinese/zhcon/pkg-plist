@@ -1,9 +1,5 @@
-bin/getbpsf
-bin/uc2win
-bin/win2mb
 bin/zhcon
 etc/zhcon.conf
-etc/zhcon.conf.sample
 lib/zhcon/font/asc12.bpsf
 lib/zhcon/font/asc12x.bpsf
 lib/zhcon/font/asc14.bpsf
@@ -40,6 +36,7 @@ lib/zhcon/input/winsp.mb
 lib/zhcon/input/winzm.mb
 share/locale/ja/LC_MESSAGES/zhcon.mo
 share/locale/ko/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.EUC/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
