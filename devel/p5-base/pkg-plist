@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/base/.packlist
+%%SITE_PERL%%/base.pm
+%%SITE_PERL%%/fields.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/base

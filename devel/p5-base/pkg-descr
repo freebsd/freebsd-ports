@@ -1,0 +1,9 @@
+Set of modules:
+
+* base - establish IS-A relationship with base class at compile time
+* fields - compile-time class fields
+
+WWW: http://search.cpan.org/dist/base/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
