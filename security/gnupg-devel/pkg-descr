@@ -1,6 +1,6 @@
-NewPG is a temporary protect to work on GnuPG extensions. It will
-be merged into the regular GnuPG sources for a GnuPG 2.0 release.
+This version of gnupg is a temporary project to work on GnuPG extensions. It
+will be merged into the regular GnuPG sources for a GnuPG 2.0 release.
 
-WWW: http://www.gnupg.org/aegypten/
+WWW: http://www.gnupg.org/aegypten2/
 
 michaelnottebrock@gmx.net

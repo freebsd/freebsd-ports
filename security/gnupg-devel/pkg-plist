@@ -1,7 +1,10 @@
 bin/gpg-agent
+bin/gpg2
 bin/gpgsm
+bin/gpgv2
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
-lib/newpg/gpg-protect-tool
-share/locale/de/LC_MESSAGES/newpg.mo
-@dirrm lib/newpg
+lib/gnupg/gpg-protect-tool
+share/gnupg/options.skel
+@dirrm share/gnupg
+@dirrm lib/gnupg

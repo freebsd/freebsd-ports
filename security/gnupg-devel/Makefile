@@ -5,35 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	newpg
-PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTNAME=	gnupg
+PORTVERSION=	1.9.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	alpha/aegypten
+MASTER_SITE_SUBDIR=	alpha/gnupg
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
-LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		ksba.7:${PORTSDIR}/security/libksba \
+LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
+		ksba.11:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		pinentry-curses:${PORTSDIR}/security/pinentry \
 		dirmngr:${PORTSDIR}/security/dirmngr
-		
-USE_AUTOCONF_VER=253
-USE_LIBTOOL_VER=13
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=# empty
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS+=--with-included-gettext=no
 INFO=		gnupg
 
 .include <bsd.port.pre.mk>
@@ -53,6 +47,8 @@ PLIST_SUB+=	WITH_OPENSC="@comment "
 pre-configure:
 	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-	cd ${WRKSRC}; autoconf
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
