@@ -124,6 +124,7 @@
     SUBDIR += py-gtk
     SUBDIR += py-gtk2
     SUBDIR += py-gtkscintilla
+    SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wxPython
