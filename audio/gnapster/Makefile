@@ -25,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 .else
 CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
 .endif
