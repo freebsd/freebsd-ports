@@ -1,0 +1,8 @@
+Ruby/Amazon is a simple Ruby library that allows one to retrieve
+information from the popular Amazon.com Web site via Amazon Web
+Services.  It aims to wrap the grunt work of interacting with the
+Amazon API behind a high-level layer of Ruby and, in so doing, make it
+easier to use.
+
+Author:	Ian Macdonald <ian@caliban.org>
+WWW:	http://www.caliban.org/ruby/
