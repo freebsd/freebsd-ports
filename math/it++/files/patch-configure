@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb 19 17:35:18 2005
++++ configure	Sat Feb 19 17:35:04 2005
+@@ -328,7 +328,7 @@ HAVE_LAPACK = $lapack
+ HAVE_FFTW   = $fftw
+ OS          = $os
+ IT_DIR      = $it_dir
+-CXX         = $compiler
++#CXX        = $compiler
+ 
+ PROF_FLAGS  = -pg \$(OPTIMIZED_FLAGS)
+ DEBUG_FLAGS = -g -DASSERT_LEVEL=2
