@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/ \
 		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/ \
-		ftp://www3.kr.freebsd.org/~perky/distfiles/
+		http://www3.kr.freebsd.org/~perky/distfiles/
 DISTNAME=	JapaneseCodecs-${PORTVERSION}
 
 MAINTAINER=	perky@python.or.kr
