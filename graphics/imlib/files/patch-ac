@@ -1,0 +1,21 @@
+*** load.c.orig	Fri Sep 19 03:24:04 1997
+--- load.c	Fri Sep 19 03:25:28 1997
+*************** Image *ImlibLoadImage(ImlibData *id, cha
+*** 157,164 ****
+  	     if (needs_conv) pclose(p);
+  	     else fclose(p);
+  	  }
+! 	if (!strcasecmp(s,"jpeg")) sprintf(cmd,"%s/djpeg %s", NETPBM_PATH, file);
+! 	else if (!strcasecmp(s,"jpg")) sprintf(cmd,"%s/djpeg %s", NETPBM_PATH, file);
+  	else if (!strcasecmp(s,"bmp")) sprintf(cmd,"%s/bmptoppm %s", NETPBM_PATH, file);
+  	else if (!strcasecmp(s,"ilbm")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
+  	else if (!strcasecmp(s,"ilb")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
+--- 157,164 ----
+  	     if (needs_conv) pclose(p);
+  	     else fclose(p);
+  	  }
+! 	if (!strcasecmp(s,"jpeg")) sprintf(cmd,"%s/djpeg %s", JPEG_PATH, file);
+! 	else if (!strcasecmp(s,"jpg")) sprintf(cmd,"%s/djpeg %s", JPEG_PATH, file);
+  	else if (!strcasecmp(s,"bmp")) sprintf(cmd,"%s/bmptoppm %s", NETPBM_PATH, file);
+  	else if (!strcasecmp(s,"ilbm")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
+  	else if (!strcasecmp(s,"ilb")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);

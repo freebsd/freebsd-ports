@@ -1,7 +1,7 @@
-*** Imakefile.orig	Thu Aug 28 21:36:09 1997
---- Imakefile	Mon Sep 15 04:31:02 1997
+*** Imakefile.orig	Thu Aug 28 20:36:09 1997
+--- Imakefile	Fri Sep 19 03:29:21 1997
 ***************
-*** 6,20 ****
+*** 6,27 ****
   /* ---------------------------------------------------------------- */
   
   LIBNAME=Im
@@ -17,7 +17,14 @@
   #endif /* def UseEtcX11 */
   
   CNFDIR = $(ETCDIR)
---- 6,20 ----
+  
+  DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
+            -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
+! 	  -DNETPBM_PATH=\"$(NETPBM_DIR)\"
+  
+  SRCS = load.c rend.c misc.c colors.c cache.c
+  OBJS = load.o rend.o misc.o colors.o cache.o
+--- 6,29 ----
   /* ---------------------------------------------------------------- */
   
   LIBNAME=Im
@@ -25,6 +32,7 @@
   
 ! CONVERT_DIR=/usr/X11R6/bin
 ! NETPBM_DIR=/usr/X11R6/bin
+! JPEG_DIR=/usr/local/bin
   
   #ifdef UseEtcX11
   ETCDIR=/etc/X11/$(LIBNAME)
@@ -33,7 +41,15 @@
   #endif /* def UseEtcX11 */
   
   CNFDIR = $(ETCDIR)
-***************
+  
+  DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
+            -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
+! 	  -DNETPBM_PATH=\"$(NETPBM_DIR)\" \
+! 	  -DJPEG_PATH=\"$(JPEG_DIR)\"
+  
+  SRCS = load.c rend.c misc.c colors.c cache.c
+  OBJS = load.o rend.o misc.o colors.o cache.o
+*************** InstallMultiple($(HDRS),$(INCROOT)/X11)
 *** 64,70 ****
   CNFSRC = ./sys_conf
   CNFS = $(CNFSRC)/imrc 
@@ -42,7 +58,7 @@
   InstallMultipleFlags($(CNFS) $(PALS),$(CNFDIR),$(CNFFLAGS))
   
   DependTarget()
---- 64,70 ----
+--- 66,72 ----
   CNFSRC = ./sys_conf
   CNFS = $(CNFSRC)/imrc 
   PALS = $(CNFSRC)/im_palette.pal
