@@ -1,73 +1,167 @@
-*** sample.steprc.orig	Wed Aug 21 17:15:35 1996
---- sample.steprc	Fri Aug 23 12:52:10 1996
+*** sample.steprc.orig	Mon Aug 26 14:45:47 1996
+--- sample.steprc	Mon Aug 26 16:36:13 1996
 ***************
-*** 78,86 ****
-  ##########################################################################
-  # Module path
-  # ModulePath is a colon-separated list, just like regular unix PATH
+*** 141,151 ****
+  # ModulePath is a colon-separated list, just like a regular unix PATH
+  # Any Module must be found within the path in order to be located
+  # and executed
 ! ModulePath          /usr/lib/X11/afterstep:/usr/X11R6/lib/X11/afterstep
+  # Another colon-separated list pointing to your pixmaps (color icons)
 ! PixmapPath          /usr/include/X11/pixmaps/
+  # Path for your ugly black&white icons
 ! IconPath            /usr/include/X11/bitmaps/
-  NoBoundaryWidth 0
-  BoundaryWidth 8
-  Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
---- 78,86 ----
-  ##########################################################################
-  # Module path
-  # ModulePath is a colon-separated list, just like regular unix PATH
+  
+  # Various styles which can be associated with specific applications
+  # Sticky -- remains "stuck" on all desks
+--- 141,151 ----
+  # ModulePath is a colon-separated list, just like a regular unix PATH
+  # Any Module must be found within the path in order to be located
+  # and executed
 ! ModulePath          @@PREFIX@@/lib/X11/afterstep:@@PREFIX@@/lib/X11/fvwm
+  # Another colon-separated list pointing to your pixmaps (color icons)
 ! PixmapPath          @@PREFIX@@/include/X11/pixmaps/
+  # Path for your ugly black&white icons
 ! IconPath            @@PREFIX@@/include/X11/bitmaps/
-  NoBoundaryWidth 0
-  BoundaryWidth 8
-  Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
+  
+  # Various styles which can be associated with specific applications
+  # Sticky -- remains "stuck" on all desks
 ***************
-*** 105,118 ****
-  *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
-  *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
-  *Wharf xterm monitor.xpm   Exec "-" /xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
+*** 193,201 ****
+    # Open up an xterm
+  *Wharf xterm monitor.xpm   Exec "-" xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
+    # Start up the LyX word processor
 ! *Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
-! *Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
+    # Create amazing art with the freeware masterpiece, The GIMP
+! *Wharf gimp 3dpaint.xpm Exec "-" gimp &
+    # Read some mail
   *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
-  *Wharf - -  Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 48x48-1-1 &
-  *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
-! *Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
-  *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
-! *Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
-  *Wharf Recycler  recycler.xpm  Restart " " afterstep
-  
-  ##########################################################################
---- 105,118 ----
-  *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
-  *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
-  *Wharf xterm monitor.xpm   Exec "-" /xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
+    # Surf the web
+--- 193,201 ----
+    # Open up an xterm
+  *Wharf xterm monitor.xpm   Exec "-" xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
+    # Start up the LyX word processor
 ! #*Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
-! #*Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
+    # Create amazing art with the freeware masterpiece, The GIMP
+! #*Wharf gimp 3dpaint.xpm Exec "-" gimp &
+    # Read some mail
   *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
-  *Wharf - -  Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 48x48-1-1 &
-  *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
-! #*Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
-  *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
-! #*Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
+    # Surf the web
+***************
+*** 204,210 ****
+    # Click on the different "desks" to change in between them
+  *Wharf pager nil SwallowModule "Pager" Pager 0 0
+    # Edit this file in its own window
+! *Wharf config interface.xpm Exec "-" xterm -T "AfterStep Configuration" -e vi ~/.steprc &
+    # Recycle your AfterStep session (Restart)
   *Wharf Recycler  recycler.xpm  Restart " " afterstep
   
-  ##########################################################################
+--- 204,210 ----
+    # Click on the different "desks" to change in between them
+  *Wharf pager nil SwallowModule "Pager" Pager 0 0
+    # Edit this file in its own window
+! #*Wharf config interface.xpm Exec "-" xterm -T "AfterStep Configuration" -e vi ~/.steprc &
+    # Recycle your AfterStep session (Restart)
+  *Wharf Recycler  recycler.xpm  Restart " " afterstep
+  
 ***************
-*** 229,236 ****
+*** 239,245 ****
+          # Place the green carpet image onto the background upon startup
+          # I personally recommend xli/xloadimage, but xv seems to be
+          # ubiquitous in the unix world so I'll use that 
+! 	Exec	"I"	exec xv -root -quit /backgrounds/carpet.green.jpg
+  EndFunction
+  
+  # These will load up upon every subsequent Restart
+--- 239,245 ----
+          # Place the green carpet image onto the background upon startup
+          # I personally recommend xli/xloadimage, but xv seems to be
+          # ubiquitous in the unix world so I'll use that 
+! 	Exec	"I"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/carpet.green.jpg
+  EndFunction
+  
+  # These will load up upon every subsequent Restart
+***************
+*** 412,432 ****
+  # Images ... quick way to view the included default background images
+  Popup "Images"
+  	Title	"Images"
+! 	Exec	"Brick"		exec xv -root -quit /backgrounds/brick.jpg
+! 	Exec	"Coins"		exec xv -root -quit /backgrounds/coins.jpg
+! 	Exec	"Dark Wood"	exec xv -root -quit /backgrounds/darkwood.jpg
+! 	Exec	"Eyes"		exec xv -root -quit /backgrounds/eyes.jpg
+! 	Exec	"Glass"		exec xv -root -quit /backgrounds/glass.jpg
+! 	Exec	"Green Carpet"	exec xv -root -quit /backgrounds/carpet.green.jpg
+! 	Exec	"Parquet"	exec xv -root -quit /backgrounds/parquet.jpg
+! 	Exec	"Pebbles"	exec xv -root -quit /backgrounds/pebbles.jpg
+! 	Exec	"Rock"		exec xv -root -quit /backgrounds/rock.tile.jpg
+! 	Exec	"Rope"		exec xv -root -quit /backgrounds/rope.weave.jpg
+! 	Exec	"Stucco"	exec xv -root -quit /backgrounds/stucco.jpg
+! 	Exec	"Tile"		exec xv -root -quit /backgrounds/tile.check.jpg
+! 	Exec	"Tree Bark"	exec xv -root -quit /backgrounds/bark.jpg
+! 	Exec	"Volcanic"	exec xv -root -quit /backgrounds/volcanic.jpg
+! 	Exec	"Wood"		exec xv -root -quit /backgrounds/wood.jpg
+  EndPopup
+  
+  # Background settings ... choose from either Solid Colors or Color Images
+--- 412,432 ----
+  # Images ... quick way to view the included default background images
+  Popup "Images"
+  	Title	"Images"
+! 	Exec	"Brick"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/brick.jpg
+! 	Exec	"Coins"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/coins.jpg
+! 	Exec	"Dark Wood"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/darkwood.jpg
+! 	Exec	"Eyes"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/eyes.jpg
+! 	Exec	"Glass"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/glass.jpg
+! 	Exec	"Green Carpet"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/carpet.green.jpg
+! 	Exec	"Parquet"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/parquet.jpg
+! 	Exec	"Pebbles"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/pebbles.jpg
+! 	Exec	"Rock"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/rock.tile.jpg
+! 	Exec	"Rope"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/rope.weave.jpg
+! 	Exec	"Stucco"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/stucco.jpg
+! 	Exec	"Tile"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/tile.check.jpg
+! 	Exec	"Tree Bark"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/bark.jpg
+! 	Exec	"Volcanic"	exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/volcanic.jpg
+! 	Exec	"Wood"		exec xv -root -quit @@PREFIX@@/lib/X11/afterstep/backgrounds/wood.jpg
+  EndPopup
+  
+  # Background settings ... choose from either Solid Colors or Color Images
+***************
+*** 444,450 ****
   Popup "HotList"
   	Title 	"HotList"
-          Exec    "Xterm"         exec xterm -e tcsh -l &
-!         Exec    "Netscape 1.12" exec netscape.12 -geometry 585x565 &
-!         Exec    "Netscape 3.0"  exec netscape -geometry 680x565 &
-          Nop     ""
+          Exec    "Xterm"         exec xterm -ls -sl 256 -sb -T 'xterm@afterstep.org' &
+!         Exec    "Netscape 3.0"  exec netscape &
           Popup   "Applications"  Applications
-          Nop     ""
---- 229,236 ----
+  	Popup	"Utilities"	Utilities
+          Popup   "Games"         Games
+--- 444,450 ----
   Popup "HotList"
   	Title 	"HotList"
-          Exec    "Xterm"         exec xterm -e tcsh -l &
-! 	Exec	"Rxvt"		exec rxvt -fat &
-!         Exec    "Netscape"  exec netscape -geometry 680x565 &
-          Nop     ""
+          Exec    "Xterm"         exec xterm -ls -sl 256 -sb -T 'xterm@afterstep.org' &
+!         Exec    "Netscape"	exec netscape &
           Popup   "Applications"  Applications
-          Nop     ""
+  	Popup	"Utilities"	Utilities
+          Popup   "Games"         Games
+***************
+*** 550,559 ****
+  Module Audio    
+  
+  # Select your normal audio player
+! #*AudioPlayCmd /usr/bin/showaudio
+  
+  # Select the directory containing your sounds
+! #*AudioDir /home/frank/mac/sounds
+  
+  #*AudioDelay 1
+  
+--- 550,559 ----
+  Module Audio    
+  
+  # Select your normal audio player
+! #*AudioPlayCmd /usr/local/bin/showaudio
+  
+  # Select the directory containing your sounds
+! #*AudioDir @@PREFIX@@/lib/X11/afterstep/sounds
+  
+  #*AudioDelay 1
+  
