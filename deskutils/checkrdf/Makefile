@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	checkrdf
-PORTVERSION=	34.3333
+PORTVERSION=	36.25
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	checkrdf
@@ -17,13 +17,7 @@ COMMENT=	A tool for RDF site summaries based news-check
 BUILD_DEPENDS=	Xtract:${PORTSDIR}/textproc/hs-haxml
 
 USE_BZIP2=	yes
-
-.include <bsd.port.pre.mk>
-
 MAKE_ENV=	PREFIX=${PREFIX}
-.if !exists(${PREFIX}/bin/nhc98)
-MAKE_ENV+=	BUILD_WITH=GHC
-.endif
 
 MAN1=		checkrdf.1
 MANCOMPRESSED=	yes
@@ -32,4 +26,4 @@ MANCOMPRESSED=	yes
 INSTALL_TARGET=install-bin install-rc install-man
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
