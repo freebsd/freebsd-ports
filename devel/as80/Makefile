@@ -8,9 +8,9 @@
 PORTNAME=	as80
 PORTVERSION=	0.6.2
 CATEGORIES=	devel
-MASTER_SITES=	http://home.t-online.de/home/thomas.strathmann/files/
+MASTER_SITES=	http://www.tstrathmann.de/files/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
