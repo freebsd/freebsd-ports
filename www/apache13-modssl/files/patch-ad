@@ -9,15 +9,6 @@
  ERROR=0
  ARGV="$@"
  if [ "x$ARGV" = "x" ] ; then 
-@@ -50,7 +52,7 @@
-     # check for pidfile
-     if [ -f $PIDFILE ] ; then
- 	PID=`cat $PIDFILE`
--	if [ ! "x$PID" = "x" ] && kill -0 $PID; then
-+	if [ ! "x$PID" = "x" ] && kill -0 $PID >/dev/null 2>&1; then
- 	    STATUS="httpd (pid $PID) running"
- 	    RUNNING=1
- 	else
 @@ -94,6 +96,7 @@
  	fi
  	if kill $PID ; then
