@@ -1,0 +1,13 @@
+--- ascii-xfr.c.orig	Sun Mar  8 08:10:26 1998
++++ ascii-xfr.c	Sun Dec 13 21:55:16 1998
+@@ -14,6 +14,10 @@
+ #include <string.h>
+ #include <time.h>
+ #include <fcntl.h>
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>		/* get BSD definition if present */
++#endif
++
+ 
+ /*
+  *	Externals.
