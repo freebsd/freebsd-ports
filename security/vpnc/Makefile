@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpnc
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
