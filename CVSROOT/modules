@@ -4282,6 +4282,7 @@ p5-Authen-TacacsPlus	ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket	ports/security/p5-Authen-Ticket
 p5-AxKit	ports/www/p5-AxKit
 p5-AxKit-XSP-Cookie	ports/www/p5-AxKit-XSP-Cookie
+p5-AxKit-XSP-ESQL	ports/www/p5-AxKit-XSP-ESQL
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
