@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/12/20 06:58:00 ache Exp $
+# $Id: Makefile,v 1.2 1996/02/26 01:04:20 ache Exp $
 #
 
 PKGNAME=        ru-elm
@@ -19,7 +19,11 @@ do-fetch:
 
 do-install:
 	grep -q -i koi8 ${PREFIX}/lib/elm.rc || \
-		(echo "charset=KOI8-R"; echo "displaycharset=KOI8-R";) >> \
+		( \
+		echo "charset=KOI8-R"; \
+		echo "displaycharset=KOI8-R"; \
+		echo "nohdrencoding=ON"; \
+		) >> \
 		${PREFIX}/lib/elm.rc
 
 .include <bsd.port.mk>
