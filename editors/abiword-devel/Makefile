@@ -26,7 +26,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/abi
+WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
