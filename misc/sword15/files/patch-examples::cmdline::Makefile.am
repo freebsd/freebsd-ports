@@ -1,8 +1,0 @@
---- examples/cmdline/Makefile.am.orig	Thu May  2 11:24:34 2002
-+++ examples/cmdline/Makefile.am	Thu May  2 11:24:41 2002
-@@ -7,4 +7,4 @@
- lookup_SOURCES = lookup.cpp
- search_SOURCES = search.cpp
- threaded_search_SOURCES = threaded_search.cpp
--threaded_search_LDADD = $(LDADD) -lpthread
-+threaded_search_LDADD = $(LDADD) -pthread

@@ -5,63 +5,55 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${SWORD_PORTNAME}
-PORTVERSION=	${SWORD_PORTVERSION}
-PORTREVISION=	1
+PORTNAME=	sword
+PORTVERSION=	1.5.7
 CATEGORIES=	misc
-MASTER_SITES=	${SWORD_MASTER_SITES}
-MASTER_SITE_SUBDIR=	${SWORD_MASTER_SITE_SUBDIR}
-DISTNAME=	${SWORD_DISTNAME}
+MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
+	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+# 1.5.7a version fixes some build problems. Since there was no FreeBSD
+# version of 1.5.7 it's really no problem to put the a here. WRKSRC is also
+# just work/sword-1.5.7
+DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
 
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A project framework for manipulating Bible texts
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--without-conf
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--program-transform-name="" --without-conf
 
-.if defined(WITH_INSTALLMGR)
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-installmgr
-PLIST_SUB+=	INSTALLMGR=""
-.else
-CONFIGURE_ARGS+=	--disable-installmgr
+.if defined(WITHOUT_CURL)
+CONFIGURE_ARGS+=	--without-curl
 PLIST_SUB+=	INSTALLMGR="@comment "
-
-.include "${.CURDIR}/Makefile.common"
+.else
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-curl
+PLIST_SUB+=	INSTALLMGR=""
 
 pre-everything::
-	@${ECHO_CMD} "Define WITH_INSTALLMGR to include the installmanager (curl)"
+	@${ECHO_CMD} "Define WITHOUT_CURL to disable remote fetch (curl) support in the installmanager"
 .endif
 
-post-install: register
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+	@${MKDIR} -p ${PREFIX}/share/sword/mods.d
 .if !exists(${PREFIX}/etc/sword.conf)
-	@${ECHO_CMD} "[Install]" >${PREFIX}/etc/sword.conf
-	@${ECHO_CMD} "DataPath=${DATADIR}/" >>${PREFIX}/etc/sword.conf
-	@${ECHO_CMD} "Config file installed in ${PREFIX}/etc/sword.conf"
+	@(cd ${WRKSRC} && make install_config)
 .else
 	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
 	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";
-.endif
-.if !exists(${PREFIX}/share/sword/mods.d/globals.conf)
-	@${MKDIR} ${PREFIX}/share/sword/mods.d
-	@${ECHO_CMD} "[Globals]" >${PREFIX}/share/sword/mods.d/globals.conf
-	@${ECHO_CMD} "" >>${PREFIX}/share/sword/mods.d/globals.conf
-	@${ECHO_CMD} "Global sword runtime settings installed in"
-	@${ECHO_CMD} "       ${PREFIX}/share/sword/mods.d/globals.conf
 .endif
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 
 register:
-.if !defined(BATCH)
-	@${ECHO} "Do you want to help the authors of SWORD to keep track of how many"
-	@${ECHO} -n "people use this program and register now ? [y/n] "
-	@read answer; \
-	 if [ x$$answer = xy -o x$$answer = xY ]; then \
-		(cd ${WRKSRC}; ${GMAKE} register;); \
-	 fi
-.endif
+	@(cd ${WRKSRC} && make register)
 
 .include <bsd.port.mk>
