@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,27 +14,52 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alexander@trull.com
 COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_SDL=	sdl
 
+CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
+		--disable-alsa \
+		--with-zlib-prefix=/usr \
+		--disable-debug
+
+OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
+		MAD "Enable mad (MP3) support" on \
+		MPEG2 "Enable MPEG2 support" off
+
 MAN6=		scummvm.6
 
-pre-patch:
-	@${FIND} -E ${WRKSRC} -type f -iregex ".*\.(cpp|h|txt)" \
-		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
-	@${REINPLACE_CMD} -e 's|\r\n|\n|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's@sdl-config@sdl11-config@g' \
-		${WRKSRC}/backends/sdl/build.rules
+DOCS=		NEWS README TODO
 
-post-configure:
-	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' \
-		${WRKSRC}/Makefile
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
+		--with-vorbis-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-vorbis
+.endif
+
+.if !defined(WITHOUT_MAD)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+CONFIGURE_ARGS+=--with-mad-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-mad
+.endif
+
+.if defined(WITH_MPEG2)
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-mpeg2
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-O//' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
@@ -43,9 +67,9 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docs in README
-	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.for doc in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
