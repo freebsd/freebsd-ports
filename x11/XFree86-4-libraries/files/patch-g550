@@ -1,0 +1,18 @@
+--- programs/Xserver/hw/xfree86/common/xf86PciInfo.h.orig	Fri May 11 16:56:10 2001
++++ programs/Xserver/hw/xfree86/common/xf86PciInfo.h	Sat Oct 20 11:28:09 2001
+@@ -358,6 +358,7 @@
+ #define PCI_CHIP_MGAG200_PCI	0x0520
+ #define PCI_CHIP_MGAG200	0x0521
+ #define PCI_CHIP_MGAG400	0x0525
++#define PCI_CHIP_MGAG550	0x2527
+ #define PCI_CHIP_IMPRESSION	0x0D10
+ #define PCI_CHIP_MGAG100_PCI	0x1000
+ #define PCI_CHIP_MGAG100	0x1001
+@@ -964,6 +965,7 @@
+ 				{PCI_CHIP_MGAG200_PCI,	"MGA G200 PCI",0},
+ 				{PCI_CHIP_MGAG200,	"MGA G200 AGP",0},
+ 				{PCI_CHIP_MGAG400,	"MGA G400 AGP",0},
++				{PCI_CHIP_MGAG550,	"MGA G550 AGP",0},
+ 				{PCI_CHIP_MGAG100_PCI,	"MGA G100 PCI",0},
+ 				{PCI_CHIP_MGAG100,	"MGA G100 AGP",0},
+ 				{0x0000,		NULL,0}}},
