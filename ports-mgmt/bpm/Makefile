@@ -7,7 +7,7 @@
 
 PORTNAME=	bpm
 PORTVERSION=	0.4.1b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 EXTRACT_SUFX=	.tgz
