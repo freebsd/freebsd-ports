@@ -6,7 +6,6 @@
     SUBDIR += dict
     SUBDIR += manpages
     SUBDIR += phone
-    SUBDIR += spinne
     SUBDIR += staroffice5
     SUBDIR += webalizer
     SUBDIR += webalizer2
