@@ -7,7 +7,7 @@
 
 PORTNAME=	pf_freebsd
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
@@ -47,12 +47,12 @@ PLIST_SUB+=	WITH_ALTQ="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Only for 5.0 and above"
+IGNORE=		"Only for 5.0 and above"
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile) && \
     (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile)
-BROKEN=	"Kernel source files required"
+IGNORE=		"Kernel source files required"
 .endif
 
 .if !defined(WITH_ALTQ) || (${WITH_ALTQ} != "yes")
