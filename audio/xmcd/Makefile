@@ -19,7 +19,7 @@ MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
 
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		flac:${PORTSDIR}/audio/flac
+		FLAC:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USE_REINPLACE=	yes
