@@ -1,5 +1,6 @@
 bin/bchscheme
 bin/scheme
+lib/mit-scheme/SRC/edwin/abbrev.bci
 lib/mit-scheme/SRC/edwin/ansi.bci
 lib/mit-scheme/SRC/edwin/argred.bci
 lib/mit-scheme/SRC/edwin/artdebug.bci
@@ -423,6 +424,7 @@ lib/mit-scheme/edwin/info/user.info-1.gz
 lib/mit-scheme/edwin/info/user.info-2.gz
 lib/mit-scheme/edwin/info/user.info-3.gz
 lib/mit-scheme/edwin/info/user.info-4.gz
+lib/mit-scheme/edwin/info/user.info-5.gz
 lib/mit-scheme/edwin/info/user.info.gz
 lib/mit-scheme/optiondb.scm
 lib/mit-scheme/options
@@ -445,6 +447,7 @@ lib/mit-scheme/sos/sos.bld
 lib/mit-scheme/utabmd.bin
 @dirrm lib/mit-scheme/sos
 @dirrm lib/mit-scheme/doc
+@dirrm lib/mit-scheme/edwin/etc
 @dirrm lib/mit-scheme/edwin/info
 @dirrm lib/mit-scheme/edwin
 @dirrm lib/mit-scheme/SRC/runtime
