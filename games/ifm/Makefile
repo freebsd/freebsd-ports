@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	ifm
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	games tk84
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/mapping-tools/ \
-		ftp://www.plover.net/if-archive/mapping-tools/ \
-		ftp://ftp.guetech.org/if-archive/mapping-tools/ \
-		ftp://mirror.holmoak.co.uk/if-archive/mapping-tools/ \
-		ftp://ftp.funet.fi/pub/misc/if-archive/mapping-tools/ \
-		ftp://wuarchive.wustl.edu/doc/misc/if-archive/mapping-tools/
+MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/ \
+		ftp://ftp.ifarchive.org/%SUBDIR%/ \
+		ftp://www.plover.net/%SUBDIR%/ \
+		ftp://ftp.guetech.org/%SUBDIR%/ \
+		ftp://mirror.holmoak.co.uk/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/misc/%SUBDIR%/ \
+		ftp://wuarchive.wustl.edu/doc/misc/%SUBDIR%/
+MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Fiction mapper and walkthrough generator

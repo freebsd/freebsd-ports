@@ -15,3 +15,5 @@ like.
 The Ifm task commands, if used, allow you to specify the order in which
 game-solving tasks must be done.  The Ifm program can then calculate and
 print different styles of walkthrough for the game.
+
+WWW: http://www.sentex.net/~dchapes/ifm/
