@@ -1,20 +1,103 @@
 %%RUBY_SITEARCHLIBDIR%%/RUDL.so
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bounce.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bounceme.bmp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/crap.xm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/crapola.bmp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/crapola.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bobs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bounce.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/collision.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/collision_2.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/crapola.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/draw.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/edit_field_test.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/events.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flxplay.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/framerate_test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/info.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/joystick.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mousecursor.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/music.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pixelaccess.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pong.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pong_bip.wav
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pong_blerpblerp.wav
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pong_bop.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/liquid.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/24p_copperplate_blue.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/adlibn.ttf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/bob.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/bounce.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_boom.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_crash.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_fire.mod
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_ha_ha_thump.mod
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_new_ship.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_ship_boom.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/crapola_shoot.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/goose.ttf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/hond.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/icon.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/liquid.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/player1.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/polarbear.ttf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/pong_bip.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/pong_blerpblerp.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/media/pong_bop.wav
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mousecursor.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/moveit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/movesp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/opengl.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pixelaccess.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/play_music.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pong.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rotozoom.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/Data06/NeHe.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/Data07/crate.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/Data08/glass.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/Data09/Star.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/Data12/cube.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/README.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson01.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson02.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson03.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson04.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson05.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson06.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson07.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson08.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson09.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubynehe/lesson12.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sfont.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stars.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/string_loading.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ttf.rbw
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/urlaubtris/interface.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/urlaubtris/urlaubtris.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/urlaubtris/utils.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/zoom.rbw
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/urlaubtris
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe/Data12
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe/Data09
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe/Data08
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe/Data07
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe/Data06
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rubynehe
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/media
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/INSTALL.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/WARRANTY.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/howto_install.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/howto_use.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/makedocs.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_audio.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_cdrom.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_events.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_joystick.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_keyboard.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_mouse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_movie.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_sfont.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_timer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_ttf.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video_bitmask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video_display_surface.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video_rect.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video_sdl_gfx.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rudl_video_surface.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sfont.gif
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
