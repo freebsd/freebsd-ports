@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1997/02/24 19:03:57 ache Exp $
+# $Id: Makefile,v 1.37 1997/03/02 18:27:34 andreas Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -11,6 +11,7 @@
     SUBDIR += comline
     SUBDIR += eperl
     SUBDIR += gn
+    SUBDIR += gwstat
     SUBDIR += harvest
     SUBDIR += libwww
     SUBDIR += linemode
