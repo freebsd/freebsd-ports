@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1998/04/21 15:12:23 kuriyama Exp $
+# $Id: Makefile,v 1.111 1998/04/22 14:22:11 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -54,6 +54,8 @@
     SUBDIR += magicpoint
     SUBDIR += man
     SUBDIR += man-doc
+    SUBDIR += mendexk-euc
+    SUBDIR += mendexk-sjis
     SUBDIR += mew
     SUBDIR += mh
     SUBDIR += mimekit
