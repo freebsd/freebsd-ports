@@ -1,0 +1,19 @@
+--- Bobcat.cxx	Thu Aug 12 04:48:58 1999
++++ /home/andy/tmp/wrk/Bobcat.cxx	Tue Aug 17 15:28:23 1999
+@@ -111,14 +111,14 @@
+     
+     glutIdleFunc ( InternalIdle );
+ 
+-    font = txfLoadFont ( "gameText.txf" );
++    font = txfLoadFont ( PREFIX "/share/glasteroids/gameText.txf" );
+ 
+     Menu = new BCmenu ( font );
+ 
+     InitTextures ( );    
+     InitOpenGL ( );
+ 
+-    LoadSplashScreen ( "textures/splash.raw" );
++    LoadSplashScreen ( PREFIX "/share/glasteroids/textures/splash.raw" );
+     
+     numActiveDust = 0;
+     for ( i = 0; i < MAX_ASTEROID_DUST_SYSTEMS; i++ )

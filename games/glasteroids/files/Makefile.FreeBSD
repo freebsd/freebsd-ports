@@ -1,0 +1,31 @@
+SRCS  = Glasteroids.cxx Bobcat.cxx MarchingCubes.cxx BCship.cxx BCobject.cxx\
+        BCcollide.cxx GlutFunctions.cxx BCmenu.cxx BCenemy.cxx TexFont.cxx \
+	SplashScreen.cxx
+OBJS  = Glasteroids.o   Bobcat.o   MarchingCubes.o   BCship.o   BCobject.o\
+        BCcollide.o   GlutFunctions.o   BCmenu.o   BCenemy.o   TexFont.o \
+	SplashScreen.o
+CXX  ?= c++
+PROG  = Glasteroids
+
+LIBES = -lglut -lMesaGLU -lMesaGL -lXmu -lX11 -lXext -lm -lXi
+
+INCDIR = -I/usr/X11R6/include
+LIBDIR = -L/usr/X11R6/lib
+
+PREFIX ?= /usr/X11R6
+
+.SUFFIXES: .cxx .o
+
+.cxx.o:
+	$(CXX) $(CXXFLAGS) -DPREFIX=\"${PREFIX}\" -c $< $(INCDIR)
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CXX) -o $(PROG) -Wall $(OBJS) $(LIBDIR) $(LIBES)
+
+clean:
+	rm -f *.o *~ $(PROG)
+
+depend:
+	makedepend -- $(INCDIR) -- $(SRCS)
