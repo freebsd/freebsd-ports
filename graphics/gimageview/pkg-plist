@@ -10,7 +10,7 @@ lib/gimageview/image_loader/libgimv_mag_loader.so
 lib/gimageview/image_loader/libgimv_pcx_loader.so
 lib/gimageview/image_loader/libgimv_pixbuf_loader.so
 lib/gimageview/image_loader/libgimv_png_loader.so
-%%WITH_LIBRSVG%%lib/gimageview/image_loader/libgimv_rsvg_loader.la
+%%WITH_LIBRSVG%%lib/gimageview/image_loader/libgimv_rsvg_loader.so
 lib/gimageview/image_loader/libgimv_tga_loader.so
 %%WITH_LIBWMF%%lib/gimageview/image_loader/libgimv_wmf_loader.so
 lib/gimageview/image_loader/libgimv_xbm_loader.so
