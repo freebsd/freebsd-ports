@@ -11,7 +11,7 @@ CATEGORIES=	russian net
 MASTER_SITES=	ftp://ftp.vsu.ru/pub/hardware/cisco/tacacs/
 DISTNAME=	tac+ia-0.96pre9.3
 
-MAINTAINER=	anton@urc.ac.ru
+MAINTAINER=	anton@chelcom.ru
 
 WRKSRC=		${WRKDIR}/tac+ia-0.96pre9.3
 
