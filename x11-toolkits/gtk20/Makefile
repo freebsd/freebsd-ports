@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.4,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
@@ -50,7 +50,8 @@ CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-PLIST_SUB=	GTK_VERSION="2.4.0"
+GTK_VERSION=	2.4.0
+PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
 
 pre-everything::
 .if !defined(WITH_DROPSHADOW)
@@ -76,6 +77,7 @@ pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
+	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
+	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK_VERSION}/engines
 
 .include <bsd.port.mk>
