@@ -1,0 +1,5 @@
+Cflow2vcg convert the result of the cflow utility in a VCG format. It offers
+the ability to view graphically the call-graph of sources, and import it in
+documentation.
+
+WWW: http://cflow2vcg.sourceforge.net/
