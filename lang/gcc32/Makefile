@@ -43,6 +43,9 @@ WITHOUT_LIBJAVA=yes
 .if ${ARCH} == "ia64"
 BROKEN=	gcj does not build.
 .endif
+.if ${ARCH} == "amd64"
+BROKEN=	linker: unrecognised emulation mode: elf_x86_64
+.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
