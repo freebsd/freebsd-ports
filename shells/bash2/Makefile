@@ -18,6 +18,7 @@ DISTFILES=      bash-2.03.tar.gz bash-doc-2.03.tar.gz
 MAINTAINER=	ache@FreeBSD.ORG
 
 GNU_CONFIGURE=	Yes
+CONFIGURE_ARGS= --with-installed-readline
 MAN1=		bash.1 bashbug.1
 
 pre-install:
