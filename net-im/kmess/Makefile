@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7.2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	kmess-0.9.7-2
 
 MAINTAINER=	perky@FreeBSD.org
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's/rightButtonClicked/contextMenuRequested/g' \
-		${WRKSRC}/kmess/kmessviewinterface.cpp
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
