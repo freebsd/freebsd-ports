@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.14 2002-05-10 14:16:18 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.15 2003-04-08 13:36:45 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -58,7 +58,10 @@ trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 \
 	     30 31
 
 echo -n "Building ports md5 index..."
-find ${PORTSDIR}/ -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
+find ${PORTSDIR}/ \
+    \( -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" \) \
+    -type f -mindepth 3 -maxdepth 3 | \
+    xargs cat | grep '^MD5 ('| sort -u > $FN_PORTS
 echo "Done."
 P_MD5_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
 echo "Found $P_MD5_COUNT md5 entries in your ports directory."
