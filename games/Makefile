@@ -90,6 +90,7 @@
     SUBDIR += garith
     SUBDIR += gcompris
     SUBDIR += gemdropx
+    SUBDIR += gl-117
     SUBDIR += glasteroids
     SUBDIR += glchess
     SUBDIR += gleyes
