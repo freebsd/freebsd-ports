@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -24,7 +24,7 @@ DISTFILES=	\
 		efs-1.16-pkg.tar.gz         time-1.09-pkg.tar.gz \
 		fsf-compat-1.07-pkg.tar.gz  viper-1.18-pkg.tar.gz \
 		mail-lib-1.28-pkg.tar.gz    net-utils-1.13-pkg.tar.gz \
-		mailcrypt-2.04-pkg.tar.gz   vc-1.21-pkg.tar.gz \
+		mailcrypt-2.04-pkg.tar.gz   vc-1.22-pkg.tar.gz \
 		sh-script-1.11-pkg.tar.gz   auctex-1.19-pkg.tar.gz \
 		ispell-1.18-pkg.tar.gz      pcl-cvs-1.41-pkg.tar.gz \
 		w3-1.15-pkg.tar.gz          texinfo-1.18-pkg.tar.gz \
