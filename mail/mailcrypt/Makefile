@@ -10,7 +10,7 @@ PORTVERSION= 	3.5.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/mailcrypt/
 
-MAINTAINER=	murray@cdrom.com
+MAINTAINER=	murray@FreeBSD.org
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 

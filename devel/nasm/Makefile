@@ -11,7 +11,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/assemblers
 
-MAINTAINER=	murray@cdrom.com
+MAINTAINER=	murray@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
