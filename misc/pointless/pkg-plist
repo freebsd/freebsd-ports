@@ -21,6 +21,7 @@ share/pointless/templates/html/lastsingleshot.html
 share/pointless/templates/html/singleshot.html
 share/pointless/pointless.xpm
 share/pointless/README
+share/pointless/python/modules/code.py
 share/pointless/python/modules/pllbasics.py
 share/pointless/python/modules/eps.py
 share/pointless/python/modules/gnuplot.py
