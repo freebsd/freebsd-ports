@@ -1,0 +1,8 @@
+--- config/Xsession.orig	Tue Sep 12 22:12:09 2000
++++ config/Xsession	Tue Sep 12 22:13:21 2000
+@@ -1,4 +1,4 @@
+-#!/bin/bash -login
++#!/bin/sh
+ # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
+ 
+ case $# in

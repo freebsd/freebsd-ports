@@ -1,0 +1,24 @@
+$NetBSD: patch-aa,v 1.1.1.1 1999/11/10 23:15:28 tron Exp $
+
+--- config/Makefile.in.orig	Thu Sep 30 01:15:45 1999
++++ config/Makefile.in	Tue Nov  9 23:30:28 1999
+@@ -243,6 +243,10 @@
+ 	    -e 's,\@sysconfdir\@,$(sysconfdir),g' \
+ 	    -e 's,\@localedir\@,$(localedir),g' \
+ 	    -e 's,\@authdir\@,$(authdir),g' \
++	    -e 's,\@GDMOWN\@,$(GDMOWN),g' \
++	    -e 's,\@GDMGRP\@,$(GDMGRP),g' \
++	    -e 's,\@X11BASE\@,$(X11BASE),g' \
++	    -e 's,\@LOCALBASE\@,$(LOCALBASE),g' \
+ 	    < $(srcdir)/gdm.conf.in > gdm.conf.tmp; \
+ 	mv -f gdm.conf.tmp gdm.conf
+ 
+@@ -300,7 +304,7 @@
+ 	fi
+ 	if test '!' -d $(authdir); then \
+ 		$(mkinstalldirs) $(authdir); \
+-		chown gdm.gdm $(authdir); \
++		chown $(GDMOWN):$(GDMGRP) $(authdir); \
+ 		chmod 750 $(authdir); \
+ 	fi
+ 

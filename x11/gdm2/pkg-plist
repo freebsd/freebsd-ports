@@ -1,0 +1,45 @@
+bin/gdm
+bin/gdmchooser
+bin/gdmlogin
+etc/gdm/Init/Default
+etc/gdm/PostSession/Default
+etc/gdm/PreSession/Default
+etc/gdm/Sessions/Gnome
+etc/gdm/Sessions/Xsession
+etc/gdm/gdm.conf
+etc/gdm/gnomerc
+etc/gdm/locale.alias
+share/gnome/help/gdm/C/configuration.html
+share/gnome/help/gdm/C/daemonov.html
+share/gnome/help/gdm/C/docbook.css
+share/gnome/help/gdm/C/f21.html
+share/gnome/help/gdm/C/gdm.html
+share/gnome/help/gdm/C/index.html
+share/gnome/help/gdm/C/intro.html
+share/gnome/help/gdm/C/ln15.html
+share/gnome/help/gdm/C/x135.html
+share/gnome/help/gdm/C/x60.html
+share/gnome/help/gdm/C/x69.html
+share/gnome/pixmaps/gdm.xpm
+share/gnome/pixmaps/nobody.png
+share/gnome/pixmaps/nohost.png
+share/locale/da/LC_MESSAGES/gdm.mo
+share/locale/de/LC_MESSAGES/gdm.mo
+share/locale/es/LC_MESSAGES/gdm.mo
+share/locale/et/LC_MESSAGES/gdm.mo
+share/locale/fr/LC_MESSAGES/gdm.mo
+share/locale/ko/LC_MESSAGES/gdm.mo
+share/locale/no/LC_MESSAGES/gdm.mo
+share/locale/pl/LC_MESSAGES/gdm.mo
+share/locale/pt_BR/LC_MESSAGES/gdm.mo
+share/locale/sv/LC_MESSAGES/gdm.mo
+@dirrm etc/gdm/Init
+@dirrm etc/gdm/PostSession
+@dirrm etc/gdm/PreSession
+@dirrm etc/gdm/Sessions
+@dirrm etc/gdm
+@dirrm etc/pam.d
+@dirrm share/gnome/gdm
+@dirrm share/gnome/help/gdm/C/images
+@dirrm share/gnome/help/gdm/C
+@dirrm share/gnome/help/gdm

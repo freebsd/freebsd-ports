@@ -1,0 +1,22 @@
+$NetBSD: patch-ad,v 1.1.1.1 1999/11/10 23:15:28 tron Exp $
+
+--- gui/gdmlogin.c.orig	Thu Sep 30 00:56:35 1999
++++ gui/gdmlogin.c	Wed Nov 10 01:30:54 1999
+@@ -1007,7 +1007,7 @@
+     gint cols, rows;
+     struct stat statbuf;
+ 
+-    if(GdmGtkRC)
++    if(*GdmGtkRC)
+ 	gtk_rc_parse (GdmGtkRC);
+ 
+     rootwin = gdk_window_foreign_new (GDK_ROOT_WINDOW ());
+@@ -1083,7 +1083,7 @@
+ 	gtk_widget_show (GTK_WIDGET (item));
+     }
+ 
+-    if (GdmIcon) {
++    if (*GdmIcon) {
+ 	if (access (GdmIcon, R_OK)) {
+ 	    syslog (LOG_WARNING, _("Can't open icon file: %s. Suspending iconify feature!"), GdmIcon);
+ 	}

@@ -1,0 +1,16 @@
+--- config/Gnome.in.orig	Mon Apr 19 07:08:08 1999
++++ config/Gnome.in	Wed Sep 13 01:47:51 2000
+@@ -1,4 +1,4 @@
+-#!/bin/bash -login
++#!/bin/sh
+ 
+ for errfile in "$HOME/.gnomerc-errors" "${TMPDIR-/tmp}/gnomerc-$USER" "/tmp/gnomerc-$USER"
+ do
+@@ -13,6 +13,6 @@
+ if [ -x "$HOME/.gnomerc" ]; then
+ 	exec "$HOME/.gnomerc"
+ else
+-	exec "@sysconfdir@/gnomerc"
++	exec "@sysconfdir@/gdm/gnomerc"
+ fi
+ 
