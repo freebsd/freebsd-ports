@@ -5,15 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=		kimdaba
-PORTVERSION=		1.1
-PORTREVISION=		2
+PORTVERSION=		2.0
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
 
-EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+RUN_DEPENDS=		kipidcrawclient:${PORTSDIR}/graphics/kipi-plugins
+BUILD_DEPENDS=		${RUN_DEPENDS}
+
+EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
