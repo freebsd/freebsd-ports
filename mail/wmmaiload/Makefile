@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmaiload
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
