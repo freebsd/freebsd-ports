@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -51,16 +51,11 @@ pre-configure:
 	@${ECHO} ""
 
 post-install:
-	${MKDIR} ${PREFIX}/share/snort
-.for i in CREDITS RULES.SAMPLE USAGE attack-responses.rules backdoor.rules \
-	bad-traffic.rules ddos.rules dns.rules dos.rules exploit.rules \
-	finger.rules ftp.rules icmp.rules icmp-info.rules info.rules local.rules \
-	misc.rules netbios.rules policy.rules porn.rules rpc.rules rservices.rules \
-	scan.rules shellcode.rules smtp.rules sql.rules telnet.rules tftp.rules \
-	virus.rules web-attacks.rules web-cgi.rules web-coldfusion.rules \
-	web-frontpage.rules web-iis.rules web-misc.rules x11.rules
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/snort
-.endfor
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CREDITS ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/RULES.SAMPLE ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/USAGE ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.rules ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/classification.config ${PREFIX}/etc/classification.config-sample
 	${INSTALL_DATA} ${WRKSRC}/snort.conf ${PREFIX}/etc/snort.conf-sample
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
