@@ -1,34 +1,33 @@
 # New ports collection makefile for:	PostgreSQL-j
-# Version required:	6.4.2+Multibyte-patch
-# Date created:		25 Nov 1998
+# Version required:	6.5.3
+# Date created:		09 Nov 1999
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	postgresql-6.4.2
-PKGNAME=	ja-postgresql-6.4.2
+DISTNAME=	postgresql-6.5.3
+PKGNAME=	ja-postgresql-6.5.3
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
-		ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4.2/
-
-PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4.2/patches/
-PATCHFILES=	jumbo-990217.patch.gz
+		ftp://ftp.sra.co.jp/pub/cmd/postgres/6.5.3/
 
 MAINTAINER=	ichiro@ichiro.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E -p1
-PLISTS=		PLIST
+PLISTS=
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
 .if defined(USE_TCL)
 TCL_INCDIR=	${PREFIX}/include/tcl8.0jp
 TK_INCDIR=	${PREFIX}/include/tk8.0jp
-MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR}
-WITH_TCL=	--with-tcl --with-tclconfig="${PREFIX}/lib/tcl8.0jp ${PREFIX}/lib/tk8.0jp"
+MAKE_ENV=	USE_TCL=true USE_TK=true TCL_INCDIR=${TCL_INCDIR}
+WITH_TCL=	--with-tcl
+WITH_TK=	--with-tk
+WITH_TCLCONFIG=	--with-tclconfig=${PREFIX}/lib/tcl8.0jp
+WITH_TKCONFIG=	--with-tkconfig=${PREFIX}/lib/tk8.0jp
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
 		tk80jp.1:${PORTSDIR}/japanese/tk80
 PLISTS+=	PLIST.tcl
@@ -38,9 +37,11 @@ WITH_MB=	--with-mb=${MULTIBYTE}
 .endif
 .if defined(USE_PERL)
 WITH_PERL=      --with-perl
+PLISTS+=	PLIST.pl
 .endif
 .if defined(USE_ODBC)
 WITH_ODBC=      --with-odbc
+PLISTS+=	PLIST.odbc
 .endif
 
 NO_PACKAGE=	"Requires ${PGSQL_UID} uid"
@@ -50,7 +51,9 @@ MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX}/${INSTALL_DIR} \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL}\
+		${WITH_TCL} ${WITH_TCLCONFIG} \
+		${WITH_TK} ${WITH_TKCONFIG} \
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
 		--with-libraries=${PREFIX}/lib \
 		${WITH_MB} ${WITH_PERL} ${WITH_ODBC}
 
@@ -110,10 +113,18 @@ post-build:
 	@ ${ECHO} "Detailed instructions, see INSTALL file under ${WRKDIR}...  "
 	@ ${ECHO} "------------------------------------------------------------"
 	@${RM} -f ${WRKDIR}/PLIST
-.for i in ${PLISTS}
+.for i in ${PLISTS} PLIST
 	${CAT} ${PKGDIR}/${i} >> ${WRKDIR}/PLIST
 .endfor
-
+.if defined(USE_TCL)
+	${CAT} ${PKGDIR}/PLIST.tcl.dirrm >> ${WRKDIR}/PLIST
+.endif
+.if defined(USE_ODBC)
+	${CAT} ${PKGDIR}/PLIST.odbc.dirrm >> ${WRKDIR}/PLIST
+	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
+.else
+	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
+.endif
 pre-install:
 .if defined(PACKAGE_BUILDING)
 	${RM} -rf ${PREFIX}/${INSTALL_DIR}
@@ -157,18 +168,14 @@ post-install:
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/${INSTALL_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${INSTALL_DIR}
-	${CP} -r ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/${INSTALL_DIR}
-.for f in . src src/sgml src/sgml/ref src/graphics 
-	@${RM} -r ${PREFIX}/share/doc/${INSTALL_DIR}/$f/CVS
+	${CP} -R ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/${INSTALL_DIR}
+.for f in . src src/sgml src/sgml/ref src/graphics
+	@${RM} -rf ${PREFIX}/share/doc/${INSTALL_DIR}/$f/CVS
+	@${RM} -f ${PREFIX}/share/doc/${INSTALL_DIR}/$f/#cvs*
 .endfor
 .endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
 .endif
-#.if (${PORTOBJFORMAT} == "elf")
-#	@${ECHO} "Hack for ELF library..."
-#	@${RM} ${PREFIX}/${INSTALL_DIR}/lib/libpg.so.2.0
-#	@${RM} ${PREFIX}/${INSTALL_DIR}/lib/libpg++.so.2.0
-#.endif
 
 .include <bsd.port.post.mk>

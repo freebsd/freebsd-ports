@@ -1,0 +1,14 @@
+--- template/freebsd.orig	Sat Sep 18 20:12:51 1998
++++ template/freebsd	at Wed 16 20:13:06 1999
+@@ -1,9 +1,9 @@
+ AROPT:cq
+ SHARED_LIB:-fpic -DPIC
+-CFLAGS:-O2 -m486 -pipe
++CFLAGS:-pipe -O2
+ SRCH_INC:
+ SRCH_LIB:
+-USE_LOCALE:no
++USE_LOCALE:yes
+ DLSUFFIX:.so
+ YFLAGS:-d
+ YACC:bison -y

@@ -1,14 +1,13 @@
---- template/freebsd.orig	Sat Jun 14 20:12:51 1997
-+++ template/freebsd	Sat Jun 14 20:13:06 1997
-@@ -1,9 +1,9 @@
- AROPT:cq
- SHARED_LIB:-fpic -DPIC
--CFLAGS:-O2 -m486 -pipe
-+CFLAGS:-pipe -O2
- SRCH_INC:
- SRCH_LIB:
--USE_LOCALE:no
-+USE_LOCALE:yes
- DLSUFFIX:.so
- YFLAGS:-d
- YACC:bison -y
+--- pl/tcl/Makefile.org	Mon Dec 14 08:47:17 1998
++++ pl/tcl/Makefile	Thu Feb 25 22:20:28 1999
+@@ -55,8 +55,8 @@
+ SHLIB_EXTRA_LIBS=
+ endif
+ 
+-%$(TCL_SHLIB_SUFFIX):	%.o
+-	$(TCL_SHLIB_LD) -o $@ $< $(TCL_LIB_SPEC) $(SHLIB_EXTRA_LIBS)
++#%$(TCL_SHLIB_SUFFIX):	%.o
++#	$(TCL_SHLIB_LD) -o $@ $< $(TCL_LIB_SPEC) $(SHLIB_EXTRA_LIBS)
+ 
+ 
+ #
