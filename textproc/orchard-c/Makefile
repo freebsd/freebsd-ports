@@ -7,7 +7,7 @@
 
 PORTNAME=	orchard-c
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	orchard
@@ -15,7 +15,7 @@ DISTNAME=	Orchard-C-${PORTVERSION}
 
 MAINTAINER=	skv@protey.ru
 
-LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		gc:${PORTSDIR}/devel/boehm-gc
 
 USE_AUTOCONF=	yes

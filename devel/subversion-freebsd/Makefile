@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	r2927	# 0.14.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/690/
 
@@ -13,7 +14,7 @@ MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.21:${PORTSDIR}/www/neon \
-		expat.3:${PORTSDIR}/textproc/expat2 \
+		expat.4:${PORTSDIR}/textproc/expat2 \
 		apr:${PORTSDIR}/devel/apr
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils

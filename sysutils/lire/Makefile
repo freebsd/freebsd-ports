@@ -13,13 +13,14 @@
 
 PORTNAME=	lire
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://logreport.org/pub/
 
 MAINTAINER=	edwin@mavetju.org
 
 LIB_DEPENDS=	\
-	expat.3:${PORTSDIR}/textproc/expat2 \
+	expat.4:${PORTSDIR}/textproc/expat2 \
 	xml2.5:${PORTSDIR}/textproc/libxml2 \
 	xslt.1:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	\

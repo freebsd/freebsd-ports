@@ -7,7 +7,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
@@ -16,7 +16,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes

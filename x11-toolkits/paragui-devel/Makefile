@@ -8,7 +8,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		expat.3:${PORTSDIR}/textproc/expat2
+		expat.4:${PORTSDIR}/textproc/expat2
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

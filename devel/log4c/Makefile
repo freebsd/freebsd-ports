@@ -8,7 +8,7 @@
 
 PORTNAME=	log4c
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cimai.com/opensource/log4c/
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes

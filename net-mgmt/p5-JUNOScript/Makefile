@@ -7,7 +7,7 @@
 
 PORTNAME=		JUNOScript
 PORTVERSION=		5.3R2.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net perl5
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://e.wheel.dk/~jesper/
@@ -18,7 +18,7 @@ DISTNAME=		junoscript-perl-${PORTVERSION}-domestic
 MAINTAINER=		jesper@FreeBSD.org
 
 PERL_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	${PERL_BASE}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
