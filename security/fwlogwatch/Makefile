@@ -29,4 +29,7 @@ post-patch:
 		s,/usr/local,${PREFIX},g" ${WRKSRC}/main.h
 	@${PERL} -pi -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
 
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/fwlogwatch.sh.sample ${PREFIX}/etc/rc.d
+
 .include <bsd.port.mk>

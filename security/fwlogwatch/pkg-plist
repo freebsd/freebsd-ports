@@ -1,5 +1,6 @@
 etc/fwlogwatch.config
 etc/fwlogwatch.template
+etc/rc.d/fwlogwatch.sh.sample
 sbin/fwlogwatch
 sbin/fwlw_notify
 sbin/fwlw_respond
