@@ -1,0 +1,30 @@
+--- Makefile.orig	Sat Dec 14 08:57:02 2002
++++ Makefile	Sun Dec 29 22:35:20 2002
+@@ -56,12 +56,12 @@
+ SHELL=/bin/sh
+ 
+ # Installation variables.  Spaces OK, only dir create and file copy operations.
+-runinst_prefix=/usr
+-devinst_prefix=/usr
++runinst_prefix=${PREFIX}
++devinst_prefix=${PREFIX}
+ 
+ bininst = ${runinst_prefix}/bin
+ libinst = ${devinst_prefix}/lib
+-incinst = ${devinst_prefix}/include
++incinst = ${devinst_prefix}/include/tidy
+ maninst = ${devinst_prefix}/man
+ 
+ # Internal variables. - No spaces allowed: libtool chokes on spaces in directory names.
+@@ -74,8 +74,9 @@
+ BINDIR = ${TOPDIR}/bin
+ 
+ # CFLAGS etc..
+-CC= gcc
+-CFLAGS= -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
++#CC= gcc
++#CFLAGS= -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
++CFLAGS+= -I $(INCDIR)
+ 
+ # OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
+ ifdef SUPPORT_UTF16_ENCODINGS

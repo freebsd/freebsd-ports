@@ -6,30 +6,58 @@
 #
 
 PORTNAME=	tidy
-PORTVERSION=	20000804
-PORTREVISION=	2
+PORTVERSION=	030122
 CATEGORIES=	www
-MASTER_SITES=	http://www.w3.org/People/Raggett/
-DISTNAME=	tidy4aug00
+MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
+		http://tidy.sourceforge.net/docs/
+MASTER_SITE_SUBDIR=	. old
+PKGNAMESUFFIX=	-devel
+DISTNAME=	tidy_src
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	saken@hotel.rmta.org
+MAINTAINER=	thierry@pompo.net
 
-MAN1=		tidy.1
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-ALL_TARGET=	tidy
+USE_GMAKE=	yes
 
-DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
+#MAN1=		tidy.1
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tidy ${PREFIX}/bin/tidy
-	@${INSTALL_MAN}	${WRKSRC}/man_page.txt	${PREFIX}/man/man1/tidy.1
+.if !defined(NOPORTDOCS)
+DOCVER=		021222
+DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}
+DOCFILES=	Overview.html faq.html grid.gif pending.html	\
+		quickref.html release-notes.html tidy.css tidy.gif
+APIEXT=		css html js png
+.endif
+
+BIN2STRIP=	tidy tab2space
+
+pre-install:
+	@if [ -f ${LOCALBASE}/bin/tidy ]; then \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "Conflict: please deinstall the port bin/tidy." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	fi
+
+post-install:
+.for pgm in ${BIN2STRIP}
+	@${STRIP_CMD} ${PREFIX}/bin/${pgm}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${PREFIX}/share/doc/tidy
+	@${MKDIR} ${DOCSDIR}
 .for docfile in ${DOCFILES}
-	@${INSTALL_MAN} ${WRKSRC}/${docfile} ${PREFIX}/share/doc/tidy
+	@${INSTALL_MAN} ${WRKSRC}/htmldoc/${docfile} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${DOCSDIR}/api
+.for ext in ${APIEXT}
+	@${CP} -p ${WRKSRC}/htmldoc/api/*.${ext} ${DOCSDIR}/api
+.endfor
+	@${CHOWN} -R ${MANOWN}:${MANGRP} ${DOCSDIR}/api
+	@${ECHO_MSG} "===>   Documentation installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>
