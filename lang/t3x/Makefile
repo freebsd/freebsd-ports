@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	6.10.1
-DISTNAME=	t3x-6A1
+PORTVERSION=	6.10.2
 CATEGORIES=	lang devel
 MASTER_SITES= 	http://www.t3x.org/Compiler/ \
 		http://www.homepages.de/home/nmh/T3X/Compiler/
+DISTNAME=	t3x-6A2
 
 MAINTAINER=	nmh@t3x.org
 
