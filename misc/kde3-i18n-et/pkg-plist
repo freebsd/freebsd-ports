@@ -58,12 +58,9 @@ share/locale/et/LC_MESSAGES/ark.mo
 share/locale/et/LC_MESSAGES/artsbuilder.mo
 share/locale/et/LC_MESSAGES/artscontrol.mo
 share/locale/et/LC_MESSAGES/babelfish.mo
-share/locale/et/LC_MESSAGES/caitoo.mo
 share/locale/et/LC_MESSAGES/cervisia.mo
 share/locale/et/LC_MESSAGES/childpanelextension.mo
 share/locale/et/LC_MESSAGES/clockapplet.mo
-share/locale/et/LC_MESSAGES/colfind.mo
-share/locale/et/LC_MESSAGES/columbo.mo
 share/locale/et/LC_MESSAGES/cupsdconf.mo
 share/locale/et/LC_MESSAGES/desktop.mo
 share/locale/et/LC_MESSAGES/dirfilterplugin.mo
@@ -83,7 +80,6 @@ share/locale/et/LC_MESSAGES/kappfinder.mo
 share/locale/et/LC_MESSAGES/karm.mo
 share/locale/et/LC_MESSAGES/kasbarextension.mo
 share/locale/et/LC_MESSAGES/kasteroids.mo
-share/locale/et/LC_MESSAGES/katalog.mo
 share/locale/et/LC_MESSAGES/kate.mo
 share/locale/et/LC_MESSAGES/katehelloworld.mo
 share/locale/et/LC_MESSAGES/katehtmltools.mo
@@ -93,11 +89,9 @@ share/locale/et/LC_MESSAGES/katepart.mo
 share/locale/et/LC_MESSAGES/kateprojectmanager.mo
 share/locale/et/LC_MESSAGES/katetextfilter.mo
 share/locale/et/LC_MESSAGES/katomic.mo
-share/locale/et/LC_MESSAGES/kautorun.mo
 share/locale/et/LC_MESSAGES/kbabel.mo
 share/locale/et/LC_MESSAGES/kbackgammon.mo
 share/locale/et/LC_MESSAGES/kbattleship.mo
-share/locale/et/LC_MESSAGES/kbiff.mo
 share/locale/et/LC_MESSAGES/kblackbox.mo
 share/locale/et/LC_MESSAGES/kbounce.mo
 share/locale/et/LC_MESSAGES/kbugbuster.mo
@@ -178,7 +172,6 @@ share/locale/et/LC_MESSAGES/kdmgreet.mo
 share/locale/et/LC_MESSAGES/kdvi.mo
 share/locale/et/LC_MESSAGES/kedit.mo
 share/locale/et/LC_MESSAGES/kenolaba.mo
-share/locale/et/LC_MESSAGES/keystone.mo
 share/locale/et/LC_MESSAGES/kfax.mo
 share/locale/et/LC_MESSAGES/kfifteenapplet.mo
 share/locale/et/LC_MESSAGES/kfile_m3u.mo
@@ -201,7 +194,6 @@ share/locale/et/LC_MESSAGES/khotkeys.mo
 share/locale/et/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/et/LC_MESSAGES/kicker.mo
 share/locale/et/LC_MESSAGES/kiconedit.mo
-share/locale/et/LC_MESSAGES/kikbd.mo
 share/locale/et/LC_MESSAGES/kio_audiocd.mo
 share/locale/et/LC_MESSAGES/kio_finger.mo
 share/locale/et/LC_MESSAGES/kio_floppy.mo
@@ -244,7 +236,6 @@ share/locale/et/LC_MESSAGES/knewsticker.mo
 share/locale/et/LC_MESSAGES/knode.mo
 share/locale/et/LC_MESSAGES/knotes.mo
 share/locale/et/LC_MESSAGES/knotify.mo
-share/locale/et/LC_MESSAGES/knu.mo
 share/locale/et/LC_MESSAGES/kodo.mo
 share/locale/et/LC_MESSAGES/kolourpicker.mo
 share/locale/et/LC_MESSAGES/kompare.mo

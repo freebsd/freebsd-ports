@@ -435,10 +435,16 @@ share/doc/HTML/sk/kpager/index.cache.bz2
 share/doc/HTML/sk/kpager/index.docbook
 share/doc/HTML/sk/kpager/screenshot.png
 share/doc/HTML/sk/kpager/settings.png
+share/doc/HTML/sk/kpaint/common
+share/doc/HTML/sk/kpaint/index.cache.bz2
+share/doc/HTML/sk/kpaint/index.docbook
 share/doc/HTML/sk/kreversi/common
 share/doc/HTML/sk/kreversi/index.cache.bz2
 share/doc/HTML/sk/kreversi/index.docbook
 share/doc/HTML/sk/kreversi/kreversi1.png
+share/doc/HTML/sk/kruler/common
+share/doc/HTML/sk/kruler/index.cache.bz2
+share/doc/HTML/sk/kruler/index.docbook
 share/doc/HTML/sk/ksame/common
 share/doc/HTML/sk/ksame/index.cache.bz2
 share/doc/HTML/sk/ksame/index.docbook
@@ -501,7 +507,6 @@ share/locale/sk/LC_MESSAGES/ark.mo
 share/locale/sk/LC_MESSAGES/artsbuilder.mo
 share/locale/sk/LC_MESSAGES/artscontrol.mo
 share/locale/sk/LC_MESSAGES/babelfish.mo
-share/locale/sk/LC_MESSAGES/caitoo.mo
 share/locale/sk/LC_MESSAGES/cervisia.mo
 share/locale/sk/LC_MESSAGES/childpanelextension.mo
 share/locale/sk/LC_MESSAGES/clockapplet.mo
@@ -532,7 +537,6 @@ share/locale/sk/LC_MESSAGES/kappfinder.mo
 share/locale/sk/LC_MESSAGES/karm.mo
 share/locale/sk/LC_MESSAGES/kasbarextension.mo
 share/locale/sk/LC_MESSAGES/kasteroids.mo
-share/locale/sk/LC_MESSAGES/katalog.mo
 share/locale/sk/LC_MESSAGES/kate.mo
 share/locale/sk/LC_MESSAGES/katehelloworld.mo
 share/locale/sk/LC_MESSAGES/katehtmltools.mo
@@ -543,11 +547,9 @@ share/locale/sk/LC_MESSAGES/kateprojectmanager.mo
 share/locale/sk/LC_MESSAGES/katetextfilter.mo
 share/locale/sk/LC_MESSAGES/katexmltools.mo
 share/locale/sk/LC_MESSAGES/katomic.mo
-share/locale/sk/LC_MESSAGES/kautorun.mo
 share/locale/sk/LC_MESSAGES/kbabel.mo
 share/locale/sk/LC_MESSAGES/kbackgammon.mo
 share/locale/sk/LC_MESSAGES/kbattleship.mo
-share/locale/sk/LC_MESSAGES/kbiff.mo
 share/locale/sk/LC_MESSAGES/kblackbox.mo
 share/locale/sk/LC_MESSAGES/kbounce.mo
 share/locale/sk/LC_MESSAGES/kbugbuster.mo
@@ -645,7 +647,6 @@ share/locale/sk/LC_MESSAGES/kfile_ps.mo
 share/locale/sk/LC_MESSAGES/kfile_wav.mo
 share/locale/sk/LC_MESSAGES/kfind.mo
 share/locale/sk/LC_MESSAGES/kfindpart.mo
-share/locale/sk/LC_MESSAGES/kfinger.mo
 share/locale/sk/LC_MESSAGES/kfloppy.mo
 share/locale/sk/LC_MESSAGES/kfmclient.mo
 share/locale/sk/LC_MESSAGES/kfmexec.mo
@@ -661,7 +662,6 @@ share/locale/sk/LC_MESSAGES/khotkeys.mo
 share/locale/sk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sk/LC_MESSAGES/kicker.mo
 share/locale/sk/LC_MESSAGES/kiconedit.mo
-share/locale/sk/LC_MESSAGES/kikbd.mo
 share/locale/sk/LC_MESSAGES/kio_audiocd.mo
 share/locale/sk/LC_MESSAGES/kio_finger.mo
 share/locale/sk/LC_MESSAGES/kio_floppy.mo
@@ -708,7 +708,6 @@ share/locale/sk/LC_MESSAGES/knewsticker.mo
 share/locale/sk/LC_MESSAGES/knode.mo
 share/locale/sk/LC_MESSAGES/knotes.mo
 share/locale/sk/LC_MESSAGES/knotify.mo
-share/locale/sk/LC_MESSAGES/knu.mo
 share/locale/sk/LC_MESSAGES/kodo.mo
 share/locale/sk/LC_MESSAGES/kolourpicker.mo
 share/locale/sk/LC_MESSAGES/kompare.mo
@@ -760,7 +759,6 @@ share/locale/sk/LC_MESSAGES/ksysguard.mo
 share/locale/sk/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/sk/LC_MESSAGES/ksystraycmd.mo
 share/locale/sk/LC_MESSAGES/ksysv.mo
-share/locale/sk/LC_MESSAGES/ktalk.mo
 share/locale/sk/LC_MESSAGES/ktalkd.mo
 share/locale/sk/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/sk/LC_MESSAGES/kteatime.mo
@@ -840,7 +838,9 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kshisen
 @dirrm share/doc/HTML/sk/kscore
 @dirrm share/doc/HTML/sk/ksame
+@dirrm share/doc/HTML/sk/kruler
 @dirrm share/doc/HTML/sk/kreversi
+@dirrm share/doc/HTML/sk/kpaint
 @dirrm share/doc/HTML/sk/kpager
 @dirrm share/doc/HTML/sk/kooka
 @dirrm share/doc/HTML/sk/konsole

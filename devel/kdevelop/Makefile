@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	2.1.1
+PORTVERSION=	${KDE_VERSION:S/3.0/2.1/g}
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/3.0.1/src
+MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
-DISTNAME=	${PORTNAME}-${PORTVERSION}_for_KDE_3.0
 
 MAINTAINER?=	kde@FreeBSD.org
 
@@ -26,13 +26,16 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
+KDE_PATCHFROM_VER=	${KDE_ORIGVER:S/3.0/2.1/g}
+KDE_PATCHTO_VER=	${KDE_VERSION:S/3.0/2.1/g}
+KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.0
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt/html
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)

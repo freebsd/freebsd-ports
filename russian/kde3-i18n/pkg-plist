@@ -121,12 +121,6 @@ share/doc/HTML/ru/kicker/index.docbook
 share/doc/HTML/ru/kmix/common
 share/doc/HTML/ru/kmix/index.cache.bz2
 share/doc/HTML/ru/kmix/index.docbook
-share/doc/HTML/ru/knu/knu-config.png
-share/doc/HTML/ru/knu/knu-finger.png
-share/doc/HTML/ru/knu/knu-host.png
-share/doc/HTML/ru/knu/knu-mtr.png
-share/doc/HTML/ru/knu/knu-ping.png
-share/doc/HTML/ru/knu/knu-traceroute.png
 share/doc/HTML/ru/kodo/common
 share/doc/HTML/ru/kodo/index.cache.bz2
 share/doc/HTML/ru/kodo/index.docbook
@@ -215,7 +209,6 @@ share/locale/ru/LC_MESSAGES/katomic.mo
 share/locale/ru/LC_MESSAGES/kbabel.mo
 share/locale/ru/LC_MESSAGES/kbackgammon.mo
 share/locale/ru/LC_MESSAGES/kbattleship.mo
-share/locale/ru/LC_MESSAGES/kbiff.mo
 share/locale/ru/LC_MESSAGES/kblackbox.mo
 share/locale/ru/LC_MESSAGES/kbounce.mo
 share/locale/ru/LC_MESSAGES/kcalc.mo
@@ -310,7 +303,6 @@ share/locale/ru/LC_MESSAGES/kfile_png.mo
 share/locale/ru/LC_MESSAGES/kfile_ps.mo
 share/locale/ru/LC_MESSAGES/kfind.mo
 share/locale/ru/LC_MESSAGES/kfindpart.mo
-share/locale/ru/LC_MESSAGES/kfinger.mo
 share/locale/ru/LC_MESSAGES/kfloppy.mo
 share/locale/ru/LC_MESSAGES/kfmclient.mo
 share/locale/ru/LC_MESSAGES/kfmexec.mo
@@ -365,7 +357,6 @@ share/locale/ru/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ru/LC_MESSAGES/kmix.mo
 share/locale/ru/LC_MESSAGES/kmoon.mo
 share/locale/ru/LC_MESSAGES/kmyapp.mo
-share/locale/ru/LC_MESSAGES/knetmgr.mo
 share/locale/ru/LC_MESSAGES/knewsticker.mo
 share/locale/ru/LC_MESSAGES/knode.mo
 share/locale/ru/LC_MESSAGES/knotes.mo
@@ -388,7 +379,6 @@ share/locale/ru/LC_MESSAGES/kpartsaver.mo
 share/locale/ru/LC_MESSAGES/kpat.mo
 share/locale/ru/LC_MESSAGES/kpersonalizer.mo
 share/locale/ru/LC_MESSAGES/kpf.mo
-share/locale/ru/LC_MESSAGES/kphone.mo
 share/locale/ru/LC_MESSAGES/kpilot.mo
 share/locale/ru/LC_MESSAGES/kpixmap2bitmap.mo
 share/locale/ru/LC_MESSAGES/kpm.mo
@@ -489,7 +479,6 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kppp
 @dirrm share/doc/HTML/ru/kpager
 @dirrm share/doc/HTML/ru/kodo
-@dirrm share/doc/HTML/ru/knu
 @dirrm share/doc/HTML/ru/kmix
 @dirrm share/doc/HTML/ru/kicker-applets
 @dirrm share/doc/HTML/ru/kicker

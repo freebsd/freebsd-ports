@@ -10,9 +10,6 @@ share/doc/HTML/hu/ark/index.docbook
 share/doc/HTML/hu/artsbuilder/common
 share/doc/HTML/hu/artsbuilder/index.cache.bz2
 share/doc/HTML/hu/artsbuilder/index.docbook
-share/doc/HTML/hu/columbo/common
-share/doc/HTML/hu/columbo/index.cache.bz2
-share/doc/HTML/hu/columbo/index.docbook
 share/doc/HTML/hu/common/1.png
 share/doc/HTML/hu/common/10.png
 share/doc/HTML/hu/common/2.png
@@ -394,9 +391,6 @@ share/doc/HTML/hu/kpoker/index.docbook
 share/doc/HTML/hu/kreversi/common
 share/doc/HTML/hu/kreversi/index.cache.bz2
 share/doc/HTML/hu/kreversi/index.docbook
-share/doc/HTML/hu/krn/common
-share/doc/HTML/hu/krn/index.cache.bz2
-share/doc/HTML/hu/krn/index.docbook
 share/doc/HTML/hu/kruler/common
 share/doc/HTML/hu/kruler/index.cache.bz2
 share/doc/HTML/hu/kruler/index.docbook
@@ -472,25 +466,18 @@ share/doc/HTML/hu/lskat/index.docbook
 share/doc/HTML/hu/noatun/common
 share/doc/HTML/hu/noatun/index.cache.bz2
 share/doc/HTML/hu/noatun/index.docbook
-share/locale/hu/LC_MESSAGES/Kiten.mo
 share/locale/hu/LC_MESSAGES/aktion.mo
 share/locale/hu/LC_MESSAGES/amor.mo
 share/locale/hu/LC_MESSAGES/appletproxy.mo
 share/locale/hu/LC_MESSAGES/ark.mo
 share/locale/hu/LC_MESSAGES/artsbuilder.mo
 share/locale/hu/LC_MESSAGES/artscontrol.mo
-share/locale/hu/LC_MESSAGES/atlantik.mo
 share/locale/hu/LC_MESSAGES/babelfish.mo
-share/locale/hu/LC_MESSAGES/caitoo.mo
 share/locale/hu/LC_MESSAGES/cervisia.mo
 share/locale/hu/LC_MESSAGES/childpanelextension.mo
 share/locale/hu/LC_MESSAGES/clockapplet.mo
-share/locale/hu/LC_MESSAGES/colfind.mo
-share/locale/hu/LC_MESSAGES/columbo.mo
-share/locale/hu/LC_MESSAGES/cookbook.mo
 share/locale/hu/LC_MESSAGES/cupsdconf.mo
 share/locale/hu/LC_MESSAGES/desktop.mo
-share/locale/hu/LC_MESSAGES/devcenter.mo
 share/locale/hu/LC_MESSAGES/dirfilterplugin.mo
 share/locale/hu/LC_MESSAGES/domtreeviewer.mo
 share/locale/hu/LC_MESSAGES/drkonqi.mo
@@ -500,28 +487,22 @@ share/locale/hu/LC_MESSAGES/extensionproxy.mo
 share/locale/hu/LC_MESSAGES/filetypes.mo
 share/locale/hu/LC_MESSAGES/fontinst.mo
 share/locale/hu/LC_MESSAGES/gideon.mo
-share/locale/hu/LC_MESSAGES/gofai.mo
 share/locale/hu/LC_MESSAGES/htmlsearch.mo
-share/locale/hu/LC_MESSAGES/imagerename_plugin.mo
 share/locale/hu/LC_MESSAGES/imgalleryplugin.mo
 share/locale/hu/LC_MESSAGES/kab.mo
 share/locale/hu/LC_MESSAGES/kab3.mo
 share/locale/hu/LC_MESSAGES/kaboodle.mo
 share/locale/hu/LC_MESSAGES/kaccess.mo
 share/locale/hu/LC_MESSAGES/kaddressbook.mo
-share/locale/hu/LC_MESSAGES/kafka.mo
-share/locale/hu/LC_MESSAGES/kalaktic.mo
 share/locale/hu/LC_MESSAGES/kalarm.mo
 share/locale/hu/LC_MESSAGES/kalarmd.mo
 share/locale/hu/LC_MESSAGES/kalarmdgui.mo
 share/locale/hu/LC_MESSAGES/kandy.mo
 share/locale/hu/LC_MESSAGES/kaphorism.mo
 share/locale/hu/LC_MESSAGES/kappfinder.mo
-share/locale/hu/LC_MESSAGES/karchiver.mo
 share/locale/hu/LC_MESSAGES/karm.mo
 share/locale/hu/LC_MESSAGES/kasbarextension.mo
 share/locale/hu/LC_MESSAGES/kasteroids.mo
-share/locale/hu/LC_MESSAGES/katalog.mo
 share/locale/hu/LC_MESSAGES/kate.mo
 share/locale/hu/LC_MESSAGES/katehelloworld.mo
 share/locale/hu/LC_MESSAGES/katehtmltools.mo
@@ -532,11 +513,9 @@ share/locale/hu/LC_MESSAGES/kateprojectmanager.mo
 share/locale/hu/LC_MESSAGES/katetextfilter.mo
 share/locale/hu/LC_MESSAGES/katexmltools.mo
 share/locale/hu/LC_MESSAGES/katomic.mo
-share/locale/hu/LC_MESSAGES/kautorun.mo
 share/locale/hu/LC_MESSAGES/kbabel.mo
 share/locale/hu/LC_MESSAGES/kbackgammon.mo
 share/locale/hu/LC_MESSAGES/kbattleship.mo
-share/locale/hu/LC_MESSAGES/kbiff.mo
 share/locale/hu/LC_MESSAGES/kblackbox.mo
 share/locale/hu/LC_MESSAGES/kbounce.mo
 share/locale/hu/LC_MESSAGES/kbugbuster.mo
@@ -544,28 +523,22 @@ share/locale/hu/LC_MESSAGES/kcalc.mo
 share/locale/hu/LC_MESSAGES/kcardchooser.mo
 share/locale/hu/LC_MESSAGES/kcharselect.mo
 share/locale/hu/LC_MESSAGES/kcharselectapplet.mo
-share/locale/hu/LC_MESSAGES/kcm_scsimanager.mo
-share/locale/hu/LC_MESSAGES/kcm_splash.mo
 share/locale/hu/LC_MESSAGES/kcmaccess.mo
 share/locale/hu/LC_MESSAGES/kcmarts.mo
 share/locale/hu/LC_MESSAGES/kcmaudiocd.mo
 share/locale/hu/LC_MESSAGES/kcmbackground.mo
 share/locale/hu/LC_MESSAGES/kcmbell.mo
-share/locale/hu/LC_MESSAGES/kcmbind.mo
 share/locale/hu/LC_MESSAGES/kcmcolors.mo
 share/locale/hu/LC_MESSAGES/kcmcrypto.mo
 share/locale/hu/LC_MESSAGES/kcmcss.mo
-share/locale/hu/LC_MESSAGES/kcmdhcpd.mo
 share/locale/hu/LC_MESSAGES/kcmemail.mo
 share/locale/hu/LC_MESSAGES/kcmenergy.mo
 share/locale/hu/LC_MESSAGES/kcmfonts.mo
-share/locale/hu/LC_MESSAGES/kcmgofai.mo
 share/locale/hu/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/hu/LC_MESSAGES/kcmicons.mo
 share/locale/hu/LC_MESSAGES/kcminfo.mo
 share/locale/hu/LC_MESSAGES/kcminput.mo
 share/locale/hu/LC_MESSAGES/kcmioslaveinfo.mo
-share/locale/hu/LC_MESSAGES/kcmiwatcher.mo
 share/locale/hu/LC_MESSAGES/kcmkamera.mo
 share/locale/hu/LC_MESSAGES/kcmkclock.mo
 share/locale/hu/LC_MESSAGES/kcmkdb.mo
@@ -590,15 +563,11 @@ share/locale/hu/LC_MESSAGES/kcmlayout.mo
 share/locale/hu/LC_MESSAGES/kcmlilo.mo
 share/locale/hu/LC_MESSAGES/kcmlinuz.mo
 share/locale/hu/LC_MESSAGES/kcmlocale.mo
-share/locale/hu/LC_MESSAGES/kcmmediacontrol.mo
 share/locale/hu/LC_MESSAGES/kcmmidi.mo
-share/locale/hu/LC_MESSAGES/kcmnapster.mo
 share/locale/hu/LC_MESSAGES/kcmnewsticker.mo
 share/locale/hu/LC_MESSAGES/kcmnic.mo
 share/locale/hu/LC_MESSAGES/kcmnotify.mo
-share/locale/hu/LC_MESSAGES/kcmodbc.mo
 share/locale/hu/LC_MESSAGES/kcmsamba.mo
-share/locale/hu/LC_MESSAGES/kcmsblive.mo
 share/locale/hu/LC_MESSAGES/kcmscreensaver.mo
 share/locale/hu/LC_MESSAGES/kcmsmartcard.mo
 share/locale/hu/LC_MESSAGES/kcmsmserver.mo
@@ -608,14 +577,10 @@ share/locale/hu/LC_MESSAGES/kcmstyle.mo
 share/locale/hu/LC_MESSAGES/kcmtaskbar.mo
 share/locale/hu/LC_MESSAGES/kcmthemes.mo
 share/locale/hu/LC_MESSAGES/kcmusb.mo
-share/locale/hu/LC_MESSAGES/kcmuserenv.mo
-share/locale/hu/LC_MESSAGES/kcmvdvd.mo
 share/locale/hu/LC_MESSAGES/kcoloredit.mo
 share/locale/hu/LC_MESSAGES/kcontrol.mo
 share/locale/hu/LC_MESSAGES/kcron.mo
-share/locale/hu/LC_MESSAGES/kdao.mo
 share/locale/hu/LC_MESSAGES/kdat.mo
-share/locale/hu/LC_MESSAGES/kdbbrowser.mo
 share/locale/hu/LC_MESSAGES/kdcop.mo
 share/locale/hu/LC_MESSAGES/kdebugdialog.mo
 share/locale/hu/LC_MESSAGES/kdelibs.mo
@@ -623,7 +588,6 @@ share/locale/hu/LC_MESSAGES/kdepasswd.mo
 share/locale/hu/LC_MESSAGES/kdeprintfax.mo
 share/locale/hu/LC_MESSAGES/kdesktop.mo
 share/locale/hu/LC_MESSAGES/kdessh.mo
-share/locale/hu/LC_MESSAGES/kdestdifacedemo.mo
 share/locale/hu/LC_MESSAGES/kdesu.mo
 share/locale/hu/LC_MESSAGES/kdesud.mo
 share/locale/hu/LC_MESSAGES/kdevelop.mo
@@ -638,7 +602,6 @@ share/locale/hu/LC_MESSAGES/kdvi.mo
 share/locale/hu/LC_MESSAGES/kedit.mo
 share/locale/hu/LC_MESSAGES/keduca.mo
 share/locale/hu/LC_MESSAGES/kenolaba.mo
-share/locale/hu/LC_MESSAGES/keystone.mo
 share/locale/hu/LC_MESSAGES/kfax.mo
 share/locale/hu/LC_MESSAGES/kfifteenapplet.mo
 share/locale/hu/LC_MESSAGES/kfile_m3u.mo
@@ -650,19 +613,14 @@ share/locale/hu/LC_MESSAGES/kfile_ps.mo
 share/locale/hu/LC_MESSAGES/kfile_wav.mo
 share/locale/hu/LC_MESSAGES/kfind.mo
 share/locale/hu/LC_MESSAGES/kfindpart.mo
-share/locale/hu/LC_MESSAGES/kfinger.mo
 share/locale/hu/LC_MESSAGES/kfloppy.mo
 share/locale/hu/LC_MESSAGES/kfmclient.mo
 share/locale/hu/LC_MESSAGES/kfmexec.mo
-share/locale/hu/LC_MESSAGES/kformeditor.mo
-share/locale/hu/LC_MESSAGES/kformviewer.mo
 share/locale/hu/LC_MESSAGES/kfortune.mo
 share/locale/hu/LC_MESSAGES/kfract.mo
 share/locale/hu/LC_MESSAGES/kgantt.mo
 share/locale/hu/LC_MESSAGES/kgeo.mo
 share/locale/hu/LC_MESSAGES/kghostview.mo
-share/locale/hu/LC_MESSAGES/kgnuplot.mo
-share/locale/hu/LC_MESSAGES/kgrapher.mo
 share/locale/hu/LC_MESSAGES/khangman.mo
 share/locale/hu/LC_MESSAGES/khelpcenter.mo
 share/locale/hu/LC_MESSAGES/khexedit.mo
@@ -670,9 +628,6 @@ share/locale/hu/LC_MESSAGES/khotkeys.mo
 share/locale/hu/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hu/LC_MESSAGES/kicker.mo
 share/locale/hu/LC_MESSAGES/kiconedit.mo
-share/locale/hu/LC_MESSAGES/kicq.mo
-share/locale/hu/LC_MESSAGES/kikbd.mo
-share/locale/hu/LC_MESSAGES/kim.mo
 share/locale/hu/LC_MESSAGES/kio_audiocd.mo
 share/locale/hu/LC_MESSAGES/kio_finger.mo
 share/locale/hu/LC_MESSAGES/kio_floppy.mo
@@ -706,26 +661,20 @@ share/locale/hu/LC_MESSAGES/klprfax.mo
 share/locale/hu/LC_MESSAGES/kmahjongg.mo
 share/locale/hu/LC_MESSAGES/kmail.mo
 share/locale/hu/LC_MESSAGES/kmailcvt.mo
-share/locale/hu/LC_MESSAGES/kmake.mo
 share/locale/hu/LC_MESSAGES/kmcop.mo
 share/locale/hu/LC_MESSAGES/kmenuedit.mo
-share/locale/hu/LC_MESSAGES/kmessage.mo
 share/locale/hu/LC_MESSAGES/kmessedwords.mo
 share/locale/hu/LC_MESSAGES/kmid.mo
 share/locale/hu/LC_MESSAGES/kmidi.mo
 share/locale/hu/LC_MESSAGES/kmines.mo
 share/locale/hu/LC_MESSAGES/kminipagerapplet.mo
 share/locale/hu/LC_MESSAGES/kmix.mo
-share/locale/hu/LC_MESSAGES/kmms.mo
 share/locale/hu/LC_MESSAGES/kmoon.mo
-share/locale/hu/LC_MESSAGES/knetmgr.mo
 share/locale/hu/LC_MESSAGES/knewsticker.mo
 share/locale/hu/LC_MESSAGES/knode.mo
 share/locale/hu/LC_MESSAGES/knotes.mo
 share/locale/hu/LC_MESSAGES/knotify.mo
-share/locale/hu/LC_MESSAGES/knu.mo
 share/locale/hu/LC_MESSAGES/kodo.mo
-share/locale/hu/LC_MESSAGES/kolf.mo
 share/locale/hu/LC_MESSAGES/kolourpicker.mo
 share/locale/hu/LC_MESSAGES/kompare.mo
 share/locale/hu/LC_MESSAGES/koncd.mo
@@ -733,33 +682,26 @@ share/locale/hu/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/hu/LC_MESSAGES/konqueror.mo
 share/locale/hu/LC_MESSAGES/konquest.mo
 share/locale/hu/LC_MESSAGES/konsole.mo
-share/locale/hu/LC_MESSAGES/konv.mo
 share/locale/hu/LC_MESSAGES/kooka.mo
-share/locale/hu/LC_MESSAGES/kopennap.mo
 share/locale/hu/LC_MESSAGES/korganizer.mo
 share/locale/hu/LC_MESSAGES/korn.mo
-share/locale/hu/LC_MESSAGES/kp.mo
 share/locale/hu/LC_MESSAGES/kpackage.mo
 share/locale/hu/LC_MESSAGES/kpager.mo
 share/locale/hu/LC_MESSAGES/kpaint.mo
 share/locale/hu/LC_MESSAGES/kpartapp.mo
 share/locale/hu/LC_MESSAGES/kpartsaver.mo
 share/locale/hu/LC_MESSAGES/kpat.mo
-share/locale/hu/LC_MESSAGES/kpercentage.mo
 share/locale/hu/LC_MESSAGES/kpersonalizer.mo
 share/locale/hu/LC_MESSAGES/kpf.mo
-share/locale/hu/LC_MESSAGES/kphone.mo
 share/locale/hu/LC_MESSAGES/kpilot.mo
 share/locale/hu/LC_MESSAGES/kpixmap2bitmap.mo
 share/locale/hu/LC_MESSAGES/kpoker.mo
-share/locale/hu/LC_MESSAGES/kpovmodeler.mo
 share/locale/hu/LC_MESSAGES/kppp.mo
 share/locale/hu/LC_MESSAGES/kppplogview.mo
 share/locale/hu/LC_MESSAGES/kprinter.mo
 share/locale/hu/LC_MESSAGES/kreadconfig.mo
 share/locale/hu/LC_MESSAGES/kregexpeditor.mo
 share/locale/hu/LC_MESSAGES/kreversi.mo
-share/locale/hu/LC_MESSAGES/krn.mo
 share/locale/hu/LC_MESSAGES/kruler.mo
 share/locale/hu/LC_MESSAGES/krunapplet.mo
 share/locale/hu/LC_MESSAGES/ksame.mo
@@ -778,20 +720,14 @@ share/locale/hu/LC_MESSAGES/ksplash.mo
 share/locale/hu/LC_MESSAGES/kstars.mo
 share/locale/hu/LC_MESSAGES/kstart.mo
 share/locale/hu/LC_MESSAGES/kstartperf.mo
-share/locale/hu/LC_MESSAGES/kstockticker.mo
 share/locale/hu/LC_MESSAGES/ksync.mo
-share/locale/hu/LC_MESSAGES/ksysctrl.mo
 share/locale/hu/LC_MESSAGES/ksysguard.mo
 share/locale/hu/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/hu/LC_MESSAGES/ksystraycmd.mo
-share/locale/hu/LC_MESSAGES/ksystrayproxy.mo
 share/locale/hu/LC_MESSAGES/ksysv.mo
-share/locale/hu/LC_MESSAGES/ktables.mo
-share/locale/hu/LC_MESSAGES/ktalk.mo
 share/locale/hu/LC_MESSAGES/ktalkd.mo
 share/locale/hu/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/hu/LC_MESSAGES/kteatime.mo
-share/locale/hu/LC_MESSAGES/ktetrinet.mo
 share/locale/hu/LC_MESSAGES/ktimemon.mo
 share/locale/hu/LC_MESSAGES/ktimer.mo
 share/locale/hu/LC_MESSAGES/ktip.mo
@@ -802,7 +738,6 @@ share/locale/hu/LC_MESSAGES/ktux.mo
 share/locale/hu/LC_MESSAGES/kuick_plugin.mo
 share/locale/hu/LC_MESSAGES/kuickshow.mo
 share/locale/hu/LC_MESSAGES/kuser.mo
-share/locale/hu/LC_MESSAGES/kvidmode.mo
 share/locale/hu/LC_MESSAGES/kview.mo
 share/locale/hu/LC_MESSAGES/kviewshell.mo
 share/locale/hu/LC_MESSAGES/kvoctrain.mo
@@ -816,9 +751,6 @@ share/locale/hu/LC_MESSAGES/kwin_glow_config.mo
 share/locale/hu/LC_MESSAGES/kwin_icewm_config.mo
 share/locale/hu/LC_MESSAGES/kwin_modernsys_config.mo
 share/locale/hu/LC_MESSAGES/kwin_quartz_config.mo
-share/locale/hu/LC_MESSAGES/kwintv.mo
-share/locale/hu/LC_MESSAGES/kwireless.mo
-share/locale/hu/LC_MESSAGES/kwiz.mo
 share/locale/hu/LC_MESSAGES/kworldclock.mo
 share/locale/hu/LC_MESSAGES/kwuftpd.mo
 share/locale/hu/LC_MESSAGES/kxkb.mo
@@ -837,14 +769,12 @@ share/locale/hu/LC_MESSAGES/libtaskbar.mo
 share/locale/hu/LC_MESSAGES/libtaskmanager.mo
 share/locale/hu/LC_MESSAGES/lockout.mo
 share/locale/hu/LC_MESSAGES/lskat.mo
-share/locale/hu/LC_MESSAGES/mediacontrol.mo
 share/locale/hu/LC_MESSAGES/multiplayers.mo
 share/locale/hu/LC_MESSAGES/naughtyapplet.mo
 share/locale/hu/LC_MESSAGES/noatun.mo
 share/locale/hu/LC_MESSAGES/nsplugin.mo
 share/locale/hu/LC_MESSAGES/passwords.mo
 share/locale/hu/LC_MESSAGES/ppdtranslations.mo
-share/locale/hu/LC_MESSAGES/pws.mo
 share/locale/hu/LC_MESSAGES/quicklauncher.mo
 share/locale/hu/LC_MESSAGES/secpolicy.mo
 share/locale/hu/LC_MESSAGES/spy.mo
@@ -883,7 +813,6 @@ share/locale/hu/flag.png
 @dirrm share/doc/HTML/hu/kscore
 @dirrm share/doc/HTML/hu/ksame
 @dirrm share/doc/HTML/hu/kruler
-@dirrm share/doc/HTML/hu/krn
 @dirrm share/doc/HTML/hu/kreversi
 @dirrm share/doc/HTML/hu/kpoker
 @dirrm share/doc/HTML/hu/kpm
@@ -953,7 +882,6 @@ share/locale/hu/flag.png
 @dirrm share/doc/HTML/hu/kaddressbook
 @dirrm share/doc/HTML/hu/kab
 @dirrm share/doc/HTML/hu/common
-@dirrm share/doc/HTML/hu/columbo
 @dirrm share/doc/HTML/hu/artsbuilder
 @dirrm share/doc/HTML/hu/ark
 @dirrm share/doc/HTML/hu/amor

@@ -67,7 +67,6 @@ share/locale/bs/LC_MESSAGES/kcmlocale.mo
 share/locale/bs/LC_MESSAGES/kcmmidi.mo
 share/locale/bs/LC_MESSAGES/kcmnic.mo
 share/locale/bs/LC_MESSAGES/kcmnotify.mo
-share/locale/bs/LC_MESSAGES/kcmodbc.mo
 share/locale/bs/LC_MESSAGES/kcmsamba.mo
 share/locale/bs/LC_MESSAGES/kcmscreensaver.mo
 share/locale/bs/LC_MESSAGES/kcmsmartcard.mo
@@ -78,7 +77,6 @@ share/locale/bs/LC_MESSAGES/kcmstyle.mo
 share/locale/bs/LC_MESSAGES/kcmtaskbar.mo
 share/locale/bs/LC_MESSAGES/kcmthemes.mo
 share/locale/bs/LC_MESSAGES/kcmusb.mo
-share/locale/bs/LC_MESSAGES/kcmwidgetsettings.mo
 share/locale/bs/LC_MESSAGES/kcontrol.mo
 share/locale/bs/LC_MESSAGES/kcron.mo
 share/locale/bs/LC_MESSAGES/kdat.mo
@@ -109,7 +107,6 @@ share/locale/bs/LC_MESSAGES/khelpcenter.mo
 share/locale/bs/LC_MESSAGES/khotkeys.mo
 share/locale/bs/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/bs/LC_MESSAGES/kicker.mo
-share/locale/bs/LC_MESSAGES/kikbd.mo
 share/locale/bs/LC_MESSAGES/kio_audiocd.mo
 share/locale/bs/LC_MESSAGES/kio_finger.mo
 share/locale/bs/LC_MESSAGES/kio_floppy.mo
@@ -169,6 +166,11 @@ share/locale/bs/LC_MESSAGES/kuick_plugin.mo
 share/locale/bs/LC_MESSAGES/kuser.mo
 share/locale/bs/LC_MESSAGES/kview.mo
 share/locale/bs/LC_MESSAGES/kwin.mo
+share/locale/bs/LC_MESSAGES/kwin_b2_config.mo
+share/locale/bs/LC_MESSAGES/kwin_default_config.mo
+share/locale/bs/LC_MESSAGES/kwin_icewm_config.mo
+share/locale/bs/LC_MESSAGES/kwin_modernsys_config.mo
+share/locale/bs/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/bs/LC_MESSAGES/kwuftpd.mo
 share/locale/bs/LC_MESSAGES/kxkb.mo
 share/locale/bs/LC_MESSAGES/kxmlrpcd.mo
@@ -177,11 +179,6 @@ share/locale/bs/LC_MESSAGES/libkicker.mo
 share/locale/bs/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/bs/LC_MESSAGES/libkonq.mo
 share/locale/bs/LC_MESSAGES/libkscreensaver.mo
-share/locale/bs/LC_MESSAGES/libkwinb2_config.mo
-share/locale/bs/LC_MESSAGES/libkwindefault_config.mo
-share/locale/bs/LC_MESSAGES/libkwinicewm_config.mo
-share/locale/bs/LC_MESSAGES/libkwinmodernsys_config.mo
-share/locale/bs/LC_MESSAGES/libkwinquartz_config.mo
 share/locale/bs/LC_MESSAGES/libtaskbar.mo
 share/locale/bs/LC_MESSAGES/libtaskmanager.mo
 share/locale/bs/LC_MESSAGES/lockout.mo

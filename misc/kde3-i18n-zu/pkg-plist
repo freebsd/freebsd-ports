@@ -77,6 +77,7 @@ share/locale/zu/LC_MESSAGES/kcmlayout.mo
 share/locale/zu/LC_MESSAGES/kcmlinuz.mo
 share/locale/zu/LC_MESSAGES/kcmlocale.mo
 share/locale/zu/LC_MESSAGES/kcmmidi.mo
+share/locale/zu/LC_MESSAGES/kcmnewsticker.mo
 share/locale/zu/LC_MESSAGES/kcmnic.mo
 share/locale/zu/LC_MESSAGES/kcmnotify.mo
 share/locale/zu/LC_MESSAGES/kcmsamba.mo
@@ -199,7 +200,6 @@ share/locale/zu/LC_MESSAGES/ksplash.mo
 share/locale/zu/LC_MESSAGES/kstars.mo
 share/locale/zu/LC_MESSAGES/kstart.mo
 share/locale/zu/LC_MESSAGES/ksync.mo
-share/locale/zu/LC_MESSAGES/ksysctrl.mo
 share/locale/zu/LC_MESSAGES/ksysguard.mo
 share/locale/zu/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/zu/LC_MESSAGES/ksystraycmd.mo

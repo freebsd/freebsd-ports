@@ -66,7 +66,6 @@ share/locale/fi/LC_MESSAGES/kappfinder.mo
 share/locale/fi/LC_MESSAGES/karm.mo
 share/locale/fi/LC_MESSAGES/kasbarextension.mo
 share/locale/fi/LC_MESSAGES/kasteroids.mo
-share/locale/fi/LC_MESSAGES/katalog.mo
 share/locale/fi/LC_MESSAGES/kate.mo
 share/locale/fi/LC_MESSAGES/katehelloworld.mo
 share/locale/fi/LC_MESSAGES/katehtmltools.mo
@@ -77,11 +76,9 @@ share/locale/fi/LC_MESSAGES/kateprojectmanager.mo
 share/locale/fi/LC_MESSAGES/katetextfilter.mo
 share/locale/fi/LC_MESSAGES/katexmltools.mo
 share/locale/fi/LC_MESSAGES/katomic.mo
-share/locale/fi/LC_MESSAGES/kautorun.mo
 share/locale/fi/LC_MESSAGES/kbabel.mo
 share/locale/fi/LC_MESSAGES/kbackgammon.mo
 share/locale/fi/LC_MESSAGES/kbattleship.mo
-share/locale/fi/LC_MESSAGES/kbiff.mo
 share/locale/fi/LC_MESSAGES/kblackbox.mo
 share/locale/fi/LC_MESSAGES/kbounce.mo
 share/locale/fi/LC_MESSAGES/kcalc.mo
@@ -161,7 +158,6 @@ share/locale/fi/LC_MESSAGES/kdmgreet.mo
 share/locale/fi/LC_MESSAGES/kdvi.mo
 share/locale/fi/LC_MESSAGES/kedit.mo
 share/locale/fi/LC_MESSAGES/kenolaba.mo
-share/locale/fi/LC_MESSAGES/keystone.mo
 share/locale/fi/LC_MESSAGES/kfax.mo
 share/locale/fi/LC_MESSAGES/kfifteenapplet.mo
 share/locale/fi/LC_MESSAGES/kfile_m3u.mo
@@ -173,11 +169,9 @@ share/locale/fi/LC_MESSAGES/kfile_ps.mo
 share/locale/fi/LC_MESSAGES/kfile_wav.mo
 share/locale/fi/LC_MESSAGES/kfind.mo
 share/locale/fi/LC_MESSAGES/kfindpart.mo
-share/locale/fi/LC_MESSAGES/kfinger.mo
 share/locale/fi/LC_MESSAGES/kfloppy.mo
 share/locale/fi/LC_MESSAGES/kfmclient.mo
 share/locale/fi/LC_MESSAGES/kfmexec.mo
-share/locale/fi/LC_MESSAGES/kformviewer.mo
 share/locale/fi/LC_MESSAGES/kfract.mo
 share/locale/fi/LC_MESSAGES/kghostview.mo
 share/locale/fi/LC_MESSAGES/khelpcenter.mo
@@ -186,7 +180,6 @@ share/locale/fi/LC_MESSAGES/khotkeys.mo
 share/locale/fi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fi/LC_MESSAGES/kicker.mo
 share/locale/fi/LC_MESSAGES/kiconedit.mo
-share/locale/fi/LC_MESSAGES/kikbd.mo
 share/locale/fi/LC_MESSAGES/kio_audiocd.mo
 share/locale/fi/LC_MESSAGES/kio_finger.mo
 share/locale/fi/LC_MESSAGES/kio_floppy.mo
@@ -225,7 +218,6 @@ share/locale/fi/LC_MESSAGES/kmoon.mo
 share/locale/fi/LC_MESSAGES/knode.mo
 share/locale/fi/LC_MESSAGES/knotes.mo
 share/locale/fi/LC_MESSAGES/knotify.mo
-share/locale/fi/LC_MESSAGES/knu.mo
 share/locale/fi/LC_MESSAGES/kodo.mo
 share/locale/fi/LC_MESSAGES/kolourpicker.mo
 share/locale/fi/LC_MESSAGES/koncd.mo
@@ -252,7 +244,6 @@ share/locale/fi/LC_MESSAGES/kppplogview.mo
 share/locale/fi/LC_MESSAGES/kprinter.mo
 share/locale/fi/LC_MESSAGES/kreadconfig.mo
 share/locale/fi/LC_MESSAGES/kreversi.mo
-share/locale/fi/LC_MESSAGES/krn.mo
 share/locale/fi/LC_MESSAGES/kruler.mo
 share/locale/fi/LC_MESSAGES/krunapplet.mo
 share/locale/fi/LC_MESSAGES/ksame.mo

@@ -11,6 +11,38 @@ CONFIGURE_ARGS?=
 # Stop the docs from regenerating.
 COPY=	-c -p
 
+# For ports that have I18N components only.
+.if defined(KDE_I18N)
+_NO_KDE_FINAL=	yes
+_NO_KDE_NDEBUG=	yes
+.endif
+
+# Unfortunately, this feature doesn't work right now due to binary files.
+_NO_KDE_PATCHUP=yes
+
+# Start options here.
+.if !defined(_NO_KDE_PATCHUP)
+.if !defined(KDE_PATCHFROM_VER)
+PATCHFROM_VER=	${KDE_ORIGVER}
+.else
+PATCHFROM_VER=	${KDE_PATCHFROM_VER}
+.endif
+.if !defined(KDE_PATCHTO_VER)
+PATCHTO_VER=	${KDE_VERSION}
+.else
+PATCHTO_VER=	${KDE_PATCHTO_VER}
+.endif
+.if !defined(KDE_DISTNAME)
+DISTNAME=	${PORTNAME}-${PATCHFROM_VER}
+.else
+DISTNAME=	${KDE_DISTNAME}
+.endif
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	will/kde-diffs/${KDE_VERSION}
+PATCHFILES=	${PORTNAME}-${PATCHFROM_VER}-${PATCHTO_VER}.diff.bz2
+PATCH_DIST_STRIP=-p1
+.endif
+
 .if !defined(_NO_KDE_CONFTARGET_HACK)
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

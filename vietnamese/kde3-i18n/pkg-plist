@@ -9,6 +9,7 @@ share/locale/vi/LC_MESSAGES/drkonqi.mo
 share/locale/vi/LC_MESSAGES/extensionproxy.mo
 share/locale/vi/LC_MESSAGES/filetypes.mo
 share/locale/vi/LC_MESSAGES/fontinst.mo
+share/locale/vi/LC_MESSAGES/gideon.mo
 share/locale/vi/LC_MESSAGES/htmlsearch.mo
 share/locale/vi/LC_MESSAGES/kaccess.mo
 share/locale/vi/LC_MESSAGES/kaddressbook.mo
@@ -17,6 +18,7 @@ share/locale/vi/LC_MESSAGES/kasbarextension.mo
 share/locale/vi/LC_MESSAGES/kate.mo
 share/locale/vi/LC_MESSAGES/kbabel.mo
 share/locale/vi/LC_MESSAGES/kbounce.mo
+share/locale/vi/LC_MESSAGES/kbugbuster.mo
 share/locale/vi/LC_MESSAGES/kcalc.mo
 share/locale/vi/LC_MESSAGES/kcharselect.mo
 share/locale/vi/LC_MESSAGES/kchat.mo
@@ -76,6 +78,8 @@ share/locale/vi/LC_MESSAGES/kdelibs.mo
 share/locale/vi/LC_MESSAGES/kdeprintfax.mo
 share/locale/vi/LC_MESSAGES/kdesktop.mo
 share/locale/vi/LC_MESSAGES/kdesu.mo
+share/locale/vi/LC_MESSAGES/kdevelop.mo
+share/locale/vi/LC_MESSAGES/kdevtipofday.mo
 share/locale/vi/LC_MESSAGES/kdict.mo
 share/locale/vi/LC_MESSAGES/kdictapplet.mo
 share/locale/vi/LC_MESSAGES/kdmchooser.mo
@@ -108,6 +112,7 @@ share/locale/vi/LC_MESSAGES/kio_smbro.mo
 share/locale/vi/LC_MESSAGES/kit.mo
 share/locale/vi/LC_MESSAGES/kjobviewer.mo
 share/locale/vi/LC_MESSAGES/klegacyimport.mo
+share/locale/vi/LC_MESSAGES/kless.mo
 share/locale/vi/LC_MESSAGES/klipper.mo
 share/locale/vi/LC_MESSAGES/klock.mo
 share/locale/vi/LC_MESSAGES/kmail.mo
@@ -136,6 +141,7 @@ share/locale/vi/LC_MESSAGES/ksirc.mo
 share/locale/vi/LC_MESSAGES/ksmserver.mo
 share/locale/vi/LC_MESSAGES/ksplash.mo
 share/locale/vi/LC_MESSAGES/kstart.mo
+share/locale/vi/LC_MESSAGES/kstartperf.mo
 share/locale/vi/LC_MESSAGES/ksysguard.mo
 share/locale/vi/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/vi/LC_MESSAGES/ksystraycmd.mo
@@ -160,6 +166,7 @@ share/locale/vi/LC_MESSAGES/naughtyapplet.mo
 share/locale/vi/LC_MESSAGES/nsplugin.mo
 share/locale/vi/LC_MESSAGES/passwords.mo
 share/locale/vi/LC_MESSAGES/quicklauncher.mo
+share/locale/vi/LC_MESSAGES/spy.mo
 share/locale/vi/LC_MESSAGES/taskbarextension.mo
 share/locale/vi/charset
 share/locale/vi/entry.desktop

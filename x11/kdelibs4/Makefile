@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -36,6 +35,7 @@ SOMINOR=	0
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+PREFIX?=	${KDE_PREFIX}
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
 
 .include "${.CURDIR}/../kde3/Makefile.kde"

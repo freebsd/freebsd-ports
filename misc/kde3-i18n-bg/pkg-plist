@@ -88,7 +88,6 @@ share/locale/bg/LC_MESSAGES/kcmmidi.mo
 share/locale/bg/LC_MESSAGES/kcmnewsticker.mo
 share/locale/bg/LC_MESSAGES/kcmnic.mo
 share/locale/bg/LC_MESSAGES/kcmnotify.mo
-share/locale/bg/LC_MESSAGES/kcmodbc.mo
 share/locale/bg/LC_MESSAGES/kcmsamba.mo
 share/locale/bg/LC_MESSAGES/kcmscreensaver.mo
 share/locale/bg/LC_MESSAGES/kcmsmartcard.mo
@@ -122,7 +121,6 @@ share/locale/bg/LC_MESSAGES/kdvi.mo
 share/locale/bg/LC_MESSAGES/kedit.mo
 share/locale/bg/LC_MESSAGES/keduca.mo
 share/locale/bg/LC_MESSAGES/kenolaba.mo
-share/locale/bg/LC_MESSAGES/keystone.mo
 share/locale/bg/LC_MESSAGES/kfax.mo
 share/locale/bg/LC_MESSAGES/kfifteenapplet.mo
 share/locale/bg/LC_MESSAGES/kfind.mo
@@ -246,7 +244,6 @@ share/locale/bg/LC_MESSAGES/kwin_b2_config.mo
 share/locale/bg/LC_MESSAGES/kwin_default_config.mo
 share/locale/bg/LC_MESSAGES/kwin_modernsys_config.mo
 share/locale/bg/LC_MESSAGES/kwin_quartz_config.mo
-share/locale/bg/LC_MESSAGES/kwintv.mo
 share/locale/bg/LC_MESSAGES/kworldclock.mo
 share/locale/bg/LC_MESSAGES/kwuftpd.mo
 share/locale/bg/LC_MESSAGES/kxkb.mo

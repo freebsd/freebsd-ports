@@ -35,7 +35,6 @@ share/locale/lt/LC_MESSAGES/kateprojectmanager.mo
 share/locale/lt/LC_MESSAGES/katetextfilter.mo
 share/locale/lt/LC_MESSAGES/katexmltools.mo
 share/locale/lt/LC_MESSAGES/kbabel.mo
-share/locale/lt/LC_MESSAGES/kbiff.mo
 share/locale/lt/LC_MESSAGES/kcalc.mo
 share/locale/lt/LC_MESSAGES/kcardchooser.mo
 share/locale/lt/LC_MESSAGES/kcharselect.mo
@@ -82,7 +81,6 @@ share/locale/lt/LC_MESSAGES/kcmlocale.mo
 share/locale/lt/LC_MESSAGES/kcmmidi.mo
 share/locale/lt/LC_MESSAGES/kcmnic.mo
 share/locale/lt/LC_MESSAGES/kcmnotify.mo
-share/locale/lt/LC_MESSAGES/kcmodbc.mo
 share/locale/lt/LC_MESSAGES/kcmsamba.mo
 share/locale/lt/LC_MESSAGES/kcmscreensaver.mo
 share/locale/lt/LC_MESSAGES/kcmsmartcard.mo

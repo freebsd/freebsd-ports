@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde-i18n-ru
-PORTVERSION=	3.0.1
+PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=     stable/${PORTVERSION}/src
@@ -20,9 +20,9 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+KDE_I18N=	yes
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.mk>

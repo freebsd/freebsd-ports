@@ -180,7 +180,6 @@ share/locale/eo/LC_MESSAGES/kpartsaver.mo
 share/locale/eo/LC_MESSAGES/kpat.mo
 share/locale/eo/LC_MESSAGES/kpersonalizer.mo
 share/locale/eo/LC_MESSAGES/kpixmap2bitmap.mo
-share/locale/eo/LC_MESSAGES/kpm.mo
 share/locale/eo/LC_MESSAGES/kpoker.mo
 share/locale/eo/LC_MESSAGES/kppp.mo
 share/locale/eo/LC_MESSAGES/kppplogview.mo
@@ -204,7 +203,6 @@ share/locale/eo/LC_MESSAGES/ksokoban.mo
 share/locale/eo/LC_MESSAGES/kspaceduel.mo
 share/locale/eo/LC_MESSAGES/ksplash.mo
 share/locale/eo/LC_MESSAGES/kstart.mo
-share/locale/eo/LC_MESSAGES/ksysctrl.mo
 share/locale/eo/LC_MESSAGES/ksysguard.mo
 share/locale/eo/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/eo/LC_MESSAGES/ksystraycmd.mo

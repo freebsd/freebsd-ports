@@ -281,6 +281,7 @@ share/services/kfile_ps.desktop
 @dirrm share/icons/hicolor
 @dirrm share/icons
 @dirrm share/doc/HTML/en/kview
+@dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
 @dirrm share/doc/HTML/en/kpaint
