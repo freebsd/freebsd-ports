@@ -11,7 +11,6 @@
 ^CVSROOT/rcstemplate
 
 ^distrib/
-^src/release/
 ^www/
 
 ^doc/.*\.eps
@@ -25,6 +24,7 @@
 ^src/etc/minfree
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
+^src/release/sysinstall/help/.*\.hlp
 ^src/share/examples/cvsup/refuse
 ^src/share/examples/etc/bsd-style-copyright
 ^src/share/info/dir-tmpl
