@@ -22,6 +22,8 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=	253
 USE_PERL5_BUILD=	yes
 
+INFO=	ksba
+
 .include <bsd.port.pre.mk>
 
 pre-extract:

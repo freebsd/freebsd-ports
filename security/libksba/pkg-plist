@@ -1,10 +1,5 @@
 bin/ksba-config
 include/ksba.h
-@unexec install-info --delete %D/info/ksba.info %D/info/dir
-info/ksba.info
-info/ksba.info-1
-info/ksba.info-2
-@exec install-info %D/info/ksba.info %D/info/dir
 lib/libksba.so.7
 lib/libksba.so
 lib/libksba.a
