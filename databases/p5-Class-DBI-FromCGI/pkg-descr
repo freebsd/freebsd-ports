@@ -1,0 +1,18 @@
+Lots of times, Class::DBI is used in web-based applications. (In fact, coupled
+with a templating system that allows you to pass objects, such as
+Template::Toolkit, Class::DBI is very much your friend for these.) 
+
+And, as we all know, one of the most irritating things about writing web-based
+applications is the monotony of writing much of the same stuff over and over
+again. And, where there's monotony there's a tendency to skip over stuff that
+we all know is really important, but is a pain to write - like Taint Checking
+and sensible input validation. (Especially as we can still show a 'working'
+application without it!). So, we now have CGI::Untaint to take care of a lot of
+that for us. 
+
+It so happens that CGI::Untaint also plays well with Class::DBI. All you need
+to do is to 'use Class::DBI::FromCGI' in your class (or in your local
+Class::DBI subclass that all your other classes inherit from. You do do that,
+don't you?). 
+
+WWW: http://search.cpan.org/dist/Class-DBI-FromCGI/

@@ -83,6 +83,7 @@
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-Class-DBI-AbstractSearch
     SUBDIR += p5-Class-DBI-BaseDSN
+    SUBDIR += p5-Class-DBI-FromCGI
     SUBDIR += p5-Class-DBI-Oracle
     SUBDIR += p5-Class-DBI-Pager
     SUBDIR += p5-Class-DBI-Pg
