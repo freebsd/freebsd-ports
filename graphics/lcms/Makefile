@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.littlecms.com/
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	kris@obsecurity.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
 INSTALLS_SHLIB=	yes
