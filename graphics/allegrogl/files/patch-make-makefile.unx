@@ -1,6 +1,15 @@
---- make/makefile.unx.orig	Thu Jan 22 14:15:30 2004
-+++ make/makefile.unx	Thu Jan 22 14:17:05 2004
-@@ -46,20 +46,20 @@
+--- make/makefile.unx.orig	Sat Feb 21 18:25:06 2004
++++ make/makefile.unx	Fri Mar 26 20:55:17 2004
+@@ -18,7 +18,7 @@
+ # Programs
+ CC = @CC@
+ CXX = @CXX@
+-INSTALLER = @INSTALL@ -D -m 644
++INSTALLER = @INSTALL@ -m 644
+ 
+ 
+ # Where to install the library and header file
+@@ -49,13 +49,13 @@
  # --- Compiler optimizations ---#
  
  ifdef DEBUGMODE
@@ -13,15 +22,18 @@
  else
 -	CFLAGS = -O2 -Wall -ffast-math -fomit-frame-pointer
 +	CFLAGS += -O2 -Wall -ffast-math -fomit-frame-pointer
- 	SHARED = @SHARED@
+ endif
+ 
+ ifdef SHARED
+@@ -65,9 +65,9 @@
  endif
  
  ifdef DEBUGALLEG
--	LDLIBS = -l$(LIB_NAME) `allegro-config --libs debug` $(LIBS)
-+	LDLIBS = -l$(LIB_NAME) `%%ALLEGRO_CONFIG%% --libs debug` $(LIBS)
+-	LDLIBS += `allegro-config --libs debug` $(LIBS)
++	LDLIBS += `/usr/local/bin/allegro-config --libs debug` $(LIBS)
  else
--	LDLIBS = -l$(LIB_NAME) `allegro-config --libs` $(LIBS)
-+	LDLIBS = -l$(LIB_NAME) `%%ALLEGRO_CONFIG%% --libs` $(LIBS)
+-	LDLIBS += `allegro-config --libs` $(LIBS)
++	LDLIBS += `/usr/local/bin/allegro-config --libs` $(LIBS)
  endif
  
  ifdef MESABUILD
