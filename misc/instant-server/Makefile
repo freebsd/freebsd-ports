@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR=	pub/instant-server
 MAINTAINER=	grog@lemis.com
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
-		cvsupd:${PORTSDIR}/net/cvsupd-bin \
-		isc-dhcp3:${PORTSDIR}/net/isc-dhcp3 \
-		samba:${PORTSDIR}/net/samba \
-		traceroute:${PORTSDIR}/net/traceroute \
-		cnews:${PORTSDIR}/news/cnews \
-		apache13:${PORTSDIR}/www/apache13 \
-		squid23:${PORTSDIR}/www/squid23
+		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsupd-bin \
+		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp3 \
+		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba \
+		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
+		cnewsdo:${PORTSDIR}/news/cnews \
+		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
+		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
 
 # Don't let stupid programs ask for configuration.
 
