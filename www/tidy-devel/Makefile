@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/09 01:26:20 steve Exp $
 #
 
 DISTNAME=	tidy01sep98
