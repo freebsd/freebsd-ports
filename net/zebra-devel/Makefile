@@ -23,7 +23,7 @@ post-install:
 		< ${FILESDIR}/zebractl.sh  \
 		> ${PREFIX}/sbin/zebractl
 	@${CHMOD} 555 ${PREFIX}/sbin/zebractl
-	@${ECHO} "Make the following entries in /etc/rc.conf to start zebra:"
+	@${ECHO} "Make these entries in /etc/rc.conf.local to start zebra:"
 	@${ECHO} "defaultrouter=\"NO\""
 	@${ECHO} "router_enable=\"YES\""
 	@${ECHO} "router=\"${PREFIX}/sbin/zebractl\""
