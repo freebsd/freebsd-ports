@@ -269,8 +269,11 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/ \
 	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
+	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
