@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.17 1995/07/15 22:51:39 torstenb Exp $
+# $Id: LEGAL,v 1.18 1995/07/18 23:45:38 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -20,7 +20,8 @@ ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 maxima-5.0-beta		ports/math/maxima	License required
 pgp262s.zip		ports/utils/pgp*	Various locality restrictions
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-tkman-1.6.tar.Z		ports/x11/tkman		Restrictive copyright
+tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
+rman-2.4.tar.Z		ports/utils/rman	Restrictive copyright
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
 mmv/*			ports/utils/mmv		Restrictive/unclear copyright
