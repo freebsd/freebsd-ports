@@ -20,6 +20,7 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 
 MAKEFILE=	Makefile.bsd
 USE_BZIP2=	yes
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mppdec ${PREFIX}/bin/
