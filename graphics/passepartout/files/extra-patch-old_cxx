@@ -24,17 +24,6 @@
  }
  
  #ifdef PFB2PFA_STANDALONE
---- src/util/filesys.h.orig	Fri Oct 31 20:47:03 2003
-+++ src/util/filesys.h	Fri Oct 31 20:52:19 2003
-@@ -4,7 +4,7 @@
- // Copyright (C) 2002, 2003, Fredrik Arnerup & Rasmus Kaj, See COPYING
- ///
- #include <string>
--#include <ios>			// mode for access
-+#include <iostream>			// mode for access
- 
- // Check if the specified file exists
- bool exists(const std::string& filename);
 --- src/pptout/docview.cc.orig	Sun Nov  2 11:56:40 2003
 +++ src/pptout/docview.cc	Sun Nov  2 12:04:37 2003
 @@ -467,7 +467,7 @@
@@ -46,3 +35,27 @@
  }
  
  void Document_View::cut() {
+--- src/util/filesys.h.orig	Fri Sep 19 16:46:08 2003
++++ src/util/filesys.h	Thu Dec  4 03:59:31 2003
+@@ -4,7 +4,8 @@
+ // Copyright (C) 2002, 2003, Fredrik Arnerup & Rasmus Kaj, See COPYING
+ ///
+ #include <string>
+-#include <ios>			// mode for access
++//#include <ios>			// mode for access
++#include <iostream>
+ #include <stdexcept>
+ 
+ /**
+--- src/fonts/fontmetrics.cc.orig	Thu Dec  4 04:08:47 2003
++++ src/fonts/fontmetrics.cc	Thu Dec  4 10:06:36 2003
+@@ -109,7 +109,8 @@
+       cerr << " found " << ch << "!\n";
+ #endif
+     }
+-    source.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
++//    source.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
++    source.ignore(UINT_MAX,'\n');
+   }
+ }
+ 
