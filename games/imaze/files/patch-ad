@@ -1,0 +1,11 @@
+--- source/configure.orig	Thu Jul 24 22:06:46 2003
++++ source/configure	Thu Jul 24 22:10:31 2003
+@@ -54,7 +54,7 @@
+ MakefileIn=Makefile.in
+ MakefileOut=Makefile
+ 
+-SedQuote="s/[^=]*\$/'&'/"
++SedQuote="s/=\(.*\)/='\1'/"
+ 
+ #----------
+ #
