@@ -1,0 +1,10 @@
+# $FreeBSD$
+# file			rel dir			search path		progname
+config			dvipdfm/ptex/config	other text files	dvipdfm
+config.ps		dvips/ptex/config	dvips config		-
+modes.mf		metafont/misc		.mf			-
+pdftexconfig.tex	tex/generic/config	.tex			-
+fmtutil.cnf		web2c			web2c files		-
+mktex.cnf		web2c			web2c files		-
+updmap.cfg		web2c/ptex		web2c files		-
+XDvi			xdvi/ptex		other text files	xdvi

@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ptex-tetex
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.8
 PORTREVISION=	0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
+MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
 		${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/:2
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
 PKGNAMEPREFIX=	ja-
 DISTFILES=	ptex-src-${VER_PTEX}${EXTRACT_SUFX}:1 \
 		ptex-texmf-${VER_PTEXTEXMF}${EXTRACT_SUFX}:1 \
-		tetex-src-${VER_TETEX}${EXTRACT_SUFX} \
+		${TETEX_SRC}${EXTRACT_SUFX} \
 		jis${EXTRACT_SUFX}:2 morisawa${EXTRACT_SUFX}:2
 DIST_SUBDIR=	teTeX
 
@@ -24,13 +24,11 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX which supports teTeX distribution
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/base/latex.ltx:${PORTSDIR}/print/teTeX-latex2e
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/base/latex.ltx:${PORTSDIR}/print/teTeX-latex2e
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -42,29 +40,34 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 USE_GMAKE=	yes
 .if make(post-extract) || make(do-build)
-MAKE_ENV=	TEXMFLOCAL=${WRKDIR}/texmf-tmp \
-		TEXMFDUMP=${LOCALBASE}/${TEXMFLOCAL}
+MAKE_ENV=	TEXMFLOCALDIR=${WRKDIR}/texmf-tmp \
+		TEXMFDUMP=${LOCALBASE}/${TEXMFLOCALDIR} \
+		TEXMFDISTDIR=${LOCALBASE}/${TEXMFDISTDIR}
 .endif
 ALL_TARGET=	default
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFDIR=${TEXMFDIR}
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
+		TEXMFDISTDIR=${TEXMFDISTDIR} \
+		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
+		TEXMFDIR=${TEXMFDIR}
 CONFLICTS=	ja-ptex-base-[0-9]*
 .if !make(do-patch)
-WRKSRC=		${WRKDIR}/tetex-src-${VER_TETEX}/texk/web2c/ptex-${VER_PTEX}
+WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex-${VER_PTEX}
 .else
-WRKSRC=		${WRKDIR}/tetex-src-${VER_TETEX}
+WRKSRC=		${WRKDIR}/${TETEX_SRC}
 .endif
 
-WRKSRC_TETEX=	${WRKDIR}/tetex-src-${VER_TETEX}
+WRKSRC_TETEX=	${WRKDIR}/${TETEX_SRC}
 WRKSRC_PTEX=	${WRKDIR}/ptex-src-${VER_PTEX}
 
-VER_TETEX=	2.0.2
+TETEX_SRC=	tetex-src-2.99.13.20050204-beta
 VER_PTEX=	${PORTVERSION}
-VER_PTEXTEXMF=	2.2
+VER_PTEXTEXMF=	2.3
 KANJICODE?=	euc
 TEXMFDIR?=	share/texmf
-TEXMFLOCAL?=	share/texmf-local
-TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCAL}/ls-R
-TEXMFCNF?=	${PREFIX}/${TEXMFDIR}/web2c/texmf.cnf
+TEXMFDISTDIR?=	share/texmf-dist
+TEXMFCONFIGDIR?=share/texmf-config
+TEXMFLOCALDIR?=	share/texmf-local
+TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
@@ -73,7 +76,7 @@ LIBT1_PREFIX?=	${LOCALBASE}
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
-MAPDIR=		${PREFIX}/${TEXMFDIR}/dvips-ptex
+MAPDIR=		${PREFIX}/${TEXMFDIR}/dvips/ptex
 MAPFILES=	morisawa/morisawa.map jis/jis.map
 
 VFDIR=		${PREFIX}/${TEXMFDIR}/fonts/vf/ptex
@@ -151,9 +154,10 @@ pre-configure:
 			--with-t1lib-include=${LIBT1_PREFIX}/include \
 			--without-xdvik --without-oxdvik \
 			--without-dvipsk --without-odvipsk \
-			--without-x11 --without-dvipdfm --without-omega \
-			--without-pdftex --without-pdfetex \
-			--with-etex=no && \
+			--without-x11 --without-dvipdfm \
+			--without-pdftex --without-pdfetex --without-pdfxtex \
+			--without-omega --without-eomega
+			--without-etex && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
 
 post-install:
@@ -166,6 +170,8 @@ post-install:
 	${MKDIR} ${${D}DIR}
 	cd ${WRKDIR} && ${INSTALL_DATA} ${${D}FILES} ${${D}DIR}
 .endfor
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+	${CP} ${FILESDIR}/tcfmgr.map ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
 	${MKTEXLSR}
 	@${CAT} ${PKGMESSAGE}
 

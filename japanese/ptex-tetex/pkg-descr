@@ -1,7 +1,7 @@
 This is pTeX, TeX system with Japanese support.  This package installs
 Japanese specific executables and other files.
 
-This system depends on teTeX 2.0.2, which contains TeX, LaTeX2e, and
+This system depends on teTeX 2.99.13.20050204, which contains TeX, LaTeX2e, and
 various other TeX related programs.  
 
 WWW: http://www.ascii.co.jp/pb/ptex/
