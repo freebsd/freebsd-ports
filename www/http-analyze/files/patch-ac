@@ -1,0 +1,175 @@
+*** Makefile.orig	Thu Jan  6 13:03:58 2000
+--- Makefile	Thu Jan  6 11:50:42 2000
+***************
+*** 146,152 ****
+  CFLAGS  += $(PLATFORM) $(DEFINES)
+  LDFLAGS	=  
+  LINT	= lint -Dunix -Xa -u
+! LIBS	= -lm
+  NROFF	= nroff
+  NRFLAGS	= -u1 -man
+  
+--- 146,152 ----
+  CFLAGS  += $(PLATFORM) $(DEFINES)
+  LDFLAGS	=  
+  LINT	= lint -Dunix -Xa -u
+! LIBS	= -lm -L/usr/local/lib -lpng
+  NROFF	= nroff
+  NRFLAGS	= -u1 -man
+  
+*** images.c.orig	Sun May 31 08:06:53 1998
+--- images.c	Thu Jan  6 11:30:16 2000
+***************
+*** 196,202 ****
+  			basey+(rangey/2), "No hits for this month!", black);
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		if ((out = fopen(name, "wb")) != NULL) {
+! 			gdImageGif(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+--- 196,202 ----
+  			basey+(rangey/2), "No hits for this month!", black);
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		if ((out = fopen(name, "wb")) != NULL) {
+! 			gdImagePng(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+***************
+*** 286,292 ****
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImageGif(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+--- 286,292 ----
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImagePng(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+***************
+*** 441,447 ****
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImageGif(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+--- 441,447 ----
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImagePng(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+***************
+*** 529,535 ****
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImageGif(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+--- 529,535 ----
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImagePng(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+***************
+*** 666,672 ****
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		if ((out = fopen(name, "wb")) != NULL) {
+! 			gdImageGif(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+--- 666,672 ----
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		gdImageInterlace(im, 1);		/* make it interlaced */
+  		if ((out = fopen(name, "wb")) != NULL) {
+! 			gdImagePng(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+***************
+*** 752,758 ****
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImageGif(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+--- 752,758 ----
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImagePng(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+***************
+*** 988,994 ****
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImageGif(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+--- 988,994 ----
+  
+  	gdImageInterlace(im, 1);		/* make it interlaced */
+  	if ((out = fopen(name, "wb")) != NULL) {
+! 		gdImagePng(im, out);
+  		(void) fclose(out);
+  	}
+  	gdImageDestroy(im);
+***************
+*** 1037,1043 ****
+  		(void) gdImageColorAllocate(im, tp->color[0], tp->color[1], tp->color[2]);
+  		gdImageInterlace(im, 1);
+  		if ((out=fopen(fname, "wb")) != NULL) {
+! 			gdImageGif(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+--- 1037,1043 ----
+  		(void) gdImageColorAllocate(im, tp->color[0], tp->color[1], tp->color[2]);
+  		gdImageInterlace(im, 1);
+  		if ((out=fopen(fname, "wb")) != NULL) {
+! 			gdImagePng(im, out);
+  			(void) fclose(out);
+  		}
+  		gdImageDestroy(im);
+***************
+*** 1071,1077 ****
+  		if (!buttons[idx].name)
+  			continue;
+  		if ((fp = fopen(buttons[idx].name, "rb")) != NULL) {
+! 			ip = gdImageCreateFromGif(fp);
+  			(void) fclose(fp);
+  			buttons[idx].wid = gdImageSX(ip);
+  			buttons[idx].ht = gdImageSY(ip);
+--- 1071,1077 ----
+  		if (!buttons[idx].name)
+  			continue;
+  		if ((fp = fopen(buttons[idx].name, "rb")) != NULL) {
+! 			ip = gdImageCreateFromPng(fp);
+  			(void) fclose(fp);
+  			buttons[idx].wid = gdImageSX(ip);
+  			buttons[idx].ht = gdImageSY(ip);
+
