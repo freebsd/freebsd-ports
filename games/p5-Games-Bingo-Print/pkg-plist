@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Games/Bingo/Print.pm
+%%SITE_PERL%%/Games/Bingo/Print/Card.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo/Print/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/bingo_print.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo/Print
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Games/Bingo/Print
+@unexec rmdir %D/%%SITE_PERL%%/Games/Bingo 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true
