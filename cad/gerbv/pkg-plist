@@ -72,4 +72,5 @@ share/gerbv/scheme/gerb-ps.scm
 %%PORTDOCS%%@dirrm share/examples/gerbv/cslk
 %%PORTDOCS%%@dirrm share/examples/gerbv/am-test
 %%PORTDOCS%%@dirrm share/examples/gerbv/Mentor-BoardStation
+%%PORTDOCS%%@dirrm share/examples/gerbv
 %%PORTDOCS%%@dirrm share/doc/gerbv
