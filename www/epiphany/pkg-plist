@@ -28,16 +28,16 @@ libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/pkgconfig/epiphany-1.4.pc
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
+%%DOCSDIR%%/EphyEmbedPersist.html
+%%DOCSDIR%%/EphyEmbedSingle.html
 %%DOCSDIR%%/EphyNodeDb.html
+%%DOCSDIR%%/EphyPermissionManager.html
 %%DOCSDIR%%/EphyTab.html
 %%DOCSDIR%%/EphyWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/epiphany-EphyEmbedFactory.html
-%%DOCSDIR%%/epiphany-EphyEmbedPersist.html
-%%DOCSDIR%%/epiphany-EphyEmbedSingle.html
 %%DOCSDIR%%/epiphany-EphyGlade.html
-%%DOCSDIR%%/epiphany-EphyPermissionManager.html
 %%DOCSDIR%%/epiphany-ephy-cookie-manager.html
 %%DOCSDIR%%/epiphany-ephy-password-manager.html
 %%DOCSDIR%%/epiphany-ephy-session.html
@@ -48,7 +48,6 @@ libdata/pkgconfig/epiphany-1.4.pc
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
@@ -93,6 +92,12 @@ share/gnome/help/epiphany/eu/epiphany.xml
 share/gnome/help/epiphany/eu/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/eu/figures/ephy-screenshot.png
 share/gnome/help/epiphany/eu/legal.xml
+share/gnome/help/epiphany/fi/epiphany.xml
+share/gnome/help/epiphany/fi/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/fi/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/fi/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/fi/figures/ephy-screenshot.png
+share/gnome/help/epiphany/fi/legal.xml
 share/gnome/help/epiphany/ja/epiphany.xml
 share/gnome/help/epiphany/ja/figures/ephy-addressbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/ja/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
@@ -105,6 +110,8 @@ share/gnome/omf/epiphany/epiphany-es.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/epiphany/epiphany-eu.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-eu.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/epiphany/epiphany-fi.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-fi.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/epiphany/epiphany-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
@@ -176,6 +183,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/omf/epiphany
 @dirrm share/gnome/help/epiphany/ja/figures
 @dirrm share/gnome/help/epiphany/ja
+@dirrm share/gnome/help/epiphany/fi/figures
+@dirrm share/gnome/help/epiphany/fi
 @dirrm share/gnome/help/epiphany/eu/figures
 @dirrm share/gnome/help/epiphany/eu
 @dirrm share/gnome/help/epiphany/es/figures
@@ -192,5 +201,6 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-es.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-eu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-fi.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-ja.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

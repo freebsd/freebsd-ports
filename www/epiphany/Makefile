@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
@@ -50,6 +49,8 @@ GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
+
+MAN1=		epiphany.1
 
 .include <bsd.port.pre.mk>
 
