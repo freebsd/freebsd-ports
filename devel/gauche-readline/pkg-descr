@@ -1,0 +1,5 @@
+Written in Scheme only, this adds input line editing feature to
+Gauche. Assumes VT100 compatible terminal capability.
+
+WWW:	http://www.shiro.dreamhost.com/scheme/gauche/packages.html
+Author:	Julian Fondren

@@ -236,6 +236,7 @@
     SUBDIR += g-wrap
     SUBDIR += g2c
     SUBDIR += gaa
+    SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gccxml
     SUBDIR += gconf
