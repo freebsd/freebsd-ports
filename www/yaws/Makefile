@@ -7,7 +7,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -65,5 +65,8 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/yaws.pdf ${DOCSDIR}
 .endif
+
+post-install:
+	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
 .include <bsd.port.post.mk>
