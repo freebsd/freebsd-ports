@@ -1,0 +1,84 @@
+Scsh is a Unix shell in that is has significant syntax entensions to
+make writing Unix shell scripts easy (constructing pipelines, setting
+I/O redirection, conditional execution etc.). It also offers access to
+lower-level functionality like all Posix system calls, TCP/IP sockets
+and a full-featured regular expression library. All this is embedded
+into a general-purpose programming language with proper handling of
+quoting, real data types and extensive, syntactically clean control
+constructs.
+
+Scsh is also a full implementation of R4RS Scheme with some
+non-standard behaviour (required for scripting) that shouldn't be a
+problem in practice. As a result, a wide varity of exsting Scheme code
+can be used.
+
+Offered functionality:
+- Scheme special forms to work with Unix commands and command chains
+- the ability to be used to write self-identifying scripts with 
+  '#!/usr/local/bin/scsh' as the first line.
+- all Posix system calls including signals, tty and time handling
+- regular expressions, uses the same C library as *BSD, returns a
+  proper structure describing the matches and/or matched substrings.
+- delimited strings, awk-like record/field processing
+- several socket layers
+- A foreign function interface to use other C code, including a tool
+  (cig) to automate integration process.
+- elisp code to run it as a subprocess under emacs
+- On the Scheme side: a module system, basic thread support, optional
+  static linker (compiles images to C, then into an executable).
+
+The underlying Scheme implementation is a virtual machine for compact
+byte code.
+
+Installed Items:
+----------------
+
+Main program name(s):   "scsh"
+Manpage(s):             scsh(1)
+Info files:             <none>
+Other documentation:    lib/scsh/doc/ (also linked to share/doc/scsh)
+Learning entry point:   lib/scsh/doc/scsh-paper.ps or
+                        http://www-swiss.ai.mit.edu/scsh/
+
+General Notes:
+--------------
+
+Changing ${PREFIX} to something other than /usr/local works
+flawlessly, as far as scsh itself is concerned (that means: it will
+run and find everythings it needs). You will have to change the
+initial "#!/usr/local/bin/scsh" line when running shell scripts, of
+course. An additional problem is the location of optional packages
+like slib, these are still expected to be in /usr/local. I looked
+into the sources and all the hardcoded /usr/local I found are in files
+that are installed sourcecode form when scsh is installed
+(i.e. slib-init.scm).
+
+To load slib, install slib into /usr/local/lib/slib and run 
+(load "slib-init.scm") 
+in scsh. It requires no additional setup (paths or such).
+
+The emacs interface is in the original distribution in emacs/. For
+documentation see doc/user-quide.txt.
+
+Differences between FreeBSD port and generic scsh release:
+----------------------------------------------------------
+
+1) When hitting C-d (end-of-file), scsh asks 100 times for
+confirmation. I changed the default to do this just once. See constant
+*y-or-n-eof-count* in scsh/rw.scm to change it.
+
+2) The original scsh sends a mail to the scsh authors everytime you
+make the package. The FreeBSD port doesn't. The authors of scsh would
+appreciate it if you do a `(cd work/scsh-0.4.4 && make .notify)` after
+you build this package.
+
+3) A symbolic link ${PREFIX}/share/doc/scsh to the documentation is
+created.
+
+4) Some basic description text files from the distribution base dir
+are copied to lib/doc. The emacs directory is copied into
+lib/scsh/emacs. scsh's default is not to install these files.
+
+5) Some /usr/tmp -> /var/tmp
+
+FreeBSD port provided by Martin Cracauer <cracauer@cons.org>

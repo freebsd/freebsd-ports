@@ -1,0 +1,29 @@
+# New ports collection makefile for:    scsh
+# Version required:     0.4.4
+# Date created:         Nov, 11, 1996
+# Whom:                 cracauer@cons.org "Martin Cracauer"
+#
+# $Id: Makefile,v 1.1 1996/11/28 16:18:38 cracauer Exp $
+#
+
+DISTNAME=	scsh-0.4.4
+CATEGORIES=	shells lang
+MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
+
+MAINTAINER= 	cracauer@cons.org
+
+GNU_CONFIGURE=	yes
+
+NO_CDROM=	"Wait for next release by the author's request"
+ALL_TARGET=	enough
+MAN1=		scsh.1
+STRIP=		
+
+post-install:
+	@strip ${PREFIX}/bin/scsh
+	(cd ${WRKSRC} ; \
+	 ${INSTALL_DATA} README RELEASE NEWS COPYING ${PREFIX}/lib/scsh/doc)
+	${RM} -f ${PREFIX}/share/doc/scsh
+	ln -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
+
+.include <bsd.port.mk>
