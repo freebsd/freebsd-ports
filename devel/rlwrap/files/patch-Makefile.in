@@ -1,11 +1,34 @@
---- Makefile.in.orig	Thu Sep 20 00:20:54 2001
-+++ Makefile.in	Thu Sep 20 00:21:03 2001
-@@ -27,7 +27,7 @@
+--- Makefile.in.orig	Fri Jun 21 18:13:49 2002
++++ Makefile.in	Thu Jul  4 15:46:48 2002
+@@ -14,6 +14,8 @@
+ 
+ oldincludedir = /usr/include
+ 
++CPPFLAGS      = @CPPFLAGS@
++
+ LDFLAGS       = @LDFLAGS@ -L$(libdir)
+ LIBS          = @LIBS@
+ SHELL         = /bin/sh
+@@ -21,7 +23,7 @@
  
  
- rlwrap: $(OBJECTS)
--	$(CC)  -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@
-+	$(CC)  -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@ @LDFLAGS@
+ CC = @CC@
+-CFLAGS= @CFLAGS@ -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\" -Wall -I . -I $(includedir)
++CFLAGS= @CFLAGS@ $(CPPFLAGS) -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\" -Wall -I . -I $(includedir)
+ SOURCES = main.c signals.c utils.c readline.c pty.c completion.c term.c  
+ OBJECTS = main.o signals.o utils.o readline.o pty.o completion.o term.o
+ TESTCLIENT=testclient
+@@ -50,10 +52,11 @@
+ check:	@CHECK@
  
- $(OBJECTS) : rlwrap.h 
+ no_perl :
+-	@echo "warning: test client not made because configure didn't find perl" 
++	sed -e 's#\@PERLBIN\@#/usr/bin/perl#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
++        chmod a+x $(TESTCLIENT)
  
+ _testclient:
+-	perl -p -e 's#\@PERLBIN\@#$(PERL)#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
++	sed -e 's#\@PERLBIN\@#$(PERL)#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
+         chmod a+x $(TESTCLIENT)
+ 
+ _check:   $(TESTCLIENT) rlwrap
