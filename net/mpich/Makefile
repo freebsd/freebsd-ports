@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.5 1997/10/17 21:39:59 chuckr Exp $
+# $Id: Makefile,v 1.1.1.1 1998/05/03 01:43:08 chuckr Exp $
 #
 
 DISTNAME=	mpich-1.1.0
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 MAINTAINER=	dbader@eece.unm.edu
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--cflags="$(CFLAGS)"
 WRKSRC=		${WRKDIR}/mpich
 ALL_TARGET=
 MANPREFIX=	$(PREFIX)/mpich
