@@ -1,0 +1,5 @@
+bin/igal
+lib/igal/indextemplate.html
+lib/igal/slidetemplate.html
+lib/igal/tile.gif
+@dirrm lib/igal

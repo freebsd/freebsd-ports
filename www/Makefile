@@ -122,6 +122,7 @@
     SUBDIR += httrack
     SUBDIR += hydra
     SUBDIR += hypermail
+    SUBDIR += igal
     SUBDIR += indexme
     SUBDIR += interchange
     SUBDIR += jakarta-jmeter
