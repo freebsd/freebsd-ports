@@ -1,0 +1,1 @@
+GS_VERSION=	7.06

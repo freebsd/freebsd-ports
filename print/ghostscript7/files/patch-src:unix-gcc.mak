@@ -1,5 +1,5 @@
---- src/unix-gcc.mak.orig	Sat Apr 20 07:23:09 2002
-+++ src/unix-gcc.mak	Fri Jun  7 05:10:20 2002
+--- src/unix-gcc.mak.orig	Thu Oct 10 22:35:51 2002
++++ src/unix-gcc.mak	Sun Nov 17 22:00:15 2002
 @@ -24,14 +24,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).

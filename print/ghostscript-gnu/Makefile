@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	7.05
-PORTREVISION=	5
+PORTVERSION=	${GS_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
-		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
+		http://hp.sourceforge.net/:hp2200 \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
+		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/pips/data/V306/:eplaser \
 		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs705/
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:gs_fonts \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
 			gimp-print/:gprint \
 			bjc250gs/:bjc250 \
@@ -31,7 +31,7 @@ PKGNAMESUFFIX=	-gnu
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${GS_FONTS_STD}:gs_fonts \
 		${GS_FONTS_OTHER}:gs_fonts \
-		${HP8XX_SRCS}:hp8xx \
+		${HP2200_SRCS}:hp2200 \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
 		${DJ970_SRCS}:dj970 \
@@ -40,6 +40,7 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${ALPS_SRCS}:ports_jp_gs \
 		${BJ10V_SRCS}:ports_jp_gs \
 		${BJC250_SRCS}:bjc250 \
+		${CPCA_SRCS}:cpca \
 		${LIPS_SRCS}:lips \
 		${DMPRT_SRCS}:ports_jp_gs \
 		${EPAG_SRCS}:epag \
@@ -60,13 +61,14 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
-		XCFLAGS="${XCFLAGS}"
-PLIST_SUB=	GS_VERSION=${PORTVERSION} EPLASER_GSVERS=${EPLASER_GSVERS}
+		XCFLAGS="${XCFLAGS}" WITHOUT_X11="${WITHOUT_X11}"
+PLIST_SUB=	GS_VERSION=${GS_VERSION}
 
-MAN1=		ansi2knr.1 dvipdf.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
-		gs.1 gslp.1 gsnd.1 pcl3opts.1 pdf2dsc.1 pdf2ps.1 pdfopt.1 \
-		pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 \
-		ps2pdfwr.1 ps2ps.1 wftopfa.1
+SCRIPTS_ENV=	GS_OPTIONS="${GS_OPTIONS}" WITHOUT_X11="${WITHOUT_X11}"
+
+MAN1=		ansi2knr.1 dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 pdf2dsc.1 \
+		pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 \
+		ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 wftopfa.1
 MLINKS=		gslp.1 gsbj.1 \
 		gslp.1 gsdj.1 \
 		gslp.1 gsdj500.1 \
@@ -81,11 +83,10 @@ XCFLAGS=	-DUPD_SIGNAL=0
 XCFLAGS+=	-DA4
 .endif
 
-.if !defined(WITHOUT_X11)
-USE_XLIB=	yes
-.else
+.if defined(WITHOUT_X11)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-MAKE_ENV+=	WITHOUT_X11="${WITHOUT_X11}"
+.else
+USE_XLIB=	yes
 .endif
 
 .if defined(WITH_SHLIB)
@@ -112,10 +113,10 @@ GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
-# HP8XX - additional driver for HP DeskJet 812C/815C/832C/880C/882C/895C
-# http://www.gelhaus.net/hp880c/
-HP8XX=		cdj880
-HP8XX_SRCS=	gdevcd8.tar.gz
+# HP2200 - additional driver for HP DeskJet 8xx and Business Inkjet 2200
+# http://hp.sourceforge.net/gs-hp2200.php
+HP2200=		hp2200
+HP2200_SRCS=	gs-hp2200.tar.gz
 
 # HPDJ - additional driver for HP PCL3 printers, by Martin Lottermoser
 # still present, just for the case pcl3 is missing some hpdj feature
@@ -125,6 +126,7 @@ HPDJ_VERS=	2.6
 HPDJ_NAME=	${HPDJ}-${HPDJ_VERS}
 HPDJ_SRCS=	${HPDJ_NAME}.tar.gz
 HPDJ_MAN1=	gs-hpdj.1
+MAN1+=		${HPDJ_MAN1}
 
 # PCL3 (hpdj successor now in RELEASE quality)
 # additional driver for HP PCL3 printers, by Martin Lottermoser
@@ -134,6 +136,7 @@ PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}
 PCL3_SRCS=	${PCL3_NAME}.tar.gz
 PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
+MAN1+=		${PCL3_MAN1}
 
 # DJ970 - additional driver for HP DeskJet 970, supports duplex printing
 # http://www.harsch.net/Ghostscript/ghostscript.html
@@ -179,6 +182,13 @@ BJC250_VERS=	0.756
 BJC250_NAME=	${BJC250}-v${BJC250_VERS}
 BJC250_SRCS=	gs7.05-${BJC250_NAME}.diff.gz
 
+# CPCA - additional driver for Canon CPCA printers
+# http://cweb.canon.jp/open-mie/technical/index-j.html
+CPCA=		cpca
+CPCA_VERS=	1.0.0
+CPCA_NAME=	canon-lips4-${CPCA_VERS}
+CPCA_SRCS=	${CPCA_NAME}-651.tgz
+
 # LIPS - additional driver for Canon LIPS II+/III/IVc/IV printers
 # http://www.ucatv.ne.jp/~taeko/software/gs/
 LIPS=		lips
@@ -203,9 +213,8 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # http://www.epkowa.co.jp/linux/lpd.html
 EPLASER=	eplaser
 EPLASER_VERS=	3.0.6
-EPLASER_GSVERS=	652
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
-EPLASER_SRCS=	${EPLASER_NAME}-${EPLASER_GSVERS}.tgz
+EPLASER_SRCS=	${EPLASER_NAME}-652.tgz
 
 # MJC - additional driver for Epson MachJet series
 MJC=		mjc
@@ -244,9 +253,10 @@ post-extract:
 # configure.batch, which update unix-gcc.mak to build gs with these
 # new devices !
 #
-# for HP8XX driver
-	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
-	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
+# for HP2200 driver
+	${ECHO_MSG} ">>>   extracting ${HP2200_SRCS} ..."
+	${MKDIR} ${WRKSRC}/${HP2200}
+	${TAR} -C ${WRKSRC}/${HP2200} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP2200_SRCS}
 # for HPDJ driver
 	${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRCS}
@@ -281,6 +291,10 @@ post-extract:
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${BJC250_SRCS} | \
 		${PATCH} -d ${WRKSRC}/${BJC250_NAME} -f -s -N -E -p1 \
 		2>/dev/null || ${TRUE}
+	${LN} -sf ${BJC250_NAME} ${WRKSRC}/${BJC250}
+# for CPCA driver
+	${ECHO_MSG} ">>>   extracting ${CPCA_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${CPCA_SRCS}
 # for LIPS driver
 	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
@@ -315,13 +329,17 @@ post-patch:
 		${WRKSRC}/lib/gs_res.ps
 # for DMPRT driver
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
-		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
+		 s|%%GS_VERSION%%|${GS_VERSION}|g' \
 			${WRKSRC}/src/dmp_site.ps
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
 	${ECHO_MSG} ">>> in pre-configure ..."
+# for HP2200 driver
+	${ECHO_MSG} ">>>   adding ${HP2200} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/chp2200.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
 # for HPDJ driver
 	${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/contrib.mak-5.94.add \
@@ -349,6 +367,10 @@ pre-configure:
 # for BJC250 driver
 	${ECHO_MSG} ">>>   adding ${BJC250} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/bjc250.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for CPCA driver
+	${ECHO_MSG} ">>>   adding ${CPCA} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/src/cpca_gdev.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for LIPS driver
 	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
@@ -381,19 +403,6 @@ pre-configure:
 	${CAT} ${WRKSRC}/src/smartgdi-contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
-do-configure:
-	${ECHO_MSG} ">>> in do-configure ..."
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.batch
-.else
-.if defined(WITHOUT_X11)
-	${GREP} -v '^  "x11' ${SCRIPTDIR}/configure > ${WRKDIR}/configure
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${WRKDIR}/configure
-.else
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-.endif
-.endif
-
 post-configure:
 	${ECHO_MSG} ">>> in post-configure ..."
 # for Gimp-Print driver
@@ -411,7 +420,11 @@ pre-build:
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-	${LN} -sf ${WRKSRC}/src/unix-gcc.mak ${WRKSRC}/Makefile
+# for HP2200 driver
+	${ECHO_MSG} ">>>   creating symlinks for ${HP2200} ..."
+.for i in gdevcd8.c
+	${LN} -sf ${WRKSRC}/${HP2200}/${i} ${WRKSRC}/src
+.endfor
 # for Gimp-Print driver
 	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
@@ -498,12 +511,12 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/${i} ${MANPREFIX}/man/man1
 .endfor
 	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/${HPDJ}
+	${MKDIR} ${DATADIR}/${GS_VERSION}/${HPDJ}
 	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
 .for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
 	margins-Letter.ps margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DATADIR}/${PORTVERSION}/${HPDJ}
+		${DATADIR}/${GS_VERSION}/${HPDJ}
 .endfor
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing ${PCL3} utility in bindir ..."
@@ -514,7 +527,7 @@ post-install:
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
 	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/${PCL3}
+	${MKDIR} ${DATADIR}/${GS_VERSION}/${PCL3}
 	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
@@ -522,13 +535,13 @@ post-install:
 	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
 	ps/margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DATADIR}/${PORTVERSION}/${PCL3}
+		${DATADIR}/${GS_VERSION}/${PCL3}
 .endfor
 # for DMPRT driver
 	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
 .for i in dmp_init.ps dmp_site.ps escp_24.src
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DATADIR}/${PORTVERSION}/lib
+		${DATADIR}/${GS_VERSION}/lib
 .endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
@@ -537,103 +550,104 @@ post-install:
 	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 .for i in ${CONTRIB_UPP}
 	${INSTALL_DATA} ${FILESDIR}/${i} \
-		${DATADIR}/${PORTVERSION}/lib
+		${DATADIR}/${GS_VERSION}/lib
 .endfor
 #
 # now NOPORTDOCS dependend stuff
 #
 .if !defined(NOPORTDOCS)
 	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}
 # for HPDJ driver
 	${ECHO_MSG} ">>>   installing ${HPDJ} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${HPDJ}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${HPDJ}
 .for i in NEWS hpdj.html
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${PORTVERSION}/${HPDJ}
+		${DOCSDIR}/${GS_VERSION}/${HPDJ}
 .endfor
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${PCL3}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${PCL3}
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${PCL3}
+		${DOCSDIR}/${GS_VERSION}/${PCL3}
 .endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MD2K}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MD2K}
 .for i in README.jis
 	${INSTALL_DATA} ${WRKSRC}/${MD2K_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${MD2K}
+		${DOCSDIR}/${GS_VERSION}/${MD2K}
 .endfor
 # for ALPS driver
 	${ECHO_MSG} ">>>   installing ${ALPS} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${ALPS}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${ALPS}
 .for i in README.gdevalps
 	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${ALPS}
+		${DOCSDIR}/${GS_VERSION}/${ALPS}
 .endfor
 # for BJ10V driver
 	${ECHO_MSG} ">>>   installing ${BJ10V} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${BJ10V}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${BJ10V}
 .for i in gdev10v.jis
 	${INSTALL_DATA} ${WRKSRC}/${BJ10V_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${BJ10V}
+		${DOCSDIR}/${GS_VERSION}/${BJ10V}
 .endfor
 # for LIPS driver
 	${ECHO_MSG} ">>>   installing ${LIPS} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${LIPS}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LIPS}
 .for i in Gdevlips.htm
 	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${LIPS}
+		${DOCSDIR}/${GS_VERSION}/${LIPS}
 .endfor
 # for DMPRT driver
 	${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${DMPRT}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${DMPRT}
 .for i in gdevdmpr.sj
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${PORTVERSION}/${DMPRT}
+		${DOCSDIR}/${GS_VERSION}/${DMPRT}
 .endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPAG}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPAG}
 .for i in ert.txt gdevepag.txt ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${EPAG}
+		${DOCSDIR}/${GS_VERSION}/${EPAG}
 .endfor
 .for i in psprint gsepagif.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${EPAG}
+		${DOCSDIR}/${GS_VERSION}/${EPAG}
 .endfor
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPLASER}
-.for i in readme-eplaser-${EPLASER_GSVERS}.euc readme-eplaser-${EPLASER_GSVERS}-jp.euc
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
+.for i in readme-eplaser-652.euc readme-eplaser-652-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${EPLASER}
+		${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .endfor
 # for MJC driver
 	${ECHO_MSG} ">>>   installing ${MJC} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MJC}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MJC}
 .for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
 	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${MJC}
+		${DOCSDIR}/${GS_VERSION}/${MJC}
 .endfor
 # for NPDL driver
 	${ECHO_MSG} ">>>   installing ${NPDL} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${NPDL}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${NPDL}
 .for i in gdevnpdl.jis
 	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${NPDL}
+		${DOCSDIR}/${GS_VERSION}/${NPDL}
 .endfor
 # for GDI driver
 	${ECHO_MSG} ">>>   installing ${GDI} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${GDI}
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${GDI}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${PORTVERSION}/${GDI}
+		${DOCSDIR}/${GS_VERSION}/${GDI}
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
 
+.include "Makefile.inc"
 .include <bsd.port.mk>
