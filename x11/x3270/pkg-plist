@@ -11,6 +11,15 @@ lib/X11/fonts/misc/3270-12b.pcf.Z
 lib/X11/fonts/misc/3270a.pcf.Z
 lib/X11/fonts/misc/3270ab.pcf.Z
 lib/X11/fonts/misc/3270d.pcf.Z
+lib/X11/fonts/misc/3270gt8.pcf.Z
+lib/X11/fonts/misc/3270gt12.pcf.Z
+lib/X11/fonts/misc/3270gt12b.pcf.Z
+lib/X11/fonts/misc/3270gt16.pcf.Z
+lib/X11/fonts/misc/3270gt16b.pcf.Z
+lib/X11/fonts/misc/3270gt24.pcf.Z
+lib/X11/fonts/misc/3270gt24b.pcf.Z
+lib/X11/fonts/misc/3270gt32.pcf.Z
+lib/X11/fonts/misc/3270gt32b.pcf.Z
 @exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/misc /usr/X11R6/lib/X11/fonts/misc/fonts.dir
 @exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/misc
 @exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/misc
