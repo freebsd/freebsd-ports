@@ -10,7 +10,7 @@
 
 DISTNAME=		Generic-NQS-3.50.6
 CATEGORIES=		net
-MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/v3.50/
+MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/source/by-version-number/v3.50/
 
 MAINTAINER=		tony.maher@ebioinformatics.com
 
