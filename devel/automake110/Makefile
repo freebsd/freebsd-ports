@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.4
+PORTVERSION=	1.4.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
+DISTNAME=	${PORTNAME}-1.4-p4
 
 MAINTAINER=	fujimoto@oscar.elec.waseda.ac.jp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
 USE_PERL5=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-STRIP=		 # none
+STRIP=		# none
 
 pre-configure:
 	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
