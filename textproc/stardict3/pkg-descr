@@ -1,5 +1,5 @@
-StarDict is a international dictionary that run in Gnome envornment.
-It have powerful features such as "Glob-style pattern matching",
-"Scan seletion word","Fuzzy search" and etc.
+StarDict is a Cross-Platform and international dictionary written in Gtk2.
+It has powerful features such as "Glob-style pattern matching," "Scan
+selection word," "Fuzzy query," etc.
 
-WWW: http://stardict.cosoft.org.cn/
+WWW: http://stardict.sourceforge.net/
