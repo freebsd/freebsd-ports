@@ -25,11 +25,11 @@
  
  bininstall:	c2ps
 -	install -m 755 c2ps $(BIN)
-+	$(INSTALL_PROGRAM) c2ps $(BIN)
++	$(BSD_INSTALL_PROGRAM) c2ps $(BIN)
  
  maninstall:	c2ps.1
 -	install -m 644 c2ps.1 $(MAN)
-+	$(INSTALL_MAN) c2ps.1 $(MAN)
++	$(BSD_INSTALL_MAN) c2ps.1 $(MAN)
  
  compile:	c2ps.c
  	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c
