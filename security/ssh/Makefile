@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.68 1998/10/08 06:16:18 jkh Exp $
+# $Id: Makefile,v 1.69 1998/10/08 06:17:56 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -47,7 +47,7 @@ IS_INTERACTIVE=	YES
 
 GNU_CONFIGURE=	YES
 
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
+CONFIGURE_ARGS+= --with-etcdir=${PREFIX}/etc
 
 #Uncomment if all your users are in their own group and their homedir
 #is writeable by that group.  Beware the security implications!
