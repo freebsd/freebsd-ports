@@ -1,0 +1,11 @@
+--- Dvi.c.orig	Sun Dec 12 23:53:23 1999
++++ Dvi.c	Sun Dec 26 08:22:52 1999
+@@ -353,7 +353,7 @@
+ 	dw->dvi.tmpFile = 0;
+ 	if (!dw->dvi.seek) {
+ 		strcpy (tmpName, "/tmp/dviXXXXXX");
+-		mktemp (tmpName);
++		mkstemp (tmpName);
+ 		dw->dvi.tmpFile = fopen (tmpName, "w+");
+ 		unlink (tmpName);
+ 	}
