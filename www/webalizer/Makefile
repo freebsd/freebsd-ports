@@ -16,7 +16,11 @@ DISTNAME=	${PORTNAME}-2.01-10-src
 MAINTAINER=	dinoex@FreeBSD.org
 
 .if !defined(LIB_DEPENDS)
+.if defined(WEBALIZER_WITH_GD2)
+LIB_DEPENDS=	gd.3:${PORTSDIR}/graphics/gd2
+.else
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+.endif
 .endif
 
 USE_BZIP2=	yes
