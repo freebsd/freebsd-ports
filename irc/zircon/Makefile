@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zircon
-PORTVERSION=	1.18.250
+PORTVERSION=	1.18.253
 CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
