@@ -8,10 +8,7 @@
 PORTNAME=		streamtuner
 PORTVERSION=		0.10.2
 CATEGORIES=		audio www
-MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
-			${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION} \
-			pav
+MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GTK+ stream directory browser
