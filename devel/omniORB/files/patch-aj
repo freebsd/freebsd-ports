@@ -1,5 +1,5 @@
---- ../mk/platforms/x86_freebsd_4.0.mk.orig	Fri Aug 18 16:09:33 2000
-+++ ../mk/platforms/x86_freebsd_4.0.mk	Tue Sep 12 09:56:52 2000
+--- mk/platforms/x86_freebsd_4.0.mk.orig	Fri Aug 18 16:09:33 2000
++++ mk/platforms/x86_freebsd_4.0.mk	Tue Sep 12 09:56:52 2000
 @@ -10,7 +10,7 @@
  #
  # You must set a path to a Python 1.5.2 interpreter.
