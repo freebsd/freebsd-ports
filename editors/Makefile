@@ -42,7 +42,6 @@
     SUBDIR += gedit
     SUBDIR += ghex
     SUBDIR += gnotepad+
-    SUBDIR += gwp
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
