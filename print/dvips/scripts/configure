@@ -50,8 +50,8 @@ else
   echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/post-install
 fi
   
-sed -e s:/usr/lib/tex:/$PREFIX/lib/texmf: \
-    -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
+sed -e s:/usr/lib/tex:$PREFIX/lib/texmf: \
+    -e s:/common/rokicki/cmps/dvips:$CACHE: \
      $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
 #configure config.ps
