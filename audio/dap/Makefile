@@ -1,13 +1,13 @@
 # ports collection makefile for:	dap
-# Version required:			1.3b
+# Version required:			2.0.2
 # Date created:				23 August 1998
 # Whom:					yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.4 1998/11/29 13:35:35 asami Exp $
+# $Id: Makefile,v 1.5 1999/01/07 08:19:19 simokawa Exp $
 #
 
 DISTNAME=	DAPSource
-PKGNAME=	dap-1.3b
+PKGNAME=	dap-2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/
 

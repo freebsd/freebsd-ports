@@ -1,0 +1,9 @@
+Index: spkit/spkit/Makefile.linux
+@@ -65,6 +65,7 @@
+ libdsp.a: $(OBJS)
+ 	rm -f $(LIBNAME)
+ 	ar ruv $(LIBNAME) $(OBJS)
++	ranlib $(LIBNAME)
+ 
+ clean:
+ 	rm -f $(OBJS)
