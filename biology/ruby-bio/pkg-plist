@@ -1,8 +1,17 @@
 bin/biofetch
 bin/dbget
+@unexec if cmp -s %D/etc/bioinformatics/seqdatabase.ini %D/etc/bioinformatics/seqdatabase.ini.sample; then rm -f %D/etc/bioinformatics/seqdatabase.ini; fi
+etc/bioinformatics/seqdatabase.ini.sample
+@exec [ ! -f %B/etc/bioinformatics/seqdatabase.ini ] && cp %B/%f %B/etc/bioinformatics/seqdatabase.ini
+@dirrm etc/bioinformatics
 %%RUBY_SITELIBDIR%%/bio.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/format8.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/rexml.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/xmlparser.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta/format10.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta/format6.rb
 %%RUBY_SITELIBDIR%%/bio/data/aa.rb
 %%RUBY_SITELIBDIR%%/bio/data/codontable.rb
 %%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
@@ -29,8 +38,8 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/db/swissprot.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
 %%RUBY_SITELIBDIR%%/bio/db/trembl.rb
+%%RUBY_SITELIBDIR%%/bio/extend.rb
 %%RUBY_SITELIBDIR%%/bio/feature.rb
-%%RUBY_SITELIBDIR%%/bio/id.rb
 %%RUBY_SITELIBDIR%%/bio/io/brdb.rb
 %%RUBY_SITELIBDIR%%/bio/io/dbget.rb
 %%RUBY_SITELIBDIR%%/bio/io/fetch.rb
@@ -43,26 +52,28 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/pathway.rb
 %%RUBY_SITELIBDIR%%/bio/reference.rb
 %%RUBY_SITELIBDIR%%/bio/sequence.rb
-%%RUBY_SITELIBDIR%%/bio/util/fold.rb
-%%RUBY_SITELIBDIR%%/bio/util/hoge.rb
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/blast
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio/data
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/kegg
 @dirrm %%RUBY_SITELIBDIR%%/bio/db
 @dirrm %%RUBY_SITELIBDIR%%/bio/io
-@dirrm %%RUBY_SITELIBDIR%%/bio/util
 @dirrm %%RUBY_SITELIBDIR%%/bio
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/biofetch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fasta2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fsplit.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gb2fasta.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gb2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gbtab2mysql.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2nuc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2pep.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genome2rb.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genome2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gt2fasta.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/pmfetch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/pmsearch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/ssearch2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/tfastx2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/vs-genes.rb

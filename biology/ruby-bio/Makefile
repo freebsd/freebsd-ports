@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 CATEGORIES=	biology ruby
 MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/
 MASTER_SITE_SUBDIR=	knu
@@ -22,7 +22,19 @@ RUBY_SETUP=	install.rb
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/dbget
 
+post-patch:
+	${RUBY} -i -pe 'gsub(%r"(/etc/bioinformatics/)") { "${PREFIX}" + $$1 }' \
+		${WRKSRC}/doc/Tutorial.rd.ja \
+		${WRKSRC}/lib/bio/io/registry.rb
+
 do-install:
+	${MKDIR} ${PREFIX}/etc/bioinformatics
+.for f in etc/bioinformatics/seqdatabase.ini
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${f}.sample
+	if [ ! -f ${PREFIX}/${f} ]; then \
+		${CP} -p ${PREFIX}/${f}.sample ${PREFIX}/${f}; \
+	fi
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
