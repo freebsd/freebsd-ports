@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mozilla
-PORTREVISION=	2
+PORTREVISION=	0
 PORTEPOCH=	0
 CATEGORIES=	www
 
-MASTERDIR=	${.CURDIR}/../mozilla-devel
+MASTERDIR=	${.CURDIR}/../mozilla
 DESCR=		${PKGDIR}/pkg-descr.gtk2
 
 WITH_GTK2=	yes
 WITHOUT_XFT=	"Causes crashes when used with apps such as Galeon 2"
-MOZILLA=	mozilla-devel-gtk2
+MOZILLA=	mozilla-gtk2
 
 .include "${MASTERDIR}/Makefile"

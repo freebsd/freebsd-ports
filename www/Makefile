@@ -222,6 +222,7 @@
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-embedded-devel
     SUBDIR += mozilla-embedded-vendor
+    SUBDIR += mozilla-gtk2
     SUBDIR += mozilla-headers
     SUBDIR += mozilla-headers-devel
     SUBDIR += mozilla-headers-vendor
