@@ -825,12 +825,6 @@ lib/ghc-%%GHC_VERSION%%/parse-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/process-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/template-hsc.h
 lib/ghc-%%GHC_VERSION%%/unlit
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/Database
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/FileFormat
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/Hugs
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/Language
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/NHC
-@exec /bin/mkdir -p %D/lib/ghc-%%GHC_VERSION%%/imports/base/Network
 @dirrm lib/ghc-%%GHC_VERSION%%/include
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/util
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/text
@@ -858,18 +852,12 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/System/IO
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/System/Console
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/System
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Network
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/NHC
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Language
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Hugs
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/GHC
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Foreign/Marshal
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Foreign/C
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Foreign
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/FileFormat
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Debug/QuickCheck
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Debug
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Database
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Data/STRef
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Data/Array
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/base/Data
