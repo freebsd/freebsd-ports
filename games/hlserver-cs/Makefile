@@ -8,16 +8,16 @@
 PORTNAME?=	cs
 PORTVERSION?=	1.1c
 CATEGORIES=	games linux
-MASTER_SITES?=	ftp://ftp.icrontic.com/pub/ \
-		http://flf.playnet.com/ \
+MASTER_SITES?=	ftp://ftp.pipex.net/uunet/games/counterstrike/linux/ \
+		ftp://ftp.icsmedia.de/pub/games/halflife/counter_strike/linux_server/ \
+		ftp://ftp.phil.uni-erlangen.de/pub/hl/mods/ \
+		http://www.databits.net/~pat/ \
 		http://ftp2.gamespy.com/pub/cdrom/counter-strike/ \
 		ftp://fileplanet.ngi.it/fileplanet2/counter-strike/ \
 		ftp://ftp.fasta.fh-dortmund.de/gdi/halflife/counterstrike/ \
-		http://www.death-match.com/fr/download/fichiers/halflife/mods/ \
-		ftp://ftp.icsmedia.de/pub/games/halflife/counter_strike/linux_server/ \
 		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/modifications/cstrike/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/ \
-		ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/
+
 PKGNAMEPREFIX=	hlserver-
 .ifndef(DISTNAME)
 DISTFILES?=	cs_11b_full.tar.gz cs_11c_up.tar.gz
@@ -48,11 +48,9 @@ PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB_FOR_THIS_PO
 
 pre-patch:
 # remove trailing ^M
-.for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
-	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
-	*.scr */*.scr *.txt */*.txt *.TXT */*.TXT
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file} >/dev/null 2>/dev/null
-.endfor
+	@find -E ${WRKSRC} -type f \
+		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt)" \
+		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 
 # if you change the PLIST, please re-think the following
 # Parses PLIST
