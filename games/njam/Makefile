@@ -15,12 +15,8 @@ DISTNAME=	 ${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Fast paced multiplayer pac-man clone
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_net.0:${PORTSDIR}/net/sdl_net
-
 USE_GMAKE=	yes
-USE_SDL=	yes
+USE_SDL=	mixer image net sdl
 DOC_FILES=	assassin.gif award-2.gif cookie.gif doc-editor.html \
 		doc.html doc2.html door.gif freezer.gif ghactive.gif \
 		ghinactive.gif hunter.gif invisible.gif juice.gif \

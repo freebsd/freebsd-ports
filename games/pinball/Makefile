@@ -16,14 +16,13 @@ COMMENT=	Emilia Pinball is a free pinball game
 
 .if !defined(WITH_ALLEGRO)
 BUILD_DEPENDS=	${SDL_CONFIG}:${PORTSDIR}/devel/sdl12
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 .else
 BROKEN=		"support with Allegro is (temporarily) broken as of version 0.31"
 BUILD_DEPENDS=	${ALLEGRO_CONFIG}:${PORTSDIR}/devel/allegro
 LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
 .endif
 
+USE_SDL=	image mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
@@ -37,9 +36,7 @@ CONFIGURE_ARGS+=	--with-allegro
 EXTRA_LIBS=	-lGL -lGLU
 .endif
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -DRZR_LIBSTATIC" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${EXTRA_LIBS}" \
-		SDL_CONFIG="${SDL_CONFIG}"
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${EXTRA_LIBS}"
 ALLEGRO_CONFIG=	${LOCALBASE}/bin/allegro-config
 
 DOCS=		README

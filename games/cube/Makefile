@@ -15,9 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/:S/./_/}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	An OpenGL 3D First Person Shooter game
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
+USE_SDL=	image mixer sdl
 USE_ZIP=	yes
 USE_GMAKE=	yes
 

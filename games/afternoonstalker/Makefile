@@ -13,9 +13,9 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the 1981 Night Stalker video game
 
-LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng
 
+USE_SDL=	mixer sdl
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -14,16 +14,14 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	verm@drunkmonk.net
 COMMENT=	The polished successor to LBreakout
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-highscore-path=/var/games \
 		--with-doc-path=${PREFIX}/share/doc
-CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 USE_REINPLACE=	yes
 
 post-patch:

@@ -14,13 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 
 MAN6=	crimson.6
 

@@ -15,17 +15,13 @@ DISTNAME=	BomberInstinct-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice Bomberman-like multiplayer game
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 
 pre-patch:

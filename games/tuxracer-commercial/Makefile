@@ -17,16 +17,14 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	A 3d penguin racing game using OpenGL
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
+USE_SDL=	mixer sdl
 USE_MESA=	yes
 USE_GMAKE=	yes
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		THREAD_LIB="${PTHREAD_LIB}"
+CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIB}"
 MAKE_ENV=	${CONFIGURE_ENV}
 CONFIGURE_ARGS=	--with-tcl-inc="${LOCALBASE}/include/tcl8.3" \
 		--with-tcl-libs="${LOCALBASE}/lib" \

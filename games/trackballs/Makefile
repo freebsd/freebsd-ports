@@ -14,14 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
 
-LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	mixer image ttf sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget

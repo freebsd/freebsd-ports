@@ -13,13 +13,9 @@ MASTER_SITES=	http://www.nbswebfx.com/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another shoot-the-Bill game
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		MKDIR="${MKDIR}" \
+MAKE_ENV=	MKDIR="${MKDIR}" \
 		TAR="${TAR}"
 
 MAN6=		defendguin.6

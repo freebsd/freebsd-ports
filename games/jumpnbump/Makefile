@@ -15,8 +15,7 @@ MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	A fun multiplayer game with cute fluffy bunnies and bloody explosions
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+USE_SDL=	mixer sdl
 
 .if !defined (WITHOUT_TCL)
 RUN_DEPENDS+=	wish8.0:${PORTSDIR}/x11-toolkits/tk80

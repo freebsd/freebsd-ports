@@ -19,22 +19,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDLmm.8:${PORTSDIR}/devel/sdlmm \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		paragui.4:${PORTSDIR}/x11-toolkits/paragui
+LIB_DEPENDS=	paragui.4:${PORTSDIR}/x11-toolkits/paragui
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	image mm mixer sdl
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GETOPT_LONG=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
+CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		CXXFLAGS="-D_UNICODE_BROKEN_" \
 		LIBS="`${SDL_CONFIG} --libs` -lm"
 

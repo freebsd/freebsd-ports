@@ -18,17 +18,15 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A free role playing game
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_SDL=	mixer sdl
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-py-debug
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 
 post-install:
 		cd ${WRKDIR}/wastesedge-${PORTVERSION} && \

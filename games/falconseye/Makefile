@@ -16,12 +16,12 @@ DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	NetHack derivative
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 NHDIR=		"${PREFIX}/share/falconseyedir"
 MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 NETHACKCONFIG=	${FILESDIR}/x-config
+USE_SDL=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	Yes
 USE_ZIP=	yes

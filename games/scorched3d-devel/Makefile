@@ -16,14 +16,11 @@ DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 MAINTAINER=		mdodd@FreeBSD.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-LIB_DEPENDS=		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-			SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-			SDL_net.0:${PORTSDIR}/net/sdl_net \
-			wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
+USE_SDL=		mixer net sdl
 SCORCH_VERSION=		35
 WRKSRC=			${WRKDIR}/scorched
-SDL_CONFIG?=		${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE= 		yes
 USE_GL=			yes
 USE_GMAKE=		yes
@@ -32,9 +29,7 @@ USE_AUTOCONF_VER=	253
 
 AUTOMAKE_ARGS=		--foreign
 CONFIGURE_ARGS=		--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-			SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-MAKE_ENV=		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
 

@@ -14,13 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}x
 MAINTAINER=	tiamat@comset.net
 COMMENT=	An OpenGL arcade space shoot-em-up with interesting physics
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

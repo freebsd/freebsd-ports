@@ -15,8 +15,7 @@ MAINTAINER=	mwest@uct.ac.za
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
 .if defined(WITH_SDL)
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+USE_SDL=	image mixer sdl
 MAKE_ARGS+=	sdl
 .endif
 

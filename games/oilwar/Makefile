@@ -14,12 +14,7 @@ DISTNAME=	OilWar-${PORTVERSION}
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Evil army wants to steal your oil
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.mk>
