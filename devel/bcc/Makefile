@@ -3,7 +3,7 @@
 # Date created:		26 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.5 1995/11/26 11:28:48 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/18 11:22:35 asami Exp $
 #
 
 DISTNAME=	bcc
@@ -11,5 +11,10 @@ PKGNAME=	bcc-95.3.12
 CATEGORIES=	devel lang
 
 MAINTAINER=	joerg@FreeBSD.org
+
+MAN1=		as86.1 bcc.1 bcc-cc1.1 ld86.1
+.if !defined(NOMANCOMPRESS)
+MANCOMPRESSED=	yes
+.endif
 
 .include <bsd.port.mk>
