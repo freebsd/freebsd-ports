@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Apache/Session/Wrapper.pm
+@unexec rmdir %D/%%SITE_PERL%%/Apache/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
