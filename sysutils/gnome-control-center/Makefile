@@ -33,7 +33,5 @@ CONFIGURE_TARGET=       --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|Xft\.h|Xft2.h|g' \
-		${WRKSRC}/capplets/font/main.c
 
 .include <bsd.port.mk>

@@ -13,6 +13,8 @@ DISTNAME=	fspanel-0.8beta1
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
 
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	fspanel

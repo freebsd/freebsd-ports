@@ -1,0 +1,13 @@
+--- configure.orig	Sat Jun 22 22:13:01 2002
++++ configure	Mon Feb 17 16:56:27 2003
+@@ -52,8 +52,8 @@
+ xft=no
+ if test -e "$X11_PATH/include/X11/Xft/Xft.h"; then
+ 	echo yes
+-	LDFLAGS="$LDFLAGS -lXft"
+-	CFLAGS="$CFLAGS -DXFT"
++	LDFLAGS="$LDFLAGS `pkg-config xft --libs`"
++	CFLAGS="$CFLAGS -DXFT `pkg-config xft --cflags`"
+ 	xft=yes
+ else
+ 	echo no

@@ -17,7 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk1
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 
@@ -32,8 +33,8 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gtk12 imlib esound
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${LOCALBASE}/include/freetype2" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)

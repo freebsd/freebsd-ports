@@ -18,7 +18,8 @@ MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
@@ -29,7 +30,8 @@ HAS_CONFIGURE=	yes
 # JUST BECAUSE -xft IS NOT LISTED BELOW DOESN'T MEAN IT'S NOT THERE!
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng -thread -no-opengl -no-g++-exceptions \
-		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-L${LOCALBASE}/lib
 
 .if defined(QT_DEBUG)
 CONFIGURE_ARGS+= -debug

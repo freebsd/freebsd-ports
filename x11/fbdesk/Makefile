@@ -12,7 +12,8 @@ MASTER_SITES=	http://fluxbox.sourceforge.net/download/
 
 MAINTAINER=	hendrik@scholz.net
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

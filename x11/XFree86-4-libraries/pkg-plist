@@ -158,8 +158,6 @@ include/X11/Xaw/XawInit.h
 include/X11/Xcms.h
 include/X11/Xdefs.h
 include/X11/Xdmcp.h
-include/X11/Xft/Xft.h
-include/X11/Xft/XftFreetype.h
 include/X11/Xfuncproto.h
 include/X11/Xfuncs.h
 include/X11/Xlib.h
@@ -378,7 +376,6 @@ include/xf86Optrec.h
 include/xf86Parser.h
 lib/X11/XErrorDB
 lib/X11/XKeysymDB
-lib/X11/XftConfig
 lib/X11/locale/C/XI18N_OBJS
 lib/X11/locale/C/XLC_LOCALE
 lib/X11/locale/armscii-8/Compose
@@ -555,9 +552,6 @@ lib/libXfont.a
 lib/libXfont.so
 lib/libXfont.so.1
 lib/libXfontcache.a
-lib/libXft.a
-lib/libXft.so
-lib/libXft.so.1
 lib/libXi.a
 lib/libXi.so
 lib/libXi.so.6

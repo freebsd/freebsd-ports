@@ -76,6 +76,7 @@ configure () {
     echo "#define FreeBSDCC	${CC}" >> $LOCALDEF
     echo "#define FreeBSDCXX	${CXX}" >> $LOCALDEF
     echo "#define FreeBSDCFLAGS	${CFLAGS}" >> $LOCALDEF
+    echo "#define BuildXftLibrary NO" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF
