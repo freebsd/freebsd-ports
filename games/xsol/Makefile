@@ -8,7 +8,8 @@
 PORTNAME=	xsol
 PORTVERSION=	2.1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.simcb.ru/pub/unix/src/
+# mastersite disappeared in November 2002
+MASTER_SITES=	# ftp://ftp.simcb.ru/pub/unix/src/
 DISTNAME=	${PORTNAME}-new
 
 MAINTAINER=	ports@FreeBSD.org
