@@ -4,11 +4,11 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.48 1997/11/26 14:35:23 obrien Exp $
+# $Id: Makefile,v 1.49 1997/12/02 04:24:14 asami Exp $
 #
 
-DISTNAME=       tinpre-1.4-971123
-PKGNAME=        tinpre-1.4-971123
+DISTNAME=       tinpre-1.4-971127
+PKGNAME=        tinpre-1.4-971127
 CATEGORIES=	news
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
