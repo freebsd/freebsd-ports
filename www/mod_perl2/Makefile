@@ -1,61 +1,58 @@
-# New ports collection makefile for:	mod_perl
-# Date created:				November 5th 1999
-# Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
+# New ports collection makefile for:	mod_perl2
+# Date created:				February 13th 2003
+# Whom:					Lars Eggert <larse@isi.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.27
+PORTVERSION=	1.99r08
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Apache
+MASTER_SITES=	http://perl.apache.org/dist/ \
+		http://perl.apache.org/dist/old/
+PKGNAMESUFFIX=	2
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	larse@isi.edu
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
 
 USE_PERL5=	YES
 
-MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
-		Apache::FakeRequest.3 Apache::File.3 Apache::Leak.3 \
-		Apache::Log.3 Apache::Options.3 \
-		Apache::PerlRun.3 Apache::PerlRunXS.3 \
-		Apache::RedirectLogFix.3 \
-		Apache::Registry.3 Apache::SizeLimit.3 \
-		Apache::Status.3 Apache::Symbol.3 Apache::Symdump.3 \
-		Apache::Table.3 Apache::URI.3 Apache::Util.3 \
-		Apache::httpd_conf.3 Apache::src.3 Apache::test.3 \
-		Bundle::Apache.3 \
-		Apache::Debug.3 mod_perl.3 Apache::SIG.3 Apache::Resource.3 \
-		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
-		Apache::PerlSections.3 cgi_to_mod_perl.3 \
-		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
-		mod_perl_tuning.3
+INSTALLS_SHLIB=	YES
+LDCONFIG_DIRS=	%%PREFIX%%/libexec/apache2/
+
+MAN3=		APR::PerlIO.3 APR::Table.3 Apache::Build.3 Apache::Log.3 \
+		Apache::Reload.3 Apache::RequestRec.3 Apache::ServerUtil.3 \
+		Apache::SubProcess.3 Apache::Test.3 Apache::TestConfig.3 \
+		Apache::TestSmoke.3 Apache::TestTrace.3 Apache::TestUtil.3 \
+		Apache::compat.3 Bundle::ApacheTest.3 ModPerl::Code.3 \
+		ModPerl::Config.3 ModPerl::PerlRun.3 ModPerl::Registry.3 \
+		ModPerl::RegistryCooker.3
+
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE2_PORT?=	${PORTSDIR}/www/apache2
 
 .include <bsd.port.pre.mk>
 
+##
+## this port requires PERL 5.6.x or later
+##
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
 do-configure:
 	@ cd ${WRKSRC}; \
-	${PERL5} Makefile.PL USE_APXS=1 EVERYTHING=1 \
-	    PREFIX=${PREFIX} INSTALLSITELIB=${PERLSITEDIR} \
-	    INSTALLSITEARCH=${PERLSITEDIR}/${PERL_ARCH} \
-	    INSTALLMAN3DIR=${MANPREFIX}/man/man3 \
-	    WITH_APXS=${LOCALBASE}/sbin/apxs \
-	    PERL_EXTRA_CFLAGS='-DDEFAULT_PATH=\"/bin:/usr/bin:/usr/local/bin\"'
+	${PERL5} Makefile.PL MP_APXS=${LOCALBASE}/sbin/apxs \
+		MP_INST_APACHE2=1 PREFIX=${PREFIX}
 
 post-install:
-	${MKDIR} ${PREFIX}/include/apache/modules/perl
+	${MKDIR} ${PREFIX}/include/apache2/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
-	    ${PREFIX}/include/apache/modules/perl
-	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${PREFIX}/libexec/apache
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
+		${PREFIX}/include/apache2/modules/perl
+	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
+		${PREFIX}/libexec/apache2/mod_perl.so
 
 .include <bsd.port.post.mk>
