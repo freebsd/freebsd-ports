@@ -6,22 +6,17 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	3.1.9
+PORTVERSION=	${ZSH_VER}.dev${ZSH_DEV_REV}
 CATEGORIES=	shells
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_LOCAL} \
-		ftp://ftp.zsh.org/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.zsh.org/%SUBDIR%/ \
 		ftp://ftp.sterling.com/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/shells/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/%SUBDIR%/ \
 		ftp://ftp.ips.oz.au/pub/packages/%SUBDIR%/ \
 		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/
-# last one for ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	${PORTNAME} knu
-DISTNAME=	${PORTNAME}-${ZSH_VER}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${ZSHFUNC_FILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	${PORTNAME}/development
+
+DISTNAME=	${PORTNAME}-${ZSH_VER}-dev-${ZSH_DEV_REV}
 
 MAINTAINER=	shige@FreeBSD.org
 
@@ -29,26 +24,36 @@ FORBIDDEN=	"The main zsh port (ports/shells/zsh) has been upgraded to 4.x.  It i
 
 USE_AUTOCONF=	yes
 
-ZSH_VER=	${PORTVERSION}
-ZSHFUNC_FILES=	zsh-functions-freebsd-2000.09.06.tar.gz
-ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
+ZSH_VER=	4.1.0
+ZSH_DEV_REV=	4
+ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}-dev-${ZSH_DEV_REV}/functions
 NO_LATEST_LINK=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
-INSTALL_TARGET=	install install.info
+CONFIGURE_ARGS= --enable-zsh-mem --enable-zsh-secure-free --enable-dynamic \
+		--enable-maildir-support
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET= install install.info
+.endif
+
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1 zshmodules.1 \
 		zshzftpsys.1 zshcompsys.1 zshcompwid.1
-PLIST_SUB=	ZSH_VER="${ZSH_VER}" ZSHFUNC_SUBDIR="${ZSHFUNC_SUBDIR}"
 
-# If you want to build a static binary, uncomment the following line
-#LDFLAGS+=-static
+PLIST_SUB=	ZSH_VER="${ZSH_VER}-dev-${ZSH_DEV_REV}" \
+		ZSHFUNC_SUBDIR="${ZSHFUNC_SUBDIR}"
 
-post-extract:
-	@${MKDIR} ${WRKDIR}/functions
-	@for i in ${ZSHFUNC_FILES} ; do \
-		${TAR} zxf ${DISTDIR}/$${i} -C ${WRKDIR}/functions ;\
-	done
+.if defined(WANT_STATIC)
+CONFIGURE_ENV+=	"LDFLAGS=-static"
+PLIST_SUB+=	NO_STATIC="@comment "
+.else
+PLIST_SUB+=	NO_STATIC=""
+.endif
+
+post-patch:
+	@${PERL} -pi -e 's!\$\(htmldir\)!\$\(prefix\)/share/doc/zsh!' \
+		${WRKSRC}/Doc/Makefile.in
 
 post-build:
 # Fix ".so" macro problem by using "soelim" command.
@@ -60,16 +65,18 @@ post-build:
 		${RM} -f ./man1/zshall.1 ; \
 		/usr/bin/soelim ./man1/zshall.1.source > ./man1/zshall.1 ; \
 	)
-	@cd ${WRKSRC}/Doc && ${MAKE} info
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/functions/* ${PREFIX}/${ZSHFUNC_SUBDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info
+	@${MKDIR} ${PREFIX}/share/examples/zsh
+.for file in zlogin zshenv zshrc
+	${INSTALL_DATA} ${WRKSRC}/StartupFiles/${file} \
+		${PREFIX}/share/examples/zsh
+.endfor
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
+		${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>
