@@ -14,6 +14,10 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	yasuf@bsdclub.org
 
+USE_RUBY=	yes
+RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_NO_RUN_DEPENDS=	yes
+
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
