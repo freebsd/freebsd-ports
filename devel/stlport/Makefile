@@ -34,6 +34,14 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
 .endif
 
+.if ${OSVERSION} < 460000
+pre-everything:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "There may be a bug in your version of gcc's exception"
+	@${ECHO_MSG} "handling code.  Consider upgrading to FreeBSD 4.6"
+	@${ECHO_MSG} "or above."
+.endif
+
 post-install:
 	${FIND} ${PREFIX}/include/stlport -name \*.orig -delete
 .if !defined(NOPORTDOCS)
@@ -43,7 +51,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/images/* ${DOCSDIR}/images
 .endif
 
-post-build test:
+.if ${OSVERSION} >= 46000
+post-build:	test
+.endif
+
+test:
 	cd ${WRKSRC}/../test/eh && ${SETENV} CC=${CC} CXX=${CXX} \
 	${GMAKE} -f ${MAKEFILE} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
