@@ -4049,6 +4049,7 @@ offix-printer	ports/print/offix-printer
 offix-trash	ports/deskutils/offix-trash
 oftpd		ports/ftp/oftpd
 ogle		ports/graphics/ogle
+ogle-gui	ports/graphics/ogle-gui
 ohphone		ports/net/ohphone
 oidentd		ports/security/oidentd
 oleo		ports/math/oleo
