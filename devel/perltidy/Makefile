@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	perltidy
-PORTVERSION=	20021106
+PORTVERSION=	20021130
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Perl-Tidy-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Indents and reformats Perl scripts to make them easier to read
