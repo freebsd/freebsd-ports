@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1998/05/17 22:26:59 kuriyama Exp $
+# $Id: Makefile,v 1.23 1998/07/29 14:52:10 kuriyama Exp $
 #
 
     SUBDIR += Wnn
@@ -30,6 +30,7 @@
     SUBDIR += nhppf
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
+    SUBDIR += pgp.language
     SUBDIR += pine
     SUBDIR += pinetreefonts
     SUBDIR += vim
