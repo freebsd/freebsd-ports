@@ -1,5 +1,5 @@
---- sys/freebsd/Makefile.orig	Thu Feb  4 08:38:12 1999
-+++ sys/freebsd/Makefile	Mon Mar  8 09:24:52 1999
+--- sys/freebsd/Makefile.orig	Thu Feb  4 16:38:12 1999
++++ sys/freebsd/Makefile	Sat Dec 23 13:25:22 2000
 @@ -1,9 +1,14 @@
  # FreeBSD specific defines, passed to subdirectories.
 -#DEFS= -DBSD4_4 -DSENDFILE_FLAVOR_BSD
@@ -18,16 +18,27 @@
  AFPLIBS=	-lcrypt -lrpcsvc
  ADDLIBS=	
  
-@@ -11,7 +16,7 @@
+@@ -11,9 +16,17 @@
  
  oops:
  	@echo "Read README again.  Don't type 'make' here."
 -	@exit 1
 +	@exit 64
  
- all:	${ALL}
+-all:	${ALL}
++all:
++	for i in ${ALL}; \
++	  do (cd $${i}; ${MAKE} ${MFLAGS} CC="${CC}" \
++	    ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
++	    SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}" \
++	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
++	    DESTDIR="${DESTDIR}" AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
++	    AFPLIBS="${AFPLIBS}" all); \
++	done
  
-@@ -28,7 +33,8 @@
+ ../../bin ../../etc:	../../libatalk
+ 
+@@ -28,7 +41,8 @@
  FRC:
  
  install :
@@ -37,7 +48,7 @@
  	for i in ${ALL}; \
  	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
  		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
-@@ -37,17 +43,21 @@
+@@ -37,17 +51,21 @@
  		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" AFPLIBS="${AFPLIBS}" \
  		INSTALL="${INSTALL}" $@); \
  	done
