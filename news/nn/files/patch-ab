@@ -1,0 +1,33 @@
+*** nntp.c.old	Thu Nov 25 12:39:37 1993
+--- nntp.c	Tue Oct 11 09:19:31 1994
+***************
+*** 85,91 ****
+--- 85,93 ----
+  import int silent, no_update;
+  
+  import int sys_nerr;
++ #ifndef __FreeBSD__
+  import char *sys_errlist[];
++ #endif
+  extern void nn_exitmsg();
+  extern void sys_error();
+  extern int sys_warning();
+*** global.h.old	Tue Oct 11 08:53:50 1994
+--- global.h	Tue Oct 11 09:23:07 1994
+***************
+*** 656,662 ****
+  int	nntp_set_group		__APROTO((group_header *gh));
+  int	nntp_get_active		__APROTO((void));
+  FILE *	nntp_get_newsgroups	__APROTO((void));
+! struct novgroup *nntp_get_overview	__APROTO((group_header *gh, int low, int high));
+  FILE *	nntp_fopen_list		__APROTO((char *cmd));
+  char *	nntp_fgets		__APROTO((char *buf, int size));
+  article_number *nntp_get_article_list	__APROTO((group_header *gh));
+--- 656,662 ----
+  int	nntp_set_group		__APROTO((group_header *gh));
+  int	nntp_get_active		__APROTO((void));
+  FILE *	nntp_get_newsgroups	__APROTO((void));
+! struct novgroup *nntp_get_overview      __APROTO((group_header *gh, article_number low, article_number high));
+  FILE *	nntp_fopen_list		__APROTO((char *cmd));
+  char *	nntp_fgets		__APROTO((char *buf, int size));
+  article_number *nntp_get_article_list	__APROTO((group_header *gh));
