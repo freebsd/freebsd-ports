@@ -1,25 +1,20 @@
-diff -ur jikes.orig/src/Makefile work/jikes/src/Makefile
---- jikes.orig/src/Makefile	Thu Feb 25 07:10:47 1999
-+++ work/jikes/src/Makefile	Sun Feb 28 14:40:16 1999
-@@ -215,6 +215,21 @@
- O=o
- SYSOBJECTS=
+diff -ur jikes.orig/src/Makefile.in work/jikes/src/Makefile.in
+--- jikes.orig/src/Makefile.in	Mon Jan 25 12:00:32 1999
++++ work/jikes/src/Makefile.in	Sun Feb 28 15:34:52 1999
+@@ -36,9 +36,13 @@
+ 	$(ERASE) config.cache config.log config.status
+ 	$(ERASE) Makefile
  
-+# g++ definitions (FreeBSD)
-+CC=g++
-+# use -W to see warnings (should review from time to time)
-+CCREQUIREDFLAGS=-DGNU_LIBC5 -DIEEE_DIV_0 -DNO_WCHAR_H -DUNIX -funsigned-char  -c -DTYPE_bool -ansi -I.
-+CCDEBUGFLAGS=-DTEST -g
-+CCOPTFLAGS=-O2
-+CCFLAGS=$(CCREQUIREDFLAGS) $(CCDEBUGFLAGS)
-+CCFLAGS=$(CCREQUIREDFLAGS) $(CCOPTFLAGS)
-+ERASE=rm -f
-+EXECUTABLE=jikes
-+LD=g++
-+LDDEBUGFLAGS=-g
-+LDFLAGS=-L. -o$(EXECUTABLE)
-+O=o
-+SYSOBJECTS=
+-install: all
+-	mkdir -p $(exec_prefix)/bin
+-	cp $(EXECUTABLE) $(exec_prefix)/bin
++install:
++	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++	  ${EXECUTABLE} ${PREFIX}/bin/jikes
++	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
++	  ${FILESDIR}/jikes.1 ${PREFIX}/man/man1
++
++.include <bsd.own.mk>
  
- OBJECTS=jikes.$(O) scanner.$(O) code.$(O) zip.$(O) unzip.$(O) ast.$(O) diagnose.$(O) \
- 	parser.$(O) lpginput.$(O) javaact.$(O) error.$(O) set.$(O) symbol.$(O) \
+ OBJECTS=jikes.@O@ scanner.@O@ code.@O@ zip.@O@ unzip.@O@ \
+         ast.@O@ diagnose.@O@ parser.@O@ lpginput.@O@ javaact.@O@ \
