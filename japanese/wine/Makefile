@@ -3,7 +3,7 @@
 # Date created:		14 Jan 1998
 # Whom:			Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/13 22:21:16 kuriyama Exp $
 
 DISTNAME=	ja-Wine-971130
 PKGNAME=	ja-wine-97.11.30
@@ -16,6 +16,8 @@ DISTFILES=	Wine-971130.tar.gz Wine971130-jp.tar.gz
 MAINTAINER=	Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+BROKEN=		fetch
 
 WRKSRC=		${WRKDIR}/wine971130
 PATCH_STRIP=	-p1
