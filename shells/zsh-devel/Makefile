@@ -23,6 +23,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shige@FreeBSD.org
 
+USE_AUTOCONF=	yes
+
 ZSH_VER=	${PORTVERSION}
 ZSHFUNC_FILES=	zsh-functions-freebsd-2000.05.15.tar.gz
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
