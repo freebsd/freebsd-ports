@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 ${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 
+BROKEN=		Unfetchable
+
 RESTRICTED=	no-commercial-use
 
 WRKSRC=		${WRKDIR}/festival
