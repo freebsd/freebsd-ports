@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	devel
-MASTER_SITES=	http://argouml.tigris.org/files/documents/4/1087/
+MASTER_SITES=	http://argouml.tigris.org/files/documents/4/0/argouml-0.14/
 DISTNAME=	ArgoUML-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	philip.reynolds@rfc-networks.ie
 COMMENT=	A UML design tool with cognitive support
 
 NO_WRKSUBDIR=	yes
-USE_JAVA=	1.2+
+USE_JAVA=	1.3+
 NO_BUILD=	yes
 
 post-patch:
