@@ -12,10 +12,8 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ponomarew@oberon.net
 COMMENT=	An active sniffer
-
-BROKEN=		"Changes ownership of system directories"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
@@ -29,5 +27,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,^CFLAGS,#CFLAGS,g ; \
 		s,libnet-config,${LIBNET_CONFIG},g" ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
