@@ -21,7 +21,7 @@
  
  pipsecd:	tunip.c defs.h
 -	gcc -Wall -I$(INCDIR) -g $(OPTDEF) -o pipsecd tunip.c -L$(LIBDIR) $(OPTLIB) -lcrypto
-+	gcc -Wall $(INCDIR) -g $(OPTDEF) -o pipsecd tunip.c $(LIBDIR) $(OPTLIB) -lcrypto $(DEFINES)
++	gcc -Wall $(INCDIR) -g $(OPTDEF) -o pipsecd tunip.c $(LIBDIR) $(OPTLIB) -lcrypto -lRSAglue -lrsaref $(DEFINES)
  
  install: pipsecd
 -	install pipsecd /usr/local/sbin/
