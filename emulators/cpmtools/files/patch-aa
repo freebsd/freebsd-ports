@@ -27,38 +27,6 @@ diff -c -r ../cpm.orig/Makefile ./Makefile
 ! SUBDIR   = src man
   
 ! .include <bsd.subdir.mk>
-Only in .: Makefile.inc
-diff -c -r ../cpm.orig/man/Makefile ./man/Makefile
-*** ../cpm.orig/man/Makefile	Sat May 28 12:56:44 1994
---- ./man/Makefile	Mon Dec 26 10:00:13 1994
-***************
-*** 1,11 ****
-! all:;
-  
-- #MANEXT=n
-- MANEXT=1
-- #MANDIR=/usr/man/man${MANEXT}
-- MANDIR=/usr/local/man/man${MANEXT}
-  
-! install:
-! 	cp cpm.1 ${DESTDIR}/${MANDIR}/cpm.${MANEXT}
-  
-! clean:;
---- 1,14 ----
-! .include "${.CURDIR}/../Makefile.inc"
-  
-  
-! MANDIR        = ${PREFIX}/man/man
-  
-! MAN1          = cpm.1
-! 
-! NOMANCOMPRESS = This will go into a .tgz archive, don't compress it!
-! 
-! install: maninstall
-! 
-! clean all depend:
-! 
-! .include <bsd.man.mk>
 diff -c -r ../cpm.orig/src/Makefile ./src/Makefile
 *** ../cpm.orig/src/Makefile	Sat May 28 09:10:55 1994
 --- ./src/Makefile	Mon Dec 26 09:57:07 1994
@@ -219,4 +187,32 @@ diff -c -r ../cpm.orig/src/Makefile ./src/Makefile
 ! 		${.CURDIR}/${HELPFILE} ${HELPFILEDIR}
 ! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
 ! 		${PROG} ${BINDIR}
+! .include <bsd.prog.mk>
+*** man/Makefile.orig	Sat May 28 12:56:44 1994
+--- man/Makefile	Thu Sep 12 21:48:32 2002
+***************
+*** 1,11 ****
+! all:;
+  
+- #MANEXT=n
+- MANEXT=1
+- #MANDIR=/usr/man/man${MANEXT}
+- MANDIR=/usr/local/man/man${MANEXT}
+  
+! install:
+! 	cp cpm.1 ${DESTDIR}/${MANDIR}/cpm.${MANEXT}
+  
+! clean:;
+--- 1,12 ----
+! .include "${.CURDIR}/../Makefile.inc"
+  
+  
+! MANDIR        = ${PREFIX}/man/man
+  
+! MAN1          = cpm.1
+! 
+! NOMANCOMPRESS = Handled by the ports system.
+! 
+! clean all depend:
+! 
 ! .include <bsd.prog.mk>
