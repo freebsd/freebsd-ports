@@ -3,6 +3,15 @@ bin/djpeg
 bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
+share/doc/jpeg/README
+share/doc/jpeg/coderules.doc
+share/doc/jpeg/filelist.doc
+share/doc/jpeg/install.doc
+share/doc/jpeg/jconfig.doc
+share/doc/jpeg/libjpeg.doc
+share/doc/jpeg/structure.doc
+share/doc/jpeg/usage.doc
+share/doc/jpeg/wizard.doc
 include/jconfig.h
 include/jerror.h
 include/jmorecfg.h
