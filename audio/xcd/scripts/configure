@@ -11,5 +11,5 @@ MANDIR = $PREFIX/man/man1
 END
 
 mv xcd.in xcd.in~
-sed -e 's/wish4\.1/wish8.0/' <  xcd.in~ > xcd.in
+sed -e 's/wish8\.0/wish8.2/' <  xcd.in~ > xcd.in
 exit 0;
