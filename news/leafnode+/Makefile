@@ -47,19 +47,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
 .endfor
 .endif
-.if !exists{LEAFSPOOLDIR} || !exists{{LEAFLIBDIR}
-	@${MKDIR} ${LEAFSPOOLDIR} ${LEAFLIBDIR}
-	@${MKDIR} ${LEAFSPOOLDIR}/interesting.groups
-	@${MKDIR} ${LEAFSPOOLDIR}/out.going
-.for dir_a in 0 1 2 3 4 5 6 7 8 9
-.for dir_b in 0 1 2 3 4 5 6 7 8 9
-.for dir_c in 0 1 2 3 4 5 6 7 8 9
-	@${MKDIR} ${LEAFSPOOLDIR}/message.id/${dir_a}${dir_b}${dir_c}
-.endfor
-.endfor
-.endfor
-	@${CHOWN} -R news:news ${LEAFSPOOLDIR} ${LEAFLIBDIR}
-	@${CHMOD} 2750 ${LEAFSPOOLDIR}
-.endif
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
