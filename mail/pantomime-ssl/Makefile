@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pantomime
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
 PKGNAMESUFFIX=	-ssl
