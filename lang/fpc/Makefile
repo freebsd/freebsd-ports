@@ -23,11 +23,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
 BROKEN=		"Install fails"
-.endif
+
+.include <bsd.port.pre.mk>
 
 LIB_DEPENDS=	gds.1:${PORTSDIR}/databases/firebird
 .if ${OSVERSION} >= 500000
