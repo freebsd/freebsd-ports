@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	pgsql_perl5-1.6.1
-PKGNAME=	p5-Pg-1.6.1
+DISTNAME=	pgsql_perl5-1.8.1
+PKGNAME=	p5-Pg-1.8.1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pg
@@ -16,9 +16,10 @@ MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS= 	${PREFIX}/pgsql/lib/libpq.a:${PORTSDIR}/databases/postgresql
 
-BROKEN=		build
-
 USE_PERL5=	YES
+
+POSTGRES_HOME?=	${PREFIX}/pgsql
+MAKE_ENV+=	POSTGRES_HOME=${POSTGRES_HOME}
 
 MAN3=		Pg.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
