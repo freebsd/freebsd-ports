@@ -1,0 +1,92 @@
+eclipse/plugins/net.sourceforge.phpeclipse/icons/ctool16/php.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/ctool16/php_page.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/activate.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/add_co.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/deactivate.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/element.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/elements.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/error.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/gotoobj_tsk.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/moveDown.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/moveUp.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/properties.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/refresh.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/removeAll_co.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/remove_co.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/run_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16/search.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/ctool16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/cview16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/cview16/log_console_view.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/copy_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/del_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/new_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/paste_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/prop_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/refresh.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/rename_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/run_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16/runwith_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dtool16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/copy_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/del_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/new_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/paste_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/prop_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/refresh.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/rename_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/run_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16/runwith_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/etool16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/eview16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/eview16/log_console_view.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/builder.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/classpath.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/external_tools.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/file_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/invalid_build_tool.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/jar_l_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/main_tab.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/options_tab.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/prop_ps.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/ttype_program.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16/type.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/apache.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/apache_restart.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/apache_stop.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/builtin_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/class_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/clear.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/define_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/error_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/fun_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/html.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/htmledit.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/impc_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/info_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/java.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/php.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/phpedit.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/sql.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/template_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/var_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/warning_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16/xmledit.gif
+eclipse/plugins/net.sourceforge.phpeclipse/phpeclipse.jar
+eclipse/plugins/net.sourceforge.phpeclipse/plugin.properties
+eclipse/plugins/net.sourceforge.phpeclipse/plugin.xml
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/clcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/ctool16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/cview16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dlcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/dtool16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/elcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/etool16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/eview16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools/full
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/externaltools
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/ctool16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse
