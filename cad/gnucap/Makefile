@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	0.34
+PORTVERSION=	2005.01.27
 CATEGORIES=	cad
-MASTER_SITES=	http://www.gnucap.org/ \
+MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.geda.seul.org/dist/ \
 		http://www.kettering.edu/~adavis/gnucap/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
@@ -23,13 +24,9 @@ MAKE_ARGS=	CCC="${CXX}" CCFLAGS="${CXXFLAGS}"
 
 CFLAGS+=	-DUNIX -DNDEBUG -DNEEDS_IS_INF -DNEEDS_IS_NAN -I..
 
-MAN1=		gnucap-ibis.1 gnucap.1 
+MAN1=		gnucap-ibis.1 gnucap.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo|true|g' ${WRKSRC}/src/configure
