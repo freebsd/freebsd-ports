@@ -17,44 +17,49 @@
 # choose a single machine most of the time).
 
 buildroot=/var/portbuild
-mlist=${buildroot}/mlist
-stamp=${buildroot}/loads/.stamp
 
-unset DISPLAY
+arches=$*
 
 while true; do
-  touch ${stamp}
-  sleep 15
-  min=99
-  set $(cat $mlist)
-  while [ $# -gt 1 ]; do
-    m=$1
-    l=$2
-    if [ -f ${buildroot}/loads/$m -a \
-      ! -z "$(find ${buildroot}/loads/$m -newer ${stamp})" ]; then
-      num=$(awk '{print $1}' ${buildroot}/loads/$m)
-      if [ "x$num" = "x" ]; then
-#	logger "checkmachines: file ${buildroot}/loads/$m is empty"
-	num=99
+  for i in ${arches}; do
+    mlist=${buildroot}/${i}/mlist
+    stamp=${buildroot}/${i}/loads/.stamp
+  
+    unset DISPLAY
+  
+    touch ${stamp}
+    sleep 15
+    min=99
+    set $(cat $mlist)
+    while [ $# -gt 1 ]; do
+      m=$1
+      l=$2
+      if [ -f ${buildroot}/${i}/loads/$m -a \
+        ! -z "$(find ${buildroot}/${i}/loads/$m -newer ${stamp})" ]; then
+        num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
+        if [ "x$num" = "x" ]; then
+  #	logger "checkmachines: file ${buildroot}/${i}/loads/$m is empty"
+  	num=99
+        fi
+      else
+        num=99
       fi
-    else
-      num=99
-    fi
-#xxx
-#xxx Need to figure out how this is happening and fix this script
-#xxx accordingly.  This is what causes this script to go away on
-#xxx occasion.
-#xxx
-#xxx arith: syntax error: "7:53AM / 5"
-#xxx
-    num=$(($num / $l))
-    if [ $num -lt $min ]; then
-      mach=$m
-      min=$num
-    elif [ $num = $min ]; then
-      mach="$mach $m"
-    fi
-    shift 2
+  #xxx
+  #xxx Need to figure out how this is happening and fix this script
+  #xxx accordingly.  This is what causes this script to go away on
+  #xxx occasion.
+  #xxx
+  #xxx arith: syntax error: "7:53AM / 5"
+  #xxx
+      num=$(($num / $l))
+      if [ $num -lt $min ]; then
+        mach=$m
+        min=$num
+      elif [ $num = $min ]; then
+        mach="$mach $m"
+      fi
+      shift 2
+    done
+    echo "$mach" > ${buildroot}/${i}/ulist
   done
-  echo "$mach" > ${buildroot}/ulist
 done
