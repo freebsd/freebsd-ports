@@ -21,6 +21,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	inagaki@tg.rim.or.jp
 COMMENT=	Japanese Virtual Font file maker + TFM and VF
 
+BROKEN=		"Checksum mismatch"
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 DIST_SUBDIR=    makejvf
