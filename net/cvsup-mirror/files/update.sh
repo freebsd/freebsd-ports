@@ -35,7 +35,7 @@ lockf -t 0 ${lock} /bin/sh << 'E*O*F'
 
 base=${PREFIX}/etc/cvsup
 cd ${base} || exit
-. config.sh || exit
+. ./config.sh || exit
 
 colldir=sup.client
 startup=${PREFIX}/etc/rc.d
