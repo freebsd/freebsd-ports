@@ -18,7 +18,6 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-pre-fetch:
 BROKEN="This port uses the intpm controller which is only available in FreeBSD 4.0+"
 .endif
 
