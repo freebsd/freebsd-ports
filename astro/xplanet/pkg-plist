@@ -1,6 +1,7 @@
 bin/xplanet
 bin/xplanetbg
 bin/tkxplanet
+bin/tzcoord.pl
 share/xplanet/earth.jpg
 share/xplanet/earth-markers.txt
 share/xplanet/mars-markers.txt
