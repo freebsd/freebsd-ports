@@ -1,0 +1,5 @@
+The pict2e package extends the existing LaTeX picture environment, using
+the familiar technique (cf. the graphics and color packages) of driver
+files.  The package documentation (pict2e.dtx) has a fair number of
+examples of use, showing where things are improved by comparison with
+the LaTeX picture environment.

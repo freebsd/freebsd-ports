@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README.pict2e
+%%PORTDOCS%%%%DOCSDIR%%/pict2e.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/p2e-drivers.dtx
+%%CLASSDIR%%/p2e-dvipdfm.def
+%%CLASSDIR%%/p2e-dvips.def
+%%CLASSDIR%%/p2e-pctex32.def
+%%CLASSDIR%%/p2e-pctexps.def
+%%CLASSDIR%%/p2e-pdftex.def
+%%CLASSDIR%%/p2e-textures.def
+%%CLASSDIR%%/p2e-vtex.def
+%%CLASSDIR%%/pict2e-example.cfg
+%%CLASSDIR%%/pict2e.dtx
+%%CLASSDIR%%/pict2e.ins
+%%CLASSDIR%%/pict2e.sty
+%%CLASSDIR%%/pict2e.cfg
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
