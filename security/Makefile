@@ -286,6 +286,7 @@
     SUBDIR += p5-Digest-SHA1
     SUBDIR += p5-Digest-SHA2
     SUBDIR += p5-File-Scan
+    SUBDIR += p5-Filter-CBC
     SUBDIR += p5-Filter-Crypto
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-IO-Socket-SSL

@@ -491,7 +491,9 @@
     SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
+    SUBDIR += p5-POE-Component-Client-Ping
     SUBDIR += p5-POE-Component-Jabber
+    SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RRDTool
     SUBDIR += p5-POE-Component-Spread
     SUBDIR += p5-Parallel-MPI

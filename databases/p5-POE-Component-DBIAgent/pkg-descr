@@ -5,6 +5,3 @@ database queries to it via two-way pipe (or however Wheel::Run is able
 to manage it).
 
 WWW: http://search.cpan.org/dist/POE-Component-DBIAgent/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
