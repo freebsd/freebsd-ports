@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/05/30 11:27:13	1.1
++++ Makefile.in	2002/05/30 11:27:31
+@@ -133,7 +133,7 @@
+ pkgpixmapsdir = @pkgpixmapsdir@
+ pkgscriptsdir = @pkgscriptsdir@
+ 
+-SUBDIRS = libltdl macros src doc data intl po
++SUBDIRS = macros src doc data intl po
+ 
+ EXTRA_DIST = TODO MAINTAINERS CREDITS BUGS autogen.sh glame.spec
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

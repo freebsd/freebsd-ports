@@ -1,0 +1,42 @@
+
+$FreeBSD$
+
+--- configure	2002/05/30 11:20:36	1.1
++++ configure	2002/05/30 11:20:46
+@@ -455,7 +455,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subdirs_all="$ac_subdirs_all libltdl"
++ac_subdirs_all="$ac_subdirs_all"
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -7280,6 +7280,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -18106,7 +18107,7 @@
+ 
+ 
+ 
+-subdirs="$subdirs libltdl"
++subdirs="$subdirs"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile macros/Makefile doc/Makefile doc/pix/Makefile data/Makefile data/pixmaps/Makefile src/Makefile src/filter/Makefile src/swapfile/Makefile src/hash/Makefile src/plugins/Makefile src/include/Makefile src/gui/Makefile src/gui/edit_filter/Makefile src/glmid/Makefile src/gui/libgtkwaveform/Makefile src/gui/timeline/Makefile src/gui/util/Makefile intl/Makefile po/Makefile.in"
+@@ -18813,8 +18814,8 @@
+ s,@GLAME_AUDIO_LIBS@,$GLAME_AUDIO_LIBS,;t t
+ s,@GLAME_AUDIO_CFLAGS@,$GLAME_AUDIO_CFLAGS,;t t
+ s,@GLAME_FFT_LIBS@,$GLAME_FFT_LIBS,;t t
+-s,@LIBLTDL@,$LIBLTDL,;t t
+-s,@LTDLINCL@,$LTDLINCL,;t t
++s,@LIBLTDL@,,;t t
++s,@LTDLINCL@,,;t t
+ s,@subdirs@,$subdirs,;t t
+ CEOF
+ 
