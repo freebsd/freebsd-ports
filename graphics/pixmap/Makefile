@@ -1,5 +1,14 @@
+# New ports collection makefile for:	pixmap
+# Version required:	2.6
+# Date created:		19 February 1995
+# Whom:			jmz
+#
+# $Id: Makefile,v 1.5 1995/01/13 12:49:18 jkh Exp $
+#
+
 USE_IMAKE=	yes
 DISTNAME=	pixmap
+PKGNAME=	pixmap-2.6
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 MASTER_SITES=	ftp://ftp.x.org/pub/R6untarred/contrib/programs/
 
