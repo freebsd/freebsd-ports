@@ -23,17 +23,18 @@ LIBSDIR?=	${DATADIR}/lib
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-extract:
 	# Permissions in the tar file are whacked
-	find ${WRKSRC} -type d -print | xargs chmod 755
-	find ${WRKSRC} -type f -print | xargs chmod 644
+	find ${WRKSRC} -type d -print | xargs ${CHMOD} 755
+	find ${WRKSRC} -type f -print | xargs ${CHMOD} 644
 
 do-configure:
 	${INSTALL_DATA} ${FILESDIR}/javanns.sh ${WRKSRC}
-	${PERL} -p -i -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/javanns.sh
-	${PERL} -p -i -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/javanns.sh
-	${PERL} -p -i -e 's|%%CLASSDIR%%|${CLASSDIR}|g' ${WRKSRC}/javanns.sh
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+			-e 's|%%DATADIR%%|${DATADIR}|g' \
+			-e 's|%%CLASSDIR%%|${CLASSDIR}|g' ${WRKSRC}/javanns.sh
 	${FIND} ${WRKSRC} -type d -print | ${XARGS} ${CHMOD} 0755
 
 do-install:
