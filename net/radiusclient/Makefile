@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/ \
 		ftp://ftp.ecrc.net//pub/netsw/net/ip/management/radius/
 
-MAINTAINER=	maurice@serc.rmit.edu.au
+MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Client library and basic utilities for Radius authenticated login
 
 USE_GMAKE=	yes

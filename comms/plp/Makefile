@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/ \
 MASTER_SITE_SUBDIR=	kris
 DISTNAME=	${PORTNAME}_1_8
 
-MAINTAINER=	maurice@serc.rmit.edu.au
+MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
 
 USE_GMAKE=	yes

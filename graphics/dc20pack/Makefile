@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/capture
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		maurice@serc.rmit.edu.au
+MAINTAINER=		maurice@castro.aus.net
 COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera
 
 WRKSRC=			${WRKDIR}
