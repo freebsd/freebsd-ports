@@ -14,6 +14,7 @@ share/gtkwave/pixmaps/zoom_out.xpm
 share/gtkwave/pixmaps/zoom_redo.xpm
 share/gtkwave/pixmaps/zoom_undo.xpm
 @dirrm share/gtkwave/pixmaps
+@dirrm share/gtkwave
 %%PORTDOCS%%share/doc/gtkwave/data_format.png
 %%PORTDOCS%%share/doc/gtkwave/edit_menu.png
 %%PORTDOCS%%share/doc/gtkwave/file_menu.png
