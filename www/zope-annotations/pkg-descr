@@ -1,0 +1,4 @@
+Annotations is a generic way to add information to arbitrary Zope objects. 
+It is used by Silva Metadata to store metadata. 
+
+WWW: http://www.zope.org/Members/infrae/Annotations

@@ -581,6 +581,7 @@
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-FileSystemSite
+    SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
