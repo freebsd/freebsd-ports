@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	0.97.3
+PORTVERSION=	0.98.3
 CATEGORIES=	games java
 MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
-DISTNAME=	setup
+DISTNAME=	robocode-setup
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -27,6 +27,9 @@ RESTRICTED=	"Redistribution isn't permitted - see license for details"
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+INSTFILES=	battles compilers javadoc license.html robocode.ico \
+		robocode.jar robots templates versions.txt
+
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE=		"You can not legally redistribute package"
 .endif
@@ -39,9 +42,9 @@ do-configure:
 		${FILESDIR}/robocode.sh > ${WRKDIR}/robocode.sh
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java
-	@cd ${WRKSRC} && ${TAR} -c -f - robocode | \
-		${TAR} --unlink -x -f - -C ${PREFIX}/share/java
+	@${MKDIR} ${PREFIX}/share/java/robocode
+	@cd ${WRKSRC} && ${TAR} -c -f - ${INSTFILES} | \
+		${TAR} --unlink -x -f - -C ${PREFIX}/share/java/robocode
 	@${INSTALL_SCRIPT} ${WRKDIR}/robocode.sh ${PREFIX}/bin/robocode
 
 post-install:
