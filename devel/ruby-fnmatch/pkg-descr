@@ -1,0 +1,3 @@
+This is a Ruby module which provides File::fnmatch and File::FNM_*.
+
+Author:	Akinori MUSHA <knu@iDaemons.org>

@@ -424,6 +424,7 @@
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-filelock
+    SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-intl
     SUBDIR += ruby-lapidary
