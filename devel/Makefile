@@ -140,6 +140,7 @@
     SUBDIR += domc
     SUBDIR += dotconf
     SUBDIR += doxygen
+    SUBDIR += drift
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
     SUBDIR += ecb

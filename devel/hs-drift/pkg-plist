@@ -1,0 +1,4 @@
+bin/DrIFT
+@unexec install-info --delete %D/info/drift.info %D/info/dir
+info/drift.info
+@exec install-info %D/info/drift.info %D/info/dir
