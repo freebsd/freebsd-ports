@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1996/04/12 08:28:52 asami Exp $
+# $Id: Makefile,v 1.22 1996/07/10 05:45:31 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -10,12 +10,16 @@
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
+    SUBDIR += mpegedit
+    SUBDIR += mpeg_encode
     SUBDIR += mpeg_play
+    SUBDIR += mplex
     SUBDIR += netpbm
     SUBDIR += pixmap
     SUBDIR += png
     SUBDIR += povray
     SUBDIR += spigot
+    SUBDIR += splitmpg
     SUBDIR += tgif
     SUBDIR += tiff
     SUBDIR += vcg
@@ -26,6 +30,8 @@
     SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xli
+    SUBDIR += xmfract
+    SUBDIR += xmorph
     SUBDIR += xpaint
     SUBDIR += xpdf
     SUBDIR += xpm
