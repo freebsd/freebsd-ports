@@ -46,6 +46,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${PREFIX}/etc/sasldb2 \
 		--includedir=${PREFIX}/include \
+		--mandir=${MANPREFIX}/man \
 		--enable-static \
 		--enable-login \
 		--with-saslauthd \
