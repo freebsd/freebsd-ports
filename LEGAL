@@ -81,6 +81,10 @@ csound			ports/audio/csound	Distribution prohibited; may be
 						music but other commercial use
 						is prohibited.
 csound-manual		ports/audio/csound-manual	same as csound
+dansguardian-2.6-*	ports/www/dansguardian	Not free for installation by
+						3rd parties charging for							installation or support; not
+						free for commercial use.
+dansguardian-2.7-*	ports/www/dansguardian-devel	same as dansguardian
 dc3play-*		ports/graphics/dc3play	No redistribution due to
 						beta status
 dcl-*			ports/science/cdcl	No commercial use
