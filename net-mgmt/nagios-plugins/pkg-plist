@@ -54,4 +54,4 @@ libexec/nagios/negate
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
-@dirrm libexec/nagios
+@unexec rmdir %D/libexec/nagios 2>/dev/null || true
