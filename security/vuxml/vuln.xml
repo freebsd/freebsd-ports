@@ -578,13 +578,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0095</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1190</url>
     </references>
     <dates>
       <discovery>2005-01-07</discovery>
       <entry>2005-01-12</entry>
-      <modified>2005-01-16</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -611,13 +612,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0094</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1189</url>
     </references>
     <dates>
       <discovery>2005-01-11</discovery>
       <entry>2005-01-12</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -642,11 +644,13 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1379</cvename>
       <url>http://xinehq.de/index.php/security/XSA-2004-5</url>
     </references>
     <dates>
       <discovery>2004-09-06</discovery>
       <entry>2005-01-12</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -776,10 +780,13 @@ http_access deny Gopher</pre>
     <references>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=213957</url>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=289784</url>
+      <cvename>CAN-2003-1053</cvename>
+      <cvename>CAN-2005-0117</cvename>
     </references>
     <dates>
       <discovery>2005-01-11</discovery>
       <entry>2005-01-11</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -808,13 +815,16 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0120</cvename>
       <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
     </references>
     <dates>
       <discovery>2004-11-24</discovery>
       <entry>2005-01-10</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
+
   <vuln vid="bb99f803-5fde-11d9-b721-00065be4b5b6">
     <topic>helvis -- information leak vulnerabilities</topic>
     <affects>
@@ -838,13 +848,17 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0118</cvename>
+      <cvename>CAN-2005-0119</cvename>
       <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
     </references>
     <dates>
       <discovery>2004-11-24</discovery>
       <entry>2005-01-10</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
+
   <vuln vid="28ab7ddf-61ab-11d9-a9e7-0001020eed82">
     <topic>dillo -- format string vulnerability</topic>
     <affects>
@@ -1176,11 +1190,13 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-    <mlist msgid="200412021055.iB2AtweU067125@repoman.freebsd.org">http://docs.FreeBSD.org/cgi/mid.cgi?200412021055.iB2AtweU067125</mlist>
+      <cvename>CAN-2005-0121</cvename>
+      <mlist msgid="200412021055.iB2AtweU067125@repoman.freebsd.org">http://docs.FreeBSD.org/cgi/mid.cgi?200412021055.iB2AtweU067125</mlist>
     </references>
     <dates>
       <discovery>2004-11-11</discovery>
       <entry>2005-01-03</entry>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -1281,6 +1297,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1377</cvename>
       <bid>12108</bid>
       <bid>12109</bid>
       <url>http://secunia.com/advisories/13641/</url>
@@ -1288,7 +1305,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-27</discovery>
       <entry>2004-12-30</entry>
-      <modified>2005-01-02</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -1350,13 +1367,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1378</cvename>
       <url>http://devel.amessage.info/jabberd14/README.html</url>
       <url>http://mail.jabber.org/pipermail/jabberd/2004-September/002004.html</url>
     </references>
     <dates>
       <discovery>2004-09-19</discovery>
       <entry>2004-12-26</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
@@ -2091,6 +2109,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2003-1054</cvename>
       <bid>7375</bid>
       <url>http://secunia.com/advisories/8612/</url>
       <mlist>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=105053485515811</mlist>
@@ -2098,7 +2117,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2003-04-16</discovery>
       <entry>2004-12-11</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-19</modified>
     </dates>
   </vuln>
 
