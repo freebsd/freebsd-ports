@@ -49,7 +49,6 @@ include/gmime-2.0/gmime/gmime-type-utils.h
 include/gmime-2.0/gmime/gmime-utils.h
 include/gmime-2.0/gmime/gmime.h
 include/gmime-2.0/gmime/internet-address.h
-include/gmime-2.0/gmime/md5-utils.h
 lib/gmimeConf.sh
 lib/libgmime-2.0.a
 lib/libgmime-2.0.so
