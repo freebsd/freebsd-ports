@@ -7,4 +7,4 @@ fi
 [ -e ${PKG_PREFIX}/bin/X ] && mv ${PKG_PREFIX}/bin/X ${PKG_PREFIX}/bin/X.bck
 ln -sf ${PKG_PREFIX}/bin/Xwrapper-4 ${PKG_PREFIX}/bin/X
 [ -x ${PKG_PREFIX}/bin/XFree86 ] && chmod -s ${PKG_PREFIX}/bin/XFree86
-chmod +s ${PKG_PREFIX}/bin/Xwrapper-4
+chmod u+s ${PKG_PREFIX}/bin/Xwrapper-4
