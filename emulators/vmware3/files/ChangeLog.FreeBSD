@@ -18,6 +18,20 @@
   o Revert the vmnet module back to the original (?)
   o Finish and correct this ChangeLog :-)
 
+2004-08-01 Orlando Bassotto <orlando@break.net>
+
+  o Fixed dependency to rtc port.
+    Thanks for pointing out to Marco Trentini.
+    
+2004-07-27 Orlando Bassotto <orlando@break.net>
+
+  o Added kmem_alloc_nofault in place of kmem_alloc_pageable
+    if __FreeBSD_version is 502124 or newer.
+       
+2004-07-06 Per Hedeland
+
+  o Changes in order to work properly on FreeBSD 4.x.
+
 2004-07-05 Orlando Bassotto <orlando@break.net>
 
   o Merged cdev typedef patch.
