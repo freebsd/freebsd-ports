@@ -1,19 +1,19 @@
 # New ports collection makefile for:	DSSSL stylesheets for DocBook
-# Version required:	1.20
+# Version required:	1.23
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/11/03 15:02:22 kuriyama Exp $
+# $Id: Makefile,v 1.10 1998/11/07 03:36:39 asami Exp $
 #
 
-DISTNAME=	db120
-PKGNAME=	dsssl-docbook-modular-1.20
+DISTNAME=	db123
+PKGNAME=	dsssl-docbook-modular-1.23
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip
 
 PATCH_SITES=	http://www.freebsd.org/~kuriyama/distfiles/
-PATCHFILES=	db120jpja-981103.diff.gz
+PATCHFILES=	db123jpja-981107.diff.gz
 #PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
@@ -21,8 +21,6 @@ MAINTAINER=	kuriyama@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook
 RUN_DEPENDS=	${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook
-
-BROKEN=		fetch
 
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
