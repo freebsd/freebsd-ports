@@ -1,5 +1,5 @@
---- score.C.orig	Sun Dec 12 14:41:24 1999
-+++ score.C	Sun Dec 12 14:42:58 1999
+--- score.C.orig	Tue Jan 23 00:52:09 1996
++++ score.C	Sat Aug 26 05:10:09 2000
 @@ -4,31 +4,31 @@
  
  XtResource Score::resources[] = {
@@ -45,3 +45,99 @@
  };
  
  void
+@@ -73,6 +73,12 @@
+     date[8] = '\0';
+     strncpy(time, &buffer[53], 8);
+     time[8] = '\0';
++    if (date[0] == '1') {
++        for(int i=1; i<8; i++) {
++            date[i-1] = date[i];
++        }
++        date[7] = date[6] == '0' ? '1' : '0';
++    }
+ }
+ 
+ void
+@@ -414,7 +420,7 @@
+     strcpy(rec[inspos].name, myname);
+     time(&t);
+     tp = localtime(&t);
+-    sprintf(rec[i].date, "%2.2d-%2.2d-%2.2d", tp->tm_year, tp->tm_mon+1, tp->tm_mday);
++    sprintf(rec[i].date, "%2.2d-%2.2d-%2.2d", tp->tm_year%100, tp->tm_mon+1, tp->tm_mday);
+     sprintf(rec[i].time, "%2.2d:%2.2d:%2.2d", tp->tm_hour, tp->tm_min, tp->tm_sec);
+     if (writefile() == 0)
+         DisplayScore(game);
+@@ -434,12 +440,12 @@
+         return; /* Just do not record, no notifying */
+     time(&t);
+     tp = localtime(&t);
+-    check_digit = flag*3 + gamesize + level*7 + tp->tm_year*3 + rest*7
++    check_digit = flag*3 + gamesize + level*7 + (tp->tm_year%100)*3 + rest*7
+         + tp->tm_mon*7 + tp->tm_mday*3 + tp->tm_hour*7 + tp->tm_min*3 + tp->tm_sec;
+     check_digit %= 857;
+     fprintf(stream, "%2.2d%2.2d%8.8d%2.2d%1.1d%2.2d%4.4d%2.2d%3.3d%3.3d%2.2d%2.2d\n",
+             flag,
+-            tp->tm_sec, result, tp->tm_min, gamesize, tp->tm_year, level, tp->tm_mon,
++            tp->tm_sec, result, tp->tm_min, gamesize, tp->tm_year%100, level, tp->tm_mon,
+             check_digit, rest, tp->tm_mday, tp->tm_hour);
+     fclose(stream);
+ }
+@@ -492,7 +498,24 @@
+             rest = -1;
+             c2 = f*3 + g + l*7 + year*3 + month*7 + day*3 + hour*7 + min*3 + sec;
+             break;
+-        case 34:
++        case 32:
++            // Just for compatibility with xshisen 1.10, Y2K
++            f     = atoiSubstring(buf +  0, 2);
++            sec   = atoiSubstring(buf +  2, 2);
++            t     = atoiSubstring(buf +  4, 8);
++            min   = atoiSubstring(buf + 12, 2);
++            g     = atoiSubstring(buf + 14, 1);
++            year  = atoiSubstring(buf + 15, 3) - 100;
++            l     = atoiSubstring(buf + 18, 4);
++            month = atoiSubstring(buf + 22, 2);
++            c1    = atoiSubstring(buf + 24, 3);
++            day   = atoiSubstring(buf + 27, 2);
++            hour  = atoiSubstring(buf + 29, 2);
++            rest = -1;
++            c2 = f*3 + g + l*7 + (year+100)*3 + month*7 + day*3 + hour*7 + min*3 + sec
++;
++            break;
++         case 34:
+             // This is usual format
+             f     = atoiSubstring(buf +  0, 2);
+             sec   = atoiSubstring(buf +  2, 2);
+@@ -509,6 +532,23 @@
+             c2 = f*3 + g + l*7 + year*3 + month*7 + day*3 + hour*7 + min*3
+                 + sec + rest*7;
+             break;
++         case 35: 
++            // This is usual format, Y2K
++            f     = atoiSubstring(buf +  0, 2);
++            sec   = atoiSubstring(buf +  2, 2);
++            t     = atoiSubstring(buf +  4, 8);
++            min   = atoiSubstring(buf + 12, 2);
++            g     = atoiSubstring(buf + 14, 1);
++            year  = atoiSubstring(buf + 15, 3) - 100;
++            l     = atoiSubstring(buf + 18, 4);
++            month = atoiSubstring(buf + 22, 2);
++            c1    = atoiSubstring(buf + 24, 3);
++            rest  = atoiSubstring(buf + 27, 3);
++            day   = atoiSubstring(buf + 30, 2);
++            hour  = atoiSubstring(buf + 32, 2);
++            c2 = f*3 + g + l*7 + (year+100)*3 + month*7 + day*3 + hour*7 + min*3
++                + sec + rest*7;
++            break;
+         default:
+             // Someone edited this file?
+             continue;
+@@ -537,7 +577,7 @@
+         tb.tm_hour  = hour;
+         tb.tm_mday  = day;
+         tb.tm_mon   = month;
+-        tb.tm_year  = year;
++        tb.tm_year  = year > 69 ? year : year + 100;
+         tm1 = mktime(&tb);  // Time of the score
+         w1[0][f] += t;
+         w2[0][f]++;
