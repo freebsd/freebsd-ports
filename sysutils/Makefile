@@ -64,6 +64,7 @@
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += diskcheckd
+    SUBDIR += disktool
     SUBDIR += disktype
     SUBDIR += diskusage
     SUBDIR += doconfig

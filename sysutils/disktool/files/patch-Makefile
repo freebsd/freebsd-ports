@@ -1,0 +1,34 @@
+--- Makefile.orig	Sat Apr 18 00:27:18 1998
++++ Makefile	Wed Jul 23 18:52:34 2003
+@@ -31,14 +31,15 @@
+ #
+ # FreeBSD(tested on 2.2.1) uncomment the next 2 lines
+ #
+-#OPENWINHOME	= /usr/X11R6
+-#AUX_CFLAGS	= -DFBSD
++PREFIX		= %%PREFIX%%		
++OPENWINHOME	= $(PREFIX)
++AUX_CFLAGS	= -DFBSD
+ #
+ # End of Configurable stuff
+ #
+ # =============================================
+ #
+-CC		= gcc
++CC?= cc
+ #
+ OBJS	   	= disktool.o
+ 
+@@ -46,10 +47,10 @@
+ 
+ INCLUDE 	= -I${OPENWINHOME}/include ${XINCLUDES}
+ 
+-CFLAGS		= ${INCLUDE} -c
++CFLAGS+= ${INCLUDE} -c
+ 
+ # Change -O to -g for debugging purposes
+-LDFLAGS         = -pipe -O3 -m486
++LDFLAGS?= -pipe -O3 
+ 
+ 
+ XVIEW_LIBS 	= -L${OPENWINHOME}/lib \

@@ -1,0 +1,37 @@
+# New ports collection makefile for:	disktool
+# Date created:			Thu Apr 24 05:10:34 EDT 2003
+# Whom:				Serge Gagnon <gagnon__s@videotron.ca>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	disktool
+PORTVERSION=	2.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/disktool/ \
+		ftp://quenix.dyndns.org/freebsd/
+DISTNAME=	disktool-2.0c
+
+MAINTAINER=	gagnon__s@videotron.ca
+COMMENT=	XView sysadmin tool for monitoring diskfull situations
+
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+
+USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+ALL_TARGET=	disktool
+
+MAN1=		disktool.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/disktool ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/disktool.man \
+	${PREFIX}/man/man1/disktool.1
+
+.include <bsd.port.mk>
