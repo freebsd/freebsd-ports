@@ -55,11 +55,11 @@ WITH_GNOME=	yes
 .endif
 
 .if defined(WITHOUT_PERL)
-PLISTORIG=		${WRKDIR}/PLIST
-PLIST=			${PKGDIR}/PLIST
+PLISTORIG=		${PKGDIR}/PLIST
+PLIST=			${WRKDIR}/PLIST
 .else
-PLISTORIG=		${WRKDIR}/PLIST.perl
-PLIST=			${SRCDIR}/PLIST.perl
+PLISTORIG=		${PKGDIR}/PLIST.perl
+PLIST=			${WRKDIR}/PLIST.perl
 pre-fetch:
 	@${ECHO} -n "If you want to compile without perl support "
 	@${ECHO} "'make -DWITHOUT_PERL' instead"
@@ -67,6 +67,8 @@ pre-fetch:
 
 .if defined(WITH_GNOME) && ${WITH_GNOME} == yes
 LIB_DEPENDS+=	gtkxmhtml.3:${PORTSDIR}/x11/gnomelibs
+pre-install:
+	@${CAT} ${PLISTORIG} > ${PLIST}
 .else
 pre-install:
 	@${SED} -e '/helpbrowser/d' ${PLISTORIG} > ${PLIST}
