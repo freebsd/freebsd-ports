@@ -3,9 +3,6 @@ bin/glib12-config
 include/glib12/glib.h
 include/glib12/glibconfig.h
 include/glib12/gmodule.h
-@unexec install-info --delete %D/info/glib.info %D/info/dir
-info/glib.info
-@exec install-info %D/info/glib.info %D/info/dir
 lib/libglib12.a
 lib/libglib12.so
 lib/libglib12.so.3

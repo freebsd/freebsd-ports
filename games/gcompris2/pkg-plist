@@ -1,8 +1,5 @@
 bin/gcompris
 bin/gcompris-edit
-@unexec install-info --delete %D/info/gcompris.info %D/info/dir
-info/gcompris.info
-@exec install-info %D/info/gcompris.info %D/info/dir
 lib/gcompris/libadvanced_colors.so
 lib/gcompris/libalgebra.so
 lib/gcompris/libalgebra_guesscount.so
