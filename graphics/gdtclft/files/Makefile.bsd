@@ -9,7 +9,9 @@ SRCS		= gdhandle.c gdCmd.c
 PREFIX		?=/usr/local
 TCL_VER		?=8.2
 
-LDADD		= -L${PREFIX}/lib -lgd -lttf -lpng -lz -lm
+TCL_STUB_LIB_SPEC!=	. ${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh; \
+		echo $$TCL_STUB_LIB_SPEC
+LDADD		= -L${PREFIX}/lib -lgd -lttf -lpng -lz -lm ${TCL_STUB_LIB_SPEC}
 
 CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
 CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
