@@ -1,0 +1,29 @@
+*** acconfig.h.orig	Wed May 12 13:19:23 1999
+--- acconfig.h	Mon Jan 10 22:56:13 2000
+***************
+*** 274,279 ****
+--- 274,297 ----
+     /etc/nologin.allow. */
+  #undef NOLOGIN_ALLOW
+  
++ /* Define this if you have struct sockaddr_storage. */
++ #undef HAVE_SOCKADDR_STORAGE
++ 
++ /* Define this if you have __sa_family in struct sockaddr_storage. */
++ #undef HAVE_NEW_SS_FAMILY
++ 
++ /* Define this if you have ss_len in struct sockaddr. */
++ #undef HAVE_SOCKADDR_LEN
++ 
++ /* Define this if you want to enable IPv6 support. */
++ #undef ENABLE_IPV6
++  
++ /* Define this if you want to enable another port try support. */
++ #undef ENABLE_ANOTHER_PORT_TRY
++ 
++ /* Define this if you want to enable logging auth info support. */
++ #undef ENABLE_LOG_AUTH
++ 
+  /* Where to find the X11 socket */
+  #undef X11_DIR
+  

@@ -1,0 +1,191 @@
+*** scp.c.orig	Wed May 12 13:19:28 1999
+--- scp.c	Mon Jan 10 22:56:13 2000
+***************
+*** 180,185 ****
+--- 180,193 ----
+  #define STDERR_FILENO 2
+  #endif
+  
++ /* This is set to non-zero if IPv4 is desired. */
++ int IPv4 = 0;
++ 
++ #ifdef ENABLE_IPV6
++ /* This is set to non-zero if IPv6 is desired. */
++ int IPv6 = 0;
++ #endif
++ 
+  /* This is set to non-zero to enable verbose mode. */
+  int verbose = 0;
+  
+***************
+*** 295,302 ****
+--- 303,319 ----
+          }
+        args[i++] = "-x";
+        args[i++] = "-a";
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++       args[i++] = "-A";
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+        args[i++] = "-oFallBackToRsh no";
+        args[i++] = "-oClearAllForwardings yes";
++       if (IPv4)
++ 	args[i++] = "-4";
++ #ifdef ENABLE_IPV6
++       if (IPv6)
++ 	args[i++] = "-6";
++ #endif
+        if (verbose)
+          args[i++] = "-v";
+        if (compress)
+***************
+*** 441,448 ****
+              statistics = 0;
+  
+          fflag = tflag = 0;
+!         while ((ch = getopt(argc, argv, "aAqQdfprtvBCL1c:i:P:o:S:")) != EOF)
+                  switch(ch) {                    /* User-visible flags. */
+                  case 'S':
+                          ssh_program = optarg;
+                          break;
+--- 458,477 ----
+              statistics = 0;
+  
+          fflag = tflag = 0;
+! 	while ((ch = getopt(argc, argv, "aAqQdfprtvBCL1c:i:P:o:S:4"
+! #ifdef ENABLE_IPV6
+! 		"6"
+! #endif
+! 		)) != EOF)
+                  switch(ch) {                    /* User-visible flags. */
++ 		case '4':
++ 	       		IPv4 = 1;
++ 			break;
++ #ifdef ENABLE_IPV6
++ 		case '6':
++ 	       		IPv6 = 1;
++ 			break;
++ #endif
+                  case 'S':
+                          ssh_program = optarg;
+                          break;
+***************
+*** 589,594 ****
+--- 618,634 ----
+          exit(errs != 0);
+  }
+  
++ char *
++ cleanhostname(host)
++ 	char *host;
++ {
++ 	if (*host == '[' && host[strlen(host) - 1] == ']') {
++ 		host[strlen(host) - 1] = '\0';
++ 		return (host + 1);
++ 	} else
++ 		return host;
++ }
++ 
+  void
+  toremote(targ, argc, argv)
+          char *targ, *argv[];
+***************
+*** 644,649 ****
+--- 684,690 ----
+                          bp = xmalloc(len);
+                          if (host) {
+                                  *host++ = 0;
++ 				host = cleanhostname(host);
+                                  suser = argv[i];
+                                  if (*suser == '\0')
+                                          suser = pwd->pw_name;
+***************
+*** 655,667 ****
+                                      suser, host, cmd, src,
+                                      tuser ? tuser : "", tuser ? "@" : "",
+                                      thost, targ);
+!                         } else
+                                  (void)snprintf(bp, len,
+                                      "exec %s%s %s -x -o'FallBackToRsh no' -o'ClearAllForwardings yes' -n %s %s %s '%s%s%s:%s'",
+                                      ssh_program, verbose ? " -v" : "", options,
+!                                     argv[i], cmd, src,
+                                      tuser ? tuser : "", tuser ? "@" : "",
+                                      thost, targ);
+                          if (verbose)
+                            fprintf(stderr, "Executing: %s\n", bp);
+                          if (system(bp)) errs++;
+--- 696,710 ----
+                                      suser, host, cmd, src,
+                                      tuser ? tuser : "", tuser ? "@" : "",
+                                      thost, targ);
+!                         } else {
+!                                 host = cleanhostname(argv[i]);
+                                  (void)snprintf(bp, len,
+                                      "exec %s%s %s -x -o'FallBackToRsh no' -o'ClearAllForwardings yes' -n %s %s %s '%s%s%s:%s'",
+                                      ssh_program, verbose ? " -v" : "", options,
+!                                     host, cmd, src,
+                                      tuser ? tuser : "", tuser ? "@" : "",
+                                      thost, targ);
++ 			}
+                          if (verbose)
+                            fprintf(stderr, "Executing: %s\n", bp);
+                          if (system(bp)) errs++;
+***************
+*** 671,677 ****
+                                  len = strlen(targ) + CMDNEEDS + 20;
+                                  bp = xmalloc(len);
+                                  (void)snprintf(bp, len, "%s -t %s", cmd, targ);
+!                                 host = thost;
+                                  if (do_cmd(host,  tuser,
+                                             bp, &remin, &remout) < 0)
+                                    exit(1);
+--- 714,720 ----
+                                  len = strlen(targ) + CMDNEEDS + 20;
+                                  bp = xmalloc(len);
+                                  (void)snprintf(bp, len, "%s -t %s", cmd, targ);
+!                                 host = cleanhostname(thost);
+                                  if (do_cmd(host,  tuser,
+                                             bp, &remin, &remout) < 0)
+                                    exit(1);
+***************
+*** 721,726 ****
+--- 764,770 ----
+                          else if (!okname(suser))
+                                  continue;
+                  }
++ 		host = cleanhostname(host);
+                  len = strlen(src) + CMDNEEDS + 20;
+                  bp = xmalloc(len);
+                  (void)snprintf(bp, len, "%s -f %s", cmd, src);
+***************
+*** 1365,1375 ****
+  colon(cp)
+          char *cp;
+  {
+          if (*cp == ':')         /* Leading colon is part of file name. */
+                  return (0);
+  
+          for (; *cp; ++cp) {
+!                 if (*cp == ':')
+                          return (cp);
+                  if (*cp == '/')
+                          return (0);
+--- 1409,1427 ----
+  colon(cp)
+          char *cp;
+  {
++ 	int flag = 0;
++ 
+          if (*cp == ':')         /* Leading colon is part of file name. */
+                  return (0);
++ 	if (*cp == '[')
++ 		flag = 1;
+  
+          for (; *cp; ++cp) {
+! 		if (*cp == '@' && *(cp+1) == '[')
+! 			flag = 1;
+! 		if (*cp == ']' && *(cp+1) == ':' && flag)
+! 			return (cp+1);
+! 		if (*cp == ':' && !flag)
+                          return (cp);
+                  if (*cp == '/')
+                          return (0);

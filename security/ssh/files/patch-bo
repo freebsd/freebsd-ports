@@ -1,0 +1,197 @@
+*** servconf.c.orig	Wed May 12 13:19:28 1999
+--- servconf.c	Mon Jan 10 22:56:13 2000
+***************
+*** 81,88 ****
+  void initialize_server_options(ServerOptions *options)
+  {
+    memset(options, 0, sizeof(*options));
+!   options->port = -1;
+!   options->listen_addr.s_addr = INADDR_ANY;
+    options->host_key_file = NULL;
+    options->random_seed_file = NULL;
+    options->pid_file = NULL;
+--- 81,88 ----
+  void initialize_server_options(ServerOptions *options)
+  {
+    memset(options, 0, sizeof(*options));
+!   options->num_ports = 0;
+!   options->listen_addrs = NULL;
+    options->host_key_file = NULL;
+    options->random_seed_file = NULL;
+    options->pid_file = NULL;
+***************
+*** 92,97 ****
+--- 92,100 ----
+    options->permit_root_login = -1;
+    options->ignore_rhosts = -1;
+    options->ignore_root_rhosts = -1;
++ #ifdef ENABLE_LOG_AUTH
++   options->log_auth = -1;
++ #endif /* ENABLE_LOG_AUTH */
+    options->quiet_mode = -1;
+    options->fascist_logging = -1;
+    options->print_motd = -1;
+***************
+*** 138,153 ****
+  
+  void fill_default_server_options(ServerOptions *options)
+  {
+!   if (options->port == -1)
+      {
+!       struct servent *sp;
+! 
+!       sp = getservbyname(SSH_SERVICE_NAME, "tcp");
+!       if (sp)
+! 	options->port = ntohs(sp->s_port);
+!       else
+! 	options->port = SSH_DEFAULT_PORT;
+!       endservent();
+      }
+    if (options->host_key_file == NULL)
+      options->host_key_file = HOST_KEY_FILE;
+--- 141,171 ----
+  
+  void fill_default_server_options(ServerOptions *options)
+  {
+!   struct addrinfo hints, *ai, *aitop;
+!   char strport[PORTSTRLEN];
+!   int i;
+! 
+!   if (options->num_ports == 0)
+!     options->ports[options->num_ports++] = SSH_DEFAULT_PORT;
+!   if (options->listen_addrs == NULL)
+      {
+!       for (i = 0; i < options->num_ports; i++)
+! 	{
+! 	  memset(&hints, 0, sizeof(hints));
+! 	  hints.ai_flags = AI_PASSIVE;
+! 	  hints.ai_family = IPv4or6;
+! 	  hints.ai_socktype = SOCK_STREAM;
+! 	  sprintf(strport, "%d", options->ports[i]);
+! 	  if (getaddrinfo(NULL, strport, &hints, &aitop) != 0)
+! 	    {
+! 	      fprintf(stderr, "fatal: getaddrinfo: Cannot get anyaddr.\n");
+! 	      exit(1);
+! 	    }
+! 	  for (ai = aitop; ai->ai_next; ai = ai->ai_next);
+! 	  ai->ai_next = options->listen_addrs;
+! 	  options->listen_addrs = aitop;
+! 	}
+!       /* freeaddrinfo(options->listen_addrs) in sshd.c */
+      }
+    if (options->host_key_file == NULL)
+      options->host_key_file = HOST_KEY_FILE;
+***************
+*** 243,248 ****
+--- 261,269 ----
+  {
+    sPort, sHostKeyFile, sServerKeyBits, sLoginGraceTime, sKeyRegenerationTime,
+    sPermitRootLogin, sQuietMode, sFascistLogging, sLogFacility,
++ #ifdef ENABLE_LOG_AUTH
++   sLogAuth,
++ #endif /* ENABLE_LOG_AUTH */
+    sRhostsAuthentication, sRhostsRSAAuthentication, sRSAAuthentication,
+    sTISAuthentication, sPasswordAuthentication, sAllowHosts, sDenyHosts,
+    sListenAddress, sPrintMotd, sIgnoreRhosts, sX11Forwarding, sX11DisplayOffset,
+***************
+*** 275,280 ****
+--- 296,304 ----
+    { "quietmode", sQuietMode },
+    { "fascistlogging", sFascistLogging },
+    { "syslogfacility", sLogFacility },
++ #ifdef ENABLE_LOG_AUTH
++   { "logauth", sLogAuth },
++ #endif /* ENABLE_LOG_AUTH */
+    { "rhostsauthentication", sRhostsAuthentication },
+    { "rhostsrsaauthentication", sRhostsRSAAuthentication },
+    { "rsaauthentication", sRSAAuthentication },
+***************
+*** 367,372 ****
+--- 391,399 ----
+    char *cp, **charptr;
+    int linenum, *intptr, i, value;
+    ServerOpCodes opcode;
++   struct addrinfo hints, *ai, *aitop;
++   char strport[PORTSTRLEN];
++   int gaierr;
+  
+    f = fopen(filename, "r");
+    if (!f)
+***************
+*** 389,395 ****
+        switch (opcode)
+  	{
+  	case sPort:
+! 	  intptr = &options->port;
+  	parse_int:
+  	  cp = strtok(NULL, WHITESPACE);
+  	  if (!cp)
+--- 416,429 ----
+        switch (opcode)
+  	{
+  	case sPort:
+! 	  if (options->num_ports >= MAX_PORTS)
+! 	    {
+! 	      fprintf(stderr, "%s line %d: too many ports.\n",
+! 		      filename, linenum);
+! 	      exit(1);
+! 	    }
+! 	  options->ports[options->num_ports] = -1;
+! 	  intptr = &options->ports[options->num_ports++];
+  	parse_int:
+  	  cp = strtok(NULL, WHITESPACE);
+  	  if (!cp)
+***************
+*** 452,462 ****
+  		      filename, linenum);
+  	      exit(1);
+  	    }
+! #ifdef BROKEN_INET_ADDR
+! 	  options->listen_addr.s_addr = inet_network(cp);
+! #else /* BROKEN_INET_ADDR */
+! 	  options->listen_addr.s_addr = inet_addr(cp);
+! #endif /* BROKEN_INET_ADDR */
+  	  break;
+  
+  	case sHostKeyFile:
+--- 486,510 ----
+  		      filename, linenum);
+  	      exit(1);
+  	    }
+! 	  if (options->num_ports == 0)
+! 	    options->ports[options->num_ports++] = SSH_DEFAULT_PORT;
+! 	  for (i = 0; i < options->num_ports; i++)
+! 	    {
+! 	      memset(&hints, 0, sizeof(hints));
+! 	      hints.ai_family = IPv4or6;
+! 	      hints.ai_socktype = SOCK_STREAM;
+! 	      sprintf(strport, "%d", options->ports[i]);
+! 	      if ((gaierr = getaddrinfo(cp, strport, &hints, &aitop)) != 0)
+! 		{
+! 		  fprintf(stderr, "%s line %d: bad addr or host. (%s)\n",
+! 			  filename, linenum, gai_strerror(gaierr));
+! 		  exit(1);
+! 		}
+! 	      for (ai = aitop; ai->ai_next; ai = ai->ai_next);
+! 	      ai->ai_next = options->listen_addrs;
+! 	      options->listen_addrs = aitop;
+! 	    }
+! 	  strtok(cp, WHITESPACE);	/* getaddrinfo() may use strtok() */
+  	  break;
+  
+  	case sHostKeyFile:
+***************
+*** 531,536 ****
+--- 579,590 ----
+  	  if (*intptr == -1)
+  	    *intptr = value;
+  	  break;
++ 
++ #ifdef ENABLE_LOG_AUTH
++ 	case sLogAuth:
++ 	  intptr = &options->log_auth;
++ 	  goto parse_flag;
++ #endif /* ENABLE_LOG_AUTH */
+  
+  	case sIgnoreRhosts:
+  	  intptr = &options->ignore_rhosts;

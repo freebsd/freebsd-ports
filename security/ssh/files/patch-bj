@@ -1,0 +1,16 @@
+*** match.c.orig	Wed May 12 13:19:27 1999
+--- match.c	Mon Jan 10 22:56:13 2000
+***************
+*** 129,134 ****
+--- 129,139 ----
+  	is_ip_pattern = 0;
+  	break;
+        }
++   for(p = pattern; *p; p++)
++     if (!(isxdigit(*p) || *p == ':' || *p == '?' || *p == '*'))
++       break;
++   if (ip && !*p)
++     is_ip_pattern = 1;
+    if (is_ip_pattern)
+      {
+        return match_pattern(ip, pattern);
