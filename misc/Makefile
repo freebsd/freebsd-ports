@@ -38,6 +38,7 @@
     SUBDIR += diction
     SUBDIR += display
     SUBDIR += dnetc
+    SUBDIR += dog
     SUBDIR += dotfile
     SUBDIR += estic
     SUBDIR += ewipe
