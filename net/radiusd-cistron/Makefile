@@ -7,7 +7,7 @@
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
 
