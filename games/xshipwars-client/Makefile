@@ -44,7 +44,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../TODO \
 	   ${PREFIX}/share/doc/xshipwars
 	@ ${ECHO} "===>   Stripping Binary "
-	@ strip ${PREFIX}/bin/xsw
+	@ ${STRIP_CMD} ${PREFIX}/bin/xsw
 
 	@${CAT} ${PKGMESSAGE}
 

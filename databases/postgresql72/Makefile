@@ -128,12 +128,12 @@ post-install:
 		tee ${PREFIX}/share/postgresql/post-install-notes
 .if !defined(DEBUG_FLAGS)
 .for file in ecpg pg_dump pg_id pg_passwd pg_restore psql
-	@ strip ${PREFIX}/bin/${file}
+	@ ${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .endif
 .if !defined(WITHOUT_SERVER)
 # install shell defaults for pgsql user
-	@ strip ${PREFIX}/bin/postgres
+	@ ${STRIP_CMD} ${PREFIX}/bin/postgres
 .for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \

@@ -24,7 +24,7 @@ ALL_TARGET=	poppassd
 MAN8=		poppassd.8
 
 post-install:
-	@ strip ${PREFIX}/libexec/poppassd
+	@ ${STRIP_CMD} ${PREFIX}/libexec/poppassd
 	@ ${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${PREFIX}/man/man8/
 
 .include <bsd.port.mk>
