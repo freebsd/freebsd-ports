@@ -6,4 +6,5 @@ share/locale/da/LC_MESSAGES/gperiodic.mo
 share/locale/fr/LC_MESSAGES/gperiodic.mo
 share/locale/pl/LC_MESSAGES/gperiodic.mo
 share/locale/sv/LC_MESSAGES/gperiodic.mo
+share/locale/tr/LC_MESSAGES/gperiodic.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
