@@ -51,17 +51,26 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
+.if !defined(NO_GUI)
+#	for now default the GUI to the GTK+ one
+#	will be reviewed when the GTK+ 1.{3,4} behemoth is released
+.if !defined(WITH_ATHENA) && !defined(WITH_GTK) && !defined(WITH_MOTIF)
+WITH_GTK=	yes
+.endif
+
 .if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-#MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
 .elif defined(WITH_GTK)
 USE_GTK=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
-.else
+.elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
 .endif
+.else	# NO_GUI
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x ${I18N}"
+.endif	# NO_GUI
 
 .if defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope"
