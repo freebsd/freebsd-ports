@@ -15,6 +15,7 @@ include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/ap_mmn.h
+include/apache/ap_sha1.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -39,6 +40,18 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+include/apache/xml/asciitab.h
+include/apache/xml/hashtable.h
+include/apache/xml/iasciitab.h
+include/apache/xml/latin1tab.h
+include/apache/xml/nametab.h
+include/apache/xml/utf8tab.h
+include/apache/xml/xmldef.h
+include/apache/xml/xmlparse.h
+include/apache/xml/xmlrole.h
+include/apache/xml/xmltok.h
+include/apache/xml/xmltok_impl.h
+libexec/apache/httpd.exp
 libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
@@ -52,6 +65,7 @@ libexec/apache/mod_rewrite.so
 libexec/apache/mod_speling.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
+libexec/apache/mod_vhost_alias.so
 sbin/ab
 sbin/apachectl
 sbin/apxs
@@ -126,6 +140,7 @@ share/doc/apache/manual/mod/mod_auth.html
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
 share/doc/apache/manual/mod/mod_auth_dbm.html
+share/doc/apache/manual/mod/mod_auth_digest.html
 share/doc/apache/manual/mod/mod_autoindex.html
 share/doc/apache/manual/mod/mod_browser.html
 share/doc/apache/manual/mod/mod_cern_meta.html
@@ -160,6 +175,7 @@ share/doc/apache/manual/mod/mod_status.html
 share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
+share/doc/apache/manual/mod/mod_vhost_alias.html
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
@@ -302,6 +318,7 @@ www/icons/world1.gif
 www/icons/world2.gif
 @exec mkdir -p %D/www/proxy
 @dirrm etc/apache
+@dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
 @dirrm share/doc/apache/manual/images
