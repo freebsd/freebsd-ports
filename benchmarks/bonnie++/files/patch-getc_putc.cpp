@@ -4,7 +4,7 @@
  #include "duration.h"
  #include "getc_putc.h"
  
-+#if defined(__alpha__) || defined(__sparc64__)
++#if defined(__alpha__) || defined(__sparc64__) || defined(__amd64__) || defined(__ia64__)
 +/* Work around for: line 168, no matching function for call to `min(long unsigned int, unsigned int)' */
 +#include <sys/param.h>
 +#define min MIN

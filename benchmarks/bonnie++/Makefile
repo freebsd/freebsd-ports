@@ -19,12 +19,6 @@ COMMENT=	Performance Test of Filesystem I/O
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501103
-BROKEN=		"Does not build with gcc 3.3; author is aware of the problem"
-.endif
-
 MAN1=	bon_csv2html.1 bon_csv2txt.1 generate_randfile.1
 MAN8=	bonnie++.8 getc_putc.8 zcav.8
 
@@ -35,4 +29,4 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/readme.html ${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
