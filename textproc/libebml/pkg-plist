@@ -1,0 +1,29 @@
+include/ebml/Debug.h
+include/ebml/EbmlBinary.h
+include/ebml/EbmlConfig.h
+include/ebml/EbmlContexts.h
+include/ebml/EbmlCrc32.h
+include/ebml/EbmlDate.h
+include/ebml/EbmlElement.h
+include/ebml/EbmlEndian.h
+include/ebml/EbmlFloat.h
+include/ebml/EbmlHead.h
+include/ebml/EbmlId.h
+include/ebml/EbmlMaster.h
+include/ebml/EbmlSInteger.h
+include/ebml/EbmlStream.h
+include/ebml/EbmlString.h
+include/ebml/EbmlSubHead.h
+include/ebml/EbmlTypes.h
+include/ebml/EbmlUInteger.h
+include/ebml/EbmlUnicodeString.h
+include/ebml/EbmlVersion.h
+include/ebml/EbmlVoid.h
+include/ebml/IOCallback.h
+include/ebml/StdIOCallback.h
+include/ebml/StdInclude.h
+include/ebml/api/c/libebml_t.h
+lib/libebml.a
+@dirrm include/ebml/api/c
+@dirrm include/ebml/api
+@dirrm include/ebml
