@@ -1,0 +1,23 @@
+RoadRunner is a complete application toolkit library implementing the BEEP
+(Blocks Extensible Exchange Protocol) for use in developing network
+applications.
+
+Features:
+* Portability -  Runs unmodified on most major platforms.
+* Object oriented design - RoadRunner is designed in an object oriented
+fashion, making development of new BEEP profiles simple and straight-forward.
+* Robustness and stability - The software contains extensive validation checks
+and error reporting, allowing for quickly locating and fixing bugs. As a
+result, RoadRunner is already at its first release a very stable library.
+* High performance - Nonblocking design, constant message processing time and
+intra-connection channel scheduling capability makes RoadRunner a suitable
+framework for demanding network applications.
+* Multithreaded - Using the threads abstraction layer in glib, RoadRunner runs
+natively multithreaded on all supported platforms.
+* Open Source - Permits royalty-free use, development and modification as part
+of open source software.
+
+WWW: http://rr.codefactory.se/
+
+- Yann
+yb@sainte-barbe.org
