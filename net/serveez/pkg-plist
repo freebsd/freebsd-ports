@@ -41,6 +41,7 @@ lib/libserveez.a
 lib/libserveez.so
 lib/libserveez.so.0
 share/aclocal/serveez.m4
+share/guile/1.6/ice-9/and-let-star.scm
 %%DATADIR%%/echo-server.scm
 %%DATADIR%%/eval-server.scm
 %%DATADIR%%/icecast-server.scm
