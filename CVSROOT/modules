@@ -7271,6 +7271,7 @@ p5-Log-Log4perl	ports/devel/p5-Log-Log4perl
 p5-Log-Procmail	ports/mail/p5-Log-Procmail
 p5-Log-TraceMessages	ports/devel/p5-Log-TraceMessages
 p5-MARC		ports/textproc/p5-MARC
+p5-MARC-Record	ports/textproc/p5-MARC-Record
 p5-MD5		ports/security/p5-MD5
 p5-MIME-Base64	ports/converters/p5-MIME-Base64
 p5-MIME-Fast	ports/mail/p5-MIME-Fast
