@@ -8,6 +8,7 @@
 
 PORTNAME=	redland
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
-		expat.2:${PORTSDIR}/textproc/expat2 \
+		expat.3:${PORTSDIR}/textproc/expat2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww
 
