@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 DISTVERSION=	0.2-1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.es.gnome.org/~telemaco/
 
