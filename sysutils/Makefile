@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.40 1998/07/20 22:23:04 dburr Exp $
+# $Id: Makefile,v 1.41 1998/08/03 06:28:56 nectar Exp $
 #
 
     SUBDIR += LPRng
     SUBDIR += afio
+    SUBDIR += asapm
     SUBDIR += asrpages
     SUBDIR += bkpupsd
     SUBDIR += cd-write
