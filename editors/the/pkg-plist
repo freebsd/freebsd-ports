@@ -1,19 +1,19 @@
 bin/the
-libdata/THE/THE_Help.txt
-libdata/THE/append.the
-libdata/THE/build.the
-libdata/THE/comm.the
-libdata/THE/compile.the
-libdata/THE/demo.the
-libdata/THE/l.the
-libdata/THE/match.the
-libdata/THE/rm.the
-libdata/THE/setbuild.the
-libdata/THE/spell.the
-libdata/THE/the.man
-libdata/THE/total.the
-libdata/THE/uncomm.the
-libdata/THE/words.the
+share/THE/THE_Help.txt
+share/THE/append.the
+share/THE/build.the
+share/THE/comm.the
+share/THE/compile.the
+share/THE/demo.the
+share/THE/l.the
+share/THE/match.the
+share/THE/rm.the
+share/THE/setbuild.the
+share/THE/spell.the
+share/THE/the.man
+share/THE/total.the
+share/THE/uncomm.the
+share/THE/words.the
 share/doc/THE/app1.html
 share/doc/THE/app2.html
 share/doc/THE/app3.html
@@ -30,4 +30,4 @@ share/doc/THE/overview.html
 share/doc/THE/query.html           
 share/doc/THE/quickref.html           
 @dirrm share/doc/THE
-@dirrm libdata/THE
+@dirrm share/THE
