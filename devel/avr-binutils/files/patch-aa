@@ -1,0 +1,10 @@
+--- libiberty/Makefile.in.orig	Sat Dec  9 17:10:41 2000
++++ libiberty/Makefile.in	Thu Apr 19 23:30:16 2001
+@@ -152,6 +152,7 @@
+ 	$(RANLIB) $(TARGETLIB)
+ 
+ INSTALL_DEST = @INSTALL_DEST@
++#install: install_to_$(INSTALL_DEST) install-subdir
+ install: install_to_$(INSTALL_DEST) install-subdir
+ 
+ install_to_libdir: all
