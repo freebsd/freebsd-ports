@@ -1,5 +1,5 @@
 --- unix-gcc.mak.orig	Tue Nov 25 03:29:01 1997
-+++ unix-gcc.mak	Sun Apr 19 19:34:18 1998
++++ unix-gcc.mak	Thu Jun  4 21:44:45 1998
 @@ -130,7 +130,7 @@
  # You may need to change this if the IJG library version changes.
  # See jpeg.mak for more information.
@@ -130,7 +130,7 @@
  
  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
  	$(CP_) $(ZSRC)infblock.c .
-@@ -4584,8 +4584,13 @@
+@@ -4584,8 +4584,22 @@
  
  cdeskjet_=gdevcdj.$(OBJ) $(HPPCL)
  
@@ -139,8 +139,17 @@
  cdeskjet.dev: $(cdeskjet_) page.dev
  	$(SETPDEV) cdeskjet $(cdeskjet_)
 +
++cdj670.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj670 $(cdeskjet8_)
++
 +cdj850.dev: $(cdeskjet8_) page.dev
 +	$(SETPDEV) cdj850 $(cdeskjet8_)
++
++cdj890.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj890 $(cdeskjet8_)
++
++cdj1600.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj1600 $(cdeskjet8_)
  
  cdjcolor.dev: $(cdeskjet_) page.dev
  	$(SETPDEV) cdjcolor $(cdeskjet_)

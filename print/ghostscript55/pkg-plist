@@ -63,6 +63,7 @@ share/ghostscript/5.10/doc/history3.txt
 share/ghostscript/5.10/doc/humor.txt
 share/ghostscript/5.10/doc/install.txt
 share/ghostscript/5.10/doc/language.txt
+share/ghostscript/5.10/doc/license.hp8
 share/ghostscript/5.10/doc/lib.txt
 share/ghostscript/5.10/doc/make.txt
 share/ghostscript/5.10/doc/new-user.txt
@@ -70,6 +71,7 @@ share/ghostscript/5.10/doc/ps2epsi.txt
 share/ghostscript/5.10/doc/ps2pdf.txt
 share/ghostscript/5.10/doc/psfiles.txt
 share/ghostscript/5.10/doc/public.txt
+share/ghostscript/5.10/doc/readme.hp8
 share/ghostscript/5.10/doc/unix-lpr.txt
 share/ghostscript/5.10/doc/use.txt
 share/ghostscript/5.10/doc/xfonts.txt
