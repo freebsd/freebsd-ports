@@ -20,6 +20,7 @@ lib/libsane-hpoj.so.1
 include/hpojip.h
 include/ptal.h
 etc/rc.d/ptal-init.sh.sample
+%%CUPS%%libexec/cups/backend/ptal
 %%PORTDOCS%%share/doc/hpoj/COPYING
 %%PORTDOCS%%share/doc/hpoj/LICENSE
 %%PORTDOCS%%share/doc/hpoj/LICENSE.OpenSSL

@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	hpoj
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
@@ -18,8 +17,21 @@ MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
-		snmp.4:${PORTSDIR}/net/net-snmp4
+		snmp.4:${PORTSDIR}/net/net-snmp4 \
+		usb:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+
+.if !defined(WITHOUT_CUPS)
+WITH_CUPS=	yes
+.endif
+
+.if defined(WITH_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ARGS+=--with-cups-backend=${LOCALBASE}/libexec/cups/backend
+PLIST_SUB+=	CUPS=""
+.else
+PLIST_SUB+=	CUPS="@comment "
+.endif
 
 INSTALLS_SHLIB=	yes
 
@@ -53,12 +65,14 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lcipher -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .ifdef(WITHOUT_X11)
-CONFIGURE_ARGS=	--without-qt
+CONFIGURE_ARGS+=	--without-qt
 .endif
 
 pre-fetch:
 	@${ECHO} You can disable building \'xojpanel\' and avoid the dependency on X11 and QT3 \
 		by restarting the build with WITHOUT_X11
+	@${ECHO} You can disable CUPS support with WITHOUT_CUPS
+
 post-patch:
 .for f in doc/info-devname.html doc/libptal.html doc/ptal-init.html doc/setup-photo-details.html \
 	 doc/setup-print-details.html lib/ptal/ptal.c scripts/ptal-init.in
