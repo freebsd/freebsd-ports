@@ -47,6 +47,7 @@ bin/pamdice
 bin/pamditherbw
 bin/pamedge
 bin/pamendian
+bin/pamenlarge
 bin/pamfile
 bin/pamflip
 bin/pamfunc
@@ -236,6 +237,7 @@ bin/ppmtoarbtxt
 bin/ppmtobmp
 bin/ppmtoeyuv
 bin/ppmtogif
+bin/pbmtoibm23xx
 bin/ppmtoicr
 bin/ppmtoilbm
 bin/ppmtojpeg
@@ -313,11 +315,12 @@ include/ppmfloyd.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.1
-share/netpbm/palmcolor8.map
-share/netpbm/palmgray1.map
-share/netpbm/palmgray2.map
-share/netpbm/palmgray4.map
-share/netpbm/rgb.txt
+%%DATADIR%%/palmcolor8.map
+%%DATADIR%%/palmgray1.map
+%%DATADIR%%/palmgray2.map
+%%DATADIR%%/palmgray4.map
+%%DATADIR%%/pcxstd.ppm
+%%DATADIR%%/rgb.txt
 %%PORTDOCS%%%%DOCSDIR%%/USERDOC
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/netpbm
+@dirrm %%DATADIR%%
