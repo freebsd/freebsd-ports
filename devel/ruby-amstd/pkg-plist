@@ -1,9 +1,11 @@
+%%RUBY_SITELIBDIR%%/amstd/aliascm.rb
 %%RUBY_SITELIBDIR%%/amstd/bench.rb
 %%RUBY_SITELIBDIR%%/amstd/bug.rb
 %%RUBY_SITELIBDIR%%/amstd/collfrom.rb
 %%RUBY_SITELIBDIR%%/amstd/constdef.rb
+%%RUBY_SITELIBDIR%%/amstd/d.rb
+%%RUBY_SITELIBDIR%%/amstd/daemon.rb
 %%RUBY_SITELIBDIR%%/amstd/dispatch.rb
-%%RUBY_SITELIBDIR%%/amstd/errutil.rb
 %%RUBY_SITELIBDIR%%/amstd/extmod.rb
 %%RUBY_SITELIBDIR%%/amstd/fileutils.rb
 %%RUBY_SITELIBDIR%%/amstd/futils.rb
@@ -11,7 +13,7 @@
 %%RUBY_SITELIBDIR%%/amstd/getdep.rb
 %%RUBY_SITELIBDIR%%/amstd/info.rb
 %%RUBY_SITELIBDIR%%/amstd/must.rb
-%%RUBY_SITELIBDIR%%/amstd/pipeline.rb
+%%RUBY_SITELIBDIR%%/amstd/protect.rb
 %%RUBY_SITELIBDIR%%/amstd/rbparams.rb
 %%RUBY_SITELIBDIR%%/amstd/recycle.rb
 %%RUBY_SITELIBDIR%%/amstd/rubyemu.rb
