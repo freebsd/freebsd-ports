@@ -121,6 +121,7 @@
     SUBDIR += htmltolatex
     SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-csconv
+    SUBDIR += iiimf-gtk
     SUBDIR += iiimf-headers
     SUBDIR += iiimf-le-unit
     SUBDIR += iiimf-protocol-lib

@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sun Dec  7 19:17:54 2003
++++ Makefile.in	Sun Dec  7 19:18:40 2003
+@@ -140,8 +140,7 @@
+                      imiiim.c
+ 
+ im_iiim_la_LIBADD = $(GTK_LIBS) \
+-                    $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-                    $(IM_LIBDIR)/iiimp/libiiimp.la
++		    -L$(prefix)/lib -liiimcf -liiimp
+ 
+ 
+ module_LTLIBRARIES = im-iiim.la
+@@ -152,8 +151,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(module_LTLIBRARIES)
+ 
+-im_iiim_la_DEPENDENCIES = $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-	$(IM_LIBDIR)/iiimp/libiiimp.la
++im_iiim_la_DEPENDENCIES =
+ am_im_iiim_la_OBJECTS = im_iiim_la-IIIMGdkEventKey.lo \
+ 	im_iiim_la-gtkimcontextiiim.lo im_iiim_la-imiiim.lo
+ im_iiim_la_OBJECTS = $(am_im_iiim_la_OBJECTS)
