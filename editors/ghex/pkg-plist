@@ -27,7 +27,35 @@ share/gnome/help/ghex/C/stylesheet-images/up.gif
 share/gnome/help/ghex/C/stylesheet-images/warning.gif
 share/gnome/help/ghex/C/topic.dat
 share/gnome/help/ghex/C/usage.html
+share/gnome/help/ghex/ja/docbook.css
+share/gnome/help/ghex/ja/ghex.sgml
+share/gnome/help/ghex/ja/ghexconverter.png
+share/gnome/help/ghex/ja/ghexdisplaypref.png
+share/gnome/help/ghex/ja/ghexfind.png
+share/gnome/help/ghex/ja/ghexfindreplace.png
+share/gnome/help/ghex/ja/ghexfullwindow.png
+share/gnome/help/ghex/ja/ghexmdiprefs.png
+share/gnome/help/ghex/ja/ghexmenubar.png
+share/gnome/help/ghex/ja/ghexmenues.html
+share/gnome/help/ghex/ja/ghexprefedit.png
+share/gnome/help/ghex/ja/ghexprintprefs.png
+share/gnome/help/ghex/ja/index.html
+share/gnome/help/ghex/ja/stylesheet-images/caution.gif
+share/gnome/help/ghex/ja/stylesheet-images/home.gif
+share/gnome/help/ghex/ja/stylesheet-images/important.gif
+share/gnome/help/ghex/ja/stylesheet-images/next.gif
+share/gnome/help/ghex/ja/stylesheet-images/note.gif
+share/gnome/help/ghex/ja/stylesheet-images/prev.gif
+share/gnome/help/ghex/ja/stylesheet-images/tip.gif
+share/gnome/help/ghex/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/ghex/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/ghex/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/ghex/ja/stylesheet-images/up.gif
+share/gnome/help/ghex/ja/stylesheet-images/warning.gif
+share/gnome/help/ghex/ja/topic.dat
+share/gnome/help/ghex/ja/usage.html
 share/gnome/omf/ghex/ghex-C.omf
+share/gnome/omf/ghex/ghex-ja.omf
 share/gnome/pixmaps/gnome-ghex.png
 share/locale/ca/LC_MESSAGES/ghex.mo
 share/locale/cs/LC_MESSAGES/ghex.mo
@@ -61,6 +89,8 @@ share/locale/wa/LC_MESSAGES/ghex.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/ghex.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/ghex.mo
 @dirrm share/gnome/omf/ghex
+@dirrm share/gnome/help/ghex/ja/stylesheet-images
+@dirrm share/gnome/help/ghex/ja
 @dirrm share/gnome/help/ghex/C/stylesheet-images
 @dirrm share/gnome/help/ghex/C
 @dirrm share/gnome/help/ghex
