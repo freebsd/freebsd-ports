@@ -9,7 +9,7 @@ PORTNAME=	sdpa
 PORTVERSION=	6.00
 PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	http://sdpa.is.titech.ac.jp/
+MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.manual.ps.gz \
@@ -24,7 +24,6 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
-BROKEN=		"Unfetchable"
 RESTRICTED=	"unsure distribution condition"
 
 USE_REINPLACE=	yes
