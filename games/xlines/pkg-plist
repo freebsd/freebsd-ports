@@ -1,0 +1,6 @@
+bin/xlines
+share/doc/xlines/readme.qt
+share/doc/xlines/readme.lines
+share/xlines/trolltech.gif
+@dirrm share/doc/xlines
+@dirrm share/xlines
