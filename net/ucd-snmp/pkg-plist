@@ -1,42 +1,47 @@
-bin/snmpbulkwalk
-bin/snmpcheck
-bin/snmpdelta
-bin/snmpget
-bin/snmpgetnext
 bin/snmpnetstat
-bin/snmpset
-bin/snmpstatus
-bin/snmptable
+bin/snmpwalk
+bin/snmpbulkwalk
 bin/snmptest
 bin/snmptranslate
+bin/snmpget
+bin/snmpset
+bin/snmpgetnext
 bin/snmptrap
-bin/snmpwalk
+bin/snmpstatus
+bin/snmpdelta
+bin/snmptable
+bin/snmpcheck
+bin/tkmib
 etc/rc.d/snmpd.sh
 include/ucd-snmp/asn1.h
-include/ucd-snmp/mib.h
-include/ucd-snmp/parse.h
-include/ucd-snmp/snmp.h
 include/ucd-snmp/snmp_api.h
 include/ucd-snmp/snmp_client.h
 include/ucd-snmp/snmp_impl.h
-lib/libsnmp.a
-man/man1/snmpbulkwalk.1.gz
+include/ucd-snmp/snmp.h
+include/ucd-snmp/parse.h
+include/ucd-snmp/mib.h
+@dirrm include/ucd-snmp
+lib/libsnmp.so
+@exec ln %D/lib/libsnmp.so %D/lib/libsnmp.so.3.5
+@unexec rm -f %D/lib/libsnmp.so.3.5
+man/man1/snmpcmd.1
+man/man1/snmpstatus.1.gz
 man/man1/snmpd.1.gz
-man/man1/snmpdelta.1.gz
-man/man1/snmpget.1.gz
-man/man1/snmpgetnext.1.gz
 man/man1/snmpnetstat.1.gz
 man/man1/snmpset.1.gz
-man/man1/snmpstatus.1.gz
+man/man1/snmptrap.1.gz
 man/man1/snmptable.1.gz
 man/man1/snmptest.1.gz
 man/man1/snmptranslate.1.gz
-man/man1/snmptrap.1.gz
+man/man1/snmpbulkwalk.1.gz
+man/man1/snmpdelta.1.gz
+man/man1/snmpget.1.gz
+man/man1/snmpgetnext.1.gz
 man/man1/snmpwalk.1.gz
 man/man3/mib_api.3.gz
 man/man3/snmp_api.3.gz
-man/man5/snmpd.conf.5.gz
 man/man5/variables.5.gz
+man/man5/snmpd.conf.5.gz
 man/man8/snmptrapd.8.gz
 sbin/snmpd
 sbin/snmptrapd
@@ -45,27 +50,33 @@ share/examples/ucd-snmp/acl.conf
 share/examples/ucd-snmp/context.conf
 share/examples/ucd-snmp/party.conf
 share/examples/ucd-snmp/view.conf
-share/snmp/mibs/EtherLike-MIB.txt
-share/snmp/mibs/HOST-RESOURCES-MIB.txt
-share/snmp/mibs/IANAifType-MIB.txt
-share/snmp/mibs/IF-MIB.txt
-share/snmp/mibs/IP-MIB.txt
+@dirrm share/examples/ucd-snmp
 share/snmp/mibs/RFC1155-SMI.txt
 share/snmp/mibs/RFC1213-MIB.txt
-share/snmp/mibs/RFC1271-MIB.txt
 share/snmp/mibs/SNMPv2-CONF.txt
-share/snmp/mibs/SNMPv2-M2M-MIB.txt
-share/snmp/mibs/SNMPv2-MIB.txt
-share/snmp/mibs/SNMPv2-PARTY-MIB.txt
 share/snmp/mibs/SNMPv2-SMI.txt
 share/snmp/mibs/SNMPv2-TC.txt
 share/snmp/mibs/SNMPv2-TM.txt
+share/snmp/mibs/SNMPv2-MIB.txt
+share/snmp/mibs/SNMPv2-M2M-MIB.txt
+share/snmp/mibs/SNMPv2-PARTY-MIB.txt
+share/snmp/mibs/SNMP-FRAMEWORK-MIB.txt
+share/snmp/mibs/SNMP-MPD-MIB.txt
+share/snmp/mibs/SNMP-TARGET-MIB.txt
+share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt
+share/snmp/mibs/SNMP-PROXY-MIB.txt
+share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
+share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
+share/snmp/mibs/IANAifType-MIB.txt
+share/snmp/mibs/IF-MIB.txt
+share/snmp/mibs/IP-MIB.txt
 share/snmp/mibs/TCP-MIB.txt
-share/snmp/mibs/UCD-SNMP-MIB.txt
 share/snmp/mibs/UDP-MIB.txt
-@unexec rm %D/share/snmp/mibs/.index
-@dirrm share/snmp/mibs/ucd-snmp
+share/snmp/mibs/EtherLike-MIB.txt
+share/snmp/mibs/HOST-RESOURCES-MIB.txt
+share/snmp/mibs/RFC1271-MIB.txt
+share/snmp/mibs/UCD-SNMP-MIB.txt
+share/snmp/mibs/IPFWACC-MIB.txt
+@unexec rm -f %D/share/snmp/mibs/.index
 @dirrm share/snmp/mibs
 @dirrm share/snmp
-@dirrm share/examples/ucd-snmp
-@dirrm include/ucd-snmp
