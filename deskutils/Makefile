@@ -112,6 +112,7 @@
     SUBDIR += teapot
     SUBDIR += treeline
     SUBDIR += tuxcards
+    SUBDIR += vym
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
     SUBDIR += xchm
