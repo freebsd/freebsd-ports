@@ -30,6 +30,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500601
+IGNORE=		"can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl"
+.endif
+
 PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'
 
 pre-everything::
@@ -47,16 +51,7 @@ pre-everything::
 	@${ECHO_CMD} "proc /proc procfs rw 0 0"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "-----------------------------------------------------------"
-.endif
-
-.if ${PERL_LEVEL} < 500601
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Your Perl version is too old. You will need at least Perl 5.6.1"
-	@${ECHO_CMD} "in order to build valgrind."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Please use the lang/perl5 or the lang/perl5.8 to upgrade your"
-	@${ECHO_CMD} "Perl installation to version 5.6.1 or 5.8.2 respectively."
-	@${ECHO_CMD} ""
+	@${FALSE}
 .endif
 
 pre-patch:
