@@ -1,4 +1,5 @@
 bin/ncmpc
-%%EXAMPLESDIR%%/ncmpcrc
+%%EXAMPLESDIR%%/config
+%%EXAMPLESDIR%%/keys
 %%EXAMPLESDIR%%/ncmpc.lirc
 @dirrm %%EXAMPLESDIR%%
