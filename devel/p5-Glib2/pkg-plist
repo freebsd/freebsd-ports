@@ -1,13 +1,26 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Boxed.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Flags.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/GenPod.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl_marshal.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/devel.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/xsapi.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Log.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/MainLoop.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/MakeHelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParamSpec.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Signal.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Type.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/devel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/xsapi.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object

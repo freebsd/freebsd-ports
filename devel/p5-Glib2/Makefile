@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.00
+PORTVERSION=	1.020
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk2-perl
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl \
+		gtk2-perl
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Glib-${PORTVERSION}
 
@@ -25,8 +27,19 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	disable-threadsafe
 
 MAN3=		Glib.3 \
+		Glib::Boxed.3 \
+		Glib::Flags.3 \
+		Glib::GenPod.3 \
+		Glib::Log.3 \
+		Glib::MainLoop.3 \
+		Glib::Object.3 \
 		Glib::Object::Subclass.3 \
+		Glib::ParamSpec.3 \
+		Glib::ParseXSDoc.3 \
+		Glib::Signal.3 \
+		Glib::Type.3 \
 		Glib::devel.3 \
+		Glib::index.3 \
 		Glib::xsapi.3
 
 .include <bsd.port.pre.mk>
