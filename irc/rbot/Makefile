@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.5
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	david+ports@bushong.net
+
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
+		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
 
 USE_RUBY=	yes
 
