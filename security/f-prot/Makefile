@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.4.3
+PORTVERSION=	4.4.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
-		http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
+		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
 DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 
 MAINTAINER=	tim@bishnet.net
