@@ -325,7 +325,6 @@
     SUBDIR += xemacs21-sumo-wnn6
     SUBDIR += xemacs21-wnn4
     SUBDIR += xemacs21-wnn6
-    SUBDIR += xfig
     SUBDIR += xjman
     SUBDIR += xjtext
     SUBDIR += xklock
