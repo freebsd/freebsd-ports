@@ -3001,6 +3001,7 @@ gstreamer-ffmpeg	ports/multimedia/gstreamer-ffmpeg
 gstreamer-monkeysaudio	ports/audio/gstreamer-monkeysaudio
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
+gsystem		ports/science/gsystem
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
