@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	020701
+PORTVERSION=	2.13.2.1
 CATEGORIES=	devel
-#MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-#MASTER_SITE_SUBDIR=	binutils/releases
-# old snapshots are deleted too frequently here :(
-#MASTER_SITES=	ftp://sources.redhat.com/%SUBDIR%/
-#MASTER_SITE_SUBDIR=	pub/binutils/snapshots
-MASTER_SITES=	http://people.freebsd.org/~joerg/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	avr-
 
 MAINTAINER=	joerg@freebsd.org
