@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.krnet.ne.jp/pub/ruby/${BRANCH_NAME}/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
 DISTNAME=	ruby-${PORTVERSION}
+DIST_SUBDIR=	ruby
 
 MAINTAINER?=	yasuf@bsdclub.org
 

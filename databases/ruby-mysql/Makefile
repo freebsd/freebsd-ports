@@ -11,6 +11,7 @@ CATEGORIES=	databases	# ruby
 MASTER_SITES=	http://www.tmtm.org/mysql/ruby/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
