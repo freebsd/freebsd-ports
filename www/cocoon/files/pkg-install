@@ -16,7 +16,7 @@ GROUP=%%GROUP%%
 GID=%%GID%%
 APP_NAME=%%APP_NAME%%
 PID_FILE=%%PID_FILE%%
-LOGFILE=%%LOGFILE%%
+LOG_FILE=%%LOG_FILE%%
 
 if [ "$2" = "POST-INSTALL" ]; then
     # We're called after the 'make install' process
@@ -48,8 +48,6 @@ if [ "$2" = "POST-INSTALL" ]; then
     fi
 
     chown -R ${RUNASUSER}:${GROUP} $PKG_PREFIX/${APP_NAME}
-    touch ${LOGFILE} ${PID_FILE}
-    chown ${RUNASUSER}:${GROUP} ${LOGFILE} ${PID_FILE}
 fi
 
 exit 0

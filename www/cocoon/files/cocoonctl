@@ -6,43 +6,157 @@
 # Date Created:  2004-05-04 11:14:05
 # Revision:      $FreeBSD$
 ################################################################################
+# Copyright (c) 2004, Jean-Baptiste Quenot <jb.quenot@caraldi.com>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# * Redistributions of source code must retain the above copyright notice, this
+#   list of conditions and the following disclaimer.
+# * Redistributions in binary form must reproduce the above copyright notice,
+#   this list of conditions and the following disclaimer in the documentation
+#   and/or other materials provided with the distribution.
+# * The name of the contributors may not be used to endorse or promote products
+#   derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+################################################################################
+#
+# Files handled by this script (pid file, log files) must reside in a writable
+# directory, ie the directory must be owned by the user running the program.
 
-import sys, os, signal, time
+import sys, os, signal, time, stat, re
 
-LOGFILE = "%%LOGFILE%%"
-PREFIX = "%%PREFIX%%"
-APP_NAME = "%%APP_NAME%%"
-PID_FILE = "%%PID_FILE%%"
+def readProcessId():
+    f = open(PID_FILE, 'r')
+    pid = int(f.readline())
+    f.close()
+    return pid
+
+def isProgramRunning(pid):
+    # Send a dummy signal to the process.  If it died, an exception is
+    # thrown
+    try:
+        os.kill(pid, signal.SIGCONT)
+        return 1
+    except OSError:
+        return 0
+
+def usage():
+    print >> sys.stderr, "Usage: %s {start|stop|restart}" % sys.argv[0]
+
+def start():
+    cwd = os.getcwd()
+    if os.path.exists(PID_FILE):
+        # Read the process id
+        pid = readProcessId()
+
+        if isProgramRunning(pid):
+            print >> sys.stderr, '%s already started' % APP_NAME
+            sys.exit(3)
+
+    if not(os.path.exists(COMMAND)):
+        print >> sys.stderr, '%s cannot be found' % COMMAND
+        sys.exit(3)
+
+    # Append program output to a log file
+    l = open(LOG_FILE, 'a')
+    orig_stderr = os.dup(sys.stderr.fileno())
+    os.dup2(l.fileno(), sys.stdout.fileno())
+    os.dup2(l.fileno(), sys.stderr.fileno())
+
+    finfo = os.stat(COMMAND)[stat.ST_MODE]
+    executable = stat.S_IMODE(finfo) & 0111
+    if not(executable):
+        sys.stderr = os.fdopen(orig_stderr, 'w')
+        print >> sys.stderr, 'Cannot run %s, execute bit is missing' % COMMAND
+        sys.exit(5)
+
+    if APP_HOME:
+        # Change current directory to APP_HOME
+        os.chdir(APP_HOME)
+
+    # Start program in the background
+    pid = os.spawnv(os.P_NOWAIT, COMMAND, ARGS)
+
+    # Wait a little
+    time.sleep(.4)
+    (status_pid, status) = os.waitpid(pid, os.WNOHANG)
+
+    # Check program exit status, if available
+    if status_pid != 0 and os.WIFEXITED(status):
+        sys.stderr = os.fdopen(orig_stderr, 'w')
+        print >> sys.stderr, 'Could not start %s.  Check %s for errors.' % (APP_NAME, LOG_FILE)
+        sys.exit(2)
+
+    # It's alive, so write down the process id
+    os.chdir(cwd)
+    f = open(PID_FILE, 'w')
+    print >> f, pid
+    f.close()
+
+def warnNotRunning():
+    if sys.argv[1] == "stop":
+        print >> sys.stderr, '%s is not running' % APP_NAME
+    else:
+        print >> sys.stderr, 'Warning: %s was not running' % APP_NAME
+
+def cleanup():
+    os.unlink(PID_FILE)
+
+def stop():
+    if os.path.exists(PID_FILE):
+        # Read the process id
+        pid = readProcessId()
+    else:
+        warnNotRunning()
+        return
+
+    if not(isProgramRunning(pid)):
+        warnNotRunning()
+        cleanup()
+        return
+
+    # Terminate program
+    os.kill(pid, signal.SIGTERM)
+
+    while isProgramRunning(pid):
+        time.sleep(.1)
+
+    cleanup()
 
 if __name__ == '__main__':
+    LOG_FILE = "%%LOG_FILE%%"
+    APP_NAME = "%%APP_NAME%%"
+    APP_HOME = "%%APP_HOME%%"
+    PID_FILE = "%%PID_FILE%%"
+    COMMAND = "%%PREFIX%%/sbin/%%APP_NAME%%.sh"
+    ARGS = [COMMAND, "servlet"]
+
+    if len(sys.argv) != 2:
+        usage()
+        sys.exit(1)
+
     if sys.argv[1] == "start":
-        # Append cocoon output to a log file
-        l = open(LOGFILE, 'a')
-        os.dup2(l.fileno(), sys.stdout.fileno())
-        os.dup2(l.fileno(), sys.stderr.fileno())
+        start()
 
-        # Start cocoon in the background
-        command = PREFIX + "/sbin/" + APP_NAME + ".sh"
-        pid = os.spawnl(os.P_NOWAIT, command, command, "servlet")
-
-        # Wait a little
-        time.sleep(0.4)
-
-        # Send a dummy signal to the process.  If it died, an exception is
-        # thrown
-        os.kill(pid, signal.SIGCONT)
-
-        # It's alive, so write down the process id
-        f = open(PID_FILE, 'w')
-        print >> f, pid
-        f.close()
     elif sys.argv[1] == "stop":
-        # Read the process id
-        f = open(PID_FILE, 'r')
-        pid = int(f.readline())
-        f.close()
+        stop()
 
-        # Terminate cocoon
-        os.kill(pid, signal.SIGTERM)
+    elif sys.argv[1] == "restart":
+        stop()
+        start()
+
     else:
-        print "Usage: %s start|stop" % sys.argv[0]
+        usage()
+        sys.exit(1)

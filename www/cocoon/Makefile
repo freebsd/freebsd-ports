@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,${PORTNAME},}
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PDISTNAME}-src
 
 MAINTAINER=	jb.quenot@caraldi.com
@@ -35,12 +36,12 @@ PLIST_SUB+=	"COCOON_LIB=${COCOON_LIB}"
 COPYDIRS=	*.txt tools/jetty tools/loader legal webapp
 
 PORT?=		8888
-PID_FILE?=	/var/run/${APP_NAME}.pid
+PID_FILE?=	${APP_HOME}/${APP_NAME}.pid
 RUNASUSER?=	www
 RUNASUID?=	80
 GROUP?=		www
 GID?=		80
-LOGFILE?=	/var/log/${APP_NAME}.log
+LOG_FILE?=	${APP_HOME}/${APP_NAME}.log
 
 SUBSTITUTIONS=	\
 	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
@@ -49,12 +50,13 @@ SUBSTITUTIONS=	\
 	-e "s|%%PORT%%|${PORT}|g" \
 	-e "s|%%COCOON_LIB%%|${COCOON_LIB}|g" \
 	-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
+	-e "s|%%JAVA%%|${JAVA}|g" \
 	-e "s|%%PID_FILE%%|${PID_FILE}|g" \
 	-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
 	-e "s|%%RUNASUID%%|${RUNASUID}|g" \
 	-e "s|%%GROUP%%|${GROUP}|g" \
 	-e "s|%%GID%%|${GID}|g" \
-	-e "s|%%LOGFILE%%|${LOGFILE}|g" \
+	-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
 	-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g"
 
 # Load options (before including bsd.port.pre.mk)
@@ -102,9 +104,10 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
 
 post-build:
-	${LN} -s ${WRKSRC}/build/webapp ${WRKSRC}/webapp
+	${TEST} -h ${WRKSRC}/webapp || ${LN} -s ${WRKSRC}/build/webapp ${WRKSRC}/webapp
 
 	@${ECHO_MSG} "===> Building packing list"
+	@> ${PLIST}
 
 	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} -type f \
 	| ${SED} -e "s|^|${APP_NAME}/|" >> ${PLIST}

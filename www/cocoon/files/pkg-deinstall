@@ -18,7 +18,7 @@ set -e
 PID_FILE=%%PID_FILE%%
 RUNASUSER=%%RUNASUSER%%
 APP_NAME=%%APP_NAME%%
-LOGFILE=%%LOGFILE%%
+LOG_FILE=%%LOG_FILE%%
 
 # Make sure we're in the right stage of the process
 if [ "$2" = "DEINSTALL" ]; then
@@ -43,8 +43,8 @@ if [ "$2" = "DEINSTALL" ]; then
         fi
     fi
 
-    echo -n ">> Removing log file (${LOGFILE})..."
-    if rm ${LOGFILE} > /dev/null 2> /dev/null ; then
+    echo -n ">> Removing log file (${LOG_FILE})..."
+    if rm ${LOG_FILE} > /dev/null 2> /dev/null ; then
         echo " [ DONE ]"
     else
         echo " [ FAILED ]"
