@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1995/04/01 12:46:22 jkh Exp $
+# $Id: Makefile,v 1.9 1995/04/07 05:48:02 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -21,12 +21,9 @@ IS_INTERACTIVE=	yes
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
 
-pre-install:
-	@PREFIX=${PREFIX} ${SCRIPTDIR}/pre-install
+post-install:
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
-
-pre-reinstall: pre-install
 
 .include <bsd.port.mk>
