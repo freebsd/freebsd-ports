@@ -12,13 +12,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for easily running the same commands on multiple hosts
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+PORTDOCS=	BUGS CHANGES EXAMPLES README
+PLIST_FILES=	bin/mussh
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" \
@@ -29,7 +31,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in BUGS CHANGES EXAMPLES README
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
