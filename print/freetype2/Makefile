@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	print
-MASTER_SITES=	ftp://freetype.sourceforge.net/pub/freetype/%SUBDIR%/ \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
