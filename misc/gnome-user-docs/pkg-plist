@@ -1,27 +1,27 @@
-share/gnome/help/GNOMESOLACCESS/C/GNOMESOLACCESS.xml
-share/gnome/help/GNOMESOLACCESS/C/accessintro.xml
-share/gnome/help/GNOMESOLACCESS/C/dtconfig.xml
-share/gnome/help/GNOMESOLACCESS/C/figures/button.png
-share/gnome/help/GNOMESOLACCESS/C/figures/check_box.png
-share/gnome/help/GNOMESOLACCESS/C/figures/dropdown_combination_box.png
-share/gnome/help/GNOMESOLACCESS/C/figures/dropdown_list_box.png
-share/gnome/help/GNOMESOLACCESS/C/figures/move_object_arrows.png
-share/gnome/help/GNOMESOLACCESS/C/figures/move_object_before.png
-share/gnome/help/GNOMESOLACCESS/C/figures/move_object_jump.png
-share/gnome/help/GNOMESOLACCESS/C/figures/move_object_push.png
-share/gnome/help/GNOMESOLACCESS/C/figures/naut_iconview_anno_window.png
-share/gnome/help/GNOMESOLACCESS/C/figures/paned_window_anno.png
-share/gnome/help/GNOMESOLACCESS/C/figures/radio_button.png
-share/gnome/help/GNOMESOLACCESS/C/figures/slider.png
-share/gnome/help/GNOMESOLACCESS/C/figures/spin_box.png
-share/gnome/help/GNOMESOLACCESS/C/figures/tabbed_section.png
-share/gnome/help/GNOMESOLACCESS/C/figures/table.png
-share/gnome/help/GNOMESOLACCESS/C/figures/text_box.png
-share/gnome/help/GNOMESOLACCESS/C/figures/tree.png
-share/gnome/help/GNOMESOLACCESS/C/keynav.xml
-share/gnome/help/GNOMESOLACCESS/C/legal.xml
-share/gnome/help/GNOMESOLACCESS/C/preface.xml
-share/gnome/help/GNOMESOLACCESS/C/themes.xml
+share/gnome/help/gnome-access-guide/C/accessintro.xml
+share/gnome/help/gnome-access-guide/C/dtconfig.xml
+share/gnome/help/gnome-access-guide/C/figures/button.png
+share/gnome/help/gnome-access-guide/C/figures/check_box.png
+share/gnome/help/gnome-access-guide/C/figures/dropdown_combination_box.png
+share/gnome/help/gnome-access-guide/C/figures/dropdown_list_box.png
+share/gnome/help/gnome-access-guide/C/figures/move_object_arrows.png
+share/gnome/help/gnome-access-guide/C/figures/move_object_before.png
+share/gnome/help/gnome-access-guide/C/figures/move_object_jump.png
+share/gnome/help/gnome-access-guide/C/figures/move_object_push.png
+share/gnome/help/gnome-access-guide/C/figures/naut_iconview_anno_window.png
+share/gnome/help/gnome-access-guide/C/figures/paned_window_anno.png
+share/gnome/help/gnome-access-guide/C/figures/radio_button.png
+share/gnome/help/gnome-access-guide/C/figures/slider.png
+share/gnome/help/gnome-access-guide/C/figures/spin_box.png
+share/gnome/help/gnome-access-guide/C/figures/tabbed_section.png
+share/gnome/help/gnome-access-guide/C/figures/table.png
+share/gnome/help/gnome-access-guide/C/figures/text_box.png
+share/gnome/help/gnome-access-guide/C/figures/tree.png
+share/gnome/help/gnome-access-guide/C/gnome-access-guide.xml
+share/gnome/help/gnome-access-guide/C/keynav.xml
+share/gnome/help/gnome-access-guide/C/legal.xml
+share/gnome/help/gnome-access-guide/C/preface.xml
+share/gnome/help/gnome-access-guide/C/themes.xml
 share/gnome/help/introduction-to-gnome/C/figures/desktop.png
 share/gnome/help/introduction-to-gnome/C/figures/microguiborder.png
 share/gnome/help/introduction-to-gnome/C/figures/naut_iconview_window.png
@@ -29,13 +29,20 @@ share/gnome/help/introduction-to-gnome/C/figures/titlebar_anno_window.png
 share/gnome/help/introduction-to-gnome/C/figures/typical_anno_desktop.png
 share/gnome/help/introduction-to-gnome/C/introduction-to-gnome.xml
 share/gnome/help/introduction-to-gnome/C/legal.xml
+share/gnome/help/system-admin-guide/C/appendixa.xml
 share/gnome/help/system-admin-guide/C/gconf.xml
 share/gnome/help/system-admin-guide/C/glossary.xml
 share/gnome/help/system-admin-guide/C/legal.xml
 share/gnome/help/system-admin-guide/C/menustructure.xml
+share/gnome/help/system-admin-guide/C/mimetypes.xml
+share/gnome/help/system-admin-guide/C/performance.xml
+share/gnome/help/system-admin-guide/C/screensavers.xml
+share/gnome/help/system-admin-guide/C/sessions.xml
 share/gnome/help/system-admin-guide/C/system-admin-guide.xml
+share/gnome/help/system-admin-guide/C/themes.xml
 share/gnome/help/user-guide/C/figures/applet_popup.png
 share/gnome/help/user-guide/C/figures/ask_pointer.png
+share/gnome/help/user-guide/C/figures/caution.png
 share/gnome/help/user-guide/C/figures/cc_accessibility_window.png
 share/gnome/help/user-guide/C/figures/cc_accessx.png
 share/gnome/help/user-guide/C/figures/cc_accessx_filters_tab.png
@@ -74,6 +81,7 @@ share/gnome/help/user-guide/C/figures/cc_session_startupprogs.png
 share/gnome/help/user-guide/C/figures/cc_sound_events.png
 share/gnome/help/user-guide/C/figures/cc_sound_general.png
 share/gnome/help/user-guide/C/figures/cc_theme_tab.png
+share/gnome/help/user-guide/C/figures/cc_theme_tool.png
 share/gnome/help/user-guide/C/figures/cc_theme_window_tab.png
 share/gnome/help/user-guide/C/figures/cc_windows.png
 share/gnome/help/user-guide/C/figures/column_resize_pointer.png
@@ -89,6 +97,7 @@ share/gnome/help/user-guide/C/figures/gedit2_window.png
 share/gnome/help/user-guide/C/figures/gedit_pref2_dialog.png
 share/gnome/help/user-guide/C/figures/gedit_pref_dialog.png
 share/gnome/help/user-guide/C/figures/gedit_window.png
+share/gnome/help/user-guide/C/figures/gnome-logo-icon.png
 share/gnome/help/user-guide/C/figures/gnome-logo.png
 share/gnome/help/user-guide/C/figures/gnome_panel.png
 share/gnome/help/user-guide/C/figures/gnometerminal_icon.png
@@ -152,6 +161,7 @@ share/gnome/help/user-guide/C/figures/naut_zoom_out_button.png
 share/gnome/help/user-guide/C/figures/netscape_icon.png
 share/gnome/help/user-guide/C/figures/normal_pointer.png
 share/gnome/help/user-guide/C/figures/not_available_pointer.png
+share/gnome/help/user-guide/C/figures/note.png
 share/gnome/help/user-guide/C/figures/open_drawer.png
 share/gnome/help/user-guide/C/figures/open_main_menu.png
 share/gnome/help/user-guide/C/figures/openwindows_menu.png
@@ -176,12 +186,14 @@ share/gnome/help/user-guide/C/figures/statusdock_button.png
 share/gnome/help/user-guide/C/figures/tasklist_applet.png
 share/gnome/help/user-guide/C/figures/tasklist_group2_applet.png
 share/gnome/help/user-guide/C/figures/tasklist_group_applet.png
+share/gnome/help/user-guide/C/figures/tip.png
 share/gnome/help/user-guide/C/figures/titlebar_anno_msw_window.png
 share/gnome/help/user-guide/C/figures/titlebar_anno_window.png
 share/gnome/help/user-guide/C/figures/typical_anno_desktop.png
 share/gnome/help/user-guide/C/figures/typical_anno_menu.png
 share/gnome/help/user-guide/C/figures/typical_menu.png
 share/gnome/help/user-guide/C/figures/vert_resize_pointer.png
+share/gnome/help/user-guide/C/figures/warning.png
 share/gnome/help/user-guide/C/figures/window_list_applet.png
 share/gnome/help/user-guide/C/figures/window_list_group_applet.png
 share/gnome/help/user-guide/C/figures/window_menu.png
@@ -467,8 +479,8 @@ share/gnome/help/user-guide/ro/wgosnautilus.xml
 share/gnome/help/user-guide/ro/wgosoverview.xml
 share/gnome/help/user-guide/ro/wgospanel.xml
 share/gnome/help/user-guide/ro/wgosstartsession.xml
-share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf
@@ -553,10 +565,10 @@ share/gnome/omf/user-guide/gosstartsession-ro.omf
 @dirrm share/gnome/help/introduction-to-gnome/C/figures
 @dirrm share/gnome/help/introduction-to-gnome/C
 @dirrm share/gnome/help/introduction-to-gnome
-@dirrm share/gnome/help/GNOMESOLACCESS/C/figures
-@dirrm share/gnome/help/GNOMESOLACCESS/C
-@dirrm share/gnome/help/GNOMESOLACCESS
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/GNOMESOLACCESS-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/gnome/help/gnome-access-guide/C/figures
+@dirrm share/gnome/help/gnome-access-guide/C
+@dirrm share/gnome/help/gnome-access-guide
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/gosbasic-C.omf 2>/dev/null || /usr/bin/true
