@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zphoto
 
     SUBDIR += 4va
     SUBDIR += Cgraph

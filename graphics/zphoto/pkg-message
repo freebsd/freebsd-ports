@@ -1,0 +1,15 @@
+******************************************************************************
+ Before running zphoto, users should prepare as follows:
+
+ sh or bash:
+  $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/en (english)
+  $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/ja (japanese)
+  $ ZPHOTO_FONT=%%PREFIX%%/share/zphoto/fonts/Techno.fdb
+  $ export ZPHOTO_TEMPLATE_DIR ZPHOTO_FONT
+
+ csh or tcsh:
+  % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/en (english)
+  % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/ja (japanese)
+  % setenv ZPHOTO_FONT %%PREFIX%%/share/zphoto/fonts/Techno.fdb
+
+******************************************************************************
