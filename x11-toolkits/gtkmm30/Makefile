@@ -1,17 +1,17 @@
 # New ports collection makefile for:   gtk--
-# Version required:    1.0.0
+# Version required:    1.0.3
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Gtk---1.0.0
-PKGNAME=	gtk---1.0.0
+DISTNAME=	Gtk---1.0.3
+PKGNAME=	gtk---1.0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/gtk--/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
@@ -21,12 +21,14 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN3=	G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
+	G_List_ConstIterator.3 \
 	G_List_Iterator.3 G_SList_Iterator.3 GtkBase.3 GtkBaseClass.3 \
 	Gtk_AccelEntry.3 Gtk_AccelGroup.3 Gtk_AccelLabel.3 Gtk_Adjustment.3 \
 	Gtk_Alignment.3 Gtk_ArgBase.3 Gtk_ArgObject.3 Gtk_ArgSimple.3 \
