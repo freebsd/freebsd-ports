@@ -32,6 +32,7 @@
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += eject
+    SUBDIR += fcron
     SUBDIR += ffsrecov
     SUBDIR += fileutils
     SUBDIR += flexbackup

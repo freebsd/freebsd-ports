@@ -1,0 +1,13 @@
+bin/fcrontab
+sbin/fcron
+etc/fcron.allow
+etc/fcron.deny
+etc/rc.d/fcron.sh
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/CHANGES
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/LICENSE
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/README
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcron.8.html
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.1.html
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.5.html
+%%PORTDOCS%%@dirrm share/doc/fcron/fcron-%%PORTVERSION%%
+%%PORTDOCS%%@dirrm share/doc/fcron
