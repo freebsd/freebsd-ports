@@ -2,7 +2,7 @@ bin/neXtclock
 lib/X11/app-defaults/NeXtClock
 lib/libneXtaw.a
 lib/libneXtaw.so
-lib/libneXtaw.so.6
+lib/libneXtaw.so.%%XAWVER%%
 include/X11/neXtaw/AllWidgets.h
 include/X11/neXtaw/AsciiSink.h
 include/X11/neXtaw/AsciiSinkP.h
