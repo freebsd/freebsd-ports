@@ -1,5 +1,5 @@
-*** src/Makefile.orig	Sat Feb  8 00:23:02 1997
---- src/Makefile	Sat Feb  8 00:26:20 1997
+*** src/Makefile.orig	Tue Mar  4 14:50:27 1997
+--- src/Makefile	Tue Mar  4 14:59:59 1997
 ***************
 *** 32,38 ****
   #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
@@ -116,7 +116,7 @@
   	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Null.o
   
 + DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
-+ 	   VF_Comp.so VF_BitOp.so VF_Null.so
++ 	   VF_Comp.so VF_BitOp.so VF_FNTWV.so VF_Null.so
 + 
 + 
 + # VFlib
@@ -128,7 +128,7 @@
   libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
 ***************
 *** 168,173 ****
---- 180,255 ----
+--- 180,259 ----
   # Null font driver
   VF_Null.o:  	VF_Null.c
   	$(CC) $(CFLAGS)  -c VF_Null.c
@@ -201,6 +201,10 @@
 + # Null font driver
 + VF_Null.so:  	VF_Null.c
 + 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Null.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # FontWave font driver
++ VF_FNTWV.so:  	VF_FNTWV.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_FNTWV.c -o $(.TARGET)
 + 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
   
   # Index generator for TrueType font
