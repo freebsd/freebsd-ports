@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmfishtime
-PORTVERSION=	1.23
-PORTREVISION=	2
+PORTVERSION=	1.24
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
