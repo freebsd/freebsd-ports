@@ -143,6 +143,7 @@
     SUBDIR += lplayer
     SUBDIR += mad
     SUBDIR += maplay
+    SUBDIR += mctoolame-decoder
     SUBDIR += mhwaveedit
     SUBDIR += midimountain
     SUBDIR += mikmod
