@@ -1,0 +1,12 @@
+Dirac is a prototype video codec, under development by BBC R&D, and initially
+released in March 2003.
+
+Dirac is a general-purpose video codec aimed at resolutions from QCIF
+(180x144) to HDTV (1920x1080) progressive or interlaced. It uses wavelets,
+motion compensation and arithmetic coding and aims to be competitive with
+other state of the art codecs.
+
+WWW: http://www.bbc.co.uk/rd/projects/dirac/index.shtml
+
+Bruce
+bms@FreeBSD.org

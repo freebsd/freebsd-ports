@@ -11,6 +11,7 @@
     SUBDIR += beep-media-player
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
+    SUBDIR += dirac
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
