@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.7 1995/10/17 10:17:00 asami Exp $
+# $Id: Makefile,v 1.8 1995/11/26 10:47:58 asami Exp $
 #
 
 
@@ -15,7 +15,7 @@ DISTFILES=	part01.Z part02.Z mmv.pch.Z
 
 MAINTAINER=	me@FreeBSD.org
 
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+DIST_SUBDIR=	${DISTNAME}
 SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
 NO_WRKSUBDIR=	yes
 
@@ -74,5 +74,8 @@ do-install:
 	 if [ ! -d ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi; \
 	 install ${COPY} -o ${BINOWN} -g ${BINGRP} \
 	  mmv.1.gz ${PREFIX}/man/man1 ; )
+
+pre-clean:
+	@rm -f ${PATCHDIR}/patch-0a	# created by do-extract above
 
 .include <bsd.port.mk>
