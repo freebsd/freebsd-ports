@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
+	if [ -x !!PREFIX!!/etc/webmin/start ]; then
+		!!PREFIX!!/etc/webmin/start
+	fi
+fi

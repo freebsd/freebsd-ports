@@ -10,4 +10,6 @@ fi
 
 perl -pi -e "s=!!PERL5!!=$PERL5=" ${WRKSRC}/setup.sh
 
+sed -e "s=!!PREFIX!!=$PREFIX=" < ${FILESDIR}/webmin.sh.sample > /tmp/webmin.sh
+
 exit 0
