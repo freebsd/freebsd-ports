@@ -1,0 +1,5 @@
+Kcube is a kicker-application that displays a realtime rotating
+3d-object and the current cpu-load. The cpu-load also makes the
+object spin faster/slower.
+
+WWW: http://www.tuxed.de/kcube/
