@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-weather-plugin
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.9
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
