@@ -1,0 +1,10 @@
+--- speech_tools/audio/esd.cc.orig	Mon Oct  4 15:39:01 1999
++++ speech_tools/audio/esd.cc	Fri Jun 16 17:49:10 2000
+@@ -66,7 +66,6 @@
+ 
+ bool esd_supported = TRUE;
+ 
+-int endian_int = 1;
+ #define ESD_BIG_ENDIAN (((char *)&endian_int)[0] == 0)
+ 
+ EST_String server;

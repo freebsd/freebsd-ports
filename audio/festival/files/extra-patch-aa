@@ -1,0 +1,13 @@
+$NetBSD: patch-aa,v 1.2 1999/10/11 14:13:49 proff Exp $
+
+--- festival/config/config	Mon Oct 11 07:48:44 1999
++++ festival/config/config	Mon Oct 11 05:48:33 1999
+@@ -20,7 +20,7 @@
+ ## You may need to set this explicitly if automounter or NFS
+ ## side effects cause problems
+ 
+-FESTIVAL_HOME := $(shell (cd $(TOP); pwd))
++FESTIVAL_HOME := $(PKG_FESTIVAL_HOME)
+ 
+ ###########################################################################
+ ## Feature selection.

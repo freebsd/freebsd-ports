@@ -1,0 +1,17 @@
+$NetBSD: patch-ai,v 1.2 2000/05/31 14:51:16 dmcmahill Exp $
+
+work around pmax compiler bug
+
+--- speech_tools/grammar/ngram/Makefile.orig	Sun May 30 06:59:41 1999
++++ speech_tools/grammar/ngram/Makefile	Tue May 30 12:41:32 2000
+@@ -49,3 +49,10 @@
+ include $(TOP)/config/common_make_rules
+ 
++ifeq ($(MACHINETYPE),pmax)
++
++ngrammar_io.o: ngrammar_io.cc
++	${CXX} -c -fno-implicit-templates -fguiding-decls  -Wall -I../../include ${OS_INCLUDES} ngrammar_io.cc
++
++endif
++
+ 

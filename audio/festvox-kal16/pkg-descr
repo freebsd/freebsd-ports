@@ -1,0 +1,14 @@
+from the NetBSD maintainer:
+
+This voice provides an American English male voice using a residual
+excited LPC diphone synthesis method.  It uses the CMU Lexicon
+pronunciations.  Prosodic phrasing is provided by a statistically
+trained model using part of speech and local distribution of breaks.
+Intonation is provided by a CART tree predicting ToBI accents and
+an F0 contour generated from a model trained from natural speech.
+The duration model is also trained from data using a CART tree.
+
+WWW:  http://www.cstr.ed.ac.uk/projects/festival.html
+
+Trevor Johnson
+trevor@jpj.net

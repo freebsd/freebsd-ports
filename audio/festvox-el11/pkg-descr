@@ -1,0 +1,11 @@
+from the NetBSD maintainer:
+
+This voice provides a Castilian Spanish male voice using a residual
+excited LPC diphone synthesis method.  The lexicon is provived by
+a set of letter to sound rules producing pronunciation accents and
+syllabification.  The durations, intonation and prosodic phrasing
+are minimal but are acceptable for simple examples.
+
+This voice can be activated via (voice_el_diphone) .
+
+WWW:  http://www.cstr.ed.ac.uk/projects/festival.html

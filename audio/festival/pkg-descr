@@ -1,0 +1,19 @@
+from the authors:
+
+The Festival Speech Synthesis System is a general multi-lingual
+text-to-speech system for Unix platforms.  It is written in C++ and
+includes a Scheme-based scripting language.  Included with Festival
+are lexicons and voices that together form a whole text-to-speech
+system.
+
+For output via esd do:
+
+	(Parameter.set 'Audio_Method 'esdaudio)
+
+NAS and direct output are documented in section 23 of the users'
+manual.
+
+WWW:  http://www.cstr.ed.ac.uk/projects/festival.html
+
+Trevor Johnson
+trevor@jpj.net

@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.2 1999/10/28 01:53:01 hubertf Exp $
+share/festival/lib/voices/english/ogirab_diphone/festvox/ogirab_diphone.scm
+share/festival/lib/voices/english/ogirab_diphone/festvox/rabdiph.msec
+share/festival/lib/voices/english/ogirab_diphone/festvox/rabgain.dat
+share/festival/lib/voices/english/ogirab_diphone/group/ogirab_di_resLPC.group
+@dirrm share/festival/lib/voices/english/ogirab_diphone/group
+@dirrm share/festival/lib/voices/english/ogirab_diphone/festvox
+@dirrm share/festival/lib/voices/english/ogirab_diphone

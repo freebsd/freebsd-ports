@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 1999/04/04 19:34:21 proff Exp $
+share/festival/lib/voices/spanish/el_diphone/group/ellpc11k.group
+@dirrm share/festival/lib/voices/spanish/el_diphone/group
+share/festival/lib/voices/spanish/el_diphone/festvox/el_diphone.scm
+share/festival/lib/voices/spanish/el_diphone/festvox/spanlex.scm
+share/festival/lib/voices/spanish/el_diphone/festvox/spanint.scm
+share/festival/lib/voices/spanish/el_diphone/festvox/sptoken.scm
+@dirrm share/festival/lib/voices/spanish/el_diphone/festvox
+@dirrm share/festival/lib/voices/spanish/el_diphone

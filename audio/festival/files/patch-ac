@@ -1,0 +1,24 @@
+$NetBSD: patch-ac,v 1.2 1999/10/11 14:13:49 proff Exp $
+
+--- festival/examples/benchmark	Thu Feb 27 00:47:45 1997
++++ festival/examples/benchmark	Mon Oct 11 05:41:14 1999
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-default_libdir="/projects/festival/lib"
++default_libdir="$FESTIVAL_HOME/lib"
+ 
+ while true
+ 	do
+@@ -15,9 +15,9 @@
+ 	esac
+ done
+ 
+-text=${1-"$HOME/projects/festival/examples/benchmark.text"}
++text=${1-"$FESTIVAL_HOME/examples/benchmark.text"}
+ 
+-for i in . src/main ../src/main $HOME/projects/festival/src/main /cstr/bin
++for i in . src/main ../src/main $FESTIVAL_HOME/src/main
+ 	do
+ 	if [ -n "$festival" ]
+ 		then
