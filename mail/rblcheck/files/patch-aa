@@ -1,5 +1,5 @@
 --- rblcheck.c.orig	Thu Aug 20 14:47:03 1998
-+++ rblcheck.c	Tue Nov 17 01:30:36 1998
++++ rblcheck.c	Thu Mar  4 21:28:38 1999
 @@ -79,6 +79,7 @@
  #include <sys/types.h>
  #include <netinet/in.h>
@@ -92,7 +92,7 @@
  	   systems here. ### An easier way to change this is needed. ### */
  	rblsites = togglesite( "rbl.maps.vix.com", rblsites );
 -	rblsites = togglesite( "rbl.dorkslayers.com", rblsites );
-+	rblsites = togglesite( "orbs.dorkslayers.com", rblsites );
++	rblsites = togglesite( "relays.orbs.org", rblsites );
  
  	progname = argv[ 0 ];
  
