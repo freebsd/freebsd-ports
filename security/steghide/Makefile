@@ -38,5 +38,6 @@ post-patch:
 .endif
 	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL},' \
 		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's,-O2,${CFLAGS},' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
