@@ -31,6 +31,4 @@ share/doc/yatex/yatexgen.doc
 share/doc/yatex/yatexj.tex
 share/doc/yatex/yatexref.eng
 @dirrm share/emacs/site-lisp/yatex
-@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/emacs 2>/dev/null || true
 @dirrm share/doc/yatex
