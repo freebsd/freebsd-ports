@@ -1,0 +1,14 @@
+--- dynarray.c.orig	Sat Jan 18 13:22:27 1997
++++ dynarray.c	Sat Jan  8 01:11:56 2000
+@@ -17,7 +17,11 @@
+  *
+  ***********************************************************************/
+ 
++#ifndef __STDC__
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include "dynarray.h"
+ 
+ #define NULL 0

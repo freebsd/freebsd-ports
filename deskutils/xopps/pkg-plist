@@ -1,6 +1,7 @@
-bin/xopps
 bin/opps2xopps
+bin/xopps
 include/X11/bitmaps/jpl1.bm
 include/X11/bitmaps/jpl2.bm
-lib/help/xopps.info
 lib/X11/app-defaults/XOpps
+lib/X11/xopps/xopps.info
+@dirrm lib/X11/xopps
