@@ -1,0 +1,13 @@
+--- memtest.1.orig	Wed Apr 26 19:58:23 2000
++++ memtest.1	Tue Jul 18 22:37:20 2000
+@@ -196,7 +196,9 @@
+ faulty memory modules in Linux, or any Unix-like environment.
+ .Sh "Invoking memtest"
+ \fBmemtest\fR takes the first supplied argument as the amount of memory to test.
+-The value \fB'all\*(R'\fR means to test all available memory.  A specific amount of
++The value \fB'all\*(R'\fR means to test all available memory. However, the value \fB'all\*(R'\fR
++may not work on all systems, so a specific amount of memory might have to
++be specified. A specific amount of
+ memory can be supplied as a number, followed by a letter to indicate units:
+ .Ip "\(bu" 4
+ \fBB\fR or \fBb\fR \- bytes

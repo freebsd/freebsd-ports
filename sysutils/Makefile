@@ -54,6 +54,7 @@
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
+    SUBDIR += memtest
     SUBDIR += mkisofs
     SUBDIR += monitord
     SUBDIR += muse
