@@ -1,0 +1,3 @@
+bin/icmpchat
+%%PORTDOCS%%share/doc/icmpchat/README
+%%PORTDOCS%%@dirrm share/doc/icmpchat

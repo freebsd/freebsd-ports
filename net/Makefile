@@ -191,6 +191,7 @@
     SUBDIR += hx
     SUBDIR += icb
     SUBDIR += ickle
+    SUBDIR += icmpchat
     SUBDIR += icmpinfo
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
