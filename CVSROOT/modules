@@ -1344,6 +1344,7 @@ electricfence	ports/devel/ElectricFence
 electricsheep	ports/x11/electricsheep
 elf		ports/devel/elf
 elfio		ports/devel/elfio
+elfsh		ports/devel/elfsh
 elftoaout	ports/devel/elftoaout
 elib		ports/devel/elib
 elib-emacs19	ports/devel/elib-emacs19
