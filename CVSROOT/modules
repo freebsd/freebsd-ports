@@ -6925,6 +6925,7 @@ wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
 wmpinboard	ports/deskutils/wmpinboard
 wmpop3		ports/mail/wmpop3
+wmq3		ports/net/wmq3
 wmrecord	ports/audio/wmrecord
 wmsmixer	ports/audio/wmsmixer
 wmspaceweather	ports/astro/wmspaceweather
