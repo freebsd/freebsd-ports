@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Sep 25 19:04:31 2000
-+++ Makefile	Wed Oct 25 20:48:53 2000
+--- Makefile.orig	Tue Aug 28 16:27:01 2001
++++ Makefile	Wed Aug 29 09:15:09 2001
 @@ -62,12 +62,12 @@
  ######################################################################
  # Installation
@@ -13,15 +13,15 @@
  	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)
 -	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(VERSION)$(EXEC_EXT)
 +#	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(VERSION)$(EXEC_EXT)
+ 	@# If we're running at Penn, install a public version too
+ 	if [ -d /plclub/bin ]; then cp $(NAME)$(EXEC_EXT) /plclub/bin/$(NAME)-$(VERSION)$(EXEC_EXT); fi
  
- ######################################################################
- # Demo
-@@ -204,7 +204,7 @@
+@@ -231,7 +231,7 @@
  tags:
- 	-$(ETAGS) *.ml *.mli
+ 	-$(ETAGS) *.ml *.mli *.txt
  
 -all:: TAGS
-+# all:: TAGS
++#all:: TAGS
  
  TAGS: 
  	$(MAKE) tags

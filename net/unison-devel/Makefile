@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	unison
-PORTVERSION=	2.6.11
+PORTVERSION=	2.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-${PORTVERSION}/
 DISTNAME=	src
-DIST_SUBDIR=	unison
+DIST_SUBDIR=	unison-${PORTVERSION}
 
 MAINTAINER=	dpelleg+unison@cs.cmu.edu
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE= yes
-MAKE_ARGS= UISTYLE=text CFLAGS=""
+USE_GMAKE=	yes
+MAKE_ARGS=	UISTYLE=text CFLAGS=""
 
 post-install:
 	strip ${PREFIX}/bin/unison
