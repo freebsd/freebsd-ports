@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.030
+PORTVERSION=	7.1.031
 #PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -64,12 +64,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.1-31.i386.rpm
-#	intel-iidb7-7.2.2-64.i386.rpm \
-#	intel-isubh7-7.1-31.i386.rpm \
-#	intel-ecc7-7.1-31.ia64.rpm \
-#	intel-eidb7-7.2.2-64.ia64.rpm \
-#	intel-esubh7-7.1-31.ia64.rpm
+	intel-icc7-7.1-32.i386.rpm
+#	intel-iidb7-7.2.2-65.i386.rpm \
+#	intel-isubh7-7.1-32.i386.rpm \
+#	intel-ecc7-7.1-32.ia64.rpm \
+#	intel-eidb7-7.2.2-65.ia64.rpm \
+#	intel-esubh7-7.1-32.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
