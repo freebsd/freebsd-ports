@@ -9,9 +9,11 @@
 PORTNAME=	linux-netscape-${BROWSER}
 PORTVERSION=	${BROWSER_VER}
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/
-DISTFILES=	${BROWSER}-v472-export.x86-unknown-linuxglibc2.0.tar.gz
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.73/unix/supported/linux20_glibc2/complete_install/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.73/unix/supported/linux20_glibc2/complete_install/ \
+		ftp://ftp.netscape.com/pub/communicator/english/4.73/unix/supported/linux20_glibc2/navigator_standalone/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.73/unix/supported/linux20_glibc2/navigator_standalone/
+DISTFILES=	${BROWSER}-v473-export.x86-unknown-linuxglibc2.0.tar.gz
 
 MAINTAINER=	girgen@partitur.se
 
@@ -23,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 # don't overwrite the native FreeBSD port's shell script wrapper in ${PREFIX}/bin
 BROWSER_ARC=	${BROWSER}-linux
 
-WRKSRC=		${WRKDIR}/${BROWSER}-v472.x86-unknown-linux2.0
+WRKSRC=		${WRKDIR}/${BROWSER}-v473.x86-unknown-linux2.0
 
 USE_LINUX_LIB=	yes
 
