@@ -4,7 +4,6 @@ bin/posadis-config
 bin/posadis-getroots
 bin/posask
 bin/poshost
-include/ltdl.h
 include/posadis-%%VERSION%%/auth_mem.h
 include/posadis-%%VERSION%%/cacheapply.h
 include/posadis-%%VERSION%%/configuration.h
@@ -23,10 +22,6 @@ include/posadis-%%VERSION%%/zonetransfer.h
 include/posadis-%%VERSION%%/secondary.h
 include/posadis-%%VERSION%%/updates.h
 @dirrm include/posadis-%%VERSION%%
-lib/libltdl.so.4
-lib/libltdl.so
-lib/libltdl.la
-lib/libltdl.a
 lib/posadis/revmap.so.0
 lib/posadis/revmap.so
 lib/posadis/revmap.la
