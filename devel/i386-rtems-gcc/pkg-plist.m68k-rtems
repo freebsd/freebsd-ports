@@ -2,7 +2,6 @@ bin/m68k-rtems-c++filt
 bin/m68k-rtems-c++
 bin/m68k-rtems-g++
 bin/m68k-rtems-gcc
-bin/m68k-rtems-gccbug
 bin/m68k-rtems-cpp
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc

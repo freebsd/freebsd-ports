@@ -3,7 +3,6 @@ bin/mips-rtems-c++filt
 bin/mips-rtems-cpp
 bin/mips-rtems-g++
 bin/mips-rtems-gcc
-bin/mips-rtems-gccbug
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
