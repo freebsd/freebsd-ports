@@ -154,6 +154,7 @@
     SUBDIR += re2c
     SUBDIR += rinfo
     SUBDIR += scogdb
+    SUBDIR += sdcc
     SUBDIR += sdl
     SUBDIR += sfio
     SUBDIR += shtool
