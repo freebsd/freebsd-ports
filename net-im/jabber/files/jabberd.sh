@@ -9,6 +9,9 @@ rundir=/tmp
 out=/var/log/jabber.log
 hostname=`/bin/hostname`
 
+# Load PTH libraries
+ldconfig -m `${PREFIX}/bin/pth-config --libdir`
+
 export PATH=/bin:/usr/bin:${PREFIX}/bin
 umask 077
 
