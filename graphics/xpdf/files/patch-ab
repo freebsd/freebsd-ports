@@ -13,7 +13,7 @@
   #CFLAGS2 = -O2 -Wall
   
   # If you're using g++ 2.7.x, you'll want to use -Wno-unused:
-! #CFLAGS2 = -O2 -Wall -Wno-unused
+! CFLAGS2 = -O2 -Wall -Wno-unused -I${X11BASE}/include
   
   # For Linux/FreeBSD/NetBSD/BSDI systems using XFree86:
   #CFLAGS2 = -O2 -Wall -I/usr/X11R6/include -Wno-unused
