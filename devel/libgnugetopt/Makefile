@@ -25,6 +25,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/getopt.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/libgnugetopt.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/libgnugetopt.so.1 ${PREFIX}/lib
-	@ ${LN} -s ${PREFIX}/lib/libgnugetopt.so.1 ${PREFIX}/lib/libgnugetopt.so
+	@ cd ${PREFIX}/lib ; ${LN} -sf libgnugetopt.so.1 libgnugetopt.so
 
 .include <bsd.port.mk>

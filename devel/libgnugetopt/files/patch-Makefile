@@ -1,0 +1,19 @@
+--- Makefile.orig	Mon May  3 00:33:35 1999
++++ Makefile	Sun Mar 11 14:59:36 2001
+@@ -2,10 +2,15 @@
+ # GNU getopt library
+ #
+ 
+-all: libgnugetopt.so.1
++all: libgnugetopt.so.1 libgnugetopt.a
+ 
+ libgnugetopt.so.1: getopt.o getopt1.o
+ 	${CC} ${CFLAGS} -shared -Wl,-soname,libgnugetopt.so.1 -o libgnugetopt.so.1 getopt.o getopt1.o
++
++libgnugetopt.a: getopt.o getopt1.o
++	@echo building static libgnugetopt library
++	ar cq libgnugetopt.a `lorder getopt.o getopt1.o | tsort -q`
++	ranlib libgnugetopt.a
+ 
+ getopt1.o: getopt1.c
+ 	${CC} ${CFLAGS} -fPIC -o getopt1.o -c -s getopt1.c
