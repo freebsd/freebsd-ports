@@ -20,6 +20,7 @@ USE_PERL5=	yes
 MAN1=		grepmail.1
 
 do-configure:
+		@${PERL} -pi.orig -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail
 		@cd ${WRKSRC} && ${PERL} Makefile.PL
 
 do-install:

@@ -1,5 +1,5 @@
---- grepmail.DP.orig	Tue May  2 18:23:15 2000
-+++ grepmail.DP	Tue May  2 21:52:00 2000
+--- grepmail	Tue May  2 18:23:15 2000
++++ grepmail	Tue May  2 21:52:00 2000
 @@ -1,4 +1,4 @@
 -#!/users/dwc3q/bin/perl -w
 +#!_PERL_
