@@ -11,11 +11,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <kvm.h>
+#include <sys/dkstat.h>
 #include <sys/param.h>
-#include <sys/resource.h>
-#include <sys/sysctl.h>
 #include <sys/types.h>
 #include <sys/time.h>
+#include <sys/resource.h>
+#include <sys/sysctl.h>
 #include <sys/vmmeter.h>
 #include <unistd.h>
 #include <sys/user.h>
@@ -28,6 +29,7 @@
 void net_init();
 
 #define GETSYSCTL(name, var) getsysctl(name, &(var), sizeof(var))
+#define KELVTOC(x)      ((x - 2732) / 10.0)
 
 static int getsysctl(char *name, void *ptr, size_t len)
 {   
@@ -144,14 +146,14 @@ void update_net_stats() {
 	struct net_stat *ns;
   	double delta;
 	long long r, t, last_recv, last_trans;
+	struct ifaddrs          *ifap, *ifa;
+	struct if_data          *ifd;
+
 	
 	/* get delta */
 	delta = current_update_time - last_update_time;
   	if (delta <= 0.0001) 
 		return;
-
-	struct ifaddrs          *ifap, *ifa;
-	        struct if_data          *ifd;
 
 	if (getifaddrs(&ifap) < 0)
 		return;
@@ -237,7 +239,11 @@ int get_running_processes() {
 	if (kd != NULL) {
 		p = kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
 		for (i = 0; i<n_processes; i++) {
+#if __FreeBSD__ < 5
+			if (p[i].kp_proc.p_stat == SRUN)
+#else
 			if (p[i].ki_stat == SRUN)
+#endif
 				cnt++;
 		}
 	} else
@@ -291,14 +297,27 @@ void get_load_average(double v[3]) {
 }
 
 double get_acpi_temperature(int fd) {
-  double temp;
+	double temp;
 	
-  temp = 0;
-
-  return temp;
+	if (GETSYSCTL("hw.acpi.thermal.tz0.temperature", temp)) {
+		 (void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.thermal.tz0.temperature\"\n");
+		 temp = -1.0;
+	}
+	
+  	return KELVTOC(temp);
 }
 
 void get_battery_stuff(char *buf, unsigned int n, int b) {
+	int battime;
+	
+	if (GETSYSCTL("hw.acpi.battery.time", battime))
+		(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.battery.time\"\n");
+		
+	if (battime != -1)
+		snprintf(buf, n, "Discharging, remaining %d:%2.2d", battime / 60, battime % 60);
+	else
+		snprintf(buf, n, "Battery is charging");
+	
 }
 
 int open_i2c_sensor(const char *dev, const char *type, int n, int *div)
@@ -312,9 +331,23 @@ int open_acpi_temperature(const char *name) {
 
 char* get_acpi_ac_adapter(void) 
 {
-	return "blah";
+	int state;
+	char *acstate = (char*)malloc(100);
+	
+	if (GETSYSCTL("hw.acpi.acline", state)) {
+		(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.acline\"\n");
+		return "n\\a";
+	}
+
+	if (state) 
+		strcpy(acstate,"Running on AC Power");
+	else 
+		strcpy(acstate, "Running on battery");
+
+	return acstate;
 }
 
 char* get_acpi_fan() {
+
 	return "";
 }
