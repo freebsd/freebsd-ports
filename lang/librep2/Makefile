@@ -16,9 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		intl.1:${PORTSDIR}/devel/gettext-old
-.if !exists(/usr/lib/libgmp.so)
-LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
-.endif
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
@@ -40,6 +37,9 @@ CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PREFIX?=	${X11BASE}
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500023
+LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp3
+.endif
 
 .if ${XFREE86_VERSION} == 3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
