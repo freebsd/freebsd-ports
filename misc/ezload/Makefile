@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.etla.net/~n_hibma/usb/
 
 MAINTAINER=	n_hibma@FreeBSD.ORG
 
-BROKEN=		"Does not build"
-
 MAN1=		ezupload.1 ezdownload.1 aw.1
 MANCOMPRESSED=	yes
 
