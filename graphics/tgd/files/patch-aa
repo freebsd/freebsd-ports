@@ -1,0 +1,25 @@
+--- Makefile.orig	Mon Feb 22 09:40:53 1999
++++ Makefile	Mon Feb 22 09:47:40 1999
+@@ -26,11 +26,10 @@
+ #
+ PROG	 = tgd
+ HOME     = .
+-GDHOME   = $(HOME)/gd1.2
+ CC	 = gcc
+ CDEFS	 = 
+-INCLUDE  = -I$(HOME) -I$(GDHOME)
+-GDLIB    = $(GDHOME)/libgd.a
++INCLUDE  = -I$(HOME) -I/usr/local/include/gd
++GDLIB    = /usr/local/lib/libgd.a
+ #
+ # Some debugging/profiling options
+ # CFLAGS   = -p  $(CDEFS) $(INCLUDE)
+@@ -43,7 +42,7 @@
+ CFLAGS	 = $(CDEFS) $(INCLUDE)
+ LDFLAGS	 =
+ 
+-LDLIBS	 = -L$(GDHOME) -lgd -lm
++LDLIBS	 = -L/usr/local/lib -lgd -lm
+ MAKEFILE = Makefile
+ FONT1    = tgdFont10x20.c tgdFont12x24.c tgdFont5x8.c tgdFont6x10.c
+ FONT2    = tgdFont6x12.c tgdFont6x13.c tgdFont6x13bold.c tgdFont6x9.c
