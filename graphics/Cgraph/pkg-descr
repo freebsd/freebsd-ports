@@ -1,0 +1,7 @@
+Cgraph: PostScript plotting library in C
+
+This is a C source code library that contains a set of C functions
+that generate PostScript for publication quality scientific plots.
+If you have a PostScript previewer, it is possible to launch the
+viewer automatically on generated PS/EPS files.  The Cgraph Library
+source code, examples, and documentation are in the public domain.

@@ -1,0 +1,20 @@
+# makefile for Cgraph sources
+
+LIBDIR =	${PREFIX}/lib
+
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	4
+LIB=		cgraph
+
+SRCS=		bgdash.c bginit.c bgshow.c bgstart.c\
+		glcmp.c gxaxs.c gxlog.c gyaxs.c gylog.c\
+		gfont.c gcord.c gmlin.c gorig.c gprim.c\
+		grmle.c grset.c gmark.c ggraycolor.c gstrk.c\
+		gaxlabel.c gbott.c cgsave.c cgprint.c\
+		gtext.c gtrnc.c gmesh.c gstyl.c gwdth.c\
+		cg_newfuncs.c
+
+beforeinstall:
+	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/cgraph.h ${PREFIX}/include
+
+.include <bsd.lib.mk>
