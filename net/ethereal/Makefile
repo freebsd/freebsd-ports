@@ -27,7 +27,12 @@ CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
+.if defined(WITH_GTK2)
+LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
+CONFIGURE_ARGS+=	--enable-gtk2=yes
+.else
 USE_GNOME=	gtk12
+.endif
 MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
 .else
