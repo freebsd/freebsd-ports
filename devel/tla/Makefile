@@ -35,7 +35,8 @@ test:
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}; \
-	for f in `find ${ORIGWRKSRC}/docs-tla/html -type f -name '*.html' -exec ${BASENAME} {} \;`; do \
+	for f in `${FIND} ${ORIGWRKSRC}/docs-tla/html -type f -name '*.html' \
+		-exec ${BASENAME} {} \;`; do \
 		${INSTALL_DATA} ${ORIGWRKSRC}/docs-tla/html/$$f ${DOCSDIR}/; \
 		printf "share/doc/${PORTNAME}/%s\n" $$f >> ${TMPPLIST}; \
 	done; \

@@ -66,12 +66,12 @@ post-extract:
 
 pre-patch:
 # remove trailing ^M
-	@find -E ${WRKDIR} -type f \
+	@${FIND} -E ${WRKDIR} -type f \
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|int|lst|pl|pm|sc|sh|scr|txt|url|uhtm)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 .ifdef(EXTRA_CLEAN_FILES)
 .for pattern in ${EXTRA_CLEAN_FILES}
-	@find -E ${WRKDIR} -type f \
+	@${FIND} -E ${WRKDIR} -type f \
 		-iregex "${pattern}" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 .endfor

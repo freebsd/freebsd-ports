@@ -27,10 +27,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 pre-patch:
 	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's^\$\(datadir\)/gnome/^\$\(datadir\)/^g ; \
 		 s^\$\(datadir\)/locale^\$\(prefix\)/share/locale^g'
-	@find ${WRKSRC}/src/Plugins -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC}/src/Plugins -name "Makefile.in" | \
+		${XARGS} ${PERL} -pi -e \
 		's|_la_LDFLAGS =|_la_LDFLAGS = -avoid-version|g'
 
 .include <bsd.port.mk>

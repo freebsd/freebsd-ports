@@ -71,14 +71,15 @@ PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
 NO_FILTER_SHLIBS=	yes
 
 post-extract:
-	find ${WRKSRC}/ -type f -name '.cvsignore' -delete
+	${FIND} ${WRKSRC}/ -type f -name '.cvsignore' -delete
 
 post-patch:
 	${RUBY} -i~ -p \
 		-e 'gsub(/-lpthread/, "-pthread");' \
 		-e 'gsub(/-lgmodel/, "");' \
 		${WRKSRC}/Source/${MAKEFILE}
-	find ${WRKSRC}/ -type f | xargs ${RUBY} -i -pe 'gsub(/ ruby -/, " ${RUBY} -")'
+	${FIND} ${WRKSRC}/ -type f | \
+		${XARGS} ${RUBY} -i -pe 'gsub(/ ruby -/, " ${RUBY} -")'
 
 post-install:
 .if !defined(NOPORTDOCS)

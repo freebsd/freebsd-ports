@@ -48,7 +48,7 @@ MAN1=		directfb-csource.1 dfbg.1
 MAN5=		directfbrc.5
 
 post-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>

@@ -158,8 +158,8 @@ pre-install:
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && find * | cpio -dlmp ${PREFIX}
-	find ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
+	cd ${WRKSRC} && ${FIND} * | cpio -dlmp ${PREFIX}
+	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
 post-install:
 	@${ECHO} ''

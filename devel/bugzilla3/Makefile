@@ -75,11 +75,11 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@find -d ${WRKSRC} -name CVS -type d -exec ${RM} -rf {} \;
-	@find -d ${WRKSRC} -name sgml -type d -exec ${RM} -rf {} \;
-	@find ${WRKSRC} -name .cvsignore -type f -exec ${RM} -f {} \;
-	@find ${WRKSRC} -name README.docs -type f -exec ${RM} -f {} \;
-	@find ${WRKSRC} -name \*.orig -type f -exec ${RM} -f {} \;
+	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -rf {} \;
+	@${FIND} -d ${WRKSRC} -name sgml -type d -exec ${RM} -rf {} \;
+	@${FIND} ${WRKSRC} -name .cvsignore -type f -exec ${RM} -f {} \;
+	@${FIND} ${WRKSRC} -name README.docs -type f -exec ${RM} -f {} \;
+	@${FIND} ${WRKSRC} -name \*.orig -type f -exec ${RM} -f {} \;
 .for i in ${BONSAIPERLWC}
 	@${REINPLACE_CMD} -e 's@#!/usr/bonsaitools/bin/perl@#!/usr/bin/perl@' \
 		${WRKSRC}/$i
@@ -88,16 +88,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
 		${WRKSRC}/$i
 .endfor
-	@find ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
+	@${FIND} ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
 
 pre-install:
-	@find ${WRKSRC}/docs -type d -exec ${CHMOD} 755 {} \;
-	@find ${WRKSRC}/docs -type f -exec ${CHMOD} ${MANMODE} {} \;
-	@find ${WRKSRC}/docs -type f -exec ${CHOWN} root:wheel {} \;
+	@${FIND} ${WRKSRC}/docs -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} ${WRKSRC}/docs -type f -exec ${CHMOD} ${MANMODE} {} \;
+	@${FIND} ${WRKSRC}/docs -type f -exec ${CHOWN} root:wheel {} \;
 
 do-install:
 	${MKDIR} ${PREFIX}/${BUGZILLADIR}
-	find ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
+	${FIND} ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/${BUGZILLADIR} \;
 	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${PREFIX}/${BUGZILLADIR} -xf -
 .if !defined(NOPORTDOCS)

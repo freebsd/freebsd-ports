@@ -115,7 +115,7 @@ post-install:
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/Doc/examples/* ${EXAMPLESDIR}
-	@ cd ${WRKSRC}/Scripts && find * \
+	@ cd ${WRKSRC}/Scripts && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .if defined(WITH_CORBA)
 	@ ${MKDIR} ${DOCSDIR}/BioCorba

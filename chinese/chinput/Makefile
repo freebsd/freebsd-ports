@@ -26,6 +26,6 @@ BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
-	find ${WRKSRC} -name CVS | xargs ${RM} -rf
+	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 .include <bsd.port.mk>

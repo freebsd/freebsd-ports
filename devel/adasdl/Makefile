@@ -25,10 +25,10 @@ USE_GMAKE=     yes
 USE_REINPLACE= yes
 
 do-patch:
-	for i in `find ${WRKSRC} -name 'Makefile'`; do \
+	for i in `${FIND} ${WRKSRC} -name 'Makefile'`; do \
 		${REINPLACE_CMD} -e '/gnatmake/!s/make\ /gmake\ /' $${i}; \
 	done
-	for i in `find ${WRKSRC} -name 'make.conf_x11'`; do \
+	for i in `${FIND} ${WRKSRC} -name 'make.conf_x11'`; do \
 		${REINPLACE_CMD} \
 			-e 's,/usr/local,${LOCALBASE},g' \
 			-e 's,/usr/X11R6,${X11BASE},g' \
@@ -67,33 +67,40 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/lib/adaSDL
 	for i in `cat pkg-plist|grep "lib/adaSDL/"|grep -v framebuffer|grep -v _mixer|grep -v _image|sed "s/lib\/adaSDL\///"`; do \
-		find ${WRKSRC}/AdaSDL/binding -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
+		${FIND} ${WRKSRC}/AdaSDL/binding -name $${i} -maxdepth 1 | \
+			${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
 	done
 	for i in `cat pkg-plist|grep "lib/adaSDL/"|grep framebuffer|sed "s/lib\/adaSDL\///"`; do \
-		find ${WRKSRC}/AdaSDL_framebuff -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
+		${FIND} ${WRKSRC}/AdaSDL_framebuff -name $${i} -maxdepth 1 | \
+			${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
 	done
 	${MKDIR} ${PREFIX}/share/adaSDL
 	${MKDIR} ${PREFIX}/share/adaSDL/examples
 	for i in `cat pkg-plist|grep "share/adaSDL/examples"|grep -v dirrm|sed "s/share\/adaSDL\/examples\///"`; do \
-		find ${WRKSRC}/AdaSDL_framebuff/sdltests -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/share/adaSDL/examples; \
+		${FIND} ${WRKSRC}/AdaSDL_framebuff/sdltests -name $${i} \
+			-maxdepth 1 | ${INSTALL_DATA} \
+			`grep ""` ${PREFIX}/share/adaSDL/examples; \
 	done
 
 .if !defined(WITHOUT_SDL_IMAGE)
 	for i in `cat pkg-plist|grep "lib/adaSDL/"|grep _image|sed "s/lib\/adaSDL\///"`; do \
-		find ${WRKSRC}/AdaSDL_image -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
+		${FIND} ${WRKSRC}/AdaSDL_image -name $${i} -maxdepth 1 | \
+			${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
 	done
 .endif
 
 .if !defined(WITHOUT_SDL_MIXER)
 	for i in `cat pkg-plist|grep "lib/adaSDL/"|grep _mixer|sed "s/lib\/adaSDL\///"`; do \
-		find ${WRKSRC}/AdaSDL_mixer -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
+		${FIND} ${WRKSRC}/AdaSDL_mixer -name $${i} -maxdepth 1 | \
+			${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaSDL; \
 	done
 .endif
 
 .if !defined(WITHOUT_OPENGL)
 	${MKDIR} ${PREFIX}/lib/adaGL
 	for i in `cat pkg-plist|grep "/adaGL/"|sed "s/lib\/adaGL\///"`; do \
-		find ${WRKSRC}/AdaGL/GL -name $${i} -maxdepth 1|${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaGL; \
+		${FIND} ${WRKSRC}/AdaGL/GL -name $${i} -maxdepth 1 | \
+			${INSTALL_DATA} `grep ""` ${PREFIX}/lib/adaGL; \
 	done
 .endif
 

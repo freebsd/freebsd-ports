@@ -25,7 +25,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | \
-		xargs ${REINPLACE_CMD} -e 's|-release \$$\(LT_RELEASE\)||g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|-release \$$\(LT_RELEASE\)||g'
 
 .include <bsd.port.mk>

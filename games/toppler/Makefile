@@ -27,8 +27,8 @@ MAN6=		toppler.6
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cc" \) | \
-		xargs ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
+	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cc" \) | \
+		${XARGS} ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
 
 post-install:
 	@cd ${WRKSRC} && ${MAKE} global_highscore

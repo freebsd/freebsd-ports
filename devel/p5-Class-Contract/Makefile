@@ -22,7 +22,7 @@ MAN3=		Class::Contract.3 Class::Contract::Production.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.p[lm]" | \
-		xargs ${PERL} -pi -e 's/\x0d//g;'
+		${XARGS} ${PERL} -pi -e 's/\x0d//g;'
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples

@@ -47,7 +47,8 @@ pre-install:
 do-install:
 	${RM} -fr ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; find . | ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+	cd ${WRKSRC}; ${FIND} . \
+		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
 	${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
 
 .include <bsd.port.post.mk>

@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-patch:
-	@find ${WRKSRC} -name 'xml-i18n-*' | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name 'xml-i18n-*' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|g'
 	@${REINPLACE_CMD} -e 's|\%\%LOCALBASE\%\%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/libcharset/Makefile.in

@@ -57,8 +57,8 @@ IGNORE=		"Requires XFree86 3.3.* - will not work with XFree86 4.*"
 .endif
 
 pre-build:
-	@find ${WRKSRC} -type f | xargs grep -l linux/agpgart | \
-		xargs perl -pi -e "s|linux/agpgart|sys/agpio|"
+	@${FIND} ${WRKSRC} -type f | ${XARGS} grep -l linux/agpgart | \
+		${XARGS} perl -pi -e "s|linux/agpgart|sys/agpio|"
 
 pre-install:
 .if exists(${PREFIX}/lib/libGL.so.${GLVER}) && !defined(GL_CHECK_OVERRIDE) && !defined(PACKAGE_BUILDING)

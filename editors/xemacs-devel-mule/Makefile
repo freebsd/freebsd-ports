@@ -159,7 +159,8 @@ pre-configure::
 .endfor
 
 pre-build:
-	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) \
+		-exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
 post-install::

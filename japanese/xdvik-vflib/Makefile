@@ -154,7 +154,7 @@ pre-fetch:
 	${ECHO} "**************************************************************")
 
 pre-build:
-	@(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
+	@(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
 
 do-install:
 	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} \

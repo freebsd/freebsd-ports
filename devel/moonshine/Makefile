@@ -32,7 +32,7 @@ CFLAGS+=	-O0
 .endif
 
 pre-configure:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|\$$\{prefix\}/moonshine|\$$\{prefix\}/share/moonshine| ; \
 		 s|\@INSTBIN\@|${PREFIX}/bin| ; s|moc -o|\$$\(MOC\) -o|'
 	@${PERL} -pi -e 's|/usr/share/moonshine|${PREFIX}/share/moonshine|' \

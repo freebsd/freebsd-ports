@@ -86,11 +86,11 @@ pre-build:
 		@echo "===>    ${CLASSESDIR}"
 		@cd ${WRKDIR}/${CLASSESDIR}; \
 		${MKDIR} classes; \
-		find . | ${GREP} '\.java$$' | xargs jikes -g \
+		${FIND} . | ${GREP} '\.java$$' | ${XARGS} jikes -g \
 		    -target 1.1 -d classes \
 		    -bootclasspath src:classes -classpath src:classes \
 		    -sourcepath src || exit 1; \
-		find resource -type f | cut -d\/ -f2- \
+		${FIND} resource -type f | cut -d\/ -f2- \
 		    | ${AWK} '{print "cp resource/" $$0 " classes/" $$0 }' \
 		    | ${SH}; \
 		${CHMOD} -R a+rX classes

@@ -104,7 +104,7 @@ pre-fetch:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	find ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
+	${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
 
 post-build:
 	@ ${ECHO} "------------------------------------------------------------"

@@ -41,7 +41,7 @@ post-install:
 	done
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
-	@cd ${WRKSRC}/doc && find * | \
+	@cd ${WRKSRC}/doc && ${FIND} * | \
 	  ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 .endif
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${PKGMESSAGE}

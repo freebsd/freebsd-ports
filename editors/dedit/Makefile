@@ -29,7 +29,7 @@ MAN1=		dedit.1
 MANLANG=	"" ja
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|dedit.ja.1||'
 

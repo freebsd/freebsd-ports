@@ -23,7 +23,7 @@ WRKSRC=	${WRKDIR}/tls1.4
 
 pre-patch:
 	# Fixing the end-of-lines:
-	for f in `find ${WRKSRC}/.. -type f` ; do \
+	for f in `${FIND} ${WRKSRC}/.. -type f` ; do \
 		${TR} -d '\015' < $$f > $$f.noms && \
 			${CAT} $$f.noms > $$f && ${RM} $$f.noms; done
 

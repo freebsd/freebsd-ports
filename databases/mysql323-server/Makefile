@@ -185,7 +185,8 @@ post-install:
 
 # This is for the maintainer only...
 make-plist:
-	/usr/bin/find foo -type f -or -type l | /usr/bin/cut -d / -f 2- | /usr/bin/sort  > ${.CURDIR}/pkg-plist.new
+	${FIND} foo -type f -or -type l | /usr/bin/cut -d / -f 2- | \
+		/usr/bin/sort  > ${.CURDIR}/pkg-plist.new
 	/usr/bin/perl -i -ne 'if (m#share/doc/#) { print "%%PORTDOCS%%", $$_; } else { print $$_; }' ${.CURDIR}/pkg-plist.new
 
 .include <bsd.port.post.mk>

@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 
 post-patch:
-	@find ${WRKSRC} -name "*.[ch]" -type f | xargs ${REINPLACE_CMD} -e \
-		's|LIST_NEXT|TEG_LIST_NEXT|g'
+	@${FIND} ${WRKSRC} -name "*.[ch]" -type f | ${XARGS} \
+		${REINPLACE_CMD} -e 's|LIST_NEXT|TEG_LIST_NEXT|g'
 
 .include <bsd.port.mk>

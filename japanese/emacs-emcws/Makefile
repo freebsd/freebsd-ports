@@ -150,7 +150,7 @@ pre-fetch:
 	@${CAT} ${FILESDIR}/emcws-message
 
 pre-build:
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/src/../lisp; \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${LOCALBASE}/bin/emacs-${EMACS_VER})

@@ -38,7 +38,7 @@ do-build:
 do-install:
 	@${MKDIR} ${PGACCESSDIR} ; \
 	 cd ${WRKSRC} ;\
-	 ${TAR} cf - `find * ! \( -path win32\* -o -path doc\* \)` | \
+	 ${TAR} cf - `${FIND} * ! \( -path win32\* -o -path doc\* \)` | \
 	 ( cd ${PGACCESSDIR}; ${TAR} xf - ) ; \
 	 ${CHOWN} -R 0:0 ${PGACCESSDIR}
 .for file in pgaccess pgmonitor

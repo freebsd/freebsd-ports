@@ -172,9 +172,9 @@ pre-install:
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
 	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
 .endfor
-	@(cd ${WRKSRC}/.. && find dlz_docs -type f ) | \
+	@(cd ${WRKSRC}/.. && ${FIND} dlz_docs -type f ) | \
 	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
-	@(cd ${WRKSRC}/.. && find -d dlz_docs -type d ) | \
+	@(cd ${WRKSRC}/.. && ${FIND} -d dlz_docs -type d ) | \
 	${SED} -e "s=^=@dirrm %%EXTRA_DOCSDIR%%/=" >>${PLIST}
 	@${ECHO_CMD} "@dirrm %%EXTRA_DOCSDIR%%" >>${PLIST}
 .endif

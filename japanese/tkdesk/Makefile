@@ -37,7 +37,7 @@ pre-patch:
 	@cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/pre-patch
 
 post-patch:
-	@/usr/bin/find ${WRKSRC}/tcldesk '(' -name '*.orig' -o -name '*~' ')' \
+	@${FIND} ${WRKSRC}/tcldesk '(' -name '*.orig' -o -name '*~' ')' \
 	-exec ${RM} -f {} \;
 	@${RM} ${WRKSRC}/config.h ${WRKSRC}/config.cache
 
