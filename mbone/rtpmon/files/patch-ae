@@ -1,0 +1,10 @@
+--- net-ip.cc.orig	Thu Jan 27 19:03:25 2000
++++ net-ip.cc	Thu Jan 27 19:03:34 2000
+@@ -38,6 +38,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <string.h>
++#include <time.h>
+ #include <unistd.h>
+ #include <sys/param.h>
+ #include <sys/socket.h>

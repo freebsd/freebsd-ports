@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jan 27 19:01:25 2000
++++ Makefile.in	Thu Jan 27 19:01:36 2000
+@@ -43,7 +43,7 @@
+ all: rtpmon
+ 
+ .cc.o:
+-	$(C++) -o $@ -c $(CXXFLAGS) $*.cc
++	$(C++) -pedantic -o $@ -c $(CXXFLAGS) $*.cc
+ 
+ .c.o:
+ 	$(CC) -o $@ -c $(CFLAGS) $*.c
