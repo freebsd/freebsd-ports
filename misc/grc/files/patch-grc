@@ -1,0 +1,17 @@
+--- grc.orig	Sun Mar 25 20:40:51 2001
++++ grc	Sun Mar 25 20:43:14 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python
++#!%%PYTHON_CMD%%
+ 
+ import os, re, string, sys, getopt, signal
+ 
+@@ -65,7 +65,7 @@
+ 
+ conffile = None
+ if cfile == "":
+-    conffilename = [os.environ['HOME']+"/.grc/grc.conf", "/etc/grc.conf"]
++    conffilename = [os.environ['HOME']+"/.grc/grc.conf", "%%PREFIX%%/etc/grc.conf"]
+     for i in conffilename:
+         if os.path.isfile(i):
+             conffile = i

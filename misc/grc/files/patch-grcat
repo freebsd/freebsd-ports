@@ -1,0 +1,8 @@
+--- grcat.orig	Sun Mar 25 20:48:10 2001
++++ grcat	Sun Mar 25 20:48:51 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python
++#!%%PYTHON_CMD%%
+ 
+ import sys, os, string, getopt, re, signal, sys
+ 

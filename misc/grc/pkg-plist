@@ -1,0 +1,13 @@
+bin/grc
+bin/grcat
+etc/grc.conf
+share/grc/conf.esperanto
+share/grc/conf.gcc
+share/grc/conf.irclog
+share/grc/conf.ldap
+share/grc/conf.log
+share/grc/conf.netstat
+share/grc/conf.ping
+share/grc/conf.proftpd
+share/grc/conf.traceroute
+@dirrm share/grc
