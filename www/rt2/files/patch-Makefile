@@ -1,14 +1,5 @@
 --- Makefile.orig	Fri Oct  4 11:48:46 2002
 +++ Makefile	Wed Feb 12 03:13:22 2003
-@@ -2,7 +2,7 @@
- # RT is Copyright 1996-2002 Jesse Vincent <jesse@bestpractical.com>
- # It is distributed under the terms of the GNU General Public License, version 2
- 
--PERL			= 	/usr/bin/perl
-+#PERL			= 	/usr/bin/perl
- 
- RT_VERSION_MAJOR	=	2
- RT_VERSION_MINOR	=	0
 @@ -15,7 +15,7 @@
  BRANCH			=	HEAD
  
