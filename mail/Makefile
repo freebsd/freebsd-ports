@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.43 1997/06/04 04:40:06 asami Exp $
+# $Id: Makefile,v 1.44 1997/07/15 02:02:18 obrien Exp $
 #
 
     SUBDIR += bulk_mailer
@@ -12,6 +12,7 @@
     SUBDIR += fetchmail
     SUBDIR += imap-uw
     SUBDIR += mailagent
+    SUBDIR += majorcool
     SUBDIR += majordomo
     SUBDIR += metamail
     SUBDIR += mew
