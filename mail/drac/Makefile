@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	drac
-PORTVERSION= 	1.11
-PORTREVISION=	2
+PORTVERSION= 	1.12
+#PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://atreides.freenix.no/~anders/ \
@@ -57,9 +57,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
-	@if [ ! -f ${PREFIX}/etc/rc.d/dracd.sh.sample ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/dracd.sh.sample startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh.sample; \
-	fi
+	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/dracd.sh startup file."
+	@${INSTALL_SCRIPT} ${FILESDIR}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh
 
 .include <bsd.port.post.mk>
