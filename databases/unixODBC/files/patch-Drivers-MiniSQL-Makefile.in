@@ -1,0 +1,18 @@
+--- Drivers/MiniSQL/Makefile.in.orig	Tue Jun  1 03:53:12 2004
++++ Drivers/MiniSQL/Makefile.in	Tue Jun  1 03:54:45 2004
+@@ -173,13 +173,13 @@
+ target_alias = @target_alias@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+-@MSQL_TRUE@lib_LTLIBRARIES = libodbcmini.la
++#@MSQL_TRUE@lib_LTLIBRARIES = libodbcmini.la
+ 
+ @MSQL_TRUE@INCLUDES = -I../../include -I. -I@msql_headers@ -I${INCLTDL}
+ 
+ 
+ # PAH - Redundant?
+-# DEFS = -DUNIXODBC @DEFS@ -DDRIVER_NAME=\"odbcminisql\"
++DEFS = -DUNIXODBC @DEFS@ -DDRIVER_NAME=\"odbcminisql\"
+ @MSQL_TRUE@libodbcmini_la_SOURCES = \
+ @MSQL_TRUE@	SQLAllocConnect.c \
+ @MSQL_TRUE@	SQLAllocEnv.c \
