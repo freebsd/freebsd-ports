@@ -1,249 +1,831 @@
 bin/jboss3ctl
 etc/rc.d/020.jboss3.sh
+%%T%%/server/all/conf/standardjbosscmp-jdbc.xml
+%%T%%/server/all/conf/jacorb.properties
+%%T%%/server/all/conf/jboss-minimal.xml
+%%T%%/server/all/conf/jboss-service.xml
+%%T%%/server/all/conf/jbossmq-state.xml
+%%T%%/server/all/conf/jndi.properties
+%%T%%/server/all/conf/log4j.xml
+%%T%%/server/all/conf/login-config.xml
+%%T%%/server/all/conf/server.policy
+%%T%%/server/all/conf/standardjaws.xml
+%%T%%/server/all/conf/standardjboss.xml
+%%T%%/server/all/conf/axis-config.xml
+%%T%%/server/all/deploy/jbossweb.sar/META-INF/jboss-service.xml
+%%T%%/server/all/deploy/jbossweb.sar/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/jbossweb.sar/org.apache.jasper.jar
+%%T%%/server/all/deploy/jbossweb.sar/org.jboss.jetty.jar
+%%T%%/server/all/deploy/jbossweb.sar/org.mortbay.jetty.jar
+%%T%%/server/all/deploy/jbossweb.sar/org.mortbay.jmx.jar
+%%T%%/server/all/deploy/jbossweb.sar/webdefault.xml
+%%T%%/server/all/deploy/jbossweb.sar/org.mortbay.j2ee.jar
+%%T%%/server/all/deploy/jmx-console.war/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/jmx-console.war/images/head_blue.gif
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AttrResultInfo.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/OpResultInfo.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/Server.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/HtmlAdaptorServlet.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/DomainData.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/MBeanData.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/roles.properties
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/users.properties
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/jboss-web.xml
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/web.xml
+%%T%%/server/all/deploy/jmx-console.war/displayMBeans.jsp
+%%T%%/server/all/deploy/jmx-console.war/style_master.css
+%%T%%/server/all/deploy/jmx-console.war/inspectMBean.jsp
+%%T%%/server/all/deploy/jmx-console.war/displayOpResult.jsp
+%%T%%/server/all/deploy/jmx-console.war/index.jsp
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF/jboss-service.xml
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptor.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorImpl_Stub.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorImpl_Stub.java
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorService.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorServiceMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/SearchClientNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSClientNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSNotificationListenerMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/ListenerMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingClientNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingNotificationListenerMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListenerInterface.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMINotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener_Stub.java
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener_Stub.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMINotificationListenerMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/ClientNotificationListener.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/RMIConnectorImpl.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/RMIConnectorImplMBean.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/TestServer$1.class
+%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/TestServer.class
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/InvokerServlet.class
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/NamingFactoryServlet.class
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/ReadOnlyAccessFilter.class
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/roles.properties
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/users.properties
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/jboss-web.xml
+%%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/web.xml
+%%T%%/server/all/deploy/http-invoker.sar/META-INF/jboss-service.xml
+%%T%%/server/all/deploy/http-invoker.sar/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/hsqldb-service.xml
 %%T%%/server/all/deploy/iiop-service.xml
-%%T%%/server/all/deploy/jmx-ejb-connector-server.sar
-%%T%%/server/all/deploy/jmx-rmi-adaptor.sar
-%%T%%/server/all/deploy/jms-service.xml
-%%T%%/server/all/deploy/jmx-ejb-adaptor.jar
-%%T%%/server/all/deploy/jmx-html-adaptor.sar
-%%T%%/server/all/deploy/user-service.xml
+%%T%%/server/all/deploy/jboss-jca.sar
+%%T%%/server/all/deploy/jboss-local-jdbc.rar
+%%T%%/server/all/deploy/jboss-net.sar
+%%T%%/server/all/deploy/jboss-xa-jdbc.rar
+%%T%%/server/all/deploy/jbossha-httpsession.sar
 %%T%%/server/all/deploy/jbossmq-destinations-service.xml
 %%T%%/server/all/deploy/jbossmq-service.xml
-%%T%%/server/all/deploy/jboss-xa.rar
+%%T%%/server/all/deploy/jbossweb-ejb.jar
 %%T%%/server/all/deploy/jms-ra.rar
-%%T%%/server/all/deploy/jboss-local-jdbc.rar
-%%T%%/server/all/deploy/jca-service.xml
-%%T%%/server/all/deploy/hsqldb-service.xml
-%%T%%/server/all/deploy/cluster-service.xml
-%%T%%/server/all/deploy/jetty-plugin.sar
-%%T%%/server/all/deploy/jboss-net.sar
-%%T%%/server/all/deploy/counter-service.xml
-%%T%%/server/all/deploy/scheduler-service.xml
+%%T%%/server/all/deploy/jms-service.xml
+%%T%%/server/all/deploy/jmx-ejb-adaptor.jar
+%%T%%/server/all/deploy/jmx-ejb-connector-server.sar
+%%T%%/server/all/deploy/jmx-invoker-adaptor-server.sar
 %%T%%/server/all/deploy/mail-service.xml
 %%T%%/server/all/deploy/properties-service.xml
+%%T%%/server/all/deploy/schedule-manager-service.xml
+%%T%%/server/all/deploy/scheduler-service.xml
+%%T%%/server/all/deploy/cluster-service.xml
+%%T%%/server/all/deploy/user-service.xml
+%%T%%/server/all/deploy/counter-service.xml
 %%T%%/server/all/deploy/ejb-management.jar
-%%T%%/server/all/conf/jacorb.properties
-%%T%%/server/all/conf/standardjboss.xml
-%%T%%/server/all/conf/login-config.xml
-%%T%%/server/all/conf/auth.conf
-%%T%%/server/all/conf/server.policy
-%%T%%/server/all/conf/log4j.xml
-%%T%%/server/all/conf/jboss-minimal.xml
-%%T%%/server/all/conf/standardjbosscmp-jdbc.xml
-%%T%%/server/all/conf/standardjaws.xml
-%%T%%/server/all/conf/jndi.properties
-%%T%%/server/all/conf/jbossmq-state.xml
-%%T%%/server/all/conf/axis-config.xml
-%%T%%/server/all/conf/jboss-service.xml
-%%T%%/server/all/lib/tt-bytecode.jar
-%%T%%/server/all/lib/jbossmx.jar
-%%T%%/server/all/lib/jmxtools.jar
-%%T%%/server/all/lib/jsse.jar
-%%T%%/server/all/lib/counter-plugin.jar
-%%T%%/server/all/lib/jbosssx.jar
-%%T%%/server/all/lib/jpl-pattern.jar
-%%T%%/server/all/lib/activation.jar
-%%T%%/server/all/lib/mail.jar
-%%T%%/server/all/lib/tyrex.jar
-%%T%%/server/all/lib/bcel.jar
-%%T%%/server/all/lib/scheduler-plugin-example.jar
-%%T%%/server/all/lib/javagroups-2.0.jar
-%%T%%/server/all/lib/jboss-j2ee.jar
-%%T%%/server/all/lib/axis.jar
-%%T%%/server/all/lib/hsqldb-plugin.jar
-%%T%%/server/all/lib/jbossmqha.jar
-%%T%%/server/all/lib/jpl-util.jar
-%%T%%/server/all/lib/jboss-management.jar
-%%T%%/server/all/lib/castor.jar
-%%T%%/server/all/lib/org.apache.jasper.jar
-%%T%%/server/all/lib/jboss-iiop.jar
-%%T%%/server/all/lib/log4j.jar
-%%T%%/server/all/lib/gnu-regexp.jar
-%%T%%/server/all/lib/jnpserver.jar
-%%T%%/server/all/lib/jboss-jsr77.jar
-%%T%%/server/all/lib/scheduler-plugin.jar
-%%T%%/server/all/lib/jacorb.jar
-%%T%%/server/all/lib/commons-logging.jar
+%%T%%/server/all/deploy/farm-service.xml
 %%T%%/server/all/lib/xalan.jar
-%%T%%/server/all/lib/jnet.jar
-%%T%%/server/all/lib/jboss.jar
-%%T%%/server/all/lib/jbossha.jar
-%%T%%/server/all/lib/hsqldb.jar
+%%T%%/server/all/lib/ant.jar
 %%T%%/server/all/lib/autonumber-plugin.jar
-%%T%%/server/all/lib/mail-plugin.jar
-%%T%%/server/all/lib/jboss-jca.jar
-%%T%%/server/all/lib/jmxri.jar
-%%T%%/server/all/lib/properties-plugin.jar
-%%T%%/server/all/lib/jts.jar
-%%T%%/server/all/lib/wsdl4j.jar
-%%T%%/server/all/lib/jaas.jar
+%%T%%/server/all/lib/axis.jar
+%%T%%/server/all/lib/bcel.jar
+%%T%%/server/all/lib/bindingservice-plugin.jar
+%%T%%/server/all/lib/bsh-core-1.2b7.jar
+%%T%%/server/all/lib/bsh-deployer.jar
+%%T%%/server/all/lib/castor.jar
+%%T%%/server/all/lib/commons-logging.jar
+%%T%%/server/all/lib/counter-plugin.jar
+%%T%%/server/all/lib/hsqldb-plugin.jar
+%%T%%/server/all/lib/hsqldb.jar
+%%T%%/server/all/lib/jacorb.jar
+%%T%%/server/all/lib/javagroups-2.0.jar
 %%T%%/server/all/lib/javax.servlet.jar
+%%T%%/server/all/lib/jboss-common-jdbc-wrapper.jar
+%%T%%/server/all/lib/jboss-iiop.jar
+%%T%%/server/all/lib/jboss.jar
+%%T%%/server/all/lib/jboss-j2ee.jar
+%%T%%/server/all/lib/jboss-jaas.jar
+%%T%%/server/all/lib/jboss-jsr77.jar
+%%T%%/server/all/lib/jboss-management.jar
+%%T%%/server/all/lib/jbossha.jar
 %%T%%/server/all/lib/jbossmq.jar
+%%T%%/server/all/lib/jbossmqha.jar
+%%T%%/server/all/lib/jbossmx.jar
+%%T%%/server/all/lib/jbosssx.jar
 %%T%%/server/all/lib/jcert.jar
-%%T%%/server/default/lib/jboss-management.jar
-%%T%%/server/default/lib/bcel.jar
-%%T%%/server/default/lib/jbossmq.jar
-%%T%%/server/default/lib/scheduler-plugin.jar
-%%T%%/server/default/lib/jaas.jar
-%%T%%/server/default/lib/scheduler-plugin-example.jar
-%%T%%/server/default/lib/mail.jar
-%%T%%/server/default/lib/properties-plugin.jar
-%%T%%/server/default/lib/xalan.jar
-%%T%%/server/default/lib/mail-plugin.jar
-%%T%%/server/default/lib/jpl-util.jar
-%%T%%/server/default/lib/tyrex.jar
-%%T%%/server/default/lib/jnet.jar
-%%T%%/server/default/lib/jcert.jar
-%%T%%/server/default/lib/jbossha.jar
-%%T%%/server/default/lib/hsqldb-plugin.jar
-%%T%%/server/default/lib/jsse.jar
-%%T%%/server/default/lib/jboss.jar
-%%T%%/server/default/lib/activation.jar
-%%T%%/server/default/lib/jboss-jsr77.jar
-%%T%%/server/default/lib/jts.jar
-%%T%%/server/default/lib/jboss-j2ee.jar
-%%T%%/server/default/lib/autonumber-plugin.jar
-%%T%%/server/default/lib/jmxri.jar
-%%T%%/server/default/lib/jpl-pattern.jar
-%%T%%/server/default/lib/jnpserver.jar
-%%T%%/server/default/lib/hsqldb.jar
-%%T%%/server/default/lib/jbosssx.jar
-%%T%%/server/default/lib/log4j.jar
-%%T%%/server/default/lib/counter-plugin.jar
-%%T%%/server/default/lib/jbossmx.jar
-%%T%%/server/default/lib/javax.servlet.jar
-%%T%%/server/default/lib/jboss-jca.jar
-%%T%%/server/default/lib/org.apache.jasper.jar
-%%T%%/server/default/lib/castor.jar
-%%T%%/server/default/lib/gnu-regexp.jar
-%%T%%/server/default/lib/jmxtools.jar
-%%T%%/server/default/deploy/jetty-plugin.sar
-%%T%%/server/default/deploy/jmx-ejb-connector-server.sar
-%%T%%/server/default/deploy/properties-service.xml
-%%T%%/server/default/deploy/jboss-xa.rar
-%%T%%/server/default/deploy/jboss-local-jdbc.rar
-%%T%%/server/default/deploy/ejb-management.jar
-%%T%%/server/default/deploy/mail-service.xml
-%%T%%/server/default/deploy/user-service.xml
-%%T%%/server/default/deploy/jms-service.xml
-%%T%%/server/default/deploy/jms-ra.rar
-%%T%%/server/default/deploy/counter-service.xml
-%%T%%/server/default/deploy/scheduler-service.xml
-%%T%%/server/default/deploy/jbossmq-service.xml
-%%T%%/server/default/deploy/jmx-html-adaptor.sar
-%%T%%/server/default/deploy/jca-service.xml
-%%T%%/server/default/deploy/jmx-rmi-adaptor.sar
-%%T%%/server/default/deploy/hsqldb-service.xml
-%%T%%/server/default/deploy/jbossmq-destinations-service.xml
-%%T%%/server/default/deploy/jmx-ejb-adaptor.jar
-%%T%%/server/default/conf/standardjaws.xml
-%%T%%/server/default/conf/jboss-minimal.xml
-%%T%%/server/default/conf/jbossmq-state.xml
-%%T%%/server/default/conf/server.policy
-%%T%%/server/default/conf/login-config.xml
-%%T%%/server/default/conf/log4j.xml
+%%T%%/server/all/lib/jnet.jar
+%%T%%/server/all/lib/jnpserver.jar
+%%T%%/server/all/lib/jpl-pattern.jar
+%%T%%/server/all/lib/jpl-util.jar
+%%T%%/server/all/lib/jsse.jar
+%%T%%/server/all/lib/jts.jar
+%%T%%/server/all/lib/log4j.jar
+%%T%%/server/all/lib/mail-plugin.jar
+%%T%%/server/all/lib/mail.jar
+%%T%%/server/all/lib/process-plugin.jar
+%%T%%/server/all/lib/properties-plugin.jar
+%%T%%/server/all/lib/scheduler-plugin.jar
+%%T%%/server/all/lib/scheduler-plugin-example.jar
+%%T%%/server/all/lib/tt-bytecode.jar
+%%T%%/server/all/lib/tyrex.jar
+%%T%%/server/all/lib/wsdl4j.jar
+%%T%%/server/all/lib/activation.jar
 %%T%%/server/default/conf/standardjbosscmp-jdbc.xml
 %%T%%/server/default/conf/jboss-service.xml
-%%T%%/server/default/conf/auth.conf
+%%T%%/server/default/conf/jbossmq-state.xml
 %%T%%/server/default/conf/jndi.properties
+%%T%%/server/default/conf/log4j.xml
+%%T%%/server/default/conf/login-config.xml
+%%T%%/server/default/conf/server.policy
+%%T%%/server/default/conf/standardjaws.xml
 %%T%%/server/default/conf/standardjboss.xml
+%%T%%/server/default/conf/jboss-minimal.xml
+%%T%%/server/default/deploy/jbossweb.sar/META-INF/jboss-service.xml
+%%T%%/server/default/deploy/jbossweb.sar/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/jbossweb.sar/org.apache.jasper.jar
+%%T%%/server/default/deploy/jbossweb.sar/org.jboss.jetty.jar
+%%T%%/server/default/deploy/jbossweb.sar/org.mortbay.jetty.jar
+%%T%%/server/default/deploy/jbossweb.sar/org.mortbay.jmx.jar
+%%T%%/server/default/deploy/jbossweb.sar/webdefault.xml
+%%T%%/server/default/deploy/jbossweb.sar/org.mortbay.j2ee.jar
+%%T%%/server/default/deploy/jmx-console.war/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/jmx-console.war/images/head_blue.gif
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AttrResultInfo.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/OpResultInfo.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/Server.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/HtmlAdaptorServlet.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/DomainData.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/MBeanData.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/roles.properties
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/users.properties
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/jboss-web.xml
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/web.xml
+%%T%%/server/default/deploy/jmx-console.war/displayMBeans.jsp
+%%T%%/server/default/deploy/jmx-console.war/style_master.css
+%%T%%/server/default/deploy/jmx-console.war/inspectMBean.jsp
+%%T%%/server/default/deploy/jmx-console.war/displayOpResult.jsp
+%%T%%/server/default/deploy/jmx-console.war/index.jsp
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF/jboss-service.xml
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptor.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorImpl_Stub.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorImpl_Stub.java
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorService.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi/RMIAdaptorServiceMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/SearchClientNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSClientNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/JMSNotificationListenerMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/ListenerMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingClientNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/PollingNotificationListenerMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListenerInterface.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMINotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener_Stub.java
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMIClientNotificationListener_Stub.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/RMINotificationListenerMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification/ClientNotificationListener.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/RMIConnectorImpl.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/RMIConnectorImplMBean.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/TestServer$1.class
+%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi/TestServer.class
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/InvokerServlet.class
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/NamingFactoryServlet.class
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet/ReadOnlyAccessFilter.class
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/roles.properties
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/users.properties
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/jboss-web.xml
+%%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/web.xml
+%%T%%/server/default/deploy/http-invoker.sar/META-INF/jboss-service.xml
+%%T%%/server/default/deploy/http-invoker.sar/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/jboss-local-jdbc.rar
+%%T%%/server/default/deploy/jboss-xa-jdbc.rar
+%%T%%/server/default/deploy/jbossmq-destinations-service.xml
+%%T%%/server/default/deploy/jbossmq-service.xml
+%%T%%/server/default/deploy/jms-ra.rar
+%%T%%/server/default/deploy/jms-service.xml
+%%T%%/server/default/deploy/jmx-ejb-adaptor.jar
+%%T%%/server/default/deploy/jmx-ejb-connector-server.sar
+%%T%%/server/default/deploy/jmx-invoker-adaptor-server.sar
+%%T%%/server/default/deploy/mail-service.xml
+%%T%%/server/default/deploy/properties-service.xml
+%%T%%/server/default/deploy/schedule-manager-service.xml
+%%T%%/server/default/deploy/scheduler-service.xml
+%%T%%/server/default/deploy/counter-service.xml
+%%T%%/server/default/deploy/user-service.xml
+%%T%%/server/default/deploy/ejb-management.jar
+%%T%%/server/default/deploy/hsqldb-service.xml
+%%T%%/server/default/deploy/jboss-jca.sar
+%%T%%/server/default/lib/xalan.jar
+%%T%%/server/default/lib/ant.jar
+%%T%%/server/default/lib/autonumber-plugin.jar
+%%T%%/server/default/lib/bcel.jar
+%%T%%/server/default/lib/bindingservice-plugin.jar
+%%T%%/server/default/lib/bsh-core-1.2b7.jar
+%%T%%/server/default/lib/bsh-deployer.jar
+%%T%%/server/default/lib/castor.jar
+%%T%%/server/default/lib/counter-plugin.jar
+%%T%%/server/default/lib/hsqldb-plugin.jar
+%%T%%/server/default/lib/hsqldb.jar
+%%T%%/server/default/lib/javax.servlet.jar
+%%T%%/server/default/lib/jboss-common-jdbc-wrapper.jar
+%%T%%/server/default/lib/jboss-j2ee.jar
+%%T%%/server/default/lib/jboss-jaas.jar
+%%T%%/server/default/lib/jboss-jsr77.jar
+%%T%%/server/default/lib/jboss-management.jar
+%%T%%/server/default/lib/jboss.jar
+%%T%%/server/default/lib/jts.jar
+%%T%%/server/default/lib/jbossha.jar
+%%T%%/server/default/lib/jbossmq.jar
+%%T%%/server/default/lib/jbossmx.jar
+%%T%%/server/default/lib/jbosssx.jar
+%%T%%/server/default/lib/jcert.jar
+%%T%%/server/default/lib/jnet.jar
+%%T%%/server/default/lib/jnpserver.jar
+%%T%%/server/default/lib/jpl-pattern.jar
+%%T%%/server/default/lib/jpl-util.jar
+%%T%%/server/default/lib/jsse.jar
+%%T%%/server/default/lib/log4j.jar
+%%T%%/server/default/lib/mail-plugin.jar
+%%T%%/server/default/lib/mail.jar
+%%T%%/server/default/lib/process-plugin.jar
+%%T%%/server/default/lib/properties-plugin.jar
+%%T%%/server/default/lib/scheduler-plugin-example.jar
+%%T%%/server/default/lib/scheduler-plugin.jar
+%%T%%/server/default/lib/tyrex.jar
+%%T%%/server/default/lib/activation.jar
+%%T%%/server/minimal/conf/jboss-service.xml
 %%T%%/server/minimal/conf/jndi.properties
 %%T%%/server/minimal/conf/log4j.xml
-%%T%%/server/minimal/conf/jboss-service.xml
+%%T%%/server/minimal/deploy/user-service.xml
+%%T%%/server/minimal/lib/jboss-management.jar
+%%T%%/server/minimal/lib/jboss-minimal.jar
 %%T%%/server/minimal/lib/jnet.jar
-%%T%%/server/minimal/lib/log4j.jar
 %%T%%/server/minimal/lib/jnpserver.jar
-%%T%%/lib/concurrent.jar
-%%T%%/lib/jboss-common.jar
+%%T%%/server/minimal/lib/log4j.jar
+%%T%%/lib/log4j-boot.jar
 %%T%%/lib/crimson.jar
+%%T%%/lib/getopt.jar
+%%T%%/lib/gnu-regexp.jar
 %%T%%/lib/jaxp.jar
 %%T%%/lib/jboss-boot.jar
-%%T%%/lib/log4j-boot.jar
-%%T%%/lib/jboss-system.jar
-%%T%%/lib/getopt.jar
+%%T%%/lib/jboss-common.jar
 %%T%%/lib/jboss-jmx.jar
-%%T%%/docs/dtd/jaws_2_4.dtd
-%%T%%/docs/dtd/jboss-web.dtd
+%%T%%/lib/jboss-system.jar
+%%T%%/lib/concurrent.jar
+%%T%%/docs/dtd/web-app_2_3.dtd
+%%T%%/docs/dtd/application_1_3.dtd
+%%T%%/docs/dtd/connector_1_0.dtd
 %%T%%/docs/dtd/ejb-jar.dtd
 %%T%%/docs/dtd/ejb-jar_2_0.dtd
 %%T%%/docs/dtd/jaws.dtd
-%%T%%/docs/dtd/connector_1_0.dtd
-%%T%%/docs/dtd/jbosscmp-jdbc_3_0.dtd
-%%T%%/docs/dtd/web-app_2_3.dtd
-%%T%%/docs/dtd/web-app_2_2.dtd
-%%T%%/docs/dtd/security_config.dtd
-%%T%%/docs/dtd/jboss_3_0.dtd
-%%T%%/docs/dtd/jboss-web_3_0.dtd
-%%T%%/docs/dtd/jboss_2_4.dtd
-%%T%%/docs/dtd/application_1_3.dtd
+%%T%%/docs/dtd/jaws_2_4.dtd
 %%T%%/docs/dtd/jaws_3_0.dtd
+%%T%%/docs/dtd/jboss-app_3_0.dtd
+%%T%%/docs/dtd/jboss-web.dtd
+%%T%%/docs/dtd/jboss-web_3_0.dtd
 %%T%%/docs/dtd/jboss.dtd
-%%T%%/docs/dtd/application_1_2.dtd
+%%T%%/docs/dtd/jbosscmp-jdbc_3_0.dtd
+%%T%%/docs/dtd/jboss_2_4.dtd
+%%T%%/docs/dtd/jboss_3_0.dtd
 %%T%%/docs/dtd/jboss_xmbean_1_0.dtd
+%%T%%/docs/dtd/security_config.dtd
+%%T%%/docs/dtd/web-app_2_2.dtd
+%%T%%/docs/dtd/application_1_2.dtd
+%%T%%/docs/examples/binding-service/sample-bindings.xml
+%%T%%/docs/examples/binding-service/services-binding.dtd
+%%T%%/docs/examples/jca/sybase-service.xml
 %%T%%/docs/examples/jca/firebird-service.xml
-%%T%%/docs/examples/jca/postgres-service.xml
-%%T%%/docs/examples/jca/oracle-service.xml
-%%T%%/docs/examples/jca/solid-service.xml
 %%T%%/docs/examples/jca/hsqldb-service.xml
+%%T%%/docs/examples/jca/informix-service.xml
 %%T%%/docs/examples/jca/informix-xa-service.xml
 %%T%%/docs/examples/jca/jdatastore-service.xml
+%%T%%/docs/examples/jca/jsql-service.xml
+%%T%%/docs/examples/jca/jsql-xa-service.xml
+%%T%%/docs/examples/jca/lido-versant-service.xml
+%%T%%/docs/examples/jca/msaccess-service.xml
 %%T%%/docs/examples/jca/mssql-service.xml
-%%T%%/docs/examples/jca/db2-service.xml
-%%T%%/docs/examples/jca/informix-service.xml
+%%T%%/docs/examples/jca/mssql-xa-service.xml
 %%T%%/docs/examples/jca/mysql-service.xml
-%%T%%/client/jacorb.jar
-%%T%%/client/jboss-system-client.jar
+%%T%%/docs/examples/jca/oracle-service.xml
+%%T%%/docs/examples/jca/oracle-xa-service.xml
+%%T%%/docs/examples/jca/postgres-service.xml
+%%T%%/docs/examples/jca/sapdb-service.xml
+%%T%%/docs/examples/jca/sapr3-service.xml
+%%T%%/docs/examples/jca/solid-service.xml
+%%T%%/docs/examples/jca/db2-service.xml
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/registration/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/registration/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/registration/RegistrationTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/monitor/BasicTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/monitor/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/monitor/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/notcompliant/NCMBeanTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/notcompliant/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/notcompliant/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/BasicTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/CanonicalTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/MalformedTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname/PatternTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/modelmbean/ModelMBeanTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/modelmbean/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/modelmbean/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/relation/BasicTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/relation/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/relation/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/server/MBeanServerFactoryTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/server/MBeanServerTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/server/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/server/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard/InfoTortureTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard/InheritanceTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard/TrivialTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/timer/BasicTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/timer/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/compliance/timer/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/persistence/OnTimerPersistenceTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/persistence/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/persistence/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/server/ContextCLTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/server/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/server/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/util/AgentIDTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/util/MBeanProxyTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/util/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/implementation/util/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/dynamic/InvocationTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/dynamic/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/dynamic/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/standard/InvocationTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/standard/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmx/performance/standard/package-summary.html
+%%T%%/docs/tests/org/jboss/test/bankiiop/test/BankStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/bankiiop/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/bankiiop/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/bmp/test/BmpUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/bmp/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/bmp/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/classloader/test/CircularityUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/classloader/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/classloader/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/classloader/test/UnifiedLoaderUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/lob/LOBUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/lob/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/lob/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/commerce/CompleteUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/commerce/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/commerce/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/ejbselect/EJBSelectUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/ejbselect/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/ejbselect/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/cmr/test/CMRPostCreatesWrittenUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/cmr/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/cmr/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/readonly/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/readonly/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/readonly/ReadonlyUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/relationship/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/relationship/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/relationship/RelationshipUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/simple/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cmp2/simple/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cmp2/simple/PageSizeUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cmp2/simple/SimpleUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cts/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/cts/test/CtsCmp2UnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cts/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/cts/test/BmpUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cts/test/StatefulSessionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/cts/test/StatelessSessionStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/cts/test/StatelessSessionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/dbtest/test/DbTypesUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/dbtest/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/dbtest/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/deadlock/test/BeanStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/deadlock/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/deadlock/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/ejbconf/test/MetaDataUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/ejbconf/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/ejbconf/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/ejbconf/test/ReadOnlyUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/entity/test/EntityUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/entity/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/entity/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/entity/test/PathologicalUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/entityexc/test/EntityExcUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/entityexc/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/entityexc/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/exception/ExceptionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/exception/package-frame.html
+%%T%%/docs/tests/org/jboss/test/exception/package-summary.html
+%%T%%/docs/tests/org/jboss/test/hello/test/HelloClusteredHttpStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/hello/test/HelloHttpStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/hello/test/HelloTimingStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/hello/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/hello/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/helloiiop/test/HelloTimingStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/helloiiop/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/helloiiop/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/idgen/test/IdGenUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/idgen/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/idgen/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/perf/InvocationLayerStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/perf/JBossMQPerfStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/perf/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/perf/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/UnackedUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/JBossMQUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/JBossSessionRecoverUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/LargeMessageUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/MessageBodyUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/RollBackUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/SecurityUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/SelectorParserUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/SelectorSyntaxUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jbossmq/test/ConnectionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/bank/test/BankStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/bank/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/bank/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jca/test/XATxConnectionManagerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/BaseConnectionManagerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/CachedConnectionBankStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/CachedConnectionSessionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/ConnectionFactorySerializationUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/DeploymentUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/JDBCStatementTestsConnectionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/LocalWrapperCleanupUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jca/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jca/test/UserTxUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/XAExceptionUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jca/test/BaseConnectionManagerStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmsra/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jmsra/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jmsra/test/RaQueueUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmsra/test/RaSyncRecUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmsra/test/RaTopicUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/UnpackedDeploymentUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/DeployConnectionManagerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/DeployServiceUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/EarDeploymentUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/JarInSarJSR77UnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/MBeanDependsOnConnectionManagerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/MBeanDependsOnEJBUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/MissingClassUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/RemoteServiceUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/ServiceRsrcsUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/UndeployBrokenPackageUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jmx/test/CPManifestUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jrmp/test/CustomSocketsUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jrmp/test/DynLoadingUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/jrmp/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/jrmp/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/lock/test/EnterpriseEntityStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/lock/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/lock/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/lock/test/SpinUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/management/test/JSR77SpecUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/management/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/management/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/mdb/test/MDBUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/mdb/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/mdb/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/naming/test/SimpleUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/naming/test/ENCUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/naming/test/ExternalContextUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/naming/test/InternalNamingClassReplacementUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/naming/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/naming/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/naming/test/SecurityUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/naming/test/EjbLinkUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/perf/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/perf/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/perf/test/PerfStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/perf/test/PerfUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/perf/test/SecurePerfStressTestCase.html
+%%T%%/docs/tests/org/jboss/test/proxycompiler/test/BeanProxyUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/proxycompiler/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/proxycompiler/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/proxycompiler/test/ProxyCompilerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/readahead/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/readahead/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/readahead/test/ReadAheadUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/XMLLoginModulesUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/HttpsUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/LoginContextUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/LoginModulesUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/NamespacePermissionsUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/security/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/security/test/PermissionNameUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/SRPLoginModuleUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/SRPUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/security/test/EJBSpecUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/testbean/test/BeanUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/testbean/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/testbean/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/testbeancluster/test/BeanUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/testbeancluster/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/testbeancluster/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/util/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/util/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/util/test/PropertyEditorsUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/util/test/PropertyPatternUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/util/test/SchedulerUnitTestCase.html
+%%T%%/docs/tests/org/jboss/test/web/test/package-frame.html
+%%T%%/docs/tests/org/jboss/test/web/test/package-summary.html
+%%T%%/docs/tests/org/jboss/test/web/test/WebIntegrationUnitTestCase.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/connection/ConnectionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/connection/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/connection/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/connection/TopicConnectionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/headers/MessageHeaderTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/headers/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/headers/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/properties/MessagePropertyConversionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/properties/MessagePropertyTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/properties/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/properties/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/MessageDefaultTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/MessageTypeTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/MessageBodyTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/queue/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/queue/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/queue/QueueBrowserTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/queue/TemporaryQueueTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/selector/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/selector/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/selector/SelectorSyntaxTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/selector/SelectorTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/session/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/session/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/session/QueueSessionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/session/SessionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/session/TopicSessionTest.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/topic/package-frame.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/topic/package-summary.html
+%%T%%/docs/tests/org/objectweb/jtests/jms/conform/topic/TemporaryTopicTest.html
+%%T%%/docs/tests/allclasses-frame.html
+%%T%%/docs/tests/index.html
+%%T%%/docs/tests/overview-frame.html
+%%T%%/docs/tests/overview-summary.html
+%%T%%/docs/tests/stylesheet.css
 %%T%%/client/log4j.jar
-%%T%%/client/jboss-j2ee.jar
-%%T%%/client/jnp-client.jar
-%%T%%/client/jboss-jsr77.jar
-%%T%%/client/jmx-rmi-connector-client.jar
+%%T%%/client/client-config.xml
+%%T%%/client/concurrent.jar
+%%T%%/client/gnu-regexp.jar
+%%T%%/client/jacorb.jar
 %%T%%/client/jboss-client.jar
+%%T%%/client/jboss-common-client.jar
+%%T%%/client/jboss-iiop-client.jar
+%%T%%/client/jboss-j2ee.jar
+%%T%%/client/jboss-jaas.jar
+%%T%%/client/jboss-jsr77.jar
+%%T%%/client/jboss-net-client.jar
+%%T%%/client/jboss-system-client.jar
+%%T%%/client/jbossall-client.jar
+%%T%%/client/jbossha-client.jar
+%%T%%/client/jbossjmx-ant.jar
+%%T%%/client/jbossmq-client.jar
+%%T%%/client/jbossmqha.jar
+%%T%%/client/jbosssx-client.jar
+%%T%%/client/jcert.jar
 %%T%%/client/jmx-connector-client-factory.jar
 %%T%%/client/jmx-ejb-connector-client.jar
-%%T%%/client/gnu-regexp.jar
-%%T%%/client/concurrent.jar
-%%T%%/client/auth.conf
-%%T%%/client/jbosssx-client.jar
-%%T%%/client/jaas.jar
-%%T%%/client/cacerts
-%%T%%/client/jcert.jar
-%%T%%/client/jsse.jar
+%%T%%/client/jmx-invoker-adaptor-client.jar
+%%T%%/client/jmx-rmi-connector-client.jar
 %%T%%/client/jnet.jar
-%%T%%/client/jbossmq-client.jar
-%%T%%/client/jbossha-client.jar
-%%T%%/client/jbossmqha.jar
-%%T%%/client/client-config.xml
-%%T%%/client/jboss-net-client.jar
-%%T%%/client/jboss-iiop-client.jar
-%%T%%/client/jboss-common-client.jar
-%%T%%/bin/run.jar
-%%T%%/bin/shutdown.sh
-%%T%%/bin/shutdown.jar
-%%T%%/bin/run.sh
+%%T%%/client/jnp-client.jar
+%%T%%/client/jsse.jar
+%%T%%/client/auth.conf
 %%T%%/bin/jboss_init_redhat.sh
-%%T%%/bin/privatekeys
+%%T%%/bin/run.jar
+%%T%%/bin/run.sh
+%%T%%/bin/shutdown.jar
+%%T%%/bin/shutdown.sh
 %%T%%/log/stdout.log
 %%T%%/log/stderr.log
 man/man1/jboss3ctl.1
 @dirrm %%T%%/application-deployments
-@dirrm %%T%%/server/all/deploy
 @dirrm %%T%%/server/all/conf
+@dirrm %%T%%/server/all/deploy/jbossweb.sar/META-INF
+@dirrm %%T%%/server/all/deploy/jbossweb.sar
+@dirrm %%T%%/server/all/deploy/jmx-console.war/META-INF
+@dirrm %%T%%/server/all/deploy/jmx-console.war/images
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes
+@dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF
+@dirrm %%T%%/server/all/deploy/jmx-console.war
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org/jboss
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/org
+@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/META-INF
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF/classes
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war/WEB-INF
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war
+@dirrm %%T%%/server/all/deploy/http-invoker.sar/META-INF
+@dirrm %%T%%/server/all/deploy/http-invoker.sar
+@dirrm %%T%%/server/all/deploy
 @dirrm %%T%%/server/all/lib
 @dirrm %%T%%/server/all
-@dirrm %%T%%/server/default/lib
-@dirrm %%T%%/server/default/deploy
 @dirrm %%T%%/server/default/conf
+@dirrm %%T%%/server/default/deploy/jbossweb.sar/META-INF
+@dirrm %%T%%/server/default/deploy/jbossweb.sar
+@dirrm %%T%%/server/default/deploy/jmx-console.war/META-INF
+@dirrm %%T%%/server/default/deploy/jmx-console.war/images
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes
+@dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF
+@dirrm %%T%%/server/default/deploy/jmx-console.war
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor/rmi
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/adaptor
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/notification
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector/rmi
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx/connector
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss/jmx
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org/jboss
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/org
+@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/META-INF
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war
+@dirrm %%T%%/server/default/deploy/http-invoker.sar/META-INF
+@dirrm %%T%%/server/default/deploy/http-invoker.sar
+@dirrm %%T%%/server/default/deploy
+@dirrm %%T%%/server/default/lib
 @dirrm %%T%%/server/default
-@dirrm %%T%%/server/minimal/deploy
 @dirrm %%T%%/server/minimal/conf
+@dirrm %%T%%/server/minimal/deploy
 @dirrm %%T%%/server/minimal/lib
 @dirrm %%T%%/server/minimal
 @dirrm %%T%%/server
 @dirrm %%T%%/lib
 @dirrm %%T%%/docs/dtd
+@dirrm %%T%%/docs/examples/binding-service
 @dirrm %%T%%/docs/examples/jca
 @dirrm %%T%%/docs/examples
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/registration
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/monitor
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/notcompliant
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/objectname
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/modelmbean
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/relation
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/server
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/standard
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance/timer
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/compliance
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/implementation/persistence
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/implementation/server
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/implementation/util
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/implementation
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/performance/dynamic
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/performance/standard
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx/performance
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmx
+@dirrm %%T%%/docs/tests/org/jboss/test/bankiiop/test
+@dirrm %%T%%/docs/tests/org/jboss/test/bankiiop
+@dirrm %%T%%/docs/tests/org/jboss/test/bmp/test
+@dirrm %%T%%/docs/tests/org/jboss/test/bmp
+@dirrm %%T%%/docs/tests/org/jboss/test/classloader/test
+@dirrm %%T%%/docs/tests/org/jboss/test/classloader
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/lob
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/commerce
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/ejbselect
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/cmr/test
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/cmr
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/readonly
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/relationship
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2/simple
+@dirrm %%T%%/docs/tests/org/jboss/test/cmp2
+@dirrm %%T%%/docs/tests/org/jboss/test/cts/test
+@dirrm %%T%%/docs/tests/org/jboss/test/cts
+@dirrm %%T%%/docs/tests/org/jboss/test/dbtest/test
+@dirrm %%T%%/docs/tests/org/jboss/test/dbtest
+@dirrm %%T%%/docs/tests/org/jboss/test/deadlock/test
+@dirrm %%T%%/docs/tests/org/jboss/test/deadlock
+@dirrm %%T%%/docs/tests/org/jboss/test/ejbconf/test
+@dirrm %%T%%/docs/tests/org/jboss/test/ejbconf
+@dirrm %%T%%/docs/tests/org/jboss/test/entity/test
+@dirrm %%T%%/docs/tests/org/jboss/test/entity
+@dirrm %%T%%/docs/tests/org/jboss/test/entityexc/test
+@dirrm %%T%%/docs/tests/org/jboss/test/entityexc
+@dirrm %%T%%/docs/tests/org/jboss/test/exception
+@dirrm %%T%%/docs/tests/org/jboss/test/hello/test
+@dirrm %%T%%/docs/tests/org/jboss/test/hello
+@dirrm %%T%%/docs/tests/org/jboss/test/helloiiop/test
+@dirrm %%T%%/docs/tests/org/jboss/test/helloiiop
+@dirrm %%T%%/docs/tests/org/jboss/test/idgen/test
+@dirrm %%T%%/docs/tests/org/jboss/test/idgen
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmq/perf
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmq/test
+@dirrm %%T%%/docs/tests/org/jboss/test/jbossmq
+@dirrm %%T%%/docs/tests/org/jboss/test/bank/test
+@dirrm %%T%%/docs/tests/org/jboss/test/bank
+@dirrm %%T%%/docs/tests/org/jboss/test/jca/test
+@dirrm %%T%%/docs/tests/org/jboss/test/jca
+@dirrm %%T%%/docs/tests/org/jboss/test/jmsra/test
+@dirrm %%T%%/docs/tests/org/jboss/test/jmsra
+@dirrm %%T%%/docs/tests/org/jboss/test/jmx/test
+@dirrm %%T%%/docs/tests/org/jboss/test/jmx
+@dirrm %%T%%/docs/tests/org/jboss/test/jrmp/test
+@dirrm %%T%%/docs/tests/org/jboss/test/jrmp
+@dirrm %%T%%/docs/tests/org/jboss/test/lock/test
+@dirrm %%T%%/docs/tests/org/jboss/test/lock
+@dirrm %%T%%/docs/tests/org/jboss/test/management/test
+@dirrm %%T%%/docs/tests/org/jboss/test/management
+@dirrm %%T%%/docs/tests/org/jboss/test/mdb/test
+@dirrm %%T%%/docs/tests/org/jboss/test/mdb
+@dirrm %%T%%/docs/tests/org/jboss/test/naming/test
+@dirrm %%T%%/docs/tests/org/jboss/test/naming
+@dirrm %%T%%/docs/tests/org/jboss/test/perf/test
+@dirrm %%T%%/docs/tests/org/jboss/test/perf
+@dirrm %%T%%/docs/tests/org/jboss/test/proxycompiler/test
+@dirrm %%T%%/docs/tests/org/jboss/test/proxycompiler
+@dirrm %%T%%/docs/tests/org/jboss/test/readahead/test
+@dirrm %%T%%/docs/tests/org/jboss/test/readahead
+@dirrm %%T%%/docs/tests/org/jboss/test/security/test
+@dirrm %%T%%/docs/tests/org/jboss/test/security
+@dirrm %%T%%/docs/tests/org/jboss/test/testbean/test
+@dirrm %%T%%/docs/tests/org/jboss/test/testbean
+@dirrm %%T%%/docs/tests/org/jboss/test/testbeancluster/test
+@dirrm %%T%%/docs/tests/org/jboss/test/testbeancluster
+@dirrm %%T%%/docs/tests/org/jboss/test/util/test
+@dirrm %%T%%/docs/tests/org/jboss/test/util
+@dirrm %%T%%/docs/tests/org/jboss/test/web/test
+@dirrm %%T%%/docs/tests/org/jboss/test/web
+@dirrm %%T%%/docs/tests/org/jboss/test
+@dirrm %%T%%/docs/tests/org/jboss
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/connection
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/headers
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/message/properties
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/message
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/queue
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/selector
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/session
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform/topic
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms/conform
+@dirrm %%T%%/docs/tests/org/objectweb/jtests/jms
+@dirrm %%T%%/docs/tests/org/objectweb/jtests
+@dirrm %%T%%/docs/tests/org/objectweb
+@dirrm %%T%%/docs/tests/org
+@dirrm %%T%%/docs/tests
 @dirrm %%T%%/docs
 @dirrm %%T%%/client
 @dirrm %%T%%/bin

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION= 	3.0.0
-PORTREVISION= 	2
+PORTVERSION= 	3.0.7
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,6 +52,8 @@ post-patch:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_CMD} " [ DONE ]"
+	@${CHMOD} -R 0644 ${WRKSRC} 
+	@${CHMOD} 0755 `${FIND} ${WRKSRC} -type d`
 
 .for f in ${REPLACE_FILES}
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
@@ -141,7 +142,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating PID file..."
