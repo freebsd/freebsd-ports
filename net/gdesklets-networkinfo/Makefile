@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 
 DATADIR=	${PREFIX}/share/gnome
 PKGMESSAGE=	${WRKDIR}/pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${PORTNAME}|g' > ${PKGMESSAGE}
