@@ -1,0 +1,7 @@
+Battstat is yet another GNOME laptop battery checker.  It displays
+different icons depending on the status (AC, battery, charging, low
+power), and requires GTK and GNOME.
+
+WWW:	http://spektr.eu.org/~jp/battstat/
+
+- Jim <jim@FreeBSD.org>
