@@ -197,9 +197,9 @@
   
 ! LIB     = libwrap.a
 ! .if ${PORTOBJFORMAT} == elf
-! SLIB    = libwrap.so.8
+! SLIB    = libwrap.so.7
 ! .else
-! SLIB    = libwrap.so.8.0
+! SLIB    = libwrap.so.7.6
 ! .endif
 ! 
 ! all other: config-check $(LIB) $(SLIB) tcpd tcpdmatch try-from safe_finger tcpdchk

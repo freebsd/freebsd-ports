@@ -5,7 +5,7 @@ sbin/tcpdmatch
 bin/safe_finger
 bin/try-from
 lib/libwrap.a
-lib/libwrap.so.8
+lib/libwrap.so.7.6
 lib/libwrap.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
