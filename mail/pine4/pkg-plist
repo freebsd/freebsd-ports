@@ -8,6 +8,8 @@ bin/rpdump
 bin/rpload
 @exec %D/bin/pine -P %D/etc/pine.conf -conf >%D/etc/pine.conf.tmp
 @exec /bin/mv %D/etc/pine.conf.tmp %D/etc/pine.conf
+%%PORTDOCS%%share/doc/pine/README
+%%PORTDOCS%%share/doc/pine/CPYRIGHT
 %%PORTDOCS%%share/doc/pine/brochure.txt
 %%PORTDOCS%%share/doc/pine/tech-notes.txt
 %%PORTDOCS%%share/doc/pine/tech-notes/background.html
