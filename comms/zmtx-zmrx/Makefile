@@ -9,8 +9,10 @@
 PORTNAME=	zmtx-zmrx
 PORTVERSION=	1.02
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
-		ftp://ftp.vex.net/pub/software/
+# previous mastersites disappeared in May 2003.  See, perhaps,
+# cvs.synchro.net/cgi-bin/viewcvs/src/stp, as a possible followon
+# project.
+MASTER_SITES=	# ftp://ftp.inria.fr/network/modem/
 # see also comp.unix.sources for version 1.0
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 DISTNAME=	${PORTNAME}
