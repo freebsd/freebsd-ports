@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	0.6.2p4
+PORTVERSION=	0.7.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://v6web.litech.org/radvd/
+MASTER_SITES=	http://v6web.litech.org/radvd/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p4/pl4/}
 
 MAINTAINER=	pat@FreeBSD.org
