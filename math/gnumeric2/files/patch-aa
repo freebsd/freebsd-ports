@@ -1,6 +1,6 @@
---- configure.orig	Tue Oct 19 09:12:29 1999
-+++ configure	Wed Oct 20 11:59:28 1999
-@@ -2788,7 +2788,7 @@
+--- configure.orig	Fri Nov 19 15:59:10 1999
++++ configure	Sat Nov 27 14:06:34 1999
+@@ -2790,7 +2790,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,25 +9,25 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -3333,7 +3333,7 @@
+@@ -3335,7 +3335,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lxml `$GNOME_CONFIG --libs xml` $LIBS"
 +LIBS="`xml-config --libs` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3339 "configure"
+ #line 3341 "configure"
  #include "confdefs.h"
-@@ -3364,7 +3364,7 @@
+@@ -3365,7 +3365,7 @@
+   echo "$ac_t""yes" 1>&6
    
- 		
  		
 -		GNOME_XML_LIB=`$GNOME_CONFIG --libs xml`
 +		GNOME_XML_LIB=`xml-config --libs`
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5600,15 +5600,15 @@
+@@ -5602,15 +5602,15 @@
  fi
  
          
@@ -47,19 +47,19 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6056,7 +6056,7 @@
- echo "configure:6057: checking for GnomePrint libraries" >&5
+@@ -6110,7 +6110,7 @@
+ echo "configure:6111: checking for GnomePrint libraries" >&5
  if gnome-config --libs print > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
 -    . `gnome-config --libdir`/printConf.sh
 +    . `gnome-config --sysconfdir`/printConf.sh
      echo $ac_n "checking for GnomePrint >= 0.8""... $ac_c" 1>&6
- echo "configure:6062: checking for GnomePrint >= 0.8" >&5
+ echo "configure:6116: checking for GnomePrint >= 0.8" >&5
      case x$MODULE_VERSION in
-@@ -6071,14 +6071,14 @@
+@@ -6125,14 +6125,14 @@
  
  echo $ac_n "checking for Glade libraries""... $ac_c" 1>&6
- echo "configure:6074: checking for Glade libraries" >&5
+ echo "configure:6128: checking for Glade libraries" >&5
 -if gnome-config --libs libglade > /dev/null 2>&1; then 
 +if libglade-config --libs > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
@@ -67,10 +67,10 @@
      { echo "configure: error: Did not find libGlade installed" 1>&2; exit 1; }
  fi
  
--EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui print libglade $bonobo`
--EXTRA_GNOME_CFLAGS=`gnome-config --cflags gnomeui print libglade $bonobo`
-+EXTRA_GNOME_LIBS="`gnome-config --libs gnomeui print $bonobo` `libglade-config --libs gnome`"
-+EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui print $bonobo` `libglade-config --cflags gnome`"
+-EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui print libglade $bonobo $gb`
+-EXTRA_GNOME_CFLAGS=`gnome-config --cflags gnomeui print libglade $bonobo $gb`
++EXTRA_GNOME_LIBS="`gnome-config --libs gnomeui print $bonobo $gb` `libglade-config --libs gnome`"
++EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui print $bonobo $gb` `libglade-config --cflags gnome`"
  
  
  

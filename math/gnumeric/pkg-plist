@@ -1,6 +1,8 @@
 bin/gnumeric
 etc/CORBA/servers/gnumeric.gnorba
 share/gnome/apps/Applications/gnumeric.desktop
+share/gnome/gnumeric/glade/cell-format.glade
+share/gnome/gnumeric/glade/cell-sort.glade
 share/gnome/gnumeric/glade/col-width.glade
 share/gnome/gnumeric/glade/delete-cells.glade
 share/gnome/gnumeric/glade/dialog-zoom.glade
@@ -13,13 +15,13 @@ share/gnome/gnumeric/glade/print.glade
 share/gnome/gnumeric/glade/row-height.glade
 share/gnome/gnumeric/glade/sheet-rename.glade
 share/gnome/gnumeric/glade/summary.glade
-share/gnome/gnumeric/guile/gnumeric_startup.scm
 share/gnome/gnumeric/plugins/libcsv.so
-share/gnome/gnumeric/plugins/libgnumguile.so
 share/gnome/gnumeric/plugins/libhtml.so
 share/gnome/gnumeric/plugins/liblotus.so
+share/gnome/gnumeric/plugins/liboleo.so
 share/gnome/gnumeric/plugins/libpython.so
 share/gnome/gnumeric/plugins/libstat.so
+share/gnome/gnumeric/plugins/libsylk.so
 share/gnome/gnumeric/plugins/libtext.so
 share/gnome/gnumeric/plugins/libxbase.so
 share/gnome/gnumeric/python/gnumeric_startup.py
@@ -30,6 +32,7 @@ share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
 share/gnome/pixmaps/gnome-gnumeric-xl.png
 share/gnome/pixmaps/gnome-gnumeric.png
+share/gnome/pixmaps/gnumeric/bottom_border
 share/gnome/pixmaps/gnumeric/chart_area_1_1.png
 share/gnome/pixmaps/gnumeric/chart_area_1_2.png
 share/gnome/pixmaps/gnumeric/chart_area_1_3.png
@@ -103,10 +106,51 @@ share/gnome/pixmaps/gnumeric/chart_surface_1_1.png
 share/gnome/pixmaps/gnumeric/chart_surface_1_2.png
 share/gnome/pixmaps/gnumeric/chart_surface_2_1.png
 share/gnome/pixmaps/gnumeric/chart_surface_2_2.png
+share/gnome/pixmaps/gnumeric/diag_border
 share/gnome/pixmaps/gnumeric/down-right.png
+share/gnome/pixmaps/gnumeric/gp_125grey
+share/gnome/pixmaps/gnumeric/gp_25grey
+share/gnome/pixmaps/gnumeric/gp_50grey
+share/gnome/pixmaps/gnumeric/gp_625grey
+share/gnome/pixmaps/gnumeric/gp_75grey
+share/gnome/pixmaps/gnumeric/gp_diag
+share/gnome/pixmaps/gnumeric/gp_diag_cross
+share/gnome/pixmaps/gnumeric/gp_horiz
+share/gnome/pixmaps/gnumeric/gp_rev_diag
+share/gnome/pixmaps/gnumeric/gp_solid
+share/gnome/pixmaps/gnumeric/gp_thick_diag_cross
+share/gnome/pixmaps/gnumeric/gp_thin_diag
+share/gnome/pixmaps/gnumeric/gp_thin_diag_cross
+share/gnome/pixmaps/gnumeric/gp_thin_horiz
+share/gnome/pixmaps/gnumeric/gp_thin_horiz_cross
+share/gnome/pixmaps/gnumeric/gp_thin_rev_diag
+share/gnome/pixmaps/gnumeric/gp_thin_vert
+share/gnome/pixmaps/gnumeric/gp_vert
+share/gnome/pixmaps/gnumeric/inside_border
+share/gnome/pixmaps/gnumeric/inside_horiz_border
+share/gnome/pixmaps/gnumeric/inside_vert_border
+share/gnome/pixmaps/gnumeric/left_border
+share/gnome/pixmaps/gnumeric/line_pattern_dash_dot
+share/gnome/pixmaps/gnumeric/line_pattern_dash_dot_dot
+share/gnome/pixmaps/gnumeric/line_pattern_dashed
+share/gnome/pixmaps/gnumeric/line_pattern_dotted
+share/gnome/pixmaps/gnumeric/line_pattern_double
+share/gnome/pixmaps/gnumeric/line_pattern_hair
+share/gnome/pixmaps/gnumeric/line_pattern_medium
+share/gnome/pixmaps/gnumeric/line_pattern_medium_dash
+share/gnome/pixmaps/gnumeric/line_pattern_medium_dash_dot
+share/gnome/pixmaps/gnumeric/line_pattern_medium_dash_dot_dot
+share/gnome/pixmaps/gnumeric/line_pattern_slant
+share/gnome/pixmaps/gnumeric/line_pattern_thick
+share/gnome/pixmaps/gnumeric/line_pattern_thin
+share/gnome/pixmaps/gnumeric/no_border
 share/gnome/pixmaps/gnumeric/orient-horizontal.png
 share/gnome/pixmaps/gnumeric/orient-vertical.png
+share/gnome/pixmaps/gnumeric/outline_border
+share/gnome/pixmaps/gnumeric/rev_diag_border
 share/gnome/pixmaps/gnumeric/right-down.png
+share/gnome/pixmaps/gnumeric/right_border
+share/gnome/pixmaps/gnumeric/top_border
 share/locale/cs/LC_MESSAGES/gnumeric.mo
 share/locale/da/LC_MESSAGES/gnumeric.mo
 share/locale/de/LC_MESSAGES/gnumeric.mo
@@ -136,9 +180,8 @@ share/locale/ru/LC_MESSAGES/gnumeric.mo
 share/locale/sk/LC_MESSAGES/gnumeric.mo
 share/locale/sv/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
-@dirrm share/gnome/pixmaps/gnumeric
-@dirrm share/gnome/gnumeric/python
-@dirrm share/gnome/gnumeric/plugins
-@dirrm share/gnome/gnumeric/guile
 @dirrm share/gnome/gnumeric/glade
+@dirrm share/gnome/gnumeric/plugins
+@dirrm share/gnome/gnumeric/python
 @dirrm share/gnome/gnumeric
+@dirrm share/gnome/pixmaps/gnumeric
