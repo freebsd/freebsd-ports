@@ -17,6 +17,8 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	asa@gascom.ru
 COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
+FORBIDDEN=	"Changes ownership of system directories"
+
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
