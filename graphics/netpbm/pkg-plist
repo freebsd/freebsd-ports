@@ -234,6 +234,7 @@ bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
 include/pam.h
+include/pammap.h
 include/pbm.h
 include/pgm.h
 include/pm.h

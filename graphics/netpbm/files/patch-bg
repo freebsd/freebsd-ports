@@ -1,6 +1,6 @@
---- ppm/Makefile.orig	Fri Aug 17 13:43:06 2001
-+++ ppm/Makefile	Wed Sep  5 00:00:00 2001
-@@ -67,6 +67,7 @@
+--- ppm/Makefile.orig	Mon Jan  7 07:04:08 2002
++++ ppm/Makefile	Mon Jan 28 00:00:00 2002
+@@ -74,6 +74,7 @@
  
  LIBOBJECTS = libppm1.o libppm2.o libppmcmap.o libppm4.o libppm5.o \
  	libppmfloyd.o bitio.o
@@ -8,15 +8,16 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -74,14 +75,14 @@
+@@ -81,7 +82,7 @@
  
  MERGENAME= ppmmerge
  
 -INTERFACE_HEADERS = ppm.h ppmcmap.h ppmfloyd.h
 +INTERFACE_HEADERS = ppm.h ppmcmap.h ppmdraw.h ppmfloyd.h
  
- .PHONY: all
- all: $(LIBPPM) $(BINARIES) $(EXTRA_STATICLIB)
+ ppmsvgalib: %: %.o $(NETPBMLIBS) $(LIBOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $< `$(LIBOPT) $(NETPBMLIBS)` $(LINUXSVGALD) \
+@@ -92,7 +93,7 @@
  	$(MAKE) -C ppmtompeg all
  	$(MAKE) -C hpcdtoppm all
  .PHONY: merge
