@@ -1,0 +1,9 @@
+This package provide functions for Emacs with which you can
+find description of function or variable from  Emacs-Lisp
+Reference Manual. If you put (require 'elisp-info-setup)
+in ~/.emacs then following key binds are provided.
+
+C-h f (C-h d) : elisp-info-describe-function
+C-h D         : describe-function
+C-h v         : elisp-info-describe-variable
+C-h V         : describe-variable

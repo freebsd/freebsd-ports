@@ -1,0 +1,4 @@
+%%EMACS_SITE_LISPDIR%%/elisp-info/elisp-info.el
+%%EMACS_SITE_LISPDIR%%/elisp-info/elisp-info-index.el
+%%EMACS_SITE_LISPDIR%%/elisp-info/elisp-info-setup.el
+@dirrm %%EMACS_SITE_LISPDIR%%/elisp-info
