@@ -1,0 +1,3 @@
+Module::Info gives you information about Perl modules without actually
+loading the module.  It actually isn't specific to modules and should
+work on any perl code.
