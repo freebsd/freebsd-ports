@@ -15,6 +15,5 @@ sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-7.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
