@@ -3,6 +3,7 @@
 
     SUBDIR += adodb
     SUBDIR += bbdb
+    SUBDIR += bbdb-emacs20
     SUBDIR += cdb
     SUBDIR += db
     SUBDIR += db3
