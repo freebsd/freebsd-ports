@@ -9181,6 +9181,7 @@ ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
 ruby-gtkglext	ports/x11-toolkits/ruby-gtkglext
 ruby-gtkhtml2	ports/www/ruby-gtkhtml2
+ruby-gtksourceview	ports/x11-toolkits/ruby-gtksourceview
 ruby-gtktrayicon	ports/x11/ruby-gtktrayicon
 ruby-hmac	ports/security/ruby-hmac
 ruby-html-fillinform	ports/textproc/ruby-html-fillinform
@@ -9250,6 +9251,7 @@ ruby-opengl	ports/graphics/ruby-opengl
 ruby-p4		ports/devel/ruby-p4
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
+ruby-panelapplet	ports/x11-toolkits/ruby-panelapplet
 ruby-pango	ports/x11-toolkits/ruby-pango
 ruby-password	ports/security/ruby-password
 ruby-pcap	ports/net/ruby-pcap
