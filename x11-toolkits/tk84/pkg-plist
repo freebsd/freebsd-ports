@@ -24,6 +24,8 @@ include/tk%%TK_VER%%/generic/tkSelect.h
 include/tk%%TK_VER%%/generic/tkText.h
 include/tk%%TK_VER%%/tk.h
 include/tk%%TK_VER%%/tkDecls.h
+include/tk%%TK_VER%%/tkInt.h
+include/tk%%TK_VER%%/tkIntXlibDecls.h
 include/tk%%TK_VER%%/unix/tkUnixDefault.h
 include/tk%%TK_VER%%/unix/tkUnixInt.h
 include/tk%%TK_VER%%/unix/tkUnixPort.h
@@ -118,7 +120,6 @@ lib/tk%%TK_VER%%/msgbox.tcl
 lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
-lib/tk%%TK_VER%%/pkgIndex.tcl
 lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
