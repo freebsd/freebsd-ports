@@ -48,7 +48,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/rollemup ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKDIR}/README.Rollemup \
 		${PREFIX}/${GAMES_DIR}/Rollemup
-	@${CP} ${PKGDIR}/PLIST ${PLIST_SRC}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST_SRC}
 	@(cd ${PREFIX}; \
 	  find ${GAMES_DIR}/Rollemup -type f >> ${PLIST_SRC}; \
 	  for DIR in `find ${GAMES_DIR}/Rollemup -type d | sort -r`; do \
