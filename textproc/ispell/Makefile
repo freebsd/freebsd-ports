@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.24 1998/08/19 20:37:36 brian Exp $
+# $Id: Makefile,v 1.25 1998/11/20 15:26:10 kuriyama Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -18,7 +18,7 @@ PATCHFILES=     ispell-html-mode.patch
 
 MAINTAINER=	jmz@FreeBSD.org
 
-MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
+MAKE_FLAGS=	TMPDIR=${WRKDIRPREFIX}${.CURDIR} -f 
 MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
 		sq.1 tryaffix.1 unsq.1
 MAN4=		ispell.4 english.4
