@@ -15,14 +15,9 @@ MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes

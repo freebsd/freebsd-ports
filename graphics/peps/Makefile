@@ -15,14 +15,9 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased PGM bitmaps
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
-		pnmtopng:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
 
 USE_REINPLACE=	yes
 

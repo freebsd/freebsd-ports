@@ -17,15 +17,10 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to convert Xfig's .fig files
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 USE_XPM=	yes

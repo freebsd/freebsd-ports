@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	corecode@corecode.ath.cx
 COMMENT=	"Printer filter for EPSON EPL-5700L etc"
 
+USE_GHOSTSCRIPT_RUN=	yes
+
 LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 MAKEFILE=	${FILESDIR}/Makefile
 

@@ -16,13 +16,7 @@ DISTNAME=	PyChart-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create high quality Encapsulated Postscript, PDF, or PNG charts
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
+USE_GHOSTSCRIPT_RUN=	yes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

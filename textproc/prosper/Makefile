@@ -17,15 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Prosper is a LaTeX class for writing transparencies
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/${GSPORT}
+		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 
 NO_BUILD=	yes
 

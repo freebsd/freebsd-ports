@@ -15,17 +15,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ob@breuninger.org
 COMMENT=	A PostScript to Text converter
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
+USE_GHOSTSCRIPT_RUN=	yes
 
 MAN1=		pstotext.1
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"

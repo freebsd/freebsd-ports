@@ -19,8 +19,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	papowell@astart.com
 COMMENT=	Configuration Tool for LPRng
 
+USE_GHOSTSCRIPT_AFPL=	yes
+USE_GHOSTSCRIPT_BUILD=	yes
+
 BUILD_DEPENDS=	\
-	gs:${PORTSDIR}/print/ghostscript-afpl \
 	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 	a2ps:${PORTSDIR}/print/a2ps-letter
 

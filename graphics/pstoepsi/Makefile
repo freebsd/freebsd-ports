@@ -16,14 +16,9 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
-RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=	yes
 

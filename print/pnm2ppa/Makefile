@@ -14,14 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PNM images to PPA for some HP printers
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
-		enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
 
 USE_GETOPT_LONG=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"

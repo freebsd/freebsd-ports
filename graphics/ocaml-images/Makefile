@@ -18,18 +18,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Objective Caml image processing library
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT=	yes
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		gs:${PORTSDIR}/${GSPORT}
+		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		gs:${PORTSDIR}/${GSPORT}
+		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
 LIB_DEPENDS=	ungif:${PORTSDIR}/graphics/libungif \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \

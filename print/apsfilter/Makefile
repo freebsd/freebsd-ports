@@ -35,11 +35,7 @@ MAKE_ENV+=      NO_X=true
 # define WITH_GHOSTSCRIPT_AFPL=yes for AFPL Postscript interpreter
 # instead of GNU one
 #
-.if defined(WITH_GHOSTSCRIPT_AFPL)
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 #
 # hint: for batch mode you can now draw the following decisions
@@ -53,11 +49,6 @@ GSPORT?=	print/ghostscript-gnu
 #
 # Build and install all filter apsfilter knows about (rather expensive)
 #
-# ps emulator
-.if defined(WITHOUT_X11)
-GSPORT:=		${GSPORT}-nox11
-.endif
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 # all needed decompression utilities
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
@@ -104,11 +95,6 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 # don't build too many dependencies
 # since apsfilter should fit easily on installation CD 1...
 #
-# ps emulator
-.if defined(WITHOUT_X11)
-GSPORT:=		${GSPORT}-nox11
-.endif
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 # most important "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
@@ -126,13 +112,13 @@ MAN5=		apsfilterrc.5
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GSPORT="${GSPORT}"
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GHOSTSCRIPT_PORT="${GHOSTSCRIPT_PORT}"
 
 # make a2ps port happy in this early stage
 PAPERSIZE?=letter
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL)
+pre-everything::
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
 	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"

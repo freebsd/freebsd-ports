@@ -14,17 +14,11 @@ MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT=	yes
 
-BUILD_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 LIB_DEPENDS=	Magick++.6:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
 		plotter.4:${PORTSDIR}/graphics/plotutils
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL=	yes

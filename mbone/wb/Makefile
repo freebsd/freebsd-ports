@@ -18,14 +18,8 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
-# XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
+# ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
+USE_GHOSTSCRIPT_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +27,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 STRIP=
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
