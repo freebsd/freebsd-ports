@@ -212,6 +212,7 @@
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
     SUBDIR += wmcp
+    SUBDIR += wmessage
     SUBDIR += wmmand
     SUBDIR += wmpal
     SUBDIR += wmstock

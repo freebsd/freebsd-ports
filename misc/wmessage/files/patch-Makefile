@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Dec 16 19:13:01 2001
++++ Makefile	Mon Dec 17 20:23:42 2001
+@@ -1,16 +1,13 @@
+-PREFIX = /usr/local
+ 
+-CFLAGS = `get-wraster-flags --cflags` -Wall
+-LDFLAGS = `get-wraster-flags --ldflags`
+-LIBS = `get-wraster-flags --libs`
+-CC = gcc
++CFLAGS += `${X11BASE}/bin/get-wraster-flags --cflags` -I${X11BASE}/include/WINGs -Wall
++LDFLAGS = `${X11BASE}/bin/get-wraster-flags --ldflags`
++LIBS = `${X11BASE}/bin/get-wraster-flags --libs`
+ 
+ all: wmessage
+ 
+ wmessage: wmessage.o panel.o
+ 	$(CC) -o wmessage wmessage.o panel.o \
+ 		$(CFLAGS) $(LDFLAGS) $(LIBS) -lWMaker -lWINGs
+-	strip wmessage
+ 
+ install: wmessage
+ 	install -c wmessage $(PREFIX)/bin/wmessage
