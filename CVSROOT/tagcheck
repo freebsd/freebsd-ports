@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+# TAG  add/mov/del  repo  files...
+# $1   $2           $3    $4   ...
+
+case "$1" in
+  RELENG_*)
+    ;;
+  *)
+    exit 0	# not reserved, ok.
+    ;;
+esac
+
+case "$USER" in
+  jkh | peter | jdp | markm)
+    exit 0	# ok
+    ;;
+  *)
+    echo "RELENG_* tag operations are reserved for release engineering!" 1>&2
+    echo "Use 'cvs add' or 'cvs rm' to add/remove files from branches!" 1>&2
+    exit 1	# shove off!
+    ;;
+esac

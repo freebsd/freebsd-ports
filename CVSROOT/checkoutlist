@@ -1,5 +1,5 @@
 #
-# $Id: checkoutlist,v 1.3 1998/03/10 05:04:16 peter Exp $
+# $Id: checkoutlist,v 1.4 1999/08/08 10:56:47 peter Exp $
 #
 # The "checkoutlist" file is used to support additional version controlled
 # administrative files in $CVSROOT/CVSROOT, such as template files.
@@ -26,5 +26,6 @@ log_accum.pl
 logcheck
 options
 rcstemplate
+tagcheck
 unwrap
 wrap
