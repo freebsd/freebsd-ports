@@ -8,17 +8,19 @@
 
 PORTNAME=	bidwatcher
 PORTVERSION=	1.3.16
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://sourceforge.net/tracker/download.php?group_id=2973&atid=302973&file_id=63934&aid=820963/
-PATCHFILES=	add_auction_by_url_also.patch
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=	http://sourceforge.net/tracker/download.php?group_id=2973&atid=302973&file_id=112451&aid=1085302
+#PATCHFILES=	bidwatcher-1.3.16-SSL_with_libcurl.02.patch
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mph@FreeBSD.org
 COMMENT=	Bid monitor for eBay
+
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/bidwatcher
 USE_GNOME=	gtk12

@@ -1,0 +1,5 @@
+--- Makefile.in.orig	Mon Aug 30 18:30:57 2004
++++ Makefile.in	Thu Jan 13 18:23:18 2005
+@@ -98 +98 @@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lcurl
