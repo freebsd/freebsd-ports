@@ -1,16 +1,14 @@
 # New ports collection makefile for:	libcdaudio
-# Version required:	0.7.0
+# Version required:	0.99.1
 # Date created:		01 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libcdaudio_0.7.0
-PKGNAME=	libcdaudio-0.7.0
+DISTNAME=	libcdaudio-0.99.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.debian.org/pub/debian/dists/potato/main/source/libs/
-EXTRACT_SUFX=	.orig.tar.gz
+MASTER_SITES=	ftp://cdcd.undergrid.net/libcdaudio/
 
 MAINTAINER=	ports@FreeBSD.org
 
