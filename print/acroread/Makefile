@@ -19,6 +19,10 @@ DISTNAME=	ar302osf
 EXTRACT_SUFX=	.tar.Z
 LATEST_LINK=	acroread3
 
+FORBIDDEN=	http://vuxml.freebsd.org/78348ea2-ec91-11d8-b913-000c41e2cdad.html security
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=November 21, 2004
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
