@@ -3,7 +3,7 @@
 # Date created:         30 December 1996
 # Whom:                 Mike Smith <msmith@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1998/08/07 23:56:47 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/03 16:02:35 msmith Exp $
 #
 
 DISTNAME=	pib-1.1
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://gsoft.com.au/pub/pib/
 MAINTAINER=	msmith@freebsd.org
 
 BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/pib
