@@ -22,8 +22,6 @@ COMMENT=	Multi-lingual speech synthesis system
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
-BROKEN=		Incorrect pkg-plist
-
 DIST_SUBDIR=	festival
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
