@@ -1,0 +1,2 @@
+This program tries to determine input document encoding
+and to convert it to koi8, CP-1251 or cp866.

@@ -13,6 +13,7 @@
     SUBDIR += pine.language
     SUBDIR += rispell
     SUBDIR += wmcyrx
+    SUBDIR += xcode
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
