@@ -126,6 +126,11 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 # local_scan function (<http://marc.merlins.org/linux/exim/sa.html>)
 #WITH_SA_EXIM=		yes
 
+# Exim refuses to run local deliveries as root by default.  You can
+# add other users to this colon-separated list that cannot be
+# overridden at runtime below, but are advised not to remove "root".
+#WITH_FIXED_NEVER_USERS=	root:daemon:bin
+
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
 # libwrap, libmysqlclient and libpq respectively.  Define
 # WITH_SASLAUTHD to enable use of the Cyrus SASL authentication daemon.
@@ -259,6 +264,10 @@ SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS},' \
 		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
 		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
+
+.if defined(WITH_FIXED_NEVER_USERS)
+SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS},'
+.endif
 
 .if defined(WITH_EXIMON)
 SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
