@@ -32,5 +32,8 @@ USE_BZIP2=	yes
 
 post-patch:
 	${PERL} -pi.orig -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	find ${WRKSRC}/ -name \*.[ch] | xargs ${PERL} -pi.orig \
+	    -e 's,"videolan/dvdcss.h","dvdcss/dvdcss.h",; \
+		s,<videolan/dvdcss.h>,<dvdcss/dvdcss.h>,'
 
 .include <bsd.port.mk>
