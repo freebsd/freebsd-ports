@@ -22,6 +22,7 @@
     SUBDIR += gngb
     SUBDIR += gnuboy
     SUBDIR += gsnes9x
+    SUBDIR += hercules
     SUBDIR += hfs
     SUBDIR += hfsutils
     SUBDIR += ia64sim

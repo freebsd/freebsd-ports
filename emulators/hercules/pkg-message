@@ -1,0 +1,10 @@
+######################################################################
+
+                           IMPORTANT
+  Tape operations and tapecopy are broken in this port (contain Linux
+specific code that has not yet been adapted).
+
+  Be sure to have a look at the docs and edit the hercules.cnf file to
+your needs (The sample is in ${PREFIX}/share/doc/hercules)
+
+######################################################################
