@@ -31,7 +31,7 @@ MAN1=		namazu.1 mknmz.1
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_CHASEN)
-DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/chasen
+DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/p5-Text-ChaSen
 .else
 DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
