@@ -64,6 +64,7 @@
     SUBDIR += slrn
     SUBDIR += slrnface
     SUBDIR += slurp
+    SUBDIR += straw
     SUBDIR += suck
     SUBDIR += suck-cnews
     SUBDIR += t-gnus
