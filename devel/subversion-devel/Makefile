@@ -111,7 +111,7 @@ APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_PORT=	www/apache2
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
 .else
-LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr-svn
+LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr-svn
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
 APR_APU_DIR=	${LOCALBASE}/bin
