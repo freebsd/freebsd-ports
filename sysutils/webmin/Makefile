@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.150
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,9 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	fsdump-1.150-1.wbm.gz
+WEBMIN_MODULES=	fsdump-1.150-1.wbm.gz \
+		quota-1.150-4.wbm.gz \
+		squid-1.150-2.wbm.gz
 
 WEBMIN_THEMES=
 
