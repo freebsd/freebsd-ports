@@ -7,15 +7,12 @@
 
 PORTNAME=	mosfet-liquid
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
-#mosfet.org is up but not working ...
-#if mosfet doesn't come to his senses, this may be
-#the end of the line for this port.
-#MASTER_SITES=	http://www.mosfet.org/ \
-MASTER_SITES=	http://people.FreeBSD.org/~alane/mosfet/
+#MASTER_SITES=	http://www.mosfet.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	mi@FreeBSD.org
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
