@@ -1,0 +1,25 @@
+--- configure.orig	Mon Nov 26 20:55:10 2001
++++ configure	Sun Dec 30 23:00:35 2001
+@@ -3739,20 +3739,9 @@
+     # The recursion is here.
+     if test -n "$ac_sub_configure"; then
+ 
+-      # Make the cache file name correct relative to the subdirectory.
+-      case "$cache_file" in
+-      /*) ac_sub_cache_file=$cache_file ;;
+-      *) # Relative path.
+-        ac_sub_cache_file="$ac_dots$cache_file" ;;
+-      esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
+-
+-      echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
++      echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
+-      if eval ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir
++      if eval ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --srcdir=$ac_sub_srcdir
+       then :
+       else
+         { echo "configure: error: $ac_sub_configure failed for $ac_config_dir" 1>&2; exit 1; }
