@@ -1,0 +1,14 @@
+GTK is a library for creating graphical user interfaces similar to
+the Motif "look and feel".  It is designed to be small and efficient, but
+still flexible enough to allow the programmer freedom in the interfaces
+created.  GTK allows the programmer to use a variety of standard user
+interface widgets such as push, radio and check buttons, menus, lists
+and frames.  It also provides several "container" widgets which can be
+used to control the layout of the user interface elements.
+
+This is the API reference for glib, gtk and gdk.
+
+WWW: http://developer.gnome.org/doc/API/
+
+- Edwin Groothuis
+edwin@mavetju.org

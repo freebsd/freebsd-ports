@@ -36,6 +36,7 @@
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-zenith-theme
     SUBDIR += gtk12
+    SUBDIR += gtk12-apireference
     SUBDIR += gtk13
     SUBDIR += gtkada
     SUBDIR += gtkbe
