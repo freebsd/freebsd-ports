@@ -1,4 +1,4 @@
-MD5 (postgresql/postgresql-7.4.rc2.2003.11.15.tar.bz2) = 498f85e6c26e39305ba91464d9029ad7
+MD5 (postgresql/postgresql-7.5.2003.11.17.tar.bz2) = 38d610a523f29fba668d15418f2b4e03
 MD5 (postgresql/patch-pgblocksize-16K) = 2ac9dac033302e9ce15816db0e346d55
 MD5 (postgresql/patch-pgblocksize-32K) = 0910cbfbecbb25e2bd23ebe50eb29287
 MD5 (postgresql/patch-pgblocksize-65K) = 0e197b76e262bb5efe1ebf0f5c0a80ee
