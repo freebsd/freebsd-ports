@@ -35,6 +35,10 @@ _HAVE_SWIDTH!=	${GREP} _CTYPE_SW ${DESTDIR}/usr/include/ctype.h 2>/dev/null \
 PKGNAMESUFFIX=	-without-swidth
 .endif
 
+.if ${OSVERSION} >= 502110
+IGNORE=		is already in your base system
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,\(rm -rf.*/\)\*\(/LC_MESS\),\1*.UTF-8\2,g' \
 		${WRKSRC}/msgdef/Makefile
