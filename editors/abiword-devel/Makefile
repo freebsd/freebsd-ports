@@ -8,7 +8,7 @@
 PORTNAME=	AbiWord
 PORTVERSION=	${VERSION}
 CATEGORIES=	editors
-MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
+MASTER_SITES=	http://download.abisource.com/releases/${VERSION}/src/lf/
 DISTNAME=	abi-${VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat-${VERSION}.tar.gz \
 		unixfonts-${VERSION}.tar.gz wv-${VERSION}.tar.gz \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 DIST_SUBDIR=	AbiWord
 
-VERSION=	0.7.9
+VERSION=	0.7.10
 WRKSRC=		${WRKDIR}/abi-${VERSION}/src
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -32,7 +32,13 @@ MAKE_ENV=	prefix="${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
+# start by deleting some junk files that should never have been placed
+# in the tar file
 pre-build:
+	cd ${WRKSRC} && ${RM} -f ../user/wp/help/en-US/images/?line.jpg
+	cd ${WRKSRC} && ${RM} -f ../user/wp/help/en-US/images/?space.jpg
+
+do-configure:
 	@(cd ${WRKDIR}/wv && ./configure)
 
 .include <bsd.port.post.mk>
