@@ -9,6 +9,7 @@ share/gnome/dasher/alphabet.german.xml
 share/gnome/dasher/alphabet.hiragana.xml
 share/gnome/dasher/alphabet.hungarian.xml
 share/gnome/dasher/alphabet.hungarianLowerCase.xml
+share/gnome/dasher/alphabet.ipa.xml
 share/gnome/dasher/alphabet.italian.xml
 share/gnome/dasher/alphabet.korean.xml
 share/gnome/dasher/alphabet.polish.xml
@@ -28,7 +29,9 @@ share/gnome/dasher/training_hiragana60_JP.txt
 share/gnome/dasher/training_hiragana83_JP.txt
 share/gnome/dasher/training_italian_IT.txt
 share/gnome/dasher/training_portuguese_BR.txt
+share/gnome/dasher/training_russian_RU.txt
 share/gnome/icons/dasher.png
 share/locale/cs/LC_MESSAGES/dasher.mo
 share/locale/fr/LC_MESSAGES/dasher.mo
+share/locale/mn/LC_MESSAGES/dasher.mo
 @dirrm share/gnome/dasher
