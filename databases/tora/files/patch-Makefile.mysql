@@ -1,0 +1,11 @@
+--- Makefile.mysql.orig	Thu Jan  3 01:12:21 2002
++++ Makefile.mysql	Thu Jan  3 01:12:43 2002
+@@ -229,7 +229,7 @@
+ tora-mono: $(OBJECTS) main.cpp
+ 	@echo Linking $@
+ 	$(GCC) $(CFLAGS) $(LFLAGS) $(LFLAGS_GLOB) -DTOMONOLITHIC -o $@ $(OBJECTS) main.cpp \
+-		$(LIBS_GLOB) $(STDCPP_SHARED) $(ORACLE_SHARED) $(QT_SHARED) $(MYSQL_SHARED)
++		$(LIBS_GLOB) $(STDCPP_SHARED) $(QT_SHARED) $(MYSQL_SHARED)
+ 
+ # Static target, easier to distribute
+ 
