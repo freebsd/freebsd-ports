@@ -1,0 +1,9 @@
+smtp.proxy is an application level gateway for SMTP. It connects a
+client to a server running on another machine watching that the
+protocol is accomplished. If commands outside the specification are
+sent they are not forwarded to the server.
+
+WWW: http://www.quietsche-entchen.de/software/smtp.proxy.html
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net

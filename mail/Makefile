@@ -199,6 +199,7 @@
     SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed
+    SUBDIR += smtpproxy
     SUBDIR += smunge
     SUBDIR += solidpop3d
     SUBDIR += sonicmail

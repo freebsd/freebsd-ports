@@ -1,0 +1,4 @@
+libexec/smtp.proxy
+%%PORTDOCS%%share/doc/smtpproxy/README
+%%PORTDOCS%%share/doc/smtpproxy/rfc821.txt
+%%PORTDOCS%%@dirrm share/doc/smtpproxy
