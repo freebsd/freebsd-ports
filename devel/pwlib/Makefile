@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.gnomemeeting.org/downloads/0.98.0/sources/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
