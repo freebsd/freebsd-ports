@@ -148,6 +148,7 @@ MAN4+=		glint.4 \
 		s3virge.4 \
 		savage.4 \
 		siliconmotion.4 \
+		sis.4 \
 		tdfx.4 \
 		vga.4
 .endif
@@ -164,7 +165,6 @@ MAN4+=		apm.4 \
 		i810.4 \
 		neomagic.4 \
 		nsc.4 \
-		sis.4 \
 		trident.4 \
 		tseng.4 \
 		vesa.4 \
