@@ -51,14 +51,14 @@ CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 #.endif
 
-#.if !defined(WITHOUT_VORBIS)
-#LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
-#INPUT_PLUGINS+=	vorbis
-#PLIST_SUB+=	VORBISPLUGIN:=""
-#.else
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+INPUT_PLUGINS+=	vorbis
+PLIST_SUB+=	VORBISPLUGIN:=""
+.else
 CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
-#.endif
+.endif
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
