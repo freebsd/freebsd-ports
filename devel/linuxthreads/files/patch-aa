@@ -1,6 +1,6 @@
 diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
 --- ../linuxthreads/Examples/Makefile	Wed Mar 11 04:42:23 1998
-+++ ./Examples/Makefile	Mon Jan  3 15:35:00 2000
++++ ./Examples/Makefile	Tue Jan 25 13:59:17 2000
 @@ -1,8 +1,12 @@
  CC=gcc
 -CFLAGS=-g -O -Wall -I.. -D_REENTRANT
@@ -19,8 +19,8 @@ diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
  
 diff -ru ../linuxthreads/Makefile ./Makefile
 --- ../linuxthreads/Makefile	Fri Jul  9 21:00:32 1999
-+++ ./Makefile	Mon Jan  3 15:35:00 2000
-@@ -1,68 +1,73 @@
++++ ./Makefile	Tue Jan 25 13:59:17 2000
+@@ -1,68 +1,72 @@
 -# Copyright (C) 1996, 1997, 1998, 1999 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -59,12 +59,11 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
 +
 +# Contents of the library.
-+SRCS := attr.c cancel.c clone.S condvar.c errno.c getgr_r.c gethostby_r.c \
-+	getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c join.c lclone.c \
-+	libc_calls.c libc_thread.c lockfile.c manager.c mutex.c pt-machine.c \
-+	ptfork.c pthread.c ptlongjmp.c rwlock.c sched.c semaphore.c signals.c \
-+	specific.c spinlock.c uthread_file.c wrapsyscall.c
-+
++SRCS := _atomic_lock.S attr.c cancel.c clone.S condvar.c errno.c getgr_r.c \
++	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
++	join.c lclone.c libc_calls.c libc_thread.c lockfile.c manager.c \
++	mutex.c pt-machine.c ptfork.c pthread.c ptlongjmp.c rwlock.c sched.c \
++	semaphore.c signals.c specific.c spinlock.c uthread_file.c wrapsyscall.c
 +
 +beforeinstall:
 +	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
@@ -162,9 +161,10 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +
 +.include <bsd.lib.mk>
 Only in .: README.FreeBSD
+Only in .: _atomic_lock.S
 diff -ru ../linuxthreads/attr.c ./attr.c
 --- ../linuxthreads/attr.c	Tue Oct 27 05:51:54 1998
-+++ ./attr.c	Mon Jan  3 15:35:00 2000
++++ ./attr.c	Tue Jan 25 13:59:17 2000
 @@ -27,7 +27,7 @@
  
    attr->__detachstate = PTHREAD_CREATE_JOINABLE;
@@ -178,7 +178,7 @@ Only in .: clone.S
 Only in .: clone.h
 diff -ru ../linuxthreads/errno.c ./errno.c
 --- ../linuxthreads/errno.c	Wed Aug 26 08:57:28 1998
-+++ ./errno.c	Mon Jan  3 15:35:00 2000
++++ ./errno.c	Tue Jan 25 13:59:17 2000
 @@ -19,6 +19,12 @@
  #include "pthread.h"
  #include "internals.h"
@@ -201,7 +201,7 @@ Only in .: getpw_r.c
 Only in .: getservby_r.c
 diff -ru ../linuxthreads/internals.h ./internals.h
 --- ../linuxthreads/internals.h	Fri Jul 16 16:18:19 1999
-+++ ./internals.h	Mon Jan  3 15:35:00 2000
++++ ./internals.h	Tue Jan 25 13:59:17 2000
 @@ -22,8 +22,10 @@
  #include <signal.h>
  #include <unistd.h>
@@ -225,12 +225,11 @@ diff -ru ../linuxthreads/internals.h ./internals.h
    void *p_guardaddr;		/* address of guard area or NULL */
 Only in .: lclone.c
 Only in .: libc_calls.c
-Only in .: libc_private.h
 Only in .: libc_thread.c
 Only in .: libgcc_r
 diff -ru ../linuxthreads/lockfile.c ./lockfile.c
 --- ../linuxthreads/lockfile.c	Thu Jul  9 06:41:28 1998
-+++ ./lockfile.c	Mon Jan  3 15:35:00 2000
++++ ./lockfile.c	Tue Jan 25 13:59:17 2000
 @@ -20,6 +20,7 @@
  #include <bits/libc-lock.h>
  #include <stdio.h>
@@ -263,7 +262,7 @@ diff -ru ../linuxthreads/lockfile.c ./lockfile.c
 +#endif
 diff -ru ../linuxthreads/manager.c ./manager.c
 --- ../linuxthreads/manager.c	Wed Jul 28 23:42:42 1999
-+++ ./manager.c	Mon Jan  3 15:35:00 2000
++++ ./manager.c	Tue Jan 25 13:59:18 2000
 @@ -115,7 +115,7 @@
    /* Enter server loop */
    while(1) {
@@ -321,7 +320,7 @@ diff -ru ../linuxthreads/manager.c ./manager.c
    if (pid == -1) {
 diff -ru ../linuxthreads/mutex.c ./mutex.c
 --- ../linuxthreads/mutex.c	Wed Nov 18 08:59:53 1998
-+++ ./mutex.c	Mon Jan  3 15:35:00 2000
++++ ./mutex.c	Tue Jan 25 13:59:18 2000
 @@ -24,7 +24,7 @@
  #include "restart.h"
  
@@ -337,7 +336,7 @@ Only in ../linuxthreads: oldsemaphore.c
 Only in .: oldsemaphore.c.unused
 diff -ru ../linuxthreads/ptfork.c ./ptfork.c
 --- ../linuxthreads/ptfork.c	Mon Sep  6 12:32:07 1999
-+++ ./ptfork.c	Mon Jan  3 15:35:00 2000
++++ ./ptfork.c	Tue Jan 25 13:59:18 2000
 @@ -75,7 +75,7 @@
  
  extern int __libc_fork(void);
@@ -362,7 +361,7 @@ diff -ru ../linuxthreads/ptfork.c ./ptfork.c
 -weak_alias (__vfork, vfork);
 diff -ru ../linuxthreads/pthread.c ./pthread.c
 --- ../linuxthreads/pthread.c	Fri Aug 20 12:00:47 1999
-+++ ./pthread.c	Mon Jan  3 15:35:00 2000
++++ ./pthread.c	Tue Jan 25 13:59:18 2000
 @@ -19,7 +19,10 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -573,7 +572,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    __pthread_reset_main_thread();
 diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 --- ../linuxthreads/ptlongjmp.c	Tue Oct 27 05:52:00 1998
-+++ ./ptlongjmp.c	Mon Jan  3 15:35:00 2000
++++ ./ptlongjmp.c	Tue Jan 25 13:59:18 2000
 @@ -19,13 +19,6 @@
  #include "pthread.h"
  #include "internals.h"
@@ -606,7 +605,7 @@ diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 Only in .: sched.c
 diff -ru ../linuxthreads/semaphore.h ./semaphore.h
 --- ../linuxthreads/semaphore.h	Thu Apr 15 06:50:56 1999
-+++ ./semaphore.h	Mon Jan  3 15:35:00 2000
++++ ./semaphore.h	Tue Jan 25 13:59:18 2000
 @@ -15,7 +15,7 @@
  #ifndef _SEMAPHORE_H
  #define _SEMAPHORE_H    1
@@ -618,7 +617,7 @@ diff -ru ../linuxthreads/semaphore.h ./semaphore.h
  #ifndef _PTHREAD_DESCR_DEFINED
 diff -ru ../linuxthreads/signals.c ./signals.c
 --- ../linuxthreads/signals.c	Mon Aug 23 10:46:35 1999
-+++ ./signals.c	Mon Jan  3 15:35:00 2000
++++ ./signals.c	Tue Jan 25 13:59:18 2000
 @@ -19,7 +19,6 @@
  #include "pthread.h"
  #include "internals.h"
@@ -670,7 +669,7 @@ diff -ru ../linuxthreads/signals.c ./signals.c
      }
 diff -ru ../linuxthreads/spinlock.c ./spinlock.c
 --- ../linuxthreads/spinlock.c	Fri Jul  9 13:56:04 1999
-+++ ./spinlock.c	Mon Jan  3 15:35:00 2000
++++ ./spinlock.c	Tue Jan 25 13:59:18 2000
 @@ -17,6 +17,7 @@
  #include <errno.h>
  #include <sched.h>
@@ -699,7 +698,7 @@ diff -ru ../linuxthreads/spinlock.c ./spinlock.c
    struct timespec tm;
 diff -ru ../linuxthreads/spinlock.h ./spinlock.h
 --- ../linuxthreads/spinlock.h	Thu Oct 29 06:31:12 1998
-+++ ./spinlock.h	Mon Jan  3 15:35:00 2000
++++ ./spinlock.h	Tue Jan 25 13:59:18 2000
 @@ -71,4 +71,6 @@
    return 0;
  }
@@ -709,7 +708,7 @@ diff -ru ../linuxthreads/spinlock.h ./spinlock.h
  #define LOCK_INITIALIZER {0, 0}
 diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/bits/pthreadtypes.h
 --- ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h	Thu Apr 15 06:52:26 1999
-+++ ./sysdeps/pthread/bits/pthreadtypes.h	Mon Jan  3 15:35:00 2000
++++ ./sysdeps/pthread/bits/pthreadtypes.h	Tue Jan 25 13:59:18 2000
 @@ -20,7 +20,6 @@
  #define _BITS_PTHREADTYPES_H	1
  
@@ -729,7 +728,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/b
    size_t __guardsize;
 diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
 --- ../linuxthreads/sysdeps/pthread/pthread.h	Tue Dec  8 08:10:25 1998
-+++ ./sysdeps/pthread/pthread.h	Mon Jan  3 15:35:00 2000
++++ ./sysdeps/pthread/pthread.h	Tue Jan 25 13:59:19 2000
 @@ -15,7 +15,7 @@
  #ifndef _PTHREAD_H
  #define _PTHREAD_H	1
@@ -760,7 +759,7 @@ Only in ../linuxthreads/sysdeps/pthread: semaphore.h
 Only in ./sysdeps/pthread: semaphore.h.unused
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Nov 12 10:03:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Mon Jan  3 15:35:00 2000
++++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Tue Jan 25 13:59:19 2000
 @@ -24,7 +24,7 @@
  #endif
  
@@ -772,7 +771,7 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix
  #ifdef __undef_NR_OPEN
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h	Sat Sep 12 14:33:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Mon Jan  3 15:35:00 2000
++++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Tue Jan 25 13:59:19 2000
 @@ -28,8 +28,8 @@
  
  /* Modify the signal mask for the calling thread.  The arguments have
@@ -789,7 +788,7 @@ Only in ../linuxthreads: weaks.c
 Only in .: weaks.c.unused
 diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
 --- ../linuxthreads/wrapsyscall.c	Tue Dec  1 11:34:20 1998
-+++ ./wrapsyscall.c	Mon Jan  3 15:35:00 2000
++++ ./wrapsyscall.c	Tue Jan 25 13:59:19 2000
 @@ -30,6 +30,10 @@
  #include <sys/wait.h>
  #include <sys/socket.h>
@@ -847,48 +846,41 @@ diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
  
  
  /* msync(2).  */
-@@ -106,9 +112,10 @@
- strong_alias (open, __open)
+@@ -107,7 +113,7 @@
  
  
-+#if (0)
  /* pause(2).  */
- CANCELABLE_SYSCALL (int, pause, (void), ())
--
-+#endif
+-CANCELABLE_SYSCALL (int, pause, (void), ())
++CANCELABLE_SYSCALL (int, _pause, (void), ())
+ 
  
  /* read(2).  */
- CANCELABLE_SYSCALL (ssize_t, read, (int fd, void *buf, size_t count),
-@@ -116,6 +123,7 @@
- strong_alias (read, __read)
+@@ -117,20 +123,22 @@
+ 
+ 
+ /* system(3).  */
+-CANCELABLE_SYSCALL (int, system, (const char *line), (line))
++CANCELABLE_SYSCALL (int, _system, (const char *line), (line))
  
  
 +#if (0)
- /* system(3).  */
- CANCELABLE_SYSCALL (int, system, (const char *line), (line))
- 
-@@ -125,16 +133,16 @@
+ /* tcdrain(2).  */
+ CANCELABLE_SYSCALL (int, tcdrain, (int fd), (fd))
++#endif
  
  
  /* wait(2).  */
 -CANCELABLE_SYSCALL (__pid_t, wait, (__WAIT_STATUS_DEFN stat_loc), (stat_loc))
-+CANCELABLE_SYSCALL (pid_t, wait, (int * stat_loc), (stat_loc))
++CANCELABLE_SYSCALL (pid_t, _wait, (int * stat_loc), (stat_loc))
  strong_alias (wait, __wait)
  
  
  /* waitpid(2).  */
 -CANCELABLE_SYSCALL (__pid_t, waitpid, (__pid_t pid, int *stat_loc,
--				       int options),
-+CANCELABLE_SYSCALL (pid_t, waitpid, (pid_t pid, int *stat_loc,
-+				     int options),
++CANCELABLE_SYSCALL (pid_t, _waitpid, (pid_t pid, int *stat_loc,
+ 				       int options),
  		    (pid, stat_loc, options))
--
--
-+#endif
-+     
- /* write(2).  */
- CANCELABLE_SYSCALL (ssize_t, write, (int fd, const void *buf, size_t n),
- 		    (fd, buf, n))
+ 
 @@ -155,9 +163,11 @@
  		    (fd, addr, len))
  strong_alias (connect, __connect)

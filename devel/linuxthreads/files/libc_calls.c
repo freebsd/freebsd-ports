@@ -146,4 +146,3 @@ int tcdrain (fd)
 	pthread_setcanceltype  (oldtype, NULL);
 	return (ret);
 }
-
