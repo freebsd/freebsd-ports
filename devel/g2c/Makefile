@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glade to C translator
 
 USE_REINPLACE=	yes
-USE_GNOME=	gtk12 gnomehack libxml
+USE_GNOME=	gtk12 gnomehack libxml orbit
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
