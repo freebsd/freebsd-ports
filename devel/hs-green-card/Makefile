@@ -15,7 +15,7 @@ DISTNAME=	gc-${PORTVERSION}-src
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A foreign function interface preprocessor for Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
 WRKSRC=		${WRKDIR}/gc-${PORTVERSION}
 

@@ -17,7 +17,7 @@ COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		green-card:${PORTSDIR}/devel/hs-green-card
 
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc5
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -18,8 +18,8 @@ COMMENT=	A GUI library for Haskell on top of Tcl-Tk
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .if !defined(WITHOUT_GHC)
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 .endif
 
 USE_GMAKE=	yes
