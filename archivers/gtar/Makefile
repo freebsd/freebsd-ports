@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.13.23
-PORTREVISION=	1
+PORTVERSION=	1.13.25
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
@@ -23,7 +22,8 @@ CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE='/dev/sa0' \
-		MAKEINFO='makeinfo --no-split'
+		MAKEINFO='makeinfo --no-split' \
+		am_cv_func_iconv=no
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static
