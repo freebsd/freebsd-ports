@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-ttf
 CONFIGURE_ARGS+=	--disable-mmx
 .else
 CONFIGURE_ARGS+=	--enable-mmx
-BUILD_DEPENDS+=		nasm-0.98:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .endif
 .endif
 

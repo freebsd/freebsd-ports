@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nakai@FreeBSD.org
 
 # More than version 0.98
-BUILD_DEPENDS=	nasm-0.98:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
 ALL_TARGET=	gogo
