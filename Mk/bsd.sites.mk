@@ -200,6 +200,7 @@ MASTER_SITE_GNOME+=	\
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
+	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
@@ -464,6 +465,7 @@ MASTER_SITE_PGSQL+= \
 
 MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.rutgers.edu/pub/redhat/linux/%SUBDIR%/ \
+	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
