@@ -1,11 +1,19 @@
---- ee.desktop.orig	Tue Dec 15 00:36:56 1998
-+++ ee.desktop	Fri Jan  1 14:56:15 1999
-@@ -11,7 +11,7 @@
- Comment[de]=Bildbetrachter
+--- ee.desktop.orig	Tue Feb  9 02:14:37 1999
++++ ee.desktop	Wed Feb 24 05:57:03 1999
+@@ -15,7 +15,7 @@
  Comment[no]=Program for bildeframvisning
  Comment[pt]=Programa para visualizaГЦo de imagens
+ Comment[ru]=Программа просмотра изображений
 -Exec=ee
 +Exec=ElectricEyes
  Icon=gnome-ee.png
  Terminal=0
  Type=Application
+--- ee.keys.orig	Wed Feb 24 06:32:02 1999
++++ ee.keys	Wed Feb 24 06:32:15 1999
+@@ -1,3 +1,3 @@
+ image/*:
+-	open=ee %f
+-	view=ee %f
++	open=ElectricEyes %f
++	view=ElectricEyes %f

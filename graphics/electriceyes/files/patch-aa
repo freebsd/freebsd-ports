@@ -1,14 +1,14 @@
---- configure.orig	Tue Dec 15 02:19:21 1998
-+++ configure	Tue Jan  5 12:06:13 1999
-@@ -1076,13 +1076,13 @@
+--- configure.orig	Wed Feb 24 05:54:38 1999
++++ configure	Wed Feb 24 05:55:40 1999
+@@ -1113,13 +1113,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1081: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1118: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1081: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1118: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
@@ -19,14 +19,21 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
-@@ -3448,7 +3448,9 @@
- if eval "test \"`echo '$''{'gt_cv_func_gettext_libintl'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
--  cat > conftest.$ac_ext <<EOF
-+  ac_save_LIBS="$LIBS"
-+LIBS="-lintl $LIBS"
-+cat > conftest.$ac_ext <<EOF
- #line 3453 "configure"
- #include "confdefs.h"
- 
+@@ -4378,7 +4378,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -4640,7 +4640,7 @@
+ 		 USE_INCLUDED_LIBINTL=yes
+ 		 CATOBJEXT=.cat
+ 		 INSTOBJEXT=.cat
+-		 DATADIRNAME=lib
++		 DATADIRNAME=share
+ 		 INTLDEPS='$(top_builddir)/intl/libintl.a'
+ 		 INTLLIBS=$INTLDEPS
+ 		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
