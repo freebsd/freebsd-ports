@@ -22,7 +22,7 @@ FILESDIR=	${.CURDIR}/../kinput2-freewnn/files
 USE_IMAKE=	yes
 MAN1=		kinput2.1
 
-.if !defined(CANNA) && !defined(SJ3) && !defined(FREEWNN) && !defined(WNN6)
+.if !defined(CANNA) && !defined(SJ3) && !defined(FREEWNN) && !defined(WNN6) && !defined(WNN7)
 # For this port
 FREEWNN=		yes
 .endif
@@ -51,6 +51,11 @@ INPUT_METHOD+=		wnn6
 LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
+.elif defined(WNN7)
+INPUT_METHOD+=		wnn7
+LIB_INPUT_METHOD+=	wnn6_for_wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
+KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
+			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6_for_wnn7 -lcrypt"
 .endif
 #
 # Make a value of INPUT_METHOD

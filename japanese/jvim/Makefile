@@ -7,6 +7,7 @@
 
 PORTNAME=	jvim
 PORTVERSION=	2.0r
+PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
@@ -38,6 +39,12 @@ JPLIB+=		-ljd -lcrypt
 INPUT_METHOD+=	wnn6
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+JPDEF+=		-DWNN_ISDIR
+JPLIB+=		-ljd -lcrypt
+.elif defined(WNN7)
+INPUT_METHOD+=	wnn7
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd -lcrypt
 .endif

@@ -1,11 +1,11 @@
-# New ports collection makefile for:	head files and libraries of Wnn6
-# Date created:		11 July 1997
+# New ports collection makefile for:	head files and libraries of Wnn7
+# Date created:		01/07/16
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Wnn6-lib
+PORTNAME=	Wnn7-lib
 PORTVERSION=	98.10.28
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 .endif
 
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
-DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
+DOCDIR=		${PREFIX}/share/doc/ja-Wnn7-lib
 
 INSTALLS_SHLIB=	yes
 
@@ -32,11 +32,11 @@ do-build:
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libwnn6.so.1.0 ${PREFIX}/lib/libwnn6.so
+	${LN} -sf libwnn6_for_wnn7.so.1.0 ${PREFIX}/lib/libwnn6_for_wnn7.so
 .endif
-	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn6.a
-	@${MKDIR} ${PREFIX}/include/wnn6/wnn
-	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn6/wnn
+	${LN} -sf libwnn6_for_wnn7_fromsrc.a ${PREFIX}/lib/libwnn6_for_wnn7.a
+	@${MKDIR} ${PREFIX}/include/wnn7/wnn
+	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 

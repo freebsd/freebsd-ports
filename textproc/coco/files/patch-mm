@@ -1,5 +1,5 @@
---- configure.orig	Fri Sep  8 14:13:47 2000
-+++ configure	Fri Sep  8 14:15:09 2000
+--- configure.orig	Wed Jul 18 16:03:57 2001
++++ configure	Wed Jul 18 16:37:11 2001
 @@ -38,6 +38,10 @@
  ac_help="$ac_help
    --with-wnn6             Use Wnn6 library to input Japanese or Chinese"
@@ -33,7 +33,7 @@
  archlibdir='${libexecdir}/${emacs_prefix}/${version}/${configuration}'
  docdir='${datadir}/${emacs_prefix}/${version}/etc'
  
-@@ -671,9 +676,16 @@
+@@ -671,9 +676,20 @@
  
  fi
  
@@ -46,11 +46,15 @@
  # Check whether --with-wnn6 or --without-wnn6 was given.
  if test "${with_wnn6+set}" = set; then
    withval="$with_wnn6"
-+  wnnlib=-lwnn6
++if test "${with_wnn6}" = yes; then
++   wnnlib=-lwnn6
++else
++   wnnlib=$with_wnn6
++fi
    with_wnn=${withval}; cat >> confdefs.h <<\EOF
  #define WNN6 1
  EOF
-@@ -3104,12 +3116,12 @@
+@@ -3104,12 +3120,12 @@
    if test -n "${with_wnn_libraries}" ; then
      if test -d ${with_wnn_libraries} ; then
        LD_SWITCH_WNN="-L${with_wnn_libraries}"

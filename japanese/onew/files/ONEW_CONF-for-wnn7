@@ -1,0 +1,8 @@
+WNNINC		= -I%LOCALBASE%/include/wnn
+WNNLIB		= -L%LOCALBASE%/lib -ljd
+WNN_RKPATH      = '"./rk:$$ONEW_WNN_ROMKAND:$$ONEW_ROMKAND:$$HOME/.rk:%LOCALBASE%/lib/wnn/ja_JP/rk.wnn7:%LOCALBASE%/lib/wnn/ja_JP/rk:/tmp/onew_rktabs/wnn"'
+WNN_DICLIST	= '"kihon tankan zip symbol tankan2 tel usr/$$USER/ud=10 usr/$$USER/private=10"'
+WNN_DICDIRS	= '"system/%s.dic;usr/$$USER/%s.h"'
+RKKLIBS		= $(WNNLIB)
+RKKOBJS		= $(WNNOBJ)
+MISCLIB		= -lcrypt

@@ -1,13 +1,12 @@
-# New ports collection makefile for:	jvim for Canna and Wnn6
-# Date created:		5 Sep 1997
+# New ports collection makefile for:	jvim for Canna and Wnn7
+# Date created:		01/07/18
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-canna+wnn6
 CANNA=		yes
-WNN6=		yes
+WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim
 PKGDIR=		${.CURDIR}

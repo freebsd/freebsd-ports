@@ -1,11 +1,11 @@
-# New ports collection makefile for:	jvim3 for Wnn6
-# Date created:		98/11/17
+# New ports collection makefile for:	jvim3 for Wnn7
+# Date created:		01/07/18
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-WNN6=		yes
+WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim3
 PKGDIR=		${.CURDIR}

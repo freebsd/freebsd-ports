@@ -6,7 +6,7 @@ sends a request to kinput2.  Kinput2 receives the request, does
 kana-kanji conversion, and sends the converted text back to the
 client.
 
-The port supports Canna and Wnn6.  Egg key binding is avairable,
+The port supports Canna and Wnn7(temporary).  Egg key binding is avairable,
 if you run
 
 kinput2 -ccdef ccdef.kinput2.egg

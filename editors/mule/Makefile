@@ -7,6 +7,8 @@
 
 PORTNAME=	mule
 PORTVERSION=	${MULE_VERSION}
+PKGNAMESUFFIX=	${INPUT_METHOD}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \
@@ -57,33 +59,52 @@ STRIP=
 INSTALL_TARGET=	install-arch-dep
 
 .if defined(CANNA)
+INPUT_METHOD+=		canna
 LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 WITH_INPUT_METHOD+=	--with-canna --with-canna-libraries=${PREFIX}/lib \
 			--with-canna-includes=${PREFIX}/include
 .endif
-.if defined(SJ3)
-BUILD_INPUT_METHOD+=	sj3serv:${PORTSDIR}/japanese/sj3
-WITH_INPUT_METHOD+=	--with-sj3
-.endif
 .if defined(FREEWNN)
+INPUT_METHOD+=		freewnn
 LIB_INPUT_METHOD+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/wnn
 .elif defined(CFREEWNN)
+INPUT_METHOD+=		freewnn
 LIB_INPUT_METHOD+=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-cwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/cwnn
 .elif defined(KFREEWNN)
+INPUT_METHOD+=		freewnn
 LIB_INPUT_METHOD+=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-kwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/kwnn
-.elif defined(WNN6)
+.endif
+.if defined(SJ3)
+INPUT_METHOD+=		sj3
+BUILD_INPUT_METHOD+=	sj3serv:${PORTSDIR}/japanese/sj3
+WITH_INPUT_METHOD+=	--with-sj3
+.endif
+.if !defined(FREEWNN) && !defined(CFREEWNN) && !defined(KFREEWNN)
+.if defined(WNN6)
+INPUT_METHOD+=		wnn6
 LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
+.elif defined(WNN7)
+INPUT_METHOD+=		wnn7
+LIB_INPUT_METHOD+=	wnn6_for_wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
+WITH_INPUT_METHOD+=	--with-wnn6=-lwnn6_for_wnn7 --with-wnn-libraries=${LOCALBASE}/lib \
+			--with-wnn-includes=${LOCALBASE}/include/wnn7/wnn
+.endif
 .endif
 COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
 ELC_DIR=	../lisp
+# Make a value of INPUT_METHOD
+.if defined(INPUT_METHOD)
+INPUT_METHOD!=	${ECHO} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
+.endif
+
 
 WITH_DIALOGS=	--with-x-toolkit
 
