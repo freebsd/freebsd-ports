@@ -65,6 +65,7 @@
     SUBDIR += metakit
     SUBDIR += mird
     SUBDIR += msql
+    SUBDIR += mtop
     SUBDIR += myodbc
     SUBDIR += mysql++
     SUBDIR += mysql-connector-java
