@@ -1885,7 +1885,6 @@ fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
 fpc		ports/lang/fpc
 fping		ports/net/fping
-fpl		ports/lang/fpl
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fprobe		ports/net/fprobe
