@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=		hayes
-PORTVERSION=		1.3
+PORTVERSION=		1.4
 CATEGORIES=		multimedia kde
-MASTER_SITES=		http://www.freekde.org/neil/hayes/
+MASTER_SITES=		http://www.hakubi.us/hayes/
 
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		A filesystem-based playlist for Noatun
@@ -18,5 +18,11 @@ USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+USE_REINPLACE=          yes
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
