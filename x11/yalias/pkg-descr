@@ -1,0 +1,8 @@
+yalias has a window with two buttons and a text widget. The left
+button clears the widget (and is bound to the Escape key). The right
+button matches the contents of the widget against a series of regular
+expressions that the user has previously specified in their
+$HOME/.yaliasrc, and executes the specified command if it matches
+any of them.
+
+WWW: http://offog.org/code/

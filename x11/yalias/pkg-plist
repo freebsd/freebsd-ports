@@ -1,0 +1,3 @@
+bin/yalias
+share/yalias/system.yaliasrc
+@dirrm share/yalias
