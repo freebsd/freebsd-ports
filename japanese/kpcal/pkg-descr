@@ -1,0 +1,3 @@
+kpcal makes Calendar in Postscript format.
+You can insert schedules from calendar file,
+see calendar(1). It supports Japanese language.
