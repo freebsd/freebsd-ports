@@ -41,8 +41,15 @@ share/noweb/tohtml
 share/noweb/totex
 share/noweb/toroff
 share/noweb/unmarkup
-share/noweb/tex/noweb.sty
-share/noweb/tex/nwmac.tex
+share/texmf-local/tex/plain/noweb/nwmac.tex
+share/texmf-local/tex/latex/noweb/noweb.sty
 share/noweb/xchunks
-@dirrm share/noweb/tex
+@dirrm share/texmf-local/tex/latex/noweb
+@dirrm share/texmf-local/tex/plain/noweb
+@unexec rmdir %D/share/texmf-local/tex/latex 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local/tex/plain 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local/tex 2>/dev/null || true
+@unexec rm %D/share/texmf-local/ls-R 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local 2>/dev/null || true
+@unexec mktexlsr 2>/dev/null || true
 @dirrm share/noweb
