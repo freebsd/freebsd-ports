@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.65 1998/09/26 04:42:09 dima Exp $
+# $Id: Makefile,v 1.66 1998/10/07 23:03:44 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -56,7 +56,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ARGS+= --with-rsaref
-LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
+BUILD_DEPENDS+= ${PORTSDIR}/security/rsaref/work/.extract_done:${PORTSDIR}/security/rsaref
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
