@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ion
-PORTVERSION=	20010215
+PORTVERSION=	20010216
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.students.tut.fi/~tuomov/dl/
 
