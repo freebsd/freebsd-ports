@@ -111,10 +111,6 @@ MLINKS=		pvm_intro.1 PVM.1 pvmd3.1 pvmd.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
-.endif
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/tracer/tracer.h ${WRKSRC}/tracer/trclib.h \
