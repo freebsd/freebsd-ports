@@ -1,6 +1,5 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/gfortran/Attic/pkg-plist,v 1.1 2004-02-01 23:20:22 maho Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/gfortran/Attic/pkg-plist,v 1.2 2004-02-03 00:08:41 maho Exp $
 bin/cpptree-ssa
-bin/g95
 bin/gccbugtree-ssa
 bin/gcctree-ssa
 bin/gcovtree-ssa
