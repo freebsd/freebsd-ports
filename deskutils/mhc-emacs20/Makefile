@@ -10,4 +10,4 @@ MAINTAINER=	yoichi@FreeBSD.org
 
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
