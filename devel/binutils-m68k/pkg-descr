@@ -1,0 +1,9 @@
+FSF binutils-2.9.2 for Motorola M68K and Coldfire cross-development
+
+This port is used by devel/crossm68k-devel to generate a cross-development
+environment for embedded Motorola 68xxx and Coldfire applications.
+
+devel/m68kgcc uses this port as a dependency.
+--------------------------------------------------------------------------
+Jerry Hicks
+jhicks@glenatl.glenayre.com
