@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -18,8 +18,11 @@ ISPELL_FILES= 	ispell-3.2.06.tar.gz
 
 MAN1=		ispell.1
 MAN4=		ispell.4 english.4
-MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 \
-		munchlist.1 ispell.1 tryaffix.1
+MLINKS=		ispell.1 buildhash.1 \
+		ispell.1 findaffix.1 \
+		ispell.1 munchlist.1 \
+		ispell.1 tryaffix.1 \
+		ispell.1 spell.1
 
 USE_REINPLACE=	yes
 
@@ -273,6 +276,8 @@ pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
 
 post-install:
+	@${RM} -f ${PREFIX}/bin/spell
+	@${LN} ${PREFIX}/bin/ispell ${PREFIX}/bin/spell
 .if defined(ISPELL_BRITISH)
 	${INSTALL_DATA} ${WRKSRC}/languages/british/english.xlg \
 		${DATADIR}/english.dict
