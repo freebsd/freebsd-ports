@@ -39,18 +39,23 @@ include/nurbs++/surface.h
 include/nurbs++/tri_spline.h
 include/nurbs++/vector.h
 lib/libmatrix.a
+lib/libmatrix.la
 lib/libmatrix.so
 lib/libmatrix.so.1
 lib/libmatrixI.a
+lib/libmatrixI.la
 lib/libmatrixI.so
 lib/libmatrixI.so.1
 lib/libmatrixN.a
+lib/libmatrixN.la
 lib/libmatrixN.so
 lib/libmatrixN.so.1
 lib/libnurbsd.a
+lib/libnurbsd.la
 lib/libnurbsd.so
 lib/libnurbsd.so.1
 lib/libnurbsf.a
+lib/libnurbsf.la
 lib/libnurbsf.so
 lib/libnurbsf.so.1
 @dirrm include/nurbs++
