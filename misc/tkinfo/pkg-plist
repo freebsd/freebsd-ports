@@ -1,6 +1,4 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/tkinfo
-@mode 644
-lib/tk/tkinfo
+lib/tk/tkinfo/searchbox.tcl
+lib/tk/tkinfo/tkinfo.tcl
+lib/tk/tkinfo/topgetopt.tcl
