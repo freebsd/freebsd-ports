@@ -592,7 +592,6 @@ EXTRACT_SUFX?=			.tar.gz
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 
-.if defined(NEWLAYOUT)
 .if (!defined(PATCHDIR) && exists(${MASTERDIR}/patches)) || \
 	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
 	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
@@ -604,56 +603,6 @@ PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
-.else
-.if exists(${MASTERDIR}/pkg-comment) || exists(${MASTERDIR}/pkg-descr) || \
-	exists(${MASTERDIR}/pkg-plist) || exists(${MASTERDIR}/distinfo)
-pre-everything::
-	@${ECHO} "Error: your port uses the new layout.  Please update bsd.port.mk to match the port."
-	@${FALSE}
-.endif
-.endif
-
-# delete from here when NEWLAYOUT is default
-.if exists(${MASTERDIR}/patches.${ARCH}-${OPSYS})
-PATCHDIR?=		${MASTERDIR}/patches.${ARCH}-${OPSYS}
-.elif exists(${MASTERDIR}/patches.${OPSYS})
-PATCHDIR?=		${MASTERDIR}/patches.${OPSYS}
-.elif exists(${MASTERDIR}/patches.${ARCH})
-PATCHDIR?=		${MASTERDIR}/patches.${ARCH}
-.else
-PATCHDIR?=		${MASTERDIR}/patches
-.endif
-
-.if exists(${MASTERDIR}/scripts.${ARCH}-${OPSYS})
-SCRIPTDIR?=		${MASTERDIR}/scripts.${ARCH}-${OPSYS}
-.elif exists(${MASTERDIR}/scripts.${OPSYS})
-SCRIPTDIR?=		${MASTERDIR}/scripts.${OPSYS}
-.elif exists(${MASTERDIR}/scripts.${ARCH})
-SCRIPTDIR?=		${MASTERDIR}/scripts.${ARCH}
-.else
-SCRIPTDIR?=		${MASTERDIR}/scripts
-.endif
-
-.if exists(${MASTERDIR}/files.${ARCH}-${OPSYS})
-FILESDIR?=		${MASTERDIR}/files.${ARCH}-${OPSYS}
-.elif exists(${MASTERDIR}/files.${OPSYS})
-FILESDIR?=		${MASTERDIR}/files.${OPSYS}
-.elif exists(${MASTERDIR}/files.${ARCH})
-FILESDIR?=		${MASTERDIR}/files.${ARCH}
-.else
-FILESDIR?=		${MASTERDIR}/files
-.endif
-
-.if exists(${MASTERDIR}/pkg.${ARCH}-${OPSYS})
-PKGDIR?=		${MASTERDIR}/pkg.${ARCH}-${OPSYS}
-.elif exists(${MASTERDIR}/pkg.${OPSYS})
-PKGDIR?=		${MASTERDIR}/pkg.${OPSYS}
-.elif exists(${MASTERDIR}/pkg.${ARCH})
-PKGDIR?=		${MASTERDIR}/pkg.${ARCH}
-.else
-PKGDIR?=		${MASTERDIR}/pkg
-.endif
-# delete to here when NEWLAYOUT is default
 
 .if defined(USE_IMAKE)
 USE_X_PREFIX=	yes
@@ -958,12 +907,7 @@ MD5?=			/usr/bin/md5
 .else
 MD5?=			md5
 .endif
-.if defined(NEWLAYOUT)
 MD5_FILE?=		${MASTERDIR}/distinfo
-.endif
-# delete from here when NEWLAYOUT is default
-MD5_FILE?=		${FILESDIR}/md5
-# delete to here when NEWLAYOUT is default
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
@@ -1065,7 +1009,6 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
-.if defined(NEWLAYOUT)
 COMMENT?=		${PKGDIR}/pkg-comment
 DESCR?=			${PKGDIR}/pkg-descr
 PLIST?=			${PKGDIR}/pkg-plist
@@ -1073,17 +1016,7 @@ PKGINSTALL?=	${PKGDIR}/pkg-install
 PKGDEINSTALL?=	${PKGDIR}/pkg-deinstall
 PKGREQ?=		${PKGDIR}/pkg-req
 PKGMESSAGE?=	${PKGDIR}/pkg-message
-.endif
 
-# delete from here when NEWLAYOUT is default
-COMMENT?=	${PKGDIR}/COMMENT
-DESCR?=		${PKGDIR}/DESCR
-PLIST?=		${PKGDIR}/PLIST
-PKGINSTALL?=		${PKGDIR}/INSTALL
-PKGDEINSTALL?=		${PKGDIR}/DEINSTALL
-PKGREQ?=			${PKGDIR}/REQ
-PKGMESSAGE?=		${PKGDIR}/MESSAGE
-# delete to here when NEWLAYOUT is default
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
 PKG_CMD?=		/usr/sbin/pkg_create
