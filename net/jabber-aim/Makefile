@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	seanc@FreeBSD.org
-COMMENT=	Jabber User Directory module
+COMMENT=	Jabber AIM Transport module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
