@@ -457,6 +457,7 @@ beroftpd	ports/ftp/beroftpd
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
+bg5pdf		ports/chinese/bg5pdf
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
 biabam		ports/mail/biabam
