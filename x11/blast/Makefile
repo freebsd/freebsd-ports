@@ -3,10 +3,10 @@
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
-# $Id: Makefile,v 1.5 1997/11/27 18:50:58 jseger Exp $
+# $Id: Makefile,v 1.6 1998/01/29 15:51:38 jseger Exp $
 #
 
-DISTNAME=	blast-1.0-ss-10.10
+DISTNAME=	blast-1.0-ss-10.20
 PKGNAME=	blast-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
