@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		biabam
-PORTVERSION=		0.9.2
+PORTVERSION=		0.9.5
 CATEGORIES=		mail
 MASTER_SITES=		http://mmj.dk/biabam/
 
