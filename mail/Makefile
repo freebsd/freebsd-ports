@@ -132,6 +132,7 @@
     SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-Tools
     SUBDIR += p5-Mail-Verify
+    SUBDIR += pantomime
     SUBDIR += pathalias
     SUBDIR += perdition
     SUBDIR += pflogsumm
