@@ -1,0 +1,8 @@
+KSNES9X is a KDE wrapper for the snes9x emulator.
+It allows people to launch SNES ROMs using snes9x as the engine, with
+a "friendly environment".
+
+WWW: http://www.esquadro.com.br/~ismore/
+Author: Ismael Orenstein <perdig@linuxbr.com.br>
+
+- Will <andrews@technologist.com>
