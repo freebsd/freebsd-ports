@@ -11,8 +11,8 @@ CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 DISTNAME=	dcl-5.2-C.3
 
-MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
-COMMENT=	Scientific graphic library for geoscience
+MAINTAINER?=	murakami@ahs.scitec.kobe-u.ac.jp
+COMMENT?=	Scientific graphic library for geoscience
 
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk
