@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	resume
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmlresume
@@ -29,6 +29,7 @@ do-install:
 	${CP} -R ${WRKSRC}/dtd/* ${PREFIX}/share/xml/${PORTNAME}
 	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
 	${CP} -R ${WRKSRC}/xsl/* ${PREFIX}/share/xsl/${PORTNAME}
+	${CP} -R ${WRKSRC}/css ${PREFIX}/share/xsl/${PORTNAME}/format
 	${MKDIR} ${JAVALIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${JAVALIBDIR}
 
