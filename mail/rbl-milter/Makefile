@@ -7,7 +7,7 @@
 
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 
@@ -17,6 +17,7 @@ COMMENT=	A milter that adds mail header warnings on mail from open-relays
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-sendmail=/usr \
 		--with-sendmail-obj=/usr/lib
 
