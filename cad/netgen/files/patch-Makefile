@@ -1,42 +1,46 @@
---- Makefile.orig	Thu Feb 12 11:46:45 2004
-+++ Makefile	Mon May  3 21:56:38 2004
-@@ -16,13 +16,13 @@
+--- Makefile.orig	Tue Nov 16 15:29:39 2004
++++ Makefile	Thu Nov 18 00:05:27 2004
+@@ -21,7 +21,7 @@
  # system libraries:
  #
- # olymp
--  tcltklib = -ltix8.1.8.4 -ltk8.4  -ltcl8.4
+ #
+-tcltklib = -ltix8.1.8.4 -ltk8.4  -ltcl8.4
 +tcltklib = `echo $(TIX_BUILD_LIB_SPEC)` `echo $(TK_LIB_SPEC)` `echo $(TCL_LIB_FLAG)`
- #tcltklib = -L. -ltix8.1.8.4 -ltk8.4 -ltcl8.4
- # tcltklib = -ltix4.1.8.0 -ltk8.0 -ltcl8.0
+ # tcltklib = -ltix4.1.8.3 -ltk8.3 -ltcl8.3
  # tcltklib = -ltix8.2 -ltk8.3 -ltcl8.3
+ # tcltklib = /usr/lib/libtix8.1.8.3.so -ltk8.3 -ltcl8.3
+@@ -29,7 +29,7 @@
+ # tcltklib = -ltix8.2 -ltk8.4 -ltcl8.4
  #
  #
--syslib = $(tcltklib)  -lGL -lGLU -lX11  -lXi -lm  -ldl -lpthread $(SYSLIB2) 
-+syslib = $(tcltklib)  -lGL -lGLU -lX11 -lXi -lm $(PTHREAD_LIBS) $(SYSLIB2)
+-syslib = $(tcltklib) -lGL -lGLU -lX11  -lXi -lm  -ldl -lpthread $(SYSLIB2)
++syslib = $(tcltklib) -lGL -lGLU -lX11  -lXi -lm $(PTHREAD_LIBS) $(SYSLIB2)
  # (maybe you have to remove -ldl)
  #
  #
-@@ -33,9 +33,7 @@
- OCCINC_DIR=$(OCC_DIR)/inc
- OCCLIB_DIR=$(OCC_DIR)/lib
+@@ -43,9 +43,9 @@
+ # OCCINC_DIR=$(OCC_DIR)/inc
+ # OCCLIB_DIR=$(OCC_DIR)/lib
  #
--# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP 
--#
--CPLUSPLUSFLAGS3 = -I$(LIBSRC_DIR)/step
-+# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP
- #
- include $(LIBSRC_DIR)/makefile.mach.$(MACHINE)
- #
-@@ -44,7 +42,7 @@
- .SUFFIXES: .cpp .o
- #
- #
--CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR) -DOPENGL
-+CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR) -DOPENGL $(PTHREAD_CFLAGS)
- LINKFLAGS1 =   -lGL -lGLU -lX11 -lXext -lXmu
+-OCC_DIR=/opt/OpenCASCADE5.2
+-OCCINC_DIR=$(OCC_DIR)/ros/inc
+-OCCLIB_DIR=$(OCC_DIR)/ros/lin/lib
++#OCC_DIR=/opt/OpenCASCADE5.2
++#OCCINC_DIR=$(OCC_DIR)/ros/inc
++#OCCLIB_DIR=$(OCC_DIR)/ros/lin/lib
+ 
+ # add libs in makefile.mach.$(MACHINE)
+ # occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL
+@@ -58,7 +58,7 @@
  #
  #
-@@ -59,7 +57,7 @@
+ #
+-CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR)  -I./ngsolve/include -Ilibsrc/interface -DOPENGL $(METISINC)
++CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR)  -I./ngsolve/include -Ilibsrc/interface -DOPENGL $(METISINC) $(PTHREAD_CFLAGS)
+ #
+ LINKFLAGS1 =   -lGL -lGLU -lX11 -lXext -lXmu   
+ #
+@@ -74,7 +74,7 @@
  # Additional NETGEN Applications:
  #
  # the demo add-on application:
@@ -45,7 +49,7 @@
  #
  # appaddon = -L./addon -laddon
  
-@@ -86,7 +84,7 @@
+@@ -102,7 +102,7 @@
  	cd libsrc; $(MAKE)
  #
  applib:

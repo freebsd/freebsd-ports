@@ -1,0 +1,19 @@
+--- libsrc/makefile.mach.FREEBSD.orig	Wed May  5 23:24:29 2004
++++ libsrc/makefile.mach.FREEBSD	Sun Nov 21 20:32:57 2004
+@@ -18,9 +18,15 @@
+ tcltklib = `echo $(TIX_BUILD_LIB_SPEC)` `echo $(TK_LIB_SPEC)` `echo $(TCL_LIB_FLAG)`
+ 
+ CFLAGS2 =
+-CPLUSPLUSFLAGS2 = $(CXXFLAGS) -I$(X11BASE)/include -DLINUX -DOPENGL
++CPLUSPLUSFLAGS2 = $(CXXFLAGS) -I$(X11BASE)/include -DLINUX -DOPENGL -DNGSOLVE \
++	-ftemplate-depth-99 -finline-limit=20000 \
++	-funroll-loops
++
+ CPLUSPLUSFLAGS3 = -I$(LIBSRC_DIR)/step `echo $(TCL_INCLUDE_SPEC)` `echo -I$(TK_PREFIX)`/include/tk`echo $(TK_VERSION)`
+ #
+ LINKFLAGS2 =  -L$(LOCALBASE)/lib -L$(X11BASE)/lib
+ 
+ SYSLIB2 = -lstdc++
++
++appngs =  lib/$(MACHINE)/*.o -lngsolvebasic
++goalngs = goalngs
