@@ -12,7 +12,8 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-PATCH_SITES=	http://www.cirx.org/~clive/dist/mutt13/
+PATCH_SITES=	http://www.cirx.org/~clive/dist/mutt13/ \
+		ftp://freebsd.sinica.edu.tw/pub/clive/mutt13/
 PATCHFILES=	${PKGNAMEPREFIX}mutt-${PORTVERSION}.diff.gz
 PATCH_DIST_ARGS=	-d ${WRKDIR} --quiet
 
