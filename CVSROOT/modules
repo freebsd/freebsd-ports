@@ -5708,6 +5708,7 @@ mupad		ports/math/mupad
 mupen64-base	ports/emulators/mupen64-base
 mupen64-dummyaudio	ports/emulators/mupen64-dummyaudio
 mupen64-glide	ports/emulators/mupen64-glide
+mupen64-gln64	ports/emulators/mupen64-gln64
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
