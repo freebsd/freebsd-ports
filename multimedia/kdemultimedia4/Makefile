@@ -64,7 +64,7 @@ post-patch::
 
 #.if defined(WITH_XINE)
 #PLIST_APPEND+=	plist.xine
-#LIB_DEPENDS+=	xine.3:${PORTSDIR}/multimedia/libxine
+#LIB_DEPENDS+=	xine.4:${PORTSDIR}/multimedia/libxine
 #BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
 #.endif # defined(WITH_XINE)
 

@@ -7,14 +7,14 @@
 
 PORTNAME=	totem
 PORTVERSION=	0.90.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.hadess.net/files/software/totem/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A Xine-based video player for the Gnome 2 Desktop
 
-LIB_DEPENDS=	xine.3:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.4:${PORTSDIR}/multimedia/libxine \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_X_PREFIX=	yes
