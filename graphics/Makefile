@@ -48,6 +48,7 @@
     SUBDIR += g2
     SUBDIR += gcolor
     SUBDIR += gd
+    SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdtclft
     SUBDIR += geist
