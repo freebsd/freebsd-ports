@@ -1,0 +1,16 @@
+bin/E-FancyLauncher.epplet
+share/enlightenment/epplet_data/E-FancyLauncher/1.gif
+share/enlightenment/epplet_data/E-FancyLauncher/2.gif
+share/enlightenment/epplet_data/E-FancyLauncher/3.gif
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/E-FancyLauncher.h2.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/E-FancyLauncher.s3.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/E-FancyLauncher.v1.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/E-FancyLauncher.v1t.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/E-FancyLauncher.v1ttip.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/MAIN
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/bg.jpg
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/config_window.png
+share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/verdana.ttf
+@dirrm share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT
+@dirrm share/enlightenment/epplet_data/E-FancyLauncher
+share/enlightenment/epplet_icons/E-FancyLauncher.icon
