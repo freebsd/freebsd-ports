@@ -28,12 +28,6 @@ PATCH_STRIP=	-p1
 MAN1=		ztelnet.1
 PLIST_FILES=	bin/ztelnet
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	# we can ignore warnings
 	@( cd ${WRKSRC}/ztelnet && \
@@ -55,4 +49,4 @@ do-install:
 	${INSTALL_PROGRAM} telnet/telnet ${PREFIX}/bin/ztelnet
 	${INSTALL_MAN} ${WRKSRC}/ztelnet.1 ${PREFIX}/man/man1/ztelnet.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

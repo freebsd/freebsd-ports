@@ -1,6 +1,5 @@
-diff -uNr --exclude=*.orig work.old/ztelnet/Config.generic work/ztelnet/Config.generic
---- work.old/ztelnet/Config.generic	Thu Sep 21 04:53:28 1995
-+++ work/ztelnet/Config.generic	Tue Jun 20 22:58:33 2000
+--- work/ztelnet/Config.generic.orig	Wed Sep 20 21:53:28 1995
++++ work/ztelnet/Config.generic	Sun May 30 01:40:50 2004
 @@ -183,23 +183,22 @@
  	@echo " dynix3.0.12 dynix3.0.17"
  	@echo " ultrix3.1 ultrix4.0"
@@ -10,8 +9,9 @@ diff -uNr --exclude=*.orig work.old/ztelnet/Config.generic work/ztelnet/Config.g
  4.4bsd 4.3reno:
  	make -f Makefile.generic ${WHAT} \
 -		LIBS="-lutil -ltermcap ../libtelnet/libtelnet.a" \
+-		LIBPATH="/lib/libc.a /usr/lib/libtermcap.a \
 +		LIBS="-lutil -lcurses -lncurses ../libtelnet/libtelnet.a ../zmodem/librzsz.a" \
- 		LIBPATH="/lib/libc.a /usr/lib/libtermcap.a \
++		LIBPATH="/usr/lib/libc.a /usr/lib/libtermcap.a \
  				../libtelnet/libtelnet.a" \
  		DEST=${DESTDIR}/usr/bin \
 -		DEFINES="-DLINEMODE -DTERMCAP -DKLUDGELINEMODE \
