@@ -8066,6 +8066,7 @@ perlftlib	ports/print/perlftlib
 perlsh		ports/shells/perlsh
 perltidy	ports/devel/perltidy
 personality	ports/sysutils/personality
+petsc		ports/math/petsc
 pexts		ports/lang/pexts
 pf		ports/security/pf
 pfbtopfa	ports/print/pfbtopfa
