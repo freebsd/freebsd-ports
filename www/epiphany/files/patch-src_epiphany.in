@@ -1,0 +1,25 @@
+--- src/epiphany.in.orig	Sat May  3 21:56:42 2003
++++ src/epiphany.in	Sat May  3 21:59:12 2003
+@@ -4,7 +4,7 @@
+ 
+ if test -n "$MOZILLA_FIVE_HOME"; then
+ 	MOZILLA_HOME=$MOZILLA_FIVE_HOME
+-elif [ -f @MOZILLA_HOME@/chrome/comm.jar ]; then
++elif [ -f @MOZILLA_HOME@/libgtkembedmoz.so ]; then
+ 	MOZILLA_HOME=@MOZILLA_HOME@
+ else
+ 	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
+@@ -17,4 +17,12 @@
+ MOZILLA_FIVE_HOME=$MOZILLA_HOME
+ export MOZILLA_FIVE_HOME
+ 
+-exec "$dist_bin/epiphany-bin" "$@"
++MOZ_PLUGIN_PATH=%%X11BASE%%/lib/browser_plugins
++export MOZ_PLUGIN_PATH
++
++if [ -f %%FLASHPLAYER%% ]; then
++    LD_PRELOAD=%%FLASHPLAYER%%
++    export LD_PRELOAD
++fi
++
++exec "%%PREFIX%%/bin/epiphany-bin" "$@"
