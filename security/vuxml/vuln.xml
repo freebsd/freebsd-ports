@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6192ae3d-9595-11d9-a9e0-0001020eed82">
+    <topic>phpmyadmin -- increased privilege vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
+	<range><lt>2.6.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin team reports:</p>
+	<blockquote cite="http://sourceforge.net/forum/forum.php?forum_id=450948">
+	  <p>Escaping of the "_" character was not properly done,
+	    giving a wildcard privilege when editing db-specific
+	    privileges with phpMyAdmin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0653</cvename>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=450948</url>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1113788&amp;group_id=23067&amp;atid=377408</url>
+    </references>
+    <dates>
+      <discovery>2005-02-01</discovery>
+      <entry>2005-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb470368-94d2-11d9-a9e0-0001020eed82">
     <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
     <affects>
