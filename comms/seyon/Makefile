@@ -3,7 +3,7 @@
 # Date created:		3 October 1994
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.8 1998/07/27 23:24:06 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/16 02:25:00 steve Exp $
 #
 
 DISTNAME=	Seyon-2.14b
@@ -16,7 +16,7 @@ MAINTAINER=	me@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
-BROKEN=		Installs file in ${HOME}/.seyon
+BROKEN=		Installs file in \$${HOME}/.seyon
 
 MAN1=		seyon.1
 
