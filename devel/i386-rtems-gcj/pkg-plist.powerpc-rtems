@@ -1,6 +1,8 @@
+bin/grepjar
+bin/jar
 bin/powerpc-rtems-gcj
-bin/gcjh
-bin/jv-scan
-bin/jcf-dump
-lib/gcc-lib/powerpc-rtems/2.95.3/jc1
-lib/gcc-lib/powerpc-rtems/2.95.3/jvgenmain
+bin/powerpc-rtems-gcjh
+bin/powerpc-rtems-jv-scan
+bin/powerpc-rtems-jcf-dump
+lib/gcc-lib/powerpc-rtems/3.2.1/jc1
+lib/gcc-lib/powerpc-rtems/3.2.1/jvgenmain

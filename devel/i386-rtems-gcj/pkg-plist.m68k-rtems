@@ -1,6 +1,8 @@
+bin/grepjar
+bin/jar
 bin/m68k-rtems-gcj
-bin/gcjh
-bin/jv-scan
-bin/jcf-dump
-lib/gcc-lib/m68k-rtems/2.95.3/jc1
-lib/gcc-lib/m68k-rtems/2.95.3/jvgenmain
+bin/m68k-rtems-gcjh
+bin/m68k-rtems-jv-scan
+bin/m68k-rtems-jcf-dump
+lib/gcc-lib/m68k-rtems/3.2.1/jc1
+lib/gcc-lib/m68k-rtems/3.2.1/jvgenmain
