@@ -16,7 +16,7 @@ COMMENT=	The Swarm Simulation System
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 .if defined(WITH_HDF5)
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/graphics/hdf5
+LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		BLT24.3:${PORTSDIR}/x11-toolkits/blt

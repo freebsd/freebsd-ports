@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
 		--enable-static
 PKGINSTALL=	${WRKDIR}/pkg-install
-# Hmm.. tough one.  Found this one when I had graphics/hdf installed
+# Hmm.. tough one.  Found this one when I had science/hdf installed
 # (which installs glist.h) which is picked up before the glib-2.0
 # stuff, with Bad Results[tm]
 #

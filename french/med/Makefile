@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modélisation et Échanges de Données
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhdf5.a:${PORTSDIR}/graphics/hdf5
+BUILD_DEPENDS=	${LOCALBASE}/lib/libhdf5.a:${PORTSDIR}/science/hdf5
 
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

@@ -37,7 +37,7 @@ COMMENT=	Analyse des structures et thermo-mécanique
 
 PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}		\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5				\
+BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/science/hdf5				\
 		${opt_med}:${PORTSDIR}/french/med				\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 LIB_DEPENDS=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
