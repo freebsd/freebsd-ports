@@ -9,6 +9,7 @@ PORTNAME=	WordNet
 PORTVERSION=	2.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
+		http://www.cogsci.princeton.edu/${PORTVERSION}/ \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${PORTVERSION}/
 
 MAINTAINER=	mi@aldan.algebra.com
