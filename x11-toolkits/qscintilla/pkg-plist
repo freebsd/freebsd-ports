@@ -3,6 +3,7 @@ include/qextscintillaapis.h
 include/qextscintillabase.h
 include/qextscintillacommand.h
 include/qextscintillacommandset.h
+include/qextscintilladocument.h
 include/qextscintillaglobal.h
 include/qextscintillalexer.h
 include/qextscintillalexercpp.h
@@ -11,11 +12,12 @@ include/qextscintillalexerhtml.h
 include/qextscintillalexeridl.h
 include/qextscintillalexerjava.h
 include/qextscintillalexerjavascript.h
+include/qextscintillalexerperl.h
 include/qextscintillalexerpython.h
 include/qextscintillalexersql.h
 include/qextscintillamacro.h
 include/qextscintillaprinter.h
-lib/libqscintilla.so.3
+lib/libqscintilla.so.4
 lib/libqscintilla.so
 share/qscintilla/translations/qscintilla_de.qm
 @dirrm share/qscintilla/translations
