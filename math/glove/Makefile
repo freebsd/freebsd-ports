@@ -1,0 +1,105 @@
+# New ports collection makefile for:	Glove
+# Date created:		14 June 2000
+# Whom:			 Mario S F Ferreira <lioux@linf.unb.br> et al.
+#
+# $FreeBSD$
+#
+
+PORTNAME=	glove
+PORTVERSION=	1.0.1
+CATEGORIES=	math
+MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/glove/source/
+DISTNAME=	Glove_source-${PORTVERSION}
+
+MAINTAINER=	lioux@linf.unb.br
+
+BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+		makemake:${JXPORT}
+LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
+		j2dplot-0_6_5.0:${PORTSDIR}/x11-toolkits/libj2dplot \
+		jparser-1_1_8.1:${PORTSDIR}/x11-toolkits/libjparser
+
+WRKSRC=		${WRKDIR}/JX-1.5.3
+
+USE_XLIB=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	JX_INSTALL_ROOT="${X11BASE}/bin" \
+		JX_LIB_ROOT="${X11BASE}/lib"
+PLIST_SUB=	PORTNAME="${PORTNAME}"
+
+# Make environment
+PORTINCLUDES=	-I${X11BASE}/include/jx \
+		-I${X11BASE}/include/jcore \
+		-I${X11BASE}/include/j2dplot \
+		-I${X11BASE}/include/jparser
+
+# Installs dir with proper permissions
+INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
+# program files
+PROGRAMFILES=		glove/glove
+# documents
+DOCFILES=       LICENSE README.binary
+DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
+# additional configuration and header files
+EXTRALIB_PREFIX=	${X11BASE}/lib/jx
+EXTRALIBFILES_MAKE_WRKSRC=	include/make
+# main jx distribution files needed for building
+COPY_JXDIRS=	include
+COPY_JXFILES=	Makefile
+# main jx distribution port wrksrc
+JXPORT=		${PORTSDIR}/x11-toolkits/jx
+JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+JX_MAKE_CONSTANTS=	j2dplot_constants jparser_constants
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 300000
+ALL_TARGET=	freebsd3.x
+.else
+ALL_TARGET=	freebsd2.x
+.endif
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS:="@comment "
+.else
+PLIST_SUB+=	PORTDOCS:=
+.endif # !defined(NOPORTDOCS)
+
+post-extract:
+.for i in ${COPY_JXDIRS}
+	@${CP} -Rp ${JXPORT_WRKSRC}/${i} ${WRKSRC}
+.endfor
+.for i in ${COPY_JXFILES}
+	@${CP} -p ${JXPORT_WRKSRC}/${i} ${WRKSRC}
+.endfor
+
+post-patch:
+	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
+
+pre-build:
+.for i in ${JX_MAKE_CONSTANTS}
+	@${LN} -sf ${EXTRALIB_PREFIX}/make/${i} ${WRKSRC}/include/make
+.endfor
+
+post-build:
+	@cd ${WRKSRC}/programs/${PORTNAME}; ${SETENV} ${MAKE_ENV} makemake; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+			${MAKEFILE} ${MAKE_ARGS}
+
+do-install:
+.if !defined(NOPORTDOCS)
+# Install all documentation
+	@${INSTALL_DATA_DIR} ${DOCDIR_PREFIX}
+.for i in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/programs/${PORTNAME}/${i} ${DOCDIR_PREFIX}
+.endfor
+.endif # !defined(NOPORTDOCS)
+# Install all programs
+.for i in ${PROGRAMFILES}
+	@${INSTALL_PROGRAM} ${WRKSRC}/programs/${i} ${PREFIX}/bin
+.endfor
+
+.include <bsd.port.post.mk>
