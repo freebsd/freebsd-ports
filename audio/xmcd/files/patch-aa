@@ -1,0 +1,19 @@
+*** xmcd.d/Imakefile~	Thu Feb 16 20:48:56 1995
+--- xmcd.d/Imakefile	Thu Feb 16 20:49:17 1995
+***************
+*** 43,49 ****
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
+   */
+! LOCAL_LIBRARIES= XmClientLibs
+  
+  
+  /**** Optional defines:  Change as you see fit. *****************************
+--- 43,49 ----
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
+   */
+! LOCAL_LIBRARIES= -lXm -lXt -lX11 -lXext
+  
+  
+  /**** Optional defines:  Change as you see fit. *****************************
