@@ -18,9 +18,7 @@ DISTNAME=	socket++-1.10
 MAINTAINER=	narvi@haldjas.folklore.ee
 
 GNU_CONFIGURE=	yes
-#NOPROFILE=	true
-
-BROKEN=		"Compiler error"
+NOPROFILE=	true
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
