@@ -1,0 +1,7 @@
+NodeDump displays the internal structure of a parsed Ruby program.
+This is really only of use to people who want to hack the interpreter,
+or who are curious about how Ruby represents their programs
+internally.
+
+Author:	The Pragmatic Programmers, LLC
+WWW:	http://www.pragmaticprogrammer.com/ruby/downloads/nodeDump.html
