@@ -32,6 +32,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 JARFILE=	Azureus2.jar
 
 PLIST_FILES=	%%DATADIR%%/${JARFILE} bin/${PORTNAME}
+PLIST_DIRS=	%%DATADIR%%
 
 do-configure:
 	${SED} -e "s+%%PREFIX%%+${PREFIX}+" -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
