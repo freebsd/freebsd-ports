@@ -239,7 +239,6 @@ agenda-snow-libs	ports/devel/agenda-snow-libs
 agenda-static-libs	ports/devel/agenda-static-libs
 aggregate	ports/net/aggregate
 agrep		ports/textproc/agrep
-agsatellite	ports/audio/agsatellite
 aguri		ports/net/aguri
 ah-tty		ports/sysutils/ah-tty
 ahwm		ports/x11-wm/ahwm
@@ -1310,13 +1309,10 @@ ecu		ports/comms/ecu
 edb		ports/databases/edb
 edith		ports/editors/edith
 editss		ports/games/editss
-edonkey-core	ports/net/edonkey-core
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
 edonkey-gui-gtk-urlslave	ports/net/edonkey-gui-gtk-urlslave
 edonkey-gui-java	ports/net/edonkey-gui-java
 edonkey-tool-hash	ports/misc/edonkey-tool-hash
-edonkey-tool-list	ports/misc/edonkey-tool-list
-edonkey-tool-recovermet	ports/misc/edonkey-tool-recovermet
 edonkey-tool-slist	ports/misc/edonkey-tool-slist
 eel		ports/x11-toolkits/eel
 eel2		ports/x11-toolkits/eel2
@@ -3823,6 +3819,7 @@ linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linux-acu	ports/sysutils/linux-acu
+linux-agsatellite	ports/net/linux-agsatellite
 linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
@@ -3834,8 +3831,11 @@ linux-divxplayer	ports/multimedia/linux-divxplayer
 linux-e2fsprogs	ports/sysutils/linux-e2fsprogs
 linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
+linux-edonkey-core	ports/net/linux-edonkey-core
 linux-edonkey-gui-gtk	ports/net/linux-edonkey-gui-gtk
 linux-edonkey-server	ports/net/linux-edonkey-server
+linux-edonkey-tool-list	ports/misc/linux-edonkey-tool-list
+linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
 linux-esound	ports/audio/linux-esound
 linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
@@ -3872,6 +3872,8 @@ linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-tiff	ports/graphics/linux-tiff
 linux-unace	ports/archivers/linux-unace
+linux-understand_ada	ports/devel/linux-understand_ada
+linux-understand_c	ports/devel/linux-understand_c
 linux-understand_java	ports/devel/linux-understand_java
 linux-ungif	ports/graphics/linux-ungif
 linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
@@ -3879,6 +3881,7 @@ linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vsound	ports/audio/linux-vsound
 linux-winetools	ports/emulators/linux-winetools
 linux-xalf	ports/x11/linux-xalf
+linux-xmovie		ports/multimedia/linux-xmovie
 linux_base	ports/emulators/linux_base
 linux_base-6	ports/emulators/linux_base-6
 linux_base-62	ports/emulators/linux_base-62
@@ -5735,8 +5738,8 @@ p5-type1inst	ports/x11-fonts/p5-type1inst
 p5-vpopmail	ports/mail/p5-vpopmail
 p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
-pad		ports/security/pad
 packit		ports/net/packit
+pad		ports/security/pad
 pager		ports/x11-wm/pager
 paicc		ports/sysutils/paicc
 palmos-sdk	ports/palm/palmos-sdk
@@ -7827,8 +7830,6 @@ unace		ports/archivers/unace
 unadf		ports/archivers/unadf
 unarj		ports/archivers/unarj
 unclutter	ports/misc/unclutter
-understand_ada	ports/devel/understand_ada
-understand_c	ports/devel/understand_c
 undms		ports/archivers/undms
 unison		ports/net/unison
 unix2dos	ports/converters/unix2dos
@@ -8508,7 +8509,6 @@ xmorph		ports/graphics/xmorph
 xmotd		ports/x11/xmotd
 xmountains	ports/graphics/xmountains
 xmove		ports/x11/xmove
-xmovie		ports/multimedia/xmovie
 xmp		ports/audio/xmp
 xmpeg3		ports/audio/xmpeg3
 xmps		ports/multimedia/xmps
@@ -8522,7 +8522,7 @@ xmulti		ports/games/xmulti
 xmx		ports/x11/xmx
 xmysql		ports/databases/xmysql
 xmysqladmin	ports/databases/xmysqladmin
-xnap		ports/audio/xnap
+xnap		ports/net/xnap
 xnc		ports/x11-fm/xnc
 xnee		ports/x11/xnee
 xneko		ports/games/xneko
