@@ -1557,6 +1557,3 @@ lib/%%PYTHON_VERSION%%/site-packages/Ft/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Ft/Lib
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Ft
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/xslt/Debugger
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/xslt
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/xpath
-@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%% 2>/dev/null || true

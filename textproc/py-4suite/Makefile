@@ -7,7 +7,7 @@
 
 PORTNAME=	4suite
 PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +16,11 @@ DISTNAME=	4Suite-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of Python tools for XML processing and object database management
 
-BROKEN=		"Broken pkg-plist"
-
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML}
 
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i "" -E
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
@@ -35,12 +34,12 @@ PLIST_SUB+=	PACKAGE_DIR=_xmlplus PYTHON2_ONLY=""
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e \
-	  's#(copy_to=.)docs#$$1doc/${PORTNAME}#; \
-	   s#(copy_to=.)(test_suite|demo)#$$1examples/${PORTNAME}/$$2#' \
-	  ${WRKSRC}/setup.py
+	@ ${REINPLACE_CMD} \
+	    -e 's#(copy_to=.)docs#\1doc/${PORTNAME}#' \
+	    -e 's#(copy_to=.)(test_suite|demo)#\1examples/${PORTNAME}/\2#' \
+	    ${WRKSRC}/setup.py
 .if defined(NOPORTDOCS)
-	@ ${REINPLACE_CMD} -e 's/(data_files=)data_files/$$1/' \
+	@ ${REINPLACE_CMD} -e 's/(data_files=)data_files/\1/' \
 	  ${WRKSRC}/setup.py
 .endif
 
