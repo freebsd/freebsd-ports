@@ -67,9 +67,12 @@ my %lang_pref = qw(
 	french		fr
 	german		de
 	hebrew		iw
+	hungarian	hu
 	japanese	ja
 	korean		ko
+	portuguese	pt
 	russian		ru
+	ukrainian	uk
 	vietnamese	vi
 );
 my @lang_cat = keys %lang_pref;
