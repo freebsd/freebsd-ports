@@ -566,6 +566,7 @@
     SUBDIR += p5-Inline-Tcl
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
+    SUBDIR += p5-Locale-Maketext-Lexicon
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
     SUBDIR += p5-LockFile-Simple

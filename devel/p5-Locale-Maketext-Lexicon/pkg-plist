@@ -1,0 +1,10 @@
+bin/xgettext.pl
+lib/perl5/site_perl/5.8.0/mach/auto/Locale/Maketext/Lexicon/.packlist
+lib/perl5/site_perl/5.8.0/mach/perllocal.pod
+lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon.pm
+lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon/Gettext.pm
+lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon/Auto.pm
+lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon/Msgcat.pm
+lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon/Tie.pm
+@dirrm lib/perl5/site_perl/5.8.0/mach/auto/Locale/Maketext/Lexicon
+@dirrm lib/perl5/site_perl/5.8.0/Locale/Maketext/Lexicon
