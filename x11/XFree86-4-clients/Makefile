@@ -17,7 +17,7 @@ DISTFILES=	X430src-1.tgz \
 		X430src-3.tgz \
 		X430src-4.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

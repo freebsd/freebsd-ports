@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	4.3.0
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X430src-4.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 font encoding files
 
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients

@@ -18,7 +18,7 @@ DISTFILES=	XFree86-${PORTVERSION}${EXTRACT_SUFX}:x \
 		Wraphelp2.gz:local
 EXTRACT_ONLY=	XFree86-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
 # Override default from XFree86-4-libraries/Makefile.inc

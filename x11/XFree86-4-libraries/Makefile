@@ -22,7 +22,7 @@ EXTRACT_ONLY=	X430src-1.tgz \
 		X430src-2.tgz \
 		X430src-3.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 libraries and headers
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

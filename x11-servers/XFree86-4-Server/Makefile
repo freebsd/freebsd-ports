@@ -22,7 +22,7 @@ EXTRACT_ONLY=	X430src-1.tgz \
 		X430src-2.tgz \
 		X430src-3.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h \

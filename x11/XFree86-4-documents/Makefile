@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X430src-1.tgz \
 		X430src-6.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 documentation
 
 XFREE86_VERSION=	4

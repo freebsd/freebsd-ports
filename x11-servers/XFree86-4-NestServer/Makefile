@@ -22,7 +22,7 @@ EXTRACT_ONLY=	X430src-1.tgz \
 		X430src-2.tgz \
 		X430src-3.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 nested X server
 
 MAN1=			Xnest.1 Xserver.1
