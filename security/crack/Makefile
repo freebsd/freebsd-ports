@@ -18,7 +18,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-RESTRICTED=	"contains crypto (libdes)"
 WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:
