@@ -26,7 +26,8 @@ PATCHFILES=	vmmon-freebsd-0.95.tar.gz \
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 
-RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
+		/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
@@ -113,17 +114,6 @@ pre-install: setoptions
 
 post-install:
 	${LN} -s ${PREFIX}/etc/vmware /etc/vmware
-.if !exists(/dev/rtc) && !exists(${LINUX_DIR}/dev/rtc)
-	@${ECHO} "************************************************************"
-	@${ECHO} "This system doesn't seem to have /dev/rtc device support."
-	@${ECHO} "With it, you can benefit from VMware's rtc support."
-	@${ECHO}
-	@${ECHO} "You may want to grab the unofficial rtc port at:"
-	@${ECHO} "    http://people.FreeBSD.org/~knu/ports/emulators/"
-	@${ECHO}
-	@${ECHO} "Use it at your own risk, thanks."
-	@${ECHO} "************************************************************"
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
