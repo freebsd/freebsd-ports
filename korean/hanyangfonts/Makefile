@@ -3,12 +3,12 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1998/04/19 17:51:34 steve Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:31:21 asami Exp $
 #
 
 DISTNAME=       hanyang-font-pcf
 PKGNAME=        ko-hanyangfonts-1.0
-CATEGORIES=     korean x11
+CATEGORIES=     korean x11-fonts
 MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
 

@@ -3,11 +3,11 @@
 # Date created:		Fri Mar 27 17:26:42 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/05 14:21:40 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:22 asami Exp $
 #
 
 DISTNAME=	ko-kaistfonts-ksc-1.0
-CATEGORIES=	korean x11
+CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://sensor.kaist.ac.kr/pub/fonts/newones/
 DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 		kaist-newmj16.bdf.gz ks_iyagi16.bdf.gz

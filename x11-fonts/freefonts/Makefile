@@ -3,11 +3,11 @@
 # Date created:         Thu Aug  1 21:32:14 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1997/12/04 13:58:06 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/08/05 09:31:42 asami Exp $
 #
 
 DISTNAME=	freefonts-0.10
-CATEGORIES=	x11
+CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	erich@FreeBSD.org

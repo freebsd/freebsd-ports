@@ -3,11 +3,11 @@
 # Date created:		26 Sep 1997
 # Whom: Dai ISHIJIMA & ELISA Font Project <ishijima@tri.pref.osaka.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/28 14:20:17 itojun Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:18 asami Exp $
 #
 
 DISTNAME=	ja-elisa8-1.0
-CATEGORIES=	japanese x11
+CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/Fonts/ \
 		ftp://ftp.iij.ad.jp/pub/X/X11R6.3/%SUBDIR%/ \
 		ftp://ftp.eu.net/X11/R6.3/%SUBDIR%/
