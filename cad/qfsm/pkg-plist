@@ -1,0 +1,4 @@
+bin/qfsm
+%%PORTDOCS%%share/examples/qfsm/ascii_example.fsm
+%%PORTDOCS%%share/examples/qfsm/bin_example.fsm
+%%PORTDOCS%%@dirrm share/examples/qfsm

@@ -25,6 +25,7 @@
     SUBDIR += pdnmesh
     SUBDIR += pisces
     SUBDIR += qcad
+    SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += sceptre
     SUBDIR += sis
