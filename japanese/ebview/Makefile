@@ -28,6 +28,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+post-patch:
+.for file in src/dictheading.c
+	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
+		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
+.endfor
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
