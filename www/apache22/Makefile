@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://ftp.epix.net/apache/dist/httpd/ \
 		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
 		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
 		http://www.freebsd.org/gifs/:freebsd \
 		http://www2.freebsd.org/gifs/:freebsd
 DISTNAME=	httpd-${PORTVERSION}
