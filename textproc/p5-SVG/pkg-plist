@@ -1,5 +1,19 @@
-lib/perl5/site_perl/%%PERL_VER%%/SVG.pm
-lib/perl5/site_perl/%%PERL_VER%%/SVG/Utils.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SVG/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SVG
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SVG
+lib/perl5/site_perl/%%PERL_VER%%/SVG.pm
+lib/perl5/site_perl/%%PERL_VER%%/SVG/DOM.pm
+lib/perl5/site_perl/%%PERL_VER%%/SVG/Element.pm
+lib/perl5/site_perl/%%PERL_VER%%/SVG/Manual.pod
+lib/perl5/site_perl/%%PERL_VER%%/SVG/XML.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/SVG_02_sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/image_sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/inline_sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/inlinesvg.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/minsvg.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/starpath.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/sun_text_sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/svg.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/svgtest2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/yaph5.cgi
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SVG 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SVG 2>/dev/null || true
