@@ -1,4 +1,4 @@
-%%RUBY_SITELIBDIR%%/xmlrpc/GServer.rb
+%%RUBY_SITELIBDIR%%/GServer.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/base64.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/client.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/config.rb
@@ -10,6 +10,9 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb.tk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/multicall.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.fcgi
@@ -19,13 +22,17 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/person.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/monitor
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/perf_async.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_fox.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_tk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/responder.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm/active.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel/tcptunnelgui.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/chat
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/introspection
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/raa
