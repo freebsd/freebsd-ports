@@ -3,10 +3,13 @@ bin/hammie.py
 bin/hammiecli.py
 bin/hammiefilter.py
 bin/hammiesrv.py
+bin/imapfilter.py
 bin/mailsort.py
 bin/mboxtrain.py
+bin/notesfilter.py
 bin/pop3proxy.py
 bin/proxytee.py
+bin/smtpproxy.py
 bin/unheader.py
 %%PYTHON_SITELIBDIR%%/spambayes/Corpus.py
 %%PYTHON_SITELIBDIR%%/spambayes/Corpus.pyc
@@ -23,12 +26,18 @@ bin/unheader.py
 %%PYTHON_SITELIBDIR%%/spambayes/Histogram.py
 %%PYTHON_SITELIBDIR%%/spambayes/Histogram.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/Histogram.pyo
-%%PYTHON_SITELIBDIR%%/spambayes/OptionConfig.py
-%%PYTHON_SITELIBDIR%%/spambayes/OptionConfig.pyc
-%%PYTHON_SITELIBDIR%%/spambayes/OptionConfig.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/ImapUI.py
+%%PYTHON_SITELIBDIR%%/spambayes/ImapUI.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/ImapUI.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/Options.py
 %%PYTHON_SITELIBDIR%%/spambayes/Options.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/Options.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/OptionsClass.py
+%%PYTHON_SITELIBDIR%%/spambayes/OptionsClass.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/OptionsClass.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/ProxyUI.py
+%%PYTHON_SITELIBDIR%%/spambayes/ProxyUI.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/ProxyUI.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/PyMeldLite.py
 %%PYTHON_SITELIBDIR%%/spambayes/PyMeldLite.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/PyMeldLite.pyo
@@ -38,6 +47,12 @@ bin/unheader.py
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.py
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/UserInterface.py
+%%PYTHON_SITELIBDIR%%/spambayes/UserInterface.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/UserInterface.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/Version.py
+%%PYTHON_SITELIBDIR%%/spambayes/Version.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/Version.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/__init__.py
 %%PYTHON_SITELIBDIR%%/spambayes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/__init__.pyo
@@ -71,6 +86,9 @@ bin/unheader.py
 %%PYTHON_SITELIBDIR%%/spambayes/mboxutils.py
 %%PYTHON_SITELIBDIR%%/spambayes/mboxutils.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/mboxutils.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/message.py
+%%PYTHON_SITELIBDIR%%/spambayes/message.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/message.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/msgs.py
 %%PYTHON_SITELIBDIR%%/spambayes/msgs.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/msgs.pyo
@@ -128,3 +146,4 @@ bin/unheader.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes/resources
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes
+@unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
