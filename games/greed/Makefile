@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	greed
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
