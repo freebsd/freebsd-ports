@@ -1,30 +1,31 @@
---- makefile.orig	Wed Dec 24 08:44:58 2003
-+++ makefile	Sun Jan 11 19:47:08 2004
+--- makefile.orig	Fri Aug 20 09:21:00 2004
++++ makefile	Thu Feb  3 19:14:13 2005
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
- .SUFFIXES: .cxx .o .h .a
+ .SUFFIXES: .cxx .o .h .a .c
 -CC = g++
 +CC ?= g++
  AR = ar
  
  # If explicit setting of GTK1 or GTK2 then use that else look for
-@@ -27,9 +27,9 @@
- CONFIGLIB=pkg-config --libs gtk+-2.0 gthread-2.0
+@@ -28,10 +28,10 @@
+ CONFIGTHREADS=
  gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
  else
 -CONFIGFLAGS=gtk-config --cflags
 -CONFIGLIB=gtk-config --libs
++CONFIGFLAGS=pkg-config --cflags gtk+
++CONFIGLIB=pkg-config --libs gtk+
+ CONFIGTHREADS=glib-config --libs gthread
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
-+CONFIGFLAGS=pkg-config --cflags gtk+ gthread
-+CONFIGLIB=pkg-config --libs gtk+ gthread
 +gnomeprefix:=$(PREFIX)
  endif
+ ifndef prefix
  ifdef gnomeprefix
-   prefix=$(gnomeprefix)
-@@ -43,17 +43,17 @@
+@@ -51,17 +51,17 @@
  
- PROG	= ../bin/SciTE
+ all: $(PROG)
  
 -vpath %.h ../src ../../scintilla/include
 +vpath %.h ../src $(X11BASE)/include/scintilla
@@ -33,25 +34,26 @@
  #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src
 +INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src
- CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
+ CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
--CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
+-CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
++CXXTFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
--CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
-+CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
+-CXXTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
++CXXTFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
  
- ifeq ($(shell uname), Darwin)
-@@ -75,8 +75,8 @@
- COMPLIB=../../scintilla/bin/scintilla.a
+ ifndef NO_LUA
+@@ -102,8 +102,9 @@
  
  $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
--MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o $(COMPLIB)
--	$(CC) `$(CONFIGLIB)` `glib-config --libs gthread` -DGTK $^ -o $@
-+MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o
-+	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers -DGTK $^ -o $@
+ MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
+-	$(COMPLIB) $(LUA_OBJS)
+-	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ `$(CONFIGLIB)`
++	$(LUA_OBJS)
++	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers \
++	`$(CONFIGTHREADS)` -DGTK $^ -o $@
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
