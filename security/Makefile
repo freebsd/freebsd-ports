@@ -220,6 +220,7 @@
     SUBDIR += steghide
     SUBDIR += strobe
     SUBDIR += stunnel
+    SUBDIR += subweb
     SUBDIR += sudo
     SUBDIR += super
     SUBDIR += swatch

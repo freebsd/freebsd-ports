@@ -1,0 +1,14 @@
+SubWeb is a proxy/reverse proxy for HTTP flows. It is possible
+with SubWeb to handle and visualize HTTP request, headers, body
+on the fly.
+
+It has three operating modes : proxy, reverse proxy, and midproxy
+(a proxy which requires the pages from another proxy). It can
+also act as a virtual web server, i.e. answer certain request
+based on keyword match.
+
+SubWeb can also allow filtering, and is highly customizable.
+
+WWW:  http://www.hsc-labs.com/tools/subweb/
+
+-- Nicolas Jombart <Nicolas.Jombart@hsc-labs.com>
