@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mahogany
 MAINTAINER=		sk-ports@vegamuse.org
 
 LIB_DEPENDS+=		wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/SWIG
+BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig11
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		latex2html:${PORTSDIR}/textproc/latex2html
 .endif
