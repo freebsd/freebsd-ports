@@ -7338,6 +7338,7 @@ ruby-filelock	ports/devel/ruby-filelock
 ruby-flex_rb	ports/devel/ruby-flex_rb
 ruby-fltk	ports/x11-toolkits/ruby-fltk
 ruby-format	ports/textproc/ruby-format
+ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox	ports/x11-toolkits/ruby-fox
 ruby-freedb	ports/audio/ruby-freedb
 ruby-gconf	ports/devel/ruby-gconf
