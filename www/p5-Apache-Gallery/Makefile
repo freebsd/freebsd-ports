@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -55,6 +56,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/${f} \
 		${PREFIX}/www/icons/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/htdocs/folder.png \
+		${PREFIX}/www/icons/folder-apache-gallery.png
 	${MKDIR} ${PREFIX}/share/Apache-Gallery/css
 	${INSTALL_DATA} ${WRKSRC}/htdocs/gallery.css \
 		${PREFIX}/share/Apache-Gallery/css/
