@@ -1,12 +1,10 @@
 bin/gpgme-config
 include/gpgme.h
+@unexec install-info --delete %D/info/gpgme.info %D/info/dir
 info/gpgme.info
-info/gpgme.info-1
-info/gpgme.info-2
-info/gpgme.info-3
-info/gpgme.info-4
+@exec install-info %D/info/gpgme.info %D/info/dir
 lib/libgpgme.a
 lib/libgpgme.la
 lib/libgpgme.so
-lib/libgpgme.so.8
+lib/libgpgme.so.9
 share/aclocal/gpgme.m4
