@@ -7706,6 +7706,7 @@ tinc		ports/security/tinc
 tinker		ports/biology/tinker
 tintin++	ports/net/tintin++
 tintin++-devel	ports/net/tintin++-devel
+tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
 tinyfugue	ports/net/tinyfugue
 tinymux		ports/games/tinymux
