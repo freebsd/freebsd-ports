@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-XWhois
 PORTVERSION=    0.82
+PORTREVISION=   1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -18,5 +19,8 @@ PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::XWhois.3
+
+post-patch:
+	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f "{}" ";"
 
 .include <bsd.port.mk>
