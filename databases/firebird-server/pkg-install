@@ -137,7 +137,7 @@ chmod ug=rw,o= examples/*.fdb
 chmod ug=rw,o= help/*.fdb
 chmod ug=rw,o= security.fdb
 
-chmod 440 aliases.conf firebird.conf
+chmod 444 aliases.conf firebird.conf
 chmod 660 security.fdb
 
 # remove any existing gds service
