@@ -1,0 +1,17 @@
+The auto nice daemon activates itself in certain intervals and renices jobs
+according to their priority and CPU usage. Jobs owned by root are left alone.
+Jobs are never increased in their priority.
+
+AND is very flexible. The renice intervals can be adjusted as well as the
+default nice level and the activation intervals. A priority database stores
+user/group/job tuples along with their renice values for three CPU usage time
+ranges. Negative nice levels are interpreted as signals to be sent to a
+process, triggered by CPU usage; this way, Netscapes going berserk can be
+killed automatically. The strategy for searching the priority database can be
+configured.
+
+AND also provides network-wide configuration files with host-specific
+sections, as well as wildcard/regexp support for commands in the priority
+database.
+
+WWW: http://and.sourceforge.net/
