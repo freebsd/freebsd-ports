@@ -11,8 +11,8 @@ bin/xnc
 bin/xncsetup
 bin/xnlaunch
 bin/zips.xnc
-lib/libxncaqua.so
-lib/libxncfive.so
+lib/xnc/libxncaqua.so
+lib/xnc/libxncfive.so
 %%PORTDOCS%%share/doc/xnc/doc1.html
 %%PORTDOCS%%share/doc/xnc/doc2.html
 %%PORTDOCS%%share/doc/xnc/doc3.html
@@ -23,3 +23,4 @@ lib/libxncfive.so
 %%PORTDOCS%%share/doc/xnc/doc8.html
 %%PORTDOCS%%share/doc/xnc/index.html
 %%PORTDOCS%%@dirrm share/doc/xnc
+@dirrm lib/xnc
