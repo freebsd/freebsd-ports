@@ -19,6 +19,7 @@ bin/piano
 bin/pig
 bin/quiz
 bin/robots
+bin/rogue
 bin/sail
 bin/snake
 bin/snscore
@@ -101,6 +102,7 @@ battlestar.log
 cfscores
 criblog
 robots_roll
+rogue.scores
 saillog
 snakerawscores
 snake.log
