@@ -13,11 +13,5 @@ include/omapip/omapip.h
 lib/libdhcpctl.a
 lib/libomapi.a
 lib/libdst.a
-%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/omapip
 @dirrm include/isc-dhcp
