@@ -4809,6 +4809,7 @@ p5-ApacheBench	ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
 p5-AppConfig	ports/devel/p5-AppConfig
+p5-AppConfig-Std	ports/devel/p5-AppConfig-Std
 p5-Archie	ports/net/p5-Archie
 p5-Archive-Tar	ports/archivers/p5-Archive-Tar
 p5-Archive-Zip	ports/archivers/p5-Archive-Zip
