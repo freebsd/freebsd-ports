@@ -59,7 +59,11 @@ post-install:
 .include <bsd.port.pre.mk>
 
 # hack to make ogle work with liba52 + djbfft
+.if exists(${LOCALBASE}/lib/liba52.la)
 LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
+.else
+LIBA52_DEP_LIBS=	-L${LOCALBASE}/lib -ldjbfft -lm
+.endif
 
 .if ${ARCH} == "i386"
 . if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
