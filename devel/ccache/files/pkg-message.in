@@ -1,20 +1,5 @@
-To use ccache add the following to /etc/make.conf
 
-.if !defined(NOCCACHE)
-CC=%%PREFIX%%/%%CCLINKDIR%%cc
-CXX=%%PREFIX%%/%%CCLINKDIR%%c++
-.endif
+=== NOTE ===
+Please read %%LOCALBASE%%/%%HOWTO%% for information on using
+ccache with FreeBSD ports and src.
 
-If you have a problem building a port
-define NOCCACHE and try again.
-
-To use ccache with ports that use USE_GCC
-add %%PREFIX%%/%%CCLINKDIR%% to your PATH
-and make sure it is before %%LOCALBASE%%/bin
-
-Ccache has installed links for the following compilers
-%%CCACHE_COMPILERS%%
-in %%PREFIX%%/%%CCLINKDIR%%
-
-Please make sure you have the compiler installed before you do this or your
-build will fail because it will not be able to find the compiler.

@@ -1,0 +1,50 @@
+#
+# $FreeBSD$
+#
+
+To use ccache add the following to /etc/make.conf
+
+.if !defined(NOCCACHE)
+.if ${.CURDIR:M/usr/src*}
+CC=%%LOCALBASE%%/libexec/ccache/cc
+CXX=%%LOCALBASE%%/libexec/ccache/c++
+.else
+CC=cc
+CXX=c++
+.endif
+.endif
+
+For Korn/Bourne shells Add the following to /etc/profile:
+ export PATH=%%LOCALBASE%%/libexec/ccache/:$PATH
+ export CCACHE_PATH=/usr/bin:%%LOCALBASE%%/bin
+
+For csh/tcsh Add the following to /etc/csh.cshrc:
+ setenv PATH %%LOCALBASE%%/libexec/ccache/:$PATH
+ setenv CCACHE_PATH /usr/bin:%%LOCALBASE%%/bin
+
+--
+
+To use distcc:
+
+For Korn/Bourne shells Add the following to /etc/profile:
+ export CCACHE_PREFIX=distcc
+ export DISTCC_HOSTS="localhost host1 host2"
+
+For csh/tcsh Add the following to /etc/csh.cshrc:
+ setenv CACHE_PREFIX distcc
+ setenv DISTCC_HOSTS "localhost host1 host2"
+
+--
+
+If you have a problem building a port
+define NOCCACHE and try again.
+
+--
+
+Ccache has installed links for the following compilers
+%%CCACHE_COMPILERS%%
+in %%PREFIX%%/%%CCLINKDIR%%
+
+!!! WARNING !!!
+Please make sure you have the compiler installed before you do this or your
+build will fail because it will not be able to find the compiler.
