@@ -7,6 +7,7 @@
 
 PORTNAME=	JX
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=   ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
 		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
@@ -16,28 +17,26 @@ DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-INSTALLS_SHLIB=	yes
 USE_BISON=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_WRKSRC=	${WRKDIR}
 USE_GMAKE=	yes
-MAKE_ENV+=	JX_INSTALL_ROOT="${PREFIX}/bin" \
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	JX_INSTALL_ROOT="${PREFIX}/bin" \
 		JX_LIB_ROOT="${PREFIX}/lib" \
-		X11PREFIX="${X11PREFIX}" \
-		PATH="${WRKSRC}/programs/makemake:${PATH}" \
-		PORTCFLAGS="${CFLAGS}" \
-		PORTCXXFLAGS="${CXXFLAGS}"
+		PATH="${WRKSRC}/programs/makemake:${PATH}"
 PLIST_SUB=	LIBACE="${LIBACE}" \
 		LIBJTOOL="${LIBJTOOL}" \
-		LIBJX="${LIBJX}" \
-		X11PREFIX="${X11PREFIX}"
-EXTRA_PATCHES=	${WRKDIR}/patch-aa ${WRKDIR}/patch-ab
-
-X11PREFIX?=	${X11BASE}
+		LIBJX="${LIBJX}"
+INSTALLS_SHLIB=	yes
 
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
@@ -46,11 +45,10 @@ LIBFILES=	libACE-5_0_2.so \
 		libjcore-1_5_3.a libjcore-1_5_3.so \
 		libjx-1_5_3.a libjx-1_5_3.so
 # bin program files
-PROGRAMFILES=		lib/util/autodoc/autodoc programs/makemake/makemake
-PROGRAMFILES_SCRIPT=	makemake/makecheck makemake/maketouch
-# x11 program files
-X11R6FILES=		jxlayout/jxlayout
-X11R6FILES_SCRIPT=	jxlayout/jfdesign
+PROGRAMFILES=		lib/util/autodoc/autodoc programs/jxlayout/jxlayout \
+			programs/makemake/makemake
+PROGRAMFILES_SCRIPT=	jxlayout/jfdesign makemake/makecheck \
+			makemake/maketouch
 # header files
 INCLUDEDIR=	jcore jx
 INCLUDEDIR_ACE_WRKSRC=	ACE/ACE_wrappers/ace
@@ -75,9 +73,11 @@ EXTRALIBFILES_MAKE_DIR=		. sys
 # odd behavior
 POSTBUILD_WRKSRC=	makemake jxlayout
 # post patch preprocessing
-POSTPATCH_PREPROCESS_FILES=	patch-aa patch-ab
-# post patch garbage colletion
-POSTPATCH_CLEAN_WRKSRC=		include/make include/make/sys
+POSTPATCH_FILES=	patch-aa
+# post configure placement directory
+POSTCONFIGURE_WRKSRC=		include/make/sys
+# configuration preprocessing
+CONFIGURE_PREPROCESSING_FILES=	FreeBSD-2.x_g++ FreeBSD-3.x_g++
 
 .include <bsd.port.pre.mk>
 
@@ -99,20 +99,26 @@ PLIST_SUB+=	PORTDOCS:="@comment "
 PLIST_SUB+=	PORTDOCS:=
 .endif # !defined(NOPORTDOCS)
 
-pre-patch:
-.for i in ${POSTPATCH_PREPROCESS_FILES}
-	@${SED} "s!X11PREFIX!${X11PREFIX}!g" ${FILESDIR}/${i} > ${WRKDIR}/${i}
+post-patch:
+.for i in ${CONFIGURE_PREPROCESSING_FILES}
+	@${CP} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i} ${WRKDIR}/${i}.in
+	@cd ${WRKDIR}; ${PATCH} -s ${i}.in < ${FILESDIR}/${POSTPATCH_FILES}
 .endfor
 
-post-patch:
-.for i in ${POSTPATCH_CLEAN_WRKSRC}
-	@cd ${WRKSRC}/${i} ; ${RM} *.orig
+pre-configure:
+	@${CP} ${FILESDIR}/configure.in ${WRKDIR}
+	@cd ${WRKDIR}; autoconf
+
+post-configure:
+.for i in ${CONFIGURE_PREPROCESSING_FILES}
+	@${CP} ${WRKDIR}/${i} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i}
 .endfor
 
 # odd behavior
 post-build:
 .for i in ${POSTBUILD_WRKSRC}
-	@cd ${WRKSRC}/programs/${i}; ${SETENV} ${MAKE_ENV} ${GMAKE}
+	@cd ${WRKSRC}/programs/${i}; ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 .endfor
 
 do-install:
@@ -155,7 +161,7 @@ do-install:
 			do \
 				${INSTALL_DATA} $${k} ${EXAMPLEDIR_PREFIX}/${i}/$${j} ; \
 			done; \
-		fi; \
+		fi ; \
 	done
 .endfor
 .endif # !defined(NOPORTDOCS)
@@ -170,25 +176,28 @@ do-install:
 # Install all header files
 .for i in ${INCLUDEDIR}
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/${i} ; \
-	for j in ${WRKSRC}/include/${i}/*.h ${WRKSRC}/include/${i}/*.th ; \
+	for j in ${WRKSRC}/include/${i}/*.*h \
+		${WRKSRC}/include/${i}/*.tmpl \
+		${WRKSRC}/include/${i}/*.tmpls ; \
 	do \
-		${INSTALL_DATA} $${j} ${PREFIX}/include/${i} ; \
+		if [ -f $${j} ]; \
+		then \
+			${INSTALL_DATA} $${j} ${PREFIX}/include/${i}/ ; \
+		fi ; \
 	done
 .endfor
 .for i in ${INCLUDEDIR_ACE_DIR}
-	@${INSTALL_DATA_DIR} ${PREFIX}/include/ace/${i}
-	@${INSTALL_DATA} ${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.cpp \
-		${PREFIX}/include/ace/${i}/
-	@${INSTALL_DATA} ${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.h \
-		${PREFIX}/include/ace/${i}/
-	@${INSTALL_DATA} ${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.i \
-		${PREFIX}/include/ace/${i}/
-.endfor
-# Install all *.tmpl* files
-	@for j in ${WRKSRC}/include/jcore/*.tmpl* ; \
+	@${INSTALL_DATA_DIR} ${PREFIX}/include/ace/${i} ; \
+	for j in ${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.cpp \
+		${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.h \
+		${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.i ; \
 	do \
-		${INSTALL_DATA} $${j} ${PREFIX}/include/jcore ; \
+		if [ -f $${j} ]; \
+		then \
+			${INSTALL_DATA} $${j} ${PREFIX}/include/ace/${i}/ ; \
+		fi ; \
 	done
+.endfor
 # Install all libraries
 .for i in ${LIBFILES}
 	@${INSTALL_PROGRAM} ${WRKSRC}/lib/${i} ${PREFIX}/lib
@@ -208,7 +217,7 @@ do-install:
 		if [ -f $${j} ]; \
 		then \
 			${INSTALL_DATA} $${j} ${EXTRALIB_PREFIX}/make/${i}/ ; \
-		fi; \
+		fi ; \
 	done
 .endfor
 # Install all programs
@@ -216,12 +225,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 .for i in ${PROGRAMFILES_SCRIPT}
-	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
-.endfor
-.for i in ${X11R6FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/programs/${i} ${PREFIX}/bin
-.endfor
-.for i in ${X11R6FILES_SCRIPT}
 	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
 .endfor
 
