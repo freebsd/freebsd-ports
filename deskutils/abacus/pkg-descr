@@ -1,0 +1,20 @@
+   Abacus is a small, light and easy to use spreadsheet being developed
+as graduation project under the tutorship of Prof. Arlindo Oliveira,
+and the spreadsheet is being developed using the Tcl/Tk toolkit, as
+well as plain old C/C++ for all the "number-crunching" tasks.
+The following functionalities are available in the latest version:
+   Multiple spreadsheets, limited by the amount of memory you have
+available. Small set of built-in functions that include statistical,
+financial, and the usual math and trig functions, including a slick
+menu-like interface to make it easy to paste formulas. Cell editing
+with all the usual Cut/Copy/Paste/Delete functions implemented. Cell
+formating with a load of different formats, plus fonts, italics, bold
+font size and borders. Column and Row insertion, deletion, resizing.
+Sorting using all sorts of weird sort methods, so many we find it
+confusing ourselves and we made it! Autosum - you select and press the
+button and it sums the data up the way (we hope!) you want. Graphs you
+can delete, move around and resize. Printing via Postscript.
+Imports/Exports CSV,Tab separated, Wk1 and TinySheet (for the popular
+PalmPilot organizer) formats.
+
+http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/abacus.html

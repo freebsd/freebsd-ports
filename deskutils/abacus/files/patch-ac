@@ -1,0 +1,11 @@
+--- calc/Makefile	Thu Nov  6 00:30:09 1997
++++ /home/andy/tmp/wrk/calc/Makefile	Tue Aug 18 15:32:43 1998
+@@ -58,7 +58,7 @@
+ 	$(LEX) -i -t scan.l > scan.c
+ 
+ gram.o: gram.cc
+-	$(CCC) $(IFLAGS) -g gram.cc -o gram.o -c
++	$(CCC) $(CCFLAGS) $(IFLAGS) -g gram.cc -o gram.o -c
+ 
+ gram.cc: gram.y scan.c
+ 	$(YACC) -d gram.y 
