@@ -20,6 +20,7 @@
     SUBDIR += bbjd
     SUBDIR += biblereader
     SUBDIR += bidwatcher
+    SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
     SUBDIR += boxes

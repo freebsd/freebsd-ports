@@ -1,0 +1,81 @@
+--- Makefile--	Sat Jan 16 18:08:59 1999
++++ Makefile	Thu May 24 21:49:08 2001
+@@ -1,24 +1,27 @@
+-# overall makefile for birthday, to get around the differing syntax of Borland and GNU makes.
++######################################################################
++# birthday. Reminder of birthdays and other events in the near future.
++# CVS/RCS string removed 
++# Edited by Niek Bergboer <niek@bergboer.net> for FreeBSD ports
+ 
+-# version for GNU make
+-Makefile.gnu: makemake Makefile.in
+-	./makemake unix < Makefile.in > $@
+-
+-# version for Borland make
+-Makefile.bor: makemake Makefile.in
+-	makemake dos < Makefile.in > $@
+-
+-# I think -o for BCC sets the /object/ file name, rather than the executable ...
+-makemake: makemake.c
+-	$(CC) -o makemake makemake.c
+-
+-# targets to make directly, without having to make -f
+-birthday install clean: Makefile.gnu
+-	make -f Makefile.gnu $@
+-
+-birthday.exe bdwin.exe: Makefile.bor
+-	make -f Makefile.bor $@
+-
+-# for UNIX only
+-../birthday.tgz: *
+-	tar --exclude=RCS/* --dereference -czf ../birthday.tgz *
++all: birthday
++
++OS=UNIX
++OSCFLAGS=-Wall -Wstrict-prototypes
++CFLAGS+=-D$(OS) $(OSCFLAGS)
++
++# engine
++ENGSRC=bdengine.c xmalloc.c
++CMDSRC=birthday.c bdcal.c $(ENGSRC) 
++
++CMDOBJ=$(CMDSRC:.c=.o)
++
++birthday: $(CMDOBJ)
++	$(CC) $(LDFLAGS) $(CMDOBJ) -o $@
++
++install: birthday birthday.man
++       # Installation of dirs bin and man/man1 removed 
++	install -c -s birthday $(PREFIX)/bin/birthday
++	install -c -m 0644 birthday.man $(PREFIX)/man/man1/birthday.1
++
++clean:
++	rm -f birthday *.o 
+--- bdengine.c--	Thu May 10 20:03:34 2001
++++ bdengine.c	Thu May 24 21:43:51 2001
+@@ -186,9 +186,10 @@
+     if (n > 0) { \
+       ptr+=sprintf(ptr, "%d " txt "%s", n, (n == 1 ? "" : "s")); \
+       terms--; \
+-      if (orgterms > 1) \
+-	if (terms == 1) ptr += sprintf(ptr, " and "); \
+-	else if (terms > 1) ptr += sprintf(ptr, ", "); \
++      if (orgterms > 1) { \
++	if (terms == 1) { ptr += sprintf(ptr, " and "); } \
++	else { if (terms > 1) ptr += sprintf(ptr, ", "); } \
++      } \
+     }
+ #endif /* NUMS_AS_WORDS */
+ 
+--- getopt.h--	Fri Aug  9 11:53:20 1996
++++ getopt.h	Thu May 24 21:43:51 2001
+@@ -100,7 +100,8 @@
+    errors, only prototype getopt for the GNU C library.  */
+ extern int getopt (int argc, char *const *argv, const char *shortopts);
+ #else /* not __GNU_LIBRARY__ */
+-extern int getopt ();
++/* But FreeBSD STDC does have the GNU syntax */
++extern int getopt (int argc, char *const *argv, const char *shortopts);
+ #endif /* not __GNU_LIBRARY__ */
+ extern int getopt_long (int argc, char *const *argv, const char *shortopts,
+ 		        const struct option *longopts, int *longind);

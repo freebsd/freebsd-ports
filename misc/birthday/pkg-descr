@@ -1,0 +1,7 @@
+Birthday displays a list of events which are coming up in the near future,
+based on a config file (~/.birthdays) in the user's home directory.  
+Used in a user's .profile or crontab it can save the day for many
+a terminally disorganised soul...
+
+Originally by Andy Mortimer <andy.mortimer@zetnet.co.uk>
+Ported by Niek Bergboer <niek@bergboer.net>
