@@ -3,7 +3,7 @@
 # Date created:		24 December 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.8 1998/12/12 21:03:35 jseger Exp $
+# $Id: Makefile,v 1.9 1999/06/17 08:16:11 itojun Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
@@ -39,9 +39,9 @@ SAMPLES=	README README.jp cloud.gif dad.eps dad.gif default.mgp \
 		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
 		gradation.mgp mgp-old1.gif mgp-old2.gif mgp-old3.gif \
 		mgp1.gif mgp2.gif mgp3.gif mgp3.xbm mgprc-sample \
-		multilingual.mgp sample-jp.mgp sample.mgp sendmail6-jp.mgp \
-		sendmail6.mgp tutorial-jp.mgp tutorial.mgp v6-jp.mgp \
-		v6.mgp v6header.eps v6header.gif
+		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
+		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp tutorial.mgp \
+		v6-jp.mgp v6.mgp v6header.eps v6header.gif
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
