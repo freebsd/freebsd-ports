@@ -1,0 +1,8 @@
+IP Sorcery (ajs023@motorola.com) is a program that can generate IP packets
+(TCP, UDP, ICMP), with total control to fields, bits and data. It can work
+whitin the command line or a graphical frond-end written in GTK.
+IP Sorcery is useful to test program, firewalls, routers, etc.
+
+WWW: http://www.legions.org/~phric/ipsorcery.html
+
+--Nicolas Jombart <Nicolas.Jombart@hsc-labs.com>
