@@ -13,6 +13,8 @@ BUILD_DEPENDS=	icc:${PORTSDIR}/lang/icc
 
 ONLY_FOR_ARCHS=	i386
 
+NO_PACKAGE=	Software compiled with icc may not be redistributed without a purchased license
+
 MASTERDIR=	${.CURDIR}/../stlport
 COMPILER=	icc
 
