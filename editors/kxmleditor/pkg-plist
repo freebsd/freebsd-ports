@@ -68,7 +68,13 @@ share/apps/kxmleditor/pics/xml_text.png
 share/doc/HTML/en/kxmleditor/common
 share/doc/HTML/en/kxmleditor/index.docbook
 share/doc/HTML/en/kxmleditor/screenshot.png
+share/doc/HTML/en/kxmleditor/setupspcchr.png
+share/doc/HTML/en/kxmleditor/setuptargz.png
 share/doc/HTML/en/kxmleditor/xml.png
+share/icons/hicolor/32x32/apps/kxmleditor.png
+share/icons/hicolor/48x48/apps/kxmleditor.png
+share/icons/locolor/16x16/apps/kxmleditor.png
+share/icons/locolor/32x32/apps/kxmleditor.png
 @dirrm share/doc/HTML/en/kxmleditor
 @dirrm share/apps/kxmleditor/pics
 @dirrm share/apps/kxmleditor/icons/locolor/16x16/actions
