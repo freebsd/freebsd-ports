@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.3 1997/04/01 19:29:42 obrien Exp $
+# $Id: Makefile,v 1.4 1997/04/26 23:55:25 asami Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -16,9 +16,9 @@ MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 LIB_DEPENDS=    tk41\\.1\\.:${PORTSDIR}/x11/tk41
-LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
+LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
-FILESDIR=	${.CURDIR}/../../devel/uulib/files
+FILESDIR=	${.CURDIR}/../../converters/uulib/files
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	xdeview

@@ -1,9 +1,9 @@
-# New ports collection makefile for:	uulib
+# New ports collection makefile for:	uudeview
 # Version Required:     0.5.9
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.9 1997/04/01 19:29:39 obrien Exp $
+# $Id: Makefile,v 1.10 1997/04/26 23:55:24 asami Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
-LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
+LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
-FILESDIR=	${.CURDIR}/../../devel/uulib/files
+FILESDIR=	${.CURDIR}/../../converters/uulib/files
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=        --enable-inews=${PREFIX}/news/lib/inews \
 			--disable-tcl
