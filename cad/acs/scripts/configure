@@ -1,11 +1,12 @@
 #!/bin/sh
-
+set +vx
 # fill in $PREFIX
 sedpgm=`eval echo \'s,@PREFIX@,$PREFIX,g\'`
 sed -e "$sedpgm" <${WRKSRC}/src/md_unix.h >/tmp/sed$$
 cp /tmp/sed$$ ${WRKSRC}/src/md_unix.h
 rm /tmp/sed$$
 
+echo ${WRKSRC}
 # write a simple Makefile to $WRKSRC
 cat >${WRKSRC}/Makefile <<EOF
 all:
