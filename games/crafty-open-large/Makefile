@@ -8,7 +8,7 @@
 PORTNAME=	crafty-open-large
 PORTVERSION=	19960910
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/large/
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
