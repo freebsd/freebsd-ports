@@ -1,13 +1,13 @@
 # New ports collection makefile for:	imap-uw
-# Version required:	4.7
+# Version required:	4.7a
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	imap-4.7
-PKGNAME=	imap-uw-4.7
+DISTNAME=	imap-4.7a
+PKGNAME=	imap-uw-4.7a
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/ \
@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		imap-utils${EXTRACT_SUFX} \
-		${DISTNAME}.lock-patch.tar
+		imap-utils${EXTRACT_SUFX}
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
 
@@ -42,6 +41,9 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
 
+post-extract:
+	@${CP} ${FILESDIR}/safegets.[ch] ${WRKSRC}/src/mtest/
+
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 .if ${PAMAUTH} != "no"
@@ -49,9 +51,6 @@ post-configure:
 .else
 	@${ECHO_MSG} ">> You can use PAM authentication building with \"PAMAUTH=yes\""
 .endif
-
-pre-patch:
-	@${CP} -f ${WRKDIR}/lock-patch/*.c ${WRKSRC}/src/osdep/unix/
 
 post-build:
 	@(cd ${WRKDIR}/mlock; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
