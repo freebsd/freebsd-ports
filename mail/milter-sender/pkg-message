@@ -8,4 +8,14 @@ include(`milter-sender.mc')dnl
 Don't forget to remake and reinstall the sendmail configuration file
 after modifying YOUR-CONF.mc.
 
+IMPORTANT NOTE for those updating from older releases:
+
+The default cachefile format has changed from bdb to flatfile, because
+the author has observed instabilities and cache corruption problems in
+milter-sender with the version of BerkeleyDB used in base FreeBSD.
+
+So, if one has observed such behaviour before, or just for the sake
+of stability, he should change the CacheType= setting to flatfile in
+milter-sender.cf and move the old cache file away.
+
 ************************************************************************

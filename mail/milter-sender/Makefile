@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter-sender
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	mail
 MASTER_SITES=	http://www.snert.com/Software/download/
-DISTFILES=	libsnert-1.39.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=	libsnert-1.40.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time sender address verification, based on Milter API
@@ -25,7 +25,7 @@ MAKEFILE=	makefile
 .include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} < 440000 )
-BUILD_DEPENDS=	gxargs:${PORTSBASE}/misc/findutils
+BUILD_DEPENDS+=	gxargs:${PORTSBASE}/misc/findutils
 .endif
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
@@ -43,13 +43,22 @@ DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool \
+CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool --enable-cache=flatfile \
 		--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} NAME=milter_sender
+
+post-extract:
+	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/milter-sender.sh > ${WRKSRC}/milter-sender.sh.freebsd
 
 post-patch:
 .if ( ${OSVERSION} < 440000 ) # please contact vs@ if in doubt
 	${REINPLACE_CMD} 's/xargs -J{}/gxargs -i{}/' ${WRKSRC}/../lib/configure
-	${REINPLACE_CMD} 's+/usr/sbin/daemon -f ++' ${WRKSRC}/milter-sender.sh.in
 .endif
 	${REINPLACE_CMD} "s,-fvolatile,," ${WRKSRC}/configure
 
