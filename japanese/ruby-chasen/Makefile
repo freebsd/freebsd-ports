@@ -19,6 +19,8 @@ COMMENT=	ChaSen module for Ruby
 
 LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
+BROKEN=		"Does not build (cannot open Makefile)"
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
