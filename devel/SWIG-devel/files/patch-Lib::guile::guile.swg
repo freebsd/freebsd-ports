@@ -1,6 +1,7 @@
-diff -urN ../SWIG1.3a5/Lib/guile/guile.swg ./Lib/guile/guile.swg
---- ../SWIG1.3a5/Lib/guile/guile.swg	Sat Sep  2 11:25:27 2000
-+++ ./Lib/guile/guile.swg	Tue Feb 27 06:12:33 2001
+Index: SWIG/Lib/guile/guile.swg
+diff -u SWIG/Lib/guile/guile.swg:1.11 SWIG/Lib/guile/guile.swg:1.11.2.2
+--- Lib/guile/guile.swg:1.11	Sat Sep  2 11:25:27 2000
++++ Lib/guile/guile.swg	Mon Feb 26 11:57:56 2001
 @@ -7,6 +7,10 @@
  
  /* SWIG pointer structure */
@@ -27,7 +28,7 @@ diff -urN ../SWIG1.3a5/Lib/guile/guile.swg ./Lib/guile/guile.swg
  SWIGSTATIC
 -void SWIG_Guile_RegisterTypes(swig_type_info **table)
 +void SWIG_Guile_RegisterTypes(swig_type_info **table,
-+                             swig_type_info **init)
++			      swig_type_info **init)
  {
 -  for (; *table; table++) {
 -    swig_type_info *type = *table;

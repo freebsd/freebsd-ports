@@ -7,7 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	${VER}a5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel perl5 python ruby tcl82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/ \
@@ -17,26 +17,44 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
-		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
-
 VER=		1.3
 
-USE_PERL5=	yes
+SWIG_LANGUAGES?=	guile perl python ruby tcl
+.for lang in ${SWIG_LANGUAGES}
+WANT_SWIG_${lang:U}=	yes
+.endfor
+
+.if defined(WANT_SWIG_GUILE)
+BUILD_DEPENDS+=		guile:${PORTSDIR}/lang/guile
+.endif
+.if defined(WANT_SWIG_PERL)
+USE_PERL5=		yes
+.endif
+.if defined(WANT_SWIG_PYTHON)
+USE_PYTHON=		yes
+PYTHON_NO_DEPENDS=	yes
+BUILD_DEPENDS+=		${PYTHON_CMD}:${PYTHON_PORTSDIR}
+CONFIGURE_ARGS+=	--with-pyincl=${PYTHON_INCLUDEDIR} \
+			--with-pylib=${PYTHON_LIBDIR}
+.endif
+.if defined(WANT_SWIG_RUBY)
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-PYTHON_VERSION?=	python1.5
-PYTHON_NO_DEPENDS=	yes
+.endif
+.if defined(WANT_SWIG_TCL)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.2/ \
+			--with-tcllib=${LOCALBASE}/lib/tcl8.2/
+.endif
+
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
-CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.2/ \
-		--with-tcllib=${PREFIX}/lib/tcl8.2/
 ALL_TARGET=	swig runtime
 PLIST_SUB=	VER="${VER}"
 
 post-install:
-	${LN} ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
+	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
 .include <bsd.port.mk>
