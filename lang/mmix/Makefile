@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	20020113
+PORTVERSION=	20020216
 CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
 DISTNAME=	mmix
 
 MAINTAINER=	keith@FreeBSD.org
-
-BROKEN=		"Incorrect checksum"
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
