@@ -6,10 +6,13 @@ share/gnome/help/oregano/C/legal.xml
 share/gnome/help/oregano/C/oregano.xml
 share/gnome/help/oregano/es/legal.xml
 share/gnome/help/oregano/es/oregano.xml
+share/gnome/help/oregano/fr/legal.xml
+share/gnome/help/oregano/fr/oregano.xml
 share/gnome/mime-info/oregano.keys
 share/gnome/mime-info/oregano.mime
 share/gnome/omf/oregano/oregano-C.omf
 share/gnome/omf/oregano/oregano-es.omf
+share/gnome/omf/oregano/oregano-fr.omf
 share/gnome/oregano/glade/clamp-properties-dialog.glade2
 share/gnome/oregano/glade/log-window.glade2
 share/gnome/oregano/glade/page-properties.glade2
@@ -69,6 +72,7 @@ share/mime/text/oregano.xml
 @dirrm share/gnome/oregano/glade
 @dirrm share/gnome/oregano
 @dirrm share/gnome/omf/oregano
+@dirrm share/gnome/help/oregano/fr
 @dirrm share/gnome/help/oregano/es
 @dirrm share/gnome/help/oregano/C
 @dirrm share/gnome/help/oregano
