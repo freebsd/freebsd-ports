@@ -1,0 +1,7 @@
+lib/kde3/kcm_kontactknt.la
+lib/kde3/kcm_kontactknt.so
+lib/kde3/libkontact_newstickerplugin.la
+lib/kde3/libkontact_newstickerplugin.so
+share/applications/kdeaddons-kontact-plugins-3.2.1
+share/services/kcmkontactknt.desktop
+share/services/kontact/newstickerplugin.desktop

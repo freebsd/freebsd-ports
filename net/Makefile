@@ -237,6 +237,7 @@
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmldonkey
+    SUBDIR += kontact-plugins
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += kpopup
