@@ -1,0 +1,42 @@
+libexec/emacs/%%EMACS_VER%%/i386--freebsd/wnn.so
+share/emacs/site-lisp/egg/busyu.el
+share/emacs/site-lisp/egg/busyu.elc
+share/emacs/site-lisp/egg/egg.el
+share/emacs/site-lisp/egg/egg.elc
+share/emacs/site-lisp/egg/egg-jsymbol.el
+share/emacs/site-lisp/egg/egg-jsymbol.elc
+share/emacs/site-lisp/egg/egg-keymap.el
+share/emacs/site-lisp/egg/egg-keymap.elc
+share/emacs/site-lisp/egg/isearch-ext.el
+share/emacs/site-lisp/egg/isearch-ext.elc
+share/emacs/site-lisp/egg/wnn-egg.el
+share/emacs/site-lisp/egg/wnn-egg.elc
+share/emacs/site-lisp/egg/wnn-client.el
+share/emacs/site-lisp/egg/eggrc-sj3
+share/emacs/site-lisp/egg/eggrc-v41
+share/emacs/site-lisp/egg/eggrc-wnn
+@exec ln -sf %D/%F share/emacs/site-lisp/egg/.eggrc
+@unexec rm -f %D/share/emacs/site-lisp/egg/.eggrc
+share/emacs/site-lisp/egg/its/han-kata.el
+share/emacs/site-lisp/egg/its/han-kata.elc
+share/emacs/site-lisp/egg/its/hangul.el
+share/emacs/site-lisp/egg/its/hangul.elc
+share/emacs/site-lisp/egg/its/hankaku.el
+share/emacs/site-lisp/egg/its/hankaku.elc
+share/emacs/site-lisp/egg/its/hira.el
+share/emacs/site-lisp/egg/its/hira.elc
+share/emacs/site-lisp/egg/its/kata.el
+share/emacs/site-lisp/egg/its/kata.elc
+share/emacs/site-lisp/egg/its/katainput.el
+share/emacs/site-lisp/egg/its/katainput.elc
+share/emacs/site-lisp/egg/its/pinyin.el
+share/emacs/site-lisp/egg/its/pinyin.elc
+share/emacs/site-lisp/egg/its/zenkaku.el
+share/emacs/site-lisp/egg/its/zenkaku.elc
+share/emacs/site-lisp/egg/its/zhuyin.el
+share/emacs/site-lisp/egg/its/zhuyin.elc
+@dirrm share/emacs/site-lisp/egg/its
+@dirrm share/emacs/site-lisp/egg
+%%DOCDIR%%/README.jp
+%%DOCDIR%%/ChangeLog
+@dirrm %%DOCDIR%%

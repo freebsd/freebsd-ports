@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Oct 11 11:04:13 1998
++++ src/Makefile.in	Sun Oct 11 13:50:36 1998
+@@ -14,7 +14,7 @@
+ CFLAGS = -g -O2
+ ALL_CFLAGS = $(CFLAGS) -nostdlib -shared -fPIC -pipe -I$(emacssrc)/src
+ WNN_CFLAGS = -I$(wnn_includes) -DWNN_EMACS -DWNN_EMACS_DL $(wnn_define)
+-WNN_LDFLAGS = -lwnn
++WNN_LDFLAGS = -L/usr/local/lib -lwnn6
+ 
+ all: wnn.so
+ 

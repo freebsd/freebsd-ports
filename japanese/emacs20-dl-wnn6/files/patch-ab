@@ -1,0 +1,15 @@
+--- src/wnn.c.orig	Sun Oct 11 11:03:42 1998
++++ src/wnn.c	Sun Oct 11 13:51:17 1998
+@@ -297,9 +297,9 @@
+ #include <ctype.h>
+ 
+ #include "config.h"
+-#include "commonhd.h"
+-#include "cplib.h"
+-#include "jllib.h"
++#include <commonhd.h>
++#include <cplib.h>
++#include <jllib.h>
+ 
+ /* UCHAR が二重定義されるので */
+ #define _UCHAR_T
