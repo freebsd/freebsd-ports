@@ -20,6 +20,10 @@ PLIST=		pkg-plist
 KCFONTS_WRKSRC=	`cd ${PORTSDIR}/chinese/kcfonts; make -V WRKSRC`
 FCITX_WRKSRC=	`cd ${PORTSDIR}/chinese/fcitx; make -V WRKSRC`
 
+BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 post-patch:
 	${REINPLACE_CMD} -e "s;jiskan16.bdf.gz;kc15f.bdf.gz;g" \
 		-e "s;ja_JP.ujis:Coding;ja_JP.ujis:;g" \
