@@ -32,6 +32,8 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 post-extract:
