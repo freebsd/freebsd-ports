@@ -1,0 +1,15 @@
+--- scripts/utf8-edit.orig	Tue Mar  8 01:06:46 2005
++++ scripts/utf8-edit	Tue Mar  8 01:07:08 2005
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ PATH=$PATH:/opt/gnome/bin:/usr/local/bin
+ 
+ for i in gedit kedit kate
+ do
+-  which $i >& /dev/null
++  which $i > /dev/null
+   if [ $? = 0 ]; then
+     UTF8ED=$i
+     break
