@@ -1,94 +1,80 @@
-# New ports collection makefile for:	linux_base-8
-# Date created:				2003-06-02
+# New ports collection makefile for:	linux_base-suse-9.1
+# Date created:				2004-12-19
 # Whom:					trevor
 # based on ports/emulators/linux_base by Marcel Moolenaar and others
 #
 # $FreeBSD$
 #
 
-PORTNAME=		linux_base-8
-PORTVERSION=		8.0
-PORTREVISION=		4
+PORTNAME=		linux_base-suse
+PORTVERSION=		9.1
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
-			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
-MASTER_SITE_SUBDIR=    \
-			${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
-			updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/:new
-DISTFILES=		redhat-release-8.0-8.noarch.rpm \
-			glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
-			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
-			setup-2.5.20-1.noarch.rpm \
-			filesystem-2.1.6-5.noarch.rpm \
-			basesystem-8.0-1.noarch.rpm \
-			libattr-2.0.8-3.${MACHINE_ARCH}.rpm \
-			libacl-2.0.11-2.${MACHINE_ARCH}.rpm \
-			libelf-0.8.2-2.${MACHINE_ARCH}.rpm \
-			bzip2-libs-1.0.2-5.${MACHINE_ARCH}.rpm \
-			termcap-11.0.1-13.noarch.rpm \
-			compat-db-3.3.11-2.${MACHINE_ARCH}.rpm \
-			db4-4.0.14-14.${MACHINE_ARCH}.rpm \
-			gdbm-1.8.0-18.${MACHINE_ARCH}.rpm \
-			glib-1.2.10-8.${MACHINE_ARCH}.rpm \
-			libtermcap-2.0.8-31.${MACHINE_ARCH}.rpm \
-			bash-2.05b-5.${MACHINE_ARCH}.rpm \
-			bzip2-1.0.2-5.${MACHINE_ARCH}.rpm \
-			compat-libstdc++-7.3-2.96.110.${MACHINE_ARCH}.rpm \
-			ncurses-5.2-28.${MACHINE_ARCH}.rpm \
-			info-4.2-5.${MACHINE_ARCH}.rpm \
-			grep-2.5.1-4.${MACHINE_ARCH}.rpm \
-			fileutils-4.1.9-11.${MACHINE_ARCH}.rpm \
-			popt-1.7-1.06.${MACHINE_ARCH}.rpm \
-			readline-4.3-3.${MACHINE_ARCH}.rpm \
-			setserial-2.17-9.${MACHINE_ARCH}.rpm \
-			libstdc++-3.2-7.${MACHINE_ARCH}.rpm \
-			slang-1.4.5-11.${MACHINE_ARCH}.rpm \
-			sh-utils-2.0.12-3.${MACHINE_ARCH}.rpm \
-			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
-			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
-			freetype-2.1.2-7.${MACHINE_ARCH}.rpm \
-			zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm:new
+MASTER_SITES=		${MASTER_SITE_SUSE}
+MASTER_SITE_SUBDIR=	i386/9.1/suse/i586
+DISTFILES=	suse-release-9.1-0.i586.rpm \
+		glibc-locale-2.3.3-98.i586.rpm \
+		glibc-2.3.3-98.i586.rpm \
+		filesystem-9.1-0.i586.rpm \
+		libattr-2.4.12-56.i586.rpm \
+		db-4.2.52-85.i586.rpm \
+		gdbm-1.8.3-225.i586.rpm \
+		glib-1.2.10-586.i586.rpm \
+		bash-2.05b-305.i586.rpm \
+		ncurses-5.4-59.i586.rpm \
+		readline-4.3-306.i586.rpm \
+		zlib-1.2.1-70.i586.rpm \
+		info-4.6-61.i586.rpm \
+		grep-2.5.1-416.i586.rpm \
+		desktop-file-utils-0.3.0.cvs20030807-221.i586.rpm \
+		coreutils-5.2.1-23.i586.rpm \
+		popt-1.7-176.i586.rpm \
+		insserv-1.00.2-85.i586.rpm \
+		setserial-2.17-577.i586.rpm \
+		libstdc++-3.3.3-41.i586.rpm \
+		slang-1.4.9-121.i586.rpm \
+		bzip2-1.0.2-344.i586.rpm \
+		libacl-2.2.21-54.i586.rpm \
+		libselinux-1.8-16.i586.rpm \
+		rpm-4.1.1-177.i586.rpm \
+		libgcc-3.3.3-41.i586.rpm \
+		termcap-2.0.8-876.i586.rpm \
+		freetype2-2.1.7-53.i586.rpm
 
-MAINTAINER=		trevor@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode (only for i386)
+MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Basic packages for Linux mode from SUSE 9.1/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-deb* linux_base-gen*
+CONFLICTS=	linux_base-6* linux_base-7* linux_base-debian* \
+		linux_base-gentoo* linux_base-rh-9*
+
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
-ONLY_FOR_ARCHS=		i386 amd64
-DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
+ONLY_FOR_ARCHS=		i386
+DIST_SUBDIR=		rpm/${MACHINE_ARCH}/suse
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
-
-# Let's avoid hardcoding 'en' as the language.
-LANG=			en
 
 .ifdef USE_LINUX
 .error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
 .include <bsd.port.pre.mk>
-
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
 RPMFLAGS=		--root ${WRKSRC} --dbpath ${DBPATH} --nodeps \
 			--replacepkgs --ignoreos --ignorearch
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
-
 REMOVE_DIRS=		boot dev home initrd root tmp var/tmp usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
-BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
+BRAND_FILES=		bin/rpm sbin/ldconfig
 
 .if (${ARCH} == "amd64")
 LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
-MACHINE_ARCH=		i386
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
@@ -96,14 +82,10 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-do-patch:
-	@${DO_NADA}
-
 do-extract:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 	@${MKDIR} ${WRKSRC}/${DBPATH} ${WRKSRC}/var/tmp ${WRKSRC}/lib
 	@cd ${WRKSRC}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
 	@${RPM} --initdb --root ${WRKSRC} --dbpath ${DBPATH}
@@ -132,7 +114,7 @@ do-extract:
 # cases. Most notably staroffice6.
 #
 	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${WRKSRC}/etc
-	${TOUCH} ${WRKSRC}/etc/mtab
+	${TOUCH} ${WRKSRC}/etc/mtab ${WRKSRC}/etc/host.conf
 #
 # Finish
 #
