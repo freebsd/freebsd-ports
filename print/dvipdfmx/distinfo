@@ -1,2 +1,4 @@
 MD5 (dvipdfmx-20031116.tar.gz) = 9c56e59c1536b4cb6f2606948c3e669c
 SIZE (dvipdfmx-20031116.tar.gz) = 325457
+MD5 (dvipdfmx-20031116.patch) = a2313bf0e2b4a7ce1aaf3d0b48a409fc
+SIZE (dvipdfmx-20031116.patch) = 676
