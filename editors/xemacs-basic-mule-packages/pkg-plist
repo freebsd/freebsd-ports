@@ -59,6 +59,7 @@ lib/xemacs/mule-packages/info/skk.info
 lib/xemacs/mule-packages/info/skk.info-1
 lib/xemacs/mule-packages/info/skk.info-2
 lib/xemacs/mule-packages/info/skk.info-3
+lib/xemacs/mule-packages/info/skk.info-4
 lib/xemacs/mule-packages/lisp/egg-its/ChangeLog
 lib/xemacs/mule-packages/lisp/egg-its/_pkg.el
 lib/xemacs/mule-packages/lisp/egg-its/auto-autoloads.el
@@ -226,6 +227,7 @@ lib/xemacs/mule-packages/lisp/skk/skk.elc
 lib/xemacs/mule-packages/man/elib/elib.texi
 lib/xemacs/mule-packages/man/elib/gpl.texi
 lib/xemacs/mule-packages/man/skk/gpl.texi
+lib/xemacs/mule-packages/man/skk/skk-faq.texi
 lib/xemacs/mule-packages/man/skk/skk.texi
 lib/xemacs/mule-packages/pkginfo/MANIFEST.egg-its
 lib/xemacs/mule-packages/pkginfo/MANIFEST.elib
