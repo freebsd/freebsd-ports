@@ -206,6 +206,7 @@
     SUBDIR += reportmagic
     SUBDIR += roxen
     SUBDIR += ruboard
+    SUBDIR += ruby-http-access
     SUBDIR += screem
     SUBDIR += sitecopy
     SUBDIR += skipstone
