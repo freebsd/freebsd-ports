@@ -1,92 +1,98 @@
 # New ports collection makefile for:    linux_devtools
-# Date created:         Jul 9, 1999
+# Date created:         Oct 3, 2001
 # Whom:                 marcel@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=		linux_devtools
-PORTVERSION=		6.1
+PORTVERSION=		7.1
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_KERNEL_HEADERS} \
 			${RPM_GLIBC_DEVEL} \
-			make-3.77-6.${MACHINE_ARCH}.rpm \
-			cpp-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-c++-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-g77-1.1.2-24.${MACHINE_ARCH}.rpm \
+			${RPM_LIBSTDCXX_DEVEL} \
+			${RPM_MAKE} \
+			binutils-2.10.91.0.2-3.${MACHINE_ARCH}.rpm \
+			${RPM_CPP} \
+			${RPM_GCC} \
+			${RPM_GCC_CXX} \
+			${RPM_GCC_G77} \
 			${RPM_GDB} \
 			${RPM_X_DEVEL}
+EXTRACT_ONLY=
 
 PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
-PATCHFILES=
+PATCHFILES=		${UPDATES}
 
 MAINTAINER=		marcel@FreeBSD.org
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		\
-	${PREFIX}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-7
 
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
-PREFIX=			/compat/linux
-EXTRACT_ONLY=
+PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
+# Let's avoid hardcoding 'en' as the language.
+LANG=			en
+
+# XXX - Increase the number of mirrors. Favor those that also hold
+#	the IA-64 packages.
 RPM_MIRRORS=		\
+	ftp://ftp.rutgers.edu/pub/redhat/__DIR__/ \
 	ftp://ftp.redhat.com/redhat/__DIR__/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/__DIR__/ \
-	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
-	ftp://mirror.nucba.ac.jp/mirror/redhat/__DIR__/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/ \
-	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
-	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
+	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/
 
-STDDIR=			linux/6.1/en/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=			linux/updates/6.1/en/os/${MACHINE_ARCH}
+STDDIR=		linux/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
+UPDDIR=		linux/updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
 .if (${MACHINE_ARCH} == "i386")
-RPM_GDB=		gdb-4.18-4.i386.rpm
-RPM_GLIBC_DEVEL=	glibc-devel-2.1.2-11.i386.rpm
-RPM_KERNEL_HEADERS=	kernel-headers-2.2.12-20.i386.rpm
-RPM_X_DEVEL=		XFree86-devel-3.3.5-3.i386.rpm
+RPM_CPP=
+RPM_GCC=
+RPM_GCC_CXX=
+RPM_GCC_G77=
+RPM_GDB=		gdb-5.0rh-5.i386.rpm
+RPM_GLIBC_DEVEL=	glibc-devel-2.2.2-10.i386.rpm
+RPM_KERNEL_HEADERS=
+RPM_LIBSTDCXX_DEVEL=
+RPM_MAKE=		make-3.79.1-5.i386.rpm
+RPM_X_DEVEL=		XFree86-devel-4.0.3-5.i386.rpm
+UPDATES=		cpp-2.96-85.i386.rpm gcc-2.96-85.i386.rpm \
+			gcc-c++-2.96-85.i386.rpm gcc-g77-2.96-85.i386.rpm \
+			kernel-headers-2.4.9-31.i386.rpm \
+			libstdc++-devel-2.96-85.i386.rpm
 .else
-RPM_GDB=		gdb-4.18-5.alpha.rpm
-RPM_GLIBC_DEVEL=	glibc-devel-2.1.2-17.alpha.rpm
-RPM_KERNEL_HEADERS=	kernel-headers-2.2.13-0.9.alpha.rpm
-RPM_X_DEVEL=		XFree86-devel-3.3.5-17.alpha.rpm
+RPM_CPP=		cpp-2.96-87.alpha.rpm
+RPM_GCC=		gcc-2.96-87.alpha.rpm
+RPM_GCC_CXX=		gcc-c++-2.96-87.alpha.rpm
+RPM_GCC_G77=		gcc-g77-2.96-87.alpha.rpm
+RPM_GDB=		gdb-5.0rh-9.alpha.rpm
+RPM_GLIBC_DEVEL=	glibc-devel-2.2.3-11.alpha.rpm
+RPM_KERNEL_HEADERS=	kernel-headers-2.4.3-12.alpha.rpm
+RPM_LIBSTDCXX_DEVEL=	libstdc++-devel-2.96-87.alpha.rpm
+RPM_MAKE=		make-3.79.1-6.alpha.rpm
+RPM_X_DEVEL=		XFree86-devel-4.0.3-21.alpha.rpm
+UPDATES=
 .endif
 
 DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-			--replacepkgs
+RPM=			LC_ALL=C rpm
+RPMFLAGS=		--root ${LINUXBASE} --dbpath ${DBPATH} --nodeps \
+			--replacepkgs --ignoreos
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
-REMOVE_DIRS=		/dev /tmp /var/tmp
-REMOVE_FILES=		/boot/kernel.h
-
-.if ${OSVERSION} <= 320001
-#
-# Hack to let the rpm installer run.  The actual kernel change occurred after
-# 400008 on 4.0-current and well after 320001, but we'll assume people running
-# -current and -stable stay reasonably up-to-date.
-#
-# Define this if you get messages that look like
-#
-# --
-# ELF interpreter /compat/linux/lib/ld-linux.so.2 not found
-# execution of script failed
-# --
-#
-NEEDLOADLINK=		true
-.endif
+REMOVE_DIRS=		dev tmp var/tmp
+REMOVE_FILES=
 
 do-patch:
 	@${DO_NADA}
@@ -95,44 +101,31 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-#
-# Setup a chroot'able environment
-#
-	@${MKDIR} ${PREFIX}/tmp
-	@${MKDIR} ${PREFIX}/var/tmp
-	@${MKDIR} ${PREFIX}/dev
-	@${RM} -f ${PREFIX}/dev/null
-	@mknod ${PREFIX}/dev/null c 2 2
-	@${CHMOD} 666 ${PREFIX}/dev/null
-.if defined(NEEDLOADLINK)
-	@${MKDIR} ${PREFIX}/compat
-	@${LN} -s / ${PREFIX}/compat/linux
-.endif
+	@${MKDIR} ${LINUXBASE}/tmp
+	@${MKDIR} ${LINUXBASE}/var/tmp
+	@${MKDIR} ${LINUXBASE}/dev
+	@${RM} -f ${LINUXBASE}/dev/null
+	@mknod ${LINUXBASE}/dev/null c 2 2
+	@${CHMOD} 666 ${LINUXBASE}/dev/null
 #
 # Install all packages.
-#
 	@for R in ${DISTFILES}; do \
 		${ECHO} $$R; \
-		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
+		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Install updates
-#
 	@for R in ${PATCHFILES}; do \
 		${ECHO} $$R; \
-		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
+		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Finish
-#
-.if defined(NEEDLOADLINK)
-	@${RM} -rf ${PREFIX}/compat
-.endif
 	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${PREFIX}/$$D; \
+		${RM} -rf ${LINUXBASE}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} -f ${PREFIX}/$$F; \
+		${RM} ${LINUXBASE}/$$F; \
 	done
 
 .include <bsd.port.post.mk>
