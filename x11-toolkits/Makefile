@@ -21,6 +21,8 @@
     SUBDIR += gevas
     SUBDIR += gnome--
     SUBDIR += gnome-look
+    SUBDIR += gnustep-gui
+    SUBDIR += gnustep-xgps
     SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk-Mac2-theme
