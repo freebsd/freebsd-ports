@@ -1,3 +1,7 @@
-KDE provides an integrated X11 based environment, much like CDE.
+These libraries are used by KDE2-based programs and
+provide MANY advantages over the original KDE 1.x
+libraries.
 
 WWW: http://www.kde.org/
+
+--Will <andrews@technologist.com>
