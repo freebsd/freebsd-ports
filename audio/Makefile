@@ -465,6 +465,7 @@
     SUBDIR += xwave
     SUBDIR += yammi
     SUBDIR += yamt
+    SUBDIR += yell
     SUBDIR += zinf
 
 .include <bsd.port.subdir.mk>
