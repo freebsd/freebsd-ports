@@ -1,0 +1,12 @@
+Dia is a GTK+ based diagram creation program released under the GPL license. 
+
+Dia is designed to be much like the commercial Windows program
+'Visio'. It can be used to draw different kind of diagrams. In this
+first version there is support for UML static structure diagrams
+(class diagrams) and network diagrams. It can currently load and
+save diagrams to a custom fileformat and export to postscript.
+
+WWW: http://www.lysator.liu.se/~alla/dia/
+
+-- 
+Marcin Cieslak <saper@system.pl>
