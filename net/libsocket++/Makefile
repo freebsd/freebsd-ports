@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	libsocket++
-PORTVERSION=	1.12.8
+PORTVERSION=	1.12.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/
 DISTNAME=	socket++-${PORTVERSION}
 
-MAINTAINER=	narvi@haldjas.folklore.ee
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
