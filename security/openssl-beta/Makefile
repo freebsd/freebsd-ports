@@ -6,14 +6,27 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+.ifdef OPENSSL_SNAPSHOT
+PORTREVISION!=	date -v-1d +%Y%m%d
+.else
+PORTVERSION=	0.9.7a
+.endif
 CATEGORIES=	security devel
+.ifdef OPENSSL_SNAPSHOT
+MASTER_SITES=	http://www.openssl.org/snapshot/ \
+		ftp://ftp.openssl.org/snapshot/ \
+		ftp://ftp.sunet.se/pub/security/tools/net/openssl/snapshot/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/snapshot/
+.else
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
+.endif
 PKGNAMESUFFIX=	-beta
+.ifdef OPENSSL_SNAPSHOT
+DISTNAME=	${PORTNAME}-${PORTVERSION}-stable-SNAP-${PORTREVISION}
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -21,50 +34,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
-.else
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
-.endif
-
-USE_PERL5=	yes
-.if defined(NOSHARED)
-PLIST_SUB+=	SHARED="@comment "
-.else
-PLIST_SUB+=	SHARED=""
-ALL_TARGET=	freebsd-shared all
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	4
-.else
-SHLIBVER=	3
-.endif
-MAKE_ENV+=	SHLIBVER=${SHLIBVER}
-PLIST_SUB+=	SHLIBVER=${SHLIBVER}
-INSTALLS_SHLIB=	yes
-.endif
-
-.if defined(OPENSSL_OVERWRITE_BASE)
-PKGNAMESUFFIX=	-beta-overwrite-base
-PREFIX=		/usr
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	3
-.else
-SHLIBVER=	2
-.endif
-OPENSSLDIR=	/etc/ssl
-MANPREFIX=	${PREFIX}/openssl
-PLIST_SUB+=	MANDIR=""
-PLIST_SUB+=	NOBASE="@comment "
-.else
-OPENSSLDIR=	${PREFIX}/openssl
-MANPREFIX=	${PREFIX}
-PLIST_SUB+=	MANDIR="@comment "
-PLIST_SUB+=	NOBASE=""
-.endif
-
-MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NO_LATEST_LINK=	yes
 
@@ -857,6 +826,51 @@ MLINKS=	dgst.1 md4.1 \
 	des_modes.7 DES.7 \
 	des_modes.7 Modes.7 \
 	des_modes.7 of.7
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
+.else
+MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
+.endif
+
+USE_PERL5=	yes
+.if defined(NOSHARED)
+PLIST_SUB+=	SHARED="@comment "
+.else
+PLIST_SUB+=	SHARED=""
+ALL_TARGET=	freebsd-shared all
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	4
+.else
+SHLIBVER=	3
+.endif
+MAKE_ENV+=	SHLIBVER=${SHLIBVER}
+PLIST_SUB+=	SHLIBVER=${SHLIBVER}
+INSTALLS_SHLIB=	yes
+.endif
+
+.if defined(OPENSSL_OVERWRITE_BASE)
+PKGNAMESUFFIX=	-beta-overwrite-base
+PREFIX=		/usr
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	3
+.else
+SHLIBVER=	2
+.endif
+OPENSSLDIR=	/etc/ssl
+MANPREFIX=	${PREFIX}/openssl
+PLIST_SUB+=	MANDIR=""
+PLIST_SUB+=	NOBASE="@comment "
+.else
+OPENSSLDIR=	${PREFIX}/openssl
+MANPREFIX=	${PREFIX}
+PLIST_SUB+=	MANDIR="@comment "
+PLIST_SUB+=	NOBASE=""
+.endif
+
+MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 .if ${MACHINE_ARCH} == "i386"
