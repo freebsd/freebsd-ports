@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8009.460
+PORTVERSION=	2.8010.462
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8009/ \
-		http://http.distributed.net/pub/dcti/v2.8009/
+MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8010/ \
+		http://http.distributed.net/pub/dcti/v2.8010/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTFILES=      dnetc460-freebsd-x86-elf.tar.gz
+DISTFILES=      dnetc462-freebsd-x86-elf.tar.gz
 .elif ${ARCH} == "alpha"
-BROKEN=         "No longer available.  Please contact dbaker@distributed.net if you would like to build the native Alpha port"
+BROKEN=         "Not immediately available.  Please try again tomorrow."
 .endif
 
 ONLY_FOR_ARCHS=	i386
