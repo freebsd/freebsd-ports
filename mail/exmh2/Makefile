@@ -7,11 +7,10 @@
 
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6.3
+PORTREVISION=	0
 CATEGORIES+=	mail tk83
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/
-MASTER_SITES+=	ftp://tcl.activestate.com/pub/tcl/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/%SUBDIR%/
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
