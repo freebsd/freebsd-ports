@@ -1,0 +1,15 @@
+--- if.c.orig	Mon Jul  8 20:38:24 2002
++++ if.c	Wed Mar 10 15:47:26 2004
+@@ -285,7 +285,12 @@
+     int i;
+ 
+     /* BSD only opens one socket for both Discovery and Session packets */
++#if defined(__FreeBSD__)
++    /* Confirmed for FreeBSD 4.8-R [SeaD] */
++    if (!hwaddr) {
++#else
+     if (fd >= 0) {
++#endif
+ 	return fd;
+     }
+ 

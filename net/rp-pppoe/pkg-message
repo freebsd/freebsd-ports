@@ -1,0 +1,4 @@
+Note that many of the script this port installs haven't been tested in
+a long time and the components tested are pppoe and pppoe-relay for the
+major part. Use the adsl-* configuration scripts at your own risk.
+Feedback about success and failure to the port maintainer is appreciated though.

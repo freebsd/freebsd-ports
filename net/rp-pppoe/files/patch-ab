@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jul  8 20:38:24 2002
++++ configure	Wed Mar 10 15:50:51 2004
+@@ -2083,7 +2083,7 @@
+ 
+ 
+ # Determine what targets to build
+-TARGETS="pppoe pppoe-server"
++TARGETS="pppoe pppoe-server pppoe-relay"
+ 
+ # pppoe-sniff is built only on Linux and Solaris
+ if test "$ac_cv_header_linux_if_packet_h" = "yes" -o "$ac_cv_header_sys_dlpi_h" = "yes" ; then

@@ -5,11 +5,14 @@ sbin/adsl-start
 sbin/adsl-status
 sbin/adsl-stop
 sbin/pppoe
+sbin/pppoe-relay
 sbin/pppoe-server
 etc/ppp/firewall-masq.sample
 etc/ppp/firewall-standalone.sample
 etc/ppp/pap-secrets.sample
 etc/ppp/pppoe-server-options.sample
-@unexec if cmp -s %D/etc/ppp/pppoe.conf.sample %D/etc/ppp/pppoe.conf ; then rm %D/etc/ppp/pppoe.conf ; fi
+@unexec for i in ppp/pppoe.conf rc.d/04pppoe-server.sh rc.d/04pppoe-relay.sh ; do if cmp -s %D/etc/$i.sample %D/etc/$i ; then rm %D/etc/$i ; fi ; done
 etc/ppp/pppoe.conf.sample
+etc/rc.d/04pppoe-server.sh.sample
+etc/rc.d/04pppoe-relay.sh.sample
 @unexec rmdir %D/etc/ppp 2>/dev/null || echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
