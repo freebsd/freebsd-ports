@@ -1,5 +1,5 @@
---- config.make.orig	Sun Jan 30 20:24:55 2000
-+++ config.make	Sun Feb 13 13:29:53 2000
+--- config.make.orig	Tue Apr 11 14:02:25 2000
++++ config.make	Thu Apr 13 06:07:58 2000
 @@ -57,13 +57,13 @@
  
  # variable parameters, can be changed at run-time, DO NOT DELETE ANYTHING!!!
@@ -33,7 +33,7 @@
  
  # Directories for installing documentation, not used by subst.pl
 -INFODIR			= /usr/info
--HTMLDIR			= /html/mj/fidogate
+-HTMLDIR			= /html/fidogate
 -HTMLLOGDIR		= /html/log
 +INFODIR			= ${PREFIX}/share/doc/fidogate/info
 +HTMLDIR			= ${PREFIX}/share/doc/fidogate/html
