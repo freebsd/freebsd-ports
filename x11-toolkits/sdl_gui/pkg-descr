@@ -1,0 +1,6 @@
+SDL_gui is a library written in C++ for displaying and controlling user
+interface elements in an SDL application. It has the following set of
+widgets: Screen, Button, ToggleButton, Label, Picture, Panel, CardStack,
+TextEntry and ProgressBar.
+
+WWW: http://www.newimage.com/~rhk/SDL_gui/
