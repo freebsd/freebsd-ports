@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -36,8 +37,17 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$prefix/share/doc/gqview-$$VERSION|${DOCSDIR}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|$$(datadir)/doc/gqview-$$(VERSION)/html|${DOCSDIR}/html|g' \
+		${WRKSRC}/doc/Makefile.in
+
 post-install:
+	${MKDIR} ${PREFIX}/share/gnome/apps/Graphics
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
+	${MKDIR} ${PREFIX}/share/gnome/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/gnome/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
