@@ -12,6 +12,7 @@
     SUBDIR += db4
     SUBDIR += dbXML
     SUBDIR += dbconnect
+    SUBDIR += dbdesigner
     SUBDIR += dbf2mysql
     SUBDIR += dbmetrix
     SUBDIR += dbtool
