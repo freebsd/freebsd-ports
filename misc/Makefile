@@ -156,6 +156,7 @@
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
     SUBDIR += p5-Locale-Codes
+    SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pbs
     SUBDIR += pdmenu
