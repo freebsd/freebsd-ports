@@ -7,6 +7,7 @@
 
 PORTNAME=	libticalcs
 PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -17,9 +18,9 @@ COMMENT=	TI calculator library
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
-		tifiles.5:${PORTSDIR}/devel/libtifiles \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		tifiles.5:${PORTSDIR}/devel/libtifiles
 
+USE_GETTEXT=	yes
 USE_GNOME=	glib20
 WANT_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes

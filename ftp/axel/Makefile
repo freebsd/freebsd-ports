@@ -8,15 +8,14 @@
 
 PORTNAME=	axel
 PORTVERSION=	1.0a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
 MAINTAINER=	lintux@debian.org
 COMMENT=	A download accelerator
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes

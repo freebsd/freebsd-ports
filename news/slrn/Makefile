@@ -7,7 +7,7 @@
 
 PORTNAME=	slrn
 PORTVERSION=	0.9.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/usenet/readers/unix/slrn/ \
@@ -22,10 +22,10 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

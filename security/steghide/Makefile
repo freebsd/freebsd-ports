@@ -7,6 +7,7 @@
 
 PORTNAME=	steghide
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	steghide
@@ -16,9 +17,9 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"Steganography tool to hide data in binary files"
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		mhash.2:${PORTSDIR}/security/mhash \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		mhash.2:${PORTSDIR}/security/mhash
 
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk+/1.2
@@ -16,8 +16,7 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GNOME=	glib12

@@ -8,7 +8,7 @@
 
 PORTNAME=	wol
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ahh
@@ -16,11 +16,11 @@ MASTER_SITE_SUBDIR=	ahh
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenSP
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openjade
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	openjade
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
 USE_LIBTOOL=	YES

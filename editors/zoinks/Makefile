@@ -7,6 +7,7 @@
 
 PORTNAME=	zoinks
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mike@mikelockwood.com
 COMMENT=	An X11 programmer's editor and development environment
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--enable-imlib

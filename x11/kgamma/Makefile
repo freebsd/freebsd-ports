@@ -7,7 +7,7 @@
 
 PORTNAME=		kgamma
 PORTVERSION=		1.0.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
@@ -15,9 +15,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"KDE Control Center module for gamma calibration/correction of XFree86"
 
-LIB_DEPENDS= 		intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_BZIP2=		yes
+USE_GETTEXT=		yes
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

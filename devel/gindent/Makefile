@@ -8,7 +8,7 @@
 
 PORTNAME=	gindent
 PORTVERSION=	2.2.8a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://home.hccnet.nl/d.ingamells/ \
 		${MASTER_SITE_GNU}
@@ -18,8 +18,7 @@ DISTNAME=	indent-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU indent
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -7,17 +7,17 @@
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin for Win32 (TM) Codecs
 
-LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gtk12

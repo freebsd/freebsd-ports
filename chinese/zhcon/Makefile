@@ -7,7 +7,7 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Console Chinese System which supports framebuffer device
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-included-gettext=${LOCALBASE}
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386

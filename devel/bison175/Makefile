@@ -7,7 +7,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	1.75
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ CONFLICTS=	bison-[0-9]+
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 PLIST_SUB=	NLS=""
 .else
 PLIST_SUB=	NLS="@comment "
@@ -27,6 +26,7 @@ PLIST_SUB=	NLS="@comment "
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if defined(WITHOUT_NLS)

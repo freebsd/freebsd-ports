@@ -7,7 +7,7 @@
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade/invaders
@@ -15,12 +15,11 @@ MASTER_SITE_SUBDIR=	games/arcade/invaders
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot-em-up them nasty little bugs
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"don't sell for profit"
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	--include-deps

@@ -7,6 +7,7 @@
 
 PORTNAME=	mountapp
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mountapp
@@ -14,9 +15,9 @@ MASTER_SITE_SUBDIR=	mountapp
 MAINTAINER=	nm@web.am
 COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS+=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk12 glib12
 
 GNU_CONFIGURE=	yes

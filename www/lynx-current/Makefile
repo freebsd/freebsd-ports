@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=    2.8.5d17
+PORTREVISION=	1
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=       ${PORTNAME}2.8.5dev.17
@@ -14,10 +15,9 @@ DISTNAME=       ${PORTNAME}2.8.5dev.17
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \

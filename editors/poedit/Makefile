@@ -8,6 +8,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

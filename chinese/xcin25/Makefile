@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
 		ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/ \
@@ -19,7 +19,6 @@ MAINTAINER=	kcwu@ck.tp.edu.tw
 COMMENT=	Chinese input method server under X
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(USE_DB2)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
@@ -30,6 +29,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcf
 		${LOCALBASE}/share/tabe/libtabe-0.2.5:${PORTSDIR}/chinese/libtabe
 
 WRKSRC=		${WRKDIR}/xcin
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

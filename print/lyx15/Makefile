@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -17,11 +18,11 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes

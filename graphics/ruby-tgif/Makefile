@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	20010408
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension library to draw Tgif graphics
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
+USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes

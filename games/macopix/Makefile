@@ -7,7 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
@@ -15,8 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 MAINTAINER=	esu@yk.rim.or.jp
 COMMENT=	Window sitter for X11
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
@@ -32,6 +31,7 @@ RESTRICTED_FILES= \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
 		macopix-mascot-marimite-ja-0.70.tar.gz
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 

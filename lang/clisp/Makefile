@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,12 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	An ANSI Common Lisp
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	2.95
+USE_GETTEXT=	yes
 
 # In clisp-2.28, the build dies in the "regexp" module: the build target
 # invokes a configure script, which encounters a different CC variable than

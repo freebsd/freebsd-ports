@@ -7,7 +7,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
@@ -16,6 +16,7 @@ COMMENT=	AliceSoft System 3.5 on X Window System
 
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
@@ -39,8 +40,6 @@ EXAMPLES=	README.TXT \
 PATCHES=	pastel.diff
 
 .include <bsd.port.pre.mk>
-
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 FREETYPE_CONFIG?=    ${LOCALBASE}/bin/freetype-config

@@ -7,6 +7,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,14 +17,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 CONFLICTS=	sh-utils-* fileutils-* textutils-* id-utils-*
 
 # Global variables
 #
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

@@ -7,7 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		5.5
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl \
-			intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl
 
 .if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound
@@ -72,6 +71,7 @@ MAKEFILE=	makefile
 PLIST=		${WRKDIR}/pkg-plist
 .if !defined(WITHOUT_X11)
 PREFIX=		${X11BASE}
+USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 USE_XLIB=	yes
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-toys
 PORTVERSION=	4.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
                 ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \
@@ -19,12 +19,12 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Toys for the XFce 4 panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+LIB_DEPENDS=	xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes

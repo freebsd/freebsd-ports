@@ -7,6 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -16,7 +17,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Open Document Cataloging Project
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
@@ -33,6 +33,7 @@ PREFIX?=	${X11BASE}
 DOCBOOK_VERSION=	4.1.2
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes

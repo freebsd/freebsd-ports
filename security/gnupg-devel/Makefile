@@ -7,7 +7,7 @@
 
 PORTNAME=	newpg
 PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/aegypten
@@ -17,7 +17,6 @@ COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		ksba.7:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
@@ -26,6 +25,7 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		
 USE_AUTOCONF_VER=253
 USE_LIBTOOL=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	ap-utils
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	daniel+aputils@pelleg.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8

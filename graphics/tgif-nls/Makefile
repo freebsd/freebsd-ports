@@ -7,6 +7,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	4.1.43
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,9 +18,9 @@ DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 COMMENT=	A two-dimensional drawing tool with NLS message catalogs support
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
+USE_GETTEXT=	yes
 USE_IMAKE=	yes
 USE_REINPLACE=	yes
 MAN1=		tgif.1

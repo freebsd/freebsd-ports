@@ -7,6 +7,7 @@
 
 PORTNAME=	jmp
 PORTVERSION=	0.38
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -14,10 +15,10 @@ MAINTAINER=	ronald@cs.vu.nl
 COMMENT=	Java Memory Profiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 
+USE_GETTEXT=	yes
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--enable-noui
 .else

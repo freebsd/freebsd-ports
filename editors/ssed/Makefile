@@ -7,7 +7,7 @@
 
 PORTNAME=	ssed
 PORTVERSION=	3.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://queen.rett.polimi.it/~paolob/seders/ssed/
 DISTNAME=	sed-${PORTVERSION}
@@ -15,9 +15,9 @@ DISTNAME=	sed-${PORTVERSION}
 MAINTAINER=	verm@drunkmonk.net
 COMMENT=	Super-sed is a heavily enhanced version of sed
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --program-prefix=s
 

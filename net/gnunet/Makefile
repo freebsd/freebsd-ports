@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -17,9 +18,9 @@ DISTNAME=	GNUnet-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_GETTEXT=	yes
 USE_SIZE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

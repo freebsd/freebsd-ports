@@ -7,6 +7,7 @@
 
 PORTNAME=	xmule
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -17,11 +18,11 @@ COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 #FORBIDDEN=	Multiple vulnerabilities, see \
 #	   	http://security.e-matters.de/advisories/022003.html
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier \

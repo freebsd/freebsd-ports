@@ -7,7 +7,7 @@
 
 PORTNAME=	gmake
 PORTVERSION=	3.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
@@ -17,10 +17,10 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 .endif
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--program-prefix=g

@@ -75,7 +75,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -177,7 +177,7 @@ SGML_USED=	no
 .endif
 
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
+USE_GETTEXT=	yes
 .endif
 
 .if defined(NOPORTDOCS)

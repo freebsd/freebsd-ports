@@ -7,6 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.2/
@@ -16,12 +17,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source framework for the layout and rendering of i18n text
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

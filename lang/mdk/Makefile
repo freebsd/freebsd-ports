@@ -8,7 +8,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,9 +18,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		guile.15:${PORTSDIR}/lang/guile
 
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.6/ \
 		ftp://mirrors.rcn.net/pub/news/tin/v1.6/ \
@@ -19,10 +19,10 @@ COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee

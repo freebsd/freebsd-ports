@@ -9,7 +9,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -27,13 +27,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP with IPv6 capability
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
 USE_PERL5_BUILD=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

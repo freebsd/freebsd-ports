@@ -7,6 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
@@ -20,8 +21,6 @@ PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	takamune2004@yahoo.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
-
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \
@@ -59,6 +58,7 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 
 DIST_SUBDIR=	eb
 
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.11.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mingw
@@ -18,11 +18,9 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF binutils-2.11.90 for Windows cross-development
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--target=i386-mingw32msvc

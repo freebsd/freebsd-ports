@@ -7,7 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.66
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -18,9 +18,9 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A GUI to DirectConnect (www.neo-modus.com) text client
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes

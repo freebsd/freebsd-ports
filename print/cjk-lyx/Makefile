@@ -7,7 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
@@ -18,13 +18,13 @@ COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/CJK-LyX-${PORTVERSION}
 
+USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes

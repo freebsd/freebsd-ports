@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(WITHOUT_PLUGIN)
-BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
 		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
 		nspr4.1:$(PORTSDIR)/devel/nspr
@@ -47,6 +46,7 @@ JDK_VERSION=	1.3.1
 JDK_PATCHSET_VERSION=	9
 
 ONLY_FOR_ARCHS=	i386
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"

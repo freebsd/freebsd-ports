@@ -6,6 +6,7 @@
 
 PORTNAME=	lush
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lush
@@ -13,9 +14,9 @@ MASTER_SITE_SUBDIR=	lush
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A high level object-oriented programming language
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	yes

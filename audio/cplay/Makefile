@@ -7,6 +7,7 @@
 
 PORTNAME=	cplay
 PORTVERSION=	1.49
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 		http://www.tf.hut.fi/~flu/cplay/old/
@@ -14,8 +15,7 @@ MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end for various audio players
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 MAN1=		cplay.1

@@ -8,19 +8,19 @@
 
 PORTNAME=	dirtree
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line tool for displaying directory trees
 
-LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 
 MAN1=	dirtree.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	tar
 PORTVERSION=	1.13.25
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,9 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tar archiver
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 INFO=		tar
 
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \

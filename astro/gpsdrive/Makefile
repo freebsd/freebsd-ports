@@ -7,6 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.07.r7
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
 		http://www.gpsdrive.cc/           \
@@ -20,10 +21,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 MAINTAINER=	molter@gufi.org
 COMMENT=	A GPS navigation system
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

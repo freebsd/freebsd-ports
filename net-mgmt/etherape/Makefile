@@ -7,7 +7,7 @@
 
 PORTNAME=	etherape
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	samy@kerneled.com
 COMMENT=	A graphical network traffic visualization tool for gnome
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_GNOME=	libglade2 libgnomeui
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes

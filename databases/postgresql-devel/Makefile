@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.5.2003.12.03
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -20,6 +21,7 @@ COMMENT=	Development snapshots of PostgreSQL's latest features
 CONFLICTS=	postgresql7*
 CONFIGURE_ENV+=	DOCBOOKSTYLE=${LOCALBASE}/share/sgml/docbook/3.1/
 USE_BZIP2=	YES
+USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
@@ -45,7 +47,6 @@ USE_GETOPT_LONG=yes
 
 .if !defined(WITHOUT_GETTEXT)
 CONFIGURE_ARGS+=--enable-nls
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
 .else
 CONFIGURE_ARGS+=--disable-nls

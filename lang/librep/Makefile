@@ -7,7 +7,7 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.16.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	librep
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	librep
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfe
 PORTVERSION=	0.54.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	ptiJo@noos.fr
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX:${PORTSDIR}/x11-toolkits/fox \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
@@ -26,6 +25,7 @@ CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--with-x
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-gui
 PORTVERSION=	1.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://mysql.ftp.cvut.cz/Downloads/%SUBDIR%/ \
 		http://sunsite.informatik.rwth-aachen.de/mysql/Downloads/%SUBDIR%/ \
@@ -19,13 +19,13 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	A graphical SQL client for MySQL
 
 LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
- 		intl.5:${PORTSDIR}/devel/gettext-old \
  		glut.3:${PORTSDIR}/graphics/libglut \
  		jpeg.9:${PORTSDIR}/graphics/jpeg \
  		fleditor.1:${PORTSDIR}/x11-toolkits/fl_editor \
 		flvw.1:${PORTSDIR}/x11-toolkits/flvw
 PATCH_DEPENDS=	${X11BASE}/include/FL/Fl_Editor.H:${PORTSDIR}/x11-toolkits/fl_editor
 
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-/-src-/}

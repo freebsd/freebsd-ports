@@ -7,7 +7,7 @@
 
 PORTNAME=	DBD-Sybase
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	A Sybase DBI driver for Perl 5
 
-LIB_DEPENDS=	ct.2:${PORTSDIR}/databases/freetds \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	ct.2:${PORTSDIR}/databases/freetds
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
+USE_GETTEXT=	yes
 
 MAN3=		DBD::Sybase.3
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 .include <bsd.port.pre.mk>
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib20

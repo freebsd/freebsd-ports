@@ -7,7 +7,7 @@
 
 PORTNAME=	elmo
 PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
 		${MASTER_SITE_SAVANNAH:S/$/:sav/}
@@ -18,8 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf,sav
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
@@ -28,6 +27,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 MAN1=		elmo.1 elmoconf.pl.1
 PLIST=		${WRKDIR}/pkg-plist
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 
 pre-extract:

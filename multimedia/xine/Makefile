@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.23
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +18,9 @@ COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		png.5:${PORTSDIR}/graphics/png \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		png.5:${PORTSDIR}/graphics/png
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	libexif
 PORTVERSION=	0.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Library to read digital camera file meta-data
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
 		http://cedricauger.free.fr/download/packages/${PORTVERSION}/sources/	\
@@ -15,9 +16,9 @@ MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old	\
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

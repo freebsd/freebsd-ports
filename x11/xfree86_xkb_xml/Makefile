@@ -7,6 +7,7 @@
 
 PORTNAME=	xfree86_xkb_xml
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
@@ -14,9 +15,9 @@ MASTER_SITE_SUBDIR=	gswitchit
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

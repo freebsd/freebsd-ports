@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -82,7 +82,7 @@ RUN_DEPENDS+=		lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 .if defined(WITH_LOCALE)
-LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
+USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-i18n \
 			--with-localedir=${LOCALBASE}/share/locale
 .endif

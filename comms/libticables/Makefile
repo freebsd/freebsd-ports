@@ -7,6 +7,7 @@
 
 PORTNAME=	libticables
 PORTVERSION=	3.7.7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -16,10 +17,10 @@ COMMENT=	TI calculator link cables library
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 WANT_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

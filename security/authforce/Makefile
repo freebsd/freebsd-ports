@@ -7,18 +7,18 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www
 MASTER_SITES=	http://kapheine.hypa.net/authforce/
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

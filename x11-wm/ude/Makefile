@@ -7,6 +7,7 @@
 
 PORTNAME=	ude
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	udeproject
@@ -14,9 +15,9 @@ MASTER_SITE_SUBDIR=	udeproject
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast, compact windowmanager
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

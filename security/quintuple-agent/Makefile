@@ -7,15 +7,14 @@
 
 PORTNAME=	quintuple-agent
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.vibe.at/tools/q-agent/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	Quintuple Agent is a program that stores secrets for you
 
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_GNOME=	glib12
 .ifndef(WITHOUT_X11)
 USE_GNOME+=	gtk12

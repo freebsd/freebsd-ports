@@ -6,7 +6,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.9.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/d/dpkg/
 DISTNAME=	dpkg_${PORTVERSION}
@@ -14,10 +14,10 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_AUTOCONF=	213

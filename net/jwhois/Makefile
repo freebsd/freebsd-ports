@@ -7,6 +7,7 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
@@ -14,10 +15,9 @@ MASTER_SITE_SUBDIR=	jwhois
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 

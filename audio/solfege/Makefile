@@ -8,6 +8,7 @@
 
 PORTNAME=	solfege
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old \
-		gm4:${PORTSDIR}/devel/m4 \
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		swig:${PORTSDIR}/devel/swig11 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
@@ -27,6 +27,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgtkhtml
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--disable-oss-sound \

@@ -7,6 +7,7 @@
 
 PORTNAME=		sylpheed-gtk2
 PORTVERSION=		0.9.8a.20040109
+PORTREVISION=		1
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +16,9 @@ DISTNAME=		sylpheed-${PORTVERSION:R}-gtk2-${PORTVERSION:E}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		The GTK+ 2.0 port of a lightweight, featureful and fast e-mail client
 
-LIB_DEPENDS=		intl.5:${PORTSDIR}/devel/gettext-old \
-			iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=		yes
 USE_GMAKE=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20

@@ -7,7 +7,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.page.sannet.ne.jp/hirata-naoto/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,8 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A simple wrapper of GNU gettext for Ruby
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

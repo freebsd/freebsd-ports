@@ -7,7 +7,7 @@
 
 PORTNAME=	Search-Namazu
 PORTVERSION=	0.92
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.namazu.org/~knok/
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Namazu library module for perl
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		nmz.6:${PORTSDIR}/databases/namazu2
+LIB_DEPENDS=	nmz.6:${PORTSDIR}/databases/namazu2
 
 PERL_CONFIGURE=	YES
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN3=		Search::Namazu.3
 
