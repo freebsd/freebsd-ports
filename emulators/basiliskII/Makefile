@@ -7,14 +7,13 @@
 
 PORTNAME=	basiliskII
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=	BasiliskII_src_31052001
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-LIB_DEPENDS=	lthread.3:${PORTSDIR}/devel/linuxthreads
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
@@ -23,10 +22,10 @@ USE_GNOMENG=	yes
 USE_GNOME=	esound gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-fbdev-dga
+CONFIGURE_ARGS=	--disable-fbdev-dga --enable-fpe=uae
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include/pthread/linuxthreads
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 MAN1=		BasiliskII.1
 
