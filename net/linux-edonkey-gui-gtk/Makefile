@@ -9,6 +9,7 @@ PORTNAME=	edonkey
 PORTVERSION=	0.2.0.a
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
+PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-gui-gtk
 DISTNAME=	linux_gui_alpha_unstable
 EXTRACT_SUFX=
@@ -20,6 +21,7 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core \
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=
@@ -32,7 +34,7 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
-BINARY_NAME=	ed2k_gui
+BINARY_NAME=	linux-edonkey-gui-gtk
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
