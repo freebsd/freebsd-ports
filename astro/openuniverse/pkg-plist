@@ -1,10 +1,11 @@
 bin/ssystem
+etc/ssystem.conf
 share/doc/ssystem/CHANGES
 share/doc/ssystem/LEEME
 share/doc/ssystem/LICENSE
 share/doc/ssystem/README
+share/doc/ssystem/README.3D
 share/doc/ssystem/TODO
-share/ssystem/Stars.dat
 share/ssystem/callisto.jpg
 share/ssystem/charon.jpg
 share/ssystem/dione.jpg
@@ -21,6 +22,7 @@ share/ssystem/pluto.jpg
 share/ssystem/rhea.jpg
 share/ssystem/satrings.jpg
 share/ssystem/saturn.jpg
+share/ssystem/stars.dat
 share/ssystem/sun.jpg
 share/ssystem/tethys.jpg
 share/ssystem/titan.jpg
