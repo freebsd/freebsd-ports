@@ -33,6 +33,12 @@ pgdemo13: pgdemo13.f libpgplot.a
 	$(FC) $(FFLAGS) -o pgdemo13 pgdemo13.f $(PGPLOT_LIB) $(LIBS)
 pgdemo14: pgdemo14.f libpgplot.a
 	$(FC) $(FFLAGS) -o pgdemo14 pgdemo14.f $(PGPLOT_LIB) $(LIBS)
+pgdemo15: pgdemo15.f libpgplot.a
+	$(FC) $(FFLAGS) -o pgdemo15 pgdemo16.f $(PGPLOT_LIB) $(LIBS)
+pgdemo16: pgdemo16.f libpgplot.a
+	$(FC) $(FFLAGS) -o pgdemo16 pgdemo16.f $(PGPLOT_LIB) $(LIBS)
+pgdemo17: pgdemo17.f libpgplot.a
+	$(FC) $(FFLAGS) -o pgdemo17 pgdemo17.f $(PGPLOT_LIB) $(LIBS)
 
 cpgdemo: cpgdemo.c 
 	$(CC) $(CFLAGS) -c -I/usr/local/include cpgdemo.c
