@@ -1,0 +1,33 @@
+include/gcu/chemistry/atom.h
+include/gcu/chemistry/bond.h
+include/gcu/chemistry/object.h
+include/gcu/chemistry/element.h
+include/gcu/chemistry/matrix.h
+include/gcu/chemistry/xml-utils.h
+include/gcu/chemistry/chemistry.h
+include/gcu/crystalviewer/gtkcrystalviewer.h
+include/gcu/crystalviewer/crystalview.h
+include/gcu/crystalviewer/crystaldoc.h
+include/gcu/crystalviewer/crystalatom.h
+include/gcu/crystalviewer/crystalbond.h
+include/gcu/crystalviewer/crystalline.h
+include/gcu/crystalviewer/crystalcleavage.h
+include/gcu/gtkperiodic/gtkperiodic.h
+lib/libgcu.a
+lib/libgcu.so
+lib/libgcu.so.1
+lib/libgtkcrystalviewer.a
+lib/libgtkcrystalviewer.so
+lib/libgtkcrystalviewer.so.1
+lib/libgtkperiodic.a
+lib/libgtkperiodic.so
+lib/libgtkperiodic.so.1
+libdata/pkgconfig/gcu.pc
+share/gnome/gchemutils/elements.xml
+share/gnome/gchemutils/glade/gtkperiodic.glade
+@dirrm include/gcu/chemistry
+@dirrm include/gcu/crystalviewer
+@dirrm include/gcu/gtkperiodic
+@dirrm include/gcu
+@dirrm share/gnome/gchemutils/glade
+@dirrm share/gnome/gchemutils
