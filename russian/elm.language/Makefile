@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/05/04 03:18:29 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/18 11:39:02 asami Exp $
 #
 
 PKGNAME=        ru-elm-2.4ME
@@ -25,7 +25,6 @@ do-install:
 		( \
 		echo "charset=KOI8-R"; \
 		echo "displaycharset=KOI8-R"; \
-		echo "nohdrencoding=ON"; \
 		) >> \
 		${PREFIX}/lib/elm.rc
 
