@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gqmpeg
-# Version required:	0.6.2
+# Version required:	0.6.3
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1999/05/29 04:07:41 steve Exp $
+# $Id: Makefile,v 1.15 1999/06/08 23:19:01 steve Exp $
 #
 
-DISTNAME=	gqmpeg-0.6.2
+DISTNAME=	gqmpeg-0.6.3
 CATEGORIES=	audio
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
 USE_X_PREFIX=	yes
 ALL_TARGET=	gqmpeg
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gqmpeg ${PREFIX}/bin
+post-install:
+	@strip ${PREFIX}/bin/gqmpeg
 
 .include <bsd.port.mk>
