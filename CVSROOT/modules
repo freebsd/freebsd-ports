@@ -8815,6 +8815,7 @@ pips-sc65_66s	ports/print/pips-sc65_66s
 pips-sc80s	ports/print/pips-sc80s
 pips-sc84_83s	ports/print/pips-sc84_83s
 pips-sc85_86s	ports/print/pips-sc85_86s
+pips-scx3500_3600s	ports/print/pips-scx3500_3600s
 pips-sp2100_2200	ports/print/pips-sp2100_2200
 pips-spr200_210	ports/print/pips-spr200_210
 pips-spr300_310	ports/print/pips-spr300_310
