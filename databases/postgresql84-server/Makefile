@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
@@ -55,7 +55,7 @@ PG_PREFIX=""
 PG_INCLUDE=	include/pgsql
 .endif
 
-PLIST_SUB=	PG_PREFIX="${PG_PREFIX}" PG_INCLUDE="${PG_INCLUDE}"
+PLIST_SUB=	PG_PREFIX="${PG_PREFIX}" PG_INCLUDE="${PG_INCLUDE}" WITH_TCL="${WITH_TCL}"
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
 		dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 pg_config.1 \
@@ -92,7 +92,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-pre-fetch:
+pre-extract:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 pre-install:
@@ -143,11 +143,9 @@ post-install:
 	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh
 .if defined(WITH_TCL)
 # Preparing a loadable TCL-package (pkgIndex.tcl)
-# XXX This directory and the single file are not registered in
-# XXX the PLIST, because of different PREFIX.
-	@${MKDIR} ${LOCALBASE}/lib/tcl${WITH_TCL}/Pgtcl1.3
+	@${MKDIR} ${PREFIX}/lib/tcl${WITH_TCL}/Pgtcl1.3
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pkgIndex.tcl.in \
-		> ${LOCALBASE}/lib/tcl${WITH_TCL}/Pgtcl1.3/pkgIndex.tcl
+		> ${PREFIX}/lib/tcl${WITH_TCL}/Pgtcl1.3/pkgIndex.tcl
 .endif
 .if defined(WITH_JDBC)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/java/classes

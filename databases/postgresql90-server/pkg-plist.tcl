@@ -6,6 +6,7 @@
 %%PG_PREFIX%%lib/libpgtcl.so
 %%PG_PREFIX%%lib/libpgtcl.so.2
 %%PG_PREFIX%%lib/pltcl.so
+lib/tcl%%WITH_TCL%%/Pgtcl1.3/pkgIndex.tcl
 share/postgresql/pgaccess/images/icon_button.gif
 share/postgresql/pgaccess/images/icon_checkbutton.gif
 share/postgresql/pgaccess/images/icon_entry.gif
@@ -144,3 +145,4 @@ share/postgresql/pgaccess/main.tcl
 @dirrm share/postgresql/pgaccess/lib/languages
 @dirrm share/postgresql/pgaccess/lib
 @dirrm share/postgresql/pgaccess
+@dirrm lib/tcl%%WITH_TCL%%/Pgtcl1.3
