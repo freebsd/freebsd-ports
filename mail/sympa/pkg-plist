@@ -1,6 +1,6 @@
 etc/sympa.conf
 etc/wwsympa.conf
-etc/rc.d/sympa
+etc/rc.d/sympa.sh
 sympa/bin/etc/scenari/access_web_archive.closed
 sympa/bin/etc/scenari/visibility.private
 sympa/bin/etc/scenari/visibility.noconceal

@@ -2,6 +2,10 @@
 # $FreeBSD$
 #
 
+if [ "$2" = "POST-INSTALL" ]; then
+	mv ${PKG_PREFIX}/etc/rc.d/sympa ${PKG_PREFIX}/etc/rc.d/sympa.sh 2>/dev/null
+fi
+
 if [ "$2" != "PRE-INSTALL" ]; then
 	exit 0
 fi
