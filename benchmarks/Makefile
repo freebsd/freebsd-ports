@@ -28,6 +28,7 @@
     SUBDIR += postal
     SUBDIR += postmark
     SUBDIR += pybench
+    SUBDIR += raidtest
     SUBDIR += rawio
     SUBDIR += scimark2
     SUBDIR += scimark2c
