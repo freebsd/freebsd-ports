@@ -211,6 +211,7 @@ adasdl		ports/devel/adasdl
 adasockets	ports/net/adasockets
 adcomplain	ports/mail/adcomplain
 add		ports/math/add
+add-css-links	ports/textproc/add-css-links
 addresses	ports/mail/addresses
 adgali		ports/games/adgali
 admesh		ports/cad/admesh
