@@ -1,4 +1,5 @@
 %%RUBY_SITELIBDIR%%/drb.rb
+%%RUBY_SITELIBDIR%%/timerholder.rb
 %%RUBY_SITELIBDIR%%/drb/drb.rb
 %%RUBY_SITELIBDIR%%/drb/timeridconv.rb
 @dirrm %%RUBY_SITELIBDIR%%/drb
