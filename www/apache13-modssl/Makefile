@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION=	0
+PORTREVISION=   1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.modssl.org/source/ \
@@ -54,7 +54,8 @@ VERSION_MODSSL=	2.8.5
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--server-gid=nogroup \
+		--server-uid=www \
+		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		--suexec-docroot=${PREFIX}/www/data \
@@ -72,7 +73,7 @@ OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
 OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
 CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 		-fexpensive-optimizations -ffast-math
@@ -112,6 +113,9 @@ certificate:
 	@cd ${WRKSRC} \
 	&& ${ECHO_MSG} "===>  Creating Test Certificate for Server" \
 	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

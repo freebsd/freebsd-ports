@@ -1,14 +1,5 @@
 --- configure.orig	Mon Oct 22 20:44:08 2001
 +++ configure	Mon Oct 22 20:44:42 2001
-@@ -1216,7 +1216,7 @@
-     conf_user="nobody"
- fi
- if [ "x$conf_group" = "x" ]; then
--    conf_group="\\\\#-1"
-+    conf_group="nobody"
- fi
- 
- ##
 @@ -1263,8 +1263,8 @@
      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"
