@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LINUXBASE}/sbin/ldconfig:${PORTSDIR}/emulators/linux_base
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"Redistribution not allowed"
+NO_PACKAGE=	"Redistribution not allowed"
 NO_BUILD=	yes
 
 MAN1=		edith.1
