@@ -109,6 +109,7 @@
     SUBDIR += libsx
     SUBDIR += libxfce4mcs
     SUBDIR += libxfce4util
+    SUBDIR += libxkbfile
     SUBDIR += libxklavier
     SUBDIR += linux-XFree86-libs
     SUBDIR += linux-gnomelibs
