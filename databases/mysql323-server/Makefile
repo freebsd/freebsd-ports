@@ -57,7 +57,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "	WITH_CHARSET=charset	define the primary built-in charset (Latin1);"
+	@${ECHO} "	WITH_CHARSET=charset	define the primary built-in charset (latin1);"
 	@${ECHO} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files."
 	@${ECHO} ""
