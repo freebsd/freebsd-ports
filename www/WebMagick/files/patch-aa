@@ -1,5 +1,5 @@
 *** webmagick.in.orig	Tue Mar 24 07:45:45 1998
---- webmagick.in	Thu Sep 24 08:31:07 1998
+--- webmagick.in	Fri Sep 25 20:15:09 1998
 ***************
 *** 127,135 ****
 --- 127,137 ----
@@ -526,6 +526,39 @@
   	    if ( "${opt_htimage}" ne '' ) {
   		print( IMAGEMAP "rect "
 ***************
+*** 3258,3263 ****
+--- 3343,3349 ----
+  
+   Montage:
+    --forcegif         Force imagemap to be in GIF format
++   --forcejpeg        Force imagemap to be in JPEG format
+    --maxgif           Maximum size of GIF imagemap before trying JPEG
+    --columns	     Montage columns
+    --rows	     Montage rows (max)
+***************
+*** 3298,3308 ****
+--- 3384,3403 ----
+    --dircolorlink     Link (unvisited) color (directory frame)
+    --dircolorvlink    Link (visited) color (directory frame)
+  
++   --dirhtmlext       Extension for directories frame
+    --javascript	     Enable JavaScript output
+    --header           Page header (imagemap frame)
++   --htmlext          Extension for imagemap frame
++   --footer           Page footer (imagemap frame)
+    --readmevisible    Show README.html on first page rather than just linking.
+    --title            Page title
+  
++   --pichtml          Generate separate pages for pictures
++   --pichtmlext       Extension for pictures pages
++   --pichtmltarget    Target for pictures pages
++   --pichtmltop       Picture page header
++   --pichtmlbottom    Picture page footer
++ 
+   Frame Options:
+    --framemarginwidth Pixels allocated to frame margin in horizontal direction
+    --framemarginheight Pixels allocated to frame margin in vertical direction
+***************
 *** 3345,3364 ****
       $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
   
@@ -547,7 +580,7 @@
       }
   
   
---- 3430,3449 ----
+--- 3440,3459 ----
       $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
   
       # Name for current HTML index page
