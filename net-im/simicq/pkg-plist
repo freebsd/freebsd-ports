@@ -1,4 +1,5 @@
 bin/sim
+bin/simctrl
 lib/libsimapi.la
 lib/libsimapi.so
 lib/libsimapi.so.0
@@ -14,6 +15,7 @@ share/apps/sim/plugins/__homedir.so
 share/apps/sim/plugins/__migrate.so
 share/apps/sim/plugins/_core.so
 share/apps/sim/plugins/about.so
+share/apps/sim/plugins/action.so
 share/apps/sim/plugins/autoaway.so
 share/apps/sim/plugins/background.so
 share/apps/sim/plugins/dock.so
@@ -31,11 +33,15 @@ share/apps/sim/plugins/netmonitor.so
 %%KDE%%share/apps/sim/plugins/ontop.so
 share/apps/sim/plugins/osd.so
 share/apps/sim/plugins/proxy.so
+share/apps/sim/plugins/remote.so
 share/apps/sim/plugins/shortcuts.so
 share/apps/sim/plugins/sound.so
+%%SPELL%%share/apps/sim/plugins/spell.so
 share/apps/sim/plugins/splash.so
+share/apps/sim/plugins/styles.so
 %%KDE%%share/apps/sim/plugins/transparent.so
 share/apps/sim/plugins/update.so
+share/apps/sim/plugins/zodiak.so
 share/apps/sim/sounds/alert.wav
 share/apps/sim/sounds/auth.wav
 share/apps/sim/sounds/contacts.wav
@@ -47,8 +53,13 @@ share/apps/sim/sounds/message.wav
 share/apps/sim/sounds/msgsent.wav
 share/apps/sim/sounds/sms.wav
 share/apps/sim/sounds/startup.wav
+share/apps/sim/sounds/system.wav
 share/apps/sim/sounds/url.wav
 share/apps/sim/sounds/web.wav
+share/apps/sim/styles/SIM.xsl
+share/apps/sim/styles/XChat.xsl
+share/apps/sim/styles/XChat2seconds.xsl
+share/apps/sim/styles/XChat3fullDate.xsl
 share/icons/hicolor/16x16/apps/sim.png
 share/icons/hicolor/32x32/apps/sim.png
 share/icons/locolor/16x16/apps/sim.png
@@ -71,6 +82,11 @@ share/locale/sw/LC_MESSAGES/sim.mo
 share/locale/tr/LC_MESSAGES/sim.mo
 share/locale/uk/LC_MESSAGES/sim.mo
 share/locale/zh_TW/LC_MESSAGES/sim.mo
+share/mimelnk/application/x-icq.desktop
+share/services/simctrl.desktop
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
@@ -119,6 +135,7 @@ share/locale/zh_TW/LC_MESSAGES/sim.mo
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/apps/sim/styles
 @dirrm share/apps/sim/sounds
 @dirrm share/apps/sim/plugins
 @dirrm share/apps/sim/pict
