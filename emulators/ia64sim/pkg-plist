@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+bin/ia64sim
+share/doc/ia64sim/ia64.doc
