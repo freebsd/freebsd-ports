@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Apr 16 21:43:09 2003
-+++ Makefile	Wed Apr 30 17:07:18 2003
-@@ -1,22 +1,18 @@
+--- Makefile.orig	Tue May  6 00:11:59 2003
++++ Makefile	Tue Jun  3 16:22:55 2003
+@@ -1,22 +1,21 @@
  # Select target OS. TARGET must match a system for which COPTS and LIBS are
  # correctly defined below.
  # You can set it on make's command line. eg: make TARGET=solaris
@@ -9,25 +9,35 @@
  #TARGET = linux22
  #TARGET = solaris
  #TARGET = solarisv9
--#TARGET = openbsd
+ #TARGET = openbsd
 -
 -CC = gcc
 -LD = gcc
-+TARGET = openbsd
++TARGET = FreeBSD
  
  # By default, we use libc's regex.
 -REGEX=libc
++#REGEX=libc
  #REGEX=pcre
  
  # This is the directory hosting include/pcre.h and lib/libpcre.* when REGEX=pcre
--PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null)
--#PCREDIR=/usr/local
-+#PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null)
+-PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null || :)
++#PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null || :)
+ #PCREDIR=/usr/local
 +PCREDIR=${LOCALBASE}
  
  # This is for Linux 2.4 with netfilter
  COPTS.linux24 = -O2 -DNETFILTER
-@@ -44,8 +40,8 @@
+@@ -38,14 +37,17 @@
+ COPTS.openbsd = -O2
+ LIBS.openbsd =
+ 
++COPTS.FreeBSD = -O2
++LIBS.FreeBSD =
++
+ COPTS.libc=
+ LIBS.libs=
+ 
  COPTS.pcre=-DUSE_PCRE -I$(PCREDIR)/include
  LIBS.pcre=-L$(PCREDIR)/lib -lpcreposix -lpcre
  
@@ -38,7 +48,7 @@
  
  COPTS=$(COPTS.$(TARGET)) $(COPTS.$(REGEX))
  LIBS=$(LIBS.$(TARGET)) $(LIBS.$(REGEX))
-@@ -53,16 +49,13 @@
+@@ -53,16 +55,13 @@
  # - use -DSTATTIME=0 to disable statistics, else specify an interval in
  #   milliseconds.
  # - use -DTPROXY to compile with transparent proxy support.
