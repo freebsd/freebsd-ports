@@ -1,0 +1,7 @@
+       The Include module implements a method of using #define constants
+from C header files. It does this by putting an extra level of indirection
+on the use operator.  To enhance performance a cache scheme is used. When a
+new module is required the cache is checked first, if the package is not
+found then it will be generated from the C header files.  Include can be
+configured to place any generated packages into the cache automatically, for
+security reasons this is turned off by default.

@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Thu Jan  4 07:57:37 1996
++++ Makefile.PL	Mon Oct 21 13:26:43 1996
+@@ -128,7 +128,7 @@
+  my $hash = {
+ 	VERSION   => $VERSION,
+ 	NAME      => $NAME,
+-	SKIP      => [qw(static dynamic linkext)],
++	SKIP      => [qw(static)],
+ 	PL_FILES  => \%PL_FILES,
+ 	EXE_FILES => [ keys %EXE_FILES ],
+ 	LINKTYPE  => 'dynamic',
