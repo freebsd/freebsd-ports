@@ -14,30 +14,30 @@ bin/%%GNU_HOST%%-gcjh34
 bin/gccbug34
 bin/gcj34
 bin/gcjh34
-bin/gij34
+%%LIBJAVA%%bin/gij34
 bin/jv-scan34
 bin/jcf-dump34
-bin/jv-convert34
+%%LIBJAVA%%bin/jv-convert34
 bin/jar34
 bin/grepjar34
-bin/rmic34
-bin/rmiregistry34
-bin/addr2name.awk34
-include/ffi.h
-include/jni.h
-include/jvmpi.h
-lib/libffi.la
-lib/libffi.a
-lib/logging.properties
-lib/pkgconfig/libgcj.pc
-@dirrm lib/pkgconfig
-lib/security/classpath.security
-lib/security/libgcj.security
-@dirrm lib/security
-lib/lib-org-xml-sax.la
-lib/lib-org-xml-sax.a
-lib/lib-org-w3c-dom.la
-lib/lib-org-w3c-dom.a
+%%LIBJAVA%%bin/rmic34
+%%LIBJAVA%%bin/rmiregistry34
+%%LIBJAVA%%bin/addr2name.awk34
+%%LIBJAVA%%include/ffi.h
+%%LIBJAVA%%include/jni.h
+%%LIBJAVA%%include/jvmpi.h
+%%LIBJAVA%%lib/libffi.la
+%%LIBJAVA%%lib/libffi.a
+%%LIBJAVA%%lib/logging.properties
+%%LIBJAVA%%lib/pkgconfig/libgcj.pc
+%%LIBJAVA%%@dirrm lib/pkgconfig
+%%LIBJAVA%%lib/security/classpath.security
+%%LIBJAVA%%lib/security/libgcj.security
+%%LIBJAVA%%@dirrm lib/security
+%%LIBJAVA%%lib/lib-org-xml-sax.la
+%%LIBJAVA%%lib/lib-org-xml-sax.a
+%%LIBJAVA%%lib/lib-org-w3c-dom.la
+%%LIBJAVA%%lib/lib-org-w3c-dom.a
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
@@ -50,7 +50,7 @@ libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
 @dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
 @dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%
-share/java/libgcj-%%GCC_VER%%.jar
+%%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-

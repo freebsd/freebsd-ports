@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-02-18
+SNAPDATE=	2004-03-10
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
@@ -47,6 +47,11 @@ BROKEN= "Configure broken due to renaming this architecture from x86_84."
 
 .if ${ARCH} == sparc64
 BROKEN=	"libgcj is not supported/packaging is broken on this platform"
+WITHOUT_LIBJAVA=	yes
+.endif
+
+.if ${ARCH} == ia64
+WITHOUT_LIBJAVA=	yes
 .endif
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
@@ -93,6 +98,13 @@ MAN1=		cpp${SUFFIX}.1 \
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
 
+.if defined(WITHOUT_LIBJAVA)
+CONFIGURE_ARGS+=	--disable-libgcj
+PLIST_SUB+=	LIBJAVA="@comment "
+.else
+PLIST_SUB+=	LIBJAVA=""
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 
@@ -118,9 +130,10 @@ post-install: fake-manpages
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
-	  ( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}${SUFFIX}.1 ); \
+	fi
+	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
+	  ${MV} -f ${PREFIX}/man/man1/${f}.1 \
+	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
