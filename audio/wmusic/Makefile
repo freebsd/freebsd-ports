@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.4.12
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	http://home.jtan.com/~john/wmusic/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote control dockapp for xmms
@@ -25,9 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG=${GTK_CONFIG}
 
 MAN1=		wmusic.1
-
-post-extract:
-	-${RM} -f ${WRKSRC}/config.cache
+PORTDOCS=	README
+PLIST_FILES=	bin/wmusic
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
