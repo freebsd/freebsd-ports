@@ -28,6 +28,7 @@ lib/libsmdb.a
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_main.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_register.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_replacebody.html
+%%PORTDOCS%%share/doc/sendmail/libmilter/smfi_setbacklog.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_setconn.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_setpriv.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/smfi_setreply.html

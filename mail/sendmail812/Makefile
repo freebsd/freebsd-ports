@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.12.2
-PORTREVISION=	4
+PORTVERSION=	8.12.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -84,6 +83,8 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
+		> ${WRKSRC}/sendmail.sh
 
 do-configure:
 	${PERL} -pi -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
@@ -137,6 +138,8 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
 		${PREFIX}/etc/rc.d/sm-client.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/sendmail.sh \
+		${PREFIX}/etc/rc.d/sendmail.sh.sample
 	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
 	${CHMOD} 770 /var/spool/clientmqueue
 .for i in ${MAN8}
