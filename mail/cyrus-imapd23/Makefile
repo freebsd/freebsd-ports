@@ -7,12 +7,13 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.0.15
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20010708.diff.gz
+PATCHFILES=	${DISTNAME}-ipv6-20010709.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 
@@ -39,7 +40,7 @@ CONFIGURE_ARGS+=--with-ucdsnmp=no
 MAN1=		cyradm.1 imtest.1 installsieve.1
 MAN3=		imclient.3
 MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
-MAN8=		arbitron.8 ctl_deliver.8 ctl_mboxlist.8 collectnews.8 \
+MAN8=		arbitron.8 collectnews.8 ctl_deliver.8 ctl_mboxlist.8 \
 		cyrquota.8 deliver.8 fud.8 idled.8 imapd.8 ipurge.8 \
 		lmtpd.8 master.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 \
 		syncnews.8 timsieved.8
@@ -53,8 +54,8 @@ DOCS=		HEY-YOU-WITH-THE-EDITOR README acl-extension anoncvs bugs \
 HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 		install-auth install-compile install-configure install-murder \
 		install-perf install-prereq install-sieve install-snmpmon \
-		install-testing install-upgrade install mailing-list notes \
-		os overview questions readme sieve-protocol sieve
+		install-testing install-upgrade install mailing-list man \
+		notes os overview questions readme sieve-protocol sieve specs
 
 post-patch:
 		@${SED} -e "s|/etc/|${PREFIX}/etc/|" ${WRKSRC}/tools/mkimap \
@@ -68,11 +69,18 @@ pre-install:
 post-install:
 		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
 .if !defined(NOPORTDOCS)
+		${MKDIR} ${PREFIX}/share/doc/cyrus/man
 		${MKDIR} ${PREFIX}/share/doc/cyrus/text
 .for file in ${HTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html \
 			${PREFIX}/share/doc/cyrus
 		@${ECHO} share/doc/cyrus/${file}.html >>${TMPPLIST}
+.endfor
+.for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
+		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
+		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
+			${PREFIX}/share/doc/cyrus/man/$${ofile}.html; \
+		${ECHO} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc \
 			${PREFIX}/share/doc/cyrus
@@ -83,6 +91,7 @@ post-install:
 		@${ECHO} share/doc/cyrus/text/${file} >>${TMPPLIST}
 .endfor
 		@${ECHO} "@dirrm share/doc/cyrus/text" >>${TMPPLIST}
+		@${ECHO} "@dirrm share/doc/cyrus/man" >>${TMPPLIST}
 		@${ECHO} "@dirrm share/doc/cyrus" >>${TMPPLIST}
 .endif
 		${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
