@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/graphviz/__init__.py
+%%PYTHON_SITELIBDIR%%/graphviz/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graphviz/graphviz.so
+@dirrm %%PYTHON_SITELIBDIR%%/graphviz
