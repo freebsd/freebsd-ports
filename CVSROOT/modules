@@ -3345,6 +3345,7 @@ i386-rtems-g77	ports/devel/i386-rtems-g77
 i386-rtems-gcc	ports/devel/i386-rtems-gcc
 i386-rtems-gdb	ports/devel/i386-rtems-gdb
 i386-rtems-objc	ports/devel/i386-rtems-objc
+i855vidctl10	ports/sysutils/i855vidctl10
 i960-rtems-binutils	ports/devel/i960-rtems-binutils
 i960-rtems-gcc	ports/devel/i960-rtems-gcc
 i960-rtems-gdb	ports/devel/i960-rtems-gdb
