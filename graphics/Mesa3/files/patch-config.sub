@@ -1,0 +1,10 @@
+--- config.sub	Wed Aug 18 17:55:40 1999
++++ /home/marcel/config.sub	Fri Jun 13 18:38:48 2003
+@@ -197,6 +197,7 @@
+ 	      | power-* | none-* | 580-* | cray2-* | h8300-* | h8500-* | i960-* \
+ 	      | xmp-* | ymp-* \
+ 	      | hppa-* | hppa1.0-* | hppa1.1-* | hppa2.0-* | hppa2.0w-* | hppa2.0n-* \
++	      | ia64-* \
+ 	      | alpha-* | alphaev[4-7]-* | alphaev56-* | alphapca5[67]-* \
+ 	      | we32k-* | cydra-* | ns16k-* | pn-* | np1-* | xps100-* \
+ 	      | clipper-* | orion-* \
