@@ -17,8 +17,7 @@ MAINTAINER=	keith@FreeBSD.org
 LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
 		intl.1:${PORTSDIR}/devel/gettext \
 		db2.0:${PORTSDIR}/databases/db
-RUN_DEPENDS=	${X11BASE}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFree86 \
-		${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
 		${LOCALBASE}/share/tabe/libtabe-0.1.9:${PORTSDIR}/chinese/libtabe
 
 WRKSRC=		${WRKDIR}/xcin
