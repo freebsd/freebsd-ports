@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSL
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 USE_PERL5=	yes
+SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 .if defined(WITH_UPDATES)
 WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz file.wbm.gz
@@ -68,7 +69,7 @@ do-install:
 	@cd ${PREFIX}/lib/webmin && find . -name "*.orig" -print \
 		| xargs ${RM}
 	@cd ${PREFIX}/lib/webmin && ./setup.sh
-	@${MV} /tmp/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
+	@${CP} ${WRKDIR}/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh
 
 post-install:
