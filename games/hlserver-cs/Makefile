@@ -50,7 +50,7 @@ pre-patch:
 # remove trailing ^M
 .for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
 	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
-	*.scr */*.scr *.txt */*.txt
+	*.scr */*.scr *.txt */*.txt *.TXT */*.TXT
 	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file} >/dev/null 2>/dev/null
 .endfor
 
