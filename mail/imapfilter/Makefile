@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapfilter
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.2
 CATEGORIES=	mail
 MASTER_SITES=	http://imapfilter.hellug.gr/source/
 
@@ -21,7 +21,7 @@ MAN1=		imapfilter.1
 MAN5=		imapfilterrc.5
 
 post-install:
-	${STRIP_CMD} $(PREFIX)/bin/imapfilter
+	${STRIP_CMD} ${PREFIX}/bin/imapfilter
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
@@ -30,6 +30,5 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample.imapfilterrc ${EXAMPLESDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

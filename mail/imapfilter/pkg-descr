@@ -3,10 +3,14 @@ rules, processes mail residing in IMAP mailboxes without downloading them.
 Available searching criteria, which can be combined using logical operators
 (and/or/not), include the matching of a string in the headers or body of
 messages, the size, date or status of them.  Different actions can be applied
-such as deletion, copying or moving of messages to mailboxes in the same
-or different mail server, and changing of their flags.  Other features also
-include daemon mode and encryption and secure storing in the filesystem of the
-user's passwords, using the integrated interactive password editor.
+such as deletion, copying or moving of messages to mailboxes in the same or
+different mail server, and changing of their flags.
+
+IMAPFilter additionally supports connection encryption through either imaps SSL
+wrapped session or the IMAP STARTTLS extension and user authentication using
+the CRAM-MD5 mechanism.  Other features also include encryption and secure
+storing in the filesystem of the user's passwords, running in daemon mode,
+support for the IMAP NAMESPACE extension.
 
 IMAPfilter is purposed as a preconnect utility before a user fetches his/her
 mail, accesses his/her mailboxes with one of the available mail user agents or
