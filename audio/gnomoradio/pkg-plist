@@ -43,3 +43,4 @@ share/gnome/pixmaps/gnomoradio/gnomoradio-heart.png
 @dirrm include/rainbow
 @dirrm include/roboradio
 @dirrm share/gnome/pixmaps/gnomoradio
+@unexec rmdir %D/sbin 2>/dev/null || true
