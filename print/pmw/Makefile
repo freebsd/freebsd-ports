@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.quercite.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality music typesetting program
 
+BROKEN=		Unfetchable
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
