@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
