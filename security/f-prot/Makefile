@@ -15,7 +15,8 @@ DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
+		${PREFIX}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
 
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
@@ -29,8 +30,19 @@ MAN1=		f-prot.1
 ONLY_FOR_ARCHS=	i386
 
 do-install:
-	cd ${WRKDIR} && ${TAR} -cf - f-prot | ${TAR} -xf - -C ${PREFIX}
+	cd ${WRKDIR} && ${TAR}	--exclude man_pages \
+				--exclude doc_ws \
+				--exclude f-prot.sh \
+				--exclude *.DEF \
+				-cf - f-prot | ${TAR} -xf - -C ${PREFIX}
+
 	${INSTALL_SCRIPT} ${WRKSRC}/f-prot.sh ${PREFIX}/bin/f-prot
 	${INSTALL_MAN} ${WRKSRC}/man_pages/f-prot.1 ${MANPREFIX}/man/man1/
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${CP} -Rp ${WRKSRC}/doc_ws/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
