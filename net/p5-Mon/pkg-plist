@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mon/SNMP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mon/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mon/Protocol.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mon/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mon
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mon
