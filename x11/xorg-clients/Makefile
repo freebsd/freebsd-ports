@@ -17,7 +17,7 @@ DISTFILES=	X11R6.7.0-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client programs and related files from X.Org
 
-BUILD_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
