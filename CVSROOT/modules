@@ -1901,7 +1901,7 @@ fastresolve	ports/dns/fastresolve
 fb		ports/editors/fb
 fbbi		ports/lang/fbbi
 fbcmd		ports/x11-wm/fbcmd
-fbdesk		ports/x11-wm/fbdesk
+fbdesk		ports/x11/fbdesk
 fbm		ports/graphics/fbm
 fbpager		ports/x11-wm/fbpager
 fbpanel		ports/x11/fbpanel
