@@ -2009,6 +2009,7 @@ gkrellmouse	ports/sysutils/gkrellmouse
 gkrellmqst	ports/net/gkrellmqst
 gkrellmseti	ports/astro/gkrellmseti
 gkrellmss	ports/audio/gkrellmss
+gkrellmss2	ports/audio/gkrellmss2
 gkrellmvolume	ports/audio/gkrellmvolume
 gkrellmvolume2	ports/audio/gkrellmvolume2
 gkrellmwho	ports/sysutils/gkrellmwho
