@@ -33,8 +33,8 @@ CONFLICTS=	apache+ipv6-* \
 		publicfile-* \
 		ru-apache+mod_ssl-*
 
-RA_VERSION=	30.20
-APACHE_VERSION=	1.3.31
+RA_VERSION=	30.21
+APACHE_VERSION=	1.3.33
 
 #
 # Small hack for alternate processing patchfiles
