@@ -1,0 +1,11 @@
+--- src/gibbs.cxx.orig	Fri Feb 18 11:55:30 2000
++++ src/gibbs.cxx	Fri Feb 18 11:55:46 2000
+@@ -470,7 +470,7 @@
+   integer         i__1, i__2;
+ 
+   /* Local variables */
+-  static          flag_;
++  static integer  flag_;
+   static integer  i, j, k, p, s, h0, i1, l0, i2;
+ 
+ /*    extern  Subroutine  int gibbs1_(); */
