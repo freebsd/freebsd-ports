@@ -9,6 +9,7 @@ PORTVERSION=	2.1
 MASTERDIR=	${.CURDIR}/../pips800
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 PRTYPE=		-sc40s
+FORBIDDEN=	Momentally. Because of copyright violation noted by EPkowa co.
 
 INTERNATIONAL_PRODUCTS=yes
 

@@ -9,6 +9,7 @@ PORTVERSION=	2.1
 MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S/^-//}/
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		-sp810_820
+FORBIDDEN=	Momentally. Because of copyright violation noted by EPkowa co.
 
 INTERNATIONAL_PRODUCTS=yes
 

@@ -8,6 +8,7 @@
 PORTVERSION=	2.1
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		-sc880
+FORBIDDEN=	Momentally. Because of copyright violation noted by EPkowa co.
 
 INTERNATIONAL_PRODUCTS=yes
 
