@@ -8,7 +8,7 @@
 PORTNAME=	xmms
 PORTVERSION=	1.2.4
 PORTREVISION=	1
-CATEGORIES=	audio
+CATEGORIES+=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ 
 
 MAINTAINER?=	esk@ira.uka.de

@@ -7,7 +7,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.10.4
-CATEGORIES=	audio
+CATEGORIES+=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 PKGNAMESUFFIX=	-${INTERFACE}
 DISTNAME=	TiMidity++-${PORTVERSION}
