@@ -10,7 +10,7 @@ PORTVERSION=	2.3.1.2
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/tripwire/
-DISTNAME=	tripwire-2.3.1-2
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]*$/-&/:C/-\./-/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
