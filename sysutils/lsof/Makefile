@@ -3,11 +3,11 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/02/04 08:28:54 max Exp $
+# $Id: Makefile,v 1.6 1997/02/12 10:21:34 obrien Exp $
 #
 
-DISTNAME=	lsof_3.87_W
-PKGNAME=	lsof-3.87
+DISTNAME=	lsof_4.02_W
+PKGNAME=	lsof-4.02
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
@@ -42,5 +42,9 @@ post-extract:
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
+	@${MKDIR} ${PREFIX}/share/lsof
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
+	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
+
 
 .include <bsd.port.mk>
