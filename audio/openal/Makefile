@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20020712fbsd
+PORTVERSION=	20021215fbsd
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
+		http://www.smluc.org/~erik/\
 		http://csc.smsu.edu/~greenwald/
 
 MAINTAINER=	erik@smluc.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/linux
+WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
-	install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
+	@${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
