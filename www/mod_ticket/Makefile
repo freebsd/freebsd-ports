@@ -16,11 +16,7 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for a digitally signed ticket in URL
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}

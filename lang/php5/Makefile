@@ -513,16 +513,16 @@ APXS?=		${LOCALBASE}/sbin/apxs
 WITH_APACHE2=	yes
 .endif
 .if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
+APACHE_PORT?=	www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp5.so
 .else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE_PORT?=	www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 SAPI_FILE=	libexec/apache/libphp5.so
 .endif
-BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \

@@ -29,11 +29,7 @@ RUN_DEPENDS=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd
 RUN_DEPENDS=	${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \
 		${SITE_PERL}/IMAP/Sieve.pm:${PORTSDIR}/mail/p5-IMAP-Sieve
 .endif
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/www/apache2
-.else
-RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/www/apache13
-.endif
+RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/${APACHE_PORT}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message

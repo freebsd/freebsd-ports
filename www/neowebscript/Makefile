@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=nws
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd

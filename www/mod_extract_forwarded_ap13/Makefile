@@ -14,12 +14,8 @@ MASTER_SITES=	http://web.warhound.org/mod_extract_forwarded/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-APXS?=		${LOCALBASE}/sbin/apxs
 DOCS=		doc.html README
 
 do-build:

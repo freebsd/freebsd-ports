@@ -33,7 +33,7 @@ PIKEVERSION=	7.2.492
 SH=		${PREFIX}/bin/bash
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+= --without-debug --with-PiXSL --prefix=${PREFIX} \
-		 --with-pike=/usr/local/bin/pike
+		 --with-pike=${LOCALBASE}/bin/pike
 
 USE_GMAKE=	yes
 

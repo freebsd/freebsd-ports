@@ -14,17 +14,15 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	A fast-cgi module for Apache
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 .if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
 MAKEFILE=	Makefile.AP2
 USE_REINPLACE=	YES
 MAKE_ARGS=	INCLUDES=-I${PREFIX}/include/apache2
 INSTALL_TARGET=	install-modules
 PLIST_SUB=	APACHE=2
 .else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 PLIST_SUB=	APACHE=
 .endif
 

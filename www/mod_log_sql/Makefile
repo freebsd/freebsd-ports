@@ -13,18 +13,15 @@ MASTER_SITES=	http://www.grubbybaby.com/mod_log_sql/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${AP_PORT}
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${AP_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-
-AP_PORT?=	www/apache13
-APXS?=		${LOCALBASE}/sbin/apxs
 
 ALL_TARGET=	dso
 INSTALL_TARGET=	dsoinstall

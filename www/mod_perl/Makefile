@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Apache
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT} \
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -36,7 +36,6 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
 PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +45,7 @@ do-configure:
 	    PREFIX=${PREFIX} INSTALLSITELIB=${PERLSITEDIR} \
 	    INSTALLSITEARCH=${PERLSITEDIR}/${PERL_ARCH} \
 	    INSTALLMAN3DIR=${MANPREFIX}/man/man3 \
-	    WITH_APXS=${LOCALBASE}/sbin/apxs \
+	    WITH_APXS=${APXS} \
 	    PERL_EXTRA_CFLAGS='-DDEFAULT_PATH=\"/bin:/usr/bin:/usr/local/bin\"'
 
 post-install:

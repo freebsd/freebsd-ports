@@ -14,12 +14,7 @@ MASTER_SITE_SUBDIR=	mod-blosxom
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
+USE_APACHE=	yes
 USE_REINPLACE=	yes
 
 post-patch:

@@ -14,12 +14,7 @@ MASTER_SITE_SUBDIR=	accessreferer
 MAINTAINER=	ports@freebsd.org
 COMMENT=	An Apache module that provides access control based on Referer HTTP header
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 DOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
 
 do-build:

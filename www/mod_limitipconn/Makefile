@@ -14,11 +14,7 @@ MASTER_SITES=	http://dominia.org/djao/limit/
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Limit the number of simultaneous connections from a single client IP address
 
-BUILD_DEPENDS?=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS?=	${BUILD_DEPENDS}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-
+USE_APACHE=	yes
 USE_REINPLACE=	yes
 
 post-patch:

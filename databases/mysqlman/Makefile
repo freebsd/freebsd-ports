@@ -13,7 +13,7 @@ DISTNAME=	mysqlman
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	MySQLMan is a web based MySQL database manager written in perl
 
-RUN_DEPENDS=	${WWW_DIR}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${WWW_DIR}:${PORTSDIR}/${APACHE_PORT}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 RESTRICTED=	"not redistributable, license agreement required"

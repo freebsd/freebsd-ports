@@ -13,13 +13,9 @@ DISTNAME=		${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Apache module for server-side decompression of bzip2 files
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=		yes
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}-2
-APXS?=			${LOCALBASE}/sbin/apxs
-APACHE_PORT?=		${PORTSDIR}/www/apache13
 
 do-build:
 	cd ${WRKSRC}; ${APXS} -c -lbz2 mod_bunzip2.c

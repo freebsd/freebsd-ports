@@ -24,8 +24,7 @@ MAINTAINER=	dirk@FreeBSD.org
 COMMENT?=	PHP3 module for Apache
 
 .if !defined(STANDALONE)
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
+USE_APACHE=	yes
 .endif
 
 PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
@@ -33,8 +32,6 @@ PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
 PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php3
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-APXS?=		${LOCALBASE}/sbin/apxs
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -47,7 +44,7 @@ IS_INTERACTIVE=	yes
 CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
 		--enable-discard-path
 .else
-CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
+CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--with-config-file-path=${PREFIX}/etc
 .endif
 

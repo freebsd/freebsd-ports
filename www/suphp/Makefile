@@ -13,14 +13,13 @@ MASTER_SITES=	http://www.suphp.org/download/
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A combination which provides a wrapper for PHP
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/php4-cgi
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFLICTS=	mod_php4-4*
 
-APXS?=		${LOCALBASE}/sbin/apxs
 LOG_PATH?=	/var/log
 PHP_PATH?=	${LOCALBASE}/bin/php
 APACHE_USER?=	www

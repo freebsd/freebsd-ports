@@ -15,7 +15,7 @@ MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, featureful web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24:install \
-		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13:install
+		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
 
 WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
 GNU_CONFIGURE=	yes

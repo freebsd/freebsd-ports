@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.htdig.org/files/ \
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
-RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/${APACHE_PORT}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \

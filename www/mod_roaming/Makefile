@@ -14,12 +14,7 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 DOCS=		CHANGES	INSTALL	LICENSE	README
 
 do-build:

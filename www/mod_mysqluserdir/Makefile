@@ -14,11 +14,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module to make Apache get userdirs from MySQL
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
-APXS=		${LOCALBASE}/sbin/apxs
+USE_APACHE=	yes
 
 do-build:
 	(cd ${WRKSRC} && ${APXS} -c -I${LOCALBASE}/include \

@@ -16,12 +16,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Apache module that adds a client IP header to outgoing proxy requests
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 NO_WRKSUBDIR=	YES
-
-APXS?=		${LOCALBASE}/sbin/apxs
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

@@ -14,11 +14,8 @@ MAINTAINER=		cjh@FreeBSD.org
 COMMENT=		Apache module for manipulating euc-kr encoded URL
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
-APXS?=			${LOCALBASE}/sbin/apxs
-APACHE_PORT?=		${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}

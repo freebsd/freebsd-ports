@@ -16,16 +16,11 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for integrating Python
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=	yes
 NO_PACKAGE=	"Requires Python without threads support"
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}

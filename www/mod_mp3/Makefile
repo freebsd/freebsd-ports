@@ -15,15 +15,11 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=	yes
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 USE_PERL5=	yes
 
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 DOCS=		ChangeLog README TODO faq.html CONTRIBUTORS
 
 .if defined(WITH_MYSQL)

@@ -13,15 +13,15 @@ MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 MAINTAINER=	anton@chelcom.ru
 COMMENT=	Apache module for user authentication via Cyrus pwcheck daemon
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${AP_CATEGORY}/${AP_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${AP_CATEGORY}/${AP_PORT} \
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT} \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+APACHE_PORT?=	${AP_CATEGORY}/${AP_PORT}
 
 .include <bsd.port.pre.mk>
 
-APXS?=		${LOCALBASE}/sbin/apxs
 .if exists(${APXS})
 AP_MOD_SSL_SUFFIX!=	${APXS} -q CFLAGS 2>/dev/null \
 		| ${GREP} DMOD_SSL >/dev/null \

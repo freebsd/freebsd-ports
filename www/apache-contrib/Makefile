@@ -14,12 +14,8 @@ MASTER_SITE_SUBDIR=	contrib/modules/1.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 
-APXS=		${LOCALBASE}/sbin/apxs
-
-AP_PORT?=	apache13
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
 .endif

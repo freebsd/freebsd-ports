@@ -16,12 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module that provides bandwidth & request throttling
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-APXS?=		${LOCALBASE}/sbin/apxs
 
 DOCS=		CHANGES.txt LICENSE.txt index.shtml
 

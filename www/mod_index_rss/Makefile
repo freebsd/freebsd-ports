@@ -15,11 +15,7 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to provides RSS output for directories
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c mod_index_rss.c

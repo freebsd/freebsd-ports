@@ -14,11 +14,7 @@ MASTER_SITE_SUBDIR=	mod-tsunami
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	Apache module which dynamically limits a site's slot usage
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
-APXS?=		${LOCALBASE}/sbin/apxs
-
+USE_APACHE=	yes
 DOCS=		AUTHORS Changelog INSTALL LICENSE README
 
 do-build:

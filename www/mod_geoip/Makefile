@@ -14,14 +14,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	An Apache module that provides the country code of the client's IP
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 LIB_DEPENDS=	GeoIP.3:${PORTSDIR}/net/GeoIP
 
-.include <bsd.port.pre.mk>
+USE_APACHE=	yes
 
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+.include <bsd.port.pre.mk>
 
 DOCS=		Changes INSTALL README README.php
 

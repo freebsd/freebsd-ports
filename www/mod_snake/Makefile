@@ -14,13 +14,11 @@ MASTER_SITE_SUBDIR=	modsnake
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to easily create flexible Apache modules
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${PYTHON_CMD}:${PYTHON_PORTSDIR}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs="${APXS}"

@@ -23,13 +23,11 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 # (i.e., HTTP over SSL/TLS).  Thus, we require as a dependency
 # a version of Apache which can do this.
 #
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13-modssl
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13-modssl
 LIB_DEPENDS=	krb5.3:${PORTSDIR}/security/krb5
 
+USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/src/modules/kerberos
 
-APXS?=		${LOCALBASE}/sbin/apxs
 KRB5_HOME?=	${LOCALBASE}
 
 do-build:

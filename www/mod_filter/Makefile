@@ -13,10 +13,7 @@ MASTER_SITES=		http://software.tangent.org/download/
 MAINTAINER=		svenasse@polaris.ca
 COMMENT=	Filter output from other modules inside of Apache
 
-BUILD_DEPENDS=		${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=		${BUILD_DEPENDS}
-
-APXS=			${LOCALBASE}/sbin/apxs
+USE_APACHE=		yes
 DOCS=			README
 CONTRIB_DOCS=		contrib/README contrib/echo.cgi contrib/eecummings.cgi contrib/head.cgi
 

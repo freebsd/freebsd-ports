@@ -14,9 +14,7 @@ PKGNAMEPREFIX=	mod_
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
-APXS?=		${PREFIX}/sbin/apxs
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 do-build:
 	cd ${WRKSRC} && ${APXS} -c -o mod_scgi.so mod_scgi.c

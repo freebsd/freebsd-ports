@@ -17,14 +17,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module to monitor bandwidth usage, for use with MRTG etc
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-APXS?=		${LOCALBASE}/sbin/apxs
 MAKE_ARGS+=	APXS="${APXS}"
 
 ALL_TARGET=	build-dynamic

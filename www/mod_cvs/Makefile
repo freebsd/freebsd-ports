@@ -16,13 +16,9 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A module that makes Apache CVS aware
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 USE_REINPLACE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
-
-APXS?=	${LOCALBASE}/sbin/apxs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,apxs,${APXS},g' ${WRKSRC}/Makefile
