@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Net_SSLeay.pm-${PORTVERSION}
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to SSL
 
 PERL_CONFIGURE=	yes
