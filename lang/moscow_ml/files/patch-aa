@@ -1,57 +1,20 @@
---- runtime/fail.c.orig	Thu Jul 25 15:59:04 1996
-+++ runtime/fail.c	Thu Jul 25 16:20:42 1996
-@@ -3,7 +3,7 @@
- #ifdef __MWERKS__
- #define MAXDOUBLE 1.7976931348623157081e+308
- #else
--#include <values.h>
-+#include <float.h>
- #endif
- #include "alloc.h"
- #include "fail.h"
-@@ -18,7 +18,7 @@
+--- Makefile.inc.orig	Tue Jul 28 21:49:22 1998
++++ Makefile.inc	Tue Jul 28 21:51:36 1998
+@@ -2,7 +2,7 @@
  
- volatile unsigned char float_exn = FAILURE_EXN;
- 
--double maxdouble = MAXDOUBLE/2;
-+double maxdouble = DBL_MAX/2;
- 
- struct longjmp_buffer * external_raise;
- value exn_bucket;
---- runtime/mosml.c.orig	Mon Jul 22 23:22:22 1996
-+++ runtime/mosml.c	Mon Jul 22 23:22:49 1996
-@@ -790,7 +790,7 @@
- 
- #ifndef HAS_STRERROR
-   extern int sys_nerr;
--  extern char * sys_errlist [];
-+  extern __const char *__const  sys_errlist [];
-   extern char *realpath();
-   char *mktemp();
- #endif
---- Makefile.inc.orig   Thu Jul 25 22:36:06 1996
-+++ Makefile.inc        Thu Jul 25 19:32:38 1996
-@@ -2,10 +2,11 @@
- 
- # Edit MOSMLHOME, CPP and STRIP to suit your installation
+ # Where to install stuff
  
 -MOSMLHOME=${HOME}/mosml
-+MOSMLHOME=${PREFIX}/moscow_ml
++#MOSMLHOME=${HOME}/mosml
  
- # For Linux and other well-behaved systems, use:
+ # To compile the runtime system camlrunm with support for
+ # dynamically loadable libraries (DDLs), uncomment these:
+@@ -13,7 +13,7 @@
+ # ADDCFLAGS=-rdynamic
+ 
+ # For Linux, use:
 -CPP=/lib/cpp -P -traditional -Dunix -Umsdos
-+#CPP=/lib/cpp -P -traditional -Dunix -Umsdos
 +CPP=/usr/bin/cpp -P -traditional
  STRIP=strip
+ DYNLD=ld -shared 
  
- # For HP-UX, use instead:
-@@ -42,7 +43,7 @@
- # For cross-compiling to MS DOS (from Linux) (development only)
- # CPP=/lib/cpp -P -traditional -Uunix -Dmsdos
- 
--CC=gcc
-+CC=cc
- 
- .SUFFIXES :
- .SUFFIXES : .sml .sig .ui .uo .mlp .lex .c .o
-

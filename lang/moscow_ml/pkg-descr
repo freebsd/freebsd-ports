@@ -1,6 +1,6 @@
 This is Moscow ML, a version of Standard ML:
 
-The current version 1.40 of Moscow ML
+The current version 1.43 of Moscow ML
     * implements the Core language of Standard ML, as revised 1996
     * implements large parts of the new SML Basis Library
     * implements separate compilation and a limited version of the
@@ -11,4 +11,3 @@ The current version 1.40 of Moscow ML
     * includes several new libraries and a new type `char'
 
 THE MOSCOW ML HOME PAGE is at  http://www.dina.kvl.dk/~sestoft/mosml.html
-
