@@ -7,7 +7,7 @@
 
 PORTNAME=	tvision
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.sigala.it/sergio/tvision/mysource/
@@ -23,10 +23,6 @@ INSTALLS_SHLIB=	yes
 USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=         "Does not compile"
-.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/myendian.h ${WRKSRC}/lib

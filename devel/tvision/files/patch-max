@@ -853,10 +853,12 @@ diff -u -r1.1 -r1.7
   */
  
  #define Uses_TResourceFile
-@@ -17,88 +18,80 @@
+@@ -17,88 +18,82 @@
  #define Uses_TResourceCollection
  #include <tvision/tv.h>
  
++#include <assert.h>
++
 +#include <ios>
 +
 +using std::ios;
@@ -2789,7 +2791,7 @@ diff -u -r1.1 -r1.4
   */
  
  #define Uses_MsgBox
-@@ -27,13 +28,12 @@
+@@ -27,13 +28,13 @@
  #define Uses_TStatusItem
  #define Uses_TStatusLine
  #define Uses_TSubMenu
@@ -2800,6 +2802,7 @@ diff -u -r1.1 -r1.4
 -#include <stdio.h>
  #include <tvision/tv.h>
  
++#include <assert.h>
 +extern "C" {
 +    #include <signal.h>
 +}
