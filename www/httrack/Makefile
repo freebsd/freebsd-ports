@@ -28,7 +28,13 @@ INSTALL_TARGET=	bininstall libinstall config
 INSTALL_TARGET=	install config
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${LN} -sf libhttrack.so.1 ${PREFIX}/lib/libhttrack.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
