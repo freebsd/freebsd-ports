@@ -1,5 +1,6 @@
 bin/lftp
 bin/ftpget
+bin/lftpget
 etc/lftp.conf.sample
 share/doc/lftp/COPYING
 share/doc/lftp/FAQ
