@@ -15,6 +15,7 @@ MAINTAINER=	jfitz@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_BISON=	yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.2:${PREFIX}/include/tk8.2" \
 		TCL_TK_LIBRARY_DIR=${PREFIX}/lib \
