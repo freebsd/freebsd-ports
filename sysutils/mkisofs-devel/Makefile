@@ -1,24 +1,23 @@
 # New ports collection makefile for:	mkisofs
-# Version required:	1.12b5
+# Version required:	1.12 (from cdrecord-1.8)
 # Date created:		07 Aug 1996
 # Whom:			jhk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a40
-PKGNAME=	mkisofs-1.12b5
+DISTNAME=	cdrecord-1.8
+PKGNAME=	mkisofs-1.12
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
 
 MAINTAINER=	dirk@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/cdrecord-1.8
-USE_GMAKE=	yes
-MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG -DHAVE_SIZE_T"
 MAN8=		mkisofs.8
+USE_GMAKE=	yes
+MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 
 .if ${MACHINE_ARCH} == "alpha"
 post-extract:
