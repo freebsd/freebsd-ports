@@ -1,17 +1,17 @@
---- Makefile.orig	Sat May 29 11:35:43 1993
-+++ Makefile	Sun Aug 16 10:37:31 1998
+--- Makefile.orig	Sat May 29 09:35:43 1993
++++ Makefile	Fri Mar  9 10:17:33 2001
 @@ -116,8 +116,8 @@
  #  library files are not in a standard place, then the following
  #  two lines should be uncommented, and set appropriately.
  #
 -#X11INCDIR         = -I$(OPENWINHOME)/include
 -#X11LIBDIR         = -L$(OPENWINHOME)/lib
-+X11INCDIR         = -I/usr/X11R6/include
-+X11LIBDIR         = -L/usr/X11R6/lib
++X11INCDIR         = -I${X11BASE}/include
++X11LIBDIR         = -L${X11BASE}/lib
  #-------------------------------------------------------------------------
  #  If you are compiling the XView version, then the following two lines
  #  should be uncommented.
-@@ -130,10 +130,10 @@
+@@ -130,14 +130,14 @@
  #  Default locations where calctool files will be installed.
  #  You might wish to alter these values.
  #
@@ -26,19 +26,21 @@
  #
  #  Compilation flags and standard macro definitions.
  #
-@@ -144,8 +144,9 @@
- #
- #=========================================================================
+-CFLAGS		= -g $(HELPNAME) $(NEWSFILE) $(STUPID_FPE) $(NOIEEE) \
++CFLAGS		+= $(HELPNAME) $(NEWSFILE) $(STUPID_FPE) $(NOIEEE) \
+ 		     $(NOINDEX) $(RCNAME) $(SELTYPE) $(SHLIB) $(SIGRET) \
+ 		     $(SUN4_KEYBOARD) $(TTEXT) $(MGRPARAM) $(MGRINCDIR) \
+ 		     $(X11INCDIR) $(XVIEWINCDIR)
+@@ -147,7 +147,7 @@
+ BINARIES        = mgr_calctool ps_calctool sv_calctool \
+ 		  tty_calctool xcalctool xv_calctool
  
--BINARIES        = mgr_calctool ps_calctool sv_calctool \
--		  tty_calctool xcalctool xv_calctool
-+#BINARIES        = mgr_calctool ps_calctool sv_calctool \
-+#		  tty_calctool xcalctool xv_calctool
-+BINARIES	= x11
+-CC		= cc
++#CC		= cc
  
- CC		= cc
- 
-@@ -233,8 +234,7 @@
+ LIBSRCS         = graphics.c display.c functions.c get.c
+ LIBOBJS         = graphics.o display.o functions.o get.o
+@@ -233,8 +233,7 @@
  			ld -o libcalctool.so.1.1 -assert pure-text $?
  
  install:

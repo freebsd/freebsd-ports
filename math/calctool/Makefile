@@ -17,4 +17,6 @@ MAINTAINER=	nsayer@freebsd.org
 USE_X_PREFIX=	yes
 MAN1=		calctool.1
 
+ALL_TARGET=	x11
+
 .include <bsd.port.mk>
