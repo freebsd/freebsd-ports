@@ -39,18 +39,10 @@ CONFIGURE_ARGS=	--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-qt-includes=${X11BASE}/include/X11/qt \
 		--with-extra-includes=${LOCALBASE}/include \
 		--with-extra-libs=${LOCALBASE}/lib
-MAKE_ENV=	CXX="${CXX}" SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
+MAKE_ENV=	CXX="${CXX}" SOMAJOR="${SOMAJOR}"
 SOMAJOR=        1
-SOMINOR=        0
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-LIBVER="${SOMAJOR}.${SOMINOR}"
-.else
-LIBVER="${SOMAJOR}"
-.endif
-PLIST_SUB+=	LIBVER="${LIBVER}"
+PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
 pre-patch:
 .if !defined(USE_OPTIONAL_DEPENDS)
@@ -64,4 +56,4 @@ pre-patch:
 post-patch:
 	@${LN} -sf /usr/include/g++/FlexLexer.h ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
