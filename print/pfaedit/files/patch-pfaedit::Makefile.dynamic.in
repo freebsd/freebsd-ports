@@ -1,0 +1,11 @@
+--- pfaedit/Makefile.dynamic.in.orig	Thu Mar  6 04:31:05 2003
++++ pfaedit/Makefile.dynamic.in	Sun Apr 20 16:58:21 2003
+@@ -47,7 +47,7 @@
+     $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm
+ DLIBS = -rpath $(libdir) ../libgunicode.la -lm
+ 
+-all: pfaedit-en.ui pfaedit sfddiff
++all: pfaedit-en.ui pfaedit sfddiff acorn2sfd
+ 
+ pfaedit: nomen.h $(pfaedit_OBJECTS)
+ 	$(LIBTOOL) $(CC) -o pfaedit $(pfaedit_OBJECTS) $(LIBS)

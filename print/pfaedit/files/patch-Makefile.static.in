@@ -17,7 +17,7 @@
 -	-cp $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
 -	cp $(srcdir)/pfaedit/pfaedit.1 $(mandir)/man1
 -	cp $(srcdir)/pfaedit/sfddiff.1 $(mandir)/man1
-+	${BSD_INSTALL_MAN}  $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
++	${BSD_INSTALL_DATA}  $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
 +	${BSD_INSTALL_MAN}  $(srcdir)/pfaedit/pfaedit.1 $(mandir)/man1
 +	${BSD_INSTALL_MAN}  $(srcdir)/pfaedit/sfddiff.1 $(mandir)/man1
  
