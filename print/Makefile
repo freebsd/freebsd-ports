@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1995/10/20 10:36:46 asami Exp $
+# $Id: Makefile,v 1.23 1995/11/15 11:21:02 asami Exp $
 #
 
     SUBDIR += a2ps
@@ -17,6 +17,7 @@
     SUBDIR += musixtex
     SUBDIR += psutils
     SUBDIR += rtf2latex
+    SUBDIR += teTeX
     SUBDIR += tex
     SUBDIR += texinfo
     SUBDIR += tr2latex
