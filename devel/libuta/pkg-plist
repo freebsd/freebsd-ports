@@ -1,8 +1,6 @@
 bin/uta-config
-lib/libuta.la
 lib/libuta.so
-lib/libuta-0.4.so
-lib/libuta-0.4.so.0
+lib/libuta-0.4.so.2
 lib/libuta.a
 include/uta/debug.h
 include/uta/color.h
