@@ -20,16 +20,18 @@ COMMENT=	HTTP, FTP and Gopher mirroring tool
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
-USE_REINPLACE=	yes
-WANT_GNOME=	yes
 USE_OPENSSL=	yes
+WANT_GNOME=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-locale-dir=${LOCALBASE}/share/locale \
 		--disable-debug --disable-gnome --enable-threads
 
 MAN1=		pavuk.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -41,11 +43,12 @@ CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
+	@${REINPLACE_CMD} -e \
+		's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-lpthreads|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND}  ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/icons|$$(pkgdatadir)/icons|g'
+		's|$$(datadir)/icons|$$(pkgdatadir)/icons|g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
