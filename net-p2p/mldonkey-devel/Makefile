@@ -18,7 +18,7 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-pthread
+CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
