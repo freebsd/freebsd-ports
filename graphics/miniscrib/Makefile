@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     bms@spc.org
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=         ${WRKDIR}/${PORTNAME}
 USE_X11_PREFIX=	yes
 USE_XPM=	yes
