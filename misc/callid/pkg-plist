@@ -1,0 +1,20 @@
+etc/rc.d/callid.sh
+sbin/call-logd
+www/callid/index.html
+www/callid/config.php
+www/callid/names-add.php
+www/callid/names-del.php
+www/callid/names-menu.php
+www/callid/names.php
+www/callid/phone-menu.php
+www/callid/phone.php
+www/callid/top.php
+www/callid/images/add-name.jpg
+www/callid/images/call-log.jpg
+www/callid/images/callid.jpg
+www/callid/images/delete-name.jpg
+www/callid/images/list-names.jpg
+www/callid/images/names-menu.jpg
+www/callid/images/phone-menu.jpg
+@dirrm www/callid/images
+@dirrm www/callid
