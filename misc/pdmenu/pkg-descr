@@ -1,0 +1,3 @@
+Pdmenu is a menuing system for Unix. It is designed to be easy to
+use, and is suitable for a login shell for inexperienced users, or
+it can just be ran at the command line as a handy menu.

@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan  9 14:08:55 1999
++++ configure	Sat Jan  9 14:10:24 1999
+@@ -842,7 +842,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lslang  $LIBS"
++LIBS="-lslang -ltermcap $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 848 "configure"
+ #include "confdefs.h"

@@ -1,0 +1,4 @@
+bin/pdmenu
+etc/pdmenurc
+lib/pdmenu/showdir.pl
+lib/pdmenu/editdir.pl
