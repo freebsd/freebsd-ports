@@ -17,6 +17,8 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
+BROKEN=		Does not configure
+
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
