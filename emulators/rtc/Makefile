@@ -15,6 +15,8 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/files
 
+USE_LINUX=	yes
+
 KMODDIR=	${PREFIX}/modules
 
 CDEV_MAJOR=	202
@@ -29,7 +31,7 @@ SRC_BASE?=	/usr/src
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-BROKEN=		"Systems prior to 400013 is out of support"
+BROKEN=		"Systems prior to 400013 are out of support"
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
