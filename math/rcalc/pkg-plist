@@ -7,5 +7,3 @@ share/gnome/help/rCalc/C/calculate.png
 share/gnome/help/rCalc/C/topic.dat
 @dirrm share/gnome/help/rCalc/C
 @dirrm share/gnome/help/rCalc
-@unexec rmdir %D/share/gnome/apps/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/gnome/help 2>/dev/null || true

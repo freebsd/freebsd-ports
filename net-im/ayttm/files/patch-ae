@@ -5,7 +5,7 @@
  ACLOCAL_AMFLAGS = -I m4
  
 -Utilitiesdir = /etc/X11/applnk/Internet
-+Utilitiesdir = ${PREFIX}/share/applnk/Internet
++Utilitiesdir = $(datadir)/apps/Internet
  Utilities_DATA = Everybuddy.desktop
  
  EXTRA_DIST = Everybuddy.desktop 

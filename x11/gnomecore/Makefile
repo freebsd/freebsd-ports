@@ -14,22 +14,17 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		xml.5:${PORTSDIR}/textproc/libxml \
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		bz2.1:${PORTSDIR}/archivers/bzip2
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-kde-datadir=${LOCALBASE}/share
+CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome-session.1 gnome-wm.1 save-session.1

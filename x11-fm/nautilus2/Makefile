@@ -25,16 +25,15 @@ MOZILLA=	mozilla-embedded
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 .endif
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-pthread -L${LOCALBASE}/lib" \
+		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
 
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 .if defined(WITH_MOZILLA)
 CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
 		 --with-mozilla-include-place=${X11BASE}/include/${MOZILLA}
@@ -44,12 +43,6 @@ PLIST_SUB+=	MOZILLA:=""
 MOZILLA_LIBS=	""
 PLIST_SUB+=	MOZILLA:="@comment "
 .endif
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		LIBS="-pthread -L${LOCALBASE}/lib" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
 
 .if !defined(WITH_MOZILLA)
 pre-extract:

@@ -14,19 +14,12 @@ DISTNAME=	mc-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--without-edit -with-ncurses
+CONFIGURE_ARGS=	--without-edit -with-ncurses
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		MAKE="gmake" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -13,14 +13,20 @@ DISTNAME=	battstat_applet-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_LIBTOOL=	yes
-USE_GMAKE=	yes
+
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GMAKE=	yes
+USE_GNOME=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -11,21 +11,14 @@ MASTER_SITES=	http://crescendo.dpnd.com/files/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS+=	--enable-compile-warnings=yes
-CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome \
-			--datadir=${PREFIX}/share/gnome \
-			--with-gnome=${PREFIX}
+CONFIGURE_ARGS=	--enable-compile-warnings=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=${DOCDIR}

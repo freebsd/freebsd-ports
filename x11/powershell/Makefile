@@ -13,19 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gdk_imlib:${PORTSDIR}/graphics/imlib
-
-USE_X_PREFIX=	yes
-USE_AUTOCONF=	yes
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
-
 ALL_TARGET=	powershell
 
-MAKE_ENV=	${CONFIGURE_ENV}
+USE_X_PREFIX=	yes
+USE_GNOME=	yes
+USE_AUTOCONF=	yes
 
 .include <bsd.port.mk>

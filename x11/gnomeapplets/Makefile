@@ -14,21 +14,14 @@ DISTNAME=	gnome-applets-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		xml.5:${PORTSDIR}/textproc/libxml \
-		ghttp.1:${PORTSDIR}/www/libghttp \
-		esd.2:${PORTSDIR}/audio/esound \
+LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp \
 		gtop.1:${PORTSDIR}/devel/libgtop
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:

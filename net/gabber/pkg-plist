@@ -1,19 +1,19 @@
 bin/gabber
-share/gabber/gabber.glade
-share/gabber/glade-delete-user-menu.xpm
-share/gabber/glade-delete-user.xpm
-share/gabber/glade-edit-user-menu.xpm
-share/gabber/glade-edit-user.xpm
-share/gabber/glade-gabber-logo.png
-share/gabber/glade-message.xpm
-share/gabber/glade-new-user-menu.xpm
-share/gabber/glade-new-user.xpm
-share/gabber/glade-noclose.xpm
-share/gabber/glade-ooochat.xpm
-share/gabber/glade-s10n.xpm
-share/gabber/glade-sendasooo.xpm
-share/gabber/glade-users.xpm
 share/gnome/apps/Internet/gabber.desktop
+share/gnome/gabber/gabber.glade
+share/gnome/gabber/glade-delete-user-menu.xpm
+share/gnome/gabber/glade-delete-user.xpm
+share/gnome/gabber/glade-edit-user-menu.xpm
+share/gnome/gabber/glade-edit-user.xpm
+share/gnome/gabber/glade-gabber-logo.png
+share/gnome/gabber/glade-message.xpm
+share/gnome/gabber/glade-new-user-menu.xpm
+share/gnome/gabber/glade-new-user.xpm
+share/gnome/gabber/glade-noclose.xpm
+share/gnome/gabber/glade-ooochat.xpm
+share/gnome/gabber/glade-s10n.xpm
+share/gnome/gabber/glade-sendasooo.xpm
+share/gnome/gabber/glade-users.xpm
 share/gnome/help/gabber/C/agents-available.png
 share/gnome/help/gabber/C/agents-register.png
 share/gnome/help/gabber/C/agents.html
@@ -84,4 +84,4 @@ share/locale/en_SE/LC_MESSAGES/gabber.mo
 @dirrm share/gnome/help/gabber/C/stylesheet-images
 @dirrm share/gnome/help/gabber/C
 @dirrm share/gnome/help/gabber
-@dirrm share/gabber
+@dirrm share/gnome/gabber

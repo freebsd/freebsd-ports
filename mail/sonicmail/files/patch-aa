@@ -6,8 +6,8 @@
  # Change these to the default location of the pixmaps/wav files:
 -XPMSPATH = /usr/share/pixmaps/sonicmail
 -WAVSPATH = /usr/share/sound/sonicmail
-+XPMSPATH = /usr/X11R6/share/pixmaps/sonicmail
-+WAVSPATH = /usr/X11R6/share/sound/sonicmail
++XPMSPATH = ${PREFIX}/share/pixmaps/sonicmail
++WAVSPATH = ${PREFIX}/share/sound/sonicmail
  
  # Change to 1 to activate debug mode:
  SONICMAIL_DEBUG = 0
@@ -16,7 +16,7 @@
  CFLAGS = -Wall $($(OSTYPE)_Flags) -O2 `gnome-config --cflags applets` $(DEFINES)
  
 -LFLAGS = `gnome-config --libs applets` `gtk-config --libs gthread` -lpthread
-+LFLAGS = `gnome-config --libs applets` `gtk12-config --libs gthread`
++LFLAGS = `gnome-config --libs applets` `${GTK_CONFIG} --libs gthread`
  
  # Define platform specific flags/libraries below:
  Linux_Flags = -DLINUX

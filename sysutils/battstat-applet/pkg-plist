@@ -2,7 +2,6 @@ bin/battstat_applet
 etc/CORBA/servers/battstat_applet.gnorba
 etc/sound/events/battstat_applet.soundlist
 share/gnome/applets/Monitors/battstat_applet.desktop
-share/gnome/pixmaps/battstat.png
 share/gnome/help/battstat_applet/C/appear-hidden.gif
 share/gnome/help/battstat_applet/C/appear.gif
 share/gnome/help/battstat_applet/C/bottom.gif
@@ -16,4 +15,7 @@ share/gnome/help/battstat_applet/C/square-hidden.gif
 share/gnome/help/battstat_applet/C/square.gif
 share/gnome/help/battstat_applet/C/top.gif
 share/gnome/help/battstat_applet/C/topic.dat
-@dirrm share/gnome/help/battstat_applet/C/stylesheet-images
+share/gnome/pixmaps/battstat.png
+share/locale/sv/LC_MESSAGES/battstat_applet.mo
+@dirrm share/gnome/help/battstat_applet/C
+@dirrm share/gnome/help/battstat_applet

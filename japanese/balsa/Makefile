@@ -13,28 +13,19 @@ DISTNAME=	balsa-0.8.0-ja
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		PropList.2:${PORTSDIR}/devel/libPropList
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+WRKSRC=		${WRKDIR}/balsa-0.8.0ja
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 LIBTOOLFILES=	configure libmutt/configure
-CONFIGURE_ENV=	GTK_CONFIG='${GTK_CONFIG}' \
-		GLIB_CONFIG='${GLIB_CONFIG}' \
-		CPPFLAGS='-I${LOCALBASE}/include' \
+CONFIGURE_ARGS=	--enable-system-install --enable-threads
+CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LIBS='-L${LOCALBASE}/lib'
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX} \
-		--enable-system-install --enable-threads
-WRKSRC=		${WRKDIR}/balsa-0.8.0ja
-
 MAN1=		balsa.1
 
 pre-configure:
