@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,10 +27,10 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam=/etc/pam.d
-PLIST_SUB+=	NETATALKPAM=""
+PLIST_SUB+=		NETATALKPAM=""
 .else
 CONFIGURE_ARGS+=	--without-pam
-PLIST_SUB+=	NETATALKPAM="@comment "
+PLIST_SUB+=		NETATALKPAM="@comment "
 .endif
 .if defined(WITH_SRVLOC)
 # Enable Service Location Protocol support.  This allows MacOS X < 10.1 to
@@ -42,19 +42,19 @@ CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 # calculation scheme is used.  However, if you wish to revert back to the old
 # 1.5.x default scheme, specify WITHOUT_CNID
 CONFIGURE_ARGS+=	--with-did=last
-PLIST_SUB+=	NETATALKCNID="@comment "
+PLIST_SUB+=		NETATALKCNID="@comment "
 .else
 # This method of DID calculation is not persistent, but has been tested to
 # work with MacOS X (10.0.3-10.1.3) as well as MacOS 7-9.2.2.
 CONFIGURE_ARGS+=	--with-did=cnid \
 			--with-bdb=${LOCALBASE}
-PLIST_SUB+=	NETATALKCNID=""
+PLIST_SUB+=		NETATALKCNID=""
 .endif
 .if defined (WITH_TIMELORD)
 CONFIGURE_ARGS+=	--enable-timelord
-PLIST_SUB+=	TIMELORD=""
+PLIST_SUB+=		TIMELORD=""
 .else
-PLIST_SUB+=	TIMELORD="@comment "
+PLIST_SUB+=		TIMELORD="@comment "
 .endif
 .if defined (WITH_MANGLING) && !defined (WITHOUT_CNID)
 # Enable long file name mangling support (requires CNID).
