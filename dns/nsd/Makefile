@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	1.2.4
+PORTVERSION=	2.0.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
