@@ -1,4 +1,7 @@
 %%SITE_PERL%%/Tree/Simple.pm
 %%SITE_PERL%%/Tree/Simple/Visitor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/.packlist
 @dirrm %%SITE_PERL%%/Tree/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple
 @unexec rmdir %D/%%SITE_PERL%%/Tree 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree 2>/dev/null || true
