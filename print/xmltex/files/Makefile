@@ -1,9 +1,14 @@
 # $FreeBSD$
 
+TEX_CMD?=	tex
+LATEX_FMT?=	latex
+PDFTEX_CMD?=	pdftex
+PDFLATEX_FMT?=	pdflatex
+
 all: xmltex.fmt pdfxmltex.fmt
 
 xmltex.fmt:
-	tex -ini -progname=xmltex "&latex" xmltex.ini
+	${TEX_CMD} -ini -progname=xmltex "&${LATEX_FMT}" xmltex.ini
 
 pdfxmltex.fmt:
-	pdftex -ini -progname=pdfxmltex "&pdflatex" pdfxmltex.ini
+	${PDFTEX_CMD} -ini -progname=pdfxmltex "&${PDFLATEX_FMT}" pdfxmltex.ini
