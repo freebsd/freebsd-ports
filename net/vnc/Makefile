@@ -7,6 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
@@ -31,7 +32,18 @@ MAN1=		vncviewer.1 \
 MAN1+=		Xvnc.1 \
 		vncserver.1
 
+RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/XFree86-4-clients \
+${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+
 USE_PERL5_RUN=	yes
+.endif
+
+pre-build:
+.if !defined(WITHOUT_SERVER)
+	@${ECHO_MSG} "NOTE:"
+	@${ECHO_MSG} "   Use 'make -DWITHOUT_SERVER ...' if you do not wish to"
+	@${ECHO_MSG} "   compile/install the VNC server components."
+	@${ECHO_MSG} ""
 .endif
 
 post-build:
