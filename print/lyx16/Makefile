@@ -3,10 +3,10 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.22 1998/09/26 23:18:08 steve Exp $
+# $Id: Makefile,v 1.23 1998/11/10 15:15:59 andreas Exp $
 #
 
-DISTNAME=	lyx-1.0.0pre2
+DISTNAME=	lyx-1.0.0pre6
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/ \
 		ftp://la1ad.uio.no/pub/lyx/                
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 STRIP=
 CONFIGURE_ARGS= --with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
-MAN1=		lyx.1
+MAN1=		lyx.1 reLyX.1
 
 pre-fetch:
 .if !defined(WITH_ISPELL)
