@@ -7,20 +7,20 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.8
-#PORTREVISION=	1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
-		http://www.ash.ne.jp/~mal/mozilla/ \
-		http://dev.jp/
+MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
+		http://dev.jp/ \
+		http://www.mozilla.gr.jp/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v0.1
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v1.0
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${MOZILLA_PORT}
-RUN_DEPENDS=	mozilla:${MOZILLA_PORT} \
+BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		${PKG_DBDIR}/ja-bdf-fonts-1.0:${PORTSDIR}/japanese/bdf-fonts
 
 WRKSRC=		${WRKDIR}/bin
@@ -29,25 +29,12 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qo
 
-.if defined(MOZILLA_IPV6)
-MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
-.else
-MOZILLA_PORT=	${PORTSDIR}/www/mozilla
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400020
 MOZILLA_SH=	mozilla.noxpg4
 .else
 MOZILLA_SH=	mozilla.xpg4
-.endif
-
-.if !defined(MOZILLA_IPV6)
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "If you need IPv6 compliant mozilla, define \"MOZILLA_IPV6\"."
-	@${ECHO} ""
 .endif
 
 post-extract:
