@@ -1,6 +1,16 @@
---- Makefile.in.orig	Wed Feb 18 14:17:22 2004
-+++ Makefile.in	Wed Feb 18 14:19:31 2004
-@@ -191,9 +191,9 @@
+--- Makefile.in.orig	Tue Dec 12 11:11:11 2000
++++ Makefile.in	Wed Dec 15 23:53:21 2004
+@@ -64,8 +64,7 @@
+ catdir		= $(prefix)/man/cat$(manext)
+ mandir		= $(prefix)/man/man$(manext)
+ manext		= 1
+-shrlibdir	= $(shrlibtop)/$(PROGNAME)-$(VERSION)
+-shrlibtop       = $(prefix)/share/lib/$(PROGNAME)
++shrlibdir	= %%DATADIR%%
+ 
+ FTPDIR		= /u/ftp/pub/misc
+ 
+@@ -191,9 +190,9 @@
  
  DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $(XDEFINES)
  
@@ -12,7 +22,7 @@
  
  LIBS		= @LIBS@ $(XLIBS)
  
-@@ -602,14 +602,12 @@
+@@ -602,14 +601,12 @@
  	if test -f $(PROGNAME) ; \
  	then \
  		$(CP) $(PROGNAME) $(bindir)/$(PROGNAME) ; \
@@ -28,7 +38,7 @@
  		done ; \
  	fi
  
-@@ -635,7 +633,7 @@
+@@ -635,15 +632,13 @@
  install-show:
  	@echo ''
  	@echo Installed files...
@@ -37,7 +47,16 @@
  	@$(LS) -l $(mandir)/$(PROGNAME).$(manext)
  	@if test -d $(shrlibdir) ; then $(LS) -lR $(shrlibdir)/* ; fi
  	@echo ''
-@@ -703,7 +701,7 @@
+ 
+ install-shrlib:	uninstall-shrlib
+-	-$(MKDIR) $(shrlibtop)
+-	@if test -d $(shrlibtop) ; then true ; else echo Cannot create $(shrlibtop) ; exit 1 ; fi
+-	-$(MKDIR) $(shrlibdir)
++	-$(MKDIR) -p $(shrlibdir)
+ 	@if test -d $(shrlibdir) ; then true ; else echo Cannot create $(shrlibdir) ; exit 1 ; fi
+ 	for f in $(SHRLIBFILES) ; \
+ 	do \
+@@ -703,7 +698,7 @@
  uninstall-exe:
  	-for f in $(PROGRAMS) ; \
  	do \

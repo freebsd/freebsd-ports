@@ -1,5 +1,3 @@
 bin/ndiff
-share/lib/ndiff/ndiff-2.00/ndiff.awk
-@dirrm share/lib/ndiff/ndiff-2.00
-@dirrm share/lib/ndiff
-@dirrm share/lib
+%%DATADIR%%/ndiff.awk
+@dirrm %%DATADIR%%

@@ -33,13 +33,17 @@ CONFIGURE_ARGS= --with-double
 .endif
 .endif
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all check
+ALL_TARGET=	all check-runs
 
 MAN1=		ndiff.1
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:g" ${WRKSRC}/Makefile.in
 
 post-build:
 	@${ECHO_MSG} "If there were no errors in the above checks then type"
@@ -51,9 +55,9 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.pdf  ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.ps   ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pdf  ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ps   ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
