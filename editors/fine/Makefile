@@ -9,8 +9,7 @@ PORTNAME=	fine
 PORTVERSION=	2.3
 CATEGORIES=	editors
 # DEAD MASTER_SITES=	ftp://razor.fer.uni-lj.si/pub/software/bojank/fine/
-MASTER_SITES=	http://idig.linux.tucows.com/files/x11/office/ \
-		http://dccnet.linux.tucows.com/files/x11/office/
+MASTER_SITES=	http://dccnet.linux.tucows.com/files/x11/office/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
