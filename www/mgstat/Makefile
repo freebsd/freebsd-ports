@@ -15,8 +15,7 @@ COMMENT=	Produce graphs from mod_gzip log files
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 
 MGDOCDIR=	${PREFIX}/share/doc/mgstat
 
