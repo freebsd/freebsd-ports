@@ -371,7 +371,7 @@ echo
 configure
 
 if [ X$cpwh != XNO ]; then
-  cp $cpwh $WH
+  tr -d '\r' < $cpwh > $WH
 fi
 
 cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
