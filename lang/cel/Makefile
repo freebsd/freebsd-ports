@@ -18,6 +18,7 @@ COMMENT=	A small, simple prototype-based OO language
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 PORTDOCS=	CoreArchitecture.html DefaultProtos Linker.html \
 		Logs.html ProtoLanguage.html README SimpleDataFormat.html \
@@ -25,6 +26,11 @@ PORTDOCS=	CoreArchitecture.html DefaultProtos Linker.html \
 PLIST_FILES=	bin/cel
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-fno-omit-frame-pointer,${CFLAGS}," \
+		${WRKSRC}/hash/Makefile ${WRKSRC}/kits/Makefile.unix \
+		${WRKSRC}/vm/Makefile.unix
 
 do-configure:
 	@cd ${WRKSRC}; ${SH} ./config.unix
