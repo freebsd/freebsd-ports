@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	poseidonCE
+PORTNAME=	poseidon
 PORTVERSION=	2.4.1
 CATEGORIES=	java
-MASTER_SITES=	# http://www.gentleware.com/products/download.php4
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	# Required to print the message
+MASTER_SITES=	ftp://ftp.gentleware.org/
+DISTNAME=	${PORTNAME}${EDI}-${PORTVERSION}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
@@ -22,28 +22,56 @@ NO_PACKAGE=	"Redistribution is not permitted"
 NO_CDROM=	${NO_PACKAGE}
 RESTRICTED=	${NO_PACKAGE}
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTFILES})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually. Please access http://www.gentleware.com/products/download.php4\n\
-with a web browser and load the \"ZIP for any Platform\" of the\n\
-Community Edition.\n\
-After download the file, place it into ${DISTDIR}.\n
+.for edition in SE PE
+. if defined(POSEIDON_${edition})
+EDI=	${edition}
+. endif
+.endfor
+.if !defined(EDI)
+EDI=	CE
+.endif
+PKGLIST=	pkg-plist.${EDI}
+.if (${EDI} != PE)
+POSEIDON_PATCH=	${PORTNAME}${EDI}.sh.patch
 .endif
 
+PLIST:=		${WRKSRC}/PLIST
+
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "There is a free usable edition of Poseidon for UML,"
+	@${ECHO_MSG} "the Community Edition, which is installed by default."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you like to install the Standard Edition or the Professional Edition"
+	@${ECHO_MSG} "please specify POSEIDON_SE=yes for the Standard Edition"
+	@${ECHO_MSG} "or POSEIDON_PE=yes for the Professional Edition."
+	@${ECHO_MSG}
+
 post-patch:
+.if(defined(POSEIDON_PATCH))
+	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/${POSEIDON_PATCH}
+.endif
 	@${REINPLACE_CMD} -e "s,%%JAVA_HOME%%,${JAVA_HOME}," ${WRKSRC}/bin/poseidon.sh
+
+pre-install:
+	@${CAT} ${PKGLIST} ${PKGDIR}/pkg-plist > ${PLIST}
 
 do-install:
 	@${MKDIR} ${DATADIR}/bin
 	@${MKDIR} ${DATADIR}/lib
+.if(defined(POSEIDON_PE))
+	@${MKDIR} ${DATADIR}/lib/templates
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/poseidon.sh ${DATADIR}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DATADIR}
+.if(defined(POSEIDON_PE))
+	${INSTALL_DATA} ${WRKSRC}/lib/templates/* ${DATADIR}/lib/templates
+	${INSTALL_DATA} ${WRKSRC}/lib/templates.zip ${DATADIR}/lib
+.endif
+.if(!defined(POSEIDON_SE) && !defined(POSEIDON_PE))
 	${INSTALL_DATA} ${WRKSRC}/license-keys.txt ${DATADIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${CP} -r ${WRKSRC}/docs ${DATADIR}
 	${CP} -r ${WRKSRC}/examples ${DATADIR}
@@ -52,4 +80,4 @@ do-install:
 post-install:
 	${LN} -s ${DATADIR}/bin/poseidon.sh ${LOCALBASE}/bin/poseidon
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

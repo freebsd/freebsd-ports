@@ -4,7 +4,6 @@ bin/poseidon
 %%DATADIR%%/lib/umltojava.jar
 %%DATADIR%%/lib/jmitoolkit.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/templates.jar
 %%DATADIR%%/lib/jaxrpc.jar
 %%DATADIR%%/lib/alloy.jar
 %%DATADIR%%/lib/freehep-graphics2d.jar
@@ -2017,7 +2016,6 @@ bin/poseidon
 %%PORTDOCS%%%%DATADIR%%/examples/StattAuto/StattAuto.zuml
 %%PORTDOCS%%%%DATADIR%%/examples/Figures/ShapesAndFigures.zuml
 %%PORTDOCS%%%%DATADIR%%/examples/Softsale/Softsale.zuml
-%%DATADIR%%/license-keys.txt
 %%DATADIR%%/LICENSE.txt
 @dirrm %%DATADIR%%/bin
 %%PORTDOCS%%@dirrm %%DATADIR%%/docs/PoseidonUsersGuide/images/areas
