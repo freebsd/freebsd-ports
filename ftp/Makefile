@@ -38,6 +38,7 @@
     SUBDIR += oftpd
     SUBDIR += omi
     SUBDIR += paraftp
+    SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += proftpd
     SUBDIR += puf
