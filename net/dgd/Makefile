@@ -10,8 +10,12 @@ DISTFILES=	${DISTNAME}.tar.gz
 PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
 		1.0.8.3-1.0.8.4.gz 1.0.8.4-1.0.8.5.gz 1.0.8.5-1.0.8.6.gz \
 		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
-PATCHSITE=	epsilon.me.chalmers.se
+.if defined(MASTER_SITE_OVERRIDE)
+PATCHSITE:=	${MASTER_SITE_OVERRIDE}
+.else
+PATCHSITE=	epsilon.me.chalmers.se:
 NCFTPFLAGS=	-P
+.endif
 _PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
 PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
@@ -23,16 +27,26 @@ pre-fetch:
 	@if [ ! -d ${DISTDIR}/${DISTNAME} ]; then mkdir -p ${DISTDIR}/${DISTNAME}; fi
 	@if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
 		echo ">> Fetching distribution file from remote site..."; \
-		${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:${DISTNAME}.tar.gz \
+		${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}${DISTNAME}.tar.gz \
         		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
 	fi
+.if defined(MASTER_SITE_OVERRIDE)
 	@for file in ${PATCHFILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
-			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:patches/$$file \
+			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}${DISTNAME}/$$file \
+				&& mv $$file ${DISTDIR}/${DISTNAME}; \
+	    	fi \
+	 done
+.else
+	@for file in ${PATCHFILES}; do \
+		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
+			echo ">> Fetching patch $$file from remote site...";  \
+			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}patches/$$file \
 				&& mv patches/$$file ${DISTDIR}/${DISTNAME}; \
 	    	fi \
 	 done
+.endif
 
 # Need to determine whether all author-supplied patches are correctly applied
 ### not yet implemented
