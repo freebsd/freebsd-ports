@@ -86,8 +86,12 @@ CONFIGURE_ARGS+=	--enable-keymap=lynx
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -lc_r"
 .else
+# Use -lpthread instead of ${PTHREAD_LIBS} to link libpthread 
+# and libc before libgc.
+# This is necessary to avoid build error with boehm-gc with REDIRECT and
+# THREADING options.
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="${LIBS} ${PTHREAD_LIBS} -lc"
+		LIBS="${LIBS} -lpthread -lc"
 .endif
 
 pre-everything::
