@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	0104101757
+PORTVERSION=	0104241750
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
