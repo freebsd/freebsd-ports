@@ -7,7 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://www.csociety.org/~will/ \
@@ -20,11 +20,16 @@ MAINTAINER=	darius@dons.net.au
 ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
+
+LTMDM_DEV_MAJOR		?= 228
+LTMDM_OBJ_VERSION	?= 600
+
 .if defined(USE_595_OBJ)
-MAKE_ARGS+=	LTMDM_OBJ_VERSION=595
-.else
-MAKE_ARGS+=	LTMDM_OBJ_VERSION=600
+MAKE_ARGS	= LTMDM_OBJ_VERSION=595
 .endif
+
+MAKE_ARGS+=	LTMDM_DEV_MAJOR=${LTMDM_DEV_MAJOR}
+MAKE_ARGS+=	LTMDM_OBJ_VERSION=${LTMDM_OBJ_VERSION}
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -35,13 +40,15 @@ pre-fetch:
 .endif
 .if !defined(USE_595_OBJ)
 	@${ECHO} "*************************************************";
-	@${ECHO} "If you have a K56Flex modem define USE_595_OBJ   ";
-	@${ECHO} "Otheriwse your modem will not work               ";
+	@${ECHO} "If your ISP supports K56flex protocol only and   ";
+	@${ECHO} " doesn't support V90, define USE_595_OBJ.        ";
+	@${ECHO} "Otheriwse your modem will not connect            ";
 	@${ECHO} "*************************************************";
 .endif
 
 do-install:
-	@${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ltmdm.sh
+	@${SED} "s:%%PREFIX%%:${PREFIX}:;s:%%MAJOR%%:${LTMDM_DEV_MAJOR}:" \
+		< ${FILESDIR}/ltmdm.sh > ${WRKSRC}/ltmdm.sh
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/sys/modules/ltmdm/ltmdm.ko ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/ltmdm.sh ${PREFIX}/etc/rc.d/
@@ -54,10 +61,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500000
-do-patch:
-	@${CAT} files/current-fix | ${PATCH}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,14 @@
+--- sys/dev/ltmdm/ltmdmsio.c-0.7	Sun Mar 10 23:16:17 2002
++++ sys/dev/ltmdm/ltmdmsio.c	Thu Apr  4 23:40:35 2002
+@@ -124,8 +124,10 @@
+ #endif
+ 
+ #if __FreeBSD_version >= 500023 /* >= 20010912 */
+-#define proc thread         /* temporary hack: struct proc -> stuct thread */
++#define proc thread         /* XXX  struct proc -> stuct thread */
++#if __FreeBSD_version <  500033 /* <  20020401 */
+ #define suser(p) suser_td(p)
++#endif
+ #endif
+ 
+ 

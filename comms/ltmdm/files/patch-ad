@@ -1,0 +1,14 @@
+================================================================================
+--- sys/dev/ltmdm/ltmdmsio.c.orig
++++ sys/dev/ltmdm/ltmdmsio.c
+@@ -2822,7 +2822,7 @@
+ #endif
+ 
+ DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
+-#if 0
++#if 1
+ #if __FreeBSD_version >= 500000
+ DRIVER_MODULE(ltmdm, cardbus, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
+ #endif
+================================================================================
+
