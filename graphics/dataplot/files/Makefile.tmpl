@@ -19,13 +19,7 @@ LD	      = $(CC)
 
 LDFLAGS	      = -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib
 
-LIBS	      = %%X11BASE%%/lib/libX11.a \
-		%%LOCALBASE%%/lib/libgd1.a \
-		%%LOCALBASE%%/lib/libpng.a \
-		/usr/lib/libz.a \
-		%%LOCALBASE%%/lib/libjpeg.a \
-		/usr/lib/libg2c.a \
-		/usr/lib/libm.a
+LIBS	      = -lgd1 -lpng -ljpeg -lX11 -lz -lg2c -lm
 
 MAKEFILE      = Makefile
 

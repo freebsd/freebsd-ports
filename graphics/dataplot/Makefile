@@ -7,6 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20030530
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc
@@ -19,7 +20,9 @@ EXTRACT_ONLY=	dataplot_source${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgd1.a:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd1:${PORTSDIR}/graphics/gd1 \
+		png:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
