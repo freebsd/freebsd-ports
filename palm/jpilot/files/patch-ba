@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Mar  1 18:00:14 2000
-+++ Makefile.in	Sat Mar  4 16:08:46 2000
++++ Makefile.in	Sun Mar 12 11:37:58 2000
 @@ -43,7 +43,7 @@
  INTLLIBS = @INTLLIBS@
  
@@ -9,11 +9,12 @@
  
  jpilot: jpilot.o datebook.o address.o todo.o memo.o \
  	utils.o sync.o prefs.o log.o plugins.o \
-@@ -192,6 +192,7 @@
+@@ -192,6 +192,8 @@
  	./install-sh -c -m 755 empty/AddressDB.pdb $(prefix)/share/jpilot/
  	./install-sh -c -m 755 empty/ToDoDB.pdb $(prefix)/share/jpilot/
  	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
 +	./install-sh -c -m 644 libplugin.a $(prefix)/lib/
++	./install-sh -c -m 644 docs/plugin.html $(prefix)/share/doc/jpilot/plugin.html
  	cd intl; make install
  	cd po; make install
  
