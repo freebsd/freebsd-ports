@@ -1,0 +1,10 @@
+--- ./cxterm/HZutil.c.org	Tue Jan 17 02:57:30 1995
++++ ./cxterm/HZutil.c	Wed Apr 23 03:44:24 1997
+@@ -153,6 +153,7 @@
+ {
+ 
+ #if !defined(X_NOT_POSIX) || defined(SYSV) || defined(USG)
++# include <sys/types.h>
+ # include <dirent.h>
+ #else
+ # include <sys/dir.h>
