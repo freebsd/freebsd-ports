@@ -1,15 +1,15 @@
 bin/moria
-share/doc/moria/ERRORS
-share/doc/moria/FEATURES.NEW
-share/doc/moria/dragon.inf
-share/doc/moria/exp.doc
-share/doc/moria/faq
-share/doc/moria/history
-share/doc/moria/moria.ms
-share/doc/moria/moria.txt
-share/doc/moria/pronounc
-share/doc/moria/spells.doc
-share/doc/moria/where.inf
+%%PORTDOCS%%%%DOCSDIR%%/ERRORS
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES.NEW
+%%PORTDOCS%%%%DOCSDIR%%/dragon.inf
+%%PORTDOCS%%%%DOCSDIR%%/exp.doc
+%%PORTDOCS%%%%DOCSDIR%%/faq
+%%PORTDOCS%%%%DOCSDIR%%/history
+%%PORTDOCS%%%%DOCSDIR%%/moria.ms
+%%PORTDOCS%%%%DOCSDIR%%/moria.txt
+%%PORTDOCS%%%%DOCSDIR%%/pronounc
+%%PORTDOCS%%%%DOCSDIR%%/spells.doc
+%%PORTDOCS%%%%DOCSDIR%%/where.inf
 share/moria/hours
 share/moria/news
 share/moria/origcmds.hlp
@@ -19,5 +19,5 @@ share/moria/rwizcmds.hlp
 share/moria/scores
 share/moria/version.hlp
 share/moria/welcome.hlp
-@dirrm share/doc/moria
+%%PORTDOCS%%@dirrm share/doc/moria
 @dirrm share/moria
