@@ -1,5 +1,5 @@
---- lib/sysdep/generic/unix/kbd_code.h.orig	Fri Apr 14 15:02:31 2000
-+++ lib/sysdep/generic/unix/kbd_code.h	Mon Apr 17 23:48:22 2000
+--- biewlib/sysdep/generic/unix/kbd_code.h.orig	Thu Jul  6 14:31:08 2000
++++ biewlib/sysdep/generic/unix/kbd_code.h	Mon Jul 24 23:05:25 2000
 @@ -78,7 +78,11 @@
  
  
