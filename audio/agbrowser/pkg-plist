@@ -1,4 +1,5 @@
 bin/agbrowser
+bin/agbrowser-real
 share/applnk/Internet/agbrowser.desktop
 share/icons/hicolor/16x16/actions/sat-down.png
 share/icons/hicolor/16x16/actions/sat-up.png

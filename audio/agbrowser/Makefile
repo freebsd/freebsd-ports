@@ -15,8 +15,17 @@ MAINTAINER=	lioux@FreeBSD.org
 # USE_AUTO{CONF,MAKE} breaks it
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
+RUN_DEPENDS=	AGSatellite:${PORTSDIR}/audio/agsatellite
 
 USE_KDELIBS_VER=2
 GNU_CONFIGURE=	yes
+
+post-patch:
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
+		 ${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
+
+post-install:
+	@${MV} ${PREFIX}/bin/agbrowser ${PREFIX}/bin/agbrowser-real
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/agbrowser
 
 .include <bsd.port.mk>
