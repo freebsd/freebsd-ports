@@ -1,0 +1,12 @@
+bin/webshot
+lib/gecko-sharp/WebThumbnailer.exe
+@unexec gacutil /u gecko-sharp.dll /f /package gecko-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
+lib/mono/gac/gecko-sharp/1.0.0.0__ccf7d78a55e9f021/gecko-sharp.dll
+@exec gacutil /i gecko-sharp.dll /f /package gecko-sharp /root %D/lib /gacdir %D/lib> /dev/null || /usr/bin/true
+lib/mono/gac/gecko-sharp/1.0.0.0__ccf7d78a55e9f021/gecko-sharp.dll.config
+lib/mono/gecko-sharp/gecko-sharp.dll
+libdata/pkgconfig/gecko-sharp.pc
+@dirrm lib/mono/gecko-sharp
+@dirrm lib/mono/gac/gecko-sharp/1.0.0.0__ccf7d78a55e9f021
+@dirrm lib/mono/gac/gecko-sharp
+@dirrm lib/gecko-sharp

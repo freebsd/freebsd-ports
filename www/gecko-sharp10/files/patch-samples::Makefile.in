@@ -1,0 +1,19 @@
+--- sample/Makefile.in.orig	Sat Aug 28 00:22:09 2004
++++ sample/Makefile.in	Sat Aug 28 00:24:05 2004
+@@ -274,14 +274,14 @@
+ 	-L @top_builddir@/gtkmozembed \
+ 	-r gecko-sharp.dll \
+ 	-L $(GTKSHARP_PREFIX)/lib \
+-	-pkg:gtk-sharp \
++	`pkg-config --libs gtk-sharp` \
+ 	-r System.Drawing \
+ 	-o GtkMozApp.exe $(srcdir)/GtkMozApp.cs $(srcdir)/MozWindow.cs
+ 
+ WebThumbnailer.exe: $(srcdir)/WebThumbnailer.cs
+ 	$(MCS) 	-L @top_builddir@/gtkmozembed \
+ 	-r gecko-sharp.dll \
+-	-pkg:gtk-sharp $(srcdir)/WebThumbnailer.cs \
++	`pkg-config --libs gtk-sharp` $(srcdir)/WebThumbnailer.cs \
+ 	-o WebThumbnailer.exe
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

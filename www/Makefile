@@ -131,6 +131,7 @@
     SUBDIR += galeon
     SUBDIR += gallery
     SUBDIR += gatling
+    SUBDIR += gecko-sharp
     SUBDIR += geeklog
     SUBDIR += geolizer
     SUBDIR += gforge
