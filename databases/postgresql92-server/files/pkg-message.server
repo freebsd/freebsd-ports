@@ -19,3 +19,19 @@ NB. FreeBSD's PostgreSQL port now by default logs to syslog
 
 For more tips, read ~pgsql/post-install-notes
 ======================================================================
+Specific for the 7.4.1 update:
+
+   A dump/restore is *not* required for those running 7.4.
+
+   If you want to install the fixes in the information schema you need to
+   reload it into the database. This is either accomplished by
+   initializing a new cluster by running "initdb", or by running the
+   following sequence of SQL commands in each database (ideally including
+   template1) as a superuser in psql, after installing the new release:
+DROP SCHEMA information_schema CASCADE;
+\i /usr/local/pgsql/share/information_schema.sql
+
+   Fixes to the information schema (from HISTORY):
+     * Fix information schema for bit data types (Peter)
+     * Fix information schema view constraint_column_usage for foreign
+       keys (Peter)
