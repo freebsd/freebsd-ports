@@ -3,10 +3,10 @@
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/03/12 09:03:27 tg Exp $
+# $Id: Makefile,v 1.11 1999/04/13 06:43:08 mharo Exp $
 #
 
-DISTNAME=       pysol-2.11
+DISTNAME=       pysol-2.12
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
