@@ -3,13 +3,13 @@
 # Date created:         02 Dez 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.3 1999/01/18 02:35:08 steve Exp $
+# $Id: Makefile,v 1.4 1999/04/23 11:36:51 asami Exp $
 #
 
 DISTNAME=	fidogate-4.2.9
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.dinoex.sub.org/pub/approved/
+		ftp://ftp.lan-ks.de/pub/approved/
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
