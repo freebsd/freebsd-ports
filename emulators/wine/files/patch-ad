@@ -1,33 +1,20 @@
-*** wine.ini~	Mon May 22 11:29:28 1995
---- wine.ini	Fri Oct  6 17:10:27 1995
+*** wine.ini~	Fri Feb  2 22:19:35 1996
+--- wine.ini	Fri Feb  2 22:21:27 1996
 ***************
-*** 3,7 ****
-  A=/mnt/fd0
-  C=/dos
-! D=/usr/windows
-  E=/home/bob/wine/work
-  F=/home/bob/test
---- 3,7 ----
-  A=/mnt/fd0
-  C=/dos
-! D=/usr/local/share/windows
-  E=/home/bob/wine/work
-  F=/home/bob/test
-***************
-*** 12,16 ****
-  Temp=c:\temp
+*** 35,39 ****
+  Temp=e:\
   Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
 ! SymbolTableFile=./wine.sym
   
   [fonts]
---- 12,16 ----
-  Temp=c:\temp
+--- 35,39 ----
+  Temp=e:\
   Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
 ! SymbolTableFile=/usr/local/etc/wine.sym
   
   [fonts]
 ***************
-*** 25,35 ****
+*** 48,58 ****
   
   [serialports]
 ! Com1=/dev/cua0
@@ -39,7 +26,7 @@
 ! Lpt1=/dev/lp0
   
   [spy]
---- 25,35 ----
+--- 48,58 ----
   
   [serialports]
 ! Com1=/dev/ttyd0
@@ -51,3 +38,13 @@
 ! Lpt1=/dev/lpt0
   
   [spy]
+*** files/drive.c~	Wed Jan 31 19:57:23 1996
+--- files/drive.c	Fri Feb  2 22:33:16 1996
+***************
+*** 8,11 ****
+--- 8,12 ----
+  #include <string.h>
+  #include <stdlib.h>
++ #include <sys/types.h>
+  #include <sys/stat.h>
+  
