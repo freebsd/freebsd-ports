@@ -754,6 +754,7 @@ ca-aspell	ports/textproc/ca-aspell
 ca-ooodict-ES	ports/editors/ooodict-ca_ES
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
+cacti		ports/net/cacti
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 calamaris	ports/www/calamaris
