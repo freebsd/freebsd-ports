@@ -541,6 +541,7 @@ bootpgw		src/libexec/bootpgw
 borzoi		ports/security/borzoi
 bottlerocket	ports/misc/bottlerocket
 bounce		ports/net/bounce
+bouncycastle	ports/java/bouncycastle
 boxes		ports/misc/boxes
 bpatch		ports/editors/bpatch
 bpl+		ports/comms/bpl+
