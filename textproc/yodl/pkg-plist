@@ -11,30 +11,3 @@ bin/yodl2txt
 bin/yodl2man
 bin/yodl2ms
 bin/striproff
-lib/yodl/chartables/html.tables.yo
-lib/yodl/chartables/latex.tables.yo
-lib/yodl/chartables/man.tables.yo
-lib/yodl/chartables/sgml.tables.yo
-lib/yodl/chartables/txt.tables.yo
-lib/yodl/org/html.yo.in
-lib/yodl/org/output-commands.yo.in
-lib/yodl/org/shared.yo.in
-lib/yodl/yodl2html-post
-lib/yodl/yodlfixlabels
-lib/yodl/yodl2txt-post
-lib/yodl/yodl2man-post
-lib/yodl/yodl2ms-post
-lib/yodl/aux-macros.yo
-lib/yodl/disable-commands.yo
-lib/yodl/html.yo
-lib/yodl/man.yo
-lib/yodl/ms.yo
-lib/yodl/output-commands.yo
-lib/yodl/sgml.yo
-lib/yodl/shared.yo
-lib/yodl/tex.yo
-lib/yodl/txt.yo
-lib/yodl/xlatin1.tex
-@dirrm lib/yodl/chartables
-@dirrm lib/yodl/org
-@dirrm lib/yodl

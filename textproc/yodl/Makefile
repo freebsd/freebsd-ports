@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION=	1.22
+PORTVERSION=	1.31.18
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/textproc/ \
-		ftp://ftp.sunsite.org.uk/Mirrors/ftp.sco.com/skunkware/src/textproc/ \
-		ftp://ftp.vse.cz/pub/.sd10c/SCO/ftp.sco.com/skunkware/src/textproc/ \
-		ftp://ftp.netsw.org/netsw/Typesetting/ASCII/Generate/ \
-		ftp://ftp.win.ne.jp/pub/misc/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/misc/ \
-		ftp://ftp.sunet.se/pub3/vendor/sco/skunkware/src/textproc/
+MASTER_SITES=	ftp://ftp.lilypond.org/pub/yodl/development/ \
+					http://www.foad.org/zsh/zsh/ \
+					http://www.zsh.org/pub/GPL/ \
+					http://mirrors.sunsite.dk/ \
+					http://www.math.technion.ac.il/pub/zsh/GPL/ \
+					http://litterbug.lut.ac.uk/zsh/ \
+					http://ftp.rge.com/pub/shells/zsh/GPL/ \
+					http://ftp.dmz.digex.net/pub/packages/ \
+					http://linux.sarang.net/ftp/mirror/system/shell/zsh/GPL/
 
 MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	An easy to use but powerful document formatting/preparation language
@@ -24,21 +26,17 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/latex \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/latex \
 		dvips:${PORTSDIR}/print/dvips
 
-ALL_TARGET=	progs manpages misc/striproff
-INSTALL_TARGET=	installman installmanual
+GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
+MAKEFILE=		GNUmakefile
 
 MAN1=		yodl.1 \
 		striproff.1 \
 		yodlconverters.1
-MAN5=		yodl.5
 MAN7=		yodlmacros.7 \
 		yodlmanpage.7
 
-do-build:
-	(cd ${WRKSRC} && ${SETENV} CFLAGS="${CFLAGS}" ${GMAKE} PREFIX=${PREFIX} progs)
-	(cd ${WRKSRC}/misc && gcc ${CFLAGS} -s -o striproff striproff.c)
-
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/misc/striproff ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/out/striproff ${PREFIX}/bin
 
 .include <bsd.port.mk>
