@@ -4524,6 +4524,7 @@ nocc		ports/mail/nocc
 nocol		ports/net/nocol
 nofgpg		ports/security/nofgpg
 nohup		src/usr.bin/nohup
+noip		ports/net/noip
 nologin		src/sbin/nologin
 nomarch		ports/archivers/nomarch
 nonsense	ports/games/nonsense
