@@ -164,7 +164,7 @@
     SUBDIR += gconf
     SUBDIR += gconf2
     SUBDIR += gcvs
-    SUBDIR += gdb51
+    SUBDIR += gdb52
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
