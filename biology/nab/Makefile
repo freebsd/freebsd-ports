@@ -12,6 +12,7 @@ MAINTAINER=	bdodson@scms.utmb.edu
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
 
+USE_BISON=	yes
 MAN1=		nab.1
 MANCOMPRESSED=	yes
 
