@@ -5,14 +5,14 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1997/04/20 13:52:39 wosch Exp $
+# $Id: Makefile,v 1.5 1997/05/06 14:28:42 jfitz Exp $
 #
 
 DISTNAME=       premail-0.45
 CATEGORIES=     security mail
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/remailer/
 
-BUILD_DEPENDS=  perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS=  perl5.004:${PORTSDIR}/lang/perl5
 BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
 
 MAINTAINER=	ache@FreeBSD.ORG

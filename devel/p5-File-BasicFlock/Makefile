@@ -3,7 +3,7 @@
 # Date created:				
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:45:46 asami Exp $
+#   $Id: Makefile,v 1.4 1997/04/20 13:52:00 wosch Exp $
 #
 
 DISTNAME=	File-BasicFLock-96.072401
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	File
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 MAN3=		File::BasicFlock.3
 MANPREFIX=	${PREFIX}/lib/perl5

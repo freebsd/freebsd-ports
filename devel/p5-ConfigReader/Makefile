@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:45:33 asami Exp $
+#   $Id: Makefile,v 1.4 1997/04/20 13:51:54 wosch Exp $
 #
 
 DISTNAME=	ConfigReader-0.5
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	ConfigReader
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 NO_BUILD=	YES
 

@@ -3,7 +3,7 @@
 # Date created:				October 12th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/04/20 13:52:21 wosch Exp $
+#   $Id: Makefile,v 1.5 1997/04/20 21:26:23 jfitz Exp $
 #
 
 DISTNAME=	Time-modules-97.011701
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	Time
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 MAN3=		Time::CTime.3 Time::JulianDay.3 Time::ParseDate.3 \
 		Time::Timezone.3 Time::DaysInMonth.3
