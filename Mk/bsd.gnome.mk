@@ -59,7 +59,9 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLA
 				 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g' ; \
 			${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|-lpthread|${PTHREAD_LIBS}|g ; \
-				 s|DATADIRNAME=lib|DATADIRNAME=share|g'
+				 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+				 s|{datadir}/locale|{prefix}/share/locale|g ; \
+				 s|{libdir}/locale|{prefix}/share/locale|g'
 
 lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'

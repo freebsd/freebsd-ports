@@ -16,15 +16,6 @@
   have_ngettext=yes
  fi
  done
-@@ -25595,7 +25597,7 @@
- if test "x$CATOBJEXT" = "x.mo" ; then
-   localedir=`eval echo "${libdir}/locale"`
- else
--  localedir=`eval echo "${datadir}/locale"`
-+  localedir=`eval echo "${prefix}/share/locale"`
- fi
- prefix="$glib_save_prefix"
- exec_prefix="$glib_save_exec_prefix"
 @@ -26257,7 +26259,7 @@
  
  

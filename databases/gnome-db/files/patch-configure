@@ -20,12 +20,3 @@ $FreeBSD$
  		
  		
  		
-@@ -8906,7 +8907,7 @@
- 
- GNOMEDB_CFLAGS="`gda-config --cflags client` `gnome-config --cflags xml oaf bonobox print gdk_pixbuf`"
- GNOMEDB_LIBS="`gda-config --libs client` `gnome-config --libs xml oaf bonobox print gdk_pixbuf`"
--GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${datadir}/locale\\\""
-+GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${prefix}/share/locale\\\""
- 
- 
- 

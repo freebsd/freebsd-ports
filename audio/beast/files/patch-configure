@@ -13,12 +13,3 @@
  
  
  	case "$enable_static" in
-@@ -20267,7 +20263,7 @@
-     if test "x$CATOBJEXT" = "x.mo" ; then
-       beastlocaledir=`eval echo "${libdir}/locale"`
-     else
--      beastlocaledir=`eval echo "${datadir}/locale"`
-+      beastlocaledir=`eval echo "${prefix}/share/locale"`
-     fi
-     exec_prefix="$saved_exec_prefix"
-     prefix="$saved_prefix"
