@@ -8,13 +8,12 @@ To program a pic16c84 chip:
 Full manual:
 
 	see file /usr/local/share/doc/picprog/picprog.html
-	or <URL:http://www.iki.fi/hyvatti/pic/picprog.html>
 
 The author may be contacted at:
 
 	Email: Jaakko.Hyvatti@iki.fi
-	URL:   http://www.iki.fi/hyvatti/
-	Phone: +358 40 5011222
 
 Remember: this is not a production quality programmer!  See PIC16C84
 data sheet for more information.
+
+WWW: http://www.pp.htv.fi/jhyvatti/sw/

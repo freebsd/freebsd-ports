@@ -27,5 +27,5 @@
 -ifeq (.depend,$(wildcard .depend))
 -include .depend
 -endif
-+	install -c -o 0 -g 0 -m 755 -s $(PROG) $(PREFIX)/bin
-+	install -c -o 0 -g 0 -m 444 *.1 $(PREFIX)/man/man1
++	${BSD_INSTALL_PROGRAM} $(PROG) $(PREFIX)/bin
++	${BSD_INSTALL_MAN} picprog.1 $(PREFIX)/man/man1
