@@ -10,7 +10,8 @@ PORTNAME=	earth
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	http://www.geocities.com/saintdead/
+MASTER_SITES=	http://www.geocities.com/saintdead/ \
+		http://www.linuxtux.org/downloads/linux-older-aps/gkrellm/
 PKGNAMEPREFIX=	gkrellm
 DISTNAME=	${PORTNAME}_anim-${PORTVERSION}
 
