@@ -1,20 +1,31 @@
---- configure.orig	Sat Jan 30 13:25:07 1999
-+++ configure	Thu Oct  7 19:31:17 1999
-@@ -1216,7 +1216,7 @@
- EOF
+--- configure.orig	Wed Oct 27 11:47:27 1999
++++ configure	Sat Apr 22 04:01:09 2000
+@@ -903,7 +903,7 @@
  
+ if test $ac_cv_prog_gcc = yes; then
+     CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
+-    CFLAGS="$CCOPTS"
++    CFLAGS?="$CCOPTS"
+ fi
+ 
+ # Check whether --with-pf_packet or --without-pf_packet was given.
+@@ -1497,8 +1497,8 @@
+ 
+     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP \
+         -DHAVE_SOCKADDR_SA_LEN"
+-    MAN_PREFIX="$prefix/man/man3/"
+-    LIB_PREFIX="$prefix/lib/aout"
++    MAN_PREFIX="$prefix/man/"
++    LIB_PREFIX="$prefix/lib/"
+     INC_PREFIX="$prefix/include/"
+     BIN_PREFIX="$prefix/bin/"
+     echo "$ac_t""Note: support/bpf-lkm/etherspoof contains the lkm source \
+@@ -1517,7 +1517,7 @@
+ 
+     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP"
      MAN_PREFIX="$prefix/man/man3/"
 -    LIB_PREFIX="$prefix/lib/aout"
 +    LIB_PREFIX="$prefix/lib/"
      INC_PREFIX="$prefix/include/"
-     ln -sf FreeBSD support/bpf-lkm/etherspoof
+     BIN_PREFIX="$prefix/bin/"
      ;;
-@@ -1231,7 +1231,7 @@
- EOF
- 
-     MAN_PREFIX="$prefix/man/man3/"
--    LIB_PREFIX="$prefix/lib/aout"
-+    LIB_PREFIX="$prefix/lib/"
-     INC_PREFIX="$prefix/include/"
-     ;;
- 
