@@ -19,7 +19,6 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		popt.0:${PORTSDIR}/devel/popt \
-		gsf-1.9:${PORTSDIR}/devel/libgsf \
 		croco.3:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libmetal.so:${PORTSDIR}/x11-toolkits/gtk-engines2
 
@@ -28,7 +27,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
-USE_GNOME=	gnomehack lthack gtk20 libartlgpl2 libxml2
+USE_GNOME=	gnomehack lthack gtk20 libartlgpl2 libxml2 libgsf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-svgz \
