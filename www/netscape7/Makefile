@@ -68,7 +68,7 @@ DISTFILES?=	browser.xpi \
 DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/netscape-installer/xpi/components.conf
 .endif
 
-checksum:
+XXXchecksum:
 .if !defined(REAL_EXTRACT)
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
 .endif
