@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/bzip2/v100/ \
 MAINTAINER=	obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
+
 MAN1=		bzip2.1
 MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \
 		bzip2.1 bzip2recover.1
@@ -28,11 +29,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2recover ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bzlib.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libbz2.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libbz2.so.1 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libbz2.so.1 ${PREFIX}/lib/libbz2.so
 	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
 	${PREFIX}/bin/bzip2 -f ${PREFIX}/share/doc/bzip2/manual.ps
 .endif
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
