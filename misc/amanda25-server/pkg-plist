@@ -1,21 +1,21 @@
 lib/libamanda.a
 lib/libamanda.la
 lib/libamanda.so
-lib/libamanda.so.6.0
+lib/libamanda.so.6
 lib/libamclient.a
 lib/libamclient.la
 lib/libamclient.so
-lib/libamclient.so.0.5
+lib/libamclient.so.1
 lib/libamserver.a
 lib/libamserver.la
 lib/libamserver.so
-lib/libamserver.so.4.0
+lib/libamserver.so.4
 lib/libamtape.a
 lib/libamtape.la
 lib/libamtape.so
-lib/libamtape.so.2.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libamtape.so.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
 libexec/amanda/amidxtaped
