@@ -1,0 +1,13 @@
+The Autopsy Forensic Browser is a graphical interface to the command line 
+digital forensic analysis tools in The Sleuth Kit. Together, The Sleuth Kit 
+and Autopsy provide many of the same features as commercial digital 
+forensics tools for the analysis of Windows and UNIX file systems 
+(NTFS, FAT, FFS, EXT2FS, and EXT3FS).
+
+The Sleuth Kit and Autopsy are both Open Source and run on UNIX platforms. 
+As Autopsy is HTML-based, the investigator can connect to the Autopsy 
+server from any platform using an HTML browser. Autopsy provides 
+a "File Manager"-like interface and shows details about deleted data 
+and file system structures.
+
+WWW: http://www.sleuthkit.org/autopsy/index.php
