@@ -94,6 +94,7 @@
     SUBDIR += scm
     SUBDIR += siod
     SUBDIR += slib
+    SUBDIR += smalleiffel
     SUBDIR += smalltalk
     SUBDIR += sml-mode.el
     SUBDIR += sml-nj
