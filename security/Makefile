@@ -195,6 +195,7 @@
     SUBDIR += ppgen
     SUBDIR += proxytunnel
     SUBDIR += pscan
+    SUBDIR += pwman
     SUBDIR += py-amkCrypto
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
