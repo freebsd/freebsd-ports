@@ -1,3 +1,6 @@
+include/%%PYTHON_VERSION%%/Scientific/PyMPI_API.h
+include/%%PYTHON_VERSION%%/Scientific/mpimodule.h
+include/%%PYTHON_VERSION%%/Scientific/netcdfmodule.h
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/DictWithDefault.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/DictWithDefault.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/DictWithDefault.pyo
@@ -70,6 +73,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific/IO/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Installation.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Installation.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Installation.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/IO.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/IO.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/IO.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Mathematica.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Mathematica.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Mathematica.pyo
@@ -91,12 +100,21 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific/Statistics/Histogram.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Statistics/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Statistics/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Statistics/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/TaskManager.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/TaskManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/TaskManager.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkPlotCanvas.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkPlotCanvas.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkPlotCanvas.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkVisualizationCanvas.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkVisualizationCanvas.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/TkVisualizationCanvas.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/Utility.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/Utility.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/Utility.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets/__init__.pyo
@@ -106,6 +124,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/Color.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VMD.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VMD.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VMD.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VPython.py
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VPython.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VPython.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VRML.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VRML.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VRML.pyo
@@ -115,14 +136,15 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/VRML2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Scientific/%%PYTHON_PLATFORM%%/Scientific_netcdf.so
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/indexing.py
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/indexing.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Scientific/indexing.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Scientific_netcdf.so
 %%PORTDOCS%%share/doc/py-scientific/CHANGELOG
+%%PORTDOCS%%share/doc/py-scientific/COPYRIGHT
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_1.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_10.html
@@ -155,7 +177,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific_netcdf.so
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_35.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_36.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_37.html
+%%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_38.html
+%%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_39.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_4.html
+%%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_40.html
+%%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_41.html
+%%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_42.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_5.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_6.html
 %%PORTDOCS%%share/doc/py-scientific/HTML/Scientific_7.html
@@ -168,15 +195,20 @@ lib/%%PYTHON_VERSION%%/site-packages/Scientific_netcdf.so
 %%PORTDOCS%%share/examples/py-scientific/Setup.template
 %%PORTDOCS%%share/examples/py-scientific/compile.py
 %%PORTDOCS%%share/examples/py-scientific/demomodule.c
+%%PORTDOCS%%share/examples/py-scientific/mpi.py
 %%PORTDOCS%%share/examples/py-scientific/netcdf_demo.py
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/%%PYTHON_PLATFORM%%
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Visualization
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/TkWidgets
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Threading
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Statistics
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Physics
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/MPI
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/IO
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Geometry
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific/Functions
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Scientific
+@dirrm include/%%PYTHON_VERSION%%/Scientific
 %%PORTDOCS%%@dirrm share/doc/py-scientific/XML
 %%PORTDOCS%%@dirrm share/doc/py-scientific/PDF
 %%PORTDOCS%%@dirrm share/doc/py-scientific/HTML
