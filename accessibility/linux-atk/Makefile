@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
 PLIST=		${PKGDIR}/pkg-plist
+RESTRICTED=	"binary under GNU LGPL without accompanying source"
 RPM_SET=	atk-1.2.0-2.i386.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
