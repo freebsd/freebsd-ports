@@ -1,20 +1,32 @@
---- Imakefile	2000/11/03 15:43:33	1.1.1.1
-+++ Imakefile	2000/11/07 15:40:10	1.2
-@@ -3,7 +3,7 @@
- #endif
+--- Imakefile	2000/12/23 15:05:50	1.1.1.2
++++ Imakefile	2000/12/23 16:23:31	1.5
+@@ -4,13 +4,13 @@
+ 
  
  XCOMM Remove the next line if you want genuine Xaw instead of Xaw3d
 -#define XAW3D
 +XCOMM define XAW3D
  
+ XCOMM Remove the next line if you don't want to enable XTEST support
+-#define XTEST
++XCOMM define XTEST
+ 
+ XCOMM Remove the next line if you want to disable internationalization
+-#define I18N
++XCOMM define I18N
+ 
+ 
  SRCS = xvkbd.c findwidget.c
- OBJS = xvkbd.o findwidget.o
-@@ -15,7 +15,7 @@
- XAWLIB = -lXaw3d
- #endif
+@@ -34,10 +34,11 @@
+ 
+ DEFINES = $(D_XAW3D) $(D_XTEST) $(D_I18N)
  
 -ComplexProgramTarget(xvkbd)
 +ComplexProgramTargetNoMan(xvkbd)
  
  InstallAppDefaults(XVkbd)
  InstallAppDefaults(XVkbd-common)
+ InstallAppDefaults(XVkbd-german)
++InstallAppDefaults(XVkbd-jisx6004)
+ InstallAppDefaults(XVkbd-latin1)
+ InstallAppDefaults(XVkbd-small)
