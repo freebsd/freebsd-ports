@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.portaone.com/~sobomax/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
