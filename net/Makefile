@@ -313,6 +313,7 @@
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
+    SUBDIR += meanwhile
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += minisapserver
