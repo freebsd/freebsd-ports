@@ -3,7 +3,7 @@
 # Date created:   	23 September 1997
 # Whom: 		koshy
 #
-# $Id: Makefile,v 1.6 1998/10/14 04:25:08 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/16 03:17:47 jseger Exp $
 #
 
 DISTNAME=	wily-0.13.41
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@freebsd.org
 
-USE_X11=	YES
+USE_XLIB=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 

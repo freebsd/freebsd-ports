@@ -3,7 +3,7 @@
 # Date created:                8 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.3 1997/11/19 12:22:01 tg Exp $
+# $Id: Makefile,v 1.4 1998/09/27 03:15:32 steve Exp $
 #
 
 DISTNAME=	dnd.1.1
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lukin@okbmei.msk.su
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CFLAGS}"

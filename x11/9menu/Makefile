@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1998/10/04 00:56:43 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/21 17:18:12 steve Exp $
 #
 
 DISTNAME=	9menu-1.5
@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	erich@FreeBSD.org
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=

@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1998/10/15 14:28:09 jseger Exp $
+# $Id: Makefile,v 1.22 1998/10/25 09:06:49 markm Exp $
 #
 
 DISTNAME=	Tk800.008
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Tk
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
+USE_XLIB=	YES
 USE_PERL5=	YES
 
 MAN1=	ptked.1 ptksh.1 widget.1

@@ -3,7 +3,7 @@
 # Date created:		January 24, 1998
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1998/02/18 11:46:56 asami Exp $
+# $Id: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 #
 
 DISTNAME=	freetype-1.1
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.physiol.med.tu-muenchen.de/pub/freetype/
 
 MAINTAINER=	jseger@FreeBSD.org
 
+USE_XLIB=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared

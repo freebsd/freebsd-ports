@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1996
 # Whom:			David Leonard <leonard@dstc.edu.au>
 #
-# $Id: Makefile,v 1.5 1998/08/23 07:34:47 hoek Exp $
+# $Id: Makefile,v 1.6 1998/09/22 22:32:06 asami Exp $
 #
 
 DISTNAME=	dclock
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+USE_XLIB=	yes
 MAN1=		dclock.1
 MANCOMPRESSED=	yes
 

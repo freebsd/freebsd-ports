@@ -3,7 +3,7 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/11/18 12:31:08 tg Exp $
+# $Id: Makefile,v 1.3 1998/02/21 15:46:28 steve Exp $
 #
 
 DISTNAME=	ocaml-1.07
@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt

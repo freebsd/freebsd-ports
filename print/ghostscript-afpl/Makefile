@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.22 1998/06/05 06:21:03 andreas Exp $
+# $Id: Makefile,v 1.23 1998/07/17 20:19:41 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 
+USE_XLIB=	yes
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKSRC=		${WRKDIR}/gs5.10
