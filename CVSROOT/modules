@@ -4137,6 +4137,7 @@ latex-feynmf	ports/print/latex-feynmf
 latex-index	ports/print/latex-index
 latex-keystroke	ports/print/latex-keystroke
 latex-layouts	ports/print/latex-layouts
+latex-lineno	ports/print/latex-lineno
 latex-logpap	ports/print/latex-logpap
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
