@@ -8,7 +8,8 @@
 PORTNAME=	cvsutils
 PORTVERSION=	2003.02.03
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.iDaemons.org/pub/distfiles/
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
