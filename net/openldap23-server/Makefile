@@ -15,7 +15,7 @@
 #
 
 PORTNAME=	openldap21
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.16
 PORTREVISION=	0
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
@@ -38,23 +38,22 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ck@cksoft.de
 COMMENT=	Open source LDAP client and server software
 
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=	db41:${PORTSDIR}/databases/db41
 
-CXXFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db4
-CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db4
+CXXFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db41
+CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db41
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
-LATEST_LINK=	openldap21
 
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--enable-bdb
-			
+CONFIGURE_ARGS+=--prefix=${PREFIX} 	\
+		--enable-bdb		\
+		--enable-crypt
 
 # ------------------------------------------------------------------------------
 # common configure
