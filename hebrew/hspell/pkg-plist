@@ -1,16 +1,8 @@
 @comment $FreeBSD$
 bin/hspell
 bin/hspell-i
-share/hspell/likelyerrors
-share/hspell/spellinghints
-%%VERB%%share/hspell/out.nouns
-%%VERB%%share/hspell/out.verbs
-%%VERB%%share/hspell/out.nouns-shemp
-%%VERB%%share/hspell/milot
-%%VERB%%share/hspell/extrawords
-%%VERB%%share/hspell/biza-verbs
-%%VERB%%share/hspell/biza-nouns
-%%NOVERB%%share/hspell/wordlist.wgz
-%%NOVERB%%libexec/hspell/wunzip
-%%NOVERB%%@dirrm libexec/hspell
-@dirrm share/hspell
+bin/multispell
+%%DATADIR%%/hebrew.wgz
+%%DATADIR%%/hebrew.wgz.prefixes
+%%DATADIR%%/hebrew.wgz.sizes
+@dirrm %%DATADIR%%

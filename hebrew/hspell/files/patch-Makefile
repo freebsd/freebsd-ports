@@ -1,5 +1,5 @@
---- Makefile.orig	Thu May  8 13:16:35 2003
-+++ Makefile	Thu May  8 13:17:36 2003
+--- Makefile.orig	Wed Aug  6 11:51:16 2003
++++ Makefile	Wed Aug  6 11:51:47 2003
 @@ -14,10 +14,10 @@
  
  # build and installation paths
@@ -12,8 +12,8 @@
 +LIBEXEC = $(PREFIX)/libexec/hspell
  MAN1 = $(PREFIX)/man/man1
  
- 
-@@ -51,8 +51,8 @@
+ all: cfrontend
+@@ -59,8 +59,8 @@
  	sed 's+^my @dictionaries=.*$$+my @dictionaries=("gzip -dc $(SHARE)/wordlist.wgz|$(LIBEXEC)/wunzip|");+; s+my @likelyerror.*$$+my @likelyerror_dictionaries=("$(SHARE)/likelyerrors");+; s+@spellinghints_dictionaries=("spellinghints")+@spellinghints_dictionaries=("$(SHARE)/spellinghints")+' < hspell.pl > $@
  	chmod 755 $@
  
