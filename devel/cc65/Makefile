@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cc65
-PORTVERSION=	2.9.3
+PORTVERSION=	2.10.0a
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
