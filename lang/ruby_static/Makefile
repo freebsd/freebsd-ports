@@ -99,7 +99,7 @@ do-extract:
 	while read extdir; do \
 		extdir=$${extdir%/extconf.rb}; \
 		case "$p" in \
-		${RUBY_SHIM18_PORT) \
+		${RUBY_SHIM18_PORT}) \
 			m=$$(basename $$extdir); \
 			case $$extdir in \
 			*/racc/*) \
