@@ -9,6 +9,7 @@ include/sidplay/version.h
 include/sidplay/fixpoint.h
 include/sidplay/libcfg.h
 lib/libsidplay.a
+lib/libsidplay.la
 lib/libsidplay.so.1
 lib/libsidplay.so
 @dirrm include/sidplay
