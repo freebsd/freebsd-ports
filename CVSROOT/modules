@@ -4835,6 +4835,7 @@ p5-Astro-MoonPhase	ports/astro/p5-Astro-MoonPhase
 p5-Astro-SunTime	ports/astro/p5-Astro-SunTime
 p5-Astro-Sunrise	ports/astro/p5-Astro-Sunrise
 p5-Audio-CD	ports/audio/p5-Audio-CD
+p5-Audio-Wav	ports/audio/p5-Audio-Wav
 p5-Authen-Krb4	ports/security/p5-Authen-Krb4
 p5-Authen-Krb5	ports/security/p5-Authen-Krb5
 p5-Authen-PAM	ports/security/p5-Authen-PAM
