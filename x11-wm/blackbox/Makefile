@@ -3,14 +3,14 @@
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.21 1999/05/29 09:37:37 mharo Exp $
+# $Id: Makefile,v 1.22 1999/06/19 08:26:18 cpiazza Exp $
 #
 
 DISTNAME=	blackbox-0.50.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://balance.wiw.org/pub/blackbox/ \
-	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/ \
-		ftp://ftp.max.irk.ru/unix/x/wm/
+		ftp://ftp.digex.net/pub/X11/window-managers/blackbox/ \
+	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
