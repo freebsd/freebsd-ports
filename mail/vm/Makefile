@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.01
+PORTVERSION=	7.03
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
 		ftp://tug.org/vm/ \
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
 		http://www.interhack.net/projects/vm/ \
 		ftp://ftp.uu.net/networking/mail/vm/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	olive@oban.frmug.org
 
