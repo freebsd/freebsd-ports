@@ -1054,6 +1054,7 @@ share/gnome/ui/nautilus-content-loser-ui.xml
 share/gnome/ui/nautilus-desktop-icon-view-ui.xml
 share/gnome/ui/nautilus-directory-view-ui.xml
 share/gnome/ui/nautilus-icon-view-ui.xml
+share/gnome/ui/nautilus-hyperbola-ui.xml
 %%MOZILLA:%%share/gnome/ui/nautilus-mozilla-ui.xml
 share/gnome/ui/nautilus-sample-content-view-ui.xml
 share/gnome/ui/nautilus-search-list-view-ui.xml

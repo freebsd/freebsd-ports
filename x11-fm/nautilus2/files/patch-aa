@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Oct 25 18:17:31 2001
-+++ configure	Thu Oct 25 18:18:56 2001
-@@ -7003,7 +7003,7 @@
+--- configure.orig	Mon Nov 12 14:28:00 2001
++++ configure	Mon Nov 12 14:34:23 2001
+@@ -7005,7 +7005,7 @@
  
  CC="$_save_cc"
  
@@ -11,8 +11,8 @@ $FreeBSD$
 +LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtksuperwin"
  _mozilla_gtk_super_win_libs=
  echo $ac_n "checking for gdk_superwin_get_type in -lgtksuperwin""... $ac_c" 1>&6
- echo "configure:7010: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
-@@ -7046,7 +7046,7 @@
+ echo "configure:7012: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
+@@ -7048,7 +7048,7 @@
  fi
  
  
@@ -20,17 +20,44 @@ $FreeBSD$
 +LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtkembedmoz $_mozilla_xpcom_libs"
  _mozilla_gtk_moz_embed_libs=
  echo $ac_n "checking for gtk_moz_embed_get_type in -lgtkembedmoz""... $ac_c" 1>&6
- echo "configure:7053: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
-@@ -7055,7 +7055,7 @@
+ echo "configure:7055: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
+@@ -7057,7 +7057,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgtkembedmoz  $LIBS"
 +LIBS="-lgtkembedmoz  -lgtksuperwin $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7061 "configure"
+ #line 7063 "configure"
  #include "confdefs.h"
-@@ -9018,7 +9018,7 @@
+@@ -7585,14 +7585,14 @@
+    #
+    # Check for libiconv
+    #
+-   echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
+-echo "configure:7590: checking for libiconv_open in -liconv" >&5
++   echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
++echo "configure:7590: checking for libiconv_open in -lgiconv" >&5
+ ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-liconv  $LIBS"
++LIBS="-lgiconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 7598 "configure"
+ #include "confdefs.h"
+@@ -7632,7 +7632,7 @@
+ fi
+ 
+ if test "x$with_libiconv" = "xyes" ; then
+-  ICONV_LIBS="-liconv"
++  ICONV_LIBS="-lgiconv"
+ fi
+ 
+ 	
+@@ -9141,7 +9141,7 @@
  fi
  
  if test x$SCROLLKEEPER_CONFIG = xno; then
