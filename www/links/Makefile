@@ -8,7 +8,7 @@
 PORTNAME=	links
 PORTVERSION=	2.1.p11
 PORTEPOCH=	1
-CATEGORIES=	www
+CATEGORIES?=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
 DISTNAME=	${PORTNAME}-2.1pre11
 
