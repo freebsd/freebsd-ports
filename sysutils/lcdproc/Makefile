@@ -7,7 +7,7 @@
 
 PORTNAME=	lcdproc
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lcdproc.omnipotent.net/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,6 +18,7 @@ COMMENT=	A client/server suite for all kinds of nifty LCD devices
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-drivers=all
 
 MAN1=		lcdproc.1
 MAN8=		LCDd.8
