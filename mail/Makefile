@@ -76,6 +76,7 @@
     SUBDIR += popa3d
     SUBDIR += poppassd
     SUBDIR += popper
+    SUBDIR += popper3
     SUBDIR += postfix
     SUBDIR += postilion
     SUBDIR += premail
