@@ -1,3 +1,11 @@
 #!/bin/sh
-chmod +x ${WRKSRC}/maketext
+cd $WRKSRC || exit 1
+cp Makefile.unix Makefile
+cat >>Makefile<<END
+BINDIR = $PREFIX/bin
+INCLUDEDIR = $PREFIX/share/psutils
+MANDIR =$PREFIX/man/man1
+PERL = /usr/bin/perl
+CC=cc
+END
 exit 0
