@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1997/09/25 02:06:19 jmz Exp $
+# $Id: Makefile,v 1.7 1997/10/08 07:45:44 asami Exp $
 #
 
 DISTNAME=       cd-write-1.4
@@ -22,5 +22,8 @@ pre-build:
 		echo all: cd-write >> Makefile
 	@cd ${WRKSRC}/c++tk; mv Makefile Makefile~; \
 		sed -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile
+
+post-install:
+	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

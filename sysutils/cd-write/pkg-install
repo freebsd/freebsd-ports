@@ -1,0 +1,18 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+if [ -e ${PREFIX}/bin/mkisofs ]; then
+  exit 0
+fi
+cat <<EOF
+*********************** Warning ***********************
+It seems that mkisofs is not installed on your system.
+You will only be able to burn audio disks or to copy
+data disks.
+Mkisofs is required if you want to create a filesystem
+image.
+*******************************************************
+EOF
+
+exit 0
