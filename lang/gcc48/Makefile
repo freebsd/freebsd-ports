@@ -4,21 +4,19 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.23 1998/07/26 23:43:34 obrien Exp $
+# $Id: Makefile,v 1.24 1998/08/07 22:49:30 asami Exp $
 #
 
-DISTNAME=	egcs-19980721
+DISTNAME=	egcs-19980803
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-07-21/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-07-21/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-07-21/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-08-03/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-08-03/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-08-03/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-EGCS_REV=	egcs-2.91.51
-# XXX
-#GNUHOST=	i386-unknown-freebsd${OSREL}
-GNUHOST=	i386-unknown-freebsd${GNUOSREL}
+EGCS_REV=	egcs-2.91.53
+GNUHOST=	i386-unknown-freebsd
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
@@ -26,7 +24,7 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
-post-patch:
+pre-configure:
 	@(cd ${WRKSRC}/gcc/config/i386/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
