@@ -864,6 +864,7 @@ cdparanoia	ports/audio/cdparanoia
 cdpd		ports/net-mgmt/cdpd
 cdplayer.app	ports/audio/cdplayer.app
 cdpr		ports/net-mgmt/cdpr
+cdr_read	ports/comms/cdr_read
 cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
