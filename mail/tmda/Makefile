@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -40,7 +40,8 @@ post-install:
 .for f in CODENAMES COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
-.for f in ChangeLog collectaddys printcdb sample.config tmda.spec def2html printdbm tmda.el
+.for f in ChangeLog collectaddys printcdb sample.config sendit.sh tmda.spec \
+		def2html printdbm tmda.el vadduser-tmda
 	@${INSTALL_DATA} ${WRKSRC}/contrib/$f ${DOCSDIR}/contrib
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${DOCSDIR}/htdocs
