@@ -33,21 +33,6 @@ share/gnome/gdeskcal/skins/light_02/next.png
 share/gnome/gdeskcal/skins/light_02/prev.png
 share/gnome/gdeskcal/skins/light_02/skin.xml
 share/gnome/gdeskcal/skins/light_02/skin.xml~
-share/gnome/gdeskcal/skins/miderat/bg.png
-share/gnome/gdeskcal/skins/miderat/bg.xcf
-share/gnome/gdeskcal/skins/miderat/home.png
-share/gnome/gdeskcal/skins/miderat/next.png
-share/gnome/gdeskcal/skins/miderat/prev.png
-share/gnome/gdeskcal/skins/miderat/skin.xml
-share/gnome/gdeskcal/skins/miderat/skin.xml~
-share/gnome/gdeskcal/skins/miderat/today.png
-share/gnome/gdeskcal/skins/miderat_RTL/bg.png
-share/gnome/gdeskcal/skins/miderat_RTL/bg.xcf
-share/gnome/gdeskcal/skins/miderat_RTL/home.png
-share/gnome/gdeskcal/skins/miderat_RTL/next.png
-share/gnome/gdeskcal/skins/miderat_RTL/prev.png
-share/gnome/gdeskcal/skins/miderat_RTL/skin.xml
-share/gnome/gdeskcal/skins/miderat_RTL/today.png
 share/gnome/gdeskcal/skins/tiny_and_simple/skin.xml
 share/gnome/gdeskcal/skins/tnf/bg.png
 share/gnome/gdeskcal/skins/tnf/bg.xcf
@@ -58,8 +43,6 @@ share/gnome/gdeskcal/skins/tnf/skin.xml
 share/gnome/gdeskcal/skins/tnf/today.png
 @dirrm share/gnome/gdeskcal/skins/tnf
 @dirrm share/gnome/gdeskcal/skins/tiny_and_simple
-@dirrm share/gnome/gdeskcal/skins/miderat_RTL
-@dirrm share/gnome/gdeskcal/skins/miderat
 @dirrm share/gnome/gdeskcal/skins/light_02
 @dirrm share/gnome/gdeskcal/skins/light_01
 @dirrm share/gnome/gdeskcal/skins/e
