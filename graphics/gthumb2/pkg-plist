@@ -1,51 +1,7 @@
 bin/gthumb
-etc/gconf/gconf.xml.defaults/apps/gthumb/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/browser/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/crop/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/messages/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/photo_importer/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/search/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/web_album/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/page/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/thumbnail/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/slideshow/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gthumb/viewer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/crop/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/messages/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/photo_importer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/search/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/web_album/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/page/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/thumbnail/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/slideshow/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/viewer/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gthumb.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
 lib/gthumb/libgthumb.so
 lib/gthumb/modules/libduplicates.so
 lib/gthumb/modules/libjpegtran.so
@@ -226,50 +182,4 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/gthumb
 @dirrm lib/gthumb/modules
 @dirrm lib/gthumb
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/viewer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/slideshow
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/thumbnail
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/page
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/exporter
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/web_album
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/search
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/photo_importer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/messages
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/crop
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/viewer
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/slideshow
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/thumbnail
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/page
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/exporter
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/web_album
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/search
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/photo_importer
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/messages
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/crop
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/browser
-@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
