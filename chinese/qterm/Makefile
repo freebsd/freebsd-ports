@@ -18,6 +18,7 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ARGS+=	"--enable-mt"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
