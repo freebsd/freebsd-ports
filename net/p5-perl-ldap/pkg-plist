@@ -3,12 +3,14 @@ lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net/LDAP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pod
 lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pm
 lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/CRAM_MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/EXTERNAL.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAPS.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Security.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/LDIF.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Schema.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pm
@@ -24,6 +26,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Constant.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Examples.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extension.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extra.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/FAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Message.pm
@@ -36,6 +39,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/SortResult.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLVResponse.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLV.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/Paged.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/ProxyAuth.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/DSML

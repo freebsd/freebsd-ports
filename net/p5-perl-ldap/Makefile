@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -17,7 +17,8 @@ MAINTAINER=	scrappy@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	yes
 
@@ -29,6 +30,7 @@ MAN3=		Net::LDAP::Control::VLVResponse.3 \
 		Authen::SASL.3 \
 		Bundle::Net::LDAP.3 \
 		Net::LDAP::Search.3 \
+		Net::LDAP::Security.3 \
 		Net::LDAP::Control::SortResult.3 \
 		Net::LDAP::LDIF.3 \
 		Net::LDAP::Schema.3 \
