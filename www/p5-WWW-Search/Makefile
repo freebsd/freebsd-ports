@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/09/08 15:32:21 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/09/15 21:31:57 asami Exp $
 #
 
 DISTNAME=	WWW-Search-1.021
@@ -17,6 +17,11 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
 
 MAN1=		AutoSearch.1 \
 		WebSearch.1
