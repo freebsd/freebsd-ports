@@ -23,10 +23,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		fftw3f.3:${PORTSDIR}/math/fftw3-float \
 		tag.4:${PORTSDIR}/audio/taglib
 
-BROKEN=		"Does not compile"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
@@ -41,4 +37,15 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_REINPLACE=	yes
+
+post-patch:
+	@cd ${WRKSRC} && \
+	    ${REINPLACE_CMD} 's:#include.<stdint\.h>:#include <sys/types.h>:' \
+		players/xmms/plugin.h analyzer/spectrum.h analyzer/analyzer.cc
+.endif
+
+.include <bsd.port.post.mk>
