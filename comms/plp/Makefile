@@ -17,6 +17,11 @@ MAINTAINER=	maurice@serc.rmit.edu.au
 
 USE_GMAKE=	yes
 
+pre-patch:
+.for files in packet.cc socketchan.cc
+	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/ncp/${files}
+.endfor
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ncp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rfsv ${PREFIX}/bin
