@@ -4,9 +4,6 @@
 #
 # $FreeBSD$
 #
-#
-#
-#
 
 PORTNAME=	yudit
 PORTVERSION=	1.5
