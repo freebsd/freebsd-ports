@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1997/06/27 10:03:25 jmg Exp $
+# $Id: Makefile,v 1.76 1997/06/30 11:43:24 tg Exp $
 #
 
     SUBDIR += acm
@@ -14,6 +14,7 @@
     SUBDIR += doom
     SUBDIR += empire
     SUBDIR += flying
+    SUBDIR += galaxis
     SUBDIR += gnuchess
     SUBDIR += gnugo
     SUBDIR += gnushogi
