@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1.p7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/ \
 		http://unixpages.org/distfiles/
+DISTNAME=	${PORTNAME}-2.1pre7
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -38,11 +38,5 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/default.c
-
-post-install:
-.if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${INSTALL_DATA} ${WRKSRC}/doc/links_cal/* ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
