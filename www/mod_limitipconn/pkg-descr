@@ -1,0 +1,16 @@
+This is the distribution page for the Apache module mod_limitipconn.c, which
+allows web server administrators to limit the number of simultaneous downloads
+permitted from a single IP address.
+
+Why did I write this module? Well, I run an mp3 server which since its
+inception was being constantly hosed by people who were trying to download
+dozens of files at once. For months I scoured the Internet looking for a code
+snippet that would solve this problem. The closest thing I found was this patch
+against an old version of Apache, and it didn't run properly on my Linux box
+(that was back then; nowadays, the patch doesn't even apply cleanly to the
+ Apache source tree).
+
+Finally I gave up and decided to write something to do the job myself, and
+here's the result. 
+
+WWW: http://dominia.org/djao/limitipconn.html
