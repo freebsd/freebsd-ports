@@ -18,6 +18,8 @@ BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.2:${PORTSDIR}/ftp/curl
 
+BROKEN=		"Fails to patch"
+
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
