@@ -22,3 +22,13 @@
      if (connect(m_nDescriptor, (struct sockaddr *)&m_sRemoteAddr, sizeofSockaddr) < 0)
      {
        // errno has been set
+--- src/socket.cpp.orig	Wed Jan 29 13:19:59 2003
++++ src/socket.cpp	Wed Jan 29 13:20:20 2003
+@@ -42,7 +42,6 @@
+ #ifdef USE_SOCKS5
+ 
+ #define SOCKS
+-#define INCLUDE_PROTOTYPES
+ extern "C" {
+ #include <socks.h>
+ }
