@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xml-lite.el
-PORTVERSION=	1.24
+PORTVERSION=	1.29
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://members.ozemail.com.au/~mdub/software/
 DISTNAME=	${PORTNAME}
