@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TableMatrix.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TableMatrix.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TableMatrix/Spreadsheet.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TableMatrix/SpreadsheetHideRows.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/mm.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkTable.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkTableversion.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/TableMatrix.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/TableMatrix.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TableMatrix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TableMatrix
