@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xforms
-# Version required:	0.86
+# Version required:	0.88
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.12 1997/07/17 15:13:02 max Exp $
+# $Id: Makefile,v 1.13 1998/01/05 17:24:19 vanilla Exp $
 #
 
 DISTNAME=	bxform-088
