@@ -39,6 +39,7 @@
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += bs
+    SUBDIR += bsp
     SUBDIR += bugsx
     SUBDIR += burgerspace
     SUBDIR += bzflag

@@ -1,0 +1,3 @@
+bin/bsp
+%%PORTDOCS%%share/doc/bsp/README
+%%PORTDOCS%%@dirrm share/doc/bsp

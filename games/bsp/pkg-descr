@@ -1,0 +1,17 @@
+BSP is one of the best node builders for Doom.
+
+What are Nodes?
+
+Doom uses a rendering algorithm based on a binary space partition,
+otherwise known as a BSP tree. This is stored in a data lump called
+NODES in the WAD file. So tools to build the BSP tree are known as
+node builders.
+   
+Before you can play a level that you have created, you must use a node
+builder to create the data that Doom will use to render the level. BSP
+is one of several node builders that can do this.
+
+WWW: http://doombsp.sourceforge.net/
+
+- Christian Brueffer
+chris@unixpages.org
