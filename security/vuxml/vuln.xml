@@ -1880,7 +1880,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>lesstif</name>
-	<range><ge>0</ge></range>
+	<range><lt>0.93.96,2</lt></range>
       </package>
     </affects>
     <description>
