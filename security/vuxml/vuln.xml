@@ -4140,7 +4140,7 @@ misc.c:
       </package>
       <package>
         <name>thunderbird</name>
-        <range><lt>0.7.3</lt></name>
+        <range><lt>0.7.3</lt></range>
       </package>
       <package>
         <name>linux-mozilla</name>
@@ -4208,7 +4208,7 @@ misc.c:
     <dates>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-04</entry>
-      <modified>2004-08-05</modified>
+      <modified>2004-08-06</modified>
     </dates>
   </vuln>
 
