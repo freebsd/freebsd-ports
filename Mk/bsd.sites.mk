@@ -79,7 +79,6 @@ MASTER_SITE_TEX_CTAN+=  \
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/pub/linux/sunsite/%SUBDIR%/ \
@@ -141,7 +140,6 @@ MASTER_SITE_AFTERSTEP+=	\
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.io.com/pub/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
