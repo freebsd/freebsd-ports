@@ -8,7 +8,10 @@
 PORTNAME=	syntax_tools
 PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://erlang.org/contrib/
+MASTER_SITES=	http://www.erlang.org/contrib/ \
+		http://erlang.stacken.kth.se/contrib/ \
+		http://www.csd.uu.se/ftp/mirror/erlang/contrib/ \
+		http://www.serc.rmit.edu.au/mirrors/ose_mirror/contrib/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
