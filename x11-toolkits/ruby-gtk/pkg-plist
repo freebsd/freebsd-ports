@@ -1,8 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/gtk.so
+%%RUBY_SITELIBDIR%%/gtkcompat.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/calendar.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/drawing.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/helloworld.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/gtkbrows.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr_gtk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr_rb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbdump.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/test/test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/test/test.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/test/test0.rb
@@ -92,11 +97,10 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gtk
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/BUGS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/README.EXT
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/ToDo
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gtk/ja/README.EXT.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gtk/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gtk

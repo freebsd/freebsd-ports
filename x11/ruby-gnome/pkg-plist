@@ -1,7 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/gnome.so
 %%RUBY_SITELIBDIR%%/gnome.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/animator_demo.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/gnobrows.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr_gnome.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr_rb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbdump.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/README.ja
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnoconfig.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-0-basic.rb
@@ -28,8 +32,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/browser
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnome/ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ToDo
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnome

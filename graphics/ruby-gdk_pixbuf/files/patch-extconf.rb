@@ -1,5 +1,5 @@
---- extconf.rb.orig	Fri Mar 31 06:21:47 2000
-+++ extconf.rb	Wed Feb 28 21:18:34 2001
+--- extconf.rb.orig	Sat Oct  6 07:46:27 2001
++++ extconf.rb	Wed Nov 21 01:17:41 2001
 @@ -1,26 +1,25 @@
  require 'mkmf'
  
@@ -14,7 +14,7 @@
 +
 +rubygtk_dir = ARGV.shift || "../gtk"
  unless FileTest.exist?(rubygtk_dir)
-   raise "directry #{rubygtk_dir} not found.  Please specify Ruby/Gtk source dir."
+   raise "Directory #{rubygtk_dir} not found.  Please specify Ruby/Gtk source dir."
  end
 -gtklib_dir = []
 -`gtk-config --libs`.split(' ').each do |e|
