@@ -8,9 +8,7 @@
 #
 
 PORTNAME=	sa
-PORTVERSION=	1.0.5
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/sa/
 PKGNAMEPREFIX=	ossp-
@@ -22,7 +20,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+MAN3+=		sa.3
 
-.include <bsd.port.pre.mk>
-.include "${FILESDIR}/manpages.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
