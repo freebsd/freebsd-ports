@@ -1,9 +1,9 @@
---- Makefile.orig	Fri Sep 21 19:41:47 2001
-+++ Makefile	Thu Nov  8 00:16:26 2001
+--- Makefile.orig	Tue Dec 18 18:49:09 2001
++++ Makefile	Tue Dec 18 18:50:37 2001
 @@ -1,16 +1,16 @@
 -LIBDIR = -L/usr/X11R6/lib -L/usr/lib -L/opt/gnome/lib
--LIBS   = -lXpm -lXext -lX11 -lm  -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl 
--CFLAGS = -I/usr/X11R6/include -I/usr/lib/glib/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include
+-LIBS   = -lXpm -lXext -lX11 -lm  -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl
+-CFLAGS = -I/usr/X11R6/include -I/usr/lib/glib/include -I/usr/include/gtk-1.2 -I/usr/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/opt/gnome/include/glib-1.2 -I/opt/gnome/include/gtk-1.2
 +LIBDIR = -L${X11BASE}/lib
 +LIBS   = `${GTK_CONFIG} --libs` -lXpm
 +CFLAGS += `${GTK_CONFIG} --cflags`

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	washerdryer
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://ieng9.ucsd.edu/~m1foley/
 DISTNAME=	washerDryer-${PORTVERSION}
