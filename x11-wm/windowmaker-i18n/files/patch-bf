@@ -1,0 +1,11 @@
+--- wrlib/Makefile.in.orig	Fri Mar 31 19:46:32 2000
++++ wrlib/Makefile.in	Fri Mar 31 19:46:42 2000
+@@ -96,7 +96,7 @@
+ 
+ lib_LTLIBRARIES = libwraster.la
+ 
+-libwraster_la_LDFLAGS = -version-info 2:0:0
++libwraster_la_LDFLAGS = -version-info 3:0:0
+ 
+ bin_SCRIPTS = get-wraster-flags
+ 

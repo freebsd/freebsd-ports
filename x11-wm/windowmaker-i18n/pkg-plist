@@ -10,7 +10,6 @@ GNUstep/Apps/WPrefs.app/tiff/cycleworkspaces.tiff
 GNUstep/Apps/WPrefs.app/tiff/dock.tiff
 GNUstep/Apps/WPrefs.app/tiff/dontlinkworkspaces.tiff
 GNUstep/Apps/WPrefs.app/tiff/ergonomic.tiff
-GNUstep/Apps/WPrefs.app/tiff/ergowood.tiff
 GNUstep/Apps/WPrefs.app/tiff/expert.tiff
 GNUstep/Apps/WPrefs.app/tiff/fonts.tiff
 GNUstep/Apps/WPrefs.app/tiff/iconprefs.tiff
@@ -21,7 +20,6 @@ GNUstep/Apps/WPrefs.app/tiff/menualign1.tiff
 GNUstep/Apps/WPrefs.app/tiff/menualign2.tiff
 GNUstep/Apps/WPrefs.app/tiff/menuprefs.tiff
 GNUstep/Apps/WPrefs.app/tiff/menus.tiff
-GNUstep/Apps/WPrefs.app/tiff/miscprefs2.tiff
 GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousespeed.tiff
@@ -47,7 +45,6 @@ GNUstep/Apps/WPrefs.app/tiff/speed4.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed4s.tiff
 GNUstep/Apps/WPrefs.app/tiff/tdel.tiff
 GNUstep/Apps/WPrefs.app/tiff/tedit.tiff
-GNUstep/Apps/WPrefs.app/tiff/temp.tiff
 GNUstep/Apps/WPrefs.app/tiff/textr.tiff
 GNUstep/Apps/WPrefs.app/tiff/theme.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
@@ -66,6 +63,7 @@ GNUstep/Apps/WPrefs.app/tiff/tnew.tiff
 GNUstep/Apps/WPrefs.app/tiff/whandling.tiff
 GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
+GNUstep/Apps/WPrefs.app/tiff/workspacename.tiff
 GNUstep/Apps/WPrefs.app/tiff/xis.tiff
 GNUstep/Apps/WPrefs.app/xpm/advancetonewworkspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/animations.xpm
@@ -76,7 +74,6 @@ GNUstep/Apps/WPrefs.app/xpm/cycleworkspaces.xpm
 GNUstep/Apps/WPrefs.app/xpm/dock.xpm
 GNUstep/Apps/WPrefs.app/xpm/dontlinkworkspaces.xpm
 GNUstep/Apps/WPrefs.app/xpm/ergonomic.xpm
-GNUstep/Apps/WPrefs.app/xpm/ergowood.xpm
 GNUstep/Apps/WPrefs.app/xpm/expert.xpm
 GNUstep/Apps/WPrefs.app/xpm/fonts.xpm
 GNUstep/Apps/WPrefs.app/xpm/iconprefs.xpm
@@ -87,7 +84,6 @@ GNUstep/Apps/WPrefs.app/xpm/menualign1.xpm
 GNUstep/Apps/WPrefs.app/xpm/menualign2.xpm
 GNUstep/Apps/WPrefs.app/xpm/menuprefs.xpm
 GNUstep/Apps/WPrefs.app/xpm/menus.xpm
-GNUstep/Apps/WPrefs.app/xpm/miscprefs2.xpm
 GNUstep/Apps/WPrefs.app/xpm/moreanim.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousesettings.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousespeed.xpm
@@ -113,7 +109,6 @@ GNUstep/Apps/WPrefs.app/xpm/speed4.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed4s.xpm
 GNUstep/Apps/WPrefs.app/xpm/tdel.xpm
 GNUstep/Apps/WPrefs.app/xpm/tedit.xpm
-GNUstep/Apps/WPrefs.app/xpm/temp.xpm
 GNUstep/Apps/WPrefs.app/xpm/textr.xpm
 GNUstep/Apps/WPrefs.app/xpm/theme.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer0.xpm
@@ -132,8 +127,11 @@ GNUstep/Apps/WPrefs.app/xpm/tnew.xpm
 GNUstep/Apps/WPrefs.app/xpm/whandling.xpm
 GNUstep/Apps/WPrefs.app/xpm/windowfocus.xpm
 GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
+GNUstep/Apps/WPrefs.app/xpm/workspacename.xpm
 GNUstep/Apps/WPrefs.app/xpm/xis.xpm
+bin/get-wings-flags
 bin/get-wraster-flags
+bin/get-wutil-flags
 bin/geticonset
 bin/getstyle
 bin/seticons
@@ -165,7 +163,7 @@ lib/libwmfun.so
 lib/libwmfun.so.0
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.3
+lib/libwraster.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/WINGs/Images.tiff
@@ -185,10 +183,14 @@ share/WindowMaker/Icons/GNUstepGlow.tiff
 share/WindowMaker/Icons/GNUstepGlow.xpm
 share/WindowMaker/Icons/GNUterm.tiff
 share/WindowMaker/Icons/GNUterm.xpm
+share/WindowMaker/Icons/Terminal.tiff
+share/WindowMaker/Icons/Terminal.xpm
+share/WindowMaker/Icons/TerminalGNUstep.tiff
+share/WindowMaker/Icons/TerminalGNUstep.xpm
+share/WindowMaker/Icons/TerminalLinux.tiff
+share/WindowMaker/Icons/TerminalLinux.xpm
 share/WindowMaker/Icons/clip.tiff
 share/WindowMaker/Icons/clip.xpm
-share/WindowMaker/Icons/clip2.tiff
-share/WindowMaker/Icons/clip2.xpm
 share/WindowMaker/Icons/defaultAppIcon.tiff
 share/WindowMaker/Icons/defaultAppIcon.xpm
 share/WindowMaker/Icons/defaultterm.tiff
@@ -239,6 +241,7 @@ share/WindowMaker/Styles/Chumbo.style
 share/WindowMaker/Styles/Copper.style
 share/WindowMaker/Styles/DarkBlue.style
 share/WindowMaker/Styles/DarkRed.style
+share/WindowMaker/Styles/Emerald.style
 share/WindowMaker/Styles/Fire.style
 share/WindowMaker/Styles/Food.style
 share/WindowMaker/Styles/Golden.style
@@ -253,6 +256,7 @@ share/WindowMaker/Styles/Purple.style
 share/WindowMaker/Styles/Purplish.style
 share/WindowMaker/Styles/Red.style
 share/WindowMaker/Styles/RednBlue.style
+share/WindowMaker/Styles/Spring.style
 share/WindowMaker/Styles/Summer.style
 share/WindowMaker/Styles/Traditional.style
 share/WindowMaker/Styles/VioletBlue.style
@@ -294,6 +298,8 @@ share/WindowMaker/plmenu.de
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
+share/WindowMaker/plmenu.ko
+share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
