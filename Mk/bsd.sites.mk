@@ -733,7 +733,7 @@ MASTER_SITE_SAVANNAH+= \
 	http://savannah.nongnu.org/download/%SUBDIR%/ \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
-.for mirror in heanet aleron umn belnet voxel optusnet # unc is slow
+.for mirror in heanet aleron umn belnet voxel optusnet kent # unc is slow
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
