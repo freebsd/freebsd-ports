@@ -20,6 +20,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 PATCH_ARGS	=-p0 -d ${WRKDIR}
 
@@ -39,9 +40,10 @@ WMTUNE_DIFF=	wmtune.radiotrack.diff.gz
 
 post-patch:
 	@${GUNZIP_CMD} -c ${DISTDIR}/${WMTUNE_DIFF} | ${PATCH} ${PATCH_ARGS}
-	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	@${SED} -e 's|-O2|${CFLAGS}|' -e 's|cc|${CC}|' \
-		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' -e 's|cc|${CC}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
+		${WRKSRC}/src/wmtune.c
 
 do-configure:
 	@${PERL} -pi.orig -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/src/wmtune.c
