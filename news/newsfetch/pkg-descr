@@ -1,0 +1,15 @@
+This is version 1.0 of the newsfetch distribution. This is an  utility 
+to download news in the mail format. Feedbacks are welcome. 
+
+If you find a bug in the newsfetcht  distribution, please report it.   
+
+	Yusuf Motiwala
+	yusuf@scientist.com
+
+DESCRIPTION
+	      % newsfetch news.yourisp.com
+	      % newsfetch $NNTPSERVER
+
+       newsfetch  pulls  news  from an NNTP server and writes the
+       articles to a file named same as newsgroup name. The  file
+       created by newsfetch can be used with any mail reader.
