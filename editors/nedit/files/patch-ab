@@ -1,9 +1,9 @@
---- source/Makefile.common.orig	Tue Dec 14 21:58:24 1999
-+++ source/Makefile.common	Sun May 28 19:31:01 2000
-@@ -15,6 +15,10 @@
- nc: nc.o
- 	$(CC) $(CFLAGS) nc.o ../util/libNUtil.a $(LIBS) -o $@
- 	
+--- source/Makefile.common.orig	Thu May 15 19:42:31 2003
++++ source/Makefile.common	Sat Feb  7 14:47:52 2004
+@@ -21,6 +21,10 @@
+ nc: nc.o server_common.o ../util/libNUtil.a
+ 	$(CC) $(CFLAGS) nc.o server_common.o ../util/libNUtil.a $(LIBS) -o $@
+ 
 +install: nedit nc
 +	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nedit ${PREFIX}/bin
 +	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nc ${PREFIX}/bin/nclient
