@@ -87,6 +87,9 @@ lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
 lib/libsvn_wc-1.so
 lib/libsvn_wc-1.so.0
+%%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
 %%PORTDOCS%%share/doc/subversion/book/images/ch02dia1.png
 %%PORTDOCS%%share/doc/subversion/book/images/ch02dia2.png
 %%PORTDOCS%%share/doc/subversion/book/images/ch02dia3.png
