@@ -279,11 +279,12 @@ libexec/gimp/1.3/plug-ins/plugindetails
 libexec/gimp/1.3/plug-ins/png
 libexec/gimp/1.3/plug-ins/pnm
 libexec/gimp/1.3/plug-ins/polar
+libexec/gimp/1.3/plug-ins/postscript
 %%PRINT%%libexec/gimp/1.3/plug-ins/print
-libexec/gimp/1.3/plug-ins/ps
 libexec/gimp/1.3/plug-ins/psd
 libexec/gimp/1.3/plug-ins/psd_save
 libexec/gimp/1.3/plug-ins/psp
+%%PYTHON:%%libexec/gimp/1.3/plug-ins/py-slice.py
 libexec/gimp/1.3/plug-ins/randomize
 libexec/gimp/1.3/plug-ins/rcm
 libexec/gimp/1.3/plug-ins/ripple
@@ -531,6 +532,10 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-channel-green-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-channel-green-32.png
 %%DOCSDIR%%/libgimpwidgets/stock-channel-green-48.png
+%%DOCSDIR%%/libgimpwidgets/stock-channel-indexed-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-channel-indexed-24.png
+%%DOCSDIR%%/libgimpwidgets/stock-channel-indexed-32.png
+%%DOCSDIR%%/libgimpwidgets/stock-channel-indexed-48.png
 %%DOCSDIR%%/libgimpwidgets/stock-channel-red-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-channel-red-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-channel-red-32.png
@@ -608,6 +613,10 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-layer-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-layer-32.png
 %%DOCSDIR%%/libgimpwidgets/stock-layer-48.png
+%%DOCSDIR%%/libgimpwidgets/stock-layer-mask-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-layer-mask-24.png
+%%DOCSDIR%%/libgimpwidgets/stock-layer-mask-32.png
+%%DOCSDIR%%/libgimpwidgets/stock-layer-mask-48.png
 %%DOCSDIR%%/libgimpwidgets/stock-layer-to-imagesize-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-layers-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-layers-24.png
@@ -644,6 +653,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-selection-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-selection-add-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-selection-all-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-selection-border-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-selection-grow-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-selection-intersect-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-selection-none-16.png
@@ -1289,6 +1299,10 @@ share/gimp/themes/Default/images/stock-channel-green-16.png
 share/gimp/themes/Default/images/stock-channel-green-24.png
 share/gimp/themes/Default/images/stock-channel-green-32.png
 share/gimp/themes/Default/images/stock-channel-green-48.png
+share/gimp/themes/Default/images/stock-channel-indexed-16.png
+share/gimp/themes/Default/images/stock-channel-indexed-24.png
+share/gimp/themes/Default/images/stock-channel-indexed-32.png
+share/gimp/themes/Default/images/stock-channel-indexed-48.png
 share/gimp/themes/Default/images/stock-channel-red-16.png
 share/gimp/themes/Default/images/stock-channel-red-24.png
 share/gimp/themes/Default/images/stock-channel-red-32.png
@@ -1366,6 +1380,10 @@ share/gimp/themes/Default/images/stock-layer-16.png
 share/gimp/themes/Default/images/stock-layer-24.png
 share/gimp/themes/Default/images/stock-layer-32.png
 share/gimp/themes/Default/images/stock-layer-48.png
+share/gimp/themes/Default/images/stock-layer-mask-16.png
+share/gimp/themes/Default/images/stock-layer-mask-24.png
+share/gimp/themes/Default/images/stock-layer-mask-32.png
+share/gimp/themes/Default/images/stock-layer-mask-48.png
 share/gimp/themes/Default/images/stock-layer-to-imagesize-16.png
 share/gimp/themes/Default/images/stock-layers-16.png
 share/gimp/themes/Default/images/stock-layers-24.png
@@ -1402,6 +1420,7 @@ share/gimp/themes/Default/images/stock-scale-16.png
 share/gimp/themes/Default/images/stock-selection-16.png
 share/gimp/themes/Default/images/stock-selection-add-16.png
 share/gimp/themes/Default/images/stock-selection-all-16.png
+share/gimp/themes/Default/images/stock-selection-border-16.png
 share/gimp/themes/Default/images/stock-selection-grow-16.png
 share/gimp/themes/Default/images/stock-selection-intersect-16.png
 share/gimp/themes/Default/images/stock-selection-none-16.png
