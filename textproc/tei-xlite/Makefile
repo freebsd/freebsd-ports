@@ -18,8 +18,6 @@ EXTRACT_ONLY=	# Empty
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	XML version of the TEI-Lite DTD
 
-BROKEN=		"Checksum mismatch"
-
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_BUILD=	yes
