@@ -1,11 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog.pm
-lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog/GSC/Query.pm
-lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog/Star.pm
-lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog/USNOA2/Query.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro/Catalog/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog/GSC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog/USNOA2
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Astro/Catalog
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro/Catalog
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Astro 2>/dev/null || true
+%%SITE_PERL%%/Astro/Catalog.pm
+%%SITE_PERL%%/Astro/Catalog/GSC/Query.pm
+%%SITE_PERL%%/Astro/Catalog/Star.pm
+%%SITE_PERL%%/Astro/Catalog/SuperCOSMOS/Query.pm
+%%SITE_PERL%%/Astro/Catalog/USNOA2/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog/.packlist
+@dirrm %%SITE_PERL%%/Astro/Catalog/GSC
+@dirrm %%SITE_PERL%%/Astro/Catalog/SuperCOSMOS
+@dirrm %%SITE_PERL%%/Astro/Catalog/USNOA2
+@dirrm %%SITE_PERL%%/Astro/Catalog
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Astro 2>/dev/null || true
