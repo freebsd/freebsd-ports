@@ -1,13 +1,13 @@
 # New ports collection makefile for:	trn
-# Version required:	4.0-test64
+# Version required:	4.0-test65
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.14 1998/05/01 07:52:00 asami Exp $
+# $Id: Makefile,v 1.15 1998/05/01 18:41:21 mph Exp $
 #
 
-DISTNAME=	trn4-test64
-PKGNAME=	trn-4.0b64
+DISTNAME=	trn4-test65
+PKGNAME=	trn-4.0b65
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.clari.net/private/trn/ \
 		ftp://ftp.uu.net/private/trn/
