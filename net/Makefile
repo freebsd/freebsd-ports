@@ -45,6 +45,7 @@
     SUBDIR += coda_doc
     SUBDIR += coda_intro
     SUBDIR += coda_server
+    SUBDIR += conference
     SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cryptcat
