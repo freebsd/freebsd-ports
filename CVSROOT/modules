@@ -8593,6 +8593,7 @@ poink		ports/net/poink
 pointless	ports/misc/pointless
 policyd		ports/mail/policyd
 polygraph	ports/benchmarks/polygraph
+polymake	ports/math/polymake
 polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
 pop-before-smtp	ports/mail/pop-before-smtp
