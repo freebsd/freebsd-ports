@@ -2,15 +2,15 @@ lib/libuu.a
 lib/libuu.so
 lib/libuu.so.1
 include/uudeview.h
-share/doc/uulib/Makefile
-share/doc/uulib/README
-share/doc/uulib/binhex.fig
-share/doc/uulib/library.ltx
-share/doc/uulib/structure.fig
-share/doc/uulib/td-v1.c
-share/doc/uulib/td-v2.c
-share/doc/uulib/td-v3.c
-share/doc/uulib/test.txt
-share/doc/uulib/porting.notes
-share/doc/uulib/HISTORY
-@dirrm share/doc/uulib
+%%PORTDOCS%%share/doc/uulib/Makefile
+%%PORTDOCS%%share/doc/uulib/README
+%%PORTDOCS%%share/doc/uulib/binhex.fig
+%%PORTDOCS%%share/doc/uulib/library.ltx
+%%PORTDOCS%%share/doc/uulib/structure.fig
+%%PORTDOCS%%share/doc/uulib/td-v1.c
+%%PORTDOCS%%share/doc/uulib/td-v2.c
+%%PORTDOCS%%share/doc/uulib/td-v3.c
+%%PORTDOCS%%share/doc/uulib/test.txt
+%%PORTDOCS%%share/doc/uulib/porting.notes
+%%PORTDOCS%%share/doc/uulib/HISTORY
+%%PORTDOCS%%@dirrm share/doc/uulib
