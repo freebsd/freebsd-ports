@@ -9,7 +9,7 @@ PORTNAME=	kvidtune
 PORTVERSION=	0.4.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= unstable/apps/admin
+MASTER_SITE_SUBDIR=	unstable/apps/KDE1.x/admin
 
 MAINTAINER=	ports@FreeBSD.org
 
