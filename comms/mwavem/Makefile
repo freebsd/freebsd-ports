@@ -76,6 +76,8 @@ pre-fetch:
 
 .if ${OSVERSION} < 410000
 BROKEN=		"Systems prior to 4.1 are not supported"
+.else
+BROKEN=		"Archive cannot be fetched"
 .endif
 
 .include <bsd.port.post.mk>
