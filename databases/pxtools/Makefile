@@ -14,7 +14,7 @@ MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes

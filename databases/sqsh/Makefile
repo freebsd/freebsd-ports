@@ -15,7 +15,7 @@ MAINTAINER=	kiesel@schlund.de
 COMMENT=	Interactive tool for querying Sybase database servers
 
 LIB_DEPENDS=	ct.2:${PORTSDIR}/databases/freetds \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	mountapp
 MAINTAINER=	nm@web.am
 COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS+=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
 USE_GNOME=	gtk12 glib12

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(WITHOUT_PLUGIN)
-BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
 		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
 		nspr4.1:$(PORTSDIR)/devel/nspr

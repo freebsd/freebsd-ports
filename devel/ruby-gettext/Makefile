@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby implementation of the gettext library
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old \
 		racc:${PORTSDIR}/devel/ruby-racc
 
 USE_RUBY=	yes

@@ -24,7 +24,7 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
 		speex.2:${PORTSDIR}/audio/speex \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread

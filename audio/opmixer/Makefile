@@ -16,7 +16,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes

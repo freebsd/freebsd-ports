@@ -21,7 +21,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		gm4:${PORTSDIR}/devel/m4 \
-		msgfmt:${PORTSDIR}/devel/gettext
+		msgfmt:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_X_PREFIX=	yes

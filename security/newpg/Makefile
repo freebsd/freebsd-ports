@@ -17,7 +17,7 @@ COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		ksba.7:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \

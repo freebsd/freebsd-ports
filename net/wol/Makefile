@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	ahh
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=		yes

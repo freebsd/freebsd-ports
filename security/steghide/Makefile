@@ -17,7 +17,7 @@ COMMENT=	"Steganography tool to hide data in binary files"
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_PERL5=	yes
 USE_LIBTOOL=	yes

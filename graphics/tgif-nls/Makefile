@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 COMMENT=	A two-dimensional drawing tool with NLS message catalogs support
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes

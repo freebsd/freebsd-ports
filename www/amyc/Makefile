@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.crevola.com/about/current/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Display the contents of your Netscape cache
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

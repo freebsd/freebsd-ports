@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gawk
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	The GNU version of Awk
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext-old
 
 .include <bsd.port.pre.mk>
 

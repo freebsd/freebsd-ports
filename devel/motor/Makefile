@@ -14,7 +14,7 @@ MASTER_SITES=	http://konst.org.ua/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A powerful text mode based programming IDE
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

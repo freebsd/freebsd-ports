@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.coldsync.org/download/
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	Synchronize a PalmPilot with a Unix workstation
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E

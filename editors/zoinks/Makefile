@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mike@mikelockwood.com
 COMMENT=	An X11 programmer's editor and development environment
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib

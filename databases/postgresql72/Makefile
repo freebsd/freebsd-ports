@@ -47,7 +47,7 @@ USE_GETOPT_LONG=yes
 CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	"LIBS=-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "

@@ -17,7 +17,7 @@ COMMENT=	An open editor for an open scenegraph
 
 BUILD_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 LIB_DEPENDS=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2 \
-		intl.5:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 

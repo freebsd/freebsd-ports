@@ -18,8 +18,8 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF binutils-2.11.90 for Windows cross-development
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 

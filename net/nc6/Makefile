@@ -16,7 +16,7 @@ MAINTAINER=	filippo@widestore.net
 COMMENT=	Netcat clone with IPv6 support
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 MAN1=	nc6.1
 GNU_CONFIGURE=	yes

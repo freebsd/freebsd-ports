@@ -15,7 +15,7 @@ MAINTAINER=	filippo@widestore.net
 COMMENT=	Marco d'Itri whois client
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 MAN1=	whois.1
 

@@ -19,7 +19,7 @@ COMMENT=	A GUI to DirectConnect (www.neo-modus.com) text client
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix

@@ -15,7 +15,7 @@ COMMENT=	GUI interface for make or gmake
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 DOCS=		COPYING COPYRIGHT ChangeLog TODO
 GNU_CONFIGURE=	yes

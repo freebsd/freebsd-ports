@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gtkhx
 MAINTAINER=	jre@vineyard.net
 COMMENT=	A GTK+ version of Hx, a UNIX Hotline Client
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_XLIB=	yes
 USE_GNOME=	gdkpixbuf

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	toasty@dragondata.com
 COMMENT=	A once-popular mail user agent, version 2.5.x
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}

@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"KDE Control Center module for gamma calibration/correction of XFree86"
 
-LIB_DEPENDS= 		intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS= 		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3

@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.46
 MAINTAINER=	jeremy@external.org
 COMMENT=	A dock-like applet for KDE3
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

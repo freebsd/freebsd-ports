@@ -15,7 +15,7 @@ MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

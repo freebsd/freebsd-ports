@@ -65,7 +65,7 @@ PLIST_SUB+=	JAPANESE="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	NLS=""
 .endif
 

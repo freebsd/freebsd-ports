@@ -15,7 +15,7 @@ DISTNAME=		sylpheed-${PORTVERSION:R}-gtk2-${PORTVERSION:E}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		The GTK+ 2.0 port of a lightweight, featureful and fast e-mail client
 
-LIB_DEPENDS=		intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=		intl.5:${PORTSDIR}/devel/gettext-old \
 			iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=		yes

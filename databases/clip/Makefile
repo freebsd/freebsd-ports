@@ -26,7 +26,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
 		gd.4:${PORTSDIR}/graphics/gd			\
-		intl.5:${PORTSDIR}/devel/gettext		\
+		intl.5:${PORTSDIR}/devel/gettext-old		\
 		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

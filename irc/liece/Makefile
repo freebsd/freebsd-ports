@@ -15,7 +15,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Yet another IRC client which runs under Emacsen
 
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
-		msgfmt:${PORTSDIR}/devel/gettext
+		msgfmt:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		ldcc:${PORTSDIR}/irc/liece-dcc
 

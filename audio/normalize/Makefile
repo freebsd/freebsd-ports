@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes

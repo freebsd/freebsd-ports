@@ -25,8 +25,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.14 for Windows cross-development
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 BINUTILVERSION=	2.14
 PATCHVERSION=	90.20030807.1

@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes

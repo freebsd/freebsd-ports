@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 MAINTAINER=	mcdouga9@msu.edu
 COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		cdlabelgen:${PORTSDIR}/print/cdlabelgen

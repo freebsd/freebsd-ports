@@ -21,7 +21,7 @@ COMMENT=	Full-text search system intended for easy use
 
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv
 #		xlHtml:${PORTSDIR}/textproc/xlhtml \
 #		wvHtml:${PORTSDIR}/textproc/wv

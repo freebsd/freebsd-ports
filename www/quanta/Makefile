@@ -17,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@freebsd.org
 COMMENT=	Comprehensive html/website development environment
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

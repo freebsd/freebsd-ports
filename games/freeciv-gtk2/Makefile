@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 MAINTAINER?=	adam-ports@blacktabby.org
 COMMENT?=	A civilisation clone for X11; multiplayer
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 USE_XPM=	yes
 USE_BZIP2=	yes

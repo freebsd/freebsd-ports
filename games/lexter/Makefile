@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A real-time word puzzle for text terminals
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \

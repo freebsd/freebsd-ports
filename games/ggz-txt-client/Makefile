@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ggz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		ggz.1:${PORTSDIR}/games/libggz \
 		ggzcore.3:${PORTSDIR}/games/ggz-client-libs
 

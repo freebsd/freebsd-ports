@@ -14,7 +14,7 @@ DISTNAME=       ${PORTNAME}2.8.5dev.17
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 USE_BZIP2=	yes

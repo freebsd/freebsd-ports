@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/admin/
 MAINTAINER=	kde@freebsd.org
 COMMENT=	KDE/Qt log file viewer
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

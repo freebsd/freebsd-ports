@@ -17,7 +17,7 @@ COMMENT=	The Hercules System/370, ESA/390, and z/Architecture Emulator
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-LIB_DEPENDS=   intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=   intl.5:${PORTSDIR}/devel/gettext-old
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure

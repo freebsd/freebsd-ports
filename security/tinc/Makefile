@@ -16,7 +16,7 @@ MASTER_SITES=	http://tinc.nl.linux.org/packages/ \
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A Virtual Private Network (VPN) daemon
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old \
 		lzo.1:${PORTSDIR}/archivers/lzo
 
 USE_OPENSSL=	yes
