@@ -12,6 +12,11 @@ MASTER_SITES=	http://energyhq.homeip.net/files/
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
+.if defined(WITHOUT_X11) && !defined(NO_GUI)
+NO_GUI=		yes
+MAKE_ENV+=	NO_GUI=yes
+.endif
+
 .if !defined(NO_GUI) && !defined(WITH_GTK12)
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 .endif
