@@ -7779,6 +7779,7 @@ php5-shmop	ports/devel/php5-shmop
 php5-sqlite	ports/databases/php5-sqlite
 php5-sybase	ports/databases/php5-sybase
 php5-sybase_ct	ports/databases/php5-sybase_ct
+php5-sysvmsg	ports/devel/php5-sysvmsg
 php5-xml	ports/textproc/php5-xml
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
