@@ -35,9 +35,10 @@ include/libprelude/threads.h
 include/libprelude/extract.h
 include/libprelude/common.h
 include/libprelude/config.h
-lib/libprelude.so.1
-lib/libprelude.so
+lib/libprelude.a
 lib/libprelude.la
+lib/libprelude.so
+lib/libprelude.so.1
 %%PORTDOCS%%%%DOCSDIR%%/c4.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-io.html
