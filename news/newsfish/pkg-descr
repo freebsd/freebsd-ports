@@ -1,0 +1,15 @@
+From the README:
+
+newsfish, quite simply, is a batch USENET news reader. In other words,
+it is not interactive, and it has a very simple user interface. The power
+of newsfish is that it can sift through articles and save only the ones
+that match your criteria. It does this by applying a set of regular
+expressions (a la grep/egrep) to the headers of each article.
+
+Articles are saved in mailbox format, which makes them suitable for
+viewing under most popular mail readers.
+
+http://www.philosophysw.com/
+
+- Allan Saddi
+asaddi@philosophysw.com
