@@ -3239,6 +3239,7 @@ it++		ports/math/it++
 it-aspell	ports/textproc/it-aspell
 it-ooodict-IT	ports/editors/ooodict-it_IT
 itcl		ports/lang/itcl
+itext		ports/devel/itext
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
 itl		ports/math/itl
