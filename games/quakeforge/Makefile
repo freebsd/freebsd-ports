@@ -8,19 +8,19 @@
 PORTNAME=	QuakeForge
 PORTVERSION=	0.5.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/
-MASTER_SITE_SUBDIR=	quake
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
+		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw
+MASTER_SITE_SUBDIR=	quake/:qf
 DISTNAME=	quakeforge-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PROGFILE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qf ${PROGFILE}:qw
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .if !defined(NO_WAD)
-MASTER_SITES+=	http://www.devolution.com/~slouken/SDL/projects/quake/data/
-DISTFILES+=	${WADFILE}
+MASTER_SITES+=	http://www.libsdl.org/projects/quake/data/:wad
+DISTFILES+=	${WADFILE}:wad
 .endif
 .if !defined(NO_SKINS)
-MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/skins/
-DISTFILES+=	${SKINFILES}
+MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/skins/:skins
+DISTFILES+=	${SKINFILES:S/$/:skins/}
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
