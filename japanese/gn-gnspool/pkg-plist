@@ -1,15 +1,25 @@
 bin/gn
 bin/gnspool
+bin/gnloops
 bin/gninews
 bin/gnmail
 man/ja/cat1/gn.1.gz
 man/ja/cat1/gnspool.1.gz
+man/ja/cat1/gnloops.1.gz
 share/examples/gn-gnspool/_gnrc
 share/doc/gn-gnspool/Changes.FreeBSD.port
 share/doc/gn-gnspool/bin-dist
 share/doc/gn-gnspool/change.log
 share/doc/gn-gnspool/copyrigh.t
 share/doc/gn-gnspool/define
+share/doc/gn-gnspool/history
+share/doc/gn-gnspool/info
+share/doc/gn-gnspool/install
+share/doc/gn-gnspool/jnames
+share/doc/gn-gnspool/mime
+share/doc/gn-gnspool/new
+share/doc/gn-gnspool/readme
+share/doc/gn-gnspool/wanted
 share/doc/gn-gnspool/dos/etherppp
 share/doc/gn-gnspool/dos/inetbios
 share/doc/gn-gnspool/dos/lanwp
@@ -30,33 +40,33 @@ share/doc/gn-gnspool/faq/index
 share/doc/gn-gnspool/faq/newsrc
 share/doc/gn-gnspool/faq/old
 share/doc/gn-gnspool/faq/unix
-share/doc/gn-gnspool/gnspool/gnspool.gon
+
+share/doc/gn-gnspool/gnloops/readme
 share/doc/gn-gnspool/gnspool/gnus
 share/doc/gn-gnspool/gnspool/mh
 share/doc/gn-gnspool/gnspool/mnews
 share/doc/gn-gnspool/gnspool/readme
 share/doc/gn-gnspool/gnspool/winvn
-share/doc/gn-gnspool/history
+share/doc/gn-gnspool/gon/1993
+share/doc/gn-gnspool/gon/1995
+share/doc/gn-gnspool/gon/1996_1
+share/doc/gn-gnspool/gon/1996_5
+share/doc/gn-gnspool/gon/1997_4
+share/doc/gn-gnspool/gon/1997_8
+share/doc/gn-gnspool/gon/readme
 share/doc/gn-gnspool/human68k/espx
 share/doc/gn-gnspool/human68k/offline
 share/doc/gn-gnspool/human68k/readme
-share/doc/gn-gnspool/info
-share/doc/gn-gnspool/install
-share/doc/gn-gnspool/jnames
 share/doc/gn-gnspool/log/100-110
 share/doc/gn-gnspool/log/110-120
 share/doc/gn-gnspool/log/120-130
-share/doc/gn-gnspool/mime
-share/doc/gn-gnspool/new
 share/doc/gn-gnspool/os2/mime
 share/doc/gn-gnspool/os2/readme
 share/doc/gn-gnspool/os2/spool
 share/doc/gn-gnspool/os2/tcpip16
 share/doc/gn-gnspool/os2/tcpip32
-share/doc/gn-gnspool/readme
 share/doc/gn-gnspool/unix/mvux
 share/doc/gn-gnspool/unix/readme
-share/doc/gn-gnspool/wanted
 share/doc/gn-gnspool/windows.31/readme
 share/doc/gn-gnspool/windows.31/winsock.qw
 share/doc/gn-gnspool/windows.31/winsock.vc
@@ -65,11 +75,12 @@ share/doc/gn-gnspool/windows.95/winsock.vc
 @dirrm share/examples/gn-gnspool
 @dirrm share/doc/gn-gnspool/dos
 @dirrm share/doc/gn-gnspool/faq
+@dirrm share/doc/gn-gnspool/gnloops
 @dirrm share/doc/gn-gnspool/gnspool
+@dirrm share/doc/gn-gnspool/gon
 @dirrm share/doc/gn-gnspool/human68k
 @dirrm share/doc/gn-gnspool/log
 @dirrm share/doc/gn-gnspool/os2
 @dirrm share/doc/gn-gnspool/unix
 @dirrm share/doc/gn-gnspool/windows.31
 @dirrm share/doc/gn-gnspool/windows.95
-@dirrm share/doc/gn-gnspool
