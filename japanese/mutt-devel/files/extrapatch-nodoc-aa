@@ -1,0 +1,21 @@
+--- doc/Makefile.in.orig	Sun Jun 23 15:53:07 2002
++++ doc/Makefile.in	Sun Jun 23 15:55:19 2002
+@@ -79,18 +79,6 @@
+ 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+ 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
+ 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+-	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
+-	for file in manual*.html ; do	\
+-		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+-	done
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
