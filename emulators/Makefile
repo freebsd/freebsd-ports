@@ -34,6 +34,7 @@
     SUBDIR += stonx
     SUBDIR += tkhfs
     SUBDIR += truereality
+    SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += vgb
     SUBDIR += vice
