@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libmtrie
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/mtrie/
-DISTNAME=	mtrie-${PORTVERSION}
+DISTNAME=	libmtrie-${PORTVERSION}
 USE_BZIP2=	yes
 
 MAINTAINER=	alfred@FreeBSD.org
