@@ -12,6 +12,7 @@ share/gnome/help/gtop/C/figs/gtop-prefs.png
 share/gnome/help/gtop/C/figs/gtop-proc.png
 share/gnome/help/gtop/C/topic.dat
 share/gnome/pixmaps/gnome-gtop.png
+share/locale/az/LC_MESSAGES/gtop.mo
 share/locale/ca/LC_MESSAGES/gtop.mo
 share/locale/cs/LC_MESSAGES/gtop.mo
 share/locale/da/LC_MESSAGES/gtop.mo
@@ -32,6 +33,7 @@ share/locale/pt/LC_MESSAGES/gtop.mo
 share/locale/ru/LC_MESSAGES/gtop.mo
 share/locale/sl/LC_MESSAGES/gtop.mo
 share/locale/sv/LC_MESSAGES/gtop.mo
+share/locale/tr/LC_MESSAGES/gtop.mo
 share/locale/uk/LC_MESSAGES/gtop.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gtop.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gtop.mo
