@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	livecd
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.primeirospassos.org/ \
-		http://www.fugspbr.org/ \
-		http://www2.fugspbr.org/
+MASTER_SITES=	http://www.primeirospassos.org/
 
 MAINTAINER=	ebrandi.home@uol.com.br
 COMMENT=	Tool Set to create custom FreeBSD LiveCD
