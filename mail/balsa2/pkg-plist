@@ -1,4 +1,5 @@
 bin/balsa
+bin/balsa-ab
 etc/sound/events/balsa.soundlist
 etc/sound/events/email.soundlist
 share/gnome/applications/balsa.desktop
@@ -8,25 +9,25 @@ share/gnome/balsa/pixmaps/balsa-top.png
 share/gnome/balsa/pixmaps/balsa-watermark.png
 share/gnome/balsa/pixmaps/balsa_icon.png
 share/gnome/balsa/pixmaps/balsa_logo.png
-share/gnome/help/balsa-manual/C/balsa-manual.xml
-share/gnome/help/balsa-manual/C/fdl-appendix.xml
-share/gnome/help/balsa-manual/C/figures/address-book-ldap.png
-share/gnome/help/balsa-manual/C/figures/address-book-modify.png
-share/gnome/help/balsa-manual/C/figures/address-book-start.png
-share/gnome/help/balsa-manual/C/figures/address-book-vcard.png
-share/gnome/help/balsa-manual/C/figures/address-book.png
-share/gnome/help/balsa-manual/C/figures/balsa_logo.png
-share/gnome/help/balsa-manual/C/figures/druid-start.png
-share/gnome/help/balsa-manual/C/figures/example-alias.png
-share/gnome/help/balsa-manual/C/figures/figuresdobaaddress-book-modify.png
-share/gnome/help/balsa-manual/C/figures/main-window-toolbar.png
-share/gnome/help/balsa-manual/C/figures/main-window.png
-share/gnome/help/balsa-manual/C/figures/newmsg-window-attachments.png
-share/gnome/help/balsa-manual/C/figures/newmsg-window-toolbar.png
-share/gnome/help/balsa-manual/C/figures/newmsg-window.png
-share/gnome/help/balsa-manual/C/figures/preferences-window.png
-share/gnome/help/balsa-manual/C/figures/spell-check.png
-share/gnome/omf/balsa/balsa-manual-C.omf
+share/gnome/help/balsa/C/balsa.xml
+share/gnome/help/balsa/C/fdl-appendix.xml
+share/gnome/help/balsa/C/figures/address-book-ldap.png
+share/gnome/help/balsa/C/figures/address-book-modify.png
+share/gnome/help/balsa/C/figures/address-book-start.png
+share/gnome/help/balsa/C/figures/address-book-vcard.png
+share/gnome/help/balsa/C/figures/address-book.png
+share/gnome/help/balsa/C/figures/balsa_logo.png
+share/gnome/help/balsa/C/figures/druid-start.png
+share/gnome/help/balsa/C/figures/example-alias.png
+share/gnome/help/balsa/C/figures/figuresdobaaddress-book-modify.png
+share/gnome/help/balsa/C/figures/main-window-toolbar.png
+share/gnome/help/balsa/C/figures/main-window.png
+share/gnome/help/balsa/C/figures/newmsg-window-attachments.png
+share/gnome/help/balsa/C/figures/newmsg-window-toolbar.png
+share/gnome/help/balsa/C/figures/newmsg-window.png
+share/gnome/help/balsa/C/figures/preferences-window.png
+share/gnome/help/balsa/C/figures/spell-check.png
+share/gnome/omf/balsa/balsa-C.omf
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
@@ -49,6 +50,7 @@ share/locale/it/LC_MESSAGES/balsa.mo
 share/locale/ja/LC_MESSAGES/balsa.mo
 share/locale/ko/LC_MESSAGES/balsa.mo
 share/locale/lt/LC_MESSAGES/balsa.mo
+share/locale/lv/LC_MESSAGES/balsa.mo
 share/locale/ms/LC_MESSAGES/balsa.mo
 share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/nn/LC_MESSAGES/balsa.mo
@@ -69,8 +71,8 @@ share/locale/zh_CN/LC_MESSAGES/balsa.mo
 share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/omf/balsa
-@dirrm share/gnome/help/balsa-manual/C/figures
-@dirrm share/gnome/help/balsa-manual/C
-@dirrm share/gnome/help/balsa-manual
+@dirrm share/gnome/help/balsa/C/figures
+@dirrm share/gnome/help/balsa/C
+@dirrm share/gnome/help/balsa
 @dirrm share/gnome/balsa/pixmaps
 @dirrm share/gnome/balsa

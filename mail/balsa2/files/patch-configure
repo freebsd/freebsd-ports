@@ -1,8 +1,8 @@
---- configure.orig	Sun Sep 15 14:42:04 2002
-+++ configure	Mon Sep 16 02:28:13 2002
-@@ -8477,13 +8477,13 @@
+--- configure.orig	Tue Dec 24 07:03:55 2002
++++ configure	Tue Dec 31 14:09:47 2002
+@@ -8600,13 +8601,13 @@
  
- 
+ if test x$enable_deprecated_pspell = xyes ; then
  
 -echo "$as_me:$LINENO: checking for new_pspell_manager in -lpspell" >&5
 -echo $ECHO_N "checking for new_pspell_manager in -lpspell... $ECHO_C" >&6
@@ -18,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -8494,7 +8494,7 @@
+@@ -8617,7 +8618,7 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -27,7 +27,7 @@
  #ifdef F77_DUMMY_MAIN
  #  ifdef __cplusplus
       extern "C"
-@@ -8504,7 +8504,7 @@
+@@ -8627,7 +8628,7 @@
  int
  main ()
  {
@@ -36,7 +36,7 @@
    ;
    return 0;
  }
-@@ -8521,18 +8521,18 @@
+@@ -8644,18 +8645,18 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -60,7 +60,7 @@
    cat >>confdefs.h <<_ACEOF
  #define HAVE_LIBPSPELL 1
  _ACEOF
-@@ -12348,7 +12348,7 @@
+@@ -11238,7 +11239,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -69,7 +69,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -12403,7 +12403,7 @@
+@@ -11293,7 +11294,7 @@
  #define ENABLE_LDAP 1
  _ACEOF
  
