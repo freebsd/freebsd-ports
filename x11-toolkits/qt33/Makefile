@@ -23,7 +23,6 @@ COMMENT=	Multiplatform C++ application framework
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
-		audio:${PORTSDIR}/audio/nas \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
@@ -40,7 +39,7 @@ NO_FILTER_SHLIBS=yes
 
 CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
-		-system-zlib -sm -qt-gif -thread -system-nas-sound \
+		-system-zlib -sm -qt-gif -thread \
 		-fast -xinerama -no-g++-exceptions -stl -no-nis \
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-verbose -docdir ${DOCSDIR} -tablet -ipv6 \
@@ -99,6 +98,10 @@ CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 CUPS=
 .endif
 
+.if !defined(WITHOUT_NAS)
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+CONFIGURE_ARGS+=-system-nas-sound
+
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
@@ -109,6 +112,13 @@ pre-everything::
 	@${ECHO_MSG} '===> **************************************************'
 	@${ECHO_MSG} '===> If you do not want to build QT with XFT support '
 	@${ECHO_MSG} '===> press Ctrl-C and set WITHOUT_XFT'
+	@${ECHO_MSG} '===> **************************************************'
+.endif
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} '===> **************************************************'
+	@${ECHO_MSG} '===> If you do not want to build QT with NAS support '
+	@${ECHO_MSG} '===> press Ctrl-C and set WITHOUT_NAS'
 	@${ECHO_MSG} '===> **************************************************'
 .endif
 
