@@ -1,0 +1,28 @@
+# New ports collection makefile for:	gnome-devel
+# Date created:		23 May 2002
+# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnome-devel
+PORTVERSION=	1.4.1b2
+CATEGORIES=	devel gnome
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	gnome@FreeBSD.org
+
+RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool
+LIB_DEPENDS=	gal:${PORTSDIR}/x11-toolkits/gal \
+		panelmm.1:${PORTSDIR}/x11-toolkits/panel--
+
+NO_BUILD=	yes
+
+USE_GNOMELIBS=	yes
+USE_PYTHON=	yes
+
+do-install:	# empty
+
+.include <bsd.port.mk>
