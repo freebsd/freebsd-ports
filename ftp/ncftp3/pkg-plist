@@ -7,9 +7,4 @@ bin/ncftpbatch
 bin/ncftpget
 bin/ncftpls
 bin/ncftpput
-man/man1/ncftp3.1.gz
-man/man1/ncftpbatch.1.gz
-man/man1/ncftpget.1.gz
-man/man1/ncftpls.1.gz
-man/man1/ncftpput.1.gz
-man/man3/Strn.3.gz
+bin/ncftpbookmarks
