@@ -1,0 +1,30 @@
+#!/bin/sh
+
+pb=/var/portbuild
+
+if [ $# -ne 2 ]; then
+	echo "usage: makeparallel arch branch"
+	exit 1
+fi
+
+arch=$1
+branch=$2
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+buildenv ${pb} ${arch} ${branch}
+
+cd ${PORTSDIR}
+subdir=$(make -V SUBDIR)
+makefile=${pb}/${arch}/${branch}/Makefile
+sufx=${PKGSUFFIX}
+
+rm ${makefile}
+
+for dir in ${subdir}; do
+        echo "all: ${dir}-all" >> ${makefile}
+done
+        awk -F '|' "{me=\$1; here=\$2; bdep=\$8; rdep=\$9; split(here, tmp, \"/\"); if (bdep != \"\") { gsub(\"\$\", \"${sufx}\", bdep); gsub(\" \", \"${sufx} \", bdep); } if (rdep != \"\") { gsub(\"\$\", \"${sufx}\", rdep); gsub(\" \", \"${sufx} \", rdep); } print tmp[4] \"-all: \" me \"${sufx}\"; print me \": \" me \"${sufx}\"; print me \"${sufx}: \" bdep \" \" rdep; printf(\"\t@/var/portbuild/scripts/pdispatch ${arch} ${branch} /var/portbuild/scripts/portbuild %s${sufx} %s\",me, here); if (bdep != \"\") printf(\" %s\", bdep); if (rdep != \"\") printf(\" %s\", rdep);printf(\"\n\")}" < ${PORTSDIR}/${INDEXFILE} >> ${makefile}
+
+
