@@ -1,0 +1,7 @@
+bin/garith
+share/doc/garith/BUGS
+share/doc/garith/COPYING
+share/doc/garith/HISTORY
+share/doc/garith/README
+share/doc/garith/TODO
+@dirrm share/doc/garith

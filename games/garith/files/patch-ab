@@ -1,0 +1,29 @@
+--- garith.c	Wed Sep 17 23:47:03 1997
++++ /home/andy/tmp/wrk/garith.c	Wed Aug  5 13:55:44 1998
+@@ -24,7 +24,7 @@
+ */
+ 
+ #include <gtk/gtk.h>		/* GTK stuff */
+-#include <gnome.h>		/* GNOME stuff */
++/* #include <gnome.h>		/* GNOME stuff */
+ #include <stdlib.h>
+ #include <time.h>		/* we use time as seed for rand() */
+ 
+@@ -76,7 +76,7 @@
+ 
+ gulong		num1, num2;
+ guint		right = 0, done = 0;
+-gldouble	less_than;
++double		less_than;
+ gchar		op;
+ time_t		starttime;
+ 
+@@ -643,7 +643,7 @@
+ 	   gnome_init() is called by all gnome apps. */
+ 
+ 	gtk_init(&argc, &argv);
+-	gnome_init(&argc, &argv);
++	/* gnome_init(&argc, &argv); */
+ 
+ 	/* Make the windows */
+ 
