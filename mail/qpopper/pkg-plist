@@ -1,4 +1,6 @@
 bin/popauth
+@unexec rm -f %D/bin/apopauth
+@exec ln -sf popauth %D/bin/apopauth
 libexec/qpopper
 @dirrm etc/qpopper
 @exec mkdir -p %D/etc/qpopper && chown pop.daemon %D/etc/qpopper && chmod 700 %D/etc/qpopper
