@@ -14,8 +14,6 @@ DISTFILES=	femlab-2d-v${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
 USE_X_PREFIX=	yes
