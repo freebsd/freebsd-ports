@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	Tue Nov 20 19:09:45 2001
++++ etc/Makefile.in	Tue Nov 20 19:09:53 2001
+@@ -131,7 +131,7 @@
+ lispdir = @lispdir@
+ 
+ 
+-ogonkifydir = $(datadir)/ogonkify
++ogonkifydir = $(datadir)/a2ps/ogonkify
+ libpath = $(pkgdatadir)/sheets:$(pkgdatadir)/ps:$(pkgdatadir)/encoding:$(pkgdatadir)/afm:$(ogonkifydir)/afm:$(pkgdatadir)/ppd:$(pkgdatadir)/fonts:$(ogonkifydir)/fonts:$(pkgdatadir)
+ 
+ pkgdata_DATA = README
