@@ -20,6 +20,7 @@ LIB_DEPENDS=    pdf.6:${PORTSDIR}/print/pdflib
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
+CFLAGS+=	-fPIC
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g' \
