@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.15.13.2
+PORTVERSION=	0.16.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +39,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db${WITH_DB_VER}" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="${libs}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALL_TARGET=	install-strip prefix=${PREFIX}
+
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1
 
 post-patch:
@@ -46,7 +48,6 @@ post-patch:
 		${WRKSRC}/contrib/randomtrain \
 		${WRKSRC}/contrib/scramble \
 		${WRKSRC}/contrib/trainbogo.sh
-	${REINPLACE_CMD} -e "s/0.15.13.1/0.15.13.2/" ${WRKSRC}/src/version.c
 
 .if !defined(PKGNAMESUFFIX) && ${WITH_DB_VER} != 42
 pre-everything::
@@ -55,11 +56,12 @@ pre-everything::
 	@${ECHO} ""
 .endif
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
-
-do-install:
-	cd ${WRKSRC} && make install-strip prefix=${PREFIX}
 
 post-install::
 .if !defined(NOPORTDOCS)
@@ -69,11 +71,8 @@ post-install::
 	@${MKDIR} ${DOCSDIR}/programmer
 	@${MKDIR} ${DOCSDIR}/xml
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
-	doc/README.validation TODO UPGRADE \
-	CHANGES-0.10 CHANGES-0.11 CHANGES-0.12 CHANGES-0.13 CHANGES-0.14 \
-	CHANGES-0.15 \
-	RELEASE.NOTES-0.11 RELEASE.NOTES-0.12 RELEASE.NOTES-0.13 \
-	RELEASE.NOTES-0.14 RELEASE.NOTES-0.15 \
+	doc/README.validation TODO \
+	CHANGES-* RELEASE.NOTES-* \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
 	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS \
 	doc/README.tdb
