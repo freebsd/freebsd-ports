@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.55 1999/06/22 00:44:50 billf Exp $
+# $Id: Makefile,v 1.56 1999/06/23 21:29:09 billf Exp $
 #
 
 DISTNAME=	mysql-3.22.23b-client
