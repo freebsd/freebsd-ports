@@ -46,6 +46,7 @@
     SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += expect
+    SUBDIR += freepwing
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += gicq
