@@ -475,6 +475,7 @@
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
     SUBDIR += py-omniorb
+    SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-twisted
     SUBDIR += py-unit
