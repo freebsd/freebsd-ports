@@ -3,11 +3,11 @@
 # Date created:			Sun Feb 3, 1999
 # Whom:				shipley@dis.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/09 01:16:34 steve Exp $
 #
 
-DISTNAME=	libnet-0.99a
-PKGNAME=	libnet-0.9.2
+DISTNAME=	libnet-0.99b
+PKGNAME=	libnet-0.9.3
 CATEGORIES=     net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 EXTRACT_SUFX=	.tgz
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 BROKEN=         does not build
 .endif
 
-WRKSRC=         ${WRKDIR}/Libnet-0.99a
+WRKSRC=         ${WRKDIR}/Libnet-0.99b
 
 post-install:
 .if !defined(NOPORTDOCS)
