@@ -1841,6 +1841,7 @@ gnomemc		ports/x11-fm/gnomemc
 gnomemedia	ports/audio/gnomemedia
 gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
+gnomemimedata	ports/misc/gnomemimedata
 gnomepilot	ports/palm/gnomepilot
 gnomepilot-conduits	ports/palm/gnomepilot-conduits
 gnomepim	ports/deskutils/gnomepim
