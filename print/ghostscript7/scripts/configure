@@ -36,6 +36,10 @@ Have fun with this new configuration style !     -andreas \n\n\
   "bj200"    "Canon BubbleJet BJ-200 and BJC-240(b&w)" ON \
   "bjc600"   "Canon Color BJC-600/4xxx/70 + Apple StyleWriter 2x00" ON \
   "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
+  "bjccmyk"  "Canon Color BubbleJet BJC-210/240/250/265/1000 [BJC250]" ON \
+  "bjccolor" "Canon Color BubbleJet BJC-210 ... 1000 truecolor [BJC250]" ON \
+  "bjcgray"  "Canon Color BubbleJet BJC-210 ... 1000 grayscale [BJC250]" ON \
+  "bjcmono"  "Canon Color BubbleJet BJC-210 ... 1000 monochrome [BJC250]" ON \
   "lbp8"     "Canon LBP-8II laser printer" OFF \
   "lips2p"   "Canon LIPS II+ [LIPS]" ON \
   "lips3"    "Canon LIPS III [LIPS]" ON \
