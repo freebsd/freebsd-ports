@@ -229,6 +229,7 @@
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += moon-buggy
+    SUBDIR += moonlander
     SUBDIR += mvdsv
     SUBDIR += myth2_demo
     SUBDIR += mythserver

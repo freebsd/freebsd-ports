@@ -1,0 +1,61 @@
+bin/moonlander
+share/moonlander/fonts/ConsoleFont.bmp
+share/moonlander/fonts/LargeFont.bmp
+share/moonlander/images/backgrounds/blue_nebula.jpg
+share/moonlander/images/backgrounds/earth_moon.jpg
+share/moonlander/images/backgrounds/fingers.jpg
+share/moonlander/images/backgrounds/fire_and_planet.jpg
+share/moonlander/images/backgrounds/glowing_nebula.jpg
+share/moonlander/images/backgrounds/orange_gas.jpg
+share/moonlander/images/backgrounds/red_plain.jpg
+share/moonlander/images/backgrounds/saturn.jpg
+share/moonlander/images/blank_terrain.gif
+share/moonlander/images/kablam/exp01.png
+share/moonlander/images/kablam/exp02.png
+share/moonlander/images/kablam/exp03.png
+share/moonlander/images/kablam/exp04.png
+share/moonlander/images/kablam/exp05.png
+share/moonlander/images/kablam/exp06.png
+share/moonlander/images/kablam/exp07.png
+share/moonlander/images/kablam/exp08.png
+share/moonlander/images/kablam/exp09.png
+share/moonlander/images/kablam/exp10.png
+share/moonlander/images/kablam/exp11.png
+share/moonlander/images/kablam/exp12.png
+share/moonlander/images/kablam/exp13.png
+share/moonlander/images/kablam/exp14.png
+share/moonlander/images/kablam/exp15.png
+share/moonlander/images/kablam/exp16.png
+share/moonlander/images/kablam/exp17.png
+share/moonlander/images/kablam/exp18.png
+share/moonlander/images/kablam/exp19.png
+share/moonlander/images/kablam/exp20.png
+share/moonlander/images/kablam/exp21.png
+share/moonlander/images/kablam/exp22.png
+share/moonlander/images/kablam/exp23.png
+share/moonlander/images/kablam/exp24.png
+share/moonlander/images/kablam/exp25.png
+share/moonlander/images/logo.png
+share/moonlander/images/magigames_steel.gif
+share/moonlander/images/miniship2.bmp
+share/moonlander/images/moon-lander.ico
+share/moonlander/images/newship.png
+share/moonlander/images/thrust1.png
+share/moonlander/images/thrust2.png
+share/moonlander/images/thrust_left.bmp
+share/moonlander/images/thrust_right.bmp
+share/moonlander/images/win_icon.bmp
+%%SOUND%%share/moonlander/sounds/Blaster_1.wav
+%%SOUND%%share/moonlander/sounds/Retro_3.wav
+%%SOUND%%share/moonlander/sounds/Space_Bubbles_2.wav
+%%SOUND%%share/moonlander/sounds/beep1b.wav
+%%SOUND%%share/moonlander/sounds/eagle_has_landed.wav
+%%SOUND%%share/moonlander/sounds/explosion2.wav
+%%SOUND%%share/moonlander/sounds/honk.wav
+%%SOUND%%share/moonlander/sounds/jet_lp.wav
+%%SOUND%%@dirrm share/moonlander/sounds
+@dirrm share/moonlander/images/kablam
+@dirrm share/moonlander/images/backgrounds
+@dirrm share/moonlander/images
+@dirrm share/moonlander/fonts
+@dirrm share/moonlander
