@@ -487,6 +487,7 @@ babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
 backgammon	src/games/backgammon
 bacon		ports/www/bacon
+bacula		ports/sysutils/bacula
 bad144		src/usr.sbin/bad144
 badsect		src/sbin/badsect
 baduki		ports/games/baduki
