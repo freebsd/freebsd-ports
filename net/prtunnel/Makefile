@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prtunnel
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
@@ -21,7 +21,8 @@ MAN1=		prtunnel.1
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|%%PREFIX%%|${PREFIX}|g ; \
-	s|CC=gcc|CC?=gcc|g' ${WRKSRC}/Makefile
+	s|CC=gcc|CC?=gcc|g ; \
+	s|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
