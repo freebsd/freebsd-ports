@@ -99,6 +99,7 @@
     SUBDIR += gkrellmmailwatch2
     SUBDIR += glacier
     SUBDIR += glbiff
+    SUBDIR += gld
     SUBDIR += gmime
     SUBDIR += gmime2
     SUBDIR += gnarwl
