@@ -243,6 +243,7 @@
     SUBDIR += g2c
     SUBDIR += gaa
     SUBDIR += gauche-readline
+    SUBDIR += gauche-sdl
     SUBDIR += gaul
     SUBDIR += gccxml
     SUBDIR += gconf
